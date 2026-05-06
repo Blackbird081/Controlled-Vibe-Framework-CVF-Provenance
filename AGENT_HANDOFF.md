@@ -1,4 +1,4 @@
-# CVF Agent Handoff — 2026-04-27
+# CVF Agent Handoff — 2026-05-07
 
 > Branch: `main`
 > Branch posture: `main` is the canonical continuation branch after 2026-04-04 convergence; `cvf-next` is kept as a synchronized mirror for compatibility
@@ -6,10 +6,79 @@
 > Remote tracking branch: `origin/main` (canonical continuation)
 > Compatibility mirror branch: `origin/cvf-next`
 > Exact remote SHA must be derived live from git when needed; do not hand-maintain it in handoff
-> State: **UNIFIED ON MAIN / W114-W131 CLOSED / W132 AUTHORIZED** — core architecture remains closure-assessed and closed-by-default; redesign wave `W105-T1` through `W109-T1` is delivered; the public Web front door is now gated to `27` public, agent-ready skills whose public linked templates are fully trusted; W114 CP1-CP8, W115, W116, W117, W118, W119, W121, and the 2026-04-26 template-quality closure are delivered with bounded claims. Workspace topology is now canonicalized in `docs/reference/CVF_WORKSPACE_RULES.md` and enforced for new downstream bootstraps through workspace-root `WORKSPACE_RULES.md`. W122-W128 noncoder adoption tranche is CLOSED DELIVERED as a coherent unit. W129 rollout is COMPLETE (all 3 noncoder flags enabled; all rollout stages A/B/C delivered). W130-T1 is CLOSED DELIVERED (2026-04-28) - both export lanes exit `no_data`; 1 successful governed journey on record. W131-T1 is DELIVERED - EVIDENCE BASED - CONTINUATION CHOSEN (2026-04-30): Alibaba and DeepSeek both showed 17% acceptance and 66% timeout/mock-fallback across real journeys, proving instability is systemic. **W132-T1 is CLOSED WITH CLASSIFIED BLOCKER (2026-05-07)**: CP1–CP7 all delivered. Browser session isolation (0 cascade failures), diagnostic subcodes, and navigation hardening all confirmed effective. Persistent blocker: sequential journey failure — J1 always succeeds (~15–33s), J2+ timeout at ~93s regardless of model (qwen-turbo or qwen-plus) or provider (Alibaba or DeepSeek). Root cause classified as `sequential_journey_failure_server_side_connection` — server-side SSE/streaming connection likely not fully released between journeys. W133 is authorized as next tranche. Continuation decision: `docs/reviews/CVF_W132_CONTINUATION_DECISION_2026-04-30.md`.
+> State: **UNIFIED ON MAIN / W114-W132 CLOSED / W133 AUTHORIZED** — core architecture remains closure-assessed and closed-by-default; redesign wave `W105-T1` through `W109-T1` is delivered; the public Web front door is now gated to `27` public, agent-ready skills whose public linked templates are fully trusted; W114 CP1-CP8, W115, W116, W117, W118, W119, W121, and the 2026-04-26 template-quality closure are delivered with bounded claims. Workspace topology is now canonicalized in `docs/reference/CVF_WORKSPACE_RULES.md` and enforced for new downstream bootstraps through workspace-root `WORKSPACE_RULES.md`. W122-W128 noncoder adoption tranche is CLOSED DELIVERED as a coherent unit. W129 rollout is COMPLETE (all 3 noncoder flags enabled; all rollout stages A/B/C delivered). W130-T1 is CLOSED DELIVERED (2026-04-28) - both export lanes exit `no_data`; 1 successful governed journey on record. W131-T1 is DELIVERED - EVIDENCE BASED - CONTINUATION CHOSEN (2026-04-30): Alibaba and DeepSeek both showed 17% acceptance and 66% timeout/mock-fallback across real journeys, proving instability is systemic. **W132-T1 is CLOSED WITH CLASSIFIED BLOCKER (2026-05-07)**: CP1–CP7 all delivered. Browser session isolation (0 cascade failures), diagnostic subcodes, and navigation hardening all confirmed effective. Persistent blocker: sequential journey failure — J1 always succeeds (~15–33s), J2+ timeout at ~93s regardless of model (qwen-turbo or qwen-plus) or provider (Alibaba or DeepSeek). Root cause classified as `sequential_journey_failure_server_side_connection` — server-side SSE/streaming connection likely not fully released between journeys. W133 is authorized as next tranche. Continuation decision: `docs/reviews/CVF_W132_CONTINUATION_DECISION_2026-04-30.md`.
 > Architecture baseline snapshot: `docs/reference/CVF_MASTER_ARCHITECTURE_WHITEPAPER.md` (`v3.7-W46T1`; document type: CLOSURE-ASSESSED; operational readout refreshed through `2026-04-21`)
 
 ---
+
+## Latest CVF ADD Doctrine Absorption Status — 2026-05-07
+
+Status: OFFICIAL DOCS ABSORPTION CLOSED / RUNTIME ACTIVATION RT0-RT8 DELIVERED.
+
+Phase A completed:
+
+- `docs/reference/CVF_GOVERNED_CAPABILITY_INTAKE_DOCTRINE_2026-05-07.md`
+- `docs/reference/CVF_BOUNDARY_FIRST_GOVERNANCE_DOCTRINE_2026-05-07.md`
+
+Phase B completed:
+
+- `docs/reference/CVF_GOVERNED_CONTEXT_PROFILE_METADATA_DOCTRINE_2026-05-07.md`
+- `docs/reference/CVF_AGENT_CONTINUITY_AND_DELEGATION_DOCTRINE_2026-05-07.md`
+- `docs/reference/CVF_SCOPED_KNOWLEDGE_PROVIDER_BOUNDARY_DOCTRINE_2026-05-07.md`
+
+Canonical rule added by Phase A: CVF absorbs external capabilities only through
+provenance, owner-surface binding, policy binding, sandbox posture, and evidence
+requirements. Agents optimize inside clear CVF boundaries; the operator reviews
+final quality and handles true authorization/scope decisions, not routine
+technical arbitration.
+
+Canonical rule added by Phase B: context profiles are advisory metadata only;
+continuity/delegation must update handoff after each meaningful phase; scoped
+knowledge providers may provide context but must never become policy authority.
+
+Closure sync:
+
+- `docs/baselines/CVF_GC026_CVF_ADD_DOCS_ABSORPTION_SYNC_2026-05-07.md`
+- `docs/reviews/CVF_GC018_CVF_ADD_DOCTRINE_SYNTHESIS_ROADMAP_2026-05-07.md`
+
+Runtime activation:
+
+- `docs/roadmaps/CVF_ADD_RUNTIME_ACTIVATION_ROADMAP_2026-05-07.md`
+- `docs/baselines/CVF_GC026_CVF_ADD_RUNTIME_ACTIVATION_SYNC_2026-05-07.md`
+- `docs/baselines/CVF_GC026_CVF_ADD_RUNTIME_REGISTRY_PERSISTENCE_SYNC_2026-05-07.md`
+- `docs/baselines/CVF_GC026_CVF_ADD_RUNTIME_UI_READOUT_SYNC_2026-05-07.md`
+- `docs/baselines/CVF_GC026_CVF_ADD_RUNTIME_METADATA_QUERY_SYNC_2026-05-07.md`
+
+Runtime delivered:
+
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/cvf-add-runtime-doctrine.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/cvf-add-runtime-doctrine.test.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/external-asset-governance.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/asset-registry.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/external-assets/prepare/route.test.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/external-assets/register/route.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/external-assets/register/route.test.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/asset-registry.test.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/governance/external-assets/page.tsx`
+
+Runtime boundary: RT0-RT8 make CVF ADD doctrine runtime-readable,
+registry-persisted in the existing external-asset governance intake/registry
+API, visible in the External Asset Governance operator UI, and queryable by
+metadata filters (`capability_class`, `boundary_policy_class`,
+`policy_authority`). They do not execute external tools, widen provider
+behavior, or claim live governance proof. Future expansion must use the
+official docs above, not private CVF ADD review files, and must run live proof
+if it claims governance behavior.
+
+Verification:
+
+- Targeted RT0-RT5 Vitest passed: 2 files / 12 tests.
+- Targeted RT6 Vitest passed with the RT0-RT5 suite: 4 files / 59 tests.
+- Targeted RT8 Vitest passed with the RT0-RT7 suite: 4 files / 63 tests.
+- Full `npx tsc --noEmit --pretty false` currently fails on pre-existing
+  unrelated test fixture/type drift outside the CVF ADD runtime files
+  (`deepseek` provider fixture gaps, DLP/tool-policy event `orgId/teamId`,
+  clarification fixture `routeType`, read-only `NODE_ENV`, etc.).
 
 ## Current State
 
@@ -19,7 +88,7 @@
 - Pre-public restructuring posture is now narrowed, canonized, and closed-by-default: avoid reopening root-level relocation unless a separate preservation override explicitly justifies it
 - Canonical scan continuity registry: `governance/compat/CVF_SURFACE_SCAN_REGISTRY.json`
 - **Governance test policy (standing rule, 2026-04-21):** All tests asserting CVF governance behavior — risk classification, approval flow, DLP filtering, bypass detection, phase gate, audit trail — must use live provider API calls. `NEXT_PUBLIC_CVF_MOCK_AI=1` bypasses the entire `/api/execute` governance pipeline (guard engine, DLP, bypass detection, output validation, audit events) and is only permitted for pure UI structure tests (navigation, routing, static badge rendering). The default release gate now runs mandatory live governance E2E and fails if `DASHSCOPE_API_KEY` is absent; `--mock` can only support saved provider-readiness receipts and UI structure checks. This rule applies to all future tranches and E2E waves without exception. The operator explicitly authorizes free use of Alibaba and DeepSeek API keys for all testing. See: `docs/roadmaps/CVF_E2E_PROOF_AND_REGRESSION_STABILIZATION_ROADMAP_2026-04-21.md`.
-- **Latest release-gate verification (2026-04-30, post-W131):** `python scripts/run_cvf_release_gate_bundle.py --json` PASS. Result: Web build PASS, TypeScript check PASS, provider readiness PASS (`2` certified lanes), secrets scan PASS, docs governance PASS, UI mock Playwright `6 passed`, live governance Playwright PASS. 7/7 checks PASS.
+- **Latest release-gate verification (2026-05-07, post-W132-CP7):** `python scripts/run_cvf_release_gate_bundle.py --json` PASS. Result: Web build PASS, TypeScript check PASS, provider readiness PASS (`2` certified lanes), secrets scan PASS, docs governance PASS, UI mock Playwright `6 passed`, live governance Playwright PASS. 7/7 checks PASS. Alibaba test baseline updated to `qwen-plus` for W133.
 - Operator policy (2026-04-18, reaffirmed 2026-04-19): Alibaba is the preferred live-test lane for CVF because quota/model coverage is favorable for validation. Canonical env is `ALIBABA_API_KEY`; compatibility aliases `CVF_BENCHMARK_ALIBABA_KEY` and `CVF_ALIBABA_API_KEY` remain supported. If one of these env vars is already configured, future agents should use it without asking for a new key. Operator has also pre-authorized use of the configured Alibaba model set for live validation where applicable; agents should use the existing configured/manifested models without re-asking unless a tranche explicitly requires a new model decision. Never commit raw key values. Note: shell/process env may still appear empty on some sessions; local test/bootstrap is now standardized to fall back to `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/.env.local` for Vitest + benchmark/PVV runners before declaring Alibaba config "missing".
 - **Workspace/Web API-key test status (2026-04-22):** workspace bootstrap, doctor, hook, and CI sample intentionally do **not** copy, store, or require provider API keys in downstream projects; they prove enforcement artifacts (`AGENTS.md`, `.cvf/manifest.json`, `.cvf/policy.json`, bootstrap log) and fail-closed policy, not live provider reachability. Release-quality live proof remains the CVF core/web gate: `python scripts/run_cvf_release_gate_bundle.py --json`. That runner loads repo-local env files through `scripts/_local_env.py`, accepts `DASHSCOPE_API_KEY` directly, and maps `ALIBABA_API_KEY`, `CVF_ALIBABA_API_KEY`, or `CVF_BENCHMARK_ALIBABA_KEY` into the DashScope-compatible key required by Playwright live governance specs. W113 additionally proved the W112 web metadata path with `tests/e2e/w113-workspace-web-live-proof.spec.ts` (`1 passed`) using Alibaba `qwen-turbo`. Do not put raw keys into downstream `.cvf/`, generated `AGENTS.md`, roadmap evidence, or handoff text.
 - **Workspace topology canonicalization (2026-04-24):** `docs/reference/CVF_WORKSPACE_RULES.md` is the canonical parent-folder contract. `scripts/new-cvf-workspace.ps1` now creates/verifies workspace-root `WORKSPACE_RULES.md`, records `workspaceRulesPath` in `.cvf/manifest.json`, includes `..\WORKSPACE_RULES.md` in downstream required docs, and `scripts/check_cvf_workspace_agent_enforcement.ps1` verifies the workspace rules file exists. Boundary remains: this proves local workspace isolation/enforcement readiness, not universal downstream runtime inheritance.
