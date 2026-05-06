@@ -75,7 +75,7 @@ export async function seedStorageWithAlibaba(page: Page) {
     await page.addInitScript((k) => {
         localStorage.setItem('cvf_settings', JSON.stringify({
             providers: {
-                alibaba: { apiKey: k, enabled: true, selectedModel: 'qwen-turbo' },
+                alibaba: { apiKey: k, enabled: true, selectedModel: 'qwen-plus' },
             },
             preferences: {
                 defaultProvider: 'alibaba',

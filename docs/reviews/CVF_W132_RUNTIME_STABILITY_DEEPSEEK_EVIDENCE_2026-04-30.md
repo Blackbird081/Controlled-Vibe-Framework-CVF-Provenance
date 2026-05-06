@@ -2,7 +2,7 @@
 # CVF W132 Runtime Stability — DeepSeek Confirmatory
 
 **Run status:** complete
-**Captured:** 2026-04-30T14:09:42.909Z
+**Captured:** 2026-05-06T18:06:02.676Z
 **Provider:** deepseek / deepseek-chat
 **Session isolation:** per_journey_browser_context
 **Tranche:** W132-T1 CP5 — DeepSeek Confirmatory Run
@@ -48,9 +48,9 @@
 
 | # | Form Type | Outcome | Subcode | HTTP | Elapsed | Evidence | Pack | Receipt |
 |---|---|---|---|---|---|---|---|---|
-| 1 | documentation | `accepted_with_exports` | — | 200 | 41356ms | ✅ | ✅ | ✅ |
-| 2 | email_template | `api_timeout` | provider_timeout | 400 | 95842ms | ❌ | ❌ | ❌ |
-| 3 | risk_assessment | `api_timeout` | execute_route_timeout | — | 96175ms | ❌ | ❌ | ❌ |
-| 4 | competitor_review | `api_timeout` | provider_timeout | 400 | 95302ms | ❌ | ❌ | ❌ |
-| 5 | user_persona | `route_miss` | — | — | 19190ms | ❌ | ❌ | ❌ |
-| 6 | strategy_analysis | `api_timeout` | provider_timeout | 400 | 96037ms | ❌ | ❌ | ❌ |
+| 1 | documentation | `accepted_with_exports` | — | 200 | 28201ms | ✅ | ✅ | ✅ |
+| 2 | email_template | `api_timeout` | provider_timeout | 400 | 92825ms | ❌ | ❌ | ❌ |
+| 3 | risk_assessment | `api_timeout` | execute_route_timeout | — | 92939ms | ❌ | ❌ | ❌ |
+| 4 | competitor_review | `api_timeout` | provider_timeout | 400 | 93060ms | ❌ | ❌ | ❌ |
+| 5 | user_persona | `route_miss` | — | — | 16684ms | ❌ | ❌ | ❌ |
+| 6 | strategy_analysis | `api_timeout` | provider_timeout | 400 | 92837ms | ❌ | ❌ | ❌ |

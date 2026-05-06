@@ -2,7 +2,7 @@
 # CVF W132 Runtime Stability — Alibaba Primary
 
 **Run status:** complete
-**Captured:** 2026-04-30T14:01:22.568Z
+**Captured:** 2026-05-06T17:58:25.082Z
 **Provider:** alibaba / qwen-turbo
 **Session isolation:** per_journey_browser_context
 **Tranche:** W132-T1 CP4 — Alibaba Isolated Stability Run
@@ -48,15 +48,15 @@
 
 | # | Form Type | Outcome | Subcode | HTTP | Elapsed | Evidence | Pack | Receipt |
 |---|---|---|---|---|---|---|---|---|
-| 1 | documentation | `accepted_with_exports` | — | 200 | 12505ms | ✅ | ✅ | ✅ |
-| 2 | email_template | `api_timeout` | provider_timeout | 400 | 95812ms | ❌ | ❌ | ❌ |
-| 3 | risk_assessment | `api_timeout` | execute_route_timeout | — | 96261ms | ❌ | ❌ | ❌ |
-| 4 | competitor_review | `api_timeout` | provider_timeout | 400 | 96110ms | ❌ | ❌ | ❌ |
-| 5 | user_persona | `route_miss` | — | — | 19125ms | ❌ | ❌ | ❌ |
-| 6 | strategy_analysis | `api_timeout` | provider_timeout | 400 | 95371ms | ❌ | ❌ | ❌ |
-| 7 | feature_prioritization | `api_timeout` | execute_route_timeout | — | 95711ms | ❌ | ❌ | ❌ |
-| 8 | pricing_strategy | `api_timeout` | execute_route_timeout | — | 95670ms | ❌ | ❌ | ❌ |
-| 9 | documentation | `api_timeout` | execute_route_timeout | — | 96188ms | ❌ | ❌ | ❌ |
-| 10 | email_template | `api_timeout` | execute_route_timeout | — | 96089ms | ❌ | ❌ | ❌ |
-| 11 | risk_assessment | `api_timeout` | execute_route_timeout | — | 95710ms | ❌ | ❌ | ❌ |
-| 12 | strategy_analysis | `api_timeout` | execute_route_timeout | — | 96260ms | ❌ | ❌ | ❌ |
+| 1 | documentation | `accepted_with_exports` | — | 200 | 33225ms | ✅ | ✅ | ✅ |
+| 2 | email_template | `api_timeout` | provider_timeout | 400 | 92887ms | ❌ | ❌ | ❌ |
+| 3 | risk_assessment | `api_timeout` | execute_route_timeout | — | 92966ms | ❌ | ❌ | ❌ |
+| 4 | competitor_review | `api_timeout` | provider_timeout | 400 | 92872ms | ❌ | ❌ | ❌ |
+| 5 | user_persona | `route_miss` | — | — | 16692ms | ❌ | ❌ | ❌ |
+| 6 | strategy_analysis | `api_timeout` | provider_timeout | 400 | 92842ms | ❌ | ❌ | ❌ |
+| 7 | feature_prioritization | `api_timeout` | execute_route_timeout | — | 93100ms | ❌ | ❌ | ❌ |
+| 8 | pricing_strategy | `api_timeout` | execute_route_timeout | — | 92850ms | ❌ | ❌ | ❌ |
+| 9 | documentation | `api_timeout` | execute_route_timeout | — | 92886ms | ❌ | ❌ | ❌ |
+| 10 | email_template | `api_timeout` | execute_route_timeout | — | 92922ms | ❌ | ❌ | ❌ |
+| 11 | risk_assessment | `api_timeout` | execute_route_timeout | — | 93145ms | ❌ | ❌ | ❌ |
+| 12 | strategy_analysis | `api_timeout` | execute_route_timeout | — | 92944ms | ❌ | ❌ | ❌ |

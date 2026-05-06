@@ -531,7 +531,7 @@ test.describe('W132-T1 CP4 — Alibaba isolated-session stability run', () => {
       test.setTimeout(2_400_000); // 40 min — 12 journeys × 90s max + overhead
 
       const journeyLog: JourneyRecord[] = [];
-      const config = { provider: 'alibaba', model: 'qwen-turbo', keyAliasPresent: HAS_ALIBABA_KEY };
+      const config = { provider: 'alibaba', model: 'qwen-plus', keyAliasPresent: HAS_ALIBABA_KEY };
 
       for (const journey of JOURNEY_MATRIX) {
         const idx = journeyLog.length + 1;
@@ -572,7 +572,7 @@ test.describe('W132-T1 CP4 — Alibaba isolated-session stability run', () => {
 
         // CP1: persist evidence after EVERY journey — cascade failures cannot erase earlier rows
         writeEvidence(
-          'alibaba', 'qwen-turbo',
+          'alibaba', 'qwen-plus',
           'W132-T1 CP4 — Alibaba Isolated Stability Run',
           journeyLog, 0, null, 'alibaba', 'in_progress',
         );
