@@ -10,6 +10,11 @@ interface PrepareResult {
     workflowStatus: WorkflowStatus;
     readyForRegistry: boolean;
     warnings: string[];
+    governedCapability?: GovernedCapabilityRecord;
+    boundaryFirstGovernance?: BoundaryFirstGovernanceRecord;
+    governedContextProfile?: GovernedContextProfileMetadata;
+    continuityDelegation?: AgentContinuityDelegationRecord;
+    scopedKnowledgeProvider?: ScopedKnowledgeProviderBoundary;
     intake: { valid: boolean; issues: { code: string; field: string; message: string }[] };
     plannerTrigger: { confidence: string; clarification_needed: boolean; negative_matches: string[] };
     diagnosticPacket: { primaryAttribution: string };
@@ -39,6 +44,67 @@ interface RegistryEntry {
     retiredAt?: string;
     assetName: string;
     assetVersion: string;
+    governedCapability?: GovernedCapabilityRecord;
+    boundaryFirstGovernance?: BoundaryFirstGovernanceRecord;
+    governedContextProfile?: GovernedContextProfileMetadata;
+    continuityDelegation?: AgentContinuityDelegationRecord;
+    scopedKnowledgeProvider?: ScopedKnowledgeProviderBoundary;
+}
+
+interface GovernedCapabilityRecord {
+    capabilityName: string;
+    capabilityClass: string;
+    riskClass: string;
+    ownerSurface: string;
+    sandboxTier: string;
+    policyBinding: string;
+    evidenceRequirement: string;
+    evaluationStatus: string;
+}
+
+interface BoundaryFirstGovernanceRecord {
+    policyClass: string;
+    agentBehavior: string;
+    operatorDecisionRequired: boolean;
+    candidateW7Signals: {
+        pathLockSignal: boolean;
+        minimalResponseMatch: boolean;
+        restrictedPathCount: number;
+    };
+}
+
+interface GovernedContextProfileMetadata {
+    taskContextType: string;
+    contextBudget: string;
+    reinjectionPolicy: string;
+    handoffNeed: string;
+    evidenceSensitivity: string;
+    advisoryOnly: boolean;
+}
+
+interface AgentContinuityDelegationRecord {
+    phase: string;
+    checkpointRequired: boolean;
+    handoffUpdateRequired: boolean;
+    delegationAllowed: boolean;
+    delegationAuthority: string;
+    nextOwnerSurface: string;
+}
+
+interface ScopedKnowledgeProviderBoundary {
+    sourceClass: string;
+    freshness: string;
+    confidence: string;
+    ownerSurface: string;
+    policyAuthority: boolean;
+}
+
+interface RuntimeMetadata {
+    governedCapability?: GovernedCapabilityRecord;
+    boundaryFirstGovernance?: BoundaryFirstGovernanceRecord;
+    governedContextProfile?: GovernedContextProfileMetadata;
+    continuityDelegation?: AgentContinuityDelegationRecord;
+    scopedKnowledgeProvider?: ScopedKnowledgeProviderBoundary;
 }
 
 const STATUS_STYLES: Record<WorkflowStatus, string> = {
@@ -113,6 +179,103 @@ const LIFECYCLE_BADGE: Record<LifecycleStatus, { cls: string; label: string }> =
         label: 'Retired',
     },
 };
+
+function RuntimeMetadataReadout({ metadata }: { metadata: RuntimeMetadata }) {
+    const {
+        governedCapability,
+        boundaryFirstGovernance,
+        governedContextProfile,
+        continuityDelegation,
+        scopedKnowledgeProvider,
+    } = metadata;
+
+    if (
+        !governedCapability &&
+        !boundaryFirstGovernance &&
+        !governedContextProfile &&
+        !continuityDelegation &&
+        !scopedKnowledgeProvider
+    ) {
+        return null;
+    }
+
+    const signal = boundaryFirstGovernance?.candidateW7Signals;
+
+    return (
+        <div className="mt-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/40 p-3">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+                <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                    CVF ADD Runtime Readout
+                </h3>
+                {scopedKnowledgeProvider && (
+                    <span className={`rounded-full px-2 py-0.5 text-xs font-semibold ${
+                        scopedKnowledgeProvider.policyAuthority
+                            ? 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-300'
+                            : 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300'
+                    }`}>
+                        {scopedKnowledgeProvider.policyAuthority ? 'Policy authority' : 'Context only'}
+                    </span>
+                )}
+            </div>
+
+            <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                {governedCapability && (
+                    <div className="space-y-1 text-xs text-gray-600 dark:text-gray-300">
+                        <p className="font-semibold text-gray-800 dark:text-gray-100">Capability</p>
+                        <p>{governedCapability.capabilityName}</p>
+                        <p className="text-gray-500 dark:text-gray-400">
+                            {governedCapability.capabilityClass} · {governedCapability.riskClass} · {governedCapability.sandboxTier}
+                        </p>
+                        <p className="font-mono text-[11px] text-gray-500 dark:text-gray-400">
+                            {governedCapability.policyBinding}
+                        </p>
+                    </div>
+                )}
+
+                {boundaryFirstGovernance && (
+                    <div className="space-y-1 text-xs text-gray-600 dark:text-gray-300">
+                        <p className="font-semibold text-gray-800 dark:text-gray-100">Boundary</p>
+                        <p>{boundaryFirstGovernance.policyClass} · {boundaryFirstGovernance.agentBehavior}</p>
+                        <p className="text-gray-500 dark:text-gray-400">
+                            Operator decision: {boundaryFirstGovernance.operatorDecisionRequired ? 'required' : 'not required'}
+                        </p>
+                        {signal && (
+                            <p className="text-gray-500 dark:text-gray-400">
+                                W7 candidates: path {signal.pathLockSignal ? 'locked' : 'open'}, minimal {signal.minimalResponseMatch ? 'yes' : 'no'}, restricted paths {signal.restrictedPathCount}
+                            </p>
+                        )}
+                    </div>
+                )}
+
+                {governedContextProfile && (
+                    <div className="space-y-1 text-xs text-gray-600 dark:text-gray-300">
+                        <p className="font-semibold text-gray-800 dark:text-gray-100">Context Profile</p>
+                        <p>{governedContextProfile.taskContextType}</p>
+                        <p className="text-gray-500 dark:text-gray-400">
+                            {governedContextProfile.contextBudget} · {governedContextProfile.reinjectionPolicy} · {governedContextProfile.handoffNeed}
+                        </p>
+                        <p className="text-gray-500 dark:text-gray-400">
+                            Advisory only: {governedContextProfile.advisoryOnly ? 'yes' : 'no'}
+                        </p>
+                    </div>
+                )}
+
+                {continuityDelegation && (
+                    <div className="space-y-1 text-xs text-gray-600 dark:text-gray-300">
+                        <p className="font-semibold text-gray-800 dark:text-gray-100">Continuity</p>
+                        <p>{continuityDelegation.phase} · {continuityDelegation.nextOwnerSurface}</p>
+                        <p className="text-gray-500 dark:text-gray-400">
+                            Handoff {continuityDelegation.handoffUpdateRequired ? 'required' : 'optional'} · checkpoint {continuityDelegation.checkpointRequired ? 'required' : 'optional'}
+                        </p>
+                        <p className="text-gray-500 dark:text-gray-400">
+                            Delegation: {continuityDelegation.delegationAllowed ? continuityDelegation.delegationAuthority : 'blocked'}
+                        </p>
+                    </div>
+                )}
+            </div>
+        </div>
+    );
+}
 
 export default function ExternalAssetsPage() {
     const [activeTab, setActiveTab] = useState<PageTab>('prepare');
@@ -438,6 +601,8 @@ export default function ExternalAssetsPage() {
                                 )}
                             </div>
 
+                            <RuntimeMetadataReadout metadata={result} />
+
                             {/* Register action (CP2) */}
                             {result.workflowStatus === 'registry_ready' && !registeredEntry && (
                                 <div className="space-y-2">
@@ -645,6 +810,8 @@ export default function ExternalAssetsPage() {
                                                     This entry is retired. You may now re-register the same logical asset via the Prepare Asset tab.
                                                 </p>
                                             )}
+
+                                            <RuntimeMetadataReadout metadata={entry} />
 
                                             {/* W70-T1: retire action — active entries only */}
                                             {lifecycle === 'active' && (

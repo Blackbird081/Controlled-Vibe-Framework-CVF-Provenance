@@ -120,6 +120,20 @@ describe('/api/governance/external-assets/prepare', () => {
     expect(data.data.windowsCompatibility.classification).toBe('WINDOWS_NATIVE');
     expect(data.data.diagnosticPacket.executionEnvironmentSummary.declared).toBe(true);
     expect(data.data.registryReady.governedAsset.governance.owner).toBe('cvf-architecture');
+    expect(data.data.governedCapability.capabilityClass).toBe('skill');
+    expect(data.data.governedCapability.ownerSurface).toBe('cvf-architecture');
+    expect(data.data.governedCapability.policyBinding).toBe(
+      'CVF_GOVERNED_CAPABILITY_INTAKE_DOCTRINE_2026-05-07',
+    );
+    expect(data.data.governedCapabilityValidation.valid).toBe(true);
+    expect(data.data.boundaryFirstGovernance.policyClass).toBe('restricted_execution_path');
+    expect(data.data.boundaryFirstGovernance.operatorDecisionRequired).toBe(false);
+    expect(data.data.governedContextProfile.advisoryOnly).toBe(true);
+    expect(data.data.governedContextProfile.handoffNeed).toBe('closure');
+    expect(data.data.continuityDelegation.phase).toBe('closure');
+    expect(data.data.continuityDelegation.delegationAllowed).toBe(false);
+    expect(data.data.scopedKnowledgeProvider.policyAuthority).toBe(false);
+    expect(data.data.scopedKnowledgeProvider.ownerSurface).toBe('knowledge-layer');
   });
 
   it('surfaces invalid intake shape through the runnable diagnostic pipeline', async () => {
@@ -157,6 +171,11 @@ describe('/api/governance/external-assets/prepare', () => {
     expect(data.data.diagnosticPacket.primaryAttribution).toBe('INTAKE_SHAPE');
     expect(data.data.windowsCompatibility.classification).toBe('REJECTED_FOR_WINDOWS_TARGET');
     expect(data.data.warnings).toContain('INTAKE_REQUIRED_PROVENANCE_NOTES');
+    expect(data.data.governedCapability.evaluationStatus).toBe('rejected');
+    expect(data.data.boundaryFirstGovernance.policyClass).toBe('hard_prohibition');
+    expect(data.data.governedContextProfile.advisoryOnly).toBe(true);
+    expect(data.data.continuityDelegation.phase).toBe('registry_review');
+    expect(data.data.scopedKnowledgeProvider.confidence).toBe('low');
   });
 
   it('returns workflowStatus=review_required when planner needs clarification (missing prerequisites)', async () => {

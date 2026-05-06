@@ -77,6 +77,17 @@ Current canonical docs:
 - `CVF_PROVISIONAL_EVALUATION_SIGNAL_CANDIDATES.md` *(bounded invariant — CVF-native; provisional signals stable, weights deferred; W71-T1)*
 - `CVF_W7_EXTERNAL_ASSET_COMPILER_GUIDE.md` *(canonical — CVF-native; W71-T1)*
 - `CVF_STAGE1_DIAGNOSTIC_INTERPRETATION_PACKET_TEMPLATE.md`
+- `CVF_GOVERNED_CAPABILITY_INTAKE_DOCTRINE_2026-05-07.md` *(canonical — CVF-native; CVF ADD Phase A absorption)*
+- `CVF_BOUNDARY_FIRST_GOVERNANCE_DOCTRINE_2026-05-07.md` *(canonical — CVF-native; CVF ADD Phase A absorption)*
+- `CVF_GOVERNED_CONTEXT_PROFILE_METADATA_DOCTRINE_2026-05-07.md` *(canonical — CVF-native; CVF ADD Phase B absorption)*
+- `CVF_AGENT_CONTINUITY_AND_DELEGATION_DOCTRINE_2026-05-07.md` *(canonical — CVF-native; CVF ADD Phase B absorption)*
+- `CVF_SCOPED_KNOWLEDGE_PROVIDER_BOUNDARY_DOCTRINE_2026-05-07.md` *(canonical — CVF-native; CVF ADD Phase B absorption)*
+
+Current readout note (CVF ADD docs absorption 2026-05-07):
+
+- the private CVF ADD review folder is no longer the operating surface for absorbed knowledge
+- official docs absorption is complete for Families A, B, C1, C2, D, and E1; E2/Gridex remains excluded
+- runtime activation is not started in these docs and is tracked separately by `docs/roadmaps/CVF_ADD_RUNTIME_ACTIVATION_ROADMAP_2026-05-07.md`
 
 Current readout note (W71-T1 2026-04-13):
 

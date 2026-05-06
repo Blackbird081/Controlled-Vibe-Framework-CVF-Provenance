@@ -99,6 +99,30 @@ Runs the full bounded governance pipeline:
     "readyForRegistry": true,             // boolean (derived from all checks passing)
     "warnings": [],                       // string[] — coded warning keys by category
 
+    // CVF ADD RT0-RT8 runtime metadata
+    "governedCapability": {
+      "capabilityName": "...",
+      "capabilityClass": "skill",
+      "riskClass": "R1",
+      "ownerSurface": "cvf-architecture",
+      "sandboxTier": "read_only",
+      "policyBinding": "CVF_GOVERNED_CAPABILITY_INTAKE_DOCTRINE_2026-05-07",
+      "evidenceRequirement": "unit"
+    },
+    "boundaryFirstGovernance": {
+      "policyClass": "restricted_execution_path",
+      "agentBehavior": "follow_restricted_path",
+      "operatorDecisionRequired": false,
+      "candidateW7Signals": {
+        "pathLockSignal": true,
+        "minimalResponseMatch": false,
+        "restrictedPathCount": 1
+      }
+    },
+    "governedContextProfile": { "advisoryOnly": true, "...": "..." },
+    "continuityDelegation": { "delegationAllowed": false, "...": "..." },
+    "scopedKnowledgeProvider": { "policyAuthority": false, "...": "..." },
+
     // Pipeline stage outputs
     "intake": { "valid": true, "issues": [], "normalizedProfile": {...} },
     "semanticPolicy": { "valid": true, "unknownItems": [], "classMismatches": [] } | null,
@@ -222,7 +246,12 @@ Same shape as `POST /prepare` — submit the full governance profile, not a pre-
     "riskLevel": "R1",
     "registryRefs": ["cvf://registry/w7/..."],
     "assetName": "skill.md",
-    "assetVersion": "1.0.0"
+    "assetVersion": "1.0.0",
+    "governedCapability": { "...": "server-derived CVF ADD capability metadata" },
+    "boundaryFirstGovernance": { "...": "server-derived boundary metadata" },
+    "governedContextProfile": { "advisoryOnly": true, "...": "..." },
+    "continuityDelegation": { "delegationAllowed": false, "...": "..." },
+    "scopedKnowledgeProvider": { "policyAuthority": false, "...": "..." }
   }
 }
 ```
@@ -286,6 +315,9 @@ List, filter, or fetch a single governed registry entry.
 | `?status=` | `active` \| `retired` | Filter by lifecycle status |
 | `?source_ref=` | URL-encoded string | Filter by source ref |
 | `?candidate_asset_type=` | string | Filter by asset type |
+| `?capability_class=` | string | Filter by CVF ADD governed capability class |
+| `?boundary_policy_class=` | string | Filter by CVF ADD boundary policy class |
+| `?policy_authority=` | `true` \| `false` | Filter by scoped knowledge provider policy-authority flag |
 
 ```jsonc
 // ?status=active
@@ -293,6 +325,9 @@ List, filter, or fetch a single governed registry entry.
 
 // ?status=retired&candidate_asset_type=W7SkillAsset
 { "success": true, "count": 0, "entries": [] }
+
+// ?capability_class=skill&boundary_policy_class=restricted_execution_path&policy_authority=false
+{ "success": true, "count": 1, "entries": [ { "scopedKnowledgeProvider": { "policyAuthority": false }, ... } ] }
 ```
 
 ---
@@ -339,7 +374,7 @@ The operator-facing page is available at `/governance/external-assets` in the cv
 
 Tabs:
 - **Prepare Asset** — submit a profile, view `workflowStatus` badge + closure guidance, register if ready
-- **Registry** — list all registered governed assets with audit metadata
+- **Registry** — list all registered governed assets with audit metadata and CVF ADD runtime readout
 
 ---
 

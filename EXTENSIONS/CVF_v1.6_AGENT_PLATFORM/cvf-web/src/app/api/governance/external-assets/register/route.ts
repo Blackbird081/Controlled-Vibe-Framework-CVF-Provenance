@@ -30,6 +30,9 @@ import {
  *   ?status=active|retired
  *   ?source_ref=<str>
  *   ?candidate_asset_type=<str>
+ *   ?capability_class=skill|tool|...
+ *   ?boundary_policy_class=restricted_execution_path|hard_prohibition|...
+ *   ?policy_authority=true|false
  */
 
 function checkServiceToken(request: NextRequest): boolean {
@@ -103,6 +106,11 @@ export async function POST(request: NextRequest) {
             governanceOwner: governedAsset?.governance.owner ?? 'cvf-operator',
             riskLevel: governedAsset?.risk_level ?? 'R1',
             registryRefs: governedAsset?.registry_refs ?? [],
+            governedCapability: result.governedCapability,
+            boundaryFirstGovernance: result.boundaryFirstGovernance,
+            governedContextProfile: result.governedContextProfile,
+            continuityDelegation: result.continuityDelegation,
+            scopedKnowledgeProvider: result.scopedKnowledgeProvider,
         });
 
         return NextResponse.json({ success: true, entry });
@@ -144,7 +152,16 @@ export async function GET(request: NextRequest) {
         const statusParam = searchParams.get('status');
         const sourceRefParam = searchParams.get('source_ref');
         const candidateAssetTypeParam = searchParams.get('candidate_asset_type');
-        const hasFilter = statusParam || sourceRefParam || candidateAssetTypeParam;
+        const capabilityClassParam = searchParams.get('capability_class');
+        const boundaryPolicyClassParam = searchParams.get('boundary_policy_class');
+        const policyAuthorityParam = searchParams.get('policy_authority');
+        const hasFilter =
+            statusParam ||
+            sourceRefParam ||
+            candidateAssetTypeParam ||
+            capabilityClassParam ||
+            boundaryPolicyClassParam ||
+            policyAuthorityParam;
 
         if (hasFilter) {
             const filter: Parameters<typeof filterRegistryEntries>[0] = {};
@@ -153,6 +170,10 @@ export async function GET(request: NextRequest) {
             }
             if (sourceRefParam) filter.source_ref = sourceRefParam;
             if (candidateAssetTypeParam) filter.candidate_asset_type = candidateAssetTypeParam;
+            if (capabilityClassParam) filter.capability_class = capabilityClassParam;
+            if (boundaryPolicyClassParam) filter.boundary_policy_class = boundaryPolicyClassParam;
+            if (policyAuthorityParam === 'true') filter.policy_authority = true;
+            if (policyAuthorityParam === 'false') filter.policy_authority = false;
             const entries = filterRegistryEntries(filter);
             return NextResponse.json({ success: true, entries, count: entries.length });
         }

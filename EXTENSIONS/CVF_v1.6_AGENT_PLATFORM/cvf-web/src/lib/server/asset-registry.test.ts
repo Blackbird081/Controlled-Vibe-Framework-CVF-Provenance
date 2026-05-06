@@ -89,6 +89,71 @@ const RETIREMENT_RECORD = {
     retiredAt: '2026-04-13T11:00:00.000Z',
 };
 
+const CVF_ADD_METADATA = {
+    governedCapability: {
+        capabilityId: 'cap-cvf-adding-new-skill-md-convert-shell-skill-into-governed-cvf-asset',
+        capabilityName: 'Convert shell skill into governed CVF asset',
+        sourceProvenance: 'CVF_ADDING_NEW/skill.md',
+        sourceClass: 'document_bundle' as const,
+        capabilityClass: 'skill' as const,
+        riskClass: 'R1' as const,
+        ownerSurface: 'cvf-architecture',
+        allowedOperations: ['record provenance'],
+        blockedOperations: ['execute without approved runtime adapter'],
+        sandboxTier: 'read_only' as const,
+        policyBinding: 'CVF_GOVERNED_CAPABILITY_INTAKE_DOCTRINE_2026-05-07',
+        evidenceRequirement: 'unit' as const,
+        freshnessStatus: 'unknown' as const,
+        evaluationStatus: 'proposed' as const,
+        retirementCondition: 'Reassess when source, owner, policy, or runtime behavior changes.',
+    },
+    boundaryFirstGovernance: {
+        policyClass: 'restricted_execution_path' as const,
+        agentBehavior: 'follow_restricted_path' as const,
+        operatorDecisionRequired: false,
+        reasons: ['External capability may proceed only through governed asset intake path.'],
+        candidateW7Signals: {
+            pathLockSignal: true,
+            minimalResponseMatch: false,
+            restrictedPathCount: 1,
+        },
+    },
+    governedContextProfile: {
+        taskContextType: 'external_asset_governance_prepare',
+        capabilityNeed: 'skill',
+        skillMatch: 'high' as const,
+        contextBudget: 'compact' as const,
+        freshnessRequirement: 'unknown' as const,
+        reuseCandidate: true,
+        reinjectionPolicy: 'artifact_pointer' as const,
+        handoffNeed: 'closure' as const,
+        evidenceSensitivity: 'medium' as const,
+        ownerSurfaceHint: 'cvf-architecture',
+        advisoryOnly: true as const,
+    },
+    continuityDelegation: {
+        phase: 'closure' as const,
+        checkpointRequired: true,
+        handoffUpdateRequired: true,
+        delegationAllowed: false,
+        delegationAuthority: 'none' as const,
+        artifactRefs: ['docs/reference/CVF_GOVERNED_CAPABILITY_INTAKE_DOCTRINE_2026-05-07.md'],
+        blockedDelegationReasons: ['External capability intake does not grant worker/runtime authority by itself.'],
+        nextOwnerSurface: 'cvf-architecture',
+    },
+    scopedKnowledgeProvider: {
+        providerId: 'source:CVF_ADDING_NEW/skill.md',
+        sourcePath: 'CVF_ADDING_NEW/skill.md',
+        sourceClass: 'example' as const,
+        freshness: 'unknown' as const,
+        confidence: 'medium' as const,
+        scopeBoundary: 'External asset intake context only; no policy authority.',
+        retrievalReason: 'Convert shell skill into governed CVF asset',
+        ownerSurface: 'knowledge-layer',
+        policyAuthority: false as const,
+    },
+};
+
 describe('asset-registry', () => {
     beforeEach(() => {
         vi.clearAllMocks();
@@ -286,6 +351,33 @@ describe('asset-registry', () => {
 
             expect(entry.lifecycleStatus).toBe('active');
         });
+
+        it('persists CVF ADD runtime metadata on registry entries', () => {
+            existsSyncMock.mockReturnValue(true);
+            let appendedLine = '';
+            appendFileSyncMock.mockImplementation((_file: string, content: string) => {
+                appendedLine = content;
+            });
+
+            const entry = registerAsset({
+                source_ref: 'CVF_ADDING_NEW/skill.md',
+                candidate_asset_type: 'W7SkillAsset',
+                description_or_trigger: 'test',
+                approvalState: 'approved',
+                governanceOwner: 'cvf-operator',
+                riskLevel: 'R1',
+                ...CVF_ADD_METADATA,
+            });
+
+            const parsed = JSON.parse(appendedLine.trim());
+            expect(entry.governedCapability?.policyBinding).toBe(
+                'CVF_GOVERNED_CAPABILITY_INTAKE_DOCTRINE_2026-05-07',
+            );
+            expect(parsed.boundaryFirstGovernance.candidateW7Signals.pathLockSignal).toBe(true);
+            expect(parsed.governedContextProfile.advisoryOnly).toBe(true);
+            expect(parsed.continuityDelegation.delegationAllowed).toBe(false);
+            expect(parsed.scopedKnowledgeProvider.policyAuthority).toBe(false);
+        });
     });
 
     // W69-T1 lifecycle tests
@@ -402,10 +494,25 @@ describe('asset-registry', () => {
             // VALID_ENTRY: active, CVF_ADDING_NEW/skill.md, W7SkillAsset
             // VALID_ENTRY_2: active, CVF_TOOLS/tool.md, W7ToolAsset
             // RETIREMENT_RECORD retires entry-001 → entry-001 becomes retired
+            const entryWithMetadata = { ...VALID_ENTRY, ...CVF_ADD_METADATA };
+            const toolEntryWithMetadata = {
+                ...VALID_ENTRY_2,
+                governedCapability: {
+                    ...CVF_ADD_METADATA.governedCapability,
+                    capabilityClass: 'tool' as const,
+                },
+                boundaryFirstGovernance: {
+                    ...CVF_ADD_METADATA.boundaryFirstGovernance,
+                    policyClass: 'hard_prohibition' as const,
+                },
+                governedContextProfile: CVF_ADD_METADATA.governedContextProfile,
+                continuityDelegation: CVF_ADD_METADATA.continuityDelegation,
+                scopedKnowledgeProvider: CVF_ADD_METADATA.scopedKnowledgeProvider,
+            };
             readFileSyncMock.mockReturnValue(
-                JSON.stringify(VALID_ENTRY) +
+                JSON.stringify(entryWithMetadata) +
                     '\n' +
-                    JSON.stringify(VALID_ENTRY_2) +
+                    JSON.stringify(toolEntryWithMetadata) +
                     '\n' +
                     JSON.stringify(RETIREMENT_RECORD) +
                     '\n',
@@ -449,6 +556,24 @@ describe('asset-registry', () => {
                 candidate_asset_type: 'W7SkillAsset',
             });
             expect(result).toHaveLength(0);
+        });
+
+        it('filters by governed capability class', () => {
+            const result = filterRegistryEntries({ capability_class: 'tool' });
+            expect(result).toHaveLength(1);
+            expect(result[0].id).toBe('entry-002');
+        });
+
+        it('filters by boundary policy class', () => {
+            const result = filterRegistryEntries({ boundary_policy_class: 'restricted_execution_path' });
+            expect(result).toHaveLength(1);
+            expect(result[0].id).toBe('entry-001');
+        });
+
+        it('filters by scoped knowledge provider policy authority', () => {
+            const result = filterRegistryEntries({ policy_authority: false });
+            expect(result).toHaveLength(2);
+            expect(result.every((entry) => entry.scopedKnowledgeProvider?.policyAuthority === false)).toBe(true);
         });
 
         it('returns empty array when registry file does not exist', () => {

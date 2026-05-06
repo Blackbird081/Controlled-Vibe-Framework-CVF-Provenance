@@ -44,10 +44,76 @@ const MOCK_GOVERNED_ASSET = {
     registry_refs: ['cvf://registry/w7/test'],
 };
 
+const MOCK_CVF_ADD_METADATA = {
+    governedCapability: {
+        capabilityId: 'cap-cvf-adding-new-skill-md-convert-shell-skill-into-governed-cvf-asset',
+        capabilityName: 'Convert shell skill into governed CVF asset',
+        sourceProvenance: 'CVF_ADDING_NEW/skill.md',
+        sourceClass: 'document_bundle',
+        capabilityClass: 'skill',
+        riskClass: 'R1',
+        ownerSurface: 'cvf-architecture',
+        allowedOperations: ['record provenance'],
+        blockedOperations: ['execute without approved runtime adapter'],
+        sandboxTier: 'read_only',
+        policyBinding: 'CVF_GOVERNED_CAPABILITY_INTAKE_DOCTRINE_2026-05-07',
+        evidenceRequirement: 'unit',
+        freshnessStatus: 'unknown',
+        evaluationStatus: 'proposed',
+        retirementCondition: 'Reassess when source, owner, policy, or runtime behavior changes.',
+    },
+    boundaryFirstGovernance: {
+        policyClass: 'restricted_execution_path',
+        agentBehavior: 'follow_restricted_path',
+        operatorDecisionRequired: false,
+        reasons: ['External capability may proceed only through governed asset intake path.'],
+        candidateW7Signals: {
+            pathLockSignal: true,
+            minimalResponseMatch: false,
+            restrictedPathCount: 1,
+        },
+    },
+    governedContextProfile: {
+        taskContextType: 'external_asset_governance_prepare',
+        capabilityNeed: 'skill',
+        skillMatch: 'high',
+        contextBudget: 'compact',
+        freshnessRequirement: 'unknown',
+        reuseCandidate: true,
+        reinjectionPolicy: 'artifact_pointer',
+        handoffNeed: 'closure',
+        evidenceSensitivity: 'medium',
+        ownerSurfaceHint: 'cvf-architecture',
+        advisoryOnly: true,
+    },
+    continuityDelegation: {
+        phase: 'closure',
+        checkpointRequired: true,
+        handoffUpdateRequired: true,
+        delegationAllowed: false,
+        delegationAuthority: 'none',
+        artifactRefs: ['docs/reference/CVF_GOVERNED_CAPABILITY_INTAKE_DOCTRINE_2026-05-07.md'],
+        blockedDelegationReasons: ['External capability intake does not grant worker/runtime authority by itself.'],
+        nextOwnerSurface: 'cvf-architecture',
+    },
+    scopedKnowledgeProvider: {
+        providerId: 'source:CVF_ADDING_NEW/skill.md',
+        sourcePath: 'CVF_ADDING_NEW/skill.md',
+        sourceClass: 'example',
+        freshness: 'unknown',
+        confidence: 'medium',
+        scopeBoundary: 'External asset intake context only; no policy authority.',
+        retrievalReason: 'Convert shell skill into governed CVF asset',
+        ownerSurface: 'knowledge-layer',
+        policyAuthority: false,
+    },
+};
+
 const MOCK_REGISTRY_READY_RESULT = {
     workflowStatus: 'registry_ready' as const,
     readyForRegistry: true,
     warnings: [],
+    ...MOCK_CVF_ADD_METADATA,
     intake: {
         valid: true,
         issues: [],
@@ -79,6 +145,7 @@ const MOCK_ENTRY = {
     lifecycleStatus: 'active' as const,
     assetName: 'skill.md',
     assetVersion: '1.0.0',
+    ...MOCK_CVF_ADD_METADATA,
 };
 
 const VALID_PROFILE_BODY = {
@@ -175,6 +242,15 @@ describe('/api/governance/external-assets/register', () => {
                 'W7SkillAsset',
             );
             expect(registerAssetMock).toHaveBeenCalledOnce();
+            expect(registerAssetMock).toHaveBeenCalledWith(
+                expect.objectContaining({
+                    governedCapability: MOCK_CVF_ADD_METADATA.governedCapability,
+                    boundaryFirstGovernance: MOCK_CVF_ADD_METADATA.boundaryFirstGovernance,
+                    governedContextProfile: MOCK_CVF_ADD_METADATA.governedContextProfile,
+                    continuityDelegation: MOCK_CVF_ADD_METADATA.continuityDelegation,
+                    scopedKnowledgeProvider: MOCK_CVF_ADD_METADATA.scopedKnowledgeProvider,
+                }),
+            );
         });
 
         it('returns 409 when same source_ref + candidate_asset_type already registered (CP1 duplicate gate)', async () => {
@@ -403,6 +479,26 @@ describe('/api/governance/external-assets/register', () => {
             expect(filterRegistryEntriesMock).toHaveBeenCalledWith({
                 status: 'retired',
                 candidate_asset_type: 'W7SkillAsset',
+            });
+        });
+
+        it('uses RT8 metadata filters when capability and boundary params are present', async () => {
+            filterRegistryEntriesMock.mockReturnValue([MOCK_ENTRY]);
+
+            const req = new Request(
+                'http://localhost/api/governance/external-assets/register?capability_class=skill&boundary_policy_class=restricted_execution_path&policy_authority=false',
+                { method: 'GET' },
+            );
+
+            const res = await GET(req as never);
+            const data = await res.json();
+
+            expect(res.status).toBe(200);
+            expect(data.count).toBe(1);
+            expect(filterRegistryEntriesMock).toHaveBeenCalledWith({
+                capability_class: 'skill',
+                boundary_policy_class: 'restricted_execution_path',
+                policy_authority: false,
             });
         });
 

@@ -23,6 +23,13 @@
 import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
+import type {
+    AgentContinuityDelegationRecord,
+    BoundaryFirstGovernanceRecord,
+    GovernedCapabilityRecord,
+    GovernedContextProfileMetadata,
+    ScopedKnowledgeProviderBoundary,
+} from '@/lib/cvf-add-runtime-doctrine';
 
 const REGISTRY_DIR = path.join(process.cwd(), 'data');
 const REGISTRY_FILE = path.join(REGISTRY_DIR, 'governed-asset-registry.jsonl');
@@ -44,6 +51,11 @@ export interface AssetRegistryEntry {
     retiredAt?: string;
     assetName: string;
     assetVersion: string;
+    governedCapability?: GovernedCapabilityRecord;
+    boundaryFirstGovernance?: BoundaryFirstGovernanceRecord;
+    governedContextProfile?: GovernedContextProfileMetadata;
+    continuityDelegation?: AgentContinuityDelegationRecord;
+    scopedKnowledgeProvider?: ScopedKnowledgeProviderBoundary;
 }
 
 export interface RegisterAssetInput {
@@ -56,12 +68,20 @@ export interface RegisterAssetInput {
     registryRefs?: string[];
     assetName?: string;
     assetVersion?: string;
+    governedCapability?: GovernedCapabilityRecord;
+    boundaryFirstGovernance?: BoundaryFirstGovernanceRecord;
+    governedContextProfile?: GovernedContextProfileMetadata;
+    continuityDelegation?: AgentContinuityDelegationRecord;
+    scopedKnowledgeProvider?: ScopedKnowledgeProviderBoundary;
 }
 
 export interface RegistryFilter {
     status?: 'active' | 'retired';
     source_ref?: string;
     candidate_asset_type?: string;
+    capability_class?: string;
+    boundary_policy_class?: string;
+    policy_authority?: boolean;
 }
 
 /** Internal type for retirement events written into the JSONL file. */
@@ -147,6 +167,11 @@ export function registerAsset(input: RegisterAssetInput): AssetRegistryEntry {
         lifecycleStatus: 'active',
         assetName: input.assetName ?? input.source_ref.split('/').pop() ?? input.source_ref,
         assetVersion: input.assetVersion ?? '1.0.0',
+        governedCapability: input.governedCapability,
+        boundaryFirstGovernance: input.boundaryFirstGovernance,
+        governedContextProfile: input.governedContextProfile,
+        continuityDelegation: input.continuityDelegation,
+        scopedKnowledgeProvider: input.scopedKnowledgeProvider,
     };
 
     fs.appendFileSync(REGISTRY_FILE, JSON.stringify(entry) + '\n', 'utf-8');
@@ -208,6 +233,21 @@ export function filterRegistryEntries(filter: RegistryFilter): AssetRegistryEntr
     }
     if (filter.candidate_asset_type !== undefined) {
         entries = entries.filter((e) => e.candidate_asset_type === filter.candidate_asset_type);
+    }
+    if (filter.capability_class !== undefined) {
+        entries = entries.filter(
+            (e) => e.governedCapability?.capabilityClass === filter.capability_class,
+        );
+    }
+    if (filter.boundary_policy_class !== undefined) {
+        entries = entries.filter(
+            (e) => e.boundaryFirstGovernance?.policyClass === filter.boundary_policy_class,
+        );
+    }
+    if (filter.policy_authority !== undefined) {
+        entries = entries.filter(
+            (e) => e.scopedKnowledgeProvider?.policyAuthority === filter.policy_authority,
+        );
     }
     return entries;
 }
