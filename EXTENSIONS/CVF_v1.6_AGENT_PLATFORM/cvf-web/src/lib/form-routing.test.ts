@@ -6,6 +6,7 @@
  * W144 — Added tests 36-47 for 6 marketing/product templates
  * W145 — Added tests 48-59 for 6 security templates
  * W146 — Added tests 60-75 for 8 product/marketing/technical/dev templates
+ * W147 — Added tests 76-89 for 7 final dev/product templates
  *
  * Tests:
  *   1.  routeToTrustedForm returns null for no-match input
@@ -83,6 +84,20 @@
  *   73. architecture_review activated by VN input
  *   74. app_requirements_spec activated by EN input
  *   75. app_requirements_spec activated by VN input
+ *   76. api_design activated by EN input
+ *   77. api_design activated by VN input
+ *   78. architecture_design activated by EN input
+ *   79. architecture_design activated by VN input
+ *   80. auto_documentation activated by EN input
+ *   81. auto_documentation activated by VN input
+ *   82. non_coder_debug activated by EN input
+ *   83. non_coder_debug activated by VN input
+ *   84. project_init_checklist activated by EN input
+ *   85. project_init_checklist activated by VN input
+ *   86. web_ux_redesign_system activated by EN input
+ *   87. web_ux_redesign_system activated by VN input
+ *   88. web_build_handoff activated by EN input
+ *   89. web_build_handoff activated by VN input
  */
 
 import { describe, it, expect } from 'vitest';
@@ -104,8 +119,8 @@ function withFlag(value: 'true' | 'false', fn: () => void) {
 }
 
 describe('form-routing — TRUSTED_FORM_MAP integrity', () => {
-  it('25. TRUSTED_FORM_MAP has exactly 33 entries', () => {
-    expect(Object.keys(TRUSTED_FORM_MAP)).toHaveLength(33);
+  it('25. TRUSTED_FORM_MAP has exactly 40 entries', () => {
+    expect(Object.keys(TRUSTED_FORM_MAP)).toHaveLength(40);
   });
 
   it('all entries have id, label, and at least one activationPattern', () => {
@@ -228,7 +243,7 @@ describe('form-routing — routeToTrustedForm does not fire when wizard should w
     //  form routing doesn't duplicate wizard activation)
     expect(routeToTrustedForm('I want to build a mobile app')).toBeNull();
     expect(routeToTrustedForm('create a marketing campaign for my brand')).toBeNull();
-    expect(routeToTrustedForm('design a system architecture')).toBeNull();
+    expect(routeToTrustedForm('help me build a full business strategy')).toBeNull();
     expect(routeToTrustedForm('conduct a security assessment')).toBeNull();
   });
 });
@@ -611,6 +626,90 @@ describe('form-routing — routeIntent integration (W126 precedence)', () => {
     const match = routeToTrustedForm('viết spec yêu cầu ứng dụng quản lý nhân sự');
     expect(match).not.toBeNull();
     expect(match!.id).toBe('app_requirements_spec');
+  });
+
+  it('76. api_design — EN activation', () => {
+    const match = routeToTrustedForm('design an API for my inventory management system');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('api_design');
+  });
+
+  it('77. api_design — VN activation', () => {
+    const match = routeToTrustedForm('thiết kế API cho hệ thống quản lý đơn hàng');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('api_design');
+  });
+
+  it('78. architecture_design — EN activation', () => {
+    const match = routeToTrustedForm('design the system architecture for a SaaS platform');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('architecture_design');
+  });
+
+  it('79. architecture_design — VN activation', () => {
+    const match = routeToTrustedForm('thiết kế kiến trúc hệ thống cho ứng dụng web');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('architecture_design');
+  });
+
+  it('80. auto_documentation — EN activation', () => {
+    const match = routeToTrustedForm('generate a user guide for my app');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('auto_documentation');
+  });
+
+  it('81. auto_documentation — VN activation', () => {
+    const match = routeToTrustedForm('tạo user guide tự động cho ứng dụng quản lý kho');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('auto_documentation');
+  });
+
+  it('82. non_coder_debug — EN activation', () => {
+    const match = routeToTrustedForm('debug my app — it keeps crashing on the checkout page');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('non_coder_debug');
+  });
+
+  it('83. non_coder_debug — VN activation', () => {
+    const match = routeToTrustedForm('app bị lỗi không biết sửa, hiện màn hình trắng');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('non_coder_debug');
+  });
+
+  it('84. project_init_checklist — EN activation', () => {
+    const match = routeToTrustedForm('run the project init checklist before starting');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('project_init_checklist');
+  });
+
+  it('85. project_init_checklist — VN activation', () => {
+    const match = routeToTrustedForm('checklist khởi tạo dự án mới theo CVF');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('project_init_checklist');
+  });
+
+  it('86. web_ux_redesign_system — EN activation', () => {
+    const match = routeToTrustedForm('do a UX redesign for my website dashboard');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('web_ux_redesign_system');
+  });
+
+  it('87. web_ux_redesign_system — VN activation', () => {
+    const match = routeToTrustedForm('redesign UX website quản lý vận hành nội bộ');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('web_ux_redesign_system');
+  });
+
+  it('88. web_build_handoff — EN activation', () => {
+    const match = routeToTrustedForm('create a web build handoff packet for the agent');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('web_build_handoff');
+  });
+
+  it('89. web_build_handoff — VN activation', () => {
+    const match = routeToTrustedForm('tạo packet bàn giao web để agent xây website');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('web_build_handoff');
   });
 });
 
