@@ -10,8 +10,8 @@
  *   5. Empty input → weak confidence + empty_input fallback
  *   6. Non-VN/EN input → weak confidence + unsupported_language fallback
  *   7. Low-confidence vague input → weak_confidence fallback path
- *   8. starterKey must exist in STARTER_TEMPLATE_MAP
- *   9. recommendedTemplateId must be a wizard id (ends with _wizard)
+ *   8. strong routes preserve route-type target contract
+ *   9. wizard route recommendedTemplateId must be a wizard id
  *  10. isIntentFirstEnabled() reflects flag value
  *  11. routeIntent output has intentRoutedAt ISO timestamp
  *  12. Bilingual: same concept in VN and EN routes to same starterKey family
@@ -126,7 +126,7 @@ describe('intent-router', () => {
     });
   });
 
-  it('8. starterKey is always in STARTER_TEMPLATE_MAP', () => {
+  it('8. strong routes preserve route-type target contract', () => {
     withFlag('true', () => {
       const inputs = [
         'Tôi muốn xây dựng chiến lược kinh doanh',
@@ -136,12 +136,22 @@ describe('intent-router', () => {
       ];
       for (const input of inputs) {
         const result = routeIntent(input);
-        expect(STARTER_TEMPLATE_MAP_KEYS).toContain(result!.starterKey);
+        expect(result!.confidence).toBe('strong');
+
+        if (result!.routeType === 'wizard') {
+          expect(STARTER_TEMPLATE_MAP_KEYS).toContain(result!.starterKey);
+          expect(result!.recommendedTemplateId).toMatch(/_wizard$/);
+        } else {
+          expect(result!.routeType).toBe('form');
+          expect(result!.starterKey).toBeNull();
+          expect(result!.recommendedTemplateId).not.toBeNull();
+          expect(result!.recommendedTemplateLabel).not.toBeNull();
+        }
       }
     });
   });
 
-  it('9. recommendedTemplateId always ends with _wizard', () => {
+  it('9. wizard route recommendedTemplateId always ends with _wizard', () => {
     withFlag('true', () => {
       const inputs = [
         'Tôi muốn tạo app',
