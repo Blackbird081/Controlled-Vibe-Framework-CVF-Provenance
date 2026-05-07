@@ -1,0 +1,92 @@
+{
+  "capturedAt": "2026-05-07T17:12:19.250Z",
+  "tranche": "W139-T1 Direct API Matrix Diagnostic",
+  "status": "complete",
+  "provider": "deepseek",
+  "model": "deepseek-chat",
+  "attempted": 6,
+  "accepted": 6,
+  "diagnostics": {
+    "accepted": 6
+  },
+  "records": [
+    {
+      "formType": "documentation",
+      "templateId": "documentation",
+      "httpStatus": 200,
+      "success": true,
+      "receiptPresent": true,
+      "receiptDecision": "ALLOW",
+      "outputValidationIssues": [],
+      "retryAttempts": 0,
+      "elapsedMs": 20463,
+      "diagnostic": "accepted",
+      "error": null
+    },
+    {
+      "formType": "email_template",
+      "templateId": "email_template",
+      "httpStatus": 200,
+      "success": true,
+      "receiptPresent": true,
+      "receiptDecision": "ALLOW",
+      "outputValidationIssues": [],
+      "retryAttempts": 0,
+      "elapsedMs": 12346,
+      "diagnostic": "accepted",
+      "error": null
+    },
+    {
+      "formType": "risk_assessment",
+      "templateId": "risk_assessment",
+      "httpStatus": 200,
+      "success": true,
+      "receiptPresent": true,
+      "receiptDecision": "ALLOW",
+      "outputValidationIssues": [],
+      "retryAttempts": 0,
+      "elapsedMs": 21326,
+      "diagnostic": "accepted",
+      "error": null
+    },
+    {
+      "formType": "competitor_review",
+      "templateId": "competitor_review",
+      "httpStatus": 200,
+      "success": true,
+      "receiptPresent": true,
+      "receiptDecision": "ALLOW",
+      "outputValidationIssues": [],
+      "retryAttempts": 0,
+      "elapsedMs": 26390,
+      "diagnostic": "accepted",
+      "error": null
+    },
+    {
+      "formType": "user_persona",
+      "templateId": "user_persona",
+      "httpStatus": 200,
+      "success": true,
+      "receiptPresent": true,
+      "receiptDecision": "ALLOW",
+      "outputValidationIssues": [],
+      "retryAttempts": 0,
+      "elapsedMs": 29587,
+      "diagnostic": "accepted",
+      "error": null
+    },
+    {
+      "formType": "strategy_analysis",
+      "templateId": "strategy_analysis",
+      "httpStatus": 200,
+      "success": true,
+      "receiptPresent": true,
+      "receiptDecision": "ALLOW",
+      "outputValidationIssues": [],
+      "retryAttempts": 0,
+      "elapsedMs": 29130,
+      "diagnostic": "accepted",
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "capturedAt": "2026-05-07T17:09:41.419Z",
+  "tranche": "W139-T1 Direct API Matrix Diagnostic",
+  "status": "complete",
+  "provider": "alibaba",
+  "model": "qwen-plus",
+  "attempted": 12,
+  "accepted": 12,
+  "diagnostics": {
+    "accepted": 12
+  },
+  "records": [
+    {
+      "formType": "documentation",
+      "templateId": "documentation",
+      "httpStatus": 200,
+      "success": true,
+      "receiptPresent": true,
+      "receiptDecision": "ALLOW",
+      "outputValidationIssues": [],
+      "retryAttempts": 0,
+      "elapsedMs": 22839,
+      "diagnostic": "accepted",
+      "error": null
+    },
+    {
+      "formType": "email_template",
+      "templateId": "email_template",
+      "httpStatus": 200,
+      "success": true,
+      "receiptPresent": true,
+      "receiptDecision": "ALLOW",
+      "outputValidationIssues": [],
+      "retryAttempts": 0,
+      "elapsedMs": 9163,
+      "diagnostic": "accepted",
+      "error": null
+    },
+    {
+      "formType": "risk_assessment",
+      "templateId": "risk_assessment",
+      "httpStatus": 200,
+      "success": true,
+      "receiptPresent": true,
+      "receiptDecision": "ALLOW",
+      "outputValidationIssues": [
+        "INTENT_MISMATCH"
+      ],
+      "retryAttempts": 0,
+      "elapsedMs": 13988,
+      "diagnostic": "accepted",
+      "error": null
+    },
+    {
+      "formType": "competitor_review",
+      "templateId": "competitor_review",
+      "httpStatus": 200,
+      "success": true,
+      "receiptPresent": true,
+      "receiptDecision": "ALLOW",
+      "outputValidationIssues": [],
+      "retryAttempts": 0,
+      "elapsedMs": 21691,
+      "diagnostic": "accepted",
+      "error": null
+    },
+    {
+      "formType": "user_persona",
+      "templateId": "user_persona",
+      "httpStatus": 200,
+      "success": true,
+      "receiptPresent": true,
+      "receiptDecision": "ALLOW",
+      "outputValidationIssues": [],
+      "retryAttempts": 0,
+      "elapsedMs": 26612,
+      "diagnostic": "accepted",
+      "error": null
+    },
+    {
+      "formType": "strategy_analysis",
+      "templateId": "strategy_analysis",
+      "httpStatus": 200,
+      "success": true,
+      "receiptPresent": true,
+      "receiptDecision": "ALLOW",
+      "outputValidationIssues": [],
+      "retryAttempts": 0,
+      "elapsedMs": 35883,
+      "diagnostic": "accepted",
+      "error": null
+    },
+    {
+      "formType": "feature_prioritization",
+      "templateId": "feature_prioritization",
+      "httpStatus": 200,
+      "success": true,
+      "receiptPresent": true,
+      "receiptDecision": "ALLOW",
+      "outputValidationIssues": [
+        "INTENT_MISMATCH"
+      ],
+      "retryAttempts": 0,
+      "elapsedMs": 11678,
+      "diagnostic": "accepted",
+      "error": null
+    },
+    {
+      "formType": "pricing_strategy",
+      "templateId": "pricing_strategy",
+      "httpStatus": 200,
+      "success": true,
+      "receiptPresent": true,
+      "receiptDecision": "ALLOW",
+      "outputValidationIssues": [],
+      "retryAttempts": 0,
+      "elapsedMs": 30625,
+      "diagnostic": "accepted",
+      "error": null
+    },
+    {
+      "formType": "documentation",
+      "templateId": "documentation",
+      "httpStatus": 200,
+      "success": true,
+      "receiptPresent": true,
+      "receiptDecision": "ALLOW",
+      "outputValidationIssues": [],
+      "retryAttempts": 0,
+      "elapsedMs": 19946,
+      "diagnostic": "accepted",
+      "error": null
+    },
+    {
+      "formType": "email_template",
+      "templateId": "email_template",
+      "httpStatus": 200,
+      "success": true,
+      "receiptPresent": true,
+      "receiptDecision": "ALLOW",
+      "outputValidationIssues": [],
+      "retryAttempts": 0,
+      "elapsedMs": 8035,
+      "diagnostic": "accepted",
+      "error": null
+    },
+    {
+      "formType": "risk_assessment",
+      "templateId": "risk_assessment",
+      "httpStatus": 200,
+      "success": true,
+      "receiptPresent": true,
+      "receiptDecision": "ALLOW",
+      "outputValidationIssues": [
+        "INTENT_MISMATCH"
+      ],
+      "retryAttempts": 0,
+      "elapsedMs": 18020,
+      "diagnostic": "accepted",
+      "error": null
+    },
+    {
+      "formType": "strategy_analysis",
+      "templateId": "strategy_analysis",
+      "httpStatus": 200,
+      "success": true,
+      "receiptPresent": true,
+      "receiptDecision": "ALLOW",
+      "outputValidationIssues": [],
+      "retryAttempts": 0,
+      "elapsedMs": 34803,
+      "diagnostic": "accepted",
+      "error": null
+    }
+  ]
+}
