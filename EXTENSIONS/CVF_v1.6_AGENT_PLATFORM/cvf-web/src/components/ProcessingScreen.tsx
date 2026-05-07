@@ -59,6 +59,21 @@ function mapSettingsProviderToExecutionProvider(provider?: string): ExecutionReq
     return provider as ExecutionRequest['provider'];
 }
 
+function resolveTemplateGuardAction(overrides?: ProcessingExecutionOverrides): string {
+    const phase = overrides?.cvfPhase?.trim().toUpperCase();
+    const hasBuildPreflight =
+        Boolean(overrides?.skillPreflightDeclaration) ||
+        Boolean(overrides?.skillPreflightRecordRef) ||
+        Boolean(overrides?.skillIds?.length) ||
+        Boolean(overrides?.fileScope?.length);
+
+    if (phase === 'BUILD' || phase === 'PHASE C' || phase === 'C' || hasBuildPreflight) {
+        return 'build template execution request';
+    }
+
+    return 'analyze template execution request';
+}
+
 export function ProcessingScreen({
     templateName,
     templateId,
@@ -106,6 +121,7 @@ export function ProcessingScreen({
                 timestamp: Date.now(),
                 description: `UI execution for ${templateName}`,
             };
+            const action = resolveTemplateGuardAction(executionOverrides);
 
             const response = await fetch('/api/execute', {
                 method: 'POST',
@@ -116,6 +132,7 @@ export function ProcessingScreen({
                     inputs,
                     intent,
                     mode,
+                    action,
                     ...(executionProvider ? { provider: executionProvider } : {}),
                     ...(selectedModel ? { model: selectedModel } : {}),
                     ...executionOverrides,

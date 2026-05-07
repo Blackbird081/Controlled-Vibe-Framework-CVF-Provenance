@@ -69,6 +69,7 @@ describe('ProcessingScreen', () => {
 
     expect(body.templateId).toBe('app_builder_wizard');
     expect(body.mode).toBe('full');
+    expect(body.action).toBe('build template execution request');
     expect(body.cvfPhase).toBe('BUILD');
     expect(body.cvfRiskLevel).toBe('R2');
     expect(body.fileScope).toEqual(['apps/deskmate/README.md']);

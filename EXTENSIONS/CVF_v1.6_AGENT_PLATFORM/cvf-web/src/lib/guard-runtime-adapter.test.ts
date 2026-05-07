@@ -502,6 +502,19 @@ describe('buildWebGuardContext', () => {
     expect(c.action).toBe('build a website');
   });
 
+  test('allows W134 normalized template execution action for non-English trusted form intents', () => {
+    const engine = createWebGuardEngine();
+    const result = engine.evaluate(buildWebGuardContext({
+      phase: 'INTAKE',
+      role: 'HUMAN',
+      riskLevel: 'R0',
+      action: 'analyze template execution request',
+      intent: 'INTENT:\nTôi muốn soạn email giới thiệu dịch vụ tư vấn.',
+    }));
+
+    expect(result.finalDecision).toBe('ALLOW');
+  });
+
   test('preserves explicit requestId', () => {
     const c = buildWebGuardContext({ requestId: 'my-id-123' });
     expect(c.requestId).toBe('my-id-123');

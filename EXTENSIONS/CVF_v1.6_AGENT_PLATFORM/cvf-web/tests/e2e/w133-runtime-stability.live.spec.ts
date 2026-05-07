@@ -97,6 +97,7 @@ interface JourneyRecord {
   submitTimestampMs: number;
   elapsedMs: number;
   httpStatus: number | null;
+  responseBody: string | null;
   receiptPresent: boolean;
   detail?: string;
 }
@@ -336,10 +337,13 @@ async function runIsolatedJourney(
 ): Promise<JourneyRecord> {
   const submitTimestampMs = Date.now();
   let executeHttpStatus: number | null = null;
+  let executeResponseBody: string | null = null;
   let diagnosticSubcode: DiagnosticSubcode = null;
 
-  const onResponse = (res: { url(): string; status(): number }) => {
-    if (res.url().includes('/api/execute')) executeHttpStatus = res.status();
+  const onResponse = async (res: { url(): string; status(): number; text(): Promise<string> }) => {
+    if (!res.url().includes('/api/execute')) return;
+    executeHttpStatus = res.status();
+    executeResponseBody = await res.text().catch((err) => `<<body-read-failed:${String(err).slice(0, 120)}>>`);
   };
   page.on('response', onResponse);
 
@@ -366,6 +370,7 @@ async function runIsolatedJourney(
     diagnosticSubcode: subcode,
     elapsedMs: Date.now() - submitTimestampMs,
     httpStatus: executeHttpStatus,
+    responseBody: executeResponseBody,
     receiptPresent: false,
     detail,
   });
@@ -460,6 +465,7 @@ async function runIsolatedJourney(
         diagnosticSubcode: 'receipt_dropped',
         elapsedMs: Date.now() - submitTimestampMs,
         httpStatus: executeHttpStatus,
+        responseBody: executeResponseBody,
         receiptPresent: false,
         detail: 'ResultViewer visible but governance receipt absent',
       };
@@ -504,6 +510,7 @@ async function runIsolatedJourney(
       diagnosticSubcode,
       elapsedMs: Date.now() - submitTimestampMs,
       httpStatus: executeHttpStatus,
+      responseBody: executeResponseBody,
       receiptPresent: true,
     };
   } catch (err) {
@@ -563,6 +570,7 @@ test.describe('W133-T1 CP4 — Alibaba isolated-session stability run', () => {
             submitTimestampMs: Date.now(),
             elapsedMs: 0,
             httpStatus: null,
+            responseBody: null,
             receiptPresent: false,
             detail: String(err).slice(0, 200),
           });
@@ -670,6 +678,7 @@ test.describe('W133-T1 CP5 — DeepSeek isolated-session confirmatory run', () =
             submitTimestampMs: Date.now(),
             elapsedMs: 0,
             httpStatus: null,
+            responseBody: null,
             receiptPresent: false,
             detail: String(err).slice(0, 200),
           });

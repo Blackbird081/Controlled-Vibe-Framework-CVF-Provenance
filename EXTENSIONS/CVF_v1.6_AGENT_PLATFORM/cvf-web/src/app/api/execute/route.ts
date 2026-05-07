@@ -51,6 +51,9 @@ const OUTPUT_BYPASS_PATTERNS: RegExp[] = [
     /\ballow\w*\b.{0,60}\bskip\b.{0,50}\bcheck\b/i,
 ];
 
+const DEFAULT_ANALYZE_TEMPLATE_GUARD_ACTION = 'analyze template execution request';
+const DEFAULT_BUILD_TEMPLATE_GUARD_ACTION = 'build template execution request';
+
 function detectBypassInOutput(output: string): { detected: boolean; matchedPattern?: string } {
     for (const pattern of OUTPUT_BYPASS_PATTERNS) {
         const match = output.match(pattern);
@@ -78,6 +81,29 @@ function shouldRequireSkillPreflight(input: {
     return isBuildPhase(input.phase)
         || input.templateCategory === 'development'
         || isBuildLikeIntent(input.intent);
+}
+
+function resolveGuardAction(rawBody: Record<string, unknown>): string {
+    const explicitAction = rawBody.action;
+    if (typeof explicitAction === 'string' && explicitAction.trim()) {
+        return explicitAction.trim();
+    }
+
+    // W134: generated form intents are user content, not authority verbs.
+    // Using them as guard actions caused legitimate VN trusted forms to be
+    // blocked before AI execution by the English action allow-list.
+    const phase = typeof rawBody.cvfPhase === 'string' ? rawBody.cvfPhase.trim().toUpperCase() : '';
+    const hasBuildPreflight =
+        typeof rawBody.skillPreflightDeclaration === 'string' ||
+        typeof rawBody.skillPreflightRecordRef === 'string' ||
+        Array.isArray(rawBody.skillIds) ||
+        Array.isArray(rawBody.fileScope);
+
+    if (phase === 'BUILD' || phase === 'PHASE C' || phase === 'C' || hasBuildPreflight) {
+        return DEFAULT_BUILD_TEMPLATE_GUARD_ACTION;
+    }
+
+    return DEFAULT_ANALYZE_TEMPLATE_GUARD_ACTION;
 }
 
 function buildEvidenceReceipt(input: {
@@ -550,7 +576,7 @@ export async function POST(request: NextRequest) {
             riskLevel: body.cvfRiskLevel,
             role: isServiceAllowed ? 'OPERATOR' : 'HUMAN',
             userRole: isServiceAllowed ? 'admin' : session?.role,
-            action: (rawBody as Record<string, unknown>).action as string || undefined,
+            action: resolveGuardAction(rawBody as Record<string, unknown>),
             intent: body.intent,
             fileScope: (rawBody as Record<string, unknown>).fileScope as string[] | undefined,
             aiCommit: (rawBody as Record<string, unknown>).aiCommit as {
