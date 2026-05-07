@@ -139,6 +139,52 @@ export const TRUSTED_FORM_MAP: Record<string, TrustedFormEntry> = {
     ],
     wizardWinsWhen: 'user says "help me build a business strategy" (business-strategy wizard wins)',
   },
+  'meeting_notes': {
+    id: 'meeting_notes',
+    label: '📝 Meeting Notes',
+    activationPatterns: [
+      /\bmeeting notes?\b/i,
+      /\bminutes? of (the )?meeting\b/i,
+      /\btake (the )?minutes\b/i,
+      /\bsummarize (the )?meeting\b/i,
+      /biên bản họp/i,
+      /ghi chú họp/i,
+      /kết quả buổi họp/i,
+      /tóm tắt cuộc họp/i,
+    ],
+    wizardWinsWhen: 'user asks for a full project plan or workshop design (wizard wins)',
+  },
+  'job_description': {
+    id: 'job_description',
+    label: '💼 Job Description',
+    activationPatterns: [
+      /\bjob description\b/i,
+      /\bjob posting\b/i,
+      /\bwrite (a )?JD\b/i,
+      /\brecruit(ing)? for\b/i,
+      /\bhiring (a |an )?\w/i,
+      /mô tả công việc/i,
+      /tuyển dụng/i,
+      /đăng tuyển/i,
+      /viết JD/i,
+    ],
+    wizardWinsWhen: 'user asks for a full HR strategy or org design (wizard wins)',
+  },
+  'performance_review': {
+    id: 'performance_review',
+    label: '⭐ Performance Review',
+    activationPatterns: [
+      /\bperformance review\b/i,
+      /\bperformance evaluation\b/i,
+      /\bstaff review\b/i,
+      /\bemployee assessment\b/i,
+      /đánh giá hiệu suất/i,
+      /đánh giá nhân viên/i,
+      /nhận xét nhân viên/i,
+      /đánh giá kết quả công việc/i,
+    ],
+    wizardWinsWhen: 'user asks for full people management or 360 feedback design (wizard wins)',
+  },
 };
 
 /**

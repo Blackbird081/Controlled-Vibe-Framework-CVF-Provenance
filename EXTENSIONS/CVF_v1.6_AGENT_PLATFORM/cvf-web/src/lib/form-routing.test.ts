@@ -1,6 +1,7 @@
 /**
  * form-routing.test.ts
  * W126-T1 CP4 — Trusted form routing coverage evidence
+ * W142 — Added tests 26-31 for 3 new HR templates
  *
  * Tests:
  *   1.  routeToTrustedForm returns null for no-match input
@@ -27,7 +28,13 @@
  *   22. form route has strong confidence
  *   23. form route has starterKey null
  *   24. form route has non-null recommendedTemplateId and recommendedTemplateLabel
- *   25. TRUSTED_FORM_MAP has exactly 8 entries
+ *   25. TRUSTED_FORM_MAP has exactly 11 entries
+ *   26. meeting_notes activated by EN input
+ *   27. meeting_notes activated by VN input
+ *   28. job_description activated by EN input
+ *   29. job_description activated by VN input
+ *   30. performance_review activated by EN input
+ *   31. performance_review activated by VN input
  */
 
 import { describe, it, expect } from 'vitest';
@@ -49,8 +56,8 @@ function withFlag(value: 'true' | 'false', fn: () => void) {
 }
 
 describe('form-routing — TRUSTED_FORM_MAP integrity', () => {
-  it('25. TRUSTED_FORM_MAP has exactly 8 entries', () => {
-    expect(Object.keys(TRUSTED_FORM_MAP)).toHaveLength(8);
+  it('25. TRUSTED_FORM_MAP has exactly 11 entries', () => {
+    expect(Object.keys(TRUSTED_FORM_MAP)).toHaveLength(11);
   });
 
   it('all entries have id, label, and at least one activationPattern', () => {
@@ -256,6 +263,42 @@ describe('form-routing — routeIntent integration (W126 precedence)', () => {
         expect(result?.recommendedTemplateId, input).toBe(expectedTemplateId);
       }
     });
+  });
+
+  it('26. meeting_notes — EN activation', () => {
+    const match = routeToTrustedForm('take meeting notes for today');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('meeting_notes');
+  });
+
+  it('27. meeting_notes — VN activation', () => {
+    const match = routeToTrustedForm('tạo biên bản họp sprint review tuần này');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('meeting_notes');
+  });
+
+  it('28. job_description — EN activation', () => {
+    const match = routeToTrustedForm('write a job description for a senior developer');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('job_description');
+  });
+
+  it('29. job_description — VN activation', () => {
+    const match = routeToTrustedForm('viết mô tả công việc cho vị trí sales executive');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('job_description');
+  });
+
+  it('30. performance_review — EN activation', () => {
+    const match = routeToTrustedForm('write a performance review for my employee');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('performance_review');
+  });
+
+  it('31. performance_review — VN activation', () => {
+    const match = routeToTrustedForm('đánh giá hiệu suất nhân viên quý 2');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('performance_review');
   });
 });
 

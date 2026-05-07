@@ -7,6 +7,7 @@ import { marketingTemplates } from './marketing';
 import { productTemplates } from './product';
 import { securityTemplates } from './security';
 import { developmentTemplates } from './development';
+import { hrTemplates } from './hr';
 import { CVF_WEB_REDESIGN_DNA_APPENDIX, shouldAttachCvfWebRedesignDna } from '@/lib/cvf-web-redesign-dna';
 import { renderTemplateIntent, type TemplateIntentValue } from '@/lib/template-intent';
 
@@ -19,6 +20,7 @@ export const templates: Template[] = [
     ...productTemplates,
     ...securityTemplates,
     ...developmentTemplates,
+    ...hrTemplates,
 ];
 
 export function getTemplateById(id: string): Template | undefined {
