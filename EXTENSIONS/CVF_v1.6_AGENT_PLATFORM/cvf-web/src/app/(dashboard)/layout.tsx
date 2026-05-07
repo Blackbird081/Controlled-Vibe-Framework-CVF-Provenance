@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, Suspense } from 'react';
+import { useState, useEffect, startTransition, Suspense } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useAuth } from '@/lib/hooks/useAuth';
 import { useModals } from '@/lib/hooks/useModals';
@@ -92,8 +92,10 @@ function DashboardLayoutInner({ children }: { children: React.ReactNode }) {
     // full modal, not a stale minimised pill from a prior session.
     useEffect(() => {
         if (queryModal !== null) {
-            setActiveModal(queryModal);
-            setIsAgentMinimized(false);
+            startTransition(() => {
+                setActiveModal(queryModal);
+                setIsAgentMinimized(false);
+            });
         }
     }, [queryModal]);
 
