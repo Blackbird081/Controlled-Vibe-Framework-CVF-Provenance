@@ -4,6 +4,7 @@
  * W142 — Added tests 26-31 for 3 new HR templates
  * W143 — Added tests 32-35 for seo_audit and data_analysis
  * W144 — Added tests 36-47 for 6 marketing/product templates
+ * W145 — Added tests 48-59 for 6 security templates
  *
  * Tests:
  *   1.  routeToTrustedForm returns null for no-match input
@@ -53,6 +54,18 @@
  *   45. onboarding_review activated by VN input
  *   46. accessibility_audit activated by EN input
  *   47. accessibility_audit activated by VN input
+ *   48. api_security activated by EN input
+ *   49. api_security activated by VN input
+ *   50. gdpr_compliance activated by EN input
+ *   51. gdpr_compliance activated by VN input
+ *   52. privacy_policy_audit activated by EN input
+ *   53. privacy_policy_audit activated by VN input
+ *   54. incident_response activated by EN input
+ *   55. incident_response activated by VN input
+ *   56. data_handling activated by EN input
+ *   57. data_handling activated by VN input
+ *   58. tos_review activated by EN input
+ *   59. tos_review activated by VN input
  */
 
 import { describe, it, expect } from 'vitest';
@@ -74,8 +87,8 @@ function withFlag(value: 'true' | 'false', fn: () => void) {
 }
 
 describe('form-routing — TRUSTED_FORM_MAP integrity', () => {
-  it('25. TRUSTED_FORM_MAP has exactly 19 entries', () => {
-    expect(Object.keys(TRUSTED_FORM_MAP)).toHaveLength(19);
+  it('25. TRUSTED_FORM_MAP has exactly 25 entries', () => {
+    expect(Object.keys(TRUSTED_FORM_MAP)).toHaveLength(25);
   });
 
   it('all entries have id, label, and at least one activationPattern', () => {
@@ -413,6 +426,78 @@ describe('form-routing — routeIntent integration (W126 precedence)', () => {
     const match = routeToTrustedForm('kiểm tra accessibility và WCAG compliance cho trang checkout');
     expect(match).not.toBeNull();
     expect(match!.id).toBe('accessibility_audit');
+  });
+
+  it('48. api_security — EN activation', () => {
+    const match = routeToTrustedForm('do an API security review for our payment flows');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('api_security');
+  });
+
+  it('49. api_security — VN activation', () => {
+    const match = routeToTrustedForm('kiểm tra bảo mật API cho luồng thanh toán');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('api_security');
+  });
+
+  it('50. gdpr_compliance — EN activation', () => {
+    const match = routeToTrustedForm('check GDPR compliance for my SaaS product');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('gdpr_compliance');
+  });
+
+  it('51. gdpr_compliance — VN activation', () => {
+    const match = routeToTrustedForm('kiểm tra tuân thủ GDPR cho ứng dụng của chúng tôi');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('gdpr_compliance');
+  });
+
+  it('52. privacy_policy_audit — EN activation', () => {
+    const match = routeToTrustedForm('audit my privacy policy for gaps and coverage');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('privacy_policy_audit');
+  });
+
+  it('53. privacy_policy_audit — VN activation', () => {
+    const match = routeToTrustedForm('review chính sách bảo mật của website');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('privacy_policy_audit');
+  });
+
+  it('54. incident_response — EN activation', () => {
+    const match = routeToTrustedForm('create an incident response plan for our startup');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('incident_response');
+  });
+
+  it('55. incident_response — VN activation', () => {
+    const match = routeToTrustedForm('xây dựng kế hoạch ứng phó sự cố bảo mật');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('incident_response');
+  });
+
+  it('56. data_handling — EN activation', () => {
+    const match = routeToTrustedForm('review our data handling and retention policy');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('data_handling');
+  });
+
+  it('57. data_handling — VN activation', () => {
+    const match = routeToTrustedForm('review cách xử lý dữ liệu khách hàng trong hệ thống');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('data_handling');
+  });
+
+  it('58. tos_review — EN activation', () => {
+    const match = routeToTrustedForm('review my terms of service for a SaaS product');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('tos_review');
+  });
+
+  it('59. tos_review — VN activation', () => {
+    const match = routeToTrustedForm('kiểm tra điều khoản sử dụng của ứng dụng');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('tos_review');
   });
 });
 
