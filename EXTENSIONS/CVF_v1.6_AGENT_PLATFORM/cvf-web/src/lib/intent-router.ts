@@ -121,7 +121,28 @@ export function routeIntent(userInput: string): IntentRouteResult | null {
   const detected = detectIntent(userInput);
   const isWeak = detected.suggestedTemplates.length === 0;
 
-  // Precedence 1: wizard-family route (existing W122 behavior).
+  // W133 fix: check trusted form routes first — specific multi-word patterns are
+  // more precise than wizard detection and should not be shadowed by wizard matches.
+  // Precedence 1: trusted form route.
+  const formMatch = routeToTrustedForm(userInput);
+  if (formMatch) {
+    return {
+      starterKey: null,
+      recommendedTemplateId: formMatch.id,
+      recommendedTemplateLabel: formMatch.label,
+      rationale: `Detected ${detected.friendlyPhase} intent with ${detected.friendlyRisk}. Routing directly to the best-fit trusted form template for your specific request.`,
+      phase: detected.phase,
+      riskLevel: detected.riskLevel,
+      friendlyPhase: detected.friendlyPhase,
+      friendlyRisk: detected.friendlyRisk,
+      confidence: 'strong',
+      routeType: 'form',
+      fallback: null,
+      intentRoutedAt,
+    };
+  }
+
+  // Precedence 2: wizard-family route (when no specific form matched).
   if (!isWeak) {
     const resolved = resolveGovernedStarterTemplate(detected.suggestedTemplates);
     const starterKey = detected.suggestedTemplates[0];
@@ -136,25 +157,6 @@ export function routeIntent(userInput: string): IntentRouteResult | null {
       friendlyRisk: detected.friendlyRisk,
       confidence: 'strong',
       routeType: 'wizard',
-      fallback: null,
-      intentRoutedAt,
-    };
-  }
-
-  // Precedence 2: trusted form route (W126 — only when no wizard matched).
-  const formMatch = routeToTrustedForm(userInput);
-  if (formMatch) {
-    return {
-      starterKey: null,
-      recommendedTemplateId: formMatch.id,
-      recommendedTemplateLabel: formMatch.label,
-      rationale: `Detected ${detected.friendlyPhase} intent with ${detected.friendlyRisk}. Routing directly to the best-fit trusted form template for your specific request.`,
-      phase: detected.phase,
-      riskLevel: detected.riskLevel,
-      friendlyPhase: detected.friendlyPhase,
-      friendlyRisk: detected.friendlyRisk,
-      confidence: 'strong',
-      routeType: 'form',
       fallback: null,
       intentRoutedAt,
     };

@@ -240,6 +240,8 @@ async function executeAlibaba(
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${config.apiKey}`,
+                // W133: prevent stale TCP keep-alive connection reuse between sequential journeys
+                'Connection': 'close',
             },
             body: JSON.stringify({
                 model: config.model,
@@ -256,8 +258,8 @@ async function executeAlibaba(
                     }
                     : {}),
             }),
-            // CP3: bound provider wait so route returns a classified error before the E2E 90s deadline
-            signal: AbortSignal.timeout(85_000),
+            // W133: reduced from 85s → 60s to ensure route responds before the 90s Playwright deadline
+            signal: AbortSignal.timeout(60_000),
         });
 
         if (!response.ok) {
@@ -384,6 +386,8 @@ async function executeDeepSeek(
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${config.apiKey}`,
+                // W133: prevent stale TCP keep-alive connection reuse between sequential journeys
+                'Connection': 'close',
             },
             body: JSON.stringify({
                 model: config.model,
@@ -394,6 +398,8 @@ async function executeDeepSeek(
                 max_tokens: config.maxTokens || 4096,
                 temperature: config.temperature || 0.7,
             }),
+            // W133: bound to 60s so route responds well before the 90s Playwright deadline
+            signal: AbortSignal.timeout(60_000),
         });
 
         if (!response.ok) {
