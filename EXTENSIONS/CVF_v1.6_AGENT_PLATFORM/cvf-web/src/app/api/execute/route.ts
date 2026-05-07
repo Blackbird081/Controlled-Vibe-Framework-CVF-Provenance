@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { executeAI, AIProvider, ExecutionRequest, CVF_SYSTEM_PROMPT, type GovernanceEvidenceReceipt } from '@/lib/ai';
 import { evaluateEnforcement } from '@/lib/enforcement';
 import { getTemplateById } from '@/lib/templates';
+import { isTrustedFormTemplateId } from '@/lib/form-routing';
 import { verifySessionCookie } from '@/lib/middleware-auth';
 import { applySafetyFilters } from '@/lib/safety';
 import { getRateLimiter } from '@/lib/rate-limit';
@@ -71,17 +72,21 @@ function isBuildPhase(phase?: string): boolean {
 
 function isBuildLikeIntent(intent?: string): boolean {
     if (!intent) return false;
-    return /\b(build|implement|code|develop|create files?|write code|generate code|sua code|viết code|thực thi|triển khai)\b/i.test(intent);
+    const reviewOnlyCodeIntent = /\b(code review|review code|check code|code audit|code quality|đánh giá code|kiểm tra chất lượng code|review code)\b/i.test(intent);
+    if (reviewOnlyCodeIntent) return false;
+    return /\b(build|implement|develop|create files?|write code|generate code|sửa code|sua code|viết code|thực thi|triển khai)\b/i.test(intent);
 }
 
 function shouldRequireSkillPreflight(input: {
     phase?: string;
     templateCategory?: string;
     intent?: string;
+    templateId?: string;
 }): boolean {
+    const isTrustedForm = isTrustedFormTemplateId(input.templateId);
     return isBuildPhase(input.phase)
-        || input.templateCategory === 'development'
-        || isBuildLikeIntent(input.intent);
+        || (!isTrustedForm && isBuildLikeIntent(input.intent))
+        || (input.templateCategory === 'development' && !isTrustedForm);
 }
 
 function resolveGuardAction(rawBody: Record<string, unknown>): string {
@@ -429,6 +434,7 @@ export async function POST(request: NextRequest) {
             phase: body.cvfPhase,
             templateCategory: template?.category,
             intent: body.intent,
+            templateId: template?.id ?? body.templateId,
         });
         const enforcement = evaluateEnforcement({
             mode,

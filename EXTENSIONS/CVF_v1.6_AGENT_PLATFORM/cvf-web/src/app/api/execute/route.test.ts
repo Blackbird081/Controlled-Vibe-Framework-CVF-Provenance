@@ -649,6 +649,82 @@ describe('/api/execute', () => {
         );
     });
 
+    it('does not require skill preflight for trusted-form development analysis routes', async () => {
+        process.env.OPENAI_API_KEY = 'test-key';
+        executeAIMock.mockResolvedValue({
+            success: true,
+            output: validOutput,
+            provider: 'openai',
+            model: 'gpt-4o',
+        });
+
+        const req = new Request('http://localhost/api/execute', {
+            method: 'POST',
+            body: JSON.stringify({
+                templateId: 'api_design',
+                templateName: 'API Design',
+                intent: 'Thiết kế API cho hệ thống đặt lịch và nhắc lịch tự động',
+                inputs: {
+                    apiName: 'Booking Reminder API',
+                    endpoints: 'Create booking, update booking, send reminder',
+                    auth: 'Session token',
+                },
+                provider: 'openai',
+                mode: 'governance',
+                action: 'analyze template execution request',
+            }),
+        });
+
+        const res = await POST(req as never);
+        const data = await res.json();
+
+        expect(res.status).toBe(200);
+        expect(data.success).toBe(true);
+        expect(evaluateEnforcementMock).toHaveBeenCalledWith(
+            expect.objectContaining({
+                requiresSkillPreflight: false,
+            }),
+        );
+    });
+
+    it('does not require skill preflight when trusted-form generated intent contains build wording', async () => {
+        process.env.OPENAI_API_KEY = 'test-key';
+        executeAIMock.mockResolvedValue({
+            success: true,
+            output: validOutput,
+            provider: 'openai',
+            model: 'gpt-4o',
+        });
+
+        const req = new Request('http://localhost/api/execute', {
+            method: 'POST',
+            body: JSON.stringify({
+                templateId: 'web_build_handoff',
+                templateName: 'Web Build Handoff',
+                intent: 'Create a build handoff packet for an agent to implement later',
+                inputs: {
+                    siteGoal: 'Website giới thiệu sản phẩm',
+                    audience: 'Khách hàng SMB',
+                    constraints: 'Không thực thi code trong lượt này',
+                },
+                provider: 'openai',
+                mode: 'governance',
+                action: 'analyze template execution request',
+            }),
+        });
+
+        const res = await POST(req as never);
+        const data = await res.json();
+
+        expect(res.status).toBe(200);
+        expect(data.success).toBe(true);
+        expect(evaluateEnforcementMock).toHaveBeenCalledWith(
+            expect.objectContaining({
+                requiresSkillPreflight: false,
+            }),
+        );
+    });
+
     it('returns 429 when the team is over hard cap', async () => {
         process.env.OPENAI_API_KEY = 'test-key';
         checkTeamQuotaMock.mockResolvedValueOnce({

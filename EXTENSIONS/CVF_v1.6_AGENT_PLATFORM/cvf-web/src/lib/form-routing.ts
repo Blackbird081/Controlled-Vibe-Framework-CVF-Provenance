@@ -4,7 +4,8 @@
  * W126-T1 CP1 — Explicit intent-to-form mapping for the trusted form subset.
  *
  * Hard contracts:
- *   - Only 8 explicitly audited forms are eligible (see W126_TRUSTED_FORM_SUBSET_AUDIT.md)
+ *   - The trusted subset started with 8 W126-audited forms and was expanded to
+ *     the 40 non-wizard form corpus in W142-W147.
  *   - This module is evaluated before wizard routing so audited form intents
  *     are not shadowed by broad wizard keywords.
  *   - Activation is pattern-based; ambiguity boundaries are documented per form
@@ -31,8 +32,8 @@ export interface TrustedFormMatch {
 }
 
 /**
- * W126 trusted form subset — 8 explicitly audited forms.
- * Do not add entries without a matching audit row in W126_TRUSTED_FORM_SUBSET_AUDIT.md.
+ * W126 trusted form subset plus W142-W147 full-corpus expansion.
+ * Do not add entries without a matching audit row and evidence packet.
  */
 export const TRUSTED_FORM_MAP: Record<string, TrustedFormEntry> = {
   'email_template': {
@@ -612,6 +613,10 @@ export function routeToTrustedForm(userInput: string): TrustedFormMatch | null {
     }
   }
   return null;
+}
+
+export function isTrustedFormTemplateId(templateId: string | null | undefined): boolean {
+  return typeof templateId === 'string' && templateId in TRUSTED_FORM_MAP;
 }
 
 /**

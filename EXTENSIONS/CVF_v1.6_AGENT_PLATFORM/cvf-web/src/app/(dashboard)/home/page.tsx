@@ -329,13 +329,14 @@ export default function HomePage() {
         if (!continueId) return;
         const exec = getExecutionById(continueId);
         if (!exec || exec.result !== 'accepted' || !exec.output) return;
+        const output = exec.output;
         const tpl = templates.find((t) => t.id === exec.templateId);
         if (!tpl) return;
         startTransition(() => {
             setSelectedTemplate(tpl);
             setCurrentInput(exec.input);
             setCurrentIntent(exec.intent);
-            setCurrentOutput(exec.output);
+            setCurrentOutput(output);
             setCurrentEvidenceReceipt(undefined);
             setWorkflowState('result');
         });
