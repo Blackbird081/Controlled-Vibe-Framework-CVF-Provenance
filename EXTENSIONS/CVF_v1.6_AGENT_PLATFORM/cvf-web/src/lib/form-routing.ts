@@ -92,6 +92,8 @@ export const TRUSTED_FORM_MAP: Record<string, TrustedFormEntry> = {
       /\bcustomer profile\b/i,
       /\bideal customer\b/i,
       /người dùng mục tiêu/i,
+      /hồ sơ khách hàng/i,
+      /khách hàng mục tiêu/i,
     ],
     wizardWinsWhen: 'user says "product design" broadly or "design my app"',
   },
