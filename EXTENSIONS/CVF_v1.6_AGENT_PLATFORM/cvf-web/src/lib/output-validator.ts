@@ -56,7 +56,9 @@ const REPETITION_THRESHOLD = 0.4;
 const UNSAFE_PATTERNS: RegExp[] = [
   /\b(rm\s+-rf|drop\s+table|delete\s+from\s+\*|format\s+c:)\b/i,
   /\b(password|secret|api[_-]?key)\s*[:=]\s*["'][^"']{8,}/i,
-  /\b(hack|exploit|inject|bypass\s+auth)\b/i,
+  /\b(?:hack|exploit|inject)\b.{0,80}\b(?:auth|authentication|authorization|cve|csrf|database|endpoint|malware|payload|privilege|server|sql|system|token|vulnerability|xss|zero.?day)\b/i,
+  /\b(?:auth|authentication|authorization|cve|csrf|database|endpoint|malware|payload|privilege|server|sql|system|token|vulnerability|xss|zero.?day)\b.{0,80}\b(?:hack|exploit|inject)\b/i,
+  /\bbypass\s+(?:2fa|access control|auth|authentication|authorization|login|mfa|permission|security)\b/i,
 ];
 
 const STRUCTURE_INDICATORS = [

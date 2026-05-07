@@ -199,7 +199,7 @@ SUCCESS CRITERIA:
 
 ## 3. Differentiation Opportunities
 - Gap:
-- How to exploit:
+- How to capture:
 
 ## 4. Market Positioning`,
         difficulty: 'medium',

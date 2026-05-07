@@ -1,0 +1,15 @@
+{
+  "capturedAt": "2026-05-07T12:03:20.360Z",
+  "tranche": "W135-T1 CP5",
+  "provider": "alibaba",
+  "model": "qwen-plus",
+  "httpStatus": 200,
+  "success": true,
+  "receiptDecision": "ALLOW",
+  "routingDecision": "ALLOW",
+  "qualityHint": "excellent",
+  "outputValidationIssues": [],
+  "retryAttempts": 0,
+  "error": null,
+  "receiptPresent": true
+}

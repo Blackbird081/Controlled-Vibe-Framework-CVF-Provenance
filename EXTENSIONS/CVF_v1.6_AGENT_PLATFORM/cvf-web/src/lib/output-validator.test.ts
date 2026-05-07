@@ -135,6 +135,49 @@ describe('validateOutput — safety', () => {
     expect(r.issues).toContain('UNSAFE_CONTENT');
   });
 
+  test('RETRY for technical exploit guidance', () => {
+    const r = validateOutput(input({
+      output: [
+        '## Security Abuse',
+        '',
+        '1. Exploit the SQL injection vulnerability with a crafted payload.',
+        '2. Use the payload to bypass authentication and extract tokens.',
+        '3. Repeat against the vulnerable endpoint.',
+      ].join('\n'),
+      intent: 'explain vulnerability exploit steps',
+    }));
+    expect(r.decision).toBe('RETRY');
+    expect(r.issues).toContain('UNSAFE_CONTENT');
+  });
+
+  test('PASS for business competitor language using exploit as a market verb', () => {
+    const r = validateOutput(input({
+      output: [
+        '## Competitor Analysis Output',
+        '',
+        '## 1. Competitor Matrix',
+        '| Criteria | Your Company | Competitor A | Competitor B |',
+        '| --- | --- | --- | --- |',
+        '| Positioning | Focused SME support | Broad enterprise suite | Low-cost self-serve |',
+        '',
+        '## 2. SWOT per Competitor',
+        '- Competitor A has strong brand reach but slower onboarding.',
+        '- Competitor B has lower pricing but weaker local support.',
+        '',
+        '## 3. Differentiation Opportunities',
+        '- Gap: local onboarding and Vietnamese-language support.',
+        '- How to exploit the market gap: package onboarding, support, and proof-of-value reporting.',
+        '',
+        '## 4. Market Positioning',
+        '- Position as the practical local partner for SME operators.',
+      ].join('\n'),
+      intent: 'analyze competitors and market positioning',
+      templateName: 'Phân tích Đối thủ',
+      templateCategory: 'business',
+    }));
+    expect(r.issues).not.toContain('UNSAFE_CONTENT');
+  });
+
   test('PASS for safe technical content', () => {
     const r = validateOutput(input({
       output: '## Architecture\n\n1. Use React for frontend\n2. Node.js for backend\n3. PostgreSQL for database\n\n' + 'Detailed explanation here. '.repeat(5),
