@@ -1,0 +1,31 @@
+{
+  "capturedAt": "2026-05-07T14:09:38.685Z",
+  "tranche": "W136-T1 CP5",
+  "provider": "alibaba",
+  "model": "qwen-plus",
+  "routeDeadlineMs": 90000,
+  "records": [
+    {
+      "name": "documentation",
+      "httpStatus": 200,
+      "elapsedMs": 28915,
+      "success": true,
+      "receiptDecision": "ALLOW",
+      "receiptPresent": true,
+      "outputValidationIssues": [],
+      "retryAttempts": 0,
+      "error": null
+    },
+    {
+      "name": "strategy_analysis",
+      "httpStatus": 200,
+      "elapsedMs": 37115,
+      "success": true,
+      "receiptDecision": "ALLOW",
+      "receiptPresent": true,
+      "outputValidationIssues": [],
+      "retryAttempts": 0,
+      "error": null
+    }
+  ]
+}

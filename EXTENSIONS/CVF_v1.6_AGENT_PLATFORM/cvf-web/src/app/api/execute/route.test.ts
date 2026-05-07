@@ -44,6 +44,7 @@ vi.mock('@/lib/control-plane-events', async () => {
 });
 
 import { POST } from './route';
+import { hasValidationRetryBudget, resolveExecutionMaxTokens } from '@/lib/execute-route-budget';
 import { getApprovalStore } from '../approvals/store';
 
 describe('/api/execute', () => {
@@ -102,6 +103,48 @@ describe('/api/execute', () => {
         expect(res.status).toBe(400);
         expect(data.success).toBe(false);
         expect(data.error).toMatch(/Missing required fields/);
+    });
+
+    it('caps trusted noncoder template max tokens for provider calls', async () => {
+        process.env.OPENAI_API_KEY = 'test-key';
+        executeAIMock.mockResolvedValue({
+            success: true,
+            output: validOutput,
+            provider: 'openai',
+            model: 'gpt-4o',
+        });
+
+        const req = new Request('http://localhost/api/execute', {
+            method: 'POST',
+            body: JSON.stringify({
+                templateId: 'documentation',
+                templateName: 'Documentation',
+                intent: 'Analyze operational documentation needs',
+                inputs: { topic: 'Onboarding guide', audience: 'Operators', scope: 'Basic workflow' },
+                provider: 'openai',
+            }),
+        });
+
+        const res = await POST(req as never);
+        expect(res.status).toBe(200);
+        expect(executeAIMock).toHaveBeenCalledWith(
+            'openai',
+            'test-key',
+            expect.any(String),
+            expect.objectContaining({ maxTokens: 2048 }),
+        );
+    });
+
+    it('resolves execution token budget only for trusted noncoder templates', () => {
+        expect(resolveExecutionMaxTokens('documentation')).toBe(2048);
+        expect(resolveExecutionMaxTokens('strategy_analysis')).toBe(2048);
+        expect(resolveExecutionMaxTokens('custom_template')).toBeUndefined();
+        expect(resolveExecutionMaxTokens(undefined)).toBeUndefined();
+    });
+
+    it('allows validation retry only while route response budget remains', () => {
+        expect(hasValidationRetryBudget(1000, 21_000)).toBe(true);
+        expect(hasValidationRetryBudget(1000, 21_001)).toBe(false);
     });
 
     it('returns 403 (router deny) when no providers are configured', async () => {

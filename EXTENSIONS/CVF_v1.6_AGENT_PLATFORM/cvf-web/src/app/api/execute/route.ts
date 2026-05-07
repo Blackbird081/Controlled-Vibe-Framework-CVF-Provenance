@@ -23,6 +23,7 @@ import { formatKnowledgeChunks, queryKnowledgeChunks } from '@/lib/knowledge-ret
 import { buildGovernanceEnvelope } from '@/lib/web-governance-envelope';
 import type { WebGovernanceEnvelope } from '@/lib/web-governance-envelope';
 import { deriveServiceTokenIdentity, verifyServiceTokenRequest } from '@/lib/service-token-auth';
+import { hasValidationRetryBudget, resolveExecutionMaxTokens } from '@/lib/execute-route-budget';
 import { getApprovalStore, type ApprovalRequestRecord } from '../approvals/store';
 import {
     approvalRecordMatchesActor,
@@ -142,6 +143,7 @@ function buildEvidenceReceipt(input: {
 }
 
 export async function POST(request: NextRequest) {
+    const routeStartedAtMs = Date.now();
     try {
         const rawBodyText = await request.text();
         let rawBody: unknown;
@@ -421,6 +423,7 @@ export async function POST(request: NextRequest) {
 
         const mode = body.mode || 'simple';
         const template = body.templateId ? getTemplateById(body.templateId) : undefined;
+        const executionMaxTokens = resolveExecutionMaxTokens(template?.id ?? body.templateId);
         const specFields = template?.fields || [];
         const requiresSkillPreflight = shouldRequireSkillPreflight({
             phase: body.cvfPhase,
@@ -764,6 +767,7 @@ export async function POST(request: NextRequest) {
         // ── EXECUTE AI with auto-retry on output validation failure ──
         let aiResult = await executeAI(routedProvider, routedApiKey, filteredPrompt, {
             model: body.model,
+            maxTokens: executionMaxTokens,
             ...(enrichedSystemPrompt ? { systemPrompt: enrichedSystemPrompt } : {}),
         });
         let outputValidation: ValidationResult | undefined;
@@ -779,6 +783,7 @@ export async function POST(request: NextRequest) {
 
             // Auto-retry loop (max 2 retries, invisible to user)
             while (outputValidation.decision === 'RETRY') {
+                if (!hasValidationRetryBudget(routeStartedAtMs)) break;
                 const retryDecision = shouldRetry(outputValidation, retryState);
                 if (!retryDecision.retry) break;
 
@@ -791,6 +796,7 @@ export async function POST(request: NextRequest) {
 
                 aiResult = await executeAI(routedProvider, routedApiKey, retryPrompt, {
                     model: body.model,
+                    maxTokens: executionMaxTokens,
                 });
                 if (!aiResult.success || !aiResult.output) break;
 
