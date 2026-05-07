@@ -5,7 +5,8 @@
  *
  * Hard contracts:
  *   - Only 8 explicitly audited forms are eligible (see W126_TRUSTED_FORM_SUBSET_AUDIT.md)
- *   - This module is called ONLY when no wizard target matched (wizard-first precedence)
+ *   - This module is evaluated before wizard routing so audited form intents
+ *     are not shadowed by broad wizard keywords.
  *   - Activation is pattern-based; ambiguity boundaries are documented per form
  *   - Any addition to TRUSTED_FORM_MAP requires a new audit entry + commit
  *
@@ -51,7 +52,7 @@ export const TRUSTED_FORM_MAP: Record<string, TrustedFormEntry> = {
     activationPatterns: [
       /\bdocument(ation)?\s+(this|a|my|the|for)\b/i,
       /\b(SOP|how.?to guide|process doc|handoff doc)\b/i,
-      /viết tài liệu|tài liệu quy trình|bàn giao tài liệu/i,
+      /viết tài liệu|tạo tài liệu|tài liệu kỹ thuật|tài liệu quy trình|bàn giao tài liệu/i,
       /quy trình\s+(làm việc|tiếp nhận|onboard)/i,
     ],
     wizardWinsWhen: 'user asks for content strategy, research report, or a marketing campaign',
@@ -133,6 +134,7 @@ export const TRUSTED_FORM_MAP: Record<string, TrustedFormEntry> = {
       /\bevaluate\s+(a|this|my)?\s*(decision|strategy)\b/i,
       /phân tích chiến lược/i,
       /đánh giá chiến lược/i,
+      /đánh giá\s+(cơ hội|thách thức|cơ hội và thách thức)/i,
       /\banalyze a decision\b/i,
     ],
     wizardWinsWhen: 'user says "help me build a business strategy" (business-strategy wizard wins)',
@@ -143,8 +145,8 @@ export const TRUSTED_FORM_MAP: Record<string, TrustedFormEntry> = {
  * Attempt to match a plain-language input to a trusted form target.
  *
  * Returns the first matching TrustedFormMatch, or null if no trusted form
- * matches. This is called ONLY after the wizard routing path has failed
- * (no wizard pattern matched the input).
+ * matches. The intent router calls this before wizard routing because form
+ * patterns are narrower than wizard-family keywords.
  */
 export function routeToTrustedForm(userInput: string): TrustedFormMatch | null {
   for (const [key, entry] of Object.entries(TRUSTED_FORM_MAP)) {

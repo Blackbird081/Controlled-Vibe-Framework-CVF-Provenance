@@ -232,6 +232,31 @@ describe('form-routing — routeIntent integration (W126 precedence)', () => {
       expect(result!.recommendedTemplateLabel).toBeTruthy();
     });
   });
+
+  it('26. W140 Alibaba matrix prompts route to trusted forms, not wizards', () => {
+    withFlag('true', () => {
+      const prompts = [
+        ['Viết tài liệu hướng dẫn sử dụng cho nhân viên mới', 'documentation'],
+        ['Soạn email giới thiệu dịch vụ tư vấn đến khách hàng tiềm năng', 'email_template'],
+        ['Đánh giá rủi ro cho dự án triển khai phần mềm quản lý kho tại doanh nghiệp', 'risk_assessment'],
+        ['Phân tích đối thủ cạnh tranh trong lĩnh vực dịch vụ logistics', 'competitor_review'],
+        ['Xây dựng hồ sơ khách hàng mục tiêu cho ứng dụng quản lý tài chính cá nhân', 'user_persona'],
+        ['Phân tích chiến lược mở rộng sang thị trường miền Trung Việt Nam', 'strategy_analysis'],
+        ['Lập danh sách ưu tiên tính năng cho phiên bản tiếp theo của sản phẩm SaaS', 'feature_prioritization'],
+        ['Xây dựng chiến lược định giá cho sản phẩm SaaS B2B trong thị trường SME', 'pricing_strategy'],
+        ['Tạo tài liệu kỹ thuật cho API tích hợp hệ thống thanh toán', 'documentation'],
+        ['Viết email xác nhận lịch hẹn với đối tác kinh doanh', 'email_template'],
+        ['Phân tích rủi ro khi mở rộng kinh doanh sang thị trường Đông Nam Á', 'risk_assessment'],
+        ['Đánh giá cơ hội và thách thức khi ra mắt sản phẩm mới cho phân khúc doanh nghiệp lớn', 'strategy_analysis'],
+      ] as const;
+
+      for (const [input, expectedTemplateId] of prompts) {
+        const result = routeIntent(input);
+        expect(result?.routeType, input).toBe('form');
+        expect(result?.recommendedTemplateId, input).toBe(expectedTemplateId);
+      }
+    });
+  });
 });
 
 describe('form-routing — isTrustedFormRoutingEnabled', () => {
