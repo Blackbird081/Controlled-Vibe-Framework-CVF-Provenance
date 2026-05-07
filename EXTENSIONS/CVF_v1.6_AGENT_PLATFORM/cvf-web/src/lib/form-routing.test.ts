@@ -5,6 +5,7 @@
  * W143 — Added tests 32-35 for seo_audit and data_analysis
  * W144 — Added tests 36-47 for 6 marketing/product templates
  * W145 — Added tests 48-59 for 6 security templates
+ * W146 — Added tests 60-75 for 8 product/marketing/technical/dev templates
  *
  * Tests:
  *   1.  routeToTrustedForm returns null for no-match input
@@ -66,6 +67,22 @@
  *   57. data_handling activated by VN input
  *   58. tos_review activated by EN input
  *   59. tos_review activated by VN input
+ *   60. content_quality activated by EN input
+ *   61. content_quality activated by VN input
+ *   62. social_ad_review activated by EN input
+ *   63. social_ad_review activated by VN input
+ *   64. user_flow_analysis activated by EN input
+ *   65. user_flow_analysis activated by VN input
+ *   66. ux_heuristic_evaluation activated by EN input
+ *   67. ux_heuristic_evaluation activated by VN input
+ *   68. error_handling_ux activated by EN input
+ *   69. error_handling_ux activated by VN input
+ *   70. code_review activated by EN input
+ *   71. code_review activated by VN input
+ *   72. architecture_review activated by EN input
+ *   73. architecture_review activated by VN input
+ *   74. app_requirements_spec activated by EN input
+ *   75. app_requirements_spec activated by VN input
  */
 
 import { describe, it, expect } from 'vitest';
@@ -87,8 +104,8 @@ function withFlag(value: 'true' | 'false', fn: () => void) {
 }
 
 describe('form-routing — TRUSTED_FORM_MAP integrity', () => {
-  it('25. TRUSTED_FORM_MAP has exactly 25 entries', () => {
-    expect(Object.keys(TRUSTED_FORM_MAP)).toHaveLength(25);
+  it('25. TRUSTED_FORM_MAP has exactly 33 entries', () => {
+    expect(Object.keys(TRUSTED_FORM_MAP)).toHaveLength(33);
   });
 
   it('all entries have id, label, and at least one activationPattern', () => {
@@ -498,6 +515,102 @@ describe('form-routing — routeIntent integration (W126 precedence)', () => {
     const match = routeToTrustedForm('kiểm tra điều khoản sử dụng của ứng dụng');
     expect(match).not.toBeNull();
     expect(match!.id).toBe('tos_review');
+  });
+
+  it('60. content_quality — EN activation', () => {
+    const match = routeToTrustedForm('check the content quality of my blog posts');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('content_quality');
+  });
+
+  it('61. content_quality — VN activation', () => {
+    const match = routeToTrustedForm('kiểm tra chất lượng nội dung bài viết website');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('content_quality');
+  });
+
+  it('62. social_ad_review — EN activation', () => {
+    const match = routeToTrustedForm('review my Facebook ad for the summer campaign');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('social_ad_review');
+  });
+
+  it('63. social_ad_review — VN activation', () => {
+    const match = routeToTrustedForm('đánh giá quảng cáo Facebook cho chiến dịch tháng 6');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('social_ad_review');
+  });
+
+  it('64. user_flow_analysis — EN activation', () => {
+    const match = routeToTrustedForm('analyze my user flow from landing page to checkout');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('user_flow_analysis');
+  });
+
+  it('65. user_flow_analysis — VN activation', () => {
+    const match = routeToTrustedForm('phân tích user flow từ trang chủ đến thanh toán');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('user_flow_analysis');
+  });
+
+  it('66. ux_heuristic_evaluation — EN activation', () => {
+    const match = routeToTrustedForm('do a UX heuristic evaluation of my dashboard');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('ux_heuristic_evaluation');
+  });
+
+  it('67. ux_heuristic_evaluation — VN activation', () => {
+    const match = routeToTrustedForm('đánh giá UX heuristic cho giao diện quản lý đơn hàng');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('ux_heuristic_evaluation');
+  });
+
+  it('68. error_handling_ux — EN activation', () => {
+    const match = routeToTrustedForm('review my error messages and improve the error handling UX');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('error_handling_ux');
+  });
+
+  it('69. error_handling_ux — VN activation', () => {
+    const match = routeToTrustedForm('cải thiện thông báo lỗi cho trang checkout');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('error_handling_ux');
+  });
+
+  it('70. code_review — EN activation', () => {
+    const match = routeToTrustedForm('do a code review of this TypeScript module');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('code_review');
+  });
+
+  it('71. code_review — VN activation', () => {
+    const match = routeToTrustedForm('review code module xử lý thanh toán của tôi');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('code_review');
+  });
+
+  it('72. architecture_review — EN activation', () => {
+    const match = routeToTrustedForm('do an architecture review of our microservices backend');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('architecture_review');
+  });
+
+  it('73. architecture_review — VN activation', () => {
+    const match = routeToTrustedForm('đánh giá kiến trúc hệ thống microservices của chúng tôi');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('architecture_review');
+  });
+
+  it('74. app_requirements_spec — EN activation', () => {
+    const match = routeToTrustedForm('create an app requirements spec for the new project');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('app_requirements_spec');
+  });
+
+  it('75. app_requirements_spec — VN activation', () => {
+    const match = routeToTrustedForm('viết spec yêu cầu ứng dụng quản lý nhân sự');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('app_requirements_spec');
   });
 });
 
