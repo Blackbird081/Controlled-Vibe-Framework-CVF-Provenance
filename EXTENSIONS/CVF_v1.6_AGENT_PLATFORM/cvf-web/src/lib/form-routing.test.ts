@@ -28,13 +28,17 @@
  *   22. form route has strong confidence
  *   23. form route has starterKey null
  *   24. form route has non-null recommendedTemplateId and recommendedTemplateLabel
- *   25. TRUSTED_FORM_MAP has exactly 11 entries
+ *   25. TRUSTED_FORM_MAP has exactly 13 entries
  *   26. meeting_notes activated by EN input
  *   27. meeting_notes activated by VN input
  *   28. job_description activated by EN input
  *   29. job_description activated by VN input
  *   30. performance_review activated by EN input
  *   31. performance_review activated by VN input
+ *   32. seo_audit activated by EN input
+ *   33. seo_audit activated by VN input
+ *   34. data_analysis activated by EN input
+ *   35. data_analysis activated by VN input
  */
 
 import { describe, it, expect } from 'vitest';
@@ -56,8 +60,8 @@ function withFlag(value: 'true' | 'false', fn: () => void) {
 }
 
 describe('form-routing — TRUSTED_FORM_MAP integrity', () => {
-  it('25. TRUSTED_FORM_MAP has exactly 11 entries', () => {
-    expect(Object.keys(TRUSTED_FORM_MAP)).toHaveLength(11);
+  it('25. TRUSTED_FORM_MAP has exactly 13 entries', () => {
+    expect(Object.keys(TRUSTED_FORM_MAP)).toHaveLength(13);
   });
 
   it('all entries have id, label, and at least one activationPattern', () => {
@@ -299,6 +303,30 @@ describe('form-routing — routeIntent integration (W126 precedence)', () => {
     const match = routeToTrustedForm('đánh giá hiệu suất nhân viên quý 2');
     expect(match).not.toBeNull();
     expect(match!.id).toBe('performance_review');
+  });
+
+  it('32. seo_audit — EN activation', () => {
+    const match = routeToTrustedForm('do an SEO audit for my website');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('seo_audit');
+  });
+
+  it('33. seo_audit — VN activation', () => {
+    const match = routeToTrustedForm('kiểm tra SEO cho website của tôi');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('seo_audit');
+  });
+
+  it('34. data_analysis — EN activation', () => {
+    const match = routeToTrustedForm('analyze my sales data for Q2');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('data_analysis');
+  });
+
+  it('35. data_analysis — VN activation', () => {
+    const match = routeToTrustedForm('phân tích dữ liệu khách hàng từ Google Analytics');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('data_analysis');
   });
 });
 

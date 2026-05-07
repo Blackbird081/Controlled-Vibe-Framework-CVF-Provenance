@@ -185,6 +185,37 @@ export const TRUSTED_FORM_MAP: Record<string, TrustedFormEntry> = {
     ],
     wizardWinsWhen: 'user asks for full people management or 360 feedback design (wizard wins)',
   },
+  'seo_audit': {
+    id: 'seo_audit',
+    label: '🔎 SEO Audit',
+    activationPatterns: [
+      /\bseo audit\b/i,
+      /\baudit\s+(my\s+)?seo\b/i,
+      /\bcheck\s+(my\s+)?seo\b/i,
+      /\bseo (check|review|analysis)\b/i,
+      /\bwebsite seo\b/i,
+      /kiểm tra seo/i,
+      /audit seo/i,
+      /phân tích seo/i,
+      /tối ưu seo/i,
+    ],
+    wizardWinsWhen: 'user asks for full marketing strategy or content strategy broadly (wizard wins)',
+  },
+  'data_analysis': {
+    id: 'data_analysis',
+    label: '📈 Data Analysis',
+    activationPatterns: [
+      /\bdata analysis\b/i,
+      /\banalyze\b.{0,25}\b(data|dataset|report|metrics|numbers)\b/i,
+      /\binsights? from\b.{0,20}\b(data|report)\b/i,
+      /\banalyze (my |this )?(analytics|dashboard|spreadsheet)\b/i,
+      /phân tích dữ liệu/i,
+      /phân tích (số liệu|báo cáo|kết quả)/i,
+      /đọc dữ liệu/i,
+      /giải thích (số liệu|dữ liệu|kết quả)/i,
+    ],
+    wizardWinsWhen: 'user asks for a full research project design or scientific methodology (research wizard wins)',
+  },
 };
 
 /**
