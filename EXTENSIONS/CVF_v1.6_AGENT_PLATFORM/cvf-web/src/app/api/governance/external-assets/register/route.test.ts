@@ -455,7 +455,7 @@ describe('/api/governance/external-assets/register', () => {
             );
 
             const res = await GET(req as never);
-            const data = await res.json();
+            await res.json();
 
             expect(res.status).toBe(200);
             expect(filterRegistryEntriesMock).toHaveBeenCalledWith({

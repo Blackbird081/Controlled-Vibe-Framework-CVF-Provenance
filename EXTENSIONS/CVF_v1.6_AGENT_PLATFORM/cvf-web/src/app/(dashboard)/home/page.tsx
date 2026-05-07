@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useMemo, useCallback, useEffect, useRef } from 'react';
+import { useState, useMemo, useCallback, useEffect, useRef, startTransition } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Layers3, ShieldCheck, Sparkles, Wand2 } from 'lucide-react';
 import { templates, generateIntent } from '@/lib/templates';
@@ -292,30 +292,34 @@ export default function HomePage() {
             if (!template) {
                 return;
             }
-            setCurrentFolder(null);
-            setSelectedTemplate(template);
-            trackEvent('template_selected', {
-                templateId: template.id,
-                templateName: template.name,
-                category: template.category,
-                source: 'skill_library',
+            startTransition(() => {
+                setCurrentFolder(null);
+                setSelectedTemplate(template);
+                trackEvent('template_selected', {
+                    templateId: template.id,
+                    templateName: template.name,
+                    category: template.category,
+                    source: 'skill_library',
+                });
+
+                if (template.isFolder) {
+                    setCurrentFolder(template.id);
+                    setWorkflowState('browse');
+                    return;
+                }
+
+                const wizardState = WIZARD_MAP[template.id];
+                setWorkflowState(wizardState ?? 'form');
             });
-
-            if (template.isFolder) {
-                setCurrentFolder(template.id);
-                setWorkflowState('browse');
-                return;
-            }
-
-            const wizardState = WIZARD_MAP[template.id];
-            setWorkflowState(wizardState ?? 'form');
             return;
         }
 
         if (category) {
-            setCurrentFolder(null);
-            setSelectedCategory(category);
-            setWorkflowState('browse');
+            startTransition(() => {
+                setCurrentFolder(null);
+                setSelectedCategory(category);
+                setWorkflowState('browse');
+            });
         }
     }, [searchParams]);
 
@@ -327,12 +331,14 @@ export default function HomePage() {
         if (!exec || exec.result !== 'accepted' || !exec.output) return;
         const tpl = templates.find((t) => t.id === exec.templateId);
         if (!tpl) return;
-        setSelectedTemplate(tpl);
-        setCurrentInput(exec.input);
-        setCurrentIntent(exec.intent);
-        setCurrentOutput(exec.output);
-        setCurrentEvidenceReceipt(undefined);
-        setWorkflowState('result');
+        startTransition(() => {
+            setSelectedTemplate(tpl);
+            setCurrentInput(exec.input);
+            setCurrentIntent(exec.intent);
+            setCurrentOutput(exec.output);
+            setCurrentEvidenceReceipt(undefined);
+            setWorkflowState('result');
+        });
     }, [searchParams, getExecutionById]);
 
     const handleFormSubmit = useCallback((values: Record<string, string>, intent: string) => {
@@ -441,7 +447,6 @@ export default function HomePage() {
             sessionStorage.setItem(sessionKey, '1');
             trackEvent('rollout_session_start', { flag: 'NEXT_PUBLIC_CVF_INTENT_FIRST_FRONT_DOOR' });
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const handleDismissBanner = useCallback(() => {

@@ -11,14 +11,6 @@
 
 import React from 'react';
 
-interface TemplateSuggestion {
-  id: string;
-  name: string;
-  description: string;
-  icon: string;
-  match: number; // 0-1 confidence
-}
-
 interface TemplateSuggesterProps {
   suggestedTemplateIds: string[];
   onSelect: (templateId: string) => void;

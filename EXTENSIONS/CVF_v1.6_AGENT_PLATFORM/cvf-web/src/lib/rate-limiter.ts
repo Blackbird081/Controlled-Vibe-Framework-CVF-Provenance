@@ -97,7 +97,7 @@ export class RateLimiter {
    */
   middleware(request: NextRequest): NextResponse | null {
     const key = this.getKey(request);
-    const { allowed, remaining, resetAt, retryAfterSeconds } = this.check(key);
+    const { allowed, resetAt, retryAfterSeconds } = this.check(key);
 
     if (!allowed) {
       return NextResponse.json(
