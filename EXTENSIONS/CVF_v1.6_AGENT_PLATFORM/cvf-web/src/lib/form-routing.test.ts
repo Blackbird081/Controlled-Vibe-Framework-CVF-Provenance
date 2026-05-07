@@ -2,6 +2,8 @@
  * form-routing.test.ts
  * W126-T1 CP4 — Trusted form routing coverage evidence
  * W142 — Added tests 26-31 for 3 new HR templates
+ * W143 — Added tests 32-35 for seo_audit and data_analysis
+ * W144 — Added tests 36-47 for 6 marketing/product templates
  *
  * Tests:
  *   1.  routeToTrustedForm returns null for no-match input
@@ -28,7 +30,7 @@
  *   22. form route has strong confidence
  *   23. form route has starterKey null
  *   24. form route has non-null recommendedTemplateId and recommendedTemplateLabel
- *   25. TRUSTED_FORM_MAP has exactly 13 entries
+ *   25. TRUSTED_FORM_MAP has exactly 19 entries
  *   26. meeting_notes activated by EN input
  *   27. meeting_notes activated by VN input
  *   28. job_description activated by EN input
@@ -39,6 +41,18 @@
  *   33. seo_audit activated by VN input
  *   34. data_analysis activated by EN input
  *   35. data_analysis activated by VN input
+ *   36. brand_voice activated by EN input
+ *   37. brand_voice activated by VN input
+ *   38. landing_page_cro activated by EN input
+ *   39. landing_page_cro activated by VN input
+ *   40. email_campaign activated by EN input
+ *   41. email_campaign activated by VN input
+ *   42. copywriting_evaluation activated by EN input
+ *   43. copywriting_evaluation activated by VN input
+ *   44. onboarding_review activated by EN input
+ *   45. onboarding_review activated by VN input
+ *   46. accessibility_audit activated by EN input
+ *   47. accessibility_audit activated by VN input
  */
 
 import { describe, it, expect } from 'vitest';
@@ -60,8 +74,8 @@ function withFlag(value: 'true' | 'false', fn: () => void) {
 }
 
 describe('form-routing — TRUSTED_FORM_MAP integrity', () => {
-  it('25. TRUSTED_FORM_MAP has exactly 13 entries', () => {
-    expect(Object.keys(TRUSTED_FORM_MAP)).toHaveLength(13);
+  it('25. TRUSTED_FORM_MAP has exactly 19 entries', () => {
+    expect(Object.keys(TRUSTED_FORM_MAP)).toHaveLength(19);
   });
 
   it('all entries have id, label, and at least one activationPattern', () => {
@@ -327,6 +341,78 @@ describe('form-routing — routeIntent integration (W126 precedence)', () => {
     const match = routeToTrustedForm('phân tích dữ liệu khách hàng từ Google Analytics');
     expect(match).not.toBeNull();
     expect(match!.id).toBe('data_analysis');
+  });
+
+  it('36. brand_voice — EN activation', () => {
+    const match = routeToTrustedForm('review our brand voice and tone consistency across channels');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('brand_voice');
+  });
+
+  it('37. brand_voice — VN activation', () => {
+    const match = routeToTrustedForm('đồng bộ giọng điệu thương hiệu cho các kênh truyền thông');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('brand_voice');
+  });
+
+  it('38. landing_page_cro — EN activation', () => {
+    const match = routeToTrustedForm('optimize my landing page conversion rate');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('landing_page_cro');
+  });
+
+  it('39. landing_page_cro — VN activation', () => {
+    const match = routeToTrustedForm('tối ưu landing page để tăng conversion rate');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('landing_page_cro');
+  });
+
+  it('40. email_campaign — EN activation', () => {
+    const match = routeToTrustedForm('review my email campaign for the product launch');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('email_campaign');
+  });
+
+  it('41. email_campaign — VN activation', () => {
+    const match = routeToTrustedForm('đánh giá email campaign cho chiến dịch ra mắt sản phẩm');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('email_campaign');
+  });
+
+  it('42. copywriting_evaluation — EN activation', () => {
+    const match = routeToTrustedForm('evaluate my ad copy for the Facebook campaign');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('copywriting_evaluation');
+  });
+
+  it('43. copywriting_evaluation — VN activation', () => {
+    const match = routeToTrustedForm('đánh giá copywriting cho trang sản phẩm của tôi');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('copywriting_evaluation');
+  });
+
+  it('44. onboarding_review — EN activation', () => {
+    const match = routeToTrustedForm('review my onboarding flow and identify friction points');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('onboarding_review');
+  });
+
+  it('45. onboarding_review — VN activation', () => {
+    const match = routeToTrustedForm('đánh giá onboarding của app và tối ưu trải nghiệm người dùng mới');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('onboarding_review');
+  });
+
+  it('46. accessibility_audit — EN activation', () => {
+    const match = routeToTrustedForm('do an accessibility audit for my website');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('accessibility_audit');
+  });
+
+  it('47. accessibility_audit — VN activation', () => {
+    const match = routeToTrustedForm('kiểm tra accessibility và WCAG compliance cho trang checkout');
+    expect(match).not.toBeNull();
+    expect(match!.id).toBe('accessibility_audit');
   });
 });
 
