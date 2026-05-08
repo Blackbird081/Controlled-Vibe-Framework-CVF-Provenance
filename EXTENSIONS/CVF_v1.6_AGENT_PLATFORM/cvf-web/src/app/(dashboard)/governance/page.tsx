@@ -24,6 +24,7 @@ const LABELS = {
             guide: '📖 Hướng dẫn',
         },
         health: 'Sức khỏe hệ thống',
+        systemHealth: 'Runtime Health',
         riskTrend: 'Xu hướng rủi ro',
         brandDrift: 'Brand Drift',
         overrides: 'Override đang hoạt động',
@@ -41,6 +42,7 @@ const LABELS = {
             guide: '📖 Guide',
         },
         health: 'System Health',
+        systemHealth: 'Runtime Health',
         riskTrend: 'Risk Trend',
         brandDrift: 'Brand Drift',
         overrides: 'Active Overrides',
@@ -115,12 +117,20 @@ export default function GovernancePage() {
                     </div>
 
                     {/* Link to simulation */}
-                    <a
-                        href="/simulation"
-                        className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/30 rounded-lg hover:bg-indigo-100 dark:hover:bg-indigo-950/50 transition-colors"
-                    >
-                        {l.goSimulation}
-                    </a>
+                    <div className="flex flex-wrap gap-2">
+                        <a
+                            href="/simulation"
+                            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/30 rounded-lg hover:bg-indigo-100 dark:hover:bg-indigo-950/50 transition-colors"
+                        >
+                            {l.goSimulation}
+                        </a>
+                        <a
+                            href="/governance/system-health"
+                            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-white/[0.06] rounded-lg hover:bg-slate-200 dark:hover:bg-white/[0.1] transition-colors"
+                        >
+                            {l.systemHealth}
+                        </a>
+                    </div>
                 </div>
             )}
 
