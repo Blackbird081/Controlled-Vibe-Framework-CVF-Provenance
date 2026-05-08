@@ -42,6 +42,12 @@
   ],
   "roots": [
     { "path": ".agents", "lifecycleClass": "ACTIVE_CANONICAL", "exposureClass": "INTERNAL_ONLY" },
+    {
+      "path": ".cvf",
+      "lifecycleClass": "ACTIVE_CANONICAL",
+      "exposureClass": "INTERNAL_ONLY",
+      "rationale": "CVF ADD runtime state directory. Holds web-governance-jobs.jsonl and other ephemeral runtime artefacts produced by the governed web-execution path. Internal-only; not intended for public release."
+    },
     { "path": ".claude", "lifecycleClass": "ACTIVE_CANONICAL", "exposureClass": "INTERNAL_ONLY" },
     { "path": ".githooks", "lifecycleClass": "ACTIVE_CANONICAL", "exposureClass": "INTERNAL_ONLY" },
     { "path": ".github", "lifecycleClass": "ACTIVE_CANONICAL", "exposureClass": "INTERNAL_ONLY" },
