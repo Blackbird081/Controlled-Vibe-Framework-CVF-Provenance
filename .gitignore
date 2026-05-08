@@ -37,10 +37,13 @@ HOW TO USE CVF FOR/
 *.log
 npm-debug.log*
 EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/.data/
+EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/test-results/
 
 # Cache
 .cache/
 *.tsbuildinfo
+EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/.next-cvf-*/
+.cvf/runtime/
 
 # Internal (draft, chưa audit)
 CVF_INTERNAL_LITE/

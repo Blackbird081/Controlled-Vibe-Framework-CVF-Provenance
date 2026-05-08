@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Activity, AlertTriangle, CheckCircle2, CircleAlert, FileDown, Play, ShieldCheck } from 'lucide-react';
 
 type Role = 'owner' | 'admin' | 'operator' | 'reviewer' | 'viewer' | 'anonymous_local';
-type JobType = 'cvf_doctor' | 'provider_check' | 'docs_governance_check' | 'release_gate_dry_readiness';
+type JobType = 'cvf_doctor' | 'provider_check' | 'docs_governance_check' | 'release_gate_dry_readiness' | 'full_live_release_gate';
 
 interface JobEvent {
     eventId: string;
@@ -54,6 +54,11 @@ const JOBS: Array<{ jobType: JobType; label: string; description: string; provid
         label: 'Release Gate Dry Readiness',
         description: 'Dry-run release gate readiness only, no live provider E2E.',
     },
+    {
+        jobType: 'full_live_release_gate',
+        label: 'Full Live Release Gate',
+        description: 'Runs the full live release gate with provider-backed governance proof.',
+    },
 ];
 
 function mapRole(role?: string): Role {
@@ -70,6 +75,7 @@ function canTrigger(role: Role, jobType: JobType): boolean {
 function disabledReason(role: Role, jobType: JobType): string {
     if (canTrigger(role, jobType)) return '';
     if (role === 'anonymous_local') return 'Local anonymous mode can only run Runtime Doctor.';
+    if (jobType === 'full_live_release_gate') return 'Full live release gate requires owner, admin, or operator role.';
     return 'This role is read-only for governance operations.';
 }
 
@@ -174,17 +180,27 @@ export default function GovernanceOperationsPage() {
                     const key = `${job.jobType}:${job.provider ?? 'default'}`;
                     const disabled = !canTrigger(role, job.jobType) || busyKey !== null;
                     return (
-                        <div key={key} className="rounded-lg border border-gray-200 bg-white p-4 dark:border-white/[0.08] dark:bg-[#151827]">
+                        <div
+                            key={key}
+                            data-testid={`governance-job-card-${job.jobType}-${job.provider ?? 'default'}`}
+                            className="rounded-lg border border-gray-200 bg-white p-4 dark:border-white/[0.08] dark:bg-[#151827]"
+                        >
                             <div className="flex h-full flex-col justify-between gap-4">
                                 <div>
                                     <div className="text-sm font-semibold text-gray-900 dark:text-white">{job.label}</div>
                                     <p className="mt-2 text-xs leading-5 text-gray-600 dark:text-gray-300">{job.description}</p>
+                                    {job.jobType === 'full_live_release_gate' && (
+                                        <p className="mt-2 rounded-md border border-amber-200 bg-amber-50 px-2 py-1.5 text-xs leading-5 text-amber-800 dark:border-amber-900/60 dark:bg-amber-950/30 dark:text-amber-100">
+                                            This consumes live provider quota and is not a dry readiness check.
+                                        </p>
+                                    )}
                                     {disabledReason(role, job.jobType) && (
                                         <p className="mt-2 text-xs leading-5 text-amber-700 dark:text-amber-300">{disabledReason(role, job.jobType)}</p>
                                     )}
                                 </div>
                                 <button
                                     type="button"
+                                    data-testid={`governance-job-run-${job.jobType}-${job.provider ?? 'default'}`}
                                     disabled={disabled}
                                     onClick={() => void runJob(job)}
                                     className="inline-flex items-center justify-center gap-2 rounded-lg bg-indigo-600 px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-indigo-700 disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-600 dark:disabled:bg-gray-800 dark:disabled:text-gray-400"

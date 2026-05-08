@@ -17,6 +17,8 @@ if (existsSync(envLocalPath)) {
   }
 }
 
+const PLAYWRIGHT_PORT = Number(process.env.CVF_PLAYWRIGHT_PORT ?? 3001);
+
 // Live config — real provider calls, governance pipeline active.
 // For mock/CI-safe runs use: playwright.config.mock.ts
 export default defineConfig({
@@ -26,14 +28,14 @@ export default defineConfig({
         timeout: 30_000,
     },
     use: {
-        baseURL: process.env.PLAYWRIGHT_BASE_URL ?? 'http://127.0.0.1:3001',
+        baseURL: process.env.PLAYWRIGHT_BASE_URL ?? `http://127.0.0.1:${PLAYWRIGHT_PORT}`,
         trace: 'retain-on-failure',
         screenshot: 'only-on-failure',
         video: 'retain-on-failure',
     },
     webServer: {
-        command: 'npm run dev -- --port 3001',
-        port: 3001,
+        command: `npm run dev -- --port ${PLAYWRIGHT_PORT}`,
+        port: PLAYWRIGHT_PORT,
         reuseExistingServer: false,
         timeout: 120_000,
     },

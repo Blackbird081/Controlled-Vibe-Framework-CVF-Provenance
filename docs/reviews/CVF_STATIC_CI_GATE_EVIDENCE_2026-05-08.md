@@ -57,7 +57,7 @@ Result:
       "name": "Static governance/unit tests",
       "status": "PASS",
       "message": "Static governance/unit tests passed",
-      "detail": ["38 passed"]
+      "detail": ["42 passed"]
     }
   ]
 }
@@ -90,5 +90,5 @@ Still forbidden:
 - CI1 proves live governance.
 - PR checks are release-quality proof.
 - Post-RC2 non-coder no-regression is proven.
-- Web can trigger the full live release gate.
+- CI1 by itself proves Web-triggered full live release gate behavior.
 - CVF is GA-ready.

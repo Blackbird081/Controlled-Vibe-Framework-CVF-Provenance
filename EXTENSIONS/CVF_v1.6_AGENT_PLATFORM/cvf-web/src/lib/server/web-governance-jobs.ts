@@ -10,7 +10,8 @@ export type GovernanceJobType =
     | 'cvf_doctor'
     | 'provider_check'
     | 'docs_governance_check'
-    | 'release_gate_dry_readiness';
+    | 'release_gate_dry_readiness'
+    | 'full_live_release_gate';
 
 export type GovernanceRole = 'owner' | 'admin' | 'operator' | 'reviewer' | 'viewer' | 'anonymous_local';
 export type GovernanceAuthMode = 'authenticated' | 'service_token' | 'anonymous_local' | 'unknown';
@@ -79,7 +80,7 @@ export interface GovernanceJobList {
 
 interface JobDefinition {
     jobType: GovernanceJobType;
-    className: 'read_only_diagnostics' | 'provider_readiness_validation' | 'targeted_non_destructive_governance_check' | 'release_gate_dry_readiness';
+    className: 'read_only_diagnostics' | 'provider_readiness_validation' | 'targeted_non_destructive_governance_check' | 'release_gate_dry_readiness' | 'full_live_release_gate';
     handlerId: string;
     timeoutMs: number;
     buildArgv: (request: GovernanceJobRequest) => string[];
@@ -137,6 +138,13 @@ const JOBS: Record<GovernanceJobType, JobDefinition> = {
         handlerId: 'scripts.run_cvf_release_gate_bundle.dry_run',
         timeoutMs: 45_000,
         buildArgv: () => ['scripts/run_cvf_release_gate_bundle.py', '--dry-run', '--json'],
+    },
+    full_live_release_gate: {
+        jobType: 'full_live_release_gate',
+        className: 'full_live_release_gate',
+        handlerId: 'scripts.run_cvf_release_gate_bundle.live',
+        timeoutMs: 900_000,
+        buildArgv: () => ['scripts/run_cvf_release_gate_bundle.py', '--json'],
     },
 };
 
@@ -214,6 +222,40 @@ function resolveTimeoutMs(request: GovernanceJobRequest, definition: JobDefiniti
     return Math.min(normalized, definition.timeoutMs);
 }
 
+function readEnvFileValue(path: string, names: string[]): boolean {
+    if (!existsSync(path)) return false;
+    const content = readFileSync(path, 'utf8');
+    for (const line of content.split(/\r?\n/)) {
+        const trimmed = line.trim();
+        if (!trimmed || trimmed.startsWith('#')) continue;
+        const eq = trimmed.indexOf('=');
+        if (eq === -1) continue;
+        const key = trimmed.slice(0, eq).trim();
+        const value = trimmed.slice(eq + 1).trim().replace(/^['"]|['"]$/g, '');
+        if (names.includes(key) && value) return true;
+    }
+    return false;
+}
+
+function hasLiveReleaseGateKey(repoRoot: string): boolean {
+    const names = ['DASHSCOPE_API_KEY', 'ALIBABA_API_KEY', 'CVF_ALIBABA_API_KEY', 'CVF_BENCHMARK_ALIBABA_KEY'];
+    if (names.some((name) => Boolean(process.env[name]))) return true;
+    return readEnvFileValue(resolve(repoRoot, 'EXTENSIONS', 'CVF_v1.6_AGENT_PLATFORM', 'cvf-web', '.env.local'), names);
+}
+
+function hasActiveFullReleaseGate(auditPath: string): boolean {
+    if (!existsSync(auditPath)) return false;
+    const latestByJob = new Map<string, GovernanceJobEvent>();
+    for (const line of readFileSync(auditPath, 'utf8').split(/\r?\n/).filter(Boolean)) {
+        const event = JSON.parse(line) as GovernanceJobEvent;
+        latestByJob.set(event.jobId, event);
+    }
+    return Array.from(latestByJob.values()).some((event) => (
+        event.jobType === 'full_live_release_gate' &&
+        (event.status === 'queued' || event.status === 'running')
+    ));
+}
+
 function makeEvent(input: {
     options: WebGovernanceJobOptions;
     request: GovernanceJobRequest;
@@ -270,11 +312,20 @@ function makeEvent(input: {
 
 async function defaultRunCommand(command: string, argv: string[], options: { cwd: string; timeoutMs: number }): Promise<CommandResult> {
     try {
+        const isFullReleaseGate = argv[0] === 'scripts/run_cvf_release_gate_bundle.py' && argv.includes('--json') && !argv.includes('--dry-run');
+        const releaseGateEnv: NodeJS.ProcessEnv = { ...process.env };
+        delete (releaseGateEnv as Record<string, string | undefined>).NODE_ENV;
+        delete (releaseGateEnv as Record<string, string | undefined>).TURBOPACK;
+        releaseGateEnv.CVF_PLAYWRIGHT_PORT = process.env.CVF_PLAYWRIGHT_PORT ?? '3011';
+        releaseGateEnv.PLAYWRIGHT_BASE_URL = process.env.PLAYWRIGHT_BASE_URL ?? 'http://127.0.0.1:3011';
+        releaseGateEnv.NEXT_DIST_DIR = process.env.NEXT_DIST_DIR ?? '.next-cvf-release-gate';
+        const env: NodeJS.ProcessEnv = isFullReleaseGate ? releaseGateEnv : process.env;
         const result = await execFileAsync(command, argv, {
             cwd: options.cwd,
             timeout: options.timeoutMs,
             windowsHide: true,
-            maxBuffer: 1024 * 1024,
+            maxBuffer: isFullReleaseGate ? 8 * 1024 * 1024 : 1024 * 1024,
+            env,
         });
         return {
             stdout: result.stdout ?? '',
@@ -304,10 +355,22 @@ export async function submitGovernanceJob(request: GovernanceJobRequest, options
     const correlationId = eventId(options);
     const requestedAt = now();
     const definition = JOBS[request.jobType as GovernanceJobType] ?? null;
-    const permission = canTrigger(request, definition);
+    let permission = canTrigger(request, definition);
     const fixedArgv = definition?.buildArgv(request) ?? [];
-    const providerLane = request.jobType === 'provider_check' ? request.provider ?? 'alibaba' : null;
+    const providerLane = request.jobType === 'provider_check'
+        ? request.provider ?? 'alibaba'
+        : request.jobType === 'full_live_release_gate'
+            ? 'alibaba'
+            : null;
     const timeoutMs = resolveTimeoutMs(request, definition);
+
+    if (permission.allowed && request.jobType === 'full_live_release_gate') {
+        if (hasActiveFullReleaseGate(auditPath)) {
+            permission = { allowed: false, reason: 'full_release_gate_already_running' };
+        } else if (!hasLiveReleaseGateKey(repoRoot)) {
+            permission = { allowed: false, reason: 'missing_live_provider_key' };
+        }
+    }
 
     const requestedEvent = makeEvent({
         options,

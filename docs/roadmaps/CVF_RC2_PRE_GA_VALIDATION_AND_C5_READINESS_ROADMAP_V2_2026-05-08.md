@@ -3,7 +3,7 @@
 
 **For:** Operator sign-off + Claude re-review before implementation  
 **Date:** 2026-05-08  
-**Status:** DRAFT V2 — NOT AUTHORIZED FOR IMPLEMENTATION  
+**Status:** EXECUTED THROUGH CI2 IMPLEMENTATION — OPTIONAL MANAGED STATE DEFERRED
 **Basis:** RC2 Foundation closure packet, Claude rebuttal, Codex response, operator clarification that CVF remains local-first and Supabase is optional managed depth  
 
 ## Executive Decision
@@ -39,6 +39,22 @@ Recommended sequencing:
 | 5 | M | Optional managed adapter planning | separate operator decision |
 
 Track M must not block local-first GA readiness.
+
+## Execution Addendum — 2026-05-08
+
+The V2 roadmap was subsequently authorized by Claude final authorization and
+executed through the local-first GA-readiness tracks:
+
+- CI1 static guardrails: CLOSED DELIVERED.
+- R post-RC2 non-coder regression: CLOSED DELIVERED, `20/18` checks with all
+  10 families covered on Alibaba; DeepSeek remains explicitly unknown.
+- C5.0/C5.1 design: CLOSED DELIVERED.
+- C5.2-C5.4 Web-triggered full live release gate: CLOSED DELIVERED, Web job
+  `full_live_release_gate` returned release gate `7/7 PASS`.
+- CI2 protected live release gate workflow: IMPLEMENTED, hosted run pending
+  because the operator deferred push.
+- M optional managed state/Postgres/Supabase planning: DEFERRED; local JSONL
+  remains the default RC2 runtime job store.
 
 ---
 
