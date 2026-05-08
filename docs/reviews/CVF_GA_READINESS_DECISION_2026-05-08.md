@@ -86,3 +86,28 @@ Corrective patch:
 - `.github/workflows/cvf-protected-live-release-gate.yml` now uses
   `npm install --no-audit --no-fund` for `EXTENSIONS/CVF_GUARD_CONTRACT` and
   keeps `npm ci` for `cvf-web`.
+
+## 2026-05-09 Hosted Release-Gate Failure Addendum
+
+Retry run `25574408974` reached `python scripts/run_cvf_release_gate_bundle.py
+--json` and uploaded the release-gate result artifact. The hosted gate passed
+6/7 checks and failed only `E2E Playwright Governance (live)`.
+
+The likely root-cause candidate was a hosted secret-name mismatch: the workflow
+configured protected secret `DASHSCOPE_API_KEY`, while the Web `/api/execute`
+Alibaba resolver did not recognize that env name. This can allow provider
+readiness to pass while Web live governance requests fail on the Alibaba lane.
+
+Decision remains `GA_LOCAL_FIRST_APPROVED_WITH_LIMITS` until the corrected
+hosted workflow records 7/7 PASS.
+
+Failure artifact:
+
+- `docs/reviews/CVF_CI2_HOSTED_LIVE_GATE_RELEASE_GATE_FAILURE_RUN_2026-05-09.md`
+
+Corrective patch:
+
+- `src/lib/alibaba-env.ts` now accepts `DASHSCOPE_API_KEY` in addition to the
+  existing Alibaba aliases.
+- `.github/workflows/cvf-protected-live-release-gate.yml` now uploads
+  Playwright diagnostics on hosted failure.

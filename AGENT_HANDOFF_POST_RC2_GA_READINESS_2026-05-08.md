@@ -125,3 +125,16 @@ This compact handoff supersedes adding more status to the oversized
   patch: `.github/workflows/cvf-protected-live-release-gate.yml` now uses
   `npm install --no-audit --no-fund` for Guard Contract while keeping `npm ci`
   for `cvf-web`.
+- 2026-05-09: CI2-H retry run `25574408974` reached the actual release gate on
+  head SHA `29dea1d796d56a13595115a2fe88491d5902d479` and uploaded
+  `.cvf/runtime/ci2h-hosted/25574408974/cvf-protected-live-release-gate-result.json`.
+  Result: release gate `FAIL`, 6/7 PASS, only `E2E Playwright Governance
+  (live)` failed. Provider readiness, Web build, Guard Contract TypeScript,
+  secrets scan, docs governance, and mock UI all passed. Failure artifact filed:
+  `docs/reviews/CVF_CI2_HOSTED_LIVE_GATE_RELEASE_GATE_FAILURE_RUN_2026-05-09.md`.
+  Root-cause candidate: protected workflow uses `DASHSCOPE_API_KEY`, while Web
+  `/api/execute` Alibaba resolver did not recognize that env name. Corrective
+  patch in progress: add `DASHSCOPE_API_KEY` to `src/lib/alibaba-env.ts`, add
+  unit coverage, and upload Playwright diagnostics on hosted workflow failure.
+  Do not claim hosted CI2-H PASS or upgrade GA decision until a corrected hosted
+  run records release gate 7/7 PASS.

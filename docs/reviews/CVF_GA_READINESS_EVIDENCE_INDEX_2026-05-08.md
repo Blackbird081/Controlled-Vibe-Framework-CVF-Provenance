@@ -18,6 +18,7 @@
 | GA packet | CLOSED | `docs/reviews/CVF_GA_DOCUMENTATION_CURRENCY_AUDIT_2026-05-08.md`; `docs/reviews/CVF_GA_KNOWN_LIMITATIONS_REFRESH_2026-05-08.md`; `docs/reviews/CVF_GA_READINESS_DECISION_2026-05-08.md` |
 | CI2-H post-push follow-up | POST-PUSH READY; AUTH REQUIRED | `docs/reviews/CVF_CI2_HOSTED_LIVE_GATE_POST_PUSH_SANITY_2026-05-09.md`; `docs/reviews/CVF_CI2_HOSTED_LIVE_GATE_OPERATOR_DISPATCH_RUNBOOK_2026-05-09.md` |
 | CI2-H first hosted run | FAIL-CLOSED BEFORE PROVIDER CALL | `docs/reviews/CVF_CI2_HOSTED_LIVE_GATE_FAILURE_RUN_2026-05-09.md` |
+| CI2-H second hosted run | FAIL-CLOSED AT LIVE E2E | `docs/reviews/CVF_CI2_HOSTED_LIVE_GATE_RELEASE_GATE_FAILURE_RUN_2026-05-09.md` |
 
 ## Verification Summary
 
@@ -27,7 +28,7 @@
 | CQ no-live tests | PASS | Targeted cost/quota, system job route, web job, and operations UI tests passed. |
 | CQ live Web full release gate | PASS | Web-triggered `full_live_release_gate` completed release gate 7/7 with `costQuota.decision=allowed` and audit increment. |
 | DeepSeek smoke under CQ | PASS | 8/8 live DeepSeek governed calls passed under cost/quota preflight. |
-| Hosted GitHub live gate | NOT PROVEN | First hosted run `25573498275` dispatched and reached the protected environment, then failed before release gate execution because Guard Contract used `npm ci` without a tracked lockfile. Corrective workflow patch is pending retry. |
+| Hosted GitHub live gate | NOT PROVEN | First hosted run `25573498275` failed before provider call due Guard Contract install. Retry run `25574408974` reached release gate and passed 6/7, then failed live governance E2E. Root-cause candidate: Web Alibaba resolver did not accept `DASHSCOPE_API_KEY`; corrective patch is pending retry. |
 | Final local static CI gate | PASS | `python scripts/run_cvf_static_ci_gate.py --json` passed 5/5 after rebuilding Next generated types. |
 
 ## Claim Boundary

@@ -73,3 +73,13 @@ jobs:
           name: cvf-protected-live-release-gate-result
           path: cvf-protected-live-release-gate-result.json
           if-no-files-found: error
+
+      - name: Upload Playwright diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cvf-protected-live-playwright-diagnostics
+          path: |
+            EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/test-results
+            EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright-report
+          if-no-files-found: warn
