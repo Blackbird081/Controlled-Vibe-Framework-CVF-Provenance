@@ -2,6 +2,29 @@
 
 ---
 
+## [v4.0.0-rc.1] — Public Release Candidate Tag Binding
+
+Date: 2026-05-08
+
+### Added
+- Public RC tag binding for `v4.0.0-rc.1`.
+- Release notes draft: `docs/reference/CVF_RELEASE_NOTES_V4_0_0_RC_1_2026-05-08.md`.
+- WPR-1 contributor boundary: `docs/reference/CVF_EXTENSION_AUTHOR_BOUNDARY.md`.
+- WPR-2 deploy guide: `docs/guides/CVF_DEPLOY_GUIDE.md`.
+- WPR-3 exposure audit: `docs/reviews/CVF_PUBLIC_EXPOSURE_AUDIT_2026-05-08.md`.
+
+### Verified
+- Release gate PASS 7/7: Web build, TypeScript guard contract, provider readiness, secrets scan, docs governance, UI mock Playwright, and live governance Playwright.
+- W149 trusted-form corpus evidence remains the live value baseline: Alibaba direct API 40/40, Alibaba browser UI 40/40, DeepSeek confirmatory 12/12.
+- RC truth remains bounded by `docs/reference/CVF_RELEASE_CANDIDATE_TRUTH_PACKET_2026-04-21.md` and `docs/reference/CVF_KNOWN_LIMITATIONS_REGISTER_2026-04-21.md`.
+
+### Boundary
+- This is a release candidate, not GA.
+- No runtime behavior, provider behavior, deploy config, governance policy, or trusted-form corpus changed in WPR-4.
+- GitHub Release publication remains operator/CLI-token dependent; the in-repo release notes are the canonical draft.
+
+---
+
 ## [2026-03-21] — Federated Plane Convergence: Phase 0-2 Complete
 
 ### Added
