@@ -9,12 +9,14 @@ Detailed guides for different user personas and team sizes.
 | [Solo Developer](solo-developer.md) | Individual developers using AI | 15 min |
 | [Team Setup](team-setup.md) | Small teams (2-10 people) | 20 min |
 | [Enterprise](enterprise.md) | Organizations (10+ developers) | 30 min |
+| [CVF Deploy Guide](CVF_DEPLOY_GUIDE.md) | Public deploy operators | 15 min |
 
 ## Where to Start
 
 - **New to CVF?** → [Solo Developer](solo-developer.md)
 - **Setting up a team?** → [Team Setup](team-setup.md)
 - **Rolling out org-wide?** → [Enterprise](enterprise.md)
+- **Hosting the web app?** → [CVF Deploy Guide](CVF_DEPLOY_GUIDE.md)
 
 ## See Also
 

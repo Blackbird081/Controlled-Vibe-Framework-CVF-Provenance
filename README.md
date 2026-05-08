@@ -198,6 +198,8 @@ Then open `http://localhost:3000`.
 
 In `Settings`, enable the provider keys you want to use. Each admitted `provider + model` pair is treated as a governed run lane for future Product Value Validation.
 
+For Netlify, Vercel, and Docker posture, see the [CVF Deploy Guide](docs/guides/CVF_DEPLOY_GUIDE.md).
+
 ### Quick Run: Workspace Bootstrap
 
 ```powershell
@@ -239,6 +241,8 @@ If you need all 4 foundations ready at once, use:
 ```bash
 ./scripts/bootstrap_foundations.sh
 ```
+
+For hosting and deployment options after local setup, use the [CVF Deploy Guide](docs/guides/CVF_DEPLOY_GUIDE.md).
 
 ## Current Status
 
@@ -386,6 +390,7 @@ Primary status anchors:
 ### Use the system
 
 - [Getting Started](docs/GET_STARTED.md)
+- [Deploy Guide](docs/guides/CVF_DEPLOY_GUIDE.md)
 - [Quick Orientation](docs/guides/CVF_QUICK_ORIENTATION.md)
 - [Solo Developer Guide](docs/guides/solo-developer.md)
 - [Enterprise Guide](docs/guides/enterprise.md)
