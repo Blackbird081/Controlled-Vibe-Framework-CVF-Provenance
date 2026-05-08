@@ -39,6 +39,8 @@ describe('dlp-filter', () => {
   it('applies custom patterns from the append-only policy store', async () => {
     await appendDLPPolicyEvent({
       timestamp: '2026-04-18T00:00:00.000Z',
+      orgId: 'org_cvf',
+      teamId: 'team_exec',
       patterns: [
         {
           id: 'custom-project-code',

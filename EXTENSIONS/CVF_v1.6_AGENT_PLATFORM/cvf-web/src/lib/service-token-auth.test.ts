@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import {
   computeServiceRequestSignature,
@@ -8,6 +8,10 @@ import {
 } from './service-token-auth';
 
 describe('service-token-auth', () => {
+  afterEach(() => {
+    vi.unstubAllEnvs();
+  });
+
   it('compares secrets in constant-time only when values match', () => {
     expect(constantTimeEqual('abc', 'abc')).toBe(true);
     expect(constantTimeEqual('abc', 'abd')).toBe(false);
@@ -21,8 +25,7 @@ describe('service-token-auth', () => {
   });
 
   it('verifies hmac signatures outside test mode', () => {
-    const originalNodeEnv = process.env.NODE_ENV;
-    process.env.NODE_ENV = 'production';
+    vi.stubEnv('NODE_ENV', 'production');
 
     const token = 'svc-secret';
     const timestamp = String(Date.now());
@@ -46,7 +49,5 @@ describe('service-token-auth', () => {
       body,
       now: Number(timestamp),
     })).toBe(false);
-
-    process.env.NODE_ENV = originalNodeEnv;
   });
 });

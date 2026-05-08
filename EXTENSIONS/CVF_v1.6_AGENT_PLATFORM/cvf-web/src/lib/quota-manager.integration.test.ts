@@ -19,6 +19,7 @@ const baseSettings = {
         anthropic: { apiKey: '', selectedModel: 'claude-sonnet-4-20250514' },
         alibaba: { apiKey: '', selectedModel: 'qwen-plus' },
         openrouter: { apiKey: '', selectedModel: 'openai/gpt-4o-mini' },
+        deepseek: { apiKey: '', selectedModel: 'deepseek-chat' },
     },
 };
 

@@ -94,6 +94,8 @@ describe('policy-reader', () => {
   it('returns the latest tool policy per tool', async () => {
     await appendToolPolicyEvent({
       timestamp: '2026-04-18T08:00:00.000Z',
+      orgId: 'org_cvf',
+      teamId: 'team_exec',
       toolId: 'web_search',
       allowedRoles: ['owner', 'admin'],
       setBy: 'usr_2',
@@ -101,6 +103,8 @@ describe('policy-reader', () => {
     });
     await appendToolPolicyEvent({
       timestamp: '2026-04-18T09:00:00.000Z',
+      orgId: 'org_cvf',
+      teamId: 'team_exec',
       toolId: 'web_search',
       allowedRoles: ['owner', 'admin', 'reviewer'],
       setBy: 'usr_2',

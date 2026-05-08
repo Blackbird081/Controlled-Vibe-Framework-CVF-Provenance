@@ -26,7 +26,7 @@ describe('templates/index', () => {
 
     describe('getTemplateById', () => {
         it('finds a template by ID', () => {
-            const first = templates[0];
+            const first = templates[0]!;
             expect(getTemplateById(first.id)).toBe(first);
         });
 
@@ -37,7 +37,7 @@ describe('templates/index', () => {
 
     describe('getTemplatesByCategory', () => {
         it('filters by category', () => {
-            const cat = templates[0].category;
+            const cat = templates[0]!.category;
             const filtered = getTemplatesByCategory(cat);
             expect(filtered.length).toBeGreaterThan(0);
             filtered.forEach(t => expect(t.category).toBe(cat));
@@ -50,7 +50,7 @@ describe('templates/index', () => {
 
     describe('generateIntent', () => {
         it('replaces placeholders with values', () => {
-            const template = templates.find(t => t.intentPattern && t.fields.length > 0) || templates[0];
+            const template = templates.find(t => t.intentPattern && t.fields.length > 0) || templates[0]!;
             const values: Record<string, string> = {};
             template.fields.forEach(f => {
                 values[f.id] = 'test-value';
@@ -62,6 +62,7 @@ describe('templates/index', () => {
         it('uses N/A for missing values', () => {
             const template = templates.find(t => t.fields.length > 0 && /\[[A-Za-z0-9_]+\]/.test(t.intentPattern));
             expect(template).toBeDefined();
+            if (!template) throw new Error('Expected a template with placeholder fields');
 
             const intent = generateIntent(template, {});
             expect(intent).toContain('N/A');
@@ -87,7 +88,7 @@ describe('templates/index', () => {
 
     describe('generateCompleteSpec', () => {
         it('generates a full CVF spec document', () => {
-            const template = templates[0];
+            const template = templates[0]!;
             const values: Record<string, string> = {};
             template.fields.forEach(f => {
                 values[f.id] = `Value for ${f.id}`;
@@ -128,19 +129,19 @@ describe('templates/index', () => {
         });
 
         it('includes user intent if provided', () => {
-            const template = templates[0];
+            const template = templates[0]!;
             const spec = generateCompleteSpec(template, {}, 'Custom user intent');
             expect(spec).toContain(template.name);
         });
 
         it('includes expected output section', () => {
-            const template = templates[0];
+            const template = templates[0]!;
             const spec = generateCompleteSpec(template, {});
             expect(spec).toContain('Expected Output');
         });
 
         it('includes date', () => {
-            const template = templates[0];
+            const template = templates[0]!;
             const spec = generateCompleteSpec(template, {});
             const today = new Date().toISOString().split('T')[0];
             expect(spec).toContain(today);
@@ -164,13 +165,13 @@ describe('templates/index', () => {
         });
 
         it('handles template without outputExpected', () => {
-            const template = { ...templates[0], outputExpected: [], outputTemplate: undefined };
+            const template = { ...templates[0]!, outputExpected: [], outputTemplate: undefined };
             const spec = generateCompleteSpec(template, {});
             expect(spec).toContain('Comprehensive analysis');
         });
 
         it('shows no input provided when values are empty', () => {
-            const template = templates[0];
+            const template = templates[0]!;
             const spec = generateCompleteSpec(template, {});
             // When all values are empty, at least generates without error
             expect(spec).toBeTruthy();

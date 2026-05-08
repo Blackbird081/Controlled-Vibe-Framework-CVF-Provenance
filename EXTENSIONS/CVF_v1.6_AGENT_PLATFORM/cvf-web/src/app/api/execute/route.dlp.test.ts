@@ -80,6 +80,8 @@ describe('/api/execute DLP integration', () => {
 
     await appendDLPPolicyEvent({
       timestamp: '2026-04-18T00:00:00.000Z',
+      orgId: 'org_cvf',
+      teamId: 'team_exec',
       patterns: [
         {
           id: 'custom-customer-id',

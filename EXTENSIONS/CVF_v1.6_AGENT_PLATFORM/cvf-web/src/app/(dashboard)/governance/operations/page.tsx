@@ -36,13 +36,13 @@ const JOBS: Array<{ jobType: JobType; label: string; description: string; provid
         jobType: 'provider_check',
         provider: 'alibaba',
         label: 'Alibaba Provider Check',
-        description: 'Secret-safe provider readiness validation without live flag.',
+        description: 'Secret-safe live provider readiness validation.',
     },
     {
         jobType: 'provider_check',
         provider: 'deepseek',
         label: 'DeepSeek Provider Check',
-        description: 'Secret-safe provider readiness validation without live flag.',
+        description: 'Secret-safe live provider readiness validation.',
     },
     {
         jobType: 'docs_governance_check',

@@ -28,6 +28,7 @@ export interface GovernanceJobRequest {
     localMode: boolean;
     requestIpClass: GovernanceRequestIpClass | string;
     uiRequestId?: string;
+    timeoutMsOverride?: number;
 }
 
 export interface GovernanceJobEvent {
@@ -119,9 +120,9 @@ const JOBS: Record<GovernanceJobType, JobDefinition> = {
     provider_check: {
         jobType: 'provider_check',
         className: 'provider_readiness_validation',
-        handlerId: 'scripts.cvf_provider_check.json.no_live',
+        handlerId: 'scripts.cvf_provider_check.json.live',
         timeoutMs: 30_000,
-        buildArgv: (request) => ['scripts/cvf_provider_check.py', '--provider', request.provider === 'deepseek' ? 'deepseek' : 'alibaba', '--json'],
+        buildArgv: (request) => ['scripts/cvf_provider_check.py', '--provider', request.provider === 'deepseek' ? 'deepseek' : 'alibaba', '--live', '--json'],
     },
     docs_governance_check: {
         jobType: 'docs_governance_check',
@@ -204,6 +205,15 @@ function appendEvent(auditPath: string, event: GovernanceJobEvent): void {
     appendFileSync(auditPath, `${JSON.stringify(event)}\n`, 'utf8');
 }
 
+function resolveTimeoutMs(request: GovernanceJobRequest, definition: JobDefinition | null): number {
+    if (!definition) return 0;
+    const override = request.timeoutMsOverride;
+    if (override === undefined || !Number.isFinite(override)) return definition.timeoutMs;
+    const normalized = Math.floor(override);
+    if (normalized < 1) return definition.timeoutMs;
+    return Math.min(normalized, definition.timeoutMs);
+}
+
 function makeEvent(input: {
     options: WebGovernanceJobOptions;
     request: GovernanceJobRequest;
@@ -223,6 +233,7 @@ function makeEvent(input: {
     requestedAt: string;
     correlationId: string;
     repoRoot: string;
+    timeoutMs: number;
 }): GovernanceJobEvent {
     const recordedAt = input.options.now?.() ?? new Date().toISOString();
     return {
@@ -248,7 +259,7 @@ function makeEvent(input: {
         stdoutSummary: redactGovernanceJobOutput(input.stdoutSummary ?? ''),
         stderrSummary: redactGovernanceJobOutput(input.stderrSummary ?? ''),
         exitCode: input.exitCode ?? null,
-        timeoutMs: input.definition?.timeoutMs ?? 0,
+        timeoutMs: input.timeoutMs,
         timedOut: input.timedOut ?? false,
         errorClass: input.errorClass ?? null,
         evidenceRefs: [],
@@ -296,6 +307,7 @@ export async function submitGovernanceJob(request: GovernanceJobRequest, options
     const permission = canTrigger(request, definition);
     const fixedArgv = definition?.buildArgv(request) ?? [];
     const providerLane = request.jobType === 'provider_check' ? request.provider ?? 'alibaba' : null;
+    const timeoutMs = resolveTimeoutMs(request, definition);
 
     const requestedEvent = makeEvent({
         options,
@@ -311,6 +323,7 @@ export async function submitGovernanceJob(request: GovernanceJobRequest, options
         requestedAt,
         correlationId,
         repoRoot,
+        timeoutMs,
     });
     appendEvent(auditPath, requestedEvent);
 
@@ -329,6 +342,7 @@ export async function submitGovernanceJob(request: GovernanceJobRequest, options
             requestedAt,
             correlationId,
             repoRoot,
+            timeoutMs,
         });
         appendEvent(auditPath, blockedEvent);
         return {
@@ -355,13 +369,14 @@ export async function submitGovernanceJob(request: GovernanceJobRequest, options
         requestedAt,
         correlationId,
         repoRoot,
+        timeoutMs,
     });
     appendEvent(auditPath, runningEvent);
 
     const runner = options.runCommand ?? defaultRunCommand;
     const commandResult = await runner('python', fixedArgv, {
         cwd: repoRoot,
-        timeoutMs: definition.timeoutMs,
+        timeoutMs,
     });
     const finalStatus: GovernanceJobStatus = commandResult.timedOut
         ? 'timed_out'
@@ -387,6 +402,7 @@ export async function submitGovernanceJob(request: GovernanceJobRequest, options
         requestedAt,
         correlationId,
         repoRoot,
+        timeoutMs,
     });
     appendEvent(auditPath, finalEvent);
 

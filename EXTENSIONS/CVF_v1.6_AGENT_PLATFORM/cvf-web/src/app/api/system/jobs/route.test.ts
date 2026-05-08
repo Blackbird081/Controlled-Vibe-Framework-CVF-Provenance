@@ -53,7 +53,7 @@ describe('/api/system/jobs', () => {
                 'content-type': 'application/json',
                 'x-forwarded-for': '127.0.0.1',
             },
-            body: JSON.stringify({ jobType: 'cvf_doctor' }),
+            body: JSON.stringify({ jobType: 'cvf_doctor', timeoutMsOverride: 25 }),
         });
 
         const response = await POST(request);
@@ -66,6 +66,7 @@ describe('/api/system/jobs', () => {
             role: 'operator',
             requestedBy: 'Test Operator',
             requestIpClass: 'loopback',
+            timeoutMsOverride: 25,
         }));
     });
 

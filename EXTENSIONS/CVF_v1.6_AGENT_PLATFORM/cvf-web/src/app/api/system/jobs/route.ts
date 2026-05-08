@@ -53,6 +53,7 @@ export async function POST(request: NextRequest) {
         localMode,
         requestIpClass: ipClass,
         uiRequestId: body.uiRequestId,
+        timeoutMsOverride: body.timeoutMsOverride,
     });
 
     return NextResponse.json(result, {

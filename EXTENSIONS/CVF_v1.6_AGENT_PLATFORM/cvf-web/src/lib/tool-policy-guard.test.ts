@@ -34,6 +34,8 @@ describe('tool-policy-guard', () => {
   it('uses the latest custom policy when present', async () => {
     await appendToolPolicyEvent({
       timestamp: '2026-04-18T09:00:00.000Z',
+      orgId: 'org_cvf',
+      teamId: 'team_exec',
       toolId: 'web_search',
       allowedRoles: ['owner', 'admin'],
       setBy: 'usr_2',

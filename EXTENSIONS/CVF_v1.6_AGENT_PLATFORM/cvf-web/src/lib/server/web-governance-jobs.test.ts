@@ -101,6 +101,32 @@ describe('web governance jobs', () => {
         expect(launched).toBe(false);
     });
 
+    it('runs provider checks as live validation with fixed argv', async () => {
+        const context = makeContext();
+        const result = await submitGovernanceJob({
+            jobType: 'provider_check',
+            provider: 'deepseek',
+            role: 'operator',
+            requestedBy: 'operator',
+            authMode: 'authenticated',
+            localMode: false,
+            requestIpClass: 'loopback',
+        }, {
+            ...context,
+            runCommand: async (_command, argv) => ({
+                stdout: JSON.stringify({ status: 'LIVE_VALIDATED', argv }),
+                stderr: '',
+                exitCode: 0,
+                timedOut: false,
+                errorClass: null,
+            }),
+        });
+
+        expect(result.status).toBe('succeeded');
+        expect(result.latestEvent.handlerId).toBe('scripts.cvf_provider_check.json.live');
+        expect(result.latestEvent.fixedArgv).toEqual(['scripts/cvf_provider_check.py', '--provider', 'deepseek', '--live', '--json']);
+    });
+
     it('allows anonymous local mode only for read-only diagnostics', async () => {
         const context = makeContext();
         const allowed = await submitGovernanceJob({
@@ -156,6 +182,7 @@ describe('web governance jobs', () => {
 
     it('marks timed out commands as timed_out', async () => {
         const context = makeContext();
+        let observedTimeoutMs = 0;
         const result = await submitGovernanceJob({
             jobType: 'docs_governance_check',
             role: 'admin',
@@ -163,18 +190,24 @@ describe('web governance jobs', () => {
             authMode: 'authenticated',
             localMode: false,
             requestIpClass: 'loopback',
+            timeoutMsOverride: 5,
         }, {
             ...context,
-            runCommand: async () => ({
+            runCommand: async (_command, _argv, options) => {
+                observedTimeoutMs = options.timeoutMs;
+                return {
                 stdout: '',
                 stderr: 'timeout',
                 exitCode: null,
                 timedOut: true,
                 errorClass: 'timeout',
-            }),
+                };
+            },
         });
 
         expect(result.status).toBe('timed_out');
+        expect(observedTimeoutMs).toBe(5);
+        expect(result.latestEvent.timeoutMs).toBe(5);
         expect(result.latestEvent.timedOut).toBe(true);
         expect(result.latestEvent.errorClass).toBe('timeout');
     });

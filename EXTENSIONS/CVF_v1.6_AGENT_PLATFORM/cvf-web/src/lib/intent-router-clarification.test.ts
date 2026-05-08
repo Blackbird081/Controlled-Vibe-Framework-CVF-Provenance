@@ -40,6 +40,7 @@ function makeWeakResult(reason: 'weak_confidence' | 'unsupported_language' | 'em
     friendlyPhase: '🧭 Tiếp nhận & Làm rõ',
     friendlyRisk: '⚪ Không rủi ro',
     confidence: 'weak',
+    routeType: null,
     fallback: { reason, suggestion: 'test suggestion' },
     intentRoutedAt: new Date().toISOString(),
   };
@@ -56,6 +57,7 @@ function makeNoFallbackResult(): IntentRouteResult {
     friendlyPhase: '🧭',
     friendlyRisk: '⚪',
     confidence: 'weak',
+    routeType: null,
     fallback: null,
     intentRoutedAt: new Date().toISOString(),
   };
