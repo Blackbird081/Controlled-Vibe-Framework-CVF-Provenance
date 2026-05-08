@@ -27,6 +27,33 @@ Push authorization is satisfied. Remote push to `origin/main` is part of this cl
 
 ---
 
+## RC2 Pre-GA Validation Planning + CI1 — CLOSED THROUGH STATIC GATE (2026-05-08)
+
+Claude final authorization for the RC2 Pre-GA V2 roadmap is filed at
+`docs/reviews/CVF_RC2_PRE_GA_ROADMAP_CLAUDE_FINAL_AUTHORIZATION_2026-05-08.md`.
+Codex response and roadmap artifacts are filed at
+`docs/reviews/CVF_RC2_PRE_GA_ROADMAP_CODEX_RESPONSE_2026-05-08.md`,
+`docs/roadmaps/CVF_RC2_PRE_GA_VALIDATION_AND_C5_READINESS_ROADMAP_DRAFT_2026-05-08.md`,
+and `docs/roadmaps/CVF_RC2_PRE_GA_VALIDATION_AND_C5_READINESS_ROADMAP_V2_2026-05-08.md`.
+
+CI1 static guardrails are CLOSED DELIVERED:
+
+- GC-018 candidate: `docs/baselines/CVF_GC018_RC2_CI1_STATIC_CI_GUARDRAILS_CANDIDATE_2026-05-08.md`
+- Roadmap: `docs/roadmaps/CVF_STATIC_CI_GATE_ROADMAP_2026-05-08.md`
+- Design: `docs/reviews/CVF_STATIC_CI_GATE_DESIGN_2026-05-08.md`
+- Evidence: `docs/reviews/CVF_STATIC_CI_GATE_EVIDENCE_2026-05-08.md`
+- Runtime: `scripts/run_cvf_static_ci_gate.py`
+- Workflow: `.github/workflows/cvf-static-ci.yml`
+
+Local verification: `python scripts/run_cvf_static_ci_gate.py --json` returned
+PASS for Web build, Web TypeScript, secrets scan, docs governance compatibility,
+and 38 static governance/unit tests. CI1 uses no live provider key and does not
+prove live governance. Next authorized sequencing from V2: R non-coder
+post-RC2 regression validation, with C5.0/C5.1 design allowed in parallel; C5.2+
+implementation remains blocked until R3 returns `PROCEED_TO_C5_IMPLEMENTATION`.
+
+---
+
 ## Latest CVF ADD Doctrine Absorption Status — 2026-05-07
 
 Status: OFFICIAL DOCS ABSORPTION CLOSED / RUNTIME ACTIVATION RT0-RT8 DELIVERED.
