@@ -68,3 +68,21 @@ Follow-up artifacts:
 
 - `docs/reviews/CVF_CI2_HOSTED_LIVE_GATE_POST_PUSH_SANITY_2026-05-09.md`
 - `docs/reviews/CVF_CI2_HOSTED_LIVE_GATE_OPERATOR_DISPATCH_RUNBOOK_2026-05-09.md`
+
+## 2026-05-09 Hosted Failure Addendum
+
+Hosted run `25573498275` was dispatched after configuring environment
+`cvf-live-release-gate` and environment secret name `DASHSCOPE_API_KEY`. The run
+failed before release gate execution at the Guard Contract dependency install
+step because the workflow used `npm ci` for a package whose lockfile is not
+tracked. No provider call was reached, and no release gate PASS claim is made.
+
+Failure artifact:
+
+- `docs/reviews/CVF_CI2_HOSTED_LIVE_GATE_FAILURE_RUN_2026-05-09.md`
+
+Corrective patch:
+
+- `.github/workflows/cvf-protected-live-release-gate.yml` now uses
+  `npm install --no-audit --no-fund` for `EXTENSIONS/CVF_GUARD_CONTRACT` and
+  keeps `npm ci` for `cvf-web`.

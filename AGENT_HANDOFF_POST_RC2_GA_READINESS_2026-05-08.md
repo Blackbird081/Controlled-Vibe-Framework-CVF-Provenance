@@ -114,3 +114,14 @@ This compact handoff supersedes adding more status to the oversized
   `GITHUB_PAT`. CI2-H remains not hosted-proven. Filed:
   `docs/reviews/CVF_CI2_HOSTED_LIVE_GATE_POST_PUSH_SANITY_2026-05-09.md` and
   `docs/reviews/CVF_CI2_HOSTED_LIVE_GATE_OPERATOR_DISPATCH_RUNBOOK_2026-05-09.md`.
+- 2026-05-09: GitHub CLI authenticated as `Blackbird081`; environment
+  `cvf-live-release-gate` created; environment secret name `DASHSCOPE_API_KEY`
+  configured without printing the value. Hosted run `25573498275` dispatched on
+  head SHA `d6f52284c14c581ccc7473f85d265fef891492ca` and failed before release
+  gate execution at `Install CVF Guard Contract dependencies`: workflow used
+  `npm ci`, but `EXTENSIONS/CVF_GUARD_CONTRACT/package-lock.json` is ignored and
+  not tracked. No provider call was reached. Failure artifact filed:
+  `docs/reviews/CVF_CI2_HOSTED_LIVE_GATE_FAILURE_RUN_2026-05-09.md`. Corrective
+  patch: `.github/workflows/cvf-protected-live-release-gate.yml` now uses
+  `npm install --no-audit --no-fund` for Guard Contract while keeping `npm ci`
+  for `cvf-web`.

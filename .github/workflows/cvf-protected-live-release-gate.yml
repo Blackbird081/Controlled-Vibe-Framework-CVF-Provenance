@@ -50,7 +50,7 @@ jobs:
 
       - name: Install CVF Guard Contract dependencies
         working-directory: EXTENSIONS/CVF_GUARD_CONTRACT
-        run: npm ci
+        run: npm install --no-audit --no-fund
 
       - name: Install Web dependencies
         working-directory: EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web
