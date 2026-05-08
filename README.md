@@ -94,6 +94,7 @@ The strongest public-safe claim CVF can make right now is:
 - knowledge-native context now improves live `/api/execute` outcomes, not just governance docs
 - absorbed CVF ADD doctrine is runtime-readable in the external-asset governance lane, with registry persistence, operator UI readout, and metadata query filters
 - the Web processing/result flow now visibly shows and exports governance evidence receipts per request (decision, risk, provider/model, routing, policy snapshot, envelope/receipt id, knowledge source, approval id when present)
+- the Web Governance Operations console can run allowlisted local governance jobs with redacted job receipts and local cost/quota preflight before live provider calls
 - downstream workspace adoption is repeatable across at least 3 project kinds with a scripted proof path
 - a workspace-to-web evidence bridge links downstream enforcement proof to CVF Web live evidence without distributing API keys
 - W119 proves one bounded first-use adoption journey: first governed output, project knowledge use, and evidence handoff all passed live on the Alibaba lane
@@ -197,6 +198,8 @@ npm run dev
 Then open `http://localhost:3000`.
 
 In `Settings`, enable the provider keys you want to use. Each admitted `provider + model` pair is treated as a governed run lane for future Product Value Validation.
+
+Operators can use `http://localhost:3000/governance/operations` for allowlisted governance jobs, including the Web-triggered full live release gate. Live jobs are guarded by the local cost/quota policy at `.cvf/config/cost-quota-policy.json` and append local audit records under `.cvf/runtime/`; these files are local-first and are not a cloud control plane.
 
 For a guided RC first-run path on Windows, use the [CVF 5-Minute RC Setup](docs/guides/CVF_5_MINUTE_RC_SETUP.md):
 

@@ -371,4 +371,104 @@ describe('web governance jobs', () => {
             DEEPSEEK_API_KEY: 'abc123superlongsecretvalue',
         } as NodeJS.ProcessEnv)).toBe('DEEPSEEK_API_KEY=[REDACTED]');
     });
+
+    it('blocks over-budget provider checks before launching the command', async () => {
+        const context = makeContext();
+        const policyPath = resolve(context.repoRoot, '.cvf', 'config', 'cost-quota-policy.json');
+        mkdirSync(resolve(policyPath, '..'), { recursive: true });
+        writeFileSync(policyPath, JSON.stringify({
+            version: 1,
+            windowMode: 'rolling_24h',
+            globalDailyLiveCallLimit: 0,
+            providerLanes: {
+                alibaba: { dailyLiveCallLimit: 0, perJobLiveCallLimit: { provider_check: 0 } },
+                deepseek: { dailyLiveCallLimit: 0, perJobLiveCallLimit: { provider_check: 0 } },
+            },
+            cooldownSeconds: {},
+            requireOwnerOverrideAboveLimit: true,
+            overrideMode: 'owner_or_admin',
+            auditMode: 'append_only_jsonl',
+        }), 'utf8');
+        let launched = false;
+
+        const result = await submitGovernanceJob({
+            jobType: 'provider_check',
+            provider: 'alibaba',
+            role: 'operator',
+            requestedBy: 'operator',
+            authMode: 'authenticated',
+            localMode: false,
+            requestIpClass: 'loopback',
+        }, {
+            ...context,
+            runCommand: async () => {
+                launched = true;
+                return { stdout: '', stderr: '', exitCode: 0, timedOut: false, errorClass: null };
+            },
+        });
+
+        expect(result.status).toBe('blocked_by_policy');
+        expect(result.decisionReason).toBe('cost_quota_per_job_limit_exceeded');
+        expect(result.costQuota?.expectedLiveCallCount).toBe(1);
+        expect(launched).toBe(false);
+    });
+
+    it('allows owner override and denies operator override for over-budget jobs', async () => {
+        const context = makeContext();
+        const policyPath = resolve(context.repoRoot, '.cvf', 'config', 'cost-quota-policy.json');
+        mkdirSync(resolve(policyPath, '..'), { recursive: true });
+        writeFileSync(policyPath, JSON.stringify({
+            version: 1,
+            windowMode: 'rolling_24h',
+            globalDailyLiveCallLimit: 0,
+            providerLanes: {
+                alibaba: { dailyLiveCallLimit: 0, perJobLiveCallLimit: { provider_check: 0 } },
+                deepseek: { dailyLiveCallLimit: 0, perJobLiveCallLimit: { provider_check: 0 } },
+            },
+            cooldownSeconds: {},
+            requireOwnerOverrideAboveLimit: true,
+            overrideMode: 'owner_or_admin',
+            auditMode: 'append_only_jsonl',
+        }), 'utf8');
+        let launched = 0;
+
+        const owner = await submitGovernanceJob({
+            jobType: 'provider_check',
+            provider: 'alibaba',
+            role: 'owner',
+            requestedBy: 'owner',
+            authMode: 'authenticated',
+            localMode: false,
+            requestIpClass: 'loopback',
+            costQuotaOverride: { requested: true, reason: 'bounded CQ verification' },
+        }, {
+            ...context,
+            runCommand: async () => {
+                launched += 1;
+                return { stdout: 'ok', stderr: '', exitCode: 0, timedOut: false, errorClass: null };
+            },
+        });
+        const operator = await submitGovernanceJob({
+            jobType: 'provider_check',
+            provider: 'alibaba',
+            role: 'operator',
+            requestedBy: 'operator',
+            authMode: 'authenticated',
+            localMode: false,
+            requestIpClass: 'loopback',
+            costQuotaOverride: { requested: true, reason: 'should not pass' },
+        }, {
+            ...context,
+            runCommand: async () => {
+                launched += 1;
+                return { stdout: 'no', stderr: '', exitCode: 0, timedOut: false, errorClass: null };
+            },
+        });
+
+        expect(owner.status).toBe('succeeded');
+        expect(owner.costQuota?.overrideUsed).toBe(true);
+        expect(operator.status).toBe('blocked_by_policy');
+        expect(operator.decisionReason).toBe('cost_quota_override_denied');
+        expect(launched).toBe(1);
+    });
 });

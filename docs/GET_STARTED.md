@@ -156,6 +156,9 @@ npm run dev
 # Open browser: http://localhost:3000
 ```
 
+Console vận hành governance: mở `http://localhost:3000/governance/operations`.
+Console này chỉ chạy các job governance được allowlist, hiển thị receipt đã redaction, và dùng cost/quota preflight cục bộ trước các live provider call. Policy nằm tại `.cvf/config/cost-quota-policy.json`; audit cục bộ nằm dưới `.cvf/runtime/`. Đây là cơ chế local-first để operator kiểm soát CVF, không phải yêu cầu đưa dữ liệu lên cloud.
+
 **What to try:**
 1. Click "Templates" → Chọn "Simple Todo App"
 2. Fill form → Click "Generate"

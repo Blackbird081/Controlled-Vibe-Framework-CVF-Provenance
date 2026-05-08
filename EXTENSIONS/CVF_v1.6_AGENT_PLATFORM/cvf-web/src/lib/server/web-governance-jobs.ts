@@ -3,6 +3,13 @@ import { dirname, resolve } from 'path';
 import { execFile } from 'child_process';
 import { randomUUID } from 'crypto';
 import { promisify } from 'util';
+import {
+    evaluateCostQuotaPreflight,
+    summarizeCostQuota,
+    type CostQuotaOverrideRequest,
+    type CostQuotaPreflightResult,
+    type CostQuotaSummary,
+} from './web-governance-cost-quota';
 
 const execFileAsync = promisify(execFile);
 
@@ -30,6 +37,7 @@ export interface GovernanceJobRequest {
     requestIpClass: GovernanceRequestIpClass | string;
     uiRequestId?: string;
     timeoutMsOverride?: number;
+    costQuotaOverride?: CostQuotaOverrideRequest;
 }
 
 export interface GovernanceJobEvent {
@@ -61,6 +69,7 @@ export interface GovernanceJobEvent {
     evidenceRefs: string[];
     uiRequestId: string;
     correlationId: string;
+    costQuota: CostQuotaEventSnapshot | null;
 }
 
 export interface GovernanceJobResult {
@@ -70,12 +79,29 @@ export interface GovernanceJobResult {
     decisionReason: string;
     auditPath: string;
     latestEvent: GovernanceJobEvent;
+    costQuota: CostQuotaEventSnapshot | null;
 }
 
 export interface GovernanceJobList {
     auditPath: string;
     events: GovernanceJobEvent[];
     jobs: GovernanceJobEvent[];
+    costQuota: CostQuotaSummary;
+}
+
+export interface CostQuotaEventSnapshot {
+    decision: string;
+    decisionReason: string;
+    expectedLiveCallCount: number;
+    providerLane: string;
+    globalUsage: number;
+    providerUsage: number;
+    globalLimit: number;
+    providerLimit: number;
+    perJobLimit: number | null;
+    cooldownSeconds: number;
+    overrideUsed: boolean;
+    auditPath: string;
 }
 
 interface JobDefinition {
@@ -276,6 +302,7 @@ function makeEvent(input: {
     correlationId: string;
     repoRoot: string;
     timeoutMs: number;
+    costQuota?: CostQuotaPreflightResult | null;
 }): GovernanceJobEvent {
     const recordedAt = input.options.now?.() ?? new Date().toISOString();
     return {
@@ -307,12 +334,40 @@ function makeEvent(input: {
         evidenceRefs: [],
         uiRequestId: input.request.uiRequestId ?? input.correlationId,
         correlationId: input.correlationId,
+        costQuota: input.costQuota ? {
+            decision: input.costQuota.decision,
+            decisionReason: input.costQuota.decisionReason,
+            expectedLiveCallCount: input.costQuota.estimate.expectedLiveCallCount,
+            providerLane: input.costQuota.estimate.providerLane,
+            globalUsage: input.costQuota.globalUsage,
+            providerUsage: input.costQuota.providerUsage,
+            globalLimit: input.costQuota.globalLimit,
+            providerLimit: input.costQuota.providerLimit,
+            perJobLimit: input.costQuota.perJobLimit,
+            cooldownSeconds: input.costQuota.cooldownSeconds,
+            overrideUsed: input.costQuota.overrideUsed,
+            auditPath: input.costQuota.auditPath,
+        } : null,
     };
 }
 
 async function defaultRunCommand(command: string, argv: string[], options: { cwd: string; timeoutMs: number }): Promise<CommandResult> {
     try {
         const isFullReleaseGate = argv[0] === 'scripts/run_cvf_release_gate_bundle.py' && argv.includes('--json') && !argv.includes('--dry-run');
+        if (
+            isFullReleaseGate &&
+            process.env.CVF_WEB_GOVERNANCE_REDACTION_PROBE === 'run_command_fake_key' &&
+            process.env.NODE_ENV !== 'production'
+        ) {
+            const fakeKey = 'test_invalid_cvf_redaction_probe_20260508';
+            return {
+                stdout: `provider_key=${fakeKey}\nrelease_gate_result=PASS`,
+                stderr: `ALIBABA_API_KEY=${fakeKey}`,
+                exitCode: 0,
+                timedOut: false,
+                errorClass: null,
+            };
+        }
         const releaseGateEnv: NodeJS.ProcessEnv = { ...process.env };
         delete (releaseGateEnv as Record<string, string | undefined>).NODE_ENV;
         delete (releaseGateEnv as Record<string, string | undefined>).TURBOPACK;
@@ -372,6 +427,25 @@ export async function submitGovernanceJob(request: GovernanceJobRequest, options
         }
     }
 
+    const liveEstimateJobTypes = ['provider_check', 'full_live_release_gate'];
+    const costQuota = permission.allowed && liveEstimateJobTypes.includes(String(request.jobType))
+        ? evaluateCostQuotaPreflight({
+            repoRoot,
+            jobId,
+            jobType: String(request.jobType),
+            providerLane,
+            role: String(request.role),
+            requestedBy: String(request.requestedBy),
+            override: request.costQuotaOverride,
+            now,
+            idFactory: options.idFactory,
+        })
+        : null;
+
+    if (costQuota?.decision === 'blocked_by_policy') {
+        permission = { allowed: false, reason: costQuota.decisionReason };
+    }
+
     const requestedEvent = makeEvent({
         options,
         request,
@@ -387,6 +461,7 @@ export async function submitGovernanceJob(request: GovernanceJobRequest, options
         correlationId,
         repoRoot,
         timeoutMs,
+        costQuota,
     });
     appendEvent(auditPath, requestedEvent);
 
@@ -406,6 +481,7 @@ export async function submitGovernanceJob(request: GovernanceJobRequest, options
             correlationId,
             repoRoot,
             timeoutMs,
+            costQuota,
         });
         appendEvent(auditPath, blockedEvent);
         return {
@@ -415,6 +491,7 @@ export async function submitGovernanceJob(request: GovernanceJobRequest, options
             decisionReason: permission.reason,
             auditPath,
             latestEvent: blockedEvent,
+            costQuota: blockedEvent.costQuota,
         };
     }
 
@@ -433,6 +510,7 @@ export async function submitGovernanceJob(request: GovernanceJobRequest, options
         correlationId,
         repoRoot,
         timeoutMs,
+        costQuota,
     });
     appendEvent(auditPath, runningEvent);
 
@@ -466,6 +544,7 @@ export async function submitGovernanceJob(request: GovernanceJobRequest, options
         correlationId,
         repoRoot,
         timeoutMs,
+        costQuota,
     });
     appendEvent(auditPath, finalEvent);
 
@@ -476,6 +555,7 @@ export async function submitGovernanceJob(request: GovernanceJobRequest, options
         decisionReason: permission.reason,
         auditPath,
         latestEvent: finalEvent,
+        costQuota: finalEvent.costQuota,
     };
 }
 
@@ -483,7 +563,7 @@ export function listGovernanceJobs(options: WebGovernanceJobOptions = {}): Gover
     const repoRoot = resolveRepoRoot(options);
     const auditPath = options.auditPath ?? defaultAuditPath(repoRoot);
     if (!existsSync(auditPath)) {
-        return { auditPath, events: [], jobs: [] };
+        return { auditPath, events: [], jobs: [], costQuota: summarizeCostQuota(repoRoot) };
     }
     const events = readFileSync(auditPath, 'utf8')
         .split(/\r?\n/)
@@ -497,5 +577,6 @@ export function listGovernanceJobs(options: WebGovernanceJobOptions = {}): Gover
         auditPath,
         events,
         jobs: Array.from(latestByJob.values()).reverse(),
+        costQuota: summarizeCostQuota(repoRoot),
     };
 }

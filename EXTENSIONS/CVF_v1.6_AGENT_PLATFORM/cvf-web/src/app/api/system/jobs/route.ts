@@ -54,6 +54,7 @@ export async function POST(request: NextRequest) {
         requestIpClass: ipClass,
         uiRequestId: body.uiRequestId,
         timeoutMsOverride: body.timeoutMsOverride,
+        costQuotaOverride: body.costQuotaOverride,
     });
 
     return NextResponse.json(result, {

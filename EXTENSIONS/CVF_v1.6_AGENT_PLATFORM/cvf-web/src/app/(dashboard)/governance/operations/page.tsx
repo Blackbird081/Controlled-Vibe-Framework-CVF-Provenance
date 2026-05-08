@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
-import { Activity, AlertTriangle, CheckCircle2, CircleAlert, FileDown, Play, ShieldCheck } from 'lucide-react';
+import { Activity, AlertTriangle, CheckCircle2, CircleAlert, FileDown, Gauge, Play, ShieldCheck } from 'lucide-react';
 
 type Role = 'owner' | 'admin' | 'operator' | 'reviewer' | 'viewer' | 'anonymous_local';
 type JobType = 'cvf_doctor' | 'provider_check' | 'docs_governance_check' | 'release_gate_dry_readiness' | 'full_live_release_gate';
@@ -19,11 +19,44 @@ interface JobEvent {
     providerLane: string | null;
     stdoutSummary: string;
     stderrSummary: string;
+    costQuota?: {
+        decision: string;
+        decisionReason: string;
+        expectedLiveCallCount: number;
+        providerLane: string;
+        globalUsage: number;
+        providerUsage: number;
+        globalLimit: number;
+        providerLimit: number;
+        perJobLimit: number | null;
+        cooldownSeconds: number;
+        overrideUsed: boolean;
+    } | null;
 }
 
 interface JobListResponse {
     auditPath: string;
     jobs: JobEvent[];
+    costQuota?: {
+        policyPath: string;
+        auditPath: string;
+        windowStart: string;
+        windowEnd: string;
+        globalUsage: number;
+        providerUsage: Record<string, number>;
+        policy: {
+            globalDailyLiveCallLimit: number;
+            providerLanes: Record<string, {
+                dailyLiveCallLimit: number;
+                perJobLiveCallLimit: Record<string, number>;
+            }>;
+        };
+        estimates: Record<string, {
+            expectedLiveCallCount: number;
+            providerLane: string;
+            estimateBasis: string;
+        }>;
+    };
 }
 
 const JOBS: Array<{ jobType: JobType; label: string; description: string; provider?: 'alibaba' | 'deepseek' }> = [
@@ -86,13 +119,21 @@ function statusClass(status: string): string {
     return 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-200';
 }
 
+function estimateKey(job: typeof JOBS[number]): string {
+    if (job.jobType === 'provider_check') return `provider_check_${job.provider ?? 'alibaba'}`;
+    return job.jobType;
+}
+
 export default function GovernanceOperationsPage() {
     const [role, setRole] = useState<Role>('anonymous_local');
     const [user, setUser] = useState('Local browser');
     const [jobs, setJobs] = useState<JobEvent[]>([]);
     const [auditPath, setAuditPath] = useState('.cvf/runtime/web-governance-jobs.jsonl');
+    const [costQuota, setCostQuota] = useState<JobListResponse['costQuota'] | null>(null);
     const [busyKey, setBusyKey] = useState<string | null>(null);
     const [message, setMessage] = useState<string | null>(null);
+    const [overrideRequested, setOverrideRequested] = useState(false);
+    const [overrideReason, setOverrideReason] = useState('');
 
     const latest = jobs[0];
     const exportedSummary = useMemo(() => JSON.stringify({ auditPath, jobs: jobs.slice(0, 20) }, null, 2), [auditPath, jobs]);
@@ -102,6 +143,7 @@ export default function GovernanceOperationsPage() {
         const data = await response.json() as JobListResponse;
         setJobs(data.jobs ?? []);
         setAuditPath(data.auditPath ?? '.cvf/runtime/web-governance-jobs.jsonl');
+        setCostQuota(data.costQuota ?? null);
     }
 
     useEffect(() => {
@@ -132,10 +174,14 @@ export default function GovernanceOperationsPage() {
                     jobType: job.jobType,
                     provider: job.provider,
                     uiRequestId: `ui-${Date.now()}`,
+                    costQuotaOverride: overrideRequested ? {
+                        requested: true,
+                        reason: overrideReason,
+                    } : undefined,
                 }),
             });
             const result = await response.json();
-            setMessage(`${job.label}: ${result.status}`);
+            setMessage(`${job.label}: ${result.status}${result.decisionReason ? ` (${result.decisionReason})` : ''}`);
             await loadJobs();
         } finally {
             setBusyKey(null);
@@ -179,6 +225,12 @@ export default function GovernanceOperationsPage() {
                 {JOBS.map((job) => {
                     const key = `${job.jobType}:${job.provider ?? 'default'}`;
                     const disabled = !canTrigger(role, job.jobType) || busyKey !== null;
+                    const estimate = costQuota?.estimates?.[estimateKey(job)];
+                    const lane = estimate?.providerLane ?? job.provider ?? null;
+                    const providerUsage = lane && lane !== 'none' ? costQuota?.providerUsage?.[lane] : null;
+                    const providerLimit = lane && lane !== 'none'
+                        ? costQuota?.policy.providerLanes?.[lane]?.dailyLiveCallLimit
+                        : null;
                     return (
                         <div
                             key={key}
@@ -197,6 +249,19 @@ export default function GovernanceOperationsPage() {
                                     {disabledReason(role, job.jobType) && (
                                         <p className="mt-2 text-xs leading-5 text-amber-700 dark:text-amber-300">{disabledReason(role, job.jobType)}</p>
                                     )}
+                                    {estimate && (
+                                        <div className="mt-3 rounded-md border border-slate-200 bg-slate-50 p-2 text-xs leading-5 text-slate-700 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-slate-200">
+                                            <div className="flex items-center gap-1 font-semibold">
+                                                <Gauge className="h-3.5 w-3.5" />
+                                                Estimate: {estimate.expectedLiveCallCount} live call{estimate.expectedLiveCallCount === 1 ? '' : 's'}
+                                            </div>
+                                            {providerUsage !== null && providerLimit !== null && (
+                                                <div className="mt-1 text-slate-500 dark:text-slate-400">
+                                                    {lane}: {providerUsage ?? 0}/{providerLimit}
+                                                </div>
+                                            )}
+                                        </div>
+                                    )}
                                 </div>
                                 <button
                                     type="button"
@@ -213,6 +278,32 @@ export default function GovernanceOperationsPage() {
                     );
                 })}
             </section>
+
+            {(role === 'owner' || role === 'admin') && (
+                <section className="rounded-lg border border-gray-200 bg-white p-4 dark:border-white/[0.08] dark:bg-[#151827]">
+                    <div className="flex items-center gap-2 text-sm font-semibold text-gray-900 dark:text-white">
+                        <CircleAlert className="h-4 w-4 text-amber-500" />
+                        Cost/Quota Override
+                    </div>
+                    <label className="mt-3 flex items-center gap-2 text-sm text-gray-700 dark:text-gray-200">
+                        <input
+                            type="checkbox"
+                            checked={overrideRequested}
+                            onChange={(event) => setOverrideRequested(event.target.checked)}
+                            className="h-4 w-4 rounded border-slate-300 text-indigo-600"
+                        />
+                        Request owner/admin override for the next live job
+                    </label>
+                    <textarea
+                        value={overrideReason}
+                        onChange={(event) => setOverrideReason(event.target.value)}
+                        disabled={!overrideRequested}
+                        rows={2}
+                        placeholder="Reason for override"
+                        className="mt-3 w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 outline-none focus:border-indigo-500 disabled:bg-slate-100 disabled:text-slate-400 dark:border-white/[0.08] dark:bg-slate-950 dark:text-slate-100 dark:disabled:bg-slate-900"
+                    />
+                </section>
+            )}
 
             {message && (
                 <div className="rounded-lg border border-slate-200 bg-white p-3 text-sm text-slate-700 dark:border-white/[0.08] dark:bg-[#151827] dark:text-slate-200">
