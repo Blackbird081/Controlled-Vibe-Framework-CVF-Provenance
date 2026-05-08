@@ -1,17 +1,19 @@
 # CVF Claude Transfer Note
 
-> Date: 2026-05-08  
-> Purpose: governed agent transfer note from Codex to Claude  
-> Current canonical branch: `main`  
+> Date: 2026-05-08
+> Purpose: governed agent transfer note from Codex to Claude
+> Current canonical branch: `main`
+> W152 sync: current through W151
 > Read this with: `AGENTS.md` and `AGENT_HANDOFF.md`
 
 ## Transfer Status
 
 CVF is currently synchronized on `main` with the handoff state:
 
-`UNIFIED ON MAIN / W114-W141 CLOSED`
+`UNIFIED ON MAIN / W114-W151 CLOSED`
 
-The latest runtime-stability baseline is W141:
+The latest runtime-stability baseline remains W141 for the original
+runtime-stability sequence:
 
 - Alibaba browser UI matrix: `12/12 accepted_with_receipt`
 - `execute_request_not_sent`: `0`
@@ -20,12 +22,29 @@ The latest runtime-stability baseline is W141:
 
 No active runtime-stability blocker remains from the W132-W141 sequence.
 
+The latest trusted-form product baseline is W149-W151:
+
+- W149 live value gate: Alibaba direct API `40/40`, Alibaba browser UI `40/40`
+  with governed receipts, DeepSeek confirmatory `12/12`.
+- W150 maintainability: trusted-form router API remains in
+  `src/lib/form-routing.ts`; 40-form corpus data lives in
+  `src/lib/trusted-form-corpus.ts`.
+- W151 maintainability: activation coverage lives in
+  `src/lib/trusted-form-corpus.test.ts`; `form-routing.test.ts` is router and
+  integration focused.
+- Latest release gate: `python scripts/run_cvf_release_gate_bundle.py --json`
+  PASS.
+
 ## Latest Commits To Know
 
 - `ce12527c` - W140 diagnostic: classified residual UI failures as
   `execute_request_not_sent` caused by wizard routing shadow.
 - `dd26fcc8` - W141 fix: trusted-form/wizard disambiguation and live proof.
 - `ec9712f0` - Handoff sync: updated `AGENT_HANDOFF.md` through W141 closure.
+- `f9a592f8` - W149 live value gate: 40-form Alibaba direct/UI proof and
+  DeepSeek confirmatory subset.
+- `c5b72401` - W150 refactor: split trusted-form corpus from router API.
+- `dae6356c` - W151 test split: data-driven activation matrix.
 
 Use live `git log --oneline -n 10` for the exact current HEAD before making any
 new change.
@@ -61,6 +80,32 @@ Primary evidence files:
 - `docs/reviews/CVF_W139_CONTINUATION_DECISION_2026-05-07.md`
 - `docs/reviews/CVF_W140_CONTINUATION_DECISION_2026-05-08.md`
 - `docs/reviews/CVF_W141_CLOSURE_DECISION_2026-05-08.md`
+
+## W142-W151 Trusted Form Expansion And Maintainability Chain
+
+Do not resume from the W126 8-form boundary as if it were current.
+
+- W142-W147 expanded the trusted-form corpus to 40 non-wizard forms.
+- W149 live-proved that expanded corpus under a bounded claim:
+  - Alibaba direct API: `40/40` accepted with receipts.
+  - Alibaba browser UI: `40/40` accepted with receipts.
+  - DeepSeek confirmatory subset: `12/12` accepted.
+- W150 split corpus data into `trusted-form-corpus.ts` while preserving
+  imports from `form-routing.ts`.
+- W151 split activation tests into `trusted-form-corpus.test.ts`.
+
+Primary evidence files:
+
+- `docs/reviews/CVF_W149_CLOSURE_DECISION_2026-05-08.md`
+- `docs/reviews/CVF_W149_TRUSTED_FORM_FULL_CORPUS_LOCK_2026-05-08.md`
+- `docs/reviews/CVF_W150_CLOSURE_DECISION_2026-05-08.md`
+- `docs/reviews/CVF_W151_CLOSURE_DECISION_2026-05-08.md`
+
+Boundary:
+
+- This proves W149's bounded live usability claim, not perfect reliability or
+  full provider parity across the entire 40-form corpus.
+- W150/W151 are maintainability-only and do not alter routing behavior.
 
 ## CVF ADD Absorption State
 
@@ -114,5 +159,6 @@ Mock mode is only valid for pure UI structure checks.
 4. If opening a new tranche, issue fresh GC-018 and roadmap before implementation.
 5. If claiming governance behavior, run the live release gate.
 
-No default continuation tranche is currently open after W141. The next move
-should be operator-scoped rather than inferred from stale W132-W140 blockers.
+No default continuation tranche is currently open after W151. The next move
+should be operator-scoped rather than inferred from stale W126 or W132-W140
+blockers.

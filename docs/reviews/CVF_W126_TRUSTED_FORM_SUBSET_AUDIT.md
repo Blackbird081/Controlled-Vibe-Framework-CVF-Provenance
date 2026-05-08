@@ -155,4 +155,27 @@ The following categories are permanently excluded from W126 trusted routing:
 - Coder-only templates (code review, API, architecture, accessibility, CLI)
 - Wizard-duplicate templates (templates whose intent is already covered by a wizard)
 
-Any expansion beyond 8 forms requires a new audit entry in this file.
+At W126 closure time, expansion beyond 8 forms required a new audit entry in
+this file. Current corpus scope is superseded by the Post-W149 note below.
+
+---
+
+## Post-W149 Supersession Note (2026-05-08)
+
+W126 remains the historical audit for the original 8-form trusted subset.
+
+The current trusted-form corpus boundary is superseded by the W142-W149 chain:
+
+- W142-W147 expanded `TRUSTED_FORM_MAP` to the 40 non-wizard form corpus.
+- W149 live-proved the expanded corpus with Alibaba direct API 40/40,
+  Alibaba browser UI 40/40 with governed receipts, and DeepSeek confirmatory
+  12/12.
+- W150-W151 split corpus/router/test ownership without changing behavior.
+
+For current implementation scope, use:
+
+- `docs/reviews/CVF_W149_TRUSTED_FORM_FULL_CORPUS_LOCK_2026-05-08.md`
+- `docs/reviews/CVF_W149_CLOSURE_DECISION_2026-05-08.md`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/trusted-form-corpus.ts`
+
+Do not use this W126 file alone as the current corpus boundary.
