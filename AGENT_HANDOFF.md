@@ -12,6 +12,21 @@
 
 ---
 
+## RC2 Pre-Push Verification Gate — BLOCKING (2026-05-08)
+
+RC2 Track A (A0–A2) + Track B (B0–B3) + Track C (C0–C4) are CLOSED on local `main`, but **13 commits are unpushed** and `git push origin main` is **not authorized** until four blockers are cleared on top of HEAD `78c92362`:
+
+1. Run full release gate `python scripts/run_cvf_release_gate_bundle.py --json` → must return 7/7 PASS (RC2 has not run it once across 12 waves).
+2. Add live provider proof for C3/C4 governance code (RBAC, redaction, timeout, dry readiness) with real Alibaba/DeepSeek keys → evidence file `docs/reviews/CVF_RC2_C3_C4_LIVE_GOVERNANCE_EVIDENCE_2026-05-08.md`.
+3. Add bounded live spot-check evidence for the two RC2 maturity claims: Claim N (non-coder) and Claim D (developer) → `docs/reviews/CVF_RC2_NONCODER_LIVE_SPOT_CHECK_2026-05-08.md` + `docs/reviews/CVF_RC2_DEVELOPER_LIVE_SPOT_CHECK_2026-05-08.md`.
+4. Resolve, accept-and-bound, or defer-with-named-owner the pre-existing typecheck drift carried across 6+ closures (no more silent carry-forward).
+
+Operator has provided live Alibaba and DeepSeek API keys; mock mode is **not acceptable** for these blockers. Full requirement detail: `docs/roadmaps/CVF_RC2_PRE_PUSH_VERIFICATION_GATE_2026-05-08.md`.
+
+After the four artifacts exist and the release gate passes, push and update the state line to `RC2 Foundation CLOSED — pushed`.
+
+---
+
 ## Latest CVF ADD Doctrine Absorption Status — 2026-05-07
 
 Status: OFFICIAL DOCS ABSORPTION CLOSED / RUNTIME ACTIVATION RT0-RT8 DELIVERED.
