@@ -16,10 +16,12 @@
 
 RC2 Track A (A0–A2) + Track B (B0–B3) + Track C (C0–C4) are CLOSED, and the pre-push blockers were cleared on top of HEAD `78c92362`:
 
-1. Full release gate `python scripts/run_cvf_release_gate_bundle.py --json` returned 7/7 PASS.
+1. Full release gate `python scripts/run_cvf_release_gate_bundle.py --json` returned 7/7 PASS and is filed at `docs/reviews/CVF_RC2_RELEASE_GATE_RESULT_2026-05-08.md`.
 2. C3/C4 live provider proof filed: `docs/reviews/CVF_RC2_C3_C4_LIVE_GOVERNANCE_EVIDENCE_2026-05-08.md`.
 3. Bounded Claim N and Claim D spot-checks filed: `docs/reviews/CVF_RC2_NONCODER_LIVE_SPOT_CHECK_2026-05-08.md` and `docs/reviews/CVF_RC2_DEVELOPER_LIVE_SPOT_CHECK_2026-05-08.md`.
 4. Pre-existing `cvf-web` typecheck drift resolved and recorded in `docs/reviews/CVF_RC2_TYPECHECK_DRIFT_RESOLUTION_2026-05-08.md`.
+
+Claim N boundary note: the RC2 spot-check used an `admin` authenticated local browser session as a post-hardening sanity-check. Role-bound non-coder proof remains inherited from W119/W122-W130; RC2 does not newly prove non-admin RBAC posture for non-coder execution.
 
 Push authorization is satisfied. Remote push to `origin/main` is part of this closure packet.
 

@@ -40,5 +40,14 @@ Captured run summary:
 
 ## Boundary
 
-This is a bounded RC2 spot-check on Alibaba lane, not a reopening of W122-W130 adoption tranches and not a claim of universal non-coder success across every prompt/provider.
+This is a bounded RC2 post-hardening sanity-check on Alibaba lane. The browser
+session used `admin` authentication to reach the local Web surface; therefore
+this artifact does not independently prove non-admin/non-authenticated non-coder
+RBAC posture.
+
+Role-bound non-coder adoption and evidence visibility remain covered by the
+earlier W119/W122-W130 tranche evidence. This RC2 spot-check proves the
+post-hardening trusted-form path can still reach a governed output and visible
+receipt; it is not a reopening of W122-W130 and not a claim of universal
+non-coder success across every prompt/provider.
 
