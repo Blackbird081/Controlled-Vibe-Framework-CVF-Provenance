@@ -22,6 +22,7 @@
     { "path": ".cvf-c5-web-dev.err.log", "exposureClass": "INTERNAL_ONLY" },
     { "path": ".cvf-c5-web-dev.out.log", "exposureClass": "INTERNAL_ONLY" },
     { "path": ".dt.log", "exposureClass": "INTERNAL_ONLY" },
+    { "path": "AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md", "exposureClass": "INTERNAL_ONLY" },
     { "path": ".git_commit_error.log", "exposureClass": "INTERNAL_ONLY" },
     { "path": ".git_commit_msg.txt", "exposureClass": "INTERNAL_ONLY" },
     { "path": ".gitignore", "exposureClass": "INTERNAL_ONLY" },
