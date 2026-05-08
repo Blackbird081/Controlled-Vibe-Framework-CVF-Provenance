@@ -52,3 +52,19 @@ execution.
 2. Run CI2-H hosted live gate metadata sanity and protected dispatch from GitHub.
 3. If needed, expand DeepSeek from smoke/sanity to N>=14 regression confirmation.
 4. Scope optional persistent runtime-job store for managed deployment only, keeping local-file mode as the default developer path.
+
+## 2026-05-09 Post-Push Addendum
+
+The Post-RC2 GA commits are now visible on `origin/main`, and GitHub REST
+metadata confirms that `.github/workflows/cvf-protected-live-release-gate.yml`
+is active. No hosted run exists yet for this workflow on `main`, and this local
+machine still has no `gh` command or GitHub token environment variable.
+
+Decision remains `GA_LOCAL_FIRST_APPROVED_WITH_LIMITS` until an authenticated
+operator or GitHub-enabled agent runs CI2-H metadata sanity, dispatches the
+protected workflow, and files a hosted PASS artifact.
+
+Follow-up artifacts:
+
+- `docs/reviews/CVF_CI2_HOSTED_LIVE_GATE_POST_PUSH_SANITY_2026-05-09.md`
+- `docs/reviews/CVF_CI2_HOSTED_LIVE_GATE_OPERATOR_DISPATCH_RUNBOOK_2026-05-09.md`

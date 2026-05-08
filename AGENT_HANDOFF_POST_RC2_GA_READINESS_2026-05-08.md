@@ -21,7 +21,7 @@ This compact handoff supersedes adding more status to the oversized
 | Track | State | Notes |
 |---|---|---|
 | GC-018 scoping | CLOSED | CI2-H, BR, CQ, DS, and GA candidate files filed. |
-| CI2-H | DEFERRED KNOWN LIMIT | `gh` unavailable locally and branch is ahead of origin; failure-mode artifacts filed. |
+| CI2-H | POST-PUSH READY; AUTH REQUIRED | Branch now matches `origin/main` and workflow is active on GitHub, but this machine still has no `gh` or GitHub token; no hosted run exists yet. |
 | BR | CLOSED | No-live fake-key proof passed with runCommand-layer injection, browser response, and network capture. |
 | CQ | CLOSED | Local-first call-count guard implemented and live under-budget proof passed. |
 | DS | CLOSED SMOKE | DeepSeek N=8 smoke/sanity passed under CQ; not regression confirmation. |
@@ -33,8 +33,7 @@ This compact handoff supersedes adding more status to the oversized
 - Governance behavior claims require live proof except BR fake-key redaction
   tests, which are no-live redaction behavior checks.
 - Supabase/Postgres remains deferred optional managed mode.
-- Current local branch may be ahead of `origin/main`; do not claim hosted CI2
-  PASS until the protected GitHub run has an artifact.
+- Do not claim hosted CI2 PASS until the protected GitHub run has an artifact.
 
 ## Update Log
 
@@ -105,3 +104,13 @@ This compact handoff supersedes adding more status to the oversized
   `git diff --check` clean except CRLF normalization warnings, and
   `python scripts/run_cvf_static_ci_gate.py --json` PASS 5/5. No push was
   performed in this session.
+- 2026-05-09: Post-push CI2-H sanity run. `git fetch origin` followed by
+  `git status --short --branch` returned `main...origin/main`; `origin/main`
+  includes Post-RC2 GA commit `3050a7eb` and registry follow-up `cb89cff7`.
+  GitHub REST unauth metadata confirms workflow
+  `.github/workflows/cvf-protected-live-release-gate.yml` is active, but
+  workflow run list returned `total_count=0`. Environment metadata returned 404
+  without auth, and this shell has no `gh`, `GITHUB_TOKEN`, `GH_TOKEN`, or
+  `GITHUB_PAT`. CI2-H remains not hosted-proven. Filed:
+  `docs/reviews/CVF_CI2_HOSTED_LIVE_GATE_POST_PUSH_SANITY_2026-05-09.md` and
+  `docs/reviews/CVF_CI2_HOSTED_LIVE_GATE_OPERATOR_DISPATCH_RUNBOOK_2026-05-09.md`.

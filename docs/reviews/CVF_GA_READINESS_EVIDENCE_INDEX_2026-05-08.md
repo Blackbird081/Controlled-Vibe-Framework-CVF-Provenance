@@ -16,6 +16,7 @@
 | CI2-H - Hosted live gate | DEFERRED KNOWN LIMIT | `docs/reviews/CVF_CI2_HOSTED_LIVE_GATE_ENVIRONMENT_READINESS_2026-05-08.md`; `docs/reviews/CVF_CI2_HOSTED_LIVE_GATE_SECRET_METADATA_SANITY_2026-05-08.md`; `docs/reviews/CVF_CI2_HOSTED_LIVE_GATE_FAILURE_MODE_2026-05-08.md` |
 | DS - DeepSeek under CQ | PASS SMOKE | `docs/reviews/CVF_DEEPSEEK_POST_RC2_SMOKE_COVERAGE_2026-05-08.md` |
 | GA packet | CLOSED | `docs/reviews/CVF_GA_DOCUMENTATION_CURRENCY_AUDIT_2026-05-08.md`; `docs/reviews/CVF_GA_KNOWN_LIMITATIONS_REFRESH_2026-05-08.md`; `docs/reviews/CVF_GA_READINESS_DECISION_2026-05-08.md` |
+| CI2-H post-push follow-up | POST-PUSH READY; AUTH REQUIRED | `docs/reviews/CVF_CI2_HOSTED_LIVE_GATE_POST_PUSH_SANITY_2026-05-09.md`; `docs/reviews/CVF_CI2_HOSTED_LIVE_GATE_OPERATOR_DISPATCH_RUNBOOK_2026-05-09.md` |
 
 ## Verification Summary
 
@@ -25,7 +26,7 @@
 | CQ no-live tests | PASS | Targeted cost/quota, system job route, web job, and operations UI tests passed. |
 | CQ live Web full release gate | PASS | Web-triggered `full_live_release_gate` completed release gate 7/7 with `costQuota.decision=allowed` and audit increment. |
 | DeepSeek smoke under CQ | PASS | 8/8 live DeepSeek governed calls passed under cost/quota preflight. |
-| Hosted GitHub live gate | NOT PROVEN | Local environment lacked `gh`; local branch was ahead of `origin/main`; no hosted PASS claim is made. |
+| Hosted GitHub live gate | NOT PROVEN | Post-push sanity now confirms workflow is active on GitHub, but no hosted run exists yet and authenticated environment/secret metadata plus dispatch are still required. |
 | Final local static CI gate | PASS | `python scripts/run_cvf_static_ci_gate.py --json` passed 5/5 after rebuilding Next generated types. |
 
 ## Claim Boundary
