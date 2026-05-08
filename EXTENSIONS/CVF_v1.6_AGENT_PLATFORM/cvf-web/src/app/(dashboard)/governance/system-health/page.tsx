@@ -1,4 +1,4 @@
-import { Activity, AlertTriangle, CheckCircle2, CircleAlert, CircleHelp, ServerCog } from 'lucide-react';
+import { Activity, AlertTriangle, Boxes, CheckCircle2, CircleAlert, CircleHelp, ServerCog } from 'lucide-react';
 import type { ComponentType } from 'react';
 import { getSystemHealth, type SystemHealthCheckStatus } from '@/lib/server/system-health';
 
@@ -172,6 +172,14 @@ export default function SystemHealthPage() {
                     </table>
                 </div>
             </section>
+
+            <a
+                href="/governance/runtime-modules"
+                className="inline-flex items-center gap-2 rounded-lg bg-slate-100 px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200 dark:bg-white/[0.06] dark:text-slate-200 dark:hover:bg-white/[0.1]"
+            >
+                <Boxes className="h-4 w-4" />
+                Runtime Modules
+            </a>
         </div>
     );
 }
