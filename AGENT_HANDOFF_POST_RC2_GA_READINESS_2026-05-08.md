@@ -2,7 +2,7 @@
 # Agent Handoff - Post-RC2 GA Readiness
 
 **Date:** 2026-05-08
-**Status:** CLOSED LOCALLY - `GA_LOCAL_FIRST_APPROVED_WITH_LIMITS`
+**Status:** CLOSED - `GA_LOCAL_FIRST_APPROVED`
 
 This compact handoff supersedes adding more status to the oversized
 `AGENT_HANDOFF.md` for the Post-RC2 GA Readiness tranche.
@@ -21,11 +21,11 @@ This compact handoff supersedes adding more status to the oversized
 | Track | State | Notes |
 |---|---|---|
 | GC-018 scoping | CLOSED | CI2-H, BR, CQ, DS, and GA candidate files filed. |
-| CI2-H | POST-PUSH READY; AUTH REQUIRED | Branch now matches `origin/main` and workflow is active on GitHub, but this machine still has no `gh` or GitHub token; no hosted run exists yet. |
+| CI2-H | CLOSED PASS | Protected GitHub hosted run `25575296660` passed release gate 7/7 on head `1a2fa8862d823436618b093f6690b5fd4de2eab7`. |
 | BR | CLOSED | No-live fake-key proof passed with runCommand-layer injection, browser response, and network capture. |
 | CQ | CLOSED | Local-first call-count guard implemented and live under-budget proof passed. |
 | DS | CLOSED SMOKE | DeepSeek N=8 smoke/sanity passed under CQ; not regression confirmation. |
-| GA | CLOSED WITH LIMITS | GA packet assembled; decision is `GA_LOCAL_FIRST_APPROVED_WITH_LIMITS` because CI2-H hosted PASS is still deferred. |
+| GA | CLOSED | GA packet upgraded to `GA_LOCAL_FIRST_APPROVED` after CI2-H hosted PASS. |
 
 ## Binding Boundaries
 
@@ -33,7 +33,8 @@ This compact handoff supersedes adding more status to the oversized
 - Governance behavior claims require live proof except BR fake-key redaction
   tests, which are no-live redaction behavior checks.
 - Supabase/Postgres remains deferred optional managed mode.
-- Do not claim hosted CI2 PASS until the protected GitHub run has an artifact.
+- Hosted CI2-H PASS claim is allowed only with artifact
+  `docs/reviews/CVF_CI2_HOSTED_LIVE_GATE_PASS_RUN_2026-05-09.md`.
 
 ## Update Log
 
@@ -97,7 +98,7 @@ This compact handoff supersedes adding more status to the oversized
   `docs/reviews/CVF_GA_KNOWN_LIMITATIONS_REFRESH_2026-05-08.md`,
   `docs/reviews/CVF_GA_READINESS_DECISION_2026-05-08.md`.
   Authorized claim: local-first GA readiness for governed Web operations.
-  Disallowed until follow-up: hosted CI2-H PASS, exact-dollar cost control,
+  Historical disallowed claims at local closure: hosted CI2-H PASS, exact-dollar cost control,
   multi-tenant quota enforcement, full DeepSeek regression confirmation.
 - 2026-05-08: Final local verification passed: targeted Vitest 26/26,
   `npm run build` PASS, `npx tsc --noEmit --pretty false` PASS,
@@ -138,3 +139,12 @@ This compact handoff supersedes adding more status to the oversized
   unit coverage, and upload Playwright diagnostics on hosted workflow failure.
   Do not claim hosted CI2-H PASS or upgrade GA decision until a corrected hosted
   run records release gate 7/7 PASS.
+- 2026-05-09: Corrected hosted CI2-H run `25575296660` passed on head
+  `1a2fa8862d823436618b093f6690b5fd4de2eab7`. Artifact downloaded to
+  `.cvf/runtime/ci2h-hosted/25575296660/cvf-protected-live-release-gate-result.json`
+  and shows `gate_result=PASS`, 7/7 checks PASS, including live governance E2E.
+  Evidence filed:
+  `docs/reviews/CVF_CI2_HOSTED_LIVE_GATE_PASS_RUN_2026-05-09.md`. GA decision
+  upgraded to `GA_LOCAL_FIRST_APPROVED`. Remaining non-blocking follow-ups:
+  optional DeepSeek N>=14 confirmation and Track M managed Postgres/Supabase
+  scoping for managed deployment only.
