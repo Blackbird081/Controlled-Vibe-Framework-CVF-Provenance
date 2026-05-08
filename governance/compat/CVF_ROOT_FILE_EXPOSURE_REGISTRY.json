@@ -19,6 +19,8 @@
   ],
   "ignoredRootFiles": [],
   "files": [
+    { "path": ".cvf-c5-web-dev.err.log", "exposureClass": "INTERNAL_ONLY" },
+    { "path": ".cvf-c5-web-dev.out.log", "exposureClass": "INTERNAL_ONLY" },
     { "path": ".dt.log", "exposureClass": "INTERNAL_ONLY" },
     { "path": ".git_commit_error.log", "exposureClass": "INTERNAL_ONLY" },
     { "path": ".git_commit_msg.txt", "exposureClass": "INTERNAL_ONLY" },
