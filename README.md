@@ -198,6 +198,12 @@ Then open `http://localhost:3000`.
 
 In `Settings`, enable the provider keys you want to use. Each admitted `provider + model` pair is treated as a governed run lane for future Product Value Validation.
 
+For a guided RC first-run path on Windows, use the [CVF 5-Minute RC Setup](docs/guides/CVF_5_MINUTE_RC_SETUP.md):
+
+```bash
+python scripts/cvf_setup.py --write-env --json
+```
+
 For Netlify, Vercel, and Docker posture, see the [CVF Deploy Guide](docs/guides/CVF_DEPLOY_GUIDE.md).
 
 ### Quick Run: Workspace Bootstrap
