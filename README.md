@@ -26,6 +26,7 @@
     <td align="center"><a href="#what-cvf-is"><strong>Overview</strong></a></td>
     <td align="center"><a href="#start-here"><strong>Start Here</strong></a></td>
     <td align="center"><a href="ARCHITECTURE.md"><strong>Architecture</strong></a></td>
+    <td align="center"><a href="#developer-technical-design"><strong>Dev Design</strong></a></td>
     <td align="center"><a href="#current-status"><strong>Status</strong></a></td>
     <td align="center"><a href="#repository-map"><strong>Repo Map</strong></a></td>
     <td align="center"><a href="#key-docs"><strong>Docs Hub</strong></a></td>
@@ -85,11 +86,13 @@ The strongest public-safe claim CVF can make right now is:
 
 - **on one validated provider lane, CVF has proven real non-coder value**
 - **across two live provider lanes, CVF has proven multi-provider operability**
+- **the trusted-form web front door is live-usable across the current 40-form non-wizard corpus**
 - the governed path preserves normal-task usefulness
 - risky requests are blocked or guided instead of left as prompt roulette
 - `NEEDS_APPROVAL` is no longer a dead end
 - risk visibility and follow-up rounds now exist in the main non-coder flow
 - knowledge-native context now improves live `/api/execute` outcomes, not just governance docs
+- absorbed CVF ADD doctrine is runtime-readable in the external-asset governance lane, with registry persistence, operator UI readout, and metadata query filters
 - the Web processing/result flow now visibly shows and exports governance evidence receipts per request (decision, risk, provider/model, routing, policy snapshot, envelope/receipt id, knowledge source, approval id when present)
 - downstream workspace adoption is repeatable across at least 3 project kinds with a scripted proof path
 - a workspace-to-web evidence bridge links downstream enforcement proof to CVF Web live evidence without distributing API keys
@@ -103,6 +106,7 @@ Boundaries that still matter:
 
 - one-provider non-coder value is proven on the Alibaba lane
 - multi-provider operability is proven on Alibaba `qwen-turbo` and DeepSeek `deepseek-chat`
+- W149 proved the full trusted-form corpus on Alibaba direct API `40/40`, Alibaba browser UI `40/40`, and a DeepSeek confirmatory subset `12/12`
 - provider speed, strength, reliability, and cost remain provider-lane economics chosen by the user
 - the public `Skill Library` front door is now synced to a governed subset, but benchmark truth still comes only from the `GC-044` trusted subset
 
@@ -140,6 +144,35 @@ What CVF is not claiming today:
 The safest current product claim is recorded in [Release Readiness](docs/reference/CVF_RELEASE_READINESS_STATUS_2026-03-20.md).
 
 For a visual system map, open [ARCHITECTURE.md](ARCHITECTURE.md).
+
+## Developer Technical Design
+
+Yes. CVF already has a technical design / architecture set for developers. The shortest path is:
+
+| Need | Read |
+|---|---|
+| Fast module overview and system shape | [ARCHITECTURE.md](ARCHITECTURE.md) |
+| Canonical module map and layer vocabulary | [Architecture Map](docs/reference/CVF_ARCHITECTURE_MAP.md) |
+| Diagram-first architecture view | [Architecture Diagrams](docs/reference/CVF_ARCHITECTURE_DIAGRAMS.md) |
+| Ecosystem-level structure | [Ecosystem Architecture](CVF_ECOSYSTEM_ARCHITECTURE.md) |
+| Deep closure-assessed architecture baseline | [Master Architecture Whitepaper](docs/reference/CVF_MASTER_ARCHITECTURE_WHITEPAPER.md) |
+| Public APIs and external-asset governance metadata | [Reference API Docs](docs/reference/api/README.md) and [External Asset Governance API Contract](docs/reference/CVF_W67_T1_EXTERNAL_ASSET_GOVERNANCE_API_CONTRACT.md) |
+
+The application is organized around these practical modules:
+
+| Module | Main path | What it owns |
+|---|---|---|
+| Web / non-coder app | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/` | dashboard UI, intent routing, trusted forms, `/api/execute`, provider settings, evidence display/export |
+| Trusted form routing | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/form-routing.ts` + `trusted-form-corpus.ts` | maps non-coder prompts into the 40-form trusted corpus without changing wizard behavior |
+| External asset governance | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/external-asset-governance.ts` | bounded intake of external knowledge/capabilities before registry admission |
+| CVF ADD runtime metadata | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/cvf-add-runtime-doctrine.ts` | server-derived capability, boundary, context-profile, delegation, and provider-boundary metadata |
+| Governed asset registry | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/asset-registry.ts` | append-only registry persistence and queryable runtime readout |
+| Guard contract | `EXTENSIONS/CVF_GUARD_CONTRACT/` | shared guard semantics, policy/risk contract, public SDK boundary |
+| Governance runtime | `EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/` | canonical phase/governance orchestration primitives |
+| Governance compatibility gates | `governance/compat/` + `governance/toolkit/05_OPERATION/` | local/CI hooks that keep docs, tests, guards, retention, and release posture aligned |
+| Workspace bootstrap | `scripts/new-cvf-workspace.ps1` + `docs/reference/CVF_WORKSPACE_RULES.md` | downstream project isolation and generated agent-enforcement artifacts |
+
+For new developers, read in this order: `README.md` -> `ARCHITECTURE.md` -> `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/README.md` -> the specific module listed above.
 
 ## Start Here
 
@@ -218,8 +251,10 @@ Current posture on the active reference path:
 | One-provider non-coder value | `PROVEN — governed path value proven on Alibaba lane` |
 | Multi-provider operability | `PROVEN — Alibaba qwen-turbo CERTIFIED (3/3 pass) + DeepSeek deepseek-chat CERTIFIED (3/3 pass)` |
 | Knowledge-native execute-path value | `PROVEN — injected 0.950 vs raw 0.175 (+0.775 delta)` |
+| Trusted-form non-coder corpus | `LIVE-USABLE — W149 Alibaba direct 40/40, Alibaba browser 40/40, DeepSeek confirmatory 12/12` |
 | Post-closure integration wave | `CVF ADDING NEW + Windows_Skill_Normalization INTEGRATED` |
-| Runnable inherited upgrade surface | ``cvf-web`` `/api/governance/external-assets/prepare` |
+| CVF ADD runtime absorption | `RUNTIME-READABLE — prepare API, registry persistence, operator UI readout, metadata filters` |
+| Runnable inherited upgrade surface | `cvf-web` `/api/governance/external-assets/prepare` |
 | Latest verified local counts | CPF 2999 / EPF 1301 / GEF 625 / LPF 1493 / cvf-web 2027 |
 | Canonical phase model | `ALIGNED` |
 | Hardened default guard path | `ALIGNED` |
@@ -240,6 +275,8 @@ Read this status as:
 - the multi-provider path now has evidence-backed live operability on Alibaba and DeepSeek
 - the knowledge-native execute path now has live benefit evidence after `W101-T1` + `W102-T1`
 - the post-closure integration wave is no longer docs-only; a bounded runnable governance surface now exists in `cvf-web`
+- the CVF ADD absorption wave is now runtime-readable in the external-asset governance lane, but does not execute external tools or widen provider behavior
+- the trusted-form web front door is live-usable on the current 40-form corpus under the W149 evidence boundary
 - the latest verified local baseline is CPF `2999`, EPF `1301`, GEF `625`, LPF `1493`, and `cvf-web` `2027`
 - the active path has no open tranche and remains `SUBSTANTIALLY DELIVERED`
 - Web is live-proven on its active governed AI path, but it should not be described as fully inheriting every CVF runtime/module
@@ -284,6 +321,8 @@ The post-closure additions from `CVF ADDING NEW` and `Windows_Skill_Normalizatio
 
 This is the current proof that the upgrade wave is not only canon/docs work anymore.
 
+The newer CVF ADD runtime activation makes absorbed doctrine server-readable and registry-persisted in the same external-asset governance lane. It adds capability/boundary/context/delegation/provider-boundary metadata, operator UI readout, and metadata query filters. It intentionally does not execute external tools, bypass `/api/execute` governance, or claim full runtime inheritance.
+
 ### Release Candidate Readiness (2026-04-21)
 
 CVF has entered release candidate state. All core proof milestones are closed.
@@ -325,6 +364,8 @@ Primary status anchors:
 | `EXTENSIONS/CVF_GUARD_CONTRACT/` | shared guard contract, public SDK boundary, governed helper runtime |
 | `EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/` | canonical governance runtime, orchestrator, workflow bridge |
 | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/` | Web UI, non-coder flows, guard APIs, governed execute path |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/trusted-form-corpus.ts` | trusted-form corpus data for the 40-form non-coder web front door |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/cvf-add-runtime-doctrine.ts` | runtime-readable CVF ADD capability and boundary metadata |
 | `governance/` | governance toolkit, policy, operations guards, compat gates |
 | `docs/` | canonical docs, baselines, roadmaps, reviews, release records |
 
@@ -333,6 +374,9 @@ Primary status anchors:
 ### Learn the model
 
 - [Architecture Overview](ARCHITECTURE.md)
+- [Architecture Map](docs/reference/CVF_ARCHITECTURE_MAP.md)
+- [Architecture Diagrams](docs/reference/CVF_ARCHITECTURE_DIAGRAMS.md)
+- [Ecosystem Architecture](CVF_ECOSYSTEM_ARCHITECTURE.md)
 - [Docs Index](docs/INDEX.md)
 - [Core Knowledge Base](docs/CVF_CORE_KNOWLEDGE_BASE.md)
 - [Controlled Execution Loop](docs/concepts/controlled-execution-loop.md)
