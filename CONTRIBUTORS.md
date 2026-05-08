@@ -23,6 +23,15 @@ authority, or governance authority.
 GitHub's sidebar contributor list is generated from commit metadata. This file
 is CVF's canonical acknowledgement of collaboration roles inside the repository.
 
+## Contributor Boundary
+
+For where external contributors may add templates, provider lanes, skills, or
+governance guards, read
+[CVF Extension Author Boundary](docs/reference/CVF_EXTENSION_AUTHOR_BOUNDARY.md).
+
+That document also lists protected surfaces that require explicit governance
+authorization before changes.
+
 When an AI-assisted commit needs explicit attribution, use a truthful commit
 author or `Co-authored-by` trailer that maps to the actual collaborator identity
 available in that environment.

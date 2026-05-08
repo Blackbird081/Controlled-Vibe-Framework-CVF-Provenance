@@ -82,6 +82,7 @@ Current canonical docs:
 - `CVF_GOVERNED_CONTEXT_PROFILE_METADATA_DOCTRINE_2026-05-07.md` *(canonical — CVF-native; CVF ADD Phase B absorption)*
 - `CVF_AGENT_CONTINUITY_AND_DELEGATION_DOCTRINE_2026-05-07.md` *(canonical — CVF-native; CVF ADD Phase B absorption)*
 - `CVF_SCOPED_KNOWLEDGE_PROVIDER_BOUNDARY_DOCTRINE_2026-05-07.md` *(canonical — CVF-native; CVF ADD Phase B absorption)*
+- `CVF_EXTENSION_AUTHOR_BOUNDARY.md` *(canonical — public contributor boundary; WPR-1)*
 
 Current readout note (CVF ADD docs absorption 2026-05-07):
 

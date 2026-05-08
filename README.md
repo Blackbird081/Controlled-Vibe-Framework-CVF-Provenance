@@ -512,6 +512,11 @@ For the deeper private-core chain, continue with:
 For contributor attribution and AI collaboration roles, see
 [Contributors](CONTRIBUTORS.md).
 
+For extension authors and public contributors, start with
+[CVF Extension Author Boundary](docs/reference/CVF_EXTENSION_AUTHOR_BOUNDARY.md).
+It explains where to add trusted forms, provider lanes, skills, and governance
+guards, plus which surfaces require explicit authorization.
+
 For substantive changes:
 
 1. update the affected code or docs
@@ -522,6 +527,7 @@ For substantive changes:
 Helpful entrypoints:
 
 - [CHANGELOG](CHANGELOG.md)
+- [Extension Author Boundary](docs/reference/CVF_EXTENSION_AUTHOR_BOUNDARY.md)
 - [Versioning Policy](docs/VERSIONING.md)
 - [Incremental Test Log](docs/CVF_INCREMENTAL_TEST_LOG.md)
 - [Architecture Decisions](docs/CVF_ARCHITECTURE_DECISIONS.md)
