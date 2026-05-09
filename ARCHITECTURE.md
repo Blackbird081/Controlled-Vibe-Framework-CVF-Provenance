@@ -120,16 +120,27 @@ Diagram note: dependency direction is intentionally conservative. Higher product
 The current active path is the clearest expression of CVF today. For governance claims, this path must reach a real provider API call.
 
 ```mermaid
-flowchart LR
-    INTENT["User intent<br/>coder or non-coder"]
-    ENTRY["Entry surface<br/>SDK / wizard / API"]
-    GUARDS["Guard contract<br/>phase, role, risk, scope"]
-    ORCH["Runtime orchestrator<br/>INTAKE -> DESIGN -> BUILD -> REVIEW -> FREEZE"]
-    APPROVAL["Approval checkpoints"]
-    EXEC["Execution and tool/model use<br/>within approved boundary"]
-    PROVIDER["Certified provider lane<br/>Alibaba primary / DeepSeek bounded"]
-    REVIEW["Review and audit evidence"]
-    FREEZE["Freeze artifact / receipt"]
+flowchart TB
+    subgraph REQUEST["Request and governance"]
+        direction LR
+        INTENT["User intent<br/>coder / non-coder"]
+        ENTRY["Entry surface<br/>SDK / wizard / API"]
+        GUARDS["Guard contract<br/>phase / role / risk / scope"]
+        ORCH["Runtime orchestrator<br/>INTAKE -> DESIGN -> BUILD -> REVIEW -> FREEZE"]
+    end
+
+    subgraph RUN["Approved execution"]
+        direction LR
+        APPROVAL["Approval checkpoints"]
+        EXEC["Execution<br/>inside approved boundary"]
+        PROVIDER["Certified provider lane<br/>Alibaba primary<br/>DeepSeek bounded"]
+    end
+
+    subgraph CLOSE["Evidence closure"]
+        direction LR
+        REVIEW["Review and audit evidence"]
+        FREEZE["Freeze artifact / receipt"]
+    end
 
     INTENT --> ENTRY
     ENTRY --> GUARDS
@@ -149,23 +160,20 @@ This is the practical governed loop that CVF currently proves on the active path
 
 ```mermaid
 sequenceDiagram
-    participant User
+    actor User
     participant Entry as SDK or Web Entry
     participant Guard as Guard Contract
-    participant Runtime as Governance Runtime
-    participant Tool as Tool / Model / Agent
+    participant Runtime as Runtime + Tool/Agent
     participant Provider as Live Provider API
-    participant Evidence as Audit / Freeze / Baseline
+    participant Evidence as Audit / Freeze
 
     User->>Entry: submit intent
-    Entry->>Guard: evaluate phase, role, risk, scope
+    Entry->>Guard: evaluate boundaries
     Guard-->>Entry: allow / block / escalate
-    Entry->>Runtime: open governed execution path
-    Runtime->>Runtime: orchestrate canonical phase loop
-    Runtime->>Tool: execute within approved boundary
-    Tool->>Provider: live model call when governance is asserted
-    Provider-->>Tool: model output
-    Tool-->>Runtime: result + traces
+    Entry->>Runtime: open governed path
+    Runtime->>Runtime: run canonical phase loop
+    Runtime->>Provider: live call inside approved boundary
+    Provider-->>Runtime: model output
     Runtime->>Evidence: review receipt + freeze artifact
     Evidence-->>User: reviewable outcome
 ```
