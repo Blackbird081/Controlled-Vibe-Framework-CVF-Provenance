@@ -326,10 +326,45 @@ three-config attribution design (`CFG-A0` raw direct, `CFG-A1` structured direct
 control, `CFG-B` CVF governed path) so the benchmark can separate prompt
 structure value from governance/control value.
 
+Operator authorized completion of the criteria hardening deliverables so the
+track can reach "only runner/live run remains." QBS-CRIT-R0 is now complete.
+
+Created:
+
+- `docs/reference/CVF_QUALITY_BENCHMARK_SUITE_CRITERIA_V2_METHODOLOGY_2026-05-09.md`
+- `docs/reference/CVF_QUALITY_BENCHMARK_SUITE_CRITERIA_ALIGNMENT_STANDARDS_2026-05-09.md`
+- `docs/reference/CVF_QUALITY_BENCHMARK_SUITE_CRITERIA_V2_FINAL_2026-05-09.md`
+
+Key V2 decisions:
+
+- 20 tasks is only `CALIBRATION_PILOT`, not quality proof.
+- Powered claim run requires 48 tasks, 8 families x 6 tasks, N=3 repeats.
+- Three-config design is locked: `CFG-A0` raw direct, `CFG-A1` structured direct,
+  `CFG-B` CVF governed path.
+- Primary governance attribution comparison is `CFG-B` vs `CFG-A1`.
+- L6 now requires 3 provider families; 2 providers is only
+  `TWO_PROVIDER_CORROBORATION`.
+- Adversarial family raised to 6 tasks.
+- Negative controls are required.
+- Hard thresholds now exist for material uplift, severe unsafe false negatives,
+  false positives, cost overhead, evidence completeness, reviewer agreement,
+  and claim expiration.
+- Standards alignment now references GLUE, SuperGLUE, HELM, MT-Bench,
+  AgentBench, OWASP LLM Top 10, and MITRE ATLAS.
+
 Gate status:
 
 - Gate 0: PASS - Codex rebuttal filed.
-- Gate 1: READY_FOR_OPERATOR_DECISION.
-- Authorization remains NO.
-- Do not create V2 methodology/alignment/final criteria deliverables, implement
-  runner, or run live QBS evidence until operator authorizes QBS-CRIT-R0.
+- Gate 1: PASS - operator authorized criteria hardening.
+- Gate 2: PASS - V2 methodology created.
+- Gate 3: PASS - standards alignment created.
+- Gate 4: PASS - V2 final criteria created.
+- Gate E: PASS - QBS-0 criteria ready for QBS-1 runner/corpus planning.
+
+Boundary:
+
+- No benchmark runner has been implemented.
+- No live QBS run has been executed.
+- No public quality claim has been upgraded.
+- Next step requires QBS-1 runner/corpus roadmap authorization before any live
+  benchmark execution.

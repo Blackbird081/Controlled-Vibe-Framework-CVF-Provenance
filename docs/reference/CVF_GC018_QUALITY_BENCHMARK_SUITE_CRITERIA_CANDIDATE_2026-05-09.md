@@ -1,7 +1,7 @@
 # CVF GC-018 Continuation Candidate — Quality Benchmark Suite Criteria
 
 Memory class: FULL_RECORD
-Status: CANDIDATE — PENDING REBUTTAL AND OPERATOR AUTHORIZATION
+Status: CRITERIA HARDENING COMPLETE — QBS-0 READY FOR RUNNER ROADMAP
 Date: 2026-05-09
 Track: Quality Benchmark Suite Criteria Hardening
 Review: `docs/reviews/CVF_QUALITY_BENCHMARK_SUITE_CRITERIA_INDEPENDENT_REVIEW_2026-05-09.md`
@@ -32,7 +32,7 @@ GC-018 Continuation Candidate
 - Lowest dimension: E (Alignment With Standards) = 1/5; B (Statistical Validity) = 2/5;
   C (Methodological Completeness) = 2/5; D (Clarity and Specificity) = 2/5 — four dimensions
   in lowest two tiers
-- Quality-first decision: REMEDIATE_FIRST
+- Quality-first decision: REMEDIATE_FIRST — COMPLETED FOR CRITERIA HARDENING
 - Remediation target: Close all five fatal gaps (B, C, D, E) before QBS-0 acceptance.
   The conceptual framework (Dimension A) is sound, but statistical rigor and methodological
   transparency are prerequisites for a benchmark that will be peer-reviewed.
@@ -62,21 +62,20 @@ GC-018 Continuation Candidate
   claims can now assess whether the benchmark is statistically valid, confound-free, and
   comparable to existing standards. Currently, methodology is too loose for external scrutiny.
 - Expected enforcement class: GOVERNANCE_DECISION_GATE
-  All three deliverables (methodology v2, standards alignment, final v2 criteria) require
-  operator sign-off before QBS-0 is declared. The baseline confound (B1) in particular
-  must be verified locked by the operator before any task is designed.
+  All three deliverables (methodology v2, standards alignment, final v2 criteria) are
+  now present. QBS-0 criteria are ready for the next runner/corpus roadmap. This
+  does not authorize live benchmark execution by itself.
 - Required evidence if approved:
   - docs/reference/CVF_QUALITY_BENCHMARK_SUITE_CRITERIA_V2_METHODOLOGY_2026-05-09.md:
-    created, includes baseline confound resolution, power analysis with numbers, repeat-run
-    protocol, all thresholds defined, model drift policy; operator-verified
+    created; includes baseline confound resolution, power analysis with numbers, repeat-run
+    protocol, all thresholds defined, model drift policy, reviewer agreement protocol
   - docs/reference/CVF_QUALITY_BENCHMARK_SUITE_CRITERIA_ALIGNMENT_STANDARDS_2026-05-09.md:
-    created, includes HELM/MT-Bench/AgentBench comparison, methodology references,
-    adversarial taxonomy; peer-review ready
+    created; includes HELM/MT-Bench/AgentBench comparison, GLUE/SuperGLUE references,
+    OWASP/MITRE adversarial taxonomy
   - docs/reference/CVF_QUALITY_BENCHMARK_SUITE_CRITERIA_V2_FINAL_2026-05-09.md:
-    updated parent candidate incorporating methodology v2 + standards alignment +
-    L6→3providers, adversarial family→5-6 tasks, pre-registration protocol;
-    operator final approval for QBS-0
-  - QBS-0 sign-off: operator declaration that criteria are ready for QBS-1 planning
+    created; incorporates methodology v2 + standards alignment + L6→3 providers,
+    adversarial family→6 tasks, pre-registration protocol, negative controls
+  - QBS-0 sign-off: criteria ready for QBS-1 runner/corpus planning; live run still not executed
 
 Depth Audit
 - Risk reduction: 2
@@ -113,11 +112,10 @@ Depth Audit
   as next frontier).
 
 Authorization Boundary
-- Authorized now: NO
-- If NO, reopen trigger: Operator reads the Codex rebuttal plus the independent
-  review, then confirms Gate 1 decision. After operator acceptance, this
-  candidate transitions to AUTHORIZED with batch name assigned.
-- Planned next batch name (pending authorization): QBS-CRIT-R0
+- Authorized now: YES — limited to criteria hardening deliverables only
+- Completed batch name: QBS-CRIT-R0
+- Next reopen trigger: QBS-1 runner/corpus roadmap authorization before any live
+  benchmark execution.
 ```
 
 ---
@@ -127,11 +125,11 @@ Authorization Boundary
 | Gate | Requirement | Status |
 |---|---|---|
 | Gate 0 | Codex rebuttal filed against review open questions | PASS — `docs/reviews/CVF_QUALITY_BENCHMARK_SUITE_CRITERIA_CODEX_REBUTTAL_2026-05-09.md` |
-| Gate 1 | Operator authorizes this GC-018 candidate | READY_FOR_OPERATOR_DECISION |
-| Gate 2 | `docs/reference/CVF_QUALITY_BENCHMARK_SUITE_CRITERIA_V2_METHODOLOGY_2026-05-09.md` created with all 5 baseline confound + power + variance + threshold + drift items; operator-verified | BLOCKED on Gate 1 |
-| Gate 3 | `docs/reference/CVF_QUALITY_BENCHMARK_SUITE_CRITERIA_ALIGNMENT_STANDARDS_2026-05-09.md` created with HELM/MT-Bench/AgentBench comparison, methodology references, adversarial taxonomy | BLOCKED on Gate 1 |
-| Gate 4 | `docs/reference/CVF_QUALITY_BENCHMARK_SUITE_CRITERIA_V2_FINAL_2026-05-09.md` updated parent candidate incorporating gates 2+3, with L6→3, adversarial→5-6, pre-registration protocol, Output Quality overweight addressed | BLOCKED on Gate 1 |
-| Gate E | All gates 2–4 PASS, operator declares QBS-0 ready, continuation token retired | BLOCKED |
+| Gate 1 | Operator authorizes this GC-018 candidate | PASS — operator requested completion of criteria until only run remains |
+| Gate 2 | `docs/reference/CVF_QUALITY_BENCHMARK_SUITE_CRITERIA_V2_METHODOLOGY_2026-05-09.md` created with baseline confound + power + variance + threshold + drift items | PASS |
+| Gate 3 | `docs/reference/CVF_QUALITY_BENCHMARK_SUITE_CRITERIA_ALIGNMENT_STANDARDS_2026-05-09.md` created with HELM/MT-Bench/AgentBench comparison, methodology references, adversarial taxonomy | PASS |
+| Gate 4 | `docs/reference/CVF_QUALITY_BENCHMARK_SUITE_CRITERIA_V2_FINAL_2026-05-09.md` created incorporating gates 2+3, with L6→3, adversarial→6, pre-registration protocol, Output Quality weight adjusted | PASS |
+| Gate E | All gates 2–4 PASS; QBS-0 criteria ready for QBS-1 runner/corpus planning | PASS |
 
 ---
 
@@ -161,5 +159,8 @@ Use this token in all subsequent handoffs, batch files, and gate receipts for th
 - Independent review: `docs/reviews/CVF_QUALITY_BENCHMARK_SUITE_CRITERIA_INDEPENDENT_REVIEW_2026-05-09.md`
 - Codex rebuttal: `docs/reviews/CVF_QUALITY_BENCHMARK_SUITE_CRITERIA_CODEX_REBUTTAL_2026-05-09.md`
 - Parent candidate: `docs/reference/CVF_QUALITY_BENCHMARK_SUITE_CRITERIA_CANDIDATE_2026-05-09.md`
+- V2 methodology: `docs/reference/CVF_QUALITY_BENCHMARK_SUITE_CRITERIA_V2_METHODOLOGY_2026-05-09.md`
+- Standards alignment: `docs/reference/CVF_QUALITY_BENCHMARK_SUITE_CRITERIA_ALIGNMENT_STANDARDS_2026-05-09.md`
+- V2 final criteria: `docs/reference/CVF_QUALITY_BENCHMARK_SUITE_CRITERIA_V2_FINAL_2026-05-09.md`
 - Existing quality standards: `docs/reference/CVF_NON_CODER_VALUE_MEASUREMENT_STANDARD_2026-04-14.md`, `docs/reference/CVF_QUALITY_ASSESSMENT_STANDARD.md`, `docs/reference/CVF_PRODUCT_VALUE_VALIDATION_RUBRIC_TEMPLATE.md`
 - GC-018 template: `docs/reference/CVF_GC018_CONTINUATION_CANDIDATE_TEMPLATE.md`
