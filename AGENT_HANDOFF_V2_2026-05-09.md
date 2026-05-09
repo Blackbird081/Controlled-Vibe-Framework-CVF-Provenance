@@ -136,6 +136,47 @@ Current public-safe positioning:
 - Provider parity is not claimed.
 - Enterprise readiness is future architecture work, not a current public claim.
 
+## PRS Public-Safe Polish From External Feedback
+
+Operator supplied `docs/reference/Nhan_xet.md` as external presentation feedback.
+Codex assessed the feedback as valuable and overlapping with PRS-1, PRS-2, and
+PRS-4 rather than the deferred enterprise-readiness track.
+The source feedback file was removed after the useful public-safe actions were
+absorbed; this handoff now preserves the decision boundary.
+
+Implemented in public-sync clone only:
+
+- `README.md`: added `Who CVF Is For`, `Who CVF Is Not For`, and `Minimum Useful CVF`.
+- `docs/guides/minimum-useful-cvf.md`: added a lightweight operational
+  walkthrough covering UI-only use, live governed proof, real workflow adoption,
+  before/after value, and common failure boundaries.
+- `governance/public-surface-manifest.json`: classified the new guide as
+  public core.
+- Public commit pushed: `42a6e08` (`Improve public onboarding path`) to
+  `Blackbird081/Controlled-Vibe-Framework-CVF.git`.
+
+Verification:
+
+- `python scripts/check_public_surface.py` PASS in
+  `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync`.
+
+Boundary:
+
+- Did not create `docs/architecture/EVIDENCE_RECEIPT_SCHEMA.md`,
+  `docs/architecture/SECURITY_AND_NFR.md`, or
+  `docs/architecture/STANDARDS_MAPPING.md`.
+- Did not add NIST/ISO, hosted multi-tenancy, SLO, or cryptographic receipt
+  claims.
+- Enterprise-readiness Gate 1 remains deferred.
+
+Still parked / do not implement without fresh operator authorization:
+
+- enterprise receipt schema and external verification protocol;
+- security/NFR/STRIDE/SLO documentation;
+- standards mapping or compliance-positioning language;
+- hosted multi-tenancy or enterprise-readiness claims;
+- deeper public operational evidence that would require fresh live proof.
+
 ## Required Agent Behavior Going Forward
 
 - Prefer public-sync clone for public repo changes.
