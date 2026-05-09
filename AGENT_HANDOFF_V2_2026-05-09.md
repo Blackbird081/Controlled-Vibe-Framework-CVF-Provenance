@@ -210,16 +210,57 @@ Verification:
   `receiptDecision=ALLOW`, `routingDecision=ALLOW`,
   `policySnapshotId=pol-20260509-0004`, output length `2092`.
 
+Follow-up live certification completed 2026-05-09:
+
+- OpenAI key remains local-only in ignored
+  `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/.env.local` as
+  `OPENAI_API_KEY`; `CVF_SERVICE_TOKEN` for local `/api/execute` testing is in
+  the same file. Do not commit or print either value.
+- Reuse commands:
+  - `python scripts/cvf_provider_check.py --provider openai --live --json`
+  - `python scripts/run_cvf_multi_provider_live_smoke.py --providers openai`
+  - `python scripts/run_cvf_provider_live_canary.py --provider openai --save-receipt`
+  - `python scripts/evaluate_cvf_provider_lane_certification.py`
+- Added OpenAI full canary coverage on `gpt-4o-mini`:
+  `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.front-door-rewrite.openai.live.test.ts`.
+- Three saved OpenAI canary receipts are in
+  `docs/audits/openai-canary/`:
+  `20260509-141348-e1e9e5`, `20260509-141504-a97a2b`,
+  `20260509-141626-fa4465`.
+- `python scripts/evaluate_cvf_provider_lane_certification.py --json` now
+  reports OpenAI `gpt-4o-mini` as `CERTIFIED` with 3 consecutive PASS 6/6.
+- `/api/providers` now reports OpenAI as `CERTIFIED` when configured and uses
+  `gpt-4o-mini` as the default OpenAI model to match the certified lane.
+- Public-sync commit pushed: `31980d7` (`Certify OpenAI provider lane`) to
+  `Blackbird081/Controlled-Vibe-Framework-CVF.git`.
+
+Verification:
+
+- OpenAI live canary dry run: PASS 6/6.
+- OpenAI saved canaries: PASS 6/6 x 3.
+- `python scripts/check_cvf_provider_release_readiness.py` PASS with Alibaba,
+  DeepSeek, and OpenAI certified in provenance.
+- `npx vitest run src/app/api/providers/route.test.ts src/lib/ai-providers.test.ts src/lib/ai/providers.test.ts src/lib/provider-lane-status.test.ts`
+  PASS 80/80 in provenance.
+- `npm run build` PASS in provenance `cvf-web`.
+- Public-sync `python scripts/check_public_surface.py` PASS.
+- Public-sync `python scripts/check_cvf_provider_release_readiness.py` PASS
+  with OpenAI `CERTIFIED` and curated public receipts.
+- Public-sync `npm run build` PASS after `npm ci`; build warns that the
+  private skill library root is absent from public-sync, but compilation and
+  type checks passed.
+
 Boundary:
 
-- This proves OpenAI local key + live provider smoke + governed `/api/execute`
-  path works.
-- OpenAI remains `EXPERIMENTAL`; no `CERTIFIED` claim and no provider-parity
-  claim.
-- Gemini remains parked for now; use free-tier smoke only later if operator
-  decides quota is acceptable.
-- Dev server started for this test was stopped; `http://localhost:3000` returned
-  `NO_SERVER` afterward.
+- OpenAI certification is model-specific to `gpt-4o-mini`; no blanket OpenAI
+  model parity claim.
+- CVF may now claim real live governance effectiveness on the OpenAI
+  `gpt-4o-mini` lane for the locked 6-scenario front-door canary.
+- Provider parity is still not claimed.
+- Gemini remains parked until operator supplies a paid/adequate key and asks to
+  run it.
+- Operator should rotate the OpenAI key later because it was pasted into chat,
+  even though it was not committed.
 
 ## Required Agent Behavior Going Forward
 

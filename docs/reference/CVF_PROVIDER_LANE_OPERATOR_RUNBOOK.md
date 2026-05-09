@@ -50,6 +50,7 @@ Commands:
 ```bash
 python scripts/run_cvf_provider_live_canary.py --provider alibaba
 python scripts/run_cvf_provider_live_canary.py --provider deepseek
+python scripts/run_cvf_provider_live_canary.py --provider openai
 ```
 
 These print results without saving receipts. Exit codes: `0`=PASS, `1`=FAIL, `2`=key missing.
@@ -71,6 +72,7 @@ Commands:
 ```bash
 python scripts/run_cvf_provider_live_canary.py --provider alibaba --save-receipt
 python scripts/run_cvf_provider_live_canary.py --provider deepseek --save-receipt
+python scripts/run_cvf_provider_live_canary.py --provider openai --save-receipt
 ```
 
 ---
@@ -155,3 +157,4 @@ This reads saved receipts and reports lane readiness. Exit 0 if at least one lan
 | `docs/reference/CVF_PROVIDER_LANE_READINESS_MATRIX.md` | Canonical lane readiness matrix |
 | `docs/audits/alibaba-canary/INDEX.md` | Alibaba receipt index |
 | `docs/audits/deepseek-canary/INDEX.md` | DeepSeek receipt index |
+| `docs/audits/openai-canary/INDEX.md` | OpenAI receipt index |

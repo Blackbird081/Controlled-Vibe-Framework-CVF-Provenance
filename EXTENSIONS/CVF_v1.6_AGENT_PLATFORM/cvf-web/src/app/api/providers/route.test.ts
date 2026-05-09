@@ -7,13 +7,17 @@ describe('/api/providers', () => {
     beforeEach(() => {
         process.env = { ...originalEnv };
         delete process.env.OPENAI_API_KEY;
+        delete process.env.CVF_OPENAI_API_KEY;
         delete process.env.ANTHROPIC_API_KEY;
         delete process.env.GOOGLE_AI_API_KEY;
         delete process.env.ALIBABA_API_KEY;
+        delete process.env.DASHSCOPE_API_KEY;
         delete process.env.CVF_BENCHMARK_ALIBABA_KEY;
         delete process.env.CVF_ALIBABA_API_KEY;
         delete process.env.OPENROUTER_API_KEY;
         delete process.env.DEEPSEEK_API_KEY;
+        delete process.env.CVF_BENCHMARK_DEEPSEEK_KEY;
+        delete process.env.CVF_DEEPSEEK_API_KEY;
         delete process.env.DEFAULT_AI_PROVIDER;
     });
 
@@ -39,6 +43,21 @@ describe('/api/providers', () => {
         expect(data.defaultProvider).toBe('gemini');
         const openai = data.providers.find((p: { provider: string }) => p.provider === 'openai');
         expect(openai.configured).toBe(true);
+    });
+
+    it('treats OpenAI compatibility aliases as configured without exposing key values', async () => {
+        process.env.CVF_OPENAI_API_KEY = 'openai-alias-key';
+
+        const res = await GET();
+        const data = await res.json();
+        const openai = data.providers.find((p: { provider: string }) => p.provider === 'openai');
+
+        expect(data.anyConfigured).toBe(true);
+        expect(openai.configured).toBe(true);
+        expect(openai.model).toBe('gpt-4o-mini');
+        expect(openai.keySourceName).toBe('CVF_OPENAI_API_KEY');
+        expect(openai.readiness).toBe('live_task_ready');
+        expect(JSON.stringify(openai)).not.toContain('openai-alias-key');
     });
 
     it('treats Alibaba compatibility aliases as configured', async () => {
@@ -98,13 +117,13 @@ describe('/api/providers', () => {
         expect(deepseek.laneStatus).toBe('CERTIFIED');
     });
 
-    it('returns EXPERIMENTAL lane status for providers with no canary evidence', async () => {
+    it('returns CERTIFIED lane status for OpenAI when configured', async () => {
         process.env.OPENAI_API_KEY = 'openai-key';
 
         const res = await GET();
         const data = await res.json();
         const openai = data.providers.find((p: { provider: string }) => p.provider === 'openai');
 
-        expect(openai.laneStatus).toBe('EXPERIMENTAL');
+        expect(openai.laneStatus).toBe('CERTIFIED');
     });
 });

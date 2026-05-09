@@ -28,6 +28,11 @@ PROVIDERS = [
         "model": "deepseek-chat",
         "audit_dir": REPO_ROOT / "docs" / "audits" / "deepseek-canary",
     },
+    {
+        "name": "openai",
+        "model": "gpt-4o-mini",
+        "audit_dir": REPO_ROOT / "docs" / "audits" / "openai-canary",
+    },
 ]
 
 CERTIFICATION_WINDOW = 3

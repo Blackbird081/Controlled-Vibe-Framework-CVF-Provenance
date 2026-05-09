@@ -6,6 +6,7 @@ Unified runner for all certified provider lanes.
 Usage:
   python scripts/run_cvf_provider_live_canary.py --provider alibaba [--save-receipt]
   python scripts/run_cvf_provider_live_canary.py --provider deepseek [--save-receipt]
+  python scripts/run_cvf_provider_live_canary.py --provider openai [--save-receipt]
 
 Exit codes: 0=all pass, 1=one or more fail, 2=API key absent, 3=provider unsupported
 """
@@ -44,6 +45,18 @@ PROVIDER_CONFIGS = {
         "audit_dir": REPO_ROOT / "docs" / "audits" / "deepseek-canary",
         "index_title": "DeepSeek Live Canary — Receipt Index",
         "timeout_ms": 240000,
+    },
+    "openai": {
+        "model": "gpt-4o-mini",
+        "key_env_names": [
+            "OPENAI_API_KEY",
+            "CVF_OPENAI_API_KEY",
+        ],
+        "key_export_env": "OPENAI_API_KEY",
+        "test_pattern": "route.front-door-rewrite.openai.live.test.ts",
+        "audit_dir": REPO_ROOT / "docs" / "audits" / "openai-canary",
+        "index_title": "OpenAI Live Canary — Receipt Index",
+        "timeout_ms": 120000,
     },
 }
 
@@ -214,7 +227,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="CVF Provider Live Canary Runner (W110-T2)")
     parser.add_argument("--provider", required=True,
                         choices=list(PROVIDER_CONFIGS.keys()),
-                        help="Provider lane to run (alibaba | deepseek)")
+                        help="Provider lane to run (alibaba | deepseek | openai)")
     parser.add_argument("--model", default=None,
                         help="Override model name (optional)")
     parser.add_argument("--save-receipt", action="store_true",
