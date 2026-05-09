@@ -177,6 +177,50 @@ Still parked / do not implement without fresh operator authorization:
 - hosted multi-tenancy or enterprise-readiness claims;
 - deeper public operational evidence that would require fresh live proof.
 
+## Provider Smoke Follow-Up — OpenAI Live Path
+
+Operator paused Gemini free-tier testing due quota concerns and provided an
+OpenAI key for local-only smoke testing. The raw key was written only to ignored
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/.env.local`; it was not committed
+or printed by validation commands. Operator should rotate the key after testing
+because it was pasted into chat.
+
+Implemented provider-readiness tooling updates:
+
+- `scripts/cvf_provider_check.py`: added `gemini` and `openai` support; OpenAI
+  default smoke model is `gpt-4o-mini`.
+- `scripts/run_cvf_multi_provider_live_smoke.py`: added `gemini` and `openai`
+  support.
+- public-sync `PROVIDERS.md`: documents OpenAI/Gemini env aliases.
+- Public commit pushed: `5ad7d02` (`Add OpenAI and Gemini provider smoke
+  checks`) to `Blackbird081/Controlled-Vibe-Framework-CVF.git`.
+
+Verification:
+
+- `python scripts/cvf_provider_check.py --provider openai --live --json`
+  returned `LIVE_VALIDATED`, HTTP 200, key source `OPENAI_API_KEY`.
+- `python scripts/run_cvf_multi_provider_live_smoke.py --providers openai`
+  returned `ok=true`, HTTP 200, `outputMatched=true`, `tokenTotal=38`.
+- `npm run build` in provenance `cvf-web` passed before live execute testing.
+- `/api/providers` showed OpenAI configured with lane status `EXPERIMENTAL`;
+  Alibaba and DeepSeek remained `CERTIFIED`.
+- `/api/execute` OpenAI governed path with `provider=openai`,
+  `model=gpt-4o-mini`, phase `REVIEW`, risk `R1`, action `read` returned:
+  `success=true`, provider `openai`, model `gpt-4o-mini`,
+  `receiptDecision=ALLOW`, `routingDecision=ALLOW`,
+  `policySnapshotId=pol-20260509-0004`, output length `2092`.
+
+Boundary:
+
+- This proves OpenAI local key + live provider smoke + governed `/api/execute`
+  path works.
+- OpenAI remains `EXPERIMENTAL`; no `CERTIFIED` claim and no provider-parity
+  claim.
+- Gemini remains parked for now; use free-tier smoke only later if operator
+  decides quota is acceptable.
+- Dev server started for this test was stopped; `http://localhost:3000` returned
+  `NO_SERVER` afterward.
+
 ## Required Agent Behavior Going Forward
 
 - Prefer public-sync clone for public repo changes.

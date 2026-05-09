@@ -2,9 +2,8 @@
 """
 CVF multi-provider live smoke runner.
 
-Checks the currently configured OpenAI-compatible provider lanes without
-printing secrets. The first supported lanes are Alibaba DashScope and
-DeepSeek because they are the operator-provided keys available in this repo.
+Checks the currently configured provider lanes without printing secrets.
+Supported lanes: OpenAI, Gemini, Alibaba DashScope, and DeepSeek.
 """
 
 from __future__ import annotations
@@ -48,8 +47,26 @@ def load_env() -> dict[str, str]:
 def provider_specs(env: dict[str, str]) -> list[dict[str, str | None]]:
     return [
         {
+            "provider": "openai",
+            "model": "gpt-4o-mini",
+            "api_style": "openai-compatible",
+            "url": "https://api.openai.com/v1/chat/completions",
+            "key": env.get("OPENAI_API_KEY")
+            or env.get("CVF_OPENAI_API_KEY"),
+        },
+        {
+            "provider": "gemini",
+            "model": "gemini-2.5-flash",
+            "api_style": "google-generative-language",
+            "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+            "key": env.get("GOOGLE_AI_API_KEY")
+            or env.get("GEMINI_API_KEY")
+            or env.get("CVF_GEMINI_API_KEY"),
+        },
+        {
             "provider": "alibaba",
             "model": "qwen-turbo",
+            "api_style": "openai-compatible",
             "url": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions",
             "key": env.get("ALIBABA_API_KEY")
             or env.get("CVF_BENCHMARK_ALIBABA_KEY")
@@ -58,6 +75,7 @@ def provider_specs(env: dict[str, str]) -> list[dict[str, str | None]]:
         {
             "provider": "deepseek",
             "model": "deepseek-chat",
+            "api_style": "openai-compatible",
             "url": "https://api.deepseek.com/chat/completions",
             "key": env.get("DEEPSEEK_API_KEY"),
         },
@@ -76,6 +94,68 @@ def call_provider(spec: dict[str, str | None]) -> dict[str, Any]:
             "ok": False,
             "status": "missing_key",
         }
+
+    if spec.get("api_style") == "google-generative-language":
+        payload = {
+            "contents": [
+                {
+                    "parts": [
+                        {"text": PROMPT},
+                    ],
+                },
+            ],
+            "generationConfig": {
+                "maxOutputTokens": 64,
+                "temperature": 0,
+            },
+        }
+        request = urllib.request.Request(
+            str(spec["url"]),
+            data=json.dumps(payload).encode("utf-8"),
+            headers={
+                "Content-Type": "application/json",
+                "x-goog-api-key": key,
+            },
+            method="POST",
+        )
+
+        try:
+            with urllib.request.urlopen(request, timeout=60) as response:
+                raw = response.read().decode("utf-8", errors="replace")
+                data = json.loads(raw)
+                output = data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "")
+                matched = "CVF_MULTI_PROVIDER_OK" in output
+                return {
+                    "provider": provider,
+                    "model": model,
+                    "ok": matched,
+                    "httpStatus": response.status,
+                    "latencyMs": round((time.monotonic() - started) * 1000),
+                    "outputMatched": matched,
+                    "tokenTotal": data.get("usageMetadata", {}).get("totalTokenCount"),
+                }
+        except urllib.error.HTTPError as error:
+            raw = error.read().decode("utf-8", errors="replace")
+            try:
+                data = json.loads(raw)
+            except json.JSONDecodeError:
+                data = {}
+            return {
+                "provider": provider,
+                "model": model,
+                "ok": False,
+                "httpStatus": error.code,
+                "latencyMs": round((time.monotonic() - started) * 1000),
+                "error": data.get("error", {}).get("message") or f"HTTP {error.code}",
+            }
+        except Exception as error:  # pragma: no cover - defensive live runner path
+            return {
+                "provider": provider,
+                "model": model,
+                "ok": False,
+                "latencyMs": round((time.monotonic() - started) * 1000),
+                "error": str(error),
+            }
 
     payload = {
         "model": model,
@@ -140,7 +220,7 @@ def main() -> int:
     parser.add_argument(
         "--providers",
         default="alibaba,deepseek",
-        help="Comma-separated providers to run. Supported: alibaba, deepseek.",
+        help="Comma-separated providers to run. Supported: openai, gemini, alibaba, deepseek.",
     )
     args = parser.parse_args()
 

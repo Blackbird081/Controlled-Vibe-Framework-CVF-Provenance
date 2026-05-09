@@ -16,6 +16,25 @@ from _local_env import bootstrap_repo_env
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
 PROVIDERS = {
+    "openai": {
+        "model": "gpt-4o-mini",
+        "env_names": [
+            "OPENAI_API_KEY",
+            "CVF_OPENAI_API_KEY",
+        ],
+        "url": "https://api.openai.com/v1/chat/completions",
+        "api_style": "openai-compatible",
+    },
+    "gemini": {
+        "model": "gemini-2.5-flash",
+        "env_names": [
+            "GOOGLE_AI_API_KEY",
+            "GEMINI_API_KEY",
+            "CVF_GEMINI_API_KEY",
+        ],
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+        "api_style": "google-generative-language",
+    },
     "alibaba": {
         "model": "qwen-turbo",
         "env_names": [
@@ -25,6 +44,7 @@ PROVIDERS = {
             "CVF_BENCHMARK_ALIBABA_KEY",
         ],
         "url": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions",
+        "api_style": "openai-compatible",
     },
     "deepseek": {
         "model": "deepseek-chat",
@@ -34,6 +54,7 @@ PROVIDERS = {
             "CVF_DEEPSEEK_API_KEY",
         ],
         "url": "https://api.deepseek.com/chat/completions",
+        "api_style": "openai-compatible",
     },
 }
 
@@ -61,6 +82,11 @@ def resolve_key(provider: str) -> tuple[str | None, str | None]:
 def redact(text: str) -> str:
     redacted = text
     for name in {
+        "GOOGLE_AI_API_KEY",
+        "GEMINI_API_KEY",
+        "CVF_GEMINI_API_KEY",
+        "OPENAI_API_KEY",
+        "CVF_OPENAI_API_KEY",
         "DASHSCOPE_API_KEY",
         "ALIBABA_API_KEY",
         "CVF_ALIBABA_API_KEY",
@@ -76,6 +102,41 @@ def redact(text: str) -> str:
 
 
 def live_validate(provider: str, api_key: str, model: str, timeout: int) -> tuple[bool, str]:
+    cfg = PROVIDERS[provider]
+    if cfg.get("api_style") == "google-generative-language":
+        body = json.dumps({
+            "contents": [
+                {
+                    "parts": [
+                        {"text": "Reply with OK only. CVF provider readiness check."},
+                    ],
+                },
+            ],
+            "generationConfig": {
+                "temperature": 0,
+                "maxOutputTokens": 8,
+            },
+        }).encode("utf-8")
+        request = urllib.request.Request(
+            str(cfg["url"]).format(model=model),
+            data=body,
+            method="POST",
+            headers={
+                "x-goog-api-key": api_key,
+                "Content-Type": "application/json",
+            },
+        )
+        try:
+            with urllib.request.urlopen(request, timeout=timeout) as response:
+                if 200 <= response.status < 300:
+                    return True, f"HTTP {response.status}"
+                return False, f"HTTP {response.status}"
+        except urllib.error.HTTPError as exc:
+            detail = exc.read(400).decode("utf-8", errors="replace")
+            return False, redact(f"HTTP {exc.code}: {detail}")
+        except Exception as exc:
+            return False, redact(str(exc))
+
     body = json.dumps({
         "model": model,
         "messages": [
@@ -87,7 +148,7 @@ def live_validate(provider: str, api_key: str, model: str, timeout: int) -> tupl
         "stream": False,
     }).encode("utf-8")
     request = urllib.request.Request(
-        PROVIDERS[provider]["url"],
+        str(cfg["url"]),
         data=body,
         method="POST",
         headers={
