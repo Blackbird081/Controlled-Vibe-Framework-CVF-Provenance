@@ -30,6 +30,13 @@ Current optimization posture:
 - future core changes should be evidence-driven and narrow, usually to absorb useful external knowledge or close a measured control gap;
 - the highest-value continuation is now non-coder benefit: make CVF's governed path visibly useful, repeatable across downstream workspaces, and backed by live evidence.
 
+Diagram set:
+
+- module map: how meta governance, control plane, execution channels, and evidence governance relate
+- dependency rules: which layers may depend on which lower layers
+- active reference path: how a governed request reaches provider execution and receipt closure
+- interaction model: the live-proof sequence from user intent to audit/freeze evidence
+
 ```mermaid
 flowchart TB
     subgraph META["Meta Governance Layer"]

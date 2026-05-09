@@ -19,6 +19,13 @@
 
 ---
 
+## Attribution
+
+CVF is owned and governed by **Tien / Blackbird081**. Claude and Codex are
+acknowledged AI collaboration contributors for design, implementation,
+repository maintenance, and verification support. See
+[Contributors](CONTRIBUTORS.md).
+
 ## Quick Navigation
 
 <table>
@@ -159,6 +166,11 @@ For a visual system map, open [ARCHITECTURE.md](ARCHITECTURE.md).
 ## Developer Technical Design
 
 Yes. CVF already has a technical design / architecture set for developers. The shortest path is:
+
+The public architecture front door is intentionally diagram-first: it keeps the
+module relationship map, dependency-layer map, active reference path, and
+interaction sequence visible before deeper prose. Start with
+[Architecture](ARCHITECTURE.md) when you need to see how CVF modules connect.
 
 | Need | Read |
 |---|---|
