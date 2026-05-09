@@ -455,3 +455,44 @@ QBS-1 runner/corpus planning publication:
 - Still blocked:
   scored QBS run, provider-cost benchmark execution, public QBS score,
   family-level public quality claims under `POWERED_SINGLE_PROVIDER`.
+
+Multi-provider live run after QBS-1 planning:
+
+- Operator authorized using Alibaba, DeepSeek, and OpenAI API keys for the next
+  run.
+- Secret posture:
+  keys remained in local ignored `.env.local` / process env; no raw key printed
+  or committed.
+- Direct multi-provider smoke command:
+  `python scripts/run_cvf_multi_provider_live_smoke.py --providers alibaba,deepseek,openai`
+- Smoke result:
+  PASS 3/3
+  - OpenAI `gpt-4o-mini`: HTTP 200, output matched, 2157ms, 38 tokens.
+  - Alibaba `qwen-turbo`: HTTP 200, output matched, 421ms, 44 tokens.
+  - DeepSeek `deepseek-chat`: HTTP 200, output matched, 891ms, 39 tokens.
+- Governed live canary commands:
+  - `python scripts/run_cvf_provider_live_canary.py --provider alibaba --save-receipt`
+  - `python scripts/run_cvf_provider_live_canary.py --provider deepseek --save-receipt`
+  - `python scripts/run_cvf_provider_live_canary.py --provider openai --save-receipt`
+- Governed canary result:
+  PASS 18/18 total.
+  - Alibaba `qwen-turbo`: PASS 6/6,
+    receipt `docs/audits/alibaba-canary/RECEIPT_20260509-160312-276776.json`.
+  - DeepSeek `deepseek-chat`: PASS 6/6,
+    receipt `docs/audits/deepseek-canary/RECEIPT_20260509-160707-91ae8a.json`.
+  - OpenAI `gpt-4o-mini`: PASS 6/6,
+    receipt `docs/audits/openai-canary/RECEIPT_20260509-160806-7e3b5b.json`.
+- Public evidence copied and pushed to:
+  - `docs/evidence/provider-lane-receipts/alibaba/RECEIPT_20260509-160312-276776.json`
+  - `docs/evidence/provider-lane-receipts/deepseek/RECEIPT_20260509-160707-91ae8a.json`
+  - `docs/evidence/provider-lane-receipts/openai/RECEIPT_20260509-160806-7e3b5b.json`
+- Public files updated:
+  - `README.md`
+  - `PROVIDERS.md`
+  - `docs/evidence/provider-lanes.md`
+- Public commit pushed:
+  `53d15d1 Publish refreshed multi-provider live canary evidence`
+- Boundary:
+  this proves named-model provider connectivity plus governed-path operability
+  canary evidence. It is not a QBS scored benchmark, not L4/L5/L6, and not a
+  public QBS quality score.
