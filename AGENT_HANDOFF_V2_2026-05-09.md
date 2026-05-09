@@ -496,3 +496,70 @@ Multi-provider live run after QBS-1 planning:
   this proves named-model provider connectivity plus governed-path operability
   canary evidence. It is not a QBS scored benchmark, not L4/L5/L6, and not a
   public QBS quality score.
+
+QBS-2 calibration pilot execution:
+
+- Operator asked to continue the agreed roadmap and complete the next step.
+- GC-018:
+  `docs/reference/CVF_GC018_QBS2_CALIBRATION_PILOT_CANDIDATE_2026-05-09.md`
+- Roadmap:
+  `docs/roadmaps/CVF_QBS2_CALIBRATION_PILOT_ROADMAP_2026-05-09.md`
+- Public runner implemented:
+  `scripts/run_qbs_calibration_pilot.py`
+- Public implementation commits:
+  - `c8577df Add QBS calibration pilot runner`
+  - `a1a5161 Fix QBS calibration runner npm launch on Windows`
+  - `c3fbda2 Align QBS calibration CFG-B phase authority`
+  - `354e7e2 Harden QBS calibration runner timeout handling`
+  - `97fa934 Make QBS calibration server readiness robust`
+- Public pre-registration tags:
+  - `qbs/preregister/qbs1-calibration-20260509-three-provider`
+  - `qbs/preregister/qbs1-calibration-20260509-three-provider-r2`
+  - `qbs/preregister/qbs1-calibration-20260509-three-provider-r3`
+  - `qbs/preregister/qbs1-calibration-20260509-three-provider-r4`
+  - final successful tag:
+    `qbs/preregister/qbs1-calibration-20260509-three-provider-r5`
+- Calibration command shape:
+  `python scripts/run_qbs_calibration_pilot.py --preregistration-tag qbs/preregister/qbs1-calibration-20260509-three-provider-r5 --env-file <local ignored env file>`
+- Secret posture:
+  Alibaba/DashScope, DeepSeek, and OpenAI keys remained in local ignored env;
+  no raw key was printed, committed, or copied into public evidence.
+- Run ID:
+  `qbs1-calibration-20260509-three-provider`
+- Result:
+  PASS, public status `CALIBRATION_DIRECTIONAL_NO_QBS_SCORE`.
+- Run dimensions:
+  3 providers x 3 tasks x 3 configs = 27 configuration executions.
+- Provider lanes:
+  - Alibaba/DashScope `qwen-turbo`
+  - DeepSeek `deepseek-chat`
+  - OpenAI `gpt-4o-mini`
+- Hard gates:
+  - all configs ok: true
+  - governed `CFG-B` receipt completeness: true
+  - secret scan clean: true
+  - mock fallback detected: false
+- Public artifacts:
+  `docs/benchmark/runs/qbs1-calibration-20260509-three-provider/`
+- Public docs updated:
+  - `README.md`
+  - `docs/benchmark/README.md`
+  - `docs/benchmark/qbs-1/README.md`
+  - `docs/evidence/claim-boundaries.md`
+- Public checks before push:
+  - `git diff --check`: PASS
+  - `python scripts/check_public_surface.py`: PASS
+  - targeted secret scan over public benchmark artifacts/script: clean for raw
+    keys; only placeholder env names and regex literals were present.
+- Public artifact commit pushed:
+  `4a405cf Publish QBS-1 calibration pilot results`
+- Public status after push:
+  `QBS1_CALIBRATION_PILOT_PASS_NO_PUBLIC_QBS_SCORE`
+- Boundary:
+  the calibration pilot proves the QBS runner can execute direct-model,
+  neutral-control, and governed-CVF paths across the three live provider lanes
+  and publish curated artifacts. It is not a scored QBS benchmark, not a
+  powered effect-size claim, not L4/L5/L6, not provider parity, and not a public
+  QBS quality score.
+- Recommended next track:
+  `QBS3-SCORED-RUN-READINESS`, requiring a fresh GC-018 before implementation.
