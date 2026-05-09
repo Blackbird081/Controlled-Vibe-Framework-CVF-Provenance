@@ -422,3 +422,36 @@ Claude public methodology review closure:
   `METHODOLOGY_READY_NO_PUBLIC_QBS_RESULT`.
 - QBS-1 scored runs remain blocked until a run-specific pre-registration tag is
   created.
+
+QBS-1 runner/corpus planning publication:
+
+- Operator authorized proceeding with the agreed QBS-1 planning track and asked
+  for GitHub/public README alignment.
+- GC-018:
+  `docs/reference/CVF_GC018_QBS1_RUNNER_CORPUS_CANDIDATE_2026-05-09.md`
+- Roadmap:
+  `docs/roadmaps/CVF_QBS1_RUNNER_CORPUS_PLANNING_ROADMAP_2026-05-09.md`
+- Public planning docs added:
+  - `docs/benchmark/qbs-1/README.md`
+  - `docs/benchmark/qbs-1/corpus-candidate.md`
+  - `docs/benchmark/qbs-1/runner-contract.md`
+  - `docs/benchmark/qbs-1/scoring-rubric.md`
+  - `docs/benchmark/qbs-1/artifact-layout.md`
+  - `docs/benchmark/qbs-1/preregistration-template.md`
+- Public docs updated:
+  - `README.md`
+  - `docs/benchmark/README.md`
+  - `docs/evidence/claim-boundaries.md`
+- Public commit pushed:
+  `cfa44ac Publish QBS-1 runner corpus planning`
+- GitHub repo metadata updated through authenticated `gh` CLI:
+  - description:
+    `Local-first AI governance gateway for controlled agent/provider execution, audit receipts, cost signals, and public QBS benchmark methodology.`
+  - topics:
+    `agent-governance`, `ai-governance`, `audit-trail`, `cost-control`,
+    `llm-evaluation`, `local-first`, `benchmark-methodology`
+- Public status:
+  `QBS1_PLANNING_READY_NO_PUBLIC_QBS_RESULT`.
+- Still blocked:
+  scored QBS run, provider-cost benchmark execution, public QBS score,
+  family-level public quality claims under `POWERED_SINGLE_PROVIDER`.
