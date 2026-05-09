@@ -1,7 +1,7 @@
 # CVF Public GitHub Renewal And Provenance Split Roadmap V2 — 2026-05-09
 
-Memory class: SUMMARY_RECORD
-Status: FINAL ROADMAP — GATE A AUTHORIZED / GATES B-E BLOCKED
+Memory class: FULL_RECORD
+Status: FINAL ROADMAP — GATES A-B OPEN / GATES C-E BLOCKED
 Owner intent: renew the public GitHub surface while preserving the historical CVF development record as private provenance.
 Authorization: `docs/reviews/CVF_PUBLIC_GITHUB_RENEWAL_ROADMAP_CLAUDE_AUTHORIZATION_2026-05-09.md`
 GC-018: `docs/reference/CVF_GC018_PUBLIC_GITHUB_RENEWAL_CANDIDATE_2026-05-09.md`
@@ -16,10 +16,10 @@ Current gate state:
 
 | Gate | State | Meaning |
 |---|---|---|
-| Gate A | OPEN | Codex may begin Pre-R.0 and Pre-R local/reversible work. |
-| Gate B | BLOCKED | Requires Claude re-review of this V2 file and operator rename decision before R0 to R1. |
-| Gate C | BLOCKED | Requires Gate B plus public-surface/secret/export verification. |
-| Gate D | BLOCKED | Requires GitHub cutover prerequisites. |
+| Gate A | OPEN | Authorization file 2026-05-09 permits Pre-R.0 and Pre-R local/reversible work. |
+| Gate B | OPEN | V2 reviewed, rename strategy confirmed, old repo -> private confirmed, and `HYBRID_SIGNED_MANIFEST` accepted. |
+| Gate C | BLOCKED | Requires Pre-R.0 resolution and complete R1 manifest/export verification. |
+| Gate D | BLOCKED | Requires GitHub cutover prerequisites and verification passes. |
 | Gate E | BLOCKED | Requires renewed repo live gate evidence and closure proof. |
 
 This roadmap does not authorize:
@@ -342,6 +342,8 @@ Must not include:
 
 Target: developer-first architecture.
 
+Important correction after operator review: the existing visual module maps are a public-core asset, not provenance noise. The renewed repo should keep the diagram-first architecture style because it shows CVF's module relationships faster than prose alone.
+
 Must cover:
 
 - control plane
@@ -352,6 +354,33 @@ Must cover:
 - evidence receipt lifecycle
 - cost/quota guard position
 - local-first posture
+
+Required visual treatment:
+
+- keep a high-level module map showing meta governance, control plane, execution channels, and evidence/continuation governance
+- keep a dependency-layer map showing Layer 0 through Layer 3 plus cross-cutting evidence
+- keep the active reference path from user intent to provider call to receipt/freeze artifact
+- keep the sequence diagram showing user, entry surface, guard contract, governance runtime, tool/model/agent, provider API, and audit/freeze/baseline
+- tighten labels and notes so the diagrams explain boundaries without long paragraph text inside boxes
+- add short diagram notes below each diagram for provider proof boundary, Web inheritance boundary, and what the diagram does not claim
+- avoid copying stale v1.x marketing labels into the main public architecture unless the corresponding module is exported and current
+
+### `CONTRIBUTORS.md`
+
+Must be carried forward from the current repo as a public attribution artifact.
+
+Purpose:
+
+- recognize Tien / Blackbird081 as creator, product owner, governance authority, and release owner
+- recognize Claude as an AI design/coding collaborator
+- recognize Codex (OpenAI) as an AI engineering/repository/governance collaborator
+- explain that GitHub commit metadata may not fully represent AI-assisted collaboration
+
+Boundary:
+
+- contributor acknowledgement does not transfer project ownership, licensing authority, or governance authority away from the human owner
+- public contributor attribution should stay concise and role-based
+- detailed Claude/Codex rebuttals, transfer notes, prompts, and operating history remain provenance-only unless separately curated
 
 ### `GOVERNANCE.md`
 
@@ -694,6 +723,7 @@ Pre-R must re-measure the clean baseline before R0 authorization.
 Deliverables:
 
 - `PRE_R.0` pre-push hook failure investigation and resolution
+- PRE_R.0 hygiene report: `docs/reviews/CVF_PUBLIC_GITHUB_RENEWAL_PRE_R0_HYGIENE_REPORT_2026-05-09.md`
 - URL and reference impact inventory for the current GitHub repo
 - current release URL inventory, including `v4.0.0-rc.1`
 - known external citation inventory if discoverable by operator
@@ -714,6 +744,11 @@ Baseline measurement found that:
 - `pre-push` failed early at `memory governance compatibility` after approximately `3.99s`
 
 This must be resolved before hygiene scan results are considered valid.
+
+2026-05-09 update: PRE_R.0 is resolved in
+`docs/reviews/CVF_PUBLIC_GITHUB_RENEWAL_PRE_R0_HYGIENE_REPORT_2026-05-09.md`.
+The failure was a path-specific memory-class expectation mismatch for this V2
+roadmap. The full provenance `pre-push` chain now passes in `309.14s`.
 
 Required work:
 
@@ -852,8 +887,9 @@ Likely keep:
 
 - `README.md` rewritten
 - `ARCHITECTURE.md` rewritten or tightened
+- `docs/reference/CVF_ARCHITECTURE_DIAGRAMS.md` only if converted into a current, curated diagram appendix rather than exported as stale full-history v1.0-v1.7 material
 - `LICENSE`
-- `CONTRIBUTORS.md` tightened
+- `CONTRIBUTORS.md` carried forward and tightened only for public clarity, preserving owner / Claude / Codex attribution
 - `ECOSYSTEM/doctrine/` as `KEEP_PUBLIC_CORE` unless Claude/operator explicitly rejects
 - selected `.github/workflows`
 - `EXTENSIONS/CVF_GUARD_CONTRACT/`
@@ -915,7 +951,7 @@ Proceed with this posture:
 
 `GO_WITH_PRE_R_BASELINE_BEFORE_RENAME`
 
-Gate A is open for Pre-R.0 and Pre-R only.
+Gates A and B are open for Pre-R.0 and Pre-R local/reversible work only.
 
 Do not push the renewed repo until:
 
@@ -932,9 +968,9 @@ Do not rename the GitHub repository until:
 
 - Pre-R impact inventory is complete
 - Pre-R hook baseline is clean
-- Claude re-reviews this V2 roadmap
-- operator explicitly confirms the rename strategy
-- Gate B is closed
+- R1 classification/export manifest is complete
+- Gate C is opened by explicit operator authorization
+- GitHub cutover prerequisites are satisfied
 
 ## 19. Final Boundary
 

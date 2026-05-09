@@ -56,7 +56,7 @@ If you need the current canonical continuation posture after `W54-T1`, use:
 
 ## Mandatory Live Governance Proof
 
-Release-quality CVF governance proof must use real provider API calls. Mock mode is valid only for UI structure checks such as navigation, routing, static badge rendering, and RBAC pages.
+Release-quality CVF governance proof — evidence that CVF classified, routed, allowed or blocked, and recorded a real AI/provider call — must use real provider API calls. Mock mode is valid only for UI structure checks such as navigation, routing, static badge rendering, and RBAC pages.
 
 Use this command before publishing any claim that CVF controls AI/agent behavior for non-coders:
 
@@ -66,16 +66,26 @@ python scripts/run_cvf_release_gate_bundle.py --json
 
 The gate runs UI-only mock E2E plus live governance E2E, and it must fail if no DashScope-compatible live key is available. `DASHSCOPE_API_KEY` is accepted directly; `ALIBABA_API_KEY`, `CVF_ALIBABA_API_KEY`, and `CVF_BENCHMARK_ALIBABA_KEY` are accepted aliases. `--e2e` is a targeted UI-only check, not governance evidence.
 
+## Current Live-Proof Boundary
+
+> Current live proof: Alibaba/DashScope is the primary certified release lane, with W149 proving the 40-form trusted corpus through direct API and browser UI journeys and W152 preserving a `7/7` release gate PASS. DeepSeek is a certified provider lane with canary evidence and W149 confirmatory subset coverage (`12/12`), but full provider parity is not claimed. Other providers may have adapter contracts or experimental integration surfaces, but they are not certified until their own live canary receipts are saved.
+
 ## What CVF Is
 
-CVF is a governance-first control plane for AI-assisted execution. Its active reference path is built around one canonical controlled loop:
+CVF is a governance-first control plane — a layer that decides whether an AI call may run, which provider lane it uses, and what evidence is recorded — for AI-assisted execution.
+
+CVF solves three problems in AI-assisted development: uncontrolled provider costs, ungoverned agent execution, and lack of verifiable audit trails. Without CVF, agents can call providers without budget enforcement, leak or repeat sensitive content in outputs, and leave weak evidence of what ran. CVF puts a governed control plane between your code and your AI providers.
+
+Its active reference path is built around one canonical controlled loop:
 
 `INTAKE -> DESIGN -> BUILD -> REVIEW -> FREEZE`
 
+Intake — the step where CVF captures the request, context, risk signals, and policy constraints before execution — starts that loop.
+
 What CVF is good at:
 
-- keeping human approval and audit evidence inside the delivery loop
-- enforcing phase, role, risk, scope, and mutation boundaries
+- keeping human approval — a person or policy checkpoint before sensitive work proceeds — and audit evidence inside the delivery loop
+- enforcing phase, role, risk, scope, and mutation boundaries — the practical rules that decide what an agent may do, when, and under whose authority
 - giving both coder-facing and non-coder paths a governed execution model
 - keeping provider choice user-owned while routing, policy, and evidence stay CVF-governed
 - preserving reconciliation records so future audits are faster and cheaper
@@ -91,7 +101,7 @@ The strongest public-safe claim CVF can make right now is:
 - risky requests are blocked or guided instead of left as prompt roulette
 - `NEEDS_APPROVAL` is no longer a dead end
 - risk visibility and follow-up rounds now exist in the main non-coder flow
-- knowledge-native context now improves live `/api/execute` outcomes, not just governance docs
+- knowledge-native context — project/domain knowledge injected into the governed request path — now improves live `/api/execute` outcomes, not just governance docs
 - absorbed CVF ADD doctrine is runtime-readable in the external-asset governance lane, with registry persistence, operator UI readout, and metadata query filters
 - the Web processing/result flow now visibly shows and exports governance evidence receipts per request (decision, risk, provider/model, routing, policy snapshot, envelope/receipt id, knowledge source, approval id when present)
 - the Web Governance Operations console can run allowlisted local governance jobs with redacted job receipts and local cost/quota preflight before live provider calls
@@ -125,7 +135,7 @@ CVF is building toward a governed provider hub. The currently proven product val
 
 - **CVF gives non-coders a governed AI path**
 - **CVF can run that governed path across more than one live provider lane**
-- provider choice may evolve, but governance, risk handling, approval flow, and evidence discipline remain CVF-owned
+- provider choice may evolve, but governance, risk handling, approval flow — the rules that decide whether an AI call is allowed to proceed based on budget, role permission, and policy match — and evidence discipline remain CVF-owned
 - provider speed, model strength, latency, and cost are lane-specific tradeoffs, not CVF architecture blockers
 
 Long-term hub direction:
@@ -165,12 +175,12 @@ The application is organized around these practical modules:
 |---|---|---|
 | Web / non-coder app | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/` | dashboard UI, intent routing, trusted forms, `/api/execute`, provider settings, evidence display/export |
 | Trusted form routing | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/form-routing.ts` + `trusted-form-corpus.ts` | maps non-coder prompts into the 40-form trusted corpus without changing wizard behavior |
-| External asset governance | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/external-asset-governance.ts` | bounded intake of external knowledge/capabilities before registry admission |
+| External asset governance | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/external-asset-governance.ts` | bounded intake — review before CVF admits outside knowledge or capabilities — before registry admission |
 | CVF ADD runtime metadata | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/cvf-add-runtime-doctrine.ts` | server-derived capability, boundary, context-profile, delegation, and provider-boundary metadata |
 | Governed asset registry | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/asset-registry.ts` | append-only registry persistence and queryable runtime readout |
 | Guard contract | `EXTENSIONS/CVF_GUARD_CONTRACT/` | shared guard semantics, policy/risk contract, public SDK boundary |
 | Governance runtime | `EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/` | canonical phase/governance orchestration primitives |
-| Governance compatibility gates | `governance/compat/` + `governance/toolkit/05_OPERATION/` | local/CI hooks that keep docs, tests, guards, retention, and release posture aligned |
+| Governance compatibility gates | `governance/compat/` + `governance/toolkit/05_OPERATION/` | local/CI checks that block drift between docs, tests, guards, retention, and release posture |
 | Workspace bootstrap | `scripts/new-cvf-workspace.ps1` + `docs/reference/CVF_WORKSPACE_RULES.md` | downstream project isolation and generated agent-enforcement artifacts |
 
 For new developers, read in this order: `README.md` -> `ARCHITECTURE.md` -> `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/README.md` -> the specific module listed above.
@@ -196,6 +206,8 @@ npm run dev
 ```
 
 Then open `http://localhost:3000`.
+
+Provider proof note: the current certified release lane is Alibaba/DashScope; DeepSeek has certified canary evidence and bounded confirmatory coverage, but CVF does not claim provider parity. See [Current Live-Proof Boundary](#current-live-proof-boundary).
 
 In `Settings`, enable the provider keys you want to use. Each admitted `provider + model` pair is treated as a governed run lane for future Product Value Validation.
 
@@ -427,14 +439,14 @@ Primary status anchors:
 
 ## Governance & Evidence
 
-CVF treats governance as an executable system, not just documentation. Critical controls now have explicit owners such as:
+CVF treats governance as an executable system — code, tests, and release checks that enforce policy instead of only describing it — not just documentation. Critical controls now have explicit owners such as:
 
-- runtime guard
-- gateway precondition
-- approval checkpoint
-- CI compatibility gate
-- governance decision gate
-- foundational guard surface gate
+- runtime guard — code that checks a request while the system is running
+- gateway precondition — a required condition before an API/provider call may enter the governed path
+- approval checkpoint — a human or policy review stop before sensitive work continues
+- CI compatibility gate — automated repository checks that block drift before merge or release
+- governance decision gate — the rule checkpoint that returns `ALLOW`, `NEEDS_APPROVAL`, or `BLOCK`
+- foundational guard surface gate — a repository-level check that protects the core governance files from accidental unsynchronized changes
 
 The authoritative mapping lives in [CVF_GOVERNANCE_CONTROL_MATRIX.md](docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md).
 

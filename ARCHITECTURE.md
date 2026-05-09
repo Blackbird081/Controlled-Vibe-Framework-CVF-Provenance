@@ -76,6 +76,8 @@ flowchart TB
     BASE --> HOLD
 ```
 
+Diagram note: this is the public module map, not an exhaustive folder tree. It shows how doctrine and operating model govern the control plane, how the guard/runtime pair feeds execution channels, and how evidence gates future continuation.
+
 ## 2. Dependency Rules
 
 The engineering stack is intentionally asymmetric:
@@ -111,6 +113,8 @@ flowchart TB
     EVID --> HOLD["Continuation gate<br/>GC-018 / reassessment"]
 ```
 
+Diagram note: dependency direction is intentionally conservative. Higher product surfaces can depend on the lower governance layers, but Layer 0 and the guard semantics should not depend on Web UI or provider-specific behavior.
+
 ## 3. Active Reference Path
 
 The current active path is the clearest expression of CVF today. For governance claims, this path must reach a real provider API call.
@@ -122,8 +126,8 @@ flowchart LR
     GUARDS["Guard contract<br/>phase, role, risk, scope"]
     ORCH["Runtime orchestrator<br/>INTAKE -> DESIGN -> BUILD -> REVIEW -> FREEZE"]
     APPROVAL["Approval checkpoints"]
-    EXEC["Execution and tool/model use"]
-    PROVIDER["Certified provider lane<br/>Alibaba / DeepSeek"]
+    EXEC["Execution and tool/model use<br/>within approved boundary"]
+    PROVIDER["Certified provider lane<br/>Alibaba primary / DeepSeek bounded"]
     REVIEW["Review and audit evidence"]
     FREEZE["Freeze artifact / receipt"]
 
@@ -136,6 +140,8 @@ flowchart LR
     PROVIDER --> REVIEW
     REVIEW --> FREEZE
 ```
+
+Diagram note: this is the path that must reach a real provider API call before CVF can claim governance behavior. Alibaba/DashScope is the primary certified release lane; DeepSeek has certified canary evidence and bounded confirmatory coverage. Provider parity is not claimed.
 
 ## 4. Interaction Model
 
@@ -164,6 +170,8 @@ sequenceDiagram
     Evidence-->>User: reviewable outcome
 ```
 
+Diagram note: mock UI tests can validate screens and navigation, but this sequence only counts as governance proof when the provider call is live and the resulting receipt/evidence is captured.
+
 ## 5. What This Means
 
 The architecture should be read this way:
@@ -180,16 +188,16 @@ The architecture should be read this way:
 
 | Claim | Current status | Evidence |
 | --- | --- | --- |
-| Non-coder governed AI path | Live-proven | `E2E Playwright Governance (live): 8 passed` via release gate; W114 CP4 outcome pack `19/19` expected decisions |
+| Non-coder governed AI path | Live-proven | W149 trusted-form corpus: Alibaba direct API `40/40`, Alibaba browser UI `40/40`, DeepSeek confirmatory subset `12/12` |
 | Non-coder adoption journey | Live-proven | W119 evidence pack `3/3` locked journeys pass: first governed output, project knowledge use, evidence handoff |
-| Multi-provider operability | Certified on 2 lanes | Alibaba `qwen-turbo` and DeepSeek `deepseek-chat` both `CERTIFIED` |
-| Release gate | Mandatory live governance | `python scripts/run_cvf_release_gate_bundle.py --json` |
+| Multi-provider operability | Certified on 2 lanes | Alibaba `qwen-turbo` and DeepSeek `deepseek-chat` both `CERTIFIED`; provider parity is not claimed |
+| Release gate | Mandatory live governance | W152 preserves `python scripts/run_cvf_release_gate_bundle.py --json` PASS, including live governance E2E |
 | Mock boundary | UI-only | `AGENTS.md` and live evidence packet |
 | Provider parity | Not claimed | Speed, cost, quality, latency, and reliability remain provider economics |
 | Web CVF inheritance | Active path only | Web is governance-inherited on `/api/execute`; it does not claim full CVF runtime inheritance |
 | Workspace agent enforcement | Delivered | W112-T1 adds downstream `AGENTS.md`, `.cvf/` manifest/policy, and workspace doctor checks |
 | Downstream adoption proof | Repeatable across 3 tested kinds | W114-CP7 proves cli-productivity, web-app-planning, and data-analysis — all doctor 11/11 PASS, all tests pass, sample 3 includes a secret-free bridge to live Web evidence |
-| Non-coder value optimization | CP1-CP8 COMPLETE | W114-T1 full evidence packet: outcome pack 19/19, web visibility, workspace bridge, multi-sample proof, and public evidence packet |
+| Trusted-form web front door | Live-usable under W149 boundary | 40-form corpus locked; Alibaba full matrix passed; DeepSeek subset passed |
 
 ## 7. Current Control Boundaries
 
