@@ -368,3 +368,24 @@ Boundary:
 - No public quality claim has been upgraded.
 - Next step requires QBS-1 runner/corpus roadmap authorization before any live
   benchmark execution.
+
+Public methodology publication:
+
+- Public-sync clone:
+  `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync`
+- Public repo remote verified:
+  `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+- Public commit pushed:
+  `0999f32 Publish QBS benchmark methodology docs`
+- Added public docs:
+  - `docs/benchmark/README.md`
+  - `docs/benchmark/quality-benchmark-suite-methodology.md`
+  - `docs/benchmark/quality-benchmark-suite-claim-ladder.md`
+  - `docs/benchmark/quality-benchmark-suite-standards-alignment.md`
+- Updated public navigation/guardrails:
+  - `README.md`
+  - `docs/evidence/README.md`
+  - `docs/evidence/claim-boundaries.md`
+  - `governance/public-surface-manifest.json`
+- Public status remains:
+  `METHODOLOGY_READY_NO_PUBLIC_QBS_RESULT`.
