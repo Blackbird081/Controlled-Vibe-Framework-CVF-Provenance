@@ -24,7 +24,7 @@ This compact handoff supersedes adding more status to the oversized
 | CI2-H | CLOSED PASS | Protected GitHub hosted run `25575296660` passed release gate 7/7 on head `1a2fa8862d823436618b093f6690b5fd4de2eab7`. |
 | BR | CLOSED | No-live fake-key proof passed with runCommand-layer injection, browser response, and network capture. |
 | CQ | CLOSED | Local-first call-count guard implemented and live under-budget proof passed. |
-| DS | CLOSED SMOKE | DeepSeek N=8 smoke/sanity passed under CQ; not regression confirmation. |
+| DS | CLOSED CONFIRMATION | DeepSeek N=14 confirmation passed under CQ, with 7/7 families at >=2 PASS each. |
 | GA | CLOSED | GA packet upgraded to `GA_LOCAL_FIRST_APPROVED` after CI2-H hosted PASS. |
 
 ## Binding Boundaries
@@ -35,6 +35,9 @@ This compact handoff supersedes adding more status to the oversized
 - Supabase/Postgres remains deferred optional managed mode.
 - Hosted CI2-H PASS claim is allowed only with artifact
   `docs/reviews/CVF_CI2_HOSTED_LIVE_GATE_PASS_RUN_2026-05-09.md`.
+- DeepSeek may be described as bounded post-RC2 confirmation only with artifact
+  `docs/reviews/CVF_DEEPSEEK_POST_RC2_CONFIRMATION_COVERAGE_2026-05-09.md`;
+  do not claim full provider parity.
 
 ## Update Log
 
@@ -146,5 +149,13 @@ This compact handoff supersedes adding more status to the oversized
   Evidence filed:
   `docs/reviews/CVF_CI2_HOSTED_LIVE_GATE_PASS_RUN_2026-05-09.md`. GA decision
   upgraded to `GA_LOCAL_FIRST_APPROVED`. Remaining non-blocking follow-ups:
-  optional DeepSeek N>=14 confirmation and Track M managed Postgres/Supabase
-  scoping for managed deployment only.
+  Gemini/OpenAI/Claude live lanes when operator-owned keys are supplied, and
+  Track M managed Postgres/Supabase scoping for managed deployment only.
+- 2026-05-09: DeepSeek confirmation completed locally under CQ. Added
+  `tests/e2e/ds-confirmation-under-cq.live.spec.ts`. Attempt 1 returned 13/14
+  because `ds-trusted-form-risk` was blocked before AI execution by the local
+  sensitive-data filter on the literal word `secret`; fail-closed artifact:
+  `docs/reviews/CVF_DEEPSEEK_POST_RC2_CONFIRMATION_ATTEMPT1_FAILURE_2026-05-09.md`.
+  Corrected rerun passed 14/14, with 7/7 families carrying >=2 PASS records and
+  all records returning HTTP 200 + governance receipt `ALLOW`. Evidence:
+  `docs/reviews/CVF_DEEPSEEK_POST_RC2_CONFIRMATION_COVERAGE_2026-05-09.md`.

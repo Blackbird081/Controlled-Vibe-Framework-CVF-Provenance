@@ -15,7 +15,7 @@ highest product risk now have evidence:
 - Web-triggered live release gate now has local cost/quota preflight and audit.
 - A live Web `full_live_release_gate` completed release gate 7/7 under CQ.
 - A protected GitHub-hosted CI2-H run completed release gate 7/7 PASS.
-- DeepSeek smoke/sanity passed 8/8 live governed calls under CQ.
+- DeepSeek bounded confirmation passed 14/14 live governed calls under CQ.
 - Public docs were refreshed to avoid hosted-CI, exact-billing, or cloud-storage overclaims.
 
 ## Gate Matrix
@@ -26,7 +26,7 @@ highest product risk now have evidence:
 | CQ - cost/quota guard | PASS | `docs/reviews/CVF_COST_QUOTA_VERIFICATION_EVIDENCE_2026-05-08.md`; `docs/reviews/CVF_COST_QUOTA_PREFLIGHT_EVIDENCE_2026-05-08.md` |
 | C5 Web full release gate under CQ | PASS | `docs/reviews/CVF_COST_QUOTA_WEB_OPERATOR_EVIDENCE_2026-05-08.md` |
 | CQ audit | PASS | `docs/reviews/CVF_COST_QUOTA_AUDIT_EVIDENCE_2026-05-08.md` |
-| DS smoke under CQ | PASS SMOKE | `docs/reviews/CVF_DEEPSEEK_POST_RC2_SMOKE_COVERAGE_2026-05-08.md` |
+| DS under CQ | PASS CONFIRMATION | `docs/reviews/CVF_DEEPSEEK_POST_RC2_CONFIRMATION_COVERAGE_2026-05-09.md` |
 | Documentation currency | PASS WITH BOUNDARIES | `docs/reviews/CVF_GA_DOCUMENTATION_CURRENCY_AUDIT_2026-05-08.md` |
 | Hosted CI2-H | PASS | `docs/reviews/CVF_CI2_HOSTED_LIVE_GATE_PASS_RUN_2026-05-09.md` |
 
@@ -42,12 +42,13 @@ execution, and the protected hosted release gate has passed 7/7.
 - Do not claim exact provider-dollar cost control; CQ is expected live-call
   budgeting and audit.
 - Do not claim multi-tenant cloud quota enforcement.
-- Do not claim full DeepSeek regression confirmation from the 8/8 smoke run.
+- Do not claim full DeepSeek/Alibaba parity; the DeepSeek result is bounded
+  N>=14 post-RC2 confirmation.
 - Do not claim Supabase/Postgres is required for local developer use.
 
 ## Remaining Follow-Up Order
 
-1. If needed, expand DeepSeek from smoke/sanity to N>=14 regression confirmation.
+1. Add Gemini, OpenAI, and Claude live lanes when operator-owned keys are supplied.
 2. Scope optional persistent runtime-job store for managed deployment only, keeping local-file mode as the default developer path.
 
 ## 2026-05-09 Post-Push Addendum
@@ -124,3 +125,15 @@ Decision is upgraded to `GA_LOCAL_FIRST_APPROVED`.
 PASS artifact:
 
 - `docs/reviews/CVF_CI2_HOSTED_LIVE_GATE_PASS_RUN_2026-05-09.md`
+
+## 2026-05-09 DeepSeek Confirmation Addendum
+
+DeepSeek local live confirmation passed after CI2-H closure. The first attempt
+returned 13/14 because one trusted-form prompt was blocked before AI execution
+by the local sensitive-data filter. The corrected rerun passed 14/14 with 7/7
+families carrying at least two PASS records each.
+
+Evidence:
+
+- `docs/reviews/CVF_DEEPSEEK_POST_RC2_CONFIRMATION_ATTEMPT1_FAILURE_2026-05-09.md`
+- `docs/reviews/CVF_DEEPSEEK_POST_RC2_CONFIRMATION_COVERAGE_2026-05-09.md`
