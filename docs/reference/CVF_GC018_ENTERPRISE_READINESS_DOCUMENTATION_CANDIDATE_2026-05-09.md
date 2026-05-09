@@ -1,7 +1,7 @@
 # CVF GC-018 Continuation Candidate — Enterprise Readiness Documentation
 
 Memory class: FULL_RECORD
-Status: CANDIDATE — REBUTTAL FILED / PENDING OPERATOR AUTHORIZATION
+Status: CANDIDATE — DEFERRED BY OPERATOR AFTER REBUTTAL
 Date: 2026-05-09
 Track: Enterprise Readiness Documentation
 Review: `docs/reviews/CVF_ENTERPRISE_READINESS_ARCHITECTURE_REVIEW_2026-05-09.md`
@@ -116,10 +116,14 @@ Depth Audit
 
 Authorization Boundary
 - Authorized now: NO
-- If NO, reopen trigger: Codex rebuttal has now been filed at
+- Operator decision after rebuttal: DEFER.
+  Codex rebuttal was filed at
   `docs/reviews/CVF_ENTERPRISE_READINESS_ARCHITECTURE_REVIEW_CODEX_REBUTTAL_2026-05-09.md`.
-  Operator reads rebuttal and confirms Gate 1 decision. After rebuttal acceptance,
-  this candidate transitions to AUTHORIZED with the next batch name assigned.
+  The operator accepted this as future enterprise-readiness architecture work,
+  not as a blocker for the current public GitHub renewal. Reopen only when CVF
+  is preparing for enterprise evaluation, CISO/CTO review, procurement due
+  diligence, public standards-alignment positioning, or receipt-schema runtime
+  implementation.
 - Planned next batch name (pending authorization): ENT-DOC-R0
 ```
 
@@ -130,11 +134,11 @@ Authorization Boundary
 | Gate | Requirement | Status |
 |---|---|---|
 | Gate 0 | Codex rebuttal filed against review open questions | FILED |
-| Gate 1 | Operator authorizes this GC-018 candidate | OPEN - pending operator decision |
-| Gate 2 | `docs/architecture/EVIDENCE_RECEIPT_SCHEMA.md` created and operator-confirmed to match actual freeze artifact | BLOCKED on Gate 1 |
-| Gate 3 | `docs/architecture/SECURITY_AND_NFR.md` created and operator-reviewed | BLOCKED on Gate 1 |
-| Gate 4 | `docs/architecture/STANDARDS_MAPPING.md` created with NIST AI RMF + ISO 42001 + C4 + PEP/PDP/PIP | BLOCKED on Gate 1 |
-| Gate 5 | README.md presentation fixes merged (hero diagram, governance badges, tiered Read Next) | BLOCKED on Gate 1 |
+| Gate 1 | Operator authorizes this GC-018 candidate | DEFERRED - future trigger required |
+| Gate 2 | `docs/architecture/EVIDENCE_RECEIPT_SCHEMA.md` created and operator-confirmed to match actual freeze artifact | BLOCKED until Gate 1 is reopened |
+| Gate 3 | `docs/architecture/SECURITY_AND_NFR.md` created and operator-reviewed | BLOCKED until Gate 1 is reopened |
+| Gate 4 | `docs/architecture/STANDARDS_MAPPING.md` created with NIST AI RMF + ISO 42001 + C4 + PEP/PDP/PIP | BLOCKED until Gate 1 is reopened |
+| Gate 5 | README.md presentation fixes merged (hero diagram, governance badges, tiered Read Next) | BLOCKED until Gate 1 is reopened |
 | Gate E | All gates 2–5 PASS, operator final review, continuation token retired | BLOCKED |
 
 ---
