@@ -306,3 +306,30 @@ Boundary:
 - Do not publish new CVF quality claims from it.
 - Next step is operator/external review, then a fresh QBS roadmap/authorization
   before implementing the benchmark runner or running live quality evidence.
+
+Claude independent review was added:
+
+- `docs/reviews/CVF_QUALITY_BENCHMARK_SUITE_CRITERIA_INDEPENDENT_REVIEW_2026-05-09.md`
+- `docs/reference/CVF_GC018_QUALITY_BENCHMARK_SUITE_CRITERIA_CANDIDATE_2026-05-09.md`
+
+Review finding: concept is strong, but QBS v1 is methodologically
+underspecified. Fatal gaps: statistical validity, baseline confound,
+undefined thresholds, and lack of alignment with HELM/MT-Bench/AgentBench or an
+adversarial taxonomy.
+
+Codex rebuttal filed:
+
+- `docs/reviews/CVF_QUALITY_BENCHMARK_SUITE_CRITERIA_CODEX_REBUTTAL_2026-05-09.md`
+
+Codex accepts the material blockers. Main additional recommendation: use a
+three-config attribution design (`CFG-A0` raw direct, `CFG-A1` structured direct
+control, `CFG-B` CVF governed path) so the benchmark can separate prompt
+structure value from governance/control value.
+
+Gate status:
+
+- Gate 0: PASS - Codex rebuttal filed.
+- Gate 1: READY_FOR_OPERATOR_DECISION.
+- Authorization remains NO.
+- Do not create V2 methodology/alignment/final criteria deliverables, implement
+  runner, or run live QBS evidence until operator authorizes QBS-CRIT-R0.
