@@ -272,3 +272,37 @@ Boundary:
 - For governance behavior claims, use real provider proof per `AGENTS.md`.
 - Keep new handoff updates in this V2 file or a later V3 file if this file
   approaches the governed size ceiling.
+
+## CVF Quality Benchmark Suite Criteria Candidate
+
+Operator identified that CVF core is now sufficiently built out that broad
+feature/skill expansion is no longer priority 1. The next high-value move is a
+quality benchmark suite proving whether CVF improves user control, output
+quality, cost visibility, traceability, and agent governance compared with
+direct model use.
+
+Created review candidate:
+
+- `docs/reference/CVF_QUALITY_BENCHMARK_SUITE_CRITERIA_CANDIDATE_2026-05-09.md`
+
+The candidate defines:
+
+- a claim ladder from provider operability through cross-provider CVF control
+  value;
+- paired configurations (`CFG-A` direct model baseline, `CFG-B` CVF governed
+  path, optional knowledge/continuity variants);
+- seven benchmark axes: output quality, governance control, agent control,
+  cost/quota control, traceability/evidence, runtime stability, and
+  non-coder/operator value;
+- MVP 20-task corpus family proposal;
+- scoring weights and hard gates;
+- run record schema;
+- review questions for external/Claude feedback;
+- explicit overclaim guard.
+
+Boundary:
+
+- This is not yet canonical and does not authorize runner implementation.
+- Do not publish new CVF quality claims from it.
+- Next step is operator/external review, then a fresh QBS roadmap/authorization
+  before implementing the benchmark runner or running live quality evidence.
