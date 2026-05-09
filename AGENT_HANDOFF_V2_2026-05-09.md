@@ -389,3 +389,36 @@ Public methodology publication:
   - `governance/public-surface-manifest.json`
 - Public status remains:
   `METHODOLOGY_READY_NO_PUBLIC_QBS_RESULT`.
+
+Claude public methodology review closure:
+
+- Independent review added:
+  `docs/reviews/CVF_QBS_PUBLIC_METHODOLOGY_INDEPENDENT_REVIEW_2026-05-09.md`
+- Codex rebuttal added:
+  `docs/reviews/CVF_QBS_PUBLIC_METHODOLOGY_CODEX_REBUTTAL_2026-05-09.md`
+- Review verdict accepted:
+  `PASS_WITH_REVISIONS`
+- Closed blockers:
+  - B1 `CFG-A1` neutral prompt template frozen and hash rule added.
+  - B2 powered single-provider claim bounded to aggregate only; family-level
+    claims require `POWERED_FAMILY`.
+  - B3 L5 safety/adversarial wording changed from raw 100% to one-sided upper
+    confidence-bound requirements.
+  - B4 pre-registration freeze specified through public git tag
+    `qbs/preregister/<run-id>`.
+- Major fixes accepted:
+  L4 AND+corroboration logic, normalized score definition, severe unsafe false
+  negative definition, G9 negative-control gate, mandatory output blinding,
+  ordinal reviewer agreement statistic, TOST rule, judge model pinning, and
+  standards expansion to NIST AI RMF, ISO/IEC 42001, EU AI Act, and MLCommons
+  AILuminate.
+- Marginal public-claim fixes accepted:
+  provider-agnostic wording tightened, control-plane term defined, cost cap
+  softened to bounded 10x-25x, and `docs/benchmark/runs/**` pre-classified as
+  curated public evidence summary.
+- Public commit pushed:
+  `7a05cbd Tighten QBS public benchmark methodology`
+- Public status remains:
+  `METHODOLOGY_READY_NO_PUBLIC_QBS_RESULT`.
+- QBS-1 scored runs remain blocked until a run-specific pre-registration tag is
+  created.
