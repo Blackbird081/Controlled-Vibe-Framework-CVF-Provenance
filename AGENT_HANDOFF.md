@@ -1,5 +1,9 @@
 # CVF Agent Handoff — 2026-05-08
 
+> Repository boundary update - 2026-05-09: this workspace is the private provenance/archive repo, not the public product front door.
+> Public-facing CVF work belongs in `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git` and must be pushed only from sibling clone `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync`.
+> If `git remote -v` shows `Controlled-Vibe-Framework-CVF-Provenance`, do not push public-facing changes.
+
 > Branch: `main`
 > Branch posture: `main` is the canonical continuation branch after 2026-04-04 convergence; `cvf-next` is kept as a synchronized mirror for compatibility
 > Latest branch-governance posture: relocation closed-by-default; canon converged to `main`

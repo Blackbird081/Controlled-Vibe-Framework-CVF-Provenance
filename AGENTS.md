@@ -1,5 +1,30 @@
 # CVF Agent Instructions
 
+## Critical Repository Boundary - 2026-05-09
+
+This workspace is the private provenance/archive repository:
+
+`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF-Provenance.git`
+
+It contains full historical development material, evidence records, handoffs,
+reviews, and internal continuity files. Treat it as locked for private audit and
+deep review. Do not use this workspace as the public CVF product front door.
+
+The only GitHub repository intended for public/external CVF information is:
+
+`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+
+Public-facing architecture, README, contributor, setup, governance, provider,
+cost, or evidence-summary changes must be prepared and pushed from the sibling
+public-sync clone:
+
+`d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync`
+
+Before any push that is meant for the public repository, run `git remote -v`.
+If the current working directory is this provenance workspace or `origin`
+contains `Controlled-Vibe-Framework-CVF-Provenance`, stop and switch to the
+public-sync clone. Do not push the full provenance tree into the public repo.
+
 ## UI / Web Design Contract
 
 For any UI, frontend, web app, redesign, dashboard, landing page, or visual
