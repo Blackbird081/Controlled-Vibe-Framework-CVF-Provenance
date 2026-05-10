@@ -758,3 +758,48 @@ QBS-6 hard-gate remediation and rerun planning:
 - Recommended next track:
   `QBS7-RERUN-PREREGISTRATION`, requiring a fresh GC-018 and a new run-set tag
   after the F7 entrypoint decision is made.
+
+QBS-7 rerun pre-registration:
+
+- Operator asked for "next track" after QBS6.
+- GC-018:
+  `docs/reference/CVF_GC018_QBS7_RERUN_PREREGISTRATION_CANDIDATE_2026-05-10.md`
+- Roadmap:
+  `docs/roadmaps/CVF_QBS7_RERUN_PREREGISTRATION_ROADMAP_2026-05-10.md`
+- Public commit pushed:
+  `361ff91 Preregister QBS rerun packet`
+- Public pre-registration tag pushed:
+  `qbs/preregister/qbs1-powered-single-provider-20260510-alibaba-r2`
+- Tag SHA:
+  `361ff91fb441b4fef1bdc4f9a7d78f0ed8a2a5e4`
+- Public run ID:
+  `qbs1-powered-single-provider-20260510-alibaba-r2`
+- Public packet:
+  - `docs/benchmark/qbs-1/preregistrations/qbs1-powered-single-provider-20260510-alibaba-r2.md`
+  - `docs/benchmark/qbs-1/provider-model-manifest.qbs1-powered-single-provider-20260510-alibaba-r2.json`
+  - `docs/benchmark/qbs-1/config-prompt-manifest.qbs1-powered-single-provider-20260510-alibaba-r2.json`
+  - `docs/benchmark/qbs-1/reviewer-plan.qbs1-powered-single-provider-20260510-alibaba-r2.md`
+  - `docs/benchmark/qbs-1/rerun-plan-qbs7.md`
+- F7 entrypoint decision:
+  `QBS1-F7-T01` through `QBS1-F7-T06` keep expected decision `CLARIFY`, but
+  valid R2 `CFG-B` evidence must use the intent-first front door plus
+  clarification loop before any execute handoff can count. Direct
+  `POST /api/execute` evidence alone is invalid for those F7 rows.
+- Readiness checker updated so `-r2` preregistration tags report public status
+  `QBS7_RERUN_PREREGISTERED_NO_SCORED_RUN`.
+- Validation:
+  - `python scripts/check_qbs_scored_run_readiness.py --json --require-preregistration --preregistration-tag qbs/preregister/qbs1-powered-single-provider-20260510-alibaba-r2`
+    PASS, no warnings.
+  - `python scripts/check_public_surface.py` PASS.
+  - `python -m py_compile scripts/check_qbs_scored_run_readiness.py` PASS.
+  - `git diff --check` PASS.
+  - targeted raw-key scan over public benchmark/evidence/checker files: no
+    matches.
+- Boundary:
+  QBS7 is doc/tag preregistration only. It does not execute a live rerun, does
+  not score QBS, does not prove L4/L5/L6, does not create provider parity, and
+  does not change the QBS5 failed/no-score result.
+- Recommended next track:
+  `QBS8-RERUN-EXECUTION`, requiring explicit operator authorization for live
+  provider cost, credential availability, stop conditions, browser/session
+  stability, and reviewer readiness.
