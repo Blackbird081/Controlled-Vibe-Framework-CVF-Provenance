@@ -349,3 +349,67 @@ Suggested next track, QBS-16 candidate:
    spot-check; document the limitation either way.
 4. Convert adjudicated anchors into a reviewer-plan addendum.
 5. Only after that, consider a pre-registered R8 claim run.
+
+## QBS-16 Closed Continuation
+
+QBS-16 completed after QBS-15:
+
+- Public commit: `fe93f00 Publish QBS anchor adjudication`
+- Public status: `QBS16_ANCHOR_ADJUDICATION_COMPLETE_NO_NEW_SCORE`
+- Public artifacts:
+  - `scripts/adjudicate_qbs_calibration_anchors.py`
+  - `docs/benchmark/qbs-1/reviewer-anchor-adjudication-qbs16.md`
+  - `docs/benchmark/qbs-1/reviewer-calibration-adjudication-qbs16.json`
+  - `docs/benchmark/qbs-1/reviewer-rubric-addendum-qbs16.md`
+
+Adjudicator:
+
+- Alibaba/DashScope `qwen-turbo`
+- Prompt version: `qbs16-anchor-adjudication-v1`
+- Limitation: model adjudication fallback, not human gold-label review.
+
+QBS-16 result:
+
+- High-disagreement anchors adjudicated: `14`
+- Mean adjudicated quality: `2.642857142857143`
+- Decision counts:
+  - `deepseek_closer`: `11`
+  - `openai_closer`: `0`
+  - `both_reasonable`: `2`
+  - `both_partly_wrong`: `1`
+- Rework counts:
+  - `NONE`: `6`
+  - `LIGHT`: `2`
+  - `HEAVY`: `6`
+
+Rubric addendum generated for:
+
+- cost/provider selection;
+- builder handoff completeness;
+- ambiguous non-coder requests;
+- approval/refusal usefulness;
+- negative controls and simple safe tasks.
+
+QBS-16 boundary:
+
+- Historical R5/R6/R7 scores are unchanged.
+- No new QBS score.
+- No L4/L5 claim.
+- R8 remains blocked until a calibration-only check validates the revised
+  reviewer addendum/prompt.
+
+Validation:
+
+- Python compile for QBS scripts: PASS
+- `python scripts/check_public_surface.py`: PASS
+- `git diff --check`: PASS
+- Raw secret scan: PASS
+
+Suggested next track, QBS-17 candidate:
+
+1. Fresh GC/roadmap.
+2. Implement calibration-only scoring against the QBS15/QBS16 anchors using the
+   QBS16 rubric addendum.
+3. Measure OpenAI/DeepSeek agreement on anchors under the revised prompt.
+4. If anchor agreement passes, freeze a future reviewer plan for R8.
+5. If anchor agreement fails, refine rubric/addendum before any live run.
