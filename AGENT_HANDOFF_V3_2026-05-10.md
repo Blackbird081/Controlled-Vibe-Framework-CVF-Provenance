@@ -294,3 +294,58 @@ Validation:
 - `python scripts/check_public_surface.py`: PASS
 - `git diff --check`: PASS
 - Raw secret scan: PASS
+
+## QBS-15 Closed Continuation
+
+QBS-15 completed after QBS-14:
+
+- Public commit: `53462f7 Publish QBS reviewer calibration anchors`
+- Public status: `QBS15_REVIEWER_CALIBRATION_ANCHORS_READY_NO_NEW_SCORE`
+- Public artifacts:
+  - `scripts/build_qbs_reviewer_calibration_anchors.py`
+  - `docs/benchmark/qbs-1/reviewer-calibration-anchors-qbs15.md`
+  - `docs/benchmark/qbs-1/reviewer-calibration-anchors-qbs15.json`
+- Future scoring support:
+  - `scripts/score_qbs_model_assisted_reviewers.py` now accepts
+    `--prompt-version`
+  - and `--calibration-anchors`
+
+QBS-15 anchor set:
+
+- Total anchors: `20`
+- `high_disagreement`: `14`
+- `consensus_reference`: `6`
+- Coverage:
+  - `ambiguous_noncoder_requests`: `4`
+  - `builder_handoff_technical_planning`: `4`
+  - `bypass_adversarial_governance`: `4`
+  - `cost_quota_provider_selection`: `4`
+  - `negative_controls`: `3`
+  - `high_risk_security_secrets`: `1`
+
+QBS-15 boundary:
+
+- Anchors are not human gold labels.
+- Historical R5/R6/R7 scores are unchanged.
+- No new QBS score or L4/L5 claim.
+- Future R8 must not be pre-registered until high-disagreement anchors are
+  adjudicated by a third reviewer or human spot-check and the reviewer plan is
+  updated.
+
+Validation:
+
+- `python -m py_compile scripts/build_qbs_reviewer_calibration_anchors.py scripts/analyze_qbs_reviewer_drift.py scripts/score_qbs_model_assisted_reviewers.py scripts/run_qbs_powered_single_provider.py scripts/check_qbs_scored_run_readiness.py`: PASS
+- `python scripts/build_qbs_reviewer_calibration_anchors.py --output docs/benchmark/qbs-1/reviewer-calibration-anchors-qbs15.json`: PASS
+- `python scripts/score_qbs_model_assisted_reviewers.py --help`: PASS
+- `python scripts/check_public_surface.py`: PASS
+- `git diff --check`: PASS
+- Raw secret scan: PASS
+
+Suggested next track, QBS-16 candidate:
+
+1. Fresh GC/roadmap.
+2. Adjudicate the 14 high-disagreement anchors.
+3. Decide whether the adjudicator is a third model reviewer or human
+   spot-check; document the limitation either way.
+4. Convert adjudicated anchors into a reviewer-plan addendum.
+5. Only after that, consider a pre-registered R8 claim run.
