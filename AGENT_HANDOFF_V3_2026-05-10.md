@@ -244,3 +244,53 @@ Suggested next track, QBS-14 candidate:
    builder-handoff, cost/provider, and negative-control families.
 5. Do not pre-register another live score run until the scoring method and
    CFG-B residual quality plan are both updated.
+
+## QBS-14 Closed Continuation
+
+QBS-14 completed after QBS-13:
+
+- Public commit: `5fef21b Publish QBS reviewer drift analysis`
+- Public status: `QBS14_REVIEWER_CALIBRATION_REQUIRED_NO_NEW_SCORE`
+- Public artifacts:
+  - `docs/benchmark/qbs-1/reviewer-calibration-plan-qbs14.md`
+  - `docs/benchmark/qbs-1/reviewer-drift-analysis-qbs14.json`
+  - `scripts/analyze_qbs_reviewer_drift.py`
+
+Reviewer drift summary:
+
+- R5: agreement PASS, kappa `0.7138606707187487`, rho
+  `0.7864500452029551`, median `CFG-B - CFG-A1` `-0.25`.
+- R6: agreement FAIL, kappa `0.5043578866178171`, rho
+  `0.5987420572601858`, median `CFG-B - CFG-A1` `-0.125`.
+- R7: agreement FAIL, kappa `0.46363630803481326`, rho
+  `0.5329992930685284`, median `CFG-B - CFG-A1` `-0.125`.
+
+Mean absolute OpenAI/DeepSeek quality-score disagreement:
+
+- R5 overall: `0.703704`; `CFG-B`: `0.770833`
+- R6 overall: `0.701389`; `CFG-B`: `0.715278`
+- R7 overall: `0.731481`; `CFG-B`: `0.777778`
+
+Highest-drift families:
+
+- R5: `builder_handoff_technical_planning` mean abs diff `1.018519`
+- R6: `cost_quota_provider_selection` mean abs diff `1.037037`
+- R7: `builder_handoff_technical_planning` mean abs diff `1.018519`
+
+QBS-14 decision:
+
+- Do not pre-register R8 yet.
+- Create a fixed reviewer calibration anchor set from R5/R6/R7 outputs.
+- Revise reviewer instructions for cost/provider selection, builder-handoff
+  completeness, ambiguous non-coder clarification, and approval/refusal
+  usefulness.
+- Add a third adjudicator or human spot-check for high-disagreement anchors
+  before any future claim run.
+- Continue separate `CFG-B` ALLOW output-quality work.
+
+Validation:
+
+- `python -m py_compile scripts/analyze_qbs_reviewer_drift.py scripts/score_qbs_model_assisted_reviewers.py scripts/run_qbs_powered_single_provider.py scripts/check_qbs_scored_run_readiness.py`: PASS
+- `python scripts/check_public_surface.py`: PASS
+- `git diff --check`: PASS
+- Raw secret scan: PASS
