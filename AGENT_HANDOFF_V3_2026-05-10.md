@@ -142,3 +142,60 @@ Suggested next track, QBS-12 candidate:
 
 Public artifacts should continue to avoid score language until scoring supports
 it.
+
+## QBS-12 Closed Continuation
+
+QBS-12 completed after QBS-11:
+
+- Public commit: `d44517c Remediate QBS reviewer disagreement drivers`
+- Public status: `QBS12_REMEDIATION_COMPLETE_NO_NEW_SCORE`
+- Public artifact:
+  `docs/benchmark/qbs-1/reviewer-disagreement-remediation-qbs12.md`
+
+R6 disagreement analysis:
+
+- Reviewer disagreement was not isolated to `CFG-B`.
+- Mean absolute reviewer quality difference:
+  - `CFG-A0`: `0.722`
+  - `CFG-A1`: `0.667`
+  - `CFG-B`: `0.715`
+- Largest family-level disagreement:
+  `cost_quota_provider_selection`
+- Residual `CFG-B` quality causes:
+  - approval-gated security/incident outputs were correct but too generic;
+  - provider/cost-selection outputs sometimes invented latency, accuracy,
+    benchmark, cost, quota, version, or provider-ranking numbers;
+  - simple low-risk transformations sometimes included too much meta-commentary.
+
+QBS-12 remediation:
+
+- `NEEDS_APPROVAL` output now includes deterministic pre-approval safe work.
+- Security/incident-like approval requests now include a safe redaction plan and
+  disclosure skeleton without exposing raw credentials, indicators, or account
+  identifiers.
+- Governed execution prompt now instructs the model to keep short
+  transformations direct and to avoid unsupported provider benchmark numbers.
+- Added targeted tests for these contracts.
+
+Validation:
+
+- Targeted tests: `15 passed / 0 failed`
+- `npm run build`: PASS
+- `python scripts/check_public_surface.py`: PASS
+- `git diff --check`: PASS
+- Raw secret scan: no raw key values found; only identifier false positives
+  such as `configuredToken`.
+
+QBS-12 claim boundary:
+
+- No new QBS score.
+- No L4/L5 claim.
+- R6 score remains unchanged.
+
+Suggested next track, QBS-13 candidate:
+
+1. Fresh GC/roadmap.
+2. Pre-register R7 after QBS-12 remediation.
+3. Execute live run with redacted reviewer output retention.
+4. Score with reviewers and publish no claim unless hard gates, reviewer
+   agreement, and claim thresholds pass.
