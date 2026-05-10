@@ -563,3 +563,54 @@ QBS-2 calibration pilot execution:
   QBS quality score.
 - Recommended next track:
   `QBS3-SCORED-RUN-READINESS`, requiring a fresh GC-018 before implementation.
+
+QBS-3 scored-run readiness:
+
+- Operator asked to continue from the QBS-2 handoff.
+- GC-018:
+  `docs/reference/CVF_GC018_QBS3_SCORED_RUN_READINESS_CANDIDATE_2026-05-10.md`
+- Roadmap:
+  `docs/roadmaps/CVF_QBS3_SCORED_RUN_READINESS_ROADMAP_2026-05-10.md`
+- Public readiness artifacts added:
+  - `docs/benchmark/qbs-1/powered-single-provider-corpus-v1.json`
+  - `docs/benchmark/qbs-1/scored-run-readiness.md`
+  - `scripts/check_qbs_scored_run_readiness.py`
+- Public docs updated:
+  - `README.md`
+  - `docs/benchmark/README.md`
+  - `docs/benchmark/qbs-1/README.md`
+  - `docs/benchmark/qbs-1/runner-contract.md`
+  - `docs/evidence/claim-boundaries.md`
+  - `governance/public-surface-manifest.json`
+- Readiness checker result:
+  `python scripts/check_qbs_scored_run_readiness.py --json` PASS.
+- Readiness summary:
+  - public status:
+    `QBS3_SCORED_RUN_READINESS_PACKET_READY_NO_SCORED_RUN`
+  - corpus version:
+    `qbs1-powered-single-provider-corpus-v1-2026-05-10`
+  - run class:
+    `POWERED_SINGLE_PROVIDER`
+  - claim scope:
+    `aggregate_only`
+  - task count:
+    48
+  - warning:
+    no pre-registration tag supplied; scored execution remains blocked.
+- Public checks before push:
+  - `git diff --check`: PASS
+  - `python scripts/check_public_surface.py`: PASS
+  - targeted raw-secret pattern scan over public benchmark/docs/script:
+    no matches.
+- Public commit pushed:
+  `ec283cd Publish QBS scored-run readiness packet`
+- Public status after push:
+  `QBS3_SCORED_RUN_READINESS_PACKET_READY_NO_PUBLIC_QBS_SCORE`
+- Boundary:
+  QBS3 proves the public scored-run readiness packet is machine-checkable and
+  ready for a future run-specific pre-registration step. It is not a scored QBS
+  benchmark, not a public QBS quality score, not L4/L5/L6, not provider parity,
+  and not family-level evidence.
+- Recommended next track:
+  `QBS4-SCORED-RUN-PREREGISTRATION`, requiring a fresh GC-018 before creating a
+  run-specific tag or executing scored live evidence.
