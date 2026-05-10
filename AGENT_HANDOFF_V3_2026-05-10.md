@@ -98,13 +98,47 @@ execution artifact, reviewer scoring, agreement check, and claim statement.
 
 ## Suggested Next Track
 
-QBS-11 candidate:
+QBS-11 completed after this handoff was opened:
+
+- Public pre-registration commit: `bdd7b9f Preregister QBS R6 remediation rerun`
+- Public pre-registration tag:
+  `qbs/preregister/qbs1-powered-single-provider-20260510-alibaba-r6`
+- Tag SHA: `bdd7b9f07e932fb87d3eb929a05390debb7f4c68`
+- Public scored artifact commit: `aaab722 Publish QBS R6 scored artifacts`
+- Run: `qbs1-powered-single-provider-20260510-alibaba-r6`
+- Live execution: 48 tasks x 3 repeats x 3 configs = 432 configuration executions
+- Hard gates: PASS
+- Reviewer scoring: OpenAI `gpt-4o-mini` + DeepSeek `deepseek-chat`
+- Reviewer agreement: FAIL
+  - quadratic-weighted Cohen kappa: `0.5043578866178171`
+  - Spearman rho: `0.5987420572601858`
+  - paired score count: `432`
+- L4 result: FAIL
+  - median normalized quality delta `CFG-B` vs `CFG-A1`: `-0.125`
+  - bootstrap 95% CI: `[-0.25, 0.0]`
+  - median normalized quality delta `CFG-B` vs `CFG-A0`: `-0.125`
+  - median heavy/reject improvement `CFG-B` vs `CFG-A1`: `0.0`
+- Public status:
+  `QBS11_R6_REVIEWER_AGREEMENT_FAIL_NO_PUBLIC_QBS_CLAIM`
+
+QBS-11 interpretation:
+
+- QBS-10 remediation helped: high-risk and ambiguous prompt families improved
+  materially versus QBS-9.
+- Claim remains blocked because reviewer agreement did not clear the required
+  gate and aggregate median delta is still negative.
+- Public artifacts correctly make no L4/L5 claim.
+
+Suggested next track, QBS-12 candidate:
 
 1. Issue a fresh governed candidate/roadmap packet.
-2. Pre-register a new QBS-1 powered rerun after QBS-10 remediation.
-3. Execute live provider run with redacted output retention.
-4. Score with model-assisted reviewers and agreement metrics.
-5. Publish no claim unless the claim ladder thresholds pass.
+2. Analyze R6 reviewer disagreement at task/reviewer level.
+3. Identify residual quality causes in normal planning, builder handoff,
+   cost/provider selection, and negative-control families.
+4. Decide whether to refine reviewer rubric calibration, CFG-B response
+   completeness, or both.
+5. Publish no new score claim unless a future pre-registered run passes hard
+   gates, reviewer agreement, and claim-ladder thresholds.
 
 Public artifacts should continue to avoid score language until scoring supports
 it.
