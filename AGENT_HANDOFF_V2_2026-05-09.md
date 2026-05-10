@@ -716,3 +716,45 @@ QBS-5 scored-run execution:
   pre-registered run-set is created.
 - Recommended next track:
   `QBS6-HARD-GATE-REMEDIATION-AND-RERUN-PLANNING`, requiring a fresh GC-018.
+
+QBS-6 hard-gate remediation and rerun planning:
+
+- Operator asked for "next track" after QBS5 failure.
+- GC-018:
+  `docs/reference/CVF_GC018_QBS6_HARD_GATE_REMEDIATION_CANDIDATE_2026-05-10.md`
+- Roadmap:
+  `docs/roadmaps/CVF_QBS6_HARD_GATE_REMEDIATION_ROADMAP_2026-05-10.md`
+- Public commit pushed:
+  `4e37e86 Remediate QBS hard-gate failures`
+- Public remediation note:
+  `docs/benchmark/qbs-1/hard-gate-remediation-qbs6.md`
+- Runtime remediation delivered:
+  - `/api/execute` safety-filter blocks now include `governanceEvidenceReceipt`
+    with decision `BLOCK`;
+  - `evaluateEnforcement()` now uses declared `cvfRiskLevel` when evaluating
+    risk instead of relying only on risk markers in prompt text;
+  - R2 sensitive/access-boundary patterns now escalate to `NEEDS_APPROVAL` in
+    governed mode.
+- Added public targeted tests:
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/enforcement.qbs-hard-gates.test.ts`
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.qbs-hard-gates.test.ts`
+- Verification:
+  - `npm run test:run -- src/lib/enforcement.qbs-hard-gates.test.ts src/app/api/execute/route.qbs-hard-gates.test.ts`
+    PASS, 5/5.
+  - Live remediation smoke PASS using local ignored env: allowed governed path
+    returned receipt `ALLOW`; safety-filter path returned receipt `BLOCK`;
+    R2 sensitive and R2 external-scope cases returned `NEEDS_APPROVAL`.
+  - `npm run build` PASS.
+  - `python scripts/check_public_surface.py` PASS.
+  - `git diff --check` PASS.
+  - targeted raw-key scan: no matches.
+- Remaining QBS boundary:
+  QBS5 remains `EXECUTION_FAILED_NO_QBS_SCORE`; QBS6 does not alter that
+  artifact and does not create a new scored rerun or QBS score.
+- F7 ambiguous non-coder tasks:
+  treated as benchmark entrypoint mismatch, not patched in `/api/execute`.
+  Future rerun must either route these through the intent-first front door /
+  clarification loop or pre-register a revised direct-execute corpus contract.
+- Recommended next track:
+  `QBS7-RERUN-PREREGISTRATION`, requiring a fresh GC-018 and a new run-set tag
+  after the F7 entrypoint decision is made.
