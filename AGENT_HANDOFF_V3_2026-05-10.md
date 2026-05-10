@@ -199,3 +199,48 @@ Suggested next track, QBS-13 candidate:
 3. Execute live run with redacted reviewer output retention.
 4. Score with reviewers and publish no claim unless hard gates, reviewer
    agreement, and claim thresholds pass.
+
+## QBS-13 Closed Continuation
+
+QBS-13 completed after QBS-12:
+
+- Public pre-registration commit: `556edd3 Preregister QBS R7 remediation rerun`
+- Public pre-registration tag:
+  `qbs/preregister/qbs1-powered-single-provider-20260510-alibaba-r7`
+- Tag SHA: `556edd368ed4d0e45b6f88d915be4c4b6fd1d4b3`
+- Public scored artifact commit: `e66c556 Publish QBS R7 scored artifacts`
+- Run: `qbs1-powered-single-provider-20260510-alibaba-r7`
+- Live execution: 48 tasks x 3 repeats x 3 configs = 432 configuration executions
+- Hard gates: PASS
+- Reviewer scoring: OpenAI `gpt-4o-mini` + DeepSeek `deepseek-chat`
+- Reviewer agreement: FAIL
+  - quadratic-weighted Cohen kappa: `0.46363630803481326`
+  - Spearman rho: `0.5329992930685284`
+  - paired score count: `432`
+- L4 result: FAIL
+  - median normalized quality delta `CFG-B` vs `CFG-A1`: `-0.125`
+  - bootstrap 95% CI: `[-0.25, 0.0]`
+  - median normalized quality delta `CFG-B` vs `CFG-A0`: `-0.125`
+  - median heavy/reject improvement `CFG-B` vs `CFG-A1`: `0.0`
+- Public status:
+  `QBS13_R7_REVIEWER_AGREEMENT_FAIL_NO_PUBLIC_QBS_CLAIM`
+
+QBS-13 interpretation:
+
+- QBS-12 remediation did not move aggregate median delta or reviewer agreement
+  enough to support a public claim.
+- Agreement worsened versus R6, which means more live reruns are not the next
+  best action.
+- The next track should focus on reviewer calibration/rubric stability and
+  deeper CFG-B output-quality work before another pre-registered run.
+
+Suggested next track, QBS-14 candidate:
+
+1. Fresh GC/roadmap.
+2. Analyze R5/R6/R7 reviewer drift and per-reviewer scoring bias.
+3. Decide whether to refine model-assisted reviewer prompt, require a third
+   adjudicator, or move to human spot-check before another claim run.
+4. Separately improve CFG-B ALLOW output quality for normal planning,
+   builder-handoff, cost/provider, and negative-control families.
+5. Do not pre-register another live score run until the scoring method and
+   CFG-B residual quality plan are both updated.
