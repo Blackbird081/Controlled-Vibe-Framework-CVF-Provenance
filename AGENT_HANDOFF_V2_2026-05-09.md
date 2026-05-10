@@ -614,3 +614,50 @@ QBS-3 scored-run readiness:
 - Recommended next track:
   `QBS4-SCORED-RUN-PREREGISTRATION`, requiring a fresh GC-018 before creating a
   run-specific tag or executing scored live evidence.
+
+QBS-4 scored-run pre-registration:
+
+- Operator asked to continue to the next step.
+- GC-018:
+  `docs/reference/CVF_GC018_QBS4_SCORED_RUN_PREREGISTRATION_CANDIDATE_2026-05-10.md`
+- Roadmap:
+  `docs/roadmaps/CVF_QBS4_SCORED_RUN_PREREGISTRATION_ROADMAP_2026-05-10.md`
+- Public run ID:
+  `qbs1-powered-single-provider-20260510-alibaba`
+- Run class:
+  `POWERED_SINGLE_PROVIDER`
+- First planned scored lane:
+  Alibaba/DashScope `qwen-turbo`
+- Public pre-registration artifacts added:
+  - `docs/benchmark/qbs-1/preregistrations/qbs1-powered-single-provider-20260510-alibaba.md`
+  - `docs/benchmark/qbs-1/provider-model-manifest.qbs1-powered-single-provider-20260510-alibaba.json`
+  - `docs/benchmark/qbs-1/config-prompt-manifest.qbs1-powered-single-provider-20260510-alibaba.json`
+  - `docs/benchmark/qbs-1/reviewer-plan.qbs1-powered-single-provider-20260510-alibaba.md`
+- Public docs/checker updated:
+  - `README.md`
+  - `docs/benchmark/README.md`
+  - `docs/benchmark/qbs-1/README.md`
+  - `docs/evidence/claim-boundaries.md`
+  - `scripts/check_qbs_scored_run_readiness.py`
+- Public commit pushed:
+  `3f574fd Preregister QBS scored run packet`
+- Public pre-registration tag pushed:
+  `qbs/preregister/qbs1-powered-single-provider-20260510-alibaba`
+- Tag SHA:
+  `3f574fd5e5843b577a1e7ec78bfcce7f10fd1053`
+- Validation:
+  `python scripts/check_qbs_scored_run_readiness.py --json --require-preregistration --preregistration-tag qbs/preregister/qbs1-powered-single-provider-20260510-alibaba`
+  PASS, public status `QBS4_SCORED_RUN_PREREGISTERED_NO_SCORED_RUN`, no
+  warnings.
+- Additional public checks:
+  - `git diff --check`: PASS
+  - `python scripts/check_public_surface.py`: PASS
+  - targeted raw-secret scan over public benchmark/docs/script: no matches.
+- Boundary:
+  QBS4 freezes the first planned scored-run input set and public tag. It is not
+  scored benchmark execution, not a public QBS quality score, not L4/L5/L6,
+  not provider parity, and not family-level evidence.
+- Recommended next track:
+  `QBS5-SCORED-RUN-EXECUTION`, requiring a fresh GC-018 and explicit live-cost
+  execution authorization before implementing/extending the scored runner or
+  making live scored calls.
