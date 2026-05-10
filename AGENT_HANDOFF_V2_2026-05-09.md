@@ -803,3 +803,84 @@ QBS-7 rerun pre-registration:
   `QBS8-RERUN-EXECUTION`, requiring explicit operator authorization for live
   provider cost, credential availability, stop conditions, browser/session
   stability, and reviewer readiness.
+
+QBS-8 rerun execution:
+
+- Operator explicitly authorized completing the benchmark without pausing for
+  incremental approvals and allowed Alibaba, DeepSeek, and OpenAI API keys
+  without cost concern. Public run class remained `POWERED_SINGLE_PROVIDER`, so
+  the paired benchmark lane used Alibaba/DashScope only; OpenAI/DeepSeek were
+  not mixed into the run.
+- GC-018:
+  `docs/reference/CVF_GC018_QBS8_RERUN_EXECUTION_CANDIDATE_2026-05-10.md`
+- Roadmap:
+  `docs/roadmaps/CVF_QBS8_RERUN_EXECUTION_ROADMAP_2026-05-10.md`
+- Public implementation/preregistration commits pushed:
+  - `f196bc0 Prepare QBS R3 live rerun`
+  - `37b01a9 Prepare QBS R4 rerun hardening`
+- Public execution artifact commit pushed:
+  `62ce65a Publish QBS R4 execution artifacts`
+- Public pre-registration tags pushed:
+  - `qbs/preregister/qbs1-powered-single-provider-20260510-alibaba-r3`
+    at `f196bc04beda92876187e9bef0faa15c2827fa3d`
+  - `qbs/preregister/qbs1-powered-single-provider-20260510-alibaba-r4`
+    at `37b01a953952be525c79fa1790095979bcd956d9`
+- R2/R3/R4 progression:
+  - R2: preregistered/no-score before F7 router hardening; not used for final
+    live artifact.
+  - R3: preregistered after F7 router hardening; local diagnostic run exposed a
+    runner suffix bug (`-r3` still used `/api/execute` for F7) and R3
+    block-enforcement gaps. No public R3 execution artifact was published.
+  - R4: preregistered after fixing the runner suffix handling and R3 block
+    enforcement; final public execution artifact.
+- Public artifact:
+  `docs/benchmark/runs/qbs1-powered-single-provider-20260510-alibaba-r4/`
+- R4 live command shape used local ignored env file from the private
+  provenance workspace:
+  `python scripts/run_qbs_powered_single_provider.py --run-id qbs1-powered-single-provider-20260510-alibaba-r4 --confirm-live-cost --env-file <local ignored env file> ...`
+  Raw key values were not printed or committed.
+- R4 result:
+  `EXECUTION_COMPLETE_REVIEW_PENDING_NO_QBS_SCORE`
+- Execution size:
+  48 tasks x 3 repeats x 3 configs = 432 configuration executions.
+- Hard-gate summary:
+  - direct configs transport OK: true
+  - `CFG-B` receipt completeness: true
+  - `CFG-B` expected decision match: true
+  - secret scan clean: true
+  - mock fallback detected: false
+  - severe unsafe false negatives: 0
+  - negative-control false blocks: 0
+  - F7 front-door evidence complete: true
+- `CFG-B` decision distribution:
+  - `ALLOW`: 90
+  - `BLOCK`: 21
+  - `NEEDS_APPROVAL`: 15
+  - `CLARIFY`: 18
+- Public code changes:
+  - bounded F7 ambiguous non-coder prompts now weak-route to clarification
+    instead of guessing a template target;
+  - service-token protected `/api/qbs/front-door-clarification` route added for
+    QBS front-door evidence capture;
+  - R3 prohibited secret/bypass/hidden-policy/approval-evasion/audit-evasion
+    prompts block instead of approval-only escalation;
+  - powered runner supports arbitrary run IDs and rerun suffix F7 front-door
+    handling.
+- Validation:
+  - targeted vitest QBS hard-gate/front-door coverage PASS, 8/8.
+  - `python -m py_compile scripts/run_qbs_powered_single_provider.py scripts/check_qbs_scored_run_readiness.py` PASS.
+  - `python scripts/check_qbs_scored_run_readiness.py --json --require-preregistration --preregistration-tag qbs/preregister/qbs1-powered-single-provider-20260510-alibaba-r4` PASS.
+  - `python scripts/check_public_surface.py` PASS.
+  - `npm run build` PASS, with the existing warning about missing
+    `EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS`.
+  - `git diff --check` PASS.
+  - targeted raw-key scan over public benchmark/evidence/scripts/QBS code: no
+    matches.
+- Boundary:
+  QBS8 R4 is hard-gate-passing execution evidence only. It is not a public QBS
+  quality score, not L4/L5/L6, not a family-level claim, and not provider
+  parity. Reviewer scoring and agreement remain `NOT_STARTED`.
+- Recommended next track:
+  `QBS9-REVIEWER-SCORING-AND-AGREEMENT`, requiring blinded reviewer packet
+  preparation, scoring, agreement calculation, adjudication if needed, and only
+  then any aggregate claim decision.
