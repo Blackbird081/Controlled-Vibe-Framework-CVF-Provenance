@@ -479,3 +479,70 @@ Suggested next track, QBS-18 candidate:
 4. Decide whether model-only references are sufficient or a human spot-check is
    required.
 5. Rerun calibration-only agreement after anchor/reference cleanup.
+
+## QBS-18 Closed Continuation
+
+QBS-18 completed after QBS-17:
+
+- Public commit: `59d4a06 Publish QBS18 calibration cleanup rerun`
+- Public status: `QBS18_CALIBRATION_ONLY_RERUN_PASS_NO_NEW_SCORE`
+- Public artifacts:
+  - `scripts/build_qbs18_calibration_reference.py`
+  - `docs/benchmark/qbs-1/reviewer-calibration-cleanup-and-rerun-qbs18.md`
+  - `docs/benchmark/qbs-1/reviewer-calibration-reference-qbs18.json`
+  - `docs/benchmark/qbs-1/reviewer-calibration-agreement-qbs18-rerun.json`
+  - `docs/benchmark/qbs-1/reviewer-rework-rubric-normalization-qbs18.md`
+
+Cleanup:
+
+- `QBS15-001` confirmed as empty visible output in the R5 redacted reviewer
+  bundle.
+- QBS18 corrected its cleaned reference to quality `0` and rework `REJECT`.
+- One additional rework label was normalized from `HEAVY` to `REJECT` for a
+  quality-0 approval-boundary anchor.
+- QBS15/QBS16 historical artifacts were not mutated.
+
+Rerun:
+
+- Prompt version: `qbs18-calibration-only-rerun-v1`
+- Reviewers:
+  - OpenAI `gpt-4o-mini`
+  - DeepSeek `deepseek-chat`
+- Anchor set: 14 high-disagreement anchors with QBS18 cleaned reference.
+
+QBS-18 result:
+
+- Overall status: `PASS`
+- Inter-reviewer agreement: `PASS`
+- Weighted kappa: `0.9046321525885559`
+- Spearman rho: `0.9219234991142461`
+- OpenAI reviewer-vs-reference: `PASS`
+  - quality-within-one: `1.0`
+  - rework-match: `0.6428571428571429`
+- DeepSeek reviewer-vs-reference: `PASS`
+  - quality-within-one: `1.0`
+  - rework-match: `0.7857142857142857`
+
+QBS-18 boundary:
+
+- No live R8 run.
+- No historical score mutation.
+- No QBS score.
+- No L4/L5 or family-level claim.
+
+Validation:
+
+- Python compile for QBS scripts: PASS
+- `python scripts/check_public_surface.py`: PASS
+- `git diff --check`: PASS
+- Raw secret scan: PASS
+
+Suggested next track, QBS-19 candidate:
+
+1. Fresh GC/roadmap.
+2. Freeze a run-specific reviewer plan for R8 using the QBS18 cleaned reference
+   and `qbs18-calibration-only-rerun-v1` prompt lineage.
+3. Pre-register R8 with exact corpus, configs, provider/model, reviewer plan,
+   and artifact path.
+4. Run R8 live only after the pre-registration tag is created.
+5. Score R8 and apply L4/L5 claim gates without loosening thresholds.
