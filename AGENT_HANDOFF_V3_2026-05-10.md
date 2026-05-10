@@ -413,3 +413,69 @@ Suggested next track, QBS-17 candidate:
 3. Measure OpenAI/DeepSeek agreement on anchors under the revised prompt.
 4. If anchor agreement passes, freeze a future reviewer plan for R8.
 5. If anchor agreement fails, refine rubric/addendum before any live run.
+
+## QBS-17 Closed Continuation
+
+QBS-17 completed after QBS-16:
+
+- Public commit: `ccfee10 Publish QBS calibration-only agreement check`
+- Public status: `QBS17_CALIBRATION_ONLY_CHECK_COMPLETE_NO_NEW_SCORE`
+- Public artifacts:
+  - `scripts/check_qbs_reviewer_calibration_agreement.py`
+  - `docs/benchmark/qbs-1/reviewer-calibration-agreement-qbs17.md`
+  - `docs/benchmark/qbs-1/reviewer-calibration-agreement-qbs17.json`
+
+Reviewer calibration run:
+
+- Prompt version: `qbs17-calibration-only-reviewer-v1`
+- Reviewers:
+  - OpenAI `gpt-4o-mini`
+  - DeepSeek `deepseek-chat`
+- Anchor set: 14 QBS15 high-disagreement anchors with QBS16 addendum.
+- Reference limitation: QBS16 adjudication is model-only, not human gold.
+
+QBS-17 result:
+
+- Overall status: `FAIL`
+- Inter-reviewer agreement: `PASS`
+- Weighted kappa: `0.7365591397849462`
+- Spearman rho: `0.7935131868283122`
+- OpenAI reviewer-vs-reference: `FAIL`
+  - quality-within-one: `0.7857142857142857`
+  - rework-match: `0.42857142857142855`
+- DeepSeek reviewer-vs-reference: `FAIL`
+  - quality-within-one: `0.9285714285714286`
+  - rework-match: `0.35714285714285715`
+
+Largest blockers:
+
+- `QBS15-001`: both reviewers scored the visible anchor as quality `0` and
+  `REJECT`, while QBS16 reference is quality `4` and `NONE`.
+- Simple safe-task anchors `QBS15-013` and `QBS15-014` still show quality
+  disagreement against the QBS16 reference.
+- Rework labels remain unstable even when quality scores are near the
+  reference.
+
+QBS-17 boundary:
+
+- No live R8 run.
+- No historical score mutation.
+- No QBS score.
+- No L4/L5 or family-level claim.
+- R8 remains blocked.
+
+Validation:
+
+- Python compile for QBS scripts: PASS
+- `python scripts/check_public_surface.py`: PASS
+- `git diff --check`: PASS
+- Raw secret scan: PASS
+
+Suggested next track, QBS-18 candidate:
+
+1. Fresh GC/roadmap.
+2. Audit anchor/reference conflicts, especially `QBS15-001`.
+3. Normalize the rework-label rubric for `LIGHT`, `HEAVY`, and `REJECT`.
+4. Decide whether model-only references are sufficient or a human spot-check is
+   required.
+5. Rerun calibration-only agreement after anchor/reference cleanup.
