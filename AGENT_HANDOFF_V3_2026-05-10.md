@@ -546,3 +546,64 @@ Suggested next track, QBS-19 candidate:
    and artifact path.
 4. Run R8 live only after the pre-registration tag is created.
 5. Score R8 and apply L4/L5 claim gates without loosening thresholds.
+
+## QBS-19 Closed Continuation
+
+QBS-19 completed after QBS-18:
+
+- Public commit: `fbeb4b5 Preregister QBS R8 reviewer plan`
+- Public pre-registration tag:
+  `qbs/preregister/qbs1-powered-single-provider-20260510-alibaba-r8`
+- Tag SHA: `fbeb4b5c582fc726c350209387f662ba1d45f3bb`
+- Public status: `QBS19_R8_PREREGISTERED_NO_SCORED_RUN`
+- Public artifacts:
+  - `docs/benchmark/qbs-1/r8-reviewer-plan-freeze-qbs19.md`
+  - `docs/benchmark/qbs-1/reviewer-plan.qbs1-powered-single-provider-20260510-alibaba-r8.md`
+  - `docs/benchmark/qbs-1/preregistrations/qbs1-powered-single-provider-20260510-alibaba-r8.md`
+  - `docs/benchmark/qbs-1/provider-model-manifest.qbs1-powered-single-provider-20260510-alibaba-r8.json`
+  - `docs/benchmark/qbs-1/config-prompt-manifest.qbs1-powered-single-provider-20260510-alibaba-r8.json`
+
+QBS-19 freeze:
+
+- R8 run ID: `qbs1-powered-single-provider-20260510-alibaba-r8`
+- Provider/model: Alibaba/DashScope `qwen-turbo`
+- Corpus/configs/repeats unchanged from R7: 48 tasks x 3 repeats x 3 configs
+  = 432 planned configuration executions.
+- R8 delta is reviewer-plan/scoring calibration only; no new runtime
+  remediation delta from R7.
+- Reviewer scoring must use prompt lineage
+  `qbs18-calibration-only-rerun-v1` and QBS18 cleaned reference
+  `docs/benchmark/qbs-1/reviewer-calibration-reference-qbs18.json`.
+- `scripts/score_qbs_model_assisted_reviewers.py` now compacts QBS18 cleaned
+  calibration references, not only QBS15 anchor files.
+- `scripts/check_qbs_scored_run_readiness.py` now reports the R8-specific
+  `QBS19_R8_PREREGISTERED_NO_SCORED_RUN` status instead of stale QBS8 wording.
+
+Validation:
+
+- `python -m py_compile scripts/check_qbs_scored_run_readiness.py scripts/score_qbs_model_assisted_reviewers.py scripts/run_qbs_powered_single_provider.py`: PASS
+- `python scripts/check_public_surface.py`: PASS
+- `python scripts/check_qbs_scored_run_readiness.py --json`: PASS
+- `python scripts/check_qbs_scored_run_readiness.py --json --require-preregistration --preregistration-tag qbs/preregister/qbs1-powered-single-provider-20260510-alibaba-r8`: PASS
+- `git diff --check`: PASS
+- JSON parse for new R8 manifests: PASS
+
+QBS-19 boundary:
+
+- No R8 live run was executed.
+- No QBS score was produced.
+- No L4/L5, family-level, or provider-parity claim is made.
+- R8 live execution remains cost/key gated and must use an operator-supplied
+  DashScope-compatible key.
+
+Suggested next track, QBS-20 candidate:
+
+1. Fresh GC/roadmap.
+2. Execute the pre-registered R8 live run only after operator live-cost/key
+   approval:
+   `python scripts/run_qbs_powered_single_provider.py --run-id qbs1-powered-single-provider-20260510-alibaba-r8 --confirm-live-cost --retain-redacted-outputs`
+3. Verify hard gates and publish sanitized execution artifacts.
+4. Score R8 with the frozen QBS19 reviewer plan:
+   `python scripts/score_qbs_model_assisted_reviewers.py --run-id qbs1-powered-single-provider-20260510-alibaba-r8 --prompt-version qbs18-calibration-only-rerun-v1 --calibration-anchors docs/benchmark/qbs-1/reviewer-calibration-reference-qbs18.json`
+5. Apply L4/L5 claim gates without loosening thresholds; publish no claim if
+   hard gates, reviewer agreement, or claim thresholds fail.
