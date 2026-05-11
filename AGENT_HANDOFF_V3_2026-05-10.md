@@ -608,11 +608,18 @@ Suggested next track, QBS-20 candidate:
 5. Apply L4/L5 claim gates without loosening thresholds; publish no claim if
    hard gates, reviewer agreement, or claim thresholds fail.
 
-## QBS-20 Preflight Blocked Continuation
+## QBS-20 Preflight Correction And Closed Continuation
 
 Date: 2026-05-11
 
-QBS-20 was started after QBS-19 but live execution did not begin.
+QBS-20 initially looked blocked because the public-sync runner was executed
+without the provenance-local env file. This was operator-corrected: keys are in
+the provenance package-local file:
+
+`d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF\EXTENSIONS\CVF_v1.6_AGENT_PLATFORM\cvf-web\.env.local`
+
+Do not print raw key values. Use this file only via `--env-file` when running
+public-sync benchmark scripts that need the private local keys.
 
 Public-sync preflight state:
 
@@ -626,41 +633,98 @@ Public-sync preflight state:
   returned PASS with public status
   `QBS19_R8_PREREGISTERED_NO_SCORED_RUN`.
 
-Key preflight:
+Corrected key preflight:
 
-- No DashScope-compatible execution key was present under:
-  `DASHSCOPE_API_KEY`, `ALIBABA_API_KEY`, `CVF_ALIBABA_API_KEY`,
-  or `CVF_BENCHMARK_ALIBABA_KEY`.
-- No reviewer keys were present under:
-  `OPENAI_API_KEY`, `CVF_OPENAI_API_KEY`, `DEEPSEEK_API_KEY`,
-  `CVF_BENCHMARK_DEEPSEEK_KEY`, or `CVF_DEEPSEEK_API_KEY`.
+- Provenance `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/.env.local` exists.
+- Present aliases in that file:
+  - `DASHSCOPE_API_KEY`
+  - `ALIBABA_API_KEY`
+  - `OPENAI_API_KEY`
+  - `DEEPSEEK_API_KEY`
 - No raw key values were printed.
 
-No-cost command probes:
+The earlier "missing key" result was caused by checking only public-sync env
+defaults and the provenance root `.env.local`; the root file does not exist.
+The handoff-standing canonical fallback is the package-local v1.6 web env file.
 
-- R8 execution probe:
-  `python scripts/run_qbs_powered_single_provider.py --run-id qbs1-powered-single-provider-20260510-alibaba-r8 --confirm-live-cost --retain-redacted-outputs --task-limit 1 --repeat-count 1 --no-start-server`
-  stopped before any live call with:
-  `RuntimeError: missing Alibaba/DashScope API key`.
-- R8 scoring probe:
-  `python scripts/score_qbs_model_assisted_reviewers.py --run-id qbs1-powered-single-provider-20260510-alibaba-r8 --prompt-version qbs18-calibration-only-rerun-v1 --calibration-anchors docs/benchmark/qbs-1/reviewer-calibration-reference-qbs18.json --task-limit 1`
-  stopped because the R8 execution artifact does not exist yet:
-  `docs/benchmark/runs/qbs1-powered-single-provider-20260510-alibaba-r8/aggregate-results.json`.
+QBS-20 completed after correction:
+
+- Public commit: `ce2ea70 Publish QBS R8 scored artifacts`
+- Run: `qbs1-powered-single-provider-20260510-alibaba-r8`
+- Pre-registration tag:
+  `qbs/preregister/qbs1-powered-single-provider-20260510-alibaba-r8`
+- Pre-registration tag SHA:
+  `fbeb4b5c582fc726c350209387f662ba1d45f3bb`
+- Public status:
+  `QBS20_R8_REVIEWER_AGREEMENT_FAIL_NO_PUBLIC_QBS_CLAIM`
+- Live execution command:
+  `python scripts/run_qbs_powered_single_provider.py --run-id qbs1-powered-single-provider-20260510-alibaba-r8 --confirm-live-cost --retain-redacted-outputs --env-file "d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF\EXTENSIONS\CVF_v1.6_AGENT_PLATFORM\cvf-web\.env.local"`
+- Scoring command:
+  `python scripts/score_qbs_model_assisted_reviewers.py --run-id qbs1-powered-single-provider-20260510-alibaba-r8 --prompt-version qbs18-calibration-only-rerun-v1 --calibration-anchors docs/benchmark/qbs-1/reviewer-calibration-reference-qbs18.json --env-file "d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF\EXTENSIONS\CVF_v1.6_AGENT_PLATFORM\cvf-web\.env.local"`
+
+R8 execution result:
+
+- 48 tasks x 3 repeats x 3 configs = 432 configuration executions.
+- Hard gates: PASS
+  - direct configs transport OK
+  - CFG-B receipt complete
+  - CFG-B expected decision match
+  - secret scan clean
+  - no mock fallback
+  - severe unsafe false negative count 0
+  - negative-control false block count 0
+  - F7 front-door evidence complete
+
+R8 reviewer scoring result:
+
+- Reviewers:
+  - OpenAI `gpt-4o-mini`
+  - DeepSeek `deepseek-chat`
+- Prompt version: `qbs18-calibration-only-rerun-v1`
+- Calibration reference:
+  `docs/benchmark/qbs-1/reviewer-calibration-reference-qbs18.json`
+- Reviewer agreement: FAIL
+  - quadratic-weighted Cohen kappa: `0.5004684065769088`
+  - Spearman rho: `0.5702347881140457`
+  - paired score count: `431`
+- L4 result: FAIL
+  - hard gates passed: `true`
+  - reviewer agreement passed: `false`
+  - median normalized quality delta `CFG-B` vs `CFG-A1`: `-0.125`
+  - bootstrap 95% CI: `[-0.25, 0.0]`
+  - median normalized quality delta `CFG-B` vs `CFG-A0`: `-0.125`
+  - median heavy/reject improvement `CFG-B` vs `CFG-A1`: `0.0`
+
+QBS-20 code/artifact note:
+
+- `scripts/score_qbs_model_assisted_reviewers.py` now emits R8/QBS20-specific
+  public statuses instead of stale generic `QBS9_...` statuses for R8.
+- The generated R8 `scored-results.json`, `README.md`, and
+  `claim-statement.md` were updated to
+  `QBS20_R8_REVIEWER_AGREEMENT_FAIL_NO_PUBLIC_QBS_CLAIM`.
 
 Boundary:
 
-- No R8 live provider call was made.
-- No R8 artifact directory was created.
-- Public-sync worktree remained clean.
-- No public commit, tag, push, score, or claim was created for QBS-20.
+- No QBS score was claimed.
+- No L4/L5, family-level, or provider-parity claim is made.
+- Historical R5/R6/R7 artifacts were not mutated.
+- Raw key values were not printed or committed.
 
-Next unblock:
+Validation:
 
-1. Operator supplies a DashScope-compatible key through one accepted alias.
-2. Operator supplies reviewer keys for OpenAI and DeepSeek when scoring is
-   ready.
-3. Re-run the full R8 live command without `--task-limit`, `--repeat-count 1`,
-   or `--no-start-server`:
-   `python scripts/run_qbs_powered_single_provider.py --run-id qbs1-powered-single-provider-20260510-alibaba-r8 --confirm-live-cost --retain-redacted-outputs`
-4. Only after R8 artifacts exist, run frozen scoring:
-   `python scripts/score_qbs_model_assisted_reviewers.py --run-id qbs1-powered-single-provider-20260510-alibaba-r8 --prompt-version qbs18-calibration-only-rerun-v1 --calibration-anchors docs/benchmark/qbs-1/reviewer-calibration-reference-qbs18.json`
+- `python -m py_compile scripts/score_qbs_model_assisted_reviewers.py scripts/run_qbs_powered_single_provider.py scripts/check_qbs_scored_run_readiness.py`: PASS
+- `python scripts/check_public_surface.py`: PASS
+- `git diff --check`: PASS
+- `python scripts/check_qbs_scored_run_readiness.py --json --require-preregistration --preregistration-tag qbs/preregister/qbs1-powered-single-provider-20260510-alibaba-r8`: PASS
+
+Suggested next track, QBS-21 candidate:
+
+1. Fresh GC/roadmap.
+2. Analyze R8 reviewer disagreement and the missing paired score
+   (`431` instead of `432`).
+3. Identify residual `CFG-B` quality causes, especially families where
+   `CFG-B - CFG-A1` remains negative.
+4. Decide whether to improve CFG-B output quality, reviewer scoring robustness,
+   artifact completeness, or all three before another live rerun.
+5. Do not pre-register another run until the R8 post-score analysis is
+   published with no claim overreach.
