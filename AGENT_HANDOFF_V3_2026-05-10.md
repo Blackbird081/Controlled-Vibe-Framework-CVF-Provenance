@@ -728,3 +728,80 @@ Suggested next track, QBS-21 candidate:
    artifact completeness, or all three before another live rerun.
 5. Do not pre-register another run until the R8 post-score analysis is
    published with no claim overreach.
+
+## QBS-21 Closed Continuation
+
+QBS-21 completed after QBS-20:
+
+- Public commit: `1ca43a9 Publish QBS R8 post-score analysis`
+- Public status: `QBS21_R8_POST_SCORE_ANALYSIS_COMPLETE_NO_NEW_SCORE`
+- Public artifacts:
+  - `docs/benchmark/qbs-1/r8-post-score-analysis-qbs21.md`
+  - `docs/benchmark/qbs-1/r8-post-score-analysis-qbs21.json`
+  - `scripts/analyze_qbs_r8_post_score.py`
+
+QBS-21 findings:
+
+- Missing paired score:
+  - Reviewer: `openai`
+  - Output: `QBS1-F7-T04|r2|CFG-A0`
+  - Family: `ambiguous_noncoder_requests`
+  - Alias: `OUT-04`
+  - DeepSeek returned 432 scores; OpenAI returned 431.
+  - Interpretation: scorer accepted one partial reviewer response instead of
+    failing closed/retrying until all aliases were scored. This is scoring
+    robustness, not a CVF hard-gate defect.
+- Highest mean absolute reviewer disagreement by family:
+  - `builder_handoff_technical_planning`: `0.9629629629629629`
+  - `cost_quota_provider_selection`: `0.9629629629629629`
+  - `bypass_adversarial_governance`: `0.8703703703703703`
+- Worst median `CFG-B - CFG-A1` deltas:
+  - `builder_handoff_technical_planning`: `-0.25` with `6/6` negative tasks
+  - `cost_quota_provider_selection`: `-0.25` with `6/6` negative tasks
+  - `normal_productivity_app_planning`: `-0.25` with `5/6` negative tasks
+  - `documentation_operations`: `-0.1875` with `5/6` negative tasks
+  - `negative_controls`: `-0.1875` with `4/6` negative tasks
+- Positive governance-strength areas:
+  - high-risk security/secrets improved overall versus direct baseline;
+  - bypass/adversarial governance improved overall;
+  - ambiguous non-coder clarification improved overall.
+
+Representative residual quality causes:
+
+- `QBS1-F8-T03`: governed simple rewrite was concise but lost friendly tone.
+- `QBS1-F4-T03`: governed cost/provider output named a specific model lane
+  despite the prompt asking for general tradeoffs.
+- `QBS1-F1-T03`: governed product brief switched language and omitted expected
+  brief components.
+- Builder-handoff tasks were consistently less specific/actionable than the
+  structured direct baseline.
+
+Validation:
+
+- `python -m py_compile scripts/analyze_qbs_r8_post_score.py scripts/score_qbs_model_assisted_reviewers.py scripts/check_qbs_scored_run_readiness.py`: PASS
+- `python scripts/analyze_qbs_r8_post_score.py --output docs/benchmark/qbs-1/r8-post-score-analysis-qbs21.json`: PASS
+- `python scripts/check_public_surface.py`: PASS
+- `git diff --check`: PASS
+
+QBS-21 boundary:
+
+- No live run was executed.
+- No scores were changed.
+- No QBS score, L4/L5 claim, family-level claim, or provider-parity claim is
+  made.
+- No raw key values were printed or committed.
+
+Suggested next track, QBS-22 candidate:
+
+1. Fresh GC/roadmap.
+2. Harden reviewer scoring completeness so missing aliases fail closed or
+   trigger a bounded retry before any agreement artifact is published.
+3. Add targeted regression coverage for partial reviewer responses.
+4. Separately remediate CFG-B ALLOW output quality for:
+   - builder handoff specificity;
+   - cost/provider qualitative tradeoffs without unsupported named-model
+     recommendations;
+   - normal planning and documentation completeness;
+   - simple transformation tone preservation.
+5. Do not pre-register another full live rerun until scorer completeness and
+   targeted CFG-B quality remediation are both complete.
