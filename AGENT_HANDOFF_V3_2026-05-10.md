@@ -805,3 +805,323 @@ Suggested next track, QBS-22 candidate:
    - simple transformation tone preservation.
 5. Do not pre-register another full live rerun until scorer completeness and
    targeted CFG-B quality remediation are both complete.
+
+## QBS-22 Through QBS-32 Closed Continuation
+
+The user authorized autonomous continuation instead of waiting for one
+`next track` prompt per tranche. Public-facing work was performed only in the
+public-sync clone:
+
+`d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync`
+
+The public remote was verified before pushes:
+
+`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+
+Provider keys were loaded from the provenance-local env file without printing
+raw values:
+
+`d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF\EXTENSIONS\CVF_v1.6_AGENT_PLATFORM\cvf-web\.env.local`
+
+Confirmed aliases present: `DASHSCOPE_API_KEY`, `ALIBABA_API_KEY`,
+`OPENAI_API_KEY`, and `DEEPSEEK_API_KEY`.
+
+### Public Commits
+
+- QBS-22: `dd59a08 Remediate QBS scorer completeness and ALLOW quality`
+- QBS-23: `98d2c88 Preregister QBS R9 remediation rerun`
+- QBS-24: `fd39966 Publish QBS R9 scored artifacts`
+- QBS-25: `368ad1e Publish QBS R9 post-score analysis`
+- QBS-26: `de39875 Publish QBS R9 calibration anchors`
+- QBS-27: `0dc9418 Publish QBS R9 anchor adjudication`
+- QBS-28: `5eb17cd Publish QBS R9 cleaned calibration reference`
+- QBS-29: `7968d3d Publish QBS R9 calibration agreement check`
+- QBS-30: `cd4ab9e Publish QBS R9 calibration failure analysis`
+- QBS-31: `2c5980b Publish QBS R9 reviewer rubric remediation`
+- QBS-32: `7ed4e7d Publish QBS R9 calibration rerun result`
+
+### QBS-22 Summary
+
+QBS-22 remediated two defects found by QBS-21:
+
+- reviewer scoring completeness now fails closed/retries when a reviewer omits,
+  duplicates, or invents output aliases;
+- governed ALLOW output instructions were tightened for same-language output,
+  simple transformation tone preservation, builder handoffs, and cost/provider
+  tradeoffs without unsupported named-provider claims.
+
+Artifacts/scripts:
+
+- `scripts/score_qbs_model_assisted_reviewers.py`
+- `scripts/test_qbs_reviewer_score_completeness.py`
+- `docs/benchmark/qbs-1/scorer-completeness-and-allow-quality-remediation-qbs22.md`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-prompt-contract.ts`
+
+Targeted tests and public-surface checks passed. No live benchmark score was
+run by QBS-22.
+
+### QBS-23 Summary
+
+QBS-23 pre-registered R9 after QBS-22 remediation:
+
+- run id: `qbs1-powered-single-provider-20260511-alibaba-r9`
+- tag:
+  `qbs/preregister/qbs1-powered-single-provider-20260511-alibaba-r9`
+- tag SHA: `98d2c88826d58f7c1858b50a8ae9807641441ed1`
+
+No scored run or QBS score was claimed by pre-registration.
+
+### QBS-24 Summary
+
+QBS-24 executed and scored the live R9 run using the provenance env file.
+
+Live execution command:
+
+`python scripts/run_qbs_powered_single_provider.py --run-id qbs1-powered-single-provider-20260511-alibaba-r9 --confirm-live-cost --retain-redacted-outputs --env-file <provenance cvf-web .env.local>`
+
+Scoring command:
+
+`python scripts/score_qbs_model_assisted_reviewers.py --run-id qbs1-powered-single-provider-20260511-alibaba-r9 --prompt-version qbs18-calibration-only-rerun-v1 --calibration-anchors docs/benchmark/qbs-1/reviewer-calibration-reference-qbs18.json --env-file <provenance cvf-web .env.local>`
+
+R9 hard gates passed:
+
+- direct transport OK;
+- CFG-B receipt complete;
+- expected decisions matched;
+- secret scan clean;
+- no mock fallback;
+- no severe unsafe false negatives;
+- no negative-control false blocks;
+- F7 front-door evidence complete.
+
+Scorer completeness remediation worked: paired score count `432`.
+
+Claim gate still failed:
+
+- public status:
+  `QBS24_R9_REVIEWER_AGREEMENT_FAIL_NO_PUBLIC_QBS_CLAIM`
+- kappa: `0.37156033151334533`
+- Spearman rho: `0.43818074648985417`
+- median `CFG-B - CFG-A1`: `-0.125`
+- bootstrap CI: `[-0.125, 0.0]`
+- no QBS score, L4/L5 claim, family-level claim, or provider-parity claim.
+
+### QBS-25 Summary
+
+QBS-25 analyzed R9 post-score artifacts and did not run a new score.
+
+Artifacts:
+
+- `docs/benchmark/qbs-1/r9-post-score-analysis-qbs25.md`
+- `docs/benchmark/qbs-1/r9-post-score-analysis-qbs25.json`
+- generalized `scripts/analyze_qbs_r8_post_score.py` with `--run-id`.
+
+Findings:
+
+- missing scores: none;
+- highest reviewer disagreement families:
+  - `cost_quota_provider_selection`: `1.462962962962963`
+  - `bypass_adversarial_governance`: `1.1111111111111112`
+  - `ambiguous_noncoder_requests`: `0.8703703703703703`
+  - `builder_handoff_technical_planning`: `0.8518518518518519`
+- worst median `CFG-B - CFG-A1` families:
+  - builder handoff: `-0.25`
+  - cost/provider: `-0.25`
+  - normal planning: `-0.25`
+  - documentation: `-0.125`
+  - negative controls: `-0.125`
+
+Decision: do not pre-register another live rerun; build R9-derived calibration
+anchors and adjudication first.
+
+### QBS-26 Summary
+
+QBS-26 built 35 provisional R9-derived calibration anchors across all 8 QBS
+families.
+
+Artifacts:
+
+- `scripts/build_qbs_r9_calibration_anchors.py`
+- `docs/benchmark/qbs-1/r9-calibration-anchors-qbs26.md`
+- `docs/benchmark/qbs-1/r9-calibration-anchors-qbs26.json`
+
+Status: `QBS26_R9_CALIBRATION_ANCHORS_READY_NO_NEW_SCORE`.
+
+Boundary: no new live run, no score mutation, no QBS claim.
+
+### QBS-27 Summary
+
+QBS-27 adjudicated all 35 QBS-26 anchors with the Alibaba/DashScope
+`qwen-turbo` model-adjudicator fallback.
+
+Command used:
+
+`python scripts/adjudicate_qbs_calibration_anchors.py --anchors docs/benchmark/qbs-1/r9-calibration-anchors-qbs26.json --output docs/benchmark/qbs-1/r9-anchor-adjudication-qbs27.json --md-output docs/benchmark/qbs-1/r9-anchor-adjudication-qbs27.md --env-file <provenance cvf-web .env.local> --adjudicator alibaba:qwen-turbo --prompt-version qbs27-r9-anchor-adjudication-v1`
+
+Artifacts:
+
+- `docs/benchmark/qbs-1/r9-anchor-adjudication-qbs27.md`
+- `docs/benchmark/qbs-1/r9-anchor-adjudication-qbs27.json`
+
+Summary:
+
+- adjudicated anchors: `35`
+- mean adjudicated quality: `2.4571428571428573`
+- decision counts overall:
+  - `deepseek_closer`: `25`
+  - `openai_closer`: `4`
+  - `both_partly_wrong`: `4`
+  - `both_reasonable`: `2`
+
+Boundary: model adjudication fallback, not human gold; no score/no claim.
+
+### QBS-28 Summary
+
+QBS-28 cleaned the QBS-27 adjudication into a 35-item calibration reference.
+
+Artifacts:
+
+- `scripts/build_qbs28_r9_calibration_reference.py`
+- `docs/benchmark/qbs-1/r9-calibration-reference-qbs28.md`
+- `docs/benchmark/qbs-1/r9-calibration-reference-qbs28.json`
+
+Status: `QBS28_R9_CLEANED_CALIBRATION_REFERENCE_READY_NO_NEW_SCORE`.
+
+Quality distribution:
+
+- `1`: `8`
+- `2`: `11`
+- `3`: `8`
+- `4`: `8`
+
+Rework distribution after cleanup:
+
+- `HEAVY`: `19`
+- `LIGHT`: `8`
+- `NONE`: `8`
+
+Cleanup actions:
+
+- `unchanged`: `32`
+- `normalize_rework_label`: `3`
+
+Boundary: reference cleanup only; no live QBS run or score mutation.
+
+### QBS-29 Summary
+
+QBS-29 ran a calibration-only OpenAI/DeepSeek reviewer agreement check against
+the QBS-28 reference and all 35 QBS-26 anchors.
+
+Command used:
+
+`python scripts/check_qbs_reviewer_calibration_agreement.py --anchors docs/benchmark/qbs-1/r9-calibration-anchors-qbs26.json --adjudication docs/benchmark/qbs-1/r9-calibration-reference-qbs28.json --rubric-addendum docs/benchmark/qbs-1/r9-calibration-reference-qbs28.md --output docs/benchmark/qbs-1/r9-calibration-agreement-qbs29.json --md-output docs/benchmark/qbs-1/r9-calibration-agreement-qbs29.md --env-file <provenance cvf-web .env.local> --prompt-version qbs29-r9-calibration-only-v1 --status QBS29_R9_CALIBRATION_ONLY_REVIEWER_AGREEMENT_COMPLETE_NO_NEW_SCORE --include-consensus --batch-size 4`
+
+Artifacts:
+
+- `docs/benchmark/qbs-1/r9-calibration-agreement-qbs29.md`
+- `docs/benchmark/qbs-1/r9-calibration-agreement-qbs29.json`
+
+Result: FAIL.
+
+- inter-reviewer status: PASS by Spearman
+- kappa: `0.5280898876404494`
+- Spearman rho: `0.6546663721124177`
+- OpenAI-vs-reference: FAIL
+  - within-one: `0.7714285714285715`
+  - rework match: `0.4857142857142857`
+- DeepSeek-vs-reference: PASS
+  - within-one: `0.9428571428571428`
+  - rework match: `0.6285714285714286`
+
+Decision: live scored rerun remains blocked.
+
+### QBS-30 Summary
+
+QBS-30 analyzed the QBS-29 failure.
+
+Artifacts:
+
+- `scripts/analyze_qbs29_calibration_failure.py`
+- `docs/benchmark/qbs-1/r9-calibration-failure-analysis-qbs30.md`
+- `docs/benchmark/qbs-1/r9-calibration-failure-analysis-qbs30.json`
+
+Classification:
+
+- primary blocker: `openai_vs_reference_alignment_fail`
+- secondary blocker: `rework_label_instability`
+- rerun allowed: `False`
+
+Top remediation targets:
+
+- `avoid_over_governance_on_simple_safe_tasks`
+- `blocked_output_usefulness_vs_refusal_correctness`
+- `documentation_operational_specificity_and_next_actions`
+- `allow_output_specificity_without_inventing_scope`
+- `builder_handoff_completeness_files_tests_rollback_verification`
+
+### QBS-31 Summary
+
+QBS-31 published a reviewer-rubric remediation addendum.
+
+Artifact:
+
+- `docs/benchmark/qbs-1/r9-reviewer-rubric-remediation-qbs31.md`
+
+Focus:
+
+- universal quality-to-rework mapping;
+- simple safe task directness/tone;
+- blocked output usefulness vs refusal correctness;
+- builder handoff specificity;
+- ALLOW planning without invented scope;
+- documentation operational specificity.
+
+Boundary: rubric remediation only; no live scored run or QBS claim.
+
+### QBS-32 Summary
+
+QBS-32 reran calibration-only review using the QBS-31 addendum.
+
+Command used:
+
+`python scripts/check_qbs_reviewer_calibration_agreement.py --anchors docs/benchmark/qbs-1/r9-calibration-anchors-qbs26.json --adjudication docs/benchmark/qbs-1/r9-calibration-reference-qbs28.json --rubric-addendum docs/benchmark/qbs-1/r9-reviewer-rubric-remediation-qbs31.md --output docs/benchmark/qbs-1/r9-calibration-agreement-rerun-qbs32.json --md-output docs/benchmark/qbs-1/r9-calibration-agreement-rerun-qbs32.md --env-file <provenance cvf-web .env.local> --prompt-version qbs32-r9-calibration-rerun-v1 --status QBS32_R9_CALIBRATION_ONLY_RERUN_COMPLETE_NO_NEW_SCORE --include-consensus --batch-size 4`
+
+Artifacts:
+
+- `docs/benchmark/qbs-1/r9-calibration-agreement-rerun-qbs32.md`
+- `docs/benchmark/qbs-1/r9-calibration-agreement-rerun-qbs32.json`
+
+Result: FAIL.
+
+- inter-reviewer status: FAIL
+- kappa: `0.44639718804920914`
+- Spearman rho: `0.46647062187999994`
+- OpenAI-vs-reference: FAIL
+  - within-one: `0.9428571428571428`
+  - rework match: `0.4857142857142857`
+- DeepSeek-vs-reference: FAIL
+  - within-one: `0.9428571428571428`
+  - rework match: `0.5142857142857142`
+
+Interpretation:
+
+- Prompt/rubric remediation alone did not stabilize the reviewer calibration.
+- QBS-32 improved within-one alignment but worsened inter-reviewer agreement and
+  still failed rework-label alignment.
+- Another scored live rerun is blocked. Do not pre-register R10 until a deeper
+  reference/adjudication strategy is chosen. Likely next options are:
+  - reduce or separate rework-label gate from quality calibration;
+  - use adjudicator diversity or human review for disputed anchors;
+  - split calibration by anchor family instead of one mixed 35-anchor packet.
+
+### Validation And Boundary
+
+Across QBS-26 through QBS-32, validation included:
+
+- `python -m py_compile` for changed Python scripts: PASS
+- `python scripts/check_public_surface.py`: PASS
+- `git diff --check`: PASS
+
+No raw API key values were printed or committed. Public commits were pushed
+only from the public-sync clone after confirming the public remote. The
+provenance workspace remains private/archive-only.
