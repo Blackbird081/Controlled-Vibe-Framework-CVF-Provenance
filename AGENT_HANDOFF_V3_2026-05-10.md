@@ -607,3 +607,60 @@ Suggested next track, QBS-20 candidate:
    `python scripts/score_qbs_model_assisted_reviewers.py --run-id qbs1-powered-single-provider-20260510-alibaba-r8 --prompt-version qbs18-calibration-only-rerun-v1 --calibration-anchors docs/benchmark/qbs-1/reviewer-calibration-reference-qbs18.json`
 5. Apply L4/L5 claim gates without loosening thresholds; publish no claim if
    hard gates, reviewer agreement, or claim thresholds fail.
+
+## QBS-20 Preflight Blocked Continuation
+
+Date: 2026-05-11
+
+QBS-20 was started after QBS-19 but live execution did not begin.
+
+Public-sync preflight state:
+
+- Public repo remote verified:
+  `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+- HEAD/tag state:
+  - `fbeb4b5 Preregister QBS R8 reviewer plan`
+  - `qbs/preregister/qbs1-powered-single-provider-20260510-alibaba-r8`
+- R8 readiness check:
+  `python scripts/check_qbs_scored_run_readiness.py --json --require-preregistration --preregistration-tag qbs/preregister/qbs1-powered-single-provider-20260510-alibaba-r8`
+  returned PASS with public status
+  `QBS19_R8_PREREGISTERED_NO_SCORED_RUN`.
+
+Key preflight:
+
+- No DashScope-compatible execution key was present under:
+  `DASHSCOPE_API_KEY`, `ALIBABA_API_KEY`, `CVF_ALIBABA_API_KEY`,
+  or `CVF_BENCHMARK_ALIBABA_KEY`.
+- No reviewer keys were present under:
+  `OPENAI_API_KEY`, `CVF_OPENAI_API_KEY`, `DEEPSEEK_API_KEY`,
+  `CVF_BENCHMARK_DEEPSEEK_KEY`, or `CVF_DEEPSEEK_API_KEY`.
+- No raw key values were printed.
+
+No-cost command probes:
+
+- R8 execution probe:
+  `python scripts/run_qbs_powered_single_provider.py --run-id qbs1-powered-single-provider-20260510-alibaba-r8 --confirm-live-cost --retain-redacted-outputs --task-limit 1 --repeat-count 1 --no-start-server`
+  stopped before any live call with:
+  `RuntimeError: missing Alibaba/DashScope API key`.
+- R8 scoring probe:
+  `python scripts/score_qbs_model_assisted_reviewers.py --run-id qbs1-powered-single-provider-20260510-alibaba-r8 --prompt-version qbs18-calibration-only-rerun-v1 --calibration-anchors docs/benchmark/qbs-1/reviewer-calibration-reference-qbs18.json --task-limit 1`
+  stopped because the R8 execution artifact does not exist yet:
+  `docs/benchmark/runs/qbs1-powered-single-provider-20260510-alibaba-r8/aggregate-results.json`.
+
+Boundary:
+
+- No R8 live provider call was made.
+- No R8 artifact directory was created.
+- Public-sync worktree remained clean.
+- No public commit, tag, push, score, or claim was created for QBS-20.
+
+Next unblock:
+
+1. Operator supplies a DashScope-compatible key through one accepted alias.
+2. Operator supplies reviewer keys for OpenAI and DeepSeek when scoring is
+   ready.
+3. Re-run the full R8 live command without `--task-limit`, `--repeat-count 1`,
+   or `--no-start-server`:
+   `python scripts/run_qbs_powered_single_provider.py --run-id qbs1-powered-single-provider-20260510-alibaba-r8 --confirm-live-cost --retain-redacted-outputs`
+4. Only after R8 artifacts exist, run frozen scoring:
+   `python scripts/score_qbs_model_assisted_reviewers.py --run-id qbs1-powered-single-provider-20260510-alibaba-r8 --prompt-version qbs18-calibration-only-rerun-v1 --calibration-anchors docs/benchmark/qbs-1/reviewer-calibration-reference-qbs18.json`
