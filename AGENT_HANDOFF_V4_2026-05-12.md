@@ -409,7 +409,71 @@ All 5 tracks delivered:
 Total tests: 76 PASS. All hard gates clean across all tracks.
 No open EA tracks. Next work requires a fresh GC-018.
 
-All EA work goes in the public-sync clone:
+## CVF Value Position Assessment (2026-05-13)
+
+User and Claude jointly assessed CVF value after EA Track completion.
+This assessment is BINDING context for next agent — do not dismiss.
+
+Key finding:
+
+> EA Tracks A–E are operator/infrastructure value, not end-user value.
+> CVF measures itself well but has not yet proven it improves the experience
+> of the person actually sending prompts.
+
+What CVF CANNOT yet answer:
+1. What % of BLOCK/CLARIFY decisions are false positives? — No data.
+2. Does governance latency noticeably slow users down? — Baseline exists (Track A),
+   but no live traffic measured yet, and no optimization done.
+3. When NEEDS_APPROVAL fires, does the user know what to do? — UX unknown.
+4. Does CVF-governed output quality match ungoverned output? — No A/B data.
+
+These are NOT blockers for CVF's current use cases (local-first, developer/operator).
+They ARE the next frontier if CVF wants to demonstrate direct end-user value.
+
+## Next Roadmap — EVT (End-User Value Track)
+
+Roadmap file: `docs/roadmaps/CVF_EVT_END_USER_VALUE_ROADMAP_2026-05-13.md`
+
+Status: DRAFT — PENDING CODEX REVIEW. Do not implement any EVT track without:
+1. Codex review of the roadmap
+2. User explicit approval per track
+3. GC-018 for EVT-2 (if execution order changes) and EVT-4
+
+### EVT tracks summary
+
+EVT-1 — False Positive Audit (no GC-018, 1–2 days)
+  Add "Report false positive" button after BLOCK/CLARIFY responses.
+  Log to JSONL. Script to analyze FP rate. No enforcement logic changes.
+  Start: immediately after user approval.
+
+EVT-3 — NEEDS_APPROVAL UX Improvement (no GC-018, 2–3 days)
+  Audit NEEDS_APPROVAL journey. Add context message + optional rewrite hint.
+  Hard constraint: hint must not expose R2/R3 patterns or teach bypass.
+  Start: immediately, can run parallel with EVT-1.
+
+EVT-2 — Governance Latency Optimization (GC-018 if execution order changes, 1–5 days)
+  Depends on live traffic data from EVT-1. Run analyze_governance_tax.py first.
+  Only optimize if AMBER/RED. Do not touch if GREEN.
+  Start: after N≥20 live requests collected.
+
+EVT-4 — Output Quality A/B Baseline (requires GC-018, 3–5 days)
+  20 prompts × CFG-A (bare API) vs CFG-B (CVF governed). Model-assisted reviewer.
+  NOT a QBS rerun — different question entirely.
+  Start: only after separate GC-018 + user approves prompt set.
+
+### Codex questions (unanswered — next agent must not skip)
+
+The roadmap contains 4 open questions for Codex:
+1. EVT-1: Should FP report trigger async Admin notification or passive log only?
+2. EVT-2: Does parallelizing DLP + intent classification violate governance contract?
+3. EVT-3: Where is the line between "helpful UX hint" and "governance bypass guide"?
+4. EVT-4: If CFG-B < CFG-A, is it an architectural problem or a prompt-engineering fix?
+
+Plus 1 meta-question: Is there a more important end-user value gap not covered?
+
+## Repository and Keys
+
+All public work goes in the public-sync clone:
 
 `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync`
 
