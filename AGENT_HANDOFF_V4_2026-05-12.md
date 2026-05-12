@@ -344,8 +344,18 @@ Execution order per `docs/roadmaps/CVF_EA_ENHANCEMENT_ROADMAP_2026-05-12.md`:
    - `cvf-web/.gitignore` — `/logs/` excluded
    Validation: lint PASS, tsc PASS, 53 tests PASS, build PASS
 
-3. **Track C** — Audit Receipt Integrity. Documentation + optional SHA manifest.
-   No live cost, no GC-018 required.
+3. **Track C** — DONE (commit `b93f246`).
+   Status: `EA_TRACK_C_INTEGRITY_MODEL_DEPLOYED`
+   Artifacts:
+   - `docs/reference/CVF_AUDIT_RECEIPT_INTEGRITY_MODEL.md` — Git-as-hash-chain
+     model, receipt chain spec, known limitations (no GPG), operator checklist
+   - `scripts/generate_evidence_manifest.py` — SHA-256 manifest generator
+     (243 files, docs/benchmark/ + docs/evidence/)
+   - `scripts/verify_evidence_manifest.py` — manifest verifier, TAMPERED
+     detection confirmed working
+   - `docs/evidence/MANIFEST_SHA256.json` — initial snapshot at commit 158309f
+   Validation: generate+verify PASS (243/243), tamper detection PASS,
+   public_surface PASS
 
 4. **Track D** — Multi-provider Policy Engine. Requires Track A complete + GC-018.
    Do not start without explicit user approval after A is done.
