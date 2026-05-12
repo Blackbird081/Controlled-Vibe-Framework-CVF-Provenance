@@ -377,8 +377,37 @@ Execution order per `docs/roadmaps/CVF_EA_ENHANCEMENT_ROADMAP_2026-05-12.md`:
    Validation: lint PASS, tsc PASS, 66 tests PASS, build PASS,
    check_public_surface.py PASS
 
-5. **Track E** — DLP Quality Benchmark. Requires Track A complete + GC-018 + user
-   approval of synthetic PII corpus. Do not start without explicit approval.
+5. **Track E** — DONE (commit `8aa7e97`).
+   Status: `EA_TRACK_E_PHASE1_DLP_QUALITY_BENCHMARK_DEPLOYED`
+   Artifacts:
+   - `src/lib/dlp-benchmark.ts` — runDLPBenchmark: loads corpus, runs
+     applyDLPPatterns per case, computes TP/FN/TN/FP/precision/recall/F1
+   - `src/lib/dlp-benchmark.test.ts` — 10 tests PASS (true PII detection,
+     false PII precision, F1/grade, adversarial isolation, corpus smoke test)
+   - `docs/benchmark/dlp/dlp-corpus-v1.json` — 24 synthetic cases (12 true PII,
+     8 false PII, 4 adversarial); no real PII; all values clearly fabricated
+   - `docs/benchmark/dlp/dlp-benchmark-v1.json` — baseline: F1=0.96, Recall=1.0,
+     Precision=0.9231, grade=PASS
+   - `docs/benchmark/dlp/dlp-quality-baseline.md` — baseline doc with known
+     limitations (CCCD false positive on 12-digit numbers; adversarial obfuscation)
+   - `docs/reviews/CVF_GC018_TRACK_E_DLP_QUALITY_BENCHMARK_2026-05-13.md` — GC-018
+     continuation candidate (Depth Audit 8/10, authorized Phase E.1)
+   - `scripts/run_dlp_benchmark.py` — CLI runner; --save writes baseline JSON
+   - `governance/public-surface-manifest.json` — GC-018 review file allowlisted
+   Validation: lint PASS, tsc PASS, 76 tests PASS, build PASS,
+   check_public_surface.py PASS
+
+## EA Enhancement Track — COMPLETE
+
+All 5 tracks delivered:
+- Track B: commit `92858eb` — QBS Benchmark Dashboard
+- Track A: commit `158309f` — Governance Tax Measurement
+- Track C: commit `b93f246` — Audit Receipt Integrity
+- Track D: commit `7a48cd0` — Provider Policy Engine (Phase D.1)
+- Track E: commit `8aa7e97` — DLP Quality Benchmark (Phase E.1)
+
+Total tests: 76 PASS. All hard gates clean across all tracks.
+No open EA tracks. Next work requires a fresh GC-018.
 
 All EA work goes in the public-sync clone:
 
