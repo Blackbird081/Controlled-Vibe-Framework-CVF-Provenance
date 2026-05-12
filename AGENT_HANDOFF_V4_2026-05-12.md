@@ -187,32 +187,88 @@ Validation completed for QBS-40:
 - `python scripts/check_public_surface.py`: PASS
 - `git diff --check`: PASS
 
+## QBS-41 Closed Continuation
+
+QBS-41 completed after QBS-40.
+
+Public commit:
+
+`a951709 Publish QBS R10 scored artifacts and post-score analysis`
+
+Public status:
+
+`QBS41_R10_REVIEWER_AGREEMENT_FAIL_NO_PUBLIC_QBS_CLAIM`
+
+Public artifacts:
+
+- `docs/benchmark/qbs-1/r10-post-score-analysis-qbs41.json`
+- `docs/benchmark/qbs-1/r10-post-score-analysis-qbs41.md`
+- `docs/benchmark/runs/qbs1-powered-single-provider-20260512-alibaba-r10/` (full run dir)
+- `scripts/score_qbs_model_assisted_reviewers.py` (R10/QBS41 status strings added)
+
+R10 execution result:
+
+- 48 tasks x 3 repeats x 3 configs = 432 configuration executions.
+- Hard gates: PASS (all 8 gates clean)
+- Scorer completeness: 432/432 paired — QBS-34 retry holds, no missing scores.
+- Reviewer agreement: FAIL
+  - quadratic-weighted Cohen kappa: `0.3789`
+  - Spearman rho: `0.5869`
+- L4 result: FAIL
+  - median normalized quality delta CFG-B vs CFG-A1: `-0.125`
+  - bootstrap 95% CI: `[-0.25, 0.0]`
+  - median heavy/reject improvement CFG-B vs CFG-A1: `-0.167`
+
+QBS-41 post-score analysis key findings:
+
+- `cost_quota_provider_selection` highest disagreement (mean abs diff `1.741`) —
+  persistent across R6–R10; primarily a reviewer-level problem, not output-only.
+- `negative_controls` regressed to median delta `-0.4375` (from `-0.125` in R9).
+  QBS-39 family contract does not cover this family. Needs investigation.
+- kappa marginally better than R9 (`0.379` vs `0.372`); rho improved (`0.587` vs
+  `0.438`). QBS-39 remediation had a small positive effect but not enough to pass.
+- Calibration-only kappa (`0.72`, QBS-37) does not generalise to live run scoring —
+  live corpus is harder to agree on than the 35-anchor calibration set.
+
+Boundary:
+
+- No QBS score was claimed.
+- No L4/L5, family-level, or provider-parity claim is made.
+- Historical R5–R9 artifacts were not mutated.
+- Raw key values were not printed or committed.
+
 ## Binding Boundary For Next Agent
 
-QBS-40 did **not** execute the live R10 run and did **not** run reviewer
-scoring.
+The user has confirmed API keys are available in the provenance `.env.local` and
+granted standing permission to use them for benchmark tests without re-asking.
 
-Live R10 execution remains blocked until an operator explicitly runs the
-pre-registered command with `--confirm-live-cost`.
+Key file (do not print raw values):
 
-The user's request to continue tracks without asking one by one was sufficient
-for QBS-40 pre-registration work, but it was not treated as implicit
-authorization to spend live R10 execution cost. Do not start the cost-bearing
-run unless the operator explicitly supplies or repeats that confirmation.
+`d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF\EXTENSIONS\CVF_v1.6_AGENT_PLATFORM\cvf-web\.env.local`
 
-## Next Allowed Step
+Present aliases: `DASHSCOPE_API_KEY`, `OPENAI_API_KEY`, `DEEPSEEK_API_KEY`.
 
-If explicit live-cost confirmation is provided, run R10 from public-sync only:
+## Next Allowed Steps
 
-```bash
-python scripts/run_qbs_powered_single_provider.py --run-id qbs1-powered-single-provider-20260512-alibaba-r10 --confirm-live-cost --retain-redacted-outputs
-```
+QBS R10 is now scored and published. The QBS-series live run tranche is complete.
 
-Then score only after live artifacts exist:
+Two authorized next tracks:
 
-```bash
-python scripts/score_qbs_model_assisted_reviewers.py --run-id qbs1-powered-single-provider-20260512-alibaba-r10 --prompt-version qbs40-r10-post-qbs39-scored-run-v1 --calibration-anchors docs/benchmark/qbs-1/r9-calibration-reference-qbs36.json --missing-alias-retry-attempts 2 --completeness-diagnostics-output docs/benchmark/runs/qbs1-powered-single-provider-20260512-alibaba-r10/reviewer-completeness-diagnostics.jsonl
-```
+### Option 1 — QBS-42: R10 deep analysis and next-remediation plan
 
-If no live-cost confirmation is given, continue only with non-live
-documentation/readiness work or a separate authorized EA track.
+1. Analyze the `negative_controls` regression in R10 (delta `-0.4375`).
+2. Analyze why calibration kappa does not transfer to live run kappa.
+3. Publish a remediation plan for the next scored run (R11) if warranted.
+4. Do not pre-register R11 until analysis is published and user reviews findings.
+
+### Option 2 — EA Enhancement Track
+
+Start EA Track A (Governance Tax Measurement) or Track B (QBS Benchmark Dashboard)
+as defined in:
+
+`docs/roadmaps/CVF_EA_ENHANCEMENT_ROADMAP_2026-05-12.md`
+
+These tracks are independent of QBS scoring and can run immediately.
+No GC-018 required for Track A or Track B.
+
+The user's decision on which track to proceed with is required before starting.
