@@ -306,14 +306,30 @@ All three conditions must be met before pre-registering R11:
 - Calibration-only dry runs (no live cost) if user later approves a new reviewer-model
   preflight check as part of reopening.
 
+## EA Track B — CLOSED 2026-05-12
+
+Public commit: `92858eb Add EA Track B — QBS Benchmark Dashboard tab in /governance`
+
+New tab `📈 Benchmark` added to `/governance` page (6th tab, display-only).
+
+Artifacts:
+
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/QBSBenchmarkPanel.tsx`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/QBSBenchmarkPanel.test.tsx`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/benchmark/qbs-summary/route.ts`
+
+Shows: R5–R10 run history (kappa, hard gates, delta, L4), per-family delta chart
+(R10), suspension badge with reason and resumption conditions.
+
+Validation: 5 tests PASS, lint PASS (max-warnings=0), build PASS.
+
 ## Next Allowed Steps — EA Enhancement Track
 
 The user has authorized the EA Enhancement Track to begin immediately.
 Execution order per `docs/roadmaps/CVF_EA_ENHANCEMENT_ROADMAP_2026-05-12.md`:
 
-1. **Track B** — QBS Benchmark Dashboard (tab in `/governance` page). Read-only,
-   no live cost, no GC-018 required. Start first because it gives immediate visual
-   value from the R5–R10 evidence already collected.
+1. **Track B** — DONE (commit `92858eb`).
+   QBS Benchmark Dashboard tab live in `/governance`.
 
 2. **Track A** — Governance Tax Measurement. Timing instrumentation in
    `/api/execute`. No live cost, no GC-018 required.
