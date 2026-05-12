@@ -331,8 +331,18 @@ Execution order per `docs/roadmaps/CVF_EA_ENHANCEMENT_ROADMAP_2026-05-12.md`:
 1. **Track B** — DONE (commit `92858eb`).
    QBS Benchmark Dashboard tab live in `/governance`.
 
-2. **Track A** — Governance Tax Measurement. Timing instrumentation in
-   `/api/execute`. No live cost, no GC-018 required.
+2. **Track A** — DONE (commit `158309f`).
+   Status: `EA_TRACK_A_INSTRUMENTATION_DEPLOYED`
+   Artifacts:
+   - `src/lib/governance-tax-logger.ts` — GovernanceTaxPhases/Log types,
+     evaluateFitness (GREEN<10%/AMBER<20%/RED≥20%), JSONL sink via `_taxLogSink`
+   - `src/lib/governance-tax-logger.test.ts` — 12 tests PASS
+   - `src/app/api/execute/route.ts` — 4 timing markers + logGovernanceTax
+     at final success return (pre/policy/provider/post phases)
+   - `docs/benchmark/governance-tax/governance-tax-fitness-function.md`
+   - `scripts/analyze_governance_tax.py` — aggregate JSONL analysis script
+   - `cvf-web/.gitignore` — `/logs/` excluded
+   Validation: lint PASS, tsc PASS, 53 tests PASS, build PASS
 
 3. **Track C** — Audit Receipt Integrity. Documentation + optional SHA manifest.
    No live cost, no GC-018 required.
