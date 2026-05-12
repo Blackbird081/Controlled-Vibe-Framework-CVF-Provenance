@@ -357,8 +357,25 @@ Execution order per `docs/roadmaps/CVF_EA_ENHANCEMENT_ROADMAP_2026-05-12.md`:
    Validation: generate+verify PASS (243/243), tamper detection PASS,
    public_surface PASS
 
-4. **Track D** — Multi-provider Policy Engine. Requires Track A complete + GC-018.
-   Do not start without explicit user approval after A is done.
+4. **Track D** — DONE (commit `7a48cd0`).
+   Status: `EA_TRACK_D_PHASE1_PROVIDER_POLICY_ENGINE_DEPLOYED`
+   Artifacts:
+   - `src/lib/provider-policy-engine.ts` — resolveProviderPolicy (R0/R1/R2/R3
+     risk-tier routing), executeWithFailover (R0/R1 only), ProviderPreference type
+   - `src/lib/provider-policy-engine.test.ts` — 11 tests PASS (R0/R1 preference,
+     R2/R3 governance override, edge cases, failover scenarios)
+   - `src/app/api/execute/route.ts` — wired after enforcement ALLOW; preference
+     from `body.providerPreference`; failoverExec replaces direct executeAI call;
+     `finalProvider`/`failoverUsed`/`policyRiskTierOverride` in receipt
+   - `src/components/ProviderPreferenceSelector.tsx` — bilingual 3-option tile
+     selector (Auto/Fast/Accurate); added to Settings.tsx Preferences tab
+   - `src/components/Settings.tsx` — `providerPreference` added to UserPreferences
+   - `docs/benchmark/qbs-1/provider-routing-policy.md` — governance policy doc
+   - `docs/reviews/CVF_GC018_TRACK_D_PROVIDER_POLICY_ENGINE_2026-05-13.md` — GC-018
+     continuation candidate (Depth Audit 9/10, authorized Phase D.1)
+   - `governance/public-surface-manifest.json` — GC-018 review file allowlisted
+   Validation: lint PASS, tsc PASS, 66 tests PASS, build PASS,
+   check_public_surface.py PASS
 
 5. **Track E** — DLP Quality Benchmark. Requires Track A complete + GC-018 + user
    approval of synthetic PII corpus. Do not start without explicit approval.
