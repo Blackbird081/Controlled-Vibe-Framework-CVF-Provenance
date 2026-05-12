@@ -1125,3 +1125,12 @@ Across QBS-26 through QBS-32, validation included:
 No raw API key values were printed or committed. Public commits were pushed
 only from the public-sync clone after confirming the public remote. The
 provenance workspace remains private/archive-only.
+
+
+## Continued In V4
+
+QBS continuation after QBS-32 moved to:
+
+`AGENT_HANDOFF_V4_2026-05-12.md`
+
+Reason: V3 reached the governed markdown size ceiling. Do not append new status to V3.
