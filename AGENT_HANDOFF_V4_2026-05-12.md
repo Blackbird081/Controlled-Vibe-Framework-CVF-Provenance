@@ -435,23 +435,27 @@ They ARE the next frontier if CVF wants to demonstrate direct end-user value.
 Roadmap file: `docs/roadmaps/CVF_EVT_END_USER_VALUE_ROADMAP_2026-05-13.md`
 Codex review file: `docs/reviews/CVF_EVT_ROADMAP_CODEX_REVIEW_2026-05-14.md`
 
-Status: DRAFT — CODEX REVIEW RECORDED; PENDING USER APPROVAL. Do not implement
-any EVT track without:
+Status: EVT-1 + EVT-3 CODEX-CORRECTED IMPLEMENTATION COMPLETE; EVT-2/EVT-4
+NOT STARTED. Do not implement remaining EVT tracks without:
 1. Reading the Codex review file above
 2. User explicit approval per track
-3. GC-018 for EVT-2 (if execution order changes) and EVT-4
+3. GC-018 for EVT-2 if execution order changes and GC-018 for EVT-4
 
 ### EVT tracks summary
 
 EVT-1 — False Positive Audit (no GC-018, 1–2 days)
   Add "Report false positive" button after BLOCK/CLARIFY responses.
   Log to JSONL. Script to analyze FP rate. No enforcement logic changes.
-  Start: immediately after user approval.
+  Status: IMPLEMENTED 2026-05-14 using Codex correction — separate
+  append-only events linked by `receiptId`, no receipt mutation, button in
+  `ProcessingScreen`, report-only passive flow.
 
 EVT-3 — NEEDS_APPROVAL UX Improvement (no GC-018, 2–3 days)
   Audit NEEDS_APPROVAL journey. Add context message + optional rewrite hint.
   Hard constraint: hint must not expose R2/R3 patterns or teach bypass.
-  Start: immediately, can run parallel with EVT-1.
+  Status: IMPLEMENTED 2026-05-14 using Codex correction — hardened existing
+  `ProcessingScreen` approval panel, expiry/retry guidance, deterministic
+  static safe hints only, no AI-generated fallback.
 
 EVT-2 — Governance Latency Optimization (GC-018 if execution order changes, 1–5 days)
   Depends on live traffic data from EVT-1. Run analyze_governance_tax.py first.
@@ -478,6 +482,38 @@ receipts, not mutate receipts. EVT-3 should be audit + hardening of the existing
 approval UX. EVT-2 must measure actual live route phases before optimization.
 EVT-4 remains separate from QBS and requires GC-018 plus preregistered protocol.
 Codex also recommends adding/deferring EVT-5: task recovery / abandonment rate.
+
+### EVT implementation update — 2026-05-14
+
+User approved Codex's 5/5 corrections and authorized implementation without
+per-step waiting. Implemented EVT-1 and EVT-3 in the provenance workspace:
+
+- `src/lib/false-positive-report.ts` adds append-only JSONL event logging for
+  `REPORTABLE_DECISION_OBSERVED` and `FALSE_POSITIVE_REPORTED`.
+- `src/app/api/governance/false-positive-report/route.ts` records authenticated
+  false-positive reports and appends audit events; unauthenticated/invalid
+  reports are rejected.
+- `src/app/api/execute/route.ts` passively records BLOCK/CLARIFY denominator
+  events after immutable receipts are created.
+- `src/components/ProcessingScreen.tsx` shows the report control for
+  BLOCK/CLARIFY only, keeps NEEDS_APPROVAL out of FP reporting, and adds safer
+  approval copy plus static deterministic hint templates.
+- `scripts/analyze_false_positive_rate.py` computes observed reportable
+  decisions, FP reports, FP rate, and low-N caveat.
+- `eslint.config.mjs` now ignores `.next-cvf-release-gate/**` so full lint does
+  not scan generated release-gate build artifacts.
+
+Verification:
+
+- Targeted Vitest PASS: false-positive lib, false-positive API route,
+  `ProcessingScreen`, and execute route tests (52 tests).
+- `npx tsc --noEmit` PASS.
+- `npm run lint` PASS with one pre-existing warning in
+  `src/app/api/system/jobs/route.test.ts`.
+- `git diff --check` PASS.
+
+EVT-2 remains measure-first; do not optimize execution order before real phase
+data. EVT-4 still requires GC-018 and a preregistered A/B protocol.
 
 ## Repository and Keys
 

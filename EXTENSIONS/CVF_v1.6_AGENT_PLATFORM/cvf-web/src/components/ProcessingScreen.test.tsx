@@ -393,6 +393,101 @@ describe('ProcessingScreen — governance evidence visibility (W114-T1 CP5)', ()
     expect(screen.queryByTestId('submit-approval-btn')).toBeNull();
     expect(screen.getByTestId('approval-status-panel').textContent).toContain('apr-route-001');
     expect(screen.getByTestId('governance-evidence-panel').textContent).toContain('apr-route-001');
+    expect(screen.getByTestId('approval-status-panel').textContent).toContain('expire after 24 hours');
+  });
+
+  it('shows false-positive report button for BLOCK receipt and records report without mutating receipt', async () => {
+    const fetchMock = vi.fn()
+      .mockResolvedValueOnce({
+        ok: false,
+        json: async () => ({
+          success: false,
+          error: 'Blocked by CVF enforcement.',
+          provider: 'alibaba',
+          model: 'blocked',
+          enforcement: { status: 'BLOCK', reasons: ['Blocked'], riskGate: { riskLevel: 'R2', status: 'BLOCK', reason: 'R2' } },
+          governanceEvidenceReceipt: {
+            receiptId: 'rcpt-block-001',
+            evidenceMode: 'live',
+            routeId: '/api/execute',
+            decision: 'BLOCK',
+            riskLevel: 'R2',
+            provider: 'alibaba',
+            model: 'blocked',
+            envelopeId: 'env-block-001',
+            generatedAt: '2026-05-14T00:00:00.000Z',
+          },
+        }),
+      })
+      .mockResolvedValueOnce({
+        ok: true,
+        json: async () => ({
+          success: true,
+          reportId: 'fp-001',
+          receiptId: 'rcpt-block-001',
+          decision: 'BLOCK',
+        }),
+      });
+    vi.stubGlobal('fetch', fetchMock);
+
+    render(<ProcessingScreen {...baseProps} />);
+
+    await waitFor(() => {
+      expect(screen.getByTestId('false-positive-report-panel')).toBeDefined();
+    });
+
+    screen.getByTestId('report-false-positive-btn').click();
+
+    await waitFor(() => {
+      expect(screen.getByTestId('report-false-positive-btn').textContent).toContain('Report recorded');
+    });
+
+    const [, init] = fetchMock.mock.calls[1];
+    const body = JSON.parse(String(init?.body));
+    expect(fetchMock.mock.calls[1][0]).toBe('/api/governance/false-positive-report');
+    expect(body).toMatchObject({
+      receiptId: 'rcpt-block-001',
+      envelopeId: 'env-block-001',
+      decision: 'BLOCK',
+      riskLevel: 'R2',
+      templateId: 'test',
+      routeId: '/api/execute',
+    });
+    expect(body.falsePositiveReported).toBeUndefined();
+  });
+
+  it('does not show false-positive report button for NEEDS_APPROVAL receipt', async () => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({
+      ok: false,
+      json: async () => ({
+        success: false,
+        error: 'Human approval required.',
+        provider: 'alibaba',
+        model: 'approval-required',
+        enforcement: { status: 'NEEDS_APPROVAL', reasons: ['R3 requires explicit human approval before execution.'], riskGate: { riskLevel: 'R3', status: 'NEEDS_APPROVAL', reason: 'R3' } },
+        approvalId: 'apr-route-002',
+        governanceEvidenceReceipt: {
+          receiptId: 'rcpt-approval-001',
+          evidenceMode: 'live',
+          routeId: '/api/execute',
+          decision: 'NEEDS_APPROVAL',
+          riskLevel: 'R3',
+          provider: 'alibaba',
+          model: 'approval-required',
+          approvalId: 'apr-route-002',
+          generatedAt: '2026-05-14T00:00:00.000Z',
+        },
+      }),
+    }));
+
+    render(<ProcessingScreen {...baseProps} />);
+
+    await waitFor(() => {
+      expect(screen.getByTestId('approval-status-panel')).toBeDefined();
+    });
+
+    expect(screen.queryByTestId('false-positive-report-panel')).toBeNull();
+    expect(screen.getByTestId('approval-status-panel').textContent).toContain('lower-risk planning step');
   });
 });
 

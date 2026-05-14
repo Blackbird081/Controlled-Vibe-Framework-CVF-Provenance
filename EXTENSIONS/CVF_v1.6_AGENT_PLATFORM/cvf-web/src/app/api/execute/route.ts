@@ -25,6 +25,7 @@ import { buildGovernanceEnvelope } from '@/lib/web-governance-envelope';
 import type { WebGovernanceEnvelope } from '@/lib/web-governance-envelope';
 import { deriveServiceTokenIdentity, verifyServiceTokenRequest } from '@/lib/service-token-auth';
 import { hasValidationRetryBudget, resolveExecutionMaxTokens } from '@/lib/execute-route-budget';
+import { recordReportableDecisionObserved } from '@/lib/false-positive-report';
 import { getApprovalStore, type ApprovalRequestRecord } from '../approvals/store';
 import {
     approvalRecordMatchesActor,
@@ -455,6 +456,17 @@ export async function POST(request: NextRequest) {
 
         if (enforcement.status === 'BLOCK') {
             const guidedResponse = lookupGuidedResponse(userPrompt);
+            const governanceEvidenceReceipt = buildEvidenceReceipt({
+                envelope: govEnvelope,
+                decision: enforcement.status,
+                riskLevel: enforcement.riskGate?.riskLevel,
+                provider,
+                model: 'blocked',
+            });
+            await recordReportableDecisionObserved({
+                receipt: governanceEvidenceReceipt,
+                templateId: body.templateId || body.templateName,
+            });
             return NextResponse.json(
                 {
                     success: false,
@@ -465,19 +477,24 @@ export async function POST(request: NextRequest) {
                     ...(guidedResponse ? { guidedResponse } : {}),
                     governanceEnvelope: govEnvelope,
                     policySnapshotId: govEnvelope.policySnapshotId,
-                    governanceEvidenceReceipt: buildEvidenceReceipt({
-                        envelope: govEnvelope,
-                        decision: enforcement.status,
-                        riskLevel: enforcement.riskGate?.riskLevel,
-                        provider,
-                        model: 'blocked',
-                    }),
+                    governanceEvidenceReceipt,
                 },
                 { status: 400 }
             );
         }
 
         if (enforcement.status === 'CLARIFY') {
+            const governanceEvidenceReceipt = buildEvidenceReceipt({
+                envelope: govEnvelope,
+                decision: enforcement.status,
+                riskLevel: enforcement.riskGate?.riskLevel,
+                provider,
+                model: 'clarify',
+            });
+            await recordReportableDecisionObserved({
+                receipt: governanceEvidenceReceipt,
+                templateId: body.templateId || body.templateName,
+            });
             return NextResponse.json(
                 {
                     success: false,
@@ -488,13 +505,7 @@ export async function POST(request: NextRequest) {
                     enforcement,
                     governanceEnvelope: govEnvelope,
                     policySnapshotId: govEnvelope.policySnapshotId,
-                    governanceEvidenceReceipt: buildEvidenceReceipt({
-                        envelope: govEnvelope,
-                        decision: enforcement.status,
-                        riskLevel: enforcement.riskGate?.riskLevel,
-                        provider,
-                        model: 'clarify',
-                    }),
+                    governanceEvidenceReceipt,
                 },
                 { status: 422 }
             );

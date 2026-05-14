@@ -1,4 +1,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { mkdtemp, rm } from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
 
 const executeAIMock = vi.hoisted(() => vi.fn());
 const evaluateEnforcementMock = vi.hoisted(() => vi.fn());
@@ -50,8 +53,10 @@ import { getApprovalStore } from '../approvals/store';
 describe('/api/execute', () => {
     const originalEnv = { ...process.env };
     const validOutput = '## Governed Response\n\nThis response provides a structured recommendation with enough detail to satisfy output validation requirements.\n\n1. Review the request context carefully.\n2. Apply the governed execution plan.\n3. Return a concise, safe outcome for the operator.';
+    let tempDir = '';
 
-    beforeEach(() => {
+    beforeEach(async () => {
+        tempDir = await mkdtemp(path.join(os.tmpdir(), 'cvf-execute-route-'));
         executeAIMock.mockReset();
         evaluateEnforcementMock.mockReset();
         verifySessionCookieMock.mockReset();
@@ -72,12 +77,14 @@ describe('/api/execute', () => {
         delete process.env.ANTHROPIC_API_KEY;
         delete process.env.GOOGLE_AI_API_KEY;
         delete process.env.ALIBABA_API_KEY;
+        delete process.env.DASHSCOPE_API_KEY;
         delete process.env.CVF_BENCHMARK_ALIBABA_KEY;
         delete process.env.CVF_ALIBABA_API_KEY;
         delete process.env.OPENROUTER_API_KEY;
         delete process.env.DEEPSEEK_API_KEY;
         delete process.env.DEFAULT_AI_PROVIDER;
         delete process.env.CVF_SESSION_SECRET;
+        process.env.CVF_FALSE_POSITIVE_REPORTS_PATH = path.join(tempDir, 'false-positive-events.jsonl');
         verifySessionCookieMock.mockResolvedValue({
             userId: 'user-tester',
             user: 'tester',
@@ -88,8 +95,11 @@ describe('/api/execute', () => {
         });
     });
 
-    afterEach(() => {
+    afterEach(async () => {
         process.env = { ...originalEnv };
+        if (tempDir) {
+            await rm(tempDir, { recursive: true, force: true });
+        }
     });
 
     it('returns 400 when required fields are missing', async () => {

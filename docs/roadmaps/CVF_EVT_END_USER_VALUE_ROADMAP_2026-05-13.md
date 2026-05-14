@@ -1,6 +1,6 @@
 # CVF End-User Value Track (EVT) Roadmap — 2026-05-13
 
-**Status:** DRAFT — CODEX REVIEW RECORDED; PENDING USER APPROVAL BEFORE EXECUTION
+**Status:** EVT-1 + EVT-3 CODEX-CORRECTED IMPLEMENTATION COMPLETE; EVT-2/EVT-4 NOT STARTED
 **Author:** Claude (provenance workspace)
 **Audience:** Codex (peer reviewer) + user (decision)
 **Scope:** 4 tracks to convert CVF's operator-infrastructure gains into measurable end-user value
@@ -44,6 +44,25 @@ EVT roadmap giải quyết trực tiếp 4 gaps này.
 **Thứ tự đề xuất:** EVT-1 + EVT-3 song song (không cần GC-018) → EVT-2 (sau khi có
 live traffic data) → EVT-4 (cần GC-018 riêng).
 
+### Implementation update — 2026-05-14
+
+User approved Codex's 5/5 roadmap corrections and authorized implementation.
+EVT-1 and EVT-3 are implemented with the corrected architecture:
+
+- EVT-1: false-positive reports are append-only events linked by `receiptId`;
+  `GovernanceEvidenceReceipt` remains immutable point-in-time evidence.
+- EVT-1: report control lives in `ProcessingScreen` so BLOCK/CLARIFY users can
+  actually see it; it is not placed in `ResultViewer`.
+- EVT-1: reportable BLOCK/CLARIFY decisions are passively logged as denominator
+  events; FP claims are separate numerator events.
+- EVT-3: existing `ProcessingScreen` NEEDS_APPROVAL flow was hardened; no
+  greenfield rewrite.
+- EVT-3: approval hints are deterministic static templates. If a trigger has no
+  safe static hint, no hint is shown. There is no AI-generated hint fallback.
+
+EVT-2 remains measure-first: do not optimize route ordering before real phase
+data. EVT-4 remains gated on GC-018 and a preregistered A/B protocol.
+
 ---
 
 ## 2. Track EVT-1 — False Positive Audit
@@ -56,16 +75,22 @@ tại không thể trả lời câu hỏi: "Bao nhiêu % BLOCK của tôi là đ
 
 ### Scope kỹ thuật
 
-- Thêm field `falsePositiveReported: boolean` vào governance receipt (GovernanceEvidenceReceipt)
-- Thêm button "Report as false positive" trong UI khi response trả về BLOCK hoặc CLARIFY
+**Codex correction applied 2026-05-14:** The original "add
+`falsePositiveReported` to receipt" proposal is superseded. Receipt mutation is
+architecturally wrong because the receipt is point-in-time execution evidence.
+False-positive reports are separate append-only events linked by `receiptId`.
+
+- Thêm button "Report as false positive" trong `ProcessingScreen` khi response trả về BLOCK hoặc CLARIFY
   (không hiện với ALLOW hay NEEDS_APPROVAL)
-- Log false positive report vào JSONL (dùng governance-tax-logger pattern)
+- Log reportable decision observed + false positive report vào JSONL
 - Script `scripts/analyze_false_positive_rate.py` đọc log: tỷ lệ FP / tổng BLOCK+CLARIFY
 
 ### Files cần thay đổi / tạo mới
 
-- Sửa: `src/app/api/execute/route.ts` — thêm field vào receipt
-- Mới: component button (nhỏ, inline với result display)
+- Sửa: `src/app/api/execute/route.ts` — passive denominator logging only
+- Sửa: `src/components/ProcessingScreen.tsx` — BLOCK/CLARIFY report control
+- Mới: `src/lib/false-positive-report.ts`
+- Mới: `src/app/api/governance/false-positive-report/route.ts`
 - Mới: `scripts/analyze_false_positive_rate.py`
 - Không đụng enforcement.ts, hard gates, hay bất kỳ governance decision logic nào
 
@@ -77,10 +102,10 @@ tại không thể trả lời câu hỏi: "Bao nhiêu % BLOCK của tôi là đ
 
 ### Exit criteria
 
-- [ ] Button render đúng sau BLOCK/CLARIFY response
-- [ ] Report được log vào JSONL
-- [ ] Script analyze chạy và in tỷ lệ FP/total
-- [ ] `npm run test:run` PASS, lint PASS, tsc PASS
+- [x] Button render đúng sau BLOCK/CLARIFY response
+- [x] Report được log vào JSONL
+- [x] Script analyze chạy và in tỷ lệ FP/total
+- [x] Targeted `npm run test:run` PASS; `npm run lint` PASS; `npx tsc --noEmit` PASS
 
 ### Câu hỏi cho Codex
 
@@ -137,11 +162,12 @@ gì khác không? — đây là dead-end UX tệ nhất.
 
 ### Scope kỹ thuật
 
-- Audit NEEDS_APPROVAL user journey end-to-end (không code trước, audit trước)
+- Audit NEEDS_APPROVAL user journey end-to-end. Codex verified this already
+  lives in `ProcessingScreen`; harden the existing journey, do not rewrite it.
 - Thêm vào response khi NEEDS_APPROVAL:
   - Estimated context: "Yêu cầu đã được gửi đến Admin để xem xét"
-  - Rewrite hint: gợi ý ngắn cách đơn giản hóa request để tránh trigger approval
-    (ví dụ: "Thử bỏ phần X để request được xử lý ngay")
+  - Deterministic safe hint: gợi ý ngắn từ static template map nếu trigger có
+    safe template đã audit
 - Không thay đổi approval logic, không thay đổi ai là approver, không thay đổi threshold
 
 ### Boundary (quan trọng)
@@ -150,6 +176,15 @@ gì khác không? — đây là dead-end UX tệ nhất.
 - KHÔNG phải hướng dẫn bypass governance
 - KHÔNG expose nội dung các R2/R3 patterns
 - Nếu không thể viết hint an toàn → bỏ hint, chỉ thêm context message
+- Không dùng AI-generated/runtime rewrite hint fallback
+
+### Exit criteria
+
+- [x] NEEDS_APPROVAL screen có context message rõ
+- [x] User biết next step
+- [x] No exposure of hard gate internals
+- [x] Test coverage cho NEEDS_APPROVAL render
+- [x] Static hint only; no AI-generated fallback
 
 ### Câu hỏi cho Codex
 
