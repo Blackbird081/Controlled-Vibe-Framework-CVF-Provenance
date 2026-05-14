@@ -433,9 +433,11 @@ They ARE the next frontier if CVF wants to demonstrate direct end-user value.
 ## Next Roadmap — EVT (End-User Value Track)
 
 Roadmap file: `docs/roadmaps/CVF_EVT_END_USER_VALUE_ROADMAP_2026-05-13.md`
+Codex review file: `docs/reviews/CVF_EVT_ROADMAP_CODEX_REVIEW_2026-05-14.md`
 
-Status: DRAFT — PENDING CODEX REVIEW. Do not implement any EVT track without:
-1. Codex review of the roadmap
+Status: DRAFT — CODEX REVIEW RECORDED; PENDING USER APPROVAL. Do not implement
+any EVT track without:
+1. Reading the Codex review file above
 2. User explicit approval per track
 3. GC-018 for EVT-2 (if execution order changes) and EVT-4
 
@@ -461,15 +463,21 @@ EVT-4 — Output Quality A/B Baseline (requires GC-018, 3–5 days)
   NOT a QBS rerun — different question entirely.
   Start: only after separate GC-018 + user approves prompt set.
 
-### Codex questions (unanswered — next agent must not skip)
+### Codex questions (answered in review — next agent must not skip)
 
-The roadmap contains 4 open questions for Codex:
+The roadmap contains 5 open questions for Codex (4 track questions + 1 meta):
 1. EVT-1: Should FP report trigger async Admin notification or passive log only?
 2. EVT-2: Does parallelizing DLP + intent classification violate governance contract?
 3. EVT-3: Where is the line between "helpful UX hint" and "governance bypass guide"?
 4. EVT-4: If CFG-B < CFG-A, is it an architectural problem or a prompt-engineering fix?
+5. Meta: Is there a more important end-user value gap not covered?
 
-Plus 1 meta-question: Is there a more important end-user value gap not covered?
+Codex answer summary: EVT direction is correct, but do not execute exactly as
+written. EVT-1 should log false-positive reports as separate events linked to
+receipts, not mutate receipts. EVT-3 should be audit + hardening of the existing
+approval UX. EVT-2 must measure actual live route phases before optimization.
+EVT-4 remains separate from QBS and requires GC-018 plus preregistered protocol.
+Codex also recommends adding/deferring EVT-5: task recovery / abandonment rate.
 
 ## Repository and Keys
 

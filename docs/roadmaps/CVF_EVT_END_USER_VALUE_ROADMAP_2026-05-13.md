@@ -1,11 +1,12 @@
 # CVF End-User Value Track (EVT) Roadmap — 2026-05-13
 
-**Status:** DRAFT — PENDING CODEX REVIEW BEFORE EXECUTION
+**Status:** DRAFT — CODEX REVIEW RECORDED; PENDING USER APPROVAL BEFORE EXECUTION
 **Author:** Claude (provenance workspace)
 **Audience:** Codex (peer reviewer) + user (decision)
 **Scope:** 4 tracks to convert CVF's operator-infrastructure gains into measurable end-user value
 **Document class:** ROADMAP
 **Parent context:** EA Enhancement Tracks A–E COMPLETE (public-sync commit `8aa7e97`)
+**Codex review:** `docs/reviews/CVF_EVT_ROADMAP_CODEX_REVIEW_2026-05-14.md`
 
 ---
 
