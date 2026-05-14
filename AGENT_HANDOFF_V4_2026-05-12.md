@@ -556,6 +556,75 @@ Evidence artifacts:
 - `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_EVIDENCE_2026-05-14.json`
 - `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_SUMMARY_2026-05-14.md`
 
+### EVT post-completion verification — 2026-05-14 (Claude, provenance workspace)
+
+Reviewed Codex's two EVT completion commits (`c8a11760`, `15f54d80`) against the
+review file `docs/reviews/CVF_EVT_ROADMAP_CODEX_REVIEW_2026-05-14.md`.
+
+**Spec conformance — 5/5 Codex corrections applied:**
+
+- EVT-1: `false-positive-report.ts` writes separate append-only JSONL events
+  (`REPORTABLE_DECISION_OBSERVED` + `FALSE_POSITIVE_REPORTED`) linked by
+  `receiptId`. Receipt is NOT mutated — verified via
+  `git diff bb9491ae c8a11760 -- src/app/api/execute/route.ts` showing only
+  a side-effect call to `recordReportableDecisionObserved`, no receipt field
+  addition.
+- EVT-1 UI: "Report false positive" button lives in `ProcessingScreen.tsx`
+  (lines 486–515), not `ResultViewer`. Correct surface for BLOCK/CLARIFY.
+- EVT-2: measure-first protocol followed. 20/20 live `/api/execute` samples
+  collected; median governance tax 1.57% GREEN; no optimization performed
+  because no AMBER/RED phase was measured.
+- EVT-3: `resolveApprovalSafeHint` (ProcessingScreen.tsx:80–104) is a fixed
+  pattern→safeHint Map, deterministic and static. No AI-generated fallback.
+  Aligns with the "templated/deterministic, never AI-generated" constraint.
+- EVT-4: GC-018 (`docs/reviews/CVF_GC018_EVT4_OUTPUT_QUALITY_AB_BASELINE_2026-05-14.md`)
+  approved, preregistration committed before run, decision rule documented
+  (`>= -0.05`). Result honestly recorded as negative.
+- EVT-5 added: extends existing `noncoder-metrics.ts` (W127 contract) with
+  `taskRecoveryRate` + `governanceAbandonmentRate`. No reinvention.
+
+**Build health:**
+
+- `npx tsc --noEmit` — PASS (exit 0).
+- `npm run test:run` — 2613 PASS / 8 FAIL / 2 skipped (200 test files: 195 PASS,
+  5 FAIL).
+- All 8 failures are pre-existing and unrelated to EVT commits. Verified via
+  `git log bb9491ae..HEAD -- <failed-test-paths>` returning empty for every
+  failed file:
+  - `src/app/api/admin/knowledge/w117-cp4-integration.test.ts` (3) — knowledge
+    store mock/wiring drift, last touched far before EVT
+  - `src/lib/hooks/useModals.test.ts` (1) — permission gates
+  - `src/lib/intent-router-evidence-parity.test.ts` (2) — wizard mapping
+    (last touched in W122-T1, 2026-04-27)
+  - `src/lib/templates/governance-enforcement.test.ts` (1) — template registry
+    drift (`meeting_notes`, `job_description`, `performance_review` missing
+    from `skill-template-map.json`); last touched in commit `30ff4c66` (template
+    quality work, well before EVT).
+
+**EVT-4 finding — material and must not be ignored:**
+
+CFG-B (CVF-governed) median normalized quality delta vs CFG-A (bare provider)
+is **-0.28** on 20/20 R0/R1 non-coder prompts. Every single prompt scored lower
+under governance. Per preregistration, this is **not** an architectural failure
+by itself — it triggers a prompt/template remediation track. But it IS the
+first concrete evidence that current CVF governance materially reduces output
+usefulness for non-coder R0/R1 tasks while preserving audit/safety. Any future
+"CVF improves end-user value" claim must reconcile with this evidence or
+explicitly scope around it.
+
+**Non-blocking but worth tracking:**
+
+- `ProcessingScreen.tsx` grew 646 → 783 lines (advisory threshold 700 for
+  `frontend_component`; hard threshold 1000). Still under hard cap, no
+  exception entry needed yet. Next touch should consider extracting the FP
+  button block and `resolveApprovalSafeHint` into sub-components.
+- 8 pre-existing test failures should be tracked as a separate cleanup ticket,
+  not as EVT regressions.
+
+**Verdict for next agent / codex:** EVT roadmap implementation is structurally
+correct and safe to merge. The negative EVT-4 result is the most important
+output of this roadmap — treat it as evidence, not as a bug to fix in EVT-4.
+
 ## Repository and Keys
 
 All public work goes in the public-sync clone:
