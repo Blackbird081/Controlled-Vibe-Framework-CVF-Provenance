@@ -12,6 +12,7 @@ const appendCostEventMock = vi.hoisted(() => vi.fn());
 
 vi.mock('@/lib/ai', () => ({
     executeAI: executeAIMock,
+    CVF_SYSTEM_PROMPT: 'BASE_SYSTEM_PROMPT',
 }));
 
 vi.mock('@/lib/enforcement', () => ({

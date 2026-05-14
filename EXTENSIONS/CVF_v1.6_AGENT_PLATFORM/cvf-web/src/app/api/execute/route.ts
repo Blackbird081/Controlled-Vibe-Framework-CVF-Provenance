@@ -725,8 +725,9 @@ export async function POST(request: NextRequest) {
             typeof body.knowledgeCollectionId === 'string' && body.knowledgeCollectionId.trim()
                 ? body.knowledgeCollectionId.trim()
                 : null;
-        const knowledgeSource = retrievedKnowledgeContext ? 'retrieval' : 'none';
-        const enrichedSystemPrompt = hasKnowledgeContext(finalKnowledgeContext)
+        const knowledgeInjected = hasKnowledgeContext(finalKnowledgeContext);
+        const knowledgeSource = knowledgeInjected ? 'retrieval' : 'none';
+        const enrichedSystemPrompt = knowledgeInjected
             ? buildKnowledgeSystemPrompt(CVF_SYSTEM_PROMPT, finalKnowledgeContext, {
                 orgId: session?.orgId,
                 teamId: session?.teamId,
@@ -772,7 +773,7 @@ export async function POST(request: NextRequest) {
                         model: 'not configured',
                         routingDecision: routingResult.decision,
                         knowledgeSource,
-                        knowledgeInjected: !!enrichedSystemPrompt,
+                        knowledgeInjected,
                         knowledgeCollectionId: requestedKnowledgeCollectionId,
                         knowledgeChunkCount: retrievalResult.allowedChunkCount,
                     }),
@@ -868,7 +869,7 @@ export async function POST(request: NextRequest) {
                         model: body.model ?? aiResult.model ?? routedProvider,
                         routingDecision: routingResult.decision,
                         knowledgeSource,
-                        knowledgeInjected: !!enrichedSystemPrompt,
+                        knowledgeInjected,
                         knowledgeCollectionId: requestedKnowledgeCollectionId,
                         knowledgeChunkCount: retrievalResult.allowedChunkCount,
                         approvalId: approvedRequestRecord?.id,
@@ -947,7 +948,7 @@ export async function POST(request: NextRequest) {
                 routerOverrode: routingResult.selectedProvider !== null && routingResult.selectedProvider !== provider,
             },
             knowledgeInjection: {
-                injected: !!enrichedSystemPrompt,
+                injected: knowledgeInjected,
                 contextLength: finalKnowledgeContext?.length ?? 0,
                 source: knowledgeSource,
                 chunkCount: retrievalResult.allowedChunkCount,
@@ -969,7 +970,7 @@ export async function POST(request: NextRequest) {
                 model: body.model ?? aiResult.model ?? routedProvider,
                 routingDecision: routingResult.decision,
                 knowledgeSource,
-                knowledgeInjected: !!enrichedSystemPrompt,
+                knowledgeInjected,
                 knowledgeCollectionId: requestedKnowledgeCollectionId,
                 knowledgeChunkCount: retrievalResult.allowedChunkCount,
                 approvalId: approvedRequestRecord?.id,

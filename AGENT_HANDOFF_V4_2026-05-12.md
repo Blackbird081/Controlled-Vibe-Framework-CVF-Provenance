@@ -698,6 +698,204 @@ appeared in the EVT diff. Fixing them is a separate scope decision.
 
 **Priority order if a single next track is chosen:** F-1 > F-2 > F-4 > F-3.
 
+### F-1 diagnostic/remediation update — 2026-05-14 (Codex)
+
+User said "doit" after commit `95c95e6b`; Codex pursued F-1 first.
+
+What changed:
+
+- Added GC-018 diagnostic authorization:
+  `docs/reviews/CVF_GC018_EVT4_TEMPLATE_PAYLOAD_DIAGNOSTIC_RERUN_2026-05-14.md`.
+- Found a concrete measurement bug in `scripts/run_evt4_output_quality_ab.js`:
+  the evidence metadata recorded each frozen task's intended `templateId`, but
+  CFG-B payload hard-coded `templateId: 'documentation'` for every governed
+  call. This explains the original universal "Operational Documentation Packet"
+  wrapper. This was a harness/template-wrapper artifact, not QBS, hard-gate,
+  provider routing, or output-validator behavior.
+- Fixed the EVT-4 harness so CFG-B uses task-specific trusted-form
+  `templateId` and maps task prompts into the required fields.
+- Corrected-template live rerun evidence:
+  `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_TEMPLATE_CORRECTED_EVIDENCE_2026-05-14.json`
+  and summary:
+  `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_TEMPLATE_CORRECTED_SUMMARY_2026-05-14.md`.
+  Result: 20/20 live receipts, 0 safety failures, median delta still `-0.32`.
+  So the hard-coded documentation wrapper was real but not the full gap.
+- Added GC-018 prompt-contract remediation authorization:
+  `docs/reviews/CVF_GC018_EVT4_PROMPT_CONTRACT_REMEDIATION_2026-05-14.md`.
+- Updated `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-prompt-contract.ts`
+  so template `outputTemplate` is treated as a minimum outline, not a
+  compression target. Trusted non-coder templates now get a bounded depth target
+  and explicit instructions to include assumptions, concrete next actions,
+  rationale, and acceptance checks when applicable.
+- Added prompt-contract unit coverage in
+  `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-prompt-contract.test.ts`.
+- Prompt-contract live rerun:
+  `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_PROMPT_CONTRACT_EVIDENCE_2026-05-14.json`
+  and summary:
+  `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_PROMPT_CONTRACT_SUMMARY_2026-05-14.md`.
+  Result: 20/20 live receipts, 0 safety failures, median delta improved to
+  `-0.20`, still FAIL.
+- Depth-target live rerun:
+  `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_DEPTH_TARGET_EVIDENCE_2026-05-14.json`
+  and summary:
+  `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_DEPTH_TARGET_SUMMARY_2026-05-14.md`.
+  Result: 20/20 live receipts, 0 safety failures, median delta improved to
+  `-0.16`, still below preregistered `>= -0.05`.
+
+Verification:
+
+- `node --check scripts/run_evt4_output_quality_ab.js` PASS.
+- `npx vitest run src/lib/execute-prompt-contract.test.ts` PASS (4/4).
+- `npx tsc --noEmit` PASS.
+- `git diff --check` PASS, with only the pre-existing Windows line-ending
+  warning for `scripts/run_evt4_output_quality_ab.js`.
+
+Current F-1 status:
+
+- F-1 is **partially remediated but not closed**. Do not claim quality parity.
+- Eliminated suspects: QBS, hard gate, routing, output validator. Also the
+  all-documentation-wrapper measurement bug is fixed.
+- Remaining strongest suspect: template-family fit and per-template output
+  contracts for plan-like tasks. The weakest residual tasks are `Ops plan`,
+  `Channel choice`, `FAQ plan`, `Retention plan`, and `Acceptance criteria`;
+  reviewer rationales cite missing task-specific implementation steps, metrics,
+  and acceptance checks.
+- Next work should not keep broadening prompt text. It should inspect those
+  specific plan-like failures and decide whether to add/route to more fitting
+  trusted forms or refine the affected template contracts with a fresh GC-018.
+
+### F-1 continuation update — 2026-05-15 (Codex)
+
+User approved continuing the F-1 fix. Codex executed the bounded plan-shape
+prompt remediation under
+`docs/reviews/CVF_GC018_EVT4_PLAN_SHAPE_PROMPT_REMEDIATION_2026-05-15.md`.
+
+What changed:
+
+- `scripts/run_evt4_output_quality_ab.js` now supports output/summary stem
+  overrides and sends each frozen EVT-4 task through its intended trusted-form
+  `templateId` with mapped template inputs.
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-prompt-contract.ts`
+  now treats trusted form output templates as minimum outlines rather than
+  compression targets, applies a bounded operator-ready depth target, and adds
+  task-shape guidance for plan, comparison, FAQ, acceptance-criteria,
+  prioritization, and persona requests.
+- Task-shape guidance is emitted after the rendered template skeleton so it can
+  override generic SWOT/risk/overview/documentation wrapper headings when those
+  headings conflict with the user's requested deliverable.
+- Unit coverage was expanded in
+  `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-prompt-contract.test.ts`.
+- Route receipts now use a single `knowledgeInjected` boolean derived from
+  `hasKnowledgeContext(finalKnowledgeContext)` for consistency; this is not an
+  F-1 quality lever.
+
+Live evidence:
+
+- Plan-shape rerun:
+  `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_PLAN_SHAPE_EVIDENCE_2026-05-15.json`
+  / summary:
+  `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_PLAN_SHAPE_SUMMARY_2026-05-15.md`.
+  Result: 20/20 live receipts, 0 safety failures, median delta `-0.16`.
+- Shape-override rerun:
+  `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_SHAPE_OVERRIDE_EVIDENCE_2026-05-15.json`
+  / summary:
+  `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_SHAPE_OVERRIDE_SUMMARY_2026-05-15.md`.
+  Result: 20/20 live receipts, 0 safety failures, median delta `-0.16`.
+- Negative experiments kept as audit artifacts but not retained in runtime:
+  `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_OPERATOR_CHECKS_SUMMARY_2026-05-15.md`
+  and
+  `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_SYSTEM_APPENDIX_SUMMARY_2026-05-15.md`.
+  Both made weak plan-like tasks worse, especially `Ops plan` and
+  `Retention plan`.
+
+Verification:
+
+- `node --check scripts/run_evt4_output_quality_ab.js` PASS.
+- `npx vitest run src/lib/execute-prompt-contract.test.ts src/app/api/execute/route.test.ts`
+  PASS (33/33).
+- `npx tsc --noEmit` PASS.
+- `npm run lint` PASS with one pre-existing `_request` warning in
+  `src/app/api/system/jobs/route.test.ts`.
+- `git diff --check` PASS with only Windows line-ending warnings for
+  `AGENT_HANDOFF_V4_2026-05-12.md` and
+  `scripts/run_evt4_output_quality_ab.js`.
+
+Current F-1 status:
+
+- F-1 remains **partially remediated but not closed**. Do not claim EVT-4
+  quality parity.
+- Best measured state: corrected-template gap improved from `-0.32` to a
+  stable `-0.16`, still below the preregistered `>= -0.05` rule.
+- Eliminated suspects now include QBS, hard gate, routing, output validator,
+  all-documentation harness wrapper, and broad system-prompt appendix.
+- Next likely scope: template-specific redesign or new trusted template
+  families for plan, FAQ, acceptance-criteria, and decision/comparison
+  deliverables under a fresh scope decision/GC-018. Do not keep adding global
+  prompt instructions without new evidence.
+
+### F-1 deliverable-contract continuation — 2026-05-15 (Codex)
+
+User said "tiếp tục"; Codex continued F-1 under
+`docs/reviews/CVF_GC018_EVT4_DELIVERABLE_CONTRACT_REMEDIATION_2026-05-15.md`.
+
+What changed:
+
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-prompt-contract.ts`
+  now resolves bounded deliverable shapes for trusted non-coder form requests.
+- Primary replacement contracts are retained only for clear FAQ,
+  decision/comparison, and true plan requests.
+- Acceptance-criteria, prioritization, and persona requests keep their original
+  template skeletons plus shape guidance only, because live evidence showed
+  primary replacement contracts hurt those lanes.
+- The trusted-form depth target remains `700-1100` output tokens. A deeper
+  `1100-1600` target was tested and rejected.
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-prompt-contract.test.ts`
+  now covers the retained primary-contract and fallback boundaries.
+
+Live evidence:
+
+- Broad deliverable-contract run:
+  `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_DELIVERABLE_CONTRACT_EVIDENCE_2026-05-15.json`
+  / summary:
+  `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_DELIVERABLE_CONTRACT_SUMMARY_2026-05-15.md`.
+  Result: 20/20 live receipts, 0 safety failures, median delta `-0.16`.
+  Not retained broadly because checklist/SOP/persona/prioritization worsened.
+- Scoped deliverable-contract run:
+  `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_SCOPED_DELIVERABLE_CONTRACT_EVIDENCE_2026-05-15.json`
+  / summary:
+  `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_SCOPED_DELIVERABLE_CONTRACT_SUMMARY_2026-05-15.md`.
+  Result: 20/20 live receipts, 0 safety failures, median delta `-0.16`.
+  This is the retained code posture.
+- Deep scoped-contract run:
+  `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_DEEP_SCOPED_CONTRACT_EVIDENCE_2026-05-15.json`
+  / summary:
+  `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_DEEP_SCOPED_CONTRACT_SUMMARY_2026-05-15.md`.
+  Result: 20/20 live receipts, 0 safety failures, median delta `-0.16`.
+  Not retained because it worsened plan/persona/checklist lanes.
+
+Verification:
+
+- `node --check scripts/run_evt4_output_quality_ab.js` PASS.
+- `npx vitest run src/lib/execute-prompt-contract.test.ts src/app/api/execute/route.test.ts`
+  PASS (34/34).
+- `npx tsc --noEmit` PASS.
+- `npm run lint` PASS with one pre-existing `_request` warning in
+  `src/app/api/system/jobs/route.test.ts`.
+- `git diff --check` PASS with only Windows line-ending warnings for
+  `AGENT_HANDOFF_V4_2026-05-12.md` and
+  `scripts/run_evt4_output_quality_ab.js`.
+
+Current F-1 status:
+
+- F-1 is still **not closed**. The best live result remains median `-0.16`,
+  not the preregistered `>= -0.05` parity rule.
+- The prompt-contract layer has likely reached diminishing returns. Further
+  global prompt/depth changes are unsupported by the negative experiments.
+- Next F-1 scope should be a real template-family split, e.g.
+  `operator_plan`, `decision_memo`, `faq_outline`, and
+  `acceptance_criteria`, with the EVT-4 harness routing frozen tasks directly
+  to those families and a new preregistered live comparison.
+
 ## Repository and Keys
 
 All public work goes in the public-sync clone:

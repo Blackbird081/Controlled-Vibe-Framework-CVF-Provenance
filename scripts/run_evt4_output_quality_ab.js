@@ -16,8 +16,10 @@ const PORT = Number(process.env.EVT4_CVF_WEB_PORT || 3024);
 const BASE_URL = process.env.EVT4_CVF_WEB_BASE_URL || `http://localhost:${PORT}`;
 const EXECUTE_URL = `${BASE_URL}/api/execute`;
 const SERVICE_TOKEN = process.env.CVF_SERVICE_TOKEN || 'pvv-pilot-2026';
-const OUT_JSON = path.join(REPO_ROOT, 'docs', 'assessments', 'CVF_EVT4_OUTPUT_QUALITY_AB_EVIDENCE_2026-05-14.json');
-const OUT_MD = path.join(REPO_ROOT, 'docs', 'assessments', 'CVF_EVT4_OUTPUT_QUALITY_AB_SUMMARY_2026-05-14.md');
+const OUTPUT_STEM = process.env.EVT4_OUTPUT_STEM || 'CVF_EVT4_OUTPUT_QUALITY_AB_EVIDENCE_2026-05-14';
+const SUMMARY_STEM = process.env.EVT4_SUMMARY_STEM || 'CVF_EVT4_OUTPUT_QUALITY_AB_SUMMARY_2026-05-14';
+const OUT_JSON = path.join(REPO_ROOT, 'docs', 'assessments', `${OUTPUT_STEM}.json`);
+const OUT_MD = path.join(REPO_ROOT, 'docs', 'assessments', `${SUMMARY_STEM}.md`);
 const LIMIT = Number(process.env.EVT4_LIMIT || process.argv[2] || 20);
 const MODEL = process.env.EVT4_ALIBABA_MODEL || 'qwen-turbo';
 
@@ -106,18 +108,64 @@ function buildPrompt(task) {
   return `${task.prompt}\n\nReturn a structured, actionable answer for a non-technical operator. Include assumptions, concrete next steps, and acceptance checks.`;
 }
 
+function buildTemplateInputs(task) {
+  const commonGoal = 'The non-technical operator can act on the answer without extra interpretation.';
+  switch (task.templateId) {
+    case 'strategy_analysis':
+      return {
+        topic: task.title,
+        context: task.prompt,
+        options: 'Use the options named in the task when provided; otherwise infer practical options and label assumptions clearly.',
+        constraints: 'Keep assumptions explicit, avoid risky unsupported claims, include concrete next steps.',
+        priority: 'Growth',
+      };
+    case 'feature_prioritization':
+      return {
+        features: task.prompt,
+        goal: commonGoal,
+        constraints: 'Use a lightweight non-technical prioritization method with concrete next steps and acceptance checks.',
+        framework: 'RICE',
+      };
+    case 'user_persona':
+      return {
+        product: task.title,
+        data: task.prompt,
+        segments: 'Infer 2-4 practical segments only from the task context and mark assumptions.',
+        goals: commonGoal,
+      };
+    case 'pricing_strategy':
+      return {
+        product: task.title,
+        currentPrice: task.prompt,
+        model: /freemium/i.test(task.prompt) ? 'Freemium' : 'Tiered',
+        target: 'B2B SMB',
+        competitors: 'Unknown; state assumptions instead of inventing exact competitor prices.',
+      };
+    case 'competitor_review':
+      return {
+        company: task.title,
+        competitors: 'Likely direct and indirect competitors from the task context; state uncertainty clearly.',
+        industry: task.prompt,
+        criteria: 'Positioning, core workflow, pricing model, ease of adoption, differentiation opportunities.',
+      };
+    case 'documentation':
+    default:
+      return {
+        subject: task.title,
+        currentNotes: task.prompt,
+        readerGoal: commonGoal,
+        audience: 'Non-technical operator',
+        mustPreserve: 'Keep assumptions explicit, avoid risky unsupported claims, include concrete next steps.',
+      };
+  }
+}
+
 function buildGovernedPayload(task) {
   return {
-    templateId: 'documentation',
+    templateId: task.templateId,
     templateName: `EVT-4 ${task.title}`,
-    intent: `Analyze and produce a useful R1 output for ${task.title}.`,
-    inputs: {
-      subject: task.title,
-      currentNotes: task.prompt,
-      readerGoal: 'The non-technical operator can act on the answer without extra interpretation.',
-      audience: 'Non-technical operator',
-      mustPreserve: 'Keep assumptions explicit, avoid risky unsupported claims, include concrete next steps.',
-    },
+    intent: buildPrompt(task),
+    inputs: buildTemplateInputs(task),
     provider: 'alibaba',
     model: MODEL,
     mode: 'governance',
@@ -337,6 +385,7 @@ async function main() {
             usage: cfgA.usage,
           },
           cfgB: {
+            templateId: task.templateId,
             durationMs: cfgB.durationMs,
             model: cfgB.model,
             decision: cfgB.decision,
