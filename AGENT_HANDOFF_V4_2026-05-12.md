@@ -625,6 +625,79 @@ explicitly scope around it.
 correct and safe to merge. The negative EVT-4 result is the most important
 output of this roadmap — treat it as evidence, not as a bug to fix in EVT-4.
 
+### Findings to address later (NOT part of EVT scope — separate tickets)
+
+Each item below is bounded, has a clear owner question, and must NOT be
+silently bundled into another roadmap. Each requires its own scoping decision
+or GC-018 candidate before work starts.
+
+#### F-1. EVT-4 quality regression remediation (HIGHEST PRIORITY)
+
+- Evidence: median CFG-B - CFG-A = -0.28 on 20/20 R0/R1 non-coder prompts
+  (`docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_SUMMARY_2026-05-14.md`).
+- Problem: every governed prompt scored 0.16–0.32 lower than ungoverned on
+  usefulness / completeness / specificity.
+- Owner question: is the gap caused by (a) the documentation-template wrapper
+  truncating/reformatting AI output, (b) `CVF_SYSTEM_PROMPT` over-constraining
+  R0/R1 tasks, or (c) `output-validator` rejecting useful content?
+- Required before starting: read raw evidence JSON, sample 5–10 CFG-B outputs
+  vs CFG-A outputs by hand, identify which layer strips content. Decide
+  scope (template vs system prompt vs validator) BEFORE writing GC-018.
+- Boundary: NOT a QBS rerun. NOT a hard-gate change. NOT a provider routing
+  change. Only changes to: template wrappers, system prompt, or output
+  validator — and only if a fresh GC-018 authorizes that specific layer.
+
+#### F-2. Pre-existing test failures cleanup (separate from EVT)
+
+8 failures confirmed pre-existing (not caused by EVT commits). Bundle as one
+cleanup ticket OR split per file owner — DO NOT close as part of EVT.
+
+- `src/app/api/admin/knowledge/w117-cp4-integration.test.ts` (3 failures) —
+  writable store wiring: `queryKnowledgeChunks` returns 0 chunks after
+  `createCollection + addChunk`. Likely a `beforeEach` reset interacting badly
+  with `knowledgeStore` singleton or a routing change in
+  `queryKnowledgeChunks` that the W117-CP4 test never picked up.
+- `src/lib/hooks/useModals.test.ts` (1 failure) — `respects permission gates
+  for settings, ai usage, and context modals`. Permission contract drifted
+  from test expectations.
+- `src/lib/intent-router-evidence-parity.test.ts` (2 failures) —
+  `field-set diff is empty for: "EN data analysis intent"` and
+  `resolveGovernedStarterTemplate produces same id as routeIntent for each
+  wizard starter key`. Intent router output shape vs evidence parity drift.
+- `src/lib/templates/governance-enforcement.test.ts` (1 failure) — RULE-T4:
+  `meeting_notes`, `job_description`, `performance_review` exist as form
+  templates but are NOT mapped in `skill-template-map.json`. Either add the
+  mappings OR remove the orphan templates.
+
+Boundary: these are test/evidence drift, NOT runtime regressions. None of them
+appeared in the EVT diff. Fixing them is a separate scope decision.
+
+#### F-3. `ProcessingScreen.tsx` size advisory
+
+- Current: 783 lines (was 646 before EVT).
+- Threshold: advisory 700, hard 1000 for `frontend_component`. No exception
+  needed yet; advisory only.
+- Suggested extraction targets if/when next touched: (a) the FP-button block
+  plus `falsePositiveReportState` state machine into a
+  `FalsePositiveReportButton` sub-component; (b) `resolveApprovalSafeHint`
+  into `src/lib/approval-hints.ts` with its own unit tests.
+- Do NOT extract pre-emptively. Only if the file is touched again and adding
+  more lines would push it toward the hard 1000 cap.
+
+#### F-4. EVT analytics surface in operator UI
+
+- EVT-1 logs FP events to JSONL; EVT-5 logs recovery/abandonment events to
+  the analytics store. There is currently NO operator-facing surface that
+  reads these and displays them. `scripts/analyze_false_positive_rate.py`
+  exists but is CLI-only.
+- Owner question: where should operators see FP rate and abandonment rate?
+  Reuse the existing analytics dashboard (`AnalyticsDashboard.tsx`, already
+  at advisory threshold), or build a separate "Governance Health" panel?
+- Required before starting: confirm whether ops actually need a UI surface,
+  or whether CLI + JSONL is sufficient for the local-first GA posture.
+
+**Priority order if a single next track is chosen:** F-1 > F-2 > F-4 > F-3.
+
 ## Repository and Keys
 
 All public work goes in the public-sync clone:
