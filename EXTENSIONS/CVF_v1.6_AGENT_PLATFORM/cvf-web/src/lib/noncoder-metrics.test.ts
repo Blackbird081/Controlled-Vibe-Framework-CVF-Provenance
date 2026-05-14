@@ -54,6 +54,8 @@ describe('computeNoncoderMetrics', () => {
     expect(m.followupContinuationRate).toBeNull();
     expect(m.evidenceExportRate).toBeNull();
     expect(m.deliverablePackExportRate).toBeNull();
+    expect(m.taskRecoveryRate).toBeNull();
+    expect(m.governanceAbandonmentRate).toBeNull();
   });
 
   it('2. timeToFirstValueMs — matched pair returns elapsed', () => {
@@ -183,6 +185,17 @@ describe('computeNoncoderMetrics', () => {
     const m = computeNoncoderMetrics(events);
     expect(m.deliverablePackExportRate).toBeNull();
   });
+
+  it('16. taskRecoveryRate and abandonment rate compute from recovery prompts', () => {
+    const events = [
+      makeEvent('task_recovery_prompted', T0, { decision: 'BLOCK' }),
+      makeEvent('task_recovery_prompted', T0 + 1, { decision: 'CLARIFY' }),
+      makeEvent('task_recovery_started', T0 + 2, { method: 'false_positive_report' }),
+    ];
+    const m = computeNoncoderMetrics(events);
+    expect(m.taskRecoveryRate).toBeCloseTo(0.5);
+    expect(m.governanceAbandonmentRate).toBeCloseTo(0.5);
+  });
 });
 
 describe('generateMetricReport', () => {
@@ -202,6 +215,8 @@ describe('generateMetricReport', () => {
     expect(report.summary).toContain('Followup continuation rate');
     expect(report.summary).toContain('Evidence export rate');
     expect(report.summary).toContain('Deliverable pack export rate');
+    expect(report.summary).toContain('Task recovery rate');
+    expect(report.summary).toContain('Governance abandonment rate');
   });
 
   it('18. summary marks N/A when no data', () => {

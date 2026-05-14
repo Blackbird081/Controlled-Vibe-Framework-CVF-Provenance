@@ -26,9 +26,16 @@ vi.mock('@/lib/enforcement-log', () => ({
   logEnforcementDecision: vi.fn(),
 }));
 
+const trackEventMock = vi.fn();
+
+vi.mock('@/lib/analytics', () => ({
+  trackEvent: (...args: unknown[]) => trackEventMock(...args),
+}));
+
 describe('ProcessingScreen', () => {
   beforeEach(() => {
     vi.restoreAllMocks();
+    trackEventMock.mockClear();
   });
 
   it('forwards governed execution overrides to /api/execute', async () => {
@@ -454,6 +461,14 @@ describe('ProcessingScreen — governance evidence visibility (W114-T1 CP5)', ()
       routeId: '/api/execute',
     });
     expect(body.falsePositiveReported).toBeUndefined();
+    expect(trackEventMock).toHaveBeenCalledWith('task_recovery_prompted', expect.objectContaining({
+      receiptId: 'rcpt-block-001',
+      decision: 'BLOCK',
+    }));
+    expect(trackEventMock).toHaveBeenCalledWith('task_recovery_started', expect.objectContaining({
+      method: 'false_positive_report',
+      receiptId: 'rcpt-block-001',
+    }));
   });
 
   it('does not show false-positive report button for NEEDS_APPROVAL receipt', async () => {
@@ -488,6 +503,10 @@ describe('ProcessingScreen — governance evidence visibility (W114-T1 CP5)', ()
 
     expect(screen.queryByTestId('false-positive-report-panel')).toBeNull();
     expect(screen.getByTestId('approval-status-panel').textContent).toContain('lower-risk planning step');
+    expect(trackEventMock).toHaveBeenCalledWith('task_recovery_prompted', expect.objectContaining({
+      receiptId: 'rcpt-approval-001',
+      decision: 'NEEDS_APPROVAL',
+    }));
   });
 });
 
@@ -578,6 +597,12 @@ describe('ProcessingScreen — NEEDS_APPROVAL flow (W92-T1)', () => {
     const body = JSON.parse(String(init?.body));
     expect(body.templateId).toBe('test');
     expect(body.intent).toBe('store passwords');
+    expect(trackEventMock).toHaveBeenCalledWith('task_recovery_started', expect.objectContaining({
+      method: 'approval_request',
+      approvalId: 'apr-test-001',
+      decision: 'NEEDS_APPROVAL',
+      templateId: 'test',
+    }));
   });
 
   it('shows approval-status-panel with request ID after successful submission', async () => {

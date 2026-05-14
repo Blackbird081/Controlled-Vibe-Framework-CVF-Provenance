@@ -420,12 +420,17 @@ Key finding:
 > CVF measures itself well but has not yet proven it improves the experience
 > of the person actually sending prompts.
 
-What CVF CANNOT yet answer:
-1. What % of BLOCK/CLARIFY decisions are false positives? — No data.
-2. Does governance latency noticeably slow users down? — Baseline exists (Track A),
-   but no live traffic measured yet, and no optimization done.
-3. When NEEDS_APPROVAL fires, does the user know what to do? — UX unknown.
-4. Does CVF-governed output quality match ungoverned output? — No A/B data.
+What CVF could not answer at roadmap creation:
+1. What % of BLOCK/CLARIFY decisions are false positives? — EVT-1 now logs data;
+   rate remains traffic-dependent.
+2. Does governance latency noticeably slow users down? — EVT-2 measured 20 live
+   samples; median governance tax 1.57%, GREEN.
+3. When NEEDS_APPROVAL fires, does the user know what to do? — EVT-3 hardened
+   the existing UX with next-step copy and static safe hints.
+4. Does CVF-governed output quality match ungoverned output? — EVT-4 measured
+   a negative result on the frozen corpus: median normalized delta -0.28.
+5. Do users recover after governance friction? — EVT-5 now instruments recovery
+   and abandonment; rate remains traffic-dependent.
 
 These are NOT blockers for CVF's current use cases (local-first, developer/operator).
 They ARE the next frontier if CVF wants to demonstrate direct end-user value.
@@ -435,8 +440,10 @@ They ARE the next frontier if CVF wants to demonstrate direct end-user value.
 Roadmap file: `docs/roadmaps/CVF_EVT_END_USER_VALUE_ROADMAP_2026-05-13.md`
 Codex review file: `docs/reviews/CVF_EVT_ROADMAP_CODEX_REVIEW_2026-05-14.md`
 
-Status: EVT-1 + EVT-3 CODEX-CORRECTED IMPLEMENTATION COMPLETE; EVT-2/EVT-4
-NOT STARTED. Do not implement remaining EVT tracks without:
+Status: EVT ROADMAP COMPLETE as of 2026-05-14. EVT-4 result is negative for
+the preregistered quality-delta rule. Future EVT follow-up should be a
+template/prompt-quality remediation track, not QBS reopening. If new EVT work
+starts, still:
 1. Reading the Codex review file above
 2. User explicit approval per track
 3. GC-018 for EVT-2 if execution order changes and GC-018 for EVT-4
@@ -460,12 +467,28 @@ EVT-3 — NEEDS_APPROVAL UX Improvement (no GC-018, 2–3 days)
 EVT-2 — Governance Latency Optimization (GC-018 if execution order changes, 1–5 days)
   Depends on live traffic data from EVT-1. Run analyze_governance_tax.py first.
   Only optimize if AMBER/RED. Do not touch if GREEN.
-  Start: after N≥20 live requests collected.
+  Status: COMPLETE 2026-05-14. `scripts/run_evt2_live_latency_measurement.js`
+  collected 20/20 live Alibaba `/api/execute` samples. `scripts/analyze_governance_tax.py`
+  reported median governance tax 1.57%, fitness GREEN, low-N caveat false.
+  No optimization was made because no AMBER/RED bottleneck was measured.
 
 EVT-4 — Output Quality A/B Baseline (requires GC-018, 3–5 days)
   20 prompts × CFG-A (bare API) vs CFG-B (CVF governed). Model-assisted reviewer.
   NOT a QBS rerun — different question entirely.
-  Start: only after separate GC-018 + user approves prompt set.
+  Status: COMPLETE 2026-05-14 under
+  `docs/reviews/CVF_GC018_EVT4_OUTPUT_QUALITY_AB_BASELINE_2026-05-14.md` and
+  `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_PREREGISTRATION_2026-05-14.md`.
+  Runner: `scripts/run_evt4_output_quality_ab.js`. Live evidence completed
+  20/20 pairs, CFG-B receipts 20/20, safety failures 0, OpenAI `gpt-4o`
+  reviewer. Median normalized delta CFG-B - CFG-A = -0.28, decision rule not met.
+  Bounded conclusion: current governed documentation-template path reduced output
+  usefulness/completeness/specificity on this corpus while preserving audit/safety.
+
+EVT-5 — Task Recovery / Abandonment (no GC-018)
+  Status: COMPLETE 2026-05-14. Added analytics events
+  `task_recovery_prompted` and `task_recovery_started`; noncoder metrics now
+  compute `taskRecoveryRate` and `governanceAbandonmentRate`; rollout readout
+  includes `task_recovery` lane.
 
 ### Codex questions (answered in review — next agent must not skip)
 
@@ -512,8 +535,26 @@ Verification:
   `src/app/api/system/jobs/route.test.ts`.
 - `git diff --check` PASS.
 
-EVT-2 remains measure-first; do not optimize execution order before real phase
-data. EVT-4 still requires GC-018 and a preregistered A/B protocol.
+### EVT completion update — 2026-05-14
+
+After EVT-1/EVT-3, user approved completing the rest in order and allowed
+provider-key use without re-asking. Completed:
+
+- EVT-2.1 live latency measurement: 20/20 live samples, GREEN fitness, no
+  optimization.
+- EVT-5 recovery/abandonment instrumentation and metrics.
+- EVT-4 GC-018 + preregistration + live A/B evidence. Result negative:
+  `CFG-B - CFG-A = -0.28` median normalized quality delta. This is an evidence
+  finding, not a failed implementation. Next sensible work is template/prompt
+  remediation for governed output quality, with a fresh roadmap/GC if it changes
+  prompt contracts or quality claims.
+
+Evidence artifacts:
+
+- `docs/assessments/CVF_EVT2_LIVE_LATENCY_MEASUREMENT_2026-05-14.jsonl`
+- `docs/assessments/CVF_EVT2_LIVE_LATENCY_MEASUREMENT_2026-05-14.md`
+- `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_EVIDENCE_2026-05-14.json`
+- `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_SUMMARY_2026-05-14.md`
 
 ## Repository and Keys
 

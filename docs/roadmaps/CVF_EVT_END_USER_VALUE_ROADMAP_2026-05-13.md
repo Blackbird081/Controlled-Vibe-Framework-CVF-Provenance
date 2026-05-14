@@ -1,6 +1,6 @@
 # CVF End-User Value Track (EVT) Roadmap — 2026-05-13
 
-**Status:** EVT-1 + EVT-3 CODEX-CORRECTED IMPLEMENTATION COMPLETE; EVT-2/EVT-4 NOT STARTED
+**Status:** EVT ROADMAP COMPLETE; EVT-4 RESULT NEGATIVE FOR QUALITY-DELTA RULE
 **Author:** Claude (provenance workspace)
 **Audience:** Codex (peer reviewer) + user (decision)
 **Scope:** 4 tracks to convert CVF's operator-infrastructure gains into measurable end-user value
@@ -27,6 +27,7 @@ Gaps chưa có dữ liệu (as of 2026-05-13):
 | Governance latency thực tế | User chờ lâu hơn bare API không có lý do |
 | NEEDS_APPROVAL UX | User không biết phải làm gì tiếp theo |
 | Output quality delta | Không biết CVF có làm giảm chất lượng output không |
+| Task recovery / abandonment | Không biết user có tiếp tục sau BLOCK/CLARIFY/NEEDS_APPROVAL không |
 
 EVT roadmap giải quyết trực tiếp 4 gaps này.
 
@@ -40,6 +41,7 @@ EVT roadmap giải quyết trực tiếp 4 gaps này.
 | **EVT-2** | Governance Latency Optimization | Có thể | Thấp–Trung (1–5 ngày) | Trung |
 | **EVT-3** | NEEDS_APPROVAL UX Improvement | Không | Thấp–Trung (2–3 ngày) | Cao |
 | **EVT-4** | Output Quality A/B Baseline | Có | Trung (3–5 ngày) | Thấp–Trung |
+| **EVT-5** | Task Recovery / Abandonment | Không | Thấp | Cao |
 
 **Thứ tự đề xuất:** EVT-1 + EVT-3 song song (không cần GC-018) → EVT-2 (sau khi có
 live traffic data) → EVT-4 (cần GC-018 riêng).
@@ -62,6 +64,25 @@ EVT-1 and EVT-3 are implemented with the corrected architecture:
 
 EVT-2 remains measure-first: do not optimize route ordering before real phase
 data. EVT-4 remains gated on GC-018 and a preregistered A/B protocol.
+
+### Completion update — 2026-05-14
+
+Remaining EVT tracks were completed in order:
+
+- EVT-2.1 live measurement: 20/20 live `/api/execute` requests on Alibaba lane.
+  Median governance tax = `1.57%`, fitness = `GREEN`, low-N caveat = `false`.
+  Per roadmap, EVT-2.2 optimization was not executed because no AMBER/RED
+  bottleneck was measured.
+- EVT-5 added: browser-local analytics now records `task_recovery_prompted` and
+  `task_recovery_started`; noncoder metrics/report/readout now include task
+  recovery rate and governance-abandonment rate.
+- EVT-4 completed under fresh GC-018 and preregistration:
+  `docs/reviews/CVF_GC018_EVT4_OUTPUT_QUALITY_AB_BASELINE_2026-05-14.md` and
+  `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_PREREGISTRATION_2026-05-14.md`.
+  Live run completed 20/20 pairs with OpenAI `gpt-4o` reviewer. Median normalized
+  delta `CFG-B - CFG-A = -0.28`; decision rule not met. Bounded conclusion:
+  current governed documentation-template path reduced output quality on this
+  corpus, while preserving live receipts and safety.
 
 ---
 
@@ -141,6 +162,16 @@ bottleneck. Chưa optimize gì.
 - Nếu AMBER/RED: implement targeted optimization cho phase bottleneck
 - Ví dụ: parallelize DLP + intent classification nếu không vi phạm audit trail order
 
+### EVT-2 completion — 2026-05-14
+
+- [x] `scripts/run_evt2_live_latency_measurement.js` added.
+- [x] `scripts/analyze_governance_tax.py` added.
+- [x] 20 live requests collected:
+  `docs/assessments/CVF_EVT2_LIVE_LATENCY_MEASUREMENT_2026-05-14.jsonl`.
+- [x] Analysis summary:
+  `docs/assessments/CVF_EVT2_LIVE_LATENCY_MEASUREMENT_2026-05-14.md`.
+- [x] Fitness = GREEN (`1.57%` median governance tax). No optimization made.
+
 ### Câu hỏi cho Codex
 
 Parallelize DLP + intent classification có vi phạm governance contract không?
@@ -194,6 +225,34 @@ cao, có nên bỏ hoàn toàn suggestion và chỉ cải thiện context messag
 
 ---
 
+## 4.5. Track EVT-5 — Task Recovery / Abandonment
+
+### Vấn đề
+
+False positive rate đo CVF có quyết định sai không. Task recovery đo câu hỏi
+business-value quan trọng hơn: sau khi CVF chặn/làm rõ/yêu cầu phê duyệt, user
+có tiếp tục workflow hay bỏ cuộc?
+
+### Scope kỹ thuật
+
+- Thêm analytics event `task_recovery_prompted` khi user gặp
+  BLOCK/CLARIFY/NEEDS_APPROVAL có receipt.
+- Thêm analytics event `task_recovery_started` khi user thực hiện bước phục hồi
+  như false-positive report hoặc approval request.
+- Mở rộng noncoder metrics với:
+  - `taskRecoveryRate`
+  - `governanceAbandonmentRate`
+- Mở rộng rollout readout với lane `task_recovery`.
+
+### Exit criteria
+
+- [x] Recovery prompt/action events wired in `ProcessingScreen`.
+- [x] Metric computation and report include recovery/abandonment.
+- [x] Noncoder health readout includes Task Recovery lane.
+- [x] Unit coverage added.
+
+---
+
 ## 5. Track EVT-4 — Output Quality A/B Baseline
 
 ### Vấn đề
@@ -208,9 +267,9 @@ tốt không so với không governance). Hai câu hỏi khác nhau.
 
 ### Điều kiện tiên quyết — PHẢI HOÀN TẤT TRƯỚC KHI BẮT ĐẦU
 
-- [ ] GC-018 candidate phải được tạo và approved
-- [ ] User approve: tập 20 prompts nào được dùng cho A/B (cần curate)
-- [ ] Không được reopen QBS infrastructure — dùng reviewer mới nếu cần
+- [x] GC-018 candidate phải được tạo và approved
+- [x] User approve: tập 20 prompts nào được dùng cho A/B (cần curate)
+- [x] Không được reopen QBS infrastructure — dùng reviewer mới nếu cần
 
 ### Scope kỹ thuật
 
@@ -226,12 +285,32 @@ kappa gate).
 
 ### Exit criteria
 
-- [ ] GC-018 approved
-- [ ] 20 prompts curated và user-approved
-- [ ] 40 executions completed
-- [ ] Reviewer score documented
-- [ ] Claim statement: "CVF governance overhead [does/does not] reduce output quality
+- [x] GC-018 approved
+- [x] 20 prompts curated và user-approved
+- [x] 40 executions completed
+- [x] Reviewer score documented
+- [x] Claim statement: "CVF governance overhead [does/does not] reduce output quality
   for R0/R1 requests — delta = X, confidence interval = Y"
+
+### EVT-4 completion — 2026-05-14
+
+- GC-018: `docs/reviews/CVF_GC018_EVT4_OUTPUT_QUALITY_AB_BASELINE_2026-05-14.md`
+- Preregistration:
+  `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_PREREGISTRATION_2026-05-14.md`
+- Runner: `scripts/run_evt4_output_quality_ab.js`
+- Evidence:
+  `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_EVIDENCE_2026-05-14.json`
+- Summary:
+  `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_SUMMARY_2026-05-14.md`
+
+Result: 20/20 CFG-A direct Alibaba and CFG-B CVF-governed pairs completed.
+CFG-B produced 20/20 live receipts and 0 safety failures. OpenAI `gpt-4o`
+reviewer scored median normalized delta `CFG-B - CFG-A = -0.28`; preregistered
+decision rule was not met. Bounded claim: for this R0/R1 corpus and current
+documentation-template governed path, CVF governance preserved audit/safety but
+materially reduced output usefulness/completeness/specificity versus direct
+Alibaba. This should trigger a follow-up template/prompt-quality remediation
+track, not a QBS rerun.
 
 ### Câu hỏi cho Codex
 

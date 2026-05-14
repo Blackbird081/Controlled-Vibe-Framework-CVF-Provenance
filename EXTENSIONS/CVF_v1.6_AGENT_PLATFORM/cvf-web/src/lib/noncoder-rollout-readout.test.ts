@@ -3,8 +3,8 @@
  * W128-T1 — Lane readout model verification
  *
  * Tests:
- *   1.  computeLaneReadout([]) → 6 lanes all no_data
- *   2.  all 6 lane IDs present in readout
+ *   1.  computeLaneReadout([]) → 7 lanes all no_data
+ *   2.  all 7 lane IDs present in readout
  *   3.  entry_routing healthy when weak_fallback_rate ≤ 15%
  *   4.  entry_routing watch when weak_fallback_rate 15–30%
  *   5.  entry_routing action_required when weak_fallback_rate > 30%
@@ -61,11 +61,11 @@ const ALL_FLAGS_ON: NoncoderFlags = {
 describe('computeLaneReadout', () => {
   it('1. all no_data on empty events', () => {
     const readout = computeLaneReadout([], ALL_FLAGS_OFF);
-    expect(readout).toHaveLength(6);
+    expect(readout).toHaveLength(7);
     readout.forEach((lane) => expect(lane.status).toBe('no_data'));
   });
 
-  it('2. all 6 lane IDs present', () => {
+  it('2. all 7 lane IDs present', () => {
     const readout = computeLaneReadout([], ALL_FLAGS_OFF);
     const ids = readout.map((l) => l.laneId);
     expect(ids).toContain('entry_routing');
@@ -74,6 +74,7 @@ describe('computeLaneReadout', () => {
     expect(ids).toContain('followup_continuity');
     expect(ids).toContain('evidence_export');
     expect(ids).toContain('deliverable_pack');
+    expect(ids).toContain('task_recovery');
   });
 
   it('3. entry_routing healthy when weak_fallback_rate ≤ 15%', () => {
@@ -268,7 +269,7 @@ describe('buildRolloutRecommendations', () => {
     const readout = computeLaneReadout([], ALL_FLAGS_OFF);
     // All no_data — none are healthy, so all included
     const recs = buildRolloutRecommendations(readout);
-    expect(recs.length).toBe(6);
+    expect(recs.length).toBe(7);
 
     // Make all healthy by providing ideal data
     const idealEvents = [
@@ -286,6 +287,8 @@ describe('buildRolloutRecommendations', () => {
       makeEvent('execution_accepted', T0 + 20, { id: 'ea4' }),
       makeEvent('evidence_exported', T0 + 21, { executionId: 'ea1', format: 'md' }),
       makeEvent('deliverable_pack_exported', T0 + 22),
+      makeEvent('task_recovery_prompted', T0 + 23, { decision: 'BLOCK' }),
+      makeEvent('task_recovery_started', T0 + 24, { method: 'false_positive_report' }),
     ];
     const idealReadout = computeLaneReadout(idealEvents, ALL_FLAGS_ON);
     const idealRecs = buildRolloutRecommendations(idealReadout);

@@ -4,6 +4,7 @@ import { useEffect, useState, useCallback } from 'react';
 import { useSettings } from './Settings';
 import { useLanguage } from '@/lib/i18n';
 import { logEnforcementDecision } from '@/lib/enforcement-log';
+import { trackEvent } from '@/lib/analytics';
 import { getSafetyStatus } from '@/lib/safety-status';
 import type { SafetyRiskLevel } from '@/lib/safety-status';
 import type { ExecutionRequest, GovernanceEvidenceReceipt } from '@/lib/ai';
@@ -275,6 +276,18 @@ export function ProcessingScreen({
         Boolean(governanceEvidence?.receiptId) &&
         (governanceEvidence?.decision === 'BLOCK' || governanceEvidence?.decision === 'CLARIFY');
 
+    useEffect(() => {
+        const decision = governanceEvidence?.decision;
+        if (!governanceEvidence?.receiptId || !decision) return;
+        if (decision !== 'BLOCK' && decision !== 'CLARIFY' && decision !== 'NEEDS_APPROVAL') return;
+        trackEvent('task_recovery_prompted', {
+            receiptId: governanceEvidence.receiptId,
+            decision,
+            riskLevel: governanceEvidence.riskLevel,
+            templateId,
+        });
+    }, [governanceEvidence?.decision, governanceEvidence?.receiptId, governanceEvidence?.riskLevel, templateId]);
+
     const reportFalsePositive = useCallback(async () => {
         if (!canReportFalsePositive || !governanceEvidence?.receiptId || !governanceEvidence.decision) return;
 
@@ -298,6 +311,13 @@ export function ProcessingScreen({
                 throw new Error(typeof data.error === 'string' ? data.error : 'Unable to record report');
             }
             setFalsePositiveReportState('submitted');
+            trackEvent('task_recovery_started', {
+                method: 'false_positive_report',
+                receiptId: governanceEvidence.receiptId,
+                decision: governanceEvidence.decision,
+                riskLevel: governanceEvidence.riskLevel,
+                templateId,
+            });
         } catch {
             setFalsePositiveReportState('error');
         }
@@ -326,6 +346,12 @@ export function ProcessingScreen({
             const data = await response.json();
             if (data.success && data.id) {
                 setApprovalRequestId(data.id);
+                trackEvent('task_recovery_started', {
+                    method: 'approval_request',
+                    approvalId: data.id,
+                    decision: 'NEEDS_APPROVAL',
+                    templateId,
+                });
             }
         } finally {
             setApprovalSubmitting(false);
