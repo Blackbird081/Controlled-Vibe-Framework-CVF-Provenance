@@ -45,73 +45,98 @@ NHỮNG GÌ PHẢI GIỮ NGUYÊN:
 
 SUCCESS CRITERIA:
 - Analyze the subject and organize content so non-experts can follow each step
-- Chỉ ra bước làm, rule cần nhớ, và lỗi hay gặp
-- Kết thúc bằng checklist hoặc next step rõ ràng
+- Chỉ ra bước làm, required artifacts/fields, rule cần nhớ, QA checks, và lỗi hay gặp
+- Có decision branches và escalation rules khi tình huống rẽ nhánh
+- Kết thúc bằng handoff acceptance checklist rõ ràng
+- Giữ phần overview/assumptions ngắn; ưu tiên procedure, QA và recovery có thể làm ngay
 - Không yêu cầu người đọc hiểu API hoặc developer internals
 
 OUTPUT FORMAT (use these exact section headings in English):
 ## What This Document Is For
-## The Main Flow
-## Rules To Keep In Mind
-## Practical Example
-## Common Confusion And Fixes
-## Handoff Checklist`,
-        outputExpected: ['Mục tiêu tài liệu', 'Các bước hoặc quy tắc chính', 'Ví dụ / tình huống', 'Lỗi hay gặp và cách xử lý', 'Checklist bàn giao'],
+## Required Inputs, Artifacts, And Fields
+## Step-By-Step Procedure
+## Decision Branches
+## QA Checks
+## Common Failure Modes And Recovery
+## Final Handoff Acceptance Checklist`,
+        outputExpected: ['Mục tiêu tài liệu', 'Required inputs/artifacts/fields', 'Step-by-step procedure', 'Decision branches', 'QA checks', 'Failure recovery', 'Final handoff acceptance checklist'],
         difficulty: 'easy',
-        outputTemplate: `# Operational Documentation Packet
+        outputTemplate: `# SOP And Handoff Runbook
 
 ## 1. What This Document Is For
-- Topic
+- Topic, in one sentence
 - Who should use it
 - What they should achieve
+- Done state
+- Key assumptions, max 3 bullets
 
-## 2. The Main Flow
-- Step-by-step actions
-- Key decisions or branches
+## 2. Required Inputs, Artifacts, And Fields
+| Required Item | Source/Owner | Where It Lives | Needed Before Step | Acceptance Check |
+| --- | --- | --- | --- | --- |
 
-## 3. Rules To Keep In Mind
-- Required constraints
-- Terms or phrases that must stay unchanged
+## 3. Step-By-Step Procedure
+| Step | Owner/Role | Trigger | Action | Required Artifact Or Field | Done Signal | Acceptance Check |
+| --- | --- | --- | --- | --- | --- | --- |
 
-## 4. Practical Example
-- A realistic scenario
-- What good execution looks like
+## 4. Decision Branches
+| Situation | Decision Rule | Next Action | Owner/Role | Escalate When |
+| --- | --- | --- | --- | --- |
 
-## 5. Common Confusion And Fixes
-- Common mistake
-- How to recover
+## 5. QA Checks
+- Pre-handoff QA:
+- Data/content QA:
+- User-facing QA:
+- Audit/evidence to retain:
 
-## 6. Handoff Checklist
-- What to verify before passing work on`,
-        sampleOutput: `# Operational Documentation Packet
+## 6. Common Failure Modes And Recovery
+| Situation | How To Notice It | What To Do | When To Escalate |
+| --- | --- | --- | --- |
+
+## 7. Final Handoff Acceptance Checklist
+- [ ] Required artifacts or fields are complete
+- [ ] Procedure steps have visible done signals
+- [ ] QA checks have pass/fail evidence
+- [ ] Escalation rule is clear
+- [ ] Open assumptions are marked for confirmation`,
+        sampleOutput: `# SOP And Handoff Runbook
 
 ## 1. What This Document Is For
 - This guide explains how the team receives a new inbound lead and turns it into a same-day quotation.
 - It is written for new sales operators.
+- Done state: the lead is qualified, quoted, or escalated with notes.
+- Key assumptions: lead form and CRM access are available; the approved quote template exists.
 
-## 2. The Main Flow
-1. Check whether the form submission is complete.
-2. Call the lead within 2 hours.
-3. Confirm project type, budget range, and timeline.
-4. If the lead is qualified, send the correct quote package the same day.
+## 2. Required Inputs, Artifacts, And Fields
+| Required Item | Source/Owner | Where It Lives | Needed Before Step | Acceptance Check |
+| --- | --- | --- | --- | --- |
+| Lead form | Website form | CRM lead record | Step 1 | Required fields are present |
+| Quote template | Sales lead | Shared drive | Step 4 | Approved version is used |
 
-## 3. Rules To Keep In Mind
-- Keep the Enterprise Plus package name unchanged.
-- Never promise a timeline before qualification is complete.
-- Escalate any legal or procurement question to the manager.
+## 3. Step-By-Step Procedure
+| Step | Owner/Role | Trigger | Action | Required Artifact Or Field | Done Signal | Acceptance Check |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | Sales operator | New form arrives | Check whether the submission is complete | Lead form | Lead status updated | Missing fields are marked |
+| 2 | Sales operator | Lead is complete | Call the lead within 2 hours | Phone/email | Call note stored | Project type, budget, timeline captured |
 
-## 4. Practical Example
-- A lead asks for automation support for a 30-person team.
-- The operator confirms needs, checks budget fit, and sends the approved quote template.
+## 4. Decision Branches
+| Situation | Decision Rule | Next Action | Owner/Role | Escalate When |
+| --- | --- | --- | --- | --- |
+| Missing budget | Budget not stated | Ask for range before quote | Sales operator | Lead refuses or asks for procurement terms |
 
-## 5. Common Confusion And Fixes
-- If the lead asks for pricing before qualification, explain the quick intake first.
-- If required information is missing, pause and request the missing items before quoting.
+## 5. QA Checks
+- Lead status, notes, and next action are visible in CRM.
+- Quote uses approved package wording.
 
-## 6. Handoff Checklist
-- Lead status updated
-- Qualification notes stored
-- Quote sent or escalation recorded`,
+## 6. Common Failure Modes And Recovery
+| Situation | How To Notice It | What To Do | When To Escalate |
+| --- | --- | --- | --- |
+| Lead asks for pricing too early | Qualification fields are blank | Explain quick intake first | Legal/procurement terms appear |
+
+## 7. Final Handoff Acceptance Checklist
+- [ ] Lead status updated
+- [ ] Qualification notes stored
+- [ ] Quote sent or escalation recorded
+- [ ] Open assumptions are marked`,
     },
     {
         id: 'faq_outline',

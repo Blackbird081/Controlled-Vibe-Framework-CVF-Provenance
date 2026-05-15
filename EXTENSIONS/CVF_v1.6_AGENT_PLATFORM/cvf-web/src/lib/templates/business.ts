@@ -240,57 +240,59 @@ CONSTRAINTS:
 [constraints]
 
 OUTPUT FORMAT:
-- Operator Action Plan → Detailed Timeline → First 24-72 Hours → Operating Checklist → Risks and Dependencies → Acceptance Checks
+- Operator Action Plan → First 24-72 Hour Start Procedure → Detailed Timeline → Operating Cadence and Decision Branches → QA Checks → Risks/Failure Modes/Escalation → Acceptance Checks
 
 SUCCESS CRITERIA:
 - Có timeline/phases rõ ràng
 - Mỗi bước có owner hoặc role
 - Mỗi bước có artifact, success metric, acceptance check
+- Có decision branches, recurring cadence, QA checkpoints và escalation rule
 - Có daily/weekly detail đủ cụ thể cho non-coder
 - Người không chuyên có thể bắt đầu trong 24-72 giờ`,
-        outputExpected: ['Operator Action Plan', 'Detailed Timeline', 'First 24-72 Hours', 'Operating Checklist', 'Risks and Dependencies', 'Acceptance Checks'],
+        outputExpected: ['Operator Action Plan', 'First 24-72 Hour Start Procedure', 'Detailed Timeline', 'Operating Cadence and Decision Branches', 'QA Checks', 'Risks/Failure Modes/Escalation', 'Acceptance Checks'],
         outputTemplate: `# Operator Action Plan
 
-## 1. Goal, Constraints, And Assumptions
+## 1. Goal, Constraints, Done State, And Assumptions
 - Goal:
 - Constraints:
+- Done state:
 - Assumptions:
-- Definition of done:
 
-## 2. Detailed Timeline
+## 2. First 24-72 Hour Start Procedure
+| Step | Owner/Role | Action | Concrete Artifact | Done Signal | Acceptance Check |
+| --- | --- | --- | --- | --- | --- |
+| 1. | | | | | |
+| 2. | | | | | |
+| 3. | | | | | |
+
+## 3. Detailed Timeline
 | Phase/Date | Owner/Role | Detailed Action | Concrete Artifact | Success Metric | Acceptance Check |
 | --- | --- | --- | --- | --- | --- |
 | 1. | | | | | |
 | 2. | | | | | |
 | 3. | | | | | |
 
-## 3. First 24-72 Hours
-- Step 1:
-  - Owner:
-  - Artifact:
-  - How to verify:
-- Step 2:
-  - Owner:
-  - Artifact:
-  - How to verify:
-- Step 3:
-  - Owner:
-  - Artifact:
-  - How to verify:
+## 4. Operating Cadence And Decision Branches
+| Cadence/Situation | Owner/Role | What To Check | Decision Rule | Next Action |
+| --- | --- | --- | --- | --- |
+| Daily/weekly | | | | |
+| Exception | | | | |
 
-## 4. Operating Checklist
-- Daily/weekly recurring check:
-- Customer/user-facing check:
-- Data or tracking check:
-- Escalation rule:
-
-## 5. Risks, Dependencies, And Checkpoints
-- Key risks:
-- Dependencies:
+## 5. QA Checks And Review Checkpoints
+- Pre-launch QA:
+- Operational QA:
+- Customer/user-facing QA:
 - Review checkpoints:
 
-## 6. Acceptance Checks
+## 6. Risks, Dependencies, Failure Modes, And Escalation
+- Key risks:
+- Dependencies:
+- Failure mode:
+- Escalation rule:
+
+## 7. Acceptance Checks
 - [ ] Owner is clear for every action
+- [ ] Required artifacts are named
 - [ ] Metrics are measurable
 - [ ] Acceptance checks are specific enough to verify
 - [ ] First 72 hours can be executed without extra strategy work`,

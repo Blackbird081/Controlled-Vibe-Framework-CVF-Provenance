@@ -709,3 +709,92 @@ Recommended continuation:
 - Commit this tranche.
 - Next useful product work is QH-3 SOP/handoff, QH-4 persona-to-action, or
   QH-5 decision activation, each with fresh GC/review scope before code.
+
+## QH-3 SOP/Handoff Procedural Depth — Implemented, Focused Mixed Improvement — 2026-05-16
+
+Codex executed QH-3 as bounded product-quality hardening, not F-1 reopening.
+
+Pre-implementation review:
+
+- `docs/reviews/CVF_GC018_QH3_SOP_HANDOFF_PROCEDURAL_DEPTH_2026-05-16.md`
+
+Implementation:
+
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-prompt-contract.ts`
+  now makes checklist/documentation outputs procedural runbooks with:
+  - required inputs, artifacts, and fields;
+  - step-by-step procedure;
+  - decision branches;
+  - QA checks;
+  - common failure modes and recovery;
+  - escalation rules;
+  - final handoff acceptance checklist.
+- The checklist guidance now keeps overview/assumptions short and prioritizes
+  executable tables/checks to avoid spending the retained `3072` output cap on
+  background prose.
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/templates/content.ts`
+  documentation template was aligned to SOP/handoff runbook structure.
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/templates/business.ts`
+  operator-plan template was aligned to first-72-hour procedure, operating
+  cadence, QA checkpoints, failure modes, and escalation.
+
+Static verification:
+
+- `npx vitest run src/lib/execute-prompt-contract.test.ts src/lib/templates/index.test.ts src/lib/front-door-template-standard.test.ts src/lib/trusted-form-corpus.test.ts`
+  PASS: `124/124`.
+- `npx tsc --noEmit` PASS.
+- `npm run lint` PASS with one pre-existing warning:
+  `src/app/api/system/jobs/route.test.ts` unused `_request`.
+
+Focused live evidence:
+
+- Initial evidence:
+  `docs/assessments/CVF_EVT4_DEEPSEEK_V4_PRO_QH3_FOCUSED_EVIDENCE_2026-05-16.json`
+- Initial summary:
+  `docs/assessments/CVF_EVT4_DEEPSEEK_V4_PRO_QH3_FOCUSED_SUMMARY_2026-05-16.md`
+- Initial result:
+  - Completed `3/3`.
+  - CFG-B receipts `3/3`.
+  - Safety failures `0`.
+  - Median delta `-0.16`.
+  - EVT4-08 ops plan improved strongly, but EVT4-12 SOP regressed because the
+    first run spent too much space on overview/assumptions and hit output cap.
+
+Bounded refinement:
+
+- Kept QH-3 structure, shortened front matter, and emphasized executable
+  procedure/QA/recovery tables.
+
+Focused R2 evidence:
+
+- Evidence:
+  `docs/assessments/CVF_EVT4_DEEPSEEK_V4_PRO_QH3_FOCUSED_R2_EVIDENCE_2026-05-16.json`
+- Summary:
+  `docs/assessments/CVF_EVT4_DEEPSEEK_V4_PRO_QH3_FOCUSED_R2_SUMMARY_2026-05-16.md`
+- Result:
+  - Completed `3/3`.
+  - CFG-B receipts `3/3`.
+  - Safety failures `0`.
+  - Median delta `-0.12`.
+  - Registered parity decision rule not met.
+  - EVT4-07 builder handoff improved vs QH-1/QH-2 CFG-B `0.68 -> 0.84`.
+  - EVT4-08 ops plan improved vs QH-1/QH-2 CFG-B `0.68 -> 0.80`.
+  - EVT4-12 SOP draft stayed stable vs QH-1/QH-2 CFG-B `0.84 -> 0.84`.
+
+Result packet:
+
+- `docs/reviews/CVF_QH3_SOP_HANDOFF_PROCEDURAL_DEPTH_RESULT_2026-05-16.md`
+
+Current claim:
+
+- QH-3 is implemented as bounded procedural-depth product hardening.
+- Governance receipts and safety remain stable on focused QH-3 evidence.
+- Do **not** claim F-1 parity.
+- Do **not** claim full EVT-4 no-degrade.
+- Do **not** rerun full EVT-4 until another meaningful product tranche is
+  implemented.
+
+Recommended continuation:
+
+- Commit this tranche.
+- Next highest-value tranche: QH-5 decision memo activation.

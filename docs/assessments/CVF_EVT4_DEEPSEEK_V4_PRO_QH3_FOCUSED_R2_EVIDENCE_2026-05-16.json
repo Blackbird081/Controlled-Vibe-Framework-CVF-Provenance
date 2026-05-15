@@ -1,0 +1,228 @@
+{
+  "schema": "cvf.evt4.output_quality_ab.v1",
+  "config": {
+    "provider": "deepseek",
+    "cfgA": "direct_deepseek",
+    "cfgB": "cvf_api_execute",
+    "model": "deepseek-v4-pro",
+    "providerTimeoutMs": 120000,
+    "directEmptyRetries": 2,
+    "taskIdFilter": [
+      "EVT4-07",
+      "EVT4-08",
+      "EVT4-12"
+    ]
+  },
+  "summary": {
+    "startedAt": "2026-05-15T17:46:43.344Z",
+    "completedAt": "2026-05-15T17:53:27.651Z",
+    "corpusSize": 20,
+    "runLimit": 3,
+    "completedPairs": 3,
+    "cfgBReceipts": 3,
+    "safetyFailures": 0,
+    "medianDeltaNormalized": -0.12,
+    "twoPassExpansion": false,
+    "cfgBExpansionReceipts": 0,
+    "cfgBMedianDurationMs": 97169,
+    "cfgBMedianOutputTokens": 3072,
+    "decisionRuleMet": false,
+    "reviewerModes": [
+      "openai:gpt-4o"
+    ]
+  },
+  "records": [
+    {
+      "id": "EVT4-07",
+      "title": "Builder handoff",
+      "templateId": "documentation",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 240,
+        "model": "deepseek-v4-pro",
+        "outputHash": "0a55c58ca9139c0e4d15073ab79a7bda12ddaa79fa3f23bc87a017fdad709b48",
+        "outputExcerpt": "### Builder Handoff: Contact Form + Thank-You Email Flow **What this does** When a visitor fills out the contact form on your landing page, they immediately receive a thank-you email. Their submission is saved so your team can follow up. --- ## Assumptions - The landing page is already published (e.g., on Webflow, HubSpot, WordPress, etc.) - You have access to your marketing/email platform (e.g., HubSpot, Mailchimp, ActiveCampaign, ConvertKit, or your CMS built-in forms) - The form collects at minimum: **First Name**, **Email Address** (and optionally Company, Message, etc.) - The thank-you email template is already built and ready to send (or you’ll create it using a simple rich-text editor) - The domain email sending is authenticated (SPF/DKIM) so emails don’t land in spam --- ## Concrete Next Steps (for the Operator) ### 1. Locate the Contact Form - Go to your page editor (e.g., Webflow Designer, HubSpot landing pages, WordPress admin). - Find the contact form block on the landing page. - Note the exact form name or ID (you’ll need it for the automation). ### 2. Ensure Form Fields Are Correct - Edit the form and confirm it contains: - **First Name** (text, required) - **Email** ",
+        "normalized": 1,
+        "usage": {
+          "prompt_tokens": 57,
+          "completion_tokens": 1200,
+          "total_tokens": 1257,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 305
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 57
+        },
+        "retryAttempts": 0
+      },
+      "cfgB": {
+        "templateId": "documentation",
+        "durationMs": 80311,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp77mmdl-358lli",
+        "outputHash": "320b160f0c4c99b1a2a499c1bb4cde81623cb398b4b8dcd46a43681b3515bd9d",
+        "outputExcerpt": "# Operator Checklist And Handoff Runbook ## 1. Procedure Summary - Purpose, in one sentence: Make the landing page contact form live so that every submission reliably stores the inquiry and sends an automatic thank-you email to the user. - Who uses this: The non-technical operator responsible for launching and maintaining the form and email flow. - Done state: The form is publicly accessible on the landing page, accepts valid submissions, stores the data in the agreed location, and triggers a correctly formatted thank-you email within two minutes of submission. - Key assumptions (max 3 bullets): - A landing page with an embedded contact form already exists. The builder has handed over the form builder account and the email delivery tool (e.g., native integration, Zapier webhook, or API), plus any login credentials. - The form collects at minimum a user’s full name, email address, and a message. The thank-you email will be sent to the email address submitted. - The operator has received a handoff sheet that lists the form builder URL, email tool URL, and the exact thank-you email template content (subject line, body, sender name/address). ## 2. Required Inputs, Artifacts, And Fields",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 1463,
+          "outputTokens": 3072,
+          "totalTokens": 4535
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a detailed, step-by-step guide with clear assumptions, next steps, and acceptance checks, ensuring a comprehensive and actionable handoff."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a structured checklist and runbook but lacks some of the detailed guidance and specificity found in CFG-A, making it slightly less comprehensive."
+        }
+      },
+      "deltaNormalized": -0.16000000000000003
+    },
+    {
+      "id": "EVT4-08",
+      "title": "Ops plan",
+      "templateId": "operator_plan",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 174,
+        "model": "deepseek-v4-pro",
+        "outputHash": "ab75140a41dfb0debe262e320043e0337d78e6442cc6f3c62d6a8568b2c5c0f0",
+        "outputExcerpt": "This is a 30-day operational launch plan that assumes you’re running the marketplace solo (or with a small team) and already have: - A basic functioning platform (website/app) for tutor profiles, session booking/payment (even if it’s a no-code tool, Google Forms + Calendly, or a marketplace template). - Legal basics covered (background checks process defined, liability waiver drafted, terms of service). - A named target neighborhood (e.g., “Oak Park, 2-mile radius from Oak Park Elementary”). - A small seed budget for flyers, ads, incidentals ($200–$500). - You, as the operator, will own all core tasks, but you may recruit a community ambassador later. All tasks are non-technical: outreach, talking to people, organizing, manual tracking, and process building. --- ## Week 1: Foundation & Tutor Sourcing (Days 1–7) **Objective:** Build initial tutor supply (10–15 vetted, excited tutors) and get market validation before inviting families. ### Day 1–2: Set up your ops cockpit - Create a simple tracking spreadsheet (Google Sheets) for: - Tutor applicants (status: applied, interviewed, background check, onboarded, active). - Family leads (status: interested, booked, session completed, feed",
+        "normalized": 0.88,
+        "usage": {
+          "prompt_tokens": 54,
+          "completion_tokens": 1200,
+          "total_tokens": 1254,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 448
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 54
+        },
+        "retryAttempts": 0
+      },
+      "cfgB": {
+        "templateId": "operator_plan",
+        "durationMs": 97362,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp77p8ue-xywb18",
+        "outputHash": "4a897d1b1aa77ee13b0c623485f1d8d66f025d29c1a6c151011a1e34cf63b3fa",
+        "outputExcerpt": "# Operator Action Plan – Neighborhood Tutoring Marketplace (30-Day Launch) ## 1. Goal, Constraints, Done State, And Assumptions - **Goal:** Launch a simple, trustworthy tutoring marketplace that connects local parents/students with pre‑vetted tutors in the neighborhood, processing at least 15 student requests and delivering at least 10 successful tutoring sessions by Day 30. - **Constraints:** Small team (founder + 1 support/ops person, possibly a part‑time helper), limited budget (no paid software, marketing ≤ $200), non‑technical operators (no custom code; all tools must be off‑the‑shelf). - **Done state:** - At least 10 approved tutors listed and ready to work. - A repeatable matching & scheduling process in place. - A payment collection method (cash or simple digital link) working without complaints. - Student/parent feedback captured for at least 5 sessions. - A basic marketing loop (flyers, local social media) producing steady inquiries. - **Assumptions:** - The neighborhood has enough families with school‑age children; tutoring demand exists. - Tutors can be recruited from local universities, retired teachers, or neighbors (background checks will be basic: reference calls + ",
+        "normalized": 0.8,
+        "usage": {
+          "inputTokens": 1415,
+          "outputTokens": 3072,
+          "totalTokens": 4487
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 4,
+          "rationale": "CFG-A provides a detailed, structured plan with specific tasks and acceptance checks, ensuring clarity and accountability. It covers essential aspects like tutor recruitment and onboarding, but lacks some details on family engagement and feedback collection."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 4,
+          "rationale": "CFG-B offers a comprehensive plan with clear goals, constraints, and a timeline. It includes detailed steps for initial setup and operations, but could benefit from more specific acceptance checks and a stronger focus on governance and safety measures."
+        }
+      },
+      "deltaNormalized": -0.07999999999999996
+    },
+    {
+      "id": "EVT4-12",
+      "title": "SOP draft",
+      "templateId": "documentation",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 145,
+        "model": "deepseek-v4-pro",
+        "outputHash": "15df61aef85f5ad358158bd31162bfdcf5eb8437349d9960169da165c7f79608",
+        "outputExcerpt": "**Standard Operating Procedure: Customer Refund Requests** *For Non‑Technical Operators | Version 1.0* --- ## 1. Purpose To handle every customer refund request in a fair, consistent, and efficient manner, while protecting both the customer’s experience and the company’s revenue. ## 2. Scope All front‑line operators processing refunds via phone, email, chat, or in‑person. ## 3. Assumptions - The customer has already provided basic purchase details (order/invoice number, receipt, product name, purchase date). - You have access to: - the order management system (e.g., CRM, POS, e‑commerce backend), - the company’s refund policy (including time limits, condition requirements, non‑refundable items), - the payment gateway (to process refunds back to original payment method when needed). - Company guidelines on refund thresholds requiring manager approval are known to you. - You are authorized to process refunds up to a certain amount (e.g., $100) without escalation. --- ## 4. Step‑by‑Step Procedure ### Step 1: Receive & Acknowledge the Request **Action:** 1. Greet the customer and collect the required information: - Order/invoice number or receipt - Name and contact details - Reason for",
+        "normalized": 0.96,
+        "usage": {
+          "prompt_tokens": 52,
+          "completion_tokens": 1200,
+          "total_tokens": 1252,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 433
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 52
+        },
+        "retryAttempts": 0
+      },
+      "cfgB": {
+        "templateId": "documentation",
+        "durationMs": 97169,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp77s8tg-b301dy",
+        "outputHash": "5d7b35e7fe92fddca8d82de40799f1ca7857a14a71261c31200ea33cfcb6e4c6",
+        "outputExcerpt": "# Operator Checklist And Handoff Runbook: Customer Refund Requests ## 1. Procedure Summary - **Purpose, in one sentence:** To process a customer’s refund request from initial receipt through final resolution while protecting company revenue, documenting decisions, and maintaining a positive customer experience. - **Who uses this:** Non-technical customer service operators (agents) working in a contact center or support desk. - **Done state:** The refund is approved or declined with a clear, documented reason; if approved, funds are returned to the customer, all internal systems are updated, and the customer has been notified. - **Key assumptions (max 3 bullets):** - The company’s refund policy allows returns within 30 calendar days of delivery, for items in original condition, and excludes final-sale products and digital downloads (unless defective). (Assumption: standard retail policy.) - The operator has access to the order management system “OrderSys” and the payment gateway “PayFlow” for looking up transactions and initiating refunds. - All communication with the customer is logged in the CRM “HelpDesk” and follows DLP rules—no credit card numbers in plain text, attachments pre",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 1452,
+          "outputTokens": 3045,
+          "totalTokens": 4497
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 4,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a detailed, well-structured SOP with clear steps and acceptance checks, ensuring comprehensive guidance for operators."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a checklist format that is useful and specific but slightly less structured than CFG-A, with a focus on documentation and compliance."
+        }
+      },
+      "deltaNormalized": -0.12
+    }
+  ]
+}

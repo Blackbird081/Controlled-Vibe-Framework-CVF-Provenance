@@ -1,0 +1,228 @@
+{
+  "schema": "cvf.evt4.output_quality_ab.v1",
+  "config": {
+    "provider": "deepseek",
+    "cfgA": "direct_deepseek",
+    "cfgB": "cvf_api_execute",
+    "model": "deepseek-v4-pro",
+    "providerTimeoutMs": 120000,
+    "directEmptyRetries": 2,
+    "taskIdFilter": [
+      "EVT4-07",
+      "EVT4-08",
+      "EVT4-12"
+    ]
+  },
+  "summary": {
+    "startedAt": "2026-05-15T17:38:57.256Z",
+    "completedAt": "2026-05-15T17:45:43.367Z",
+    "corpusSize": 20,
+    "runLimit": 3,
+    "completedPairs": 3,
+    "cfgBReceipts": 3,
+    "safetyFailures": 0,
+    "medianDeltaNormalized": -0.16000000000000003,
+    "twoPassExpansion": false,
+    "cfgBExpansionReceipts": 0,
+    "cfgBMedianDurationMs": 93099,
+    "cfgBMedianOutputTokens": 3072,
+    "decisionRuleMet": false,
+    "reviewerModes": [
+      "openai:gpt-4o"
+    ]
+  },
+  "records": [
+    {
+      "id": "EVT4-07",
+      "title": "Builder handoff",
+      "templateId": "documentation",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 198,
+        "model": "deepseek-v4-pro",
+        "outputHash": "5a8ad4ea5cc4d00569b6e46a326d0ff4c7f61920dfcf2cb878d83e9c73749713",
+        "outputExcerpt": "# Landing Page Contact Form & Thank‑You Email Flow – Builder Handoff ## Overview We need to implement a contact form on a landing page that, when submitted, shows an inline thank‑you message and triggers an automated thank‑you email to the submitter. This handoff provides all requirements, a step‑by‑step build plan, and acceptance checks so a developer or no‑code builder can execute it with minimal back‑and‑forth. --- ## Assumptions The following are assumed to be already in place. Confirm each before starting: - **Landing page builder**: Webflow, Unbounce, WordPress (Gutenberg/Elementor), or similar. - **Email service provider (ESP)**: Mailchimp, ConvertKit, HubSpot, or similar used for marketing automation. - **ESP account** has a list/audience for these contacts (e.g., “Website Leads”). - **GDPR/privacy compliance** is handled – a consent checkbox will be added if required. - **Design files or style guide** are provided for the form and email template (or we default to brand‑appropriate styling). - **Thank‑you email content** (subject, body, signature) will be supplied – if not, a placeholder will be used. --- ## Requirements ### 1. Form Fields | Field | Type | Required | Placeh",
+        "normalized": 0.88,
+        "usage": {
+          "prompt_tokens": 57,
+          "completion_tokens": 1200,
+          "total_tokens": 1257,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 595
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 57
+        },
+        "retryAttempts": 0
+      },
+      "cfgB": {
+        "templateId": "documentation",
+        "durationMs": 93099,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp77cm6h-ezumvr",
+        "outputHash": "1ddb445da5a8959c6eb9d57ed6d261b8f29124b21279d8f5fef78ea9b377208d",
+        "outputExcerpt": "# Operator Checklist And Handoff Runbook ## 1. Purpose, Audience, Done State, And Assumptions - **Purpose:** This runbook hands over a production‑ready landing page contact form and its automated thank‑you email flow to a non‑technical operator. It gives you everything you need to verify, monitor, and troubleshoot the flow without writing any code or touching server configuration. - **Who uses this:** The primary audience is a non‑technical operator (e.g., marketing coordinator, site manager, virtual assistant) who will be responsible for day‑to‑day oversight, but not development. - **Done state:** The operator has: - Confirmed that a real submission triggers the notification email and the auto‑reply thank‑you email. - Validated that the form looks and works correctly on desktop and mobile. - Received all required access keys, documentation, and test evidence from the builder. - Set up basic monitoring and knows what to do when something breaks. - **Assumptions and unknowns:** - **Assumption:** The landing page is already live (or on a staging environment you can access) and the form is functional. The builder has configured the email delivery service (e.g., SMTP, SendGrid, Mailgun",
+        "normalized": 0.72,
+        "usage": {
+          "inputTokens": 1462,
+          "outputTokens": 3072,
+          "totalTokens": 4534
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 4,
+          "rationale": "CFG-A provides a detailed and structured handoff with clear requirements and assumptions, making it highly useful and specific for implementation. However, it could include more governance and safety checks."
+        },
+        "cfgB": {
+          "usefulness": 3,
+          "completeness": 3,
+          "structure": 4,
+          "specificity": 3,
+          "governanceSafety": 5,
+          "rationale": "CFG-B is well-structured and focuses on governance and safety, providing a checklist for operators. However, it lacks some specificity and completeness in terms of technical implementation details."
+        }
+      },
+      "deltaNormalized": -0.16000000000000003
+    },
+    {
+      "id": "EVT4-08",
+      "title": "Ops plan",
+      "templateId": "operator_plan",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 215,
+        "model": "deepseek-v4-pro",
+        "outputHash": "cfe613e575c2fa367586228b96dba51daef7afcc417f1d0e606f346ca4ac7521",
+        "outputExcerpt": "**30-Day Operations Launch Plan: Neighborhood Tutoring Marketplace** *Prepared for a non-technical operator — practical, low-code, community-first.* --- ## Assumptions Before you begin, confirm these foundations are in place (or adapt to your reality): - **Geography**: One clearly defined neighborhood (e.g., 2–5 ZIP codes, 10–20k households) - **Subjects & ages**: K–12 core subjects, test prep, possibly music/art – demand validated via local parent groups - **Tutor pool**: Local college students, retired teachers, subject experts; all must pass a background check - **Technology**: No custom development. Use a simple no‑code stack (e.g., **Airtable + Softr** for profiles/booking, **Stripe** for payments, **Calendly** for scheduling, **Google Forms** for intake) - **Model**: Tutors set their own hourly rates; marketplace takes a 20% service fee on each booking - **Trust mechanism**: Mandatory background checks, parent reviews, initial free trial session (optional) - **Operator role**: You handle onboarding, quality checks, customer support, and community marketing - **Budget**: At least $500–$1,000 for background checks, flyers, and light paid ads - **Legal baseline**: Terms of Servi",
+        "normalized": 0.76,
+        "usage": {
+          "prompt_tokens": 54,
+          "completion_tokens": 1200,
+          "total_tokens": 1254,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 827
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 54
+        },
+        "retryAttempts": 0
+      },
+      "cfgB": {
+        "templateId": "operator_plan",
+        "durationMs": 96955,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp77fhxk-u68vcc",
+        "outputHash": "62484a743747cbf5dc7d2a701634dbbc924b01555b12f05e7d551e3961a90cbb",
+        "outputExcerpt": "# Operator Action Plan ## 1. Goal, Constraints, Done State, And Assumptions - **Goal:** Launch a functioning neighborhood tutoring marketplace within 30 days that successfully matches at least 5 tutors with students and processes ≥2 paid sessions by Day 30. - **Constraints:** Small team (founder + 1–2 part‑time helpers), limited budget (no custom development), operator is non‑technical; processes must be manual or use free/low‑cost tools. - **Done state:** - Tutor onboarding process running (≥8 tutors signed, vetted, listed). - Parent/student inquiry and matching flow operating (≥3 inquiries → ≥2 successful matches). - Payment collection (cash or a simple digital method) and payout to tutors functioning. - Operating cadence (daily/weekly actions) defined and repeatable. - **Assumptions (clearly labeled):** - The marketplace focuses on a single neighborhood (walking distance or a defined zip/postal area) to keep coordination simple. - Tutoring will be mostly in‑person at a local library, community center, or home; online optional. - Subjects are common school subjects (math, reading, science) for K‑12 students. - Average tutor hourly rate: local market rate (use whatever is typical,",
+        "normalized": 0.92,
+        "usage": {
+          "inputTokens": 1415,
+          "outputTokens": 3072,
+          "totalTokens": 4487
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 4,
+          "completeness": 3,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 4,
+          "rationale": "CFG-A provides a clear structure and specific steps for launching the marketplace, but it lacks some details in the timeline and execution phases."
+        },
+        "cfgB": {
+          "usefulness": 5,
+          "completeness": 4,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 4,
+          "rationale": "CFG-B offers a detailed and structured plan with specific actions and acceptance checks, making it highly useful and specific, though it could improve on governance aspects."
+        }
+      },
+      "deltaNormalized": 0.16000000000000003
+    },
+    {
+      "id": "EVT4-12",
+      "title": "SOP draft",
+      "templateId": "documentation",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 156,
+        "model": "deepseek-v4-pro",
+        "outputHash": "39a62997abaca3bff989337b4d37cc6fbe4ee67338896502790887911d5dd798",
+        "outputExcerpt": "## Standard Operating Procedure: Customer Refund Requests **Role:** Non‑Technical Operator (e.g., Customer Support Agent) **Document Version:** 1.0 **Last Updated:** [Today’s Date] --- ### 1. Purpose To ensure every customer refund request is handled consistently, fairly, and efficiently – protecting both the customer experience and the company’s revenue. ### 2. Scope Applies to all refund requests received via email, chat, phone, or helpdesk system. Covers both physical and digital products (where applicable). --- ### 3. Assumptions Before using this SOP, the following must be true: - **A. Refund policy exists** – You have a public Refund/Return Policy that states time limits, condition requirements, and any non‑refundable items. - **B. Customer identity & order are verifiable** – You can look up the order in your order management system (e.g., Shopify, custom admin, or helpdesk linked to orders). - **C. Payment & refund processing tools are available** – You have access to issue refunds through the same system (or a secure payment gateway) and see refund status. - **D. Operator permissions** – You are authorised to approve standard refunds up to a certain amount (escalation path ",
+        "normalized": 1,
+        "usage": {
+          "prompt_tokens": 52,
+          "completion_tokens": 1200,
+          "total_tokens": 1252,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 271
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 52
+        },
+        "retryAttempts": 0
+      },
+      "cfgB": {
+        "templateId": "documentation",
+        "durationMs": 89671,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp77ig4l-e3z9p6",
+        "outputHash": "ed15b6ddd3a7a60d1678df4cd054aa59ce280d79d685dd4b118c312bee7df729",
+        "outputExcerpt": "# Operator Checklist And Handoff Runbook ## 1. Purpose, Audience, Done State, And Assumptions - **Purpose:** This runbook defines the standard procedure for a non‑technical operator to process customer refund requests accurately, fairly, and with all required audit evidence. - **Who uses this:** Frontline customer‑support operators who do not have system‑admin access or coding skills. The runbook assumes they are logged into the company’s customer‑service portal and refund tool. - **Done state:** The refund has been processed in the system, the customer has received confirmation with expected timeline, and all mandatory logs/evidence are stored. - **Assumptions and unknowns:** - *Assumption 1:* The operator works in a typical e‑commerce/retail environment with an Order Management System (OMS) and a refund processing tool (e.g., Stripe, a custom refund API, or a shop management system like Shopify). - *Assumption 2:* Refund eligibility rules (time window, product condition, shipping status) are defined in a policy document that the operator can consult. This SOP does not recreate the policy, it shows how to apply it. - *Unknown:* Specific tool names, API endpoints, or internal ticke",
+        "normalized": 0.76,
+        "usage": {
+          "inputTokens": 1451,
+          "outputTokens": 2862,
+          "totalTokens": 4313
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a comprehensive, well-structured SOP with clear steps, definitions, and conditions for handling refunds, ensuring consistency and compliance."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 3,
+          "governanceSafety": 4,
+          "rationale": "CFG-B offers a detailed checklist and runbook but lacks some specificity in tool names and thresholds, which may require additional customization."
+        }
+      },
+      "deltaNormalized": -0.24
+    }
+  ]
+}

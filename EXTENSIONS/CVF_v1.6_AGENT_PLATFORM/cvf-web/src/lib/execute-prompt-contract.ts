@@ -100,11 +100,11 @@ function buildTaskShapeGuidance(shapes: DeliverableShape[]): string[] {
   }
 
   if (shapes.includes('checklist')) {
-    guidance.push('Checklist/documentation shape: produce a staged operator checklist with owner/role, action, tool or artifact, done signal, and acceptance check; include common failure modes and recovery steps; avoid generic packet wrapper language when the user asked for a checklist, SOP, onboarding plan, or handoff.');
+    guidance.push('Checklist/documentation shape: produce a procedural runbook with required inputs/artifacts, step-by-step actions, decision branches, QA checks, failure recovery, escalation rules, and final handoff acceptance checks; keep the overview and assumptions short, avoid long background prose, and spend most of the answer on executable tables/checks.');
   }
 
   if (shapes.includes('plan')) {
-    guidance.push('Plan shape: provide a timeline or phased action table with owner/role, action, concrete artifact, success metric, and acceptance check for each phase; include immediate next actions for the first 24-72 hours when relevant.');
+    guidance.push('Plan shape: provide first 24-72 hour start procedure, phased timeline, recurring operating cadence, QA checkpoints, owner/role, concrete artifact, success metric, and acceptance check for each phase.');
   }
 
   if (shapes.includes('decision_comparison')) {
@@ -185,32 +185,53 @@ function buildDeliverableContract(shape: DeliverableShape | undefined): string |
 - [ ] Each criterion can be verified by a non-technical operator or tester
 - [ ] Open assumptions are listed`;
     case 'checklist':
-      return `# Operator Checklist
+      return `# Operator Checklist And Handoff Runbook
 
-## 1. Purpose, Audience, And Assumptions
-- Purpose:
+## 1. Procedure Summary
+- Purpose, in one sentence:
 - Who uses this:
-- Assumptions and unknowns:
+- Done state:
+- Key assumptions, max 3 bullets:
 
-## 2. Staged Checklist
-| Stage | Owner/Role | Action | Tool Or Artifact | Done Signal | Acceptance Check |
-| --- | --- | --- | --- | --- | --- |
-| 1. | | | | | |
-| 2. | | | | | |
+## 2. Required Inputs, Artifacts, And Fields
+| Required Item | Source/Owner | Where It Lives | Needed Before Step | Acceptance Check |
+| --- | --- | --- | --- | --- |
+| 1. | | | | |
+| 2. | | | | |
 
-## 3. Common Failure Modes And Recovery
+## 3. Step-By-Step Procedure
+| Step | Owner/Role | Trigger | Action | Required Artifact Or Field | Done Signal | Acceptance Check |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1. | | | | | | |
+| 2. | | | | | | |
+
+## 4. Decision Branches
+| Situation | Decision Rule | Next Action | Owner/Role | Escalate When |
+| --- | --- | --- | --- | --- |
+| 1. | | | | |
+| 2. | | | | |
+
+## 5. QA Checks
+- Pre-handoff QA:
+- Data/content QA:
+- User-facing QA:
+- Audit/evidence to retain:
+
+## 6. Common Failure Modes And Recovery
 | Situation | How To Notice It | What To Do | When To Escalate |
 | --- | --- | --- | --- |
 | 1. | | | |
 | 2. | | | |
 
-## 4. First-Day Or First-Run Actions
+## 7. First-Day Or First-Run Actions
 - Step 1:
 - Step 2:
 - Step 3:
 
-## 5. Final Handoff Checks
+## 8. Final Handoff Acceptance Checklist
 - [ ] Every required action has a visible done signal
+- [ ] Required artifacts or fields are complete
+- [ ] QA checks have pass/fail evidence
 - [ ] Open assumptions are marked for confirmation
 - [ ] The operator knows what to do next and when to escalate`;
     case 'prioritization':
@@ -332,31 +353,48 @@ function buildDeliverableContract(shape: DeliverableShape | undefined): string |
     case 'plan':
       return `# Operator Action Plan
 
-## 1. Goal, Constraints, And Assumptions
+## 1. Goal, Constraints, Done State, And Assumptions
 - Goal:
 - Constraints:
+- Done state:
 - Assumptions:
 
-## 2. Timeline And Owners
+## 2. First 24-72 Hour Start Procedure
+| Step | Owner/Role | Action | Concrete Artifact | Done Signal | Acceptance Check |
+| --- | --- | --- | --- | --- | --- |
+| 1. | | | | | |
+| 2. | | | | | |
+
+## 3. Timeline And Owners
 | Phase/Date | Owner/Role | Action | Concrete Artifact | Success Metric | Acceptance Check |
 | --- | --- | --- | --- | --- | --- |
 | 1. | | | | | |
 | 2. | | | | | |
 
-## 3. First 24-72 Hours
-- Step 1:
-- Step 2:
-- Step 3:
+## 4. Operating Cadence And Decision Branches
+| Cadence/Situation | Owner/Role | What To Check | Decision Rule | Next Action |
+| --- | --- | --- | --- | --- |
+| Daily/weekly | | | | |
+| Exception | | | | |
 
-## 4. Risks, Dependencies, And Checkpoints
-- Key risks:
-- Dependencies:
+## 5. QA Checks And Review Checkpoints
+- Pre-launch QA:
+- Operational QA:
+- Customer/user-facing QA:
 - Review checkpoints:
 
-## 5. Final Handoff Checklist
+## 6. Risks, Dependencies, Failure Modes, And Escalation
+- Key risks:
+- Dependencies:
+- Failure mode:
+- Escalation rule:
+
+## 7. Final Handoff Checklist
 - [ ] Owner is clear for every action
+- [ ] Required artifacts are named
 - [ ] Metrics are measurable
-- [ ] Acceptance checks are specific enough to verify`;
+- [ ] Acceptance checks are specific enough to verify
+- [ ] First 24-72 hours can be executed without extra strategy work`;
     default:
       return undefined;
   }

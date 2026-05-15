@@ -82,9 +82,11 @@ describe('buildExecutionPrompt', () => {
     expect(prompt).toContain('Task-shape requirements');
     expect(prompt).toContain('Operator Action Plan');
     expect(prompt).toContain('Timeline And Owners');
-    expect(prompt).toContain('First 24-72 Hours');
+    expect(prompt).toContain('First 24-72 Hour Start Procedure');
+    expect(prompt).toContain('Operating Cadence And Decision Branches');
+    expect(prompt).toContain('QA Checks And Review Checkpoints');
     expect(prompt).toContain('Plan shape');
-    expect(prompt).toContain('timeline or phased action table with owner/role, action, concrete artifact, success metric, and acceptance check');
+    expect(prompt).toContain('first 24-72 hour start procedure, phased timeline, recurring operating cadence, QA checkpoints');
     expect(prompt).not.toContain('SWOT Analysis');
   });
 
@@ -151,9 +153,16 @@ describe('buildExecutionPrompt', () => {
     });
 
     expect(prompt).toContain('Checklist/documentation shape');
-    expect(prompt).toContain('Operator Checklist');
-    expect(prompt).toContain('Staged Checklist');
+    expect(prompt).toContain('Operator Checklist And Handoff Runbook');
+    expect(prompt).toContain('Required Inputs, Artifacts, And Fields');
+    expect(prompt).toContain('Step-By-Step Procedure');
+    expect(prompt).toContain('Decision Branches');
+    expect(prompt).toContain('QA Checks');
     expect(prompt).toContain('Common Failure Modes And Recovery');
+    expect(prompt).toContain('Final Handoff Acceptance Checklist');
+    expect(prompt).toContain('escalation rules');
+    expect(prompt).toContain('keep the overview and assumptions short');
+    expect(prompt).toContain('spend most of the answer on executable tables/checks');
     expect(prompt).not.toContain('Operational Documentation Packet');
   });
 
@@ -248,8 +257,11 @@ describe('buildExecutionPrompt', () => {
 
     expect(prompt).toContain('Operator Action Plan');
     expect(prompt).toContain('Use these headings and labels exactly where applicable');
+    expect(prompt).toContain('First 24-72 Hour Start Procedure');
     expect(prompt).toContain('Detailed Timeline');
-    expect(prompt).toContain('Operating Checklist');
+    expect(prompt).toContain('Operating Cadence And Decision Branches');
+    expect(prompt).toContain('QA Checks And Review Checkpoints');
+    expect(prompt).toContain('Failure Modes, And Escalation');
     expect(prompt).not.toContain('SWOT Analysis');
     expect(prompt).not.toContain('shape-specific deliverable contract');
   });

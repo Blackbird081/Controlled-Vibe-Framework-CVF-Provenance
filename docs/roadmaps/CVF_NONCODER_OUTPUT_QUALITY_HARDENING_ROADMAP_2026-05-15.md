@@ -2,7 +2,7 @@
 
 Date: 2026-05-15
 
-Status: ACTIVE PRODUCT ROADMAP - QH-1/QH-2 IMPLEMENTED WITH MIXED REGRESSION
+Status: ACTIVE PRODUCT ROADMAP - QH-1/QH-2 AND QH-3 IMPLEMENTED WITH BOUNDED CLAIMS
 
 Parent closure:
 
@@ -14,6 +14,8 @@ Latest tranche evidence:
 
 - `docs/reviews/CVF_GC018_QH1_QH2_NONCODER_OUTPUT_HARDENING_2026-05-15.md`
 - `docs/reviews/CVF_QH1_QH2_NONCODER_OUTPUT_HARDENING_RESULT_2026-05-15.md`
+- `docs/reviews/CVF_GC018_QH3_SOP_HANDOFF_PROCEDURAL_DEPTH_2026-05-16.md`
+- `docs/reviews/CVF_QH3_SOP_HANDOFF_PROCEDURAL_DEPTH_RESULT_2026-05-16.md`
 
 ## 0. Purpose
 
@@ -128,6 +130,12 @@ Exit criteria:
 - Assumptions are labeled; unsupported exact prices are not fabricated.
 
 ### Track QH-3 — SOP And Handoff Procedural Depth
+
+Implementation status: implemented 2026-05-16 as a procedural runbook and
+operator-plan hardening tranche. Focused live evidence retained receipts and
+safety, improved builder handoff, recovered ops plan to final stop-rule
+baseline CFG-B score, and kept SOP draft stable versus QH-1/QH-2. Do not claim
+output-quality parity or full EVT-4 no-degrade.
 
 User pain:
 
