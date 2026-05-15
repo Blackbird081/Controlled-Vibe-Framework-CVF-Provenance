@@ -809,4 +809,33 @@ describe('/api/execute', () => {
             eventType: 'OUTPUT_VALIDATION_EXHAUSTED',
         }));
     });
+
+    it('blocks empty successful provider output after retry exhaustion', async () => {
+        process.env.OPENAI_API_KEY = 'test-key';
+        executeAIMock.mockResolvedValue({
+            success: true,
+            output: '',
+            provider: 'openai',
+            model: 'gpt-4o',
+        });
+
+        const req = new Request('http://localhost/api/execute', {
+            method: 'POST',
+            body: JSON.stringify({
+                templateName: 'Strategy',
+                intent: 'Analyze the market carefully',
+                inputs: { goal: 'Test' },
+                provider: 'openai',
+            }),
+        });
+
+        const res = await POST(req as never);
+        const data = await res.json();
+
+        expect(res.status).toBe(422);
+        expect(data.success).toBe(false);
+        expect(data.outputValidation.issues).toContain('EMPTY_OUTPUT');
+        expect(data.governanceEvidenceReceipt?.decision).toBe('BLOCK');
+        expect(executeAIMock).toHaveBeenCalledTimes(2);
+    });
 });

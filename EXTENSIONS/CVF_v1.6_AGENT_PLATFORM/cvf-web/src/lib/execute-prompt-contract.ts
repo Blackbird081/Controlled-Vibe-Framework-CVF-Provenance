@@ -17,13 +17,11 @@ const TRUSTED_NONCODER_DEPTH_TEMPLATE_IDS = new Set([
   'decision_memo',
 ]);
 
-type DeliverableShape = 'faq' | 'acceptance_criteria' | 'plan' | 'decision_comparison' | 'prioritization' | 'persona';
+type DeliverableShape = 'faq' | 'acceptance_criteria' | 'checklist' | 'plan' | 'decision_comparison' | 'prioritization' | 'persona';
 
 const SHAPE_SPECIFIC_TEMPLATE_IDS = new Set([
   'faq_outline',
-  'acceptance_criteria',
   'operator_plan',
-  'decision_memo',
 ]);
 
 function collectRequestText(request: ExecutionRequest): string {
@@ -41,6 +39,15 @@ function collectRequestText(request: ExecutionRequest): string {
   ].join('\n').toLowerCase();
 }
 
+function resolveResponseLanguage(request: ExecutionRequest): 'English' | 'Vietnamese' {
+  const text = collectRequestText(request);
+  const vietnameseMarks = (text.match(/[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]/gi) || []).length;
+  const vietnameseWords = (text.match(/\b(tôi|muốn|cần|cho|với|người|ứng dụng|tính năng|khách|hàng|quy trình|bàn giao|kiểm tra)\b/gi) || []).length;
+  const englishWords = (text.match(/\b(the|for|with|operator|support|product|app|feature|pricing|decision|compare|create|checklist|onboarding|customer|workflow|acceptance|criteria)\b/gi) || []).length;
+
+  return vietnameseMarks + vietnameseWords > englishWords ? 'Vietnamese' : 'English';
+}
+
 function resolveDeliverableShapes(request: ExecutionRequest): DeliverableShape[] {
   const text = collectRequestText(request);
   const shapes: DeliverableShape[] = [];
@@ -51,6 +58,10 @@ function resolveDeliverableShapes(request: ExecutionRequest): DeliverableShape[]
 
   if (/\b(acceptance criteria|given when then|testable criteria)\b/i.test(text)) {
     shapes.push('acceptance_criteria');
+  }
+
+  if (/\b(checklist|onboarding|standard operating procedure|sop|handoff|runbook|playbook)\b/i.test(text)) {
+    shapes.push('checklist');
   }
 
   if (/\b(\d+[- ]?day|weekly|monthly|roadmap|plan|launch|retention|operations?)\b/i.test(text)) {
@@ -83,6 +94,10 @@ function buildTaskShapeGuidance(shapes: DeliverableShape[]): string[] {
     guidance.push('Acceptance-criteria shape: group criteria by feature or workflow; make each criterion observable and testable; include data source, refresh/state expectations, error/empty states, and pass/fail checks instead of generic quality advice.');
   }
 
+  if (shapes.includes('checklist')) {
+    guidance.push('Checklist/documentation shape: produce a staged operator checklist with owner/role, action, tool or artifact, done signal, and acceptance check; include common failure modes and recovery steps; avoid generic packet wrapper language when the user asked for a checklist, SOP, onboarding plan, or handoff.');
+  }
+
   if (shapes.includes('plan')) {
     guidance.push('Plan shape: provide a timeline or phased action table with owner/role, action, concrete artifact, success metric, and acceptance check for each phase; include immediate next actions for the first 24-72 hours when relevant.');
   }
@@ -104,11 +119,11 @@ function buildTaskShapeGuidance(shapes: DeliverableShape[]): string[] {
 
 function resolvePrimaryDeliverableShape(shapes: DeliverableShape[]): DeliverableShape | undefined {
   if (shapes.includes('faq')) return 'faq';
-  if (shapes.includes('acceptance_criteria') || shapes.includes('prioritization') || shapes.includes('persona')) {
-    return undefined;
-  }
+  if (shapes.includes('acceptance_criteria')) return 'acceptance_criteria';
+  if (shapes.includes('prioritization') || shapes.includes('persona')) return undefined;
   if (shapes.includes('decision_comparison')) return 'decision_comparison';
   if (shapes.includes('plan')) return 'plan';
+  if (shapes.includes('checklist')) return 'checklist';
   return undefined;
 }
 
@@ -158,6 +173,35 @@ function buildDeliverableContract(shape: DeliverableShape | undefined): string |
 - [ ] Each criterion is observable
 - [ ] Each criterion can be verified by a non-technical operator or tester
 - [ ] Open assumptions are listed`;
+    case 'checklist':
+      return `# Operator Checklist
+
+## 1. Purpose, Audience, And Assumptions
+- Purpose:
+- Who uses this:
+- Assumptions and unknowns:
+
+## 2. Staged Checklist
+| Stage | Owner/Role | Action | Tool Or Artifact | Done Signal | Acceptance Check |
+| --- | --- | --- | --- | --- | --- |
+| 1. | | | | | |
+| 2. | | | | | |
+
+## 3. Common Failure Modes And Recovery
+| Situation | How To Notice It | What To Do | When To Escalate |
+| --- | --- | --- | --- |
+| 1. | | | |
+| 2. | | | |
+
+## 4. First-Day Or First-Run Actions
+- Step 1:
+- Step 2:
+- Step 3:
+
+## 5. Final Handoff Checks
+- [ ] Every required action has a visible done signal
+- [ ] Open assumptions are marked for confirmation
+- [ ] The operator knows what to do next and when to escalate`;
     case 'prioritization':
       return `# Prioritization Decision
 
@@ -271,8 +315,10 @@ export function buildExecutionPrompt(request: ExecutionRequest): string {
   const primaryDeliverableShape = usesShapeSpecificTemplate ? undefined : resolvePrimaryDeliverableShape(deliverableShapes);
   const primaryDeliverableContract = buildDeliverableContract(primaryDeliverableShape);
   const taskShapeGuidance = buildTaskShapeGuidance(deliverableShapes);
+  const responseLanguage = resolveResponseLanguage(request);
 
   let prompt = `## Task: ${templateName}\n\n`;
+  prompt += `### Response Language\nUse ${responseLanguage} for the final answer. Do not translate the deliverable into another language unless the user explicitly asks.\n\n`;
   prompt += `### User Intent\n${intent}\n\n`;
   prompt += `### Input Data\n`;
 
@@ -365,8 +411,10 @@ export function buildExecutionPrompt(request: ExecutionRequest): string {
 
   prompt += `### Output Contract\n`;
   prompt += `- Return a final answer directly in Markdown.\n`;
+  prompt += `- Use ${responseLanguage} for the final answer, matching the primary language of the user intent and supplied inputs.\n`;
   prompt += `- Use short, explicit section headers only when they add clarity.\n`;
   prompt += `- Keep the result implementation-ready and grounded in the supplied inputs.\n`;
+  prompt += `- Do not invent precise budgets, prices, company sizes, locale-specific currency, dates, quotas, or guarantees unless they were supplied. If an assumption is useful, label it as an assumption and keep it non-binding.\n`;
   prompt += `- Do not describe your internal process or governance workflow.\n\n`;
   prompt += `Please analyze the above information and provide a comprehensive, structured response following CVF guidelines.`;
 

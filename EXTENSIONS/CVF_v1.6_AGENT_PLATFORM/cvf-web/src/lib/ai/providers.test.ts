@@ -2,7 +2,7 @@
  * @vitest-environment jsdom
  */
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { executeAI } from './providers';
+import { CVF_SYSTEM_PROMPT, executeAI } from './providers';
 
 const fetchMock = vi.fn();
 vi.stubGlobal('fetch', fetchMock);
@@ -10,6 +10,12 @@ vi.stubGlobal('fetch', fetchMock);
 describe('ai/providers', () => {
     beforeEach(() => {
         fetchMock.mockReset();
+    });
+
+    it('keeps the canonical system prompt language-adaptive', () => {
+        expect(CVF_SYSTEM_PROMPT).toContain('cùng ngôn ngữ chính của yêu cầu');
+        expect(CVF_SYSTEM_PROMPT).toContain('Nếu yêu cầu/dữ liệu chủ yếu là tiếng Anh, trả lời bằng tiếng Anh');
+        expect(CVF_SYSTEM_PROMPT).not.toContain('Luôn trả lời bằng TIẾNG VIỆT');
     });
 
     describe('executeAI — OpenAI', () => {
@@ -79,6 +85,28 @@ describe('ai/providers', () => {
             expect(body.model).toBe('gpt-4-turbo');
             expect(body.max_tokens).toBe(2000);
             expect(body.temperature).toBe(0.5);
+        });
+
+        it('uses max_completion_tokens for GPT-5 family models', async () => {
+            fetchMock.mockResolvedValueOnce({
+                ok: true,
+                json: async () => ({
+                    choices: [{ message: { content: 'Response' } }],
+                    usage: { total_tokens: 10 },
+                }),
+            });
+
+            await executeAI('openai', 'sk-test', 'Hello', {
+                model: 'gpt-5.4-mini',
+                maxTokens: 2000,
+                temperature: 0.5,
+            });
+
+            const body = JSON.parse(fetchMock.mock.calls[0][1].body);
+            expect(body.model).toBe('gpt-5.4-mini');
+            expect(body.max_completion_tokens).toBe(2000);
+            expect(body.max_tokens).toBeUndefined();
+            expect(body.temperature).toBeUndefined();
         });
     });
 

@@ -112,7 +112,7 @@ describe('buildExecutionPrompt', () => {
     expect(prompt).not.toContain('Operational Documentation Packet');
   });
 
-  it('keeps the documentation skeleton plus shape guidance for dashboard criteria tasks', () => {
+  it('uses an acceptance-criteria contract for dashboard criteria tasks', () => {
     const prompt = buildExecutionPrompt({
       ...baseRequest,
       templateId: 'documentation',
@@ -128,10 +128,33 @@ describe('buildExecutionPrompt', () => {
     });
 
     expect(prompt).toContain('Acceptance-criteria shape');
-    expect(prompt).toContain('Operational Documentation Packet');
-    expect(prompt).not.toContain('Acceptance Criteria Packet');
+    expect(prompt).toContain('Acceptance Criteria Packet');
+    expect(prompt).toContain('Criteria By Workflow');
+    expect(prompt).not.toContain('Operational Documentation Packet');
     expect(prompt).toContain('observable and testable');
     expect(prompt).toContain('data source, refresh/state expectations, error/empty states, and pass/fail checks');
+  });
+
+  it('uses a checklist-first contract for onboarding checklist tasks', () => {
+    const prompt = buildExecutionPrompt({
+      ...baseRequest,
+      templateId: 'documentation',
+      templateName: 'Documentation',
+      intent: 'Create a practical onboarding checklist for a new support teammate joining a local-first SaaS product team.',
+      inputs: {
+        subject: 'Onboarding checklist',
+        currentNotes: 'New support teammate joining a local-first SaaS product team.',
+        readerGoal: 'Support lead can onboard the teammate without extra interpretation.',
+        audience: 'Non-technical operator',
+        mustPreserve: 'Local-first SaaS',
+      },
+    });
+
+    expect(prompt).toContain('Checklist/documentation shape');
+    expect(prompt).toContain('Operator Checklist');
+    expect(prompt).toContain('Staged Checklist');
+    expect(prompt).toContain('Common Failure Modes And Recovery');
+    expect(prompt).not.toContain('Operational Documentation Packet');
   });
 
   it('keeps the feature-prioritization skeleton plus shape guidance for backlog triage tasks', () => {
@@ -217,7 +240,48 @@ describe('buildExecutionPrompt', () => {
     expect(prompt).toContain('Criteria By Workflow');
     expect(prompt).toContain('Data/State Requirement');
     expect(prompt).not.toContain('Operational Documentation Packet');
-    expect(prompt).not.toContain('shape-specific deliverable contract');
+    expect(prompt).toContain('shape-specific deliverable contract');
+  });
+
+  it('adds language preservation and anti-fabrication constraints', () => {
+    const prompt = buildExecutionPrompt({
+      ...baseRequest,
+      templateId: 'decision_memo',
+      templateName: 'Decision Memo',
+      intent: 'Compare three go-to-market options for a simple appointment booking app for small salons.',
+      inputs: {
+        decision: 'Launch options memo',
+        context: 'Small salons need simple booking.',
+        options: 'Direct outreach, self-serve trial, channel partnership',
+        constraints: 'Low budget, non-technical operator',
+        criteria: 'Cost, speed, effort, risk, confidence',
+      },
+    });
+
+    expect(prompt).toContain('### Response Language');
+    expect(prompt).toContain('Use English for the final answer');
+    expect(prompt).toContain('matching the primary language of the user intent and supplied inputs');
+    expect(prompt).toContain('Do not invent precise budgets, prices, company sizes, locale-specific currency, dates, quotas, or guarantees');
+    expect(prompt).toContain('Decision Comparison Memo');
+    expect(prompt).toContain('Every named option was compared');
+    expect(prompt).toContain('shape-specific deliverable contract');
+  });
+
+  it('selects Vietnamese as the explicit response language for Vietnamese requests', () => {
+    const prompt = buildExecutionPrompt({
+      ...baseRequest,
+      templateId: 'documentation',
+      templateName: 'Tài liệu vận hành',
+      intent: 'Tôi muốn tạo checklist onboarding cho nhân viên hỗ trợ mới.',
+      inputs: {
+        subject: 'Checklist onboarding',
+        currentNotes: 'Nhân viên mới cần học quy trình ticket, escalation, và kiến thức sản phẩm.',
+        readerGoal: 'Người vận hành có thể làm theo ngay.',
+        audience: 'Người mới tiếp nhận',
+      },
+    });
+
+    expect(prompt).toContain('Use Vietnamese for the final answer');
   });
 
   it('does not attach CVF Web Redesign DNA for unrelated templates', () => {

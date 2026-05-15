@@ -1,0 +1,505 @@
+{
+  "schema": "cvf.evt4.output_quality_ab.v1",
+  "config": {
+    "provider": "openai",
+    "cfgA": "direct_openai",
+    "cfgB": "cvf_api_execute_two_pass_quality_expansion",
+    "model": "gpt-5.4-mini",
+    "providerTimeoutMs": 120000
+  },
+  "summary": {
+    "startedAt": "2026-05-15T04:34:43.595Z",
+    "completedAt": "2026-05-15T04:38:00.965Z",
+    "corpusSize": 20,
+    "runLimit": 5,
+    "completedPairs": 5,
+    "cfgBReceipts": 5,
+    "safetyFailures": 0,
+    "medianDeltaNormalized": -0.16000000000000003,
+    "twoPassExpansion": true,
+    "cfgBExpansionReceipts": 5,
+    "cfgBMedianDurationMs": 25522,
+    "cfgBMedianOutputTokens": 3351,
+    "decisionRuleMet": false,
+    "reviewerModes": [
+      "openai:gpt-4o"
+    ]
+  },
+  "records": [
+    {
+      "id": "EVT4-01",
+      "title": "Onboarding checklist",
+      "templateId": "documentation",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 9505,
+        "model": "gpt-5.4-mini",
+        "outputHash": "4dda04fe390ffca721f901171cd589fce82c6682e82c92afcf56100a9f6dff06",
+        "outputExcerpt": "Below is a practical onboarding checklist for a new support teammate joining a local-first SaaS product team. It’s written for a non-technical operator and assumes the teammate will support customers, triage issues, and help maintain product quality through clear communication and escalation. --- # Onboarding Checklist: Support Teammate for a Local-First SaaS Product ## Assumptions - The product is **local-first**, meaning customer data may be stored and processed on the user’s device and sync may happen later. - Support work includes: - Answering customer questions - Troubleshooting common issues - Collecting clear bug reports - Escalating product or engineering issues - Helping customers understand offline/sync behavior - The new teammate has access to: - Support inbox/helpdesk - Internal docs/FAQ - Customer-facing product docs - A test account or sandbox environment - A path to escalate to product/engineering - The team uses tools like email, Slack, helpdesk software, and a knowledge base. --- # 1) Pre-boarding setup ## Checklist - [ ] Confirm email, Slack, helpdesk, and knowledge base access are active. - [ ] Provide login for a test account or sandbox environment. - [ ] Share ",
+        "normalized": 0.96,
+        "usage": {
+          "prompt_tokens": 65,
+          "completion_tokens": 1200,
+          "total_tokens": 1265,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "cfgB": {
+        "templateId": "documentation",
+        "durationMs": 31141,
+        "model": "gpt-5.4-mini",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6fbuo8-errkyf",
+        "outputHash": "d415af2212e0ba47800a5bdcb7b64f13f6eb9381b1e0a40e3cf3d5aaeaa8b232",
+        "outputExcerpt": "# Operator Checklist ## 1. Purpose, Audience, And Assumptions - **Purpose:** Give a practical onboarding checklist for a new support teammate joining a local-first SaaS product team, so a non-technical operator can prepare them to handle basic support work safely, consistently, and with clear escalation paths. - **Who uses this:** Support leads, onboarding buddies, team coordinators, or operations staff responsible for onboarding and readiness checks. - **Assumptions and unknowns:** - The teammate is new to the product, the support workflow, and the team’s tools. - “Local-first SaaS” means some user data, app behavior, or sync logic may depend on device state, offline usage, or delayed synchronization. - The team already has basic support assets such as a ticketing system, knowledge base, internal chat, and a way to escalate issues. - Exact SOPs, SLAs, permissions, and contact names are not supplied here and should be confirmed in the team’s own onboarding pack. - This checklist is intentionally scoped to support operations, not engineering ownership or admin system control. ## 2. Staged Checklist | Stage | Owner/Role | Action | Tool Or Artifact | Done Signal | Acceptance Check | |",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 9009,
+          "outputTokens": 3719,
+          "totalTokens": 12728
+        },
+        "expansion": {
+          "enabled": true,
+          "pass1": {
+            "durationMs": 16254,
+            "model": "gpt-5.4-mini",
+            "decision": "ALLOW",
+            "receiptPresent": true,
+            "receiptId": "rcpt-env-mp6fbhx7-e4vrau",
+            "outputHash": "3b8624bb67c715863ec118255f701af48bc3f18fa7cbbcce3dc03a86efd3a5f7",
+            "outputExcerpt": "# Operator Checklist ## 1. Purpose, Audience, And Assumptions - **Purpose:** Provide a practical onboarding checklist for a new support teammate joining a local-first SaaS product team, so they can start handling basic support work safely and consistently. - **Who uses this:** A non-technical operator, support lead, or onboarding buddy responsible for preparing and validating the new teammate’s readiness. - **Assumptions and unknowns:** - The teammate is new to the product, team tools, and support workflow. - “Local-first SaaS” means the product may work offline or with local data handling, so support must be careful about sync, data privacy, and device-specific behavior. - The team already has basic support tools in place, such as email, ticketing, documentation, and internal chat. - Exact product policies, SLAs, escalation contacts, and access permissions may vary; those should be confirmed during onboarding. - This checklist assumes a low-risk onboarding scope focused on support operations, not engineering or admin system ownership. ## 2. Staged Checklist | Stage | Owner/Role | Action | Tool Or Artifact | Done Signal | Acceptance Check | | --- | --- | --- | --- | --- | --- | | 1",
+            "usage": {
+              "inputTokens": 3567,
+              "outputTokens": 1767,
+              "totalTokens": 5334
+            }
+          },
+          "pass2": {
+            "durationMs": 14887,
+            "model": "gpt-5.4-mini",
+            "decision": "ALLOW",
+            "receiptPresent": true,
+            "receiptId": "rcpt-env-mp6fbuo8-errkyf",
+            "outputHash": "d415af2212e0ba47800a5bdcb7b64f13f6eb9381b1e0a40e3cf3d5aaeaa8b232",
+            "outputExcerpt": "# Operator Checklist ## 1. Purpose, Audience, And Assumptions - **Purpose:** Give a practical onboarding checklist for a new support teammate joining a local-first SaaS product team, so a non-technical operator can prepare them to handle basic support work safely, consistently, and with clear escalation paths. - **Who uses this:** Support leads, onboarding buddies, team coordinators, or operations staff responsible for onboarding and readiness checks. - **Assumptions and unknowns:** - The teammate is new to the product, the support workflow, and the team’s tools. - “Local-first SaaS” means some user data, app behavior, or sync logic may depend on device state, offline usage, or delayed synchronization. - The team already has basic support assets such as a ticketing system, knowledge base, internal chat, and a way to escalate issues. - Exact SOPs, SLAs, permissions, and contact names are not supplied here and should be confirmed in the team’s own onboarding pack. - This checklist is intentionally scoped to support operations, not engineering ownership or admin system control. ## 2. Staged Checklist | Stage | Owner/Role | Action | Tool Or Artifact | Done Signal | Acceptance Check | |",
+            "usage": {
+              "inputTokens": 5442,
+              "outputTokens": 1952,
+              "totalTokens": 7394
+            }
+          }
+        }
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 4,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a detailed, structured checklist with clear sections and actionable steps, making it highly useful and specific for onboarding a support teammate."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a comprehensive staged checklist with clear roles and actions, but lacks some depth in specific onboarding tasks compared to CFG-A."
+        }
+      },
+      "deltaNormalized": -0.12
+    },
+    {
+      "id": "EVT4-02",
+      "title": "Launch options memo",
+      "templateId": "decision_memo",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 10252,
+        "model": "gpt-5.4-mini",
+        "outputHash": "bb95a74c458173c63eebec9bc3695e4896ae0cb019a08432157edfdc0aca9378",
+        "outputExcerpt": "Below is a practical comparison of **three go-to-market options** for a **simple appointment booking app for small salons**. I’m assuming this is a lightweight product for solo stylists and small salons, not a full enterprise salon management system. --- ## Assumptions - Target customers: **small salons, barbershops, nail studios, and solo stylists** - Product: **simple booking app** with: - online booking page - calendar view - basic reminders - customer list - cancellation/reschedule flow - Team: small, likely limited budget and sales resources - Goal: get first customers quickly and validate demand --- # The 3 Go-to-Market Options ## Option 1: **Direct outbound to local salons** You contact salons one by one via calls, DMs, email, and in-person visits. ### Best for - Fast learning - Early customer feedback - Testing pricing and positioning ### How it works - Build a target list of local salons - Reach out with a short message offering a free trial or demo - Book calls or walk-ins - Close a small number of early adopters manually ### Pros - Fastest way to learn what salons actually want - Good for refining messaging - Can get first paying customers without needing a big audience ",
+        "normalized": 1,
+        "usage": {
+          "prompt_tokens": 62,
+          "completion_tokens": 1200,
+          "total_tokens": 1262,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "cfgB": {
+        "templateId": "decision_memo",
+        "durationMs": 21495,
+        "model": "gpt-5.4-mini",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6fcq0g-97pkwk",
+        "outputHash": "115d182496bdccacc12eb861173a09e4af63f3b82ddcc54fa364ed16f9cce590",
+        "outputExcerpt": "# Decision Comparison Memo ## 1. Decision To Make - **Decision:** Choose the best go-to-market option for a simple appointment booking app for small salons. - **Constraints:** Low budget, non-technical operator, and a clear first activation step is required. - **Assumptions:** - The product is a simple booking app with basic scheduling, reminders, and customer contact capture. - The target audience is small salons with limited staff and limited time. - The operator can handle outreach, demos, and follow-up manually, but should not be expected to run complex technical setup. - No large sales team, custom integrations, or heavy paid advertising are assumed at launch. ## 2. Option-By-Option Comparison | Option | Best Fit Scenario | Pros | Cons | Cost/Effort | Risks | Activation Steps | | --- | --- | --- | --- | --- | --- | --- | | **Option A: Direct outreach to local salons** | Best when you need the fastest first customers with the lowest cash spend | Lowest cash cost; immediate learning from real salon owners; easy to personalize; works well for a non-technical operator; strongest path to early demos and pilots | Manual and time-heavy; limited scale at first; conversion depends on o",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 8448,
+          "outputTokens": 2675,
+          "totalTokens": 11123
+        },
+        "expansion": {
+          "enabled": true,
+          "pass1": {
+            "durationMs": 11816,
+            "model": "gpt-5.4-mini",
+            "decision": "ALLOW",
+            "receiptPresent": true,
+            "receiptId": "rcpt-env-mp6fcgic-mo4p6s",
+            "outputHash": "02daf39d9720379125b6d15f3d59d93397aebc3b068142cd428c00f619be4fc8",
+            "outputExcerpt": "# Decision Comparison Memo ## 1. Decision To Make - **Decision:** Choose the best go-to-market option for a simple appointment booking app for small salons. - **Constraints:** Low budget, non-technical operator, and a clear first activation step is required. - **Assumptions:** - The app is simple: booking requests, calendar visibility, basic reminders, and maybe customer contact capture. - The target market is small salons with limited staff and limited time. - No large sales team, custom integrations, or heavy paid ads are available at launch. - The operator can do outreach, demos, and basic customer follow-up, but cannot manage complex technical implementation. ## 2. Option-By-Option Comparison | Option | Best Fit Scenario | Pros | Cons | Cost/Effort | Risks | Activation Steps | | --- | --- | --- | --- | --- | --- | --- | | **Option A: Direct outreach to local salons** | Best when you want the fastest first customers with the lowest cash spend | Very low cost; immediate feedback; easy to test messaging; high learning value; good for non-technical operators | Slower scaling; requires manual effort; depends on outbound hustle; early rejection can feel high | **Low cost / Medium eff",
+            "usage": {
+              "inputTokens": 3545,
+              "outputTokens": 1250,
+              "totalTokens": 4795
+            }
+          },
+          "pass2": {
+            "durationMs": 9679,
+            "model": "gpt-5.4-mini",
+            "decision": "ALLOW",
+            "receiptPresent": true,
+            "receiptId": "rcpt-env-mp6fcq0g-97pkwk",
+            "outputHash": "115d182496bdccacc12eb861173a09e4af63f3b82ddcc54fa364ed16f9cce590",
+            "outputExcerpt": "# Decision Comparison Memo ## 1. Decision To Make - **Decision:** Choose the best go-to-market option for a simple appointment booking app for small salons. - **Constraints:** Low budget, non-technical operator, and a clear first activation step is required. - **Assumptions:** - The product is a simple booking app with basic scheduling, reminders, and customer contact capture. - The target audience is small salons with limited staff and limited time. - The operator can handle outreach, demos, and follow-up manually, but should not be expected to run complex technical setup. - No large sales team, custom integrations, or heavy paid advertising are assumed at launch. ## 2. Option-By-Option Comparison | Option | Best Fit Scenario | Pros | Cons | Cost/Effort | Risks | Activation Steps | | --- | --- | --- | --- | --- | --- | --- | | **Option A: Direct outreach to local salons** | Best when you need the fastest first customers with the lowest cash spend | Lowest cash cost; immediate learning from real salon owners; easy to personalize; works well for a non-technical operator; strongest path to early demos and pilots | Manual and time-heavy; limited scale at first; conversion depends on o",
+            "usage": {
+              "inputTokens": 4903,
+              "outputTokens": 1425,
+              "totalTokens": 6328
+            }
+          }
+        }
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a detailed, well-structured comparison of the go-to-market options, including assumptions, pros, cons, costs, and a recommendation with a practical plan."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a clear comparison and recommendation but lacks the depth and practical plan found in CFG-A. It is still useful and well-structured but less comprehensive."
+        }
+      },
+      "deltaNormalized": -0.16000000000000003
+    },
+    {
+      "id": "EVT4-03",
+      "title": "Feature priority",
+      "templateId": "feature_prioritization",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 8490,
+        "model": "gpt-5.4-mini",
+        "outputHash": "771a2c1dfadfb49d5b18a0109c30f7368b091363993b09b696c6a670c7add79d",
+        "outputExcerpt": "Below is a practical prioritization for a habit tracking app designed for busy parents. ## Assumptions - The app is for parents who are short on time and often interrupted. - The main goal is to help them maintain a few important habits, not track everything. - Users will likely use the app in quick bursts, often on mobile. - Retention matters more than advanced analytics at the start. - We are prioritizing features for an MVP or next release, not a full roadmap. --- ## Top 5 Features, in Priority Order ### 1) One-tap habit check-in **Why it matters:** Busy parents need the fastest possible way to mark a habit done without friction. **What it should do:** - Let users tap once to mark a habit complete. - Support quick undo if tapped accidentally. - Show today’s status immediately. **Why it’s #1:** If logging is slow, the app won’t be used consistently. --- ### 2) Simple daily habit list with 3–5 key habits **Why it matters:** Parents should not have to manage long habit lists. **What it should do:** - Display only the most important habits for the day. - Allow users to choose a small number of habits. - Highlight what’s left to do today. **Why it’s #2:** Focus reduces overwhelm and ",
+        "normalized": 1,
+        "usage": {
+          "prompt_tokens": 60,
+          "completion_tokens": 1102,
+          "total_tokens": 1162,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "cfgB": {
+        "templateId": "feature_prioritization",
+        "durationMs": 25522,
+        "model": "gpt-5.4-mini",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6fdh9q-uzh69n",
+        "outputHash": "b135130b1588c32498594b45dfe29088b936e6a9ebd97c154f62dd8f01a4ccd9",
+        "outputExcerpt": "## Feature Prioritization Output ### Assumptions - The product is for **busy parents** who need habits tracked with **very low friction**. - The app should favor **speed, clarity, and reminder reliability** over advanced analytics. - RICE is being used as a **lightweight relative prioritization method**, not a precise financial model. - Scores below are **directional** and intended to help an operator choose MVP scope quickly. ## 1. Scoring Matrix Scoring scale used: - **Reach**: 1–5, how many busy parents would use the feature regularly - **Impact**: 1–5, how much it improves the core habit-tracking job - **Confidence**: 1–5, how certain we are that it matters - **Effort**: 1–5, how much effort it takes to build - **Score**: `(Reach × Impact × Confidence) / Effort` | Feature | User Problem Solved | Reach | Impact | Confidence | Effort | Score | Rank | | --- | --- | --- | --- | --- | --- | --- | --- | | One-tap habit check-in | Parents need to log completion in seconds while multitasking | 5 | 5 | 5 | 2 | 62.5 | 1 | | Smart reminders / notifications | Parents forget habits in the middle of busy routines | 5 | 5 | 4 | 2 | 50.0 | 2 | | Daily habit dashboard | Parents need a fast view",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 9003,
+          "outputTokens": 3628,
+          "totalTokens": 12631
+        },
+        "expansion": {
+          "enabled": true,
+          "pass1": {
+            "durationMs": 13475,
+            "model": "gpt-5.4-mini",
+            "decision": "ALLOW",
+            "receiptPresent": true,
+            "receiptId": "rcpt-env-mp6fd6gx-c2jvnu",
+            "outputHash": "7516b6b8482e03f717620e6bb737787203393594a1bfe0e4eb3ab7fd8b20b0c1",
+            "outputExcerpt": "## Feature Prioritization Output ### Assumptions - The app is for **busy parents** who need fast, low-friction habit tracking, not detailed self-optimization. - The operator wants a **lightweight MVP** that can be explained, validated, and shipped quickly. - I’m using **RICE as a practical prioritization lens**, but with **simple relative scoring** since exact user counts and effort estimates were not provided. - “Feature” here means a user-facing capability that can be understood and tested by a non-technical operator. ## 1. Scoring Matrix Scoring scale used: - **Reach**: 1–5, how many users will use it often - **Impact**: 1–5, how strongly it improves the core job - **Confidence**: 1–5, how certain we are it matters - **Effort**: 1–5, how hard it is to build - **Score**: `(Reach × Impact × Confidence) / Effort` | Feature | User Problem Solved | Reach | Impact | Confidence | Effort | Score | Rank | | --- | --- | --- | --- | --- | --- | --- | --- | | 1. One-tap habit check-in | Parents need a way to mark habits complete in seconds | 5 | 5 | 5 | 2 | 62.5 | 1 | | 2. Smart reminders / notifications | Parents forget habits during busy routines | 5 | 5 | 4 | 2 | 50.0 | 2 | | 3. Daily ha",
+            "usage": {
+              "inputTokens": 3557,
+              "outputTokens": 1781,
+              "totalTokens": 5338
+            }
+          },
+          "pass2": {
+            "durationMs": 12047,
+            "model": "gpt-5.4-mini",
+            "decision": "ALLOW",
+            "receiptPresent": true,
+            "receiptId": "rcpt-env-mp6fdh9q-uzh69n",
+            "outputHash": "b135130b1588c32498594b45dfe29088b936e6a9ebd97c154f62dd8f01a4ccd9",
+            "outputExcerpt": "## Feature Prioritization Output ### Assumptions - The product is for **busy parents** who need habits tracked with **very low friction**. - The app should favor **speed, clarity, and reminder reliability** over advanced analytics. - RICE is being used as a **lightweight relative prioritization method**, not a precise financial model. - Scores below are **directional** and intended to help an operator choose MVP scope quickly. ## 1. Scoring Matrix Scoring scale used: - **Reach**: 1–5, how many busy parents would use the feature regularly - **Impact**: 1–5, how much it improves the core habit-tracking job - **Confidence**: 1–5, how certain we are that it matters - **Effort**: 1–5, how much effort it takes to build - **Score**: `(Reach × Impact × Confidence) / Effort` | Feature | User Problem Solved | Reach | Impact | Confidence | Effort | Score | Rank | | --- | --- | --- | --- | --- | --- | --- | --- | | One-tap habit check-in | Parents need to log completion in seconds while multitasking | 5 | 5 | 5 | 2 | 62.5 | 1 | | Smart reminders / notifications | Parents forget habits in the middle of busy routines | 5 | 5 | 4 | 2 | 50.0 | 2 | | Daily habit dashboard | Parents need a fast view",
+            "usage": {
+              "inputTokens": 5446,
+              "outputTokens": 1847,
+              "totalTokens": 7293
+            }
+          }
+        }
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a comprehensive and well-structured prioritization with clear rationale and actionable steps, making it highly useful and complete for the task."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a structured approach with a scoring matrix and feature details, but lacks some of the actionable steps and depth found in CFG-A."
+        }
+      },
+      "deltaNormalized": -0.16000000000000003
+    },
+    {
+      "id": "EVT4-04",
+      "title": "Persona synthesis",
+      "templateId": "user_persona",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 9762,
+        "model": "gpt-5.4-mini",
+        "outputHash": "84a087f9bf881feb44cae363da2a98d900f3d4e8971bc001c6b48ca6398eed84",
+        "outputExcerpt": "Below are two practical user personas for a meal planning app designed for college students. --- # Assumptions - The app helps students plan meals, build grocery lists, and stay within a budget. - Most users have limited time, limited cooking experience, and uneven access to kitchens. - The app may be used by students living in dorms, shared apartments, or off-campus housing. - Users care about convenience, cost, health, and reducing food waste. --- # Persona 1: Maya Chen — The Budget-Conscious Dorm Student ## Snapshot - **Age:** 18 - **Year:** First-year student - **Living situation:** Dorm with no full kitchen, only microwave and mini-fridge - **Major:** Biology - **Schedule:** Packed with classes, clubs, and study sessions - **Cooking skill:** Very low - **Primary goal:** Eat regularly without spending too much money ## Background Maya is new to college and trying to manage her own meals for the first time. She often skips meals when she is busy and ends up buying expensive takeout. She wants simple, affordable meal ideas that do not require much cooking equipment. ## Goals - Spend less money on food - Avoid skipping meals - Find meals that fit dorm limitations - Make quick deci",
+        "normalized": 1,
+        "usage": {
+          "prompt_tokens": 59,
+          "completion_tokens": 1200,
+          "total_tokens": 1259,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "cfgB": {
+        "templateId": "user_persona",
+        "durationMs": 24677,
+        "model": "gpt-5.4-mini",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6feb7o-nsf65t",
+        "outputHash": "9176ee2cffdc581cfd2025308b40dbb277f5ae5e54bdc61c787223f46c0e3c2f",
+        "outputExcerpt": "## User Persona Output ### Assumptions - The app is a **meal planning app for college students** who want a practical way to decide what to eat, shop for ingredients, and stay consistent. - I am inferring **3 practical segments** from the task context: 1. **Budget-conscious students** 2. **Time-strapped students** 3. **Health-focused students** - These segments are assumptions based on common college-student meal-planning needs and should be validated with a short survey or 5–8 student interviews. - The previous recommendation is **retained**: the most useful segmentation axes are **money, time, and health**. ## 1. Persona Profiles ### Persona 1: Budget-Conscious Planner - **Context and demographics:** A college student living on a limited budget, often in a dorm or shared apartment. They cook occasionally, compare prices, and try to reduce takeout spending. - **Goals:** Keep weekly food costs low, use ingredients efficiently, and avoid wasting groceries. - **Pain points:** - Doesn’t know how to build meals from cheap ingredients - Ends up buying items that spoil before use - Feels overwhelmed by recipes that require many ingredients - Chooses takeout when planning feels too expens",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 8801,
+          "outputTokens": 3351,
+          "totalTokens": 12152
+        },
+        "expansion": {
+          "enabled": true,
+          "pass1": {
+            "durationMs": 13739,
+            "model": "gpt-5.4-mini",
+            "decision": "ALLOW",
+            "receiptPresent": true,
+            "receiptId": "rcpt-env-mp6fe07p-qnsvew",
+            "outputHash": "91e24c8ccc3747084db5fddcdf218353c8ea3715586b55bfc67f3b091305cf4f",
+            "outputExcerpt": "## User Persona Output ### Assumptions - The meal planning app is intended for **college students who want simple, affordable, and time-saving meal planning**. - I am inferring **3 practical segments** from the task context: 1. **Budget-conscious students** 2. **Busy students with limited cooking time** 3. **Health-focused students managing nutrition** - These segments are assumptions based on common college student needs; they should be validated with user interviews or a short survey. ## 1. Persona Profiles ### Persona 1: Budget-Conscious Planner - **Context and demographics:** A college student living on a tight budget, often sharing an apartment or dorm kitchen. They cook a few times a week and try to avoid food waste and expensive takeout. - **Goals:** Save money, stretch ingredients across multiple meals, and avoid last-minute expensive food decisions. - **Pain points:** - Doesn’t know what to buy that can be reused across several meals - Often ends up wasting groceries - Gets overwhelmed by recipes with too many ingredients - Needs meals that are cheap but still filling - **Jobs to be done:** - Plan a week of meals within a limited budget - Generate a shopping list from the ",
+            "usage": {
+              "inputTokens": 3509,
+              "outputTokens": 1675,
+              "totalTokens": 5184
+            }
+          },
+          "pass2": {
+            "durationMs": 10938,
+            "model": "gpt-5.4-mini",
+            "decision": "ALLOW",
+            "receiptPresent": true,
+            "receiptId": "rcpt-env-mp6feb7o-nsf65t",
+            "outputHash": "9176ee2cffdc581cfd2025308b40dbb277f5ae5e54bdc61c787223f46c0e3c2f",
+            "outputExcerpt": "## User Persona Output ### Assumptions - The app is a **meal planning app for college students** who want a practical way to decide what to eat, shop for ingredients, and stay consistent. - I am inferring **3 practical segments** from the task context: 1. **Budget-conscious students** 2. **Time-strapped students** 3. **Health-focused students** - These segments are assumptions based on common college-student meal-planning needs and should be validated with a short survey or 5–8 student interviews. - The previous recommendation is **retained**: the most useful segmentation axes are **money, time, and health**. ## 1. Persona Profiles ### Persona 1: Budget-Conscious Planner - **Context and demographics:** A college student living on a limited budget, often in a dorm or shared apartment. They cook occasionally, compare prices, and try to reduce takeout spending. - **Goals:** Keep weekly food costs low, use ingredients efficiently, and avoid wasting groceries. - **Pain points:** - Doesn’t know how to build meals from cheap ingredients - Ends up buying items that spoil before use - Feels overwhelmed by recipes that require many ingredients - Chooses takeout when planning feels too expens",
+            "usage": {
+              "inputTokens": 5292,
+              "outputTokens": 1676,
+              "totalTokens": 6968
+            }
+          }
+        }
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides detailed, well-structured personas with clear goals, pain points, and app feature needs, making it highly useful and complete."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a broader segmentation approach with three personas, but lacks the depth and specificity of CFG-A, making it slightly less useful and complete."
+        }
+      },
+      "deltaNormalized": -0.16000000000000003
+    },
+    {
+      "id": "EVT4-05",
+      "title": "Pricing tiers",
+      "templateId": "pricing_strategy",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 8943,
+        "model": "gpt-5.4-mini",
+        "outputHash": "ea8b7069f05e73ccde182d10bf05c0c82e6b1ace08f3dbed26db0560c4429a33",
+        "outputExcerpt": "Here’s a simple, freelancer-friendly pricing setup for a tiny CRM. ## Assumptions - The product is for solo freelancers or very small teams. - Core value is managing contacts, leads, follow-ups, and basic notes. - You want pricing that is easy to understand and easy to sell. - You’re optimizing for low friction, not enterprise complexity. - The product is early-stage, so you should keep plan differences very clear. --- ## Recommended pricing tiers ### 1) Free — “Starter” **Price:** $0 **Best for:** New users trying the product **Include:** - Up to 50 contacts - Basic pipeline or lead list - Notes and reminders - 1 user - Limited history/activity - Basic search **Goal:** Let freelancers try the product and build habit before upgrading. --- ### 2) Solo — “Pro” **Price:** $12/month or $120/year **Best for:** Freelancers using the CRM regularly **Include everything in Free, plus:** - Unlimited contacts - Unlimited reminders - Email follow-up templates - Tagging and filtering - Simple reporting/dashboard - Import/export CSV - Email support **Goal:** This should be the main paid plan. --- ### 3) Studio — “Plus” **Price:** $24/month or $240/year **Best for:** Freelancers who work with col",
+        "normalized": 1,
+        "usage": {
+          "prompt_tokens": 58,
+          "completion_tokens": 1010,
+          "total_tokens": 1068,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "cfgB": {
+        "templateId": "pricing_strategy",
+        "durationMs": 26383,
+        "model": "gpt-5.4-mini",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6ff3fq-h2xsn6",
+        "outputHash": "9492184f7ff3a012d1c002655fbb9395af32174d448a675ac050eeacca56975c",
+        "outputExcerpt": "## Pricing Strategy Output ## 1. Pricing Assessment ### Product fit A tiny CRM for freelancers should be priced for speed of adoption, low complexity, and clear upgrade motivation. The buyer is usually a solo operator or very small service business, so pricing should feel approachable and not require a long evaluation process. ### Assumptions - Primary users are freelancers, consultants, and solo service providers. - The CRM covers contact management, lead tracking, follow-ups, and a basic pipeline. - Buyers prefer predictable monthly SaaS pricing and simple plan choices. - Competitors are not identified, so pricing should follow general SMB SaaS norms rather than exact market matching. - The commercial target is B2B SMB, but the actual decision-maker is likely an individual freelancer. ### Pricing direction A tiered model is the right choice because it supports: - a low-friction entry point, - a clear path to upgrade as usage grows, - simple positioning for a non-technical audience. For this product, the cleanest structure is **3 simple tiers**: 1. **Starter** 2. **Pro** 3. **Team** That gives enough choice without creating decision fatigue. ### Recommended pricing principle Price",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 8161,
+          "outputTokens": 3350,
+          "totalTokens": 11511
+        },
+        "expansion": {
+          "enabled": true,
+          "pass1": {
+            "durationMs": 12890,
+            "model": "gpt-5.4-mini",
+            "decision": "ALLOW",
+            "receiptPresent": true,
+            "receiptId": "rcpt-env-mp6fet43-t1pxqp",
+            "outputHash": "221246c1586a83c2025cb4dbc7b5336c63109ee62f273e07aba5c6f0c527fd4f",
+            "outputExcerpt": "## Pricing Strategy Output ## 1. Pricing Assessment ### Product fit This is a tiny CRM for freelancers, so the pricing should be simple, low-friction, and easy to understand at a glance. The buyer is likely an individual operator or very small team, so the product should avoid enterprise-style complexity and heavy feature gating. ### Assumptions - Target customers are freelancers, solo consultants, and very small service businesses. - The CRM helps manage contacts, leads, follow-ups, and basic pipeline tracking. - Buyers want predictable pricing more than deep customization. - Competitors are unknown, so the structure should rely on general SMB SaaS pricing norms rather than exact market matching. - The product is sold as B2B SMB software, but the actual user is likely an individual decision-maker. ### Pricing direction A tiered model is appropriate because it lets the product: - offer a low entry point for solo freelancers, - provide a clear upgrade path as a business grows, - keep the product easy to position and sell. For this use case, the best approach is **3 simple tiers**: 1. Starter 2. Pro 3. Team This keeps the offer understandable without overwhelming the buyer. --- ## 2.",
+            "usage": {
+              "inputTokens": 3259,
+              "outputTokens": 1535,
+              "totalTokens": 4794
+            }
+          },
+          "pass2": {
+            "durationMs": 13493,
+            "model": "gpt-5.4-mini",
+            "decision": "ALLOW",
+            "receiptPresent": true,
+            "receiptId": "rcpt-env-mp6ff3fq-h2xsn6",
+            "outputHash": "9492184f7ff3a012d1c002655fbb9395af32174d448a675ac050eeacca56975c",
+            "outputExcerpt": "## Pricing Strategy Output ## 1. Pricing Assessment ### Product fit A tiny CRM for freelancers should be priced for speed of adoption, low complexity, and clear upgrade motivation. The buyer is usually a solo operator or very small service business, so pricing should feel approachable and not require a long evaluation process. ### Assumptions - Primary users are freelancers, consultants, and solo service providers. - The CRM covers contact management, lead tracking, follow-ups, and a basic pipeline. - Buyers prefer predictable monthly SaaS pricing and simple plan choices. - Competitors are not identified, so pricing should follow general SMB SaaS norms rather than exact market matching. - The commercial target is B2B SMB, but the actual decision-maker is likely an individual freelancer. ### Pricing direction A tiered model is the right choice because it supports: - a low-friction entry point, - a clear path to upgrade as usage grows, - simple positioning for a non-technical audience. For this product, the cleanest structure is **3 simple tiers**: 1. **Starter** 2. **Pro** 3. **Team** That gives enough choice without creating decision fatigue. ### Recommended pricing principle Price",
+            "usage": {
+              "inputTokens": 4902,
+              "outputTokens": 1815,
+              "totalTokens": 6717
+            }
+          }
+        }
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a detailed and structured pricing strategy with clear tiers, goals, and actionable steps, making it highly useful and complete."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a solid pricing strategy with a focus on value and competitive positioning, but lacks some of the actionable detail and clarity found in CFG-A."
+        }
+      },
+      "deltaNormalized": -0.16000000000000003
+    }
+  ]
+}

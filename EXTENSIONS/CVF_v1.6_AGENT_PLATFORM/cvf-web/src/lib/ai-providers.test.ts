@@ -183,6 +183,25 @@ describe('ai-providers', () => {
         expect(response.usage?.totalTokens).toBe(3);
     });
 
+    it('OpenAIProvider uses max_completion_tokens for GPT-5 family models', async () => {
+        const fetchMock = vi.fn().mockResolvedValue({
+            ok: true,
+            json: async () => ({
+                choices: [{ message: { content: 'hello' }, finish_reason: 'stop' }],
+                usage: { prompt_tokens: 1, completion_tokens: 2, total_tokens: 3 },
+            }),
+        });
+        vi.stubGlobal('fetch', fetchMock);
+
+        const provider = new OpenAIProvider({ apiKey: 'key', model: 'gpt-5.4-mini' });
+        await provider.chat([{ role: 'user', content: 'Hello' }]);
+
+        const body = JSON.parse(fetchMock.mock.calls[0][1].body);
+        expect(body.max_completion_tokens).toBe(4096);
+        expect(body.max_tokens).toBeUndefined();
+        expect(body.temperature).toBeUndefined();
+    });
+
     it('OpenAIProvider streams response chunks', async () => {
         const encoder = new TextEncoder();
         const stream = new ReadableStream({

@@ -1,0 +1,24 @@
+# CVF EVT-4 Output Quality A/B Summary
+
+**Provider/model:** openai / gpt-5.4-mini
+**Provider timeout ms:** 120000
+**Completed:** 5/5
+**Reviewer modes:** openai:gpt-4o
+**Median normalized delta (CFG-B - CFG-A):** -0.16000000000000003
+**Decision rule met:** false
+**CFG-B live receipts:** 5
+**CFG-B expansion receipts:** 5
+**Safety failures:** 0
+**Two-pass expansion:** true
+**CFG-B median duration ms:** 25522
+**CFG-B median output tokens:** 3351
+
+| Task | Title | Status | CFG-A | CFG-B | Delta/Error |
+| --- | --- | --- | --- | --- | --- |
+| EVT4-01 | Onboarding checklist | OK | 0.96 | 0.84 | -0.12 |
+| EVT4-02 | Launch options memo | OK | 1.00 | 0.84 | -0.16 |
+| EVT4-03 | Feature priority | OK | 1.00 | 0.84 | -0.16 |
+| EVT4-04 | Persona synthesis | OK | 1.00 | 0.84 | -0.16 |
+| EVT4-05 | Pricing tiers | OK | 1.00 | 0.84 | -0.16 |
+
+Bounded claim only: this evidence applies to the frozen EVT-4 R0/R1 corpus and the reviewer mode above.

@@ -1,0 +1,495 @@
+{
+  "schema": "cvf.evt4.output_quality_ab.v1",
+  "config": {
+    "provider": "deepseek",
+    "cfgA": "direct_deepseek",
+    "cfgB": "cvf_api_execute_two_pass_quality_expansion",
+    "model": "deepseek-v4-pro",
+    "providerTimeoutMs": 120000
+  },
+  "summary": {
+    "startedAt": "2026-05-15T06:09:07.656Z",
+    "completedAt": "2026-05-15T06:23:42.579Z",
+    "corpusSize": 20,
+    "runLimit": 5,
+    "completedPairs": 5,
+    "cfgBReceipts": 5,
+    "safetyFailures": 0,
+    "medianDeltaNormalized": -0.16000000000000003,
+    "twoPassExpansion": true,
+    "cfgBExpansionReceipts": 5,
+    "cfgBMedianDurationMs": 132238,
+    "cfgBMedianOutputTokens": 4096,
+    "decisionRuleMet": false,
+    "reviewerModes": [
+      "openai:gpt-4o"
+    ]
+  },
+  "records": [
+    {
+      "id": "EVT4-01",
+      "title": "Onboarding checklist",
+      "templateId": "documentation",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 185,
+        "model": "deepseek-v4-pro",
+        "outputHash": "1362d193b79d5021a2611e635558547ed6efa3811b933058191795f9bf99847d",
+        "outputExcerpt": "## Assumptions - You have a company-issued laptop, internet access, and basic familiarity with web browsers, email, and chat tools. - You are comfortable following step‑by‑step instructions without coding. - The product is a local‑first SaaS app (data lives on the user’s device first, syncs to cloud when online). - Your role is to answer user questions, triage issues, and document reproducible bugs—not to fix code. - You’ll be guided by a buddy/manager during the first weeks. --- ## Onboarding Checklist for a Local‑First SaaS Support Teammate ### Phase 1 – Access & Environment Setup (Day 0–1) | Task | Concrete Next Steps | Acceptance Check | |------|---------------------|------------------| | 1. Activate all required accounts | Open the “Welcome Email” and log into: company chat (Slack/Teams), support ticketing system (Zendesk, Intercom, etc.), internal wiki/Notion, email, and calendar. Set up 2FA. | You can send a message in the team chat, log into the support dashboard, and view the knowledge base. | | 2. Install the product (as a user) | Download the app on your laptop and, if applicable, mobile. Create a personal test account. Use the same email/password flow a customer would. ",
+        "normalized": 0.96,
+        "usage": {
+          "prompt_tokens": 58,
+          "completion_tokens": 1200,
+          "total_tokens": 1258,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 407
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 58
+        }
+      },
+      "cfgB": {
+        "templateId": "documentation",
+        "durationMs": 132092,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6ir06c-go8kee",
+        "outputHash": "0742fd7c133bcd63d325883e55d55071a5b473e8b7f257f0929ed03aed3c5e29",
+        "outputExcerpt": "# Operator Checklist ## 1. Purpose, Audience, And Assumptions - **Purpose:** Give a new support teammate a concrete, time‑based path from zero to independently handling customer questions for a local‑first SaaS product. Every step has a clear owner, tool, and signal of completion so the operator never wonders “what next?” - **Who uses this:** The new support operator (non‑technical), their onboarding buddy/team lead, and the manager who signs off on readiness. - **Assumptions and unknowns:** - The product is a **local‑first SaaS** – users work from a local client that synchronises with cloud services; common support triggers include sync conflicts, offline caches, and version mismatches. - The team uses a ticketing system (e.g., Zendesk, Intercom) and an internal knowledge base (KB). - The new teammate arrives with basic computer skills but **no prior knowledge** of the product or local‑first architectures. - All accounts and hardware are provisioned before Day 1. - A buddy (experienced supporter) is available for the first two weeks. - Where tool or product names are missing, we use placeholders like `[Product]`, `[Ticketing Tool]`, `[KB]`. Replace these with your actual assets be",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 9215,
+          "outputTokens": 4096,
+          "totalTokens": 13311
+        },
+        "expansion": {
+          "enabled": true,
+          "pass1": {
+            "durationMs": 68566,
+            "model": "deepseek-v4-pro",
+            "decision": "ALLOW",
+            "receiptPresent": true,
+            "receiptId": "rcpt-env-mp6ipjgq-0ke7de",
+            "outputHash": "65b719fa4e4838200b6c325c7a964a5440f9981d2f87a5c99569e2328481c83c",
+            "outputExcerpt": "# Operator Checklist ## 1. Purpose, Audience, And Assumptions - **Purpose:** Give a new support teammate a concrete, time‑based path from zero to independently handling customer questions for a local‑first SaaS product. Every step has a clear owner, tool, and signal of completion so the operator never wonders “what next?” - **Who uses this:** The new support operator (non‑technical), their onboarding buddy/team lead, and the manager who signs off on readiness. - **Assumptions and unknowns:** - The product is a **local‑first SaaS** – users work from a local client that synchronises with cloud services; support often involves sync conflicts, offline caches, and version mismatches. - The team uses a ticketing system (e.g., Zendesk, Intercom) and an internal knowledge base. - The new teammate arrives with basic computer skills but **no prior knowledge** of the product or local‑first architectures. - All necessary accounts and hardware are provisioned before Day 1. - A buddy (experienced supporter) is available for the first two weeks. - **Unknowns:** exact product name, internal tool names, current support load. Where names are missing we’ll use `[Product]`, `[Ticketing Tool]`, `[KB]`,",
+            "usage": {
+              "inputTokens": 4079,
+              "outputTokens": 2048,
+              "totalTokens": 6127
+            }
+          },
+          "pass2": {
+            "durationMs": 63526,
+            "model": "deepseek-v4-pro",
+            "decision": "ALLOW",
+            "receiptPresent": true,
+            "receiptId": "rcpt-env-mp6ir06c-go8kee",
+            "outputHash": "0742fd7c133bcd63d325883e55d55071a5b473e8b7f257f0929ed03aed3c5e29",
+            "outputExcerpt": "# Operator Checklist ## 1. Purpose, Audience, And Assumptions - **Purpose:** Give a new support teammate a concrete, time‑based path from zero to independently handling customer questions for a local‑first SaaS product. Every step has a clear owner, tool, and signal of completion so the operator never wonders “what next?” - **Who uses this:** The new support operator (non‑technical), their onboarding buddy/team lead, and the manager who signs off on readiness. - **Assumptions and unknowns:** - The product is a **local‑first SaaS** – users work from a local client that synchronises with cloud services; common support triggers include sync conflicts, offline caches, and version mismatches. - The team uses a ticketing system (e.g., Zendesk, Intercom) and an internal knowledge base (KB). - The new teammate arrives with basic computer skills but **no prior knowledge** of the product or local‑first architectures. - All accounts and hardware are provisioned before Day 1. - A buddy (experienced supporter) is available for the first two weeks. - Where tool or product names are missing, we use placeholders like `[Product]`, `[Ticketing Tool]`, `[KB]`. Replace these with your actual assets be",
+            "usage": {
+              "inputTokens": 5136,
+              "outputTokens": 2048,
+              "totalTokens": 7184
+            }
+          }
+        }
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 4,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a detailed, structured checklist with clear tasks and acceptance criteria, making it highly useful and specific for onboarding."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a comprehensive checklist with clear roles and actions, but lacks some specificity in task descriptions compared to CFG-A."
+        }
+      },
+      "deltaNormalized": -0.12
+    },
+    {
+      "id": "EVT4-02",
+      "title": "Launch options memo",
+      "templateId": "decision_memo",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 184,
+        "model": "deepseek-v4-pro",
+        "outputHash": "dfcd491a1d891832f0d57a04ec20762c40ad82857d72eb5fbe20d1facf5166ad",
+        "outputExcerpt": "## Comparison of three go‑to‑market options *For a simple appointment booking app targeting small salons (1–3 staff).* --- ### Assumptions (validate these before acting) - The app is already built and ready for business use – online booking, calendar, automated reminders, client management, mobile‑friendly. - The app includes a **14‑day free trial** (no credit card required) and then a flat monthly price (e.g. $29/month/salon). - **You are not a developer**, but you can use basic digital tools (social media, email, a simple landing page builder, phone calls). - Small salons often rely on word‑of‑mouth, social media, and local walk‑ins; many owners are not technologically savvy. --- ## Option comparison at a glance | | **1. Hyper‑local direct outreach** | **2. Digital self‑serve funnel** | **3. Distribution partnerships** | |-------------------|------------------------------------|------------------------------------------|-------------------------------------------------| | **Core idea** | Walk into salons, drop flyers, attend local business meet‑ups | Run low‑budget Facebook/Instagram ads → free trial landing page → automated nurture | Team up with beauty product distributors or i",
+        "normalized": 0.88,
+        "usage": {
+          "prompt_tokens": 57,
+          "completion_tokens": 1200,
+          "total_tokens": 1257,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 709
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 57
+        }
+      },
+      "cfgB": {
+        "templateId": "decision_memo",
+        "durationMs": 119916,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6iug6g-camoo0",
+        "outputHash": "abd39865faa1d3d1bb77eb1e7ced251b439dc6b1813c0b5f5e6582683625fccc",
+        "outputExcerpt": "# Decision Comparison Memo — GTM for a Simple Appointment‑Booking App (Small Salons) ## 1. Decision to Make - **Decision:** Which go‑to‑market option should the owner‑operator of a small salon use to offer online appointment booking with the least hassle, lowest cost, and fastest time to a live booking? - **Constraints:** - Budget: out‑of‑pocket < $500 total, no developer salary. - Operator profile: non‑technical, runs the salon day‑to‑day, max 2 hrs/week on tech. - Must have a working booking flow live this week. - **Assumptions** (all are non‑binding operating assumptions): - The salon has 1–5 staff, operates from a single location. - Desired booking features: client self‑booking, calendar sync (to avoid double‑booking), automated reminders (email or SMS). - No immediate need for integrated payments, gift cards, multi‑location, or custom‑branded apps. - The operator has a business Gmail/Outlook account and a smartphone with WhatsApp. ## 2. Option‑by‑Option Comparison | Option | Best Fit Scenario | Pros | Cons | Cost & Effort | Risks | Activation Steps (Owner/Operator) | | --- | --- | --- | --- | --- | --- | --- | | **A – Custom Outsourced MVP** | You already have a trusted develo",
+        "normalized": 1,
+        "usage": {
+          "inputTokens": 9465,
+          "outputTokens": 3685,
+          "totalTokens": 13150
+        },
+        "expansion": {
+          "enabled": true,
+          "pass1": {
+            "durationMs": 53845,
+            "model": "deepseek-v4-pro",
+            "decision": "ALLOW",
+            "receiptPresent": true,
+            "receiptId": "rcpt-env-mp6ita9k-meg2n8",
+            "outputHash": "c8fa49c07cea9996a9cce7fed1a47e37de5f9237ce9edb12b17284f78441b2a6",
+            "outputExcerpt": "# Decision Comparison Memo ## 1. Decision To Make - **Decision:** Which go‑to‑market option should we use to launch a simple appointment‑booking app targeting small salons (1–5 staff, owner‑operated). - **Constraints:** - Low budget (assumption: initial out‑of‑pocket < $500, no full‑time developer). - Non‑technical operator (no coding, minimal design skills). - Need a clear first activation step this week. - **Assumptions:** - “Small salons” means solo operators or shops with up to 5 chairs. - The operator can spend up to 2 hours/day maintaining the solution. - The MVP must handle client self‑booking, calendar sync, and basic reminders. - No immediate need for complex features (multi‑location, advanced analytics, integrated payments). ## 2. Option‑By‑Option Comparison | Option | Best Fit Scenario | Pros | Cons | Cost/Effort | Risks | Activation Steps | | --- | --- | --- | --- | --- | --- | --- | | **A – Custom App (outsourced MVP)** | When unique branding or a specific workflow is critical, and there is a clear tech partner. | Full control over look and features. Can build exactly what clients need. | High upfront cost (assumption: $5k–$15k). Requires managing a developer. Long tim",
+            "usage": {
+              "inputTokens": 4061,
+              "outputTokens": 1637,
+              "totalTokens": 5698
+            }
+          },
+          "pass2": {
+            "durationMs": 66071,
+            "model": "deepseek-v4-pro",
+            "decision": "ALLOW",
+            "receiptPresent": true,
+            "receiptId": "rcpt-env-mp6iug6g-camoo0",
+            "outputHash": "abd39865faa1d3d1bb77eb1e7ced251b439dc6b1813c0b5f5e6582683625fccc",
+            "outputExcerpt": "# Decision Comparison Memo — GTM for a Simple Appointment‑Booking App (Small Salons) ## 1. Decision to Make - **Decision:** Which go‑to‑market option should the owner‑operator of a small salon use to offer online appointment booking with the least hassle, lowest cost, and fastest time to a live booking? - **Constraints:** - Budget: out‑of‑pocket < $500 total, no developer salary. - Operator profile: non‑technical, runs the salon day‑to‑day, max 2 hrs/week on tech. - Must have a working booking flow live this week. - **Assumptions** (all are non‑binding operating assumptions): - The salon has 1–5 staff, operates from a single location. - Desired booking features: client self‑booking, calendar sync (to avoid double‑booking), automated reminders (email or SMS). - No immediate need for integrated payments, gift cards, multi‑location, or custom‑branded apps. - The operator has a business Gmail/Outlook account and a smartphone with WhatsApp. ## 2. Option‑by‑Option Comparison | Option | Best Fit Scenario | Pros | Cons | Cost & Effort | Risks | Activation Steps (Owner/Operator) | | --- | --- | --- | --- | --- | --- | --- | | **A – Custom Outsourced MVP** | You already have a trusted develo",
+            "usage": {
+              "inputTokens": 5404,
+              "outputTokens": 2048,
+              "totalTokens": 7452
+            }
+          }
+        }
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 5,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a clear, structured comparison of three go-to-market options with detailed pros and cons, making it highly useful and complete for decision-making."
+        },
+        "cfgB": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a comprehensive, detailed analysis with clear recommendations and steps, making it extremely useful and complete for a non-technical salon owner."
+        }
+      },
+      "deltaNormalized": 0.12
+    },
+    {
+      "id": "EVT4-03",
+      "title": "Feature priority",
+      "templateId": "feature_prioritization",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 160,
+        "model": "deepseek-v4-pro",
+        "outputHash": "168d77e6d67d6acea85b69f882e40ea5831c07361c231152cc2fc06c5589efb4",
+        "outputExcerpt": "Here’s a prioritized set of five features for a habit-tracking app designed for busy parents, built around speed, shared accountability, and minimal mental load. --- ### 1. One‑Tap Quick Logging **What it is:** A home‑screen widget or in‑app button that lets a user mark a habit as “done” for the day with a single tap—no opening the app, no typing. **Why it’s #1:** Busy parents have seconds, not minutes. Friction kills adoption. This single feature removes the biggest barrier to consistent tracking. **Assumption** Users will have at most 3‑5 core habits they want to track daily, and those habits are already defined. **Concrete next steps** 1. Design a widget (iOS/Android) that displays the user’s current top habits as tappable icons. 2. Prototype and test with 5 parents—time how long it takes to log a habit vs. opening the full app. 3. Refine icon size and spacing based on thumb‑reach data. **Acceptance checks** - User can complete a daily habit entry in ≤2 seconds from the lock screen or home screen. - The action requires exactly one tap (no confirmation pop‑ups). - Logging visibly updates a streak or mark within the widget. --- ### 2. Shared Family Habits **What it is:** A simple ",
+        "normalized": 0.92,
+        "usage": {
+          "prompt_tokens": 55,
+          "completion_tokens": 1200,
+          "total_tokens": 1255,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 492
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 55
+        }
+      },
+      "cfgB": {
+        "templateId": "feature_prioritization",
+        "durationMs": 132238,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6iy7jt-zbsihd",
+        "outputHash": "6ea969ec76cfcbe7594f66be4170dabe01693bf88e9b7ae398b1c3b7831c3d2d",
+        "outputExcerpt": "## Feature Prioritization Output ### 1. Scoring Matrix | Feature | User Problem Solved | Reach | Impact | Confidence | Effort | Score | Rank | | --- | --- | --- | --- | --- | --- | --- | --- | | One‑tap habit logging with curated parent habit library | “I have no time or brain space to create habits or fill in forms.” | 5,000 | 3 | 80% | 1 PM | 12,000 | 1 | | Smart contextual reminders (location, time, child routine) | “I forget to do the habit until it’s too late, even if I want to.” | 4,500 | 3 | 70% | 1.5 PM | 6,300 | 2 | | Gentle streaks with positive-only reinforcement | “I feel guilty when I break a streak, so I avoid tracking.” | 4,000 | 2.5 | 85% | 0.5 PM | 17,000 | 3 | | One‑screen daily progress snapshot (no deep graphs) | “I can’t interpret complex charts; I just want to know if I’m doing okay today.” | 4,200 | 2.5 | 80% | 1 PM | 8,400 | 4 | | Partner/family shared habits (non‑competitive) | “My partner and I want to share some habits without comparing performance.” | 2,000 | 2 | 60% | 2 PM | 1,200 | 5 | *Scoring formula: (Reach × Impact × Confidence) / Effort. Impact 3 = critical for daily engagement; Effort in person‑months (PM).* ### 2. Feature Detail Cards **Feature ",
+        "normalized": 0.76,
+        "usage": {
+          "inputTokens": 8375,
+          "outputTokens": 4096,
+          "totalTokens": 12471
+        },
+        "expansion": {
+          "enabled": true,
+          "pass1": {
+            "durationMs": 65517,
+            "model": "deepseek-v4-pro",
+            "decision": "ALLOW",
+            "receiptPresent": true,
+            "receiptId": "rcpt-env-mp6iwslh-qcgpxw",
+            "outputHash": "e775f3cb8e8ed1ad9b37cf4897d1ee4394348e56f2ef1f242c78e520e0ae025d",
+            "outputExcerpt": "## Feature Prioritization Output ### 1. Scoring Matrix | Feature | User Problem Solved | Reach | Impact | Confidence | Effort | Score | Rank | | --- | --- | --- | --- | --- | --- | --- | --- | | One‑tap habit logging with parent‑focused habit library | Parents have no mental bandwidth to enter habits; they need friction‑free recording. | 5,000 | 3 | 80% | 1 PM | 12,000 | 1 | | Smart contextual reminders | Forgetfulness in busy schedules leads to broken streaks. | 4",
+            "usage": {
+              "inputTokens": 4069,
+              "outputTokens": 2048,
+              "totalTokens": 6117
+            }
+          },
+          "pass2": {
+            "durationMs": 66721,
+            "model": "deepseek-v4-pro",
+            "decision": "ALLOW",
+            "receiptPresent": true,
+            "receiptId": "rcpt-env-mp6iy7jt-zbsihd",
+            "outputHash": "6ea969ec76cfcbe7594f66be4170dabe01693bf88e9b7ae398b1c3b7831c3d2d",
+            "outputExcerpt": "## Feature Prioritization Output ### 1. Scoring Matrix | Feature | User Problem Solved | Reach | Impact | Confidence | Effort | Score | Rank | | --- | --- | --- | --- | --- | --- | --- | --- | | One‑tap habit logging with curated parent habit library | “I have no time or brain space to create habits or fill in forms.” | 5,000 | 3 | 80% | 1 PM | 12,000 | 1 | | Smart contextual reminders (location, time, child routine) | “I forget to do the habit until it’s too late, even if I want to.” | 4,500 | 3 | 70% | 1.5 PM | 6,300 | 2 | | Gentle streaks with positive-only reinforcement | “I feel guilty when I break a streak, so I avoid tracking.” | 4,000 | 2.5 | 85% | 0.5 PM | 17,000 | 3 | | One‑screen daily progress snapshot (no deep graphs) | “I can’t interpret complex charts; I just want to know if I’m doing okay today.” | 4,200 | 2.5 | 80% | 1 PM | 8,400 | 4 | | Partner/family shared habits (non‑competitive) | “My partner and I want to share some habits without comparing performance.” | 2,000 | 2 | 60% | 2 PM | 1,200 | 5 | *Scoring formula: (Reach × Impact × Confidence) / Effort. Impact 3 = critical for daily engagement; Effort in person‑months (PM).* ### 2. Feature Detail Cards **Feature ",
+            "usage": {
+              "inputTokens": 4306,
+              "outputTokens": 2048,
+              "totalTokens": 6354
+            }
+          }
+        }
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 4,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 4,
+          "rationale": "CFG-A provides a detailed, structured, and specific prioritization of features with clear rationale and actionable steps, making it highly useful for implementation."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 3,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 4,
+          "rationale": "CFG-B offers a structured approach with a scoring matrix and feature details, but lacks some depth in completeness and specificity compared to CFG-A."
+        }
+      },
+      "deltaNormalized": -0.16000000000000003
+    },
+    {
+      "id": "EVT4-04",
+      "title": "Persona synthesis",
+      "templateId": "user_persona",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 164,
+        "model": "deepseek-v4-pro",
+        "outputHash": "f8aa6fd6628082634d0aac4e8289cae9c80e9708f2d3153cb2d71cf6ec5d2d31",
+        "outputExcerpt": "### Assumptions (What we’re assuming before building) - The app helps college students plan meals, create grocery lists, and manage a food budget. - Most users have limited cooking experience, irregular schedules, and tight budgets. - The app will include features like recipe suggestions, dietary filters, grocery list generation, and pantry tracking. - The personas will guide early design decisions, marketing, and feature prioritisation. - Personas are based on general knowledge of student life — they must be validated with real users. --- ### Persona 1: Cash‑Strapped Freshman **Name:** Maria **Age:** 18 **Year:** Freshman **Living Situation:** Dorm room with a shared kitchen on her floor. Only a mini‑fridge in her room. **Cooking Skill:** Very basic — can make toast, eggs, pasta. **Monthly Food Budget:** $150 (partly from a campus meal plan, rest out of pocket) **Goals:** - Spend as little as possible on food so she can afford occasional social outings. - Stop wasting groceries she bought on impulse and never used. - Learn to cook 2–3 cheap, quick meals she can rotate. **Pain Points:** - Doesn’t know what to buy — often ends up with random ingredients that don’t combine into a mea",
+        "normalized": 1,
+        "usage": {
+          "prompt_tokens": 53,
+          "completion_tokens": 1200,
+          "total_tokens": 1253,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 375
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 53
+        }
+      },
+      "cfgB": {
+        "templateId": "user_persona",
+        "durationMs": 133363,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6j20om-409wfz",
+        "outputHash": "b2ddba46fbc97c39f7bbf9ff61b6a9a73849ed44845219a2b7cb4b63179f5acf",
+        "outputExcerpt": "## User Persona Output (Operator-Ready Expansion) This deliverable expands the two personas for a meal planning app targeting college students. All details remain grounded in the original research, with explicit assumptions marked. The actions are written for a non-technical operator (marketing lead, product manager, or student ambassador team) to execute immediately. --- ### 1. Persona Profiles #### Persona 1: The Thrifty Prepper - **Context and demographics:** Alex is a second‑year student living off‑campus with a fixed monthly food budget of ~$250. Works 10–15 hrs/week at a campus library. Has access to a full kitchen (shared with two roommates) but limited fridge and pantry space. Shops once a week at a discount supermarket. - **Goals:** Maximise calories and nutrition per dollar. Plan meals that reuse ingredients so nothing goes to waste. Cut the time spent deciding “what’s for dinner” to under 5 minutes per week. - **Pain points:** Leftover vegetables spoiling because plans changed mid-week. “Choice fatigue” – can’t think of cheap, varied meals every week. Subscription fatigue – won’t pay if the free tier doesn’t solve the core problem. - **Jobs to be done:** *When I open the",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 9521,
+          "outputTokens": 4096,
+          "totalTokens": 13617
+        },
+        "expansion": {
+          "enabled": true,
+          "pass1": {
+            "durationMs": 67154,
+            "model": "deepseek-v4-pro",
+            "decision": "ALLOW",
+            "receiptPresent": true,
+            "receiptId": "rcpt-env-mp6j0kgx-pply01",
+            "outputHash": "3413ed697a0e892fb844aa871d6718b622c272737c0409c8eae8c7ff7d8f15dd",
+            "outputExcerpt": "## User Persona Output ## 1. Persona Profiles ### Persona 1: The Thrifty Prepper - **Context and demographics:** Alex is a second‑year student living off‑campus with a fixed‑monthly food budget (~$250). Works 10‑15 hours a week at a campus library. Cooks 4‑5 dinners per week, usually in bulk. Has a small shared kitchen and limited pantry space. - **Goals:** Maximize calories and nutrition per dollar. Plan weekly meals that reuse ingredients efficiently. Avoid last‑minute takeout that blows the budget. - **Pain points:** Running out of meal ideas that fit the budget. Wasting leftover ingredients because plans changed. Spending too much time figuring out “what to eat with what’s in the fridge.” - **Jobs to be done:** “When I have $40 left for the week and a bunch of vegetables about to go bad, give me a realistic meal plan that uses everything up.” - **Trigger:** Receives a monthly stipend and immediately starts looking for a meal plan to stretch it. Also triggered by seeing peer reviews or TikTok videos about “college budget meal preps.” - **Objections:** “Another subscription is just another bill.” Will likely uninstall if the app pushes premium features aggressively or if recipes ",
+            "usage": {
+              "inputTokens": 4034,
+              "outputTokens": 2048,
+              "totalTokens": 6082
+            }
+          },
+          "pass2": {
+            "durationMs": 66209,
+            "model": "deepseek-v4-pro",
+            "decision": "ALLOW",
+            "receiptPresent": true,
+            "receiptId": "rcpt-env-mp6j20om-409wfz",
+            "outputHash": "b2ddba46fbc97c39f7bbf9ff61b6a9a73849ed44845219a2b7cb4b63179f5acf",
+            "outputExcerpt": "## User Persona Output (Operator-Ready Expansion) This deliverable expands the two personas for a meal planning app targeting college students. All details remain grounded in the original research, with explicit assumptions marked. The actions are written for a non-technical operator (marketing lead, product manager, or student ambassador team) to execute immediately. --- ### 1. Persona Profiles #### Persona 1: The Thrifty Prepper - **Context and demographics:** Alex is a second‑year student living off‑campus with a fixed monthly food budget of ~$250. Works 10–15 hrs/week at a campus library. Has access to a full kitchen (shared with two roommates) but limited fridge and pantry space. Shops once a week at a discount supermarket. - **Goals:** Maximise calories and nutrition per dollar. Plan meals that reuse ingredients so nothing goes to waste. Cut the time spent deciding “what’s for dinner” to under 5 minutes per week. - **Pain points:** Leftover vegetables spoiling because plans changed mid-week. “Choice fatigue” – can’t think of cheap, varied meals every week. Subscription fatigue – won’t pay if the free tier doesn’t solve the core problem. - **Jobs to be done:** *When I open the",
+            "usage": {
+              "inputTokens": 5487,
+              "outputTokens": 2048,
+              "totalTokens": 7535
+            }
+          }
+        }
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides detailed, realistic personas with clear goals, pain points, and app needs, making it highly useful and complete for guiding app development."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers well-structured personas with actionable insights but lacks some depth in user context and specific app features compared to CFG-A."
+        }
+      },
+      "deltaNormalized": -0.16000000000000003
+    },
+    {
+      "id": "EVT4-05",
+      "title": "Pricing tiers",
+      "templateId": "pricing_strategy",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 157,
+        "model": "deepseek-v4-pro",
+        "outputHash": "718669e8bf16a5286e86e56160124b81e4a9cb4bc9d681b571d7954fce1de3fb",
+        "outputExcerpt": "**Assumptions** (so we’re on the same page) - The CRM is a lightweight tool built specifically for solo freelancers – not agencies or teams. - Core features: contact/deal tracking, a simple pipeline (e.g., Lead → Won → Lost), tasks/reminders, and maybe a basic email sync. - The freelancer target is cost‑sensitive, values simplicity, and wants to try before buying. - You can gate features by plan (e.g., cap contacts, hide advanced modules). - You’ll handle billing via Stripe or similar, and you can measure conversion rates. --- ## Suggested Pricing Tiers A simple two‑tier model usually works best for a “tiny” product. A third “Team” tier often adds complexity without matching your freelancer audience, so I’d avoid it for now. ### 1. Free (forever) **Purpose:** Eliminate barriers so freelancers can experience the core value and turn into promoters. **What’s included:** - Up to 100 contacts - 1 deal pipeline with up to 10 active deals - Basic task reminders (email/in‑app) - No email sync (manual import) - Community‑based support (docs/forum) **Why these limits:** They let someone manage a small client list for free, but power‑users who track more will feel the ceiling naturally. --- #",
+        "normalized": 0.96,
+        "usage": {
+          "prompt_tokens": 53,
+          "completion_tokens": 1200,
+          "total_tokens": 1253,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 373
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 53
+        }
+      },
+      "cfgB": {
+        "templateId": "pricing_strategy",
+        "durationMs": 136345,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6j5uyl-k0vp1s",
+        "outputHash": "8b2c815f3464c16d712c13bfd98e13aff23724ddf9186d316fb8f771d0784ad4",
+        "outputExcerpt": "## Pricing Strategy Output ### 1. Pricing Assessment This assessment builds on the baseline for a light CRM purpose‑built for freelancers. The product has no live tiers yet; we are designing a go‑to‑market structure from scratch. **Context & Assumptions** - **Product scope:** Contact management (up to 200 records for free plan), simple deal tracking with two default pipeline stages, task reminders, a single‑contact timeline, and a responsive mobile UI. No mandatory team features or admin panels. - **Target persona:** A solo freelancer (designer, copywriter, consultant, developer) who handles 10–50 projects per year, wants a replacement for scattered notes or spreadsheets, and cares about follow‑up consistency and client history visibility. - **Market anchor:** The “do nothing” alternative (spreadsheets/Notion) costs nothing but leads to missed reminders and manual work. A general‑purpose CRM like Pipedrive or HubSpot Sales Hub starts around $14–$18/user/month on annual billing and includes features freelancers rarely use (quotas, reporting suites, permission sets). - **Constraint:** No per‑user pricing; every tier is for a single owner. Login sharing is out of scope. The model must",
+        "normalized": 0.76,
+        "usage": {
+          "inputTokens": 8402,
+          "outputTokens": 4096,
+          "totalTokens": 12498
+        },
+        "expansion": {
+          "enabled": true,
+          "pass1": {
+            "durationMs": 69350,
+            "model": "deepseek-v4-pro",
+            "decision": "ALLOW",
+            "receiptPresent": true,
+            "receiptId": "rcpt-env-mp6j4d2r-n0k4g4",
+            "outputHash": "0fe3d1c5f5d62e2266193832fbd4d2f7456d6ea6eff3ab586427d3cf30468911",
+            "outputExcerpt": "## Pricing Strategy Output ### 1. Pricing Assessment We’re starting from scratch: a tiny CRM built for freelancers with no existing tiers. The market for freelancer tools is crowded but full of manual workarounds (spreadsheets, sticky notes). A clear, simple pricing structure can convert that habit into paid software. **Assumptions I’ve made:** - Your CRM covers core features: contact management, simple deal tracking, task reminders, basic reports, and a mobile-friendly interface. - Your target freelancer typically handles 20–200 active contacts and closes 5–15 small projects each month. - They care most about speed, follow‑up consistency, and having a single place to see client history. - A tiered model is the right fit because it lets users self‑select based on volume and need for automation, while leaving room for future up‑sell. Key pricing principles for this audience: keep entry free or <$10/month; never surprise a solo business with per‑user fees (one seat per account); focus limits on contacts, deals, and automations rather than features like “tasks” that everyone expects. ### 2. Value Analysis A freelancer using a CRM can save 3–5 hours a week on follow‑up, searching, and ",
+            "usage": {
+              "inputTokens": 3776,
+              "outputTokens": 2048,
+              "totalTokens": 5824
+            }
+          },
+          "pass2": {
+            "durationMs": 66995,
+            "model": "deepseek-v4-pro",
+            "decision": "ALLOW",
+            "receiptPresent": true,
+            "receiptId": "rcpt-env-mp6j5uyl-k0vp1s",
+            "outputHash": "8b2c815f3464c16d712c13bfd98e13aff23724ddf9186d316fb8f771d0784ad4",
+            "outputExcerpt": "## Pricing Strategy Output ### 1. Pricing Assessment This assessment builds on the baseline for a light CRM purpose‑built for freelancers. The product has no live tiers yet; we are designing a go‑to‑market structure from scratch. **Context & Assumptions** - **Product scope:** Contact management (up to 200 records for free plan), simple deal tracking with two default pipeline stages, task reminders, a single‑contact timeline, and a responsive mobile UI. No mandatory team features or admin panels. - **Target persona:** A solo freelancer (designer, copywriter, consultant, developer) who handles 10–50 projects per year, wants a replacement for scattered notes or spreadsheets, and cares about follow‑up consistency and client history visibility. - **Market anchor:** The “do nothing” alternative (spreadsheets/Notion) costs nothing but leads to missed reminders and manual work. A general‑purpose CRM like Pipedrive or HubSpot Sales Hub starts around $14–$18/user/month on annual billing and includes features freelancers rarely use (quotas, reporting suites, permission sets). - **Constraint:** No per‑user pricing; every tier is for a single owner. Login sharing is out of scope. The model must",
+            "usage": {
+              "inputTokens": 4626,
+              "outputTokens": 2048,
+              "totalTokens": 6674
+            }
+          }
+        }
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 4,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a clear, structured pricing strategy with actionable steps and rationale for each tier. It is highly specific to the target audience and includes governance considerations like billing setup."
+        },
+        "cfgB": {
+          "usefulness": 3,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 4,
+          "rationale": "CFG-B offers a detailed analysis of pricing strategy and competitive positioning but lacks some actionable steps and clarity compared to CFG-A. It is specific but slightly less structured in terms of implementation guidance."
+        }
+      },
+      "deltaNormalized": -0.19999999999999996
+    }
+  ]
+}

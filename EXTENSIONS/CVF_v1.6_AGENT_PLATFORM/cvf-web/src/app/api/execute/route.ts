@@ -791,9 +791,9 @@ export async function POST(request: NextRequest) {
         let outputValidation: ValidationResult | undefined;
         const retryState: RetryState = { attempt: 0, previousIssues: [] };
 
-        if (aiResult.success && aiResult.output) {
+        if (aiResult.success) {
             outputValidation = validateOutput({
-                output: aiResult.output,
+                output: aiResult.output ?? '',
                 intent: body.intent!,
                 templateName: body.templateName,
                 templateCategory: template?.category,
@@ -816,10 +816,10 @@ export async function POST(request: NextRequest) {
                     model: body.model,
                     maxTokens: executionMaxTokens,
                 });
-                if (!aiResult.success || !aiResult.output) break;
+                if (!aiResult.success) break;
 
                 outputValidation = validateOutput({
-                    output: aiResult.output,
+                    output: aiResult.output ?? '',
                     intent: body.intent!,
                     templateName: body.templateName,
                     templateCategory: template?.category,
@@ -827,7 +827,7 @@ export async function POST(request: NextRequest) {
             }
         }
 
-        if (aiResult.success && aiResult.output && outputValidation?.decision === 'RETRY') {
+        if (aiResult.success && outputValidation?.decision === 'RETRY') {
             await appendAuditEvent({
                 eventType: 'OUTPUT_VALIDATION_EXHAUSTED',
                 actorId: session?.userId ?? 'service-account',

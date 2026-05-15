@@ -1,5 +1,5 @@
 // EVT-4 Output Quality A/B Baseline.
-// CFG-A: direct Alibaba/DashScope. CFG-B: CVF /api/execute with live receipt.
+// CFG-A: direct provider API. CFG-B: CVF /api/execute with live receipt.
 // Reviewer: OpenAI gpt-4o when available, DeepSeek fallback, deterministic last resort.
 
 const fs = require('fs');
@@ -21,7 +21,34 @@ const SUMMARY_STEM = process.env.EVT4_SUMMARY_STEM || 'CVF_EVT4_OUTPUT_QUALITY_A
 const OUT_JSON = path.join(REPO_ROOT, 'docs', 'assessments', `${OUTPUT_STEM}.json`);
 const OUT_MD = path.join(REPO_ROOT, 'docs', 'assessments', `${SUMMARY_STEM}.md`);
 const LIMIT = Number(process.env.EVT4_LIMIT || process.argv[2] || 20);
-const MODEL = process.env.EVT4_ALIBABA_MODEL || 'qwen-turbo';
+const PROVIDER = (process.env.EVT4_PROVIDER || 'alibaba').toLowerCase();
+const PROVIDER_TIMEOUT_MS = Number(process.env.EVT4_PROVIDER_TIMEOUT_MS || process.env.CVF_AI_PROVIDER_TIMEOUT_MS || 120_000);
+const PROVIDER_CONFIGS = {
+  alibaba: {
+    defaultModel: process.env.EVT4_ALIBABA_MODEL || 'qwen-turbo',
+    endpoint: 'https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions',
+    keyNames: ['DASHSCOPE_API_KEY', 'ALIBABA_API_KEY', 'CVF_ALIBABA_API_KEY', 'CVF_BENCHMARK_ALIBABA_KEY'],
+    canonicalKeyName: 'DASHSCOPE_API_KEY',
+    maxTokenParam: 'max_tokens',
+  },
+  deepseek: {
+    defaultModel: process.env.EVT4_DEEPSEEK_MODEL || 'deepseek-chat',
+    endpoint: 'https://api.deepseek.com/chat/completions',
+    keyNames: ['DEEPSEEK_API_KEY', 'CVF_DEEPSEEK_API_KEY', 'CVF_BENCHMARK_DEEPSEEK_KEY'],
+    canonicalKeyName: 'DEEPSEEK_API_KEY',
+    maxTokenParam: 'max_tokens',
+  },
+  openai: {
+    defaultModel: process.env.EVT4_OPENAI_MODEL || 'gpt-5.4-mini',
+    endpoint: 'https://api.openai.com/v1/chat/completions',
+    keyNames: ['OPENAI_API_KEY', 'CVF_OPENAI_API_KEY'],
+    canonicalKeyName: 'OPENAI_API_KEY',
+    maxTokenParam: 'max_completion_tokens',
+  },
+};
+if (!PROVIDER_CONFIGS[PROVIDER]) throw new Error(`Unsupported EVT4_PROVIDER: ${PROVIDER}`);
+const PROVIDER_CONFIG = PROVIDER_CONFIGS[PROVIDER];
+const MODEL = process.env.EVT4_MODEL || PROVIDER_CONFIG.defaultModel;
 const TWO_PASS_EXPANSION = process.env.EVT4_TWO_PASS_EXPANSION === 'true';
 
 const TASKS = [
@@ -47,15 +74,17 @@ const TASKS = [
   ['EVT4-20', 'acceptance_criteria', 'Acceptance criteria', 'Write acceptance criteria for a dashboard that shows weekly sales, conversion, and open tasks.'],
 ].map(([id, templateId, title, prompt]) => ({ id, templateId, title, prompt }));
 
-function resolveAlibabaKeyName() {
-  return ['DASHSCOPE_API_KEY', 'ALIBABA_API_KEY', 'CVF_ALIBABA_API_KEY', 'CVF_BENCHMARK_ALIBABA_KEY']
+function resolveProviderKeyName() {
+  return PROVIDER_CONFIG.keyNames
     .find((name) => String(process.env[name] || '').trim()) || null;
 }
 
-function ensureAlibabaKey() {
-  const keyName = resolveAlibabaKeyName();
-  if (!keyName) throw new Error('No DashScope-compatible live key found.');
-  if (!process.env.DASHSCOPE_API_KEY) process.env.DASHSCOPE_API_KEY = String(process.env[keyName]).trim();
+function ensureProviderKey() {
+  const keyName = resolveProviderKeyName();
+  if (!keyName) throw new Error(`No ${PROVIDER} live key found.`);
+  if (!process.env[PROVIDER_CONFIG.canonicalKeyName]) {
+    process.env[PROVIDER_CONFIG.canonicalKeyName] = String(process.env[keyName]).trim();
+  }
   return keyName;
 }
 
@@ -76,8 +105,12 @@ function startServer() {
     env: {
       ...process.env,
       CVF_SERVICE_TOKEN: SERVICE_TOKEN,
-      DEFAULT_AI_PROVIDER: 'alibaba',
+      DEFAULT_AI_PROVIDER: PROVIDER,
       DASHSCOPE_API_KEY: process.env.DASHSCOPE_API_KEY,
+      ALIBABA_API_KEY: process.env.ALIBABA_API_KEY,
+      DEEPSEEK_API_KEY: process.env.DEEPSEEK_API_KEY,
+      OPENAI_API_KEY: process.env.OPENAI_API_KEY,
+      CVF_AI_PROVIDER_TIMEOUT_MS: String(PROVIDER_TIMEOUT_MS),
     },
   });
   return child;
@@ -197,7 +230,7 @@ function buildGovernedPayload(task) {
     templateName: `EVT-4 ${task.title}`,
     intent: buildPrompt(task),
     inputs: buildTemplateInputs(task),
-    provider: 'alibaba',
+    provider: PROVIDER,
     model: MODEL,
     mode: 'governance',
     cvfPhase: 'INTAKE',
@@ -227,31 +260,36 @@ function buildGovernedExpansionPayload(task, firstOutput) {
   };
 }
 
-async function directAlibaba(task) {
+async function directProvider(task) {
+  const body = {
+    model: MODEL,
+    messages: [
+      { role: 'system', content: 'You are a helpful assistant for non-technical product operators.' },
+      { role: 'user', content: buildPrompt(task) },
+    ],
+    temperature: 0.3,
+  };
+  body[PROVIDER_CONFIG.maxTokenParam] = 1200;
+  if (PROVIDER === 'openai') delete body.temperature;
+
   const started = Date.now();
-  const response = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {
+  const response = await fetch(PROVIDER_CONFIG.endpoint, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${process.env.DASHSCOPE_API_KEY}`,
+      Authorization: `Bearer ${process.env[PROVIDER_CONFIG.canonicalKeyName]}`,
       Connection: 'close',
     },
-    body: JSON.stringify({
-      model: MODEL,
-      messages: [
-        { role: 'system', content: 'You are a helpful assistant for non-technical product operators.' },
-        { role: 'user', content: buildPrompt(task) },
-      ],
-      max_tokens: 1200,
-      temperature: 0.3,
-    }),
+    body: JSON.stringify(body),
     signal: AbortSignal.timeout(60_000),
   });
   const durationMs = Date.now() - started;
   const data = await response.json().catch(() => ({}));
-  if (!response.ok) throw new Error(`CFG-A ${response.status}: ${JSON.stringify(data).slice(0, 240)}`);
+  if (!response.ok) throw new Error(`CFG-A ${PROVIDER}/${MODEL} ${response.status}: ${JSON.stringify(data).slice(0, 240)}`);
+  const output = data.choices?.[0]?.message?.content || '';
+  if (!String(output).trim()) throw new Error(`CFG-A ${PROVIDER}/${MODEL} returned empty output`);
   return {
-    output: data.choices?.[0]?.message?.content || '',
+    output,
     durationMs,
     usage: data.usage || null,
     model: MODEL,
@@ -457,6 +495,8 @@ function renderMd(evidence) {
   return [
     '# CVF EVT-4 Output Quality A/B Summary',
     '',
+    `**Provider/model:** ${evidence.config.provider} / ${evidence.config.model}`,
+    `**Provider timeout ms:** ${evidence.config.providerTimeoutMs}`,
     `**Completed:** ${evidence.summary.completedPairs}/${evidence.summary.runLimit}`,
     `**Reviewer modes:** ${evidence.summary.reviewerModes.join(', ') || 'none'}`,
     `**Median normalized delta (CFG-B - CFG-A):** ${evidence.summary.medianDeltaNormalized}`,
@@ -478,16 +518,16 @@ function renderMd(evidence) {
 
 async function main() {
   const startedAt = new Date().toISOString();
-  const keyName = ensureAlibabaKey();
+  const keyName = ensureProviderKey();
   const server = startServer();
   const records = [];
   try {
     await waitForServer();
     const tasks = TASKS.slice(0, Math.min(LIMIT, TASKS.length));
-    console.log(`EVT-4 A/B: key=${keyName}:PRESENT, reviewer=${reviewerMode()}, pairs=${tasks.length}, twoPass=${TWO_PASS_EXPANSION}`);
+    console.log(`EVT-4 A/B: provider=${PROVIDER}, model=${MODEL}, key=${keyName}:PRESENT, reviewer=${reviewerMode()}, pairs=${tasks.length}, twoPass=${TWO_PASS_EXPANSION}`);
     for (const task of tasks) {
       try {
-        const cfgA = await directAlibaba(task);
+        const cfgA = await directProvider(task);
         await new Promise((resolve) => setTimeout(resolve, 500));
         const cfgB = await governedCvf(task);
         const review = await reviewPair(task, cfgA, cfgB);
@@ -537,7 +577,7 @@ async function main() {
 
   const evidence = {
     schema: 'cvf.evt4.output_quality_ab.v1',
-    config: { cfgA: 'direct_alibaba', cfgB: TWO_PASS_EXPANSION ? 'cvf_api_execute_two_pass_quality_expansion' : 'cvf_api_execute', model: MODEL },
+    config: { provider: PROVIDER, cfgA: `direct_${PROVIDER}`, cfgB: TWO_PASS_EXPANSION ? 'cvf_api_execute_two_pass_quality_expansion' : 'cvf_api_execute', model: MODEL, providerTimeoutMs: PROVIDER_TIMEOUT_MS },
     summary: summarize(records, startedAt),
     records,
   };

@@ -1,0 +1,154 @@
+{
+  "schema": "cvf.evt4.output_quality_ab.v1",
+  "config": {
+    "provider": "alibaba",
+    "cfgA": "direct_alibaba",
+    "cfgB": "cvf_api_execute",
+    "model": "qwen3.6-plus",
+    "providerTimeoutMs": 120000
+  },
+  "summary": {
+    "startedAt": "2026-05-15T04:38:24.010Z",
+    "completedAt": "2026-05-15T04:42:35.337Z",
+    "corpusSize": 20,
+    "runLimit": 2,
+    "completedPairs": 2,
+    "cfgBReceipts": 2,
+    "safetyFailures": 0,
+    "medianDeltaNormalized": -0.16000000000000003,
+    "twoPassExpansion": false,
+    "cfgBExpansionReceipts": 0,
+    "cfgBMedianDurationMs": 75118,
+    "cfgBMedianOutputTokens": 4103,
+    "decisionRuleMet": false,
+    "reviewerModes": [
+      "openai:gpt-4o"
+    ]
+  },
+  "records": [
+    {
+      "id": "EVT4-01",
+      "title": "Onboarding checklist",
+      "templateId": "documentation",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 51716,
+        "model": "qwen3.6-plus",
+        "outputHash": "d0e95cff26d8237984f2ea78f49710d2ef8f65c484fe992a09a117f59f2845a6",
+        "outputExcerpt": "# 📋 Onboarding Checklist: Support Teammate (Local-First SaaS) *Designed for non-technical product operators to run smoothly without engineering dependency.* ## 🔍 Assumptions - The product stores data primarily on the user’s device, syncs to the cloud when online, and works offline. - Standard support stack is available (e.g., ticketing system, internal wiki, Slack/Teams, demo/test environment). - The new hire has baseline SaaS support experience but is new to local-first behavior. - A mentor/lead is assigned for the first 2 weeks. - SLAs, escalation paths, and response templates already exist. --- ## 🗓️ Phase 1: Foundation & Setup (Days 1–3) | Focus Area | Concrete Actions | Next Steps | Acceptance Checks | |------------|------------------|------------|-------------------| | **Tool Access** | • Get logins for ticketing, CRM, internal wiki, and test/demo environment.<br>• Install the product on a test device (desktop/mobile).<br>• Configure email signature & notification preferences. | • Verify all logins work.<br>• Book 30-min setup review with manager. | ✅ Can open, tag, and close a test ticket.<br>✅ Can launch the app in offline & online modes. | | **Local-First Primer** | • R",
+        "normalized": 1,
+        "usage": {
+          "prompt_tokens": 72,
+          "completion_tokens": 2818,
+          "total_tokens": 2890,
+          "completion_tokens_details": {
+            "reasoning_tokens": 1610,
+            "text_tokens": 2818
+          },
+          "prompt_tokens_details": {
+            "text_tokens": 72
+          }
+        }
+      },
+      "cfgB": {
+        "templateId": "documentation",
+        "durationMs": 75118,
+        "model": "qwen3.6-plus",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6fh4l8-180pkw",
+        "outputHash": "2f2d17e92c1693059ff53d087dbe0f85e507d8a561117fa1c1b354a0eead3a47",
+        "outputExcerpt": "# Operator Checklist ## 1. Purpose, Audience, And Assumptions - Purpose: Provide a structured, day-by-day onboarding path that enables a new support teammate to independently handle customer inquiries, troubleshoot local-sync behaviors, and navigate internal workflows without constant supervision. - Who uses this: New support operators, team leads assigning onboarding tasks, and training coordinators tracking readiness metrics. - Assumptions and unknowns: - Assumption: The team uses standard support tooling (ticketing system, internal wiki, team chat, and a sandbox/test environment). Replace bracketed placeholders with actual company tool names during setup. - Assumption: \"Local-first SaaS\" means customer data lives primarily on-device with optional cloud sync. Support must distinguish between local device states, sync conflicts, and backend/account issues. - Unknown: Exact SLA targets, compliance frameworks (GDPR/CCPA), and internal ticket taxonomy. Confirm with the support lead before handling live data. - Unknown: Specific app version support matrix. Verify the current minimum supported OS/app versions with the product team before onboarding. - Assumption: The new operator has b",
+        "normalized": 0.8,
+        "usage": {
+          "inputTokens": 3564,
+          "outputTokens": 4103,
+          "totalTokens": 7667
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a detailed, structured, and specific onboarding checklist tailored to the task requirements, ensuring comprehensive coverage of necessary steps and safety measures."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 4,
+          "rationale": "CFG-B offers a well-organized checklist with clear stages and actions, but lacks some of the detailed specificity and acceptance checks found in CFG-A, making it slightly less comprehensive."
+        }
+      },
+      "deltaNormalized": -0.19999999999999996
+    },
+    {
+      "id": "EVT4-02",
+      "title": "Launch options memo",
+      "templateId": "decision_memo",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 51906,
+        "model": "qwen3.6-plus",
+        "outputHash": "66c5ac844f69a09c37412181af4eeb192e70b767a0d7282e0510a8e7e8304327",
+        "outputExcerpt": "Here’s a clear, operator-friendly comparison of three go-to-market (GTM) paths for a simple salon appointment booking app. Each option includes what it is, when it works best, key assumptions, concrete next steps, and how to measure early success. --- ### 🔹 Option 1: Direct Outbound & Local Field Sales **What it is:** You reach out directly to salon owners via phone, email, and in-person visits. You run short demos, handle setup, and offer hands-on onboarding. **Best for:** Getting your first 10–30 paying customers quickly, collecting real feedback, and dominating a specific city or neighborhood. **Key Assumptions:** - Salon owners respond to direct outreach when it’s personalized and time-respectful. - They prefer human help over self-setup. - You can dedicate 10–15 hours/week to outreach and onboarding. **Concrete Next Steps (Next 14 Days):** 1. Build a list of 100 local salons using Google Maps, Instagram, and Yelp. Note owner name, phone, and current booking method (if visible). 2. Draft a 1-page pitch + a 10-minute demo script focused on saving time and reducing no-shows. 3. Run a 2-week outreach sprint: 20 calls/emails/day, 2 in-person drop-ins/week. 4. Offer a 30-day free t",
+        "normalized": 1,
+        "usage": {
+          "prompt_tokens": 69,
+          "completion_tokens": 2837,
+          "total_tokens": 2906,
+          "completion_tokens_details": {
+            "reasoning_tokens": 1627,
+            "text_tokens": 2837
+          },
+          "prompt_tokens_details": {
+            "text_tokens": 69
+          }
+        }
+      },
+      "cfgB": {
+        "templateId": "decision_memo",
+        "durationMs": 62429,
+        "model": "qwen3.6-plus",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6fjxay-3c1x7c",
+        "outputHash": "963fb6ee80950be1ddd05e40f12ac8dd72c44cfa1ea5d63eff2efc2406f743cf",
+        "outputExcerpt": "# Decision Comparison Memo ## 1. Decision To Make - **Decision:** Select the optimal go-to-market (GTM) strategy to acquire the first 50 small salon users for a simple appointment booking app. - **Constraints:** Low initial budget, operated by a non-technical founder/operator, requires a clear and executable first activation step. - **Assumptions:** The app is stable, self-serve, and solves core pain points (no-shows, double bookings, manual scheduling). Target audience is independent salon owners or stylists (1–5 chairs) who prioritize simplicity, affordability, and quick setup. Initial marketing budget is capped at ~$300/month. No dedicated sales or engineering support is available for launch. ## 2. Option-By-Option Comparison | Option | Best Fit Scenario | Pros | Cons | Cost/Effort | Risks | Activation Steps | | --- | --- | --- | --- | --- | --- | --- | | **Option A: Direct Outreach & Local Partnerships** | Targeting a concentrated geographic area or leveraging existing local business networks (chamber of commerce, beauty supply stores). | High conversion rate, immediate feedback for product tweaks, builds trust quickly, bypasses algorithmic dependency. | Time-intensive, require",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 3544,
+          "outputTokens": 3414,
+          "totalTokens": 6958
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a detailed, structured comparison of three GTM options with clear steps, assumptions, and success metrics, making it highly useful and complete."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a comprehensive comparison with a focus on decision-making and constraints, but lacks the detailed step-by-step action plan found in CFG-A."
+        }
+      },
+      "deltaNormalized": -0.16000000000000003
+    }
+  ]
+}

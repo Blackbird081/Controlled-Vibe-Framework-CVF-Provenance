@@ -301,3 +301,63 @@ Current F-3 conclusion:
 - F-3 remains advisory-only.
 - No code change is recommended until `ProcessingScreen.tsx` is touched for a
   functional reason or approaches the hard 1000-line cap.
+
+## F-1 Provider Model Screening — 2026-05-15
+
+User asked to compare the three provider lanes and allowed OpenAI mini for
+testing. Codex screened Alibaba, DeepSeek, and OpenAI with live keys and kept
+the result bounded to EVT-4.
+
+Implementation:
+
+- `scripts/run_evt4_output_quality_ab.js`
+  - Generalized from Alibaba-only to `EVT4_PROVIDER=alibaba|deepseek|openai`.
+  - Added `EVT4_MODEL` override and provider-specific key resolution without
+    printing raw keys.
+  - Added OpenAI `max_completion_tokens` support for GPT-5-family models.
+  - Added bounded provider timeout override for slow model rebaselines.
+  - Treats direct-provider empty content as a failed pair instead of scoring it
+    as valid output.
+- `src/lib/ai-providers.ts` and `src/lib/ai/providers.ts`
+  - OpenAI GPT-5/o-series compatible calls now use `max_completion_tokens`.
+  - Alibaba/DeepSeek provider timeout remains 60s by default but can be raised
+    with `CVF_AI_PROVIDER_TIMEOUT_MS` for governed rebaseline runs.
+- `src/lib/ai/types.ts`
+  - Canonical governed system prompt is now language-adaptive instead of
+    forcing Vietnamese for English requests.
+- `src/lib/execute-prompt-contract.ts`
+  - Adds explicit response-language instruction derived from intent/input.
+  - Adds checklist/acceptance-contract shaping and anti-fabrication guardrails.
+- `src/app/api/execute/route.ts`
+  - Successful-but-empty provider output now enters output validation and is
+    retried/blocked instead of returning a successful empty response.
+
+Evidence summary:
+
+- Consolidated summary:
+  `docs/assessments/CVF_EVT4_PROVIDER_MODEL_SCREENING_SUMMARY_2026-05-15.md`.
+- OpenAI `gpt-5.4-mini` two-pass sample 5:
+  median `-0.16`, not selected.
+- Alibaba `qwen3.6-plus` latest smoke 2:
+  median `-0.16`, not selected.
+- DeepSeek `deepseek-v4-pro` full 20-pair rebaseline R2:
+  `20/20` completed, `20/20` receipts, `0` safety failures, median `-0.08`.
+  This is the best full-corpus lane but still below the preregistered F-1
+  closure threshold `>= -0.05`.
+- DeepSeek `deepseek-v4-pro` two-pass sample 5:
+  median `-0.16`; two-pass is rejected for this lane.
+
+Verification:
+
+- `npx vitest run src/app/api/execute/route.test.ts src/lib/execute-prompt-contract.test.ts src/lib/ai-providers.test.ts src/lib/ai/providers.test.ts`
+  PASS (103/103).
+- `python scripts/run_cvf_release_gate_bundle.py --json` PASS.
+
+Current F-1 conclusion:
+
+- F-1 remains **not closed**.
+- Recommended provider/model for the next attempt is DeepSeek
+  `deepseek-v4-pro`, because it produced the strongest full-corpus result.
+- Model choice alone is insufficient. The next narrow work should target the
+  negative DeepSeek full-corpus lanes rather than switching to another model or
+  enabling two-pass globally.
