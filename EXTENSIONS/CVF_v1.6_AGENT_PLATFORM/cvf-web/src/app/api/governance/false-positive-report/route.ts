@@ -1,7 +1,24 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { appendAuditEvent } from '@/lib/control-plane-events';
-import { appendFalsePositiveReport } from '@/lib/false-positive-report';
+import { appendFalsePositiveReport, readFalsePositiveEvents } from '@/lib/false-positive-report';
+import { computeEvtFalsePositiveStats } from '@/lib/evt-operator-metrics';
 import { verifySessionCookie, withSessionAuditPayload } from '@/lib/middleware-auth';
+
+export async function GET(request: NextRequest) {
+  const session = await verifySessionCookie(request);
+  if (!session) {
+    return NextResponse.json(
+      { success: false, error: 'Unauthorized: please login.' },
+      { status: 401 },
+    );
+  }
+
+  const events = await readFalsePositiveEvents();
+  return NextResponse.json({
+    success: true,
+    stats: computeEvtFalsePositiveStats(events),
+  });
+}
 
 export async function POST(request: NextRequest) {
   const session = await verifySessionCookie(request);
@@ -76,4 +93,3 @@ export async function POST(request: NextRequest) {
     );
   }
 }
-

@@ -2,7 +2,7 @@
  * @vitest-environment jsdom
  */
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { AnalyticsDashboard } from './AnalyticsDashboard';
 
 const exportMock = vi.fn();
@@ -86,6 +86,20 @@ describe('AnalyticsDashboard', () => {
             clearEvents: clearMock,
             enabled: true,
         };
+        vi.stubGlobal('fetch', vi.fn().mockResolvedValue({
+            ok: true,
+            json: async () => ({
+                success: true,
+                stats: {
+                    observedReportableDecisions: 0,
+                    falsePositiveReports: 0,
+                    falsePositiveRatePct: 0,
+                    evidenceMode: 'reported_only',
+                    lowNCaveat: true,
+                    byDecision: {},
+                },
+            }),
+        }));
     });
 
     it('renders top skills and domain usage', () => {
@@ -244,9 +258,44 @@ describe('AnalyticsDashboard', () => {
 
         fireEvent.click(screen.getByText(/Governance Health/i));
 
+        expect(screen.getByTestId('evt-governance-health-panel')).toBeTruthy();
         expect(screen.getByText('GovernanceMetricsStub')).toBeTruthy();
         expect(screen.getByText('RiskTrendChartStub')).toBeTruthy();
         expect(screen.queryByText('📚 Skill phổ biến')).toBeNull();
+    });
+
+    it('renders EVT operator signals from FP evidence and local recovery analytics', async () => {
+        analyticsState = {
+            events: [
+                { id: 'r1', type: 'task_recovery_prompted', timestamp: Date.now(), data: { decision: 'BLOCK' } },
+                { id: 'r2', type: 'task_recovery_prompted', timestamp: Date.now() - 1, data: { decision: 'CLARIFY' } },
+                { id: 'r3', type: 'task_recovery_started', timestamp: Date.now() - 2, data: { method: 'false_positive_report' } },
+            ],
+            clearEvents: clearMock,
+            enabled: true,
+        };
+        vi.mocked(fetch).mockResolvedValueOnce({
+            ok: true,
+            json: async () => ({
+                success: true,
+                stats: {
+                    observedReportableDecisions: 4,
+                    falsePositiveReports: 1,
+                    falsePositiveRatePct: 25,
+                    evidenceMode: 'observed_and_reported',
+                    lowNCaveat: true,
+                    byDecision: {},
+                },
+            }),
+        } as Response);
+
+        render(<AnalyticsDashboard />);
+        fireEvent.click(screen.getByText(/Governance Health/i));
+
+        await waitFor(() => expect(screen.getByText('4')).toBeTruthy());
+        expect(screen.getByText('25.0%')).toBeTruthy();
+        expect(screen.getAllByText('50.0%').length).toBeGreaterThanOrEqual(2);
+        expect(screen.getByText(/observed_and_reported/)).toBeTruthy();
     });
 
     it('renders english labels and empty states when language is en', () => {

@@ -2,6 +2,7 @@ import { describe, expect, it, vi, beforeEach } from 'vitest';
 
 const verifySessionCookieMock = vi.hoisted(() => vi.fn());
 const appendFalsePositiveReportMock = vi.hoisted(() => vi.fn());
+const readFalsePositiveEventsMock = vi.hoisted(() => vi.fn());
 const appendAuditEventMock = vi.hoisted(() => vi.fn());
 
 vi.mock('@/lib/middleware-auth', () => ({
@@ -11,24 +12,48 @@ vi.mock('@/lib/middleware-auth', () => ({
 
 vi.mock('@/lib/false-positive-report', () => ({
   appendFalsePositiveReport: appendFalsePositiveReportMock,
+  readFalsePositiveEvents: readFalsePositiveEventsMock,
 }));
 
 vi.mock('@/lib/control-plane-events', () => ({
   appendAuditEvent: appendAuditEventMock,
 }));
 
-import { POST } from './route';
+import { GET, POST } from './route';
 
 describe('POST /api/governance/false-positive-report', () => {
   beforeEach(() => {
     verifySessionCookieMock.mockReset();
     appendFalsePositiveReportMock.mockReset();
+    readFalsePositiveEventsMock.mockReset();
     appendAuditEventMock.mockReset();
     verifySessionCookieMock.mockResolvedValue({
       userId: 'usr_1',
       role: 'admin',
       orgId: 'org_1',
       teamId: 'team_1',
+    });
+  });
+
+  it('returns false-positive operator stats for authenticated sessions', async () => {
+    readFalsePositiveEventsMock.mockResolvedValue([
+      { eventType: 'REPORTABLE_DECISION_OBSERVED', receiptId: 'rcpt-001', decision: 'BLOCK' },
+      { eventType: 'REPORTABLE_DECISION_OBSERVED', receiptId: 'rcpt-002', decision: 'CLARIFY' },
+      { eventType: 'FALSE_POSITIVE_REPORTED', receiptId: 'rcpt-002', decision: 'CLARIFY' },
+    ]);
+
+    const response = await GET(new Request('http://localhost/api/governance/false-positive-report') as never);
+    const json = await response.json();
+
+    expect(response.status).toBe(200);
+    expect(json).toMatchObject({
+      success: true,
+      stats: {
+        observedReportableDecisions: 2,
+        falsePositiveReports: 1,
+        falsePositiveRatePct: 50,
+        evidenceMode: 'observed_and_reported',
+      },
     });
   });
 
@@ -101,4 +126,3 @@ describe('POST /api/governance/false-positive-report', () => {
     expect(json.error).toMatch(/Only BLOCK and CLARIFY/);
   });
 });
-

@@ -237,3 +237,43 @@ Current F-2 conclusion:
 - F-2 targeted drift is closed.
 - No runtime governance behavior was changed for this cleanup.
 - Remaining lint warning is pre-existing and outside the F-2 failure set.
+
+## F-4 EVT Analytics Operator Surface — 2026-05-15
+
+Codex resolved the owner question by reusing the existing Analytics
+Dashboard/Governance Health surface rather than creating a separate operator
+page. This keeps the surface local-first and avoids adding another navigation
+destination.
+
+Implementation:
+
+- Added `src/lib/evt-operator-metrics.ts`.
+  - Computes false-positive rate from append-only FP evidence records.
+  - Computes task recovery and governance abandonment rates from local
+    analytics events.
+- Extended `GET /api/governance/false-positive-report`.
+  - Authenticated operator sessions can now read aggregate FP stats.
+  - No raw JSONL report contents are exposed in the UI response.
+- Added `src/components/EvtGovernanceHealthPanel.tsx`.
+  - Rendered inside Analytics Dashboard → Governance Health.
+  - Shows observed reportable decisions, FP rate, task recovery rate, and
+    abandonment rate with low-N/evidence-mode caveats.
+- Updated Analytics Dashboard tests and false-positive API route tests.
+
+Verification:
+
+- `npx vitest run src/lib/evt-operator-metrics.test.ts src/app/api/governance/false-positive-report/route.test.ts src/components/AnalyticsDashboard.test.tsx`
+  PASS (16/16).
+- `npx tsc --noEmit` PASS.
+- `npm run lint` PASS with one pre-existing `_request` warning in
+  `src/app/api/system/jobs/route.test.ts`.
+- `npm run build` PASS. The first build attempt timed out at 5 minutes while
+  still running; the rerun with a longer timeout completed successfully.
+
+Current F-4 conclusion:
+
+- F-4 is closed.
+- Operators now have a UI surface for EVT false-positive and
+  recovery/abandonment signals.
+- The CLI analyzer remains useful for local evidence inspection, but it is no
+  longer the only way to see the rates.
