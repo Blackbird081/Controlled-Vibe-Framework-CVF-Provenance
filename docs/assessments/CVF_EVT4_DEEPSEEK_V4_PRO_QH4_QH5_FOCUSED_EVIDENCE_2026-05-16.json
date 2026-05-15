@@ -1,0 +1,358 @@
+{
+  "schema": "cvf.evt4.output_quality_ab.v1",
+  "config": {
+    "provider": "deepseek",
+    "cfgA": "direct_deepseek",
+    "cfgB": "cvf_api_execute",
+    "model": "deepseek-v4-pro",
+    "providerTimeoutMs": 120000,
+    "directEmptyRetries": 2,
+    "taskIdFilter": [
+      "EVT4-04",
+      "EVT4-10",
+      "EVT4-17",
+      "EVT4-02",
+      "EVT4-13"
+    ]
+  },
+  "summary": {
+    "startedAt": "2026-05-15T18:02:42.992Z",
+    "completedAt": "2026-05-15T18:12:35.009Z",
+    "corpusSize": 20,
+    "runLimit": 5,
+    "completedPairs": 5,
+    "cfgBReceipts": 5,
+    "safetyFailures": 0,
+    "medianDeltaNormalized": 0.07999999999999996,
+    "twoPassExpansion": false,
+    "cfgBExpansionReceipts": 0,
+    "cfgBMedianDurationMs": 86695,
+    "cfgBMedianOutputTokens": 2803,
+    "decisionRuleMet": true,
+    "reviewerModes": [
+      "openai:gpt-4o"
+    ]
+  },
+  "records": [
+    {
+      "id": "EVT4-02",
+      "title": "Launch options memo",
+      "templateId": "decision_memo",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 215,
+        "model": "deepseek-v4-pro",
+        "outputHash": "05d6a865163d83df5113b89b9fe3984f30c1e2bdcba8a87c68f9e196db16697f",
+        "outputExcerpt": "Here’s a structured comparison of three realistic go-to-market (GTM) paths for your appointment booking app, designed for a non-technical operator like you. All advice avoids jargon and focuses on what you can control right now. --- ### The Three Options at a Glance | | **1. Personal Touch** (Direct Sales) | **2. Digital Flywheel** (Freemium + Ads) | **3. Partner Power** (Channel Partnerships) | |----------------------|--------------------------------------|-------------------------------------------|---------------------------------------------| | **How it works** | You personally reach out to salons, do demos, and close deals. | Salons find your app online, sign up for a free tier, and some upgrade to paid. | You team up with companies that already sell to salons (e.g., product distributors, POS providers). They promote your app for a commission. | | **Upfront effort** | Very high (your time) | Medium (mostly setup, then ongoing monitoring) | Medium-high (networking, negotiation) | | **Time to first booking** | Days (if you’re aggressive) | Weeks–months (need traffic) | Weeks (depends on partner onboarding) | | **Cost per acquired salon** | Low cash, high time | Medium–high cash ",
+        "normalized": 0.88,
+        "usage": {
+          "prompt_tokens": 57,
+          "completion_tokens": 1200,
+          "total_tokens": 1257,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 767
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 57
+        },
+        "retryAttempts": 0
+      },
+      "cfgB": {
+        "templateId": "decision_memo",
+        "durationMs": 98663,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp78779d-skpfv7",
+        "outputHash": "02160011384624161cfc6d95655df9d3bcd81f7d9b6ab85a606d4926b929114e",
+        "outputExcerpt": "# Decision Activation Memo ## 1. Recommendation And First Activation Step - **Decision:** Which go-to-market approach to use for a simple appointment booking app for small salons (1‑3 staff, low budget, non‑technical operator). - **Recommended option:** **Option B – Resell/White‑label an existing booking platform** (e.g., SimplyBook.me, Fresha, Goldie, or Setmore with a custom‑branded plan). I’ll assume we use **SimplyBook.me** as the working example because it offers a free reseller‑friendly tier, SMS/email reminders, and ready‑made salon templates. - **Why it wins:** Fastest path to a working, trusted product (hours not weeks), no coding, no design work, low risk of broken features, built‑in payment and reminder systems that salons expect, and a clear upgrade path if we later want a custom app. It meets all criteria: near‑zero startup cost, extremely fast, minimal ongoing effort, high confidence, and fits the audience perfectly. - **First 24‑72 hour activation step:** 1. **(Hour 0‑2)** Sign up for a free SimplyBook.me account and choose the “Reseller” or “Standard” plan (free tier includes up to 50 bookings/month). 2. **(Hour 2‑6)** From the admin dashboard, select a salon‑style ",
+        "normalized": 1,
+        "usage": {
+          "inputTokens": 1373,
+          "outputTokens": 3072,
+          "totalTokens": 4445
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 5,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a clear, structured comparison of three go-to-market options, focusing on practical aspects and avoiding jargon, which is useful for non-technical operators."
+        },
+        "cfgB": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a detailed recommendation with actionable steps and a comprehensive comparison of options, making it highly useful and specific for decision-making."
+        }
+      },
+      "deltaNormalized": 0.12
+    },
+    {
+      "id": "EVT4-04",
+      "title": "Persona synthesis",
+      "templateId": "user_persona",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 167,
+        "model": "deepseek-v4-pro",
+        "outputHash": "637c12dc39cf4382aa046730a283abc90d9a0d81e7aa31ba9fe1f9284f5ad315",
+        "outputExcerpt": "Here’s a ready-to-use breakdown for your meal planning app. Everything is written in plain language so you can immediately act on it. --- ## Persona 1: The Resource‑Strapped Freshman **Name** – Alex **Age / Year** – 18–19, first‑year student **Living Situation** – Dorm room with a shared kitchenette (microwave, mini‑fridge, occasionally a hot plate) **Meal Plan** – 10–14 meals/week in dining hall, but often misses breakfast or dinner due to class schedule **Budget** – ~$50–$70/week for snacks, weekend meals, and coffee; highly price‑sensitive **Tech Comfort** – High (smartphone native, uses TikTok/Instagram daily, looks for quick tips) **Goals** - Stop relying on expensive takeout and vending machine snacks. - Learn to make simple, edible meals with limited tools. - Reduce food waste – hates throwing away half‑used ingredients. - Save time between classes without skipping meals. **Frustrations** - Most recipes assume a full kitchen or too many ingredients. - Ingredients come in packs too large for one person, leading to waste. - No mental energy after lectures to figure out what to cook. - Dining hall meals feel repetitive and unhealthy. **Behaviors** - Shops at campus convenience ",
+        "normalized": 0.92,
+        "usage": {
+          "prompt_tokens": 53,
+          "completion_tokens": 1200,
+          "total_tokens": 1253,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 738
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 53
+        },
+        "retryAttempts": 0
+      },
+      "cfgB": {
+        "templateId": "user_persona",
+        "durationMs": 65039,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp78a2dp-zh2ad4",
+        "outputHash": "bd3b579c65ac2749e2217e4752090a02d7030fa0c262328bb6fd436c8ebdc676",
+        "outputExcerpt": "# Persona-To-Action Packet ## 1. Segments And Assumptions - **Source data used:** Task description “meal planning app for college students” only; no user research data supplied. - **Assumptions:** 1. Target users are on-campus or near-campus college students in the U.S., aged 18–24, with limited cooking equipment (assumption: shared dorm kitchen or small apartment kitchenette). 2. Many students have tight weekly food budgets (<$75/week for groceries, assumption based on common campus dining plan costs). 3. Students have smartphones and use apps for daily organization; meal planning is a new habit they want to build. 4. Dining hall access varies; the app is relevant for those who cook at least 2–3 meals per week themselves (assumption: excludes fully meal-plan students). 5. The app will include features like ingredient-based recipe search, simple grocery list generation, and cost estimation (assumption: minimal viable feature set). - **Segment boundaries:** Two segments derived from behavioral differences and cooking experience: - Segment A: **Novice Freshmen** – low cooking confidence, living with roommates, first time managing own food, tight budget, frequent takeout temptation. -",
+        "normalized": 0.76,
+        "usage": {
+          "inputTokens": 1310,
+          "outputTokens": 1747,
+          "totalTokens": 3057
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides detailed and specific personas with clear goals, frustrations, and behaviors, making it highly useful and complete for understanding user needs."
+        },
+        "cfgB": {
+          "usefulness": 3,
+          "completeness": 3,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a structured approach with assumptions and decision signals but lacks the depth and personalization found in CFG-A, making it less complete and useful."
+        }
+      },
+      "deltaNormalized": -0.16000000000000003
+    },
+    {
+      "id": "EVT4-10",
+      "title": "Research notes",
+      "templateId": "user_persona",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 152,
+        "model": "deepseek-v4-pro",
+        "outputHash": "b9c1181f8264503b18e87eb7ccd9f5460dbe18daf8ac35041fe56bd78b6dc6ea",
+        "outputExcerpt": "I see your request, but no rough notes were attached. To move you forward, I’ve built a set of provisional personas based on common patterns for first‑job graduates. You can treat them as a starting point and refine them with real user insights as they come in. --- ## 1. Assumptions Since I didn’t receive source material, here’s what I assumed to create these personas: - **Users** are 22–26 years old, just entering full‑time work after college/university. - **Financial context**: entry‑level salaries (typically $35K–$70K depending on field), paying off student loans, facing new regular expenses (rent, utilities, commuting), often little formal budgeting experience. - **Tech behaviour**: digital natives, comfortable with mobile apps, expect clean UX and quick setup. - **Your app**: aims to help first‑jobbers track spending, save money, and feel in control of their finances. If any of these assumptions don’t match your vision, treat the personas as draft templates to adjust. --- ## 2. User Personas ### Persona 1: “Alex – The Anxious Planner” **Demographics** - 23 years old, marketing assistant in a mid‑sized city - Salary: $45,000 - Living with one roommate, $25K in student loans - S",
+        "normalized": 0.88,
+        "usage": {
+          "prompt_tokens": 55,
+          "completion_tokens": 1200,
+          "total_tokens": 1255,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 641
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 55
+        },
+        "retryAttempts": 0
+      },
+      "cfgB": {
+        "templateId": "user_persona",
+        "durationMs": 88024,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp78cdi9-si9imb",
+        "outputHash": "ac06424c8ace6dd1404e57cb59fa6e4e1dae7930cf92f56fad5650f73d49af8f",
+        "outputExcerpt": "# Persona-To-Action Packet ## 1. Segments And Assumptions - **Source data used:** Rough research notes on a budgeting app for first-job graduates. No user interviews or quantitative data were supplied; personas inferred from typical early-career patterns. - **Assumptions (clearly marked):** - **Assumption 1:** Most first-job graduates have a mix of student debt, rent, and inconsistent side-hustle income. - **Assumption 2:** Mobile-first, always-on access is the expected app delivery mode. - **Assumption 3:** Users prefer automatic categorization and light-touch budgeting over manual spreadsheet work. - **Assumption 4:** Shame or complexity is a major reason graduates abandon budgeting tools; simplicity is a key adoption gate. - **Assumption 5:** The app is offered as a freemium or low-cost subscription, with room for premium features. - **Assumption 6:** Early adopters are likely to be either anxious about debt, excited about saving for a concrete goal, or trying to rein in lifestyle inflation. - **Segment boundaries (3 practical segments):** 1. **Debt Crusher** – carrying student loans or credit-card debt, focused on payoff speed and interest reduction. 2. **Saving Starter** – deb",
+        "normalized": 0.96,
+        "usage": {
+          "inputTokens": 1312,
+          "outputTokens": 2865,
+          "totalTokens": 4177
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 4,
+          "rationale": "CFG-A provides detailed user personas with clear assumptions and actionable insights, though it lacks the original rough notes."
+        },
+        "cfgB": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 4,
+          "rationale": "CFG-B offers comprehensive personas with structured segments and actionable strategies, effectively compensating for the lack of original notes."
+        }
+      },
+      "deltaNormalized": 0.07999999999999996
+    },
+    {
+      "id": "EVT4-13",
+      "title": "Channel choice",
+      "templateId": "decision_memo",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 151,
+        "model": "deepseek-v4-pro",
+        "outputHash": "d05becce7714d4b26ac00a1f2c087370f13354f01b8ba5dd6548029933ab5b23",
+        "outputExcerpt": "Alright, let’s break this down like we’re whiteboarding over coffee — no jargon, no fluff, just a clear, operator-friendly comparison to help you decide where to put your energy. --- ### Quick Snapshot | Channel | Best for… | Watch out for… | |---------|-----------|-----------------| | **Content Marketing** | Long-term authority, organic growth, low cash cost | Slow to start, needs consistency | | **Partnerships** | Fast, targeted audience access, credibility boost | Harder to scale, dependent on others | | **Paid Ads** | Immediate data, predictable scaling, testing offers | Cash burn if not optimized, platform risk | --- ### Assumptions I’m making about your newsletter - **Niche audience** (e.g., “indoor plant enthusiasts” not “gardeners”) - **Early-stage or growing**, likely a team of 1–3, limited budget (a few hundred bucks to test) - **You already have some content** (a few issues, a clear value prop), but not a huge existing audience - **Primary goal**: Steady, quality subscriber growth without breaking the bank - **Secondary goal**: Build brand that lasts, so you’re not always chasing the next sub --- ## 1. Content Marketing **(Blog posts, social threads, YouTube, guest artic",
+        "normalized": 0.92,
+        "usage": {
+          "prompt_tokens": 55,
+          "completion_tokens": 1200,
+          "total_tokens": 1255,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 358
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 55
+        },
+        "retryAttempts": 0
+      },
+      "cfgB": {
+        "templateId": "decision_memo",
+        "durationMs": 51240,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp78f62q-ivm13p",
+        "outputHash": "edc425a4d7e2001f746b8e9846fb66c6d2aef2d8aa73a89d0bc8616b5bedfcc9",
+        "outputExcerpt": "# Decision Activation Memo **Decision:** Channel choice **Recommendation:** Start with organic content marketing, immediately augment with a single low‑risk partnership pilot, and postpone paid ads until you have validated message‑market fit and conversion economics. **Why it wins:** Content marketing fits a low‑budget, non‑technical operator; it builds long‑term trust with a niche audience and compounds over time. A small partnership pilot gives faster feedback while staying within budget. Paid ads carry high cost, technical overhead, and risk without first proving unit economics. **First 24‑72 hour activation step:** - **Step:** Publish one “deep‑dive” blog post (or newsletter‑style article) that solves a specific, urgent problem your ideal subscriber faces. Post it on your personal or brand LinkedIn, in 2‑3 online communities where your audience already gathers (e.g., niche subreddits, Slack groups, or Facebook groups). Include a soft, non‑salesy call‑to‑action to subscribe. - **Owner/role:** The operator (you, or the sole content person). No technical skill needed beyond writing and posting. - **Acceptance check for the first step:** Within 72 hours, the post is live and you ha",
+        "normalized": 0.76,
+        "usage": {
+          "inputTokens": 1324,
+          "outputTokens": 1951,
+          "totalTokens": 3275
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 4,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 4,
+          "rationale": "CFG-A provides a detailed, structured comparison with actionable steps and assumptions, making it highly useful and specific for the target audience."
+        },
+        "cfgB": {
+          "usefulness": 3,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 4,
+          "rationale": "CFG-B offers a strategic overview with a clear recommendation and comparison, but lacks the depth and actionable detail found in CFG-A."
+        }
+      },
+      "deltaNormalized": -0.16000000000000003
+    },
+    {
+      "id": "EVT4-17",
+      "title": "B2B persona",
+      "templateId": "user_persona",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 171,
+        "model": "deepseek-v4-pro",
+        "outputHash": "a811b30dc4c1a8d7cc90297367d4670f5604b6c17b34d2dd4ebb733159f518d5",
+        "outputExcerpt": "### Personas for a Simple Internal Approval Tracker These personas are built to guide product decisions and adoption messaging. They’re based on common patterns observed in small-to-midsize teams (20–200 people) that still manage approvals via email, chat, or spreadsheets. Use them as a starting point—then validate with real people in your target segment. --- ## 1. Buyer Persona: Alex, Operations Manager > *“I need a clean, no-fuss way to bring order to our approvals without adding another IT project to my plate.”* | **Attribute** | **Details** | |----------------------|---------------------------------------------------------------------------------------------------------------------------------------------| | **Role & Org** | Operations Manager in a 50-person company. Reports to the COO. Manages office, HR ops, and internal processes. | | **Age / Background** | 35–45 years old. Comfortable with tools like Google Workspace / Microsoft 365, project management apps (Asana, Trello), and spreadsheets. Not a developer. | | **Key Goals** | – Speed up approval turnaround times <br>– Eliminate lost requests and “inbox ping-pong” <br>– Gain visibility into pending items for audits/complia",
+        "normalized": 0.88,
+        "usage": {
+          "prompt_tokens": 54,
+          "completion_tokens": 1200,
+          "total_tokens": 1254,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 638
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 54
+        },
+        "retryAttempts": 0
+      },
+      "cfgB": {
+        "templateId": "user_persona",
+        "durationMs": 86695,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp78h1q0-rvjg8h",
+        "outputHash": "3286315ce9c7f2c544a449714c09192db451a5ec966ca036afeb6a1ccc17558d",
+        "outputExcerpt": "# Persona-To-Action Packet ## 1. Segments And Assumptions - **Source data used:** Task context “simple internal approval tracker” and “B2B persona.” No supplied market data, surveys, or interviews. - **Assumptions (all labeled):** - [Assumption] The product is a lightweight, cloud-based approval workflow tool (no-code setup, mobile-ready). - [Assumption] Buyer persona is someone managing operations, finance, or HR in a non-enterprise company; end-user persona is a typical employee who submits requests. - [Assumption] Segments are defined by team size and approval maturity, not by industry. - [Assumption] The main use cases are expense approvals, purchase requisitions, time-off requests, and ad-hoc sign-offs. - **Segment boundaries (3 practical segments):** | Segment | Typical Company Size | Approval Maturity | Pain Point | | --- | --- | --- | --- | | **Ad-hoc small teams** | 1-30 employees | No formal system; email/chat/paper | Lost requests, no accountability, manual follow-ups | | **Scaling mid-size teams** | 31-500 employees | Semi-structured; some forms but no dedicated tool | Bottlenecks across departments, missing audit trails, low visibility | | **Multi-department teams** | ",
+        "normalized": 1,
+        "usage": {
+          "inputTokens": 1314,
+          "outputTokens": 2803,
+          "totalTokens": 4117
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 4,
+          "rationale": "CFG-A provides detailed and structured personas with specific attributes and scenarios, making it highly useful and complete. It lacks some governance safety as it doesn't explicitly mention data privacy considerations."
+        },
+        "cfgB": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers comprehensive personas with clear decision signals and actions, ensuring high usefulness and completeness. It includes assumptions and segment boundaries, enhancing governance safety."
+        }
+      },
+      "deltaNormalized": 0.12
+    }
+  ]
+}

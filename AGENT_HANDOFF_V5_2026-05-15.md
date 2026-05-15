@@ -798,3 +798,104 @@ Recommended continuation:
 
 - Commit this tranche.
 - Next highest-value tranche: QH-5 decision memo activation.
+
+## QH-4/QH-5 Roadmap Completion — Implemented, Full EVT-4 Still Mixed — 2026-05-16
+
+User asked Codex to finish the remaining roadmap so there is one review packet.
+
+Pre-implementation review:
+
+- `docs/reviews/CVF_GC018_QH4_QH5_ROADMAP_COMPLETION_2026-05-16.md`
+
+Implementation:
+
+- QH-4 `user_persona` now uses `Persona-To-Action Packet` in
+  `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-prompt-contract.ts`.
+- Persona outputs now require trigger, objection, decision criteria, success
+  signal, product action, marketing/support action, onboarding/activation
+  action, first experiment, and persona usability checks.
+- QH-5 `decision_memo` and comparison-shaped prompts now use
+  `Decision Activation Memo`.
+- Decision outputs now require recommendation, first 24-72 hour activation
+  step, owner/role, option comparison using common criteria, decision rule,
+  switch trigger, rollback/pause trigger, risk/assumption checks, and activation
+  acceptance checks.
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/templates/product.ts`
+  and `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/templates/business.ts`
+  were aligned with the QH-4/QH-5 contracts.
+
+Static verification:
+
+- `npx vitest run src/lib/execute-prompt-contract.test.ts src/lib/templates/index.test.ts src/lib/front-door-template-standard.test.ts src/lib/trusted-form-corpus.test.ts`
+  PASS: `125/125`.
+- `npx tsc --noEmit` PASS.
+- `npm run lint` PASS with one pre-existing warning:
+  `src/app/api/system/jobs/route.test.ts` unused `_request`.
+
+Focused QH-4/QH-5 live evidence:
+
+- Evidence:
+  `docs/assessments/CVF_EVT4_DEEPSEEK_V4_PRO_QH4_QH5_FOCUSED_EVIDENCE_2026-05-16.json`
+- Summary:
+  `docs/assessments/CVF_EVT4_DEEPSEEK_V4_PRO_QH4_QH5_FOCUSED_SUMMARY_2026-05-16.md`
+- Result:
+  - Completed `5/5`.
+  - CFG-B receipts `5/5`.
+  - Safety failures `0`.
+  - Median delta `+0.08`.
+  - Focused decision rule met.
+  - EVT4-02 launch options memo: CFG-B `1.00`, delta `+0.12`.
+  - EVT4-10 research notes: CFG-B `0.96`, delta `+0.08`.
+  - EVT4-17 B2B persona: CFG-B `1.00`, delta `+0.12`.
+  - EVT4-04 persona synthesis remains weaker: CFG-B `0.76`, delta `-0.16`.
+  - EVT4-13 channel choice remains weaker: CFG-B `0.76`, delta `-0.16`.
+
+Full EVT-4 completion regression:
+
+- Evidence:
+  `docs/assessments/CVF_EVT4_DEEPSEEK_V4_PRO_QH_ROADMAP_COMPLETION_REGRESSION_EVIDENCE_2026-05-16.json`
+- Summary:
+  `docs/assessments/CVF_EVT4_DEEPSEEK_V4_PRO_QH_ROADMAP_COMPLETION_REGRESSION_SUMMARY_2026-05-16.md`
+- Result:
+  - Completed `19/20`.
+  - CFG-B receipts `19/20`.
+  - Safety failures `0`.
+  - Median delta `-0.08`.
+  - Registered parity rule not met.
+  - EVT4-03 failed with CFG-B `422` after output-validation exhaustion;
+    failure detail showed `EMPTY_OUTPUT` and a live `BLOCK` receipt.
+
+EVT4-03 diagnostic:
+
+- Evidence:
+  `docs/assessments/CVF_EVT4_DEEPSEEK_V4_PRO_QH_COMPLETION_EVT403_DIAG_EVIDENCE_2026-05-16.json`
+- Summary:
+  `docs/assessments/CVF_EVT4_DEEPSEEK_V4_PRO_QH_COMPLETION_EVT403_DIAG_SUMMARY_2026-05-16.md`
+- Result:
+  - Completed `1/1`.
+  - CFG-B receipt `1/1`.
+  - Safety failures `0`.
+  - Delta `-0.20`.
+  - The full-run EVT4-03 failure was not consistently reproducible in
+    isolation, but the feature-priority lane remains weak.
+
+Roadmap completion packet:
+
+- `docs/reviews/CVF_QH_ROADMAP_COMPLETION_RESULT_2026-05-16.md`
+
+Final roadmap status:
+
+- QH-1 through QH-5 are implemented at product-contract level.
+- CVF governance receipts and safety remain strong in live checks.
+- Do **not** claim output-quality parity.
+- Do **not** claim full EVT-4 no-degrade.
+- Do **not** reopen F-1.
+- Do **not** continue more tuning without fresh human authorization and a new
+  roadmap focused on remaining weak lanes.
+
+Remaining weak lanes for any later roadmap:
+
+- feature-priority reliability/output validation: EVT4-03/EVT4-14;
+- competitor-review specificity: EVT4-06;
+- ops-plan consistency: EVT4-08;
+- channel-choice activation depth: EVT4-13.

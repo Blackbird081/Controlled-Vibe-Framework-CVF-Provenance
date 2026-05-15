@@ -2,7 +2,7 @@
 
 Date: 2026-05-15
 
-Status: ACTIVE PRODUCT ROADMAP - QH-1/QH-2 AND QH-3 IMPLEMENTED WITH BOUNDED CLAIMS
+Status: IMPLEMENTED - BOUNDED PRODUCT HARDENING COMPLETE, FULL EVT-4 STILL MIXED
 
 Parent closure:
 
@@ -16,6 +16,8 @@ Latest tranche evidence:
 - `docs/reviews/CVF_QH1_QH2_NONCODER_OUTPUT_HARDENING_RESULT_2026-05-15.md`
 - `docs/reviews/CVF_GC018_QH3_SOP_HANDOFF_PROCEDURAL_DEPTH_2026-05-16.md`
 - `docs/reviews/CVF_QH3_SOP_HANDOFF_PROCEDURAL_DEPTH_RESULT_2026-05-16.md`
+- `docs/reviews/CVF_GC018_QH4_QH5_ROADMAP_COMPLETION_2026-05-16.md`
+- `docs/reviews/CVF_QH_ROADMAP_COMPLETION_RESULT_2026-05-16.md`
 
 ## 0. Purpose
 
@@ -168,6 +170,11 @@ Exit criteria:
 
 ### Track QH-4 — Persona-To-Action Bridge
 
+Implementation status: implemented 2026-05-16 as a persona-to-action packet.
+Focused QH-4/QH-5 evidence retained receipts and safety and met the focused
+decision rule, but full EVT-4 completion regression remains mixed. Do not claim
+output-quality parity or full EVT-4 no-degrade.
+
 User pain:
 
 - Personas can be descriptive but not actionable enough.
@@ -194,6 +201,11 @@ Exit criteria:
   signal.
 
 ### Track QH-5 — Decision Memo Activation Steps
+
+Implementation status: implemented 2026-05-16 as a decision activation memo.
+Focused QH-4/QH-5 evidence retained receipts and safety and met the focused
+decision rule, but full EVT-4 completion regression remains mixed. Do not claim
+output-quality parity or full EVT-4 no-degrade.
 
 User pain:
 

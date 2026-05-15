@@ -108,7 +108,7 @@ function buildTaskShapeGuidance(shapes: DeliverableShape[]): string[] {
   }
 
   if (shapes.includes('decision_comparison')) {
-    guidance.push('Decision/comparison shape: compare every named or reasonably inferred option using the same criteria; include pros, cons, cost/effort, risk, best-fit scenario, and a final recommendation with a simple decision rule.');
+    guidance.push('Decision/comparison shape: give a clear recommendation with the first 24-72 hour activation step, compare every named or reasonably inferred option using the same criteria, and include decision rule, switch/rollback trigger, risks, assumptions, and acceptance checks.');
   }
 
   if (shapes.includes('prioritization')) {
@@ -120,7 +120,7 @@ function buildTaskShapeGuidance(shapes: DeliverableShape[]): string[] {
   }
 
   if (shapes.includes('persona')) {
-    guidance.push('Persona shape: give each persona realistic context, goals, pain points, jobs-to-be-done, triggers, objections, and concrete product/marketing next steps with acceptance checks.');
+    guidance.push('Persona shape: every persona must include trigger, objection, decision criteria, success signal, product action, marketing/support action, onboarding or activation action, first experiment, and acceptance check.');
   }
 
   return guidance;
@@ -131,7 +131,7 @@ function resolvePrimaryDeliverableShape(shapes: DeliverableShape[]): Deliverable
   if (shapes.includes('acceptance_criteria')) return 'acceptance_criteria';
   if (shapes.includes('pricing')) return 'pricing';
   if (shapes.includes('prioritization')) return 'prioritization';
-  if (shapes.includes('persona')) return undefined;
+  if (shapes.includes('persona')) return 'persona';
   if (shapes.includes('decision_comparison')) return 'decision_comparison';
   if (shapes.includes('plan')) return 'plan';
   if (shapes.includes('checklist')) return 'checklist';
@@ -304,52 +304,70 @@ function buildDeliverableContract(shape: DeliverableShape | undefined): string |
 - [ ] First experiment can be run without another strategy pass
 - [ ] Risks and rollback or adjustment signals are visible`;
     case 'persona':
-      return `# Persona Packet
+      return `# Persona-To-Action Packet
 
 ## 1. Segments And Assumptions
 - Source data used:
 - Assumptions:
+- Segment boundaries:
 
-## 2. Persona Profiles
-| Persona | Context | Goals | Pain Points | Jobs To Be Done | Objections | Trigger |
+## 2. Persona Profiles And Decision Signals
+| Persona | Context | Job To Be Done | Trigger | Objection | Decision Criteria | Success Signal |
 | --- | --- | --- | --- | --- | --- | --- |
 | 1. | | | | | | |
 | 2. | | | | | | |
 
-## 3. Journey And Decision Moments
-- Discovery:
-- Evaluation:
-- First successful use:
-- Retention or repeat-use trigger:
+## 3. Persona-Linked Actions
+| Persona | Product Action | Marketing/Support Action | Onboarding Or Activation Action | Owner/Role | Acceptance Check |
+| --- | --- | --- | --- | --- | --- |
+| 1. | | | | | |
+| 2. | | | | | |
 
-## 4. Product Or Marketing Actions
-- Message or offer:
-- Product change or support action:
-- Acceptance checks:`;
+## 4. First Experiments
+| Persona | Experiment | Hypothesis | Success Metric | Timebox | Decision Rule |
+| --- | --- | --- | --- | --- | --- |
+| 1. | | | | | |
+| 2. | | | | | |
+
+## 5. Persona Usability Checks
+- [ ] Every persona has a trigger, objection, decision criteria, and success signal
+- [ ] Every persona maps to at least one product action and one marketing/support action
+- [ ] Every persona has a first experiment and measurable acceptance check
+- [ ] Unsupported demographic or behavioral claims are labeled as assumptions`;
     case 'decision_comparison':
-      return `# Decision Comparison Memo
+      return `# Decision Activation Memo
 
-## 1. Decision To Make
+## 1. Recommendation And First Activation Step
 - Decision:
-- Constraints:
-- Assumptions:
-
-## 2. Option-By-Option Comparison
-| Option | Best Fit Scenario | Pros | Cons | Cost/Effort | Risks | Activation Steps |
-| --- | --- | --- | --- | --- | --- | --- |
-| Option A | | | | | | |
-| Option B | | | | | | |
-
-## 3. Recommendation
 - Recommended option:
 - Why it wins:
-- When to choose a different option:
+- First 24-72 hour activation step:
+- Owner/role:
+- Acceptance check for the first step:
 
-## 4. Decision Rule And Acceptance Checks
+## 2. Option-By-Option Comparison
+| Option | Best Fit Scenario | Pros | Cons | Cost/Effort | Risks | Activation Step | Evidence/Assumption |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Option A | | | | | | | |
+| Option B | | | | | | | |
+
+## 3. Decision Rule, Switch Trigger, And Rollback
 - Decision rule:
+- Switch trigger:
+- Rollback or pause trigger:
+- When to revisit:
+
+## 4. Risks And Assumption Checks
+| Risk/Assumption | How To Validate | Owner/Role | Deadline/Timebox | Mitigation |
+| --- | --- | --- | --- | --- |
+| 1. | | | | |
+| 2. | | | | |
+
+## 5. Activation Acceptance Checks
 - [ ] Every named option was compared
-- [ ] Operator knows the first activation step
-- [ ] Risks and assumptions are explicit`;
+- [ ] Operator knows the first 24-72 hour activation step
+- [ ] Switch or rollback trigger is explicit
+- [ ] Risks and assumptions have validation checks`;
     case 'plan':
       return `# Operator Action Plan
 

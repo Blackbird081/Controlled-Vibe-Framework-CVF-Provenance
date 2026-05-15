@@ -1,0 +1,98 @@
+{
+  "schema": "cvf.evt4.output_quality_ab.v1",
+  "config": {
+    "provider": "deepseek",
+    "cfgA": "direct_deepseek",
+    "cfgB": "cvf_api_execute",
+    "model": "deepseek-v4-pro",
+    "providerTimeoutMs": 120000,
+    "directEmptyRetries": 2,
+    "taskIdFilter": [
+      "EVT4-03"
+    ]
+  },
+  "summary": {
+    "startedAt": "2026-05-15T18:55:36.485Z",
+    "completedAt": "2026-05-15T18:57:32.994Z",
+    "corpusSize": 20,
+    "runLimit": 1,
+    "completedPairs": 1,
+    "cfgBReceipts": 1,
+    "safetyFailures": 0,
+    "medianDeltaNormalized": -0.19999999999999996,
+    "twoPassExpansion": false,
+    "cfgBExpansionReceipts": 0,
+    "cfgBMedianDurationMs": 76814,
+    "cfgBMedianOutputTokens": 2465,
+    "decisionRuleMet": false,
+    "reviewerModes": [
+      "openai:gpt-4o"
+    ]
+  },
+  "records": [
+    {
+      "id": "EVT4-03",
+      "title": "Feature priority",
+      "templateId": "feature_prioritization",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 857,
+        "model": "deepseek-v4-pro",
+        "outputHash": "be70feb169f90baac2ec091b3b1e251b45ae968766a1a940a3c9e6e3456357ef",
+        "outputExcerpt": "**Assumptions** - Users are parents with children under 12, juggling work, childcare, and household tasks. - They have 1–3 minutes per app interaction, often one-handed, while multitasking. - They want to build and maintain family‑oriented habits (e.g., bedtime routine, screen limits, mealtime consistency) but struggle with guilt when they miss a day. - The app must reduce mental load, not add to it. --- ### 5 prioritized features (in order of impact) **1. One‑tap logging from the phone’s home screen (or voice)** **Why:** Removes friction; parents can mark a habit done in <2 seconds without opening the app. **Concrete next steps:** - Design a lock‑screen / home‑screen widget that shows 2–3 top habits with a tap‑to‑complete button. - Add Siri / Google Assistant shortcuts so hands‑free logging works while holding a child. - Prototype the widget with 5 parents, observing one‑handed use. **Acceptance checks:** - 4/5 test users complete a check‑in in ≤3 seconds from waking the phone. - The widget correctly updates the streak after tapping, without loading screens. **2. Flexible habit scheduling (not every‑day rigidity)** **Why:** Parenting routines are unpredictable; strict daily target",
+        "normalized": 0.96,
+        "usage": {
+          "prompt_tokens": 55,
+          "completion_tokens": 1200,
+          "total_tokens": 1255,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 521
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 55
+        },
+        "retryAttempts": 0
+      },
+      "cfgB": {
+        "templateId": "feature_prioritization",
+        "durationMs": 76814,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp7a33l1-hs9t0l",
+        "outputHash": "ebe5cfc1fac3c86dc2232a474398d5556717a0051c95fb44ebf2bd6d3787105b",
+        "outputExcerpt": "# MVP Scope And Prioritization Decision ## 1. Recommended Scope First - **Do now / MVP:** 1. Quick one-tap habit logging (single screen, <5 seconds to complete) 2. Smart reminders & nudges (time-based, location-based, or child’s routine triggers) - **Do next:** 3. Progress streaks & simple rewards (visual streak count, small celebratory nudge) 4. Weekly summary report (auto-generated, plain-language “You did X of Y habits”, with a tip) - **Defer:** 5. Family habit sharing (shared family board, chore/reading routines together) - **Explicit non-goals:** - Social feeds, leaderboards, or complex gamification - Deep analytics (custom charts, exports, goal-setting wizards) - Multi-platform sync with children’s devices - In-app purchases or subscription logic – use a free trial model until value is proven - **First validation or build step:** - Run a 5-day paper-based or simple spreadsheet prototype with 5–8 busy parents. The operator (acting as product lead) will ask them to track 1–2 habits using a daily checklist + a once-a-day nudge (via text or alarm). Measure: did they remember to check? Did it feel lighter than their current method? - If paper test succeeds, build the one‑tap loggi",
+        "normalized": 0.76,
+        "usage": {
+          "inputTokens": 1288,
+          "outputTokens": 2465,
+          "totalTokens": 3753
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 4,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a detailed, user-focused approach with clear assumptions, prioritized features, and concrete steps for implementation and validation. It addresses the specific needs of busy parents effectively."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 3,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 4,
+          "rationale": "CFG-B offers a structured prioritization and validation plan but lacks the depth of user-centric detail found in CFG-A. It focuses more on MVP scope and trade-offs, which may not fully address the nuanced needs of the target users."
+        }
+      },
+      "deltaNormalized": -0.19999999999999996
+    }
+  ]
+}

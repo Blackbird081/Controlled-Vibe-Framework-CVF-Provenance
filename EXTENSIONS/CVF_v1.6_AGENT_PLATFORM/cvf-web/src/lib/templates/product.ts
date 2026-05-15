@@ -220,47 +220,39 @@ SEGMENTS: [segments]
 BUSINESS GOALS: [goals]
 
 OUTPUT FORMAT:
-- Persona Profiles → Jobs To Be Done → Journey and Decision Moments → Product/Marketing Actions → Acceptance Checks
+- Persona Profiles and Decision Signals → Persona-Linked Actions → First Experiments → Persona Usability Checks
 
 SUCCESS CRITERIA:
 - 2-4 distinct personas
-- Demographics, goals, pain points
-- Jobs to be done
-- Decision criteria
-- Actionable product or marketing next steps for each persona
-- Acceptance checks for whether the persona is usable`,
-        outputExpected: ['Persona Profiles', 'Jobs To Be Done', 'Journey and Decision Moments', 'Product/Marketing Actions', 'Acceptance Checks'],
-        outputTemplate: `## User Persona Output
+- Each persona has trigger, objection, decision criteria, and success signal
+- Each persona maps to product, marketing/support, and onboarding or activation action
+- Each persona has a first experiment
+- Acceptance checks prove whether the persona is usable`,
+        outputExpected: ['Persona Profiles and Decision Signals', 'Persona-Linked Actions', 'First Experiments', 'Persona Usability Checks'],
+        outputTemplate: `# Persona-To-Action Packet
 
-## 1. Persona Profiles
+## 1. Segments And Assumptions
+- Source data used:
+- Assumptions:
+- Segment boundaries:
 
-### Persona 1: [Name]
-- Context and demographics:
-- Goals:
-- Pain points:
-- Jobs to be done:
-- Trigger:
-- Objections:
-- Decision criteria:
+## 2. Persona Profiles And Decision Signals
+| Persona | Context | Job To Be Done | Trigger | Objection | Decision Criteria | Success Signal |
+| --- | --- | --- | --- | --- | --- | --- |
 
-## 2. Jobs To Be Done
-| Persona | Situation | Motivation | Desired Outcome | Success Signal |
-| --- | --- | --- | --- | --- |
+## 3. Persona-Linked Actions
+| Persona | Product Action | Marketing/Support Action | Onboarding Or Activation Action | Owner/Role | Acceptance Check |
+| --- | --- | --- | --- | --- | --- |
 
-## 3. Journey And Decision Moments
-- Discovery moment:
-- Evaluation moment:
-- First successful use:
-- Retention or repeat-use trigger:
+## 4. First Experiments
+| Persona | Experiment | Hypothesis | Success Metric | Timebox | Decision Rule |
+| --- | --- | --- | --- | --- | --- |
 
-## 4. Product Or Marketing Actions
-| Persona | Message/Offer | Product or Support Action | First Experiment | Acceptance Check |
-| --- | --- | --- | --- | --- |
-
-## 5. Acceptance Checks
-- [ ] Each persona has a specific context, trigger, and objection
-- [ ] Each persona maps to at least one product or marketing action
-- [ ] The operator knows what to test first`,
+## 5. Persona Usability Checks
+- [ ] Every persona has a trigger, objection, decision criteria, and success signal
+- [ ] Every persona maps to at least one product action and one marketing/support action
+- [ ] Every persona has a first experiment and measurable acceptance check
+- [ ] Unsupported demographic or behavioral claims are labeled as assumptions`,
     },
     {
         id: 'error_handling_ux',

@@ -59,7 +59,9 @@ describe('buildExecutionPrompt', () => {
     expect(prompt).toContain('compare each named or reasonably inferred option');
     expect(prompt).toContain('Task-shape requirements override generic template headings when they conflict');
     expect(prompt).toContain('Do not let SWOT, risk, overview, or documentation-wrapper sections replace the requested plan, comparison, FAQ, prioritization, pricing, persona, or criteria deliverable');
-    expect(prompt).toContain('Decision Comparison Memo');
+    expect(prompt).toContain('Decision Activation Memo');
+    expect(prompt).toContain('First 24-72 hour activation step');
+    expect(prompt).toContain('switch/rollback trigger');
     expect(prompt).toContain('It replaces generic template headings when they conflict');
     expect(prompt).not.toContain('Operational Documentation Packet');
   });
@@ -220,6 +222,36 @@ describe('buildExecutionPrompt', () => {
     expect(prompt).not.toContain('Pricing Strategy Output');
   });
 
+  it('uses an action-first contract for persona synthesis tasks', () => {
+    const prompt = buildExecutionPrompt({
+      ...baseRequest,
+      templateId: 'user_persona',
+      templateName: 'User Persona',
+      intent: 'Create buyer and end-user personas for a simple internal approval tracker.',
+      inputs: {
+        product: 'Internal approval tracker',
+        data: 'Managers need faster approvals; employees lose track of request status.',
+        segments: 'Managers, employees',
+        goals: 'Increase adoption and reduce support questions.',
+      },
+    });
+
+    expect(prompt).toContain('Persona shape');
+    expect(prompt).toContain('Persona-To-Action Packet');
+    expect(prompt).toContain('Persona Profiles And Decision Signals');
+    expect(prompt).toContain('Trigger');
+    expect(prompt).toContain('Objection');
+    expect(prompt).toContain('Decision Criteria');
+    expect(prompt).toContain('Success Signal');
+    expect(prompt).toContain('Persona-Linked Actions');
+    expect(prompt).toContain('Product Action');
+    expect(prompt).toContain('Marketing/Support Action');
+    expect(prompt).toContain('Onboarding Or Activation Action');
+    expect(prompt).toContain('First Experiments');
+    expect(prompt).toContain('Persona Usability Checks');
+    expect(prompt).not.toContain('User Persona Output');
+  });
+
   it('keeps generic template skeletons when no shape-specific contract matches', () => {
     const prompt = buildExecutionPrompt({
       ...baseRequest,
@@ -306,8 +338,11 @@ describe('buildExecutionPrompt', () => {
     expect(prompt).toContain('Use English for the final answer');
     expect(prompt).toContain('matching the primary language of the user intent and supplied inputs');
     expect(prompt).toContain('Do not invent precise budgets, prices, company sizes, locale-specific currency, dates, quotas, or guarantees');
-    expect(prompt).toContain('Decision Comparison Memo');
+    expect(prompt).toContain('Decision Activation Memo');
     expect(prompt).toContain('Every named option was compared');
+    expect(prompt).toContain('First 24-72 hour activation step');
+    expect(prompt).toContain('Switch trigger');
+    expect(prompt).toContain('Rollback or pause trigger');
     expect(prompt).toContain('shape-specific deliverable contract');
   });
 

@@ -326,37 +326,44 @@ CONSTRAINTS:
 CRITERIA: [criteria]
 
 OUTPUT FORMAT:
-- Decision To Make → Option-by-Option Comparison → Recommendation → Decision Rule → Acceptance Checks
+- Recommendation and First Activation Step → Option-by-Option Comparison → Decision Rule/Switch Trigger/Rollback → Risks and Assumption Checks → Activation Acceptance Checks
 
 SUCCESS CRITERIA:
 - So sánh mọi option được nêu
 - Dùng cùng tiêu chí cho từng option
-- Recommendation có first activation step
-- Có rule để đổi quyết định nếu điều kiện thay đổi`,
-        outputExpected: ['Decision To Make', 'Option-by-Option Comparison', 'Recommendation', 'Decision Rule', 'Acceptance Checks'],
-        outputTemplate: `# Decision Comparison Memo
+- Recommendation có first activation step trong 24-72 giờ
+- Có rule để đổi quyết định nếu điều kiện thay đổi
+- Có switch/rollback trigger và validation checks cho risks/assumptions`,
+        outputExpected: ['Recommendation and First Activation Step', 'Option-by-Option Comparison', 'Decision Rule/Switch Trigger/Rollback', 'Risks and Assumption Checks', 'Activation Acceptance Checks'],
+        outputTemplate: `# Decision Activation Memo
 
-## 1. Decision To Make
+## 1. Recommendation And First Activation Step
 - Decision:
-- Constraints:
-- Assumptions:
-
-## 2. Option-By-Option Comparison
-| Option | Best Fit Scenario | Pros | Cons | Cost/Effort | Risks | Activation Steps |
-| --- | --- | --- | --- | --- | --- | --- |
-| Option A | | | | | | |
-| Option B | | | | | | |
-
-## 3. Recommendation
 - Recommended option:
 - Why it wins:
-- When to choose a different option:
+- First 24-72 hour activation step:
+- Owner/role:
+- Acceptance check for the first step:
 
-## 4. Decision Rule And Acceptance Checks
+## 2. Option-By-Option Comparison
+| Option | Best Fit Scenario | Pros | Cons | Cost/Effort | Risks | Activation Step | Evidence/Assumption |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+
+## 3. Decision Rule, Switch Trigger, And Rollback
 - Decision rule:
+- Switch trigger:
+- Rollback or pause trigger:
+- When to revisit:
+
+## 4. Risks And Assumption Checks
+| Risk/Assumption | How To Validate | Owner/Role | Deadline/Timebox | Mitigation |
+| --- | --- | --- | --- | --- |
+
+## 5. Activation Acceptance Checks
 - [ ] Every named option was compared
-- [ ] Operator knows the first activation step
-- [ ] Risks and assumptions are explicit`,
+- [ ] Operator knows the first 24-72 hour activation step
+- [ ] Switch or rollback trigger is explicit
+- [ ] Risks and assumptions have validation checks`,
         difficulty: 'easy',
     },
 ];
