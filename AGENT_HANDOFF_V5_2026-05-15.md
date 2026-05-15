@@ -200,3 +200,40 @@ Current F-1 conclusion:
      while preserving audit/safety.
   3. Rebaseline on a stronger provider/model lane for both CFG-A and CFG-B with
      a fresh preregistered comparison.
+
+## F-2 Test Drift Cleanup — 2026-05-15
+
+After F-1 bounded repair evidence showed no further prompt/template closure,
+Codex moved to the next priority: close the pre-existing targeted test drift.
+
+Implementation:
+
+- `src/app/api/admin/knowledge/w117-cp4-integration.test.ts`
+  - Updated the admin mock to a current scoped owner/break-glass-shaped session.
+  - Queried writable knowledge chunks with the resolved org scope
+    (`org_cvf`), matching current admin resource scoping.
+- `src/lib/intent-router-evidence-parity.test.ts`
+  - Removed stale data-analysis wizard parity assumption from the wizard-only
+    parity fixture because trusted-form routing now intentionally wins for
+    narrow `data_analysis` matches.
+  - Kept parity coverage on unshadowed wizard starter keys.
+- `src/lib/hooks/useModals.test.ts`
+  - Updated expectation to the current single-shell-overlay modal contract:
+    opening `quickStart` closes `apiKeyWizard`.
+
+Verification:
+
+- Targeted F-2 set:
+  `npx vitest run src/app/api/admin/knowledge/w117-cp4-integration.test.ts src/lib/hooks/useModals.test.ts src/lib/intent-router-evidence-parity.test.ts src/lib/templates/governance-enforcement.test.ts`
+  PASS (30/30).
+- `npx tsc --noEmit` PASS.
+- `npm run lint` PASS with one pre-existing `_request` warning in
+  `src/app/api/system/jobs/route.test.ts`.
+- Full web test suite:
+  `npm run test:run` PASS (200 test files, 2637 tests passed, 2 skipped).
+
+Current F-2 conclusion:
+
+- F-2 targeted drift is closed.
+- No runtime governance behavior was changed for this cleanup.
+- Remaining lint warning is pre-existing and outside the F-2 failure set.

@@ -11,13 +11,23 @@ import { queryKnowledgeChunks } from '@/lib/knowledge-retrieval';
 import type { KnowledgeCollectionDefinition } from '@/lib/knowledge-retrieval';
 
 vi.mock('@/lib/admin-session', () => ({
-  requireAdminApiSession: vi.fn().mockResolvedValue({ user: { role: 'admin' } }),
+  requireAdminApiSession: vi.fn().mockResolvedValue({
+    userId: 'test-admin',
+    user: 'Test Admin',
+    role: 'owner',
+    orgId: 'org_cvf',
+    teamId: 'team_exec',
+    expiresAt: Date.now() + 60_000,
+    authMode: 'break-glass',
+  }),
   withAdminAuditPayload: vi.fn((session: unknown, payload: unknown) => payload),
 }));
 
 vi.mock('@/lib/policy-reader', () => ({
   getKnowledgeCollectionScopes: vi.fn().mockResolvedValue(new Map()),
 }));
+
+const TEST_ORG_ID = 'org_cvf';
 
 describe('W117-CP4 — writable store integration', () => {
   beforeEach(() => {
@@ -26,7 +36,7 @@ describe('W117-CP4 — writable store integration', () => {
   });
 
   it('BASELINE: new collection not yet added → 0 chunks returned', async () => {
-    const result = await queryKnowledgeChunks({ intent: 'alpha-bravo ingestion test unique' });
+    const result = await queryKnowledgeChunks({ intent: 'alpha-bravo ingestion test unique', orgId: TEST_ORG_ID });
     expect(result.chunks).toHaveLength(0);
   });
 
@@ -54,7 +64,7 @@ describe('W117-CP4 — writable store integration', () => {
     );
     expect((await chunkRes.json()).success).toBe(true);
 
-    const result = await queryKnowledgeChunks({ intent: 'alpha-bravo ingestion test unique' });
+    const result = await queryKnowledgeChunks({ intent: 'alpha-bravo ingestion test unique', orgId: TEST_ORG_ID });
     expect(result.chunks.length).toBeGreaterThan(0);
     expect(result.chunks[0].collectionId).toBe('w117-test-col');
     expect(result.chunks[0].score).toBeGreaterThan(0);
@@ -81,12 +91,12 @@ describe('W117-CP4 — writable store integration', () => {
       { params: Promise.resolve({ id: 'w117-del-col' }) },
     );
 
-    const before = await queryKnowledgeChunks({ intent: 'delta-echo unique retrieval marker' });
+    const before = await queryKnowledgeChunks({ intent: 'delta-echo unique retrieval marker', orgId: TEST_ORG_ID });
     expect(before.chunks.length).toBeGreaterThan(0);
 
     knowledgeStore.deleteCollection('w117-del-col');
 
-    const after = await queryKnowledgeChunks({ intent: 'delta-echo unique retrieval marker' });
+    const after = await queryKnowledgeChunks({ intent: 'delta-echo unique retrieval marker', orgId: TEST_ORG_ID });
     expect(after.chunks).toHaveLength(0);
   });
 
@@ -111,7 +121,7 @@ describe('W117-CP4 — writable store integration', () => {
       { params: Promise.resolve({ id: 'w117-inject-col' }) },
     );
 
-    const result = await queryKnowledgeChunks({ intent: 'foxtrot-golf injection validation' });
+    const result = await queryKnowledgeChunks({ intent: 'foxtrot-golf injection validation', orgId: TEST_ORG_ID });
     expect(result.allowedChunkCount).toBeGreaterThan(0);
     expect(result.allowedCollectionIds).toContain('w117-inject-col');
     expect(result.matchedChunkCount).toBeGreaterThan(0);

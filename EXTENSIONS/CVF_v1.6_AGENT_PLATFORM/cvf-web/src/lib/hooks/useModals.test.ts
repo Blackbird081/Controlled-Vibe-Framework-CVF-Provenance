@@ -80,7 +80,7 @@ describe('useModals', () => {
         expect(result.current.showSettings).toBe(false);
         expect(result.current.showAIUsage).toBe(false);
         expect(result.current.showUserContext).toBe(false);
-        expect(result.current.showApiKeyWizard).toBe(true);
+        expect(result.current.showApiKeyWizard).toBe(false);
         expect(result.current.showQuickStart).toBe(true);
     });
 });

@@ -79,7 +79,7 @@ const PARITY_FIXTURES: Array<{ label: string; input: string }> = [
   { label: 'VN app/build intent', input: 'Tôi muốn xây dựng app quản lý kho hàng' },
   { label: 'EN content intent', input: 'write blog content for the onboarding process' },
   { label: 'VN security/review intent', input: 'kiểm tra bảo mật cho web app của tôi' },
-  { label: 'EN data analysis intent', input: 'analyze sales data and build a dashboard with metrics' },
+  { label: 'EN system design intent', input: 'build system infrastructure roadmap for internal platform' },
   { label: 'VN marketing intent', input: 'lên chiến dịch marketing cho ra mắt sản phẩm mới' },
 ];
 
@@ -144,11 +144,11 @@ describe('intent-router-evidence-parity (CP4)', () => {
     expect(routed.riskLevel).toBe(direct.riskLevel);
   });
 
-  it('resolveGovernedStarterTemplate produces same id as routeIntent for each wizard starter key', () => {
+  it('resolveGovernedStarterTemplate produces same id as routeIntent for unshadowed wizard starter keys', () => {
     const starterKeys = [
       { key: 'app-builder', inputs: ['build an app', 'ứng dụng mobile'] },
       { key: 'security-assessment', inputs: ['security audit', 'kiểm tra bảo mật'] },
-      { key: 'data-analysis', inputs: ['data analytics dashboard', 'phân tích dữ liệu'] },
+      { key: 'system-design', inputs: ['system architecture', 'kiến trúc hệ thống'] },
     ];
 
     process.env.NEXT_PUBLIC_CVF_INTENT_FIRST_FRONT_DOOR = 'true';
