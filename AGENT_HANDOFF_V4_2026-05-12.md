@@ -636,16 +636,57 @@ or GC-018 candidate before work starts.
 - Evidence: median CFG-B - CFG-A = -0.28 on 20/20 R0/R1 non-coder prompts
   (`docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_SUMMARY_2026-05-14.md`).
 - Problem: every governed prompt scored 0.16–0.32 lower than ungoverned on
-  usefulness / completeness / specificity.
-- Owner question: is the gap caused by (a) the documentation-template wrapper
-  truncating/reformatting AI output, (b) `CVF_SYSTEM_PROMPT` over-constraining
-  R0/R1 tasks, or (c) `output-validator` rejecting useful content?
-- Required before starting: read raw evidence JSON, sample 5–10 CFG-B outputs
-  vs CFG-A outputs by hand, identify which layer strips content. Decide
-  scope (template vs system prompt vs validator) BEFORE writing GC-018.
-- Boundary: NOT a QBS rerun. NOT a hard-gate change. NOT a provider routing
-  change. Only changes to: template wrappers, system prompt, or output
-  validator — and only if a fresh GC-018 authorizes that specific layer.
+  usefulness / completeness / specificity. Reviewer feedback: outputs are
+  "thin", "less actionable", "lack depth" — not structural/safety failures.
+- Root cause: template split improved structure but cannot increase content
+  depth. One-pass governance inherently produces shorter output than bare
+  provider because CVF contract (system prompt + output validator constraints)
+  limits generation scope. This is an inherent cost, not a bug.
+- **Proposed solution (high confidence):** Quality Expansion Pass.
+  - Pass 1: normal CVF one-shot execution (ALLOW required for pass 2).
+  - Pass 2: same provider, fixed deterministic expansion prompt: "Expand this
+    into an operator-ready deliverable; preserve safety/governance; add
+    concrete steps, examples, verification checks."
+  - Pass 2 output MUST go through full governance pipeline (DLP, enforcement,
+    output-validator, bypass detector) — no shortcuts.
+  - Receipt extension: `passOneReceiptId`, `passTwoReceiptId`,
+    `expansionApplied: boolean`.
+  - R0/R1 trusted non-coder templates only; skip if pass 1 is BLOCK/CLARIFY/
+    NEEDS_APPROVAL.
+
+**Pre-implementation phase (REQUIRED before GC-018):**
+- Measure two-pass impact on EVT-2: latency, cost, governance tax. Will
+  double provider calls → expected tax increase significant. Must confirm
+  acceptable before proceeding.
+- 3–5 prompt test run to measure content delta, latency P95, safety delta.
+- If two-pass P95 > 15s or latency unacceptable, defer and reconsider.
+
+**Governance risks requiring explicit mitigation:**
+1. Two-pass costs 2× provider spend + 2× latency. User must consent and UI
+   must surface this trade-off.
+2. Expansion prompt must be FROZEN (deterministic, templated). Any change
+   requires new GC-018.
+3. Pass 2 bypass detector must be extra-sensitive to "expand", "more detail",
+   "concrete" phrasing — attack vector if pass 1 output contains injected
+   prompt.
+4. Must NOT auto-trigger expansion based on runtime heuristics (separate
+   feature, separate GC-018).
+
+**GC-018 for F-1a (Quality Expansion Pass):**
+- Authorized: two-pass execution for R0/R1 templates, pass 2 through full
+  governance, receipt extension.
+- Boundaries: NOT for R2+, NOT for failed pass 1, NOT for runtime quality
+  rubric (separate feature).
+- Exit criteria: 20/20 prompts, median delta ≥ -0.05, 0 safety failures,
+  P95 < 20s, no new bypass patterns.
+
+**Separate future feature (NOT F-1): F-1b Runtime Quality Heuristics**
+- Computing output quality rubric (tokens, sections, checklist presence) at
+  runtime to auto-trigger expansion — this is a separate GC-018, not part
+  of F-1a closure.
+
+**Boundary: NOT a QBS rerun, NOT a hard-gate change, NOT provider routing
+change. Only: multi-pass execution + governance re-check on pass 2.**
 
 #### F-2. Pre-existing test failures cleanup (separate from EVT)
 
