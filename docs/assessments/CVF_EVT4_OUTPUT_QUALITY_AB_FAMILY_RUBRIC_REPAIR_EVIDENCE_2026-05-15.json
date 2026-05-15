@@ -1,0 +1,1188 @@
+{
+  "schema": "cvf.evt4.output_quality_ab.v1",
+  "config": {
+    "cfgA": "direct_alibaba",
+    "cfgB": "cvf_api_execute",
+    "model": "qwen-turbo"
+  },
+  "summary": {
+    "startedAt": "2026-05-15T02:32:14.068Z",
+    "completedAt": "2026-05-15T02:43:15.682Z",
+    "corpusSize": 20,
+    "runLimit": 20,
+    "completedPairs": 20,
+    "cfgBReceipts": 20,
+    "safetyFailures": 0,
+    "medianDeltaNormalized": -0.16000000000000003,
+    "twoPassExpansion": false,
+    "cfgBExpansionReceipts": 0,
+    "cfgBMedianDurationMs": 13772,
+    "cfgBMedianOutputTokens": 894,
+    "decisionRuleMet": false,
+    "reviewerModes": [
+      "openai:gpt-4o"
+    ]
+  },
+  "records": [
+    {
+      "id": "EVT4-01",
+      "title": "Onboarding checklist",
+      "templateId": "documentation",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 16088,
+        "model": "qwen-turbo",
+        "outputHash": "0d2674c92ea5101cb5fff9473924fcd2faaada4d437a11f1c1b84d2cb1bd567e",
+        "outputExcerpt": "Sure! Here's a **practical onboarding checklist** for a new support teammate joining a **local-first SaaS product team**, tailored for a **non-technical operator**. This checklist is structured to ensure the new teammate can quickly understand their role, the product, and how to support users effectively. --- ## 🧾 **Onboarding Checklist for New Support Teammate (Local-First SaaS Product Team)** ### 📌 **Assumptions** - The new teammate has basic computer skills and familiarity with email, chat tools, and customer service. - They are not expected to have technical knowledge of the product’s codebase or infrastructure. - The product is \"local-first\" — meaning it works offline, syncs data, and is often used in environments with limited internet connectivity. - The team uses tools like **Slack**, **Zendesk**, **Notion**, and **internal documentation**. --- ## ✅ **Day 1: Welcome & Introduction** ### 🔹 Next Steps: 1. **Welcome Meeting** - Meet with the manager or team lead to go over the onboarding plan. - Discuss expectations, goals, and key contacts. 2. **Set Up Tools** - Get access to internal tools (e.g., Zendesk, Slack, Notion, internal dashboard). - Set up email and calendar. 3. ",
+        "normalized": 1,
+        "usage": {
+          "prompt_tokens": 73,
+          "completion_tokens": 1094,
+          "total_tokens": 1167,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      "cfgB": {
+        "templateId": "documentation",
+        "durationMs": 14579,
+        "model": "qwen-turbo",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6ay4me-0dc2td",
+        "outputHash": "0c968f031b506034ac99fc11ac63820b494e6b682a9071a1f7308d657b71ee92",
+        "outputExcerpt": "# Operational Documentation Packet ## 1. What This Document Is For - **Topic:** Onboarding checklist for new support teammates joining a local-first SaaS product team - **Who should use it:** Non-technical operators, HR coordinators, and team leads responsible for onboarding - **What they should achieve:** A complete, actionable onboarding process that ensures new support teammates understand their role, tools, and workflows ## 2. The Main Flow ### Step-by-Step Actions 1. **Pre-Onboarding Preparation** - Confirm access to internal systems (email, ticketing, knowledge base) - Set up company account and profile in all necessary platforms - Receive initial onboarding email with key resources 2. **Day 1: Orientation & Introduction** - Meet the team (virtual or in-person) - Review company mission, values, and culture - Get an overview of the product and its key features - Understand the support process and escalation paths 3. **Day 2-3: Tool Familiarization** - Learn how to use the ticketing system (e.g., Zendesk, Freshdesk) - Explore the knowledge base and internal documentation - Practice responding to sample tickets - Set up communication channels (Slack, Teams, etc.) 4. **Day 4-5: S",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 3253,
+          "outputTokens": 894,
+          "totalTokens": 4147
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a detailed, step-by-step onboarding checklist tailored for a non-technical support role in a local-first SaaS environment. It covers all necessary aspects from tool setup to independent ticket handling, ensuring a comprehensive onboarding experience."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a structured onboarding process with clear steps and considerations. However, it lacks the detailed daily breakdown and specific acceptance checks found in CFG-A, making it slightly less comprehensive and specific."
+        }
+      },
+      "deltaNormalized": -0.16000000000000003
+    },
+    {
+      "id": "EVT4-02",
+      "title": "Launch options memo",
+      "templateId": "decision_memo",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 17467,
+        "model": "qwen-turbo",
+        "outputHash": "fcfd743690ca44d58789d323a9f16f3bee676b5d7184a3c48b1c11b31ec42f8b",
+        "outputExcerpt": "Here's a structured, actionable comparison of three go-to-market options for a simple appointment booking app for small salons. This is tailored for a non-technical product operator. --- ## **1. Option: Use a Third-Party Booking Platform (e.g., Calendly, Acuity Scheduling, or SimplyBook)** ### **Assumptions:** - You want to launch quickly with minimal development. - Your salon clients are already familiar with these platforms. - You don’t need custom branding or deep integration with other tools. - You’re okay with limited control over the user experience and data. ### **Next Steps:** 1. **Choose a platform** that fits your budget and features (e.g., Calendly for simplicity, Acuity for more customization). 2. **Set up an account** and connect it to your salon’s website or social media. 3. **Customize the booking page** with your services, pricing, and availability. 4. **Train your staff** on how to use the platform and manage appointments. 5. **Promote the new booking system** via email, social media, and in-store signage. ### **Acceptance Checks:** - ✅ The booking link is live and working. - ✅ Staff can manage appointments without technical issues. - ✅ Clients can book appointment",
+        "normalized": 1,
+        "usage": {
+          "prompt_tokens": 70,
+          "completion_tokens": 1088,
+          "total_tokens": 1158,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      "cfgB": {
+        "templateId": "decision_memo",
+        "durationMs": 11961,
+        "model": "qwen-turbo",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6ayvg1-olkxrz",
+        "outputHash": "97489e3c75deb5041e5546a6a8c5a8f01b40489e4bee11667b6d15db8aa8d44e",
+        "outputExcerpt": "# Decision Comparison Memo ## 1. Decision To Make - **Decision:** Choose the best go-to-market strategy for a simple appointment booking app for small salons. - **Constraints:** - Low budget - Non-technical operator - Needs a clear first activation step - **Assumptions:** - The app will be used by small salons with limited digital expertise. - The target audience prefers minimal setup and maintenance. - The app must be easy to use and integrate into existing salon workflows. ## 2. Option-By-Option Comparison | Option | Best Fit Scenario | Pros | Cons | Cost/Effort | Risks | Activation Steps | | --- | --- | --- | --- | --- | --- | --- | | **Option A: Use a pre-built SaaS platform** | Salons that want quick deployment with no technical setup | - No coding required<br>- Minimal setup time<br>- Built-in features (e.g., calendar, notifications) | - Limited customization<br>- Ongoing subscription fees<br>- Less control over data | Low (monthly fee) | - Dependency on third-party service<br>- Potential data privacy concerns | 1. Choose a SaaS platform (e.g., Calendly, Appointly)<br>2. Sign up and set up basic profile<br>3. Invite salon staff to access the system<br>4. Start scheduling appo",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 3414,
+          "outputTokens": 792,
+          "totalTokens": 4206
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a detailed, structured comparison of options with clear assumptions, next steps, and acceptance checks, making it highly useful and complete for a non-technical operator."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a good comparison with a clear recommendation and decision rule, but lacks the depth and actionable steps found in CFG-A, making it slightly less useful and complete."
+        }
+      },
+      "deltaNormalized": -0.16000000000000003
+    },
+    {
+      "id": "EVT4-03",
+      "title": "Feature priority",
+      "templateId": "feature_prioritization",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 13182,
+        "model": "qwen-turbo",
+        "outputHash": "1a0bd9502b078268e2e16636e4644e18be0f078b5617d02c70be096674c56197",
+        "outputExcerpt": "**Prioritization of 5 Features for a Habit Tracking App for Busy Parents** --- ### **Assumptions:** - The target users are **busy parents** who have limited time and need **quick, intuitive tools** to build and maintain positive habits. - The app should be **mobile-first**, with a focus on **simplicity, flexibility, and minimal effort**. - Users may not have the time or energy to engage in complex habit tracking systems. - The app should support both **individual and family use** (e.g., tracking habits for kids or shared household routines). - The app needs to be **motivational and non-judgmental**, helping users stay consistent without guilt. --- ### **Top 5 Prioritized Features:** #### 1. **Quick Add Habit (One-Tap/One-Swipe)** **Why:** Busy parents need to add habits quickly without navigating through multiple screens. **Next Steps:** - Design a floating action button (FAB) or swipe gesture to add a new habit instantly. - Allow users to type or select from a pre-populated list of common habits (e.g., \"Drink Water\", \"Read to Child\"). - Test with real users to ensure it’s intuitive and fast. **Acceptance Check:** - Users can add a new habit in under 3 seconds. - No more than 2 tap",
+        "normalized": 1,
+        "usage": {
+          "prompt_tokens": 67,
+          "completion_tokens": 954,
+          "total_tokens": 1021,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      "cfgB": {
+        "templateId": "feature_prioritization",
+        "durationMs": 19823,
+        "model": "qwen-turbo",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6azhje-j5fv7f",
+        "outputHash": "9935dd91b12770f3268e6b880e065a678248e8b28152a8891453c7f07407875e",
+        "outputExcerpt": "## Feature Prioritization Output ## 1. Scoring Matrix | Feature | User Problem Solved | Reach | Impact | Confidence | Effort | Score | Rank | | --- | --- | --- | --- | --- | --- | --- | --- | | 1. Smart Habit Reminders | Busy parents often forget to track habits due to packed schedules | High (all users) | High (improves consistency) | Medium (based on user feedback) | Low (simple push notifications) | 18 | 1 | | 2. Quick One-Tap Logging | Parents need to log habits quickly without lengthy processes | High (all users) | Medium (saves time) | High (based on user testing) | Low (simple UI element) | 16 | 2 | | 3. Weekly Progress Reports | Parents want to see their progress and stay motivated | Medium (targeted users) | High (encourages habit formation) | Medium (based on user feedback) | Medium (requires data visualization) | 15 | 3 | | 4. Family Habits Sync | Parents want to track family-wide habits together | Low (specific use case) | Medium (supports shared goals) | Low (limited user demand) | Medium (requires synchronization logic) | 10 | 4 | | 5. Custom Habit Templates | Parents want to create personalized habit routines | Medium (targeted users) | Medium (increases flexibility)",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 3414,
+          "outputTokens": 1152,
+          "totalTokens": 4566
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a detailed, well-structured, and comprehensive prioritization of features with clear rationale and actionable steps, making it highly useful and specific for the target audience."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a structured approach with a scoring matrix and implementation plan, but lacks some detail in feature descriptions and next steps compared to CFG-A."
+        }
+      },
+      "deltaNormalized": -0.16000000000000003
+    },
+    {
+      "id": "EVT4-04",
+      "title": "Persona synthesis",
+      "templateId": "user_persona",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 10830,
+        "model": "qwen-turbo",
+        "outputHash": "bd30c313668728d59b1b1258f4cd67376e9a4345d0a8639245ed6ffc82f1c08f",
+        "outputExcerpt": "Sure! Here are two user personas for a **meal planning app** tailored for **college students**, along with structured next steps and acceptance checks for a non-technical product operator. --- ## 🧑‍🎓 **User Persona 1: The Busy Student (Alex)** ### **Background:** - **Name:** Alex Chen - **Age:** 20 - **Major:** Computer Science - **Year:** Sophomore - **Location:** On-campus dorm - **Tech-savviness:** High - **Time constraints:** Very tight (classes, part-time job, club activities) ### **Goals:** - Save time on meal prep - Eat healthy without spending too much - Avoid food waste - Have quick, easy recipes that fit into a busy schedule ### **Pain Points:** - No time to plan meals - Often skips meals or eats out - Struggles with grocery shopping - Doesn’t know how to cook simple meals ### **Behavior:** - Uses mobile apps daily - Prefers one-tap solutions - Values convenience and speed - Follows social media trends (e.g., TikTok, Instagram) --- ## 🧑‍🎓 **User Persona 2: The Budget-Conscious Student (Maya)** ### **Background:** - **Name:** Maya Patel - **Age:** 19 - **Major:** Economics - **Year:** Freshman - **Location:** Off-campus apartment with roommates - **Tech-savviness:** Mo",
+        "normalized": 0.96,
+        "usage": {
+          "prompt_tokens": 66,
+          "completion_tokens": 840,
+          "total_tokens": 906,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      "cfgB": {
+        "templateId": "user_persona",
+        "durationMs": 17350,
+        "model": "qwen-turbo",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6b07v6-6dte18",
+        "outputHash": "6617b5c2a9b8cdd6fdbf3f5e3fed663f7e42680f19129e70eee9a5a8a6a9cb9a",
+        "outputExcerpt": "## User Persona Output ### 1. Persona Profiles #### Persona 1: Linh - The Busy Student - **Context and demographics:** - 20 tuổi, sinh viên năm nhất ngành Kinh tế tại Đại học Quốc gia Hà Nội. - Sống trong ký túc xá, không có bếp riêng. - Có ngân sách hạn chế và thời gian ít để nấu ăn. - **Goals:** - Tối ưu hóa chi phí ăn uống hàng ngày. - Tìm được bữa ăn nhanh, ngon và lành mạnh. - **Pain points:** - Thường xuyên ăn vặt hoặc mua đồ ăn sẵn vì không có thời gian nấu. - Không biết cách lên thực đơn hợp lý cho cả tuần. - **Jobs to be done:** - Lên kế hoạch bữa ăn theo ngày. - Tìm món ăn phù hợp với ngân sách. - Đặt đồ ăn trực tuyến từ các nhà hàng gần khu vực. - **Trigger:** - Bắt đầu học kỳ mới, cần thiết lập thói quen ăn uống tốt hơn. - **Objections:** - Lo lắng về việc phải tự nấu ăn. - Không muốn tốn thời gian lên thực đơn. - **Decision criteria:** - Dễ sử dụng. - Có tính năng đặt đồ ăn trực tiếp. - Hỗ trợ theo dõi chi tiêu. #### Persona 2: Minh - The Health Enthusiast - **Context and demographics:** - 22 tuổi, sinh viên năm ba ngành Y khoa tại Đại học Y Dược TP.HCM. - Sống ở căn hộ riêng, có bếp nhỏ. - Quan tâm đến dinh dưỡng và sức khỏe. - **Goals:** - Ăn uống cân bằng và lành mạ",
+        "normalized": 0.8,
+        "usage": {
+          "inputTokens": 3367,
+          "outputTokens": 1211,
+          "totalTokens": 4578
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 4,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides detailed personas with clear goals, pain points, and behaviors, along with actionable next steps and acceptance checks."
+        },
+        "cfgB": {
+          "usefulness": 3,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers comprehensive personas with context and decision criteria but lacks the structured next steps and acceptance checks found in CFG-A."
+        }
+      },
+      "deltaNormalized": -0.15999999999999992
+    },
+    {
+      "id": "EVT4-05",
+      "title": "Pricing tiers",
+      "templateId": "pricing_strategy",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 15206,
+        "model": "qwen-turbo",
+        "outputHash": "533c1273a11f5247a3bd527a22725a7b78208be32824897058d46e8727cb0d86",
+        "outputExcerpt": "Sure! Here's a **simple, actionable pricing strategy** for a **tiny CRM aimed at freelancers**, designed to be easy to understand and implement for a non-technical product operator. --- ## 🎯 **Objective** Create 3 simple pricing tiers that appeal to different types of freelancers (e.g., solo, growing, and high-volume), with clear value propositions and minimal complexity. --- ## 🧠 **Assumptions** 1. The CRM is **cloud-based** and **web-only** (no desktop/mobile apps). 2. The target users are **freelancers** (e.g., consultants, designers, writers, developers). 3. The CRM offers basic features like: - Contact management - Task tracking - Notes & reminders - Basic reporting 4. The product is **not yet live**, so pricing is being planned. 5. The goal is to **attract early adopters** and **build a loyal user base**. --- ## 💰 **Suggested Pricing Tiers** | Tier Name | Price (Monthly) | Features | Ideal For | |-----------------|------------------|--------------------------------------------------------------------------|------------------------------------| | **Starter** | $9 | - 1 user<br>- 50 contacts<br>- Basic task tracking<br>- 1 project<br>- Email integration | Solo freelancers ju",
+        "normalized": 1,
+        "usage": {
+          "prompt_tokens": 67,
+          "completion_tokens": 1033,
+          "total_tokens": 1100,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      "cfgB": {
+        "templateId": "pricing_strategy",
+        "durationMs": 13566,
+        "model": "qwen-turbo",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6b0zi6-g15fks",
+        "outputHash": "ad7ec1a8c5c7bdc500c6a6ce2203d6c8ebb7089f804b1ca5f932708e24a1fef7",
+        "outputExcerpt": "## Pricing Strategy Output ## 1. Pricing Assessment ### Assumptions - The CRM is a minimal, lightweight solution for freelancers and small businesses. - Target users are not technically sophisticated and prefer simplicity over complexity. - The product is positioned as an affordable, no-frills tool that helps manage client relationships efficiently. ### Rationale - A tiered pricing model allows flexibility for different user needs while maintaining simplicity. - The focus is on affordability and ease of use, which aligns with the target audience's expectations. - Since competitor pricing is unknown, we're using general market benchmarks for similar tools. ### Key Considerations - **Free Tier**: Attracts users and builds a user base. - **Basic Tier**: Covers essential features for solo freelancers. - **Pro Tier**: Adds advanced features for growing businesses. ## 2. Value Analysis ### Free Tier (0 USD) - **Features**: - Basic contact management - Simple task tracking - Email integration - Limited number of contacts (e.g., 50) - **Value Proposition**: - No cost to try the product. - Encourages adoption and word-of-mouth marketing. - **Target Users**: - Freelancers who need a simple t",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 3117,
+          "outputTokens": 967,
+          "totalTokens": 4084
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a detailed and structured pricing strategy with clear steps and acceptance checks, making it highly useful and complete."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a solid pricing strategy with a focus on market positioning and differentiation, but lacks the detailed action steps and acceptance checks found in CFG-A."
+        }
+      },
+      "deltaNormalized": -0.16000000000000003
+    },
+    {
+      "id": "EVT4-06",
+      "title": "Competitor review",
+      "templateId": "competitor_review",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 15255,
+        "model": "qwen-turbo",
+        "outputHash": "fe915808d3d1d639c1d8fe578bd6461a307f1864e84543fd2f94efeccd8526e6",
+        "outputExcerpt": "Sure! Here's a structured, actionable review of the likely competitor landscape for a browser extension that summarizes meeting notes. This is tailored for a non-technical product operator. --- ## **Competitor Landscape Review: Meeting Notes Summary Browser Extension** ### **Assumptions** 1. The target audience is professionals (e.g., managers, team leads, remote workers) who attend virtual meetings (Zoom, Microsoft Teams, Google Meet). 2. The extension integrates with video conferencing platforms and automatically generates summaries. 3. The product is focused on **efficiency** and **clarity**, not on advanced AI features like sentiment analysis or task assignment. 4. The product is **free to use** with optional premium features (e.g., cloud storage, export options). --- ## **Likely Competitors** | Competitor | Description | Key Features | Strengths | Weaknesses | |------------|-------------|--------------|-----------|------------| | **Otter.ai** | Voice-to-text transcription + summary | Transcription, speaker identification, searchable notes | Strong in accuracy, good for long meetings | Not a browser extension, limited summarization | | **Fireflies.ai** | Meeting assistant for Z",
+        "normalized": 1,
+        "usage": {
+          "prompt_tokens": 67,
+          "completion_tokens": 1079,
+          "total_tokens": 1146,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      "cfgB": {
+        "templateId": "competitor_review",
+        "durationMs": 12291,
+        "model": "qwen-turbo",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6b1p0z-rbjs4p",
+        "outputHash": "1d9d78bc6359559991215506a165b5e665b73b2e96e18f129692fc080a2c0f2f",
+        "outputExcerpt": "## Competitor Analysis Output ## 1. Competitor Matrix | Criteria | Your Product/App | Competitor / Alternative A | Competitor / Alternative B | Operator Implication | | --- | --- | --- | --- | --- | | Positioning | Browser extension for meeting note summarization | Notejoy (Chrome/Edge) | Otter.ai (Browser + App) | Need to clearly define unique value proposition | | Core Workflow | Auto-summarize meeting notes from browser tabs | Manual input of meeting notes | AI-powered transcription with note-taking | Must simplify onboarding and reduce friction | | Pricing Model | Freemium model with premium features | Free tier with paid upgrades | Free tier with paid upgrades | Consider freemium as standard, but ensure clear value for paid tiers | | Ease of Adoption | One-click installation, minimal setup | Requires manual note entry | Requires app download and account creation | Focus on ease of use and quick start | | Differentiation Opportunities | AI-driven auto-summarization without manual input | Manual note-taking required | Transcription-focused, not summary-oriented | Must emphasize automation and simplicity | ## 2. Competitor Implications - **What users already expect:** - Quick and",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 3289,
+          "outputTokens": 824,
+          "totalTokens": 4113
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a comprehensive, well-structured analysis with clear actionable steps and detailed competitor insights, making it highly useful for a non-technical product operator."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a solid competitor analysis with a focus on differentiation and action plans, but lacks the depth and detail found in CFG-A, making it slightly less useful and complete."
+        }
+      },
+      "deltaNormalized": -0.16000000000000003
+    },
+    {
+      "id": "EVT4-07",
+      "title": "Builder handoff",
+      "templateId": "documentation",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 12135,
+        "model": "qwen-turbo",
+        "outputHash": "8258f6a307fee656ed5368049d33553fa813f84c66e8723d736c3c222da18099",
+        "outputExcerpt": "Sure! Here's a **builder handoff** for a **landing page contact form and thank-you email flow**, tailored for a **non-technical product operator**. This includes assumptions, next steps, and acceptance checks to ensure clarity and success. --- ## 📌 Builder Handoff: Landing Page Contact Form & Thank-You Email Flow ### ✅ Purpose To create a seamless user experience where visitors can submit a contact form on the landing page and receive a thank-you email with a clear next step. --- ## 🧠 Assumptions 1. The landing page is already built and live. 2. The form will be embedded directly on the landing page (not a separate page). 3. The form will collect: - Name - Email - Message 4. A thank-you email will be sent after submission. 5. The email will include: - A confirmation message - A call-to-action (e.g., \"We’ll get back to you soon\") 6. The form will have basic validation (e.g., required fields, valid email format). 7. The form submission will not require user login or account creation. --- ## 🛠️ Next Steps for the Builder ### 1. **Create the Contact Form** - Embed the form directly on the landing page. - Include the following fields: - Full Name (text input) - Email Address (email i",
+        "normalized": 1,
+        "usage": {
+          "prompt_tokens": 70,
+          "completion_tokens": 808,
+          "total_tokens": 878,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      "cfgB": {
+        "templateId": "documentation",
+        "durationMs": 10991,
+        "model": "qwen-turbo",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6b2aa7-6u0c3l",
+        "outputHash": "ceaeaf08de9d0fcb34d33547f1137d6b476fc639e599a8fa37b221833ed03f0c",
+        "outputExcerpt": "# Operational Documentation Packet ## 1. What This Document Is For - **Topic:** Builder handoff for landing page contact form and thank-you email flow - **Who should use it:** Non-technical operators responsible for managing website content and email workflows - **What they should achieve:** Clear, actionable instructions to pass work to developers or designers with minimal ambiguity ## 2. The Main Flow ### Step-by-step Actions 1. Create a contact form on the landing page with: - Name field (required) - Email field (required) - Message field (optional) - Submit button 2. Connect the form to an email service (e.g., Mailchimp, Formspree, or custom backend) 3. Set up a thank-you email that: - Sends immediately after form submission - Includes a personalized message - Provides a clear call-to-action (e.g., \"We'll get back to you within 24 hours\") 4. Add a confirmation message on the landing page after submission ### Key Decisions or Branches - If using a third-party form service (e.g., Formspree), ensure the form action URL is correctly configured - If using a custom backend, confirm API endpoint details - Decide on the email template design (text or HTML) ## 3. Rules To Keep In Mind -",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 3247,
+          "outputTokens": 692,
+          "totalTokens": 3939
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a detailed, well-structured handoff with clear steps, assumptions, and acceptance checks, making it highly useful and complete for non-technical operators."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B is comprehensive and provides clear instructions, but lacks the detailed acceptance checks and assumptions found in CFG-A, making it slightly less complete and specific."
+        }
+      },
+      "deltaNormalized": -0.16000000000000003
+    },
+    {
+      "id": "EVT4-08",
+      "title": "Ops plan",
+      "templateId": "operator_plan",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 19230,
+        "model": "qwen-turbo",
+        "outputHash": "51e20beb93b04d38aa5bbac5178164f5793a7eb144b97856f06b82e85c787df0",
+        "outputExcerpt": "Here's a **30-day operations plan** for launching a **neighborhood tutoring marketplace**, tailored for a **non-technical product operator**. This plan includes **assumptions**, **next steps**, and **acceptance checks** to ensure clarity and success. --- ## 🎯 Objective: Launch a neighborhood-based tutoring marketplace that connects local students with tutors in their area, focusing on ease of use, trust, and community engagement. --- ## 🧠 Assumptions: 1. The platform is built using a no-code or low-code solution (e.g., Bubble, Webflow, or a SaaS marketplace template). 2. You have access to a small team (or can outsource) for content creation, marketing, and customer support. 3. You already have a basic understanding of the target audience (students, parents, and tutors in specific neighborhoods). 4. You have a budget for initial marketing and onboarding. 5. You are not building the platform from scratch — you're leveraging an existing marketplace template or service. --- ## 📅 30-Day Operations Plan ### **Week 1: Planning & Setup** | Task | Description | Next Steps | Acceptance Check | |------|-------------|------------|------------------| | 1. Finalize Target Neighborhoods | Ide",
+        "normalized": 1,
+        "usage": {
+          "prompt_tokens": 68,
+          "completion_tokens": 1200,
+          "total_tokens": 1268,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      "cfgB": {
+        "templateId": "operator_plan",
+        "durationMs": 18627,
+        "model": "qwen-turbo",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6b30m0-ulgruk",
+        "outputHash": "bf0da97dd68c79525a602bd62658602d0d89de1b986cc840411e4d33ea2a4cee",
+        "outputExcerpt": "# Operator Action Plan ## 1. Goal, Constraints, And Assumptions - **Goal:** Launch a neighborhood tutoring marketplace in 30 days with a small team and limited budget. - **Constraints:** - Limited technical resources (non-technical operator) - Budget under $5,000 - No dedicated development team - Must be operational within 30 days - **Assumptions:** - Marketplace will use a no-code platform like Webflow or Bubble - Tutors will be local community members with basic digital literacy - Initial user base will be from the immediate neighborhood - Marketing will focus on word-of-mouth and local partnerships - **Definition of done:** - Marketplace is live and accessible to users - At least 5 tutors are registered and available - At least 10 students have signed up for sessions - Operational processes are documented and understood by the team ## 2. Detailed Timeline | Phase/Date | Owner/Role | Detailed Action | Concrete Artifact | Success Metric | Acceptance Check | | --- | --- | --- | --- | --- | --- | | Day 1-3 | Founder | Define core features and user journey | User flow diagram | 3 key features identified (e.g., tutor search, booking, payment) | Features match user needs | | Day 4-7 | ",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 3480,
+          "outputTokens": 1035,
+          "totalTokens": 4515
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a detailed, structured, and comprehensive plan with clear tasks, timelines, and acceptance criteria, making it highly useful and specific for a non-technical operator."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a solid plan with clear goals and timelines, but it is less detailed in terms of specific tasks and acceptance criteria compared to CFG-A, making it slightly less useful and complete."
+        }
+      },
+      "deltaNormalized": -0.16000000000000003
+    },
+    {
+      "id": "EVT4-09",
+      "title": "MVP scope",
+      "templateId": "feature_prioritization",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 13309,
+        "model": "qwen-turbo",
+        "outputHash": "042b2bd2e1dab89bb9957f956afe7359a679241f42187ce3bd8598cde1494699",
+        "outputExcerpt": "Sure! Here's a **structured, actionable MVP (Minimum Viable Product) scope** for a **simple inventory tracker** tailored for a **weekend craft market seller**. This is designed to be easy to implement and use without requiring technical expertise. --- ## 🎯 **MVP Scope: Simple Inventory Tracker for a Weekend Craft Market Seller** ### ✅ **Goal** Help the seller track what items they have in stock, what they sold, and what’s left, so they can manage their inventory efficiently and avoid running out of popular items. --- ## 🧠 **Assumptions** - The seller sells physical items (e.g., jewelry, handmade soap, candles). - They operate at a **weekend market** and may not have access to a computer during the event. - They need to track: - What items they have in stock - How many of each item they sell - What’s left after the event - They don’t need advanced features like sales analytics or customer tracking yet. --- ## 🛠️ **MVP Features (Non-Technical Operator-Friendly)** | Feature | Description | |--------|-------------| | **Item List** | A list of all items the seller has (name, quantity in stock). | | **Sell Item** | A way to record that an item was sold (select item, enter quantity sol",
+        "normalized": 1,
+        "usage": {
+          "prompt_tokens": 69,
+          "completion_tokens": 808,
+          "total_tokens": 877,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      "cfgB": {
+        "templateId": "feature_prioritization",
+        "durationMs": 18448,
+        "model": "qwen-turbo",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6b3rse-28qkmb",
+        "outputHash": "b9c537ce2a713df8910865851212fc269450a4cfde5e2fb927e7ab257d3d050a",
+        "outputExcerpt": "## Feature Prioritization Output ## 1. Scoring Matrix | Feature | User Problem Solved | Reach | Impact | Confidence | Effort | Score | Rank | | --- | --- | --- | --- | --- | --- | --- | --- | | Inventory Tracking | Track what's in stock and what's sold | High | High | Medium | Low | 45 | 1 | | Product Categories | Organize products by type (e.g., jewelry, candles) | Medium | Medium | High | Low | 30 | 2 | | Sales Logging | Record sales at the end of each day | High | Medium | High | Low | 30 | 3 | | Stock Alerts | Notify when stock is low | Medium | High | Low | Medium | 25 | 4 | | Reporting | Generate daily/weekly sales reports | Low | Medium | Low | High | 10 | 5 | ## 2. Feature Detail Cards ### 1. Inventory Tracking - **User/job to be served:** Weekend craft market seller who needs to know what's available and what's sold - **Why this feature is in or out:** This is the core function of an inventory tracker. Without it, the tool would not help manage stock. - **First implementation or validation step:** Create a simple spreadsheet with columns for product name, quantity, and location - **Owner/role:** Operator (you) - **Main risk or dependency:** Requires consistent data entry, ",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 3418,
+          "outputTokens": 987,
+          "totalTokens": 4405
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a detailed, structured, and actionable plan for a non-technical user to set up an inventory tracker. It includes clear steps, assumptions, and acceptance checks, making it highly useful and complete."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a structured approach with a scoring matrix and implementation plan, but it is less detailed in guiding a non-technical user through the setup process compared to CFG-A. It is still useful and complete but slightly less specific."
+        }
+      },
+      "deltaNormalized": -0.16000000000000003
+    },
+    {
+      "id": "EVT4-10",
+      "title": "Research notes",
+      "templateId": "user_persona",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 18939,
+        "model": "qwen-turbo",
+        "outputHash": "0bf083a1a0c4b7619673121750890730cd10da52057671677706c843574588c7",
+        "outputExcerpt": "Sure! Here's a structured, actionable response to turn your rough notes into **user personas** for a budgeting app aimed at **first-job graduates**. This is tailored for a **non-technical product operator**, so the language is clear and practical. --- ## 🧑‍💼 User Personas for a Budgeting App for First-Job Graduates ### 🔍 Assumptions - The target audience is recent university/college graduates entering their first full-time job. - They are new to managing personal finances and may have limited financial knowledge. - They are likely in their early 20s, with varying levels of income (entry-level salaries). - They are tech-savvy but not necessarily finance experts. - They want to build good financial habits, avoid debt, and save for the future. - They may be living independently for the first time or sharing housing. --- ## 🧾 Persona 1: \"The Newbie\" **Name:** Alex **Age:** 23 **Occupation:** Entry-Level Marketing Assistant **Income:** $45,000/year **Location:** Urban area **Goals:** - Learn how to track expenses. - Understand how to set aside money for bills, rent, and savings. - Avoid overspending on non-essentials like dining out or subscriptions. **Pain Points:** - Doesn’t know ",
+        "normalized": 1,
+        "usage": {
+          "prompt_tokens": 69,
+          "completion_tokens": 1200,
+          "total_tokens": 1269,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      "cfgB": {
+        "templateId": "user_persona",
+        "durationMs": 15507,
+        "model": "qwen-turbo",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6b4nt9-nqxc74",
+        "outputHash": "89cfeb8d5bd34613bde0c0f5195cf0245102752c87c0b7635999d3f379273a1f",
+        "outputExcerpt": "## User Persona Output ## 1. Persona Profiles ### Persona 1: Linh - The First-Time Budgeter - **Context and demographics:** 23-year-old recent graduate, works in a retail store, earns ~VND 10 million/month, lives with parents, has no savings. - **Goals:** Learn to manage money effectively, avoid overspending, save for emergencies. - **Pain points:** Doesn't know where to start, feels overwhelmed by financial jargon, often spends more than planned. - **Jobs to be done:** Track daily expenses, set simple budget goals, receive reminders to save. - **Trigger:** Gets paid monthly and wants to make sure she doesn't spend all her money. - **Objections:** \"I don't have time to track everything,\" \"This might be too complicated for me.\" - **Decision criteria:** Simple interface, clear guidance, free or low-cost. ### Persona 2: Minh - The Career Starter - **Context and demographics:** 24-year-old fresh graduate, works as a junior software developer, earns ~VND 15 million/month, lives alone, has some debt from student loans. - **Goals:** Build a solid financial foundation, pay off debt, start saving for the future. - **Pain points:** Struggles to balance bills and savings, feels pressure to sp",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 3373,
+          "outputTokens": 983,
+          "totalTokens": 4356
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides detailed, structured personas with clear goals, pain points, and app needs. It includes actionable next steps for non-technical operators, ensuring completeness and usefulness."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers comprehensive personas with context and decision criteria but lacks the detailed next steps and acceptance checks found in CFG-A. It is still useful and well-structured."
+        }
+      },
+      "deltaNormalized": -0.16000000000000003
+    },
+    {
+      "id": "EVT4-11",
+      "title": "Pilot pricing",
+      "templateId": "pricing_strategy",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 9486,
+        "model": "qwen-turbo",
+        "outputHash": "0138e57dbb734ad47554c4f44e388188557a3142092e8d62780821daa8559318",
+        "outputExcerpt": "Here's a **structured, actionable pricing recommendation** for a **lightweight team retro tool** aimed at **small agencies**, tailored for a **non-technical product operator**: --- ## 🎯 **Pricing Recommendation: Pilot Phase** ### ✅ **Recommended Pricing Model** **$15/month per team (billed annually)** This is a **starter tier** designed to be low-risk and easy to adopt for small teams. --- ## 🧠 **Assumptions** | Assumption | Description | |-----------|-------------| | Small Agencies | Target audience is agencies with 3–10 people. | | Low Technical Barriers | The tool is simple to use, no need for IT support. | | Value in Simplicity | Teams value ease of use over advanced features. | | Budget Sensitivity | Agencies are cost-conscious and may not want to invest in complex tools. | --- ## 🔍 **Why This Price?** - **Attracts early adopters**: $15 is a low barrier to entry. - **Scalable**: You can introduce higher tiers later (e.g., $25/month for more users or features). - **Competitive**: Similar tools like RetroBoard or TeamRetro charge around $10–$20/month for similar functionality. - **Encourages word-of-mouth**: Affordable pricing makes it easier for teams to recommend the tool t",
+        "normalized": 0.96,
+        "usage": {
+          "prompt_tokens": 67,
+          "completion_tokens": 709,
+          "total_tokens": 776,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      "cfgB": {
+        "templateId": "pricing_strategy",
+        "durationMs": 13195,
+        "model": "qwen-turbo",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6b59vc-yj1flt",
+        "outputHash": "3761bfecf1f696f83184d42c4dcb800ddec0506e618ce1c381e9768779f03b56",
+        "outputExcerpt": "## Pricing Strategy Output ## 1. Pricing Assessment ### Assumptions - Target market: Small agencies (5-20 employees) - Product: Lightweight team retro tool (simplified version of retrospective software for agile teams) - Model: Tiered pricing (Basic, Pro, Enterprise) - No direct competitor pricing data available, so assumptions based on industry benchmarks and typical SaaS pricing models for similar tools ### Rationale - SMBs are price-sensitive but value-focused - Tiered pricing allows flexibility for different agency sizes and needs - Basic tier should be low enough to encourage trial, with clear upsell paths to higher tiers ### Key Pricing Considerations - **Basic Tier**: $9/month (ideal for solo practitioners or small teams) - **Pro Tier**: $29/month (for mid-sized agencies with multiple projects) - **Enterprise Tier**: Custom pricing (for larger agencies with specific needs) ## 2. Value Analysis ### Core Value Proposition - Streamlined retrospectives for agile teams - Easy-to-use interface with minimal setup - Integration with popular project management tools (e.g., Jira, Trello) ### Perceived Value Drivers - Time-saving for team meetings - Improved team collaboration and comm",
+        "normalized": 0.8,
+        "usage": {
+          "inputTokens": 3117,
+          "outputTokens": 764,
+          "totalTokens": 3881
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 4,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a detailed and structured pricing recommendation with clear steps for implementation and metrics for success."
+        },
+        "cfgB": {
+          "usefulness": 3,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a comprehensive pricing strategy with tiered options but lacks specific implementation steps and metrics for success."
+        }
+      },
+      "deltaNormalized": -0.15999999999999992
+    },
+    {
+      "id": "EVT4-12",
+      "title": "SOP draft",
+      "templateId": "documentation",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 14724,
+        "model": "qwen-turbo",
+        "outputHash": "3846a38139be0b3627d963e725d4e8fdb01dbe1ae42e233eb45499af47e76296",
+        "outputExcerpt": "**Standard Operating Procedure (SOP) for Handling Customer Refund Requests** --- ### **Purpose** To ensure consistent, fair, and efficient handling of customer refund requests, while maintaining a positive customer experience. --- ### **Scope** This SOP applies to all customer refund requests received through any channel (e.g., phone, email, in-person, or online). --- ### **Assumptions** - The company has a clear refund policy (e.g., 30-day return window, item must be unused, etc.). - The customer has provided necessary information (order number, reason for refund, etc.). - The refund process is integrated with the company’s CRM or order management system. - Staff have access to the refund policy and are trained on it. --- ### **Responsibilities** - **Customer Support Representative**: Handles initial contact, verifies request, and initiates the refund process. - **Finance/Accounting Team**: Processes the refund and confirms payment. - **Manager/Supervisor**: Reviews complex cases or escalations. --- ### **Step-by-Step Process** #### **1. Receive Refund Request** - **Action**: Log the refund request in the CRM or ticketing system. - **Next Steps**: - Note the customer’s name, conta",
+        "normalized": 1,
+        "usage": {
+          "prompt_tokens": 64,
+          "completion_tokens": 835,
+          "total_tokens": 899,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      "cfgB": {
+        "templateId": "documentation",
+        "durationMs": 12698,
+        "model": "qwen-turbo",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6b5xl9-plfdj8",
+        "outputHash": "863e866ae3e41d8ef2c476e8310b58056ae14d36e4e59e0d6a926d10e2ddf202",
+        "outputExcerpt": "# Operational Documentation Packet ## 1. What This Document Is For - **Topic:** Standard Operating Procedure (SOP) for handling customer refund requests - **Who should use it:** Non-technical operators in customer service or support roles - **What they should achieve:** A clear, step-by-step guide to process refund requests consistently and efficiently while following company policies ## 2. The Main Flow ### Step-by-Step Actions 1. **Receive Refund Request** - Capture all details from the customer: order number, product name, reason for refund, and any supporting documents (e.g., receipts, photos) - Log the request in the CRM system with a unique reference number 2. **Verify Eligibility** - Check if the request meets refund policy criteria (e.g., time frame, condition of product, return authorization) - Confirm that the customer has provided all necessary documentation 3. **Process Refund** - If eligible, initiate the refund through the payment gateway - Update the CRM with the refund status and date - Send a confirmation email to the customer 4. **Document and Archive** - Save all communication and supporting documents in the customer's file - Mark the case as resolved in the CRM ",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 3234,
+          "outputTokens": 772,
+          "totalTokens": 4006
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a comprehensive, well-structured SOP with clear steps, responsibilities, and tools, ensuring all aspects of the refund process are covered."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B is useful and covers key steps but lacks the detailed structure and specificity found in CFG-A, making it slightly less comprehensive."
+        }
+      },
+      "deltaNormalized": -0.16000000000000003
+    },
+    {
+      "id": "EVT4-13",
+      "title": "Channel choice",
+      "templateId": "decision_memo",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 14891,
+        "model": "qwen-turbo",
+        "outputHash": "dd8d85984e319f3736c291986cca9e781a8b83bdeb8f2fcc0e3c16792cb180d8",
+        "outputExcerpt": "Here's a structured, actionable comparison of **content marketing**, **partnerships**, and **paid ads** for a **niche newsletter product**, tailored for a non-technical operator. This includes assumptions, next steps, and acceptance checks. --- ## 📌 **Overview: 3 Growth Strategies for a Niche Newsletter** | Strategy | Description | Pros | Cons | |------------------|-----------------------------------------------------------------------------|-------------------------------------------|-------------------------------------------| | **Content Marketing** | Creating and sharing valuable content (e.g., blog posts, videos, podcasts) to attract and engage your audience. | Builds trust, long-term visibility, low cost | Slower results, requires consistent effort | | **Partnerships** | Collaborating with other brands, influencers, or newsletters to reach new audiences. | Quick access to existing audiences | Requires relationship-building, may be costly | | **Paid Ads** | Using platforms like Facebook, LinkedIn, or Google to target specific audiences. | Fast results, measurable ROI | Can be expensive, requires optimization | --- ## 🧠 **Assumptions** 1. Your newsletter is in a **niche marke",
+        "normalized": 1,
+        "usage": {
+          "prompt_tokens": 68,
+          "completion_tokens": 965,
+          "total_tokens": 1033,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      "cfgB": {
+        "templateId": "decision_memo",
+        "durationMs": 9840,
+        "model": "qwen-turbo",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6b6l80-dyoiap",
+        "outputHash": "c5218e14a685a5e68eb7021bbb13de4e7d17c1bddaec8aad4650f7952fbe7f88",
+        "outputExcerpt": "# Decision Comparison Memo ## 1. Decision To Make - **Decision:** Channel choice for a niche newsletter product - **Constraints:** - Low budget - Non-technical operator - Needs a clear first activation step - **Assumptions:** - The target audience is likely to be interested in curated, high-quality content. - The newsletter has a defined niche (e.g., productivity tools, personal finance, etc.). - The operator has limited time and resources to manage multiple channels simultaneously. ## 2. Option-By-Option Comparison | Option | Best Fit Scenario | Pros | Cons | Cost/Effort | Risks | Activation Steps | | --- | --- | --- | --- | --- | --- | --- | | **Content Marketing** | Building brand authority and long-term engagement with the niche audience | Builds trust and loyalty; can be done with free tools like Medium or Substack | Requires consistent effort and time; results may take months to show | Low (can start with free platforms) | Slow growth; risk of low initial engagement | 1. Choose a content platform (e.g., Substack, Ghost).<br>2. Create a content calendar.<br>3. Publish weekly articles on your niche topic. | | **Partnerships** | Leveraging existing audiences in the same niche | ",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 3360,
+          "outputTokens": 642,
+          "totalTokens": 4002
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a comprehensive, well-structured, and actionable comparison with clear next steps and acceptance checks for each strategy. It is highly specific to the task and offers a detailed recommendation for a non-technical operator."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a structured comparison with a clear recommendation and activation steps. However, it is less detailed in terms of actionable steps and lacks the depth of CFG-A in terms of specificity and completeness."
+        }
+      },
+      "deltaNormalized": -0.16000000000000003
+    },
+    {
+      "id": "EVT4-14",
+      "title": "Backlog triage",
+      "templateId": "feature_prioritization",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 13821,
+        "model": "qwen-turbo",
+        "outputHash": "d6c5c91b80d48a88305650b9319d49665e44fd40992af02377cd8986eb6411c2",
+        "outputExcerpt": "Sure! Here's a structured, actionable triage plan for your volunteer event signup app, tailored for a non-technical product operator with limited engineering time. --- ## 🧠 **Assumptions** 1. The app is currently in use but has known issues. 2. Engineering resources are limited (e.g., 1–2 engineers working part-time). 3. The goal is to improve user experience and reduce support requests. 4. You have access to basic analytics or user feedback tools (e.g., Google Analytics, user surveys, or in-app feedback). --- ## 📋 **Triage Prioritization Framework** We'll prioritize based on: - **Impact** (how many users are affected) - **Severity** (how bad the issue is) - **Effort** (how much time it takes to fix) We’ll categorize issues into three tiers: | Tier | Description | Example Issues | |------|-------------|----------------| | **High** | Critical bugs that prevent core functionality | App crashes, login failures, unable to sign up | | **Medium** | Important usability issues that affect many users | Confusing UI, missing confirmation emails, form errors | | **Low** | Minor issues or enhancements | Styling inconsistencies, small typos, optional features | --- ## 🔍 **Triage Results (Exa",
+        "normalized": 1,
+        "usage": {
+          "prompt_tokens": 68,
+          "completion_tokens": 959,
+          "total_tokens": 1027,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      "cfgB": {
+        "templateId": "feature_prioritization",
+        "durationMs": 18403,
+        "model": "qwen-turbo",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6b75zq-lazkbi",
+        "outputHash": "f51b2749e2ae2d89b680ae272d0c5d95855f3da0953e2b3016f9a914bd45a9c9",
+        "outputExcerpt": "## Feature Prioritization Output ## 1. Scoring Matrix | Feature | User Problem Solved | Reach | Impact | Confidence | Effort | Score | Rank | | --- | --- | --- | --- | --- | --- | --- | --- | | Event Signup Form | Volunteers need to register for events | High | High | Medium | Low | 60 | 1 | | Volunteer Profile Creation | Volunteers want to manage their information | Medium | Medium | High | Medium | 45 | 2 | | Email Confirmation | Volunteers need confirmation of signup | High | High | High | Low | 60 | 1 | | Calendar Sync (Google/Outlook) | Volunteers want to add events to personal calendars | Low | Medium | Low | High | 20 | 7 | | Event Notifications | Volunteers need reminders about upcoming events | Medium | Medium | Medium | Medium | 40 | 3 | | Admin Dashboard | Organizers need to manage event signups | Medium | High | Medium | High | 45 | 2 | | Mobile Optimization | Volunteers use mobile devices to access app | High | Medium | High | Medium | 50 | 4 | ## 2. Feature Detail Cards ### Top Feature: Event Signup Form - **User/job to be served:** Volunteers who want to register for events quickly and easily. - **Why this feature is in:** It directly addresses the core user need of ",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 3418,
+          "outputTokens": 1046,
+          "totalTokens": 4464
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a comprehensive, well-structured plan with clear prioritization and actionable steps tailored for a non-technical operator."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a detailed prioritization and implementation plan but lacks some specificity in triage prioritization compared to CFG-A."
+        }
+      },
+      "deltaNormalized": -0.16000000000000003
+    },
+    {
+      "id": "EVT4-15",
+      "title": "Differentiation",
+      "templateId": "competitor_review",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 18052,
+        "model": "qwen-turbo",
+        "outputHash": "1ed35e7f3b1fd8571d7c77b69ac6827e7b4e12e4018c815acb40df6185f2dce8",
+        "outputExcerpt": "**Differentiation Angles for a Simple Invoice Reminder App** --- ### **Overview** To stand out in the competitive space of invoice reminder apps, your app needs to offer unique value that resonates with your target users. Below are key differentiation angles tailored for a non-technical product operator. --- ## **1. User Experience (UX) Focus** **Angle:** *Simplify the process of sending reminders without complexity.* **Why it matters:** Many users find existing apps too technical or time-consuming to use. **Assumptions:** - Users want a fast, intuitive way to set up and send reminders. - They don’t want to deal with complicated settings or integrations. - A clean, one-click interface is highly valued. **Next Steps:** - Conduct quick user interviews or surveys with small business owners or freelancers. - Create a simple prototype or wireframe showing the core flow (e.g., \"Add Invoice\" → \"Set Reminder\" → \"Send\"). - Test the prototype with 3–5 users to gather feedback on ease of use. **Acceptance Check:** - Users can complete the core task (set up a reminder) in under 2 minutes. - No confusion about how to use the app. --- ## **2. Personalization & Customization** **Angle:** *Allow u",
+        "normalized": 0.96,
+        "usage": {
+          "prompt_tokens": 64,
+          "completion_tokens": 1088,
+          "total_tokens": 1152,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      "cfgB": {
+        "templateId": "competitor_review",
+        "durationMs": 13257,
+        "model": "qwen-turbo",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6b80ms-umplgt",
+        "outputHash": "67ba58a010140ed989c6a264736ac0d1bb4f04a8c916f5d5cb080fc2f957ff78",
+        "outputExcerpt": "# EVT-4 Differentiation - Invoice Reminder App ## Competitor Analysis Output ## 1. Competitor Matrix | Criteria | Your Product/App | Competitor / Alternative A | Competitor / Alternative B | Operator Implication | | --- | --- | --- | --- | --- | | **Core Workflow** | Automated reminders with customizable rules | Manual reminder setup | No automation, manual follow-up | Need to simplify workflow for non-tech users | | **Pricing Model** | Freemium with optional premium features | Free with limited features | Free with no automation | Need clear value proposition for paid tiers | | **Ease of Adoption** | Simple onboarding with guided setup | Requires user configuration | No automation, requires constant user input | Must reduce friction in onboarding process | | **Differentiation Opportunities** | AI-powered smart reminders | Basic email reminders | No automation | Focus on intelligent automation and ease of use | ## 2. Competitor Implications - **What users already expect:** - Basic email reminders - Simple interface - No complex setup - **What competitors make difficult:** - Setting up automated reminders - Customizing reminder rules - Tracking payment status - **What a simple produ",
+        "normalized": 0.8,
+        "usage": {
+          "inputTokens": 3281,
+          "outputTokens": 744,
+          "totalTokens": 4025
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 4,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a comprehensive and well-structured approach with clear differentiation angles and actionable steps."
+        },
+        "cfgB": {
+          "usefulness": 3,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a detailed competitor analysis and action plan but lacks the depth in differentiation angles compared to CFG-A."
+        }
+      },
+      "deltaNormalized": -0.15999999999999992
+    },
+    {
+      "id": "EVT4-16",
+      "title": "FAQ plan",
+      "templateId": "faq_outline",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 16308,
+        "model": "qwen-turbo",
+        "outputHash": "306f21707b6889a0805eebe9edd6dcc19ec4a7c4ec9c2922c9ab4d9ef9f828a1",
+        "outputExcerpt": "Sure! Here's a **structured, actionable FAQ outline** for a small online course checkout flow, tailored for a **non-technical product operator**. This outline includes **assumptions**, **next steps**, and **acceptance checks** to help you implement or improve the checkout process. --- ## 📌 FAQ Outline: Online Course Checkout Flow ### 1. **What is the checkout flow?** - **Description**: The process a user goes through to purchase a course on your platform. - **Assumption**: The flow includes selecting a course, entering payment details, confirming purchase, and receiving a confirmation. ### 2. **How long should the checkout flow be?** - **Best Practice**: Keep it simple — ideally 3–5 steps (e.g., Select Course → Enter Info → Payment → Confirmation). - **Assumption**: Users are more likely to complete a short, clear flow. ### 3. **What information do I need from the user during checkout?** - **Basic Info**: Name, email, billing address (if applicable) - **Payment Info**: Credit card or other payment method - **Optional**: Coupon code, shipping address (if physical product is involved) ### 4. **Can users pay with different payment methods?** - **Answer**: Yes, if supported by your pa",
+        "normalized": 0.92,
+        "usage": {
+          "prompt_tokens": 65,
+          "completion_tokens": 840,
+          "total_tokens": 905,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      "cfgB": {
+        "templateId": "faq_outline",
+        "durationMs": 11453,
+        "model": "qwen-turbo",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6b8pq1-brbr05",
+        "outputHash": "66e97fd3fbd6f3c6a664a41f1a9ae8d677d15247624811251778529350b1db60",
+        "outputExcerpt": "# FAQ Outline ## 1. Audience And Scope - **Who this FAQ is for:** - Customers who are purchasing an online course - Support operators who handle course-related inquiries - **What workflow or product area it covers:** - Checkout flow for a small online course platform - Includes payment, access, troubleshooting, and refund/escalation procedures ## 2. FAQ Entries | Question | Direct Answer | When It Applies | Owner/Source To Confirm | | --- | --- | --- | --- | | 1. How do I complete the checkout process? | Click \"Buy Now\" on the course page, enter your payment details, and confirm your purchase. You'll receive a confirmation email with access instructions. | After clicking \"Buy Now\" | Marketing Team | | 2. What payment methods are accepted? | We accept credit/debit cards (Visa, MasterCard, American Express) and PayPal. | During checkout | Finance Team | | 3. What if my payment is declined? | Check that your card details are correct and that you have sufficient funds. If the issue persists, contact your bank or try a different payment method. | When payment fails | Support Team | | 4. How long does it take to get access after purchase? | You will receive immediate access to the course",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 3352,
+          "outputTokens": 751,
+          "totalTokens": 4103
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 4,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a comprehensive and well-structured FAQ outline with clear next steps and acceptance checks, making it highly useful for non-technical operators."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a detailed FAQ outline with clear audience targeting and readiness checks, but lacks the actionable next steps found in CFG-A."
+        }
+      },
+      "deltaNormalized": -0.08000000000000007
+    },
+    {
+      "id": "EVT4-17",
+      "title": "B2B persona",
+      "templateId": "user_persona",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 13671,
+        "model": "qwen-turbo",
+        "outputHash": "17c6af52abf6842a8a5d63afec7f9b76f9d7065688102d5a750c9c1133fa2580",
+        "outputExcerpt": "Sure! Below is a **structured, actionable buyer and end-user persona** for a **simple internal approval tracker**. This is tailored for a **non-technical product operator**, with clear assumptions, next steps, and acceptance checks. --- ## 🧑‍💼 Buyer Persona: Internal Process Owner ### **Role** - **Title**: Process Manager / Operations Lead - **Department**: Operations / Finance / HR (depending on the use case) - **Company Size**: Mid-sized to large enterprise (100+ employees) ### **Goals** - Reduce manual follow-ups and delays in approvals. - Improve visibility into the status of requests. - Ensure accountability and compliance with internal policies. - Streamline workflows without requiring IT support. ### **Pain Points** - Manual tracking via email or spreadsheets. - Lack of real-time updates. - No audit trail or history of approvals. - Difficulty in assigning tasks or setting deadlines. ### **Decision Criteria** - Easy to set up and use (no coding required). - Integrates with existing tools (e.g., email, Slack, Google Workspace). - Provides clear reporting and analytics. - Affordable and scalable. ### **Assumptions** - The buyer is not a developer but has some understanding of",
+        "normalized": 1,
+        "usage": {
+          "prompt_tokens": 67,
+          "completion_tokens": 967,
+          "total_tokens": 1034,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      "cfgB": {
+        "templateId": "user_persona",
+        "durationMs": 20634,
+        "model": "qwen-turbo",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6b9bsy-tcppwl",
+        "outputHash": "b8ddc0a1de235476effc80edb5779a45451bcaef95caf38fa03b47ddae66428a",
+        "outputExcerpt": "## User Persona Output ## 1. Persona Profiles ### Persona 1: Quản trị viên Doanh nghiệp (Business Admin) - **Context và nhân khẩu học:** - Người dùng trung bình trong doanh nghiệp có quy mô từ 50 đến 500 nhân viên. - Có kiến thức cơ bản về công nghệ, nhưng không phải kỹ sư hoặc chuyên gia IT. - Thường là người quản lý bộ phận hoặc trưởng nhóm. - **Mục tiêu:** - Tự động hóa quy trình phê duyệt nội bộ để giảm thời gian xử lý. - Giảm rủi ro sai sót do con người. - Cải thiện minh bạch và theo dõi tiến độ. - **Đau điểm:** - Quy trình phê duyệt hiện tại chậm và dễ bị bỏ lỡ. - Khó theo dõi tiến độ của các yêu cầu phê duyệt. - Thiếu tính minh bạch cho các bên liên quan. - **Jobs to be done:** - Tạo và quản lý các yêu cầu phê duyệt. - Gửi thông báo tự động khi cần phê duyệt. - Theo dõi tiến độ phê duyệt và nhận báo cáo định kỳ. - **Trigger:** - Nhận được phản hồi từ đội ngũ rằng quy trình phê duyệt đang gây chậm trễ. - Cần cải thiện hiệu suất và minh bạch trong quy trình nội bộ. - **Objections:** - Lo ngại về chi phí triển khai. - Sợ mất kiểm soát với quy trình tự động hóa. - Không biết cách sử dụng phần mềm mới. - **Criteria quyết định:** - Dễ sử dụng và thân thiện với người dùng. - Hỗ trợ",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 3373,
+          "outputTokens": 1362,
+          "totalTokens": 4735
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a comprehensive and well-structured persona with clear roles, goals, pain points, and actionable next steps. It is highly specific and useful for non-technical operators."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers detailed personas with clear objectives and decision criteria. However, it lacks the actionable next steps and acceptance checks present in CFG-A, making it slightly less complete and structured."
+        }
+      },
+      "deltaNormalized": -0.16000000000000003
+    },
+    {
+      "id": "EVT4-18",
+      "title": "Freemium decision",
+      "templateId": "pricing_strategy",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 14541,
+        "model": "qwen-turbo",
+        "outputHash": "b093fc8402fdd6e17a0879aa074f6c04c113a6774780a5c15553105306642a70",
+        "outputExcerpt": "**Evaluation: Should a Small Note-Taking Web App Use Freemium or Paid-Only Pricing?** --- ### **Summary** For a small note-taking web app, **freemium pricing is generally more effective** for growth and user acquisition. It allows you to attract a large user base, build brand awareness, and convert a portion of users into paying customers over time. However, the decision should be based on your goals, resources, and target audience. Below is a structured evaluation with assumptions, next steps, and acceptance checks. --- ## **1. Assumptions** To evaluate this, we make the following assumptions: | Assumption | Description | |-----------|-------------| | **Target Audience** | Individual users (students, professionals, hobbyists) who need a simple, reliable note-taking tool. | | **Product Maturity** | Early-stage product with core features (e.g., text notes, tags, search). | | **Resources** | Limited budget and team size; no dedicated sales or marketing team. | | **Monetization Goal** | Grow the user base first, then monetize through premium features. | | **Competition** | Moderate; similar apps exist (e.g., Notion, Evernote, Google Keep), but not saturated. | --- ## **2. Recommendati",
+        "normalized": 1,
+        "usage": {
+          "prompt_tokens": 71,
+          "completion_tokens": 923,
+          "total_tokens": 994,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      "cfgB": {
+        "templateId": "pricing_strategy",
+        "durationMs": 13772,
+        "model": "qwen-turbo",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6ba64f-aviddq",
+        "outputHash": "8f7cb6e30c411da81f269ece05f8fde40147d50730abe28fc25df60f36cb4574",
+        "outputExcerpt": "# Decision Comparison Memo ## 1. Decision To Make - **Decision:** Choose between freemium and paid-only pricing model for a small note-taking web app targeting B2B SMBs. - **Constraints:** - Limited budget for marketing and customer acquisition - Need to maintain a simple, user-friendly product experience - Target audience is small businesses that may have limited IT budgets - **Assumptions:** - The app will have basic features available for free - Paid tier will include advanced features like team collaboration, cloud storage, and analytics - Competitors in the space are not well-known or documented - Users will be primarily non-technical business owners or employees ## 2. Option-By-Option Comparison | Option | Best Fit Scenario | Pros | Cons | Cost/Effort | Risks | Activation Steps | | --- | --- | --- | --- | --- | --- | --- | | **Freemium** | When the goal is to rapidly grow user base and build brand awareness | - Attracts more users through free access<br>- Creates opportunity for upselling<br>- Helps build brand loyalty | - May struggle with monetization if too many users stay on free tier<br>- Requires careful feature segmentation<br>- May dilute premium value | - Moderate (r",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 3333,
+          "outputTokens": 773,
+          "totalTokens": 4106
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a comprehensive, well-structured evaluation with clear recommendations, assumptions, and next steps, making it highly useful and complete."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a detailed comparison and recommendation but lacks the depth and specificity of CFG-A, particularly in terms of actionable next steps and acceptance checks."
+        }
+      },
+      "deltaNormalized": -0.16000000000000003
+    },
+    {
+      "id": "EVT4-19",
+      "title": "Retention plan",
+      "templateId": "operator_plan",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 18938,
+        "model": "qwen-turbo",
+        "outputHash": "d663ae9173b34c12a846abf63eba9fa0652694f65fcc873693418f037af394ae",
+        "outputExcerpt": "Sure! Here's a **structured, actionable retention plan** for a **simple pet care reminder app**, tailored for a **non-technical product operator**. This plan assumes the app is already live and has a small user base. --- ## 📌 **Retention Plan for Pet Care Reminder App** ### 🧠 **Assumptions** 1. The app is currently in the early stages (e.g., 50–200 active users). 2. Users are primarily pet owners who need reminders for feeding, vet visits, walks, etc. 3. The app is simple and doesn’t have advanced features like AI or social sharing. 4. There’s no existing onboarding or engagement strategy beyond the initial sign-up. 5. The app is available on both iOS and Android. --- ## ✅ **Goal** Increase **user retention** by 20% over the next 3 months through simple, low-effort strategies that don’t require technical development. --- ## 🛠️ **Actionable Steps** ### 1. **Improve Onboarding & First-Time Experience** **Why:** A poor first experience can lead to quick uninstalls. **What to do:** - Add a short, friendly onboarding flow when the user first opens the app. - Ask them to set up their pet(s) and choose the types of reminders they want (e.g., feeding, walks, vet visits). - Show a quick ",
+        "normalized": 1,
+        "usage": {
+          "prompt_tokens": 66,
+          "completion_tokens": 1200,
+          "total_tokens": 1266,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      "cfgB": {
+        "templateId": "operator_plan",
+        "durationMs": 14263,
+        "model": "qwen-turbo",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6bayem-5hwvm6",
+        "outputHash": "e97080783b10c6b823cb2902b8d096526055451e216d6d033c60458a730408ed",
+        "outputExcerpt": "# Operator Action Plan ## 1. Goal, Constraints, And Assumptions - **Goal:** Increase user retention for a simple pet care reminder app by implementing a structured engagement strategy. - **Constraints:** - Small team (founder + support/ops) - Limited budget - No development resources available - Focus on non-technical actions - **Assumptions:** - Users are primarily pet owners who need reminders for feeding, vet visits, and medication. - App users are likely to be tech-savvy but time-constrained. - Retention can be improved through regular communication and personalized engagement. - **Definition of done:** - A working retention plan with actionable steps that can be implemented immediately. - Clear success metrics for each phase. - First 72 hours of execution plan ready to begin. ## 2. Detailed Timeline | Phase/Date | Owner/Role | Detailed Action | Concrete Artifact | Success Metric | Acceptance Check | | --- | --- | --- | --- | --- | --- | | Week 1 | Founder | Conduct user feedback survey | Survey form with 5 questions | 50+ responses collected | Survey form shared with users via email or in-app message | | Week 1 | Support/OPS | Create user segmentation based on behavior | Segme",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 3478,
+          "outputTokens": 934,
+          "totalTokens": 4412
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a comprehensive, well-structured plan with clear steps, goals, and metrics, making it highly useful and complete for a non-technical operator."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a detailed plan with a focus on execution and monitoring, but it lacks some of the actionable detail and user engagement strategies found in CFG-A."
+        }
+      },
+      "deltaNormalized": -0.16000000000000003
+    },
+    {
+      "id": "EVT4-20",
+      "title": "Acceptance criteria",
+      "templateId": "acceptance_criteria",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 11738,
+        "model": "qwen-turbo",
+        "outputHash": "9695041633c8f66e9ab72e8725a6208ba0c9add226c1e235f371961fd0b259e4",
+        "outputExcerpt": "Sure! Here's a **structured and actionable set of acceptance criteria** for a dashboard that shows **weekly sales, conversion, and open tasks**. This is tailored for a **non-technical product operator**, so it avoids jargon and focuses on clear, observable outcomes. --- ## ✅ **Acceptance Criteria for the Weekly Dashboard** ### 📌 **Objective** The dashboard should provide a clear, up-to-date view of weekly performance metrics: **sales**, **conversion rate**, and **open tasks** to help the team track progress and make informed decisions. --- ## 🧠 **Assumptions** 1. The dashboard will be used by the sales and operations teams. 2. Data will be pulled from internal systems (e.g., CRM, task management tool). 3. The dashboard updates automatically every week or on a scheduled basis. 4. Users can filter data by date range if needed (optional). 5. The dashboard is accessible via a web browser or app. --- ## 🔧 **Next Steps for Implementation** | Step | Action | Owner | |------|--------|-------| | 1 | Define the exact data sources for sales, conversion, and open tasks. | Product Manager | | 2 | Confirm the time frame for \"weekly\" (e.g., Monday to Sunday, or last 7 days). | Product Manager ",
+        "normalized": 1,
+        "usage": {
+          "prompt_tokens": 70,
+          "completion_tokens": 804,
+          "total_tokens": 874,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      "cfgB": {
+        "templateId": "acceptance_criteria",
+        "durationMs": 10822,
+        "model": "qwen-turbo",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6bbkwo-2adz44",
+        "outputHash": "3909e6d448b51d1d38b4a87ae3a220c4e1800d957ede8fcb5d12e5efcef97a7a",
+        "outputExcerpt": "# Acceptance Criteria Packet ## 1. Scope Under Test - **Feature/workflow:** Dashboard displaying weekly sales, conversion metrics, and open tasks - **User or operator outcome:** Non-technical operators and managers can view, understand, and verify key business performance indicators in a single interface ## 2. Criteria By Workflow | Workflow Area | Given | When | Then | Data/State Requirement | Pass/Fail Check | | --- | --- | --- | --- | --- | --- | | 1. Sales Overview | Dashboard is loaded | User views the dashboard | Weekly sales data is displayed with accurate figures and visual representation (e.g., bar chart) | Data source: CRM system, refresh interval: daily | Sales numbers match expected values from CRM reports | | 2. Conversion Metrics | Dashboard is loaded | User views the dashboard | Conversion rate is shown as percentage with clear label (e.g., \"Conversion Rate: 12.5%\") | Data source: Marketing automation platform, refresh interval: hourly | Conversion rate matches expected value from marketing reports | | 3. Open Tasks | Dashboard is loaded | User views the dashboard | List of open tasks is displayed with task name, due date, and status | Data source: Task management sy",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 3379,
+          "outputTokens": 730,
+          "totalTokens": 4109
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a comprehensive, well-structured, and detailed set of acceptance criteria, covering all necessary aspects for a non-technical audience."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B is detailed and covers key areas but is slightly less structured and specific compared to CFG-A, particularly in terms of user guidance and next steps."
+        }
+      },
+      "deltaNormalized": -0.16000000000000003
+    }
+  ]
+}

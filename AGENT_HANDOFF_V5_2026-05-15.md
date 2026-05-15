@@ -145,3 +145,58 @@ Conclusion:
 - Next F-1 work needs a sharper task-specific evaluator/rubric or targeted
   family-contract repair for immediate actionability and specificity, not just
   more output length.
+
+## F-1 Family Rubric Repair — 2026-05-15
+
+User asked Codex to continue autonomously through the roadmap. Codex executed
+the next bounded F-1 hypothesis:
+
+`docs/reviews/CVF_GC018_EVT4_FAMILY_RUBRIC_REPAIR_2026-05-15.md`
+
+Implementation:
+
+- Repaired targeted family output contracts for:
+  - `feature_prioritization`
+  - `user_persona`
+  - `operator_plan`
+  - `competitor_review`
+- Added exact sections for implementation steps, action plans, verification
+  signals, operating checklists, and acceptance checks.
+- No QBS, hard-gate, provider routing, output-validator, or runtime two-pass
+  production change.
+
+Verification:
+
+- `npx vitest run src/lib/templates/governance-enforcement.test.ts src/lib/front-door-template-standard.test.ts src/lib/templates/index.test.ts src/lib/execute-prompt-contract.test.ts`
+  PASS (42/42).
+- `npx tsc --noEmit` PASS.
+- `npm run lint` PASS with one pre-existing `_request` warning in
+  `src/app/api/system/jobs/route.test.ts`.
+
+Live evidence:
+
+- One-pass family-rubric repair:
+  `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_FAMILY_RUBRIC_REPAIR_EVIDENCE_2026-05-15.json`
+  / summary:
+  `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_FAMILY_RUBRIC_REPAIR_SUMMARY_2026-05-15.md`.
+  Result: 20/20 receipts, 0 safety failures, median `-0.16`.
+- Family-rubric repair plus two-pass expansion:
+  `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_RUBRIC_TWO_PASS_EVIDENCE_2026-05-15.json`
+  / summary:
+  `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_RUBRIC_TWO_PASS_SUMMARY_2026-05-15.md`.
+  Result: 20/20 final receipts, 20/20 expansion receipt pairs, 0 safety
+  failures, median `-0.16`.
+
+Current F-1 conclusion:
+
+- F-1 is still not closed.
+- The worst outliers improved, but the median remains fixed at `-0.16`.
+- Prompt, template, family split, and two-pass output shaping have hit a
+  practical ceiling under the current EVT-4 scorer.
+- Next owner-level decision should not be another prompt patch. Options:
+  1. Define a sharper automated quality rubric and preregister closure against
+     that rubric.
+  2. Change the product claim to disclose the measured `-0.16` quality tradeoff
+     while preserving audit/safety.
+  3. Rebaseline on a stronger provider/model lane for both CFG-A and CFG-B with
+     a fresh preregistered comparison.

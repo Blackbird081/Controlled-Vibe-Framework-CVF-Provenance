@@ -182,26 +182,37 @@ COMPARISON CRITERIA:
 [criteria]
 
 OUTPUT FORMAT:
-- Competitor Matrix → SWOT per Competitor → Differentiation Opportunities → Market Positioning
+- Competitor Matrix → Competitor Implications → Differentiation Opportunities → Action Plan → Validation Checks
 
 SUCCESS CRITERIA:
 - Ma trận so sánh các đối thủ
 - Điểm mạnh/yếu từng đối thủ
-- Cơ hội khác biệt hóa`,
-        outputExpected: ['Competitor Matrix', 'SWOT per Competitor', 'Differentiation Opportunities', 'Market Positioning'],
+- Cơ hội khác biệt hóa có first action
+- Có cách validate từng differentiation angle`,
+        outputExpected: ['Competitor Matrix', 'Competitor Implications', 'Differentiation Opportunities', 'Action Plan', 'Validation Checks'],
         outputTemplate: `## Competitor Analysis Output
 
 ## 1. Competitor Matrix
-| Criteria | Your Company | Competitor A | Competitor B |
-| --- | --- | --- | --- |
+| Criteria | Your Product/App | Competitor / Alternative A | Competitor / Alternative B | Operator Implication |
+| --- | --- | --- | --- | --- |
 
-## 2. SWOT per Competitor
+## 2. Competitor Implications
+- What users already expect:
+- What competitors make difficult:
+- What a simple product can credibly do better:
 
 ## 3. Differentiation Opportunities
-- Gap:
-- How to capture:
+| Differentiation Angle | User Pain It Solves | Proof Needed | First Action | Risk |
+| --- | --- | --- | --- | --- |
 
-## 4. Market Positioning`,
+## 4. Action Plan
+| Step | Owner/Role | Action | Artifact | Success Metric | Acceptance Check |
+| --- | --- | --- | --- | --- | --- |
+
+## 5. Validation Checks
+- [ ] Each angle is tied to a real user pain
+- [ ] Each angle has a proof or validation method
+- [ ] The operator knows the next action to test differentiation`,
         difficulty: 'medium',
     },
     {
@@ -229,41 +240,60 @@ CONSTRAINTS:
 [constraints]
 
 OUTPUT FORMAT:
-- Operator Action Plan → Timeline and Owners → First 24-72 Hours → Risks and Dependencies → Handoff Checklist
+- Operator Action Plan → Detailed Timeline → First 24-72 Hours → Operating Checklist → Risks and Dependencies → Acceptance Checks
 
 SUCCESS CRITERIA:
 - Có timeline/phases rõ ràng
 - Mỗi bước có owner hoặc role
 - Mỗi bước có artifact, success metric, acceptance check
+- Có daily/weekly detail đủ cụ thể cho non-coder
 - Người không chuyên có thể bắt đầu trong 24-72 giờ`,
-        outputExpected: ['Operator Action Plan', 'Timeline and Owners', 'First 24-72 Hours', 'Risks and Dependencies', 'Handoff Checklist'],
+        outputExpected: ['Operator Action Plan', 'Detailed Timeline', 'First 24-72 Hours', 'Operating Checklist', 'Risks and Dependencies', 'Acceptance Checks'],
         outputTemplate: `# Operator Action Plan
 
 ## 1. Goal, Constraints, And Assumptions
 - Goal:
 - Constraints:
 - Assumptions:
+- Definition of done:
 
-## 2. Timeline And Owners
-| Phase/Date | Owner/Role | Action | Concrete Artifact | Success Metric | Acceptance Check |
+## 2. Detailed Timeline
+| Phase/Date | Owner/Role | Detailed Action | Concrete Artifact | Success Metric | Acceptance Check |
 | --- | --- | --- | --- | --- | --- |
 | 1. | | | | | |
 | 2. | | | | | |
+| 3. | | | | | |
 
 ## 3. First 24-72 Hours
 - Step 1:
+  - Owner:
+  - Artifact:
+  - How to verify:
 - Step 2:
+  - Owner:
+  - Artifact:
+  - How to verify:
 - Step 3:
+  - Owner:
+  - Artifact:
+  - How to verify:
 
-## 4. Risks, Dependencies, And Checkpoints
+## 4. Operating Checklist
+- Daily/weekly recurring check:
+- Customer/user-facing check:
+- Data or tracking check:
+- Escalation rule:
+
+## 5. Risks, Dependencies, And Checkpoints
 - Key risks:
 - Dependencies:
 - Review checkpoints:
 
-## 5. Final Handoff Checklist
+## 6. Acceptance Checks
 - [ ] Owner is clear for every action
 - [ ] Metrics are measurable
-- [ ] Acceptance checks are specific enough to verify`,
+- [ ] Acceptance checks are specific enough to verify
+- [ ] First 72 hours can be executed without extra strategy work`,
         difficulty: 'easy',
     },
     {

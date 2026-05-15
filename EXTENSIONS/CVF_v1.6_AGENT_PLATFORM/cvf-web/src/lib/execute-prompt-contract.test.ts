@@ -193,7 +193,8 @@ describe('buildExecutionPrompt', () => {
 
     expect(prompt).toContain('Operator Action Plan');
     expect(prompt).toContain('Use these headings and labels exactly where applicable');
-    expect(prompt).toContain('Timeline And Owners');
+    expect(prompt).toContain('Detailed Timeline');
+    expect(prompt).toContain('Operating Checklist');
     expect(prompt).not.toContain('SWOT Analysis');
     expect(prompt).not.toContain('shape-specific deliverable contract');
   });

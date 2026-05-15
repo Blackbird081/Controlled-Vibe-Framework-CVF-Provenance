@@ -157,25 +157,49 @@ PRODUCT GOAL: [goal]
 CONSTRAINTS: [constraints]
 
 OUTPUT FORMAT:
-- Scoring Matrix → Prioritized List → Quick Wins → Roadmap Recommendation
+- Scoring Matrix → Feature Detail Cards → MVP Scope → Quick Wins → Implementation Plan → Acceptance Checks
 
 SUCCESS CRITERIA:
 - Score mỗi feature theo framework
-- Prioritized list
-- Quick wins identification
-- Roadmap suggestion`,
-        outputExpected: ['Scoring Matrix', 'Prioritized List', 'Quick Wins', 'Roadmap Recommendation'],
+- Prioritized list includes do-now / do-next / defer groups
+- Every top feature has a first implementation or validation step
+- MVP scope is explicit enough for a non-technical operator to hand off
+- Acceptance checks are observable`,
+        outputExpected: ['Scoring Matrix', 'Feature Detail Cards', 'MVP Scope', 'Quick Wins', 'Implementation Plan', 'Acceptance Checks'],
         outputTemplate: `## Feature Prioritization Output
 
 ## 1. Scoring Matrix
-| Feature | Reach | Impact | Confidence | Effort | Score |
+| Feature | User Problem Solved | Reach | Impact | Confidence | Effort | Score | Rank |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+
+## 2. Feature Detail Cards
+For each top feature, include:
+- User/job to be served:
+- Why this feature is in or out:
+- First implementation or validation step:
+- Owner/role:
+- Main risk or dependency:
+
+## 3. MVP Scope
+- Do now:
+- Do next:
+- Defer:
+- Explicit non-goals:
+
+## 4. Quick Wins
+- Quick win:
+- Why it is low effort:
+- How to verify it worked:
+
+## 5. Implementation Plan
+| Step | Owner/Role | Action | Artifact | Success Metric | Acceptance Check |
 | --- | --- | --- | --- | --- | --- |
 
-## 2. Prioritized List
-
-## 3. Quick Wins
-
-## 4. Roadmap Recommendation`,
+## 6. Acceptance Checks
+- [ ] Top scope can be explained in one sentence
+- [ ] Every selected feature has a first action
+- [ ] Deferred features have a reason
+- [ ] Operator can verify completion without developer interpretation`,
     },
     {
         id: 'user_persona',
@@ -200,29 +224,47 @@ SEGMENTS: [segments]
 BUSINESS GOALS: [goals]
 
 OUTPUT FORMAT:
-- Persona Profiles → User Journey Maps → Pain Points → Opportunities
+- Persona Profiles → Jobs To Be Done → Journey and Decision Moments → Product/Marketing Actions → Acceptance Checks
 
 SUCCESS CRITERIA:
 - 2-4 distinct personas
 - Demographics, goals, pain points
 - Jobs to be done
-- Decision criteria`,
-        outputExpected: ['Persona Profiles', 'User Journey Maps', 'Pain Points', 'Opportunities'],
+- Decision criteria
+- Actionable product or marketing next steps for each persona
+- Acceptance checks for whether the persona is usable`,
+        outputExpected: ['Persona Profiles', 'Jobs To Be Done', 'Journey and Decision Moments', 'Product/Marketing Actions', 'Acceptance Checks'],
         outputTemplate: `## User Persona Output
 
 ## 1. Persona Profiles
 
 ### Persona 1: [Name]
-- Demographics:
+- Context and demographics:
 - Goals:
 - Pain points:
+- Jobs to be done:
+- Trigger:
+- Objections:
 - Decision criteria:
 
-## 2. User Journey Map
+## 2. Jobs To Be Done
+| Persona | Situation | Motivation | Desired Outcome | Success Signal |
+| --- | --- | --- | --- | --- |
 
-## 3. Pain Points Summary
+## 3. Journey And Decision Moments
+- Discovery moment:
+- Evaluation moment:
+- First successful use:
+- Retention or repeat-use trigger:
 
-## 4. Opportunities`,
+## 4. Product Or Marketing Actions
+| Persona | Message/Offer | Product or Support Action | First Experiment | Acceptance Check |
+| --- | --- | --- | --- | --- |
+
+## 5. Acceptance Checks
+- [ ] Each persona has a specific context, trigger, and objection
+- [ ] Each persona maps to at least one product or marketing action
+- [ ] The operator knows what to test first`,
     },
     {
         id: 'error_handling_ux',
