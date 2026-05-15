@@ -193,13 +193,41 @@ Current F-1 conclusion:
 - The worst outliers improved, but the median remains fixed at `-0.16`.
 - Prompt, template, family split, and two-pass output shaping have hit a
   practical ceiling under the current EVT-4 scorer.
-- Next owner-level decision should not be another prompt patch. Options:
-  1. Define a sharper automated quality rubric and preregister closure against
-     that rubric.
-  2. Change the product claim to disclose the measured `-0.16` quality tradeoff
-     while preserving audit/safety.
-  3. Rebaseline on a stronger provider/model lane for both CFG-A and CFG-B with
-     a fresh preregistered comparison.
+- Evidence shows CFG-B is **token-constrained**: median output tokens 1966–2048
+  on a corpus that needs depth. The bottleneck is not model capability but
+  system prompt size + budget allocation.
+
+**Codex's recommended remediation path (highest probability of F-1 closure):**
+
+1. **Lean Governed System Prompt for R0/R1 trusted noncoder**
+   - Strip framework philosophy/doctrine from `CVF_SYSTEM_PROMPT`.
+   - Preserve all governance constraints and safety directives.
+   - Expected saving: ~200–300 tokens, freeing depth capacity.
+
+2. **Selective Output Budget Increase**
+   - Alibaba qwen-turbo: keep 2048 (stable, no regression signal).
+   - DeepSeek V4 Pro: increase 2048 → 3072 or 4096.
+   - Only for trusted noncoder EVT templates.
+   - Update `execute-route-budget.ts` token tracking.
+
+3. **Family-Specific Output Contracts (not just prompt wrappers)**
+   - Current: prompt wrapper around generic skeleton.
+   - Better: explicit per-family structure (sections, checks, depth signals).
+   - Target weakest families: `feature_prioritization`, `user_persona`,
+     `competitor_review`, `pricing_strategy`, `acceptance_criteria`.
+
+4. **Output Validator → Quality Repair Hint (bounded scope)**
+   - Current: pass/fail only on safety/format/length.
+   - Addition: WARN-quality retry for trusted noncoder (missing depth signals).
+   - Not full runtime rubric — scoped to EVT-like templates only.
+
+**Recommended execution order:** 1 + 2 first (low risk, direct token fix).
+Then 3 + 4 if needed.
+
+**No new GC-018 needed** for steps 1–2 (system prompt tweak, budget config).
+Steps 3–4 may need GC-018 if output shape semantics change.
+
+**Exit criteria (same rule):** 20/20 live, 0 safety fails, median ≥ -0.05.
 
 ## F-2 Test Drift Cleanup — 2026-05-15
 
