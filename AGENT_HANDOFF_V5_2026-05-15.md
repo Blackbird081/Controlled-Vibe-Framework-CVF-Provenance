@@ -100,3 +100,48 @@ Current status:
   `operator_plan`, because reviewer rationales now cite thin depth, weaker
   actionable detail, and missing verification steps rather than generic wrapper
   mismatch.
+
+## F-1a Two-Pass Phase 0 Measurement — 2026-05-15
+
+User approved coding the Claude-reviewed plan: measure two-pass quality
+expansion before implementing any runtime feature.
+
+Implemented in `scripts/run_evt4_output_quality_ab.js`:
+
+- Added opt-in `EVT4_TWO_PASS_EXPANSION=true`.
+- Default one-pass behavior remains unchanged.
+- Experimental CFG-B path now runs:
+  - Pass 1: existing governed `/api/execute`.
+  - Pass 2: second governed `/api/execute` with `_previousOutput` and a
+    quality-expansion intent.
+- Evidence now records pass-1/pass-2 receipt presence, receipt IDs, duration,
+  usage, output hashes, and excerpts.
+
+GC / evidence:
+
+- Review doc:
+  `docs/reviews/CVF_GC018_EVT4_TWO_PASS_PHASE0_MEASUREMENT_2026-05-15.md`
+- Evidence:
+  `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_TWO_PASS_PHASE0_EVIDENCE_2026-05-15.json`
+- Summary:
+  `docs/assessments/CVF_EVT4_OUTPUT_QUALITY_AB_TWO_PASS_PHASE0_SUMMARY_2026-05-15.md`
+
+Live result:
+
+- 20/20 completed pairs.
+- 20/20 CFG-B final receipts.
+- 20/20 CFG-B expansion receipt pairs.
+- 0 safety failures.
+- Median `CFG-B - CFG-A = -0.16`.
+- CFG-B median duration: `32217` ms.
+- CFG-B median output tokens: `1966`.
+- Decision rule `>= -0.05`: **false**.
+
+Conclusion:
+
+- Two-pass expansion is governance-feasible in the harness but does not close
+  F-1.
+- Do not implement runtime two-pass from this evidence.
+- Next F-1 work needs a sharper task-specific evaluator/rubric or targeted
+  family-contract repair for immediate actionability and specificity, not just
+  more output length.

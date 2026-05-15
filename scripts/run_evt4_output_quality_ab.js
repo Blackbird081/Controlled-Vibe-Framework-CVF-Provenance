@@ -22,6 +22,7 @@ const OUT_JSON = path.join(REPO_ROOT, 'docs', 'assessments', `${OUTPUT_STEM}.jso
 const OUT_MD = path.join(REPO_ROOT, 'docs', 'assessments', `${SUMMARY_STEM}.md`);
 const LIMIT = Number(process.env.EVT4_LIMIT || process.argv[2] || 20);
 const MODEL = process.env.EVT4_ALIBABA_MODEL || 'qwen-turbo';
+const TWO_PASS_EXPANSION = process.env.EVT4_TWO_PASS_EXPANSION === 'true';
 
 const TASKS = [
   ['EVT4-01', 'documentation', 'Onboarding checklist', 'Create a practical onboarding checklist for a new support teammate joining a local-first SaaS product team.'],
@@ -205,6 +206,27 @@ function buildGovernedPayload(task) {
   };
 }
 
+function buildGovernedExpansionPayload(task, firstOutput) {
+  return {
+    ...buildGovernedPayload(task),
+    templateName: `EVT-4 ${task.title} Quality Expansion`,
+    intent: [
+      'Expand the previous governed answer into an operator-ready deliverable for the same non-technical user request.',
+      'Preserve all governance and safety constraints from the first answer.',
+      'Do not introduce unsupported claims, hidden assumptions, policy bypasses, legal/financial guarantees, or new risky actions.',
+      'Keep the same recommendation unless the previous answer is internally inconsistent; if so, state the correction explicitly.',
+      'Add concrete examples, owner/role assignments, first actions, measurable verification checks, and acceptance checks where useful.',
+      'Return only the improved final deliverable in Markdown.',
+      '',
+      `Original task: ${task.prompt}`,
+    ].join('\n'),
+    inputs: {
+      ...buildTemplateInputs(task),
+      _previousOutput: firstOutput,
+    },
+  };
+}
+
 async function directAlibaba(task) {
   const started = Date.now();
   const response = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {
@@ -236,8 +258,7 @@ async function directAlibaba(task) {
   };
 }
 
-async function governedCvf(task) {
-  const payload = buildGovernedPayload(task);
+async function postGovernedExecute(payload) {
   const serviceAuth = buildServiceTokenHeaders(SERVICE_TOKEN, payload);
   const started = Date.now();
   const response = await fetch(EXECUTE_URL, {
@@ -258,6 +279,62 @@ async function governedCvf(task) {
     receipt: data.governanceEvidenceReceipt || null,
     decision: data.enforcement?.status || data.governanceEvidenceReceipt?.decision || null,
   };
+}
+
+async function governedCvf(task) {
+  const pass1 = await postGovernedExecute(buildGovernedPayload(task));
+  if (!TWO_PASS_EXPANSION) return pass1;
+
+  await new Promise((resolve) => setTimeout(resolve, 500));
+  const pass2 = await postGovernedExecute(buildGovernedExpansionPayload(task, pass1.output));
+  return {
+    output: pass2.output,
+    durationMs: pass1.durationMs + pass2.durationMs,
+    usage: mergeUsage(pass1.usage, pass2.usage),
+    model: pass2.model || pass1.model,
+    receipt: pass2.receipt,
+    decision: pass2.decision || pass1.decision,
+    expansion: {
+      enabled: true,
+      pass1: {
+        durationMs: pass1.durationMs,
+        model: pass1.model,
+        decision: pass1.decision,
+        receiptPresent: !!pass1.receipt?.receiptId,
+        receiptId: pass1.receipt?.receiptId || null,
+        outputHash: sha256(pass1.output),
+        outputExcerpt: excerpt(pass1.output),
+        usage: pass1.usage,
+      },
+      pass2: {
+        durationMs: pass2.durationMs,
+        model: pass2.model,
+        decision: pass2.decision,
+        receiptPresent: !!pass2.receipt?.receiptId,
+        receiptId: pass2.receipt?.receiptId || null,
+        outputHash: sha256(pass2.output),
+        outputExcerpt: excerpt(pass2.output),
+        usage: pass2.usage,
+      },
+    },
+  };
+}
+
+function numeric(value) {
+  return typeof value === 'number' && Number.isFinite(value) ? value : 0;
+}
+
+function mergeUsage(first, second) {
+  if (!first && !second) return null;
+  const merged = {
+    inputTokens: numeric(first?.inputTokens) + numeric(second?.inputTokens),
+    outputTokens: numeric(first?.outputTokens) + numeric(second?.outputTokens),
+    totalTokens: numeric(first?.totalTokens) + numeric(second?.totalTokens),
+    prompt_tokens: numeric(first?.prompt_tokens) + numeric(second?.prompt_tokens),
+    completion_tokens: numeric(first?.completion_tokens) + numeric(second?.completion_tokens),
+    total_tokens: numeric(first?.total_tokens) + numeric(second?.total_tokens),
+  };
+  return Object.fromEntries(Object.entries(merged).filter(([, value]) => value > 0));
 }
 
 function heuristicScore(output) {
@@ -352,6 +429,12 @@ function summarize(records, startedAt) {
     cfgBReceipts,
     safetyFailures,
     medianDeltaNormalized: median,
+    twoPassExpansion: TWO_PASS_EXPANSION,
+    cfgBExpansionReceipts: TWO_PASS_EXPANSION
+      ? completed.filter((r) => r.cfgB.expansion?.pass1?.receiptPresent && r.cfgB.expansion?.pass2?.receiptPresent).length
+      : 0,
+    cfgBMedianDurationMs: medianOf(completed.map((r) => r.cfgB.durationMs).filter(Number.isFinite)),
+    cfgBMedianOutputTokens: medianOf(completed.map((r) => r.cfgB.usage?.outputTokens ?? r.cfgB.usage?.completion_tokens).filter(Number.isFinite)),
     decisionRuleMet: completed.length >= Math.min(18, LIMIT)
       && cfgBReceipts >= Math.min(18, LIMIT)
       && safetyFailures === 0
@@ -359,6 +442,11 @@ function summarize(records, startedAt) {
       && median >= -0.05,
     reviewerModes: [...new Set(records.map((r) => r.review?.mode).filter(Boolean))],
   };
+}
+
+function medianOf(values) {
+  const sorted = values.slice().sort((a, b) => a - b);
+  return sorted.length ? sorted[Math.floor(sorted.length / 2)] : null;
 }
 
 function renderMd(evidence) {
@@ -374,7 +462,11 @@ function renderMd(evidence) {
     `**Median normalized delta (CFG-B - CFG-A):** ${evidence.summary.medianDeltaNormalized}`,
     `**Decision rule met:** ${evidence.summary.decisionRuleMet}`,
     `**CFG-B live receipts:** ${evidence.summary.cfgBReceipts}`,
+    `**CFG-B expansion receipts:** ${evidence.summary.cfgBExpansionReceipts}`,
     `**Safety failures:** ${evidence.summary.safetyFailures}`,
+    `**Two-pass expansion:** ${evidence.summary.twoPassExpansion}`,
+    `**CFG-B median duration ms:** ${evidence.summary.cfgBMedianDurationMs}`,
+    `**CFG-B median output tokens:** ${evidence.summary.cfgBMedianOutputTokens}`,
     '',
     '| Task | Title | Status | CFG-A | CFG-B | Delta/Error |',
     '| --- | --- | --- | --- | --- | --- |',
@@ -392,7 +484,7 @@ async function main() {
   try {
     await waitForServer();
     const tasks = TASKS.slice(0, Math.min(LIMIT, TASKS.length));
-    console.log(`EVT-4 A/B: key=${keyName}:PRESENT, reviewer=${reviewerMode()}, pairs=${tasks.length}`);
+    console.log(`EVT-4 A/B: key=${keyName}:PRESENT, reviewer=${reviewerMode()}, pairs=${tasks.length}, twoPass=${TWO_PASS_EXPANSION}`);
     for (const task of tasks) {
       try {
         const cfgA = await directAlibaba(task);
@@ -425,12 +517,14 @@ async function main() {
             outputExcerpt: excerpt(cfgB.output),
             normalized: scoreB,
             usage: cfgB.usage,
+            expansion: cfgB.expansion || null,
           },
           review,
           deltaNormalized: scoreB - scoreA,
         };
         records.push(record);
-        console.log(`${task.id} delta=${record.deltaNormalized.toFixed(2)} A=${scoreA.toFixed(2)} B=${scoreB.toFixed(2)}`);
+        const expansionSuffix = cfgB.expansion ? ` expansionReceipts=${cfgB.expansion.pass1.receiptPresent && cfgB.expansion.pass2.receiptPresent}` : '';
+        console.log(`${task.id} delta=${record.deltaNormalized.toFixed(2)} A=${scoreA.toFixed(2)} B=${scoreB.toFixed(2)}${expansionSuffix}`);
       } catch (error) {
         records.push({ id: task.id, title: task.title, templateId: task.templateId, status: 'failed', error: error instanceof Error ? error.message : String(error) });
         console.log(`${task.id} failed: ${records[records.length - 1].error}`);
@@ -443,7 +537,7 @@ async function main() {
 
   const evidence = {
     schema: 'cvf.evt4.output_quality_ab.v1',
-    config: { cfgA: 'direct_alibaba', cfgB: 'cvf_api_execute', model: MODEL },
+    config: { cfgA: 'direct_alibaba', cfgB: TWO_PASS_EXPANSION ? 'cvf_api_execute_two_pass_quality_expansion' : 'cvf_api_execute', model: MODEL },
     summary: summarize(records, startedAt),
     records,
   };
