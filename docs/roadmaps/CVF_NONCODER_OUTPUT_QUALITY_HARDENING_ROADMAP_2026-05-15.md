@@ -2,13 +2,18 @@
 
 Date: 2026-05-15
 
-Status: PROPOSED NEXT PRODUCT ROADMAP
+Status: ACTIVE PRODUCT ROADMAP - QH-1/QH-2 IMPLEMENTED WITH MIXED REGRESSION
 
 Parent closure:
 
 - `docs/reviews/CVF_F1_OUTPUT_QUALITY_PARITY_CLOSURE_NOT_MET_2026-05-15.md`
 - `docs/reviews/CVF_EVT4_BOUNDED_VALUE_CLAIM_2026-05-15.md`
 - `docs/reviews/CVF_F1_DIMINISHING_RETURNS_STOP_RULE_2026-05-15.md`
+
+Latest tranche evidence:
+
+- `docs/reviews/CVF_GC018_QH1_QH2_NONCODER_OUTPUT_HARDENING_2026-05-15.md`
+- `docs/reviews/CVF_QH1_QH2_NONCODER_OUTPUT_HARDENING_RESULT_2026-05-15.md`
 
 ## 0. Purpose
 
@@ -51,6 +56,11 @@ This is a product-quality backlog, not a governance release blocker.
 
 ### Track QH-1 — MVP Scope And Backlog Actionability
 
+Implementation status: implemented 2026-05-15 as a scope-first deliverable
+contract. EVT-4 target lanes improved or stayed bounded, but full-corpus
+regression remains mixed; do not claim output-quality parity or full
+no-degrade.
+
 User pain:
 
 - Feature-prioritization outputs can over-index on scoring matrices.
@@ -83,6 +93,12 @@ Exit criteria:
   just a one-line prompt hint.
 
 ### Track QH-2 — Pricing Recommendation Actionability
+
+Implementation status: implemented 2026-05-15 as a concrete pricing
+recommendation contract. Pricing tiers improved strongly in the full EVT-4
+regression and pilot pricing stayed stable on CFG-B score, but full-corpus
+regression remains mixed; do not claim output-quality parity or full
+no-degrade.
 
 User pain:
 
@@ -241,4 +257,3 @@ Required before implementation:
 - No runtime two-pass expansion.
 - No provider/model shopping as a substitute for product work.
 - No public repo claim changes from the provenance workspace.
-

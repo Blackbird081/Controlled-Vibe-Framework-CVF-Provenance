@@ -157,48 +157,44 @@ PRODUCT GOAL: [goal]
 CONSTRAINTS: [constraints]
 
 OUTPUT FORMAT:
-- Scoring Matrix → Feature Detail Cards → MVP Scope → Quick Wins → Implementation Plan → Acceptance Checks
+- MVP Scope → Why This Scope → Supporting Scoring Matrix → Implementation/Validation Steps → Risk And Deferral Checks
 
 SUCCESS CRITERIA:
-- Score mỗi feature theo framework
 - Prioritized list includes do-now / do-next / defer groups
 - Every top feature has a first implementation or validation step
 - MVP scope is explicit enough for a non-technical operator to hand off
+- Scoring supports the scope decision instead of replacing it
 - Acceptance checks are observable`,
-        outputExpected: ['Scoring Matrix', 'Feature Detail Cards', 'MVP Scope', 'Quick Wins', 'Implementation Plan', 'Acceptance Checks'],
-        outputTemplate: `## Feature Prioritization Output
+        outputExpected: ['MVP Scope', 'Why This Scope', 'Supporting Scoring Matrix', 'Implementation/Validation Steps', 'Risk And Deferral Checks'],
+        outputTemplate: `## MVP Scope And Prioritization Decision
 
-## 1. Scoring Matrix
-| Feature | User Problem Solved | Reach | Impact | Confidence | Effort | Score | Rank |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-
-## 2. Feature Detail Cards
-For each top feature, include:
-- User/job to be served:
-- Why this feature is in or out:
-- First implementation or validation step:
-- Owner/role:
-- Main risk or dependency:
-
-## 3. MVP Scope
-- Do now:
+## 1. Recommended Scope First
+- Do now / MVP:
 - Do next:
 - Defer:
 - Explicit non-goals:
+- First validation or build step:
+- Owner/role:
+- Acceptance check:
 
-## 4. Quick Wins
-- Quick win:
-- Why it is low effort:
-- How to verify it worked:
+## 2. Why This Scope
+- Product/operator goal:
+- Constraints:
+- Main tradeoff:
+- Assumptions to confirm:
 
-## 5. Implementation Plan
+## 3. Supporting Scoring Matrix
+| Feature | User Problem Solved | Reach | Impact | Confidence | Effort | Score | Rank |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+
+## 4. Implementation Or Validation Steps
 | Step | Owner/Role | Action | Artifact | Success Metric | Acceptance Check |
 | --- | --- | --- | --- | --- | --- |
 
-## 6. Acceptance Checks
-- [ ] Top scope can be explained in one sentence
-- [ ] Every selected feature has a first action
-- [ ] Deferred features have a reason
+## 5. Risk And Deferral Checks
+- [ ] Owner can explain why each top item was chosen
+- [ ] Deferred items have a reason and revisit trigger
+- [ ] First implementation or validation step is clear
 - [ ] Operator can verify completion without developer interpretation`,
     },
     {

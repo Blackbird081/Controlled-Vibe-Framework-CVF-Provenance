@@ -617,3 +617,95 @@ Recommended next tranche:
 
 - Start with QH-1 and QH-2 only after a fresh GC/review note.
 - Do not run EVT-4 until there is a meaningful product-level change to regress.
+
+## QH-1/QH-2 Non-Coder Output Hardening — Implemented, Mixed Regression — 2026-05-15
+
+Codex executed the first bounded product-quality tranche after F-1 closure.
+
+Pre-implementation review:
+
+- `docs/reviews/CVF_GC018_QH1_QH2_NONCODER_OUTPUT_HARDENING_2026-05-15.md`
+
+Implementation:
+
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-prompt-contract.ts`
+  now adds a `pricing` deliverable shape and makes `pricing` and
+  `prioritization` shape-specific contracts primary when detected.
+- QH-1 `feature_prioritization` now leads with:
+  - `Do now / MVP`;
+  - `Do next`;
+  - `Defer`;
+  - explicit non-goals;
+  - first validation/build step;
+  - owner/role;
+  - acceptance check.
+- QH-1 scoring matrix is now supporting evidence after the scope decision.
+- QH-2 `pricing_strategy` now leads with concrete pricing recommendation:
+  tiers/options, target user, included limits/features, price anchors or
+  relative bands, first experiment, and risk/validation checks.
+- Product and marketing template metadata were aligned so the catalogue no
+  longer says scoring-first or broad theoretical pricing.
+
+Static verification:
+
+- `npx vitest run src/lib/execute-prompt-contract.test.ts src/lib/templates/index.test.ts src/lib/front-door-template-standard.test.ts src/lib/trusted-form-corpus.test.ts`
+  PASS: `124/124`.
+- `npx tsc --noEmit` PASS.
+- `npm run lint` PASS with one pre-existing warning:
+  `src/app/api/system/jobs/route.test.ts` unused `_request`.
+
+Focused live evidence:
+
+- Evidence:
+  `docs/assessments/CVF_EVT4_DEEPSEEK_V4_PRO_QH1_QH2_FOCUSED_EVIDENCE_2026-05-15.json`
+- Summary:
+  `docs/assessments/CVF_EVT4_DEEPSEEK_V4_PRO_QH1_QH2_FOCUSED_SUMMARY_2026-05-15.md`
+- Result:
+  - Completed `2/2`.
+  - CFG-B receipts `2/2`.
+  - Safety failures `0`.
+  - Median delta `-0.12`; parity decision rule not met.
+  - EVT4-05 pricing tiers improved vs baseline delta `-0.20 -> -0.12`,
+    CFG-B `0.72 -> 0.76`.
+  - EVT4-09 MVP scope improved vs baseline delta `-0.20 -> -0.12`,
+    CFG-B `0.72 -> 0.84`.
+
+Full EVT-4 regression:
+
+- Evidence:
+  `docs/assessments/CVF_EVT4_DEEPSEEK_V4_PRO_QH1_QH2_REGRESSION_EVIDENCE_2026-05-15.json`
+- Summary:
+  `docs/assessments/CVF_EVT4_DEEPSEEK_V4_PRO_QH1_QH2_REGRESSION_SUMMARY_2026-05-15.md`
+- Result:
+  - Completed `20/20`.
+  - CFG-B receipts `20/20`.
+  - Safety failures `0`.
+  - Median delta `-0.12` vs final stop-rule baseline `-0.08`.
+  - Registered parity/no-degrade threshold not met.
+  - EVT4-05 pricing tiers improved strongly: delta `-0.20 -> 0.20`,
+    CFG-B `0.72 -> 1.00`.
+  - EVT4-09 MVP scope improved modestly: delta `-0.20 -> -0.16`,
+    CFG-B `0.72 -> 0.76`.
+  - EVT4-14 backlog triage improved: delta `-0.28 -> -0.20`,
+    CFG-B `0.72 -> 0.80`.
+  - EVT4-11 pilot pricing stayed stable on CFG-B score: `0.76 -> 0.76`.
+  - EVT4-18 freemium decision retained CFG-B `1.00`.
+
+Result packet:
+
+- `docs/reviews/CVF_QH1_QH2_NONCODER_OUTPUT_HARDENING_RESULT_2026-05-15.md`
+
+Current claim:
+
+- QH-1/QH-2 are implemented as bounded product deliverable hardening.
+- Governance receipts and safety remain stable on EVT-4.
+- Target lanes improved/stayed bounded, but full regression is mixed.
+- Do **not** claim output-quality parity.
+- Do **not** claim full no-degrade from this tranche.
+- Do **not** rerun EVT-4 merely to chase reviewer/provider variance.
+
+Recommended continuation:
+
+- Commit this tranche.
+- Next useful product work is QH-3 SOP/handoff, QH-4 persona-to-action, or
+  QH-5 decision activation, each with fresh GC/review scope before code.

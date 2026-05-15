@@ -17,7 +17,7 @@ const TRUSTED_NONCODER_DEPTH_TEMPLATE_IDS = new Set([
   'decision_memo',
 ]);
 
-type DeliverableShape = 'faq' | 'acceptance_criteria' | 'checklist' | 'plan' | 'decision_comparison' | 'prioritization' | 'persona';
+type DeliverableShape = 'faq' | 'acceptance_criteria' | 'checklist' | 'plan' | 'decision_comparison' | 'prioritization' | 'pricing' | 'persona';
 
 const SHAPE_SPECIFIC_TEMPLATE_IDS = new Set([
   'faq_outline',
@@ -76,6 +76,11 @@ function resolveDeliverableShapes(request: ExecutionRequest): DeliverableShape[]
     shapes.push('prioritization');
   }
 
+  if (/\b(pricing|price|prices|priced|tier|tiers|freemium|paid-only|subscription|pilot pricing|willingness-to-pay|current price|pricing model)\b/i.test(text)
+    || /(chiến lược giá|định giá|mức giá|gói giá|thuê bao)/i.test(text)) {
+    shapes.push('pricing');
+  }
+
   if (/\b(persona|personas|buyer|end-user|user journey|segment)\b/i.test(text)) {
     shapes.push('persona');
   }
@@ -107,7 +112,11 @@ function buildTaskShapeGuidance(shapes: DeliverableShape[]): string[] {
   }
 
   if (shapes.includes('prioritization')) {
-    guidance.push('Prioritization shape: score or rank each item; explain the top tradeoffs; identify quick wins and deferrals; give the operator a next-step checklist and acceptance checks for the chosen scope.');
+    guidance.push('Prioritization shape: lead with the scope decision before scoring evidence; include Do now / MVP, Do next, Defer, first validation or build step, owner/role, and acceptance check; use scoring only to support the decision.');
+  }
+
+  if (shapes.includes('pricing')) {
+    guidance.push('Pricing shape: recommend concrete tiers or pricing options with target user, included features or limits, price anchors or relative bands, first pricing experiment, risk checks, and labeled assumptions; do not invent unsupported exact prices.');
   }
 
   if (shapes.includes('persona')) {
@@ -120,7 +129,9 @@ function buildTaskShapeGuidance(shapes: DeliverableShape[]): string[] {
 function resolvePrimaryDeliverableShape(shapes: DeliverableShape[]): DeliverableShape | undefined {
   if (shapes.includes('faq')) return 'faq';
   if (shapes.includes('acceptance_criteria')) return 'acceptance_criteria';
-  if (shapes.includes('prioritization') || shapes.includes('persona')) return undefined;
+  if (shapes.includes('pricing')) return 'pricing';
+  if (shapes.includes('prioritization')) return 'prioritization';
+  if (shapes.includes('persona')) return undefined;
   if (shapes.includes('decision_comparison')) return 'decision_comparison';
   if (shapes.includes('plan')) return 'plan';
   if (shapes.includes('checklist')) return 'checklist';
@@ -203,28 +214,74 @@ function buildDeliverableContract(shape: DeliverableShape | undefined): string |
 - [ ] Open assumptions are marked for confirmation
 - [ ] The operator knows what to do next and when to escalate`;
     case 'prioritization':
-      return `# Prioritization Decision
+      return `# MVP Scope And Prioritization Decision
 
-## 1. Goal And Constraints
+## 1. Recommended Scope First
+- Do now / MVP:
+- Do next:
+- Defer:
+- Explicit non-goals:
+- First validation or build step:
+- Owner/role:
+- Acceptance check:
+
+## 2. Why This Scope
 - Product/operator goal:
 - Constraints:
-- Framework used:
+- Main tradeoff:
+- Assumptions to confirm:
 
-## 2. Scoring Matrix
+## 3. Supporting Scoring Matrix
 | Item | User/Business Value | Effort | Risk | Confidence | Score/Rank | Rationale |
 | --- | --- | --- | --- | --- | --- | --- |
 | 1. | | | | | | |
 | 2. | | | | | | |
 
-## 3. Recommended Scope
-- Do now:
-- Do next:
-- Defer:
+## 4. Implementation Or Validation Steps
+| Step | Owner/Role | Action | Artifact | Success Metric | Acceptance Check |
+| --- | --- | --- | --- | --- | --- |
+| 1. | | | | | |
+| 2. | | | | | |
 
-## 4. Next-Step Checklist And Acceptance Checks
+## 5. Risk And Deferral Checks
 - [ ] Owner can explain why each top item was chosen
-- [ ] Deferred items have a reason
-- [ ] First implementation or validation step is clear`;
+- [ ] Deferred items have a reason and revisit trigger
+- [ ] First implementation or validation step is clear
+- [ ] Acceptance check is observable by a non-technical operator`;
+    case 'pricing':
+      return `# Pricing Recommendation
+
+## 1. Recommendation Summary
+- Recommended pricing model:
+- Starting tiers or options:
+- Target user for the first test:
+- First pricing experiment:
+- Assumptions to validate:
+
+## 2. Pricing Tiers Or Options
+| Tier/Option | Target User | Included Features Or Limits | Price Anchor Or Relative Band | Why It Fits | Risk |
+| --- | --- | --- | --- | --- | --- |
+| 1. | | | | | |
+| 2. | | | | | |
+
+## 3. Assumptions And Guardrails
+- Supplied facts used:
+- Labeled assumptions:
+- Exact prices not supported by the input:
+- Guardrails for discounting or exceptions:
+
+## 4. First Experiment
+| Step | Owner/Role | Action | Artifact | Success Metric | Acceptance Check |
+| --- | --- | --- | --- | --- | --- |
+| 1. | | | | | |
+| 2. | | | | | |
+
+## 5. Risk And Validation Checks
+- [ ] Each tier or option has a clear target user
+- [ ] Included limits or features are explicit
+- [ ] Price anchors are labeled as supplied, relative, or assumed
+- [ ] First experiment can be run without another strategy pass
+- [ ] Risks and rollback or adjustment signals are visible`;
     case 'persona':
       return `# Persona Packet
 
@@ -396,7 +453,7 @@ export function buildExecutionPrompt(request: ExecutionRequest): string {
       for (const item of taskShapeGuidance) {
         prompt += `- ${item}\n`;
       }
-      prompt += `Do not let SWOT, risk, overview, or documentation-wrapper sections replace the requested plan, comparison, FAQ, prioritization, persona, or criteria deliverable.\n\n`;
+      prompt += `Do not let SWOT, risk, overview, or documentation-wrapper sections replace the requested plan, comparison, FAQ, prioritization, pricing, persona, or criteria deliverable.\n\n`;
     }
   }
 

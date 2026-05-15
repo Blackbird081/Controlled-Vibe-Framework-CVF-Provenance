@@ -1,0 +1,163 @@
+{
+  "schema": "cvf.evt4.output_quality_ab.v1",
+  "config": {
+    "provider": "deepseek",
+    "cfgA": "direct_deepseek",
+    "cfgB": "cvf_api_execute",
+    "model": "deepseek-v4-pro",
+    "providerTimeoutMs": 120000,
+    "directEmptyRetries": 2,
+    "taskIdFilter": [
+      "EVT4-09",
+      "EVT4-05"
+    ]
+  },
+  "summary": {
+    "startedAt": "2026-05-15T16:40:13.912Z",
+    "completedAt": "2026-05-15T16:45:01.913Z",
+    "corpusSize": 20,
+    "runLimit": 2,
+    "completedPairs": 2,
+    "cfgBReceipts": 2,
+    "safetyFailures": 0,
+    "medianDeltaNormalized": -0.12,
+    "twoPassExpansion": false,
+    "cfgBExpansionReceipts": 0,
+    "cfgBMedianDurationMs": 98831,
+    "cfgBMedianOutputTokens": 3072,
+    "decisionRuleMet": false,
+    "reviewerModes": [
+      "openai:gpt-4o"
+    ]
+  },
+  "records": [
+    {
+      "id": "EVT4-05",
+      "title": "Pricing tiers",
+      "templateId": "pricing_strategy",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 191,
+        "model": "deepseek-v4-pro",
+        "outputHash": "4a6a102e569159d70686ad4c31c2e8a2cf3e38f7e9ca2191d26001ea5512f345",
+        "outputExcerpt": "Here’s a simple, action-focused plan you can run with right away, even if you’re not technical. I’ve kept everything clear and broken it into bite-sized pieces. --- ## Assumptions I’ve made (so we’re on the same page) - Your tiny CRM is **for solo freelancers** (e.g., designers, consultants, copywriters, photographers). - It’s a **self-serve, cloud-based tool** (desktop + mobile web, maybe an app). - It already covers the basics: **contacts, deals/pipeline, tasks/reminders, notes, and maybe a simple email log**. - There are **no team features** – it’s strictly for one person. - You can charge via credit card / PayPal (you’ll set up Stripe or similar later). If any of these are wrong, just tweak the numbers—the structure will still hold. --- ## Simple Pricing Tiers (Two tiers + annual option) Keep it dead simple. Freelancers hate complex plans. I recommend **one free plan** and **one paid plan**, with an annual discount to lock in loyal users. | Tier | Price (monthly) | What’s included | Best for | |------------------------|-------------------------|------------------------------------------------------------------------------------------------------|--------------------------------",
+        "normalized": 0.88,
+        "usage": {
+          "prompt_tokens": 53,
+          "completion_tokens": 1200,
+          "total_tokens": 1253,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 672
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 53
+        },
+        "retryAttempts": 0
+      },
+      "cfgB": {
+        "templateId": "pricing_strategy",
+        "durationMs": 98831,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp7596qt-71mxub",
+        "outputHash": "efa6a862b6073785eca0771b49da08a3939a58a6223af124f7e9b7e4baaafafd",
+        "outputExcerpt": "# Pricing Recommendation ## 1. Recommendation Summary - **Recommended pricing model:** Tiered subscription with a free entry point (Freemium) and paid tiers that grow with a freelancer’s client base and feature needs. - **Starting tiers or options:** - **Free** – single user, up to 5 active contacts, basic pipeline. - **Starter** – single user, up to 50 contacts, core CRM plus simple pipeline and templates. - **Pro** – single user, up to 200 contacts, advanced pipeline, basic reporting, and integrations. - **Team** (optional, for later) – up to 5 users, 500 contacts, shared pipeline, basic permissions. - **Target user for the first test:** Freelancers who manage 10–30 client relationships and are currently using spreadsheets or scattered free tools. - **First pricing experiment:** Validate the Starter price by showing a waitlist page with a short price‑sensitivity survey (Van Westendorp), then launch the Starter tier to early adopters with a 14‑day free trial and measure conversion. - **Assumptions to validate:** - The core value that makes a freelancer pay is pipeline visibility and time saved versus a spreadsheet. - Freelancers will pay $8–$12/month for a tiny CRM that solves tha",
+        "normalized": 0.76,
+        "usage": {
+          "inputTokens": 1289,
+          "outputTokens": 3072,
+          "totalTokens": 4361
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 5,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a clear and simple pricing structure with rationale for each tier, focusing on freelancers' needs."
+        },
+        "cfgB": {
+          "usefulness": 3,
+          "completeness": 5,
+          "structure": 4,
+          "specificity": 3,
+          "governanceSafety": 4,
+          "rationale": "CFG-B offers a detailed pricing strategy with multiple tiers and future considerations, but may overwhelm with complexity."
+        }
+      },
+      "deltaNormalized": -0.12
+    },
+    {
+      "id": "EVT4-09",
+      "title": "MVP scope",
+      "templateId": "feature_prioritization",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 169,
+        "model": "deepseek-v4-pro",
+        "outputHash": "ae2862a96bf2b08d4faa792524497b2d44f0b48be05d70dca713e9535dbcc62f",
+        "outputExcerpt": "### MVP Scope: Weekend Craft Market Inventory Tracker **What this is:** A simple digital tally sheet to replace pen and paper for a craft seller who needs to track what they bring to a market, what sells, and what’s left—without extra complexity. --- ## ✅ MVP In-Scope Features The absolute essentials to solve the problem: 1. **Product List** - Add items you’re selling (name, short description, price, initial stock you brought). - View all items with current stock levels. 2. **Record a Sale** - Quickly select an item and enter how many sold. - Stock count updates automatically. - (Optional but highly recommended) Auto-calculate revenue from the sale. 3. **End-of-Day Snapshot** - See a summary: total items sold, total revenue for the day. - See which items still have stock to pack up. 4. **Simple Corrections** - Manually adjust stock if you miscount or accept a return. **Out of scope (on purpose)** – to keep it manageable: - No barcode scanning - No online store sync - No multi-market history tracking (single day focus) - No customer data or payment processing - No user login / multiple staff accounts --- ## 🧠 Assumptions To make the MVP simple but still realistic: - You sell handma",
+        "normalized": 0.96,
+        "usage": {
+          "prompt_tokens": 56,
+          "completion_tokens": 1200,
+          "total_tokens": 1256,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 661
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 56
+        },
+        "retryAttempts": 0
+      },
+      "cfgB": {
+        "templateId": "feature_prioritization",
+        "durationMs": 97414,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp75c8ea-g9xln0",
+        "outputHash": "c81df9dcf50b55faf966245b3daec87e0cd9295b55740cfa86bfd757397d28ca",
+        "outputExcerpt": "# MVP Scope And Prioritization Decision ## 1. Recommended Scope First - **Do now / MVP:** 1. Record a sale and automatically reduce stock (manual entry per transaction). 2. View current stock count by item. 3. Add and update inventory items (name, starting quantity, sale price). 4. Offline-capable setup (works at the market without cellular data). - **Do next:** - End‑of‑market sales summary (units sold, total revenue). - Low‑stock alert (highlight items with ≤2 units remaining). - Restock list export. - Simple weekly/monthly sales trend. - **Defer:** - Barcode scanning or NFC tags. - Multi‑user or helper access. - Cost/profit margin calculations. - Integration with an online store. - Inventory valuation reports. - Photo attachment for each item. - **Explicit non-goals:** - Accounting software integration. - Payment processing. - Automatic reordering. - Complex reporting dashboards. - **First validation or build step:** Prototype the tracker with a Google Sheet template. Load 5 real items, simulate 10 sales in a dry run, and compare final stock numbers against physical items. - **Owner/role:** You (the craft seller). No IT support needed; you can build and run it yourself. - **Acce",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 1290,
+          "outputTokens": 3072,
+          "totalTokens": 4362
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 4,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a clear, structured, and detailed scope with specific features and exclusions, making it highly useful and safe for the intended user."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a well-prioritized scope with a focus on practicality and constraints, but is slightly less structured and specific compared to CFG-A."
+        }
+      },
+      "deltaNormalized": -0.12
+    }
+  ]
+}

@@ -58,7 +58,7 @@ describe('buildExecutionPrompt', () => {
     expect(prompt).toContain('aim for 700-1100 output tokens');
     expect(prompt).toContain('compare each named or reasonably inferred option');
     expect(prompt).toContain('Task-shape requirements override generic template headings when they conflict');
-    expect(prompt).toContain('Do not let SWOT, risk, overview, or documentation-wrapper sections replace the requested plan, comparison, FAQ, prioritization, persona, or criteria deliverable');
+    expect(prompt).toContain('Do not let SWOT, risk, overview, or documentation-wrapper sections replace the requested plan, comparison, FAQ, prioritization, pricing, persona, or criteria deliverable');
     expect(prompt).toContain('Decision Comparison Memo');
     expect(prompt).toContain('It replaces generic template headings when they conflict');
     expect(prompt).not.toContain('Operational Documentation Packet');
@@ -157,7 +157,7 @@ describe('buildExecutionPrompt', () => {
     expect(prompt).not.toContain('Operational Documentation Packet');
   });
 
-  it('keeps the feature-prioritization skeleton plus shape guidance for backlog triage tasks', () => {
+  it('uses a scope-first contract for feature-prioritization backlog triage tasks', () => {
     const prompt = buildExecutionPrompt({
       ...baseRequest,
       templateId: 'feature_prioritization',
@@ -172,11 +172,43 @@ describe('buildExecutionPrompt', () => {
     });
 
     expect(prompt).toContain('Prioritization shape');
-    expect(prompt).toContain('Feature Prioritization Output');
-    expect(prompt).toContain('Scoring Matrix');
-    expect(prompt).not.toContain('Prioritization Decision');
-    expect(prompt).toContain('score or rank each item');
-    expect(prompt).toContain('next-step checklist and acceptance checks');
+    expect(prompt).toContain('MVP Scope And Prioritization Decision');
+    expect(prompt).toContain('Recommended Scope First');
+    expect(prompt).toContain('Do now / MVP');
+    expect(prompt).toContain('First validation or build step');
+    expect(prompt).toContain('Owner/role');
+    expect(prompt).toContain('Acceptance check');
+    expect(prompt).toContain('Supporting Scoring Matrix');
+    expect(prompt).toContain('scoring only to support the decision');
+    expect(prompt).not.toContain('Feature Prioritization Output');
+  });
+
+  it('uses a concrete pricing recommendation contract for pricing strategy tasks', () => {
+    const prompt = buildExecutionPrompt({
+      ...baseRequest,
+      templateId: 'pricing_strategy',
+      templateName: 'Pricing Strategy Review',
+      intent: 'Recommend pilot pricing and compare freemium vs paid-only for a small appointment booking app.',
+      inputs: {
+        product: 'Appointment booking app for small salons',
+        currentPrice: 'No current price. Considering freemium vs paid-only.',
+        model: 'Freemium',
+        target: 'B2B SMB',
+        competitors: 'Calendly-style tools have free tiers and paid upgrades.',
+      },
+    });
+
+    expect(prompt).toContain('Pricing shape');
+    expect(prompt).toContain('Pricing Recommendation');
+    expect(prompt).toContain('Pricing Tiers Or Options');
+    expect(prompt).toContain('Target User');
+    expect(prompt).toContain('Included Features Or Limits');
+    expect(prompt).toContain('Price Anchor Or Relative Band');
+    expect(prompt).toContain('First Experiment');
+    expect(prompt).toContain('Risk And Validation Checks');
+    expect(prompt).toContain('labeled assumptions');
+    expect(prompt).toContain('do not invent unsupported exact prices');
+    expect(prompt).not.toContain('Pricing Strategy Output');
   });
 
   it('keeps generic template skeletons when no shape-specific contract matches', () => {
