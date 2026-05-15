@@ -114,6 +114,114 @@ OUTPUT FORMAT (use these exact section headings in English):
 - Quote sent or escalation recorded`,
     },
     {
+        id: 'faq_outline',
+        name: 'FAQ Outline',
+        icon: '❓',
+        description: 'Tạo FAQ có câu hỏi, câu trả lời trực tiếp, edge cases và publish readiness checks',
+        category: 'content',
+        fields: [
+            { id: 'subject', type: 'text', label: 'FAQ nói về việc gì?', placeholder: 'VD: Checkout flow cho khóa học online', required: true, section: 'required', hint: 'Tên workflow, sản phẩm hoặc phần cần giải thích', example: 'Checkout flow cho khóa học online' },
+            { id: 'context', type: 'textarea', label: 'Bối cảnh / ghi chú', placeholder: 'Dán thông tin thô, câu hỏi hay gặp, policy...', required: true, rows: 6, section: 'required', hint: 'Thông tin để viết câu trả lời cụ thể', example: 'Người mua chọn khóa học, nhập email, thanh toán, nhận link enroll. Hay hỏi về refund và lỗi thanh toán.' },
+            { id: 'audience', type: 'text', label: 'Audience', placeholder: 'VD: khách hàng mới, support operators', required: false, section: 'advanced', hint: 'Ai sẽ đọc FAQ', example: 'Customers and support operators' },
+            { id: 'mustCover', type: 'textarea', label: 'Must cover', placeholder: 'Payment, access, troubleshooting...', required: false, rows: 3, section: 'advanced', hint: 'Các nhóm câu hỏi phải có', example: 'Payment, enrollment access, refund, troubleshooting' },
+        ],
+        intentPattern: `INTENT:
+Tôi muốn tạo FAQ outline cho [subject].
+
+CONTEXT:
+[context]
+
+AUDIENCE: [audience]
+MUST COVER:
+[mustCover]
+
+OUTPUT FORMAT:
+- Audience and Scope → FAQ Entries → Edge Cases → Publish Readiness Checks
+
+SUCCESS CRITERIA:
+- Có 8-12 câu hỏi cụ thể
+- Câu trả lời trực tiếp, dễ hiểu
+- Bao gồm payment/access/troubleshooting khi liên quan
+- Có checklist xác nhận có thể publish`,
+        outputExpected: ['Audience and Scope', 'FAQ Entries', 'Edge Cases', 'Publish Readiness Checks'],
+        difficulty: 'easy',
+        outputTemplate: `# FAQ Outline
+
+## 1. Audience And Scope
+- Who this FAQ is for:
+- What workflow or product area it covers:
+
+## 2. FAQ Entries
+| Question | Direct Answer | When It Applies | Owner/Source To Confirm |
+| --- | --- | --- | --- |
+| 1. | | | |
+| 2. | | | |
+
+## 3. Must-Include Edge Cases
+- Payment/access/troubleshooting questions:
+- Policy or wording that must stay unchanged:
+
+## 4. Publish Readiness Checks
+- [ ] Answers are direct and understandable by the target audience
+- [ ] Missing facts are marked as assumptions or confirmation items
+- [ ] Support/operator escalation path is clear`,
+    },
+    {
+        id: 'acceptance_criteria',
+        name: 'Acceptance Criteria',
+        icon: '✅',
+        description: 'Viết acceptance criteria quan sát được, test được, kèm data/state/error expectations',
+        category: 'content',
+        fields: [
+            { id: 'feature', type: 'text', label: 'Feature / workflow', placeholder: 'VD: Dashboard weekly sales', required: true, section: 'required', hint: 'Tính năng hoặc workflow cần kiểm tra', example: 'Dashboard hiển thị weekly sales, conversion, open tasks' },
+            { id: 'context', type: 'textarea', label: 'Bối cảnh / yêu cầu', placeholder: 'Dữ liệu, trạng thái, role, constraints...', required: true, rows: 6, section: 'required', hint: 'Thông tin để viết tiêu chí test được', example: 'Dashboard cần cho operator kiểm weekly sales, conversion, open tasks trước handoff.' },
+            { id: 'users', type: 'text', label: 'Users / roles', placeholder: 'VD: operator, manager, customer', required: false, section: 'advanced', hint: 'Vai trò dùng tính năng', example: 'Non-technical operator and manager' },
+            { id: 'states', type: 'textarea', label: 'States to cover', placeholder: 'Empty, error, loading, permission...', required: false, rows: 3, section: 'advanced', hint: 'Các state cần test', example: 'Empty state, stale data, permission denied, failed refresh' },
+        ],
+        intentPattern: `INTENT:
+Tôi muốn viết acceptance criteria cho [feature].
+
+CONTEXT:
+[context]
+
+USERS / ROLES: [users]
+STATES TO COVER:
+[states]
+
+OUTPUT FORMAT:
+- Scope Under Test → Criteria By Workflow → Empty/Error/Edge States → Handoff Checks
+
+SUCCESS CRITERIA:
+- Mỗi tiêu chí quan sát được và test được
+- Có Given/When/Then hoặc pass/fail check
+- Bao gồm data source, refresh/state, empty/error expectations
+- Người không chuyên có thể xác nhận trước handoff`,
+        outputExpected: ['Scope Under Test', 'Criteria By Workflow', 'Empty/Error/Edge States', 'Handoff Checks'],
+        difficulty: 'easy',
+        outputTemplate: `# Acceptance Criteria Packet
+
+## 1. Scope Under Test
+- Feature/workflow:
+- User or operator outcome:
+
+## 2. Criteria By Workflow
+| Workflow Area | Given | When | Then | Data/State Requirement | Pass/Fail Check |
+| --- | --- | --- | --- | --- | --- |
+| 1. | | | | | |
+| 2. | | | | | |
+
+## 3. Empty, Error, And Edge States
+- Empty state:
+- Error state:
+- Permission/access state:
+- Refresh or data-latency state:
+
+## 4. Handoff Checks
+- [ ] Each criterion is observable
+- [ ] Each criterion can be verified by a non-technical operator or tester
+- [ ] Open assumptions are listed`,
+    },
+    {
         id: 'email_template',
         name: 'Mẫu Email',
         icon: '📧',

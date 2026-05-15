@@ -4,14 +4,16 @@
 
 The active continuation handoff for new updates is:
 
-`AGENT_HANDOFF_V4_2026-05-12.md`
+`AGENT_HANDOFF_V5_2026-05-15.md`
 
 `AGENT_HANDOFF.md` remains historical context but has reached the governed
 markdown size ceiling. `AGENT_HANDOFF_V2_2026-05-09.md` is also historical for
 new updates after QBS-10. `AGENT_HANDOFF_V3_2026-05-10.md` is historical for
 new updates after QBS-40 because it reached the governed markdown size ceiling.
-Do not append new status there; create/update the active V4 handoff or open a
-later versioned handoff when V4 approaches the limit.
+`AGENT_HANDOFF_V4_2026-05-12.md` is historical for new updates after the F-1
+prompt-contract tranche because it reached the governed markdown advisory
+ceiling. Do not append new status there; create/update the active V5 handoff or
+open a later versioned handoff when V5 approaches the limit.
 
 ## Critical Repository Boundary - 2026-05-09
 

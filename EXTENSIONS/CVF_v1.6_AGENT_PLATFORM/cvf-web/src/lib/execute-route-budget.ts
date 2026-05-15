@@ -5,12 +5,16 @@ const VALIDATION_RETRY_PROVIDER_BUDGET_MS = 65_000;
 const TRUSTED_NONCODER_TEMPLATE_IDS = new Set([
   'email_template',
   'documentation',
+  'faq_outline',
+  'acceptance_criteria',
   'competitor_review',
   'risk_assessment',
   'user_persona',
   'feature_prioritization',
   'pricing_strategy',
   'strategy_analysis',
+  'operator_plan',
+  'decision_memo',
 ]);
 
 export function resolveExecutionMaxTokens(templateId?: string): number | undefined {

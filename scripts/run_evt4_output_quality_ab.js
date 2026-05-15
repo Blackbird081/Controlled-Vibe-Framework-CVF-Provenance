@@ -25,25 +25,25 @@ const MODEL = process.env.EVT4_ALIBABA_MODEL || 'qwen-turbo';
 
 const TASKS = [
   ['EVT4-01', 'documentation', 'Onboarding checklist', 'Create a practical onboarding checklist for a new support teammate joining a local-first SaaS product team.'],
-  ['EVT4-02', 'strategy_analysis', 'Launch options memo', 'Compare three go-to-market options for a simple appointment booking app for small salons.'],
+  ['EVT4-02', 'decision_memo', 'Launch options memo', 'Compare three go-to-market options for a simple appointment booking app for small salons.'],
   ['EVT4-03', 'feature_prioritization', 'Feature priority', 'Prioritize five features for a habit tracking app used by busy parents.'],
   ['EVT4-04', 'user_persona', 'Persona synthesis', 'Create two user personas for a meal planning app for college students.'],
   ['EVT4-05', 'pricing_strategy', 'Pricing tiers', 'Suggest simple pricing tiers for a tiny CRM aimed at freelancers.'],
   ['EVT4-06', 'competitor_review', 'Competitor review', 'Review the likely competitor landscape for a browser extension that summarizes meeting notes.'],
   ['EVT4-07', 'documentation', 'Builder handoff', 'Write a builder handoff for a landing page contact form and thank-you email flow.'],
-  ['EVT4-08', 'strategy_analysis', 'Ops plan', 'Create a 30-day operations plan for launching a neighborhood tutoring marketplace.'],
+  ['EVT4-08', 'operator_plan', 'Ops plan', 'Create a 30-day operations plan for launching a neighborhood tutoring marketplace.'],
   ['EVT4-09', 'feature_prioritization', 'MVP scope', 'Select an MVP scope for a simple inventory tracker for a weekend craft market seller.'],
   ['EVT4-10', 'user_persona', 'Research notes', 'Turn rough notes into user personas for a budgeting app for first-job graduates.'],
   ['EVT4-11', 'pricing_strategy', 'Pilot pricing', 'Recommend pilot pricing for a lightweight team retro tool sold to small agencies.'],
   ['EVT4-12', 'documentation', 'SOP draft', 'Draft a standard operating procedure for handling customer refund requests.'],
-  ['EVT4-13', 'strategy_analysis', 'Channel choice', 'Compare content marketing, partnerships, and paid ads for a niche newsletter product.'],
+  ['EVT4-13', 'decision_memo', 'Channel choice', 'Compare content marketing, partnerships, and paid ads for a niche newsletter product.'],
   ['EVT4-14', 'feature_prioritization', 'Backlog triage', 'Triage a backlog for a volunteer event signup app with limited engineering time.'],
   ['EVT4-15', 'competitor_review', 'Differentiation', 'Identify differentiation angles for a simple invoice reminder app.'],
-  ['EVT4-16', 'documentation', 'FAQ plan', 'Create an FAQ outline for a small online course checkout flow.'],
+  ['EVT4-16', 'faq_outline', 'FAQ plan', 'Create an FAQ outline for a small online course checkout flow.'],
   ['EVT4-17', 'user_persona', 'B2B persona', 'Create a buyer and end-user persona for a simple internal approval tracker.'],
   ['EVT4-18', 'pricing_strategy', 'Freemium decision', 'Evaluate whether a small note-taking web app should use freemium or paid-only pricing.'],
-  ['EVT4-19', 'strategy_analysis', 'Retention plan', 'Suggest a retention plan for a simple pet care reminder app.'],
-  ['EVT4-20', 'documentation', 'Acceptance criteria', 'Write acceptance criteria for a dashboard that shows weekly sales, conversion, and open tasks.'],
+  ['EVT4-19', 'operator_plan', 'Retention plan', 'Suggest a retention plan for a simple pet care reminder app.'],
+  ['EVT4-20', 'acceptance_criteria', 'Acceptance criteria', 'Write acceptance criteria for a dashboard that shows weekly sales, conversion, and open tasks.'],
 ].map(([id, templateId, title, prompt]) => ({ id, templateId, title, prompt }));
 
 function resolveAlibabaKeyName() {
@@ -118,6 +118,36 @@ function buildTemplateInputs(task) {
         options: 'Use the options named in the task when provided; otherwise infer practical options and label assumptions clearly.',
         constraints: 'Keep assumptions explicit, avoid risky unsupported claims, include concrete next steps.',
         priority: 'Growth',
+      };
+    case 'operator_plan':
+      return {
+        goal: task.title,
+        context: task.prompt,
+        timeline: /\b30[- ]?day\b/i.test(task.prompt) ? '30 days' : 'Suggested phased plan',
+        owners: 'Non-technical operator, founder, support/ops role as applicable.',
+        constraints: 'Small team, limited budget, include concrete first actions and measurable checks.',
+      };
+    case 'decision_memo':
+      return {
+        decision: task.title,
+        context: task.prompt,
+        options: 'Use every option named in the task; if options are implicit, infer practical options and label assumptions clearly.',
+        constraints: 'Low budget, non-technical operator, needs a clear first activation step.',
+        criteria: 'Cost, speed, effort, risk, confidence, fit for the stated audience.',
+      };
+    case 'faq_outline':
+      return {
+        subject: task.title,
+        context: task.prompt,
+        audience: 'Customers and support operators',
+        mustCover: 'Payment, access, troubleshooting, refund or escalation when relevant.',
+      };
+    case 'acceptance_criteria':
+      return {
+        feature: task.title,
+        context: task.prompt,
+        users: 'Non-technical operator and manager',
+        states: 'Empty state, stale data, failed refresh, permission/access state.',
       };
     case 'feature_prioritization':
       return {

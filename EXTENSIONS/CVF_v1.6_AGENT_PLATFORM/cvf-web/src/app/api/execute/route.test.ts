@@ -148,7 +148,11 @@ describe('/api/execute', () => {
 
     it('resolves execution token budget only for trusted noncoder templates', () => {
         expect(resolveExecutionMaxTokens('documentation')).toBe(2048);
+        expect(resolveExecutionMaxTokens('faq_outline')).toBe(2048);
+        expect(resolveExecutionMaxTokens('acceptance_criteria')).toBe(2048);
         expect(resolveExecutionMaxTokens('strategy_analysis')).toBe(2048);
+        expect(resolveExecutionMaxTokens('operator_plan')).toBe(2048);
+        expect(resolveExecutionMaxTokens('decision_memo')).toBe(2048);
         expect(resolveExecutionMaxTokens('custom_template')).toBeUndefined();
         expect(resolveExecutionMaxTokens(undefined)).toBeUndefined();
     });

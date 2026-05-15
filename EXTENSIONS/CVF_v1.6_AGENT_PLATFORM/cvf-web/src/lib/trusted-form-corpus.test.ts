@@ -11,6 +11,10 @@ const ACTIVATION_CASES = [
   ['email_template', 'VN', 'viết email cho khách hàng'],
   ['documentation', 'EN', 'document this process for the team'],
   ['documentation', 'VN', 'viết tài liệu quy trình onboarding'],
+  ['faq_outline', 'EN', 'create an FAQ for the checkout flow'],
+  ['faq_outline', 'VN', 'tạo FAQ cho khách hàng mới'],
+  ['acceptance_criteria', 'EN', 'write acceptance criteria for the dashboard'],
+  ['acceptance_criteria', 'VN', 'viết tiêu chí nghiệm thu cho workflow thanh toán'],
   ['competitor_review', 'EN', 'analyze my competitors in the market'],
   ['competitor_review', 'VN', 'phân tích đối thủ cạnh tranh của tôi'],
   ['risk_assessment', 'EN', 'identify the risks for this project launch'],
@@ -23,6 +27,10 @@ const ACTIVATION_CASES = [
   ['pricing_strategy', 'VN', 'chiến lược giá cho sản phẩm mới'],
   ['strategy_analysis', 'EN', 'analyze this strategy for entering a new market'],
   ['strategy_analysis', 'VN', 'phân tích chiến lược mở rộng thị trường'],
+  ['operator_plan', 'EN', 'create a 30-day operations plan for launch'],
+  ['operator_plan', 'VN', 'lập kế hoạch vận hành 30 ngày cho marketplace'],
+  ['decision_memo', 'EN', 'write a decision memo to compare three growth channels'],
+  ['decision_memo', 'VN', 'so sánh các lựa chọn kênh marketing và đưa recommendation'],
   ['meeting_notes', 'EN', 'take meeting notes for today'],
   ['meeting_notes', 'VN', 'tạo biên bản họp sprint review tuần này'],
   ['job_description', 'EN', 'write a job description for a senior developer'],
@@ -92,7 +100,7 @@ const ACTIVATION_CASES = [
 describe('trusted-form-corpus — activation matrix', () => {
   it('covers every trusted form with EN and VN cases', () => {
     const covered = new Set(ACTIVATION_CASES.map(([templateId]) => templateId));
-    expect(covered.size).toBe(40);
+    expect(covered.size).toBe(44);
     expect([...covered].sort()).toEqual(Object.keys(TRUSTED_FORM_MAP).sort());
   });
 

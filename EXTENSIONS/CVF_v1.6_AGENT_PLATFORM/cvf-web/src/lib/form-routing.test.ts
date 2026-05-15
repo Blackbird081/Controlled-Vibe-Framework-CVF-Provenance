@@ -24,8 +24,8 @@ function withFlag(value: 'true' | 'false', fn: () => void) {
 }
 
 describe('form-routing — TRUSTED_FORM_MAP integrity', () => {
-  it('has exactly 40 entries', () => {
-    expect(Object.keys(TRUSTED_FORM_MAP)).toHaveLength(40);
+  it('has exactly 44 entries', () => {
+    expect(Object.keys(TRUSTED_FORM_MAP)).toHaveLength(44);
   });
 
   it('all entries have id, label, and at least one activationPattern', () => {
@@ -121,9 +121,13 @@ describe('form-routing — routeIntent integration (W126 precedence)', () => {
         ['Lập danh sách ưu tiên tính năng cho phiên bản tiếp theo của sản phẩm SaaS', 'feature_prioritization'],
         ['Xây dựng chiến lược định giá cho sản phẩm SaaS B2B trong thị trường SME', 'pricing_strategy'],
         ['Tạo tài liệu kỹ thuật cho API tích hợp hệ thống thanh toán', 'documentation'],
+        ['Tạo FAQ cho luồng thanh toán khóa học online', 'faq_outline'],
+        ['Viết acceptance criteria cho dashboard doanh thu tuần', 'acceptance_criteria'],
         ['Viết email xác nhận lịch hẹn với đối tác kinh doanh', 'email_template'],
         ['Phân tích rủi ro khi mở rộng kinh doanh sang thị trường Đông Nam Á', 'risk_assessment'],
         ['Đánh giá cơ hội và thách thức khi ra mắt sản phẩm mới cho phân khúc doanh nghiệp lớn', 'strategy_analysis'],
+        ['Create a 30-day operations plan for a tutoring marketplace launch', 'operator_plan'],
+        ['Compare content marketing partnerships and paid ads for a newsletter', 'decision_memo'],
       ] as const;
 
       for (const [input, expectedTemplateId] of prompts) {

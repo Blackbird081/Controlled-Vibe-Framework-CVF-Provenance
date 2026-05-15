@@ -5,15 +5,26 @@ import { renderTemplateIntent } from '@/lib/template-intent';
 
 const TRUSTED_NONCODER_DEPTH_TEMPLATE_IDS = new Set([
   'documentation',
+  'faq_outline',
+  'acceptance_criteria',
   'competitor_review',
   'risk_assessment',
   'user_persona',
   'feature_prioritization',
   'pricing_strategy',
   'strategy_analysis',
+  'operator_plan',
+  'decision_memo',
 ]);
 
 type DeliverableShape = 'faq' | 'acceptance_criteria' | 'plan' | 'decision_comparison' | 'prioritization' | 'persona';
+
+const SHAPE_SPECIFIC_TEMPLATE_IDS = new Set([
+  'faq_outline',
+  'acceptance_criteria',
+  'operator_plan',
+  'decision_memo',
+]);
 
 function collectRequestText(request: ExecutionRequest): string {
   const inputText = Object.entries(request.inputs)
@@ -256,7 +267,8 @@ export function buildExecutionPrompt(request: ExecutionRequest): string {
   const template = request.templateId ? getTemplateById(request.templateId) : undefined;
   const isTrustedNoncoderTemplate = Boolean(template?.id && TRUSTED_NONCODER_DEPTH_TEMPLATE_IDS.has(template.id));
   const deliverableShapes = isTrustedNoncoderTemplate ? resolveDeliverableShapes(request) : [];
-  const primaryDeliverableShape = resolvePrimaryDeliverableShape(deliverableShapes);
+  const usesShapeSpecificTemplate = Boolean(template?.id && SHAPE_SPECIFIC_TEMPLATE_IDS.has(template.id));
+  const primaryDeliverableShape = usesShapeSpecificTemplate ? undefined : resolvePrimaryDeliverableShape(deliverableShapes);
   const primaryDeliverableContract = buildDeliverableContract(primaryDeliverableShape);
   const taskShapeGuidance = buildTaskShapeGuidance(deliverableShapes);
 

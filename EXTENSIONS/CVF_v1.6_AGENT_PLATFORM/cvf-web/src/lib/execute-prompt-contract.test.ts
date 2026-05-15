@@ -176,6 +176,49 @@ describe('buildExecutionPrompt', () => {
     expect(prompt).not.toContain('shape-specific deliverable contract');
   });
 
+  it('renders the operator-plan template family without falling back to SWOT sections', () => {
+    const prompt = buildExecutionPrompt({
+      ...baseRequest,
+      templateId: 'operator_plan',
+      templateName: 'Operator Plan',
+      intent: 'Create a 30-day operations plan for launching a tutoring marketplace.',
+      inputs: {
+        goal: 'Launch tutoring marketplace',
+        context: 'Need tutor onboarding, parent signup, and matching workflow.',
+        timeline: '30 days',
+        owners: 'Founder, ops lead',
+        constraints: 'Small team, limited budget',
+      },
+    });
+
+    expect(prompt).toContain('Operator Action Plan');
+    expect(prompt).toContain('Use these headings and labels exactly where applicable');
+    expect(prompt).toContain('Timeline And Owners');
+    expect(prompt).not.toContain('SWOT Analysis');
+    expect(prompt).not.toContain('shape-specific deliverable contract');
+  });
+
+  it('renders the acceptance-criteria template family as the primary skeleton', () => {
+    const prompt = buildExecutionPrompt({
+      ...baseRequest,
+      templateId: 'acceptance_criteria',
+      templateName: 'Acceptance Criteria',
+      intent: 'Write acceptance criteria for a sales dashboard.',
+      inputs: {
+        feature: 'Weekly sales dashboard',
+        context: 'Shows weekly sales, conversion, and open tasks.',
+        users: 'Operator and manager',
+        states: 'Empty, stale data, permission denied',
+      },
+    });
+
+    expect(prompt).toContain('Acceptance Criteria Packet');
+    expect(prompt).toContain('Criteria By Workflow');
+    expect(prompt).toContain('Data/State Requirement');
+    expect(prompt).not.toContain('Operational Documentation Packet');
+    expect(prompt).not.toContain('shape-specific deliverable contract');
+  });
+
   it('does not attach CVF Web Redesign DNA for unrelated templates', () => {
     const prompt = buildExecutionPrompt({
       ...baseRequest,
