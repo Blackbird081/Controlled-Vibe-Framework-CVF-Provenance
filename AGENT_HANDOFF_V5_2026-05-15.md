@@ -277,3 +277,27 @@ Current F-4 conclusion:
   recovery/abandonment signals.
 - The CLI analyzer remains useful for local evidence inspection, but it is no
   longer the only way to see the rates.
+
+## F-3 ProcessingScreen Advisory Recheck — 2026-05-15
+
+Codex rechecked the remaining advisory after F-2 and F-4 were closed.
+
+Current status:
+
+- `src/components/ProcessingScreen.tsx` remains at 783 lines.
+- This is still above the 700-line advisory threshold for `frontend_component`
+  and below the 1000-line hard threshold.
+- The original boundary remains binding: do **not** extract pre-emptively.
+
+Recommended extraction targets if the file is next touched:
+
+- Extract the FP button block plus `falsePositiveReportState` state machine
+  into `FalsePositiveReportButton`.
+- Move `resolveApprovalSafeHint` to `src/lib/approval-hints.ts` with focused
+  unit tests.
+
+Current F-3 conclusion:
+
+- F-3 remains advisory-only.
+- No code change is recommended until `ProcessingScreen.tsx` is touched for a
+  functional reason or approaches the hard 1000-line cap.
