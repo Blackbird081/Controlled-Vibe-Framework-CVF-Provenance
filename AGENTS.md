@@ -117,6 +117,13 @@ This command must include live governance E2E and must fail if no DashScope-comp
 
 Never commit or print raw API key values. Use operator-supplied environment variables such as `DASHSCOPE_API_KEY`, `ALIBABA_API_KEY`, and `DEEPSEEK_API_KEY`.
 
+Operator-key continuity note: in this provenance workspace, operator-supplied
+live keys may already exist in
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/.env.local`. Future agents must
+check/load that file before claiming no live key is available. Do not print raw
+values, do not copy that file into the public-sync repository, and only pass the
+values through process environment for live proof commands.
+
 ## Latest Closed Continuation Roadmap
 
 The latest closed continuation roadmap is `docs/roadmaps/CVF_W132_T1_PROVIDER_RUNTIME_STABILITY_AND_BROWSER_SESSION_HARDENING_ROADMAP_2026-04-30.md`.
