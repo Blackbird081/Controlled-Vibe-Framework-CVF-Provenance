@@ -1,0 +1,98 @@
+{
+  "schema": "cvf.evt4.output_quality_ab.v1",
+  "config": {
+    "provider": "deepseek",
+    "cfgA": "direct_deepseek",
+    "cfgB": "cvf_api_execute",
+    "model": "deepseek-v4-pro",
+    "providerTimeoutMs": 120000,
+    "directEmptyRetries": 2,
+    "taskIdFilter": [
+      "EVT4-09"
+    ]
+  },
+  "summary": {
+    "startedAt": "2026-05-15T10:30:24.736Z",
+    "completedAt": "2026-05-15T10:32:50.986Z",
+    "corpusSize": 20,
+    "runLimit": 1,
+    "completedPairs": 1,
+    "cfgBReceipts": 1,
+    "safetyFailures": 0,
+    "medianDeltaNormalized": -0.19999999999999996,
+    "twoPassExpansion": false,
+    "cfgBExpansionReceipts": 0,
+    "cfgBMedianDurationMs": 96796,
+    "cfgBMedianOutputTokens": 3072,
+    "decisionRuleMet": false,
+    "reviewerModes": [
+      "openai:gpt-4o"
+    ]
+  },
+  "records": [
+    {
+      "id": "EVT4-09",
+      "title": "MVP scope",
+      "templateId": "feature_prioritization",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 194,
+        "model": "deepseek-v4-pro",
+        "outputHash": "1dcb7ee256a898b8e2580540bdc7d79e166800408cf7dcd26a6a6e3ef3f0b0fd",
+        "outputExcerpt": "## MVP Scope **What’s in:** A simple, digital inventory list you can open on your phone or computer. It tracks each item you sell, the quantity you have right now, and shows at a glance which products are running low. - **Item master list** – item name, category (optional), cost, selling price - **Current stock quantity** – a number you update after every market or restock - **Low‑stock alerts** – a visual signal (e.g., yellow/red cell) when quantity drops below a level you set (like “make more when fewer than 3”) - **Quick update method** – you can adjust a quantity by typing a new number directly in the spreadsheet (no complex formulas) **What’s out (for now):** - Real‑time sales entry",
+        "normalized": 0.84,
+        "usage": {
+          "prompt_tokens": 56,
+          "completion_tokens": 1200,
+          "total_tokens": 1256,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 1026
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 56
+        },
+        "retryAttempts": 0
+      },
+      "cfgB": {
+        "templateId": "feature_prioritization",
+        "durationMs": 96796,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6s1lbp-zqb2gz",
+        "outputHash": "9dd208b92502bb885880de62451d6b43bf864c41360e6a7cb39ddfcffd7b471a",
+        "outputExcerpt": "## Feature Prioritization Output This output selects the MVP scope for a simple inventory tracker designed for a non-technical weekend craft market seller. All assumptions are clearly marked; adjust as needed for your actual product count and market cadence. **Assumptions** (non-binding) - The seller manages **100–200 unique product SKUs** (handmade items, each with variants). - They sell at **1–3 markets per month** and occasionally fill online orders. - They currently track inventory with memory, paper notes, or a fragmented spreadsheet and waste time hunting for stock levels before and during markets. - The tracker will be built in **Google Sheets** (no code, free, works offline on a tablet/phone after sync). - The seller is the sole operator and will be the implementer. --- ## 1. Scoring Matrix Scoring uses a simplified RICE method tailored to a non-technical operator. Reach is estimated number of items/sales affected per month. Impact and Confidence are 1–5 scales (5 = highest). Effort is in hours of one person’s work, including learning time. Score = (Reach × Impact × Confidence) / Effort. | Feature | User Problem Solved | Reach | Impact | Confidence | Effort | Score | Rank |",
+        "normalized": 0.64,
+        "usage": {
+          "inputTokens": 1257,
+          "outputTokens": 3072,
+          "totalTokens": 4329
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a clear and concise MVP scope with specific features and exclusions, making it useful and complete for the task."
+        },
+        "cfgB": {
+          "usefulness": 3,
+          "completeness": 3,
+          "structure": 3,
+          "specificity": 3,
+          "governanceSafety": 4,
+          "rationale": "CFG-B offers a detailed prioritization but is overly complex for a simple MVP scope, reducing its usefulness and completeness."
+        }
+      },
+      "deltaNormalized": -0.19999999999999996
+    }
+  ]
+}

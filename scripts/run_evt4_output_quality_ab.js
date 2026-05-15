@@ -21,8 +21,13 @@ const SUMMARY_STEM = process.env.EVT4_SUMMARY_STEM || 'CVF_EVT4_OUTPUT_QUALITY_A
 const OUT_JSON = path.join(REPO_ROOT, 'docs', 'assessments', `${OUTPUT_STEM}.json`);
 const OUT_MD = path.join(REPO_ROOT, 'docs', 'assessments', `${SUMMARY_STEM}.md`);
 const LIMIT = Number(process.env.EVT4_LIMIT || process.argv[2] || 20);
+const TASK_ID_FILTER = String(process.env.EVT4_TASK_IDS || '')
+  .split(',')
+  .map((value) => value.trim())
+  .filter(Boolean);
 const PROVIDER = (process.env.EVT4_PROVIDER || 'alibaba').toLowerCase();
 const PROVIDER_TIMEOUT_MS = Number(process.env.EVT4_PROVIDER_TIMEOUT_MS || process.env.CVF_AI_PROVIDER_TIMEOUT_MS || 120_000);
+const DIRECT_EMPTY_RETRIES = Number(process.env.EVT4_DIRECT_EMPTY_RETRIES || 2);
 const PROVIDER_CONFIGS = {
   alibaba: {
     defaultModel: process.env.EVT4_ALIBABA_MODEL || 'qwen-turbo',
@@ -272,28 +277,40 @@ async function directProvider(task) {
   body[PROVIDER_CONFIG.maxTokenParam] = 1200;
   if (PROVIDER === 'openai') delete body.temperature;
 
-  const started = Date.now();
-  const response = await fetch(PROVIDER_CONFIG.endpoint, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${process.env[PROVIDER_CONFIG.canonicalKeyName]}`,
-      Connection: 'close',
-    },
-    body: JSON.stringify(body),
-    signal: AbortSignal.timeout(60_000),
-  });
-  const durationMs = Date.now() - started;
-  const data = await response.json().catch(() => ({}));
-  if (!response.ok) throw new Error(`CFG-A ${PROVIDER}/${MODEL} ${response.status}: ${JSON.stringify(data).slice(0, 240)}`);
-  const output = data.choices?.[0]?.message?.content || '';
-  if (!String(output).trim()) throw new Error(`CFG-A ${PROVIDER}/${MODEL} returned empty output`);
-  return {
-    output,
-    durationMs,
-    usage: data.usage || null,
-    model: MODEL,
-  };
+  let lastEmpty = false;
+  let totalDurationMs = 0;
+  for (let attempt = 0; attempt <= DIRECT_EMPTY_RETRIES; attempt++) {
+    const started = Date.now();
+    const response = await fetch(PROVIDER_CONFIG.endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${process.env[PROVIDER_CONFIG.canonicalKeyName]}`,
+        Connection: 'close',
+      },
+      body: JSON.stringify(body),
+      signal: AbortSignal.timeout(60_000),
+    });
+    const durationMs = Date.now() - started;
+    totalDurationMs += durationMs;
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(`CFG-A ${PROVIDER}/${MODEL} ${response.status}: ${JSON.stringify(data).slice(0, 240)}`);
+    const output = data.choices?.[0]?.message?.content || '';
+    if (String(output).trim()) {
+      return {
+        output,
+        durationMs: totalDurationMs,
+        usage: data.usage || null,
+        model: MODEL,
+        retryAttempts: attempt,
+      };
+    }
+    lastEmpty = true;
+    if (attempt < DIRECT_EMPTY_RETRIES) await new Promise((resolve) => setTimeout(resolve, 750));
+  }
+
+  if (lastEmpty) throw new Error(`CFG-A ${PROVIDER}/${MODEL} returned empty output after ${DIRECT_EMPTY_RETRIES + 1} attempts`);
+  throw new Error(`CFG-A ${PROVIDER}/${MODEL} returned empty output`);
 }
 
 async function postGovernedExecute(payload) {
@@ -307,7 +324,10 @@ async function postGovernedExecute(payload) {
   const durationMs = Date.now() - started;
   const data = await response.json().catch(() => ({}));
   if (!response.ok || data.success !== true) {
-    throw new Error(`CFG-B ${response.status}: ${String(data.error || '').slice(0, 240)}`);
+    const error = new Error(`CFG-B ${response.status}: ${String(data.error || '').slice(0, 240)}`);
+    error.responseStatus = response.status;
+    error.responseBody = data;
+    throw error;
   }
   return {
     output: data.output || '',
@@ -523,7 +543,10 @@ async function main() {
   const records = [];
   try {
     await waitForServer();
-    const tasks = TASKS.slice(0, Math.min(LIMIT, TASKS.length));
+    const taskPool = TASK_ID_FILTER.length
+      ? TASKS.filter((task) => TASK_ID_FILTER.includes(task.id))
+      : TASKS;
+    const tasks = taskPool.slice(0, Math.min(LIMIT, taskPool.length));
     console.log(`EVT-4 A/B: provider=${PROVIDER}, model=${MODEL}, key=${keyName}:PRESENT, reviewer=${reviewerMode()}, pairs=${tasks.length}, twoPass=${TWO_PASS_EXPANSION}`);
     for (const task of tasks) {
       try {
@@ -545,6 +568,7 @@ async function main() {
             outputExcerpt: excerpt(cfgA.output),
             normalized: scoreA,
             usage: cfgA.usage,
+            retryAttempts: cfgA.retryAttempts || 0,
           },
           cfgB: {
             templateId: task.templateId,
@@ -566,7 +590,22 @@ async function main() {
         const expansionSuffix = cfgB.expansion ? ` expansionReceipts=${cfgB.expansion.pass1.receiptPresent && cfgB.expansion.pass2.receiptPresent}` : '';
         console.log(`${task.id} delta=${record.deltaNormalized.toFixed(2)} A=${scoreA.toFixed(2)} B=${scoreB.toFixed(2)}${expansionSuffix}`);
       } catch (error) {
-        records.push({ id: task.id, title: task.title, templateId: task.templateId, status: 'failed', error: error instanceof Error ? error.message : String(error) });
+        records.push({
+          id: task.id,
+          title: task.title,
+          templateId: task.templateId,
+          status: 'failed',
+          error: error instanceof Error ? error.message : String(error),
+          errorDetail: error instanceof Error && error.responseBody
+            ? {
+                responseStatus: error.responseStatus || null,
+                outputValidation: error.responseBody.outputValidation || null,
+                governanceEvidenceReceipt: error.responseBody.governanceEvidenceReceipt || null,
+                provider: error.responseBody.provider || null,
+                model: error.responseBody.model || null,
+              }
+            : null,
+        });
         console.log(`${task.id} failed: ${records[records.length - 1].error}`);
       }
       await new Promise((resolve) => setTimeout(resolve, 700));
@@ -577,7 +616,7 @@ async function main() {
 
   const evidence = {
     schema: 'cvf.evt4.output_quality_ab.v1',
-    config: { provider: PROVIDER, cfgA: `direct_${PROVIDER}`, cfgB: TWO_PASS_EXPANSION ? 'cvf_api_execute_two_pass_quality_expansion' : 'cvf_api_execute', model: MODEL, providerTimeoutMs: PROVIDER_TIMEOUT_MS },
+    config: { provider: PROVIDER, cfgA: `direct_${PROVIDER}`, cfgB: TWO_PASS_EXPANSION ? 'cvf_api_execute_two_pass_quality_expansion' : 'cvf_api_execute', model: MODEL, providerTimeoutMs: PROVIDER_TIMEOUT_MS, directEmptyRetries: DIRECT_EMPTY_RETRIES, taskIdFilter: TASK_ID_FILTER },
     summary: summarize(records, startedAt),
     records,
   };

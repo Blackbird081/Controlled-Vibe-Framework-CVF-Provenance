@@ -15,6 +15,55 @@ prompt-contract tranche because it reached the governed markdown advisory
 ceiling. Do not append new status there; create/update the active V5 handoff or
 open a later versioned handoff when V5 approaches the limit.
 
+## Mandatory F-1 Diminishing Returns Stop Rule - 2026-05-15
+
+This rule is agent-enforced. Future agents must obey it without waiting for a
+human reminder.
+
+Canonical stop-rule packet:
+
+`docs/reviews/CVF_F1_DIMINISHING_RETURNS_STOP_RULE_2026-05-15.md`
+
+F-1 output-quality parity work must not continue as open-ended prompt,
+template, model, or token-budget tuning. The current evidence already proves a
+useful product boundary: CVF preserves governance evidence and safety on the
+EVT-4 corpus, but still carries measurable output-quality tax for some
+non-coder deliverables.
+
+Binding instructions:
+
+- Do not continue broad prompt/template/model/token-budget tuning for F-1.
+- Do not increase the trusted non-coder DeepSeek `deepseek-v4-pro` token cap
+  above the retained stable `3072` setting.
+- Do not reintroduce runtime two-pass expansion for F-1.
+- Do not rerun full EVT-4 merely hoping reviewer variance closes the gap.
+- Do not repeat broad family-contract reshaping; R2 is rejected evidence.
+- Retain the lean governed system prompt, DeepSeek `3072` cap, and bounded
+  CFG-A direct-empty retry unless a later explicit roadmap supersedes them.
+
+The one bounded continuation was completed on 2026-05-15. Closure packet:
+
+`docs/reviews/CVF_F1_OUTPUT_QUALITY_PARITY_CLOSURE_NOT_MET_2026-05-15.md`
+
+Final F-1 status is `closed: not met, evidence-backed`. Do not claim
+output-quality parity and do not continue F-1 micro-tuning.
+
+Carry this bounded claim forward:
+
+`docs/reviews/CVF_EVT4_BOUNDED_VALUE_CLAIM_2026-05-15.md`
+
+The next product roadmap is:
+
+`docs/roadmaps/CVF_NONCODER_OUTPUT_QUALITY_HARDENING_ROADMAP_2026-05-15.md`
+
+Future output-quality work must proceed through that roadmap as product-level
+non-coder deliverable hardening, not as F-1 parity tuning. EVT-4 may be used as
+a regression benchmark only after meaningful product changes.
+
+Any later attempt to reopen broad F-1 tuning requires fresh explicit human
+authorization and a new review/roadmap packet explaining why the stop rule no
+longer applies.
+
 ## Critical Repository Boundary - 2026-05-09
 
 This workspace is the private provenance/archive repository:

@@ -389,3 +389,231 @@ Current F-1 conclusion:
 - Model choice alone is insufficient. The next narrow work should target the
   negative DeepSeek full-corpus lanes rather than switching to another model or
   enabling two-pass globally.
+
+## F-1 Lean Prompt / DeepSeek Budget Remediation — 2026-05-15
+
+User said "Xem handoff AGENT_HANDOFF_V5_2026-05-15 / Tiến hành theo roadmap".
+Codex continued the F-1 remediation path from the provider/model screening
+result.
+
+Implementation retained:
+
+- Replaced the server-side `CVF_SYSTEM_PROMPT` in
+  `src/lib/ai/types.ts` with a lean governed prompt.
+  - Preserves governance/safety, anti-bypass, secret-protection, final
+    deliverable, and language-adaptive constraints.
+  - Removes long framework philosophy, platform overview, and example
+    interaction material from live provider context.
+- Updated `resolveExecutionMaxTokens()` in `execute-route-budget.ts` to be
+  provider/model aware.
+  - Trusted noncoder templates stay at `2048` by default.
+  - Explicit `deepseek` + `deepseek-v4-pro` trusted noncoder calls use `3072`.
+  - `4096` was tested and rejected because it caused live timeout instability.
+- Moved route budget resolution until after provider routing so the selected
+  provider/model controls the token cap.
+- Added route/budget/provider prompt tests.
+
+Live evidence:
+
+- `docs/assessments/CVF_EVT4_DEEPSEEK_V4_PRO_LEAN_PROMPT_BUDGET_RERUN_EVIDENCE_2026-05-15.json`
+  / summary:
+  `docs/assessments/CVF_EVT4_DEEPSEEK_V4_PRO_LEAN_PROMPT_BUDGET_RERUN_SUMMARY_2026-05-15.md`
+  - 4096-token attempt.
+  - Completed 15/20.
+  - 0 safety failures.
+  - Median `-0.16`.
+  - Rejected because several CFG-B calls timed out.
+- `docs/assessments/CVF_EVT4_DEEPSEEK_V4_PRO_LEAN_PROMPT_3072_RERUN_EVIDENCE_2026-05-15.json`
+  / summary:
+  `docs/assessments/CVF_EVT4_DEEPSEEK_V4_PRO_LEAN_PROMPT_3072_RERUN_SUMMARY_2026-05-15.md`
+  - Completed 19/20.
+  - 19 CFG-B live receipts.
+  - 0 safety failures.
+  - Median `-0.12`.
+  - One CFG-A direct-provider empty-output failure.
+  - F-1 closure rule not met.
+
+Rejected follow-up hypothesis:
+
+- GC note:
+  `docs/reviews/CVF_GC018_EVT4_FAMILY_CONTRACT_REPAIR_R2_2026-05-15.md`
+- Evidence:
+  `docs/assessments/CVF_EVT4_DEEPSEEK_V4_PRO_FAMILY_CONTRACT_R2_EVIDENCE_2026-05-15.json`
+  / summary:
+  `docs/assessments/CVF_EVT4_DEEPSEEK_V4_PRO_FAMILY_CONTRACT_R2_SUMMARY_2026-05-15.md`
+- Result:
+  - Completed 19/20.
+  - 19 CFG-B live receipts.
+  - 0 safety failures.
+  - Median `-0.16`.
+  - One CFG-A direct-provider empty-output failure.
+- Conclusion: broad family-contract reshaping worsened the retained
+  lean-prompt/3072 result, so those runtime contract changes were reverted.
+  Keep the evidence packet as a rejected hypothesis.
+
+Verification:
+
+- Targeted tests after retained changes:
+  `npx vitest run src/lib/execute-prompt-contract.test.ts src/app/api/execute/route.test.ts src/lib/ai/providers.test.ts`
+  PASS (82/82).
+- `npx tsc --noEmit` PASS.
+- `npm run lint` PASS with the pre-existing `_request` warning in
+  `src/app/api/system/jobs/route.test.ts`.
+- `python scripts/run_cvf_release_gate_bundle.py --json` PASS.
+
+Current F-1 conclusion:
+
+- F-1 remains open. Do not claim parity.
+- Retain lean prompt + DeepSeek V4 Pro 3072 budget because it is stable enough
+  and better than 4096, but it still does not meet the preregistered
+  `>= -0.05` rule.
+- Prompt length and broad contract shaping are no longer the highest-probability
+  closure path.
+- Next recommended path: fix the EVT-4 harness/protocol reliability first
+  (bounded retry for empty direct-provider CFG-A responses, without scoring
+  empty outputs), then test a narrower per-task repair only if the completed
+  20/20 rebaseline still shows the same negative families.
+
+### Protocol Reliability Follow-up
+
+Implemented:
+
+- `scripts/run_evt4_output_quality_ab.js`
+  - Added bounded `EVT4_DIRECT_EMPTY_RETRIES` for CFG-A direct-provider empty
+    output.
+  - Empty output is still never scored as valid; the runner retries and records
+    retry attempts for successful CFG-A records.
+  - Evidence config now records `directEmptyRetries`.
+
+Verification:
+
+- `node --check scripts/run_evt4_output_quality_ab.js` PASS.
+
+Live evidence:
+
+- `docs/assessments/CVF_EVT4_DEEPSEEK_V4_PRO_LEAN_3072_DIRECT_RETRY_EVIDENCE_2026-05-15.json`
+  / summary:
+  `docs/assessments/CVF_EVT4_DEEPSEEK_V4_PRO_LEAN_3072_DIRECT_RETRY_SUMMARY_2026-05-15.md`
+- Result:
+  - Completed 19/20.
+  - 19 CFG-B live receipts.
+  - 0 safety failures.
+  - Median `-0.12`.
+  - Direct CFG-A retry recovered transient empty outputs on EVT4-08, EVT4-19,
+    and EVT4-20.
+  - New blocker: EVT4-09 CFG-B returned `422` after output-validation retry
+    exhaustion.
+
+Current follow-up conclusion:
+
+- CFG-A empty-output flake is now bounded and observable.
+- F-1 is still not closed.
+- The next blocker is governed output validation / quality for the MVP-scope
+  feature-prioritization lane, not provider blank output.
+
+## F-1 Diminishing Returns Stop Rule — 2026-05-15
+
+User explicitly agreed that low-value pursuit of perfection should stop rather
+than consuming time and tokens indefinitely.
+
+Guard added:
+
+- `docs/reviews/CVF_F1_DIMINISHING_RETURNS_STOP_RULE_2026-05-15.md`
+- `AGENTS.md` now contains the same stop rule as a mandatory agent-enforced
+  instruction. Future agents must obey it without waiting for a human reminder.
+
+Binding continuation rule:
+
+- Do **not** continue broad prompt/template/model/token-budget tuning for F-1.
+- Retain the current useful posture:
+  - lean governed system prompt;
+  - DeepSeek `deepseek-v4-pro` trusted noncoder cap at `3072`;
+  - bounded CFG-A direct-empty retry;
+  - family-contract R2 treated as rejected evidence.
+- Only one bounded F-1 continuation remains recommended:
+  1. fix the concrete EVT4-09 governed output-validation exhaustion if it is
+     still reproducible;
+  2. run one clean full rebaseline;
+  3. if the registered rule still fails, close F-1 as
+     `not met, evidence-backed` and move to higher-value CVF work.
+
+Future agents must not rerun EVT-4 just hoping reviewer variance closes the
+gap, must not increase token budget above the retained stable cap, and must not
+reopen runtime two-pass or broad template reshaping without fresh evidence and
+explicit user authorization.
+
+## F-1 Closure — Not Met, Evidence-Backed — 2026-05-15
+
+Codex followed the mandatory stop rule.
+
+Diagnostic step:
+
+- Added `EVT4_TASK_IDS` to `scripts/run_evt4_output_quality_ab.js` so a single
+  frozen task can be diagnosed without rerunning unrelated tasks.
+- Added CFG-B failure detail capture for `outputValidation`,
+  `governanceEvidenceReceipt`, provider, and model on failed records.
+- Ran EVT4-09 only:
+  `docs/assessments/CVF_EVT4_DEEPSEEK_V4_PRO_EVT409_VALIDATION_DIAG_EVIDENCE_2026-05-15.json`
+  / summary:
+  `docs/assessments/CVF_EVT4_DEEPSEEK_V4_PRO_EVT409_VALIDATION_DIAG_SUMMARY_2026-05-15.md`
+  - EVT4-09 did not reproduce the 422 in isolation.
+  - Completed with local delta `-0.20`.
+
+Final clean rebaseline:
+
+- Evidence:
+  `docs/assessments/CVF_EVT4_DEEPSEEK_V4_PRO_FINAL_STOP_RULE_REBASELINE_EVIDENCE_2026-05-15.json`
+- Summary:
+  `docs/assessments/CVF_EVT4_DEEPSEEK_V4_PRO_FINAL_STOP_RULE_REBASELINE_SUMMARY_2026-05-15.md`
+- Result:
+  - Completed `20/20`.
+  - CFG-B live receipts `20/20`.
+  - Safety failures `0`.
+  - Median normalized delta `-0.08`.
+  - Registered rule `>= -0.05` was **not met**.
+  - CFG-A direct-empty retry recovered transient empty outputs on EVT4-01 and
+    EVT4-02.
+
+Closure packet:
+
+- `docs/reviews/CVF_F1_OUTPUT_QUALITY_PARITY_CLOSURE_NOT_MET_2026-05-15.md`
+
+Final F-1 status:
+
+- F-1 is closed as `not met, evidence-backed`.
+- Do not claim output-quality parity.
+- Do not continue F-1 micro-tuning.
+- EVT-4 remains useful as a regression benchmark after meaningful product-level
+  changes, not as an open-ended tuning loop.
+
+## Non-Coder Output Quality Hardening Roadmap — 2026-05-15
+
+User confirmed the post-F-1 direction:
+
+1. carry a bounded honest claim;
+2. turn the gap into a product roadmap;
+3. focus on real user pain: MVP scope, pricing, SOP/handoff, persona/actionability;
+4. use EVT-4 as a regression benchmark, not an infinite tuning loop.
+
+Added:
+
+- Bounded claim:
+  `docs/reviews/CVF_EVT4_BOUNDED_VALUE_CLAIM_2026-05-15.md`
+- Product roadmap:
+  `docs/roadmaps/CVF_NONCODER_OUTPUT_QUALITY_HARDENING_ROADMAP_2026-05-15.md`
+- `AGENTS.md` now points future agents to both artifacts and says future
+  output-quality work must proceed as product-level non-coder deliverable
+  hardening, not F-1 parity tuning.
+
+Roadmap tracks:
+
+- QH-1: MVP Scope And Backlog Actionability.
+- QH-2: Pricing Recommendation Actionability.
+- QH-3: SOP And Handoff Procedural Depth.
+- QH-4: Persona-To-Action Bridge.
+- QH-5: Decision Memo Activation Steps.
+
+Recommended next tranche:
+
+- Start with QH-1 and QH-2 only after a fresh GC/review note.
+- Do not run EVT-4 until there is a meaningful product-level change to regress.

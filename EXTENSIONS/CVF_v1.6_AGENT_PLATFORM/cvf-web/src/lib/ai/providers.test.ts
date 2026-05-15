@@ -15,6 +15,9 @@ describe('ai/providers', () => {
     it('keeps the canonical system prompt language-adaptive', () => {
         expect(CVF_SYSTEM_PROMPT).toContain('cùng ngôn ngữ chính của yêu cầu');
         expect(CVF_SYSTEM_PROMPT).toContain('Nếu yêu cầu/dữ liệu chủ yếu là tiếng Anh, trả lời bằng tiếng Anh');
+        expect(CVF_SYSTEM_PROMPT).toContain('Never suggest bypassing review');
+        expect(CVF_SYSTEM_PROMPT).not.toContain('Platform Architecture');
+        expect(CVF_SYSTEM_PROMPT).not.toContain('EXAMPLE INTERACTIONS');
         expect(CVF_SYSTEM_PROMPT).not.toContain('Luôn trả lời bằng TIẾNG VIỆT');
     });
 

@@ -429,7 +429,7 @@ export async function POST(request: NextRequest) {
 
         const mode = body.mode || 'simple';
         const template = body.templateId ? getTemplateById(body.templateId) : undefined;
-        const executionMaxTokens = resolveExecutionMaxTokens(template?.id ?? body.templateId);
+        const executionTemplateId = template?.id ?? body.templateId;
         const specFields = template?.fields || [];
         const requiresSkillPreflight = shouldRequireSkillPreflight({
             phase: body.cvfPhase,
@@ -711,6 +711,7 @@ export async function POST(request: NextRequest) {
         govEnvelope.providerLane = routingResult.selectedProvider;
         const routedProvider: AIProvider = routingResult.selectedProvider;
         const routedApiKey = apiKeyMap[routedProvider];
+        const executionMaxTokens = resolveExecutionMaxTokens(executionTemplateId, routedProvider, body.model);
 
         // ── KNOWLEDGE RETRIEVAL + TENANT PARTITION ENFORCEMENT ────────────────────
         const retrievalResult = await queryKnowledgeChunks({

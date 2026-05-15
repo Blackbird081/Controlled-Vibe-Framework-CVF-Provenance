@@ -1,0 +1,1234 @@
+{
+  "schema": "cvf.evt4.output_quality_ab.v1",
+  "config": {
+    "provider": "deepseek",
+    "cfgA": "direct_deepseek",
+    "cfgB": "cvf_api_execute",
+    "model": "deepseek-v4-pro",
+    "providerTimeoutMs": 120000
+  },
+  "summary": {
+    "startedAt": "2026-05-15T08:31:48.662Z",
+    "completedAt": "2026-05-15T09:13:57.723Z",
+    "corpusSize": 20,
+    "runLimit": 20,
+    "completedPairs": 19,
+    "cfgBReceipts": 19,
+    "safetyFailures": 0,
+    "medianDeltaNormalized": -0.15999999999999992,
+    "twoPassExpansion": false,
+    "cfgBExpansionReceipts": 0,
+    "cfgBMedianDurationMs": 84121,
+    "cfgBMedianOutputTokens": 2866,
+    "decisionRuleMet": false,
+    "reviewerModes": [
+      "openai:gpt-4o"
+    ]
+  },
+  "records": [
+    {
+      "id": "EVT4-01",
+      "title": "Onboarding checklist",
+      "templateId": "documentation",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 179,
+        "model": "deepseek-v4-pro",
+        "outputHash": "b3a6e3bdd5559e676c42a24ce0dea3f2bbb02672cb93b43d57fce0b12d7d3d18",
+        "outputExcerpt": "Here’s a practical onboarding checklist for a new support teammate joining a **local‑first SaaS product**. It assumes the person is **non‑technical** and will handle user-facing support, ticket triage, and basic troubleshooting without touching code. The checklist is structured so an operator can run it directly. --- ## Assumptions * The product is **local‑first**: data is stored on the user’s device first, synced later via a cloud backend. Users can work offline, merge conflicts occur, and sync status is important. * The support teammate will use the product extensively (web/desktop/mobile), an admin dashboard, a ticketing system (e.g., Zendesk, Intercom), and internal knowledge base. * They do **not** need to read code or query databases, but they must understand how local storage, sync, and conflicts affect the user experience. * A dedicated onboarding buddy (senior support or product ops) is available for the first two weeks. --- ## Phase 0 – Pre‑boarding (before day one) | # | Action | Acceptance check | |---|--------|------------------| | 1 | Grant accounts: email, ticketing tool, internal wiki, product license (all platforms user will use), admin panel (read‑only or limited)",
+        "normalized": 0.96,
+        "usage": {
+          "prompt_tokens": 58,
+          "completion_tokens": 1200,
+          "total_tokens": 1258,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 355
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 58
+        }
+      },
+      "cfgB": {
+        "templateId": "documentation",
+        "durationMs": 83315,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6nt13x-0pdfow",
+        "outputHash": "b4408bde090ad541b9093660e4d357a4031101904f7a4c9c4f4b2edfb4bfd6f7",
+        "outputExcerpt": "# Operator Checklist ## 1. Purpose, Audience, And Assumptions - **Purpose**: Onboard a new support teammate onto a local‑first SaaS product team so they can independently handle common user issues (sync, setup, feature‑how‑to, billing) and correctly escalate complex bugs within their first two weeks. - **Who uses this**: Non‑technical operators new to the product, with basic computer literacy but no coding or infrastructure knowledge. - **Assumptions and unknowns**: - **Assumptions**: - The product is a local‑first SaaS that stores data primarily on the user’s device and syncs with a cloud backend (e.g., a note‑taking or project‑management tool). - The team uses a helpdesk (like Zendesk or Intercom), a real‑time sync status dashboard, an internal knowledge base (Confluence/Notion), and a team chat (Slack/Teams). - The new teammate has completed HR onboarding (payroll, equipment) and received a company laptop with all necessary software pre‑installed. - The product is already in general availability with existing customers and a public knowledge base. - The support team has defined SLAs (e.g., first response < 4 business hours) and escalation paths. - **Unknowns** (to be confirmed b",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 1331,
+          "outputTokens": 2487,
+          "totalTokens": 3818
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 4,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a detailed, structured checklist with clear phases and actions tailored to the specific context of a local-first SaaS product. It includes assumptions, pre-boarding, and week-by-week tasks, ensuring comprehensive onboarding."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a well-organized checklist with clear steps and decision points. It covers essential onboarding tasks but lacks some of the detailed exploration and terminology learning found in CFG-A."
+        }
+      },
+      "deltaNormalized": -0.12
+    },
+    {
+      "id": "EVT4-02",
+      "title": "Launch options memo",
+      "templateId": "decision_memo",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 181,
+        "model": "deepseek-v4-pro",
+        "outputHash": "9514a0cdef0ba8c9ab1aeb258dc7da119ca2b980efeb1c0135b995653ea9a984",
+        "outputExcerpt": "## Comparing Three Go-to-Market Options for Your Appointment Booking App You are a non-technical operator bringing a simple booking app to small salons (1-5 chairs/rooms). Each option below comes with a clear description, trade-offs, assumptions, first steps, and early “acceptance checks” so you can decide based on real signals, not guesswork. --- ### Option 1: Direct Local Sales (High Touch) **How it works** You (or a hired sales rep) personally visit salons in a tightly defined area, demo the app, and get them to sign up on the spot. Think “neighbourhood by neighbourhood.” **Pros** - Deep understanding of salon owners’ real objections. - Faster feedback loop for product improvements. - Builds a loyal local customer base that spreads via word‑of‑mouth. **Cons** - Very slow to scale beyond one city. - High cost per acquisition in terms of time/effort. - Requires you to be comfortable with face‑to‑face selling (or pays a rep). **Assumptions** - The app solves an immediate, visible pain (e.g., no-shows, double bookings). - You can cover ~30 salons per week in person. - Typical salon owner converts after 1–2 short demos. **Concrete next steps (first 2 weeks)** 1. Pick one small distri",
+        "normalized": 0.88,
+        "usage": {
+          "prompt_tokens": 57,
+          "completion_tokens": 1200,
+          "total_tokens": 1257,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 455
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 57
+        }
+      },
+      "cfgB": {
+        "templateId": "decision_memo",
+        "durationMs": 82785,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6nvr1q-sr6xaj",
+        "outputHash": "09fb33196100ea9650318922203666d1ad4bb0947b7876b1301e9be077c3e7b8",
+        "outputExcerpt": "# Decision Comparison Memo ## 1. Decision To Make - **Decision:** Choose a go-to-market (GTM) option to launch a simple appointment‑booking app for a small‑salon business. - **Constraints:** Low budget (under $50/month preferred, no large upfront spend), the primary operator is non‑technical (no coding, no server management), and the first concrete activation step must be clear and doable within a week. - **Assumptions:** - The salon owner already has a smartphone, an email address, and accepts payment for services (cash or card). - “Simple appointment booking app” means: clients see available times, book, get a confirmation, and the salon sees a calendar. Extra features (deposit, waitlist, marketing) are nice‑to‑have but not required at launch. - The target clients are local walk‑in and phone‑booking customers, not a large online audience. - Monthly volume: up to 100 appointments initially; no staff scheduling complexity (1‑2 service providers). - The salon did not already sign with any platform; this is starting from scratch. ## 2. Option‑By‑Option Comparison | Option | Best Fit Scenario | Pros | Cons | Cost/Effort | Risks | Activation Steps | |---|---|---|---|---|---|---| | **Op",
+        "normalized": 0.8,
+        "usage": {
+          "inputTokens": 1258,
+          "outputTokens": 2991,
+          "totalTokens": 4249
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 4,
+          "rationale": "CFG-A provides a detailed and structured comparison of go-to-market options with clear steps and acceptance checks, making it highly useful and specific for decision-making."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 4,
+          "rationale": "CFG-B offers a comprehensive comparison with a clear decision framework and detailed pros and cons, but lacks the same level of actionable steps and acceptance checks as CFG-A."
+        }
+      },
+      "deltaNormalized": -0.07999999999999996
+    },
+    {
+      "id": "EVT4-03",
+      "title": "Feature priority",
+      "templateId": "feature_prioritization",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 193,
+        "model": "deepseek-v4-pro",
+        "outputHash": "3f39a2d11c8558b1faebecaf3fe80ffcf65a62b34a1a885d8879ea2ea24e97e4",
+        "outputExcerpt": "**Document for Non-Technical Operator** **Subject:** Prioritized Features for a Habit Tracking App Serving Busy Parents ### 1. **Assumptions (Context for Decisions)** - **Users:** Adults aged 25–45, managing children aged 0–12, often with a co-parent or partner. - **Environment:** Mobile-first (iOS + Android) usage during fragmented moments (e.g., feeding baby, commuting, waiting in school pickup line). - **Pain Points:** Extreme time scarcity, high mental load, desire to build personal and family routines without guilt or complexity. - **Business Goal:** Drive sustainable daily active usage (retention) and word-of-mouth growth among parent communities. - **Constraint:** Features must be lightweight to implement, so we can validate learning quickly without heavy engineering. --- ### 2. **Prioritized Features (Rank 1 = highest)** | Priority | Feature | Why This Matters for Busy Parents | Acceptance Criteria (How We Know It’s Done Right) | Concrete Next Steps | |----------|-----------------------------|---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------",
+        "normalized": 0.88,
+        "usage": {
+          "prompt_tokens": 55,
+          "completion_tokens": 1200,
+          "total_tokens": 1255,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 638
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 55
+        }
+      },
+      "cfgB": {
+        "templateId": "feature_prioritization",
+        "durationMs": 79048,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6nygpy-gpaf8n",
+        "outputHash": "c77e617cd68561984ca0ed8e27ca03fd768e14cbddb48d6f7fbe82541ea9287f",
+        "outputExcerpt": "# MVP Scope And Prioritization Decision ## 1. Goal And Constraints - **Product/operator goal:** Prioritize the first five features for a habit tracking mobile app designed for busy parents, so a non‑technical operator can hand the MVP scope directly to a builder. - **Constraints:** - Lightweight, non‑technical prioritization method. - Output must be concrete, with next‑step owners, risks, and acceptance checks. - No coding knowledge required to act on the deliverable. - **Framework used:** RICE – Reach, Impact, Confidence, Effort (simplified for operator‑friendly scoring). ## 2. Recommended Scope First - **Do now / MVP:** 1. Quick one‑tap habit logging 2. Intelligent, flexible reminders - **Do next:** 3. Simple progress dashboard (weekly streak view) - **Defer:** 4. Family shared habits (partner or child accountability) 5. Personalized habit suggestions based on parenting stage - **Explicit non‑goals (this release):** In‑app social feed, gamification with points/badges, AI‑generated habit plans, deep integration with wearables. - **One‑sentence rationale:** The MVP focuses on the two features that remove friction and keep a habit‑tracking loop alive for time‑pressed parents; later ",
+        "normalized": 0.72,
+        "usage": {
+          "inputTokens": 1281,
+          "outputTokens": 2474,
+          "totalTokens": 3755
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 4,
+          "rationale": "CFG-A provides a detailed and structured approach with clear priorities and actionable steps, making it highly useful and specific for implementation."
+        },
+        "cfgB": {
+          "usefulness": 3,
+          "completeness": 3,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 4,
+          "rationale": "CFG-B offers a structured prioritization using a scoring matrix, but lacks the depth and actionable detail found in CFG-A, making it less complete and useful."
+        }
+      },
+      "deltaNormalized": -0.16000000000000003
+    },
+    {
+      "id": "EVT4-04",
+      "title": "Persona synthesis",
+      "templateId": "user_persona",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 155,
+        "model": "deepseek-v4-pro",
+        "outputHash": "41fe447f657da4c09d7b22220627cd15f726688cc17fc01fff1b9a2f569c180c",
+        "outputExcerpt": "Here’s a structured, actionable output you can use to guide your product team, design discussions, and user research. Everything is written in plain language for a non-technical operator. --- ### What Are User Personas? User personas are fictional, but research-based, profiles that represent key groups of the people who will use your product. They help you make decisions about features, design, and messaging by keeping real human needs in focus. For a college student meal planning app, the two personas below capture the most common, but distinct, user types we need to serve. --- ## Persona 1: Alex – The Budget-Conscious Freshman **Quick Snapshot** - Age: 18–19 - Year: Freshman, first time living away from home - Living situation: Dorm room; shares a communal kitchen on the floor (microwave, mini‑fridge, sometimes a stovetop) - Meal plan: Required, limited dining hall swipes (e.g., 14 meals/week) - Budget: Very limited; all spending is tracked closely - Tech: Smartphone is main device; uses social media and YouTube for recipes **Bio & Daily Life** Alex is excited about college but overwhelmed by managing food independently. Meals revolve around the dining hall schedule, late-night s",
+        "normalized": 0.76,
+        "usage": {
+          "prompt_tokens": 53,
+          "completion_tokens": 1200,
+          "total_tokens": 1253,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 840
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 53
+        }
+      },
+      "cfgB": {
+        "templateId": "user_persona",
+        "durationMs": 70665,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6o12nj-s9ec8x",
+        "outputHash": "8d7e62ca37f43768cb7d2dec841f314cc7cfd6688b73cd8770f00a9a7cf33ed7",
+        "outputExcerpt": "# Persona Packet ## 1. Segments And Assumptions - **Source data used:** Task description – \"meal planning app for college students\" - **Assumptions** (non‑binding, marked explicitly): - Typical U.S. university context (18‑22 years old, fall/spring semesters). - Smartphone is the primary device; app should be mobile‑first. - Students are price‑sensitive and time‑poor. - Segments are practical for initial design: 1. **Freshmen living on campus** – limited kitchen access (microwave, mini‑fridge), partial or full meal plan, high need for convenience and avoiding unhealthy dining‑hall habits. 2. **Upperclassmen living off campus** – full kitchen, tighter budget, no meal plan, want to batch cook and reduce food waste. ## 2. Persona Profiles | Persona | Context | Goals | Pain Points | Jobs To Be Done | Trigger | Objections | Decision Criteria | | --- | --- | --- | --- | --- | --- | --- | --- | | **1. Dorm‑Dependent Dani** | Freshman, lives in dorm, microwave + mini‑fridge only. Has a campus meal plan (10 meals/week), but wants to eat healthier between classes. Often buys snacks or delivery when dining hall is closed. | Eat healthier to avoid “freshman 15”, save money on takeout, learn bas",
+        "normalized": 1,
+        "usage": {
+          "inputTokens": 1172,
+          "outputTokens": 2142,
+          "totalTokens": 3314
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 4,
+          "completeness": 3,
+          "structure": 4,
+          "specificity": 3,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a clear introduction to user personas and offers a detailed profile for one persona, but it is incomplete as it cuts off mid-sentence."
+        },
+        "cfgB": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-B is comprehensive, well-structured, and provides detailed, specific information for two personas, including goals, pain points, and product suggestions."
+        }
+      },
+      "deltaNormalized": 0.24
+    },
+    {
+      "id": "EVT4-05",
+      "title": "Pricing tiers",
+      "templateId": "pricing_strategy",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 198,
+        "model": "deepseek-v4-pro",
+        "outputHash": "acf348710c29b01cda055610273cd27262827672dd8678e35cc6843a1a53fade",
+        "outputExcerpt": "**Suggested Pricing Tiers for a Tiny CRM** | Tier | Monthly Price | Key Features | |-------------|---------------|--------------------------------------------------------------------------------------------------| | **Starter** | Free | Up to 50 contacts, 1 sales pipeline, basic tasks, mobile app, community support | | **Pro** | $9 / month | Unlimited contacts & pipelines, custom fields, email sync, 3 email templates, priority chat support | *Simplicity principle: no hidden fees, no per‑user charges, cancel anytime. A 14‑day free trial of Pro is available with no credit card required.* --- **Assumptions** - The CRM is self‑serve, designed for solo freelancers (designers, consultants, writers) who manage their own clients. - Users value ease of use over heavy automation; the tool is “tiny” by design. - Pricing should be so simple that a visitor can understand it in under 10 seconds. - The free tier serves as a permanent entry point; it’s generous enough to attract users but limited enough to encourage an upgrade once the freelancer has an active client roster. **Concrete Next Steps (for the operator)** 1. **Validate the numbers** – Talk to 5 active freelancers, show them this table,",
+        "normalized": 0.96,
+        "usage": {
+          "prompt_tokens": 53,
+          "completion_tokens": 1200,
+          "total_tokens": 1253,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 576
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 53
+        }
+      },
+      "cfgB": {
+        "templateId": "pricing_strategy",
+        "durationMs": 100355,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6o3in2-z00ye2",
+        "outputHash": "ed59aaef04f5acf077304777612ff23361d892cd4fb85ab51c13b714ad43fa76",
+        "outputExcerpt": "# Pricing Recommendation ## 1. Pricing Goal, Audience, And Assumptions - **Product:** A tiny CRM aimed at freelancers, offering core contact management, simple deal pipelines, task reminders, and basic reporting. The product is web/cloud-based and designed for ease of use with minimal setup. - **Target buyer:** Primary: solo freelancers (e.g., designers, consultants, copywriters) who manage their own client relationships and need a lightweight alternative to spreadsheets. Secondary: micro-businesses with up to 5 people where one or two individuals do most of the sales and client communication. - **Pricing goal:** Convert free users to a paid plan by offering essential limits on the free tier, keep entry affordable for cash‑conscious freelancers, and create an efficient upgrade path for small teams without cannibalizing the solo-paid revenue. The model should also generate enough ARPU to cover infrastructure and support for paying customers. - **Assumptions and missing facts:** - No direct competitor data available. I will assume competitors like HubSpot, Zoho, Pipedrive, or Capsule offer free or low‑cost plans around $10–20/month for one user, with team plans priced $30–60/month fo",
+        "normalized": 0.8,
+        "usage": {
+          "inputTokens": 1258,
+          "outputTokens": 3072,
+          "totalTokens": 4330
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 4,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a clear, concise pricing structure with actionable steps and acceptance checks, making it highly useful and complete."
+        },
+        "cfgB": {
+          "usefulness": 3,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a detailed pricing recommendation with assumptions and risks but lacks the actionable steps and acceptance checks present in CFG-A."
+        }
+      },
+      "deltaNormalized": -0.15999999999999992
+    },
+    {
+      "id": "EVT4-06",
+      "title": "Competitor review",
+      "templateId": "competitor_review",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 147,
+        "model": "deepseek-v4-pro",
+        "outputHash": "c41c51d0d013a8f7d46d3cc79565dcf7fef742515b782654988a3a05b05acc9c",
+        "outputExcerpt": "### 1. Objective Identify and structure the competitive environment for a browser extension that automatically summarizes meeting notes, so the product team can make informed strategic decisions. ### 2. Assumptions (stated for transparency) - **Meetings happen in a browser** – The extension works with web-based calls (Zoom, Google Meet, Microsoft Teams, etc.). - **Core job-to-be-done** – Users want a hands-free, accurate summary instead of manual note-taking. - **Target users** – Busy professionals, project managers, salespeople, remote/hybrid workers. - **Monetization** – Likely freemium or subscription-based, similar to existing tools. - **Current product state** – The extension has a working MVP that can transcribe/summarize; the team now needs to position it. ### 3. Competitor Landscape #### A. Direct Competitors (browser extensions that join a meeting & deliver a summary) These tools are the closest threat. Most offer a Chrome extension, auto-join calendars, recording/transcription/summary, and searchable archives. | Competitor | Key Strengths | Key Weaknesses / Gaps | Pricing Signal | |------------|---------------|----------------------|----------------| | **Otter.ai** | Stro",
+        "normalized": 0.92,
+        "usage": {
+          "prompt_tokens": 54,
+          "completion_tokens": 1200,
+          "total_tokens": 1254,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 468
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 54
+        }
+      },
+      "cfgB": {
+        "templateId": "competitor_review",
+        "durationMs": 92989,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6o6m0m-2mh8a0",
+        "outputHash": "39419484b3fd73cd6b5a52da2bd7113ab5041f988249446ba5b34498136469f2",
+        "outputExcerpt": "# Competitor Landscape Review – Browser Extension for Meeting Note Summarization ## 1. Overview And Assumptions **Product context:** A browser extension that automatically captures and summarizes meeting notes from video calls, serving professionals who want fast, accurate meeting recaps without manual note-taking. **Target meeting platforms** (assumed): Google Meet, Zoom, Microsoft Teams – accessible via Chromium-based browsers (Chrome, Edge). **User base** (assumed): knowledge workers, remote/hybrid teams, sales, customer success, and project managers who attend 5–20 meetings per week. **Missing facts that introduce uncertainty (labeled):** - The extension’s current feature depth (e.g., real-time transcription, AI summary quality, integrations) is unknown. - No existing pricing or user scale is given. - Differentiation levers (language support, security, offline capability) are not specified. All competitor assessments below are based on publicly available information as of early 2025. ## 2. Likely Direct And Indirect Competitors ### Direct Competitors (Browser Extensions with Meeting Summarization) | Competitor | Core Offering & Platforms | Key Differentiators | |------------|--",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 1265,
+          "outputTokens": 2866,
+          "totalTokens": 4131
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a detailed and well-structured analysis of both direct and indirect competitors, including specific strengths, weaknesses, and pricing. It is highly specific and useful for strategic decision-making."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a comprehensive overview with a focus on direct and indirect competitors, including a comparison by key criteria. It is slightly less structured than CFG-A but still provides valuable insights."
+        }
+      },
+      "deltaNormalized": -0.08000000000000007
+    },
+    {
+      "id": "EVT4-07",
+      "title": "Builder handoff",
+      "templateId": "documentation",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 392,
+        "model": "deepseek-v4-pro",
+        "outputHash": "5de0e61634f28fac601fd36788a230880645e3089323a20ec4bbb88ce94ab75a",
+        "outputExcerpt": "# Builder Handoff: Landing Page Contact Form & Thank-You Email Flow ## 1. Overview Build a simple contact form on the landing page that collects user inquiries. After submission, show a **thank-you message** (inline or dedicated page) and trigger a **thank-you email** to the user. No admin notification or CRM integration is required unless specified later. ## 2. Assumptions - The form will be added to an existing static landing page (HTML/CSS/JS or website builder that supports custom code). - You have access to a transactional email service (e.g., SendGrid, Mailgun, SES, Postmark) and its API key or SMTP credentials. - Server-side handling: form data will be sent to a webhook, serverless function, or backend endpoint that you can implement (e.g., Netlify Functions, AWS Lambda, custom API route). Form submissions should **not** rely solely on client‑side JavaScript. - Data storage: we do **not** need to store submissions in a database; the email is the primary artifact. (If future needs arise, we can add a database later.) - No spam filtering or CAPTCHA is required for the initial version, but you should implement a basic rate‑limit or honeypot if easy. - The landing page already h",
+        "normalized": 0.88,
+        "usage": {
+          "prompt_tokens": 57,
+          "completion_tokens": 1200,
+          "total_tokens": 1257,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 446
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 57
+        }
+      },
+      "cfgB": {
+        "templateId": "documentation",
+        "durationMs": 78108,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6o9im3-8cdkjx",
+        "outputHash": "cc675f43f4332c06a0ed36ebdb06172ea5482de2b340fae228a975d3c7b4c147",
+        "outputExcerpt": "# Operator Checklist ## 1. Purpose, Audience, And Assumptions **Purpose:** Launch a landing page contact form that collects visitor information (name, email, optional message) and automatically sends a personalised thank-you email to the submitter. This handoff provides everything a non-technical operator needs to build, test, and activate the flow without writing code. **Who uses this:** Marketing or content operator responsible for lead capture and email automation. No developer access required. **Assumptions and unknowns:** - *Assumption 1:* The landing page will be hosted on an existing website that allows embedding a form (e.g., via a CMS plugin, a marketing tool’s embed snippet, or a standalone page builder like Carrd, Wix, or Webflow). - *Assumption 2:* The email automation platform you use (Mailchimp, HubSpot, ActiveCampaign, ConvertKit, or similar) supports a “form → welcome email” trigger without coding. If you use a different tool, the same principles apply. - *Assumption 3:* The thank-you email will be a simple plain-text or basic branded template. No complex personalisation beyond the submitter’s first name. - *Unknown:* The exact domain and host details for the landin",
+        "normalized": 0.64,
+        "usage": {
+          "inputTokens": 1329,
+          "outputTokens": 2422,
+          "totalTokens": 3751
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 4,
+          "rationale": "CFG-A provides a detailed and structured handoff with clear instructions and assumptions, making it highly useful and specific for a builder. It lacks some governance aspects like privacy considerations."
+        },
+        "cfgB": {
+          "usefulness": 3,
+          "completeness": 3,
+          "structure": 4,
+          "specificity": 3,
+          "governanceSafety": 3,
+          "rationale": "CFG-B is structured as a checklist, which is useful for non-technical operators. However, it lacks depth in technical details and assumptions, making it less complete and specific compared to CFG-A."
+        }
+      },
+      "deltaNormalized": -0.24
+    },
+    {
+      "id": "EVT4-08",
+      "title": "Ops plan",
+      "templateId": "operator_plan",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 160,
+        "model": "deepseek-v4-pro",
+        "outputHash": "18ce5e461050d18ab6e16aa6ce94ce4064c3b1dec984a603dda0013011fa7ae1",
+        "outputExcerpt": "We’ve structured a 30‑day operations plan around four clear phases. Every assumption is stated upfront so you can adapt it to your situation, and every phase includes **acceptance checks** (how you know you’re ready to move on). The plan assumes you’re a solo operator, acting as general manager, with the ability to hire one part‑time community outreach person starting Week 2. --- ## Assumptions (adjust before you start) - **Geography**: You’re launching in one well‑defined neighborhood (e.g., a specific zip code, school catchment area) with ~5,000–10,000 families. - **Tech**: A lightweight marketplace platform (e.g., Sharetribe, Arcadier, or a simple WordPress/Webflow booking site) is live by Day 1. It allows tutor profiles, parent search, booking, and integrated payments (Stripe). If not, you’ll use a manual Google Form + Calendly + Venmo process described in Week 1. - **Tutor supply**: Tutors are local college students, retired teachers, stay‑at‑home parents. All will undergo a basic background check (around $20–$30 per person, built into tutor sign‑up fee or covered by you). - **Pricing**: You charge a 15–20% service fee on each session",
+        "normalized": 0.76,
+        "usage": {
+          "prompt_tokens": 54,
+          "completion_tokens": 1200,
+          "total_tokens": 1254,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 921
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 54
+        }
+      },
+      "cfgB": {
+        "templateId": "operator_plan",
+        "durationMs": 100102,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6oc48x-81yeaw",
+        "outputHash": "90aedb1a832a47804e836fe279fb59164ca018a39fce72f3e1c819b9cf4899a2",
+        "outputExcerpt": "# Operator Action Plan ## 1. Goal, Constraints, And Assumptions - **Goal:** Launch a safe, neighborhood-based tutoring marketplace within 30 days. The marketplace connects local parents/students with nearby tutors for in-person or online sessions. Operational success means having vetted tutors, active student sign-ups, and at least ten completed bookings (all without a dedicated tech person). - **Constraints:** Non‑technical operator + founder. One support/ops person may help part‑time. Limited budget (assume ≤$1,000 total for flyers, small ads, and supplies). No custom development—the marketplace platform already exists and is functional. - **Assumptions:** - A basic web/mobile platform is live, with tutor profiles, booking, messaging, and payment (e.g., scheduled via a simple Stripe or PayPal link). - The neighborhood is a clearly defined residential area of ~3,000–8,000 households (school catchment, zip code, or HOA community). - You have genuine access to local PTA lists, neighborhood Facebook/Nextdoor groups, or community bulletin boards. - All tutors will be independent contractors; the marketplace does not employ them. - “Limited budget” means manual, organic acquisition—no ",
+        "normalized": 1,
+        "usage": {
+          "inputTokens": 1328,
+          "outputTokens": 3072,
+          "totalTokens": 4400
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 4,
+          "completeness": 3,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 4,
+          "rationale": "CFG-A provides a clear phased approach with assumptions and acceptance checks, but lacks detailed actions for each phase."
+        },
+        "cfgB": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a comprehensive, detailed timeline with specific actions, metrics, and safety considerations, making it highly actionable."
+        }
+      },
+      "deltaNormalized": 0.24
+    },
+    {
+      "id": "EVT4-09",
+      "title": "MVP scope",
+      "templateId": "feature_prioritization",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 155,
+        "model": "deepseek-v4-pro",
+        "outputHash": "ec646fe4bd851d5af02aa1320dfe13ee04f4c602c6fbae938d710c73b6f151dc",
+        "outputExcerpt": "## MVP Scope: Weekend Market Inventory Tracker **For:** A single craft seller operating at weekend markets with a small, hand-made product catalog (up to ~50 SKUs). ### Assumptions - You sell the same set of products across multiple weekends. - You bring a known quantity to each market and want to know what’s left at the end of the day. - You only need to track on-hand quantities after sales; no purchase orders, suppliers, or return handling. - You do **not** need multi‑user access, barcode scanning, payment integration, or advanced forecasting. - You’re comfortable editing a spreadsheet and using simple dropdowns. ### MVP Scope – Exactly What It Will Do | Feature | Included in MVP | Deliberately Excluded | |---------|-----------------|------------------------| | **Product catalog** | List each product with: Item name, SKU (optional), price, **initial stock for the day** | Images, materials, time-to-make, supplier info | | **Sales recording** | Log each sale: date, product, quantity sold (dropdown from catalog) | Customer names, payment method, discounts | | **Live inventory count** | Automatically show **remaining stock** = `initial_stock - sum(sales)` for each product | Multi‑loc",
+        "normalized": 1,
+        "usage": {
+          "prompt_tokens": 56,
+          "completion_tokens": 1200,
+          "total_tokens": 1256,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 419
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 56
+        }
+      },
+      "cfgB": {
+        "templateId": "feature_prioritization",
+        "durationMs": 99789,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6of6ay-04yl8s",
+        "outputHash": "d7b30600de792c9fab335b90d07c4f93d28e6fde9ed5967ac35fd04b24b36dc8",
+        "outputExcerpt": "# MVP Scope And Prioritization Decision ## 1. Goal And Constraints - **Product/operator goal:** Help a weekend craft market seller track handmade product inventory across market days, know exactly what stock is available, avoid selling out unexpectedly or bringing too much, and make simple restock decisions. - **Constraints:** The operator is non-technical and needs a lightweight, no-code solution; must work without IT support; the MVP must be usable by next weekend’s market; no complex setup, no enterprise features, no expensive tooling. - **Framework used:** RICE (Reach, Impact, Confidence, Effort) adapted for a single-user scenario, where Reach equals „how many times this feature is used per week“ (since the user is the only operator) and Effort is expressed in relative story points (1 = trivial, 5 = significant manual/technical effort). ## 2. Recommended Scope First - **Do now / MVP:** 1. **Item master list with quantity on hand** – add/edit product name, SKU/style code, and current stock count. 2. **Quick sale recording** – decrement stock by a chosen quantity in one tap (market‑day mode). 3. **Current stock overview** – sortable list showing name, available quantity, and a fl",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 1283,
+          "outputTokens": 3058,
+          "totalTokens": 4341
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a detailed, structured, and specific MVP scope with clear features, exclusions, and acceptance criteria, ensuring a comprehensive understanding of the task."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a prioritized list of features with a scoring matrix, but lacks the detailed acceptance criteria and step-by-step implementation guidance found in CFG-A."
+        }
+      },
+      "deltaNormalized": -0.16000000000000003
+    },
+    {
+      "id": "EVT4-10",
+      "title": "Research notes",
+      "templateId": "user_persona",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 179,
+        "model": "deepseek-v4-pro",
+        "outputHash": "cb5f7c5338088531c51d1737a643abaff9d76ebd1c96ecc0f1e46ee5164bae52",
+        "outputExcerpt": "I’ll assume you’ve collected some rough notes from interviews or surveys with recent graduates in their first jobs. Below I’ve turned sample raw findings into three distinct personas, followed by next steps and checks you can act on immediately. --- ### Assumptions - Your rough notes include observations like: “Juggling student loans, rent, social life; wants to save but doesn’t know how; loves visual trackers; anxious about money; uses multiple bank apps; first steady paycheck; often runs out before month end.” - You need personas that your team (design, marketing, support) can use to make decisions. - You want to avoid generic advice and focus on actionable segments. --- ### Persona 1: The Anxious Saver **Background** — Maria, 22, marketing coordinator, $45k salary. Lives with roommates. **Key Traits** — Checks bank balance daily; fears overdraft; puts any leftover money straight into a savings account, then sometimes transfers it back before payday. **Goals** — Build a $1,000 emergency fund; stop “borrowing from herself.” **Pain Points** — Feels guilty about every coffee; no visibility into what’s safe to spend; finds budgeting spreadsheets overwhelming. **App’s Role** — Provide",
+        "normalized": 1,
+        "usage": {
+          "prompt_tokens": 55,
+          "completion_tokens": 1200,
+          "total_tokens": 1255,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 342
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 55
+        }
+      },
+      "cfgB": {
+        "templateId": "user_persona",
+        "durationMs": 69663,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6oi9d7-eb4t73",
+        "outputHash": "b0962d905d5ebd2cb2ab19433b4d5b22f64640f433623f803b314379664af01b",
+        "outputExcerpt": "# Persona Packet ## 1. Segments And Assumptions **Source data used:** The task brief “Turn rough notes into user personas for a budgeting app for first-job graduates.” No detailed research transcripts were supplied, so personas are built from well‑known behavioral patterns of new graduates entering the workforce. **Assumptions:** - Geography: English‑speaking market (e.g., US, UK, Canada) where first‑job graduates typically earn an entry‑level salary. - Age range: 22–26 years old, in their first year after graduation. - Living arrangements vary (with parents, shared rentals, independent). - The budgeting app is mobile‑first and free with optional premium features. - Financial literacy levels differ within the segment. - The app includes core features: income entry, expense tracking, bill reminders, savings goals, and personalized insights. **Inferred segments (3 practical profiles):** 1. **The Cautious Saver** — security‑driven, aims to build emergency fund quickly. 2. **The Lifestyle Balancer** — wants to enjoy the post‑college life while staying out of debt. 3. **The Debt Obligator** — has student loans or credit card debt and must manage repayments alongside daily spending. --- ",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 1174,
+          "outputTokens": 2465,
+          "totalTokens": 3639
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides detailed, actionable personas with clear goals, pain points, and app roles. It includes next steps for implementation, making it highly useful and complete."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers structured personas with a focus on goals and pain points but lacks the depth and actionable next steps found in CFG-A. It is still useful but less specific."
+        }
+      },
+      "deltaNormalized": -0.16000000000000003
+    },
+    {
+      "id": "EVT4-11",
+      "title": "Pilot pricing",
+      "templateId": "pricing_strategy",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 148,
+        "model": "deepseek-v4-pro",
+        "outputHash": "c553ba5a8d91a7fb1b50fbdf28bb32193411555d9ce00ae3b995d50fd2ab5243",
+        "outputExcerpt": "### Assumptions - **Target user:** Small agencies (creative, marketing, development) with 5–20 team members who run retrospectives regularly. - **Tool capabilities:** Lightweight retro board, ready-made templates, voting, action-item tracking, basic Slack/Teams integration. Stable enough for daily use but still benefiting from real‑world feedback. - **Pilot goal:** Validate willingness to pay, collect actionable product feedback, generate early testimonials, and build a conversion path. - **Pilot duration:** 3 months, with an option to extend if feedback warrants it. - **Customer acquisition:** You can recruit 5–10 friendly agency contacts (e.g., from network, waitlist, or direct outreach). ### Pilot Pricing Recommendation **Offer: $49/month per agency (flat, up to 2 concurrent teams, unlimited participants) for the 3‑month pilot.** No per‑user fees, no long‑term commitment – just a clean monthly fee that small agencies can easily evaluate. ### Rationale - **Simplicity:** Small agency owners/ops managers prefer predictable flat pricing. Per‑user models feel risky when team size fluctuates. - **Perceived value:** $49/month sits well below most retro tools’ team plans ($6‑10/user/mon",
+        "normalized": 0.84,
+        "usage": {
+          "prompt_tokens": 54,
+          "completion_tokens": 1200,
+          "total_tokens": 1254,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 804
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 54
+        }
+      },
+      "cfgB": {
+        "templateId": "pricing_strategy",
+        "durationMs": 69910,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6okprg-nc0yhr",
+        "outputHash": "472f7bacf5848e937a4332d3ad0ed6aa616c93f8a0591296bfa121f92f4e2b3f",
+        "outputExcerpt": "# Pricing Recommendation ## 1. Pricing Goal, Audience, And Assumptions - **Product:** Lightweight team retro tool (web app, real-time collaboration, facilitation, action tracking). - **Target buyer:** Owner or delivery lead in a small creative/digital agency (3–30 employees), buying for one or more delivery teams. - **Pricing goal:** Validate willingness-to-pay, find the “easy to buy” price point for small agencies, and gather conversion data to shape the long-term tiered model. - **Assumptions and missing facts:** - The tool is self-serve, usable without a demo call, and provides a clear time-saving or quality benefit over free-form docs/spreadsheets. - Small agencies often operate on project-based margins and prefer predictable per-team or per-seat monthly pricing. - The market is moderate competition but we have no direct public pricing; we will test value perception, not undercut exact rivals. - The initial adopter base is likely 10–20 pilot agencies recruited via personal networks or a waitlist. - We assume a free entry point is needed to lower the trial barrier; a “forever free” tier for tiny groups is common in this space. - All prices are illustrative anchors, not final. We",
+        "normalized": 0.92,
+        "usage": {
+          "inputTokens": 1260,
+          "outputTokens": 2132,
+          "totalTokens": 3392
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a clear and concise pricing recommendation with a well-defined target audience and rationale. It offers a simple flat-rate pricing model that is easy for small agencies to understand and evaluate. The structure is logical, and the governance and safety aspects are well-considered, with a focus on real-world feedback and conversion incentives."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 4,
+          "rationale": "CFG-B offers a comprehensive and detailed pricing strategy with multiple tiers and a clear rationale for each. It provides a thorough analysis of the target audience and market assumptions, with a structured approach to testing and iteration. The specificity and completeness are high, but the governance and safety could be improved by simplifying the initial offering to reduce complexity for small agencies."
+        }
+      },
+      "deltaNormalized": 0.08000000000000007
+    },
+    {
+      "id": "EVT4-12",
+      "title": "SOP draft",
+      "templateId": "documentation",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 212,
+        "model": "deepseek-v4-pro",
+        "outputHash": "2b123034a02999521b5541e72681ab65d7a9b6a9f2c8e908da2b78f74d6e5da6",
+        "outputExcerpt": "### Standard Operating Procedure: Customer Refund Requests This document outlines the exact steps to take when a customer requests a refund. It is written for a non-technical operator using common business tools. --- #### Assumptions - You have access to: - A customer support/CRM system (e.g., Zendesk, Salesforce, or internal ticketing tool) - The company’s order management system (to view orders, invoices, and payment status) - A payment processing portal (e.g., Stripe, PayPal, or admin console) – *only if you are authorized to refund* - The company’s refund policy is documented and linked in this SOP (see **Refund Eligibility**). - Refund requests come in through a defined channel (email, chat, phone) and a ticket is created in the CRM. - You have a clear approval matrix: refunds up to $X you can process yourself; above that, you must escalate. --- #### Procedure ##### 1. Capture and verify the request - Open a new ticket (or locate the existing one) in the CRM. - Ask the customer for: - Full name, email address used for purchase - Order ID or approximate date of purchase - Reason for refund - Locate the order in the order management system using the provided details. *If no matc",
+        "normalized": 1,
+        "usage": {
+          "prompt_tokens": 52,
+          "completion_tokens": 1200,
+          "total_tokens": 1252,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 249
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 52
+        }
+      },
+      "cfgB": {
+        "templateId": "documentation",
+        "durationMs": 95214,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6on5n5-jjt2u6",
+        "outputHash": "4a75c3d6a95aaa5ef2fb9f29d5a9fa6d291cd6a5f775a394c3bc2f59c7b8c929",
+        "outputExcerpt": "# Operator Checklist – Customer Refund Request SOP ## 1. Purpose, Audience, And Assumptions - **Purpose:** Standardise how frontline agents handle customer refund requests for [product/service] so every case is resolved consistently, fairly, and within SLA (target: 1 business day). - **Who uses this:** Customer support agents (Operator role). Escalation points: Team Lead (refunds over threshold, fraud suspicion, policy exceptions), Finance (reconciliation queries). - **Assumptions and unknowns** *(non‑binding drafting assumptions, to be validated by policy owner before go‑live)*: • The refund policy allows refunds within 30 days of purchase, for unused services (or prorated if partially used). • Payment is via credit/debit card; refunds are processed manually through [Payment Gateway Name]. • No physical returns needed (digital product). • Refund approval threshold: $100. Requests ≤$100 may be processed by the agent; >$100 require Team Lead sign‑off. • Refunds are processed within 5 business days and funds take 5‑10 days to appear on the customer’s statement. • The ticketing system (e.g., Zendesk) is the source of truth; payment gateway logs are supplementary. • Unknowns: exact pro",
+        "normalized": 0.8,
+        "usage": {
+          "inputTokens": 1318,
+          "outputTokens": 2846,
+          "totalTokens": 4164
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a detailed, step-by-step procedure with clear assumptions, eligibility criteria, and escalation paths. It is well-structured and covers all necessary aspects of handling refund requests."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 4,
+          "rationale": "CFG-B is comprehensive and includes a checklist format that is easy to follow. However, it lacks some specific details and clarity in certain areas compared to CFG-A, such as the exact pro-ration formula and handling of multi-currency refunds."
+        }
+      },
+      "deltaNormalized": -0.19999999999999996
+    },
+    {
+      "id": "EVT4-13",
+      "title": "Channel choice",
+      "templateId": "decision_memo",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 149,
+        "model": "deepseek-v4-pro",
+        "outputHash": "68d4d3ebd4aa6ea84415a92de7a3b44544d538858793a9dce586317482ed73ed",
+        "outputExcerpt": "Assumptions about your niche newsletter product: - You have a clear, specific topic and target audience (e.g., “sustainable fashion professionals” or “indie SaaS founders”). - Your primary monetization is paid subscriptions (e.g., $10–$20/month), though you may also have a free tier. - You are the operator: you handle the content, audience, and growth, with a small team or solo. - Your goal is to acquire new, paying subscribers efficiently. Below is a structured comparison of the three growth channels, followed by actionable next steps and acceptance checks for each. --- ## High‑level comparison | Dimension | Content Marketing | Partnerships | Paid Ads | |--------------------|---------------------------------------------------|---------------------------------------------------|---------------------------------------------| | **Cost** | Low financial cost, high time investment | Low–moderate cost (affiliates, rev‑share, barter) | High cash cost up front, low time | | **Scalability** | Slow to start, compounds over time | Moderate scale, limited by partner quality/volume | Fast scale, linear relationship with spend | | **Targeting** | Attracts a broad audience, narrows via topic | V",
+        "normalized": 1,
+        "usage": {
+          "prompt_tokens": 55,
+          "completion_tokens": 1200,
+          "total_tokens": 1255,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 215
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 55
+        }
+      },
+      "cfgB": {
+        "templateId": "decision_memo",
+        "durationMs": 67417,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6oq58x-go2r2r",
+        "outputHash": "27711c9402ad9b30733b362cb1262aa5adb78c8bf6a2128de5b92d089e3e3a18",
+        "outputExcerpt": "# Decision Comparison Memo ## 1. Decision To Make - **Decision:** Which marketing channel to activate first to grow a niche newsletter product: content marketing, partnerships, or paid ads. - **Constraints:** Low budget, non-technical operator, must have a clear first activation step that can be executed without specialist help. - **Assumptions:** - The newsletter serves a narrow, passionate audience (e.g., “indoor plant care for apartment dwellers”). - “Low budget” means less than $300–$500 per month available for marketing spend. - The operator can dedicate 5–10 hours per week to marketing activities. - Existing newsletter subscriber base is very small or zero; the goal is initial traction. - No advanced tooling required – standard email, social media profiles, and basic document/spreadsheet skills are available. ## 2. Option-By-Option Comparison | Option | Best Fit Scenario | Pros | Cons | Cost/Effort | Risks | Activation Steps | |-----------------|--------------------------------------------------------|----------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|----------",
+        "normalized": 0.84,
+        "usage": {
+          "inputTokens": 1195,
+          "outputTokens": 2020,
+          "totalTokens": 3215
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a detailed, structured comparison of marketing channels with actionable steps and acceptance checks, making it highly useful and complete."
+        },
+        "cfgB": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a good comparison with clear pros and cons, but lacks the depth and actionable detail found in CFG-A."
+        }
+      },
+      "deltaNormalized": -0.16000000000000003
+    },
+    {
+      "id": "EVT4-14",
+      "title": "Backlog triage",
+      "templateId": "feature_prioritization",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 161,
+        "model": "deepseek-v4-pro",
+        "outputHash": "fe73074e544589946857336cca278daf6e95150e93c2bd1073222f32e3ed2a98",
+        "outputExcerpt": "## Assumptions I’ve made the following assumptions about your app, team, and backlog (please adjust if they differ): - The volunteer event signup app is web or mobile, used by the public to browse and sign up for events. - The immediate priority is to keep core signup flow reliable and prevent drop-off. - Engineering time is **very limited** (e.g., 1 developer, part-time, for < 2 weeks). - The backlog contains a mix of bugs, small improvements, and feature requests. - You (the operator) need to **quickly decide what gets done**, communicate trade-offs, and clear the path for engineers. --- ## Triage Approach (The “How”) 1. **Categorize** every backlog item into: - **Critical bug** – breaks basic functionality (signup, viewing events) - **Quick win** – small improvement with high user/volunteer impact, low effort - **Feature request** – new capability, may need design - **Technical debt** – improving maintainability (e.g., slow page loads) 2. **Score** each on two axes: - **User impact** (Do people leave the app because of this? Does it directly help volunteers sign up?) - **Effort** (rough: small ≤1 day, medium a few days, large >1 week) 3. **Prioritize** using this matrix with lim",
+        "normalized": 0.88,
+        "usage": {
+          "prompt_tokens": 56,
+          "completion_tokens": 1200,
+          "total_tokens": 1256,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 496
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 56
+        }
+      },
+      "cfgB": {
+        "templateId": "feature_prioritization",
+        "durationMs": 99821,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6osge6-dme738",
+        "outputHash": "498a1d56e0838840cfa5c4ae39936c6717006f389f85976f9f97633b1f8af677",
+        "outputExcerpt": "# MVP Scope And Prioritization Decision ## 1. Goal And Constraints - **Product/operator goal**: Launch a volunteer event signup app that lets organizers create events and volunteers discover, register, and receive confirmations, using minimal engineering time to get to first usable release. - **Constraints**: Limited engineering capacity (assumption: max 6 person-weeks available for MVP delivery); the operator is non‑technical, so the decision must be expressed in plain language with clear actions and checks, not in developer jargon. - **Framework used**: RICE (Reach × Impact × Confidence ÷ Effort). All ratings are relative, with effort expressed in person‑weeks so that “effort” stays concrete for planning. **Assumptions about the backlog** (since no specific feature list was provided, these are inferred from common volunteer‑signup platform needs): 1. Organizer event creation (title, date, location, description) 2. Volunteer signup with email confirmation 3. Public event listing page 4. Basic search and filter by cause/date 5. Social media sharing link for events 6. Automated email reminder 24h before event 7. Simple admin dashboard (views registrations, counts) 8. Volunteer profi",
+        "normalized": 0.68,
+        "usage": {
+          "inputTokens": 1285,
+          "outputTokens": 3072,
+          "totalTokens": 4357
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 4,
+          "rationale": "CFG-A provides a clear, structured approach to triaging the backlog with specific examples and prioritization criteria, making it highly useful and specific. However, it assumes some knowledge of the app's context, which slightly affects completeness and governance safety."
+        },
+        "cfgB": {
+          "usefulness": 3,
+          "completeness": 3,
+          "structure": 4,
+          "specificity": 3,
+          "governanceSafety": 4,
+          "rationale": "CFG-B offers a detailed prioritization framework using RICE, which is useful but less specific to the task of triaging a backlog with limited time. It provides a broader scope and lacks immediate actionable steps, affecting its completeness and specificity."
+        }
+      },
+      "deltaNormalized": -0.19999999999999996
+    },
+    {
+      "id": "EVT4-15",
+      "title": "Differentiation",
+      "templateId": "competitor_review",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 162,
+        "model": "deepseek-v4-pro",
+        "outputHash": "0ebba7b7a1970b2fb6712f48f1a3186651d2920bbb0a7043782a8a9561ca856a",
+        "outputExcerpt": "### 1. Context & Assumptions We’re building a **simple invoice reminder app** – likely targeting freelancers, micro-businesses, and solopreneurs who: - Send invoices manually (or via a basic tool like Word/Google Docs) - Struggle with late payments but find existing accounting software overwhelming - Value speed and minimal learning curve over extensive features - Often work on mobile This exercise focuses on **what can make this app stand out** in a crowded market (e.g., FreshBooks, Wave, Zoho Invoice, etc., or even general reminder apps). The operator **does not need to code** – they can validate and execute many of these ideas with manual tests, conversations, and lightweight tools. --- ### 2. Differentiation Angles (High Potential, Low Complexity) #### Angle A: “The Polite Nudge” – Humanised, Relationship‑First Reminders **What:** Instead of generic “Your invoice is overdue” emails, the app lets users choose a **tone of voice** (friendly, formal, casual) and even pick from pre‑written templates that sound like a real person, not a bot. **Why it matters:** Many small business owners dread sounding rude or damaging client relationships. A reminder that feels thoughtful can actual",
+        "normalized": 0.96,
+        "usage": {
+          "prompt_tokens": 50,
+          "completion_tokens": 1200,
+          "total_tokens": 1250,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 502
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 50
+        }
+      },
+      "cfgB": {
+        "templateId": "competitor_review",
+        "durationMs": 84121,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6ovldv-ok5w37",
+        "outputHash": "bcab2b742085596eba0d545c5bf10aaf741e1e9b64c15ba083bacccd052b2a56",
+        "outputExcerpt": "# EVT-4 Differentiation Analysis: Simple Invoice Reminder App ## 1. Assumptions and Missing Facts *The following assumptions are based on limited input; missing details are labeled clearly to guide validation before execution.* - **Product scope:** A lightweight, standalone application whose primary job is sending automated reminders for unpaid invoices – not a full invoicing/accounting suite. - **Target buyer:** Very small businesses, sole traders, freelancers, and micro-service providers who already use spreadsheets, separate invoicing tools, or offline records and want a no‑overhead “set‑and‑forget” reminder layer. - **Current state of the product:** Not yet built (INTAKE phase). No existing users, brand, or feature set to analyse. - **Competitor landscape:** Inferred from typical market categories (direct: reminder-specialist tools; indirect: invoicing platforms with reminder modules). No specific product‑by‑product win/loss data was supplied. Exact competitors are therefore listed with high uncertainty; market validation is required. - **Geographic scope:** Assumed global English‑first market; localisation and compliance needs (GDPR, e‑invoicing) may add differentiation later.",
+        "normalized": 0.8,
+        "usage": {
+          "inputTokens": 1254,
+          "outputTokens": 3072,
+          "totalTokens": 4326
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 4,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides clear differentiation angles with specific features and competitor gaps, making it highly useful and complete."
+        },
+        "cfgB": {
+          "usefulness": 3,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a broad analysis with inferred data and potential differentiation opportunities, but lacks the specificity and direct competitor analysis of CFG-A."
+        }
+      },
+      "deltaNormalized": -0.15999999999999992
+    },
+    {
+      "id": "EVT4-16",
+      "title": "FAQ plan",
+      "templateId": "faq_outline",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 305,
+        "model": "deepseek-v4-pro",
+        "outputHash": "943e237d884a03554ed49286791382cf4eff86eb49b30c2ca8ea9351eb0a633e",
+        "outputExcerpt": "Below is a structured FAQ outline you can adapt directly to your online course checkout flow. It’s written for a non‑technical operator—just copy, customise, and paste into your website or help centre. --- ## 1. Assumptions (so everything fits your reality) - You run a small online course business, selling 1–3 digital courses (no physical products). - Checkout is hosted on a common platform (e.g., Teachable, Thinkific, Shopify, WooCommerce, Gumroad, or a custom Stripe/PayPal form). - Payment methods: credit/debit card and possibly PayPal; no “buy now, pay later” tools. - Digital delivery: instant course access via login or email link after payment. - You have a published refund/cancellation policy (or will link to it). - You handle support via email or a contact form (not phone). - You can edit a web page (e.g., help centre, FAQ page, or CMS block) without developer help. --- ## 2. FAQ Outline – Questions & Sample Answers *Replace all text in [brackets] with your real details.* **Q1: Do I need to create an account to purchase?** *A:* During checkout you can either sign in or check out as a guest. Whichever you choose, you’ll receive an email with your course access link. Creating a",
+        "normalized": 0.84,
+        "usage": {
+          "prompt_tokens": 52,
+          "completion_tokens": 1200,
+          "total_tokens": 1252,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 701
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 52
+        }
+      },
+      "cfgB": {
+        "templateId": "faq_outline",
+        "durationMs": 98816,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6oybf1-3sc7jx",
+        "outputHash": "5cd32c2da818a5df76b49c5ffb7780ba707721f2937d40d58eb95f8719ca6a78",
+        "outputExcerpt": "# FAQ Outline ## 1. Audience And Scope - **Who this FAQ is for:** - Customers about to purchase or who have just purchased a small online course. - Support operators who need a single source of truth to answer common checkout and post‑purchase questions (non‑technical audience). - **What workflow or product area it covers:** - The checkout flow from price page to payment completion, immediate course access, basic login/technical help, refund requests, and escalation paths. - *Assumption:* The course is a single, self‑contained digital product delivered through a hosted learning platform (no physical goods). --- ## 2. FAQ Entries All entries are grouped by user concern. Each answer is written to be copied straight into a knowledge base, with assumptions clearly marked as **[Assumption]** where the final fact needs confirmation by the named owner. ### Payment | Question | Direct Answer | When It Applies | Owner/Source To Confirm | | --- | --- | --- | --- | | What payment methods can I use? | We accept Visa, Mastercard, American Express, and PayPal. All payments are processed securely via **[Assumption: Stripe]**; we never store your full card number. | Before checkout; when a custome",
+        "normalized": 1,
+        "usage": {
+          "inputTokens": 1214,
+          "outputTokens": 3072,
+          "totalTokens": 4286
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a clear and structured FAQ outline with specific questions and answers tailored for a small online course checkout flow. It is useful and complete for its intended purpose, with a focus on practical implementation."
+        },
+        "cfgB": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a comprehensive and well-organized FAQ outline that covers a wide range of potential user concerns. It includes detailed sections with clear instructions and assumptions, making it highly useful and specific for both customers and support operators."
+        }
+      },
+      "deltaNormalized": 0.16000000000000003
+    },
+    {
+      "id": "EVT4-17",
+      "title": "B2B persona",
+      "templateId": "user_persona",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 433,
+        "model": "deepseek-v4-pro",
+        "outputHash": "11ecafd3e6ebd9ffa2a42bf6638a54c8af2585cde5ccab27ffcbdce1140c8ff1",
+        "outputExcerpt": "Here’s a structured set of personas for a simple internal approval tracker, built for a non-technical operator. It’s meant to be a working document—validated, challenged, and refined with real people. --- ## 1. Assumptions (What we’re building on) - **Company size**: 50–500 employees (SMB to lower mid-market). - **Current process**: Mostly email, chat, paper forms, or spreadsheet tracking. No dedicated workflow tool. - **Approval types**: Internal requests like purchase orders, leave, expense reports, document sign-offs, or IT access. - **Buyer motivation**: They want something light, quick to set up, and easy to roll out without IT overhead. - **End-user tech comfort**: Basic familiarity with web apps and email; no coding. Access via desktop and mobile browser is expected. - **Market**: Any department (HR, Finance, Ops, IT) that runs internal approval chains. These assumptions must be tested with real stakeholders. Use them as a starting point. --- ## 2. Buyer Persona: The Problem Owner ### **Profile** **Name:** Alex (placeholder) **Role:** Operations Manager, Head of Finance, HR Lead, or Office Manager in a growing department/company. **Age:** 35–50 **Influence:** Has budget auth",
+        "normalized": 0.88,
+        "usage": {
+          "prompt_tokens": 54,
+          "completion_tokens": 1200,
+          "total_tokens": 1254,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 437
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 54
+        }
+      },
+      "cfgB": {
+        "templateId": "user_persona",
+        "durationMs": 99951,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6p1ecx-ny2ce2",
+        "outputHash": "492895fcef7ba3c36bac4a3e144d4509dfd31d576cdd6190666b680433f93469",
+        "outputExcerpt": "# Persona Packet ## 1. Segments And Assumptions **Source data used:** Task context — “simple internal approval tracker” for a B2B audience. No specific industry, company size, or OS was supplied. Segments are inferred from typical SMB use‑cases and the requested simplicity. **Assumptions (clearly marked, non‑binding):** - The product is a cloud‑based, self‑service workflow tool (free trial, low‑code configuration) that handles common approval types: time‑off, expenses, purchase orders, document sign‑offs. - Target companies have 5–500 employees and currently manage approvals via email, spreadsheets, or chat — they lack formal tracking. - The buyer is a non‑technical department head, office manager, or HR lead; end‑users are everyday employees with varying tech‑savviness. - IT involvement is minimal; the buyer expects a 15‑minute setup, mobile access, and basic reporting out‑of‑the‑box. - Sales are self‑serve or low‑touch; a 14‑day free trial is the primary evaluation path. **Inferred Segments (practical scope for a “simple” tracker):** 1. **Team Essentials** (5–20 employees) - Very informal; one person often manages everything. Needs a single‑step approval flow (e.g., manager appro",
+        "normalized": 0.64,
+        "usage": {
+          "inputTokens": 1176,
+          "outputTokens": 3072,
+          "totalTokens": 4248
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 4,
+          "rationale": "CFG-A provides a detailed and structured persona with clear assumptions, goals, and pain points. It is specific and well-organized, making it highly useful. However, it could include more governance and safety considerations."
+        },
+        "cfgB": {
+          "usefulness": 3,
+          "completeness": 3,
+          "structure": 4,
+          "specificity": 3,
+          "governanceSafety": 3,
+          "rationale": "CFG-B offers a broad overview with some useful insights but lacks the depth and specificity of CFG-A. The structure is clear, but the completeness and specificity are lower, and governance aspects are not thoroughly addressed."
+        }
+      },
+      "deltaNormalized": -0.24
+    },
+    {
+      "id": "EVT4-18",
+      "title": "Freemium decision",
+      "templateId": "pricing_strategy",
+      "status": "failed",
+      "error": "CFG-A deepseek/deepseek-v4-pro returned empty output"
+    },
+    {
+      "id": "EVT4-19",
+      "title": "Retention plan",
+      "templateId": "operator_plan",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 164,
+        "model": "deepseek-v4-pro",
+        "outputHash": "46b7f891ddf16a0ab747af7b04dbdbb4f0682209328f334882ebe0291a4a24f1",
+        "outputExcerpt": "**Purpose:** A clear, no-code-heavy retention plan to help your pet care reminder app keep users engaged long-term. **Audience:** Non-technical operator (you have control over notification schedules, simple content changes, and basic analytics dashboards). --- ## Assumptions - The app’s core feature is scheduling and receiving push reminders for pet tasks (feeding, walks, medication, etc.). - Users have at least one pet profile with a name and a list of tasks. - You can access a simple analytics view (daily active users, task completion rate, last-opened date) and an admin panel to edit push notification text, trigger emails, or swap in-app images/text. - The app already supports push notifications and you can add a few optional data points (e.g., a “task completed today” boolean) without development. - “Retention” is measured as users completing at least one pet task in the app within 7, 14, and 30 days after install. --- ## Phase 1: Onboarding & Activation (Day 1–7) **Goal:** Make the app indispensable for pet care in the first week. ### Action 1.1: Instant “first win” push - **What to do:** Immediately after a user sets their first reminder, send a congratulatory push like: *“🐾",
+        "normalized": 0.88,
+        "usage": {
+          "prompt_tokens": 52,
+          "completion_tokens": 1200,
+          "total_tokens": 1252,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 592
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 52
+        }
+      },
+      "cfgB": {
+        "templateId": "operator_plan",
+        "durationMs": 83704,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6p5bph-leeug4",
+        "outputHash": "73ebfe780088473ca5be89a231aef41ae18820d63ebdf7179af68f3d238f570f",
+        "outputExcerpt": "# Operator Action Plan ## 1. Goal, Constraints, And Assumptions - **Goal:** Increase the percentage of users who return to the pet care reminder app at least once per week after the first month. Move from a “tried twice and left” pattern to habitual use for feeding, medication, grooming, and vet visits. - **Constraints:** Small team (founder/operator + part-time developer), limited budget (no paid media, minimal third‑party tools), no dedicated data analyst. Operator is non‑technical and will coordinate action. - **Assumptions:** 1. Basic analytics can be added (e.g., Firebase, Amplitude, or a privacy‑friendly alternative) without a full rebuild. 2. Push notifications are available and can be personalised. 3. The app has at least 100 active installs to measure retention meaningfully. 4. The operator can access app store console, a simple analytics dashboard, and can send emails/surveys to users. 5. “Retention” for this plan means returning to the app to mark a reminder as “done”, not just opening the app passively. - **Definition of done:** - A working retention dashboard shows Day‑1, Day‑7, and Day‑30 retention rates. - At least one retention‑boosting feature (timely push reminder",
+        "normalized": 0.68,
+        "usage": {
+          "inputTokens": 1325,
+          "outputTokens": 2602,
+          "totalTokens": 3927
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 4,
+          "rationale": "CFG-A provides a detailed, phased plan with specific actions and metrics, making it highly useful and complete. The structure is clear and easy to follow, with specific examples and acceptance checks. Governance and safety are considered through measurable outcomes."
+        },
+        "cfgB": {
+          "usefulness": 3,
+          "completeness": 3,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 3,
+          "rationale": "CFG-B offers a structured timeline with specific actions and metrics, but lacks some detail in user engagement strategies compared to CFG-A. It is useful but less comprehensive, with a focus on technical setup and feedback loops. Governance and safety are addressed through defined success metrics."
+        }
+      },
+      "deltaNormalized": -0.19999999999999996
+    },
+    {
+      "id": "EVT4-20",
+      "title": "Acceptance criteria",
+      "templateId": "acceptance_criteria",
+      "status": "completed",
+      "cfgA": {
+        "durationMs": 315,
+        "model": "deepseek-v4-pro",
+        "outputHash": "b4aeab3851a9d1b6672b86cf62b861782e7b23d7a395787306563f10def3bd34",
+        "outputExcerpt": "Here’s a ready-to-use set of acceptance criteria you can hand directly to your development or analytics team. It’s written without any technical jargon and includes clear checks you can perform yourself. --- ### What this dashboard will do Show, at a glance, how last week performed in sales and conversion, and what open tasks the team needs to complete this week. The information updates automatically every Monday morning (for the prior Monday–Sunday week) and helps you run the weekly stand-up without digging through multiple systems. --- ### Assumptions (agree these before building) 1. **Time frame** – The dashboard always displays the most recently completed week (Mon 00:00 to Sun 23:59). Data refreshes once, every Monday at 06:00. 2. **Sales** – Total gross sales revenue in your local currency (e.g., total orders paid, excluding cancelled/refunded). No manual adjustments. 3. **Conversion** – (`Total completed orders ÷ Total unique website visitors`) × 100, for the same week. If your business defines conversion differently (e.g., leads to sales), replace the formula here. 4. **Open tasks** – All tasks from your task management tool that are: - Status “Open” (not “Done” or “Cancell",
+        "normalized": 0.84,
+        "usage": {
+          "prompt_tokens": 57,
+          "completion_tokens": 1200,
+          "total_tokens": 1257,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 649
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 57
+        }
+      },
+      "cfgB": {
+        "templateId": "acceptance_criteria",
+        "durationMs": 98197,
+        "model": "deepseek-v4-pro",
+        "decision": "ALLOW",
+        "receiptPresent": true,
+        "receiptId": "rcpt-env-mp6p82y9-412ow5",
+        "outputHash": "f9215b470170a028dd6fee4cd5e2f74d1b37a8aced2c734d50c0088f975e5e25",
+        "outputExcerpt": "# Acceptance Criteria Packet ## 1. Scope Under Test - **Feature/workflow:** A dashboard that displays weekly aggregated sales revenue (or count), a conversion rate (percentage of deals won from qualified leads), and a list or count of open tasks for the current week. It includes freshness indicators, empty states, error handling, and permission-based visibility. - **User or operator outcome:** A non-technical operator or manager can open the dashboard, immediately understand the key numbers for the week, see whether data is fresh or stale, receive a clear message when no data exists, and interact with open tasks according to their role. The dashboard never breaks, shows misleading values, or reveals data a user isn’t authorized to see. ## 2. Criteria By Workflow | Workflow Area | Given | When | Then | Data/State Requirement | Pass/Fail Check | | --- | --- | --- | --- | --- | --- | | **Weekly sales metric** | User has dashboard access | User opens the dashboard on any day of the current business week (Mon–Sun) | A card shows a single “Weekly Sales” numeric value (e.g., $42,300) representing the current week’s total revenue or count | Aggregated weekly sales data exists for the curre",
+        "normalized": 1,
+        "usage": {
+          "inputTokens": 1230,
+          "outputTokens": 3072,
+          "totalTokens": 4302
+        },
+        "expansion": null
+      },
+      "review": {
+        "mode": "openai:gpt-4o",
+        "cfgA": {
+          "usefulness": 4,
+          "completeness": 4,
+          "structure": 4,
+          "specificity": 4,
+          "governanceSafety": 5,
+          "rationale": "CFG-A provides a clear and structured set of acceptance criteria with specific assumptions and checks. It is useful and complete for non-technical users, ensuring governance and safety by specifying access limitations."
+        },
+        "cfgB": {
+          "usefulness": 5,
+          "completeness": 5,
+          "structure": 5,
+          "specificity": 5,
+          "governanceSafety": 5,
+          "rationale": "CFG-B offers a comprehensive and detailed acceptance criteria packet with clear workflows and pass/fail checks. It covers all necessary aspects, including error handling and data freshness, ensuring high governance and safety standards."
+        }
+      },
+      "deltaNormalized": 0.16000000000000003
+    }
+  ]
+}

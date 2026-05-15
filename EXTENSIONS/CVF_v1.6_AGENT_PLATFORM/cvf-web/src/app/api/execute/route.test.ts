@@ -146,6 +146,42 @@ describe('/api/execute', () => {
         );
     });
 
+    it('raises trusted noncoder max tokens only for explicit DeepSeek V4 Pro calls', async () => {
+        process.env.DEEPSEEK_API_KEY = 'test-key';
+        executeAIMock.mockResolvedValue({
+            success: true,
+            output: validOutput,
+            provider: 'deepseek',
+            model: 'deepseek-v4-pro',
+        });
+
+        const req = new Request('http://localhost/api/execute', {
+            method: 'POST',
+            body: JSON.stringify({
+                templateId: 'feature_prioritization',
+                templateName: 'Feature Prioritization',
+                intent: 'Prioritize features for a small product team',
+                inputs: {
+                    features: 'Waitlist, checkout reminders, admin dashboard',
+                    goal: 'Pick MVP scope',
+                    constraints: 'Small team',
+                    framework: 'RICE',
+                },
+                provider: 'deepseek',
+                model: 'deepseek-v4-pro',
+            }),
+        });
+
+        const res = await POST(req as never);
+        expect(res.status).toBe(200);
+        expect(executeAIMock).toHaveBeenCalledWith(
+            'deepseek',
+            'test-key',
+            expect.any(String),
+            expect.objectContaining({ maxTokens: 3072 }),
+        );
+    });
+
     it('resolves execution token budget only for trusted noncoder templates', () => {
         expect(resolveExecutionMaxTokens('documentation')).toBe(2048);
         expect(resolveExecutionMaxTokens('faq_outline')).toBe(2048);
@@ -153,6 +189,10 @@ describe('/api/execute', () => {
         expect(resolveExecutionMaxTokens('strategy_analysis')).toBe(2048);
         expect(resolveExecutionMaxTokens('operator_plan')).toBe(2048);
         expect(resolveExecutionMaxTokens('decision_memo')).toBe(2048);
+        expect(resolveExecutionMaxTokens('documentation', 'alibaba', 'qwen-turbo')).toBe(2048);
+        expect(resolveExecutionMaxTokens('documentation', 'deepseek', 'deepseek-chat')).toBe(2048);
+        expect(resolveExecutionMaxTokens('documentation', 'deepseek', 'deepseek-v4-pro')).toBe(3072);
+        expect(resolveExecutionMaxTokens('feature_prioritization', 'deepseek', 'deepseek-v4-pro')).toBe(3072);
         expect(resolveExecutionMaxTokens('custom_template')).toBeUndefined();
         expect(resolveExecutionMaxTokens(undefined)).toBeUndefined();
     });
