@@ -2,7 +2,7 @@
 
 Memory class: ROADMAP
 
-Status: proposed - not authorized for absorption.
+Status: AMENDED 2026-05-17 — rule narrowed and enforcement surface added per Claude review RC-3 and Codex response. Still proposed, not authorized for absorption until operator accepts the final consensus roadmap.
 
 ## Purpose
 
@@ -117,20 +117,50 @@ Evidence files:
 
 ## Proposed Corrective Rule
 
-If accepted later, future external-knowledge absorption, GA release, or tranche
-series closure should produce an operator-facing summary when either condition
-is true:
+**Amended 2026-05-17 per Claude review RC-3 and Codex response: trigger
+conditions made explicit, enforcement surface added.**
 
-1. reviewed knowledge remains valuable but unabsorbed;
-2. a lane is marked `runtime-owned` while known sub-contracts remain missing.
+### Trigger conditions (explicit, narrow)
 
-The summary should state:
+The operator-facing unabsorbed-knowledge summary requirement is triggered
+ONLY by one of three closure events:
+
+1. **External-knowledge absorption tranche closure** with reviewed-but-unabsorbed
+   items remaining;
+2. **GA or RC release closure**;
+3. **Tranche-series closure** (≥3 related tranches closing on the same date).
+
+This rule does **NOT** apply to:
+
+- single-tranche closures;
+- single-item review closures;
+- routine implementation closures;
+- bug fix closures;
+- doc-only closures.
+
+### Required summary fields
+
+When triggered, the operator-facing summary must include:
 
 - what shipped;
 - what did not ship;
 - why it did not ship;
 - what decision is needed next;
 - whether implementation is authorized or only proposed.
+
+### Enforcement surface
+
+To prevent this rule from being forgotten the same way the original
+unabsorbed inventory was buried, the rule must be enforceable through one
+checklist line.
+
+Add to the existing tranche-closure checklist (or equivalent release-gate
+checklist):
+
+> "If this closure matches a trigger condition in CVF Reporting Rule, attach
+> an operator-facing unabsorbed-knowledge summary."
+
+No new tooling, no new file, no new hook. Doc-level enforcement only.
 
 ## Risk
 

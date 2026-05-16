@@ -2,7 +2,16 @@
 
 Memory class: FULL_RECORD
 
-Status: OPEN — PENDING OPERATOR DECISION
+Status: AMENDED 2026-05-17 — accuracy fixes applied per Claude review and Codex response
+
+> **Amendment note 2026-05-17:** Claude review on 2026-05-17 spot-checked the
+> original inventory against the current CPF/LPF/Skill Evolution code state
+> and found three items overstated. Codex response 2026-05-17 accepted the
+> findings with minor amendments. This file is updated to reflect the
+> consensus state. See:
+>
+> - `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_CLAUDE_REVIEW_2026-05-17.md`
+> - `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_CODEX_RESPONSE_TO_CLAUDE_2026-05-17.md`
 
 ## Purpose
 
@@ -70,12 +79,16 @@ Nguồn được review:
 - Non-coder có thể phát hiện agent bị treo hoặc orphan process
 - Không cần quyền can thiệp — read-only dashboard là an toàn nhất để ship
 
-**Đánh giá:** ⭐⭐⭐⭐ — Giá trị cao. Hoàn toàn read-only nên R0. Không overlap
-với bất kỳ governed surface nào hiện có. Spec đầy đủ trong private reference.
+**Đánh giá:** ⭐⭐⭐⭐⭐ — Giá trị cao nhất trong các implementation candidates
+(upgrade từ ⭐⭐⭐⭐ theo Claude review 2026-05-17 và Codex response). Hoàn toàn
+read-only nên R0. Không overlap với bất kỳ governed surface nào hiện có. Spec
+đầy đủ trong private reference. Không có owner surface CVF nào hiện đang gánh.
 
 **Điều kiện để absorb:** GC-018 mới cho `CVF_OBSERVABILITY_PLANE_FOUNDATION`.
 Target: `EXTENSIONS/CVF_OBSERVABILITY_PLANE_FOUNDATION/` với 9 spec files +
-web route `/runtime` khi cần.
+web route `/runtime` khi cần. Phải là roadmap thứ hai sau khi ADD-A/D doctrine
+promotion close — vì ADD-A doctrine sẽ frame Observability Plane là một
+governed capability mới.
 
 ---
 
@@ -175,6 +188,76 @@ corrective doctrine quan trọng nhất trong pack. Không cần code.
 
 **Điều kiện để absorb:** Promote cùng với ADD-A thành một doctrine file duy
 nhất. Không cần GC-018 implementation.
+
+---
+
+### ADD-BRIEF — Brief Normalization Doctrine
+
+**Nguồn:** Phase A synthesis, từ `Human System Harness`, `Hermes Agent`
+
+**Trạng thái hiện tại:** `docs-classified` — added 2026-05-17 per Claude review.
+Phase A synthesis 2026-05-07 đã explicit name doctrine này nằm gần "planning,
+roadmap, and agent operating contract layers" nhưng inventory ban đầu gộp vào
+ADD-D và mất distinction.
+
+**Nội dung:**
+
+Doctrine cho brief-to-work normalization:
+
+- Chuẩn hóa task thành: goal, constraints, evidence requirements, current
+  owner surfaces, acceptance criteria, open risks
+- Detect solution bias trước khi grant design/build authority
+- Preserve operator intent trong khi cho agents resolve technical route
+  decisions inside CVF rules
+- Record assumptions chỉ khi chúng affect acceptance hoặc safety
+
+**Owner surfaces đề xuất:**
+
+- Agent operating contract layer
+- Planning / roadmap layer
+- Reverse Prompting / CEO Orchestrator (Control Plane)
+
+**Giá trị thực tế:**
+
+- Trực tiếp giải quyết vấn đề "agent push ordinary technical decisions back
+  to operator" mà bạn đã raise
+- Phù hợp với GA posture: governance qua boundary, không qua path-locking
+
+**Đánh giá:** ⭐⭐⭐⭐ — Subordinate to ADD-D (theo Codex amendment 2026-05-17).
+Ship trong cùng promotion packet với ADD-A + ADD-D thay vì standalone.
+
+**Điều kiện để absorb:** Cùng promotion packet với ADD-A + ADD-D.
+
+---
+
+### ADD-W7-SIGNALS — W7 Boundary-First Signal Candidates
+
+**Nguồn:** Phase A synthesis, Family D
+
+**Trạng thái hiện tại:** `docs-classified` — added 2026-05-17 per Claude review.
+Codex amendment: `deferred-until-ADD-D-promotion`.
+
+**Nội dung:**
+
+3 signal candidates mới cho evidence receipt schema:
+
+| Signal | Ghi nhận điều gì |
+|---|---|
+| `path_lock_signal` | Restricted path được chọn và tuân thủ |
+| `minimal_response_match` | Agent giữ response bounded theo policy |
+| `restricted_path_count` | Số restricted-path gates đã qua |
+
+**Giá trị thực tế:**
+
+- Có thể absorb vào W7 evidence receipt schema mà không cần thay đổi runtime
+- Cung cấp audit visibility cho boundary-first governance
+
+**Đánh giá:** ⭐⭐⭐ — Subordinate to ADD-D doctrine. Signals chỉ có nghĩa
+khi 4 policy classes (hard prohibition / soft constraint / communication
+policy / restricted execution path) đã được promote.
+
+**Điều kiện để absorb:** Sau khi ADD-D doctrine promoted. Là schema
+extension cho W7 evidence receipt, không phải standalone roadmap.
 
 ---
 
@@ -329,94 +412,104 @@ hoặc bổ sung vào CVF_MODEL_GATEWAY spec hiện có.
 Các lane đã được mark `runtime-owned` nhưng phần implementation thực tế
 **ít hơn đáng kể** so với "definition of alive" trong classification summary.
 
-### GAP-MEM — Controlled Memory: thiếu 9 sub-contracts
+### GAP-MEM — Controlled Memory: thiếu 3 memory-specific sub-contracts
 
-**Trạng thái:** Lane `runtime-owned`, nhưng chỉ có `controlled.memory.gateway.contract.ts`.
+**Trạng thái:** Lane `runtime-owned`. LPF có 67 files với memory gateway,
+learning reinjection, feedback ledger, governance signal contracts đã sẵn.
+Phần thực sự thiếu là 3 sub-contracts **memory-specific** (không phải 9 như
+inventory ban đầu claim).
 
-**Definition of alive (từ classification summary):**
-> memory capture/retrieval/reinjection goes through privacy filter, lifecycle
-> policy, access policy, context packager, and receipt
+**Amendment 2026-05-17:** Claude spot-check thấy LPF đã có
+`controlled.memory.gateway.contract.ts`, `learning.reinjection.contract.ts` +
+pipeline variants, `feedback.ledger.contract.ts`, 60+ contracts khác. Codex
+response xác nhận 3 items cụ thể (tên normative) còn thiếu từ AgentMemory
+private reference:
 
-**Thực tế trong code:** Chỉ có gateway contract. Các contracts sau chưa tồn tại:
+| Contract còn thiếu | Chức năng | Nguồn |
+|---|---|---|
+| `memory_privacy_filter` | PII redaction tại memory write boundary (không phải generic governance signal redaction) | `.private_reference/legacy/CVF 16.5/agentmemory/` |
+| `memory_capture_adapter` | Typed input contract từ agent → governed memory record | Như trên |
+| `memory_retention_policy` | TTL + review-gate + expiry-by-classification | Như trên |
 
-| Contract còn thiếu | Chức năng |
-|---|---|
-| Memory lifecycle policy | Retention, expiry, review gate |
-| Memory capture adapter | Chuẩn hóa input từ agent |
-| Memory retrieval policy | Điều kiện để agent được đọc |
-| Memory reinjection protocol | Đưa memory trở lại context theo rule |
-| Memory context packager | Đóng gói memory cho context builder |
-| Memory event hooks | Trigger khi memory thay đổi |
-| Memory access policy | RBAC cho memory access |
-| Memory privacy filter | PII/sensitive data redaction |
-| Memory guard contract | Hard boundary cho memory operations |
+**Các items khác từ AgentMemory** (event hooks, access policy, guard contract)
+**không thuộc gap này** vì overlap với LPF's existing `governance.signal.*`
+và `learning.observability.*` contracts. Không được duplicate.
 
-**Đánh giá:** ⭐⭐⭐⭐ — Đây là gap lớn nhất trong các `runtime-owned` lanes.
-Gateway contract không có gì để govern nếu không có sub-contracts.
-
----
-
-### GAP-SKILL — Skill Evolution: 5 stubs chưa implement
-
-**Trạng thái:** Lane `runtime-owned`, nhưng các components chỉ là stubs ~300 bytes.
-
-**Definition of alive:**
-> reflection creates mutation proposals; verification/probation/approval/receipt
-> are required before any skill reinjection
-
-**Thực tế:** `governed.skill.evolution.contract.ts` có interface, nhưng:
-- `skill_reflection_engine.ts` — stub
-- `skill_mutation_planner.ts` — stub
-- `skill_verification_gate.ts` — stub
-- `skill_reinjection_controller.ts` — stub
-- `skill_evolution_receipt.ts` — stub
-
-**Đánh giá:** ⭐⭐⭐ — Stub hiện tại đủ để giữ boundary, nhưng không
-executable. Cần roadmap riêng để implement.
+**Đánh giá:** ⭐⭐⭐ — Giá trị có ý nghĩa nhưng scope nhỏ hơn nhiều so với
+inventory ban đầu. 3 sub-contracts cụ thể, không phải 9.
 
 ---
 
-### GAP-AGENT — Agent Boundary: thiếu registry và orchestration
+### GAP-SKILL — REMOVED 2026-05-17
 
-**Trạng thái:** Lane `runtime-owned`, nhưng chỉ có `agent.governed.session.contract.ts`.
+**Status:** Removed per Claude spot-check + Codex response.
 
-**Definition of alive:**
-> agents have registry records, permission profiles, structured handoff,
-> risk policy, and audit receipt tests
+**Reason:** Spot-check thấy 7 files trong evolution_engine/ (549 LOC tổng,
+contract 411 LOC + 6 helpers 13-40 LOC mỗi) **không phải stubs**, mà là
+minimal executable implementations có thật logic. `experience.collector.ts`
+ghi JSON lines thật, các helpers khác có chức năng tương đương. Lane này
+genuinely `runtime-owned` per closure packet.
 
-**Thực tế:**
-- Agent registry — chưa có
-- Permission profiles — chưa có
-- Structured handoff contract — chưa có
-- Orchestration rules — chưa có
+Future expansion (more reflection patterns, mutation planner depth) thuộc về
+một separate skill governance enhancement roadmap, không phải "unabsorbed
+CVF 16.5 knowledge".
 
-**Đánh giá:** ⭐⭐⭐ — Gap tương tự Memory. Session contract alone không đủ
-để govern multi-agent scenarios.
+---
+
+### GAP-AGENT-HANDOFF — Cross-agent handoff + delegation receipt flow
+
+**Trạng thái:** Lane `runtime-owned`. CPF đã có đầy đủ agent governance
+contracts. Chỉ còn structured cross-agent handoff và delegation receipt flow
+chưa có integration audit.
+
+**Amendment 2026-05-17:** Claude spot-check thấy GAP-AGENT ban đầu overstated
+nghiêm trọng. CPF thực tế đã có:
+
+- `agent.registration.batch.contract.ts` (registry — đã có)
+- `agent.definition.boundary.contract.ts` (permission profile — đã có)
+- `agent.definition.capability.batch.contract.ts` (capability — đã có)
+- `agent.definition.audit.batch.contract.ts` (audit receipt — đã có)
+- `agent.scope.resolution.batch.contract.ts` (scope — đã có)
+- `orchestration.contract.ts` + 3 pipeline variants (orchestration rules — đã có)
+- `agent.governed.session.contract.ts` (session boundary — đã có)
+
+Codex response xác nhận: GAP-AGENT ban đầu phải remove. Phần còn thiếu thực
+sự là một item nhỏ hơn nhiều:
+
+**`GAP-AGENT-HANDOFF`** — structured cross-agent handoff protocol và
+delegation receipt flow chưa được wire xuyên qua các contracts hiện có.
+Không cần new contracts — cần integration audit và một handoff contract bổ
+sung.
+
+**Đánh giá:** ⭐⭐ — Scope nhỏ. Không phải priority cao. Có thể defer cho
+đến khi multi-agent orchestration scenarios cần thực sự.
 
 ---
 
 ## Tóm tắt ưu tiên
 
-### Nhóm 1 — Có thể absorb ngay, không cần code
+### Nhóm 1 — Có thể absorb ngay, không cần code (consensus 2026-05-17)
 
 | ID | Tên | Lý do ưu tiên cao |
 |---|---|---|
 | ADD-A | Governed Capability Intake Doctrine | Upstream governance gap thực sự; synthesis hoàn chỉnh; promote là doc-only |
 | ADD-D | Boundary-First Governance Doctrine | Corrective doctrine quan trọng nhất; cùng file với ADD-A |
+| ADD-BRIEF | Brief Normalization Doctrine | Subordinate to ADD-D; cùng promotion packet |
 
-**Hành động:** Mở một governance doc promotion packet cho
-`CVF_GOVERNED_CAPABILITY_INTAKE_AND_BOUNDARY_FIRST_GOVERNANCE_DOCTRINE`.
-Không cần GC-018 implementation, không cần tests.
+**Hành động:** Mở một governance doc promotion packet duy nhất cho
+`CVF_GOVERNED_CAPABILITY_INTAKE_AND_BOUNDARY_FIRST_GOVERNANCE_DOCTRINE`
+(consolidated từ ADD-A + ADD-D + ADD-BRIEF). Không cần GC-018 implementation,
+không cần tests.
 
 ---
 
-### Nhóm 2 — Cần GC-018 riêng, giá trị cao
+### Nhóm 2 — Cần GC-018 riêng, giá trị cao (theo thứ tự ưu tiên)
 
-| ID | Tên | Trigger để làm |
+| Thứ tự | ID | Giá trị |
 |---|---|---|
-| OBS-1 | CVF Observability Plane Foundation | Bất cứ khi nào; spec sẵn sàng; không overlap |
-| GAP-MEM | Controlled Memory sub-contracts | Khi Learning Plane cần governance thực sự |
-| ADD-PROVIDER | Provider/Runtime Output Contracts | Khi mở provider hardening roadmap tiếp theo |
+| 1 | OBS-1 Observability Plane ⭐⭐⭐⭐⭐ | Live dashboard read-only; spec đầy đủ; phải mở sau khi ADD-A/D close |
+| 2 | ADD-PROVIDER Output Contracts ⭐⭐⭐ | Chuẩn hóa JSON envelope, exit codes, streaming |
+| 3 | GAP-MEM 3 memory sub-contracts ⭐⭐⭐ | privacy filter + capture adapter + retention policy (scope thu hẹp từ 9 → 3) |
 
 ---
 
@@ -424,12 +517,12 @@ Không cần GC-018 implementation, không cần tests.
 
 | ID | Tên | Trigger |
 |---|---|---|
+| ADD-W7-SIGNALS | W7 Signal Candidates | Sau khi ADD-D promote; là schema extension cho evidence receipt |
 | ADD-B | Context Profile Metadata | Khi context packaging roadmap mở |
 | ADD-C1 | Continuity / Handoff Doctrine | Khi W123 continuation mở lại |
 | ADD-C2 | Delegation / Subagent Contracts | Khi W7/W8 orchestration mở |
 | ADD-E1 | Scoped Knowledge / Code Graph | Khi code intelligence roadmap mở |
-| GAP-SKILL | Skill Evolution runtime | Khi skill governance cần executable loop |
-| GAP-AGENT | Agent registry + orchestration | Khi multi-agent scenarios cần governance |
+| GAP-AGENT-HANDOFF | Cross-agent handoff + delegation receipt | Khi multi-agent scenarios cần thực sự |
 
 ---
 
