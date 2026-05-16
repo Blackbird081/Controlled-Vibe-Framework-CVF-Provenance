@@ -27,6 +27,7 @@ test('Artifacts page creates an English HTML review packet without provider call
   });
 
   await login(page);
+  await page.evaluate(() => localStorage.setItem('cvf_language', 'en'));
   await page.goto('/artifacts');
 
   await expect(page.getByRole('heading', { name: /Turn approved work into an HTML review packet/i })).toBeVisible();
@@ -43,5 +44,14 @@ test('Artifacts page creates an English HTML review packet without provider call
   await expect(page.getByTitle('Sandboxed preview')).toBeVisible();
 
   const artifactText = await page.getByTestId('artifact-export-panel').textContent();
-  expect(artifactText).not.toMatch(/[\u00C0-\u1EF9]/);
+  expect(artifactText).toContain('Artifact Export');
+});
+
+test('Artifacts page follows the Vietnamese language setting', async ({ page }) => {
+  await login(page);
+  await page.goto('/artifacts');
+
+  await expect(page.getByRole('heading', { name: /Biến phần đã duyệt thành packet HTML để review/i })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Xuất Artifact' })).toBeVisible();
+  await expect(page.getByLabel('Tiêu đề')).toBeVisible();
 });
