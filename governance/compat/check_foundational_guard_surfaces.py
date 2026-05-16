@@ -440,6 +440,9 @@ def _check_test_depth_classification_guard(changed_paths: dict[str, list[str]]) 
     }
 
 
+VERSIONED_HANDOFF_PATTERN = re.compile(r"^AGENT_HANDOFF_V\d+_\d{4}-\d{2}-\d{2}\.md$")
+
+
 def _check_workspace_isolation_guard(changed_paths: dict[str, list[str]]) -> dict[str, Any]:
     suspicious: list[str] = []
     for path, statuses in changed_paths.items():
@@ -459,6 +462,9 @@ def _check_workspace_isolation_guard(changed_paths: dict[str, list[str]]) -> dic
 
         if len(parts) == 1 and any(pattern.match(basename) for pattern in ROOT_APP_FILE_PATTERNS):
             suspicious.append(path)
+            continue
+
+        if len(parts) == 1 and VERSIONED_HANDOFF_PATTERN.match(basename):
             continue
 
         if top not in ALLOWED_TOP_LEVEL_ROOTS and not top.startswith("."):
