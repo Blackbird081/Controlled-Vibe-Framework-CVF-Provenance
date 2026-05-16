@@ -2,6 +2,103 @@
 
 ---
 
+## [v4.0.0] — GA Release — 2026-05-16
+
+Status: GA_LOCAL_FIRST_APPROVED
+
+### Summary
+
+CVF 4.0.0 is the first Generally Available release of the local-first governance
+control plane. It ships post-RC2 stability work, EA infrastructure tracks A–E,
+three Web Integration tranches (T1–T3), and a complete Quality Benchmark Suite
+methodology. The GA decision is bounded: local-first operability is proven;
+output-quality parity with direct providers is not claimed.
+
+### What shipped since v4.0.0-rc.1
+
+#### Web Integration — Tranches 1, 2, 3 (end-user discovery surface)
+
+- **Knowledge Intake** (`/knowledge/intake`): governed knowledge packet submission
+  with visible source, audience, and review boundary — bilingual EN/VI.
+- **Artifact Export** (`/artifacts`): governed HTML review packet generation.
+  Claim upgraded to **governed artifact generation** — confirmed 2026-05-16:
+  `POST /api/artifacts/export` returns a live `governanceReceipt`
+  (`decision: ALLOW`, `riskLevel: R0`) when the governance engine is configured.
+- **Work Transfer** (`/work-transfer`): audit-history review and governed HTML
+  artifact export for handover or review.
+- **Sidebar navigation**: all three routes wired from first login (T1).
+- **Home page quick-action cards** (T3): Knowledge Intake (emerald) and
+  Artifact Export (indigo) cards on the post-login home screen — bilingual EN/VI.
+- **Landing page governed-workflows callout** (T3): three-column callout linking
+  to all three governed routes — bilingual EN/VI.
+- **Public README Web Workflows section** (T3): route table with descriptions,
+  discoverable by evaluators before login.
+
+Evidence: `docs/reviews/CVF_WEB_INTEGRATION_TRANCHE_3_CLOSURE_2026-05-16.md`
+
+#### EA Enhancement Tracks A–E
+
+- **Track A** — Governance Tax Measurement instrumentation.
+- **Track B** — QBS Benchmark Dashboard tab in `/governance`.
+- **Track C** — Audit Receipt Integrity model with SHA-256 manifest.
+- **Track D** — Provider Policy Engine with preference tiers and failover.
+- **Track E** — DLP Quality Benchmark with synthetic corpus.
+
+Evidence: `docs/evidence/cvf-16-5-runtime-absorption.md`; 76 tests pass.
+
+#### Post-RC2 GA Readiness
+
+- 6/6 baseline regression streams closed (BR).
+- 11/11 cost/quota cases closed (CQ).
+- DeepSeek N=8 smoke/sanity confirmed.
+- Hosted CI2-H 7/7 PASS (GitHub Actions run `25575296660`).
+
+Evidence: `docs/evidence/local-first-release-gate-proof-2026-05-16.md`
+
+#### Quality Benchmark Suite (QBS)
+
+- Methodology and run artifacts are public.
+- Alibaba/DashScope R10 checkpoint preregistered.
+- No public QBS quality score is claimed until a powered run and reviewer
+  scoring are published.
+
+Evidence: `docs/benchmark/README.md`
+
+#### CVF 16.5 knowledge absorption
+
+- Knowledge Intake, Artifact Export, Work Transfer, and Change Handoff surfaces
+  hardened for non-coder use.
+- Nine governed runtime contracts adopted (controlled memory, tool call trace,
+  agent boundary delegation, MCP business adapter, observability delta signal,
+  knowledge vault intake, document artifact renderer, OpenSpec change adapter,
+  governed skill evolution loop).
+
+#### Infrastructure
+
+- GC-045 Markdown Structural Completeness Guard added and enforced.
+- GC-023 File Size Guard wired in `.githooks/pre-commit`.
+- Public surface scanner (`scripts/check_public_surface.py`) added.
+- Provider lanes: Alibaba/DashScope 7/7 release gate PASS;
+  DeepSeek and OpenAI canary receipts 6/6 PASS.
+
+### Claim boundary
+
+- `GA_LOCAL_FIRST_APPROVED`: local-first operability with live provider lanes proven.
+- Not claimed: output-quality parity with direct providers, multi-tenant cloud
+  quota enforcement, full DeepSeek regression confirmation.
+- Artifact Export "governed artifact generation" claim requires the governance
+  engine to be configured; without it, the export produces HTML structure only.
+
+### Related artifacts
+
+- `docs/evidence/local-first-release-gate-proof-2026-05-16.md`
+- `docs/evidence/web-governance-path.md`
+- `docs/reviews/CVF_WEB_INTEGRATION_TRANCHE_3_CLOSURE_2026-05-16.md`
+- `docs/evidence/cvf-16-5-runtime-absorption.md`
+- `docs/evidence/current-cvf-quality-status.md`
+
+---
+
 ## [v4.0.0-rc.1] — Public Release Candidate Tag Binding
 
 Date: 2026-05-08
