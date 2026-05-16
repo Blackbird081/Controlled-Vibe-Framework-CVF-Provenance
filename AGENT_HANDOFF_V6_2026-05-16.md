@@ -29,7 +29,7 @@ Operator request:
 - Reuse already-written files where valuable by revising them into CVF docs,
   instead of spending time/tokens rewriting from scratch.
 
-Completed docs absorption:
+Completed docs absorption, later amended after Claude rebuttal:
 
 - Private counter-review packet created:
   `.private_reference/legacy/CVF 16.5/REVIEW FOLDER/CVF_16_5_EXTERNAL_KNOWLEDGE_INTAKE_REVIEW_2026-05-16.md`
@@ -44,9 +44,11 @@ Completed docs absorption:
 Fit classification summary:
 
 - High fit: `tolaria`, `agentmemory`, `Claude Kit`.
-- High/medium fit: `OpenAgentd`, `abtop`, `md2html`, `OpenSpec`,
+- High/medium fit: `OpenAgentd`, `abtop`, `md2html`, `OpenSpec`.
+- High fit for generic MCP adapter primitives, deferred for Pancake profile:
   `pancake-pos-mcp`.
-- Medium fit: `free Claude Code`, `freellmapi`, `Memento-Skills`.
+- Medium/high fit for existing TypeScript gateway artifacts: `freellmapi`.
+- Medium fit: `free Claude Code`, `Memento-Skills`.
 
 Accepted value:
 
@@ -75,3 +77,18 @@ Claim boundary:
   provider routing, observability enforcement, or artifact rendering execution.
 - Any future runtime claim must follow the mandatory live-governance proof rule.
 
+Claude rebuttal amendment:
+
+- Rebuttal file:
+  `docs/reviews/CVF_16_5_EXTERNAL_KNOWLEDGE_INTAKE_REVIEW_CLAUDE_REBUTTAL_2026-05-16.md`
+- Codex response:
+  `docs/reviews/CVF_16_5_EXTERNAL_KNOWLEDGE_INTAKE_REVIEW_CODEX_RESPONSE_TO_CLAUDE_2026-05-16.md`
+- Accepted corrective actions:
+  - boundary specs now include source destination maps;
+  - Model Gateway spec now points to `EXTENSIONS/CVF_MODEL_GATEWAY/README.md`;
+  - `freellmapi/*.ts` artifacts are surfaced as priority adoption candidates;
+  - `pancake-pos-mcp` is split into high-fit generic MCP primitives and a
+    deferred Pancake-specific profile;
+  - observability is positioned as a delta on
+    `EXTENSIONS/CVF_v1.8.1_ADAPTIVE_OBSERVABILITY_RUNTIME/README.md`;
+  - public review status is docs-only absorbed and amended, not merely pending.

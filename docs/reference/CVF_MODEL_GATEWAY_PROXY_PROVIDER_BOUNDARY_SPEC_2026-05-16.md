@@ -15,6 +15,40 @@ This document records the reusable provider/proxy/gateway lessons from the CVF
 The accepted value is protocol translation and provider routing discipline. The
 rejected value is any bypass, free-provider, or hidden proxy claim.
 
+## Source Destination Map
+
+This spec is a delta/boundary document for the existing official Model Gateway
+surface:
+
+- existing CVF owner: `EXTENSIONS/CVF_MODEL_GATEWAY/README.md`
+- source-declared FreeLLMAPI destination:
+  `EXTENSIONS/CVF_MODEL_GATEWAY/src/` plus
+  `EXTENSIONS/CVF_MODEL_GATEWAY/docs/FREELLMAPI_MAPPING.md`
+- source-declared free-claude-code destination:
+  `EXTENSIONS/CVF_MODEL_GATEWAY/free_claude_code_mapping/`
+- disposition: adopt as future Model Gateway deltas only after a fresh GC-018;
+  do not create a second provider gateway.
+
+## Priority Adoption Candidates
+
+The `freellmapi` source folder contains TypeScript artifacts, not just prose.
+For any future Model Gateway runtime roadmap, these files should be reviewed as
+priority adoption candidates before writing new equivalents:
+
+- `.private_reference/legacy/CVF 16.5/freellmapi/provider.registry.ts`
+- `.private_reference/legacy/CVF 16.5/freellmapi/provider.health.ts`
+- `.private_reference/legacy/CVF 16.5/freellmapi/quota.ledger.ts`
+- `.private_reference/legacy/CVF 16.5/freellmapi/routing.policy.ts`
+- `.private_reference/legacy/CVF 16.5/freellmapi/fallback.policy.ts`
+- `.private_reference/legacy/CVF 16.5/freellmapi/sticky.session.ts`
+- `.private_reference/legacy/CVF 16.5/freellmapi/credential.vault.ts`
+- `.private_reference/legacy/CVF 16.5/freellmapi/gateway.receipt.ts`
+
+Until a future roadmap supersedes them, these files are the source
+type-of-record for the legacy gateway shapes. CVF may add governance fields on
+top, but should not silently diverge from their identifiers, quota, and health
+decision fields.
+
 ## Core Rule
 
 A proxy is not trusted because it is local. A provider is not trusted because it
@@ -127,6 +161,7 @@ Every provider call should produce a safe receipt:
 
 ```yaml
 gateway_receipt:
+  receipt_id: string
   trace_id: string
   client_id: string
   provider_id: string
@@ -134,14 +169,19 @@ gateway_receipt:
   actual_model: string
   route_reason: string
   fallback_used: boolean
+  quota_allowed: boolean
+  health_state: string
   substitution_reason: string|null
   risk_class: string
   data_classification: string
   policy_result: allow|deny|requires_approval
-  token_usage: {}
+  estimated_tokens: number
+  actual_tokens: number|null
   latency_ms: number
   validation_result: pass|fail|not_required
   final_status: success|blocked|error
+  created_at: string
+  metadata: {}
 ```
 
 ## Forbidden Claims
@@ -169,4 +209,3 @@ Allowed positioning:
 This document is not an implementation. Any future translator, proxy, health
 monitor, quota ledger, fallback engine, or credential vault requires a fresh
 roadmap, tests, and live-governance proof when behavior claims are made.
-

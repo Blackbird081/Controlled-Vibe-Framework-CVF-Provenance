@@ -14,6 +14,30 @@ This document defines the safe role of document artifact rendering in CVF.
 Rendering can make governance material easier to review. It must not change the
 meaning, evidence state, or claim boundary of the source document.
 
+## Source Destination Map
+
+The source bundle proposed `EXTENSIONS/CVF_DOCUMENT_ARTIFACT_RENDERER/`.
+
+Current disposition:
+
+- docs-only boundary accepted;
+- runtime renderer deferred;
+- no new UI/editor app;
+- no PNG/PDF/PPTX/social export tranche;
+- future implementation must map to existing docs/evidence publication surfaces
+  before creating a new extension.
+
+The source `md2html` files should be reused as fixture/spec candidates if a
+future roadmap opens artifact rendering:
+
+- `CVF_DOCUMENT_ARTIFACT_RENDERER.md`
+- `CVF_ARTIFACT_RENDERING_PROTOCOL.md`
+- `CVF_ARTIFACT_COMPONENT_CATALOG.md`
+- `CVF_ARTIFACT_TEMPLATE_SPEC.md`
+- `CVF_ARTIFACT_VERIFICATION_CHECKLIST.md`
+- `CVF_ARTIFACT_RENDERING_POLICY.md`
+- `CVF_ARTIFACT_RENDERING_ADAPTER.md`
+
 ## Core Rule
 
 Rendered artifact is presentation. Source document and CVF governance remain
@@ -151,4 +175,3 @@ This spec does not implement a renderer. Future implementation requires a
 bounded roadmap, source/HTML fixtures, secret-scan coverage, artifact
 verification tests, and live governance proof if artifact generation is claimed
 as governed CVF behavior.
-

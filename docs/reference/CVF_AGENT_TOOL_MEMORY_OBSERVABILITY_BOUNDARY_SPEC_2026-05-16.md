@@ -15,6 +15,18 @@ observability boundaries from the CVF 16.5 legacy bundle.
 It does not create a new runtime. It gives future implementation tranches a
 single boundary map to avoid repeated rereading and token waste.
 
+## Source Destination Map
+
+This spec is a map over existing owner surfaces, not a new owner surface.
+
+| Source folder | Source-declared destination | Existing CVF overlap | Disposition |
+|---|---|---|---|
+| `Claude Kit` | `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/agent_registry/`, `EXTENSIONS/CVF_GOVERNANCE_EXPANSION_FOUNDATION/agent_governance/`, `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/agent_orchestration/` | `EXTENSIONS/CVF_AGENT_DEFINITION/README.md`, `EXTENSIONS/CVF_AGENT_LEDGER/README.md`, `EXTENSIONS/CVF_ECO_v2.3_AGENT_IDENTITY/README.md`, `EXTENSIONS/CVF_ECO_v2.0_AGENT_GUARD_SDK/README.md` | Adopt as agent registry, permission, handoff, and audit deltas |
+| `OpenAgentd` | Docs across `CVF_v1.6_AGENT_PLATFORM`, Control, Execution, Governance, Learning | Agent platform, sandbox, telemetry, tool-call tracing surfaces | Adopt trace/sandbox/telemetry deltas; defer cockpit OS |
+| `agentmemory` | Memory docs under Learning, Control, Governance, Guard Contract | Knowledge Layer, Context Builder, Learning Plane | Adopt controlled memory policy; defer memory runtime |
+| `abtop` | `EXTENSIONS/CVF_OBSERVABILITY_PLANE_FOUNDATION/` | `EXTENSIONS/CVF_v1.8.1_ADAPTIVE_OBSERVABILITY_RUNTIME/README.md` | Treat as delta on v1.8.1, not a new plane by default |
+| `pancake-pos-mcp` | `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mcp-business-adapter/` | Execution Plane adapter boundary | Adopt 7 generic MCP primitives as high-fit candidates; defer Pancake profile |
+
 ## Core Rule
 
 Agents, tools, memory, MCP endpoints, and observability streams are subordinate
@@ -125,6 +137,10 @@ Approval posture:
 Domain-specific profiles such as Pancake POS may inform the pattern, but must
 not be hardcoded into CVF core.
 
+The generic MCP business adapter pattern is high fit because 7 of the 8 source
+files are domain-agnostic primitives. Only `pancake-pos-mcp.profile.ts` is
+domain-specific and deferred.
+
 ## Memory Boundary
 
 Memory is a controlled capability, not hidden authority.
@@ -157,6 +173,10 @@ Agents may not read/write/reinject raw memory outside the controlled gateway.
 
 Observability may observe, summarize, alert, emit receipts, and recommend
 escalation.
+
+This section is a delta on
+`EXTENSIONS/CVF_v1.8.1_ADAPTIVE_OBSERVABILITY_RUNTIME/README.md`. A new
+`CVF_OBSERVABILITY_PLANE_FOUNDATION` must not be opened by default.
 
 Observability must not:
 
@@ -206,4 +226,3 @@ MCP enforcement.
 
 Future work must choose one bounded owner surface and provide tests plus live
 governance proof when claiming enforcement.
-
