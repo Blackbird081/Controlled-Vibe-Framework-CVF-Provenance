@@ -2,7 +2,8 @@
 
 # ADR Candidate - CVF Model Gateway Runtime Ownership - 2026-05-16
 
-Status: PROPOSED - awaiting roadmap approval.
+Status: ACCEPTED FOR LOCAL IMPLEMENTATION - uncommitted working state pending
+operator review.
 
 Related authorization:
 `docs/baselines/CVF_GC018_MODEL_GATEWAY_RUNTIME_AUTHORIZATION_2026-05-16.md`
@@ -27,7 +28,7 @@ receipt.
 
 ## Decision
 
-Recommended decision: **implementation-owner upgrade**.
+Decision: **implementation-owner upgrade**.
 
 `EXTENSIONS/CVF_MODEL_GATEWAY/` should become the implementation owner for the
 adapted gateway runtime primitives in this tranche, while preserving lineage to
@@ -69,8 +70,18 @@ The upgrade does not authorize:
 - raw credential logging or browser key storage;
 - live governance enforcement claims from unit tests alone.
 
+## Implementation Note
+
+Initial local implementation was added under `EXTENSIONS/CVF_MODEL_GATEWAY/`
+on 2026-05-16. The package now preserves the original wrapper/re-export
+lineage while owning adapted gateway runtime primitives for provider registry,
+provider health, quota ledger, routing policy, fallback policy, sticky session,
+credential boundary, and gateway receipt.
+
+The implementation remains uncommitted because the operator requested continued
+work without committing while Claude's rerun is pending.
+
 ## ADR Finalization Gate
 
-This ADR candidate becomes accepted only if the operator approves the related
-roadmap-ready packet.
-
+This ADR is accepted for the local implementation tranche. Public or release
+claims still require the closure packet and the relevant verification evidence.
