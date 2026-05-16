@@ -146,3 +146,43 @@ Current lane states:
 
 - Model Gateway Runtime: `roadmap-ready`.
 - All other CVF 16.5 lanes: `docs-classified`.
+
+## 2026-05-16 - Public Markdown Quality Tier 1 Closed
+
+Operator paused new external knowledge absorption and redirected work to
+standardizing public Markdown quality first.
+
+Created provenance audit/closure:
+
+- `docs/baselines/CVF_GC018_PUBLIC_MARKDOWN_QUALITY_UPGRADE_AUTHORIZATION_2026-05-16.md`
+- `docs/audits/CVF_PUBLIC_REPO_MARKDOWN_QUALITY_AUDIT_2026-05-16.md`
+- `docs/reviews/CVF_PUBLIC_MARKDOWN_QUALITY_UPGRADE_TIER_1_CLOSURE_2026-05-16.md`
+
+Public repo work was performed in:
+
+`d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync`
+
+Pushed to:
+
+`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+
+Final public commit:
+
+`a91a4b3 Standardize public limitations register`
+
+Tier 1 result:
+
+- 15 public first-impression Markdown files standardized.
+- 15 public commits, one Tier 1 file per commit.
+- GC-045 structural rubric: `15/15 PASS`.
+- GC-023 size status: `15/15 PASS`.
+- Public-surface scanner: `PASS`.
+- Representative word counts: README down, minimum-useful flat, current quality
+  status down.
+
+Recommendation:
+
+- Close this tranche at Tier 1.
+- Do not start Tier 2 automatically.
+- Any Tier 2 must use a fresh GC-018 and a small evidence/benchmark navigation
+  list, not broad Markdown standardization.
