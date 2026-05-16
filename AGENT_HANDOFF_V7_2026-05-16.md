@@ -402,5 +402,15 @@ Proposed future requirement, not yet absorbed:
 
 Correction governance packet:
 
+- `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_CLAUDE_REVIEW_PACKET_2026-05-17.md`
 - `docs/roadmaps/CVF_UNABSORBED_KNOWLEDGE_REPORTING_CORRECTION_ROADMAP_2026-05-17.md`
 - `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_REPORTING_CORRECTION_REBUTTAL_2026-05-17.md`
+
+Claude review gate:
+
+- Do not begin any unabsorbed-knowledge absorption until Claude reviews the
+  packet and produces
+  `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_CLAUDE_REVIEW_2026-05-17.md` or a
+  later dated equivalent.
+- Codex self-rebuttal is only preparation; it is not the independent reviewer
+  decision.

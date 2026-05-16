@@ -76,7 +76,9 @@ Current baseline:
 | 3 | Create a rebuttal review that tests the proposed correction | complete |
 | 4 | Update active handoff to preserve the distinction between proposal and adopted rule | complete |
 | 5 | Run docs governance and markdown structural guards | pending |
-| 6 | Wait for operator decision before promoting any durable reporting rule | pending |
+| 6 | Prepare Claude review packet before any unabsorbed-knowledge absorption | complete |
+| 7 | Wait for Claude review before selecting the first absorption roadmap | pending |
+| 8 | Wait for operator decision before promoting any durable reporting rule | pending |
 
 ## Acceptance Criteria
 
@@ -87,6 +89,8 @@ The correction is accepted only if all criteria are true:
 - the roadmap exists before any durable correction is claimed;
 - the rebuttal review identifies at least one reason the correction could be
   overbroad or premature;
+- a Claude review packet exists and clearly says Codex self-review is not
+  sufficient for absorption;
 - handoff language says the future reporting rule is proposed, not binding;
 - docs governance and markdown structural checks pass;
 - operator decision remains explicit for ADD-A, ADD-D, Observability Plane, and
@@ -106,6 +110,7 @@ Required verification before committing this correction packet:
 Evidence files:
 
 - this roadmap;
+- `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_CLAUDE_REVIEW_PACKET_2026-05-17.md`;
 - `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_REPORTING_CORRECTION_REBUTTAL_2026-05-17.md`;
 - updated `docs/reviews/CVF_OPERATOR_PROGRESS_AND_UNABSORBED_KNOWLEDGE_REPORT_2026-05-17.md`;
 - updated `AGENT_HANDOFF_V7_2026-05-16.md`.
@@ -139,6 +144,8 @@ and limited to external-knowledge absorption or release closures.
 
 Proposed only. Do not treat this roadmap as acceptance of the corrective rule.
 The operator must decide whether the proposed reporting rule becomes binding.
+No unabsorbed-knowledge absorption should begin before Claude completes the
+review packet.
 
 ## Claim Boundary
 
@@ -149,5 +156,6 @@ review path needed before a reporting correction can become binding.
 ## Related Artifacts
 
 - `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md`
+- `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_CLAUDE_REVIEW_PACKET_2026-05-17.md`
 - `docs/reviews/CVF_OPERATOR_PROGRESS_AND_UNABSORBED_KNOWLEDGE_REPORT_2026-05-17.md`
 - `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_REPORTING_CORRECTION_REBUTTAL_2026-05-17.md`

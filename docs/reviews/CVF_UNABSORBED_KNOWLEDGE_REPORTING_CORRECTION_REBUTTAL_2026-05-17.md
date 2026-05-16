@@ -2,15 +2,16 @@
 
 Memory class: FULL_RECORD
 
-Status: OPEN - REBUTTAL COMPLETE - OPERATOR DECISION REQUIRED
+Status: OPEN - CODEX SELF-REBUTTAL COMPLETE - CLAUDE REVIEW REQUIRED
 
 ## Purpose
 
-Review and challenge the proposed reporting correction introduced after
+Codex self-review and challenge the proposed reporting correction introduced after
 `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md`.
 
 This rebuttal exists because a reporting failure, even when real, must not be
 absorbed into CVF as a durable rule without roadmap review and counterargument.
+It is not a substitute for Claude review.
 
 ## Scope
 
@@ -42,7 +43,7 @@ Out of scope:
 ## Findings / Position
 
 Position: the reporting failure is real, but the correction must remain
-proposal-only until the operator accepts it.
+proposal-only until Claude reviews it and the operator accepts it.
 
 Findings:
 
@@ -99,9 +100,9 @@ separate because it touches runtime and web surfaces.
 
 Not yet.
 
-Until operator acceptance, this correction changes only documentation posture:
-it clarifies that an operator-facing report is needed and proposes a narrow
-future rule.
+Until Claude review and operator acceptance, this correction changes only
+documentation posture: it clarifies that an operator-facing report is needed
+and proposes a narrow future rule.
 
 ## Risk
 
@@ -120,22 +121,26 @@ Residual risks:
 Rebuttal conclusion: accept the need for a correction, reject immediate
 absorption of the correction as a binding CVF rule.
 
-Recommended operator decision:
+Recommended operator decision after Claude review:
 
 - keep the operator report;
 - keep this roadmap and rebuttal as the governance packet;
 - accept the future reporting rule only if it remains narrow and
   trigger-based;
 - require separate roadmaps for any actual knowledge absorption item.
+- require Claude's review artifact before selecting the first absorption
+  roadmap.
 
 ## Claim Boundary
 
-This rebuttal does not authorize implementation, doctrine promotion, public
-claim changes, or a binding CVF reporting rule. It only reviews whether the
-proposed correction is ready for operator decision.
+This Codex self-rebuttal does not authorize implementation, doctrine promotion,
+public claim changes, a binding CVF reporting rule, or unabsorbed-knowledge
+absorption. It only prepares the correction for Claude review and later
+operator decision.
 
 ## Related Artifacts
 
 - `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md`
+- `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_CLAUDE_REVIEW_PACKET_2026-05-17.md`
 - `docs/reviews/CVF_OPERATOR_PROGRESS_AND_UNABSORBED_KNOWLEDGE_REPORT_2026-05-17.md`
 - `docs/roadmaps/CVF_UNABSORBED_KNOWLEDGE_REPORTING_CORRECTION_ROADMAP_2026-05-17.md`
