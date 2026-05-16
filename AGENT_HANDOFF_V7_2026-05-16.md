@@ -353,3 +353,47 @@ Claim boundary:
   the existing governed execution path;
 - no PDF/PNG/PPTX export, social export, production artifact publishing, or
   standalone governed artifact-generation proof is claimed.
+
+## 2026-05-17 - Operator Report Correction For Unabsorbed Knowledge
+
+Status: operator-facing correction opened after reviewing the latest May 16
+commits.
+
+Current progress inherited from latest commits:
+
+- `e6e3e662` records CVF v4.0.0 as `GA_LOCAL_FIRST_APPROVED` in
+  `CHANGELOG.md`;
+- Web Integration Tranches 1 through 3 are closed, with `/knowledge/intake`,
+  `/artifacts`, `/work-transfer`, sidebar navigation, home quick-action cards,
+  landing-page callout, and public README Web Workflows discoverability;
+- Artifact Export has a bounded governed-artifact-generation claim only when
+  the governance engine is configured and returns a live governance receipt;
+- CVF 16.5 runtime absorption is recorded as nine adopted governed runtime
+  contracts, but not every source bundle is fully absorbed;
+- `fd730269` adds
+  `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md`, which is
+  still `OPEN - PENDING OPERATOR DECISION`.
+
+Reporting failure:
+
+- Prior agents created closure packets and inventory files but did not deliver a
+  consolidated operator report.
+- This hid the fact that valuable reviewed knowledge remained unabsorbed and
+  needed an operator decision.
+
+Corrective artifact:
+
+- `docs/reviews/CVF_OPERATOR_PROGRESS_AND_UNABSORBED_KNOWLEDGE_REPORT_2026-05-17.md`
+
+Operator decisions still pending:
+
+- whether to promote ADD-A + ADD-D as a doc-only governance doctrine;
+- whether to open GC-018 for Observability Plane Foundation;
+- whether to open separate runtime gap roadmaps for Memory, Skill Evolution,
+  Agent registry/orchestration, and Provider/runtime output contracts.
+
+Future requirement:
+
+- After external-knowledge absorption, GA release, or a tranche series closure,
+  create an operator-facing summary whenever valuable reviewed knowledge remains
+  unabsorbed or a `runtime-owned` lane still has known missing sub-contracts.
