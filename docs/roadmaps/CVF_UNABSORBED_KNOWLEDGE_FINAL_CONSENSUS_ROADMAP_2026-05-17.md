@@ -48,7 +48,8 @@ Out of scope:
 This consensus roadmap does **not**:
 
 - implement any absorption item (each requires its own GC-018 packet later);
-- promote any doctrine (Step 3 needs a separate doc promotion packet);
+- implement runtime absorption items; Step 3 doctrine promotion is now recorded
+  separately in its own doc-only promotion packet;
 - change GA posture (`GA_LOCAL_FIRST_APPROVED` unchanged);
 - change public README, CHANGELOG, or release gates;
 - claim live provider proof;
@@ -60,10 +61,10 @@ This consensus roadmap does **not**:
 |---|---|---|
 | 1 | Apply inventory accuracy fixes (RC-1, RC-2) | complete this commit |
 | 2 | Apply reporting rule narrowing + enforcement (RC-3) | complete this commit |
-| 3 | Open doctrine promotion packet for ADD-A + ADD-D + ADD-BRIEF | pending |
-| 4 | Open GC-018 for OBS-1 Observability Plane Foundation | pending — after step 3 closes |
-| 5 | Open GC-018 for ADD-PROVIDER Output Contracts | pending — after step 3 closes |
-| 6 | Open GC-018 for GAP-MEM 3 memory sub-contracts | pending — after step 3 closes |
+| 3 | Open doctrine promotion packet for ADD-A + ADD-D + ADD-BRIEF | complete 2026-05-17 |
+| 4 | Open GC-018 for OBS-1 Observability Plane Foundation | next eligible step |
+| 5 | Open GC-018 for ADD-PROVIDER Output Contracts | pending — after OBS-1 sequencing decision |
+| 6 | Open GC-018 for GAP-MEM 3 memory sub-contracts | pending — after OBS-1 sequencing decision |
 | 7+ | Defer remaining items until trigger conditions occur | pending — per item triggers |
 
 ## Acceptance Criteria
@@ -111,9 +112,9 @@ After Claude–Codex consensus:
 | Item | Final classification | Sao | Notes |
 |---|---|---|---|
 | OBS-1 Observability Plane Foundation | Nhóm 2 priority 1 | ⭐⭐⭐⭐⭐ | Upgraded from ⭐⭐⭐⭐ per Claude RC-4 |
-| ADD-A Governed Capability Intake | Nhóm 1 doctrine | ⭐⭐⭐⭐⭐ | Doc-only; first promotion |
-| ADD-D Boundary-First Governance | Nhóm 1 doctrine | ⭐⭐⭐⭐⭐ | Doc-only; same packet as ADD-A |
-| ADD-BRIEF Brief Normalization | Nhóm 1 doctrine | ⭐⭐⭐⭐ | Subordinate to ADD-D; same packet |
+| ADD-A Governed Capability Intake | promoted doctrine | ⭐⭐⭐⭐⭐ | completed 2026-05-17 |
+| ADD-D Boundary-First Governance | promoted doctrine | ⭐⭐⭐⭐⭐ | completed 2026-05-17 |
+| ADD-BRIEF Brief Normalization | promoted doctrine | ⭐⭐⭐⭐ | completed 2026-05-17 |
 | ADD-PROVIDER Output Contracts | Nhóm 2 priority 2 | ⭐⭐⭐ | After OBS-1 |
 | GAP-MEM (3 items) | Nhóm 2 priority 3 | ⭐⭐⭐ | Scope reduced 9 → 3 |
 | GAP-AGENT-HANDOFF | Nhóm 3 deferred | ⭐⭐ | Scope reduced from full agent governance |
@@ -150,7 +151,7 @@ No new tooling, no new file, no new hook.
 |---|---|---|---|
 | 1 | Doc edit | Inventory accuracy fix (RC-1, RC-2) | Already applied 2026-05-17 |
 | 2 | Doc edit | Reporting rule narrowing (RC-3) | Already applied 2026-05-17 |
-| 3 | Doctrine promotion | ADD-A + ADD-D + ADD-BRIEF consolidated | New doc promotion packet (no GC-018 needed for doc-only) |
+| 3 | Doctrine promotion | ADD-A + ADD-D + ADD-BRIEF consolidated | Complete: `docs/reviews/CVF_ADD_A_D_BRIEF_DOCTRINE_PROMOTION_2026-05-17.md` |
 | 4 | Implementation | OBS-1 Observability Plane Foundation | Fresh GC-018 packet required |
 | 5 | Implementation | ADD-PROVIDER Output Contracts | Fresh GC-018 packet required |
 | 6 | Implementation | GAP-MEM 3 memory sub-contracts | Fresh GC-018 packet required |
@@ -159,9 +160,8 @@ No new tooling, no new file, no new hook.
 **Step ordering rules (consensus):**
 
 - Steps 1 và 2 đã apply (this commit).
-- Step 3 (doctrine promotion) **phải** close trước Step 4 (OBS-1
-  implementation) — vì ADD-A doctrine framework cần để frame Observability
-  Plane là governed capability mới.
+- Step 3 (doctrine promotion) closed 2026-05-17; Step 4 (OBS-1
+  implementation) is now the next eligible absorption roadmap.
 - Steps 4, 5, 6 có thể chạy độc lập sau Step 3 (không có dependency giữa
   chúng).
 - Step 7+ chỉ khi trigger conditions của từng item xảy ra.
@@ -197,17 +197,17 @@ This consensus roadmap:
 
 - **không** authorize implementation runtime nào;
 - **không** authorize public claim change nào;
-- **không** authorize doctrine promotion (Step 3 vẫn cần một promotion
-  packet riêng để execute);
+- **đã** record doctrine promotion completion through the separate Step 3
+  promotion packet;
 - **không** require live provider proof (không có runtime claim);
 - **đã** authorize inventory accuracy fixes (Step 1, đã apply);
 - **đã** authorize reporting rule narrowing (Step 2, đã apply);
 - **đã** xác lập sequence cho các absorption steps tiếp theo (binding
   ordering rules).
 
-Các absorption steps 3-7 mỗi step cần:
+Các absorption steps 4-7 mỗi step cần:
 
-- một authorization packet riêng (doc promotion packet hoặc GC-018);
+- một authorization packet riêng (GC-018 or later scoped authorization);
 - không cần phản biện thêm về whether to absorb — consensus đã quyết định
   về what to absorb và ordering;
 - phải tuân theo CD-3 step ordering rules.
@@ -245,10 +245,9 @@ Residual risks (mitigated):
 - **Risk:** future agents có thể re-expand scope đã reduce (GAP-MEM, GAP-AGENT).
   **Mitigation:** CD-1 table có normative item names; CD-4 ghi rõ
   disagreements đã resolved.
-- **Risk:** Step 3 (doctrine promotion) bị skip để jump thẳng tới Step 4
-  (OBS-1).
-  **Mitigation:** CD-3 step ordering rules explicit; OBS-1 absorption
-  authorization packet phải reference ADD-A doctrine framework.
+- **Risk:** Step 4 (OBS-1) opens without referencing the promoted doctrine.
+  **Mitigation:** OBS-1 authorization packet must reference the consolidated
+  doctrine promoted on 2026-05-17.
 - **Risk:** reporting rule không được apply.
   **Mitigation:** CD-2 enforcement surface đã ghi vào tranche-closure
   checklist requirement.
@@ -263,11 +262,11 @@ Steps 1 và 2 đã apply trong commit này. Inventory đã được amended vớ
 consensus accuracy state. Reporting rule đã được narrow với explicit
 triggers + enforcement surface.
 
-Steps 3-7 là roadmap forward. Mỗi step yêu cầu một authorization packet
-riêng khi mở:
+Step 3 is complete. Steps 4-7 là roadmap forward. Mỗi step yêu cầu một
+authorization packet riêng khi mở:
 
-- Step 3 (ADD-A + ADD-D + ADD-BRIEF doctrine promotion): chỉ cần một doc
-  promotion packet (không phải GC-018 implementation packet).
+- Step 3 (ADD-A + ADD-D + ADD-BRIEF doctrine promotion): completed by
+  `docs/reviews/CVF_ADD_A_D_BRIEF_DOCTRINE_PROMOTION_2026-05-17.md`.
 - Steps 4, 5, 6 (OBS-1, ADD-PROVIDER, GAP-MEM): mỗi step cần fresh GC-018.
 - Step 7+: defer cho đến khi trigger conditions xảy ra.
 
@@ -289,6 +288,8 @@ phải answer per-item questions. Roadmap đã thống nhất.
 - `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_CLAUDE_REVIEW_PACKET_2026-05-17.md`
 - `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_CLAUDE_REVIEW_2026-05-17.md`
 - `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_CODEX_RESPONSE_TO_CLAUDE_2026-05-17.md`
+- `docs/reviews/CVF_ADD_A_D_BRIEF_DOCTRINE_PROMOTION_2026-05-17.md`
+- `docs/reference/CVF_GOVERNED_CAPABILITY_INTAKE_AND_BOUNDARY_FIRST_GOVERNANCE_DOCTRINE_2026-05-17.md`
 - `docs/roadmaps/CVF_UNABSORBED_KNOWLEDGE_REPORTING_CORRECTION_ROADMAP_2026-05-17.md`
 - `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_REPORTING_CORRECTION_REBUTTAL_2026-05-17.md`
 - `docs/reviews/CVF_OPERATOR_PROGRESS_AND_UNABSORBED_KNOWLEDGE_REPORT_2026-05-17.md`

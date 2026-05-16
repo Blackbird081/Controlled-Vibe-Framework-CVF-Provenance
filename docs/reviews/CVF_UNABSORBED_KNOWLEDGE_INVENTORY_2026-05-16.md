@@ -98,9 +98,8 @@ governed capability mới.
 
 **Nguồn:** `CLI-Anything`, `Hugging Face`, `Hermes Agent`, `AGENT ENGINEER`
 
-**Trạng thái hiện tại:** `docs-classified` — synthesis Phase A hoàn thành
-2026-05-07, được khuyến nghị là "first and only public promotion candidate"
-nhưng không agent nào thực hiện bước promote đó.
+**Trạng thái hiện tại:** `docs-promoted` — promoted 2026-05-17 vào
+`docs/reference/CVF_GOVERNED_CAPABILITY_INTAKE_AND_BOUNDARY_FIRST_GOVERNANCE_DOCTRINE_2026-05-17.md`.
 
 **Nội dung:**
 
@@ -133,10 +132,8 @@ evaluation_status, retirement_condition
 upstream governance gap thực sự của CVF. Không cần code, chỉ cần doc + policy
 promotion. Codex và Claude đều đồng ý đây là candidate ưu tiên 1.
 
-**Điều kiện để absorb:** Promote thành
-`CVF_GOVERNED_CAPABILITY_INTAKE_AND_BOUNDARY_FIRST_GOVERNANCE_DOCTRINE`
-(doc-only, không cần GC-018 implementation — chỉ cần governance doc promotion
-packet).
+**Điều kiện để absorb:** Complete — doc-only promotion packet closed at
+`docs/reviews/CVF_ADD_A_D_BRIEF_DOCTRINE_PROMOTION_2026-05-17.md`.
 
 ---
 
@@ -144,8 +141,8 @@ packet).
 
 **Nguồn:** `AI-first vs Human-first`, `Human System Harness`
 
-**Trạng thái hiện tại:** `docs-classified` — cùng Phase A với Family A,
-cùng bị bỏ quên.
+**Trạng thái hiện tại:** `docs-promoted` — promoted 2026-05-17 cùng ADD-A và
+ADD-BRIEF vào consolidated doctrine.
 
 **Nội dung:**
 
@@ -186,8 +183,8 @@ authority.
 **Đánh giá:** ⭐⭐⭐⭐⭐ — Giá trị cao nhất, cùng loại với ADD-A. Đây là
 corrective doctrine quan trọng nhất trong pack. Không cần code.
 
-**Điều kiện để absorb:** Promote cùng với ADD-A thành một doctrine file duy
-nhất. Không cần GC-018 implementation.
+**Điều kiện để absorb:** Complete — promoted cùng ADD-A và ADD-BRIEF trong
+consolidated doctrine file.
 
 ---
 
@@ -195,10 +192,8 @@ nhất. Không cần GC-018 implementation.
 
 **Nguồn:** Phase A synthesis, từ `Human System Harness`, `Hermes Agent`
 
-**Trạng thái hiện tại:** `docs-classified` — added 2026-05-17 per Claude review.
-Phase A synthesis 2026-05-07 đã explicit name doctrine này nằm gần "planning,
-roadmap, and agent operating contract layers" nhưng inventory ban đầu gộp vào
-ADD-D và mất distinction.
+**Trạng thái hiện tại:** `docs-promoted` — added per Claude review và promoted
+2026-05-17 cùng ADD-A/ADD-D.
 
 **Nội dung:**
 
@@ -226,7 +221,8 @@ Doctrine cho brief-to-work normalization:
 **Đánh giá:** ⭐⭐⭐⭐ — Subordinate to ADD-D (theo Codex amendment 2026-05-17).
 Ship trong cùng promotion packet với ADD-A + ADD-D thay vì standalone.
 
-**Điều kiện để absorb:** Cùng promotion packet với ADD-A + ADD-D.
+**Điều kiện để absorb:** Complete — promoted in the same packet as ADD-A +
+ADD-D.
 
 ---
 
@@ -234,8 +230,9 @@ Ship trong cùng promotion packet với ADD-A + ADD-D thay vì standalone.
 
 **Nguồn:** Phase A synthesis, Family D
 
-**Trạng thái hiện tại:** `docs-classified` — added 2026-05-17 per Claude review.
-Codex amendment: `deferred-until-ADD-D-promotion`.
+**Trạng thái hiện tại:** `roadmap-eligible` — added 2026-05-17 per Claude
+review. ADD-D doctrine is now promoted, so this item is eligible for a later
+schema-extension roadmap, but not authorized here.
 
 **Nội dung:**
 
@@ -256,8 +253,8 @@ Codex amendment: `deferred-until-ADD-D-promotion`.
 khi 4 policy classes (hard prohibition / soft constraint / communication
 policy / restricted execution path) đã được promote.
 
-**Điều kiện để absorb:** Sau khi ADD-D doctrine promoted. Là schema
-extension cho W7 evidence receipt, không phải standalone roadmap.
+**Điều kiện để absorb:** ADD-D promotion dependency satisfied 2026-05-17.
+Still requires a separate schema-extension roadmap before implementation.
 
 ---
 
@@ -488,18 +485,17 @@ sung.
 
 ## Tóm tắt ưu tiên
 
-### Nhóm 1 — Có thể absorb ngay, không cần code (consensus 2026-05-17)
+### Nhóm 1 — Absorbed doc-only promotion (consensus executed 2026-05-17)
 
-| ID | Tên | Lý do ưu tiên cao |
+| ID | Tên | Promotion status |
 |---|---|---|
-| ADD-A | Governed Capability Intake Doctrine | Upstream governance gap thực sự; synthesis hoàn chỉnh; promote là doc-only |
-| ADD-D | Boundary-First Governance Doctrine | Corrective doctrine quan trọng nhất; cùng file với ADD-A |
-| ADD-BRIEF | Brief Normalization Doctrine | Subordinate to ADD-D; cùng promotion packet |
+| ADD-A | Governed Capability Intake Doctrine | promoted in consolidated doctrine |
+| ADD-D | Boundary-First Governance Doctrine | promoted in consolidated doctrine |
+| ADD-BRIEF | Brief Normalization Doctrine | promoted in consolidated doctrine |
 
-**Hành động:** Mở một governance doc promotion packet duy nhất cho
-`CVF_GOVERNED_CAPABILITY_INTAKE_AND_BOUNDARY_FIRST_GOVERNANCE_DOCTRINE`
-(consolidated từ ADD-A + ADD-D + ADD-BRIEF). Không cần GC-018 implementation,
-không cần tests.
+**Hành động:** Complete. See
+`docs/reviews/CVF_ADD_A_D_BRIEF_DOCTRINE_PROMOTION_2026-05-17.md` and
+`docs/reference/CVF_GOVERNED_CAPABILITY_INTAKE_AND_BOUNDARY_FIRST_GOVERNANCE_DOCTRINE_2026-05-17.md`.
 
 ---
 
@@ -570,12 +566,13 @@ Có hai loại gap thực sự:
    "Promote A + D as first and only public promotion candidate" nhưng không
    agent nào thực hiện bước đó hay thông báo cho người vận hành.
 
-Tổng cộng có **10 items actionable** (2 nhóm 1, 3 nhóm 2, 6 nhóm 3) và
-**6 items excluded hoàn toàn**.
+Sau promotion 2026-05-17: **3 doc-only doctrine items promoted**, **9
+remaining candidates** (3 nhóm 2, 6 nhóm 3), và **6 items excluded hoàn toàn**.
 
 ## Risk
 
-**R0 cho Nhóm 1 (ADD-A + ADD-D):** Promote doc-only không có runtime risk.
+**R0 cho Nhóm 1 (ADD-A + ADD-D + ADD-BRIEF):** Promotion completed doc-only;
+no runtime risk.
 
 **R1 cho Nhóm 2 (OBS-1, GAP-MEM, ADD-PROVIDER):** Cần GC-018 và implementation
 scope rõ ràng. Risk chính là scope creep nếu không bound cẩn thận.
@@ -588,16 +585,15 @@ Không có corrective action bắt buộc. Tất cả items đều có precedent
 
 ## Decision
 
-Pending operator decision. Ba câu hỏi cần người vận hành trả lời:
+Pending operator decision for remaining implementation roadmaps. Nhóm 1
+doc-only promotion is complete. Ba câu hỏi còn lại:
 
-1. Có muốn promote ADD-A + ADD-D thành public governance doctrine ngay không?
-   (Không cần code, không cần GC-018 implementation)
-
-2. Có muốn mở GC-018 cho Observability Plane Foundation không?
+1. Có muốn mở GC-018 cho Observability Plane Foundation không?
    (Spec đầy đủ trong private reference, R0)
 
-3. Các gaps trong runtime-owned lanes (Memory sub-contracts, Skill Evolution
-   stubs, Agent registry) có cần roadmap riêng không?
+2. Có muốn mở ADD-PROVIDER Output Contracts sau OBS-1 không?
+
+3. Có muốn mở GAP-MEM 3 memory sub-contracts sau OBS-1 không?
 
 ## Enforcement
 

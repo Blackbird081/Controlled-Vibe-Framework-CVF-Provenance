@@ -385,12 +385,12 @@ Corrective artifact:
 
 - `docs/reviews/CVF_OPERATOR_PROGRESS_AND_UNABSORBED_KNOWLEDGE_REPORT_2026-05-17.md`
 
-Operator decisions still pending:
+Operator decisions still pending after later doctrine promotion:
 
-- whether to promote ADD-A + ADD-D as a doc-only governance doctrine;
 - whether to open GC-018 for Observability Plane Foundation;
-- whether to open separate runtime gap roadmaps for Memory, Skill Evolution,
-  Agent registry/orchestration, and Provider/runtime output contracts.
+- whether to open separate runtime gap roadmaps for Memory-specific
+  sub-contracts, ADD-PROVIDER output contracts, and later eligible schema or
+  handoff items.
 
 Proposed future requirement, not yet absorbed:
 
@@ -414,3 +414,40 @@ Claude review gate:
   later dated equivalent.
 - Codex self-rebuttal is only preparation; it is not the independent reviewer
   decision.
+
+## 2026-05-17 - ADD-A/D/Brief Doctrine Promotion
+
+Status: doc-only promotion complete; no runtime implementation.
+
+Promoted doctrine:
+
+- `docs/reference/CVF_GOVERNED_CAPABILITY_INTAKE_AND_BOUNDARY_FIRST_GOVERNANCE_DOCTRINE_2026-05-17.md`
+
+Promotion packet:
+
+- `docs/reviews/CVF_ADD_A_D_BRIEF_DOCTRINE_PROMOTION_2026-05-17.md`
+
+Consensus source:
+
+- `docs/roadmaps/CVF_UNABSORBED_KNOWLEDGE_FINAL_CONSENSUS_ROADMAP_2026-05-17.md`
+- `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_CLAUDE_REVIEW_2026-05-17.md`
+- `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_CODEX_RESPONSE_TO_CLAUDE_2026-05-17.md`
+
+Delivered:
+
+- ADD-A Governed Capability Intake promoted into consolidated canonical
+  doctrine;
+- ADD-D Boundary-First Governance promoted into same doctrine;
+- ADD-BRIEF Brief Normalization promoted into same doctrine;
+- inventory and final consensus roadmap updated to mark Step 3 complete.
+
+Next eligible absorption step:
+
+- OBS-1 Observability Plane Foundation GC-018. Any OBS-1 packet must reference
+  the promoted consolidated doctrine as its capability-intake framework.
+
+Claim boundary:
+
+- doctrine-only R0 promotion;
+- no runtime code, W7 schema change, public claim change, release-gate change,
+  or live provider proof claim.
