@@ -392,8 +392,15 @@ Operator decisions still pending:
 - whether to open separate runtime gap roadmaps for Memory, Skill Evolution,
   Agent registry/orchestration, and Provider/runtime output contracts.
 
-Future requirement:
+Proposed future requirement, not yet absorbed:
 
 - After external-knowledge absorption, GA release, or a tranche series closure,
   create an operator-facing summary whenever valuable reviewed knowledge remains
   unabsorbed or a `runtime-owned` lane still has known missing sub-contracts.
+- This is not binding until the corrective roadmap and rebuttal packet are
+  reviewed and accepted.
+
+Correction governance packet:
+
+- `docs/roadmaps/CVF_UNABSORBED_KNOWLEDGE_REPORTING_CORRECTION_ROADMAP_2026-05-17.md`
+- `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_REPORTING_CORRECTION_REBUTTAL_2026-05-17.md`

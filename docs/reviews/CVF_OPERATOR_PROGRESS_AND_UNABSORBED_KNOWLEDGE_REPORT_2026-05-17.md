@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: OPEN - OPERATOR ACTION REPORT
+Status: OPEN - OPERATOR ACTION REPORT - NOT ABSORPTION AUTHORIZATION
 
 ## Purpose
 
@@ -11,9 +11,9 @@ May 16 absorption and GA work. This report summarizes the current progress from
 recent commits, names the reporting failure, and lists the decisions still
 waiting for the operator.
 
-This file does not authorize implementation. It converts scattered closure
-packets and the unabsorbed-knowledge inventory into a single readable operator
-brief.
+This file does not authorize implementation, policy promotion, or CVF process
+absorption. It converts scattered closure packets and the unabsorbed-knowledge
+inventory into a single readable operator brief.
 
 ## Scope
 
@@ -124,9 +124,9 @@ Findings:
   definitions.
 
 Position: treat the missing report as a process defect, not as evidence that
-the implementation commits are invalid. The corrective action is to surface the
-operator decisions explicitly and require this reporting step for future
-absorption or release closures.
+the implementation commits are invalid. The immediate corrective action is to
+surface the operator decisions explicitly. Any durable reporting rule must go
+through its own roadmap and review before being absorbed into CVF.
 
 ## Operator Decisions Pending
 
@@ -179,10 +179,12 @@ Deferred candidates:
 - scoped knowledge/code graph;
 - code intelligence/indexed knowledge.
 
-## Corrective Requirement
+## Proposed Corrective Requirement
+
+The following is a proposed correction, not an adopted CVF requirement.
 
 Future external-knowledge absorption, GA release, or tranche series closure
-must produce an operator-facing summary when either condition is true:
+should produce an operator-facing summary when either condition is true:
 
 1. any reviewed item remains valuable but unabsorbed;
 2. any lane is marked `runtime-owned` while known sub-contracts remain missing.
@@ -195,8 +197,9 @@ The operator-facing summary must include:
 - what decision is needed next;
 - whether implementation is authorized or only proposed.
 
-This is a reporting requirement only. It does not loosen GC-018 or live-proof
-requirements.
+This proposal is reporting-only. It does not loosen GC-018 or live-proof
+requirements, and it is not binding until accepted through the corrective
+roadmap and rebuttal packet.
 
 ## Risk
 
@@ -208,16 +211,17 @@ reviewed knowledge is still valuable and waiting for a decision.
 
 ## Decision
 
-This report is now the current operator-facing status for the unabsorbed
-knowledge issue. The next action is an operator decision on whether to promote
-ADD-A and ADD-D, open Observability Plane Foundation, or open separate runtime
-gap roadmaps.
+This report is the current operator-facing status brief for the unabsorbed
+knowledge issue. It does not absorb any corrective rule into CVF. The next
+action is to review the corrective roadmap and rebuttal packet before deciding
+whether the reporting correction should become binding.
 
 ## Claim Boundary
 
 This report does not claim new runtime behavior, release proof, public claim
-approval, or roadmap authorization. It summarizes existing committed evidence
-and records a reporting-process correction.
+approval, roadmap authorization, or governance-rule absorption. It summarizes
+existing committed evidence and records a proposed reporting-process
+correction.
 
 ## Related Artifacts
 
@@ -226,3 +230,5 @@ and records a reporting-process correction.
 - `docs/reviews/CVF_WEB_INTEGRATION_TRANCHE_3_CLOSURE_2026-05-16.md`
 - `docs/reviews/CVF_WEB_INTEGRATION_TRANCHE_2_CLOSURE_2026-05-16.md`
 - `docs/baselines/CVF_16_5_LIVING_INTEGRATION_CLASSIFICATION_SUMMARY_2026-05-16.md`
+- `docs/roadmaps/CVF_UNABSORBED_KNOWLEDGE_REPORTING_CORRECTION_ROADMAP_2026-05-17.md`
+- `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_REPORTING_CORRECTION_REBUTTAL_2026-05-17.md`
