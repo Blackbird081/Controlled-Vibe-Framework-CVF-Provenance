@@ -6,6 +6,12 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { ArtifactExportPanel, type ArtifactExportResult } from './ArtifactExportPanel';
 
+let mockLanguage: 'en' | 'vi' = 'en';
+
+vi.mock('@/lib/i18n', () => ({
+  useLanguage: () => ({ language: mockLanguage }),
+}));
+
 const EXPORT_RESULT: ArtifactExportResult = {
   html: '<!doctype html><html lang="en"><body><main><h1>Review Packet</h1></main></body></html>',
   filename: 'review-packet.html',
@@ -19,6 +25,7 @@ const EXPORT_RESULT: ArtifactExportResult = {
 
 describe('ArtifactExportPanel', () => {
   beforeEach(() => {
+    mockLanguage = 'en';
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue({
       ok: true,
       status: 200,
@@ -36,7 +43,7 @@ describe('ArtifactExportPanel', () => {
     vi.restoreAllMocks();
   });
 
-  it('renders the English-only HTML export surface', () => {
+  it('renders the English HTML export surface', () => {
     render(<ArtifactExportPanel />);
 
     expect(screen.getByText('Artifact Export')).toBeTruthy();
@@ -44,7 +51,15 @@ describe('ArtifactExportPanel', () => {
     expect(screen.getByLabelText('Title')).toBeTruthy();
     expect(screen.getByLabelText('Source path')).toBeTruthy();
     expect(screen.getByText('Generate HTML')).toBeTruthy();
-    expect(document.body.textContent).not.toMatch(new RegExp('[\\u00C0-\\u1EF9]'));
+  });
+
+  it('renders Vietnamese labels when the app language is Vietnamese', () => {
+    mockLanguage = 'vi';
+    render(<ArtifactExportPanel />);
+
+    expect(screen.getByText('Xuất Artifact')).toBeTruthy();
+    expect(screen.getByLabelText('Tiêu đề')).toBeTruthy();
+    expect(screen.getByText('Tạo HTML')).toBeTruthy();
   });
 
   it('posts the artifact source and renders the returned candidate', async () => {
