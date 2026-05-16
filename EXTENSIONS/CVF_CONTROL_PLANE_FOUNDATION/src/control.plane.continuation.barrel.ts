@@ -87,6 +87,31 @@ export type {
 } from "./agent.definition.boundary.contract";
 
 export {
+  AgentGovernedSessionContract,
+  createAgentGovernedSessionContract,
+} from "./agent.governed.session.contract";
+export type {
+  AgentGovernedRiskLevel,
+  AgentPolicyDecision,
+  AgentExecutionStatus,
+  AgentOutputType,
+  AgentValidationResult,
+  AgentToolAccessProfile,
+  AgentFileAccessProfile,
+  AgentExecutionLimits,
+  AgentPermissionProfile,
+  AgentGovernedActionRequest,
+  AgentGovernedActionDecision,
+  AgentHandoffFileTouch,
+  AgentHandoffRisk,
+  AgentHandoffInput,
+  AgentHandoffValidation,
+  AgentExecutionReceiptInput,
+  AgentExecutionAuditReceipt,
+  AgentGovernedSessionContractDependencies,
+} from "./agent.governed.session.contract";
+
+export {
   AgentDefinitionCapabilityBatchContract,
   createAgentDefinitionCapabilityBatchContract,
 } from "./agent.definition.capability.batch.contract";

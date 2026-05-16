@@ -468,3 +468,71 @@ Recommended next absorption lane:
   profile, and structured handoff enforcement;
 - MCP Business Adapter if the next goal is tool adapter governance with this
   trace contract as the receipt boundary.
+
+## 2026-05-16 - CVF 16.5 Agent Boundary / Delegation Runtime Absorption
+
+Status: completed locally as `runtime-owned`; provenance push pending this
+session's final pre-push chain.
+
+Implemented owner surface:
+
+- `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/agent.governed.session.contract.ts`
+- `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/agent.governed.session.contract.test.ts`
+
+Source subset:
+
+- `.private_reference/legacy/CVF 16.5/Claude Kit/CVF_AGENT_REGISTRY_SPEC.md`
+- `.private_reference/legacy/CVF 16.5/Claude Kit/CVF_AGENT_PERMISSION_PROFILE.md`
+- `.private_reference/legacy/CVF 16.5/Claude Kit/CVF_AGENT_HANDOFF_CONTRACT.md`
+- `.private_reference/legacy/CVF 16.5/Claude Kit/CVF_AGENT_RISK_POLICY.md`
+- `.private_reference/legacy/CVF 16.5/Claude Kit/CVF_AGENT_AUDIT_RECEIPT.md`
+- `.private_reference/legacy/CVF 16.5/Claude Kit/CVF_AGENT_ORCHESTRATION_RULES.md`
+
+Delivered behavior:
+
+- unregistered agents are denied;
+- capability self-extension is denied;
+- denied file paths, denied tools, file-count limits, command-count limits, and
+  missing receipt requirements are policy inputs;
+- high-risk work requires approval above profile threshold;
+- approved high-risk work returns `allow_with_constraints`;
+- structured handoff validation rejects vague state and missing audit reference;
+- high-risk handoff stops unless policy state requires approval;
+- deterministic agent execution receipt records agent, policy, file/tool,
+  validation, handoff, and output evidence.
+
+Governance packet:
+
+- `docs/baselines/CVF_GC018_AGENT_BOUNDARY_DELEGATION_AUTHORIZATION_2026-05-16.md`
+- `docs/baselines/CVF_ADR_AGENT_BOUNDARY_DELEGATION_RUNTIME_OWNERSHIP_2026-05-16.md`
+- `docs/baselines/CVF_AGENT_BOUNDARY_DELEGATION_SOURCE_ADOPTION_MATRIX_2026-05-16.md`
+- `docs/baselines/CVF_AGENT_BOUNDARY_DELEGATION_TEST_AND_PROOF_PLAN_2026-05-16.md`
+- `docs/roadmaps/CVF_AGENT_BOUNDARY_DELEGATION_RUNTIME_ADOPTION_ROADMAP_2026-05-16.md`
+- `docs/reviews/CVF_AGENT_BOUNDARY_DELEGATION_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
+
+Verification already executed:
+
+```bash
+cd EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION
+npm run check
+npx vitest run tests/agent.governed.session.contract.test.ts --config vitest.config.ts
+```
+
+Result:
+
+- Control Plane typecheck PASS;
+- focused Agent Governed Session vitest PASS, 1 file / 10 tests.
+
+Claim boundary:
+
+- this is deterministic local Control Plane contract behavior;
+- it does not claim live external-agent execution, provider enforcement, or
+  complete orchestration rewiring;
+- future live agent adapter integration requires a fresh GC-018 and live proof.
+
+Recommended next absorption lane:
+
+- MCP Business Adapter if the next goal is governed business-tool adapter
+  execution;
+- Observability Delta if the next goal is signal visibility without runtime
+  intervention authority.
