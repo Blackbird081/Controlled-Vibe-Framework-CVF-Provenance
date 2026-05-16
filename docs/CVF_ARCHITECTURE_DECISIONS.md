@@ -1384,3 +1384,38 @@ Promote knowledge-absorption priority into a governed control. `GC-043` now requ
 - `docs/roadmaps/CVF_GRAPHIFY_LLM_POWERED_PALACE_SYNTHESIS_ONLY_ROADMAP_2026-04-13.md`
 - `docs/reference/CVF_SESSION_GOVERNANCE_BOOTSTRAP.md`
 - `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md`
+
+## ADR-GC045: Markdown Structural Completeness Guard Becomes Mandatory For New Governed Markdown
+
+### Status
+ACCEPTED — 2026-05-16
+
+### Context
+CVF documentation had no automated structural completeness guard. New governed Markdown could enter canon without `Memory class`, `Status`, `Purpose`, `Scope`, `Claim Boundary`, or artifact-type-specific sections, producing files that pass lint but fail reviewer attention. The 2026-05-16 public Markdown quality program also surfaced 7 Tier 1 files that had passed a manual common-elements rubric but failed full automated artifact-type templates. A guard that runs at commit time on new governed Markdown files is the right enforcement surface for this gap.
+
+### Decision
+Introduce GC-045 (Markdown Structural Completeness Guard) with:
+- canonical standard at `docs/reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md`;
+- guard descriptor at `governance/toolkit/05_OPERATION/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_GUARD.md`;
+- automated checker at `governance/compat/check_markdown_structural_completeness.py`;
+- wiring into the local pre-commit and pre-push hook chains and into the documentation CI workflow.
+
+The guard enforces full artifact-type templates (spec / baseline / handoff / review / policy / contract / roadmap / adr / guard) automatically. Legacy dense files are grandfathered.
+
+### Alternatives
+- **Manual rubric review.** Rejected: the Tier 1 closure proved manual rubric drifts away from the published standard under time pressure.
+- **Front-matter-only checker.** Rejected: classifier-by-content match handles existing files without forcing a wholesale front-matter rewrite of every legacy file.
+- **No automated checker.** Rejected: GC-032 covered source-truth placement but not structural completeness; documentation quality drift accumulated without enforcement.
+
+### Consequences
+- Every new governed Markdown file must include the common required elements plus its artifact-type sections.
+- Future agents save time by using the checker before committing rather than after push rejection.
+- Public-sync workspace gained a `--no-bootstrap` portable mode so the checker runs without requiring the full hook chain.
+- Each future `GC-NN_GUARD.md` introduction must record one short ADR entry here and one `docs/reviews/CVF_GC019_*_STRUCTURAL_REVIEW_*.md` artifact so the foundational guard audit stays green.
+
+### Related Files
+- `governance/toolkit/05_OPERATION/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_GUARD.md`
+- `governance/compat/check_markdown_structural_completeness.py`
+- `docs/reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md`
+- `docs/reviews/CVF_GC045_MARKDOWN_STRUCTURAL_COMPLETENESS_IMPLEMENTATION_REVIEW_2026-05-16.md`
+- `docs/reviews/CVF_GC019_GC045_GUARD_INTRODUCTION_STRUCTURAL_REVIEW_2026-05-16.md`
