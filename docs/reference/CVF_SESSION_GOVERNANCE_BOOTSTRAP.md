@@ -142,6 +142,21 @@ Primary references:
 - `governance/toolkit/05_OPERATION/CVF_EXTENSION_PACKAGE_CHECK_GUARD.md`
 - `governance/compat/check_extension_package_check.py`
 
+### `GC-045` — Markdown Structural Completeness
+
+Use when:
+
+- creating a new governed Markdown file
+- materially rewriting a legacy governed Markdown file into canonical shape
+- drafting contracts, specs, policies, roadmaps, reviews, baselines, ADRs, or
+  handoffs
+
+Primary references:
+
+- `docs/reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md`
+- `governance/toolkit/05_OPERATION/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_GUARD.md`
+- `governance/compat/check_markdown_structural_completeness.py`
+
 ### `GC-030` — Guard Authoring Standard
 
 Use when:

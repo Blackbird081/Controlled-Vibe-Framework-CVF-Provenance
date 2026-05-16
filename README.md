@@ -469,6 +469,7 @@ Important current continuity controls:
 - `GC-021` allows `Fast Lane` for low-risk additive work inside an already-authorized tranche
 - `GC-022` classifies durable memory records as `FULL_RECORD`, `SUMMARY_RECORD`, or `POINTER_RECORD` so future memory stays useful without over-recording
 - `GC-032` requires governed artifact writing to stay source-truth-first, keep typed evidence explicit, and move continuity surfaces together when tranche posture changes
+- `GC-045` requires new governed Markdown files to include the structural sections required by their artifact type, enforced by `CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_GUARD.md`
 
 Foundational governance surfaces that used to depend mainly on reviewer discipline are now also blocked by `governance/compat/check_foundational_guard_surfaces.py`, covering ADR updates, architecture-baseline refresh, extension naming, structural audit packets, test-depth reporting, and workspace isolation.
 
@@ -499,6 +500,7 @@ Mandatory guard index:
 - `CVF_GUARD_REGISTRY_GUARD.md`
 - `CVF_INCREMENTAL_TEST_LOG_ROTATION_GUARD.md`
 - `CVF_MEMORY_GOVERNANCE_GUARD.md`
+- `CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_GUARD.md`
 - `CVF_KNOWLEDGE_ABSORPTION_PRIORITY_GUARD.md`
 - `CVF_TEMPLATE_SKILL_STANDARD_GUARD.md`
 - `CVF_MULTI_AGENT_REVIEW_DOC_GUARD.md`

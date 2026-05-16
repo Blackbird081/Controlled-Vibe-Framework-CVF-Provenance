@@ -32,6 +32,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
             "docs governance compatibility",
             ["python", "governance/compat/check_docs_governance_compat.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
+        (
+            "markdown structural completeness",
+            ["python", "governance/compat/check_markdown_structural_completeness.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
     ],
     "pre-push": [
         (
@@ -41,6 +45,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         (
             "governed artifact authoring compatibility",
             ["python", "governance/compat/check_governed_artifact_authoring.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "markdown structural completeness",
+            ["python", "governance/compat/check_markdown_structural_completeness.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
             "cpf public surface maintainability",

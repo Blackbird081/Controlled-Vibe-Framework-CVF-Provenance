@@ -48,6 +48,7 @@ Từ nay về sau:
   - `CVF_DOCUMENT_STORAGE_GUARD.md`
   - `CVF_MEMORY_GOVERNANCE_GUARD.md` khi tài liệu đó phục vụ durable memory sau này
   - `reference/CVF_GOVERNED_ARTIFACT_AUTHORING_STANDARD.md` khi file đó là governed packet, evidence doc, closure doc, handoff/tracker sync, hoặc artifact claim có source truth rõ ràng
+  - `reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md` khi tạo file `.md` governed mới hoặc migrate file cũ sang canonical shape
   - `reference/CVF_QUALITY_ASSESSMENT_STANDARD.md` khi file đó là tranche, wave, hoặc architecture quality scorecard
   - `reference/CVF_MAINTAINABILITY_STANDARD.md` khi file đó đụng hotspot public barrel, barrel smoke test, shared batch helper, shared fixture builder, hoặc summary/evidence layering
   - `reference/CVF_PREPUBLIC_RESTRUCTURING_UNIFIED_AGENT_PROTOCOL.md` khi task liên quan repository structure, folder cleanup, pre-public packaging, hoặc publication decisions (quy tắc bắt buộc đọc)

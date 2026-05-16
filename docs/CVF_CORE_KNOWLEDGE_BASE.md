@@ -844,3 +844,24 @@ Canonical references:
 - `docs/roadmaps/CVF_PREPUBLIC_REPOSITORY_RESTRUCTURING_ROADMAP_2026-04-02.md`
 - `governance/toolkit/05_OPERATION/CVF_PREPUBLIC_P3_READINESS_GUARD.md`
 - `governance/compat/check_prepublic_p3_readiness.py`
+
+---
+
+## XVII. MARKDOWN STRUCTURAL COMPLETENESS
+
+Markdown structural completeness is mandatory for new governed CVF documents.
+
+Canonical rule:
+
+- new governed Markdown files must include title, memory class, status, purpose,
+  scope or owner boundary, and final/claim/verification boundary
+- contracts, specs, policies, roadmaps, reviews, baselines, ADRs, and handoffs
+  must follow their artifact-specific section set
+- legacy dense files are not retroactively blocked, but material rewrites and
+  promotions should migrate into the standard
+
+Canonical references:
+
+- `docs/reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md`
+- `governance/toolkit/05_OPERATION/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_GUARD.md`
+- `governance/compat/check_markdown_structural_completeness.py`

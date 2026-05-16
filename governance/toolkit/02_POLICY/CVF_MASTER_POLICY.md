@@ -256,6 +256,14 @@ Personal AI usage unrelated to company work is excluded.
      - provider freeze for the current lane remains roadmap/execution policy, not a permanent guard invariant
      - canonical operational rule: `governance/toolkit/05_OPERATION/CVF_TEMPLATE_SKILL_STANDARD_GUARD.md`
      - automated enforcement reference: `governance/compat/check_template_skill_standard_guard_compat.py`
+39. `GC-045` new governed Markdown files must satisfy structural completeness by artifact type before entering CVF canon:
+     - this rule applies to new governed Markdown under `docs/`, `governance/toolkit/`, `AGENT_HANDOFF*.md`, and repository-root `CVF_*.md`
+     - every new governed Markdown file must expose title, memory class, status, purpose, scope or owner boundary, and final/claim/verification boundary
+     - contracts, specs, policies, roadmaps, reviews, baselines, ADRs, and handoffs must follow their respective required section sets
+     - legacy dense docs are not retroactively blocked, but material rewrites and promotions should migrate to the standard
+     - canonical structural standard: `docs/reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md`
+     - canonical operational rule: `governance/toolkit/05_OPERATION/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_GUARD.md`
+     - automated enforcement reference: `governance/compat/check_markdown_structural_completeness.py`
 
 ---
 
