@@ -13,8 +13,6 @@ import {
   TriangleAlert,
 } from 'lucide-react';
 
-import { useLanguage } from '@/lib/i18n';
-
 export type ArtifactMemoryClass = 'POINTER_RECORD' | 'FULL_RECORD';
 
 export interface ArtifactExportRequest {
@@ -75,58 +73,30 @@ const DEFAULT_REQUEST: ArtifactExportRequest = {
 };
 
 const LABELS = {
-  en: {
-    title: 'Artifact Export',
-    subtitle: 'Build a self-contained HTML presentation candidate bound to a governance receipt.',
-    boundary: 'HTML only. PDF, PNG, PPTX, and governed-artifact-generation claims are deferred.',
-    sourceTitle: 'Source',
-    outputTitle: 'HTML Candidate',
-    verificationTitle: 'Verification',
-    titleLabel: 'Title',
-    pathLabel: 'Source path',
-    memoryLabel: 'Memory class',
-    statusLabel: 'Status',
-    receiptLabel: 'Receipt anchor',
-    boundaryLabel: 'Claim Boundary',
-    contentLabel: 'Source content',
-    generate: 'Generate HTML',
-    generating: 'Generating',
-    copy: 'Copy HTML',
-    copied: 'Copied',
-    download: 'Download HTML',
-    print: 'Print preview',
-    noOutput: 'Generate an HTML candidate to preview it here.',
-    noChecks: 'Verification checks will appear after generation.',
-    failed: 'Export failed',
-    sourceHint: 'Paste the governed source text that should be rendered without changing its meaning.',
-    previewTitle: 'Sandboxed preview',
-  },
-  vi: {
-    title: 'Xuất Artifact',
-    subtitle: 'Tạo bản trình bày HTML tự chứa, gắn với governance receipt.',
-    boundary: 'Chỉ HTML. PDF, PNG, PPTX và claim governed-artifact-generation được defer.',
-    sourceTitle: 'Nguồn',
-    outputTitle: 'HTML Candidate',
-    verificationTitle: 'Kiểm tra',
-    titleLabel: 'Tiêu đề',
-    pathLabel: 'Đường dẫn nguồn',
-    memoryLabel: 'Memory class',
-    statusLabel: 'Trạng thái',
-    receiptLabel: 'Receipt anchor',
-    boundaryLabel: 'Claim Boundary',
-    contentLabel: 'Nội dung nguồn',
-    generate: 'Tạo HTML',
-    generating: 'Đang tạo',
-    copy: 'Sao chép HTML',
-    copied: 'Đã sao chép',
-    download: 'Tải HTML',
-    print: 'Xem bản in',
-    noOutput: 'Tạo HTML candidate để xem trước tại đây.',
-    noChecks: 'Các bước kiểm tra sẽ hiện sau khi tạo.',
-    failed: 'Xuất thất bại',
-    sourceHint: 'Dán nội dung nguồn đã governed để render mà không đổi ý nghĩa.',
-    previewTitle: 'Preview sandbox',
-  },
+  title: 'Artifact Export',
+  subtitle: 'Build a self-contained HTML presentation candidate bound to a governance receipt.',
+  boundary: 'HTML only. PDF, PNG, PPTX, and governed-artifact-generation claims are deferred.',
+  sourceTitle: 'Source',
+  outputTitle: 'HTML Candidate',
+  verificationTitle: 'Verification',
+  titleLabel: 'Title',
+  pathLabel: 'Source path',
+  memoryLabel: 'Memory class',
+  statusLabel: 'Status',
+  receiptLabel: 'Receipt anchor',
+  boundaryLabel: 'Claim Boundary',
+  contentLabel: 'Source content',
+  generate: 'Generate HTML',
+  generating: 'Generating',
+  copy: 'Copy HTML',
+  copied: 'Copied',
+  download: 'Download HTML',
+  print: 'Print preview',
+  noOutput: 'Generate an HTML candidate to preview it here.',
+  noChecks: 'Verification checks will appear after generation.',
+  failed: 'Export failed',
+  sourceHint: 'Paste the governed source text that should be rendered without changing its meaning.',
+  previewTitle: 'Sandboxed preview',
 };
 
 function normalizeRequest(input?: Partial<ArtifactExportRequest>): ArtifactExportRequest {
@@ -200,8 +170,7 @@ export function ArtifactExportPanel({
   exportEndpoint = '/api/artifacts/export',
   onGenerated,
 }: ArtifactExportPanelProps) {
-  const { language } = useLanguage();
-  const labels = LABELS[language === 'vi' ? 'vi' : 'en'];
+  const labels = LABELS;
   const [request, setRequest] = useState<ArtifactExportRequest>(() => normalizeRequest(initialRequest));
   const [result, setResult] = useState<ArtifactExportResult | null>(initialResult);
   const [loading, setLoading] = useState(false);
