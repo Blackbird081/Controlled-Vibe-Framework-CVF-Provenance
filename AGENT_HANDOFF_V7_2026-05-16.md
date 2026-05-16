@@ -174,3 +174,49 @@ Verification completed:
 - governed file-size PASS;
 - markdown structural completeness PASS;
 - docs governance compatibility PASS.
+
+## 2026-05-16 - OpenSpec Change Adapter Runtime Adoption
+
+Status: implemented locally; commit/push pending full pre-push verification.
+
+Runtime owner:
+
+- `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/openspec.change.adapter.contract.ts`
+
+Test owner:
+
+- `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/openspec.change.adapter.contract.test.ts`
+
+Governance packet:
+
+- `docs/baselines/CVF_GC018_OPENSPEC_CHANGE_ADAPTER_AUTHORIZATION_2026-05-16.md`
+- `docs/baselines/CVF_ADR_OPENSPEC_CHANGE_ADAPTER_RUNTIME_OWNERSHIP_2026-05-16.md`
+- `docs/baselines/CVF_OPENSPEC_CHANGE_ADAPTER_SOURCE_ADOPTION_MATRIX_2026-05-16.md`
+- `docs/baselines/CVF_OPENSPEC_CHANGE_ADAPTER_TEST_AND_PROOF_PLAN_2026-05-16.md`
+- `docs/reviews/CVF_GC019_OPENSPEC_CHANGE_ADAPTER_STRUCTURAL_CHANGE_REVIEW_2026-05-16.md`
+- `docs/roadmaps/CVF_OPENSPEC_CHANGE_ADAPTER_RUNTIME_ADOPTION_ROADMAP_2026-05-16.md`
+- `docs/reviews/CVF_OPENSPEC_CHANGE_ADAPTER_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
+
+Delivered behavior:
+
+- maps proposal/design/tasks/apply/verify/archive/sync into CVF phases;
+- treats apply as governed request only;
+- treats archive/sync as candidates only;
+- blocks direct apply bypass and canonical overwrite;
+- requires CVF governance extension fields for deltas;
+- blocks hidden behavior in rename deltas and requires rollback notes for removals.
+
+Claim boundary:
+
+- deterministic local Control Plane adapter only;
+- no OpenSpec CLI execution, direct apply, automatic sync/archive, or canonical
+  truth overwrite claim.
+
+Verification completed:
+
+- Control Plane `npm run check` PASS;
+- focused OpenSpec adapter Vitest PASS, 1 file / 14 tests;
+- full Control Plane Vitest PASS, 125 files / 3418 tests;
+- governed file-size PASS;
+- markdown structural completeness PASS;
+- docs governance compatibility PASS.

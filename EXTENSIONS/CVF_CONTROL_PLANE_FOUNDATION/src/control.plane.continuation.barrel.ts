@@ -167,6 +167,25 @@ export type {
 } from "./document.artifact.renderer.contract";
 
 export {
+  OpenSpecChangeAdapterContract,
+  createOpenSpecChangeAdapterContract,
+} from "./openspec.change.adapter.contract";
+export type {
+  OpenSpecArtifactKind,
+  CvfPhase,
+  OpenSpecDeltaKind,
+  OpenSpecAdapterDecision,
+  OpenSpecChangeArtifact,
+  OpenSpecDeltaSpec,
+  OpenSpecChangePacketInput,
+  OpenSpecPhaseMapping,
+  OpenSpecDeltaValidation,
+  OpenSpecArchiveSyncBoundary,
+  GovernedOpenSpecChangePacket,
+  OpenSpecChangeAdapterContractDependencies,
+} from "./openspec.change.adapter.contract";
+
+export {
   AgentDefinitionCapabilityBatchContract,
   createAgentDefinitionCapabilityBatchContract,
 } from "./agent.definition.capability.batch.contract";
