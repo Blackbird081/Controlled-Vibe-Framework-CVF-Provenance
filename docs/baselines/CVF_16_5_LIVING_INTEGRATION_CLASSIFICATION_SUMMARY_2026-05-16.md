@@ -1,4 +1,4 @@
-<!-- Memory class: SUMMARY_RECORD -->
+Memory class: SUMMARY_RECORD
 
 # CVF 16.5 Living Integration Classification Summary - 2026-05-16
 
@@ -86,7 +86,7 @@ Do not leave a selected source at "started but not alive."
 | Agent Boundary / Delegation | `Claude Kit`, `OpenAgentd` | High | `runtime-owned` | `EXTENSIONS/CVF_AGENT_DEFINITION/`, `EXTENSIONS/CVF_AGENT_LEDGER/`, Execution Plane, Governance Expansion | agents have registry records, permission profiles, structured handoff, risk policy, and audit receipt tests |
 | Tool Call Trace / Sandbox | `OpenAgentd` | High/Medium | `runtime-owned` | Execution Plane + Trust/Sandbox surfaces | tool calls emit lifecycle trace, policy check, redacted args/results, block/error/success receipts, and sandbox permission decisions |
 | MCP Business Adapter | `pancake-pos-mcp` | High for generic 7 files; Pancake profile deferred | `runtime-owned` | Execution Plane adapter boundary | generic MCP business tools have contracts, risk classifier, approval gate, transport policy, execution receipt, and tests; Pancake profile remains optional |
-| Observability Delta | `abtop` | High/Medium | `docs-classified` | `EXTENSIONS/CVF_v1.8.1_ADAPTIVE_OBSERVABILITY_RUNTIME/` | observe-only signals for session/token/context/rate/quota/process/port exist without kill/reroute/approval authority |
+| Observability Delta | `abtop` | High/Medium | `runtime-owned` | `EXTENSIONS/CVF_v1.8.1_ADAPTIVE_OBSERVABILITY_RUNTIME/` | observe-only signals for token/context/rate/quota/process/port exist without kill/reroute/approval authority |
 | Document Artifact Renderer | `md2html` | Medium/High | `docs-classified` | docs/evidence presentation surface, future renderer extension only if approved | governed HTML artifacts preserve source meaning, evidence state, risk, approval, failed checks, and pass artifact verification |
 | OpenSpec Change Adapter | `OpenSpec` | Medium/High | `docs-classified` | Control Plane + docs governance | proposal/design/tasks/delta/archive material maps into CVF phase gates without direct apply or canonical overwrite |
 | Skill Evolution Loop | `Memento-Skills` | Medium | `docs-classified` | `EXTENSIONS/CVF_v1.2.2_SKILL_GOVERNANCE_ENGINE/` + Skill Library | reflection creates mutation proposals; verification/probation/approval/receipt are required before any skill reinjection |
@@ -151,10 +151,15 @@ Evidence:
 
 6. **Observability Delta**
 
-Decision needed after MCP Business Adapter: choose Observability Delta as the
-next bounded runtime-owned tranche.
+Status: completed as `runtime-owned` on 2026-05-16.
 
-Reason: useful, but must be a delta on v1.8.1 rather than a new plane.
+Owner:
+
+- `EXTENSIONS/CVF_v1.8.1_ADAPTIVE_OBSERVABILITY_RUNTIME/observability/observe.only.signal.contract.ts`
+
+Evidence:
+
+- `docs/reviews/CVF_OBSERVABILITY_DELTA_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
 
 7. **Artifact Renderer / OpenSpec / Skill Evolution / Knowledge Vault**
 
@@ -171,7 +176,7 @@ bounded owner surface with a clear product need.
 | Agent Boundary / Delegation | Completed: `docs/baselines/CVF_GC018_AGENT_BOUNDARY_DELEGATION_AUTHORIZATION_2026-05-16.md`, `docs/baselines/CVF_ADR_AGENT_BOUNDARY_DELEGATION_RUNTIME_OWNERSHIP_2026-05-16.md`, `docs/baselines/CVF_AGENT_BOUNDARY_DELEGATION_SOURCE_ADOPTION_MATRIX_2026-05-16.md`, `docs/baselines/CVF_AGENT_BOUNDARY_DELEGATION_TEST_AND_PROOF_PLAN_2026-05-16.md`, `docs/roadmaps/CVF_AGENT_BOUNDARY_DELEGATION_RUNTIME_ADOPTION_ROADMAP_2026-05-16.md` |
 | Tool Call Trace / Sandbox | Completed: `docs/baselines/CVF_GC018_TOOL_CALL_TRACE_SANDBOX_AUTHORIZATION_2026-05-16.md`, `docs/baselines/CVF_ADR_TOOL_CALL_TRACE_SANDBOX_RUNTIME_OWNERSHIP_2026-05-16.md`, `docs/baselines/CVF_TOOL_CALL_TRACE_SANDBOX_SOURCE_ADOPTION_MATRIX_2026-05-16.md`, `docs/baselines/CVF_TOOL_CALL_TRACE_SANDBOX_TEST_AND_PROOF_PLAN_2026-05-16.md`, `docs/roadmaps/CVF_TOOL_CALL_TRACE_SANDBOX_RUNTIME_ADOPTION_ROADMAP_2026-05-16.md` |
 | MCP Business Adapter | Completed: `docs/baselines/CVF_GC018_MCP_BUSINESS_ADAPTER_AUTHORIZATION_2026-05-16.md`, `docs/baselines/CVF_ADR_MCP_BUSINESS_ADAPTER_RUNTIME_OWNERSHIP_2026-05-16.md`, `docs/baselines/CVF_MCP_BUSINESS_ADAPTER_SOURCE_ADOPTION_MATRIX_2026-05-16.md`, `docs/baselines/CVF_MCP_BUSINESS_ADAPTER_TEST_AND_PROOF_PLAN_2026-05-16.md`, `docs/roadmaps/CVF_MCP_BUSINESS_ADAPTER_RUNTIME_ADOPTION_ROADMAP_2026-05-16.md` |
-| Observability Delta | GC-018, v1.8.1 delta ADR, observe-only event schema, no-intervention tests |
+| Observability Delta | Completed: `docs/baselines/CVF_GC018_OBSERVABILITY_DELTA_AUTHORIZATION_2026-05-16.md`, `docs/baselines/CVF_ADR_OBSERVABILITY_DELTA_RUNTIME_OWNERSHIP_2026-05-16.md`, `docs/baselines/CVF_OBSERVABILITY_DELTA_SOURCE_ADOPTION_MATRIX_2026-05-16.md`, `docs/baselines/CVF_OBSERVABILITY_DELTA_TEST_AND_PROOF_PLAN_2026-05-16.md`, `docs/roadmaps/CVF_OBSERVABILITY_DELTA_RUNTIME_ADOPTION_ROADMAP_2026-05-16.md` |
 | Document Artifact Renderer | GC-018, artifact verification checklist, fixture set, secret-scan/render tests |
 | OpenSpec Change Adapter | GC-018, phase mapping schema, delta grammar tests, archive overwrite block tests |
 | Skill Evolution Loop | GC-018, proposal-only mutation boundary, verification/probation tests, reinjection receipt plan |
@@ -185,6 +190,7 @@ Current runtime-owned evidence:
 - `docs/reviews/CVF_TOOL_CALL_TRACE_SANDBOX_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
 - `docs/reviews/CVF_AGENT_BOUNDARY_DELEGATION_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
 - `docs/reviews/CVF_MCP_BUSINESS_ADAPTER_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
+- `docs/reviews/CVF_OBSERVABILITY_DELTA_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
 
 ## Verification
 
@@ -196,5 +202,6 @@ This summary does not authorize implementation. It authorizes prioritization
 and prevents loss of absorption context.
 
 Model Gateway, Controlled Memory, Tool Call Trace / Sandbox, Agent Boundary /
-Delegation, and MCP Business Adapter are now `runtime-owned`. All other lanes
-remain `docs-classified` until a new roadmap-ready packet is prepared.
+Delegation, MCP Business Adapter, and Observability Delta are now
+`runtime-owned`. All other lanes remain `docs-classified` until a new
+roadmap-ready packet is prepared.

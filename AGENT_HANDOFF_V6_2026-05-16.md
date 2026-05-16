@@ -604,3 +604,81 @@ Claim boundary:
 Recommended next absorption lane:
 
 - Observability Delta, kept observe-only with no kill/reroute/approval authority.
+
+## 2026-05-16 - CVF 16.5 Observability Delta Runtime Absorption
+
+Status: completed locally as `runtime-owned`; provenance push pending this
+session's final pre-push chain.
+
+Implemented owner surface:
+
+- `EXTENSIONS/CVF_v1.8.1_ADAPTIVE_OBSERVABILITY_RUNTIME/observability/observe.only.signal.contract.ts`
+- `EXTENSIONS/CVF_v1.8.1_ADAPTIVE_OBSERVABILITY_RUNTIME/tests/observe.only.signal.contract.test.ts`
+
+Source subset:
+
+- `.private_reference/legacy/CVF 16.5/abtop/CVF_OBSERVABILITY_POLICY.md`
+- `.private_reference/legacy/CVF 16.5/abtop/CVF_TOKEN_CONTEXT_METER.md`
+- `.private_reference/legacy/CVF 16.5/abtop/CVF_RATE_LIMIT_WATCHER.md`
+- `.private_reference/legacy/CVF 16.5/abtop/CVF_PROCESS_PORT_GUARD.md`
+- `.private_reference/legacy/CVF 16.5/abtop/CVF_AGENT_SESSION_MONITOR.md`
+- `.private_reference/legacy/CVF 16.5/abtop/CVF_DASHBOARD_EVENT_STREAM.md`
+
+Deferred source:
+
+- `.private_reference/legacy/CVF 16.5/abtop/CVF_RUNTIME_DASHBOARD_SPEC.md`
+- `.private_reference/legacy/CVF 16.5/abtop/CVF_DASHBOARD_UI_CONTRACT.md`
+
+Delivered behavior:
+
+- token/context usage maps to NORMAL, NOTICE, WARNING, HIGH, and CRITICAL;
+- trusted token measurement sources are accepted and agent self-reports are
+  flagged as untrusted;
+- HIGH and CRITICAL signals require receipts;
+- provider warning, repeated throttle, and quota exhaustion map to deterministic
+  rate-limit signals;
+- unknown process, orphan process, and external exposure map to deterministic
+  process/port signals;
+- receipts are deterministic and carry allowed observe-only actions plus blocked
+  interventions;
+- observability allows observe, summarize, alert, emit receipt, and recommend
+  escalation;
+- observability blocks approve, kill process, close port, reroute provider,
+  mutate policy, truncate context, inject prompt, and delete audit.
+
+Governance packet:
+
+- `docs/baselines/CVF_GC018_OBSERVABILITY_DELTA_AUTHORIZATION_2026-05-16.md`
+- `docs/baselines/CVF_ADR_OBSERVABILITY_DELTA_RUNTIME_OWNERSHIP_2026-05-16.md`
+- `docs/baselines/CVF_OBSERVABILITY_DELTA_SOURCE_ADOPTION_MATRIX_2026-05-16.md`
+- `docs/baselines/CVF_OBSERVABILITY_DELTA_TEST_AND_PROOF_PLAN_2026-05-16.md`
+- `docs/roadmaps/CVF_OBSERVABILITY_DELTA_RUNTIME_ADOPTION_ROADMAP_2026-05-16.md`
+- `docs/reviews/CVF_OBSERVABILITY_DELTA_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
+
+Verification already executed:
+
+```bash
+cd EXTENSIONS/CVF_v1.8.1_ADAPTIVE_OBSERVABILITY_RUNTIME
+npm run check
+npx vitest run tests/observe.only.signal.contract.test.ts --config vitest.config.ts
+```
+
+Result:
+
+- Adaptive Observability typecheck PASS;
+- full package vitest PASS, 3 files / 46 tests;
+- focused Observability Delta vitest PASS, 1 file / 7 tests.
+
+Claim boundary:
+
+- this is deterministic local observe-only runtime behavior;
+- it does not claim live dashboard streaming, OS process control, provider
+  rerouting, or live governance enforcement by observability;
+- future live dashboard/provider/process-control work requires a fresh GC-018
+  and live proof.
+
+Recommended next absorption lane:
+
+- Knowledge Intake / Vault if the next goal is governed external knowledge
+  ingestion and reinjection;
+- Document Artifact Renderer if the next goal is public evidence presentation.
