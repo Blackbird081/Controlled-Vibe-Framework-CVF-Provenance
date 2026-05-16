@@ -267,3 +267,51 @@ Verification completed:
 - governed file-size PASS;
 - markdown structural completeness PASS;
 - docs governance compatibility PASS.
+
+## 2026-05-16 - Web Integration Tranche 1 Closure
+
+Status: implemented locally and closed by review packet; provenance push
+pending any final operator decision.
+
+Implemented owner surface:
+
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/artifacts/page.tsx`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.test.tsx`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.test.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/artifact-export-panel.spec.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/knowledge/intake/page.tsx`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/agent-handoff/page.tsx`
+
+Governance packet:
+
+- `docs/reviews/CVF_WEB_INTEGRATION_TRANCHE_1_PROPOSAL_2026-05-16.md`
+- `docs/baselines/CVF_GC018_WEB_INTEGRATION_TRANCHE_1_AUTHORIZATION_2026-05-16.md`
+- `docs/reviews/CVF_WEB_INTEGRATION_TRANCHE_1_CLOSURE_2026-05-16.md`
+
+Delivered behavior:
+
+- new `ArtifactExportPanel` sibling component, no `SpecExport.tsx` edits;
+- HTML-only self-contained export API with visible receipt and claim boundary;
+- secret-like source content rejected before rendering;
+- English-only Artifact Export surface;
+- `/artifacts`, `/knowledge/intake`, and `/agent-handoff` pages explain
+  review packets, receipts, and handoff value for non-coders;
+- route unit, component unit, and mock Playwright E2E coverage.
+
+Verification completed:
+
+- artifact route Vitest PASS, 3 tests;
+- artifact panel Vitest PASS, 3 tests;
+- artifact export mock Playwright PASS, 1 test;
+- cvf-web TypeScript no-emit PASS;
+- governed file-size PASS;
+- closure markdown structural check PASS.
+
+Claim boundary:
+
+- Tranche 1 claims only "HTML presentation candidate";
+- no governed artifact-generation proof, live provider proof, PDF/PNG/PPTX
+  export, production publishing, autonomous knowledge absorption, or SpecExport
+  replacement is claimed.
