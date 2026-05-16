@@ -52,26 +52,27 @@ Nguồn được review:
 
 **Nguồn:** `.private_reference/legacy/CVF 16.5/abtop/CVF_OBSERVABILITY_PLANE_FOUNDATION/`
 
-**Trạng thái hiện tại:** `deferred` — Observability Delta (`runtime-owned` tại
-`CVF_v1.8.1_ADAPTIVE_OBSERVABILITY_RUNTIME/`) chỉ absorb `observe.only.signal.contract.ts`.
-10 file spec đầy đủ chưa được adopt.
+**Trạng thái hiện tại:** `runtime-owned` — completed 2026-05-17 through
+OBS-1 runtime adoption. Observability Delta previously covered
+`observe.only.signal.contract.ts`; OBS-1 now adds the read-only dashboard
+snapshot contract and bilingual web-facing runtime monitor.
 
 **Những gì đã có (từ 16.5 absorption):**
 - Signal categories: `session`, `token_context`, `rate_limit`, `process_port`
 - Observe-only policy: không kill/reroute/approve
 
-**Những gì chưa có:**
+**Những gì đã absorb thêm trong OBS-1:**
 
-| File spec còn thiếu | Chức năng |
+| File spec | CVF owner behavior |
 |---|---|
-| `CVF_RUNTIME_DASHBOARD_SPEC.md` | 6 panel live: agent session, token/context, rate-limit, process, port, alert |
-| `CVF_AGENT_SESSION_MONITOR.md` | Theo dõi Claude Code / Codex CLI / agent đang chạy |
-| `CVF_TOKEN_CONTEXT_METER.md` | Đo token/context window, cảnh báo gần đầy |
-| `CVF_RATE_LIMIT_WATCHER.md` | Quota/rate-limit theo provider/agent/session |
-| `CVF_PROCESS_PORT_GUARD.md` | Child process, open port, orphan port |
-| `CVF_DASHBOARD_EVENT_STREAM.md` | Event stream chuẩn cho CLI TUI hoặc cvf-web |
-| `CVF_OBSERVABILITY_POLICY.md` | Ràng buộc observe/alert/recommend only |
-| `CVF_DASHBOARD_UI_CONTRACT.md` | Contract UI: panels, refresh, severity, RBAC, mock/live |
+| `CVF_RUNTIME_DASHBOARD_SPEC.md` | Read-only runtime dashboard snapshot and `/runtime` web page |
+| `CVF_AGENT_SESSION_MONITOR.md` | Session panel records from web governance job audit |
+| `CVF_TOKEN_CONTEXT_METER.md` | Token/context panel with no-guess unavailable state |
+| `CVF_RATE_LIMIT_WATCHER.md` | Provider quota pressure panel from cost/quota policy |
+| `CVF_PROCESS_PORT_GUARD.md` | Local process and managed-port visibility |
+| `CVF_DASHBOARD_EVENT_STREAM.md` | Source-tagged dashboard event records |
+| `CVF_OBSERVABILITY_POLICY.md` | Allowed observe-only actions and blocked interventions |
+| `CVF_DASHBOARD_UI_CONTRACT.md` | English/Vietnamese web surface with source labels and empty states |
 
 **Giá trị thực tế:**
 - Operator thấy được agent nào đang chạy, đang dùng bao nhiêu context, quota
@@ -84,11 +85,8 @@ Nguồn được review:
 read-only nên R0. Không overlap với bất kỳ governed surface nào hiện có. Spec
 đầy đủ trong private reference. Không có owner surface CVF nào hiện đang gánh.
 
-**Điều kiện để absorb:** GC-018 mới cho `CVF_OBSERVABILITY_PLANE_FOUNDATION`.
-Target: `EXTENSIONS/CVF_OBSERVABILITY_PLANE_FOUNDATION/` với 9 spec files +
-web route `/runtime` khi cần. Phải là roadmap thứ hai sau khi ADD-A/D doctrine
-promotion close — vì ADD-A doctrine sẽ frame Observability Plane là một
-governed capability mới.
+**Điều kiện để absorb:** Complete — see
+`docs/roadmaps/CVF_OBSERVABILITY_PLANE_FOUNDATION_RUNTIME_ADOPTION_ROADMAP_2026-05-17.md`.
 
 ---
 
@@ -378,8 +376,8 @@ cần code graph. Không nên absorb proactive.
 
 **Nguồn:** `openrouter-cli.git`, `CLI-Anything`, `Hermes Agent`, `AGENT ENGINEER`
 
-**Trạng thái hiện tại:** `docs-classified` — được identify là "aligns strongly
-with W132" nhưng W132 đã close và không absorb phần này.
+**Trạng thái hiện tại:** `runtime-owned` — completed 2026-05-17 in
+`EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-output-contract.ts`.
 
 **Nội dung:**
 
@@ -399,8 +397,8 @@ Execution adapters nên emit:
 **Đánh giá:** ⭐⭐⭐ — Giá trị tốt và actionable ngay. Absorb vào Model Gateway
 hoặc Execute Route spec khi có roadmap provider stability tiếp theo.
 
-**Điều kiện để absorb:** Mở roadmap provider/execute route hardening mới,
-hoặc bổ sung vào CVF_MODEL_GATEWAY spec hiện có.
+**Điều kiện để absorb:** Complete — see
+`docs/roadmaps/CVF_ADD_PROVIDER_OUTPUT_CONTRACTS_RUNTIME_ADOPTION_ROADMAP_2026-05-17.md`.
 
 ---
 
@@ -411,10 +409,9 @@ Các lane đã được mark `runtime-owned` nhưng phần implementation thực
 
 ### GAP-MEM — Controlled Memory: thiếu 3 memory-specific sub-contracts
 
-**Trạng thái:** Lane `runtime-owned`. LPF có 67 files với memory gateway,
-learning reinjection, feedback ledger, governance signal contracts đã sẵn.
-Phần thực sự thiếu là 3 sub-contracts **memory-specific** (không phải 9 như
-inventory ban đầu claim).
+**Trạng thái:** `runtime-owned` — completed 2026-05-17. LPF already had
+memory gateway, learning reinjection, feedback ledger, and governance signal
+contracts. The 3 reduced sub-contract gaps are now implemented.
 
 **Amendment 2026-05-17:** Claude spot-check thấy LPF đã có
 `controlled.memory.gateway.contract.ts`, `learning.reinjection.contract.ts` +
@@ -427,6 +424,12 @@ private reference:
 | `memory_privacy_filter` | PII redaction tại memory write boundary (không phải generic governance signal redaction) | `.private_reference/legacy/CVF 16.5/agentmemory/` |
 | `memory_capture_adapter` | Typed input contract từ agent → governed memory record | Như trên |
 | `memory_retention_policy` | TTL + review-gate + expiry-by-classification | Như trên |
+
+Implemented owner files:
+
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled.memory.subcontracts.ts`
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled.memory.gateway.contract.ts`
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/controlled.memory.subcontracts.test.ts`
 
 **Các items khác từ AgentMemory** (event hooks, access policy, guard contract)
 **không thuộc gap này** vì overlap với LPF's existing `governance.signal.*`
@@ -503,9 +506,9 @@ sung.
 
 | Thứ tự | ID | Giá trị |
 |---|---|---|
-| 1 | OBS-1 Observability Plane ⭐⭐⭐⭐⭐ | Live dashboard read-only; spec đầy đủ; phải mở sau khi ADD-A/D close |
-| 2 | ADD-PROVIDER Output Contracts ⭐⭐⭐ | Chuẩn hóa JSON envelope, exit codes, streaming |
-| 3 | GAP-MEM 3 memory sub-contracts ⭐⭐⭐ | privacy filter + capture adapter + retention policy (scope thu hẹp từ 9 → 3) |
+| 1 | OBS-1 Observability Plane ⭐⭐⭐⭐⭐ | Complete 2026-05-17; read-only runtime dashboard + bilingual web route `/runtime` |
+| 2 | ADD-PROVIDER Output Contracts ⭐⭐⭐ | Complete 2026-05-17; JSON envelope, NDJSON, stdout policy, exit codes |
+| 3 | GAP-MEM 3 memory sub-contracts ⭐⭐⭐ | Complete 2026-05-17; privacy filter + capture adapter + retention policy |
 
 ---
 
@@ -566,16 +569,18 @@ Có hai loại gap thực sự:
    "Promote A + D as first and only public promotion candidate" nhưng không
    agent nào thực hiện bước đó hay thông báo cho người vận hành.
 
-Sau promotion 2026-05-17: **3 doc-only doctrine items promoted**, **9
-remaining candidates** (3 nhóm 2, 6 nhóm 3), và **6 items excluded hoàn toàn**.
+Sau absorption 2026-05-17: **3 doc-only doctrine items promoted**, **3 nhóm 2
+runtime items implemented**, **6 nhóm 3/deferred candidates** còn lại, và
+**6 items excluded hoàn toàn**.
 
 ## Risk
 
 **R0 cho Nhóm 1 (ADD-A + ADD-D + ADD-BRIEF):** Promotion completed doc-only;
 no runtime risk.
 
-**R1 cho Nhóm 2 (OBS-1, GAP-MEM, ADD-PROVIDER):** Cần GC-018 và implementation
-scope rõ ràng. Risk chính là scope creep nếu không bound cẩn thận.
+**R1 cho Nhóm 2 (OBS-1, GAP-MEM, ADD-PROVIDER):** Complete 2026-05-17 with
+fresh GC-018 packets and focused implementation evidence.
+Risk chính là scope creep nếu future work mở rộng khỏi claim boundary đã ghi.
 
 **R0 cho Nhóm 3 (deferred):** Không cần làm gì ngay — chỉ ghi nhận để không
 mất context khi trigger đến.
@@ -585,15 +590,9 @@ Không có corrective action bắt buộc. Tất cả items đều có precedent
 
 ## Decision
 
-Pending operator decision for remaining implementation roadmaps. Nhóm 1
-doc-only promotion is complete. Ba câu hỏi còn lại:
-
-1. Có muốn mở GC-018 cho Observability Plane Foundation không?
-   (Spec đầy đủ trong private reference, R0)
-
-2. Có muốn mở ADD-PROVIDER Output Contracts sau OBS-1 không?
-
-3. Có muốn mở GAP-MEM 3 memory sub-contracts sau OBS-1 không?
+Nhóm 1 và Nhóm 2 consensus queue đã complete locally on 2026-05-17.
+Remaining decisions apply only to Nhóm 3/deferred items and require fresh
+trigger-specific roadmaps if reopened.
 
 ## Enforcement
 

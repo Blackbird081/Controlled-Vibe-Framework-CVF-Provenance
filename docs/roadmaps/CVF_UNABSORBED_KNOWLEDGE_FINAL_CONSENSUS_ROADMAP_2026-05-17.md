@@ -62,9 +62,9 @@ This consensus roadmap does **not**:
 | 1 | Apply inventory accuracy fixes (RC-1, RC-2) | complete this commit |
 | 2 | Apply reporting rule narrowing + enforcement (RC-3) | complete this commit |
 | 3 | Open doctrine promotion packet for ADD-A + ADD-D + ADD-BRIEF | complete 2026-05-17 |
-| 4 | Open GC-018 for OBS-1 Observability Plane Foundation | next eligible step |
-| 5 | Open GC-018 for ADD-PROVIDER Output Contracts | pending — after OBS-1 sequencing decision |
-| 6 | Open GC-018 for GAP-MEM 3 memory sub-contracts | pending — after OBS-1 sequencing decision |
+| 4 | Open GC-018 for OBS-1 Observability Plane Foundation | complete 2026-05-17 |
+| 5 | Open GC-018 for ADD-PROVIDER Output Contracts | complete 2026-05-17 |
+| 6 | Open GC-018 for GAP-MEM 3 memory sub-contracts | complete 2026-05-17 |
 | 7+ | Defer remaining items until trigger conditions occur | pending — per item triggers |
 
 ## Acceptance Criteria
@@ -111,12 +111,12 @@ After Claude–Codex consensus:
 
 | Item | Final classification | Sao | Notes |
 |---|---|---|---|
-| OBS-1 Observability Plane Foundation | Nhóm 2 priority 1 | ⭐⭐⭐⭐⭐ | Upgraded from ⭐⭐⭐⭐ per Claude RC-4 |
+| OBS-1 Observability Plane Foundation | runtime-owned | ⭐⭐⭐⭐⭐ | completed 2026-05-17 |
 | ADD-A Governed Capability Intake | promoted doctrine | ⭐⭐⭐⭐⭐ | completed 2026-05-17 |
 | ADD-D Boundary-First Governance | promoted doctrine | ⭐⭐⭐⭐⭐ | completed 2026-05-17 |
 | ADD-BRIEF Brief Normalization | promoted doctrine | ⭐⭐⭐⭐ | completed 2026-05-17 |
-| ADD-PROVIDER Output Contracts | Nhóm 2 priority 2 | ⭐⭐⭐ | After OBS-1 |
-| GAP-MEM (3 items) | Nhóm 2 priority 3 | ⭐⭐⭐ | Scope reduced 9 → 3 |
+| ADD-PROVIDER Output Contracts | runtime-owned | ⭐⭐⭐ | completed 2026-05-17 |
+| GAP-MEM (3 items) | runtime-owned | ⭐⭐⭐ | completed 2026-05-17 |
 | GAP-AGENT-HANDOFF | Nhóm 3 deferred | ⭐⭐ | Scope reduced from full agent governance |
 | ADD-W7-SIGNALS | Nhóm 3 deferred | ⭐⭐⭐ | After ADD-D promotion |
 | ADD-B Context Profile | Nhóm 3 deferred | ⭐⭐⭐ | Unchanged |
@@ -152,9 +152,9 @@ No new tooling, no new file, no new hook.
 | 1 | Doc edit | Inventory accuracy fix (RC-1, RC-2) | Already applied 2026-05-17 |
 | 2 | Doc edit | Reporting rule narrowing (RC-3) | Already applied 2026-05-17 |
 | 3 | Doctrine promotion | ADD-A + ADD-D + ADD-BRIEF consolidated | Complete: `docs/reviews/CVF_ADD_A_D_BRIEF_DOCTRINE_PROMOTION_2026-05-17.md` |
-| 4 | Implementation | OBS-1 Observability Plane Foundation | Fresh GC-018 packet required |
-| 5 | Implementation | ADD-PROVIDER Output Contracts | Fresh GC-018 packet required |
-| 6 | Implementation | GAP-MEM 3 memory sub-contracts | Fresh GC-018 packet required |
+| 4 | Implementation | OBS-1 Observability Plane Foundation | Complete: `docs/roadmaps/CVF_OBSERVABILITY_PLANE_FOUNDATION_RUNTIME_ADOPTION_ROADMAP_2026-05-17.md` |
+| 5 | Implementation | ADD-PROVIDER Output Contracts | Complete: `docs/roadmaps/CVF_ADD_PROVIDER_OUTPUT_CONTRACTS_RUNTIME_ADOPTION_ROADMAP_2026-05-17.md` |
+| 6 | Implementation | GAP-MEM 3 memory sub-contracts | Complete: `docs/roadmaps/CVF_GAP_MEM_SUBCONTRACTS_RUNTIME_ADOPTION_ROADMAP_2026-05-17.md` |
 | 7+ | Deferred | All Nhóm 3 items | Each requires its own GC-018 when trigger occurs |
 
 **Step ordering rules (consensus):**

@@ -451,3 +451,54 @@ Claim boundary:
 - doctrine-only R0 promotion;
 - no runtime code, W7 schema change, public claim change, release-gate change,
   or live provider proof claim.
+
+## 2026-05-17 - Unabsorbed Knowledge Runtime Queue Completion
+
+Status: Nhóm 2 implementation queue completed locally after Claude-Codex
+consensus.
+
+Authorization packets:
+
+- `docs/baselines/CVF_GC018_OBSERVABILITY_PLANE_FOUNDATION_AUTHORIZATION_2026-05-17.md`
+- `docs/baselines/CVF_GC018_ADD_PROVIDER_OUTPUT_CONTRACTS_AUTHORIZATION_2026-05-17.md`
+- `docs/baselines/CVF_GC018_GAP_MEM_SUBCONTRACTS_AUTHORIZATION_2026-05-17.md`
+
+Roadmaps:
+
+- `docs/roadmaps/CVF_OBSERVABILITY_PLANE_FOUNDATION_RUNTIME_ADOPTION_ROADMAP_2026-05-17.md`
+- `docs/roadmaps/CVF_ADD_PROVIDER_OUTPUT_CONTRACTS_RUNTIME_ADOPTION_ROADMAP_2026-05-17.md`
+- `docs/roadmaps/CVF_GAP_MEM_SUBCONTRACTS_RUNTIME_ADOPTION_ROADMAP_2026-05-17.md`
+
+Delivered:
+
+- OBS-1 now has a read-only dashboard snapshot contract in
+  `EXTENSIONS/CVF_v1.8.1_ADAPTIVE_OBSERVABILITY_RUNTIME/observability/runtime.dashboard.snapshot.ts`;
+- cvf-web now exposes `/api/runtime/observability` and bilingual `/runtime`
+  for non-coder runtime visibility;
+- Model Gateway now owns provider output envelope, NDJSON stream, stdout
+  policy, and exit-code classification in
+  `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-output-contract.ts`;
+- Learning Plane now owns the 3 reduced GAP-MEM subcontracts in
+  `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled.memory.subcontracts.ts`,
+  integrated into the controlled memory gateway capture path.
+
+Focused verification completed:
+
+- Adaptive Observability Runtime `npm run check` PASS, 51 tests;
+- cvf-web focused runtime observability tests PASS, 7 tests;
+- cvf-web TypeScript no-emit PASS;
+- Model Gateway `npm run check` PASS and provider output test PASS, 5 tests;
+- Learning Plane `npm run check` PASS and memory gateway/subcontract tests
+  PASS, 10 tests.
+
+Claim boundary:
+
+- Observability is read-only visibility, not a control plane.
+- Provider output contracts parse/classify output; they do not change routing.
+- Memory subcontracts strengthen capture; they do not create hidden memory,
+  automatic semantic promotion, or reinjection bypass.
+
+Remaining queue:
+
+- Nhóm 3/deferred items only. ADD-W7-SIGNALS is eligible for a future schema
+  roadmap because ADD-D is promoted, but it was not implemented in this queue.
