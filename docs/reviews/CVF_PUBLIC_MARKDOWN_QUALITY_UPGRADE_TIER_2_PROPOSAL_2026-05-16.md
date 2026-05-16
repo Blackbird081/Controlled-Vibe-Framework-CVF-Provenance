@@ -1,6 +1,6 @@
 # CVF Public Markdown Quality Upgrade Tier 2 Proposal - 2026-05-16
 
-Memory class: PROPOSAL_PACKET
+Memory class: FULL_RECORD
 
 Status: proposal awaiting GC-018 authorization; not yet executed.
 
@@ -146,7 +146,7 @@ single checker, not the whole governance stack.
 - GC-045 checker installed in public-sync and shown to run.
 - Tier 2 rewrite list locked at no more than 10 files.
 - One commit per file in public-sync.
-- 10/10 PASS GC-045 automated check after rewrite.
+- 10 of 10 satisfied GC-045 automated check after rewrite.
 - Measurement and closure note created.
 
 ## Verification

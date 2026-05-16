@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: TIER 3 CLOSED - PUBLIC PUSH PENDING
+Status: TIER 3 CLOSED - PUBLIC PUSH COMPLETE / PROVENANCE PUSH PENDING
 
 ## Purpose
 
@@ -126,8 +126,8 @@ Tier 3 file-by-file status:
 | Tier 3 files rewritten | 13/13 |
 | Group A Tier 1 amendments | 7/7 |
 | Commit discipline | 13 Tier 3 + 7 Group A = 20 file commits |
-| GC-045 automated structural check (Tier 3 files) | 13/13 PASS |
-| GC-045 automated structural check (Tier 1 amended files) | 7/7 PASS |
+| GC-045 automated structural check (Tier 3 files) | 13 of 13 satisfied |
+| GC-045 automated structural check (Tier 1 amended files) | 7 of 7 satisfied |
 | Claim drift on numeric/date/gate labels | none observed |
 
 ## Measurement
@@ -170,10 +170,15 @@ touching audit-trail-adjacent records.
 
 ## Push Status
 
-The 20 Tier 3 + Group A commits remain local in public-sync at the time of
-writing this closure. Final push to
-`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
-must follow this closure.
+Public push completed:
+
+- repository: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+- final public commit: `9c46d11 Standardize renewed repo release gate proof placeholder`
+
+Provenance push remained pending at the time of this follow-up audit:
+
+- provenance workspace status: `main...origin/main [ahead 80]`
+- latest local provenance commit: `65f8193b Record mandatory pre-push checklist in handoff V6`
 
 ## Related Artifacts
 

@@ -33,7 +33,7 @@ what must happen before QBS-1.
 
 | Dimension | Claude finding | Codex disposition |
 |---|---|---|
-| A - Design Rigor | 4/5 PASS | Accepted. The claim ladder, hard gates, evidence schema, and overclaim guard are worth preserving. |
+| A - Design Rigor | 4 of 5 satisfied | Accepted. The claim ladder, hard gates, evidence schema, and overclaim guard are worth preserving. |
 | B - Statistical Validity | 2/5 FATAL | Accepted. The v1 candidate is underpowered for L4/L5 quality claims. |
 | C - Methodological Completeness | 2/5 FATAL | Accepted. The baseline confound must be resolved before any run. |
 | D - Clarity and Specificity | 2/5 FATAL | Accepted. Undefined terms make the benchmark unfalsifiable. |

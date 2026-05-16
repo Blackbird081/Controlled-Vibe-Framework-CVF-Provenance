@@ -115,7 +115,7 @@ Tier 2 file-by-file GC-045 status:
 | --- | --- |
 | Tier 2 files rewritten | 10/10 |
 | Commit discipline | 10 file commits + 1 checker install commit |
-| GC-045 automated structural check | 10/10 PASS |
+| GC-045 automated structural check | 10 of 10 satisfied |
 | Claim drift on numeric/date/gate labels | none observed |
 | Public-surface scanner | not re-run by Codex in this tranche; legacy invocation `python scripts/check_public_surface.py` remains the public-surface check |
 

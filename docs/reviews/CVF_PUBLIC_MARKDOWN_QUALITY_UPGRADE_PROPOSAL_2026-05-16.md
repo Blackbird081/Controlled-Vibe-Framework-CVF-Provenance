@@ -1,6 +1,6 @@
 # CVF Public Markdown Quality Upgrade Proposal - 2026-05-16
 
-Memory class: PROPOSAL_PACKET
+Memory class: FULL_RECORD
 
 Status: proposal awaiting GC-018 authorization; not yet executed.
 

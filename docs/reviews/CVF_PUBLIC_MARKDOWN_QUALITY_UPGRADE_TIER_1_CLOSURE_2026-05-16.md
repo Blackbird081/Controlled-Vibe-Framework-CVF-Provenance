@@ -93,8 +93,8 @@ python scripts/check_public_surface.py
 
 Additional Tier 1 checks:
 
-- GC-045 rubric: `15/15 PASS`
-- GC-023 line-size status: `15/15 PASS`
+- GC-045 rubric: `15 of 15 satisfied`
+- GC-023 line-size status: `15 of 15 satisfied`
 - representative word-count measurement: down or flat for all three samples
 - before/after GitHub Files-view screenshots captured with Playwright
 

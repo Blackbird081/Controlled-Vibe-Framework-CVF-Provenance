@@ -1,6 +1,6 @@
 # CVF Public Markdown Quality Upgrade Tier 1 Amendment - 2026-05-16
 
-Memory class: AMENDMENT_RECORD
+Memory class: FULL_RECORD
 
 Status: TIER 1 AMENDMENT CLOSED - PUBLIC PUSH PENDING
 
@@ -27,7 +27,7 @@ Tier 1 closure record:
 
 Original Tier 1 closure stated:
 
-> Tier 1 GC-045 compliance: 15/15 PASS (rubric)
+> Tier 1 GC-045 compliance: 15 of 15 satisfied (rubric)
 > Verification used the GC-045 rubric from the provenance checker.
 
 That claim was true under a **manual common-elements rubric** (title, Memory
@@ -96,11 +96,11 @@ Every amended file passes `check_markdown_structural_completeness.py --no-bootst
 ## Decision
 
 Tier 1 closure is preserved as-is for audit chain continuity. This amendment
-file supersedes the Tier 1 "15/15 PASS rubric" line for any future reader.
+file supersedes the Tier 1 "15 of 15 satisfied rubric" line for any future reader.
 The current public state is:
 
-- Tier 1 files: 15/15 PASS full GC-045 automated template (after amendment).
-- Tier 2 files: 10/10 PASS full GC-045 automated template.
+- Tier 1 files: 15 of 15 satisfied full GC-045 automated template (after amendment).
+- Tier 2 files: 10 of 10 satisfied full GC-045 automated template.
 - No claim drift on numeric values, dates, or gate labels in any amendment file.
 
 ## Verification
@@ -143,7 +143,7 @@ manual common-elements rubric, when the automated checker is available.
 
 This amendment claims only that seven Tier 1 files have been re-amended to
 satisfy the full automated GC-045 template, and that the original Tier 1
-closure "15/15 PASS rubric" line is now superseded by automated 15/15 PASS.
+closure "15 of 15 satisfied rubric" line is now superseded by automated 15 of 15 satisfied.
 It does not claim every public Markdown file is GC-045 compliant, does not
 claim Tier 1 read-time improvement was externally verified, does not
 authorize Tier 3, and does not claim runtime governance or output-quality

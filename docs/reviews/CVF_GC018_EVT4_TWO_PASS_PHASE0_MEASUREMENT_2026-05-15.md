@@ -1,5 +1,7 @@
 # CVF GC-018 — EVT-4 Two-Pass Quality Expansion Phase 0
 
+Memory class: FULL_RECORD
+
 **Date:** 2026-05-15  
 **Status:** EXECUTED - RUNTIME IMPLEMENTATION NOT AUTHORIZED BY EVIDENCE  
 **Scope:** Measure F-1a two-pass quality expansion before any runtime
@@ -105,3 +107,12 @@ next F-1 closure attempt should not assume that more output length is enough;
 it needs a sharper task-specific evaluator or rubric that targets the exact
 dimensions reviewers still mark down: immediate actionability, specificity,
 and task-fit.
+
+## Test Tier Classification
+
+This measurement file describes EVT-4 quality-expansion receipt counts, not a
+test suite, and therefore does not declare per-tier test depth. For the
+foundational guard surfaces compatibility check, the canonical tiers are
+T1 (unit), T2 (component/integration), T3 (E2E/governed), T4 (live/regression),
+and Meaningful is the union threshold. No T1/T2/T3/T4/Meaningful count is
+asserted by this file.
