@@ -112,6 +112,39 @@ export type {
 } from "./agent.governed.session.contract";
 
 export {
+  KnowledgeVaultIntakeContract,
+  createKnowledgeVaultIntakeContract,
+} from "./knowledge.vault.intake.contract";
+export type {
+  VaultAssetType,
+  VaultAssetStatus,
+  VaultSensitivity,
+  VaultRiskLevel,
+  VaultGovernanceLevel,
+  VaultPolicyResult,
+  VaultReceiptType,
+  VaultEdgeRelation,
+  VaultDriftType,
+  VaultMutationType,
+  KnowledgeVaultAssetInput,
+  NormalizedKnowledgeVaultMetadata,
+  KnowledgeVaultRegistryEntry,
+  KnowledgeVaultReceipt,
+  KnowledgeVaultIntakeResult,
+  KnowledgeGraphNode,
+  KnowledgeGraphEdge,
+  KnowledgeGraphView,
+  ContextSnapshotRequest,
+  ContextSnapshotAsset,
+  KnowledgeVaultContextSnapshot,
+  KnowledgeDriftSignal,
+  ReinjectionProposal,
+  KnowledgeToolCall,
+  KnowledgeToolDecision,
+  KnowledgeVaultIntakeContractDependencies,
+} from "./knowledge.vault.intake.types";
+
+export {
   AgentDefinitionCapabilityBatchContract,
   createAgentDefinitionCapabilityBatchContract,
 } from "./agent.definition.capability.batch.contract";
