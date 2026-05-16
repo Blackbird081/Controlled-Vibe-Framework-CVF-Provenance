@@ -142,7 +142,7 @@ SECTION_GROUPS: dict[str, tuple[tuple[str, tuple[str, ...]], ...]] = {
         ("scope", (r"^##\s+Scope\b",)),
         ("non-goals", (r"^##\s+Non-Goals",)),
         ("work plan", (r"^##\s+Work Plan",)),
-        ("acceptance criteria", (r"^##\s+Acceptance Criteria")),
+        ("acceptance criteria", (r"^##\s+Acceptance Criteria",)),
         ("verification/evidence", (r"^##\s+Verification", r"^##\s+Evidence")),
     ),
     "review": (
