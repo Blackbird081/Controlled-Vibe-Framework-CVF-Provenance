@@ -92,3 +92,36 @@ Claude rebuttal amendment:
   - observability is positioned as a delta on
     `EXTENSIONS/CVF_v1.8.1_ADAPTIVE_OBSERVABILITY_RUNTIME/README.md`;
   - public review status is docs-only absorbed and amended, not merely pending.
+
+## 2026-05-16 - Model Gateway Runtime Roadmap-Ready Packet
+
+Operator clarified that reviewing one file at a time is too passive. The correct
+next state is a full roadmap-ready packet that can be reviewed once, then moved
+straight into implementation after approval.
+
+Created packet:
+
+- `docs/baselines/CVF_GC018_MODEL_GATEWAY_RUNTIME_AUTHORIZATION_2026-05-16.md`
+- `docs/baselines/CVF_ADR_MODEL_GATEWAY_RUNTIME_OWNERSHIP_2026-05-16.md`
+- `docs/baselines/CVF_MODEL_GATEWAY_RUNTIME_SOURCE_ADOPTION_MATRIX_2026-05-16.md`
+- `docs/baselines/CVF_MODEL_GATEWAY_RUNTIME_TEST_AND_PROOF_PLAN_2026-05-16.md`
+- `docs/roadmaps/CVF_MODEL_GATEWAY_RUNTIME_ADOPTION_ROADMAP_2026-05-16.md`
+
+Recommended roadmap decision:
+
+- `implementation-owner upgrade` for `EXTENSIONS/CVF_MODEL_GATEWAY/`.
+
+Implementation remains blocked until operator approval of the roadmap-ready
+packet. Suggested approval phrase:
+
+`APPROVE MODEL GATEWAY RUNTIME ROADMAP PACKET 2026-05-16`
+
+Implementation locks if approved:
+
+- adopt/adapt 8 `freellmapi` `.ts` files through CVF Guard Contract
+  integration;
+- no wholesale copy;
+- vitest coverage for each adopted file;
+- live proof only when claiming governance enforcement;
+- GC-023 split-before-exception;
+- descriptive end-of-tranche commit message.
