@@ -315,3 +315,41 @@ Claim boundary:
 - no governed artifact-generation proof, live provider proof, PDF/PNG/PPTX
   export, production publishing, autonomous knowledge absorption, or SpecExport
   replacement is claimed.
+
+## 2026-05-16 - Web Integration Completion Closure
+
+Status: completed locally after operator authorized finishing the overall
+WEB_INTEGRATION roadmap rather than stopping at Tranche 1.
+
+Governance packet:
+
+- `docs/baselines/CVF_GC018_WEB_INTEGRATION_COMPLETION_AUTHORIZATION_2026-05-16.md`
+- `docs/reviews/CVF_WEB_INTEGRATION_COMPLETION_CLOSURE_2026-05-16.md`
+
+Additional delivered behavior after Tranche 1:
+
+- `ArtifactExportPanel` restored bilingual behavior through `useLanguage`;
+- `/artifacts` is bilingual and still bounded to HTML presentation candidate;
+- `/knowledge/intake` now provides a local review-packet intake form for
+  non-coders instead of a placeholder;
+- `/agent-handoff` now provides an interactive local handoff validator surface;
+- Sidebar exposes Artifact Export, Knowledge Intake, and Agent Handoff routes;
+- public README cleanup prepared in the public-sync clone: internal metadata
+  removed, Quick Navigation moved up, `Core Value` heading added, and
+  `https://vibcode.netlify.app/home` added as the live web platform link.
+
+Verification completed:
+
+- focused Artifact Export Vitest PASS, 2 files / 7 tests;
+- mock Playwright Artifact Export E2E PASS, 2 tests covering EN and VI;
+- cvf-web TypeScript no-emit PASS;
+- live release-gate bundle PASS, 7/7, with provider readiness and live
+  governance E2E PASS using operator-supplied keys from `.env.local`.
+
+Claim boundary:
+
+- Web Integration is complete for HTML review packets, non-coder knowledge
+  intake, local agent handoff review, bilingual presentation, and live proof of
+  the existing governed execution path;
+- no PDF/PNG/PPTX export, social export, production artifact publishing, or
+  standalone governed artifact-generation proof is claimed.
