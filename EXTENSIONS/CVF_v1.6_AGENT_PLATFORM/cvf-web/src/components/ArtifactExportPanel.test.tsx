@@ -64,7 +64,8 @@ describe('ArtifactExportPanel', () => {
       expect(onGenerated).toHaveBeenCalledWith(EXPORT_RESULT);
     });
 
-    const requestBody = JSON.parse(String((fetch as unknown as { mock: { calls: unknown[][] } }).mock.calls[0][1].body));
+    const fetchCalls = (fetch as unknown as { mock: { calls: Array<[string, RequestInit]> } }).mock.calls;
+    const requestBody = JSON.parse(String(fetchCalls[0][1].body));
     expect(requestBody.title).toBe('Review Packet');
     expect(requestBody.claimBoundary).toMatch(/HTML presentation candidate/i);
     expect(screen.getByText('#receipt-review-packet')).toBeTruthy();
