@@ -5,6 +5,21 @@ Memory class: ACTIVE_HANDOFF
 Status: active continuation handoff after V5 reached the governed markdown
 advisory ceiling.
 
+## Purpose
+
+Maintain the active continuation context for work after V5 reached the governed
+Markdown advisory ceiling.
+
+## Scope
+
+This handoff covers continuation state for the provenance workspace and records
+only new status after V5. Historical V1-V5 handoffs remain reference material.
+
+## Claim Boundary
+
+This handoff is continuity guidance. It does not itself authorize runtime,
+public, or live-governance claims.
+
 ## Active Boundary
 
 `AGENT_HANDOFF_V5_2026-05-15.md` is now historical. It closes with the QH
@@ -144,8 +159,52 @@ Key rule:
 
 Current lane states:
 
-- Model Gateway Runtime: `roadmap-ready`.
+- Model Gateway Runtime: `runtime-owned`.
+- Controlled Memory: `runtime-owned`.
 - All other CVF 16.5 lanes: `docs-classified`.
+
+## 2026-05-16 - Controlled Memory Runtime Adoption Closed
+
+Operator authorized autonomous continuation of the knowledge absorption roadmap
+with the requirement that absorbed knowledge must become alive inside CVF.
+
+Selected lane:
+
+- Controlled Memory from `.private_reference/legacy/CVF 16.5/agentmemory/`
+
+Reason:
+
+- high-fit lane directly tied to governed knowledge continuity;
+- enables memory capture/retrieval/reinjection only through policy, privacy,
+  lifecycle, token budget, provenance, and receipt boundaries.
+
+Created packet:
+
+- `docs/baselines/CVF_GC018_CONTROLLED_MEMORY_RUNTIME_AUTHORIZATION_2026-05-16.md`
+- `docs/baselines/CVF_ADR_CONTROLLED_MEMORY_RUNTIME_OWNERSHIP_2026-05-16.md`
+- `docs/baselines/CVF_CONTROLLED_MEMORY_SOURCE_ADOPTION_MATRIX_2026-05-16.md`
+- `docs/baselines/CVF_CONTROLLED_MEMORY_TEST_AND_PROOF_PLAN_2026-05-16.md`
+- `docs/roadmaps/CVF_CONTROLLED_MEMORY_RUNTIME_ADOPTION_ROADMAP_2026-05-16.md`
+- `docs/reviews/CVF_CONTROLLED_MEMORY_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
+
+Runtime owner:
+
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled.memory.gateway.contract.ts`
+
+Tests:
+
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/controlled.memory.gateway.contract.test.ts`
+
+Verification:
+
+- `npm run check` in `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION`: PASS
+- focused vitest: PASS, 1 file / 6 tests
+
+Claim boundary:
+
+- Controlled Memory is `runtime-owned`.
+- No claim is made for production persistence, direct use of `agentmemory`, or
+  live provider governance enforcement.
 
 ## 2026-05-16 - Public Markdown Quality Tier 1 Closed
 
