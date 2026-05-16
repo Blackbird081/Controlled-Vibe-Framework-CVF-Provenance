@@ -113,12 +113,16 @@ function hasRequiredSection(sourceContent: string, label: string): boolean {
   return expression.test(sourceContent);
 }
 
+function hasSecretPattern(sourceContent: string): boolean {
+  return SECRET_PATTERNS.some(pattern => pattern.test(sourceContent));
+}
+
 function buildVerification(input: Required<ArtifactExportRequest>, html: string): ArtifactVerificationItem[] {
   const sourceContent = String(input.sourceContent);
   const claimBoundary = String(input.claimBoundary);
   const receiptAnchor = String(input.receiptAnchor);
   const receiptAnchorId = slugify(receiptAnchor);
-  const hasSecret = SECRET_PATTERNS.some(pattern => pattern.test(sourceContent));
+  const hasSecret = hasSecretPattern(sourceContent);
 
   return [
     {
@@ -233,6 +237,13 @@ export async function POST(request: NextRequest) {
   if (!title || !sourcePath || !sourceContent || !status || !claimBoundary || !receiptAnchor) {
     return NextResponse.json(
       { success: false, error: 'Missing required artifact export fields.' },
+      { status: 400 },
+    );
+  }
+
+  if (hasSecretPattern(sourceContent)) {
+    return NextResponse.json(
+      { success: false, error: 'Potential secret-like value detected in source content.' },
       { status: 400 },
     );
   }
