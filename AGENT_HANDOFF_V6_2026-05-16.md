@@ -125,3 +125,24 @@ Implementation locks if approved:
 - live proof only when claiming governance enforcement;
 - GC-023 split-before-exception;
 - descriptive end-of-tranche commit message.
+
+## 2026-05-16 - CVF 16.5 Living Integration Classification
+
+Operator clarified the desired standard: when CVF starts absorbing a knowledge
+lane, it should proceed until the knowledge is actually alive inside CVF, or be
+explicitly deferred/rejected. Avoid half-built absorption that gets forgotten.
+
+Created:
+
+- `docs/baselines/CVF_16_5_LIVING_INTEGRATION_CLASSIFICATION_SUMMARY_2026-05-16.md`
+
+Key rule:
+
+- selected runtime tranches must end as `runtime-owned`, `evidence-backed`,
+  `closed-deferred with reason`, or `closed-rejected with reason`;
+- do not leave a selected source at "started but not alive."
+
+Current lane states:
+
+- Model Gateway Runtime: `roadmap-ready`.
+- All other CVF 16.5 lanes: `docs-classified`.
