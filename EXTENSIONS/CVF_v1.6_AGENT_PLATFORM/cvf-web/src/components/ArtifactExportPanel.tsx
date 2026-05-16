@@ -270,6 +270,7 @@ export function ArtifactExportPanel({
             <div className="sm:col-span-2">
               <FieldLabel>{labels.titleLabel}</FieldLabel>
               <input
+                aria-label={labels.titleLabel}
                 value={request.title}
                 onChange={event => updateRequest('title', event.target.value)}
                 className="mt-1 w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm outline-none transition focus:border-indigo-500 dark:border-gray-700 dark:bg-gray-950 dark:text-white"
@@ -278,6 +279,7 @@ export function ArtifactExportPanel({
             <div className="sm:col-span-2">
               <FieldLabel>{labels.pathLabel}</FieldLabel>
               <input
+                aria-label={labels.pathLabel}
                 value={request.sourcePath}
                 onChange={event => updateRequest('sourcePath', event.target.value)}
                 className="mt-1 w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 font-mono text-xs outline-none transition focus:border-indigo-500 dark:border-gray-700 dark:bg-gray-950 dark:text-white"
@@ -286,6 +288,7 @@ export function ArtifactExportPanel({
             <div>
               <FieldLabel>{labels.memoryLabel}</FieldLabel>
               <select
+                aria-label={labels.memoryLabel}
                 value={request.memoryClass}
                 onChange={event => updateRequest('memoryClass', event.target.value)}
                 className="mt-1 w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm outline-none transition focus:border-indigo-500 dark:border-gray-700 dark:bg-gray-950 dark:text-white"
@@ -297,6 +300,7 @@ export function ArtifactExportPanel({
             <div>
               <FieldLabel>{labels.statusLabel}</FieldLabel>
               <input
+                aria-label={labels.statusLabel}
                 value={request.status}
                 onChange={event => updateRequest('status', event.target.value)}
                 className="mt-1 w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm outline-none transition focus:border-indigo-500 dark:border-gray-700 dark:bg-gray-950 dark:text-white"
@@ -305,6 +309,7 @@ export function ArtifactExportPanel({
             <div className="sm:col-span-2">
               <FieldLabel>{labels.receiptLabel}</FieldLabel>
               <input
+                aria-label={labels.receiptLabel}
                 value={request.receiptAnchor}
                 onChange={event => updateRequest('receiptAnchor', event.target.value)}
                 className="mt-1 w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 font-mono text-xs outline-none transition focus:border-indigo-500 dark:border-gray-700 dark:bg-gray-950 dark:text-white"
@@ -313,6 +318,7 @@ export function ArtifactExportPanel({
             <div className="sm:col-span-2">
               <FieldLabel>{labels.boundaryLabel}</FieldLabel>
               <textarea
+                aria-label={labels.boundaryLabel}
                 value={request.claimBoundary}
                 onChange={event => updateRequest('claimBoundary', event.target.value)}
                 rows={3}
@@ -325,6 +331,7 @@ export function ArtifactExportPanel({
                 <span className="text-[11px] text-gray-500 dark:text-gray-500">{labels.sourceHint}</span>
               </div>
               <textarea
+                aria-label={labels.contentLabel}
                 value={request.sourceContent}
                 onChange={event => updateRequest('sourceContent', event.target.value)}
                 rows={12}
