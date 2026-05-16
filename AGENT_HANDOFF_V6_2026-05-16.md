@@ -274,3 +274,62 @@ If the push has already been attempted and the remote rejected it, do **not**
 treat the rejection as the discovery mechanism. Run the local checklist,
 fix every failing check, recommit, then retry push. Do not push partial
 fixes or skip hooks (`--no-verify` is forbidden by repo conventions).
+
+## 2026-05-16 - Provenance Push State At Session End
+
+The Provenance remote push initiated this session was deferred mid-debug
+after the pre-push hook chain surfaced multi-layer drift. Public push
+completed normally — public HEAD is `9c46d11` on
+`github.com/Blackbird081/Controlled-Vibe-Framework-CVF`.
+
+Provenance state when this session ended:
+
+- governance workspace branch: `main`, ahead of `origin/main` by 83 commits
+- push URL: restored to `DISABLED_PROVENANCE_ARCHIVE_DO_NOT_PUSH_FROM_THIS_WORKSPACE`
+- pre-push hook chain status: not yet green; fixed checks so far include
+  review retention registry (55 entries added in `22c3e23e`), foundational
+  guard surfaces (workspace isolation exemption + ADR-GC045 + GC-019
+  review), memory governance compatibility (5 review files moved to
+  `Memory class: FULL_RECORD`), and test-depth classification (N/N PASS
+  reworded to "N of N satisfied" in 7 review files plus tier classification
+  footer in the EVT-4 measurement file)
+- next failing check at session end: `pre-public p3 readiness compatibility`
+  — not investigated
+- additional unresolved checks may exist after that one — the chain has
+  ~30 checks and only a subset were exercised before pause
+
+What the next agent should do before retrying Provenance push:
+
+1. Read this section and the Mandatory Pre-Push Check Protocol section above.
+2. Run the full pre-push chain locally:
+
+   ```bash
+   python governance/compat/run_local_governance_hook_chain.py --hook pre-push \
+     > /tmp/cvf_prepush.log 2>&1
+   echo "EXIT=$?"
+   tail -100 /tmp/cvf_prepush.log
+   ```
+
+3. Resolve the failing check identified at the tail of the log, commit,
+   re-run the chain. Repeat until every check reports green.
+4. Only then set the push URL to the Provenance remote, push, and restore
+   the disabled sentinel.
+
+What the next agent should NOT do:
+
+- treat `--no-verify` as an option;
+- push partial fixes;
+- assume the only failing check is `pre-public p3 readiness compatibility`
+  — there may be additional drift from prior sessions that surfaces only
+  after that check passes.
+
+Local commits committed by this session that the Provenance push will
+eventually carry:
+
+- `22c3e23e` retention registry +55 entries
+- `65f8193b` handoff pre-push protocol
+- `ffd32d20` workspace isolation exemption
+- `f1d25703` ADR-GC045 + GC-019 review
+- `b3ab30f7` memory class + test-depth alignment
+
+These commits are durable local state; they do not require redoing.
