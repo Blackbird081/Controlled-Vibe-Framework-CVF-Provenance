@@ -85,7 +85,7 @@ Do not leave a selected source at "started but not alive."
 | Controlled Memory | `agentmemory`, OpenAgentd memory notes | High | `runtime-owned` | Learning Plane + Context Builder + Guard Contract | memory capture/retrieval/reinjection goes through privacy filter, lifecycle policy, access policy, context packager, and receipt |
 | Agent Boundary / Delegation | `Claude Kit`, `OpenAgentd` | High | `runtime-owned` | `EXTENSIONS/CVF_AGENT_DEFINITION/`, `EXTENSIONS/CVF_AGENT_LEDGER/`, Execution Plane, Governance Expansion | agents have registry records, permission profiles, structured handoff, risk policy, and audit receipt tests |
 | Tool Call Trace / Sandbox | `OpenAgentd` | High/Medium | `runtime-owned` | Execution Plane + Trust/Sandbox surfaces | tool calls emit lifecycle trace, policy check, redacted args/results, block/error/success receipts, and sandbox permission decisions |
-| MCP Business Adapter | `pancake-pos-mcp` | High for generic 7 files; Pancake profile deferred | `docs-classified` | Execution Plane adapter boundary | generic MCP business tools have contracts, risk classifier, approval gate, transport policy, execution receipt, and tests; Pancake profile remains optional |
+| MCP Business Adapter | `pancake-pos-mcp` | High for generic 7 files; Pancake profile deferred | `runtime-owned` | Execution Plane adapter boundary | generic MCP business tools have contracts, risk classifier, approval gate, transport policy, execution receipt, and tests; Pancake profile remains optional |
 | Observability Delta | `abtop` | High/Medium | `docs-classified` | `EXTENSIONS/CVF_v1.8.1_ADAPTIVE_OBSERVABILITY_RUNTIME/` | observe-only signals for session/token/context/rate/quota/process/port exist without kill/reroute/approval authority |
 | Document Artifact Renderer | `md2html` | Medium/High | `docs-classified` | docs/evidence presentation surface, future renderer extension only if approved | governed HTML artifacts preserve source meaning, evidence state, risk, approval, failed checks, and pass artifact verification |
 | OpenSpec Change Adapter | `OpenSpec` | Medium/High | `docs-classified` | Control Plane + docs governance | proposal/design/tasks/delta/archive material maps into CVF phase gates without direct apply or canonical overwrite |
@@ -139,13 +139,20 @@ Evidence:
 
 5. **MCP Business Adapter**
 
-Reason: generic business-tool governance pattern is high fit, but it should wait
-until Model Gateway and tool-call boundary are clearer.
+Status: completed as `runtime-owned` on 2026-05-16.
 
-Decision needed after Agent Boundary / Delegation: choose MCP Business Adapter
-or Observability Delta as the next bounded runtime-owned tranche.
+Owner:
+
+- `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mcp.business.adapter.contract.ts`
+
+Evidence:
+
+- `docs/reviews/CVF_MCP_BUSINESS_ADAPTER_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
 
 6. **Observability Delta**
+
+Decision needed after MCP Business Adapter: choose Observability Delta as the
+next bounded runtime-owned tranche.
 
 Reason: useful, but must be a delta on v1.8.1 rather than a new plane.
 
@@ -163,7 +170,7 @@ bounded owner surface with a clear product need.
 | Controlled Memory | Completed: `docs/baselines/CVF_GC018_CONTROLLED_MEMORY_RUNTIME_AUTHORIZATION_2026-05-16.md`, `docs/baselines/CVF_ADR_CONTROLLED_MEMORY_RUNTIME_OWNERSHIP_2026-05-16.md`, `docs/baselines/CVF_CONTROLLED_MEMORY_SOURCE_ADOPTION_MATRIX_2026-05-16.md`, `docs/baselines/CVF_CONTROLLED_MEMORY_TEST_AND_PROOF_PLAN_2026-05-16.md`, `docs/roadmaps/CVF_CONTROLLED_MEMORY_RUNTIME_ADOPTION_ROADMAP_2026-05-16.md` |
 | Agent Boundary / Delegation | Completed: `docs/baselines/CVF_GC018_AGENT_BOUNDARY_DELEGATION_AUTHORIZATION_2026-05-16.md`, `docs/baselines/CVF_ADR_AGENT_BOUNDARY_DELEGATION_RUNTIME_OWNERSHIP_2026-05-16.md`, `docs/baselines/CVF_AGENT_BOUNDARY_DELEGATION_SOURCE_ADOPTION_MATRIX_2026-05-16.md`, `docs/baselines/CVF_AGENT_BOUNDARY_DELEGATION_TEST_AND_PROOF_PLAN_2026-05-16.md`, `docs/roadmaps/CVF_AGENT_BOUNDARY_DELEGATION_RUNTIME_ADOPTION_ROADMAP_2026-05-16.md` |
 | Tool Call Trace / Sandbox | Completed: `docs/baselines/CVF_GC018_TOOL_CALL_TRACE_SANDBOX_AUTHORIZATION_2026-05-16.md`, `docs/baselines/CVF_ADR_TOOL_CALL_TRACE_SANDBOX_RUNTIME_OWNERSHIP_2026-05-16.md`, `docs/baselines/CVF_TOOL_CALL_TRACE_SANDBOX_SOURCE_ADOPTION_MATRIX_2026-05-16.md`, `docs/baselines/CVF_TOOL_CALL_TRACE_SANDBOX_TEST_AND_PROOF_PLAN_2026-05-16.md`, `docs/roadmaps/CVF_TOOL_CALL_TRACE_SANDBOX_RUNTIME_ADOPTION_ROADMAP_2026-05-16.md` |
-| MCP Business Adapter | GC-018, generic vs domain profile split, approval gate tests, transport boundary tests |
+| MCP Business Adapter | Completed: `docs/baselines/CVF_GC018_MCP_BUSINESS_ADAPTER_AUTHORIZATION_2026-05-16.md`, `docs/baselines/CVF_ADR_MCP_BUSINESS_ADAPTER_RUNTIME_OWNERSHIP_2026-05-16.md`, `docs/baselines/CVF_MCP_BUSINESS_ADAPTER_SOURCE_ADOPTION_MATRIX_2026-05-16.md`, `docs/baselines/CVF_MCP_BUSINESS_ADAPTER_TEST_AND_PROOF_PLAN_2026-05-16.md`, `docs/roadmaps/CVF_MCP_BUSINESS_ADAPTER_RUNTIME_ADOPTION_ROADMAP_2026-05-16.md` |
 | Observability Delta | GC-018, v1.8.1 delta ADR, observe-only event schema, no-intervention tests |
 | Document Artifact Renderer | GC-018, artifact verification checklist, fixture set, secret-scan/render tests |
 | OpenSpec Change Adapter | GC-018, phase mapping schema, delta grammar tests, archive overwrite block tests |
@@ -177,6 +184,7 @@ Current runtime-owned evidence:
 - `docs/reviews/CVF_CONTROLLED_MEMORY_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
 - `docs/reviews/CVF_TOOL_CALL_TRACE_SANDBOX_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
 - `docs/reviews/CVF_AGENT_BOUNDARY_DELEGATION_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
+- `docs/reviews/CVF_MCP_BUSINESS_ADAPTER_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
 
 ## Verification
 
@@ -187,6 +195,6 @@ Verification is recorded in the lane-specific closure packets.
 This summary does not authorize implementation. It authorizes prioritization
 and prevents loss of absorption context.
 
-Model Gateway, Controlled Memory, Tool Call Trace / Sandbox, and Agent Boundary
-/ Delegation are now `runtime-owned`. All other lanes remain `docs-classified`
-until a new roadmap-ready packet is prepared.
+Model Gateway, Controlled Memory, Tool Call Trace / Sandbox, Agent Boundary /
+Delegation, and MCP Business Adapter are now `runtime-owned`. All other lanes
+remain `docs-classified` until a new roadmap-ready packet is prepared.

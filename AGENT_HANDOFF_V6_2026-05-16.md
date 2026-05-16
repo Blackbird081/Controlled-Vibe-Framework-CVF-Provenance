@@ -536,3 +536,71 @@ Recommended next absorption lane:
   execution;
 - Observability Delta if the next goal is signal visibility without runtime
   intervention authority.
+
+## 2026-05-16 - CVF 16.5 MCP Business Adapter Runtime Absorption
+
+Status: completed locally as `runtime-owned`; provenance push pending this
+session's final pre-push chain.
+
+Implemented owner surface:
+
+- `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mcp.business.adapter.contract.ts`
+- `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/mcp.business.adapter.contract.test.ts`
+
+Source subset:
+
+- `.private_reference/legacy/CVF 16.5/pancake-pos-mcp/mcp-business-tool-contract.ts`
+- `.private_reference/legacy/CVF 16.5/pancake-pos-mcp/mcp-business-tool-registry.ts`
+- `.private_reference/legacy/CVF 16.5/pancake-pos-mcp/mcp-business-risk-classifier.ts`
+- `.private_reference/legacy/CVF 16.5/pancake-pos-mcp/mcp-business-approval-gate.ts`
+- `.private_reference/legacy/CVF 16.5/pancake-pos-mcp/mcp-business-execution-receipt.ts`
+- `.private_reference/legacy/CVF 16.5/pancake-pos-mcp/mcp-business-transport-policy.ts`
+- `.private_reference/legacy/CVF 16.5/pancake-pos-mcp/mcp-business-tool-adapter.ts`
+
+Deferred source:
+
+- `.private_reference/legacy/CVF 16.5/pancake-pos-mcp/pancake-pos-mcp.profile.ts`
+
+Delivered behavior:
+
+- business MCP tools must be registered before execution;
+- risk classifier handles read-only, low-risk write, high-risk write,
+  destructive, and system-configuration classes;
+- high-risk write requires approval;
+- destructive mutation requires approval and reason;
+- transport allowlist is enforced before output is returned;
+- rejected attempts still create receipts;
+- successful attempts create deterministic receipts.
+
+Governance packet:
+
+- `docs/baselines/CVF_GC018_MCP_BUSINESS_ADAPTER_AUTHORIZATION_2026-05-16.md`
+- `docs/baselines/CVF_ADR_MCP_BUSINESS_ADAPTER_RUNTIME_OWNERSHIP_2026-05-16.md`
+- `docs/baselines/CVF_MCP_BUSINESS_ADAPTER_SOURCE_ADOPTION_MATRIX_2026-05-16.md`
+- `docs/baselines/CVF_MCP_BUSINESS_ADAPTER_TEST_AND_PROOF_PLAN_2026-05-16.md`
+- `docs/roadmaps/CVF_MCP_BUSINESS_ADAPTER_RUNTIME_ADOPTION_ROADMAP_2026-05-16.md`
+- `docs/reviews/CVF_MCP_BUSINESS_ADAPTER_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
+
+Verification already executed:
+
+```bash
+cd EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION
+npm run check
+npx vitest run tests/mcp.business.adapter.contract.test.ts --config vitest.config.ts
+```
+
+Result:
+
+- Execution Plane typecheck PASS;
+- focused MCP Business Adapter vitest PASS, 1 file / 10 tests.
+
+Claim boundary:
+
+- this is deterministic local Execution Plane adapter behavior;
+- it does not claim live MCP execution, Pancake POS integration, or business
+  mutation enforcement;
+- future live MCP/profile adoption requires a fresh GC-018 and live proof.
+
+Recommended next absorption lane:
+
+- Observability Delta, kept observe-only with no kill/reroute/approval authority.

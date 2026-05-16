@@ -30,6 +30,26 @@ export type {
   ToolCallTraceContractDependencies,
 } from "./tool.call.trace.contract";
 
+// CVF 16.5 MCP Business Adapter absorption - generic adapter boundary
+export {
+  MCPBusinessAdapterContract,
+  createMCPBusinessAdapterContract,
+} from "./mcp.business.adapter.contract";
+export type {
+  MCPBusinessRiskClass,
+  MCPBusinessMutationType,
+  MCPBusinessTransport,
+  MCPBusinessApprovalDecision,
+  MCPBusinessResultStatus,
+  MCPBusinessToolContract,
+  MCPBusinessToolInvocationRequest,
+  MCPBusinessApprovalGateResult,
+  MCPBusinessTransportDecision,
+  MCPBusinessExecutionReceipt,
+  MCPBusinessAdapterResult,
+  MCPBusinessAdapterContractDependencies,
+} from "./mcp.business.adapter.contract";
+
 // W2-T29 — Streaming Execution Consumer Pipeline Batch (CP2)
 export {
   StreamingExecutionConsumerPipelineBatchContract,
