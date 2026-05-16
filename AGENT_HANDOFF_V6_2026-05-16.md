@@ -186,3 +186,91 @@ Recommendation:
 - Do not start Tier 2 automatically.
 - Any Tier 2 must use a fresh GC-018 and a small evidence/benchmark navigation
   list, not broad Markdown standardization.
+
+## 2026-05-16 - Mandatory Pre-Push Check Protocol
+
+This section is process guidance for every future agent working in this
+workspace. Read before any `git push`.
+
+### Why this exists
+
+On 2026-05-16, a Provenance push of 75+ commits was blocked by the pre-push
+hook chain at `review retention registry guard`. Root cause: 55 historical
+review files from the 2026-05-07/08 tranche were dynamically blocked from
+archive by live references but had not been registered as retain-evidence.
+The drift existed before the session started. The fix was a single registry
+update (`governance/compat/CVF_REVIEW_RETENTION_REGISTRY.json`), but the
+debug round consumed extra time and confused the push flow.
+
+Future agents must catch this kind of registry/guard drift **before** pushing,
+not after.
+
+### Mandatory pre-push checklist
+
+Run the full pre-push hook chain locally before invoking `git push origin main`
+to either remote. The chain is the same one the hook runs, so any failure is
+predictable:
+
+```bash
+python governance/compat/run_local_governance_hook_chain.py --hook pre-push \
+  > /tmp/cvf_prepush.log 2>&1
+echo "EXIT=$?"
+tail -100 /tmp/cvf_prepush.log
+```
+
+Interpretation:
+
+- `EXIT=0` and final line `All pre-push governance checks passed.` → safe to push.
+- Any other exit code or final-line state → fix the failing check first; do not
+  push.
+
+When a check fails, read the JSON section above the final exit line. The
+common drift patterns are:
+
+| Failing check | Likely fix |
+| --- | --- |
+| review retention registry | add new historical review entries to `governance/compat/CVF_REVIEW_RETENTION_REGISTRY.json` under `retainEvidencePaths`, bump `retainEvidenceCount`, update `lastReviewed` and `derivationMethod` |
+| guard registry | register new guard files in the guard registry |
+| guard authoring standard | bring guard files up to the standard layout |
+| governed file size | split file or add exception entry under approved limit |
+| docs governance compatibility | docs reference / placement drift; check the failing path |
+| markdown structural completeness (GC-045) | add missing common elements or artifact-type sections; for portable workspaces use `--no-bootstrap` |
+| baseline update compatibility | new substantive governance change requires a baseline/review note |
+| active window registry / audit retention registry | registry drift on time-window content |
+
+### Push-flow protocol for the two remotes
+
+`Controlled-Vibe-Framework-CVF.git` (public end-user/dev facing):
+
+- Work happens in the `Controlled-Vibe-Framework-CVF-public-sync` workspace.
+- Push directly from that workspace.
+- That workspace does not run the full governance hook chain, but it does run
+  the public-surface scanner. Use `python scripts/check_public_surface.py`
+  before push.
+- GC-045 is also available there if the checker stack was installed (commit
+  `37d35e9`). Run with `--no-bootstrap --all-changed --enforce`.
+
+`Controlled-Vibe-Framework-CVF-Provenance.git` (partner-audit only):
+
+- Workspace `Controlled-Vibe-Framework-CVF` has the push URL disabled by
+  default as a safety guard (`DISABLED_PROVENANCE_ARCHIVE_DO_NOT_PUSH_FROM_THIS_WORKSPACE`).
+- To push manually, set push URL temporarily, run the full pre-push checklist
+  above, push, then restore the disabled sentinel:
+
+  ```bash
+  git remote set-url --push origin https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF-Provenance.git
+  # run pre-push checklist
+  git push origin main
+  git remote set-url --push origin DISABLED_PROVENANCE_ARCHIVE_DO_NOT_PUSH_FROM_THIS_WORKSPACE
+  ```
+
+- Never make the push URL permanent. The disable sentinel is intentional and
+  prevents accidental Provenance pushes when the workspace is used for routine
+  governance work.
+
+### Never push without the checklist
+
+If the push has already been attempted and the remote rejected it, do **not**
+treat the rejection as the discovery mechanism. Run the local checklist,
+fix every failing check, recommit, then retry push. Do not push partial
+fixes or skip hooks (`--no-verify` is forbidden by repo conventions).
