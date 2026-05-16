@@ -126,6 +126,51 @@ Verification already completed for the Knowledge Vault Intake lane:
 
 Recommended next absorption lane:
 
-- Document Artifact Renderer if the next goal is public evidence presentation;
-- OpenSpec Change Adapter if the next goal is proposal/delta/task governance
-  mapping.
+Document Artifact Renderer was selected next by operator autonomy instruction.
+
+## 2026-05-16 - Document Artifact Renderer Runtime Adoption
+
+Status: implemented locally; commit/push pending full pre-push verification.
+
+Runtime owner:
+
+- `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/document.artifact.renderer.contract.ts`
+
+Test owner:
+
+- `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/document.artifact.renderer.contract.test.ts`
+
+Governance packet:
+
+- `docs/baselines/CVF_GC018_DOCUMENT_ARTIFACT_RENDERER_AUTHORIZATION_2026-05-16.md`
+- `docs/baselines/CVF_ADR_DOCUMENT_ARTIFACT_RENDERER_RUNTIME_OWNERSHIP_2026-05-16.md`
+- `docs/baselines/CVF_DOCUMENT_ARTIFACT_RENDERER_SOURCE_ADOPTION_MATRIX_2026-05-16.md`
+- `docs/baselines/CVF_DOCUMENT_ARTIFACT_RENDERER_TEST_AND_PROOF_PLAN_2026-05-16.md`
+- `docs/reviews/CVF_GC019_DOCUMENT_ARTIFACT_RENDERER_STRUCTURAL_CHANGE_REVIEW_2026-05-16.md`
+- `docs/roadmaps/CVF_DOCUMENT_ARTIFACT_RENDERER_RUNTIME_ADOPTION_ROADMAP_2026-05-16.md`
+- `docs/reviews/CVF_DOCUMENT_ARTIFACT_RENDERER_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
+
+Delivered behavior:
+
+- resolves source path/name/hash metadata;
+- classifies governed document artifact type;
+- enforces approved component catalog and fails forbidden widgets;
+- renders single-file offline HTML;
+- preserves risk, approval, evidence state, failed checks, and claims boundary;
+- blocks remote script, tracking, and credential-collection patterns;
+- records adapter origin and sandbox preview boundary as metadata, not trust.
+
+Claim boundary:
+
+- deterministic local Control Plane contract only;
+- no production renderer UI, publishing pipeline, live provider proof, or new
+  audit evidence generation claim.
+
+Verification completed:
+
+- Control Plane `npm run check` PASS;
+- focused renderer Vitest PASS, 1 file / 14 tests;
+- full Control Plane Vitest PASS, 124 files / 3404 tests;
+- governed file-size PASS;
+- markdown structural completeness PASS;
+- docs governance compatibility PASS.

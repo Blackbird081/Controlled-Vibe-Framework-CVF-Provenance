@@ -87,7 +87,7 @@ Do not leave a selected source at "started but not alive."
 | Tool Call Trace / Sandbox | `OpenAgentd` | High/Medium | `runtime-owned` | Execution Plane + Trust/Sandbox surfaces | tool calls emit lifecycle trace, policy check, redacted args/results, block/error/success receipts, and sandbox permission decisions |
 | MCP Business Adapter | `pancake-pos-mcp` | High for generic 7 files; Pancake profile deferred | `runtime-owned` | Execution Plane adapter boundary | generic MCP business tools have contracts, risk classifier, approval gate, transport policy, execution receipt, and tests; Pancake profile remains optional |
 | Observability Delta | `abtop` | High/Medium | `runtime-owned` | `EXTENSIONS/CVF_v1.8.1_ADAPTIVE_OBSERVABILITY_RUNTIME/` | observe-only signals for token/context/rate/quota/process/port exist without kill/reroute/approval authority |
-| Document Artifact Renderer | `md2html` | Medium/High | `docs-classified` | docs/evidence presentation surface, future renderer extension only if approved | governed HTML artifacts preserve source meaning, evidence state, risk, approval, failed checks, and pass artifact verification |
+| Document Artifact Renderer | `md2html` | Medium/High | `runtime-owned` | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/` | governed HTML artifacts preserve source meaning, evidence state, risk, approval, failed checks, adapter origin, sandbox preview boundary, and artifact verification status |
 | OpenSpec Change Adapter | `OpenSpec` | Medium/High | `docs-classified` | Control Plane + docs governance | proposal/design/tasks/delta/archive material maps into CVF phase gates without direct apply or canonical overwrite |
 | Skill Evolution Loop | `Memento-Skills` | Medium | `docs-classified` | `EXTENSIONS/CVF_v1.2.2_SKILL_GOVERNANCE_ENGINE/` + Skill Library | reflection creates mutation proposals; verification/probation/approval/receipt are required before any skill reinjection |
 
@@ -173,7 +173,19 @@ Evidence:
 
 - `docs/reviews/CVF_KNOWLEDGE_VAULT_INTAKE_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
 
-8. **Artifact Renderer / OpenSpec / Skill Evolution**
+8. **Document Artifact Renderer**
+
+Status: completed as `runtime-owned` on 2026-05-16.
+
+Owner:
+
+- `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/document.artifact.renderer.contract.ts`
+
+Evidence:
+
+- `docs/reviews/CVF_DOCUMENT_ARTIFACT_RENDERER_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
+
+9. **OpenSpec / Skill Evolution**
 
 Reason: valuable, but should stay docs-classified until an operator selects one
 bounded owner surface with a clear product need.
@@ -189,7 +201,7 @@ bounded owner surface with a clear product need.
 | Tool Call Trace / Sandbox | Completed: `docs/baselines/CVF_GC018_TOOL_CALL_TRACE_SANDBOX_AUTHORIZATION_2026-05-16.md`, `docs/baselines/CVF_ADR_TOOL_CALL_TRACE_SANDBOX_RUNTIME_OWNERSHIP_2026-05-16.md`, `docs/baselines/CVF_TOOL_CALL_TRACE_SANDBOX_SOURCE_ADOPTION_MATRIX_2026-05-16.md`, `docs/baselines/CVF_TOOL_CALL_TRACE_SANDBOX_TEST_AND_PROOF_PLAN_2026-05-16.md`, `docs/roadmaps/CVF_TOOL_CALL_TRACE_SANDBOX_RUNTIME_ADOPTION_ROADMAP_2026-05-16.md` |
 | MCP Business Adapter | Completed: `docs/baselines/CVF_GC018_MCP_BUSINESS_ADAPTER_AUTHORIZATION_2026-05-16.md`, `docs/baselines/CVF_ADR_MCP_BUSINESS_ADAPTER_RUNTIME_OWNERSHIP_2026-05-16.md`, `docs/baselines/CVF_MCP_BUSINESS_ADAPTER_SOURCE_ADOPTION_MATRIX_2026-05-16.md`, `docs/baselines/CVF_MCP_BUSINESS_ADAPTER_TEST_AND_PROOF_PLAN_2026-05-16.md`, `docs/roadmaps/CVF_MCP_BUSINESS_ADAPTER_RUNTIME_ADOPTION_ROADMAP_2026-05-16.md` |
 | Observability Delta | Completed: `docs/baselines/CVF_GC018_OBSERVABILITY_DELTA_AUTHORIZATION_2026-05-16.md`, `docs/baselines/CVF_ADR_OBSERVABILITY_DELTA_RUNTIME_OWNERSHIP_2026-05-16.md`, `docs/baselines/CVF_OBSERVABILITY_DELTA_SOURCE_ADOPTION_MATRIX_2026-05-16.md`, `docs/baselines/CVF_OBSERVABILITY_DELTA_TEST_AND_PROOF_PLAN_2026-05-16.md`, `docs/roadmaps/CVF_OBSERVABILITY_DELTA_RUNTIME_ADOPTION_ROADMAP_2026-05-16.md` |
-| Document Artifact Renderer | GC-018, artifact verification checklist, fixture set, secret-scan/render tests |
+| Document Artifact Renderer | Completed: `docs/baselines/CVF_GC018_DOCUMENT_ARTIFACT_RENDERER_AUTHORIZATION_2026-05-16.md`, `docs/baselines/CVF_ADR_DOCUMENT_ARTIFACT_RENDERER_RUNTIME_OWNERSHIP_2026-05-16.md`, `docs/baselines/CVF_DOCUMENT_ARTIFACT_RENDERER_SOURCE_ADOPTION_MATRIX_2026-05-16.md`, `docs/baselines/CVF_DOCUMENT_ARTIFACT_RENDERER_TEST_AND_PROOF_PLAN_2026-05-16.md`, `docs/roadmaps/CVF_DOCUMENT_ARTIFACT_RENDERER_RUNTIME_ADOPTION_ROADMAP_2026-05-16.md` |
 | OpenSpec Change Adapter | GC-018, phase mapping schema, delta grammar tests, archive overwrite block tests |
 | Skill Evolution Loop | GC-018, proposal-only mutation boundary, verification/probation tests, reinjection receipt plan |
 
@@ -204,6 +216,7 @@ Current runtime-owned evidence:
 - `docs/reviews/CVF_MCP_BUSINESS_ADAPTER_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
 - `docs/reviews/CVF_OBSERVABILITY_DELTA_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
 - `docs/reviews/CVF_KNOWLEDGE_VAULT_INTAKE_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
+- `docs/reviews/CVF_DOCUMENT_ARTIFACT_RENDERER_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
 
 ## Verification
 
@@ -215,6 +228,6 @@ This summary does not authorize implementation. It authorizes prioritization
 and prevents loss of absorption context.
 
 Model Gateway, Controlled Memory, Tool Call Trace / Sandbox, Agent Boundary /
-Delegation, MCP Business Adapter, Observability Delta, and Knowledge Intake /
-Vault are now `runtime-owned`. All other lanes remain `docs-classified` until a
-new roadmap-ready packet is prepared.
+Delegation, MCP Business Adapter, Observability Delta, Knowledge Intake / Vault,
+and Document Artifact Renderer are now `runtime-owned`. All other lanes remain
+`docs-classified` until a new roadmap-ready packet is prepared.

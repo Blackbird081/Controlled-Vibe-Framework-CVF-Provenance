@@ -145,6 +145,28 @@ export type {
 } from "./knowledge.vault.intake.types";
 
 export {
+  DocumentArtifactRendererContract,
+  createDocumentArtifactRendererContract,
+} from "./document.artifact.renderer.contract";
+export type {
+  DocumentArtifactType,
+  DocumentArtifactRiskLevel,
+  DocumentArtifactApprovalState,
+  DocumentArtifactEvidenceState,
+  DocumentArtifactVerificationStatus,
+  DocumentArtifactComponent,
+  DocumentArtifactAdapterOrigin,
+  DocumentArtifactSource,
+  DocumentArtifactClaimsBoundary,
+  DocumentArtifactGovernanceInput,
+  DocumentArtifactRenderRequest,
+  DocumentArtifactVerificationCheck,
+  DocumentArtifactMetadata,
+  GovernedDocumentArtifact,
+  DocumentArtifactRendererContractDependencies,
+} from "./document.artifact.renderer.contract";
+
+export {
   AgentDefinitionCapabilityBatchContract,
   createAgentDefinitionCapabilityBatchContract,
 } from "./agent.definition.capability.batch.contract";
