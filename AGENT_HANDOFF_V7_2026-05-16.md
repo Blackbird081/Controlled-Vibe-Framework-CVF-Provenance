@@ -220,3 +220,50 @@ Verification completed:
 - governed file-size PASS;
 - markdown structural completeness PASS;
 - docs governance compatibility PASS.
+
+## 2026-05-16 - Skill Evolution Loop Runtime Adoption
+
+Status: implemented locally; commit/push pending full pre-push verification.
+
+Runtime owner:
+
+- `EXTENSIONS/CVF_v1.2.2_SKILL_GOVERNANCE_ENGINE/evolution_engine/governed.skill.evolution.contract.ts`
+
+Test owner:
+
+- `EXTENSIONS/CVF_v1.2.2_SKILL_GOVERNANCE_ENGINE/tests/governed.skill.evolution.contract.test.ts`
+
+Governance packet:
+
+- `docs/baselines/CVF_GC018_SKILL_EVOLUTION_LOOP_AUTHORIZATION_2026-05-16.md`
+- `docs/baselines/CVF_ADR_SKILL_EVOLUTION_LOOP_RUNTIME_OWNERSHIP_2026-05-16.md`
+- `docs/baselines/CVF_SKILL_EVOLUTION_LOOP_SOURCE_ADOPTION_MATRIX_2026-05-16.md`
+- `docs/baselines/CVF_SKILL_EVOLUTION_LOOP_TEST_AND_PROOF_PLAN_2026-05-16.md`
+- `docs/reviews/CVF_GC019_SKILL_EVOLUTION_LOOP_STRUCTURAL_CHANGE_REVIEW_2026-05-16.md`
+- `docs/roadmaps/CVF_SKILL_EVOLUTION_LOOP_RUNTIME_ADOPTION_ROADMAP_2026-05-16.md`
+- `docs/reviews/CVF_SKILL_EVOLUTION_LOOP_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
+
+Delivered behavior:
+
+- reflects evidence-backed skill failure into root cause;
+- creates mutation proposal only, never autonomous production write;
+- verifies sandbox/policy/regression/security gates;
+- blocks risk lowering without positive evidence;
+- requires human review for high-risk changes;
+- blocks non-governed reinjection target paths;
+- emits immutable skill evolution receipts.
+
+Claim boundary:
+
+- deterministic local Skill Governance Engine contract only;
+- no autonomous skill rewrite, real filesystem reinjection writer, external
+  skill execution, or live provider proof claim.
+
+Verification completed:
+
+- Skill Governance Engine `npm run check` PASS;
+- focused Skill Evolution Loop Vitest PASS, 1 file / 13 tests;
+- full Skill Governance Engine Vitest PASS, 9 files / 102 tests;
+- governed file-size PASS;
+- markdown structural completeness PASS;
+- docs governance compatibility PASS.

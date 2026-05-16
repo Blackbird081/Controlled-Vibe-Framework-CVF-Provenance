@@ -89,7 +89,7 @@ Do not leave a selected source at "started but not alive."
 | Observability Delta | `abtop` | High/Medium | `runtime-owned` | `EXTENSIONS/CVF_v1.8.1_ADAPTIVE_OBSERVABILITY_RUNTIME/` | observe-only signals for token/context/rate/quota/process/port exist without kill/reroute/approval authority |
 | Document Artifact Renderer | `md2html` | Medium/High | `runtime-owned` | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/` | governed HTML artifacts preserve source meaning, evidence state, risk, approval, failed checks, adapter origin, sandbox preview boundary, and artifact verification status |
 | OpenSpec Change Adapter | `OpenSpec` | Medium/High | `runtime-owned` | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/` | proposal/design/tasks/delta/archive/sync material maps into CVF phase gates without direct apply or canonical overwrite |
-| Skill Evolution Loop | `Memento-Skills` | Medium | `docs-classified` | `EXTENSIONS/CVF_v1.2.2_SKILL_GOVERNANCE_ENGINE/` + Skill Library | reflection creates mutation proposals; verification/probation/approval/receipt are required before any skill reinjection |
+| Skill Evolution Loop | `Memento-Skills` | Medium | `runtime-owned` | `EXTENSIONS/CVF_v1.2.2_SKILL_GOVERNANCE_ENGINE/` | reflection creates mutation proposals; verification/probation/approval/receipt are required before any skill reinjection |
 
 ## Recommended Sequence
 
@@ -197,10 +197,22 @@ Evidence:
 
 - `docs/reviews/CVF_OPENSPEC_CHANGE_ADAPTER_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
 
-10. **Skill Evolution**
+10. **Skill Evolution Loop**
 
-Reason: valuable, but should stay docs-classified until an operator selects one
-bounded owner surface with a clear product need.
+Status: completed as `runtime-owned` on 2026-05-16.
+
+Owner:
+
+- `EXTENSIONS/CVF_v1.2.2_SKILL_GOVERNANCE_ENGINE/evolution_engine/governed.skill.evolution.contract.ts`
+
+Evidence:
+
+- `docs/reviews/CVF_SKILL_EVOLUTION_LOOP_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
+
+11. **No Remaining CVF 16.5 Lanes**
+
+Reason: all selected CVF 16.5 lanes are now either `runtime-owned` or explicitly
+bounded inside a closure packet.
 
 ## Roadmap-Ready Packet Requirements By Lane
 
@@ -215,7 +227,7 @@ bounded owner surface with a clear product need.
 | Observability Delta | Completed: `docs/baselines/CVF_GC018_OBSERVABILITY_DELTA_AUTHORIZATION_2026-05-16.md`, `docs/baselines/CVF_ADR_OBSERVABILITY_DELTA_RUNTIME_OWNERSHIP_2026-05-16.md`, `docs/baselines/CVF_OBSERVABILITY_DELTA_SOURCE_ADOPTION_MATRIX_2026-05-16.md`, `docs/baselines/CVF_OBSERVABILITY_DELTA_TEST_AND_PROOF_PLAN_2026-05-16.md`, `docs/roadmaps/CVF_OBSERVABILITY_DELTA_RUNTIME_ADOPTION_ROADMAP_2026-05-16.md` |
 | Document Artifact Renderer | Completed: `docs/baselines/CVF_GC018_DOCUMENT_ARTIFACT_RENDERER_AUTHORIZATION_2026-05-16.md`, `docs/baselines/CVF_ADR_DOCUMENT_ARTIFACT_RENDERER_RUNTIME_OWNERSHIP_2026-05-16.md`, `docs/baselines/CVF_DOCUMENT_ARTIFACT_RENDERER_SOURCE_ADOPTION_MATRIX_2026-05-16.md`, `docs/baselines/CVF_DOCUMENT_ARTIFACT_RENDERER_TEST_AND_PROOF_PLAN_2026-05-16.md`, `docs/roadmaps/CVF_DOCUMENT_ARTIFACT_RENDERER_RUNTIME_ADOPTION_ROADMAP_2026-05-16.md` |
 | OpenSpec Change Adapter | Completed: `docs/baselines/CVF_GC018_OPENSPEC_CHANGE_ADAPTER_AUTHORIZATION_2026-05-16.md`, `docs/baselines/CVF_ADR_OPENSPEC_CHANGE_ADAPTER_RUNTIME_OWNERSHIP_2026-05-16.md`, `docs/baselines/CVF_OPENSPEC_CHANGE_ADAPTER_SOURCE_ADOPTION_MATRIX_2026-05-16.md`, `docs/baselines/CVF_OPENSPEC_CHANGE_ADAPTER_TEST_AND_PROOF_PLAN_2026-05-16.md`, `docs/roadmaps/CVF_OPENSPEC_CHANGE_ADAPTER_RUNTIME_ADOPTION_ROADMAP_2026-05-16.md` |
-| Skill Evolution Loop | GC-018, proposal-only mutation boundary, verification/probation tests, reinjection receipt plan |
+| Skill Evolution Loop | Completed: `docs/baselines/CVF_GC018_SKILL_EVOLUTION_LOOP_AUTHORIZATION_2026-05-16.md`, `docs/baselines/CVF_ADR_SKILL_EVOLUTION_LOOP_RUNTIME_OWNERSHIP_2026-05-16.md`, `docs/baselines/CVF_SKILL_EVOLUTION_LOOP_SOURCE_ADOPTION_MATRIX_2026-05-16.md`, `docs/baselines/CVF_SKILL_EVOLUTION_LOOP_TEST_AND_PROOF_PLAN_2026-05-16.md`, `docs/roadmaps/CVF_SKILL_EVOLUTION_LOOP_RUNTIME_ADOPTION_ROADMAP_2026-05-16.md` |
 
 ## Evidence
 
@@ -230,6 +242,7 @@ Current runtime-owned evidence:
 - `docs/reviews/CVF_KNOWLEDGE_VAULT_INTAKE_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
 - `docs/reviews/CVF_DOCUMENT_ARTIFACT_RENDERER_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
 - `docs/reviews/CVF_OPENSPEC_CHANGE_ADAPTER_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
+- `docs/reviews/CVF_SKILL_EVOLUTION_LOOP_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
 
 ## Verification
 
@@ -242,6 +255,5 @@ and prevents loss of absorption context.
 
 Model Gateway, Controlled Memory, Tool Call Trace / Sandbox, Agent Boundary /
 Delegation, MCP Business Adapter, Observability Delta, Knowledge Intake / Vault,
-Document Artifact Renderer, and OpenSpec Change Adapter are now
-`runtime-owned`. All other lanes remain `docs-classified` until a new
-roadmap-ready packet is prepared.
+Document Artifact Renderer, OpenSpec Change Adapter, and Skill Evolution Loop
+are now `runtime-owned`. No selected CVF 16.5 lane remains `docs-classified`.
