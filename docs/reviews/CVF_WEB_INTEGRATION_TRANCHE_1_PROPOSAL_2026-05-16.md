@@ -22,8 +22,10 @@ authorization packet. Scope includes:
 - new route segments under the dashboard with strict separation from
   existing oversized components
 - vitest unit tests + Playwright mock E2E for the deep primitive
-- governed artifact contract integration via the document artifact renderer
-  runtime adopted at commit `41f37cc2`
+- governed artifact HTML presentation layer implemented per the document
+  artifact renderer spec boundary (commit `41f37cc2`); the spec explicitly
+  defers a runtime renderer — Tranche 1 implements the renderer, it does
+  not consume an existing runtime service
 
 Scope excludes:
 
@@ -38,7 +40,8 @@ Scope excludes:
 
 End-user audience consuming governed AI/agent output. Primary value:
 "after governance passes, the user can download a clean governed
-artifact (HTML/PDF/printable view) bound to the receipt."
+artifact as HTML (with browser print preview for print use) bound to
+the governance receipt." PDF/PNG/PPTX formats are deferred per spec.
 
 ## Findings
 
@@ -49,11 +52,15 @@ confirms three things:
 1. Each proposed primitive has an adjacent existing surface; this is a
    delta tranche, not a from-zero build.
 2. The runtime-adoption tranche from the same session published 10 runtime
-   contracts the web surface can consume; Artifact Export consumes the
-   document artifact renderer (`41f37cc2`).
-3. `SpecExport.tsx` is at GC-023 hard threshold with an active exception;
-   Artifact Export must land as a new sibling component, not as a
-   SpecExport edit.
+   contracts; Artifact Export implements an HTML presentation layer that
+   follows the document artifact renderer spec boundary (`41f37cc2`). The
+   spec explicitly states "This spec does not implement a renderer" and
+   defers runtime rendering. Tranche 1 builds the renderer; it does not
+   call one.
+3. `SpecExport.tsx` has `approvedMaxLines: 1300` in the exception registry
+   and is already at 1280 lines — only 20 lines remain before the approved
+   cap is breached. Artifact Export must land as a new sibling component,
+   not as a SpecExport edit.
 
 ## Recommendation
 
@@ -69,7 +76,7 @@ New artifacts:
 
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx` — new sibling component (NOT an edit to `SpecExport.tsx`)
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/artifacts/page.tsx` — new dashboard route segment
-- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts` — new API route that invokes the document artifact renderer contract
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts` — new API route that implements the HTML artifact serialization described in the document artifact renderer spec
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.test.tsx` — vitest unit test
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.test.ts` — API route test
 - one Playwright mock E2E asserting the export panel renders and the
@@ -79,7 +86,9 @@ Acceptance criteria:
 
 - new component stays under 700 LoC (soft threshold)
 - new API route stays under 700 LoC
-- governed artifact output carries `Memory class`, `Status`, `Claim Boundary`, and a receipt anchor
+- HTML artifact output carries `Memory class`, `Status`, `Claim Boundary`, and a receipt anchor
+- output format is HTML only; PDF/PNG/PPTX are explicitly deferred per spec; browser print preview is acceptable for print use
+- Tranche 1 claims "HTML presentation candidate", not "governed artifact generation proof" — live-governance proof is not required because this tranche does not claim runtime governance enforcement
 - no edit to `SpecExport.tsx`
 - vitest run green; Playwright mock E2E green
 - GC-045 automated check green
@@ -109,21 +118,24 @@ New artifacts:
 
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/agent-handoff/page.tsx` — new route segment
 - a short page that consumes `validateHandoff` from the existing validator
-  (`src/lib/agent-handoff-validator.ts`) and renders the last few
-  handoffs read-only
+  (`src/lib/agent-handoff-validator.ts`) and renders a validator demo or
+  audit-filtered handoff candidates when present; if no live handoff
+  audit endpoint is available the page renders the validator schema and a
+  "no live handoffs recorded" message
 
 Acceptance criteria:
 
 - new page stays under 300 LoC
 - page reads from existing validator; does not introduce a new validator
   surface
-- no new API route; data is sourced from existing audit data exposed by
-  current admin/audit endpoints
+- no new API route; if live handoff data is present it is read from
+  existing admin/audit endpoints; page must not error or show blank when
+  no handoff data is available
 - page declares its placeholder nature explicitly
 
 ## Hard Constraints
 
-1. **No edit to `SpecExport.tsx`.** Already at GC-023 hard threshold.
+1. **No edit to `SpecExport.tsx`.** Already at 1280 lines against `approvedMaxLines: 1300`; only 20 lines remain before the approved cap is breached.
 2. **One commit per file.** Selective rollback preserved if any primitive drifts.
 3. **GC-045 must pass** on every committed Markdown file.
 4. **Governed file size must pass** on every committed source file.
@@ -132,16 +144,18 @@ Acceptance criteria:
 6. **No claim drift.** Existing component contracts, audit-receipt shapes,
    and provider-routing fields must be preserved verbatim.
 7. **Live-governance proof is not required for Tranche 1** because
-   Tranche 1 does not claim runtime governance enforcement; it claims
-   governed artifact production via the already-adopted document artifact
-   renderer contract.
+   Tranche 1 claims "HTML presentation candidate" only, not "governed
+   artifact generation proof." The document artifact renderer spec requires
+   live-governance proof before any governed-artifact claim. That claim is
+   deferred to a future tranche that adds live proof coverage.
 
 ## Risk
 
 **Risk 1 — Scope creep into SpecExport.** The natural temptation is to
-"just add a function" to `SpecExport.tsx`. Mitigation: the hard constraint
-above plus a code-review requirement that any diff touching
-`SpecExport.tsx` invalidates the tranche.
+"just add a function" to `SpecExport.tsx`. With only 20 lines remaining
+under `approvedMaxLines: 1300`, any edit risks a GC-023 violation.
+Mitigation: the hard constraint above plus a code-review requirement that
+any diff touching `SpecExport.tsx` invalidates the tranche.
 
 **Risk 2 — Placeholder pages drift into deep features.** Knowledge Vault
 Intake and Agent Handoff UI must remain placeholders. Mitigation: explicit
@@ -152,7 +166,16 @@ placeholder pages do not introduce new API routes.
 (component, API, Playwright mock). Mitigation: tests must be small and
 focused. Playwright mock E2E is one scenario, not a suite.
 
-**Risk 4 — End-user feedback dependency.** The recommended next step
+**Risk 4 — Claim drift from "HTML candidate" to "governed artifact."**
+The document artifact renderer spec requires live-governance proof before
+any "governed artifact generation" claim is made. Tranche 1 claims only
+"HTML presentation candidate." If future closure notes or READMEs upgrade
+the language to "governed artifact," that triggers a live-governance proof
+requirement. Mitigation: closure note must explicitly restate the
+"HTML presentation candidate" boundary and must not publish the result
+as governed artifact evidence without a live proof record.
+
+**Risk 5 — End-user feedback dependency.** The recommended next step
 after Tranche 1 is end-user feedback before any Tranche 2 deep work.
 Mitigation: closure note must capture either a feedback summary or an
 explicit "not collected" note, mirroring the Tier 1 read-test pattern.
@@ -201,8 +224,22 @@ python governance/compat/check_governed_file_size.py --enforce
 
 This proposal claims only that Tranche 1 is justified, scoped, and ready
 for GC-018 authorization. It does not authorize execution. It does not
-claim runtime governance enforcement. It does not extend the CVF 16.5
-absorption authority beyond what the runtime-adoption tranche already
-landed. Execution requires operator approval of a fresh GC-018
-authorization packet, completion of the per-primitive acceptance criteria,
-and publication of the closure note before public push.
+claim runtime governance enforcement. It does not claim "governed artifact
+generation" — Tranche 1 claims "HTML presentation candidate" only, and
+live-governance proof is required before any future tranche may upgrade
+that claim. It does not extend the CVF 16.5 absorption authority beyond
+what the runtime-adoption tranche already landed. The Artifact Export
+primitive implements an HTML renderer per the document artifact renderer
+spec boundary; it does not consume an existing runtime renderer service.
+Execution requires operator approval of a fresh GC-018 authorization
+packet, completion of the per-primitive acceptance criteria, and
+publication of the closure note before public push.
+
+**Amendment note (2026-05-16):** This proposal was amended after initial
+commit (`4033eeab`) to address five defects identified in a cross-review:
+(1) removed "consumes runtime renderer" overclaim — Tranche 1 implements
+the renderer; (2) narrowed Artifact Export claim from "governed artifact
+production" to "HTML presentation candidate"; (3) removed PDF from scope;
+(4) corrected SpecExport cap from 2000 to `approvedMaxLines: 1300`
+(20 lines remaining); (5) made Agent Handoff data-source conditional on
+actual audit endpoint availability.

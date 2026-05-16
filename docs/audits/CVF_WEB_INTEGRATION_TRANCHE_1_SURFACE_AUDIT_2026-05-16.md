@@ -127,10 +127,11 @@ UI placeholder should consume the agent boundary delegation contract
 
 ## Risk
 
-- **SpecExport size constraint.** Touching `SpecExport.tsx` to add Artifact
-  Export wiring would push it past `maxApprovableLines=2000`. Mitigation:
-  new sibling component `ArtifactExportPanel.tsx` plus a new route, not an
-  edit to SpecExport.
+- **SpecExport size constraint.** `SpecExport.tsx` has `approvedMaxLines:
+  1300` in the exception registry and is already at 1280 lines — only 20
+  lines remain before the approved cap is breached. Any edit risks a GC-023
+  violation immediately. Mitigation: new sibling component
+  `ArtifactExportPanel.tsx` plus a new route, not an edit to SpecExport.
 - **Knowledge governance page complexity.** The existing knowledge page
   already mixes compile/maintain/refactor flows; adding intake there risks
   audience confusion. Mitigation: separate route segment for non-coder
