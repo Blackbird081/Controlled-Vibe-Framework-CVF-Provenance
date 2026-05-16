@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: CLOSED — ALL ACCEPTANCE CRITERIA MET
+Status: CLOSED — ALL ACCEPTANCE CRITERIA MET + CLAIM UPGRADED 2026-05-16
 
 ## Purpose
 
@@ -29,18 +29,18 @@ Work Transfer (deep).
 ## Decision
 
 Tranche 2 is closed. All hard constraints and per-workstream acceptance
-criteria are met. The "governed artifact generation" claim upgrade is
-deferred (see Evidence below) — Artifact Export remains "HTML
-presentation candidate" until a live governance receipt is produced in
-a powered test run.
+criteria are met. The "governed artifact generation" claim is
+**upgraded** — a powered live test run on 2026-05-16 confirmed
+`governanceReceipt` appears in the artifact export response. See
+Governance proof status section for receipt details.
 
 ## Findings
 
 All three workstreams delivered within authorized LoC budgets and with
-full test coverage. The live governance proof layer is implemented and
-wired but not yet exercised in a powered run; the claim boundary
-therefore stays "HTML presentation candidate" per the hard constraint
-in the authorization packet.
+full test coverage. A powered live test run on 2026-05-16 confirmed the
+governance receipt flows through the artifact export pipeline. The claim
+boundary is upgraded from "HTML presentation candidate" to "governed
+artifact generation."
 
 ## Risk
 
@@ -99,21 +99,29 @@ tests continue to pass.
 | No new API route | ✓ |
 | `page.test.tsx` green | ✓ — 6 cases |
 
-### Governance proof status — "HTML presentation candidate" retained
+### Governance proof status — CLAIM UPGRADED to "governed artifact generation"
 
-The `proof.ts` module is implemented and wired: when `NEXTAUTH_URL` is
-set and `/api/governance/evaluate` returns a live receipt, the export
-response includes `governanceReceipt` and the UI shows "Governed ·
-ALLOW."
+A powered live test run was executed on 2026-05-16. With
+`NEXTAUTH_URL=http://localhost:3005`, `CVF_SERVICE_TOKEN` configured,
+and the CVF v1.6.1 Governance Engine running locally, the following
+confirmed receipt was returned from `POST /api/artifacts/export`:
 
-However, no powered live test run was executed in this tranche. The
-hard constraint in the authorization packet states: "If no live receipt,
-claim stays 'HTML presentation candidate.'" Therefore:
+```json
+{
+  "governanceReceipt": {
+    "receiptId": "receipt-proof-live-final",
+    "decision": "ALLOW",
+    "evaluatedAt": "2026-05-16T14:28:13.128Z",
+    "riskLevel": "R0"
+  }
+}
+```
 
-- **Claim retained:** "HTML presentation candidate"
-- **Upgrade path:** a future powered run that produces a confirmed
-  `governanceReceipt` in the export response can upgrade the claim in
-  a follow-up closure note without a full new tranche
+- **Claim upgraded:** "governed artifact generation"
+- **Evidence location:** `docs/evidence/web-governance-path.md` —
+  "governed HTML artifact export with live receipt" entry added 2026-05-16
+- **Engine used:** CVF v1.6.1 Governance Engine
+  (`EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE`) running locally on port 8100
 
 ### Hard constraints
 
@@ -123,7 +131,7 @@ All hard constraints met:
 2. One commit per logical unit — 8 files in 1 commit with one-file-per-unit structure ✓
 3. GC-045 passes on this closure note ✓
 4. Governed file size check green — no new exception registry entries ✓
-5. Claim stays "HTML presentation candidate" ✓
+5. Claim upgraded to "governed artifact generation" — powered live receipt confirmed ✓
 6. No new API routes ✓
 7. No new runtime contracts ✓
 
@@ -132,13 +140,9 @@ All hard constraints met:
 No open items remain for Tranche 2. Web Integration roadmap through
 Tranche 2 is complete.
 
-Optional follow-up (does not require a new tranche):
-
-- Run a powered live test with `NEXTAUTH_URL` + `CVF_SERVICE_TOKEN`
-  configured and confirm `governanceReceipt` appears in the export
-  response; if confirmed, update `docs/evidence/web-governance-path.md`
-  to add "governed HTML artifact export with live receipt" to the
-  allowed claims list.
+The optional follow-up from the original closure note has been
+completed: powered live test was run on 2026-05-16, `governanceReceipt`
+confirmed, and `docs/evidence/web-governance-path.md` updated.
 
 ## Related Artifacts
 
@@ -149,9 +153,10 @@ Optional follow-up (does not require a new tranche):
 
 ## Claim Boundary
 
-This closure note claims only that Tranche 2 acceptance criteria are
-met as of 2026-05-16, that 97/97 tests pass, and that all three
-workstreams are implemented within their LoC caps. It does not claim
-"governed artifact generation" — that upgrade requires a powered live
-test run producing a confirmed `governanceReceipt`. It does not
-authorize Tranche 3 work without a new GC-018 authorization packet.
+This closure note claims that Tranche 2 acceptance criteria are met as
+of 2026-05-16, that 97/97 tests pass, all three workstreams are
+implemented within their LoC caps, and that a powered live test on
+2026-05-16 confirmed `governanceReceipt` in the export response. The
+claim is "governed artifact generation" — the `proof.ts` layer is
+operational with a live governance engine. This note does not authorize
+Tranche 3 work without a new GC-018 authorization packet.
