@@ -20,7 +20,7 @@ Implemented surface:
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/artifacts/page.tsx`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/knowledge/intake/page.tsx`
-- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/agent-handoff/page.tsx`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/Sidebar.tsx`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/i18n/en.json`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/i18n/vi.json`
@@ -31,7 +31,7 @@ Implemented surface:
 
 This closure covers:
 
-- bilingual Artifact Export, Knowledge Intake, and Agent Handoff web surfaces;
+- bilingual Review Packet, Knowledge Intake, and Work Transfer web surfaces;
 - practical local intake and handoff workflows for non-coders;
 - visible dashboard navigation for the new surfaces;
 - public README cleanup and live web link placement;
@@ -46,7 +46,7 @@ Delivered behavior:
 - Artifact Export follows the app language setting and still exports HTML only.
 - Knowledge Intake now lets a non-coder prepare a source-aware review packet
   preview instead of only reading a placeholder.
-- Agent Handoff now lets a user test the handoff shape with the existing
+- Work Transfer now lets a user check the transfer shape with the existing
   validator instead of only reading a placeholder.
 - Sidebar navigation exposes Artifact Export, Knowledge Intake, and Agent
   Handoff.
@@ -77,7 +77,7 @@ Executed checks:
 
 ```bash
 cd EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web
-npm run lint -- src/components/ArtifactExportPanel.tsx src/components/ArtifactExportPanel.test.tsx "src/app/(dashboard)/artifacts/page.tsx" "src/app/(dashboard)/knowledge/intake/page.tsx" "src/app/(dashboard)/agent-handoff/page.tsx" src/components/Sidebar.tsx tests/e2e/artifact-export-panel.spec.ts
+npm run lint -- src/components/ArtifactExportPanel.tsx src/components/ArtifactExportPanel.test.tsx "src/app/(dashboard)/artifacts/page.tsx" "src/app/(dashboard)/knowledge/intake/page.tsx" "src/app/(dashboard)/work-transfer/page.tsx" src/components/Sidebar.tsx tests/e2e/artifact-export-panel.spec.ts
 npm run test:run -- src/components/ArtifactExportPanel.test.tsx src/app/api/artifacts/export/route.test.ts
 npx playwright test --config playwright.config.mock.ts tests/e2e/artifact-export-panel.spec.ts --reporter=line
 npx tsc --noEmit --pretty false

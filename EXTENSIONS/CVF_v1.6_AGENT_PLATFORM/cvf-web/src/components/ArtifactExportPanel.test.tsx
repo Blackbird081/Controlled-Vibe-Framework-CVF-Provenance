@@ -18,8 +18,8 @@ const EXPORT_RESULT: ArtifactExportResult = {
   receiptAnchor: 'receipt-review-packet',
   generatedAt: '2026-05-16T10:00:00.000Z',
   verification: [
-    { label: 'Source path recorded', passed: true, detail: 'docs/reviews/review-packet.md' },
-    { label: 'Claim Boundary visible', passed: true, detail: 'HTML presentation candidate only.' },
+    { label: 'Source reference recorded', passed: true, detail: 'docs/reviews/review-packet.md' },
+    { label: 'Review boundary visible', passed: true, detail: 'HTML review packet only.' },
   ],
 };
 
@@ -46,18 +46,18 @@ describe('ArtifactExportPanel', () => {
   it('renders the English HTML export surface', () => {
     render(<ArtifactExportPanel />);
 
-    expect(screen.getByText('Artifact Export')).toBeTruthy();
+    expect(screen.getByText('Review Packet Export')).toBeTruthy();
     expect(screen.getByText(/HTML only/i)).toBeTruthy();
     expect(screen.getByLabelText('Title')).toBeTruthy();
-    expect(screen.getByLabelText('Source path')).toBeTruthy();
-    expect(screen.getByText('Generate HTML')).toBeTruthy();
+    expect(screen.getByLabelText('Source reference')).toBeTruthy();
+    expect(screen.getByText('Build HTML')).toBeTruthy();
   });
 
   it('renders Vietnamese labels when the app language is Vietnamese', () => {
     mockLanguage = 'vi';
     render(<ArtifactExportPanel />);
 
-    expect(screen.getByText('Xuất Artifact')).toBeTruthy();
+    expect(screen.getByText('Xuất gói rà soát')).toBeTruthy();
     expect(screen.getByLabelText('Tiêu đề')).toBeTruthy();
     expect(screen.getByText('Tạo HTML')).toBeTruthy();
   });
@@ -69,7 +69,7 @@ describe('ArtifactExportPanel', () => {
     fireEvent.change(screen.getByLabelText('Title'), {
       target: { value: 'Review Packet' },
     });
-    fireEvent.click(screen.getByText('Generate HTML'));
+    fireEvent.click(screen.getByText('Build HTML'));
 
     await waitFor(() => {
       expect(fetch).toHaveBeenCalledWith('/api/artifacts/export', expect.objectContaining({
@@ -82,10 +82,10 @@ describe('ArtifactExportPanel', () => {
     const fetchCalls = (fetch as unknown as { mock: { calls: Array<[string, RequestInit]> } }).mock.calls;
     const requestBody = JSON.parse(String(fetchCalls[0][1].body));
     expect(requestBody.title).toBe('Review Packet');
-    expect(requestBody.claimBoundary).toMatch(/HTML presentation candidate/i);
+    expect(requestBody.claimBoundary).toMatch(/HTML review packet/i);
     expect(screen.getByText('#receipt-review-packet')).toBeTruthy();
-    expect(screen.getByTitle('Sandboxed preview')).toBeTruthy();
-    expect(screen.getByText('Source path recorded')).toBeTruthy();
+    expect(screen.getByTitle('Preview')).toBeTruthy();
+    expect(screen.getByText('Source reference recorded')).toBeTruthy();
     expect(screen.getByText('2/2')).toBeTruthy();
   });
 

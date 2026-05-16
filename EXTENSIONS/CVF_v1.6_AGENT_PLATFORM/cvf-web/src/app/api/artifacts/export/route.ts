@@ -34,6 +34,10 @@ function normalizeMemoryClass(value: unknown): ArtifactMemoryClass {
   return value === 'POINTER_RECORD' ? 'POINTER_RECORD' : 'FULL_RECORD';
 }
 
+function formatRecordType(value: ArtifactMemoryClass): string {
+  return value === 'POINTER_RECORD' ? 'Reference record' : 'Complete record';
+}
+
 function escapeHtml(value: string): string {
   return value
     .replace(/&/g, '&amp;')
@@ -126,42 +130,42 @@ function buildVerification(input: Required<ArtifactExportRequest>, html: string)
 
   return [
     {
-      label: 'Source path recorded',
+      label: 'Source reference recorded',
       passed: String(input.sourcePath).length > 0,
       detail: String(input.sourcePath),
     },
     {
-      label: 'Memory class present',
+      label: 'Record type selected',
       passed: String(input.memoryClass).length > 0,
-      detail: String(input.memoryClass),
+      detail: formatRecordType(input.memoryClass as ArtifactMemoryClass),
     },
     {
-      label: 'Status present',
+      label: 'Review status present',
       passed: String(input.status).length > 0,
       detail: String(input.status),
     },
     {
-      label: 'Claim Boundary visible',
-      passed: claimBoundary.length > 0 && html.includes('Claim Boundary'),
+      label: 'Review boundary visible',
+      passed: claimBoundary.length > 0 && html.includes('Review boundary'),
       detail: claimBoundary,
     },
     {
-      label: 'Receipt anchor attached',
+      label: 'Receipt reference attached',
       passed: receiptAnchorId.length > 0 && html.includes(`id="${escapeHtml(receiptAnchorId)}"`),
       detail: `#${receiptAnchorId}`,
     },
     {
-      label: 'No raw secret pattern detected',
+      label: 'No secret-like text detected',
       passed: !hasSecret,
       detail: hasSecret ? 'Potential secret-like value detected in source content.' : 'No common secret pattern detected.',
     },
     {
-      label: 'Meaning boundary preserved',
-      passed: hasRequiredSection(sourceContent, 'Claim Boundary') || claimBoundary.length > 0,
-      detail: 'Renderer adds presentation only and keeps the source boundary visible.',
+      label: 'Meaning preserved',
+      passed: hasRequiredSection(sourceContent, 'Claim Boundary') || hasRequiredSection(sourceContent, 'Review Boundary') || claimBoundary.length > 0,
+      detail: 'The packet adds presentation only and keeps the review boundary visible.',
     },
     {
-      label: 'No external network dependency',
+      label: 'Self-contained HTML',
       passed: !/(<script|https?:\/\/|@import)/i.test(html),
       detail: 'The HTML uses inline styles only.',
     },
@@ -199,22 +203,22 @@ function buildHtml(input: Required<ArtifactExportRequest>, generatedAt: string, 
 <body>
   <main>
     <header>
-      <span class="label">CVF HTML Presentation Candidate</span>
+      <span class="label">CVF HTML Review Packet</span>
       <h1>${escapeHtml(title)}</h1>
       <div class="meta">
-        <div><span class="label">Memory class</span>${escapeHtml(String(input.memoryClass))}</div>
-        <div><span class="label">Status</span>${escapeHtml(String(input.status))}</div>
-        <div><span class="label">Source path</span>${escapeHtml(String(input.sourcePath))}</div>
+        <div><span class="label">Record type</span>${escapeHtml(formatRecordType(input.memoryClass as ArtifactMemoryClass))}</div>
+        <div><span class="label">Review status</span>${escapeHtml(String(input.status))}</div>
+        <div><span class="label">Source reference</span>${escapeHtml(String(input.sourcePath))}</div>
         <div><span class="label">Generated</span>${escapeHtml(generatedAt)}</div>
         <div><span class="label">Source hash</span>${escapeHtml(sourceHash)}</div>
       </div>
     </header>
     <section id="${escapeHtml(receiptAnchor)}" class="receipt">
-      <span class="label">Receipt anchor</span>
+      <span class="label">Receipt reference</span>
       <p>#${escapeHtml(String(input.receiptAnchor))}</p>
     </section>
     <section class="boundary">
-      <span class="label">Claim Boundary</span>
+      <span class="label">Review boundary</span>
       <p>${escapeHtml(String(input.claimBoundary))}</p>
     </section>
     <section>

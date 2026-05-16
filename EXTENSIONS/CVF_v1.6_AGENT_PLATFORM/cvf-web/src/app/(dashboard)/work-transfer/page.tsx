@@ -9,7 +9,7 @@ import type { AgentRole } from '@/lib/multi-agent';
 
 const COPY = {
   en: {
-    label: 'Agent Handoff',
+    label: 'Work Transfer',
     title: 'Pass reviewed work forward with less guesswork',
     intro: 'Check whether a reviewed packet carries enough context for the next person or assistant to continue safely.',
     from: 'From step',
@@ -17,41 +17,41 @@ const COPY = {
     status: 'Previous step status',
     output: 'Reviewed summary',
     outputPlaceholder: 'Paste the short review summary that should move forward.',
-    check: 'Handoff check',
+    check: 'Transfer check',
     carried: 'The reviewed context is present and can move forward.',
     missing: 'The reviewed context is missing and should not move forward yet.',
     summary: 'Carried summary',
     issues: 'Review notes',
-    noIssues: 'No handoff issues were found. Keep the source, receipt, and claim boundary visible for review.',
-    benefitsTitle: 'Why this helps non-coders',
-    boundary: 'This page checks a local handoff shape. It does not claim a live multi-agent transfer by itself.',
+    noIssues: 'No transfer issues were found. Keep the source, receipt, and review boundary visible.',
+    benefitsTitle: 'Why this helps people review work',
+    boundary: 'This page checks whether the next step has enough context. It is not final proof by itself.',
     benefits: [
       'The next person can see what was reviewed and what still needs attention.',
       'The visible receipt makes the packet easier to trust, share, and revisit.',
-      'New knowledge becomes a clear handoff note instead of hidden background context.',
+      'New knowledge becomes a clear transfer note instead of hidden background context.',
     ],
   },
   vi: {
-    label: 'Bàn giao cho agent',
-    title: 'Bàn giao phần đã review với ít phỏng đoán hơn',
-    intro: 'Kiểm tra packet đã review có đủ ngữ cảnh để người hoặc assistant tiếp theo tiếp tục an toàn hay không.',
+    label: 'Chuyển giao công việc',
+    title: 'Chuyển phần đã rà soát sang bước tiếp theo với ít phỏng đoán hơn',
+    intro: 'Kiểm tra gói đã rà soát có đủ ngữ cảnh để người hoặc trợ lý tiếp theo tiếp tục an toàn hay không.',
     from: 'Bước trước',
     to: 'Bước tiếp theo',
     status: 'Trạng thái bước trước',
-    output: 'Tóm tắt đã review',
+    output: 'Tóm tắt đã rà soát',
     outputPlaceholder: 'Dán tóm tắt ngắn cần chuyển tiếp.',
-    check: 'Kiểm tra bàn giao',
-    carried: 'Ngữ cảnh đã review có đủ để chuyển tiếp.',
-    missing: 'Ngữ cảnh đã review đang thiếu và chưa nên chuyển tiếp.',
+    check: 'Kiểm tra chuyển giao',
+    carried: 'Ngữ cảnh đã rà soát có đủ để chuyển tiếp.',
+    missing: 'Ngữ cảnh đã rà soát đang thiếu và chưa nên chuyển tiếp.',
     summary: 'Tóm tắt được chuyển tiếp',
-    issues: 'Ghi chú review',
-    noIssues: 'Không phát hiện vấn đề trong handoff. Vẫn cần giữ nguồn, receipt và ranh giới claim để review.',
-    benefitsTitle: 'Vì sao hữu ích cho non-coder',
-    boundary: 'Trang này kiểm tra hình dạng handoff cục bộ. Nó không tự claim live multi-agent transfer.',
+    issues: 'Ghi chú rà soát',
+    noIssues: 'Không phát hiện vấn đề trong chuyển giao. Vẫn cần giữ nguồn, receipt và ranh giới rà soát.',
+    benefitsTitle: 'Vì sao hữu ích cho người rà soát',
+    boundary: 'Trang này kiểm tra bước tiếp theo có đủ ngữ cảnh hay chưa. Nó không phải bằng chứng cuối cùng.',
     benefits: [
-      'Người tiếp theo thấy rõ phần nào đã review và phần nào còn cần chú ý.',
-      'Receipt nhìn thấy được giúp packet dễ tin, dễ chia sẻ và dễ xem lại.',
-      'Kiến thức mới trở thành ghi chú bàn giao rõ ràng thay vì ngữ cảnh ẩn.',
+      'Người tiếp theo thấy rõ phần nào đã rà soát và phần nào còn cần chú ý.',
+      'Receipt nhìn thấy được giúp gói nội dung dễ tin, dễ chia sẻ và dễ xem lại.',
+      'Kiến thức mới trở thành ghi chú chuyển giao rõ ràng thay vì ngữ cảnh ẩn.',
     ],
   },
 };
@@ -62,9 +62,25 @@ const DECISION_STYLE: Record<HandoffDecision, string> = {
   BLOCK: 'border-red-200 bg-red-50 text-red-800 dark:border-red-900/60 dark:bg-red-950/30 dark:text-red-100',
 };
 
-export default function AgentHandoffPage() {
+const ROLE_LABELS = {
+  en: {
+    orchestrator: 'Coordinator',
+    architect: 'Planner',
+    builder: 'Maker',
+    reviewer: 'Reviewer',
+  },
+  vi: {
+    orchestrator: 'Điều phối',
+    architect: 'Lập kế hoạch',
+    builder: 'Thực hiện',
+    reviewer: 'Rà soát',
+  },
+} satisfies Record<'en' | 'vi', Record<AgentRole, string>>;
+
+export default function WorkTransferPage() {
   const { language } = useLanguage();
   const copy = COPY[language === 'vi' ? 'vi' : 'en'];
+  const roleLabels = ROLE_LABELS[language === 'vi' ? 'vi' : 'en'];
   const [fromAgent, setFromAgent] = useState<AgentRole>('architect');
   const [toAgent, setToAgent] = useState<AgentRole>('builder');
   const [status, setStatus] = useState<'completed' | 'running' | 'failed'>('completed');
@@ -96,8 +112,8 @@ export default function AgentHandoffPage() {
           </div>
 
           <div className="mt-5 grid gap-4 sm:grid-cols-2">
-            <SelectField label={copy.from} value={fromAgent} onChange={value => setFromAgent(value as AgentRole)} options={['orchestrator', 'architect', 'builder', 'reviewer']} />
-            <SelectField label={copy.to} value={toAgent} onChange={value => setToAgent(value as AgentRole)} options={['orchestrator', 'architect', 'builder', 'reviewer']} />
+            <SelectField label={copy.from} value={fromAgent} onChange={value => setFromAgent(value as AgentRole)} options={roleLabels} />
+            <SelectField label={copy.to} value={toAgent} onChange={value => setToAgent(value as AgentRole)} options={roleLabels} />
             <SelectField label={copy.status} value={status} onChange={value => setStatus(value as 'completed' | 'running' | 'failed')} options={['completed', 'running', 'failed']} />
             <div className="hidden items-end justify-center sm:flex">
               <ArrowRight className="mb-3 h-5 w-5 text-gray-400" aria-hidden="true" />
@@ -154,12 +170,14 @@ export default function AgentHandoffPage() {
   );
 }
 
-function SelectField({ label, value, options, onChange }: { label: string; value: string; options: string[]; onChange: (value: string) => void }) {
+function SelectField({ label, value, options, onChange }: { label: string; value: string; options: string[] | Record<string, string>; onChange: (value: string) => void }) {
+  const entries = Array.isArray(options) ? options.map(option => [option, option]) : Object.entries(options);
+
   return (
     <label className="text-sm font-semibold">
       {label}
       <select value={value} onChange={event => onChange(event.target.value)} className="mt-1 w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm dark:border-gray-700 dark:bg-gray-950">
-        {options.map(option => <option key={option} value={option}>{option}</option>)}
+        {entries.map(([optionValue, optionLabel]) => <option key={optionValue} value={optionValue}>{optionLabel}</option>)}
       </select>
     </label>
   );

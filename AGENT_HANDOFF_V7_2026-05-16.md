@@ -282,7 +282,7 @@ Implemented owner surface:
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.test.ts`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/artifact-export-panel.spec.ts`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/knowledge/intake/page.tsx`
-- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/agent-handoff/page.tsx`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx`
 
 Governance packet:
 
@@ -296,7 +296,7 @@ Delivered behavior:
 - HTML-only self-contained export API with visible receipt and claim boundary;
 - secret-like source content rejected before rendering;
 - English-only Artifact Export surface;
-- `/artifacts`, `/knowledge/intake`, and `/agent-handoff` pages explain
+- `/artifacts`, `/knowledge/intake`, and `/work-transfer` pages explain
   review packets, receipts, and handoff value for non-coders;
 - route unit, component unit, and mock Playwright E2E coverage.
 
@@ -332,8 +332,8 @@ Additional delivered behavior after Tranche 1:
 - `/artifacts` is bilingual and still bounded to HTML presentation candidate;
 - `/knowledge/intake` now provides a local review-packet intake form for
   non-coders instead of a placeholder;
-- `/agent-handoff` now provides an interactive local handoff validator surface;
-- Sidebar exposes Artifact Export, Knowledge Intake, and Agent Handoff routes;
+- `/work-transfer` now provides an interactive local transfer-check surface;
+- Sidebar exposes Review Packets, Knowledge Intake, and Work Transfer routes;
 - public README cleanup prepared in the public-sync clone: internal metadata
   removed, Quick Navigation moved up, `Core Value` heading added, and
   `https://vibcode.netlify.app/home` added as the live web platform link.

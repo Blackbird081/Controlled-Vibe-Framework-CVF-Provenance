@@ -9,17 +9,17 @@ const BASE_REQUEST = {
   sourceContent: [
     '# New Knowledge Review Packet',
     '',
-    'Memory class: FULL_RECORD',
+    'Record type: Complete review record',
     '',
-    'Status: REVIEW_READY',
+    'Review status: Ready for review',
     '',
-    '## Claim Boundary',
+    '## Review Boundary',
     '',
-    'This packet is an HTML presentation candidate only.',
+    'This packet helps review and handoff. It is not final proof by itself.',
   ].join('\n'),
   memoryClass: 'FULL_RECORD',
-  status: 'REVIEW_READY',
-  claimBoundary: 'HTML presentation candidate only. Not governed artifact generation proof.',
+  status: 'Ready for review',
+  claimBoundary: 'HTML review packet only. Not final proof by itself.',
   receiptAnchor: 'receipt-new-knowledge-review',
 };
 
@@ -40,10 +40,10 @@ describe('/api/artifacts/export', () => {
     expect(payload.success).toBe(true);
     expect(payload.data.filename).toBe('new-knowledge-review-packet.html');
     expect(payload.data.receiptAnchor).toBe('receipt-new-knowledge-review');
-    expect(payload.data.html).toContain('CVF HTML Presentation Candidate');
-    expect(payload.data.html).toContain('Memory class');
-    expect(payload.data.html).toContain('REVIEW_READY');
-    expect(payload.data.html).toContain('Claim Boundary');
+    expect(payload.data.html).toContain('CVF HTML Review Packet');
+    expect(payload.data.html).toContain('Record type');
+    expect(payload.data.html).toContain('Ready for review');
+    expect(payload.data.html).toContain('Review boundary');
     expect(payload.data.html).toContain('receipt-new-knowledge-review');
     expect(payload.data.html).not.toMatch(/<script|https?:\/\/|@import/i);
     expect(payload.data.verification.every((item: { passed: boolean }) => item.passed)).toBe(true);

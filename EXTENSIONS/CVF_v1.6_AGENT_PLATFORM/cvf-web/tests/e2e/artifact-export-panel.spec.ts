@@ -18,8 +18,8 @@ test('Artifacts page creates an English HTML review packet without provider call
           receiptAnchor: 'receipt-customer-insight',
           generatedAt: '2026-05-16T10:00:00.000Z',
           verification: [
-            { label: 'Source path recorded', passed: true, detail: 'docs/reviews/customer-insight.md' },
-            { label: 'Claim Boundary visible', passed: true, detail: 'HTML presentation candidate only.' },
+            { label: 'Source reference recorded', passed: true, detail: 'docs/reviews/customer-insight.md' },
+            { label: 'Review boundary visible', passed: true, detail: 'HTML review packet only.' },
           ],
         },
       }),
@@ -34,24 +34,24 @@ test('Artifacts page creates an English HTML review packet without provider call
   await expect(page.getByText('Bring knowledge into the review')).toBeVisible();
   await expect(page.getByText('Keep the receipt visible')).toBeVisible();
   await expect(page.getByText('Hand off with less guessing')).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Artifact Export' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Review Packet Export' })).toBeVisible();
 
   await page.getByLabel('Title').fill('Customer Insight Review');
-  await page.getByRole('button', { name: /Generate HTML/i }).click();
+  await page.getByRole('button', { name: /Build HTML/i }).click();
 
   await expect(page.getByText('#receipt-customer-insight')).toBeVisible();
-  await expect(page.getByText('Source path recorded')).toBeVisible();
-  await expect(page.getByTitle('Sandboxed preview')).toBeVisible();
+  await expect(page.getByText('Source reference recorded')).toBeVisible();
+  await expect(page.getByTitle('Preview')).toBeVisible();
 
   const artifactText = await page.getByTestId('artifact-export-panel').textContent();
-  expect(artifactText).toContain('Artifact Export');
+  expect(artifactText).toContain('Review Packet Export');
 });
 
 test('Artifacts page follows the Vietnamese language setting', async ({ page }) => {
   await login(page);
   await page.goto('/artifacts');
 
-  await expect(page.getByRole('heading', { name: /Biến phần đã duyệt thành packet HTML để review/i })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Xuất Artifact' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: /Biến phần đã duyệt thành gói HTML để rà soát/i })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Xuất gói rà soát' })).toBeVisible();
   await expect(page.getByLabel('Tiêu đề')).toBeVisible();
 });

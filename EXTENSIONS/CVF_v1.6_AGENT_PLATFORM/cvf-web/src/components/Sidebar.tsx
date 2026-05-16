@@ -205,9 +205,9 @@ export default function Sidebar({
                                 href="/artifacts" onNavigate={onClose} />
                         )}
                         {userRole !== 'viewer' && (
-                            <SidebarNavItem icon={ClipboardCheck} label={t('nav.agentHandoff') || 'Agent Handoff'}
-                                isActive={isRoute('/agent-handoff')}
-                                href="/agent-handoff" onNavigate={onClose} />
+                            <SidebarNavItem icon={ClipboardCheck} label={t('nav.workTransfer') || 'Work Transfer'}
+                                isActive={isRoute('/work-transfer')}
+                                href="/work-transfer" onNavigate={onClose} />
                         )}
                     </SidebarNavGroup>
 
