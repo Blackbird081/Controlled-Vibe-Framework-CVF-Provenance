@@ -9,6 +9,27 @@ export type {
   StreamingExecutionConsumerPipelineContractDependencies,
 } from "./streaming.execution.consumer.pipeline.contract";
 
+// CVF 16.5 OpenAgentd absorption - Tool Call Trace / Sandbox Runtime
+export {
+  ToolCallTraceContract,
+  createToolCallTraceContract,
+} from "./tool.call.trace.contract";
+export type {
+  ToolTraceDecision,
+  ToolTraceStatus,
+  ToolTraceRiskLevel,
+  ToolTracePermissionLevel,
+  ToolTraceDomain,
+  ToolTraceEventType,
+  ToolTracePermissionRequest,
+  ToolTracePolicyDecision,
+  ToolCallTraceRequest,
+  ToolCallTraceEvent,
+  ToolTraceAuditReceipt,
+  ToolCallTraceRecord,
+  ToolCallTraceContractDependencies,
+} from "./tool.call.trace.contract";
+
 // W2-T29 — Streaming Execution Consumer Pipeline Batch (CP2)
 export {
   StreamingExecutionConsumerPipelineBatchContract,

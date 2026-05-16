@@ -392,3 +392,79 @@ eventually carry:
 - `b3ab30f7` memory class + test-depth alignment
 
 These commits are durable local state; they do not require redoing.
+
+## 2026-05-16 - CVF 16.5 Tool Call Trace / Sandbox Runtime Absorption
+
+Status: completed locally as `runtime-owned`; provenance push pending this
+session's final pre-push chain.
+
+Operator direction:
+
+- focus fully on the knowledge absorption roadmap;
+- audit, test, commit, and push autonomously;
+- absorbed knowledge must be truly alive inside CVF;
+- use existing provider keys if live tests are required.
+
+Implemented owner surface:
+
+- `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/tool.call.trace.contract.ts`
+- `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/tool.call.trace.contract.test.ts`
+
+Source subset:
+
+- `.private_reference/legacy/CVF 16.5/OpenAgentd/CVF_TOOL_CALL_TRACE_PROTOCOL.md`
+- `.private_reference/legacy/CVF 16.5/OpenAgentd/CVF_LOCAL_SANDBOX_PERMISSION_POLICY.md`
+- `.private_reference/legacy/CVF 16.5/OpenAgentd/CVF_MCP_TOOL_BOUNDARY_POLICY.md`
+- `.private_reference/legacy/CVF 16.5/OpenAgentd/CVF_LOCAL_TELEMETRY_RECEIPT_SPEC.md`
+
+Delivered behavior:
+
+- default-deny tool trace when no explicit policy exists;
+- explicit deny and approval-required paths block before execution and emit
+  receipts;
+- allow path emits call, policy, start, end, and audit receipt events;
+- error path emits call, policy, start, error, and audit receipt events;
+- argument/result/error payloads are hashed and sensitive fields are redacted;
+- high-risk or mutating local actions are marked `sandboxRequired`.
+
+Governance packet:
+
+- `docs/baselines/CVF_GC018_TOOL_CALL_TRACE_SANDBOX_AUTHORIZATION_2026-05-16.md`
+- `docs/baselines/CVF_ADR_TOOL_CALL_TRACE_SANDBOX_RUNTIME_OWNERSHIP_2026-05-16.md`
+- `docs/baselines/CVF_TOOL_CALL_TRACE_SANDBOX_SOURCE_ADOPTION_MATRIX_2026-05-16.md`
+- `docs/baselines/CVF_TOOL_CALL_TRACE_SANDBOX_TEST_AND_PROOF_PLAN_2026-05-16.md`
+- `docs/roadmaps/CVF_TOOL_CALL_TRACE_SANDBOX_RUNTIME_ADOPTION_ROADMAP_2026-05-16.md`
+- `docs/reviews/CVF_TOOL_CALL_TRACE_SANDBOX_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
+
+Verification already executed:
+
+```bash
+cd EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION
+npm run check
+npx vitest run tests/tool.call.trace.contract.test.ts --config vitest.config.ts
+```
+
+Result:
+
+- Execution Plane typecheck PASS;
+- focused Tool Call Trace vitest PASS, 1 file / 8 tests.
+
+Compatibility fix included:
+
+- `EXTENSIONS/CVF_MODEL_GATEWAY/src/routing-policy.ts` now stores the checked
+  `request.policy` in a local constant so strict TypeScript recognizes the
+  non-null policy boundary.
+
+Claim boundary:
+
+- this is deterministic local contract behavior;
+- it does not claim live provider/tool enforcement or production telemetry
+  persistence;
+- future live MCP/local-tool wiring requires a fresh GC-018 and live proof.
+
+Recommended next absorption lane:
+
+- Agent Boundary / Delegation if the next goal is agent registry, permission
+  profile, and structured handoff enforcement;
+- MCP Business Adapter if the next goal is tool adapter governance with this
+  trace contract as the receipt boundary.

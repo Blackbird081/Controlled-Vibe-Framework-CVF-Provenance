@@ -50,11 +50,12 @@ export class RoutingPolicyEngine {
       };
     }
 
+    const policy = request.policy;
     const providers = this.orderedProviders(request).filter((provider) => {
       return this.registry.isRoutable(provider.id, {
-        allowedProviderIds: request.policy.allowedProviderIds,
-        blockedProviderIds: request.policy.blockedProviderIds,
-        allowExperimental: request.policy.allowExperimentalProviders,
+        allowedProviderIds: policy.allowedProviderIds,
+        blockedProviderIds: policy.blockedProviderIds,
+        allowExperimental: policy.allowExperimentalProviders,
       });
     });
 

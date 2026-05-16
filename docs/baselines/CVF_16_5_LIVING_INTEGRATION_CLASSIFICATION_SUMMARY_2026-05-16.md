@@ -80,11 +80,11 @@ Do not leave a selected source at "started but not alive."
 
 | Lane | Source folders | Fit | Current state | Living owner target | Definition of alive |
 |---|---|---:|---|---|---|
-| Model Gateway Runtime | `freellmapi`, `free Claude Code` | High | `roadmap-ready` | `EXTENSIONS/CVF_MODEL_GATEWAY/` | 8 adapted gateway primitives, Guard Contract boundary, vitest coverage, package check, live proof for enforcement claims |
+| Model Gateway Runtime | `freellmapi`, `free Claude Code` | High | `runtime-owned` | `EXTENSIONS/CVF_MODEL_GATEWAY/` | 8 adapted gateway primitives, Guard Contract boundary, vitest coverage, package check, live proof for enforcement claims |
 | Knowledge Intake / Vault | `tolaria` | High | `docs-classified` | Knowledge Layer, Context Builder, Learning Plane | external markdown assets can be registered, classified, provenance-receipted, drift-marked, and reinjected only through governed context packaging |
 | Controlled Memory | `agentmemory`, OpenAgentd memory notes | High | `runtime-owned` | Learning Plane + Context Builder + Guard Contract | memory capture/retrieval/reinjection goes through privacy filter, lifecycle policy, access policy, context packager, and receipt |
 | Agent Boundary / Delegation | `Claude Kit`, `OpenAgentd` | High | `docs-classified` | `EXTENSIONS/CVF_AGENT_DEFINITION/`, `EXTENSIONS/CVF_AGENT_LEDGER/`, Execution Plane, Governance Expansion | agents have registry records, permission profiles, structured handoff, risk policy, and audit receipt tests |
-| Tool Call Trace / Sandbox | `OpenAgentd` | High/Medium | `docs-classified` | Execution Plane + Trust/Sandbox surfaces | tool calls emit lifecycle trace, policy check, redacted args/results, block/error/success receipts, and sandbox permission decisions |
+| Tool Call Trace / Sandbox | `OpenAgentd` | High/Medium | `runtime-owned` | Execution Plane + Trust/Sandbox surfaces | tool calls emit lifecycle trace, policy check, redacted args/results, block/error/success receipts, and sandbox permission decisions |
 | MCP Business Adapter | `pancake-pos-mcp` | High for generic 7 files; Pancake profile deferred | `docs-classified` | Execution Plane adapter boundary | generic MCP business tools have contracts, risk classifier, approval gate, transport policy, execution receipt, and tests; Pancake profile remains optional |
 | Observability Delta | `abtop` | High/Medium | `docs-classified` | `EXTENSIONS/CVF_v1.8.1_ADAPTIVE_OBSERVABILITY_RUNTIME/` | observe-only signals for session/token/context/rate/quota/process/port exist without kill/reroute/approval authority |
 | Document Artifact Renderer | `md2html` | Medium/High | `docs-classified` | docs/evidence presentation surface, future renderer extension only if approved | governed HTML artifacts preserve source meaning, evidence state, risk, approval, failed checks, and pass artifact verification |
@@ -112,24 +112,37 @@ Evidence:
 
 - `docs/reviews/CVF_CONTROLLED_MEMORY_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
 
-3. **Agent/Tool Boundary**
+3. **Tool Call Trace / Sandbox**
+
+Status: completed as `runtime-owned` on 2026-05-16.
+
+Owner:
+
+- `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/tool.call.trace.contract.ts`
+
+Evidence:
+
+- `docs/reviews/CVF_TOOL_CALL_TRACE_SANDBOX_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
+
+4. **Agent Boundary / Delegation**
 
 Reason: high-fit governance value and direct continuity with CVF's non-coder and
 multi-agent posture.
 
-Decision needed after Controlled Memory: choose Agent Boundary/Delegation or
-Tool Call Trace/Sandbox as the next bounded runtime-owned tranche.
+Decision needed after Tool Call Trace / Sandbox: choose Agent
+Boundary/Delegation or MCP Business Adapter as the next bounded runtime-owned
+tranche.
 
-4. **MCP Business Adapter**
+5. **MCP Business Adapter**
 
 Reason: generic business-tool governance pattern is high fit, but it should wait
 until Model Gateway and tool-call boundary are clearer.
 
-5. **Observability Delta**
+6. **Observability Delta**
 
 Reason: useful, but must be a delta on v1.8.1 rather than a new plane.
 
-6. **Artifact Renderer / OpenSpec / Skill Evolution / Knowledge Vault**
+7. **Artifact Renderer / OpenSpec / Skill Evolution / Knowledge Vault**
 
 Reason: valuable, but should stay docs-classified until an operator selects one
 bounded owner surface with a clear product need.
@@ -142,7 +155,7 @@ bounded owner surface with a clear product need.
 | Knowledge Intake / Vault | GC-018, owner decision between Knowledge Layer and Context Builder, intake receipt schema, source filtering test plan |
 | Controlled Memory | Completed: `docs/baselines/CVF_GC018_CONTROLLED_MEMORY_RUNTIME_AUTHORIZATION_2026-05-16.md`, `docs/baselines/CVF_ADR_CONTROLLED_MEMORY_RUNTIME_OWNERSHIP_2026-05-16.md`, `docs/baselines/CVF_CONTROLLED_MEMORY_SOURCE_ADOPTION_MATRIX_2026-05-16.md`, `docs/baselines/CVF_CONTROLLED_MEMORY_TEST_AND_PROOF_PLAN_2026-05-16.md`, `docs/roadmaps/CVF_CONTROLLED_MEMORY_RUNTIME_ADOPTION_ROADMAP_2026-05-16.md` |
 | Agent Boundary / Delegation | GC-018, agent registry/permission ADR, handoff contract tests, audit receipt plan |
-| Tool Call Trace / Sandbox | GC-018, trace lifecycle schema, sandbox permission matrix, redaction tests |
+| Tool Call Trace / Sandbox | Completed: `docs/baselines/CVF_GC018_TOOL_CALL_TRACE_SANDBOX_AUTHORIZATION_2026-05-16.md`, `docs/baselines/CVF_ADR_TOOL_CALL_TRACE_SANDBOX_RUNTIME_OWNERSHIP_2026-05-16.md`, `docs/baselines/CVF_TOOL_CALL_TRACE_SANDBOX_SOURCE_ADOPTION_MATRIX_2026-05-16.md`, `docs/baselines/CVF_TOOL_CALL_TRACE_SANDBOX_TEST_AND_PROOF_PLAN_2026-05-16.md`, `docs/roadmaps/CVF_TOOL_CALL_TRACE_SANDBOX_RUNTIME_ADOPTION_ROADMAP_2026-05-16.md` |
 | MCP Business Adapter | GC-018, generic vs domain profile split, approval gate tests, transport boundary tests |
 | Observability Delta | GC-018, v1.8.1 delta ADR, observe-only event schema, no-intervention tests |
 | Document Artifact Renderer | GC-018, artifact verification checklist, fixture set, secret-scan/render tests |
@@ -155,6 +168,7 @@ Current runtime-owned evidence:
 
 - `docs/reviews/CVF_MODEL_GATEWAY_RUNTIME_ADOPTION_LOCAL_CLOSURE_2026-05-16.md`
 - `docs/reviews/CVF_CONTROLLED_MEMORY_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
+- `docs/reviews/CVF_TOOL_CALL_TRACE_SANDBOX_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
 
 ## Verification
 
@@ -165,5 +179,6 @@ Verification is recorded in the lane-specific closure packets.
 This summary does not authorize implementation. It authorizes prioritization
 and prevents loss of absorption context.
 
-Model Gateway and Controlled Memory are now `runtime-owned`. All other lanes
-remain `docs-classified` until a new roadmap-ready packet is prepared.
+Model Gateway, Controlled Memory, and Tool Call Trace / Sandbox are now
+`runtime-owned`. All other lanes remain `docs-classified` until a new
+roadmap-ready packet is prepared.
