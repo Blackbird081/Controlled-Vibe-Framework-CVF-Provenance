@@ -375,6 +375,6 @@ This handoff:
 | V6 | 2026-05-16 | v4.0.0 GA |
 | V7 | 2026-05-16 | Absorption queue Steps 1–7 |
 | V8 | 2026-05-17 | Absorption queue Steps 8–10c (closed) |
-| **V9** | **2026-05-18** | **17.05 reconvergence Phase 0.A + Phase 1.0** |
+| **V9** | **2026-05-18** | **Phase 0.A/0.B/0.C + Phase 1.0 + extended scope (owner map, alias table, source matrix) + GC-018 filed for 1.P/I/R/M/2.A/3.S** |
 
 Archive: `CVF_SESSION/handoffs/archive/`
