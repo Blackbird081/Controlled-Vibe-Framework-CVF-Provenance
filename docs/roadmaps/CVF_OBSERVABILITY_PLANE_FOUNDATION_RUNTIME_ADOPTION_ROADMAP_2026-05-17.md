@@ -44,8 +44,8 @@ Web owner:
 | 3 | Add focused runtime tests | complete |
 | 4 | Add web API and bilingual runtime dashboard page | complete |
 | 5 | Add web route/page tests | complete |
-| 6 | Run focused verification and live release gate | focused complete; live gate pending final bundle |
-| 7 | Update inventory, handoff, and public-sync | in progress |
+| 6 | Run focused verification and live release gate | complete — live gate 7/7 PASS |
+| 7 | Update inventory, handoff, and public-sync | complete 2026-05-17 |
 
 ## Acceptance Criteria
 
