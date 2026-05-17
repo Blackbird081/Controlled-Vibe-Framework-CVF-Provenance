@@ -86,3 +86,18 @@ export {
 } from './receipt-envelope.contract';
 
 export { RECEIPT_ENVELOPE_ADAPTER_MAP } from './receipt-envelope-adapter-map';
+
+export type {
+  MemoryTierId,
+  MemoryTierSpec,
+  MemoryTierAdapterMeta,
+} from './memory-tier.contract';
+
+export {
+  MEMORY_TIER_SPECS,
+  DEFERRED_MEMORY_TIERS,
+  isCanonicalTier,
+  isTierImmutable,
+} from './memory-tier.contract';
+
+export { MEMORY_TIER_ADAPTER_MAP } from './memory-tier-adapter-map';
