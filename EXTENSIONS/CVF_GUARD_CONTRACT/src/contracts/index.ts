@@ -52,3 +52,18 @@ export {
 
 export { POLICY_ENGINE_ADAPTER_MAP } from './policy-engine-adapter-map';
 export { RISK_ENGINE_ADAPTER_MAP } from './risk-engine-adapter-map';
+
+export type {
+  AgentFunctionRole,
+  OperatorTeamRole,
+  AuthRbacRole,
+  GovernanceActorRole,
+  RoleAxisAssignment,
+  RoleAxisAdapterMeta,
+} from './role-axis.contract';
+
+export {
+  CANONICAL_ROLE_SURFACES,
+} from './role-axis.contract';
+
+export { ROLE_AXIS_ADAPTER_MAP } from './role-axis-adapter-map';
