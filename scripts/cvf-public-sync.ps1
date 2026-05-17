@@ -80,7 +80,19 @@ $DENY_PATTERNS = @(
     '^docs[/\\]roadmaps[/\\]',
     '\.env$',
     '\.env\.local$',
-    '\.env\.[^e]'
+    '\.env\.[^e]',
+    '[/\\]node_modules[/\\]',
+    '[/\\]\.next[/\\]',
+    '[/\\]\.next-',
+    '[/\\]coverage[/\\]',
+    '[/\\]test-results[/\\]',
+    '[/\\]playwright-report[/\\]',
+    '[/\\]__pycache__[/\\]',
+    '[/\\]\.data[/\\]',
+    '\.tsbuildinfo$',
+    '\.pyc$',
+    '\.log$',
+    '\.tmp$'
 )
 
 # -----------------------------------------------------------------------
