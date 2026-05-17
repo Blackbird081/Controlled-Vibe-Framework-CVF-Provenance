@@ -3,13 +3,19 @@
     CVF Provenance Push - Luong 1
 
 .DESCRIPTION
-    Enable push URL, push to provenance archive, lock URL again immediately.
-    Must be called explicitly by operator. Never runs automatically.
+    Run the full CVF pre-push governance hook chain locally to verify all files
+    pass guard checks, then enable the provenance push URL, push to the archive,
+    and lock the URL again immediately.
+
+    The hook chain runs BEFORE the push URL is ever enabled. If any check fails,
+    the URL stays locked and nothing is pushed.
 
     Usage:
         powershell -ExecutionPolicy Bypass -File scripts\cvf-provenance-push.ps1
         powershell -ExecutionPolicy Bypass -File scripts\cvf-provenance-push.ps1 -Branch main
         powershell -ExecutionPolicy Bypass -File scripts\cvf-provenance-push.ps1 -DryRun
+
+    -DryRun : Run the hook chain but do not actually push
 #>
 
 param(
@@ -56,35 +62,59 @@ Write-Host '===================' -ForegroundColor Cyan
 Write-Host "  Repo   : $REPO_ROOT"
 Write-Host "  Target : $PROVENANCE_URL"
 Write-Host "  Branch : $Branch"
-if ($DryRun) { Write-Host '  Mode   : DRY RUN - no changes made' -ForegroundColor Yellow }
+if ($DryRun) { Write-Host '  Mode   : DRY RUN - governance check only, no push' -ForegroundColor Yellow }
 Write-Host ''
 
-if (-not $DryRun) {
-    # Step 1: Enable push URL
-    Write-Host '[1/3] Enabling push URL...' -ForegroundColor Yellow
-    git remote set-url --push origin $PROVENANCE_URL
-    Write-Host '      Push URL set.' -ForegroundColor Green
+# Step 1: Run full pre-push governance hook chain
+Write-Host '[1/4] Running CVF pre-push governance hook chain...' -ForegroundColor Yellow
+Write-Host '      This verifies all files pass guard checks before the push URL is enabled.'
+Write-Host ''
 
-    try {
-        # Step 2: Push
-        Write-Host "[2/3] Pushing $Branch to provenance archive..." -ForegroundColor Yellow
-        git push origin $Branch
-        Write-Host '      Push complete.' -ForegroundColor Green
-    }
-    finally {
-        # Step 3: Lock immediately (runs even if push fails)
-        Write-Host '[3/3] Locking push URL...' -ForegroundColor Yellow
-        git remote set-url --push origin $DISABLED_MARKER
-        Write-Host '      Push URL locked.' -ForegroundColor Green
-    }
+$hookResult = & python governance/compat/run_local_governance_hook_chain.py --hook pre-push
+$hookExit   = $LASTEXITCODE
 
+Write-Host $hookResult
+
+if ($hookExit -ne 0) {
     Write-Host ''
-    Write-Host 'Done. Push URL is locked again.' -ForegroundColor Cyan
-
-} else {
-    Write-Host "[DRY RUN] Would enable push URL: $PROVENANCE_URL" -ForegroundColor Yellow
-    Write-Host "[DRY RUN] Would push branch: $Branch" -ForegroundColor Yellow
-    Write-Host "[DRY RUN] Would lock push URL back to: $DISABLED_MARKER" -ForegroundColor Yellow
-    Write-Host ''
-    Write-Host 'Run without -DryRun to execute.' -ForegroundColor Cyan
+    Write-Host '[ABORT] Governance hook chain FAILED. Push URL remains locked.' -ForegroundColor Red
+    Write-Host '        Fix the violations above, then re-run this script.' -ForegroundColor Red
+    exit $hookExit
 }
+
+Write-Host ''
+Write-Host '      Hook chain passed.' -ForegroundColor Green
+Write-Host ''
+
+if ($DryRun) {
+    Write-Host '[DRY RUN] Governance checks passed. Push skipped (-DryRun).' -ForegroundColor Yellow
+    Write-Host '          Run without -DryRun to push to provenance archive.' -ForegroundColor Yellow
+    exit 0
+}
+
+# Step 2: Enable push URL
+Write-Host '[2/4] Enabling push URL...' -ForegroundColor Yellow
+git remote set-url --push origin $PROVENANCE_URL
+Write-Host '      Push URL set.' -ForegroundColor Green
+
+try {
+    # Step 3: Push (pre-push hook will run again - fast because no changes)
+    Write-Host "[3/4] Pushing $Branch to provenance archive..." -ForegroundColor Yellow
+    git push origin $Branch
+    Write-Host '      Push complete.' -ForegroundColor Green
+}
+finally {
+    # Step 4: Lock immediately (runs even if push fails)
+    Write-Host '[4/4] Locking push URL...' -ForegroundColor Yellow
+    git remote set-url --push origin $DISABLED_MARKER
+    $locked = git remote get-url --push origin
+    if ($locked -eq $DISABLED_MARKER) {
+        Write-Host '      Push URL locked.' -ForegroundColor Green
+    } else {
+        Write-Host "[WARN] Lock may have failed. Current push URL: $locked" -ForegroundColor Red
+    }
+}
+
+Write-Host ''
+Write-Host 'Done. Push URL is locked again.' -ForegroundColor Cyan
+Write-Host ''
