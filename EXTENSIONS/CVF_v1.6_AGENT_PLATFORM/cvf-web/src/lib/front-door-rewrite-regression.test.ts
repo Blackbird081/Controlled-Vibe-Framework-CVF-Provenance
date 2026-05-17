@@ -19,7 +19,7 @@ const rewriteContracts: Record<string, RewriteContract> = {
   documentation: {
     requiredFields: ['subject', 'currentNotes', 'readerGoal', 'audience', 'mustPreserve'],
     requiredIntentPhrases: ['dễ handoff', 'Không yêu cầu người đọc hiểu API hoặc developer internals'],
-    requiredOutputPhrases: ['# Operational Documentation Packet', '## 6. Handoff Checklist'],
+    requiredOutputPhrases: ['# SOP And Handoff Runbook', '## 7. Final Handoff Acceptance Checklist'],
   },
   data_analysis: {
     requiredFields: ['dataset', 'questions', 'importantSlices', 'knownLimitations'],
