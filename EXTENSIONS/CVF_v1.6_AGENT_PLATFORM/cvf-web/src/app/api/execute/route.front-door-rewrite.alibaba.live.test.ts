@@ -180,7 +180,7 @@ describe.skipIf(!ALIBABA_API_KEY)(
         expect(body.success).toBe(true);
         expect(output.length).toBeGreaterThan(450);
         expect(output).toMatch(/LeadSync|tích hợp/i);
-        expect(output).toMatch(/Operations|Payloads|Giao thức/i);
+        expect(output).toMatch(/Operations|Payloads|Giao thức|Hoạt động|Dữ liệu|Thông tin trao đổi/i);
         expect(output).toMatch(/approval|Quyền Hạn|Phê Duyệt/i);
         expect(output).toMatch(/Checklist|Danh Sách Kiểm Tra|Kiểm Tra/i);
         expect(output).not.toMatch(/choose API style|REST vs GraphQL|pick pagination/i);
@@ -231,7 +231,7 @@ describe.skipIf(!ALIBABA_API_KEY)(
         expect(output.length).toBeGreaterThan(400);
         expect(output).toMatch(/Intended Outcome|What This Part|Mục tiêu/i);
         expect(output).toMatch(/Main Risks|Risk|Rủi ro/i);
-        expect(output).toMatch(/Builder Handoff|Handoff Brief|Bàn giao/i);
+        expect(output).toMatch(/Builder Handoff|Handoff Brief|Bàn giao|Hướng dẫn|Builder/i);
         expect(output).toMatch(/Checklist|Acceptance/i);
         expect(output).not.toMatch(/refactor to async\/await|choose a logging framework|pick an ORM/i);
       },

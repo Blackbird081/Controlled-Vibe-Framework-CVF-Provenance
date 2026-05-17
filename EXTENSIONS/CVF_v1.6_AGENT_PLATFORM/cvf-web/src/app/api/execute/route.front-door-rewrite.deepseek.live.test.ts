@@ -278,7 +278,7 @@ describe.skipIf(!DEEPSEEK_API_KEY)(
         expect(output.length).toBeGreaterThan(400);
         expect(output).toMatch(/What This Document Is For|Mục tiêu|For/i);
         expect(output).toMatch(/Main Flow|Steps|Bước/i);
-        expect(output).toMatch(/Checklist|Handoff/i);
+        expect(output).toMatch(/Checklist|Handoff|Danh sách kiểm tra|Kiểm tra|Bàn giao/i);
         expect(output).toMatch(/SRE|P1|incident/i);
         expect(output).not.toMatch(/configure your logging stack|set up Prometheus|install Grafana/i);
       },

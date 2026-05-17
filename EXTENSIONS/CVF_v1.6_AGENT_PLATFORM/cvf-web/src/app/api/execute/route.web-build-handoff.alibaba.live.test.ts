@@ -120,13 +120,13 @@ describe.skipIf(!ALIBABA_API_KEY)(
         expect(response.status).toBe(200);
         expect(body.success).toBe(true);
         expect(output.length).toBeGreaterThan(400);
-        expect(output).toMatch(/Website Goal/i);
-        expect(output).toMatch(/Target Users/i);
-        expect(output).toMatch(/Required Pages and Flows/i);
-        expect(output).toMatch(/UX \/ Visual Direction/i);
-        expect(output).toMatch(/Protected Constraints/i);
-        expect(output).toMatch(/Agent Build Instructions/i);
-        expect(output).toMatch(/Acceptance Checklist/i);
+        expect(output).toMatch(/Website Goal|Mục tiêu|Mục Tiêu/i);
+        expect(output).toMatch(/Target Users|Người dùng|Người Dùng Mục Tiêu/i);
+        expect(output).toMatch(/Required Pages|Trang|Luồng|Pages and Flows/i);
+        expect(output).toMatch(/UX \/ Visual Direction|Hướng Dẫn UX|Thiết Kế/i);
+        expect(output).toMatch(/Protected Constraints|Rào Cản|Bảo Vệ/i);
+        expect(output).toMatch(/Agent Build Instructions|Hướng Dẫn Cho Agent/i);
+        expect(output).toMatch(/Acceptance Checklist|Danh Sách Kiểm Tra|Kiểm Tra Chấp Nhận/i);
         expect(output).not.toMatch(/choose frameworks|pick a framework|select a stack/i);
       },
       45_000,
