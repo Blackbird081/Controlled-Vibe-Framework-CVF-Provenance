@@ -228,9 +228,9 @@ ADD-D.
 
 **Nguồn:** Phase A synthesis, Family D
 
-**Trạng thái hiện tại:** `roadmap-eligible` — added 2026-05-17 per Claude
-review. ADD-D doctrine is now promoted, so this item is eligible for a later
-schema-extension roadmap, but not authorized here.
+**Trạng thái hiện tại:** `runtime-owned` — completed 2026-05-17 through the
+Guard Contract ADD-W7-SIGNALS schema extension. ADD-D doctrine was promoted
+first, satisfying the trigger condition.
 
 **Nội dung:**
 
@@ -509,6 +509,7 @@ sung.
 | 1 | OBS-1 Observability Plane ⭐⭐⭐⭐⭐ | Complete 2026-05-17; read-only runtime dashboard + bilingual web route `/runtime` |
 | 2 | ADD-PROVIDER Output Contracts ⭐⭐⭐ | Complete 2026-05-17; JSON envelope, NDJSON, stdout policy, exit codes |
 | 3 | GAP-MEM 3 memory sub-contracts ⭐⭐⭐ | Complete 2026-05-17; privacy filter + capture adapter + retention policy |
+| 4 | ADD-W7-SIGNALS W7 Signal Candidates ⭐⭐⭐ | Complete 2026-05-17; optional boundary signal fields on governance evidence receipt schema |
 
 ---
 
@@ -516,7 +517,6 @@ sung.
 
 | ID | Tên | Trigger |
 |---|---|---|
-| ADD-W7-SIGNALS | W7 Signal Candidates | Sau khi ADD-D promote; là schema extension cho evidence receipt |
 | ADD-B | Context Profile Metadata | Khi context packaging roadmap mở |
 | ADD-C1 | Continuity / Handoff Doctrine | Khi W123 continuation mở lại |
 | ADD-C2 | Delegation / Subagent Contracts | Khi W7/W8 orchestration mở |

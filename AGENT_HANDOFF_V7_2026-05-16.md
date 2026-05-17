@@ -700,3 +700,39 @@ then:
 - No release gate change.
 - Steps 8 (ADD-B Context Profile) and 9 (GAP-AGENT-HANDOFF) are not
   authorized by this packet. Each requires its own GC-018 when opened.
+
+## 2026-05-17 - ADD-W7-SIGNALS Schema Extension Completed
+
+Status: CD-3 Step 7 completed locally after ADD-D doctrine promotion trigger.
+
+Authorization packet:
+
+- `docs/baselines/CVF_GC018_ADD_W7_SIGNALS_AUTHORIZATION_2026-05-17.md`
+
+Roadmap:
+
+- `docs/roadmaps/CVF_ADD_W7_SIGNALS_RUNTIME_ADOPTION_ROADMAP_2026-05-17.md`
+
+Delivered:
+
+- Guard Contract now exports `BoundarySignals` and canonical
+  `GovernanceEvidenceReceipt` with optional `boundarySignals?: BoundarySignals`
+  in `EXTENSIONS/CVF_GUARD_CONTRACT/src/types.ts`;
+- `pathLockSignal`, `minimalResponseMatch`, and `restrictedPathCount` are
+  represented as optional outcome-side receipt signals;
+- focused schema compatibility tests added in
+  `EXTENSIONS/CVF_GUARD_CONTRACT/src/boundary.signals.test.ts`;
+- inventory and final consensus roadmap updated to mark ADD-W7-SIGNALS
+  `runtime-owned` / `completed 2026-05-17`.
+
+Focused verification completed:
+
+- Guard Contract `npm test` PASS: 17 test files, 231 passed, 5 skipped;
+- Guard Contract `npm run check` PASS.
+
+Claim boundary:
+
+- schema extension only;
+- all `BoundarySignals` fields are optional and existing receipts remain valid;
+- schema records boundary-first governance outcomes; it does not enforce policy,
+  change runtime behavior, change release gates, or prove runtime emission.

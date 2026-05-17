@@ -65,7 +65,8 @@ This consensus roadmap does **not**:
 | 4 | Open GC-018 for OBS-1 Observability Plane Foundation | complete 2026-05-17 |
 | 5 | Open GC-018 for ADD-PROVIDER Output Contracts | complete 2026-05-17 |
 | 6 | Open GC-018 for GAP-MEM 3 memory sub-contracts | complete 2026-05-17 |
-| 7+ | Defer remaining items until trigger conditions occur | pending — per item triggers |
+| 7 | ADD-W7-SIGNALS boundary signals schema extension | complete 2026-05-17 |
+| 8+ | Defer remaining items until trigger conditions occur | pending — per item triggers |
 
 ## Acceptance Criteria
 
@@ -118,7 +119,7 @@ After Claude–Codex consensus:
 | ADD-PROVIDER Output Contracts | runtime-owned | ⭐⭐⭐ | completed 2026-05-17 |
 | GAP-MEM (3 items) | runtime-owned | ⭐⭐⭐ | completed 2026-05-17 |
 | GAP-AGENT-HANDOFF | Nhóm 3 deferred | ⭐⭐ | Scope reduced from full agent governance |
-| ADD-W7-SIGNALS | Nhóm 3 deferred | ⭐⭐⭐ | After ADD-D promotion |
+| ADD-W7-SIGNALS | runtime-owned | ⭐⭐⭐ | completed 2026-05-17 |
 | ADD-B Context Profile | Nhóm 3 deferred | ⭐⭐⭐ | Unchanged |
 | ADD-C1 Continuity | Nhóm 3 deferred | ⭐⭐⭐ | Unchanged |
 | ADD-C2 Delegation | Nhóm 3 deferred | ⭐⭐⭐ | Unchanged |
@@ -155,7 +156,8 @@ No new tooling, no new file, no new hook.
 | 4 | Implementation | OBS-1 Observability Plane Foundation | Complete: `docs/roadmaps/CVF_OBSERVABILITY_PLANE_FOUNDATION_RUNTIME_ADOPTION_ROADMAP_2026-05-17.md` |
 | 5 | Implementation | ADD-PROVIDER Output Contracts | Complete: `docs/roadmaps/CVF_ADD_PROVIDER_OUTPUT_CONTRACTS_RUNTIME_ADOPTION_ROADMAP_2026-05-17.md` |
 | 6 | Implementation | GAP-MEM 3 memory sub-contracts | Complete: `docs/roadmaps/CVF_GAP_MEM_SUBCONTRACTS_RUNTIME_ADOPTION_ROADMAP_2026-05-17.md` |
-| 7+ | Deferred | All Nhóm 3 items | Each requires its own GC-018 when trigger occurs |
+| 7 | Implementation | ADD-W7-SIGNALS boundary signals schema extension | Complete: `docs/roadmaps/CVF_ADD_W7_SIGNALS_RUNTIME_ADOPTION_ROADMAP_2026-05-17.md` |
+| 8+ | Deferred | Remaining Nhóm 3 items | Each requires its own GC-018 when trigger occurs |
 
 **Step ordering rules (consensus):**
 
@@ -164,7 +166,8 @@ No new tooling, no new file, no new hook.
   implementation) is now the next eligible absorption roadmap.
 - Steps 4, 5, 6 có thể chạy độc lập sau Step 3 (không có dependency giữa
   chúng).
-- Step 7+ chỉ khi trigger conditions của từng item xảy ra.
+- Step 7 (ADD-W7-SIGNALS) completed 2026-05-17 after ADD-D promotion.
+- Step 8+ chỉ khi trigger conditions của từng item xảy ra.
 
 ### CD-4 — Disagreements resolved
 
@@ -184,8 +187,8 @@ Cụ thể các điểm thống nhất sau audit:
 - **ADD-BRIEF separation:** Claude phát hiện synthesis đã name riêng → Codex
   accept với subordinate clause → consensus: ship cùng ADD-A/D packet.
 - **ADD-W7-SIGNALS separation:** Claude phát hiện có thể absorb schema-only →
-  Codex accept với deferred-until-ADD-D clause → consensus: defer cho đến
-  sau ADD-D promotion.
+  Codex accept với deferred-until-ADD-D clause → trigger met after ADD-D
+  promotion; schema extension completed 2026-05-17.
 - **OBS-1 priority:** Claude phát hiện understated → Codex accept upgrade →
   consensus: ⭐⭐⭐⭐⭐.
 - **Reporting rule scope:** Claude yêu cầu explicit triggers + enforcement →
@@ -262,13 +265,14 @@ Steps 1 và 2 đã apply trong commit này. Inventory đã được amended vớ
 consensus accuracy state. Reporting rule đã được narrow với explicit
 triggers + enforcement surface.
 
-Step 3 is complete. Steps 4-7 là roadmap forward. Mỗi step yêu cầu một
+Step 3 is complete. Steps 4-8 là roadmap forward. Mỗi step yêu cầu một
 authorization packet riêng khi mở:
 
 - Step 3 (ADD-A + ADD-D + ADD-BRIEF doctrine promotion): completed by
   `docs/reviews/CVF_ADD_A_D_BRIEF_DOCTRINE_PROMOTION_2026-05-17.md`.
-- Steps 4, 5, 6 (OBS-1, ADD-PROVIDER, GAP-MEM): mỗi step cần fresh GC-018.
-- Step 7+: defer cho đến khi trigger conditions xảy ra.
+- Steps 4, 5, 6 (OBS-1, ADD-PROVIDER, GAP-MEM): completed with fresh GC-018.
+- Step 7 (ADD-W7-SIGNALS): completed with fresh GC-018 after ADD-D promotion.
+- Step 8+: defer cho đến khi trigger conditions xảy ra.
 
 Không có further review loop required. Consensus đã đạt được sau:
 
