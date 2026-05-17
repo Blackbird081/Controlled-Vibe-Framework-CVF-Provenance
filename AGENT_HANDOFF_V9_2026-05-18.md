@@ -100,7 +100,7 @@ delivered:
 - Session front door (`CVF_SESSION_MEMORY.md`) and active-state registry
   (`CVF_SESSION/ACTIVE_SESSION_STATE.json`) both updated to V9
 
-Current HEAD: `8a61f40f`
+Current HEAD: `3b1bf6b5`
 
 ## What This Session Delivered
 
@@ -169,6 +169,7 @@ reconvergence context:
 ### HEAD
 
 ```
+3b1bf6b5 feat(contracts): implement Phase 1.P canonical policy/risk/guard contracts
 8a61f40f feat(compat): enforce GC-020 HEAD SHA sync in active handoff (machine check)
 66b15336 fix(governance): add in-place update sync rule to GC-020 handoff guard
 a5a92e81 chore(handoff): fix V9 history summary — reflect full session scope
@@ -365,7 +366,7 @@ operational intelligence.
 
 This handoff:
 
-- records the session state as of 2026-05-18 (HEAD `8a61f40f` + Phase 1.P commit pending)
+- records the session state as of 2026-05-18 (HEAD `3b1bf6b5`)
 - authorizes implementation of phases 1.P/1.I/1.R/1.M/2.A/3.S (GC-018 filed);
   does not authorize Phase 2.B/2.C/3.E/4.T1/4.T2
 - does not promote private 17.05 review material into CVF canon
