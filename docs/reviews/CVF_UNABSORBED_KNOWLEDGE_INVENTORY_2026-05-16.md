@@ -293,8 +293,8 @@ layer enhancement, khi đó dùng Family B làm design input.
 
 **Nguồn:** `Agent Harnesses`, `Hermes Agent`, `Human System Harness`
 
-**Trạng thái hiện tại:** `deferred` — "DEFER PHASE B". Doctrine synthesis
-hoàn thành private, chưa promote.
+**Trạng thái hiện tại:** `runtime-owned` — completed 2026-05-17 through the
+Control Plane Foundation continuity checkpoint schema contract.
 
 **Nội dung:**
 
@@ -511,6 +511,7 @@ new agent authority.
 | 4 | ADD-W7-SIGNALS W7 Signal Candidates ⭐⭐⭐ | Complete 2026-05-17; optional boundary signal fields on governance evidence receipt schema |
 | 5 | ADD-B Context Profile Metadata ⭐⭐⭐ | Complete 2026-05-17; advisory context profile metadata for source ranking, budget hints, and sensitivity flags |
 | 6 | GAP-AGENT-HANDOFF Cross-agent handoff ⭐⭐ | Complete 2026-05-17; typed handoff record, receipt ID, validation helper, and policy continuity check |
+| 7 | ADD-C1 Continuity Checkpoint ⭐⭐⭐ | Complete 2026-05-17; shared checkpoint record shape for closed decisions, open items, artifacts, reinjection policy, and evidence receipts |
 
 ---
 
@@ -518,7 +519,6 @@ new agent authority.
 
 | ID | Tên | Trigger |
 |---|---|---|
-| ADD-C1 | Continuity / Handoff Doctrine | Khi W123 continuation mở lại |
 | ADD-C2 | Delegation / Subagent Contracts | Khi W7/W8 orchestration mở |
 | ADD-E1 | Scoped Knowledge / Code Graph | Khi code intelligence roadmap mở |
 

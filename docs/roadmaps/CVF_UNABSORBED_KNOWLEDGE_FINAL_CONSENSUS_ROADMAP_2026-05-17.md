@@ -68,7 +68,8 @@ This consensus roadmap does **not**:
 | 7 | ADD-W7-SIGNALS boundary signals schema extension | complete 2026-05-17 |
 | 8 | ADD-B Context Profile Metadata | complete 2026-05-17 |
 | 9 | GAP-AGENT-HANDOFF cross-agent handoff protocol | complete 2026-05-17 |
-| 10+ | Defer remaining items until trigger conditions occur | pending — per item triggers |
+| 10a | ADD-C1 Continuity Checkpoint schema | complete 2026-05-17 |
+| 10b+ | Defer remaining items until trigger conditions occur | pending — per item triggers |
 
 ## Acceptance Criteria
 
@@ -123,7 +124,7 @@ After Claude–Codex consensus:
 | GAP-AGENT-HANDOFF | runtime-owned | ⭐⭐ | completed 2026-05-17 |
 | ADD-W7-SIGNALS | runtime-owned | ⭐⭐⭐ | completed 2026-05-17 |
 | ADD-B Context Profile | runtime-owned | ⭐⭐⭐ | completed 2026-05-17 |
-| ADD-C1 Continuity | Nhóm 3 deferred | ⭐⭐⭐ | Unchanged |
+| ADD-C1 Continuity | runtime-owned | ⭐⭐⭐ | completed 2026-05-17 |
 | ADD-C2 Delegation | Nhóm 3 deferred | ⭐⭐⭐ | Unchanged |
 | ADD-E1 Scoped Knowledge | Nhóm 3 deferred | ⭐⭐ | Unchanged |
 | GAP-SKILL | REMOVED | — | Spot-check found false positive |
@@ -161,7 +162,8 @@ No new tooling, no new file, no new hook.
 | 7 | Implementation | ADD-W7-SIGNALS boundary signals schema extension | Complete: `docs/roadmaps/CVF_ADD_W7_SIGNALS_RUNTIME_ADOPTION_ROADMAP_2026-05-17.md` |
 | 8 | Implementation | ADD-B Context Profile Metadata | Complete: `docs/roadmaps/CVF_ADD_B_CONTEXT_PROFILE_RUNTIME_ADOPTION_ROADMAP_2026-05-17.md` |
 | 9 | Implementation | GAP-AGENT-HANDOFF cross-agent handoff protocol | Complete: `docs/roadmaps/CVF_GAP_AGENT_HANDOFF_RUNTIME_ADOPTION_ROADMAP_2026-05-17.md` |
-| 10+ | Deferred | Remaining Nhóm 3 items | Each requires its own GC-018 when trigger occurs |
+| 10a | Implementation | ADD-C1 Continuity Checkpoint schema | Complete: `docs/roadmaps/CVF_ADD_C1_CONTINUITY_RUNTIME_ADOPTION_ROADMAP_2026-05-17.md` |
+| 10b+ | Deferred | Remaining Nhóm 3 items | Each requires its own GC-018 when trigger occurs |
 
 **Step ordering rules (consensus):**
 
@@ -175,7 +177,9 @@ No new tooling, no new file, no new hook.
   authorization.
 - Step 9 (GAP-AGENT-HANDOFF) completed 2026-05-17 after operator
   authorization.
-- Step 10+ chỉ khi trigger conditions của từng item xảy ra.
+- Step 10a (ADD-C1 Continuity Checkpoint schema) completed 2026-05-17 after
+  operator authorization.
+- Step 10b+ chỉ khi trigger conditions của từng item xảy ra.
 
 ### CD-4 — Disagreements resolved
 
@@ -273,7 +277,7 @@ Steps 1 và 2 đã apply trong commit này. Inventory đã được amended vớ
 consensus accuracy state. Reporting rule đã được narrow với explicit
 triggers + enforcement surface.
 
-Step 3 is complete. Steps 4-10 là roadmap forward. Mỗi step yêu cầu một
+Step 3 is complete. Steps 4-10b là roadmap forward. Mỗi step yêu cầu một
 authorization packet riêng khi mở:
 
 - Step 3 (ADD-A + ADD-D + ADD-BRIEF doctrine promotion): completed by
@@ -284,7 +288,9 @@ authorization packet riêng khi mở:
   operator authorization.
 - Step 9 (GAP-AGENT-HANDOFF): completed with fresh GC-018 after operator
   authorization.
-- Step 10+: defer cho đến khi trigger conditions xảy ra.
+- Step 10a (ADD-C1 Continuity Checkpoint schema): completed with fresh GC-018
+  after operator authorization.
+- Step 10b+: defer cho đến khi trigger conditions xảy ra.
 
 Không có further review loop required. Consensus đã đạt được sau:
 

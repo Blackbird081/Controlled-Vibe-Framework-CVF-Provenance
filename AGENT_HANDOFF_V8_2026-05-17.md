@@ -1005,3 +1005,40 @@ Claim boundary:
 - no new agent authority, runtime execution engine, replacement of existing CPF
   agent contracts, release gate change, or GA posture change;
 - callers remain responsible for acting on validation helper results.
+
+## 2026-05-17 - Step 10a ADD-C1 Continuity Checkpoint Completed
+
+Status: Step 10a completed locally.
+
+Authorization packet:
+
+- `docs/baselines/CVF_GC018_ADD_C1_CONTINUITY_AUTHORIZATION_2026-05-17.md`
+
+Roadmap and ADR:
+
+- `docs/roadmaps/CVF_ADD_C1_CONTINUITY_RUNTIME_ADOPTION_ROADMAP_2026-05-17.md`
+- `docs/reference/CVF_ADR_CONTINUITY_CHECKPOINT_AND_W123_RELATIONSHIP_2026-05-17.md`
+
+Delivered:
+
+- `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/continuity.checkpoint.contract.ts`
+  defines `ContinuityCheckpoint` and `validateCheckpoint`;
+- CPF continuation barrel now exports the continuity checkpoint contract
+  helpers/types;
+- focused tests were added in
+  `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/continuity.checkpoint.contract.test.ts`;
+- ADR records the W123 audit finding: W123 owns execution continuity; C1 owns
+  the record shape;
+- inventory and final consensus roadmap now mark ADD-C1 `runtime-owned` /
+  `completed 2026-05-17`.
+
+Focused verification:
+
+- Control Plane Foundation `npm test` PASS;
+- Control Plane Foundation `npm run check` PASS.
+
+Claim boundary:
+
+- schema standard only;
+- no checkpoint execution engine, runtime continuation behavior change,
+  retroactive W123 enforcement, release gate change, or GA posture change.
