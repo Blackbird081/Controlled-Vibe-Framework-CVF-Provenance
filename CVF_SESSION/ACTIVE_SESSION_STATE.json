@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "0.1.0",
+  "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
+  "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+  "activeHandoff": "AGENT_HANDOFF_V9_2026-05-18.md",
+  "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
+  "supersededHandoffs": [
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V2_2026-05-09.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V3_2026-05-10.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V4_2026-05-12.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V5_2026-05-15.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V6_2026-05-16.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V7_2026-05-16.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V8_2026-05-17.md"
+  ],
+  "relatedHandoffs": [
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_INTEGRATIONS_2026-05-17.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
+  ],
+  "currentMode": "system_reconvergence_stop",
+  "freezePosture": "governance_kernel_freeze_recommended",
+  "requiredFirstReads": [
+    ".private_reference/legacy/CVF 17.05/REVIEW FOLDER/CVF_17_05_SYSTEM_RECONVERGENCE_STOP_DECISION_2026-05-17.md",
+    ".private_reference/legacy/CVF 17.05/REVIEW FOLDER/CVF_17_05_GOVERNANCE_KERNEL_FREEZE_CODEX_RECOMMENDATION_2026-05-17.md",
+    ".private_reference/legacy/CVF 17.05/REVIEW FOLDER/CVF_17_05_AGENT_HANDOFF_AND_MEMORY_GAP_CODEX_AUDIT_2026-05-17.md",
+    ".private_reference/legacy/CVF 17.05/REVIEW FOLDER/CVF_17_05_SINGLE_SESSION_MEMORY_FRONT_DOOR_PROPOSAL_2026-05-17.md",
+    ".private_reference/legacy/CVF 17.05/REVIEW FOLDER/CVF_17_05_AGENT_ORCHESTRATOR_ROLE_ABSORPTION_GAP_CODEX_AUDIT_2026-05-17.md"
+  ],
+  "requiredStartupGuards": [
+    "CVF_SESSION/REQUIRED_STARTUP_GUARDS.md",
+    "docs/reference/CVF_SESSION_GOVERNANCE_BOOTSTRAP.md",
+    "governance/toolkit/05_OPERATION/CVF_SESSION_GOVERNANCE_BOOTSTRAP_GUARD.md",
+    "governance/toolkit/05_OPERATION/CVF_AGENT_HANDOFF_TRANSITION_GUARD.md",
+    "governance/toolkit/05_OPERATION/CVF_AGENT_HANDOFF_GUARD.md",
+    "governance/toolkit/05_OPERATION/CVF_MEMORY_GOVERNANCE_GUARD.md",
+    "governance/toolkit/05_OPERATION/CVF_GOVERNED_ARTIFACT_AUTHORING_GUARD.md"
+  ],
+  "blockedWorkClasses": [
+    "broad_external_knowledge_absorption",
+    "new_governance_semantics",
+    "new_role_taxonomies",
+    "new_policy_risk_guard_engines",
+    "new_receipt_envelopes",
+    "new_memory_tiers",
+    "new_capability_workflow_runtime_contracts",
+    "new_provider_execution_semantics",
+    "public_claims_of_coherent_governed_capability_runtime"
+  ],
+  "startupAcknowledgmentRequired": [
+    "active_session_mode",
+    "active_handoff_path",
+    "required_first_reads",
+    "blocked_work_classes",
+    "next_allowed_move"
+  ],
+  "nextAllowedMove": "Maintain session-memory front door and prepare reconvergence inventory/owner maps only.",
+  "lastUpdated": "2026-05-18"
+}
