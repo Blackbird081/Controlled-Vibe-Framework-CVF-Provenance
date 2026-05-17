@@ -1082,3 +1082,62 @@ Claim boundary:
 - no replacement of existing CPF agent contracts, no new agent authority, no
   runtime execution engine, no release gate change, and no GA posture change;
 - callers remain responsible for acting on validation helper results.
+
+## 2026-05-17 - Step 10c ADD-E1 Scoped Knowledge Completed
+
+Status: Step 10c completed locally.
+
+Authorization packet:
+
+- `docs/baselines/CVF_GC018_ADD_E1_SCOPED_KNOWLEDGE_AUTHORIZATION_2026-05-17.md`
+
+Roadmap and ADR:
+
+- `docs/roadmaps/CVF_ADD_E1_SCOPED_KNOWLEDGE_RUNTIME_ADOPTION_ROADMAP_2026-05-17.md`
+- `docs/reference/CVF_ADR_SCOPED_KNOWLEDGE_AS_INTAKE_SUBCLASS_2026-05-17.md`
+
+Delivered:
+
+- `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/scoped.knowledge.provider.contract.ts`
+  defines `ScopedKnowledgeProvider`, scoped query behavior, read-only provider
+  action blocking, knowledge-vault intake-class mapping, and ADD-B
+  `ContextProfile.sourceRelevance` mapping;
+- Knowledge barrel exports were updated;
+- focused tests were added in
+  `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/scoped.knowledge.provider.contract.test.ts`;
+- inventory now marks ADD-E1 `runtime-owned` / completed 2026-05-17;
+- final consensus roadmap now marks Step 10c complete and the full absorption
+  queue closed.
+
+Focused verification:
+
+- Control Plane Foundation `npm test` PASS;
+- Control Plane Foundation `npm run check` PASS.
+
+Claim boundary:
+
+- read-only provider contract only;
+- no code execution, indexing runtime, direct context injection, provider
+  routing change, governance override, release gate change, or GA posture
+  change.
+
+## 2026-05-17 - Full V8 Absorption Queue Closed
+
+Status: Steps 8-10c completed locally. Full Claude-Codex consensus absorption
+queue closed.
+
+Completion state:
+
+- Step 8 ADD-B Context Profile Metadata: complete;
+- Step 9 GAP-AGENT-HANDOFF: complete;
+- Step 10a ADD-C1 Continuity Checkpoint: complete;
+- Step 10b ADD-C2 Delegation / Worker / Subagent contract: complete;
+- Step 10c ADD-E1 Scoped Knowledge / Code Graph provider contract: complete.
+
+Queue boundary:
+
+- all deferred items from the Claude-Codex consensus roadmap are now either
+  `runtime-owned` or `excluded`;
+- no further absorption steps are pending from this queue;
+- any future work requires a new concrete roadmap and fresh GC-018, not a
+  continuation of these closed items.
