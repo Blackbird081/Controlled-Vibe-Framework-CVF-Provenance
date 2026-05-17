@@ -1419,3 +1419,39 @@ The guard enforces full artifact-type templates (spec / baseline / handoff / rev
 - `docs/reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md`
 - `docs/reviews/CVF_GC045_MARKDOWN_STRUCTURAL_COMPLETENESS_IMPLEMENTATION_REVIEW_2026-05-16.md`
 - `docs/reviews/CVF_GC019_GC045_GUARD_INTRODUCTION_STRUCTURAL_REVIEW_2026-05-16.md`
+
+## ADR-046: Session Memory Front Door Becomes The Agent Startup Entry Point
+
+### Status
+ACCEPTED — 2026-05-17
+
+### Context
+Root handoff files accumulated into multiple competing startup surfaces. Agents
+could enter through `AGENT_HANDOFF.md`, V2-V8, Claude-oriented memory, or review
+folders and reach different conclusions about active state. That directly
+contributed to 17.05 review drift, duplicated governance semantics, and repeated
+operator reminders.
+
+### Decision
+Introduce `CVF_SESSION_MEMORY.md` as the single session startup front door and
+`CVF_SESSION/ACTIVE_SESSION_STATE.json` as the machine-readable active-state
+registry. Keep only the current active handoff at root. Move historical and
+side-channel handoffs into `CVF_SESSION/handoffs/archive/` without rewriting
+their contents.
+
+### Consequences
+- New and resumed agents must resolve active state before trusting any handoff.
+- Future `cvf-cli` and `cvf-mcp-server` startup can read one JSON registry
+  instead of scraping root files.
+- Historical handoffs remain provenance records but are no longer root-level
+  startup candidates.
+- Guard compatibility checks must route current truth through session state and
+  use archived handoffs only as historical evidence.
+
+### Related Files
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/REQUIRED_STARTUP_GUARDS.md`
+- `governance/compat/check_active_session_state.py`
+- `governance/compat/check_agent_handoff_guard_compat.py`
+- `governance/compat/check_surface_scan_registry.py`

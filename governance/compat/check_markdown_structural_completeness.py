@@ -252,6 +252,8 @@ def _get_changed(base: str, head: str) -> dict[str, set[str]]:
 def _is_governed_markdown(path: str) -> bool:
     if not path.endswith(".md"):
         return False
+    if path.startswith("CVF_SESSION/handoffs/archive/"):
+        return False
     return (
         path.startswith("docs/")
         or path.startswith("governance/toolkit/")

@@ -93,6 +93,28 @@ Not allowed:
 - claiming target-state completion when only a bounded slice landed
 - handing off with no commit or reference state when a clean commit exists
 
+### Handoff Archive Protocol
+
+When a new handoff supersedes a previous one, the worker must:
+
+1. Create the new handoff file (e.g., `AGENT_HANDOFF_Vn.md`) in the repo root.
+2. Update the previous handoff's `Status:` line to `SUPERSEDED by AGENT_HANDOFF_Vn.md`.
+3. **Use `git mv` — not `cp`** — to move the superseded handoff from the repo root
+   to `CVF_SESSION/handoffs/archive/`. This preserves git rename history.
+4. Update `CVF_SESSION/ACTIVE_SESSION_STATE.json`:
+   - `activeHandoff` → new handoff filename
+   - add old archive path to `supersededHandoffs` list
+5. Update `CVF_SESSION_MEMORY.md` active handoff pointer.
+6. Update `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`:
+   - remove the superseded handoff entry (it is no longer a root file)
+   - add the new handoff entry
+
+Using `cp` instead of `git mv` leaves a duplicate at root and breaks the
+git rename history. The `check_active_session_state.py` checker scans root
+for `Status: ACTIVE` — a leftover `cp` at root with `Status: SUPERSEDED` is
+tolerated but wastes exposure registry entries and clutters the root. Always
+use `git mv`.
+
 ### Pause / Resume Interpretation
 
 For governance purposes, an agent handoff should be treated like a human work handoff or a short break checkpoint:

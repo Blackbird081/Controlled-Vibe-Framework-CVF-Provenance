@@ -14,6 +14,8 @@ Status: canonical session-start front door for loading only the governance contr
 
 Read these first:
 
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md`
 - `docs/reference/CVF_WHITEPAPER_PROGRESS_TRACKER.md`
 - `docs/roadmaps/CVF_WHITEPAPER_COMPLETION_ROADMAP_2026-03-21.md`
@@ -74,6 +76,8 @@ Use when:
 
 Primary references:
 
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `governance/toolkit/05_OPERATION/CVF_AGENT_HANDOFF_TRANSITION_GUARD.md`
 - `governance/toolkit/05_OPERATION/CVF_AGENT_HANDOFF_GUARD.md`
 - `docs/reference/CVF_AGENT_HANDOFF_TEMPLATE.md`
@@ -197,7 +201,7 @@ Primary references:
 
 - `governance/toolkit/05_OPERATION/CVF_SURFACE_SCAN_CONTINUITY_GUARD.md`
 - `governance/compat/CVF_SURFACE_SCAN_REGISTRY.json`
-- `AGENT_HANDOFF.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 
 ### `GC-042` — Product Value Validation
 
@@ -274,8 +278,8 @@ Use this routing table after reading the always-on bootstrap:
 | drafting or materially revising governed artifacts | `GC-032` + source truth + active roadmap/tranche packet |
 | fresh quality assessment or next-surface selection | `GC-041` + canonical scan registry + active tracker |
 | product-value validation, comparative value proof, or Docker-trigger justification | `GC-042` + frozen corpus/rubric/run-manifest/assessment chain |
-| future knowledge absorption, repo-derived skill intake, or post-closure synthesis-first uplift planning | `GC-043` + knowledge-absorption priority standard + active handoff |
-| template/skill corpus rescreen, future front-door template intake, or trusted-subset admission | `GC-044` + corpus rescreen standard + active handoff |
+| future knowledge absorption, repo-derived skill intake, or post-closure synthesis-first uplift planning | `CVF_SESSION/ACTIVE_SESSION_STATE.json` + `GC-043` + knowledge-absorption priority standard + active handoff |
+| template/skill corpus rescreen, future front-door template intake, or trusted-subset admission | `CVF_SESSION/ACTIVE_SESSION_STATE.json` + `GC-044` + corpus rescreen standard + active handoff |
 | touching governed public barrels, barrel smoke tests, shared batch helpers, or canonical summary surfaces | `GC-033` + `GC-034` + `GC-035` + `GC-036` + `docs/reference/CVF_MAINTAINABILITY_STANDARD.md` |
 | large file touched or split candidate | `GC-023` |
 | tests near a split canonical test surface | `GC-024` |
@@ -286,6 +290,8 @@ Use this routing table after reading the always-on bootstrap:
 - memory = durable facts, history, and evidence
 - handoff = truthful transition checkpoint
 - bootstrap = minimal governance routing for session start
+- session memory front door = one active pointer set for agents and future
+  `cvf-cli` / `cvf-mcp-server` startup
 
 Do not use one of these layers as a substitute for the others.
 

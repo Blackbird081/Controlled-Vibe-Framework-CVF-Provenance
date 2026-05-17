@@ -29,6 +29,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
             ["python", "governance/compat/check_governed_exception_registry.py", "--enforce"],
         ),
         (
+            "active session state compatibility",
+            ["python", "governance/compat/check_active_session_state.py", "--enforce"],
+        ),
+        (
             "docs governance compatibility",
             ["python", "governance/compat/check_docs_governance_compat.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
@@ -85,6 +89,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         (
             "agent handoff guard compatibility",
             ["python", "governance/compat/check_agent_handoff_guard_compat.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "active session state compatibility",
+            ["python", "governance/compat/check_active_session_state.py", "--enforce"],
         ),
         (
             "session governance bootstrap compatibility",
@@ -164,7 +172,7 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         ),
         (
             "review retention registry compatibility",
-            ["python", "governance/compat/check_review_retention_registry.py", "--enforce"],
+            ["python", "governance/compat/check_review_retention_registry.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
             "foundational guard surfaces compatibility",

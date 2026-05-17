@@ -61,6 +61,12 @@
       "rationale": "Enterprise-private retained root. Preserve the current path on cvf-next; explain boundaries through curated docs instead of relocation."
     },
     {
+      "path": "CVF_SESSION",
+      "lifecycleClass": "ACTIVE_CANONICAL",
+      "exposureClass": "INTERNAL_ONLY",
+      "rationale": "Active session-memory front door support root. Holds machine-readable active state, startup guard routing, handoff staging, and acknowledgment placeholders for agents and future cvf-cli/cvf-mcp-server entrypoints."
+    },
+    {
       "path": "docs",
       "lifecycleClass": "ACTIVE_CANONICAL",
       "exposureClass": "PUBLIC_DOCS_ONLY",

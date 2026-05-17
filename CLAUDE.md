@@ -2,6 +2,18 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Session Memory Front Door
+
+Before material governed work in a new or resumed session, read
+`CVF_SESSION_MEMORY.md`, then resolve
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`.
+
+Do not treat archived handoffs under `CVF_SESSION/handoffs/archive/` or any
+versioned root handoff as current until the active state registry points to it.
+State or internally confirm the active session mode, active handoff path,
+required first reads, blocked work classes, and next allowed move before
+continuing.
+
 ## What This Repository Is
 
 **Controlled Vibe Framework (CVF)** is a governance-first control plane for AI-assisted software development. It is not a code library — it is a governance framework with executable controls, process standards, and multi-layer architecture (L0–L5). The core workflow is: `INTAKE → DESIGN → BUILD → REVIEW → FREEZE`.

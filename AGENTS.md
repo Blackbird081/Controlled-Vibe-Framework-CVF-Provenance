@@ -1,24 +1,28 @@
 # CVF Agent Instructions
 
-## Active Handoff
+## Session Memory Front Door
 
-The active continuation handoff for new updates is:
+The active session front door for new or resumed agents is:
 
-`AGENT_HANDOFF_V7_2026-05-16.md`
+`CVF_SESSION_MEMORY.md`
 
-`AGENT_HANDOFF.md` remains historical context but has reached the governed
-markdown size ceiling. `AGENT_HANDOFF_V2_2026-05-09.md` is also historical for
-new updates after QBS-10. `AGENT_HANDOFF_V3_2026-05-10.md` is historical for
-new updates after QBS-40 because it reached the governed markdown size ceiling.
-`AGENT_HANDOFF_V4_2026-05-12.md` is historical for new updates after the F-1
-prompt-contract tranche because it reached the governed markdown advisory
-ceiling. `AGENT_HANDOFF_V5_2026-05-15.md` is historical for new updates after
-the QH non-coder output hardening closure because it reached the governed
-markdown advisory ceiling. `AGENT_HANDOFF_V6_2026-05-16.md` is historical for
-new updates after the Observability Delta absorption closure because it reached
-the governed markdown hard-ceiling risk zone. Do not append new status there;
-create/update the active V7 handoff or open a later versioned handoff when V7
-approaches the limit.
+Resolve the machine-readable state registry before treating any root handoff as
+current:
+
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`
+
+The current active handoff in that registry is:
+
+`AGENT_HANDOFF_V8_2026-05-17.md`
+
+Historical handoffs are archived under:
+
+`CVF_SESSION/handoffs/archive/`
+
+This includes `AGENT_HANDOFF.md`, V2-V7, and side-channel handoff files. Do not
+append new status to archived handoffs; update the active handoff named by
+`CVF_SESSION/ACTIVE_SESSION_STATE.json` or open a later versioned handoff when
+the active handoff approaches the limit.
 
 ## Mandatory F-1 Diminishing Returns Stop Rule - 2026-05-15
 
