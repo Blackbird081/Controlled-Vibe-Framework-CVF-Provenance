@@ -5,7 +5,7 @@
 **Memory class:** POINTER_RECORD
 **Status:** Active canonical rule for multi-agent absorption reviews, rebuttal cycles, and cross-agent knowledge intake convergence.
 **Applies to:** All AI agents (Claude, Codex, or any future agent) participating in CVF knowledge absorption reviews, rebuttal cycles, or multi-agent audit chains.
-**Enforced by:** `docs/reference/CVF_GC018_CONTINUATION_CANDIDATE_TEMPLATE.md` (Evidence Trace Block template requirement). Manual checker and CI advisory pending Phase 0.B (`governance/compat/run_local_governance_hook_chain.py`). Hard enforcement deferred to Phase 0.C.
+**Enforced by:** `docs/reference/CVF_GC018_CONTINUATION_CANDIDATE_TEMPLATE.md` (Evidence Trace Block template requirement). Pre-commit hard-fail via `governance/compat/check_anti_collusion_evidence_trace.py --enforce` (registered in `governance/compat/run_local_governance_hook_chain.py`). Hard enforcement active as of Phase 0.C (commit on 2026-05-18, authorized by `docs/baselines/CVF_GC018_PHASE_0C_ANTI_COLLUSION_HARD_FAIL_2026-05-18.md`). Grandfathering: legacy review packets added before 2026-05-17 are advisory-only.
 
 ## Purpose
 
