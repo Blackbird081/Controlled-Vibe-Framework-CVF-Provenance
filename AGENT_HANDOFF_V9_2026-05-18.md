@@ -99,7 +99,7 @@ delivered:
 - Session front door (`CVF_SESSION_MEMORY.md`) and active-state registry
   (`CVF_SESSION/ACTIVE_SESSION_STATE.json`) both updated to V9
 
-Current HEAD: `1414aeb6`
+Current HEAD: `fe9a73bd`
 
 ## What This Session Delivered
 
@@ -168,6 +168,7 @@ reconvergence context:
 ### HEAD
 
 ```
+fe9a73bd feat(contracts): implement Phase 2.A contract sketch and Phase 3.S metrics schema
 1414aeb6 feat(contracts): implement Phase 1.M 5-tier memory-home model
 e95452dc feat(contracts): implement Phase 1.R canonical Receipt envelope
 9e5c1471 feat(contracts): implement Phase 1.I role axis taxonomy
