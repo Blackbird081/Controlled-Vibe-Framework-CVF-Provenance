@@ -264,6 +264,15 @@ Personal AI usage unrelated to company work is excluded.
      - canonical structural standard: `docs/reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md`
      - canonical operational rule: `governance/toolkit/05_OPERATION/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_GUARD.md`
      - automated enforcement reference: `governance/compat/check_markdown_structural_completeness.py`
+40. `GC-046` multi-agent absorption reviews must use Evidence Trace Blocks per claim, Adversarial Role Assignment, and a deterministic Convergence Algorithm before any convergence verdict is treated as implementation authorization:
+     - this rule applies to all AI agents participating in CVF knowledge absorption reviews, rebuttal cycles, or multi-agent audit chains
+     - PROPOSER argues for source value; REVIEWER argues for risk — roles are structurally assigned and reversed across review numbers
+     - every significant claim must include an Evidence Trace Block with exact command, result, key file path, and verdict
+     - doctrine evidence does not substitute for codebase evidence — both are required separately
+     - convergence algorithm resolves per-claim disagreements mechanically; operator only receives ESCALATED claims with structured options
+     - Phase 0.A (doctrine + template): authorized. Phase 0.B (manual checker + CI advisory): pending GC-018. Phase 0.C (hard enforcement): deferred.
+     - canonical operational rule: `governance/toolkit/05_OPERATION/CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD.md`
+     - GC-018 template update: `docs/reference/CVF_GC018_CONTINUATION_CANDIDATE_TEMPLATE.md`
 
 ---
 

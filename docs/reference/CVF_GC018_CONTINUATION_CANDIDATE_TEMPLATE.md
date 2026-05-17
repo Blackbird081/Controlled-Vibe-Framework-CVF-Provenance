@@ -33,6 +33,27 @@ Copy the following block into one reviewable artifact:
 - reassessment addendum
 - governance decision note
 
+For absorption review packets (any packet produced by a multi-agent rebuttal chain governed by GC-046),
+two additional blocks are required before a claim may be counted as convergence evidence:
+
+```text
+Evidence Trace Block (required per significant claim, per GC-046)
+- Claim: <exact claim text>
+- Command: <exact grep/find/read command used>
+- Result: <count or representative output>
+- Key path: <file:line for the key finding>
+- Verdict: EXISTS | ABSENT | PARTIAL | DRIFT
+- Counter-evidence (if any): <opposing agent's evidence>
+
+Counter-Evidence Block (required when a REVIEWER challenges a PROPOSER claim)
+- Claim challenged: <original claim text>
+- Original evidence: <PROPOSER's command + result>
+- Counter-evidence: <REVIEWER's command + result>
+- Corrected verdict: <corrected claim text>
+```
+
+See `governance/toolkit/05_OPERATION/CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD.md` for the full protocol.
+
 ```text
 GC-018 Continuation Candidate
 - Candidate ID: <stable id>
@@ -99,6 +120,7 @@ The same packet may be summarized in multiple places, but there should be one ob
 ## Related Controls
 
 - `governance/toolkit/05_OPERATION/CVF_DEPTH_AUDIT_GUARD.md`
+- `governance/toolkit/05_OPERATION/CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD.md` (GC-046: Evidence Trace Block requirement for absorption review chains)
 - `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md#GC-018`
 - `governance/compat/check_depth_audit_continuation_compat.py`
 - `docs/roadmaps/CVF_SYSTEM_UNIFICATION_REMEDIATION_ROADMAP_2026-03-19.md`

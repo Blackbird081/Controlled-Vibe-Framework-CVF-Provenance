@@ -349,6 +349,7 @@ Output (Allow / Strip & Allow / Block)
 | CVF_KNOWLEDGE_ABSORPTION_PRIORITY_GUARD.md | Future knowledge absorption, repo-derived skill intake, or post-closure extension planning | Doctrine-first / governance-first absorption must complete before implementation-first expansion |
 | CVF_TEMPLATE_SKILL_STANDARD_GUARD.md | Future skill/template intake, corpus rescreen, or trusted-subset admission for public non-coder use | Deterministic CVF-standard screen required; only `TRUSTED_FOR_VALUE_PROOF` may enter benchmark truth |
 | CVF_MULTI_AGENT_REVIEW_DOC_GUARD.md | Multi-agent intake/rebuttal/decision docs | Canonical review doc chain must be standardized |
+| CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD.md | Multi-agent absorption reviews, rebuttal cycles, and cross-agent knowledge intake convergence | Evidence Trace Block required per claim; Adversarial Role Assignment; Convergence Algorithm without operator arbitration |
 | CVF_PRODUCT_VALUE_VALIDATION_GUARD.md | Product-value proof, comparative validation, or Docker-sandbox justification claims | Frozen corpus + rubric + run manifest + no-spin assessment required |
 | CVF_PROGRESS_TRACKER_SYNC_GUARD.md | Tranche posture change | Canonical tracker and sync note must stay aligned |
 | CVF_SURFACE_SCAN_CONTINUITY_GUARD.md | Fresh tranche selection or scan-state change | Canonical scan registry must preserve what was already scanned |
@@ -865,3 +866,27 @@ Canonical references:
 - `docs/reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md`
 - `governance/toolkit/05_OPERATION/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_GUARD.md`
 - `governance/compat/check_markdown_structural_completeness.py`
+
+---
+
+## XVIII. SESSION MEMORY FRONT DOOR
+
+CVF session startup now has one canonical front door.
+
+Canonical rule:
+
+- agents start at `CVF_SESSION_MEMORY.md`
+- machine-readable current state lives in
+  `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- only the active handoff named by the registry should remain in the root
+- historical handoffs live under `CVF_SESSION/handoffs/archive/`
+- future `cvf-cli` and `cvf-mcp-server` startup should consume the active-state
+  registry instead of scraping root handoff filenames
+
+Canonical references:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/READ_FIRST.md`
+- `CVF_SESSION/REQUIRED_STARTUP_GUARDS.md`
+- `governance/compat/check_active_session_state.py`
