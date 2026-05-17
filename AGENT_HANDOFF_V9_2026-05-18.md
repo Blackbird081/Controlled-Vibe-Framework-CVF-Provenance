@@ -99,7 +99,7 @@ delivered:
 - Session front door (`CVF_SESSION_MEMORY.md`) and active-state registry
   (`CVF_SESSION/ACTIVE_SESSION_STATE.json`) both updated to V9
 
-Current HEAD: `fe9a73bd`
+Current HEAD: `67141043`
 
 ## What This Session Delivered
 
@@ -168,6 +168,7 @@ reconvergence context:
 ### HEAD
 
 ```
+67141043 chore(handoff): update V9 — all phases DELIVERED, HEAD fe9a73bd
 fe9a73bd feat(contracts): implement Phase 2.A contract sketch and Phase 3.S metrics schema
 1414aeb6 feat(contracts): implement Phase 1.M 5-tier memory-home model
 e95452dc feat(contracts): implement Phase 1.R canonical Receipt envelope
@@ -366,11 +367,61 @@ operational intelligence.
 | `scripts/run_cvf_17_05_drift_inventory.py` | Re-runnable drift inventory script |
 | `.private_reference/legacy/CVF 17.05/REVIEW FOLDER/CVF_17_05_REVIEW_CVF_FINAL_CONVERGED_REMEDIATION_ROADMAP_2026-05-17.md` | Source roadmap for all authorized phases |
 
+## Open Questions for Phase 2.B — Required Input Before GC-018
+
+These were discovered in session 2026-05-18 and must be resolved before
+Phase 2.B GC-018 is written. They are NOT blockers for the current roadmap
+(which is complete) — they are pre-work obligations for the next phase.
+
+### 1. Classification ≠ Migration Plan
+
+The adapter maps (Phase 1.P/1.I/1.R/1.M) classify 46+ surfaces but do NOT
+specify:
+- **Migration order** — which adapter migrates first? Dependencies?
+- **Owner assignment** — which team/domain is responsible per surface?
+- **"Done" criterion** — what test or check proves each migration complete?
+
+Phase 2.B GC-018 must answer all three before authorize. Without this,
+wire-up will be uncoordinated.
+
+### 2. Legacy Absorption Gap — CVF_AGENT_ROLE_CATALOG.md
+
+File: `.private_reference/legacy/CVF 16.5/Claude Kit/CVF_AGENT_ROLE_CATALOG.md`
+
+This file contains design intent that was absorbed at concept level but
+NOT at implementation level:
+
+| Concept | Status |
+|---|---|
+| `allowed_outputs` per role (plan, patch, sql_patch, deployment_receipt...) | NOT absorbed — no equivalent in any Phase 1.x contract |
+| `default_permissions` granular (write_code, database_limited, deployment_guarded...) | NOT absorbed — Phase 1.I auth-rbac only has 5 web RBAC roles |
+| 11 domain role IDs (planner, coder, db_agent, deployment_agent...) | NOT absorbed — `AgentFunctionRole` has only generic values |
+| Role Deny Rule (per-role output restriction) | NOT absorbed — only general Policy deny exists |
+
+What WAS absorbed: handoff contract concept, audit receipt, risk level (R-scale).
+
+**Action required before Phase 2.B:** decide whether the permission model
+(`allowed_outputs` + `default_permissions`) belongs in Phase 2.B scope or
+requires a separate phase. This catalog is required reading for that decision.
+
+### 3. Surface Scan ≠ GAP Discovery
+
+The Phase 1.0 drift inventory (surface scan) finds implementations that exist
+but have no canonical home. It does NOT find concepts that were designed but
+never implemented, or concepts flattened during legacy absorption.
+
+Two scans are needed before each future GC-018:
+1. **Surface scan** — finds drift/duplication (what Phase 1.0 did)
+2. **Legacy absorption audit** — reads `.private_reference/legacy/` and
+   compares design intent vs current CVF implementation (what Phase 1.0 did NOT do)
+
+Running only surface scan produces false confidence.
+
 ## Claim Boundary
 
 This handoff:
 
-- records the session state as of 2026-05-18 (HEAD `3b1bf6b5`)
+- records the session state as of 2026-05-18 (HEAD `67141043`)
 - authorizes implementation of phases 1.P/1.I/1.R/1.M/2.A/3.S (GC-018 filed);
   does not authorize Phase 2.B/2.C/3.E/4.T1/4.T2
 - does not promote private 17.05 review material into CVF canon
