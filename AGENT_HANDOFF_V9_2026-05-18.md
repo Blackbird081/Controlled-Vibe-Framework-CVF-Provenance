@@ -2,10 +2,10 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — 17.05 reconvergence Phase 0.A + Phase 1.0 delivered. Session
-mode remains `system_reconvergence_stop`. Next authorized moves: Phase 1.0
-extended scope artifacts (Governance Kernel owner map, terminology alias table,
-unabsorbed kernel source matrix).
+Status: ACTIVE — 17.05 reconvergence Phase 0.A + Phase 1.0 + Phase 1.0 extended
+scope delivered. All 6 GC-018 authorization packets filed (phases 1.P/1.I/1.R/
+1.M/2.A/3.S). Session mode remains `system_reconvergence_stop`. Next authorized
+move: Phase 1.P implementation (canonical policy/risk/guard contracts).
 
 Remote tracking branch: `origin/main`
 
@@ -53,19 +53,31 @@ be loaded by any incoming agent or future `cvf-cli` / `cvf-mcp-server`.
 
 ## Active Boundary
 
-Operator authorization as of 2026-05-17:
+State as of 2026-05-18:
 
-- Phase 0.A (GC-046 doctrine): DELIVERED
-- Phase 1.0 (drift inventory): DELIVERED
+- Phase 0.A (GC-046 doctrine): DELIVERED — commit `0306f92b`
+- Phase 1.0 (drift inventory): DELIVERED — commit `0306f92b`
 - Phase 1.0 extended scope (owner map, alias table, unabsorbed source matrix):
-  AUTHORIZED — these are the only currently permitted implementation moves
+  DELIVERED — commit `daa97429`
+- GC-018 authorization packets (phases 1.P/1.I/1.R/1.M/2.A/3.S): FILED —
+  commit `240d94d2`
 
-All subsequent phases require their own fresh GC-018 packets and are blocked
-until Phase 1.0 is manually verified by the operator.
+Authorized next implementation:
 
-The `system_reconvergence_stop` posture blocks all broad absorption and new
-semantic work. Only the reconvergence/owner-mapping work described above is
-permitted under this posture.
+- Phase 1.P: canonical policy decision contract, RiskLevel type, GuardEngine
+  adapter documentation, adapter maps for 46 surfaces, conformance test stubs
+- Phase 1.I: four role axis definitions, adapter plan for 20 role surfaces
+- Phase 1.R: Receipt\<TPayload\> envelope spec, compatibility plan for 27 surfaces
+- Phase 1.M: 5-tier memory model, GAP-MEM extension
+- Phase 2.A: provisional GovernedCapability + OutcomeWorkflow contracts
+- Phase 3.S: schema entries for 10 candidate operational metrics
+
+Phase 2.B remains blocked until Phase 1.P/1.I/1.R owners complete.
+Phase 3.E remains blocked until runtime sources exist after 1.P/1.R/2.C.
+
+The `system_reconvergence_stop` posture blocks broad absorption and new
+semantic work. Only the phases listed above (each with a filed GC-018) are
+permitted implementation moves.
 
 ## Latest Work / Changes
 
@@ -84,7 +96,7 @@ delivered:
 - Session front door (`CVF_SESSION_MEMORY.md`) and active-state registry
   (`CVF_SESSION/ACTIVE_SESSION_STATE.json`) both updated to V9
 
-Current HEAD: `0306f92b`
+Current HEAD: `240d94d2`
 
 ## What This Session Delivered
 
@@ -153,6 +165,8 @@ reconvergence context:
 ### HEAD
 
 ```
+240d94d2 feat(baselines): add GC-018 authorization packets for phases 1.P/1.I/1.R/1.M/2.A/3.S
+daa97429 feat(reviews): Phase 1.0 extended scope — owner map, alias table, unabsorbed source matrix
 0306f92b feat(governance): implement Phase 0.A anti-collusion protocol and Phase 1.0 drift inventory
 ```
 
@@ -188,68 +202,119 @@ Do not start without explicit operator override and fresh GC-018:
 
 ## Authorized Next Moves
 
-Phase 1.0 has extended scope beyond the drift inventory. The Governance Kernel
-Freeze recommendation requires three additional artifacts. These are the only
-authorized implementation moves under the current session mode.
+All 6 GC-018 authorization packets are filed (commit `240d94d2`). Each phase
+below has a filed GC-018 and is ready for implementation. GC-023 pre-flight
+check required before adding to any governed file.
 
-Each artifact requires a GC-018 authorization packet and GC-023 pre-flight
-before implementation.
+### Phase 1.P — Policy / Risk / Guard Contract Convergence
 
-### Phase 1.0 Extended Scope — Artifact 1
+GC-018: `docs/baselines/CVF_GC018_PHASE_1P_POLICY_RISK_GUARD_CONVERGENCE_2026-05-18.md`
 
-**Owner Map**
+Authorized deliverables:
 
-File: `docs/reviews/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md`
+- Canonical policy decision contract (TypeScript interface or Python abstract class)
+- Canonical RiskLevel type covering R0–R3 scale
+- CVF_GUARD_CONTRACT/src/engine.ts confirmed as canonical GuardEngine home;
+  domain guard adapters documented
+- Adapter maps for all Phase 1.0 surfaces: PolicyEngine(13), RiskEngine/
+  RiskScorer(26), GuardEngine(7)
+- Conformance test stubs per canonical contract
+- legacy_reference marking for starter template and dist surfaces
 
-Purpose: assign a canonical owner (or explicit "no owner / needs decision") to
-each of the 12 kernel surfaces identified in the Governance Kernel Freeze
-recommendation. Output: a table mapping surface → owner → disposition decision
-(canonical_contract / adapter / legacy_reference / deprecate_candidate).
+Not permitted: deleting/renaming any existing implementation, runtime wire-up,
+new engine implementations beyond the canonical contract.
 
-Memory class: `FULL_RECORD`.
+### Phase 1.I — Identity And Role Taxonomy
 
-GC-045 required sections: Purpose, Target, Scope, Findings (owner table),
-Risk, Decision, Claim Boundary.
+GC-018: `docs/baselines/CVF_GC018_PHASE_1I_IDENTITY_ROLE_TAXONOMY_2026-05-18.md`
 
-### Phase 1.0 Extended Scope — Artifact 2
+Authorized deliverables:
 
-**Terminology Alias Table**
+- Four role axis definitions (agent function / operator-team / auth-RBAC /
+  governance actor)
+- Axis classification for all 20 Phase 1.0 role surfaces
+- Adapter plan for role string migration
+- Conformance test stubs per axis boundary
 
-File: `docs/reviews/CVF_17_05_KERNEL_TERMINOLOGY_ALIAS_TABLE_2026-05-17.md`
+Not permitted: renaming/deleting any role enum, runtime role check changes,
+multi-tenant role scopes.
 
-Purpose: map all known synonym/alias relationships across the 6 drift concern
-groups (e.g., PolicyEngine ↔ RoutingPolicyEngine ↔ PolicyDecisionEngine;
-RiskEngine ↔ RiskScorer ↔ RiskPropagation). Each entry: canonical term →
-aliases found → recommended disposition.
+### Phase 1.R — Receipt Envelope And Compatibility Plan
 
-Memory class: `FULL_RECORD`.
+GC-018: `docs/baselines/CVF_GC018_PHASE_1R_RECEIPT_ENVELOPE_2026-05-18.md`
 
-### Phase 1.0 Extended Scope — Artifact 3
+Authorized deliverables:
 
-**Unabsorbed Kernel Source Matrix**
+- Canonical Receipt\<TPayload\> envelope specification
+- Classification of all 27 Phase 1.0 receipt surfaces (payload type or
+  legacy_reference)
+- Reader/writer compatibility plan
+- Conformance test stubs
 
-File: `docs/reviews/CVF_17_05_UNABSORBED_KERNEL_SOURCE_MATRIX_2026-05-17.md`
+Not permitted: changing any existing receipt producer or reader, long-term
+ledger archiving, multi-tenant audit scope.
 
-Purpose: list all source files from the private review folder and 17.05 audit
-that have not yet been absorbed into canon. For each: absorption status
-(absorbed / partially absorbed / not absorbed) and blocking reason if not
-absorbed.
+### Phase 1.M — Memory-Home Tier Map
 
-Memory class: `FULL_RECORD`.
+GC-018: `docs/baselines/CVF_GC018_PHASE_1M_MEMORY_HOME_TIER_MAP_2026-05-18.md`
 
-## Deferred Phases (Require Separate GC-018)
+Authorized deliverables:
+
+- 5-tier memory model definition (working / task / skill / audit / receipt)
+- Tier assignment for all Phase 1.0 memory-home surfaces
+- Extension of existing GAP-MEM work
+- Conformance test stubs for tier boundary contracts
+
+Not permitted: renaming/deleting any existing memory reference, long-term or
+organizational memory tiers, runtime memory path changes.
+
+### Phase 2.A — Contract Sketch
+
+GC-018: `docs/baselines/CVF_GC018_PHASE_2A_CONTRACT_SKETCH_2026-05-18.md`
+
+Authorized deliverables:
+
+- Provisional GovernedCapability contract (type definition only)
+- Provisional OutcomeWorkflow contract (type definition only)
+- Placeholder canonical owner bindings from Phase 1.0 owner map
+- Explicit outcome → deliverable chain documentation
+- All contracts marked provisional
+
+Not permitted: web execute route integration, runtime behavior changes,
+Phase 2.B/2.C work.
+
+### Phase 3.S — Operational Metrics Schema Definitions
+
+GC-018: `docs/baselines/CVF_GC018_PHASE_3S_OPERATIONAL_METRICS_SCHEMA_2026-05-18.md`
+
+Authorized deliverables:
+
+- Schema entries for all 10 candidate metrics (task completion rate, retry
+  count, hallucination recovery, policy violation rate, human correction count,
+  cross-session continuity, long-horizon stability, receipt integrity,
+  deterministic consistency, rollback success)
+- planned-but-not-emitted classification for metrics without live sources
+- Emission phase annotation per metric
+
+Not permitted: emission infrastructure, dashboard integration, claims of live
+operational intelligence.
+
+## Deferred Phases
 
 | Phase | Status | Blocker |
 |---|---|---|
 | Phase 0.B (Evidence Trace Block manual checker + CI advisory) | DEFERRED | Requires 3 review packets using GC-046 protocol; separate GC-018 |
 | Phase 0.C (pre-commit hard-fail for missing Evidence Trace Blocks) | DEFERRED | Requires Phase 0.B evidence |
-| Phase 1.P (PolicyEngine canonical consolidation) | BLOCKED | Phase 1.0 inventory must be manually verified + fresh GC-018 |
-| Phase 1.I (RiskEngine/RiskScorer canonical consolidation) | BLOCKED | Same |
-| Phase 1.R (GuardEngine/GuardRuntime consolidation) | BLOCKED | Same |
-| Phase 1.M (Memory/MemoryHome canonical tier) | BLOCKED | Same |
-| Phases 2.A–C (capability workflow wiring) | BLOCKED | Phase 1 must close first |
-| Phases 3.S/E (skill system + evidence path) | BLOCKED | Phase 2 must close first |
-| Phases 4.T1/T2 (noncoder UX) | BLOCKED | Phase 3 must close first |
+| Phase 1.P (policy/risk/guard contract convergence) | **GC-018 FILED — READY** | GC-018: `docs/baselines/CVF_GC018_PHASE_1P_*` |
+| Phase 1.I (identity and role taxonomy) | **GC-018 FILED — READY** | GC-018: `docs/baselines/CVF_GC018_PHASE_1I_*` |
+| Phase 1.R (receipt envelope and compatibility plan) | **GC-018 FILED — READY** | GC-018: `docs/baselines/CVF_GC018_PHASE_1R_*` |
+| Phase 1.M (memory-home tier map) | **GC-018 FILED — READY** | GC-018: `docs/baselines/CVF_GC018_PHASE_1M_*` |
+| Phase 2.A (contract sketch) | **GC-018 FILED — READY** | GC-018: `docs/baselines/CVF_GC018_PHASE_2A_*` |
+| Phase 2.B (runtime wire-up) | BLOCKED | Requires Phase 1.P/1.I/1.R owners complete |
+| Phase 2.C (vertical slice) | BLOCKED | Requires Phase 2.B |
+| Phase 3.S (operational metrics schema) | **GC-018 FILED — READY** | GC-018: `docs/baselines/CVF_GC018_PHASE_3S_*` |
+| Phase 3.E (emission pilot) | BLOCKED | Requires runtime sources after 1.P/1.R/2.C |
+| Phases 4.T1/T2 (provider method extension) | BLOCKED | Each requires named vertical slice or runtime need + GC-018 |
 | ORCHESTRATOR Role Boundary (6-phase roadmap) | DEFERRED | Separate GC-018 required; no authorization in current posture |
 
 ## 17.05 Review Chain State
@@ -263,20 +328,30 @@ Memory class: `FULL_RECORD`.
 
 | Artifact | Role |
 |---|---|
-| `docs/reviews/CVF_17_05_REVIEW_CVF_CONVERGED_VERDICT_2026-05-17.md` | Canonical entry point for 17.05 chain outcome |
-| `docs/reviews/CVF_17_05_STABILIZATION_DRIFT_INVENTORY_2026-05-17.md` | 94-surface drift map |
-| `governance/toolkit/05_OPERATION/CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD.md` | GC-046 anti-collusion protocol |
-| `scripts/run_cvf_17_05_drift_inventory.py` | Re-runnable drift inventory script |
 | `CVF_SESSION_MEMORY.md` | Session front door — read first |
 | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Machine-readable active state |
-| `.private_reference/legacy/CVF 17.05/REVIEW FOLDER/CVF_17_05_FINAL_CONVERGED_REMEDIATION_ROADMAP_2026-05-17.md` | Source roadmap for all authorized phases |
+| `docs/reviews/CVF_17_05_REVIEW_CVF_CONVERGED_VERDICT_2026-05-17.md` | Canonical entry point for 17.05 chain outcome |
+| `docs/reviews/CVF_17_05_STABILIZATION_DRIFT_INVENTORY_2026-05-17.md` | 94-surface drift map (Phase 1.0) |
+| `docs/reviews/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md` | 12 kernel surfaces → owners (Phase 1.0 extended) |
+| `docs/reviews/CVF_17_05_KERNEL_TERMINOLOGY_ALIAS_TABLE_2026-05-17.md` | 24 canonical terms, 9 alias groups (Phase 1.0 extended) |
+| `docs/reviews/CVF_17_05_UNABSORBED_KERNEL_SOURCE_MATRIX_2026-05-17.md` | 44 source concepts, absorption status (Phase 1.0 extended) |
+| `docs/baselines/CVF_GC018_PHASE_1P_POLICY_RISK_GUARD_CONVERGENCE_2026-05-18.md` | GC-018 for Phase 1.P |
+| `docs/baselines/CVF_GC018_PHASE_1I_IDENTITY_ROLE_TAXONOMY_2026-05-18.md` | GC-018 for Phase 1.I |
+| `docs/baselines/CVF_GC018_PHASE_1R_RECEIPT_ENVELOPE_2026-05-18.md` | GC-018 for Phase 1.R |
+| `docs/baselines/CVF_GC018_PHASE_1M_MEMORY_HOME_TIER_MAP_2026-05-18.md` | GC-018 for Phase 1.M |
+| `docs/baselines/CVF_GC018_PHASE_2A_CONTRACT_SKETCH_2026-05-18.md` | GC-018 for Phase 2.A |
+| `docs/baselines/CVF_GC018_PHASE_3S_OPERATIONAL_METRICS_SCHEMA_2026-05-18.md` | GC-018 for Phase 3.S |
+| `governance/toolkit/05_OPERATION/CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD.md` | GC-046 anti-collusion protocol |
+| `scripts/run_cvf_17_05_drift_inventory.py` | Re-runnable drift inventory script |
+| `.private_reference/legacy/CVF 17.05/REVIEW FOLDER/CVF_17_05_REVIEW_CVF_FINAL_CONVERGED_REMEDIATION_ROADMAP_2026-05-17.md` | Source roadmap for all authorized phases |
 
 ## Claim Boundary
 
 This handoff:
 
-- records the session state as of 2026-05-17 (commit `0306f92b`)
-- does not authorize implementation of any phase beyond Phase 1.0 extended scope
+- records the session state as of 2026-05-18 (HEAD `240d94d2`)
+- authorizes implementation of phases 1.P/1.I/1.R/1.M/2.A/3.S (GC-018 filed);
+  does not authorize Phase 2.B/2.C/3.E/4.T1/4.T2
 - does not promote private 17.05 review material into CVF canon
 - does not change public claims, release gates, or GA posture
 - does not claim live governance proof
