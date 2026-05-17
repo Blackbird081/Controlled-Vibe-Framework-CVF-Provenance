@@ -93,6 +93,32 @@ Not allowed:
 - claiming target-state completion when only a bounded slice landed
 - handing off with no commit or reference state when a clean commit exists
 
+### In-Place Update Rule
+
+When the active handoff is updated mid-session (without creating a new version),
+every edit must keep the following fields in sync with each other:
+
+- `Status:` line (top of file) — one-sentence current state
+- `Active Boundary` section — delivered vs. authorized vs. blocked
+- `HEAD` block in Current State — latest commit SHA and message
+- `Handoff History` table — the current version's summary cell must reflect the
+  full scope actually delivered, not only the scope that existed when the
+  handoff was first created
+
+The History table entry for the **active version** is a living summary. It must
+be updated whenever the Active Boundary changes. A History entry that reads
+"Phase X only" while the Active Boundary shows Phase X + Y + Z delivered is a
+sync violation — it misleads the next agent about what this session covered.
+
+Sync check before every commit that touches the active handoff:
+
+1. Does the `Status:` line match what Active Boundary says is done?
+2. Does the HEAD SHA match the latest committed SHA?
+3. Does the History table entry for the active version list every phase/batch
+   delivered so far in this session?
+
+If any answer is no, fix the mismatch in the same commit.
+
 ### Handoff Archive Protocol
 
 When a new handoff supersedes a previous one, the worker must:
