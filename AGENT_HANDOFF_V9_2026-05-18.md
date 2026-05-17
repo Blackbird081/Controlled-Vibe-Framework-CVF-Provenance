@@ -2,12 +2,11 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — 17.05 reconvergence Phases 0.A/0.B/0.C + 1.0 + extended
-scope delivered. All 6 GC-018 packets filed. Phase 1.P DELIVERED. Phase 1.I
-DELIVERED. Phase 1.R DELIVERED. Phase 1.M DELIVERED (5-tier memory model,
-tier adapter map, 25 conformance stubs). Session mode remains
-`system_reconvergence_stop`. Next authorized move: Phase 2.A (contract sketch)
-and Phase 3.S (operational metrics schema).
+Status: ACTIVE — 17.05 reconvergence COMPLETE. All authorized phases delivered:
+0.A/0.B/0.C + 1.0 + 1.P + 1.I + 1.R + 1.M + 2.A + 3.S. 23/23 test files,
+348 tests pass. Session mode remains `system_reconvergence_stop`. Next
+authorized move: Phase 2.B runtime wire-up (requires separate GC-018 + Phase
+1.P/1.I/1.R owners confirmed).
 
 Remote tracking branch: `origin/main`
 
@@ -100,7 +99,7 @@ delivered:
 - Session front door (`CVF_SESSION_MEMORY.md`) and active-state registry
   (`CVF_SESSION/ACTIVE_SESSION_STATE.json`) both updated to V9
 
-Current HEAD: `e95452dc`
+Current HEAD: `1414aeb6`
 
 ## What This Session Delivered
 
@@ -169,6 +168,7 @@ reconvergence context:
 ### HEAD
 
 ```
+1414aeb6 feat(contracts): implement Phase 1.M 5-tier memory-home model
 e95452dc feat(contracts): implement Phase 1.R canonical Receipt envelope
 9e5c1471 feat(contracts): implement Phase 1.I role axis taxonomy
 1f9e3ed9 chore(handoff): update V9 — Phase 1.P DELIVERED, HEAD 3b1bf6b5
@@ -323,10 +323,10 @@ operational intelligence.
 | Phase 1.I (identity and role taxonomy) | **DELIVERED** | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/` — 4 axes, 20-surface map, 21 stubs |
 | Phase 1.R (receipt envelope and compatibility plan) | **DELIVERED** | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/` — Receipt envelope, 27-surface map, stubs |
 | Phase 1.M (memory-home tier map) | **DELIVERED** | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/` — 5-tier model, tier adapter map, 25 stubs |
-| Phase 2.A (contract sketch) | **GC-018 FILED — READY** | GC-018: `docs/baselines/CVF_GC018_PHASE_2A_*` |
+| Phase 2.A (contract sketch) | **DELIVERED** | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/` — GovernedCapability + OutcomeWorkflow provisional contracts |
 | Phase 2.B (runtime wire-up) | BLOCKED | Requires Phase 1.P/1.I/1.R owners complete |
 | Phase 2.C (vertical slice) | BLOCKED | Requires Phase 2.B |
-| Phase 3.S (operational metrics schema) | **GC-018 FILED — READY** | GC-018: `docs/baselines/CVF_GC018_PHASE_3S_*` |
+| Phase 3.S (operational metrics schema) | **DELIVERED** | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/` — 10 metric schemas, planned-but-not-emitted |
 | Phase 3.E (emission pilot) | BLOCKED | Requires runtime sources after 1.P/1.R/2.C |
 | Phases 4.T1/T2 (provider method extension) | BLOCKED | Each requires named vertical slice or runtime need + GC-018 |
 | ORCHESTRATOR Role Boundary (6-phase roadmap) | DEFERRED | Separate GC-018 required; no authorization in current posture |
@@ -390,6 +390,6 @@ This handoff:
 | V6 | 2026-05-16 | v4.0.0 GA |
 | V7 | 2026-05-16 | Absorption queue Steps 1–7 |
 | V8 | 2026-05-17 | Absorption queue Steps 8–10c (closed) |
-| **V9** | **2026-05-18** | **0.A/0.B/0.C + 1.0 + extended + GC-018 (all 6) + 1.P/1.I/1.R/1.M ALL DELIVERED — 314 tests pass; next: 2.A + 3.S** |
+| **V9** | **2026-05-18** | **ALL PHASES DELIVERED: 0.A/0.B/0.C + 1.0 + 1.P + 1.I + 1.R + 1.M + 2.A + 3.S — 348 tests pass; 17.05 converged roadmap complete** |
 
 Archive: `CVF_SESSION/handoffs/archive/`

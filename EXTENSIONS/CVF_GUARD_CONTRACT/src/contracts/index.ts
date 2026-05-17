@@ -101,3 +101,27 @@ export {
 } from './memory-tier.contract';
 
 export { MEMORY_TIER_ADAPTER_MAP } from './memory-tier-adapter-map';
+
+export type {
+  PROVISIONAL,
+  GovernedCapability,
+  OutcomeWorkflow,
+  OutcomeWorkflowStep,
+  OutcomeDeliverable,
+} from './governed-capability.contract';
+
+export {
+  OUTCOME_DELIVERABLE_CHAIN_DOC,
+} from './governed-capability.contract';
+
+export type {
+  MetricEmissionStatus,
+  OperationalMetricSchema,
+} from './operational-metrics.schema';
+
+export {
+  OPERATIONAL_METRICS_SCHEMA,
+  getMetricById,
+  getMetricsByEmissionStatus,
+  getMetricsByEmissionPhase,
+} from './operational-metrics.schema';
