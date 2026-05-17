@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — 17.05 reconvergence Phase 0.A + Phase 1.0 + Phase 1.0 extended
+Status: ACTIVE — 17.05 reconvergence Phases 0.A/0.B/0.C + 1.0 + 1.0 extended
 scope delivered. All 6 GC-018 authorization packets filed (phases 1.P/1.I/1.R/
 1.M/2.A/3.S). Session mode remains `system_reconvergence_stop`. Next authorized
 move: Phase 1.P implementation (canonical policy/risk/guard contracts).
@@ -56,6 +56,8 @@ be loaded by any incoming agent or future `cvf-cli` / `cvf-mcp-server`.
 State as of 2026-05-18:
 
 - Phase 0.A (GC-046 doctrine): DELIVERED — commit `0306f92b`
+- Phase 0.B (advisory checker): DELIVERED — commit `edbc6980`
+- Phase 0.C (hard-fail enforcement): DELIVERED — commit `18c01300`
 - Phase 1.0 (drift inventory): DELIVERED — commit `0306f92b`
 - Phase 1.0 extended scope (owner map, alias table, unabsorbed source matrix):
   DELIVERED — commit `daa97429`
@@ -96,7 +98,7 @@ delivered:
 - Session front door (`CVF_SESSION_MEMORY.md`) and active-state registry
   (`CVF_SESSION/ACTIVE_SESSION_STATE.json`) both updated to V9
 
-Current HEAD: `240d94d2`
+Current HEAD: `18c01300`
 
 ## What This Session Delivered
 
@@ -165,6 +167,9 @@ reconvergence context:
 ### HEAD
 
 ```
+18c01300 feat(compat): implement GC-046 Phase 0.C hard-fail for new review packets
+edbc6980 feat(compat): add GC-046 Phase 0.B anti-collusion evidence trace advisory checker
+70fca463 chore(handoff): update V9 handoff — GC-018 packets filed, phases 1.P/I/R/M/2.A/3.S ready
 240d94d2 feat(baselines): add GC-018 authorization packets for phases 1.P/1.I/1.R/1.M/2.A/3.S
 daa97429 feat(reviews): Phase 1.0 extended scope — owner map, alias table, unabsorbed source matrix
 0306f92b feat(governance): implement Phase 0.A anti-collusion protocol and Phase 1.0 drift inventory
@@ -303,8 +308,8 @@ operational intelligence.
 
 | Phase | Status | Blocker |
 |---|---|---|
-| Phase 0.B (Evidence Trace Block manual checker + CI advisory) | DEFERRED | Requires 3 review packets using GC-046 protocol; separate GC-018 |
-| Phase 0.C (pre-commit hard-fail for missing Evidence Trace Blocks) | DEFERRED | Requires Phase 0.B evidence |
+| Phase 0.B (advisory checker) | **DELIVERED** | commit `edbc6980` — threshold met (4/3 compliant packets) |
+| Phase 0.C (pre-commit hard-fail) | **DELIVERED** | commit `18c01300` — grandfathered for legacy; hard-fail for new packets |
 | Phase 1.P (policy/risk/guard contract convergence) | **GC-018 FILED — READY** | GC-018: `docs/baselines/CVF_GC018_PHASE_1P_*` |
 | Phase 1.I (identity and role taxonomy) | **GC-018 FILED — READY** | GC-018: `docs/baselines/CVF_GC018_PHASE_1I_*` |
 | Phase 1.R (receipt envelope and compatibility plan) | **GC-018 FILED — READY** | GC-018: `docs/baselines/CVF_GC018_PHASE_1R_*` |
@@ -349,7 +354,7 @@ operational intelligence.
 
 This handoff:
 
-- records the session state as of 2026-05-18 (HEAD `240d94d2`)
+- records the session state as of 2026-05-18 (HEAD `18c01300`)
 - authorizes implementation of phases 1.P/1.I/1.R/1.M/2.A/3.S (GC-018 filed);
   does not authorize Phase 2.B/2.C/3.E/4.T1/4.T2
 - does not promote private 17.05 review material into CVF canon
