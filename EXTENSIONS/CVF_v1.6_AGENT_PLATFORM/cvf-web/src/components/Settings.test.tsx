@@ -16,6 +16,8 @@ function renderSettingsPage() {
 describe('SettingsPage', () => {
     beforeEach(() => {
         localStorage.removeItem('cvf_settings');
+        localStorage.removeItem('cvf_integrations');
+        vi.unstubAllGlobals();
     });
 
     it('renders providers tab and updates api key', async () => {
@@ -53,6 +55,34 @@ describe('SettingsPage', () => {
         fireEvent.click(screen.getByRole('button', { name: /Reset tất cả/i }));
 
         expect(localStorage.getItem('cvf_settings')).toBeNull();
+    });
+
+    it('renders integrations tab and saves a Supabase runtime store', async () => {
+        vi.stubGlobal('fetch', vi.fn(async () => Response.json({
+            ok: true,
+            status: 'connected',
+            latencyMs: 12,
+        })));
+
+        renderSettingsPage();
+        await waitFor(() => expect(screen.getByText('⚙️ Cài đặt')).toBeTruthy());
+
+        expect(screen.getByText('🔗 Integrations')).toBeTruthy();
+        fireEvent.click(screen.getByText('🔗 Integrations'));
+        fireEvent.click(screen.getByRole('button', { name: /Supabase/i }));
+
+        fireEvent.change(screen.getByLabelText(/Project URL/i), {
+            target: { value: 'https://example.supabase.co' },
+        });
+        fireEvent.change(screen.getByLabelText(/Anon Key/i), {
+            target: { value: 'anon-key' },
+        });
+        fireEvent.click(screen.getByRole('button', { name: /Test Connection/i }));
+
+        await waitFor(() => expect(screen.getByText(/Đã kết nối/i)).toBeTruthy());
+        fireEvent.click(screen.getByRole('button', { name: /^Lưu$/i }));
+
+        expect(localStorage.getItem('cvf_integrations')).toContain('supabase');
     });
 
     it('exports and imports settings', async () => {

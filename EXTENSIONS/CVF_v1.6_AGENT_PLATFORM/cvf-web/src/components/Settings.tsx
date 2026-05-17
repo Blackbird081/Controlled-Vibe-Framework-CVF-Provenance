@@ -4,6 +4,7 @@ import { useState, useCallback, useEffect } from 'react';
 import { useLanguage } from '@/lib/i18n';
 import { type OpenClawMode } from '@/lib/openclaw-config';
 import { PROVIDER_LANE_EVIDENCE, LANE_BADGE_STYLE } from '@/lib/provider-lane-metadata';
+import { IntegrationsTab } from './IntegrationsTab';
 
 // Types
 export type ProviderKey = 'gemini' | 'openai' | 'anthropic' | 'alibaba' | 'openrouter' | 'deepseek';
@@ -265,7 +266,7 @@ export function SettingsPage({ onClose }: SettingsPageProps) {
         importSettings,
     } = useSettings();
 
-    const [activeTab, setActiveTab] = useState<'providers' | 'preferences' | 'data'>('providers');
+    const [activeTab, setActiveTab] = useState<'providers' | 'preferences' | 'data' | 'integrations'>('providers');
     const [showApiKey, setShowApiKey] = useState<Record<string, boolean>>({});
     const [saved, setSaved] = useState(false);
 
@@ -294,6 +295,7 @@ export function SettingsPage({ onClose }: SettingsPageProps) {
             providers: '🔑 AI Providers',
             preferences: '🎨 Preferences',
             data: '💾 Data',
+            integrations: '🔗 Integrations',
             apiKey: 'API Key',
             show: 'Hiện',
             hide: 'Ẩn',
@@ -335,6 +337,7 @@ export function SettingsPage({ onClose }: SettingsPageProps) {
             providers: '🔑 AI Providers',
             preferences: '🎨 Preferences',
             data: '💾 Data',
+            integrations: '🔗 Integrations',
             apiKey: 'API Key',
             show: 'Show',
             hide: 'Hide',
@@ -410,7 +413,7 @@ export function SettingsPage({ onClose }: SettingsPageProps) {
 
             {/* Tabs */}
             <div className="flex border-b border-gray-200 dark:border-white/[0.07]">
-                {(['providers', 'preferences', 'data'] as const).map((tab) => (
+                {(['providers', 'preferences', 'data', 'integrations'] as const).map((tab) => (
                     <button
                         key={tab}
                         onClick={() => setActiveTab(tab)}
@@ -776,6 +779,10 @@ export function SettingsPage({ onClose }: SettingsPageProps) {
                             <p className="text-xs text-gray-500 text-center mt-2">{l.warningReset}</p>
                         </div>
                     </div>
+                )}
+
+                {activeTab === 'integrations' && (
+                    <IntegrationsTab />
                 )}
             </div>
         </div>

@@ -6,14 +6,17 @@ const mockListGovernanceJobs = vi.fn(() => ({
     events: [],
     jobs: [],
 }));
-const mockSubmitGovernanceJob = vi.fn(async (_request?: unknown) => ({
-    jobId: 'job-1',
-    status: 'succeeded',
-    decision: 'allowed',
-    decisionReason: 'role_authorized',
-    auditPath: '.cvf/runtime/web-governance-jobs.jsonl',
-    latestEvent: { status: 'succeeded' },
-}));
+const mockSubmitGovernanceJob = vi.fn(async (request?: unknown) => {
+    void request;
+    return {
+        jobId: 'job-1',
+        status: 'succeeded',
+        decision: 'allowed',
+        decisionReason: 'role_authorized',
+        auditPath: '.cvf/runtime/web-governance-jobs.jsonl',
+        latestEvent: { status: 'succeeded' },
+    };
+});
 const mockVerifySessionCookie = vi.fn(async () => ({
     userId: 'u-1',
     user: 'Test Operator',
