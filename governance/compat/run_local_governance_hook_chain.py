@@ -40,6 +40,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
             "markdown structural completeness",
             ["python", "governance/compat/check_markdown_structural_completeness.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
+        (
+            "anti-collusion evidence trace advisory (GC-046 Phase 0.B)",
+            ["python", "governance/compat/check_anti_collusion_evidence_trace.py"],
+        ),
     ],
     "pre-push": [
         (
