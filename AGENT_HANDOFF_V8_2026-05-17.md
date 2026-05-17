@@ -926,15 +926,15 @@ add all five lanes. Push to GitHub.
 
 After all steps in this handoff are done, verify:
 
-- [ ] Steps 8–10 all have GC-018 authorization packets in `docs/baselines/`
-- [ ] Steps 8–10 all have adoption roadmap docs in `docs/roadmaps/`
-- [ ] Steps 8–10 all have ADR docs in `docs/reference/`
-- [ ] Inventory has no remaining `deferred` rows (all are `runtime-owned` or `excluded`)
-- [ ] Final consensus roadmap Work Plan has rows 8–10c all marked complete
-- [ ] All CPF new files have tests and pass `npm test` + `npm run check`
-- [ ] Public-sync carries all new src files + updated evidence page
-- [ ] This handoff has a dated completion entry appended for each step
-- [ ] Pre-commit hook chain passes on each commit (GC-023, GC-045, docs governance)
+- [x] Steps 8–10 all have GC-018 authorization packets in `docs/baselines/`
+- [x] Steps 8–10 all have adoption roadmap docs in `docs/roadmaps/`
+- [x] Steps 8–10 all have ADR docs in `docs/reference/`
+- [x] Inventory has no remaining `deferred` rows (all are `runtime-owned` or `excluded`)
+- [x] Final consensus roadmap Work Plan has rows 8–10c all marked complete
+- [x] All CPF new files have tests and pass `npm test` + `npm run check`
+- [x] Public-sync carries all new src files + updated evidence page
+- [x] This handoff has a dated completion entry appended for each step
+- [x] Pre-commit hook chain passes on each commit (GC-023, GC-045, docs governance)
 
 ## 2026-05-17 - Step 8 ADD-B Context Profile Metadata Completed
 
