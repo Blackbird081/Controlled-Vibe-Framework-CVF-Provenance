@@ -78,6 +78,9 @@ $DENY_PATTERNS = @(
     '^docs[/\\]baselines[/\\]',
     '^docs[/\\]reviews[/\\]',
     '^docs[/\\]roadmaps[/\\]',
+    # Internal operation scripts - provenance repo only
+    'scripts[/\\]cvf-provenance-push\.ps1$',
+    'scripts[/\\]cvf-public-sync\.ps1$',
     '\.env$',
     '\.env\.local$',
     '\.env\.[^e]',
