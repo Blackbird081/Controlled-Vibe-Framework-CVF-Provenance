@@ -935,3 +935,37 @@ After all steps in this handoff are done, verify:
 - [ ] Public-sync carries all new src files + updated evidence page
 - [ ] This handoff has a dated completion entry appended for each step
 - [ ] Pre-commit hook chain passes on each commit (GC-023, GC-045, docs governance)
+
+## 2026-05-17 - Step 8 ADD-B Context Profile Metadata Completed
+
+Status: Step 8 completed locally.
+
+Authorization packet:
+
+- `docs/baselines/CVF_GC018_ADD_B_CONTEXT_PROFILE_AUTHORIZATION_2026-05-17.md`
+
+Roadmap and ADR:
+
+- `docs/roadmaps/CVF_ADD_B_CONTEXT_PROFILE_RUNTIME_ADOPTION_ROADMAP_2026-05-17.md`
+- `docs/reference/CVF_ADR_CONTEXT_PROFILE_ADVISORY_METADATA_2026-05-17.md`
+
+Delivered:
+
+- `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/context.profile.contract.ts`
+  defines `ContextProfile` and `applyContextProfile`;
+- Context Profile exports were added through the CPF context barrel;
+- focused tests were added in
+  `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/context.profile.contract.test.ts`;
+- inventory and final consensus roadmap now mark ADD-B `runtime-owned` /
+  `completed 2026-05-17`.
+
+Focused verification:
+
+- Control Plane Foundation `npm test` PASS;
+- Control Plane Foundation `npm run check` PASS.
+
+Claim boundary:
+
+- advisory metadata only;
+- no execution authority, prompt injection, provider routing change, approval
+  authority, source registry, release gate change, or GA posture change.
