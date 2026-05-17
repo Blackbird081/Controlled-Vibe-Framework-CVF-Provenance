@@ -969,3 +969,39 @@ Claim boundary:
 - advisory metadata only;
 - no execution authority, prompt injection, provider routing change, approval
   authority, source registry, release gate change, or GA posture change.
+
+## 2026-05-17 - Step 9 GAP-AGENT-HANDOFF Completed
+
+Status: Step 9 completed locally.
+
+Authorization packet:
+
+- `docs/baselines/CVF_GC018_GAP_AGENT_HANDOFF_AUTHORIZATION_2026-05-17.md`
+
+Roadmap and ADR:
+
+- `docs/roadmaps/CVF_GAP_AGENT_HANDOFF_RUNTIME_ADOPTION_ROADMAP_2026-05-17.md`
+- `docs/reference/CVF_ADR_AGENT_HANDOFF_CONTRACT_RELATIONSHIP_2026-05-17.md`
+
+Delivered:
+
+- `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/agent.handoff.contract.ts`
+  defines `AgentHandoffRecord`, `createAgentHandoff`,
+  `validateAgentHandoff`, and `verifyPolicyContinuity`;
+- CPF coordination barrel now exports the handoff contract helpers/types;
+- focused tests were added in
+  `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/agent.handoff.contract.test.ts`;
+- inventory and final consensus roadmap now mark GAP-AGENT-HANDOFF
+  `runtime-owned` / `completed 2026-05-17`.
+
+Focused verification:
+
+- Control Plane Foundation `npm test` PASS;
+- Control Plane Foundation `npm run check` PASS.
+
+Claim boundary:
+
+- bridge contract only;
+- no new agent authority, runtime execution engine, replacement of existing CPF
+  agent contracts, release gate change, or GA posture change;
+- callers remain responsible for acting on validation helper results.
