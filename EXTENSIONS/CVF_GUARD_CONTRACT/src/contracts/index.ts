@@ -67,3 +67,22 @@ export {
 } from './role-axis.contract';
 
 export { ROLE_AXIS_ADAPTER_MAP } from './role-axis-adapter-map';
+
+export type {
+  Receipt,
+  GatewayReceiptPayload,
+  ExecutionBridgeReceiptPayload,
+  GovernanceLedgerReceiptPayload,
+  ControlledMemoryReceiptPayload,
+  GatewayReceipt,
+  ExecutionBridgeReceipt,
+  GovernanceLedgerReceipt,
+  ControlledMemoryReceipt,
+  ReceiptEnvelopeAdapterMeta,
+} from './receipt-envelope.contract';
+
+export {
+  RECEIPT_SCHEMA_VERSION_1R,
+} from './receipt-envelope.contract';
+
+export { RECEIPT_ENVELOPE_ADAPTER_MAP } from './receipt-envelope-adapter-map';

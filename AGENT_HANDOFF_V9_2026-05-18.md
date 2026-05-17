@@ -4,10 +4,10 @@ Memory class: FULL_RECORD
 
 Status: ACTIVE — 17.05 reconvergence Phases 0.A/0.B/0.C + 1.0 + 1.0 extended
 scope delivered. All 6 GC-018 authorization packets filed (phases 1.P/1.I/1.R/
-1.M/2.A/3.S). Phase 1.P DELIVERED. Phase 1.I DELIVERED (four role axis
-definitions, 20-surface adapter map, conformance stubs). Session mode remains
-`system_reconvergence_stop`. Next authorized move: Phase 1.R implementation
-(Receipt envelope contract).
+1.M/2.A/3.S). Phase 1.P DELIVERED. Phase 1.I DELIVERED. Phase 1.R DELIVERED
+(Receipt<TPayload> envelope, 27-surface map, compatibility plan, stubs).
+Session mode remains `system_reconvergence_stop`. Next authorized move:
+Phase 1.M implementation (memory-home tier map).
 
 Remote tracking branch: `origin/main`
 
@@ -100,7 +100,7 @@ delivered:
 - Session front door (`CVF_SESSION_MEMORY.md`) and active-state registry
   (`CVF_SESSION/ACTIVE_SESSION_STATE.json`) both updated to V9
 
-Current HEAD: `1f9e3ed9`
+Current HEAD: `9e5c1471`
 
 ## What This Session Delivered
 
@@ -169,6 +169,7 @@ reconvergence context:
 ### HEAD
 
 ```
+9e5c1471 feat(contracts): implement Phase 1.I role axis taxonomy
 1f9e3ed9 chore(handoff): update V9 — Phase 1.P DELIVERED, HEAD 3b1bf6b5
 3b1bf6b5 feat(contracts): implement Phase 1.P canonical policy/risk/guard contracts
 8a61f40f feat(compat): enforce GC-020 HEAD SHA sync in active handoff (machine check)
@@ -319,7 +320,7 @@ operational intelligence.
 | Phase 0.C (pre-commit hard-fail) | **DELIVERED** | commit `18c01300` — grandfathered for legacy; hard-fail for new packets |
 | Phase 1.P (policy/risk/guard contract convergence) | **DELIVERED** | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/` — 7 files, 46-surface adapter maps, conformance stubs |
 | Phase 1.I (identity and role taxonomy) | **DELIVERED** | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/` — 4 axes, 20-surface map, 21 stubs |
-| Phase 1.R (receipt envelope and compatibility plan) | **GC-018 FILED — READY** | GC-018: `docs/baselines/CVF_GC018_PHASE_1R_*` |
+| Phase 1.R (receipt envelope and compatibility plan) | **DELIVERED** | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/` — Receipt envelope, 27-surface map, stubs |
 | Phase 1.M (memory-home tier map) | **GC-018 FILED — READY** | GC-018: `docs/baselines/CVF_GC018_PHASE_1M_*` |
 | Phase 2.A (contract sketch) | **GC-018 FILED — READY** | GC-018: `docs/baselines/CVF_GC018_PHASE_2A_*` |
 | Phase 2.B (runtime wire-up) | BLOCKED | Requires Phase 1.P/1.I/1.R owners complete |
@@ -388,6 +389,6 @@ This handoff:
 | V6 | 2026-05-16 | v4.0.0 GA |
 | V7 | 2026-05-16 | Absorption queue Steps 1–7 |
 | V8 | 2026-05-17 | Absorption queue Steps 8–10c (closed) |
-| **V9** | **2026-05-18** | **Phase 0.A/0.B/0.C + Phase 1.0 + extended scope + GC-018 filed (1.P/I/R/M/2.A/3.S) + Phase 1.P DELIVERED (policy/risk/guard contracts) + Phase 1.I DELIVERED (role axis taxonomy, 4 axes, 20 surfaces)** |
+| **V9** | **2026-05-18** | **Phase 0.A/0.B/0.C + 1.0 + extended scope + GC-018 (1.P/I/R/M/2.A/3.S) + 1.P DELIVERED (policy/risk/guard) + 1.I DELIVERED (role axes) + 1.R DELIVERED (Receipt envelope, 27 surfaces)** |
 
 Archive: `CVF_SESSION/handoffs/archive/`
