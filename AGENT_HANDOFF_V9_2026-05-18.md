@@ -167,9 +167,11 @@ reconvergence context:
 ### HEAD
 
 ```
+66b15336 fix(governance): add in-place update sync rule to GC-020 handoff guard
+a5a92e81 chore(handoff): fix V9 history summary — reflect full session scope
+2cc70a98 chore(handoff): update V9 — Phase 0.A/0.B/0.C all delivered
 18c01300 feat(compat): implement GC-046 Phase 0.C hard-fail for new review packets
 edbc6980 feat(compat): add GC-046 Phase 0.B anti-collusion evidence trace advisory checker
-70fca463 chore(handoff): update V9 handoff — GC-018 packets filed, phases 1.P/I/R/M/2.A/3.S ready
 240d94d2 feat(baselines): add GC-018 authorization packets for phases 1.P/1.I/1.R/1.M/2.A/3.S
 daa97429 feat(reviews): Phase 1.0 extended scope — owner map, alias table, unabsorbed source matrix
 0306f92b feat(governance): implement Phase 0.A anti-collusion protocol and Phase 1.0 drift inventory
@@ -354,7 +356,7 @@ operational intelligence.
 
 This handoff:
 
-- records the session state as of 2026-05-18 (HEAD `18c01300`)
+- records the session state as of 2026-05-18 (HEAD `66b15336`)
 - authorizes implementation of phases 1.P/1.I/1.R/1.M/2.A/3.S (GC-018 filed);
   does not authorize Phase 2.B/2.C/3.E/4.T1/4.T2
 - does not promote private 17.05 review material into CVF canon

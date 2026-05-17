@@ -16,6 +16,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import subprocess
 import sys
 from pathlib import Path
 from typing import Any
@@ -68,6 +69,21 @@ def _load_state() -> tuple[dict[str, Any] | None, str | None]:
         return json.loads(state_path.read_text(encoding="utf-8")), None
     except json.JSONDecodeError as exc:
         return None, f"invalid JSON: {exc}"
+
+
+def _git_head_sha() -> str | None:
+    """Return the current HEAD SHA (full 40-char), or None if git is unavailable."""
+    try:
+        result = subprocess.run(
+            ["git", "rev-parse", "HEAD"],
+            cwd=REPO_ROOT,
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+        return result.stdout.strip()
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return None
 
 
 def _root_handoff_paths() -> list[Path]:
@@ -190,6 +206,26 @@ def _classify() -> dict[str, Any]:
             f"active handoff registry mismatch: registry={active_handoff}, detected={active_handoffs}"
         )
 
+    # GC-020 In-Place Update Rule: active handoff must contain the current HEAD SHA.
+    # An active handoff that does not mention the current HEAD is stale — it was not
+    # updated after the last commit and will mislead the next agent about repo state.
+    head_sha = _git_head_sha()
+    head_sha_in_handoff: bool | None = None  # None = check skipped (git unavailable)
+    if head_sha and active_handoff:
+        handoff_path = REPO_ROOT / active_handoff
+        if handoff_path.exists():
+            handoff_text = handoff_path.read_text(encoding="utf-8", errors="replace")
+            # Accept either the full SHA or the first 8 characters (short SHA).
+            head_sha_in_handoff = (
+                head_sha in handoff_text or head_sha[:8] in handoff_text
+            )
+            if not head_sha_in_handoff:
+                handoff_violations.append(
+                    f"active handoff does not contain current HEAD SHA {head_sha[:8]} "
+                    f"({head_sha}) — update the handoff HEAD block after every commit "
+                    "(GC-020 In-Place Update Rule)"
+                )
+
     compliant = (
         not missing_files
         and not state_violations
@@ -212,6 +248,8 @@ def _classify() -> dict[str, Any]:
         "markerViolationCount": len(marker_violations),
         "handoffViolations": handoff_violations,
         "handoffViolationCount": len(handoff_violations),
+        "headSha": head_sha,
+        "headShaInHandoff": head_sha_in_handoff,
         "compliant": compliant,
     }
 
@@ -228,6 +266,11 @@ def _print_report(report: dict[str, Any]) -> None:
     print(f"State violations: {report['stateViolationCount']}")
     print(f"Marker violations: {report['markerViolationCount']}")
     print(f"Handoff violations: {report['handoffViolationCount']}")
+    head_sha = report.get("headSha")
+    head_in_handoff = report.get("headShaInHandoff")
+    if head_sha:
+        status = "present" if head_in_handoff else ("MISSING" if head_in_handoff is False else "skipped")
+        print(f"HEAD SHA in handoff: {head_sha[:8]} — {status}")
 
     if report["missingFiles"]:
         print("\nMissing files:")
