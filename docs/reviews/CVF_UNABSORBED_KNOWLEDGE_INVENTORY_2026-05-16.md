@@ -320,8 +320,9 @@ khi mở lại roadmap continuity/handoff.
 
 **Nguồn:** `deepagents`, `Hermes Agent`, `Human System Harness`
 
-**Trạng thái hiện tại:** `deferred` — "DEFER PHASE B". Doctrine synthesis
-hoàn thành private.
+**Trạng thái hiện tại:** `runtime-owned` — completed 2026-05-17 through the
+Control Plane Foundation delegation contract and Execution Plane thin boundary
+guard.
 
 **Nội dung:**
 
@@ -512,6 +513,7 @@ new agent authority.
 | 5 | ADD-B Context Profile Metadata ⭐⭐⭐ | Complete 2026-05-17; advisory context profile metadata for source ranking, budget hints, and sensitivity flags |
 | 6 | GAP-AGENT-HANDOFF Cross-agent handoff ⭐⭐ | Complete 2026-05-17; typed handoff record, receipt ID, validation helper, and policy continuity check |
 | 7 | ADD-C1 Continuity Checkpoint ⭐⭐⭐ | Complete 2026-05-17; shared checkpoint record shape for closed decisions, open items, artifacts, reinjection policy, and evidence receipts |
+| 8 | ADD-C2 Delegation / Subagent Contracts ⭐⭐⭐ | Complete 2026-05-17; delegation ownership, inherited boundaries, closure requirements, and EPF delegated-write boundary guard |
 
 ---
 
@@ -519,7 +521,6 @@ new agent authority.
 
 | ID | Tên | Trigger |
 |---|---|---|
-| ADD-C2 | Delegation / Subagent Contracts | Khi W7/W8 orchestration mở |
 | ADD-E1 | Scoped Knowledge / Code Graph | Khi code intelligence roadmap mở |
 
 ---

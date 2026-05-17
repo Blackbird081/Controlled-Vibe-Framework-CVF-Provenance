@@ -1042,3 +1042,43 @@ Claim boundary:
 - schema standard only;
 - no checkpoint execution engine, runtime continuation behavior change,
   retroactive W123 enforcement, release gate change, or GA posture change.
+
+## 2026-05-17 - Step 10b ADD-C2 Delegation Contract Completed
+
+Status: Step 10b completed locally.
+
+Authorization packet:
+
+- `docs/baselines/CVF_GC018_ADD_C2_DELEGATION_AUTHORIZATION_2026-05-17.md`
+
+Roadmap and ADR:
+
+- `docs/roadmaps/CVF_ADD_C2_DELEGATION_RUNTIME_ADOPTION_ROADMAP_2026-05-17.md`
+- `docs/reference/CVF_ADR_DELEGATION_CONTRACT_AND_CPF_RELATIONSHIP_2026-05-17.md`
+
+Delivered:
+
+- `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/delegation.contract.ts`
+  defines `DelegationContract`, write-scope validation, contract validation,
+  and closure report validation;
+- CPF coordination barrel exports the delegation contract helpers/types;
+- `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/delegation.boundary.guard.contract.ts`
+  adds a thin delegated-write boundary helper;
+- EPF dispatch barrel exports the delegated-write boundary helper/types;
+- focused CPF and EPF tests were added;
+- inventory and final consensus roadmap now mark ADD-C2 `runtime-owned` /
+  `completed 2026-05-17`.
+
+Focused verification:
+
+- Control Plane Foundation `npm test` PASS;
+- Control Plane Foundation `npm run check` PASS;
+- Execution Plane Foundation `npm test` PASS;
+- Execution Plane Foundation `npm run check` PASS.
+
+Claim boundary:
+
+- integration layer only;
+- no replacement of existing CPF agent contracts, no new agent authority, no
+  runtime execution engine, no release gate change, and no GA posture change;
+- callers remain responsible for acting on validation helper results.
