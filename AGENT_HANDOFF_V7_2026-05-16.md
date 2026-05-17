@@ -502,3 +502,201 @@ Remaining queue:
 
 - Nhóm 3/deferred items only. ADD-W7-SIGNALS is eligible for a future schema
   roadmap because ADD-D is promoted, but it was not implemented in this queue.
+
+## 2026-05-17 - Cleanup: Vi typo fix + OBS-1 roadmap doc correction
+
+Status: Two minor defects found by Claude quality review and corrected.
+
+Governance repo commits: `5677ea7a`, `89c40688`.
+Public-sync commit: `c7ff40a8` (pushed to GitHub).
+
+Fixes:
+
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/runtime/page.tsx`
+  line 116 vi copy: `'Cong'` → `'Cổng'` (Port label was unaccented).
+- `docs/roadmaps/CVF_OBSERVABILITY_PLANE_FOUNDATION_RUNTIME_ADOPTION_ROADMAP_2026-05-17.md`
+  steps 6–7 status updated from `pending` / `in progress` to `complete —
+  live gate 7/7 PASS` / `complete 2026-05-17`.
+
+Claim boundary: doc and localization fix only. No runtime behavior change.
+
+---
+
+## NEXT TASK FOR CODEX — Step 7: ADD-W7-SIGNALS Schema Extension
+
+Status: READY TO IMPLEMENT. Trigger condition met (ADD-D promoted at `bda429e7`).
+
+### What this step is
+
+Add three optional boundary-signal fields to the existing evidence receipt
+schema in `EXTENSIONS/CVF_GUARD_CONTRACT/`. Schema-only change, R0, no
+runtime behavior change, all fields optional so existing receipts stay valid.
+
+Source authority:
+
+- `docs/reviews/CVF_DEFERRED_ITEMS_SOLUTION_PROPOSALS_2026-05-17.md` —
+  Solution Proposal 1 (ADD-W7-SIGNALS), page 4.
+- `docs/roadmaps/CVF_UNABSORBED_KNOWLEDGE_FINAL_CONSENSUS_ROADMAP_2026-05-17.md`
+  — CD-3 Step 7, currently listed as `pending — per item triggers`.
+- `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md` —
+  ADD-W7-SIGNALS row: `Nhóm 3 deferred | ⭐⭐⭐ | After ADD-D promotion`.
+- ADD-D doctrine now at `docs/reference/CVF_GOVERNED_CAPABILITY_INTAKE_AND_BOUNDARY_FIRST_GOVERNANCE_DOCTRINE_2026-05-17.md`.
+
+### Schema to add (backward-compatible)
+
+Find the evidence receipt record type in `EXTENSIONS/CVF_GUARD_CONTRACT/src/`
+(check `index.ts` or any `receipt` or `evidence` type file). Add one optional
+field `boundarySignals?: BoundarySignals` using this shape:
+
+```ts
+interface BoundarySignals {
+  pathLockSignal?: {
+    restrictedPathId: string;
+    pathFollowed: boolean;
+    deviationReason?: string;
+  };
+  minimalResponseMatch?: {
+    policyId: string;
+    boundedScope: string;
+    actualScopeMatch: boolean;
+  };
+  restrictedPathCount?: {
+    totalGatesEncountered: number;
+    gatesCrossed: number;
+    gatesRejected: number;
+  };
+}
+```
+
+If adding to an existing file would exceed the GC-023 soft threshold (700
+lines for `general_source`), create a new file
+`EXTENSIONS/CVF_GUARD_CONTRACT/src/boundary.signals.contract.ts` and import
+from there.
+
+### Governance steps (in order)
+
+#### Step A — GC-018 authorization packet (before any code)
+
+Create `docs/baselines/CVF_GC018_ADD_W7_SIGNALS_AUTHORIZATION_2026-05-17.md`.
+Use the template at `docs/reference/CVF_GC018_CONTINUATION_CANDIDATE_TEMPLATE.md`.
+Required fields:
+
+- Status: AUTHORIZED FOR LOCAL IMPLEMENTATION
+- Owner surface: `EXTENSIONS/CVF_GUARD_CONTRACT/`
+- Permitted implementation: schema extension only — `BoundarySignals` type +
+  optional field on evidence receipt — no runtime behavior, no enforcement
+  logic, no new contracts beyond the type definition
+- Source: ADD-D doctrine doc + Phase A synthesis path
+- Claim boundary: schema records outcomes; it does not enforce policy
+
+#### Step B — GC-023 pre-flight
+
+```bash
+wc -l EXTENSIONS/CVF_GUARD_CONTRACT/src/*.ts
+```
+
+If any target file is already at or above 650 lines, use the new
+`boundary.signals.contract.ts` file instead of appending.
+
+#### Step C — Implement schema
+
+Add `BoundarySignals` interface and `boundarySignals?: BoundarySignals` to
+the receipt record type. Export `BoundarySignals` from the package index.
+
+#### Step D — Tests (5–10 unit tests)
+
+File: `EXTENSIONS/CVF_GUARD_CONTRACT/tests/boundary.signals.test.ts` or
+equivalent test file.
+
+Required test cases:
+
+1. Receipt without `boundarySignals` field is valid (backward compat).
+2. Receipt with `pathLockSignal.pathFollowed: false` and `deviationReason`
+   round-trips through type correctly.
+3. Receipt with `pathLockSignal.pathFollowed: true` and no `deviationReason`
+   is valid.
+4. `restrictedPathCount` with `gatesRejected > gatesCrossed` does not throw
+   or produce invalid state.
+5. `minimalResponseMatch.actualScopeMatch: false` round-trips correctly.
+6. TypeScript strict mode compiles with no errors (covered by `npm run check`).
+
+#### Step E — Adoption roadmap doc
+
+Create `docs/roadmaps/CVF_ADD_W7_SIGNALS_RUNTIME_ADOPTION_ROADMAP_2026-05-17.md`.
+Memory class: SUMMARY_RECORD. Must be GC-045 compliant (Purpose / Scope /
+Non-Goals / Authorization / Work Plan / Acceptance Criteria / Verification /
+Claim Boundary sections). Status: COMPLETED LOCALLY.
+
+#### Step F — Update inventory
+
+File: `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md`
+
+Change ADD-W7-SIGNALS row:
+
+- Classification: `Nhóm 3 deferred` → `runtime-owned`
+- Notes: `After ADD-D promotion` → `completed 2026-05-17`
+
+#### Step G — Update final consensus roadmap
+
+File: `docs/roadmaps/CVF_UNABSORBED_KNOWLEDGE_FINAL_CONSENSUS_ROADMAP_2026-05-17.md`
+
+In the CD-1 table, change ADD-W7-SIGNALS row:
+
+- Classification: `Nhóm 3 deferred` → `runtime-owned`
+- Notes: `After ADD-D promotion` → `completed 2026-05-17`
+
+In the Work Plan table, add a new row after Step 6:
+
+```markdown
+| 7 | ADD-W7-SIGNALS boundary signals schema extension | complete 2026-05-17 |
+```
+
+#### Step H — Append to this handoff
+
+Append a new dated entry to this file (`AGENT_HANDOFF_V7_2026-05-16.md`)
+following the same format as the Nhóm 2 entry above. Include: what was
+delivered, verification results, and claim boundary.
+
+### Verification sequence
+
+```bash
+cd EXTENSIONS/CVF_GUARD_CONTRACT
+npm test
+npm run check
+```
+
+All tests must pass. TypeScript must compile with no errors. Then commit:
+
+```bash
+git add docs/baselines/CVF_GC018_ADD_W7_SIGNALS_AUTHORIZATION_2026-05-17.md \
+        EXTENSIONS/CVF_GUARD_CONTRACT/src/ \
+        EXTENSIONS/CVF_GUARD_CONTRACT/tests/ \
+        docs/roadmaps/CVF_ADD_W7_SIGNALS_RUNTIME_ADOPTION_ROADMAP_2026-05-17.md \
+        docs/reviews/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md \
+        docs/roadmaps/CVF_UNABSORBED_KNOWLEDGE_FINAL_CONSENSUS_ROADMAP_2026-05-17.md \
+        AGENT_HANDOFF_V7_2026-05-16.md
+git commit -m "feat(guard-contract): add W7 boundary signals to evidence receipt schema"
+```
+
+Pre-commit hook chain runs GC-023, GC-045, docs governance automatically.
+Fix any hook violations before proceeding.
+
+### Public-sync after commit
+
+Copy changed Guard Contract src files + updated docs to public-sync repo,
+then:
+
+1. Update `docs/evidence/cvf-16-5-runtime-absorption.md` in public-sync —
+   add ADD-W7-SIGNALS to the absorbed runtime lanes table.
+2. `git add`, `git commit`, `git push` in public-sync repo.
+
+### Claim boundary for this step
+
+- Schema extension only. No runtime behavior change.
+- All `BoundarySignals` fields are optional. Existing receipts remain valid.
+- Schema records outcomes already produced by boundary-first governance. It
+  does not enforce policy.
+- No public claim change beyond evidence page update.
+- No release gate change.
+- Steps 8 (ADD-B Context Profile) and 9 (GAP-AGENT-HANDOFF) are not
+  authorized by this packet. Each requires its own GC-018 when opened.
