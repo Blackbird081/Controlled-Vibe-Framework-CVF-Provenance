@@ -165,6 +165,21 @@ The CVF root is **maintenance-only**. User projects must be created as **sibling
 
 ---
 
+## Public-Sync Rule (CRITICAL)
+
+When syncing changes from this governance repo to `Controlled-Vibe-Framework-CVF-public-sync`, the following artifact classes must **never** be copied or pushed to the public repo:
+
+| Pattern | Class |
+|---|---|
+| `AGENT_HANDOFF*.md` | Internal Codex execution briefs |
+| `docs/baselines/` | GC-018 authorization records |
+| `docs/reviews/` | Internal audit and review records |
+| `docs/roadmaps/` | Internal implementation roadmaps and Codex specs |
+
+These are enforced by `.gitignore` in the public-sync repo. When performing a manual sync (copy files then commit), always use an explicit file list — never `git add -A` or copy entire directories. Only copy: source code, test files, and curated public documentation (`ARCHITECTURE.md`, `CONTRIBUTING.md`, `README.md`, `PROVENANCE.md`, `docs/guides/`, `docs/concepts/`, `docs/reference/` where appropriate).
+
+---
+
 ## Key Reference Documents
 
 | Purpose | Document |
