@@ -97,9 +97,9 @@ current CVF file paths per concept row.
 
 | Concept sub-item | Legacy source files | Current CVF files | Disposition | Severity | Blocks | Linked GAPs |
 |---|---|---|---|---|---|---|
-| ORCHESTRATOR role boundary | `.private_reference/legacy/CVF 17.05/REVIEW FOLDER/CVF_17_05_AGENT_ORCHESTRATOR_ROLE_ABSORPTION_GAP_CODEX_AUDIT_2026-05-17.md`; `.private_reference/legacy/CVF ADD/Human System Harness/Thong_tin.md` | `docs/reviews/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md`; `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/delegation.boundary.guard.contract.ts` | `doc_only` | high | ORCHESTRATOR tranche | `GAP-17.05-001`; `GAP-17.05-003`; `GAP-17.05-005` |
-| Orchestration rules contract | `.private_reference/legacy/CVF 16.5/Claude Kit/CVF_AGENT_ORCHESTRATION_RULES.md` | `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/delegation.boundary.guard.contract.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/sandbox-worker.ts` | `partially_absorbed` | high | ORCHESTRATOR tranche; Runtime workflow tranche | `GAP-17.05-001`; `GAP-17.05-003`; `GAP-17.05-013` |
-| Reverse brief / solution bias guard | `.private_reference/legacy/CVF ADD/Human System Harness/Thong_tin.md`; `.private_reference/legacy/CVF Edit/Review CVF_1.md` | `governance/toolkit/05_OPERATION/CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD.md` | `doc_only` | medium | ORCHESTRATOR tranche | `GAP-17.05-001` |
+| ORCHESTRATOR role boundary | `.private_reference/legacy/CVF 17.05/REVIEW FOLDER/CVF_17_05_AGENT_ORCHESTRATOR_ROLE_ABSORPTION_GAP_CODEX_AUDIT_2026-05-17.md`; `.private_reference/legacy/CVF ADD/Human System Harness/Thong_tin.md` | `docs/reviews/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md`; `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/delegation.boundary.guard.contract.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/orchestrator.contract.ts` | `partially_absorbed` | high | Runtime workflow tranche for runtime enforcement | `GAP-17.05-001`; `GAP-17.05-003`; `GAP-17.05-005` |
+| Orchestration rules contract | `.private_reference/legacy/CVF 16.5/Claude Kit/CVF_AGENT_ORCHESTRATION_RULES.md` | `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/delegation.boundary.guard.contract.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/sandbox-worker.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/orchestrator.contract.ts` | `partially_absorbed` | high | Runtime workflow tranche | `GAP-17.05-001`; `GAP-17.05-003`; `GAP-17.05-013` |
+| Reverse brief / solution bias guard | `.private_reference/legacy/CVF ADD/Human System Harness/Thong_tin.md`; `.private_reference/legacy/CVF Edit/Review CVF_1.md` | `governance/toolkit/05_OPERATION/CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD.md`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/orchestrator.contract.ts` | `partially_absorbed` | medium | Runtime workflow tranche if consumed in live delegation path | `GAP-17.05-001` |
 
 ### 4. Runtime
 
@@ -107,7 +107,7 @@ current CVF file paths per concept row.
 |---|---|---|---|---|---|---|
 | State machine and failure transitions | `.private_reference/legacy/CVF Edit/De_xuat.md`; `.private_reference/legacy/CVF Edit/Failure Simulation cho CVF.md` | `EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/state_enforcement/state.machine.validator.ts`; `EXTENSIONS/CVF_STARTER_TEMPLATE_REFERENCE/src/core/execution-state-machine.ts` | `partially_absorbed` | high | Runtime workflow tranche | `GAP-17.05-003`; `GAP-17.05-004`; `GAP-17.05-015` |
 | Guard runtime enforcement | `.private_reference/legacy/CVF Edit/CVF_EDIT_ANALYSIS.md`; `.private_reference/legacy/CVF Edit/Review CVF_1.md` | `EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/guard.runtime.engine.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/guard-runtime-adapter.ts` | `partially_absorbed` | high | Runtime workflow tranche | `GAP-17.05-003`; `GAP-17.05-004`; `GAP-17.05-015` |
-| Async worker ticket lifecycle | `.private_reference/legacy/CVF ADD/deepagents/Thong_tin.md`; `.private_reference/legacy/CVF ADD/Agent Harnesses/Thong_tin.md`; `.private_reference/legacy/CVF 16.5/OpenAgentd/Thong_tin.md` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/sandbox-worker.ts` | `needs_gc018` | high | Runtime workflow tranche; ORCHESTRATOR tranche | `GAP-17.05-003`; `GAP-17.05-005`; `GAP-17.05-013` |
+| Async worker ticket lifecycle | `.private_reference/legacy/CVF ADD/deepagents/Thong_tin.md`; `.private_reference/legacy/CVF ADD/Agent Harnesses/Thong_tin.md`; `.private_reference/legacy/CVF 16.5/OpenAgentd/Thong_tin.md` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/sandbox-worker.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/orchestrator.contract.ts` | `partially_absorbed` | high | Runtime workflow tranche for scheduler/state lifecycle | `GAP-17.05-003`; `GAP-17.05-005`; `GAP-17.05-013` |
 
 ### 5. Memory
 
@@ -115,7 +115,7 @@ current CVF file paths per concept row.
 |---|---|---|---|---|---|---|
 | Memory capture and retrieval policy | `.private_reference/legacy/CVF 16.5/agentmemory/Thong_tin.md`; `.private_reference/legacy/CVF ADD/cortex-hub/Thong_tin.md` | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/memory-tier.contract.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/knowledge-store.ts` | `partially_absorbed` | high | Memory continuity tranche | `GAP-17.05-003`; `GAP-17.05-011`; `GAP-17.05-014` |
 | Governed memory reinjection | `.private_reference/legacy/CVF 16.5/agentmemory/Thong_tin.md`; `.private_reference/legacy/CVF 16.5/tolaria/Thong_tin.md`; `.private_reference/legacy/CVF ADD/Workflow GoClaw/Thong_tin.md` | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/w7.memory.record.contract.ts`; `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/continuity.checkpoint.contract.ts` | `needs_gc018` | high | Memory continuity tranche; full Agent OS claim | `GAP-17.05-003`; `GAP-17.05-005`; `GAP-17.05-011` |
-| Worker memory write restriction | `.private_reference/legacy/CVF ADD/deepagents/Thong_tin.md`; `.private_reference/legacy/CVF ADD/Hermes Agent/Thong_tin.md` | `none` | `not_absorbed` | high | Memory continuity tranche; Runtime workflow tranche | `GAP-17.05-003`; `GAP-17.05-011`; `GAP-17.05-013` |
+| Worker memory write restriction | `.private_reference/legacy/CVF ADD/deepagents/Thong_tin.md`; `.private_reference/legacy/CVF ADD/Hermes Agent/Thong_tin.md` | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/orchestrator.contract.ts` | `partially_absorbed` | high | Memory continuity tranche for tier ownership and reinjection policy | `GAP-17.05-003`; `GAP-17.05-011`; `GAP-17.05-013` |
 
 ### 6. Provider
 
@@ -174,10 +174,14 @@ current CVF file paths per concept row.
 | 1.3 Agent adapter boundary | adapter map and handoff runtime exist | complete adapter conformance against every legacy agent boundary contract |
 | 1.4 Agent handoff contract | active handoff file, guard checker, and runtime handoff helper exist | proof that all legacy handoff contract fields are enforced end to end |
 | 2.3 Per-role risk policy | risk engine and route risk checks exist | per-role risk policy binding and role-specific denial outputs |
-| 3.2 Orchestration rules contract | delegation boundary and sandbox worker surfaces exist | ORCHESTRATOR overreach guard, no-recursive-delegation policy, and worker-lane routing |
+| 3.1 ORCHESTRATOR role boundary | authority-role delegation profile exists in guard contract | runtime scheduler and product execution path consumption |
+| 3.2 Orchestration rules contract | delegation boundary, sandbox worker surfaces, typed overreach vocabulary, and worker-lane ticket shape exist | runtime worker-lane router and scheduler lifecycle |
+| 3.3 Reverse brief / solution bias guard | review anti-collusion guard and ORCHESTRATOR overreach deny vocabulary exist | live delegation-path enforcement of reverse-brief behavior |
 | 4.1 State machine and failure transitions | state validator and sample execution state machine exist | full CVF runtime failure-state coverage and recovery transitions |
 | 4.2 Guard runtime enforcement | guard runtime engine and web adapter exist | unified enforcement across every product/runtime path |
+| 4.3 Async worker ticket lifecycle | worker-lane ticket type and delegation receipt boundary exist | scheduler, async state transitions, and runtime worker lifecycle |
 | 5.1 Memory capture and retrieval policy | memory tier contract and knowledge store exist | privacy filtering, provenance scoring, and controlled reinjection policy across workers |
+| 5.3 Worker memory write restriction | worker ticket marks persistent/archive writes denied without ORCHESTRATOR delegation receipt | memory-tier owner policy and runtime write enforcement |
 | 6.1 Provider output contract | JSON/NDJSON output contract and tests exist | first-class provider method coverage and broader CLI/job lifecycle semantics |
 | 6.2 Provider registry, quota, routing, fallback | provider router, quota guard, and lane status exist | sticky sessions, health-driven fallback, and credential-vault semantics as one provider hub |
 | 7.1 Outcome workflow chain | bounded Phase 2.B/2.C slice exists | general outcome-to-certified-capability runtime system |

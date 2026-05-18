@@ -154,7 +154,7 @@ the controlling scan view until the freeform entries are rewritten individually.
 
 | GAP ID | Matrix rows | Concept axis | Current CVF files | Disposition | Severity | Blocks | Depends on | Proposed tranche |
 |---|---|---|---|---|---|---|---|---|
-| GAP-17.05-001 | 3.1, 3.2, 3.3 | orchestrator | `docs/reviews/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md`; `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/delegation.boundary.guard.contract.ts` | `doc_only` | high | full ORCHESTRATOR runtime; broad Phase 2.B orchestration semantics | GAP-17.05-002 | ORCHESTRATOR tranche |
+| GAP-17.05-001 | 3.1, 3.2, 3.3 | orchestrator | `docs/reviews/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md`; `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/delegation.boundary.guard.contract.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/orchestrator.contract.ts` | `partially_absorbed` | high | full ORCHESTRATOR runtime; broad Phase 2.B orchestration semantics | GAP-17.05-002 | Runtime workflow tranche for runtime enforcement |
 | GAP-17.05-002 | 1.1, 1.2, 1.3, 1.4, 2.1, 2.2, 2.3 | role; permission | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/role-axis.contract.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/authority-gate.guard.ts`; `EXTENSIONS/CVF_ECO_v2.3_AGENT_IDENTITY/src/agent.registry.ts` | `needs_gc018` | blocker | broad Phase 2.B runtime wire-up; full agent role governance claim | GAP-17.05-003 | Role/Permission tranche |
 | GAP-17.05-003 | all high/blocker rows | benchmark; agent OS | `scripts/run_cvf_17_05_drift_inventory.py`; `docs/reviews/CVF_LEGACY_CONCEPT_AXIS_MATRIX_2026-05-18.md` | `needs_gc018` | high | Phase A knowledge-map freeze; all later absorption tranches | none | none |
 | GAP-17.05-004 | 4.1, 4.2, 7.1 | runtime; workflow | `docs/reviews/CVF_17_05_PHASE_2B_PREFLIGHT_OWNER_MIGRATION_PLAN_2026-05-18.md`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/phase2b-wireup.contract.ts` | `partially_absorbed` | medium | broad Phase 2.B runtime expansion | GAP-17.05-001; GAP-17.05-002 | Runtime workflow tranche |
@@ -166,7 +166,7 @@ the controlling scan view until the freeform entries are rewritten individually.
 | GAP-17.05-010 | 8.3, 9.2 | benchmark; runtime | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/operational-metrics.schema.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/phase3e-operational-emission.ts`; `EXTENSIONS/CVF_v1.8.1_ADAPTIVE_OBSERVABILITY_RUNTIME/observability/token.metrics.ts` | `partially_absorbed` | medium | full observability plane / operator cockpit claim | GAP-17.05-013 | Runtime workflow tranche |
 | GAP-17.05-011 | 5.1, 5.2, 5.3 | memory | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/memory-tier.contract.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/knowledge-store.ts`; `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/w7.memory.record.contract.ts` | `needs_gc018` | high | full governed memory / reinjection / Agent OS claim | GAP-17.05-013 | Memory continuity tranche |
 | GAP-17.05-012 | 2.1, 7.2, 10.3 | permission; workflow | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/tool-policy-guard.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/guards/engine.ts` | `needs_gc018` | high | uniform tool/MCP/command/database governance claim | GAP-17.05-002 | Runtime workflow tranche |
-| GAP-17.05-013 | 3.2, 4.3, 5.3 | orchestrator; runtime; memory | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/sandbox-worker.ts`; `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/delegation.boundary.guard.contract.ts` | `needs_gc018` | high | async worker/subagent runtime claim | GAP-17.05-001; GAP-17.05-002 | Runtime workflow tranche |
+| GAP-17.05-013 | 3.2, 4.3, 5.3 | orchestrator; runtime; memory | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/sandbox-worker.ts`; `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/delegation.boundary.guard.contract.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/orchestrator.contract.ts` | `partially_absorbed` | high | async worker/subagent runtime claim | GAP-17.05-001; GAP-17.05-002; GAP-17.05-011 | Runtime workflow tranche |
 | GAP-17.05-014 | 5.1, 7.3 | memory; workflow | `none` | `not_absorbed` | medium | graph-native code intelligence claim | none | none |
 | GAP-17.05-015 | 4.1, 4.2, 9.3, 11.1 | runtime; benchmark; agent OS | `EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/state_enforcement/state.machine.validator.ts`; `EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/guard.runtime.engine.ts` | `partially_absorbed` | high | complete governance runtime / Agent OS claim | GAP-17.05-002; GAP-17.05-011 | Runtime workflow tranche |
 | GAP-17.05-016 | 11.1, 11.2, 11.3 | agent OS; UI/noncoder | `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`; public-sync `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md` | `partially_absorbed` | medium | customer-facing catalog promotion | GAP-17.05-003 | none |
@@ -197,8 +197,11 @@ Observed gap:
 
 Current disposition:
 
-- `doc_only` (Claude N-2 rewrite: replaces ad-hoc `doc_only_absorbed`).
-- Deferred. Separate GC-018 required via ORCHESTRATOR tranche.
+- `partially_absorbed`.
+- Phase D ORCHESTRATOR GC-018 filed and contract-local tranche completed in
+  `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/orchestrator.contract.ts`.
+  Runtime ORCHESTRATOR enforcement remains deferred to the Runtime workflow
+  tranche.
 
 Phase impact:
 
@@ -556,7 +559,11 @@ Observed gap:
 
 Current disposition:
 
-- `needs_gc018` (Claude N-2 rewrite: replaces ad-hoc `deferred_legacy_absorption`; the concept is queued for a future tranche and must not be implemented without GC-018)
+- `partially_absorbed`.
+- Phase D ORCHESTRATOR tranche provides the worker-lane ticket type,
+  delegation receipt boundary, overreach vocabulary, and worker memory write
+  restriction metadata. Runtime scheduler lifecycle and async state transitions
+  remain deferred to the Runtime workflow tranche.
 
 Phase impact:
 
