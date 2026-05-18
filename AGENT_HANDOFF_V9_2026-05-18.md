@@ -213,6 +213,8 @@ State as of 2026-05-18:
 - Phase E Tranche E.3 Workflow Binding GC-018: FILED - commit 89c163fa
 - GC-020 HEAD sync (Phase E E.3 GC-018): COMPLETE - commit 0e8a2ede
 - Phase E Tranche E.3 Workflow Binding implementation: COMPLETE - commit f41d0411
+- GC-020 HEAD sync (Phase E E.3 implementation): COMPLETE - commit f8711872
+- Phase E Tranche E.4 Workflow Binding execute-wire GC-018: FILED - commit dc1faf95
 
 Authorized next implementation:
 
@@ -341,7 +343,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `f41d0411`
+Current HEAD: `dc1faf95`
 
 ## What This Session Delivered
 
@@ -409,6 +411,8 @@ reconvergence context:
 
 ### HEAD
 
+dc1faf95 docs(baseline): file GC-018 for Phase E E.4 workflow execute wire
+f8711872 chore(handoff): sync GC-020 HEAD after Phase E E.3 implementation
 f41d0411 feat(contracts): implement Phase E E.3 workflow binding
 0e8a2ede chore(handoff): sync GC-020 HEAD after Phase E E.3 GC-018
 89c163fa docs(baseline): file GC-018 for Phase E E.3 workflow binding
