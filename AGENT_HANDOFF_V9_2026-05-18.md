@@ -156,6 +156,7 @@ State as of 2026-05-18:
 - Phase A legacy knowledge map freeze: ACCEPTED - commit ffae9346
 - Step 5 - Phase A freeze packet: COMPLETE - commit ca1cfb36
 - Step 6 - Governance compat run: COMPLETE - commit ffae9346
+- Phase B public catalog baseline GC-018: FILED - commit 153ab5f7
 
 Authorized next implementation:
 
@@ -284,7 +285,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `0f7fe45d`
+Current HEAD: `153ab5f7`
 
 ## What This Session Delivered
 
@@ -353,6 +354,7 @@ reconvergence context:
 ### HEAD
 
 ```
+153ab5f7 docs(baseline): file GC-018 for Phase B public catalog baseline
 0f7fe45d chore(handoff): record Step 6 and final Phase A freeze
 ffae9346 chore(legacy-audit): complete Step 6 governance compat
 97df4209 chore(handoff): record Step 5 Phase A freeze
