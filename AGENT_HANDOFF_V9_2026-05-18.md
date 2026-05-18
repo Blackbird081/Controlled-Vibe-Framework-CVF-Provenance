@@ -281,7 +281,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `3bb57997`
+Current HEAD: `da521ddc`
 
 ## What This Session Delivered
 
@@ -350,6 +350,7 @@ reconvergence context:
 ### HEAD
 
 ```
+da521ddc chore(handoff): record Step 4 catalog claim-link upgrade
 3bb57997 docs(catalog): complete Step 4 provenance claim-link recheck
 ffc8b7e5 chore(handoff): record Step 3 matrix linkage
 736d8dca docs(legacy-audit): complete Step 3 matrix gap links

@@ -125,6 +125,9 @@ explicitly rejected.
 
 Current dispositions are listed per entry below.
 
+Phase A freeze pointer: accepted at HEAD `PENDING_STEP5_FREEZE_COMMIT` by
+`docs/reviews/CVF_LEGACY_ABSORPTION_PHASE_A_FREEZE_2026-05-18.md`.
+
 ## Controlled Vocabulary
 
 All future structured entries in this ledger must use exactly these six

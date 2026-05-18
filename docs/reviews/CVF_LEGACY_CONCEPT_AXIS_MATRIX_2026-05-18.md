@@ -196,6 +196,9 @@ Rows with `severity` equal to `blocker` or `high` require either a matching
 ledger entry or an explicit rejection. Runtime work remains blocked until a
 fresh GC-018 names the tranche and consuming slice.
 
+Phase A freeze pointer: accepted at HEAD `PENDING_STEP5_FREEZE_COMMIT` by
+`docs/reviews/CVF_LEGACY_ABSORPTION_PHASE_A_FREEZE_2026-05-18.md`.
+
 ## Recommendation
 
 Use this matrix as the input to the upgraded gap ledger and to Phase D tranche
