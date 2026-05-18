@@ -279,7 +279,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `736d8dca`
+Current HEAD: `ffc8b7e5`
 
 ## What This Session Delivered
 
@@ -348,6 +348,7 @@ reconvergence context:
 ### HEAD
 
 ```
+ffc8b7e5 chore(handoff): record Step 3 matrix linkage
 736d8dca docs(legacy-audit): complete Step 3 matrix gap links
 ffc8afa1 chore(handoff): record Step 2 ledger sync
 994b0e6e docs(legacy-audit): complete Step 2 ledger disposition sync

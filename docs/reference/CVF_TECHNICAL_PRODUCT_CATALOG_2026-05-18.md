@@ -75,17 +75,17 @@ INTAKE -> DESIGN -> BUILD -> REVIEW -> FREEZE
 
 | Capability | Current status | What is verifiable |
 |---|---|---|
-| Governance control plane | proven and active | `ARCHITECTURE.md`; `GOVERNANCE.md`; `governance/toolkit/05_OPERATION/CVF_AUDIT_PROTOCOL.md` |
-| Live governance proof | proven and mandatory for release claims | `scripts/run_cvf_release_gate_bundle.py`; `docs/evidence/latest-release-gate.md` |
-| Non-coder governed path | proven on bounded provider lanes | `docs/reference/CVF_PUBLIC_NONCODER_VALUE_STATEMENT_2026-04-17.md`; `docs/evidence/web-governance-path.md` |
-| Provider lanes | certified only where evidence exists | `docs/evidence/provider-lanes.md`; `docs/audits/alibaba-canary/INDEX.md`; `docs/audits/deepseek-canary/INDEX.md` |
-| Knowledge-backed execution | proven in bounded execute path | `docs/evidence/cvf-16-5-runtime-absorption.md`; `docs/evidence/web-governance-path.md` |
-| Deliverable packs | implemented in web product path | `README.md`; `docs/evidence/web-governance-path.md` |
-| External asset/capability governance | partially productized | `docs/evidence/web-governance-path.md`; `docs/reference/CVF_PUBLIC_STRUCTURE_OVERVIEW.md` |
+| Governance control plane | proven and active | `ARCHITECTURE.md`; `governance/toolkit/05_OPERATION/CVF_AUDIT_PROTOCOL.md` |
+| Live governance proof | proven and mandatory for release claims | `scripts/run_cvf_release_gate_bundle.py`; `docs/CVF_INCREMENTAL_TEST_LOG.md` |
+| Non-coder governed path | proven on bounded provider lanes | `docs/reference/CVF_PUBLIC_NONCODER_VALUE_STATEMENT_2026-04-17.md`; `docs/assessments/CVF_W119_T1_NONCODER_ADOPTION_EVIDENCE_PACK_2026-04-23.md` |
+| Provider lanes | certified only where evidence exists | `docs/audits/alibaba-canary/INDEX.md`; `docs/audits/deepseek-canary/INDEX.md` |
+| Knowledge-backed execution | proven in bounded execute path | `docs/audits/CVF_W101_T1_CP1_KNOWLEDGE_NATIVE_EXECUTE_PATH_INTEGRATION_AUDIT_2026-04-17.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/knowledge-store.ts` |
+| Deliverable packs | implemented in web product path | `README.md`; `docs/reviews/CVF_W130_EXPORT_ACTIVATION_CONTRACT_2026-04-28.md` |
+| External asset/capability governance | partially productized | `docs/reference/CVF_PUBLIC_STRUCTURE_OVERVIEW.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/external-asset-governance.ts` |
 | Role and agent governance | partially absorbed | role vocabulary and handoff governance exist; full enforceable role permission runtime is still roadmap work |
 | Memory and continuity | partially absorbed | knowledge store, audit, session continuity, and handoff rules exist; governed reinjection across all worker paths is not complete |
 | Provider method breadth | demand-gated | current slices use existing provider calls; streaming/tool-call/vision/embedding/reasoning methods need named consumer slices |
-| Operational observability | partially absorbed | metrics and operations surfaces exist; full observability plane is not yet claimed |
+| Operational observability | partially absorbed | `docs/CVF_INCREMENTAL_TEST_LOG.md`; `docs/reviews/CVF_W130_EVIDENCE_PACK_EXPORT_EVIDENCE_2026-04-28.md` |
 | Tool/MCP/database action governance | roadmap | tool registry and guards exist; full canonical action taxonomy is still future work |
 | Async workers/subagents | roadmap | sandbox and worker concepts exist; canonical async work-ticket and delegation lifecycle remain future work |
 | Graph/code-intelligence context | roadmap | valuable legacy pattern; no full graph context resolver is claimed yet |
@@ -106,10 +106,11 @@ Developers should start from the public repository front door:
 - `README.md`
 - `ARCHITECTURE.md`
 - `docs/GET_STARTED.md`
-- `docs/evidence/README.md`
-- `docs/evidence/latest-release-gate.md`
-- `docs/evidence/provider-lanes.md`
-- `docs/evidence/web-governance-path.md`
+- `docs/CVF_INCREMENTAL_TEST_LOG.md`
+- `docs/audits/alibaba-canary/INDEX.md`
+- `docs/audits/deepseek-canary/INDEX.md`
+- `docs/audits/CVF_W101_T1_CP1_KNOWLEDGE_NATIVE_EXECUTE_PATH_INTEGRATION_AUDIT_2026-04-17.md`
+- `docs/assessments/CVF_W119_T1_NONCODER_ADOPTION_EVIDENCE_PACK_2026-04-23.md`
 - `docs/reference/CVF_PUBLIC_NONCODER_VALUE_STATEMENT_2026-04-17.md`
 
 Release-quality governance proof uses:
@@ -149,6 +150,38 @@ Public-sync path check:
 - Step 1 re-check (2026-05-18): extracted 15 `Test-Path` lines from the
   public-sync catalog and verified them in
   `Controlled-Vibe-Framework-CVF-public-sync`: 15/15 PASS.
+- Step 4 provenance claim-link re-check (2026-05-18): every file-level path
+  cited by the provenance source catalog was verified from the provenance
+  workspace before commit:
+
+```powershell
+PASS README.md
+PASS ARCHITECTURE.md
+PASS docs/GET_STARTED.md
+PASS docs/CVF_INCREMENTAL_TEST_LOG.md
+PASS docs/audits/alibaba-canary/INDEX.md
+PASS docs/audits/deepseek-canary/INDEX.md
+PASS docs/audits/CVF_W101_T1_CP1_KNOWLEDGE_NATIVE_EXECUTE_PATH_INTEGRATION_AUDIT_2026-04-17.md
+PASS docs/assessments/CVF_W119_T1_NONCODER_ADOPTION_EVIDENCE_PACK_2026-04-23.md
+PASS docs/reference/CVF_PUBLIC_NONCODER_VALUE_STATEMENT_2026-04-17.md
+PASS governance/toolkit/05_OPERATION/CVF_AUDIT_PROTOCOL.md
+PASS scripts/run_cvf_release_gate_bundle.py
+PASS docs/reference/CVF_PUBLIC_STRUCTURE_OVERVIEW.md
+PASS docs/reviews/CVF_W130_EXPORT_ACTIVATION_CONTRACT_2026-04-28.md
+PASS docs/reviews/CVF_W130_EVIDENCE_PACK_EXPORT_EVIDENCE_2026-04-28.md
+PASS EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/knowledge-store.ts
+PASS EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/external-asset-governance.ts
+PASS docs/reviews/CVF_LEGACY_SCOPE_ABSORPTION_AUDIT_MATRIX_2026-05-18.md
+PASS docs/roadmaps/CVF_LEGACY_ABSORPTION_AND_PUBLIC_CATALOG_ROADMAP_2026-05-18.md
+PASS docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md
+```
+
+Knowledge-backed execution check:
+`docs/audits/CVF_W101_T1_CP1_KNOWLEDGE_NATIVE_EXECUTE_PATH_INTEGRATION_AUDIT_2026-04-17.md`
+materially backs the bounded claim because it records route wiring for
+`knowledgeContext`, governance-precedence prompt injection, response
+`knowledgeInjection`, and unchanged enforcement/guard/provider routing. The row
+remains `proven in bounded execute path`, not a universal runtime or UI claim.
 
 ## What Agents Must Respect
 
