@@ -3,6 +3,16 @@
 Memory class: FULL_RECORD
 Status: HAND-OFF FROM CLAUDE TO CODEX
 
+> **BLOCKING NOTICE (2026-05-18, operator-issued):** Step 0 below
+> ("Remove the route.ts GC-023 exception") is **blocking** for every other
+> step. The one-shot `--no-verify` bypass that landed the legacy-audit
+> commit `e15f4206` was approved for that single commit only. Codex must
+> split `route.ts` back under 900 lines and convert the registry
+> exception entry to a `RESOLVED` tombstone BEFORE starting Steps 1-6.
+> The exception entry carries a `lockBoundary` that forbids bumping,
+> cloning, or relabeling. Future commits on this path must NOT use
+> `--no-verify`.
+
 ## Purpose
 
 Hand the legacy absorption audit back to Codex with:
@@ -133,6 +143,100 @@ discrepancy.
 These are the only outstanding items between current working tree state and
 Phase A freeze acceptance. Each step has acceptance criteria and a
 verification command Codex must run before declaring the step done.
+
+### Step 0 — Remove the route.ts GC-023 exception (BLOCKING — must be first)
+
+Why: Operator's standing instruction (2026-05-18):
+
+> "việc bypass dùng exception chỉ cho lần này thôi, phải khóa lại, và
+> quan trọng là bắt Codex phải split lại cho về đúng guard"
+
+The GC-023 exception entry for
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts`
+was granted as a one-shot bypass during the legacy-audit commit
+(`e15f4206`). It is locked in the registry with `lockBoundary` fields that
+forbid bumping `approvedMaxLines`, cloning the entry to other files, or
+relabeling the status. The exception is operator-temporary, not a
+permanent cap.
+
+This step is **blocking**. Steps 1-6 below are not authorized until Step 0
+is complete.
+
+Tasks:
+
+1. Extract Phase 2.C `Create Product Brief` slice handling out of
+   `route.ts` into the existing
+   `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/phase2c-product-brief-slice.ts`
+   module. `route.ts` should call into the slice module, not embed the
+   slice logic.
+2. Extract Phase 3.E emission code path out of `route.ts` into the existing
+   `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/phase3e-operational-emission.ts`
+   module on the same pattern. `route.ts` should call the emission helper,
+   not contain it.
+3. Run unit tests + the live Alibaba route test (already in repo) to
+   confirm the bounded Phase 2.C / 3.E behavior is unchanged after split.
+4. Update
+   `governance/compat/CVF_GOVERNED_FILE_SIZE_EXCEPTION_REGISTRY.json`:
+   change the route.ts exception entry's `status` from `ACTIVE_EXCEPTION`
+   to `RESOLVED`; set `approvedMaxLines` to `1001` (i.e.
+   `hardThresholdLines + 1`) so the entry becomes a tombstone for the
+   audit trail without providing a usable cap. Do **not** delete the entry
+   outright.
+5. Run `python governance/compat/check_governed_file_size.py` and
+   `python governance/compat/check_governed_exception_registry.py
+   --enforce` to confirm route.ts no longer needs an exception and the
+   registry is integrity-clean.
+6. Commit as a single tranche. The commit MUST NOT use `--no-verify` —
+   the hook chain must pass cleanly after split.
+
+Acceptance criteria:
+
+- `route.ts` is **below 900 lines** (the soft advisory threshold is 700;
+  900 leaves headroom but stays well under the 1000-line hard threshold);
+- Phase 2.C product-brief tests pass;
+- Phase 3.E emission tests pass;
+- the live Alibaba route test passes;
+- the exception entry has `status: "RESOLVED"` and `approvedMaxLines: 1001`;
+- `check_governed_file_size.py` and `check_governed_exception_registry.py
+  --enforce` both PASS without `--no-verify`;
+- the commit lands without skipping any hook.
+
+Verification:
+
+```bash
+# 1. line count
+wc -l EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts
+# expected: < 900
+
+# 2. governance checks
+python governance/compat/check_governed_file_size.py
+python governance/compat/check_governed_exception_registry.py --enforce
+
+# 3. tests
+cd EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web
+npm run test:run -- src/lib/phase2c-product-brief-slice.test.ts
+npm run test:run -- src/lib/phase3e-operational-emission.test.ts
+npm run test:run -- src/app/api/execute/route.test.ts
+# live test requires Alibaba API key:
+npm run test:run -- src/app/api/execute/route.phase2c-product-brief.alibaba.live.test.ts
+```
+
+Forbidden moves (each is a guard failure mode Codex must not take):
+
+- **Do NOT** bump `approvedMaxLines` above 1100 — `lockBoundary.noBumpAllowed`
+  is in effect and the guard will catch a `suspicious_bump` or
+  `approved_max_changed_from_head` violation.
+- **Do NOT** clone the same exception entry to a different path as
+  precedent — `lockBoundary.noExtensionAllowed` is in effect; each new
+  GC-023 violation requires its own operator approval.
+- **Do NOT** delete the exception entry outright — the audit trail must
+  show the bypass happened, the requirement that caused it, and the
+  resolution.
+- **Do NOT** use `git commit --no-verify` to land the split — the whole
+  point of the lock is that the next commit on this path must pass guards
+  cleanly.
+- **Do NOT** mark Step 0 done until route.ts is below 900 lines AND the
+  registry entry is in `RESOLVED` state.
 
 ### Step 1 — Public-sync verification discipline (CRITICAL)
 

@@ -137,6 +137,15 @@ State as of 2026-05-18:
 - Claude correction-trace packets recorded at
   `docs/reviews/CVF_LEGACY_CONCEPT_AXIS_MATRIX_CLAUDE_CORRECTION_REQUEST_2026-05-18.md`
   and `docs/reviews/CVF_LEGACY_ABSORPTION_NEXT_ROADMAP_FOR_CODEX_2026-05-18.md`.
+- GC-023 one-shot exception for `route.ts`: ACTIVE_EXCEPTION at
+  `approvedMaxLines: 1100`, LOCKED — operator approval was for a single
+  legacy-audit-commit bypass only. The exception registry entry carries a
+  `lockBoundary` block forbidding any future bump, clone, or relabel.
+  Codex's FIRST step on the next continuation (Step 0 in the next-step
+  roadmap, BLOCKING all other steps) is to split route.ts back below 900
+  lines and convert the exception entry to `RESOLVED` tombstone state
+  (`approvedMaxLines: 1001`). Future commits on route.ts MUST NOT use
+  `--no-verify` and MUST pass the hook chain cleanly.
 
 Authorized next implementation:
 
@@ -265,7 +274,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `e15f4206`
+Current HEAD: `3fc79e78`
 
 ## What This Session Delivered
 
@@ -334,6 +343,7 @@ reconvergence context:
 ### HEAD
 
 ```
+3fc79e78 chore(handoff): sync V9 HEAD block to e15f4206 (legacy audit commit)
 e15f4206 feat(legacy-audit): bounded Phase 2.B/2.C/3.E + four-folder legacy absorption audit + N-1..N-4 corrections
 5716099d chore(handoff): add Phase 2.B open questions — GAP discovery method + legacy absorption
 67141043 chore(handoff): update V9 — all phases DELIVERED, HEAD fe9a73bd
