@@ -166,6 +166,7 @@ State as of 2026-05-18:
 - Phase D Role/Permission GC-018: FILED - commit 2d624a38
 - Phase D Role/Permission implementation: COMPLETE - commit 69016bb2
 - Phase D Role/Permission completion packet: COMPLETE - commit a1cc1936
+- Publication ops parallel preflight progress: COMPLETE - commit 7a2ef800
 
 Authorized next implementation:
 
@@ -294,7 +295,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `a1cc1936`
+Current HEAD: `7a2ef800`
 
 ## What This Session Delivered
 
@@ -363,6 +364,7 @@ reconvergence context:
 ### HEAD
 
 ```
+7a2ef800 chore(publication): add parallel preflight progress
 a1cc1936 docs(legacy-audit): close Phase D Role/Permission tranche
 69016bb2 feat(contracts): implement Phase D Role/Permission tranche
 2d624a38 docs(baseline): file GC-018 for Phase D Role/Permission
