@@ -154,21 +154,21 @@ the controlling scan view until the freeform entries are rewritten individually.
 
 | GAP ID | Matrix rows | Concept axis | Current CVF files | Disposition | Severity | Blocks | Depends on | Proposed tranche |
 |---|---|---|---|---|---|---|---|---|
-| GAP-17.05-001 | 3.1, 3.2, 3.3 | orchestrator | `docs/reviews/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md`; `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/delegation.boundary.guard.contract.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/orchestrator.contract.ts` | `partially_absorbed` | high | full ORCHESTRATOR runtime; broad Phase 2.B orchestration semantics | GAP-17.05-002 | Runtime workflow tranche for runtime enforcement |
+| GAP-17.05-001 | 3.1, 3.2, 3.3 | orchestrator | `docs/reviews/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md`; `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/delegation.boundary.guard.contract.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/orchestrator.contract.ts` | `partially_absorbed` | high | full ORCHESTRATOR runtime; broad Phase 2.B orchestration semantics | GAP-17.05-002 | live runtime enforcement requires fresh GC-018 |
 | GAP-17.05-002 | 1.1, 1.2, 1.3, 1.4, 2.1, 2.2, 2.3 | role; permission | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/role-axis.contract.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/authority-gate.guard.ts`; `EXTENSIONS/CVF_ECO_v2.3_AGENT_IDENTITY/src/agent.registry.ts` | `needs_gc018` | blocker | broad Phase 2.B runtime wire-up; full agent role governance claim | GAP-17.05-003 | Role/Permission tranche |
 | GAP-17.05-003 | all high/blocker rows | benchmark; agent OS | `scripts/run_cvf_17_05_drift_inventory.py`; `docs/reviews/CVF_LEGACY_CONCEPT_AXIS_MATRIX_2026-05-18.md` | `needs_gc018` | high | Phase A knowledge-map freeze; all later absorption tranches | none | none |
-| GAP-17.05-004 | 4.1, 4.2, 7.1 | runtime; workflow | `docs/reviews/CVF_17_05_PHASE_2B_PREFLIGHT_OWNER_MIGRATION_PLAN_2026-05-18.md`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/phase2b-wireup.contract.ts` | `partially_absorbed` | medium | broad Phase 2.B runtime expansion | GAP-17.05-001; GAP-17.05-002 | Runtime workflow tranche |
+| GAP-17.05-004 | 4.1, 4.2, 7.1 | runtime; workflow | `docs/reviews/CVF_17_05_PHASE_2B_PREFLIGHT_OWNER_MIGRATION_PLAN_2026-05-18.md`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/phase2b-wireup.contract.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/runtime-workflow.contract.ts` | `partially_absorbed` | medium | broad Phase 2.B runtime expansion and live workflow consumption | GAP-17.05-001; GAP-17.05-002 | none for contract-local tranche; runtime consumption requires fresh GC-018 |
 | GAP-17.05-005 | 1.1, 2.1, 3.1, 4.3, 5.2, 11.2 | role; orchestrator; runtime; memory | `docs/reviews/CVF_LEGACY_CONCEPT_AXIS_MATRIX_2026-05-18.md` | `needs_gc018` | high | full Agent OS / role-permission / orchestration claim | GAP-17.05-002; GAP-17.05-011; GAP-17.05-013 | Role/Permission tranche |
 | GAP-17.05-006 | 10.1 | workflow; UI/noncoder | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/phase2c-product-brief-slice.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts` | `absorbed` | low | none for bounded Phase 2.C slice | none | none |
 | GAP-17.05-007 | 9.1 | benchmark | `scripts/run_cvf_release_gate_bundle.py`; `docs/reviews/CVF_17_05_CONSOLIDATED_LIVE_PROOF_PLAN_2026-05-18.md` | `absorbed` | low | violation would block public/release governance claims | none | none |
 | GAP-17.05-008 | 8.3, 9.2 | benchmark; receipt | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/operational-metrics.schema.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/phase3e-operational-emission.ts` | `absorbed` | low | none for bounded Phase 3.E pilot | none | none |
-| GAP-17.05-009 | 6.1, 6.2, 6.3 | provider | `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-output-contract.ts` | `needs_gc018` | medium | Phase 4.T1/T2 provider method implementation | consuming slice not yet selected | Provider method tranche |
-| GAP-17.05-010 | 8.3, 9.2 | benchmark; runtime | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/operational-metrics.schema.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/phase3e-operational-emission.ts`; `EXTENSIONS/CVF_v1.8.1_ADAPTIVE_OBSERVABILITY_RUNTIME/observability/token.metrics.ts` | `partially_absorbed` | medium | full observability plane / operator cockpit claim | GAP-17.05-013 | Runtime workflow tranche |
-| GAP-17.05-011 | 5.1, 5.2, 5.3 | memory | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/memory-tier.contract.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/memory-continuity.contract.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/knowledge-store.ts`; `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/w7.memory.record.contract.ts` | `partially_absorbed` | high | full governed memory / runtime reinjection / Agent OS claim | GAP-17.05-013 | Runtime workflow tranche for runtime memory consumption |
-| GAP-17.05-012 | 2.1, 7.2, 10.3 | permission; workflow | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/tool-policy-guard.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/guards/engine.ts` | `needs_gc018` | high | uniform tool/MCP/command/database governance claim | GAP-17.05-002 | Runtime workflow tranche |
-| GAP-17.05-013 | 3.2, 4.3, 5.3 | orchestrator; runtime; memory | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/sandbox-worker.ts`; `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/delegation.boundary.guard.contract.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/orchestrator.contract.ts` | `partially_absorbed` | high | async worker/subagent runtime claim | GAP-17.05-001; GAP-17.05-002; GAP-17.05-011 | Runtime workflow tranche |
+| GAP-17.05-009 | 6.1, 6.2, 6.3 | provider | `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-output-contract.ts` | `needs_gc018` | medium | Phase 4.T1/T2 provider method implementation | consuming slice not selected as of 2026-05-18 | demand-gated; no placeholder implementation |
+| GAP-17.05-010 | 8.3, 9.2 | benchmark; runtime | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/operational-metrics.schema.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/phase3e-operational-emission.ts`; `EXTENSIONS/CVF_v1.8.1_ADAPTIVE_OBSERVABILITY_RUNTIME/observability/token.metrics.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/runtime-workflow.contract.ts` | `partially_absorbed` | medium | full observability plane / operator cockpit claim | GAP-17.05-013 | none for metadata-only extension; live emission requires fresh GC-018 |
+| GAP-17.05-011 | 5.1, 5.2, 5.3 | memory | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/memory-tier.contract.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/memory-continuity.contract.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/knowledge-store.ts`; `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/w7.memory.record.contract.ts` | `partially_absorbed` | high | full governed memory / runtime reinjection / Agent OS claim | GAP-17.05-013 | live runtime memory consumption requires fresh GC-018 |
+| GAP-17.05-012 | 2.1, 7.2, 10.3 | permission; workflow | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/tool-policy-guard.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/guards/engine.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/runtime-workflow.contract.ts` | `partially_absorbed` | high | uniform tool/MCP/command/database governance claim | GAP-17.05-002 | none for action vocabulary; runtime enforcement requires fresh GC-018 |
+| GAP-17.05-013 | 3.2, 4.3, 5.3 | orchestrator; runtime; memory | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/sandbox-worker.ts`; `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/delegation.boundary.guard.contract.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/orchestrator.contract.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/runtime-workflow.contract.ts` | `partially_absorbed` | high | async worker/subagent runtime claim | GAP-17.05-001; GAP-17.05-002; GAP-17.05-011 | none for contract-local transition metadata; scheduler lifecycle requires fresh GC-018 |
 | GAP-17.05-014 | 5.1, 7.3 | memory; workflow | `none` | `not_absorbed` | medium | graph-native code intelligence claim | none | none |
-| GAP-17.05-015 | 4.1, 4.2, 9.3, 11.1 | runtime; benchmark; agent OS | `EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/state_enforcement/state.machine.validator.ts`; `EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/guard.runtime.engine.ts` | `partially_absorbed` | high | complete governance runtime / Agent OS claim | GAP-17.05-002; GAP-17.05-011 | Runtime workflow tranche |
+| GAP-17.05-015 | 4.1, 4.2, 9.3, 11.1 | runtime; benchmark; agent OS | `EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/state_enforcement/state.machine.validator.ts`; `EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/guard.runtime.engine.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/runtime-workflow.contract.ts` | `partially_absorbed` | high | complete governance runtime / Agent OS claim | GAP-17.05-002; GAP-17.05-011 | none for deterministic contract-local failure vocabulary; live enforcement requires fresh GC-018 |
 | GAP-17.05-016 | 11.1, 11.2, 11.3 | agent OS; UI/noncoder | `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`; public-sync `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md` | `partially_absorbed` | medium | customer-facing catalog promotion | GAP-17.05-003 | none |
 
 ## Initial Entries
@@ -291,6 +291,9 @@ Current disposition:
   broad runtime expansion is not).
 - Phase 2.B preflight produced a bounded fixture-driven GC-018 and completion
   packet. Broad runtime wire-up remains deferred outside that fixture.
+- Phase D Runtime workflow added a contract-local failure/action/transition
+  vocabulary in `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/runtime-workflow.contract.ts`.
+  Runtime consumption and live recovery enforcement remain deferred.
 
 Phase impact:
 
@@ -440,6 +443,9 @@ Current disposition:
   vocabulary).
 - Do not implement provider methods until a fresh GC-018 names the method and
   consuming vertical slice/runtime need.
+- As of 2026-05-18, no consuming vertical slice has been selected. The Phase D
+  closure therefore records this as demand-gated rather than opening a
+  placeholder provider method implementation.
 
 Phase impact:
 
@@ -472,6 +478,9 @@ Current disposition:
   runtime observability pieces exist, but the unified observability plane and
   operator cockpit remain incomplete and require future GC-018 before runtime
   expansion.)
+- Phase D Runtime workflow added metadata-only operational benchmark extension
+  entries with `liveEmissionWired: false`. This improves the contract boundary
+  but does not wire live emission, a durable dashboard, or an operator cockpit.
 
 Phase impact:
 
@@ -505,13 +514,14 @@ Current disposition:
   completed in `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/memory-continuity.contract.ts`.
   The contract now defines memory tier owner policies, privacy-filtered
   reinjection metadata, archive ownership, and worker persistent/archive write
-  restrictions. Runtime memory-store enforcement and live provider-path
-  reinjection remain deferred to the Runtime workflow tranche.
+  restrictions. Runtime workflow now carries memory-write-violation transition
+  metadata, but runtime memory-store enforcement and live provider-path
+  reinjection remain deferred.
 
 Phase impact:
 
 - Blocks claims of complete governed memory or cross-agent long-term memory.
-- Runtime workflow remains required before any live memory reinjection or
+- Runtime consumption remains required before any live memory reinjection or
   worker memory enforcement claim can be made.
 
 ### GAP-17.05-012 - Tool, MCP, Command, And Database Actions Need A Canonical Action Vocabulary
@@ -534,9 +544,12 @@ Observed gap:
 
 Current disposition:
 
-- `needs_gc018` (Claude N-2 rewrite: replaces ad-hoc
-  `deferred_legacy_absorption`; the concept is queued for a future tranche and
-  must not be implemented without GC-018.)
+- `partially_absorbed`.
+- Phase D Runtime workflow added a canonical action-class vocabulary covering
+  tool, MCP, command, database, artifact export, and provider-call surfaces in
+  `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/runtime-workflow.contract.ts`.
+  Runtime enforcement across those surfaces remains deferred and requires
+  fresh GC-018 before any uniform governance claim.
 
 Phase impact:
 
@@ -568,7 +581,11 @@ Current disposition:
 - Phase D ORCHESTRATOR tranche provides the worker-lane ticket type,
   delegation receipt boundary, overreach vocabulary, and worker memory write
   restriction metadata. Runtime scheduler lifecycle and async state transitions
-  remain deferred to the Runtime workflow tranche.
+  remained open until the Runtime workflow contract tranche.
+- Phase D Runtime workflow now adds transition metadata and deterministic
+  failure decisions for worker-overreach and memory-write-violation cases.
+  Scheduler execution, async worker lifecycle, and live dispatch consumption
+  remain deferred.
 
 Phase impact:
 
@@ -628,6 +645,9 @@ Current disposition:
   and guard-runtime surfaces exist, but complete runtime enforcement,
   deterministic failure-state handling, and full Agent OS claims remain
   incomplete.)
+- Phase D Runtime workflow added deterministic failure-state vocabulary and
+  contract tests for denial paths. This narrows the gap to runtime consumption;
+  it does not prove live enforcement or complete Agent OS behavior.
 
 Phase impact:
 
