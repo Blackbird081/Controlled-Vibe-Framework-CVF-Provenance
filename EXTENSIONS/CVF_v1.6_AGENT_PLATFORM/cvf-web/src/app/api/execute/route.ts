@@ -27,6 +27,10 @@ import { recordReportableDecisionObserved } from '@/lib/false-positive-report';
 import { buildPhase2CProductBriefSliceForRoute } from '@/lib/phase2c-product-brief-slice';
 import { buildPhase3EOperationalMetricsForRoute } from '@/lib/phase3e-operational-emission';
 import {
+    buildWorkflowExecutionProjection,
+    resolveWorkflowBindingForExecution,
+} from '@/lib/workflows/workflow-resolver';
+import {
     buildRoleOutputDeniedResponse,
     buildRolePermissionDeniedResponse,
 } from '@/lib/execute-role-permission-gate';
@@ -358,6 +362,7 @@ export async function POST(request: NextRequest) {
                 rolePermission,
             });
         }
+        const workflowBinding = resolveWorkflowBindingForExecution(executionTemplateId);
 
         const specFields = template?.fields || [];
         const requiresSkillPreflight = shouldRequireSkillPreflight({
@@ -863,6 +868,31 @@ export async function POST(request: NextRequest) {
             approvalId: approvedRequestRecord?.id,
             validationHint: outputValidation?.qualityHint,
         });
+        const workflowExecution = aiResult.success && workflowBinding
+            ? buildWorkflowExecutionProjection(workflowBinding, governanceEvidenceReceipt.receiptId)
+            : undefined;
+        if (workflowExecution) {
+            await appendAuditEvent({
+                eventType: 'WORKFLOW_BINDING_EXECUTED',
+                actorId: session?.userId ?? 'service-account',
+                actorRole: session?.role ?? (isServiceAllowed ? 'service' : 'unknown'),
+                targetResource: body.templateName || body.templateId || workflowExecution.templateId,
+                action: 'EMIT_WORKFLOW_STEP_TRACES',
+                riskLevel: body.cvfRiskLevel ?? enforcement.riskGate?.riskLevel ?? 'R1',
+                phase: body.cvfPhase ?? 'PHASE E',
+                outcome: 'COMPLETED',
+                payload: withSessionAuditPayload(session, {
+                    workflowId: workflowExecution.workflowId,
+                    workflowVersion: workflowExecution.workflowVersion,
+                    capabilityId: workflowExecution.capabilityId,
+                    templateId: workflowExecution.templateId,
+                    stepTraces: workflowExecution.stepTraces,
+                    receipts: workflowExecution.receipts,
+                    deferredStepIds: workflowExecution.deferredStepIds,
+                    governanceReceiptId: governanceEvidenceReceipt.receiptId,
+                }),
+            });
+        }
         const phase2cProductBrief = aiResult.success && aiResult.output
             ? buildPhase2CProductBriefSliceForRoute({
                 responseSuccess: aiResult.success,
@@ -922,6 +952,7 @@ export async function POST(request: NextRequest) {
             governanceEnvelope: govEnvelope,
             policySnapshotId: govEnvelope.policySnapshotId,
             governanceEvidenceReceipt,
+            ...(workflowExecution ? workflowExecution : {}),
             ...(phase2cProductBrief ? { phase2cProductBrief } : {}),
             ...(phase3eOperationalMetrics ? { phase3eOperationalMetrics } : {}),
         });

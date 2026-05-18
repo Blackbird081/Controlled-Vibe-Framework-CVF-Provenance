@@ -212,6 +212,42 @@ describe('/api/execute', () => {
             outputClass: 'artifact',
             allowed: true,
         });
+        expect(data.workflowId).toBe('workflow.product.create_product_brief.v1');
+        expect(data.stepTraces.map((trace: { stepId: string }) => trace.stepId)).toEqual([
+            'step-1-intake-validation',
+            'step-2-knowledge-retrieval',
+            'step-3-provider-call',
+            'step-5-receipt-emit',
+        ]);
+        expect(data.stepTraces.every((trace: {
+            preconditionChecked: boolean;
+            decision: string;
+            receiptId: string;
+            source: string;
+        }) => (
+            trace.preconditionChecked === true
+            && trace.decision === 'completed'
+            && trace.receiptId === data.governanceEvidenceReceipt.receiptId
+            && trace.source === 'route_dispatch'
+        ))).toBe(true);
+        expect(data.stepTraces.map((trace: { stepId: string }) => trace.stepId))
+            .not.toContain('step-4-review-gate');
+        expect(data.receipts).toEqual(data.stepTraces.map((trace: { stepId: string }) => ({
+            stepId: trace.stepId,
+            receiptId: data.governanceEvidenceReceipt.receiptId,
+            source: 'governance_evidence_receipt',
+        })));
+        expect(data.deferredStepIds).toEqual(['step-4-review-gate']);
+        const workflowAuditEvent = appendAuditEventMock.mock.calls
+            .map((call: unknown[]) => call[0] as { eventType?: string; payload?: Record<string, unknown> })
+            .find((event) => event.eventType === 'WORKFLOW_BINDING_EXECUTED');
+        expect(workflowAuditEvent?.payload).toMatchObject({
+            workflowId: 'workflow.product.create_product_brief.v1',
+            governanceReceiptId: data.governanceEvidenceReceipt.receiptId,
+            stepTraces: data.stepTraces,
+            receipts: data.receipts,
+            deferredStepIds: ['step-4-review-gate'],
+        });
         expect(executeAIMock).toHaveBeenCalledTimes(1);
     });
 
@@ -389,6 +425,13 @@ describe('/api/execute', () => {
         expect(res.status).toBe(200);
         expect(data.phase2cProductBrief).toBeUndefined();
         expect(data.phase3eOperationalMetrics).toBeUndefined();
+        expect(data.workflowId).toBeUndefined();
+        expect(data.stepTraces).toBeUndefined();
+        expect(data.receipts).toBeUndefined();
+        const workflowAuditEvent = appendAuditEventMock.mock.calls
+            .map((call: unknown[]) => call[0] as { eventType?: string })
+            .find((event) => event.eventType === 'WORKFLOW_BINDING_EXECUTED');
+        expect(workflowAuditEvent).toBeUndefined();
     });
 
     it('resolves execution token budget only for trusted noncoder templates', () => {

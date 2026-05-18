@@ -2253,3 +2253,25 @@ Utility and guard:
   - E.3 defines and validates binding metadata only; it does not dispatch the workflow in `/api/execute`.
   - Product Brief step 4 is retained as a REVIEWER binding member with `deferred_until_reviewer_surface`; active steps are 1, 2, 3, and 5.
   - Live provider proof remains reserved for E.4/E.6.
+
+## [2026-05-18] Batch: Phase E E.4 Workflow Binding Execute Wire
+- Change reference: implementation pending commit after GC-018 `dc1faf95`
+- Impacted scope:
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts`
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.test.ts`
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts`
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.test.ts`
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/phase-e-workflow-binding.live.spec.ts`
+  - `docs/reviews/CVF_PHASE_E_E4_WORKFLOW_EXECUTE_WIRE_COMPLETION_2026-05-18.md`
+  - `docs/reviews/CVF_GC019_PHASE_E_E4_STRUCTURAL_CHANGE_DELTA_2026-05-18.md`
+- Tests executed:
+  - `npm run check` in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` -> PASS
+  - `npm run test -- --run src/lib/workflows/workflow-resolver.test.ts src/app/api/execute/route.test.ts` in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` -> PASS, 2 files / 34 tests
+  - `npx playwright test --config playwright.config.ts tests/e2e/phase-e-workflow-binding.live.spec.ts --reporter=line` in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` -> PASS, 1 live Alibaba Product Brief workflow proof
+  - `python scripts/run_cvf_release_gate_bundle.py --json` -> PASS, 7 checks:
+    web build, guard-contract TypeScript, provider readiness, secrets scan,
+    RC docs governance, Playwright UI mock E2E, Playwright live governance E2E
+- Notes/Risks:
+  - E.4 emits workflow traces only for the selected `app_builder_complete` Product Brief binding.
+  - Active fired traces are steps 1, 2, 3, and 5; step 4 remains deferred and is not fired.
+  - `route.ts` line count after E.4 is 972, below the GC-023 tombstone cap of 1001.
