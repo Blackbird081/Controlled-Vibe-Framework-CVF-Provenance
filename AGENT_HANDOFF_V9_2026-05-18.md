@@ -227,7 +227,12 @@ State as of 2026-05-18:
 - GC-020 HEAD sync (Review CVF assessment baseline): COMPLETE - commit bd0736a6
 - Catalog update rule added to CLAUDE.md (GC-024 candidate): DONE - commit c7e32d75
 - Catalog Gap Remediation section added to synthesis baseline: DONE - commit c7e32d75
-- GC-020 HEAD sync (catalog update rule): COMPLETE - commit pending
+- GC-020 HEAD sync (catalog update rule): COMPLETE - commit 711a4f75
+- GC-018 filed: catalog as first-class governed artifact (CATALOG-R1R2R3): DONE - commit b0a0e48f
+- GC-024 pre-commit advisory checker: ADDED to hook chain step 7 - commit b0a0e48f
+- GC-018 closure template: Tranche Closure Checklist added - commit b0a0e48f
+- Public catalog R1/R2/R3 enrichment (public-sync): DONE - commit ade41d4e (public-sync)
+- GC-020 HEAD sync (GC-024 + catalog enrichment): COMPLETE - commit pending
 
 Authorized next implementation:
 
@@ -356,7 +361,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `711a4f75`
+Current HEAD: `b0a0e48f`
 
 ## What This Session Delivered
 
