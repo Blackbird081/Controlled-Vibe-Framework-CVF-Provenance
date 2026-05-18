@@ -1,6 +1,6 @@
 # GC-018 Authorization — Phase 3.S Operational Metrics Schema Definitions
 
-Memory class: FULL_RECORD
+Memory class: SUMMARY_RECORD
 
 Status: AUTHORIZED FOR LOCAL IMPLEMENTATION
 

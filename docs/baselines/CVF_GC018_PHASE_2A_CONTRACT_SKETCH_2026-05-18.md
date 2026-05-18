@@ -1,6 +1,6 @@
 # GC-018 Authorization — Phase 2.A Contract Sketch
 
-Memory class: FULL_RECORD
+Memory class: SUMMARY_RECORD
 
 Status: AUTHORIZED FOR LOCAL IMPLEMENTATION
 

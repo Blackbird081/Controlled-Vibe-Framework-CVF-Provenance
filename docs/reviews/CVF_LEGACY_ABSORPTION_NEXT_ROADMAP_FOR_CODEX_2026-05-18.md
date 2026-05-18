@@ -49,6 +49,13 @@ Out of scope:
 - lifting `system_reconvergence_stop`;
 - reopening F-1 output-quality parity tuning.
 
+## Non-Goals
+
+This roadmap does not authorize a runtime tranche, a public GA claim, a
+release-gate change, a public-canon migration of private legacy material, a
+new audit scope beyond the four approved folders, or any F-1 output-quality
+parity tuning. These exclusions remain binding even after Phase A freezes.
+
 ## Source
 
 Artifacts already in working tree (Codex's previous round + Claude N-1..N-4):
@@ -137,6 +144,12 @@ controlled vocabulary defined in the concept-axis matrix
 (`absorbed`, `partially_absorbed`, `doc_only`, `not_absorbed`,
 `rejected_or_superseded`, `needs_gc018`). Inline rewrite note records the
 discrepancy.
+
+## Work Plan
+
+The work plan is the ordered Step 0 through Step 6 sequence below. Step 0 is
+blocking and must be complete before Steps 1-6; Phase B and Phase D remain
+future work and require fresh GC-018 authorization.
 
 ## What Codex Must Do Next — Ordered Steps
 
@@ -412,6 +425,26 @@ Tasks:
 
 Acceptance criterion: clean commit on `main`, no skipped hooks, GC-020 HEAD
 SHA check passes.
+
+## Acceptance Criteria
+
+This roadmap is complete only when Step 0 is resolved without an active
+GC-023 file-size exception, Steps 1-5 are recorded in the active V9 handoff,
+the Phase A freeze packet exists, and Step 6 records clean governance compat
+results. A mock-only check cannot satisfy any governance-proof requirement.
+
+## Verification / Evidence
+
+Verification evidence for this roadmap is the per-step command output recorded
+in commit messages and the V9 Active Boundary. The final Step 6 verification
+set is:
+
+```bash
+python governance/compat/check_docs_governance_compat.py
+python governance/compat/check_memory_governance_compat.py
+python governance/compat/check_markdown_structural_completeness.py
+python governance/compat/check_agent_handoff_guard_compat.py
+```
 
 ## Phase B Preview (Not For This Round)
 

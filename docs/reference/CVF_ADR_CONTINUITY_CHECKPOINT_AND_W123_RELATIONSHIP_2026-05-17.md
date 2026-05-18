@@ -1,4 +1,4 @@
-Memory class: SUMMARY_RECORD
+Memory class: POINTER_RECORD
 
 # ADR: Continuity Checkpoint And W123 Relationship
 

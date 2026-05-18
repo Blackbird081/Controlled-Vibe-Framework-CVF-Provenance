@@ -1,6 +1,6 @@
 # CVF Web Integration Completion Closure - 2026-05-16
 
-Memory class: SUMMARY_RECORD
+Memory class: FULL_RECORD
 
 Status: closed as completed locally; public sync pending final push.
 

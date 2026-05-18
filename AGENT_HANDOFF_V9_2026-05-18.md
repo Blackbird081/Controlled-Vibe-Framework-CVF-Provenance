@@ -283,7 +283,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `ca1cfb36`
+Current HEAD: `97df4209`
 
 ## What This Session Delivered
 
@@ -352,6 +352,7 @@ reconvergence context:
 ### HEAD
 
 ```
+97df4209 chore(handoff): record Step 5 Phase A freeze
 ca1cfb36 docs(legacy-audit): create Step 5 Phase A freeze packet
 da521ddc chore(handoff): record Step 4 catalog claim-link upgrade
 3bb57997 docs(catalog): complete Step 4 provenance claim-link recheck

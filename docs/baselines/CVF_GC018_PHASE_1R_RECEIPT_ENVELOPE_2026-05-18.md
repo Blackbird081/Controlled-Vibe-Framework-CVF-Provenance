@@ -1,6 +1,6 @@
 # GC-018 Authorization — Phase 1.R Receipt Envelope And Compatibility Plan
 
-Memory class: FULL_RECORD
+Memory class: SUMMARY_RECORD
 
 Status: AUTHORIZED FOR LOCAL IMPLEMENTATION
 

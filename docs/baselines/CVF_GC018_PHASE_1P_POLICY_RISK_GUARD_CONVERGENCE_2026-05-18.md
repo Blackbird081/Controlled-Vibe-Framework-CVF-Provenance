@@ -1,6 +1,6 @@
 # GC-018 Authorization — Phase 1.P Policy / Risk / Guard Contract Convergence
 
-Memory class: FULL_RECORD
+Memory class: SUMMARY_RECORD
 
 Status: AUTHORIZED FOR LOCAL IMPLEMENTATION
 

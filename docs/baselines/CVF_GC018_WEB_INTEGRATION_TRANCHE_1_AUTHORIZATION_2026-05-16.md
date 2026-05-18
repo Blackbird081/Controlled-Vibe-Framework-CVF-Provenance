@@ -1,6 +1,6 @@
 # CVF GC-018 Web Integration Tranche 1 Authorization - 2026-05-16
 
-Memory class: FULL_RECORD
+Memory class: SUMMARY_RECORD
 
 Status: AUTHORIZATION GRANTED — EXECUTION PERMITTED
 

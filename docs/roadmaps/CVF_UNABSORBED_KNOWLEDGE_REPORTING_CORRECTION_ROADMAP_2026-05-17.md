@@ -1,6 +1,6 @@
 # CVF Unabsorbed Knowledge Reporting Correction Roadmap - 2026-05-17
 
-Memory class: ROADMAP
+Memory class: SUMMARY_RECORD
 
 Status: AMENDED 2026-05-17 — rule narrowed and enforcement surface added per Claude review RC-3 and Codex response. Still proposed, not authorized for absorption until operator accepts the final consensus roadmap.
 

@@ -1,6 +1,6 @@
 # CVF Live Test Variance Fix Roadmap — 2026-05-17
 
-## Memory class: POINTER_RECORD
+Memory class: SUMMARY_RECORD
 
 ## Status: READY FOR EXECUTION — 2026-05-17
 

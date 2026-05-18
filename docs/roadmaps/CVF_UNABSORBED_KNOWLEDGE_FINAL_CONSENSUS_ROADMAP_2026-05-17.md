@@ -1,6 +1,6 @@
 # CVF Unabsorbed Knowledge Final Consensus Roadmap — 2026-05-17
 
-Memory class: FULL_RECORD
+Memory class: SUMMARY_RECORD
 
 Status: CLOSED 2026-05-17 — Claude and Codex consensus absorption queue fully
 executed through Step 10c. No remaining deferred item from this roadmap is

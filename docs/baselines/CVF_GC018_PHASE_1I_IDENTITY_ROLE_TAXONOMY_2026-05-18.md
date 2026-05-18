@@ -1,6 +1,6 @@
 # GC-018 Authorization — Phase 1.I Identity And Role Taxonomy
 
-Memory class: FULL_RECORD
+Memory class: SUMMARY_RECORD
 
 Status: AUTHORIZED FOR LOCAL IMPLEMENTATION
 
