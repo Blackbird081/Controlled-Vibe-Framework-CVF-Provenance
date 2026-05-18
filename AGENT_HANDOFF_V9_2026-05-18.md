@@ -157,6 +157,8 @@ State as of 2026-05-18:
 - Step 5 - Phase A freeze packet: COMPLETE - commit ca1cfb36
 - Step 6 - Governance compat run: COMPLETE - commit ffae9346
 - Phase B public catalog baseline GC-018: FILED - commit 153ab5f7
+- Phase B public catalog claim boundary baseline: COMPLETE - commit e5e223fd
+  (public-sync mirror commit 893669ff)
 
 Authorized next implementation:
 
@@ -285,7 +287,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `8f16aaaf`
+Current HEAD: `e5e223fd`
 
 ## What This Session Delivered
 
@@ -354,6 +356,7 @@ reconvergence context:
 ### HEAD
 
 ```
+e5e223fd docs(catalog): add Phase B public claim boundary source
 8f16aaaf chore(handoff): record Phase B GC-018
 153ab5f7 docs(baseline): file GC-018 for Phase B public catalog baseline
 0f7fe45d chore(handoff): record Step 6 and final Phase A freeze
