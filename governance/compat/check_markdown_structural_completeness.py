@@ -325,10 +325,10 @@ def _classify(path: str, text: str) -> str:
         return "sop"
     if "ROADMAP" in haystack:
         return "roadmap"
-    if "WORK_ORDER" in haystack or "WORK ORDER" in haystack:
-        return "work_order"
     if any(token in haystack for token in ("REVIEW", "REBUTTAL", "RESPONSE")):
         return "review"
+    if "WORK_ORDER" in haystack or "WORK ORDER" in haystack:
+        return "work_order"
     if any(token in haystack for token in ("AUTHORIZATION", "BASELINE", "EVIDENCE", "ASSESSMENT")):
         return "baseline"
     if "POLICY" in haystack or "STANDARD" in haystack:

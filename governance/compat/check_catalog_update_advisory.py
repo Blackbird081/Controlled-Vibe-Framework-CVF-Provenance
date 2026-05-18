@@ -90,7 +90,7 @@ def main() -> int:
 
     # Advisory — never blocks
     print()
-    print("ADVISORY ⚠  Public catalog not updated in this commit.")
+    print("ADVISORY [!] Public catalog not updated in this commit.")
     print()
     print("  The following tranche closure files were added without a")
     print("  corresponding update to the public technical catalog:")

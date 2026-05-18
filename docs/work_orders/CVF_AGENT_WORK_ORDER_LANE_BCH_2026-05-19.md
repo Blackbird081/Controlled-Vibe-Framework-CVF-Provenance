@@ -2,8 +2,9 @@
 
 Memory class: POINTER_RECORD
 
-Status: DRAFT - derived from root `promt.md` and normalized to CVF Agent Work
-Order structure.
+Status: CLOSED - all three lanes delivered; reviewer disposition recorded in
+`docs/reviews/CVF_WORK_ORDER_LANE_BCH_COMPLETION_2026-05-19.md`; commit
+`45c477af` (governance), `d690a8e6` (public-sync).
 
 ## Purpose
 
