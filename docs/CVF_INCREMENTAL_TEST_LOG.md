@@ -2277,7 +2277,7 @@ Utility and guard:
   - `route.ts` line count after E.4 is 972, below the GC-023 tombstone cap of 1001.
 
 ## [2026-05-18] Batch: Phase E E.5 Receipt Binding
-- Change reference: implementation pending commit after GC-018 `07fe7be0`
+- Change reference: commit `8f1f2257` after GC-018 `07fe7be0`
 - Impacted scope:
   - `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/receipt-binding.contract.ts`
   - `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/contracts.phaseE-receipt-binding.test.ts`
