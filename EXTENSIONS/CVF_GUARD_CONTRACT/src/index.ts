@@ -60,6 +60,24 @@ export {
   rolePermissionCoversAllRoles,
 } from './contracts/role-permission.contract';
 
+// Phase E workflow binding contract
+export type {
+  WorkflowBindingStatus,
+  WorkflowStepDecision,
+  WorkflowStepTraceSource,
+  WorkflowStepRole,
+  WorkflowStep,
+  WorkflowBinding,
+  WorkflowStepExecutionTrace,
+  WorkflowBindingValidationResult,
+} from './contracts/workflow-binding.contract';
+
+export {
+  WORKFLOW_BINDING_CONTRACT_VERSION,
+  validateWorkflowBinding,
+  getActiveWorkflowSteps,
+} from './contracts/workflow-binding.contract';
+
 // Factory
 import type { GuardRuntimeConfig } from './types';
 import { GuardRuntimeEngine } from './engine';

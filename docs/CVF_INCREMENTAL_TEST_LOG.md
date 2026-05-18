@@ -2235,3 +2235,21 @@ Utility and guard:
 - Notes/Risks:
   - Live proof covers the bounded `app_builder_complete` -> `phase2cProductBrief` -> `phase3eOperationalMetrics` response path only.
   - Phase 3.E emits exactly three response-local pilot metrics; skipped metrics remain explicit and unclaimed.
+
+## [2026-05-18] Batch: Phase E E.3 Workflow Binding Contract
+- Change reference: implementation pending commit after GC-018 `89c163fa`
+- Impacted scope:
+  - `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/workflow-binding.contract.ts`
+  - `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/contracts.phaseE-workflow-binding.test.ts`
+  - `EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts`
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow.product.create_product_brief.v1.json`
+- Tests executed:
+  - `npm run check` in `EXTENSIONS/CVF_GUARD_CONTRACT` -> PASS
+  - `npm run test -- --run src/contracts/contracts.phaseE-workflow-binding.test.ts` in `EXTENSIONS/CVF_GUARD_CONTRACT` -> PASS, 6/6
+  - `npm run check` in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` -> PASS
+  - `python governance/compat/check_active_session_state.py --enforce` -> PASS
+  - `python governance/compat/check_governed_file_size.py --enforce` -> PASS
+- Notes/Risks:
+  - E.3 defines and validates binding metadata only; it does not dispatch the workflow in `/api/execute`.
+  - Product Brief step 4 is retained as a REVIEWER binding member with `deferred_until_reviewer_surface`; active steps are 1, 2, 3, and 5.
+  - Live provider proof remains reserved for E.4/E.6.
