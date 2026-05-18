@@ -19,8 +19,33 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "system_reconvergence_stop",
+  "currentMode": "operator_lane_selection_active",
+  "previousMode": "system_reconvergence_stop",
   "freezePosture": "governance_kernel_freeze_recommended",
+  "operatorLaneSelectionDate": "2026-05-19",
+  "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
+  "selectedLanes": ["Lane-B", "Lane-C", "Lane-H"],
+  "laneExecutionOrder": ["Lane-B", "Lane-C", "Lane-H"],
+  "laneStopLifts": {
+    "Lane-B": {
+      "lifted": true,
+      "scope": "workflow-packaging-docs-schema-only",
+      "gatingCondition": "operator selects templates app_builder_complete + one business + one content",
+      "blockedExpansion": "runtime-semantics — no wiring to live execute path without separate GC-018"
+    },
+    "Lane-C": {
+      "lifted": true,
+      "scope": "execution-gateway-cli-mvp",
+      "gatingCondition": "use-case: developer calls cvf execute from terminal invoking governed execute path",
+      "blockedExpansion": "new auth models, new governance semantics, new provider adapters — existing path only"
+    },
+    "Lane-H": {
+      "lifted": true,
+      "scope": "memory-runtime-one-flow-only",
+      "gatingCondition": "flow selected: session continuity tracking (governance audit event persistence)",
+      "blockedExpansion": "multi-flow memory, contamination boundary changes, reinjection affecting provider output — each requires own GC-018"
+    }
+  },
   "requiredFirstReads": [
     ".private_reference/legacy/CVF 17.05/REVIEW FOLDER/CVF_17_05_SYSTEM_RECONVERGENCE_STOP_DECISION_2026-05-17.md",
     ".private_reference/legacy/CVF 17.05/REVIEW FOLDER/CVF_17_05_GOVERNANCE_KERNEL_FREEZE_CODEX_RECOMMENDATION_2026-05-17.md",
@@ -43,8 +68,7 @@
     "new_role_taxonomies",
     "new_policy_risk_guard_engines",
     "new_receipt_envelopes",
-    "new_memory_tiers",
-    "new_capability_workflow_runtime_contracts",
+    "new_memory_tiers_beyond_lane_h_scope",
     "new_provider_execution_semantics",
     "public_claims_of_coherent_governed_capability_runtime"
   ],
@@ -55,6 +79,6 @@
     "blocked_work_classes",
     "next_allowed_move"
   ],
-  "nextAllowedMove": "Maintain session-memory front door and prepare reconvergence inventory/owner maps only.",
-  "lastUpdated": "2026-05-18"
+  "nextAllowedMove": "Implement Lane-B (workflow packaging) first. Each lane requires its own GC-018 filed before implementation begins. Lane order: B then C then H. Each lane is scoped — see laneStopLifts for boundary per lane.",
+  "lastUpdated": "2026-05-19"
 }

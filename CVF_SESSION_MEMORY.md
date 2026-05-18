@@ -52,12 +52,15 @@ current.
 
 ## Current Session Mode
 
-- Current mode: `system_reconvergence_stop`
+- Current mode: `operator_lane_selection_active`
+- Previous mode: `system_reconvergence_stop`
 - Freeze posture: `governance_kernel_freeze_recommended`
 - Active handoff pointer: `AGENT_HANDOFF_V9_2026-05-18.md`
 - Historical handoff archive: `CVF_SESSION/handoffs/archive/`
-- Broad absorption, new governance semantics, and runtime expansion are paused
-  until the reconvergence/freeze decision is resolved.
+- Operator approved lanes B+C+H on 2026-05-19. Lane-specific stop lifts
+  are in `CVF_SESSION/ACTIVE_SESSION_STATE.json`. Lanes execute in order
+  B→C→H, each requiring its own GC-018. Broad absorption and new
+  governance semantics remain blocked outside lane scopes.
 
 ## Required First Reads
 
