@@ -188,6 +188,7 @@ State as of 2026-05-18:
 - Phase D Memory continuity dispositions: COMPLETE - commit 09d8670a
 - GC-020 HEAD sync (Memory continuity dispositions): COMPLETE - commit 9cd52134
 - Phase D Runtime workflow GC-018: FILED - commit 0306053e
+- GC-020 HEAD sync (Runtime workflow GC-018): COMPLETE - commit aaaa7117
 
 Authorized next implementation:
 
@@ -316,7 +317,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `0306053e`
+Current HEAD: `aaaa7117`
 
 ## What This Session Delivered
 
@@ -384,6 +385,7 @@ reconvergence context:
 
 ### HEAD
 
+aaaa7117 chore(handoff): sync V9 after Runtime workflow GC-018
 0306053e docs(baseline): file GC-018 for Phase D Runtime workflow
 9cd52134 chore(handoff): sync V9 after Memory continuity dispositions
 09d8670a docs(legacy-audit): update Memory continuity dispositions

@@ -133,6 +133,33 @@ export {
 } from './memory-continuity.contract';
 
 export type {
+  RuntimeWorkflowState,
+  RuntimeFailureState,
+  GuardEnforcementPoint,
+  ToolActionClass,
+  WorkflowTrigger,
+  OperationalBenchmarkMetricKind,
+  GuardEnforcementPointMeta,
+  WorkflowTransition,
+  OperationalBenchmarkExtension,
+  RuntimeWorkflowEvent,
+  RuntimeWorkflowDecision,
+} from './runtime-workflow.contract';
+
+export {
+  RUNTIME_WORKFLOW_CONTRACT_VERSION,
+  RUNTIME_FAILURE_STATES,
+  GUARD_ENFORCEMENT_POINTS,
+  TOOL_ACTION_CLASSES,
+  WORKFLOW_TRANSITIONS,
+  OPERATIONAL_BENCHMARK_EXTENSIONS,
+  runtimeWorkflowCoversFailureStates,
+  runtimeWorkflowCoversGuardPoints,
+  toolActionClassCovers,
+  evaluateRuntimeWorkflowEvent,
+} from './runtime-workflow.contract';
+
+export type {
   Receipt,
   GatewayReceiptPayload,
   ExecutionBridgeReceiptPayload,
