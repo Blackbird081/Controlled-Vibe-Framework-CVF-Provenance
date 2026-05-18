@@ -150,6 +150,7 @@ State as of 2026-05-18:
   f9696d9e
 - Step 1 - Public-sync verification discipline: COMPLETE - commit d549c6e8
 - Step 2 - Ledger single source of truth: COMPLETE - commit 994b0e6e
+- Step 3 - Matrix GAP linkage round-trip: COMPLETE - commit 736d8dca
 
 Authorized next implementation:
 
@@ -278,7 +279,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `ffc8afa1`
+Current HEAD: `736d8dca`
 
 ## What This Session Delivered
 
@@ -347,6 +348,7 @@ reconvergence context:
 ### HEAD
 
 ```
+736d8dca docs(legacy-audit): complete Step 3 matrix gap links
 ffc8afa1 chore(handoff): record Step 2 ledger sync
 994b0e6e docs(legacy-audit): complete Step 2 ledger disposition sync
 a65b58e1 chore(handoff): record Step 1 catalog discipline
