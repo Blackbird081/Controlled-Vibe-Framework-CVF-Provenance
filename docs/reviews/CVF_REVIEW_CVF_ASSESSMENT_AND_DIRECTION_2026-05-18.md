@@ -298,12 +298,17 @@ This rule is also recorded in `CLAUDE.md` as a binding session rule
 
 #### Remediation status
 
-| Remediation | Status | Authorization required |
+| Remediation | Status | Evidence |
 | --- | --- | --- |
-| R1 — Current Outcomes section | NOT YET DONE | GC-018 for public-sync edit |
-| R2 — Extension inventory table | NOT YET DONE | GC-018 for public-sync edit |
-| R3 — Delivery narrative anchor | NOT YET DONE | GC-018 for public-sync edit |
-| R4 — Binding update rule in CLAUDE.md | DONE — see CLAUDE.md | No GC-018 needed (governance rule, not public claim) |
+| R1 — Current Outcomes section | DONE 2026-05-19 | Catalog section "What CVF Can Do Today" — 5 outcomes with verified evidence paths. public-sync commit `ade41d4e`, rewrite commit `08ffda44` |
+| R2 — Extension inventory table | DONE 2026-05-19 | Catalog section "Key Extensions" — 8 extensions, plain-language descriptions, no internal detail. Same commits |
+| R3 — Delivery narrative anchor | DONE 2026-05-19 | Catalog section "Maturity and Delivery History" — v4.0.0 GA, 130+ tranches, live-proof requirement. Same commits |
+| R4 — Binding update rule in CLAUDE.md | DONE 2026-05-18 | CLAUDE.md "Public Catalog Update Rule (GC-024 candidate)" — commit `c7e32d75` |
+| R4-extended — Pre-commit advisory checker | DONE 2026-05-19 | `governance/compat/check_catalog_update_advisory.py` added as step 7 in pre-commit chain — commit `b0a0e48f` |
+| R4-extended — GC-018 closure checklist | DONE 2026-05-19 | `docs/reference/CVF_GC018_CONTINUATION_CANDIDATE_TEMPLATE.md` Tranche Closure Checklist added — commit `b0a0e48f` |
+| Catalog clean form rewrite | DONE 2026-05-19 | Internal process logs removed; canonical section structure established for future updates — public-sync commit `08ffda44` |
+
+All remediations complete. The catalog now has a canonical form (Purpose → What CVF Is → Maturity → Outcomes → Capability Catalog → Key Extensions → User/Developer guidance → Claim Boundary → Update Rule → Related Artifacts). Future catalog updates by any agent must follow this structure.
 
 R1/R2/R3 must be batched into a single public-sync commit to minimize
 churn. File a single GC-018 covering all three when ready.
