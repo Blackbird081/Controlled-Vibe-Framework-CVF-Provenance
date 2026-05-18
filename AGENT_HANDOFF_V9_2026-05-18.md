@@ -153,8 +153,9 @@ State as of 2026-05-18:
 - Step 3 - Matrix GAP linkage round-trip: COMPLETE - commit 736d8dca
 - Step 4 - Catalog claim-link upgrade: COMPLETE - commit 3bb57997
   (public-sync mirror commit 0bf64e03)
-- Phase A legacy knowledge map freeze: ACCEPTED - commit ca1cfb36
+- Phase A legacy knowledge map freeze: ACCEPTED - commit ffae9346
 - Step 5 - Phase A freeze packet: COMPLETE - commit ca1cfb36
+- Step 6 - Governance compat run: COMPLETE - commit ffae9346
 
 Authorized next implementation:
 
@@ -283,7 +284,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `97df4209`
+Current HEAD: `ffae9346`
 
 ## What This Session Delivered
 
@@ -352,6 +353,7 @@ reconvergence context:
 ### HEAD
 
 ```
+ffae9346 chore(legacy-audit): complete Step 6 governance compat
 97df4209 chore(handoff): record Step 5 Phase A freeze
 ca1cfb36 docs(legacy-audit): create Step 5 Phase A freeze packet
 da521ddc chore(handoff): record Step 4 catalog claim-link upgrade

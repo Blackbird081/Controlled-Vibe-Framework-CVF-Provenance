@@ -196,7 +196,7 @@ Rows with `severity` equal to `blocker` or `high` require either a matching
 ledger entry or an explicit rejection. Runtime work remains blocked until a
 fresh GC-018 names the tranche and consuming slice.
 
-Phase A freeze pointer: accepted at HEAD `ca1cfb36` by
+Phase A freeze pointer: accepted at HEAD `ffae9346` by
 `docs/reviews/CVF_LEGACY_ABSORPTION_PHASE_A_FREEZE_2026-05-18.md`.
 
 ## Recommendation

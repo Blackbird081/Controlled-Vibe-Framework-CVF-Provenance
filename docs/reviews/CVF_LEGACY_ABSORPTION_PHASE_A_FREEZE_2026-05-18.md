@@ -29,7 +29,7 @@ Frozen artifacts:
 Freeze applies to HEAD:
 
 ```text
-ca1cfb36
+ffae9346
 ```
 
 ## Corrections Applied Since First Publication
@@ -52,7 +52,7 @@ Correction groups carried into the freeze:
 ## Decision
 
 Phase A legacy knowledge map freeze is accepted for the artifacts listed above
-at `ca1cfb36`.
+at `ffae9346`.
 
 This freeze is a planning and review boundary only. It authorizes no new
 runtime tranche, no public GA claim, no provider-method expansion, no F-1
@@ -95,7 +95,7 @@ or additional legacy-scope audit.
 `AGENT_HANDOFF_V9_2026-05-18.md` must carry:
 
 ```text
-Phase A legacy knowledge map freeze: ACCEPTED - commit ca1cfb36
+Phase A legacy knowledge map freeze: ACCEPTED - commit ffae9346
 ```
 
 The handoff `Current HEAD` line and HEAD log block are updated in place by the
