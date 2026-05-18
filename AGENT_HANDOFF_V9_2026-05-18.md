@@ -206,7 +206,7 @@ State as of 2026-05-18:
 - Phase E Tranche E.1 execution chain audit: COMPLETE - commit 91db2554
 - GC-020 HEAD sync (Phase E E.1 audit): COMPLETE - commit 28df4187
 - Phase E Tranche E.2 Role Permission GC-018: FILED - commit 3d844ef7
-- GC-020 HEAD sync (Phase E E.2 GC-018): COMPLETE - pending commit
+- GC-020 HEAD sync (Phase E E.2 GC-018): COMPLETE - commit d2b2ceed
 
 Authorized next implementation:
 
@@ -335,7 +335,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `3d844ef7`
+Current HEAD: `d2b2ceed`
 
 ## What This Session Delivered
 
@@ -403,7 +403,7 @@ reconvergence context:
 
 ### HEAD
 
-PENDING chore(handoff): sync GC-020 HEAD after Phase E E.2 GC-018
+d2b2ceed chore(handoff): sync GC-020 HEAD after Phase E E.2 GC-018
 3d844ef7 docs(baseline): file GC-018 for Phase E E.2 role gate
 28df4187 chore(handoff): sync GC-020 HEAD after Phase E E.1 audit
 91db2554 docs(review): file Phase E execution chain audit
