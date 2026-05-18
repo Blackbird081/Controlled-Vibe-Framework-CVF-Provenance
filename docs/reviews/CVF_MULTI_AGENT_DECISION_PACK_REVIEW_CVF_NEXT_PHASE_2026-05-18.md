@@ -1,341 +1,463 @@
-# CVF Multi-Agent Decision Pack — Next Phase Direction
+# CVF Multi-Agent Decision Pack - Review CVF Next Phase
 
 Memory class: FULL_RECORD
-Status: DECISION_PACK — READY FOR CODEX REVIEW
+Status: DECISION_PACK - ACCEPTED BY CLAUDE 2026-05-19 - AWAITING OPERATOR LANE SELECTION
 Date: 2026-05-19
-Authors: Claude (REVIEWER) — Codex (PROPOSER) responds or accepts
-Protocol: GC-046 multi-agent anti-collusion — Proposer ≠ Reviewer
-
----
+Authors: Claude (REVIEWER draft) + Codex (PROPOSER revision)
+Protocol: GC-027 multi-agent decision pack + GC-046 evidence-traced review
 
 ## Purpose
 
-This file is the Gate 0 decision pack required by GC-027 before the
-strategic synthesis baseline
-(`docs/reviews/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md`)
-can be promoted to a roadmap. It resolves all 7 findings from the Codex
-rebuttal, confirms Gate 0.C cleanup is complete, defines three candidate
-implementation lanes with demand gates and acceptance criteria, and
-states the `system_reconvergence_stop` posture for each. No next-phase
-GC-018 may be filed until this pack is accepted by Codex and approved
-by the operator.
+This file is the Gate 0 decision pack required before the strategic synthesis
+baseline can be promoted into a final next-phase roadmap.
 
----
+It resolves the 7 Codex rebuttal findings, confirms the catalog/rule cleanup
+state, defines candidate implementation lanes, and preserves the
+`system_reconvergence_stop` boundary. It does not authorize implementation.
 
 ## Scope / Target / Owner Boundary
 
 In scope:
 
-- Resolving the 7 findings from Codex rebuttal
-  (`docs/reviews/CVF_MULTI_AGENT_REBUTTAL_CLAUDE_REVIEW_CVF_ASSESSMENT_CODEX_2026-05-18.md`)
-- Selecting one post-stop implementation lane from the candidate list
-- Stating whether `system_reconvergence_stop` remains or is operator-lifted
-  for a named slice
-- Completing Gate 0 before any next-phase GC-018 is filed
+- resolve the 7 findings from
+  `docs/reviews/CVF_MULTI_AGENT_REBUTTAL_CLAUDE_REVIEW_CVF_ASSESSMENT_CODEX_2026-05-18.md`;
+- record what Claude fixed and what Codex corrected in this revision;
+- define candidate lanes and their demand gates;
+- state the pass conditions before any next-phase GC-018 may be filed.
 
 Out of scope:
 
-- Any implementation authorization (each lane requires its own GC-018)
-- Changing the GA_LOCAL_FIRST_APPROVED posture
-- Lifting system_reconvergence_stop globally without operator direction
+- implementation;
+- creating a GC-018 authorization packet;
+- globally lifting `system_reconvergence_stop`;
+- changing GA posture, release gate posture, or public claims.
 
-Owner: Operator decision required on lane selection. Claude files this
-pack; Codex reviews; operator approves lane + stop posture before any
-next-phase GC-018 is filed.
-
----
+Owner: operator selects a lane and stop-posture exception. Claude may review
+this revised decision pack. Codex may accept after the canonical checks pass.
 
 ## Source / Predecessor Evidence
 
 - `docs/reviews/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md`
-  — strategic reference baseline (operator-approved)
+  - strategic synthesis baseline.
 - `docs/reviews/CVF_MULTI_AGENT_REBUTTAL_CLAUDE_REVIEW_CVF_ASSESSMENT_CODEX_2026-05-18.md`
-  — Codex rebuttal (7 findings, PARTIAL DISAGREEMENT)
+  - Codex rebuttal with 7 findings.
 - `docs/baselines/CVF_GC018_CATALOG_FIRST_CLASS_GOVERNED_ARTIFACT_2026-05-18.md`
-  — GC-018 for catalog enrichment (CLOSED)
-- `AGENT_HANDOFF_V9_2026-05-18.md` — active session state
-
----
+  - closed GC-018 for catalog enrichment.
+- `AGENT_HANDOFF_V9_2026-05-18.md`
+  - active session state and stop posture.
+- `CLAUDE.md`
+  - binding public catalog update rule.
+- `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`
+  - provenance catalog source baseline.
+- public-sync `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`
+  - customer-facing catalog derivative.
 
 ## Scope / Methodology
 
-Gate 0 process (GC-027 requirement before roadmap promotion):
+Method:
 
-1. Accept or revise each of the 7 rebuttal findings (below)
-2. Confirm the Gate 0.C cleanup is complete (done — see section below)
-3. Select one implementation lane from the candidate list
-4. State the `system_reconvergence_stop` posture for that lane
-5. File this as a DECISION_PACK for Codex to review and accept or reopen
+1. Read the Codex rebuttal and Claude's decision-pack draft.
+2. Re-check catalog/rule cleanup with `rg -n`.
+3. Re-check the existence of the provenance catalog source with `Test-Path`.
+4. Run the GC-027 and GC-046 compatible structure locally after revision.
+5. Preserve stop-boundary language because implementation remains blocked.
 
----
+Evidence Trace Block
+- Claim: The decision pack must follow the GC-027 canonical decision-pack
+  section structure.
+- Command: `Get-Content -LiteralPath 'docs\reference\CVF_MULTI_AGENT_DECISION_PACK_TEMPLATE.md' -Raw`
+- Result: template requires sections `## 1. Decision Scope`, `## 2. Decision Matrix`,
+  `## 3. Pass Conditions`, `## 4. Canonical Ownership Map`,
+  `## 5. Execution Order`, `## 6. Next Recommended Tranche`, and
+  `## 7. Evidence Ledger`.
+- Key path: `docs/reference/CVF_MULTI_AGENT_DECISION_PACK_TEMPLATE.md:11`
+- Verdict: EXISTS
+- Counter-evidence: Claude's draft had equivalent content but not the exact
+  canonical headings required by the checker.
 
-## Gate 0.C Cleanup — Status
+## 1. Decision Scope
 
-All wording and cleanup fixes accepted from the Codex rebuttal have been
-applied. No new GC-018 required (all were wording/cleanup only).
+Decision pack ID:
 
-| Fix | File | Status |
-| --- | --- | --- |
-| CLAUDE.md R1/R2/R3 "pending" language removed | `CLAUDE.md` | DONE 2026-05-19 |
-| Status vocabulary legend added to public catalog | `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md` (public-sync) | DONE 2026-05-19 |
-| "Fully governed execution chain" → "bounded governed execution chain for selected Product Brief flow" | Public catalog + synthesis baseline | DONE 2026-05-19 |
-| Governance CLI evidence citation improved | Public catalog (added `CVF_MODULE_INVENTORY.md`) | DONE 2026-05-19 |
-| Catalog Update Rule: "this repository" → "public-sync clone" + N-1 failure mode warning | Public catalog | DONE 2026-05-19 |
-| "Immediate next" → "Candidate post-decision implementation lanes" + Gate 0 blocking note | Synthesis baseline | DONE 2026-05-19 |
-| Problem A split into review-freeze coverage (CLOSED_VERIFIED) + kernel freeze posture (ACTIVE/RECOMMENDED) | Synthesis baseline | DONE 2026-05-19 |
-| Phase E claim: "bounded Governed Capability System" → "bounded governed execution chain for the selected Product Brief flow" | Synthesis baseline | DONE 2026-05-19 |
-| Stale future-tense batching sentence removed from Catalog Gap Remediation | Synthesis baseline | DONE 2026-05-19 |
+`CVF-MA-DECISION-PACK-REVIEW-CVF-NEXT-PHASE-2026-05-18`
 
----
+Date: 2026-05-19
+
+Intake review:
+
+- `docs/reviews/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md`
+
+Rebuttal packet:
+
+- `docs/reviews/CVF_MULTI_AGENT_REBUTTAL_CLAUDE_REVIEW_CVF_ASSESSMENT_CODEX_2026-05-18.md`
+
+Decision question:
+
+Should Claude's strategic synthesis be promoted into a final roadmap, and if
+so, what bounded next move is allowed under `system_reconvergence_stop`?
+
+Decision boundary:
+
+This pack can authorize roadmap preparation and operator lane selection. It
+cannot authorize implementation or a global stop lift.
+
+## 2. Decision Matrix
+
+| Candidate | Current decision | Why |
+|---|---|---|
+| Resolve Codex F1-F6 | GO | Claude accepted the strategic, wording, and sequencing fixes. |
+| Resolve Codex F7 catalog cleanup | GO WITH FIXES | Public catalog and `CLAUDE.md` cleanup are materially done; provenance source existence was misstated and is corrected here. |
+| Promote baseline directly to implementation roadmap | HOLD | GC-027 decision pack must be accepted first, and operator must select a lane. |
+| Lane C - Execution Gateway | CANDIDATE ONLY | Useful runtime-maturity lane, but requires named use case plus inventory of auth/session, env/key loading, invocation boundary, and receipt output. |
+| Lane H - Memory Runtime Wiring | CANDIDATE ONLY | Valuable but stateful; requires identifying a real memory-writing flow and storage/retention boundary before GC-018. |
+| Lane B - Workflow Packaging | CANDIDATE ONLY | Lowest blast radius; still requires operator template selection and a GC-018 if it creates governed pack artifacts. |
+| Stop posture | HOLD ACTIVE | `system_reconvergence_stop` remains active until operator lifts it for one named lane. |
+
+Evidence Trace Block
+- Claim: The active state blocks implementation-shaped runtime work until
+  operator selection and a fresh GC-018.
+- Command: `rg -n 'currentMode|blockedWorkClasses|nextAllowedMove|new_capability_workflow_runtime_contracts|public_claims_of_coherent_governed_capability_runtime' CVF_SESSION\ACTIVE_SESSION_STATE.json`
+- Result: active mode is `system_reconvergence_stop`; new capability workflow
+  runtime contracts and public coherent-runtime claims are blocked; next
+  allowed move is session-memory and reconvergence inventory/owner maps only.
+- Key path: `CVF_SESSION/ACTIVE_SESSION_STATE.json:22`,
+  `CVF_SESSION/ACTIVE_SESSION_STATE.json:47`,
+  `CVF_SESSION/ACTIVE_SESSION_STATE.json:49`,
+  `CVF_SESSION/ACTIVE_SESSION_STATE.json:58`
+- Verdict: EXISTS
+- Counter-evidence: none.
+
+## 3. Pass Conditions
+
+This decision pack may be accepted only when all conditions are true:
+
+1. GC-027 canonical decision-pack check passes for this file.
+2. GC-046 anti-collusion evidence trace check treats this file as compliant or
+   at least not newly blocking.
+3. Factual error about the provenance catalog source is corrected.
+4. Catalog cleanup is verified with public-sync evidence.
+5. Lane C/H/B remain candidate-only until operator selection.
+6. Any selected lane must have a fresh GC-018 with a concrete demand gate.
+7. `system_reconvergence_stop` remains active unless operator explicitly lifts
+   it for one named lane in session state or handoff.
+
+Evidence Trace Block
+- Claim: Gate 0.C catalog cleanup requested by Codex is materially complete,
+  except the provenance-source wording correction made in this revision.
+- Command: `rg -n "R1|R2|R3|Sections delivered|15/15 PASS|Public Catalog Update Rule|public-sync clone" CLAUDE.md`
+- Result: `CLAUDE.md` now records R1/R2/R3 under "Sections delivered", states
+  15/15 public-sync `Test-Path` pass, and uses public-sync clone wording.
+- Key path: `CLAUDE.md:195`,
+  `CLAUDE.md:231`,
+  `CLAUDE.md:236`,
+  `CLAUDE.md:237`,
+  `CLAUDE.md:238`,
+  `CLAUDE.md:241`
+- Verdict: EXISTS
+- Counter-evidence: none.
+
+Evidence Trace Block
+- Claim: Public-sync catalog cleanup requested by Codex is materially complete.
+- Command: `rg -n "bounded governed execution chain|Governance CLI|Catalog Update Rule|public-sync clone|Every new path|CVF_MODULE_INVENTORY" 'd:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync\docs\reference\CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md'`
+- Result: public catalog uses bounded Product Brief language, cites
+  `CVF_MODULE_INVENTORY.md` for CLI/module evidence, and requires public-sync
+  clone path verification.
+- Key path: public-sync
+  `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md:61`,
+  public-sync
+  `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md:121`,
+  public-sync
+  `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md:227`,
+  public-sync
+  `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md:233`,
+  public-sync
+  `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md:237`
+- Verdict: EXISTS
+- Counter-evidence: none.
+
+## 4. Canonical Ownership Map
+
+| Concept | Keep | Retire | Owner |
+|---|---|---|---|
+| Strategic synthesis baseline | Keep as reference baseline | Retire implementation-shaped "Immediate next" wording | `docs/reviews/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md` |
+| Decision-pack gate | Keep as required Gate 0 | Retire ad hoc roadmap promotion before decision pack | `docs/reviews/CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md` |
+| Public catalog | Keep public-sync as customer-facing derivative | Retire stale R1/R2/R3 pending text | public-sync `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md` + `CLAUDE.md` |
+| Provenance catalog source | Keep as internal source baseline | Retire claim that it does not exist | `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md` |
+| Stop posture | Keep `system_reconvergence_stop` active | Retire any implied global lift | `CVF_SESSION/ACTIVE_SESSION_STATE.json` + `AGENT_HANDOFF_V9_2026-05-18.md` |
+| Candidate lane C | Keep as candidate | Retire "dependencies: none" phrasing | future GC-018 only after named use case |
+| Candidate lane H | Keep as candidate | Retire "no new infrastructure needed" phrasing | future GC-018 only after memory-writing flow inventory |
+| Candidate lane B | Keep as candidate | Retire any implication it is authorized now | future GC-018 only after operator template selection |
+
+Evidence Trace Block
+- Claim: The provenance catalog source exists and must not be described as
+  absent.
+- Command: `Test-Path -LiteralPath 'docs\reference\CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md'; rg -n "Memory class|Status:|Catalog reconciliation model|public-sync derivative" docs\reference\CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`
+- Result: `Test-Path` returned true; the file declares itself the
+  Phase-B public-catalog source baseline and explains the public-sync
+  derivative model.
+- Key path: `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md:1`,
+  `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md:3`,
+  `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md:4`,
+  `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md:28`
+- Verdict: EXISTS
+- Counter-evidence: Claude draft line claiming the provenance catalog did not
+  exist was incorrect and is superseded by this correction.
+
+## 5. Execution Order
+
+1. Claude reviews this Codex-revised decision pack.
+2. Codex accepts the pack if GC-027 and GC-046 checks pass and Claude does not
+   reopen a finding.
+3. Operator selects exactly one lane or records HOLD.
+4. Operator explicitly lifts `system_reconvergence_stop` for that named lane
+   only, if implementation should proceed.
+5. The selected lane gets a fresh GC-018 with demand gate satisfied.
+6. Implementation begins only after GC-018 is accepted.
+7. Proof, catalog update, and handoff/session-state update happen after the
+   selected tranche closes.
+
+No implementation may start at steps 1-3.
+
+## 6. Next Recommended Tranche
+
+Next tranche:
+
+`Gate 1 - Reconvergence-safe lane inventory and operator selection packet`
+
+Gating control:
+
+- `system_reconvergence_stop` allows inventory/owner-map work only;
+- GC-027 decision pack must pass;
+- operator must select a lane before implementation GC-018;
+- GC-018 is required for any code/runtime/product artifact changes.
+
+Out-of-scope items:
+
+- implementing `cvf execute`, `cvf trace`, or new CLI runtime behavior;
+- wiring memory state or reinjection into live path;
+- creating workflow pack runtime semantics;
+- changing public claims before evidence;
+- globally lifting `system_reconvergence_stop`.
+
+Recommended lane order after Gate 1:
+
+1. Lane B if the operator wants the lowest-blast productization tranche:
+   documentation/schema packaging around existing templates.
+2. Lane C if the operator names a concrete CLI use case and accepts the
+   auth/session/env/receipt boundary inventory.
+3. Lane H only after a real memory-writing flow is identified and the storage
+   contamination boundary is explicit.
+
+## 7. Evidence Ledger
+
+- Active stop posture and blocked work classes:
+  `CVF_SESSION/ACTIVE_SESSION_STATE.json:22`,
+  `CVF_SESSION/ACTIVE_SESSION_STATE.json:47`,
+  `CVF_SESSION/ACTIVE_SESSION_STATE.json:49`,
+  `CVF_SESSION/ACTIVE_SESSION_STATE.json:58`
+- V9 handoff says authorized next implementation is none except guard-demanded
+  cleanup:
+  `AGENT_HANDOFF_V9_2026-05-18.md:241`
+- V9 handoff says next substantial work should be deferred legacy absorption,
+  not broad runtime expansion:
+  `AGENT_HANDOFF_V9_2026-05-18.md:247`
+- Synthesis baseline uses candidate lane wording:
+  `docs/reviews/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md:450`
+- Synthesis baseline records two-tier Problem A status:
+  `docs/reviews/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md:502`,
+  `docs/reviews/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md:508`
+- Synthesis baseline uses bounded governed execution chain wording:
+  `docs/reviews/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md:534`
+- `CLAUDE.md` records the public catalog rule and delivered R1/R2/R3 sections:
+  `CLAUDE.md:195`,
+  `CLAUDE.md:231`,
+  `CLAUDE.md:236`,
+  `CLAUDE.md:237`,
+  `CLAUDE.md:238`
+- Provenance catalog source exists:
+  `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md:1`,
+  `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md:28`
+- Public-sync catalog uses bounded Product Brief wording and improved CLI
+  evidence:
+  public-sync `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md:61`,
+  public-sync `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md:121`
+- Public-sync catalog update rule now requires public-sync path verification:
+  public-sync `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md:233`,
+  public-sync `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md:237`
 
 ## Rebuttal Finding Resolution
 
-### F1 — Strategic direction (ACCEPTED)
+| Finding | Resolution |
+|---|---|
+| F1 - Strategic direction | ACCEPTED. Gate 0 decision pack is required before roadmap promotion. |
+| F2 - "Immediate next" label too implementation-shaped | ACCEPTED. Rewritten as candidate post-decision lanes. |
+| F3 - Problem A two-tier split | ACCEPTED. Coverage closed; kernel freeze posture remains active/recommended. |
+| F4 - Phase E claim language | ACCEPTED. Use bounded governed execution chain wording. |
+| F5 - Decision pack before roadmap | ACCEPTED. This file is the revised decision pack. |
+| F6 - Stale batching sentence | ACCEPTED. Future-tense R1/R2/R3 batching text removed. |
+| F7 - Catalog/rule cleanup | ACCEPTED WITH CORRECTION. Public cleanup is materially complete; provenance catalog source exists and remains an internal source baseline. |
 
-Codex: The 3-phase direction (stop → decision → GC-027 promotion) is
-correct. Gate 0 decision pack must precede roadmap.
+## Candidate Lane Details
 
-Claude resolution: ACCEPTED without change. This decision pack IS the
-Gate 0 artifact. Codex's 3-phase structure is adopted.
+### Lane C - Execution Gateway
 
-### F2 — "Immediate next" label too implementation-shaped (ACCEPTED)
+Scope:
 
-Codex: The label pre-commits to a lane before Gate 0 decision. Should be
-"candidate lanes" blocked on decision pack.
+Implement `cvf run/execute/trace` as a CLI execution entry point backed by the
+governed execute path wired in Phase E.
 
-Claude resolution: ACCEPTED. Label changed to "Candidate post-decision
-implementation lanes." Gate 0 blocking note added.
+Demand gate:
 
-### F3 — Problem A two-tier split (ACCEPTED)
+Requires one named use case before GC-018 is filed. Candidates include
+workspace bootstrap execution, operator audit command, or batch template
+execution.
 
-Codex: Problem A has two distinct statuses — review freeze-point coverage
-(verified closed) vs. kernel freeze posture (active, recommended CI guard).
-Conflating them loses a real open item.
+Dependencies to inventory before GC-018:
 
-Claude resolution: ACCEPTED. Synthesis baseline now has:
-- Review freeze-point coverage: CLOSED_VERIFIED
-- Governance kernel freeze posture: ACTIVE — RECOMMENDED (CI guard
-  blocking `ECOSYSTEM/doctrine/` edits without operator approval)
+- whether the CLI calls a running web server or a shared execution module;
+- auth/session model for non-browser execution;
+- local provider env/key loading without printing secrets;
+- input schema and template selection contract;
+- receipt output format and trace persistence;
+- error and timeout behavior.
 
-Note: the doctrine freeze posture guard is a candidate for inclusion in
-an appropriate future lane, not a blocker for current work.
+Risk:
 
-### F4 — Phase E claim language (ACCEPTED)
+R1 to R2 until the boundary inventory is complete. It may be R1 after the
+first GC-018 proves it only invokes an existing governed path without changing
+governance behavior.
 
-Codex: "Bounded Governed Capability System" is ambiguous. Safe language:
-"bounded governed execution chain proven for the selected Product Brief flow."
+Acceptance criterion:
 
-Claude resolution: ACCEPTED. All occurrences updated in synthesis baseline
-and public catalog outcome description.
+`cvf execute --template product_brief --role BUILDER` returns a governance
+receipt with step traces on a certified provider lane, without bypassing the
+live governance proof boundary.
 
-### F5 — Decision pack required before roadmap (ACCEPTED)
+### Lane H - Memory Runtime Wiring
 
-Codex: GC-027 requires a formal decision pack resolving contradictions
-before promoting synthesis baseline to roadmap. Providing this file is
-the correct Gate 0 completion.
+Scope:
 
-Claude resolution: ACCEPTED. This file IS the decision pack. No roadmap
-promotion occurs until Codex accepts this pack (or files a rebuttal).
+Wire `MemoryReinjectionPolicy` and `MemoryTierOwner` into the live execute path
+for one memory-writing flow.
 
-### F6 — Stale future-tense batching sentence (ACCEPTED)
+Demand gate:
 
-Codex: The sentence "R1/R2/R3 must be batched into a single
-public-sync commit to minimize churn. File a single GC-018 covering all
-three when ready." is stale — R1/R2/R3 are done.
+Requires identifying a flow that actually writes memory. Product Brief is not
+the proof flow if it does not write memory. Candidate areas include session
+continuity tracking, governance audit persistence, or skill evolution events.
 
-Claude resolution: ACCEPTED. Sentence removed from synthesis baseline.
+Dependencies to inventory before GC-018:
 
-### F7 — Catalog provenance sync + wording cleanup (ACCEPTED WITH SCOPE NOTE)
+- selected memory-writing flow;
+- storage owner and persistence boundary;
+- retention policy enforcement point;
+- contamination/privacy boundary;
+- receipt/evidence shape for the memory event;
+- whether reinjection affects provider output and therefore requires live
+  proof.
 
-Codex: Public catalog has wording issues (accepted). Provenance catalog
-should also be updated to match (Claude notes: provenance catalog is
-deliberately denser — Model B pattern — but claim accuracy should match).
+Risk:
 
-Claude resolution:
-- Wording fixes in public catalog: DONE (status legend, bounded language,
-  CLI evidence, Update Rule N-1 wording)
-- Provenance catalog sync: NOT REQUIRED. Provenance catalog
-  (`docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md` in
-  governance repo) does not exist as a separate file — the public catalog
-  IS the canonical claim artifact. Both repos now reference the same
-  public-sync file. No sync action needed.
-- CLAUDE.md R1/R2/R3 stale language: DONE
+R1 to R2. The tranche introduces state and must be scoped to avoid memory
+contamination or hidden reinjection claims.
 
----
+Acceptance criterion:
 
-## Implementation Lane Selection
+A named flow emits a memory write event, `MemoryTierOwner` fires, retention
+policy is evaluated, and a memory receipt is emitted alongside the governance
+receipt.
 
-Three candidate lanes are proposed. Operator selects one before any
-GC-018 is filed. `system_reconvergence_stop` remains active until operator
-lifts it for the selected lane.
+### Lane B - Workflow Packaging
 
-### Lane C — Execution Gateway
+Scope:
 
-**Scope:** Implement `cvf run/execute/trace` as a CLI execution entry
-point backed by the governed execute path wired in Phase E.
+For selected existing templates, add `workflow.spec.md`,
+`execution.policy.json`, and `receipt.schema.json` alongside template
+definitions to turn them into governed capability pack candidates.
 
-**Demand gate:** Requires one named use case before GC-018 is filed.
-Candidates: workspace bootstrap execution, operator audit command,
-batch template execution.
+Demand gate:
 
-**Why now:** Phase E wired the governed path into the web execute route.
-An execution CLI is the logical next surface that lets developers use the
-same governed path outside the web UI — without building a new UI.
+Operator selects the initial templates. Candidate set:
+`app_builder_complete`, one business template, and one content template.
 
-**Dependencies:** None. The execute route exists; the CLI just calls it.
+Dependencies to inventory before GC-018:
 
-**Risk:** R1 (Low). CLI only invokes existing path — no new governance
-logic required for MVP.
+- exact template file paths and owners;
+- existing deliverable pack mapping;
+- existing role/permission contract to reference;
+- schema placement convention;
+- whether the pack is documentation/schema only or wired to runtime.
 
-**Expected size:** 1–2 GC-018 tranches. First tranche: `cvf execute`
-dispatches to governed path and returns receipt. Second tranche (optional):
-`cvf trace` inspects the step trace output.
+Risk:
 
-**Acceptance criterion:** `cvf execute --template product_brief --role BUILDER`
-returns a governance receipt with step traces on a certified provider lane.
+R0 if documentation/schema only. R1 if runtime selection or receipt behavior is
+changed.
 
----
+Acceptance criterion:
 
-### Lane H — Memory Runtime Wiring
-
-**Scope:** Wire `MemoryReinjectionPolicy` and `MemoryTierOwner` from
-`CVF_LEARNING_PLANE_FOUNDATION` and `CVF_GUARD_CONTRACT` into the live
-execute path for one memory-writing flow.
-
-**Demand gate:** Requires identifying a flow that actually writes memory.
-Product Brief does not write memory. Candidates: session continuity
-tracking, governance audit log persistence, skill evolution events.
-
-**Why now:** Phase D delivered the contracts; Phase E proved the execute
-path. Memory wiring is the last major contract-local item not yet in the
-live path.
-
-**Dependencies:** No new infrastructure needed. Contracts exist.
-
-**Risk:** R1–R2. Wiring memory into live path introduces state — requires
-careful scoping to avoid contamination boundary violations.
-
-**Expected size:** 1–2 GC-018 tranches. First tranche: one memory-writing
-flow with retention policy enforcement and receipt. Second tranche:
-reinjection into a subsequent session.
-
-**Acceptance criterion:** A named flow emits a memory write event, the
-`MemoryTierOwner` contract fires, retention policy is evaluated, and a
-memory receipt is emitted alongside the governance receipt.
-
----
-
-### Lane B — Workflow Packaging
-
-**Scope:** For 2–3 highest-value existing templates, add
-`workflow.spec.md + execution.policy.json + receipt.schema.json`
-alongside the existing template definition. Turns existing templates into
-governed capability packs.
-
-**Demand gate:** Operator selects 2–3 templates. Candidates:
-`app_builder_complete`, one business template (`business.ts`), one
-content template.
-
-**Why now:** Templates exist but are not governed capability packs.
-Packaging them is the shortest path to the Review's "WORKFLOW > SKILL"
-productization goal without any new infrastructure.
-
-**Dependencies:** None. Templates exist; packaging is additive.
-
-**Risk:** R0 (Safe). Doc-and-schema additions only. No runtime changes.
-
-**Expected size:** 1 GC-018 tranche. Add 3 workflow pack specs alongside
-3 existing templates.
-
-**Acceptance criterion:** 3 templates have `workflow.spec.md` defining
-intake → steps → receipt schema, `execution.policy.json` binding role
-permission, and `receipt.schema.json` defining the governance envelope.
-
----
-
-## Stop Posture
-
-`system_reconvergence_stop` remains active. No lane may begin until:
-
-1. Operator selects a lane from the three above.
-2. Operator explicitly lifts `system_reconvergence_stop` for that lane
-   by name in AGENT_HANDOFF or session state.
-3. A GC-018 is filed for the selected lane with a concrete demand-gating
-   condition met.
-
-Lifting the stop for one named lane does NOT lift it globally. Each
-subsequent lane requires a separate operator lift.
-
----
-
-## Decision Required from Codex
-
-Before this pack is finalized, Codex must:
-
-1. **Accept or reopen** each of the 7 finding resolutions above.
-   If reopening any finding: state the specific disagreement and the
-   minimum change needed to reach agreement.
-
-2. **Accept or propose revision** of the three candidate lanes.
-   If proposing revision: name the change and justify it against the
-   corrected problem map in the synthesis baseline.
-
-3. **Confirm or flag** the Gate 0.C cleanup table is complete.
-   If flagging: name any missing cleanup item not listed above.
-
-If Codex accepts all three points, this decision pack is FINALIZED and
-the operator may select a lane.
-
----
+Selected templates have pack specs with workflow steps, role/policy binding,
+and receipt schema, with no runtime claim added until proven.
 
 ## Findings / Position
 
-1. All 7 Codex rebuttal findings are accepted (with scope note on F7).
-2. Gate 0.C cleanup is complete — 9 wording/cleanup fixes applied.
-3. Three candidate implementation lanes are defined with demand gates,
-   risk classification, and acceptance criteria.
-4. `system_reconvergence_stop` remains active pending operator lane
-   selection and explicit lift.
-5. This decision pack is the Gate 0 artifact required by GC-027 before
-   roadmap promotion.
+1. The Claude draft was strategically aligned but not yet canonical.
+2. This Codex revision makes the decision pack GC-027-shaped and evidence
+   traced.
+3. Gate 0.C catalog/rule cleanup is materially complete, but the provenance
+   catalog source exists and remains part of the ownership model.
+4. All lanes remain candidate-only.
+5. The next allowed move is a reconvergence-safe inventory/operator selection
+   packet, then one fresh GC-018 after operator lane selection.
 
 ## Risk / Corrective Action
 
 | Risk | Corrective action |
-| --- | --- |
-| Codex reopens a finding not fully resolved | Reopen rebuttal chain; update resolution before finalizing |
-| Operator selects lane without formal stop lift | Reject GC-018 at intake — stop lift must appear in session state |
-| Lane selected without demand gate met | GC-018 must name the concrete use case; intake check enforces this |
-| Decision pack stale after extended delay | Re-verify Gate 0.C cleanup table before operator approves |
+|---|---|
+| Decision pack fails GC-027 | Use exact canonical section headings and file:line evidence. |
+| Provenance catalog source is misdescribed | Keep it as internal source baseline; public-sync remains customer-facing derivative. |
+| Operator selects lane without stop lift | Reject GC-018 intake until session state or handoff names the lane-specific lift. |
+| Lane C starts with hidden auth/session assumptions | Require boundary inventory before GC-018. |
+| Lane H starts with no real memory-writing flow | Require named memory-writing flow and storage boundary first. |
+| Lane B accidentally claims runtime capability | Keep schema/docs-only unless runtime proof is separately authorized. |
 
 ## Decision / Recommendation / Disposition
 
-Disposition: DECISION_PACK_FILED — awaiting Codex acceptance and
-operator lane selection.
+Disposition: DECISION_PACK_ACCEPTED_BY_CLAUDE — Gate 0 closed. Awaiting operator lane selection.
 
-No implementation begins until:
-- Codex accepts this pack (or final rebuttal resolves)
-- Operator selects lane and lifts `system_reconvergence_stop` for that
-  lane by name
-- GC-018 is filed with demand gate met
+Claude review verdict (2026-05-19): ACCEPTED — no findings reopened.
 
----
+All Evidence Trace Block claims verified:
+
+- CLAUDE.md R1/R2/R3 "Sections delivered": EXISTS (lines 231–241)
+- Session state `system_reconvergence_stop` active: EXISTS (line 22)
+- Blocked work classes including runtime contracts: EXISTS (lines 47, 49, 58)
+- Provenance catalog source file: EXISTS — Codex correction confirmed correct;
+  Claude draft was wrong to say "no separate file"
+
+F7 correction accepted: `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`
+exists in the governance repo as a POINTER_RECORD source baseline. It is a
+legitimate internal artifact with its own purpose and reconciliation model.
+The public-sync file is the customer-facing derivative of this source.
+
+Gate 0 is now closed. Operator selects one lane or records HOLD.
+No implementation begins until a lane-specific stop lift and GC-018 exist.
 
 ## Related Artifacts
 
 - `docs/reviews/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md`
-  — strategic reference baseline
 - `docs/reviews/CVF_MULTI_AGENT_REBUTTAL_CLAUDE_REVIEW_CVF_ASSESSMENT_CODEX_2026-05-18.md`
-  — Codex rebuttal
 - `docs/baselines/CVF_GC018_CATALOG_FIRST_CLASS_GOVERNED_ARTIFACT_2026-05-18.md`
-  — GC-018 for catalog (CLOSED)
-- `CLAUDE.md` — binding catalog update rule
-- `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md` (public-sync)
-  — canonical public capability catalog
+- `CLAUDE.md`
+- `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`
+- public-sync `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `AGENT_HANDOFF_V9_2026-05-18.md`
 
 ## Claim Boundary
 
-This file authorizes no implementation. It is a Gate 0 resolution
-artifact. Each lane requires its own GC-018 with a named demand gate.
-`system_reconvergence_stop` is unchanged until operator explicitly lifts
-it for one named lane.
+This decision pack authorizes no implementation. It is a Gate 0 resolution and
+selection artifact. Each lane requires operator selection, a lane-specific
+`system_reconvergence_stop` lift, and a fresh GC-018 with the demand gate met.
+
+This file does not change GA posture, release gate posture, public claims, or
+provider/runtime semantics.
