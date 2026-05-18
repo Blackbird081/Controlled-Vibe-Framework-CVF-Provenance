@@ -204,7 +204,9 @@ State as of 2026-05-18:
 - Matrix row 2.2 disposition fix (partially_absorbed): COMPLETE - commit f351bbd9
 - GC-020 HEAD sync (Phase E V2 + matrix row 2.2): COMPLETE - commit 8f1023d2
 - Phase E Tranche E.1 execution chain audit: COMPLETE - commit 91db2554
-- GC-020 HEAD sync (Phase E E.1 audit): COMPLETE - pending commit
+- GC-020 HEAD sync (Phase E E.1 audit): COMPLETE - commit 28df4187
+- Phase E Tranche E.2 Role Permission GC-018: FILED - commit 3d844ef7
+- GC-020 HEAD sync (Phase E E.2 GC-018): COMPLETE - pending commit
 
 Authorized next implementation:
 
@@ -333,7 +335,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `91db2554`
+Current HEAD: `3d844ef7`
 
 ## What This Session Delivered
 
@@ -401,7 +403,9 @@ reconvergence context:
 
 ### HEAD
 
-PENDING chore(handoff): sync GC-020 HEAD after Phase E E.1 audit
+PENDING chore(handoff): sync GC-020 HEAD after Phase E E.2 GC-018
+3d844ef7 docs(baseline): file GC-018 for Phase E E.2 role gate
+28df4187 chore(handoff): sync GC-020 HEAD after Phase E E.1 audit
 91db2554 docs(review): file Phase E execution chain audit
 8f1023d2 chore(handoff): sync GC-020 HEAD after Phase E V2 + matrix row 2.2
 f351bbd9 docs(review): apply Phase E roadmap V2 after Codex rebuttal; fix matrix row 2.2
