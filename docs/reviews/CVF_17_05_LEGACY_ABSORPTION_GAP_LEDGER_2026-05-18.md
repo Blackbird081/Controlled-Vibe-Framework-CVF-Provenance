@@ -164,7 +164,7 @@ the controlling scan view until the freeform entries are rewritten individually.
 | GAP-17.05-008 | 8.3, 9.2 | benchmark; receipt | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/operational-metrics.schema.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/phase3e-operational-emission.ts` | `absorbed` | low | none for bounded Phase 3.E pilot | none | none |
 | GAP-17.05-009 | 6.1, 6.2, 6.3 | provider | `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-output-contract.ts` | `needs_gc018` | medium | Phase 4.T1/T2 provider method implementation | consuming slice not yet selected | Provider method tranche |
 | GAP-17.05-010 | 8.3, 9.2 | benchmark; runtime | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/operational-metrics.schema.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/phase3e-operational-emission.ts`; `EXTENSIONS/CVF_v1.8.1_ADAPTIVE_OBSERVABILITY_RUNTIME/observability/token.metrics.ts` | `partially_absorbed` | medium | full observability plane / operator cockpit claim | GAP-17.05-013 | Runtime workflow tranche |
-| GAP-17.05-011 | 5.1, 5.2, 5.3 | memory | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/memory-tier.contract.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/knowledge-store.ts`; `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/w7.memory.record.contract.ts` | `needs_gc018` | high | full governed memory / reinjection / Agent OS claim | GAP-17.05-013 | Memory continuity tranche |
+| GAP-17.05-011 | 5.1, 5.2, 5.3 | memory | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/memory-tier.contract.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/memory-continuity.contract.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/knowledge-store.ts`; `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/w7.memory.record.contract.ts` | `partially_absorbed` | high | full governed memory / runtime reinjection / Agent OS claim | GAP-17.05-013 | Runtime workflow tranche for runtime memory consumption |
 | GAP-17.05-012 | 2.1, 7.2, 10.3 | permission; workflow | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/tool-policy-guard.ts`; `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/guards/engine.ts` | `needs_gc018` | high | uniform tool/MCP/command/database governance claim | GAP-17.05-002 | Runtime workflow tranche |
 | GAP-17.05-013 | 3.2, 4.3, 5.3 | orchestrator; runtime; memory | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/sandbox-worker.ts`; `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/delegation.boundary.guard.contract.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/orchestrator.contract.ts` | `partially_absorbed` | high | async worker/subagent runtime claim | GAP-17.05-001; GAP-17.05-002; GAP-17.05-011 | Runtime workflow tranche |
 | GAP-17.05-014 | 5.1, 7.3 | memory; workflow | `none` | `not_absorbed` | medium | graph-native code intelligence claim | none | none |
@@ -500,14 +500,19 @@ Observed gap:
 
 Current disposition:
 
-- `needs_gc018` (Claude N-2 rewrite: replaces ad-hoc
-  `deferred_legacy_absorption`; the concept is queued for a future tranche and
-  must not be implemented without GC-018.)
+- `partially_absorbed`.
+- Phase D Memory continuity GC-018 was filed and the contract-local tranche
+  completed in `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/memory-continuity.contract.ts`.
+  The contract now defines memory tier owner policies, privacy-filtered
+  reinjection metadata, archive ownership, and worker persistent/archive write
+  restrictions. Runtime memory-store enforcement and live provider-path
+  reinjection remain deferred to the Runtime workflow tranche.
 
 Phase impact:
 
 - Blocks claims of complete governed memory or cross-agent long-term memory.
-- Should be considered a high-priority future tranche.
+- Runtime workflow remains required before any live memory reinjection or
+  worker memory enforcement claim can be made.
 
 ### GAP-17.05-012 - Tool, MCP, Command, And Database Actions Need A Canonical Action Vocabulary
 
