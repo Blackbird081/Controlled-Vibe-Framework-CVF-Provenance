@@ -228,14 +228,20 @@ the public-sync clone, not the governance repo. Copying provenance paths
 without re-verification in public-sync is the N-1 failure mode — it has
 caused broken links before.
 
-### Sections still pending (require a single GC-018 to add)
+### Sections delivered (GC-018 authorized and complete — 2026-05-19)
 
-- R1 — "What CVF Can Do Today" (Current Outcomes section)
-- R2 — Key Extensions inventory table
-- R3 — Delivery History Summary paragraph
+All three catalog enrichment sections are now present in the public
+catalog (public-sync commit `08ffda44`):
 
-**Do not add R1/R2/R3 without filing GC-018 first.** The rule to update
-*existing* catalog rows and tables applies immediately without GC-018.
+- R1 — "What CVF Can Do Today" (5 outcomes, each with verified evidence path)
+- R2 — Key Extensions inventory table (8 extensions, plain-language)
+- R3 — "Maturity and Delivery History" paragraph (v4.0.0 GA, 130+ tranches)
+
+Authorization: `docs/baselines/CVF_GC018_CATALOG_FIRST_CLASS_GOVERNED_ARTIFACT_2026-05-18.md`
+Test-Path: 15/15 PASS (verified in public-sync clone before commit)
+
+Future catalog updates follow the Update Rule above. Any new
+section additions require a fresh GC-018.
 
 ---
 

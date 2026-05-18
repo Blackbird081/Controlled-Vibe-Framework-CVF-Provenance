@@ -310,9 +310,6 @@ This rule is also recorded in `CLAUDE.md` as a binding session rule
 
 All remediations complete. The catalog now has a canonical form (Purpose → What CVF Is → Maturity → Outcomes → Capability Catalog → Key Extensions → User/Developer guidance → Claim Boundary → Update Rule → Related Artifacts). Future catalog updates by any agent must follow this structure.
 
-R1/R2/R3 must be batched into a single public-sync commit to minimize
-churn. File a single GC-018 covering all three when ready.
-
 ---
 
 ## Part 2 — What the Reviewer Could Not See (Public Synthesis Gap)
@@ -450,7 +447,14 @@ CVF is positioned at the boundary of Phase 1 (Stabilization, largely
 done) and Phase 2 (Runtime Maturity, started with Phase E). The next
 work phases should follow this order, not the 8-problem list directly:
 
-**Immediate next (Runtime Maturity — 2 items):**
+**Candidate post-decision implementation lanes (blocked on Gate 0 decision pack):**
+
+These lanes are candidates only. None may be started without a decision
+pack (`CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md`)
+resolving the rebuttal findings from Codex (2026-05-18). See that file
+for the multi-agent resolution process before selecting a lane.
+
+**Runtime Maturity candidates (2 items):**
 
 1. **C-execution-gateway** — implement `cvf run/execute` as CLI entry
    point backed by the governed execute path wired in Phase E. Demand-
@@ -462,7 +466,7 @@ work phases should follow this order, not the 8-problem list directly:
    writing flow. Demand-gated: requires identifying a flow that actually
    writes memory (not Product Brief — that flow has no memory write).
 
-**Parallel track (Productization foundation — 1 item):**
+**Productization foundation candidate (1 item):**
 
 3. **B-workflow-packaging** — for 2–3 highest-value existing templates
    (`app_builder_complete`, one business template, one content template),
@@ -474,7 +478,7 @@ work phases should follow this order, not the 8-problem list directly:
 
 - D-provider-method-parity: demand-gated on consuming flow. No GC-018
   until a specific stream/reasoning/vision use case is named.
-- E-benchmark-reorientation: Phase F candidate. Requires E.4 live proof
+- E-benchmark-reorientation: Phase F candidate. Requires live proof
   infrastructure (now exists) to be extended with governance metrics.
 - F-noncoder-UX: product design decision, not engineering gap. Requires
   operator direction on outcome-first surface design.
@@ -495,8 +499,17 @@ Verified 2026-05-18 against existing doctrine and governance artifacts:
 | Policy scope | `ECOSYSTEM/doctrine/CVF_DOCTRINE_RULES.md` + `governance/toolkit/02_POLICY/CVF_MASTER_POLICY.md` | COVERED |
 | Runtime semantics | `ECOSYSTEM/doctrine/CVF_LAYER_MODEL.md` + Phase D/E contract layer | COVERED |
 
-**Decision: Problem A — CLOSED_VERIFIED.**
-No new kernel law files are needed or authorized.
+**Decision: Problem A — two-tier status:**
+
+- **Review freeze-point coverage: CLOSED_VERIFIED.** All 5 freeze
+  points (authority hierarchy, execution lifecycle, governance ownership,
+  policy scope, runtime semantics) are covered by existing doctrine
+  artifacts. No new kernel law files are needed or authorized.
+- **Governance kernel freeze posture: ACTIVE — RECOMMENDED.** The doctrine
+  directory (`ECOSYSTEM/doctrine/`) is frozen by convention but not
+  enforced by a formal lock gate. A lightweight CI guard that blocks
+  modifications to `ECOSYSTEM/doctrine/` without operator approval remains
+  a recommended follow-up. This does not block any current work.
 
 ---
 
@@ -518,10 +531,10 @@ Phase A–E addressed this directly and correctly:
   all fire on real requests. Live Alibaba proof. Audit event includes
   step traces and role-permission result.
 
-CVF now has a bounded Governed Capability System for one flow. The
-remaining work (B/C/D/E/F/G/H) extends this into more flows, more
-surfaces, and more actor types — following the Review's own Phase 2–4
-priority order.
+CVF now has a bounded governed execution chain proven for the selected
+Product Brief flow. The remaining work (B/C/D/E/F/G/H) extends this
+into more flows, more surfaces, and more actor types — following the
+Review's own Phase 2–4 priority order.
 
 The Review was right about the destination. It was incomplete about how
 far CVF had already traveled.
