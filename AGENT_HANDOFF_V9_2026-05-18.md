@@ -265,7 +265,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `5716099d`
+Current HEAD: `e15f4206`
 
 ## What This Session Delivered
 
@@ -334,6 +334,7 @@ reconvergence context:
 ### HEAD
 
 ```
+e15f4206 feat(legacy-audit): bounded Phase 2.B/2.C/3.E + four-folder legacy absorption audit + N-1..N-4 corrections
 5716099d chore(handoff): add Phase 2.B open questions — GAP discovery method + legacy absorption
 67141043 chore(handoff): update V9 — all phases DELIVERED, HEAD fe9a73bd
 fe9a73bd feat(contracts): implement Phase 2.A contract sketch and Phase 3.S metrics schema
