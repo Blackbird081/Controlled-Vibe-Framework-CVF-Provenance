@@ -285,7 +285,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `153ab5f7`
+Current HEAD: `8f16aaaf`
 
 ## What This Session Delivered
 
@@ -354,6 +354,7 @@ reconvergence context:
 ### HEAD
 
 ```
+8f16aaaf chore(handoff): record Phase B GC-018
 153ab5f7 docs(baseline): file GC-018 for Phase B public catalog baseline
 0f7fe45d chore(handoff): record Step 6 and final Phase A freeze
 ffae9346 chore(legacy-audit): complete Step 6 governance compat

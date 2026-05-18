@@ -1,7 +1,7 @@
 # CVF Technical Product Catalog
 
 Memory class: POINTER_RECORD
-Status: PUBLIC-CATALOG SOURCE DRAFT
+Status: PHASE-B PUBLIC-CATALOG SOURCE BASELINE
 
 ## Purpose
 
@@ -9,6 +9,10 @@ Provide a public-safe, technically accurate catalog of CVF as of 2026-05-18.
 This file is a source draft for the public GitHub repository. It must remain
 aligned with live evidence, public claim boundaries, and the provenance/public
 repository split.
+
+Phase B claim boundary:
+
+- `docs/reference/CVF_PUBLIC_CATALOG_CLAIM_BOUNDARY_2026-05-18.md`
 
 ## Scope
 
@@ -44,6 +48,26 @@ Source inputs:
 - 2026-05-18 four-scope legacy absorption matrix;
 - active mandatory live governance proof rule;
 - public/provenance repository split policy.
+
+## Source / Predecessor Evidence
+
+- `docs/baselines/CVF_GC018_PHASE_B_PUBLIC_CATALOG_BASELINE_2026-05-18.md`
+- `docs/reviews/CVF_LEGACY_ABSORPTION_PHASE_A_FREEZE_2026-05-18.md`
+- `docs/roadmaps/CVF_LEGACY_ABSORPTION_AND_PUBLIC_CATALOG_ROADMAP_2026-05-18.md`
+- `docs/reference/CVF_PUBLIC_CATALOG_CLAIM_BOUNDARY_2026-05-18.md`
+
+## Decision / Baseline / Proposed Tranche
+
+Decision: Phase B public catalog baseline accepted for the provenance source
+copy of the public catalog.
+
+Baseline: this catalog remains bounded to public-safe evidence and the
+structured claim boundary. It does not claim complete Agent OS status,
+universal provider parity, full legacy absorption, or release readiness beyond
+published evidence.
+
+Proposed tranche: none. Future Phase D implementation requires separate
+GC-018 authorization.
 
 ## Requirements
 
@@ -167,6 +191,7 @@ PASS docs/reference/CVF_PUBLIC_NONCODER_VALUE_STATEMENT_2026-04-17.md
 PASS governance/toolkit/05_OPERATION/CVF_AUDIT_PROTOCOL.md
 PASS scripts/run_cvf_release_gate_bundle.py
 PASS docs/reference/CVF_PUBLIC_STRUCTURE_OVERVIEW.md
+PASS docs/reference/CVF_PUBLIC_CATALOG_CLAIM_BOUNDARY_2026-05-18.md
 PASS docs/reviews/CVF_W130_EXPORT_ACTIVATION_CONTRACT_2026-04-28.md
 PASS docs/reviews/CVF_W130_EVIDENCE_PACK_EXPORT_EVIDENCE_2026-04-28.md
 PASS EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/knowledge-store.ts
@@ -199,6 +224,10 @@ Required posture:
 
 ## Public Claim Boundary
 
+The structured Phase B public claim boundary is:
+
+- `docs/reference/CVF_PUBLIC_CATALOG_CLAIM_BOUNDARY_2026-05-18.md`
+
 CVF may claim:
 
 - governance-first AI control framework;
@@ -227,6 +256,7 @@ Private/provenance source draft:
 Public repository target:
 
 - `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`
+- `docs/reference/CVF_PUBLIC_CATALOG_CLAIM_BOUNDARY_2026-05-18.md`
 
 ## Final Clause
 
