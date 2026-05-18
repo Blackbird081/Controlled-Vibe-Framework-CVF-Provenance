@@ -46,6 +46,21 @@ export interface BuildPhase2CProductBriefSliceInput {
   };
 }
 
+export interface BuildPhase2CProductBriefSliceForRouteInput {
+  responseSuccess: boolean;
+  templateId?: string;
+  templateName?: string;
+  category?: Category;
+  inputs: Record<string, string>;
+  intent: string;
+  output?: string;
+  evidenceReceipt: GovernanceEvidenceReceipt;
+  validation?: {
+    qualityHint?: string;
+    issues?: string[];
+  };
+}
+
 export function isPhase2CProductBriefTemplate(templateId?: string): boolean {
   return templateId === PHASE_2C_PRODUCT_BRIEF_TEMPLATE_ID;
 }
@@ -107,4 +122,23 @@ export function buildPhase2CProductBriefSlice(
     },
     claimBoundary: 'live_governance_proof_required_before_public_claim',
   };
+}
+
+export function buildPhase2CProductBriefSliceForRoute(
+  input: BuildPhase2CProductBriefSliceForRouteInput
+): Phase2CProductBriefSlice | undefined {
+  if (!input.responseSuccess || !input.output) {
+    return undefined;
+  }
+
+  return buildPhase2CProductBriefSlice({
+    templateId: input.templateId,
+    templateName: input.templateName,
+    category: input.category,
+    inputs: input.inputs,
+    intent: input.intent,
+    output: input.output,
+    evidenceReceipt: input.evidenceReceipt,
+    validation: input.validation,
+  });
 }

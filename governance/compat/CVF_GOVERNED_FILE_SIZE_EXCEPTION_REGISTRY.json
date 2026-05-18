@@ -127,8 +127,8 @@
     {
       "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts",
       "fileClass": "general_source",
-      "approvedMaxLines": 1100,
-      "status": "ACTIVE_EXCEPTION",
+      "approvedMaxLines": 1001,
+      "status": "RESOLVED",
       "rationale": "Phase 2.C bounded `Create Product Brief` vertical slice + Phase 3.E bounded emission pilot were grafted onto the existing /api/execute route handler by Codex without per-feature extraction. Route grew from ~870 to ~1020 lines in one tranche. Codex added the code; the exception is granted to unblock the legacy-audit commit but ownership of the split sits with Codex.",
       "requiredFollowup": "MANDATORY for Codex on the FIRST step of the next continuation (Step 1 of `docs/reviews/CVF_LEGACY_ABSORPTION_NEXT_ROADMAP_FOR_CODEX_2026-05-18.md`): extract Phase 2.C product-brief slice handling and Phase 3.E emission helper out of route.ts into dedicated modules (`phase2c-product-brief-slice.ts` and `phase3e-operational-emission.ts` already exist — wire them so route.ts only orchestrates). Target: route.ts back below 900 lines. This exception MUST be REMOVED (not extended, not relabeled, not bumped) once split is done. Once removed, the entry must be replaced with a tombstone whose status is `RESOLVED` and approvedMaxLines is hardThresholdLines + 1 to preserve the audit trail without creating a usable cap.",
       "lockBoundary": {

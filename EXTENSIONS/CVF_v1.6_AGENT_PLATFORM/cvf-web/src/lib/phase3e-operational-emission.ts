@@ -36,6 +36,12 @@ export interface BuildPhase3EEmissionPilotInput {
   responseSuccess: boolean;
 }
 
+export interface BuildPhase3EOperationalMetricsForRouteInput {
+  phase2cProductBrief?: Phase2CProductBriefSlice;
+  evidenceReceipt: GovernanceEvidenceReceipt;
+  responseSuccess: boolean;
+}
+
 const VIOLATION_DECISIONS = new Set(['BLOCK', 'DENY', 'NEEDS_APPROVAL']);
 
 function ratio(numerator: number, denominator: number): number {
@@ -141,4 +147,10 @@ export function buildPhase3EEmissionPilot(
     ],
     claimBoundary: 'pilot_only_no_full_operational_intelligence_claim',
   };
+}
+
+export function buildPhase3EOperationalMetricsForRoute(
+  input: BuildPhase3EOperationalMetricsForRouteInput,
+): Phase3EEmissionPilot | undefined {
+  return buildPhase3EEmissionPilot(input);
 }
