@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-import { login, seedStorageWithAlibaba } from './utils';
+import { loginAs, seedStorageWithAlibaba } from './utils';
 
 const hasAlibabaKey = Boolean(
   process.env.DASHSCOPE_API_KEY
@@ -14,8 +14,8 @@ test.beforeEach(async ({ page }) => {
   await seedStorageWithAlibaba(page);
 });
 
-test('Phase E E.4 emits workflow step traces and receipt pointers on live Product Brief execution', async ({ page }) => {
-  await login(page);
+test('Phase E E.6 verifies governed Product Brief execution chain checkpoints', async ({ page }) => {
+  await loginAs(page, 'dev', 'dev123');
 
   const response = await page.request.post('/api/execute', {
     data: {
@@ -43,7 +43,7 @@ test('Phase E E.4 emits workflow step traces and receipt pointers on live Produc
         commitId: 'phase-e-e4-workflow-live-proof',
         agentId: 'cvf-playwright-live',
         timestamp: Date.now(),
-        description: 'Phase E E.4 workflow trace live proof',
+        description: 'Phase E E.6 governed execution chain live proof',
       },
     },
   });
@@ -53,6 +53,16 @@ test('Phase E E.4 emits workflow step traces and receipt pointers on live Produc
   expect(response.status()).toBe(200);
   expect(body.success).toBe(true);
   expect(body.providerRouting?.selectedProvider).toBe('alibaba');
+  expect(body.rolePermission).toMatchObject({
+    role: 'BUILDER',
+    permissionRole: 'BUILDER',
+    outputClass: 'artifact',
+    allowed: true,
+  });
+  expect(body.governanceEnvelope).toEqual(expect.objectContaining({
+    phase: 'BUILD',
+    riskLevel: 'R1',
+  }));
   expect(body.workflowId).toBe('workflow.product.create_product_brief.v1');
   expect(body.stepTraces.map((trace: { stepId: string }) => trace.stepId)).toEqual([
     'step-1-intake-validation',
@@ -60,9 +70,29 @@ test('Phase E E.4 emits workflow step traces and receipt pointers on live Produc
     'step-3-provider-call',
     'step-5-receipt-emit',
   ]);
+  expect(body.stepTraces.every((trace: {
+    preconditionChecked: boolean;
+    decision: string;
+    receiptId: string;
+    source: string;
+  }) => (
+    trace.preconditionChecked === true
+    && trace.decision === 'completed'
+    && trace.receiptId === body.governanceEvidenceReceipt.receiptId
+    && trace.source === 'route_dispatch'
+  ))).toBe(true);
   expect(body.stepTraces).not.toContainEqual(
     expect.objectContaining({ stepId: 'step-4-review-gate' }),
   );
+  expect(body.receiptObligations.map((obligation: { role: string; actionClass: string }) => [
+    obligation.role,
+    obligation.actionClass,
+  ])).toEqual([
+    ['BUILDER', 'artifact_export'],
+    ['BUILDER', 'file_read'],
+    ['BUILDER', 'provider_call'],
+    ['BUILDER', 'artifact_export'],
+  ]);
   expect(body.receipts).toEqual(body.receiptBinding.emissions.map((emission: {
     stepId: string;
     obligationId: string;

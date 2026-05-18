@@ -892,6 +892,13 @@ export async function POST(request: NextRequest) {
                     receiptBinding: workflowExecution.receiptBinding,
                     deferredStepIds: workflowExecution.deferredStepIds,
                     governanceReceiptId: governanceEvidenceReceipt.receiptId,
+                    rolePermission: {
+                        role: resolvedExecutionRole.role,
+                        permissionRole: rolePermission.role,
+                        outputClass: rolePermission.outputClass,
+                        allowed: rolePermission.allowed,
+                        source: resolvedExecutionRole.source,
+                    },
                 }),
             });
         }

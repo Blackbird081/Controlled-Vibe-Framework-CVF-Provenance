@@ -2295,3 +2295,24 @@ Utility and guard:
   - E.5 covers only active Product Brief role/action pairs; full `CVFRole x ToolActionClass` matrix remains `deferred_with_reason`.
   - Row 8.2 moved to `partially_absorbed`, not `absorbed`.
   - No live proof was run for E.5 by design; E.6 owns the next live proof.
+
+## [2026-05-18] Batch: Phase E E.6 Closure and Chain Verification
+- Change reference: pending provenance commit after live proof; public-sync commit `faa9df91`
+- Impacted scope:
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts`
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.test.ts`
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/phase-e-workflow-binding.live.spec.ts`
+  - `docs/reviews/CVF_PHASE_E_EXECUTION_CHAIN_AUDIT_2026-05-18.md`
+  - `docs/reviews/CVF_PHASE_E_CLOSURE_2026-05-18.md`
+  - `docs/reviews/CVF_PHASE_E_FULL_CLOSURE_2026-05-18.md`
+- Tests executed:
+  - `npm run check` in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` -> PASS
+  - `npm run test -- --run src/app/api/execute/route.test.ts src/lib/workflows/workflow-resolver.test.ts` in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` -> PASS, 2 files / 34 tests
+  - `npm run check` in `EXTENSIONS/CVF_GUARD_CONTRACT` -> PASS
+  - `npm run test -- --run src/contracts/contracts.phaseE-receipt-binding.test.ts src/contracts/contracts.phaseE-workflow-binding.test.ts` in `EXTENSIONS/CVF_GUARD_CONTRACT` -> PASS, 2 files / 9 tests
+  - `npx playwright test --config playwright.config.ts tests/e2e/phase-e-workflow-binding.live.spec.ts --reporter=line` in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` -> PASS, 1 live Alibaba Product Brief chain proof
+  - `python scripts/run_cvf_release_gate_bundle.py --json` -> PASS, 7/7
+- Notes/Risks:
+  - The strengthened live spec first caught an `OPERATOR` fixture mismatch; final proof uses the enterprise `dev/dev123` login so `resolveExecutionCVFRole()` maps `developer` to `BUILDER`.
+  - Public catalog/evidence update was committed only in public-sync at `faa9df91` after `git remote -v` confirmed the public remote and `Test-Path` returned 19/19 PASS.
+  - Closure remains bounded to the selected Product Brief flow and does not claim universal workflow or full receipt-matrix coverage.

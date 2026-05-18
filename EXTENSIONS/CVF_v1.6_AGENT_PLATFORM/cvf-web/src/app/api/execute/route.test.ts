@@ -266,6 +266,7 @@ describe('/api/execute', () => {
             receipts: data.receipts,
             receiptBinding: data.receiptBinding,
             deferredStepIds: ['step-4-review-gate'],
+            rolePermission: data.rolePermission,
         });
         expect(executeAIMock).toHaveBeenCalledTimes(1);
     });
