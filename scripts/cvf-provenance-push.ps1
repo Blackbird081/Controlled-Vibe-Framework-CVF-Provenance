@@ -14,13 +14,18 @@
         powershell -ExecutionPolicy Bypass -File scripts\cvf-provenance-push.ps1
         powershell -ExecutionPolicy Bypass -File scripts\cvf-provenance-push.ps1 -Branch main
         powershell -ExecutionPolicy Bypass -File scripts\cvf-provenance-push.ps1 -DryRun
+        powershell -ExecutionPolicy Bypass -File scripts\cvf-provenance-push.ps1 -DryRun -ParallelPreflight
 
     -DryRun : Run the hook chain but do not actually push
+    -ParallelPreflight : Run the local pre-push checks in parallel with
+      [done/total] progress before any push URL is enabled
 #>
 
 param(
     [string]$Branch  = 'main',
-    [switch]$DryRun
+    [switch]$DryRun,
+    [switch]$ParallelPreflight,
+    [int]$MaxParallelChecks = 6
 )
 
 $ErrorActionPreference = 'Stop'
@@ -63,17 +68,22 @@ Write-Host "  Repo   : $REPO_ROOT"
 Write-Host "  Target : $PROVENANCE_URL"
 Write-Host "  Branch : $Branch"
 if ($DryRun) { Write-Host '  Mode   : DRY RUN - governance check only, no push' -ForegroundColor Yellow }
+if ($ParallelPreflight) { Write-Host "  Checks : PARALLEL PREFLIGHT - max $MaxParallelChecks concurrent checks" -ForegroundColor Yellow }
 Write-Host ''
 
 # Step 1: Run full pre-push governance hook chain
 Write-Host '[1/4] Running CVF pre-push governance hook chain...' -ForegroundColor Yellow
 Write-Host '      This verifies all files pass guard checks before the push URL is enabled.'
+Write-Host '      Progress is streamed live; each check reports [current/total].'
 Write-Host ''
 
-$hookResult = & python governance/compat/run_local_governance_hook_chain.py --hook pre-push
-$hookExit   = $LASTEXITCODE
+$hookArgs = @('governance/compat/run_local_governance_hook_chain.py', '--hook', 'pre-push')
+if ($ParallelPreflight) {
+    $hookArgs += @('--parallel', '--max-workers', "$MaxParallelChecks")
+}
 
-Write-Host $hookResult
+& python @hookArgs
+$hookExit   = $LASTEXITCODE
 
 if ($hookExit -ne 0) {
     Write-Host ''
