@@ -197,6 +197,117 @@ This is a structural limitation of external audit without access to the
 full commit ledger. The strategic diagnosis remains valid; the gap
 inventory is incomplete.
 
+**The root cause is not the reviewer's fault. It is a documentation
+failure.** CVF delivered real capabilities across 130+ W-series tranches
+but did not surface them in the public catalog. Any future reviewer —
+human, AI agent, or potential contributor — will make the same errors
+until the catalog is fixed.
+
+---
+
+### Catalog Gap Remediation — Required Actions
+
+This section defines what must be added to the public technical catalog
+(`docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md` in
+public-sync) to prevent the 3 factual errors from recurring.
+
+**These are not optional documentation tasks. They are the fix for the
+information gap that caused the reviewer to assess CVF incorrectly.**
+
+#### Remediation 1 — Current Outcomes section (fixes all 3 errors)
+
+Add a "**What CVF Can Do Today**" section at the top of the catalog,
+before the capability table. It must answer the question:
+
+> "What can CVF help me accomplish right now?"
+
+Format: 3–5 concrete outcomes with evidence links. Each outcome is one
+sentence + one evidence path. Example structure (not yet authorized —
+requires GC-018 and public-sync `Test-Path` verification before commit):
+
+```text
+Today CVF can help you:
+
+1. Generate a governed Product Brief with role permission, step traces,
+   and governance receipt — BUILDER role, Alibaba qwen-turbo lane.
+   Evidence: docs/evidence/phase-e-governed-execution-chain.md
+
+2. Audit your AI workflow session with a governance CLI scan.
+   Evidence: CVF_ECO_v2.2_GOVERNANCE_CLI (cvf-guard evaluate/audit)
+
+3. Benchmark your provider lane against the CVF Quality Baseline Score.
+   Evidence: docs/benchmark/qbs-preregistrations/
+
+4. Run the full release gate proof to verify governance posture.
+   Evidence: scripts/run_cvf_release_gate_bundle.py
+```
+
+Without this section, a reader who opens the catalog still cannot answer
+"what can I do with CVF today?"
+
+#### Remediation 2 — Extension inventory (fixes Error 3: B/D/H)
+
+Add a "**Key Extensions**" table to the catalog listing the 8–10 most
+important EXTENSIONS modules in plain language. Minimum columns:
+
+| Extension | What it does | Status |
+
+Include at minimum:
+
+- `CVF_ECO_v2.2_GOVERNANCE_CLI` — governance CLI (evaluate/audit/session/report)
+- `CVF_v1.2.2_SKILL_GOVERNANCE_ENGINE` — skill fusion, evolution, probation, ranking
+- `CVF_MODEL_GATEWAY` — LLM/tool/memory adapter hub, routing + fallback policy
+- `CVF_LEARNING_PLANE_FOUNDATION` — memory tier contracts, retention policy, reinjection policy
+- `CVF_GUARD_CONTRACT` — Phase D/E contracts: role-permission, runtime-workflow, orchestrator, memory-continuity
+- `CVF_v1.6_AGENT_PLATFORM` — Web UI: Next.js, governed execute path, template marketplace
+
+Without this table, any reader will assume CVF is only what they see in
+the root docs — missing the majority of the delivered system.
+
+#### Remediation 3 — Delivery narrative anchor (fixes Error 2: W-series)
+
+Add a "**Delivery History Summary**" paragraph or table (not the full
+ledger — just enough to communicate maturity):
+
+```text
+CVF v4.0.0 GA was released 2026-05-16 after 130+ W-series delivery
+tranches across: knowledge pipeline, provider lanes, skill governance,
+template marketplace, noncoder UX, benchmark infrastructure (QBS-1,
+10+ runs), and governed execution chain (Phase E).
+```
+
+This prevents reviewers from assuming CVF is early-stage when it has
+130+ delivered tranches and a published GA release.
+
+#### Remediation 4 — Binding update rule for agents
+
+Every agent that delivers a new capability tranche **must** update the
+public catalog before closing the tranche. The update rule:
+
+1. If the tranche adds a new proven capability → add a row to the
+   capability table with `proven` status and a verified evidence path.
+2. If the tranche adds or significantly extends an extension → add or
+   update the extension inventory row.
+3. If the tranche upgrades a `roadmap` or `partially absorbed` row to
+   `proven` → update the row status and evidence link.
+4. Run `Test-Path` on every new catalog path in the public-sync clone
+   before committing (N-1 rule from Step 1).
+
+This rule is also recorded in `CLAUDE.md` as a binding session rule
+(GC-024 candidate).
+
+#### Remediation status
+
+| Remediation | Status | Authorization required |
+| --- | --- | --- |
+| R1 — Current Outcomes section | NOT YET DONE | GC-018 for public-sync edit |
+| R2 — Extension inventory table | NOT YET DONE | GC-018 for public-sync edit |
+| R3 — Delivery narrative anchor | NOT YET DONE | GC-018 for public-sync edit |
+| R4 — Binding update rule in CLAUDE.md | DONE — see CLAUDE.md | No GC-018 needed (governance rule, not public claim) |
+
+R1/R2/R3 must be batched into a single public-sync commit to minimize
+churn. File a single GC-018 covering all three when ready.
+
 ---
 
 ## Part 2 — What the Reviewer Could Not See (Public Synthesis Gap)

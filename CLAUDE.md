@@ -192,6 +192,53 @@ These are enforced by `.gitignore` in the public-sync repo. When performing a ma
 
 ---
 
+## Public Catalog Update Rule (GC-024 candidate) — BINDING
+
+**Every agent that delivers a new capability tranche must update the
+public technical catalog before closing the tranche.**
+
+Public catalog location (public-sync repo):
+`docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`
+
+### Why this rule exists
+
+CVF v4.0.0 delivered 130+ W-series tranches but did not surface them in
+the public catalog. An external reviewer in 2026-05-17 concluded that
+CVF's CLI, benchmark, and Skill/Provider/Memory foundations did not
+exist — because the catalog did not mention them. **The 3 factual errors
+in Review CVF.md are a documentation failure, not a reviewer failure.**
+This rule prevents recurrence.
+
+### What must be updated
+
+1. **New proven capability** → add a row to the capability table with
+   `proven` status and a verified evidence path.
+2. **New or significantly extended extension** → add or update the
+   extension inventory row (R2 section when added).
+3. **Row status upgrade** (`roadmap` → `partially absorbed` → `proven`)
+   → update the row and replace with a concrete evidence link.
+4. **New delivery tranche at GA/RC level** → update the Delivery History
+   Summary paragraph (R3 section when added) with the tranche name and
+   date.
+
+### Verification before every public-sync commit
+
+Run `Test-Path` on **every new or modified path** in the catalog from
+the public-sync clone, not the governance repo. Copying provenance paths
+without re-verification in public-sync is the N-1 failure mode — it has
+caused broken links before.
+
+### Sections still pending (require a single GC-018 to add)
+
+- R1 — "What CVF Can Do Today" (Current Outcomes section)
+- R2 — Key Extensions inventory table
+- R3 — Delivery History Summary paragraph
+
+**Do not add R1/R2/R3 without filing GC-018 first.** The rule to update
+*existing* catalog rows and tables applies immediately without GC-018.
+
+---
+
 ## Key Reference Documents
 
 | Purpose | Document |
