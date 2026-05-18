@@ -68,6 +68,25 @@ export {
 export { ROLE_AXIS_ADAPTER_MAP } from './role-axis-adapter-map';
 
 export type {
+  RolePermissionOutputClass,
+  RolePermissionDenyRuleId,
+  ReceiptOwnerAxis,
+  ReceiptOwnerBoundary,
+  RolePermissionProfile,
+} from './role-permission.contract';
+
+export {
+  ROLE_PERMISSION_SCHEMA_VERSION,
+  ROLE_PERMISSION_OUTPUT_CLASSES,
+  ROLE_PERMISSION_DENY_RULES,
+  ROLE_PERMISSION_PROFILES,
+  getRolePermissionProfile,
+  isOutputAllowedForRole,
+  roleHasDenyRule,
+  rolePermissionCoversAllRoles,
+} from './role-permission.contract';
+
+export type {
   Receipt,
   GatewayReceiptPayload,
   ExecutionBridgeReceiptPayload,
