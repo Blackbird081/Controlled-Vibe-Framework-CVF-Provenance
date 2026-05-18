@@ -234,7 +234,9 @@ State as of 2026-05-18:
 - Public catalog R1/R2/R3 enrichment (public-sync): DONE - commit ade41d4e (public-sync)
 - GC-020 HEAD sync (GC-024 + catalog enrichment): COMPLETE - commit cd0ba99d
 - Public catalog rewrite to clean reader-first form (public-sync): DONE - commit 08ffda44 (public-sync)
-- GC-020 HEAD sync (catalog clean form): COMPLETE - commit pending
+- GC-020 HEAD sync (catalog clean form): COMPLETE - commit 1002103c
+- Catalog Gap Remediation status: ALL DONE - commit cf5e4d7e
+- GC-020 HEAD sync (remediation closure): COMPLETE - commit pending
 
 Authorized next implementation:
 
@@ -363,7 +365,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `1002103c`
+Current HEAD: `cf5e4d7e`
 
 ## What This Session Delivered
 
