@@ -26,6 +26,8 @@ import type { WebGovernanceEnvelope } from '@/lib/web-governance-envelope';
 import { deriveServiceTokenIdentity, verifyServiceTokenRequest } from '@/lib/service-token-auth';
 import { hasValidationRetryBudget, resolveExecutionMaxTokens } from '@/lib/execute-route-budget';
 import { recordReportableDecisionObserved } from '@/lib/false-positive-report';
+import { buildPhase2CProductBriefSlice } from '@/lib/phase2c-product-brief-slice';
+import { buildPhase3EEmissionPilot } from '@/lib/phase3e-operational-emission';
 import { getApprovalStore, type ApprovalRequestRecord } from '../approvals/store';
 import {
     approvalRecordMatchesActor,
@@ -934,6 +936,41 @@ export async function POST(request: NextRequest) {
             ? resolveTokenUsage(filteredPrompt, aiResult.output, aiResult)
             : undefined;
 
+        const governanceEvidenceReceipt = buildEvidenceReceipt({
+            envelope: govEnvelope,
+            decision: enforcement.status,
+            riskLevel: enforcement.riskGate?.riskLevel,
+            provider: routedProvider,
+            model: body.model ?? aiResult.model ?? routedProvider,
+            routingDecision: routingResult.decision,
+            knowledgeSource,
+            knowledgeInjected,
+            knowledgeCollectionId: requestedKnowledgeCollectionId,
+            knowledgeChunkCount: retrievalResult.allowedChunkCount,
+            approvalId: approvedRequestRecord?.id,
+            validationHint: outputValidation?.qualityHint,
+        });
+        const phase2cProductBrief = aiResult.success && aiResult.output
+            ? buildPhase2CProductBriefSlice({
+                templateId: executionTemplateId,
+                templateName: template?.name ?? body.templateName,
+                category: template?.category,
+                inputs: body.inputs || {},
+                intent: body.intent || '',
+                output: aiResult.output,
+                evidenceReceipt: governanceEvidenceReceipt,
+                validation: outputValidation ? {
+                    qualityHint: outputValidation.qualityHint,
+                    issues: outputValidation.issues,
+                } : undefined,
+            })
+            : undefined;
+        const phase3eOperationalMetrics = buildPhase3EEmissionPilot({
+            phase2cProductBrief,
+            evidenceReceipt: governanceEvidenceReceipt,
+            responseSuccess: aiResult.success,
+        });
+
         return NextResponse.json({
             ...aiResult,
             usage,
@@ -963,20 +1000,9 @@ export async function POST(request: NextRequest) {
             } : undefined,
             governanceEnvelope: govEnvelope,
             policySnapshotId: govEnvelope.policySnapshotId,
-            governanceEvidenceReceipt: buildEvidenceReceipt({
-                envelope: govEnvelope,
-                decision: enforcement.status,
-                riskLevel: enforcement.riskGate?.riskLevel,
-                provider: routedProvider,
-                model: body.model ?? aiResult.model ?? routedProvider,
-                routingDecision: routingResult.decision,
-                knowledgeSource,
-                knowledgeInjected,
-                knowledgeCollectionId: requestedKnowledgeCollectionId,
-                knowledgeChunkCount: retrievalResult.allowedChunkCount,
-                approvalId: approvedRequestRecord?.id,
-                validationHint: outputValidation?.qualityHint,
-            }),
+            governanceEvidenceReceipt,
+            ...(phase2cProductBrief ? { phase2cProductBrief } : {}),
+            ...(phase3eOperationalMetrics ? { phase3eOperationalMetrics } : {}),
         });
 
     } catch (error) {

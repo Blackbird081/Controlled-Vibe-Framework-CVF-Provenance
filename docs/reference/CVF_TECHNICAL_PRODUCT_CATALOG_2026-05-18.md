@@ -1,0 +1,191 @@
+# CVF Technical Product Catalog
+
+Memory class: POINTER_RECORD
+Status: PUBLIC-CATALOG SOURCE DRAFT
+
+## Purpose
+
+Provide a public-safe, technically accurate catalog of CVF as of 2026-05-18.
+This file is a source draft for the public GitHub repository. It must remain
+aligned with live evidence, public claim boundaries, and the provenance/public
+repository split.
+
+## Scope
+
+Audience:
+
+- users evaluating whether CVF is useful;
+- developers checking the architecture;
+- agents needing a factual front door before acting in the repository.
+
+This catalog explains what CVF is, what is proven, what is bounded, and what is
+still roadmap work. It intentionally avoids private legacy source links.
+
+Catalog reconciliation model:
+
+- Public-sync catalog is the customer-facing derivative.
+- This provenance file is the annotated internal source copy used to preserve
+  claim rationale, private review context, and public-sync publication
+  boundary.
+- The two files are allowed to differ in annotation density, but they must not
+  disagree on product claims or claim boundaries.
+
+## Owner
+
+Owner surface: public/product orientation and claim-boundary documentation.
+
+Source inputs:
+
+- public repository front door and evidence docs;
+- 2026-05-18 four-scope legacy absorption matrix;
+- active mandatory live governance proof rule;
+- public/provenance repository split policy.
+
+## Requirements
+
+This catalog must:
+
+- link only to public-safe surfaces when used outside the provenance repo;
+- separate proven, bounded, and roadmap capabilities;
+- avoid private `.private_reference` source links;
+- avoid claiming full Agent OS completeness;
+- avoid claiming universal provider parity;
+- preserve the mandatory live-governance-proof boundary.
+
+## What CVF Is
+
+CVF is a governance-first control framework for AI-assisted execution.
+
+It puts a governed control plane between user intent, agent/runtime actions,
+provider calls, policy checks, and evidence receipts. Its practical purpose is
+to make AI work safer, more auditable, and more repeatable for both developers
+and non-coders.
+
+The core operating loop remains:
+
+```text
+INTAKE -> DESIGN -> BUILD -> REVIEW -> FREEZE
+```
+
+## Product Catalog
+
+| Capability | Current status | What is verifiable |
+|---|---|---|
+| Governance control plane | proven and active | `ARCHITECTURE.md`; `GOVERNANCE.md`; `governance/toolkit/05_OPERATION/CVF_AUDIT_PROTOCOL.md` |
+| Live governance proof | proven and mandatory for release claims | `scripts/run_cvf_release_gate_bundle.py`; `docs/evidence/latest-release-gate.md` |
+| Non-coder governed path | proven on bounded provider lanes | `docs/reference/CVF_PUBLIC_NONCODER_VALUE_STATEMENT_2026-04-17.md`; `docs/evidence/web-governance-path.md` |
+| Provider lanes | certified only where evidence exists | `docs/evidence/provider-lanes.md`; `docs/audits/alibaba-canary/INDEX.md`; `docs/audits/deepseek-canary/INDEX.md` |
+| Knowledge-backed execution | proven in bounded execute path | `docs/evidence/cvf-16-5-runtime-absorption.md`; `docs/evidence/web-governance-path.md` |
+| Deliverable packs | implemented in web product path | `README.md`; `docs/evidence/web-governance-path.md` |
+| External asset/capability governance | partially productized | `docs/evidence/web-governance-path.md`; `docs/reference/CVF_PUBLIC_STRUCTURE_OVERVIEW.md` |
+| Role and agent governance | partially absorbed | role vocabulary and handoff governance exist; full enforceable role permission runtime is still roadmap work |
+| Memory and continuity | partially absorbed | knowledge store, audit, session continuity, and handoff rules exist; governed reinjection across all worker paths is not complete |
+| Provider method breadth | demand-gated | current slices use existing provider calls; streaming/tool-call/vision/embedding/reasoning methods need named consumer slices |
+| Operational observability | partially absorbed | metrics and operations surfaces exist; full observability plane is not yet claimed |
+| Tool/MCP/database action governance | roadmap | tool registry and guards exist; full canonical action taxonomy is still future work |
+| Async workers/subagents | roadmap | sandbox and worker concepts exist; canonical async work-ticket and delegation lifecycle remain future work |
+| Graph/code-intelligence context | roadmap | valuable legacy pattern; no full graph context resolver is claimed yet |
+
+## What Users Can Expect
+
+Users can expect a governed AI path that records decisions and evidence instead
+of treating AI output as an untracked chat transcript.
+
+For non-coders, CVF is strongest where the request enters a trusted form or
+bounded governed workflow. For developers, CVF is strongest where phase,
+guard, policy, and evidence contracts are respected by the repository workflow.
+
+## What Developers Can Verify
+
+Developers should start from the public repository front door:
+
+- `README.md`
+- `ARCHITECTURE.md`
+- `docs/GET_STARTED.md`
+- `docs/evidence/README.md`
+- `docs/evidence/latest-release-gate.md`
+- `docs/evidence/provider-lanes.md`
+- `docs/evidence/web-governance-path.md`
+- `docs/reference/CVF_PUBLIC_NONCODER_VALUE_STATEMENT_2026-04-17.md`
+
+Release-quality governance proof uses:
+
+```bash
+python scripts/run_cvf_release_gate_bundle.py --json
+```
+
+Mock-only UI checks are not sufficient for claims that CVF controls AI or
+provider behavior.
+
+## Verification
+
+This source draft is verified by local governance document checks in the
+provenance repository. Public repository publication still requires the
+public-sync boundary check and normal public release review before push.
+
+Verification commands run after catalog reconciliation:
+
+```bash
+python governance/compat/check_docs_governance_compat.py
+python governance/compat/check_memory_governance_compat.py
+python governance/compat/check_markdown_structural_completeness.py
+python governance/compat/check_agent_handoff_guard_compat.py
+```
+
+Result: all four checks passed in the provenance repository.
+
+Public-sync path check:
+
+- The customer-facing public-sync derivative intentionally omits links to
+  `START_HERE.md` and `docs/INDEX.md` because those paths were not present in
+  the public-sync clone during reconciliation.
+
+## What Agents Must Respect
+
+Agents using CVF should treat the repository as a governed workspace, not a
+free-form coding sandbox.
+
+Required posture:
+
+- read the front-door instructions before changing files;
+- preserve provenance/public repository boundaries;
+- do not print or commit API keys;
+- do not claim governance behavior without live proof;
+- record gaps instead of silently absorbing broad legacy concepts;
+- use roadmap and GC-018 gates for substantial continuation.
+
+## Public Claim Boundary
+
+CVF may claim:
+
+- governance-first AI control framework;
+- bounded live non-coder value;
+- evidence-backed provider lanes where receipts exist;
+- governed knowledge-backed execution in the proven path;
+- public auditability through docs, evidence packets, guards, and release gates.
+
+CVF must not claim yet:
+
+- complete Agent OS status;
+- full universal provider parity;
+- full external capability marketplace readiness;
+- full legacy repository absorption;
+- unrestricted autonomous self-improvement;
+- complete role-permission, memory-reinjection, async-worker, graph-context,
+  database-action, or provider-method coverage.
+
+## Related Artifacts
+
+Private/provenance source draft:
+
+- `docs/reviews/CVF_LEGACY_SCOPE_ABSORPTION_AUDIT_MATRIX_2026-05-18.md`
+- `docs/roadmaps/CVF_LEGACY_ABSORPTION_AND_PUBLIC_CATALOG_ROADMAP_2026-05-18.md`
+
+Public repository target:
+
+- `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`
+
+## Final Clause
+
+This catalog is deliberately conservative. It is useful for customer
+evaluation because it separates proven product behavior from roadmap ambition.

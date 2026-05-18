@@ -37,6 +37,10 @@ describe('inferPackType', () => {
     expect(inferPackType('app_builder_wizard')).toBe('app_planning');
   });
 
+  it('maps app_builder_complete → app_planning', () => {
+    expect(inferPackType('app_builder_complete')).toBe('app_planning');
+  });
+
   it('maps business_strategy_wizard → business_decision', () => {
     expect(inferPackType('business_strategy_wizard')).toBe('business_decision');
   });

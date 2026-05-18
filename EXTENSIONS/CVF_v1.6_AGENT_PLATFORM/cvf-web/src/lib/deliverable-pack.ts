@@ -60,6 +60,7 @@ const CATEGORY_PACK_MAP: Partial<Record<Category, PackType>> = {
 
 const TEMPLATE_PACK_MAP: Record<string, PackType> = {
   app_builder_wizard: 'app_planning',
+  app_builder_complete: 'app_planning',
   'app-planning': 'app_planning',
   business_strategy_wizard: 'business_decision',
   strategy_analysis: 'business_decision',

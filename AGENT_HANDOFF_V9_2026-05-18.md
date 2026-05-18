@@ -2,11 +2,19 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — 17.05 reconvergence COMPLETE. All authorized phases delivered:
-0.A/0.B/0.C + 1.0 + 1.P + 1.I + 1.R + 1.M + 2.A + 3.S. 23/23 test files,
-348 tests pass. Session mode remains `system_reconvergence_stop`. Next
-authorized move: Phase 2.B runtime wire-up (requires separate GC-018 + Phase
-1.P/1.I/1.R owners confirmed).
+Status: ACTIVE — 17.05 reconvergence COMPLETE through bounded roadmap scope.
+All authorized phases delivered: 0.A/0.B/0.C + 1.0 + 1.P + 1.I + 1.R + 1.M +
+2.A + bounded 2.B + bounded 2.C + 3.S + bounded 3.E. Phase 4 remains
+demand-gated because no selected vertical slice needs a new provider method.
+The first bounded legacy absorption audit pass has now been limited to
+`CVF 16.5`, `CVF 17.05`, `CVF ADD`, and `CVF Edit`, with public catalog draft
+created in provenance and public-sync.
+Latest targeted verification: `CVF_GUARD_CONTRACT` check PASS, 7 contract
+test files / 125 tests PASS, full guard package `npm test` 24 files / 356
+passed / 5 skipped PASS, `cvf-web` check PASS, web targeted tests 63/63 PASS,
+Phase 2.C/3.E Alibaba live proof 1/1 PASS, and
+`python scripts/run_cvf_release_gate_bundle.py --json` PASS. Session mode
+remains `system_reconvergence_stop`. No public/release claim changed.
 
 Remote tracking branch: `origin/main`
 
@@ -34,20 +42,28 @@ In scope:
 
 - Recording the complete outcome of the 2026-05-17 Claude + Codex 17.05
   absorption review session
-- Phase 0.A: anti-collusion protocol doctrine (GC-046) — no runtime, no hook,
-  no CI blocker
-- Phase 1.0: drift inventory script + artifact — no runtime mutation
+- Recording the completed authorized implementation sequence:
+  0.A/0.B/0.C + 1.0 + 1.P + 1.I + 1.R + 1.M + 2.A + bounded 2.B + bounded
+  2.C + 3.S + bounded 3.E
+- Recording Phase 2.B open questions discovered after the sequence and the
+  bounded fixture-driven Phase 2.B resolution
+- Recording the operator decision that newly discovered legacy/surface gaps are
+  captured in a separate ledger and handled after bounded roadmap closure,
+  unless they invalidate the active handoff, registry, guard, test, or phase
+  acceptance criteria
 - Session-state pointer maintenance (active handoff, session front door,
   active-state registry)
 
 Out of scope:
 
-- Implementation of any phase beyond Phase 0.A and Phase 1.0
 - Promotion of private 17.05 review material into CVF canon
 - Public claim changes, release gate changes, or GA posture changes
 - Lifting the `system_reconvergence_stop` posture — operator decision only
-- Phases 1.P/1.I/1.R/1.M, 2.A–C, 3.S/E, 4.T1/T2 — all blocked until
-  Phase 1.0 is manually verified and separate GC-018 packets are filed
+- Phase 4.T1/4.T2 implementation — blocked until separate GC-018 names a
+  provider method and consuming vertical slice/runtime need
+- Any Phase 2.B expansion beyond the bounded fixture-driven contract wire-up
+- Opportunistic absorption of legacy concepts discovered during surface scans
+  or roadmap implementation
 
 Owner: CVF session-continuity surface. This handoff is a FULL_RECORD and may
 be loaded by any incoming agent or future `cvf-cli` / `cvf-mcp-server`.
@@ -64,23 +80,168 @@ State as of 2026-05-18:
   DELIVERED — commit `daa97429`
 - GC-018 authorization packets (phases 1.P/1.I/1.R/1.M/2.A/3.S): FILED —
   commit `240d94d2`
+- Phase 1.P (policy/risk/guard contracts): DELIVERED — commit `3b1bf6b5`
+- Phase 1.I (identity and role taxonomy): DELIVERED — commit `9e5c1471`
+- Phase 1.R (receipt envelope and compatibility plan): DELIVERED — commit
+  `e95452dc`
+- Phase 1.M (memory-home tier map): DELIVERED — commit `1414aeb6`
+- Phase 2.A (contract sketch): DELIVERED — commit `fe9a73bd`
+- Phase 3.S (operational metrics schema): DELIVERED — commit `fe9a73bd`
+- Phase 2.B open-question update: RECORDED — commit `5716099d`
+- Legacy absorption gap ledger: CREATED — working tree update after
+  `5716099d`
+- Phase 2.B preflight owner/migration plan: CREATED — working tree update after
+  `5716099d`
+- Phase 2.B legacy absorption audit: CREATED — working tree update after
+  `5716099d`
+- Phase 2.B GC-018 bounded runtime wire-up: FILED — working tree update after
+  `5716099d`
+- Phase 2.B bounded fixture-driven wire-up: DELIVERED — working tree update
+  after `5716099d`
+- Phase 2.B completion packet: CREATED — working tree update after `5716099d`
+- Phase 2.C vertical slice preflight: SUPERSEDED — working tree update after
+  `5716099d`; fresh GC-018 filed and bounded slice completed
+- Phase 2.C GC-018 bounded vertical slice: FILED — working tree update after
+  `5716099d`
+- Phase 2.C `Create Product Brief` vertical slice: DELIVERED — working tree
+  update after `5716099d`; live Alibaba proof PASS
+- Consolidated live proof plan: UPDATED — working tree update after
+  `5716099d`; Phase 2.C + Phase 3.E live proof executed together, Phase 4
+  remains demand-gated
+- Phase 3.E emission pilot preflight: SUPERSEDED — working tree update after
+  `5716099d`; bounded response-local pilot completed after Phase 2.C source
+- Phase 3.E GC-018 bounded emission pilot: FILED — working tree update after
+  `5716099d`
+- Phase 3.E bounded emission pilot: DELIVERED — working tree update after
+  `5716099d`; exactly three metrics emitted from Phase 2.C response source
+- Phase 4 provider method preflight: CREATED — working tree update after
+  `5716099d`; demand-gated before GC-018
+- Legacy absorption matrix for approved four-folder scope: CREATED — working
+  tree update after `5716099d`
+- Legacy absorption and public catalog roadmap: CREATED — working tree update
+  after `5716099d`
+- Technical product catalog source draft: CREATED in provenance
+  `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`
+- Technical product catalog public draft: CREATED in public-sync
+  `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`; public-sync
+  remote verified as `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+- Concept-axis matrix C-1..C-6 + S-2/S-3/S-4 corrections: APPLIED BY CODEX —
+  working tree update after `5716099d`
+- Claude N-1..N-4 corrections (post-Codex cross-check): APPLIED IN-PLACE —
+  working tree update after `5716099d`; covers two fabricated public-sync
+  paths (N-1), 10 ad-hoc disposition strings rewritten to controlled
+  vocabulary (N-2), GAP-17.05-007 / GAP-17.05-014 disposition/severity
+  conflicts (N-3), and roadmap Phase A 4-level vocabulary mismatch (N-4).
+  Trace notes recorded inline in each rewritten cell so Codex can study the
+  failure mode without an external packet.
+- Claude correction-trace packets recorded at
+  `docs/reviews/CVF_LEGACY_CONCEPT_AXIS_MATRIX_CLAUDE_CORRECTION_REQUEST_2026-05-18.md`
+  and `docs/reviews/CVF_LEGACY_ABSORPTION_NEXT_ROADMAP_FOR_CODEX_2026-05-18.md`.
 
 Authorized next implementation:
 
-- Phase 1.P: canonical policy decision contract, RiskLevel type, GuardEngine
-  adapter documentation, adapter maps for 46 surfaces, conformance test stubs
-- Phase 1.I: four role axis definitions, adapter plan for 20 role surfaces
-- Phase 1.R: Receipt\<TPayload\> envelope spec, compatibility plan for 27 surfaces
-- Phase 1.M: 5-tier memory model, GAP-MEM extension
-- Phase 2.A: provisional GovernedCapability + OutcomeWorkflow contracts
-- Phase 3.S: schema entries for 10 candidate operational metrics
+- None from the bounded 17.05 roadmap sequence except docs/test cleanup if a
+  verification guard demands it.
+- Phase 4 provider method work remains blocked until a fresh GC-018 names a
+  concrete method and consuming vertical slice/runtime need.
+- Next substantial work should be the deferred legacy absorption audit recorded
+  in the GAP ledger and audit matrix, not broad opportunistic runtime
+  expansion.
 
-Phase 2.B remains blocked until Phase 1.P/1.I/1.R owners complete.
-Phase 3.E remains blocked until runtime sources exist after 1.P/1.R/2.C.
+Phase 2.B broad runtime expansion remains blocked outside the delivered
+fixture-driven contract wire-up.
+Phase 3.E bounded pilot is complete from the Phase 2.C runtime source.
+Phase 4.T1/T2 remain blocked until a fresh GC-018 names a provider method and
+concrete consuming vertical slice/runtime need.
 
 The `system_reconvergence_stop` posture blocks broad absorption and new
-semantic work. Only the phases listed above (each with a filed GC-018) are
-permitted implementation moves.
+semantic work. The completed phases above do not lift that posture.
+
+## GAP Handling Decision — 2026-05-18
+
+Operator decision: finish the bounded, already authorized 17.05 roadmap
+sequence first. Do not implement every newly discovered GAP inline while
+surface scanning or completing a phase.
+
+Required handling:
+
+- If a discovered gap invalidates the active handoff, active-state registry,
+  governance guard, test, or current phase acceptance criteria, fix it
+  immediately and record the finding.
+- If a discovered gap is a missing or partially absorbed legacy concept, record
+  it in
+  `docs/reviews/CVF_17_05_LEGACY_ABSORPTION_GAP_LEDGER_2026-05-18.md` and
+  defer implementation to the legacy absorption audit or a fresh GC-018.
+- Before Phase 2.B runtime wire-up, run both a surface scan and a legacy
+  absorption audit across `.private_reference/legacy/`; surface scan alone is
+  not sufficient.
+- ORCHESTRATOR and agent role permission gaps are examples of deferred legacy
+  absorption gaps, not permission to broaden the current roadmap.
+- Phase 2.B preflight artifact:
+  `docs/reviews/CVF_17_05_PHASE_2B_PREFLIGHT_OWNER_MIGRATION_PLAN_2026-05-18.md`
+  records the proposed bounded fixture-driven path, migration order, owner
+  confirmation checklist, and done criteria required before any GC-018 runtime
+  wire-up packet.
+- Phase 2.B legacy audit and GC-018 narrowed implementation to a local
+  `CVF_GUARD_CONTRACT` fixture path. Broader legacy concepts remain deferred
+  in the GAP ledger.
+- Phase 2.C preflight artifact:
+  `docs/reviews/CVF_17_05_PHASE_2C_VERTICAL_SLICE_PREFLIGHT_2026-05-18.md`
+  records the original blocker and has been superseded by the bounded
+  completion packet.
+- Phase 2.C GC-018 and completion:
+  `docs/baselines/CVF_GC018_PHASE_2C_CREATE_PRODUCT_BRIEF_VERTICAL_SLICE_2026-05-18.md`
+  and
+  `docs/reviews/CVF_17_05_PHASE_2C_VERTICAL_SLICE_COMPLETION_2026-05-18.md`
+  record the bounded `app_builder_complete` vertical slice and live Alibaba
+  proof.
+- Consolidated live proof plan:
+  `docs/reviews/CVF_17_05_CONSOLIDATED_LIVE_PROOF_PLAN_2026-05-18.md`
+  records that Phase 2.C and Phase 3.E live/API-key proof was run once
+  together; Phase 4 remains excluded until demand-gated.
+- Phase 3.E preflight:
+  `docs/reviews/CVF_17_05_PHASE_3E_EMISSION_PILOT_PREFLIGHT_2026-05-18.md`
+  selected `policy-violation-rate`, `receipt-integrity`, and
+  `task-completion-rate` as first metrics and has been superseded by bounded
+  completion.
+- Phase 3.E GC-018 and completion:
+  `docs/baselines/CVF_GC018_PHASE_3E_EMISSION_PILOT_2026-05-18.md`
+  and
+  `docs/reviews/CVF_17_05_PHASE_3E_EMISSION_PILOT_COMPLETION_2026-05-18.md`
+  record response-local emission of exactly three metrics.
+- Phase 4 provider preflight:
+  `docs/reviews/CVF_17_05_PHASE_4_PROVIDER_METHOD_PREFLIGHT_2026-05-18.md`
+  keeps provider methods demand-gated; `json_mode()` or `stream()` may join
+  the live bundle only if Phase 2.C explicitly needs them.
+- Four-folder legacy absorption audit:
+  `docs/reviews/CVF_LEGACY_SCOPE_ABSORPTION_AUDIT_MATRIX_2026-05-18.md`
+  records absorption state for `CVF 16.5`, `CVF 17.05`, `CVF ADD`, and
+  `CVF Edit` only.
+- Next-roadmap draft:
+  `docs/roadmaps/CVF_LEGACY_ABSORPTION_AND_PUBLIC_CATALOG_ROADMAP_2026-05-18.md`
+  proposes the follow-up sequence for gap triage and catalog hardening.
+- Public catalog source:
+  `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`; the matching
+  public-sync draft lives at
+  `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync\docs\reference\CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`.
+- Claude rebuttal transfer packet:
+  `docs/reviews/CVF_LEGACY_SCOPE_ABSORPTION_CLAUDE_REBUTTAL_PACKET_2026-05-18.md`
+  is ready for independent Claude challenge of the matrix, gap ledger, roadmap,
+  and public catalog.
+- Claude five-axis non-compliance rebuttal:
+  `docs/reviews/CVF_LEGACY_SCOPE_ABSORPTION_CLAUDE_REBUTTAL_TO_CODEX_FIVE_AXIS_NONCOMPLIANCE_2026-05-18.md`
+  found Codex's first folder-axis matrix structurally insufficient.
+- Codex correction artifact:
+  `docs/reviews/CVF_LEGACY_CONCEPT_AXIS_MATRIX_2026-05-18.md`
+  now provides the missing concept-axis bidirectional trace. The gap ledger and
+  roadmap were updated with six-disposition vocabulary, severity/dependency
+  crosswalk, and named tranche slots. Phase A knowledge-map freeze remains
+  blocked until the folder matrix, concept matrix, and structured ledger agree.
+- Claude correction request:
+  `docs/reviews/CVF_LEGACY_CONCEPT_AXIS_MATRIX_CLAUDE_CORRECTION_REQUEST_2026-05-18.md`
+  found remaining defects C-1 through C-6. Codex corrected the fabricated
+  provider path, added the missing handoff-contract row, added partial-row
+  deltas, reconciled catalog model B, and added path/spot-check verification.
 
 ## Latest Work / Changes
 
@@ -98,8 +259,13 @@ delivered:
   gap audit, session front door proposal, orchestrator role absorption gap)
 - Session front door (`CVF_SESSION_MEMORY.md`) and active-state registry
   (`CVF_SESSION/ACTIVE_SESSION_STATE.json`) both updated to V9
+- Phase 2.B bounded fixture-driven contract wire-up delivered in the working
+  tree after HEAD `5716099d`
+- Phase 2.C bounded `Create Product Brief` vertical slice and Phase 3.E
+  response-local metrics pilot delivered in the working tree after HEAD
+  `5716099d`
 
-Current HEAD: `67141043`
+Current HEAD: `5716099d`
 
 ## What This Session Delivered
 
@@ -168,6 +334,7 @@ reconvergence context:
 ### HEAD
 
 ```
+5716099d chore(handoff): add Phase 2.B open questions — GAP discovery method + legacy absorption
 67141043 chore(handoff): update V9 — all phases DELIVERED, HEAD fe9a73bd
 fe9a73bd feat(contracts): implement Phase 2.A contract sketch and Phase 3.S metrics schema
 1414aeb6 feat(contracts): implement Phase 1.M 5-tier memory-home model
@@ -216,11 +383,12 @@ Do not start without explicit operator override and fresh GC-018:
 - `new_provider_execution_semantics`
 - `public_claims_of_coherent_governed_capability_runtime`
 
-## Authorized Next Moves
+## Completed Authorized Moves
 
-All 6 GC-018 authorization packets are filed (commit `240d94d2`). Each phase
-below has a filed GC-018 and is ready for implementation. GC-023 pre-flight
-check required before adding to any governed file.
+All 6 GC-018 authorization packets were filed in commit `240d94d2`; their
+bounded implementation phases are now delivered. The section below remains as
+the delivery record for the completed roadmap, not as fresh authorization for
+new runtime work.
 
 ### Phase 1.P — Policy / Risk / Guard Contract Convergence
 
@@ -299,6 +467,41 @@ Authorized deliverables:
 Not permitted: web execute route integration, runtime behavior changes,
 Phase 2.B/2.C work.
 
+### Phase 2.B — Bounded Fixture-Driven Runtime Wire-Up
+
+GC-018: `docs/baselines/CVF_GC018_PHASE_2B_RUNTIME_WIREUP_2026-05-18.md`
+
+Delivered:
+
+- Legacy absorption audit for selected Phase 2.B path
+- One local contract helper:
+  `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/phase2b-wireup.contract.ts`
+- Conformance tests:
+  `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/contracts.phase2b.test.ts`
+- Barrel export from `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/index.ts`
+- Completion packet:
+  `docs/reviews/CVF_17_05_PHASE_2B_BOUNDED_WIREUP_COMPLETION_2026-05-18.md`
+
+Bounded proof:
+
+- `GovernedCapability -> OutcomeWorkflow -> RiskEngine -> PolicyEngine ->
+  GuardEngineAdapter -> Receipt<OutcomeDeliverable>`
+- allow path, policy-deny path, and R3 deny-by-default path tested
+- no web route, provider call, scheduler, runtime memory store,
+  ORCHESTRATOR semantics, or role permission model introduced
+
+Verification:
+
+- `npm run check` in `EXTENSIONS/CVF_GUARD_CONTRACT` -> PASS
+- 7 contract test files / 125 tests -> PASS
+- Full `npm test` in `EXTENSIONS/CVF_GUARD_CONTRACT` -> 24 files, 356 passed,
+  5 skipped -> PASS
+
+Not permitted from Phase 2.B: broad runtime wire-up, ORCHESTRATOR
+role-boundary implementation, agent role permission expansion, or public
+claims. Later Phase 2.C/3.E work is separately authorized below and remains
+bounded to its named web route slice.
+
 ### Phase 3.S — Operational Metrics Schema Definitions
 
 GC-018: `docs/baselines/CVF_GC018_PHASE_3S_OPERATIONAL_METRICS_SCHEMA_2026-05-18.md`
@@ -315,6 +518,39 @@ Authorized deliverables:
 Not permitted: emission infrastructure, dashboard integration, claims of live
 operational intelligence.
 
+### Phase 2.C — Create Product Brief Vertical Slice
+
+GC-018:
+`docs/baselines/CVF_GC018_PHASE_2C_CREATE_PRODUCT_BRIEF_VERTICAL_SLICE_2026-05-18.md`
+
+Completion:
+`docs/reviews/CVF_17_05_PHASE_2C_VERTICAL_SLICE_COMPLETION_2026-05-18.md`
+
+Delivered:
+
+- `app_builder_complete` maps to an `app_planning` deliverable pack
+- `/api/execute` returns `phase2cProductBrief` only for the bounded
+  `app_builder_complete` slice
+- adapter records capability refs, output validation summary, deliverable
+  pack, receipt adapter metadata, and live-proof claim boundary
+- live Alibaba test passed with real provider call and raw keys not printed
+
+### Phase 3.E — Operational Emission Pilot
+
+GC-018:
+`docs/baselines/CVF_GC018_PHASE_3E_EMISSION_PILOT_2026-05-18.md`
+
+Completion:
+`docs/reviews/CVF_17_05_PHASE_3E_EMISSION_PILOT_COMPLETION_2026-05-18.md`
+
+Delivered:
+
+- response-local `phase3eOperationalMetrics` emitted from the Phase 2.C source
+- exactly three metrics emitted: `policy-violation-rate`,
+  `receipt-integrity`, and `task-completion-rate`
+- seven other metrics remain explicitly skipped
+- no dashboard, persistence, or full operational intelligence claim
+
 ## Deferred Phases
 
 | Phase | Status | Blocker |
@@ -326,10 +562,10 @@ operational intelligence.
 | Phase 1.R (receipt envelope and compatibility plan) | **DELIVERED** | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/` — Receipt envelope, 27-surface map, stubs |
 | Phase 1.M (memory-home tier map) | **DELIVERED** | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/` — 5-tier model, tier adapter map, 25 stubs |
 | Phase 2.A (contract sketch) | **DELIVERED** | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/` — GovernedCapability + OutcomeWorkflow provisional contracts |
-| Phase 2.B (runtime wire-up) | BLOCKED | Requires Phase 1.P/1.I/1.R owners complete |
-| Phase 2.C (vertical slice) | BLOCKED | Requires Phase 2.B |
+| Phase 2.B (bounded fixture-driven runtime wire-up) | **DELIVERED** | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/phase2b-wireup.contract.ts` — local contract chain only; broad runtime expansion blocked |
+| Phase 2.C (vertical slice) | **DELIVERED** | `app_builder_complete` -> `phase2cProductBrief`; live Alibaba proof PASS; bounded only |
 | Phase 3.S (operational metrics schema) | **DELIVERED** | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/` — 10 metric schemas, planned-but-not-emitted |
-| Phase 3.E (emission pilot) | BLOCKED | Requires runtime sources after 1.P/1.R/2.C |
+| Phase 3.E (emission pilot) | **DELIVERED** | response-local 3-metric pilot from Phase 2.C source; no full operational intelligence claim |
 | Phases 4.T1/T2 (provider method extension) | BLOCKED | Each requires named vertical slice or runtime need + GC-018 |
 | ORCHESTRATOR Role Boundary (6-phase roadmap) | DEFERRED | Separate GC-018 required; no authorization in current posture |
 
@@ -351,10 +587,25 @@ operational intelligence.
 | `docs/reviews/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md` | 12 kernel surfaces → owners (Phase 1.0 extended) |
 | `docs/reviews/CVF_17_05_KERNEL_TERMINOLOGY_ALIAS_TABLE_2026-05-17.md` | 24 canonical terms, 9 alias groups (Phase 1.0 extended) |
 | `docs/reviews/CVF_17_05_UNABSORBED_KERNEL_SOURCE_MATRIX_2026-05-17.md` | 44 source concepts, absorption status (Phase 1.0 extended) |
+| `docs/reviews/CVF_17_05_LEGACY_ABSORPTION_GAP_LEDGER_2026-05-18.md` | Active ledger for newly discovered legacy/surface GAPs; record first, defer implementation unless current gates are invalidated |
+| `docs/reviews/CVF_17_05_PHASE_2B_PREFLIGHT_OWNER_MIGRATION_PLAN_2026-05-18.md` | Phase 2.B preflight: bounded path, migration order, owner checklist, done criteria before GC-018 |
+| `docs/reviews/CVF_17_05_PHASE_2B_LEGACY_ABSORPTION_AUDIT_2026-05-18.md` | Phase 2.B audit proving broad legacy concepts are deferred from the bounded fixture path |
+| `docs/baselines/CVF_GC018_PHASE_2B_RUNTIME_WIREUP_2026-05-18.md` | GC-018 for bounded Phase 2.B fixture-driven contract wire-up |
+| `docs/reviews/CVF_17_05_PHASE_2B_BOUNDED_WIREUP_COMPLETION_2026-05-18.md` | Completion evidence for Phase 2.B bounded wire-up |
+| `docs/reviews/CVF_17_05_PHASE_2C_VERTICAL_SLICE_PREFLIGHT_2026-05-18.md` | Phase 2.C preflight; superseded after fresh GC-018 and bounded completion |
+| `docs/baselines/CVF_GC018_PHASE_2C_CREATE_PRODUCT_BRIEF_VERTICAL_SLICE_2026-05-18.md` | GC-018 for bounded Phase 2.C `Create Product Brief` slice |
+| `docs/reviews/CVF_17_05_PHASE_2C_VERTICAL_SLICE_COMPLETION_2026-05-18.md` | Completion evidence for Phase 2.C bounded live-proven slice |
+| `docs/reviews/CVF_17_05_CONSOLIDATED_LIVE_PROOF_PLAN_2026-05-18.md` | Records Phase 2.C + Phase 3.E live/API-key proof executed once; Phase 4 excluded until demand-gated |
+| `docs/reviews/CVF_17_05_PHASE_3E_EMISSION_PILOT_PREFLIGHT_2026-05-18.md` | Phase 3.E preflight; superseded by bounded completion |
+| `docs/baselines/CVF_GC018_PHASE_3E_EMISSION_PILOT_2026-05-18.md` | GC-018 for bounded Phase 3.E response-local emission pilot |
+| `docs/reviews/CVF_17_05_PHASE_3E_EMISSION_PILOT_COMPLETION_2026-05-18.md` | Completion evidence for Phase 3.E three-metric pilot |
+| `docs/reviews/CVF_17_05_PHASE_4_PROVIDER_METHOD_PREFLIGHT_2026-05-18.md` | Phase 4 preflight; provider methods remain demand-gated |
 | `docs/baselines/CVF_GC018_PHASE_1P_POLICY_RISK_GUARD_CONVERGENCE_2026-05-18.md` | GC-018 for Phase 1.P |
 | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/policy-decision.contract.ts` | Canonical PolicyEngine interface + RiskLevel type |
 | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/risk-engine.contract.ts` | Canonical RiskEngine interface + R_SCALE_POLICY_BINDING |
 | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/guard-engine.contract.ts` | GuardEngineAdapter + CANONICAL_GUARD_ENGINE + 7-surface adapter map |
+| `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/phase2b-wireup.contract.ts` | Bounded Phase 2.B fixture helper composing capability/workflow/policy/risk/guard/receipt |
+| `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/contracts.phase2b.test.ts` | Phase 2.B conformance tests (8 tests) |
 | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/policy-engine-adapter-map.ts` | All 13 PolicyEngine surfaces classified |
 | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/risk-engine-adapter-map.ts` | All 26 RiskEngine surfaces classified |
 | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/contracts.phase1p.test.ts` | Phase 1.P conformance stubs (Vitest) |
@@ -367,11 +618,12 @@ operational intelligence.
 | `scripts/run_cvf_17_05_drift_inventory.py` | Re-runnable drift inventory script |
 | `.private_reference/legacy/CVF 17.05/REVIEW FOLDER/CVF_17_05_REVIEW_CVF_FINAL_CONVERGED_REMEDIATION_ROADMAP_2026-05-17.md` | Source roadmap for all authorized phases |
 
-## Open Questions for Phase 2.B — Required Input Before GC-018
+## Phase 2.B Audit Outcomes And Deferred Inputs
 
-These were discovered in session 2026-05-18 and must be resolved before
-Phase 2.B GC-018 is written. They are NOT blockers for the current roadmap
-(which is complete) — they are pre-work obligations for the next phase.
+These were discovered in session 2026-05-18. The bounded Phase 2.B fixture path
+resolved the minimum migration-plan question for local contract wire-up only.
+The broader concepts remain deferred inputs for Phase 2.C or later roadmap
+work.
 
 ### 1. Classification ≠ Migration Plan
 
@@ -381,8 +633,12 @@ specify:
 - **Owner assignment** — which team/domain is responsible per surface?
 - **"Done" criterion** — what test or check proves each migration complete?
 
-Phase 2.B GC-018 must answer all three before authorize. Without this,
-wire-up will be uncoordinated.
+Bounded Phase 2.B answer: the migration order, owner assignment, and done
+criteria for the local fixture path are recorded in
+`docs/reviews/CVF_17_05_PHASE_2B_PREFLIGHT_OWNER_MIGRATION_PLAN_2026-05-18.md`
+and authorized by
+`docs/baselines/CVF_GC018_PHASE_2B_RUNTIME_WIREUP_2026-05-18.md`.
+Broad runtime migration remains deferred.
 
 ### 2. Legacy Absorption Gap — CVF_AGENT_ROLE_CATALOG.md
 
@@ -400,9 +656,10 @@ NOT at implementation level:
 
 What WAS absorbed: handoff contract concept, audit receipt, risk level (R-scale).
 
-**Action required before Phase 2.B:** decide whether the permission model
-(`allowed_outputs` + `default_permissions`) belongs in Phase 2.B scope or
-requires a separate phase. This catalog is required reading for that decision.
+Bounded Phase 2.B answer: this permission model is out of scope for the local
+fixture path and is recorded in the GAP ledger. It must be decided before any
+future vertical slice or broader runtime role enforcement relies on agent role
+permissions. The bounded Phase 2.C slice did not rely on this permission model.
 
 ### 3. Surface Scan ≠ GAP Discovery
 
@@ -421,12 +678,20 @@ Running only surface scan produces false confidence.
 
 This handoff:
 
-- records the session state as of 2026-05-18 (HEAD `67141043`)
-- authorizes implementation of phases 1.P/1.I/1.R/1.M/2.A/3.S (GC-018 filed);
-  does not authorize Phase 2.B/2.C/3.E/4.T1/4.T2
+- records the session state as of 2026-05-18 (HEAD `5716099d`)
+- records delivered implementation of phases 1.P/1.I/1.R/1.M/2.A/bounded
+  2.B/bounded 2.C/3.S/bounded 3.E (GC-018 filed and executed where required);
+  does not authorize Phase 4.T1/4.T2
+- records the operator decision to capture newly discovered legacy/surface GAPs
+  in a separate ledger and process them after bounded roadmap closure or under
+  a fresh GC-018
+- records bounded Phase 2.B completion as a local contract wire-up only; broad
+  runtime expansion remains blocked
+- records Phase 2.C and Phase 3.E bounded completion plus live proof; broader
+  runtime expansion remains blocked
 - does not promote private 17.05 review material into CVF canon
 - does not change public claims, release gates, or GA posture
-- does not claim live governance proof
+- does not claim release-quality governance proof or public readiness
 - does not authorize direct use of ECC or any external repo
 - does not lift the `system_reconvergence_stop` posture — only operator can lift it
 
@@ -442,6 +707,6 @@ This handoff:
 | V6 | 2026-05-16 | v4.0.0 GA |
 | V7 | 2026-05-16 | Absorption queue Steps 1–7 |
 | V8 | 2026-05-17 | Absorption queue Steps 8–10c (closed) |
-| **V9** | **2026-05-18** | **ALL PHASES DELIVERED: 0.A/0.B/0.C + 1.0 + 1.P + 1.I + 1.R + 1.M + 2.A + 3.S — 348 tests pass; 17.05 converged roadmap complete** |
+| **V9** | **2026-05-18** | **ALL BOUNDED PHASES DELIVERED: 0.A/0.B/0.C + 1.0 + 1.P + 1.I + 1.R + 1.M + 2.A + bounded 2.B + bounded 2.C + 3.S + bounded 3.E — live Alibaba Phase 2.C/3.E proof PASS; Phase 4 demand-gated** |
 
 Archive: `CVF_SESSION/handoffs/archive/`

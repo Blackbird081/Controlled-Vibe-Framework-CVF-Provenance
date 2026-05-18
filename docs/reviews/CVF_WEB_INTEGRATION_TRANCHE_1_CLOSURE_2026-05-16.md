@@ -32,6 +32,19 @@ Transfer / Agent Handoff UI (placeholder).
 Tranche 1 is closed. All hard constraints and per-primitive acceptance
 criteria are met. The tranche is eligible for Tranche 2 handoff.
 
+## Findings
+
+Tranche 1 delivered the authorized public-facing primitives without widening
+the claim boundary. Artifact Export reached deep implementation scope; Knowledge
+Vault Intake and Work Transfer remained explicit placeholders.
+
+## Risk
+
+Residual risk is bounded to claim interpretation: the delivered UI surfaces
+must not be described as live-governance proof or full artifact generation
+proof. Live-governance proof remains deferred to a future tranche that names it
+explicitly.
+
 ## Evidence
 
 ### Test results

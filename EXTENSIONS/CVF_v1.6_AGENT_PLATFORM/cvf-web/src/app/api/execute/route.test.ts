@@ -182,6 +182,116 @@ describe('/api/execute', () => {
         );
     });
 
+    it('attaches the Phase 2.C product brief slice for app_builder_complete', async () => {
+        process.env.OPENAI_API_KEY = 'test-key';
+        executeAIMock.mockResolvedValue({
+            success: true,
+            output: [
+                '## Product Brief',
+                '',
+                'TaskFlow helps small teams organize work with a concise task board, owner fields, and acceptance criteria.',
+                '',
+                '## Acceptance Criteria',
+                '',
+                '1. Users can create tasks in under one minute.',
+                '2. Users can review work by status.',
+            ].join('\n'),
+            provider: 'openai',
+            model: 'gpt-4o',
+        });
+
+        const req = new Request('http://localhost/api/execute', {
+            method: 'POST',
+            body: JSON.stringify({
+                templateId: 'app_builder_complete',
+                templateName: 'App Builder Complete',
+                intent: 'Create Product Brief for TaskFlow',
+                inputs: {
+                    appName: 'TaskFlow',
+                    appType: 'Web App',
+                    problem: 'Small teams need a lighter way to plan work.',
+                    targetUsers: 'Small product teams',
+                    coreFeatures: 'Task board, owner fields, status filters',
+                    successCriteria: 'A user can create and triage tasks quickly.',
+                    platforms: 'Web browser',
+                },
+                provider: 'openai',
+                action: 'analyze template execution request',
+                skillPreflightPassed: true,
+                skillPreflightDeclaration: 'SKILL PREFLIGHT PASS: product brief only, no implementation.',
+                skillIds: ['product-brief-authoring'],
+                aiCommit: {
+                    commitId: 'phase2c-product-brief-test',
+                    agentId: 'cvf-route-test',
+                    timestamp: Date.now(),
+                    description: 'Phase 2.C product brief vertical slice test',
+                },
+            }),
+        });
+
+        const res = await POST(req as never);
+        const data = await res.json();
+        expect(res.status).toBe(200);
+        expect(data.phase2cProductBrief).toMatchObject({
+            sliceId: 'CVF_17_05_PHASE_2C_CREATE_PRODUCT_BRIEF',
+            status: 'generated',
+            templateId: 'app_builder_complete',
+            claimBoundary: 'live_governance_proof_required_before_public_claim',
+            receiptAdapter: {
+                source: 'web_governance_evidence_receipt',
+                target: 'deliverable_pack_governance_evidence',
+            },
+        });
+        expect(data.phase2cProductBrief.capabilityRefs).toContain(
+            'CVF-17.05:Phase2B:GovernedCapability:create-product-brief'
+        );
+        expect(data.phase2cProductBrief.outputValidation.structuredResult).toBe(true);
+        expect(data.phase2cProductBrief.deliverablePack.packType).toBe('app_planning');
+        expect(data.phase2cProductBrief.deliverablePack.governanceEvidence.receiptAvailable).toBe(true);
+        expect(data.phase2cProductBrief.deliverablePack.governanceEvidence.rawReceipt.receiptId)
+            .toBe(data.governanceEvidenceReceipt.receiptId);
+        expect(data.phase3eOperationalMetrics).toMatchObject({
+            pilotId: 'CVF_17_05_PHASE_3E_EMISSION_PILOT',
+            status: 'emitted',
+            sourceSliceId: 'CVF_17_05_PHASE_2C_CREATE_PRODUCT_BRIEF',
+            claimBoundary: 'pilot_only_no_full_operational_intelligence_claim',
+        });
+        expect(data.phase3eOperationalMetrics.metrics.map((metric: { metricId: string }) => metric.metricId)).toEqual([
+            'policy-violation-rate',
+            'receipt-integrity',
+            'task-completion-rate',
+        ]);
+        expect(data.phase3eOperationalMetrics.metrics).toHaveLength(3);
+        expect(data.phase3eOperationalMetrics.skippedMetrics.length).toBeGreaterThanOrEqual(7);
+    });
+
+    it('does not attach the Phase 2.C product brief slice for other templates', async () => {
+        process.env.OPENAI_API_KEY = 'test-key';
+        executeAIMock.mockResolvedValue({
+            success: true,
+            output: validOutput,
+            provider: 'openai',
+            model: 'gpt-4o',
+        });
+
+        const req = new Request('http://localhost/api/execute', {
+            method: 'POST',
+            body: JSON.stringify({
+                templateId: 'documentation',
+                templateName: 'Documentation',
+                intent: 'Create onboarding documentation',
+                inputs: { topic: 'Onboarding', audience: 'Operators', scope: 'Basic workflow' },
+                provider: 'openai',
+            }),
+        });
+
+        const res = await POST(req as never);
+        const data = await res.json();
+        expect(res.status).toBe(200);
+        expect(data.phase2cProductBrief).toBeUndefined();
+        expect(data.phase3eOperationalMetrics).toBeUndefined();
+    });
+
     it('resolves execution token budget only for trusted noncoder templates', () => {
         expect(resolveExecutionMaxTokens('documentation')).toBe(2048);
         expect(resolveExecutionMaxTokens('faq_outline')).toBe(2048);

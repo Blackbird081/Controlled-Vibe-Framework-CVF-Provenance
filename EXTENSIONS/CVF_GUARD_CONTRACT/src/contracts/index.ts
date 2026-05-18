@@ -17,7 +17,6 @@ export type {
 } from './policy-decision.contract';
 
 export {
-  RiskLevel,
   RISK_LEVEL_ORDER,
   isMoreSevere,
   maxRiskLevel,
@@ -113,6 +112,19 @@ export type {
 export {
   OUTCOME_DELIVERABLE_CHAIN_DOC,
 } from './governed-capability.contract';
+
+export type {
+  Phase2BWireupStatus,
+  Phase2BWireupActor,
+  Phase2BWireupClock,
+  Phase2BWireupInput,
+  Phase2BWireupResult,
+} from './phase2b-wireup.contract';
+
+export {
+  PHASE_2B_WIREUP_VERSION,
+  runPhase2BWireupFixture,
+} from './phase2b-wireup.contract';
 
 export type {
   MetricEmissionStatus,

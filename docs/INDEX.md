@@ -101,6 +101,7 @@ Nếu gặp path cũ hoặc tab IDE stale sau migration:
 Nếu cần xác định baseline/release line/module status hiện hành:
 
 - `reference/CVF_RELEASE_MANIFEST.md`
+- `reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`
 - `reference/CVF_MODULE_INVENTORY.md`
 - `reference/CVF_MATURITY_MATRIX.md`
 - `reference/CVF_AGENT_HANDOFF_TEMPLATE.md`

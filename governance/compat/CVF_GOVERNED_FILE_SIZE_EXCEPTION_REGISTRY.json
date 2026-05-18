@@ -123,6 +123,14 @@
       "status": "ACTIVE_EXCEPTION",
       "rationale": "The ADR ledger is a canonical append-only architecture decision surface. Current governance hardening adds mandatory ADR records faster than the historical backlog can be split into archived volumes without disrupting one-file decision lookup.",
       "requiredFollowup": "Split older superseded or pre-governance-era ADR history into an ADR archive volume before the file exceeds 1500 lines, while keeping the active ledger as the canonical entrypoint."
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts",
+      "fileClass": "general_source",
+      "approvedMaxLines": 1100,
+      "status": "ACTIVE_EXCEPTION",
+      "rationale": "Phase 2.C bounded `Create Product Brief` vertical slice + Phase 3.E bounded emission pilot were grafted onto the existing /api/execute route handler by Codex without per-feature extraction. Route grew from ~870 to ~1020 lines in one tranche. Codex added the code; the exception is granted to unblock the legacy-audit commit but ownership of the split sits with Codex.",
+      "requiredFollowup": "MANDATORY for Codex on the next Phase A freeze pass (per `docs/reviews/CVF_LEGACY_ABSORPTION_NEXT_ROADMAP_FOR_CODEX_2026-05-18.md`): extract Phase 2.C product-brief slice handling and Phase 3.E emission helper out of route.ts into dedicated modules (e.g. `phase2c-product-brief-slice.ts` and `phase3e-operational-emission.ts` already exist — wire them so route.ts only orchestrates). Target: route.ts back below 900 lines. This exception must be removed once split is done."
     }
   ]
 }

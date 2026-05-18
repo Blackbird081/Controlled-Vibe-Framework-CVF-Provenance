@@ -2180,3 +2180,41 @@ Utility and guard:
   - UI/UX planner chains now route visual design work through `product_ux/cvf_web_ux_redesign_system` instead of separate style/color/font/design-system micro-skills.
   - `skills-index.json` now reports 42 front-door skills and 96 quarantined scanned skills after legacy relocation.
   - Legacy files remain retained for audit/reference and are no longer scanned as active skill records by the CVF Web skill index builder.
+## [2026-05-18] Batch: CVF 17.05 Phase 2.B Bounded Wire-Up
+- Change reference: working tree after HEAD `5716099d`
+- Impacted scope:
+  - `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/phase2b-wireup.contract.ts`
+  - `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/contracts.phase2b.test.ts`
+  - `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/index.ts`
+- Tests executed:
+  - `npm run check` in `EXTENSIONS/CVF_GUARD_CONTRACT` -> PASS
+  - `npx vitest run src/contracts/contracts.phase2b.test.ts` in `EXTENSIONS/CVF_GUARD_CONTRACT` -> PASS, 8 tests
+  - `npx vitest run src/contracts/contracts.phase1p.test.ts src/contracts/contracts.phase1i.test.ts src/contracts/contracts.phase1r.test.ts src/contracts/contracts.phase1m.test.ts src/contracts/contracts.phase2a.test.ts src/contracts/contracts.phase2b.test.ts src/contracts/contracts.phase3s.test.ts` in `EXTENSIONS/CVF_GUARD_CONTRACT` -> PASS, 7 files / 125 tests
+  - `npm test` in `EXTENSIONS/CVF_GUARD_CONTRACT` -> PASS, 24 files / 356 passed / 5 skipped
+- Skip scope:
+  - `cvf-web` live governance E2E: skipped because Phase 2.B bounded slice does not touch web execute route or provider runtime
+  - full repository regression: skipped because changed runtime scope is limited to `CVF_GUARD_CONTRACT` contract helper and conformance tests
+- Notes/Risks:
+  - Phase 2.B proof is fixture-driven and local to the guard-contract contract surface.
+  - No public governance claim or live provider proof is made by this batch.
+
+## [2026-05-18] Batch: CVF 17.05 Phase 2.C + Phase 3.E Product Brief Live Slice
+- Change reference: working tree after HEAD `5716099d`
+- Impacted scope:
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/phase2c-product-brief-slice.ts`
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/phase3e-operational-emission.ts`
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts`
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/deliverable-pack.ts`
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.phase2c-product-brief.alibaba.live.test.ts`
+- Tests executed:
+  - `npm run check` in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` -> PASS
+  - `npx vitest run src/lib/phase2c-product-brief-slice.test.ts src/lib/phase3e-operational-emission.test.ts src/lib/deliverable-pack.test.ts src/app/api/execute/route.test.ts` in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` -> PASS, 4 files / 63 tests
+  - `.env.local` loaded into process without printing keys; `npx vitest run src/app/api/execute/route.phase2c-product-brief.alibaba.live.test.ts` in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` -> PASS, 1 live Alibaba provider test
+  - `npm run check` in `EXTENSIONS/CVF_GUARD_CONTRACT` -> PASS
+  - `npx vitest run src/contracts/contracts.phase2b.test.ts src/contracts/contracts.phase3s.test.ts` in `EXTENSIONS/CVF_GUARD_CONTRACT` -> PASS, 2 files / 26 tests
+  - `python scripts/run_cvf_release_gate_bundle.py --json` -> PASS, 7 checks:
+    web build, guard-contract TypeScript, provider readiness, secrets scan,
+    RC docs governance, Playwright UI mock E2E, Playwright live governance E2E
+- Notes/Risks:
+  - Live proof covers the bounded `app_builder_complete` -> `phase2cProductBrief` -> `phase3eOperationalMetrics` response path only.
+  - Phase 3.E emits exactly three response-local pilot metrics; skipped metrics remain explicit and unclaimed.
