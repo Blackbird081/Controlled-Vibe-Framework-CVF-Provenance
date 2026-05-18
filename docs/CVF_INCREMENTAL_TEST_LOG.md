@@ -2297,7 +2297,7 @@ Utility and guard:
   - No live proof was run for E.5 by design; E.6 owns the next live proof.
 
 ## [2026-05-18] Batch: Phase E E.6 Closure and Chain Verification
-- Change reference: pending provenance commit after live proof; public-sync commit `faa9df91`
+- Change reference: provenance commit `29e7c4f5`; public-sync commit `faa9df91`
 - Impacted scope:
   - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts`
   - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.test.ts`

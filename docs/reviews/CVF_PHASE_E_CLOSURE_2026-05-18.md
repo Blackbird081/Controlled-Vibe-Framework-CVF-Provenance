@@ -74,6 +74,10 @@ Public-sync commit:
 
 - `faa9df91 docs(evidence): add Phase E governed execution chain proof`
 
+Provenance closure commit:
+
+- `29e7c4f5 docs(phase-e): close governed execution chain`
+
 Catalog/evidence paths verified in public-sync with `Test-Path`: 19/19 PASS.
 The new public evidence file is
 `docs/evidence/phase-e-governed-execution-chain.md`.
