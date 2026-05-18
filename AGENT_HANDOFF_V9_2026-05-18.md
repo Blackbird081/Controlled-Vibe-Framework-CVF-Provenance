@@ -146,6 +146,8 @@ State as of 2026-05-18:
   lines and convert the exception entry to `RESOLVED` tombstone state
   (`approvedMaxLines: 1001`). Future commits on route.ts MUST NOT use
   `--no-verify` and MUST pass the hook chain cleanly.
+- Step 0 - Route split and GC-023 exception tombstone: COMPLETE - commit
+  f9696d9e
 
 Authorized next implementation:
 
@@ -274,7 +276,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `1d249f5e`
+Current HEAD: `f9696d9e`
 
 ## What This Session Delivered
 
@@ -343,6 +345,7 @@ reconvergence context:
 ### HEAD
 
 ```
+f9696d9e refactor(execute): complete Step 0 route split
 1d249f5e chore(handoff): sync V9 HEAD before Step 0
 7f2964a7 chore(legacy-audit): lock route.ts GC-023 exception + make split Step 0 (blocking) for Codex
 3fc79e78 chore(handoff): sync V9 HEAD block to e15f4206 (legacy audit commit)
