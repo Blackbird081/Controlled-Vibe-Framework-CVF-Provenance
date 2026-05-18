@@ -2255,7 +2255,7 @@ Utility and guard:
   - Live provider proof remains reserved for E.4/E.6.
 
 ## [2026-05-18] Batch: Phase E E.4 Workflow Binding Execute Wire
-- Change reference: implementation pending commit after GC-018 `dc1faf95`
+- Change reference: commit `c7021898`
 - Impacted scope:
   - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts`
   - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.test.ts`
