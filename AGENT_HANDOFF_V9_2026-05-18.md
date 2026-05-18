@@ -199,7 +199,9 @@ State as of 2026-05-18:
 - GC-020 HEAD sync (Phase D closure): COMPLETE - commit b3642e98
 - Phase D matrix disposition cleanup (Claude post-check): COMPLETE - commit 7a217473
 - GC-020 HEAD sync (post Phase D cleanup): COMPLETE - commit b11b9a6d
-- Phase E Governed Execution Chain roadmap: PROPOSED - working tree (pending commit)
+- Phase E Governed Execution Chain roadmap: PROPOSED - commit 7dd62b71
+- Phase E roadmap V2 (Codex rebuttal applied, 9 corrections): COMPLETE - pending commit
+- Matrix row 2.2 disposition fix (partially_absorbed): COMPLETE - pending commit
 
 Authorized next implementation:
 
@@ -396,6 +398,8 @@ reconvergence context:
 
 ### HEAD
 
+PENDING chore(review): apply Phase E roadmap V2 corrections + matrix row 2.2 fix
+7dd62b71 docs(review): propose Phase E Governed Execution Chain roadmap
 b11b9a6d chore(handoff): sync GC-020 HEAD after Phase D matrix cleanup
 7a217473 docs(legacy-audit): fix Phase D matrix disposition gaps after Claude post-check
 b3642e98 chore(handoff): sync V9 after Phase D closure

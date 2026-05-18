@@ -1,7 +1,9 @@
 # CVF Phase E — Governed Execution Chain Roadmap
 
 Memory class: FULL_RECORD
-Status: PROPOSED — pending operator approval and GC-018 before any implementation
+Status: PROPOSED_V2 — revised after Codex rebuttal; pending operator approval and GC-018 before any implementation
+Rebuttal source: `docs/reviews/CVF_PHASE_E_GOVERNED_EXECUTION_CHAIN_CODEX_REBUTTAL_TO_CLAUDE_2026-05-18.md`
+Revision: Claude Round 2, 2026-05-18
 
 ## Authorization Required
 
@@ -23,7 +25,7 @@ into a chain that fires on every real governed request.
 Phase A–D delivered correct, well-governed contracts. However a complete
 audit of the live execution path reveals:
 
-```
+```text
 grep getRolePermissionProfile / isOutputAllowedForRole / WorkflowTransition
 / ToolActionClass / OrchestratorDelegation / MemoryReinjection
 → EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/**
@@ -31,17 +33,26 @@ grep getRolePermissionProfile / isOutputAllowedForRole / WorkflowTransition
 ```
 
 Every Phase D contract is isolated — defined but not called in any live
-execution path. The web app's `route.ts` reads `session?.role` as a raw
-string but never passes it through `getRolePermissionProfile()`, never
-checks `isOutputAllowedForRole()`, and never emits a receipt tied to a
-`WorkflowTransition.receiptRequired` rule.
+execution path. The web app's `route.ts` already has a governed execution
+route (AuthN, DLP, quota, guard runtime, provider routing, output
+validation, governance receipt, audit event). However, the route does not
+consume the Phase D contract layer: `session?.role` is read as a raw RBAC
+string and never normalized to `CVFRole`, `getRolePermissionProfile()` is
+never called, `isOutputAllowedForRole()` is never checked, and no receipt
+is tied to a `WorkflowTransition.receiptRequired` rule.
+
+The more precise claim:
+
+> CVF has a governed execution route, but the route does not yet consume
+> the Phase D contract layer as an enforced Governed Capability System.
 
 This means CVF currently has:
 
 - Governance Infrastructure ✓
 - Contract definitions ✓
-- **Governed Capability System ✗** — the chain from user intent to
-  governed output does not fire
+- Governed execution route ✓
+- **Phase D contract chain ✗** — existing governance surfaces do not
+  consume the Phase D typed contracts
 
 The `Review CVF.md` audit (2026-05-17) named this precisely:
 > "CVF có Control System nhưng chưa có Governed Capability System"
@@ -93,7 +104,7 @@ every wiring gap in the `Create Product Brief` golden path.
 
 **Method:** Trace the live request flow step by step:
 
-```
+```text
 POST /api/execute
   → AuthN (verifySessionCookie / service token)       ← already wired
   → Role resolution (session.role → CVFRole)          ← raw string, NOT through getRolePermissionProfile()
@@ -109,30 +120,41 @@ POST /api/execute
   → Response                                          ← already wired
 ```
 
-For each step, record:
+For each step, record using the five allowed states:
 
-| Step | Contract available | Called in flow | Gap type |
-|---|---|---|---|
-| Role permission check | `role-permission.contract.ts` | NO | Wiring gap |
-| Output class enforcement | `RolePermissionOutputClass` | NO | Wiring gap |
-| Orchestrator delegation check | `orchestrator.contract.ts` | NO | Wiring gap |
-| Memory write restriction | `memory-continuity.contract.ts` | NO | Wiring gap |
-| Workflow transition receipt | `runtime-workflow.contract.ts` | NO | Wiring gap |
-| Per-agent receipt binding | not implemented | N/A | Implementation gap |
+- `wired` — contract/surface already enforced in live path
+- `wiring_gap` — contract exists but not called in live path
+- `implementation_gap` — contract does not exist yet
+- `not_applicable_to_selected_flow` — contract exists but the selected
+  flow (`Create Product Brief`) does not exercise this capability
+- `deferred_with_reason` — known gap, not in Phase E scope; reason stated
+
+| Checkpoint | Current surface | Phase D contract | Selected-flow relevance | Current state | Required close condition |
+| --- | --- | --- | --- | --- | --- |
+| AuthN | `verifySessionCookie` / service token | existing route guard | relevant | wired | keep regression tests passing |
+| CVF role resolution | `session?.role` raw string | `role-permission.contract.ts` | relevant | wiring_gap | normalized `CVFRole` trace emitted |
+| Output class gate | none | `RolePermissionOutputClass` | relevant | wiring_gap | output class resolved and checked before provider call |
+| DLP filter | `applyDLPFilter` | existing route guard | relevant | wired | audit event remains emitted on redaction |
+| Quota gate | `checkTeamQuota` | existing route guard | relevant | wired | quota block still returns structured response |
+| Guard pipeline | `buildWebGuardContext` | guard runtime | relevant | wired | Phase D role/action context included after E.2 |
+| Workflow transition | none | `runtime-workflow.contract.ts` | relevant | wiring_gap | transition trace includes receipt obligation |
+| Provider call | `executeAI` via routed provider | `ToolActionClass.provider_call` | relevant | wiring_gap | provider call is a typed workflow step |
+| Output validation | `validateOutput` | role output class + validator | relevant | partial | validation result tied to workflow step |
+| Governance receipt | `buildEvidenceReceipt` | receipt binding | relevant | partial | receipt references step/action/role obligation |
+| ORCHESTRATOR delegation | none in product brief path | `orchestrator.contract.ts` | not applicable — no worker used | not_applicable_to_selected_flow | defer to worker-backed workflow |
+| Memory write restriction | no write in product brief path | `memory-continuity.contract.ts` | not applicable — no memory write | not_applicable_to_selected_flow | defer to memory-writing workflow |
 
 **Output artifact:**
 `docs/reviews/CVF_PHASE_E_EXECUTION_CHAIN_AUDIT_2026-05-18.md`
 
 This audit is the acceptance criteria for the entire Phase E. Every
 subsequent tranche closes specific rows in this table. Phase E is done
-when every row in the table is either "wired" or "explicitly deferred
-with reason."
+when every row is either `wired` or has an explicit state with reason.
 
 **GC-018 required:** No — this is documentation only.
 
-**Acceptance criteria:** Audit table is complete, every gap is typed as
-"wiring gap" (contract exists, not called) or "implementation gap"
-(contract does not exist). No implementation work in this tranche.
+**Acceptance criteria:** Audit table is complete with five-state
+taxonomy. Every row populated. No implementation work in this tranche.
 
 ---
 
@@ -142,23 +164,58 @@ with reason."
 every governed execution call checks the caller's allowed output classes
 before the provider call fires.
 
+**Design preconditions (must be implemented before `getRolePermissionProfile` call):**
+
+`session?.role` is an RBAC text string from NextAuth (`"owner"`, `"admin"`,
+`"developer"`, etc.). `getRolePermissionProfile()` requires a `CVFRole` enum
+value. A normalization layer is required between them.
+
+Two resolvers must be added:
+
+1. `resolveExecutionCVFRole(session, isServiceAllowed)` — maps RBAC role to
+   `CVFRole`:
+   - service token present → `CVFRole.SERVICE_AGENT`
+   - `"owner"` | `"admin"` → `CVFRole.OPERATOR`
+   - `"developer"` → `CVFRole.BUILDER`
+   - `"reviewer"` → `CVFRole.REVIEWER`
+   - `"viewer"` → `CVFRole.OBSERVER`
+   - `undefined` / unknown → deny (must not silently widen authority)
+
+2. `resolveExecutionOutputClass(templateId, templateCategory, mode)` — maps
+   request context to `RolePermissionOutputClass`:
+   - `templateCategory: "product_brief"` + any mode → `OutputClass.artifact`
+   - Additional mappings demand-gated until a consuming slice is selected.
+
 **What changes:**
 
 `route.ts` currently reads `session?.role` as a raw string for logging.
-After this tranche, it calls `getRolePermissionProfile(role)` and checks
-`isOutputAllowedForRole(role, resolvedOutputClass)` before dispatching.
+After this tranche:
+
+1. `resolveExecutionCVFRole()` runs first to normalize the session role;
+2. `resolveExecutionOutputClass()` resolves the output class from request context;
+3. `getRolePermissionProfile(cvfRole)` is called with the normalized role;
+4. `isOutputAllowedForRole(cvfRole, resolvedOutputClass)` is checked before
+   provider dispatch.
 
 If the role is not allowed to produce the requested output class, the
 route returns a policy-denied response with a structured receipt — not a
 500 or a silent fallback.
 
 **Files changed:**
+
+- `cvf-web/src/lib/execute-role-resolver.ts` — new; exports
+  `resolveExecutionCVFRole()` and `resolveExecutionOutputClass()`
 - `cvf-web/src/app/api/execute/route.ts` — add role permission check
-  after AuthN, before provider dispatch
+  after AuthN, before provider dispatch; call both resolvers
 - `cvf-web/src/lib/execute-route-guards.ts` — add
-  `checkRoleOutputPermission(role, outputClass)` helper
+  `checkRoleOutputPermission(cvfRole, outputClass)` helper
+- `cvf-web/src/lib/execute-role-resolver.test.ts` — tests:
+  - service token → `SERVICE_AGENT`
+  - `"owner"` → `OPERATOR`
+  - unknown role → deny (not widened)
+  - `app_builder_complete` template → `artifact` output class
 - `cvf-web/src/app/api/execute/route.test.ts` — add tests: OBSERVER role
-  denied for `code_patch` output, BUILDER role allowed
+  denied for `code_patch` output, BUILDER role allowed for `artifact`
 
 **Live proof required:** No — deterministic tests cover the gate.
 The existing Alibaba live proof (Phase 2.C) must still PASS after wiring.
@@ -166,10 +223,15 @@ The existing Alibaba live proof (Phase 2.C) must still PASS after wiring.
 **GC-018 required:** Yes — this changes live execute path behavior.
 
 **Acceptance criteria:**
-- `getRolePermissionProfile` is called for every authenticated request
-- Policy-denied response is returned when role is not in allowed output classes
+
+- `resolveExecutionCVFRole` runs for every authenticated or service-token request
+- Unknown/unsupported roles do not silently widen authority (explicit deny)
+- `resolveExecutionOutputClass` maps `app_builder_complete` to `artifact`
+- `getRolePermissionProfile` is called with resolved `CVFRole`
+- `isOutputAllowedForRole` gates before provider dispatch
+- Policy-denied response returned when role is not in allowed output classes
 - Existing golden path (BUILDER role + `artifact` output class) still passes
-- No regression in existing 63 web tests
+- No regression in existing web tests
 
 ---
 
@@ -180,30 +242,42 @@ The existing Alibaba live proof (Phase 2.C) must still PASS after wiring.
 CVF has never implemented.
 
 This is the missing layer between "user asks for something" and "CVF
-dispatches a governed sequence of steps." Without it, every request is
-a single unstructured provider call with no composed governance.
+dispatches a governed sequence of steps." Without it, the execute route
+handles each request without a typed, composed governance sequence.
 
 **What this adds:**
 
-```
+```text
 workflow.product.create_product_brief.v1
-  → step 1: intake validation (role: BUILDER, output: recommendation)
-  → step 2: knowledge retrieval (role: BUILDER, output: analysis)
-  → step 3: provider call (role: BUILDER, output: artifact)
-  → step 4: review gate (role: REVIEWER, output: review_finding)
-  → step 5: receipt emit (role: BUILDER, receiptRequired: true)
+  → step 1: intake validation   (role: BUILDER,   output: recommendation, status: active)
+  → step 2: knowledge retrieval (role: BUILDER,   output: analysis,       status: active)
+  → step 3: provider call       (role: BUILDER,   output: artifact,       status: active)
+  → step 4: review gate         (role: REVIEWER,  output: review_finding, status: deferred_until_reviewer_surface)
+  → step 5: receipt emit        (role: BUILDER,   receiptRequired: true,  status: active)
 ```
 
 Each step is typed with: `CVFRole`, `RolePermissionOutputClass`,
-`WorkflowTransition`, `receiptRequired`.
+`WorkflowTransition`, `receiptRequired`, `status`.
+
+Step 4 (REVIEWER) is declared in the binding but marked
+`status: "deferred_until_reviewer_surface"` — no real reviewer actor or
+deterministic validator exists today. E.4 live proof covers only steps
+1–3 and 5. Step 4 must not be force-fired to create artificial proof.
+
+Each step also carries a `WorkflowStepExecutionTrace` shape:
+`{ stepId, preconditionChecked, decision, receiptId, source }` — a step
+is only counted as fired when all four fields are observable in the
+response or audit event.
 
 **Files to create:**
+
 - `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/workflow-binding.contract.ts`
-  — `WorkflowBinding`, `WorkflowStep`, `WorkflowStepRole`; validator
-  `validateWorkflowBinding(binding)`
+  — `WorkflowBinding`, `WorkflowStep`, `WorkflowStepRole`,
+  `WorkflowStepExecutionTrace`; validator `validateWorkflowBinding(binding)`
 - `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/contracts.phaseE-workflow-binding.test.ts`
   — tests: step sequence is valid, roles are in CVFRole vocabulary,
-  output classes are in allowed vocabulary, receipt steps are typed
+  output classes are in allowed vocabulary, receipt steps are typed,
+  deferred steps are valid binding members
 - One concrete binding file as proof:
   `cvf-web/src/lib/workflows/workflow.product.create_product_brief.v1.json`
   — wires the existing Phase 2.C golden path into a typed workflow binding
@@ -211,9 +285,12 @@ Each step is typed with: `CVFRole`, `RolePermissionOutputClass`,
 **GC-018 required:** Yes.
 
 **Acceptance criteria:**
+
 - `WorkflowBinding` type is exported from guard contract
+- `WorkflowStepExecutionTrace` type is exported from guard contract
 - `validateWorkflowBinding` returns errors for invalid role/output combos
-- Concrete `create_product_brief` binding file validates clean
+- Concrete `create_product_brief` binding file validates clean with step 4
+  marked `deferred_until_reviewer_surface`
 - Tests pass
 - No runtime behavior change yet (binding is defined, not yet enforced
   in route — that is E.4)
@@ -223,8 +300,14 @@ Each step is typed with: `CVFRole`, `RolePermissionOutputClass`,
 ### Tranche E.4 — Wire Workflow Binding into Execute Path
 
 **Purpose:** Make `route.ts` dispatch against a `WorkflowBinding` when
-one is available for the requested skill/template, instead of dispatching
-a raw unstructured provider call.
+one is available for the requested skill/template, so the execute path
+uses a governed step sequence instead of a direct provider call.
+
+**Observable proof rule:** A step is only counted as fired when
+`WorkflowStepExecutionTrace { stepId, preconditionChecked, decision,
+receiptId, source }` is observable in both the response body and the
+audit event. Bookkeeping that records a step without checking its
+precondition does not count.
 
 **What changes:**
 
@@ -232,38 +315,49 @@ When a request maps to a known workflow binding (by skill ID or template
 ID), the execute path:
 
 1. Loads the binding
-2. Validates the caller's role against each step's required role
-3. Fires each step in sequence, respecting `receiptRequired` per step
-4. Returns a structured response that names the workflow, the steps
-   executed, and the receipts emitted
+2. Validates the caller's resolved `CVFRole` against each active step's
+   required role
+3. Fires each active step in sequence, skipping `deferred_*` steps
+4. Emits a `WorkflowStepExecutionTrace` per step into the audit event
+5. Returns a structured response that includes `workflowId`,
+   `stepTraces[]`, and `receipts[]`
 
 When no binding exists for the request, the path falls back to the
-current unstructured flow (backwards compatible).
+existing governed route (backwards compatible).
 
 **Files changed:**
+
 - `cvf-web/src/lib/workflows/workflow-resolver.ts` — new; looks up
   binding by skill ID or template ID
 - `cvf-web/src/app/api/execute/route.ts` — add binding lookup after AuthN;
   if binding found, use governed step dispatch; else use existing path
 - `cvf-web/src/app/api/execute/route.test.ts` — add: bound request fires
-  all steps; unbound request uses fallback path; receipt is emitted for
-  steps with `receiptRequired: true`
+  all active steps with observable traces; unbound request uses fallback
+  path; receipt emitted for `receiptRequired: true` steps; deferred steps
+  are not fired
 
 **Live proof required:** YES. After this tranche, a `Create Product Brief`
 request must:
-- Resolve the `workflow.product.create_product_brief.v1` binding
-- Fire all steps in sequence
-- Emit at least one receipt tied to `receiptRequired: true`
-- Return a response that includes `workflowId` and step receipts
 
-Run with Alibaba API key. Record result in completion packet.
+- Resolve the `workflow.product.create_product_brief.v1` binding
+- Fire all active steps (1, 2, 3, 5) in sequence with observable traces
+- Skip step 4 (deferred REVIEWER step)
+- Emit at least one receipt tied to `receiptRequired: true`
+- Return a response that includes `workflowId`, `stepTraces[]`, and receipts
+- Both the audit event and the response contain the step trace data
+
+Run with Alibaba API key via `scripts/run_cvf_release_gate_bundle.py --json`
+plus a targeted route live test. Record both in completion packet.
 
 **GC-018 required:** Yes.
 
 **Acceptance criteria:**
+
 - Bound workflow request resolves correct binding
-- All steps fire in order
-- Receipt is emitted for `receiptRequired` steps
+- Each active step emits a `WorkflowStepExecutionTrace` with all four fields
+- Deferred steps are not fired (not counted, not faked)
+- Receipt is emitted for `receiptRequired` steps; receipt ID in trace
+- Both audit event and response body contain step trace data
 - Live Alibaba proof PASS
 - Existing unbound requests are unaffected (fallback path)
 
@@ -285,13 +379,22 @@ completes and `receiptRequired` is true, the execute path calls
 `emitStepReceipt(role, actionClass, stepId)` and the receipt is
 persisted in the audit log.
 
+**Scope boundary:** E.5 covers only the role/action pairs used by the
+bound `Create Product Brief` workflow (active steps 1, 2, 3, 5). The
+full `CVFRole × ToolActionClass` matrix is broader than the golden path
+and is deferred with reason: no consuming slice selected for the
+remaining combinations.
+
 **Files to create or extend:**
+
 - `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/receipt-binding.contract.ts`
   — `StepReceiptObligation`: maps `(CVFRole, ToolActionClass)` →
-  `receiptRequired: boolean`; `buildStepReceipt(role, actionClass, stepId)`
+  `receiptRequired: boolean`; `buildStepReceipt(role, actionClass, stepId)`;
+  initial table covers only pairs used by the selected workflow
 - `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/contracts.phaseE-receipt-binding.test.ts`
-  — tests: BUILDER + `code_patch` requires receipt; OBSERVER + `observation`
-  does not; receipt shape has required fields
+  — tests: `BUILDER` + `provider_call` requires receipt;
+  `BUILDER` + `intake_validation` does not; receipt shape has required fields;
+  full-matrix coverage deferred note present in contract
 - `cvf-web/src/app/api/execute/route.ts` — after step execution in E.4
   dispatch, call `emitStepReceipt` when obligation fires
 
@@ -301,7 +404,9 @@ live proof already exercises the receipt emit path.
 **GC-018 required:** Yes.
 
 **Acceptance criteria:**
-- `StepReceiptObligation` covers all current `CVFRole` × `ToolActionClass` combinations
+
+- `StepReceiptObligation` covers role/action pairs used by the selected workflow
+- Full `CVFRole × ToolActionClass` matrix explicitly deferred with reason in contract
 - Enforcement fires in E.4 workflow dispatch
 - `row 8.2` in `CVF_LEGACY_CONCEPT_AXIS_MATRIX_2026-05-18.md` updated from
   `needs_gc018` to `partially_absorbed`
@@ -315,35 +420,54 @@ and close Phase E.
 
 **Verification test:** Run one `Create Product Brief` request and confirm:
 
-```
-1. AuthN resolves caller → CVFRole (BUILDER)
-2. getRolePermissionProfile(BUILDER) called → profile loaded
-3. isOutputAllowedForRole(BUILDER, 'artifact') → true
-4. Workflow binding resolved: workflow.product.create_product_brief.v1
-5. Steps dispatched in order: intake → retrieval → provider → review → receipt
-6. Provider call: Alibaba Qwen → governed receipt emitted
-7. Step receipt emitted: BUILDER + artifact + step-3 → receipt persisted
-8. Response includes: workflowId, stepReceipts[], governanceEnvelope
-9. Audit event includes: role permission check result
-10. All Phase D contracts called at least once in this flow
+```text
+1.  AuthN resolves caller → CVFRole (BUILDER via resolveExecutionCVFRole)
+2.  getRolePermissionProfile(BUILDER) called → profile loaded
+3.  isOutputAllowedForRole(BUILDER, 'artifact') → true
+4.  Workflow binding resolved: workflow.product.create_product_brief.v1
+5.  Active steps dispatched in order: intake(1) → retrieval(2) → provider(3) → receipt(5)
+6.  Step 4 (REVIEWER) skipped — status: deferred_until_reviewer_surface
+7.  Provider call: Alibaba Qwen → governed receipt emitted
+8.  Step receipt emitted: BUILDER + provider_call + step-3 → receipt persisted
+9.  Response includes: workflowId, stepTraces[], receipts[], governanceEnvelope
+10. Audit event includes: role permission check result + stepTraces[]
 ```
 
-Every row in the E.1 audit table must show "wired" or "explicitly deferred."
+Phase D contract applicability for selected flow — each must be either
+enforced or explicitly documented as not applicable:
+
+| Phase D contract | Selected-flow verdict | Required action |
+| --- | --- | --- |
+| `role-permission.contract.ts` | relevant | must be enforced (E.2) |
+| `runtime-workflow.contract.ts` | relevant | must be enforced (E.4) |
+| `orchestrator.contract.ts` | not_applicable_to_selected_flow | document in closure packet |
+| `memory-continuity.contract.ts` | not_applicable_to_selected_flow | document in closure packet |
+
+Every row in the E.1 audit table must show `wired`, `not_applicable_to_selected_flow`,
+or `deferred_with_reason` — no row may be left as `wiring_gap` or
+`implementation_gap` at closure.
 
 **Output artifact:**
 `docs/reviews/CVF_PHASE_E_CLOSURE_2026-05-18.md`
 
 Update `CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`:
+
 - "Role and agent governance": evidence link updated to include
   execution chain proof
 - "Knowledge-backed execution": update evidence to cite E.4 workflow binding
 - Run `Test-Path` on all catalog paths in public-sync before committing
 
+**Public-sync boundary (mandatory):** All public catalog edits must be
+performed only in the `Controlled-Vibe-Framework-CVF-public-sync` clone.
+Before committing any catalog change, record `git remote -v` output in
+the E.6 closure packet to prove the edit targets the correct remote.
+Never edit the public catalog from this private governance repo.
+
 ---
 
 ## Tranche Dependency Order
 
-```
+```text
 E.1 Execution Chain Audit (no GC-018, no code)
     ↓
 E.2 Role Permission Gate  ← GC-018 required
@@ -382,7 +506,7 @@ depends on both E.2 and E.3 being complete.
 These items are real but out of scope for Phase E:
 
 | Item | Why deferred |
-|---|---|
+| --- | --- |
 | cvf-cli runtime | Separate tranche; no consumer identified yet |
 | Noncoder outcome UX (`[Create PRD]` buttons) | Product/design decision, not chain wiring |
 | Operational benchmark suite (Problem E) | Requires E.4 to exist first; Phase F candidate |
@@ -404,17 +528,17 @@ wired. The audit table is the source of truth, not the contract file list.
 
 ## Acceptance Criteria (Phase E complete)
 
-- E.1 audit table exists and is fully populated
-- E.2: role permission gate fires on every authenticated request
-- E.3: `WorkflowBinding` type exported; `create_product_brief` binding validates
-- E.4: bound workflow dispatches all steps; live Alibaba proof PASS; receipts emitted
-- E.5: per-agent receipt obligation table covers all role × action combinations
-- E.6: closure audit shows all 10 chain checkpoints firing in one real request
+- E.1 audit table exists and is fully populated with five-state taxonomy
+- E.2: `resolveExecutionCVFRole` and `resolveExecutionOutputClass` run on every request; unknown roles denied; role permission gate fires before provider dispatch
+- E.3: `WorkflowBinding` and `WorkflowStepExecutionTrace` types exported; `create_product_brief` binding validates with step 4 marked deferred
+- E.4: bound workflow dispatches all active steps with observable `WorkflowStepExecutionTrace`; live Alibaba proof PASS; receipts emitted; deferred steps skipped
+- E.5: per-agent receipt obligation covers role/action pairs used by selected workflow; full matrix deferred with reason
+- E.6: closure verifies selected-flow checkpoints; non-applicable Phase D contracts explicitly documented; `git remote -v` proof in closure packet
 - No `needs_gc018` row in concept-axis matrix without deferral note
-- Public catalog updated with chain proof evidence — Test-Path 100% in public-sync
+- Public catalog updated with chain proof evidence from public-sync clone only — `Test-Path` 100%
 - `system_reconvergence_stop` posture unchanged
 
-## Work Plan
+## Work Plan Summary
 
 See the six tranche sections above (E.1 through E.6) as the complete
 work plan.
@@ -429,7 +553,7 @@ npm run test -- --run src/contracts/contracts.phaseE-<tranche>.test.ts
 python governance/compat/check_active_session_state.py --enforce
 python governance/compat/check_docs_governance_compat.py --base HEAD --head HEAD --enforce
 python governance/compat/check_markdown_structural_completeness.py --base HEAD --head HEAD --enforce
-python governance/compat/check_governed_file_size_compat.py --base HEAD --head HEAD --enforce
+python governance/compat/check_governed_file_size.py --base HEAD --head HEAD --enforce
 python governance/compat/check_agent_handoff_guard_compat.py --base HEAD~1 --head HEAD --enforce
 ```
 
@@ -440,8 +564,9 @@ python scripts/run_cvf_release_gate_bundle.py --json
 ```
 
 Phase E chain verification (E.6 only): run one live `Create Product
-Brief` request and confirm all 10 checkpoints fire as listed in the
-Tranche E.6 section.
+Brief` request and confirm all chain checkpoints fire as listed in the
+Tranche E.6 verification table. Non-applicable contracts must be
+explicitly documented, not forced.
 
 ## Claim Boundary
 

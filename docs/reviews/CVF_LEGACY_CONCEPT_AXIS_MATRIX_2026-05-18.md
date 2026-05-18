@@ -90,7 +90,7 @@ current CVF file paths per concept row.
 | Concept sub-item | Legacy source files | Current CVF files | Disposition | Severity | Blocks | Linked GAPs |
 |---|---|---|---|---|---|---|
 | Per-role permission profile | `.private_reference/legacy/CVF 16.5/Claude Kit/CVF_AGENT_PERMISSION_PROFILE.md`; `.private_reference/legacy/CVF 16.5/Claude Kit/CVF_AGENT_ROLE_CATALOG.md` | `EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/authority-gate.guard.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/role-axis.contract.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/role-permission.contract.ts` | `partially_absorbed` | high | full role governance claim (runtime enforcement deferred) | `GAP-17.05-002`; `GAP-17.05-003`; `GAP-17.05-005`; `GAP-17.05-012` |
-| Allowed outputs and deny rules | `.private_reference/legacy/CVF 16.5/Claude Kit/CVF_AGENT_ROLE_CATALOG.md` | `none` | `not_absorbed` | blocker | Role/Permission tranche; ORCHESTRATOR tranche | `GAP-17.05-002`; `GAP-17.05-003` |
+| Allowed outputs and deny rules | `.private_reference/legacy/CVF 16.5/Claude Kit/CVF_AGENT_ROLE_CATALOG.md` | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/role-permission.contract.ts` (`RolePermissionOutputClass`, `RolePermissionDenyRuleId`) | `partially_absorbed` | high | runtime enforcement deferred to Phase E (E.2 role permission gate); full output-class enforcement not yet wired into execute path | `GAP-17.05-002`; `GAP-17.05-003` |
 | Per-role risk policy | `.private_reference/legacy/CVF 16.5/Claude Kit/CVF_AGENT_RISK_POLICY.md` | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/risk-engine.contract.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/risk-check.ts` | `partially_absorbed` | high | Role/Permission tranche | `GAP-17.05-002`; `GAP-17.05-003` |
 
 ### 3. Orchestrator
