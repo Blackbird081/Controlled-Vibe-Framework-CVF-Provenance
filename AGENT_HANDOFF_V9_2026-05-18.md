@@ -195,6 +195,7 @@ State as of 2026-05-18:
 - GC-020 HEAD sync (Runtime workflow completion): COMPLETE - commit 8133d831
 - Phase D Runtime workflow dispositions: COMPLETE - commit 180d26bc
 - GC-020 HEAD sync (Runtime workflow dispositions): COMPLETE - commit 85dded4d
+- Phase D full closure packet: COMPLETE - commit 2a50ac2a
 
 Authorized next implementation:
 
@@ -323,7 +324,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `85dded4d`
+Current HEAD: `2a50ac2a`
 
 ## What This Session Delivered
 
@@ -391,6 +392,7 @@ reconvergence context:
 
 ### HEAD
 
+2a50ac2a docs(legacy-audit): close Phase D legacy absorption
 85dded4d chore(handoff): sync V9 after Runtime workflow dispositions
 180d26bc docs(legacy-audit): update Runtime workflow dispositions
 8133d831 chore(handoff): sync V9 after Runtime workflow completion
