@@ -185,6 +185,7 @@ State as of 2026-05-18:
 - GC-020 HEAD sync (Memory continuity implementation): COMPLETE - commit b5b5859c
 - Phase D Memory continuity completion packet: COMPLETE - commit b019f3f3
 - GC-020 HEAD sync (Memory continuity completion): COMPLETE - commit 3d867e96
+- Phase D Memory continuity dispositions: COMPLETE - commit 09d8670a
 
 Authorized next implementation:
 
@@ -313,7 +314,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `3d867e96`
+Current HEAD: `09d8670a`
 
 ## What This Session Delivered
 
@@ -381,6 +382,7 @@ reconvergence context:
 
 ### HEAD
 
+09d8670a docs(legacy-audit): update Memory continuity dispositions
 3d867e96 chore(handoff): sync V9 after Memory continuity completion
 b019f3f3 docs(legacy-audit): close Phase D Memory continuity tranche
 b5b5859c chore(handoff): sync V9 after Memory continuity implementation
