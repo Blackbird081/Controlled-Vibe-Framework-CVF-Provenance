@@ -450,7 +450,7 @@ After Steps 1-6 are done and verified:
 Until Steps 1-6 are done, Phase A remains unfrozen and no follow-up phase
 may start.
 
-Phase A freeze pointer: accepted at HEAD `PENDING_STEP5_FREEZE_COMMIT` by
+Phase A freeze pointer: accepted at HEAD `ca1cfb36` by
 `docs/reviews/CVF_LEGACY_ABSORPTION_PHASE_A_FREEZE_2026-05-18.md`.
 
 ## Claim Boundary

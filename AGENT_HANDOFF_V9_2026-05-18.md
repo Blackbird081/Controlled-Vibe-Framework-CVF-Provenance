@@ -153,6 +153,8 @@ State as of 2026-05-18:
 - Step 3 - Matrix GAP linkage round-trip: COMPLETE - commit 736d8dca
 - Step 4 - Catalog claim-link upgrade: COMPLETE - commit 3bb57997
   (public-sync mirror commit 0bf64e03)
+- Phase A legacy knowledge map freeze: ACCEPTED - commit ca1cfb36
+- Step 5 - Phase A freeze packet: COMPLETE - commit ca1cfb36
 
 Authorized next implementation:
 
@@ -281,7 +283,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `da521ddc`
+Current HEAD: `ca1cfb36`
 
 ## What This Session Delivered
 
@@ -350,6 +352,7 @@ reconvergence context:
 ### HEAD
 
 ```
+ca1cfb36 docs(legacy-audit): create Step 5 Phase A freeze packet
 da521ddc chore(handoff): record Step 4 catalog claim-link upgrade
 3bb57997 docs(catalog): complete Step 4 provenance claim-link recheck
 ffc8b7e5 chore(handoff): record Step 3 matrix linkage
