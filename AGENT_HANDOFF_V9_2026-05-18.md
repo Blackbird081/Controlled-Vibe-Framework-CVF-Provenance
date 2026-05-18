@@ -276,7 +276,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `f9696d9e`
+Current HEAD: `5413594e`
 
 ## What This Session Delivered
 
@@ -345,6 +345,7 @@ reconvergence context:
 ### HEAD
 
 ```
+5413594e chore(handoff): record Step 0 route split
 f9696d9e refactor(execute): complete Step 0 route split
 1d249f5e chore(handoff): sync V9 HEAD before Step 0
 7f2964a7 chore(legacy-audit): lock route.ts GC-023 exception + make split Step 0 (blocking) for Codex

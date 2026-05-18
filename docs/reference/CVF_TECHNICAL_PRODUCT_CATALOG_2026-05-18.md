@@ -29,6 +29,10 @@ Catalog reconciliation model:
   boundary.
 - The two files are allowed to differ in annotation density, but they must not
   disagree on product claims or claim boundaries.
+- Permanent public-sync path verification rule: every path cited by the
+  public-sync catalog must be `Test-Path`-verified on the public-sync
+  filesystem before commit. Provenance-only verification is not sufficient for
+  customer-facing catalog paths.
 
 ## Owner
 
@@ -139,6 +143,12 @@ Public-sync path check:
 - The customer-facing public-sync derivative intentionally omits links to
   `START_HERE.md` and `docs/INDEX.md` because those paths were not present in
   the public-sync clone during reconciliation.
+- Model B discipline is now binding for this catalog: every public-sync
+  catalog path must be verified with `Test-Path` from the public-sync clone
+  before commit. Current check result is recorded in the public-sync copy.
+- Step 1 re-check (2026-05-18): extracted 15 `Test-Path` lines from the
+  public-sync catalog and verified them in
+  `Controlled-Vibe-Framework-CVF-public-sync`: 15/15 PASS.
 
 ## What Agents Must Respect
 
