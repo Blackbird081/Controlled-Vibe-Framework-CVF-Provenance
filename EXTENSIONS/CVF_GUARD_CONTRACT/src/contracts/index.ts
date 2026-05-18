@@ -110,6 +110,29 @@ export {
 } from './orchestrator.contract';
 
 export type {
+  MemoryContinuityTier,
+  MemoryTierOwnerRole,
+  MemoryPrivacyFilterId,
+  WorkerRestrictedMemoryTier,
+  MemoryTierOwnerPolicy,
+  MemoryReinjectionPolicy,
+  WorkerMemoryWriteRestrictionPolicy,
+  WorkerMemoryWriteRequest,
+  WorkerMemoryWriteDecision,
+} from './memory-continuity.contract';
+
+export {
+  MEMORY_CONTINUITY_CONTRACT_VERSION,
+  MEMORY_CONTINUITY_TIERS,
+  MEMORY_TIER_OWNER_POLICIES,
+  MEMORY_REINJECTION_POLICIES,
+  WORKER_MEMORY_WRITE_RESTRICTIONS,
+  memoryContinuityCoversAllTiers,
+  isWorkerRestrictedMemoryTier,
+  evaluateWorkerMemoryWrite,
+} from './memory-continuity.contract';
+
+export type {
   Receipt,
   GatewayReceiptPayload,
   ExecutionBridgeReceiptPayload,
