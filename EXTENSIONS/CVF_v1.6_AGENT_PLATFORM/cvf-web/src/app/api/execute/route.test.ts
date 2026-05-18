@@ -116,6 +116,105 @@ describe('/api/execute', () => {
         expect(data.error).toMatch(/Missing required fields/);
     });
 
+    it('denies OBSERVER role before provider dispatch for code_patch output', async () => {
+        process.env.OPENAI_API_KEY = 'test-key';
+        verifySessionCookieMock.mockResolvedValueOnce({
+            userId: 'viewer-user',
+            user: 'viewer',
+            role: 'viewer',
+            orgId: 'org-1',
+            teamId: 'team-1',
+            expiresAt: Date.now() + 1000 * 60 * 60,
+        });
+
+        const req = new Request('http://localhost/api/execute', {
+            method: 'POST',
+            body: JSON.stringify({
+                templateName: 'Code Patch',
+                intent: 'Create a small patch',
+                inputs: { goal: 'Change code safely' },
+                provider: 'openai',
+                mode: 'code',
+            }),
+        });
+
+        const res = await POST(req as never);
+        const data = await res.json();
+
+        expect(res.status).toBe(403);
+        expect(data.success).toBe(false);
+        expect(data.rolePermission).toMatchObject({
+            role: 'OBSERVER',
+            permissionRole: 'OBSERVER',
+            outputClass: 'code_patch',
+            allowed: false,
+        });
+        expect(executeAIMock).not.toHaveBeenCalled();
+        expect(appendAuditEventMock).toHaveBeenCalledWith(expect.objectContaining({
+            eventType: 'ROLE_OUTPUT_PERMISSION_DENIED',
+        }));
+    });
+
+    it('allows BUILDER role to produce app_builder_complete artifact output', async () => {
+        process.env.OPENAI_API_KEY = 'test-key';
+        verifySessionCookieMock.mockResolvedValueOnce({
+            userId: 'developer-user',
+            user: 'developer',
+            role: 'developer',
+            orgId: 'org-1',
+            teamId: 'team-1',
+            expiresAt: Date.now() + 1000 * 60 * 60,
+        });
+        executeAIMock.mockResolvedValue({
+            success: true,
+            output: validOutput,
+            provider: 'openai',
+            model: 'gpt-4o',
+        });
+
+        const req = new Request('http://localhost/api/execute', {
+            method: 'POST',
+            body: JSON.stringify({
+                templateId: 'app_builder_complete',
+                templateName: 'App Builder Complete',
+                intent: 'Create Product Brief for TaskFlow',
+                inputs: {
+                    appName: 'TaskFlow',
+                    appType: 'Web App',
+                    problem: 'Small teams need a lighter way to plan work.',
+                    targetUsers: 'Small product teams',
+                    coreFeatures: 'Task board, owner fields, status filters',
+                    successCriteria: 'A user can create and triage tasks quickly.',
+                    platforms: 'Web browser',
+                },
+                provider: 'openai',
+                cvfPhase: 'BUILD',
+                action: 'build template execution request',
+                skillPreflightPassed: true,
+                skillPreflightDeclaration: 'SKILL PREFLIGHT PASS: product brief only, no implementation.',
+                skillIds: ['product-brief-authoring'],
+                aiCommit: {
+                    commitId: 'phase-e-role-builder-allow',
+                    agentId: 'cvf-route-test',
+                    timestamp: Date.now(),
+                    description: 'Phase E E.2 builder role artifact permission test',
+                },
+            }),
+        });
+
+        const res = await POST(req as never);
+        const data = await res.json();
+
+        expect(res.status).toBe(200);
+        expect(data.rolePermission).toMatchObject({
+            role: 'BUILDER',
+            permissionRole: 'BUILDER',
+            outputClass: 'artifact',
+            allowed: true,
+        });
+        expect(executeAIMock).toHaveBeenCalledTimes(1);
+    });
+
     it('caps trusted noncoder template max tokens for provider calls', async () => {
         process.env.OPENAI_API_KEY = 'test-key';
         executeAIMock.mockResolvedValue({

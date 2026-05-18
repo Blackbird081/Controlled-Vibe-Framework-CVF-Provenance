@@ -1,5 +1,12 @@
 import { isTrustedFormTemplateId } from '@/lib/form-routing';
 import type { GuardPipelineResult } from '@/lib/guard-runtime-adapter';
+import {
+  getRolePermissionProfile,
+  isOutputAllowedForRole,
+  type CVFRole,
+  type RolePermissionOutputClass,
+  type RolePermissionProfile,
+} from 'cvf-guard-contract';
 
 const OUTPUT_BYPASS_PATTERNS: RegExp[] = [
   /\bapprove\b.{0,80}\bbypass\b/i,
@@ -71,6 +78,32 @@ export function resolveGuardAction(rawBody: Record<string, unknown>): string {
   }
 
   return DEFAULT_ANALYZE_TEMPLATE_GUARD_ACTION;
+}
+
+export interface RoleOutputPermissionCheck {
+  allowed: boolean;
+  role: CVFRole;
+  outputClass: RolePermissionOutputClass;
+  profile: RolePermissionProfile;
+  denialReason?: string;
+}
+
+export function checkRoleOutputPermission(
+  role: CVFRole,
+  outputClass: RolePermissionOutputClass,
+): RoleOutputPermissionCheck {
+  const profile = getRolePermissionProfile(role);
+  const allowed = isOutputAllowedForRole(role, outputClass);
+
+  return {
+    allowed,
+    role,
+    outputClass,
+    profile,
+    denialReason: allowed
+      ? undefined
+      : `Role ${role} is not allowed to produce ${outputClass} output.`,
+  };
 }
 
 export function buildOutputBypassGuardResult(

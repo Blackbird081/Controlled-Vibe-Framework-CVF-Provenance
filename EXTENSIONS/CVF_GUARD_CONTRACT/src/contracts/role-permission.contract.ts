@@ -224,6 +224,19 @@ export const ROLE_PERMISSION_PROFILES: Readonly<Record<CVFRole, RolePermissionPr
       requiresReceiptFor: ['mutation', 'approval', 'provider_execution', 'handoff'],
     },
   },
+  SERVICE_AGENT: {
+    role: 'SERVICE_AGENT',
+    maxRisk: 'R2',
+    allowedActions: ['execute', 'read', 'analyze', 'create', 'build', 'draft'],
+    allowedOutputClasses: ['analysis', 'summary', 'recommendation', 'artifact', 'implementation_note'],
+    denyRules: ['may_not_override_gate', 'may_not_release_to_public', 'must_emit_receipt_for_mutation', 'must_escalate_r3'],
+    receiptOwnerBoundary: {
+      ownerAxis: 'governance-actor',
+      ownerRole: 'SERVICE_AGENT',
+      requiresReceiptFor: ['provider_execution', 'handoff'],
+    },
+    notes: 'Phase E E.2 bounded service-token execution role; narrower than OPERATOR and not a human approval authority.',
+  },
 } as const;
 
 export function getRolePermissionProfile(role: CVFRole): RolePermissionProfile {

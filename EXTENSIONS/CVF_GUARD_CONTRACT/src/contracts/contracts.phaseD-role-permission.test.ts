@@ -19,6 +19,7 @@ const CURRENT_CVF_ROLES: readonly CVFRole[] = [
   'HUMAN',
   'AI_AGENT',
   'OPERATOR',
+  'SERVICE_AGENT',
 ];
 
 describe('Phase D Role/Permission contract', () => {
@@ -78,5 +79,14 @@ describe('Phase D Role/Permission contract', () => {
     expect(operator.receiptOwnerBoundary.ownerRole).toBe('operator');
     expect(operator.receiptOwnerBoundary.requiresReceiptFor).toContain('provider_execution');
     expect(operator.denyRules).toContain('must_emit_receipt_for_mutation');
+  });
+
+  it('keeps service-agent execution narrower than operator approval authority', () => {
+    const serviceAgent = getRolePermissionProfile('SERVICE_AGENT');
+
+    expect(serviceAgent.receiptOwnerBoundary.ownerRole).toBe('SERVICE_AGENT');
+    expect(serviceAgent.receiptOwnerBoundary.requiresReceiptFor).toContain('provider_execution');
+    expect(serviceAgent.allowedOutputClasses).toContain('artifact');
+    expect(serviceAgent.allowedOutputClasses).not.toContain('approval_decision');
   });
 });

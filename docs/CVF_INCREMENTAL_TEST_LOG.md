@@ -72,6 +72,23 @@ Template:
 - Notes/Risks:
 ```
 
+## [2026-05-18] Batch: Phase E E.2 Role Permission Gate
+- Change reference:
+  - Phase E E.2 implementation working tree before commit.
+- Impacted scope:
+  - `EXTENSIONS/CVF_GUARD_CONTRACT` role-permission contract and authority matrix.
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` execute route role/output gate.
+- Tests executed:
+  - `cd EXTENSIONS/CVF_GUARD_CONTRACT && npm run check` -> PASS
+  - `cd EXTENSIONS/CVF_GUARD_CONTRACT && npm run test -- --run src/contracts/contracts.phaseD-role-permission.test.ts` -> PASS, 8/8
+  - `cd EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web && npm run check` -> PASS
+  - `cd EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web && npm run test:run -- src/lib/execute-role-resolver.test.ts src/app/api/execute/route.test.ts` -> PASS, 37/37
+- Skip scope:
+  - Full web regression: skipped because E.2 changes a bounded pre-dispatch role/output gate and route-focused coverage passed.
+  - Live provider proof: skipped because E.2 GC-018 and roadmap explicitly require no live proof.
+- Notes/Risks:
+  - E.4 remains the first Phase E tranche requiring live Alibaba proof.
+
 ## [2026-03-24] Batch: W1-T19 CP2 — KnowledgeRankingConsumerPipelineBatchContract
 - Scope:
   - implement `KnowledgeRankingConsumerPipelineBatchContract` — aggregates `KnowledgeRankingConsumerPipelineResult[]` → `KnowledgeRankingConsumerPipelineBatch`

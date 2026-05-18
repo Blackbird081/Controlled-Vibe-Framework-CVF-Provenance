@@ -27,7 +27,13 @@ import { recordReportableDecisionObserved } from '@/lib/false-positive-report';
 import { buildPhase2CProductBriefSliceForRoute } from '@/lib/phase2c-product-brief-slice';
 import { buildPhase3EOperationalMetricsForRoute } from '@/lib/phase3e-operational-emission';
 import {
+    buildRoleOutputDeniedResponse,
+    buildRolePermissionDeniedResponse,
+} from '@/lib/execute-role-permission-gate';
+import { resolveExecutionCVFRole, resolveExecutionOutputClass } from '@/lib/execute-role-resolver';
+import {
     buildOutputBypassGuardResult,
+    checkRoleOutputPermission,
     detectBypassInOutput,
     resolveGuardAction,
     shouldRequireSkillPreflight,
@@ -322,6 +328,37 @@ export async function POST(request: NextRequest) {
         const mode = body.mode || 'simple';
         const template = body.templateId ? getTemplateById(body.templateId) : undefined;
         const executionTemplateId = template?.id ?? body.templateId;
+        const resolvedExecutionRole = resolveExecutionCVFRole(session, isServiceAllowed);
+        const resolvedOutputClass = resolveExecutionOutputClass(executionTemplateId, template?.category, mode);
+
+        if (!resolvedExecutionRole.allowed || !resolvedExecutionRole.permissionRole) {
+            return buildRolePermissionDeniedResponse({
+                session,
+                body,
+                provider,
+                envelope: govEnvelope,
+                resolvedRole: resolvedExecutionRole,
+                resolvedOutputClass,
+            });
+        }
+
+        const rolePermission = checkRoleOutputPermission(
+            resolvedExecutionRole.permissionRole,
+            resolvedOutputClass.outputClass,
+        );
+
+        if (!rolePermission.allowed) {
+            return buildRoleOutputDeniedResponse({
+                session,
+                body,
+                provider,
+                envelope: govEnvelope,
+                resolvedRole: resolvedExecutionRole,
+                resolvedOutputClass,
+                rolePermission,
+            });
+        }
+
         const specFields = template?.fields || [];
         const requiresSkillPreflight = shouldRequireSkillPreflight({
             phase: body.cvfPhase,
@@ -486,7 +523,7 @@ export async function POST(request: NextRequest) {
             requestId: (rawBody as Record<string, unknown>).requestId as string || undefined,
             phase: body.cvfPhase,
             riskLevel: body.cvfRiskLevel,
-            role: isServiceAllowed ? 'OPERATOR' : 'HUMAN',
+            role: resolvedExecutionRole.permissionRole,
             userRole: isServiceAllowed ? 'admin' : session?.role,
             action: resolveGuardAction(rawBody as Record<string, unknown>),
             intent: body.intent,
@@ -853,6 +890,13 @@ export async function POST(request: NextRequest) {
             usage,
             enforcement,
             guardResult,
+            rolePermission: {
+                role: resolvedExecutionRole.role,
+                permissionRole: rolePermission.role,
+                outputClass: rolePermission.outputClass,
+                allowed: rolePermission.allowed,
+                source: resolvedExecutionRole.source,
+            },
             providerRouting: {
                 decision: routingResult.decision,
                 selectedProvider: routingResult.selectedProvider,

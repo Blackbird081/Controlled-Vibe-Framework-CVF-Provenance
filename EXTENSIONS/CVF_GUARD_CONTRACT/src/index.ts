@@ -40,6 +40,26 @@ export { FileScopeGuard, PROTECTED_PATHS as FILE_SCOPE_PROTECTED_PATHS, READ_ONL
 export { ScopeGuard, PROTECTED_PATHS, CVF_ROOT_INDICATORS } from './guards/scope.guard';
 export { AuditTrailGuard } from './guards/audit-trail.guard';
 
+// Phase D role-permission contract
+export type {
+  RolePermissionOutputClass,
+  RolePermissionDenyRuleId,
+  ReceiptOwnerAxis,
+  ReceiptOwnerBoundary,
+  RolePermissionProfile,
+} from './contracts/role-permission.contract';
+
+export {
+  ROLE_PERMISSION_SCHEMA_VERSION,
+  ROLE_PERMISSION_OUTPUT_CLASSES,
+  ROLE_PERMISSION_DENY_RULES,
+  ROLE_PERMISSION_PROFILES,
+  getRolePermissionProfile,
+  isOutputAllowedForRole,
+  roleHasDenyRule,
+  rolePermissionCoversAllRoles,
+} from './contracts/role-permission.contract';
+
 // Factory
 import type { GuardRuntimeConfig } from './types';
 import { GuardRuntimeEngine } from './engine';
