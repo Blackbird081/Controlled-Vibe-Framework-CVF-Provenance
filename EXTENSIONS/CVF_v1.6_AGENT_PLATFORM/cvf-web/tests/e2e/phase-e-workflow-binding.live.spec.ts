@@ -63,11 +63,16 @@ test('Phase E E.4 emits workflow step traces and receipt pointers on live Produc
   expect(body.stepTraces).not.toContainEqual(
     expect.objectContaining({ stepId: 'step-4-review-gate' }),
   );
-  expect(body.receipts).toEqual(body.stepTraces.map((trace: { stepId: string }) => ({
-    stepId: trace.stepId,
+  expect(body.receipts).toEqual(body.receiptBinding.emissions.map((emission: {
+    stepId: string;
+    obligationId: string;
+  }) => ({
+    stepId: emission.stepId,
     receiptId: body.governanceEvidenceReceipt.receiptId,
     source: 'governance_evidence_receipt',
+    obligationId: emission.obligationId,
   })));
+  expect(body.receiptBinding.fullMatrixDisposition).toBe('deferred_with_reason');
   expect(body.deferredStepIds).toEqual(['step-4-review-gate']);
   expect(String(body.output ?? '')).not.toContain('MOCK_');
 });

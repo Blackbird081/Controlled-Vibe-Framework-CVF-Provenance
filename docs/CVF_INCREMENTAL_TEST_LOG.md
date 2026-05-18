@@ -2275,3 +2275,23 @@ Utility and guard:
   - E.4 emits workflow traces only for the selected `app_builder_complete` Product Brief binding.
   - Active fired traces are steps 1, 2, 3, and 5; step 4 remains deferred and is not fired.
   - `route.ts` line count after E.4 is 972, below the GC-023 tombstone cap of 1001.
+
+## [2026-05-18] Batch: Phase E E.5 Receipt Binding
+- Change reference: implementation pending commit after GC-018 `07fe7be0`
+- Impacted scope:
+  - `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/receipt-binding.contract.ts`
+  - `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/contracts.phaseE-receipt-binding.test.ts`
+  - `EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts`
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts`
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts`
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.test.ts`
+  - `docs/reviews/CVF_LEGACY_CONCEPT_AXIS_MATRIX_2026-05-18.md`
+- Tests executed:
+  - `npm run check` in `EXTENSIONS/CVF_GUARD_CONTRACT` -> PASS
+  - `npm run test -- --run src/contracts/contracts.phaseE-receipt-binding.test.ts src/contracts/contracts.phaseE-workflow-binding.test.ts` in `EXTENSIONS/CVF_GUARD_CONTRACT` -> PASS, 2 files / 9 tests
+  - `npm run check` in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` -> PASS
+  - `npm run test -- --run src/lib/workflows/workflow-resolver.test.ts src/app/api/execute/route.test.ts` in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` -> PASS, 2 files / 34 tests
+- Notes/Risks:
+  - E.5 covers only active Product Brief role/action pairs; full `CVFRole x ToolActionClass` matrix remains `deferred_with_reason`.
+  - Row 8.2 moved to `partially_absorbed`, not `absorbed`.
+  - No live proof was run for E.5 by design; E.6 owns the next live proof.

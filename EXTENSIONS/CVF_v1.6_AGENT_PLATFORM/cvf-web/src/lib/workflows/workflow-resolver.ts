@@ -1,6 +1,9 @@
 import {
+  bindStepReceipts,
   getActiveWorkflowSteps,
   validateWorkflowBinding,
+  type StepReceiptBindingResult,
+  type StepReceiptObligation,
   type WorkflowBinding,
   type WorkflowStepExecutionTrace,
 } from 'cvf-guard-contract';
@@ -11,6 +14,7 @@ export interface WorkflowStepReceipt {
   readonly stepId: string;
   readonly receiptId: string;
   readonly source: 'governance_evidence_receipt';
+  readonly obligationId: string;
 }
 
 export interface WorkflowExecutionProjection {
@@ -20,6 +24,8 @@ export interface WorkflowExecutionProjection {
   readonly templateId: string;
   readonly stepTraces: readonly WorkflowStepExecutionTrace[];
   readonly receipts: readonly WorkflowStepReceipt[];
+  readonly receiptObligations: readonly StepReceiptObligation[];
+  readonly receiptBinding: StepReceiptBindingResult;
   readonly deferredStepIds: readonly string[];
 }
 
@@ -57,6 +63,7 @@ export function buildWorkflowExecutionProjection(
     receiptId,
     source: 'route_dispatch',
   }));
+  const receiptBinding = bindStepReceipts(binding, stepTraces);
 
   return {
     workflowId: binding.workflowId,
@@ -64,11 +71,14 @@ export function buildWorkflowExecutionProjection(
     capabilityId: binding.capabilityId,
     templateId: binding.templateId,
     stepTraces,
-    receipts: stepTraces.map((trace) => ({
-      stepId: trace.stepId,
-      receiptId,
+    receipts: receiptBinding.emissions.map((emission) => ({
+      stepId: emission.stepId,
+      receiptId: emission.receiptId,
       source: 'governance_evidence_receipt',
+      obligationId: emission.obligationId,
     })),
+    receiptObligations: receiptBinding.obligations,
+    receiptBinding,
     deferredStepIds: binding.steps
       .filter((step) => step.status === 'deferred_until_reviewer_surface')
       .map((step) => step.stepId),

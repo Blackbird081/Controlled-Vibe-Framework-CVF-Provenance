@@ -28,11 +28,14 @@ describe('workflow-resolver', () => {
     expect(projection.stepTraces).not.toContainEqual(
       expect.objectContaining({ stepId: 'step-4-review-gate' }),
     );
-    expect(projection.receipts).toEqual(projection.stepTraces.map((trace) => ({
-      stepId: trace.stepId,
+    expect(projection.receipts).toEqual(projection.receiptBinding.emissions.map((emission) => ({
+      stepId: emission.stepId,
       receiptId: 'receipt-123',
       source: 'governance_evidence_receipt',
+      obligationId: emission.obligationId,
     })));
+    expect(projection.receiptObligations).toHaveLength(4);
+    expect(projection.receiptBinding.fullMatrixDisposition).toBe('deferred_with_reason');
     expect(projection.deferredStepIds).toEqual(['step-4-review-gate']);
   });
 

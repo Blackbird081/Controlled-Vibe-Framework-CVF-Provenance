@@ -232,11 +232,29 @@ describe('/api/execute', () => {
         ))).toBe(true);
         expect(data.stepTraces.map((trace: { stepId: string }) => trace.stepId))
             .not.toContain('step-4-review-gate');
-        expect(data.receipts).toEqual(data.stepTraces.map((trace: { stepId: string }) => ({
-            stepId: trace.stepId,
+        expect(data.receipts).toEqual(data.receiptBinding.emissions.map((emission: {
+            stepId: string;
+            obligationId: string;
+        }) => ({
+            stepId: emission.stepId,
             receiptId: data.governanceEvidenceReceipt.receiptId,
             source: 'governance_evidence_receipt',
+            obligationId: emission.obligationId,
         })));
+        expect(data.receiptObligations.map((obligation: { role: string; actionClass: string }) => [
+            obligation.role,
+            obligation.actionClass,
+        ])).toEqual([
+            ['BUILDER', 'artifact_export'],
+            ['BUILDER', 'file_read'],
+            ['BUILDER', 'provider_call'],
+            ['BUILDER', 'artifact_export'],
+        ]);
+        expect(data.receiptBinding).toMatchObject({
+            contractVersion: 'phaseE.receiptBinding.v1',
+            workflowId: 'workflow.product.create_product_brief.v1',
+            fullMatrixDisposition: 'deferred_with_reason',
+        });
         expect(data.deferredStepIds).toEqual(['step-4-review-gate']);
         const workflowAuditEvent = appendAuditEventMock.mock.calls
             .map((call: unknown[]) => call[0] as { eventType?: string; payload?: Record<string, unknown> })
@@ -246,6 +264,7 @@ describe('/api/execute', () => {
             governanceReceiptId: data.governanceEvidenceReceipt.receiptId,
             stepTraces: data.stepTraces,
             receipts: data.receipts,
+            receiptBinding: data.receiptBinding,
             deferredStepIds: ['step-4-review-gate'],
         });
         expect(executeAIMock).toHaveBeenCalledTimes(1);

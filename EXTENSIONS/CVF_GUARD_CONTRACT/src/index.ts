@@ -78,6 +78,23 @@ export {
   getActiveWorkflowSteps,
 } from './contracts/workflow-binding.contract';
 
+// Phase E receipt binding contract
+export type {
+  ReceiptBindingDisposition,
+  StepReceiptEmissionSource,
+  StepReceiptObligation,
+  StepReceiptEmission,
+  StepReceiptBindingResult,
+} from './contracts/receipt-binding.contract';
+
+export {
+  RECEIPT_BINDING_CONTRACT_VERSION,
+  FULL_ROLE_ACTION_MATRIX_DEFERRED_REASON,
+  buildSelectedFlowReceiptObligations,
+  emitStepReceipt,
+  bindStepReceipts,
+} from './contracts/receipt-binding.contract';
+
 // Factory
 import type { GuardRuntimeConfig } from './types';
 import { GuardRuntimeEngine } from './engine';

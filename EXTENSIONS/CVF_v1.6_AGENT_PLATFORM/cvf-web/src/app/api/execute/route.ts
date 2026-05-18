@@ -888,6 +888,8 @@ export async function POST(request: NextRequest) {
                     templateId: workflowExecution.templateId,
                     stepTraces: workflowExecution.stepTraces,
                     receipts: workflowExecution.receipts,
+                    receiptObligations: workflowExecution.receiptObligations,
+                    receiptBinding: workflowExecution.receiptBinding,
                     deferredStepIds: workflowExecution.deferredStepIds,
                     governanceReceiptId: governanceEvidenceReceipt.receiptId,
                 }),
