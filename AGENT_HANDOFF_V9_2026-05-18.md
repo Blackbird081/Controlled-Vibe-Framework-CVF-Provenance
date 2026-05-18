@@ -148,6 +148,7 @@ State as of 2026-05-18:
   `--no-verify` and MUST pass the hook chain cleanly.
 - Step 0 - Route split and GC-023 exception tombstone: COMPLETE - commit
   f9696d9e
+- Step 1 - Public-sync verification discipline: COMPLETE - commit d549c6e8
 
 Authorized next implementation:
 
@@ -276,7 +277,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `5413594e`
+Current HEAD: `d549c6e8`
 
 ## What This Session Delivered
 
@@ -345,6 +346,7 @@ reconvergence context:
 ### HEAD
 
 ```
+d549c6e8 docs(catalog): add Step 1 public-sync verification discipline
 5413594e chore(handoff): record Step 0 route split
 f9696d9e refactor(execute): complete Step 0 route split
 1d249f5e chore(handoff): sync V9 HEAD before Step 0
