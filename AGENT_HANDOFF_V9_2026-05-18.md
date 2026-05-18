@@ -232,7 +232,9 @@ State as of 2026-05-18:
 - GC-024 pre-commit advisory checker: ADDED to hook chain step 7 - commit b0a0e48f
 - GC-018 closure template: Tranche Closure Checklist added - commit b0a0e48f
 - Public catalog R1/R2/R3 enrichment (public-sync): DONE - commit ade41d4e (public-sync)
-- GC-020 HEAD sync (GC-024 + catalog enrichment): COMPLETE - commit pending
+- GC-020 HEAD sync (GC-024 + catalog enrichment): COMPLETE - commit cd0ba99d
+- Public catalog rewrite to clean reader-first form (public-sync): DONE - commit 08ffda44 (public-sync)
+- GC-020 HEAD sync (catalog clean form): COMPLETE - commit pending
 
 Authorized next implementation:
 
@@ -361,7 +363,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `b0a0e48f`
+Current HEAD: `cd0ba99d`
 
 ## What This Session Delivered
 
