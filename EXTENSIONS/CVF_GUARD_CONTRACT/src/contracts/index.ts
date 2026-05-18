@@ -87,6 +87,29 @@ export {
 } from './role-permission.contract';
 
 export type {
+  OrchestratorAuthorityRole,
+  WorkerLaneRole,
+  OrchestratorDelegationCondition,
+  OrchestratorOverreachDenyRule,
+  OrchestratorDelegationProfile,
+  WorkerMemoryWriteBoundary,
+  WorkerLaneTicket,
+} from './orchestrator.contract';
+
+export {
+  ORCHESTRATOR_CONTRACT_VERSION,
+  ORCHESTRATOR_AUTHORITY_ROLES,
+  WORKER_LANE_ROLES,
+  ORCHESTRATOR_OVERREACH_DENY_RULES,
+  ORCHESTRATOR_DELEGATION_PROFILES,
+  isOrchestratorAuthorityRole,
+  isWorkerLaneRole,
+  orchestratorCoversAllRoles,
+  canIssueWorkerLaneTicket,
+  createWorkerLaneTicket,
+} from './orchestrator.contract';
+
+export type {
   Receipt,
   GatewayReceiptPayload,
   ExecutionBridgeReceiptPayload,
