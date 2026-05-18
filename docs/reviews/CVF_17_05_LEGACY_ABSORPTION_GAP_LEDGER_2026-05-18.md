@@ -170,6 +170,15 @@ the controlling scan view until the freeform entries are rewritten individually.
 
 ## Initial Entries
 
+Canonical disposition rule: the Structured Gap Crosswalk is the single source
+of truth for each GAP disposition. The narrative entries below are
+supplementary evidence and context; if a body entry disagrees with the
+crosswalk, edit the body to match the crosswalk rather than changing the
+crosswalk silently.
+
+Last reconciled with crosswalk: 2026-05-18 (Step 2 Codex pass, 16/16 body
+dispositions checked).
+
 ### GAP-17.05-001 - ORCHESTRATOR Role Boundary Is Doc-Only
 
 Source:
@@ -452,7 +461,11 @@ Observed gap:
 
 Current disposition:
 
-- `needs_gc018` (Claude N-2 rewrite: replaces ad-hoc `deferred_legacy_absorption`; the concept is queued for a future tranche and must not be implemented without GC-018)
+- `partially_absorbed` (Step 2 reconciliation rewrite: replaces body
+  `needs_gc018` mismatch; the crosswalk is canonical. Current metrics and
+  runtime observability pieces exist, but the unified observability plane and
+  operator cockpit remain incomplete and require future GC-018 before runtime
+  expansion.)
 
 Phase impact:
 
@@ -481,7 +494,9 @@ Observed gap:
 
 Current disposition:
 
-- `needs_gc018` (Claude N-2 rewrite: replaces ad-hoc `deferred_legacy_absorption`; the concept is queued for a future tranche and must not be implemented without GC-018)
+- `needs_gc018` (Claude N-2 rewrite: replaces ad-hoc
+  `deferred_legacy_absorption`; the concept is queued for a future tranche and
+  must not be implemented without GC-018.)
 
 Phase impact:
 
@@ -508,7 +523,9 @@ Observed gap:
 
 Current disposition:
 
-- `needs_gc018` (Claude N-2 rewrite: replaces ad-hoc `deferred_legacy_absorption`; the concept is queued for a future tranche and must not be implemented without GC-018)
+- `needs_gc018` (Claude N-2 rewrite: replaces ad-hoc
+  `deferred_legacy_absorption`; the concept is queued for a future tranche and
+  must not be implemented without GC-018.)
 
 Phase impact:
 
@@ -591,7 +608,11 @@ Observed gap:
 
 Current disposition:
 
-- `needs_gc018` (Claude N-2 rewrite: replaces ad-hoc `deferred_legacy_absorption`; the concept is queued for a future tranche and must not be implemented without GC-018)
+- `partially_absorbed` (Step 2 reconciliation rewrite: replaces body
+  `needs_gc018` mismatch; the crosswalk is canonical. Current state-machine
+  and guard-runtime surfaces exist, but complete runtime enforcement,
+  deterministic failure-state handling, and full Agent OS claims remain
+  incomplete.)
 
 Phase impact:
 

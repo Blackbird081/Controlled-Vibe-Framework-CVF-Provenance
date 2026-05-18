@@ -277,7 +277,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `d549c6e8`
+Current HEAD: `a65b58e1`
 
 ## What This Session Delivered
 
@@ -346,6 +346,7 @@ reconvergence context:
 ### HEAD
 
 ```
+a65b58e1 chore(handoff): record Step 1 catalog discipline
 d549c6e8 docs(catalog): add Step 1 public-sync verification discipline
 5413594e chore(handoff): record Step 0 route split
 f9696d9e refactor(execute): complete Step 0 route split
