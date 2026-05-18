@@ -249,6 +249,7 @@ State as of 2026-05-18:
 - ADR archive split (ADR-001..010 → sealed archive, active ledger 1576→1114 lines) - commit 45c477af
 - Governance hook chain fixes (docs allowlist, structural completeness exemption, GC-022 markers, GC-029) - commit 45c477af
 - GC-020 HEAD sync (Lane B/C/H delivery): COMPLETE - commit 707848ee
+- Public-sync: Lane B/C/H mirrored - commit d690a8e6 (public-sync)
 
 Authorized next implementation status:
 
@@ -402,7 +403,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `707848ee`
+Current HEAD: `990e0e6b`
 
 ## What This Session Delivered
 
