@@ -151,6 +151,8 @@ State as of 2026-05-18:
 - Step 1 - Public-sync verification discipline: COMPLETE - commit d549c6e8
 - Step 2 - Ledger single source of truth: COMPLETE - commit 994b0e6e
 - Step 3 - Matrix GAP linkage round-trip: COMPLETE - commit 736d8dca
+- Step 4 - Catalog claim-link upgrade: COMPLETE - commit 3bb57997
+  (public-sync mirror commit 0bf64e03)
 
 Authorized next implementation:
 
@@ -279,7 +281,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `ffc8b7e5`
+Current HEAD: `3bb57997`
 
 ## What This Session Delivered
 
@@ -348,6 +350,7 @@ reconvergence context:
 ### HEAD
 
 ```
+3bb57997 docs(catalog): complete Step 4 provenance claim-link recheck
 ffc8b7e5 chore(handoff): record Step 3 matrix linkage
 736d8dca docs(legacy-audit): complete Step 3 matrix gap links
 ffc8afa1 chore(handoff): record Step 2 ledger sync
