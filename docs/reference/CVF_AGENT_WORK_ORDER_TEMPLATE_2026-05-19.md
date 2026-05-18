@@ -1,0 +1,349 @@
+# CVF Agent Work Order Template
+
+Memory class: POINTER_RECORD
+
+Status: reusable template for scoped agent execution orders.
+
+## Purpose
+
+A CVF Agent Work Order is the tactical execution packet that an orchestrator,
+reviewer, or operator gives to an implementing agent.
+
+It sits below roadmap and governance authorization, and above raw task prompts.
+It exists to prevent scope drift by making the worker's mission, authority
+chain, write ownership, forbidden actions, evidence requirements, and return
+conditions explicit.
+
+Work orders are mandatory after a final roadmap when an orchestrator, reviewer,
+operator, or lead agent delegates implementation to another agent or a later
+session.
+
+Work orders are governed by the operating workflow in
+`docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md`.
+
+## Owner / Source
+
+Owner: CVF orchestration and delegation surface.
+
+Source inputs may include:
+
+- an operator instruction;
+- a multi-agent decision pack;
+- a roadmap;
+- an active handoff;
+- a root scratch prompt that needs conversion into a governed artifact.
+
+## Scope / Target / Owner Boundary
+
+Target: one bounded agent execution assignment or one explicitly ordered group
+of assignments.
+
+Owner boundary:
+
+- the work order names who dispatches, who implements, who reviews, and when
+  the operator must intervene;
+- the work order must define owned paths, forbidden paths, and write mode;
+- work outside those boundaries requires a new work order or an operator
+  correction.
+
+Architecture relationship:
+
+- operator sets business and authority intent;
+- orchestrator or CEO role translates final roadmap into one or more work
+  orders;
+- implementer executes only the current work order;
+- reviewer evaluates evidence and blocking defects;
+- auditor and governance gates verify structure, taxonomy, and proof.
+
+## Protocol / Contract / Requirements
+
+Protocol:
+
+- cite the authority chain before instructions;
+- file required GC-018 baselines before implementation;
+- inherit GC-020, GC-023, GC-024, GC-046, public/provenance, and live-proof
+  rules from the repository;
+- make reviewer gate and waiver rules explicit.
+
+Contract:
+
+- the implementer follows the allowed scope and forbidden scope;
+- the reviewer evaluates evidence against acceptance criteria;
+- the orchestrator receives a closure packet or a stop condition.
+
+## Enforcement / Verification
+
+Verification requirements:
+
+- pre-flight commands must be listed;
+- acceptance criteria must be observable;
+- evidence must use command/result/path form where possible;
+- completion must record changed files and required governance updates.
+
+The work order is invalid for execution if it does not name stop conditions.
+
+## Boundaries / Non-Goals
+
+Non-goals:
+
+- not a replacement for roadmap, GC-018, handoff, or active session state;
+- not a way to broaden scope;
+- not a public claim artifact;
+- not a substitute for live governance proof.
+
+## Claim Boundary
+
+Claim boundary:
+
+- `defined` means the artifact exists as docs/schema;
+- `tested` means tests or local verification support the claim;
+- `live-proven` requires the repository's live governance proof standard.
+
+Final boundary:
+
+- a work order is closed only when the completion packet or final report records
+  evidence, changed files, reviewer disposition, and handoff sync status.
+
+## Relationship To Other Artifacts
+
+The work order does not authorize work by itself.
+
+It must cite an authority chain:
+
+- active session state or operator instruction;
+- decision pack, roadmap, or approved review packet;
+- lane-specific GC-018 or an explicit instruction that GC-018 must be filed
+  before implementation;
+- current active handoff and GC-020 requirements.
+
+Use this artifact when a roadmap is too broad for direct implementation and an
+agent needs precise marching orders.
+
+Do not use it to bypass:
+
+- GC-018 authorization;
+- GC-020 handoff sync;
+- GC-023 file-size discipline;
+- public/provenance repository boundary;
+- live governance proof requirements;
+- reviewer gates or operator waivers.
+
+## Required File Naming
+
+Use:
+
+```text
+docs/work_orders/CVF_AGENT_WORK_ORDER_<SCOPE>_<YYYY-MM-DD>.md
+```
+
+Examples:
+
+```text
+docs/work_orders/CVF_AGENT_WORK_ORDER_LANE_B_WORKFLOW_PACKAGING_2026-05-19.md
+docs/work_orders/CVF_AGENT_WORK_ORDER_LANE_BCH_2026-05-19.md
+```
+
+Root-level scratch prompts are allowed only as temporary intake material. Once a
+prompt becomes execution authority for another agent, convert it into a work
+order under `docs/work_orders/`.
+
+## Required Structure
+
+Copy and complete the block below.
+
+```text
+# CVF Agent Work Order - <Scope>
+
+Memory class: POINTER_RECORD
+
+Status: <DRAFT | READY_FOR_REVIEW | APPROVED_FOR_EXECUTION | CLOSED>
+
+## 1. Mission
+
+<One paragraph describing the exact mission. Include what success means.>
+
+## 2. Authority Chain
+
+- Operator instruction: <path or date/time note>
+- Active session state: <path>
+- Decision pack / review authority: <path>
+- Roadmap: <path>
+- GC-018 requirement: <already filed path OR must be filed before implementation>
+- Active handoff: <path>
+
+Authority boundary:
+
+- This work order does not authorize work outside the cited authority chain.
+- If any authority artifact conflicts with this work order, stop and reconcile
+  before implementation.
+
+## 3. Agent Roles
+
+- Orchestrator / dispatcher: <agent or operator>
+- Implementer: <agent>
+- Reviewer: <agent>
+- Operator approval required for: <conditions>
+
+## 4. Scope
+
+Allowed scope:
+
+- <allowed action 1>
+- <allowed action 2>
+
+Forbidden scope:
+
+- <forbidden action 1>
+- <forbidden action 2>
+
+Risk ceiling:
+
+- <R0 | R1 | R2 | R3>
+
+## 5. Required First Reads
+
+Before filing GC-018 or editing files, read:
+
+- <path 1> - why it matters
+- <path 2> - why it matters
+
+## 6. Pre-Flight Checks
+
+Commands to run before implementation:
+
+```powershell
+<command 1>
+<command 2>
+```
+
+Expected results:
+
+- <expected result 1>
+- <expected result 2>
+
+If a pre-flight check fails, stop and record the failed command and result.
+
+## 7. Write Ownership
+
+Owned files or modules:
+
+- <path or module>
+
+Forbidden paths:
+
+- <path or module>
+
+Write mode:
+
+- <append-only | create-only | modify-listed>
+
+Any file outside ownership requires an updated work order or operator approval.
+
+## 8. Execution Plan
+
+Steps must be sequential unless explicitly marked parallel-safe.
+
+1. <step>
+2. <step>
+3. <step>
+
+Each step must state:
+
+- input artifact;
+- output artifact;
+- validation command or evidence;
+- stop condition.
+
+## 9. Evidence Requirements
+
+Required evidence:
+
+- <command/result/path>
+- <test result>
+- <catalog path verification, if applicable>
+
+Evidence Trace Block requirements:
+
+- Claim:
+- Command:
+- Result:
+- Key path:
+- Verdict:
+
+## 10. Acceptance Criteria
+
+- [ ] <criterion 1>
+- [ ] <criterion 2>
+- [ ] <criterion 3>
+
+Criteria must be observable through files, commands, tests, or review records.
+
+## 11. Review Gate
+
+Implementation may proceed only after:
+
+- <GC-018 filed and reviewed | operator waiver recorded | other condition>
+
+Closure may proceed only after:
+
+- <reviewer no-blocking objection | operator waiver | gate result>
+
+Reviewer silence is not approval unless the operator explicitly records a
+waiver for this work order.
+
+## 12. Closure Checklist
+
+- [ ] All acceptance criteria satisfied or explicitly marked N/A with reason
+- [ ] Required tests or evidence commands run
+- [ ] Public catalog updated or explicitly N/A with reason
+- [ ] Public/provenance repository boundary checked if public files changed
+- [ ] GC-020 handoff updated with current HEAD after commit
+- [ ] Completion packet filed if the roadmap requires one
+- [ ] Changed files listed for reviewer
+
+## 13. Return-To-Orchestrator Conditions
+
+Return to orchestrator without continuing if:
+
+- pre-flight fails;
+- scope conflict is discovered;
+- required citation cannot be found;
+- implementation would exceed risk ceiling;
+- reviewer raises a structural blocking objection;
+- public/provenance boundary is unclear.
+```
+
+## Authoring Rules
+
+- Use precise paths, not prose-only references.
+- Prefer file:line citations for inventory answers.
+- Use planned paths in GC-018 when files do not exist yet; verify existence in
+  completion evidence after implementation.
+- Keep public claims bounded to evidence level:
+  - `defined` for schema/docs only;
+  - `tested` for unit or integration evidence;
+  - `live-proven` only after required live governance proof.
+- Do not include raw API keys, secrets, or private credentials.
+- Do not make the work order broader than the authorizing roadmap.
+
+## Minimum Quality Bar
+
+A work order is not ready for execution unless it answers:
+
+- What exactly should be done?
+- Why is it authorized?
+- Who is implementer and who reviews?
+- Which files may be touched?
+- Which files or actions are forbidden?
+- Which command proves pre-flight readiness?
+- Which evidence proves completion?
+- What stops the agent from continuing?
+
+## Related Artifacts
+
+- `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/delegation.contract.ts`
+- `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/agent.handoff.contract.ts`
+- `docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md`
+- `docs/reference/CVF_GC018_CONTINUATION_CANDIDATE_TEMPLATE.md`
+- `governance/toolkit/05_OPERATION/CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD.md`
+- `governance/toolkit/05_OPERATION/CVF_DOCUMENT_STORAGE_GUARD.md`

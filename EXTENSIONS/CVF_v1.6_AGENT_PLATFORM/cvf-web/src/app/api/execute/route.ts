@@ -30,6 +30,7 @@ import {
     buildWorkflowExecutionProjection,
     resolveWorkflowBindingForExecution,
 } from '@/lib/workflows/workflow-resolver';
+import { buildRouteAuditMemoryCapture } from '@/lib/audit-memory-receipt';
 import {
     buildRoleOutputDeniedResponse,
     buildRolePermissionDeniedResponse,
@@ -923,6 +924,24 @@ export async function POST(request: NextRequest) {
             evidenceReceipt: governanceEvidenceReceipt,
             responseSuccess: aiResult.success,
         });
+        const { auditMemoryReceipt, auditEventPayload } = buildRouteAuditMemoryCapture({
+            governanceReceiptId: governanceEvidenceReceipt.receiptId,
+            actorId: session?.userId ?? (isServiceAllowed ? 'service-account' : 'unknown-actor'),
+            actorRole: resolvedExecutionRole.role ?? (isServiceAllowed ? 'service' : 'unknown'),
+            sessionId: session?.userId ?? (isServiceAllowed ? serviceIdentity ?? undefined : undefined),
+            sessionRole: session?.role ?? (isServiceAllowed ? 'service' : undefined),
+            templateId: executionTemplateId,
+            templateName: body.templateName || body.templateId,
+            workflowId: workflowExecution?.workflowId,
+            provider: routedProvider,
+            model: body.model ?? aiResult.model ?? routedProvider,
+            decision: enforcement.status,
+            stepTraceIds: workflowExecution?.stepTraces.map((trace) => trace.stepId) ?? [],
+            rolePermission: { role: resolvedExecutionRole.role, permissionRole: rolePermission.role, outputClass: rolePermission.outputClass, allowed: rolePermission.allowed },
+            riskLevel: body.cvfRiskLevel ?? enforcement.riskGate?.riskLevel,
+            phase: body.cvfPhase,
+        });
+        await appendAuditEvent({ ...auditEventPayload, payload: withSessionAuditPayload(session, auditEventPayload.payload) });
 
         return NextResponse.json({
             ...aiResult,
@@ -961,6 +980,7 @@ export async function POST(request: NextRequest) {
             governanceEnvelope: govEnvelope,
             policySnapshotId: govEnvelope.policySnapshotId,
             governanceEvidenceReceipt,
+            auditMemoryReceipt,
             ...(workflowExecution ? workflowExecution : {}),
             ...(phase2cProductBrief ? { phase2cProductBrief } : {}),
             ...(phase3eOperationalMetrics ? { phase3eOperationalMetrics } : {}),

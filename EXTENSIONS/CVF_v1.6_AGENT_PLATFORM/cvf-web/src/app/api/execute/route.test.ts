@@ -268,7 +268,30 @@ describe('/api/execute', () => {
             deferredStepIds: ['step-4-review-gate'],
             rolePermission: data.rolePermission,
         });
+        expect(data.auditMemoryReceipt).toMatchObject({
+            tier: 'session',
+            contractVersion: 'phaseD.memoryContinuity.v1',
+            ownerRole: 'OPERATOR',
+            receipt: {
+                traceId: data.governanceEvidenceReceipt.receiptId,
+                decision: 'captured',
+                reason: 'memory_captured_after_policy_and_privacy',
+                provenanceRequired: true,
+            },
+        });
+        expect(data.auditMemoryReceipt.receipt.memoryIds).toHaveLength(1);
+        const auditMemoryEvent = appendAuditEventMock.mock.calls
+            .map((call: unknown[]) => call[0] as { eventType?: string; payload?: Record<string, unknown> })
+            .find((event) => event.eventType === 'AUDIT_MEMORY_RECEIPT_CAPTURED');
+        expect(auditMemoryEvent?.payload).toMatchObject({
+            governanceReceiptId: data.governanceEvidenceReceipt.receiptId,
+            memoryReceiptId: data.auditMemoryReceipt.receipt.receiptId,
+            memoryIds: data.auditMemoryReceipt.receipt.memoryIds,
+            memoryTier: 'session',
+            memoryContractVersion: 'phaseD.memoryContinuity.v1',
+        });
         expect(executeAIMock).toHaveBeenCalledTimes(1);
+        expect(executeAIMock.mock.calls[0][2]).not.toContain('GOVERNANCE_AUDIT_MEMORY_RECEIPT');
     });
 
     it('caps trusted noncoder template max tokens for provider calls', async () => {

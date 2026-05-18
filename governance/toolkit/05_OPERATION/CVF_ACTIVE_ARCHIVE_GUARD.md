@@ -148,6 +148,8 @@ Useful commands:
 | `python scripts/cvf_active_archive.py --restore` | restore all files from archive |
 | `python scripts/cvf_active_archive.py --status` | show current active vs archive counts |
 | `python scripts/cvf_active_archive.py --dry-run --full-scan` | force one full-repository screening pass |
+| `python governance/compat/check_review_retention_registry.py --scan-mode fast --enforce` | hook-safe registry validation without full review dynamic scan |
+| `python governance/compat/check_review_retention_registry.py --scan-mode full --enforce` | explicit full review retention re-derivation/audit |
 
 ## Related Artifacts
 

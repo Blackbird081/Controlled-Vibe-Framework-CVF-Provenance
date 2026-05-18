@@ -1,6 +1,6 @@
 # CVF Next Phase Roadmap — Lane B + C + H
 
-Memory class: FULL_RECORD
+Memory class: SUMMARY_RECORD
 Status: OPERATOR_APPROVED — 2026-05-19
 
 ## Authorization / Decision
@@ -476,12 +476,12 @@ Lane B ──→ Codex GC-018 ──→ Codex implements ──→ Claude review
                                     └── After Lane C closes ──→ Lane H ──→ Codex GC-018 ──→ implement ──→ Claude reviews ──→ CLOSE Lane H
 ```
 
-**No lane may begin implementation before its GC-018 is filed and Claude
-has not raised a blocking objection within one review cycle.**
+**No lane may begin implementation before its GC-018 is filed and either
+Claude explicitly records no blocking objection, or the operator records an
+explicit waiver to proceed without Claude review for that lane.**
 
-If Codex raises a GC-018 and Claude is silent for the session, Codex may
-proceed. If Claude raises a blocking objection (not wording — structural),
-Codex pauses and resolves before implementing.
+Claude silence is not approval. If Claude raises a blocking objection
+(not wording — structural), Codex pauses and resolves before implementing.
 
 ---
 
@@ -491,7 +491,8 @@ Execution order is B → C → H. Each lane follows this sequence:
 
 1. Codex reads prior art inventory listed in the lane section
 2. Codex files GC-018 (answers inventory questions, states acceptance criteria)
-3. Claude reviews GC-018 — no blocking objection → Codex proceeds
+3. Claude explicitly records no blocking objection, or the operator records an
+   explicit lane waiver → Codex proceeds
 4. Codex implements the lane scope
 5. Claude reviews implementation and evidence
 6. Tranche Closure Checklist completed (catalog update, Test-Path, GC-020)

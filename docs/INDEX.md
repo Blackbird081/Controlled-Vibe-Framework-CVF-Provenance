@@ -34,6 +34,11 @@ Trạng thái: Chỉ mục lưu trữ chính thức cho `docs/`.
   Default memory role: `SUMMARY_RECORD`
 - `reviews/` — review archive theo scope/module
   Default memory role: `FULL_RECORD`
+- `work_orders/` — agent-facing execution orders issued after final roadmaps
+  or operator lane decisions; translates strategy into scoped worker
+  instructions with owner, write-scope, evidence, review gate, and stop
+  conditions
+  Default memory role: `POINTER_RECORD`
 - `logs/` — archive cho các append-only log chain đã rollover khỏi active window
   Default memory role: `SUMMARY_RECORD`
 
@@ -49,6 +54,9 @@ Từ nay về sau:
   - `CVF_MEMORY_GOVERNANCE_GUARD.md` khi tài liệu đó phục vụ durable memory sau này
   - `reference/CVF_GOVERNED_ARTIFACT_AUTHORING_STANDARD.md` khi file đó là governed packet, evidence doc, closure doc, handoff/tracker sync, hoặc artifact claim có source truth rõ ràng
   - `reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md` khi tạo file `.md` governed mới hoặc migrate file cũ sang canonical shape
+  - `reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md` khi final roadmap,
+    operator lane decision, hoặc orchestrator/CEO-style dispatch giao việc cho
+    agent khác hoặc cho session sau
   - `reference/CVF_QUALITY_ASSESSMENT_STANDARD.md` khi file đó là tranche, wave, hoặc architecture quality scorecard
   - `reference/CVF_MAINTAINABILITY_STANDARD.md` khi file đó đụng hotspot public barrel, barrel smoke test, shared batch helper, shared fixture builder, hoặc summary/evidence layering
   - `reference/CVF_PREPUBLIC_RESTRUCTURING_UNIFIED_AGENT_PROTOCOL.md` khi task liên quan repository structure, folder cleanup, pre-public packaging, hoặc publication decisions (quy tắc bắt buộc đọc)
@@ -117,6 +125,20 @@ Nếu cần xác định baseline/release line/module status hiện hành:
 - `reviews/CVF_MULTI_AGENT_INTAKE_REVIEW_PREPUBLIC_RESTRUCTURING_2026-04-02.md`
 - `reviews/CVF_MULTI_AGENT_REBUTTAL_PREPUBLIC_RESTRUCTURING_2026-04-02.md`
 - `reviews/CVF_MULTI_AGENT_DECISION_PACK_PREPUBLIC_RESTRUCTURING_2026-04-02.md`
+- `reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
+- `reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md`
+- `reference/CVF_AGENT_ROLE_ASSIGNMENT_MATRIX_2026-05-19.md`
+- `reference/CVF_AGENT_DELEGATION_AND_SUBAGENT_BOUNDARY_STANDARD_2026-05-19.md`
+- `work_orders/CVF_AGENT_WORK_ORDER_AGENT_ROLE_ASSIGNMENT_2026-05-19.md`
+- `work_orders/CVF_AGENT_WORK_ORDER_LANE_BCH_2026-05-19.md`
+- `roadmaps/CVF_NEXT_PHASE_ROADMAP_LANE_B_C_H_2026-05-19.md`
+- `baselines/CVF_GC018_LANE_B_WORKFLOW_PACKAGING_2026-05-19.md`
+- `baselines/CVF_GC018_LANE_C_EXECUTION_GATEWAY_2026-05-19.md`
+- `baselines/CVF_GC018_LANE_H_MEMORY_RUNTIME_WIRING_2026-05-19.md`
+- `reviews/CVF_AGENT_ROLE_ASSIGNMENT_PREREQUISITE_COMPLETION_2026-05-19.md`
+- `reviews/CVF_LANE_B_WORKFLOW_PACKAGING_COMPLETION_2026-05-19.md`
+- `reviews/CVF_LANE_C_EXECUTION_GATEWAY_COMPLETION_2026-05-19.md`
+- `reviews/CVF_LANE_H_MEMORY_RUNTIME_WIRING_COMPLETION_2026-05-19.md`
 - `reference/CVF_PREPUBLIC_RESTRUCTURING_UNIFIED_AGENT_PROTOCOL.md`
 - `reference/CVF_QUALITY_ASSESSMENT_STANDARD.md`
 - `reference/CVF_MULTI_AGENT_INTAKE_REVIEW_TEMPLATE.md`

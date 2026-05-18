@@ -183,7 +183,17 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         ),
         (
             "review retention registry compatibility",
-            ["python", "governance/compat/check_review_retention_registry.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+            [
+                "python",
+                "governance/compat/check_review_retention_registry.py",
+                "--base",
+                "HEAD",
+                "--head",
+                "HEAD",
+                "--scan-mode",
+                "fast",
+                "--enforce",
+            ],
         ),
         (
             "foundational guard surfaces compatibility",

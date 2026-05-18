@@ -42,6 +42,7 @@ ALLOWED_DOCS_FOLDERS = {
     "baselines",
     "roadmaps",
     "reviews",
+    "work_orders",
     "logs",
     "concepts",
     "guides",
@@ -49,11 +50,21 @@ ALLOWED_DOCS_FOLDERS = {
     "cheatsheets",
     "case-studies",
 }
-GOVERNANCE_FOLDERS = {"reference", "assessments", "audits", "baselines", "roadmaps", "reviews", "logs"}
+GOVERNANCE_FOLDERS = {
+    "reference",
+    "assessments",
+    "audits",
+    "baselines",
+    "roadmaps",
+    "reviews",
+    "work_orders",
+    "logs",
+}
 APPROVED_ROOT_FILES = {
     "BUG_HISTORY.md",
     "CHEAT_SHEET.md",
     "CVF_ARCHITECTURE_DECISIONS.md",
+    "CVF_ARCHITECTURE_DECISIONS_ARCHIVE_ADR001-010.md",
     "CVF_CORE_KNOWLEDGE_BASE.md",
     "CVF_INCREMENTAL_TEST_LOG.md",
     "GET_STARTED.md",

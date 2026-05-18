@@ -103,6 +103,26 @@ Required sections:
 - Related Artifacts
 - Final Clause
 
+### SOP / Operating Workflow
+
+Required sections:
+
+- Purpose
+- Scope
+- Owner Surface or Source Lineage
+- Protocol, Contract, or Requirements
+- Inputs and Outputs
+- Role Workflow
+- Standard Workflow
+- Enforcement or Verification
+- Boundaries or Non-Goals
+- Failure Modes or Escalation Conditions
+- Related Artifacts
+- Claim Boundary or Final Clause
+
+SOP files define repeatable operating procedure. They are distinct from
+roadmaps because they describe the standing workflow, not one tranche plan.
+
 ### Roadmap
 
 Required sections:
@@ -116,6 +136,28 @@ Required sections:
 - Acceptance Criteria
 - Verification or Evidence
 - Claim Boundary
+
+### Work Order
+
+Required sections:
+
+- Purpose
+- Authority Chain
+- Agent Roles
+- Scope, Allowed Scope, or Forbidden Scope
+- Required First Reads
+- Pre-Flight Checks
+- Write Ownership
+- Execution Plan or Execution Rules
+- Evidence Requirements
+- Acceptance Criteria
+- Review Gate
+- Closure Checklist or Completion Requirements
+- Return-To-Orchestrator Conditions
+- Claim Boundary
+
+Work orders are tactical execution packets, not reviews. They are mandatory
+when a final roadmap delegates work to another agent or to a later session.
 
 ### Review / Rebuttal / Response
 

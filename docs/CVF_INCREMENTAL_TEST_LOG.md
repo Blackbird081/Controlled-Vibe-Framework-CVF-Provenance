@@ -2316,3 +2316,38 @@ Utility and guard:
   - The strengthened live spec first caught an `OPERATOR` fixture mismatch; final proof uses the enterprise `dev/dev123` login so `resolveExecutionCVFRole()` maps `developer` to `BUILDER`.
   - Public catalog/evidence update was committed only in public-sync at `faa9df91` after `git remote -v` confirmed the public remote and `Test-Path` returned 19/19 PASS.
   - Closure remains bounded to the selected Product Brief flow and does not claim universal workflow or full receipt-matrix coverage.
+
+---
+
+## [2026-05-19] Batch: Lane B/C/H — Workflow Packaging, Execution Gateway, Memory Runtime Wiring
+
+- Change reference: provenance uncommitted (staged for commit); GC-018 baselines in `docs/baselines/CVF_GC018_LANE_B_WORKFLOW_PACKAGING_2026-05-19.md`, `docs/baselines/CVF_GC018_LANE_C_EXECUTION_GATEWAY_2026-05-19.md`, `docs/baselines/CVF_GC018_LANE_H_MEMORY_RUNTIME_WIRING_2026-05-19.md`
+- Impacted scope:
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/execute.client.ts` (new)
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/command.registry.ts` (modified — async execute support)
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/tests/execute.client.test.ts` (new)
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/cli.ts` (modified)
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/arg.parser.ts` (modified)
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/types.ts` (modified)
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/tests/arg.parser.test.ts` (modified)
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/tests/cli.test.ts` (modified)
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/tests/command.registry.test.ts` (modified)
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/audit-memory-receipt.ts` (new)
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/audit-memory-receipt.test.ts` (new)
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts` (modified — post-response audit memory receipt wiring)
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.test.ts` (modified)
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governed-packs/app_builder_complete/` (new pack)
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governed-packs/strategy_analysis/` (new pack)
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governed-packs/documentation/` (new pack)
+- Tests executed:
+  - Lane C: `npm test -- --run` in `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI` -> PASS, 4 files / 47 tests
+  - Lane C: `npx tsc --noEmit` in `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI` -> PASS
+  - Lane H: `npm run test:run -- src/lib/audit-memory-receipt.test.ts src/app/api/execute/route.test.ts` in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` -> PASS, 2 files / 32 tests
+  - Lane H: `npm run check -- --pretty false` in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` -> PASS
+  - Lane H: `python scripts/run_cvf_release_gate_bundle.py --json` -> PASS, 7/7 (2026-05-19)
+- Notes/Risks:
+  - Lane B is schema-defined only; no runtime code added or modified for packs; route.ts untouched in Lane B.
+  - Lane C `cvf execute` is a mock-tested CLI caller; no live provider call; `--role` preserved as `requestedRole` only (does not override route role resolution).
+  - Lane H audit memory receipt is post-response only; provider prompt does not contain `GOVERNANCE_AUDIT_MEMORY_RECEIPT` (asserted in route test).
+  - Guard Contract memory continuity contracts imported from extension source path, not installed barrel — packaging cleanup deferred to future tranche.
+  - Public catalog updated in provenance `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md` and public-sync `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`.

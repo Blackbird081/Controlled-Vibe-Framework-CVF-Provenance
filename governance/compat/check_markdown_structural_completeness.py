@@ -55,7 +55,9 @@ REQUIRED_MARKERS: dict[str, tuple[str, ...]] = {
         "Contract",
         "Spec",
         "Policy",
+        "SOP",
         "Roadmap",
+        "Work Order",
         "Review / Rebuttal / Response",
         "Baseline / Evidence / Authorization",
         "ADR",
@@ -78,6 +80,12 @@ REQUIRED_MARKERS: dict[str, tuple[str, ...]] = {
     KB_PATH: (Path(GUARD_PATH).name, "Markdown structural completeness"),
     HOOK_CHAIN_PATH: (THIS_SCRIPT_PATH,),
     WORKFLOW_PATH: (THIS_SCRIPT_PATH, "Markdown Structural Completeness"),
+}
+
+# Sealed archive files are exempt from structural completeness checks.
+# They are read-only historical records that cannot be modified to add structural sections.
+STRUCTURAL_CHECK_EXEMPT = {
+    "docs/CVF_ARCHITECTURE_DECISIONS_ARCHIVE_ADR001-010.md",
 }
 
 COMMON_GROUPS: tuple[tuple[str, tuple[str, ...]], ...] = (
@@ -136,6 +144,18 @@ SECTION_GROUPS: dict[str, tuple[tuple[str, tuple[str, ...]], ...]] = {
         ("enforcement surface", (r"^##\s+Enforcement Surface\b",)),
         ("related artifacts", (r"^##\s+Related",)),
     ),
+    "sop": (
+        ("scope", (r"^##\s+Scope\b",)),
+        ("owner/source", (r"^##\s+Owner", r"^##\s+Source")),
+        ("protocol/contract/requirements", (r"^##\s+Protocol", r"^##\s+Contract", r"^##\s+Requirements")),
+        ("inputs and outputs", (r"^##\s+Inputs", r"^##\s+.*Outputs")),
+        ("role workflow", (r"^##\s+Role Workflow\b", r"^##\s+Roles\b")),
+        ("standard workflow", (r"^##\s+Standard Workflow\b", r"^##\s+Workflow\b")),
+        ("enforcement/verification", (r"^##\s+Enforcement", r"^##\s+Verification")),
+        ("boundaries/non-goals", (r"^##\s+.*Boundary", r"^##\s+Non-Goals", r"^##\s+Boundaries")),
+        ("failure modes", (r"^##\s+Failure", r"^##\s+Escalation")),
+        ("related artifacts", (r"^##\s+Related",)),
+    ),
     "roadmap": (
         ("authorization/decision", (r"^##\s+Authorization", r"^##\s+Decision")),
         ("why/purpose", (r"^##\s+Why", r"^##\s+Purpose")),
@@ -144,6 +164,20 @@ SECTION_GROUPS: dict[str, tuple[tuple[str, tuple[str, ...]], ...]] = {
         ("work plan", (r"^##\s+Work Plan",)),
         ("acceptance criteria", (r"^##\s+Acceptance Criteria",)),
         ("verification/evidence", (r"^##\s+Verification", r"^##\s+Evidence")),
+    ),
+    "work_order": (
+        ("authority chain", (r"^##\s+(?:\d+\.\s+)?Authority Chain\b",)),
+        ("agent roles", (r"^##\s+(?:\d+\.\s+)?Agent Roles\b", r"^##\s+(?:\d+\.\s+)?.*Roles\b")),
+        ("allowed/forbidden scope", (r"Allowed scope", r"Forbidden scope", r"^##\s+Scope\b")),
+        ("required first reads", (r"^##\s+(?:\d+\.\s+)?Required First Reads\b",)),
+        ("pre-flight checks", (r"^##\s+(?:\d+\.\s+)?.*Pre-Flight", r"^##\s+(?:\d+\.\s+)?Preflight")),
+        ("write ownership", (r"^##\s+(?:\d+\.\s+)?Write Ownership\b", r"^###\s+Write Ownership\b")),
+        ("execution plan", (r"^##\s+(?:\d+\.\s+)?Execution Plan\b", r"^##\s+(?:\d+\.\s+)?.*Execution Rules\b")),
+        ("evidence requirements", (r"^##\s+Evidence Requirements\b", r"Evidence Trace Block")),
+        ("acceptance criteria", (r"^##\s+Acceptance Criteria\b", r"Acceptance Criteria")),
+        ("review gate", (r"^##\s+(?:\d+\.\s+)?Review Gate\b",)),
+        ("closure checklist", (r"^##\s+(?:\d+\.\s+)?Closure Checklist\b", r"^##\s+(?:\d+\.\s+)?Completion Requirements\b")),
+        ("return conditions", (r"^##\s+(?:\d+\.\s+)?Return-To-Orchestrator Conditions\b", r"Return to orchestrator")),
     ),
     "review": (
         ("target/source", (r"^##\s+Target", r"^##\s+Source", r"^##\s+Reviewed")),
@@ -287,8 +321,12 @@ def _classify(path: str, text: str) -> str:
         return "guard"
     if "ADR" in haystack or "ARCHITECTURE DECISION" in haystack:
         return "adr"
+    if "SOP" in haystack or "STANDARD OPERATING PROCEDURE" in haystack:
+        return "sop"
     if "ROADMAP" in haystack:
         return "roadmap"
+    if "WORK_ORDER" in haystack or "WORK ORDER" in haystack:
+        return "work_order"
     if any(token in haystack for token in ("REVIEW", "REBUTTAL", "RESPONSE")):
         return "review"
     if any(token in haystack for token in ("AUTHORIZATION", "BASELINE", "EVIDENCE", "ASSESSMENT")):
@@ -303,6 +341,8 @@ def _classify(path: str, text: str) -> str:
 
 
 def _validate_markdown(path: str) -> list[str]:
+    if path.replace("\\", "/") in STRUCTURAL_CHECK_EXEMPT:
+        return []
     text = _read_rel(path)
     artifact_type = _classify(path, text)
     issues: list[str] = []
