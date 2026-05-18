@@ -365,7 +365,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `358a7d9d`
+Current HEAD: `7fd0d1d7`
 
 ## What This Session Delivered
 
@@ -869,6 +869,31 @@ This handoff:
 - does not claim release-quality governance proof or public readiness
 - does not authorize direct use of ECC or any external repo
 - does not lift the `system_reconvergence_stop` posture — only operator can lift it
+
+## Active Boundary — Gate 0 Decision Pack (2026-05-19)
+
+Commit `7fd0d1d7` filed the multi-agent decision pack:
+`docs/reviews/CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md`
+
+This pack:
+- Resolves all 7 findings from Codex rebuttal (F1–F7 all accepted)
+- Confirms Gate 0.C cleanup complete (9 wording/accuracy fixes applied)
+- Defines 3 candidate implementation lanes:
+  - Lane C: C-execution-gateway (`cvf run/execute`)
+  - Lane H: H-memory-runtime (wire MemoryReinjectionPolicy into live path)
+  - Lane B: B-workflow-packaging (3 templates → governed capability packs)
+- States `system_reconvergence_stop` remains active until operator lifts for
+  one named lane
+
+Next move: Codex reviews the decision pack and accepts or reopens findings.
+Operator then selects a lane and explicitly lifts stop for that lane.
+No GC-018 filed until both conditions are met.
+
+Also in commit `7fd0d1d7`:
+- CLAUDE.md: R1/R2/R3 "pending" → "delivered" (stale language removed)
+- Synthesis baseline: 5 wording fixes (F2/F3/F4/F6 from rebuttal)
+- public-sync catalog: 5 accuracy fixes (status legend, bounded language,
+  CLI evidence, Update Rule N-1 wording) — public-sync commit `f48912ec`
 
 ## Handoff History
 
