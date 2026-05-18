@@ -169,7 +169,7 @@ State as of 2026-05-18:
 - Publication ops parallel preflight progress: COMPLETE - commit 7a2ef800
 - GC-020 HEAD sync (publication ops handoff): COMPLETE - commit f2fdb8bd
 - GC-020 HEAD sync (post-session resume): COMPLETE - commit a628b334
-- Phase D full roadmap for Codex: CREATED - working tree (pending commit)
+- Phase D full roadmap for Codex: CREATED - commit 84cfe83a
 
 Authorized next implementation:
 
@@ -298,7 +298,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `a628b334`
+Current HEAD: `84cfe83a`
 
 ## What This Session Delivered
 
@@ -367,6 +367,7 @@ reconvergence context:
 ### HEAD
 
 ```
+84cfe83a docs(legacy-audit): create Phase D full roadmap for Codex
 a628b334 chore(handoff): sync GC-020 HEAD after publication ops commit
 f2fdb8bd chore(handoff): record publication preflight progress
 7a2ef800 chore(publication): add parallel preflight progress
