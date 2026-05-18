@@ -224,7 +224,10 @@ State as of 2026-05-18:
 - Phase E Closure and chain verification: COMPLETE - commit 29e7c4f5
 - GC-020 HEAD sync (Phase E closure): COMPLETE - commit 3542c872
 - Review CVF assessment and strategic direction baseline: FILED - commit 54f98ed6
-- GC-020 HEAD sync (Review CVF assessment baseline): COMPLETE - commit pending
+- GC-020 HEAD sync (Review CVF assessment baseline): COMPLETE - commit bd0736a6
+- Catalog update rule added to CLAUDE.md (GC-024 candidate): DONE - commit c7e32d75
+- Catalog Gap Remediation section added to synthesis baseline: DONE - commit c7e32d75
+- GC-020 HEAD sync (catalog update rule): COMPLETE - commit pending
 
 Authorized next implementation:
 
@@ -353,7 +356,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `bd0736a6`
+Current HEAD: `c7e32d75`
 
 ## What This Session Delivered
 
