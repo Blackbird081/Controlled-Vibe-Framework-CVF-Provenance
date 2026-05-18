@@ -97,6 +97,27 @@ Authorization Boundary
 - If NO, reopen trigger: <fresh reassessment or new candidate condition>
 ```
 
+## Tranche Closure Checklist (mandatory before filing closure packet)
+
+Every tranche closure packet must include this checklist. Each item must
+be explicitly ticked or marked N/A with a one-line reason.
+
+```text
+Tranche Closure Checklist
+- [ ] Public catalog updated OR explicitly N/A: <reason>
+      If new proven capability added → add row to catalog capability table
+      If new/extended extension → add/update extension inventory row
+      If row status upgraded → update status + evidence link
+      Catalog path (public-sync): docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md
+- [ ] All new catalog paths Test-Path verified in public-sync clone
+- [ ] GC-020 handoff Current HEAD updated to this tranche's commit SHA
+- [ ] Evidence Trace Block present for all significant claims (GC-046)
+```
+
+Omitting the catalog item without an explicit N/A is a closure defect.
+The pre-commit advisory (GC-024) will remind the agent at commit time,
+but the checklist is the authoritative closure gate.
+
 ## Reading Rules
 
 - every fresh `GC-018` packet must read and cite the active quality assessment before claiming expansion is the right next move

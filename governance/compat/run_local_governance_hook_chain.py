@@ -47,6 +47,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
             "anti-collusion evidence trace (GC-046 Phase 0.C)",
             ["python", "governance/compat/check_anti_collusion_evidence_trace.py", "--enforce", "--base", "HEAD", "--head", "HEAD"],
         ),
+        (
+            "public catalog update advisory (GC-024)",
+            ["python", "governance/compat/check_catalog_update_advisory.py"],
+        ),
     ],
     "pre-push": [
         (
