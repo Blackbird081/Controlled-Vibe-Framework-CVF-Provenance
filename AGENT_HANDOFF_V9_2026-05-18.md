@@ -209,6 +209,8 @@ State as of 2026-05-18:
 - GC-020 HEAD sync (Phase E E.2 GC-018): COMPLETE - commit d2b2ceed
 - GC-020 repair sync for E.2 GC-018 handoff record: COMPLETE - commit 6a90e0f7
 - Phase E Tranche E.2 Role Permission implementation: COMPLETE - commit 235aad63
+- GC-020 HEAD sync (Phase E E.2 implementation): COMPLETE - commit 3f232515
+- Phase E Tranche E.3 Workflow Binding GC-018: FILED - commit 89c163fa
 
 Authorized next implementation:
 
@@ -337,7 +339,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `235aad63`
+Current HEAD: `89c163fa`
 
 ## What This Session Delivered
 
@@ -405,6 +407,8 @@ reconvergence context:
 
 ### HEAD
 
+89c163fa docs(baseline): file GC-018 for Phase E E.3 workflow binding
+3f232515 chore(handoff): sync GC-020 HEAD after Phase E E.2 implementation
 235aad63 feat(execute): enforce Phase E E.2 role output gate
 6a90e0f7 chore(handoff): record Phase E E.2 GC-020 sync commit
 d2b2ceed chore(handoff): sync GC-020 HEAD after Phase E E.2 GC-018
