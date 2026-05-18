@@ -149,6 +149,7 @@ State as of 2026-05-18:
 - Step 0 - Route split and GC-023 exception tombstone: COMPLETE - commit
   f9696d9e
 - Step 1 - Public-sync verification discipline: COMPLETE - commit d549c6e8
+- Step 2 - Ledger single source of truth: COMPLETE - commit 994b0e6e
 
 Authorized next implementation:
 
@@ -277,7 +278,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `a65b58e1`
+Current HEAD: `994b0e6e`
 
 ## What This Session Delivered
 
@@ -346,6 +347,7 @@ reconvergence context:
 ### HEAD
 
 ```
+994b0e6e docs(legacy-audit): complete Step 2 ledger disposition sync
 a65b58e1 chore(handoff): record Step 1 catalog discipline
 d549c6e8 docs(catalog): add Step 1 public-sync verification discipline
 5413594e chore(handoff): record Step 0 route split
