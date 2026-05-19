@@ -11,7 +11,7 @@ Provenance continuity base for this handoff: `e91b41fd`.
 Provenance HEAD before Lane G implementation:
 `ae492d7dcd9a7b48948521a5160ee7668fa8fa4f`.
 
-Current HEAD (GC-020): `bcdb005b` (Codex rebuttal accepted; V2 roadmap + 4 work orders M1/C2/D2/H2 + GC-018 baselines for D2/H2 dispatched; READY_FOR_IMPLEMENTATION)
+Current HEAD (GC-020): `1dcadb18` (V2 roadmap + 4 work orders M1/C2/D2/H2 + GC-018 baselines for D2/H2 committed; READY_FOR_IMPLEMENTATION)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
