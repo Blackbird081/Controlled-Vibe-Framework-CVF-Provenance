@@ -55,6 +55,16 @@ def _git_head_short() -> str:
     return subprocess.check_output(["git", "rev-parse", "--short=8", "HEAD"], cwd=REPO_ROOT, text=True).strip()
 
 
+def _git_parent_short() -> str | None:
+    try:
+        sha = subprocess.check_output(
+            ["git", "rev-parse", "--short=8", "HEAD~1"], cwd=REPO_ROOT, text=True, stderr=subprocess.DEVNULL
+        ).strip()
+        return sha or None
+    except subprocess.CalledProcessError:
+        return None
+
+
 def _active_handoff_path() -> Path | None:
     state_path = REPO_ROOT / STATE_PATH
     if not state_path.exists():
@@ -114,13 +124,20 @@ def _check_handoff_head() -> list[dict[str, str]]:
     if handoff is None or not handoff.exists():
         return [{"rule": "C", "file": STATE_PATH, "issue": "active handoff missing", "headSha": head}]
     text = _read_text(handoff)
-    if head not in text:
-        try:
-            handoff_label = str(handoff.relative_to(REPO_ROOT))
-        except ValueError:
-            handoff_label = str(handoff)
-        return [{"rule": "C", "file": handoff_label, "issue": "GC-020 drift", "headSha": head}]
-    return []
+    parent = _git_parent_short()
+    # GC-020 Rule C: handoff must contain either current HEAD or its immediate
+    # parent. The parent-SHA branch resolves the self-referential paradox at
+    # pre-push time: a commit cannot embed its own SHA in its own content, so a
+    # GC-020 sync commit (which records the SHA it synced) is naturally
+    # parent-anchored. This keeps the "handoff was sync'd recently" guarantee
+    # without forcing an impossible self-reference.
+    if head in text or (parent is not None and parent in text):
+        return []
+    try:
+        handoff_label = str(handoff.relative_to(REPO_ROOT))
+    except ValueError:
+        handoff_label = str(handoff)
+    return [{"rule": "C", "file": handoff_label, "issue": "GC-020 drift", "headSha": head, "parentSha": parent or ""}]
 
 
 def run_check(

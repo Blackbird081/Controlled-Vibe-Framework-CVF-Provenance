@@ -97,10 +97,12 @@ def test_rule_c_head_drift(monkeypatch, tmp_path):
     handoff.write_text("Current HEAD: oldsha\n", encoding="utf-8")
     monkeypatch.setattr(guard, "_active_handoff_path", lambda: handoff)
     monkeypatch.setattr(guard, "_git_head_short", lambda: "12345678")
+    monkeypatch.setattr(guard, "_git_parent_short", lambda: "abcdef01")
 
     violations = guard._check_handoff_head()
 
-    assert violations == [{"rule": "C", "file": str(handoff.relative_to(guard.REPO_ROOT)) if handoff.is_relative_to(guard.REPO_ROOT) else str(handoff), "issue": "GC-020 drift", "headSha": "12345678"}]
+    expected_file = str(handoff.relative_to(guard.REPO_ROOT)) if handoff.is_relative_to(guard.REPO_ROOT) else str(handoff)
+    assert violations == [{"rule": "C", "file": expected_file, "issue": "GC-020 drift", "headSha": "12345678", "parentSha": "abcdef01"}]
 
 
 def test_rule_c_passes(monkeypatch, tmp_path):
@@ -108,5 +110,45 @@ def test_rule_c_passes(monkeypatch, tmp_path):
     handoff.write_text("Current HEAD: 12345678\n", encoding="utf-8")
     monkeypatch.setattr(guard, "_active_handoff_path", lambda: handoff)
     monkeypatch.setattr(guard, "_git_head_short", lambda: "12345678")
+    monkeypatch.setattr(guard, "_git_parent_short", lambda: "abcdef01")
+
+    assert guard._check_handoff_head() == []
+
+
+def test_rule_c_accepts_parent_sha(monkeypatch, tmp_path):
+    """A GC-020 sync commit naturally embeds its parent SHA, not its own.
+
+    The pre-push gate runs with HEAD = the sync commit itself. Requiring the
+    sync commit's own SHA inside its own content is impossible (a commit
+    cannot reference its own future SHA). Accepting the parent SHA preserves
+    the recency guarantee without forcing self-reference.
+    """
+    handoff = tmp_path / "handoff.md"
+    handoff.write_text("Current HEAD (GC-020): abcdef01 (GC-020 sync)\n", encoding="utf-8")
+    monkeypatch.setattr(guard, "_active_handoff_path", lambda: handoff)
+    monkeypatch.setattr(guard, "_git_head_short", lambda: "12345678")
+    monkeypatch.setattr(guard, "_git_parent_short", lambda: "abcdef01")
+
+    assert guard._check_handoff_head() == []
+
+
+def test_rule_c_fails_when_neither_head_nor_parent_present(monkeypatch, tmp_path):
+    handoff = tmp_path / "handoff.md"
+    handoff.write_text("Current HEAD: stale-anchor\n", encoding="utf-8")
+    monkeypatch.setattr(guard, "_active_handoff_path", lambda: handoff)
+    monkeypatch.setattr(guard, "_git_head_short", lambda: "12345678")
+    monkeypatch.setattr(guard, "_git_parent_short", lambda: "abcdef01")
+
+    violations = guard._check_handoff_head()
+
+    assert violations and violations[0]["rule"] == "C"
+
+
+def test_rule_c_passes_when_parent_missing_and_head_present(monkeypatch, tmp_path):
+    handoff = tmp_path / "handoff.md"
+    handoff.write_text("Current HEAD: 12345678\n", encoding="utf-8")
+    monkeypatch.setattr(guard, "_active_handoff_path", lambda: handoff)
+    monkeypatch.setattr(guard, "_git_head_short", lambda: "12345678")
+    monkeypatch.setattr(guard, "_git_parent_short", lambda: None)
 
     assert guard._check_handoff_head() == []

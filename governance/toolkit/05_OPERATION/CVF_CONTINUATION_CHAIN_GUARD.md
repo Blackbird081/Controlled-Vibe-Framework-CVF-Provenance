@@ -30,8 +30,16 @@ replacement of adjacent handoff/session/depth-audit guards.
   have a matching `docs/reviews/CVF_*_COMPLETION_*.md` file. A match is a
   review body containing the work order filename or an extracted lane/candidate
   identifier.
-- Rule C: the active handoff must contain the current `git rev-parse HEAD`
-  short SHA. Rule C is informational by default and blocking under `--enforce`.
+- Rule C: the active handoff must contain either the current
+  `git rev-parse --short=8 HEAD` SHA OR its immediate parent
+  (`git rev-parse --short=8 HEAD~1`). Rule C is informational by default and
+  blocking under `--enforce`.
+  - Parent-SHA acceptance resolves the GC-020 self-referential paradox at
+    pre-push time: a commit cannot embed its own SHA in its own content. A
+    GC-020 sync commit naturally records the SHA it synced (its parent), so
+    accepting the parent SHA preserves the "handoff was synced recently"
+    guarantee without forcing an impossible self-reference. Drift is still
+    detected when the handoff anchor is older than HEAD~1.
 
 ## Enforcement Surface
 
