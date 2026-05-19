@@ -86,6 +86,6 @@
     "blocked_work_classes",
     "next_allowed_move"
   ],
-  "nextAllowedMove": "C1/C2/C3/C4 work orders dispatched (d5236e54). V2 roadmap filed READY_FOR_REBUTTAL. Next: Codex reviews V2 roadmap and returns second rebuttal (no-blocking or blocking per candidate). After second rebuttal acceptance: file GC-018 for C2, C4 (parallel), then dispatch to Worker; C1 implementation in public-sync only; C3 last after C2+C4 close. No implementation before second rebuttal verdict.",
+  "nextAllowedMove": "All C1–C4 guards CLOSED and quality-verified (621fe7c1). C1 committed in public-sync at e04b4f00. CDH roadmap filed READY_FOR_REBUTTAL (f253db00). Next: Reviewer/Codex rebuttal of CVF_RUNTIME_MATURITY_CDH_ROADMAP_2026-05-19.md. No GC-018 or M/C/D/H implementation before no-blocking verdict returned per candidate.",
   "lastUpdated": "2026-05-19"
 }
