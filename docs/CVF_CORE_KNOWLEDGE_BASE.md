@@ -355,6 +355,9 @@ Output (Allow / Strip & Allow / Block)
 | CVF_SURFACE_SCAN_CONTINUITY_GUARD.md | Fresh tranche selection or scan-state change | Canonical scan registry must preserve what was already scanned |
 | CVF_SESSION_GOVERNANCE_BOOTSTRAP_GUARD.md | New/resumed governed sessions | Canonical bootstrap must load first |
 | CVF_STRUCTURAL_CHANGE_AUDIT_GUARD.md | Major structural merge or move | Audit -> review -> decision path required |
+| CVF_CONTINUATION_CHAIN_GUARD.md | Closed work-order to completion-review chain | Rule A: GC-018 ref required; Rule B: completion review required; Rule C: handoff HEAD/parent SHA anchor |
+| CVF_EXECUTE_ROUTE_STEP_SEQUENCE_GUARD.md | `/api/execute` step sequence changes | Step order, allowed actor roles, and selector field must match registry |
+| CVF_GOVERNED_PACK_CONTRACT_GUARD.md | Governed-pack policy/spec/receipt changes | Pack files must align with the typed contract |
 
 Automated foundational surface gate:
 
