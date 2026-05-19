@@ -11,7 +11,7 @@ Provenance continuity base for this handoff: `e91b41fd`.
 Provenance HEAD before Lane G implementation:
 `ae492d7dcd9a7b48948521a5160ee7668fa8fa4f`.
 
-Current HEAD (GC-020): `c400509f` (V2 roadmap + M1/C2/D2/H2 implementation closure staged; continuation chain synchronized before runtime maturity closure commit)
+Current HEAD (GC-020): `0943cf92` (M1/C2/D2/H2 implementation closure committed; this handoff sync commit records the runtime maturity closure parent)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
