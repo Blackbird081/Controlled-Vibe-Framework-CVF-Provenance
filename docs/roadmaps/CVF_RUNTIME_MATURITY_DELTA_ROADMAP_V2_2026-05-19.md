@@ -78,13 +78,16 @@ True gap:
 
 Done criterion:
 - `supabase/functions/generate-daily-summary/index.ts` deployed (or
-  deployable); calls `POST VITE_CVF_EXECUTE_URL/api/execute` with
-  `templateId: "documentation"`, minimized payload (mood, meals, sleep,
-  activities, health — no names, no photos, no parent contact data).
+  deployable); calls `POST CVF_EXECUTE_URL/api/execute` from Supabase server
+  env with `templateId: "documentation"` and route-compatible minimized
+  inputs: `subject`, `currentNotes`, `readerGoal`. `currentNotes` may contain
+  mood, meals, sleep, activities, and health only — no names, photos, or
+  parent contact data.
 - `DailyReports.jsx` button calls edge function; falls back to rule-based
   string on error (network/auth failure only — no direct provider call).
 - Privacy notes documented in function file header.
-- `VITE_CVF_EXECUTE_URL` env var documented in `.env.example`.
+- `CVF_EXECUTE_URL` and `CVF_SERVICE_TOKEN` server env placeholders documented
+  in `.env.example`; frontend must not call CVF directly.
 
 ### C2 — CLI Execute Hardening
 

@@ -32,6 +32,8 @@ export interface AuditMemoryReceipt {
     tier: 'session';
     contractVersion: typeof MEMORY_CONTINUITY_CONTRACT_VERSION;
     ownerRole: string;
+    writesRequireReceipt: boolean;
+    privacyFilters: readonly string[];
     reinjectionPolicy: {
         tier: 'session';
         privacyFilter: string;
@@ -60,6 +62,23 @@ export function buildAuditMemoryReceipt(input: BuildAuditMemoryReceiptInput): Au
         rolePermission: input.rolePermission,
     });
 
+    if (!ownerPolicy.writesRequireReceipt) {
+        return {
+            tier,
+            contractVersion: MEMORY_CONTINUITY_CONTRACT_VERSION,
+            ownerRole: ownerPolicy.ownerRole,
+            writesRequireReceipt: ownerPolicy.writesRequireReceipt,
+            privacyFilters: ownerPolicy.privacyFilters,
+            reinjectionPolicy: buildSessionReinjectionPolicy(reinjectionPolicy),
+            receipt: {
+                receiptId: '', traceId: input.governanceReceiptId, decision: 'policy_skipped',
+                reason: 'memory_tier_does_not_require_receipt_write', createdAt: new Date().toISOString(),
+                actorId: input.actorId, memoryIds: [], maskedTokenCount: 0, estimatedTokens: 0,
+                provenanceRequired: true,
+            } as unknown as ControlledMemoryReceipt,
+        };
+    }
+
     const capture = auditMemoryGateway.capture({
         sourceEvent: 'execution_result',
         content,
@@ -86,14 +105,22 @@ export function buildAuditMemoryReceipt(input: BuildAuditMemoryReceiptInput): Au
         tier,
         contractVersion: MEMORY_CONTINUITY_CONTRACT_VERSION,
         ownerRole: ownerPolicy.ownerRole,
-        reinjectionPolicy: {
-            tier,
-            privacyFilter: reinjectionPolicy.privacyFilter,
-            provenanceScoreThreshold: reinjectionPolicy.provenanceScoreThreshold,
-            maxAgeSeconds: reinjectionPolicy.maxAgeSeconds,
-            receiptRequired: reinjectionPolicy.receiptRequired,
-        },
+        writesRequireReceipt: ownerPolicy.writesRequireReceipt,
+        privacyFilters: ownerPolicy.privacyFilters,
+        reinjectionPolicy: buildSessionReinjectionPolicy(reinjectionPolicy),
         receipt: capture.receipt,
+    };
+}
+
+function buildSessionReinjectionPolicy(
+    policy: typeof MEMORY_REINJECTION_POLICIES.session,
+): AuditMemoryReceipt['reinjectionPolicy'] {
+    return {
+        tier: 'session',
+        privacyFilter: policy.privacyFilter,
+        provenanceScoreThreshold: policy.provenanceScoreThreshold,
+        maxAgeSeconds: policy.maxAgeSeconds,
+        receiptRequired: policy.receiptRequired,
     };
 }
 

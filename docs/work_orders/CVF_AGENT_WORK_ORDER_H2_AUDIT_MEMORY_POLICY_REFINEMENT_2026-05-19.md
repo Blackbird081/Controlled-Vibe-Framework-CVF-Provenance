@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: OPEN
+Status: CLOSED
 
 GC-018 required: Yes — modifies existing enforcement surface in cvf-web lib.
 GC-018 path: `docs/baselines/CVF_GC018_H2_AUDIT_MEMORY_POLICY_REFINEMENT_2026-05-19.md`

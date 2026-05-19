@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: OPEN
+Status: CLOSED_WITH_DEPLOYMENT_VERIFICATION_PENDING
 
 GC-018 required: No — Maika product feature; no new CVF enforcement surface.
 
@@ -25,23 +25,26 @@ accepted; M1 corrected scope applied.
 
 - **Orchestrator** — dispatches work order; accepts completion packet.
 - **Worker** — implements all tasks in Maika workspace only; runs pre-flight
-  checks before writing any code; files completion review upon closure.
+  checks before writing any code; returns evidence to Orchestrator/Codex for
+  the completion review.
 
 ## Scope
 
 **Allowed scope:** Maika workspace (`CVF-Workspace/Nha tre Maika`) only.
 
 - New file: `supabase/functions/generate-daily-summary/index.ts`
-- Modified file: `src/pages/admin/DailyReports.jsx` — button onClick only
-- New file (if missing): `.env.example` — document `VITE_CVF_EXECUTE_URL`
+- Modified file: `src/pages/admin/DailyReports.jsx` — button handler,
+  loading state, and local helper only
+- Modified file: `.env.example` — document Supabase server env placeholders
+  `CVF_EXECUTE_URL` and `CVF_SERVICE_TOKEN`
 
 **Forbidden scope:**
 
 - Direct provider call (no Anthropic/OpenAI SDK import in edge function)
 - Photo description or image handling
 - Modifying CVF governance repo or public-sync repo
-- Adding new env vars beyond `VITE_CVF_EXECUTE_URL` and
-  `CVF_SERVICE_TOKEN` (Supabase secret)
+- Adding new env vars beyond `CVF_EXECUTE_URL` and `CVF_SERVICE_TOKEN`
+  (Supabase secrets)
 - Changing any Maika auth, DB schema, or push notification code
 
 ## Required First Reads
@@ -88,11 +91,9 @@ Payload sent to CVF `/api/execute`:
   "templateName": "documentation",
   "intent": "Generate a concise Vietnamese daily report summary for a kindergarten child.",
   "inputs": {
-    "mood": "<string>",
-    "meals": "<string — joined meal fields, no child name>",
-    "sleep": "<string — napDuration in minutes>",
-    "activities": "<string — joined activities>",
-    "health": "<string — health field if not Binh thuong, else omitted>"
+    "subject": "Tóm tắt nhật ký hằng ngày cho phụ huynh",
+    "currentNotes": "<string — joined mood, meals, sleep, activities, health; no child name>",
+    "readerGoal": "Phụ huynh hiểu ngắn gọn ngày hôm nay của bé, không có dữ liệu định danh."
   },
   "requestedRole": "SERVICE_AGENT"
 }
@@ -106,8 +107,9 @@ Privacy boundary (document in file header comment):
 - `requestedRole: "SERVICE_AGENT"` — not OPERATOR or BUILDER
 
 Auth: read `CVF_SERVICE_TOKEN` from `Deno.env.get('CVF_SERVICE_TOKEN')`.
-Build HMAC signature identical to `buildServiceHeaders` in
-`execute.client.ts` (sha256, `${timestamp}.${body}`).
+Build HMAC signature compatible with `computeServiceRequestSignature()` in
+`service-token-auth.ts`: SHA-256 HMAC over `${timestamp}.${body}`. Use
+Deno/WebCrypto APIs in the Edge Function; do not import Node `crypto`.
 
 Endpoint: read `CVF_EXECUTE_URL` from `Deno.env.get('CVF_EXECUTE_URL')`.
 
@@ -121,12 +123,16 @@ No direct AI provider call. No fallback to string concat inside the function.
 In `DailyReports.jsx`, replace the synchronous onClick block at lines 654–683
 with an async handler:
 
-1. Call `supabase.functions.invoke('generate-daily-summary', { body: payload })`
-   where `payload` = minimized fields (mood, meals, sleep, activities, health).
-2. On success: `setForm(f => ({ ...f, note: data.summary }))`.
-3. On error (network / auth / CVF failure): fall back to existing rule-based
+1. Call the Supabase Edge Function using the existing Maika fetch pattern:
+   `fetch(${VITE_SUPABASE_URL}/functions/v1/generate-daily-summary, ...)`
+   with `Authorization: Bearer <session.access_token>` and `apikey:
+   VITE_SUPABASE_ANON_KEY`.
+2. `payload` = minimized fields only (mood, meals, sleep, activities, health);
+   do not send `student`, `studentId`, child name, photo paths, or parent data.
+3. On success: `setForm(f => ({ ...f, note: data.summary }))`.
+4. On error (network / auth / CVF failure): fall back to existing rule-based
    string concat (copy the current lines 655–681 as fallback).
-4. Show a loading state on the button while awaiting (disable + text change).
+5. Show a loading state on the button while awaiting (disable + text change).
 
 Do not remove the rule-based string. It is the fallback only.
 
@@ -136,7 +142,7 @@ In `.env.example` (create if missing), add:
 
 ```text
 # CVF governed execution endpoint (for Maika AI features)
-VITE_CVF_EXECUTE_URL=https://your-cvf-deploy.netlify.app
+CVF_EXECUTE_URL=https://your-cvf-deploy.netlify.app
 CVF_SERVICE_TOKEN=your-service-token-here
 ```
 
@@ -145,7 +151,8 @@ CVF_SERVICE_TOKEN=your-service-token-here
 - [ ] `generate-daily-summary/index.ts` exists; no direct AI provider SDK import
 - [ ] Payload contains no child name, photo, or parent contact data
 - [ ] `CVF_EXECUTE_URL` and `CVF_SERVICE_TOKEN` read from `Deno.env`, not hardcoded
-- [ ] `DailyReports.jsx` button calls edge function asynchronously
+- [ ] `DailyReports.jsx` button calls edge function asynchronously using the
+  existing fetch + Authorization/apikey pattern
 - [ ] Rule-based string concat is fallback on network/auth/CVF error only
 - [ ] `.env.example` documents both env vars with placeholder values
 
@@ -158,8 +165,8 @@ Completion review must include:
 3. Confirmation: no direct AI provider SDK import in edge function.
 4. Confirmation: no child name or photo data in payload.
 5. Confirmation: `CVF_SERVICE_TOKEN` is read from `Deno.env`, not hardcoded.
-6. Manual test description (or supabase CLI local test) showing summary
-   returned from CVF execute path.
+6. Manual test description, mock fetch test, or supabase CLI local test showing
+   summary returned from CVF execute path.
 
 ## Review Gate
 
@@ -169,8 +176,9 @@ evidence (items 3 + 4 above).
 ## Closure Checklist
 
 - [ ] All acceptance criteria verified with evidence
-- [ ] Completion review filed in CVF `docs/reviews/`
-- [ ] GC-020 handoff HEAD SHA updated after commit
+- [ ] Completion review filed by Orchestrator/Codex in CVF `docs/reviews/`
+  after Maika implementation is complete
+- [ ] GC-020 handoff HEAD SHA updated by Orchestrator/Codex after commit
 
 ## Return-To-Orchestrator Conditions
 

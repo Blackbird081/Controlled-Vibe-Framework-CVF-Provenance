@@ -1,4 +1,6 @@
 import { createHmac } from "node:crypto";
+import { appendFileSync, existsSync, mkdirSync } from "node:fs";
+import { dirname } from "node:path";
 import { CLIArgs, CLIOutput } from "./types";
 
 export type FetchLike = (url: string, init: {
@@ -121,6 +123,16 @@ export async function executeGovernedTemplateCommand(
   const headers = buildServiceHeaders(token, body);
   headers["x-cvf-cli-requested-role"] = payload.requestedRole;
 
+  if (args.flags["dry-run"] === true) {
+    const output = buildDryRunOutput(payload, headers);
+    return {
+      success: true,
+      message: JSON.stringify(output, null, isVerbose(args) ? 2 : 0),
+      data: output,
+      exitCode: 0,
+    };
+  }
+
   let responseText = "";
   let responseJson: Record<string, unknown> = {};
   try {
@@ -154,6 +166,9 @@ export async function executeGovernedTemplateCommand(
   }
 
   const receipt = buildCliReceipt(payload, responseJson);
+  if (args.flags.receipt === true || typeof args.flags.receipt === "string") {
+    appendExecuteReceipt(receipt, typeof args.flags.receipt === "string" ? args.flags.receipt : "docs/evidence/cvf-execute-receipts.jsonl");
+  }
   return {
     success: true,
     message: JSON.stringify(receipt, null, isVerbose(args) ? 2 : 0),
@@ -162,17 +177,21 @@ export async function executeGovernedTemplateCommand(
   };
 }
 
+export function buildDryRunOutput(payload: ExecuteRequestPayload, headers: Record<string, string>): Record<string, unknown> {
+  const safeHeaders = { ...headers };
+  delete safeHeaders["x-cvf-service-token"];
+  delete safeHeaders["x-cvf-service-signature"];
+  return { dryRun: true, templateId: payload.templateId, requestedRole: payload.requestedRole, endpoint: "[not sent]", payloadShape: Object.keys(payload), headerKeys: Object.keys(safeHeaders) };
+}
+
+export function appendExecuteReceipt(receipt: Record<string, unknown>, receiptPath: string): void {
+  const dir = dirname(receiptPath);
+  if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
+  appendFileSync(receiptPath, JSON.stringify({ timestamp: new Date().toISOString().replace(/\.\d{3}Z$/, "Z"), templateId: receipt.templateId, requestedRole: receipt.requestedRole, workflowId: receipt.workflowId ?? null, receiptBinding: receipt.receiptBinding ?? null }) + "\n", "utf8");
+}
+
 export function buildCliReceipt(payload: ExecuteRequestPayload, responseJson: Record<string, unknown>): Record<string, unknown> {
-  return {
-    templateId: payload.templateId,
-    requestedRole: payload.requestedRole,
-    governanceEvidenceReceipt: responseJson.governanceEvidenceReceipt,
-    workflowId: responseJson.workflowId,
-    stepTraces: Array.isArray(responseJson.stepTraces) ? responseJson.stepTraces : [],
-    receiptBinding: responseJson.receiptBinding,
-    rolePermission: responseJson.rolePermission,
-    providerRouting: responseJson.providerRouting,
-  };
+  return { templateId: payload.templateId, requestedRole: payload.requestedRole, governanceEvidenceReceipt: responseJson.governanceEvidenceReceipt, workflowId: responseJson.workflowId, stepTraces: Array.isArray(responseJson.stepTraces) ? responseJson.stepTraces : [], receiptBinding: responseJson.receiptBinding, rolePermission: responseJson.rolePermission, providerRouting: responseJson.providerRouting };
 }
 
 function stringFlag(args: CLIArgs, name: string): string | undefined {

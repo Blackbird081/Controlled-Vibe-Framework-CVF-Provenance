@@ -30,6 +30,8 @@ describe('audit-memory-receipt', () => {
             tier: 'session',
             contractVersion: 'phaseD.memoryContinuity.v1',
             ownerRole: 'OPERATOR',
+            writesRequireReceipt: true,
+            privacyFilters: ['scope_minimization', 'pii_redaction'],
             reinjectionPolicy: {
                 tier: 'session',
                 privacyFilter: 'pii_redaction',
@@ -44,5 +46,29 @@ describe('audit-memory-receipt', () => {
             },
         });
         expect(auditMemoryReceipt.receipt.memoryIds).toHaveLength(1);
+    });
+
+    it('session ownerRole is OPERATOR', () => {
+        const result = buildAuditMemoryReceipt({
+            governanceReceiptId: 'gr-001',
+            actorId: 'actor-001',
+            actorRole: 'OPERATOR',
+        });
+
+        expect(result.ownerRole).toBe('OPERATOR');
+    });
+
+    it('writesRequireReceipt is true for session tier', () => {
+        const result = buildAuditMemoryReceipt({
+            governanceReceiptId: 'gr-002',
+            actorId: 'actor-002',
+            actorRole: 'SERVICE_AGENT',
+        });
+
+        // canReinject remains hardcoded false in the capture call; policy
+        // reinjectionAllowed stays metadata and is not used as a write gate.
+        expect(result.writesRequireReceipt).toBe(true);
+        expect(Array.isArray(result.privacyFilters)).toBe(true);
+        expect(result.privacyFilters).toContain('pii_redaction');
     });
 });

@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: OPEN
+Status: CLOSED
 
 GC-018 required: Yes — new enforcement surface in CVF_MODEL_GATEWAY.
 GC-018 path: `docs/baselines/CVF_GC018_D2_VISION_CONTRACT_2026-05-19.md`

@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: OPEN
+Status: CLOSED
 
 GC-018 required: No — hardening delta of existing `cvf execute`; R0 scope.
 

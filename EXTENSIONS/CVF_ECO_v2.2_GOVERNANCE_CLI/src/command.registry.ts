@@ -113,12 +113,12 @@ export class CommandRegistry {
     this.register({
       name: "execute",
       description: "Execute a governed CVF template through the web execute route",
-      usage: "cvf execute --template <id> --role <role> [--input <json>] [--endpoint <url>] [--verbose]",
+      usage: "cvf execute --template <id> --role <role> [--input <json>] [--endpoint <url>] [--dry-run] [--receipt] [--verbose]",
       execute: (args) => {
         if (args.flags.help === true || args.flags.h === true) {
           return {
             success: true,
-            message: "execute: Execute a governed CVF template through the web execute route\nUsage: cvf execute --template <id> --role <role> [--input <json>] [--endpoint <url>] [--verbose]",
+            message: "execute: Execute a governed CVF template through the web execute route\nUsage: cvf execute --template <id> --role <role> [--input <json>] [--endpoint <url>] [--dry-run] [--receipt] [--verbose]",
             exitCode: 0,
           };
         }

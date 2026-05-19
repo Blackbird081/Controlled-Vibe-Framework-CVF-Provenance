@@ -117,6 +117,16 @@ export {
 } from "./stream-contract";
 
 export type {
+  VisionCapableProvider,
+  VisionContract,
+  VisionRequest,
+} from "./vision-contract";
+export {
+  isVisionContract,
+  VISION_CONTRACT_REQUIRED_FIELDS,
+} from "./vision-contract";
+
+export type {
   CredentialMetadata,
   CredentialReference,
 } from "./credential-boundary";
