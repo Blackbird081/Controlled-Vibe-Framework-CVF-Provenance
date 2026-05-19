@@ -289,6 +289,7 @@ describe('/api/execute', () => {
             memoryIds: data.auditMemoryReceipt.receipt.memoryIds,
             memoryTier: 'session',
             memoryContractVersion: 'phaseD.memoryContinuity.v1',
+            actor_role_gate_result: 'permitted',
         });
         expect(executeAIMock).toHaveBeenCalledTimes(1);
         expect(executeAIMock.mock.calls[0][2]).not.toContain('GOVERNANCE_AUDIT_MEMORY_RECEIPT');

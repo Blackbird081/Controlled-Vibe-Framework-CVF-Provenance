@@ -86,6 +86,6 @@
     "blocked_work_classes",
     "next_allowed_move"
   ],
-  "nextAllowedMove": "Lane-D provider method parity, Lane-E benchmark reorientation, and Lane-F noncoder UX have been implemented with completion packets. Active handoff advanced to AGENT_HANDOFF_V10_2026-05-19.md because V9 approached the file-size cap. Next allowed implementation lane is Lane-G runtime actor enforcement, beginning only after filing its fresh GC-018. Each lane remains scoped — see laneStopLifts for boundary per lane.",
+  "nextAllowedMove": "Lane-D provider method parity, Lane-E benchmark reorientation, Lane-F noncoder UX, and Lane-G runtime actor enforcement have been implemented with completion packets. Active handoff is AGENT_HANDOFF_V10_2026-05-19.md. Next allowed move is final guard-chain verification and reviewer/operator decision on remaining skill corpus/template mapping blockers; do not open new implementation scope without a fresh work order or GC-018 where required.",
   "lastUpdated": "2026-05-19"
 }

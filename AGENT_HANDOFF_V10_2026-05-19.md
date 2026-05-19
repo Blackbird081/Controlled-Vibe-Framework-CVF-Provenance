@@ -2,11 +2,16 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — D/E/F lane continuation in progress; Lane G next.
+Status: ACTIVE — D/E/F/G lane continuation implemented; final verification in progress.
 
 Remote tracking branch: `origin/main`
 
 Provenance continuity base for this handoff: `e91b41fd`.
+
+Provenance HEAD before Lane G implementation:
+`ae492d7dcd9a7b48948521a5160ee7668fa8fa4f`.
+
+Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
 ## Purpose
 
@@ -49,8 +54,9 @@ unless the operator or a new work order explicitly includes them.
 
 ## Latest Work / Changes
 
-Latest completed change: Lane F added `OutcomeQuickActions` to the cvf-web
-home page and closed with targeted unit/build/lint evidence.
+Latest completed change: Lane G added `allowedActorRoles` enforcement to
+`/api/execute` for the three governed pack policies and closed with targeted
+unit, route, build, lint, and isolated live retrieval evidence.
 
 Latest process change: V10 became the active handoff because V9 approached the
 governed active-markdown file-size cap. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
@@ -76,6 +82,39 @@ Current selected lanes:
 - Lane E: benchmark reorientation
 - Lane F: noncoder UX
 - Lane G: runtime actor enforcement
+
+## Lane G Runtime Actor Enforcement
+
+Status: CLOSED_WITH_INHERITED_SKILL_MAPPING_BLOCKERS.
+
+GC-018:
+
+- `docs/baselines/CVF_GC018_LANE_G_RUNTIME_ACTOR_ENFORCEMENT_2026-05-19.md`
+
+Completion:
+
+- `docs/reviews/CVF_LANE_G_RUNTIME_ACTOR_ENFORCEMENT_COMPLETION_2026-05-19.md`
+
+Key implementation:
+
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-role-resolver.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governed-packs/*/execution.policy.json`
+
+Source-fidelity note: `route.ts` was 1001 lines before Lane G and remains 1001
+lines after Lane G. JSON policy roles are narrowed through a known-role filter
+before being treated as `CVFRole` values.
+
+Verification:
+
+- cvf-web focused resolver/route tests: PASS, 2 files / 41 tests.
+- cvf-web focused guard/runtime/resolver/route tests: PASS, 4 files / 116 tests.
+- cvf-web `npm run build`: PASS.
+- cvf-web `npm run lint`: PASS.
+- cvf-web isolated retrieval live test: PASS, 1 file / 4 tests.
+- cvf-web full `npm run test:run`: FAIL remains due skill corpus/template
+  mapping failures outside Lane G; one full-run live retrieval failure was
+  isolated and passed immediately afterward.
 
 ## Lane D Provider Method Parity
 
@@ -176,24 +215,16 @@ Verification:
 
 ## Lane G Next Allowed Move
 
-Next allowed implementation lane: Lane G runtime actor enforcement.
+Next allowed move: final guard-chain verification and then operator/reviewer
+decision on the remaining skill corpus/template mapping blockers.
 
 Before implementation:
 
-- file `docs/baselines/CVF_GC018_LANE_G_RUNTIME_ACTOR_ENFORCEMENT_2026-05-19.md`;
-- keep `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts`
-  at or below its 1001-line resolved tombstone cap;
-- add `validateActorRoleGate()` only in
-  `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-role-resolver.ts`;
-- add `allowedActorRoles` only to the three governed pack policy files;
-- do not change `CVFRole`, auth, RBAC, or permission profile logic.
-
-Expected inherited blocker to fix in or near Lane G:
+Already fixed adjacent to Lane G:
 
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/guard-runtime-adapter.test.ts`
-  still expects 8 `RESTRICTED_ACTIONS` roles even though `SERVICE_AGENT` is now
-  present. If addressed, record whether the fix is in Lane G scope or a
-  separate test-expectation cleanup.
+  now expects 9 `RESTRICTED_ACTIONS` roles and explicitly includes
+  `SERVICE_AGENT`.
 
 Not in Lane G scope unless a new work order authorizes it:
 

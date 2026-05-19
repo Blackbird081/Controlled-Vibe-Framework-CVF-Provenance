@@ -1,7 +1,10 @@
 import { describe, expect, it } from 'vitest';
 import {
+  evaluateExecutionActorRoleGate,
   resolveExecutionCVFRole,
+  resolveExecutionAllowedActorRoles,
   resolveExecutionOutputClass,
+  validateActorRoleGate,
 } from './execute-role-resolver';
 
 describe('execute role resolver', () => {
@@ -54,6 +57,36 @@ describe('execute role resolver', () => {
     expect(resolveExecutionOutputClass('unknown', 'development', 'code')).toEqual({
       outputClass: 'code_patch',
       source: 'default',
+    });
+  });
+
+  it('validates allowed actor roles with permitted, rejected, and empty-list outcomes', () => {
+    expect(validateActorRoleGate('BUILDER', ['OPERATOR', 'BUILDER'])).toEqual({ permitted: true });
+    expect(validateActorRoleGate('OBSERVER', ['OPERATOR', 'BUILDER'])).toEqual({ permitted: false });
+    expect(validateActorRoleGate('BUILDER', [])).toEqual({ permitted: false });
+  });
+
+  it('reads governed pack actor-role policy and excludes OBSERVER by default', () => {
+    expect(resolveExecutionAllowedActorRoles('documentation')).toEqual([
+      'OPERATOR',
+      'BUILDER',
+      'REVIEWER',
+      'SERVICE_AGENT',
+    ]);
+    expect(evaluateExecutionActorRoleGate('documentation', 'OBSERVER')).toMatchObject({
+      permitted: false,
+      result: 'rejected',
+    });
+    expect(evaluateExecutionActorRoleGate('documentation', 'SERVICE_AGENT')).toMatchObject({
+      permitted: true,
+      result: 'permitted',
+    });
+  });
+
+  it('does not apply actor-role policy to templates without governed pack policy', () => {
+    expect(evaluateExecutionActorRoleGate('unknown_template', 'OBSERVER')).toEqual({
+      permitted: true,
+      result: 'not_applicable',
     });
   });
 });

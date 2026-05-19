@@ -2,6 +2,7 @@
   "schemaVersion": "2026-05-19",
   "templateId": "strategy_analysis",
   "requiredRole": "BUILDER",
+  "allowedActorRoles": ["OPERATOR", "BUILDER", "REVIEWER", "SERVICE_AGENT"],
   "minimumPermission": "output.strategy_analysis",
   "providerLane": "certified",
   "dlpRequired": true,

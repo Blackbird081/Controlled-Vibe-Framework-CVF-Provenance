@@ -2,7 +2,8 @@
 
 Memory class: POINTER_RECORD
 
-Status: OPEN — awaiting Codex GC-018 filing before implementation begins.
+Status: CLOSED_WITH_INHERITED_SKILL_MAPPING_BLOCKERS — Codex implemented the
+bounded actor-role gate and filed completion evidence on 2026-05-19.
 Prerequisite: Lane F must be closed before Lane G begins.
 
 ## Purpose

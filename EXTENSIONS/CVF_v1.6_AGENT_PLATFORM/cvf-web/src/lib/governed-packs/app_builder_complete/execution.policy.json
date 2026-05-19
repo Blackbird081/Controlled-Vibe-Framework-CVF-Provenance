@@ -2,6 +2,7 @@
   "schemaVersion": "2026-05-19",
   "templateId": "app_builder_complete",
   "requiredRole": "BUILDER",
+  "allowedActorRoles": ["OPERATOR", "BUILDER", "REVIEWER", "SERVICE_AGENT"],
   "minimumPermission": "output.product_brief",
   "providerLane": "certified",
   "dlpRequired": true,

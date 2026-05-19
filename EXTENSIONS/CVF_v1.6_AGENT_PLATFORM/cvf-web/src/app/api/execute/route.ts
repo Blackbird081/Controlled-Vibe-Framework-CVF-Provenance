@@ -35,7 +35,7 @@ import {
     buildRoleOutputDeniedResponse,
     buildRolePermissionDeniedResponse,
 } from '@/lib/execute-role-permission-gate';
-import { resolveExecutionCVFRole, resolveExecutionOutputClass } from '@/lib/execute-role-resolver';
+import { evaluateExecutionActorRoleGate, resolveExecutionCVFRole, resolveExecutionOutputClass } from '@/lib/execute-role-resolver';
 import {
     buildOutputBypassGuardResult,
     checkRoleOutputPermission,
@@ -335,7 +335,6 @@ export async function POST(request: NextRequest) {
         const executionTemplateId = template?.id ?? body.templateId;
         const resolvedExecutionRole = resolveExecutionCVFRole(session, isServiceAllowed);
         const resolvedOutputClass = resolveExecutionOutputClass(executionTemplateId, template?.category, mode);
-
         if (!resolvedExecutionRole.allowed || !resolvedExecutionRole.permissionRole) {
             return buildRolePermissionDeniedResponse({
                 session,
@@ -346,7 +345,8 @@ export async function POST(request: NextRequest) {
                 resolvedOutputClass,
             });
         }
-
+        const actorRoleGate = evaluateExecutionActorRoleGate(executionTemplateId, resolvedExecutionRole.role);
+        if (!actorRoleGate.permitted) { await appendAuditEvent({ eventType: 'ACTOR_ROLE_GATE_REJECTED', actorId: session?.userId ?? (isServiceAllowed ? 'service-account' : 'unknown-actor'), actorRole: resolvedExecutionRole.role ?? 'unknown', targetResource: body.templateName || body.templateId || 'unknown-template', action: 'BLOCK_EXECUTION_ACTOR_ROLE', riskLevel: 'R1', phase: 'PHASE C', outcome: 'BLOCKED', payload: withSessionAuditPayload(session, { actor_role_gate_result: 'rejected', allowedActorRoles: actorRoleGate.allowedActorRoles, templateId: executionTemplateId }) }); return NextResponse.json({ error: 'actor_role_not_permitted' }, { status: 403 }); }
         const rolePermission = checkRoleOutputPermission(
             resolvedExecutionRole.permissionRole,
             resolvedOutputClass.outputClass,
@@ -941,7 +941,7 @@ export async function POST(request: NextRequest) {
             riskLevel: body.cvfRiskLevel ?? enforcement.riskGate?.riskLevel,
             phase: body.cvfPhase,
         });
-        await appendAuditEvent({ ...auditEventPayload, payload: withSessionAuditPayload(session, auditEventPayload.payload) });
+        await appendAuditEvent({ ...auditEventPayload, payload: withSessionAuditPayload(session, { ...auditEventPayload.payload, actor_role_gate_result: actorRoleGate.result }) });
 
         return NextResponse.json({
             ...aiResult,

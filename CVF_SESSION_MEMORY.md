@@ -278,6 +278,35 @@ Active handoff advanced from `AGENT_HANDOFF_V9_2026-05-18.md` to
 `AGENT_HANDOFF_V10_2026-05-19.md` because V9 approached the governed
 active-markdown file-size cap.
 
+## Lane G Runtime Actor Enforcement Update — 2026-05-19
+
+Lane G added the bounded `allowedActorRoles` execute-route gate for the three
+governed pack policies.
+
+New/modified implementation paths:
+
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-role-resolver.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governed-packs/*/execution.policy.json`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-role-resolver.test.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.test.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/guard-runtime-adapter.test.ts`
+
+GC-018 and closure packet:
+
+- `docs/baselines/CVF_GC018_LANE_G_RUNTIME_ACTOR_ENFORCEMENT_2026-05-19.md`
+- `docs/reviews/CVF_LANE_G_RUNTIME_ACTOR_ENFORCEMENT_COMPLETION_2026-05-19.md`
+
+Source-fidelity note: route.ts was already exactly 1001 lines, so helper logic
+was placed in `execute-role-resolver.ts` and route line count remains 1001.
+Raw JSON role arrays are filtered against known `CVFRole` values before use.
+
+Evidence: focused route/resolver tests passed (`41/41`), adjacent
+guard-runtime role tests passed (`116/116` across 4 focused files), build
+passed, lint passed, and isolated live retrieval tests passed (`4/4`). Full web
+suite still fails on skill corpus/template mapping dead references; the old
+`SERVICE_AGENT` 8-role expectation is fixed.
+
 ## Claim Boundary
 
 This artifact establishes a governed session-memory front door and machine
