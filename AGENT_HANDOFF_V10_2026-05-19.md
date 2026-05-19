@@ -11,7 +11,7 @@ Provenance continuity base for this handoff: `e91b41fd`.
 Provenance HEAD before Lane G implementation:
 `ae492d7dcd9a7b48948521a5160ee7668fa8fa4f`.
 
-Current HEAD (GC-020): `6ee5e1c0` (C1/C2/C3/C4 work orders dispatched; workflow chain governance ready for second rebuttal)
+Current HEAD (GC-020): `f253db00` (CDH roadmap filed READY_FOR_REBUTTAL; C2/C3/C4 Codex closure committed; C1 CLOSED; all workflow chain guards shipped)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
