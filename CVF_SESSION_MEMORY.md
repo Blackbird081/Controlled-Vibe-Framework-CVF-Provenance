@@ -307,6 +307,42 @@ passed, lint passed, and isolated live retrieval tests passed (`4/4`). Full web
 suite still fails on skill corpus/template mapping dead references; the old
 `SERVICE_AGENT` 8-role expectation is fixed.
 
+## Reviewer Closure — Lane D/E/F/G + Workflow Chain Proposal (2026-05-19)
+
+Reviewer role (Orchestrator): Verified and closed.
+
+Lane D quality: PASS. `StreamContract` interface correctly defines the
+streaming governance surface. `receiptObligation` field carries CVF receipt
+semantics into chunked output. `streamingEnabled: false` in pack policies is
+correct scope discipline.
+
+Lane E quality: PASS with honest baseline. `cvf benchmark governance` CLI
+command wired. Baseline is `baseline_deferred_no_real_audit_log` — Worker
+correctly declined to fabricate evidence from latency data.
+
+Lane F quality: PASS. `OutcomeQuickActions.tsx` (113 lines) is bilingual,
+delegates to existing `handleSelectTemplate()`. Analytics event correctly
+dropped when typed registry rejected it.
+
+Lane G quality: PASS. `allowedActorRoles` gate on `/api/execute`. `KNOWN_CVF_ROLES`
+runtime filter prevents JSON injection. `OBSERVER` and `HUMAN` correctly
+excluded. Route stays at 1001 lines. Adjacent SERVICE_AGENT role-count fix
+is accurate scope restoration.
+
+Workflow chain proposal: AWAITING_REBUTTAL. Worker (Codex) did not touch
+the proposal file — correct behavior. Proposal remains at `ae492d7d` for
+Reviewer/Operator rebuttal.
+
+Open blockers carried forward:
+
+1. `skill-corpus-governance.test.ts` dead references — needs dedicated work order.
+2. `check_template_skill_standard_guard_compat.py` NameError — tech debt.
+3. GC-024 advisory — public catalog needs D/E/F/G capabilities before next sync.
+4. `system_reconvergence_stop` posture still active — Operator must lift.
+
+Active handoff for next agent: `AGENT_HANDOFF_V10_2026-05-19.md`
+Latest HEAD at closure: `d7d844b5`
+
 ## Claim Boundary
 
 This artifact establishes a governed session-memory front door and machine

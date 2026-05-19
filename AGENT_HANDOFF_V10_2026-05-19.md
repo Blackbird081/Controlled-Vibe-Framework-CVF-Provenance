@@ -230,6 +230,114 @@ Not in Lane G scope unless a new work order authorizes it:
 
 - skill corpus/template dead-reference repair.
 
+## Reviewer Quality Assessment — Lane D/E/F/G (2026-05-19)
+
+Reviewed by: Orchestrator role (Claude Opus 4.7)
+Review date: 2026-05-19
+Worker commits reviewed: `f1d6fe7e` (D), `e91b41fd` (E), `879db70b` (F), `d7d844b5` (G)
+
+### Lane D — Provider Method Parity (`f1d6fe7e`)
+
+Quality: PASS.
+
+`EXTENSIONS/CVF_MODEL_GATEWAY/src/stream-contract.ts` defines `StreamRequest`,
+`StreamContract`, `StreamCapableProvider`, and `isStreamContract()` guard — 35
+clean lines. The interface is deliberately minimal: `chunk`, `role`, `done`,
+and optional `receiptObligation`. This correctly resolves the gap recorded in
+`CVF_ADJUSTMENT1_INVENTORY_PROBLEM_D_PROVIDER_PARITY_2026-05-19.md` (no
+`StreamContract` interface). The `streamingEnabled: false` policy field in the
+three governed packs is the right source-fidelity choice — it declares the
+contract without pretending live streaming is enabled. CLI `--stream` payload
+support is a correctly bounded scope extension; no provider rewrite occurred.
+
+Finding: the `receiptObligation` field name in `StreamContract` correctly
+carries CVF governance semantics into the streaming interface — a receipt
+obligation is emitted even for chunked output. No concern.
+
+### Lane E — Benchmark Reorientation (`e91b41fd`)
+
+Quality: PASS with honest baseline.
+
+`governance-reliability-metrics.ts` (94 lines) defines four metrics:
+`receiptIntegrityRate`, `policyDecisionRate`, `stepTraceCompletionRate`,
+`auditEventCaptureRate`. All are pure functions over `AuditEvent[]`. The
+`cvf benchmark governance` CLI command is correctly wired through the command
+registry. The baseline is honestly marked `baseline_deferred_no_real_audit_log`
+— the Worker correctly declined to fabricate evidence from latency JSONL data.
+
+Finding: `auditEventCaptureRate` uses Set union over both
+`executionRequests` and `executionsWithAuditEvents` for the denominator when
+no `execution_requested` events exist — this is a defensively honest fallback,
+not a hidden inflator. Acceptable.
+
+### Lane F — Noncoder UX (`879db70b`)
+
+Quality: PASS.
+
+`OutcomeQuickActions.tsx` (113 lines, under GC-023 threshold) is clean React.
+Three bilingual action buttons use existing template IDs only; no new templates
+claimed. The `lang: 'vi' | 'en'` prop pattern matches the landing page
+convention from CLAUDE.md. Home page wiring delegates to existing
+`handleSelectTemplate()` — zero new logic in the page. Build pass and lint pass
+confirm no hidden type or import issues. The proposed analytics event was
+correctly dropped when the typed registry rejected it.
+
+### Lane G — Runtime Actor Enforcement (`d7d844b5`)
+
+Quality: PASS.
+
+`execute-role-resolver.ts` now holds `resolveExecutionAllowedActorRoles()`,
+`validateActorRoleGate()`, and `evaluateExecutionActorRoleGate()`. The
+`KNOWN_CVF_ROLES` filter before treating JSON `string[]` as `CVFRole[]` is
+correct defensive narrowing — it prevents a malformed JSON policy file from
+injecting unknown role strings into the gate. The `RBAC_TO_CVF_ROLE` map
+(`owner/admin → OPERATOR`, `developer → BUILDER`, etc.) correctly bridges the
+NextAuth RBAC layer to the canonical CVF role taxonomy without changing either.
+Route line count constraint (1001 lines cap) was respected.
+
+Structural note: the three governed pack policies now carry
+`allowedActorRoles: ["OPERATOR","BUILDER","REVIEWER","SERVICE_AGENT"]`.
+`OBSERVER` and `HUMAN` are correctly excluded — these are read-only/non-agent
+roles that should not be initiating governed pack execution.
+
+Adjacent correction: the `guard-runtime-adapter.test.ts` fix from 8 → 9
+`RESTRICTED_ACTIONS` roles (adding `SERVICE_AGENT`) is correctly scoped — it
+restores test accuracy to reflect an already-shipped role, not a new one.
+
+### Workflow Chain Proposal (`ae492d7d`)
+
+Status: AWAITING_REBUTTAL — not modified by Worker commits. Correct.
+
+The Worker (Codex) did not touch
+`docs/roadmaps/CVF_WORKFLOW_CHAIN_GOVERNANCE_PROPOSAL_2026-05-19.md`. This
+was the correct behavior: the proposal was filed for Reviewer/Operator
+rebuttal before any implementation. The Worker processed only authorized work
+orders (Lane D/E/F/G). No out-of-scope action occurred.
+
+Next allowed move for proposal: Operator or Reviewer rebuttal → then GC-018
+for each candidate guard. Candidate 1 (harden layer enforcement in existing
+guard) is R0 and may proceed without GC-018 once the rebuttal is accepted.
+Candidates 2/3/4 each require a fresh GC-018.
+
+### Open Blockers (Inherited)
+
+1. **Full web suite not clean** — `skill-corpus-governance.test.ts` still
+   reports dead template references. Outside all D/E/F/G lane scopes. Requires
+   a dedicated work order before full suite PASS can be claimed.
+
+2. **`check_template_skill_standard_guard_compat.py` NameError** —
+   `HANDOFF_PATH` is undefined when run standalone. Pre-existing bug. Not
+   blocked by any current lane. Recorded as tech debt.
+
+3. **GC-024 advisory** — Lane D/E/F/G add new capabilities (StreamContract,
+   governance benchmark CLI, OutcomeQuickActions, actor-role gate) that should
+   be reflected in the public catalog before the next public-sync push.
+   Boundary maintained: public catalog update requires a governed sync commit,
+   not a direct edit.
+
+4. **`system_reconvergence_stop` posture** — still active. Only Operator can
+   lift. No new reconvergence work is authorized by this closure.
+
 ## Claim Boundary
 
 This handoff is continuity only. It does not claim live release readiness,
