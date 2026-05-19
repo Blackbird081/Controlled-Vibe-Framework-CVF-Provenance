@@ -28,6 +28,7 @@
     { "path": ".markdownlintrc", "exposureClass": "INTERNAL_ONLY" },
     { "path": "AGENTS.md", "exposureClass": "PUBLIC_DOCS_ONLY" },
     { "path": "AGENT_HANDOFF_V9_2026-05-18.md", "exposureClass": "INTERNAL_ONLY" },
+    { "path": "AGENT_HANDOFF_V10_2026-05-19.md", "exposureClass": "INTERNAL_ONLY" },
     { "path": "AGENT_PLATFORM_PROGRESS_2026-02-06.md", "exposureClass": "INTERNAL_ONLY" },
     { "path": "ARCHITECTURE.md", "exposureClass": "PUBLIC_DOCS_ONLY" },
     { "path": "CHANGELOG.md", "exposureClass": "PUBLIC_DOCS_ONLY" },

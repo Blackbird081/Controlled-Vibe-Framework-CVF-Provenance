@@ -15,7 +15,7 @@ Provenance continuity base for this handoff: `e91b41fd`.
 Provenance HEAD before Lane G implementation:
 `ae492d7dcd9a7b48948521a5160ee7668fa8fa4f`.
 
-Current HEAD (GC-020): `d258d0d2` (chore(guard-registry): register 3 unregistered guards + GC-020 sync to dfdb862b)
+Current HEAD (GC-020): `1521e844` (chore(gitignore): ignore .pytest_cache + __pycache__ + GC-020 sync)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
