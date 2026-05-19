@@ -85,6 +85,6 @@
     "blocked_work_classes",
     "next_allowed_move"
   ],
-  "nextAllowedMove": "Corrected next lane set is Lane-D, then Lane-E, then Lane-F, then Lane-G. Begin with Lane-D provider method parity only after filing its fresh GC-018. Each lane is scoped — see laneStopLifts for boundary per lane.",
+  "nextAllowedMove": "Lane-D provider method parity has been implemented as contract-and-flag work pending/after commit-level review. Next allowed implementation lane is Lane-E benchmark reorientation, beginning only after filing its fresh GC-018. Each lane remains scoped — see laneStopLifts for boundary per lane.",
   "lastUpdated": "2026-05-19"
 }

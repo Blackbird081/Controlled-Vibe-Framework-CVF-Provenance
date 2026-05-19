@@ -20,6 +20,7 @@ export interface ExecuteRequestPayload {
   model?: string;
   mode?: string;
   requestedRole: string;
+  stream?: boolean;
 }
 
 export function buildExecuteUrl(endpoint: string): string {
@@ -70,6 +71,7 @@ export function buildExecutePayload(args: CLIArgs): ExecuteRequestPayload {
     model: stringFlag(args, "model"),
     mode: stringFlag(args, "mode") || "simple",
     requestedRole,
+    stream: args.flags.stream === true ? true : undefined,
   };
 }
 

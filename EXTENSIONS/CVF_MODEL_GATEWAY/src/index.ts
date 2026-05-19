@@ -107,6 +107,16 @@ export {
 } from "./provider-output-contract";
 
 export type {
+  StreamCapableProvider,
+  StreamContract,
+  StreamRequest,
+} from "./stream-contract";
+export {
+  isStreamContract,
+  STREAM_CONTRACT_REQUIRED_FIELDS,
+} from "./stream-contract";
+
+export type {
   CredentialMetadata,
   CredentialReference,
 } from "./credential-boundary";

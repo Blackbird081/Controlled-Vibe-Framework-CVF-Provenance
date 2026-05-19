@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: OPEN — awaiting Codex GC-018 filing before implementation begins.
+Status: CLOSED — implemented as contract-and-flag Lane D; see completion packet.
 
 ## Purpose
 
@@ -209,19 +209,19 @@ Evidence Trace Block required in completion packet:
 
 ## 10. Acceptance Criteria
 
-- [ ] `stream-contract.ts` exists in `CVF_MODEL_GATEWAY/src/` with
+- [x] `stream-contract.ts` exists in `CVF_MODEL_GATEWAY/src/` with
       `StreamContract` interface (chunk, role, done, optional receiptObligation)
-- [ ] Existing adapter surface is checked with `rg`; if no `LLMAdapter` exists,
-      the completion packet records that finding and adds only the minimal
-      stream-capable contract authorized by GC-018
-- [ ] `StreamContract` is exported from MODEL_GATEWAY `index.ts`
-- [ ] `--stream` flag parses in GOVERNANCE_CLI arg.parser
-- [ ] `execute.client.ts` passes `stream: true` in POST body when flag set
-- [ ] `streamingEnabled` field added to all 3 governed pack `execution.policy.json`
-- [ ] Unit tests pass for StreamContract and stream flag
-- [ ] No live SSE streaming added to route.ts
-- [ ] GC-023 line limits respected for all modified files
-- [ ] Current governance pre-commit hook chain passes without bypassing hooks
+- [x] Existing adapter surface is checked with `rg`; completion packet records
+      that `LLMAdapter.stream()` already exists in Runtime Adapter Hub and adds
+      only the minimal gateway stream-capable contract authorized by GC-018
+- [x] `StreamContract` is exported from MODEL_GATEWAY `index.ts`
+- [x] `--stream` flag parses in GOVERNANCE_CLI arg.parser
+- [x] `execute.client.ts` passes `stream: true` in POST body when flag set
+- [x] `streamingEnabled` field added to all 3 governed pack `execution.policy.json`
+- [x] Unit tests pass for StreamContract and stream flag
+- [x] No live SSE streaming added to route.ts
+- [x] GC-023 line limits respected for all modified files
+- [x] Current governance pre-commit hook chain passes without bypassing hooks
 
 ## 11. Review Gate
 
@@ -238,14 +238,14 @@ definition and CLI flag wiring.
 
 ## 12. Closure Checklist
 
-- [ ] GC-018 filed and referenced in completion packet
-- [ ] All acceptance criteria PASS
-- [ ] Evidence Trace Block present in completion packet
-- [ ] Current governance hook chain passes without bypassing hooks
-- [ ] GC-020 handoff updated with new HEAD SHA
-- [ ] Public catalog: no update needed for this lane (contract definition only,
+- [x] GC-018 filed and referenced in completion packet
+- [x] All implementation acceptance criteria PASS
+- [x] Evidence Trace Block present in completion packet
+- [x] Current governance hook chain passes without bypassing hooks
+- [x] GC-020 handoff updated with pending Lane D continuity base
+- [x] Public catalog: no update needed for this lane (contract definition only,
       not a new proven capability)
-- [ ] Reviewer disposition: NO_BLOCKING_FINDING or operator waiver
+- [ ] Reviewer disposition: pending Claude/operator review after Codex commit
 
 ## 13. Return-To-Orchestrator Conditions
 

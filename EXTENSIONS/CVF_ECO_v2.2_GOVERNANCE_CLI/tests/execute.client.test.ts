@@ -31,6 +31,20 @@ describe("execute client", () => {
     expect(payload.intent).toContain("app_builder_complete");
   });
 
+  it("passes stream true when --stream is set", () => {
+    const payload = buildExecutePayload({
+      command: "execute",
+      flags: {
+        template: "documentation",
+        role: "BUILDER",
+        stream: true,
+      },
+      positional: [],
+    });
+
+    expect(payload.stream).toBe(true);
+  });
+
   it("adds service-token signature headers without exposing token in output", () => {
     const headers = buildServiceHeaders("secret-token", "{\"x\":1}", 12345);
     expect(headers["x-cvf-service-token"]).toBe("secret-token");
@@ -85,6 +99,44 @@ describe("execute client", () => {
       requestedRole: "BUILDER",
       workflowId: "workflow.product.create_product_brief.v1",
     });
+  });
+
+  it("sends stream true in the execute POST body", async () => {
+    const result = await executeGovernedTemplateCommand(
+      {
+        command: "execute",
+        flags: {
+          template: "documentation",
+          role: "BUILDER",
+          endpoint: "http://localhost:3000",
+          stream: true,
+        },
+        positional: [],
+      },
+      async (_url, init) => {
+        expect(JSON.parse(init.body)).toMatchObject({
+          templateId: "documentation",
+          requestedRole: "BUILDER",
+          stream: true,
+        });
+
+        return {
+          ok: true,
+          status: 200,
+          async text() {
+            return JSON.stringify({
+              success: true,
+              governanceEvidenceReceipt: { receiptId: "receipt-stream-1" },
+              workflowId: "workflow.documentation.generate_sop.v1",
+              stepTraces: [],
+              rolePermission: { allowed: true, role: "BUILDER" },
+            });
+          },
+        };
+      },
+    );
+
+    expect(result.success).toBe(true);
   });
 
   it("supports the async GovernanceCLI runner", async () => {

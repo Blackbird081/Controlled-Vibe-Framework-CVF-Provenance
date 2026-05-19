@@ -7,6 +7,7 @@
   "dlpRequired": true,
   "quotaRequired": true,
   "receiptRequired": true,
+  "streamingEnabled": false,
   "guardPolicyRef": "CVF_GOVERNED_EXECUTE_ROUTE",
   "requiredIntakeFields": [
     "topic",
@@ -27,4 +28,3 @@
   ],
   "claimBoundary": "schema_defined_not_runtime_bound"
 }
-

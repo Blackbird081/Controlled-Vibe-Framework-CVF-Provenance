@@ -121,11 +121,14 @@ Before material governed work, an agent should be able to state:
 
 ## Next Allowed Move
 
-Proceed with corrected Lane D → Lane E → Lane F → Lane G work-order sequence
-only after filing the lane-specific GC-018 for the active lane. Lane D is the
-next allowed implementation lane. Do not broaden absorption, role taxonomy,
-provider semantics, public claims, or live-proof claims outside the lane
-boundaries recorded in `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
+Proceed with corrected Lane D → Lane E → Lane F → Lane G work-order sequence.
+Lane D has filed GC-018 and is implemented as contract-and-flag work only:
+gateway `StreamContract`, CLI `--stream`, and governed-pack
+`streamingEnabled: false`. Lane E is the next allowed implementation lane only
+after Lane D completion is committed and handoff-synced. Do not broaden
+absorption, role taxonomy, provider semantics, public claims, or live-proof
+claims outside the lane boundaries recorded in
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
 ## Enforcement And Verification
 
@@ -199,6 +202,24 @@ gate after the public-sync CI push. The command
 public-sync clone with process-scoped keys loaded from the provenance
 `.env.local` file without printing key values. Result: PASS. Log path:
 `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync\artifacts\live-release-gate\release-gate-20260519-115957.out.log`.
+
+## Lane D Provider Method Parity Update — 2026-05-19
+
+Lane D source-fidelity found the Runtime Adapter Hub already has an optional
+`LLMAdapter.stream()` callback-style method. Because that file is outside Lane D
+write ownership and the method already exists, this lane did not rewrite the
+Runtime Adapter Hub or invent a second broad adapter taxonomy.
+
+Lane D implementation instead added the minimal gateway normalization surface:
+
+- `EXTENSIONS/CVF_MODEL_GATEWAY/src/stream-contract.ts`
+- `EXTENSIONS/CVF_MODEL_GATEWAY/tests/stream-contract.test.ts`
+- CLI `--stream` boolean parsing and execute payload `stream: true`
+- `streamingEnabled: false` in all three governed pack policies
+
+Evidence: model gateway tests passed (`12 files`, `34 tests`), model gateway
+typecheck passed, governance CLI tests passed (`4 files`, `50 tests`), and CLI
+typecheck passed. Route streaming remains explicitly out of scope.
 
 ## Claim Boundary
 

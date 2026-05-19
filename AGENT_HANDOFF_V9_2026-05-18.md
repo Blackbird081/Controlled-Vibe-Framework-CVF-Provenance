@@ -1069,6 +1069,51 @@ make the Agent Orchestrator stop producing prompt-shaped work orders from
 memory. Future orchestrator output should be source-verified before GC-018 or
 implementation begins.
 
+## Lane D Provider Method Parity Completion Trace (2026-05-19)
+
+Provenance continuity base before Lane D implementation: `4229e7f2`.
+
+Operator authorized continuing through the D/E/F/G work orders without waiting
+for further approval. Lane D was executed first per
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`.
+
+GC-018 filed:
+
+- `docs/baselines/CVF_GC018_LANE_D_PROVIDER_METHOD_PARITY_2026-05-19.md`
+
+Completion packet:
+
+- `docs/reviews/CVF_LANE_D_PROVIDER_METHOD_PARITY_COMPLETION_2026-05-19.md`
+
+Implementation paths:
+
+- `EXTENSIONS/CVF_MODEL_GATEWAY/src/stream-contract.ts`
+- `EXTENSIONS/CVF_MODEL_GATEWAY/tests/stream-contract.test.ts`
+- `EXTENSIONS/CVF_MODEL_GATEWAY/src/index.ts`
+- `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/arg.parser.ts`
+- `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/execute.client.ts`
+- `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/tests/arg.parser.test.ts`
+- `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/tests/execute.client.test.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governed-packs/*/execution.policy.json`
+
+Source-fidelity note for Claude/future agents: `LLMAdapter.stream()` already
+exists in
+`EXTENSIONS/CVF_v1.7.3_RUNTIME_ADAPTER_HUB/contracts/llm.adapter.interface.ts`
+with callback-style token handling. Lane D therefore did not rewrite the
+Runtime Adapter Hub. It added a minimal gateway-side
+`StreamCapableProvider.stream(request): AsyncIterable<StreamContract>` contract
+and recorded that boundary in the GC-018 and completion packet.
+
+Verification:
+
+- `npm test` in `EXTENSIONS/CVF_MODEL_GATEWAY`: PASS, 12 files / 34 tests.
+- `npm run check` in `EXTENSIONS/CVF_MODEL_GATEWAY`: PASS.
+- `npm test` in `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI`: PASS, 4 files / 50 tests.
+- `npm run check` in `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI`: PASS.
+
+Boundary: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts`
+was not modified. Lane D does not claim live SSE or provider streaming.
+
 ## Handoff History
 
 | Version | Date | Summary |
