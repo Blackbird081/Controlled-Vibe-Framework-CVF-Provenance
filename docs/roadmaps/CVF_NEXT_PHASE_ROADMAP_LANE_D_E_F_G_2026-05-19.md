@@ -180,14 +180,15 @@ observable from existing audit event output.
 ### Problem (from corrected problem map)
 
 Templates, template marketplace, and W122–W130 noncoder work all exist. Gap:
-the home page UX still requires the user to navigate `templates.ts` categories
-manually. `[Create PRD]`, `[Generate SOP]`, `[Write Marketing Copy]` are not
-promoted as first-class outcome buttons on the home surface.
+the home page UX still requires the user to navigate the canonical
+`src/lib/templates/` directory-backed categories manually. `[Create Product
+Brief]`, `[Generate SOP]`, `[Analyze Strategy]` are not promoted as
+first-class outcome buttons on the home surface.
 
 ### Demand gate
 
 **Selected outcome surface: 3 outcome quick-action buttons on the home page**
-— `Create Product Brief`, `Generate SOP`, `Write Marketing Copy`. Each button
+— `Create Product Brief`, `Generate SOP`, `Analyze Strategy`. Each button
 pre-fills the corresponding governed pack template and immediately enters the
 execution flow without requiring the user to browse categories.
 
@@ -222,15 +223,19 @@ execution flow without requiring the user to browse categories.
 Phase D contracts define `CVFRole`, `resolveExecutionCVFRole()` is wired in
 route.ts. Gap: worker/planner/reviewer/auditor roles are defined in the role
 assignment matrix but not enforced as distinct runtime execution boundaries.
-The execute path resolves a role but does not gate on actor type — a VIEWER
-role could submit an execution if the permission check passed.
+The execute path resolves a role but does not gate on actor type — an
+`OBSERVER` runtime role could submit an execution if the permission check
+passed.
 
 ### Demand gate
 
 **Selected enforcement point: minimum actor role gate in execute route** —
 before dispatching to the AI provider, check that the resolved actor role is
 in the `allowedActorRoles` list from the governing workflow pack's
-`execution.policy.json`. Reject with `403` if the actor role is not allowed.
+  `execution.policy.json`. Reject with `403` if the actor role is not allowed.
+  Use the existing `CVFRole` values already emitted by
+  `resolveExecutionCVFRole()` (`OPERATOR`, `BUILDER`, `REVIEWER`, `OBSERVER`,
+  `SERVICE_AGENT`), not display/RBAC labels such as Owner/Admin/Viewer.
 
 ### Scope
 

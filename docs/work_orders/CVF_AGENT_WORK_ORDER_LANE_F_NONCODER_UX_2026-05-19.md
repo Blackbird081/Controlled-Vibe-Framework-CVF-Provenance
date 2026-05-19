@@ -25,7 +25,7 @@ from Lane B without requiring the user to browse the template list.
 ## 1. Mission
 
 Add 3 outcome quick-action buttons (`Create Product Brief`, `Generate SOP`,
-`Write Marketing Copy`) to the home page above the template browser.
+`Analyze Strategy`) to the home page above the template browser.
 
 Success means: a user landing on the home page sees 3 prominent outcome
 buttons; clicking any button immediately enters the execute flow with the
@@ -58,7 +58,7 @@ Before filing GC-018:
    and `lang` prop usage before writing new component
 2. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governed-packs/` —
    the 3 packs from Lane B; note their `templateId` values
-3. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/templates.ts` —
+3. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/templates/index.ts` —
    confirm `app_builder_complete`, `documentation`, `strategy_analysis`
    template IDs exist and their `fields` definitions
 4. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/` — existing
@@ -124,7 +124,7 @@ docs/reviews/CVF_LANE_F_NONCODER_UX_COMPLETION_2026-05-19.md                    
 Forbidden scope:
 
 ```
-EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/templates.ts   (do not modify template definitions)
+EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/templates/     (do not modify template definitions)
 EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/           (no API route changes)
 EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/   (no new page routes)
 ```
@@ -141,7 +141,8 @@ to import and render it; create GC-018 and completion packet.
 
 2. Identify the 3 templateIds from governed pack `workflow.spec.md` files
    (e.g., `app_builder_complete`, `documentation`, `strategy_analysis`).
-   Confirm these IDs exist in `templates.ts` with `rg -n "id:.*app_builder\|id:.*documentation\|id:.*strategy" src/lib/templates.ts`.
+   Confirm these IDs exist in the canonical templates directory with
+   `rg -n "id:.*app_builder|id:.*documentation|id:.*strategy" src/lib/templates`.
    Stop if: any templateId does not exist — report to reviewer.
 
 3. Create `OutcomeQuickActions.tsx` (<200 lines, GC-023):
@@ -151,7 +152,7 @@ to import and render it; create GC-018 and completion packet.
    - Bilingual labels:
      * `app_builder_complete`: vi "Tạo Product Brief" / en "Create Product Brief"
      * `documentation`: vi "Tạo SOP" / en "Generate SOP"
-     * `strategy_analysis`: vi "Viết Marketing Copy" / en "Write Marketing Copy"
+     * `strategy_analysis`: vi "Phân tích chiến lược" / en "Analyze Strategy"
    - Tailwind styling: consistent with existing home page card style
    - No localStorage, no useEffect for initialisation — static default
 
@@ -202,7 +203,7 @@ Evidence Trace Block required for each claim in completion packet.
 - [ ] Component unit tests pass
 - [ ] No API route or auth changes
 - [ ] GC-023 line limit respected for all modified files
-- [ ] Governance pre-commit hook chain passes
+- [ ] Current governance pre-commit hook chain passes without bypassing hooks
 
 ## 11. Review Gate
 
@@ -220,7 +221,7 @@ Reviewer checks:
 - [ ] GC-018 filed and referenced
 - [ ] All acceptance criteria PASS
 - [ ] Evidence Trace Block present
-- [ ] Governance hook chain passes (all 7 checks)
+- [ ] Current governance hook chain passes without bypassing hooks
 - [ ] GC-020 handoff updated
 - [ ] Public catalog: consider adding "outcome-first home page quick actions"
       as a UI capability row with `defined, unit-tested` status
@@ -231,7 +232,8 @@ Reviewer checks:
 Stop and escalate if:
 
 - `OutcomeQuickActions` already exists
-- Any of the 3 templateIds does not exist in `templates.ts`
+- Any of the 3 templateIds does not exist in the canonical
+  `src/lib/templates/` directory
 - `home/page.tsx` would exceed GC-023 hard threshold after modification
 - Build or lint fails and cannot be fixed within lane scope
 - Any API or auth change is needed to make the buttons work
@@ -242,4 +244,4 @@ Lane F closes with: 3 outcome quick-action buttons rendered on home page,
 wired to correct governed pack templateIds — `defined, unit-tested`
 
 Not claimed: full outcome-first UX redesign, new page route, server-side
-personalization, live execution proof from UI.
+personalization, marketing-copy pack behavior, live execution proof from UI.

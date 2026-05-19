@@ -121,9 +121,11 @@ Before material governed work, an agent should be able to state:
 
 ## Next Allowed Move
 
-Maintain the session-memory front door, active-state registry, and reconvergence
-inventory/owner maps. Do not broaden absorption or runtime semantics until the
-Governance Kernel Freeze decision is accepted or superseded.
+Proceed with corrected Lane D → Lane E → Lane F → Lane G work-order sequence
+only after filing the lane-specific GC-018 for the active lane. Lane D is the
+next allowed implementation lane. Do not broaden absorption, role taxonomy,
+provider semantics, public claims, or live-proof claims outside the lane
+boundaries recorded in `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
 ## Enforcement And Verification
 
@@ -190,6 +192,13 @@ Boundary: no live release gate was run in this public-sync pass, so do not
 claim new live governance behavior from this update. Documentation & Testing
 legacy/provenance-era incompatibilities were not re-triggered by the final
 web-only commit and remain a separate public-sync cleanup lane if needed.
+
+Follow-up live proof on 2026-05-19: operator requested the release-quality live
+gate after the public-sync CI push. The command
+`python scripts/run_cvf_release_gate_bundle.py --json` was run from the
+public-sync clone with process-scoped keys loaded from the provenance
+`.env.local` file without printing key values. Result: PASS. Log path:
+`d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync\artifacts\live-release-gate\release-gate-20260519-115957.out.log`.
 
 ## Claim Boundary
 

@@ -151,9 +151,11 @@ EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/    (no web changes in this lane)
    - test edge: empty log → all rates 0
    - test edge: all receipts null → receiptIntegrityRate = 0
 
-7. Run `cvf benchmark governance` against the Phase E audit log (if available
-   at `CVF_SESSION/` or in the handoff) to get a real baseline. If no live
-   audit log is available, use the synthetic fixture as baseline.
+7. Run `cvf benchmark governance` against the best available real audit JSONL
+   or release-gate evidence log to get the baseline. Synthetic fixtures are
+   allowed for unit tests only. If no real audit log exists, the baseline
+   document must say `baseline_deferred_no_real_audit_log` instead of presenting
+   synthetic data as an operational baseline.
 
 8. File `docs/benchmark/CVF_GOVERNANCE_RELIABILITY_BASELINE_2026-05-19.md`
    recording: metric definitions, computation date, input source, result values.
@@ -178,11 +180,12 @@ Evidence Trace Block required for each claim in completion packet.
 - [ ] `cvf benchmark governance --input <path>` command registered and functional
 - [ ] All 4 metrics return `{ rate, count, total }` shape
 - [ ] Unit tests pass for all 4 metrics including edge cases
-- [ ] Baseline document filed in `docs/benchmark/`
+- [ ] Baseline document filed in `docs/benchmark/` using a real audit/log source,
+      or explicitly marked `baseline_deferred_no_real_audit_log`
 - [ ] No existing QBS-1, W72/W91/W98 benchmark files modified
 - [ ] No live provider call made
 - [ ] GC-023 line limits respected
-- [ ] Governance pre-commit hook chain passes
+- [ ] Current governance pre-commit hook chain passes without bypassing hooks
 
 ## 11. Review Gate
 
@@ -190,7 +193,8 @@ Reviewer: Claude.
 
 Reviewer checks:
 - Metric formulas are correct against the audit event shape
-- Baseline document cites the input source honestly (synthetic fixture or real log)
+- Baseline document cites the input source honestly; synthetic fixtures may
+  prove unit behavior but must not be presented as the first operational baseline
 - No existing benchmark files overwritten
 - All acceptance criteria evidenced
 
@@ -199,7 +203,7 @@ Reviewer checks:
 - [ ] GC-018 filed and referenced
 - [ ] All acceptance criteria PASS
 - [ ] Evidence Trace Block present
-- [ ] Governance hook chain passes (all 7 checks)
+- [ ] Current governance hook chain passes without bypassing hooks
 - [ ] GC-020 handoff updated
 - [ ] Public catalog: consider adding `cvf benchmark governance` to catalog
       capability table with `defined, offline-tested` status — verify path in

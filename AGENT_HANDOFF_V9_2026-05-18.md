@@ -1014,6 +1014,61 @@ Important boundaries for future agents:
   so CI blocks regression from the real public surface instead of remaining
   permanently red against an unattained 90/90/90/80 target.
 
+Follow-up live proof after operator request: the release-quality command
+`python scripts/run_cvf_release_gate_bundle.py --json` was run from the
+public-sync clone with process-scoped live keys loaded from the provenance
+`.env.local` file and no raw key values printed. Result: PASS. Evidence log:
+`d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync\artifacts\live-release-gate\release-gate-20260519-115957.out.log`.
+
+## Lane D/E/F/G Work-Order Correction Trace (2026-05-19)
+
+Provenance continuity base before this correction: `c77ab002`.
+
+Operator asked whether Claude's new roadmap/work orders were good enough for
+the next phase and then authorized direct correction with trace notes. Review
+found the work-order structure was broadly useful but not execution-ready
+because several source facts were not verified.
+
+Corrections applied:
+
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json` now points the active lane set to
+  Lane D → Lane E → Lane F → Lane G. The previous active state still named
+  Lane B/C/H even though those lanes were already delivered, which would have
+  confused any agent following the session front door.
+- `docs/roadmaps/CVF_NEXT_PHASE_ROADMAP_LANE_D_E_F_G_2026-05-19.md` and the
+  Lane F work order no longer map `strategy_analysis` to "Write Marketing
+  Copy." The corrected outcome label is "Analyze Strategy" because no
+  marketing-copy governed pack exists in the selected 3-pack scope.
+- Lane F/G work orders now point to the real canonical template source
+  `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/templates/index.ts` and
+  `src/lib/templates/`, not the nonexistent `src/lib/templates.ts`.
+- Lane G now uses the actual runtime `CVFRole` values emitted by
+  `execute-role-resolver.ts`: `OPERATOR`, `BUILDER`, `REVIEWER`, `OBSERVER`,
+  and `SERVICE_AGENT`. It excludes `OBSERVER` from `allowedActorRoles` and
+  includes `SERVICE_AGENT` so service-token release/governance paths are not
+  accidentally blocked.
+- Lane E now requires a real audit/log source for an operational baseline; a
+  synthetic fixture may prove metric unit behavior but must not be presented as
+  the first operational baseline.
+- Lane D now requires a source-fidelity check before adding `LLMAdapter`
+  wording. If no `LLMAdapter` interface exists, the lane must record that fact
+  and add only a minimal stream-capable contract under its GC-018.
+- Work-order closure checklists no longer hard-code "all 7 checks"; they now
+  require the current governance hook chain without bypassing hooks.
+
+Process hardening added:
+
+- `docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md` now requires
+  a Source-Fidelity Pass before a work order is considered ready.
+- `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md` now includes a
+  dedicated Source-Fidelity Pass section requiring `Test-Path` and `rg` proof
+  for paths, symbols, role values, template IDs, and policy fields.
+
+Why this matters: the goal is not merely to make this batch cleaner, but to
+make the Agent Orchestrator stop producing prompt-shaped work orders from
+memory. Future orchestrator output should be source-verified before GC-018 or
+implementation begins.
+
 ## Handoff History
 
 | Version | Date | Summary |

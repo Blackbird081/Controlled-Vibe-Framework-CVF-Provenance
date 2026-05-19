@@ -24,26 +24,32 @@
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
-  "selectedLanes": ["Lane-B", "Lane-C", "Lane-H"],
-  "laneExecutionOrder": ["Lane-B", "Lane-C", "Lane-H"],
+  "selectedLanes": ["Lane-D", "Lane-E", "Lane-F", "Lane-G"],
+  "laneExecutionOrder": ["Lane-D", "Lane-E", "Lane-F", "Lane-G"],
   "laneStopLifts": {
-    "Lane-B": {
+    "Lane-D": {
       "lifted": true,
-      "scope": "workflow-packaging-docs-schema-only",
-      "gatingCondition": "operator selects templates app_builder_complete + one business + one content",
-      "blockedExpansion": "runtime-semantics — no wiring to live execute path without separate GC-018"
+      "scope": "provider-method-parity-stream-contract-and-cli-flag-only",
+      "gatingCondition": "operator selected remaining D/E/F/G lanes after B/C/H closure; Lane D begins with fresh GC-018",
+      "blockedExpansion": "live SSE route implementation, reasoning, vision, embedding, new providers"
     },
-    "Lane-C": {
+    "Lane-E": {
       "lifted": true,
-      "scope": "execution-gateway-cli-mvp",
-      "gatingCondition": "use-case: developer calls cvf execute from terminal invoking governed execute path",
-      "blockedExpansion": "new auth models, new governance semantics, new provider adapters — existing path only"
+      "scope": "offline-governance-reliability-metrics-and-baseline",
+      "gatingCondition": "Lane D closed with review disposition; Lane E begins with fresh GC-018",
+      "blockedExpansion": "live provider benchmark, hallucination recovery metric, QBS rebuild"
     },
-    "Lane-H": {
+    "Lane-F": {
       "lifted": true,
-      "scope": "memory-runtime-one-flow-only",
-      "gatingCondition": "flow selected: session continuity tracking (governance audit event persistence)",
-      "blockedExpansion": "multi-flow memory, contamination boundary changes, reinjection affecting provider output — each requires own GC-018"
+      "scope": "noncoder-home-outcome-quick-actions-for-existing-governed-packs",
+      "gatingCondition": "Lane E closed with review disposition; Lane F begins with fresh GC-018",
+      "blockedExpansion": "new template categories, new routes, auth or RBAC changes, marketing-copy pack without separate authorization"
+    },
+    "Lane-G": {
+      "lifted": true,
+      "scope": "runtime-actor-gate-through-existing-CVFRole-values-and-governed-pack-policy",
+      "gatingCondition": "Lane F closed with review disposition; Lane G begins with fresh GC-018",
+      "blockedExpansion": "new role taxonomy, planner/worker/auditor job queues, auth model changes, enforcement beyond allowedActorRoles"
     }
   },
   "requiredFirstReads": [
@@ -79,6 +85,6 @@
     "blocked_work_classes",
     "next_allowed_move"
   ],
-  "nextAllowedMove": "Implement Lane-B (workflow packaging) first. Each lane requires its own GC-018 filed before implementation begins. Lane order: B then C then H. Each lane is scoped — see laneStopLifts for boundary per lane.",
+  "nextAllowedMove": "Corrected next lane set is Lane-D, then Lane-E, then Lane-F, then Lane-G. Begin with Lane-D provider method parity only after filing its fresh GC-018. Each lane is scoped — see laneStopLifts for boundary per lane.",
   "lastUpdated": "2026-05-19"
 }

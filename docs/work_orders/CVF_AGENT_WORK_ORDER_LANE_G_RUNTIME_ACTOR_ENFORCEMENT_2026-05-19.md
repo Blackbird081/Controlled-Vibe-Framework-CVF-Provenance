@@ -31,8 +31,9 @@ Add a minimum actor role gate to the execute route: after
 `allowedActorRoles` from the governing pack's `execution.policy.json`. Return
 403 if the role is not permitted.
 
-Success means: a request from a VIEWER role is rejected with 403 when VIEWER
-is not in `allowedActorRoles`; a request from an allowed role passes through;
+Success means: a request from an `OBSERVER` runtime role is rejected with 403
+when `OBSERVER` is not in `allowedActorRoles`; a request from an allowed role
+passes through;
 unit tests for `validateActorRoleGate()` pass; route integration test for the
 403 path passes.
 
@@ -67,7 +68,7 @@ Before filing GC-018:
 3. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governed-packs/` —
    current `execution.policy.json` schema in each of the 3 packs; note
    existing fields before adding `allowedActorRoles`
-4. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/templates.ts` —
+4. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/templates/index.ts` —
    understand how templates reference governed packs to confirm the gate
    applies at the correct layer
 5. `governance/compat/CVF_GOVERNED_FILE_SIZE_EXCEPTION_REGISTRY.json` —
@@ -132,8 +133,8 @@ EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts       (M
 EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governed-packs/app_builder_complete/execution.policy.json  (MODIFY — add allowedActorRoles)
 EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governed-packs/documentation/execution.policy.json         (MODIFY — add allowedActorRoles)
 EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governed-packs/strategy_analysis/execution.policy.json     (MODIFY — add allowedActorRoles)
-EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/execute-role-resolver.test.ts (NEW or MODIFY — gate unit tests)
-EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/execute-route-actor-gate.test.ts (NEW — route integration test for 403)
+EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-role-resolver.test.ts (MODIFY — gate unit tests)
+EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.test.ts (MODIFY — route integration test for 403)
 docs/baselines/CVF_GC018_LANE_G_RUNTIME_ACTOR_ENFORCEMENT_2026-05-19.md        (NEW)
 docs/reviews/CVF_LANE_G_RUNTIME_ACTOR_ENFORCEMENT_COMPLETION_2026-05-19.md     (NEW)
 ```
@@ -164,8 +165,10 @@ Steps are sequential unless marked parallel-safe.
    Stop if: gate already exists — report to reviewer, do not duplicate.
 
 2. Read all 3 governed pack `execution.policy.json` files. Note existing fields.
-   Confirm `CVFRole` type values (Owner, Admin, Developer, Reviewer, Viewer
-   or equivalent enum values) from `execute-role-resolver.ts` or `types.ts`.
+   Confirm `CVFRole` type values from `execute-role-resolver.ts` and
+   `cvf-guard-contract`. Current resolver output values are `OPERATOR`,
+   `BUILDER`, `REVIEWER`, `OBSERVER`, and `SERVICE_AGENT`; do not use display
+   or RBAC labels such as Owner/Admin/Developer/Viewer in `allowedActorRoles`.
    Stop if: `CVFRole` shape is unclear — report to reviewer before writing.
 
 3. Add `validateActorRoleGate()` to `execute-role-resolver.ts`:
@@ -182,9 +185,11 @@ Steps are sequential unless marked parallel-safe.
 
 4. Add `allowedActorRoles` to each of the 3 governed pack `execution.policy.json`:
    ```json
-   "allowedActorRoles": ["Owner", "Admin", "Developer", "Reviewer"]
+   "allowedActorRoles": ["OPERATOR", "BUILDER", "REVIEWER", "SERVICE_AGENT"]
    ```
-   (VIEWER excluded by default — they may read but not execute.)
+   (`OBSERVER` excluded by default — they may read but not execute. Include
+   `SERVICE_AGENT` so protected service-token release and governance lanes are
+   not accidentally broken.)
    Adjust role names to match the exact `CVFRole` string values in the codebase.
 
 5. Wire gate into `route.ts` immediately after `resolveExecutionCVFRole()`:
@@ -206,8 +211,8 @@ Steps are sequential unless marked parallel-safe.
       - non-permitted role returns `{ permitted: false }`
       - empty `allowedActorRoles` array → always `{ permitted: false }`
    b. Route integration test in `execute-route-actor-gate.test.ts`:
-      - mock `resolveExecutionCVFRole()` to return a VIEWER role
-      - mock governed pack policy with `allowedActorRoles` excluding VIEWER
+      - mock or construct session role resolution that returns `OBSERVER`
+      - mock governed pack policy with `allowedActorRoles` excluding `OBSERVER`
       - assert response is 403 with `{ error: 'actor_role_not_permitted' }`
       - assert permitted role receives non-403 response
    Use Vitest + existing test patterns.
@@ -253,7 +258,7 @@ Evidence Trace Block required for each claim in completion packet:
 - [ ] No new page routes or auth system changes
 - [ ] `npm run build` succeeds — no TypeScript errors
 - [ ] `npm run lint` passes — no warnings
-- [ ] Governance pre-commit hook chain passes
+- [ ] Current governance pre-commit hook chain passes without bypassing hooks
 
 ## 11. Review Gate
 
@@ -272,7 +277,7 @@ Reviewer checks:
 - [ ] GC-018 filed and referenced
 - [ ] All acceptance criteria PASS
 - [ ] Evidence Trace Block present
-- [ ] Governance hook chain passes (all 7 checks)
+- [ ] Current governance hook chain passes without bypassing hooks
 - [ ] GC-020 handoff updated
 - [ ] Public catalog: consider adding `allowedActorRoles` actor gate to
       capability table with `defined, unit-tested` status — verify path in

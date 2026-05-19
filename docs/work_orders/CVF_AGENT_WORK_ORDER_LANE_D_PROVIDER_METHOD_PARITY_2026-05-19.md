@@ -72,7 +72,7 @@ Before filing GC-018:
 Anti-duplication grep before writing:
 
 ```powershell
-rg -n "stream|StreamContract|LLMAdapter" EXTENSIONS/CVF_MODEL_GATEWAY/src/
+rg -n "stream|StreamContract|LLMAdapter|ProviderOutput" EXTENSIONS/CVF_MODEL_GATEWAY/src/
 rg -n "stream" EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/
 ```
 
@@ -155,8 +155,12 @@ Steps are sequential unless marked parallel-safe.
    Validation: TypeScript compiles with no errors.
 
 3. Add `stream(request: StreamRequest): AsyncIterable<StreamContract>` stub to
-   `LLMAdapter` interface (or equivalent gateway adapter interface).
-   Output: modified `provider-output-contract.ts` or new `llm-adapter.ts`.
+   the existing `LLMAdapter` export if it exists. If the source-fidelity pass
+   confirms no `LLMAdapter` interface currently exists, do not invent a broad
+   provider adapter taxonomy; instead add the smallest provider-method parity
+   type beside `provider-output-contract.ts` and record the exact source
+   finding in the GC-018/completion packet.
+   Output: modified existing adapter interface or a new minimal contract file.
    Stop if: would exceed GC-023 line limit for the file.
 
 4. Export `StreamContract` from `CVF_MODEL_GATEWAY/src/index.ts`.
@@ -207,7 +211,9 @@ Evidence Trace Block required in completion packet:
 
 - [ ] `stream-contract.ts` exists in `CVF_MODEL_GATEWAY/src/` with
       `StreamContract` interface (chunk, role, done, optional receiptObligation)
-- [ ] `LLMAdapter` (or equivalent) declares `stream()` method stub
+- [ ] Existing adapter surface is checked with `rg`; if no `LLMAdapter` exists,
+      the completion packet records that finding and adds only the minimal
+      stream-capable contract authorized by GC-018
 - [ ] `StreamContract` is exported from MODEL_GATEWAY `index.ts`
 - [ ] `--stream` flag parses in GOVERNANCE_CLI arg.parser
 - [ ] `execute.client.ts` passes `stream: true` in POST body when flag set
@@ -215,7 +221,7 @@ Evidence Trace Block required in completion packet:
 - [ ] Unit tests pass for StreamContract and stream flag
 - [ ] No live SSE streaming added to route.ts
 - [ ] GC-023 line limits respected for all modified files
-- [ ] Governance pre-commit hook chain passes
+- [ ] Current governance pre-commit hook chain passes without bypassing hooks
 
 ## 11. Review Gate
 
@@ -235,7 +241,7 @@ definition and CLI flag wiring.
 - [ ] GC-018 filed and referenced in completion packet
 - [ ] All acceptance criteria PASS
 - [ ] Evidence Trace Block present in completion packet
-- [ ] Governance hook chain passes (all 7 checks)
+- [ ] Current governance hook chain passes without bypassing hooks
 - [ ] GC-020 handoff updated with new HEAD SHA
 - [ ] Public catalog: no update needed for this lane (contract definition only,
       not a new proven capability)

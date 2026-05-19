@@ -82,6 +82,12 @@ informal intent.
 Requirement 5: closure is not complete until evidence, review disposition,
 catalog status when applicable, and handoff sync are recorded.
 
+Requirement 6: orchestrators must run a Source-Fidelity Pass before marking a
+work order ready. A work order is not ready if it names files that do not
+exist, uses invented runtime vocabulary, maps a user-facing label to the wrong
+canonical template/pack, or presents synthetic fixture data as an operational
+baseline.
+
 ## Inputs And Outputs
 
 Input artifacts:
@@ -226,6 +232,19 @@ Output:
 
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_<SCOPE>_<DATE>.md`.
 
+Before the work order may move to implementation, run a Source-Fidelity Pass:
+
+- `Test-Path` every existing source path named in first reads, write ownership,
+  and forbidden scope;
+- `rg` each claimed function/type/template/role before instructing an
+  implementer to modify or create it;
+- derive runtime vocabulary from source code or canonical contracts, not from
+  prose labels;
+- verify template IDs against the canonical template source and governed pack
+  policy files;
+- record any invented, missing, or ambiguous item as a correction or
+  return-to-orchestrator condition.
+
 ### Step 4 - GC-018 Authorization
 
 Use before implementation when the lane opens new implementation scope,
@@ -363,6 +382,7 @@ remains subject to future scoped implementation work.
 |---|---|
 | Final roadmap exists but no work order | Stop before implementation and create work order. |
 | Work order lacks authority chain | Stop and add authority chain. |
+| Work order cites a missing path or invented symbol | Stop and run the Source-Fidelity Pass; correct the work order before GC-018. |
 | Implementer needs to touch forbidden path | Return to orchestrator. |
 | Reviewer is silent | Wait or get explicit operator waiver. |
 | Public/provenance boundary unclear | Stop and run `git remote -v` in the relevant workspace. |

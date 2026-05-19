@@ -76,6 +76,8 @@ Contract:
 Verification requirements:
 
 - pre-flight commands must be listed;
+- existing paths, symbols, role values, template IDs, and policy fields must be
+  source-verified before the work order is marked ready;
 - acceptance criteria must be observable;
 - evidence must use command/result/path form where possible;
 - completion must record changed files and required governance updates.
@@ -223,6 +225,28 @@ Expected results:
 
 If a pre-flight check fails, stop and record the failed command and result.
 
+## 6A. Source-Fidelity Pass
+
+Before marking this work order ready for execution, verify the source facts the
+work order depends on:
+
+```powershell
+Test-Path "<existing path named in first reads>"
+rg -n "<claimed function/type/templateId/role/policy field>" <source path>
+```
+
+Required source-fidelity notes:
+
+- Existing paths verified:
+- Planned new paths clearly marked as NEW:
+- Canonical role/type values verified from:
+- Canonical template or pack IDs verified from:
+- Any missing or ambiguous source fact:
+
+If a source fact cannot be verified, either correct the work order or return to
+the orchestrator. Do not ask the implementer to discover that the work order
+invented a path, symbol, role value, or baseline source.
+
 ## 7. Write Ownership
 
 Owned files or modules:
@@ -306,6 +330,8 @@ waiver for this work order.
 Return to orchestrator without continuing if:
 
 - pre-flight fails;
+- source-fidelity pass finds a missing path, invented symbol, or unverified
+  role/template mapping;
 - scope conflict is discovered;
 - required citation cannot be found;
 - implementation would exceed risk ceiling;
