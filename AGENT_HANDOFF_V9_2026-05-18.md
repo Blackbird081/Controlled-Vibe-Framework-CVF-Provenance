@@ -403,7 +403,7 @@ delivered:
   response-local metrics pilot delivered in the working tree after HEAD
   `5716099d`
 
-Current HEAD: `c5d791ca`
+Current HEAD: `7048f934`
 
 ## What This Session Delivered
 
@@ -942,6 +942,17 @@ material. The hook chain now calls
 hooks validate registry structure/paths without full review re-derivation. Full
 review-retention scans remain available for explicit archive/recovery audits via
 `--scan-mode full`.
+
+Active archive maintenance note on 2026-05-19: docs cleanup must use
+`scripts/cvf_active_archive.py`, not manual deletion. The guard was optimized
+to reuse reference indexes, making `--status` hook-safe after the initial
+cleanup. `python scripts/cvf_active_archive.py --execute` moved 1288 stale
+active docs into local `archive/` folders, rewrote active exact-path references,
+and refreshed `governance/compat/CVF_ACTIVE_ARCHIVE_BASELINE.json`.
+`governance/compat/check_active_archive_hygiene.py` is now wired into local
+pre-commit/pre-push hooks as the fast enforcement check: it fails on actionable
+stale active docs while treating retention-registered and baseline-blocked
+files as intentional active records.
 
 Also in commit `7fd0d1d7`:
 - CLAUDE.md: R1/R2/R3 "pending" → "delivered" (stale language removed)
