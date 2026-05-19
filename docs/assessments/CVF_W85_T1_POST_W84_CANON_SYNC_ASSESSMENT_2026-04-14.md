@@ -34,11 +34,11 @@ At the time of filing, repo state contains a narrow canon gap:
 
 These files correctly record the W84-T1 CLOSED DELIVERED state:
 
-- `docs/baselines/CVF_GC018_W84_T1_KNOWLEDGE_LIVE_BENCHMARK_EVIDENCE_PROMOTION_AUTHORIZATION_2026-04-14.md`
-- `docs/baselines/CVF_W84_T1_BENCHMARK_RUN_MANIFEST_2026-04-14.md`
-- `docs/baselines/CVF_W84_T1_KNOWLEDGE_LIVE_BENCHMARK_EVIDENCE_PACKET_2026-04-14.md`
+- `docs/baselines/archive/CVF_GC018_W84_T1_KNOWLEDGE_LIVE_BENCHMARK_EVIDENCE_PROMOTION_AUTHORIZATION_2026-04-14.md`
+- `docs/baselines/archive/CVF_W84_T1_BENCHMARK_RUN_MANIFEST_2026-04-14.md`
+- `docs/baselines/archive/CVF_W84_T1_KNOWLEDGE_LIVE_BENCHMARK_EVIDENCE_PACKET_2026-04-14.md`
 - `docs/assessments/CVF_W84_T1_POST_RUN_QUALITY_ASSESSMENT_2026-04-14.md`
-- `docs/baselines/CVF_GC026_TRACKER_SYNC_W84_T1_CLOSED_2026-04-14.md`
+- `docs/baselines/archive/CVF_GC026_TRACKER_SYNC_W84_T1_CLOSED_2026-04-14.md`
 - `AGENT_HANDOFF.md` (updated with W84-T1 entry and reviewer correction noting the pending sync)
 
 ## 4. Files That Are Behind (Sync Targets)

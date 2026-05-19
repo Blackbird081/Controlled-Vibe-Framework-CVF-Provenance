@@ -14,9 +14,9 @@ implementation.
 ## Delivered
 
 - Authorization:
-  `docs/baselines/CVF_GC018_RC2_C0_WEB_GOVERNANCE_JOB_THREAT_MODEL_AUTHORIZATION_2026-05-08.md`
+  `docs/baselines/archive/CVF_GC018_RC2_C0_WEB_GOVERNANCE_JOB_THREAT_MODEL_AUTHORIZATION_2026-05-08.md`
 - Roadmap:
-  `docs/roadmaps/CVF_RC2_C0_WEB_GOVERNANCE_JOB_THREAT_MODEL_ROADMAP_2026-05-08.md`
+  `docs/roadmaps/archive/CVF_RC2_C0_WEB_GOVERNANCE_JOB_THREAT_MODEL_ROADMAP_2026-05-08.md`
 - Threat model:
   `docs/reviews/CVF_WEB_GOVERNANCE_JOB_THREAT_MODEL_2026-05-08.md`
 

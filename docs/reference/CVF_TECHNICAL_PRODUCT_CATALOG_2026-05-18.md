@@ -104,7 +104,7 @@ INTAKE -> DESIGN -> BUILD -> REVIEW -> FREEZE
 | Governance control plane | proven and active | `ARCHITECTURE.md`; `governance/toolkit/05_OPERATION/CVF_AUDIT_PROTOCOL.md` |
 | Governance CLI execution gateway | implemented as CLI caller, mock-tested | `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/execute.client.ts`; `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/tests/execute.client.test.ts`; calls existing `/api/execute`, not a replacement runtime |
 | Live governance proof | proven and mandatory for release claims | `scripts/run_cvf_release_gate_bundle.py`; `docs/CVF_INCREMENTAL_TEST_LOG.md` |
-| Non-coder governed path | proven on bounded provider lanes | `docs/reference/CVF_PUBLIC_NONCODER_VALUE_STATEMENT_2026-04-17.md`; `docs/assessments/CVF_W119_T1_NONCODER_ADOPTION_EVIDENCE_PACK_2026-04-23.md` |
+| Non-coder governed path | proven on bounded provider lanes | `docs/reference/archive/CVF_PUBLIC_NONCODER_VALUE_STATEMENT_2026-04-17.md`; `docs/assessments/CVF_W119_T1_NONCODER_ADOPTION_EVIDENCE_PACK_2026-04-23.md` |
 | Provider lanes | certified only where evidence exists | `docs/audits/alibaba-canary/INDEX.md`; `docs/audits/deepseek-canary/INDEX.md` |
 | Knowledge-backed execution | proven in bounded execute path | `docs/audits/CVF_W101_T1_CP1_KNOWLEDGE_NATIVE_EXECUTE_PATH_INTEGRATION_AUDIT_2026-04-17.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/knowledge-store.ts` |
 | Deliverable packs | implemented in web product path | `README.md`; `docs/reviews/CVF_W130_EXPORT_ACTIVATION_CONTRACT_2026-04-28.md` |
@@ -113,7 +113,7 @@ INTAKE -> DESIGN -> BUILD -> REVIEW -> FREEZE
 | Role and agent governance | partially absorbed | role vocabulary and handoff governance exist; full enforceable role permission runtime is still roadmap work |
 | Memory and continuity | partially runtime-wired | knowledge store, audit, session continuity, handoff rules, and execute-route audit memory receipt exist; governed reinjection across all worker paths is not complete |
 | Provider method breadth | demand-gated | current slices use existing provider calls; streaming/tool-call/vision/embedding/reasoning methods need named consumer slices |
-| Operational observability | partially absorbed | `docs/CVF_INCREMENTAL_TEST_LOG.md`; `docs/reviews/CVF_W130_EVIDENCE_PACK_EXPORT_EVIDENCE_2026-04-28.md` |
+| Operational observability | partially absorbed | `docs/CVF_INCREMENTAL_TEST_LOG.md`; `docs/reviews/archive/CVF_W130_EVIDENCE_PACK_EXPORT_EVIDENCE_2026-04-28.md` |
 | Tool/MCP/database action governance | roadmap | tool registry and guards exist; full canonical action taxonomy is still future work |
 | Async workers/subagents | roadmap | sandbox and worker concepts exist; canonical async work-ticket and delegation lifecycle remain future work |
 | Graph/code-intelligence context | roadmap | valuable legacy pattern; no full graph context resolver is claimed yet |
@@ -139,7 +139,7 @@ Developers should start from the public repository front door:
 - `docs/audits/deepseek-canary/INDEX.md`
 - `docs/audits/CVF_W101_T1_CP1_KNOWLEDGE_NATIVE_EXECUTE_PATH_INTEGRATION_AUDIT_2026-04-17.md`
 - `docs/assessments/CVF_W119_T1_NONCODER_ADOPTION_EVIDENCE_PACK_2026-04-23.md`
-- `docs/reference/CVF_PUBLIC_NONCODER_VALUE_STATEMENT_2026-04-17.md`
+- `docs/reference/archive/CVF_PUBLIC_NONCODER_VALUE_STATEMENT_2026-04-17.md`
 
 Release-quality governance proof uses:
 
@@ -191,13 +191,13 @@ PASS docs/audits/alibaba-canary/INDEX.md
 PASS docs/audits/deepseek-canary/INDEX.md
 PASS docs/audits/CVF_W101_T1_CP1_KNOWLEDGE_NATIVE_EXECUTE_PATH_INTEGRATION_AUDIT_2026-04-17.md
 PASS docs/assessments/CVF_W119_T1_NONCODER_ADOPTION_EVIDENCE_PACK_2026-04-23.md
-PASS docs/reference/CVF_PUBLIC_NONCODER_VALUE_STATEMENT_2026-04-17.md
+PASS docs/reference/archive/CVF_PUBLIC_NONCODER_VALUE_STATEMENT_2026-04-17.md
 PASS governance/toolkit/05_OPERATION/CVF_AUDIT_PROTOCOL.md
 PASS scripts/run_cvf_release_gate_bundle.py
 PASS docs/reference/CVF_PUBLIC_STRUCTURE_OVERVIEW.md
 PASS docs/reference/CVF_PUBLIC_CATALOG_CLAIM_BOUNDARY_2026-05-18.md
 PASS docs/reviews/CVF_W130_EXPORT_ACTIVATION_CONTRACT_2026-04-28.md
-PASS docs/reviews/CVF_W130_EVIDENCE_PACK_EXPORT_EVIDENCE_2026-04-28.md
+PASS docs/reviews/archive/CVF_W130_EVIDENCE_PACK_EXPORT_EVIDENCE_2026-04-28.md
 PASS EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/knowledge-store.ts
 PASS EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/external-asset-governance.ts
 PASS docs/reviews/CVF_LEGACY_SCOPE_ABSORPTION_AUDIT_MATRIX_2026-05-18.md

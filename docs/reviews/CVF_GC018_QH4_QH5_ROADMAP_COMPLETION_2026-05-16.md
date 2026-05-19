@@ -6,7 +6,7 @@ Status: APPROVED FOR BOUNDED IMPLEMENTATION
 
 Parent roadmap:
 
-- `docs/roadmaps/CVF_NONCODER_OUTPUT_QUALITY_HARDENING_ROADMAP_2026-05-15.md`
+- `docs/roadmaps/archive/CVF_NONCODER_OUTPUT_QUALITY_HARDENING_ROADMAP_2026-05-15.md`
 
 Previous tranche:
 
@@ -14,8 +14,8 @@ Previous tranche:
 
 Parent F-1 boundary:
 
-- `docs/reviews/CVF_F1_OUTPUT_QUALITY_PARITY_CLOSURE_NOT_MET_2026-05-15.md`
-- `docs/reviews/CVF_F1_DIMINISHING_RETURNS_STOP_RULE_2026-05-15.md`
+- `docs/reviews/archive/CVF_F1_OUTPUT_QUALITY_PARITY_CLOSURE_NOT_MET_2026-05-15.md`
+- `docs/reviews/archive/CVF_F1_DIMINISHING_RETURNS_STOP_RULE_2026-05-15.md`
 
 ## 1. Decision
 

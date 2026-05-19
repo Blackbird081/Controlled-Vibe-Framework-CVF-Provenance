@@ -69,7 +69,7 @@ Memory class: FULL_RECORD
 - **EPF: DONE-ready** — 5 core component boxes DONE; Model Gateway + Sandbox Runtime [DEFERRED] (intentional, not a gap)
 - **No active tranche** — any new work requires fresh `GC-018` from scratch
 - **Deferred items (not gaps)**: EPF Model Gateway provider routing (future integration wave), EPF Sandbox Runtime full isolation (future infrastructure), CPF agent-definition registry + L0-L4 consolidation (CLOSED-BY-DEFAULT)
-- **Human-gated item**: npm publish — see packaging audit `docs/audits/CVF_P4_CP16_PACKAGING_ARCHITECTURE_DECISION_AUDIT_2026-04-03.md`
+- **Human-gated item**: npm publish — see packaging audit `docs/audits/archive/CVF_P4_CP16_PACKAGING_ARCHITECTURE_DECISION_AUDIT_2026-04-03.md`
 
 ---
 

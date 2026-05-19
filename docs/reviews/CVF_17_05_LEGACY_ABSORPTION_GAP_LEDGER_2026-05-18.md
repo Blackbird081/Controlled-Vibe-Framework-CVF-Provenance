@@ -661,7 +661,7 @@ Source:
 
 - User direction on 2026-05-18
 - `docs/reference/CVF_PUBLIC_STRUCTURE_OVERVIEW.md`
-- `docs/reference/CVF_PUBLIC_NONCODER_VALUE_STATEMENT_2026-04-17.md`
+- `docs/reference/archive/CVF_PUBLIC_NONCODER_VALUE_STATEMENT_2026-04-17.md`
 - `docs/reviews/CVF_LEGACY_SCOPE_ABSORPTION_AUDIT_MATRIX_2026-05-18.md`
 
 Observed gap:

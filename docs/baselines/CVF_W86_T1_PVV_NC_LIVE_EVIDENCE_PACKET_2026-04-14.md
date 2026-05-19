@@ -4,7 +4,7 @@ Memory class: SUMMARY_RECORD
 
 **Tranche:** W86-T1 — PVV Lane Resume (Non-Coder Quality Focus)
 **Date:** 2026-04-14
-**GC-018:** `docs/baselines/CVF_GC018_W86_T1_PVV_LANE_RESUME_AUTHORIZATION_2026-04-14.md`
+**GC-018:** `docs/baselines/archive/CVF_GC018_W86_T1_PVV_LANE_RESUME_AUTHORIZATION_2026-04-14.md`
 **Benchmark tool:** `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/pvv.nc.benchmark.test.ts`
 
 ---

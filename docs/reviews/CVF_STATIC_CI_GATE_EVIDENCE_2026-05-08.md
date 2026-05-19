@@ -13,7 +13,7 @@ CI1 adds a non-secret static gate:
 - local runner: `scripts/run_cvf_static_ci_gate.py`;
 - GitHub workflow: `.github/workflows/cvf-static-ci.yml`;
 - design artifact: `docs/reviews/CVF_STATIC_CI_GATE_DESIGN_2026-05-08.md`;
-- roadmap: `docs/roadmaps/CVF_STATIC_CI_GATE_ROADMAP_2026-05-08.md`.
+- roadmap: `docs/roadmaps/archive/CVF_STATIC_CI_GATE_ROADMAP_2026-05-08.md`.
 
 ## Local Verification
 

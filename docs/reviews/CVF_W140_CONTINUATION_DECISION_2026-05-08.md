@@ -3,7 +3,7 @@
 > Date: 2026-05-08  
 > Tranche: W140-T1 - UI Execution Lifecycle Diagnostic  
 > Status: CLOSED - DIAGNOSTIC  
-> Evidence: `docs/reviews/CVF_W140_UI_EXECUTION_LIFECYCLE_ALIBABA_EVIDENCE_2026-05-08.json`
+> Evidence: `docs/reviews/archive/CVF_W140_UI_EXECUTION_LIFECYCLE_ALIBABA_EVIDENCE_2026-05-08.json`
 
 ## Result
 

@@ -63,13 +63,13 @@ Memory class: SUMMARY_RECORD
 
 | Output | Path |
 |---|---|
-| Quality assessment (pre) | `docs/assessments/CVF_POST_W86_CONTINUATION_QUALITY_ASSESSMENT_2026-04-14.md` |
+| Quality assessment (pre) | `docs/assessments/archive/CVF_POST_W86_CONTINUATION_QUALITY_ASSESSMENT_2026-04-14.md` |
 | This GC-018 | `docs/baselines/CVF_GC018_W87_T1_HIGH_RISK_GUIDED_RESPONSE_AUTHORIZATION_2026-04-14.md` |
-| GC-026 auth sync | `docs/baselines/CVF_GC026_TRACKER_SYNC_W87_T1_AUTHORIZATION_2026-04-14.md` |
-| Roadmap | `docs/roadmaps/CVF_W87_T1_HIGH_RISK_GUIDED_RESPONSE_ROADMAP_2026-04-14.md` |
+| GC-026 auth sync | `docs/baselines/archive/CVF_GC026_TRACKER_SYNC_W87_T1_AUTHORIZATION_2026-04-14.md` |
+| Roadmap | `docs/roadmaps/archive/CVF_W87_T1_HIGH_RISK_GUIDED_RESPONSE_ROADMAP_2026-04-14.md` |
 | Implementation | `/api/execute` guided response enrichment + schema update |
 | Tests | `pvv.nc.benchmark.test.ts` or new `guided.response.test.ts` |
 | Evidence packet | `docs/baselines/CVF_W87_T1_GUIDED_RESPONSE_EVIDENCE_PACKET_2026-04-14.md` |
 | Post-run assessment | `docs/assessments/CVF_W87_T1_POST_RUN_QUALITY_ASSESSMENT_2026-04-14.md` |
-| GC-026 closure sync | `docs/baselines/CVF_GC026_TRACKER_SYNC_W87_T1_CLOSED_2026-04-14.md` |
+| GC-026 closure sync | `docs/baselines/archive/CVF_GC026_TRACKER_SYNC_W87_T1_CLOSED_2026-04-14.md` |
 | Handoff update | `AGENT_HANDOFF.md` W87-T1 entry |

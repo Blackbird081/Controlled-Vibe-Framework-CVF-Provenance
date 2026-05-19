@@ -7,6 +7,14 @@ Memory class: SUMMARY_RECORD
 > Purpose: reassess CVF master architecture after the full Graphify / LLM-Powered / Palace absorption lane has reached core-native closure and product-layer value realization
 > Authority posture: roadmap only; execution requires fresh `GC-018`
 
+## GC-043 Knowledge Absorption Boundary
+
+This roadmap is governed by
+`docs/reference/CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md`.
+It is a doctrine-first, governance-first absorption reassessment. It is a
+truth-alignment tranche with no code changes and no implementation-first
+expansion.
+
 ---
 
 ## 1. Why This Is The Correct Next Tranche
@@ -73,8 +81,8 @@ Future agents executing this tranche must read these first:
 1. `AGENT_HANDOFF.md`
 2. `docs/reference/CVF_MASTER_ARCHITECTURE_WHITEPAPER.md`
 3. `docs/reference/CVF_WHITEPAPER_PROGRESS_TRACKER.md`
-4. `docs/roadmaps/CVF_GRAPHIFY_LLM_POWERED_PALACE_CVF_NATIVE_COMPLETION_MATRIX_2026-04-14.md`
-5. `docs/roadmaps/CVF_W82_T1_KNOWLEDGE_NATIVE_VALUE_REALIZATION_ROADMAP_2026-04-14.md`
+4. `docs/roadmaps/archive/CVF_GRAPHIFY_LLM_POWERED_PALACE_CVF_NATIVE_COMPLETION_MATRIX_2026-04-14.md`
+5. `docs/roadmaps/archive/CVF_W82_T1_KNOWLEDGE_NATIVE_VALUE_REALIZATION_ROADMAP_2026-04-14.md`
 6. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/docs/reference/CVF_KNOWLEDGE_GOVERNANCE_OPERATOR_GUIDE_2026-04-14.md`
 7. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/docs/baselines/CVF_W82_T1_KNOWLEDGE_NATIVE_VALUE_EVIDENCE_PACKET_2026-04-14.md`
 

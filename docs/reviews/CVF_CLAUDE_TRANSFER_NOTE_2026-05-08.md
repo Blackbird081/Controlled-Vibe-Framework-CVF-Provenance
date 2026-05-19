@@ -97,7 +97,7 @@ Do not resume from the W126 8-form boundary as if it were current.
 Primary evidence files:
 
 - `docs/reviews/CVF_W149_CLOSURE_DECISION_2026-05-08.md`
-- `docs/reviews/CVF_W149_TRUSTED_FORM_FULL_CORPUS_LOCK_2026-05-08.md`
+- `docs/reviews/archive/CVF_W149_TRUSTED_FORM_FULL_CORPUS_LOCK_2026-05-08.md`
 - `docs/reviews/CVF_W150_CLOSURE_DECISION_2026-05-08.md`
 - `docs/reviews/CVF_W151_CLOSURE_DECISION_2026-05-08.md`
 

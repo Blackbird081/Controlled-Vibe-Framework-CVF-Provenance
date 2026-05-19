@@ -284,16 +284,24 @@ def _get_changed(base: str, head: str) -> dict[str, set[str]]:
 
 
 def _is_governed_markdown(path: str) -> bool:
-    if not path.endswith(".md"):
+    normalized = path.replace("\\", "/")
+    if not normalized.endswith(".md"):
         return False
-    if path.startswith("CVF_SESSION/handoffs/archive/"):
+    if _is_archive_markdown_path(normalized):
+        return False
+    if normalized.startswith("CVF_SESSION/handoffs/archive/"):
         return False
     return (
-        path.startswith("docs/")
-        or path.startswith("governance/toolkit/")
-        or re.match(r"^AGENT_HANDOFF.*\.md$", path) is not None
-        or re.match(r"^CVF_.+\.md$", path) is not None
+        normalized.startswith("docs/")
+        or normalized.startswith("governance/toolkit/")
+        or re.match(r"^AGENT_HANDOFF.*\.md$", normalized) is not None
+        or re.match(r"^CVF_.+\.md$", normalized) is not None
     )
+
+
+def _is_archive_markdown_path(path: str) -> bool:
+    normalized = path.replace("\\", "/")
+    return normalized.endswith(".md") and "/archive/" in f"/{normalized}/"
 
 
 def _is_new(statuses: set[str]) -> bool:
@@ -341,7 +349,8 @@ def _classify(path: str, text: str) -> str:
 
 
 def _validate_markdown(path: str) -> list[str]:
-    if path.replace("\\", "/") in STRUCTURAL_CHECK_EXEMPT:
+    normalized = path.replace("\\", "/")
+    if normalized in STRUCTURAL_CHECK_EXEMPT or _is_archive_markdown_path(normalized):
         return []
     text = _read_rel(path)
     artifact_type = _classify(path, text)

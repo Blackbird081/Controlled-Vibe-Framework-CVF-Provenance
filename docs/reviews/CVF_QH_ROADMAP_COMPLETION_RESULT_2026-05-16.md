@@ -6,7 +6,7 @@ Status: IMPLEMENTED WITH MIXED FULL EVT-4 REGRESSION
 
 Parent roadmap:
 
-- `docs/roadmaps/CVF_NONCODER_OUTPUT_QUALITY_HARDENING_ROADMAP_2026-05-15.md`
+- `docs/roadmaps/archive/CVF_NONCODER_OUTPUT_QUALITY_HARDENING_ROADMAP_2026-05-15.md`
 
 Completion review:
 
@@ -14,7 +14,7 @@ Completion review:
 
 Previous tranche results:
 
-- `docs/reviews/CVF_QH1_QH2_NONCODER_OUTPUT_HARDENING_RESULT_2026-05-15.md`
+- `docs/reviews/archive/CVF_QH1_QH2_NONCODER_OUTPUT_HARDENING_RESULT_2026-05-15.md`
 - `docs/reviews/CVF_QH3_SOP_HANDOFF_PROCEDURAL_DEPTH_RESULT_2026-05-16.md`
 
 ## 1. Implemented Completion Scope

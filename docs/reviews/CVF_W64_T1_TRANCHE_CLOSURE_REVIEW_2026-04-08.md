@@ -16,7 +16,7 @@ Memory class: FULL_RECORD
 
 **Baseline**: v3.7-W46T1 (CLOSURE-ASSESSED); W63-T1 CLOSED DELIVERED
 
-**Authorization**: `docs/reviews/CVF_GC018_CONTINUATION_CANDIDATE_W64_T1_TRACK5_DEFERRED_ARCHITECTURE_2026-04-08.md`
+**Authorization**: `docs/reviews/archive/CVF_GC018_CONTINUATION_CANDIDATE_W64_T1_TRACK5_DEFERRED_ARCHITECTURE_2026-04-08.md`
 
 ---
 
@@ -46,13 +46,13 @@ Memory class: FULL_RECORD
 
 | Artifact | Path | Status |
 |----------|------|--------|
-| GC-018 Authorization | `docs/reviews/CVF_GC018_CONTINUATION_CANDIDATE_W64_T1_TRACK5_DEFERRED_ARCHITECTURE_2026-04-08.md` | ✅ |
-| Execution Plan | `docs/roadmaps/CVF_W64_T1_TRACK5_DEFERRED_ARCHITECTURE_EXECUTION_PLAN_2026-04-08.md` | ✅ |
-| GC-026 Auth Sync | `docs/baselines/CVF_GC026_TRACKER_SYNC_W64_T1_AUTHORIZATION_2026-04-08.md` | ✅ |
-| CP1 Audit | `docs/audits/CVF_W64_T1_CP1_TRACK5_IMPLEMENTATION_AUDIT_2026-04-08.md` | ✅ APPROVED |
-| CP1 Review | `docs/reviews/CVF_GC019_W64_T1_CP1_TRACK5_IMPLEMENTATION_REVIEW_2026-04-08.md` | ✅ APPROVED |
-| CP1 Delta | `docs/baselines/CVF_W64_T1_CP1_TRACK5_DELTA_2026-04-08.md` | ✅ |
-| GC-026 CP1 Sync | `docs/baselines/CVF_GC026_TRACKER_SYNC_W64_T1_CP1_DELIVERED_2026-04-08.md` | ✅ |
+| GC-018 Authorization | `docs/reviews/archive/CVF_GC018_CONTINUATION_CANDIDATE_W64_T1_TRACK5_DEFERRED_ARCHITECTURE_2026-04-08.md` | ✅ |
+| Execution Plan | `docs/roadmaps/archive/CVF_W64_T1_TRACK5_DEFERRED_ARCHITECTURE_EXECUTION_PLAN_2026-04-08.md` | ✅ |
+| GC-026 Auth Sync | `docs/baselines/archive/CVF_GC026_TRACKER_SYNC_W64_T1_AUTHORIZATION_2026-04-08.md` | ✅ |
+| CP1 Audit | `docs/audits/archive/CVF_W64_T1_CP1_TRACK5_IMPLEMENTATION_AUDIT_2026-04-08.md` | ✅ APPROVED |
+| CP1 Review | `docs/reviews/archive/CVF_GC019_W64_T1_CP1_TRACK5_IMPLEMENTATION_REVIEW_2026-04-08.md` | ✅ APPROVED |
+| CP1 Delta | `docs/baselines/archive/CVF_W64_T1_CP1_TRACK5_DELTA_2026-04-08.md` | ✅ |
+| GC-026 CP1 Sync | `docs/baselines/archive/CVF_GC026_TRACKER_SYNC_W64_T1_CP1_DELIVERED_2026-04-08.md` | ✅ |
 | Tranche Closure Review | `docs/reviews/CVF_W64_T1_TRANCHE_CLOSURE_REVIEW_2026-04-08.md` | ✅ (this doc) |
 
 ---

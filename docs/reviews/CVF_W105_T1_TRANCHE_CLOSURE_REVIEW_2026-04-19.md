@@ -12,10 +12,10 @@
 
 | Item | Required | Status |
 |------|----------|--------|
-| GC-018 authorization filed | Yes | DONE — `docs/baselines/CVF_GC018_W105_T1_SIDEBAR_VISUAL_SYNC_AUTHORIZATION_2026-04-19.md` |
+| GC-018 authorization filed | Yes | DONE — `docs/baselines/archive/CVF_GC018_W105_T1_SIDEBAR_VISUAL_SYNC_AUTHORIZATION_2026-04-19.md` |
 | CP1 implementation complete | Yes | DONE — 4 files modified/created |
 | CP1 audit doc filed | Yes | DONE — `docs/audits/CVF_W105_T1_CP1_SIDEBAR_VISUAL_SYNC_AUDIT_2026-04-19.md` |
-| CP1 delta doc filed | Yes | DONE — `docs/baselines/CVF_W105_T1_CP1_SIDEBAR_VISUAL_SYNC_DELTA_2026-04-19.md` |
+| CP1 delta doc filed | Yes | DONE — `docs/baselines/archive/CVF_W105_T1_CP1_SIDEBAR_VISUAL_SYNC_DELTA_2026-04-19.md` |
 | tsc --noEmit clean | Yes | PASS |
 | lint — 0 new errors | Yes | PASS (4 pre-existing errors unchanged) |
 | vitest — no new failures | Yes | PASS (7 pre-existing live-test failures unchanged) |
@@ -25,7 +25,7 @@
 | CompactHeaderProps interface frozen | Yes | CONFIRMED |
 | Zero logic changes | Yes | CONFIRMED |
 | Forbidden files untouched | Yes | CONFIRMED |
-| GC-026 closure sync | Yes | DONE — `docs/baselines/CVF_GC026_TRACKER_SYNC_W105_T1_CLOSED_2026-04-19.md` |
+| GC-026 closure sync | Yes | DONE — `docs/baselines/archive/CVF_GC026_TRACKER_SYNC_W105_T1_CLOSED_2026-04-19.md` |
 | AGENT_HANDOFF.md updated | Yes | DONE |
 
 ---

@@ -21,7 +21,7 @@ runtime behavior.
 
 | Checkpoint | Evidence | Result |
 |---|---|---:|
-| CP1 corpus lock | `docs/reviews/CVF_W149_TRUSTED_FORM_FULL_CORPUS_LOCK_2026-05-08.md` | 40/40 locked |
+| CP1 corpus lock | `docs/reviews/archive/CVF_W149_TRUSTED_FORM_FULL_CORPUS_LOCK_2026-05-08.md` | 40/40 locked |
 | CP2 Alibaba direct API | `docs/reviews/CVF_W149_TRUSTED_FORM_DIRECT_API_ALIBABA_EVIDENCE_2026-05-08.{md,json}` | 40/40 accepted, 40/40 useful |
 | CP3 Alibaba browser UI | `docs/reviews/CVF_W149_TRUSTED_FORM_UI_ALIBABA_EVIDENCE_2026-05-08.{md,json}` | 40/40 accepted with receipt |
 | CP5 DeepSeek confirmatory | `docs/reviews/CVF_W149_TRUSTED_FORM_DEEPSEEK_CONFIRMATORY_EVIDENCE_2026-05-08.{md,json}` | 12/12 accepted, 12/12 useful |

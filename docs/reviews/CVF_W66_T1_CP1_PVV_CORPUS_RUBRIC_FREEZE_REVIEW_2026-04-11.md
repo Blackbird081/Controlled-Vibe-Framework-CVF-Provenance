@@ -7,7 +7,7 @@ Memory class: FULL_RECORD
 > Class: DOCUMENTATION / VALIDATION_TEST
 > Lane: Fast Lane (GC-021) — documentation artifacts only; no code, no contracts, no test changes
 > Reviewer: CVF Governance Agent
-> Authorization: `docs/baselines/CVF_GC018_W66_T1_PVV_CP1_AUTHORIZATION_2026-04-11.md`
+> Authorization: `docs/baselines/archive/CVF_GC018_W66_T1_PVV_CP1_AUTHORIZATION_2026-04-11.md`
 > Guard: `governance/toolkit/05_OPERATION/CVF_PRODUCT_VALUE_VALIDATION_GUARD.md` (GC-042)
 
 ---
@@ -20,14 +20,14 @@ W66-T1 CP1 delivers the **Corpus and Rubric Freeze** for the CVF Product Value V
 
 | Artifact | Path | Status |
 |---|---|---|
-| GC-018 authorization | `docs/baselines/CVF_GC018_W66_T1_PVV_CP1_AUTHORIZATION_2026-04-11.md` | DELIVERED |
-| Corpus index | `docs/baselines/CVF_PRODUCT_VALUE_VALIDATION_CORPUS_INDEX_W66_T1_CP1_2026-04-11.md` | DELIVERED |
-| Corpus A1 — FAM-001/002/003 | `docs/baselines/CVF_PRODUCT_VALUE_VALIDATION_CORPUS_A1_W66_T1_CP1_2026-04-11.md` | DELIVERED |
-| Corpus A2 — FAM-004/005 | `docs/baselines/CVF_PRODUCT_VALUE_VALIDATION_CORPUS_A2_W66_T1_CP1_2026-04-11.md` | DELIVERED |
-| Corpus B — real product tasks | `docs/baselines/CVF_PRODUCT_VALUE_VALIDATION_CORPUS_B_W66_T1_CP1_2026-04-11.md` | DELIVERED |
-| Corpus C — governance stress | `docs/baselines/CVF_PRODUCT_VALUE_VALIDATION_CORPUS_C_W66_T1_CP1_2026-04-11.md` | DELIVERED |
-| Rubric | `docs/baselines/CVF_PRODUCT_VALUE_VALIDATION_RUBRIC_W66_T1_CP1_2026-04-11.md` | DELIVERED |
-| Run manifest (CP2 PLANNED) | `docs/baselines/CVF_PRODUCT_VALUE_VALIDATION_RUN_MANIFEST_W66_T1_CP2_2026-04-11.md` | DELIVERED |
+| GC-018 authorization | `docs/baselines/archive/CVF_GC018_W66_T1_PVV_CP1_AUTHORIZATION_2026-04-11.md` | DELIVERED |
+| Corpus index | `docs/baselines/archive/CVF_PRODUCT_VALUE_VALIDATION_CORPUS_INDEX_W66_T1_CP1_2026-04-11.md` | DELIVERED |
+| Corpus A1 — FAM-001/002/003 | `docs/baselines/archive/CVF_PRODUCT_VALUE_VALIDATION_CORPUS_A1_W66_T1_CP1_2026-04-11.md` | DELIVERED |
+| Corpus A2 — FAM-004/005 | `docs/baselines/archive/CVF_PRODUCT_VALUE_VALIDATION_CORPUS_A2_W66_T1_CP1_2026-04-11.md` | DELIVERED |
+| Corpus B — real product tasks | `docs/baselines/archive/CVF_PRODUCT_VALUE_VALIDATION_CORPUS_B_W66_T1_CP1_2026-04-11.md` | DELIVERED |
+| Corpus C — governance stress | `docs/baselines/archive/CVF_PRODUCT_VALUE_VALIDATION_CORPUS_C_W66_T1_CP1_2026-04-11.md` | DELIVERED |
+| Rubric | `docs/baselines/archive/CVF_PRODUCT_VALUE_VALIDATION_RUBRIC_W66_T1_CP1_2026-04-11.md` | DELIVERED |
+| Run manifest (CP2 PLANNED) | `docs/baselines/archive/CVF_PRODUCT_VALUE_VALIDATION_RUN_MANIFEST_W66_T1_CP2_2026-04-11.md` | DELIVERED |
 
 Test delta: **0** (documentation only)
 Code changes: **0**
@@ -193,14 +193,14 @@ Rationale:
 
 | Artifact | Canonical path |
 |---|---|
-| GC-018 authorization | `docs/baselines/CVF_GC018_W66_T1_PVV_CP1_AUTHORIZATION_2026-04-11.md` |
-| Corpus index | `docs/baselines/CVF_PRODUCT_VALUE_VALIDATION_CORPUS_INDEX_W66_T1_CP1_2026-04-11.md` |
-| Corpus A1 | `docs/baselines/CVF_PRODUCT_VALUE_VALIDATION_CORPUS_A1_W66_T1_CP1_2026-04-11.md` |
-| Corpus A2 | `docs/baselines/CVF_PRODUCT_VALUE_VALIDATION_CORPUS_A2_W66_T1_CP1_2026-04-11.md` |
-| Corpus B | `docs/baselines/CVF_PRODUCT_VALUE_VALIDATION_CORPUS_B_W66_T1_CP1_2026-04-11.md` |
-| Corpus C | `docs/baselines/CVF_PRODUCT_VALUE_VALIDATION_CORPUS_C_W66_T1_CP1_2026-04-11.md` |
-| Rubric | `docs/baselines/CVF_PRODUCT_VALUE_VALIDATION_RUBRIC_W66_T1_CP1_2026-04-11.md` |
-| Run manifest | `docs/baselines/CVF_PRODUCT_VALUE_VALIDATION_RUN_MANIFEST_W66_T1_CP2_2026-04-11.md` |
+| GC-018 authorization | `docs/baselines/archive/CVF_GC018_W66_T1_PVV_CP1_AUTHORIZATION_2026-04-11.md` |
+| Corpus index | `docs/baselines/archive/CVF_PRODUCT_VALUE_VALIDATION_CORPUS_INDEX_W66_T1_CP1_2026-04-11.md` |
+| Corpus A1 | `docs/baselines/archive/CVF_PRODUCT_VALUE_VALIDATION_CORPUS_A1_W66_T1_CP1_2026-04-11.md` |
+| Corpus A2 | `docs/baselines/archive/CVF_PRODUCT_VALUE_VALIDATION_CORPUS_A2_W66_T1_CP1_2026-04-11.md` |
+| Corpus B | `docs/baselines/archive/CVF_PRODUCT_VALUE_VALIDATION_CORPUS_B_W66_T1_CP1_2026-04-11.md` |
+| Corpus C | `docs/baselines/archive/CVF_PRODUCT_VALUE_VALIDATION_CORPUS_C_W66_T1_CP1_2026-04-11.md` |
+| Rubric | `docs/baselines/archive/CVF_PRODUCT_VALUE_VALIDATION_RUBRIC_W66_T1_CP1_2026-04-11.md` |
+| Run manifest | `docs/baselines/archive/CVF_PRODUCT_VALUE_VALIDATION_RUN_MANIFEST_W66_T1_CP2_2026-04-11.md` |
 | This review | `docs/reviews/CVF_W66_T1_CP1_PVV_CORPUS_RUBRIC_FREEZE_REVIEW_2026-04-11.md` |
 
 ---

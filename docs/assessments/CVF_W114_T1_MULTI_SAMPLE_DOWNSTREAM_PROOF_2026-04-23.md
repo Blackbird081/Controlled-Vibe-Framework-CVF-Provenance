@@ -36,7 +36,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\w114_cp7_multi_sample_downstr
 
 CVF Core Commit: `1129ec3d`
 
-Raw results: `docs/assessments/CVF_W114_CP7_RAW_2026-04-23.json`
+Raw results: `docs/assessments/archive/CVF_W114_CP7_RAW_2026-04-23.json`
 
 ## 3. Sample 1 — CLI/Productivity Utility
 

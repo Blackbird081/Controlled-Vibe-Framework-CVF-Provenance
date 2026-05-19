@@ -336,7 +336,7 @@ Observed evidence:
   `docs/evidence/README.md`, `docs/evidence/latest-release-gate.md`,
   `docs/evidence/provider-lanes.md`,
   `docs/evidence/web-governance-path.md`,
-  `docs/reference/CVF_PUBLIC_NONCODER_VALUE_STATEMENT_2026-04-17.md`).
+  `docs/reference/archive/CVF_PUBLIC_NONCODER_VALUE_STATEMENT_2026-04-17.md`).
 - The public-sync table rows reference `ARCHITECTURE.md`, `GOVERNANCE.md`,
   `governance/toolkit/`, `docs/evidence/...`, but `GOVERNANCE.md` is not in
   the public-sync front-door anchor list of the public sync repo and the

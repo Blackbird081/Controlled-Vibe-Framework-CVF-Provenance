@@ -4,7 +4,7 @@
 
 > Date: 2026-04-30
 > Tranche: W132-T1 - Provider/Runtime Stability And Browser Session Hardening
-> GC-018: `docs/baselines/CVF_GC018_W132_T1_PROVIDER_RUNTIME_STABILITY_AND_BROWSER_SESSION_HARDENING_AUTHORIZATION_2026-04-30.md`
+> GC-018: `docs/baselines/archive/CVF_GC018_W132_T1_PROVIDER_RUNTIME_STABILITY_AND_BROWSER_SESSION_HARDENING_AUTHORIZATION_2026-04-30.md`
 > Status: LOCKED - governs W132 implementation and closure
 
 ---

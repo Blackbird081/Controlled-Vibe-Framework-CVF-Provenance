@@ -140,8 +140,8 @@ W132 root cause was confirmed as TCP stale-connection stall. Fix-A evidence:
 | Artifact | Path |
 |---------|------|
 | W133 investigation note | `docs/reviews/CVF_W133_SSE_INVESTIGATION_2026-05-07.md` |
-| CP4 Alibaba evidence (JSON) | `docs/reviews/CVF_W133_RUNTIME_STABILITY_ALIBABA_EVIDENCE_2026-05-07.json` |
-| CP5 DeepSeek evidence (JSON) | `docs/reviews/CVF_W133_RUNTIME_STABILITY_DEEPSEEK_EVIDENCE_2026-05-07.json` |
+| CP4 Alibaba evidence (JSON) | `docs/reviews/archive/CVF_W133_RUNTIME_STABILITY_ALIBABA_EVIDENCE_2026-05-07.json` |
+| CP5 DeepSeek evidence (JSON) | `docs/reviews/archive/CVF_W133_RUNTIME_STABILITY_DEEPSEEK_EVIDENCE_2026-05-07.json` |
 | E2E spec | `tests/e2e/w133-runtime-stability.live.spec.ts` |
 | providers.ts Fix-A | `src/lib/ai/providers.ts` |
 | intent-router.ts Fix-B | `src/lib/intent-router.ts` |

@@ -57,7 +57,7 @@ Classification key:
 | Classification | Closed |
 | Area | Test coverage |
 | Closure | `tests/e2e/provider-lane-ui.spec.ts` (4 tests) added — provider lane badges + no-parity-language assertions cover W110-T3 surfaces. Release-gate mock E2E now runs the current UI-structure specs under `playwright.config.mock.ts`; obsolete exact-mock-response agent flow checks are excluded from the gate. Drift repaired in CP1 (config split + drift audit). |
-| Evidence | E2E Proof & Regression Stabilization roadmap — CP1 + CP3 DELIVERED 2026-04-21. Delta: `docs/baselines/CVF_E2E_PROOF_STABILIZATION_DELTA_2026-04-21.md`. |
+| Evidence | E2E Proof & Regression Stabilization roadmap — CP1 + CP3 DELIVERED 2026-04-21. Delta: `docs/baselines/archive/CVF_E2E_PROOF_STABILIZATION_DELTA_2026-04-21.md`. |
 
 ---
 
@@ -116,7 +116,7 @@ Classification key:
 | Classification | Closed |
 | Area | Non-coder value validation |
 | Closure | `tests/e2e/noncoder-governance-live.spec.ts` covers landing → template gallery → intake wizard structure, then real Alibaba `qwen-turbo` output through `/api/execute`. The live proof asserts governance metadata (`guardResult`, `outputValidation`, `providerRouting`) rather than exact AI text. Phase-gated/full-mode UI behavior is not used as live-output proof because it can correctly stop before provider execution. |
-| Evidence | E2E Proof & Regression Stabilization roadmap — CP2 DELIVERED 2026-04-21. Delta: `docs/baselines/CVF_E2E_PROOF_STABILIZATION_DELTA_2026-04-21.md`. |
+| Evidence | E2E Proof & Regression Stabilization roadmap — CP2 DELIVERED 2026-04-21. Delta: `docs/baselines/archive/CVF_E2E_PROOF_STABILIZATION_DELTA_2026-04-21.md`. |
 
 ---
 

@@ -5,8 +5,8 @@ Memory class: SUMMARY_RECORD
 > **Date:** 2026-04-13
 > **Document Type:** CVF-NATIVE SYNTHESIS CANDIDATE / NOT CANON / NOT IMPLEMENTATION AUTHORITY
 > **Source Packet:**
-> - `docs/assessments/CVF_GRAPHIFY_LLM_POWERED_PALACE_ARBITRATION_SYNTHESIS_2026-04-13.md`
-> - `docs/assessments/CVF_GRAPHIFY_LLM_POWERED_PALACE_FOCUSED_REBUTTAL_ROUND2_2026-04-13.md`
+> - `docs/assessments/archive/CVF_GRAPHIFY_LLM_POWERED_PALACE_ARBITRATION_SYNTHESIS_2026-04-13.md`
+> - `docs/assessments/archive/CVF_GRAPHIFY_LLM_POWERED_PALACE_FOCUSED_REBUTTAL_ROUND2_2026-04-13.md`
 > **Source Folders:**
 > - `.private_reference/legacy/CVF ADDING NEW/Knowledge Base_Graphify/`
 > - `.private_reference/legacy/CVF ADDING NEW/Knowledge Base_LLM-Powered/`

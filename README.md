@@ -10,7 +10,7 @@
 [![License](https://img.shields.io/badge/license-CC%20BY--NC--ND%204.0-blue.svg)](LICENSE)
 [![Guard Contract](https://img.shields.io/badge/Guard%20Contract-187%20tests%20pass-brightgreen.svg)](EXTENSIONS/CVF_GUARD_CONTRACT/)
 [![MCP Bridge](https://img.shields.io/badge/MCP%20Bridge-4%20endpoints%20active-blue.svg)](EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/guards/)
-[![Non-Coder Value](https://img.shields.io/badge/non--coder%20value-1%20provider%20proven-brightgreen.svg)](docs/reference/CVF_PUBLIC_NONCODER_VALUE_STATEMENT_2026-04-17.md)
+[![Non-Coder Value](https://img.shields.io/badge/non--coder%20value-1%20provider%20proven-brightgreen.svg)](docs/reference/archive/CVF_PUBLIC_NONCODER_VALUE_STATEMENT_2026-04-17.md)
 [![Multi Provider](https://img.shields.io/badge/multi--provider-Alibaba%20CERTIFIED%20%7C%20DeepSeek%20CERTIFIED-brightgreen.svg)](docs/reference/CVF_PROVIDER_LANE_READINESS_MATRIX.md)
 [![Knowledge Benefit](https://img.shields.io/badge/knowledge%20benefit-%2B0.775%20delta-brightgreen.svg)](docs/assessments/CVF_W102_T1_POST_RUN_QUALITY_ASSESSMENT_2026-04-17.md)
 [![AI Safety](https://img.shields.io/badge/AI%20Safety-Kernel%20Active-green.svg)](docs/assessments/CVF_ANTIGRAVITY_INDEPENDENT_ASSESSMENT_2026-02-26.md)
@@ -131,7 +131,7 @@ Boundaries that still matter:
 Canonical claim boundary:
 
 - [Live Evidence Publication Packet](docs/reference/CVF_LIVE_EVIDENCE_PUBLICATION_PACKET_2026-04-21.md)
-- [Public Non-Coder Value Statement](docs/reference/CVF_PUBLIC_NONCODER_VALUE_STATEMENT_2026-04-17.md)
+- [Public Non-Coder Value Statement](docs/reference/archive/CVF_PUBLIC_NONCODER_VALUE_STATEMENT_2026-04-17.md)
 - [Provider Lane Readiness Matrix](docs/reference/CVF_PROVIDER_LANE_READINESS_MATRIX.md)
 - [Alibaba live canary receipts](docs/audits/alibaba-canary/INDEX.md)
 - [DeepSeek live canary receipts](docs/audits/deepseek-canary/INDEX.md)
@@ -344,8 +344,8 @@ That means:
 The governing authorities for public-value proof remain:
 
 - [Template / Skill Corpus Rescreen Standard](docs/reference/CVF_TEMPLATE_SKILL_CORPUS_RESCREEN_STANDARD_2026-04-14.md)
-- [Corpus Rescreen D2 Matrix](docs/baselines/CVF_CORPUS_RESCREEN_D2_MATRIX_2026-04-15.md)
-- [Corpus Rescreen D3 Trusted Subset](docs/baselines/CVF_CORPUS_RESCREEN_D3_TRUSTED_SUBSET_2026-04-15.md)
+- [Corpus Rescreen D2 Matrix](docs/baselines/archive/CVF_CORPUS_RESCREEN_D2_MATRIX_2026-04-15.md)
+- [Corpus Rescreen D3 Trusted Subset](docs/baselines/archive/CVF_CORPUS_RESCREEN_D3_TRUSTED_SUBSET_2026-04-15.md)
 
 ### Newly Runnable Upgrade Surface
 

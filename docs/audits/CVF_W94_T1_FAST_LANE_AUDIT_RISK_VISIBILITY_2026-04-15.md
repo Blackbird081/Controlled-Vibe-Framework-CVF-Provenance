@@ -19,7 +19,7 @@ Add a visible R0/R1/R2/R3 risk badge to ProcessingScreen.tsx so non-coder users 
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.tsx` (+~30 lines)
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ProcessingScreen.test.tsx` (+~50 lines)
 - New: `docs/assessments/CVF_W94_T1_POST_RUN_QUALITY_ASSESSMENT_2026-04-15.md`
-- New: `docs/baselines/CVF_GC026_TRACKER_SYNC_W94_T1_CLOSED_2026-04-15.md`
+- New: `docs/baselines/archive/CVF_GC026_TRACKER_SYNC_W94_T1_CLOSED_2026-04-15.md`
 
 **Governance reuse:**
 - Risk labels from `safety-status.ts` (SafetyRiskLevel, getSafetyStatus, RISK_LABELS, RISK_DESCRIPTIONS) — no new vocabulary invented

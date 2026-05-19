@@ -106,8 +106,8 @@ the benchmark target extensions; actual benchmark execution remains a future wav
 ## 5. Intake Packet Reference
 
 1. `docs/assessments/CVF_GRAPHIFY_LLM_POWERED_PALACE_CVF_NATIVE_SYNTHESIS_NOTE_2026-04-13.md`
-2. `docs/assessments/CVF_GRAPHIFY_LLM_POWERED_PALACE_PROMOTION_AND_REJECTION_MAP_2026-04-13.md`
-3. `docs/roadmaps/CVF_W72_T2_KNOWLEDGE_COMPILATION_DOCTRINE_UPLIFT_ROADMAP_2026-04-14.md` §12
+2. `docs/assessments/archive/CVF_GRAPHIFY_LLM_POWERED_PALACE_PROMOTION_AND_REJECTION_MAP_2026-04-13.md`
+3. `docs/roadmaps/archive/CVF_W72_T2_KNOWLEDGE_COMPILATION_DOCTRINE_UPLIFT_ROADMAP_2026-04-14.md` §12
 4. `docs/reference/CVF_COMPILED_CONTEXT_GOVERNANCE_POLICY_2026-04-14.md` (W72-T2 output)
 
 ---

@@ -9,10 +9,10 @@
 
 | Checkpoint | Evidence | Result |
 |---|---|---|
-| CP4 Alibaba 12-journey matrix | `docs/reviews/CVF_W134_RUNTIME_STABILITY_ALIBABA_EVIDENCE_2026-05-07.json` | PASS: 9/12 accepted, target >=8/12 |
-| CP4 Alibaba markdown packet | `docs/reviews/CVF_W134_RUNTIME_STABILITY_ALIBABA_EVIDENCE_2026-05-07.md` | PASS: complete |
-| CP5 DeepSeek 6-journey confirmatory | `docs/reviews/CVF_W134_RUNTIME_STABILITY_DEEPSEEK_EVIDENCE_2026-05-07.json` | PASS: 6/6 accepted, target >=3/6 |
-| CP5 DeepSeek markdown packet | `docs/reviews/CVF_W134_RUNTIME_STABILITY_DEEPSEEK_EVIDENCE_2026-05-07.md` | PASS: complete |
+| CP4 Alibaba 12-journey matrix | `docs/reviews/archive/CVF_W134_RUNTIME_STABILITY_ALIBABA_EVIDENCE_2026-05-07.json` | PASS: 9/12 accepted, target >=8/12 |
+| CP4 Alibaba markdown packet | `docs/reviews/archive/CVF_W134_RUNTIME_STABILITY_ALIBABA_EVIDENCE_2026-05-07.md` | PASS: complete |
+| CP5 DeepSeek 6-journey confirmatory | `docs/reviews/archive/CVF_W134_RUNTIME_STABILITY_DEEPSEEK_EVIDENCE_2026-05-07.json` | PASS: 6/6 accepted, target >=3/6 |
+| CP5 DeepSeek markdown packet | `docs/reviews/archive/CVF_W134_RUNTIME_STABILITY_DEEPSEEK_EVIDENCE_2026-05-07.md` | PASS: complete |
 
 ## CP4 Alibaba Result
 

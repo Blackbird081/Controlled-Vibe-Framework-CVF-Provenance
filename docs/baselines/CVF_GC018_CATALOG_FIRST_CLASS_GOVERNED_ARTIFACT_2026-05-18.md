@@ -214,7 +214,7 @@ PASS  scripts/run_cvf_release_gate_bundle.py
 PASS  governance/toolkit/03_CONTROL/CVF_AGENT_REGISTRY.md
 PASS  governance/toolkit/05_OPERATION/CVF_AGENT_HANDOFF_GUARD.md
 PASS  governance/toolkit/05_OPERATION/CVF_MEMORY_GOVERNANCE_GUARD.md
-PASS  docs/reference/CVF_PUBLIC_NONCODER_VALUE_STATEMENT_2026-04-17.md
+PASS  docs/reference/archive/CVF_PUBLIC_NONCODER_VALUE_STATEMENT_2026-04-17.md
 PASS  docs/reference/CVF_PUBLIC_STRUCTURE_OVERVIEW.md
 ```
 

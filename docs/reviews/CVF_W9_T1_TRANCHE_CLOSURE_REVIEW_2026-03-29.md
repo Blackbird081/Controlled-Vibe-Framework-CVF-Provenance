@@ -5,7 +5,7 @@ Memory class: FULL_RECORD
 > Tranche: W9-T1 — RAG and Context Engine Convergence (Candidate B)
 > Wave: W9 (Post-W7 RAG + Context Engine Convergence)
 > Date: 2026-03-29
-> GC-018: `docs/reviews/CVF_GC018_CONTINUATION_CANDIDATE_W9_T1_RAG_CONTEXT_ENGINE_CONVERGENCE_2026-03-29.md`
+> GC-018: `docs/reviews/archive/CVF_GC018_CONTINUATION_CANDIDATE_W9_T1_RAG_CONTEXT_ENGINE_CONVERGENCE_2026-03-29.md`
 
 ---
 
@@ -21,18 +21,18 @@ Memory class: FULL_RECORD
 
 - [x] Contract: `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/rag.context.engine.convergence.contract.ts`
 - [x] Tests: 59 new, dedicated file — `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/rag.context.engine.convergence.contract.test.ts`
-- [x] Audit: `docs/audits/CVF_W9_T1_CP1_RAG_CONTEXT_ENGINE_CONVERGENCE_AUDIT_2026-03-29.md`
-- [x] Review: `docs/reviews/CVF_GC019_W9_T1_CP1_RAG_CONTEXT_ENGINE_CONVERGENCE_REVIEW_2026-03-29.md`
-- [x] Delta: `docs/baselines/CVF_W9_T1_CP1_RAG_CONTEXT_ENGINE_CONVERGENCE_DELTA_2026-03-29.md`
+- [x] Audit: `docs/audits/archive/CVF_W9_T1_CP1_RAG_CONTEXT_ENGINE_CONVERGENCE_AUDIT_2026-03-29.md`
+- [x] Review: `docs/reviews/archive/CVF_GC019_W9_T1_CP1_RAG_CONTEXT_ENGINE_CONVERGENCE_REVIEW_2026-03-29.md`
+- [x] Delta: `docs/baselines/archive/CVF_W9_T1_CP1_RAG_CONTEXT_ENGINE_CONVERGENCE_DELTA_2026-03-29.md`
 - [x] APPROVED
 
 ### CP2 — Convergence Report Batch Contract (Fast Lane GC-021)
 
 - [x] Contract: `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/rag.context.engine.convergence.batch.contract.ts`
 - [x] Tests: 24 new, dedicated file — `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/rag.context.engine.convergence.batch.contract.test.ts`
-- [x] Audit: `docs/audits/CVF_W9_T1_CP2_RAG_CONTEXT_ENGINE_CONVERGENCE_BATCH_AUDIT_2026-03-29.md`
-- [x] Review: `docs/reviews/CVF_GC021_W9_T1_CP2_RAG_CONTEXT_ENGINE_CONVERGENCE_BATCH_REVIEW_2026-03-29.md`
-- [x] Delta: `docs/baselines/CVF_W9_T1_CP2_RAG_CONTEXT_ENGINE_CONVERGENCE_BATCH_DELTA_2026-03-29.md`
+- [x] Audit: `docs/audits/archive/CVF_W9_T1_CP2_RAG_CONTEXT_ENGINE_CONVERGENCE_BATCH_AUDIT_2026-03-29.md`
+- [x] Review: `docs/reviews/archive/CVF_GC021_W9_T1_CP2_RAG_CONTEXT_ENGINE_CONVERGENCE_BATCH_REVIEW_2026-03-29.md`
+- [x] Delta: `docs/baselines/archive/CVF_W9_T1_CP2_RAG_CONTEXT_ENGINE_CONVERGENCE_BATCH_DELTA_2026-03-29.md`
 - [x] APPROVED
 
 ### Final test state

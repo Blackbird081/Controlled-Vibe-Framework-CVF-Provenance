@@ -10,7 +10,7 @@ Parent review:
 
 Parent roadmap:
 
-- `docs/roadmaps/CVF_NONCODER_OUTPUT_QUALITY_HARDENING_ROADMAP_2026-05-15.md`
+- `docs/roadmaps/archive/CVF_NONCODER_OUTPUT_QUALITY_HARDENING_ROADMAP_2026-05-15.md`
 
 ## 1. Implemented Product Change
 

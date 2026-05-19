@@ -139,9 +139,9 @@ This wave uses only the corrected 6-step form and makes `Govern` explicit.
 ## 6. Intake Packet Reference
 
 1. `docs/assessments/CVF_GRAPHIFY_LLM_POWERED_PALACE_CVF_NATIVE_SYNTHESIS_NOTE_2026-04-13.md`
-2. `docs/assessments/CVF_GRAPHIFY_LLM_POWERED_PALACE_PROMOTION_AND_REJECTION_MAP_2026-04-13.md`
-3. `docs/roadmaps/CVF_W72_T2_KNOWLEDGE_COMPILATION_DOCTRINE_UPLIFT_ROADMAP_2026-04-14.md`
-4. `docs/baselines/CVF_W72_T1_KNOWLEDGE_STRUCTURAL_INDEX_GC021_FAST_LANE_AUDIT_2026-04-13.md`
+2. `docs/assessments/archive/CVF_GRAPHIFY_LLM_POWERED_PALACE_PROMOTION_AND_REJECTION_MAP_2026-04-13.md`
+3. `docs/roadmaps/archive/CVF_W72_T2_KNOWLEDGE_COMPILATION_DOCTRINE_UPLIFT_ROADMAP_2026-04-14.md`
+4. `docs/baselines/archive/CVF_W72_T1_KNOWLEDGE_STRUCTURAL_INDEX_GC021_FAST_LANE_AUDIT_2026-04-13.md`
 
 Source folders NOT used as direct implementation sources. All content derived from CVF-native synthesis only.
 

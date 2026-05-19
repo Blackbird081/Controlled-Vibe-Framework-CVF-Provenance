@@ -22,7 +22,7 @@
 |---|---|
 | `npx vitest run src/app/api/execute/route.test.ts src/lib/ai/providers.test.ts` | PASS: 62/62 |
 | `npx playwright test tests/e2e/w136-execute-route-timeout-budget.live.spec.ts --workers=1` | PASS: 1/1 |
-| `docs/reviews/CVF_W136_EXECUTE_ROUTE_TIMEOUT_BUDGET_EVIDENCE_2026-05-07.json` | documentation 28.9s, strategy_analysis 37.1s, both HTTP 200 / ALLOW |
+| `docs/reviews/archive/CVF_W136_EXECUTE_ROUTE_TIMEOUT_BUDGET_EVIDENCE_2026-05-07.json` | documentation 28.9s, strategy_analysis 37.1s, both HTTP 200 / ALLOW |
 | `python scripts/run_cvf_release_gate_bundle.py --json` | PASS |
 
 ## Boundary

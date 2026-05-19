@@ -4,7 +4,7 @@
 
 > Date: 2026-04-30
 > Tranche: W131-T1 — Noncoder Post-W130 Real-Traffic Stability And Claim Hardening
-> GC-018: `docs/baselines/CVF_GC018_W131_T1_NONCODER_POST_W130_STABILITY_AUTHORIZATION_2026-04-30.md`
+> GC-018: `docs/baselines/archive/CVF_GC018_W131_T1_NONCODER_POST_W130_STABILITY_AUTHORIZATION_2026-04-30.md`
 > Status: LOCKED — governs W131 evidence and closure
 
 ---

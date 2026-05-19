@@ -9,8 +9,8 @@
 
 | Lane | Evidence | Result |
 |---|---|---|
-| Alibaba 12-journey matrix | `docs/reviews/CVF_W137_RUNTIME_STABILITY_ALIBABA_EVIDENCE_2026-05-07.json` | FAIL target: 10/12 accepted, target >=11/12 |
-| DeepSeek 6-journey confirmatory | `docs/reviews/CVF_W137_RUNTIME_STABILITY_DEEPSEEK_EVIDENCE_2026-05-07.json` | PASS: 6/6 accepted |
+| Alibaba 12-journey matrix | `docs/reviews/archive/CVF_W137_RUNTIME_STABILITY_ALIBABA_EVIDENCE_2026-05-07.json` | FAIL target: 10/12 accepted, target >=11/12 |
+| DeepSeek 6-journey confirmatory | `docs/reviews/archive/CVF_W137_RUNTIME_STABILITY_DEEPSEEK_EVIDENCE_2026-05-07.json` | PASS: 6/6 accepted |
 
 ## What Stayed Closed
 

@@ -76,7 +76,7 @@ Multi-sample downstream proof:
 
 - Script: `scripts/w114_cp7_multi_sample_downstream_proof.ps1`
 - Assessment: `docs/assessments/CVF_W114_T1_MULTI_SAMPLE_DOWNSTREAM_PROOF_2026-04-23.md`
-- Raw: `docs/assessments/CVF_W114_CP7_RAW_2026-04-23.json`
+- Raw: `docs/assessments/archive/CVF_W114_CP7_RAW_2026-04-23.json`
 
 Workspace-to-web evidence bridge:
 

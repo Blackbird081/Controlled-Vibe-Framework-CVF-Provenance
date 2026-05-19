@@ -43,7 +43,7 @@ Proposal source:
 
 Public renewal roadmap checked:
 
-`docs/roadmaps/CVF_PUBLIC_GITHUB_RENEWAL_AND_PROVENANCE_SPLIT_ROADMAP_V2_2026-05-09.md`
+`docs/roadmaps/archive/CVF_PUBLIC_GITHUB_RENEWAL_AND_PROVENANCE_SPLIT_ROADMAP_V2_2026-05-09.md`
 
 ## Methodology
 

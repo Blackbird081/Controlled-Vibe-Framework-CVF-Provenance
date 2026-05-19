@@ -83,12 +83,12 @@
 - ✅ `docs/roadmaps/CVF_GC018_W61_T1_CI_EXPANSION_ROADMAP_2026-04-08.md`
 
 ### 5.2 Audit Documents (2)
-- ✅ `docs/audits/CVF_W61_T1_CP1_FOUNDATION_TEST_JOBS_AUDIT_2026-04-08.md`
-- ✅ `docs/audits/CVF_W61_T1_CP2_BUILD_VERIFICATION_AUDIT_2026-04-08.md`
+- ✅ `docs/audits/archive/CVF_W61_T1_CP1_FOUNDATION_TEST_JOBS_AUDIT_2026-04-08.md`
+- ✅ `docs/audits/archive/CVF_W61_T1_CP2_BUILD_VERIFICATION_AUDIT_2026-04-08.md`
 
 ### 5.3 Review Documents (2)
-- ✅ `docs/reviews/CVF_GC019_W61_T1_CP1_FOUNDATION_TEST_JOBS_REVIEW_2026-04-08.md`
-- ✅ `docs/reviews/CVF_GC019_W61_T1_CP2_BUILD_VERIFICATION_REVIEW_2026-04-08.md`
+- ✅ `docs/reviews/archive/CVF_GC019_W61_T1_CP1_FOUNDATION_TEST_JOBS_REVIEW_2026-04-08.md`
+- ✅ `docs/reviews/archive/CVF_GC019_W61_T1_CP2_BUILD_VERIFICATION_REVIEW_2026-04-08.md`
 
 ### 5.4 Tranche Closure
 - ✅ `docs/reviews/CVF_W61_T1_TRANCHE_CLOSURE_REVIEW_2026-04-08.md` (this document)
@@ -254,10 +254,10 @@ Governance artifacts: 6 documents (1 roadmap, 2 audits, 2 reviews, 1 closure)
 ### 13.2 Files to Stage
 - `.github/workflows/cvf-ci.yml`
 - `docs/roadmaps/CVF_GC018_W61_T1_CI_EXPANSION_ROADMAP_2026-04-08.md`
-- `docs/audits/CVF_W61_T1_CP1_FOUNDATION_TEST_JOBS_AUDIT_2026-04-08.md`
-- `docs/audits/CVF_W61_T1_CP2_BUILD_VERIFICATION_AUDIT_2026-04-08.md`
-- `docs/reviews/CVF_GC019_W61_T1_CP1_FOUNDATION_TEST_JOBS_REVIEW_2026-04-08.md`
-- `docs/reviews/CVF_GC019_W61_T1_CP2_BUILD_VERIFICATION_REVIEW_2026-04-08.md`
+- `docs/audits/archive/CVF_W61_T1_CP1_FOUNDATION_TEST_JOBS_AUDIT_2026-04-08.md`
+- `docs/audits/archive/CVF_W61_T1_CP2_BUILD_VERIFICATION_AUDIT_2026-04-08.md`
+- `docs/reviews/archive/CVF_GC019_W61_T1_CP1_FOUNDATION_TEST_JOBS_REVIEW_2026-04-08.md`
+- `docs/reviews/archive/CVF_GC019_W61_T1_CP2_BUILD_VERIFICATION_REVIEW_2026-04-08.md`
 - `docs/reviews/CVF_W61_T1_TRANCHE_CLOSURE_REVIEW_2026-04-08.md`
 
 ---

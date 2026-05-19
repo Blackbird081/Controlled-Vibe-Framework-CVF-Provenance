@@ -73,6 +73,9 @@ PERMANENT_PATHS = {
     "docs/baselines/CVF_CONFORMANCE_GOLDEN_BASELINE_2026-03-07.json",
     "docs/baselines/CVF_TESTER_BASELINE_2026-02-25.md",
     "docs/baselines/README.md",
+    "docs/reference/CVF_NON_CODER_VALUE_GUARD_PROPOSAL_2026-04-14.md",
+    "docs/assessments/CVF_EXECUTIVE_VALUE_PRIORITIZATION_NOTE_2026-04-13.md",
+    "docs/roadmaps/CVF_GRAPHIFY_LLM_POWERED_PALACE_SYNTHESIS_ONLY_ROADMAP_2026-04-13.md",
     "AGENT_HANDOFF.md",
 }
 
@@ -417,6 +420,37 @@ def iter_link_scan_sources() -> list[Path]:
     return sources
 
 
+def iter_reference_text_sources() -> list[Path]:
+    sources: list[Path] = []
+    seen: set[str] = set()
+
+    for target in REFERENCE_SCAN_TARGETS:
+        target_path = PROJECT_ROOT / target
+        if not target_path.exists():
+            continue
+        if target_path.is_file():
+            rel_path = to_rel_path(target_path)
+            if rel_path not in seen and not is_excluded_path(rel_path):
+                sources.append(target_path)
+                seen.add(rel_path)
+            continue
+
+        for item in target_path.rglob("*"):
+            if not item.is_file() or is_archive_path(item):
+                continue
+            if item.suffix.lower() not in MANAGED_EXTENSIONS:
+                continue
+            rel_path = to_rel_path(item)
+            if is_excluded_path(rel_path):
+                continue
+            if rel_path in seen:
+                continue
+            sources.append(item)
+            seen.add(rel_path)
+
+    return sources
+
+
 @lru_cache(maxsize=1)
 def iter_link_scan_source_rel_paths() -> tuple[str, ...]:
     return tuple(to_rel_path(path) for path in iter_link_scan_sources())
@@ -568,6 +602,56 @@ def build_markdown_link_index() -> tuple[dict[str, set[str]], list[LinkIssue]]:
     return inbound_index, broken_issues
 
 
+def _compile_query_chunks(queries: set[str], chunk_size: int = 150) -> list[re.Pattern[str]]:
+    ordered = sorted((query for query in queries if len(query) >= 6), key=len, reverse=True)
+    chunks: list[re.Pattern[str]] = []
+    for index in range(0, len(ordered), chunk_size):
+        chunk = ordered[index : index + chunk_size]
+        if not chunk:
+            continue
+        chunks.append(re.compile("|".join(re.escape(query) for query in chunk)))
+    return chunks
+
+
+def build_fixed_reference_indexes(
+    candidates: list[FileInfo],
+) -> tuple[dict[str, set[str]], dict[str, set[str]]]:
+    query_to_candidates: dict[str, set[str]] = {}
+    exact_queries: set[str] = set()
+
+    for candidate in candidates:
+        for query in (candidate.rel_path, candidate.path.name):
+            if len(query) < 6:
+                continue
+            query_to_candidates.setdefault(query, set()).add(candidate.rel_path)
+        exact_queries.add(candidate.rel_path)
+
+    live_index: dict[str, set[str]] = {candidate.rel_path: set() for candidate in candidates}
+    exact_index: dict[str, set[str]] = {candidate.rel_path: set() for candidate in candidates}
+    query_patterns = _compile_query_chunks(set(query_to_candidates))
+    if not query_patterns:
+        return live_index, exact_index
+
+    for source_path in iter_reference_text_sources():
+        source_rel = to_rel_path(source_path)
+        try:
+            content = source_path.read_text(encoding="utf-8", errors="ignore")
+        except OSError:
+            continue
+
+        matched_queries: set[str] = set()
+        for pattern in query_patterns:
+            matched_queries.update(match.group(0) for match in pattern.finditer(content))
+
+        for query in matched_queries:
+            for candidate_rel in query_to_candidates.get(query, set()):
+                live_index.setdefault(candidate_rel, set()).add(source_rel)
+                if query in exact_queries:
+                    exact_index.setdefault(candidate_rel, set()).add(source_rel)
+
+    return live_index, exact_index
+
+
 def collect_markdown_link_sources_for_candidate(
     candidate: FileInfo,
     moving_rel_paths: set[str],
@@ -658,6 +742,8 @@ def evaluate_candidate_risk(
     candidate: FileInfo,
     moving_rel_paths: set[str],
     markdown_link_index: Optional[dict[str, set[str]]] = None,
+    live_reference_index: Optional[dict[str, set[str]]] = None,
+    exact_path_reference_index: Optional[dict[str, set[str]]] = None,
 ) -> CandidateRisk:
     if candidate.rel_path.startswith("docs/reviews/") and candidate.rel_path in load_review_retain_evidence_paths():
         return CandidateRisk(
@@ -679,8 +765,29 @@ def evaluate_candidate_risk(
             markdown_link_sources=[],
         )
 
-    live_sources = collect_live_reference_sources(candidate, moving_rel_paths)
-    exact_path_sources = collect_exact_path_reference_sources(candidate, moving_rel_paths)
+    if live_reference_index is None:
+        live_sources = collect_live_reference_sources(candidate, moving_rel_paths)
+    else:
+        live_sources = {
+            source
+            for source in live_reference_index.get(candidate.rel_path, set())
+            if source != candidate.rel_path
+            and "/archive/" not in source
+            and not is_excluded_path(source)
+            and source not in moving_rel_paths
+        }
+
+    if exact_path_reference_index is None:
+        exact_path_sources = collect_exact_path_reference_sources(candidate, moving_rel_paths)
+    else:
+        exact_path_sources = {
+            source
+            for source in exact_path_reference_index.get(candidate.rel_path, set())
+            if source != candidate.rel_path
+            and "/archive/" not in source
+            and not is_excluded_path(source)
+            and source not in moving_rel_paths
+        }
     filename_only_sources = live_sources - exact_path_sources
     if markdown_link_index is None:
         markdown_link_sources = collect_markdown_link_sources_for_candidate(candidate, moving_rel_paths)
@@ -848,6 +955,7 @@ def build_full_plan(
     all_candidates: list[FileInfo],
 ) -> tuple[dict[str, CandidateRisk], int]:
     markdown_link_index, _ = build_markdown_link_index()
+    live_reference_index, exact_path_reference_index = build_fixed_reference_indexes(all_candidates)
     moving_rel_paths = {candidate.rel_path for candidate in all_candidates}
     risks: dict[str, CandidateRisk] = {}
 
@@ -858,6 +966,8 @@ def build_full_plan(
                 candidate,
                 moving_rel_paths,
                 markdown_link_index,
+                live_reference_index,
+                exact_path_reference_index,
             )
 
         next_moving = {
@@ -921,6 +1031,12 @@ def build_incremental_plan(
 
     moving_rel_paths = {candidate.rel_path for candidate in pending_candidates}
     evaluated_risks: dict[str, CandidateRisk] = {}
+    markdown_link_index: dict[str, set[str]] | None = None
+    live_reference_index: dict[str, set[str]] | None = None
+    exact_path_reference_index: dict[str, set[str]] | None = None
+    if pending_candidates:
+        markdown_link_index, _ = build_markdown_link_index()
+        live_reference_index, exact_path_reference_index = build_fixed_reference_indexes(pending_candidates)
 
     for _ in range(8):
         next_evaluated: dict[str, CandidateRisk] = {}
@@ -928,7 +1044,9 @@ def build_incremental_plan(
             next_evaluated[candidate.rel_path] = evaluate_candidate_risk(
                 candidate,
                 moving_rel_paths,
-                None,
+                markdown_link_index,
+                live_reference_index,
+                exact_path_reference_index,
             )
 
         next_moving = {

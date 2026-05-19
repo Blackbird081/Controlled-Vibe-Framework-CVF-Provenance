@@ -141,9 +141,9 @@ Canonical physical move set landed on `cvf-next`:
 
 - `P3 / CP1` — retire `CVF Edit/`, `CVF_Important/`, and `CVF_Restructure/` from the visible repo root; optional local recovery may live under `.private_reference/legacy/`
 - governing packet chain:
-  - `docs/audits/CVF_P3_CP1_RETIRED_REFERENCE_ROOT_RETIREMENT_AUDIT_2026-04-02.md`
-  - `docs/reviews/CVF_GC019_P3_CP1_RETIRED_REFERENCE_ROOT_RETIREMENT_REVIEW_2026-04-02.md`
-  - `docs/baselines/CVF_P3_CP1_RETIRED_REFERENCE_ROOT_RETIREMENT_DELTA_2026-04-02.md`
+  - `docs/audits/archive/CVF_P3_CP1_RETIRED_REFERENCE_ROOT_RETIREMENT_AUDIT_2026-04-02.md`
+  - `docs/reviews/archive/CVF_GC019_P3_CP1_RETIRED_REFERENCE_ROOT_RETIREMENT_REVIEW_2026-04-02.md`
+  - `docs/baselines/archive/CVF_P3_CP1_RETIRED_REFERENCE_ROOT_RETIREMENT_DELTA_2026-04-02.md`
 Isolated branch execution retained as evidence but excluded from canonical landing:
 
 - `P3 / CP2` proposed relocating `CVF_SKILL_LIBRARY/` and `ui_governance_engine/` into `ECOSYSTEM/reference-roots/retained-internal/`
@@ -438,7 +438,7 @@ Exit condition:
   - package names: `cvf-core-git-for-ai`, `cvf-guard-contract`, `cvf-runtime-adapter-hub`
   - versioning: semver `0.x`, initial `0.1.0`
   - GC-039 landing path: RESOLVED (`P3/CP2` excluded; `P3/CP3-P3/CP5` + `P4/CP1-P4/CP17` authorized)
-  - decision record: `docs/reference/CVF_PUBLICATION_DECISION_RECORD_2026-04-03.md`
+  - decision record: `docs/reference/archive/CVF_PUBLICATION_DECISION_RECORD_2026-04-03.md`
 - current docs-mirror result:
   - direct candidates:
     - root front-door files + learning-oriented docs zones

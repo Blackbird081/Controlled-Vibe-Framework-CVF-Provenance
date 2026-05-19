@@ -918,8 +918,8 @@ Promote knowledge-absorption priority into a governed control. `GC-043` now requ
 - `governance/toolkit/05_OPERATION/CVF_KNOWLEDGE_ABSORPTION_PRIORITY_GUARD.md`
 - `governance/compat/check_knowledge_absorption_priority_compat.py`
 - `docs/reference/CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md`
-- `docs/assessments/CVF_EXECUTIVE_VALUE_PRIORITIZATION_NOTE_2026-04-13.md`
-- `docs/roadmaps/CVF_GRAPHIFY_LLM_POWERED_PALACE_SYNTHESIS_ONLY_ROADMAP_2026-04-13.md`
+- `docs/assessments/archive/CVF_EXECUTIVE_VALUE_PRIORITIZATION_NOTE_2026-04-13.md`
+- `docs/roadmaps/archive/CVF_GRAPHIFY_LLM_POWERED_PALACE_SYNTHESIS_ONLY_ROADMAP_2026-04-13.md`
 - `docs/reference/CVF_SESSION_GOVERNANCE_BOOTSTRAP.md`
 - `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md`
 

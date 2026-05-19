@@ -28,14 +28,14 @@ EPF consumer bridge #3 delivered. `StreamingExecutionContract` is now consumer-v
 - ✅ `tests/streaming.execution.consumer.pipeline.test.ts`
 - ✅ Barrel exports updated
 - ✅ Partition registry updated
-- ✅ `docs/audits/CVF_W2_T29_CP1_STREAMING_EXECUTION_CONSUMER_BRIDGE_AUDIT_2026-03-27.md`
-- ✅ `docs/reviews/CVF_GC019_W2_T29_CP1_STREAMING_EXECUTION_CONSUMER_BRIDGE_REVIEW_2026-03-27.md`
+- ✅ `docs/audits/archive/CVF_W2_T29_CP1_STREAMING_EXECUTION_CONSUMER_BRIDGE_AUDIT_2026-03-27.md`
+- ✅ `docs/reviews/archive/CVF_GC019_W2_T29_CP1_STREAMING_EXECUTION_CONSUMER_BRIDGE_REVIEW_2026-03-27.md`
 - ✅ `docs/baselines/archive/CVF_W2_T29_CP1_STREAMING_EXECUTION_CONSUMER_BRIDGE_DELTA_2026-03-27.md`
 
 ### CP2 — Fast Lane (GC-021): StreamingExecutionConsumerPipelineBatchContract
 - ✅ `src/streaming.execution.consumer.pipeline.batch.contract.ts`
-- ✅ `docs/audits/CVF_W2_T29_CP2_STREAMING_EXECUTION_CONSUMER_BRIDGE_AUDIT_2026-03-27.md`
-- ✅ `docs/reviews/CVF_GC021_W2_T29_CP2_STREAMING_EXECUTION_CONSUMER_BRIDGE_REVIEW_2026-03-27.md`
+- ✅ `docs/audits/archive/CVF_W2_T29_CP2_STREAMING_EXECUTION_CONSUMER_BRIDGE_AUDIT_2026-03-27.md`
+- ✅ `docs/reviews/archive/CVF_GC021_W2_T29_CP2_STREAMING_EXECUTION_CONSUMER_BRIDGE_REVIEW_2026-03-27.md`
 - ✅ `docs/baselines/archive/CVF_W2_T29_CP2_STREAMING_EXECUTION_CONSUMER_BRIDGE_DELTA_2026-03-27.md`
 
 ### CP3 — Closure

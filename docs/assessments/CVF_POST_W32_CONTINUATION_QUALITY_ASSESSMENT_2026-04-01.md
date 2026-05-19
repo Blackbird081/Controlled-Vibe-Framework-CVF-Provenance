@@ -21,8 +21,8 @@ Memory class: FULL_RECORD
   - `docs/reference/CVF_WHITEPAPER_PROGRESS_TRACKER.md`
   - `AGENT_HANDOFF.md`
   - `docs/roadmaps/CVF_POST_W7_OPEN_TARGETS_UPGRADE_ROADMAP_2026-03-28.md`
-  - `docs/reviews/CVF_W32_T1_TRANCHE_CLOSURE_REVIEW_2026-04-01.md`
-  - `docs/baselines/CVF_GC026_TRACKER_SYNC_W32_T1_CLOSED_2026-04-01.md`
+  - `docs/reviews/archive/CVF_W32_T1_TRANCHE_CLOSURE_REVIEW_2026-04-01.md`
+  - `docs/baselines/archive/CVF_GC026_TRACKER_SYNC_W32_T1_CLOSED_2026-04-01.md`
 - Latest package-level clean truth: CPF `2691`, EPF `1123`, GEF `625`, LPF `1465`, all `0 failures`
 
 ## 3. Weighted Score Table
@@ -72,5 +72,5 @@ Memory class: FULL_RECORD
 - Architecture baseline: `docs/reference/CVF_MASTER_ARCHITECTURE_WHITEPAPER.md`
 - Progress tracker: `docs/reference/CVF_WHITEPAPER_PROGRESS_TRACKER.md`
 - Handoff: `AGENT_HANDOFF.md`
-- Latest closure anchor: `docs/reviews/CVF_W32_T1_TRANCHE_CLOSURE_REVIEW_2026-04-01.md`
-- Latest GC-026 sync: `docs/baselines/CVF_GC026_TRACKER_SYNC_W32_T1_CLOSED_2026-04-01.md`
+- Latest closure anchor: `docs/reviews/archive/CVF_W32_T1_TRANCHE_CLOSURE_REVIEW_2026-04-01.md`
+- Latest GC-026 sync: `docs/baselines/archive/CVF_GC026_TRACKER_SYNC_W32_T1_CLOSED_2026-04-01.md`

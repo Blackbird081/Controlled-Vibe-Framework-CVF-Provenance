@@ -19,10 +19,10 @@ It means:
 
 ## 2. What Is Considered Proven Enough For This Pause Point
 
-- Direct-mode Alibaba multi-role baseline exists and is documented in `docs/assessments/CVF_PVV_W66_T2_ALIBABA_MULTI_ROLE_ASSESSMENT_2026-04-12.md`
-- Governed-path CP3B evidence exists and is documented in `docs/assessments/CVF_PVV_CP3B_GOVERNED_PATH_ASSESSMENT_2026-04-12.md`
+- Direct-mode Alibaba multi-role baseline exists and is documented in `docs/assessments/archive/CVF_PVV_W66_T2_ALIBABA_MULTI_ROLE_ASSESSMENT_2026-04-12.md`
+- Governed-path CP3B evidence exists and is documented in `docs/assessments/archive/CVF_PVV_CP3B_GOVERNED_PATH_ASSESSMENT_2026-04-12.md`
 - The P1 product gap was closed by `BypassDetectionGuard`
-- Guard verification for `C-014 × 9` produced `9/9 BYPASS_BLOCKED` in `docs/baselines/CVF_PVV_CP3B_BYPASS_GUARD_VERIFICATION_2026-04-12.md`
+- Guard verification for `C-014 × 9` produced `9/9 BYPASS_BLOCKED` in `docs/baselines/archive/CVF_PVV_CP3B_BYPASS_GUARD_VERIFICATION_2026-04-12.md`
 - For the current internal checkpoint, CVF is now in a good-enough state on the bounded claim: governed path can block model bypass approvals on the verified path
 
 ## 3. What This Pause Does Not Claim
@@ -67,11 +67,11 @@ Reopen only if the operator explicitly decides that provider execution should re
 If reopened later, use the existing canon and evidence chain rather than restarting from memory:
 
 - `docs/roadmaps/CVF_PRODUCT_VALUE_VALIDATION_WAVE_ROADMAP_2026-04-11.md`
-- `docs/assessments/CVF_PVV_W66_T2_ALIBABA_MULTI_ROLE_ASSESSMENT_2026-04-12.md`
-- `docs/assessments/CVF_PVV_CP3B_GOVERNED_PATH_ASSESSMENT_2026-04-12.md`
-- `docs/baselines/CVF_PVV_CP3B_BATCH_COMPLETION_RECEIPT_2026-04-12.md`
-- `docs/baselines/CVF_PVV_CP3B_BYPASS_GUARD_VERIFICATION_2026-04-12.md`
-- `docs/baselines/CVF_GC018_W66_T1_CP3A_FULL_SCORED_BATCH_AUTHORIZATION_2026-04-11.md`
+- `docs/assessments/archive/CVF_PVV_W66_T2_ALIBABA_MULTI_ROLE_ASSESSMENT_2026-04-12.md`
+- `docs/assessments/archive/CVF_PVV_CP3B_GOVERNED_PATH_ASSESSMENT_2026-04-12.md`
+- `docs/baselines/archive/CVF_PVV_CP3B_BATCH_COMPLETION_RECEIPT_2026-04-12.md`
+- `docs/baselines/archive/CVF_PVV_CP3B_BYPASS_GUARD_VERIFICATION_2026-04-12.md`
+- `docs/baselines/archive/CVF_GC018_W66_T1_CP3A_FULL_SCORED_BATCH_AUTHORIZATION_2026-04-11.md`
 
 ## 7. Canonical Interpretation Rule
 

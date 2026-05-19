@@ -96,7 +96,7 @@ Could the upgrade be skipped entirely? Argument against the upgrade:
 - 3283 files is a heavy investment.
 - Most files are working artifacts, not user-facing.
 - Public renewal roadmap V2 already exists
-  (`docs/roadmaps/CVF_PUBLIC_GITHUB_RENEWAL_AND_PROVENANCE_SPLIT_ROADMAP_V2_2026-05-09.md`)
+  (`docs/roadmaps/archive/CVF_PUBLIC_GITHUB_RENEWAL_AND_PROVENANCE_SPLIT_ROADMAP_V2_2026-05-09.md`)
   and may already cover this.
 
 Rebuttal: the existing renewal roadmap covers exposure split and provenance,
@@ -175,7 +175,7 @@ If the after-Tier-1 measurement does not show net improvement, Tier 2 is
 
 - `docs/reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md` (GC-045)
 - `governance/toolkit/05_OPERATION/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_GUARD.md`
-- `docs/roadmaps/CVF_PUBLIC_GITHUB_RENEWAL_AND_PROVENANCE_SPLIT_ROADMAP_V2_2026-05-09.md`
+- `docs/roadmaps/archive/CVF_PUBLIC_GITHUB_RENEWAL_AND_PROVENANCE_SPLIT_ROADMAP_V2_2026-05-09.md`
 - `governance/toolkit/05_OPERATION/CVF_GOVERNED_FILE_SIZE_GUARD.md` (GC-023)
 - `docs/reviews/CVF_16_5_EXTERNAL_KNOWLEDGE_INTAKE_REVIEW_CLAUDE_REBUTTAL_2026-05-16.md` (precedent for over-broad tranche failure mode this proposal explicitly avoids)
 

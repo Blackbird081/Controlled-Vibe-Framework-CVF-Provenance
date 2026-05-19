@@ -5,7 +5,7 @@
 > Date: 2026-04-28
 > Status: LOCKED
 > Tranche: W130-T1 — Noncoder Evidence And Pack Export Activation
-> Authorization: `docs/baselines/CVF_GC018_W130_T1_NONCODER_EVIDENCE_AND_PACK_EXPORT_ACTIVATION_AUTHORIZATION_2026-04-28.md`
+> Authorization: `docs/baselines/archive/CVF_GC018_W130_T1_NONCODER_EVIDENCE_AND_PACK_EXPORT_ACTIVATION_AUTHORIZATION_2026-04-28.md`
 
 ---
 

@@ -8,7 +8,7 @@ Memory class: FULL_RECORD
 > Class: PACKAGING
 > Lane: Fast Lane (GC-021)
 > Baseline: v3.7-W46T1 (CLOSURE-ASSESSED)
-> Pre-authorization assessment: `docs/assessments/CVF_POST_W64_CONTINUATION_QUALITY_ASSESSMENT_2026-04-10.md`
+> Pre-authorization assessment: `docs/assessments/archive/CVF_POST_W64_CONTINUATION_QUALITY_ASSESSMENT_2026-04-10.md`
 
 ---
 

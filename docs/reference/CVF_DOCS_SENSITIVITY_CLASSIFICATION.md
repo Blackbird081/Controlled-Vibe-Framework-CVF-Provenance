@@ -275,7 +275,7 @@ For files marked `NEEDS_REVIEW`:
 - `docs/reference/CVF_PREPUBLIC_DOCS_MIRROR_BOUNDARY_2026-04-02.md`
 - `docs/reference/CVF_REPOSITORY_EXPOSURE_CLASSIFICATION.md`
 - `docs/.publicignore` (to be created in CP2)
-- `docs/roadmaps/CVF_GC018_W62_T1_DOCS_CURATION_ROADMAP_2026-04-08.md`
+- `docs/roadmaps/archive/CVF_GC018_W62_T1_DOCS_CURATION_ROADMAP_2026-04-08.md`
 
 ---
 

@@ -4,7 +4,7 @@
 **Date:** 2026-05-08  
 **Track:** RC2 Pre-GA / CI1  
 **Status:** AUTHORIZED FOR IMPLEMENTATION  
-**Source roadmap:** `docs/roadmaps/CVF_RC2_PRE_GA_VALIDATION_AND_C5_READINESS_ROADMAP_V2_2026-05-08.md`
+**Source roadmap:** `docs/roadmaps/archive/CVF_RC2_PRE_GA_VALIDATION_AND_C5_READINESS_ROADMAP_V2_2026-05-08.md`
 
 ## Decision
 

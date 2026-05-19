@@ -9,8 +9,8 @@
 
 | Lane | Evidence | Result |
 |---|---|---|
-| Alibaba direct API matrix | `docs/reviews/CVF_W139_DIRECT_API_MATRIX_ALIBABA_EVIDENCE_2026-05-07.json` | PASS diagnostic: 12/12 accepted |
-| DeepSeek direct API matrix | `docs/reviews/CVF_W139_DIRECT_API_MATRIX_DEEPSEEK_EVIDENCE_2026-05-07.json` | PASS diagnostic: 6/6 accepted |
+| Alibaba direct API matrix | `docs/reviews/archive/CVF_W139_DIRECT_API_MATRIX_ALIBABA_EVIDENCE_2026-05-07.json` | PASS diagnostic: 12/12 accepted |
+| DeepSeek direct API matrix | `docs/reviews/archive/CVF_W139_DIRECT_API_MATRIX_DEEPSEEK_EVIDENCE_2026-05-07.json` | PASS diagnostic: 6/6 accepted |
 
 ## Finding
 

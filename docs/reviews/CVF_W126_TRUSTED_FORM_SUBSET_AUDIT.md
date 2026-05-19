@@ -174,7 +174,7 @@ The current trusted-form corpus boundary is superseded by the W142-W149 chain:
 
 For current implementation scope, use:
 
-- `docs/reviews/CVF_W149_TRUSTED_FORM_FULL_CORPUS_LOCK_2026-05-08.md`
+- `docs/reviews/archive/CVF_W149_TRUSTED_FORM_FULL_CORPUS_LOCK_2026-05-08.md`
 - `docs/reviews/CVF_W149_CLOSURE_DECISION_2026-05-08.md`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/trusted-form-corpus.ts`
 

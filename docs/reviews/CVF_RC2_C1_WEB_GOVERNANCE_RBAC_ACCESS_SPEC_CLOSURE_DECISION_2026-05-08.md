@@ -13,9 +13,9 @@ governance operations is specified.
 ## Delivered
 
 - Authorization:
-  `docs/baselines/CVF_GC018_RC2_C1_WEB_GOVERNANCE_RBAC_ACCESS_SPEC_AUTHORIZATION_2026-05-08.md`
+  `docs/baselines/archive/CVF_GC018_RC2_C1_WEB_GOVERNANCE_RBAC_ACCESS_SPEC_AUTHORIZATION_2026-05-08.md`
 - Roadmap:
-  `docs/roadmaps/CVF_RC2_C1_WEB_GOVERNANCE_RBAC_ACCESS_SPEC_ROADMAP_2026-05-08.md`
+  `docs/roadmaps/archive/CVF_RC2_C1_WEB_GOVERNANCE_RBAC_ACCESS_SPEC_ROADMAP_2026-05-08.md`
 - Spec:
   `docs/reviews/CVF_WEB_GOVERNANCE_RBAC_ACCESS_SPEC_2026-05-08.md`
 

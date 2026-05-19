@@ -40,7 +40,7 @@ this assessment. Categories that may warrant future tranches:
 |---|---|
 | Fresh EPF capability wave | Model Gateway provider routing or Sandbox Runtime isolation authorized — requires `CVF_v1.7.3_RUNTIME_ADAPTER_HUB` readiness + fresh GC-018 |
 | CPF relocation / consolidation | Preservation override + fresh GC-019 + GC-039 + dedicated branch |
-| npm publish | Human-gated action — see `docs/audits/CVF_P4_CP16_PACKAGING_ARCHITECTURE_DECISION_AUDIT_2026-04-03.md` |
+| npm publish | Human-gated action — see `docs/audits/archive/CVF_P4_CP16_PACKAGING_ARCHITECTURE_DECISION_AUDIT_2026-04-03.md` |
 | CI/CD coverage expansion | Fresh GC-018 scoped to CI coverage gap |
 | Web UI type-drift remediation | Fresh GC-018 scoped to `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` |
 | Whitepaper v3.8 promotion | Only when a new realization wave closes new architecture targets |

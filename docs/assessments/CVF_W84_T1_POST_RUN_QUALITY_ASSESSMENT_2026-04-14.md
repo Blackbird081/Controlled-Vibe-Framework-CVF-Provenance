@@ -5,7 +5,7 @@ Memory class: SUMMARY_RECORD
 > Tranche: W84-T1 — Knowledge Live Benchmark Evidence Promotion
 > Date: 2026-04-14
 > Trigger: W84-T1 live benchmark run complete (12/12 tests passed)
-> Evidence packet: `docs/baselines/CVF_W84_T1_KNOWLEDGE_LIVE_BENCHMARK_EVIDENCE_PACKET_2026-04-14.md`
+> Evidence packet: `docs/baselines/archive/CVF_W84_T1_KNOWLEDGE_LIVE_BENCHMARK_EVIDENCE_PACKET_2026-04-14.md`
 > Assessor: CVF Agent
 
 ---

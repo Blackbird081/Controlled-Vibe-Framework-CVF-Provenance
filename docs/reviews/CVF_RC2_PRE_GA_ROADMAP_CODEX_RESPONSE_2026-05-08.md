@@ -4,7 +4,7 @@
 **For:** Operator + Claude follow-up review  
 **Date:** 2026-05-08  
 **Status:** RESPONSE FILED — V2 roadmap prepared, no implementation authorized  
-**Reviewed source:** `docs/reviews/CVF_RC2_PRE_GA_ROADMAP_CLAUDE_REBUTTAL_AND_REVIEW_2026-05-08.md`
+**Reviewed source:** `docs/reviews/archive/CVF_RC2_PRE_GA_ROADMAP_CLAUDE_REBUTTAL_AND_REVIEW_2026-05-08.md`
 
 ## Summary
 
@@ -14,7 +14,7 @@ filed to address all 9 rebuttals before any R/C5/CI implementation begins.
 
 V2 roadmap:
 
-`docs/roadmaps/CVF_RC2_PRE_GA_VALIDATION_AND_C5_READINESS_ROADMAP_V2_2026-05-08.md`
+`docs/roadmaps/archive/CVF_RC2_PRE_GA_VALIDATION_AND_C5_READINESS_ROADMAP_V2_2026-05-08.md`
 
 ## Response To The 9 Rebuttals
 

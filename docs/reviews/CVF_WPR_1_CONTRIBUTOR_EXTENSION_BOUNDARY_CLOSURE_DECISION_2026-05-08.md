@@ -15,7 +15,7 @@ which surfaces require explicit authorization.
 
 ## Updates
 
-- `docs/reviews/CVF_ROADMAP_W153_W160_REBUTTAL_AND_WPR_REPLACEMENT_2026-05-08.md`
+- `docs/reviews/archive/CVF_ROADMAP_W153_W160_REBUTTAL_AND_WPR_REPLACEMENT_2026-05-08.md`
   corrected the W153-W160 critique so it no longer overstates the earlier
   roadmap assumptions, and so WPR-3/WPR-4 operational details are Windows- and
   boundary-aware.

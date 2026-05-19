@@ -1595,7 +1595,7 @@ Utility and guard:
 - Extension: governance/reference baseline packet only
 - Files created:
   - `docs/reference/CVF_PERFORMANCE_ACCEPTANCE_POLICY_BASELINE_2026-03-29.md`
-  - `docs/baselines/CVF_W8_T2_CP2_FIRST_EVIDENCE_BATCH_2026-03-29.md`
+  - `docs/baselines/archive/CVF_W8_T2_CP2_FIRST_EVIDENCE_BATCH_2026-03-29.md`
 - Tests executed:
   - none new; CP2 is governance-only and preserves CPF baseline at 2027 tests, 0 failures
 - Notes:
@@ -1769,7 +1769,7 @@ Utility and guard:
   - Counts by `CapabilityValidationStatus` (WITHIN_SCOPE / OUT_OF_SCOPE / UNDECLARED_AGENT) + `dominantStatus` with tie-break (WITHIN_SCOPE > OUT_OF_SCOPE > UNDECLARED_AGENT); "EMPTY" for empty batch
   - Deterministic `batchHash` + distinct `batchId`; `now` dependency injection
   - 26 new tests across 6 describe groups; no additions to `index.test.ts` (GC-023 compliant)
-  - CPF: 2144 → 2170 (+26); delta: `docs/baselines/CVF_W13_T1_CP1_AGENT_DEF_CAP_BATCH_DELTA_2026-03-30.md`
+  - CPF: 2144 → 2170 (+26); delta: `docs/baselines/archive/CVF_W13_T1_CP1_AGENT_DEF_CAP_BATCH_DELTA_2026-03-30.md`
 
 ---
 ## [2026-03-30] Batch: 315 — W14-T1 CP1: AgentScopeResolutionBatchContract
@@ -1791,7 +1791,7 @@ Utility and guard:
   - Counts by `ScopeResolutionStatus` (RESOLVED / EMPTY_SCOPE / UNDECLARED_AGENT) + `dominantStatus` with tie-break (RESOLVED > EMPTY_SCOPE > UNDECLARED_AGENT); "EMPTY" for empty batch
   - Deterministic `batchHash` + distinct `batchId`; `now` dependency injection
   - 26 new tests across 6 describe groups; no additions to `index.test.ts` (GC-023 compliant)
-  - CPF: 2170 → 2196 (+26); delta: `docs/baselines/CVF_W14_T1_CP1_AGENT_SCOPE_RESOLUTION_BATCH_DELTA_2026-03-30.md`
+  - CPF: 2170 → 2196 (+26); delta: `docs/baselines/archive/CVF_W14_T1_CP1_AGENT_SCOPE_RESOLUTION_BATCH_DELTA_2026-03-30.md`
 ## [2026-03-30] Batch: 316 — W15-T1 CP1: AgentDefinitionAuditBatchContract
 
 - Tranche: W15-T1 — Agent Definition Audit Batch Contract
@@ -1811,7 +1811,7 @@ Utility and guard:
   - No status enum — aggregate by `totalAgentsAcrossAudits` (sum of audit.totalAgents); no dominant status
   - Deterministic `batchHash` + distinct `batchId`; `now` dependency injection
   - 26 new tests across 6 describe groups; no additions to `index.test.ts` (GC-024 compliant)
-  - CPF: 2196 → 2222 (+26); delta: `docs/baselines/CVF_W15_T1_CP1_AGENT_DEF_AUDIT_BATCH_DELTA_2026-03-30.md`
+  - CPF: 2196 → 2222 (+26); delta: `docs/baselines/archive/CVF_W15_T1_CP1_AGENT_DEF_AUDIT_BATCH_DELTA_2026-03-30.md`
   - Closes the final batch gap in the W12-T1 agent definition family (W12→W13→W14→W15 complete)
 
 ---
@@ -1864,7 +1864,7 @@ Utility and guard:
   - Aggregates `totalRequests`, `matchedCount`, `unmatchedCount`, `forwardCount`, `rejectCount`, `rerouteCount`, `passthroughCount` as sums across all logs
   - Uses `resolveDominantByCount` + `createDeterministicBatchIdentity` from `batch.contract.shared.ts` (GC-036)
   - 27 new tests across 6 describe groups; no additions to `index.test.ts` (GC-024 compliant)
-  - CPF: 2813 → 2840 (+27); delta: `docs/baselines/CVF_W43_T1_CP1_ROUTE_MATCH_LOG_BATCH_DELTA_2026-04-05.md`
+  - CPF: 2813 → 2840 (+27); delta: `docs/baselines/archive/CVF_W43_T1_CP1_ROUTE_MATCH_LOG_BATCH_DELTA_2026-04-05.md`
   - Closes `RouteMatchLogContract.log()` batch surface — W1-T7 gateway route match log family
   - **Gateway log batch family (W41/W42/W43) FULLY CLOSED**
 
@@ -1889,7 +1889,7 @@ Utility and guard:
   - Aggregates `totalScanned`, `piiDetectedCount`, `cleanCount` as sums across all logs
   - Uses `resolveDominantBySeverity` + `createDeterministicBatchIdentity` from `batch.contract.shared.ts` (GC-036)
   - 27 new tests across 6 describe groups; no additions to `index.test.ts` (GC-024 compliant)
-  - CPF: 2786 → 2813 (+27); delta: `docs/baselines/CVF_W42_T1_CP1_GATEWAY_PII_DETECTION_LOG_BATCH_DELTA_2026-04-05.md`
+  - CPF: 2786 → 2813 (+27); delta: `docs/baselines/archive/CVF_W42_T1_CP1_GATEWAY_PII_DETECTION_LOG_BATCH_DELTA_2026-04-05.md`
   - Closes `GatewayPIIDetectionLogContract.log()` batch surface — W1-T9 gateway PII detection log family
 
 ---
@@ -1913,7 +1913,7 @@ Utility and guard:
   - Aggregates `totalRequests`, `authenticatedCount`, `deniedCount`, `expiredCount`, `revokedCount` as sums across all logs
   - Uses `resolveDominantByCount` + `createDeterministicBatchIdentity` from `batch.contract.shared.ts` (GC-036)
   - 27 new tests across 6 describe groups; no additions to `index.test.ts` (GC-024 compliant)
-  - CPF: 2759 → 2786 (+27); delta: `docs/baselines/CVF_W41_T1_CP1_GATEWAY_AUTH_LOG_BATCH_DELTA_2026-04-05.md`
+  - CPF: 2759 → 2786 (+27); delta: `docs/baselines/archive/CVF_W41_T1_CP1_GATEWAY_AUTH_LOG_BATCH_DELTA_2026-04-05.md`
   - Closes `GatewayAuthLogContract.log()` batch surface — W1-T8 gateway auth log family
 
 ---

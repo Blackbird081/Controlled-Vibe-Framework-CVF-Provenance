@@ -9,8 +9,8 @@
 
 | Lane | Evidence | Result |
 |---|---|---|
-| Alibaba provider-cooldown matrix | `docs/reviews/CVF_W138_PROVIDER_COOLDOWN_STABILITY_ALIBABA_EVIDENCE_2026-05-07.json` | FAIL target: 10/12 accepted, target >=11/12 |
-| DeepSeek provider-cooldown confirmatory | `docs/reviews/CVF_W138_PROVIDER_COOLDOWN_STABILITY_DEEPSEEK_EVIDENCE_2026-05-07.json` | PASS: 6/6 accepted |
+| Alibaba provider-cooldown matrix | `docs/reviews/archive/CVF_W138_PROVIDER_COOLDOWN_STABILITY_ALIBABA_EVIDENCE_2026-05-07.json` | FAIL target: 10/12 accepted, target >=11/12 |
+| DeepSeek provider-cooldown confirmatory | `docs/reviews/archive/CVF_W138_PROVIDER_COOLDOWN_STABILITY_DEEPSEEK_EVIDENCE_2026-05-07.json` | PASS: 6/6 accepted |
 
 ## Finding
 

@@ -16,7 +16,7 @@ Memory class: FULL_RECORD
 - Predecessor documents:
   - Intake review: `docs/reviews/CVF_MULTI_AGENT_INTAKE_REVIEW_POST_W7_OPEN_TARGETS_2026-03-28.md`
   - Rebuttal: `docs/reviews/CVF_MULTI_AGENT_REBUTTAL_POST_W7_OPEN_TARGETS_2026-03-28.md`
-  - Counter-review: `docs/reviews/CVF_EA_INDEPENDENT_COUNTER_REVIEW_POST_W7_OPEN_TARGETS_2026-03-28.md`
+  - Counter-review: `docs/reviews/archive/CVF_EA_INDEPENDENT_COUNTER_REVIEW_POST_W7_OPEN_TARGETS_2026-03-28.md`
 
 ---
 
@@ -257,11 +257,11 @@ Consensus rule:
 - evidence 9: `docs/reviews/CVF_MULTI_AGENT_DECISION_PACK_POST_W7_OPEN_TARGETS_2026-03-28.md:73-77` — GC-018 content requirements
 - evidence 10: `docs/reviews/CVF_MULTI_AGENT_DECISION_PACK_POST_W7_OPEN_TARGETS_2026-03-28.md:81` — 7-day deadline
 - evidence 11: `docs/reviews/CVF_MULTI_AGENT_DECISION_PACK_POST_W7_OPEN_TARGETS_2026-03-28.md:102` — Agent Definition retirement in ownership map
-- evidence 12: `docs/reviews/CVF_EA_INDEPENDENT_COUNTER_REVIEW_POST_W7_OPEN_TARGETS_2026-03-28.md:141` — Counter-review condition #8 (W7 schema impact)
-- evidence 13: `docs/reviews/CVF_EA_INDEPENDENT_COUNTER_REVIEW_POST_W7_OPEN_TARGETS_2026-03-28.md:142` — Counter-review condition #9 (inter-family dependency)
-- evidence 14: `docs/reviews/CVF_EA_INDEPENDENT_COUNTER_REVIEW_POST_W7_OPEN_TARGETS_2026-03-28.md:143` — Counter-review condition #10 (performance parallel)
-- evidence 15: `docs/reviews/CVF_EA_INDEPENDENT_COUNTER_REVIEW_POST_W7_OPEN_TARGETS_2026-03-28.md:145` — Counter-review condition #12 (exclusion template)
-- evidence 16: `docs/reviews/CVF_EA_INDEPENDENT_COUNTER_REVIEW_POST_W7_OPEN_TARGETS_2026-03-28.md:146` — Counter-review condition #13 (Agent Definition scope lock)
+- evidence 12: `docs/reviews/archive/CVF_EA_INDEPENDENT_COUNTER_REVIEW_POST_W7_OPEN_TARGETS_2026-03-28.md:141` — Counter-review condition #8 (W7 schema impact)
+- evidence 13: `docs/reviews/archive/CVF_EA_INDEPENDENT_COUNTER_REVIEW_POST_W7_OPEN_TARGETS_2026-03-28.md:142` — Counter-review condition #9 (inter-family dependency)
+- evidence 14: `docs/reviews/archive/CVF_EA_INDEPENDENT_COUNTER_REVIEW_POST_W7_OPEN_TARGETS_2026-03-28.md:143` — Counter-review condition #10 (performance parallel)
+- evidence 15: `docs/reviews/archive/CVF_EA_INDEPENDENT_COUNTER_REVIEW_POST_W7_OPEN_TARGETS_2026-03-28.md:145` — Counter-review condition #12 (exclusion template)
+- evidence 16: `docs/reviews/archive/CVF_EA_INDEPENDENT_COUNTER_REVIEW_POST_W7_OPEN_TARGETS_2026-03-28.md:146` — Counter-review condition #13 (Agent Definition scope lock)
 - evidence 17: `docs/reference/CVF_MASTER_ARCHITECTURE_WHITEPAPER.md:7` — no active tranche, fresh GC-018 required
 - evidence 18: `docs/reference/CVF_MASTER_ARCHITECTURE_WHITEPAPER.md:72` — L0-L4 PROPOSAL ONLY
 - evidence 19: `docs/reference/CVF_MASTER_ARCHITECTURE_WHITEPAPER.md:175-176` — W7 schema dependency chain

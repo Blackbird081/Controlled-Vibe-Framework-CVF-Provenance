@@ -131,6 +131,7 @@ EXPECTED_BY_PATH: dict[str, str] = {
     REFERENCE_README_PATH: "POINTER_RECORD",
     MEMORY_CLASSIFICATION_PATH: "POINTER_RECORD",
     TEST_LOG_PATH: "SUMMARY_RECORD",
+    "docs/audits/alibaba-canary/INDEX.md": "POINTER_RECORD",
     PUBLIC_RENEWAL_V2_ROADMAP_PATH: "FULL_RECORD",
 }
 
@@ -140,6 +141,8 @@ def _run_git(args: list[str]) -> tuple[int, str, str]:
         ["git", *args],
         cwd=REPO_ROOT,
         text=True,
+        encoding="utf-8",
+        errors="replace",
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
     )
@@ -206,13 +209,69 @@ def _read_text(path: str) -> str:
     return abs_path.read_text(encoding="utf-8")
 
 
+def _git_diff_for_path(path: str) -> str:
+    code, out, _ = _run_git(["diff", "--", path])
+    if code != 0:
+        return ""
+    return out
+
+
+def _is_mechanical_archive_reference_rewrite(path: str) -> bool:
+    """Archive sweeps may rewrite only links in old docs; that is not a material memory update."""
+    code, out, _ = _run_git(["ls-files", "--error-unmatch", path])
+    if code != 0 or not out:
+        return False
+
+    diff = _git_diff_for_path(path)
+    if not diff:
+        return False
+
+    changed_lines: list[str] = []
+    for line in diff.splitlines():
+        if line.startswith(("+++", "---", "@@", "diff --git", "index ")):
+            continue
+        if line.startswith(("+", "-")):
+            changed_lines.append(line)
+
+    if not changed_lines or any("Memory class:" in line for line in changed_lines):
+        return False
+    if not any("/archive/" in line for line in changed_lines):
+        return False
+
+    removed = [line[1:] for line in changed_lines if line.startswith("-")]
+    added = [line[1:] for line in changed_lines if line.startswith("+")]
+    if not removed or not added or len(removed) != len(added):
+        return False
+
+    unmatched_added = added.copy()
+    for before in removed:
+        matched_index: int | None = None
+        for index, after in enumerate(unmatched_added):
+            if "/archive/" not in after:
+                continue
+            if after.replace("/archive/", "/") == before:
+                matched_index = index
+                break
+        if matched_index is None:
+            return False
+        unmatched_added.pop(matched_index)
+    return not unmatched_added
+
+
 def _expected_memory_class(path: str) -> str | None:
+    if _is_archive_path(path):
+        return None
     if path in EXPECTED_BY_PATH:
         return EXPECTED_BY_PATH[path]
     for prefix, expected in EXPECTED_BY_PREFIX:
         if path.startswith(prefix):
             return expected
     return None
+
+
+def _is_archive_path(path: str) -> bool:
+    normalized = path.replace("\\", "/")
+    return "/archive/" in f"/{normalized}"
 
 
 def _memory_marker_violations(changed_files: list[str]) -> dict[str, str]:
@@ -228,14 +287,20 @@ def _memory_marker_violations(changed_files: list[str]) -> dict[str, str]:
             continue
         text = _read_text(path)
         if not text:
+            if _is_mechanical_archive_reference_rewrite(path):
+                continue
             violations[path] = "missing file contents"
             continue
         match = MEMORY_CLASS_PATTERN.search(text)
         if not match:
+            if _is_mechanical_archive_reference_rewrite(path):
+                continue
             violations[path] = f"missing memory class marker; expected {expected}"
             continue
         actual = match.group(1)
         if actual != expected:
+            if _is_mechanical_archive_reference_rewrite(path):
+                continue
             violations[path] = f"expected {expected} but found {actual}"
     return violations
 

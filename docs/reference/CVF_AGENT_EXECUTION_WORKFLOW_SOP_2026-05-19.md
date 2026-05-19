@@ -296,6 +296,52 @@ Additional gates depend on the work order:
   governance behavior claims;
 - public-sync `git remote -v` before public catalog edits.
 
+## GitHub Push Workflow Chain
+
+GitHub push is a governed delivery chain, not a raw `git push` action.
+
+Required sequence:
+
+```text
+Confirm repository boundary
+  -> Review worktree scope
+  -> Run/update archive hygiene when docs churn occurred
+  -> Run pre-commit hook chain or equivalent targeted guards
+  -> Commit with scoped message
+  -> Sync active handoff HEAD block when GC-020 requires it
+  -> Run full pre-push hook chain
+  -> Verify remote target before push
+  -> Push only from the correct repository
+  -> Record post-push status or handoff update when needed
+```
+
+Push chain requirements:
+
+- provenance workspace pushes must stay private/provenance only;
+- public-facing docs, catalog, README, release, contributor, or setup changes
+  must be prepared from the public-sync clone after `git remote -v`;
+- `.githooks/pre-commit` and `.githooks/pre-push` are the canonical local hook
+  entrypoints and both route through
+  `governance/compat/run_local_governance_hook_chain.py`;
+- docs archive cleanup must use `scripts/cvf_active_archive.py`; never delete
+  historical docs by hand;
+- archive-link rewrites are mechanical hygiene updates and must not force
+  retro-validation of legacy archived records;
+- canonical retained docs referenced by active guards must be protected through
+  permanent path allowlists, not restored ad hoc after every archive run;
+- after a commit, the active handoff must contain the current HEAD SHA before
+  pre-push may pass;
+- any failing hook is treated as a broken workflow link until classified as
+  true violation, historical false-positive, or guard-scope bug.
+
+Minimum push evidence for a governed batch:
+
+```powershell
+git remote -v
+git status --short
+python governance/compat/run_local_governance_hook_chain.py --hook pre-push
+```
+
 ## Boundaries / Non-Goals
 
 This SOP does not:
@@ -339,4 +385,3 @@ This SOP creates a governed operating workflow standard. It does not prove that
 every runtime actor is technically enforced in the live product. Claims about
 runtime actor enforcement, live execution identity, or full memory governance
 still require separate scoped implementation and evidence.
-

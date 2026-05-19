@@ -3,7 +3,7 @@
 **Date:** 2026-04-19
 **Tranche:** W109-T1
 **Class:** REALIZATION (UI-only)
-**Authorization:** `docs/baselines/CVF_GC018_W109_T1_PLATFORM_PAGES_VISUAL_SYNC_AUTHORIZATION_2026-04-19.md`
+**Authorization:** `docs/baselines/archive/CVF_GC018_W109_T1_PLATFORM_PAGES_VISUAL_SYNC_AUTHORIZATION_2026-04-19.md`
 
 ---
 

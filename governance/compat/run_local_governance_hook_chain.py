@@ -32,6 +32,17 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
             ["python", "governance/compat/check_governed_exception_registry.py", "--enforce"],
         ),
         (
+            "active archive hygiene compatibility",
+            [
+                "python",
+                "governance/compat/check_active_archive_hygiene.py",
+                "--max-stale",
+                "10",
+                "--fail-on-changed-stale",
+                "--enforce",
+            ],
+        ),
+        (
             "active session state compatibility",
             ["python", "governance/compat/check_active_session_state.py", "--enforce"],
         ),
@@ -176,6 +187,17 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         (
             "active window registry compatibility",
             ["python", "governance/compat/check_active_window_registry.py", "--enforce"],
+        ),
+        (
+            "active archive hygiene compatibility",
+            [
+                "python",
+                "governance/compat/check_active_archive_hygiene.py",
+                "--max-stale",
+                "10",
+                "--fail-on-changed-stale",
+                "--enforce",
+            ],
         ),
         (
             "audit retention registry compatibility",

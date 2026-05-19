@@ -334,7 +334,7 @@ Output (Allow / Strip & Allow / Block)
 | CVF_PREPUBLIC_P3_READINESS_GUARD.md | Pre-public `P3` relocation readiness review | `P3` stays blocked until phase-gates, root-file exposure, docs-root curation, export-readiness, and memo freshness are explicit |
 | CVF_GUARD_AUTHORING_STANDARD_GUARD.md | New or materially revised governance guard | Guard must satisfy the mandatory authoring contract before commit |
 | CVF_GUARD_REGISTRY_GUARD.md | New guard created | Register in README.md + KB |
-| CVF_ACTIVE_ARCHIVE_GUARD.md | Active archive maintenance | Keep active/archive split truthful and append-only |
+| CVF_ACTIVE_ARCHIVE_GUARD.md | Active archive maintenance | Keep active/archive split truthful, append-only, baseline-backed, and hook-safe |
 | CVF_ACTIVE_WINDOW_REGISTRY_GUARD.md | New or revised active trace/log window with dedicated rotation guard | Register canonical active window + class + archive protection |
 | check_repository_lifecycle_classification.py | Pre-public restructure planning | Enforces lifecycle coverage before publish-facing folder cleanup |
 | check_repository_exposure_classification.py | Pre-public publication planning | Enforces private-by-default exposure coverage before any public-facing release posture is assumed |
@@ -368,6 +368,7 @@ Archive protection note:
 - grouped management map is `docs/reference/CVF_ACTIVE_WINDOW_CLASSIFICATION.md`
 - historical `docs/audits/` and `docs/reviews/` now use explicit retain-evidence registries instead of one-off manual exceptions
 - canonical retention sources are `governance/compat/CVF_AUDIT_RETENTION_REGISTRY.json` and `governance/compat/CVF_REVIEW_RETENTION_REGISTRY.json`
+- local pre-commit and pre-push hooks run `governance/compat/check_active_archive_hygiene.py`; full archive moves remain operator/agent actions through `scripts/cvf_active_archive.py --execute`
 - generic archive cleanup runs incrementally from `governance/compat/CVF_ACTIVE_ARCHIVE_BASELINE.json`; full scans are bootstrap/recovery only
 | CVF_TEST_PARTITION_OWNERSHIP_GUARD.md | Extracted governed test surfaces | Canonical test home must remain exclusive |
 

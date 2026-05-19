@@ -7,7 +7,7 @@ Memory class: FULL_RECORD
 > Candidate ID: GC018-ADDING-NEW-STAGE1-IMPLEMENTATION
 > Class: REALIZATION
 > Baseline: `v3.7-W46T1` (CLOSURE-ASSESSED)
-> Active quality assessment: `docs/assessments/CVF_ADDING_NEW_STAGE1_IMPLEMENTATION_READINESS_2026-04-12.md`
+> Active quality assessment: `docs/assessments/archive/CVF_ADDING_NEW_STAGE1_IMPLEMENTATION_READINESS_2026-04-12.md`
 > Related design packet: `docs/assessments/CVF_ADDING_NEW_IMPLEMENTATION_FOLLOWUP_2026-04-12.md`
 > Active runtime-evidence lane to protect: `W66-T1 CP3A Full Scored Batch`
 > Authorization update: explicit operator go-ahead granted `2026-04-12` for bounded Stage 1 execution
@@ -28,7 +28,7 @@ GC-018 Continuation Candidate
     - provisional signal capture for `weak_trigger_definition`
   The tranche must remain additive, provider-agnostic, and non-invasive.
 - Continuation class: REALIZATION
-- Active quality assessment: docs/assessments/CVF_ADDING_NEW_STAGE1_IMPLEMENTATION_READINESS_2026-04-12.md
+- Active quality assessment: docs/assessments/archive/CVF_ADDING_NEW_STAGE1_IMPLEMENTATION_READINESS_2026-04-12.md
 - Assessment date: 2026-04-12
 - Weighted total: 8.4/10
 - Lowest dimension: Active-path separation (7/10)

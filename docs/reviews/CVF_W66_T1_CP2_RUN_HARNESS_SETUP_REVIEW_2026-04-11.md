@@ -4,7 +4,7 @@ Memory class: FULL_RECORD
 
 > Date: 2026-04-11
 > Tranche: W66-T1 CP2 — Run Harness Governance Deliverables
-> Authorization: `docs/baselines/CVF_GC018_W66_T1_CP2_RUN_HARNESS_AUTHORIZATION_2026-04-11.md`
+> Authorization: `docs/baselines/archive/CVF_GC018_W66_T1_CP2_RUN_HARNESS_AUTHORIZATION_2026-04-11.md`
 > CP1 closure: `docs/reviews/CVF_W66_T1_CP1_PVV_CORPUS_RUBRIC_FREEZE_REVIEW_2026-04-11.md`
 > Guard: `governance/toolkit/05_OPERATION/CVF_PRODUCT_VALUE_VALIDATION_GUARD.md` (GC-042)
 > Branch: `main`
@@ -164,8 +164,8 @@ None. CP2 is DOCUMENTATION class; no code, test, or contract changes were made.
 
 | Artifact | Path | Status |
 |---|---|---|
-| CP2 GC-018 authorization | `docs/baselines/CVF_GC018_W66_T1_CP2_RUN_HARNESS_AUTHORIZATION_2026-04-11.md` | FROZEN |
-| Reviewer calibration set | `docs/baselines/CVF_PRODUCT_VALUE_VALIDATION_REVIEWER_CALIBRATION_W66_T1_CP2_2026-04-11.md` | FROZEN |
+| CP2 GC-018 authorization | `docs/baselines/archive/CVF_GC018_W66_T1_CP2_RUN_HARNESS_AUTHORIZATION_2026-04-11.md` | FROZEN |
+| Reviewer calibration set | `docs/baselines/archive/CVF_PRODUCT_VALUE_VALIDATION_REVIEWER_CALIBRATION_W66_T1_CP2_2026-04-11.md` | FROZEN |
 | CP2 closure review (this doc) | `docs/reviews/CVF_W66_T1_CP2_RUN_HARNESS_SETUP_REVIEW_2026-04-11.md` | CLOSED |
 
 ---

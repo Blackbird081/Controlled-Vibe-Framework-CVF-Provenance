@@ -25,7 +25,7 @@ W97-T1 is CLOSED DELIVERED. All prerequisites are met. This GC-018 covers W98-T1
 1. `docs/baselines/CVF_W98_T1_SCENARIO_LOCK_2026-04-17.md` — scenario lock (20+3 scenarios, exact payloads)
 2. `scripts/w98_e2e_benchmark.js` — benchmark script calling `/api/execute` (governed path)
 3. `docs/assessments/CVF_W98_T1_POST_RUN_QUALITY_ASSESSMENT_2026-04-17.md` — evidence packet + assessment
-4. `docs/baselines/CVF_GC026_TRACKER_SYNC_W98_T1_CLOSED_2026-04-17.md` — GC-026 sync
+4. `docs/baselines/archive/CVF_GC026_TRACKER_SYNC_W98_T1_CLOSED_2026-04-17.md` — GC-026 sync
 5. Whitepaper §4.3 + tracker + AGENT_HANDOFF updates
 
 **Not authorized:**

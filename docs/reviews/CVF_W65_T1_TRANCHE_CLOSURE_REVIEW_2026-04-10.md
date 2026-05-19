@@ -38,16 +38,16 @@ All 4 Phase B target packages have been processed:
 
 | Artifact | File |
 |----------|------|
-| Pre-tranche quality assessment | `docs/assessments/CVF_POST_W64_CONTINUATION_QUALITY_ASSESSMENT_2026-04-10.md` |
+| Pre-tranche quality assessment | `docs/assessments/archive/CVF_POST_W64_CONTINUATION_QUALITY_ASSESSMENT_2026-04-10.md` |
 | GC-018 authorization | `docs/reviews/CVF_GC018_CONTINUATION_CANDIDATE_W65_T1_PHASE_B_PACKAGING_2026-04-10.md` |
-| Execution plan | `docs/roadmaps/CVF_W65_T1_PHASE_B_PACKAGING_EXECUTION_PLAN_2026-04-10.md` |
-| GC-026 auth sync | `docs/baselines/CVF_GC026_TRACKER_SYNC_W65_T1_AUTHORIZATION_2026-04-10.md` |
-| CP1 fast lane audit | `docs/audits/CVF_W65_T1_CP1_PHASE_B_PACKAGING_AUDIT_2026-04-10.md` |
-| CP1 fast lane review | `docs/reviews/CVF_GC021_W65_T1_CP1_PHASE_B_PACKAGING_REVIEW_2026-04-10.md` |
-| CP1 delta | `docs/baselines/CVF_W65_T1_CP1_PHASE_B_PACKAGING_DELTA_2026-04-10.md` |
-| GC-026 CP1 sync | `docs/baselines/CVF_GC026_TRACKER_SYNC_W65_T1_CP1_DELIVERED_2026-04-10.md` |
+| Execution plan | `docs/roadmaps/archive/CVF_W65_T1_PHASE_B_PACKAGING_EXECUTION_PLAN_2026-04-10.md` |
+| GC-026 auth sync | `docs/baselines/archive/CVF_GC026_TRACKER_SYNC_W65_T1_AUTHORIZATION_2026-04-10.md` |
+| CP1 fast lane audit | `docs/audits/archive/CVF_W65_T1_CP1_PHASE_B_PACKAGING_AUDIT_2026-04-10.md` |
+| CP1 fast lane review | `docs/reviews/archive/CVF_GC021_W65_T1_CP1_PHASE_B_PACKAGING_REVIEW_2026-04-10.md` |
+| CP1 delta | `docs/baselines/archive/CVF_W65_T1_CP1_PHASE_B_PACKAGING_DELTA_2026-04-10.md` |
+| GC-026 CP1 sync | `docs/baselines/archive/CVF_GC026_TRACKER_SYNC_W65_T1_CP1_DELIVERED_2026-04-10.md` |
 | Closure review | this document |
-| GC-026 closed sync | `docs/baselines/CVF_GC026_TRACKER_SYNC_W65_T1_CLOSED_2026-04-10.md` |
+| GC-026 closed sync | `docs/baselines/archive/CVF_GC026_TRACKER_SYNC_W65_T1_CLOSED_2026-04-10.md` |
 
 ---
 

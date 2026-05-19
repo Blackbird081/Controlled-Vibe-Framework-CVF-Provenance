@@ -5,7 +5,7 @@ Memory class: BASELINE_NOTE
 > Date: 2026-04-21
 > Class: PRODUCT / FRONT_DOOR_STANDARDIZATION / EXECUTION_NOTE
 > Status: FILED — Wave 2 delivered
-> Authority chain: `docs/assessments/CVF_FRONT_DOOR_PACKET_CLASSIFICATION_2026-04-20.md` -> `docs/roadmaps/CVF_FRONT_DOOR_REWRITE_ROADMAP_2026-04-20.md`
+> Authority chain: `docs/assessments/archive/CVF_FRONT_DOOR_PACKET_CLASSIFICATION_2026-04-20.md` -> `docs/roadmaps/archive/CVF_FRONT_DOOR_REWRITE_ROADMAP_2026-04-20.md`
 
 ---
 

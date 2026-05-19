@@ -5,7 +5,7 @@ Memory class: FULL_RECORD
 > Date: 2026-04-07
 > Tranche: W58-T1 | Class: ASSESSMENT / DECISION | Control Point: CP1 (Full Lane)
 > Auditor: Cascade (agent)
-> Authorization: `docs/reviews/CVF_GC018_CONTINUATION_CANDIDATE_W58_T1_EPF_CLOSURE_ASSESSMENT_2026-04-07.md`
+> Authorization: `docs/reviews/archive/CVF_GC018_CONTINUATION_CANDIDATE_W58_T1_EPF_CLOSURE_ASSESSMENT_2026-04-07.md`
 
 ---
 

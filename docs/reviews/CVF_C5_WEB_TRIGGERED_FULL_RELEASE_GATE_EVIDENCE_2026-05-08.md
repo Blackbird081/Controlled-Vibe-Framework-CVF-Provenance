@@ -58,8 +58,8 @@ Not covered by this RC2 C5.4 deterministic probe:
 
 | Stream | Status | Follow-up |
 |---|---:|---|
-| Browser-visible `/api/system/jobs` response body | COVERED BY BR | See `docs/reviews/CVF_C5_BROWSER_REDACTION_6_STREAM_EVIDENCE_2026-05-08.md` |
-| HAR/network capture | COVERED BY BR | See `docs/reviews/CVF_C5_BROWSER_REDACTION_6_STREAM_EVIDENCE_2026-05-08.md` |
+| Browser-visible `/api/system/jobs` response body | COVERED BY BR | See `docs/reviews/archive/CVF_C5_BROWSER_REDACTION_6_STREAM_EVIDENCE_2026-05-08.md` |
+| HAR/network capture | COVERED BY BR | See `docs/reviews/archive/CVF_C5_BROWSER_REDACTION_6_STREAM_EVIDENCE_2026-05-08.md` |
 
 Boundary: this is a deterministic unit/in-process positive redaction probe, not
 a live provider call. The live Web-triggered release gate evidence above proves

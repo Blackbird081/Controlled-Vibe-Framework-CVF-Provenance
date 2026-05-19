@@ -29,7 +29,7 @@ Targeted unit routing proof:
 Live Alibaba UI matrix:
 
 - Spec: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/w141-trusted-form-wizard-disambiguation.live.spec.ts`
-- Evidence: `docs/reviews/CVF_W141_TRUSTED_FORM_WIZARD_DISAMBIGUATION_ALIBABA_EVIDENCE_2026-05-08.json`
+- Evidence: `docs/reviews/archive/CVF_W141_TRUSTED_FORM_WIZARD_DISAMBIGUATION_ALIBABA_EVIDENCE_2026-05-08.json`
 - Result: 12/12 accepted with receipt
 - `execute_request_not_sent`: 0
 - `wizard_routing_shadow`: 0

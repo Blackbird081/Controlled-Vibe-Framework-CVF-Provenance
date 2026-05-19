@@ -13,7 +13,7 @@ Memory class: FULL_RECORD
 
 - Source: `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/boardroom.round.batch.contract.ts`
 - Tests: `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/boardroom.round.batch.contract.test.ts`
-- Authorization: `docs/reviews/CVF_GC018_CONTINUATION_CANDIDATE_W31_T1_BOARDROOM_ROUND_BATCH_2026-04-01.md`
+- Authorization: `docs/reviews/archive/CVF_GC018_CONTINUATION_CANDIDATE_W31_T1_BOARDROOM_ROUND_BATCH_2026-04-01.md`
 
 ---
 

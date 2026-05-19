@@ -5,7 +5,7 @@ Memory class: FULL_RECORD
 **Tranche:** W86-T1 — PVV Lane Resume (Non-Coder Quality Focus)
 **Assessment date:** 2026-04-14
 **Class:** VALIDATION / PRODUCT_VALUE / GOVERNED_RUNTIME_EVIDENCE
-**GC-018:** `docs/baselines/CVF_GC018_W86_T1_PVV_LANE_RESUME_AUTHORIZATION_2026-04-14.md`
+**GC-018:** `docs/baselines/archive/CVF_GC018_W86_T1_PVV_LANE_RESUME_AUTHORIZATION_2026-04-14.md`
 **Evidence packet:** `docs/baselines/CVF_W86_T1_PVV_NC_LIVE_EVIDENCE_PACKET_2026-04-14.md`
 
 ---

@@ -5,7 +5,7 @@
 **Class:** REALIZATION (UI-only variant)
 **Lane:** Full Lane (GC-019)
 **Memory class:** FULL_RECORD (GC-022)
-**GC-018 authorization:** `docs/baselines/CVF_GC018_W105_T1_SIDEBAR_VISUAL_SYNC_AUTHORIZATION_2026-04-19.md`
+**GC-018 authorization:** `docs/baselines/archive/CVF_GC018_W105_T1_SIDEBAR_VISUAL_SYNC_AUTHORIZATION_2026-04-19.md`
 
 ---
 
