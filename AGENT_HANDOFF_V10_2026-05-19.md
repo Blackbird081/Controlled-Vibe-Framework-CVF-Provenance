@@ -9,6 +9,7 @@ Latest planning artifacts (read these first if you are resuming Review-CVF closu
 - `docs/reviews/CVF_17_05_REVIEW_CVF_RESIDUAL_PAIN_POINTS_ASSESSMENT_2026-05-19.md` (assessment of which 17.05 pain points are CLOSED / PARTIAL / OPEN)
 - `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (6 candidates A1/C1/D1/E1/G1/H1, READY_FOR_REBUTTAL)
 - `docs/roadmaps/CVF_RUNTIME_MATURITY_CDH_ROADMAP_2026-05-19.md` (still READY_FOR_REBUTTAL; Tier 2 of residual roadmap is gated on this)
+- `docs/assessments/CVF_QUALITY_ASSESSMENT_2026-05-19.md` (post-upgrade quality grade A−; 99.9% test pass rate; 43/43 governance guards PASS)
 
 Remote tracking branch: `origin/main`
 
@@ -21,19 +22,20 @@ Provenance continuity base for this handoff: `e91b41fd`.
 Provenance HEAD before Lane G implementation:
 `ae492d7dcd9a7b48948521a5160ee7668fa8fa4f`.
 
-Current HEAD (GC-020): `b57f2678` (chore(handoff): GC-020 sync after runtime maturity closure)
+Current HEAD (GC-020): `ffed534d` (docs(assessment): file CVF quality assessment after 2026-05-19 upgrade)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
 ## Purpose
 
 Keep the active handoff under the governed file-size cap after
-`AGENT_HANDOFF_V9_2026-05-18.md` approached the active-markdown hard threshold.
+`CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V9_2026-05-18.md` approached the
+active-markdown hard threshold.
 V10 records only the current D/E/F/G continuation state and points back to V9
 for the full 17.05 reconvergence history.
 
-Supersedes `AGENT_HANDOFF_V9_2026-05-18.md`. V9 remains a historical root
-handoff and is no longer active.
+Supersedes `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V9_2026-05-18.md`.
+V9 remains a historical archived handoff and is no longer active.
 
 ## Scope / Target / Owner Boundary
 
@@ -86,7 +88,7 @@ Front door:
 
 Previous handoff:
 
-- `AGENT_HANDOFF_V9_2026-05-18.md`
+- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V9_2026-05-18.md`
 
 Current selected lanes:
 
