@@ -1114,6 +1114,46 @@ Verification:
 Boundary: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts`
 was not modified. Lane D does not claim live SSE or provider streaming.
 
+## Lane E Benchmark Reorientation Completion Trace (2026-05-19)
+
+Provenance continuity base before Lane E implementation: `f1d6fe7e`.
+
+Lane E was executed after Lane D commit-level closure. GC-018 filed:
+
+- `docs/baselines/CVF_GC018_LANE_E_BENCHMARK_REORIENTATION_2026-05-19.md`
+
+Completion packet:
+
+- `docs/reviews/CVF_LANE_E_BENCHMARK_REORIENTATION_COMPLETION_2026-05-19.md`
+
+Implementation paths:
+
+- `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/governance-reliability-metrics.ts`
+- `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/command.registry.ts`
+- `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/types.ts`
+- `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/arg.parser.ts`
+- `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/tests/governance-reliability-metrics.test.ts`
+- `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/tests/command.registry.test.ts`
+- `docs/baselines/CVF_GOVERNANCE_RELIABILITY_BASELINE_2026-05-19.md`
+
+Source-fidelity note for Claude/future agents: `docs/benchmark/` did not exist
+before Lane E, and docs governance rejected it as a non-taxonomy folder. The
+baseline was placed in `docs/baselines/`. No existing `cvf benchmark
+governance` implementation was found in the CLI. Existing JSONL files checked
+in the workspace are latency or PVV evidence, not governance audit JSONL with
+the required metric fields. Therefore the baseline is marked
+`baseline_deferred_no_real_audit_log` and synthetic fixture data is used only
+for unit tests.
+
+Verification:
+
+- `npm test` in `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI`: PASS, 5 files / 59 tests.
+- `npm run check` in `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI`: PASS.
+
+Boundary: no live provider call was made, and no QBS/W72/W91/W98 benchmark
+files were modified. Lane E does not claim a measured operational reliability
+baseline.
+
 ## Handoff History
 
 | Version | Date | Summary |

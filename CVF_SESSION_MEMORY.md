@@ -122,10 +122,12 @@ Before material governed work, an agent should be able to state:
 ## Next Allowed Move
 
 Proceed with corrected Lane D → Lane E → Lane F → Lane G work-order sequence.
-Lane D has filed GC-018 and is implemented as contract-and-flag work only:
-gateway `StreamContract`, CLI `--stream`, and governed-pack
-`streamingEnabled: false`. Lane E is the next allowed implementation lane only
-after Lane D completion is committed and handoff-synced. Do not broaden
+Lane D has filed GC-018 and is implemented as contract-and-flag work only.
+Lane E has filed GC-018 and is implemented as offline governance reliability
+metrics plus `cvf benchmark governance`; its operational baseline is honestly
+marked `baseline_deferred_no_real_audit_log` because no suitable real audit
+JSONL source exists in this workspace. Lane F is the next allowed
+implementation lane after Lane E commit-level closure. Do not broaden
 absorption, role taxonomy, provider semantics, public claims, or live-proof
 claims outside the lane boundaries recorded in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
@@ -220,6 +222,29 @@ Lane D implementation instead added the minimal gateway normalization surface:
 Evidence: model gateway tests passed (`12 files`, `34 tests`), model gateway
 typecheck passed, governance CLI tests passed (`4 files`, `50 tests`), and CLI
 typecheck passed. Route streaming remains explicitly out of scope.
+
+## Lane E Benchmark Reorientation Update — 2026-05-19
+
+Lane E added offline governance reliability metrics and the CLI command:
+
+```powershell
+cvf benchmark governance --input <audit.jsonl> [--format json|table]
+```
+
+New implementation paths:
+
+- `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/governance-reliability-metrics.ts`
+- `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/tests/governance-reliability-metrics.test.ts`
+- `docs/baselines/CVF_GOVERNANCE_RELIABILITY_BASELINE_2026-05-19.md`
+
+Baseline status: `baseline_deferred_no_real_audit_log`. Existing JSONL files in
+the workspace were checked but are latency/PVV evidence, not governance audit
+JSONL with the required metric fields. Synthetic data remains test-only. The
+work-order requested `docs/benchmark/`, but docs governance rejected that
+non-taxonomy folder, so the baseline lives in `docs/baselines/`.
+
+Evidence: governance CLI tests passed (`5 files`, `59 tests`) and CLI
+typecheck passed.
 
 ## Claim Boundary
 

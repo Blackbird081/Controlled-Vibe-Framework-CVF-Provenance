@@ -5,9 +5,9 @@ describe("CommandRegistry", () => {
   const registry = new CommandRegistry();
 
   describe("built-in commands", () => {
-    it("has 8 built-in commands", () => {
+    it("has 9 built-in commands", () => {
       const commands = registry.listCommands();
-      expect(commands.length).toBe(8);
+      expect(commands.length).toBe(9);
     });
 
     it("includes all expected commands", () => {
@@ -15,6 +15,7 @@ describe("CommandRegistry", () => {
       expect(names).toContain("help");
       expect(names).toContain("version");
       expect(names).toContain("execute");
+      expect(names).toContain("benchmark");
       expect(names).toContain("status");
       expect(names).toContain("evaluate");
       expect(names).toContain("session");
@@ -112,6 +113,18 @@ describe("CommandRegistry", () => {
       });
       expect(result.success).toBe(false);
       expect(result.message).toContain("runAsync");
+    });
+  });
+
+  describe("benchmark command", () => {
+    it("requires the governance sub-command", () => {
+      const result = registry.execute({
+        command: "benchmark",
+        flags: {},
+        positional: [],
+      });
+      expect(result.success).toBe(false);
+      expect(result.message).toContain("benchmark governance");
     });
   });
 

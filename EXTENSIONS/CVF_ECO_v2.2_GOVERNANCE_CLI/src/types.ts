@@ -1,6 +1,7 @@
 export type CLICommand =
   | "evaluate"
   | "execute"
+  | "benchmark"
   | "session"
   | "report"
   | "audit"
@@ -27,6 +28,11 @@ export interface CLICommandHandler {
   usage: string;
   execute(args: CLIArgs): CLIOutput;
   executeAsync?(args: CLIArgs): Promise<CLIOutput>;
+}
+
+export interface BenchmarkGovernanceOptions {
+  input: string;
+  format: "json" | "table";
 }
 
 export interface CLIConfig {

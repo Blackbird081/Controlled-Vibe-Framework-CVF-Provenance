@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: OPEN — awaiting Codex GC-018 filing before implementation begins.
+Status: CLOSED — defined and offline-tested; baseline deferred honestly.
 Prerequisite: Lane D must be closed before Lane E begins.
 
 ## Purpose
@@ -56,7 +56,7 @@ Before filing GC-018:
 2. `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/types.ts` — existing type definitions
 3. `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/execute.client.ts` — audit
    event structure emitted by executions (Lane C output)
-4. `docs/benchmark/` — list existing benchmark files; do not overwrite any
+4. `docs/INDEX.md` — verify docs taxonomy before placing the baseline
 5. `governance/compat/CVF_GOVERNED_FILE_SIZE_EXCEPTION_REGISTRY.json` — line
    limits before touching any governed file
 
@@ -64,7 +64,7 @@ Anti-duplication grep:
 
 ```powershell
 rg -n "benchmark|governance.*metric|receiptIntegrity" EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/
-ls docs/benchmark/
+Test-Path "docs/benchmark/"
 ```
 
 ## 5. Pre-Flight Checks
@@ -74,7 +74,7 @@ python governance/compat/check_active_session_state.py --enforce
 python governance/compat/check_markdown_structural_completeness.py
 python governance/compat/check_docs_governance_compat.py
 Test-Path "EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/command.registry.ts"
-ls docs/benchmark/
+Test-Path "docs/benchmark/"
 git status --short
 ```
 
@@ -91,7 +91,7 @@ The GC-018 must record:
 - exact file name for metric definitions (`governance-reliability-metrics.ts`)
 - exact 4 metric names and their computation formulas
 - exact CLI subcommand: `cvf benchmark governance --input <path>`
-- baseline document path in `docs/benchmark/`
+- baseline document path in taxonomy-compliant `docs/baselines/`
 - R0 risk statement (offline computation only)
 - explicit no-live-provider-call boundary
 - acceptance criteria
@@ -106,7 +106,7 @@ EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/governance-reliability-metrics.ts  (N
 EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/command.registry.ts                 (MODIFY — add benchmark subcommand)
 EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/types.ts                            (MODIFY — BenchmarkOptions type)
 EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/tests/governance-reliability-metrics.test.ts (NEW)
-docs/benchmark/CVF_GOVERNANCE_RELIABILITY_BASELINE_2026-05-19.md               (NEW)
+docs/baselines/CVF_GOVERNANCE_RELIABILITY_BASELINE_2026-05-19.md              (NEW)
 docs/baselines/CVF_GC018_LANE_E_BENCHMARK_REORIENTATION_2026-05-19.md          (NEW)
 docs/reviews/CVF_LANE_E_BENCHMARK_REORIENTATION_COMPLETION_2026-05-19.md       (NEW)
 ```
@@ -114,8 +114,7 @@ docs/reviews/CVF_LANE_E_BENCHMARK_REORIENTATION_COMPLETION_2026-05-19.md       (
 Forbidden scope:
 
 ```
-docs/benchmark/qbs-preregistrations/   (existing — do not modify)
-docs/benchmark/CVF_GOVERNANCE_TAX_*    (existing — do not modify)
+existing QBS/W-series benchmark records   (do not modify)
 EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/    (no web changes in this lane)
 ```
 
@@ -157,7 +156,7 @@ EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/    (no web changes in this lane)
    document must say `baseline_deferred_no_real_audit_log` instead of presenting
    synthetic data as an operational baseline.
 
-8. File `docs/benchmark/CVF_GOVERNANCE_RELIABILITY_BASELINE_2026-05-19.md`
+8. File `docs/baselines/CVF_GOVERNANCE_RELIABILITY_BASELINE_2026-05-19.md`
    recording: metric definitions, computation date, input source, result values.
 
 9. File GC-018 baseline. File completion packet. Update GC-020.
@@ -166,7 +165,7 @@ EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/    (no web changes in this lane)
 
 ```powershell
 Test-Path "EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/governance-reliability-metrics.ts"
-Test-Path "docs/benchmark/CVF_GOVERNANCE_RELIABILITY_BASELINE_2026-05-19.md"
+Test-Path "docs/baselines/CVF_GOVERNANCE_RELIABILITY_BASELINE_2026-05-19.md"
 rg -n "benchmark governance" EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/command.registry.ts
 npm test (CVF_ECO_v2.2_GOVERNANCE_CLI) — all pass including new tests
 python governance/compat/run_local_governance_hook_chain.py --hook pre-commit
@@ -176,16 +175,17 @@ Evidence Trace Block required for each claim in completion packet.
 
 ## 10. Acceptance Criteria
 
-- [ ] `governance-reliability-metrics.ts` exists with 4 metric functions
-- [ ] `cvf benchmark governance --input <path>` command registered and functional
-- [ ] All 4 metrics return `{ rate, count, total }` shape
-- [ ] Unit tests pass for all 4 metrics including edge cases
-- [ ] Baseline document filed in `docs/benchmark/` using a real audit/log source,
-      or explicitly marked `baseline_deferred_no_real_audit_log`
-- [ ] No existing QBS-1, W72/W91/W98 benchmark files modified
-- [ ] No live provider call made
-- [ ] GC-023 line limits respected
-- [ ] Current governance pre-commit hook chain passes without bypassing hooks
+- [x] `governance-reliability-metrics.ts` exists with 4 metric functions
+- [x] `cvf benchmark governance --input <path>` command registered and functional
+- [x] All 4 metrics return `{ rate, count, total }` shape
+- [x] Unit tests pass for all 4 metrics including edge cases
+- [x] Baseline document filed in taxonomy-compliant `docs/baselines/` using a
+      real audit/log source, or explicitly marked
+      `baseline_deferred_no_real_audit_log`
+- [x] No existing QBS-1, W72/W91/W98 benchmark files modified
+- [x] No live provider call made
+- [x] GC-023 line limits respected
+- [x] Current governance pre-commit hook chain passes without bypassing hooks
 
 ## 11. Review Gate
 
@@ -200,15 +200,16 @@ Reviewer checks:
 
 ## 12. Closure Checklist
 
-- [ ] GC-018 filed and referenced
-- [ ] All acceptance criteria PASS
-- [ ] Evidence Trace Block present
-- [ ] Current governance hook chain passes without bypassing hooks
-- [ ] GC-020 handoff updated
-- [ ] Public catalog: consider adding `cvf benchmark governance` to catalog
-      capability table with `defined, offline-tested` status — verify path in
-      public-sync before committing
-- [ ] Reviewer disposition: NO_BLOCKING_FINDING or operator waiver
+- [x] GC-018 filed and referenced
+- [x] All implementation acceptance criteria PASS
+- [x] Evidence Trace Block present
+- [x] Current governance hook chain passes without bypassing hooks
+- [x] GC-020 handoff updated with pending Lane E continuity base
+- [x] Public catalog: considered; deferred to public-sync catalog work because
+      this provenance commit does not make a public claim. Add
+      `cvf benchmark governance` with `defined, offline-tested` only after
+      public-sync path verification.
+- [ ] Reviewer disposition: pending Claude/operator review after Codex commit
 
 ## 13. Return-To-Orchestrator Conditions
 
