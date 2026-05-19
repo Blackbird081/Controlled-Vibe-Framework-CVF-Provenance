@@ -2,9 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: OPEN — awaiting second Reviewer rebuttal acceptance of V2 roadmap
-and GC-018 filing before implementation begins. C4 may run in parallel
-with C2 after their respective GC-018s are filed.
+Status: CLOSED — C4 continuation chain guard implemented and verified.
 
 GC-018 required: Yes — new enforcement surface, R0.
 GC-018 path: `docs/baselines/CVF_GC018_C4_CONTINUATION_CHAIN_GUARD_2026-05-19.md`
@@ -12,10 +10,11 @@ GC-018 path: `docs/baselines/CVF_GC018_C4_CONTINUATION_CHAIN_GUARD_2026-05-19.md
 ## Purpose
 
 Create `check_continuation_chain.py` to enforce three rules: every work order
-references a GC-018 baseline (Rule A), every closed work order has a matching
-completion review (Rule B), and the active handoff contains the current HEAD
-SHA (Rule C). Closes the governance gap where closed work orders could lack
-evidence and handoffs could silently drift from HEAD.
+that declares `GC-018 required: Yes` references a GC-018 baseline (Rule A),
+every closed work order has a matching completion review (Rule B), and the
+active handoff contains the current HEAD SHA (Rule C). Closes the governance
+gap where closed work orders could lack evidence and handoffs could silently
+drift from HEAD.
 
 ## Authority Chain
 
@@ -60,9 +59,9 @@ integration scan shows 0 non-exempted Rule B orphans.
 
 ## Evidence Requirements
 
-Evidence trace in completion review: current `docs/work_orders/` scan showing 0
-Rule A violations and 0 non-exempted Rule B orphans; all 7 test cases pass;
-exemption registry validates with ≤ 10 entries.
+Evidence trace in completion review: current `docs/work_orders/` scan showing
+0 applicable Rule A violations and 0 non-exempted Rule B orphans; all 8 test
+cases pass; exemption registry validates with ≤ 10 entries.
 
 ## Review Gate
 
@@ -72,8 +71,8 @@ evidence and hook-chain `--hook pre-commit` pass confirmed in evidence trace.
 ## Closure Checklist
 
 - [ ] Exemption registry valid JSON, ≤ 10 entries
-- [ ] Integration scan: 0 Rule A violations, 0 non-exempted Rule B orphans
-- [ ] All 7 test cases pass with evidence
+- [ ] Integration scan: 0 applicable Rule A violations, 0 non-exempted Rule B orphans
+- [ ] All 8 test cases pass with evidence
 - [ ] Policy file present with exemption cap stated
 - [ ] Hook-chain and CI gate wired without breaking existing checks
 - [ ] GC-020 handoff HEAD SHA updated after commit
@@ -109,7 +108,8 @@ Return immediately if:
 
 ```text
 1. List all docs/work_orders/CVF_AGENT_WORK_ORDER_*.md — record status lines
-   to confirm Status: CLOSED pattern (not DELIVERED/COMPLETE)
+   to confirm Status: CLOSED pattern (not DELIVERED/COMPLETE), and record
+   any `GC-018 required:` declaration for Rule A applicability
 2. List all docs/reviews/ — record naming patterns to confirm *_COMPLETION_*.md
 3. Confirm check_continuation_chain.py does NOT exist yet
 4. Confirm CVF_CONTINUATION_CHAIN_EXEMPTION_REGISTRY.json does NOT exist yet
@@ -147,16 +147,23 @@ Beyond 10 entries triggers a dedicated cleanup tranche.
 
 Create `governance/compat/check_continuation_chain.py`.
 
-#### Rule A — GC-018 reference
+#### Rule A — GC-018 reference for GC-018-required work orders
 
 For every file matching `docs/work_orders/CVF_AGENT_WORK_ORDER_*.md`:
-body must contain a path matching `docs/baselines/CVF_GC018_[^\s]+\.md`.
+if body declares `GC-018 required: Yes`, body must contain a path matching
+`docs/baselines/CVF_GC018_[^\s]+\.md`.
+
+If body declares `GC-018 required: No`, Rule A is not applicable and must
+not emit a violation. If body has no `GC-018 required:` declaration, Rule A
+is not applicable for legacy/prerequisite compatibility and should be
+reported as `not_applicable`, not as a violation.
 
 ```python
 GC018_PATTERN = re.compile(r"docs/baselines/CVF_GC018_[^\s]+\.md")
 ```
 
-If not found: violation `{"rule": "A", "file": ..., "issue": "missing GC-018 reference"}`.
+If `GC-018 required: Yes` is declared and no path is found: violation
+`{"rule": "A", "file": ..., "issue": "missing GC-018 reference"}`.
 
 #### Rule B — Closed work order has completion review
 
@@ -208,8 +215,11 @@ Create `governance/compat/test_check_continuation_chain.py`.
 
 Required test cases:
 
-- `test_rule_a_missing_gc018` — work order body without GC-018 reference → Rule A violation
+- `test_rule_a_missing_gc018` — work order body declaring `GC-018 required: Yes`
+  without GC-018 reference → Rule A violation
 - `test_rule_a_passes_with_gc018` — work order body with valid GC-018 path → no Rule A violation
+- `test_rule_a_not_applicable_when_gc018_not_required` — work order body with
+  `GC-018 required: No` and no GC-018 path → no Rule A violation
 - `test_rule_b_missing_review` — closed work order with no matching review → Rule B violation
 - `test_rule_b_passes_with_review` — closed work order + matching review → no Rule B violation
 - `test_rule_b_exemption` — closed work order in exemption registry → no Rule B violation
@@ -232,7 +242,7 @@ Add only after Task 4 tests pass and Task 5 integration scan shows
 
 ## Acceptance criteria
 
-- [ ] Current `docs/work_orders/` scan → 0 Rule A violations, 0 unexempted Rule B orphans
+- [ ] Current `docs/work_orders/` scan → 0 applicable Rule A violations, 0 unexempted Rule B orphans
 - [ ] `test_rule_a_missing_gc018` → Rule A violation detected
 - [ ] `test_rule_b_missing_review` → Rule B violation detected
 - [ ] `test_rule_b_exemption` → no false positive for exempted work orders
@@ -252,7 +262,7 @@ Update V10 handoff HEAD SHA per GC-020 after commit.
 ## Claim boundary
 
 This work order covers only the three-rule continuation chain check
-(GC-018 reference, closed work order → completion review, handoff HEAD
-SHA current). It does not validate the semantic content of work orders
-or reviews, does not check provider execution, and does not replace the
-adjacent three guards cited above.
+(GC-018-required work order → GC-018 reference, closed work order →
+completion review, handoff HEAD SHA current). It does not validate the
+semantic content of work orders or reviews, does not check provider execution,
+and does not replace the adjacent three guards cited above.

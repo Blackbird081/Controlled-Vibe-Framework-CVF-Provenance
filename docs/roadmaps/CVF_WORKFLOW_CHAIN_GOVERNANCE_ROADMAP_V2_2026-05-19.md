@@ -3,8 +3,10 @@
 Memory class: SUMMARY_RECORD
 
 Status: READY_FOR_REBUTTAL — revised after first Reviewer-role rebuttal.
-Filed by: Orchestrator role. Awaits second Reviewer-role pass before
-any work order is dispatched to a Worker role.
+Filed by: Orchestrator role. C1/C2/C3/C4 work orders may be pre-filed
+as non-executable packets, but no Worker implementation may begin before
+the second Reviewer-role pass returns no-blocking findings and each
+accepted GC-018-required candidate has its GC-018 filed.
 
 Predecessor: `docs/roadmaps/CVF_WORKFLOW_CHAIN_GOVERNANCE_PROPOSAL_2026-05-19.md`
 (Status: REBUTTED — Reviewer disposition recorded there)
@@ -37,7 +39,7 @@ Close workflow-chain integrity gaps in CVF across four bounded layers:
 4. Continuation chain: work-order → review → GC-018 → handoff sync
 
 All four candidates are independently reviewable. Each candidate that
-survives rebuttal gets its own GC-018 and work order before implementation.
+survives rebuttal gets its own GC-018 where required before implementation.
 
 ---
 
@@ -47,8 +49,8 @@ survives rebuttal gets its own GC-018 and work order before implementation.
 | --- | --- | --- |
 | C1 | Assumed guard lived in governance repo | Explicitly scoped to public-sync repo only |
 | C2 | Required `## Steps` (wrong), step-name keys in JSON (not in current packs) | Now requires `## Workflow`, validates section exists + has numbered items only |
-| C3 | Step list named non-existent functions | Replaced with actual `route.ts` call sites from source read |
-| C4 | Checked `Status: DELIVERED/COMPLETE`, `*_WORK_ORDER_COMPLETION_REVIEW_*` | Now checks `Status: CLOSED`, `*_COMPLETION_*.md`; drops "next 5 commits" for HEAD SHA check |
+| C3 | Step list named non-existent functions | Replaced with actual `route.ts` call sites from source read; selector mode handles repeated `buildEvidenceReceipt` / `appendAuditEvent` calls |
+| C4 | Checked `Status: DELIVERED/COMPLETE`, `*_WORK_ORDER_COMPLETION_REVIEW_*`; assumed every work order needs GC-018 | Now checks `Status: CLOSED`, `*_COMPLETION_*.md`; drops "next 5 commits" for HEAD SHA check; Rule A applies only to work orders that declare `GC-018 required: Yes` |
 
 ---
 
@@ -225,21 +227,23 @@ All line numbers from
 `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts`
 (1001 lines total):
 
-| Order | Step name | Call site pattern | Confirmed line |
-| --- | --- | --- | --- |
-| 1 | `resolveExecutionCVFRole` | `resolveExecutionCVFRole(` | 336 |
-| 2 | `evaluateExecutionActorRoleGate` | `evaluateExecutionActorRoleGate(` | 348 |
-| 3 | `checkRoleOutputPermission` | `checkRoleOutputPermission(` | 350 |
-| 4 | `evaluateEnforcement` | `evaluateEnforcement(` | 375 |
-| 5 | `routeWebProvider` | `routeWebProvider(` | 564 |
-| 6 | `buildEvidenceReceipt` (success path) | `buildEvidenceReceipt(` | 858 |
-| 7 | `buildRouteAuditMemoryCapture` | `buildRouteAuditMemoryCapture(` | 927 |
-| 8 | `appendAuditEvent` (final) | `appendAuditEvent(` | 944 |
+| Order | Step name | Call site pattern | Selector | Confirmed line |
+| --- | --- | --- | --- | --- |
+| 1 | `resolveExecutionCVFRole` | `resolveExecutionCVFRole(` | first non-import/comment occurrence | 336 |
+| 2 | `evaluateExecutionActorRoleGate` | `evaluateExecutionActorRoleGate(` | first non-import/comment occurrence | 348 |
+| 3 | `checkRoleOutputPermission` | `checkRoleOutputPermission(` | first non-import/comment occurrence | 350 |
+| 4 | `evaluateEnforcement` | `evaluateEnforcement(` | first non-import/comment occurrence | 375 |
+| 5 | `routeWebProvider` | `routeWebProvider(` | first non-import/comment occurrence | 564 |
+| 6 | `buildEvidenceReceipt` (success path) | `buildEvidenceReceipt(` | last non-import/comment occurrence | 858 |
+| 7 | `buildRouteAuditMemoryCapture` | `buildRouteAuditMemoryCapture(` | first non-import/comment occurrence | 927 |
+| 8 | `appendAuditEvent` (final audit memory event) | `appendAuditEvent(` | last non-import/comment occurrence | 944 |
 
 Steps 1-4 are the governance gate sequence (role → actor gate → permission →
 enforcement). Steps 5-8 are the execution and evidence sequence. The guard
-asserts that the FIRST occurrence of each pattern appears at a strictly
-increasing line number in the canonical order.
+asserts that the selected occurrence of each pattern appears at a strictly
+increasing line number in the canonical order. Selector mode is required
+because `route.ts` has earlier error-path `buildEvidenceReceipt(` and
+`appendAuditEvent(` calls before the final success/evidence path.
 
 Branches (early-exit 403 at step 2 if actor gate rejects) are permitted as
 long as the calls that DO execute maintain order.
@@ -255,6 +259,7 @@ Schema per entry:
   "order": 1,
   "stepName": "resolveExecutionCVFRole",
   "callPattern": "resolveExecutionCVFRole(",
+  "selector": "first",
   "confirmedLine": 336,
   "addedAt": "2026-05-19",
   "addedBy": "Worker"
@@ -264,9 +269,9 @@ Schema per entry:
 ### Detection method
 
 1. Read registry JSON.
-2. Read `route.ts` as text; for each step entry, find line number of
-   first occurrence of `callPattern` (exclude lines containing `import`
-   or starting with `//`).
+2. Read `route.ts` as text; for each step entry, find the line number
+   selected by `selector` (`first` or `last`) among non-import and
+   non-comment occurrences of `callPattern`.
 3. Assert line numbers are strictly increasing in `order` sequence.
 4. Report each out-of-order or missing step as a violation.
 
@@ -275,8 +280,9 @@ Schema per entry:
 - **Passing:** snapshot of current `route.ts` → 0 violations
 - **Broken 1:** step removed (delete pattern) → 1 missing-step violation
 - **Broken 2:** two steps swapped → 1 order violation
-- **Broken 3:** duplicate pattern earlier in file → assert guard uses
-  FIRST occurrence (no false positive)
+- **Broken 3:** repeated success-path pattern earlier in file → assert
+  `selector: last` still resolves the final success/evidence occurrence
+  and does not create a false positive
 
 ### C3 acceptance criteria
 
@@ -313,9 +319,15 @@ This guard fills the upstream gap: work-order closed → review packet exists
 
 #### C4 Rule A — GC-018 reference in work order
 
-For every file matching `docs/work_orders/CVF_AGENT_WORK_ORDER_*.md`:
-body MUST contain a reference to a `docs/baselines/CVF_GC018_*.md` path
-(regex: `docs/baselines/CVF_GC018_[^\s]+\.md`).
+For every file matching `docs/work_orders/CVF_AGENT_WORK_ORDER_*.md`
+that declares `GC-018 required: Yes`, body MUST contain a reference to a
+`docs/baselines/CVF_GC018_*.md` path (regex:
+`docs/baselines/CVF_GC018_[^\s]+\.md`).
+
+Work orders that declare `GC-018 required: No` are explicitly out of
+Rule A scope. Legacy/prerequisite work orders that do not declare the
+field are recorded as `not_applicable` unless a later cleanup tranche
+requires universal declaration.
 
 #### C4 Rule B — Closed work order → completion review exists (revised from V1)
 
@@ -352,9 +364,10 @@ Rule B only.
 
 ### C4 acceptance criteria
 
-- Scan of current `docs/work_orders/` → 0 Rule A violations, 0 Rule B
-  orphans (or all orphans are in exemption registry), 0 Rule C drift
-- Synthetic Rule A violation (work order without GC-018 reference) → caught
+- Scan of current `docs/work_orders/` → 0 applicable Rule A violations,
+  0 Rule B orphans (or all orphans are in exemption registry), 0 Rule C drift
+- Synthetic Rule A violation (work order declares `GC-018 required: Yes`
+  without GC-018 reference) → caught
 - Synthetic Rule B violation (closed work order with no matching review) → caught
 - Rule C: force HEAD mismatch in fixture → GC-020 drift violation emitted
 - Exemption registry prevents false positives on legacy work orders

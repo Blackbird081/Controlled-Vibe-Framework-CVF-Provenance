@@ -81,6 +81,36 @@ def check_docs_governance_compat() -> CheckResult:
     return CheckResult(name, "FAIL", "Docs governance compatibility failed", lines[-12:])
 
 
+def check_governed_pack_contract() -> CheckResult:
+    name = "Governed pack contract guard"
+    script = REPO_ROOT / "governance" / "compat" / "check_governed_pack_contract.py"
+    code, stdout, stderr = run_cmd([sys.executable, str(script), "--enforce"], cwd=REPO_ROOT, timeout=120)
+    output = (stdout + stderr).splitlines()
+    if code == 0:
+        return CheckResult(name, "PASS", "Governed pack contract guard passed", output[-4:])
+    return CheckResult(name, "FAIL", "Governed pack contract guard failed", output[-12:])
+
+
+def check_continuation_chain() -> CheckResult:
+    name = "Continuation chain guard"
+    script = REPO_ROOT / "governance" / "compat" / "check_continuation_chain.py"
+    code, stdout, stderr = run_cmd([sys.executable, str(script), "--enforce"], cwd=REPO_ROOT, timeout=120)
+    output = (stdout + stderr).splitlines()
+    if code == 0:
+        return CheckResult(name, "PASS", "Continuation chain guard passed", output[-4:])
+    return CheckResult(name, "FAIL", "Continuation chain guard failed", output[-12:])
+
+
+def check_execute_route_step_sequence() -> CheckResult:
+    name = "Execute route step sequence guard"
+    script = REPO_ROOT / "governance" / "compat" / "check_execute_route_step_sequence.py"
+    code, stdout, stderr = run_cmd([sys.executable, str(script), "--enforce"], cwd=REPO_ROOT, timeout=120)
+    output = (stdout + stderr).splitlines()
+    if code == 0:
+        return CheckResult(name, "PASS", "Execute route step sequence guard passed", output[-4:])
+    return CheckResult(name, "FAIL", "Execute route step sequence guard failed", output[-12:])
+
+
 def check_static_governance_tests() -> CheckResult:
     name = "Static governance/unit tests"
     cmd = ["npx", "vitest", "run", *STATIC_GOVERNANCE_TESTS]
@@ -99,6 +129,9 @@ def run_checks() -> list[CheckResult]:
         check_web_typecheck(),
         check_secrets(False),
         check_docs_governance_compat(),
+        check_governed_pack_contract(),
+        check_continuation_chain(),
+        check_execute_route_step_sequence(),
         check_static_governance_tests(),
     ]
 

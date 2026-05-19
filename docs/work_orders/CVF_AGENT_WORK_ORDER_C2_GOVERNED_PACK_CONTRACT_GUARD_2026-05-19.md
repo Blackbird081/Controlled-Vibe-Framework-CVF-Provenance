@@ -2,8 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: OPEN — awaiting second Reviewer rebuttal acceptance of V2 roadmap
-and GC-018 filing before implementation begins.
+Status: CLOSED — C2 governed pack contract guard implemented and verified.
 
 GC-018 required: Yes — new enforcement surface.
 GC-018 path: `docs/baselines/CVF_GC018_C2_GOVERNED_PACK_CONTRACT_GUARD_2026-05-19.md`

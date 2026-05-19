@@ -2,9 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: OPEN — awaiting second Reviewer rebuttal acceptance of V2 roadmap,
-GC-018 filing, AND C2 + C4 acceptance criteria passing before implementation.
-C3 is the last candidate; do not start until C2 and C4 are closed.
+Status: CLOSED — C3 execute route step sequence guard implemented and verified.
 
 GC-018 required: Yes — new enforcement surface on critical runtime path.
 GC-018 path: `docs/baselines/CVF_GC018_C3_EXECUTE_ROUTE_STEP_SEQUENCE_GUARD_2026-05-19.md`
@@ -12,9 +10,9 @@ GC-018 path: `docs/baselines/CVF_GC018_C3_EXECUTE_ROUTE_STEP_SEQUENCE_GUARD_2026
 ## Purpose
 
 Create `check_execute_route_step_sequence.py` to verify the 8 canonical call
-sites in `route.ts` appear in strictly increasing line-number order. Prevents
-silent step-order drift on the critical `/api/execute` path without modifying
-the route file itself.
+sites in `route.ts` appear in strictly increasing selected-occurrence order.
+Prevents silent step-order drift on the critical `/api/execute` path without
+modifying the route file itself.
 
 ## Authority Chain
 
@@ -67,10 +65,10 @@ packet. Evidence must include 0 violations on actual `route.ts`.
 
 ## Closure Checklist
 
-- [ ] Pre-flight line numbers verified and registry updated if drifted
-- [ ] All 4 test cases pass with evidence
-- [ ] Guard runs in < 2 seconds (verified in evidence)
-- [ ] Maintenance note present in GC-018 and policy file
+- [x] Pre-flight line numbers verified and registry updated if drifted
+- [x] All 5 test cases pass with evidence
+- [x] Guard runs in < 2 seconds (verified in evidence)
+- [x] Maintenance note present in GC-018 and policy file
 - [ ] GC-020 handoff HEAD SHA updated after commit
 
 ## Return-To-Orchestrator Conditions
@@ -97,24 +95,27 @@ Worker must re-verify each line number against current `route.ts` BEFORE
 writing the registry JSON. Line numbers may drift if the file was edited
 after this work order was filed.
 
-| Order | Step name | Call site pattern | Reference line |
-| --- | --- | --- | --- |
-| 1 | `resolveExecutionCVFRole` | `resolveExecutionCVFRole(` | 336 |
-| 2 | `evaluateExecutionActorRoleGate` | `evaluateExecutionActorRoleGate(` | 348 |
-| 3 | `checkRoleOutputPermission` | `checkRoleOutputPermission(` | 350 |
-| 4 | `evaluateEnforcement` | `evaluateEnforcement(` | 375 |
-| 5 | `routeWebProvider` | `routeWebProvider(` | 564 |
-| 6 | `buildEvidenceReceipt` | `buildEvidenceReceipt(` | 858 |
-| 7 | `buildRouteAuditMemoryCapture` | `buildRouteAuditMemoryCapture(` | 927 |
-| 8 | `appendAuditEvent` (final) | `appendAuditEvent(` | 944 |
+| Order | Step name | Call site pattern | Selector | Reference line |
+| --- | --- | --- | --- | --- |
+| 1 | `resolveExecutionCVFRole` | `resolveExecutionCVFRole(` | first non-import/comment occurrence | 336 |
+| 2 | `evaluateExecutionActorRoleGate` | `evaluateExecutionActorRoleGate(` | first non-import/comment occurrence | 348 |
+| 3 | `checkRoleOutputPermission` | `checkRoleOutputPermission(` | first non-import/comment occurrence | 350 |
+| 4 | `evaluateEnforcement` | `evaluateEnforcement(` | first non-import/comment occurrence | 375 |
+| 5 | `routeWebProvider` | `routeWebProvider(` | first non-import/comment occurrence | 564 |
+| 6 | `buildEvidenceReceipt` | `buildEvidenceReceipt(` | last non-import/comment occurrence | 858 |
+| 7 | `buildRouteAuditMemoryCapture` | `buildRouteAuditMemoryCapture(` | first non-import/comment occurrence | 927 |
+| 8 | `appendAuditEvent` (final) | `appendAuditEvent(` | last non-import/comment occurrence | 944 |
 
-Detection: first occurrence of pattern (excluding import lines and comment
-lines) must appear at a strictly increasing line number in order 1–8.
+Detection: the selected occurrence of each pattern (excluding import lines
+and comment lines) must appear at a strictly increasing line number in order
+1–8. `buildEvidenceReceipt(` and `appendAuditEvent(` use `last` because the
+route contains earlier error-path receipt/audit calls before the final
+success/evidence path.
 
 ## Source-fidelity pre-flight (Worker role must run before writing any code)
 
 ```text
-1. Grep route.ts for each callPattern above; record actual first occurrence
+1. Grep route.ts for each callPattern above; record actual selected occurrence
    line (excluding import/comment lines); update registry if any line changed
 2. Confirm check_execute_route_step_sequence.py does NOT exist yet
 3. Confirm CVF_EXECUTE_ROUTE_STEP_SEQUENCE_REGISTRY.json does NOT exist yet
@@ -133,6 +134,7 @@ Create `governance/compat/CVF_EXECUTE_ROUTE_STEP_SEQUENCE_REGISTRY.json`:
     "order": 1,
     "stepName": "resolveExecutionCVFRole",
     "callPattern": "resolveExecutionCVFRole(",
+    "selector": "first",
     "confirmedLine": 336,
     "addedAt": "2026-05-19",
     "addedBy": "Worker"
@@ -141,6 +143,7 @@ Create `governance/compat/CVF_EXECUTE_ROUTE_STEP_SEQUENCE_REGISTRY.json`:
     "order": 2,
     "stepName": "evaluateExecutionActorRoleGate",
     "callPattern": "evaluateExecutionActorRoleGate(",
+    "selector": "first",
     "confirmedLine": 348,
     "addedAt": "2026-05-19",
     "addedBy": "Worker"
@@ -149,6 +152,7 @@ Create `governance/compat/CVF_EXECUTE_ROUTE_STEP_SEQUENCE_REGISTRY.json`:
     "order": 3,
     "stepName": "checkRoleOutputPermission",
     "callPattern": "checkRoleOutputPermission(",
+    "selector": "first",
     "confirmedLine": 350,
     "addedAt": "2026-05-19",
     "addedBy": "Worker"
@@ -157,6 +161,7 @@ Create `governance/compat/CVF_EXECUTE_ROUTE_STEP_SEQUENCE_REGISTRY.json`:
     "order": 4,
     "stepName": "evaluateEnforcement",
     "callPattern": "evaluateEnforcement(",
+    "selector": "first",
     "confirmedLine": 375,
     "addedAt": "2026-05-19",
     "addedBy": "Worker"
@@ -165,6 +170,7 @@ Create `governance/compat/CVF_EXECUTE_ROUTE_STEP_SEQUENCE_REGISTRY.json`:
     "order": 5,
     "stepName": "routeWebProvider",
     "callPattern": "routeWebProvider(",
+    "selector": "first",
     "confirmedLine": 564,
     "addedAt": "2026-05-19",
     "addedBy": "Worker"
@@ -173,6 +179,7 @@ Create `governance/compat/CVF_EXECUTE_ROUTE_STEP_SEQUENCE_REGISTRY.json`:
     "order": 6,
     "stepName": "buildEvidenceReceipt",
     "callPattern": "buildEvidenceReceipt(",
+    "selector": "last",
     "confirmedLine": 858,
     "addedAt": "2026-05-19",
     "addedBy": "Worker"
@@ -181,6 +188,7 @@ Create `governance/compat/CVF_EXECUTE_ROUTE_STEP_SEQUENCE_REGISTRY.json`:
     "order": 7,
     "stepName": "buildRouteAuditMemoryCapture",
     "callPattern": "buildRouteAuditMemoryCapture(",
+    "selector": "first",
     "confirmedLine": 927,
     "addedAt": "2026-05-19",
     "addedBy": "Worker"
@@ -189,6 +197,7 @@ Create `governance/compat/CVF_EXECUTE_ROUTE_STEP_SEQUENCE_REGISTRY.json`:
     "order": 8,
     "stepName": "appendAuditEvent_final",
     "callPattern": "appendAuditEvent(",
+    "selector": "last",
     "confirmedLine": 944,
     "addedAt": "2026-05-19",
     "addedBy": "Worker"
@@ -205,18 +214,21 @@ Create `governance/compat/check_execute_route_step_sequence.py`.
 Detection logic:
 
 ```python
-def _find_first_call_line(lines: list[str], pattern: str) -> int | None:
+def _find_call_line(lines: list[str], pattern: str, selector: str) -> int | None:
+    matches: list[int] = []
     for i, line in enumerate(lines, 1):
         stripped = line.strip()
         if stripped.startswith("import ") or stripped.startswith("//"):
             continue
         if pattern in line:
-            return i
-    return None
+            matches.append(i)
+    if not matches:
+        return None
+    return matches[0] if selector == "first" else matches[-1]
 ```
 
 For each step in registry order:
-- Find first occurrence line
+- Find selected occurrence line (`selector` must be `first` or `last`)
 - If not found: violation (missing step)
 - If found line <= previous step line: violation (order broken)
 
@@ -240,8 +252,10 @@ Required test cases:
 - `test_current_route_passes` — run guard against actual `route.ts` → 0 violations
 - `test_missing_step` — synthetic route with one pattern removed → 1 missing-step violation
 - `test_swapped_steps` — synthetic route with steps 3 and 4 swapped → 1 order violation
-- `test_first_occurrence_used` — pattern appears on import line earlier; guard uses first
+- `test_selector_first_skips_import` — pattern appears on import line earlier; guard uses first
   non-import occurrence → no false positive, correct line detected
+- `test_selector_last_uses_final_success_path` — repeated `buildEvidenceReceipt(`
+  or `appendAuditEvent(` appears earlier; guard uses the final non-import occurrence
 
 Use `route.ts` content loaded as string for test_current_route_passes.
 Use inline string fixtures for broken cases (do not modify real route.ts).
@@ -260,7 +274,8 @@ The GC-018 for C3 MUST include this maintenance obligation:
 - [ ] Current `route.ts` → 0 violations on guard run
 - [ ] `test_missing_step` → missing-step violation detected
 - [ ] `test_swapped_steps` → order violation detected
-- [ ] `test_first_occurrence_used` → no false positive on import-line pattern
+- [ ] `test_selector_first_skips_import` → no false positive on import-line pattern
+- [ ] `test_selector_last_uses_final_success_path` → final success/evidence path selected
 - [ ] Guard runs in < 2 seconds
 - [ ] Policy file present with all required sections including maintenance note
 - [ ] Registry JSON validates (no JSON parse error)
@@ -274,7 +289,7 @@ Update V10 handoff HEAD SHA per GC-020 after commit.
 
 ## Claim boundary
 
-This work order covers only step-order enforcement for the 8 canonical
-call sites in `route.ts`. It does not modify `route.ts`, does not add
-new steps, does not cover other route files, and does not claim semantic
-validation of what each step does.
+This work order covers only selected-occurrence step-order enforcement for
+the 8 canonical call sites in `route.ts`. It does not modify `route.ts`,
+does not add new steps, does not cover other route files, and does not claim
+semantic validation of what each step does.

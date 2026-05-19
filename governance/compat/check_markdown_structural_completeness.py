@@ -320,9 +320,18 @@ def _has_any(text: str, patterns: tuple[str, ...]) -> bool:
 
 
 def _classify(path: str, text: str) -> str:
+    normalized_path = path.replace("\\", "/")
     name = Path(path).name.upper()
     title = "\n".join(text.splitlines()[:8]).upper()
     haystack = f"{path.upper()} {name} {title}"
+    if normalized_path.startswith("docs/work_orders/"):
+        return "work_order"
+    if normalized_path.startswith("docs/roadmaps/"):
+        return "roadmap"
+    if normalized_path.startswith("docs/reviews/"):
+        return "review"
+    if normalized_path.startswith("docs/baselines/") or normalized_path.startswith("docs/assessments/"):
+        return "baseline"
     if "AGENT_HANDOFF" in haystack or "HANDOFF" in haystack:
         return "handoff"
     if path.startswith("governance/toolkit/") and name.endswith("_GUARD.MD"):

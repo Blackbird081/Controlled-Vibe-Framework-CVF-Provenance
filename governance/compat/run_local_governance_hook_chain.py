@@ -55,6 +55,18 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
             ["python", "governance/compat/check_markdown_structural_completeness.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
+            "governed pack contract compatibility",
+            ["python", "governance/compat/check_governed_pack_contract.py", "--enforce"],
+        ),
+        (
+            "continuation chain compatibility",
+            ["python", "governance/compat/check_continuation_chain.py", "--enforce"],
+        ),
+        (
+            "execute route step sequence compatibility",
+            ["python", "governance/compat/check_execute_route_step_sequence.py", "--enforce"],
+        ),
+        (
             "anti-collusion evidence trace (GC-046 Phase 0.C)",
             ["python", "governance/compat/check_anti_collusion_evidence_trace.py", "--enforce", "--base", "HEAD", "--head", "HEAD"],
         ),
@@ -139,6 +151,18 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         (
             "template skill standard guard compatibility",
             ["python", "governance/compat/check_template_skill_standard_guard_compat.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "governed pack contract compatibility",
+            ["python", "governance/compat/check_governed_pack_contract.py", "--enforce"],
+        ),
+        (
+            "continuation chain compatibility",
+            ["python", "governance/compat/check_continuation_chain.py", "--enforce"],
+        ),
+        (
+            "execute route step sequence compatibility",
+            ["python", "governance/compat/check_execute_route_step_sequence.py", "--enforce"],
         ),
         (
             "multi-agent review governance compatibility",
