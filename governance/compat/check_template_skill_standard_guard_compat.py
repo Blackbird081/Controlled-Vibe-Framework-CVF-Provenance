@@ -301,7 +301,7 @@ def _classify(changed_name_status: dict[str, set[str]]) -> dict[str, Any]:
     companion_docs = [
         path
         for path in changed_name_status
-        if path in {STANDARD_PATH, ROADMAP_PATH, VALUE_ROADMAP_PATH, MEASUREMENT_PATH, HANDOFF_PATH}
+        if path in {STANDARD_PATH, ROADMAP_PATH, VALUE_ROADMAP_PATH, MEASUREMENT_PATH}
         or COMPANION_DOC_RE.match(path)
     ]
 

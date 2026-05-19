@@ -5,8 +5,8 @@ const fs = require('fs');
 const path = require('path');
 
 const BASE_DIR = path.resolve(__dirname, '..');
-const D2_MATRIX_PATH = path.resolve(BASE_DIR, '../../../docs/baselines/CVF_CORPUS_RESCREEN_D2_MATRIX_2026-04-15.md');
-const D3_TRUSTED_SUBSET_PATH = path.resolve(BASE_DIR, '../../../docs/baselines/CVF_CORPUS_RESCREEN_D3_TRUSTED_SUBSET_2026-04-15.md');
+const D2_MATRIX_PATH = path.resolve(BASE_DIR, '../../../docs/baselines/archive/CVF_CORPUS_RESCREEN_D2_MATRIX_2026-04-15.md');
+const D3_TRUSTED_SUBSET_PATH = path.resolve(BASE_DIR, '../../../docs/baselines/archive/CVF_CORPUS_RESCREEN_D3_TRUSTED_SUBSET_2026-04-15.md');
 const TEMPLATE_CLASS_OVERRIDE_PATHS = [
     path.resolve(BASE_DIR, '../../../docs/baselines/CVF_FRONT_DOOR_WAVE1_EXECUTION_NOTE_2026-04-21.md'),
     path.resolve(BASE_DIR, '../../../docs/baselines/CVF_FRONT_DOOR_WAVE2_EXECUTION_NOTE_2026-04-21.md'),

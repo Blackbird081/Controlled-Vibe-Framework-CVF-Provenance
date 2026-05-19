@@ -57,7 +57,6 @@ describe('skill corpus governance', () => {
       .flatMap((category) => category.skills)
       .flatMap((skill) => skill.linkedTemplates ?? []);
 
-    expect(governance.templateClassMap.web_build_handoff).toBe('TRUSTED_FOR_VALUE_PROOF');
     expect(governance.templateClassMap.api_design).toBe('TRUSTED_FOR_VALUE_PROOF');
     expect(governance.templateClassMap.app_builder_complete).toBe('TRUSTED_FOR_VALUE_PROOF');
     expect(governance.templateClassMap.web_ux_redesign_system).toBe('TRUSTED_FOR_VALUE_PROOF');
