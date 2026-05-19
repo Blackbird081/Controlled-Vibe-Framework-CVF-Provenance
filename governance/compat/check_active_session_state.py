@@ -71,11 +71,11 @@ def _load_state() -> tuple[dict[str, Any] | None, str | None]:
         return None, f"invalid JSON: {exc}"
 
 
-def _git_head_sha() -> str | None:
-    """Return the current HEAD SHA (full 40-char), or None if git is unavailable."""
+def _git_rev_parse(rev: str) -> str | None:
+    """Return a git revision SHA (full 40-char), or None if git is unavailable."""
     try:
         result = subprocess.run(
-            ["git", "rev-parse", "HEAD"],
+            ["git", "rev-parse", rev],
             cwd=REPO_ROOT,
             capture_output=True,
             text=True,
@@ -84,6 +84,29 @@ def _git_head_sha() -> str | None:
         return result.stdout.strip()
     except (subprocess.CalledProcessError, FileNotFoundError):
         return None
+
+
+def _git_head_sha() -> str | None:
+    return _git_rev_parse("HEAD")
+
+
+def _git_parent_sha() -> str | None:
+    return _git_rev_parse("HEAD^")
+
+
+def _head_changed_path(rel_path: str) -> bool:
+    try:
+        result = subprocess.run(
+            ["git", "diff-tree", "--no-commit-id", "--name-only", "-r", "HEAD"],
+            cwd=REPO_ROOT,
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return False
+    changed = {line.strip().replace("\\", "/") for line in result.stdout.splitlines() if line.strip()}
+    return rel_path.replace("\\", "/") in changed
 
 
 def _root_handoff_paths() -> list[Path]:
@@ -207,10 +230,14 @@ def _classify() -> dict[str, Any]:
         )
 
     # GC-020 In-Place Update Rule: active handoff must contain the current HEAD SHA.
-    # An active handoff that does not mention the current HEAD is stale — it was not
-    # updated after the last commit and will mislead the next agent about repo state.
+    # For a dedicated handoff-sync commit, the handoff cannot name its own future
+    # content-addressed SHA. In that one case, accept the first parent SHA when the
+    # current commit itself changed the active handoff.
     head_sha = _git_head_sha()
+    parent_sha = _git_parent_sha()
     head_sha_in_handoff: bool | None = None  # None = check skipped (git unavailable)
+    parent_sha_in_handoff = False
+    active_handoff_changed_in_head = False
     if head_sha and active_handoff:
         handoff_path = REPO_ROOT / active_handoff
         if handoff_path.exists():
@@ -219,10 +246,17 @@ def _classify() -> dict[str, Any]:
             head_sha_in_handoff = (
                 head_sha in handoff_text or head_sha[:8] in handoff_text
             )
-            if not head_sha_in_handoff:
+            active_handoff_changed_in_head = _head_changed_path(active_handoff)
+            if parent_sha:
+                parent_sha_in_handoff = parent_sha in handoff_text or parent_sha[:8] in handoff_text
+            if (
+                not head_sha_in_handoff
+                and not (active_handoff_changed_in_head and parent_sha_in_handoff)
+            ):
                 handoff_violations.append(
                     f"active handoff does not contain current HEAD SHA {head_sha[:8]} "
-                    f"({head_sha}) — update the handoff HEAD block after every commit "
+                    f"({head_sha}) or, for a handoff-sync commit, parent SHA "
+                    f"{parent_sha[:8] if parent_sha else 'unknown'} — update the handoff HEAD block after every commit "
                     "(GC-020 In-Place Update Rule)"
                 )
 
@@ -249,7 +283,10 @@ def _classify() -> dict[str, Any]:
         "handoffViolations": handoff_violations,
         "handoffViolationCount": len(handoff_violations),
         "headSha": head_sha,
+        "parentSha": parent_sha,
         "headShaInHandoff": head_sha_in_handoff,
+        "parentShaInHandoff": parent_sha_in_handoff,
+        "activeHandoffChangedInHead": active_handoff_changed_in_head,
         "compliant": compliant,
     }
 
@@ -269,8 +306,21 @@ def _print_report(report: dict[str, Any]) -> None:
     head_sha = report.get("headSha")
     head_in_handoff = report.get("headShaInHandoff")
     if head_sha:
-        status = "present" if head_in_handoff else ("MISSING" if head_in_handoff is False else "skipped")
-        print(f"HEAD SHA in handoff: {head_sha[:8]} — {status}")
+        parent_sha = report.get("parentSha")
+        parent_in_handoff = report.get("parentShaInHandoff")
+        handoff_changed = report.get("activeHandoffChangedInHead")
+        sync_status = (
+            "present"
+            if head_in_handoff
+            else (
+                "parent-present-for-sync-commit"
+                if handoff_changed and parent_in_handoff
+                else ("MISSING" if head_in_handoff is False else "skipped")
+            )
+        )
+        print(f"HEAD SHA in handoff: {head_sha[:8]} — {sync_status}")
+        if parent_sha and handoff_changed and parent_in_handoff and not head_in_handoff:
+            print(f"Parent SHA in handoff: {parent_sha[:8]} — present (handoff sync commit)")
 
     if report["missingFiles"]:
         print("\nMissing files:")

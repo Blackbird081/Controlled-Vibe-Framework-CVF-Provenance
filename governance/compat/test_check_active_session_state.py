@@ -111,6 +111,43 @@ class ActiveSessionStateTests(unittest.TestCase):
         self.assertFalse(report["compliant"])
         self.assertGreaterEqual(report["handoffViolationCount"], 1)
 
+    def test_handoff_sync_commit_can_reference_parent_head(self) -> None:
+        (self.repo_root / "AGENT_HANDOFF_V8_2026-05-17.md").write_text(
+            "Status: ACTIVE - current\nCurrent HEAD: `parent123`\n",
+            encoding="utf-8",
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root), patch.object(
+            MODULE, "_git_head_sha", return_value="head4567890abcdef"
+        ), patch.object(
+            MODULE, "_git_parent_sha", return_value="parent12390abcdef"
+        ), patch.object(
+            MODULE, "_head_changed_path", return_value=True
+        ):
+            report = MODULE._classify()
+
+        self.assertTrue(report["compliant"])
+        self.assertFalse(report["headShaInHandoff"])
+        self.assertTrue(report["parentShaInHandoff"])
+
+    def test_non_handoff_commit_must_reference_current_head(self) -> None:
+        (self.repo_root / "AGENT_HANDOFF_V8_2026-05-17.md").write_text(
+            "Status: ACTIVE - current\nCurrent HEAD: `parent123`\n",
+            encoding="utf-8",
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root), patch.object(
+            MODULE, "_git_head_sha", return_value="head4567890abcdef"
+        ), patch.object(
+            MODULE, "_git_parent_sha", return_value="parent12390abcdef"
+        ), patch.object(
+            MODULE, "_head_changed_path", return_value=False
+        ):
+            report = MODULE._classify()
+
+        self.assertFalse(report["compliant"])
+        self.assertEqual(report["handoffViolationCount"], 1)
+
 
 if __name__ == "__main__":
     unittest.main()
