@@ -41,6 +41,9 @@ EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/test-results/
 
 # Cache
 .cache/
+.pytest_cache/
+__pycache__/
+*.pyc
 *.tsbuildinfo
 EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/.next-cvf-*/
 .cvf/runtime/
