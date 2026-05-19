@@ -2,8 +2,9 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: PROPOSAL — 2026-05-19. Not yet authorized. Filed by Orchestrator
-role for Reviewer-role rebuttal before any GC-018 is opened.
+Status: REBUTTED — 2026-05-19. Reviewer-role rebuttal received (Codex).
+See `## Reviewer Rebuttal` section below. Candidates revised per
+disposition before any GC-018 is opened.
 
 ## Purpose
 
@@ -397,3 +398,120 @@ existing guard. It does not change role taxonomy. It does not commit
 public claims. It is a chain-integrity proposal filed for Reviewer
 rebuttal under the standard CVF Orchestrator → Reviewer → Worker
 workflow chain that this very document also seeks to formalize.
+
+---
+
+## Reviewer Rebuttal — 2026-05-19
+
+Reviewer role: Codex (Worker/Reviewer rotation).
+Rebuttal recorded by: Orchestrator role.
+
+### Candidate 1 — ACCEPTED WITH SCOPE CLARIFICATION
+
+Blocking finding: `governance/compat/check_workflow_orchestration_guard.py`
+does not exist in this governance repo. It exists only in the sibling
+`public-sync` repo (commit `111daaab`).
+
+Revised scope: Candidate 1 hardening (tests, JSON registry,
+receipt emission) targets the **public-sync repo only**, unless a
+governed sync/import step is first authorized to bring the guard into
+this provenance repo. No GC-018 required for R0 hardening, but the
+Worker role must state in the work order which repo is the
+implementation target.
+
+Orchestrator disposition: ACCEPT (public-sync target, explicit repo
+boundary in work order).
+
+### Candidate 2 — BLOCKED — pack contract format mismatch
+
+Blocking finding: the proposal requires `## Steps` in `workflow.spec.md`
+but all existing packs use `## Workflow` (confirmed in
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governed-packs/app_builder_complete/workflow.spec.md`
+line 39). The proposal also requires each step name to appear as a key
+in `execution.policy.json`; current policies do not have step-keyed
+entries.
+
+Required revision before GC-018:
+
+- Rule C: change `## Steps` → `## Workflow`; validate that the section
+  exists and contains at least one numbered item. Do not require step
+  names to be keys in `execution.policy.json` until the pack contract
+  explicitly adds that binding (separate tranche).
+- Rule D: remove the per-step `stepTraces` count assertion from the
+  receipt schema check; the current `receipt.schema.json` uses a flat
+  `stepTraces` array, not per-step entries.
+
+Orchestrator disposition: REVISE — update Rules C and D, then re-file
+GC-018.
+
+### Candidate 3 — DEFERRED — source-fidelity rewrite required
+
+High-severity finding: the canonical step list in the proposal (lines
+225-231) names functions that do not exist in `route.ts`. Actual call
+sites confirmed from `route.ts`:
+
+| Proposal step | Actual call site | Line |
+| --- | --- | --- |
+| `resolveExecutionCVFRole` | matches | ~336 |
+| `checkExecuteRolePermissionGate` | does NOT exist | — |
+| `buildExecutePromptContract` | does NOT exist | — |
+| `executeRouteGuards` | does NOT exist | — |
+| provider call | `checkRoleOutputPermission` → `evaluateEnforcement` → provider routing | ~350, ~375, ~564 |
+| receipt | `buildRouteAuditMemoryCapture` → does NOT exist; actual: receipt construction | ~858 |
+| audit | workflow audit + audit-memory receipt | ~876, ~927 |
+
+Required revision before GC-018: read `route.ts` directly, record the
+actual function/call-site names and line numbers into the step registry
+JSON, then rewrite the candidate around what exists, not what was
+planned. The detection logic (strictly-increasing line numbers) remains
+sound once the registry is accurate.
+
+Orchestrator disposition: DEFER — do not file GC-018 until step registry
+is derived from current `route.ts` source. Worker role must record exact
+call sites before writing guard logic.
+
+### Candidate 4 — REVISE — status/review pattern mismatch
+
+Medium-severity finding: the proposal checks `Status: DELIVERED` and
+`Status: COMPLETE` and review filenames matching
+`CVF_*_WORK_ORDER_COMPLETION_REVIEW_*.md`. Actual conventions:
+
+- Work orders use `Status: CLOSED...` (e.g.,
+  `CLOSED_WITH_INHERITED_SKILL_MAPPING_BLOCKERS`)
+- Review files use names like
+  `CVF_LANE_G_RUNTIME_ACTOR_ENFORCEMENT_COMPLETION_2026-05-19.md` and
+  `CVF_WORK_ORDER_LANE_BCH_COMPLETION_2026-05-19.md` — not the proposed
+  `*_WORK_ORDER_COMPLETION_REVIEW_*` pattern
+
+Also: "next 5 commits" handoff-sync logic is brittle. Use active-session
+HEAD SHA check instead.
+
+Required revision before GC-018:
+
+- Status detection: match `Status: CLOSED` (prefix match) in addition
+  to `DELIVERED` / `COMPLETE`.
+- Review filename pattern: broaden to
+  `CVF_*_COMPLETION_*.md` (captures both lane closure and work-order
+  review naming conventions).
+- Handoff sync: replace "next 5 commits" with check that current handoff
+  HEAD SHA matches `git rev-parse HEAD`; flag drift as a violation rather
+  than a commit-lookahead.
+
+Orchestrator disposition: REVISE — update status/review patterns and
+handoff sync logic, then file GC-018.
+
+### Summary disposition table
+
+| Candidate | Disposition | Next step |
+| --- | --- | --- |
+| 1 — Harden Layer 1 guard | ACCEPTED (public-sync scope only) | Worker role: write work order targeting public-sync repo; no GC-018 needed |
+| 2 — Governed Pack Contract Guard | REVISE | Fix Rules C + D; re-file for second rebuttal pass |
+| 3 — Execute Route Sequence Guard | DEFERRED | Derive actual `route.ts` step registry first |
+| 4 — Continuation Chain Guard | REVISE | Fix status/review patterns + handoff sync logic |
+
+### Additional finding — active session HEAD drift
+
+`check_active_session_state.py` reports V10 handoff missing current HEAD
+SHA `e28c5464`. This is a GC-020 In-Place Update violation, not caused
+by this proposal. The Orchestrator role must sync the handoff after
+every commit per GC-020.

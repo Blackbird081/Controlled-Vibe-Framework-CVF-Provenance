@@ -86,6 +86,6 @@
     "blocked_work_classes",
     "next_allowed_move"
   ],
-  "nextAllowedMove": "Lane-D provider method parity, Lane-E benchmark reorientation, Lane-F noncoder UX, and Lane-G runtime actor enforcement have been implemented with completion packets. Active handoff is AGENT_HANDOFF_V10_2026-05-19.md. Next allowed move is final guard-chain verification and reviewer/operator decision on remaining skill corpus/template mapping blockers; do not open new implementation scope without a fresh work order or GC-018 where required.",
+  "nextAllowedMove": "All Lane D/E/F/G lanes closed. All four post-lane blockers resolved (e28c5464). Workflow chain governance proposal rebutted by Reviewer role — C1 accepted (public-sync scope), C2/C4 require revision, C3 deferred. Next: Operator selects next lane or authorizes C1 work order for public-sync hardening. No new implementation scope without fresh work order or GC-018.",
   "lastUpdated": "2026-05-19"
 }

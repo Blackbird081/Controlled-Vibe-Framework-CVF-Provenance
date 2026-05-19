@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — D/E/F/G lane continuation implemented; final verification in progress.
+Status: ACTIVE — D/E/F/G lanes closed; all post-lane blockers resolved; workflow chain proposal rebutted.
 
 Remote tracking branch: `origin/main`
 
@@ -10,6 +10,8 @@ Provenance continuity base for this handoff: `e91b41fd`.
 
 Provenance HEAD before Lane G implementation:
 `ae492d7dcd9a7b48948521a5160ee7668fa8fa4f`.
+
+Current HEAD (GC-020): `e28c5464f486702ead4a1e330b48fa379d6d30e0`
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
