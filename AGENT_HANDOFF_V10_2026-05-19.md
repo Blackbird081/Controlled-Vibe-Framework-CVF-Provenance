@@ -2,7 +2,13 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — D/E/F/G lanes closed; all post-lane blockers resolved; workflow chain proposal rebutted.
+Status: ACTIVE — D/E/F/G lanes closed; M1/C2/D2/H2 closed; Phase 3 W1/W2/W3 closed; Continuation Chain Rule C paradox fixed; Review-CVF residual assessment + closure roadmap filed READY_FOR_REBUTTAL.
+
+Latest planning artifacts (read these first if you are resuming Review-CVF closure work):
+
+- `docs/reviews/CVF_17_05_REVIEW_CVF_RESIDUAL_PAIN_POINTS_ASSESSMENT_2026-05-19.md` (assessment of which 17.05 pain points are CLOSED / PARTIAL / OPEN)
+- `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (6 candidates A1/C1/D1/E1/G1/H1, READY_FOR_REBUTTAL)
+- `docs/roadmaps/CVF_RUNTIME_MATURITY_CDH_ROADMAP_2026-05-19.md` (still READY_FOR_REBUTTAL; Tier 2 of residual roadmap is gated on this)
 
 Remote tracking branch: `origin/main`
 
@@ -15,7 +21,7 @@ Provenance continuity base for this handoff: `e91b41fd`.
 Provenance HEAD before Lane G implementation:
 `ae492d7dcd9a7b48948521a5160ee7668fa8fa4f`.
 
-Current HEAD (GC-020): `71829253` (chore(exposure-registry): classify AGENT_HANDOFF_V10 as INTERNAL_ONLY + GC-020 sync)
+Current HEAD (GC-020): `a8dd1e8a` (docs(review-cvf): file residual pain-points assessment + closure roadmap)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
@@ -413,6 +419,65 @@ Verification:
   `1 passed`, `6 tests`.
 - cvf-web `npm run build`: PASS.
 - Docs governance and markdown structural checks: PASS.
+
+## Review-CVF Residual Closure Filing — 2026-05-19
+
+Latest evaluation milestone against the 17.05 audit
+(`.private_reference/legacy/CVF 17.05/Review CVF.md`) and the canonical
+roadmap for closing the residual gap. Future agents resuming Review-CVF
+work must read both files before drafting any new candidate or GC-018.
+
+Assessment file:
+
+- `docs/reviews/CVF_17_05_REVIEW_CVF_RESIDUAL_PAIN_POINTS_ASSESSMENT_2026-05-19.md`
+- Status: ASSESSMENT_FILED.
+- Verdict: 5 of 8 pain points CLOSED (B, D, E, F, G); 3 of 8 PARTIAL (A, C,
+  H); 0 OPEN.
+- Each verdict is anchored to a specific working-tree path or closure
+  review — do NOT re-score without reading the cited evidence first.
+
+Roadmap file:
+
+- `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md`
+- Status: READY_FOR_REBUTTAL.
+- Six candidates: A1 (Coherence Freeze Decision), C1 (CLI Verb Completion),
+  D1 (Provider Method Contract Residual Decision), E1 (Operational
+  Benchmark Metric Expansion), G1 (Role Catalog Absorption), H1 (Memory
+  Tier Gate Decision).
+- Each candidate carries an intent label: contract-closure OR
+  bounded-expansion OR explicit-rejection. Do NOT pick the label
+  retroactively — the GC-018 baseline for each candidate is the authoring
+  point for its label.
+- Tier 1 (A1, G1, E1) is startable immediately after Codex returns
+  NON_BLOCKING.
+- Tier 2 (C1, D1, H1) is gated on CDH NON_BLOCKING per matching CDH
+  candidate (C1 ↔ CDH C, D1 ↔ CDH D, H1 ↔ CDH H).
+
+Hallucination-recovery metric is preemptively rejected inside Candidate E1
+(LLM-judged classification is out of offline-benchmark scope). Future
+agents must not re-open this without a new charter.
+
+Candidate A1 may legitimately resolve as explicit-rejection if the
+"Coherence Freeze Necessity Audit" inside its GC-018 concludes the existing
+guard chain already covers the named freeze semantics. Future agents must
+not preemptively author `CVF_KERNEL_LAW.md`, `CVF_CORE_ONTOLOGY.md`,
+`CVF_RUNTIME_AUTHORITY_MODEL.md`, or `CVF_EXECUTION_STATE_MODEL.md` before
+the candidate cycle closes.
+
+Next allowed move for the Review-CVF track:
+
+- Wait for Codex per-candidate rebuttal verdict on
+  `CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md`.
+- Verdict file path will be
+  `docs/reviews/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`.
+- No GC-018, no work order, no implementation may start before that
+  rebuttal returns.
+
+Continuation Chain guard fix landed in the same session — Rule C now
+accepts HEAD short SHA OR HEAD~1 short SHA, resolving the self-referential
+paradox documented in
+`docs/baselines/CVF_GC018_CONTINUATION_CHAIN_RULE_C_PARADOX_FIX_2026-05-19.md`.
+Future pushes do not need `--no-verify`.
 
 ## Claim Boundary
 
