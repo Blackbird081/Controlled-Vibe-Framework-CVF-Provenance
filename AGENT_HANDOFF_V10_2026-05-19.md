@@ -11,7 +11,7 @@ Provenance continuity base for this handoff: `e91b41fd`.
 Provenance HEAD before Lane G implementation:
 `ae492d7dcd9a7b48948521a5160ee7668fa8fa4f`.
 
-Current HEAD (GC-020): `621fe7c1` (GC-020 sync; all C1–C4 guards CLOSED and committed; CDH roadmap READY_FOR_REBUTTAL; public-sync C1 at e04b4f00)
+Current HEAD (GC-020): `f3b6b91b` (GC-020 sync; all C1–C4 guards quality-verified and CLOSED; CDH roadmap READY_FOR_REBUTTAL; public-sync C1 at e04b4f00)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
