@@ -86,6 +86,6 @@
     "blocked_work_classes",
     "next_allowed_move"
   ],
-  "nextAllowedMove": "All Lane D/E/F/G lanes closed. All four post-lane blockers resolved (e28c5464). Workflow chain governance proposal rebutted by Reviewer role — C1 accepted (public-sync scope), C2/C4 require revision, C3 deferred. Next: Operator selects next lane or authorizes C1 work order for public-sync hardening. No new implementation scope without fresh work order or GC-018.",
+  "nextAllowedMove": "C1/C2/C3/C4 work orders dispatched (c04cd024). V2 roadmap filed READY_FOR_REBUTTAL. Next: Codex reviews V2 roadmap and returns second rebuttal (no-blocking or blocking per candidate). After second rebuttal acceptance: file GC-018 for C2, C4 (parallel), then dispatch to Worker; C1 implementation in public-sync only; C3 last after C2+C4 close. No implementation before second rebuttal verdict.",
   "lastUpdated": "2026-05-19"
 }
