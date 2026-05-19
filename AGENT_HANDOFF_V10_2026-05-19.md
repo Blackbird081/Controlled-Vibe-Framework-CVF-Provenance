@@ -21,7 +21,7 @@ Provenance continuity base for this handoff: `e91b41fd`.
 Provenance HEAD before Lane G implementation:
 `ae492d7dcd9a7b48948521a5160ee7668fa8fa4f`.
 
-Current HEAD (GC-020): `a8dd1e8a` (docs(review-cvf): file residual pain-points assessment + closure roadmap)
+Current HEAD (GC-020): `b57f2678` (chore(handoff): GC-020 sync after runtime maturity closure)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 

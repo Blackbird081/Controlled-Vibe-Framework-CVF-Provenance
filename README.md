@@ -36,6 +36,7 @@ repository maintenance, and verification support. See
     <td align="center"><a href="#developer-technical-design"><strong>Dev Design</strong></a></td>
     <td align="center"><a href="#current-status"><strong>Status</strong></a></td>
     <td align="center"><a href="#repository-map"><strong>Repo Map</strong></a></td>
+    <td align="center"><a href="docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md"><strong>Catalog</strong></a></td>
     <td align="center"><a href="#key-docs"><strong>Docs Hub</strong></a></td>
     <td align="center"><a href="#governance--evidence"><strong>Governance</strong></a></td>
     <td align="center"><a href="CONTRIBUTORS.md"><strong>Contributors</strong></a></td>
@@ -431,6 +432,7 @@ Primary status anchors:
 
 ### Track status and evidence
 
+- [Technical Product Catalog](docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md) — what CVF can do today, key extensions, and delivery history
 - [Release Manifest](docs/reference/CVF_RELEASE_MANIFEST.md)
 - [Module Inventory](docs/reference/CVF_MODULE_INVENTORY.md)
 - [Release Readiness](docs/reference/CVF_RELEASE_READINESS_STATUS_2026-03-20.md)
