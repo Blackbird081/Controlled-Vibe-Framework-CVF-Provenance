@@ -134,7 +134,7 @@ export class CommandRegistry {
     this.register({
       name: "benchmark",
       description: "Run offline CVF benchmark computations",
-      usage: "cvf benchmark governance --input <audit.jsonl> [--format json|table]",
+      usage: "cvf benchmark <governance|run> --input <audit.jsonl> [--format json|table]",
       execute: (args) => this.benchmarkCommand(args),
     });
 
@@ -274,10 +274,10 @@ export class CommandRegistry {
 
   private benchmarkCommand(args: CLIArgs): CLIOutput {
     const subCommand = args.positional[0];
-    if (subCommand !== "governance") {
+    if (subCommand !== "governance" && subCommand !== "run") {
       return {
         success: false,
-        message: "Unknown benchmark sub-command. Usage: cvf benchmark governance --input <audit.jsonl> [--format json|table]",
+        message: "Unknown benchmark sub-command. Usage: cvf benchmark governance --input <audit.jsonl> [--format json|table] or cvf benchmark run --input <audit.jsonl> [--format json|table]",
         exitCode: 1,
       };
     }
@@ -300,7 +300,9 @@ export class CommandRegistry {
       const report = computeGovernanceReliabilityReport(events);
       return {
         success: true,
-        message: formatGovernanceReliabilityReport(report, options.format),
+        message: subCommand === "run"
+          ? formatGovernanceBenchmarkRunReport(report, options.format)
+          : formatGovernanceReliabilityReport(report, options.format),
         data: { input: options.input, eventCount: events.length, metrics: report },
         exitCode: 0,
       };
@@ -343,6 +345,22 @@ function formatGovernanceReliabilityReport(
     "metric rate count total",
     ...Object.entries(report).map(([name, result]) => {
       return `${name} ${result.rate.toFixed(3)} ${result.count} ${result.total}`;
+    }),
+  ].join("\n");
+}
+
+function formatGovernanceBenchmarkRunReport(
+  report: GovernanceReliabilityReport,
+  format: BenchmarkGovernanceOptions["format"],
+): string {
+  if (format === "json") {
+    return JSON.stringify(report, null, 2);
+  }
+  return [
+    "CVF Governance Reliability Report",
+    "==================================",
+    ...Object.entries(report).map(([name, result]) => {
+      return `${name}: ${result.rate.toFixed(2)} (${result.count}/${result.total})`;
     }),
   ].join("\n");
 }

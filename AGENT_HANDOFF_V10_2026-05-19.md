@@ -11,7 +11,7 @@ Provenance continuity base for this handoff: `e91b41fd`.
 Provenance HEAD before Lane G implementation:
 `ae492d7dcd9a7b48948521a5160ee7668fa8fa4f`.
 
-Current HEAD (GC-020): `9250bd7d` (Phase 3 W1/W2/W3 work orders dispatched + GC-018 for W2 AUTHORIZED)
+Current HEAD (GC-020): `1314919a` (W1/W2/W3 work orders dispatched; implementation closure pending commit)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
@@ -370,6 +370,45 @@ Final docs checks passed:
 
 - `python governance/compat/check_docs_governance_compat.py`
 - `python governance/compat/check_markdown_structural_completeness.py`
+
+## Phase 3 Review Closure W1/W2/W3 Update — 2026-05-19
+
+Codex implemented the operator-authorized Phase 3 work order sequence from
+`docs/roadmaps/CVF_PHASE3_REVIEW_CLOSURE_ROADMAP_V2_2026-05-19.md`.
+
+Status:
+
+- W1 provider contract completion: `CLOSED`. Four gateway-only contracts were
+  added in `EXTENSIONS/CVF_MODEL_GATEWAY/src/` for reasoning, JSON mode, tool
+  call, and embedding. `llm.adapter.interface.ts` was not modified and remains
+  51 lines.
+- W3 offline benchmark extension: `CLOSED`. Governance CLI reliability metrics
+  now cover nine metrics, and `cvf benchmark run --input <audit.jsonl>` is
+  wired inside the existing benchmark command. No live benchmark proof is
+  claimed.
+- W2 governed-pack completion: `CLOSED_WITH_SOURCE_FIDELITY_NOTE`. The three
+  existing governed packs now have TypeScript failure-recovery policies and a
+  typed registry. Existing JSON/MD pack artifacts were not modified. Source
+  note: current `execution.policy.json` files contain `templateId` but no
+  `packId`, so the TypeScript registry uses each existing `templateId` as the
+  stable pack id.
+
+Completion reviews:
+
+- `docs/reviews/CVF_W1_PROVIDER_CONTRACT_COMPLETION_2026-05-19.md`
+- `docs/reviews/CVF_W2_GOVERNED_PACK_COMPLETION_2026-05-19.md`
+- `docs/reviews/CVF_W3_OFFLINE_BENCHMARK_EXTENSION_COMPLETION_2026-05-19.md`
+
+Verification:
+
+- Model Gateway `npm test`: `17 passed`, `59 tests`.
+- Model Gateway `npm run check`: PASS.
+- Governance CLI `npm test`: `5 passed`, `68 tests`.
+- Governance CLI `npm run check`: PASS.
+- cvf-web targeted `npm run test:run -- src/lib/governed-packs/index.test.ts`:
+  `1 passed`, `6 tests`.
+- cvf-web `npm run build`: PASS.
+- Docs governance and markdown structural checks: PASS.
 
 ## Claim Boundary
 
