@@ -15,7 +15,7 @@ Provenance continuity base for this handoff: `e91b41fd`.
 Provenance HEAD before Lane G implementation:
 `ae492d7dcd9a7b48948521a5160ee7668fa8fa4f`.
 
-Current HEAD (GC-020): `c8406d0b` (chore(session): sync Phase 3 W1 W2 W3 closure state)
+Current HEAD (GC-020): `49feaf2d` (chore(handoff): GC-020 sync + add required handoff markers for pre-push gate)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
