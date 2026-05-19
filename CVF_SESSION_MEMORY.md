@@ -121,16 +121,19 @@ Before material governed work, an agent should be able to state:
 
 ## Next Allowed Move
 
-Proceed with corrected Lane D → Lane E → Lane F → Lane G work-order sequence.
-Lane D has filed GC-018 and is implemented as contract-and-flag work only.
-Lane E has filed GC-018 and is implemented as offline governance reliability
-metrics plus `cvf benchmark governance`; its operational baseline is honestly
-marked `baseline_deferred_no_real_audit_log` because no suitable real audit
-JSONL source exists in this workspace. Lane F is the next allowed
-implementation lane after Lane E commit-level closure. Do not broaden
-absorption, role taxonomy, provider semantics, public claims, or live-proof
-claims outside the lane boundaries recorded in
-`CVF_SESSION/ACTIVE_SESSION_STATE.json`.
+Phase 3 W1/W2/W3 review slices are closed and locally verified:
+
+- W1: provider gateway contracts for reasoning, JSON mode, tool call, and
+  embedding; contract-only, no adapter interface or provider execution change.
+- W2: governed-pack TypeScript failure-recovery policies and registry for the
+  three existing packs; no JSON/MD artifact, route, or enforcement change.
+- W3: offline nine-metric governance benchmark extension and
+  `cvf benchmark run --input <audit.jsonl>`; no live benchmark claim.
+
+Next: reviewer/operator closure review. Before any public-facing claim or
+public-sync, resolve the GC-024 public catalog advisory from the public-sync
+clone. Do not broaden provider execution, live benchmark, workflow runtime, or
+capability intake claims without a new roadmap/GC-018.
 
 ## Enforcement And Verification
 

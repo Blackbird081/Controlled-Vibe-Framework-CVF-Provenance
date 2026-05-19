@@ -86,6 +86,6 @@
     "blocked_work_classes",
     "next_allowed_move"
   ],
-  "nextAllowedMove": "M1/C2/D2/H2 CLOSED (f876094c). Phase 3 roadmap V2 filed READY_FOR_REBUTTAL: docs/roadmaps/CVF_PHASE3_REVIEW_CLOSURE_ROADMAP_V2_2026-05-19.md. Next: Codex rebuttal of Phase 3 V2. After no-blocking verdict — W1 and W3 may begin immediately (no GC-018); W2 requires GC-018 (CVF_GC018_W2_GOVERNED_PACK_COMPLETION_2026-05-19.md) filed and accepted first.",
+  "nextAllowedMove": "Phase 3 W1/W2/W3 review slices CLOSED and locally verified. W1 provider gateway contracts, W2 governed-pack completion, and W3 offline 9-metric benchmark extension are recorded in docs/reviews/CVF_W1_PROVIDER_CONTRACT_COMPLETION_2026-05-19.md, docs/reviews/CVF_W2_GOVERNED_PACK_COMPLETION_2026-05-19.md, and docs/reviews/CVF_W3_OFFLINE_BENCHMARK_EXTENSION_COMPLETION_2026-05-19.md. Next: reviewer/operator closure review and, before any public-facing claim or sync, resolve the GC-024 public catalog advisory in the public-sync clone. Do not broaden provider execution, live benchmark, workflow runtime, or capability intake claims without a new roadmap/GC-018.",
   "lastUpdated": "2026-05-19"
 }
