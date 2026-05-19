@@ -2,7 +2,8 @@
 
 Memory class: POINTER_RECORD
 
-Status: OPEN — awaiting Codex GC-018 filing before implementation begins.
+Status: CLOSED_WITH_INHERITED_FULL_SUITE_BLOCKERS — Codex implemented the
+bounded UI lane and filed completion evidence on 2026-05-19.
 Prerequisite: Lane E must be closed before Lane F begins.
 
 ## Purpose

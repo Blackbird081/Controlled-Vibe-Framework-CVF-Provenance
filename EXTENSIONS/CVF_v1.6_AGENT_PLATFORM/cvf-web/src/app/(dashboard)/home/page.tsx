@@ -20,6 +20,7 @@ import {
 } from '@/lib/governed-starter-path';
 import { isIntentFirstEnabled, type IntentRouteResult } from '@/lib/intent-router';
 import { buildContinuationExecution, buildEvidenceSnapshot } from '@/lib/execution-continuity';
+import { OutcomeQuickActions } from '@/components/OutcomeQuickActions';
 import {
     TemplateCard,
     CategoryTabs,
@@ -277,6 +278,14 @@ export default function HomePage() {
         setSelectedTemplate(template);
         setWorkflowState('form');
     }, []);
+
+    const handleOutcomeQuickAction = useCallback((templateId: string) => {
+        const template = templates.find((item) => item.id === templateId);
+        if (!template) {
+            return;
+        }
+        handleSelectTemplate(template);
+    }, [handleSelectTemplate]);
 
     useEffect(() => {
         const templateId = searchParams.get('template')?.trim();
@@ -789,6 +798,8 @@ export default function HomePage() {
                                 </Link>
                             ))}
                         </div>
+
+                        <OutcomeQuickActions lang={language} onSelectTemplate={handleOutcomeQuickAction} />
 
                         <section className="cvf-surface cvf-density-section rounded-[32px] border border-slate-200/80 bg-white p-6 shadow-[0_20px_55px_-45px_rgba(15,23,42,0.35)] dark:border-white/[0.07] dark:bg-[#171b29] dark:shadow-none">
                             <div className="flex flex-col gap-6">

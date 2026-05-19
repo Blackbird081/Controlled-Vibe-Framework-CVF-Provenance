@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
-  "activeHandoff": "AGENT_HANDOFF_V9_2026-05-18.md",
+  "activeHandoff": "AGENT_HANDOFF_V10_2026-05-19.md",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -12,7 +12,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V5_2026-05-15.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V6_2026-05-16.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V7_2026-05-16.md",
-    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V8_2026-05-17.md"
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V8_2026-05-17.md",
+    "AGENT_HANDOFF_V9_2026-05-18.md"
   ],
   "relatedHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_INTEGRATIONS_2026-05-17.md",
@@ -85,6 +86,6 @@
     "blocked_work_classes",
     "next_allowed_move"
   ],
-  "nextAllowedMove": "Lane-D provider method parity and Lane-E benchmark reorientation have been implemented pending/after commit-level review. Next allowed implementation lane is Lane-F noncoder UX, beginning only after filing its fresh GC-018. Each lane remains scoped — see laneStopLifts for boundary per lane.",
+  "nextAllowedMove": "Lane-D provider method parity, Lane-E benchmark reorientation, and Lane-F noncoder UX have been implemented with completion packets. Active handoff advanced to AGENT_HANDOFF_V10_2026-05-19.md because V9 approached the file-size cap. Next allowed implementation lane is Lane-G runtime actor enforcement, beginning only after filing its fresh GC-018. Each lane remains scoped — see laneStopLifts for boundary per lane.",
   "lastUpdated": "2026-05-19"
 }

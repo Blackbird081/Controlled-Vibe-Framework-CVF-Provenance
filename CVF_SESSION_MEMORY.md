@@ -4,7 +4,7 @@ Memory class: POINTER_RECORD
 
 Status: ACTIVE SESSION FRONT DOOR
 
-Last updated: 2026-05-18
+Last updated: 2026-05-19
 
 ## Purpose
 
@@ -55,7 +55,7 @@ current.
 - Current mode: `operator_lane_selection_active`
 - Previous mode: `system_reconvergence_stop`
 - Freeze posture: `governance_kernel_freeze_recommended`
-- Active handoff pointer: `AGENT_HANDOFF_V9_2026-05-18.md`
+- Active handoff pointer: `AGENT_HANDOFF_V10_2026-05-19.md`
 - Historical handoff archive: `CVF_SESSION/handoffs/archive/`
 - Operator approved lanes B+C+H on 2026-05-19. Lane-specific stop lifts
   are in `CVF_SESSION/ACTIVE_SESSION_STATE.json`. Lanes execute in order
@@ -245,6 +245,38 @@ non-taxonomy folder, so the baseline lives in `docs/baselines/`.
 
 Evidence: governance CLI tests passed (`5 files`, `59 tests`) and CLI
 typecheck passed.
+
+## Lane F Noncoder UX Update — 2026-05-19
+
+Lane F added the bounded outcome-first home UI shortcut for three existing
+governed packs:
+
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/OutcomeQuickActions.tsx`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/OutcomeQuickActions.test.tsx`
+- home render/handler wiring in
+  `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx`
+
+GC-018 and closure packet:
+
+- `docs/baselines/CVF_GC018_LANE_F_NONCODER_UX_2026-05-19.md`
+- `docs/reviews/CVF_LANE_F_NONCODER_UX_COMPLETION_2026-05-19.md`
+
+Source-fidelity note for future agents/Claude: the buttons use only existing
+template IDs `app_builder_complete`, `documentation`, and `strategy_analysis`.
+They call the existing `handleSelectTemplate()` path. A new analytics event was
+intentionally not retained because the typed analytics registry rejected it and
+Lane F had no authority to expand analytics contracts.
+
+Evidence: `npm run build` passed, `npm run lint` passed, and
+`npm run test:run -- src/components/OutcomeQuickActions.test.tsx` passed
+(`3/3`). Full web `npm run test:run` still fails inherited/background tests:
+role-count expectation still assumes 8 roles while `SERVICE_AGENT` makes 9,
+and skill corpus/template mapping tests still report dead references. These
+are not Lane F regressions.
+
+Active handoff advanced from `AGENT_HANDOFF_V9_2026-05-18.md` to
+`AGENT_HANDOFF_V10_2026-05-19.md` because V9 approached the governed
+active-markdown file-size cap.
 
 ## Claim Boundary
 

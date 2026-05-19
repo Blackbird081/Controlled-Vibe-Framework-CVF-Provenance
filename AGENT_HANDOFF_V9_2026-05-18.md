@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — 17.05 reconvergence COMPLETE through bounded roadmap scope.
+Status: ARCHIVED — superseded by `AGENT_HANDOFF_V10_2026-05-19.md`.
 All authorized phases delivered: 0.A/0.B/0.C + 1.0 + 1.P + 1.I + 1.R + 1.M +
 2.A + bounded 2.B + bounded 2.C + 3.S + bounded 3.E. Phase 4 remains
 demand-gated because no selected vertical slice needs a new provider method.
