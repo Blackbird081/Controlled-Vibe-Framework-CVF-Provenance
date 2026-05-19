@@ -11,7 +11,7 @@ Provenance continuity base for this handoff: `e91b41fd`.
 Provenance HEAD before Lane G implementation:
 `ae492d7dcd9a7b48948521a5160ee7668fa8fa4f`.
 
-Current HEAD (GC-020): `cd9aae9c` (Phase 3 roadmap W1/W2/W3 committed READY_FOR_REBUTTAL — provider contracts, workflow packs, benchmark 9 metrics)
+Current HEAD (GC-020): `bae7001e` (GC-020 sync after Phase 3 roadmap commit cd9aae9c)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 

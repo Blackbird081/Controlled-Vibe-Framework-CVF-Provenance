@@ -86,6 +86,6 @@
     "blocked_work_classes",
     "next_allowed_move"
   ],
-  "nextAllowedMove": "All C1–C4 guards CLOSED and quality-verified (621fe7c1). C1 committed in public-sync at e04b4f00. CDH roadmap filed READY_FOR_REBUTTAL (f253db00). Next: Reviewer/Codex rebuttal of CVF_RUNTIME_MATURITY_CDH_ROADMAP_2026-05-19.md. No GC-018 or M/C/D/H implementation before no-blocking verdict returned per candidate.",
+  "nextAllowedMove": "M1/C2/D2/H2 CLOSED (f876094c). Phase 3 roadmap V2 filed READY_FOR_REBUTTAL: docs/roadmaps/CVF_PHASE3_REVIEW_CLOSURE_ROADMAP_V2_2026-05-19.md. Next: Codex rebuttal of Phase 3 V2. After no-blocking verdict — W1 and W3 may begin immediately (no GC-018); W2 requires GC-018 (CVF_GC018_W2_GOVERNED_PACK_COMPLETION_2026-05-19.md) filed and accepted first.",
   "lastUpdated": "2026-05-19"
 }
