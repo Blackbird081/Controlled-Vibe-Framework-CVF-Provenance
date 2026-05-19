@@ -11,7 +11,7 @@ Provenance continuity base for this handoff: `e91b41fd`.
 Provenance HEAD before Lane G implementation:
 `ae492d7dcd9a7b48948521a5160ee7668fa8fa4f`.
 
-Current HEAD (GC-020): `1314919a` (W1/W2/W3 work orders dispatched; implementation closure pending commit)
+Current HEAD (GC-020): `97a509c7` (Phase 3 W1/W2/W3 review slices closed; handoff sync pending)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
