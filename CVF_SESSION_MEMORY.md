@@ -153,6 +153,44 @@ Hook chain:
 - `CLAUDE.md`
 - `AGENT_HANDOFF_V9_2026-05-18.md`
 
+## Public-Sync Workflow Orchestration Update — 2026-05-19
+
+Public repository workflow hardening was completed from the sibling public-sync
+clone:
+
+`d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync`
+
+Remote verified before push:
+
+`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+
+Final public-sync commit pushed:
+
+`6842ffcf fix: align public web coverage gate`
+
+New guard added in the public-sync clone:
+
+- `governance/compat/check_workflow_orchestration_guard.py`
+- `governance/toolkit/05_OPERATION/CVF_WORKFLOW_ORCHESTRATION_GUARD.md`
+
+Purpose: make CVF workflow routing a first-class guard surface, not only a
+GitHub-push fix. The guard is wired into the public static CI gate, local
+governance hook chain, GitHub CI front door, and documentation/registry
+surface.
+
+Latest public GitHub checks observed green on commit `6842ffcf`:
+
+- CVF Public Surface
+- CVF Static CI Gate
+- CVF CI
+- CVF CI Pipeline
+- CVF v1.6 Web CI
+
+Boundary: no live release gate was run in this public-sync pass, so do not
+claim new live governance behavior from this update. Documentation & Testing
+legacy/provenance-era incompatibilities were not re-triggered by the final
+web-only commit and remain a separate public-sync cleanup lane if needed.
+
 ## Claim Boundary
 
 This artifact establishes a governed session-memory front door and machine

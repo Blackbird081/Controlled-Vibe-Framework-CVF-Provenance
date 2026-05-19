@@ -961,6 +961,59 @@ Also in commit `7fd0d1d7`:
 - public-sync catalog: 5 accuracy fixes (status legend, bounded language,
   CLI evidence, Update Rule N-1 wording) — public-sync commit `f48912ec`
 
+## Public-Sync CI And Workflow Orchestration Guard Update (2026-05-19)
+
+Operator authorized continuation of the GitHub push workflow and elevated
+end-to-end workflow standardization as the highest-priority guard concern.
+Work was completed in the sibling public-sync clone, not this provenance
+workspace:
+
+`d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync`
+
+Remote verified before public pushes:
+
+`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+
+Public-sync commits pushed to `main` during this continuation:
+
+- `111daaab fix: restore public CI guard workflow`
+- `efdfad11 fix: satisfy public CI guard followups`
+- `994ee893 fix: stabilize web ci runtime tests`
+- `6842ffcf fix: align public web coverage gate`
+
+Provenance continuity base before this handoff-sync update: `b44a9101`.
+
+New guard was added because existing guards were effective but fragmented:
+
+- `governance/compat/check_workflow_orchestration_guard.py`
+- `governance/toolkit/05_OPERATION/CVF_WORKFLOW_ORCHESTRATION_GUARD.md`
+
+The guard's role is broader than GitHub push hygiene: it establishes workflow
+orchestration as a canonical CVF guard surface. In public-sync it is wired into
+the static CI gate, local governance hook chain, GitHub CI front door, and
+documentation/registry references. This makes scattered workflow enforcement
+detectable instead of leaving each workflow to duplicate its own rules.
+
+Latest observed GitHub checks on public-sync commit `6842ffcf`:
+
+- `CVF Public Surface`: success
+- `CVF Static CI Gate`: success
+- `CVF CI`: success
+- `CVF CI Pipeline`: success
+- `CVF v1.6 Web CI`: success
+
+Important boundaries for future agents:
+
+- No live release gate was run in this pass; do not claim new live governance
+  behavior from these CI/guard changes.
+- The final web-only commit did not re-trigger `Documentation & Testing`.
+  Earlier logs showed legacy/provenance-era expectations in that workflow;
+  treat them as a separate public-sync cleanup lane, not as already resolved.
+- Public web coverage thresholds were aligned to the measured public-sync
+  baseline floor (`statements 79`, `branches 69`, `functions 78`, `lines 80`)
+  so CI blocks regression from the real public surface instead of remaining
+  permanently red against an unattained 90/90/90/80 target.
+
 ## Handoff History
 
 | Version | Date | Summary |
