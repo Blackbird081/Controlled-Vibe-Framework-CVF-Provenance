@@ -92,6 +92,6 @@
     "blocked_work_classes",
     "next_allowed_move"
   ],
-  "nextAllowedMove": "HN1 CLOSED 2026-05-20 as Fast-Lane template-linkage hygiene: two folder template IDs exempted in skill-template-map.json and audit filed at docs/audits/CVF_FAST_LANE_HN1_TEMPLATE_LINKAGE_EXEMPTION_2026-05-20.md. Remaining dispatched work orders are independent and must not be bundled: HN2.a at docs/work_orders/CVF_WO_HN2A_GOVERNANCE_KERNEL_OWNER_INVENTORY_2026-05-20.md (observation-only 12-surface inventory; no class assignment, no policy text, no GC-018) and HN3 at docs/work_orders/CVF_WO_HN3_CDH_DELTA_META_ROADMAP_2026-05-20.md (CDH delta meta-roadmap with per-slice gating; no GC-018, no implementation). Do not reopen any A-H pain point.",
+  "nextAllowedMove": "HN1 CLOSED 2026-05-20 as Fast-Lane template-linkage hygiene. HN2.a CLOSED 2026-05-20 with observation-only 12-surface inventory at docs/reviews/CVF_HN2A_GOVERNANCE_KERNEL_OWNER_INVENTORY_2026-05-20.md and closure review at docs/reviews/CVF_HN2A_GOVERNANCE_KERNEL_OWNER_INVENTORY_CLOSURE_REVIEW_2026-05-20.md. Remaining dispatched work order is HN3 at docs/work_orders/CVF_WO_HN3_CDH_DELTA_META_ROADMAP_2026-05-20.md (CDH delta meta-roadmap with per-slice gating; no GC-018, no implementation). HN2.b and HN2.c remain separate downstream GC-018-gated work and must not be inferred from HN2.a. Do not reopen any A-H pain point.",
   "lastUpdated": "2026-05-20"
 }

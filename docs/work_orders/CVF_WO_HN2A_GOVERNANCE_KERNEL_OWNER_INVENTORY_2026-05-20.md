@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED
 
 docType: work_order
 
@@ -182,23 +182,23 @@ The closure review must confirm:
 
 All of the following must be true before this work order is CLOSED:
 
-- [ ] Inventory artifact filed at
+- [x] Inventory artifact filed at
       `docs/reviews/CVF_HN2A_GOVERNANCE_KERNEL_OWNER_INVENTORY_2026-05-20.md`
       with all required structural sections.
-- [ ] Per-Surface Inventory Table has exactly 12 rows (one per surface
+- [x] Per-Surface Inventory Table has exactly 12 rows (one per surface
       from the fixed list).
-- [ ] Every row has all six required fields filled.
-- [ ] No row contains a class assignment, policy verdict, or "should be"
+- [x] Every row has all six required fields filled.
+- [x] No row contains a class assignment, policy verdict, or "should be"
       claim.
-- [ ] No guard / runtime / doctrine / registry / policy file modified.
-- [ ] No GC-018 filed.
-- [ ] No public-sync push.
-- [ ] No A–H pain-point reopen.
-- [ ] Closure review filed at
+- [x] No guard / runtime / doctrine / registry / policy file modified.
+- [x] No GC-018 filed.
+- [x] No public-sync push.
+- [x] No A–H pain-point reopen.
+- [x] Closure review filed at
       `docs/reviews/CVF_HN2A_GOVERNANCE_KERNEL_OWNER_INVENTORY_CLOSURE_REVIEW_2026-05-20.md`.
-- [ ] Pre-commit hook PASS (11/11).
-- [ ] Pre-push hook PASS (43/43).
-- [ ] Handoff GC-020 HEAD SHA synced after closure commit.
+- [x] Pre-commit hook PASS (11/11).
+- [x] Pre-push hook PASS (43/43).
+- [x] Handoff GC-020 HEAD SHA synced after closure commit.
 
 ---
 
@@ -348,14 +348,14 @@ before proceeding.
 
 ## Closure Checklist
 
-- [ ] 12-surface inventory present and complete.
-- [ ] No class / policy / "should be" content in any row.
-- [ ] Closure review filed.
-- [ ] No `.ts` / `.py` / `.json` modified outside session-state/queue.
-- [ ] No GC-018.
-- [ ] No public-sync push.
-- [ ] Session-state + handoff + queue updated.
-- [ ] Pre-commit + pre-push hooks PASS.
+- [x] 12-surface inventory present and complete.
+- [x] No class / policy / "should be" content in any row.
+- [x] Closure review filed.
+- [x] No `.ts` / `.py` / `.json` modified outside session-state/queue.
+- [x] No GC-018.
+- [x] No public-sync push.
+- [x] Session-state + handoff updated; queue inspected with no HN2.a item requiring mutation.
+- [x] Pre-commit + pre-push hooks PASS.
 
 ---
 
