@@ -24,7 +24,7 @@ Provenance continuity base for this handoff: `e91b41fd`.
 Provenance HEAD before Lane G implementation:
 `ae492d7dcd9a7b48948521a5160ee7668fa8fa4f`.
 
-Current HEAD (GC-020): `a4562109` (chore(archive): commit active archive hygiene maintenance + GC-020 sync)
+Current HEAD (GC-020): `e3536795` (feat(residual-closure): close all 6 Review-CVF residual work orders A1/C1/D1/E1/G1/H1)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
