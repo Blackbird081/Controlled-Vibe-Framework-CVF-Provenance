@@ -2,11 +2,12 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — D/E/F/G lanes closed; M1/C2/D2/H2 closed; Phase 3 W1/W2/W3 closed; Rule C paradox fixed; ALL 6 residual work orders CLOSED (A1/C1/D1/E1/G1/H1); all 8 Review-CVF pain points CLOSED; post-residual roadmap rebutted NON_BLOCKING_WITH_GATE_UPDATE; N1 CLOSED (public commit `d11c772a`); N2 CLOSED_BY_PRIOR_TRANCHE; N3 WITHDRAWN (zero dead references; audit confirmed corpus health).
+Status: ACTIVE — D/E/F/G lanes closed; M1/C2/D2/H2 closed; Phase 3 W1/W2/W3 closed; Rule C paradox fixed; ALL 6 residual work orders CLOSED (A1/C1/D1/E1/G1/H1); all 8 Review-CVF pain points CLOSED; post-residual roadmap rebutted NON_BLOCKING_WITH_GATE_UPDATE; N1 CLOSED (public commit `d11c772a`); N2 CLOSED_BY_PRIOR_TRANCHE; N3 WITHDRAWN (zero dead references; audit confirmed corpus health); active steering moved to CVF post-pain-point hardening roadmap, READY_FOR_CLAUDE_REBUTTAL.
 
 Latest planning artifacts (read these first if you are resuming Review-CVF closure work):
 
-- `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` (AUTHORITATIVE — A/B/C/D/E/F/G/H all CLOSED after 2026-05-20 tranche; supersedes old 4/8 shorthand)
+- `docs/roadmaps/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md` (ACTIVE HARDENING DIRECTION — HN1 template-skill linkage coverage delta, HN2 governance kernel freeze owner map, HN3 runtime maturity CDH delta re-authoring; READY_FOR_CLAUDE_REBUTTAL)
+- `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` (CLOSURE EVIDENCE — A/B/C/D/E/F/G/H all CLOSED after 2026-05-20 tranche; supersedes old 4/8 shorthand and is no longer the active next-work steering file)
 - `docs/reviews/CVF_17_05_REVIEW_CVF_RESIDUAL_PAIN_POINTS_ASSESSMENT_2026-05-19.md` (original assessment; see direction codex for corrected posture)
 - `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (6 candidates, REBUTTAL_ACCEPTED, all work orders now CLOSED)
 - `docs/assessments/CVF_QUALITY_ASSESSMENT_2026-05-19.md` (post-upgrade quality grade A−; 99.9% test pass rate; 43/43 governance guards PASS)
@@ -28,7 +29,10 @@ Provenance continuity base for this handoff: `e91b41fd`.
 Provenance HEAD before Lane G implementation:
 `ae492d7dcd9a7b48948521a5160ee7668fa8fa4f`.
 
-Current HEAD (GC-020): `0c10c8f6` (docs(n3): withdraw skill corpus repair work order after pre-flight audit)
+Current HEAD before hardening-roadmap local edits:
+`04cdf6b8` (chore(handoff): GC-020 sync after N3 withdrawal commit 0c10c8f6)
+
+Current HEAD (GC-020): pending sync after hardening roadmap commit.
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 

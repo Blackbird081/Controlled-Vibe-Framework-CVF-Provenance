@@ -2,13 +2,28 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_DIRECTION_RECORD — updated after A1/C1/D1/E1/G1/H1 closure
-work on 2026-05-20; governs pain-point closure sequencing until superseded by
-a later operator-approved direction packet.
+Status: SUPERSEDED_CLOSED_BY_HARDENING_ROADMAP — updated after
+A1/C1/D1/E1/G1/H1 closure work on 2026-05-20; pain-point closure is closed
+for the current contract. Active post-closure hardening direction moved to
+`docs/roadmaps/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md`.
 
 Reviewer: Codex
 
 Date: 2026-05-20
+
+---
+
+## Supersession Notice
+
+This packet remains the authoritative evidence that Review-CVF A-H pain-point
+closure is complete. It is no longer the active next-work steering file.
+
+Active hardening roadmap:
+
+- `docs/roadmaps/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md`
+
+Future work must use CVF hardening, product expansion, or runtime maturity
+delta labels. Do not reopen A-H residual closure from this file.
 
 ---
 

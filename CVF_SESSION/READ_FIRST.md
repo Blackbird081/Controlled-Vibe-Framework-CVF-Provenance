@@ -12,6 +12,7 @@ Then resolve:
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
+- `docs/roadmaps/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md`
 - `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 - `CVF_SESSION/REQUIRED_STARTUP_GUARDS.md`
 
@@ -52,10 +53,12 @@ Out of scope:
 2. Resolve `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 3. Resolve `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` before any ambiguous
    roadmap/review request.
-4. Resolve the pain-point closure direction before any pain-point closure
+4. Resolve the post-pain-point hardening roadmap before any new CVF hardening
    request.
-5. Load `CVF_SESSION/REQUIRED_STARTUP_GUARDS.md`.
-6. Continue only through the current active state.
+5. Resolve the pain-point closure evidence before any A-H pain-point status
+   request.
+6. Load `CVF_SESSION/REQUIRED_STARTUP_GUARDS.md`.
+7. Continue only through the current active state.
 
 ## Non-Substitution Rule
 
@@ -63,8 +66,10 @@ Out of scope:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json` is the machine-readable pointer set.
 - `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` is the machine-readable review intake
   queue for ambiguous roadmap/review requests.
+- `docs/roadmaps/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md`
+  is the current steering source for post-pain-point CVF hardening.
 - `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
-  is the current steering source for Review-CVF pain-point closure.
+  is closure evidence for Review-CVF A-H pain-point status.
 - Root `AGENT_HANDOFF*.md` files are transition records.
 - Review packets remain evidence and reasoning records.
 - Governance guards remain rules.
@@ -88,6 +93,7 @@ Machine check:
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
+- `docs/roadmaps/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md`
 - `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 - `CVF_SESSION/REQUIRED_STARTUP_GUARDS.md`
 - `docs/reference/CVF_SESSION_GOVERNANCE_BOOTSTRAP.md`

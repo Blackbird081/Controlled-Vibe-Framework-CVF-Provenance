@@ -55,13 +55,18 @@ When the operator asks to "check roadmap", "review roadmap", or similar
 without giving a path, resolve the review queue and load the highest-priority
 item with `status: READY_FOR_REBUTTAL`.
 
-Pain-point closure direction:
+Post pain-point hardening direction:
+
+- `docs/roadmaps/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md`
+
+Pain-point closure evidence:
 
 - `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
-When the operator asks to continue, prioritize, or close CVF pain points, use
-that direction packet as the steering source instead of the stale quality
-assessment shorthand.
+When the operator asks to continue CVF hardening after Review-CVF closure, use
+the hardening roadmap as the active steering source. When the operator asks
+about A-H pain-point status, use the pain-point closure evidence and treat all
+A-H items as closed for the current residual closure contract.
 
 Agents and tools must resolve this registry before treating any root handoff as
 current.
@@ -132,7 +137,8 @@ Before material governed work, an agent should be able to state:
 - active session mode
 - active handoff path
 - active review queue
-- pain-point closure direction
+- pain-point closure evidence
+- post pain-point hardening roadmap
 - required first-read packet set
 - blocked work classes
 - next allowed move
