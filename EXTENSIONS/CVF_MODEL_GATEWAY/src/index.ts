@@ -82,7 +82,9 @@ export { QuotaLedger } from "./quota-ledger";
 
 export type {
   GatewayReceipt,
+  GatewayReceiptEnvelope,
   GatewayReceiptInput,
+  GatewayReceiptMemoryRecord,
 } from "./gateway-receipt";
 export {
   GatewayReceiptBuilder,

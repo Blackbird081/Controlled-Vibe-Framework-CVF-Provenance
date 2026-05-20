@@ -43,6 +43,13 @@ export interface ExecutionBridgeReceipt {
 
 export type ExecutionBridgeReceiptEnvelope = Receipt<ExecutionBridgeReceipt>;
 
+export interface ExecutionBridgeTaskReceiptRecord {
+  readonly taskKind: "execution_bridge";
+  readonly taskId: string;
+  readonly immutable: true;
+  readonly envelope: ExecutionBridgeReceiptEnvelope;
+}
+
 export interface ExecutionBridgeConsumerContractDependencies {
   dispatch?: DispatchContract;
   policyGate?: PolicyGateContract;
@@ -171,6 +178,15 @@ export class ExecutionBridgeConsumerContract {
       payload: receipt,
       integrityHash: receipt.bridgeHash,
     });
+  }
+
+  buildBridgeTaskRecord(receipt: ExecutionBridgeReceipt): ExecutionBridgeTaskReceiptRecord {
+    return {
+      taskKind: "execution_bridge",
+      taskId: receipt.bridgeReceiptId,
+      immutable: true,
+      envelope: this.wrapBridgeReceipt(receipt),
+    };
   }
 }
 

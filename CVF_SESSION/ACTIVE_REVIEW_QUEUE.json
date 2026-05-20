@@ -173,6 +173,18 @@
       "priority": 14,
       "source": "docs/work_orders/CVF_WO_PHASE_2B_EXECUTION_BRIDGE_RECEIPT_CHAIN_MIGRATION_2026-05-20.md",
       "notes": "Closed 2026-05-20 as bounded dependency-chain slice E-01 prerequisite closed -> E-03 -> E-07, with Codex-only role chain and no Claude participation. GC-018: docs/baselines/CVF_GC018_PHASE_2B_EXECUTION_BRIDGE_RECEIPT_CHAIN_MIGRATION_2026-05-20.md. Completion: docs/reviews/CVF_PHASE_2B_EXECUTION_BRIDGE_RECEIPT_CHAIN_MIGRATION_COMPLETION_2026-05-20.md. Implemented typed Phase 1.R Receipt<TPayload> wrappers for execution bridge receipts and phase-governance workflow step receipts. Boundary: no broad Phase 2.B bulk migration, provider runtime, Maika change, persistent memory store, live governance proof, public-sync update, Claude review dependency, or global freeze lift."
+    },
+    {
+      "id": "phase-2b-audit-trace-task-receipt-chains-migration",
+      "artifactType": "roadmap",
+      "path": "docs/roadmaps/CVF_PHASE_2B_AUDIT_TRACE_TASK_RECEIPT_CHAINS_MIGRATION_ROADMAP_2026-05-20.md",
+      "status": "CLOSED_AUDIT_TRACE_TASK_RECEIPT_CHAINS_MIGRATION",
+      "requestedReviewer": "Codex",
+      "expectedResponsePath": "docs/reviews/CVF_PHASE_2B_AUDIT_TRACE_TASK_RECEIPT_CHAINS_MIGRATION_CODEX_REBUTTAL_2026-05-20.md",
+      "responsePath": "docs/reviews/CVF_PHASE_2B_AUDIT_TRACE_TASK_RECEIPT_CHAINS_MIGRATION_CODEX_REBUTTAL_2026-05-20.md",
+      "priority": 15,
+      "source": "docs/work_orders/CVF_WO_PHASE_2B_AUDIT_TRACE_TASK_RECEIPT_CHAINS_MIGRATION_2026-05-20.md",
+      "notes": "Closed 2026-05-20 as grouped bounded receipt-chain tranche: E-06 -> M-05 -> M-06; E-03 -> M-02/M-03; E-04 -> E-05; M-07. Codex-only role chain; no Claude participation. GC-018: docs/baselines/CVF_GC018_PHASE_2B_AUDIT_TRACE_TASK_RECEIPT_CHAINS_MIGRATION_2026-05-20.md. Completion: docs/reviews/CVF_PHASE_2B_AUDIT_TRACE_TASK_RECEIPT_CHAINS_MIGRATION_COMPLETION_2026-05-20.md. Boundary: no broad Phase 2.B bulk migration, provider runtime, Maika change, persistent memory store, database schema migration, live governance proof, public-sync update, public catalog claim, Claude review dependency, or global freeze lift."
     }
   ]
 }

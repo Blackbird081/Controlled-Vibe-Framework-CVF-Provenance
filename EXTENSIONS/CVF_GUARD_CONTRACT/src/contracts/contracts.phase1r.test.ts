@@ -11,6 +11,7 @@
 import { describe, it, expect } from 'vitest';
 
 import {
+  createReceiptEnvelopeReceiptRecord,
   createReceiptEnvelope,
   RECEIPT_SCHEMA_VERSION_1R,
   RECEIPT_ENVELOPE_ADAPTER_MAP,
@@ -18,6 +19,7 @@ import {
 
 import type {
   Receipt,
+  ReceiptEnvelopeReceiptRecord,
   GatewayReceiptPayload,
   ExecutionBridgeReceiptPayload,
   GovernanceLedgerReceiptPayload,
@@ -77,6 +79,22 @@ describe('Receipt<TPayload> envelope shape', () => {
     expect(receipt.payload.legacyReceiptId).toBe('legacy-001');
     expect(receipt.payload.decision).toBe('allow');
     expect(receipt.integrityHash).toBe('hash-001');
+  });
+
+  it('createReceiptEnvelopeReceiptRecord marks envelopes as immutable receipt-tier records', () => {
+    const receipt = createReceiptEnvelope({
+      id: 'receipt-record-001',
+      issuedAt: '2026-05-20T00:00:00Z',
+      source: 'test-record',
+      payload: { legacyReceiptId: 'legacy-record-001' },
+    });
+
+    const record: ReceiptEnvelopeReceiptRecord<{ legacyReceiptId: string }> =
+      createReceiptEnvelopeReceiptRecord(receipt);
+
+    expect(record.tierId).toBe('receipt');
+    expect(record.immutable).toBe(true);
+    expect(record.envelope.payload.legacyReceiptId).toBe('legacy-record-001');
   });
 });
 

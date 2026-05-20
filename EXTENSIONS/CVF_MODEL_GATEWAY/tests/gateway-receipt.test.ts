@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { GatewayReceiptBuilder, sanitizeReceiptMetadata } from "../src/gateway-receipt";
+import { GatewayReceiptBuilder, sanitizeReceiptMetadata } from "../src/index";
+import type { GatewayReceiptEnvelope, GatewayReceiptMemoryRecord } from "../src/index";
 
 describe("GatewayReceiptBuilder", () => {
   it("builds audit receipts with policy and validation fields", () => {
@@ -38,7 +39,7 @@ describe("GatewayReceiptBuilder", () => {
       () => "abc123",
     );
 
-    const envelope = builder.buildEnvelope({
+    const envelope: GatewayReceiptEnvelope = builder.buildEnvelope({
       traceId: "trace-envelope",
       providerId: "dashscope",
       selectedModelId: "qwen-turbo",
@@ -59,7 +60,7 @@ describe("GatewayReceiptBuilder", () => {
       () => "abc123",
     );
 
-    const record = builder.buildReceiptMemoryRecord({
+    const record: GatewayReceiptMemoryRecord = builder.buildReceiptMemoryRecord({
       traceId: "trace-memory",
       decision: "selected",
       reason: "selected",

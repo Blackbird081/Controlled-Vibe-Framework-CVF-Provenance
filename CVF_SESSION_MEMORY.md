@@ -469,6 +469,34 @@ Boundary: no broad Phase 2.B bulk migration, provider runtime, Maika change,
 persistent memory store, public-sync update, live governance proof, Claude
 review dependency, runtime coherence claim, or global freeze lift.
 
+## Phase 2.B Audit Trace Task Receipt Chains Migration — 2026-05-20
+
+Codex closed the grouped bounded Phase 2.B receipt-chain tranche using a
+Codex-only workflow role chain with no Claude participation:
+
+- `E-06 -> M-05 -> M-06`
+- `E-03 -> M-02 / M-03`
+- `E-04 -> E-05`
+- `M-07`
+
+Closed completion:
+
+- `docs/reviews/CVF_PHASE_2B_AUDIT_TRACE_TASK_RECEIPT_CHAINS_MIGRATION_COMPLETION_2026-05-20.md`
+
+Implemented:
+
+- Guard Contract typed receipt aliases and trace/audit receipt envelopes;
+- SQLite audit envelope ingestion and row wrapping without schema migration;
+- execution pipeline receipt envelope and immutable pipeline task record;
+- execution bridge immutable task record;
+- Model Gateway index exports for gateway receipt envelope and memory record;
+- formal receipt-envelope immutable receipt-tier record helper.
+
+Boundary: no broad Phase 2.B bulk migration, provider runtime, Maika change,
+persistent memory store, database schema migration, public-sync update, public
+catalog claim, live governance proof, Claude review dependency, runtime
+coherence claim, or global freeze lift.
+
 ## Claim Boundary
 
 This artifact establishes a governed session-memory front door and machine

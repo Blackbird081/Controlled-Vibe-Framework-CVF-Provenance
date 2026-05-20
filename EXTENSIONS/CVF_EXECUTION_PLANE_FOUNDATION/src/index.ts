@@ -536,6 +536,8 @@ export type {
   ExecutionPipelineStage,
   ExecutionPipelineStageEntry,
   ExecutionPipelineReceipt,
+  ExecutionPipelineReceiptEnvelope,
+  ExecutionPipelineTaskReceiptRecord,
   ExecutionPipelineContractDependencies,
 } from "./execution.pipeline.contract";
 
@@ -549,6 +551,7 @@ export type {
   ExecutionBridgePipelineStageEntry,
   ExecutionBridgeReceipt,
   ExecutionBridgeReceiptEnvelope,
+  ExecutionBridgeTaskReceiptRecord,
   ExecutionBridgeConsumerContractDependencies,
 } from "./execution.bridge.consumer.contract";
 

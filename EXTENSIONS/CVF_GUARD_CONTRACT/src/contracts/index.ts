@@ -170,10 +170,12 @@ export type {
   GovernanceLedgerReceipt,
   ControlledMemoryReceipt,
   ReceiptEnvelopeInput,
+  ReceiptEnvelopeReceiptRecord,
   ReceiptEnvelopeAdapterMeta,
 } from './receipt-envelope.contract';
 
 export {
+  createReceiptEnvelopeReceiptRecord,
   createReceiptEnvelope,
   RECEIPT_SCHEMA_VERSION_1R,
 } from './receipt-envelope.contract';

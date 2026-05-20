@@ -70,6 +70,26 @@ export function createReceiptEnvelope<TPayload>(
   };
 }
 
+export interface ReceiptEnvelopeReceiptRecord<TPayload> {
+  readonly tierId: 'receipt';
+  readonly immutable: true;
+  readonly envelope: Receipt<TPayload>;
+}
+
+/**
+ * Marks an existing receipt envelope as an immutable receipt-tier record
+ * without introducing a storage backend.
+ */
+export function createReceiptEnvelopeReceiptRecord<TPayload>(
+  envelope: Receipt<TPayload>,
+): ReceiptEnvelopeReceiptRecord<TPayload> {
+  return {
+    tierId: 'receipt',
+    immutable: true,
+    envelope,
+  };
+}
+
 // ─── Payload Type Registry ────────────────────────────────────────────────────
 
 /**
