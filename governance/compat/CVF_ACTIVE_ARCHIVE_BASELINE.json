@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generatedAt": "2026-05-20T07:28:19.096693",
+  "generatedAt": "2026-05-20T07:29:55",
   "gitHead": "597534dec977e4f2ce05e2d481edaba48a167c01",
-  "cutoffDate": "2026-05-17",
-  "ageThresholdDays": 3,
+  "cutoffDate": "2026-05-15",
+  "ageThresholdDays": 5,
   "scopeMode": "incremental",
   "managedRoots": [
     "docs",

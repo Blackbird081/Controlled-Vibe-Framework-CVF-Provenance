@@ -23,7 +23,7 @@ from typing import Any
 REPO_ROOT = Path(__file__).resolve().parents[2]
 MANAGED_ROOTS = ("docs", "ECOSYSTEM/strategy")
 ARCHIVE_FOLDER = "archive"
-AGE_THRESHOLD_DAYS = 3
+AGE_THRESHOLD_DAYS = 5
 MANAGED_EXTENSIONS = {".md", ".json"}
 DATE_PATTERNS = (
     re.compile(r"(\d{4}-\d{2}-\d{2})"),

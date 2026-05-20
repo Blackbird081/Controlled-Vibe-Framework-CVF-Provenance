@@ -24,7 +24,7 @@ Provenance continuity base for this handoff: `e91b41fd`.
 Provenance HEAD before Lane G implementation:
 `ae492d7dcd9a7b48948521a5160ee7668fa8fa4f`.
 
-Current HEAD (GC-020): `597534de` (chore(handoff): GC-020 sync after quality assessment filing)
+Current HEAD (GC-020): `c8c6edb3` (chore(governance): fast-lane baseline for session guard extension + archive cleanup)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 

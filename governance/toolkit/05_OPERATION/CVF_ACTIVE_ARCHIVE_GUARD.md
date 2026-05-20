@@ -54,8 +54,8 @@ Non-compliant examples:
 ### Active Zone
 
 - only files with a date suffix are eligible for auto-archive
-- dated files in the last 3 calendar days stay active
-- dated files older than 3 days become archive candidates and then pass screening rules before move
+- dated files in the last 5 calendar days stay active
+- dated files older than 5 days become archive candidates and then pass screening rules before move
 - non-dated files are treated as evergreen docs and remain active unless explicitly refactored
 
 ### Archive Zone
