@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — D/E/F/G lanes closed; M1/C2/D2/H2 closed; Phase 3 W1/W2/W3 closed; Rule C paradox fixed; ALL 6 residual work orders CLOSED (A1/C1/D1/E1/G1/H1); all 8 Review-CVF pain points CLOSED; N1 CLOSED (public commit `d11c772a`); N2 CLOSED_BY_PRIOR_TRANCHE; N3 WITHDRAWN; hardening roadmap rebutted NON_BLOCKING_WITH_SCOPE_REFINEMENT; HN1 CLOSED; HN2.a CLOSED; HN3 CLOSED; CDH-M rebutted NON_BLOCKING_WITH_PRIVACY_GATE; three CDH delta slice rebuttals queued.
+Status: ACTIVE — D/E/F/G lanes closed; M1/C2/D2/H2 closed; Phase 3 W1/W2/W3 closed; Rule C paradox fixed; ALL 6 residual work orders CLOSED (A1/C1/D1/E1/G1/H1); all 8 Review-CVF pain points CLOSED; N1 CLOSED (public commit `d11c772a`); N2 CLOSED_BY_PRIOR_TRANCHE; N3 WITHDRAWN; hardening roadmap rebutted NON_BLOCKING_WITH_SCOPE_REFINEMENT; HN1 CLOSED; HN2.a CLOSED; HN3 CLOSED; CDH-M narrow deployed value proof CLOSED with temp-CVF-tunnel boundary; CDH-H/CDH-C/CDH-D rebuttals FILED with no implementation authorized.
 
 Latest planning artifacts (read these first if you are resuming Review-CVF closure work):
 
@@ -10,7 +10,12 @@ Latest planning artifacts (read these first if you are resuming Review-CVF closu
 - `docs/work_orders/CVF_WO_HN1_TEMPLATE_LINKAGE_EXEMPTION_FAST_LANE_2026-05-20.md` + `docs/audits/CVF_FAST_LANE_HN1_TEMPLATE_LINKAGE_EXEMPTION_2026-05-20.md` + `docs/reviews/CVF_HN1_TEMPLATE_LINKAGE_EXEMPTION_CLOSURE_REVIEW_2026-05-20.md` (CLOSED — two folder template IDs explicitly exempted; no GC-018; no public-sync)
 - `docs/work_orders/CVF_WO_HN2A_GOVERNANCE_KERNEL_OWNER_INVENTORY_2026-05-20.md` + `docs/reviews/CVF_HN2A_GOVERNANCE_KERNEL_OWNER_INVENTORY_2026-05-20.md` + `docs/reviews/CVF_HN2A_GOVERNANCE_KERNEL_OWNER_INVENTORY_CLOSURE_REVIEW_2026-05-20.md` (CLOSED — 12-surface observation inventory only; no class assignment, no policy text, no GC-018; HN2.b/HN2.c remain separate downstream gates)
 - `docs/work_orders/CVF_WO_HN3_CDH_DELTA_META_ROADMAP_2026-05-20.md` + `docs/roadmaps/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md` + `docs/reviews/CVF_HN3_CDH_DELTA_META_ROADMAP_CLOSURE_REVIEW_2026-05-20.md` (CLOSED — original CDH roadmap marked REPLACED_BY_META; four CDH delta slice rebuttals queued; no GC-018, no implementation)
-- `docs/reviews/CVF_CDH_M_DELTA_CODEX_REBUTTAL_2026-05-20.md` (NON_BLOCKING_WITH_PRIVACY_GATE — CDH-M may proceed only to slice-specific GC-018 + work order for deployed Maika text-summary proof; must include authenticated Supabase admin/teacher invocation, CVF receipt/audit evidence, minimized payload evidence, and explicit abnormal-health privacy posture; no photo/vision, direct provider fallback, public-sync claim, or bundled CDH closure)
+- `docs/reviews/CVF_CDH_M_DELTA_CODEX_REBUTTAL_2026-05-20.md` (NON_BLOCKING_WITH_PRIVACY_GATE — CDH-M may proceed only to slice-specific GC-018 + work order for deployed Maika text-summary proof; must include authenticated Supabase admin/teacher invocation, CVF receipt/audit evidence, and minimized payload evidence; abnormal health in proof corpus is sensitive and requires redaction/minimization controls, otherwise exclude abnormal health values; no child-data/photo/vision proof, direct provider fallback, public-sync claim, or bundled CDH closure)
+- `docs/reviews/CVF_CDH_M_MAIKA_TEXT_SUMMARY_PRIVACY_CONTROLS_COMPLETION_2026-05-20.md` (CLOSED_PRIVACY_CONTROLS_ONLY — Maika frontend no longer sends raw abnormal health values and Edge Function redacts abnormal health before building the CVF request body; later deployed proof is recorded in the CDH-M deployed value proof packet)
+- `docs/reviews/CVF_CDH_M_MAIKA_TEXT_SUMMARY_DEPLOYED_VALUE_PROOF_2026-05-20.md` (CLOSED_DEPLOYED_VALUE_PROOF_WITH_TEMP_CVF_TUNNEL — deployed Maika Supabase Edge Function returned summary + CVF governanceEvidenceReceipt, decision ALLOW, rawHealthLeak=false; temporary tunnel/secrets/account cleaned up; no child-data/photo/vision/public claim)
+- `docs/reviews/CVF_CDH_H_DELTA_CODEX_REBUTTAL_2026-05-20.md` (NON_BLOCKING_WITH_READOUT_SCOPE — future CDH-H work requires fresh GC-018 and may only cover audit-memory readout/proof hardening; preserve `canReinject=false`; do not use `reinjectionAllowed` as a write gate)
+- `docs/reviews/CVF_CDH_C_DELTA_CODEX_REBUTTAL_2026-05-20.md` (NON_BLOCKING_WITH_LIVE_PROOF_GATE — `cvf execute` already exists; future CDH-C work requires fresh GC-018 for live CLI proof/receipt persistence/diagnostics only)
+- `docs/reviews/CVF_CDH_D_DELTA_CODEX_REBUTTAL_2026-05-20.md` (NON_BLOCKING_WITH_SUBSURFACE_SPLIT — vision contract and reasoning contract are already contract-only closures; vision runtime is separate future GC-018/live-proof work; no bundled runtime claim)
 - `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` (CLOSURE EVIDENCE — A/B/C/D/E/F/G/H all CLOSED after 2026-05-20 tranche; supersedes old 4/8 shorthand and is no longer the active next-work steering file)
 - `docs/reviews/CVF_17_05_REVIEW_CVF_RESIDUAL_PAIN_POINTS_ASSESSMENT_2026-05-19.md` (original assessment; see direction codex for corrected posture)
 - `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (6 candidates, REBUTTAL_ACCEPTED, all work orders now CLOSED)
@@ -375,6 +380,58 @@ Candidates 2/3/4 each require a fresh GC-018.
 
 4. **`system_reconvergence_stop` posture** — still active. Only Operator can
    lift. No new reconvergence work is authorized by this closure.
+
+## CDH-M Operator Verdict — 2026-05-20
+
+CDH-M now carries reviewer/operator disposition
+`NON_BLOCKING_WITH_PRIVACY_GATE`, with privacy controls implemented and narrow
+deployed value proof closed.
+
+The accepted next move is narrow: CDH-M may proceed only through a fresh
+slice-specific GC-018 and work order for deployed Maika text-summary proof.
+Do not treat the privacy-control closure as proof for child data, photo
+handling, vision runtime, direct provider behavior, public claims, or bundled
+CDH closure.
+
+Binding privacy gate:
+
+- Implemented: Maika frontend sends only a generic health-follow-up marker for
+  abnormal health.
+- Implemented: Maika Edge Function replaces abnormal health with a generic
+  non-diagnostic marker before building the CVF request body.
+- Closed: deployed Supabase invocation proof with authenticated admin session
+  returned summary + CVF receipt metadata, decision `ALLOW`, and
+  `rawHealthLeak=false`.
+- Boundary: proof used a temporary public tunnel to local CVF because deployed
+  Netlify service-token alignment was unavailable; temporary Supabase secrets
+  and the proof admin account were cleaned up.
+
+Continuity anchors:
+
+- Rebuttal:
+  `docs/reviews/CVF_CDH_M_DELTA_CODEX_REBUTTAL_2026-05-20.md`
+- Privacy-control closure:
+  `docs/reviews/CVF_CDH_M_MAIKA_TEXT_SUMMARY_PRIVACY_CONTROLS_COMPLETION_2026-05-20.md`
+- Deployed value proof:
+  `docs/reviews/CVF_CDH_M_MAIKA_TEXT_SUMMARY_DEPLOYED_VALUE_PROOF_2026-05-20.md`
+- Queue item: `cdh-m-delta` in `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
+- Active state next move: `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+
+Remaining CDH delta review queue status:
+
+- `cdh-h-delta`: rebuttal filed
+  `NON_BLOCKING_WITH_READOUT_SCOPE`. Any continuation requires fresh GC-018
+  and must remain audit-memory readout/proof hardening only.
+- `cdh-c-delta`: rebuttal filed
+  `NON_BLOCKING_WITH_LIVE_PROOF_GATE`. `cvf execute` already exists; any
+  continuation requires fresh GC-018 for live CLI proof, receipt persistence,
+  or diagnostics only.
+- `cdh-d-delta`: rebuttal filed
+  `NON_BLOCKING_WITH_SUBSURFACE_SPLIT`. Vision contract and reasoning contract
+  already have contract-only closure evidence; vision runtime remains separate
+  future GC-018/live-proof work.
+
+No CDH delta item remains `READY_FOR_REBUTTAL` in the active queue.
 
 ## Runtime Maturity Delta M1/C2/D2/H2 Update — 2026-05-19
 
