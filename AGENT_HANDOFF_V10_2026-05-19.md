@@ -46,7 +46,7 @@ Current HEAD after HN3 closure (GC-020):
 `b6c0fff0` (docs(hn3): file CDH delta meta roadmap)
 
 Current HEAD after CDH-M rebuttal (GC-020):
-pending sync after rebuttal commit
+`79bf31e6` (docs(cdh-m): file Maika delta rebuttal)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
