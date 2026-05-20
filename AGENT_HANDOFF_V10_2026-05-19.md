@@ -59,6 +59,9 @@ Current HEAD after CDH-M rebuttal (GC-020):
 Current HEAD after CDH delta rebuttals + CDH-M closures (GC-020):
 `fd2253ab` (docs(cdh): file C/D/H delta rebuttals + CDH-M deployed value proof)
 
+Current HEAD after kernel-hardening roadmaps filed (GC-020):
+`bddd2215` (docs(kernel-hardening): file HN2.b/HN2.c/Phase-2.B roadmaps + rebuttal work orders)
+
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
 ## Purpose
