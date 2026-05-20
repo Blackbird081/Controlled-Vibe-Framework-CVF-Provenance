@@ -41,7 +41,8 @@ Current HEAD after HN1 closure (GC-020):
 Current HEAD after HN2.a closure (GC-020):
 `ef9f58d6` (docs(hn2a): file governance kernel inventory)
 
-Current HEAD (GC-020): pending sync after HN3 closure commit.
+Current HEAD after HN3 closure (GC-020):
+`b6c0fff0` (docs(hn3): file CDH delta meta roadmap)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
