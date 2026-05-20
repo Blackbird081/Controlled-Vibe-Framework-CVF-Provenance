@@ -402,6 +402,49 @@ Final docs checks passed:
 - `python governance/compat/check_docs_governance_compat.py`
 - `python governance/compat/check_markdown_structural_completeness.py`
 
+## HN2.b / HN2.c / Phase 2.B Closure Update — 2026-05-20
+
+Codex closed the HN2.b -> HN2.c -> Phase 2.B sequence as static governance
+artifacts after the rebuttal gates cleared.
+
+Closed artifacts:
+
+- HN2.b owner map:
+  `docs/reference/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`
+- HN2.c freeze-release rule:
+  `governance/toolkit/05_OPERATION/CVF_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE.md`
+- Phase 2.B migration plan:
+  `docs/reference/CVF_PHASE_2B_MIGRATION_PLAN_2026-05-20.md`
+- Phase 2.B completion review:
+  `docs/reviews/CVF_PHASE_2B_MIGRATION_PLAN_COMPLETION_2026-05-20.md`
+
+Boundary: this closes owner routing, freeze-release policy, and static
+per-surface migration planning only. It does not implement adapters, change
+runtime/provider/memory/Maika behavior, update public-sync, lift the freeze
+globally, or prove runtime coherence.
+
+## Phase 2.B Receipt Critical Path Migration — 2026-05-20
+
+Codex closed the first bounded Phase 2.B implementation slice:
+
+`E-01 -> E-02 -> E-04 -> M-08`
+
+Closed completion:
+
+- `docs/reviews/CVF_PHASE_2B_RECEIPT_CRITICAL_PATH_MIGRATION_COMPLETION_2026-05-20.md`
+
+Implemented:
+
+- canonical `createReceiptEnvelope<TPayload>()` helper;
+- `AgentExecutionAuditReceipt` envelope wrapper;
+- `GatewayConsumptionReceipt` envelope wrapper;
+- `GatewayReceipt` envelope wrapper;
+- immutable receipt-tier gateway receipt memory record wrapper.
+
+Boundary: no broad Phase 2.B bulk migration, provider runtime, Maika change,
+persistent memory store, public-sync update, live governance proof, runtime
+coherence claim, or global freeze lift.
+
 ## Claim Boundary
 
 This artifact establishes a governed session-memory front door and machine

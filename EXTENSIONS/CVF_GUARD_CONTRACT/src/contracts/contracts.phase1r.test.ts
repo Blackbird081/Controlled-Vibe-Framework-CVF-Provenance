@@ -11,6 +11,7 @@
 import { describe, it, expect } from 'vitest';
 
 import {
+  createReceiptEnvelope,
   RECEIPT_SCHEMA_VERSION_1R,
   RECEIPT_ENVELOPE_ADAPTER_MAP,
 } from './index';
@@ -61,6 +62,21 @@ describe('Receipt<TPayload> envelope shape', () => {
 
   it('RECEIPT_SCHEMA_VERSION_1R is the Phase 1.R marker', () => {
     expect(RECEIPT_SCHEMA_VERSION_1R).toBe('1.R.0');
+  });
+
+  it('createReceiptEnvelope preserves typed payload shape', () => {
+    const receipt = createReceiptEnvelope({
+      id: 'wrapped-001',
+      issuedAt: '2026-05-20T00:00:00Z',
+      source: 'test-wrapper',
+      payload: { legacyReceiptId: 'legacy-001', decision: 'allow' },
+      integrityHash: 'hash-001',
+    });
+
+    expect(receipt.schemaVersion).toBe(RECEIPT_SCHEMA_VERSION_1R);
+    expect(receipt.payload.legacyReceiptId).toBe('legacy-001');
+    expect(receipt.payload.decision).toBe('allow');
+    expect(receipt.integrityHash).toBe('hash-001');
   });
 });
 

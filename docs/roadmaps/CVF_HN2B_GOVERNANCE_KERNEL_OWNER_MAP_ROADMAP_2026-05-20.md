@@ -39,7 +39,9 @@ public-sync work. It declares the next step after HN2.a inventory closure.
 Convert the HN2.a static inventory of 12 governance-kernel surfaces into a
 single authoritative **owner map** artifact that:
 
-1. Names exactly one `canonical_owner` file/symbol per surface.
+1. Names exactly one `canonical_owner` file/symbol per surface, or an explicit
+   parallel sub-surface row where HN2.a already observed split ownership
+   (for example runtime guard vs repository guard).
 2. Classifies every observed alias as one of:
    `canonical_owner`, `adapter_required`, `legacy_alias`, `deferred`, `rejected`.
 3. Records each classification with an evidence path and a one-line
@@ -208,7 +210,8 @@ concerns and must not be collapsed.
 
 `gc018AcceptanceSeed`:
 
-- two parallel canonical owners named (runtime + repository);
+- two parallel owner rows named (runtime + repository), each classified with
+  the dedicated `runtime_guard` / `repository_guard` classes;
 - every guard file in `governance/toolkit/05_OPERATION/` classified;
 - no new guard engine introduced.
 
@@ -368,6 +371,13 @@ Required structure (informative; final form locked at GC-018 review):
    `deferred`, `rejected`, `parallel_surface`, `documentation_alias`,
    `repository_guard`, `runtime_guard`, `canonical_method_contract`.
 
+   Class precedence must be explicit: `canonical_owner` is reserved for the
+   root owner of a surface or declared sub-surface; `runtime_guard` and
+   `repository_guard` are guard-model sub-surface classes;
+   `canonical_method_contract` is provider-method only; `documentation_alias`
+   is not a `canonical_alias`; unresolved cases default to `deferred`, not
+   `canonical_owner`.
+
 4. **Coverage assertion** — every alias listed in HN2.a inventory is
    classified; no alias omitted.
 5. **Forbidden expansion register** — explicit list of what the map does NOT
@@ -433,13 +443,16 @@ owner map until HN2.b closure.
 3. HN2.b work order produces the owner map file.
 4. HN2.b completion review locks the map.
 5. Update `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md` pointer to map.
-6. Update `MEMORY.md` index entry for HN2.b closure.
+6. Update `CVF_SESSION_MEMORY.md` index entry for HN2.b closure if the active
+   session front door needs a pointer refresh.
 
 ## Acceptance Criteria (for this roadmap)
 
 - All 12 inventoried surfaces appear in this roadmap with per-surface decision,
   load-bearing constraint, and GC-018 acceptance seed.
 - Enumerated classification set is named (11 classes).
+- Class precedence is named so parallel/specialized classes cannot collide
+  with `canonical_owner`.
 - Forbidden expansion register is explicit.
 - No GC-018, no code change, no new semantics introduced by this artifact.
 - Replacement for `governance_kernel_freeze_recommended` posture is NOT
@@ -450,7 +463,7 @@ owner map until HN2.b closure.
 Static verification only at filing:
 
 - Markdown structural completeness check.
-- `MEMORY.md` index updated to point at this roadmap.
+- `CVF_SESSION_MEMORY.md` index updated to point at this roadmap if needed.
 - Active review queue updated to add `hn2b-owner-map-roadmap` entry under
   `READY_FOR_REBUTTAL`.
 

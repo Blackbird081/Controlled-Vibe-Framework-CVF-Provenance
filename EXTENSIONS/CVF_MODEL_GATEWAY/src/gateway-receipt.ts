@@ -1,5 +1,8 @@
 import type { GatewayPolicyContext, GatewayPolicyResult } from "./gateway-policy";
 import type { GatewayRiskClass } from "./provider-registry";
+import type { MemoryTierId } from "../../CVF_GUARD_CONTRACT/src/contracts/memory-tier.contract";
+import type { Receipt } from "../../CVF_GUARD_CONTRACT/src/contracts/receipt-envelope.contract";
+import { createReceiptEnvelope as wrapReceiptEnvelope } from "../../CVF_GUARD_CONTRACT/src/contracts/receipt-envelope.contract";
 
 export interface GatewayReceiptInput {
   traceId: string;
@@ -45,6 +48,14 @@ export interface GatewayReceipt {
   metadata: Record<string, unknown>;
 }
 
+export type GatewayReceiptEnvelope = Receipt<GatewayReceipt>;
+
+export interface GatewayReceiptMemoryRecord {
+  readonly tierId: Extract<MemoryTierId, "receipt">;
+  readonly immutable: true;
+  readonly envelope: GatewayReceiptEnvelope;
+}
+
 export class GatewayReceiptBuilder {
   constructor(
     private readonly now: () => Date = () => new Date(),
@@ -78,6 +89,28 @@ export class GatewayReceiptBuilder {
         : undefined,
       metadata: sanitizeReceiptMetadata(input.metadata ?? {}),
     };
+  }
+
+  buildEnvelope(input: GatewayReceiptInput): GatewayReceiptEnvelope {
+    return this.wrapReceipt(this.build(input));
+  }
+
+  buildReceiptMemoryRecord(input: GatewayReceiptInput): GatewayReceiptMemoryRecord {
+    return {
+      tierId: "receipt",
+      immutable: true,
+      envelope: this.buildEnvelope(input),
+    };
+  }
+
+  wrapReceipt(receipt: GatewayReceipt): GatewayReceiptEnvelope {
+    return wrapReceiptEnvelope({
+      id: receipt.receiptId,
+      issuedAt: receipt.createdAt,
+      source: `model-gateway:gateway-receipt:${receipt.traceId}`,
+      payload: receipt,
+      integrityHash: `${receipt.receiptId}:${receipt.traceId}:${receipt.validationState}`,
+    });
   }
 }
 

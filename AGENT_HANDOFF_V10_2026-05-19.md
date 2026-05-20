@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — D/E/F/G lanes closed; M1/C2/D2/H2 closed; Phase 3 W1/W2/W3 closed; Rule C paradox fixed; ALL 6 residual work orders CLOSED (A1/C1/D1/E1/G1/H1); all 8 Review-CVF pain points CLOSED; N1 CLOSED (public commit `d11c772a`); N2 CLOSED_BY_PRIOR_TRANCHE; N3 WITHDRAWN; hardening roadmap rebutted NON_BLOCKING_WITH_SCOPE_REFINEMENT; HN1 CLOSED; HN2.a CLOSED; HN3 CLOSED; CDH-M narrow deployed value proof CLOSED with temp-CVF-tunnel boundary; CDH-H/CDH-C/CDH-D rebuttals FILED with no implementation authorized; three kernel-hardening roadmaps FILED READY_FOR_REBUTTAL (HN2.b owner map, HN2.c freeze-release rule, Phase 2.B migration plan) with strict dispatch order.
+Status: ACTIVE — D/E/F/G lanes closed; M1/C2/D2/H2 closed; Phase 3 W1/W2/W3 closed; Rule C paradox fixed; ALL 6 residual work orders CLOSED (A1/C1/D1/E1/G1/H1); all 8 Review-CVF pain points CLOSED; N1 CLOSED (public commit `d11c772a`); N2 CLOSED_BY_PRIOR_TRANCHE; N3 WITHDRAWN; hardening roadmap rebutted NON_BLOCKING_WITH_SCOPE_REFINEMENT; HN1 CLOSED; HN2.a CLOSED; HN3 CLOSED; CDH-M narrow deployed value proof CLOSED with temp-CVF-tunnel boundary; CDH-H/CDH-C/CDH-D rebuttals FILED with no implementation authorized; HN2.b/HN2.c/Phase 2.B rebuttals FILED with no implementation or GC-018 authorized.
 
 Latest planning artifacts (read these first if you are resuming Review-CVF closure work):
 
@@ -16,9 +16,9 @@ Latest planning artifacts (read these first if you are resuming Review-CVF closu
 - `docs/reviews/CVF_CDH_H_DELTA_CODEX_REBUTTAL_2026-05-20.md` (NON_BLOCKING_WITH_READOUT_SCOPE — future CDH-H work requires fresh GC-018 and may only cover audit-memory readout/proof hardening; preserve `canReinject=false`; do not use `reinjectionAllowed` as a write gate)
 - `docs/reviews/CVF_CDH_C_DELTA_CODEX_REBUTTAL_2026-05-20.md` (NON_BLOCKING_WITH_LIVE_PROOF_GATE — `cvf execute` already exists; future CDH-C work requires fresh GC-018 for live CLI proof/receipt persistence/diagnostics only)
 - `docs/reviews/CVF_CDH_D_DELTA_CODEX_REBUTTAL_2026-05-20.md` (NON_BLOCKING_WITH_SUBSURFACE_SPLIT — vision contract and reasoning contract are already contract-only closures; vision runtime is separate future GC-018/live-proof work; no bundled runtime claim)
-- `docs/roadmaps/CVF_HN2B_GOVERNANCE_KERNEL_OWNER_MAP_ROADMAP_2026-05-20.md` + `docs/work_orders/CVF_WO_HN2B_OWNER_MAP_REBUTTAL_2026-05-20.md` (READY_FOR_REBUTTAL — converts HN2.a 12-surface inventory into authoritative owner map with closed 11-class classification set; prerequisite for HN2.c and Phase 2.B; filing-only, no GC-018, no freeze lift)
-- `docs/roadmaps/CVF_HN2C_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE_ROADMAP_2026-05-20.md` + `docs/work_orders/CVF_WO_HN2C_FREEZE_RELEASE_RULE_REBUTTAL_2026-05-20.md` (READY_FOR_REBUTTAL — codifies freeze-release rule with closed change-class table, 5 release conditions, 4-role authority chain, global-lift prohibition; HN2.b LOCKED required before GC-018; filing-only)
-- `docs/roadmaps/CVF_PHASE_2B_MIGRATION_PLAN_ROADMAP_2026-05-20.md` + `docs/work_orders/CVF_WO_PHASE_2B_MIGRATION_PLAN_REBUTTAL_2026-05-20.md` (READY_FOR_REBUTTAL — declares 4-input schema (order/owner/done/dependency) for Phase 2.B adapter wire-up; tiered done criterion; bulk migration forbidden; HN2.b LOCKED + HN2.c BINDING required before GC-018; filing-only)
+- `docs/roadmaps/CVF_HN2B_GOVERNANCE_KERNEL_OWNER_MAP_ROADMAP_2026-05-20.md` + `docs/reviews/CVF_HN2B_GOVERNANCE_KERNEL_OWNER_MAP_CODEX_REBUTTAL_2026-05-20.md` (NON_BLOCKING_WITH_SCOPE_REFINEMENT — roadmap patched for `CVF_SESSION_MEMORY.md`, class precedence, and parallel sub-surface handling; future HN2.b GC-018 only, no implementation authorized now)
+- `docs/roadmaps/CVF_HN2C_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE_ROADMAP_2026-05-20.md` + `docs/reviews/CVF_HN2C_FREEZE_RELEASE_RULE_CODEX_REBUTTAL_2026-05-20.md` (NON_BLOCKING_WITH_PREREQUISITE_GATE — HN2.b LOCKED required before HN2.c GC-018; active state carries pointer/status text only; no rule artifact, guard, doctrine edit, or freeze lift authorized now)
+- `docs/roadmaps/CVF_PHASE_2B_MIGRATION_PLAN_ROADMAP_2026-05-20.md` + `docs/reviews/CVF_PHASE_2B_MIGRATION_PLAN_CODEX_REBUTTAL_2026-05-20.md` (NON_BLOCKING_WITH_BOUNDARY_REFINEMENT — bounded fixture-driven Phase 2.B already delivered; this covers remaining broader migration-plan schema only; HN2.b LOCKED + HN2.c BINDING required before Phase 2.B GC-018)
 - `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` (CLOSURE EVIDENCE — A/B/C/D/E/F/G/H all CLOSED after 2026-05-20 tranche; supersedes old 4/8 shorthand and is no longer the active next-work steering file)
 - `docs/reviews/CVF_17_05_REVIEW_CVF_RESIDUAL_PAIN_POINTS_ASSESSMENT_2026-05-19.md` (original assessment; see direction codex for corrected posture)
 - `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (6 candidates, REBUTTAL_ACCEPTED, all work orders now CLOSED)
@@ -441,6 +441,112 @@ Remaining CDH delta review queue status:
   future GC-018/live-proof work.
 
 No CDH delta item remains `READY_FOR_REBUTTAL` in the active queue.
+
+## HN2.b / HN2.c / Phase 2.B Tranche Closure — 2026-05-20
+
+Codex completed the operator-authorized sequence after Claude accepted the
+three rebuttal-only work orders. The sequence was executed in the required
+order: HN2.b owner map, HN2.c freeze-release rule, then Phase 2.B static
+migration plan.
+
+Status:
+
+- HN2.b governance-kernel owner map: `CLOSED_OWNER_MAP_LOCKED`.
+- HN2.c governance-kernel freeze-release rule:
+  `CLOSED_FREEZE_RELEASE_RULE_BINDING`.
+- Phase 2.B migration plan: `CLOSED_STATIC_MIGRATION_PLAN_LOCKED`.
+
+Continuity anchors:
+
+- HN2.b GC-018:
+  `docs/baselines/CVF_GC018_HN2B_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`
+- HN2.b work order:
+  `docs/work_orders/CVF_WO_HN2B_GOVERNANCE_KERNEL_OWNER_MAP_IMPLEMENTATION_2026-05-20.md`
+- HN2.b owner map:
+  `docs/reference/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`
+- HN2.b completion:
+  `docs/reviews/CVF_HN2B_GOVERNANCE_KERNEL_OWNER_MAP_COMPLETION_2026-05-20.md`
+- HN2.c GC-018:
+  `docs/baselines/CVF_GC018_HN2C_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE_2026-05-20.md`
+- HN2.c work order:
+  `docs/work_orders/CVF_WO_HN2C_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE_IMPLEMENTATION_2026-05-20.md`
+- HN2.c binding rule:
+  `governance/toolkit/05_OPERATION/CVF_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE.md`
+- HN2.c completion:
+  `docs/reviews/CVF_HN2C_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE_COMPLETION_2026-05-20.md`
+- Phase 2.B GC-018:
+  `docs/baselines/CVF_GC018_PHASE_2B_MIGRATION_PLAN_2026-05-20.md`
+- Phase 2.B work order:
+  `docs/work_orders/CVF_WO_PHASE_2B_MIGRATION_PLAN_IMPLEMENTATION_2026-05-20.md`
+- Phase 2.B locked plan:
+  `docs/reference/CVF_PHASE_2B_MIGRATION_PLAN_2026-05-20.md`
+- Phase 2.B completion:
+  `docs/reviews/CVF_PHASE_2B_MIGRATION_PLAN_COMPLETION_2026-05-20.md`
+
+Boundary:
+
+- HN2.b is a routing/reference owner map only.
+- HN2.c is policy text only, not a mechanical/runtime guard.
+- Phase 2.B is a static migration dispatch plan only. It lists 46 primary
+  targets with stage/order, owner/reviewer roles, done tiers, dependencies,
+  and citation rules.
+- Runtime follow-on is not required to close this tranche. The completion
+  review records `NO_RUNTIME_FOLLOW_ON_REQUIRED_FOR_THIS_TRANCHE`; runtime
+  adapter implementation, provider/Maika/memory changes, live proof, and any
+  per-surface freeze release are future separately gated packets.
+- No adapter implementation, runtime proof, provider change, memory change,
+  Maika change, public-sync update, bulk migration, global freeze lift, or
+  broad runtime-coherence claim is closed by this tranche.
+
+Next allowed Phase 2.B move:
+
+- File a per-surface GC-018/work order that cites a row id from
+  `docs/reference/CVF_PHASE_2B_MIGRATION_PLAN_2026-05-20.md`.
+- If the surface changes a frozen kernel owner, cite an HN2.c-compliant
+  release packet first.
+
+## Phase 2.B Receipt Critical Path Migration — 2026-05-20
+
+Codex completed the operator-requested bounded dependency-chain slice:
+
+`E-01 -> E-02 -> E-04 -> M-08`
+
+Governance packet:
+
+- Roadmap:
+  `docs/roadmaps/CVF_PHASE_2B_RECEIPT_CRITICAL_PATH_MIGRATION_ROADMAP_2026-05-20.md`
+- Rebuttal:
+  `docs/reviews/CVF_PHASE_2B_RECEIPT_CRITICAL_PATH_MIGRATION_CODEX_REBUTTAL_2026-05-20.md`
+- GC-018:
+  `docs/baselines/CVF_GC018_PHASE_2B_RECEIPT_CRITICAL_PATH_MIGRATION_2026-05-20.md`
+- Work order:
+  `docs/work_orders/CVF_WO_PHASE_2B_RECEIPT_CRITICAL_PATH_MIGRATION_2026-05-20.md`
+- Completion:
+  `docs/reviews/CVF_PHASE_2B_RECEIPT_CRITICAL_PATH_MIGRATION_COMPLETION_2026-05-20.md`
+
+Code closed:
+
+- `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/receipt-envelope.contract.ts`
+  adds `createReceiptEnvelope<TPayload>()`.
+- `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/agent.governed.session.contract.ts`
+  wraps `AgentExecutionAuditReceipt` in the Phase 1.R envelope.
+- `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/gateway.consumer.contract.ts`
+  wraps `GatewayConsumptionReceipt` in the Phase 1.R envelope.
+- `EXTENSIONS/CVF_MODEL_GATEWAY/src/gateway-receipt.ts` wraps
+  `GatewayReceipt` and creates immutable receipt-tier memory records without a
+  persistence backend.
+
+Verification:
+
+- Guard Contract `npm test`: 30 files, 393 passed, 5 skipped; `npm run check`:
+  PASS.
+- Control Plane Foundation `npm test`: 130 files, 3538 passed; `npm run check`:
+  PASS.
+- Model Gateway `npm test`: 17 files, 61 passed; `npm run check`: PASS.
+
+Boundary: this is not broad Phase 2.B bulk migration. It does not change
+provider runtime behavior, Maika, persistent memory, public-sync, live
+governance proof, runtime coherence claims, or global freeze posture.
 
 ## Runtime Maturity Delta M1/C2/D2/H2 Update — 2026-05-19
 

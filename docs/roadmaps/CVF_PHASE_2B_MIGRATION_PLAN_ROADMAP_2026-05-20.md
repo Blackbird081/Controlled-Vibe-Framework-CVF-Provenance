@@ -20,8 +20,11 @@ can be filed.
 
 ## Authorization / Decision Chain
 
-- GAP discovery memory record (2026-05-18, see memory MEMORY.md GAP Discovery
-  section): "Phase 2.B migration plan still missing owner/order/done-criterion".
+- GAP discovery record:
+  `docs/reviews/CVF_17_05_LEGACY_ABSORPTION_GAP_LEDGER_2026-05-18.md`
+  (`GAP-17.05-004`) records that broad Phase 2.B-style runtime expansion still
+  needs migration order, owner assignment, done criterion, and dependency
+  graph before another GC-018.
 - Phase 2.A placeholder
   (`GovernedCapability.availableFrom: 'Phase-2B'`) is documented as a
   placeholder, not an execution plan.
@@ -49,9 +52,12 @@ can be filed.
 Phase 1 (Phases 1.P / 1.I / 1.R / 1.M) delivered **adapter maps** identifying
 46 surfaces and assigning canonical homes. Phase 2.A introduced
 `GovernedCapability` with `availableFrom: 'Phase-2B'` as a placeholder for
-"runtime wire-up arrives later". Phase 2.B is that wire-up.
+"runtime wire-up arrives later". A bounded fixture-driven Phase 2.B slice was
+already delivered on 2026-05-18; this roadmap covers the remaining broader
+Phase 2.B migration-plan problem before any additional adapter wire-up can be
+authorized.
 
-Phase 2.B currently lacks four required inputs:
+The remaining Phase 2.B migration plan currently lacks four required inputs:
 
 1. **Migration order** — which adapter migrates first; which depends on
    which.
@@ -112,7 +118,8 @@ GC-018 and work order.
 - HN2.b owner map roadmap (parallel filing)
 - HN2.c freeze-release rule roadmap (parallel filing)
 - `.private_reference/legacy/CVF 17.05/REVIEW FOLDER/CVF_17_05_SYSTEM_RECONVERGENCE_STOP_DECISION_2026-05-17.md`
-- GAP discovery memory (`project_gap_discovery_method_2026-05-18.md`)
+- GAP discovery evidence:
+  `docs/reviews/CVF_17_05_LEGACY_ABSORPTION_GAP_LEDGER_2026-05-18.md`
 
 ---
 
@@ -378,9 +385,9 @@ but no Phase 2.B GC-018 may be filed until HN2.b and HN2.c are both closed.
 5. Phase 2.B work order produces the migration plan artifact.
 6. Phase 2.B completion review locks the plan.
 7. Per-surface slice work orders dispatch in stage order.
-8. Update `MEMORY.md` index for Phase 2.B closure; update GAP discovery
-   memory to mark "Phase 2.B migration plan owner/order/done-criterion"
-   as RESOLVED.
+8. Update `CVF_SESSION_MEMORY.md` index for Phase 2.B closure if needed;
+   update the GAP ledger or successor gap record to mark "Phase 2.B migration
+   plan owner/order/done-criterion" as RESOLVED.
 
 ## Acceptance Criteria (for this roadmap)
 
@@ -400,7 +407,7 @@ but no Phase 2.B GC-018 may be filed until HN2.b and HN2.c are both closed.
 Static verification only at filing:
 
 - Markdown structural completeness check.
-- `MEMORY.md` index updated to point at this roadmap.
+- `CVF_SESSION_MEMORY.md` index updated to point at this roadmap if needed.
 - Active review queue updated to add `phase-2b-migration-plan-roadmap`
   entry under `READY_FOR_REBUTTAL`.
 

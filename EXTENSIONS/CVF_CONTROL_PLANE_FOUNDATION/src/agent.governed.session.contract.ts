@@ -1,4 +1,6 @@
 import { computeDeterministicHash } from "../../CVF_v1.9_DETERMINISTIC_REPRODUCIBILITY/core/deterministic.hash";
+import type { Receipt } from "../../CVF_GUARD_CONTRACT/src/contracts/receipt-envelope.contract";
+import { createReceiptEnvelope as wrapReceiptEnvelope } from "../../CVF_GUARD_CONTRACT/src/contracts/receipt-envelope.contract";
 import type { AgentDefinitionRecord } from "./agent.definition.boundary.contract";
 
 export type AgentGovernedRiskLevel = "low" | "medium" | "high" | "critical";
@@ -170,6 +172,8 @@ export interface AgentExecutionAuditReceipt {
   outputHash: string;
   summary: string;
 }
+
+export type AgentExecutionAuditReceiptEnvelope = Receipt<AgentExecutionAuditReceipt>;
 
 export interface AgentGovernedSessionContractDependencies {
   now?: () => string;
@@ -354,6 +358,27 @@ export class AgentGovernedSessionContract {
       outputHash,
       summary: input.outputSummary,
     };
+  }
+
+  createReceiptEnvelope(
+    request: AgentGovernedActionRequest,
+    input: AgentExecutionReceiptInput,
+  ): AgentExecutionAuditReceiptEnvelope {
+    const receipt = this.createReceipt(request, input);
+
+    return wrapReceiptEnvelope({
+      id: receipt.receiptId,
+      issuedAt: receipt.createdAt,
+      source: `control-plane-foundation:agent-governed-session:${receipt.sessionId}:${receipt.taskId}`,
+      payload: receipt,
+      integrityHash: computeDeterministicHash(
+        "cvf-agent-execution-receipt-envelope",
+        receipt.receiptId,
+        receipt.traceId,
+        receipt.inputHash,
+        receipt.outputHash,
+      ),
+    });
   }
 
   private derivePolicyDecision(

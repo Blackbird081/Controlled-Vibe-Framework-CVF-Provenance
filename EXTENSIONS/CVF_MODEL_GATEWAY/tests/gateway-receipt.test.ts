@@ -32,6 +32,45 @@ describe("GatewayReceiptBuilder", () => {
     expect(JSON.stringify(receipt)).not.toContain("raw-token");
   });
 
+  it("wraps gateway receipts in the canonical Phase 1.R envelope", () => {
+    const builder = new GatewayReceiptBuilder(
+      () => new Date("2026-05-16T00:00:00Z"),
+      () => "abc123",
+    );
+
+    const envelope = builder.buildEnvelope({
+      traceId: "trace-envelope",
+      providerId: "dashscope",
+      selectedModelId: "qwen-turbo",
+      decision: "selected",
+      reason: "policy_health_quota_selected",
+      validationState: "passed",
+    });
+
+    expect(envelope.schemaVersion).toBe("1.R.0");
+    expect(envelope.payload.receiptId).toBe(envelope.id);
+    expect(envelope.payload.traceId).toBe("trace-envelope");
+    expect(envelope.source).toBe("model-gateway:gateway-receipt:trace-envelope");
+  });
+
+  it("creates immutable receipt-tier memory records without adding a store", () => {
+    const builder = new GatewayReceiptBuilder(
+      () => new Date("2026-05-16T00:00:00Z"),
+      () => "abc123",
+    );
+
+    const record = builder.buildReceiptMemoryRecord({
+      traceId: "trace-memory",
+      decision: "selected",
+      reason: "selected",
+    });
+
+    expect(record.tierId).toBe("receipt");
+    expect(record.immutable).toBe(true);
+    expect(record.envelope.schemaVersion).toBe("1.R.0");
+    expect(record.envelope.payload.traceId).toBe("trace-memory");
+  });
+
   it("sanitizes credential-like metadata keys recursively", () => {
     expect(sanitizeReceiptMetadata({ token: "abc", nested: { secret: "def", value: 1 } })).toEqual({
       token: "[REDACTED]",

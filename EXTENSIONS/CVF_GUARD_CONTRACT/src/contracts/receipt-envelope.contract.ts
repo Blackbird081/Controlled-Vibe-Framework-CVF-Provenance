@@ -44,6 +44,32 @@ export interface Receipt<TPayload> {
   readonly integrityHash?: string;
 }
 
+export interface ReceiptEnvelopeInput<TPayload> {
+  readonly id: string;
+  readonly issuedAt: string;
+  readonly source: string;
+  readonly payload: TPayload;
+  readonly integrityHash?: string;
+}
+
+/**
+ * Create the canonical Phase 1.R receipt envelope around an existing typed
+ * receipt payload. This helper preserves legacy payload readers because the
+ * original receipt remains intact under `payload`.
+ */
+export function createReceiptEnvelope<TPayload>(
+  input: ReceiptEnvelopeInput<TPayload>,
+): Receipt<TPayload> {
+  return {
+    id: input.id,
+    issuedAt: input.issuedAt,
+    source: input.source,
+    schemaVersion: RECEIPT_SCHEMA_VERSION_1R,
+    payload: input.payload,
+    integrityHash: input.integrityHash,
+  };
+}
+
 // ─── Payload Type Registry ────────────────────────────────────────────────────
 
 /**

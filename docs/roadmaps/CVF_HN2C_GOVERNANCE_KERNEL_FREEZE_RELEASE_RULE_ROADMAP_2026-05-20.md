@@ -72,8 +72,9 @@ In scope:
   inside the policy doc) listing the 12 surfaces and per-surface freeze
   posture, so guards can read it.
 - Updating `CVF_SESSION/ACTIVE_SESSION_STATE.json` `freezePosture` field
-  semantics, with a baseline-recorded change (text only — no new schema
-  field).
+  semantics with a pointer/status string only. Per-surface release state
+  belongs in the freeze-release rule artifact or owner-map update, not as a
+  new state-registry schema.
 - Optionally updating `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md` to
   cite the new policy.
 
@@ -204,8 +205,9 @@ A release must be recorded in:
 - `docs/baselines/CVF_GC018_*_FREEZE_RELEASE_*.md` (GC-018 baseline)
 - HN2.b owner map (update map; new version filed; old map retained as
   superseded)
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json` `freezePosture` field with new
-  per-surface value (text — no new schema field)
+- freeze-release rule artifact or HN2.b owner map with the per-surface release
+  value; `CVF_SESSION/ACTIVE_SESSION_STATE.json` may carry only a text
+  pointer/status string, not a new per-surface schema
 
 `ruleDraft`: A surface released from freeze remains under normal CVF
 governance (rebuttal cycle, GC-018, work order). Release is not exemption.
@@ -342,7 +344,8 @@ HN2.c may be filed until HN2.b closure.
 7. Update `CVF_SESSION/ACTIVE_SESSION_STATE.json` freeze posture semantics
    text (no new schema field).
 8. Update `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md` to cite the rule.
-9. Update `MEMORY.md` index for HN2.c closure.
+9. Update `CVF_SESSION_MEMORY.md` index for HN2.c closure if the active
+   session front door needs a pointer refresh.
 
 ## Acceptance Criteria (for this roadmap)
 
@@ -361,7 +364,7 @@ HN2.c may be filed until HN2.b closure.
 Static verification only at filing:
 
 - Markdown structural completeness check.
-- `MEMORY.md` index updated.
+- `CVF_SESSION_MEMORY.md` index updated if needed.
 - Active review queue updated to add `hn2c-freeze-release-rule-roadmap` entry
   under `READY_FOR_REBUTTAL`.
 

@@ -118,34 +118,49 @@
       "id": "hn2b-owner-map-roadmap",
       "artifactType": "roadmap",
       "path": "docs/roadmaps/CVF_HN2B_GOVERNANCE_KERNEL_OWNER_MAP_ROADMAP_2026-05-20.md",
-      "status": "READY_FOR_REBUTTAL",
+      "status": "CLOSED_OWNER_MAP_LOCKED",
       "requestedReviewer": "Codex",
       "expectedResponsePath": "docs/reviews/CVF_HN2B_GOVERNANCE_KERNEL_OWNER_MAP_CODEX_REBUTTAL_2026-05-20.md",
+      "responsePath": "docs/reviews/CVF_HN2B_GOVERNANCE_KERNEL_OWNER_MAP_CODEX_REBUTTAL_2026-05-20.md",
       "priority": 10,
       "source": "docs/work_orders/CVF_WO_HN2B_OWNER_MAP_REBUTTAL_2026-05-20.md",
-      "notes": "Roadmap filed 2026-05-20 by Claude (orchestrator). Converts HN2.a 12-surface inventory into authoritative owner map with 11-class classification set. Prerequisite for HN2.c and Phase 2.B. Filing-only; no GC-018, no code, no freeze lift."
+      "notes": "HN2.b closed 2026-05-20. GC-018 accepted at docs/baselines/CVF_GC018_HN2B_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md; implementation work order closed at docs/work_orders/CVF_WO_HN2B_GOVERNANCE_KERNEL_OWNER_MAP_IMPLEMENTATION_2026-05-20.md; authoritative owner map locked at docs/reference/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md; completion review at docs/reviews/CVF_HN2B_GOVERNANCE_KERNEL_OWNER_MAP_COMPLETION_2026-05-20.md. Boundary: routing/reference map only, no code/runtime/provider/memory/Maika change, no freeze lift."
     },
     {
       "id": "hn2c-freeze-release-rule-roadmap",
       "artifactType": "roadmap",
       "path": "docs/roadmaps/CVF_HN2C_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE_ROADMAP_2026-05-20.md",
-      "status": "READY_FOR_REBUTTAL",
+      "status": "CLOSED_FREEZE_RELEASE_RULE_BINDING",
       "requestedReviewer": "Codex",
       "expectedResponsePath": "docs/reviews/CVF_HN2C_FREEZE_RELEASE_RULE_CODEX_REBUTTAL_2026-05-20.md",
+      "responsePath": "docs/reviews/CVF_HN2C_FREEZE_RELEASE_RULE_CODEX_REBUTTAL_2026-05-20.md",
       "priority": 11,
       "source": "docs/work_orders/CVF_WO_HN2C_FREEZE_RELEASE_RULE_REBUTTAL_2026-05-20.md",
-      "notes": "Roadmap filed 2026-05-20 by Claude (orchestrator). Codifies freeze-release rule with closed change-class table, 5 release conditions, 4-role authority chain, global-lift prohibition. Depends on HN2.b LOCKED before GC-018. Filing-only; no GC-018, no code, no freeze lift."
+      "notes": "HN2.c closed 2026-05-20 after HN2.b owner map lock. GC-018 accepted at docs/baselines/CVF_GC018_HN2C_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE_2026-05-20.md; implementation work order closed at docs/work_orders/CVF_WO_HN2C_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE_IMPLEMENTATION_2026-05-20.md; binding rule at governance/toolkit/05_OPERATION/CVF_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE.md; completion review at docs/reviews/CVF_HN2C_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE_COMPLETION_2026-05-20.md. Boundary: policy rule only, no mechanical/runtime guard, no doctrine edit, no global freeze lift."
     },
     {
       "id": "phase-2b-migration-plan-roadmap",
       "artifactType": "roadmap",
       "path": "docs/roadmaps/CVF_PHASE_2B_MIGRATION_PLAN_ROADMAP_2026-05-20.md",
-      "status": "READY_FOR_REBUTTAL",
+      "status": "CLOSED_STATIC_MIGRATION_PLAN_LOCKED",
       "requestedReviewer": "Codex",
       "expectedResponsePath": "docs/reviews/CVF_PHASE_2B_MIGRATION_PLAN_CODEX_REBUTTAL_2026-05-20.md",
+      "responsePath": "docs/reviews/CVF_PHASE_2B_MIGRATION_PLAN_CODEX_REBUTTAL_2026-05-20.md",
       "priority": 12,
       "source": "docs/work_orders/CVF_WO_PHASE_2B_MIGRATION_PLAN_REBUTTAL_2026-05-20.md",
-      "notes": "Roadmap filed 2026-05-20 by Claude (orchestrator). Declares 4-input schema (order, owner, done, dependency) for Phase 2.B adapter wire-up; tiered done criterion; per-surface citation rule; bulk migration forbidden. Depends on HN2.b LOCKED + HN2.c BINDING before GC-018. Filing-only; no GC-018, no code, no enumeration of 46 surfaces."
+      "notes": "Phase 2.B migration-plan gap closed 2026-05-20 after HN2.b LOCKED and HN2.c BINDING. GC-018 accepted at docs/baselines/CVF_GC018_PHASE_2B_MIGRATION_PLAN_2026-05-20.md; work order closed at docs/work_orders/CVF_WO_PHASE_2B_MIGRATION_PLAN_IMPLEMENTATION_2026-05-20.md; authoritative static plan at docs/reference/CVF_PHASE_2B_MIGRATION_PLAN_2026-05-20.md; completion review at docs/reviews/CVF_PHASE_2B_MIGRATION_PLAN_COMPLETION_2026-05-20.md. Boundary: 46 primary targets are planned only; no adapter implementation, bulk migration, freeze lift, code/runtime/provider/memory/Maika change, or runtime coherence claim."
+    },
+    {
+      "id": "phase-2b-receipt-critical-path-migration",
+      "artifactType": "roadmap",
+      "path": "docs/roadmaps/CVF_PHASE_2B_RECEIPT_CRITICAL_PATH_MIGRATION_ROADMAP_2026-05-20.md",
+      "status": "CLOSED_RECEIPT_CRITICAL_PATH_MIGRATED",
+      "requestedReviewer": "Codex",
+      "expectedResponsePath": "docs/reviews/CVF_PHASE_2B_RECEIPT_CRITICAL_PATH_MIGRATION_CODEX_REBUTTAL_2026-05-20.md",
+      "responsePath": "docs/reviews/CVF_PHASE_2B_RECEIPT_CRITICAL_PATH_MIGRATION_CODEX_REBUTTAL_2026-05-20.md",
+      "priority": 13,
+      "source": "docs/work_orders/CVF_WO_PHASE_2B_RECEIPT_CRITICAL_PATH_MIGRATION_2026-05-20.md",
+      "notes": "Closed 2026-05-20 as bounded dependency-chain slice E-01 -> E-02 -> E-04 -> M-08. GC-018: docs/baselines/CVF_GC018_PHASE_2B_RECEIPT_CRITICAL_PATH_MIGRATION_2026-05-20.md. Completion: docs/reviews/CVF_PHASE_2B_RECEIPT_CRITICAL_PATH_MIGRATION_COMPLETION_2026-05-20.md. Implemented typed Phase 1.R Receipt<TPayload> wrappers for agent execution receipts, gateway consumption receipts, model gateway receipts, and immutable receipt-tier gateway receipt memory records. Boundary: no broad Phase 2.B bulk migration, provider runtime, Maika change, persistent memory store, live governance proof, public-sync update, or global freeze lift."
     }
   ]
 }
