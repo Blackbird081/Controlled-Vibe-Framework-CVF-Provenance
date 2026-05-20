@@ -67,12 +67,13 @@
       "artifactType": "roadmap_slice",
       "path": "docs/roadmaps/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md",
       "anchor": "#per-slice-section-m",
-      "status": "READY_FOR_REBUTTAL",
+      "status": "REBUTTAL_FILED_NON_BLOCKING_WITH_PRIVACY_GATE",
       "requestedReviewer": "Codex",
       "expectedResponsePath": "docs/reviews/CVF_CDH_M_DELTA_CODEX_REBUTTAL_2026-05-20.md",
+      "responsePath": "docs/reviews/CVF_CDH_M_DELTA_CODEX_REBUTTAL_2026-05-20.md",
       "priority": 6,
       "source": "docs/work_orders/CVF_WO_HN3_CDH_DELTA_META_ROADMAP_2026-05-20.md",
-      "notes": "Maika text-summary deployment proof only; child, health, and photo data cannot serve as low-governance proof."
+      "notes": "Codex rebuttal filed 2026-05-20. NON_BLOCKING_WITH_PRIVACY_GATE: Maika text-summary deployment verification may proceed only through slice-specific GC-018 + work order. Live proof must use deployed Supabase Edge Function invocation with authenticated admin/teacher session, CVF receipt/audit evidence, minimized payload evidence, and explicit abnormal-health privacy posture. No photo/vision, direct provider fallback, public-sync claim, or bundled CDH closure."
     },
     {
       "id": "cdh-h-delta",

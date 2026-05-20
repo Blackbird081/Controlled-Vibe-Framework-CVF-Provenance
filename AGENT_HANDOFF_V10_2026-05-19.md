@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — D/E/F/G lanes closed; M1/C2/D2/H2 closed; Phase 3 W1/W2/W3 closed; Rule C paradox fixed; ALL 6 residual work orders CLOSED (A1/C1/D1/E1/G1/H1); all 8 Review-CVF pain points CLOSED; N1 CLOSED (public commit `d11c772a`); N2 CLOSED_BY_PRIOR_TRANCHE; N3 WITHDRAWN; hardening roadmap rebutted NON_BLOCKING_WITH_SCOPE_REFINEMENT; HN1 CLOSED; HN2.a CLOSED; HN3 CLOSED; four CDH delta slice rebuttals queued.
+Status: ACTIVE — D/E/F/G lanes closed; M1/C2/D2/H2 closed; Phase 3 W1/W2/W3 closed; Rule C paradox fixed; ALL 6 residual work orders CLOSED (A1/C1/D1/E1/G1/H1); all 8 Review-CVF pain points CLOSED; N1 CLOSED (public commit `d11c772a`); N2 CLOSED_BY_PRIOR_TRANCHE; N3 WITHDRAWN; hardening roadmap rebutted NON_BLOCKING_WITH_SCOPE_REFINEMENT; HN1 CLOSED; HN2.a CLOSED; HN3 CLOSED; CDH-M rebutted NON_BLOCKING_WITH_PRIVACY_GATE; three CDH delta slice rebuttals queued.
 
 Latest planning artifacts (read these first if you are resuming Review-CVF closure work):
 
@@ -10,6 +10,7 @@ Latest planning artifacts (read these first if you are resuming Review-CVF closu
 - `docs/work_orders/CVF_WO_HN1_TEMPLATE_LINKAGE_EXEMPTION_FAST_LANE_2026-05-20.md` + `docs/audits/CVF_FAST_LANE_HN1_TEMPLATE_LINKAGE_EXEMPTION_2026-05-20.md` + `docs/reviews/CVF_HN1_TEMPLATE_LINKAGE_EXEMPTION_CLOSURE_REVIEW_2026-05-20.md` (CLOSED — two folder template IDs explicitly exempted; no GC-018; no public-sync)
 - `docs/work_orders/CVF_WO_HN2A_GOVERNANCE_KERNEL_OWNER_INVENTORY_2026-05-20.md` + `docs/reviews/CVF_HN2A_GOVERNANCE_KERNEL_OWNER_INVENTORY_2026-05-20.md` + `docs/reviews/CVF_HN2A_GOVERNANCE_KERNEL_OWNER_INVENTORY_CLOSURE_REVIEW_2026-05-20.md` (CLOSED — 12-surface observation inventory only; no class assignment, no policy text, no GC-018; HN2.b/HN2.c remain separate downstream gates)
 - `docs/work_orders/CVF_WO_HN3_CDH_DELTA_META_ROADMAP_2026-05-20.md` + `docs/roadmaps/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md` + `docs/reviews/CVF_HN3_CDH_DELTA_META_ROADMAP_CLOSURE_REVIEW_2026-05-20.md` (CLOSED — original CDH roadmap marked REPLACED_BY_META; four CDH delta slice rebuttals queued; no GC-018, no implementation)
+- `docs/reviews/CVF_CDH_M_DELTA_CODEX_REBUTTAL_2026-05-20.md` (NON_BLOCKING_WITH_PRIVACY_GATE — CDH-M may proceed only to slice-specific GC-018 + work order for deployed Maika text-summary proof; must include authenticated Supabase admin/teacher invocation, CVF receipt/audit evidence, minimized payload evidence, and explicit abnormal-health privacy posture; no photo/vision, direct provider fallback, public-sync claim, or bundled CDH closure)
 - `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` (CLOSURE EVIDENCE — A/B/C/D/E/F/G/H all CLOSED after 2026-05-20 tranche; supersedes old 4/8 shorthand and is no longer the active next-work steering file)
 - `docs/reviews/CVF_17_05_REVIEW_CVF_RESIDUAL_PAIN_POINTS_ASSESSMENT_2026-05-19.md` (original assessment; see direction codex for corrected posture)
 - `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (6 candidates, REBUTTAL_ACCEPTED, all work orders now CLOSED)
@@ -43,6 +44,9 @@ Current HEAD after HN2.a closure (GC-020):
 
 Current HEAD after HN3 closure (GC-020):
 `b6c0fff0` (docs(hn3): file CDH delta meta roadmap)
+
+Current HEAD after CDH-M rebuttal (GC-020):
+pending sync after rebuttal commit
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
