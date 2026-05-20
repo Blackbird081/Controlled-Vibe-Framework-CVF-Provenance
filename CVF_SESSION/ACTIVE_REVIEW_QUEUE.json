@@ -233,6 +233,28 @@
       "priority": 19,
       "source": "docs/work_orders/CVF_WO_PHASE_2B_MEMORY_TAIL_ADAPTERS_MIGRATION_2026-05-21.md",
       "notes": "Closed 2026-05-21 as bounded memory-tail adapter tranche: E-01 closed -> M-01; M-04 standalone memory-gateway adapter. Codex-only role chain; no Claude participation. GC-018: docs/baselines/CVF_GC018_PHASE_2B_MEMORY_TAIL_ADAPTERS_MIGRATION_2026-05-21.md. Completion: docs/reviews/CVF_PHASE_2B_MEMORY_TAIL_ADAPTERS_MIGRATION_COMPLETION_2026-05-21.md. Boundary: no broad Phase 2.B bulk migration, provider runtime, Maika change, persistent memory store, database schema migration, live governance proof, public-sync update, public catalog claim, Claude review dependency, new memory tier, reinjection runtime expansion, kernel owner replacement, or global freeze lift. Table coverage note: all 46 primary Phase 2.B rows now have bounded adapter/receipt coverage recorded, but this is table coverage only, not runtime coherence or live governance proof."
+    },
+    {
+      "id": "phase-2b-runtime-coherence-roadmap",
+      "artifactType": "roadmap",
+      "path": "docs/roadmaps/CVF_PHASE_2B_RUNTIME_COHERENCE_ROADMAP_2026-05-21.md",
+      "status": "READY_FOR_REBUTTAL",
+      "requestedReviewer": "Codex",
+      "expectedResponsePath": "docs/reviews/CVF_PHASE_2B_RUNTIME_COHERENCE_CODEX_REBUTTAL_2026-05-21.md",
+      "priority": 20,
+      "source": "operator request 2026-05-21",
+      "notes": "Proposed next roadmap after Phase 2.B table coverage: internal runtime coherence only. Chain: RC-01 adapter inventory checksum -> RC-02 internal evidence graph schema -> RC-03 deterministic runtime-coherence harness -> RC-04 cross-family graph validator -> RC-05 negative coherence gates -> RC-06 completion review. Boundary: no live provider call, no Maika proof, no provider runtime expansion, no persistent memory/database/new tier/reinjection expansion, no public claim, no global freeze lift."
+    },
+    {
+      "id": "phase-2b-live-governance-proof-roadmap",
+      "artifactType": "roadmap",
+      "path": "docs/roadmaps/CVF_PHASE_2B_LIVE_GOVERNANCE_PROOF_ROADMAP_2026-05-21.md",
+      "status": "READY_FOR_REBUTTAL_BLOCKED_BY_RUNTIME_COHERENCE",
+      "requestedReviewer": "Codex",
+      "expectedResponsePath": "docs/reviews/CVF_PHASE_2B_LIVE_GOVERNANCE_PROOF_CODEX_REBUTTAL_2026-05-21.md",
+      "priority": 21,
+      "source": "operator request 2026-05-21",
+      "notes": "Proposed separate live-proof roadmap, blocked until runtime coherence completion exists. Chain: LP-01 runtime-coherence completion cited -> LP-02 live key readiness and secret hygiene -> LP-03 live governed execution proof -> LP-04 receipt/coherence graph assertion -> LP-05 bypass/fallback rejection assertion -> LP-06 completion review. Boundary: one narrow provider-backed proof only; no broad provider stability, Maika child-data/photo/vision proof, provider runtime expansion, public claim, or global freeze lift."
     }
   ]
 }

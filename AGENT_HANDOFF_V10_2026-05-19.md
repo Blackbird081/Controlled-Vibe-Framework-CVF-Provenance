@@ -23,6 +23,8 @@ Latest planning artifacts (read these first if you are resuming Review-CVF closu
 - `docs/reviews/CVF_PHASE_2B_IDENTITY_CONTROL_PLANE_ADAPTERS_MIGRATION_COMPLETION_2026-05-21.md` (CLOSED_IDENTITY_CONTROL_PLANE_ADAPTERS_MIGRATION — grouped bounded chains I-01 -> I-02 -> I-03/I-07, I-01 -> I-04 -> I-05, and I-03 -> I-06; additive identity/control-plane snapshots and barrel exports only; no new role taxonomy, provider runtime, Maika, persistent memory, live proof, Claude participation, kernel owner replacement, public claim, or global freeze lift)
 - `docs/reviews/CVF_PHASE_2B_SAFETY_EXTERNAL_POLICY_RISK_FANOUT_MIGRATION_COMPLETION_2026-05-21.md` (CLOSED_SAFETY_EXTERNAL_POLICY_RISK_FANOUT_MIGRATION — grouped bounded chains R-02 -> R-04/R-05/R-15/R-16, R-01 -> R-06/R-07/R-08/R-09/R-10/R-11/R-12, and P-01 -> P-07/P-08; additive safety/external-policy risk snapshots only; no new policy/risk/guard engine, provider runtime, Maika, persistent memory, live proof, Claude participation, kernel owner replacement, public claim, or global freeze lift)
 - `docs/reviews/CVF_PHASE_2B_MEMORY_TAIL_ADAPTERS_MIGRATION_COMPLETION_2026-05-21.md` (CLOSED_MEMORY_TAIL_ADAPTERS_MIGRATION — bounded memory-tail chains E-01 closed -> M-01 and M-04 standalone; additive working-memory and memory-gateway adapter snapshots only; no persistent memory store, new memory tier, reinjection runtime expansion, provider runtime, Maika, live proof, Claude participation, public claim, or global freeze lift)
+- `docs/roadmaps/CVF_PHASE_2B_RUNTIME_COHERENCE_ROADMAP_2026-05-21.md` (READY_FOR_REBUTTAL — next recommended roadmap after table coverage; internal runtime coherence only, no live provider call)
+- `docs/roadmaps/CVF_PHASE_2B_LIVE_GOVERNANCE_PROOF_ROADMAP_2026-05-21.md` (READY_FOR_REBUTTAL_BLOCKED_BY_RUNTIME_COHERENCE — separate live proof roadmap, blocked until runtime coherence closes)
 - `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` (CLOSURE EVIDENCE — A/B/C/D/E/F/G/H all CLOSED after 2026-05-20 tranche; supersedes old 4/8 shorthand and is no longer the active next-work steering file)
 - `docs/reviews/CVF_17_05_REVIEW_CVF_RESIDUAL_PAIN_POINTS_ASSESSMENT_2026-05-19.md` (original assessment; see direction codex for corrected posture)
 - `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (6 candidates, REBUTTAL_ACCEPTED, all work orders now CLOSED)
@@ -83,6 +85,9 @@ Current HEAD after Phase 2.B identity control-plane adapters migration (GC-020):
 
 Current HEAD after Phase 2.B safety external policy risk fanout migration (GC-020):
 `ef280cea` (feat(phase2b): close safety risk fanout adapters)
+
+Current HEAD after Phase 2.B memory tail adapters migration (GC-020):
+`798937b4` (feat(phase2b): close memory tail adapters)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
@@ -798,6 +803,35 @@ provider runtime behavior, Maika, persistent memory, database schema,
 public-sync, public catalog, live governance proof, Claude review dependency,
 new memory tiers, reinjection runtime behavior, kernel owner replacement,
 runtime coherence claims, or global freeze posture.
+
+## Phase 2.B Runtime Coherence / Live Proof Roadmap Split — 2026-05-21
+
+Codex filed two follow-on roadmaps after Phase 2.B bounded table coverage
+closed:
+
+- Runtime coherence roadmap:
+  `docs/roadmaps/CVF_PHASE_2B_RUNTIME_COHERENCE_ROADMAP_2026-05-21.md`
+- Live governance proof roadmap:
+  `docs/roadmaps/CVF_PHASE_2B_LIVE_GOVERNANCE_PROOF_ROADMAP_2026-05-21.md`
+
+Recommended bounded chain:
+
+- Runtime coherence first:
+  `RC-01 -> RC-02 -> RC-03 -> RC-04 -> RC-05 -> RC-06`.
+- Live proof second, blocked until runtime coherence completion exists:
+  `LP-01 -> LP-02 -> LP-03 -> LP-04 -> LP-05 -> LP-06`.
+
+Intent:
+
+- Runtime coherence proves the migrated adapter graph composes internally
+  through existing local contracts and negative coherence gates.
+- Live proof separately proves one narrow provider-backed governed route after
+  coherence is closed.
+
+Boundary: these are roadmap/intake artifacts only. They do not implement the
+runtime-coherence harness, run live provider proof, change provider/Maika
+behavior, add persistent memory or database schema, update public-sync, make a
+public catalog claim, or lift the global freeze.
 
 ## Runtime Maturity Delta M1/C2/D2/H2 Update — 2026-05-19
 

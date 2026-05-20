@@ -646,6 +646,28 @@ catalog claim, live governance proof, Claude review dependency, new memory
 tier, reinjection runtime expansion, kernel owner replacement, runtime
 coherence claim, or global freeze lift.
 
+## Phase 2.B Runtime Coherence / Live Proof Roadmap Split — 2026-05-21
+
+Codex filed two follow-on roadmaps after Phase 2.B table adapter coverage
+closed:
+
+- Runtime coherence:
+  `docs/roadmaps/CVF_PHASE_2B_RUNTIME_COHERENCE_ROADMAP_2026-05-21.md`
+- Live governance proof:
+  `docs/roadmaps/CVF_PHASE_2B_LIVE_GOVERNANCE_PROOF_ROADMAP_2026-05-21.md`
+
+Recommended order:
+
+1. Close runtime coherence first: `RC-01 -> RC-02 -> RC-03 -> RC-04 -> RC-05
+   -> RC-06`.
+2. Close live proof second only after runtime coherence completion exists:
+   `LP-01 -> LP-02 -> LP-03 -> LP-04 -> LP-05 -> LP-06`.
+
+Boundary: these are roadmap/intake artifacts only. They do not implement the
+runtime-coherence harness, do not run live provider proof, do not change
+provider/Maika/memory/database behavior, do not update public-sync, and do not
+lift the global freeze.
+
 ## Claim Boundary
 
 This artifact establishes a governed session-memory front door and machine
