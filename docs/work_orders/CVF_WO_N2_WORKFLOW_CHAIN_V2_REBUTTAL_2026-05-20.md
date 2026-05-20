@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED
 
 docType: work_order
 
@@ -17,7 +17,9 @@ Predecessor:
 - `docs/roadmaps/CVF_POST_RESIDUAL_CLOSURE_NEXT_ROADMAP_2026-05-20.md` (REBUTTAL_FILED_NON_BLOCKING_WITH_GATE_UPDATE)
 - `docs/reviews/CVF_POST_RESIDUAL_CLOSURE_NEXT_ROADMAP_CODEX_REBUTTAL_2026-05-20.md` (Codex verdict on N2: NON_BLOCKING_AS_REBUTTAL_ONLY_WITH_QUEUE_CORRECTION)
 - `docs/roadmaps/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_2026-05-19.md` (READY_FOR_REBUTTAL since 2026-05-19; queue priority 2)
-- `docs/reviews/CVF_WORKFLOW_CHAIN_GOVERNANCE_PROPOSAL_REVIEWER_REBUTTAL_2026-05-19.md` (first-round rebuttal on V1 that triggered V2)
+- `docs/roadmaps/CVF_WORKFLOW_CHAIN_GOVERNANCE_PROPOSAL_2026-05-19.md`
+  (`## Reviewer Rebuttal — 2026-05-19` section; first-round rebuttal on V1
+  that triggered V2)
 - `docs/reviews/CVF_N1_PUBLIC_SYNC_CATALOG_UPDATE_CLOSURE_REVIEW_2026-05-20.md` (N1 closed at public commit `d11c772a`)
 
 Authority chain: Codex rebuttal on the post-residual roadmap accepted N2 as
@@ -109,8 +111,9 @@ Read in order:
 
 1. `docs/roadmaps/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_2026-05-19.md` —
    the artifact under review.
-2. `docs/reviews/CVF_WORKFLOW_CHAIN_GOVERNANCE_PROPOSAL_REVIEWER_REBUTTAL_2026-05-19.md` —
-   first-round rebuttal that triggered V2.
+2. `docs/roadmaps/CVF_WORKFLOW_CHAIN_GOVERNANCE_PROPOSAL_2026-05-19.md`
+   `## Reviewer Rebuttal — 2026-05-19` section — first-round rebuttal that
+   triggered V2.
 3. The four governance/compat surfaces named by V2 candidates:
    - `governance/compat/check_workflow_orchestration_guard.py` (C1 target —
      public-sync only; do not modify, just read for context)
@@ -255,8 +258,8 @@ All of the following must be true before this work order is CLOSED:
 
 1. `docs/roadmaps/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_2026-05-19.md` —
    the artifact under review.
-2. `docs/reviews/CVF_WORKFLOW_CHAIN_GOVERNANCE_PROPOSAL_REVIEWER_REBUTTAL_2026-05-19.md` —
-   first-round rebuttal on V1.
+2. `docs/roadmaps/CVF_WORKFLOW_CHAIN_GOVERNANCE_PROPOSAL_2026-05-19.md`
+   `## Reviewer Rebuttal — 2026-05-19` section — first-round rebuttal on V1.
 3. `docs/roadmaps/CVF_POST_RESIDUAL_CLOSURE_NEXT_ROADMAP_2026-05-20.md` —
    N2 scope.
 4. `docs/reviews/CVF_POST_RESIDUAL_CLOSURE_NEXT_ROADMAP_CODEX_REBUTTAL_2026-05-20.md` —

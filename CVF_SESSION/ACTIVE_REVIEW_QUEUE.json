@@ -20,12 +20,13 @@
       "id": "workflow-chain-governance-v2",
       "artifactType": "roadmap",
       "path": "docs/roadmaps/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_2026-05-19.md",
-      "status": "READY_FOR_REBUTTAL",
+      "status": "REBUTTAL_FILED_CLOSED_BY_PRIOR_TRANCHE",
       "requestedReviewer": "Codex",
       "expectedResponsePath": "docs/reviews/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_CODEX_REBUTTAL_2026-05-19.md",
+      "responsePath": "docs/reviews/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_CODEX_REBUTTAL_2026-05-19.md",
       "priority": 2,
       "source": "AGENT_HANDOFF_V10_2026-05-19.md",
-      "notes": "Second reviewer-role rebuttal required before any accepted candidate proceeds to GC-018 or implementation."
+      "notes": "Codex N2 rebuttal filed 2026-05-20. C1/C2/C3/C4 are all CLOSED_BY_PRIOR_TRANCHE: C1 public-sync hardening closed at public commit e04b4f00; C2/C3/C4 closed with GC-018 baselines, guards, tests, hook wiring, and completion reviews. No new V2 GC-018 or implementation should be dispatched."
     },
     {
       "id": "review-cvf-residual-closure",

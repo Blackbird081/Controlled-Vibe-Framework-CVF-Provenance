@@ -90,6 +90,6 @@
     "blocked_work_classes",
     "next_allowed_move"
   ],
-  "nextAllowedMove": "N1 CLOSED at public-sync commit d11c772a. N2 + N3 work orders DISPATCHED 2026-05-20 — Codex may execute either independently (do not bundle). N2 at docs/work_orders/CVF_WO_N2_WORKFLOW_CHAIN_V2_REBUTTAL_2026-05-20.md: Reviewer-role rebuttal cycle on V2 workflow-chain roadmap (4 candidates C1/C2/C3/C4); no implementation, no GC-018 from this tranche. N3 at docs/work_orders/CVF_WO_N3_SKILL_CORPUS_REPAIR_ROADMAP_2026-05-20.md: Orchestrator-author files skill corpus repair roadmap with classified inventory; downstream implementation gated by fresh rebuttal+GC-018+work order. Do not reopen any A-H pain point.",
+  "nextAllowedMove": "N2 workflow-chain V2 rebuttal filed at docs/reviews/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_CODEX_REBUTTAL_2026-05-19.md with disposition CLOSED_BY_PRIOR_TRANCHE for C1/C2/C3/C4; queue item workflow-chain-governance-v2 updated. N3 remains dispatched and independently executable at docs/work_orders/CVF_WO_N3_SKILL_CORPUS_REPAIR_ROADMAP_2026-05-20.md: file skill corpus repair roadmap with classified inventory only; downstream implementation requires fresh rebuttal+GC-018+work order. Do not reopen any A-H pain point.",
   "lastUpdated": "2026-05-20"
 }
