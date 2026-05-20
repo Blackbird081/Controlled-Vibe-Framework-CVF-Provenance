@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — D/E/F/G lanes closed; M1/C2/D2/H2 closed; Phase 3 W1/W2/W3 closed; Rule C paradox fixed; ALL 6 residual work orders CLOSED (A1/C1/D1/E1/G1/H1); all 8 Review-CVF pain points CLOSED; post-residual-closure next roadmap rebuttal filed NON_BLOCKING_WITH_GATE_UPDATE.
+Status: ACTIVE — D/E/F/G lanes closed; M1/C2/D2/H2 closed; Phase 3 W1/W2/W3 closed; Rule C paradox fixed; ALL 6 residual work orders CLOSED (A1/C1/D1/E1/G1/H1); all 8 Review-CVF pain points CLOSED; post-residual roadmap rebutted NON_BLOCKING_WITH_GATE_UPDATE; N1 public-sync catalog update work order DISPATCHED (no GC-018, Fast-Lane under GC-024).
 
 Latest planning artifacts (read these first if you are resuming Review-CVF closure work):
 
@@ -13,6 +13,7 @@ Latest planning artifacts (read these first if you are resuming Review-CVF closu
 - `docs/reviews/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md` (Codex rebuttal: MIXED — applied corrections; A1/C1/D1/E1/G1/H1 all now CLOSED)
 - Closure reviews: `docs/reviews/CVF_{A1,C1,D1,E1,G1,H1}_*_CLOSURE_REVIEW_2026-05-20.md` (6 files, all CLOSED)
 - `docs/roadmaps/CVF_POST_RESIDUAL_CLOSURE_NEXT_ROADMAP_2026-05-20.md` + `docs/reviews/CVF_POST_RESIDUAL_CLOSURE_NEXT_ROADMAP_CODEX_REBUTTAL_2026-05-20.md` (NON_BLOCKING_WITH_GATE_UPDATE — N1 public-sync catalog update accepted as public-safe GC-024/Fast-Lane maintenance; N2 workflow-chain V2 remains rebuttal-only and is queue priority 2; N3 skill corpus repair remains roadmap-only with downstream rebuttal+GC-018+work order required before implementation)
+- `docs/work_orders/CVF_WO_N1_PUBLIC_SYNC_CATALOG_UPDATE_2026-05-20.md` (DISPATCHED — Codex executes public-sync catalog update under GC-024/Fast-Lane; no GC-018 required; public-sync remote verification mandatory before any commit)
 
 Remote tracking branch: `origin/main`
 
@@ -25,7 +26,7 @@ Provenance continuity base for this handoff: `e91b41fd`.
 Provenance HEAD before Lane G implementation:
 `ae492d7dcd9a7b48948521a5160ee7668fa8fa4f`.
 
-Current HEAD (GC-020): `4f7953d6` (docs(roadmap): file post-residual-closure next roadmap READY_FOR_REBUTTAL)
+Current HEAD (GC-020): `167c4a83` (docs(rebuttal): Codex rebuttal on post-residual-closure next roadmap NON_BLOCKING_WITH_GATE_UPDATE) — parent SHA for upcoming N1 dispatch commit
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
