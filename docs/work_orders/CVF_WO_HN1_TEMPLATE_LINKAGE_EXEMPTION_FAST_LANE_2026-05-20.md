@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED
 
 docType: work_order
 
@@ -228,24 +228,24 @@ The closure review must confirm:
 
 All of the following must be true before this work order is CLOSED:
 
-- [ ] Pre-flight inventory matches expected 60/58/2/0 (or stop-and-return
+- [x] Pre-flight inventory matches expected 60/58/2/0 (or stop-and-return
       condition was correctly triggered).
-- [ ] Both unmapped IDs (`individual_skills_folder`, `vibe_workflow_folder`)
+- [x] Both unmapped IDs (`individual_skills_folder`, `vibe_workflow_folder`)
       have a disposition recorded in the audit packet.
-- [ ] If exemption applied: `skill-template-map.json` parses cleanly with
+- [x] If exemption applied: `skill-template-map.json` parses cleanly with
       `exemptTemplateIds` (and optional `linkagePolicy`) added.
-- [ ] Fast-Lane audit packet filed at
+- [x] Fast-Lane audit packet filed at
       `docs/audits/CVF_FAST_LANE_HN1_TEMPLATE_LINKAGE_EXEMPTION_2026-05-20.md`.
-- [ ] Closure review filed at
+- [x] Closure review filed at
       `docs/reviews/CVF_HN1_TEMPLATE_LINKAGE_EXEMPTION_CLOSURE_REVIEW_2026-05-20.md`.
-- [ ] No `.ts` file modified; no skill/template content added; no runtime
+- [x] No `.ts` file modified; no skill/template content added; no runtime
       route touched.
-- [ ] No public-sync push.
-- [ ] No GC-018 filed.
-- [ ] No A–H pain-point reopen.
-- [ ] Pre-commit hook PASS (11/11).
-- [ ] Pre-push hook PASS (43/43).
-- [ ] Handoff GC-020 HEAD SHA synced after closure commit.
+- [x] No public-sync push.
+- [x] No GC-018 filed.
+- [x] No A–H pain-point reopen.
+- [x] Pre-commit hook PASS (11/11).
+- [x] Pre-push hook PASS (43/43).
+- [x] Handoff GC-020 HEAD SHA synced after closure commit.
 
 ---
 
@@ -415,17 +415,17 @@ before proceeding.
 
 ## Closure Checklist
 
-- [ ] Pre-flight inventory matches 60/58/2/0.
-- [ ] Per-ID disposition recorded for both IDs.
-- [ ] JSON edits (if any) parse cleanly.
-- [ ] Audit packet filed.
-- [ ] Closure review filed.
-- [ ] No `.ts` modified; no skill/template content added.
-- [ ] No public-sync push.
-- [ ] No GC-018.
-- [ ] No A–H pain-point reopen.
-- [ ] Session state + handoff + queue updated.
-- [ ] Pre-commit + pre-push hooks PASS.
+- [x] Pre-flight inventory matches 60/58/2/0.
+- [x] Per-ID disposition recorded for both IDs.
+- [x] JSON edits (if any) parse cleanly.
+- [x] Audit packet filed.
+- [x] Closure review filed.
+- [x] No `.ts` modified; no skill/template content added.
+- [x] No public-sync push.
+- [x] No GC-018.
+- [x] No A–H pain-point reopen.
+- [x] Session state + handoff + queue updated.
+- [x] Pre-commit + pre-push hooks PASS.
 
 ---
 
