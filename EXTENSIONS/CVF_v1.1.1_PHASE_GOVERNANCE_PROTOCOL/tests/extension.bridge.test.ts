@@ -6,7 +6,11 @@
  */
 
 import { describe, it, expect, beforeEach } from 'vitest';
-import { ExtensionBridge } from '../governance/guard_runtime/wiring/extension.bridge.js';
+import {
+  EXTENSION_BRIDGE_ADAPTER_VERSION,
+  ExtensionBridge,
+  buildExtensionBridgeAdapterSnapshot,
+} from '../governance/guard_runtime/wiring/extension.bridge.js';
 import type { GuardPipelineResult } from '../governance/guard_runtime/guard.runtime.types.js';
 
 function mockGuardResult(decision: 'ALLOW' | 'BLOCK' | 'ESCALATE', blockedBy?: string): GuardPipelineResult {
@@ -79,6 +83,24 @@ describe('ExtensionBridge', () => {
       expect(bridge.getExtensionCount()).toBe(0);
       bridge.registerExtension({ id: 'v1', name: 'A', version: '1', capabilities: [], dependencies: [] });
       expect(bridge.getExtensionCount()).toBe(1);
+    });
+
+    it('builds a bounded extension-bridge adapter snapshot without executing workflow steps', () => {
+      bridge.registerExtension({ id: 'v1', name: 'A', version: '1', capabilities: [], dependencies: [] });
+      bridge.registerExtension({ id: 'v2', name: 'B', version: '1', capabilities: [], dependencies: ['missing'] });
+      bridge.setExtensionStatus('v1', 'OFFLINE');
+      bridge.createWorkflow({ id: 'wf-adapter', name: 'Adapter snapshot', steps: [] });
+
+      const snapshot = bridge.buildAdapterSnapshot();
+
+      expect(snapshot).toEqual(buildExtensionBridgeAdapterSnapshot(bridge));
+      expect(snapshot.version).toBe(EXTENSION_BRIDGE_ADAPTER_VERSION);
+      expect(snapshot.source).toBe('phase-governance:extension-bridge');
+      expect(snapshot.extensionCount).toBe(2);
+      expect(snapshot.workflowCount).toBe(1);
+      expect(snapshot.offlineExtensionCount).toBe(1);
+      expect(snapshot.degradedExtensionCount).toBe(1);
+      expect(snapshot.workflowStatusCounts.CREATED).toBe(1);
     });
   });
 

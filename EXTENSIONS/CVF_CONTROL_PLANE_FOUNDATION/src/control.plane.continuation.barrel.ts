@@ -71,10 +71,13 @@ export type {
 } from "./rag.context.engine.convergence.batch.contract";
 
 export {
+  AGENT_DEFINITION_ADAPTER_VERSION,
   AgentDefinitionBoundaryContract,
+  buildAgentDefinitionAdapterSnapshot,
   createAgentDefinitionBoundaryContract,
 } from "./agent.definition.boundary.contract";
 export type {
+  AgentDefinitionAdapterSnapshot,
   AgentRole,
   CapabilityValidationStatus,
   ScopeResolutionStatus,
@@ -265,8 +268,14 @@ export type {
   ModelGatewayBoundaryBatchContractDependencies,
 } from "./model.gateway.boundary.batch.contract";
 
-export { validateCheckpoint } from "./continuity.checkpoint.contract";
+export {
+  CONTINUITY_CHECKPOINT_ADAPTER_VERSION,
+  buildContinuityCheckpointAdapterSnapshot,
+  validateCheckpoint,
+  validateCheckpointWithAdapter,
+} from "./continuity.checkpoint.contract";
 export type {
+  ContinuityCheckpointAdapterSnapshot,
   ContinuityArtifactRole,
   ContinuityCheckpoint,
   ContinuityCheckpointValidation,

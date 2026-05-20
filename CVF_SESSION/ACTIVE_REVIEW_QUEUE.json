@@ -197,6 +197,18 @@
       "priority": 16,
       "source": "docs/work_orders/CVF_WO_PHASE_2B_POLICY_RISK_CHAIN_ADAPTERS_MIGRATION_2026-05-20.md",
       "notes": "Closed 2026-05-20 as grouped bounded policy/risk adapter tranche: P-01 -> P-06 -> P-05; P-01 -> P-02/P-03 -> P-04; R-02 -> R-03 -> R-13/R-14. Codex-only role chain; no Claude participation. GC-018: docs/baselines/CVF_GC018_PHASE_2B_POLICY_RISK_CHAIN_ADAPTERS_MIGRATION_2026-05-20.md. Completion: docs/reviews/CVF_PHASE_2B_POLICY_RISK_CHAIN_ADAPTERS_MIGRATION_COMPLETION_2026-05-20.md. Boundary: no broad Phase 2.B bulk migration, provider runtime, Maika change, persistent memory store, database schema migration, live governance proof, public-sync update, public catalog claim, Claude review dependency, kernel owner replacement, or global freeze lift."
+    },
+    {
+      "id": "phase-2b-identity-control-plane-adapters-migration",
+      "artifactType": "roadmap",
+      "path": "docs/roadmaps/CVF_PHASE_2B_IDENTITY_CONTROL_PLANE_ADAPTERS_MIGRATION_ROADMAP_2026-05-21.md",
+      "status": "CLOSED_IDENTITY_CONTROL_PLANE_ADAPTERS_MIGRATION",
+      "requestedReviewer": "Codex",
+      "expectedResponsePath": "docs/reviews/CVF_PHASE_2B_IDENTITY_CONTROL_PLANE_ADAPTERS_MIGRATION_CODEX_REBUTTAL_2026-05-21.md",
+      "responsePath": "docs/reviews/CVF_PHASE_2B_IDENTITY_CONTROL_PLANE_ADAPTERS_MIGRATION_CODEX_REBUTTAL_2026-05-21.md",
+      "priority": 17,
+      "source": "docs/work_orders/CVF_WO_PHASE_2B_IDENTITY_CONTROL_PLANE_ADAPTERS_MIGRATION_2026-05-21.md",
+      "notes": "Closed 2026-05-21 as grouped bounded identity/control-plane adapter tranche: I-01 -> I-02 -> I-03/I-07; I-01 -> I-04 -> I-05; I-03 -> I-06. Codex-only role chain; no Claude participation. GC-018: docs/baselines/CVF_GC018_PHASE_2B_IDENTITY_CONTROL_PLANE_ADAPTERS_MIGRATION_2026-05-21.md. Completion: docs/reviews/CVF_PHASE_2B_IDENTITY_CONTROL_PLANE_ADAPTERS_MIGRATION_COMPLETION_2026-05-21.md. Boundary: no broad Phase 2.B bulk migration, provider runtime, Maika change, persistent memory store, database schema migration, live governance proof, public-sync update, public catalog claim, Claude review dependency, new role taxonomy, kernel owner replacement, or global freeze lift."
     }
   ]
 }

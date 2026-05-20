@@ -534,6 +534,40 @@ persistent memory store, database schema migration, public-sync update, public
 catalog claim, live governance proof, Claude review dependency, kernel owner
 replacement, runtime coherence claim, or global freeze lift.
 
+## Phase 2.B Identity Control Plane Adapters Migration — 2026-05-21
+
+Codex closed the grouped bounded Phase 2.B identity/control-plane adapter
+tranche using a Codex-only workflow role chain with no Claude participation:
+
+- `I-01 -> I-02 -> I-03 / I-07`
+- `I-01 -> I-04 -> I-05`
+- `I-03 -> I-06`
+
+Closed completion:
+
+- `docs/reviews/CVF_PHASE_2B_IDENTITY_CONTROL_PLANE_ADAPTERS_MIGRATION_COMPLETION_2026-05-21.md`
+
+Implemented:
+
+- agent-definition boundary adapter snapshot;
+- design-plan and orchestration adapter snapshots;
+- continuity checkpoint adapter snapshot and continuation barrel exports;
+- coordination barrel adapter snapshot;
+- phase-governance extension-bridge adapter snapshot.
+
+Verification:
+
+- Control Plane Foundation targeted adapter tests passed (`5/5`), full package
+  tests passed (`3543/3543`), and `npm run check` passed.
+- Phase Governance Protocol targeted extension bridge tests passed (`34/34`),
+  full package check passed (`527/527`), and build passed.
+
+Boundary: no broad Phase 2.B bulk migration, provider runtime, Maika change,
+persistent memory store, database schema migration, public-sync update, public
+catalog claim, live governance proof, Claude review dependency, new role
+taxonomy, kernel owner replacement, runtime coherence claim, or global freeze
+lift.
+
 ## Claim Boundary
 
 This artifact establishes a governed session-memory front door and machine

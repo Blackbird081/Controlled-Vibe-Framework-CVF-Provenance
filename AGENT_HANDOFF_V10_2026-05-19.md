@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — D/E/F/G lanes closed; M1/C2/D2/H2 closed; Phase 3 W1/W2/W3 closed; Rule C paradox fixed; ALL 6 residual work orders CLOSED (A1/C1/D1/E1/G1/H1); all 8 Review-CVF pain points CLOSED; N1 CLOSED (public commit `d11c772a`); N2 CLOSED_BY_PRIOR_TRANCHE; N3 WITHDRAWN; hardening roadmap rebutted NON_BLOCKING_WITH_SCOPE_REFINEMENT; HN1 CLOSED; HN2.a CLOSED; HN2.b CLOSED; HN2.c CLOSED; HN3 CLOSED; CDH-M narrow deployed value proof CLOSED with temp-CVF-tunnel boundary; CDH-H/CDH-C/CDH-D rebuttals FILED with no implementation authorized; Phase 2.B static plan plus receipt critical path, execution bridge receipt chain, audit/trace/task receipt chains, and policy/risk adapter chains CLOSED with bounded-slice boundaries.
+Status: ACTIVE — D/E/F/G lanes closed; M1/C2/D2/H2 closed; Phase 3 W1/W2/W3 closed; Rule C paradox fixed; ALL 6 residual work orders CLOSED (A1/C1/D1/E1/G1/H1); all 8 Review-CVF pain points CLOSED; N1 CLOSED (public commit `d11c772a`); N2 CLOSED_BY_PRIOR_TRANCHE; N3 WITHDRAWN; hardening roadmap rebutted NON_BLOCKING_WITH_SCOPE_REFINEMENT; HN1 CLOSED; HN2.a CLOSED; HN2.b CLOSED; HN2.c CLOSED; HN3 CLOSED; CDH-M narrow deployed value proof CLOSED with temp-CVF-tunnel boundary; CDH-H/CDH-C/CDH-D rebuttals FILED with no implementation authorized; Phase 2.B static plan plus receipt critical path, execution bridge receipt chain, audit/trace/task receipt chains, policy/risk adapter chains, and identity/control-plane adapter chains CLOSED with bounded-slice boundaries.
 
 Latest planning artifacts (read these first if you are resuming Review-CVF closure work):
 
@@ -20,6 +20,7 @@ Latest planning artifacts (read these first if you are resuming Review-CVF closu
 - `docs/roadmaps/CVF_HN2C_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE_ROADMAP_2026-05-20.md` + `docs/reviews/CVF_HN2C_FREEZE_RELEASE_RULE_CODEX_REBUTTAL_2026-05-20.md` (NON_BLOCKING_WITH_PREREQUISITE_GATE — HN2.b LOCKED required before HN2.c GC-018; active state carries pointer/status text only; no rule artifact, guard, doctrine edit, or freeze lift authorized now)
 - `docs/roadmaps/CVF_PHASE_2B_MIGRATION_PLAN_ROADMAP_2026-05-20.md` + `docs/reviews/CVF_PHASE_2B_MIGRATION_PLAN_CODEX_REBUTTAL_2026-05-20.md` (NON_BLOCKING_WITH_BOUNDARY_REFINEMENT — bounded fixture-driven Phase 2.B already delivered; this covers remaining broader migration-plan schema only; HN2.b LOCKED + HN2.c BINDING required before Phase 2.B GC-018)
 - `docs/reviews/CVF_PHASE_2B_POLICY_RISK_CHAIN_ADAPTERS_MIGRATION_COMPLETION_2026-05-20.md` (CLOSED_POLICY_RISK_CHAIN_ADAPTERS_MIGRATION — grouped bounded chains P-01 -> P-06 -> P-05, P-01 -> P-02/P-03 -> P-04, and R-02 -> R-03 -> R-13/R-14; additive policy/risk adapter snapshots only; no provider runtime, Maika, persistent memory, live proof, Claude participation, kernel owner replacement, public claim, or global freeze lift)
+- `docs/reviews/CVF_PHASE_2B_IDENTITY_CONTROL_PLANE_ADAPTERS_MIGRATION_COMPLETION_2026-05-21.md` (CLOSED_IDENTITY_CONTROL_PLANE_ADAPTERS_MIGRATION — grouped bounded chains I-01 -> I-02 -> I-03/I-07, I-01 -> I-04 -> I-05, and I-03 -> I-06; additive identity/control-plane snapshots and barrel exports only; no new role taxonomy, provider runtime, Maika, persistent memory, live proof, Claude participation, kernel owner replacement, public claim, or global freeze lift)
 - `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` (CLOSURE EVIDENCE — A/B/C/D/E/F/G/H all CLOSED after 2026-05-20 tranche; supersedes old 4/8 shorthand and is no longer the active next-work steering file)
 - `docs/reviews/CVF_17_05_REVIEW_CVF_RESIDUAL_PAIN_POINTS_ASSESSMENT_2026-05-19.md` (original assessment; see direction codex for corrected posture)
 - `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (6 candidates, REBUTTAL_ACCEPTED, all work orders now CLOSED)
@@ -71,6 +72,9 @@ Current HEAD after Phase 2.B execution bridge receipt chain migration (GC-020):
 
 Current HEAD after Phase 2.B audit trace task receipt chains migration (GC-020):
 `e34e43c1` (feat(phase2b): close audit trace task receipt chains)
+
+Current HEAD after Phase 2.B policy risk chain adapters migration (GC-020):
+`d1e355f6` (feat(phase2b): close policy risk chain adapters)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
@@ -668,6 +672,43 @@ Boundary: this is not broad Phase 2.B bulk migration. It does not change
 provider runtime behavior, Maika, persistent memory, database schema,
 public-sync, public catalog, live governance proof, Claude review dependency,
 kernel owner replacement, runtime coherence claims, or global freeze posture.
+
+## Phase 2.B Identity Control Plane Adapters Migration — 2026-05-21
+
+Codex closed the grouped bounded Phase 2.B identity/control-plane adapter
+tranche through a Codex-only role chain, with no Claude participation:
+
+- `I-01 -> I-02 -> I-03 / I-07`
+- `I-01 -> I-04 -> I-05`
+- `I-03 -> I-06`
+
+Completion review:
+
+- `docs/reviews/CVF_PHASE_2B_IDENTITY_CONTROL_PLANE_ADAPTERS_MIGRATION_COMPLETION_2026-05-21.md`
+
+Implemented:
+
+- Agent-definition boundary adapter snapshot.
+- Design-plan and orchestration adapter snapshots.
+- Continuity checkpoint adapter snapshot and continuation barrel exports.
+- Coordination barrel adapter snapshot.
+- Phase-governance extension-bridge adapter snapshot.
+
+Verification:
+
+- Control Plane Foundation targeted adapter tests: 5 passed.
+- Control Plane Foundation `npm test`: 131 files, 3543 passed; `npm run
+  check`: PASS.
+- Phase Governance Protocol targeted extension bridge tests: 34 passed.
+- Phase Governance Protocol `npm run check`: 13 files, 527 passed; build:
+  PASS.
+- Docs governance and markdown structural checks: PASS.
+
+Boundary: this is not broad Phase 2.B bulk migration. It does not change
+provider runtime behavior, Maika, persistent memory, database schema,
+public-sync, public catalog, live governance proof, Claude review dependency,
+new role taxonomy, kernel owner replacement, runtime coherence claims, or
+global freeze posture.
 
 ## Runtime Maturity Delta M1/C2/D2/H2 Update — 2026-05-19
 
