@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED
 
 docType: work_order
 
@@ -16,7 +16,7 @@ Predecessor:
 
 - `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (Candidate H1, corrected after rebuttal)
 - `docs/reviews/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md` (Codex verdict: NON_BLOCKING_WITH_GATE_UPDATE)
-- `docs/reviews/CVF_RUNTIME_MATURITY_H2_AUDIT_MEMORY_COMPLETION_2026-05-19.md` (H2 closed)
+- `docs/reviews/CVF_H2_AUDIT_MEMORY_POLICY_REFINEMENT_COMPLETION_2026-05-19.md` (H2 closed)
 
 Prerequisite update (Codex rebuttal 2026-05-19): original prerequisite cited
 CDH Candidate H rebuttal. That requirement is superseded — H2 delta evidence
@@ -235,7 +235,7 @@ All of the following must be true before this work order is CLOSED:
 
 - Authorized by: Codex rebuttal (H1: NON_BLOCKING_WITH_GATE_UPDATE); prerequisite updated to H2 evidence 2026-05-20
 - Roadmap: `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (REBUTTAL_ACCEPTED)
-- Predecessor: `docs/reviews/CVF_RUNTIME_MATURITY_H2_AUDIT_MEMORY_COMPLETION_2026-05-19.md` (H2 CLOSED)
+- Predecessor: `docs/reviews/CVF_H2_AUDIT_MEMORY_POLICY_REFINEMENT_COMPLETION_2026-05-19.md` (H2 CLOSED)
 - Orchestrator: Claude; Worker: Codex; Operator approval required for GC-018
 
 ---
@@ -251,7 +251,7 @@ All of the following must be true before this work order is CLOSED:
 
 1. `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` — H1 scope and Path A/B options
 2. `docs/reviews/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md` — H1 verdict and path-choice guards
-3. `docs/reviews/CVF_RUNTIME_MATURITY_H2_AUDIT_MEMORY_COMPLETION_2026-05-19.md` — H2 evidence (audit + receipt tiers already done)
+3. `docs/reviews/CVF_H2_AUDIT_MEMORY_POLICY_REFINEMENT_COMPLETION_2026-05-19.md` — H2 evidence (audit + receipt tiers already done)
 4. `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/` — existing learning plane contracts
 
 ---

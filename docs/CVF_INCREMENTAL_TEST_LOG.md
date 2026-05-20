@@ -2351,3 +2351,37 @@ Utility and guard:
   - Lane H audit memory receipt is post-response only; provider prompt does not contain `GOVERNANCE_AUDIT_MEMORY_RECEIPT` (asserted in route test).
   - Guard Contract memory continuity contracts imported from extension source path, not installed barrel — packaging cleanup deferred to future tranche.
   - Public catalog updated in provenance `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md` and public-sync `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`.
+
+---
+
+## [2026-05-20] Batch: Review-CVF Residual Pain Point Closure A1/C1/D1/E1/G1/H1
+
+- Change reference: provenance working tree, residual work orders closed under
+  `docs/work_orders/CVF_WO_RESIDUAL_*_2026-05-20.md`
+- Impacted scope:
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/command.registry.ts`
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/arg.parser.ts`
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/types.ts`
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/governance-reliability-metrics.ts`
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/tests/commands/`
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/tests/command.registry.test.ts`
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/tests/governance-reliability-metrics.test.ts`
+  - `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-tier-classifier.contract.ts`
+  - `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/memory-tier-classifier.test.ts`
+  - `docs/baselines/CVF_GC018_*_2026-05-20.md`
+  - `docs/reviews/CVF_*_CLOSURE_REVIEW_2026-05-20.md`
+  - `docs/reference/CVF_AGENT_ROLE_CATALOG.md`
+- Tests executed:
+  - `npm test` in `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI` -> PASS, 10 files / 97 tests
+  - `npm run check` in `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI` -> PASS
+  - `npm test` in `EXTENSIONS/CVF_MODEL_GATEWAY` -> PASS, 17 files / 59 tests
+  - `npm run check` in `EXTENSIONS/CVF_MODEL_GATEWAY` -> PASS
+  - `npm test` in `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION` -> PASS, 47 files / 1512 tests
+  - `npm run check` in `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION` -> PASS
+  - `python governance/compat/run_local_governance_hook_chain.py --hook pre-commit --parallel --max-workers 6` -> PASS, 11/11
+  - `python governance/compat/run_local_governance_hook_chain.py --hook pre-push --parallel --max-workers 8` -> PASS, 43/43
+- Notes/Risks:
+  - C1 wrappers are read-only and do not add provider execution semantics.
+  - D1 closes by explicit method-placement rejection; `llm.adapter.interface.ts`
+    remains unchanged.
+  - H1 ships Path B only; no runtime memory wiring is claimed.

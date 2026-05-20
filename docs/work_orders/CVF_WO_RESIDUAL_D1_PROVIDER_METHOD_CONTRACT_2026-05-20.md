@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED
 
 docType: work_order
 
@@ -16,7 +16,7 @@ Predecessor:
 
 - `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (Candidate D1, corrected after rebuttal)
 - `docs/reviews/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md` (Codex verdict: NON_BLOCKING_WITH_GATE_UPDATE)
-- `docs/reviews/CVF_PHASE3_W1_PROVIDER_METHOD_CONTRACTS_COMPLETION_2026-05-19.md` (W1 closed)
+- `docs/reviews/CVF_W1_PROVIDER_CONTRACT_COMPLETION_2026-05-19.md` (W1 closed)
 - `docs/reviews/CVF_LANE_D_PROVIDER_METHOD_PARITY_COMPLETION_2026-05-19.md` (D2 closed)
 
 Prerequisite update (Codex rebuttal 2026-05-19): original prerequisite cited
@@ -199,7 +199,7 @@ All of the following must be true before this work order is CLOSED:
 
 - Authorized by: Codex rebuttal (D1: NON_BLOCKING_WITH_GATE_UPDATE); prerequisite updated to W1/D2 evidence 2026-05-20
 - Roadmap: `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (REBUTTAL_ACCEPTED)
-- Predecessors: `docs/reviews/CVF_PHASE3_W1_PROVIDER_METHOD_CONTRACTS_COMPLETION_2026-05-19.md` + `docs/reviews/CVF_LANE_D_PROVIDER_METHOD_PARITY_COMPLETION_2026-05-19.md`
+- Predecessors: `docs/reviews/CVF_W1_PROVIDER_CONTRACT_COMPLETION_2026-05-19.md` + `docs/reviews/CVF_LANE_D_PROVIDER_METHOD_PARITY_COMPLETION_2026-05-19.md`
 - Orchestrator: Claude; Worker: Codex; Operator approval required for GC-018
 
 ---

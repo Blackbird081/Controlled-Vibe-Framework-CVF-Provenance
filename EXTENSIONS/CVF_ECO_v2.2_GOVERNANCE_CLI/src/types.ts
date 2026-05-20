@@ -1,6 +1,11 @@
 export type CLICommand =
   | "evaluate"
   | "execute"
+  | "run"
+  | "skill"
+  | "receipt"
+  | "trace"
+  | "provider"
   | "benchmark"
   | "session"
   | "report"

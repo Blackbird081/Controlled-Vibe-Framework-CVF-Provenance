@@ -1,7 +1,8 @@
 import { CLIArgs, CLICommand } from "./types";
 
 const VALID_COMMANDS: CLICommand[] = [
-  "evaluate", "execute", "benchmark", "session", "report", "audit", "status", "help", "version",
+  "evaluate", "execute", "run", "skill", "receipt", "trace", "provider",
+  "benchmark", "session", "report", "audit", "status", "help", "version",
 ];
 
 const BOOLEAN_FLAGS = new Set(["stream"]);

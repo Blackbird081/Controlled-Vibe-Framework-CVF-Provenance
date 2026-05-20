@@ -90,6 +90,6 @@
     "blocked_work_classes",
     "next_allowed_move"
   ],
-  "nextAllowedMove": "Phase 3 W1/W2/W3 review slices CLOSED and locally verified. W1 provider gateway contracts, W2 governed-pack completion, and W3 offline 9-metric benchmark extension are recorded in docs/reviews/CVF_W1_PROVIDER_CONTRACT_COMPLETION_2026-05-19.md, docs/reviews/CVF_W2_GOVERNED_PACK_COMPLETION_2026-05-19.md, and docs/reviews/CVF_W3_OFFLINE_BENCHMARK_EXTENSION_COMPLETION_2026-05-19.md. Next: reviewer/operator closure review and, before any public-facing claim or sync, resolve the GC-024 public catalog advisory in the public-sync clone. Do not broaden provider execution, live benchmark, workflow runtime, or capability intake claims without a new roadmap/GC-018.",
-  "lastUpdated": "2026-05-19"
+  "nextAllowedMove": "All 6 residual work orders CLOSED 2026-05-20 — A1 (explicit rejection), C1 (5 read-only CLI verbs), D1 (method placement rejection), E1 (3 benchmark metrics added, 9→12), G1 (11-role catalog absorbed), H1 (Path B classifier contract). All 8 Review-CVF pain points are now CLOSED per docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md. Pre-commit 11/11 PASS, pre-push 43/43 PASS, npm test 97 CLI tests PASS + 1512 LPF tests PASS. Next: commit + GC-020 sync, then optionally sync closed tranche to public-sync repo. Do not reopen any A-H pain point without a new roadmap citing a real gap not covered by current deliverables.",
+  "lastUpdated": "2026-05-20"
 }

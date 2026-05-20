@@ -2,8 +2,9 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_DIRECTION_RECORD — governs pain-point closure sequencing until
-superseded by a later operator-approved direction packet.
+Status: ACTIVE_DIRECTION_RECORD — updated after A1/C1/D1/E1/G1/H1 closure
+work on 2026-05-20; governs pain-point closure sequencing until superseded by
+a later operator-approved direction packet.
 
 Reviewer: Codex
 
@@ -100,24 +101,24 @@ The corrected closure posture is:
 
 | Problem | Direction status | Standard next move |
 | --- | --- | --- |
-| A — Coherence freeze | PARTIAL | A1 decision audit: build freeze docs only if they add value beyond guards; otherwise explicit rejection. |
+| A — Coherence freeze | CLOSED_BY_EXPLICIT_REJECTION | A1 audit found the proposed freeze docs duplicate active guard-chain coverage. |
 | B — Product capability packs | CLOSED_FOR_CURRENT_CONTRACT | Do not reopen for pain-point closure; additional packs are product expansion. |
-| C — CLI canonical runtime entry | PARTIAL_BLOCKED_AS_DRAFTED | Revise C1 to require GC-018 and exact backing sources for `run`, `skill`, `receipt`, `trace`, `provider`. |
-| D — Provider method contracts | MOSTLY_CLOSED_WITH_RESIDUAL_DECISION | D1 decides whether `retry`, `cost`, `risk` belong to method contracts or policy/routing surfaces. |
-| E — Operational benchmark | PARTIAL | E1 schema-first metrics: human correction, long-horizon stability, rollback; reject hallucination recovery unless re-chartered. |
+| C — CLI canonical runtime entry | CLOSED_BY_READ_ONLY_WRAPPERS | C1 registered `run`, `skill`, `receipt`, `trace`, and `provider` as read-only CLI wrappers after GC-018. |
+| D — Provider method contracts | CLOSED_BY_METHOD_PLACEMENT_REJECTION | D1 rejected standalone `retry`, `cost`, and `risk` method files because existing policy/routing surfaces own them. |
+| E — Operational benchmark | CLOSED_FOR_OFFLINE_BENCHMARK_CONTRACT | E1 added human correction, long-horizon stability, and rollback success metrics; hallucination recovery remains rejected. |
 | F — Noncoder outcome surface | CLOSED_FOR_CURRENT_CONTRACT | Do not reopen for pain-point closure; more outcomes are product expansion. |
-| G — Execution identity | RUNTIME_CLOSED_CATALOG_PARTIAL | G1 absorbs role catalog as reference-only; no RBAC redesign and no runtime replacement. |
-| H — Memory hierarchy | PARTIAL | H1 chooses exactly one memory-tier contract path; no runtime wiring claim. |
+| G — Execution identity | CLOSED_BY_REFERENCE_ABSORPTION | G1 authored the canonical 11-role catalog as reference-only. |
+| H — Memory hierarchy | CLOSED_BY_SINGLE_CLASSIFIER_CONTRACT | H1 chose Path B and shipped a pure memory-tier classifier contract; no runtime wiring claim. |
 
 Corrected aggregate:
 
-- CLOSED for pain-point closure: B, F.
-- MOSTLY CLOSED with bounded residual: D, G.
-- PARTIAL and still needs candidate work: A, C, E, H.
+- CLOSED for current Review-CVF pain-point closure contract: A, B, C, D, E, F, G, H.
+- MOSTLY CLOSED with bounded residual: none after this closure tranche.
+- PARTIAL and still needs candidate work: none after this closure tranche.
 - OPEN: none.
 
-The shorthand `5/8 CLOSED, 3/8 PARTIAL` must not be used as the steering
-baseline. It hides the Problem E residual and overstates readiness.
+The old shorthand `5/8 CLOSED, 3/8 PARTIAL` must not be used as current
+steering baseline. It was superseded by the 2026-05-20 closure artifacts.
 
 ---
 
@@ -169,25 +170,18 @@ Operational rule:
 
 ## Pain Point Closure Order
 
-Recommended order:
+Current order status:
 
-1. A1 — Coherence Freeze Decision.
-2. G1 — Role Catalog Absorption.
-3. E1 — Operational Benchmark Metric Expansion.
-4. D1 — Provider Method Contract Residual Decision.
-5. H1 — Memory Tier Gate Decision.
-6. C1 — CLI Verb Completion, only after C1 is revised to require GC-018.
+1. A1 — CLOSED, explicit rejection.
+2. G1 — CLOSED, reference absorption.
+3. E1 — CLOSED, offline metric expansion.
+4. D1 — CLOSED, method placement rejection.
+5. H1 — CLOSED, single classifier contract.
+6. C1 — CLOSED, read-only CLI wrappers after GC-018.
 
-Rationale:
-
-- A1 protects against governance theatre before more artifacts are authored.
-- G1 is absorption-only and aligns an already-active runtime gate with a
-  canonical role catalog.
-- E1 fixes the measurement foundation and must remain schema-first.
-- D1 and H1 are decision candidates with stale prerequisite language that must
-  cite completed W1/D2/H2 evidence or remain held.
-- C1 changes canonical CLI command surface and cannot proceed as a no-GC-018
-  read-only wrapper packet.
+No remaining A-H pain-point candidate is currently actionable from this
+direction packet. Any new work should be product expansion or a new roadmap,
+not residual closure.
 
 ---
 
@@ -209,6 +203,21 @@ Findings:
    accidentally add I/O, auth, or runtime semantics.
 6. Problem H must choose one tier-contract architecture and avoid silent
    runtime memory claims.
+
+2026-05-20 closure update:
+
+- A1 closure evidence:
+  `docs/reviews/CVF_A1_COHERENCE_FREEZE_CLOSURE_REVIEW_2026-05-20.md`
+- C1 closure evidence:
+  `docs/reviews/CVF_C1_CLI_VERB_COMPLETION_CLOSURE_REVIEW_2026-05-20.md`
+- D1 closure evidence:
+  `docs/reviews/CVF_D1_PROVIDER_METHOD_CONTRACT_CLOSURE_REVIEW_2026-05-20.md`
+- E1 closure evidence:
+  `docs/reviews/CVF_E1_BENCHMARK_METRIC_EXPANSION_CLOSURE_REVIEW_2026-05-20.md`
+- G1 closure evidence:
+  `docs/reviews/CVF_G1_ROLE_CATALOG_ABSORPTION_CLOSURE_REVIEW_2026-05-20.md`
+- H1 closure evidence:
+  `docs/reviews/CVF_H1_MEMORY_TIER_GATE_CLOSURE_REVIEW_2026-05-20.md`
 
 ---
 
@@ -236,8 +245,10 @@ Recommended next operator move:
   routing.
 - Use this file for pain-point closure prioritization.
 - Do not authorize implementation from Claude's quality assessment.
-- Do not file GC-018 for C1 until C1 is revised.
-- If proceeding immediately on pain-point closure, start with A1, G1, or E1.
+- Treat A1/C1/D1/E1/G1/H1 as closed by their 2026-05-20 closure reviews.
+- Do not dispatch more A-H residual work from the stale pre-closure order.
+- If new issues emerge, open a fresh roadmap rather than appending to the
+  closed residual closure sequence.
 
 This packet supersedes informal chat guidance about pain-point priority. It
 does not supersede candidate-specific GC-018 requirements.
@@ -263,6 +274,12 @@ Static verification only:
 - `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md`
 - `docs/reviews/CVF_17_05_REVIEW_CVF_RESIDUAL_PAIN_POINTS_ASSESSMENT_2026-05-19.md`
 - `docs/assessments/CVF_QUALITY_ASSESSMENT_2026-05-19.md`
+- `docs/reviews/CVF_A1_COHERENCE_FREEZE_CLOSURE_REVIEW_2026-05-20.md`
+- `docs/reviews/CVF_C1_CLI_VERB_COMPLETION_CLOSURE_REVIEW_2026-05-20.md`
+- `docs/reviews/CVF_D1_PROVIDER_METHOD_CONTRACT_CLOSURE_REVIEW_2026-05-20.md`
+- `docs/reviews/CVF_E1_BENCHMARK_METRIC_EXPANSION_CLOSURE_REVIEW_2026-05-20.md`
+- `docs/reviews/CVF_G1_ROLE_CATALOG_ABSORPTION_CLOSURE_REVIEW_2026-05-20.md`
+- `docs/reviews/CVF_H1_MEMORY_TIER_GATE_CLOSURE_REVIEW_2026-05-20.md`
 
 ---
 
