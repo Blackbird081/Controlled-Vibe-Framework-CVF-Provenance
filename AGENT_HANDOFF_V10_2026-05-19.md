@@ -33,7 +33,7 @@ Provenance HEAD before Lane G implementation:
 `ae492d7dcd9a7b48948521a5160ee7668fa8fa4f`.
 
 Current HEAD (GC-020):
-`4c650746` (chore(handoff): GC-020 sync after Claude hardening rebuttal commit f607b6a4) — parent SHA for upcoming HN1/HN2.a/HN3 dispatch commit
+`f9235b23` (docs(work-orders): dispatch HN1 + HN2.a + HN3 work orders after hardening rebuttal)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
