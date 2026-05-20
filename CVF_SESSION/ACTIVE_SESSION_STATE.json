@@ -90,6 +90,6 @@
     "blocked_work_classes",
     "next_allowed_move"
   ],
-  "nextAllowedMove": "All 6 residual work orders CLOSED 2026-05-20 — A1 (explicit rejection), C1 (5 read-only CLI verbs), D1 (method placement rejection), E1 (3 benchmark metrics added, 9→12), G1 (11-role catalog absorbed), H1 (Path B classifier contract). All 8 Review-CVF pain points are now CLOSED per docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md. Pre-commit 11/11 PASS, pre-push 43/43 PASS, npm test 97 CLI tests PASS + 1512 LPF tests PASS. Next: commit + GC-020 sync, then optionally sync closed tranche to public-sync repo. Do not reopen any A-H pain point without a new roadmap citing a real gap not covered by current deliverables.",
+  "nextAllowedMove": "Post-residual-closure next roadmap filed READY_FOR_REBUTTAL at docs/roadmaps/CVF_POST_RESIDUAL_CLOSURE_NEXT_ROADMAP_2026-05-20.md (priority 1 in review queue). Three candidates: N1 public-sync catalog update under GC-024 BINDING (no GC-018 required, fast-lane sufficient); N2 workflow-chain governance V2 rebuttal cycle (priority 2 in queue, pending since 2026-05-19); N3 skill corpus dead-reference repair roadmap (filed-only, implementation gated by downstream rebuttal+GC-018). Next: Codex must rebut per-candidate before any GC-018 or work order dispatch. Do not bundle N1+N2+N3. Do not reopen any A-H pain point.",
   "lastUpdated": "2026-05-20"
 }

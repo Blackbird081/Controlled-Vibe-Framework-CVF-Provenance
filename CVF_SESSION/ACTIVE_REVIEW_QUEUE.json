@@ -5,13 +5,24 @@
   "defaultResolutionRule": "When an operator asks to check or review a roadmap without giving a path, resolve this queue and load the highest-priority item with status READY_FOR_REBUTTAL.",
   "items": [
     {
+      "id": "post-residual-closure-next-roadmap",
+      "artifactType": "roadmap",
+      "path": "docs/roadmaps/CVF_POST_RESIDUAL_CLOSURE_NEXT_ROADMAP_2026-05-20.md",
+      "status": "READY_FOR_REBUTTAL",
+      "requestedReviewer": "Codex",
+      "expectedResponsePath": "docs/reviews/CVF_POST_RESIDUAL_CLOSURE_NEXT_ROADMAP_CODEX_REBUTTAL_2026-05-20.md",
+      "priority": 1,
+      "source": "AGENT_HANDOFF_V10_2026-05-19.md",
+      "notes": "Claude proposes three next tranches (N1 public-sync catalog update, N2 workflow-chain V2 rebuttal cycle, N3 skill corpus repair roadmap) after the 2026-05-20 residual closure. Codex must rebut per-candidate before any GC-018 or work order dispatch."
+    },
+    {
       "id": "workflow-chain-governance-v2",
       "artifactType": "roadmap",
       "path": "docs/roadmaps/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_2026-05-19.md",
       "status": "READY_FOR_REBUTTAL",
       "requestedReviewer": "Codex",
       "expectedResponsePath": "docs/reviews/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_CODEX_REBUTTAL_2026-05-19.md",
-      "priority": 1,
+      "priority": 2,
       "source": "AGENT_HANDOFF_V10_2026-05-19.md",
       "notes": "Second reviewer-role rebuttal required before any accepted candidate proceeds to GC-018 or implementation."
     },
@@ -19,12 +30,12 @@
       "id": "review-cvf-residual-closure",
       "artifactType": "roadmap",
       "path": "docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md",
-      "status": "REBUTTAL_FILED_MIXED",
+      "status": "CLOSED_BY_TRANCHE",
       "requestedReviewer": "Codex",
       "responsePath": "docs/reviews/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md",
-      "priority": 2,
+      "priority": 3,
       "source": "AGENT_HANDOFF_V10_2026-05-19.md",
-      "notes": "C1 blocking; A1/E1/G1 non-blocking; D1/H1 require gate update."
+      "notes": "All six candidates A1/C1/D1/E1/G1/H1 closed at commit e3536795 on 2026-05-20. Retained for provenance; no further rebuttal action."
     },
     {
       "id": "runtime-maturity-cdh",
@@ -33,7 +44,7 @@
       "status": "REBUTTAL_FILED_BLOCKING",
       "requestedReviewer": "Codex",
       "responsePath": "docs/reviews/CVF_RUNTIME_MATURITY_CDH_ROADMAP_CODEX_REBUTTAL_2026-05-19.md",
-      "priority": 3,
+      "priority": 4,
       "source": "AGENT_HANDOFF_V10_2026-05-19.md",
       "notes": "Original CDH roadmap has blocking findings; later delta closures should be cited instead of treating this as executable."
     }
