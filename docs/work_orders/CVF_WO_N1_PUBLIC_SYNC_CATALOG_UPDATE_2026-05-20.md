@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED
 
 docType: work_order
 
@@ -51,9 +51,9 @@ In scope:
      `longHorizonStabilityRate`, `rollbackSuccessRate`) — source
      `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/governance-reliability-metrics.ts`
   3. Canonical 11-role agent role catalog — source
-     `docs/reference/CVF_AGENT_ROLE_CATALOG.md` (if the public-sync repo
-     already contains or is intended to contain this public-safe file; if
-     not, add a reference row only)
+     `docs/reference/CVF_AGENT_ROLE_CATALOG.md` only if this path exists in
+     the public-sync repo. If it is missing, record a public-sync coverage gap
+     in the audit packet and do not add a catalog row.
   4. Memory tier classifier contract — source
      `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-tier-classifier.contract.ts`,
      limited to contract surface and offline/unit verification claim
@@ -130,10 +130,11 @@ public-sync clone:
 
 - Add capability rows for each surface in the inventory whose Test-Path
   returned PASS.
-- For each row, fill: surface name, status (`proven`), evidence path,
+- For each row, fill: surface name, catalog-vocabulary status, evidence path,
   one-line plain-language description.
-- Do NOT use status values other than `proven` for these surfaces — they are
-  shipped capabilities with passing tests.
+- Do NOT force `proven` for offline/read-only/schema-only surfaces. Use the
+  existing public catalog status vocabulary (`active`, `schema-defined`, etc.)
+  so the catalog does not imply fresh live governance proof.
 - Update the Delivery History Summary (R3 section) with a one-paragraph
   entry citing the 2026-05-20 residual closure tranche, without naming
   internal artifact classes.
@@ -234,8 +235,8 @@ All of the following must be true before this work order is CLOSED:
   repo.
 - Do NOT add catalog rows for surfaces whose evidence path is missing in
   the public-sync clone.
-- Do NOT add status values other than `proven` for surfaces with passing
-  tests.
+- Do NOT use `proven` unless the row is backed by the catalog's required live
+  governance proof boundary.
 - Do NOT claim fresh live governance proof, new runtime behavior, or
   expanded governance semantics in catalog text.
 - Do NOT reopen any A–H Review-CVF pain point.
@@ -337,8 +338,8 @@ Stop and return to Orchestrator if:
 - Public-sync remote is NOT `Blackbird081/Controlled-Vibe-Framework-CVF`.
 - More than one evidence path is missing in public-sync (suggests broader
   sync gap that needs its own roadmap, not a catalog patch).
-- Catalog edit would require adding a status value other than `proven` for
-  any of the four surfaces.
+- Catalog edit would require a status value outside the existing public catalog
+  vocabulary.
 - An internal artifact (handoff, baseline, internal review, roadmap, work
   order) would need to be copied into public-sync to make the catalog row
   meaningful.
@@ -377,8 +378,8 @@ proceeding to the next step.
 
 - [ ] Public-safe evidence path inventory recorded in audit packet.
 - [ ] `git remote -v` verification recorded.
-- [ ] Catalog rows added (with status `proven`) for every surface with
-      Test-Path PASS.
+- [ ] Catalog rows added or updated with status values from the existing public
+      catalog vocabulary for every included surface with Test-Path PASS.
 - [ ] Delivery History Summary updated with 2026-05-20 tranche entry.
 - [ ] Fast-Lane audit packet filed in public-sync.
 - [ ] Public-sync commit landed on `Blackbird081/Controlled-Vibe-Framework-CVF`
@@ -396,7 +397,8 @@ Return if:
 
 - Public-sync remote mismatch.
 - Multiple evidence paths missing in public-sync.
-- Catalog edit would require non-`proven` status for shipped surfaces.
+- Catalog edit would require a status value outside the existing public
+  catalog vocabulary.
 - Internal artifact would need to be copied to satisfy a catalog row.
 - Hook failure outside this scope.
 

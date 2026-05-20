@@ -90,6 +90,6 @@
     "blocked_work_classes",
     "next_allowed_move"
   ],
-  "nextAllowedMove": "N1 work order DISPATCHED at docs/work_orders/CVF_WO_N1_PUBLIC_SYNC_CATALOG_UPDATE_2026-05-20.md (Codex Implementer). Scope: update public technical catalog in the public-sync repo for the 4 public-safe surfaces (5 CLI verbs, 3 metrics, role catalog, memory tier classifier) under GC-024 BINDING + Fast-Lane only — no GC-018. Forbidden: copying internal artifacts to public-sync, governance-repo changes other than closure review. Pre-flight gate: confirm public-sync git remote is Blackbird081/Controlled-Vibe-Framework-CVF and Test-Path PASS for every catalog row before commit. N2 (workflow V2 rebuttal cycle) and N3 (skill corpus repair roadmap) remain queued; do not bundle.",
+  "nextAllowedMove": "N1 public-sync catalog update executed and pushed to public-sync commit d11c772a; closure review filed at docs/reviews/CVF_N1_PUBLIC_SYNC_CATALOG_UPDATE_CLOSURE_REVIEW_2026-05-20.md. Role catalog remained a public-sync coverage gap and no role row was added. Next ready reviewer item is N2 workflow-chain governance V2 rebuttal cycle at docs/roadmaps/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_2026-05-19.md (queue priority 2). N3 remains roadmap-only and implementation remains gated by downstream rebuttal+GC-018+work order. Do not bundle N2+N3. Do not reopen any A-H pain point.",
   "lastUpdated": "2026-05-20"
 }
