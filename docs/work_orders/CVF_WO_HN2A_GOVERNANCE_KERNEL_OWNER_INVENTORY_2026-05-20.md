@@ -270,6 +270,8 @@ May create only:
 
 May modify only:
 
+- `docs/work_orders/CVF_WO_HN2A_GOVERNANCE_KERNEL_OWNER_INVENTORY_2026-05-20.md`
+  (status/checklist closure sync only)
 - `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` (queue item update after closure)
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json` (nextAllowedMove update after
   closure)

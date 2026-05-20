@@ -330,6 +330,8 @@ May create only:
 
 May modify only:
 
+- `docs/work_orders/CVF_WO_HN1_TEMPLATE_LINKAGE_EXEMPTION_FAST_LANE_2026-05-20.md`
+  (status/checklist closure sync only)
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/data/skill-template-map.json`
   (additive schema fields only; no removal, no reordering)
 - `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` (queue item update after closure)

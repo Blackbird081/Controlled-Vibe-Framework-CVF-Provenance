@@ -355,6 +355,8 @@ May create only:
 
 May modify only:
 
+- `docs/work_orders/CVF_WO_HN3_CDH_DELTA_META_ROADMAP_2026-05-20.md`
+  (status/checklist closure sync only)
 - `docs/roadmaps/CVF_RUNTIME_MATURITY_CDH_ROADMAP_2026-05-19.md`
   (prepend status note ONLY; no other changes)
 - `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` (add four slice items)
