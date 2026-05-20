@@ -26,7 +26,7 @@ Provenance continuity base for this handoff: `e91b41fd`.
 Provenance HEAD before Lane G implementation:
 `ae492d7dcd9a7b48948521a5160ee7668fa8fa4f`.
 
-Current HEAD (GC-020): `167c4a83` (docs(rebuttal): Codex rebuttal on post-residual-closure next roadmap NON_BLOCKING_WITH_GATE_UPDATE) — parent SHA for upcoming N1 dispatch commit
+Current HEAD (GC-020): `004edb4e` (docs(work-order): dispatch N1 public-sync catalog update work order)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
