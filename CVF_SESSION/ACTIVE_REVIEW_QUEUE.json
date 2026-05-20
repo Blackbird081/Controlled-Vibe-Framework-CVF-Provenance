@@ -61,6 +61,54 @@
       "priority": 5,
       "source": "AGENT_HANDOFF_V10_2026-05-19.md",
       "notes": "Original CDH roadmap has blocking findings; later delta closures should be cited instead of treating this as executable."
+    },
+    {
+      "id": "cdh-m-delta",
+      "artifactType": "roadmap_slice",
+      "path": "docs/roadmaps/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md",
+      "anchor": "#per-slice-section-m",
+      "status": "READY_FOR_REBUTTAL",
+      "requestedReviewer": "Codex",
+      "expectedResponsePath": "docs/reviews/CVF_CDH_M_DELTA_CODEX_REBUTTAL_2026-05-20.md",
+      "priority": 6,
+      "source": "docs/work_orders/CVF_WO_HN3_CDH_DELTA_META_ROADMAP_2026-05-20.md",
+      "notes": "Maika text-summary deployment proof only; child, health, and photo data cannot serve as low-governance proof."
+    },
+    {
+      "id": "cdh-h-delta",
+      "artifactType": "roadmap_slice",
+      "path": "docs/roadmaps/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md",
+      "anchor": "#per-slice-section-h",
+      "status": "READY_FOR_REBUTTAL",
+      "requestedReviewer": "Codex",
+      "expectedResponsePath": "docs/reviews/CVF_CDH_H_DELTA_CODEX_REBUTTAL_2026-05-20.md",
+      "priority": 7,
+      "source": "docs/work_orders/CVF_WO_HN3_CDH_DELTA_META_ROADMAP_2026-05-20.md",
+      "notes": "Audit-memory policy refinement only; reinjectionAllowed must not become a memory-capture write gate."
+    },
+    {
+      "id": "cdh-c-delta",
+      "artifactType": "roadmap_slice",
+      "path": "docs/roadmaps/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md",
+      "anchor": "#per-slice-section-c",
+      "status": "READY_FOR_REBUTTAL",
+      "requestedReviewer": "Codex",
+      "expectedResponsePath": "docs/reviews/CVF_CDH_C_DELTA_CODEX_REBUTTAL_2026-05-20.md",
+      "priority": 8,
+      "source": "docs/work_orders/CVF_WO_HN3_CDH_DELTA_META_ROADMAP_2026-05-20.md",
+      "notes": "CLI hardening delta only; must not claim the existing cvf execute surface is missing."
+    },
+    {
+      "id": "cdh-d-delta",
+      "artifactType": "roadmap_slice",
+      "path": "docs/roadmaps/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md",
+      "anchor": "#per-slice-section-d",
+      "status": "READY_FOR_REBUTTAL",
+      "requestedReviewer": "Codex",
+      "expectedResponsePath": "docs/reviews/CVF_CDH_D_DELTA_CODEX_REBUTTAL_2026-05-20.md",
+      "priority": 9,
+      "source": "docs/work_orders/CVF_WO_HN3_CDH_DELTA_META_ROADMAP_2026-05-20.md",
+      "notes": "Provider-method delta must split vision contract, vision runtime, and reasoning contract; no bundled runtime claim."
     }
   ]
 }

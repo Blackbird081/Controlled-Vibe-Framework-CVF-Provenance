@@ -92,6 +92,6 @@
     "blocked_work_classes",
     "next_allowed_move"
   ],
-  "nextAllowedMove": "HN1 CLOSED 2026-05-20 as Fast-Lane template-linkage hygiene. HN2.a CLOSED 2026-05-20 with observation-only 12-surface inventory at docs/reviews/CVF_HN2A_GOVERNANCE_KERNEL_OWNER_INVENTORY_2026-05-20.md and closure review at docs/reviews/CVF_HN2A_GOVERNANCE_KERNEL_OWNER_INVENTORY_CLOSURE_REVIEW_2026-05-20.md. Remaining dispatched work order is HN3 at docs/work_orders/CVF_WO_HN3_CDH_DELTA_META_ROADMAP_2026-05-20.md (CDH delta meta-roadmap with per-slice gating; no GC-018, no implementation). HN2.b and HN2.c remain separate downstream GC-018-gated work and must not be inferred from HN2.a. Do not reopen any A-H pain point.",
+  "nextAllowedMove": "HN1, HN2.a, and HN3 are CLOSED as of 2026-05-20. HN3 filed docs/roadmaps/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md and routed four independent READY_FOR_REBUTTAL queue items: cdh-m-delta, cdh-h-delta, cdh-c-delta, cdh-d-delta. Next eligible move is per-slice rebuttal only, not implementation: each selected CDH slice still requires rebuttal, GC-018, and a work order. HN2.b and HN2.c remain separate downstream GC-018-gated work and must not be inferred from HN2.a. Do not reopen any A-H pain point.",
   "lastUpdated": "2026-05-20"
 }

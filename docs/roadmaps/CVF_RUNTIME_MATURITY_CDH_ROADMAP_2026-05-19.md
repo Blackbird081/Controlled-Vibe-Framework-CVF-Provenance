@@ -6,6 +6,13 @@ Status: READY_FOR_REBUTTAL — filed by Orchestrator role 2026-05-19.
 No Worker implementation may begin before the Reviewer-role rebuttal returns
 no-blocking findings and each GC-018-required candidate has its GC-018 filed.
 
+> Status update 2026-05-20: REPLACED_BY_META. This roadmap is superseded by
+> docs/roadmaps/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md per Claude rebuttal
+> NON_BLOCKING_WITH_PER_SLICE_GATING. BLOCKING_FINDINGS from
+> docs/reviews/CVF_RUNTIME_MATURITY_CDH_ROADMAP_CODEX_REBUTTAL_2026-05-19.md
+> remain load-bearing on each slice. Do not file GC-018 against this
+> roadmap; use the meta-roadmap's per-slice gates instead.
+
 Predecessor authority:
 `docs/reviews/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md`
 (Section: "Candidate post-decision implementation lanes", Problems C/D/H)
