@@ -32,7 +32,8 @@ Provenance HEAD before Lane G implementation:
 Current HEAD before hardening-roadmap local edits:
 `04cdf6b8` (chore(handoff): GC-020 sync after N3 withdrawal commit 0c10c8f6)
 
-Current HEAD (GC-020): pending sync after hardening roadmap commit.
+Current HEAD (GC-020):
+`dc0df014` (docs: file post pain-point hardening roadmap)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
