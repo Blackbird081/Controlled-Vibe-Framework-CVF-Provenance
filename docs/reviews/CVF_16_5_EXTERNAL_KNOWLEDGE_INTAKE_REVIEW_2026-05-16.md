@@ -8,10 +8,10 @@ Primary private review packet:
 `.private_reference/legacy/CVF 16.5/REVIEW FOLDER/CVF_16_5_EXTERNAL_KNOWLEDGE_INTAKE_REVIEW_2026-05-16.md`
 
 Independent rebuttal:
-`docs/reviews/CVF_16_5_EXTERNAL_KNOWLEDGE_INTAKE_REVIEW_CLAUDE_REBUTTAL_2026-05-16.md`
+`docs/reviews/archive/CVF_16_5_EXTERNAL_KNOWLEDGE_INTAKE_REVIEW_CLAUDE_REBUTTAL_2026-05-16.md`
 
 Codex disposition:
-`docs/reviews/CVF_16_5_EXTERNAL_KNOWLEDGE_INTAKE_REVIEW_CODEX_RESPONSE_TO_CLAUDE_2026-05-16.md`
+`docs/reviews/archive/CVF_16_5_EXTERNAL_KNOWLEDGE_INTAKE_REVIEW_CODEX_RESPONSE_TO_CLAUDE_2026-05-16.md`
 
 Reviewed source bundle:
 `.private_reference/legacy/CVF 16.5`
@@ -62,10 +62,10 @@ Not accepted now:
 
 ## CVF Docs Created From Reusable Drafts
 
-- `docs/reference/CVF_LEGACY_16_5_EXTERNAL_KNOWLEDGE_ABSORPTION_MAP_2026-05-16.md`
-- `docs/reference/CVF_MODEL_GATEWAY_PROXY_PROVIDER_BOUNDARY_SPEC_2026-05-16.md`
-- `docs/reference/CVF_AGENT_TOOL_MEMORY_OBSERVABILITY_BOUNDARY_SPEC_2026-05-16.md`
-- `docs/reference/CVF_GOVERNED_DOCUMENT_ARTIFACT_RENDERING_SPEC_2026-05-16.md`
+- `docs/reference/archive/CVF_LEGACY_16_5_EXTERNAL_KNOWLEDGE_ABSORPTION_MAP_2026-05-16.md`
+- `docs/reference/archive/CVF_MODEL_GATEWAY_PROXY_PROVIDER_BOUNDARY_SPEC_2026-05-16.md`
+- `docs/reference/archive/CVF_AGENT_TOOL_MEMORY_OBSERVABILITY_BOUNDARY_SPEC_2026-05-16.md`
+- `docs/reference/archive/CVF_GOVERNED_DOCUMENT_ARTIFACT_RENDERING_SPEC_2026-05-16.md`
 
 These docs intentionally merge and normalize the strongest existing drafts
 instead of copying every legacy file into CVF canon.

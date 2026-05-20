@@ -11,6 +11,8 @@ Read `CVF_SESSION_MEMORY.md` first.
 Then resolve:
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
+- `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 - `CVF_SESSION/REQUIRED_STARTUP_GUARDS.md`
 
 Only after that should an agent decide which versioned handoff, review packet,
@@ -48,13 +50,21 @@ Out of scope:
 
 1. Start at `CVF_SESSION_MEMORY.md`.
 2. Resolve `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
-3. Load `CVF_SESSION/REQUIRED_STARTUP_GUARDS.md`.
-4. Continue only through the current active state.
+3. Resolve `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` before any ambiguous
+   roadmap/review request.
+4. Resolve the pain-point closure direction before any pain-point closure
+   request.
+5. Load `CVF_SESSION/REQUIRED_STARTUP_GUARDS.md`.
+6. Continue only through the current active state.
 
 ## Non-Substitution Rule
 
 - `CVF_SESSION_MEMORY.md` is the front door.
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json` is the machine-readable pointer set.
+- `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` is the machine-readable review intake
+  queue for ambiguous roadmap/review requests.
+- `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
+  is the current steering source for Review-CVF pain-point closure.
 - Root `AGENT_HANDOFF*.md` files are transition records.
 - Review packets remain evidence and reasoning records.
 - Governance guards remain rules.
@@ -77,6 +87,8 @@ Machine check:
 
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
+- `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 - `CVF_SESSION/REQUIRED_STARTUP_GUARDS.md`
 - `docs/reference/CVF_SESSION_GOVERNANCE_BOOTSTRAP.md`
 

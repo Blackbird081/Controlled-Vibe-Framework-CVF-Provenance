@@ -23,16 +23,16 @@ This report covers recent repository state through commit `fd730269`:
 - Web Integration Tranches 1 through 3;
 - CVF 16.5 runtime absorption work recorded in the GA changelog;
 - the unabsorbed knowledge inventory in
-  `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md`;
+  `docs/reviews/archive/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md`;
 - the process failure where no agent delivered this summary to the operator.
 
 ## Source
 
 - `CHANGELOG.md` at commit `e6e3e662`
-- `docs/reviews/CVF_WEB_INTEGRATION_TRANCHE_2_CLOSURE_2026-05-16.md`
-- `docs/reviews/CVF_WEB_INTEGRATION_TRANCHE_3_CLOSURE_2026-05-16.md`
-- `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md`
-- `docs/baselines/CVF_16_5_LIVING_INTEGRATION_CLASSIFICATION_SUMMARY_2026-05-16.md`
+- `docs/reviews/archive/CVF_WEB_INTEGRATION_TRANCHE_2_CLOSURE_2026-05-16.md`
+- `docs/reviews/archive/CVF_WEB_INTEGRATION_TRANCHE_3_CLOSURE_2026-05-16.md`
+- `docs/reviews/archive/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md`
+- `docs/baselines/archive/CVF_16_5_LIVING_INTEGRATION_CLASSIFICATION_SUMMARY_2026-05-16.md`
 - `AGENT_HANDOFF_V7_2026-05-16.md`
 
 ## Current Progress
@@ -225,10 +225,10 @@ correction.
 
 ## Related Artifacts
 
-- `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md`
+- `docs/reviews/archive/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md`
 - `CHANGELOG.md`
-- `docs/reviews/CVF_WEB_INTEGRATION_TRANCHE_3_CLOSURE_2026-05-16.md`
-- `docs/reviews/CVF_WEB_INTEGRATION_TRANCHE_2_CLOSURE_2026-05-16.md`
-- `docs/baselines/CVF_16_5_LIVING_INTEGRATION_CLASSIFICATION_SUMMARY_2026-05-16.md`
+- `docs/reviews/archive/CVF_WEB_INTEGRATION_TRANCHE_3_CLOSURE_2026-05-16.md`
+- `docs/reviews/archive/CVF_WEB_INTEGRATION_TRANCHE_2_CLOSURE_2026-05-16.md`
+- `docs/baselines/archive/CVF_16_5_LIVING_INTEGRATION_CLASSIFICATION_SUMMARY_2026-05-16.md`
 - `docs/roadmaps/CVF_UNABSORBED_KNOWLEDGE_REPORTING_CORRECTION_ROADMAP_2026-05-17.md`
 - `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_REPORTING_CORRECTION_REBUTTAL_2026-05-17.md`

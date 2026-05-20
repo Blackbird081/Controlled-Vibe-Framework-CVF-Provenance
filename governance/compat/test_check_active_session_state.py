@@ -29,6 +29,8 @@ class ActiveSessionStateTests(unittest.TestCase):
         for rel in (
             "CVF_SESSION_MEMORY.md",
             "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+            "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
+            "docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
             "CVF_SESSION/READ_FIRST.md",
             "CVF_SESSION/REQUIRED_STARTUP_GUARDS.md",
             "AGENTS.md",
@@ -44,6 +46,8 @@ class ActiveSessionStateTests(unittest.TestCase):
         state = {
             "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
             "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+            "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
+            "painPointClosureDirection": "docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
             "activeHandoff": "AGENT_HANDOFF_V8_2026-05-17.md",
             "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
             "supersededHandoffs": ["CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md"],
@@ -61,8 +65,36 @@ class ActiveSessionStateTests(unittest.TestCase):
             json.dumps(state),
             encoding="utf-8",
         )
+        review_queue = {
+            "schemaVersion": "0.1.0",
+            "status": "ACTIVE_REVIEW_QUEUE",
+            "items": [
+                {
+                    "id": "current-roadmap",
+                    "artifactType": "roadmap",
+                    "path": "reviews/current.md",
+                    "status": "READY_FOR_REBUTTAL",
+                    "expectedResponsePath": "reviews/current-rebuttal.md",
+                    "priority": 1,
+                },
+                {
+                    "id": "closed-roadmap",
+                    "artifactType": "roadmap",
+                    "path": "reviews/closed.md",
+                    "status": "REBUTTAL_FILED_BLOCKING",
+                    "responsePath": "reviews/closed-rebuttal.md",
+                    "priority": 2,
+                },
+            ],
+        }
+        (self.repo_root / "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json").write_text(
+            json.dumps(review_queue),
+            encoding="utf-8",
+        )
         (self.repo_root / "CVF_SESSION_MEMORY.md").write_text(
             "ACTIVE SESSION FRONT DOOR\nCVF_SESSION/ACTIVE_SESSION_STATE.json\n"
+            "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json\n"
+            "docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md\n"
             "system_reconvergence_stop\ngovernance_kernel_freeze_recommended\n"
             "AGENT_HANDOFF_V8_2026-05-17.md\n",
             encoding="utf-8",
@@ -83,6 +115,12 @@ class ActiveSessionStateTests(unittest.TestCase):
         )
         (self.repo_root / self.first_read).write_text("Memory class: POINTER_RECORD\n", encoding="utf-8")
         (self.repo_root / self.startup_guard).write_text("Memory class: POINTER_RECORD\n", encoding="utf-8")
+        (self.repo_root / "docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md").write_text(
+            "Status: ACTIVE_DIRECTION_RECORD\n",
+            encoding="utf-8",
+        )
+        (self.repo_root / "reviews/closed.md").write_text("Status: REBUTTAL_FILED\n", encoding="utf-8")
+        (self.repo_root / "reviews/closed-rebuttal.md").write_text("Status: REBUTTAL_FILED\n", encoding="utf-8")
         (self.repo_root / "AGENT_HANDOFF_V8_2026-05-17.md").write_text(
             "Status: ACTIVE - current\n",
             encoding="utf-8",
@@ -97,7 +135,34 @@ class ActiveSessionStateTests(unittest.TestCase):
 
         self.assertTrue(report["compliant"])
         self.assertEqual(report["activeHandoff"], "AGENT_HANDOFF_V8_2026-05-17.md")
+        self.assertEqual(report["readyReviewItems"], ["current-roadmap"])
         self.assertEqual(report["detectedActiveHandoffs"], ["AGENT_HANDOFF_V8_2026-05-17.md"])
+
+    def test_ready_review_item_with_existing_response_fails(self) -> None:
+        (self.repo_root / "reviews/current-rebuttal.md").write_text(
+            "Status: REBUTTAL_FILED\n",
+            encoding="utf-8",
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify()
+
+        self.assertFalse(report["compliant"])
+        self.assertTrue(
+            any("READY_FOR_REBUTTAL item already has response path" in issue
+                for issue in report["reviewQueueViolations"])
+        )
+
+    def test_filed_review_item_missing_response_fails(self) -> None:
+        (self.repo_root / "reviews/closed-rebuttal.md").unlink()
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify()
+
+        self.assertFalse(report["compliant"])
+        self.assertTrue(
+            any("responsePath does not exist" in issue for issue in report["reviewQueueViolations"])
+        )
 
     def test_multiple_active_handoffs_fail(self) -> None:
         (self.repo_root / "AGENT_HANDOFF_V7_2026-05-16.md").write_text(
@@ -110,6 +175,44 @@ class ActiveSessionStateTests(unittest.TestCase):
 
         self.assertFalse(report["compliant"])
         self.assertGreaterEqual(report["handoffViolationCount"], 1)
+
+    def test_superseded_handoff_must_live_under_archive(self) -> None:
+        state_path = self.repo_root / "CVF_SESSION/ACTIVE_SESSION_STATE.json"
+        state = json.loads(state_path.read_text(encoding="utf-8"))
+        state["supersededHandoffs"].append("AGENT_HANDOFF_V7_2026-05-16.md")
+        state_path.write_text(json.dumps(state), encoding="utf-8")
+        (self.repo_root / "AGENT_HANDOFF_V7_2026-05-16.md").write_text(
+            "Status: ARCHIVED - stale\n",
+            encoding="utf-8",
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify()
+
+        self.assertFalse(report["compliant"])
+        self.assertTrue(
+            any("supersededHandoffs handoff path must live under historicalHandoffArchive" in issue
+                for issue in report["stateViolations"])
+        )
+        self.assertTrue(
+            any("archived handoff remains at repository root" in issue
+                for issue in report["handoffViolations"])
+        )
+
+    def test_unregistered_archived_root_handoff_fails(self) -> None:
+        (self.repo_root / "AGENT_HANDOFF_V7_2026-05-16.md").write_text(
+            "Status: ARCHIVED - stale\n",
+            encoding="utf-8",
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify()
+
+        self.assertFalse(report["compliant"])
+        self.assertTrue(
+            any("archived handoff remains at repository root" in issue
+                for issue in report["handoffViolations"])
+        )
 
     def test_handoff_sync_commit_can_reference_parent_head(self) -> None:
         (self.repo_root / "AGENT_HANDOFF_V8_2026-05-17.md").write_text(

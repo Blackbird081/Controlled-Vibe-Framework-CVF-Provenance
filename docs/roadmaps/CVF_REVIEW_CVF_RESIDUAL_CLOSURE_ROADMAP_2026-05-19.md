@@ -2,7 +2,9 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: READY_FOR_REBUTTAL — filed by Orchestrator role 2026-05-19.
+Status: REBUTTAL_ACCEPTED — Codex rebuttal 2026-05-19 returned MIXED_NON_BLOCKING.
+Corrections applied per rebuttal: C1 GC-018 required; D1/H1 prerequisites
+updated to cite completed delta evidence. Ready for GC-018 dispatch (Tier 1).
 
 docType: roadmap
 
@@ -278,8 +280,11 @@ Codex rebuttal target on C1:
    starts.
 3. Verify no verb shadows or overrides an existing command.
 
-GC-018 required: No (additive read-only CLI wrappers stay inside the
-existing CLI surface contract).
+GC-018 required: Yes — Codex rebuttal finding 2026-05-19: adding five
+canonical CLI verbs changes the public command surface; each verb must name
+its backing source, input shape, and forbidden behaviors in the GC-018
+baseline. `cvf run` may be an execute alias but must not imply a new runtime
+path.
 
 ---
 
@@ -317,10 +322,14 @@ Acceptable closure outcomes per method:
 
 Prerequisites:
 
-- W1 closure review must remain CLOSED.
-- CDH Candidate D rebuttal must return NON_BLOCKING first (CDH D adds
-  vision-capable provider semantics; this candidate must not race CDH D's
-  scope).
+- W1 closure review must remain CLOSED
+  (`docs/reviews/CVF_PHASE3_W1_PROVIDER_METHOD_CONTRACTS_COMPLETION_2026-05-19.md`).
+- D2 closure review must remain CLOSED
+  (`docs/reviews/CVF_LANE_D_PROVIDER_METHOD_PARITY_COMPLETION_2026-05-19.md`).
+- Note (Codex rebuttal 2026-05-19): original prerequisite cited CDH Candidate D
+  rebuttal. That requirement is superseded — W1/D2 delta evidence is already
+  closed. D1 no longer waits for CDH D; it cites the completed delta evidence
+  directly.
 
 Acceptance:
 
@@ -493,10 +502,12 @@ The baseline MUST choose one path explicitly. It MUST NOT ship both.
 
 Prerequisites:
 
-- H2 closure review must remain CLOSED.
-- CDH Candidate H rebuttal MUST return NON_BLOCKING first, because CDH H
-  works on audit memory policy refinement and this candidate must not
-  race CDH H.
+- H2 closure review must remain CLOSED
+  (`docs/reviews/CVF_RUNTIME_MATURITY_H2_AUDIT_MEMORY_COMPLETION_2026-05-19.md`).
+- Note (Codex rebuttal 2026-05-19): original prerequisite cited CDH Candidate H
+  rebuttal. That requirement is superseded — H2 delta evidence is already
+  closed and covers audit memory policy refinement. H1 no longer waits for
+  CDH H; it cites the completed H2 delta evidence directly.
 
 Acceptance:
 
@@ -521,21 +532,22 @@ GC-018 required: Yes.
 
 The candidates fall into three sequencing tiers based on prerequisites.
 
-Tier 1 — startable immediately after Codex returns NON_BLOCKING:
+Tier 1 — startable immediately (Codex rebuttal accepted):
 
 - A1 (no prerequisite chain).
 - G1 (Lane G already closed).
 - E1 (W3 already closed).
 
-Tier 2 — gated by CDH rebuttal closure:
+Tier 2 — startable after GC-018 authorized (no CDH gate remaining):
 
-- C1 (waits for CDH Candidate C NON_BLOCKING).
-- D1 (waits for CDH Candidate D NON_BLOCKING).
-- H1 (waits for CDH Candidate H NON_BLOCKING).
+- D1 (W1/D2 evidence closed; CDH D gate superseded per Codex rebuttal).
+- H1 (H2 evidence closed; CDH H gate superseded per Codex rebuttal).
+- C1 (GC-018 required per Codex rebuttal; verbs must be individually
+  scoped in baseline; may parallel D1/H1 once GC-018 is authorized).
 
 Tier 3 — sequenced after Tier 1 closure:
 
-- C1, D1, H1 may also be paused if Tier 1 surfaces a coherence finding that
+- C1, D1, H1 may be paused if Tier 1 surfaces a coherence finding that
   invalidates their scope.
 
 No candidate proceeds to GC-018 filing until its Codex rebuttal returns

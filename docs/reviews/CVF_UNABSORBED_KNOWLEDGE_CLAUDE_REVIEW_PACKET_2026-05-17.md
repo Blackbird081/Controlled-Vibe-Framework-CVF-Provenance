@@ -8,7 +8,7 @@ Status: READY FOR CLAUDE REVIEW - NO ABSORPTION AUTHORIZED
 
 Provide the exact packet that should be sent to Claude before any new
 absorption work begins for the knowledge listed in
-`docs/reviews/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md`.
+`docs/reviews/archive/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md`.
 
 Claude is the required reviewer for this loop. Codex self-review is not enough
 to authorize absorption, doctrine promotion, or implementation.
@@ -28,11 +28,11 @@ This packet does not ask Claude to implement anything.
 
 Claude should inspect these files:
 
-- `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md`
+- `docs/reviews/archive/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md`
 - `docs/reviews/CVF_OPERATOR_PROGRESS_AND_UNABSORBED_KNOWLEDGE_REPORT_2026-05-17.md`
 - `docs/roadmaps/CVF_UNABSORBED_KNOWLEDGE_REPORTING_CORRECTION_ROADMAP_2026-05-17.md`
 - `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_REPORTING_CORRECTION_REBUTTAL_2026-05-17.md`
-- `docs/baselines/CVF_16_5_LIVING_INTEGRATION_CLASSIFICATION_SUMMARY_2026-05-16.md`
+- `docs/baselines/archive/CVF_16_5_LIVING_INTEGRATION_CLASSIFICATION_SUMMARY_2026-05-16.md`
 - `CHANGELOG.md`
 - `AGENT_HANDOFF_V7_2026-05-16.md`
 
@@ -181,7 +181,7 @@ correction.
 
 ## Related Artifacts
 
-- `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md`
+- `docs/reviews/archive/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md`
 - `docs/roadmaps/CVF_UNABSORBED_KNOWLEDGE_REPORTING_CORRECTION_ROADMAP_2026-05-17.md`
 - `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_REPORTING_CORRECTION_REBUTTAL_2026-05-17.md`
 - `docs/reviews/CVF_OPERATOR_PROGRESS_AND_UNABSORBED_KNOWLEDGE_REPORT_2026-05-17.md`

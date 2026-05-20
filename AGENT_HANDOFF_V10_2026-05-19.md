@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — D/E/F/G lanes closed; M1/C2/D2/H2 closed; Phase 3 W1/W2/W3 closed; Continuation Chain Rule C paradox fixed; Review-CVF residual assessment + closure roadmap filed READY_FOR_REBUTTAL.
+Status: ACTIVE — D/E/F/G lanes closed; M1/C2/D2/H2 closed; Phase 3 W1/W2/W3 closed; Rule C paradox fixed; Codex rebuttal accepted (MIXED); assessment corrected (4/8 CLOSED); roadmap REBUTTAL_ACCEPTED; 6 work orders dispatched (A1/C1/D1/E1/G1/H1).
 
 Latest planning artifacts (read these first if you are resuming Review-CVF closure work):
 
@@ -10,6 +10,8 @@ Latest planning artifacts (read these first if you are resuming Review-CVF closu
 - `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (6 candidates A1/C1/D1/E1/G1/H1, READY_FOR_REBUTTAL)
 - `docs/roadmaps/CVF_RUNTIME_MATURITY_CDH_ROADMAP_2026-05-19.md` (still READY_FOR_REBUTTAL; Tier 2 of residual roadmap is gated on this)
 - `docs/assessments/CVF_QUALITY_ASSESSMENT_2026-05-19.md` (post-upgrade quality grade A−; 99.9% test pass rate; 43/43 governance guards PASS)
+- `docs/reviews/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md` (Codex rebuttal: MIXED — A1/E1/G1 NON_BLOCKING; C1 BLOCKING corrected; D1/H1 gate updated)
+- Work orders dispatched: `docs/work-orders/CVF_WO_RESIDUAL_{A1,C1,D1,E1,G1,H1}_*.md` (all 6 DISPATCHED)
 
 Remote tracking branch: `origin/main`
 
@@ -22,7 +24,7 @@ Provenance continuity base for this handoff: `e91b41fd`.
 Provenance HEAD before Lane G implementation:
 `ae492d7dcd9a7b48948521a5160ee7668fa8fa4f`.
 
-Current HEAD (GC-020): `ffed534d` (docs(assessment): file CVF quality assessment after 2026-05-19 upgrade)
+Current HEAD (GC-020): `597534de` (chore(handoff): GC-020 sync after quality assessment filing)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 

@@ -47,6 +47,22 @@ Machine-readable active state:
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 
+Machine-readable review intake queue:
+
+- `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
+
+When the operator asks to "check roadmap", "review roadmap", or similar
+without giving a path, resolve the review queue and load the highest-priority
+item with `status: READY_FOR_REBUTTAL`.
+
+Pain-point closure direction:
+
+- `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
+
+When the operator asks to continue, prioritize, or close CVF pain points, use
+that direction packet as the steering source instead of the stale quality
+assessment shorthand.
+
 Agents and tools must resolve this registry before treating any root handoff as
 current.
 
@@ -115,6 +131,8 @@ Before material governed work, an agent should be able to state:
 
 - active session mode
 - active handoff path
+- active review queue
+- pain-point closure direction
 - required first-read packet set
 - blocked work classes
 - next allowed move
@@ -161,7 +179,7 @@ Hook chain:
 - `CVF_SESSION/handoffs/archive/`
 - `AGENTS.md`
 - `CLAUDE.md`
-- `AGENT_HANDOFF_V9_2026-05-18.md`
+- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V9_2026-05-18.md`
 
 ## Public-Sync Workflow Orchestration Update — 2026-05-19
 
@@ -277,7 +295,8 @@ role-count expectation still assumes 8 roles while `SERVICE_AGENT` makes 9,
 and skill corpus/template mapping tests still report dead references. These
 are not Lane F regressions.
 
-Active handoff advanced from `AGENT_HANDOFF_V9_2026-05-18.md` to
+Active handoff advanced from
+`CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V9_2026-05-18.md` to
 `AGENT_HANDOFF_V10_2026-05-19.md` because V9 approached the governed
 active-markdown file-size cap.
 

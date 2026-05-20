@@ -2,8 +2,8 @@
 
 Memory class: FULL_RECORD
 
-Status: ASSESSMENT_FILED — awaiting Codex rebuttal before any new GC-018 or
-work-order dispatch.
+Status: ASSESSMENT_CORRECTED — Codex rebuttal filed 2026-05-19; Problem E
+re-scored PARTIAL overall per rebuttal finding. Ready for GC-018 dispatch.
 
 Reviewer / Worker: Claude (Orchestrator role)
 
@@ -108,24 +108,27 @@ this assessment. It is a static cross-reference exercise.
 
 ## Executive Verdict
 
-5 of 8 pain points are CLOSED at or above 80% delivery.
-3 of 8 are PARTIAL with named vehicles.
+**Correction note (2026-05-19):** Codex rebuttal
+`docs/reviews/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`
+identified that Problem E was mis-scored CLOSED in the original headline.
+Problem E's own section states Verdict: PARTIAL. The corrected scores below
+supersede the original filing.
+
+4 of 8 pain points are CLOSED at or above 80% delivery.
+4 of 8 are PARTIAL with named vehicles.
 0 of 8 are OPEN.
 
 The 17.05 audit's strategic direction ("Governed Capability OS, not skill
 collection") is judged ON-TRACK by this assessment.
 
-The PARTIAL trio is Problem A (kernel-law freeze docs do not exist with the
+The PARTIAL quartet is Problem A (kernel-law freeze docs do not exist with the
 proposed names, but coherence is preserved through review chain and guard
 chain), Problem C (CLI gateway has 4 of 9 named verbs, missing run / skill /
-receipt / trace / provider verbs), and Problem H (audit memory tier is
-delivered, but 4 to 5 of the named memory tiers have no explicit tier gate).
-
-Problem E benchmark coverage is CLOSED for the 9 metrics actually delivered
-in W3, but the 17.05 audit named 10 metrics; 4 of those 10 (hallucination
-recovery, human correction count, long-horizon stability, rollback success)
-have no compute path because the underlying audit-event schema does not yet
-carry the data. This is a separate residual gap recorded under Problem E.
+receipt / trace / provider verbs), Problem E (9 of 10 audit-named metrics
+delivered; 3 still lack compute path due to missing upstream event schema —
+hallucination recovery is rejected; human correction and rollback success
+require schema extension), and Problem H (audit memory tier is delivered, but
+4 to 5 of the named memory tiers have no explicit tier gate).
 
 Problem G runtime gate is CLOSED at 80%; the residual is role-catalog
 formalization, not runtime enforcement.
@@ -140,7 +143,7 @@ formalization, not runtime enforcement.
 | B | Skill System -> Product Capability System (product skill packs) | CLOSED | Phase 3 W2 + Lane F outcome path; 3 governed packs complete |
 | C | CLI as canonical runtime entry point | PARTIAL | 9 CLI commands registered; 5 of 9 verbs from the audit list missing |
 | D | Provider gateway maturity — typed method contracts | CLOSED | Phase 3 W1 + Lane D + D2 closure; 8 of 11 method contracts named in the audit are defined |
-| E | Operational benchmark suite — measure governance, not raw provider | CLOSED for the 6 metrics covered, PARTIAL overall | Phase 3 W3 delivered 9 metric functions; 6 of 10 audit-named metrics are covered |
+| E | Operational benchmark suite — measure governance, not raw provider | PARTIAL | Phase 3 W3 delivered 9 metric functions; 3 of 4 residual metrics lack upstream event schema; hallucination recovery is rejected (LLM-judged, out of scope) |
 | F | Noncoder outcome surface | CLOSED | Lane F closure + `OutcomeQuickActions` + 9 wizards |
 | G | Execution Identity — actor role catalog + runtime gate | CLOSED | Lane G runtime gate active; role catalog formalization remains |
 | H | Memory hierarchy — 7 tier gate + retention / injection / retrieval policies | PARTIAL | H2 audit memory + retention events done; explicit tier gate for working / task / skill / org / long-term remains |

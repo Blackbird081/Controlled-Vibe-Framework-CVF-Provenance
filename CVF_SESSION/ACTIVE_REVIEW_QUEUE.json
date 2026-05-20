@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "0.1.0",
+  "status": "ACTIVE_REVIEW_QUEUE",
+  "purpose": "Machine-readable intake queue for roadmap/review artifacts awaiting reviewer-role rebuttal or already carrying a filed rebuttal.",
+  "defaultResolutionRule": "When an operator asks to check or review a roadmap without giving a path, resolve this queue and load the highest-priority item with status READY_FOR_REBUTTAL.",
+  "items": [
+    {
+      "id": "workflow-chain-governance-v2",
+      "artifactType": "roadmap",
+      "path": "docs/roadmaps/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_2026-05-19.md",
+      "status": "READY_FOR_REBUTTAL",
+      "requestedReviewer": "Codex",
+      "expectedResponsePath": "docs/reviews/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_CODEX_REBUTTAL_2026-05-19.md",
+      "priority": 1,
+      "source": "AGENT_HANDOFF_V10_2026-05-19.md",
+      "notes": "Second reviewer-role rebuttal required before any accepted candidate proceeds to GC-018 or implementation."
+    },
+    {
+      "id": "review-cvf-residual-closure",
+      "artifactType": "roadmap",
+      "path": "docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md",
+      "status": "REBUTTAL_FILED_MIXED",
+      "requestedReviewer": "Codex",
+      "responsePath": "docs/reviews/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md",
+      "priority": 2,
+      "source": "AGENT_HANDOFF_V10_2026-05-19.md",
+      "notes": "C1 blocking; A1/E1/G1 non-blocking; D1/H1 require gate update."
+    },
+    {
+      "id": "runtime-maturity-cdh",
+      "artifactType": "roadmap",
+      "path": "docs/roadmaps/CVF_RUNTIME_MATURITY_CDH_ROADMAP_2026-05-19.md",
+      "status": "REBUTTAL_FILED_BLOCKING",
+      "requestedReviewer": "Codex",
+      "responsePath": "docs/reviews/CVF_RUNTIME_MATURITY_CDH_ROADMAP_CODEX_REBUTTAL_2026-05-19.md",
+      "priority": 3,
+      "source": "AGENT_HANDOFF_V10_2026-05-19.md",
+      "notes": "Original CDH roadmap has blocking findings; later delta closures should be cited instead of treating this as executable."
+    }
+  ]
+}

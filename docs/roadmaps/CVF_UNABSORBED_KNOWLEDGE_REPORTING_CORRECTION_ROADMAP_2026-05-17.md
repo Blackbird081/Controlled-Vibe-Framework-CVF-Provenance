@@ -7,7 +7,7 @@ Status: AMENDED 2026-05-17 — rule narrowed and enforcement surface added per C
 ## Purpose
 
 Define the governed path for correcting the reporting failure discovered after
-`docs/reviews/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md`.
+`docs/reviews/archive/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md`.
 
 The failure was not that the inventory existed. The failure was that agents
 completed absorption, release, and tranche closure work without producing a
@@ -51,11 +51,11 @@ This roadmap does not:
 
 ## Source
 
-- `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md`
+- `docs/reviews/archive/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md`
 - `docs/reviews/CVF_OPERATOR_PROGRESS_AND_UNABSORBED_KNOWLEDGE_REPORT_2026-05-17.md`
 - `CHANGELOG.md`
 - `AGENT_HANDOFF_V7_2026-05-16.md`
-- `docs/baselines/CVF_16_5_LIVING_INTEGRATION_CLASSIFICATION_SUMMARY_2026-05-16.md`
+- `docs/baselines/archive/CVF_16_5_LIVING_INTEGRATION_CLASSIFICATION_SUMMARY_2026-05-16.md`
 
 ## Baseline
 
@@ -185,7 +185,7 @@ review path needed before a reporting correction can become binding.
 
 ## Related Artifacts
 
-- `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md`
+- `docs/reviews/archive/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md`
 - `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_CLAUDE_REVIEW_PACKET_2026-05-17.md`
 - `docs/reviews/CVF_OPERATOR_PROGRESS_AND_UNABSORBED_KNOWLEDGE_REPORT_2026-05-17.md`
 - `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_REPORTING_CORRECTION_REBUTTAL_2026-05-17.md`

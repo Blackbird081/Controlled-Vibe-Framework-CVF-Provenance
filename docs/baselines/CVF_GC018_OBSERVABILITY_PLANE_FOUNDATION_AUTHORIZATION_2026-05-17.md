@@ -46,7 +46,7 @@ Consensus prerequisites:
 
 Prior related runtime primitive:
 
-- `docs/baselines/CVF_GC018_OBSERVABILITY_DELTA_AUTHORIZATION_2026-05-16.md`
+- `docs/baselines/archive/CVF_GC018_OBSERVABILITY_DELTA_AUTHORIZATION_2026-05-16.md`
 
 ## Decision
 

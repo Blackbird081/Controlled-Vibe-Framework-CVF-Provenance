@@ -39,6 +39,8 @@ Out of scope:
 |---|---|
 | `CVF_SESSION_MEMORY.md` | Single front door for active session state. |
 | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Machine-readable active handoff, first-read, blocked-class, and next-move registry. |
+| `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` | Machine-readable review intake queue for ambiguous roadmap/review requests. |
+| `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` | Current steering source for Review-CVF pain-point closure. |
 | `docs/reference/CVF_SESSION_GOVERNANCE_BOOTSTRAP.md` | Session-start governance routing. |
 | `governance/toolkit/05_OPERATION/CVF_SESSION_GOVERNANCE_BOOTSTRAP_GUARD.md` | GC-025 bootstrap rule. |
 | `governance/toolkit/05_OPERATION/CVF_AGENT_HANDOFF_TRANSITION_GUARD.md` | GC-020 transition classification before writing or trusting handoffs. |
@@ -82,6 +84,8 @@ Machine check:
 
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
+- `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 - `CVF_SESSION/READ_FIRST.md`
 - `docs/reference/CVF_SESSION_GOVERNANCE_BOOTSTRAP.md`
 

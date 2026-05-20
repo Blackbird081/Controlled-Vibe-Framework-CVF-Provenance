@@ -7,7 +7,7 @@ Status: OPEN - CODEX SELF-REBUTTAL COMPLETE - CLAUDE REVIEW REQUIRED
 ## Purpose
 
 Codex self-review and challenge the proposed reporting correction introduced after
-`docs/reviews/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md`.
+`docs/reviews/archive/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md`.
 
 This rebuttal exists because a reporting failure, even when real, must not be
 absorbed into CVF as a durable rule without roadmap review and counterargument.
@@ -35,7 +35,7 @@ Out of scope:
 
 ## Source
 
-- `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md`
+- `docs/reviews/archive/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md`
 - `docs/reviews/CVF_OPERATOR_PROGRESS_AND_UNABSORBED_KNOWLEDGE_REPORT_2026-05-17.md`
 - `docs/roadmaps/CVF_UNABSORBED_KNOWLEDGE_REPORTING_CORRECTION_ROADMAP_2026-05-17.md`
 - `AGENT_HANDOFF_V7_2026-05-16.md`
@@ -140,7 +140,7 @@ operator decision.
 
 ## Related Artifacts
 
-- `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md`
+- `docs/reviews/archive/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md`
 - `docs/reviews/CVF_UNABSORBED_KNOWLEDGE_CLAUDE_REVIEW_PACKET_2026-05-17.md`
 - `docs/reviews/CVF_OPERATOR_PROGRESS_AND_UNABSORBED_KNOWLEDGE_REPORT_2026-05-17.md`
 - `docs/roadmaps/CVF_UNABSORBED_KNOWLEDGE_REPORTING_CORRECTION_ROADMAP_2026-05-17.md`

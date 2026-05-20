@@ -26,6 +26,8 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 
 FRONT_DOOR_PATH = "CVF_SESSION_MEMORY.md"
 STATE_PATH = "CVF_SESSION/ACTIVE_SESSION_STATE.json"
+REVIEW_QUEUE_PATH = "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json"
+PAIN_POINT_DIRECTION_PATH = "docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md"
 READ_FIRST_PATH = "CVF_SESSION/READ_FIRST.md"
 STARTUP_GUARDS_PATH = "CVF_SESSION/REQUIRED_STARTUP_GUARDS.md"
 AGENTS_PATH = "AGENTS.md"
@@ -36,6 +38,8 @@ THIS_SCRIPT_PATH = "governance/compat/check_active_session_state.py"
 REQUIRED_STATIC_FILES = (
     FRONT_DOOR_PATH,
     STATE_PATH,
+    REVIEW_QUEUE_PATH,
+    PAIN_POINT_DIRECTION_PATH,
     READ_FIRST_PATH,
     STARTUP_GUARDS_PATH,
     AGENTS_PATH,
@@ -46,6 +50,8 @@ REQUIRED_STATIC_FILES = (
 FRONT_DOOR_MARKERS = (
     "ACTIVE SESSION FRONT DOOR",
     STATE_PATH,
+    REVIEW_QUEUE_PATH,
+    PAIN_POINT_DIRECTION_PATH,
 )
 
 AGENT_ROUTER_MARKERS = (
@@ -67,6 +73,16 @@ def _load_state() -> tuple[dict[str, Any] | None, str | None]:
         return None, "state file is missing"
     try:
         return json.loads(state_path.read_text(encoding="utf-8")), None
+    except json.JSONDecodeError as exc:
+        return None, f"invalid JSON: {exc}"
+
+
+def _load_review_queue() -> tuple[dict[str, Any] | None, str | None]:
+    queue_path = REPO_ROOT / REVIEW_QUEUE_PATH
+    if not queue_path.exists():
+        return None, "review queue file is missing"
+    try:
+        return json.loads(queue_path.read_text(encoding="utf-8")), None
     except json.JSONDecodeError as exc:
         return None, f"invalid JSON: {exc}"
 
@@ -113,14 +129,35 @@ def _root_handoff_paths() -> list[Path]:
     return sorted(REPO_ROOT.glob("AGENT_HANDOFF*.md"))
 
 
+def _normalized_rel(path: str) -> str:
+    return path.replace("\\", "/").strip("/")
+
+
+def _is_under_path(path: str, parent: str) -> bool:
+    normalized = _normalized_rel(path)
+    normalized_parent = _normalized_rel(parent)
+    return normalized == normalized_parent or normalized.startswith(f"{normalized_parent}/")
+
+
+def _is_handoff_path(path: str) -> bool:
+    return Path(path).name.startswith("AGENT_HANDOFF") and Path(path).suffix == ".md"
+
+
+def _handoff_status(path: Path) -> str | None:
+    text = path.read_text(encoding="utf-8", errors="replace")
+    for line in text.splitlines()[:40]:
+        stripped = line.strip()
+        if stripped.startswith("Status:"):
+            return stripped
+    return None
+
+
 def _active_handoffs() -> list[str]:
     active: list[str] = []
     for path in _root_handoff_paths():
-        text = path.read_text(encoding="utf-8", errors="replace")
-        for line in text.splitlines()[:40]:
-            if line.strip().startswith("Status: ACTIVE"):
-                active.append(path.name)
-                break
+        status = _handoff_status(path)
+        if status and status.startswith("Status: ACTIVE"):
+            active.append(path.name)
     return active
 
 
@@ -134,12 +171,18 @@ def _classify() -> dict[str, Any]:
     missing_files = [path for path in REQUIRED_STATIC_FILES if not (REPO_ROOT / path).exists()]
 
     state, state_error = _load_state()
+    review_queue, review_queue_error = _load_review_queue()
     state_violations: list[str] = []
+    review_queue_violations: list[str] = []
     active_handoff = None
+    active_review_queue = None
+    pain_point_direction = None
     current_mode = None
     freeze_posture = None
     required_first_reads: list[str] = []
     required_startup_guards: list[str] = []
+    archive_path = None
+    ready_review_items: list[str] = []
 
     if state_error:
         state_violations.append(state_error)
@@ -148,6 +191,14 @@ def _classify() -> dict[str, Any]:
             state_violations.append("activeSessionFrontDoor must point to CVF_SESSION_MEMORY.md")
         if state.get("activeStateRegistry") != STATE_PATH:
             state_violations.append("activeStateRegistry must point to CVF_SESSION/ACTIVE_SESSION_STATE.json")
+        active_review_queue = state.get("activeReviewQueue")
+        if active_review_queue != REVIEW_QUEUE_PATH:
+            state_violations.append(f"activeReviewQueue must point to {REVIEW_QUEUE_PATH}")
+        pain_point_direction = state.get("painPointClosureDirection")
+        if pain_point_direction != PAIN_POINT_DIRECTION_PATH:
+            state_violations.append(f"painPointClosureDirection must point to {PAIN_POINT_DIRECTION_PATH}")
+        elif not (REPO_ROOT / pain_point_direction).exists():
+            state_violations.append(f"painPointClosureDirection path does not exist: {pain_point_direction}")
         active_handoff = state.get("activeHandoff")
         if not isinstance(active_handoff, str) or not active_handoff:
             state_violations.append("activeHandoff must be a non-empty string")
@@ -185,10 +236,73 @@ def _classify() -> dict[str, Any]:
             for path in _as_list(state.get(field)):
                 if not (REPO_ROOT / path).exists():
                     state_violations.append(f"{field} path does not exist: {path}")
+                    continue
+                if (
+                    archive_path
+                    and _is_handoff_path(path)
+                    and path != active_handoff
+                    and not _is_under_path(path, archive_path)
+                ):
+                    state_violations.append(
+                        f"{field} handoff path must live under historicalHandoffArchive: {path}"
+                    )
 
         blocked = _as_list(state.get("blockedWorkClasses"))
         if not blocked:
             state_violations.append("blockedWorkClasses must be a non-empty list")
+
+    if review_queue_error:
+        review_queue_violations.append(review_queue_error)
+    elif review_queue is not None:
+        if review_queue.get("status") != "ACTIVE_REVIEW_QUEUE":
+            review_queue_violations.append("review queue status must be ACTIVE_REVIEW_QUEUE")
+        items = review_queue.get("items")
+        if not isinstance(items, list):
+            review_queue_violations.append("review queue items must be a list")
+            items = []
+        seen_ids: set[str] = set()
+        for index, item in enumerate(items):
+            if not isinstance(item, dict):
+                review_queue_violations.append(f"review queue item {index} must be an object")
+                continue
+            item_id = item.get("id")
+            if not isinstance(item_id, str) or not item_id:
+                review_queue_violations.append(f"review queue item {index} missing id")
+            elif item_id in seen_ids:
+                review_queue_violations.append(f"review queue item id is duplicated: {item_id}")
+            else:
+                seen_ids.add(item_id)
+
+            path = item.get("path")
+            if not isinstance(path, str) or not path:
+                review_queue_violations.append(f"review queue item {item_id or index} missing path")
+            elif not (REPO_ROOT / path).exists():
+                review_queue_violations.append(f"review queue item path does not exist: {path}")
+
+            status = item.get("status")
+            if not isinstance(status, str) or not status:
+                review_queue_violations.append(f"review queue item {item_id or index} missing status")
+                continue
+
+            if status == "READY_FOR_REBUTTAL":
+                expected = item.get("expectedResponsePath")
+                if not isinstance(expected, str) or not expected:
+                    review_queue_violations.append(
+                        f"READY_FOR_REBUTTAL item {item_id or index} must define expectedResponsePath"
+                    )
+                elif (REPO_ROOT / expected).exists():
+                    review_queue_violations.append(
+                        f"READY_FOR_REBUTTAL item already has response path; update status: {item_id or index}"
+                    )
+                ready_review_items.append(item_id or path or str(index))
+            elif status.startswith("REBUTTAL_FILED"):
+                response = item.get("responsePath")
+                if not isinstance(response, str) or not response:
+                    review_queue_violations.append(
+                        f"REBUTTAL_FILED item {item_id or index} must define responsePath"
+                    )
+                elif not (REPO_ROOT / response).exists():
+                    review_queue_violations.append(f"responsePath does not exist for {item_id or index}: {response}")
 
     marker_violations: dict[str, list[str]] = {}
     front_door_text = _read_text(FRONT_DOOR_PATH)
@@ -198,6 +312,10 @@ def _classify() -> dict[str, Any]:
     ]
     if active_handoff and active_handoff not in front_door_text:
         missing_front_door_markers.append(active_handoff)
+    if active_review_queue and active_review_queue not in front_door_text:
+        missing_front_door_markers.append(active_review_queue)
+    if pain_point_direction and pain_point_direction not in front_door_text:
+        missing_front_door_markers.append(pain_point_direction)
     if current_mode and current_mode not in front_door_text:
         missing_front_door_markers.append(current_mode)
     if freeze_posture and freeze_posture not in front_door_text:
@@ -228,6 +346,16 @@ def _classify() -> dict[str, Any]:
         handoff_violations.append(
             f"active handoff registry mismatch: registry={active_handoff}, detected={active_handoffs}"
         )
+    if archive_path:
+        for path in _root_handoff_paths():
+            rel = path.relative_to(REPO_ROOT).as_posix()
+            if rel == active_handoff:
+                continue
+            status = _handoff_status(path) or ""
+            if status.startswith("Status: ARCHIVED"):
+                handoff_violations.append(
+                    f"archived handoff remains at repository root instead of historicalHandoffArchive: {rel}"
+                )
 
     # GC-020 In-Place Update Rule: active handoff must contain the current HEAD SHA.
     # For a dedicated handoff-sync commit, the handoff cannot name its own future
@@ -263,6 +391,7 @@ def _classify() -> dict[str, Any]:
     compliant = (
         not missing_files
         and not state_violations
+        and not review_queue_violations
         and not marker_violations
         and not handoff_violations
     )
@@ -271,6 +400,10 @@ def _classify() -> dict[str, Any]:
         "frontDoor": FRONT_DOOR_PATH,
         "statePath": STATE_PATH,
         "activeHandoff": active_handoff,
+        "activeReviewQueue": active_review_queue,
+        "painPointClosureDirection": pain_point_direction,
+        "readyReviewItems": ready_review_items,
+        "readyReviewItemCount": len(ready_review_items),
         "detectedActiveHandoffs": active_handoffs,
         "requiredFirstReadCount": len(required_first_reads),
         "requiredStartupGuardCount": len(required_startup_guards),
@@ -278,6 +411,8 @@ def _classify() -> dict[str, Any]:
         "missingFileCount": len(missing_files),
         "stateViolations": state_violations,
         "stateViolationCount": len(state_violations),
+        "reviewQueueViolations": review_queue_violations,
+        "reviewQueueViolationCount": len(review_queue_violations),
         "markerViolations": marker_violations,
         "markerViolationCount": len(marker_violations),
         "handoffViolations": handoff_violations,
@@ -296,11 +431,15 @@ def _print_report(report: dict[str, Any]) -> None:
     print(f"Front door: {report['frontDoor']}")
     print(f"State registry: {report['statePath']}")
     print(f"Active handoff: {report['activeHandoff']}")
+    print(f"Active review queue: {report['activeReviewQueue']}")
+    print(f"Pain-point closure direction: {report['painPointClosureDirection']}")
+    print(f"Ready review items: {report['readyReviewItemCount']}")
     print(f"Detected active handoffs: {', '.join(report['detectedActiveHandoffs']) or 'none'}")
     print(f"Required first reads: {report['requiredFirstReadCount']}")
     print(f"Required startup guards: {report['requiredStartupGuardCount']}")
     print(f"Missing files: {report['missingFileCount']}")
     print(f"State violations: {report['stateViolationCount']}")
+    print(f"Review queue violations: {report['reviewQueueViolationCount']}")
     print(f"Marker violations: {report['markerViolationCount']}")
     print(f"Handoff violations: {report['handoffViolationCount']}")
     head_sha = report.get("headSha")
@@ -332,6 +471,11 @@ def _print_report(report: dict[str, Any]) -> None:
         for issue in report["stateViolations"]:
             print(f"  - {issue}")
 
+    if report["reviewQueueViolations"]:
+        print("\nReview queue violations:")
+        for issue in report["reviewQueueViolations"]:
+            print(f"  - {issue}")
+
     if report["markerViolations"]:
         print("\nMarker violations:")
         for path, markers in report["markerViolations"].items():
@@ -351,7 +495,7 @@ def _print_report(report: dict[str, Any]) -> None:
     print("\nVIOLATION - active session state is incomplete or misaligned.")
     print("Action required:")
     print(f"  1. Update {STATE_PATH} first.")
-    print(f"  2. Keep {FRONT_DOOR_PATH}, {AGENTS_PATH}, and {CLAUDE_PATH} routed through the registry.")
+    print(f"  2. Keep {FRONT_DOOR_PATH}, {REVIEW_QUEUE_PATH}, {AGENTS_PATH}, and {CLAUDE_PATH} routed through the registry.")
     print("  3. Ensure exactly one root AGENT_HANDOFF*.md declares Status: ACTIVE.")
     print(f"  4. Ensure {HOOK_CHAIN_PATH} runs {THIS_SCRIPT_PATH}.")
 

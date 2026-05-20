@@ -2,6 +2,8 @@
   "schemaVersion": "0.1.0",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+  "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
+  "painPointClosureDirection": "docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
   "activeHandoff": "AGENT_HANDOFF_V10_2026-05-19.md",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -13,7 +15,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V6_2026-05-16.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V7_2026-05-16.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V8_2026-05-17.md",
-    "AGENT_HANDOFF_V9_2026-05-18.md"
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V9_2026-05-18.md"
   ],
   "relatedHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_INTEGRATIONS_2026-05-17.md",
@@ -82,6 +84,8 @@
   "startupAcknowledgmentRequired": [
     "active_session_mode",
     "active_handoff_path",
+    "active_review_queue",
+    "pain_point_closure_direction",
     "required_first_reads",
     "blocked_work_classes",
     "next_allowed_move"
