@@ -30,7 +30,7 @@ Provenance HEAD before Lane G implementation:
 `ae492d7dcd9a7b48948521a5160ee7668fa8fa4f`.
 
 Current HEAD (GC-020):
-`dc0df014` (docs: file post pain-point hardening roadmap) — parent SHA for upcoming Claude rebuttal commit
+`f607b6a4` (docs(rebuttal): Claude rebuttal on post-pain-point hardening roadmap NON_BLOCKING_WITH_SCOPE_REFINEMENT)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
