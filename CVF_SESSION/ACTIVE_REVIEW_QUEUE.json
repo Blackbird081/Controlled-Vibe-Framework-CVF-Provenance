@@ -8,12 +8,13 @@
       "id": "post-residual-closure-next-roadmap",
       "artifactType": "roadmap",
       "path": "docs/roadmaps/CVF_POST_RESIDUAL_CLOSURE_NEXT_ROADMAP_2026-05-20.md",
-      "status": "READY_FOR_REBUTTAL",
+      "status": "REBUTTAL_FILED_NON_BLOCKING_WITH_GATE_UPDATE",
       "requestedReviewer": "Codex",
       "expectedResponsePath": "docs/reviews/CVF_POST_RESIDUAL_CLOSURE_NEXT_ROADMAP_CODEX_REBUTTAL_2026-05-20.md",
+      "responsePath": "docs/reviews/CVF_POST_RESIDUAL_CLOSURE_NEXT_ROADMAP_CODEX_REBUTTAL_2026-05-20.md",
       "priority": 1,
       "source": "AGENT_HANDOFF_V10_2026-05-19.md",
-      "notes": "Claude proposes three next tranches (N1 public-sync catalog update, N2 workflow-chain V2 rebuttal cycle, N3 skill corpus repair roadmap) after the 2026-05-20 residual closure. Codex must rebut per-candidate before any GC-018 or work order dispatch."
+      "notes": "Codex rebuttal filed 2026-05-20. Overall NON_BLOCKING_WITH_GATE_UPDATE: N1 accepted as public-safe catalog maintenance under GC-024/Fast-Lane only; N2 accepted as rebuttal-only with queue priority correction (workflow V2 is priority 2, not priority 1); N3 accepted as roadmap-only with downstream rebuttal + GC-018 + work order required before implementation."
     },
     {
       "id": "workflow-chain-governance-v2",

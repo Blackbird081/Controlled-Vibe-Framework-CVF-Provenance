@@ -90,6 +90,6 @@
     "blocked_work_classes",
     "next_allowed_move"
   ],
-  "nextAllowedMove": "Post-residual-closure next roadmap filed READY_FOR_REBUTTAL at docs/roadmaps/CVF_POST_RESIDUAL_CLOSURE_NEXT_ROADMAP_2026-05-20.md (priority 1 in review queue). Three candidates: N1 public-sync catalog update under GC-024 BINDING (no GC-018 required, fast-lane sufficient); N2 workflow-chain governance V2 rebuttal cycle (priority 2 in queue, pending since 2026-05-19); N3 skill corpus dead-reference repair roadmap (filed-only, implementation gated by downstream rebuttal+GC-018). Next: Codex must rebut per-candidate before any GC-018 or work order dispatch. Do not bundle N1+N2+N3. Do not reopen any A-H pain point.",
+  "nextAllowedMove": "Post-residual-closure next roadmap rebuttal filed at docs/reviews/CVF_POST_RESIDUAL_CLOSURE_NEXT_ROADMAP_CODEX_REBUTTAL_2026-05-20.md with verdict NON_BLOCKING_WITH_GATE_UPDATE. Default sequence: N1 public-sync catalog update under GC-024/Fast-Lane only and public-safe boundary; N2 workflow-chain governance V2 rebuttal cycle remains READY_FOR_REBUTTAL as priority 2; N3 skill corpus dead-reference repair roadmap is roadmap-only and implementation remains gated by downstream rebuttal+GC-018+work order. Do not bundle N1+N2+N3. Do not reopen any A-H pain point.",
   "lastUpdated": "2026-05-20"
 }

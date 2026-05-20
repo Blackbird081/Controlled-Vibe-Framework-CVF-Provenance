@@ -36,8 +36,9 @@ plus two explicit rejections). It did NOT do three things that are now due:
 
 1. Update the **public technical catalog** (GC-024 BINDING rule) for the new
    capabilities now in the governance repo.
-2. Process the **workflow-chain governance V2 roadmap** (priority 1 in the
-   active review queue, READY_FOR_REBUTTAL since 2026-05-19).
+2. Process the **workflow-chain governance V2 roadmap** (priority 2 in the
+   active review queue after this post-residual roadmap took priority 1;
+   READY_FOR_REBUTTAL since 2026-05-19).
 3. File a roadmap for the **skill corpus dead-reference repair** that has
    been listed as pending since the post-Lane-G repair tranche.
 
@@ -139,8 +140,9 @@ Predecessor evidence:
 
 - `docs/roadmaps/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_2026-05-19.md`
   (READY_FOR_REBUTTAL since 2026-05-19)
-- `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` — priority 1 item
-  `workflow-chain-governance-v2`
+- `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` — priority 2 item
+  `workflow-chain-governance-v2` (was priority 1 until 2026-05-20 when this
+  post-residual roadmap took priority 1)
 - `docs/reviews/CVF_WORKFLOW_CHAIN_GOVERNANCE_PROPOSAL_REVIEWER_REBUTTAL_2026-05-19.md`
   (rebuttal on the V1 proposal that triggered V2)
 
@@ -321,8 +323,8 @@ Rationale:
 
 - N1 has the strongest existing obligation (BINDING rule, catalog already
   out of date).
-- N2 has the strongest queue precedent (priority 1, READY_FOR_REBUTTAL flag
-  set ten days ago).
+- N2 has strong queue precedent (priority 2 after this roadmap took priority
+  1; the underlying V2 roadmap has been READY_FOR_REBUTTAL since 2026-05-19).
 - N3 is genuinely new and should not jump the queue over an existing pending
   item.
 

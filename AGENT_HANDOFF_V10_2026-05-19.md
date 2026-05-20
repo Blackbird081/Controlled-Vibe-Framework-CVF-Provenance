@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — D/E/F/G lanes closed; M1/C2/D2/H2 closed; Phase 3 W1/W2/W3 closed; Rule C paradox fixed; ALL 6 residual work orders CLOSED (A1/C1/D1/E1/G1/H1); all 8 Review-CVF pain points CLOSED; post-residual-closure next roadmap filed READY_FOR_REBUTTAL (priority 1 in review queue).
+Status: ACTIVE — D/E/F/G lanes closed; M1/C2/D2/H2 closed; Phase 3 W1/W2/W3 closed; Rule C paradox fixed; ALL 6 residual work orders CLOSED (A1/C1/D1/E1/G1/H1); all 8 Review-CVF pain points CLOSED; post-residual-closure next roadmap rebuttal filed NON_BLOCKING_WITH_GATE_UPDATE.
 
 Latest planning artifacts (read these first if you are resuming Review-CVF closure work):
 
@@ -12,7 +12,7 @@ Latest planning artifacts (read these first if you are resuming Review-CVF closu
 - `docs/assessments/CVF_QUALITY_ASSESSMENT_2026-05-19.md` (post-upgrade quality grade A−; 99.9% test pass rate; 43/43 governance guards PASS)
 - `docs/reviews/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md` (Codex rebuttal: MIXED — applied corrections; A1/C1/D1/E1/G1/H1 all now CLOSED)
 - Closure reviews: `docs/reviews/CVF_{A1,C1,D1,E1,G1,H1}_*_CLOSURE_REVIEW_2026-05-20.md` (6 files, all CLOSED)
-- `docs/roadmaps/CVF_POST_RESIDUAL_CLOSURE_NEXT_ROADMAP_2026-05-20.md` (READY_FOR_REBUTTAL — three next-tranche candidates N1 public-sync catalog update / N2 workflow-chain V2 rebuttal cycle / N3 skill corpus repair roadmap; Codex must rebut per-candidate before any GC-018 or work order)
+- `docs/roadmaps/CVF_POST_RESIDUAL_CLOSURE_NEXT_ROADMAP_2026-05-20.md` + `docs/reviews/CVF_POST_RESIDUAL_CLOSURE_NEXT_ROADMAP_CODEX_REBUTTAL_2026-05-20.md` (NON_BLOCKING_WITH_GATE_UPDATE — N1 public-sync catalog update accepted as public-safe GC-024/Fast-Lane maintenance; N2 workflow-chain V2 remains rebuttal-only and is queue priority 2; N3 skill corpus repair remains roadmap-only with downstream rebuttal+GC-018+work order required before implementation)
 
 Remote tracking branch: `origin/main`
 
