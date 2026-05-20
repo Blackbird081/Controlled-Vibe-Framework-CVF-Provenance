@@ -35,7 +35,8 @@ Provenance HEAD before Lane G implementation:
 Current HEAD before HN1 closure local edits:
 `ece6b0c5` (docs(work-orders): allow HN closure status sync)
 
-Current HEAD (GC-020): pending sync after HN1 closure commit.
+Current HEAD after HN1 closure (GC-020):
+`ce8109a4` (docs(hn1): close template linkage exemption)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
