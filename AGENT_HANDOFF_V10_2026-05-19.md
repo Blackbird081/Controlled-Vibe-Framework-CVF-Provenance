@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — D/E/F/G lanes closed; M1/C2/D2/H2 closed; Phase 3 W1/W2/W3 closed; Rule C paradox fixed; ALL 6 residual work orders CLOSED (A1/C1/D1/E1/G1/H1); all 8 Review-CVF pain points CLOSED; post-residual roadmap rebutted NON_BLOCKING_WITH_GATE_UPDATE; N1 CLOSED at public commit `d11c772a`; N2 workflow-chain V2 rebuttal filed CLOSED_BY_PRIOR_TRANCHE; N3 work order remains DISPATCHED.
+Status: ACTIVE — D/E/F/G lanes closed; M1/C2/D2/H2 closed; Phase 3 W1/W2/W3 closed; Rule C paradox fixed; ALL 6 residual work orders CLOSED (A1/C1/D1/E1/G1/H1); all 8 Review-CVF pain points CLOSED; post-residual roadmap rebutted NON_BLOCKING_WITH_GATE_UPDATE; N1 CLOSED (public commit `d11c772a`); N2 CLOSED_BY_PRIOR_TRANCHE; N3 WITHDRAWN (zero dead references; audit confirmed corpus health).
 
 Latest planning artifacts (read these first if you are resuming Review-CVF closure work):
 
@@ -15,7 +15,7 @@ Latest planning artifacts (read these first if you are resuming Review-CVF closu
 - `docs/roadmaps/CVF_POST_RESIDUAL_CLOSURE_NEXT_ROADMAP_2026-05-20.md` + `docs/reviews/CVF_POST_RESIDUAL_CLOSURE_NEXT_ROADMAP_CODEX_REBUTTAL_2026-05-20.md` (NON_BLOCKING_WITH_GATE_UPDATE — N1 public-sync catalog update accepted as public-safe GC-024/Fast-Lane maintenance; N2 workflow-chain V2 remains rebuttal-only and is queue priority 2; N3 skill corpus repair remains roadmap-only with downstream rebuttal+GC-018+work order required before implementation)
 - `docs/work_orders/CVF_WO_N1_PUBLIC_SYNC_CATALOG_UPDATE_2026-05-20.md` + `docs/reviews/CVF_N1_PUBLIC_SYNC_CATALOG_UPDATE_CLOSURE_REVIEW_2026-05-20.md` (CLOSED — public catalog/audit pushed to public-sync commit `d11c772a`; role catalog remains public-sync coverage gap)
 - `docs/work_orders/CVF_WO_N2_WORKFLOW_CHAIN_V2_REBUTTAL_2026-05-20.md` + `docs/reviews/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_CODEX_REBUTTAL_2026-05-19.md` (CLOSED_BY_PRIOR_TRANCHE — C1/C2/C3/C4 already closed; no new V2 GC-018 or implementation)
-- `docs/work_orders/CVF_WO_N3_SKILL_CORPUS_REPAIR_ROADMAP_2026-05-20.md` (DISPATCHED — Codex Orchestrator-author files skill corpus repair roadmap with classified inventory; downstream implementation gated by fresh rebuttal+GC-018+work order)
+- `docs/work_orders/CVF_WO_N3_SKILL_CORPUS_REPAIR_ROADMAP_2026-05-20.md` + `docs/reviews/CVF_N3_SKILL_CORPUS_REPAIR_WORK_ORDER_WITHDRAWAL_2026-05-20.md` (WITHDRAWN — Codex correctly triggered N3 Review Gate at pre-flight: zero dead references in skills-index.json [27/27 live]; audit confirmed corpus health; pending memory item resolved by audit)
 
 Remote tracking branch: `origin/main`
 
@@ -28,7 +28,7 @@ Provenance continuity base for this handoff: `e91b41fd`.
 Provenance HEAD before Lane G implementation:
 `ae492d7dcd9a7b48948521a5160ee7668fa8fa4f`.
 
-Current HEAD before N2 closure local edits: `7d4992f7`.
+Current HEAD (GC-020): `bf3adc1f` (docs(n2): close workflow chain v2 rebuttal) — parent SHA for upcoming N3 withdrawal commit
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 

@@ -90,6 +90,6 @@
     "blocked_work_classes",
     "next_allowed_move"
   ],
-  "nextAllowedMove": "N2 workflow-chain V2 rebuttal filed at docs/reviews/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_CODEX_REBUTTAL_2026-05-19.md with disposition CLOSED_BY_PRIOR_TRANCHE for C1/C2/C3/C4; queue item workflow-chain-governance-v2 updated. N3 remains dispatched and independently executable at docs/work_orders/CVF_WO_N3_SKILL_CORPUS_REPAIR_ROADMAP_2026-05-20.md: file skill corpus repair roadmap with classified inventory only; downstream implementation requires fresh rebuttal+GC-018+work order. Do not reopen any A-H pain point.",
+  "nextAllowedMove": "N1 CLOSED at public commit d11c772a. N2 CLOSED_BY_PRIOR_TRANCHE (C1/C2/C3/C4 already closed; no new GC-018 or implementation). N3 WITHDRAWN 2026-05-20 — Codex correctly triggered N3 Review Gate (zero dead references in skills-index.json: 27/27 live; 0 orphan SKILL.md files on disk; 0 missing template linkages); pending memory item resolved by audit. Withdrawal notice: docs/reviews/CVF_N3_SKILL_CORPUS_REPAIR_WORK_ORDER_WITHDRAWAL_2026-05-20.md. All three post-residual candidates (N1/N2/N3) are now disposed. Next: operator decides whether to file a fresh roadmap for any remaining concern (e.g., template-skill linkage coverage gap with 118 unlinked templates, governance kernel freeze posture, CDH M/C/D/H candidates). Do not reopen any A-H pain point.",
   "lastUpdated": "2026-05-20"
 }

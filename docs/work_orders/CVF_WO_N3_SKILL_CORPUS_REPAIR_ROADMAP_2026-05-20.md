@@ -2,7 +2,12 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: WITHDRAWN — see
+`docs/reviews/CVF_N3_SKILL_CORPUS_REPAIR_WORK_ORDER_WITHDRAWAL_2026-05-20.md`.
+Worker (Codex) correctly triggered the work order's own Review Gate
+("Zero dead references found in skill index") during pre-flight. Audit
+confirmed 27 skills / 0 dead / 0 orphans. Authoring premise was incorrect.
+Do not re-execute this work order.
 
 docType: work_order
 
