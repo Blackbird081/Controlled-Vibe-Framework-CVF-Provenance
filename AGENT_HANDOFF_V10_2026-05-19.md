@@ -38,7 +38,8 @@ Current HEAD before HN1 closure local edits:
 Current HEAD after HN1 closure (GC-020):
 `ce8109a4` (docs(hn1): close template linkage exemption)
 
-Current HEAD (GC-020): pending sync after HN2.a closure commit.
+Current HEAD after HN2.a closure (GC-020):
+`ef9f58d6` (docs(hn2a): file governance kernel inventory)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 

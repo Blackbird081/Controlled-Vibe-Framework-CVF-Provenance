@@ -41,6 +41,8 @@ and the work order does not require creating one.
 - The inventory records no policy verdict and no implementation authorization.
 - No GC-018 was filed.
 - No public-sync repository was touched.
+- Public catalog update: N/A because HN2.a filed a private inventory only and
+  did not add a new public capability tranche.
 - No A-H Review-CVF pain point was reopened.
 - Pre-commit hook: PASS (11/11).
 - Pre-push hook: PASS (43/43).
