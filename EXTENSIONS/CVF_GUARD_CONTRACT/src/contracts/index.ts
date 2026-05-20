@@ -223,6 +223,25 @@ export {
 } from './phase2b-wireup.contract';
 
 export type {
+  Phase2BPrimaryRowId,
+  Phase2BAdapterFamily,
+  Phase2BRuntimeEvidenceMode,
+  Phase2BAdapterNode,
+  Phase2BAdapterEdge,
+  Phase2BRuntimeCoherenceGraphInput,
+  Phase2BRuntimeCoherenceGraph,
+  Phase2BRuntimeCoherenceValidation,
+} from './phase2b-runtime-coherence.contract';
+
+export {
+  PHASE_2B_RUNTIME_COHERENCE_SCHEMA_VERSION,
+  PHASE_2B_PRIMARY_ROW_IDS,
+  buildPhase2BRuntimeCoherenceGraph,
+  validatePhase2BRuntimeCoherenceGraph,
+  buildPhase2BAdapterInventoryChecksum,
+} from './phase2b-runtime-coherence.contract';
+
+export type {
   MetricEmissionStatus,
   OperationalMetricSchema,
 } from './operational-metrics.schema';

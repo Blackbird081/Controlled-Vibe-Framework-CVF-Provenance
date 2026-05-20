@@ -833,6 +833,46 @@ runtime-coherence harness, run live provider proof, change provider/Maika
 behavior, add persistent memory or database schema, update public-sync, make a
 public catalog claim, or lift the global freeze.
 
+## Phase 2.B Runtime Coherence Internal Proof — 2026-05-21
+
+Codex closed the bounded internal runtime-coherence tranche:
+
+`RC-01 -> RC-02 -> RC-03 -> RC-04 -> RC-05 -> RC-06`
+
+Completion review:
+
+- `docs/reviews/CVF_PHASE_2B_RUNTIME_COHERENCE_COMPLETION_2026-05-21.md`
+
+Implemented:
+
+- `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/phase2b-runtime-coherence.contract.ts`
+- `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/contracts.phase2b-runtime-coherence.test.ts`
+- `scripts/run_phase2b_runtime_coherence_harness.mjs`
+- Guard Contract index exports for the graph schema, validator, and checksum.
+
+Evidence:
+
+- Guard Contract targeted runtime-coherence tests: PASS, 1 file / 5 tests.
+- Guard Contract `npm run check`: PASS.
+- `node scripts/run_phase2b_runtime_coherence_harness.mjs --json`: PASS.
+- Docs governance compatibility: PASS.
+- Markdown structural completeness: PASS.
+
+Closed proof details:
+
+- Graph schema: `phase2b-runtime-coherence-graph-1`.
+- Adapter inventory checksum: `fnv1a32:5d3d2dac`.
+- Positive graph: 46 nodes and 5 cross-family edges.
+- Negative gates: missing row, trace/key mismatch, live-provider mode, and
+  forbidden live/public claims.
+
+Boundary: internal deterministic runtime coherence only. `liveProofProven`
+remains `false`. This does not close live governance proof, provider runtime,
+Maika behavior, persistent memory, database schema migration, public-sync,
+public catalog claim, kernel owner replacement, or global freeze lift. The
+separate live-governance-proof roadmap may now become the next candidate only
+with its own GC-018/work order and live-key requirements.
+
 ## Runtime Maturity Delta M1/C2/D2/H2 Update — 2026-05-19
 
 Codex completed the requested execution sequence from

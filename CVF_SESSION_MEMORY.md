@@ -668,6 +668,43 @@ runtime-coherence harness, do not run live provider proof, do not change
 provider/Maika/memory/database behavior, do not update public-sync, and do not
 lift the global freeze.
 
+## Phase 2.B Runtime Coherence Internal Proof — 2026-05-21
+
+Codex closed the bounded internal runtime-coherence tranche:
+
+`RC-01 -> RC-02 -> RC-03 -> RC-04 -> RC-05 -> RC-06`
+
+Closed completion:
+
+- `docs/reviews/CVF_PHASE_2B_RUNTIME_COHERENCE_COMPLETION_2026-05-21.md`
+
+Implemented:
+
+- Guard Contract runtime-coherence graph schema
+  `phase2b-runtime-coherence-graph-1`;
+- 46-row adapter inventory checksum locked at `fnv1a32:5d3d2dac`;
+- graph validator requiring all 46 primary Phase 2.B row ids;
+- positive cross-family joins across receipt, identity, policy, and memory
+  evidence keys;
+- negative gates for missing row, trace/key mismatch, live-provider mode, and
+  forbidden live/public claims;
+- wrapper command:
+  `node scripts/run_phase2b_runtime_coherence_harness.mjs --json`.
+
+Verification:
+
+- Guard Contract targeted runtime-coherence tests passed (`5/5`).
+- Guard Contract `npm run check` passed.
+- Runtime-coherence wrapper command returned `PASS`.
+- Docs governance and markdown structural checks passed.
+
+Boundary: this closes internal deterministic runtime coherence only.
+`liveProofProven=false`. It does not close live governance proof, provider
+runtime behavior, Maika behavior, persistent memory, database schema migration,
+public-sync update, public catalog claim, kernel owner replacement, or global
+freeze lift. The separate live-governance-proof roadmap may now become the next
+candidate only through its own GC-018/work order and live-key requirements.
+
 ## Claim Boundary
 
 This artifact establishes a governed session-memory front door and machine
