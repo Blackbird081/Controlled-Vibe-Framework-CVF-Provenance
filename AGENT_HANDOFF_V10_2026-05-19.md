@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — D/E/F/G lanes closed; M1/C2/D2/H2 closed; Phase 3 W1/W2/W3 closed; Rule C paradox fixed; ALL 6 residual work orders CLOSED (A1/C1/D1/E1/G1/H1); all 8 Review-CVF pain points CLOSED; N1 CLOSED (public commit `d11c772a`); N2 CLOSED_BY_PRIOR_TRANCHE; N3 WITHDRAWN; hardening roadmap rebutted NON_BLOCKING_WITH_SCOPE_REFINEMENT; HN1 CLOSED; HN2.a CLOSED; HN3 CLOSED; CDH-M narrow deployed value proof CLOSED with temp-CVF-tunnel boundary; CDH-H/CDH-C/CDH-D rebuttals FILED with no implementation authorized.
+Status: ACTIVE — D/E/F/G lanes closed; M1/C2/D2/H2 closed; Phase 3 W1/W2/W3 closed; Rule C paradox fixed; ALL 6 residual work orders CLOSED (A1/C1/D1/E1/G1/H1); all 8 Review-CVF pain points CLOSED; N1 CLOSED (public commit `d11c772a`); N2 CLOSED_BY_PRIOR_TRANCHE; N3 WITHDRAWN; hardening roadmap rebutted NON_BLOCKING_WITH_SCOPE_REFINEMENT; HN1 CLOSED; HN2.a CLOSED; HN3 CLOSED; CDH-M narrow deployed value proof CLOSED with temp-CVF-tunnel boundary; CDH-H/CDH-C/CDH-D rebuttals FILED with no implementation authorized; three kernel-hardening roadmaps FILED READY_FOR_REBUTTAL (HN2.b owner map, HN2.c freeze-release rule, Phase 2.B migration plan) with strict dispatch order.
 
 Latest planning artifacts (read these first if you are resuming Review-CVF closure work):
 
@@ -16,6 +16,9 @@ Latest planning artifacts (read these first if you are resuming Review-CVF closu
 - `docs/reviews/CVF_CDH_H_DELTA_CODEX_REBUTTAL_2026-05-20.md` (NON_BLOCKING_WITH_READOUT_SCOPE — future CDH-H work requires fresh GC-018 and may only cover audit-memory readout/proof hardening; preserve `canReinject=false`; do not use `reinjectionAllowed` as a write gate)
 - `docs/reviews/CVF_CDH_C_DELTA_CODEX_REBUTTAL_2026-05-20.md` (NON_BLOCKING_WITH_LIVE_PROOF_GATE — `cvf execute` already exists; future CDH-C work requires fresh GC-018 for live CLI proof/receipt persistence/diagnostics only)
 - `docs/reviews/CVF_CDH_D_DELTA_CODEX_REBUTTAL_2026-05-20.md` (NON_BLOCKING_WITH_SUBSURFACE_SPLIT — vision contract and reasoning contract are already contract-only closures; vision runtime is separate future GC-018/live-proof work; no bundled runtime claim)
+- `docs/roadmaps/CVF_HN2B_GOVERNANCE_KERNEL_OWNER_MAP_ROADMAP_2026-05-20.md` + `docs/work_orders/CVF_WO_HN2B_OWNER_MAP_REBUTTAL_2026-05-20.md` (READY_FOR_REBUTTAL — converts HN2.a 12-surface inventory into authoritative owner map with closed 11-class classification set; prerequisite for HN2.c and Phase 2.B; filing-only, no GC-018, no freeze lift)
+- `docs/roadmaps/CVF_HN2C_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE_ROADMAP_2026-05-20.md` + `docs/work_orders/CVF_WO_HN2C_FREEZE_RELEASE_RULE_REBUTTAL_2026-05-20.md` (READY_FOR_REBUTTAL — codifies freeze-release rule with closed change-class table, 5 release conditions, 4-role authority chain, global-lift prohibition; HN2.b LOCKED required before GC-018; filing-only)
+- `docs/roadmaps/CVF_PHASE_2B_MIGRATION_PLAN_ROADMAP_2026-05-20.md` + `docs/work_orders/CVF_WO_PHASE_2B_MIGRATION_PLAN_REBUTTAL_2026-05-20.md` (READY_FOR_REBUTTAL — declares 4-input schema (order/owner/done/dependency) for Phase 2.B adapter wire-up; tiered done criterion; bulk migration forbidden; HN2.b LOCKED + HN2.c BINDING required before GC-018; filing-only)
 - `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` (CLOSURE EVIDENCE — A/B/C/D/E/F/G/H all CLOSED after 2026-05-20 tranche; supersedes old 4/8 shorthand and is no longer the active next-work steering file)
 - `docs/reviews/CVF_17_05_REVIEW_CVF_RESIDUAL_PAIN_POINTS_ASSESSMENT_2026-05-19.md` (original assessment; see direction codex for corrected posture)
 - `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (6 candidates, REBUTTAL_ACCEPTED, all work orders now CLOSED)
@@ -52,6 +55,9 @@ Current HEAD after HN3 closure (GC-020):
 
 Current HEAD after CDH-M rebuttal (GC-020):
 `79bf31e6` (docs(cdh-m): file Maika delta rebuttal)
+
+Current HEAD after CDH delta rebuttals + CDH-M closures (GC-020):
+`fd2253ab` (docs(cdh): file C/D/H delta rebuttals + CDH-M deployed value proof)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 

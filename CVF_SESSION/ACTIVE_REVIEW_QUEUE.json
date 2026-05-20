@@ -67,49 +67,85 @@
       "artifactType": "roadmap_slice",
       "path": "docs/roadmaps/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md",
       "anchor": "#per-slice-section-m",
-      "status": "REBUTTAL_FILED_NON_BLOCKING_WITH_PRIVACY_GATE",
+      "status": "CLOSED_DEPLOYED_VALUE_PROOF_WITH_TEMP_CVF_TUNNEL",
       "requestedReviewer": "Codex",
       "expectedResponsePath": "docs/reviews/CVF_CDH_M_DELTA_CODEX_REBUTTAL_2026-05-20.md",
       "responsePath": "docs/reviews/CVF_CDH_M_DELTA_CODEX_REBUTTAL_2026-05-20.md",
       "priority": 6,
       "source": "docs/work_orders/CVF_WO_HN3_CDH_DELTA_META_ROADMAP_2026-05-20.md",
-      "notes": "Codex rebuttal filed 2026-05-20. NON_BLOCKING_WITH_PRIVACY_GATE: Maika text-summary deployment verification may proceed only through slice-specific GC-018 + work order. Live proof must use deployed Supabase Edge Function invocation with authenticated admin/teacher session, CVF receipt/audit evidence, minimized payload evidence, and explicit abnormal-health privacy posture. No photo/vision, direct provider fallback, public-sync claim, or bundled CDH closure."
+      "notes": "Codex rebuttal filed 2026-05-20. Privacy controls closed in docs/reviews/CVF_CDH_M_MAIKA_TEXT_SUMMARY_PRIVACY_CONTROLS_COMPLETION_2026-05-20.md. Deployed value proof closed in docs/reviews/CVF_CDH_M_MAIKA_TEXT_SUMMARY_DEPLOYED_VALUE_PROOF_2026-05-20.md: deployed Maika Supabase Edge Function returned HTTP 200 with summary and CVF governanceEvidenceReceipt, receipt decision ALLOW, rawHealthLeak=false, no direct provider fallback. Boundary: CVF endpoint used a temporary public tunnel to local CVF with live provider keys because deployed Netlify service-token alignment was unavailable; temporary Supabase CVF secrets and proof admin account were cleaned up. No child-data/photo/vision proof, public-sync claim, or bundled CDH closure."
     },
     {
       "id": "cdh-h-delta",
       "artifactType": "roadmap_slice",
       "path": "docs/roadmaps/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md",
       "anchor": "#per-slice-section-h",
-      "status": "READY_FOR_REBUTTAL",
+      "status": "REBUTTAL_FILED_NON_BLOCKING_WITH_READOUT_SCOPE",
       "requestedReviewer": "Codex",
       "expectedResponsePath": "docs/reviews/CVF_CDH_H_DELTA_CODEX_REBUTTAL_2026-05-20.md",
+      "responsePath": "docs/reviews/CVF_CDH_H_DELTA_CODEX_REBUTTAL_2026-05-20.md",
       "priority": 7,
-      "source": "docs/work_orders/CVF_WO_HN3_CDH_DELTA_META_ROADMAP_2026-05-20.md",
-      "notes": "Audit-memory policy refinement only; reinjectionAllowed must not become a memory-capture write gate."
+      "source": "docs/work_orders/CVF_WO_CDH_H_DELTA_REBUTTAL_2026-05-20.md",
+      "notes": "Codex rebuttal filed 2026-05-20 at docs/reviews/CVF_CDH_H_DELTA_CODEX_REBUTTAL_2026-05-20.md. NON_BLOCKING_WITH_READOUT_SCOPE. H2 already surfaces writesRequireReceipt/privacyFilters and preserves canReinject=false; reinjectionAllowed is not a write gate. Future work requires fresh CDH-H GC-018 and may only cover audit-memory readout/proof hardening, not reinjection, persistent/archive memory, provider memory, or new memory classes."
     },
     {
       "id": "cdh-c-delta",
       "artifactType": "roadmap_slice",
       "path": "docs/roadmaps/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md",
       "anchor": "#per-slice-section-c",
-      "status": "READY_FOR_REBUTTAL",
+      "status": "REBUTTAL_FILED_NON_BLOCKING_WITH_LIVE_PROOF_GATE",
       "requestedReviewer": "Codex",
       "expectedResponsePath": "docs/reviews/CVF_CDH_C_DELTA_CODEX_REBUTTAL_2026-05-20.md",
+      "responsePath": "docs/reviews/CVF_CDH_C_DELTA_CODEX_REBUTTAL_2026-05-20.md",
       "priority": 8,
-      "source": "docs/work_orders/CVF_WO_HN3_CDH_DELTA_META_ROADMAP_2026-05-20.md",
-      "notes": "CLI hardening delta only; must not claim the existing cvf execute surface is missing."
+      "source": "docs/work_orders/CVF_WO_CDH_C_DELTA_REBUTTAL_2026-05-20.md",
+      "notes": "Codex rebuttal filed 2026-05-20 at docs/reviews/CVF_CDH_C_DELTA_CODEX_REBUTTAL_2026-05-20.md. NON_BLOCKING_WITH_LIVE_PROOF_GATE. Existing cvf execute and cvf run alias are present; C2 already closed dry-run and JSONL receipt hardening locally. Future work requires fresh CDH-C GC-018 for live CLI invocation/proof, receipt persistence evidence, and diagnostics only; do not claim cvf execute is missing or add provider/runtime semantics."
     },
     {
       "id": "cdh-d-delta",
       "artifactType": "roadmap_slice",
       "path": "docs/roadmaps/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md",
       "anchor": "#per-slice-section-d",
-      "status": "READY_FOR_REBUTTAL",
+      "status": "REBUTTAL_FILED_NON_BLOCKING_WITH_SUBSURFACE_SPLIT",
       "requestedReviewer": "Codex",
       "expectedResponsePath": "docs/reviews/CVF_CDH_D_DELTA_CODEX_REBUTTAL_2026-05-20.md",
+      "responsePath": "docs/reviews/CVF_CDH_D_DELTA_CODEX_REBUTTAL_2026-05-20.md",
       "priority": 9,
-      "source": "docs/work_orders/CVF_WO_HN3_CDH_DELTA_META_ROADMAP_2026-05-20.md",
-      "notes": "Provider-method delta must split vision contract, vision runtime, and reasoning contract; no bundled runtime claim."
+      "source": "docs/work_orders/CVF_WO_CDH_D_DELTA_REBUTTAL_2026-05-20.md",
+      "notes": "Codex rebuttal filed 2026-05-20 at docs/reviews/CVF_CDH_D_DELTA_CODEX_REBUTTAL_2026-05-20.md. NON_BLOCKING_WITH_SUBSURFACE_SPLIT. Vision contract is already closed by D2; reasoning contract is already closed by W1. Vision runtime is a separate unproved surface requiring fresh CDH-D GC-018, live provider proof, image controls, and audit evidence. No bundled runtime claim, no reasoning runtime, and no Maika photo proof unless vision runtime is separately accepted."
+    },
+    {
+      "id": "hn2b-owner-map-roadmap",
+      "artifactType": "roadmap",
+      "path": "docs/roadmaps/CVF_HN2B_GOVERNANCE_KERNEL_OWNER_MAP_ROADMAP_2026-05-20.md",
+      "status": "READY_FOR_REBUTTAL",
+      "requestedReviewer": "Codex",
+      "expectedResponsePath": "docs/reviews/CVF_HN2B_GOVERNANCE_KERNEL_OWNER_MAP_CODEX_REBUTTAL_2026-05-20.md",
+      "priority": 10,
+      "source": "docs/work_orders/CVF_WO_HN2B_OWNER_MAP_REBUTTAL_2026-05-20.md",
+      "notes": "Roadmap filed 2026-05-20 by Claude (orchestrator). Converts HN2.a 12-surface inventory into authoritative owner map with 11-class classification set. Prerequisite for HN2.c and Phase 2.B. Filing-only; no GC-018, no code, no freeze lift."
+    },
+    {
+      "id": "hn2c-freeze-release-rule-roadmap",
+      "artifactType": "roadmap",
+      "path": "docs/roadmaps/CVF_HN2C_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE_ROADMAP_2026-05-20.md",
+      "status": "READY_FOR_REBUTTAL",
+      "requestedReviewer": "Codex",
+      "expectedResponsePath": "docs/reviews/CVF_HN2C_FREEZE_RELEASE_RULE_CODEX_REBUTTAL_2026-05-20.md",
+      "priority": 11,
+      "source": "docs/work_orders/CVF_WO_HN2C_FREEZE_RELEASE_RULE_REBUTTAL_2026-05-20.md",
+      "notes": "Roadmap filed 2026-05-20 by Claude (orchestrator). Codifies freeze-release rule with closed change-class table, 5 release conditions, 4-role authority chain, global-lift prohibition. Depends on HN2.b LOCKED before GC-018. Filing-only; no GC-018, no code, no freeze lift."
+    },
+    {
+      "id": "phase-2b-migration-plan-roadmap",
+      "artifactType": "roadmap",
+      "path": "docs/roadmaps/CVF_PHASE_2B_MIGRATION_PLAN_ROADMAP_2026-05-20.md",
+      "status": "READY_FOR_REBUTTAL",
+      "requestedReviewer": "Codex",
+      "expectedResponsePath": "docs/reviews/CVF_PHASE_2B_MIGRATION_PLAN_CODEX_REBUTTAL_2026-05-20.md",
+      "priority": 12,
+      "source": "docs/work_orders/CVF_WO_PHASE_2B_MIGRATION_PLAN_REBUTTAL_2026-05-20.md",
+      "notes": "Roadmap filed 2026-05-20 by Claude (orchestrator). Declares 4-input schema (order, owner, done, dependency) for Phase 2.B adapter wire-up; tiered done criterion; per-surface citation rule; bulk migration forbidden. Depends on HN2.b LOCKED + HN2.c BINDING before GC-018. Filing-only; no GC-018, no code, no enumeration of 46 surfaces."
     }
   ]
 }
