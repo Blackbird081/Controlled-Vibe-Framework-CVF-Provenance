@@ -161,6 +161,18 @@
       "priority": 13,
       "source": "docs/work_orders/CVF_WO_PHASE_2B_RECEIPT_CRITICAL_PATH_MIGRATION_2026-05-20.md",
       "notes": "Closed 2026-05-20 as bounded dependency-chain slice E-01 -> E-02 -> E-04 -> M-08. GC-018: docs/baselines/CVF_GC018_PHASE_2B_RECEIPT_CRITICAL_PATH_MIGRATION_2026-05-20.md. Completion: docs/reviews/CVF_PHASE_2B_RECEIPT_CRITICAL_PATH_MIGRATION_COMPLETION_2026-05-20.md. Implemented typed Phase 1.R Receipt<TPayload> wrappers for agent execution receipts, gateway consumption receipts, model gateway receipts, and immutable receipt-tier gateway receipt memory records. Boundary: no broad Phase 2.B bulk migration, provider runtime, Maika change, persistent memory store, live governance proof, public-sync update, or global freeze lift."
+    },
+    {
+      "id": "phase-2b-execution-bridge-receipt-chain-migration",
+      "artifactType": "roadmap",
+      "path": "docs/roadmaps/CVF_PHASE_2B_EXECUTION_BRIDGE_RECEIPT_CHAIN_MIGRATION_ROADMAP_2026-05-20.md",
+      "status": "CLOSED_EXECUTION_BRIDGE_RECEIPT_CHAIN_MIGRATION",
+      "requestedReviewer": "Codex",
+      "expectedResponsePath": "docs/reviews/CVF_PHASE_2B_EXECUTION_BRIDGE_RECEIPT_CHAIN_MIGRATION_CODEX_REBUTTAL_2026-05-20.md",
+      "responsePath": "docs/reviews/CVF_PHASE_2B_EXECUTION_BRIDGE_RECEIPT_CHAIN_MIGRATION_CODEX_REBUTTAL_2026-05-20.md",
+      "priority": 14,
+      "source": "docs/work_orders/CVF_WO_PHASE_2B_EXECUTION_BRIDGE_RECEIPT_CHAIN_MIGRATION_2026-05-20.md",
+      "notes": "Closed 2026-05-20 as bounded dependency-chain slice E-01 prerequisite closed -> E-03 -> E-07, with Codex-only role chain and no Claude participation. GC-018: docs/baselines/CVF_GC018_PHASE_2B_EXECUTION_BRIDGE_RECEIPT_CHAIN_MIGRATION_2026-05-20.md. Completion: docs/reviews/CVF_PHASE_2B_EXECUTION_BRIDGE_RECEIPT_CHAIN_MIGRATION_COMPLETION_2026-05-20.md. Implemented typed Phase 1.R Receipt<TPayload> wrappers for execution bridge receipts and phase-governance workflow step receipts. Boundary: no broad Phase 2.B bulk migration, provider runtime, Maika change, persistent memory store, live governance proof, public-sync update, Claude review dependency, or global freeze lift."
     }
   ]
 }

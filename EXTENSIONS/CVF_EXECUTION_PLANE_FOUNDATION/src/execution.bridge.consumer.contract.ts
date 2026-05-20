@@ -1,4 +1,6 @@
 import type { DesignConsumptionReceipt } from "../../CVF_CONTROL_PLANE_FOUNDATION/src/design.consumer.contract";
+import type { Receipt } from "../../CVF_GUARD_CONTRACT/src/contracts/receipt-envelope.contract";
+import { createReceiptEnvelope as wrapReceiptEnvelope } from "../../CVF_GUARD_CONTRACT/src/contracts/receipt-envelope.contract";
 import { DispatchContract, createDispatchContract } from "./dispatch.contract";
 import type { DispatchResult } from "./dispatch.contract";
 import { PolicyGateContract, createPolicyGateContract } from "./policy.gate.contract";
@@ -38,6 +40,8 @@ export interface ExecutionBridgeReceipt {
   bridgeHash: string;
   warnings: string[];
 }
+
+export type ExecutionBridgeReceiptEnvelope = Receipt<ExecutionBridgeReceipt>;
 
 export interface ExecutionBridgeConsumerContractDependencies {
   dispatch?: DispatchContract;
@@ -153,6 +157,20 @@ export class ExecutionBridgeConsumerContract {
       bridgeHash,
       warnings,
     };
+  }
+
+  bridgeWithReceiptEnvelope(receipt: DesignConsumptionReceipt): ExecutionBridgeReceiptEnvelope {
+    return this.wrapBridgeReceipt(this.bridge(receipt));
+  }
+
+  wrapBridgeReceipt(receipt: ExecutionBridgeReceipt): ExecutionBridgeReceiptEnvelope {
+    return wrapReceiptEnvelope({
+      id: receipt.bridgeReceiptId,
+      issuedAt: receipt.createdAt,
+      source: `execution-plane-foundation:execution-bridge:${receipt.orchestrationId}`,
+      payload: receipt,
+      integrityHash: receipt.bridgeHash,
+    });
   }
 }
 

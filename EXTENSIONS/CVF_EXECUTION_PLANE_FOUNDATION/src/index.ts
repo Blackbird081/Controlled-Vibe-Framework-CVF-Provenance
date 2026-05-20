@@ -548,6 +548,7 @@ export type {
   ExecutionBridgePipelineStage,
   ExecutionBridgePipelineStageEntry,
   ExecutionBridgeReceipt,
+  ExecutionBridgeReceiptEnvelope,
   ExecutionBridgeConsumerContractDependencies,
 } from "./execution.bridge.consumer.contract";
 

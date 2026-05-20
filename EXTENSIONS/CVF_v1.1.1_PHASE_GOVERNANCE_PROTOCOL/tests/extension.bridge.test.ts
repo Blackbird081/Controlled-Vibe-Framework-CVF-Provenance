@@ -398,6 +398,23 @@ describe('ExtensionBridge', () => {
       expect(workflow.steps[1]!.rollbackReceipt?.type).toBe('ROLLBACK');
     });
 
+    it('wraps workflow step receipts in the canonical Phase 1.R envelope', () => {
+      bridge.createWorkflow({
+        id: 'wf-step-envelope', name: 'Step receipt envelope',
+        steps: [{ extensionId: 'v1.1.1', action: 'check', input: { scope: 'receipt' } }],
+      });
+
+      const started = bridge.advanceWorkflow('wf-step-envelope', mockGuardResult('ALLOW'));
+      const receipt = started.step!.inputReceipt!;
+      const envelope = bridge.createWorkflowStepReceiptEnvelope(receipt);
+
+      expect(envelope.schemaVersion).toBe('1.R.0');
+      expect(envelope.id).toBe('wf-step-envelope:wf-step-envelope-step-0:INPUT');
+      expect(envelope.payload).toBe(receipt);
+      expect(envelope.source).toBe('phase-governance:extension-bridge:wf-step-envelope:wf-step-envelope-step-0:INPUT');
+      expect(envelope.integrityHash).toContain(receipt.timestamp);
+    });
+
     it('returns false for rollback of unknown workflow', () => {
       expect(bridge.rollbackWorkflow('unknown')).toBe(false);
     });

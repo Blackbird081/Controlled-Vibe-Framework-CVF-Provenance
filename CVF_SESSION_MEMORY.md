@@ -445,6 +445,30 @@ Boundary: no broad Phase 2.B bulk migration, provider runtime, Maika change,
 persistent memory store, public-sync update, live governance proof, runtime
 coherence claim, or global freeze lift.
 
+## Phase 2.B Execution Bridge Receipt Chain Migration — 2026-05-20
+
+Codex closed the second bounded Phase 2.B implementation slice using a
+Codex-only workflow role chain with no Claude participation:
+
+`E-01 prerequisite closed -> E-03 -> E-07`
+
+Closed completion:
+
+- `docs/reviews/CVF_PHASE_2B_EXECUTION_BRIDGE_RECEIPT_CHAIN_MIGRATION_COMPLETION_2026-05-20.md`
+
+Implemented:
+
+- `ExecutionBridgeReceiptEnvelope` wrapper for execution bridge receipts;
+- `WorkflowStepReceiptEnvelope` wrapper for phase-governance workflow step
+  receipts;
+- entrypoint type exports and focused tests;
+- adjacent `SERVICE_AGENT` authority-matrix coverage fix required by Phase
+  Governance package check.
+
+Boundary: no broad Phase 2.B bulk migration, provider runtime, Maika change,
+persistent memory store, public-sync update, live governance proof, Claude
+review dependency, runtime coherence claim, or global freeze lift.
+
 ## Claim Boundary
 
 This artifact establishes a governed session-memory front door and machine

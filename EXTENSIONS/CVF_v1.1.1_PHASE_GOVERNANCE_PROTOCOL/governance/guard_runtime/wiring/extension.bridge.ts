@@ -13,6 +13,8 @@
  */
 
 import type { GuardPipelineResult } from '../guard.runtime.types.js';
+import type { Receipt } from '../../../../CVF_GUARD_CONTRACT/src/contracts/receipt-envelope.contract';
+import { createReceiptEnvelope as wrapReceiptEnvelope } from '../../../../CVF_GUARD_CONTRACT/src/contracts/receipt-envelope.contract';
 
 // --- Extension Descriptor ---
 
@@ -65,6 +67,8 @@ export interface WorkflowStepReceipt {
   stepId: string;
   details?: Record<string, unknown>;
 }
+
+export type WorkflowStepReceiptEnvelope = Receipt<WorkflowStepReceipt>;
 
 export interface WorkflowStepResult {
   status: Extract<WorkflowStepStatus, 'COMPLETED' | 'FAILED' | 'SKIPPED'>;
@@ -506,6 +510,16 @@ export class ExtensionBridge {
 
   getWorkflowCount(): number {
     return this.workflows.size;
+  }
+
+  createWorkflowStepReceiptEnvelope(receipt: WorkflowStepReceipt): WorkflowStepReceiptEnvelope {
+    return wrapReceiptEnvelope({
+      id: `${receipt.workflowId}:${receipt.stepId}:${receipt.type}`,
+      issuedAt: receipt.timestamp,
+      source: `phase-governance:extension-bridge:${receipt.workflowId}:${receipt.stepId}:${receipt.type}`,
+      payload: receipt,
+      integrityHash: `${receipt.workflowId}:${receipt.stepId}:${receipt.type}:${receipt.timestamp}`,
+    });
   }
 
   private recordExecutionEvent(

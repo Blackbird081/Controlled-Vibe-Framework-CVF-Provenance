@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — D/E/F/G lanes closed; M1/C2/D2/H2 closed; Phase 3 W1/W2/W3 closed; Rule C paradox fixed; ALL 6 residual work orders CLOSED (A1/C1/D1/E1/G1/H1); all 8 Review-CVF pain points CLOSED; N1 CLOSED (public commit `d11c772a`); N2 CLOSED_BY_PRIOR_TRANCHE; N3 WITHDRAWN; hardening roadmap rebutted NON_BLOCKING_WITH_SCOPE_REFINEMENT; HN1 CLOSED; HN2.a CLOSED; HN3 CLOSED; CDH-M narrow deployed value proof CLOSED with temp-CVF-tunnel boundary; CDH-H/CDH-C/CDH-D rebuttals FILED with no implementation authorized; HN2.b/HN2.c/Phase 2.B rebuttals FILED with no implementation or GC-018 authorized.
+Status: ACTIVE — D/E/F/G lanes closed; M1/C2/D2/H2 closed; Phase 3 W1/W2/W3 closed; Rule C paradox fixed; ALL 6 residual work orders CLOSED (A1/C1/D1/E1/G1/H1); all 8 Review-CVF pain points CLOSED; N1 CLOSED (public commit `d11c772a`); N2 CLOSED_BY_PRIOR_TRANCHE; N3 WITHDRAWN; hardening roadmap rebutted NON_BLOCKING_WITH_SCOPE_REFINEMENT; HN1 CLOSED; HN2.a CLOSED; HN2.b CLOSED; HN2.c CLOSED; HN3 CLOSED; CDH-M narrow deployed value proof CLOSED with temp-CVF-tunnel boundary; CDH-H/CDH-C/CDH-D rebuttals FILED with no implementation authorized; Phase 2.B static plan plus receipt critical path and execution bridge receipt chain CLOSED with bounded-slice boundaries.
 
 Latest planning artifacts (read these first if you are resuming Review-CVF closure work):
 
@@ -61,6 +61,9 @@ Current HEAD after CDH delta rebuttals + CDH-M closures (GC-020):
 
 Current HEAD after kernel-hardening roadmaps filed (GC-020):
 `bddd2215` (docs(kernel-hardening): file HN2.b/HN2.c/Phase-2.B roadmaps + rebuttal work orders)
+
+Current HEAD after Phase 2.B receipt critical path migration (GC-020):
+`1c083093e4c3abdf6da5b9830bc60bdcca205f96` (feat(phase2b): close receipt critical path)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
@@ -547,6 +550,40 @@ Verification:
 Boundary: this is not broad Phase 2.B bulk migration. It does not change
 provider runtime behavior, Maika, persistent memory, public-sync, live
 governance proof, runtime coherence claims, or global freeze posture.
+
+## Phase 2.B Execution Bridge Receipt Chain Migration — 2026-05-20
+
+Codex closed the second bounded Phase 2.B implementation slice through a
+Codex-only role chain, with no Claude participation:
+
+`E-01 prerequisite closed -> E-03 -> E-07`
+
+Completion review:
+
+- `docs/reviews/CVF_PHASE_2B_EXECUTION_BRIDGE_RECEIPT_CHAIN_MIGRATION_COMPLETION_2026-05-20.md`
+
+Implemented:
+
+- `ExecutionBridgeReceiptEnvelope` and bridge wrapper helpers in Execution
+  Plane Foundation.
+- `WorkflowStepReceiptEnvelope` and workflow-step wrapper helper in Phase
+  Governance Protocol.
+- Entrypoint type exports and focused tests.
+- Adjacent `SERVICE_AGENT` authority-matrix coverage fix required by Phase
+  Governance package check.
+
+Verification:
+
+- Execution Plane Foundation `npm test`: 56 files, 1325 passed; `npm run
+  check`: PASS.
+- Phase Governance Protocol `npm test`: 13 files, 526 passed; `npm run check`:
+  PASS.
+- Docs governance and markdown structural checks: PASS.
+
+Boundary: this is not broad Phase 2.B bulk migration. It does not change
+provider runtime behavior, Maika, persistent memory, public-sync, live
+governance proof, Claude review dependency, runtime coherence claims, or global
+freeze posture.
 
 ## Runtime Maturity Delta M1/C2/D2/H2 Update — 2026-05-19
 

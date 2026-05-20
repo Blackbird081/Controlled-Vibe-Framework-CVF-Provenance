@@ -321,6 +321,15 @@ describe("ExecutionBridgeConsumerContract.bridge", () => {
     expect(r1.bridgeReceiptId).toBe(r2.bridgeReceiptId);
   });
 
+  it("wraps execution bridge receipt in the canonical Phase 1.R envelope", () => {
+    const result = contract.bridgeWithReceiptEnvelope(designReceipt);
+    expect(result.schemaVersion).toBe("1.R.0");
+    expect(result.payload.bridgeReceiptId).toBe(result.id);
+    expect(result.payload.designReceiptId).toBe(designReceipt.receiptId);
+    expect(result.source).toBe(`execution-plane-foundation:execution-bridge:${result.payload.orchestrationId}`);
+    expect(result.integrityHash).toBe(result.payload.bridgeHash);
+  });
+
   it("warnings is an Array (may contain bridge/dispatch/design messages)", () => {
     const result = contract.bridge(designReceipt);
     expect(Array.isArray(result.warnings)).toBe(true);
