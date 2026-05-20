@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — D/E/F/G lanes closed; M1/C2/D2/H2 closed; Phase 3 W1/W2/W3 closed; Rule C paradox fixed; ALL 6 residual work orders CLOSED (A1/C1/D1/E1/G1/H1); all 8 Review-CVF pain points CLOSED; N1 CLOSED (public commit `d11c772a`); N2 CLOSED_BY_PRIOR_TRANCHE; N3 WITHDRAWN; hardening roadmap rebutted NON_BLOCKING_WITH_SCOPE_REFINEMENT; HN1 CLOSED; HN2.a CLOSED; HN2.b CLOSED; HN2.c CLOSED; HN3 CLOSED; CDH-M narrow deployed value proof CLOSED with temp-CVF-tunnel boundary; CDH-H/CDH-C/CDH-D rebuttals FILED with no implementation authorized; Phase 2.B static plan plus receipt critical path, execution bridge receipt chain, and audit/trace/task receipt chains CLOSED with bounded-slice boundaries.
+Status: ACTIVE — D/E/F/G lanes closed; M1/C2/D2/H2 closed; Phase 3 W1/W2/W3 closed; Rule C paradox fixed; ALL 6 residual work orders CLOSED (A1/C1/D1/E1/G1/H1); all 8 Review-CVF pain points CLOSED; N1 CLOSED (public commit `d11c772a`); N2 CLOSED_BY_PRIOR_TRANCHE; N3 WITHDRAWN; hardening roadmap rebutted NON_BLOCKING_WITH_SCOPE_REFINEMENT; HN1 CLOSED; HN2.a CLOSED; HN2.b CLOSED; HN2.c CLOSED; HN3 CLOSED; CDH-M narrow deployed value proof CLOSED with temp-CVF-tunnel boundary; CDH-H/CDH-C/CDH-D rebuttals FILED with no implementation authorized; Phase 2.B static plan plus receipt critical path, execution bridge receipt chain, audit/trace/task receipt chains, and policy/risk adapter chains CLOSED with bounded-slice boundaries.
 
 Latest planning artifacts (read these first if you are resuming Review-CVF closure work):
 
@@ -19,6 +19,7 @@ Latest planning artifacts (read these first if you are resuming Review-CVF closu
 - `docs/roadmaps/CVF_HN2B_GOVERNANCE_KERNEL_OWNER_MAP_ROADMAP_2026-05-20.md` + `docs/reviews/CVF_HN2B_GOVERNANCE_KERNEL_OWNER_MAP_CODEX_REBUTTAL_2026-05-20.md` (NON_BLOCKING_WITH_SCOPE_REFINEMENT — roadmap patched for `CVF_SESSION_MEMORY.md`, class precedence, and parallel sub-surface handling; future HN2.b GC-018 only, no implementation authorized now)
 - `docs/roadmaps/CVF_HN2C_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE_ROADMAP_2026-05-20.md` + `docs/reviews/CVF_HN2C_FREEZE_RELEASE_RULE_CODEX_REBUTTAL_2026-05-20.md` (NON_BLOCKING_WITH_PREREQUISITE_GATE — HN2.b LOCKED required before HN2.c GC-018; active state carries pointer/status text only; no rule artifact, guard, doctrine edit, or freeze lift authorized now)
 - `docs/roadmaps/CVF_PHASE_2B_MIGRATION_PLAN_ROADMAP_2026-05-20.md` + `docs/reviews/CVF_PHASE_2B_MIGRATION_PLAN_CODEX_REBUTTAL_2026-05-20.md` (NON_BLOCKING_WITH_BOUNDARY_REFINEMENT — bounded fixture-driven Phase 2.B already delivered; this covers remaining broader migration-plan schema only; HN2.b LOCKED + HN2.c BINDING required before Phase 2.B GC-018)
+- `docs/reviews/CVF_PHASE_2B_POLICY_RISK_CHAIN_ADAPTERS_MIGRATION_COMPLETION_2026-05-20.md` (CLOSED_POLICY_RISK_CHAIN_ADAPTERS_MIGRATION — grouped bounded chains P-01 -> P-06 -> P-05, P-01 -> P-02/P-03 -> P-04, and R-02 -> R-03 -> R-13/R-14; additive policy/risk adapter snapshots only; no provider runtime, Maika, persistent memory, live proof, Claude participation, kernel owner replacement, public claim, or global freeze lift)
 - `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` (CLOSURE EVIDENCE — A/B/C/D/E/F/G/H all CLOSED after 2026-05-20 tranche; supersedes old 4/8 shorthand and is no longer the active next-work steering file)
 - `docs/reviews/CVF_17_05_REVIEW_CVF_RESIDUAL_PAIN_POINTS_ASSESSMENT_2026-05-19.md` (original assessment; see direction codex for corrected posture)
 - `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (6 candidates, REBUTTAL_ACCEPTED, all work orders now CLOSED)
@@ -67,6 +68,9 @@ Current HEAD after Phase 2.B receipt critical path migration (GC-020):
 
 Current HEAD after Phase 2.B execution bridge receipt chain migration (GC-020):
 `ca0e5b79` (feat(phase2b): close execution bridge receipt chain)
+
+Current HEAD after Phase 2.B audit trace task receipt chains migration (GC-020):
+`e34e43c1` (feat(phase2b): close audit trace task receipt chains)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
@@ -625,6 +629,45 @@ Boundary: this is not broad Phase 2.B bulk migration. It does not change
 provider runtime behavior, Maika, persistent memory, SQLite schema, public-sync,
 public catalog, live governance proof, Claude review dependency, runtime
 coherence claims, or global freeze posture.
+
+## Phase 2.B Policy Risk Chain Adapters Migration — 2026-05-20
+
+Codex closed the grouped bounded Phase 2.B policy/risk adapter tranche through
+a Codex-only role chain, with no Claude participation:
+
+- `P-01 -> P-06 -> P-05`
+- `P-01 -> P-02 / P-03 -> P-04`
+- `R-02 -> R-03 -> R-13 / R-14`
+
+Completion review:
+
+- `docs/reviews/CVF_PHASE_2B_POLICY_RISK_CHAIN_ADAPTERS_MIGRATION_COMPLETION_2026-05-20.md`
+
+Implemented:
+
+- Governance Engine policy-result adapter snapshot.
+- Governance Engine API response helper, orchestrator summary adapter, and
+  local main execution summary adapter.
+- Model Gateway routing-policy contract snapshot and package index exports.
+- Safety Runtime risk-engine CVF risk-level adapter snapshot.
+- Contamination risk-detector, risk-propagation, and risk-scorer adapter
+  snapshots.
+
+Verification:
+
+- Governance Engine targeted pytest: 4 passed.
+- Model Gateway targeted routing-policy tests: 6 passed.
+- Model Gateway `npm test`: 17 files, 63 passed; `npm run check`: PASS.
+- Safety Runtime touched policy/kernel TypeScript compile checks: PASS from a
+  temp package context.
+- Safety Runtime targeted Vitest remains blocked by the existing local package
+  environment missing `esbuild`.
+- Docs governance and markdown structural checks: PASS.
+
+Boundary: this is not broad Phase 2.B bulk migration. It does not change
+provider runtime behavior, Maika, persistent memory, database schema,
+public-sync, public catalog, live governance proof, Claude review dependency,
+kernel owner replacement, runtime coherence claims, or global freeze posture.
 
 ## Runtime Maturity Delta M1/C2/D2/H2 Update — 2026-05-19
 

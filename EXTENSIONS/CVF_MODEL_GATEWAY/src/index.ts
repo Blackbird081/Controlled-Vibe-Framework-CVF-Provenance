@@ -193,9 +193,14 @@ export { StickySessionStore } from "./sticky-session";
 
 export type {
   RoutingDecision,
+  RoutingPolicyContractSnapshot,
   RoutingRequest,
 } from "./routing-policy";
-export { RoutingPolicyEngine } from "./routing-policy";
+export {
+  buildRoutingPolicyContractSnapshot,
+  ROUTING_POLICY_CONTRACT_VERSION,
+  RoutingPolicyEngine,
+} from "./routing-policy";
 
 export const MODEL_GATEWAY_WRAPPER = {
   executionClass: "wrapper/re-export merge",

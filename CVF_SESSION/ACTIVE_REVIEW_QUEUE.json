@@ -185,6 +185,18 @@
       "priority": 15,
       "source": "docs/work_orders/CVF_WO_PHASE_2B_AUDIT_TRACE_TASK_RECEIPT_CHAINS_MIGRATION_2026-05-20.md",
       "notes": "Closed 2026-05-20 as grouped bounded receipt-chain tranche: E-06 -> M-05 -> M-06; E-03 -> M-02/M-03; E-04 -> E-05; M-07. Codex-only role chain; no Claude participation. GC-018: docs/baselines/CVF_GC018_PHASE_2B_AUDIT_TRACE_TASK_RECEIPT_CHAINS_MIGRATION_2026-05-20.md. Completion: docs/reviews/CVF_PHASE_2B_AUDIT_TRACE_TASK_RECEIPT_CHAINS_MIGRATION_COMPLETION_2026-05-20.md. Boundary: no broad Phase 2.B bulk migration, provider runtime, Maika change, persistent memory store, database schema migration, live governance proof, public-sync update, public catalog claim, Claude review dependency, or global freeze lift."
+    },
+    {
+      "id": "phase-2b-policy-risk-chain-adapters-migration",
+      "artifactType": "roadmap",
+      "path": "docs/roadmaps/CVF_PHASE_2B_POLICY_RISK_CHAIN_ADAPTERS_MIGRATION_ROADMAP_2026-05-20.md",
+      "status": "CLOSED_POLICY_RISK_CHAIN_ADAPTERS_MIGRATION",
+      "requestedReviewer": "Codex",
+      "expectedResponsePath": "docs/reviews/CVF_PHASE_2B_POLICY_RISK_CHAIN_ADAPTERS_MIGRATION_CODEX_REBUTTAL_2026-05-20.md",
+      "responsePath": "docs/reviews/CVF_PHASE_2B_POLICY_RISK_CHAIN_ADAPTERS_MIGRATION_CODEX_REBUTTAL_2026-05-20.md",
+      "priority": 16,
+      "source": "docs/work_orders/CVF_WO_PHASE_2B_POLICY_RISK_CHAIN_ADAPTERS_MIGRATION_2026-05-20.md",
+      "notes": "Closed 2026-05-20 as grouped bounded policy/risk adapter tranche: P-01 -> P-06 -> P-05; P-01 -> P-02/P-03 -> P-04; R-02 -> R-03 -> R-13/R-14. Codex-only role chain; no Claude participation. GC-018: docs/baselines/CVF_GC018_PHASE_2B_POLICY_RISK_CHAIN_ADAPTERS_MIGRATION_2026-05-20.md. Completion: docs/reviews/CVF_PHASE_2B_POLICY_RISK_CHAIN_ADAPTERS_MIGRATION_COMPLETION_2026-05-20.md. Boundary: no broad Phase 2.B bulk migration, provider runtime, Maika change, persistent memory store, database schema migration, live governance proof, public-sync update, public catalog claim, Claude review dependency, kernel owner replacement, or global freeze lift."
     }
   ]
 }

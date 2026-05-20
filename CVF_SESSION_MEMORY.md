@@ -497,6 +497,43 @@ persistent memory store, database schema migration, public-sync update, public
 catalog claim, live governance proof, Claude review dependency, runtime
 coherence claim, or global freeze lift.
 
+## Phase 2.B Policy Risk Chain Adapters Migration — 2026-05-20
+
+Codex closed the grouped bounded Phase 2.B policy/risk adapter tranche using a
+Codex-only workflow role chain with no Claude participation:
+
+- `P-01 -> P-06 -> P-05`
+- `P-01 -> P-02 / P-03 -> P-04`
+- `R-02 -> R-03 -> R-13 / R-14`
+
+Closed completion:
+
+- `docs/reviews/CVF_PHASE_2B_POLICY_RISK_CHAIN_ADAPTERS_MIGRATION_COMPLETION_2026-05-20.md`
+
+Implemented:
+
+- governance-engine policy-result adapter snapshot;
+- governance-engine API response helper, orchestrator summary adapter, and
+  local main execution summary adapter;
+- Model Gateway routing-policy contract snapshot and package index exports;
+- Safety Runtime risk-engine CVF risk-level adapter snapshot;
+- contamination risk-detector, risk-propagation, and risk-scorer adapter
+  snapshots.
+
+Verification:
+
+- Governance Engine targeted pytest passed (`4/4`).
+- Model Gateway targeted routing-policy tests passed (`6/6`), full package
+  tests passed (`63/63`), and `npm run check` passed.
+- Safety Runtime touched policy/kernel TypeScript compile checks passed from a
+  temp package context; targeted Vitest remains blocked by the existing local
+  package environment missing `esbuild`.
+
+Boundary: no broad Phase 2.B bulk migration, provider runtime, Maika change,
+persistent memory store, database schema migration, public-sync update, public
+catalog claim, live governance proof, Claude review dependency, kernel owner
+replacement, runtime coherence claim, or global freeze lift.
+
 ## Claim Boundary
 
 This artifact establishes a governed session-memory front door and machine
