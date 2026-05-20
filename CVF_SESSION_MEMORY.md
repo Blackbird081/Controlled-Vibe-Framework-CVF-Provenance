@@ -568,6 +568,47 @@ catalog claim, live governance proof, Claude review dependency, new role
 taxonomy, kernel owner replacement, runtime coherence claim, or global freeze
 lift.
 
+## Phase 2.B Safety External Policy Risk Fanout Migration — 2026-05-21
+
+Codex closed the grouped bounded Phase 2.B safety/external-policy risk fanout
+adapter tranche using a Codex-only workflow role chain with no Claude
+participation:
+
+- `R-02 -> R-04 / R-05 / R-15 / R-16`
+- `R-01 -> R-06 / R-07 / R-08 / R-09 / R-10 / R-11 / R-12`
+- `P-01 -> P-07 / P-08`
+
+Closed completion:
+
+- `docs/reviews/CVF_PHASE_2B_SAFETY_EXTERNAL_POLICY_RISK_FANOUT_MIGRATION_COMPLETION_2026-05-21.md`
+
+Implemented:
+
+- Safety Runtime risk evolution and refusal risk gate adapter snapshots.
+- Safety Hardening risk scorer and risk lock adapter snapshots.
+- ECO risk scorer/aggregator and Agent Guard risk module adapter snapshots.
+- MCP, Guard Contract, and Phase Governance risk gate adapter snapshots.
+- External Integration risk hook, policy decision, and certification adapter
+  snapshots.
+- Skill Governance risk scorer adapter snapshot.
+
+Verification:
+
+- Focused package tests passed for Safety Hardening, ECO v1.2, Agent Guard SDK,
+  MCP Server, Guard Contract, Phase Governance Protocol, External Integration,
+  and Skill Governance Engine.
+- Package build/type checks passed for Safety Hardening, ECO v1.2, Agent Guard
+  SDK, MCP Server, Guard Contract, Phase Governance Protocol, External
+  Integration, and Skill Governance Engine.
+- Safety Runtime targeted Vitest remains blocked by the existing local package
+  environment missing a `vitest` binary.
+
+Boundary: no broad Phase 2.B bulk migration, provider runtime, Maika change,
+persistent memory store, database schema migration, public-sync update, public
+catalog claim, live governance proof, Claude review dependency, new
+policy/risk/guard engine, kernel owner replacement, runtime coherence claim, or
+global freeze lift.
+
 ## Claim Boundary
 
 This artifact establishes a governed session-memory front door and machine
