@@ -5,6 +5,18 @@
   "defaultResolutionRule": "When an operator asks to check or review a roadmap without giving a path, resolve this queue and load the highest-priority item with status READY_FOR_REBUTTAL.",
   "items": [
     {
+      "id": "post-pain-point-hardening-roadmap",
+      "artifactType": "roadmap",
+      "path": "docs/roadmaps/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md",
+      "status": "REBUTTAL_FILED_NON_BLOCKING_WITH_SCOPE_REFINEMENT",
+      "requestedReviewer": "Claude",
+      "expectedResponsePath": "docs/reviews/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_CLAUDE_REBUTTAL_2026-05-20.md",
+      "responsePath": "docs/reviews/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_CLAUDE_REBUTTAL_2026-05-20.md",
+      "priority": 1,
+      "source": "AGENT_HANDOFF_V10_2026-05-19.md",
+      "notes": "Claude rebuttal filed 2026-05-20. Overall NON_BLOCKING_WITH_SCOPE_REFINEMENT. HN1 verified inventory (60/58/2/0); collapse from full roadmap to single Fast-Lane audit under GC-024. HN2 must split into HN2.a inventory (Fast-Lane), HN2.b owner map (GC-018), HN2.c freeze-release rule (GC-018). HN3 must stay per-slice gated; each of C/D/H/M carries own rebuttal+GC-018+work order; existing CDH BLOCKING_FINDINGS still load-bearing. Operator picks one of HN1, HN2.a, or one HN3 slice next."
+    },
+    {
       "id": "post-residual-closure-next-roadmap",
       "artifactType": "roadmap",
       "path": "docs/roadmaps/CVF_POST_RESIDUAL_CLOSURE_NEXT_ROADMAP_2026-05-20.md",
@@ -12,7 +24,7 @@
       "requestedReviewer": "Codex",
       "expectedResponsePath": "docs/reviews/CVF_POST_RESIDUAL_CLOSURE_NEXT_ROADMAP_CODEX_REBUTTAL_2026-05-20.md",
       "responsePath": "docs/reviews/CVF_POST_RESIDUAL_CLOSURE_NEXT_ROADMAP_CODEX_REBUTTAL_2026-05-20.md",
-      "priority": 1,
+      "priority": 2,
       "source": "AGENT_HANDOFF_V10_2026-05-19.md",
       "notes": "Codex rebuttal filed 2026-05-20. Overall NON_BLOCKING_WITH_GATE_UPDATE: N1 accepted as public-safe catalog maintenance under GC-024/Fast-Lane only; N2 accepted as rebuttal-only with queue priority correction (workflow V2 is priority 2, not priority 1); N3 accepted as roadmap-only with downstream rebuttal + GC-018 + work order required before implementation."
     },
@@ -24,7 +36,7 @@
       "requestedReviewer": "Codex",
       "expectedResponsePath": "docs/reviews/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_CODEX_REBUTTAL_2026-05-19.md",
       "responsePath": "docs/reviews/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_CODEX_REBUTTAL_2026-05-19.md",
-      "priority": 2,
+      "priority": 3,
       "source": "AGENT_HANDOFF_V10_2026-05-19.md",
       "notes": "Codex N2 rebuttal filed 2026-05-20. C1/C2/C3/C4 are all CLOSED_BY_PRIOR_TRANCHE: C1 public-sync hardening closed at public commit e04b4f00; C2/C3/C4 closed with GC-018 baselines, guards, tests, hook wiring, and completion reviews. No new V2 GC-018 or implementation should be dispatched."
     },
@@ -35,7 +47,7 @@
       "status": "CLOSED_BY_TRANCHE",
       "requestedReviewer": "Codex",
       "responsePath": "docs/reviews/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md",
-      "priority": 3,
+      "priority": 4,
       "source": "AGENT_HANDOFF_V10_2026-05-19.md",
       "notes": "All six candidates A1/C1/D1/E1/G1/H1 closed at commit e3536795 on 2026-05-20. Retained for provenance; no further rebuttal action."
     },
@@ -46,7 +58,7 @@
       "status": "REBUTTAL_FILED_BLOCKING",
       "requestedReviewer": "Codex",
       "responsePath": "docs/reviews/CVF_RUNTIME_MATURITY_CDH_ROADMAP_CODEX_REBUTTAL_2026-05-19.md",
-      "priority": 4,
+      "priority": 5,
       "source": "AGENT_HANDOFF_V10_2026-05-19.md",
       "notes": "Original CDH roadmap has blocking findings; later delta closures should be cited instead of treating this as executable."
     }
