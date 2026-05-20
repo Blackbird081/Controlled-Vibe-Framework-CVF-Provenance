@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — D/E/F/G lanes closed; M1/C2/D2/H2 closed; Phase 3 W1/W2/W3 closed; Rule C paradox fixed; ALL 6 residual work orders CLOSED (A1/C1/D1/E1/G1/H1); all 8 Review-CVF pain points CLOSED; N1 CLOSED (public commit `d11c772a`); N2 CLOSED_BY_PRIOR_TRANCHE; N3 WITHDRAWN; hardening roadmap rebutted NON_BLOCKING_WITH_SCOPE_REFINEMENT; HN1 CLOSED; HN2.a CLOSED; HN2.b CLOSED; HN2.c CLOSED; HN3 CLOSED; CDH-M narrow deployed value proof CLOSED with temp-CVF-tunnel boundary; CDH-H/CDH-C/CDH-D rebuttals FILED with no implementation authorized; Phase 2.B static plan plus receipt critical path, execution bridge receipt chain, audit/trace/task receipt chains, policy/risk adapter chains, identity/control-plane adapter chains, and safety/external-policy risk fanout chains CLOSED with bounded-slice boundaries.
+Status: ACTIVE — D/E/F/G lanes closed; M1/C2/D2/H2 closed; Phase 3 W1/W2/W3 closed; Rule C paradox fixed; ALL 6 residual work orders CLOSED (A1/C1/D1/E1/G1/H1); all 8 Review-CVF pain points CLOSED; N1 CLOSED (public commit `d11c772a`); N2 CLOSED_BY_PRIOR_TRANCHE; N3 WITHDRAWN; hardening roadmap rebutted NON_BLOCKING_WITH_SCOPE_REFINEMENT; HN1 CLOSED; HN2.a CLOSED; HN2.b CLOSED; HN2.c CLOSED; HN3 CLOSED; CDH-M narrow deployed value proof CLOSED with temp-CVF-tunnel boundary; CDH-H/CDH-C/CDH-D rebuttals FILED with no implementation authorized; Phase 2.B static plan plus receipt critical path, execution bridge receipt chain, audit/trace/task receipt chains, policy/risk adapter chains, identity/control-plane adapter chains, safety/external-policy risk fanout chains, and memory-tail adapter chains CLOSED with bounded-slice boundaries.
 
 Latest planning artifacts (read these first if you are resuming Review-CVF closure work):
 
@@ -22,6 +22,7 @@ Latest planning artifacts (read these first if you are resuming Review-CVF closu
 - `docs/reviews/CVF_PHASE_2B_POLICY_RISK_CHAIN_ADAPTERS_MIGRATION_COMPLETION_2026-05-20.md` (CLOSED_POLICY_RISK_CHAIN_ADAPTERS_MIGRATION — grouped bounded chains P-01 -> P-06 -> P-05, P-01 -> P-02/P-03 -> P-04, and R-02 -> R-03 -> R-13/R-14; additive policy/risk adapter snapshots only; no provider runtime, Maika, persistent memory, live proof, Claude participation, kernel owner replacement, public claim, or global freeze lift)
 - `docs/reviews/CVF_PHASE_2B_IDENTITY_CONTROL_PLANE_ADAPTERS_MIGRATION_COMPLETION_2026-05-21.md` (CLOSED_IDENTITY_CONTROL_PLANE_ADAPTERS_MIGRATION — grouped bounded chains I-01 -> I-02 -> I-03/I-07, I-01 -> I-04 -> I-05, and I-03 -> I-06; additive identity/control-plane snapshots and barrel exports only; no new role taxonomy, provider runtime, Maika, persistent memory, live proof, Claude participation, kernel owner replacement, public claim, or global freeze lift)
 - `docs/reviews/CVF_PHASE_2B_SAFETY_EXTERNAL_POLICY_RISK_FANOUT_MIGRATION_COMPLETION_2026-05-21.md` (CLOSED_SAFETY_EXTERNAL_POLICY_RISK_FANOUT_MIGRATION — grouped bounded chains R-02 -> R-04/R-05/R-15/R-16, R-01 -> R-06/R-07/R-08/R-09/R-10/R-11/R-12, and P-01 -> P-07/P-08; additive safety/external-policy risk snapshots only; no new policy/risk/guard engine, provider runtime, Maika, persistent memory, live proof, Claude participation, kernel owner replacement, public claim, or global freeze lift)
+- `docs/reviews/CVF_PHASE_2B_MEMORY_TAIL_ADAPTERS_MIGRATION_COMPLETION_2026-05-21.md` (CLOSED_MEMORY_TAIL_ADAPTERS_MIGRATION — bounded memory-tail chains E-01 closed -> M-01 and M-04 standalone; additive working-memory and memory-gateway adapter snapshots only; no persistent memory store, new memory tier, reinjection runtime expansion, provider runtime, Maika, live proof, Claude participation, public claim, or global freeze lift)
 - `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` (CLOSURE EVIDENCE — A/B/C/D/E/F/G/H all CLOSED after 2026-05-20 tranche; supersedes old 4/8 shorthand and is no longer the active next-work steering file)
 - `docs/reviews/CVF_17_05_REVIEW_CVF_RESIDUAL_PAIN_POINTS_ASSESSMENT_2026-05-19.md` (original assessment; see direction codex for corrected posture)
 - `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (6 candidates, REBUTTAL_ACCEPTED, all work orders now CLOSED)
@@ -79,6 +80,9 @@ Current HEAD after Phase 2.B policy risk chain adapters migration (GC-020):
 
 Current HEAD after Phase 2.B identity control-plane adapters migration (GC-020):
 `ce2aba9a` (feat(phase2b): close identity control-plane adapters)
+
+Current HEAD after Phase 2.B safety external policy risk fanout migration (GC-020):
+`ef280cea` (feat(phase2b): close safety risk fanout adapters)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
@@ -757,6 +761,43 @@ provider runtime behavior, Maika, persistent memory, database schema,
 public-sync, public catalog, live governance proof, Claude review dependency,
 new policy/risk/guard engine, kernel owner replacement, runtime coherence
 claims, or global freeze posture.
+
+## Phase 2.B Memory Tail Adapters Migration — 2026-05-21
+
+Codex closed the bounded Phase 2.B memory-tail adapter tranche through a
+Codex-only role chain, with no Claude participation:
+
+- `E-01 closed -> M-01`
+- `M-04` standalone memory-gateway adapter
+
+Completion review:
+
+- `docs/reviews/CVF_PHASE_2B_MEMORY_TAIL_ADAPTERS_MIGRATION_COMPLETION_2026-05-21.md`
+
+Implemented:
+
+- Control Plane agent governed-session working-memory adapter snapshot and
+  continuation barrel exports.
+- Learning Plane controlled memory-gateway adapter snapshots for capture,
+  retrieve, and reinject decisions, plus package index exports.
+
+Verification:
+
+- Control Plane targeted adapter test: 1 passed; full package tests: 3544
+  passed; `npm run check`: PASS.
+- Learning Plane targeted adapter tests: 2 passed; full package tests: 1514
+  passed; `npm run check`: PASS.
+- Docs governance and markdown structural checks: PASS.
+
+Table coverage note: all 46 primary Phase 2.B rows now have bounded
+adapter/receipt coverage recorded. This is table coverage only, not runtime
+coherence, live governance proof, or public claim readiness.
+
+Boundary: this is not broad Phase 2.B bulk migration. It does not change
+provider runtime behavior, Maika, persistent memory, database schema,
+public-sync, public catalog, live governance proof, Claude review dependency,
+new memory tiers, reinjection runtime behavior, kernel owner replacement,
+runtime coherence claims, or global freeze posture.
 
 ## Runtime Maturity Delta M1/C2/D2/H2 Update — 2026-05-19
 

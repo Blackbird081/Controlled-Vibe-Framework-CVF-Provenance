@@ -609,6 +609,43 @@ catalog claim, live governance proof, Claude review dependency, new
 policy/risk/guard engine, kernel owner replacement, runtime coherence claim, or
 global freeze lift.
 
+## Phase 2.B Memory Tail Adapters Migration — 2026-05-21
+
+Codex closed the bounded Phase 2.B memory-tail adapter tranche using a
+Codex-only workflow role chain with no Claude participation:
+
+- `E-01 closed -> M-01`
+- `M-04` standalone memory-gateway adapter
+
+Closed completion:
+
+- `docs/reviews/CVF_PHASE_2B_MEMORY_TAIL_ADAPTERS_MIGRATION_COMPLETION_2026-05-21.md`
+
+Implemented:
+
+- Control Plane agent governed-session working-memory adapter snapshot.
+- Control Plane continuation barrel exports for the working-memory adapter.
+- Learning Plane controlled memory-gateway adapter snapshots for capture,
+  retrieve, and reinject decisions.
+- Learning Plane package index exports for the memory-gateway adapter.
+
+Verification:
+
+- Control Plane targeted memory-tail adapter test passed (`1/1`), full package
+  tests passed (`3544/3544`), and `npm run check` passed.
+- Learning Plane targeted memory-tail adapter tests passed (`2/2`), full
+  package tests passed (`1514/1514`), and `npm run check` passed.
+
+Table coverage note: all 46 primary Phase 2.B rows now have bounded
+adapter/receipt coverage recorded. This is table coverage only, not runtime
+coherence, live governance proof, or public claim readiness.
+
+Boundary: no broad Phase 2.B bulk migration, provider runtime, Maika change,
+persistent memory store, database schema migration, public-sync update, public
+catalog claim, live governance proof, Claude review dependency, new memory
+tier, reinjection runtime expansion, kernel owner replacement, runtime
+coherence claim, or global freeze lift.
+
 ## Claim Boundary
 
 This artifact establishes a governed session-memory front door and machine

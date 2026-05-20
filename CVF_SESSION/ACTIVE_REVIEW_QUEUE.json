@@ -221,6 +221,18 @@
       "priority": 18,
       "source": "docs/work_orders/CVF_WO_PHASE_2B_SAFETY_EXTERNAL_POLICY_RISK_FANOUT_MIGRATION_2026-05-21.md",
       "notes": "Closed 2026-05-21 as grouped bounded safety/external-policy risk fanout tranche: R-02 -> R-04/R-05/R-15/R-16; R-01 -> R-06/R-07/R-08/R-09/R-10/R-11/R-12; P-01 -> P-07/P-08. Codex-only role chain; no Claude participation. GC-018: docs/baselines/CVF_GC018_PHASE_2B_SAFETY_EXTERNAL_POLICY_RISK_FANOUT_MIGRATION_2026-05-21.md. Completion: docs/reviews/CVF_PHASE_2B_SAFETY_EXTERNAL_POLICY_RISK_FANOUT_MIGRATION_COMPLETION_2026-05-21.md. Boundary: no broad Phase 2.B bulk migration, provider runtime, Maika change, persistent memory store, database schema migration, live governance proof, public-sync update, public catalog claim, Claude review dependency, new policy/risk/guard engine, kernel owner replacement, or global freeze lift."
+    },
+    {
+      "id": "phase-2b-memory-tail-adapters-migration",
+      "artifactType": "roadmap",
+      "path": "docs/roadmaps/CVF_PHASE_2B_MEMORY_TAIL_ADAPTERS_MIGRATION_ROADMAP_2026-05-21.md",
+      "status": "CLOSED_MEMORY_TAIL_ADAPTERS_MIGRATION",
+      "requestedReviewer": "Codex",
+      "expectedResponsePath": "docs/reviews/CVF_PHASE_2B_MEMORY_TAIL_ADAPTERS_MIGRATION_CODEX_REBUTTAL_2026-05-21.md",
+      "responsePath": "docs/reviews/CVF_PHASE_2B_MEMORY_TAIL_ADAPTERS_MIGRATION_CODEX_REBUTTAL_2026-05-21.md",
+      "priority": 19,
+      "source": "docs/work_orders/CVF_WO_PHASE_2B_MEMORY_TAIL_ADAPTERS_MIGRATION_2026-05-21.md",
+      "notes": "Closed 2026-05-21 as bounded memory-tail adapter tranche: E-01 closed -> M-01; M-04 standalone memory-gateway adapter. Codex-only role chain; no Claude participation. GC-018: docs/baselines/CVF_GC018_PHASE_2B_MEMORY_TAIL_ADAPTERS_MIGRATION_2026-05-21.md. Completion: docs/reviews/CVF_PHASE_2B_MEMORY_TAIL_ADAPTERS_MIGRATION_COMPLETION_2026-05-21.md. Boundary: no broad Phase 2.B bulk migration, provider runtime, Maika change, persistent memory store, database schema migration, live governance proof, public-sync update, public catalog claim, Claude review dependency, new memory tier, reinjection runtime expansion, kernel owner replacement, or global freeze lift. Table coverage note: all 46 primary Phase 2.B rows now have bounded adapter/receipt coverage recorded, but this is table coverage only, not runtime coherence or live governance proof."
     }
   ]
 }

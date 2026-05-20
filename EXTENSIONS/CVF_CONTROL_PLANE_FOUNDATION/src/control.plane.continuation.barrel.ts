@@ -90,10 +90,13 @@ export type {
 } from "./agent.definition.boundary.contract";
 
 export {
+  AGENT_GOVERNED_SESSION_WORKING_MEMORY_ADAPTER_VERSION,
   AgentGovernedSessionContract,
+  buildAgentGovernedSessionWorkingMemoryAdapterSnapshot,
   createAgentGovernedSessionContract,
 } from "./agent.governed.session.contract";
 export type {
+  AgentGovernedSessionWorkingMemoryAdapterSnapshot,
   AgentGovernedRiskLevel,
   AgentPolicyDecision,
   AgentExecutionStatus,
@@ -111,6 +114,7 @@ export type {
   AgentHandoffValidation,
   AgentExecutionReceiptInput,
   AgentExecutionAuditReceipt,
+  AgentExecutionAuditReceiptEnvelope,
   AgentGovernedSessionContractDependencies,
 } from "./agent.governed.session.contract";
 
