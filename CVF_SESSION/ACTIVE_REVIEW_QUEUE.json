@@ -272,6 +272,17 @@
       "priority": 22,
       "source": "operator request 2026-05-21",
       "notes": "Closed 2026-05-21 as five-lane bounded publicization/readiness tranche. Rebuttal: docs/reviews/CVF_POST_PHASE_2B_PUBLICIZATION_AND_READINESS_ROADMAP_CODEX_REBUTTAL_2026-05-21.md. GC-018: docs/baselines/CVF_GC018_POST_PHASE_2B_PUBLICIZATION_READINESS_2026-05-21.md. Work order: docs/work_orders/CVF_WO_POST_PHASE_2B_PUBLICIZATION_READINESS_2026-05-21.md. Completion: docs/reviews/CVF_POST_PHASE_2B_PUBLICIZATION_READINESS_COMPLETION_2026-05-21.md. PBR-01 narrow provider repeatability PASS 4/4 across Alibaba qwen-turbo and DeepSeek deepseek-chat; mandatory release gate PASS 7/7. PBR-02 readiness assessment filed. PBR-03 public-sync/public catalog pushed at public commit a0ac66de. PBR-04 persistence/database deferred as no current publicization blocker. PBR-05 Maika proof demand-gated and deferred. D-06 kernel-owner replacement remains condition-gated; D-07 global freeze lift remains rejected under the binding freeze-release rule."
+    },
+    {
+      "id": "post-publicization-provider-stability-hardening",
+      "artifactType": "roadmap",
+      "path": "docs/roadmaps/CVF_POST_PUBLICIZATION_PROVIDER_STABILITY_HARDENING_ROADMAP_2026-05-21.md",
+      "status": "CLOSED_PROVIDER_STABILITY_HARDENING_BOUNDED",
+      "requestedReviewer": "Codex",
+      "completionPath": "docs/reviews/CVF_POST_PUBLICIZATION_PROVIDER_STABILITY_HARDENING_COMPLETION_2026-05-21.md",
+      "priority": 23,
+      "source": "operator request 2026-05-21",
+      "notes": "Closed 2026-05-21 as bounded second-window provider-stability hardening. GC-018: docs/baselines/CVF_GC018_POST_PUBLICIZATION_PROVIDER_STABILITY_HARDENING_2026-05-21.md. Work order: docs/work_orders/CVF_WO_POST_PUBLICIZATION_PROVIDER_STABILITY_HARDENING_2026-05-21.md. Completion: docs/reviews/CVF_POST_PUBLICIZATION_PROVIDER_STABILITY_HARDENING_COMPLETION_2026-05-21.md. PSH-01 second-window repeatability PASS 6/6 across Alibaba qwen-turbo and DeepSeek deepseek-chat; release gate PASS 7/7; public-sync evidence delta pushed at public commit 51133d4d. Boundary: still no broad provider stability, universal parity, hosted/product readiness, persistence/database readiness, Maika child-data/photo/vision proof, kernel-owner replacement, or global freeze lift."
     }
   ]
 }

@@ -26,6 +26,7 @@ Latest planning artifacts (read these first if you are resuming Review-CVF closu
 - `docs/roadmaps/CVF_PHASE_2B_RUNTIME_COHERENCE_ROADMAP_2026-05-21.md` (CLOSED_RUNTIME_COHERENCE_INTERNAL_PROOF — internal runtime coherence graph schema `phase2b-runtime-coherence-graph-1`; checksum `fnv1a32:5d3d2dac`; no live provider claim)
 - `docs/roadmaps/CVF_PHASE_2B_LIVE_GOVERNANCE_PROOF_ROADMAP_2026-05-21.md` (CLOSED_LIVE_GOVERNANCE_PROOF — one narrow live `/api/execute` proof on Alibaba `qwen-turbo`; receipt `rcpt-env-mpepcnmc-ier7bt`; no broad provider/product/public claim)
 - `docs/work_orders/CVF_WO_MULTI_ROLE_QUALITY_HARDENING_2026-05-21.md` + `docs/reviews/CVF_WO_MULTI_ROLE_QUALITY_HARDENING_CLAUDE_AUDIT_REBUTTAL_2026-05-21.md` + `docs/reviews/CVF_WO_MULTI_ROLE_QUALITY_HARDENING_COMPLETION_2026-05-21.md` (CLOSED_MULTI_ROLE_QUALITY_HARDENING — confirmed fixes only: `docType: reference` GC-045 support and new-work-order operator checkpoint/waiver requirement with adoption-commit grandfathering; no runtime/provider/public-sync/freeze change)
+- `docs/roadmaps/CVF_POST_PUBLICIZATION_PROVIDER_STABILITY_HARDENING_ROADMAP_2026-05-21.md` + `docs/reviews/CVF_POST_PUBLICIZATION_PROVIDER_STABILITY_HARDENING_COMPLETION_2026-05-21.md` (CLOSED_PROVIDER_STABILITY_HARDENING_BOUNDED — second-window provider repeatability PASS `6/6` across Alibaba `qwen-turbo` and DeepSeek `deepseek-chat`; release gate PASS `7/7`; public-sync bounded evidence delta pushed at public commit `51133d4d`; no broad provider stability or hosted readiness claim)
 - `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` (CLOSURE EVIDENCE — A/B/C/D/E/F/G/H all CLOSED after 2026-05-20 tranche; supersedes old 4/8 shorthand and is no longer the active next-work steering file)
 - `docs/reviews/CVF_17_05_REVIEW_CVF_RESIDUAL_PAIN_POINTS_ASSESSMENT_2026-05-19.md` (original assessment; see direction codex for corrected posture)
 - `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (6 candidates, REBUTTAL_ACCEPTED, all work orders now CLOSED)
@@ -101,6 +102,9 @@ Current HEAD after post Phase 2.B publicization readiness lanes (GC-020):
 
 Current HEAD after GC-045 multi-role quality hardening (GC-020):
 `db859d7bacfe4e90595bca1bfd54b177ead73e62` (fix(governance): harden markdown structural checks)
+
+Current HEAD after GC-045 legacy corpus exemption (GC-020):
+`89593a53fe3315608ccba132dcdf8504e9ee1808` (fix(governance): exempt legacy corpus docs from GC-045 structural check)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
