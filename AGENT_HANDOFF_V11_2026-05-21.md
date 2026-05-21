@@ -28,6 +28,10 @@ Current HEAD before V11 transition / hosted-readiness return packet:
 
 `782f8888` (chore(handoff): GC-020 sync after CDH-D route wiring closure at b5ebdcca)
 
+Current HEAD after hosted-readiness return packet (GC-020):
+
+`6ec3a361` (docs(readiness): return hosted proof at release gate timeout boundary)
+
 ---
 
 ## Purpose
