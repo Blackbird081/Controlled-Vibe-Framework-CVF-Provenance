@@ -44,6 +44,10 @@ Current HEAD after pain-point gap audit + delivery roadmap:
 
 `5279db51` (docs(audit): file Review-CVF pain-point closure gap audit + delivery roadmap)
 
+Current HEAD after Codex review of pain-point delivery-gap roadmap:
+
+`35228ce7` (docs(review): file pain-point delivery gap roadmap review)
+
 ---
 
 ## Purpose
