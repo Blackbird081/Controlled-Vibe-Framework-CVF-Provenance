@@ -251,12 +251,14 @@
       "id": "phase-2b-live-governance-proof-roadmap",
       "artifactType": "roadmap",
       "path": "docs/roadmaps/CVF_PHASE_2B_LIVE_GOVERNANCE_PROOF_ROADMAP_2026-05-21.md",
-      "status": "READY_FOR_REBUTTAL",
+      "status": "CLOSED_LIVE_GOVERNANCE_PROOF",
       "requestedReviewer": "Codex",
       "expectedResponsePath": "docs/reviews/CVF_PHASE_2B_LIVE_GOVERNANCE_PROOF_CODEX_REBUTTAL_2026-05-21.md",
+      "responsePath": "docs/reviews/CVF_PHASE_2B_LIVE_GOVERNANCE_PROOF_CODEX_REBUTTAL_2026-05-21.md",
+      "completionPath": "docs/reviews/CVF_PHASE_2B_LIVE_GOVERNANCE_PROOF_COMPLETION_2026-05-21.md",
       "priority": 21,
       "source": "operator request 2026-05-21",
-      "notes": "Proposed separate live-proof roadmap. Runtime coherence completion now exists at docs/reviews/CVF_PHASE_2B_RUNTIME_COHERENCE_COMPLETION_2026-05-21.md, so this may proceed to rebuttal only. Chain: LP-01 runtime-coherence completion cited -> LP-02 live key readiness and secret hygiene -> LP-03 live governed execution proof -> LP-04 receipt/coherence graph assertion -> LP-05 bypass/fallback rejection assertion -> LP-06 completion review. Boundary: one narrow provider-backed proof only; no broad provider stability, Maika child-data/photo/vision proof, provider runtime expansion, public claim, or global freeze lift."
+      "notes": "Closed 2026-05-21 as one narrow provider-backed /api/execute governance proof. Runtime coherence prerequisite: docs/reviews/CVF_PHASE_2B_RUNTIME_COHERENCE_COMPLETION_2026-05-21.md. GC-018: docs/baselines/CVF_GC018_PHASE_2B_LIVE_GOVERNANCE_PROOF_2026-05-21.md. Completion: docs/reviews/CVF_PHASE_2B_LIVE_GOVERNANCE_PROOF_COMPLETION_2026-05-21.md. Mandatory release gate PASS; focused live receipt probe PASS with provider alibaba, model qwen-turbo, decision ALLOW, receipt rcpt-env-mpepcnmc-ier7bt, trace env-mpepcnmc-ier7bt, checksum fnv1a32:5d3d2dac. Boundary: one narrow proof only; no broad provider stability, Maika child-data/photo/vision proof, provider runtime expansion, public claim, or global freeze lift."
     }
   ]
 }

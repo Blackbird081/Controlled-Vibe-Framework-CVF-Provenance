@@ -705,6 +705,41 @@ public-sync update, public catalog claim, kernel owner replacement, or global
 freeze lift. The separate live-governance-proof roadmap may now become the next
 candidate only through its own GC-018/work order and live-key requirements.
 
+## Phase 2.B Live Governance Proof — 2026-05-21
+
+Codex closed the bounded live governance proof tranche:
+
+`LP-01 -> LP-02 -> LP-03 -> LP-04 -> LP-05 -> LP-06`
+
+Closed completion:
+
+- `docs/reviews/CVF_PHASE_2B_LIVE_GOVERNANCE_PROOF_COMPLETION_2026-05-21.md`
+
+Implemented:
+
+- focused redacted live receipt probe:
+  `scripts/run_phase2b_live_governance_receipt_probe.mjs`
+
+Verification:
+
+- Mandatory command `python scripts/run_cvf_release_gate_bundle.py --json`
+  returned PASS.
+- Focused probe `node scripts/run_phase2b_live_governance_receipt_probe.mjs`
+  returned PASS.
+- Provider lane: `alibaba`.
+- Model: `qwen-turbo`.
+- Decision/routing decision: `ALLOW`.
+- Receipt id: `rcpt-env-mpepcnmc-ier7bt`.
+- Trace id: `env-mpepcnmc-ier7bt`.
+- Runtime coherence checksum link: `fnv1a32:5d3d2dac`.
+- No raw key values were printed or committed.
+
+Boundary: this closes one narrow live `/api/execute` governance proof only. It
+does not close broad provider stability, all-provider behavior, Maika
+child-data/photo/vision proof, provider runtime expansion, persistent memory,
+database schema migration, public-sync update, public catalog claim, global
+freeze lift, or public product readiness.
+
 ## Claim Boundary
 
 This artifact establishes a governed session-memory front door and machine

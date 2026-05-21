@@ -1,8 +1,8 @@
 # CVF Phase 2.B Live Governance Proof Roadmap
 
-Memory class: FULL_RECORD
+Memory class: SUMMARY_RECORD
 
-Status: READY_FOR_REBUTTAL_BLOCKED_BY_RUNTIME_COHERENCE
+Status: CLOSED_LIVE_GOVERNANCE_PROOF
 
 docType: roadmap
 
@@ -40,22 +40,22 @@ coverage or internal runtime-coherence work.
 Decision: propose live governance proof as a separate downstream tranche, not
 as part of adapter/table coverage or internal runtime coherence.
 
-Authorization posture: READY_FOR_REBUTTAL_BLOCKED_BY_RUNTIME_COHERENCE.
-Implementation requires runtime-coherence closure plus a downstream GC-018/work
-order.
+Authorization posture: CLOSED_LIVE_GOVERNANCE_PROOF.
+Runtime-coherence closure, downstream GC-018, and downstream work order are
+filed and cited in the completion review.
 
 ---
 
 ## Prerequisite Gate
 
-This roadmap is blocked until runtime coherence closes.
+This prerequisite is satisfied by the runtime-coherence completion review.
 
 Required prerequisite artifact:
 
 - `docs/reviews/CVF_PHASE_2B_RUNTIME_COHERENCE_COMPLETION_2026-05-21.md`
   or a later dated equivalent completion review.
 
-No live-proof work order may execute before that artifact exists.
+The live-proof work order executed after that artifact existed.
 
 ---
 

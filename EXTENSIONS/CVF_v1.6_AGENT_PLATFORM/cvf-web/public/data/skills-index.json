@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-26T06:25:43.280Z",
+  "generatedAt": "2026-05-20T23:22:28.865Z",
   "categories": [
     {
       "id": "ai_ml_evaluation",
@@ -865,11 +865,6 @@
               "templateId": "web_ux_redesign_system",
               "corpusClass": "TRUSTED_FOR_VALUE_PROOF",
               "trustedBenchmarkSurface": false
-            },
-            {
-              "templateId": "web_build_handoff",
-              "corpusClass": "TRUSTED_FOR_VALUE_PROOF",
-              "trustedBenchmarkSurface": false
             }
           ],
           "corpusNote": "Trusted supporting front-door surface under GC-044."
@@ -1089,7 +1084,6 @@
     "governanceSource": [
       "docs/baselines/CVF_CORPUS_RESCREEN_D2_MATRIX_2026-04-15.md",
       "docs/baselines/CVF_CORPUS_RESCREEN_D3_TRUSTED_SUBSET_2026-04-15.md",
-      "docs/baselines/CVF_FRONT_DOOR_WAVE1_EXECUTION_NOTE_2026-04-21.md",
       "docs/baselines/CVF_FRONT_DOOR_WAVE2_EXECUTION_NOTE_2026-04-21.md"
     ]
   }
