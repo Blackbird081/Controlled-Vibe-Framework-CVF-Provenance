@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — D/E/F/G lanes closed; M1/C2/D2/H2 closed; Phase 3 W1/W2/W3 closed; Rule C paradox fixed; ALL 6 residual work orders CLOSED (A1/C1/D1/E1/G1/H1); all 8 Review-CVF pain points CLOSED; N1 CLOSED (public commit `d11c772a`); N2 CLOSED_BY_PRIOR_TRANCHE; N3 WITHDRAWN; hardening roadmap rebutted NON_BLOCKING_WITH_SCOPE_REFINEMENT; HN1 CLOSED; HN2.a CLOSED; HN2.b CLOSED; HN2.c CLOSED; HN3 CLOSED; CDH-M narrow deployed value proof CLOSED with temp-CVF-tunnel boundary; CDH-H/CDH-C/CDH-D rebuttals FILED with no implementation authorized; Phase 2.B static plan plus receipt critical path, execution bridge receipt chain, audit/trace/task receipt chains, policy/risk adapter chains, identity/control-plane adapter chains, safety/external-policy risk fanout chains, memory-tail adapter chains, internal runtime coherence, and one narrow live governance proof CLOSED with bounded boundaries.
+Status: ARCHIVED — superseded by `AGENT_HANDOFF_V11_2026-05-21.md`; retained for provenance through CDH-D vision route wiring closure.
 
 Latest planning artifacts (read these first if you are resuming Review-CVF closure work):
 

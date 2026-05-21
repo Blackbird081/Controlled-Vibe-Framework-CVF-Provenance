@@ -353,6 +353,21 @@
       "notes": "Closed 2026-05-21. Minimal route.ts + types.ts wiring added imageUrl/imageBase64/mimeType transport, forced image-bearing requests to Alibaba qwen-vl-plus, and returned governanceEvidenceReceipt.vision=true. Live /api/execute proof: HTTP 200, success=true, decision ALLOW, evidenceMode live, provider alibaba, model qwen-vl-plus, receipt rcpt-env-mpfdb3kj-4d7o8r, trace env-mpfdb3kj-4d7o8r. Verification: route tests PASS 31/31, cvf-web check PASS, full cvf-web npm run test:run PASS 217 files / 2739 tests / 2 skipped after stopping live-proof dev server, governance checks PASS. Boundary: no Maika/child-data/photo claim, reasoning runtime, all-provider vision parity, UI/CLI/SSE/package/public-sync change.",
       "completionPath": "docs/reviews/CVF_CDH_D_VISION_ROUTE_WIRING_COMPLETION_2026-05-21.md",
       "baselinePath": "docs/baselines/CVF_GC018_CDH_D_VISION_ROUTE_WIRING_2026-05-21.md"
+    },
+    {
+      "id": "hosted-product-readiness-proof",
+      "artifactType": "work_order",
+      "path": "docs/work_orders/CVF_WO_HOSTED_PRODUCT_READINESS_PROOF_2026-05-21.md",
+      "roadmapPath": "docs/roadmaps/CVF_HOSTED_PRODUCT_READINESS_PROOF_ROADMAP_2026-05-21.md",
+      "status": "RETURNED_RELEASE_GATE_TIMEOUT_BOUNDARY",
+      "requestedReviewer": "Codex",
+      "expectedCompletionPath": "docs/reviews/CVF_HOSTED_PRODUCT_READINESS_PROOF_COMPLETION_2026-05-21.md",
+      "expectedBaselinePath": "docs/baselines/CVF_GC018_HOSTED_PRODUCT_READINESS_PROOF_2026-05-21.md",
+      "completionPath": "docs/reviews/CVF_HOSTED_PRODUCT_READINESS_PROOF_COMPLETION_2026-05-21.md",
+      "baselinePath": "docs/baselines/CVF_GC018_HOSTED_PRODUCT_READINESS_PROOF_2026-05-21.md",
+      "priority": 29,
+      "source": "operator request 2026-05-21",
+      "notes": "Returned 2026-05-21 at the release-gate timeout boundary. Local production-mode proof passed: npm run build PASS, npm run start served 127.0.0.1:3235, signed live /api/execute returned HTTP 200, success=true, decision ALLOW, evidenceMode live, provider alibaba, model qwen-turbo, receipt rcpt-env-mpflcxex-1zkxan, trace env-mpflcxex-1zkxan. Mandatory release gate returned FAIL because Web build timed out at the runner's 300s limit while the direct build took about 468s; remaining 6/7 gate checks passed. Boundary: no hosted SaaS readiness, public deployment readiness, public-sync update, source-code change, persistence/database work, Maika proof, broad provider stability, or freeze release."
     }
   ]
 }

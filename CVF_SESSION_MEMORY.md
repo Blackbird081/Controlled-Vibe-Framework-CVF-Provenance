@@ -76,7 +76,7 @@ current.
 - Current mode: `operator_lane_selection_active`
 - Previous mode: `system_reconvergence_stop`
 - Freeze posture: `governance_kernel_freeze_recommended`
-- Active handoff pointer: `AGENT_HANDOFF_V10_2026-05-19.md`
+- Active handoff pointer: `AGENT_HANDOFF_V11_2026-05-21.md`
 - Historical handoff archive: `CVF_SESSION/handoffs/archive/`
 - Operator approved lanes B+C+H on 2026-05-19. Lane-specific stop lifts
   are in `CVF_SESSION/ACTIVE_SESSION_STATE.json`. Lanes execute in order

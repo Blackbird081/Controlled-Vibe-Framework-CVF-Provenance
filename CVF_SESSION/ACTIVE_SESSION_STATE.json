@@ -5,7 +5,7 @@
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "painPointClosureDirection": "docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
   "postPainPointHardeningRoadmap": "docs/roadmaps/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md",
-  "activeHandoff": "AGENT_HANDOFF_V10_2026-05-19.md",
+  "activeHandoff": "AGENT_HANDOFF_V11_2026-05-21.md",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -16,7 +16,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V6_2026-05-16.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V7_2026-05-16.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V8_2026-05-17.md",
-    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V9_2026-05-18.md"
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V9_2026-05-18.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V10_2026-05-19.md"
   ],
   "relatedHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_INTEGRATIONS_2026-05-17.md",
@@ -102,7 +103,7 @@
     "blocked_work_classes",
     "next_allowed_move"
   ],
-  "nextAllowedMove": "CDH-D vision route wiring is closed on 2026-05-21 at docs/reviews/CVF_CDH_D_VISION_ROUTE_WIRING_COMPLETION_2026-05-21.md. Governed /api/execute live proof returned HTTP 200, success=true, decision ALLOW, evidenceMode live, provider alibaba, model qwen-vl-plus, receipt rcpt-env-mpfdb3kj-4d7o8r, trace env-mpfdb3kj-4d7o8r, and governanceEvidenceReceipt.vision=true. CDH-C and CDH-H remain closed. Future moves still require row-specific or explicitly bounded GC-018/work orders. No broad provider stability claim, Maika child-data/photo/vision proof, persistent memory store, database schema migration or implementation, all-provider behavior claim, Claude review dependency, kernel owner replacement, new role taxonomy, new policy/risk/guard engine, new memory tier, reinjection runtime expansion, hosted product readiness claim, one-surface freeze release, public matured-kernel claim, or global freeze lift is closed.",
+  "nextAllowedMove": "Hosted product readiness proof returned on 2026-05-21 at docs/reviews/CVF_HOSTED_PRODUCT_READINESS_PROOF_COMPLETION_2026-05-21.md. Local production-mode proof passed: npm run build PASS, npm run start served 127.0.0.1:3235, signed live /api/execute returned HTTP 200, success=true, decision ALLOW, evidenceMode live, provider alibaba, model qwen-turbo, receipt rcpt-env-mpflcxex-1zkxan, trace env-mpflcxex-1zkxan. Mandatory release gate returned FAIL because the Web build subcheck timed out at the runner's 300s limit while direct build took about 468s; remaining 6/7 gate checks passed. Next move should be stop, or if product-readiness closure is still needed, open only a tiny release-gate timeout maintenance GC-018/work order. Do not claim hosted SaaS readiness, public deployment readiness, public-sync update, persistence/database readiness, Maika readiness, broad provider stability, kernel-owner replacement, one-surface freeze release, public matured-kernel claim, or global freeze lift.",
   "phase2BRuntimeCoherenceClosure": "CLOSED_RUNTIME_COHERENCE_INTERNAL_PROOF at docs/reviews/CVF_PHASE_2B_RUNTIME_COHERENCE_COMPLETION_2026-05-21.md; Guard Contract graph schema phase2b-runtime-coherence-graph-1; adapter inventory checksum fnv1a32:5d3d2dac; harness PASS; liveProofProven=false",
   "phase2BLiveGovernanceProofClosure": "CLOSED_LIVE_GOVERNANCE_PROOF at docs/reviews/CVF_PHASE_2B_LIVE_GOVERNANCE_PROOF_COMPLETION_2026-05-21.md; mandatory release gate PASS; focused live receipt probe PASS; provider alibaba; model qwen-turbo; decision ALLOW; receipt rcpt-env-mpepcnmc-ier7bt; trace env-mpepcnmc-ier7bt; runtime coherence checksum fnv1a32:5d3d2dac",
   "postPhase2BPublicizationRoadmap": "CLOSED_PUBLICIZATION_READINESS_BOUNDED at docs/reviews/CVF_POST_PHASE_2B_PUBLICIZATION_READINESS_COMPLETION_2026-05-21.md; five PBR lanes closed: PBR-01 narrow provider repeatability PASS 4/4 across Alibaba qwen-turbo and DeepSeek deepseek-chat, PBR-02 readiness assessment filed, PBR-03 public-sync/public catalog pushed at public commit a0ac66de, PBR-04 persistence/database deferred as no current blocker, PBR-05 Maika proof demand-gated and deferred; D-06/D-07 remain deferred/rejected.",
@@ -114,5 +115,6 @@
   "nextPhase2BMove": "Phase 2.B internal runtime coherence, one narrow live governance proof, bounded post-Phase 2.B publicization/readiness, second-window provider-stability hardening, and matured-kernel criteria are closed. Any next work must start with a fresh GC-018/work order. Valid next candidates are hosted/product readiness proof, a longer-horizon provider stability proof, persistence/database implementation only if a real product demand appears, or Maika child-data/photo/vision proof only if an operator demand and privacy design exist. Kernel-owner replacement remains deferred until one-surface freeze-release conditions are met. Matured-kernel criteria may be cited for future screening but do not release any surface. Global freeze lift remains rejected under the binding freeze-release rule.",
   "lastUpdated": "2026-05-21",
   "cdhDVisionRouteWiring": "CLOSED_VISION_ROUTE_WIRING_PROOF at docs/reviews/CVF_CDH_D_VISION_ROUTE_WIRING_COMPLETION_2026-05-21.md; GC-018 docs/baselines/CVF_GC018_CDH_D_VISION_ROUTE_WIRING_2026-05-21.md; live /api/execute proof on Alibaba qwen-vl-plus returned receipt rcpt-env-mpfdb3kj-4d7o8r, trace env-mpfdb3kj-4d7o8r, decision ALLOW, evidenceMode live, vision=true; cvf-web check PASS; full npm run test:run PASS 217 files / 2739 tests / 2 skipped; route.ts line count 1001."
+  ,"hostedProductReadinessProof": "RETURNED_RELEASE_GATE_TIMEOUT_BOUNDARY at docs/reviews/CVF_HOSTED_PRODUCT_READINESS_PROOF_COMPLETION_2026-05-21.md; local production-mode proof PASS with receipt rcpt-env-mpflcxex-1zkxan and trace env-mpflcxex-1zkxan on Alibaba qwen-turbo; mandatory release gate FAIL because Web build timed out at 300s, while direct build PASS took about 468s and remaining 6/7 gate checks passed."
 }
 
