@@ -32,6 +32,10 @@ Current HEAD after hosted-readiness return packet (GC-020):
 
 `6ec3a361` (docs(readiness): return hosted proof at release gate timeout boundary)
 
+Current HEAD after release-gate timeout maintenance (GC-020):
+
+`baffa459` (fix(release-gate): extend web build timeout)
+
 ---
 
 ## Purpose
