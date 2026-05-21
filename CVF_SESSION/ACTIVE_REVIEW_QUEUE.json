@@ -259,6 +259,19 @@
       "priority": 21,
       "source": "operator request 2026-05-21",
       "notes": "Closed 2026-05-21 as one narrow provider-backed /api/execute governance proof. Runtime coherence prerequisite: docs/reviews/CVF_PHASE_2B_RUNTIME_COHERENCE_COMPLETION_2026-05-21.md. GC-018: docs/baselines/CVF_GC018_PHASE_2B_LIVE_GOVERNANCE_PROOF_2026-05-21.md. Completion: docs/reviews/CVF_PHASE_2B_LIVE_GOVERNANCE_PROOF_COMPLETION_2026-05-21.md. Mandatory release gate PASS; focused live receipt probe PASS with provider alibaba, model qwen-turbo, decision ALLOW, receipt rcpt-env-mpepcnmc-ier7bt, trace env-mpepcnmc-ier7bt, checksum fnv1a32:5d3d2dac. Boundary: one narrow proof only; no broad provider stability, Maika child-data/photo/vision proof, provider runtime expansion, public claim, or global freeze lift."
+    },
+    {
+      "id": "post-phase-2b-publicization-and-readiness-roadmap",
+      "artifactType": "roadmap",
+      "path": "docs/roadmaps/CVF_POST_PHASE_2B_PUBLICIZATION_AND_READINESS_ROADMAP_2026-05-21.md",
+      "status": "CLOSED_PUBLICIZATION_READINESS_BOUNDED",
+      "requestedReviewer": "Codex",
+      "expectedResponsePath": "docs/reviews/CVF_POST_PHASE_2B_PUBLICIZATION_AND_READINESS_ROADMAP_CODEX_REBUTTAL_2026-05-21.md",
+      "responsePath": "docs/reviews/CVF_POST_PHASE_2B_PUBLICIZATION_AND_READINESS_ROADMAP_CODEX_REBUTTAL_2026-05-21.md",
+      "completionPath": "docs/reviews/CVF_POST_PHASE_2B_PUBLICIZATION_READINESS_COMPLETION_2026-05-21.md",
+      "priority": 22,
+      "source": "operator request 2026-05-21",
+      "notes": "Closed 2026-05-21 as five-lane bounded publicization/readiness tranche. Rebuttal: docs/reviews/CVF_POST_PHASE_2B_PUBLICIZATION_AND_READINESS_ROADMAP_CODEX_REBUTTAL_2026-05-21.md. GC-018: docs/baselines/CVF_GC018_POST_PHASE_2B_PUBLICIZATION_READINESS_2026-05-21.md. Work order: docs/work_orders/CVF_WO_POST_PHASE_2B_PUBLICIZATION_READINESS_2026-05-21.md. Completion: docs/reviews/CVF_POST_PHASE_2B_PUBLICIZATION_READINESS_COMPLETION_2026-05-21.md. PBR-01 narrow provider repeatability PASS 4/4 across Alibaba qwen-turbo and DeepSeek deepseek-chat; mandatory release gate PASS 7/7. PBR-02 readiness assessment filed. PBR-03 public-sync/public catalog pushed at public commit a0ac66de. PBR-04 persistence/database deferred as no current publicization blocker. PBR-05 Maika proof demand-gated and deferred. D-06 kernel-owner replacement remains condition-gated; D-07 global freeze lift remains rejected under the binding freeze-release rule."
     }
   ]
 }
