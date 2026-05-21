@@ -415,13 +415,13 @@
       "id": "review-cvf-pain-point-delivery-gap-roadmap-v2",
       "artifactType": "roadmap",
       "path": "docs/roadmaps/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_V2_2026-05-22.md",
-      "status": "ACTIVE_ROADMAP_T1_T2_CLOSED_T3_READY_WITH_OVERRIDE_RECORDED",
+      "status": "ACTIVE_ROADMAP_T1_T2_T3_CLOSED_T4_READY_WITH_OVERRIDE_RECORDED",
       "requestedReviewer": "Codex",
       "supersedes": "docs/roadmaps/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_2026-05-22.md",
       "predecessorReview": "docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_CODEX_REVIEW_2026-05-22.md",
       "priority": 33,
       "source": "operator authorization 2026-05-22",
-      "notes": "V2 active roadmap of record. T1 and T2 closed. T3 is next and requires bounded new_receipt_envelopes override for the optional workflowComposition field only; operator instruction 2026-05-22 authorized Codex to execute T1->T5 and not ask again."
+      "notes": "V2 active roadmap of record. T1, T2, and T3 closed. T4 is next and requires bounded new_provider_execution_semantics override for Alibaba qwen-turbo stream(), DeepSeek deepseek-chat json_mode(), and negative gate only; operator instruction 2026-05-22 authorized Codex to execute T1->T5 and not ask again."
     },
     {
       "id": "t1-capability-intake-pipeline",
@@ -458,13 +458,15 @@
       "artifactType": "work_order",
       "path": "docs/work_orders/CVF_WO_T3_WORKFLOW_COMPOSITION_OUTCOME_SURFACE_2026-05-22.md",
       "roadmapPath": "docs/roadmaps/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_V2_2026-05-22.md",
-      "status": "READY_FOR_IMPLEMENTATION",
+      "status": "CLOSED_T3_WORKFLOW_COMPOSITION_OUTCOME_SURFACE",
       "requestedReviewer": "Codex",
       "expectedCompletionPath": "docs/reviews/CVF_T3_WORKFLOW_COMPOSITION_OUTCOME_SURFACE_COMPLETION_2026-05-22.md",
       "expectedBaselinePath": "docs/baselines/CVF_GC018_T3_WORKFLOW_COMPOSITION_OUTCOME_SURFACE_2026-05-22.md",
       "priority": 36,
       "source": "operator authorization 2026-05-22",
-      "notes": "T3 third tranche of V2 roadmap. Pre-condition: T2 closed. Blocked-work override required: new_receipt_envelopes (for optional workflowComposition field on GovernanceEvidenceReceipt) \u2014 operator must confirm in GC-018 before implementation. If override NOT_GRANTED, T3 ships WorkflowComposition interface + OutcomeQuickActions expansion without the receipt field (split scope). Deliverables: workflow-composition lib, 6-entry outcome registry, expanded OutcomeQuickActions component."
+      "notes": "T3 closed 2026-05-22. Override new_receipt_envelopes GRANTED only for optional workflowComposition field. Delivered WorkflowComposition types, six-entry outcome registry, OutcomeQuickActions expansion, receipt field +1, targeted tests PASS 6/6, check PASS; full-suite live retrieval transient passed on rerun. Boundary: no route/provider/memory/auth/public-sync change.",
+      "completionPath": "docs/reviews/CVF_T3_WORKFLOW_COMPOSITION_OUTCOME_SURFACE_COMPLETION_2026-05-22.md",
+      "baselinePath": "docs/baselines/CVF_GC018_T3_WORKFLOW_COMPOSITION_OUTCOME_SURFACE_2026-05-22.md"
     },
     {
       "id": "t4-provider-method-coverage",
