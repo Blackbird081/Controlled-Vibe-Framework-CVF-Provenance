@@ -1168,3 +1168,28 @@ Boundary: no public-sync update, no raw secret exposure, no new CLI command, no
 memory reinjection, no broad runtime/provider stability claim, and no
 `vision: true` governed receipt claim. Next CDH-D move requires an amended
 route-wiring work order or an explicit stop at adapter-only evidence.
+
+## CDH-D Vision Route Wiring Closure - 2026-05-21
+
+Codex closed the superseding CDH-D route-wiring work order:
+`docs/reviews/CVF_CDH_D_VISION_ROUTE_WIRING_COMPLETION_2026-05-21.md`.
+
+Evidence: live governed `/api/execute` call returned HTTP `200`,
+`success=true`, decision `ALLOW`, `evidenceMode=live`, provider `alibaba`,
+model `qwen-vl-plus`, receipt `rcpt-env-mpfdb3kj-4d7o8r`, trace
+`env-mpfdb3kj-4d7o8r`, and `governanceEvidenceReceipt.vision=true`.
+
+Implementation: minimal `route.ts` + `types.ts` only. `ExecutionRequest` now
+accepts optional `imageUrl`, `imageBase64`, and `mimeType`; image-bearing
+requests route to the committed Alibaba vision adapter and attach `vision: true`
+to the receipt. `vision-runtime-adapter.ts`, `vision-contract.ts`, and
+`reasoning-contract.ts` are unchanged.
+
+Verification: `cvf-web` route tests PASS `31/31`; `npm run check` PASS; full
+`npm run test:run` PASS `217` files, `2739` tests, `2` skipped after stopping
+the live-proof dev server; route line count `1001`; governance checks PASS.
+
+Boundary: one public-image route proof only. No Maika photo description,
+child-data/photo proof, reasoning runtime, all-provider vision parity,
+UI/CLI/SSE/package change, public-sync update, or public capability claim.
+

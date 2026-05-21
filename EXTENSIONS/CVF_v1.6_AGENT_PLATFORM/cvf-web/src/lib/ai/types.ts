@@ -19,6 +19,9 @@ export interface ExecutionRequest {
     intent: string;
     provider?: AIProvider;
     model?: string;
+    imageUrl?: string;
+    imageBase64?: string;
+    mimeType?: string;
     mode?: 'simple' | 'governance' | 'full';
     cvfPhase?: string;
     cvfRiskLevel?: string;
@@ -58,6 +61,7 @@ export interface GovernanceEvidenceReceipt {
     knowledgeChunkCount?: number;
     approvalId?: string;
     validationHint?: string;
+    vision?: boolean;
     generatedAt: string;
 }
 

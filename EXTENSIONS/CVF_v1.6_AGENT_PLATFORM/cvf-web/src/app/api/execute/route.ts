@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { executeAI, AIProvider, ExecutionRequest, CVF_SYSTEM_PROMPT } from '@/lib/ai';
+import { executeAI, CVF_SYSTEM_PROMPT, type AIProvider, type ExecutionRequest, type ExecutionResponse } from '@/lib/ai';
 import { evaluateEnforcement } from '@/lib/enforcement';
 import { getTemplateById } from '@/lib/templates';
 import { verifySessionCookie } from '@/lib/middleware-auth';
@@ -50,6 +50,7 @@ import {
     buildApprovalRequestSnapshot,
     computeApprovalRequestHash,
 } from '../approvals/approval-binding';
+import { executeVisionRouteRequest, prepareVisionRouteRequest } from './vision-route-helper';
 
 export async function POST(request: NextRequest) {
     const routeStartedAtMs = Date.now();
@@ -89,13 +90,9 @@ export async function POST(request: NextRequest) {
         }
 
         const body = rawBody as Partial<ExecutionRequest>;
-        body.inputs = Object.fromEntries(
-            Object.entries(body.inputs || {}).map(([k, v]) => [k, String(v ?? '').trim()])
-        );
-        if (typeof body.model === 'string') {
-            body.model = body.model.trim() || undefined;
-        }
-
+        body.inputs = Object.fromEntries(Object.entries(body.inputs || {}).map(([k, v]) => [k, String(v ?? '').trim()]));
+        if (typeof body.model === 'string') body.model = body.model.trim() || undefined;
+        const isVisionExecution = prepareVisionRouteRequest(body).isVisionExecution;
         // ── CP7/CP8: Build governance envelope + policy snapshot id ──────────
         const govEnvelope = buildGovernanceEnvelope({
             routeId: '/api/execute',
@@ -719,15 +716,17 @@ export async function POST(request: NextRequest) {
         }
 
         // ── EXECUTE AI with auto-retry on output validation failure ──
-        let aiResult = await executeAI(routedProvider, routedApiKey, filteredPrompt, {
-            model: body.model,
-            maxTokens: executionMaxTokens,
-            ...(enrichedSystemPrompt ? { systemPrompt: enrichedSystemPrompt } : {}),
-        });
+        let aiResult: ExecutionResponse;
+        if (isVisionExecution) {
+            if (routedProvider !== 'alibaba') return NextResponse.json({ success: false, error: 'Vision execution requires the Alibaba qwen-vl-plus provider lane.', provider: routedProvider, model: body.model ?? 'vision-router-error', enforcement, guardResult }, { status: 409 });
+            aiResult = await executeVisionRouteRequest({ apiKey: routedApiKey, body, prompt: filteredPrompt, traceId: govEnvelope.envelopeId });
+        } else {
+            aiResult = await executeAI(routedProvider, routedApiKey, filteredPrompt, { model: body.model, maxTokens: executionMaxTokens, ...(enrichedSystemPrompt ? { systemPrompt: enrichedSystemPrompt } : {}) });
+        }
         let outputValidation: ValidationResult | undefined;
         const retryState: RetryState = { attempt: 0, previousIssues: [] };
 
-        if (aiResult.success) {
+        if (aiResult.success && !isVisionExecution) {
             outputValidation = validateOutput({
                 output: aiResult.output ?? '',
                 intent: body.intent!,
@@ -826,7 +825,7 @@ export async function POST(request: NextRequest) {
                         success: false,
                         error: 'Response blocked: governance bypass approval detected in model output.',
                         provider: routedProvider,
-                        model: body.model ?? 'unknown',
+                        model: body.model ?? aiResult.model ?? 'unknown',
                         enforcement,
                         guardResult: bypassGuardResult,
                     },
@@ -869,6 +868,7 @@ export async function POST(request: NextRequest) {
             approvalId: approvedRequestRecord?.id,
             validationHint: outputValidation?.qualityHint,
         });
+        if (isVisionExecution) governanceEvidenceReceipt.vision = true;
         const workflowExecution = aiResult.success && workflowBinding
             ? buildWorkflowExecutionProjection(workflowBinding, governanceEvidenceReceipt.receiptId)
             : undefined;

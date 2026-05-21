@@ -106,13 +106,13 @@
       "artifactType": "roadmap_slice",
       "path": "docs/roadmaps/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md",
       "anchor": "#per-slice-section-d",
-      "status": "RETURNED_TO_ORCHESTRATOR_ROUTE_WIRING_REQUIRED",
+      "status": "CLOSED_VISION_ROUTE_WIRING_PROOF",
       "requestedReviewer": "Codex",
       "expectedResponsePath": "docs/reviews/CVF_CDH_D_DELTA_CODEX_REBUTTAL_2026-05-20.md",
       "responsePath": "docs/reviews/CVF_CDH_D_DELTA_CODEX_REBUTTAL_2026-05-20.md",
       "priority": 9,
       "source": "docs/work_orders/CVF_WO_CDH_D_DELTA_REBUTTAL_2026-05-20.md",
-      "notes": "Codex rebuttal filed 2026-05-20 at docs/reviews/CVF_CDH_D_DELTA_CODEX_REBUTTAL_2026-05-20.md. CDH-D partial adapter progress filed 2026-05-21 at docs/reviews/CVF_CDH_D_VISION_RUNTIME_COMPLETION_2026-05-21.md with GC-018 docs/baselines/CVF_GC018_CDH_D_VISION_RUNTIME_2026-05-21.md. Model Gateway vision adapter and negative gate pass; adapter-level live Alibaba qwen-vl-plus proof pass. Not closed: governed /api/execute vision receipt proof requires route write ownership not present in the active work order. No bundled runtime claim, no reasoning runtime, and no Maika photo proof."
+      "notes": "Codex rebuttal filed 2026-05-20 at docs/reviews/CVF_CDH_D_DELTA_CODEX_REBUTTAL_2026-05-20.md. CDH-D adapter progress returned 2026-05-21; route-wiring proof closed 2026-05-21 at docs/reviews/CVF_CDH_D_VISION_ROUTE_WIRING_COMPLETION_2026-05-21.md with GC-018 docs/baselines/CVF_GC018_CDH_D_VISION_ROUTE_WIRING_2026-05-21.md. Governed /api/execute live proof returned HTTP 200, decision ALLOW, evidenceMode live, provider alibaba, model qwen-vl-plus, receipt rcpt-env-mpfdb3kj-4d7o8r, trace env-mpfdb3kj-4d7o8r, vision=true. Boundary: one public-image route proof only; no reasoning runtime, Maika photo description, child-data/photo proof, all-provider vision parity, or public-sync update."
     },
     {
       "id": "hn2b-owner-map-roadmap",
@@ -330,7 +330,7 @@
       "artifactType": "work_order",
       "path": "docs/work_orders/CVF_WO_CDH_D_VISION_RUNTIME_2026-05-21.md",
       "roadmapPath": "docs/roadmaps/CVF_CDH_D_VISION_RUNTIME_ROADMAP_2026-05-21.md",
-      "status": "RETURNED_TO_ORCHESTRATOR_ROUTE_WIRING_REQUIRED",
+      "status": "CLOSED_BY_ROUTE_WIRING_PROOF",
       "requestedReviewer": "Codex",
       "expectedCompletionPath": "docs/reviews/CVF_CDH_D_VISION_RUNTIME_COMPLETION_2026-05-21.md",
       "expectedBaselinePath": "docs/baselines/CVF_GC018_CDH_D_VISION_RUNTIME_2026-05-21.md",
@@ -338,19 +338,22 @@
       "baselinePath": "docs/baselines/CVF_GC018_CDH_D_VISION_RUNTIME_2026-05-21.md",
       "priority": 27,
       "source": "operator request 2026-05-21",
-      "notes": "CDH-D returned to Orchestrator on 2026-05-21. Operator authorized API-key use and Model Gateway adapter-level live proof passed on Alibaba qwen-vl-plus, but the active work order cannot close because governed /api/execute vision receipt proof requires route image transport and a vision receipt signal outside current write ownership. Boundary: adapter/negative-gate progress only; no closed governed route vision proof, reasoning runtime, Maika photo description, child-data vision proof, modification of vision-contract.ts or reasoning-contract.ts, SSE streaming, or public-sync update. Superseded by route-wiring work order at priority 28."
+      "notes": "CDH-D adapter tranche returned to Orchestrator on 2026-05-21, then the superseding route-wiring work order closed the governed /api/execute proof gap at docs/reviews/CVF_CDH_D_VISION_ROUTE_WIRING_COMPLETION_2026-05-21.md. Adapter evidence remains at docs/reviews/CVF_CDH_D_VISION_RUNTIME_COMPLETION_2026-05-21.md; route proof used Alibaba qwen-vl-plus with receipt rcpt-env-mpfdb3kj-4d7o8r and vision=true. No vision-contract.ts, reasoning-contract.ts, or vision-runtime-adapter.ts changes in the route-wiring tranche."
     },
     {
       "id": "cdh-d-vision-route-wiring",
       "artifactType": "work_order",
       "path": "docs/work_orders/CVF_WO_CDH_D_VISION_ROUTE_WIRING_2026-05-21.md",
-      "status": "READY_FOR_IMPLEMENTATION",
+      "status": "CLOSED_VISION_ROUTE_WIRING_PROOF",
       "requestedReviewer": "Codex",
       "expectedCompletionPath": "docs/reviews/CVF_CDH_D_VISION_ROUTE_WIRING_COMPLETION_2026-05-21.md",
       "expectedBaselinePath": "docs/baselines/CVF_GC018_CDH_D_VISION_ROUTE_WIRING_2026-05-21.md",
       "priority": 28,
       "source": "operator request 2026-05-21",
-      "notes": "CDH-D route wiring work order dispatched 2026-05-21. Adds route.ts and types.ts to write ownership for minimal image transport and vision: true receipt field. Operator checkpoint required: vision-capable provider key (Alibaba qwen-vl-plus) must be confirmed before step R-05 (live invocation). Prerequisite: adapter tranche at priority 27 already returned with adapter evidence; this tranche closes the governed /api/execute proof gap only."
+      "notes": "Closed 2026-05-21. Minimal route.ts + types.ts wiring added imageUrl/imageBase64/mimeType transport, forced image-bearing requests to Alibaba qwen-vl-plus, and returned governanceEvidenceReceipt.vision=true. Live /api/execute proof: HTTP 200, success=true, decision ALLOW, evidenceMode live, provider alibaba, model qwen-vl-plus, receipt rcpt-env-mpfdb3kj-4d7o8r, trace env-mpfdb3kj-4d7o8r. Verification: route tests PASS 31/31, cvf-web check PASS, full cvf-web npm run test:run PASS 217 files / 2739 tests / 2 skipped after stopping live-proof dev server, governance checks PASS. Boundary: no Maika/child-data/photo claim, reasoning runtime, all-provider vision parity, UI/CLI/SSE/package/public-sync change.",
+      "completionPath": "docs/reviews/CVF_CDH_D_VISION_ROUTE_WIRING_COMPLETION_2026-05-21.md",
+      "baselinePath": "docs/baselines/CVF_GC018_CDH_D_VISION_ROUTE_WIRING_2026-05-21.md"
     }
   ]
 }
+
