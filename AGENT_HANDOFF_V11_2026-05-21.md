@@ -68,6 +68,10 @@ Current HEAD after T5 runtime memory wiring closure:
 
 `89e99fb8` (feat(t5): close runtime memory wiring)
 
+Current HEAD after canonical CLI runtime gateway closure:
+
+`3d965a26` (feat(cli): add canonical runtime gateway)
+
 ---
 
 ## Purpose
