@@ -383,6 +383,21 @@
       "priority": 30,
       "source": "operator request 2026-05-21",
       "notes": "Closed 2026-05-21. One-line maintenance in scripts/run_cvf_release_gate_bundle.py changed the Web build subcheck timeout from 300s to 900s. Full release gate python scripts/run_cvf_release_gate_bundle.py --json PASS 7/7: Web build PASS, TypeScript PASS, provider readiness PASS with CERTIFIED lanes 3, secrets scan PASS, docs governance PASS, UI mock E2E PASS 6 passed, live governance E2E PASS. Boundary: timeout maintenance only; no release requirement weakened, no app/provider/runtime/deployment/public-sync/persistence/Maika/freeze change."
+    },
+    {
+      "id": "terminal-hardening-five-option-closure",
+      "artifactType": "work_order",
+      "path": "docs/work_orders/CVF_WO_TERMINAL_HARDENING_FIVE_OPTION_CLOSURE_2026-05-21.md",
+      "roadmapPath": "docs/roadmaps/CVF_TERMINAL_HARDENING_FIVE_OPTION_CLOSURE_ROADMAP_2026-05-21.md",
+      "status": "CLOSED_TERMINAL_HARDENING_SWEEP_WITH_BOUNDARIES",
+      "requestedReviewer": "Codex",
+      "expectedCompletionPath": "docs/reviews/CVF_TERMINAL_HARDENING_FIVE_OPTION_CLOSURE_COMPLETION_2026-05-21.md",
+      "expectedBaselinePath": "docs/baselines/CVF_GC018_TERMINAL_HARDENING_FIVE_OPTION_CLOSURE_2026-05-21.md",
+      "completionPath": "docs/reviews/CVF_TERMINAL_HARDENING_FIVE_OPTION_CLOSURE_COMPLETION_2026-05-21.md",
+      "baselinePath": "docs/baselines/CVF_GC018_TERMINAL_HARDENING_FIVE_OPTION_CLOSURE_2026-05-21.md",
+      "priority": 31,
+      "source": "operator request 2026-05-21",
+      "notes": "Closed 2026-05-21 as the final five-option terminal hardening sweep. Clean-room public clone without longpaths classified a Windows checkout blocker; retry with git -c core.longpaths=true succeeded at public commit 51133d4. Public cvf-web npm ci PASS; public static CI gate PASS 7/7 with static tests 44/44 and secrets scan PASS. External hosted deployment proof remains BLOCKED_NEEDS_OPERATOR_HOST_TARGET. Longer-horizon stability remains DEFERRED_SCHEDULED_SOAK_REQUIRED. Secret/auth boundary is currently healthy. Public claim audit found boundary/limitation language and required no public-sync edit. Default next move: stop unless operator opens a fresh specific tranche."
     }
   ]
 }

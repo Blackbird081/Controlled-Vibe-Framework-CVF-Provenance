@@ -73,7 +73,7 @@ current.
 
 ## Current Session Mode
 
-- Current mode: `operator_lane_selection_active`
+- Current mode: `terminal_hardening_closed`
 - Previous mode: `system_reconvergence_stop`
 - Freeze posture: `governance_kernel_freeze_recommended`
 - Active handoff pointer: `AGENT_HANDOFF_V11_2026-05-21.md`
@@ -145,19 +145,22 @@ Before material governed work, an agent should be able to state:
 
 ## Next Allowed Move
 
-Phase 3 W1/W2/W3 review slices are closed and locally verified:
+Terminal five-option hardening sweep is closed:
 
-- W1: provider gateway contracts for reasoning, JSON mode, tool call, and
-  embedding; contract-only, no adapter interface or provider execution change.
-- W2: governed-pack TypeScript failure-recovery policies and registry for the
-  three existing packs; no JSON/MD artifact, route, or enforcement change.
-- W3: offline nine-metric governance benchmark extension and
-  `cvf benchmark run --input <audit.jsonl>`; no live benchmark claim.
+- clean-room public proof PASS with Windows long-path setup note;
+- public `cvf-web` install PASS;
+- public static CI gate PASS `7/7` with static tests `44/44`;
+- external hosted deployment proof remains blocked pending an operator host
+  target;
+- longer-horizon live stability remains deferred pending a scheduled soak
+  profile;
+- secret/auth boundary is currently healthy;
+- public claim audit required no public-sync edit.
 
-Next: reviewer/operator closure review. Before any public-facing claim or
-public-sync, resolve the GC-024 public catalog advisory from the public-sync
-clone. Do not broaden provider execution, live benchmark, workflow runtime, or
-capability intake claims without a new roadmap/GC-018.
+Next: stop by default. Do not broaden provider execution, live benchmark,
+workflow runtime, hosted readiness, public deployment readiness, persistence,
+Maika, or freeze claims without a new explicit operator request and fresh
+governed tranche.
 
 ## Enforcement And Verification
 
