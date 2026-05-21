@@ -97,8 +97,74 @@ describe('audit-memory-receipt', () => {
             memoryReceiptDecision: 'captured',
             memoryCaptureMode: 'captured',
             memoryCaptureReason: 'memory_captured_after_policy_and_privacy',
+            taskMemoryDecision: 'NOT_APPLICABLE',
+            taskMemoryReason: 'task memory not wired to this context',
         });
         expect(JSON.stringify(result.auditEventPayload.payload)).not.toContain('reinjectionAllowed');
+    });
+
+    it('surfaces taskMemoryDecision CAPTURED when an ephemeral task entry is present', () => {
+        const result = buildRouteAuditMemoryCapture({
+            governanceReceiptId: 'gr-task-001',
+            actorId: 'actor-task-001',
+            actorRole: 'BUILDER',
+            taskId: 'task-001',
+            taskMemoryStore: {
+                get: () => ({ taskId: 'task-001', expiresAt: 2000 }),
+                inspect: () => ({
+                    state: 'present',
+                    reason: 'task_memory_entry_present',
+                    entry: { taskId: 'task-001', expiresAt: 2000 },
+                }),
+            },
+        });
+
+        expect(result.auditEventPayload.payload).toMatchObject({
+            taskMemoryDecision: 'CAPTURED',
+            taskMemoryReason: 'task memory entry present',
+            memoryCaptureMode: 'captured',
+        });
+        expect(JSON.stringify(result.auditEventPayload.payload)).not.toContain('reinjectionAllowed');
+    });
+
+    it('surfaces taskMemoryDecision SKIPPED when no task memory entry exists', () => {
+        const result = buildRouteAuditMemoryCapture({
+            governanceReceiptId: 'gr-task-002',
+            actorId: 'actor-task-002',
+            actorRole: 'BUILDER',
+            taskId: 'task-002',
+            taskMemoryStore: {
+                get: () => undefined,
+                inspect: () => ({ state: 'missing', reason: 'task_memory_entry_missing' }),
+            },
+        });
+
+        expect(result.auditEventPayload.payload).toMatchObject({
+            taskMemoryDecision: 'SKIPPED',
+            taskMemoryReason: 'no task memory requested',
+        });
+    });
+
+    it('surfaces taskMemoryDecision EXPIRED when a task entry expired before readout', () => {
+        const result = buildRouteAuditMemoryCapture({
+            governanceReceiptId: 'gr-task-003',
+            actorId: 'actor-task-003',
+            actorRole: 'BUILDER',
+            taskId: 'task-003',
+            taskMemoryStore: {
+                get: () => undefined,
+                inspect: () => ({
+                    state: 'expired',
+                    reason: 'task_memory_entry_expired',
+                    entry: { taskId: 'task-003', expiresAt: 1000 },
+                }),
+            },
+        });
+
+        expect(result.auditEventPayload.payload).toMatchObject({
+            taskMemoryDecision: 'EXPIRED',
+            taskMemoryReason: 'entry expired before readout',
+        });
     });
 
     it('preserves canReinject=false as the capture policy binding', async () => {
@@ -177,6 +243,8 @@ describe('audit-memory-receipt', () => {
             memoryReceiptDecision: 'policy_skipped',
             memoryCaptureMode: 'degraded',
             memoryCaptureReason: 'memory_tier_does_not_require_receipt_write',
+            taskMemoryDecision: 'NOT_APPLICABLE',
+            taskMemoryReason: 'task memory not wired to this context',
         });
         expect(capture).not.toHaveBeenCalled();
         expect(JSON.stringify(result.auditEventPayload.payload)).not.toContain('reinjectionAllowed');

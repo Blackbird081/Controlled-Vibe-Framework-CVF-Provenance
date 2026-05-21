@@ -415,13 +415,13 @@
       "id": "review-cvf-pain-point-delivery-gap-roadmap-v2",
       "artifactType": "roadmap",
       "path": "docs/roadmaps/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_V2_2026-05-22.md",
-      "status": "ACTIVE_ROADMAP_T1_T2_T3_T4_CLOSED_T5_READY_WITH_OVERRIDE_RECORDED",
+      "status": "ACTIVE_ROADMAP_T1_T2_T3_T4_T5_CLOSED_PENDING_OPERATOR_REVIEW",
       "requestedReviewer": "Codex",
       "supersedes": "docs/roadmaps/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_2026-05-22.md",
       "predecessorReview": "docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_CODEX_REVIEW_2026-05-22.md",
       "priority": 33,
       "source": "operator authorization 2026-05-22",
-      "notes": "V2 active roadmap of record. T1-T4 closed. T5 is next and requires bounded new_memory_tiers_beyond_lane_h_scope override for ephemeral in-memory task tier only, with no durable persistence; operator instruction 2026-05-22 authorized Codex to execute T1->T5 and not ask again."
+      "notes": "V2 active roadmap of record. T1-T5 are closed as bounded tranches. T5 closed with new_memory_tiers_beyond_lane_h_scope override limited to ephemeral in-process task memory only; no durable persistence, file write, database, provider memory, external store, receipt-envelope change, route change, or public-sync update. Batch is ready for operator review."
     },
     {
       "id": "t1-capability-intake-pipeline",
@@ -488,13 +488,15 @@
       "artifactType": "work_order",
       "path": "docs/work_orders/CVF_WO_T5_RUNTIME_MEMORY_WIRING_2026-05-22.md",
       "roadmapPath": "docs/roadmaps/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_V2_2026-05-22.md",
-      "status": "READY_FOR_IMPLEMENTATION",
+      "status": "CLOSED_T5_RUNTIME_MEMORY_WIRING",
       "requestedReviewer": "Codex",
       "expectedCompletionPath": "docs/reviews/CVF_T5_RUNTIME_MEMORY_WIRING_COMPLETION_2026-05-22.md",
       "expectedBaselinePath": "docs/baselines/CVF_GC018_T5_RUNTIME_MEMORY_WIRING_2026-05-22.md",
       "priority": 38,
       "source": "operator authorization 2026-05-22",
-      "notes": "T5 fifth and final tranche of V2 roadmap. Pre-condition: T4 closed. Blocked-work override required: new_memory_tiers_beyond_lane_h_scope (bounded to ephemeral in-memory task store only, no durable persistence) \u2014 operator must confirm in GC-018. Deliverables: CVF_MEMORY_TIER_RETENTION_POLICY.md, ephemeral task-memory store in CVF_LEARNING_PLANE_FOUNDATION, audit-memory-receipt.ts extended with taskMemoryDecision + taskMemoryReason. GovernanceEvidenceReceipt unchanged; canReinject=false preserved."
+      "notes": "T5 closed 2026-05-22. GC-018 recorded new_memory_tiers_beyond_lane_h_scope override bounded to ephemeral in-process task memory only. Delivered CVF_MEMORY_TIER_RETENTION_POLICY.md, Learning Plane task-memory store, and audit-memory-receipt.ts taskMemoryDecision/taskMemoryReason readout. Targeted T5 tests PASS 7/7 and 9/9; Learning Plane full tests PASS 1521/1521; checks PASS; local hook chain PASS 43/43. cvf-web full suite had live/test-order variance; isolated failing files reran PASS. GovernanceEvidenceReceipt unchanged; canReinject=false preserved; no route/provider/public-sync/durable persistence change.",
+      "completionPath": "docs/reviews/CVF_T5_RUNTIME_MEMORY_WIRING_COMPLETION_2026-05-22.md",
+      "baselinePath": "docs/baselines/CVF_GC018_T5_RUNTIME_MEMORY_WIRING_2026-05-22.md"
     }
   ]
 }

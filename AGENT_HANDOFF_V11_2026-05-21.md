@@ -20,6 +20,14 @@ Historical handoff archive:
 
 `CVF_SESSION/handoffs/archive/`
 
+Remote tracking branch:
+
+`origin/main`
+
+Exact remote SHA must be derived live from git when needed.
+
+External agent memory files: non-canonical convenience only.
+
 Supersedes:
 
 `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V10_2026-05-19.md`
@@ -156,12 +164,11 @@ Disposition:
 Terminal sweep: `CLOSED_TERMINAL_HARDENING_SWEEP_WITH_BOUNDARIES`.
 
 Pain-point delivery-gap roadmap V2:
-`ACTIVE_ROADMAP_ALL_FIVE_TRANCHES_DISPATCHED`.
+`ACTIVE_ROADMAP_T1_T2_T3_T4_T5_CLOSED_PENDING_OPERATOR_REVIEW`.
 
-All five V2 tranches are READY_FOR_IMPLEMENTATION. Codex executes
-T1 → T2 → T3 → T4 → T5 sequentially. T3/T4/T5 each have a mandatory
-Operator Checkpoint for blocked-work override confirmation before GC-018
-is filed. Operator will review results after all five tranches close.
+All five V2 tranches are closed. T3/T4/T5 each recorded the bounded
+blocked-work override required by their work order. Operator reviews the
+closed batch next.
 
 
 ### 2026-05-22 - T1 Capability Intake Pipeline Closed
@@ -214,20 +221,26 @@ Delivered Model Gateway provider method contract, Alibaba qwen-turbo stream capa
 
 Next allowed move: T5 runtime memory wiring with bounded ephemeral in-memory override recorded before implementation.
 
+
+### 2026-05-22 - T5 Runtime Memory Wiring Closed
+
+T5 closed as `CLOSED_T5_RUNTIME_MEMORY_WIRING`.
+
+Completion: `docs/reviews/CVF_T5_RUNTIME_MEMORY_WIRING_COMPLETION_2026-05-22.md`
+Baseline: `docs/baselines/CVF_GC018_T5_RUNTIME_MEMORY_WIRING_2026-05-22.md`
+
+Delivered the memory-tier retention policy, Learning Plane ephemeral task-memory store, and audit-memory readout fields `taskMemoryDecision` plus `taskMemoryReason` under the bounded `new_memory_tiers_beyond_lane_h_scope` override. The store is in-process only, uses no file/database/network persistence, and is lost on process exit by design. Targeted tests PASS `7/7` and `9/9`; Learning Plane full tests PASS `1521/1521`; checks PASS; local governance hook chain PASS `43/43`. cvf-web full `npm run test:run` showed live/test-order variance, and isolated failing files reran PASS. `GovernanceEvidenceReceipt` is unchanged; `canReinject=false` is preserved. Boundary: no durable persistence, route change, provider adapter, public-sync, Maika proof, or freeze release.
+
+Next allowed move: return the closed T1-T5 batch to operator review. Any next implementation requires a fresh operator-selected tranche and GC-018.
+
 ---
 
 ## Next Allowed Move
 
-Default next move: Codex executes T1 → T2 → T3 → T4 → T5 from the
-V2 roadmap work orders. All five work orders are at
-READY_FOR_IMPLEMENTATION. Execution order is sequential; each tranche
-requires the previous to be closed before starting. T3, T4, and T5
-each have a mandatory Operator Checkpoint for blocked-work override
-confirmation (new_receipt_envelopes / new_provider_execution_semantics /
-new_memory_tiers_beyond_lane_h_scope respectively) before GC-018 is
-filed.
-
-After all five tranches close, operator reviews the full batch.
+Default next move: return the closed T1 → T2 → T3 → T4 → T5 batch from
+the V2 roadmap to operator review. All five work orders are closed.
+Any next implementation requires a fresh operator-selected tranche and
+GC-018.
 
 Do not widen into provider tuning, persistence/database beyond T5
 ephemeral scope, Maika proof, public-sync, or freeze release.

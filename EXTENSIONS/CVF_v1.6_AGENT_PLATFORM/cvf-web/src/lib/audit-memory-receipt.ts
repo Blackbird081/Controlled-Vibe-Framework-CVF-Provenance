@@ -9,6 +9,22 @@ import {
     MEMORY_TIER_OWNER_POLICIES,
 } from '../../../../CVF_GUARD_CONTRACT/src/contracts/memory-continuity.contract';
 
+export type TaskMemoryReadoutDecision = 'CAPTURED' | 'SKIPPED' | 'EXPIRED' | 'NOT_APPLICABLE';
+
+export interface RouteTaskMemoryEntry {
+    taskId: string;
+    expiresAt: number;
+}
+
+export interface RouteTaskMemoryStore {
+    get(taskId: string): RouteTaskMemoryEntry | undefined;
+    inspect?: (taskId: string) => {
+        state: 'present' | 'expired' | 'missing';
+        reason: string;
+        entry?: RouteTaskMemoryEntry;
+    };
+}
+
 export interface BuildAuditMemoryReceiptInput {
     governanceReceiptId: string;
     actorId: string;
@@ -149,6 +165,8 @@ export interface RouteAuditMemoryContext {
     rolePermission?: BuildAuditMemoryReceiptInput['rolePermission'];
     riskLevel?: string;
     phase?: string;
+    taskId?: string;
+    taskMemoryStore?: RouteTaskMemoryStore;
 }
 
 export interface RouteAuditMemoryCaptureResult {
@@ -182,6 +200,7 @@ export function buildRouteAuditMemoryCapture(
         stepTraceIds: ctx.stepTraceIds,
         rolePermission: ctx.rolePermission,
     });
+    const taskMemoryReadout = buildTaskMemoryReadout(ctx);
     return {
         auditMemoryReceipt,
         auditEventPayload: {
@@ -204,7 +223,36 @@ export function buildRouteAuditMemoryCapture(
                 memoryReceiptDecision: auditMemoryReceipt.receipt.decision,
                 memoryCaptureMode: auditMemoryReceipt.receipt.decision === 'captured' ? 'captured' : 'degraded',
                 memoryCaptureReason: auditMemoryReceipt.receipt.reason,
+                taskMemoryDecision: taskMemoryReadout.decision,
+                taskMemoryReason: taskMemoryReadout.reason,
             },
         },
     };
+}
+
+function buildTaskMemoryReadout(ctx: RouteAuditMemoryContext): {
+    decision: TaskMemoryReadoutDecision;
+    reason: string;
+} {
+    if (!ctx.taskMemoryStore || !ctx.taskId) {
+        return {
+            decision: 'NOT_APPLICABLE',
+            reason: 'task memory not wired to this context',
+        };
+    }
+
+    const inspected = ctx.taskMemoryStore.inspect?.(ctx.taskId);
+    if (inspected?.state === 'present') {
+        return { decision: 'CAPTURED', reason: 'task memory entry present' };
+    }
+    if (inspected?.state === 'expired') {
+        return { decision: 'EXPIRED', reason: 'entry expired before readout' };
+    }
+
+    const entry = ctx.taskMemoryStore.get(ctx.taskId);
+    if (entry) {
+        return { decision: 'CAPTURED', reason: 'task memory entry present' };
+    }
+
+    return { decision: 'SKIPPED', reason: 'no task memory requested' };
 }
