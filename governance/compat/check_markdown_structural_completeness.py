@@ -85,8 +85,11 @@ REQUIRED_MARKERS: dict[str, tuple[str, ...]] = {
 
 # Sealed archive files are exempt from structural completeness checks.
 # They are read-only historical records that cannot be modified to add structural sections.
+# Legacy corpus files pre-dating GC-045 are also exempt; they predate the standard.
 STRUCTURAL_CHECK_EXEMPT = {
     "docs/CVF_ARCHITECTURE_DECISIONS_ARCHIVE_ADR001-010.md",
+    "docs/CVF_ARCHITECTURE_DECISIONS.md",
+    "docs/CVF_CORE_KNOWLEDGE_BASE.md",
 }
 
 COMMON_GROUPS: tuple[tuple[str, tuple[str, ...]], ...] = (
