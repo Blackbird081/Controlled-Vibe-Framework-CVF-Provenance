@@ -338,7 +338,19 @@
       "baselinePath": "docs/baselines/CVF_GC018_CDH_D_VISION_RUNTIME_2026-05-21.md",
       "priority": 27,
       "source": "operator request 2026-05-21",
-      "notes": "CDH-D returned to Orchestrator on 2026-05-21. Operator authorized API-key use and Model Gateway adapter-level live proof passed on Alibaba qwen-vl-plus, but the active work order cannot close because governed /api/execute vision receipt proof requires route image transport and a vision receipt signal outside current write ownership. Boundary: adapter/negative-gate progress only; no closed governed route vision proof, reasoning runtime, Maika photo description, child-data vision proof, modification of vision-contract.ts or reasoning-contract.ts, SSE streaming, or public-sync update."
+      "notes": "CDH-D returned to Orchestrator on 2026-05-21. Operator authorized API-key use and Model Gateway adapter-level live proof passed on Alibaba qwen-vl-plus, but the active work order cannot close because governed /api/execute vision receipt proof requires route image transport and a vision receipt signal outside current write ownership. Boundary: adapter/negative-gate progress only; no closed governed route vision proof, reasoning runtime, Maika photo description, child-data vision proof, modification of vision-contract.ts or reasoning-contract.ts, SSE streaming, or public-sync update. Superseded by route-wiring work order at priority 28."
+    },
+    {
+      "id": "cdh-d-vision-route-wiring",
+      "artifactType": "work_order",
+      "path": "docs/work_orders/CVF_WO_CDH_D_VISION_ROUTE_WIRING_2026-05-21.md",
+      "status": "READY_FOR_IMPLEMENTATION",
+      "requestedReviewer": "Codex",
+      "expectedCompletionPath": "docs/reviews/CVF_CDH_D_VISION_ROUTE_WIRING_COMPLETION_2026-05-21.md",
+      "expectedBaselinePath": "docs/baselines/CVF_GC018_CDH_D_VISION_ROUTE_WIRING_2026-05-21.md",
+      "priority": 28,
+      "source": "operator request 2026-05-21",
+      "notes": "CDH-D route wiring work order dispatched 2026-05-21. Adds route.ts and types.ts to write ownership for minimal image transport and vision: true receipt field. Operator checkpoint required: vision-capable provider key (Alibaba qwen-vl-plus) must be confirmed before step R-05 (live invocation). Prerequisite: adapter tranche at priority 27 already returned with adapter evidence; this tranche closes the governed /api/execute proof gap only."
     }
   ]
 }
