@@ -131,6 +131,8 @@ Disposition: `CLOSED_T5_RUNTIME_MEMORY_WIRING`.
 
 Recommendation: treat all five V2 tranches as closed and return the batch to operator review. Further durable memory work requires a fresh GC-018 and a separate blocked-work override.
 
+Public catalog update: N/A for this tranche because the T5 work order explicitly forbids public-sync updates; any public catalog claim for runtime memory must be prepared separately from the sibling public-sync clone with its own authorization.
+
 ## Verification
 PASS:
 
