@@ -106,6 +106,9 @@ Current HEAD after GC-045 multi-role quality hardening (GC-020):
 Current HEAD after GC-045 legacy corpus exemption (GC-020):
 `89593a53fe3315608ccba132dcdf8504e9ee1808` (fix(governance): exempt legacy corpus docs from GC-045 structural check)
 
+Current HEAD after post-publicization provider stability hardening (GC-020):
+`3f38ecf6` (docs(provider): close repeatability hardening roadmap)
+
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
 ## Purpose
