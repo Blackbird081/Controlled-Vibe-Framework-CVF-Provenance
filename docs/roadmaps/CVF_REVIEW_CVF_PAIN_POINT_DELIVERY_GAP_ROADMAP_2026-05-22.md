@@ -2,7 +2,16 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_DRAFT_PENDING_OPERATOR_AUTHORIZATION
+Status: SUPERSEDED_BY_V2_2026-05-22
+
+Superseded by: `docs/roadmaps/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_V2_2026-05-22.md`
+
+Reason: Codex blocking review
+`docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_CODEX_REVIEW_2026-05-22.md`
+identified six findings (4 BLOCKING, 2 MAJOR). V2 resolves all six. Do not
+dispatch work from this V1 draft; use V2 as the active roadmap.
+
+Original V1 draft status was: ROADMAP_DRAFT_PENDING_OPERATOR_AUTHORIZATION
 
 docType: roadmap
 

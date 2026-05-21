@@ -73,8 +73,8 @@ current.
 
 ## Current Session Mode
 
-- Current mode: `terminal_hardening_closed`
-- Previous mode: `system_reconvergence_stop`
+- Current mode: `review_cvf_pain_point_delivery_v2_active_t1_ready_for_dispatch`
+- Previous mode: `terminal_hardening_closed`
 - Freeze posture: `governance_kernel_freeze_recommended`
 - Active handoff pointer: `AGENT_HANDOFF_V11_2026-05-21.md`
 - Historical handoff archive: `CVF_SESSION/handoffs/archive/`

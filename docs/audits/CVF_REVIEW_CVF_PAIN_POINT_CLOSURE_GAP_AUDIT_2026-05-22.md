@@ -286,12 +286,20 @@ Recommendation:
 
 Static verification only:
 
-- File paths cited under "Target / Source Under Review" exist as of
-  HEAD `754f1248`.
+- File paths cited under "Target / Source Under Review" were verified to
+  exist before filing at HEAD `754f1248`; this audit was committed at
+  `5279db51` (the immediately subsequent commit). The verification scope
+  is unchanged by the commit move.
 - The 17.05 review file is at the cited path under `.private_reference/`.
-- Each closure review's disposition language is quoted verbatim from
-  the file as of HEAD `754f1248`.
+- Each closure review's disposition language is quoted verbatim from the
+  file as verified before filing at HEAD `754f1248`.
 - No test, build, live provider call, or release gate was executed.
+
+Amendment note: this verification block was updated 2026-05-22 in
+response to Codex blocking review Finding 5
+(`docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_CODEX_REVIEW_2026-05-22.md`)
+to make the verification timeline explicit. The audit's substantive
+findings are unchanged.
 
 ---
 

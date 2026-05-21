@@ -48,6 +48,10 @@ Current HEAD after Codex review of pain-point delivery-gap roadmap:
 
 `35228ce7` (docs(review): file pain-point delivery gap roadmap review)
 
+Current HEAD after V2 roadmap + T1 work order dispatch:
+
+`<pending commit>` (docs(roadmap-v2): supersede V1, dispatch T1 capability intake pipeline work order)
+
 ---
 
 ## Purpose
