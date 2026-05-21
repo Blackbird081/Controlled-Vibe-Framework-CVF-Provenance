@@ -89,13 +89,15 @@ Result:
 - signed live `/api/execute` proof PASS with provider `alibaba`, model
   `qwen-turbo`, receipt `rcpt-env-mpflcxex-1zkxan`, trace
   `env-mpflcxex-1zkxan`;
-- mandatory release gate FAIL because the Web build subcheck timed out at the
-  runner's 300s limit while the direct build took about 468s;
-- remaining 6/7 release-gate checks PASS.
+- release-gate timeout maintenance closed at
+  `docs/reviews/CVF_RELEASE_GATE_BUILD_TIMEOUT_MAINTENANCE_COMPLETION_2026-05-21.md`;
+- `scripts/run_cvf_release_gate_bundle.py` Web build timeout changed from
+  300s to 900s;
+- full release gate PASS `7/7`.
 
 Disposition:
 
-`RETURNED_RELEASE_GATE_TIMEOUT_BOUNDARY`.
+`CLOSED_LOCAL_PRODUCTION_PROOF`.
 
 ---
 
@@ -103,10 +105,9 @@ Disposition:
 
 Default next move: stop.
 
-If product-readiness closure is still needed, open only a tiny GC-018/work
-order for release-gate timeout maintenance. Do not widen into deployment,
-provider tuning, persistence/database, Maika proof, public-sync, or freeze
-release.
+Only open another tranche if the operator explicitly asks for an external
+hosted deployment proof. Do not widen into provider tuning,
+persistence/database, Maika proof, public-sync, or freeze release.
 
 Still forbidden:
 
@@ -145,6 +146,6 @@ For older continuity, read:
 ## Claim Boundary
 
 V11 carries no new product claim. It records only the bounded local
-production-mode proof result and the release-gate timeout boundary. Hosted
+production-mode proof result and the release-gate timeout maintenance. Hosted
 SaaS readiness, public deployment readiness, broad provider stability,
 persistence readiness, Maika readiness, and freeze release remain unproven.

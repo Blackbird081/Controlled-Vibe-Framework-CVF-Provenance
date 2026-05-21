@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: RETURNED_RELEASE_GATE_TIMEOUT_BOUNDARY
+Status: CLOSED_LOCAL_PRODUCTION_PROOF
 
 docType: review
 
@@ -151,9 +151,31 @@ runner's current 300s build timeout is below the observed build duration.
 
 ---
 
+## Post-Maintenance Addendum
+
+The release-gate timeout blocker was retired by:
+
+`docs/reviews/CVF_RELEASE_GATE_BUILD_TIMEOUT_MAINTENANCE_COMPLETION_2026-05-21.md`
+
+That maintenance changed only the release-gate web build timeout from 300s to
+900s and reran:
+
+```powershell
+python scripts/run_cvf_release_gate_bundle.py --json
+```
+
+Result: PASS `7/7`.
+
+Updated disposition: `CLOSED_LOCAL_PRODUCTION_PROOF`.
+
+The claim boundary remains unchanged: this is still local production-mode
+proof only, not external hosted SaaS readiness.
+
+---
+
 ## Findings / Position
 
-Position: RETURNED_RELEASE_GATE_TIMEOUT_BOUNDARY.
+Position: CLOSED_LOCAL_PRODUCTION_PROOF after timeout maintenance.
 
 The useful product evidence is real but bounded:
 
@@ -161,9 +183,8 @@ The useful product evidence is real but bounded:
 - local production-mode server can return a live governed receipt;
 - service-token signing and live provider execution work on that path.
 
-The tranche stops short of readiness closure because the mandatory release
-gate failed. Fixing or widening the release-gate timeout is a separate
-maintenance tranche and was not performed here.
+The originally blocking release-gate timeout has now been retired by the
+separate maintenance tranche. The local production-mode proof is closed.
 
 ---
 
@@ -172,26 +193,23 @@ maintenance tranche and was not performed here.
 Residual risk:
 
 - The proof is local production-mode only, not an external hosted deployment.
-- The mandatory release gate currently times out during build.
 - A public or hosted-readiness claim would overstate the evidence.
 
 Corrective action:
 
-- If the operator wants to close this gap, open a tiny release-gate timeout
-  maintenance work order to align the runner timeout with observed Next.js
-  build duration, then rerun the same proof.
-- Otherwise keep the result as a useful local production-mode proof only.
+- Keep the result as a useful local production-mode proof only.
+- Open a separate external deployment proof only if the operator asks for it.
 
 ---
 
 ## Decision / Recommendation / Disposition
 
-Disposition: return to Orchestrator, do not claim hosted/product readiness.
+Disposition: close local production-mode proof, do not claim external
+hosted/product readiness.
 
 Recommended next move:
 
-- Stop here unless product-readiness closure is still needed.
-- If needed, run only a small release-gate timeout maintenance tranche.
+- Stop here unless an external hosted deployment proof is explicitly requested.
 
 ---
 

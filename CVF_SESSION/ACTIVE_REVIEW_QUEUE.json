@@ -359,7 +359,7 @@
       "artifactType": "work_order",
       "path": "docs/work_orders/CVF_WO_HOSTED_PRODUCT_READINESS_PROOF_2026-05-21.md",
       "roadmapPath": "docs/roadmaps/CVF_HOSTED_PRODUCT_READINESS_PROOF_ROADMAP_2026-05-21.md",
-      "status": "RETURNED_RELEASE_GATE_TIMEOUT_BOUNDARY",
+      "status": "CLOSED_LOCAL_PRODUCTION_PROOF",
       "requestedReviewer": "Codex",
       "expectedCompletionPath": "docs/reviews/CVF_HOSTED_PRODUCT_READINESS_PROOF_COMPLETION_2026-05-21.md",
       "expectedBaselinePath": "docs/baselines/CVF_GC018_HOSTED_PRODUCT_READINESS_PROOF_2026-05-21.md",
@@ -367,7 +367,22 @@
       "baselinePath": "docs/baselines/CVF_GC018_HOSTED_PRODUCT_READINESS_PROOF_2026-05-21.md",
       "priority": 29,
       "source": "operator request 2026-05-21",
-      "notes": "Returned 2026-05-21 at the release-gate timeout boundary. Local production-mode proof passed: npm run build PASS, npm run start served 127.0.0.1:3235, signed live /api/execute returned HTTP 200, success=true, decision ALLOW, evidenceMode live, provider alibaba, model qwen-turbo, receipt rcpt-env-mpflcxex-1zkxan, trace env-mpflcxex-1zkxan. Mandatory release gate returned FAIL because Web build timed out at the runner's 300s limit while the direct build took about 468s; remaining 6/7 gate checks passed. Boundary: no hosted SaaS readiness, public deployment readiness, public-sync update, source-code change, persistence/database work, Maika proof, broad provider stability, or freeze release."
+      "notes": "Closed 2026-05-21 as local production-mode proof after release-gate timeout maintenance. Local production-mode proof passed: npm run build PASS, npm run start served 127.0.0.1:3235, signed live /api/execute returned HTTP 200, success=true, decision ALLOW, evidenceMode live, provider alibaba, model qwen-turbo, receipt rcpt-env-mpflcxex-1zkxan, trace env-mpflcxex-1zkxan. Follow-up timeout maintenance raised the release-gate web build timeout from 300s to 900s and full release gate PASS 7/7. Boundary: no hosted SaaS readiness, public deployment readiness, public-sync update, persistence/database work, Maika proof, broad provider stability, or freeze release."
+    },
+    {
+      "id": "release-gate-build-timeout-maintenance",
+      "artifactType": "work_order",
+      "path": "docs/work_orders/CVF_WO_RELEASE_GATE_BUILD_TIMEOUT_MAINTENANCE_2026-05-21.md",
+      "roadmapPath": "docs/roadmaps/CVF_RELEASE_GATE_BUILD_TIMEOUT_MAINTENANCE_ROADMAP_2026-05-21.md",
+      "status": "CLOSED_TIMEOUT_MAINTENANCE",
+      "requestedReviewer": "Codex",
+      "expectedCompletionPath": "docs/reviews/CVF_RELEASE_GATE_BUILD_TIMEOUT_MAINTENANCE_COMPLETION_2026-05-21.md",
+      "expectedBaselinePath": "docs/baselines/CVF_GC018_RELEASE_GATE_BUILD_TIMEOUT_MAINTENANCE_2026-05-21.md",
+      "completionPath": "docs/reviews/CVF_RELEASE_GATE_BUILD_TIMEOUT_MAINTENANCE_COMPLETION_2026-05-21.md",
+      "baselinePath": "docs/baselines/CVF_GC018_RELEASE_GATE_BUILD_TIMEOUT_MAINTENANCE_2026-05-21.md",
+      "priority": 30,
+      "source": "operator request 2026-05-21",
+      "notes": "Closed 2026-05-21. One-line maintenance in scripts/run_cvf_release_gate_bundle.py changed the Web build subcheck timeout from 300s to 900s. Full release gate python scripts/run_cvf_release_gate_bundle.py --json PASS 7/7: Web build PASS, TypeScript PASS, provider readiness PASS with CERTIFIED lanes 3, secrets scan PASS, docs governance PASS, UI mock E2E PASS 6 passed, live governance E2E PASS. Boundary: timeout maintenance only; no release requirement weakened, no app/provider/runtime/deployment/public-sync/persistence/Maika/freeze change."
     }
   ]
 }
