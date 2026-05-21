@@ -27,6 +27,7 @@ Latest planning artifacts (read these first if you are resuming Review-CVF closu
 - `docs/roadmaps/CVF_PHASE_2B_LIVE_GOVERNANCE_PROOF_ROADMAP_2026-05-21.md` (CLOSED_LIVE_GOVERNANCE_PROOF — one narrow live `/api/execute` proof on Alibaba `qwen-turbo`; receipt `rcpt-env-mpepcnmc-ier7bt`; no broad provider/product/public claim)
 - `docs/work_orders/CVF_WO_MULTI_ROLE_QUALITY_HARDENING_2026-05-21.md` + `docs/reviews/CVF_WO_MULTI_ROLE_QUALITY_HARDENING_CLAUDE_AUDIT_REBUTTAL_2026-05-21.md` + `docs/reviews/CVF_WO_MULTI_ROLE_QUALITY_HARDENING_COMPLETION_2026-05-21.md` (CLOSED_MULTI_ROLE_QUALITY_HARDENING — confirmed fixes only: `docType: reference` GC-045 support and new-work-order operator checkpoint/waiver requirement with adoption-commit grandfathering; no runtime/provider/public-sync/freeze change)
 - `docs/roadmaps/CVF_POST_PUBLICIZATION_PROVIDER_STABILITY_HARDENING_ROADMAP_2026-05-21.md` + `docs/reviews/CVF_POST_PUBLICIZATION_PROVIDER_STABILITY_HARDENING_COMPLETION_2026-05-21.md` (CLOSED_PROVIDER_STABILITY_HARDENING_BOUNDED — second-window provider repeatability PASS `6/6` across Alibaba `qwen-turbo` and DeepSeek `deepseek-chat`; release gate PASS `7/7`; public-sync bounded evidence delta pushed at public commit `51133d4d`; no broad provider stability or hosted readiness claim)
+- `docs/reference/CVF_MATURED_KERNEL_CRITERIA_2026-05-21.md` + `docs/reviews/CVF_MATURED_KERNEL_CRITERIA_COMPLETION_2026-05-21.md` (CLOSED_MATURED_KERNEL_CRITERIA_FILED — criteria-only review framework for matured-kernel assessment; `freezePosture` remains `governance_kernel_freeze_recommended`; all 12 HN2.b surfaces remain `frozen_recommended`; no one-surface release, owner replacement, public maturity claim, or global freeze lift)
 - `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` (CLOSURE EVIDENCE — A/B/C/D/E/F/G/H all CLOSED after 2026-05-20 tranche; supersedes old 4/8 shorthand and is no longer the active next-work steering file)
 - `docs/reviews/CVF_17_05_REVIEW_CVF_RESIDUAL_PAIN_POINTS_ASSESSMENT_2026-05-19.md` (original assessment; see direction codex for corrected posture)
 - `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (6 candidates, REBUTTAL_ACCEPTED, all work orders now CLOSED)
@@ -108,6 +109,9 @@ Current HEAD after GC-045 legacy corpus exemption (GC-020):
 
 Current HEAD after post-publicization provider stability hardening (GC-020):
 `3f38ecf6` (docs(provider): close repeatability hardening roadmap)
+
+Current HEAD after provider hardening handoff sync (GC-020):
+`d939db979db317812f81573954a67ba4c9c240ac` (docs(session): sync provider hardening handoff)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 

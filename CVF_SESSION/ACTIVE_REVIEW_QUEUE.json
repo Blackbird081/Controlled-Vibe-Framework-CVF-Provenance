@@ -283,6 +283,17 @@
       "priority": 23,
       "source": "operator request 2026-05-21",
       "notes": "Closed 2026-05-21 as bounded second-window provider-stability hardening. GC-018: docs/baselines/CVF_GC018_POST_PUBLICIZATION_PROVIDER_STABILITY_HARDENING_2026-05-21.md. Work order: docs/work_orders/CVF_WO_POST_PUBLICIZATION_PROVIDER_STABILITY_HARDENING_2026-05-21.md. Completion: docs/reviews/CVF_POST_PUBLICIZATION_PROVIDER_STABILITY_HARDENING_COMPLETION_2026-05-21.md. PSH-01 second-window repeatability PASS 6/6 across Alibaba qwen-turbo and DeepSeek deepseek-chat; release gate PASS 7/7; public-sync evidence delta pushed at public commit 51133d4d. Boundary: still no broad provider stability, universal parity, hosted/product readiness, persistence/database readiness, Maika child-data/photo/vision proof, kernel-owner replacement, or global freeze lift."
+    },
+    {
+      "id": "matured-kernel-criteria",
+      "artifactType": "roadmap",
+      "path": "docs/roadmaps/CVF_MATURED_KERNEL_CRITERIA_ROADMAP_2026-05-21.md",
+      "status": "CLOSED_MATURED_KERNEL_CRITERIA_FILED",
+      "requestedReviewer": "Codex",
+      "completionPath": "docs/reviews/CVF_MATURED_KERNEL_CRITERIA_COMPLETION_2026-05-21.md",
+      "priority": 24,
+      "source": "operator request 2026-05-21",
+      "notes": "Closed 2026-05-21 as a criteria-only matured-kernel governance tranche. GC-018: docs/baselines/CVF_GC018_MATURED_KERNEL_CRITERIA_2026-05-21.md. Work order: docs/work_orders/CVF_WO_MATURED_KERNEL_CRITERIA_2026-05-21.md. Reference: docs/reference/CVF_MATURED_KERNEL_CRITERIA_2026-05-21.md. Boundary: defines review vocabulary and criteria only; freezePosture remains governance_kernel_freeze_recommended; all 12 HN2.b surfaces remain frozen_recommended; no one-surface release, owner replacement, HN2.b supersession, HN2.c rule change, mechanical guard, public maturity claim, or global freeze lift."
     }
   ]
 }
