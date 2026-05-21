@@ -129,6 +129,20 @@ export {
 } from "./vision-contract";
 
 export type {
+  VisionRuntimeAdapterOptions,
+  VisionRuntimeProvider,
+  VisionRuntimeRequestBody,
+} from "./vision-runtime-adapter";
+export {
+  assertVisionProviderCapability,
+  buildVisionRuntimeRequestBody,
+  createAlibabaVisionRuntimeAdapter,
+  isVisionRuntimeModel,
+  VISION_RUNTIME_CAPABLE_MODELS,
+  VISION_RUNTIME_DEFAULT_MODELS,
+} from "./vision-runtime-adapter";
+
+export type {
   ReasoningCapableProvider,
   ReasoningContract,
   ReasoningRequest,

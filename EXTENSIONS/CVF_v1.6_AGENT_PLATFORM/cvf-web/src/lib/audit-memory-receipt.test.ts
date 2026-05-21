@@ -1,5 +1,11 @@
-import { describe, expect, it } from 'vitest';
-import { buildAuditMemoryReceipt } from './audit-memory-receipt';
+import { afterEach, describe, expect, it, vi } from 'vitest';
+import { buildAuditMemoryReceipt, buildRouteAuditMemoryCapture } from './audit-memory-receipt';
+
+afterEach(() => {
+    vi.doUnmock('cvf-learning-plane-foundation');
+    vi.doUnmock('../../../../CVF_GUARD_CONTRACT/src/contracts/memory-continuity.contract');
+    vi.resetModules();
+});
 
 describe('audit-memory-receipt', () => {
     it('captures a governance audit event as session memory after receipt emission', () => {
@@ -70,5 +76,109 @@ describe('audit-memory-receipt', () => {
         expect(result.writesRequireReceipt).toBe(true);
         expect(Array.isArray(result.privacyFilters)).toBe(true);
         expect(result.privacyFilters).toContain('pii_redaction');
+    });
+
+    it('surfaces policy fields and capture state in route audit readout', () => {
+        const result = buildRouteAuditMemoryCapture({
+            governanceReceiptId: 'gr-003',
+            actorId: 'actor-003',
+            actorRole: 'BUILDER',
+            templateId: 'documentation',
+            templateName: 'Documentation',
+            decision: 'ALLOW',
+        });
+
+        expect(result.auditEventPayload.payload).toMatchObject({
+            governanceReceiptId: 'gr-003',
+            memoryTier: 'session',
+            memoryContractVersion: 'phaseD.memoryContinuity.v1',
+            writesRequireReceipt: true,
+            privacyFilters: ['scope_minimization', 'pii_redaction'],
+            memoryReceiptDecision: 'captured',
+            memoryCaptureMode: 'captured',
+            memoryCaptureReason: 'memory_captured_after_policy_and_privacy',
+        });
+        expect(JSON.stringify(result.auditEventPayload.payload)).not.toContain('reinjectionAllowed');
+    });
+
+    it('preserves canReinject=false as the capture policy binding', async () => {
+        const capture = vi.fn().mockReturnValue({
+            receipt: {
+                receiptId: 'mem-001',
+                traceId: 'gr-004',
+                decision: 'captured',
+                reason: 'memory_captured_after_policy_and_privacy',
+                createdAt: '2026-05-21T00:00:00.000Z',
+                actorId: 'actor-004',
+                memoryIds: ['memory-1'],
+                maskedTokenCount: 0,
+                estimatedTokens: 0,
+                provenanceRequired: true,
+            },
+        });
+
+        vi.resetModules();
+        vi.doMock('cvf-learning-plane-foundation', () => ({
+            createControlledMemoryGatewayContract: () => ({ capture }),
+        }));
+
+        const module = await import('./audit-memory-receipt');
+        module.buildAuditMemoryReceipt({
+            governanceReceiptId: 'gr-004',
+            actorId: 'actor-004',
+            actorRole: 'BUILDER',
+        });
+
+        expect(capture).toHaveBeenCalledWith(expect.objectContaining({
+            policy: expect.objectContaining({
+                canReinject: false,
+            }),
+        }));
+        expect(JSON.stringify(capture.mock.calls[0][0])).not.toContain('reinjectionAllowed');
+    });
+
+    it('surfaces degraded-capture reason without triggering reinjection', async () => {
+        const capture = vi.fn();
+
+        vi.resetModules();
+        vi.doMock('cvf-learning-plane-foundation', () => ({
+            createControlledMemoryGatewayContract: () => ({ capture }),
+        }));
+        vi.doMock('../../../../CVF_GUARD_CONTRACT/src/contracts/memory-continuity.contract', () => ({
+            MEMORY_CONTINUITY_CONTRACT_VERSION: 'phaseD.memoryContinuity.v1',
+            MEMORY_TIER_OWNER_POLICIES: {
+                session: {
+                    ownerRole: 'OPERATOR',
+                    writesRequireReceipt: false,
+                    privacyFilters: ['scope_minimization', 'pii_redaction'],
+                },
+            },
+            MEMORY_REINJECTION_POLICIES: {
+                session: {
+                    privacyFilter: 'pii_redaction',
+                    provenanceScoreThreshold: 0.7,
+                    maxAgeSeconds: 86400,
+                    receiptRequired: true,
+                },
+            },
+        }));
+
+        const module = await import('./audit-memory-receipt');
+        const result = module.buildRouteAuditMemoryCapture({
+            governanceReceiptId: 'gr-005',
+            actorId: 'actor-005',
+            actorRole: 'SERVICE_AGENT',
+        });
+
+        expect(result.auditEventPayload.outcome).toBe('DEGRADED');
+        expect(result.auditEventPayload.payload).toMatchObject({
+            writesRequireReceipt: false,
+            privacyFilters: ['scope_minimization', 'pii_redaction'],
+            memoryReceiptDecision: 'policy_skipped',
+            memoryCaptureMode: 'degraded',
+            memoryCaptureReason: 'memory_tier_does_not_require_receipt_write',
+        });
+        expect(capture).not.toHaveBeenCalled();
+        expect(JSON.stringify(result.auditEventPayload.payload)).not.toContain('reinjectionAllowed');
     });
 });

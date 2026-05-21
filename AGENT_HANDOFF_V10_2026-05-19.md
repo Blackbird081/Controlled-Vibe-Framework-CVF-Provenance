@@ -1133,3 +1133,32 @@ Boundary: this closes bounded publicization/readiness only. Do not convert this
 into a broad provider stability claim, production/hosted readiness claim,
 persistence/database readiness claim, Maika child-data/photo/vision proof,
 kernel-owner replacement, or global freeze lift.
+
+## CDH-C/CDH-H Closure And CDH-D Return - 2026-05-21
+
+Codex closed CDH-H and CDH-C, and returned CDH-D for route-wiring ownership.
+
+- CDH-H closed: `docs/baselines/CVF_GC018_CDH_H_AUDIT_MEMORY_READOUT_2026-05-21.md`
+  and `docs/reviews/CVF_CDH_H_AUDIT_MEMORY_READOUT_COMPLETION_2026-05-21.md`.
+  `audit-memory-receipt.ts` now surfaces `writesRequireReceipt`,
+  `privacyFilters`, `memoryReceiptDecision`, `memoryCaptureMode`, and
+  `memoryCaptureReason`; focused tests passed 6/6, `cvf-web` check passed.
+- CDH-C closed: `docs/baselines/CVF_GC018_CDH_C_CLI_LIVE_PROOF_2026-05-21.md`
+  and `docs/reviews/CVF_CDH_C_CLI_LIVE_PROOF_COMPLETION_2026-05-21.md`.
+  Live `cvf execute` proof used Alibaba `qwen-turbo`, receipt
+  `rcpt-env-mpf9zb9y-luu9gq`, trace `env-mpf9zb9y-luu9gq`, `ALLOW`, `live`;
+  JSONL metadata is in `docs/evidence/cdh-c-cli-live-proof-2026-05-21.jsonl`.
+  Missing-token diagnostic returned `401 Unauthorized`; CLI tests passed 97/97
+  and CLI check passed.
+- CDH-D returned: `docs/baselines/CVF_GC018_CDH_D_VISION_RUNTIME_2026-05-21.md`
+  and `docs/reviews/CVF_CDH_D_VISION_RUNTIME_COMPLETION_2026-05-21.md`.
+  Adapter files are `EXTENSIONS/CVF_MODEL_GATEWAY/src/vision-runtime-adapter.ts`
+  and `EXTENSIONS/CVF_MODEL_GATEWAY/tests/vision-runtime-adapter.test.ts`.
+  Model Gateway tests passed 69/69, check passed, and adapter-level live proof
+  passed on Alibaba `qwen-vl-plus`; CDH-D is not closed because governed
+  `/api/execute` vision receipt proof requires `cvf-web` route write ownership.
+
+Boundary: no public-sync update, no raw secret exposure, no new CLI command, no
+memory reinjection, no broad runtime/provider stability claim, and no
+`vision: true` governed receipt claim. Next CDH-D move requires an amended
+route-wiring work order or an explicit stop at adapter-only evidence.

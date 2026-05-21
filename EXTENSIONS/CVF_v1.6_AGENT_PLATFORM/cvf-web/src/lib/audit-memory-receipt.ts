@@ -199,6 +199,11 @@ export function buildRouteAuditMemoryCapture(
                 memoryIds: auditMemoryReceipt.receipt.memoryIds,
                 memoryTier: auditMemoryReceipt.tier,
                 memoryContractVersion: auditMemoryReceipt.contractVersion,
+                writesRequireReceipt: auditMemoryReceipt.writesRequireReceipt,
+                privacyFilters: auditMemoryReceipt.privacyFilters,
+                memoryReceiptDecision: auditMemoryReceipt.receipt.decision,
+                memoryCaptureMode: auditMemoryReceipt.receipt.decision === 'captured' ? 'captured' : 'degraded',
+                memoryCaptureReason: auditMemoryReceipt.receipt.reason,
             },
         },
     };

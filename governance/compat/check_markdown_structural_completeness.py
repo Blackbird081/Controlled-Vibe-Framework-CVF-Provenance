@@ -182,6 +182,13 @@ SECTION_GROUPS: dict[str, tuple[tuple[str, tuple[str, ...]], ...]] = {
         ("review gate", (r"^##\s+(?:\d+\.\s+)?Review Gate\b",)),
         ("closure checklist", (r"^##\s+(?:\d+\.\s+)?Closure Checklist\b", r"^##\s+(?:\d+\.\s+)?Completion Requirements\b")),
         ("return conditions", (r"^##\s+(?:\d+\.\s+)?Return-To-Orchestrator Conditions\b", r"Return to orchestrator")),
+        (
+            "operator checkpoint",
+            (
+                r"^##\s+(?:\d+\.\s+)?Operator Checkpoint\b",
+                r"operator\.checkpoint\.waiver",
+            ),
+        ),
     ),
     "review": (
         ("target/source", (r"^##\s+Target", r"^##\s+Source", r"^##\s+Reviewed")),
@@ -370,6 +377,8 @@ def _classify(path: str, text: str) -> str:
         return "review"
     if normalized_path.startswith("docs/baselines/") or normalized_path.startswith("docs/assessments/"):
         return "baseline"
+    if normalized_path.startswith("docs/reference/"):
+        return "reference"
     if "AGENT_HANDOFF" in haystack or "HANDOFF" in haystack:
         return "handoff"
     if path.startswith("governance/toolkit/") and name.endswith("_GUARD.MD"):
@@ -408,20 +417,15 @@ def _validate_markdown(path: str) -> list[str]:
             issues.append(f"missing common element: {label}")
 
     for label, patterns in SECTION_GROUPS.get(artifact_type, ()):
+        if artifact_type == "work_order" and label == "operator checkpoint":
+            if _has_any(text, patterns):
+                continue
+            if _path_exists_at_ref(path, OPERATOR_CHECKPOINT_GRANDFATHER_REF):
+                continue
+            issues.append("missing work_order section: operator checkpoint")
+            continue
         if not _has_any(text, patterns):
             issues.append(f"missing {artifact_type} section: {label}")
-
-    if artifact_type == "work_order":
-        has_checkpoint = _has_any(
-            text,
-            (
-                r"^##\s+(?:\d+\.\s+)?Operator Checkpoint\b",
-                r"operator\.checkpoint\.waiver",
-            ),
-        )
-        was_committed_before_rule = _path_exists_at_ref(path, OPERATOR_CHECKPOINT_GRANDFATHER_REF)
-        if not has_checkpoint and not was_committed_before_rule:
-            issues.append("missing work_order section: operator checkpoint")
 
     return issues
 

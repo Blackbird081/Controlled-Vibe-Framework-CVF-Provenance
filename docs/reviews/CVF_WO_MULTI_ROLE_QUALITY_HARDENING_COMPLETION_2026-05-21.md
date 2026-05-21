@@ -74,10 +74,10 @@ Codex executed as Orchestrator, Implementer, Reviewer, and Auditor:
 
 | Claim | Evidence | Result |
 | --- | --- | --- |
-| Control matrix false positive eliminated | `python governance/compat/check_markdown_structural_completeness.py --base 6a45310e --head HEAD --all-changed --enforce` | PASS, `81` files checked, `0` violations |
-| Staged/current GC-045 remains clean | `python governance/compat/check_markdown_structural_completeness.py --base HEAD --head HEAD --enforce` | PASS, `3` files checked after completion review |
+| Control matrix false positive eliminated | `python governance/compat/check_markdown_structural_completeness.py --base 6a45310e --head HEAD --all-changed --enforce` | PASS, `99` files checked, `0` violations |
+| Staged/current GC-045 remains clean | `python governance/compat/check_markdown_structural_completeness.py --base HEAD --head HEAD --enforce` | PASS, `0` files checked, `0` violations |
 | Checker syntax is valid | `python -m py_compile governance/compat/check_markdown_structural_completeness.py` | PASS |
-| Reference classifier and section behavior work | inline Python synthetic assertions against `_classify()` and `_validate_markdown()` | PASS |
+| Reference classifier and section behavior work | inline Python synthetic assertions against `_classify()` and `_validate_markdown()` | PASS, `_classify("docs/reference/X.md", ...)` returns `reference` |
 | Operator-checkpoint gate catches new missing checkpoint | inline Python synthetic work-order assertion | PASS, missing checkpoint produces `missing work_order section: operator checkpoint` |
 | Existing committed work orders remain grandfathered | retrospective GC-045 scan above | PASS |
 | GC-023 file-size compliance | `python governance/compat/check_governed_file_size.py --enforce` | PASS, `0` violations |
@@ -85,6 +85,31 @@ Codex executed as Orchestrator, Implementer, Reviewer, and Auditor:
 | Docs governance path rules | `python governance/compat/check_docs_governance_compat.py --base HEAD --head HEAD --enforce` | PASS |
 | Full local governance hook chain | `python governance/compat/run_local_governance_hook_chain.py` | PASS, `43/43` checks passed |
 | Foundational guard surfaces | full hook chain, check `38/43` | PASS, ADR and Core Knowledge Base updates accepted |
+
+---
+
+## Post-Closure Corrective Addendum
+
+Continuation check on 2026-05-21 found one narrow evidence gap after the first
+closure commit: `_classify("docs/reference/X.md", ...)` still returned `spec`
+when the synthetic reference file did not declare `docType: reference`.
+
+Corrective action:
+
+- Added the explicit `docs/reference/` classifier branch before the final
+  `spec` fallback.
+- Added the operator-checkpoint tuple to `SECTION_GROUPS["work_order"]`.
+- Kept the adoption-commit grandfathering behavior inside `_validate_markdown()`
+  so committed pre-rule work orders remain compliant.
+
+Verification after corrective action:
+
+- `python -m py_compile governance/compat/check_markdown_structural_completeness.py`
+  — PASS.
+- inline synthetic reference classifier check — PASS, returned `reference`.
+- inline synthetic new-work-order checkpoint check — PASS, emitted
+  `missing work_order section: operator checkpoint`.
+- all five work-order verification commands — PASS.
 
 ---
 
