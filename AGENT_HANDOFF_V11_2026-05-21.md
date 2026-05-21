@@ -36,6 +36,10 @@ Current HEAD after release-gate timeout maintenance (GC-020):
 
 `baffa459` (fix(release-gate): extend web build timeout)
 
+Current HEAD after terminal five-option hardening closure:
+
+`4369691d` (docs(hardening): close terminal five-option sweep)
+
 ---
 
 ## Purpose
@@ -73,10 +77,13 @@ current.
 
 ## Latest Work / Changes
 
-Status: active work queue has no ready implementation item.
+Status: terminal hardening sweep closed; active work queue has no ready
+implementation item.
 
 Most recent tranche:
 
+- Terminal five-option hardening closure:
+  `docs/reviews/CVF_TERMINAL_HARDENING_FIVE_OPTION_CLOSURE_COMPLETION_2026-05-21.md`
 - Hosted Product Readiness Proof returned at:
   `docs/reviews/CVF_HOSTED_PRODUCT_READINESS_PROOF_COMPLETION_2026-05-21.md`
 - Roadmap:
@@ -86,7 +93,22 @@ Most recent tranche:
 - Work order:
   `docs/work_orders/CVF_WO_HOSTED_PRODUCT_READINESS_PROOF_2026-05-21.md`
 
-Result:
+Terminal result:
+
+- clean-room public clone without long-path config classified a Windows
+  filename-too-long checkout blocker;
+- retry with `git -c core.longpaths=true` succeeded at public commit
+  `51133d4`;
+- public `cvf-web` `npm ci` PASS;
+- public static CI gate PASS `7/7`, including build, typecheck, secrets scan,
+  docs governance, public surface, workflow orchestration, and `44/44` static
+  tests;
+- external hosted deployment proof remains
+  `BLOCKED_NEEDS_OPERATOR_HOST_TARGET`;
+- longer-horizon live stability remains `DEFERRED_SCHEDULED_SOAK_REQUIRED`;
+- public claim audit required no public-sync edit.
+
+Hosted readiness result:
 
 - local production-mode build PASS;
 - local production-mode server PASS on `127.0.0.1:3235`;
@@ -101,7 +123,7 @@ Result:
 
 Disposition:
 
-`CLOSED_LOCAL_PRODUCTION_PROOF`.
+`CLOSED_TERMINAL_HARDENING_SWEEP_WITH_BOUNDARIES`.
 
 ---
 
@@ -109,9 +131,11 @@ Disposition:
 
 Default next move: stop.
 
-Only open another tranche if the operator explicitly asks for an external
-hosted deployment proof. Do not widen into provider tuning,
-persistence/database, Maika proof, public-sync, or freeze release.
+Only open another tranche if the operator explicitly supplies a fresh specific
+request, such as an external hosted deployment target, a scheduled soak
+profile, dependency-audit maintenance, or a concrete public claim to publish.
+Do not widen into provider tuning, persistence/database, Maika proof,
+public-sync, or freeze release.
 
 Still forbidden:
 
@@ -150,6 +174,7 @@ For older continuity, read:
 ## Claim Boundary
 
 V11 carries no new product claim. It records only the bounded local
-production-mode proof result and the release-gate timeout maintenance. Hosted
-SaaS readiness, public deployment readiness, broad provider stability,
-persistence readiness, Maika readiness, and freeze release remain unproven.
+production-mode proof result, release-gate timeout maintenance, and terminal
+five-option hardening closure. Hosted SaaS readiness, public deployment
+readiness, broad provider stability, persistence readiness, Maika readiness,
+and freeze release remain unproven.

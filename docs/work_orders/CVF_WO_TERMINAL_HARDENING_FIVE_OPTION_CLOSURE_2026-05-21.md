@@ -135,8 +135,8 @@ Owned by this work order:
 - [x] Five options classified.
 - [x] Completion review filed.
 - [x] Continuity updated.
-- [ ] Governance checks PASS.
-- [ ] Commit created.
+- [x] Governance checks PASS.
+- [x] Commit created.
 
 ---
 
@@ -159,7 +159,8 @@ Close only if:
 - [x] Clean-room proof executed.
 - [x] Completion packet filed.
 - [x] Queue/state/front door synced; handoff SHA sync follows commit.
-- [ ] Commit created.
+- [x] Handoff SHA synced.
+- [x] Commit created.
 
 ---
 
