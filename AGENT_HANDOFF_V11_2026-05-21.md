@@ -52,6 +52,10 @@ Current HEAD after V2 roadmap + T1 work order dispatch:
 
 `58514dcc` (docs(roadmap-v2): supersede V1, dispatch T1 capability intake pipeline work order)
 
+Current HEAD after T2/T3/T4/T5 work order dispatch:
+
+`<pending commit>` (docs(roadmap-v2): dispatch T2/T3/T4/T5 work orders — all 5 tranches ready)
+
 ---
 
 ## Purpose
@@ -94,11 +98,19 @@ implementation item.
 
 Most recent tranche:
 
+- T2 work order dispatched:
+  `docs/work_orders/CVF_WO_T2_PRODUCT_SKILL_PACK_MVP_2026-05-22.md`
+- T3 work order dispatched:
+  `docs/work_orders/CVF_WO_T3_WORKFLOW_COMPOSITION_OUTCOME_SURFACE_2026-05-22.md`
+- T4 work order dispatched:
+  `docs/work_orders/CVF_WO_T4_PROVIDER_METHOD_COVERAGE_2026-05-22.md`
+- T5 work order dispatched:
+  `docs/work_orders/CVF_WO_T5_RUNTIME_MEMORY_WIRING_2026-05-22.md`
 - Review-CVF pain-point closure gap audit:
   `docs/audits/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_GAP_AUDIT_2026-05-22.md`
-- Review-CVF pain-point delivery gap roadmap:
-  `docs/roadmaps/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_2026-05-22.md`
-- Codex review:
+- Review-CVF pain-point delivery gap roadmap V2:
+  `docs/roadmaps/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_V2_2026-05-22.md`
+- Codex review of V1 roadmap:
   `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_CODEX_REVIEW_2026-05-22.md`
 - Terminal five-option hardening closure:
   `docs/reviews/CVF_TERMINAL_HARDENING_FIVE_OPTION_CLOSURE_COMPLETION_2026-05-21.md`
@@ -143,31 +155,31 @@ Disposition:
 
 Terminal sweep: `CLOSED_TERMINAL_HARDENING_SWEEP_WITH_BOUNDARIES`.
 
-Pain-point delivery-gap roadmap review:
-`BLOCKING_WITH_SCOPE_CORRECTIONS_BEFORE_T1`.
+Pain-point delivery-gap roadmap V2:
+`ACTIVE_ROADMAP_ALL_FIVE_TRANCHES_DISPATCHED`.
 
-Review summary:
-
-- Audit is useful predecessor evidence.
-- Do not authorize T1 as written.
-- Blocking corrections required: T1 artifact/schema set must include or
-  explicitly handle workflow spec and failure recovery; T2/T3 outcome-pack
-  mismatch must be fixed; T3/T4/T5 need explicit blocked-work overrides where
-  they touch receipt/provider/memory semantics; T5 memory-store boundary must
-  distinguish ephemeral memory from durable persistence; audit HEAD citation
-  should be corrected; withdrawal rule needs a concrete condition.
+All five V2 tranches are READY_FOR_IMPLEMENTATION. Codex executes
+T1 → T2 → T3 → T4 → T5 sequentially. T3/T4/T5 each have a mandatory
+Operator Checkpoint for blocked-work override confirmation before GC-018
+is filed. Operator will review results after all five tranches close.
 
 ---
 
 ## Next Allowed Move
 
-Default next move: stop.
+Default next move: Codex executes T1 → T2 → T3 → T4 → T5 from the
+V2 roadmap work orders. All five work orders are at
+READY_FOR_IMPLEMENTATION. Execution order is sequential; each tranche
+requires the previous to be closed before starting. T3, T4, and T5
+each have a mandatory Operator Checkpoint for blocked-work override
+confirmation (new_receipt_envelopes / new_provider_execution_semantics /
+new_memory_tiers_beyond_lane_h_scope respectively) before GC-018 is
+filed.
 
-Only open another tranche if the operator explicitly supplies a fresh specific
-request, such as an external hosted deployment target, a scheduled soak
-profile, dependency-audit maintenance, or a concrete public claim to publish.
-Do not widen into provider tuning, persistence/database, Maika proof,
-public-sync, or freeze release.
+After all five tranches close, operator reviews the full batch.
+
+Do not widen into provider tuning, persistence/database beyond T5
+ephemeral scope, Maika proof, public-sync, or freeze release.
 
 Still forbidden:
 
