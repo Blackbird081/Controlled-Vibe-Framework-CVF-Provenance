@@ -122,6 +122,9 @@ Current HEAD after matured-kernel criteria handoff sync (GC-020):
 Current HEAD after CDH-C/H/D roadmaps and work orders dispatched (GC-020):
 `e585418d` (docs(cdh): dispatch CDH-C/H/D roadmaps and work orders for Codex)
 
+Current HEAD after CDH-C/CDH-H closure and CDH-D adapter progress (GC-020):
+`6f74a0b4` (feat(cdh): close CDH-C and CDH-H; return CDH-D with adapter progress)
+
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
 ## Purpose
