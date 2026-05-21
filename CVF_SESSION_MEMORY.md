@@ -73,7 +73,7 @@ current.
 
 ## Current Session Mode
 
-- Current mode: `review_cvf_pain_point_delivery_v2_t1_closed_t2_ready`
+- Current mode: `review_cvf_pain_point_delivery_v2_t2_closed_t3_ready`
 - Previous mode: `terminal_hardening_closed`
 - Freeze posture: `governance_kernel_freeze_recommended`
 - Active handoff pointer: `AGENT_HANDOFF_V11_2026-05-21.md`
@@ -83,9 +83,7 @@ current.
   B→C→H, each requiring its own GC-018. Broad absorption and new
   governance semantics remain blocked outside lane scopes.
 
-T1 of the Review-CVF pain-point delivery gap roadmap V2 is closed as
-`CLOSED_T1_INTAKE_PIPELINE_AND_REFERENCE_PACK`. Next allowed move is T2:
-`docs/work_orders/CVF_WO_T2_PRODUCT_SKILL_PACK_MVP_2026-05-22.md`.
+T1 and T2 of the Review-CVF pain-point delivery gap roadmap V2 are closed. Next allowed move is T3: `docs/work_orders/CVF_WO_T3_WORKFLOW_COMPOSITION_OUTCOME_SURFACE_2026-05-22.md`, with the bounded receipt-envelope override recorded in T3 GC-018 before implementation.
 
 ## Required First Reads
 

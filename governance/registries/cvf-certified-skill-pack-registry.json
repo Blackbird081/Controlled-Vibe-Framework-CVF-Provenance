@@ -1,0 +1,83 @@
+{
+  "registryVersion": "cvf.certifiedSkillPacks.v1",
+  "generatedAt": "2026-05-22",
+  "entries": [
+    {
+      "id": "strategy_analysis",
+      "name": "Strategy Analysis",
+      "path": "EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS/_certified/strategy_analysis",
+      "domain": "Business Analysis",
+      "riskLevel": "R1",
+      "status": "certified",
+      "certifiedAt": "2026-05-22",
+      "tranche": "T1",
+      "outcomeKey": "strategy_analysis"
+    },
+    {
+      "id": "product_brief",
+      "name": "Product Brief",
+      "path": "EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS/_certified/product_brief",
+      "domain": "Product Management",
+      "riskLevel": "R1",
+      "status": "certified",
+      "certifiedAt": "2026-05-22",
+      "tranche": "T2",
+      "outcomeKey": "product_brief"
+    },
+    {
+      "id": "sop_generator",
+      "name": "SOP Generator",
+      "path": "EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS/_certified/sop_generator",
+      "domain": "Operations",
+      "riskLevel": "R1",
+      "status": "certified",
+      "certifiedAt": "2026-05-22",
+      "tranche": "T2",
+      "outcomeKey": "sop_generator"
+    },
+    {
+      "id": "proposal_writer",
+      "name": "Proposal Writer",
+      "path": "EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS/_certified/proposal_writer",
+      "domain": "Sales Enablement",
+      "riskLevel": "R1",
+      "status": "certified",
+      "certifiedAt": "2026-05-22",
+      "tranche": "T2",
+      "outcomeKey": "proposal_writer"
+    },
+    {
+      "id": "meeting_summarizer",
+      "name": "Meeting Summarizer",
+      "path": "EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS/_certified/meeting_summarizer",
+      "domain": "Operations",
+      "riskLevel": "R1",
+      "status": "certified",
+      "certifiedAt": "2026-05-22",
+      "tranche": "T2",
+      "outcomeKey": "meeting_summarizer"
+    },
+    {
+      "id": "contract_review",
+      "name": "Contract Review",
+      "path": "EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS/_certified/contract_review",
+      "domain": "Legal Operations",
+      "riskLevel": "R2",
+      "status": "certified",
+      "certifiedAt": "2026-05-22",
+      "tranche": "T2",
+      "outcomeKey": "contract_review"
+    },
+    {
+      "id": "landing_page_builder",
+      "name": "Landing Page Builder",
+      "path": "EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS/_certified/landing_page_builder",
+      "domain": "Marketing",
+      "riskLevel": "R1",
+      "status": "certified",
+      "certifiedAt": "2026-05-22",
+      "tranche": "T2",
+      "outcomeKey": "landing_page_builder"
+    }
+  ]
+}

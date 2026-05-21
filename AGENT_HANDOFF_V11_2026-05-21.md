@@ -175,6 +175,19 @@ Delivered the capability intake guard, eight skill-pack JSON Schemas, determinis
 
 Next allowed move: T2 product skill pack MVP.
 
+
+### 2026-05-22 - T2 Product Skill Pack MVP Closed
+
+T2 closed as `CLOSED_T2_PRODUCT_SKILL_PACK_MVP`.
+
+Completion: `docs/reviews/CVF_T2_PRODUCT_SKILL_PACK_MVP_COMPLETION_2026-05-22.md`
+Baseline: `docs/baselines/CVF_GC018_T2_PRODUCT_SKILL_PACK_MVP_2026-05-22.md`
+Parent commit before T2 closure: `e736b5bd`
+
+Delivered six additional certified packs plus the seven-entry certified skill pack registry. All seven packs validate PASS `8/8` with the T1 validator. Boundary remains static pack certification only: no UI/runtime/provider/receipt/memory/public-sync change.
+
+Next allowed move: T3 workflow composition and outcome surface with bounded `new_receipt_envelopes` override recorded before implementation.
+
 ---
 
 ## Next Allowed Move
