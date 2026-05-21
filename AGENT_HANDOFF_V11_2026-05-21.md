@@ -40,6 +40,10 @@ Current HEAD after terminal five-option hardening closure:
 
 `4369691d` (docs(hardening): close terminal five-option sweep)
 
+Current HEAD after pain-point gap audit + delivery roadmap:
+
+`5279db51` (docs(audit): file Review-CVF pain-point closure gap audit + delivery roadmap)
+
 ---
 
 ## Purpose
@@ -82,6 +86,12 @@ implementation item.
 
 Most recent tranche:
 
+- Review-CVF pain-point closure gap audit:
+  `docs/audits/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_GAP_AUDIT_2026-05-22.md`
+- Review-CVF pain-point delivery gap roadmap:
+  `docs/roadmaps/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_2026-05-22.md`
+- Codex review:
+  `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_CODEX_REVIEW_2026-05-22.md`
 - Terminal five-option hardening closure:
   `docs/reviews/CVF_TERMINAL_HARDENING_FIVE_OPTION_CLOSURE_COMPLETION_2026-05-21.md`
 - Hosted Product Readiness Proof returned at:
@@ -123,7 +133,21 @@ Hosted readiness result:
 
 Disposition:
 
-`CLOSED_TERMINAL_HARDENING_SWEEP_WITH_BOUNDARIES`.
+Terminal sweep: `CLOSED_TERMINAL_HARDENING_SWEEP_WITH_BOUNDARIES`.
+
+Pain-point delivery-gap roadmap review:
+`BLOCKING_WITH_SCOPE_CORRECTIONS_BEFORE_T1`.
+
+Review summary:
+
+- Audit is useful predecessor evidence.
+- Do not authorize T1 as written.
+- Blocking corrections required: T1 artifact/schema set must include or
+  explicitly handle workflow spec and failure recovery; T2/T3 outcome-pack
+  mismatch must be fixed; T3/T4/T5 need explicit blocked-work overrides where
+  they touch receipt/provider/memory semantics; T5 memory-store boundary must
+  distinguish ephemeral memory from durable persistence; audit HEAD citation
+  should be corrected; withdrawal rule needs a concrete condition.
 
 ---
 

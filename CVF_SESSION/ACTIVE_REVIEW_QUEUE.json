@@ -398,6 +398,17 @@
       "priority": 31,
       "source": "operator request 2026-05-21",
       "notes": "Closed 2026-05-21 as the final five-option terminal hardening sweep. Clean-room public clone without longpaths classified a Windows checkout blocker; retry with git -c core.longpaths=true succeeded at public commit 51133d4. Public cvf-web npm ci PASS; public static CI gate PASS 7/7 with static tests 44/44 and secrets scan PASS. External hosted deployment proof remains BLOCKED_NEEDS_OPERATOR_HOST_TARGET. Longer-horizon stability remains DEFERRED_SCHEDULED_SOAK_REQUIRED. Secret/auth boundary is currently healthy. Public claim audit found boundary/limitation language and required no public-sync edit. Default next move: stop unless operator opens a fresh specific tranche."
+    },
+    {
+      "id": "review-cvf-pain-point-delivery-gap-roadmap",
+      "artifactType": "roadmap",
+      "path": "docs/roadmaps/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_2026-05-22.md",
+      "status": "REVIEW_FILED_BLOCKING_WITH_SCOPE_CORRECTIONS",
+      "requestedReviewer": "Codex",
+      "responsePath": "docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_CODEX_REVIEW_2026-05-22.md",
+      "priority": 32,
+      "source": "operator request 2026-05-22",
+      "notes": "Codex review filed 2026-05-22. Audit accepted as valuable predecessor evidence, but roadmap T1 should not be authorized as written. Blocking corrections: T1 omits workflow.spec/failure.recovery while T2 depends on workflow.spec; T3 six outcomes are not satisfiable from T2's five certified packs; T3/T4 require explicit blocked-work overrides for receipt/provider semantics beyond ordinary GC-018; T5 memory-store boundary is internally inconsistent; audit HEAD citation should be corrected; withdrawal rule needs concrete condition. Current A-H closure state remains unchanged."
     }
   ]
 }
