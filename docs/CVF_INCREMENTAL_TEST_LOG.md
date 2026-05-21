@@ -2181,3 +2181,30 @@ Utility and guard:
     output wording assertion remains red on isolated rerun.
   - `GovernanceEvidenceReceipt` was not modified; T5 adds only audit readout
     payload fields `taskMemoryDecision` and `taskMemoryReason`.
+
+---
+## [2026-05-22] Batch: Canonical CLI Runtime Gateway
+
+- Change reference: provenance working tree; GC-018 baseline
+  `docs/baselines/CVF_GC018_CANONICAL_CLI_RUNTIME_GATEWAY_2026-05-22.md`
+- Impacted scope:
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/canonical.gateway.ts`
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/index.ts`
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/types.ts`
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/command.registry.ts`
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/tests/canonical.gateway.test.ts`
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/tests/cli.test.ts`
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/tests/command.registry.test.ts`
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/package.json`
+- Tests executed:
+  - `npm run test -- tests/canonical.gateway.test.ts` in
+    `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI` -> PASS, 1 file / 6 tests
+  - `npm run check` in `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI` -> PASS
+  - `npm test` in `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI` -> PASS, 11 files / 104 tests
+- Notes/Risks:
+  - This proves the package-level canonical `cvf` gateway abstraction and command
+    surface only.
+  - `cvf run --dry-run` delegates through the existing execute payload path without
+    HTTP I/O.
+  - No route, provider adapter, receipt envelope, durable state, public-sync, or
+    hosted-readiness claim is made.

@@ -2,7 +2,7 @@
   "name": "@cvf/governance-cli",
   "version": "2.2.0",
   "description": "CVF Governance CLI — Command-line interface for governance operations",
-  "main": "src/cli.ts",
+  "main": "src/index.ts",
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest",

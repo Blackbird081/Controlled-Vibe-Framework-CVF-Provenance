@@ -48,6 +48,12 @@ export interface CLIConfig {
 
 export const DEFAULT_CLI_CONFIG: CLIConfig = {
   version: "2.2.0",
+  name: "cvf",
+  description: "CVF Canonical CLI Runtime Gateway",
+};
+
+export const LEGACY_GUARD_CLI_CONFIG: CLIConfig = {
+  ...DEFAULT_CLI_CONFIG,
   name: "cvf-guard",
   description: "CVF Governance CLI — AI agent governance operations",
 };

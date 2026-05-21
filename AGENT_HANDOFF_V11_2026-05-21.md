@@ -237,17 +237,38 @@ Delivered the memory-tier retention policy, Learning Plane ephemeral task-memory
 
 Next allowed move: return the closed T1-T5 batch to operator review. Any next implementation requires a fresh operator-selected tranche and GC-018.
 
+
+### 2026-05-22 - Canonical CLI Runtime Gateway Closed
+
+Canonical CLI runtime gateway closed as `CLOSED_CANONICAL_CLI_RUNTIME_GATEWAY`.
+
+Completion: `docs/reviews/CVF_CANONICAL_CLI_RUNTIME_GATEWAY_COMPLETION_2026-05-22.md`
+Baseline: `docs/baselines/CVF_GC018_CANONICAL_CLI_RUNTIME_GATEWAY_2026-05-22.md`
+Work order: `docs/work_orders/CVF_WO_CANONICAL_CLI_RUNTIME_GATEWAY_2026-05-22.md`
+
+Delivered `CVFCanonicalGateway`, the canonical `cvf` runtime command surface
+for `run/audit/execute/skill/receipt/trace/provider`, legacy `cvf-guard`
+prefix compatibility, package main export, and `cvf audit --input` JSONL
+count/filter support. Targeted gateway tests PASS `6/6`; full Governance CLI
+tests PASS `104/104`; TypeScript check PASS. Boundary: package-level gateway
+only; no route, provider adapter, receipt-envelope, durable state, public-sync,
+npm/global distribution, live-provider, hosted-readiness, or freeze-release
+claim.
+
+Next allowed move: stop unless the operator opens a fresh tranche. Npm/global
+CLI distribution would require a separate package/distribution GC-018.
+
 ---
 
 ## Next Allowed Move
 
-Default next move: return the closed T1 → T2 → T3 → T4 → T5 batch from
-the V2 roadmap to operator review. All five work orders are closed.
-Any next implementation requires a fresh operator-selected tranche and
-GC-018.
+Default next move: stop unless the operator opens a fresh tranche. The
+canonical CLI runtime gateway package-level tranche is closed. Any next
+implementation requires a fresh operator-selected tranche and GC-018.
 
-Do not widen into provider tuning, persistence/database beyond T5
-ephemeral scope, Maika proof, public-sync, or freeze release.
+Do not widen into npm/global CLI distribution, provider tuning,
+persistence/database beyond T5 ephemeral scope, Maika proof, public-sync,
+or freeze release.
 
 Still forbidden:
 

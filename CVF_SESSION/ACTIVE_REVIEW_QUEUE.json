@@ -497,6 +497,20 @@
       "notes": "T5 closed 2026-05-22. GC-018 recorded new_memory_tiers_beyond_lane_h_scope override bounded to ephemeral in-process task memory only. Delivered CVF_MEMORY_TIER_RETENTION_POLICY.md, Learning Plane task-memory store, and audit-memory-receipt.ts taskMemoryDecision/taskMemoryReason readout. Targeted T5 tests PASS 7/7 and 9/9; Learning Plane full tests PASS 1521/1521; checks PASS; local hook chain PASS 43/43. cvf-web full suite had live/test-order variance; isolated failing files reran PASS. GovernanceEvidenceReceipt unchanged; canReinject=false preserved; no route/provider/public-sync/durable persistence change.",
       "completionPath": "docs/reviews/CVF_T5_RUNTIME_MEMORY_WIRING_COMPLETION_2026-05-22.md",
       "baselinePath": "docs/baselines/CVF_GC018_T5_RUNTIME_MEMORY_WIRING_2026-05-22.md"
+    },
+    {
+      "id": "canonical-cli-runtime-gateway",
+      "artifactType": "work_order",
+      "path": "docs/work_orders/CVF_WO_CANONICAL_CLI_RUNTIME_GATEWAY_2026-05-22.md",
+      "status": "CLOSED_CANONICAL_CLI_RUNTIME_GATEWAY",
+      "requestedReviewer": "Codex",
+      "expectedCompletionPath": "docs/reviews/CVF_CANONICAL_CLI_RUNTIME_GATEWAY_COMPLETION_2026-05-22.md",
+      "expectedBaselinePath": "docs/baselines/CVF_GC018_CANONICAL_CLI_RUNTIME_GATEWAY_2026-05-22.md",
+      "completionPath": "docs/reviews/CVF_CANONICAL_CLI_RUNTIME_GATEWAY_COMPLETION_2026-05-22.md",
+      "baselinePath": "docs/baselines/CVF_GC018_CANONICAL_CLI_RUNTIME_GATEWAY_2026-05-22.md",
+      "priority": 39,
+      "source": "operator request 2026-05-22",
+      "notes": "Closed 2026-05-22 as a bounded package-level canonical CLI gateway tranche. Delivered CVFCanonicalGateway, canonical cvf command surface for run/audit/execute/skill/receipt/trace/provider, legacy cvf-guard prefix compatibility, package main export, and audit JSONL count/filter support. Tests PASS: targeted canonical gateway 6/6, full Governance CLI 104/104, TypeScript check PASS. Boundary: no route/provider adapter/receipt-envelope/durable state/public-sync/live-provider/hosted-readiness change."
     }
   ]
 }

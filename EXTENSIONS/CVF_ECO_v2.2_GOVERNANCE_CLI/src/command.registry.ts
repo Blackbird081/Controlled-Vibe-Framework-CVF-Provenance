@@ -33,7 +33,7 @@ export class CommandRegistry {
     if (!handler) {
       return {
         success: false,
-        message: `Unknown command: ${args.command}. Run 'cvf-guard help' for usage.`,
+        message: `Unknown command: ${args.command}. Run 'cvf help' for usage.`,
         exitCode: 1,
       };
     }
@@ -45,7 +45,7 @@ export class CommandRegistry {
     if (!handler) {
       return {
         success: false,
-        message: `Unknown command: ${args.command}. Run 'cvf-guard help' for usage.`,
+        message: `Unknown command: ${args.command}. Run 'cvf help' for usage.`,
         exitCode: 1,
       };
     }
@@ -70,14 +70,14 @@ export class CommandRegistry {
     this.register({
       name: "help",
       description: "Show available commands and usage",
-      usage: "cvf-guard help [command]",
+      usage: "cvf help [command]",
       execute: (args) => this.helpCommand(args),
     });
 
     this.register({
       name: "version",
       description: "Show CLI version",
-      usage: "cvf-guard version",
+      usage: "cvf version",
       execute: () => ({
         success: true,
         message: `${this.config.name} v${this.config.version}`,
@@ -89,7 +89,7 @@ export class CommandRegistry {
     this.register({
       name: "status",
       description: "Show governance system status",
-      usage: "cvf-guard status",
+      usage: "cvf status",
       execute: () => ({
         success: true,
         message: [
@@ -106,7 +106,7 @@ export class CommandRegistry {
     this.register({
       name: "evaluate",
       description: "Evaluate an agent action against governance rules",
-      usage: "cvf-guard evaluate --domain <domain> --action <action> --target <target> [--amount <n>]",
+      usage: "cvf evaluate --domain <domain> --action <action> --target <target> [--amount <n>]",
       execute: (args) => this.evaluateCommand(args),
     });
 
@@ -177,21 +177,21 @@ export class CommandRegistry {
     this.register({
       name: "session",
       description: "Manage governance sessions",
-      usage: "cvf-guard session <start|end|list|summary> [--agent <id>] [--session <id>]",
+      usage: "cvf session <start|end|list|summary> [--agent <id>] [--session <id>]",
       execute: (args) => this.sessionCommand(args),
     });
 
     this.register({
       name: "report",
       description: "Generate governance report",
-      usage: "cvf-guard report [--format text|markdown] [--title <title>]",
+      usage: "cvf report [--format text|markdown] [--title <title>]",
       execute: (args) => this.reportCommand(args),
     });
 
     this.register({
       name: "audit",
       description: "Query audit log",
-      usage: "cvf-guard audit [--session <id>] [--verdict <verdict>] [--count]",
+      usage: "cvf audit [--input <audit.jsonl>] [--session <id>] [--verdict <verdict>] [--count]",
       execute: (args) => this.auditCommand(args),
     });
   }
@@ -293,17 +293,28 @@ export class CommandRegistry {
     const sessionFilter = args.flags.session as string | undefined;
     const verdictFilter = args.flags.verdict as string | undefined;
     const countOnly = args.flags.count === true;
+    const input = stringFlag(args, "input");
+
+    const entries = input ? readJsonlFile(input) : { records: [] };
+    if ("error" in entries) return entries.error;
+
+    const records = entries.records.filter((record) => {
+      const sessionMatches = sessionFilter ? recordContainsValue(record, sessionFilter) : true;
+      const verdictMatches = verdictFilter ? recordContainsValue(record, verdictFilter) : true;
+      return sessionMatches && verdictMatches;
+    });
 
     const filters: string[] = [];
+    if (input) filters.push(`input=${input}`);
     if (sessionFilter) filters.push(`session=${sessionFilter}`);
     if (verdictFilter) filters.push(`verdict=${verdictFilter}`);
 
     return {
       success: true,
       message: countOnly
-        ? `Audit entries: 0 (${filters.join(", ") || "no filters"})`
-        : `Audit log: 0 entries (${filters.join(", ") || "no filters"})`,
-      data: { entries: 0, filters },
+        ? `Audit entries: ${records.length} (${filters.join(", ") || "no filters"})`
+        : `Audit log: ${records.length} entries (${filters.join(", ") || "no filters"})${records.length ? `\n${records.map((record) => JSON.stringify(record)).join("\n")}` : ""}`,
+      data: { entries: records.length, filters, records },
       exitCode: 0,
     };
   }

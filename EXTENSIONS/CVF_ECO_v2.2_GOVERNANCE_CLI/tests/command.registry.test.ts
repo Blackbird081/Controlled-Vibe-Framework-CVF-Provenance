@@ -192,6 +192,7 @@ describe("CommandRegistry", () => {
         positional: [],
       });
       expect(result.success).toBe(true);
+      expect(result.data).toMatchObject({ entries: 0 });
     });
 
     it("supports count flag", () => {
@@ -202,6 +203,18 @@ describe("CommandRegistry", () => {
       });
       expect(result.success).toBe(true);
       expect(result.message).toContain("entries");
+    });
+
+    it("shows canonical cvf audit usage", () => {
+      const result = registry.execute({
+        command: "help",
+        flags: {},
+        positional: ["audit"],
+      });
+
+      expect(result.success).toBe(true);
+      expect(result.message).toContain("cvf audit");
+      expect(result.message).toContain("--input <audit.jsonl>");
     });
   });
 });
