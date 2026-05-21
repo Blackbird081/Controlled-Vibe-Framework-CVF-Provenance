@@ -862,6 +862,12 @@ Canonical rule:
   scope or owner boundary, and final/claim/verification boundary
 - contracts, specs, policies, roadmaps, reviews, baselines, ADRs, and handoffs
   must follow their artifact-specific section set
+- `docType: reference` is now an explicit GC-045 type for durable reference
+  surfaces that need purpose, scope/applicability, and claim/final boundary
+  checks without baseline/review requirements
+- new work orders must include `## Operator Checkpoint` or
+  `operator.checkpoint.waiver`; work orders already present at adoption commit
+  `c043fa33` are grandfathered
 - legacy dense files are not retroactively blocked, but material rewrites and
   promotions should migrate into the standard
 
@@ -870,6 +876,7 @@ Canonical references:
 - `docs/reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md`
 - `governance/toolkit/05_OPERATION/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_GUARD.md`
 - `governance/compat/check_markdown_structural_completeness.py`
+- `docs/reviews/CVF_WO_MULTI_ROLE_QUALITY_HARDENING_COMPLETION_2026-05-21.md`
 
 ---
 

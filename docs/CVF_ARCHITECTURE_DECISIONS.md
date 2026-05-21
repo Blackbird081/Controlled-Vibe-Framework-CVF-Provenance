@@ -1112,3 +1112,41 @@ Operator / CEO intent
 - `docs/reference/CVF_SESSION_GOVERNANCE_BOOTSTRAP.md`
 - `docs/reference/CVF_GC018_CONTINUATION_CANDIDATE_TEMPLATE.md`
 - `AGENT_HANDOFF_V9_2026-05-18.md`
+
+## ADR-049: GC-045 Reference Classification And Operator Checkpoint Hardening
+
+### Status
+ACCEPTED — 2026-05-21
+
+### Context
+GC-045 structural completeness correctly protects new governed Markdown files,
+but the checker could misclassify a long-lived `docs/reference/` file as a
+baseline when the text contained baseline wording and no explicit `docType`.
+Claude's post-tranche audit also identified a real process gap: fast multi-role
+work-order execution should expose whether an operator checkpoint is required
+or explicitly waived.
+
+### Decision
+Extend GC-045 with two bounded hardening rules:
+
+- `docType: reference` is now a supported artifact type for durable reference
+  surfaces that need purpose, scope/applicability, and claim/final boundary
+  checks without being forced into baseline or review structure.
+- New work orders must include `## Operator Checkpoint` or
+  `operator.checkpoint.waiver`; work orders already present at adoption commit
+  `c043fa33` are grandfathered.
+
+### Consequences
+- `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md` now declares
+  `docType: reference` and exposes explicit scope and claim boundary text.
+- Retrospective GC-045 scans no longer produce the control-matrix false
+  positive.
+- Future work orders make checkpoint cadence visible without retroactively
+  invalidating already-closed tranches.
+
+### Related Files
+- `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md`
+- `docs/reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md`
+- `governance/toolkit/05_OPERATION/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_GUARD.md`
+- `governance/compat/check_markdown_structural_completeness.py`
+- `docs/reviews/CVF_WO_MULTI_ROLE_QUALITY_HARDENING_COMPLETION_2026-05-21.md`

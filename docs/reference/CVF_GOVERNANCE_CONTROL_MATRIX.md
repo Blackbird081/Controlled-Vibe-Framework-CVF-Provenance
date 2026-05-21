@@ -1,6 +1,9 @@
 # CVF Governance Control Matrix
 
 Memory class: POINTER_RECORD
+
+docType: reference
+
 Status: canonical ownership map for critical governance controls in the active CVF baseline.
 
 ## Purpose
@@ -8,6 +11,13 @@ Status: canonical ownership map for critical governance controls in the active C
 - map each critical governance rule to exactly one primary enforcement owner
 - distinguish runtime blocking controls from repository hygiene controls
 - make future audit, reassessment, and roadmap closure faster and less ambiguous
+
+## Scope
+
+This reference applies to canonical governance-control ownership, enforcement
+class assignment, active entrypoint routing, and primary evidence pointers. It
+does not replace individual guard, policy, baseline, or runtime implementation
+contracts.
 
 ## Enforcement Classes
 
@@ -134,3 +144,9 @@ At the active `2026-03-20` local baseline:
 - repository-history and evidence continuity rules have an explicit CI or hook owner
 
 This closes the major ambiguity previously identified in the independent system review, while still allowing future refinement of secondary controls and ecosystem-wide coverage depth.
+
+## Claim Boundary
+
+This matrix is a reference map for ownership and evidence routing. It does not
+create new runtime enforcement, change guard semantics, replace per-control
+source files, or prove behavior outside the cited evidence.

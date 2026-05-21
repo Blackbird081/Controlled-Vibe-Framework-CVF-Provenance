@@ -154,10 +154,30 @@ Required sections:
 - Review Gate
 - Closure Checklist or Completion Requirements
 - Return-To-Orchestrator Conditions
+- Operator Checkpoint or `operator.checkpoint.waiver`
 - Claim Boundary
 
 Work orders are tactical execution packets, not reviews. They are mandatory
 when a final roadmap delegates work to another agent or to a later session.
+
+Operator checkpoint requirement:
+
+```markdown
+## Operator Checkpoint
+
+Checkpoint required: [describe what the operator must confirm before
+implementation proceeds].
+```
+
+For genuinely low-risk single-commit work where no human checkpoint is needed,
+the work order must still declare an explicit waiver:
+
+```markdown
+operator.checkpoint.waiver: [one-sentence justification]
+```
+
+Work orders already present at adoption commit `c043fa33` are grandfathered;
+new work orders after that commit must satisfy this requirement.
 
 ### Review / Rebuttal / Response
 
@@ -181,6 +201,18 @@ Required sections:
 - Scope or Proposed Tranche when applicable
 - Evidence / Required Evidence / Verification
 - Claim Boundary or Approval Gate
+
+### Reference
+
+Required sections:
+
+- Purpose
+- Scope or Applies To
+- Claim Boundary, Final Clause, Verification, or Current Closure Statement
+
+Reference documents are durable routing or canonical-information surfaces. They
+must make their applicability and claim boundary explicit without being forced
+into baseline or review structure.
 
 ### ADR
 

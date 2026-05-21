@@ -34,6 +34,7 @@ KB_PATH = "docs/CVF_CORE_KNOWLEDGE_BASE.md"
 HOOK_CHAIN_PATH = "governance/compat/run_local_governance_hook_chain.py"
 WORKFLOW_PATH = ".github/workflows/documentation-testing.yml"
 THIS_SCRIPT_PATH = "governance/compat/check_markdown_structural_completeness.py"
+OPERATOR_CHECKPOINT_GRANDFATHER_REF = "c043fa33"
 
 REQUIRED_FILES = (
     STANDARD_PATH,
@@ -191,6 +192,29 @@ SECTION_GROUPS: dict[str, tuple[tuple[str, tuple[str, ...]], ...]] = {
         ("decision/baseline/proposed tranche", (r"^##\s+Decision", r"^##\s+Baseline", r"^##\s+Proposed Tranche")),
         ("evidence/verification", (r"^##\s+Evidence", r"^##\s+Verification", r"^##\s+Required Evidence")),
     ),
+    "reference": (
+        ("purpose", (r"^##\s+Purpose\b",)),
+        (
+            "scope/applies-to",
+            (
+                r"^##\s+Scope\b",
+                r"^##\s+Applies To\b",
+                r"^##\s+Owner Surface",
+                r"^##\s+Source Lineage",
+                r"^##\s+Target",
+                r"\*\*Applies to:\*\*",
+            ),
+        ),
+        (
+            "claim/final/verification boundary",
+            (
+                r"^##\s+Claim Boundary\b",
+                r"^##\s+Final Clause\b",
+                r"^##\s+Verification\b",
+                r"^##\s+Current Closure Statement\b",
+            ),
+        ),
+    ),
     "adr": (
         ("context", (r"^##\s+Context\b",)),
         ("decision", (r"^##\s+Decision\b",)),
@@ -225,6 +249,12 @@ def _run_git(args: list[str]) -> tuple[int, str, str]:
 
 def _ref_exists(ref: str) -> bool:
     code, _, _ = _run_git(["rev-parse", "--verify", "--quiet", f"{ref}^{{commit}}"])
+    return code == 0
+
+
+def _path_exists_at_ref(path: str, ref: str) -> bool:
+    normalized = path.replace("\\", "/")
+    code, _, _ = _run_git(["cat-file", "-e", f"{ref}:{normalized}"])
     return code == 0
 
 
@@ -321,6 +351,11 @@ def _has_any(text: str, patterns: tuple[str, ...]) -> bool:
 
 def _classify(path: str, text: str) -> str:
     normalized_path = path.replace("\\", "/")
+    doc_type_match = re.search(r"^docType:\s*([A-Za-z_ -]+)\s*$", text, re.M)
+    if doc_type_match:
+        declared = doc_type_match.group(1).strip().lower().replace("-", "_").replace(" ", "_")
+        if declared in SECTION_GROUPS:
+            return declared
     name = Path(path).name.upper()
     title = "\n".join(text.splitlines()[:8]).upper()
     haystack = f"{path.upper()} {name} {title}"
@@ -372,6 +407,18 @@ def _validate_markdown(path: str) -> list[str]:
     for label, patterns in SECTION_GROUPS.get(artifact_type, ()):
         if not _has_any(text, patterns):
             issues.append(f"missing {artifact_type} section: {label}")
+
+    if artifact_type == "work_order":
+        has_checkpoint = _has_any(
+            text,
+            (
+                r"^##\s+(?:\d+\.\s+)?Operator Checkpoint\b",
+                r"operator\.checkpoint\.waiver",
+            ),
+        )
+        was_committed_before_rule = _path_exists_at_ref(path, OPERATOR_CHECKPOINT_GRANDFATHER_REF)
+        if not has_checkpoint and not was_committed_before_rule:
+            issues.append("missing work_order section: operator checkpoint")
 
     return issues
 
