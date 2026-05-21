@@ -201,6 +201,19 @@ Delivered workflow-composition types, six-entry outcome registry, expanded `Outc
 
 Next allowed move: T4 provider method coverage with bounded `new_provider_execution_semantics` override recorded before implementation.
 
+
+### 2026-05-22 - T4 Provider Method Coverage Closed
+
+T4 closed as `CLOSED_T4_PROVIDER_METHOD_COVERAGE`.
+
+Completion: `docs/reviews/CVF_T4_PROVIDER_METHOD_COVERAGE_COMPLETION_2026-05-22.md`
+Baseline: `docs/baselines/CVF_GC018_T4_PROVIDER_METHOD_COVERAGE_2026-05-22.md`
+Parent commit before T4 closure: `b8e3fb92`
+
+Delivered Model Gateway provider method contract, Alibaba qwen-turbo stream capability/adaptor, DeepSeek deepseek-chat JSON-mode capability/adapter, and negative unsupported-method gate. Targeted tests PASS `4/4`; Model Gateway full tests PASS `73/73`; check PASS. Boundary: no cvf-web/route/receipt/memory/live-provider/public-sync change.
+
+Next allowed move: T5 runtime memory wiring with bounded ephemeral in-memory override recorded before implementation.
+
 ---
 
 ## Next Allowed Move

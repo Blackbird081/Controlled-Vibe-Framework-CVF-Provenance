@@ -415,13 +415,13 @@
       "id": "review-cvf-pain-point-delivery-gap-roadmap-v2",
       "artifactType": "roadmap",
       "path": "docs/roadmaps/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_V2_2026-05-22.md",
-      "status": "ACTIVE_ROADMAP_T1_T2_T3_CLOSED_T4_READY_WITH_OVERRIDE_RECORDED",
+      "status": "ACTIVE_ROADMAP_T1_T2_T3_T4_CLOSED_T5_READY_WITH_OVERRIDE_RECORDED",
       "requestedReviewer": "Codex",
       "supersedes": "docs/roadmaps/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_2026-05-22.md",
       "predecessorReview": "docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_CODEX_REVIEW_2026-05-22.md",
       "priority": 33,
       "source": "operator authorization 2026-05-22",
-      "notes": "V2 active roadmap of record. T1, T2, and T3 closed. T4 is next and requires bounded new_provider_execution_semantics override for Alibaba qwen-turbo stream(), DeepSeek deepseek-chat json_mode(), and negative gate only; operator instruction 2026-05-22 authorized Codex to execute T1->T5 and not ask again."
+      "notes": "V2 active roadmap of record. T1-T4 closed. T5 is next and requires bounded new_memory_tiers_beyond_lane_h_scope override for ephemeral in-memory task tier only, with no durable persistence; operator instruction 2026-05-22 authorized Codex to execute T1->T5 and not ask again."
     },
     {
       "id": "t1-capability-intake-pipeline",
@@ -473,13 +473,15 @@
       "artifactType": "work_order",
       "path": "docs/work_orders/CVF_WO_T4_PROVIDER_METHOD_COVERAGE_2026-05-22.md",
       "roadmapPath": "docs/roadmaps/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_V2_2026-05-22.md",
-      "status": "READY_FOR_IMPLEMENTATION",
+      "status": "CLOSED_T4_PROVIDER_METHOD_COVERAGE",
       "requestedReviewer": "Codex",
       "expectedCompletionPath": "docs/reviews/CVF_T4_PROVIDER_METHOD_COVERAGE_COMPLETION_2026-05-22.md",
       "expectedBaselinePath": "docs/baselines/CVF_GC018_T4_PROVIDER_METHOD_COVERAGE_2026-05-22.md",
       "priority": 37,
       "source": "operator authorization 2026-05-22",
-      "notes": "T4 fourth tranche of V2 roadmap. Pre-condition: T3 closed. Blocked-work override required: new_provider_execution_semantics (bounded to stream() on Alibaba qwen-turbo + json_mode() on DeepSeek deepseek-chat + negative gate) \u2014 operator must confirm in GC-018. Deliverables: ProviderMethodContract interface, capability.json per provider, stream adapter, json_mode adapter, UnsupportedMethodError gate. No cvf-web change, no new receipt field, no new provider."
+      "notes": "T4 closed 2026-05-22. Override new_provider_execution_semantics GRANTED only for Alibaba qwen-turbo stream(), DeepSeek deepseek-chat json_mode(), and negative UnsupportedMethodError gate. Model Gateway targeted tests PASS 4/4; full tests PASS 73/73; check PASS. Boundary: no cvf-web/route/receipt/memory/live-provider/public-sync change.",
+      "completionPath": "docs/reviews/CVF_T4_PROVIDER_METHOD_COVERAGE_COMPLETION_2026-05-22.md",
+      "baselinePath": "docs/baselines/CVF_GC018_T4_PROVIDER_METHOD_COVERAGE_2026-05-22.md"
     },
     {
       "id": "t5-runtime-memory-wiring",

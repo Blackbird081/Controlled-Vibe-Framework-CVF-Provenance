@@ -73,7 +73,7 @@ current.
 
 ## Current Session Mode
 
-- Current mode: `review_cvf_pain_point_delivery_v2_t3_closed_t4_ready`
+- Current mode: `review_cvf_pain_point_delivery_v2_t4_closed_t5_ready`
 - Previous mode: `terminal_hardening_closed`
 - Freeze posture: `governance_kernel_freeze_recommended`
 - Active handoff pointer: `AGENT_HANDOFF_V11_2026-05-21.md`
@@ -83,7 +83,7 @@ current.
   B→C→H, each requiring its own GC-018. Broad absorption and new
   governance semantics remain blocked outside lane scopes.
 
-T1, T2, and T3 of the Review-CVF pain-point delivery gap roadmap V2 are closed. Next allowed move is T4: `docs/work_orders/CVF_WO_T4_PROVIDER_METHOD_COVERAGE_2026-05-22.md`, with the bounded provider-execution-semantics override recorded in T4 GC-018 before implementation.
+T1, T2, T3, and T4 of the Review-CVF pain-point delivery gap roadmap V2 are closed. Next allowed move is T5: `docs/work_orders/CVF_WO_T5_RUNTIME_MEMORY_WIRING_2026-05-22.md`, with the bounded ephemeral-memory override recorded in T5 GC-018 before implementation.
 
 ## Required First Reads
 

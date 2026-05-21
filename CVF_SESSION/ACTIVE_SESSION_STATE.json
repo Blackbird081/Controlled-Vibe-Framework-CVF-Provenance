@@ -24,7 +24,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "review_cvf_pain_point_delivery_v2_t3_closed_t4_ready",
+  "currentMode": "review_cvf_pain_point_delivery_v2_t4_closed_t5_ready",
   "previousMode": "terminal_hardening_closed",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
@@ -103,7 +103,7 @@
     "blocked_work_classes",
     "next_allowed_move"
   ],
-  "nextAllowedMove": "T3 closed at docs/reviews/CVF_T3_WORKFLOW_COMPOSITION_OUTCOME_SURFACE_COMPLETION_2026-05-22.md. Proceed sequentially to T4 at docs/work_orders/CVF_WO_T4_PROVIDER_METHOD_COVERAGE_2026-05-22.md. Operator override for T4 new_provider_execution_semantics is granted only for stream() on Alibaba qwen-turbo, json_mode() on DeepSeek deepseek-chat, and the negative method gate.",
+  "nextAllowedMove": "T4 closed at docs/reviews/CVF_T4_PROVIDER_METHOD_COVERAGE_COMPLETION_2026-05-22.md. Proceed sequentially to T5 at docs/work_orders/CVF_WO_T5_RUNTIME_MEMORY_WIRING_2026-05-22.md. Operator override for T5 new_memory_tiers_beyond_lane_h_scope is granted only for ephemeral in-memory task store; no durable persistence, file write, database, provider memory, or external store.",
   "phase2BRuntimeCoherenceClosure": "CLOSED_RUNTIME_COHERENCE_INTERNAL_PROOF at docs/reviews/CVF_PHASE_2B_RUNTIME_COHERENCE_COMPLETION_2026-05-21.md; Guard Contract graph schema phase2b-runtime-coherence-graph-1; adapter inventory checksum fnv1a32:5d3d2dac; harness PASS; liveProofProven=false",
   "phase2BLiveGovernanceProofClosure": "CLOSED_LIVE_GOVERNANCE_PROOF at docs/reviews/CVF_PHASE_2B_LIVE_GOVERNANCE_PROOF_COMPLETION_2026-05-21.md; mandatory release gate PASS; focused live receipt probe PASS; provider alibaba; model qwen-turbo; decision ALLOW; receipt rcpt-env-mpepcnmc-ier7bt; trace env-mpepcnmc-ier7bt; runtime coherence checksum fnv1a32:5d3d2dac",
   "postPhase2BPublicizationRoadmap": "CLOSED_PUBLICIZATION_READINESS_BOUNDED at docs/reviews/CVF_POST_PHASE_2B_PUBLICIZATION_READINESS_COMPLETION_2026-05-21.md; five PBR lanes closed: PBR-01 narrow provider repeatability PASS 4/4 across Alibaba qwen-turbo and DeepSeek deepseek-chat, PBR-02 readiness assessment filed, PBR-03 public-sync/public catalog pushed at public commit a0ac66de, PBR-04 persistence/database deferred as no current blocker, PBR-05 Maika proof demand-gated and deferred; D-06/D-07 remain deferred/rejected.",
@@ -123,5 +123,6 @@
   "reviewCvfPainPointClosureGapAudit": "AUDIT_FILED at docs/audits/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_GAP_AUDIT_2026-05-22.md; amended 2026-05-22 for Codex blocking review Finding 5 (verification timeline made explicit: verified before filing at HEAD 754f1248, committed at 5279db51). Substantive findings unchanged. Audit documents that all 8 pain points (A-H) marked CLOSED via 2026-05-20 closure reviews collectively miss original Review CVF.md deliverables; 3 closure patterns (rejection/redefinition/contract-only) and 6 systemic causes identified.",
   "reviewCvfPainPointDeliveryGapT1": "CLOSED_T1_INTAKE_PIPELINE_AND_REFERENCE_PACK at docs/reviews/CVF_T1_CAPABILITY_INTAKE_PIPELINE_COMPLETION_2026-05-22.md; validator PASS for strategy_analysis reference pack; eight negative missing_artifact checks PASS; no runtime/provider/receipt/memory change.",
   "reviewCvfPainPointDeliveryGapT2": "CLOSED_T2_PRODUCT_SKILL_PACK_MVP at docs/reviews/CVF_T2_PRODUCT_SKILL_PACK_MVP_COMPLETION_2026-05-22.md; seven packs validate PASS 8/8; registry contains seven certified entries with outcomeKey; no UI/runtime/provider/receipt/memory change.",
-  "t3WorkflowCompositionOutcomeSurface": "CLOSED_T3_WORKFLOW_COMPOSITION_OUTCOME_SURFACE at docs/reviews/CVF_T3_WORKFLOW_COMPOSITION_OUTCOME_SURFACE_COMPLETION_2026-05-22.md; override new_receipt_envelopes GRANTED only for optional workflowComposition field; receipt field count 18->19; targeted tests PASS 6/6; check PASS; full-suite live retrieval transient passed on isolated rerun."
+  "t3WorkflowCompositionOutcomeSurface": "CLOSED_T3_WORKFLOW_COMPOSITION_OUTCOME_SURFACE at docs/reviews/CVF_T3_WORKFLOW_COMPOSITION_OUTCOME_SURFACE_COMPLETION_2026-05-22.md; override new_receipt_envelopes GRANTED only for optional workflowComposition field; receipt field count 18->19; targeted tests PASS 6/6; check PASS; full-suite live retrieval transient passed on isolated rerun.",
+  "t4ProviderMethodCoverage": "CLOSED_T4_PROVIDER_METHOD_COVERAGE at docs/reviews/CVF_T4_PROVIDER_METHOD_COVERAGE_COMPLETION_2026-05-22.md; override new_provider_execution_semantics GRANTED only for Alibaba qwen-turbo stream(), DeepSeek deepseek-chat json_mode(), and negative gate; Model Gateway tests PASS 73/73; check PASS."
 }

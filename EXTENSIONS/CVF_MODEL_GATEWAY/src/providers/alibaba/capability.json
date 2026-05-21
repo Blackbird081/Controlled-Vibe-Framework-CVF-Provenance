@@ -1,0 +1,10 @@
+{
+  "providerId": "alibaba",
+  "models": [
+    {
+      "modelId": "qwen-turbo",
+      "supportedMethods": ["chat", "stream"],
+      "defaultMethod": "chat"
+    }
+  ]
+}
