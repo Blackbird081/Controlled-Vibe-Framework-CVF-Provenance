@@ -112,6 +112,13 @@ Still deferred:
 
 ---
 
+## Public Catalog Disposition
+
+N/A. This tranche adds no new proven product capability and makes no
+public-facing maturity claim. No public-sync update was performed.
+
+---
+
 ## Claim Boundary
 
 This completion proves only that the matured-kernel criteria reference was

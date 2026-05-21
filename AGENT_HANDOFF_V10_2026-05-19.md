@@ -113,6 +113,9 @@ Current HEAD after post-publicization provider stability hardening (GC-020):
 Current HEAD after provider hardening handoff sync (GC-020):
 `d939db979db317812f81573954a67ba4c9c240ac` (docs(session): sync provider hardening handoff)
 
+Current HEAD after matured-kernel criteria filing (GC-020):
+`4cb4e763220f028a51af2d6b3419fa3be8d58b16` (docs(kernel): file matured kernel criteria)
+
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
 ## Purpose
