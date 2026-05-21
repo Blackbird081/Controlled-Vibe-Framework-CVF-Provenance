@@ -50,7 +50,7 @@ Current HEAD after Codex review of pain-point delivery-gap roadmap:
 
 Current HEAD after V2 roadmap + T1 work order dispatch:
 
-`<pending commit>` (docs(roadmap-v2): supersede V1, dispatch T1 capability intake pipeline work order)
+`58514dcc` (docs(roadmap-v2): supersede V1, dispatch T1 capability intake pipeline work order)
 
 ---
 
