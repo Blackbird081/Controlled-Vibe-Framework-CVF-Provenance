@@ -126,7 +126,7 @@ Current HEAD after CDH-C/CDH-H closure and CDH-D adapter progress (GC-020):
 `6f74a0b4` (feat(cdh): close CDH-C and CDH-H; return CDH-D with adapter progress)
 
 Current HEAD after CDH-D route wiring work order dispatched (GC-020):
-`PENDING_COMMIT` — WO_CDH_D_VISION_ROUTE_WIRING_2026-05-21.md READY_FOR_IMPLEMENTATION; queue priority 28.
+`6ce35379` (docs(cdh-d): dispatch vision route wiring work order for Codex)
 
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
