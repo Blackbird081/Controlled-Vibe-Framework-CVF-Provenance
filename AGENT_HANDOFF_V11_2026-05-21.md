@@ -163,6 +163,18 @@ T1 → T2 → T3 → T4 → T5 sequentially. T3/T4/T5 each have a mandatory
 Operator Checkpoint for blocked-work override confirmation before GC-018
 is filed. Operator will review results after all five tranches close.
 
+
+### 2026-05-22 - T1 Capability Intake Pipeline Closed
+
+T1 closed as `CLOSED_T1_INTAKE_PIPELINE_AND_REFERENCE_PACK`.
+
+Completion: `docs/reviews/CVF_T1_CAPABILITY_INTAKE_PIPELINE_COMPLETION_2026-05-22.md`
+Baseline: `docs/baselines/CVF_GC018_T1_CAPABILITY_INTAKE_PIPELINE_2026-05-22.md`
+
+Delivered the capability intake guard, eight skill-pack JSON Schemas, deterministic validator, and reference `strategy_analysis` certified pack. Validator PASS for the reference pack; eight negative deletion checks returned named `missing_artifact:<artifact>` reasons. Boundary remains static certification only: no runtime/provider/receipt/memory/public-sync change.
+
+Next allowed move: T2 product skill pack MVP.
+
 ---
 
 ## Next Allowed Move

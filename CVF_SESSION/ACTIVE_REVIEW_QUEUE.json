@@ -415,26 +415,28 @@
       "id": "review-cvf-pain-point-delivery-gap-roadmap-v2",
       "artifactType": "roadmap",
       "path": "docs/roadmaps/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_V2_2026-05-22.md",
-      "status": "ACTIVE_ROADMAP_AUTHORIZED_FOR_T1_DISPATCH",
+      "status": "ACTIVE_ROADMAP_T1_CLOSED_T2_READY",
       "requestedReviewer": "Codex",
       "supersedes": "docs/roadmaps/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_2026-05-22.md",
       "predecessorReview": "docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_CODEX_REVIEW_2026-05-22.md",
       "priority": 33,
       "source": "operator authorization 2026-05-22",
-      "notes": "V2 active roadmap of record. Operator authorized 2026-05-22 after Codex blocking review on V1. Resolves all six findings: T1 expanded to eight artifacts (workflow.spec + failure.recovery added); T2 expanded to seven packs (contract_review + landing_page_builder added) so T3 six outcomes are fully pack-backed; T3/T4/T5 explicitly declare blocked-work overrides required (receipt/provider/memory); T5 narrowed to ephemeral in-memory only; withdrawal rule replaced with concrete condition. T1 dispatched via docs/work_orders/CVF_WO_T1_CAPABILITY_INTAKE_PIPELINE_2026-05-22.md. T2-T5 pending separate operator authorization with overrides where required."
+      "notes": "V2 active roadmap of record. T1 closed at docs/reviews/CVF_T1_CAPABILITY_INTAKE_PIPELINE_COMPLETION_2026-05-22.md. T2 remains ready with precondition satisfied. T3/T4/T5 blocked-work overrides remain required at GC-018 filing stage and are bounded to their work-order scopes."
     },
     {
       "id": "t1-capability-intake-pipeline",
       "artifactType": "work_order",
       "path": "docs/work_orders/CVF_WO_T1_CAPABILITY_INTAKE_PIPELINE_2026-05-22.md",
       "roadmapPath": "docs/roadmaps/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_V2_2026-05-22.md",
-      "status": "READY_FOR_IMPLEMENTATION",
+      "status": "CLOSED_T1_INTAKE_PIPELINE_AND_REFERENCE_PACK",
       "requestedReviewer": "Codex",
       "expectedCompletionPath": "docs/reviews/CVF_T1_CAPABILITY_INTAKE_PIPELINE_COMPLETION_2026-05-22.md",
       "expectedBaselinePath": "docs/baselines/CVF_GC018_T1_CAPABILITY_INTAKE_PIPELINE_2026-05-22.md",
       "priority": 34,
       "source": "operator authorization 2026-05-22",
-      "notes": "T1 first tranche of V2 roadmap. Contract + validator + reference pack only, no runtime change, no receipt envelope change, no live provider call. Deliverables: governance/toolkit/05_OPERATION/CVF_CAPABILITY_INTAKE_PIPELINE_GUARD.md + 8 JSON schemas under governance/schemas/skill-pack/ + scripts/validate_skill_pack_certification.py + one reference pack at EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS/_certified/strategy_analysis/. Codex executes Orchestrator -> Reviewer -> Implementer -> Auditor in one session. No blocked-work override required for T1."
+      "notes": "T1 closed 2026-05-22. Delivered capability intake guard, eight skill-pack schemas, deterministic validator, and reference certified strategy_analysis pack. Validator PASS for reference pack; eight negative deletion checks returned named missing_artifact reasons. Boundary: static certification only; no runtime/provider/receipt/memory/public-sync change.",
+      "completionPath": "docs/reviews/CVF_T1_CAPABILITY_INTAKE_PIPELINE_COMPLETION_2026-05-22.md",
+      "baselinePath": "docs/baselines/CVF_GC018_T1_CAPABILITY_INTAKE_PIPELINE_2026-05-22.md"
     },
     {
       "id": "t2-product-skill-pack-mvp",
@@ -460,7 +462,7 @@
       "expectedBaselinePath": "docs/baselines/CVF_GC018_T3_WORKFLOW_COMPOSITION_OUTCOME_SURFACE_2026-05-22.md",
       "priority": 36,
       "source": "operator authorization 2026-05-22",
-      "notes": "T3 third tranche of V2 roadmap. Pre-condition: T2 closed. Blocked-work override required: new_receipt_envelopes (for optional workflowComposition field on GovernanceEvidenceReceipt) — operator must confirm in GC-018 before implementation. If override NOT_GRANTED, T3 ships WorkflowComposition interface + OutcomeQuickActions expansion without the receipt field (split scope). Deliverables: workflow-composition lib, 6-entry outcome registry, expanded OutcomeQuickActions component."
+      "notes": "T3 third tranche of V2 roadmap. Pre-condition: T2 closed. Blocked-work override required: new_receipt_envelopes (for optional workflowComposition field on GovernanceEvidenceReceipt) \u2014 operator must confirm in GC-018 before implementation. If override NOT_GRANTED, T3 ships WorkflowComposition interface + OutcomeQuickActions expansion without the receipt field (split scope). Deliverables: workflow-composition lib, 6-entry outcome registry, expanded OutcomeQuickActions component."
     },
     {
       "id": "t4-provider-method-coverage",
@@ -473,7 +475,7 @@
       "expectedBaselinePath": "docs/baselines/CVF_GC018_T4_PROVIDER_METHOD_COVERAGE_2026-05-22.md",
       "priority": 37,
       "source": "operator authorization 2026-05-22",
-      "notes": "T4 fourth tranche of V2 roadmap. Pre-condition: T3 closed. Blocked-work override required: new_provider_execution_semantics (bounded to stream() on Alibaba qwen-turbo + json_mode() on DeepSeek deepseek-chat + negative gate) — operator must confirm in GC-018. Deliverables: ProviderMethodContract interface, capability.json per provider, stream adapter, json_mode adapter, UnsupportedMethodError gate. No cvf-web change, no new receipt field, no new provider."
+      "notes": "T4 fourth tranche of V2 roadmap. Pre-condition: T3 closed. Blocked-work override required: new_provider_execution_semantics (bounded to stream() on Alibaba qwen-turbo + json_mode() on DeepSeek deepseek-chat + negative gate) \u2014 operator must confirm in GC-018. Deliverables: ProviderMethodContract interface, capability.json per provider, stream adapter, json_mode adapter, UnsupportedMethodError gate. No cvf-web change, no new receipt field, no new provider."
     },
     {
       "id": "t5-runtime-memory-wiring",
@@ -486,8 +488,7 @@
       "expectedBaselinePath": "docs/baselines/CVF_GC018_T5_RUNTIME_MEMORY_WIRING_2026-05-22.md",
       "priority": 38,
       "source": "operator authorization 2026-05-22",
-      "notes": "T5 fifth and final tranche of V2 roadmap. Pre-condition: T4 closed. Blocked-work override required: new_memory_tiers_beyond_lane_h_scope (bounded to ephemeral in-memory task store only, no durable persistence) — operator must confirm in GC-018. Deliverables: CVF_MEMORY_TIER_RETENTION_POLICY.md, ephemeral task-memory store in CVF_LEARNING_PLANE_FOUNDATION, audit-memory-receipt.ts extended with taskMemoryDecision + taskMemoryReason. GovernanceEvidenceReceipt unchanged; canReinject=false preserved."
+      "notes": "T5 fifth and final tranche of V2 roadmap. Pre-condition: T4 closed. Blocked-work override required: new_memory_tiers_beyond_lane_h_scope (bounded to ephemeral in-memory task store only, no durable persistence) \u2014 operator must confirm in GC-018. Deliverables: CVF_MEMORY_TIER_RETENTION_POLICY.md, ephemeral task-memory store in CVF_LEARNING_PLANE_FOUNDATION, audit-memory-receipt.ts extended with taskMemoryDecision + taskMemoryReason. GovernanceEvidenceReceipt unchanged; canReinject=false preserved."
     }
   ]
 }
-

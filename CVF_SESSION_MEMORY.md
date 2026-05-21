@@ -4,7 +4,7 @@ Memory class: POINTER_RECORD
 
 Status: ACTIVE SESSION FRONT DOOR
 
-Last updated: 2026-05-21
+Last updated: 2026-05-22
 
 ## Purpose
 
@@ -73,7 +73,7 @@ current.
 
 ## Current Session Mode
 
-- Current mode: `review_cvf_pain_point_delivery_v2_active_t1_ready_for_dispatch`
+- Current mode: `review_cvf_pain_point_delivery_v2_t1_closed_t2_ready`
 - Previous mode: `terminal_hardening_closed`
 - Freeze posture: `governance_kernel_freeze_recommended`
 - Active handoff pointer: `AGENT_HANDOFF_V11_2026-05-21.md`
@@ -82,6 +82,10 @@ current.
   are in `CVF_SESSION/ACTIVE_SESSION_STATE.json`. Lanes execute in order
   B→C→H, each requiring its own GC-018. Broad absorption and new
   governance semantics remain blocked outside lane scopes.
+
+T1 of the Review-CVF pain-point delivery gap roadmap V2 is closed as
+`CLOSED_T1_INTAKE_PIPELINE_AND_REFERENCE_PACK`. Next allowed move is T2:
+`docs/work_orders/CVF_WO_T2_PRODUCT_SKILL_PACK_MVP_2026-05-22.md`.
 
 ## Required First Reads
 
