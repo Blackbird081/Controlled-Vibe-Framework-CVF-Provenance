@@ -116,6 +116,12 @@ Current HEAD after provider hardening handoff sync (GC-020):
 Current HEAD after matured-kernel criteria filing (GC-020):
 `4cb4e763220f028a51af2d6b3419fa3be8d58b16` (docs(kernel): file matured kernel criteria)
 
+Current HEAD after matured-kernel criteria handoff sync (GC-020):
+`3072f190` (docs(session): sync matured kernel criteria handoff)
+
+Current HEAD after CDH-C/H/D roadmaps and work orders dispatched (GC-020):
+`PENDING_COMMIT` — 3 roadmaps + 3 work orders for CDH-C CLI live proof, CDH-H audit-memory readout, CDH-D vision runtime; all READY_FOR_IMPLEMENTATION; queue entries added at priority 25/26/27; nextAllowedMove updated.
+
 Lane F implementation base: `879db70b300695c7a9d1eb5b0d5d2ee47609acc6`.
 
 ## Purpose

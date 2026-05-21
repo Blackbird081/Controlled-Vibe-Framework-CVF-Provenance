@@ -294,6 +294,45 @@
       "priority": 24,
       "source": "operator request 2026-05-21",
       "notes": "Closed 2026-05-21 as a criteria-only matured-kernel governance tranche. GC-018: docs/baselines/CVF_GC018_MATURED_KERNEL_CRITERIA_2026-05-21.md. Work order: docs/work_orders/CVF_WO_MATURED_KERNEL_CRITERIA_2026-05-21.md. Reference: docs/reference/CVF_MATURED_KERNEL_CRITERIA_2026-05-21.md. Boundary: defines review vocabulary and criteria only; freezePosture remains governance_kernel_freeze_recommended; all 12 HN2.b surfaces remain frozen_recommended; no one-surface release, owner replacement, HN2.b supersession, HN2.c rule change, mechanical guard, public maturity claim, or global freeze lift."
+    },
+    {
+      "id": "cdh-c-cli-live-proof",
+      "artifactType": "work_order",
+      "path": "docs/work_orders/CVF_WO_CDH_C_CLI_LIVE_PROOF_2026-05-21.md",
+      "roadmapPath": "docs/roadmaps/CVF_CDH_C_CLI_LIVE_PROOF_ROADMAP_2026-05-21.md",
+      "status": "READY_FOR_IMPLEMENTATION",
+      "requestedReviewer": "Codex",
+      "expectedCompletionPath": "docs/reviews/CVF_CDH_C_CLI_LIVE_PROOF_COMPLETION_2026-05-21.md",
+      "expectedBaselinePath": "docs/baselines/CVF_GC018_CDH_C_CLI_LIVE_PROOF_2026-05-21.md",
+      "priority": 25,
+      "source": "operator request 2026-05-21",
+      "notes": "CDH-C CLI live proof work order dispatched 2026-05-21. Operator checkpoint required: CVF web endpoint must be running and accessible before Codex proceeds to step C-02 (live invocation). Steps C-01 through C-07. GC-018 to be filed by Codex. Boundary: live proof and diagnostic hardening only for existing cvf execute CLI path; no new command, flag, provider semantics, SSE streaming, or public-sync update. Return-to-Orchestrator if endpoint unreachable or live invocation returns non-200."
+    },
+    {
+      "id": "cdh-h-audit-memory-readout",
+      "artifactType": "work_order",
+      "path": "docs/work_orders/CVF_WO_CDH_H_AUDIT_MEMORY_READOUT_2026-05-21.md",
+      "roadmapPath": "docs/roadmaps/CVF_CDH_H_AUDIT_MEMORY_READOUT_ROADMAP_2026-05-21.md",
+      "status": "READY_FOR_IMPLEMENTATION",
+      "requestedReviewer": "Codex",
+      "expectedCompletionPath": "docs/reviews/CVF_CDH_H_AUDIT_MEMORY_READOUT_COMPLETION_2026-05-21.md",
+      "expectedBaselinePath": "docs/baselines/CVF_GC018_CDH_H_AUDIT_MEMORY_READOUT_2026-05-21.md",
+      "priority": 26,
+      "source": "operator request 2026-05-21",
+      "notes": "CDH-H audit-memory readout hardening work order dispatched 2026-05-21. operator.checkpoint.waiver in effect: documentation and test-only changes, no live provider call, no route changes. Steps H-01 through H-08. GC-018 to be filed by Codex. Boundary: audit-memory policy readout observability and degraded-capture proof only; no reinjection, persistent/archive memory, new memory tiers, provider-side memory, or public-sync update. Return-to-Orchestrator if adding readout fields requires route.ts changes or canReinject default change."
+    },
+    {
+      "id": "cdh-d-vision-runtime",
+      "artifactType": "work_order",
+      "path": "docs/work_orders/CVF_WO_CDH_D_VISION_RUNTIME_2026-05-21.md",
+      "roadmapPath": "docs/roadmaps/CVF_CDH_D_VISION_RUNTIME_ROADMAP_2026-05-21.md",
+      "status": "READY_FOR_IMPLEMENTATION",
+      "requestedReviewer": "Codex",
+      "expectedCompletionPath": "docs/reviews/CVF_CDH_D_VISION_RUNTIME_COMPLETION_2026-05-21.md",
+      "expectedBaselinePath": "docs/baselines/CVF_GC018_CDH_D_VISION_RUNTIME_2026-05-21.md",
+      "priority": 27,
+      "source": "operator request 2026-05-21",
+      "notes": "CDH-D vision runtime work order dispatched 2026-05-21. Operator checkpoint required: operator must confirm vision-capable provider key (e.g., Alibaba qwen-vl-plus or equivalent) is available before Codex proceeds to step D-04 (live invocation). Steps D-01 through D-09. GC-018 to be filed by Codex. Boundary: vision runtime sub-surface only; no reasoning runtime, Maika photo description, child-data vision proof, modification of vision-contract.ts or reasoning-contract.ts, SSE streaming, or public-sync update. Return-to-Orchestrator if no vision-capable key available."
     }
   ]
 }
