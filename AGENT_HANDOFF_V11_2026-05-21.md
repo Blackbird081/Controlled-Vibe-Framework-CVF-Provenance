@@ -54,7 +54,7 @@ Current HEAD after V2 roadmap + T1 work order dispatch:
 
 Current HEAD after T2/T3/T4/T5 work order dispatch:
 
-`<pending commit>` (docs(roadmap-v2): dispatch T2/T3/T4/T5 work orders — all 5 tranches ready)
+`64fcefa7` (docs(roadmap-v2): dispatch T2/T3/T4/T5 work orders — all 5 tranches ready)
 
 ---
 
