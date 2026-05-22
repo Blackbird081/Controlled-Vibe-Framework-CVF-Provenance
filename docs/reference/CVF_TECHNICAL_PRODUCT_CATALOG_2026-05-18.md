@@ -7,9 +7,10 @@ Status: PHASE-B PUBLIC-CATALOG SOURCE BASELINE
 
 Provide a public-safe, technically accurate catalog of CVF. The baseline was
 first issued on 2026-05-18 and is current through the 2026-05-22 B/C product
-outcome runtime closure addendum. This file is a source draft for the public
-GitHub repository. It must remain aligned with live evidence, public claim
-boundaries, and the provenance/public repository split.
+outcome runtime closure addendum and A2 coherence equivalence audit. This file
+is a source draft for the public GitHub repository. It must remain aligned with
+live evidence, public claim boundaries, and the provenance/public repository
+split.
 
 Phase B claim boundary:
 
@@ -49,6 +50,7 @@ Source inputs:
 - 2026-05-18 four-scope legacy absorption matrix;
 - 2026-05-19 Lane B workflow packaging baseline;
 - 2026-05-22 B/C product outcome runtime and CLI distribution closure;
+- 2026-05-22 A2 coherence equivalence audit closure;
 - active mandatory live governance proof rule;
 - public/provenance repository split policy.
 
@@ -61,6 +63,7 @@ Source inputs:
 - `docs/baselines/CVF_GC018_LANE_B_WORKFLOW_PACKAGING_2026-05-19.md`
 - `docs/baselines/CVF_GC018_BC_PRODUCT_OUTCOME_RUNTIME_AND_CLI_DISTRIBUTION_2026-05-22.md`
 - `docs/reviews/CVF_BC_PRODUCT_OUTCOME_RUNTIME_AND_CLI_DISTRIBUTION_COMPLETION_2026-05-22.md`
+- `docs/reviews/CVF_A2_COHERENCE_EQUIVALENCE_AUDIT_COMPLETION_2026-05-22.md`
 
 ## Decision / Baseline / Proposed Tranche
 
@@ -106,6 +109,7 @@ INTAKE -> DESIGN -> BUILD -> REVIEW -> FREEZE
 | Capability | Current status | What is verifiable |
 |---|---|---|
 | Governance control plane | proven and active | `ARCHITECTURE.md`; `governance/toolkit/05_OPERATION/CVF_AUDIT_PROTOCOL.md` |
+| Governance kernel coherence | audit-equivalent for current private baseline | `docs/reference/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`; `governance/toolkit/05_OPERATION/CVF_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE.md`; `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md`; `docs/reviews/CVF_A2_COHERENCE_EQUIVALENCE_AUDIT_COMPLETION_2026-05-22.md` |
 | Governance CLI execution gateway | implemented as canonical CLI runtime gateway | `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/bin/cvf.ts`; `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/command.registry.ts`; `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/execute.client.ts`; package binary exposes `cvf` and `cvf-guard`; calls existing `/api/execute`, not a replacement provider/runtime |
 | Live governance proof | proven and mandatory for release claims | `scripts/run_cvf_release_gate_bundle.py`; `docs/CVF_INCREMENTAL_TEST_LOG.md` |
 | Non-coder governed path | proven on bounded provider lanes | `docs/reference/archive/CVF_PUBLIC_NONCODER_VALUE_STATEMENT_2026-04-17.md`; `docs/assessments/CVF_W119_T1_NONCODER_ADOPTION_EVIDENCE_PACK_2026-04-23.md` |
@@ -145,6 +149,32 @@ items should be filed as usage-driven hardening or a new GC-018 tranche. Do not
 reopen B/C merely because additional polish is possible. Reopen B/C only if a
 new review proves the core pack/workflow/outcome-runtime contract above is
 absent or materially nonfunctional.
+
+## A2 Coherence Equivalence Note For Agents
+
+The original Review-CVF Problem A requested a kernel freeze and named possible
+new artifacts such as kernel law, runtime authority model, execution state
+model, and core ontology documents.
+
+As of the 2026-05-22 A2 audit closure, CVF treats those requested artifacts as
+covered by existing owner surfaces for the current private baseline:
+
+- authority hierarchy is covered by the governance-kernel owner map, the
+  orchestrator contract, and the freeze-release rule;
+- execution lifecycle is covered by the owner map, runtime workflow contract,
+  and execute-route sequence guard;
+- governance ownership is covered by the control matrix, owner map, and active
+  session state;
+- policy scope is covered by the policy-decision contract, control matrix, and
+  freeze-release rule;
+- runtime semantics are bounded by the control matrix, session bootstrap,
+  local hook chain, and mandatory live release-gate proof rule.
+
+Do not create `CVF_KERNEL_LAW.md`, `CVF_RUNTIME_AUTHORITY_MODEL.md`,
+`CVF_EXECUTION_STATE_MODEL.md`, or `CVF_CORE_ONTOLOGY.md` merely to mirror the
+legacy request. A2 recommends no new kernel-law docs unless a future review
+proves a concrete missing owner surface. The governance-kernel freeze remains
+in force; A2 is not a freeze release.
 
 ## What Users Can Expect
 

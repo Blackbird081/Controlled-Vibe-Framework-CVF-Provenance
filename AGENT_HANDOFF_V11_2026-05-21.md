@@ -92,6 +92,10 @@ Current HEAD before F2 noncoder outcome UX hardening closure:
 
 `47807c55` (docs(session): sync H2 closure status)
 
+Current HEAD before A2 coherence equivalence audit closure:
+
+`c957141d` (feat(web): close F2 noncoder outcome UX)
+
 ---
 
 ## Purpose
@@ -509,13 +513,44 @@ hosted readiness, Maika proof, or freeze release.
 Next remaining roadmap item is A2 coherence equivalence audit only if
 requested or triggered.
 
+### 2026-05-22 - A2 Coherence Equivalence Audit Closed
+
+A2 from the post-B/C Review-CVF remaining pain-point roadmap is closed as
+`CLOSED_A2_COHERENCE_EQUIVALENCE_AUDIT`.
+
+Completion:
+
+`docs/reviews/CVF_A2_COHERENCE_EQUIVALENCE_AUDIT_COMPLETION_2026-05-22.md`
+
+Governance docs:
+
+`docs/baselines/CVF_GC018_A2_COHERENCE_EQUIVALENCE_AUDIT_2026-05-22.md`
+
+`docs/work_orders/CVF_WO_A2_COHERENCE_EQUIVALENCE_AUDIT_2026-05-22.md`
+
+Catalog source update:
+
+`docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`
+
+Delivered the five-point Problem A equivalence audit for authority hierarchy,
+execution lifecycle, governance ownership, policy scope, and runtime
+semantics. Existing owner-map, guard-chain, control-matrix, and bootstrap
+surfaces are equivalent for the current private baseline.
+
+Recommendation: no new `CVF_KERNEL_LAW.md`,
+`CVF_RUNTIME_AUTHORITY_MODEL.md`, `CVF_EXECUTION_STATE_MODEL.md`, or
+`CVF_CORE_ONTOLOGY.md` now. The governance-kernel freeze remains in force.
+
+Boundary: audit-only. No new governance semantics, runtime behavior, provider
+behavior, route change, receipt-envelope field, memory tier, public-sync,
+hosted readiness, Maika proof, or freeze release.
+
 ---
 
 ## Next Allowed Move
 
-Default next move: stop. G1, D2, E2, H2, and F2 are closed. The only remaining
-post-B/C Review-CVF roadmap item is A2 coherence equivalence audit, and it
-should run only if requested or triggered.
+Default next move: stop. G1, D2, E2, H2, F2, and A2 are closed for the current
+private baseline.
 
 Do not widen into public npm release, provider tuning,
 persistence/database beyond T5 ephemeral scope, Maika proof, public-sync,
