@@ -181,7 +181,17 @@ export function buildDryRunOutput(payload: ExecuteRequestPayload, headers: Recor
   const safeHeaders = { ...headers };
   delete safeHeaders["x-cvf-service-token"];
   delete safeHeaders["x-cvf-service-signature"];
-  return { dryRun: true, templateId: payload.templateId, requestedRole: payload.requestedRole, endpoint: "[not sent]", payloadShape: Object.keys(payload), headerKeys: Object.keys(safeHeaders) };
+  return {
+    dryRun: true,
+    templateId: payload.templateId,
+    requestedRole: payload.requestedRole,
+    endpoint: "[not sent]",
+    payloadShape: Object.keys(payload),
+    productOutcomeRuntime: isRecord(payload.inputs.cvfProductOutcomeRuntime)
+      ? payload.inputs.cvfProductOutcomeRuntime
+      : undefined,
+    headerKeys: Object.keys(safeHeaders),
+  };
 }
 
 export function appendExecuteReceipt(receipt: Record<string, unknown>, receiptPath: string): void {

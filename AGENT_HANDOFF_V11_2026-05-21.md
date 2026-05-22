@@ -262,15 +262,42 @@ claim.
 Next allowed move: stop unless the operator opens a fresh tranche. Npm/global
 CLI distribution would require a separate package/distribution GC-018.
 
+
+### 2026-05-22 - B/C Product Outcome Runtime and CLI Distribution Closed
+
+B/C clean-closure tranche closed as
+`CLOSED_BC_PRODUCT_OUTCOME_RUNTIME_AND_CLI_DISTRIBUTION`.
+
+Completion:
+`docs/reviews/CVF_BC_PRODUCT_OUTCOME_RUNTIME_AND_CLI_DISTRIBUTION_COMPLETION_2026-05-22.md`
+Baseline:
+`docs/baselines/CVF_GC018_BC_PRODUCT_OUTCOME_RUNTIME_AND_CLI_DISTRIBUTION_2026-05-22.md`
+Work order:
+`docs/work_orders/CVF_WO_BC_PRODUCT_OUTCOME_RUNTIME_AND_CLI_DISTRIBUTION_2026-05-22.md`
+
+Delivered product-outcome runtime plans for all seven certified packs, `cvf
+skill list --certified`, `cvf skill plan <pack-or-outcome>`, `cvf run
+<certified-pack>` resolution to existing execute templates, package `bin`
+entries for `cvf` and `cvf-guard`, JSON output at the binary boundary, build
+script, and bin smoke proof. Targeted B/C tests PASS `16/16`; full Governance
+CLI tests PASS `110/110`; TypeScript check PASS; bin smoke PASS; release gate
+bundle PASS including live governance E2E after ignored clean-room runtime
+residue cleanup. Boundary: no route change, provider adapter,
+receipt-envelope mutation, durable state, public-sync, public npm release,
+hosted readiness, Maika proof, or freeze release.
+
+Next allowed move: stop unless the operator opens a fresh tranche. Treat Review
+CVF Problem B and Problem C as closed for the original pain-point definition.
+
 ---
 
 ## Next Allowed Move
 
-Default next move: stop unless the operator opens a fresh tranche. The
-canonical CLI runtime gateway package-level tranche is closed. Any next
-implementation requires a fresh operator-selected tranche and GC-018.
+Default next move: stop unless the operator opens a fresh tranche. The B/C
+product-outcome runtime and package-level CLI distribution tranche is closed.
+Any next implementation requires a fresh operator-selected tranche and GC-018.
 
-Do not widen into npm/global CLI distribution, provider tuning,
+Do not widen into public npm release, provider tuning,
 persistence/database beyond T5 ephemeral scope, Maika proof, public-sync,
 or freeze release.
 

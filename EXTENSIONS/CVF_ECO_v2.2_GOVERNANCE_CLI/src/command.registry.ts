@@ -14,6 +14,13 @@ import {
   parseAuditJsonl,
   type GovernanceReliabilityReport,
 } from "./governance-reliability-metrics";
+import {
+  CERTIFIED_SKILL_PACK_REGISTRY_PATH,
+  assertProductOutcomeRuntimePlanFiles,
+  listProductOutcomeRuntimePlans,
+  resolveProductOutcomeRuntimePlan,
+  type ProductOutcomeRuntimePlan,
+} from "./product-outcome.runtime";
 
 export class CommandRegistry {
   private handlers: Map<CLICommand, CLICommandHandler> = new Map();
@@ -142,7 +149,7 @@ export class CommandRegistry {
     this.register({
       name: "skill",
       description: "Read-only skill registry inspection",
-      usage: "cvf skill <list|show> [id] [--input <skills-index.json>]",
+      usage: "cvf skill <list|show|plan> [id] [--input <skills-index.json>] [--registry <certified-registry.json>] [--certified] [--json]",
       execute: (args) => this.skillCommand(args),
     });
 
@@ -321,11 +328,15 @@ export class CommandRegistry {
 
   private runAliasArgs(args: CLIArgs): CLIArgs {
     const templateFromPositional = args.positional[0];
+    const runtimePlan = templateFromPositional
+      ? resolveProductOutcomeRuntimePlan(templateFromPositional)
+      : undefined;
     return {
       command: "execute",
       flags: {
         ...args.flags,
-        ...(templateFromPositional && !args.flags.template ? { template: templateFromPositional } : {}),
+        ...(runtimePlan && !args.flags.template ? this.runtimePlanExecuteFlags(runtimePlan, args.flags.input) : {}),
+        ...(templateFromPositional && !runtimePlan && !args.flags.template ? { template: templateFromPositional } : {}),
       },
       positional: [],
     };
@@ -333,6 +344,48 @@ export class CommandRegistry {
 
   private skillCommand(args: CLIArgs): CLIOutput {
     const subCommand = args.positional[0] ?? "list";
+    const registryPath = stringFlag(args, "registry") || CERTIFIED_SKILL_PACK_REGISTRY_PATH;
+
+    if (subCommand === "plan") {
+      const id = args.positional[1];
+      if (!id) return { success: false, message: "Missing required skill pack id or outcome key.", exitCode: 1 };
+      const plan = resolveProductOutcomeRuntimePlan(id, registryPath);
+      if (!plan) return { success: false, message: `Product outcome runtime plan not found: ${id}`, exitCode: 1 };
+      try {
+        assertProductOutcomeRuntimePlanFiles(plan);
+      } catch (error) {
+        return { success: false, message: error instanceof Error ? error.message : "Invalid product outcome runtime plan.", exitCode: 1 };
+      }
+      return {
+        success: true,
+        message: args.flags.json === true
+          ? JSON.stringify(plan, null, 2)
+          : [
+            `${plan.skillPackId} -> ${plan.templateId}`,
+            `outcome=${plan.outcomeKey}`,
+            `command=${plan.command}`,
+            `receiptSchema=${plan.receiptSchemaPath}`,
+            `failureRecovery=${plan.failureRecoveryPath}`,
+          ].join("\n"),
+        data: plan,
+        exitCode: 0,
+      };
+    }
+
+    if (subCommand === "list" && args.flags.certified === true) {
+      const plans = listProductOutcomeRuntimePlans(registryPath);
+      return {
+        success: true,
+        message: args.flags.json === true
+          ? JSON.stringify({ plans }, null, 2)
+          : ["id outcome template riskLevel status", ...plans.map((plan) => {
+            return `${plan.skillPackId} ${plan.outcomeKey} ${plan.templateId} ${plan.riskLevel} ${plan.status}`;
+          })].join("\n"),
+        data: { plans },
+        exitCode: 0,
+      };
+    }
+
     const skills = this.loadSkillRecords(stringFlag(args, "input") || DEFAULT_SKILL_INDEX_PATH);
     if ("error" in skills) return skills.error;
 
@@ -360,7 +413,19 @@ export class CommandRegistry {
       };
     }
 
-    return { success: false, message: "Unknown skill sub-command. Usage: cvf skill <list|show> [id]", exitCode: 1 };
+    return { success: false, message: "Unknown skill sub-command. Usage: cvf skill <list|show|plan> [id]", exitCode: 1 };
+  }
+
+  private runtimePlanExecuteFlags(
+    plan: ProductOutcomeRuntimePlan,
+    rawInput: string | boolean | undefined,
+  ): Record<string, string> {
+    return {
+      template: plan.templateId,
+      templateName: plan.name,
+      intent: `Execute certified product outcome ${plan.outcomeKey} via ${plan.skillPackId}.`,
+      input: mergeRuntimePlanInput(rawInput, plan),
+    };
   }
 
   private receiptCommand(args: CLIArgs): CLIOutput {
@@ -582,4 +647,34 @@ function formatMetricRate(rate: number | null, fractionDigits: number): string {
 function stringFlag(args: CLIArgs, name: string): string | undefined {
   const value = args.flags[name];
   return typeof value === "string" && value.trim() ? value.trim() : undefined;
+}
+
+function mergeRuntimePlanInput(
+  rawInput: string | boolean | undefined,
+  plan: ProductOutcomeRuntimePlan,
+): string {
+  const base = parseInputObject(rawInput);
+  return JSON.stringify({
+    ...base,
+    cvfProductOutcomeRuntime: {
+      planVersion: plan.planVersion,
+      skillPackId: plan.skillPackId,
+      outcomeKey: plan.outcomeKey,
+      templateId: plan.templateId,
+      receiptSchemaPath: plan.receiptSchemaPath,
+      failureRecoveryPath: plan.failureRecoveryPath,
+    },
+  });
+}
+
+function parseInputObject(rawInput: string | boolean | undefined): Record<string, unknown> {
+  if (!rawInput || rawInput === true) return {};
+  try {
+    const parsed = JSON.parse(rawInput);
+    return parsed && typeof parsed === "object" && !Array.isArray(parsed)
+      ? parsed as Record<string, unknown>
+      : {};
+  } catch {
+    return {};
+  }
 }

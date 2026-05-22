@@ -73,7 +73,7 @@ current.
 
 ## Current Session Mode
 
-- Current mode: `canonical_cli_runtime_gateway_closed`
+- Current mode: `bc_product_outcome_runtime_cli_distribution_closed`
 - Previous mode: `terminal_hardening_closed`
 - Freeze posture: `governance_kernel_freeze_recommended`
 - Active handoff pointer: `AGENT_HANDOFF_V11_2026-05-21.md`
@@ -83,7 +83,7 @@ current.
   B→C→H, each requiring its own GC-018. Broad absorption and new
   governance semantics remain blocked outside lane scopes.
 
-T1, T2, T3, T4, and T5 of the Review-CVF pain-point delivery gap roadmap V2 are closed. The follow-on canonical CLI runtime gateway tranche is also closed at `docs/reviews/CVF_CANONICAL_CLI_RUNTIME_GATEWAY_COMPLETION_2026-05-22.md`. Next allowed move is stop unless the operator opens a fresh governed tranche.
+T1, T2, T3, T4, and T5 of the Review-CVF pain-point delivery gap roadmap V2 are closed. The follow-on canonical CLI runtime gateway tranche is closed at `docs/reviews/CVF_CANONICAL_CLI_RUNTIME_GATEWAY_COMPLETION_2026-05-22.md`. The B/C clean-closure tranche is closed at `docs/reviews/CVF_BC_PRODUCT_OUTCOME_RUNTIME_AND_CLI_DISTRIBUTION_COMPLETION_2026-05-22.md`, with product-outcome runtime plans for all seven certified packs and package-level `cvf`/`cvf-guard` bin semantics. Release gate bundle PASS included live governance E2E after ignored clean-room runtime residue cleanup. Next allowed move is stop unless the operator opens a fresh governed tranche.
 
 ## Required First Reads
 

@@ -9,6 +9,17 @@ export {
   type CVFCanonicalRuntimeCommand,
   type CVFGatewayPrefix,
 } from "./canonical.gateway";
+export {
+  CERTIFIED_SKILL_PACK_REGISTRY_PATH,
+  assertProductOutcomeRuntimePlanFiles,
+  buildProductOutcomeRuntimePlan,
+  listProductOutcomeRuntimePlans,
+  loadCertifiedSkillPackRegistry,
+  resolveProductOutcomeRuntimePlan,
+  type CertifiedSkillPackEntry,
+  type CertifiedSkillPackRegistry,
+  type ProductOutcomeRuntimePlan,
+} from "./product-outcome.runtime";
 export type {
   BenchmarkGovernanceOptions,
   CLIArgs,

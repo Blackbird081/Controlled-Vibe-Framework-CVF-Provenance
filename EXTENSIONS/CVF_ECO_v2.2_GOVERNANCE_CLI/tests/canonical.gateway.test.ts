@@ -72,6 +72,30 @@ describe("CVFCanonicalGateway", () => {
     expect(payload.endpoint).toBe("[not sent]");
   });
 
+  it("resolves certified product outcomes before cvf run delegation", async () => {
+    const result = await new CVFCanonicalGateway().runAsync([
+      "cvf",
+      "run",
+      "product_brief",
+      "--role",
+      "BUILDER",
+      "--dry-run",
+    ]);
+
+    expect(result.success).toBe(true);
+    const payload = JSON.parse(result.message);
+    expect(payload).toMatchObject({
+      dryRun: true,
+      templateId: "app_builder_complete",
+      requestedRole: "BUILDER",
+      productOutcomeRuntime: {
+        skillPackId: "product_brief",
+        outcomeKey: "product_brief",
+        templateId: "app_builder_complete",
+      },
+    });
+  });
+
   it("runs canonical cvf audit against supplied JSONL input", () => {
     const tmpDir = mkdtempSync("cvf-canonical-audit-");
     const auditPath = join(tmpDir, "audit.jsonl");

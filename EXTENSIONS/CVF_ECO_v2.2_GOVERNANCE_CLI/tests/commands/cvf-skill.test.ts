@@ -40,6 +40,36 @@ describe("cvf skill", () => {
     }
   });
 
+  it("lists certified product outcome runtime plans", () => {
+    const result = new CommandRegistry().execute({
+      command: "skill",
+      positional: ["list"],
+      flags: { certified: true },
+    });
+
+    expect(result.success).toBe(true);
+    expect(result.message).toContain("product_brief");
+    expect(result.message).toContain("app_builder_complete");
+    expect(result.data).toMatchObject({ plans: expect.any(Array) });
+  });
+
+  it("shows a certified product outcome runtime plan as JSON", () => {
+    const result = new CommandRegistry().execute({
+      command: "skill",
+      positional: ["plan", "product_brief"],
+      flags: { json: true },
+    });
+
+    expect(result.success).toBe(true);
+    const plan = JSON.parse(result.message);
+    expect(plan).toMatchObject({
+      skillPackId: "product_brief",
+      templateId: "app_builder_complete",
+      routeOwner: "cvf-web /api/execute",
+    });
+    expect(plan.receiptSchemaPath).toContain("receipt.schema.json");
+  });
+
   it("returns a clear error for a missing skill", () => {
     const input = skillIndexPath();
     try {

@@ -2208,3 +2208,40 @@ Utility and guard:
     HTTP I/O.
   - No route, provider adapter, receipt envelope, durable state, public-sync, or
     hosted-readiness claim is made.
+
+---
+## [2026-05-22] Batch: B/C Product Outcome Runtime and CLI Distribution
+
+- Change reference: provenance working tree; GC-018 baseline
+  `docs/baselines/CVF_GC018_BC_PRODUCT_OUTCOME_RUNTIME_AND_CLI_DISTRIBUTION_2026-05-22.md`
+- Impacted scope:
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/product-outcome.runtime.ts`
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/bin/cvf.ts`
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/command.registry.ts`
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/arg.parser.ts`
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/execute.client.ts`
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/package.json`
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/tsconfig.json`
+- Tests executed:
+  - `npm run test -- tests/product-outcome.runtime.test.ts tests/cli-distribution.test.ts tests/canonical.gateway.test.ts tests/commands/cvf-skill.test.ts`
+    in `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI` -> PASS, 4 files / 16 tests
+  - `npm run check` in `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI` -> PASS
+  - `npm test` in `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI` -> PASS, 13 files / 110 tests
+  - `npm run smoke:bin` in `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI` -> PASS,
+    build completed and `node dist/src/bin/cvf.js help --json` returned
+    `success=true`, `exitCode=0`
+  - `python scripts/run_cvf_release_gate_bundle.py --json` -> PASS, gate result
+    PASS with Web build, guard-contract TypeScript, provider readiness, secrets
+    scan, docs governance, UI mock E2E, and live governance E2E all PASS
+- Notes/Risks:
+  - All seven certified packs now have product-outcome runtime plans.
+  - `cvf skill plan` exposes the executable pack binding.
+  - `cvf run <certified-pack>` resolves to an existing execute template before
+    delegating to the existing execute client.
+  - `dist` build output was removed after smoke proof and is not committed.
+  - No route, provider adapter, receipt envelope, durable state, public-sync, or
+    hosted-readiness claim is made.
+  - Initial release-gate attempt failed only because secrets scan detected
+    ignored `.cvf/runtime/terminal-hardening/clean-room-public-*` residue from
+    a prior clean-room proof; the untracked generated residue was removed and
+    the full bundle reran PASS.

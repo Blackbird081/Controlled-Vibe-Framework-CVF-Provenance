@@ -511,6 +511,20 @@
       "priority": 39,
       "source": "operator request 2026-05-22",
       "notes": "Closed 2026-05-22 as a bounded package-level canonical CLI gateway tranche. Delivered CVFCanonicalGateway, canonical cvf command surface for run/audit/execute/skill/receipt/trace/provider, legacy cvf-guard prefix compatibility, package main export, and audit JSONL count/filter support. Tests PASS: targeted canonical gateway 6/6, full Governance CLI 104/104, TypeScript check PASS. Boundary: no route/provider adapter/receipt-envelope/durable state/public-sync/live-provider/hosted-readiness change."
+    },
+    {
+      "id": "bc-product-outcome-runtime-cli-distribution",
+      "artifactType": "work_order",
+      "path": "docs/work_orders/CVF_WO_BC_PRODUCT_OUTCOME_RUNTIME_AND_CLI_DISTRIBUTION_2026-05-22.md",
+      "status": "CLOSED_BC_PRODUCT_OUTCOME_RUNTIME_AND_CLI_DISTRIBUTION",
+      "requestedReviewer": "Codex",
+      "expectedCompletionPath": "docs/reviews/CVF_BC_PRODUCT_OUTCOME_RUNTIME_AND_CLI_DISTRIBUTION_COMPLETION_2026-05-22.md",
+      "expectedBaselinePath": "docs/baselines/CVF_GC018_BC_PRODUCT_OUTCOME_RUNTIME_AND_CLI_DISTRIBUTION_2026-05-22.md",
+      "completionPath": "docs/reviews/CVF_BC_PRODUCT_OUTCOME_RUNTIME_AND_CLI_DISTRIBUTION_COMPLETION_2026-05-22.md",
+      "baselinePath": "docs/baselines/CVF_GC018_BC_PRODUCT_OUTCOME_RUNTIME_AND_CLI_DISTRIBUTION_2026-05-22.md",
+      "priority": 40,
+      "source": "operator request 2026-05-22",
+      "notes": "Closed 2026-05-22 as bounded clean closure for Review CVF Problem B and Problem C. Delivered product-outcome runtime plans for all seven certified packs, cvf skill list --certified, cvf skill plan, cvf run certified-pack resolution, package bin entries for cvf/cvf-guard, JSON output at binary boundary, build and bin smoke proof. Tests PASS: targeted B/C 16/16, full Governance CLI 110/110, TypeScript check PASS, bin smoke PASS, release gate bundle PASS including live governance E2E after ignored clean-room runtime residue removal. Boundary: no route/provider adapter/receipt-envelope/durable state/public-sync/hosted-readiness/public npm release change."
     }
   ]
 }
