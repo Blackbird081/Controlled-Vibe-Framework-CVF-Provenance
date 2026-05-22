@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: AUTHORIZED_P0_PUBLIC_RELEASE_GATE_EVIDENCE_REFRESH
+Status: P0_AND_P1_PUBLIC_READINESS_PROOF_CLOSED
 
 Date: 2026-05-22
 
@@ -22,7 +22,8 @@ In scope:
 - record the 2026-05-22 public-sync release gate PASS;
 - evaluate next-value candidates through GC-018 scoring;
 - authorize only the smallest immediate public evidence refresh;
-- recommend the next substantive tranche if the operator wants to continue.
+- recommend the next substantive tranche if the operator wants to continue;
+- record the operator-authorized P1 public developer onboarding proof closure.
 
 Out of scope:
 
@@ -43,6 +44,8 @@ Inputs:
 - `docs/roadmaps/CVF_REVIEW_CVF_POST_BC_REMAINING_PAIN_POINT_ROADMAP_2026-05-22.md`
 - `docs/roadmaps/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md`
 - public-sync commit `77d1d70b docs: record A2 public docs sync in changelog`
+- public-sync commit `a14c0f23 docs: refresh latest release gate evidence`
+- public-sync commit `30976e49 docs: prove public developer onboarding path`
 
 Fresh public-sync release-gate result:
 
@@ -72,15 +75,20 @@ repository.
 
 ## Decision / Baseline / Proposed Tranche
 
-Decision: continue only with P0, a docs-only public release-gate evidence
-refresh. Do not open a larger runtime/product tranche in the same move.
+Decision: P0 was completed as a docs-only public release-gate evidence refresh.
+After operator approval, P1 was completed as a public developer onboarding
+proof and documentation correction tranche. Do not open a larger
+runtime/product tranche in the same move.
 
 Baseline: Review-CVF G1/D2/E2/H2/F2/A2 is closed for the current private
 baseline. Public A2 coherence readout is already published. The fresh 2026-05-22
 release gate now creates a narrow evidence freshness gap in public
 `docs/evidence/latest-release-gate.md`.
 
-Proposed tranche: `P0_PUBLIC_RELEASE_GATE_EVIDENCE_REFRESH`.
+Closed tranches:
+
+- `P0_PUBLIC_RELEASE_GATE_EVIDENCE_REFRESH`
+- `P1_PUBLIC_DEV_ONBOARDING_PROOF`
 
 ## Requirements
 
@@ -99,7 +107,7 @@ P0 must:
 | Candidate | Class | Score | Decision | Rationale |
 |---|---:|---:|---|---|
 | P0 public release-gate evidence refresh | TRUTH_CLAIM | 10/10 | CONTINUE | Fresh live proof exists; public latest-gate pointer would otherwise be stale; update is docs-only and directly machine-checkable. |
-| P1 public developer onboarding proof | VALIDATION_TEST / REALIZATION | 8/10 | CONTINUE_AFTER_P0 | Highest next substantive value: proves a new developer can follow public front doors and reach a useful readiness state. Needs its own work order. |
+| P1 public developer onboarding proof | VALIDATION_TEST / REALIZATION | 8/10 | CLOSED_AFTER_OPERATOR_AUTHORIZATION | Highest next substantive value after P0. Operator approved continuation; public docs now point to existing commands and onboarding proof passed. |
 | P2 longer-horizon provider stability soak | VALIDATION_TEST | 7/10 | REVIEW_REQUIRED | Useful only if CVF wants stronger stability claims; cost/time is higher and current docs deliberately avoid broad stability claims. |
 | P3 hosted protected workflow proof | VALIDATION_TEST | 6/10 | REVIEW_REQUIRED | Valuable only with a concrete hosted target/token/workflow decision. Local proof is already strong. |
 | HN1 template-skill linkage hygiene | PACKAGING_ONLY | 7/10 | REVIEW_REQUIRED | Small catalog hygiene; lower value than public onboarding unless stale template-skill claims are actively blocking users. |
@@ -134,8 +142,17 @@ Candidate: `P0_PUBLIC_RELEASE_GATE_EVIDENCE_REFRESH`
 Next substantive recommendation after P0:
 
 - `P1_PUBLIC_DEV_ONBOARDING_PROOF`
-- Reopen trigger: operator requests a new implementation/validation tranche
-  after P0 evidence refresh.
+- Status: CLOSED after explicit operator authorization.
+- Public evidence: public-sync
+  `docs/evidence/public-developer-onboarding-proof-2026-05-22.md`.
+
+Next substantive recommendation after P1:
+
+- Default: STOP.
+- If continuing, use a fresh GC-018/work order for one of:
+  - `P2_LONGER_HORIZON_PROVIDER_STABILITY_SOAK`
+  - `P3_HOSTED_PROTECTED_WORKFLOW_PROOF`
+  - `HN1_TEMPLATE_SKILL_LINKAGE_HYGIENE`
 
 ## Evidence Trace Block
 
@@ -158,11 +175,68 @@ Verdict: EXISTS.
 
 Counter-evidence: none found in this run.
 
+## P1 Execution Addendum
+
+Operator authorization:
+
+```text
+User: "Đồng ý, làm đi"
+Interpreted tranche: P1_PUBLIC_DEV_ONBOARDING_PROOF
+```
+
+Public-sync changes:
+
+- fixed public onboarding docs that pointed to scripts absent from the current
+  public export;
+- added public evidence packet
+  `docs/evidence/public-developer-onboarding-proof-2026-05-22.md`;
+- updated public README, CHANGELOG, evidence index, 5-minute setup,
+  `docs/GET_STARTED.md`, new-machine checklist, `cvf-web` README, and the
+  technical catalog;
+- preserved workspace bootstrap as evidence/boundary material rather than a
+  runnable public command.
+
+Verification:
+
+```text
+npm ci
+PASS in EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web
+
+npm run check
+PASS in EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web
+
+python scripts/run_cvf_static_ci_gate.py --json
+PASS 7/7, non-live static gate
+```
+
+Static gate checks:
+
+- Public surface guard: PASS
+- Workflow orchestration guard: PASS
+- Web build: PASS
+- Web TypeScript check: PASS
+- Secrets scan: PASS
+- Docs governance compatibility: PASS
+- Static governance/unit tests: PASS, 44/44
+
+Residual:
+
+- `npm ci` completed but npm audit reported 4 moderate, 7 high, and 1 critical
+  dependency vulnerabilities. This tranche did not remediate dependency audit
+  posture.
+
+Public commit:
+
+```text
+30976e49 docs: prove public developer onboarding path
+```
+
 ## Claim Boundary
 
-This packet authorizes only a public evidence freshness update. It does not
-claim a hosted run, broad provider stability, provider parity, runtime maturity,
-or new governance behavior.
+This packet records P0 and P1 public-readiness proof closure. It does not claim
+a hosted run, broad provider stability, provider parity, runtime maturity, live
+provider behavior from the P1 static gate, dependency audit remediation, or new
+governance behavior.
 
 ## Related Artifacts
 
@@ -170,3 +244,4 @@ or new governance behavior.
 - `docs/baselines/CVF_GC018_A2_COHERENCE_EQUIVALENCE_AUDIT_2026-05-22.md`
 - `docs/roadmaps/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md`
 - public-sync `docs/evidence/latest-release-gate.md`
+- public-sync `docs/evidence/public-developer-onboarding-proof-2026-05-22.md`
