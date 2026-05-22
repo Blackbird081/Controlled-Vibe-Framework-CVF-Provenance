@@ -2267,3 +2267,30 @@ Utility and guard:
   - `GovernanceEvidenceReceipt` was not modified.
   - No new role taxonomy, auth/RBAC model, provider behavior, durable state,
     public-sync, hosted readiness, Maika proof, or freeze-release claim is made.
+
+---
+## [2026-05-22] Batch: D2 Provider Capability Matrix
+
+- Change reference: provenance working tree; GC-018 baseline
+  `docs/baselines/CVF_GC018_D2_PROVIDER_CAPABILITY_MATRIX_2026-05-22.md`
+- Impacted scope:
+  - `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-method-contract.ts`
+  - `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-registry.ts`
+  - `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-method-gate.ts`
+  - `EXTENSIONS/CVF_MODEL_GATEWAY/src/providers/alibaba/stream-adapter.ts`
+  - `EXTENSIONS/CVF_MODEL_GATEWAY/src/providers/deepseek/json-mode-adapter.ts`
+  - `EXTENSIONS/CVF_MODEL_GATEWAY/src/index.ts`
+  - focused Model Gateway tests
+- Tests executed:
+  - `npm test -- tests/provider-capability-registry.test.ts tests/provider-method-coverage.test.ts`
+    in `EXTENSIONS/CVF_MODEL_GATEWAY` -> PASS, 2 files / 11 tests
+  - `npm run check` in `EXTENSIONS/CVF_MODEL_GATEWAY` -> PASS
+  - `npm test` in `EXTENSIONS/CVF_MODEL_GATEWAY` -> PASS, 20 files / 80 tests
+- Notes/Risks:
+  - D2 closes the provider capability matrix and deterministic unsupported-method
+    gate for the current private baseline.
+  - `chat` remains a legacy alias for canonical `complete`.
+  - `tool_call`, `reasoning`, `embedding`, and `receipt` are declared matrix
+    methods but not claimed as supported runtime behavior for current providers.
+  - No route, receipt-envelope, live provider, public-sync, hosted-readiness,
+    Maika, or freeze-release claim is made.

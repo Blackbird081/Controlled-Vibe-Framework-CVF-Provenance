@@ -10,12 +10,12 @@ import { createDeepSeekChatJsonModeAdapter } from "../src/providers/deepseek/jso
 
 const alibabaCapability: ProviderCapabilityFile = {
   providerId: "alibaba",
-  models: [{ modelId: "qwen-turbo", supportedMethods: ["chat", "stream"], defaultMethod: "chat" }],
+  models: [{ modelId: "qwen-turbo", supportedMethods: ["complete", "chat", "stream"], defaultMethod: "complete" }],
 };
 
 const deepseekCapability: ProviderCapabilityFile = {
   providerId: "deepseek",
-  models: [{ modelId: "deepseek-chat", supportedMethods: ["chat", "json_mode"], defaultMethod: "chat" }],
+  models: [{ modelId: "deepseek-chat", supportedMethods: ["complete", "chat", "json_mode"], defaultMethod: "complete" }],
 };
 
 async function* bytes(lines: string[]) {
@@ -27,8 +27,13 @@ async function* bytes(lines: string[]) {
 
 describe("provider method coverage", () => {
   it("lists supported methods for Alibaba qwen-turbo and DeepSeek deepseek-chat", () => {
-    expect(listSupportedMethods(alibabaCapability, "qwen-turbo")).toEqual(["chat", "stream"]);
-    expect(listSupportedMethods(deepseekCapability, "deepseek-chat")).toEqual(["chat", "json_mode"]);
+    expect(listSupportedMethods(alibabaCapability, "qwen-turbo")).toEqual(["complete", "chat", "stream"]);
+    expect(listSupportedMethods(deepseekCapability, "deepseek-chat")).toEqual(["complete", "chat", "json_mode"]);
+  });
+
+  it("keeps legacy chat as an accepted alias for complete", () => {
+    expect(() => assertProviderMethodSupported(alibabaCapability, "qwen-turbo", "complete")).not.toThrow();
+    expect(() => assertProviderMethodSupported(alibabaCapability, "qwen-turbo", "chat")).not.toThrow();
   });
 
   it("throws a typed error for unsupported methods", () => {

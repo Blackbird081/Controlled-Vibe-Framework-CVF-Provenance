@@ -22,7 +22,7 @@ export interface AlibabaStreamAdapterOptions {
 
 const ALIBABA_QWEN_TURBO_CAPABILITY: ProviderCapabilityFile = {
   providerId: "alibaba",
-  models: [{ modelId: "qwen-turbo", supportedMethods: ["chat", "stream"], defaultMethod: "chat" }],
+  models: [{ modelId: "qwen-turbo", supportedMethods: ["complete", "chat", "stream"], defaultMethod: "complete" }],
 };
 
 export function createAlibabaQwenTurboStreamAdapter(options: AlibabaStreamAdapterOptions) {

@@ -109,6 +109,34 @@ export {
 } from "./provider-output-contract";
 
 export type {
+  ProviderCapabilityModel,
+  ProviderCapabilityOwnerRef,
+  ProviderCapabilityOwnerRefName,
+  ProviderCapabilityFile,
+  ProviderMethodContract,
+  ProviderMethodName,
+} from "./provider-method-contract";
+export {
+  LEGACY_PROVIDER_METHOD_ALIASES,
+  PROVIDER_CAPABILITY_OWNER_REFS,
+  PROVIDER_CAPABILITY_REGISTRY,
+  REVIEW_CVF_PROVIDER_METHODS,
+} from "./provider-capability-registry";
+export type {
+  ProviderCapabilityLookup,
+} from "./provider-method-gate";
+export {
+  assertProviderMethodSupported,
+  assertRegistryProviderMethodSupported,
+  findProviderCapability,
+  getProviderMethodContract,
+  listRegistrySupportedMethods,
+  listSupportedMethods,
+  normalizeProviderMethodName,
+  UnsupportedMethodError,
+} from "./provider-method-gate";
+
+export type {
   StreamCapableProvider,
   StreamContract,
   StreamRequest,

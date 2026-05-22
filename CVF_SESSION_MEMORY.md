@@ -73,7 +73,7 @@ current.
 
 ## Current Session Mode
 
-- Current mode: `review_cvf_post_bc_g1_execution_identity_runtime_gate_closed`
+- Current mode: `review_cvf_post_bc_d2_provider_capability_matrix_closed`
 - Previous mode: `review_cvf_post_bc_remaining_pain_point_roadmap_active`
 - Freeze posture: `governance_kernel_freeze_recommended`
 - Active handoff pointer: `AGENT_HANDOFF_V11_2026-05-21.md`
@@ -87,7 +87,7 @@ T1, T2, T3, T4, and T5 of the Review-CVF pain-point delivery gap roadmap V2 are 
 
 G1 execution identity runtime gate is closed at `docs/reviews/CVF_G1_EXECUTION_IDENTITY_RUNTIME_GATE_COMPLETION_2026-05-22.md` in commit `64182879`. It delivered `cvf.executionIdentity.v1` on `/api/execute`, binding actor id, session role, resolved `CVFRole`, actor-role gate, output permission, context scope, execution boundary, and receipt ownership. Targeted tests PASS `44/44`; `cvf-web` TypeScript check PASS; local governance hook chain PASS `43/43`. `GovernanceEvidenceReceipt` is unchanged and denied governed-pack actors still stop before provider dispatch.
 
-The active post-B/C steering source remains `docs/reviews/CVF_REVIEW_CVF_POST_BC_REMAINING_PAIN_POINTS_ASSESSMENT_2026-05-22.md` plus `docs/roadmaps/CVF_REVIEW_CVF_POST_BC_REMAINING_PAIN_POINT_ROADMAP_2026-05-22.md`. Review CVF.md remains the deliverable-fit oracle. Remaining priority order is now D2 provider capability/method contract hardening, E2 operational benchmark suite, H2 memory hierarchy phase 2, F2 noncoder UX hardening, and A2 audit-only coherence equivalence if requested. Before D2 implementation, file fresh GC-018/work order and any required blocked-work override.
+The active post-B/C steering source remains `docs/reviews/CVF_REVIEW_CVF_POST_BC_REMAINING_PAIN_POINTS_ASSESSMENT_2026-05-22.md` plus `docs/roadmaps/CVF_REVIEW_CVF_POST_BC_REMAINING_PAIN_POINT_ROADMAP_2026-05-22.md`. Review CVF.md remains the deliverable-fit oracle. D2 provider capability matrix is closed at `docs/reviews/CVF_D2_PROVIDER_CAPABILITY_MATRIX_COMPLETION_2026-05-22.md`: Model Gateway now has a canonical provider capability registry, Review-CVF method axis, legacy `chat` alias to `complete`, owner refs for `retry/cost/risk`, and deterministic `UnsupportedMethodError` negative gate. Remaining priority order is now E2 operational benchmark suite, H2 memory hierarchy phase 2, F2 noncoder UX hardening, and A2 audit-only coherence equivalence if requested. Before E2 implementation, file fresh GC-018/work order and any required blocked-work override.
 
 ## Required First Reads
 

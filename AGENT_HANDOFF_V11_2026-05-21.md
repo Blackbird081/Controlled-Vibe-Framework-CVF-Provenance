@@ -369,18 +369,43 @@ redesign, planner/worker/reviewer job queues, background worker identity,
 provider behavior, durable state, public-sync, hosted readiness, Maika proof,
 or freeze release.
 
-Next priority in the active roadmap is D2 provider capability/method contract
-hardening. File fresh GC-018/work order and any required blocked-work override
-before D2 implementation.
+### 2026-05-22 - D2 Provider Capability Matrix Closed
+
+D2 from the post-B/C Review-CVF remaining pain-point roadmap is closed as
+`CLOSED_D2_PROVIDER_CAPABILITY_MATRIX`.
+
+Completion:
+`docs/reviews/CVF_D2_PROVIDER_CAPABILITY_MATRIX_COMPLETION_2026-05-22.md`
+Baseline:
+`docs/baselines/CVF_GC018_D2_PROVIDER_CAPABILITY_MATRIX_2026-05-22.md`
+Work order:
+`docs/work_orders/CVF_WO_D2_PROVIDER_CAPABILITY_MATRIX_2026-05-22.md`
+
+Delivered Model Gateway `cvf.providerCapability.v1` registry, Review-CVF method
+axis `complete`, `stream`, `tool_call`, `reasoning`, `json_mode`, `vision`,
+`embedding`, and `receipt`; legacy `chat` alias to `complete`; owner refs for
+`retry`, `cost`, and `risk`; registry lookup/list/assert helpers; and
+deterministic `UnsupportedMethodError` negative gate.
+
+Evidence: focused Model Gateway tests PASS `11/11`; full Model Gateway suite
+PASS `20 files / 80 tests`; Model Gateway TypeScript check PASS.
+
+Boundary: no new live provider behavior, route change, receipt-envelope change,
+all-provider parity, public-sync, hosted readiness, Maika proof, or freeze
+release.
+
+Next priority in the active roadmap is E2 operational benchmark suite. File
+fresh GC-018/work order and any required blocked-work override before E2
+implementation.
 
 ---
 
 ## Next Allowed Move
 
 Default next move: continue the active post-B/C Review-CVF remaining
-pain-point roadmap only if proceeding to D2. G1 is closed; D2 provider
-capability/method contract hardening requires a fresh GC-018/work order and
-any required blocked-work override before implementation.
+pain-point roadmap only if proceeding to E2. G1 and D2 are closed; E2
+operational benchmark suite requires a fresh GC-018/work order and any required
+blocked-work override before implementation.
 
 Do not widen into public npm release, provider tuning,
 persistence/database beyond T5 ephemeral scope, Maika proof, public-sync,

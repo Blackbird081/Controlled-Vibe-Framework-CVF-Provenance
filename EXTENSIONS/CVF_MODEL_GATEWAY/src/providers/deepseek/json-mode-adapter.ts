@@ -22,7 +22,7 @@ export interface DeepSeekJsonModeAdapterOptions {
 
 const DEEPSEEK_CHAT_CAPABILITY: ProviderCapabilityFile = {
   providerId: "deepseek",
-  models: [{ modelId: "deepseek-chat", supportedMethods: ["chat", "json_mode"], defaultMethod: "chat" }],
+  models: [{ modelId: "deepseek-chat", supportedMethods: ["complete", "chat", "json_mode"], defaultMethod: "complete" }],
 };
 
 export function createDeepSeekChatJsonModeAdapter(options: DeepSeekJsonModeAdapterOptions) {
