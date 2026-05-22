@@ -80,6 +80,10 @@ Current HEAD after B/C technical catalog addendum:
 
 `5751859f` (docs(catalog): record B/C closure boundary)
 
+Current HEAD after post-B/C remaining pain-point assessment and roadmap:
+
+`add446a5` (docs(roadmap): file post-B/C remaining pain point plan)
+
 ---
 
 ## Purpose
@@ -310,6 +314,30 @@ GC-018 evidence, and states the correct boundary: future usage bugs,
 ergonomics gaps, or release-packaging work are usage-driven hardening/new
 tranche items, not automatic reopening of the original B/C structural pain
 point.
+
+
+### 2026-05-22 - Post-B/C Remaining Pain-Point Assessment And Roadmap Filed
+
+Post-B/C assessment filed at
+`docs/reviews/CVF_REVIEW_CVF_POST_BC_REMAINING_PAIN_POINTS_ASSESSMENT_2026-05-22.md`.
+
+Post-B/C roadmap filed at
+`docs/roadmaps/CVF_REVIEW_CVF_POST_BC_REMAINING_PAIN_POINT_ROADMAP_2026-05-22.md`.
+
+Active review queue now has
+`review-cvf-post-bc-remaining-pain-point-roadmap` as
+`READY_FOR_REBUTTAL`.
+
+Meaning: Review CVF.md remains the deliverable-fit oracle after B/C closure,
+but it is not implementation authorization. B/C stay closed for the current
+private baseline. Remaining steering order is G1 execution identity runtime,
+D2 provider capability/method contract hardening, E2 operational benchmark
+suite, H2 memory hierarchy phase 2, F2 noncoder outcome UX hardening, and A2
+coherence equivalence audit only if requested or triggered.
+
+No implementation is authorized from the roadmap alone. Next implementation
+requires rebuttal/acceptance as needed, operator tranche selection, fresh
+GC-018, and any required blocked-work override.
 
 ---
 

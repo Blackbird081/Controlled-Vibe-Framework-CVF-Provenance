@@ -5,6 +5,17 @@
   "defaultResolutionRule": "When an operator asks to check or review a roadmap without giving a path, resolve this queue and load the highest-priority item with status READY_FOR_REBUTTAL.",
   "items": [
     {
+      "id": "review-cvf-post-bc-remaining-pain-point-roadmap",
+      "artifactType": "roadmap",
+      "path": "docs/roadmaps/CVF_REVIEW_CVF_POST_BC_REMAINING_PAIN_POINT_ROADMAP_2026-05-22.md",
+      "status": "READY_FOR_REBUTTAL",
+      "requestedReviewer": "Claude",
+      "expectedResponsePath": "docs/reviews/CVF_REVIEW_CVF_POST_BC_REMAINING_PAIN_POINT_ROADMAP_CLAUDE_REBUTTAL_2026-05-22.md",
+      "priority": 0,
+      "source": "docs/reviews/CVF_REVIEW_CVF_POST_BC_REMAINING_PAIN_POINTS_ASSESSMENT_2026-05-22.md",
+      "notes": "Post-B/C roadmap filed after B/C clean closure. Review CVF.md remains deliverable-fit oracle. Roadmap is planning only: default sequence G1 execution identity runtime, D2 provider capability/method contract hardening, E2 operational benchmark suite, H2 memory hierarchy phase 2, F2 noncoder UX hardening, A2 coherence equivalence audit if requested. No implementation before rebuttal/acceptance as needed, operator tranche selection, fresh GC-018, and any required blocked-work override."
+    },
+    {
       "id": "post-pain-point-hardening-roadmap",
       "artifactType": "roadmap",
       "path": "docs/roadmaps/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md",
