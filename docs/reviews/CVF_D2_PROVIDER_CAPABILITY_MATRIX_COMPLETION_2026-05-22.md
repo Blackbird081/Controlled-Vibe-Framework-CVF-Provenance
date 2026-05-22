@@ -107,6 +107,12 @@ supported for current providers.
 
 ## Evidence Trace Block
 
+Commit:
+
+```text
+e918c690
+```
+
 Files changed:
 
 ```text

@@ -380,6 +380,8 @@ Baseline:
 `docs/baselines/CVF_GC018_D2_PROVIDER_CAPABILITY_MATRIX_2026-05-22.md`
 Work order:
 `docs/work_orders/CVF_WO_D2_PROVIDER_CAPABILITY_MATRIX_2026-05-22.md`
+Commit:
+`e918c690`
 
 Delivered Model Gateway `cvf.providerCapability.v1` registry, Review-CVF method
 axis `complete`, `stream`, `tool_call`, `reasoning`, `json_mode`, `vision`,
