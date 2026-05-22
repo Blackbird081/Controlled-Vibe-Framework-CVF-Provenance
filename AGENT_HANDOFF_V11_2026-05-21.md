@@ -96,6 +96,10 @@ Current HEAD before A2 coherence equivalence audit closure:
 
 `c957141d` (feat(web): close F2 noncoder outcome UX)
 
+Current HEAD after post-A2 public readiness and next-value GC-018 screening:
+
+`c6c29290` (docs: file post-A2 next-value GC018 screening)
+
 ---
 
 ## Purpose
@@ -545,12 +549,59 @@ Boundary: audit-only. No new governance semantics, runtime behavior, provider
 behavior, route change, receipt-envelope field, memory tier, public-sync,
 hosted readiness, Maika proof, or freeze release.
 
+### 2026-05-22 - Post-A2 Public Readiness Proof And Next-Value GC-018 Screening
+
+Operator selected option 3 after public A2 sync: run the release-quality proof
+and then run GC-018 to decide what is worth doing next.
+
+Live proof run:
+
+- public-sync command: `python scripts/run_cvf_release_gate_bundle.py --json`
+- result: PASS
+- checks: Web build PASS, Guard Contract TypeScript PASS, provider readiness
+  PASS, secrets scan PASS, docs governance PASS, Playwright UI mock PASS,
+  Playwright live governance PASS
+- live keys were loaded only into process environment from the private
+  provenance `.env.local`; raw values were not printed or copied
+
+GC-018 screening filed:
+
+`docs/baselines/CVF_GC018_POST_A2_PUBLIC_READINESS_AND_NEXT_VALUE_SCREENING_2026-05-22.md`
+
+Decision:
+
+- P0 public release-gate evidence refresh: CONTINUE, authorized now, score
+  10/10
+- P1 public developer onboarding proof: highest-value next substantive
+  candidate after P0, score 8/10, requires fresh operator-selected work order
+- longer provider soak / hosted proof / HN1 hygiene require review or concrete
+  demand
+- HN2/A2 is closed
+- HN3/CDH/Maika remains deferred without a narrow operator use case
+
+Public-sync update completed:
+
+- `docs/evidence/latest-release-gate.md` refreshed to 2026-05-22 PASS at public
+  commit `a14c0f23`
+
+Boundary:
+
+- P0 is evidence freshness only
+- no runtime/provider behavior changed
+- no hosted GA, broad provider stability, provider parity, Maika proof, or
+  freeze release claim
+
 ---
 
 ## Next Allowed Move
 
 Default next move: stop. G1, D2, E2, H2, F2, and A2 are closed for the current
 private baseline.
+
+If continuing, the highest-value next substantive candidate is
+`P1_PUBLIC_DEV_ONBOARDING_PROOF`: prove a new developer can follow the public
+front doors and reach a useful readiness state. It requires a fresh explicit
+operator-selected work order before implementation.
 
 Do not widen into public npm release, provider tuning,
 persistence/database beyond T5 ephemeral scope, Maika proof, public-sync,
