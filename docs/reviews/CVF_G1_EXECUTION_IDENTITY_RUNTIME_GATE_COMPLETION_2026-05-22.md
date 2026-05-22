@@ -148,6 +148,14 @@ Recommendation: continue the post-B/C remaining pain-point roadmap with D2
 provider capability/method contract hardening next, but only after fresh
 GC-018/work order and any required blocked-work override.
 
+## Public Catalog Disposition
+
+Public catalog update: `N/A`.
+
+Reason: G1 is a private provenance-runtime readout on the existing `/api/execute`
+path. It adds no new public-facing feature surface, public package command,
+public setup claim, public catalog row, or public-sync content delta.
+
 ## Claim Boundary
 
 G1 is closed for the existing `/api/execute` path only. This does not implement

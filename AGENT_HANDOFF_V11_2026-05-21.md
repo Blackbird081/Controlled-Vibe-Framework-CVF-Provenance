@@ -351,6 +351,8 @@ Baseline:
 `docs/baselines/CVF_GC018_G1_EXECUTION_IDENTITY_RUNTIME_GATE_2026-05-22.md`
 Work order:
 `docs/work_orders/CVF_WO_G1_EXECUTION_IDENTITY_RUNTIME_GATE_2026-05-22.md`
+Commit:
+`64182879`
 
 Delivered `cvf.executionIdentity.v1` runtime decision on `/api/execute`,
 binding actor id, session role, resolved `CVFRole`, actor-role gate, output

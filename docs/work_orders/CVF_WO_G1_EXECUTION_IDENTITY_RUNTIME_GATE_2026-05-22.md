@@ -106,7 +106,7 @@ must include exact tests run.
 - [x] Route wired.
 - [x] Tests updated.
 - [x] Completion review filed.
-- [ ] Commit created for G1 phase.
+- [x] Commit created for G1 phase.
 
 Completion review:
 

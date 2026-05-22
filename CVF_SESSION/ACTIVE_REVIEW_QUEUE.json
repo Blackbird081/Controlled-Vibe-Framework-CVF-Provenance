@@ -16,7 +16,7 @@
       "baselinePath": "docs/baselines/CVF_GC018_G1_EXECUTION_IDENTITY_RUNTIME_GATE_2026-05-22.md",
       "priority": 0,
       "source": "docs/reviews/CVF_REVIEW_CVF_POST_BC_REMAINING_PAIN_POINTS_ASSESSMENT_2026-05-22.md",
-      "notes": "Post-B/C roadmap filed after B/C clean closure. Codex multi-role rebuttal accepted the roadmap and dispatched G1. G1 closed 2026-05-22: cvf.executionIdentity.v1 on /api/execute, targeted tests PASS 44/44, cvf-web check PASS, local hook chain PASS 43/43. Review CVF.md remains deliverable-fit oracle. Remaining sequence: D2 provider capability/method contract hardening, E2 operational benchmark suite, H2 memory hierarchy phase 2, F2 noncoder UX hardening, A2 coherence equivalence audit if requested. D2 requires fresh GC-018/work order and any required blocked-work override before implementation."
+      "notes": "Post-B/C roadmap filed after B/C clean closure. Codex multi-role rebuttal accepted the roadmap and dispatched G1. G1 closed 2026-05-22 in commit 64182879: cvf.executionIdentity.v1 on /api/execute, targeted tests PASS 44/44, cvf-web check PASS, local hook chain PASS 43/43. Review CVF.md remains deliverable-fit oracle. Remaining sequence: D2 provider capability/method contract hardening, E2 operational benchmark suite, H2 memory hierarchy phase 2, F2 noncoder UX hardening, A2 coherence equivalence audit if requested. D2 requires fresh GC-018/work order and any required blocked-work override before implementation."
     },
     {
       "id": "post-pain-point-hardening-roadmap",
