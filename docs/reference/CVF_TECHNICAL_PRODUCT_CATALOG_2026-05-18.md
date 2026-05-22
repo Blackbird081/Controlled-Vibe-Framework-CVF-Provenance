@@ -5,10 +5,11 @@ Status: PHASE-B PUBLIC-CATALOG SOURCE BASELINE
 
 ## Purpose
 
-Provide a public-safe, technically accurate catalog of CVF as of 2026-05-18.
-This file is a source draft for the public GitHub repository. It must remain
-aligned with live evidence, public claim boundaries, and the provenance/public
-repository split.
+Provide a public-safe, technically accurate catalog of CVF. The baseline was
+first issued on 2026-05-18 and is current through the 2026-05-22 B/C product
+outcome runtime closure addendum. This file is a source draft for the public
+GitHub repository. It must remain aligned with live evidence, public claim
+boundaries, and the provenance/public repository split.
 
 Phase B claim boundary:
 
@@ -47,6 +48,7 @@ Source inputs:
 - public repository front door and evidence docs;
 - 2026-05-18 four-scope legacy absorption matrix;
 - 2026-05-19 Lane B workflow packaging baseline;
+- 2026-05-22 B/C product outcome runtime and CLI distribution closure;
 - active mandatory live governance proof rule;
 - public/provenance repository split policy.
 
@@ -57,6 +59,8 @@ Source inputs:
 - `docs/roadmaps/CVF_LEGACY_ABSORPTION_AND_PUBLIC_CATALOG_ROADMAP_2026-05-18.md`
 - `docs/reference/CVF_PUBLIC_CATALOG_CLAIM_BOUNDARY_2026-05-18.md`
 - `docs/baselines/CVF_GC018_LANE_B_WORKFLOW_PACKAGING_2026-05-19.md`
+- `docs/baselines/CVF_GC018_BC_PRODUCT_OUTCOME_RUNTIME_AND_CLI_DISTRIBUTION_2026-05-22.md`
+- `docs/reviews/CVF_BC_PRODUCT_OUTCOME_RUNTIME_AND_CLI_DISTRIBUTION_COMPLETION_2026-05-22.md`
 
 ## Decision / Baseline / Proposed Tranche
 
@@ -102,13 +106,13 @@ INTAKE -> DESIGN -> BUILD -> REVIEW -> FREEZE
 | Capability | Current status | What is verifiable |
 |---|---|---|
 | Governance control plane | proven and active | `ARCHITECTURE.md`; `governance/toolkit/05_OPERATION/CVF_AUDIT_PROTOCOL.md` |
-| Governance CLI execution gateway | implemented as CLI caller, mock-tested | `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/execute.client.ts`; `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/tests/execute.client.test.ts`; calls existing `/api/execute`, not a replacement runtime |
+| Governance CLI execution gateway | implemented as canonical CLI runtime gateway | `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/bin/cvf.ts`; `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/command.registry.ts`; `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/execute.client.ts`; package binary exposes `cvf` and `cvf-guard`; calls existing `/api/execute`, not a replacement provider/runtime |
 | Live governance proof | proven and mandatory for release claims | `scripts/run_cvf_release_gate_bundle.py`; `docs/CVF_INCREMENTAL_TEST_LOG.md` |
 | Non-coder governed path | proven on bounded provider lanes | `docs/reference/archive/CVF_PUBLIC_NONCODER_VALUE_STATEMENT_2026-04-17.md`; `docs/assessments/CVF_W119_T1_NONCODER_ADOPTION_EVIDENCE_PACK_2026-04-23.md` |
 | Provider lanes | certified only where evidence exists | `docs/audits/alibaba-canary/INDEX.md`; `docs/audits/deepseek-canary/INDEX.md` |
 | Knowledge-backed execution | proven in bounded execute path | `docs/audits/CVF_W101_T1_CP1_KNOWLEDGE_NATIVE_EXECUTE_PATH_INTEGRATION_AUDIT_2026-04-17.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/knowledge-store.ts` |
 | Deliverable packs | implemented in web product path | `README.md`; `docs/reviews/CVF_W130_EXPORT_ACTIVATION_CONTRACT_2026-04-28.md` |
-| Workflow capability packs | schema-defined for selected templates | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governed-packs/app_builder_complete/workflow.spec.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governed-packs/strategy_analysis/workflow.spec.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governed-packs/documentation/workflow.spec.md`; not yet runtime-bound or live-proven |
+| Workflow capability packs | runtime-bound for certified product outcomes | `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/product-outcome.runtime.ts`; `governance/registries/cvf-certified-skill-pack-registry.json`; `cvf skill list --certified`; `cvf skill plan <pack-or-outcome>`; `cvf run <certified-pack>` resolves to existing execute templates with product outcome metadata |
 | External asset/capability governance | partially productized | `docs/reference/CVF_PUBLIC_STRUCTURE_OVERVIEW.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/external-asset-governance.ts` |
 | Role and agent governance | partially absorbed | role vocabulary and handoff governance exist; full enforceable role permission runtime is still roadmap work |
 | Memory and continuity | partially runtime-wired | knowledge store, audit, session continuity, handoff rules, and execute-route audit memory receipt exist; governed reinjection across all worker paths is not complete |
@@ -117,6 +121,30 @@ INTAKE -> DESIGN -> BUILD -> REVIEW -> FREEZE
 | Tool/MCP/database action governance | roadmap | tool registry and guards exist; full canonical action taxonomy is still future work |
 | Async workers/subagents | roadmap | sandbox and worker concepts exist; canonical async work-ticket and delegation lifecycle remain future work |
 | Graph/code-intelligence context | roadmap | valuable legacy pattern; no full graph context resolver is claimed yet |
+
+## B/C Closure Note For Agents
+
+The original Review-CVF B/C pain point said CVF had skill governance concepts
+but lacked practical skill packs, packaged workflows, an outcome-oriented
+runtime, and a unified canonical CLI gateway.
+
+As of the 2026-05-22 closure packet, that structural pain point is closed for
+the current private implementation baseline:
+
+- certified practical skill packs are registry-backed;
+- packaged workflows have executable product outcome runtime plans;
+- `cvf skill list --certified` and `cvf skill plan <pack-or-outcome>` expose
+  the pack/runtime contract;
+- `cvf run <certified-pack>` routes a certified pack into the existing governed
+  execute path;
+- package-level `cvf` and `cvf-guard` binaries exist with build and smoke
+  proof.
+
+Future usage may reveal bugs, ergonomics gaps, or release-packaging work. Those
+items should be filed as usage-driven hardening or a new GC-018 tranche. Do not
+reopen B/C merely because additional polish is possible. Reopen B/C only if a
+new review proves the core pack/workflow/outcome-runtime contract above is
+absent or materially nonfunctional.
 
 ## What Users Can Expect
 
@@ -166,6 +194,22 @@ python governance/compat/check_agent_handoff_guard_compat.py
 ```
 
 Result: all four checks passed in the provenance repository.
+
+2026-05-22 B/C catalog addendum path check:
+
+```powershell
+PASS EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/bin/cvf.ts
+PASS EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/command.registry.ts
+PASS EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/execute.client.ts
+PASS EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/product-outcome.runtime.ts
+PASS governance/registries/cvf-certified-skill-pack-registry.json
+PASS docs/baselines/CVF_GC018_BC_PRODUCT_OUTCOME_RUNTIME_AND_CLI_DISTRIBUTION_2026-05-22.md
+PASS docs/reviews/CVF_BC_PRODUCT_OUTCOME_RUNTIME_AND_CLI_DISTRIBUTION_COMPLETION_2026-05-22.md
+```
+
+This addendum updates the provenance source catalog only. Public-sync
+publication remains a separate step and must re-run public-sync `Test-Path`
+checks from the public-sync clone before any public repository commit.
 
 Public-sync path check:
 
@@ -238,6 +282,9 @@ CVF may claim:
 - bounded live non-coder value;
 - evidence-backed provider lanes where receipts exist;
 - governed knowledge-backed execution in the proven path;
+- certified practical skill packs and an outcome-oriented CLI runtime gateway,
+  bounded to the Governance CLI package and the current certified pack
+  registry;
 - public auditability through docs, evidence packets, guards, and release gates.
 
 CVF must not claim yet:
@@ -245,6 +292,8 @@ CVF must not claim yet:
 - complete Agent OS status;
 - full universal provider parity;
 - full external capability marketplace readiness;
+- public npm release, hosted CLI distribution readiness, or marketplace-level
+  skill economy;
 - full legacy repository absorption;
 - unrestricted autonomous self-improvement;
 - complete role-permission, memory-reinjection, async-worker, graph-context,
