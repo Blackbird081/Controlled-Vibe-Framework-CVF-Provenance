@@ -339,13 +339,46 @@ No implementation is authorized from the roadmap alone. Next implementation
 requires rebuttal/acceptance as needed, operator tranche selection, fresh
 GC-018, and any required blocked-work override.
 
+
+### 2026-05-22 - G1 Execution Identity Runtime Gate Closed
+
+G1 from the post-B/C Review-CVF remaining pain-point roadmap is closed as
+`CLOSED_G1_EXECUTION_IDENTITY_RUNTIME_GATE`.
+
+Completion:
+`docs/reviews/CVF_G1_EXECUTION_IDENTITY_RUNTIME_GATE_COMPLETION_2026-05-22.md`
+Baseline:
+`docs/baselines/CVF_GC018_G1_EXECUTION_IDENTITY_RUNTIME_GATE_2026-05-22.md`
+Work order:
+`docs/work_orders/CVF_WO_G1_EXECUTION_IDENTITY_RUNTIME_GATE_2026-05-22.md`
+
+Delivered `cvf.executionIdentity.v1` runtime decision on `/api/execute`,
+binding actor id, session role, resolved `CVFRole`, actor-role gate, output
+permission, context scope, execution boundary, and receipt ownership into one
+deterministic readout. Allowed route responses now include execution identity;
+actor-role rejection, role-permission denial, output-class denial, workflow
+binding audit, and audit-memory payloads include the same identity readout.
+Targeted tests PASS `44/44`; `cvf-web` TypeScript check PASS; local governance
+hook chain PASS `43/43`.
+
+Boundary: `GovernanceEvidenceReceipt` is unchanged; denied governed-pack
+actors still stop before provider dispatch. No new role taxonomy, auth/RBAC
+redesign, planner/worker/reviewer job queues, background worker identity,
+provider behavior, durable state, public-sync, hosted readiness, Maika proof,
+or freeze release.
+
+Next priority in the active roadmap is D2 provider capability/method contract
+hardening. File fresh GC-018/work order and any required blocked-work override
+before D2 implementation.
+
 ---
 
 ## Next Allowed Move
 
-Default next move: stop unless the operator opens a fresh tranche. The B/C
-product-outcome runtime and package-level CLI distribution tranche is closed.
-Any next implementation requires a fresh operator-selected tranche and GC-018.
+Default next move: continue the active post-B/C Review-CVF remaining
+pain-point roadmap only if proceeding to D2. G1 is closed; D2 provider
+capability/method contract hardening requires a fresh GC-018/work order and
+any required blocked-work override before implementation.
 
 Do not widen into public npm release, provider tuning,
 persistence/database beyond T5 ephemeral scope, Maika proof, public-sync,

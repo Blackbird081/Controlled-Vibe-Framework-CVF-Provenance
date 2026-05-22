@@ -35,6 +35,7 @@ import {
     buildRoleOutputDeniedResponse,
     buildRolePermissionDeniedResponse,
 } from '@/lib/execute-role-permission-gate';
+import { buildExecutionIdentityDecision } from '@/lib/execution-identity';
 import { evaluateExecutionActorRoleGate, resolveExecutionCVFRole, resolveExecutionOutputClass } from '@/lib/execute-role-resolver';
 import {
     buildOutputBypassGuardResult,
@@ -332,33 +333,27 @@ export async function POST(request: NextRequest) {
         const executionTemplateId = template?.id ?? body.templateId;
         const resolvedExecutionRole = resolveExecutionCVFRole(session, isServiceAllowed);
         const resolvedOutputClass = resolveExecutionOutputClass(executionTemplateId, template?.category, mode);
+        const executionActorId = session?.userId ?? (isServiceAllowed ? 'service-account' : 'unknown-actor');
+        const executionTargetResource = body.templateName || body.templateId || 'unknown-template';
+        const executionIdentityBase = { actorId: executionActorId, sessionRole: session?.role ?? (isServiceAllowed ? 'service' : null), templateId: executionTemplateId, targetResource: executionTargetResource, resolvedRole: resolvedExecutionRole, resolvedOutputClass };
         if (!resolvedExecutionRole.allowed || !resolvedExecutionRole.permissionRole) {
-            return buildRolePermissionDeniedResponse({
-                session,
-                body,
-                provider,
-                envelope: govEnvelope,
-                resolvedRole: resolvedExecutionRole,
-                resolvedOutputClass,
-            });
+            const executionIdentity = buildExecutionIdentityDecision(executionIdentityBase);
+            return buildRolePermissionDeniedResponse({ session, body, provider, envelope: govEnvelope, resolvedRole: resolvedExecutionRole, resolvedOutputClass, executionIdentity });
         }
         const actorRoleGate = evaluateExecutionActorRoleGate(executionTemplateId, resolvedExecutionRole.role);
-        if (!actorRoleGate.permitted) { await appendAuditEvent({ eventType: 'ACTOR_ROLE_GATE_REJECTED', actorId: session?.userId ?? (isServiceAllowed ? 'service-account' : 'unknown-actor'), actorRole: resolvedExecutionRole.role ?? 'unknown', targetResource: body.templateName || body.templateId || 'unknown-template', action: 'BLOCK_EXECUTION_ACTOR_ROLE', riskLevel: 'R1', phase: 'PHASE C', outcome: 'BLOCKED', payload: withSessionAuditPayload(session, { actor_role_gate_result: 'rejected', allowedActorRoles: actorRoleGate.allowedActorRoles, templateId: executionTemplateId }) }); return NextResponse.json({ error: 'actor_role_not_permitted' }, { status: 403 }); }
+        if (!actorRoleGate.permitted) {
+            const executionIdentity = buildExecutionIdentityDecision({ ...executionIdentityBase, actorRoleGate });
+            await appendAuditEvent({ eventType: 'ACTOR_ROLE_GATE_REJECTED', actorId: executionActorId, actorRole: resolvedExecutionRole.role ?? 'unknown', targetResource: executionTargetResource, action: 'BLOCK_EXECUTION_ACTOR_ROLE', riskLevel: 'R1', phase: 'PHASE C', outcome: 'BLOCKED', payload: withSessionAuditPayload(session, { actor_role_gate_result: 'rejected', allowedActorRoles: actorRoleGate.allowedActorRoles, templateId: executionTemplateId, executionIdentity }) });
+            return NextResponse.json({ success: false, error: 'actor_role_not_permitted', executionIdentity }, { status: 403 });
+        }
         const rolePermission = checkRoleOutputPermission(
             resolvedExecutionRole.permissionRole,
             resolvedOutputClass.outputClass,
         );
+        const executionIdentity = buildExecutionIdentityDecision({ ...executionIdentityBase, actorRoleGate, rolePermission });
 
         if (!rolePermission.allowed) {
-            return buildRoleOutputDeniedResponse({
-                session,
-                body,
-                provider,
-                envelope: govEnvelope,
-                resolvedRole: resolvedExecutionRole,
-                resolvedOutputClass,
-                rolePermission,
-            });
+            return buildRoleOutputDeniedResponse({ session, body, provider, envelope: govEnvelope, resolvedRole: resolvedExecutionRole, resolvedOutputClass, rolePermission, executionIdentity });
         }
         const workflowBinding = resolveWorkflowBindingForExecution(executionTemplateId);
 
@@ -900,6 +895,7 @@ export async function POST(request: NextRequest) {
                         allowed: rolePermission.allowed,
                         source: resolvedExecutionRole.source,
                     },
+                    executionIdentity,
                 }),
             });
         }
@@ -941,7 +937,7 @@ export async function POST(request: NextRequest) {
             riskLevel: body.cvfRiskLevel ?? enforcement.riskGate?.riskLevel,
             phase: body.cvfPhase,
         });
-        await appendAuditEvent({ ...auditEventPayload, payload: withSessionAuditPayload(session, { ...auditEventPayload.payload, actor_role_gate_result: actorRoleGate.result }) });
+        await appendAuditEvent({ ...auditEventPayload, payload: withSessionAuditPayload(session, { ...auditEventPayload.payload, actor_role_gate_result: actorRoleGate.result, executionIdentity }) });
 
         return NextResponse.json({
             ...aiResult,
@@ -955,6 +951,7 @@ export async function POST(request: NextRequest) {
                 allowed: rolePermission.allowed,
                 source: resolvedExecutionRole.source,
             },
+            executionIdentity,
             providerRouting: {
                 decision: routingResult.decision,
                 selectedProvider: routingResult.selectedProvider,

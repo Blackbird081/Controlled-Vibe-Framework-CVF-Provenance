@@ -73,8 +73,8 @@ current.
 
 ## Current Session Mode
 
-- Current mode: `review_cvf_post_bc_remaining_pain_point_roadmap_active`
-- Previous mode: `bc_product_outcome_runtime_cli_distribution_closed`
+- Current mode: `review_cvf_post_bc_g1_execution_identity_runtime_gate_closed`
+- Previous mode: `review_cvf_post_bc_remaining_pain_point_roadmap_active`
 - Freeze posture: `governance_kernel_freeze_recommended`
 - Active handoff pointer: `AGENT_HANDOFF_V11_2026-05-21.md`
 - Historical handoff archive: `CVF_SESSION/handoffs/archive/`
@@ -85,7 +85,9 @@ current.
 
 T1, T2, T3, T4, and T5 of the Review-CVF pain-point delivery gap roadmap V2 are closed. The follow-on canonical CLI runtime gateway tranche is closed at `docs/reviews/CVF_CANONICAL_CLI_RUNTIME_GATEWAY_COMPLETION_2026-05-22.md`. The B/C clean-closure tranche is closed at `docs/reviews/CVF_BC_PRODUCT_OUTCOME_RUNTIME_AND_CLI_DISTRIBUTION_COMPLETION_2026-05-22.md`, with product-outcome runtime plans for all seven certified packs and package-level `cvf`/`cvf-guard` bin semantics. The technical product catalog now records this bounded B/C closure addendum at `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md` so future devs/agents should treat B/C as closed unless a new review proves the core pack/workflow/outcome-runtime contract absent or materially nonfunctional. Release gate bundle PASS included live governance E2E after ignored clean-room runtime residue cleanup.
 
-The active post-B/C steering source is now `docs/reviews/CVF_REVIEW_CVF_POST_BC_REMAINING_PAIN_POINTS_ASSESSMENT_2026-05-22.md` plus `docs/roadmaps/CVF_REVIEW_CVF_POST_BC_REMAINING_PAIN_POINT_ROADMAP_2026-05-22.md`. Review CVF.md remains the deliverable-fit oracle. Remaining priority order is G1 execution identity runtime, D2 provider capability/method contract hardening, E2 operational benchmark suite, H2 memory hierarchy phase 2, F2 noncoder UX hardening, and A2 audit-only coherence equivalence if requested. No implementation is authorized until operator tranche selection, rebuttal/acceptance as needed, fresh GC-018, and any required blocked-work override.
+G1 execution identity runtime gate is closed at `docs/reviews/CVF_G1_EXECUTION_IDENTITY_RUNTIME_GATE_COMPLETION_2026-05-22.md`. It delivered `cvf.executionIdentity.v1` on `/api/execute`, binding actor id, session role, resolved `CVFRole`, actor-role gate, output permission, context scope, execution boundary, and receipt ownership. Targeted tests PASS `44/44`; `cvf-web` TypeScript check PASS; local governance hook chain PASS `43/43`. `GovernanceEvidenceReceipt` is unchanged and denied governed-pack actors still stop before provider dispatch.
+
+The active post-B/C steering source remains `docs/reviews/CVF_REVIEW_CVF_POST_BC_REMAINING_PAIN_POINTS_ASSESSMENT_2026-05-22.md` plus `docs/roadmaps/CVF_REVIEW_CVF_POST_BC_REMAINING_PAIN_POINT_ROADMAP_2026-05-22.md`. Review CVF.md remains the deliverable-fit oracle. Remaining priority order is now D2 provider capability/method contract hardening, E2 operational benchmark suite, H2 memory hierarchy phase 2, F2 noncoder UX hardening, and A2 audit-only coherence equivalence if requested. Before D2 implementation, file fresh GC-018/work order and any required blocked-work override.
 
 ## Required First Reads
 

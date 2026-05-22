@@ -2245,3 +2245,25 @@ Utility and guard:
     ignored `.cvf/runtime/terminal-hardening/clean-room-public-*` residue from
     a prior clean-room proof; the untracked generated residue was removed and
     the full bundle reran PASS.
+
+---
+## [2026-05-22] Batch: G1 Execution Identity Runtime Gate
+
+- Change reference: provenance working tree; GC-018 baseline
+  `docs/baselines/CVF_GC018_G1_EXECUTION_IDENTITY_RUNTIME_GATE_2026-05-22.md`
+- Impacted scope:
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-identity.ts`
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-role-permission-gate.ts`
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts`
+  - focused unit and route tests
+- Tests executed:
+  - `npm run test:run -- src/lib/execution-identity.test.ts src/lib/execute-role-resolver.test.ts src/app/api/execute/route.actor-gate.test.ts src/app/api/execute/route.test.ts`
+    in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` -> PASS, 4 files / 44 tests
+  - `npm run check` in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` -> PASS
+  - `python governance/compat/run_local_governance_hook_chain.py` -> PASS, 43/43 checks
+- Notes/Risks:
+  - G1 closes only the minimum viable `/api/execute` execution identity readout.
+  - Denied governed-pack actors still stop before provider dispatch.
+  - `GovernanceEvidenceReceipt` was not modified.
+  - No new role taxonomy, auth/RBAC model, provider behavior, durable state,
+    public-sync, hosted readiness, Maika proof, or freeze-release claim is made.

@@ -212,6 +212,27 @@ describe('/api/execute', () => {
             outputClass: 'artifact',
             allowed: true,
         });
+        expect(data.executionIdentity).toMatchObject({
+            contractVersion: 'cvf.executionIdentity.v1',
+            actorId: 'developer-user',
+            cvfRole: 'BUILDER',
+            decision: 'allowed',
+            authority: {
+                canExecute: true,
+                outputClass: 'artifact',
+                outputAllowed: true,
+                allowedActorRoles: ['OPERATOR', 'BUILDER', 'REVIEWER', 'SERVICE_AGENT'],
+            },
+            executionBoundary: {
+                boundary: 'governed_pack_actor_policy',
+                packPolicyApplied: true,
+            },
+            receiptOwnership: {
+                ownerActorId: 'developer-user',
+                ownerRole: 'BUILDER',
+                source: 'session_actor',
+            },
+        });
         expect(data.workflowId).toBe('workflow.product.create_product_brief.v1');
         expect(data.stepTraces.map((trace: { stepId: string }) => trace.stepId)).toEqual([
             'step-1-intake-validation',
@@ -267,6 +288,7 @@ describe('/api/execute', () => {
             receiptBinding: data.receiptBinding,
             deferredStepIds: ['step-4-review-gate'],
             rolePermission: data.rolePermission,
+            executionIdentity: data.executionIdentity,
         });
         expect(data.auditMemoryReceipt).toMatchObject({
             tier: 'session',
@@ -290,6 +312,7 @@ describe('/api/execute', () => {
             memoryTier: 'session',
             memoryContractVersion: 'phaseD.memoryContinuity.v1',
             actor_role_gate_result: 'permitted',
+            executionIdentity: data.executionIdentity,
         });
         expect(executeAIMock).toHaveBeenCalledTimes(1);
         expect(executeAIMock.mock.calls[0][2]).not.toContain('GOVERNANCE_AUDIT_MEMORY_RECEIPT');

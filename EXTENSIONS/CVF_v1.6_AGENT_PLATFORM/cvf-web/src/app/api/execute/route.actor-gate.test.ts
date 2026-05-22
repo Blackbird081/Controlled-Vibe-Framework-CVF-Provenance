@@ -80,7 +80,36 @@ describe('/api/execute actor role gate', () => {
         const data = await res.json();
 
         expect(res.status).toBe(403);
-        expect(data).toEqual({ error: 'actor_role_not_permitted' });
+        expect(data).toMatchObject({
+            success: false,
+            error: 'actor_role_not_permitted',
+            executionIdentity: {
+                contractVersion: 'cvf.executionIdentity.v1',
+                actorId: 'viewer-user',
+                sessionRole: 'viewer',
+                cvfRole: 'OBSERVER',
+                templateId: 'documentation',
+                targetResource: 'Documentation',
+                decision: 'denied',
+                reason: 'actor_role_not_permitted',
+                authority: {
+                    canExecute: false,
+                    outputClass: 'summary',
+                    outputAllowed: null,
+                    allowedActorRoles: ['OPERATOR', 'BUILDER', 'REVIEWER', 'SERVICE_AGENT'],
+                },
+                contextScope: { scope: 'observer_read_only' },
+                executionBoundary: {
+                    boundary: 'governed_pack_actor_policy',
+                    packPolicyApplied: true,
+                },
+                receiptOwnership: {
+                    ownerActorId: 'viewer-user',
+                    ownerRole: 'OBSERVER',
+                    source: 'session_actor',
+                },
+            },
+        });
         expect(executeAIMock).not.toHaveBeenCalled();
         expect(appendAuditEventMock).toHaveBeenCalledWith(expect.objectContaining({
             eventType: 'ACTOR_ROLE_GATE_REJECTED',
@@ -88,6 +117,11 @@ describe('/api/execute actor role gate', () => {
                 actor_role_gate_result: 'rejected',
                 allowedActorRoles: ['OPERATOR', 'BUILDER', 'REVIEWER', 'SERVICE_AGENT'],
                 templateId: 'documentation',
+                executionIdentity: expect.objectContaining({
+                    decision: 'denied',
+                    reason: 'actor_role_not_permitted',
+                    cvfRole: 'OBSERVER',
+                }),
             }),
         }));
     });
