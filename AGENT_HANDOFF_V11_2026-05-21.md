@@ -84,6 +84,10 @@ Current HEAD after post-B/C remaining pain-point assessment and roadmap:
 
 `add446a5` (docs(roadmap): file post-B/C remaining pain point plan)
 
+Current HEAD after H2 runtime memory hierarchy phase 2 closure:
+
+`d0f057c7` (feat(learning-plane): close H2 runtime memory hierarchy)
+
 ---
 
 ## Purpose
@@ -430,14 +434,54 @@ Next priority in the active roadmap is H2 runtime memory hierarchy phase 2.
 File fresh GC-018/work order and any required blocked-work override before H2
 implementation.
 
+### 2026-05-22 - H2 Runtime Memory Hierarchy Phase 2 Closed
+
+H2 from the post-B/C Review-CVF remaining pain-point roadmap is closed as
+`CLOSED_H2_RUNTIME_MEMORY_HIERARCHY_PHASE2`.
+
+Completion:
+
+`docs/reviews/CVF_H2_RUNTIME_MEMORY_HIERARCHY_PHASE2_COMPLETION_2026-05-22.md`
+
+Governance docs:
+
+`docs/baselines/CVF_GC018_H2_RUNTIME_MEMORY_HIERARCHY_PHASE2_2026-05-22.md`
+
+`docs/work_orders/CVF_WO_H2_RUNTIME_MEMORY_HIERARCHY_PHASE2_2026-05-22.md`
+
+`docs/reviews/CVF_GC019_H2_RUNTIME_MEMORY_HIERARCHY_PHASE2_STRUCTURAL_REVIEW_2026-05-22.md`
+
+Main implementation commit:
+
+`d0f057c7` (feat(learning-plane): close H2 runtime memory hierarchy)
+
+Delivered Learning Plane `cvf.runtimeMemoryHierarchy.v1`, a seven-tier runtime
+map over the existing frozen `MemoryTier` values, actor-aware
+`write`/`retrieve`/`inject`/`reinject` decisions, deterministic denial reasons,
+and an ephemeral same-execution `working` memory proof store.
+
+Evidence: targeted H2 tests PASS `11/11`; Learning Plane full suite PASS
+`50 files / 1532 tests`; Learning Plane TypeScript check PASS; local hook chain
+PASS `43/43`.
+
+Boundary: no new memory tier, durable persistence, organizational or long-term
+runtime memory, provider-side memory, automatic reinjection, cross-session
+continuity, route change, receipt-envelope change, public-sync, hosted
+readiness, Maika proof, or freeze release.
+
+Next priority in the active roadmap is F2 noncoder outcome UX hardening. Keep
+F2 bounded to existing routes/outcomes unless a separate override is explicitly
+filed.
+
 ---
 
 ## Next Allowed Move
 
 Default next move: continue the active post-B/C Review-CVF remaining
-pain-point roadmap only if proceeding to H2. G1, D2, and E2 are closed; H2
-runtime memory hierarchy phase 2 requires a fresh GC-018/work order and any
-required blocked-work override before implementation.
+pain-point roadmap only if proceeding to F2. G1, D2, E2, and H2 are closed;
+F2 noncoder outcome UX hardening is next and should stay bounded to existing
+routes, outcomes, certified packs, copy/export/receipt affordances, and browser
+journey proof unless a separate override is explicitly filed.
 
 Do not widen into public npm release, provider tuning,
 persistence/database beyond T5 ephemeral scope, Maika proof, public-sync,
