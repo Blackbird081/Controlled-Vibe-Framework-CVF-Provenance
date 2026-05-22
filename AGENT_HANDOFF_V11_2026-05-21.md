@@ -100,6 +100,10 @@ Current HEAD after post-A2 public readiness and next-value GC-018 screening:
 
 `c6c29290` (docs: file post-A2 next-value GC018 screening)
 
+Current HEAD after P1 public developer onboarding proof closure:
+
+`c0168f43` (docs: close P1 public onboarding proof)
+
 ---
 
 ## Purpose
@@ -591,17 +595,66 @@ Boundary:
 - no hosted GA, broad provider stability, provider parity, Maika proof, or
   freeze release claim
 
+### 2026-05-22 - P1 Public Developer Onboarding Proof Closed
+
+Operator approved the P1 recommendation with: "Đồng ý, làm đi".
+
+Public-sync commit:
+
+- `30976e49 docs: prove public developer onboarding path`
+
+Public evidence:
+
+- `docs/evidence/public-developer-onboarding-proof-2026-05-22.md`
+
+Public docs corrected:
+
+- README
+- `docs/GET_STARTED.md`
+- `docs/guides/CVF_5_MINUTE_RC_SETUP.md`
+- `docs/reference/CVF_NEW_MACHINE_SETUP_CHECKLIST.md`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/README.md`
+- `docs/evidence/README.md`
+- `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`
+- CHANGELOG
+
+Verification:
+
+- `npm ci` in public `cvf-web`: PASS
+- `npm run check` in public `cvf-web`: PASS
+- `python scripts/run_cvf_static_ci_gate.py --json`: PASS 7/7
+- dead-command scan for the touched onboarding docs: no matches
+- public-sync pushed to `origin/main`
+
+Residual:
+
+- `npm ci` completed but npm audit reported 4 moderate, 7 high, and 1 critical
+  dependency vulnerabilities. This was recorded as residual, not remediated.
+
+Private provenance GC-018 packet updated:
+
+- `docs/baselines/CVF_GC018_POST_A2_PUBLIC_READINESS_AND_NEXT_VALUE_SCREENING_2026-05-22.md`
+
+Boundary:
+
+- P1 proves public local-first developer onboarding and non-live static gate
+  coherence only.
+- It does not claim live provider behavior, hosted workflow freshness, broad
+  provider stability, dependency audit remediation, or new runtime behavior.
+
 ---
 
 ## Next Allowed Move
 
 Default next move: stop. G1, D2, E2, H2, F2, and A2 are closed for the current
-private baseline.
+private baseline. P0 and P1 public-readiness follow-ups are also closed.
 
-If continuing, the highest-value next substantive candidate is
-`P1_PUBLIC_DEV_ONBOARDING_PROOF`: prove a new developer can follow the public
-front doors and reach a useful readiness state. It requires a fresh explicit
-operator-selected work order before implementation.
+If continuing, open a fresh GC-018/work order before implementation. Remaining
+review-required candidates are:
+
+- `P2_LONGER_HORIZON_PROVIDER_STABILITY_SOAK`
+- `P3_HOSTED_PROTECTED_WORKFLOW_PROOF`
+- `HN1_TEMPLATE_SKILL_LINKAGE_HYGIENE`
 
 Do not widen into public npm release, provider tuning,
 persistence/database beyond T5 ephemeral scope, Maika proof, public-sync,
