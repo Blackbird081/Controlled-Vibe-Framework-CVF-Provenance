@@ -76,6 +76,10 @@ Current HEAD after B/C product outcome runtime and CLI distribution closure:
 
 `fbe4c4cc` (feat(cli): close B/C outcome runtime gateway)
 
+Current HEAD after B/C technical catalog addendum:
+
+`5751859f` (docs(catalog): record B/C closure boundary)
+
 ---
 
 ## Purpose
@@ -292,6 +296,20 @@ hosted readiness, Maika proof, or freeze release.
 
 Next allowed move: stop unless the operator opens a fresh tranche. Treat Review
 CVF Problem B and Problem C as closed for the original pain-point definition.
+
+
+### 2026-05-22 - B/C Technical Catalog Addendum
+
+Technical product catalog updated at
+`docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md` in commit
+`5751859f` to make the B/C closure boundary visible to future devs and agents.
+
+The catalog now updates the Governance CLI and Workflow capability pack rows,
+adds a B/C Closure Note For Agents, records the relevant B/C completion and
+GC-018 evidence, and states the correct boundary: future usage bugs,
+ergonomics gaps, or release-packaging work are usage-driven hardening/new
+tranche items, not automatic reopening of the original B/C structural pain
+point.
 
 ---
 
