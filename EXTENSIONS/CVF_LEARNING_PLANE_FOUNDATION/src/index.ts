@@ -24,6 +24,28 @@ export type {
   ApprovedMemoryCaptureSource,
   MemoryRetentionDecision,
 } from "./controlled.memory.subcontracts";
+export {
+  createWorkingMemoryRuntimeStore,
+  describeRuntimeMemoryTier,
+  evaluateRuntimeMemoryAction,
+  listRuntimeMemoryTierRules,
+  RUNTIME_MEMORY_HIERARCHY_CONTRACT_VERSION,
+} from "./runtime-memory-hierarchy";
+export type {
+  RuntimeMemoryAction,
+  RuntimeMemoryActionDecision,
+  RuntimeMemoryActionInput,
+  RuntimeMemoryActorRole,
+  RuntimeMemoryContaminationBoundary,
+  RuntimeMemoryDecisionState,
+  RuntimeMemorySensitivity,
+  RuntimeMemoryTierRule,
+  WorkingMemoryEntry,
+  WorkingMemoryRetrieveInput,
+  WorkingMemoryRuntimeResult,
+  WorkingMemoryRuntimeStore,
+  WorkingMemoryWriteInput,
+} from "./runtime-memory-hierarchy";
 
 // W4-T8 — Evaluation Engine Consumer Pipeline Bridge (CP1)
 export {
