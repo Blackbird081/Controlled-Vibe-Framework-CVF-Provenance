@@ -72,6 +72,10 @@ Current HEAD after canonical CLI runtime gateway closure:
 
 `3d965a26` (feat(cli): add canonical runtime gateway)
 
+Current HEAD after B/C product outcome runtime and CLI distribution closure:
+
+`fbe4c4cc` (feat(cli): close B/C outcome runtime gateway)
+
 ---
 
 ## Purpose

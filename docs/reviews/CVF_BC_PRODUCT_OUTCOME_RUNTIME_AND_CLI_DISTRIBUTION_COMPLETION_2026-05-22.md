@@ -171,6 +171,11 @@ original pain-point definition. Future work should be framed as product
 hardening, public distribution, or live-provider stability, not as reopening B
 or C.
 
+Public catalog update: N/A for this provenance-only package tranche. No
+public-sync repository edit was authorized; any public catalog wording must be
+prepared from the sibling public-sync clone under a separate public-facing
+authorization.
+
 ## Verification
 
 PASS:
