@@ -2294,3 +2294,29 @@ Utility and guard:
     methods but not claimed as supported runtime behavior for current providers.
   - No route, receipt-envelope, live provider, public-sync, hosted-readiness,
     Maika, or freeze-release claim is made.
+
+---
+## [2026-05-22] Batch: E2 Operational Benchmark Suite
+
+- Change reference: provenance working tree; GC-018 baseline
+  `docs/baselines/CVF_GC018_E2_OPERATIONAL_BENCHMARK_SUITE_2026-05-22.md`
+- Impacted scope:
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/operational-benchmark-suite.ts`
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/governance-reliability-metrics.ts`
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/command.registry.ts`
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/index.ts`
+  - focused Governance CLI tests
+- Tests executed:
+  - `npm run test -- tests/operational-benchmark-suite.test.ts tests/governance-reliability-metrics.test.ts`
+    in `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI` -> PASS, 2 files / 29 tests
+  - `npm run check` in `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI` -> PASS
+  - `npm test` in `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI` -> PASS, 14 files / 116 tests
+- Notes/Risks:
+  - E2 closes the operational benchmark suite foundation.
+  - `cvf benchmark operational` emits `cvf.operationalBenchmark.v1` with
+    evidence-mode breakdown and release-gate JSON ingestion.
+  - Hallucination recovery remains deferred because no bounded event contract
+    exists yet.
+  - No policy/risk guard semantic, live provider, output-quality, route,
+    receipt-envelope, public-sync, hosted-readiness, Maika, or freeze-release
+    claim is made.

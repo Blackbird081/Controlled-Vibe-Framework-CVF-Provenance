@@ -400,14 +400,42 @@ Next priority in the active roadmap is E2 operational benchmark suite. File
 fresh GC-018/work order and any required blocked-work override before E2
 implementation.
 
+### 2026-05-22 - E2 Operational Benchmark Suite Closed
+
+E2 from the post-B/C Review-CVF remaining pain-point roadmap is closed as
+`CLOSED_E2_OPERATIONAL_BENCHMARK_SUITE`.
+
+Completion:
+`docs/reviews/CVF_E2_OPERATIONAL_BENCHMARK_SUITE_COMPLETION_2026-05-22.md`
+Baseline:
+`docs/baselines/CVF_GC018_E2_OPERATIONAL_BENCHMARK_SUITE_2026-05-22.md`
+Work order:
+`docs/work_orders/CVF_WO_E2_OPERATIONAL_BENCHMARK_SUITE_2026-05-22.md`
+
+Delivered Governance CLI `cvf.operationalBenchmark.v1`, `cvf benchmark
+operational`, audit JSONL and release-gate JSON ingestion, evidence-mode
+breakdown, retry/human-correction counts, and explicit hallucination-recovery
+deferred boundary.
+
+Evidence: targeted E2 tests PASS `29/29`; full Governance CLI suite PASS
+`14 files / 116 tests`; Governance CLI TypeScript check PASS.
+
+Boundary: no new policy/risk guard semantics, live provider benchmark claim,
+output-quality claim, route change, receipt-envelope change, public-sync,
+hosted readiness, Maika proof, or freeze release.
+
+Next priority in the active roadmap is H2 runtime memory hierarchy phase 2.
+File fresh GC-018/work order and any required blocked-work override before H2
+implementation.
+
 ---
 
 ## Next Allowed Move
 
 Default next move: continue the active post-B/C Review-CVF remaining
-pain-point roadmap only if proceeding to E2. G1 and D2 are closed; E2
-operational benchmark suite requires a fresh GC-018/work order and any required
-blocked-work override before implementation.
+pain-point roadmap only if proceeding to H2. G1, D2, and E2 are closed; H2
+runtime memory hierarchy phase 2 requires a fresh GC-018/work order and any
+required blocked-work override before implementation.
 
 Do not widen into public npm release, provider tuning,
 persistence/database beyond T5 ephemeral scope, Maika proof, public-sync,

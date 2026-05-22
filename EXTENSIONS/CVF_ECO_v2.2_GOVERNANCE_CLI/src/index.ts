@@ -20,6 +20,17 @@ export {
   type CertifiedSkillPackRegistry,
   type ProductOutcomeRuntimePlan,
 } from "./product-outcome.runtime";
+export {
+  buildOperationalBenchmarkReport,
+  formatOperationalBenchmarkReport,
+  parseOperationalBenchmarkInput,
+  type CountMetricResult,
+  type DeferredOperationalMetric,
+  type OperationalBenchmarkEvidenceMode,
+  type OperationalBenchmarkMetrics,
+  type OperationalBenchmarkModeBreakdown,
+  type OperationalBenchmarkReport,
+} from "./operational-benchmark-suite";
 export type {
   BenchmarkGovernanceOptions,
   CLIArgs,

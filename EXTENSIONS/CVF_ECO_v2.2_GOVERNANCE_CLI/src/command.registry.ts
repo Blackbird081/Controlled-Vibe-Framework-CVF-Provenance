@@ -15,6 +15,11 @@ import {
   type GovernanceReliabilityReport,
 } from "./governance-reliability-metrics";
 import {
+  buildOperationalBenchmarkReport,
+  formatOperationalBenchmarkReport,
+  parseOperationalBenchmarkInput,
+} from "./operational-benchmark-suite";
+import {
   CERTIFIED_SKILL_PACK_REGISTRY_PATH,
   assertProductOutcomeRuntimePlanFiles,
   listProductOutcomeRuntimePlans,
@@ -177,7 +182,7 @@ export class CommandRegistry {
     this.register({
       name: "benchmark",
       description: "Run offline CVF benchmark computations",
-      usage: "cvf benchmark <governance|run> --input <audit.jsonl> [--format json|table]",
+      usage: "cvf benchmark <governance|run|operational> --input <audit.jsonl|release-gate.json> [--format json|table]",
       execute: (args) => this.benchmarkCommand(args),
     });
 
@@ -499,10 +504,10 @@ export class CommandRegistry {
 
   private benchmarkCommand(args: CLIArgs): CLIOutput {
     const subCommand = args.positional[0];
-    if (subCommand !== "governance" && subCommand !== "run") {
+    if (subCommand !== "governance" && subCommand !== "run" && subCommand !== "operational") {
       return {
         success: false,
-        message: "Unknown benchmark sub-command. Usage: cvf benchmark governance --input <audit.jsonl> [--format json|table] or cvf benchmark run --input <audit.jsonl> [--format json|table]",
+        message: "Unknown benchmark sub-command. Usage: cvf benchmark governance --input <audit.jsonl> [--format json|table] or cvf benchmark operational --input <audit.jsonl|release-gate.json> [--format json|table]",
         exitCode: 1,
       };
     }
@@ -521,7 +526,19 @@ export class CommandRegistry {
     const options: BenchmarkGovernanceOptions = { input: input.trim(), format };
 
     try {
-      const events = parseAuditJsonl(readFileSync(options.input, "utf8"));
+      const content = readFileSync(options.input, "utf8");
+      const events = subCommand === "operational"
+        ? parseOperationalBenchmarkInput(content)
+        : parseAuditJsonl(content);
+      if (subCommand === "operational") {
+        const report = buildOperationalBenchmarkReport(events, options.input);
+        return {
+          success: true,
+          message: formatOperationalBenchmarkReport(report, options.format),
+          data: report,
+          exitCode: 0,
+        };
+      }
       const report = computeGovernanceReliabilityReport(events);
       return {
         success: true,
