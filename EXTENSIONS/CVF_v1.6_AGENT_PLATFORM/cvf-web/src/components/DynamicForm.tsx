@@ -129,13 +129,13 @@ export function DynamicForm({ template, onSubmit, onBack, onSendToAgent }: Dynam
             <div className="mb-6 rounded-xl border border-blue-200/70 bg-blue-50/70 px-4 py-4 text-sm text-blue-900 dark:border-blue-900/60 dark:bg-blue-950/30 dark:text-blue-100">
                 <p className="font-semibold mb-1">
                     {language === 'en'
-                        ? 'You only need to describe the website in plain language.'
-                        : 'Bạn chỉ cần mô tả website bằng ngôn ngữ bình thường.'}
+                        ? 'Describe the outcome in plain language.'
+                        : 'Bạn chỉ cần mô tả kết quả mong muốn bằng ngôn ngữ bình thường.'}
                 </p>
                 <p className="text-blue-800 dark:text-blue-200">
                     {language === 'en'
-                        ? 'CVF will turn your brief into an agent-ready build packet, including the hidden structure and guardrails.'
-                        : 'CVF sẽ tự đóng gói brief này thành packet giao việc cho agent, bao gồm cả cấu trúc ẩn và guardrails cần thiết.'}
+                        ? 'CVF keeps the structure, handoff packet, and safety checks behind the form.'
+                        : 'CVF giữ cấu trúc, packet giao việc và kiểm tra an toàn ở phía sau form.'}
                 </p>
             </div>
 

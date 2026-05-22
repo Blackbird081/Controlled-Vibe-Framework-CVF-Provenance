@@ -16,6 +16,7 @@ type OutcomeQuickActionsLang = 'vi' | 'en';
 export interface OutcomeQuickActionsProps {
     lang: OutcomeQuickActionsLang;
     onSelectTemplate: (templateId: string) => void;
+    id?: string;
 }
 
 const iconByOutcome: Record<OutcomeKey, typeof ClipboardList> = {
@@ -60,20 +61,42 @@ const toneStyles = {
     },
 } as const;
 
-export function OutcomeQuickActions({ lang, onSelectTemplate }: OutcomeQuickActionsProps) {
+const labels = {
+    vi: {
+        eyebrow: 'Bắt đầu bằng kết quả',
+        title: 'Chọn việc bạn muốn hoàn tất',
+        exportReady: 'Xuất gói',
+        receiptReady: 'Có biên nhận',
+    },
+    en: {
+        eyebrow: 'Start from outcome',
+        title: 'Choose what you need finished',
+        exportReady: 'Pack export',
+        receiptReady: 'Receipt',
+    },
+} as const;
+
+export function OutcomeQuickActions({ lang, onSelectTemplate, id }: OutcomeQuickActionsProps) {
+    const copy = labels[lang];
+
     return (
-        <section aria-label={lang === 'vi' ? 'Hành động theo kết quả' : 'Outcome quick actions'} className="space-y-3">
+        <section
+            id={id}
+            data-testid="outcome-quick-actions"
+            aria-label={lang === 'vi' ? 'Hành động theo kết quả' : 'Outcome quick actions'}
+            className="cvf-surface cvf-density-section rounded-[28px] border border-slate-200/80 bg-white p-5 shadow-[0_16px_48px_-42px_rgba(15,23,42,0.45)] dark:border-white/[0.07] dark:bg-[#171b29] dark:shadow-none"
+        >
             <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
                 <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400 dark:text-white/35">
-                        {lang === 'vi' ? 'Bắt đầu bằng kết quả' : 'Start from outcome'}
+                        {copy.eyebrow}
                     </p>
                     <h3 className="mt-1 text-lg font-semibold text-slate-950 dark:text-white">
-                        {lang === 'vi' ? 'Chọn nhanh gói cần tạo' : 'Choose the pack you need'}
+                        {copy.title}
                     </h3>
                 </div>
             </div>
-            <div className="grid gap-3 md:grid-cols-3">
+            <div className="mt-4 grid gap-3 md:grid-cols-3">
                 {OUTCOME_WORKFLOW_REGISTRY.map((action) => {
                     const Icon = iconByOutcome[action.outcomeKey] ?? ClipboardCheck;
                     const styles = toneStyles[action.tone];
@@ -83,7 +106,7 @@ export function OutcomeQuickActions({ lang, onSelectTemplate }: OutcomeQuickActi
                             key={action.templateId}
                             type="button"
                             onClick={() => onSelectTemplate(action.templateId)}
-                            className={`group flex min-h-[120px] items-start gap-4 rounded-[22px] border p-5 text-left transition hover:-translate-y-0.5 hover:shadow-md focus:outline-none focus:ring-4 focus:ring-indigo-500/15 ${styles.border}`}
+                            className={`group flex min-h-[132px] items-start gap-4 rounded-[18px] border p-4 text-left transition hover:-translate-y-0.5 hover:shadow-md focus:outline-none focus:ring-4 focus:ring-indigo-500/15 ${styles.border}`}
                             aria-label={action.title[lang]}
                         >
                             <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${styles.icon}`}>
@@ -93,6 +116,10 @@ export function OutcomeQuickActions({ lang, onSelectTemplate }: OutcomeQuickActi
                                 <span className={`block text-sm font-semibold ${styles.label}`}>{action.title[lang]}</span>
                                 <span className="mt-1 block text-xs leading-5 text-slate-600 dark:text-white/50">
                                     {action.description[lang]}
+                                </span>
+                                <span className="mt-3 flex flex-wrap gap-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-500 dark:text-white/38">
+                                    <span className="rounded-md border border-current/15 px-2 py-1">{copy.exportReady}</span>
+                                    <span className="rounded-md border border-current/15 px-2 py-1">{copy.receiptReady}</span>
                                 </span>
                             </span>
                         </button>

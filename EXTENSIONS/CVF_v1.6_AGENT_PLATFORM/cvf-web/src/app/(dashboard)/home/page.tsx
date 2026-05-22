@@ -20,6 +20,7 @@ import {
 } from '@/lib/governed-starter-path';
 import { isIntentFirstEnabled, type IntentRouteResult } from '@/lib/intent-router';
 import { buildContinuationExecution, buildEvidenceSnapshot } from '@/lib/execution-continuity';
+import { OUTCOME_WORKFLOW_REGISTRY } from '@/lib/workflow-composition';
 import { OutcomeQuickActions } from '@/components/OutcomeQuickActions';
 import {
     TemplateCard,
@@ -122,13 +123,13 @@ export default function HomePage() {
 
     const statCards = useMemo(() => ([
         {
-            label: language === 'vi' ? 'Templates' : 'Templates',
-            value: String(allRunnableTemplates.length),
+            label: language === 'vi' ? 'Kết quả' : 'Outcomes',
+            value: String(OUTCOME_WORKFLOW_REGISTRY.length),
             icon: Layers3,
             tone: 'accent' as const,
         },
         {
-            label: language === 'vi' ? 'Luồng govern' : 'Governed Paths',
+            label: language === 'vi' ? 'Luồng có hướng dẫn' : 'Guided Flows',
             value: String(Object.keys(WIZARD_MAP).length),
             icon: ShieldCheck,
             tone: 'emerald' as const,
@@ -547,29 +548,39 @@ export default function HomePage() {
             {workflowState === 'browse' && (
                 <>
                     <SurfaceTopBar
-                        title={language === 'vi' ? 'Templates' : 'Templates'}
+                        title={language === 'vi' ? 'Kết quả cần tạo' : 'Outcomes'}
                         subtitle={language === 'vi'
-                            ? 'Chọn template, điền form, nhận kết quả mà không cần viết prompt.'
-                            : 'Pick a template, fill the form, and get results without writing prompts.'}
+                            ? 'Chọn kết quả trước; CVF sẽ mở đúng workflow và giữ bằng chứng ở phía sau.'
+                            : 'Choose the outcome first; CVF opens the right workflow and keeps evidence behind it.'}
                         actions={(
                             <>
-                                <Link
-                                    href="/landing"
+                                <button
+                                    type="button"
+                                    onClick={() => document.getElementById('cvf-outcome-actions')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
                                     className="cvf-control inline-flex items-center rounded-2xl border border-indigo-200 bg-indigo-50 px-4 py-2 text-sm font-semibold text-indigo-600 transition hover:bg-indigo-100 dark:border-indigo-500/20 dark:bg-indigo-500/10 dark:text-indigo-300 dark:hover:bg-indigo-500/15"
                                 >
-                                    {language === 'vi' ? 'Xem landing page' : 'View landing'}
-                                </Link>
-                                <Link
-                                    href="/docs"
+                                    {language === 'vi' ? 'Xem outcomes' : 'View outcomes'}
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => document.getElementById('tour-template-grid')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
                                     className="cvf-control inline-flex items-center rounded-2xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-white/75 dark:hover:bg-white/[0.07]"
                                 >
-                                    {language === 'vi' ? 'Mở Docs' : 'Open Docs'}
-                                </Link>
+                                    {language === 'vi' ? 'Duyệt template' : 'Browse templates'}
+                                </button>
                             </>
                         )}
                     />
 
                     <div className="space-y-8 px-4 py-6 sm:px-6">
+                        {!currentFolder && (
+                            <OutcomeQuickActions
+                                id="cvf-outcome-actions"
+                                lang={language}
+                                onSelectTemplate={handleOutcomeQuickAction}
+                            />
+                        )}
+
                         <section
                             id="tour-welcome"
                             className="cvf-surface cvf-density-section overflow-hidden rounded-[32px] border border-slate-200/80 bg-[radial-gradient(circle_at_top_left,_rgba(99,102,241,0.16),_transparent_45%),linear-gradient(135deg,_#f8fafc,_#ffffff)] p-7 shadow-[0_20px_60px_-45px_rgba(79,70,229,0.35)] dark:border-white/[0.07] dark:bg-[radial-gradient(circle_at_top_left,_rgba(99,102,241,0.22),_transparent_40%),linear-gradient(135deg,_#141927,_#0f1320)] dark:shadow-none sm:p-8"
@@ -798,8 +809,6 @@ export default function HomePage() {
                                 </Link>
                             ))}
                         </div>
-
-                        <OutcomeQuickActions lang={language} onSelectTemplate={handleOutcomeQuickAction} />
 
                         <section className="cvf-surface cvf-density-section rounded-[32px] border border-slate-200/80 bg-white p-6 shadow-[0_20px_55px_-45px_rgba(15,23,42,0.35)] dark:border-white/[0.07] dark:bg-[#171b29] dark:shadow-none">
                             <div className="flex flex-col gap-6">

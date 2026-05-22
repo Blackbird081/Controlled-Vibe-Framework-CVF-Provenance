@@ -38,7 +38,7 @@ export async function loginAs(page: Page, username: string, password: string) {
     }
 
     await page.getByRole('button', { name: /Đăng nhập/i }).click();
-    await expect(page.getByRole('heading', { name: /Templates/i }).first()).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByRole('heading', { name: /Kết quả cần tạo|Outcomes|Templates/i }).first()).toBeVisible({ timeout: 15_000 });
 }
 
 export async function login(page: Page) {
