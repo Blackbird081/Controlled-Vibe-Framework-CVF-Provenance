@@ -104,6 +104,10 @@ Current HEAD after P1 public developer onboarding proof closure:
 
 `c0168f43` (docs: close P1 public onboarding proof)
 
+Current HEAD after public dependency audit triage closure:
+
+`b4f751df` (docs: close public dependency audit triage)
+
 ---
 
 ## Purpose
@@ -630,6 +634,8 @@ Residual:
 
 - `npm ci` completed but npm audit reported 4 moderate, 7 high, and 1 critical
   dependency vulnerabilities. This was recorded as residual, not remediated.
+- Closed after follow-up public dependency-audit triage. See:
+  `docs/baselines/CVF_GC018_PUBLIC_DEPENDENCY_AUDIT_TRIAGE_2026-05-22.md`.
 
 Private provenance GC-018 packet updated:
 
@@ -642,12 +648,52 @@ Boundary:
 - It does not claim live provider behavior, hosted workflow freshness, broad
   provider stability, dependency audit remediation, or new runtime behavior.
 
+### 2026-05-22 - Public Dependency Audit Triage Closed
+
+Operator approved closing the P1 dependency-audit residual.
+
+Public-sync commit:
+
+- `27e0ee63` (fix(web): close public dependency audit residual)
+
+Private provenance GC-018 packet:
+
+- `docs/baselines/CVF_GC018_PUBLIC_DEPENDENCY_AUDIT_TRIAGE_2026-05-22.md`
+
+Public evidence:
+
+- `docs/evidence/public-dependency-audit-triage-2026-05-22.md`
+- `docs/evidence/public-developer-onboarding-proof-2026-05-22.md`
+
+Public web dependency changes:
+
+- `next`: `16.1.6` -> `16.2.6`
+- `eslint-config-next`: `16.1.6` -> `16.2.6`
+- `jspdf` resolved by lockfile update to `4.2.1`
+- `postcss` globally overridden to `8.5.15`
+
+Verification:
+
+- `npm audit --json`: PASS, 0 vulnerabilities
+- `npm ls postcss next next-auth --depth=2`: PASS
+- `npm run check`: PASS
+- `python scripts/run_cvf_static_ci_gate.py --json`: PASS 7/7
+- private provenance local governance hook chain: PASS 43/43
+
+Boundary:
+
+- No `npm audit fix --force` was used; the forced downgrade path was rejected.
+- This closes npm audit posture for the public `cvf-web` package only.
+- It does not claim live provider behavior, hosted readiness, full extension
+  stack security certification, or broad dependency freshness outside public
+  `cvf-web`.
+
 ---
 
 ## Next Allowed Move
 
 Default next move: stop. G1, D2, E2, H2, F2, and A2 are closed for the current
-private baseline. P0 and P1 public-readiness follow-ups are also closed.
+private baseline. P0, P1, and the P1 dependency-audit residual are also closed.
 
 If continuing, open a fresh GC-018/work order before implementation. Remaining
 review-required candidates are:
