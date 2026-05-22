@@ -411,6 +411,8 @@ Baseline:
 `docs/baselines/CVF_GC018_E2_OPERATIONAL_BENCHMARK_SUITE_2026-05-22.md`
 Work order:
 `docs/work_orders/CVF_WO_E2_OPERATIONAL_BENCHMARK_SUITE_2026-05-22.md`
+Commit:
+`5fe76a75`
 
 Delivered Governance CLI `cvf.operationalBenchmark.v1`, `cvf benchmark
 operational`, audit JSONL and release-gate JSON ingestion, evidence-mode

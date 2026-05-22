@@ -102,6 +102,12 @@ deferred rather than fabricating a score.
 
 ## Evidence Trace Block
 
+Commit:
+
+```text
+5fe76a75
+```
+
 Files changed:
 
 ```text
