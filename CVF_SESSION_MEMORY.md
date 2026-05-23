@@ -103,7 +103,21 @@ D9 Qwen3 thinking enable-true adapter returned blocked at `docs/reviews/CVF_D9_Q
 
 D10 Qwen3 R1-compatible hosted proof is closed pass at `docs/reviews/CVF_D10_QWEN3_R1_COMPATIBLE_HOSTED_PROOF_COMPLETION_2026-05-23.md`: active mode marker `d10_qwen3_r1_compatible_hosted_proof_closed_pass`; focused providers test PASS `42/42`, `cvf-web` check PASS, local router preflight for Alibaba `R1` returned `ALLOW`, and the single hosted call returned HTTP `200`, `success=true`, `decision=ALLOW`, `routingDecision=ALLOW`, `enforcementStatus=ALLOW`, `evidenceMode=live`, provider `alibaba`, model `qwen3-235b-a22b-thinking-2507`, receipt `rcpt-env-mpigxtmn-pml5ky`, trace `env-mpigxtmn-pml5ky`, output length `4057`, `rawSecretPrinted=false`. Public repo contains the adapter fix at commit `811e59f6`.
 
-Current mode marker: `d9_qwen3_thinking_enable_true_adapter_public_deploy_pending`.
+Current mode marker: `d10_qwen3_r1_compatible_hosted_proof_closed_pass`.
+
+## Provider Proof Prerequisite References
+
+Before authoring any work order that targets Alibaba DashScope Qwen3 models
+via hosted `/api/execute`, read:
+
+- `docs/reference/CVF_QWEN3_HOSTED_PROOF_PREREQUISITES_2026-05-23.md`
+  — 7 verified prerequisites (enable_thinking adapter, model ID versioning,
+  router R1 cap, Skill Preflight, aiCommit, safety payload, registry);
+  includes proof call template JSON and "adding a new model" quick steps.
+
+This reference was derived from the D3→D10 blocker chain (8 tranches,
+2026-05-23) and must be included in the "Required First Reads" of any
+future Qwen3 hosted proof work order.
 
 ## Required First Reads
 

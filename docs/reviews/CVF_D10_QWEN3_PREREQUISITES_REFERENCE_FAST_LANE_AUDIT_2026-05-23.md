@@ -24,6 +24,9 @@ chain into a reusable prerequisite checklist for future proof tranches.
 Target:
 
 - `docs/reference/CVF_QWEN3_HOSTED_PROOF_PREREQUISITES_2026-05-23.md` (new)
+- `CVF_SESSION_MEMORY.md` (pointer section added)
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json` (nextAllowedMove updated)
+- `AGENT_HANDOFF_V11_2026-05-21.md` (Latest Work pointer added)
 
 Source evidence:
 
@@ -34,11 +37,11 @@ Source evidence:
 
 ## 1. Proposal
 
-- Change ID: `D10_QWEN3_PREREQUISITES_REFERENCE`
+- Change ID: `D10_QWEN3_PREREQUISITES_REFERENCE_AND_DISCOVERY_WIRING`
 - Date: 2026-05-23
-- Tranche: post-D10 documentation
+- Tranche: post-D10 documentation and discovery wiring
 - Control point: GC-021 Fast Lane
-- Active execution plan: add `docs/reference/CVF_QWEN3_HOSTED_PROOF_PREREQUISITES_2026-05-23.md`
+- Active execution plan: add `docs/reference/CVF_QWEN3_HOSTED_PROOF_PREREQUISITES_2026-05-23.md`; add pointer in `CVF_SESSION_MEMORY.md` Provider Proof Prerequisite References section; update `ACTIVE_SESSION_STATE.json` nextAllowedMove; update `AGENT_HANDOFF_V11_2026-05-21.md` Latest Work
 
 ## 2. Eligibility Check
 
@@ -54,7 +57,10 @@ Source evidence:
 
 - files / surfaces touched:
   - `docs/reference/CVF_QWEN3_HOSTED_PROOF_PREREQUISITES_2026-05-23.md` (new)
-- caller or consumer affected: none — reference doc only
+  - `CVF_SESSION_MEMORY.md` — added Provider Proof Prerequisite References section (pointer only, no content change to existing sections)
+  - `CVF_SESSION/ACTIVE_SESSION_STATE.json` — updated `nextAllowedMove` to include pointer to reference doc
+  - `AGENT_HANDOFF_V11_2026-05-21.md` — added pointer block in Latest Work section
+- caller or consumer affected: agents and operators reading session front door will now find the prerequisite reference before authoring new Qwen3 work orders
 - out of scope: no source code, no registry, no route, no adapter, no public-sync
 
 ## 4. Why Fast Lane Is Safe

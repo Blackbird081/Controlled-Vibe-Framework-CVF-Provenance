@@ -193,8 +193,10 @@ current.
 
 ## Latest Work / Changes
 
-Status: terminal hardening sweep closed; active work queue has no ready
+Status: D10 Qwen3 R1 hosted proof closed PASS; active work queue has no ready
 implementation item.
+
+Qwen3 hosted proof prerequisites reference (Required First Reads for any new Alibaba Qwen3 work order): `docs/reference/CVF_QWEN3_HOSTED_PROOF_PREREQUISITES_2026-05-23.md` — 7 verified prerequisites + proof call template JSON from D3–D10 blocker chain.
 
 Most recent tranche:
 
@@ -1188,3 +1190,7 @@ Current HEAD after D9 Qwen3 thinking enable-true adapter dispatch:
 Current HEAD after D10 Qwen3 R1-compatible hosted proof closure:
 
 `7b194bfb` (docs(qwen3): close D10 hosted proof)
+
+Current HEAD after D10 prerequisites reference and fast lane audit:
+
+`8f17832c` (docs(qwen3): add prerequisite reference and D10 fast lane audit)
