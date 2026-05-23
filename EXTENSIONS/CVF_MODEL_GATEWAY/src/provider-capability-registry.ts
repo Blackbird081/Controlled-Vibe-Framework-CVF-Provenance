@@ -63,7 +63,7 @@ export const PROVIDER_CAPABILITY_REGISTRY = [
         defaultMethod: "complete",
       },
       {
-        modelId: "qwen3-235b-a22b-thinking",
+        modelId: "qwen3-235b-a22b-thinking-2507",
         supportedMethods: ["complete", "chat", "reasoning"],
         defaultMethod: "complete",
       },

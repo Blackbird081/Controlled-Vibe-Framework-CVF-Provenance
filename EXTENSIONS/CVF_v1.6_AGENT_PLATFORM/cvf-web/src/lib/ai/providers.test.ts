@@ -325,7 +325,7 @@ describe('ai/providers', () => {
         });
 
         it('disables thinking for Qwen3 non-streaming Alibaba models only', async () => {
-            const qwen3Models = ['qwen3-32b', 'qwen3-235b-a22b-thinking'];
+            const qwen3Models = ['qwen3-32b', 'qwen3-235b-a22b-thinking-2507'];
 
             for (const model of qwen3Models) {
                 fetchMock.mockResolvedValueOnce({

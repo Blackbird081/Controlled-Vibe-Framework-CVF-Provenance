@@ -2398,3 +2398,43 @@ Utility and guard:
     two-model Qwen3 matrix remains blocked on model availability/access for
     `qwen3-235b-a22b-thinking`.
   - No retry loop was run after the second model returned `success=false`.
+
+---
+## [2026-05-23] Batch: D6 Qwen3 Thinking Model ID Correction Blocker
+
+- Change reference:
+  - D6 GC-018:
+    `docs/baselines/CVF_GC018_D6_QWEN3_THINKING_MODEL_ID_CORRECTION_2026-05-23.md`
+  - D6 work order:
+    `docs/work_orders/CVF_WO_D6_QWEN3_THINKING_MODEL_ID_CORRECTION_2026-05-23.md`
+- Impacted scope:
+  - `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-registry.ts`
+  - `EXTENSIONS/CVF_MODEL_GATEWAY/src/providers/alibaba/capability.json`
+  - `EXTENSIONS/CVF_MODEL_GATEWAY/tests/provider-capability-registry.test.ts`
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.test.ts`
+  - blocker review
+    `docs/reviews/CVF_D6_QWEN3_THINKING_MODEL_ID_CORRECTION_BLOCKER_REVIEW_2026-05-23.md`
+- Tests executed:
+  - `npm test -- tests/provider-capability-registry.test.ts` in
+    `EXTENSIONS/CVF_MODEL_GATEWAY` -> PASS, 1 file / 7 tests.
+  - `npm run test:run -- src/lib/ai/providers.test.ts` in
+    `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` -> PASS, 1 file / 42 tests.
+  - `npm run check` in `EXTENSIONS/CVF_MODEL_GATEWAY` -> PASS.
+  - `npm run check` in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` -> PASS.
+  - Local safety preflight using current `applySafetyFilters()` -> PASS,
+    `blocked=false`, `detailsCount=0`.
+  - `python governance/compat/run_local_governance_hook_chain.py --hook pre-push --parallel --max-workers 8`
+    -> PASS, 43/43 checks.
+- Hosted proof:
+  - One signed hosted call to `https://vibcode.netlify.app/api/execute` for
+    `qwen3-235b-a22b-thinking-2507` -> BLOCKED: HTTP 400,
+    `success=false`, `decision=BLOCK`, `enforcementStatus=BLOCK`,
+    `evidenceMode=live`, provider `alibaba`, response model `blocked`,
+    receipt `rcpt-env-mpifpjmo-1csbdv`, trace `env-mpifpjmo-1csbdv`,
+    error `Skill Preflight declaration is required before Build/Execute actions.`,
+    `rawSecretPrinted=false`.
+- Notes/Risks:
+  - Local model-id correction is complete and covered.
+  - Hosted proof did not reach provider execution, so corrected-model account
+    access remains unproven.
+  - No retry loop was run after the hosted route gate returned BLOCK.

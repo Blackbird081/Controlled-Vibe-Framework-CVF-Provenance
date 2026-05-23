@@ -73,8 +73,8 @@ current.
 
 ## Current Session Mode
 
-- Current mode: `d5_qwen3_hosted_safe_payload_rerun_blocked_model_access`
-- Previous mode: `d4_qwen3_enable_thinking_adapter_blocked_hosted_safety_filter`
+- Current mode: `d6_qwen3_thinking_model_id_correction_blocked_skill_preflight_gate`
+- Previous mode: `d5_qwen3_hosted_safe_payload_rerun_blocked_model_access`
 - Freeze posture: `governance_kernel_freeze_recommended`
 - Active handoff pointer: `AGENT_HANDOFF_V11_2026-05-21.md`
 - Historical handoff archive: `CVF_SESSION/handoffs/archive/`
@@ -93,7 +93,9 @@ D4 Qwen3 enable-thinking adapter is returned blocked at `docs/reviews/CVF_D4_QWE
 
 D5 Qwen3 hosted safe-payload rerun is returned blocked at `docs/reviews/CVF_D5_QWEN3_HOSTED_SAFE_PAYLOAD_RERUN_BLOCKER_REVIEW_2026-05-23.md`. Safety preflight passed for both payloads, focused provider tests PASS `42/42`, `cvf-web` check PASS, and private provenance push `6f0fbcd2` succeeded. Hosted `qwen3-32b` PASSed the matrix with HTTP `200`, `success=true`, `ALLOW`, `evidenceMode=live`, receipt `rcpt-env-mpidzqv4-ysriei`, trace `env-mpidzqv4-ysriei`, and `rawSecretPrinted=false`. Hosted `qwen3-235b-a22b-thinking` returned HTTP `200` and ALLOW/live receipt evidence, but `success=false` because the model does not exist or the hosted account lacks access; receipt `rcpt-env-mpie0q8c-zn6jku`, trace `env-mpie0q8c-zn6jku`, `rawSecretPrinted=false`. Do not retry under D5.
 
-Current mode marker: `d5_qwen3_hosted_safe_payload_rerun_blocked_model_access`.
+D6 Qwen3 thinking model-id correction is returned blocked at `docs/reviews/CVF_D6_QWEN3_THINKING_MODEL_ID_CORRECTION_BLOCKER_REVIEW_2026-05-23.md`. Local metadata now uses `qwen3-235b-a22b-thinking-2507`; Model Gateway registry test PASS `7/7`; cvf-web providers test PASS `42/42`; both TypeScript checks PASS; safety preflight PASS `blocked=false`. The single hosted proof returned HTTP `400`, `success=false`, `decision=BLOCK`, `enforcementStatus=BLOCK`, `evidenceMode=live`, provider `alibaba`, response model `blocked`, receipt `rcpt-env-mpifpjmo-1csbdv`, trace `env-mpifpjmo-1csbdv`, error `Skill Preflight declaration is required before Build/Execute actions.`, and `rawSecretPrinted=false`. Corrected-model provider execution remains unproven because the route blocked before dispatch. Do not retry under D6.
+
+Current mode marker: `d6_qwen3_thinking_model_id_correction_blocked_skill_preflight_gate`.
 
 ## Required First Reads
 

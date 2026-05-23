@@ -107,12 +107,12 @@ describe("provider capability registry", () => {
       defaultMethod: "complete",
       capabilityRef: "provider-capability/alibaba/qwen3-32b",
     });
-    expect(getProviderMethodContract(PROVIDER_CAPABILITY_REGISTRY, "alibaba", "qwen3-235b-a22b-thinking")).toEqual({
+    expect(getProviderMethodContract(PROVIDER_CAPABILITY_REGISTRY, "alibaba", "qwen3-235b-a22b-thinking-2507")).toEqual({
       providerId: "alibaba",
-      modelId: "qwen3-235b-a22b-thinking",
+      modelId: "qwen3-235b-a22b-thinking-2507",
       supportedMethods: ["complete", "chat", "reasoning"],
       defaultMethod: "complete",
-      capabilityRef: "provider-capability/alibaba/qwen3-235b-a22b-thinking",
+      capabilityRef: "provider-capability/alibaba/qwen3-235b-a22b-thinking-2507",
     });
     expect(() => assertRegistryProviderMethodSupported(
       PROVIDER_CAPABILITY_REGISTRY,
@@ -123,7 +123,7 @@ describe("provider capability registry", () => {
     expect(() => assertRegistryProviderMethodSupported(
       PROVIDER_CAPABILITY_REGISTRY,
       "alibaba",
-      "qwen3-235b-a22b-thinking",
+      "qwen3-235b-a22b-thinking-2507",
       "complete",
     )).not.toThrow();
     expect(() => assertRegistryProviderMethodSupported(

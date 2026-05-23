@@ -1114,10 +1114,22 @@ Disposition:
 - Per D4 stop rule, `qwen3-235b-a22b-thinking` was not attempted.
 - No retry loop was run.
 
-Default next move: stop. Do not rerun D3, D4, or D5 hosted proof under closed
-work orders. Any next hosted attempt, model-id correction, hosted account
-access/provisioning change, deployment step, or completion claim requires a
-fresh GC-018/work order.
+D6 corrected local Qwen3 thinking model metadata to
+`qwen3-235b-a22b-thinking-2507` but returned blocked at
+`docs/reviews/CVF_D6_QWEN3_THINKING_MODEL_ID_CORRECTION_BLOCKER_REVIEW_2026-05-23.md`.
+Focused local checks passed: Model Gateway registry `7/7`, cvf-web providers
+`42/42`, both TypeScript checks, and safety preflight `blocked=false`. The
+single hosted proof returned HTTP `400`, `success=false`, `decision=BLOCK`,
+`enforcementStatus=BLOCK`, `evidenceMode=live`, provider `alibaba`, response
+model `blocked`, receipt `rcpt-env-mpifpjmo-1csbdv`, trace
+`env-mpifpjmo-1csbdv`, error `Skill Preflight declaration is required before
+Build/Execute actions.`, `rawSecretPrinted=false`.
+
+Default next move: stop. Do not rerun D3, D4, D5, or D6 hosted proof under
+closed work orders. Any next hosted attempt for
+`qwen3-235b-a22b-thinking-2507` requires fresh GC-018/work order with an exact
+Skill Preflight-compliant payload or route-level preflight proof before the
+single hosted call.
 
 Do not widen into repeated hosted proof, public npm release, provider tuning,
 persistence/database beyond T5 ephemeral scope, Maika proof, public-sync, or
