@@ -98,4 +98,39 @@ describe("provider capability registry", () => {
       "vision",
     )).toThrow(UnsupportedMethodError);
   });
+
+  it("registers bounded Alibaba Qwen3 models without broad provider parity claims", () => {
+    expect(getProviderMethodContract(PROVIDER_CAPABILITY_REGISTRY, "alibaba", "qwen3-32b")).toEqual({
+      providerId: "alibaba",
+      modelId: "qwen3-32b",
+      supportedMethods: ["complete", "chat"],
+      defaultMethod: "complete",
+      capabilityRef: "provider-capability/alibaba/qwen3-32b",
+    });
+    expect(getProviderMethodContract(PROVIDER_CAPABILITY_REGISTRY, "alibaba", "qwen3-235b-a22b-thinking")).toEqual({
+      providerId: "alibaba",
+      modelId: "qwen3-235b-a22b-thinking",
+      supportedMethods: ["complete", "chat", "reasoning"],
+      defaultMethod: "complete",
+      capabilityRef: "provider-capability/alibaba/qwen3-235b-a22b-thinking",
+    });
+    expect(() => assertRegistryProviderMethodSupported(
+      PROVIDER_CAPABILITY_REGISTRY,
+      "alibaba",
+      "qwen3-32b",
+      "complete",
+    )).not.toThrow();
+    expect(() => assertRegistryProviderMethodSupported(
+      PROVIDER_CAPABILITY_REGISTRY,
+      "alibaba",
+      "qwen3-235b-a22b-thinking",
+      "complete",
+    )).not.toThrow();
+    expect(() => assertRegistryProviderMethodSupported(
+      PROVIDER_CAPABILITY_REGISTRY,
+      "alibaba",
+      "qwen3-32b",
+      "reasoning",
+    )).toThrow(UnsupportedMethodError);
+  });
 });

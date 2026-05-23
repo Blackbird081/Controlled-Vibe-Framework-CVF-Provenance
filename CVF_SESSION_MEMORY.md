@@ -73,8 +73,8 @@ current.
 
 ## Current Session Mode
 
-- Current mode: `d3_qwen3_provider_expansion_dispatched`
-- Previous mode: `p3_hosted_protected_workflow_proof_passed`
+- Current mode: `d3_qwen3_provider_expansion_blocked_provider_parameter`
+- Previous mode: `d3_qwen3_provider_expansion_dispatched`
 - Freeze posture: `governance_kernel_freeze_recommended`
 - Active handoff pointer: `AGENT_HANDOFF_V11_2026-05-21.md`
 - Historical handoff archive: `CVF_SESSION/handoffs/archive/`
@@ -89,7 +89,7 @@ G1 execution identity runtime gate is closed at `docs/reviews/CVF_G1_EXECUTION_I
 
 The active post-B/C steering source remains `docs/reviews/CVF_REVIEW_CVF_POST_BC_REMAINING_PAIN_POINTS_ASSESSMENT_2026-05-22.md` plus `docs/roadmaps/CVF_REVIEW_CVF_POST_BC_REMAINING_PAIN_POINT_ROADMAP_2026-05-22.md`. Review CVF.md remains the deliverable-fit oracle. D2 provider capability matrix is closed at `docs/reviews/CVF_D2_PROVIDER_CAPABILITY_MATRIX_COMPLETION_2026-05-22.md` in commit `e918c690`. E2 operational benchmark suite is closed at `docs/reviews/CVF_E2_OPERATIONAL_BENCHMARK_SUITE_COMPLETION_2026-05-22.md` in commit `5fe76a75`: Governance CLI now has `cvf.operationalBenchmark.v1`, `cvf benchmark operational`, audit JSONL and release-gate JSON ingestion, evidence-mode breakdown, retry/human-correction counts, and an explicit hallucination-recovery deferred boundary. H2 runtime memory hierarchy phase 2 is closed at `docs/reviews/CVF_H2_RUNTIME_MEMORY_HIERARCHY_PHASE2_COMPLETION_2026-05-22.md` in commit `d0f057c7`: Learning Plane now has `cvf.runtimeMemoryHierarchy.v1`, a seven-tier actor-aware runtime map, deterministic write/retrieve/inject/reinject decisions, and ephemeral same-execution working-memory proof while keeping `canReinject=false` and no durable/cross-session memory. F2 noncoder outcome UX hardening is closed at `docs/reviews/CVF_F2_NONCODER_OUTCOME_UX_HARDENING_COMPLETION_2026-05-22.md`: Home now surfaces the six existing outcomes before template browsing, keeps export/receipt cues visible but secondary, and has browser mock proof for ordering plus one outcome-to-form journey. A2 coherence equivalence audit is closed at `docs/reviews/CVF_A2_COHERENCE_EQUIVALENCE_AUDIT_COMPLETION_2026-05-22.md`: existing owner-map, guard-chain, control-matrix, and bootstrap surfaces are equivalent for the five Problem A freeze points; no new kernel-law docs are recommended; the freeze remains in force. Fresh P2/P3/HN1 next-value GC-018 is now closed for executable candidates at `docs/reviews/CVF_P2_HN1_TRANCHE_CLOSURE_REVIEW_2026-05-23.md`: P2 provider soak PASS `12/12` live governed `/api/execute` across Alibaba `qwen-turbo` 6/6 and DeepSeek `deepseek-chat` 6/6; HN1 linkage hygiene revalidated PASS `22/22`; release gate PASS `7/7`. P3 hosted proof first returned blocked at `docs/reviews/CVF_P3_HOSTED_PROTECTED_WORKFLOW_PROOF_BLOCKER_REVIEW_2026-05-23.md` with HTTP `422`/`CLARIFY`; the operator-requested concrete-payload rerun is now closed PASS at `docs/reviews/CVF_P3_HOSTED_PROTECTED_WORKFLOW_PROOF_RERUN_COMPLETION_2026-05-23.md` with HTTP `200`, `success=true`, `ALLOW`, `evidenceMode=live`, provider `alibaba`, model `qwen-turbo`, receipt `rcpt-env-mpi55je6-hiddxq`, trace `env-mpi55je6-hiddxq`, and `rawSecretPrinted=false`.
 
-Current mode marker: `d3_qwen3_provider_expansion_dispatched`.
+Current mode marker: `d3_qwen3_provider_expansion_blocked_provider_parameter`.
 
 ## Required First Reads
 
@@ -165,15 +165,18 @@ Terminal five-option hardening sweep is closed:
 - secret/auth boundary is currently healthy;
 - public claim audit required no public-sync edit.
 
-Next: stop by default. P3 direct hosted proof is now closed PASS at
-`docs/reviews/CVF_P3_HOSTED_PROTECTED_WORKFLOW_PROOF_RERUN_COMPLETION_2026-05-23.md`.
-The hosted target returned HTTP `200`, `success=true`, `ALLOW`,
-`evidenceMode=live`, provider `alibaba`, model `qwen-turbo`, receipt
-`rcpt-env-mpi55je6-hiddxq`, trace `env-mpi55je6-hiddxq`, and
-`rawSecretPrinted=false` for one signed service-token `strategy_analysis`
-payload.
+Next: stop by default. D3 Qwen3 provider expansion returned blocked at
+`docs/reviews/CVF_D3_QWEN3_PROVIDER_EXPANSION_BLOCKER_REVIEW_2026-05-23.md`.
+The additive registry/capability/test work is implemented and
+`EXTENSIONS/CVF_MODEL_GATEWAY` `npm test` passed `20/20` files and `81/81`
+tests. The first hosted proof for `qwen3-32b` reached live governance `ALLOW`
+with receipt `rcpt-env-mpi67ivg-pdduob` and trace `env-mpi67ivg-pdduob`, but
+returned `success=false` with provider error `parameter.enable_thinking must be
+set to false for non-streaming calls`. Per work order, `qwen3-235b-a22b-thinking`
+was not attempted and no retry loop was run.
 
-Do not run provider soak, live benchmark, workflow runtime, hosted readiness
+Do not continue D3 hosted proof, add `enable_thinking` behavior, change
+route/provider runtime, run provider soak, live benchmark, hosted readiness
 claims, public deployment readiness, persistence, Maika, public-sync,
 governance semantics, or freeze claims without fresh operator-selected
 authorization.

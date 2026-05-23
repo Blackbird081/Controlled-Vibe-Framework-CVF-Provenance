@@ -946,14 +946,73 @@ Boundary:
   production readiness, broad provider stability, persistence, Maika proof, or
   freeze-release claim.
 
+### 2026-05-23 - D3 Qwen3 Provider Expansion Blocked
+
+Claude/operator committed D3 authorization at `d6989c15` and dispatched Codex
+to implement the bounded Qwen3 provider expansion.
+
+Authorization:
+
+- `docs/baselines/CVF_GC018_D3_QWEN3_PROVIDER_EXPANSION_2026-05-23.md`
+- `docs/work_orders/CVF_WO_D3_QWEN3_PROVIDER_EXPANSION_2026-05-23.md`
+
+Blocker review:
+
+- `docs/reviews/CVF_D3_QWEN3_PROVIDER_EXPANSION_BLOCKER_REVIEW_2026-05-23.md`
+
+Implemented before blocker:
+
+- added `qwen3-32b` to Alibaba provider capability registry;
+- added `qwen3-235b-a22b-thinking` to Alibaba provider capability registry;
+- added matching Alibaba `capability.json` entries;
+- added provider capability registry assertions.
+
+Test evidence:
+
+- `npm test` in `EXTENSIONS/CVF_MODEL_GATEWAY`;
+- test files `20/20` pass;
+- tests `81/81` pass.
+
+Hosted proof evidence:
+
+- attempted exactly one hosted call for `qwen3-32b`;
+- HTTP `200`;
+- `success=false`;
+- error `parameter.enable_thinking must be set to false for non-streaming calls`;
+- decision `ALLOW`;
+- routing decision `ALLOW`;
+- enforcement status `ALLOW`;
+- `evidenceMode=live`;
+- provider `alibaba`;
+- model `qwen3-32b`;
+- receipt `rcpt-env-mpi67ivg-pdduob`;
+- trace `env-mpi67ivg-pdduob`;
+- raw secret printed `false`.
+
+Disposition:
+
+- `RETURNED_BLOCKED_PROVIDER_PARAMETER`.
+- The hosted target and governance path worked, but provider completion failed.
+- Per work order, `qwen3-235b-a22b-thinking` was not attempted after the first
+  hosted proof failure.
+- No retry loop was run.
+
+Boundary:
+
+- No route/provider runtime fix, no `enable_thinking` behavior change, no
+  receipt-envelope change, no vision/reasoning contract change, no public-sync,
+  no broad Qwen3 stability, no hosted/production readiness, and no freeze
+  release.
+
 ---
 
 ## Next Allowed Move
 
 Default next move: stop. G1, D2, E2, H2, F2, A2, P2, and HN1 are closed for
 the current private baseline. P0, P1, and the P1 dependency-audit residual are
-also closed. P3 direct hosted proof is now closed PASS for the bounded one-call
-hosted protected workflow proof.
+also closed. P3 direct hosted proof is closed PASS for the bounded one-call
+hosted protected workflow proof. D3 Qwen3 provider expansion is blocked at
+provider parameter compatibility after the first hosted proof.
 
 The fresh P2/P3/HN1 GC-018 packet is now closed for P2 and HN1 at:
 
@@ -967,12 +1026,12 @@ Selected P3 roadmap:
 
 - `docs/roadmaps/CVF_P3_HOSTED_TARGET_PREFLIGHT_DECISION_ROADMAP_2026-05-23.md`
 
-P3 hosted proof completion:
+D3 blocker:
 
-- `docs/reviews/CVF_P3_HOSTED_PROTECTED_WORKFLOW_PROOF_RERUN_COMPLETION_2026-05-23.md`
+- `docs/reviews/CVF_D3_QWEN3_PROVIDER_EXPANSION_BLOCKER_REVIEW_2026-05-23.md`
 
-Default next move: stop. Do not rerun hosted proof under the closed one-call
-work order.
+Default next move: stop. Do not rerun D3 hosted proof or attempt the thinking
+model under the closed D3 work order.
 
 Do not widen into repeated hosted proof, public npm release, provider tuning,
 persistence/database beyond T5 ephemeral scope, Maika proof, public-sync, or

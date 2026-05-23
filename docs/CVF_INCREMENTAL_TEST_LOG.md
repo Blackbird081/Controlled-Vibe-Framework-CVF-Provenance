@@ -72,6 +72,18 @@ Template:
 - Notes/Risks:
 ```
 
+## [2026-05-23] Batch: D3 Qwen3 Provider Expansion Blocker
+- Change reference:
+  - D3 working tree after `d6989c15` authorization.
+- Impacted scope:
+  - `EXTENSIONS/CVF_MODEL_GATEWAY` provider capability registry and Alibaba capability metadata.
+- Tests executed:
+  - `npm test` in `EXTENSIONS/CVF_MODEL_GATEWAY` -> PASS, 20/20 files, 81/81 tests.
+- Skip scope:
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web`: skipped because D3 did not change route/runtime code; hosted proof was a live external validation call only.
+- Notes/Risks:
+  - Hosted `qwen3-32b` proof returned live governance `ALLOW` but `success=false` due provider parameter `enable_thinking`; D3 returned blocker and no retry loop was run.
+
 ## [2026-05-18] Batch: Phase E E.2 Role Permission Gate
 - Change reference:
   - Phase E E.2 implementation working tree before commit.

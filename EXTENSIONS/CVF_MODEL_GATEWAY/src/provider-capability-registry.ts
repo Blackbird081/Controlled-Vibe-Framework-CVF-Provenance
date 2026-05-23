@@ -57,6 +57,16 @@ export const PROVIDER_CAPABILITY_REGISTRY = [
         supportedMethods: ["vision"],
         defaultMethod: "vision",
       },
+      {
+        modelId: "qwen3-32b",
+        supportedMethods: ["complete", "chat"],
+        defaultMethod: "complete",
+      },
+      {
+        modelId: "qwen3-235b-a22b-thinking",
+        supportedMethods: ["complete", "chat", "reasoning"],
+        defaultMethod: "complete",
+      },
     ],
   },
   {
