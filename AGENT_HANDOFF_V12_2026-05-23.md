@@ -260,10 +260,24 @@ For older continuity before V12, read:
 
 ---
 
+## Latest HEADs
+
+- `cc6836bf` — chore(archive): active archive hygiene + guard authoring fix (2026-05-24)
+- `f9e2f82d` — feat(aif): close agent intelligence foundations (2026-05-24)
+- `2a2460da` — docs(aif): launch AIF roadmap and dispatch work orders A/B/C (2026-05-23)
+
+Post-AIF next-value roadmap dispatched 2026-05-24:
+`docs/roadmaps/CVF_POST_AIF_NEXT_VALUE_ROADMAP_2026-05-24.md`
+
+N4 (skill corpus test repair) and N5 (catalog AIF update) are WORK_ORDER_READY.
+N6 (graph_search activation) and N7 (third provider) are DEMAND_GATED.
+
+---
+
 ## Claim Boundary
 
 V12 carries no new product claim. It records the AIF roadmap and work order
-launch context. AIF-A is the only authorized tranche; AIF-B and AIF-C are
-demand-gated pending operator unlock. Legacy spec absorption blindspot is
-documented and corrective systemic actions are in place. All prior D10, P3,
-P2/HN1, G1/D2/E2/H2/F2/A2, and T1–T5 claim boundaries remain unchanged.
+launch context. AIF A/B/C are all CLOSED_PASS. Post-AIF N4/N5 are Fast Lane
+ready; N6/N7 are demand-gated. Legacy spec absorption blindspot is documented
+and corrective systemic actions are in place. All prior D10, P3, P2/HN1,
+G1/D2/E2/H2/F2/A2, and T1–T5 claim boundaries remain unchanged.
