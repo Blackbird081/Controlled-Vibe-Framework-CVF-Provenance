@@ -142,7 +142,7 @@ Current HEAD after D3 Qwen3 provider expansion blocker returned:
 
 Current HEAD after D4 Qwen3 enable_thinking adapter dispatched:
 
-`[D4_DISPATCH_SHA]` (docs: file D4 Qwen3 enable_thinking adapter GC-018 and work order)
+`97a3f53c` (docs: file D4 Qwen3 enable_thinking adapter GC-018 and work order)
 
 ---
 
