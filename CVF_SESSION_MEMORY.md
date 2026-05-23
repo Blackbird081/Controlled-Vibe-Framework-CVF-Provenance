@@ -105,6 +105,25 @@ D10 Qwen3 R1-compatible hosted proof is closed pass at `docs/reviews/CVF_D10_QWE
 
 Current mode marker: `d10_qwen3_r1_compatible_hosted_proof_closed_pass`.
 
+## Legacy Spec Absorption Blindspot Audit — 2026-05-23
+
+A structural gap in CVF's audit methodology was identified by operator on 2026-05-23:
+every pain-point audit to date read `docs/reviews/` and `EXTENSIONS/` but never scanned
+`.private_reference/legacy/` for unabsorbed specs. As a result, two high-value spec folders
+were invisible to all audit and roadmap work:
+
+- `.private_reference/legacy/CVF 16.5/agentmemory/` — 10 files covering Memory Gateway,
+  lifecycle decay, semantic/graph retrieval, context packager, reinjection protocol (maps to Pain H)
+- `.private_reference/legacy/CVF ADD/code-review-graph/` — 5 files covering AST graph,
+  blast-radius resolver, context builder (maps to Phase 4 Operational Intelligence)
+
+T5 (ephemeral task store) was scoped without reading `agentmemory` specs; graph knowledge
+has no tranche at all. Full analysis and corrective actions (CA-1/CA-2/CA-3) at:
+
+- `docs/audits/CVF_LEGACY_SPEC_ABSORPTION_BLINDSPOT_AUDIT_2026-05-23.md`
+
+**Any future memory or graph tranche must read this audit before scoping.**
+
 ## Provider Proof Prerequisite References
 
 Before authoring any work order that targets Alibaba DashScope Qwen3 models
