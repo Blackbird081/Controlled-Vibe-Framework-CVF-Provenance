@@ -31,10 +31,10 @@ Operator directed on 2026-05-24: "all. create work order for codex".
   direction is treated as in-memory-only confirmation for AIF-C Phase 2b
   (`graph_search` activation); durable graph storage (SQLite) requires PBR-04
   lift.
-- **N7 (Broader Provider Stability):** Demand-gated. Operator's 2026-05-24
-  direction is treated as authorization to file GC-018 and add a third
-  provider; full soak beyond current 2-provider proof still requires separate
-  operator confirmation.
+- **N7 (Third Provider Expansion):** Operator authorized 2026-05-24. Provider
+  confirmed: OpenAI, model `gpt-4o`, `maxRiskLevel=R2`, key `OPENAI_API_KEY`
+  (present in `.env.local`). Narrow live proof required; broad stability claim
+  not authorized.
 
 ---
 
@@ -138,7 +138,7 @@ After each tranche closes, the implementer must produce:
 | N4 | Skill Corpus Test Repair | `WORK_ORDER_READY` | — | Fast Lane; `process.cwd()` fix in vitest |
 | N5 | Public Catalog AIF Update | `WORK_ORDER_READY` | — | Fast Lane; doc-only row updates |
 | N6 | AIF Phase 2 graph_search Activation | `WORK_ORDER_READY` | — | Operator authorized 2026-05-24; in-memory-only; AIF-B interface ready |
-| N7 | Third Provider Expansion | `DEMAND_GATED` | — | Requires operator to name provider |
+| N7 | Third Provider Expansion | `WORK_ORDER_READY` | — | Operator authorized 2026-05-24: OpenAI / gpt-4o / R2 / OPENAI_API_KEY |
 | PBR-04 | Graph SQLite Persist | `AUTO_AUTHORIZED_AFTER_N6` | — | Auto-starts after N6 CLOSED_PASS; no SQLite until N6 proves interface stable |
 
 ---
@@ -150,7 +150,7 @@ N4  ──── WORK_ORDER_READY (start immediately)
 N5  ──── WORK_ORDER_READY (start immediately, parallel with N4)
 N6      ──── WORK_ORDER_READY (operator authorized 2026-05-24)
 PBR-04  ──── AUTO_AUTHORIZED after N6 CLOSED_PASS (no operator re-confirmation needed)
-N7      ──── DEMAND_GATED (unblock after operator names third provider)
+N7      ──── WORK_ORDER_READY (operator authorized 2026-05-24: OpenAI/gpt-4o/R2)
 ```
 
 ---

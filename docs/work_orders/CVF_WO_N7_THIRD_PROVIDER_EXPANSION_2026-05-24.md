@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DEMAND_GATED_NOT_AUTHORIZED
+Status: READY_FOR_IMPLEMENTATION
 
 docType: work_order
 
@@ -24,24 +24,25 @@ and a narrow live proof receipt.
 
 ---
 
-## STOP — This work order is DEMAND_GATED
+## Authorization
 
-**Do not begin implementation until ALL of the following are satisfied:**
+Operator authorized on 2026-05-24 with the following confirmed parameters:
 
-1. Operator explicitly names the third provider (name, API endpoint, model ID,
-   and API key source)
-2. A fresh GC-018 is filed and accepted (use GC-018 template with Legacy Spec
-   Scan Block for any provider touching memory/intelligence scope)
+- **Provider name:** OpenAI
+- **API base URL:** `https://api.openai.com/v1`
+- **Model ID:** `gpt-4o`
+- **Max risk level:** `R2`
+- **API key env var:** `OPENAI_API_KEY` (confirmed present in `.env.local`)
+
+**Pre-conditions before implementation:**
+
+1. ~~Operator names provider~~ — DONE: OpenAI / gpt-4o / R2 / OPENAI_API_KEY
+2. A fresh GC-018 is filed and accepted
 3. Codex reads `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts`
    and `provider-router-adapter.ts` before implementing
 4. Codex reads `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-registry.ts`
    before implementing
-5. Operator confirms the new provider's `maxRiskLevel` ceiling (e.g., R1 or R2)
-   — this determines router policy
-
-**When the operator authorizes this work order, update Status from
-`DEMAND_GATED_NOT_AUTHORIZED` to `READY_FOR_IMPLEMENTATION` and file the
-required GC-018.**
+5. ~~Operator confirms maxRiskLevel~~ — DONE: R2
 
 ---
 
@@ -49,7 +50,7 @@ required GC-018.**
 
 Operator → Claude (roadmap author) → Codex (implementer).
 
-Authorization: DEMAND_GATED. Parent roadmap:
+Authorization: OPERATOR_AUTHORIZED 2026-05-24. Parent roadmap:
 `docs/roadmaps/CVF_POST_AIF_NEXT_VALUE_ROADMAP_2026-05-24.md`.
 
 ---

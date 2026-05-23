@@ -262,6 +262,8 @@ For older continuity before V12, read:
 
 ## Latest HEADs
 
+- `26174a60` — docs(n6+pbr04): authorize N6 graph_search + dispatch PBR-04 SQLite persist (2026-05-24)
+- `eb98d70a` — docs(post-aif): dispatch N4/N5/N6/N7 work orders and next-value roadmap (2026-05-24)
 - `cc6836bf` — chore(archive): active archive hygiene + guard authoring fix (2026-05-24)
 - `f9e2f82d` — feat(aif): close agent intelligence foundations (2026-05-24)
 - `2a2460da` — docs(aif): launch AIF roadmap and dispatch work orders A/B/C (2026-05-23)
@@ -270,7 +272,8 @@ Post-AIF next-value roadmap dispatched 2026-05-24:
 `docs/roadmaps/CVF_POST_AIF_NEXT_VALUE_ROADMAP_2026-05-24.md`
 
 N4 (skill corpus test repair) and N5 (catalog AIF update) are WORK_ORDER_READY.
-N6 (graph_search activation) and N7 (third provider) are DEMAND_GATED.
+N6 (graph_search activation) is WORK_ORDER_READY; PBR-04 (SQLite persist) is AUTO_AUTHORIZED after N6.
+N7 (OpenAI / gpt-4o / R2) is WORK_ORDER_READY.
 
 ---
 
