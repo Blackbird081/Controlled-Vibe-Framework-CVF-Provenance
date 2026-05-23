@@ -324,26 +324,40 @@ describe('ai/providers', () => {
             expect(body.temperature).toBe(0.2);
         });
 
-        it('disables thinking for Qwen3 non-streaming Alibaba models only', async () => {
-            const qwen3Models = ['qwen3-32b', 'qwen3-235b-a22b-thinking-2507'];
+        it('sets Qwen3 thinking flags for non-streaming Alibaba models only', async () => {
+            fetchMock.mockResolvedValueOnce({
+                ok: true,
+                json: async () => ({
+                    choices: [{ message: { content: 'qwen3 standard response' } }],
+                    usage: { total_tokens: 12 },
+                }),
+            });
 
-            for (const model of qwen3Models) {
-                fetchMock.mockResolvedValueOnce({
-                    ok: true,
-                    json: async () => ({
-                        choices: [{ message: { content: `response for ${model}` } }],
-                        usage: { total_tokens: 12 },
-                    }),
-                });
+            const qwen3Standard = await executeAI('alibaba', 'ali-key', 'Hello', { model: 'qwen3-32b' });
 
-                const result = await executeAI('alibaba', 'ali-key', 'Hello', { model });
+            expect(qwen3Standard.success).toBe(true);
+            const standardBody = JSON.parse(fetchMock.mock.calls[fetchMock.mock.calls.length - 1][1].body);
+            expect(standardBody.model).toBe('qwen3-32b');
+            expect(standardBody.enable_thinking).toBe(false);
+            expect(standardBody.stream).toBeUndefined();
 
-                expect(result.success).toBe(true);
-                const body = JSON.parse(fetchMock.mock.calls[fetchMock.mock.calls.length - 1][1].body);
-                expect(body.model).toBe(model);
-                expect(body.enable_thinking).toBe(false);
-                expect(body.stream).toBeUndefined();
-            }
+            fetchMock.mockResolvedValueOnce({
+                ok: true,
+                json: async () => ({
+                    choices: [{ message: { content: 'qwen3 thinking response' } }],
+                    usage: { total_tokens: 12 },
+                }),
+            });
+
+            const qwen3Thinking = await executeAI('alibaba', 'ali-key', 'Hello', {
+                model: 'qwen3-235b-a22b-thinking-2507',
+            });
+
+            expect(qwen3Thinking.success).toBe(true);
+            const thinkingBody = JSON.parse(fetchMock.mock.calls[fetchMock.mock.calls.length - 1][1].body);
+            expect(thinkingBody.model).toBe('qwen3-235b-a22b-thinking-2507');
+            expect(thinkingBody.enable_thinking).toBe(true);
+            expect(thinkingBody.stream).toBeUndefined();
 
             fetchMock.mockResolvedValueOnce({
                 ok: true,

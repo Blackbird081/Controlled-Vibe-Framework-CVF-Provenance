@@ -73,8 +73,8 @@ current.
 
 ## Current Session Mode
 
-- Current mode: `d6_qwen3_thinking_model_id_correction_blocked_skill_preflight_gate`
-- Previous mode: `d5_qwen3_hosted_safe_payload_rerun_blocked_model_access`
+- Current mode: `d9_qwen3_thinking_enable_true_adapter_public_deploy_pending`
+- Previous mode: `d8_qwen3_ai_commit_hosted_proof_blocked_enable_thinking_parameter`
 - Freeze posture: `governance_kernel_freeze_recommended`
 - Active handoff pointer: `AGENT_HANDOFF_V11_2026-05-21.md`
 - Historical handoff archive: `CVF_SESSION/handoffs/archive/`
@@ -95,7 +95,13 @@ D5 Qwen3 hosted safe-payload rerun is returned blocked at `docs/reviews/CVF_D5_Q
 
 D6 Qwen3 thinking model-id correction is returned blocked at `docs/reviews/CVF_D6_QWEN3_THINKING_MODEL_ID_CORRECTION_BLOCKER_REVIEW_2026-05-23.md`. Local metadata now uses `qwen3-235b-a22b-thinking-2507`; Model Gateway registry test PASS `7/7`; cvf-web providers test PASS `42/42`; both TypeScript checks PASS; safety preflight PASS `blocked=false`. The single hosted proof returned HTTP `400`, `success=false`, `decision=BLOCK`, `enforcementStatus=BLOCK`, `evidenceMode=live`, provider `alibaba`, response model `blocked`, receipt `rcpt-env-mpifpjmo-1csbdv`, trace `env-mpifpjmo-1csbdv`, error `Skill Preflight declaration is required before Build/Execute actions.`, and `rawSecretPrinted=false`. Corrected-model provider execution remains unproven because the route blocked before dispatch. Do not retry under D6.
 
-Current mode marker: `d6_qwen3_thinking_model_id_correction_blocked_skill_preflight_gate`.
+D7 Qwen3 Skill Preflight hosted proof is returned blocked at `docs/reviews/CVF_D7_QWEN3_SKILL_PREFLIGHT_HOSTED_PROOF_BLOCKER_REVIEW_2026-05-23.md`: local safety/enforcement preflight passed and Skill Preflight declared, but hosted returned HTTP `400`, `success=false`, `responseModel=guard-blocked`; local guard simulation identified missing `aiCommit`.
+
+D8 Qwen3 AI Commit hosted proof is returned blocked at `docs/reviews/CVF_D8_QWEN3_AI_COMMIT_HOSTED_PROOF_BLOCKER_REVIEW_2026-05-23.md`: local safety/enforcement/guard preflight passed, hosted reached Alibaba with HTTP `200`, ALLOW/live receipt `rcpt-env-mpigd0wj-a8su8o`, trace `env-mpigd0wj-a8su8o`, but `success=false` because `qwen3-235b-a22b-thinking-2507` requires `enable_thinking=true`.
+
+D9 Qwen3 thinking enable-true adapter is authorized/in progress at `docs/baselines/CVF_GC018_D9_QWEN3_THINKING_ENABLE_TRUE_ADAPTER_2026-05-23.md`. Local adapter fix keeps `qwen3-32b` at `enable_thinking=false` and sets `qwen3-235b-a22b-thinking-2507` to `enable_thinking=true`; focused providers test PASS `42/42`; `cvf-web` check PASS; local safety/enforcement/guard preflight PASS. Next: public-sync push, Netlify deploy freshness, then exactly one D9 hosted proof.
+
+Current mode marker: `d9_qwen3_thinking_enable_true_adapter_public_deploy_pending`.
 
 ## Required First Reads
 

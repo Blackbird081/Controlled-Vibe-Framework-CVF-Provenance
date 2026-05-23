@@ -8,6 +8,10 @@ function isQwen3Model(model: string): boolean {
     return /^qwen3-/i.test(model);
 }
 
+function isQwen3ThinkingModel(model: string): boolean {
+    return /^qwen3-.*thinking/i.test(model);
+}
+
 function usesOpenAICompletionTokenParam(model: string): boolean {
     return /^(gpt-5|o[134]|o3|o4)/i.test(model);
 }
@@ -279,7 +283,7 @@ async function executeAlibaba(
                     }
                     : {}),
                 ...(isQwen3Model(config.model) && !isStreamingOnly
-                    ? { enable_thinking: false }
+                    ? { enable_thinking: isQwen3ThinkingModel(config.model) }
                     : {}),
             }),
             // W133 default remains 60s; EVT/model rebaselines may opt into a longer bounded timeout.

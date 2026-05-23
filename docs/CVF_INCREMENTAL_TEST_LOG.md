@@ -2438,3 +2438,36 @@ Utility and guard:
   - Hosted proof did not reach provider execution, so corrected-model account
     access remains unproven.
   - No retry loop was run after the hosted route gate returned BLOCK.
+
+---
+## [2026-05-23] Batch: D7-D9 Qwen3 Hosted Proof Gate Progression
+
+- Change reference:
+  - D7 GC-018/work order for Skill Preflight hosted proof.
+  - D8 GC-018/work order for `aiCommit` hosted proof.
+  - D9 GC-018/work order for Qwen3 thinking `enable_thinking=true` adapter.
+- Impacted scope:
+  - hosted `/api/execute` proof payload contract;
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts`;
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.test.ts`.
+- Tests/preflights executed:
+  - D7 local safety/enforcement preflight -> PASS; Skill Preflight declared.
+  - D7 hosted proof -> BLOCKED: HTTP 400, `responseModel=guard-blocked`;
+    local guard simulation identified missing `aiCommit`.
+  - D8 local safety/enforcement/guard preflight -> PASS.
+  - D8 hosted proof -> BLOCKED: HTTP 200, ALLOW/live receipt
+    `rcpt-env-mpigd0wj-a8su8o`, trace `env-mpigd0wj-a8su8o`,
+    `success=false`, provider error says `enable_thinking` is restricted to
+    true.
+  - `npm run test:run -- src/lib/ai/providers.test.ts` in
+    `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` -> PASS, 1 file / 42 tests.
+  - `npm run check` in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` -> PASS.
+  - D9 local safety/enforcement/guard preflight -> PASS.
+- Depth classification:
+  - T1 provider-adapter and local route-guard preflight coverage, Meaningful
+    for the D9 adapter branch and hosted payload contract.
+  - T2/T3/T4 not run yet; D9 hosted proof remains pending public deploy
+    freshness.
+- Notes/Risks:
+  - D9 source change is ready locally, but hosted proof must wait until the
+    public Netlify-connected code path receives the adapter update.
