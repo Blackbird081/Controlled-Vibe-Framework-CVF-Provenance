@@ -132,6 +132,10 @@ Current HEAD after P3 hosted proof clarification blocker:
 
 `63b90530` (docs: return P3 hosted proof at clarify gate)
 
+Current HEAD after P3 hosted protected workflow proof PASS:
+
+`8ff14c27` (docs: close P3 hosted protected proof pass)
+
 ---
 
 ## Purpose

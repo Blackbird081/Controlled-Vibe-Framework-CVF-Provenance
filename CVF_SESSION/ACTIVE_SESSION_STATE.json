@@ -24,8 +24,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "p3_hosted_protected_workflow_proof_passed",
-  "previousMode": "p3_hosted_proof_returned_clarify_blocker",
+  "currentMode": "d3_qwen3_provider_expansion_dispatched",
+  "previousMode": "p3_hosted_protected_workflow_proof_passed",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -103,7 +103,7 @@
     "blocked_work_classes",
     "next_allowed_move"
   ],
-  "nextAllowedMove": "Stop by default. P3 hosted protected workflow proof passed after operator-requested fresh GC-018/work order rerun in docs/reviews/CVF_P3_HOSTED_PROTECTED_WORKFLOW_PROOF_RERUN_COMPLETION_2026-05-23.md. One signed service-token POST to https://vibcode.netlify.app/api/execute using a concrete strategy_analysis trusted-form payload returned HTTP 200, success=true, decision=ALLOW, routingDecision=ALLOW, enforcementStatus=ALLOW, evidenceMode=live, provider=alibaba, model=qwen-turbo, receipt rcpt-env-mpi55je6-hiddxq, trace env-mpi55je6-hiddxq, rawSecretPrinted=false. This closes only the narrow P3 hosted protected workflow proof. Do not run provider soak, public-sync, hosted readiness claims, runtime/provider semantics, persistence, Maika, freeze release, or governance semantics without fresh authorization.",
+  "nextAllowedMove": "D3 Qwen3 provider expansion dispatched. GC-018 at docs/baselines/CVF_GC018_D3_QWEN3_PROVIDER_EXPANSION_2026-05-23.md and work order at docs/work_orders/CVF_WO_D3_QWEN3_PROVIDER_EXPANSION_2026-05-23.md are READY_FOR_IMPLEMENTATION. Codex must: (1) add qwen3-32b and qwen3-235b-a22b-thinking to PROVIDER_CAPABILITY_REGISTRY under alibaba; (2) update capability.json; (3) run npm test in CVF_MODEL_GATEWAY — all PASS; (4) run one hosted proof call per model against https://vibcode.netlify.app/api/execute using P3 pass/fail matrix; (5) file completion review with sanitized facts. Do not modify existing model entries, vision-contract.ts, reasoning-contract.ts, route logic, or receipt envelopes. Do not claim broad Qwen3 stability or production readiness. Do not public-sync. Free-tier expiry: 2026-06-02.",
   "phase2BRuntimeCoherenceClosure": "CLOSED_RUNTIME_COHERENCE_INTERNAL_PROOF at docs/reviews/CVF_PHASE_2B_RUNTIME_COHERENCE_COMPLETION_2026-05-21.md; Guard Contract graph schema phase2b-runtime-coherence-graph-1; adapter inventory checksum fnv1a32:5d3d2dac; harness PASS; liveProofProven=false",
   "phase2BLiveGovernanceProofClosure": "CLOSED_LIVE_GOVERNANCE_PROOF at docs/reviews/CVF_PHASE_2B_LIVE_GOVERNANCE_PROOF_COMPLETION_2026-05-21.md; mandatory release gate PASS; focused live receipt probe PASS; provider alibaba; model qwen-turbo; decision ALLOW; receipt rcpt-env-mpepcnmc-ier7bt; trace env-mpepcnmc-ier7bt; runtime coherence checksum fnv1a32:5d3d2dac",
   "postPhase2BPublicizationRoadmap": "CLOSED_PUBLICIZATION_READINESS_BOUNDED at docs/reviews/CVF_POST_PHASE_2B_PUBLICIZATION_READINESS_COMPLETION_2026-05-21.md; five PBR lanes closed: PBR-01 narrow provider repeatability PASS 4/4 across Alibaba qwen-turbo and DeepSeek deepseek-chat, PBR-02 readiness assessment filed, PBR-03 public-sync/public catalog pushed at public commit a0ac66de, PBR-04 persistence/database deferred as no current blocker, PBR-05 Maika proof demand-gated and deferred; D-06/D-07 remain deferred/rejected.",
