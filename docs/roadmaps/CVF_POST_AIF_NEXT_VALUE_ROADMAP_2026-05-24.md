@@ -65,7 +65,7 @@ In scope:
 
 Out of scope:
 
-- SQLite / durable graph storage (PBR-04 still deferred)
+- SQLite / durable graph storage (PBR-04 auto-authorized after N6 CLOSED_PASS — not before)
 - Cross-session memory
 - Kernel-owner replacement (D-06, requires freeze-release packet)
 - Global freeze lift (D-07, rejected under binding rule)
@@ -137,8 +137,9 @@ After each tranche closes, the implementer must produce:
 | --- | --- | --- | --- | --- |
 | N4 | Skill Corpus Test Repair | `WORK_ORDER_READY` | — | Fast Lane; `process.cwd()` fix in vitest |
 | N5 | Public Catalog AIF Update | `WORK_ORDER_READY` | — | Fast Lane; doc-only row updates |
-| N6 | AIF Phase 2 graph_search Activation | `DEMAND_GATED` | — | Requires operator scope confirmation; AIF-B interface ready |
+| N6 | AIF Phase 2 graph_search Activation | `WORK_ORDER_READY` | — | Operator authorized 2026-05-24; in-memory-only; AIF-B interface ready |
 | N7 | Third Provider Expansion | `DEMAND_GATED` | — | Requires operator to name provider |
+| PBR-04 | Graph SQLite Persist | `AUTO_AUTHORIZED_AFTER_N6` | — | Auto-starts after N6 CLOSED_PASS; no SQLite until N6 proves interface stable |
 
 ---
 
@@ -147,8 +148,9 @@ After each tranche closes, the implementer must produce:
 ```text
 N4  ──── WORK_ORDER_READY (start immediately)
 N5  ──── WORK_ORDER_READY (start immediately, parallel with N4)
-N6  ──── DEMAND_GATED (unblock after operator confirms graph_search scope)
-N7  ──── DEMAND_GATED (unblock after operator names third provider)
+N6      ──── WORK_ORDER_READY (operator authorized 2026-05-24)
+PBR-04  ──── AUTO_AUTHORIZED after N6 CLOSED_PASS (no operator re-confirmation needed)
+N7      ──── DEMAND_GATED (unblock after operator names third provider)
 ```
 
 ---
@@ -193,6 +195,7 @@ governed surfaces requiring a fresh GC-018.
 - `docs/work_orders/CVF_WO_N4_SKILL_CORPUS_TEST_REPAIR_2026-05-24.md`
 - `docs/work_orders/CVF_WO_N5_CATALOG_AIF_UPDATE_2026-05-24.md`
 - `docs/work_orders/CVF_WO_N6_AIF_GRAPH_SEARCH_ACTIVATION_2026-05-24.md`
+- `docs/work_orders/CVF_WO_PBR04_GRAPH_SQLITE_PERSIST_2026-05-24.md`
 - `docs/work_orders/CVF_WO_N7_THIRD_PROVIDER_EXPANSION_2026-05-24.md`
 - `docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md`
 - `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DEMAND_GATED_NOT_AUTHORIZED
+Status: READY_FOR_IMPLEMENTATION
 
 docType: work_order
 
@@ -23,21 +23,24 @@ retrieval path using the in-memory AST/symbol index.
 
 ---
 
-## STOP — This work order is DEMAND_GATED
+## Authorization
 
-**Do not begin implementation until ALL of the following are satisfied:**
+Operator confirmed on 2026-05-24: in-memory-only `graph_search` activation
+is acceptable. PBR-04 (SQLite persist) is authorized to follow automatically
+after N6 CLOSED_PASS — no further operator confirmation required for PBR-04
+provided: N6 tests all PASS, `canReinject=false` invariant preserved,
+`GraphKnowledgeService` interface requires no changes after live use.
 
-1. Operator explicitly confirms scope: in-memory-only `graph_search` activation
-   (no SQLite, no durable storage) is acceptable
+PBR-04 work order: `docs/work_orders/CVF_WO_PBR04_GRAPH_SQLITE_PERSIST_2026-05-24.md`
+
+**Pre-conditions before implementation:**
+
+1. ~~Operator scope confirmation~~ — DONE (2026-05-24)
 2. A fresh GC-018 is filed and accepted
 3. Codex confirms `GraphKnowledgeService.query()` contract is sufficient for
    `graph_search` retrieval needs (read AIF-B completion review and
    `graph-schema.ts` interface before filing GC-018)
 4. GC-023 line count check for `memory-retrieval-policy.ts` before adding code
-
-**When the operator authorizes this work order, update Status from
-`DEMAND_GATED_NOT_AUTHORIZED` to `READY_FOR_IMPLEMENTATION` and file the
-required GC-018.**
 
 ---
 
