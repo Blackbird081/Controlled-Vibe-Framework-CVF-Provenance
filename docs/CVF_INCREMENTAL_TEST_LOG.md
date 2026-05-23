@@ -2332,3 +2332,37 @@ Utility and guard:
   - No policy/risk guard semantic, live provider, output-quality, route,
     receipt-envelope, public-sync, hosted-readiness, Maika, or freeze-release
     claim is made.
+
+---
+## [2026-05-23] Batch: D4 Qwen3 Enable Thinking Adapter Blocker
+
+- Change reference: provenance working tree; GC-018 baseline
+  `docs/baselines/CVF_GC018_D4_QWEN3_ENABLE_THINKING_ADAPTER_2026-05-23.md`
+- Impacted scope:
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts`
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.test.ts`
+  - blocker review `docs/reviews/CVF_D4_QWEN3_ENABLE_THINKING_ADAPTER_BLOCKER_REVIEW_2026-05-23.md`
+- Tests executed:
+  - `npm run test:run -- src/lib/ai/providers.test.ts` in
+    `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` -> PASS, 1 file / 42 tests
+  - `npm run test:run` in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` ->
+    not clean: 218/219 files PASS, 2748/2751 tests PASS, one live retrieval
+    test failed; isolated rerun of `route.retrieval.live.test.ts` PASS 4/4
+  - `npm run test:run -- --reporter=dot` in `cvf-web` -> not clean:
+    218/219 files PASS, 2748/2751 tests PASS, one `ProcessingScreen.test.tsx`
+    assertion failed; isolated rerun PASS 21/21
+  - `npm run test:run -- --no-file-parallelism --reporter=dot` in `cvf-web`
+    -> not clean: 218/219 files PASS, 2748/2751 tests PASS, one DeepSeek
+    live-output regex assertion failed
+- Hosted proof:
+  - First signed hosted call to `https://vibcode.netlify.app/api/execute` for
+    `qwen3-32b` returned HTTP 400, `success=false`, provider `alibaba`,
+    response model `blocked`, error `Safety filter triggered`,
+    `rawSecretPrinted=false`.
+  - `qwen3-235b-a22b-thinking` was not attempted per D4 stop rule.
+- Notes/Risks:
+  - Local adapter fix is implemented and focused tests pass.
+  - D4 is not closed because hosted P3/D4 matrix did not pass and full
+    `npm test:run` all-pass acceptance was not met.
+  - No route/auth/receipt/provider registry/vision/reasoning/public-sync change
+    was made.

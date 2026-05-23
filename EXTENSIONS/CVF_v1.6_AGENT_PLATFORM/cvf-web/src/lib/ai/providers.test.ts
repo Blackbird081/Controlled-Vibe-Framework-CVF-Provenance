@@ -324,6 +324,45 @@ describe('ai/providers', () => {
             expect(body.temperature).toBe(0.2);
         });
 
+        it('disables thinking for Qwen3 non-streaming Alibaba models only', async () => {
+            const qwen3Models = ['qwen3-32b', 'qwen3-235b-a22b-thinking'];
+
+            for (const model of qwen3Models) {
+                fetchMock.mockResolvedValueOnce({
+                    ok: true,
+                    json: async () => ({
+                        choices: [{ message: { content: `response for ${model}` } }],
+                        usage: { total_tokens: 12 },
+                    }),
+                });
+
+                const result = await executeAI('alibaba', 'ali-key', 'Hello', { model });
+
+                expect(result.success).toBe(true);
+                const body = JSON.parse(fetchMock.mock.calls[fetchMock.mock.calls.length - 1][1].body);
+                expect(body.model).toBe(model);
+                expect(body.enable_thinking).toBe(false);
+                expect(body.stream).toBeUndefined();
+            }
+
+            fetchMock.mockResolvedValueOnce({
+                ok: true,
+                json: async () => ({
+                    choices: [{ message: { content: 'qwen turbo response' } }],
+                    usage: { total_tokens: 13 },
+                }),
+            });
+
+            const result = await executeAI('alibaba', 'ali-key', 'Hello', {
+                model: 'qwen-turbo',
+            });
+
+            expect(result.success).toBe(true);
+            const body = JSON.parse(fetchMock.mock.calls[fetchMock.mock.calls.length - 1][1].body);
+            expect(body.model).toBe('qwen-turbo');
+            expect(body.enable_thinking).toBeUndefined();
+        });
+
         it('supports QVQ streaming-only models on the compatible endpoint', async () => {
             fetchMock.mockResolvedValueOnce({
                 ok: true,

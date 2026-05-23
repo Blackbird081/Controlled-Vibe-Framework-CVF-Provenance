@@ -1038,8 +1038,47 @@ D3 blocker:
 
 - `docs/reviews/CVF_D3_QWEN3_PROVIDER_EXPANSION_BLOCKER_REVIEW_2026-05-23.md`
 
-Default next move: stop. Do not rerun D3 hosted proof or attempt the thinking
-model under the closed D3 work order.
+D4 blocker:
+
+- `docs/reviews/CVF_D4_QWEN3_ENABLE_THINKING_ADAPTER_BLOCKER_REVIEW_2026-05-23.md`
+
+D4 implemented the bounded local adapter fix:
+
+- `isQwen3Model` helper in
+  `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts`;
+- conditional `enable_thinking: false` injection for non-streaming Alibaba
+  Qwen3 calls;
+- provider test assertions for `qwen3-32b`,
+  `qwen3-235b-a22b-thinking`, and `qwen-turbo` negative case.
+
+Focused evidence:
+
+- `npm run test:run -- src/lib/ai/providers.test.ts` PASS, 1 file / 42 tests.
+
+Full-suite evidence:
+
+- `npm test:run` in `cvf-web` did not achieve a clean all-pass during D4 due
+  unrelated live/test-order variance; isolated reruns passed for two failed
+  files. Do not claim the D4 all-pass acceptance criterion as met.
+
+Hosted proof evidence:
+
+- attempted exactly one hosted call for `qwen3-32b`;
+- HTTP `400`;
+- `success=false`;
+- provider `alibaba`;
+- response model `blocked`;
+- error `Safety filter triggered`;
+- raw secret printed `false`.
+
+Disposition:
+
+- `RETURNED_BLOCKED_HOSTED_SAFETY_FILTER`.
+- Per D4 stop rule, `qwen3-235b-a22b-thinking` was not attempted.
+- No retry loop was run.
+
+Default next move: stop. Do not rerun D3 or D4 hosted proof, and do not attempt
+the D4 thinking model under the closed D3/D4 work orders.
 
 Do not widen into repeated hosted proof, public npm release, provider tuning,
 persistence/database beyond T5 ephemeral scope, Maika proof, public-sync, or
