@@ -132,6 +132,43 @@ Progress Tracker (live — update after each tranche closes):
 | AIF-B | Graph Knowledge Phase 1 | `DEMAND_GATED` | — | Blocked by PBR-04; requires operator lift |
 | AIF-C | Memory Gateway Phase 2 | `DEMAND_GATED` | — | Blocked by `new_memory_tiers_beyond_lane_h_scope` |
 
+### 2026-05-24 - Agent Intelligence Foundations Closed Pass
+
+Operator instructed Codex to complete the AIF work orders end to end. That
+instruction is recorded as the required AIF-C memory override and the AIF-B
+Phase 1 in-memory-only confirmation. PBR-04 durable persistence was not lifted.
+
+Current HEAD before AIF closure commit: `2a2460da`.
+
+Closed artifacts:
+
+- AIF-A: `docs/reviews/CVF_AIF_A_OPERATIONAL_REFERENCE_INDEX_COMPLETION_2026-05-24.md`
+- AIF-C: `docs/reviews/CVF_AIF_C_MEMORY_GATEWAY_PHASE2_COMPLETION_2026-05-24.md`
+- AIF-B: `docs/reviews/CVF_AIF_B_GRAPH_KNOWLEDGE_PHASE1_COMPLETION_2026-05-24.md`
+- GC-019 structural review: `docs/reviews/CVF_GC019_AIF_FOUNDATIONS_STRUCTURAL_REVIEW_2026-05-24.md`
+
+Delivered owner surfaces:
+
+- `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts`
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-lifecycle-policy.ts`
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-retrieval-policy.ts`
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-context-packager.ts`
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/graph/`
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/context_builder/graph/`
+
+Progress Tracker:
+
+| Tranche | Name | Status | Completion review | Notes |
+| --- | --- | --- | --- | --- |
+| AIF-A | Operational Reference Index | `CLOSED_PASS` | `docs/reviews/CVF_AIF_A_OPERATIONAL_REFERENCE_INDEX_COMPLETION_2026-05-24.md` | Docs-only operational index |
+| AIF-B | Graph Knowledge Phase 1 | `CLOSED_PASS` | `docs/reviews/CVF_AIF_B_GRAPH_KNOWLEDGE_PHASE1_COMPLETION_2026-05-24.md` | In-memory graph foundation; no durable storage |
+| AIF-C | Memory Gateway Phase 2a | `CLOSED_PASS` | `docs/reviews/CVF_AIF_C_MEMORY_GATEWAY_PHASE2_COMPLETION_2026-05-24.md` | Local memory policy modules; no live reinjection |
+
+Boundary: no durable persistence, live memory reinjection, provider/route/receipt
+change, public-sync, graph scoring productization, hosted readiness, production
+readiness, or freeze release.
+
 ---
 
 ## Key Artifacts For AIF Work
@@ -146,41 +183,36 @@ Progress Tracker (live — update after each tranche closes):
 
 `docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md`
 
-### AIF-A — Operational Reference Index (AUTHORIZED)
+### AIF-A — Operational Reference Index (CLOSED_PASS)
 
-Creates `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md` — a
+Created `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md` — a
 "when task X → read document Y" lookup table. Governs: Fast Lane (GC-021).
-No GC-018 required. Codex can begin immediately.
+No GC-018 was required.
 
 Work order: `docs/work_orders/CVF_WO_AIF_A_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`
 
-Required wiring after AIF-A closes:
-1. Add pointer to `CVF_SESSION_MEMORY.md` Required First Reads
-2. Update `ACTIVE_SESSION_STATE.json` `nextAllowedMove`
-3. Add handoff Latest Work pointer
-4. Update AIF roadmap Progress Tracker (AIF-A row → `CLOSED_PASS`)
+Completion review: `docs/reviews/CVF_AIF_A_OPERATIONAL_REFERENCE_INDEX_COMPLETION_2026-05-24.md`
 
-### AIF-C — Memory Gateway Phase 2 (DEMAND-GATED)
+### AIF-C — Memory Gateway Phase 2a (CLOSED_PASS)
 
-Implements lifecycle decay, semantic retrieval, context packager, privacy-filtered
-reinjection. All in-memory (Phase 2a). `graph_search` deferred until AIF-B.
+Implements local gateway decisions, lifecycle transitions, retrieval policy,
+and governed context packaging. All in-memory (Phase 2a). `graph_search` remains
+deferred until a future integration tranche.
 
-Preconditions:
-1. Operator grants blocked-work override for `new_memory_tiers_beyond_lane_h_scope`
-2. Fresh GC-018 with Legacy Spec Scan Block covering all 10 agentmemory files
-3. File-by-file absorption table (absorbed/partial/deferred)
+GC-018: `docs/baselines/CVF_GC018_AIF_C_MEMORY_GATEWAY_PHASE2_2026-05-24.md`
+Completion review: `docs/reviews/CVF_AIF_C_MEMORY_GATEWAY_PHASE2_COMPLETION_2026-05-24.md`
 
 Work order: `docs/work_orders/CVF_WO_AIF_C_MEMORY_GATEWAY_PHASE2_2026-05-23.md`
 
-### AIF-B — Graph Knowledge Phase 1 (DEMAND-GATED)
+### AIF-B — Graph Knowledge Phase 1 (CLOSED_PASS)
 
-Implements AST parser, dependency graph, blast-radius resolver, in-memory symbol
-index. Design doctrine: graph is knowledge service, NOT runtime; local structural
-index, NOT decision-maker.
+Implements graph schema, TypeScript AST parser, in-memory symbol index,
+blast-radius resolver, and `GraphKnowledgeService` export. Design doctrine:
+graph is knowledge service, NOT runtime; local structural index, NOT
+decision-maker.
 
-Preconditions:
-1. Operator lifts PBR-04 persistence block OR confirms Phase 1 in-memory-only scope acceptable
-2. Fresh GC-018 with Legacy Spec Scan Block covering all 5 code-review-graph files
+GC-018: `docs/baselines/CVF_GC018_AIF_B_GRAPH_KNOWLEDGE_PHASE1_2026-05-24.md`
+Completion review: `docs/reviews/CVF_AIF_B_GRAPH_KNOWLEDGE_PHASE1_COMPLETION_2026-05-24.md`
 
 Work order: `docs/work_orders/CVF_WO_AIF_B_GRAPH_KNOWLEDGE_PHASE1_2026-05-23.md`
 
@@ -188,24 +220,15 @@ Work order: `docs/work_orders/CVF_WO_AIF_B_GRAPH_KNOWLEDGE_PHASE1_2026-05-23.md`
 
 ## Next Allowed Move
 
-AIF-A is the only immediately authorized tranche. It is Fast Lane eligible and
-requires no GC-018. Work order is READY_FOR_IMPLEMENTATION at:
-`docs/work_orders/CVF_WO_AIF_A_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`
-
-AIF-C and AIF-B are demand-gated. Do not begin implementation of either until
-the operator grants the required blocked-work overrides.
-
-After each AIF tranche closes, the responsible implementer must:
-
-1. Update the Progress Tracker table in `docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md`
-2. Update the agentmemory or code-review-graph row in `docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
-3. Add a pointer in `CVF_SESSION_MEMORY.md`
-4. Update `ACTIVE_SESSION_STATE.json` `nextAllowedMove`
-5. Add HEAD SHA to active handoff Latest Work section
+AIF roadmap is closed pass for the bounded AIF-A/AIF-C/AIF-B foundation scope.
+Future agents must use `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`
+before scoping memory, graph, provider, public-sync, pain-point, or
+legacy-adjacent work.
 
 Do not widen into repeated hosted proof, public npm release, provider tuning,
-persistence/database beyond T5 ephemeral scope, Maika proof, public-sync, or
-freeze release without fresh GC-018/work-order authorization.
+durable persistence/database, live memory reinjection, graph scoring/product
+claims, Maika proof, public-sync, or freeze release without fresh
+GC-018/work-order authorization.
 
 Still forbidden:
 

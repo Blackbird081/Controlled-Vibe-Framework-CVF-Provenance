@@ -84,6 +84,7 @@ Failure to do this repeats the 2026-05-23 blindspot.
 | Status | Meaning |
 | --- | --- |
 | `runtime-owned` | A CVF owner surface and tests exist, but product-path use may still be bounded. |
+| `CLOSED_PASS_BOUNDED` | A successor tranche closed for the named bounded scope, with later expansions still gated. |
 | `partially_absorbed` | Some concepts exist in CVF, but the original spec has material remaining product/runtime gaps. |
 | `boundary_absorbed_engine_missing` | Governance or read-only boundary exists, but the main engine described by the source is not implemented. |
 | `doctrine_absorbed` | Source was normalized into doctrine/governance text only. |
@@ -96,8 +97,8 @@ Failure to do this repeats the 2026-05-23 blindspot.
 
 | Source folder | Status | Current owner/evidence | Remaining gap / next trigger |
 | --- | --- | --- | --- |
-| `.private_reference/legacy/CVF 16.5/agentmemory/` | `partially_absorbed` | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled.memory.gateway.contract.ts`; `docs/baselines/archive/CVF_CONTROLLED_MEMORY_SOURCE_ADOPTION_MATRIX_2026-05-16.md`; `docs/reviews/archive/CVF_CONTROLLED_MEMORY_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`; T5 completion at `docs/reviews/CVF_T5_RUNTIME_MEMORY_WIRING_COMPLETION_2026-05-22.md` | Active product path does not prove durable memory, semantic/graph/recency retrieval, live reinjection, or full Review-CVF Pain H hierarchy. Future memory tranche must name exact files absorbed/deferred. |
-| `.private_reference/legacy/CVF ADD/code-review-graph/` | `boundary_absorbed_engine_missing` | `docs/reference/CVF_SCOPED_KNOWLEDGE_PROVIDER_BOUNDARY_DOCTRINE_2026-05-07.md`; `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/scoped.knowledge.provider.contract.ts`; `docs/roadmaps/archive/CVF_ADD_E1_SCOPED_KNOWLEDGE_RUNTIME_ADOPTION_ROADMAP_2026-05-17.md`; `docs/reviews/CVF_LEGACY_SCOPE_ABSORPTION_AUDIT_MATRIX_2026-05-18.md` | AST graph, dependency graph, blast-radius resolver, context scoring, and storage are not implemented. Future graph tranche is demand-gated. |
+| `.private_reference/legacy/CVF 16.5/agentmemory/` | `partially_absorbed` | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled.memory.gateway.contract.ts`; `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts`; `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-lifecycle-policy.ts`; `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-retrieval-policy.ts`; `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-context-packager.ts`; `docs/baselines/CVF_GC018_AIF_C_MEMORY_GATEWAY_PHASE2_2026-05-24.md`; `docs/reviews/CVF_AIF_C_MEMORY_GATEWAY_PHASE2_COMPLETION_2026-05-24.md` | AIF-C Phase 2a now owns local gateway, lifecycle, retrieval, privacy/exclusion, and context-packaging policy. Active product path still does not prove durable memory, event-hook capture, cross-session access, live reinjection, or `graph_search` activation. |
+| `.private_reference/legacy/CVF ADD/code-review-graph/` | `runtime-owned` | `docs/reference/CVF_SCOPED_KNOWLEDGE_PROVIDER_BOUNDARY_DOCTRINE_2026-05-07.md`; `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/scoped.knowledge.provider.contract.ts`; `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/graph/schema/graph-schema.ts`; `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/graph/ast/ast-parser.ts`; `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/graph/index/symbol-index.ts`; `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/context_builder/graph/task-query-mapper.ts`; `docs/baselines/CVF_GC018_AIF_B_GRAPH_KNOWLEDGE_PHASE1_2026-05-24.md`; `docs/reviews/CVF_AIF_B_GRAPH_KNOWLEDGE_PHASE1_COMPLETION_2026-05-24.md` | AIF-B Phase 1 delivers in-memory AST graph, dependency/symbol index, advisory blast-radius resolver, and `GraphKnowledgeService` interface. Durable graph storage, standalone scoring, and live context-builder integration remain deferred; `CVF_GRAPH_SCORING_SPEC.md` does not exist in the source bundle. |
 | `.private_reference/legacy/CVF 17.05/Review CVF.md` | `partially_absorbed` | Active deliverable-fit oracle for Review-CVF pain-point closure chain. | Continue using as source oracle, but do not use it as the only comparator when deeper specs exist in 16.5, ADD, or Edit folders. |
 | `.private_reference/legacy/CVF Edit/` | `untriaged_active_source` | Operator-opened review/edit folder; current active file `.private_reference/legacy/CVF Edit/Review CVF_2.md`. | Must be scanned before any future Review-CVF correction or pain-point closure claim. No current absorption status may be inferred without a dedicated review. |
 
@@ -108,7 +109,7 @@ Failure to do this repeats the 2026-05-23 blindspot.
 | Source folder | Registry status | Notes |
 | --- | --- | --- |
 | `.private_reference/legacy/CVF 16.5/abtop/` | `runtime-owned` | Observability Delta closure exists; deeper observability plane foundation was later separately reviewed. |
-| `.private_reference/legacy/CVF 16.5/agentmemory/` | `partially_absorbed` | Controlled memory contract exists; full product memory hierarchy remains demand-gated. |
+| `.private_reference/legacy/CVF 16.5/agentmemory/` | `partially_absorbed` | AIF-C Phase 2a local memory policy modules exist; durable/live memory remains deferred. |
 | `.private_reference/legacy/CVF 16.5/Claude Kit/` | `runtime-owned` | Agent boundary/delegation runtime adoption evidence exists. |
 | `.private_reference/legacy/CVF 16.5/free Claude Code/` | `runtime-owned` | Model gateway/provider compatibility concepts absorbed in bounded form. |
 | `.private_reference/legacy/CVF 16.5/freellmapi/` | `runtime-owned` | Model Gateway runtime adoption evidence exists. |
@@ -133,7 +134,7 @@ Baseline reference: `docs/baselines/archive/CVF_16_5_LIVING_INTEGRATION_CLASSIFI
 | `.private_reference/legacy/CVF ADD/AI-first vs Human-first/` | `doctrine_absorbed` | Anti-overconstraint concepts normalized into ADD doctrine; product changes remain demand-gated. |
 | `.private_reference/legacy/CVF ADD/caveman/` | `deferred_or_archived` | Efficiency/context-budgeting concepts require a concrete product trigger. |
 | `.private_reference/legacy/CVF ADD/CLI-Anything/` | `deferred_or_archived` | Tool-surface concepts require a fresh tool-runtime work order. |
-| `.private_reference/legacy/CVF ADD/code-review-graph/` | `boundary_absorbed_engine_missing` | Read-only scoped-knowledge boundary exists; graph engine is not implemented. |
+| `.private_reference/legacy/CVF ADD/code-review-graph/` | `runtime-owned` | AIF-B Phase 1 in-memory graph foundation exists; durable storage and scoring remain deferred. |
 | `.private_reference/legacy/CVF ADD/cortex-hub/` | `boundary_absorbed_engine_missing` | Related to scoped knowledge/provider boundary; concrete code intelligence runtime remains demand-gated. |
 | `.private_reference/legacy/CVF ADD/deepagents/` | `doctrine_absorbed` | Delegation/subagent boundaries exist in doctrine/contract form; async runtime remains blocked without GC-018. |
 | `.private_reference/legacy/CVF ADD/gridex/` | `deferred_or_archived` | Database action/runtime concepts require persistence/database boundary lift. |
@@ -170,8 +171,8 @@ Primary ADD references:
 
 | Candidate | Source | Status | Required preconditions |
 | --- | --- | --- | --- |
-| T-H2 Memory Gateway Phase 2 | `.private_reference/legacy/CVF 16.5/agentmemory/` | `DEMAND_GATED` | Fresh GC-018; explicit blocked-work override for memory expansion; exact file-by-file absorption/defer table; no broad F-1 tuning. |
-| T-GRAPH Graph Knowledge Phase 1 | `.private_reference/legacy/CVF ADD/code-review-graph/` | `DEMAND_GATED` | Fresh GC-018; persistence/database boundary decision if storage is used; exact AST/dependency/blast-radius scope; no public product claim without proof. |
+| T-H2 / AIF-C Memory Gateway Phase 2a | `.private_reference/legacy/CVF 16.5/agentmemory/` | `CLOSED_PASS_BOUNDED` | Closed by `docs/reviews/CVF_AIF_C_MEMORY_GATEWAY_PHASE2_COMPLETION_2026-05-24.md`; future durable/live/cross-session memory still requires fresh GC-018. |
+| T-GRAPH / AIF-B Graph Knowledge Phase 1 | `.private_reference/legacy/CVF ADD/code-review-graph/` | `CLOSED_PASS_BOUNDED` | Closed by `docs/reviews/CVF_AIF_B_GRAPH_KNOWLEDGE_PHASE1_COMPLETION_2026-05-24.md`; future durable storage/scoring/live integration still requires fresh GC-018. |
 
 ---
 

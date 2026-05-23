@@ -4,7 +4,7 @@ Memory class: POINTER_RECORD
 
 Status: ACTIVE SESSION FRONT DOOR
 
-Last updated: 2026-05-23
+Last updated: 2026-05-24
 
 ## Purpose
 
@@ -73,7 +73,7 @@ current.
 
 ## Current Session Mode
 
-- Current mode: `aif_roadmap_launched_aif_a_ready_for_dispatch`
+- Current mode: `aif_foundations_closed_pass`
 - Previous mode: `d10_qwen3_r1_compatible_hosted_proof_closed_pass`
 - Freeze posture: `governance_kernel_freeze_recommended`
 - Active handoff pointer: `AGENT_HANDOFF_V12_2026-05-23.md`
@@ -103,7 +103,7 @@ D9 Qwen3 thinking enable-true adapter returned blocked at `docs/reviews/CVF_D9_Q
 
 D10 Qwen3 R1-compatible hosted proof is closed pass at `docs/reviews/CVF_D10_QWEN3_R1_COMPATIBLE_HOSTED_PROOF_COMPLETION_2026-05-23.md`: active mode marker `d10_qwen3_r1_compatible_hosted_proof_closed_pass`; focused providers test PASS `42/42`, `cvf-web` check PASS, local router preflight for Alibaba `R1` returned `ALLOW`, and the single hosted call returned HTTP `200`, `success=true`, `decision=ALLOW`, `routingDecision=ALLOW`, `enforcementStatus=ALLOW`, `evidenceMode=live`, provider `alibaba`, model `qwen3-235b-a22b-thinking-2507`, receipt `rcpt-env-mpigxtmn-pml5ky`, trace `env-mpigxtmn-pml5ky`, output length `4057`, `rawSecretPrinted=false`. Public repo contains the adapter fix at commit `811e59f6`.
 
-Current mode marker: `d10_qwen3_r1_compatible_hosted_proof_closed_pass`.
+Current mode marker: `aif_foundations_closed_pass`.
 
 ## Legacy Spec Absorption Blindspot Audit — 2026-05-23
 
@@ -134,7 +134,7 @@ or side-channel absorption records before declaring the next tranche shape.
 Review-CVF pain-point tranche must read this audit, the Codex review, and the
 legacy spec absorption registry before scoping.**
 
-## Agent Intelligence Foundations Roadmap — 2026-05-23
+## Agent Intelligence Foundations Roadmap — 2026-05-23 / Closed 2026-05-24
 
 The AIF roadmap is the active steering source for the three corrective tranches
 that address the legacy spec absorption blindspot. Roadmap:
@@ -143,13 +143,16 @@ that address the legacy spec absorption blindspot. Roadmap:
 
 | Tranche | Name | Status |
 | --- | --- | --- |
-| AIF-A | Operational Reference Index | `WORK_ORDER_READY` — Fast Lane, no GC-018 |
-| AIF-B | Graph Knowledge Phase 1 | `DEMAND_GATED` — needs PBR-04 lift |
-| AIF-C | Memory Gateway Phase 2 | `DEMAND_GATED` — needs `new_memory_tiers_beyond_lane_h_scope` override |
+| AIF-A | Operational Reference Index | `CLOSED_PASS` — `docs/reviews/CVF_AIF_A_OPERATIONAL_REFERENCE_INDEX_COMPLETION_2026-05-24.md` |
+| AIF-B | Graph Knowledge Phase 1 | `CLOSED_PASS` — `docs/reviews/CVF_AIF_B_GRAPH_KNOWLEDGE_PHASE1_COMPLETION_2026-05-24.md` |
+| AIF-C | Memory Gateway Phase 2a | `CLOSED_PASS` — `docs/reviews/CVF_AIF_C_MEMORY_GATEWAY_PHASE2_COMPLETION_2026-05-24.md` |
 
-AIF-A work order is at `docs/work_orders/CVF_WO_AIF_A_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`.
-AIF-A is the only immediately authorized tranche. AIF-B and AIF-C require operator
-unblock before implementation can begin.
+AIF-A created `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`.
+AIF-C delivered local in-memory memory gateway policy modules in
+`EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/`. AIF-B delivered local in-memory
+graph schema, AST parser, symbol index, task-query mapper, and exported
+`GraphKnowledgeService`. Durable persistence, live memory reinjection, provider
+changes, public-sync, and broad product-readiness claims remain out of scope.
 
 ## Provider Proof Prerequisite References
 
@@ -169,6 +172,7 @@ future Qwen3 hosted proof work order.
 
 Read these first for the current 17.05 reconvergence context:
 
+- `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`
 - `.private_reference/legacy/CVF 17.05/REVIEW FOLDER/CVF_17_05_SYSTEM_RECONVERGENCE_STOP_DECISION_2026-05-17.md`
 - `.private_reference/legacy/CVF 17.05/REVIEW FOLDER/CVF_17_05_GOVERNANCE_KERNEL_FREEZE_CODEX_RECOMMENDATION_2026-05-17.md`
 - `.private_reference/legacy/CVF 17.05/REVIEW FOLDER/CVF_17_05_AGENT_HANDOFF_AND_MEMORY_GAP_CODEX_AUDIT_2026-05-17.md`
@@ -227,13 +231,12 @@ Before material governed work, an agent should be able to state:
 
 ## Next Allowed Move
 
-AIF-A Operational Reference Index is `WORK_ORDER_READY`. Work order:
-`docs/work_orders/CVF_WO_AIF_A_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`.
-Fast Lane eligible; no GC-018 required. AIF-A is the only immediately
-authorized AIF tranche. Dispatch to Codex to create
-`docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`.
-
-AIF-B and AIF-C are `DEMAND_GATED` — do not begin without operator unblock.
+AIF roadmap is `CLOSED_PASS` for bounded AIF-A/AIF-C/AIF-B foundations. Use
+`docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md` before scoping
+memory, graph, provider, public-sync, pain-point, or legacy-adjacent work.
+Future durable memory, live memory reinjection, graph storage/scoring,
+`graph_search` activation, provider changes, or public product claims require a
+fresh GC-018/work order.
 
 D10 Qwen3 R1-compatible hosted proof: CLOSED PASS at
 `docs/reviews/CVF_D10_QWEN3_R1_COMPATIBLE_HOSTED_PROOF_COMPLETION_2026-05-23.md`.

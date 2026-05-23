@@ -1,3 +1,83 @@
+// AIF-C / AIF-B — Agent Intelligence Foundations
+export {
+  CONTROLLED_MEMORY_GATEWAY_PHASE2_VERSION,
+  evaluateMemoryGatewayRequest,
+} from "./controlled-memory-gateway";
+export type {
+  MemoryGatewayDecision,
+  MemoryGatewayOperation,
+  MemoryGatewayPolicyDecision,
+  MemoryGatewayRequest,
+  MemoryGatewayRiskLevel,
+} from "./controlled-memory-gateway";
+export {
+  MEMORY_LIFECYCLE_POLICY_VERSION,
+  evaluateLifecycleTransition,
+} from "./memory-lifecycle-policy";
+export type {
+  MemoryLifecycleState,
+  MemoryLifecycleTransition,
+  MemoryLifecycleTransitionInput,
+} from "./memory-lifecycle-policy";
+export {
+  MEMORY_RETRIEVAL_POLICY_VERSION,
+  evaluateRetrievalRequest,
+} from "./memory-retrieval-policy";
+export type {
+  MemoryRetrievalCandidate,
+  MemoryRetrievalMethod,
+  MemoryRetrievalRequest,
+  MemoryRetrievalResult,
+} from "./memory-retrieval-policy";
+export {
+  MEMORY_CONTEXT_PACKAGER_VERSION,
+  packageMemoryContext,
+} from "./memory-context-packager";
+export type {
+  ExcludedMemoryItem,
+  MemoryContextBlock,
+  MemoryContextItem,
+  MemoryContextPackageInput,
+} from "./memory-context-packager";
+export {
+  GRAPH_KNOWLEDGE_SCHEMA_VERSION,
+  createDependencyGraph,
+  createGraphEdge,
+  createGraphNode,
+} from "./knowledge/graph/schema/graph-schema";
+export type {
+  DependencyGraph,
+  GraphConfidence,
+  GraphEdge,
+  GraphEdgeKind,
+  GraphKnowledgeService,
+  GraphNode,
+  GraphNodeKind,
+  GraphQueryResult,
+  GraphSourceFile,
+} from "./knowledge/graph/schema/graph-schema";
+export {
+  extractDependencies,
+  extractSymbols,
+  parseFileToAST,
+} from "./knowledge/graph/ast/ast-parser";
+export type { ParsedGraphAst } from "./knowledge/graph/ast/ast-parser";
+export {
+  buildSymbolIndex,
+  buildSymbolIndexFromSources,
+  createInMemoryGraphKnowledgeService,
+  lookupSymbol,
+} from "./knowledge/graph/index/symbol-index";
+export type { SymbolIndex } from "./knowledge/graph/index/symbol-index";
+export {
+  mapTaskToQuery,
+  resolveBlastRadius,
+} from "./context_builder/graph/task-query-mapper";
+export type {
+  TaskQuery,
+  TaskQueryType,
+} from "./context_builder/graph/task-query-mapper";
+
 // W4-T8 — Evaluation Engine Consumer Pipeline Bridge (CP1)
 export {
   CONTROLLED_MEMORY_GATEWAY_ADAPTER_VERSION,

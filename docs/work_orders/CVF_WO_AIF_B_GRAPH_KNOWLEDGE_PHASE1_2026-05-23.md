@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DEMAND_GATED_NOT_AUTHORIZED
+Status: CLOSED_PASS
 
 docType: work_order
 
@@ -11,6 +11,20 @@ Date: 2026-05-23
 Tranche: AIF-B
 
 Roadmap: `docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md`
+
+---
+
+## Completion Addendum - 2026-05-24
+
+The operator's 2026-05-24 instruction to complete the roadmap and work orders
+is recorded as confirmation that AIF-B Phase 1 remains in-memory-only. PBR-04
+durable persistence was not lifted. AIF-B closed pass in
+`docs/reviews/CVF_AIF_B_GRAPH_KNOWLEDGE_PHASE1_COMPLETION_2026-05-24.md`.
+
+The work order's stale reference to `CVF_GRAPH_SCORING_SPEC.md` was corrected:
+that file does not exist in `.private_reference/legacy/CVF ADD/code-review-graph/`.
+The actual source bundle was scanned in
+`docs/baselines/CVF_GC018_AIF_B_GRAPH_KNOWLEDGE_PHASE1_2026-05-24.md`.
 
 ---
 

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DEMAND_GATED_NOT_AUTHORIZED
+Status: CLOSED_PASS
 
 docType: work_order
 
@@ -11,6 +11,19 @@ Date: 2026-05-23
 Tranche: AIF-C
 
 Roadmap: `docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md`
+
+---
+
+## Completion Addendum - 2026-05-24
+
+The operator's 2026-05-24 instruction to complete the roadmap and work orders
+is recorded as the required `new_memory_tiers_beyond_lane_h_scope` override.
+AIF-C closed pass for Phase 2a in
+`docs/reviews/CVF_AIF_C_MEMORY_GATEWAY_PHASE2_COMPLETION_2026-05-24.md`.
+
+Completion remains bounded to local in-memory policy modules. Durable memory,
+event-hook capture, cross-session access, live `/api/execute` reinjection, and
+`graph_search` activation remain outside this work order.
 
 ---
 
