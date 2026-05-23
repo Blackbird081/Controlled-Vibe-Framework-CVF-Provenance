@@ -43,7 +43,7 @@ Primary sources under review:
 - `.private_reference/legacy/CVF 16.5/Claude Kit/`
 - `AGENT_HANDOFF_V9_2026-05-18.md`
 - `scripts/run_cvf_17_05_drift_inventory.py`
-- `docs/reviews/CVF_17_05_STABILIZATION_DRIFT_INVENTORY_2026-05-17.md`
+- `docs/reviews/archive/CVF_17_05_STABILIZATION_DRIFT_INVENTORY_2026-05-17.md`
 
 ## Scope / Methodology
 
@@ -154,7 +154,7 @@ the controlling scan view until the freeform entries are rewritten individually.
 
 | GAP ID | Matrix rows | Concept axis | Current CVF files | Disposition | Severity | Blocks | Depends on | Proposed tranche |
 |---|---|---|---|---|---|---|---|---|
-| GAP-17.05-001 | 3.1, 3.2, 3.3 | orchestrator | `docs/reviews/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md`; `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/delegation.boundary.guard.contract.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/orchestrator.contract.ts` | `partially_absorbed` | high | full ORCHESTRATOR runtime; broad Phase 2.B orchestration semantics | GAP-17.05-002 | live runtime enforcement requires fresh GC-018 |
+| GAP-17.05-001 | 3.1, 3.2, 3.3 | orchestrator | `docs/reviews/archive/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md`; `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/delegation.boundary.guard.contract.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/orchestrator.contract.ts` | `partially_absorbed` | high | full ORCHESTRATOR runtime; broad Phase 2.B orchestration semantics | GAP-17.05-002 | live runtime enforcement requires fresh GC-018 |
 | GAP-17.05-002 | 1.1, 1.2, 1.3, 1.4, 2.1, 2.2, 2.3 | role; permission | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/role-axis.contract.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/authority-gate.guard.ts`; `EXTENSIONS/CVF_ECO_v2.3_AGENT_IDENTITY/src/agent.registry.ts` | `needs_gc018` | blocker | broad Phase 2.B runtime wire-up; full agent role governance claim | GAP-17.05-003 | Role/Permission tranche |
 | GAP-17.05-003 | all high/blocker rows | benchmark; agent OS | `scripts/run_cvf_17_05_drift_inventory.py`; `docs/reviews/CVF_LEGACY_CONCEPT_AXIS_MATRIX_2026-05-18.md` | `needs_gc018` | high | Phase A knowledge-map freeze; all later absorption tranches | none | none |
 | GAP-17.05-004 | 4.1, 4.2, 7.1 | runtime; workflow | `docs/reviews/CVF_17_05_PHASE_2B_PREFLIGHT_OWNER_MIGRATION_PLAN_2026-05-18.md`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/phase2b-wireup.contract.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/runtime-workflow.contract.ts` | `partially_absorbed` | medium | broad Phase 2.B runtime expansion and live workflow consumption | GAP-17.05-001; GAP-17.05-002 | none for contract-local tranche; runtime consumption requires fresh GC-018 |

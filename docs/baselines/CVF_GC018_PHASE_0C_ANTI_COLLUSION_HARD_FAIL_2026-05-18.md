@@ -16,7 +16,7 @@ GC-018 Continuation Candidate
   Evidence Trace Block will block commit. Legacy packets (written before GC-046
   existed) are grandfathered by filename date or directory scope.
 - Continuation class: ENFORCEMENT
-- Active quality assessment: docs/reviews/CVF_17_05_STABILIZATION_DRIFT_INVENTORY_2026-05-17.md
+- Active quality assessment: docs/reviews/archive/CVF_17_05_STABILIZATION_DRIFT_INVENTORY_2026-05-17.md
 - Assessment date: 2026-05-17
 - Weighted total: 8/10 (Phase 0.B threshold met on first checker run —
   4 compliant packets detected, threshold was 3)

@@ -36,7 +36,7 @@ Owner surface: CVF orchestration and delegation layer.
 Canonical sources:
 
 - `docs/CVF_ARCHITECTURE_DECISIONS.md` - architecture decisions and ADR-047.
-- `docs/reviews/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md` -
+- `docs/reviews/archive/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md` -
   records the orchestrator/worker-lane gap.
 - `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/delegation.contract.ts` -
   typed delegation ownership contract.

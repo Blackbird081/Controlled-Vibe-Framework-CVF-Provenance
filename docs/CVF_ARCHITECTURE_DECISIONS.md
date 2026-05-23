@@ -1057,7 +1057,7 @@ scope drift during implementation.
 - `governance/toolkit/05_OPERATION/CVF_DOCUMENT_STORAGE_GUARD.md`
 - `governance/compat/check_docs_governance_compat.py`
 - `governance/compat/check_markdown_structural_completeness.py`
-- `docs/reviews/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md`
+- `docs/reviews/archive/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md`
 
 ## ADR-048: Agent Execution Workflow SOP Becomes The Standard Operating Procedure
 

@@ -16,7 +16,7 @@ GC-018 Continuation Candidate
   canonical guard contract. Keep domain behavior as adapters. Mark templates
   and historical modules as legacy_reference.
 - Continuation class: STRUCTURAL
-- Active quality assessment: docs/reviews/CVF_17_05_STABILIZATION_DRIFT_INVENTORY_2026-05-17.md
+- Active quality assessment: docs/reviews/archive/CVF_17_05_STABILIZATION_DRIFT_INVENTORY_2026-05-17.md
 - Assessment date: 2026-05-17
 - Weighted total: 7.5/10 (Phase 1.0 inventory complete; canonical contracts
   absent is the primary gap — this phase directly addresses it)
@@ -124,11 +124,11 @@ implementation work begins.
 Phase 1.0 gate evidence:
 - Commit `daa97429` (2026-05-18) delivered all four required Phase 1.0
   extended scope artifacts
-- Drift inventory: `docs/reviews/CVF_17_05_STABILIZATION_DRIFT_INVENTORY_2026-05-17.md`
+- Drift inventory: `docs/reviews/archive/CVF_17_05_STABILIZATION_DRIFT_INVENTORY_2026-05-17.md`
   (13 PolicyEngine, 26 RiskEngine/RiskScorer, 7 GuardEngine surfaces)
-- Owner map: `docs/reviews/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md`
+- Owner map: `docs/reviews/archive/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md`
   (kernel surfaces #3 policy, #4 risk, #5 guard mapped)
-- Alias table: `docs/reviews/CVF_17_05_KERNEL_TERMINOLOGY_ALIAS_TABLE_2026-05-17.md`
+- Alias table: `docs/reviews/archive/CVF_17_05_KERNEL_TERMINOLOGY_ALIAS_TABLE_2026-05-17.md`
   (canonical terms: PolicyEngine, RiskEngine, GuardEngine registered)
 
 Required evidence for Phase 1.P completion:

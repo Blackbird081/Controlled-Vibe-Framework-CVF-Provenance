@@ -16,7 +16,7 @@ GC-018 Continuation Candidate
   memory-home surface from Phase 1.0. Extend existing GAP-MEM work without
   overwriting it. Defer long-term and organizational memory.
 - Continuation class: STRUCTURAL
-- Active quality assessment: docs/reviews/CVF_17_05_STABILIZATION_DRIFT_INVENTORY_2026-05-17.md
+- Active quality assessment: docs/reviews/archive/CVF_17_05_STABILIZATION_DRIFT_INVENTORY_2026-05-17.md
 - Assessment date: 2026-05-17
 - Weighted total: 7.5/10 (Phase 1.0 inventory complete; memory-home tier
   hierarchy absent is the primary gap addressed by this phase)
@@ -26,10 +26,10 @@ GC-018 Continuation Candidate
 - Why expansion is still the better move now: Phase 1.0 inventory found only
   1 MemoryHome surface match — the lowest-count concern group and the
   highest-priority gap. The owner map
-  (docs/reviews/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md) records
+  (docs/reviews/archive/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md) records
   kernel surface #9 (memory model) as not_owned — zero canonical implementation
   in working tree. The unabsorbed kernel source matrix
-  (docs/reviews/CVF_17_05_UNABSORBED_KERNEL_SOURCE_MATRIX_2026-05-17.md)
+  (docs/reviews/archive/CVF_17_05_UNABSORBED_KERNEL_SOURCE_MATRIX_2026-05-17.md)
   confirms all 8 ORCHESTRATOR concepts including working/task/skill memory
   distinctions are not_absorbed. Defining the 5-tier model requires reading
   existing memory references, not changing them — zero active-path impact.
@@ -126,11 +126,11 @@ implementation work begins.
 Phase 1.0 gate evidence:
 - Commit `daa97429` (2026-05-18) delivered all four required Phase 1.0
   extended scope artifacts
-- Drift inventory: `docs/reviews/CVF_17_05_STABILIZATION_DRIFT_INVENTORY_2026-05-17.md`
+- Drift inventory: `docs/reviews/archive/CVF_17_05_STABILIZATION_DRIFT_INVENTORY_2026-05-17.md`
   (1 explicit MemoryHome surface — lowest count, confirming not_owned gap)
-- Owner map: `docs/reviews/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md`
+- Owner map: `docs/reviews/archive/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md`
   (kernel surface #9 memory model: not_owned, freeze_blocker — highest priority gap)
-- Source matrix: `docs/reviews/CVF_17_05_UNABSORBED_KERNEL_SOURCE_MATRIX_2026-05-17.md`
+- Source matrix: `docs/reviews/archive/CVF_17_05_UNABSORBED_KERNEL_SOURCE_MATRIX_2026-05-17.md`
   (all 8 ORCHESTRATOR concepts including working/task/skill memory: not_absorbed)
 
 Required evidence for Phase 1.M completion:

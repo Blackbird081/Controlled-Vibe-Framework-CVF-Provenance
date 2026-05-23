@@ -16,7 +16,7 @@ GC-018 Continuation Candidate
   exists. No emission infrastructure. No dashboard integration. No claim that
   operational intelligence is live.
 - Continuation class: STRUCTURAL
-- Active quality assessment: docs/reviews/CVF_17_05_STABILIZATION_DRIFT_INVENTORY_2026-05-17.md
+- Active quality assessment: docs/reviews/archive/CVF_17_05_STABILIZATION_DRIFT_INVENTORY_2026-05-17.md
 - Assessment date: 2026-05-17
 - Weighted total: 7.0/10 (Phase 1.0 inventory complete; operational metrics
   schema absent, but this is a medium-priority gap rather than a freeze_blocker)
@@ -138,7 +138,7 @@ Phase 1.0 gate evidence:
   as the existing foundation Phase 3.S extends
 - Roadmap authorization sequence: Phase 3.S explicitly permitted after Phase 1.0,
   independently of Phase 1 and 2.A tracks
-- Source matrix: `docs/reviews/CVF_17_05_UNABSORBED_KERNEL_SOURCE_MATRIX_2026-05-17.md`
+- Source matrix: `docs/reviews/archive/CVF_17_05_UNABSORBED_KERNEL_SOURCE_MATRIX_2026-05-17.md`
   (Problem E — operational benchmark category incomplete: not_absorbed)
 
 Required evidence for Phase 3.S completion:

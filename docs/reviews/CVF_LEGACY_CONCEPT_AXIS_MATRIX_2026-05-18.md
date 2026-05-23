@@ -97,7 +97,7 @@ current CVF file paths per concept row.
 
 | Concept sub-item | Legacy source files | Current CVF files | Disposition | Severity | Blocks | Linked GAPs |
 |---|---|---|---|---|---|---|
-| ORCHESTRATOR role boundary | `.private_reference/legacy/CVF 17.05/REVIEW FOLDER/CVF_17_05_AGENT_ORCHESTRATOR_ROLE_ABSORPTION_GAP_CODEX_AUDIT_2026-05-17.md`; `.private_reference/legacy/CVF ADD/Human System Harness/Thong_tin.md` | `docs/reviews/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md`; `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/delegation.boundary.guard.contract.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/orchestrator.contract.ts` | `partially_absorbed` | high | runtime consumption for live ORCHESTRATOR enforcement | `GAP-17.05-001`; `GAP-17.05-003`; `GAP-17.05-005` |
+| ORCHESTRATOR role boundary | `.private_reference/legacy/CVF 17.05/REVIEW FOLDER/CVF_17_05_AGENT_ORCHESTRATOR_ROLE_ABSORPTION_GAP_CODEX_AUDIT_2026-05-17.md`; `.private_reference/legacy/CVF ADD/Human System Harness/Thong_tin.md` | `docs/reviews/archive/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md`; `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/delegation.boundary.guard.contract.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/orchestrator.contract.ts` | `partially_absorbed` | high | runtime consumption for live ORCHESTRATOR enforcement | `GAP-17.05-001`; `GAP-17.05-003`; `GAP-17.05-005` |
 | Orchestration rules contract | `.private_reference/legacy/CVF 16.5/Claude Kit/CVF_AGENT_ORCHESTRATION_RULES.md` | `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/delegation.boundary.guard.contract.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/sandbox-worker.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/orchestrator.contract.ts` | `partially_absorbed` | high | runtime consumption of orchestration transition metadata | `GAP-17.05-001`; `GAP-17.05-003`; `GAP-17.05-013` |
 | Reverse brief / solution bias guard | `.private_reference/legacy/CVF ADD/Human System Harness/Thong_tin.md`; `.private_reference/legacy/CVF Edit/Review CVF_1.md` | `governance/toolkit/05_OPERATION/CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD.md`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/orchestrator.contract.ts` | `partially_absorbed` | medium | live delegation-path consumption | `GAP-17.05-001` |
 
@@ -221,7 +221,7 @@ $paths = @(
   "ARCHITECTURE.md",
   "docs/CVF_INCREMENTAL_TEST_LOG.md",
   "docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md",
-  "docs/reviews/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md",
+  "docs/reviews/archive/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md",
   "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/continuity.checkpoint.contract.ts",
   "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/w7.memory.record.contract.ts",
   "EXTENSIONS/CVF_ECO_v2.3_AGENT_IDENTITY/src/agent.registry.ts",

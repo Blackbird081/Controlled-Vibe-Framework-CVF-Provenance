@@ -71,7 +71,7 @@ Source:
 - `.private_reference/legacy/CVF 17.05/Review CVF.md`
 - The source is a private-reference audit that produced the 17.05 converged
   verdict recorded in
-  `docs/reviews/CVF_17_05_REVIEW_CVF_CONVERGED_VERDICT_2026-05-17.md`.
+  `docs/reviews/archive/CVF_17_05_REVIEW_CVF_CONVERGED_VERDICT_2026-05-17.md`.
 
 The source raises eight pain points labelled Problem A through Problem H, plus
 a four-phase priority order, plus a "Governed Capability OS" direction
@@ -161,9 +161,9 @@ Verdict: PARTIAL.
 
 Evidence in working tree:
 
-- `docs/reviews/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md`
-- `docs/reviews/CVF_17_05_KERNEL_TERMINOLOGY_ALIAS_TABLE_2026-05-17.md`
-- `docs/reviews/CVF_17_05_UNABSORBED_KERNEL_SOURCE_MATRIX_2026-05-17.md`
+- `docs/reviews/archive/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md`
+- `docs/reviews/archive/CVF_17_05_KERNEL_TERMINOLOGY_ALIAS_TABLE_2026-05-17.md`
+- `docs/reviews/archive/CVF_17_05_UNABSORBED_KERNEL_SOURCE_MATRIX_2026-05-17.md`
 - `docs/reviews/CVF_17_05_PHASE_2B_BOUNDED_WIREUP_COMPLETION_2026-05-18.md`
 - `docs/reviews/CVF_17_05_PHASE_2C_VERTICAL_SLICE_COMPLETION_2026-05-18.md`
 - Guard chain: continuation chain guard, handoff guard, active session state
@@ -572,7 +572,7 @@ must be re-filed.
 
 - Source: `.private_reference/legacy/CVF 17.05/Review CVF.md`
 - 17.05 converged verdict:
-  `docs/reviews/CVF_17_05_REVIEW_CVF_CONVERGED_VERDICT_2026-05-17.md`
+  `docs/reviews/archive/CVF_17_05_REVIEW_CVF_CONVERGED_VERDICT_2026-05-17.md`
 - Phase 3 closure reviews:
   `docs/reviews/CVF_W1_PROVIDER_CONTRACT_COMPLETION_2026-05-19.md`,
   `docs/reviews/CVF_W2_GOVERNED_PACK_COMPLETION_2026-05-19.md`,

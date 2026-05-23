@@ -16,7 +16,7 @@ GC-018 Continuation Candidate
   CVFRole, ActorRole, and operator role surfaces. Map each Phase 1.0 role
   surface to one axis. Plan adapter path before any runtime role migration.
 - Continuation class: STRUCTURAL
-- Active quality assessment: docs/reviews/CVF_17_05_STABILIZATION_DRIFT_INVENTORY_2026-05-17.md
+- Active quality assessment: docs/reviews/archive/CVF_17_05_STABILIZATION_DRIFT_INVENTORY_2026-05-17.md
 - Assessment date: 2026-05-17
 - Weighted total: 7.5/10 (Phase 1.0 inventory complete; axis separation absent
   is the primary gap addressed by this phase)
@@ -25,7 +25,7 @@ GC-018 Continuation Candidate
 - Quality-first decision: EXPAND_NOW
 - Why expansion is still the better move now: Phase 1.0 inventory found 20
   distinct AgentRole/ActorRole/CVFRole surfaces with no canonical axis map.
-  The owner map (docs/reviews/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md)
+  The owner map (docs/reviews/archive/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md)
   confirms kernel surface #2 (Agent/actor roles) is partially_owned and a
   freeze_blocker. Defining role axes requires reading existing role strings,
   not changing them — active-path impact is zero until Phase 2.B.
@@ -122,11 +122,11 @@ implementation work begins.
 Phase 1.0 gate evidence:
 - Commit `daa97429` (2026-05-18) delivered all four required Phase 1.0
   extended scope artifacts
-- Drift inventory: `docs/reviews/CVF_17_05_STABILIZATION_DRIFT_INVENTORY_2026-05-17.md`
+- Drift inventory: `docs/reviews/archive/CVF_17_05_STABILIZATION_DRIFT_INVENTORY_2026-05-17.md`
   (20 AgentRole/ActorRole/CVFRole surfaces inventoried)
-- Owner map: `docs/reviews/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md`
+- Owner map: `docs/reviews/archive/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md`
   (kernel surface #2 agent/actor roles: partially_owned, freeze_blocker)
-- Source matrix: `docs/reviews/CVF_17_05_UNABSORBED_KERNEL_SOURCE_MATRIX_2026-05-17.md`
+- Source matrix: `docs/reviews/archive/CVF_17_05_UNABSORBED_KERNEL_SOURCE_MATRIX_2026-05-17.md`
   (Orchestrator authority model not_absorbed — role axis conflation confirmed)
 
 Required evidence for Phase 1.I completion:

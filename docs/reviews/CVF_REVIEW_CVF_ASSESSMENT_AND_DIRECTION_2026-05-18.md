@@ -495,7 +495,7 @@ Verified 2026-05-18 against existing doctrine and governance artifacts:
 | --- | --- | --- |
 | Authority hierarchy | `ECOSYSTEM/doctrine/CVF_ARCHITECTURE_PRINCIPLES.md` lines 190–234 | COVERED |
 | Execution lifecycle | `EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL` + Phase D contracts | COVERED |
-| Governance ownership | `docs/reviews/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md` + concept-axis matrix | COVERED |
+| Governance ownership | `docs/reviews/archive/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md` + concept-axis matrix | COVERED |
 | Policy scope | `ECOSYSTEM/doctrine/CVF_DOCTRINE_RULES.md` + `governance/toolkit/02_POLICY/CVF_MASTER_POLICY.md` | COVERED |
 | Runtime semantics | `ECOSYSTEM/doctrine/CVF_LAYER_MODEL.md` + Phase D/E contract layer | COVERED |
 

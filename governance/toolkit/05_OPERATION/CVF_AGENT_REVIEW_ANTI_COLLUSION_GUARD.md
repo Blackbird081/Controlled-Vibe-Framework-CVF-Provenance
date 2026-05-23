@@ -120,7 +120,7 @@ All 5 were caught because the REVIEWER role was structurally obligated to find r
 
 The canonical convergence verdict artifact for the 17.05 chain is:
 
-`docs/reviews/CVF_17_05_REVIEW_CVF_CONVERGED_VERDICT_2026-05-17.md`
+`docs/reviews/archive/CVF_17_05_REVIEW_CVF_CONVERGED_VERDICT_2026-05-17.md`
 
 ## Evidence Trace Block Template
 
@@ -146,7 +146,7 @@ Phase 0.C (deferred): pre-commit or CI hard-fail for missing Evidence Trace Bloc
 
 ## Related Artifacts
 
-- `docs/reviews/CVF_17_05_REVIEW_CVF_CONVERGED_VERDICT_2026-05-17.md` — 17.05 chain converged verdict
+- `docs/reviews/archive/CVF_17_05_REVIEW_CVF_CONVERGED_VERDICT_2026-05-17.md` — 17.05 chain converged verdict
 - `docs/reference/CVF_GC018_CONTINUATION_CANDIDATE_TEMPLATE.md` — GC-018 packet template (updated with Evidence Trace Block requirement)
 - `governance/toolkit/05_OPERATION/CVF_MULTI_AGENT_REVIEW_DOC_GUARD.md` — canonical multi-agent review doc chain
 - `governance/toolkit/05_OPERATION/CVF_KNOWLEDGE_ABSORPTION_PRIORITY_GUARD.md` — doctrine-first absorption mandate

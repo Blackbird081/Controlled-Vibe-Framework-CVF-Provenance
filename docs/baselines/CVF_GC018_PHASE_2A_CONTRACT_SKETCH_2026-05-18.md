@@ -16,7 +16,7 @@ GC-018 Continuation Candidate
   Make the missing capability chain explicit in doc form. No web execute route
   integration. No runtime behavior change.
 - Continuation class: STRUCTURAL
-- Active quality assessment: docs/reviews/CVF_17_05_STABILIZATION_DRIFT_INVENTORY_2026-05-17.md
+- Active quality assessment: docs/reviews/archive/CVF_17_05_STABILIZATION_DRIFT_INVENTORY_2026-05-17.md
 - Assessment date: 2026-05-17
 - Weighted total: 7.5/10 (Phase 1.0 inventory complete; GovernedCapability and
   OutcomeWorkflow contract homes absent is the primary gap)
@@ -134,11 +134,11 @@ exist before any Phase 2.A implementation work begins.
 Phase 1.0 gate evidence:
 - Commit `daa97429` (2026-05-18) delivered all four required Phase 1.0
   extended scope artifacts
-- Drift inventory: `docs/reviews/CVF_17_05_STABILIZATION_DRIFT_INVENTORY_2026-05-17.md`
+- Drift inventory: `docs/reviews/archive/CVF_17_05_STABILIZATION_DRIFT_INVENTORY_2026-05-17.md`
   (OutcomeWorkflow: zero active matches confirmed)
-- Owner map: `docs/reviews/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md`
+- Owner map: `docs/reviews/archive/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md`
   (placeholder owners available for Phase 2.A contract bindings)
-- Source matrix: `docs/reviews/CVF_17_05_UNABSORBED_KERNEL_SOURCE_MATRIX_2026-05-17.md`
+- Source matrix: `docs/reviews/archive/CVF_17_05_UNABSORBED_KERNEL_SOURCE_MATRIX_2026-05-17.md`
   (Problem B — skill system not yet product capability system: not_absorbed)
 - Roadmap authorization sequence: Phase 2.A explicitly permitted after Phase 1.0,
   independent of Phase 1.P/1.I/1.R completion

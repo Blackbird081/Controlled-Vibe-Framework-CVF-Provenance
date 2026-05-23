@@ -29,9 +29,9 @@ Source inputs:
   or as a prerequisite to Lane B/C/H execution.
 - `AGENT_HANDOFF_V9_2026-05-18.md` - active session state, selected Lane B/C/H
   order, and legacy/source reuse instruction.
-- `docs/reviews/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md` - records
+- `docs/reviews/archive/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md` - records
   Surface 2 agent/actor role and Surface 7 delegation/handoff gaps.
-- `docs/reviews/CVF_17_05_UNABSORBED_KERNEL_SOURCE_MATRIX_2026-05-17.md` -
+- `docs/reviews/archive/CVF_17_05_UNABSORBED_KERNEL_SOURCE_MATRIX_2026-05-17.md` -
   records ORCHESTRATOR and worker-lane source concepts as not fully absorbed.
 - `docs/reviews/CVF_17_05_LEGACY_ABSORPTION_GAP_LEDGER_2026-05-18.md` -
   records GAP-17.05-001, GAP-17.05-002, and GAP-17.05-013.
@@ -206,9 +206,9 @@ Before authoring files, read:
 
 - `AGENT_HANDOFF_V9_2026-05-18.md` - active posture and source reuse
   instruction.
-- `docs/reviews/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md` -
+- `docs/reviews/archive/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md` -
   current owner map and freeze blockers.
-- `docs/reviews/CVF_17_05_UNABSORBED_KERNEL_SOURCE_MATRIX_2026-05-17.md` -
+- `docs/reviews/archive/CVF_17_05_UNABSORBED_KERNEL_SOURCE_MATRIX_2026-05-17.md` -
   source concept status.
 - `docs/reviews/CVF_17_05_LEGACY_ABSORPTION_GAP_LEDGER_2026-05-18.md` -
   active gap state.

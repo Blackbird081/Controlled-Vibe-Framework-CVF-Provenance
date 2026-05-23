@@ -15,7 +15,7 @@ GC-018 Continuation Candidate
   receipts, skill audit records, governance ledgers, and evidence receipts to
   typed payloads. Plan reader/writer compatibility before changing any producer.
 - Continuation class: STRUCTURAL
-- Active quality assessment: docs/reviews/CVF_17_05_STABILIZATION_DRIFT_INVENTORY_2026-05-17.md
+- Active quality assessment: docs/reviews/archive/CVF_17_05_STABILIZATION_DRIFT_INVENTORY_2026-05-17.md
 - Assessment date: 2026-05-17
 - Weighted total: 7.5/10 (Phase 1.0 inventory complete; canonical receipt
   envelope absent is the primary gap addressed by this phase)
@@ -24,7 +24,7 @@ GC-018 Continuation Candidate
 - Quality-first decision: EXPAND_NOW
 - Why expansion is still the better move now: Phase 1.0 inventory found 27
   distinct Receipt/Ledger/AuditLog surfaces — the highest-count concern group.
-  The owner map (docs/reviews/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md)
+  The owner map (docs/reviews/archive/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md)
   confirms kernel surface #8 (receipt/evidence envelope) is partially_owned
   and a freeze_blocker. Defining Receipt<TPayload> requires reading existing
   interfaces, not changing them — zero active-path impact until Phase 2.B.
@@ -121,11 +121,11 @@ Phase 1.R implementation work begins.
 Phase 1.0 gate evidence:
 - Commit `daa97429` (2026-05-18) delivered all four required Phase 1.0
   extended scope artifacts
-- Drift inventory: `docs/reviews/CVF_17_05_STABILIZATION_DRIFT_INVENTORY_2026-05-17.md`
+- Drift inventory: `docs/reviews/archive/CVF_17_05_STABILIZATION_DRIFT_INVENTORY_2026-05-17.md`
   (27 Receipt/Ledger/AuditLog surfaces — highest-count concern group)
-- Owner map: `docs/reviews/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md`
+- Owner map: `docs/reviews/archive/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md`
   (kernel surface #8 receipt/evidence envelope: partially_owned, freeze_blocker)
-- Alias table: `docs/reviews/CVF_17_05_KERNEL_TERMINOLOGY_ALIAS_TABLE_2026-05-17.md`
+- Alias table: `docs/reviews/archive/CVF_17_05_KERNEL_TERMINOLOGY_ALIAS_TABLE_2026-05-17.md`
   (ExecutionReceipt registered as interim canonical term)
 
 Required evidence for Phase 1.R completion:

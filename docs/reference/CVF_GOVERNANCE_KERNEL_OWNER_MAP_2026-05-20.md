@@ -142,7 +142,7 @@ Class precedence:
 | Execution lifecycle | legacy system reconvergence phase terms | `legacy_alias` | Historical phase labels map to canonical lifecycle terms. | `.private_reference/legacy/CVF 17.05/REVIEW FOLDER/CVF_17_05_SYSTEM_RECONVERGENCE_STOP_DECISION_2026-05-17.md` |
 | Delegation / handoff | delegation via `orchestrator.contract.ts` | `canonical_owner` | Orchestrator contract owns delegation from authority role to worker lane. | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/orchestrator.contract.ts` |
 | Delegation / handoff | active handoff format | `parallel_surface` | Handoff continuity is adjacent to delegation but owned by active-session handoff rules. | `AGENT_HANDOFF_V10_2026-05-19.md` |
-| Delegation / handoff | handoff/delegation ADRs | `documentation_alias` | ADRs document the split and do not merge envelopes. | `docs/reference/CVF_ADR_AGENT_HANDOFF_CONTRACT_RELATIONSHIP_2026-05-17.md` |
+| Delegation / handoff | handoff/delegation ADRs | `documentation_alias` | ADRs document the split and do not merge envelopes. | `docs/reference/archive/CVF_ADR_AGENT_HANDOFF_CONTRACT_RELATIONSHIP_2026-05-17.md` |
 | Receipt envelope | `GovernanceEvidenceReceipt` | `canonical_owner` | Shared root evidence receipt shape. | `EXTENSIONS/CVF_GUARD_CONTRACT/src/types.ts` |
 | Receipt envelope | `GatewayReceipt` | `adapter_required` | Gateway lane receipt composes lane-specific receipt metadata. | `EXTENSIONS/CVF_MODEL_GATEWAY/src/gateway-receipt.ts` |
 | Receipt envelope | web governance envelope | `adapter_required` | Web lane wraps execution metadata around the root evidence receipt. | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/web-governance-envelope.ts` |
@@ -153,7 +153,7 @@ Class precedence:
 | Capability surface | `skill-registry.ts` | `canonical_owner` | Runtime capability registry owner. | `EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/skill-registry.ts` |
 | Capability surface | `full-skill-registry.ts` | `canonical_alias` | Expanded data set using the same registry type, not a separate owner. | `EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/full-skill-registry.ts` |
 | Capability surface | governed capability intake doctrine | `canonical_alias` | Intake-side doctrine governs admission of new capability material. | `docs/reference/CVF_GOVERNED_CAPABILITY_INTAKE_DOCTRINE_2026-05-07.md` |
-| Capability surface | boundary-first intake doctrine | `canonical_alias` | Intake doctrine companion; no runtime skill is added by the document. | `docs/reference/CVF_GOVERNED_CAPABILITY_INTAKE_AND_BOUNDARY_FIRST_GOVERNANCE_DOCTRINE_2026-05-17.md` |
+| Capability surface | boundary-first intake doctrine | `canonical_alias` | Intake doctrine companion; no runtime skill is added by the document. | `docs/reference/archive/CVF_GOVERNED_CAPABILITY_INTAKE_AND_BOUNDARY_FIRST_GOVERNANCE_DOCTRINE_2026-05-17.md` |
 | Provider execution semantics | Model Gateway public barrel | `canonical_owner` | Gateway package owns provider-output contract surface exports. | `EXTENSIONS/CVF_MODEL_GATEWAY/src/index.ts` |
 | Provider execution semantics | provider output contract | `canonical_method_contract` | Method contract only; no runtime provider execution claim. | `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-output-contract.ts` |
 | Provider execution semantics | stream contract | `canonical_method_contract` | Method contract only. | `EXTENSIONS/CVF_MODEL_GATEWAY/src/stream-contract.ts` |
