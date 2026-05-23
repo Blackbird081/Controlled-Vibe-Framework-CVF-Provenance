@@ -42,7 +42,7 @@ Primary sources:
 - `AGENT_HANDOFF_V9_2026-05-18.md`
 - `docs/reviews/archive/CVF_17_05_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-17.md`
 - `docs/reviews/archive/CVF_17_05_STABILIZATION_DRIFT_INVENTORY_2026-05-17.md`
-- `docs/reviews/CVF_17_05_LEGACY_ABSORPTION_GAP_LEDGER_2026-05-18.md`
+- `docs/reviews/archive/CVF_17_05_LEGACY_ABSORPTION_GAP_LEDGER_2026-05-18.md`
 - `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/`
 
 ## Scope / Methodology
@@ -110,7 +110,7 @@ wire-up:
 
 | Order | Step | Owner surface | Done criterion |
 |---:|---|---|---|
-| 0 | Run legacy absorption audit for selected path | `docs/reviews/CVF_17_05_LEGACY_ABSORPTION_GAP_LEDGER_2026-05-18.md` | Audit records whether ORCHESTRATOR and role catalog gaps affect selected path |
+| 0 | Run legacy absorption audit for selected path | `docs/reviews/archive/CVF_17_05_LEGACY_ABSORPTION_GAP_LEDGER_2026-05-18.md` | Audit records whether ORCHESTRATOR and role catalog gaps affect selected path |
 | 1 | Select runtime path and fixtures | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/` | One fixture capability and one fixture workflow are declared as test-only |
 | 2 | Bind policy/risk/guard adapter | Phase 1.P contracts | Fixture imports canonical `PolicyDecision`, `RiskLevel`, and `GuardEngineAdapter` types |
 | 3 | Bind role-axis minimum | Phase 1.I contracts | Fixture uses an existing `AgentFunctionRole`; no new role enum or permission model |

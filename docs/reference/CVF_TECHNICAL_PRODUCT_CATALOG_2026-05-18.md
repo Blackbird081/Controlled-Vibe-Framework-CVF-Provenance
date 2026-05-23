@@ -14,7 +14,7 @@ split.
 
 Phase B claim boundary:
 
-- `docs/reference/CVF_PUBLIC_CATALOG_CLAIM_BOUNDARY_2026-05-18.md`
+- `docs/reference/archive/CVF_PUBLIC_CATALOG_CLAIM_BOUNDARY_2026-05-18.md`
 
 ## Scope
 
@@ -56,10 +56,10 @@ Source inputs:
 
 ## Source / Predecessor Evidence
 
-- `docs/baselines/CVF_GC018_PHASE_B_PUBLIC_CATALOG_BASELINE_2026-05-18.md`
-- `docs/reviews/CVF_LEGACY_ABSORPTION_PHASE_A_FREEZE_2026-05-18.md`
-- `docs/roadmaps/CVF_LEGACY_ABSORPTION_AND_PUBLIC_CATALOG_ROADMAP_2026-05-18.md`
-- `docs/reference/CVF_PUBLIC_CATALOG_CLAIM_BOUNDARY_2026-05-18.md`
+- `docs/baselines/archive/CVF_GC018_PHASE_B_PUBLIC_CATALOG_BASELINE_2026-05-18.md`
+- `docs/reviews/archive/CVF_LEGACY_ABSORPTION_PHASE_A_FREEZE_2026-05-18.md`
+- `docs/roadmaps/archive/CVF_LEGACY_ABSORPTION_AND_PUBLIC_CATALOG_ROADMAP_2026-05-18.md`
+- `docs/reference/archive/CVF_PUBLIC_CATALOG_CLAIM_BOUNDARY_2026-05-18.md`
 - `docs/baselines/CVF_GC018_LANE_B_WORKFLOW_PACKAGING_2026-05-19.md`
 - `docs/baselines/CVF_GC018_BC_PRODUCT_OUTCOME_RUNTIME_AND_CLI_DISTRIBUTION_2026-05-22.md`
 - `docs/reviews/CVF_BC_PRODUCT_OUTCOME_RUNTIME_AND_CLI_DISTRIBUTION_COMPLETION_2026-05-22.md`
@@ -269,13 +269,13 @@ PASS docs/reference/archive/CVF_PUBLIC_NONCODER_VALUE_STATEMENT_2026-04-17.md
 PASS governance/toolkit/05_OPERATION/CVF_AUDIT_PROTOCOL.md
 PASS scripts/run_cvf_release_gate_bundle.py
 PASS docs/reference/CVF_PUBLIC_STRUCTURE_OVERVIEW.md
-PASS docs/reference/CVF_PUBLIC_CATALOG_CLAIM_BOUNDARY_2026-05-18.md
+PASS docs/reference/archive/CVF_PUBLIC_CATALOG_CLAIM_BOUNDARY_2026-05-18.md
 PASS docs/reviews/CVF_W130_EXPORT_ACTIVATION_CONTRACT_2026-04-28.md
 PASS docs/reviews/archive/CVF_W130_EVIDENCE_PACK_EXPORT_EVIDENCE_2026-04-28.md
 PASS EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/knowledge-store.ts
 PASS EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/external-asset-governance.ts
-PASS docs/reviews/CVF_LEGACY_SCOPE_ABSORPTION_AUDIT_MATRIX_2026-05-18.md
-PASS docs/roadmaps/CVF_LEGACY_ABSORPTION_AND_PUBLIC_CATALOG_ROADMAP_2026-05-18.md
+PASS docs/reviews/archive/CVF_LEGACY_SCOPE_ABSORPTION_AUDIT_MATRIX_2026-05-18.md
+PASS docs/roadmaps/archive/CVF_LEGACY_ABSORPTION_AND_PUBLIC_CATALOG_ROADMAP_2026-05-18.md
 PASS docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md
 ```
 
@@ -304,7 +304,7 @@ Required posture:
 
 The structured Phase B public claim boundary is:
 
-- `docs/reference/CVF_PUBLIC_CATALOG_CLAIM_BOUNDARY_2026-05-18.md`
+- `docs/reference/archive/CVF_PUBLIC_CATALOG_CLAIM_BOUNDARY_2026-05-18.md`
 
 CVF may claim:
 
@@ -333,13 +333,13 @@ CVF must not claim yet:
 
 Private/provenance source draft:
 
-- `docs/reviews/CVF_LEGACY_SCOPE_ABSORPTION_AUDIT_MATRIX_2026-05-18.md`
-- `docs/roadmaps/CVF_LEGACY_ABSORPTION_AND_PUBLIC_CATALOG_ROADMAP_2026-05-18.md`
+- `docs/reviews/archive/CVF_LEGACY_SCOPE_ABSORPTION_AUDIT_MATRIX_2026-05-18.md`
+- `docs/roadmaps/archive/CVF_LEGACY_ABSORPTION_AND_PUBLIC_CATALOG_ROADMAP_2026-05-18.md`
 
 Public repository target:
 
 - `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`
-- `docs/reference/CVF_PUBLIC_CATALOG_CLAIM_BOUNDARY_2026-05-18.md`
+- `docs/reference/archive/CVF_PUBLIC_CATALOG_CLAIM_BOUNDARY_2026-05-18.md`
 
 ## Final Clause
 

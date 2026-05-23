@@ -153,7 +153,7 @@ agent-facing execution instructions; it does not widen the roadmap.
   and Lane H in order.
 - Active session state: `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - Decision pack:
-  `docs/reviews/CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md`
+  `docs/reviews/archive/CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md`
 - Roadmap:
   `docs/roadmaps/CVF_NEXT_PHASE_ROADMAP_LANE_B_C_H_2026-05-19.md`
 - Work order source example: root `promt.md`
@@ -583,6 +583,6 @@ Stop and return to orchestrator if:
 - `promt.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `AGENT_HANDOFF_V9_2026-05-18.md`
-- `docs/reviews/CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md`
+- `docs/reviews/archive/CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md`
 - `docs/roadmaps/CVF_NEXT_PHASE_ROADMAP_LANE_B_C_H_2026-05-19.md`
 - `docs/reference/CVF_GC018_CONTINUATION_CANDIDATE_TEMPLATE.md`

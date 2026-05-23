@@ -209,7 +209,7 @@ Legacy Spec Scan Block
   - docs/reference/CVF_SCOPED_KNOWLEDGE_PROVIDER_BOUNDARY_DOCTRINE_2026-05-07.md
   - EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/scoped.knowledge.provider.contract.ts
   - docs/roadmaps/archive/CVF_ADD_E1_SCOPED_KNOWLEDGE_RUNTIME_ADOPTION_ROADMAP_2026-05-17.md
-  - docs/reviews/CVF_LEGACY_SCOPE_ABSORPTION_AUDIT_MATRIX_2026-05-18.md
+  - docs/reviews/archive/CVF_LEGACY_SCOPE_ABSORPTION_AUDIT_MATRIX_2026-05-18.md
 - File-by-file absorption table:
   | File | Status in this tranche | Reason if deferred |
   | CVF_GRAPH_KNOWLEDGE_SPEC.md | absorbed / partial / deferred | ... |

@@ -14,7 +14,7 @@ no-blocking findings and each GC-018-required candidate has its GC-018 filed.
 > roadmap; use the meta-roadmap's per-slice gates instead.
 
 Predecessor authority:
-`docs/reviews/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md`
+`docs/reviews/archive/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md`
 (Section: "Candidate post-decision implementation lanes", Problems C/D/H)
 
 ---
@@ -67,7 +67,7 @@ Operator direction 2026-05-19: build Maika AI features as parallel track,
 use Maika as consuming use case to unlock CVF D and H demand gates.
 
 Assessment baseline:
-`docs/reviews/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md`
+`docs/reviews/archive/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md`
 
 Demand-gate conditions now satisfied:
 

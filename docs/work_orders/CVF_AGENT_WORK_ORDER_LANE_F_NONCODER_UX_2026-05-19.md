@@ -18,7 +18,7 @@ from Lane B without requiring the user to browse the template list.
 ## Source
 
 - `docs/roadmaps/CVF_NEXT_PHASE_ROADMAP_LANE_D_E_F_G_2026-05-19.md` — lane F spec
-- `docs/reviews/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md` —
+- `docs/reviews/archive/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md` —
   Problem F: outcome-first UX gap
 - `AGENT_HANDOFF_V9_2026-05-18.md` — active session posture
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json` — current mode
@@ -37,7 +37,7 @@ component unit tests pass.
 
 - Operator instruction: 2026-05-19 — implement Lane D/E/F/G in sequence
 - Roadmap: `docs/roadmaps/CVF_NEXT_PHASE_ROADMAP_LANE_D_E_F_G_2026-05-19.md`
-- Decision pack: `docs/reviews/CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md`
+- Decision pack: `docs/reviews/archive/CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md`
 - Active session: `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - Active handoff: `AGENT_HANDOFF_V9_2026-05-18.md`
 - Prerequisite: Lane E completion packet filed and reviewed

@@ -8,7 +8,7 @@ Status: PHASE 2.B BOUNDED FIXTURE-DRIVEN WIRE-UP DELIVERED
 
 Record completion evidence for the bounded Phase 2.B contract wire-up
 authorized by
-`docs/baselines/CVF_GC018_PHASE_2B_RUNTIME_WIREUP_2026-05-18.md`.
+`docs/baselines/archive/CVF_GC018_PHASE_2B_RUNTIME_WIREUP_2026-05-18.md`.
 
 ## Scope / Target / Owner Boundary
 
@@ -43,7 +43,7 @@ Implementation files:
 
 Authorization and preflight files:
 
-- `docs/baselines/CVF_GC018_PHASE_2B_RUNTIME_WIREUP_2026-05-18.md`
+- `docs/baselines/archive/CVF_GC018_PHASE_2B_RUNTIME_WIREUP_2026-05-18.md`
 - `docs/reviews/CVF_17_05_PHASE_2B_PREFLIGHT_OWNER_MIGRATION_PLAN_2026-05-18.md`
 - `docs/reviews/CVF_17_05_PHASE_2B_LEGACY_ABSORPTION_AUDIT_2026-05-18.md`
 

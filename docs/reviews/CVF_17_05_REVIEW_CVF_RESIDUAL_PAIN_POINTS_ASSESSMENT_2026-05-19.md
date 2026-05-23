@@ -165,7 +165,7 @@ Evidence in working tree:
 - `docs/reviews/archive/CVF_17_05_KERNEL_TERMINOLOGY_ALIAS_TABLE_2026-05-17.md`
 - `docs/reviews/archive/CVF_17_05_UNABSORBED_KERNEL_SOURCE_MATRIX_2026-05-17.md`
 - `docs/reviews/CVF_17_05_PHASE_2B_BOUNDED_WIREUP_COMPLETION_2026-05-18.md`
-- `docs/reviews/CVF_17_05_PHASE_2C_VERTICAL_SLICE_COMPLETION_2026-05-18.md`
+- `docs/reviews/archive/CVF_17_05_PHASE_2C_VERTICAL_SLICE_COMPLETION_2026-05-18.md`
 - Guard chain: continuation chain guard, handoff guard, active session state
   guard, governed pack contract guard, execute route step sequence guard
 

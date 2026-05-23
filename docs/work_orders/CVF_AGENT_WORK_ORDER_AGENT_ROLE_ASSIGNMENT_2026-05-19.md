@@ -33,12 +33,12 @@ Source inputs:
   Surface 2 agent/actor role and Surface 7 delegation/handoff gaps.
 - `docs/reviews/archive/CVF_17_05_UNABSORBED_KERNEL_SOURCE_MATRIX_2026-05-17.md` -
   records ORCHESTRATOR and worker-lane source concepts as not fully absorbed.
-- `docs/reviews/CVF_17_05_LEGACY_ABSORPTION_GAP_LEDGER_2026-05-18.md` -
+- `docs/reviews/archive/CVF_17_05_LEGACY_ABSORPTION_GAP_LEDGER_2026-05-18.md` -
   records GAP-17.05-001, GAP-17.05-002, and GAP-17.05-013.
-- `docs/reviews/CVF_LEGACY_PHASE_D_ORCHESTRATOR_TRANCHE_COMPLETION_2026-05-18.md`
+- `docs/reviews/archive/CVF_LEGACY_PHASE_D_ORCHESTRATOR_TRANCHE_COMPLETION_2026-05-18.md`
   - confirms the ORCHESTRATOR tranche is contract-local, not runtime
   enforcement.
-- `docs/reviews/CVF_LEGACY_PHASE_D_ROLE_PERMISSION_TRANCHE_COMPLETION_2026-05-18.md`
+- `docs/reviews/archive/CVF_LEGACY_PHASE_D_ROLE_PERMISSION_TRANCHE_COMPLETION_2026-05-18.md`
   - confirms role/permission work is contract-local.
 
 Legacy source files to re-open before authoring:
@@ -154,7 +154,7 @@ Success means an orchestrator can read the standard and decide:
   Lane B/C/H implementation.
 - Active session state: `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - Decision pack:
-  `docs/reviews/CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md`
+  `docs/reviews/archive/CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md`
 - Lane roadmap:
   `docs/roadmaps/CVF_NEXT_PHASE_ROADMAP_LANE_B_C_H_2026-05-19.md`
 - Current work-order standard:
@@ -210,7 +210,7 @@ Before authoring files, read:
   current owner map and freeze blockers.
 - `docs/reviews/archive/CVF_17_05_UNABSORBED_KERNEL_SOURCE_MATRIX_2026-05-17.md` -
   source concept status.
-- `docs/reviews/CVF_17_05_LEGACY_ABSORPTION_GAP_LEDGER_2026-05-18.md` -
+- `docs/reviews/archive/CVF_17_05_LEGACY_ABSORPTION_GAP_LEDGER_2026-05-18.md` -
   active gap state.
 - `.private_reference/legacy/CVF ADD/Human System Harness/CVF_ORCHESTRATOR_DELEGATION_CONTRACT.md`
   - orchestrator coordination boundary.

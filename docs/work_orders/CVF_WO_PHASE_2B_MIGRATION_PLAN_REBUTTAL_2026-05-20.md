@@ -21,7 +21,7 @@ plan artifact.
 - Prerequisite roadmap (BINDING required before GC-018):
   `docs/roadmaps/CVF_HN2C_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE_ROADMAP_2026-05-20.md`
 - GAP discovery anchor:
-  `docs/reviews/CVF_17_05_LEGACY_ABSORPTION_GAP_LEDGER_2026-05-18.md`
+  `docs/reviews/archive/CVF_17_05_LEGACY_ABSORPTION_GAP_LEDGER_2026-05-18.md`
   (`GAP-17.05-004`) — broad Phase 2.B-style runtime expansion still needs
   migration order, owner assignment, done criterion, and dependency graph.
 

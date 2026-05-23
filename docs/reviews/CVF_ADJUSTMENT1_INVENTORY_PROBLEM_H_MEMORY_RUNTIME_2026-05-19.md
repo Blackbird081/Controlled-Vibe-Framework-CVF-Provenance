@@ -3,7 +3,7 @@
 Memory class: SUMMARY_RECORD
 
 Status: FILED — 2026-05-19. Pre-GC-018 factual inventory per
-`docs/reviews/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md`
+`docs/reviews/archive/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md`
 Adjustment 1 requirement.
 
 ## Purpose
@@ -13,7 +13,7 @@ remains demand-gated and does not wire contract-only memory paths prematurely.
 
 ## Source
 
-- `docs/reviews/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md` §
+- `docs/reviews/archive/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md` §
   Adjustment 1 + corrected Problem H
 - Live scan of `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/`,
   `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/`, and

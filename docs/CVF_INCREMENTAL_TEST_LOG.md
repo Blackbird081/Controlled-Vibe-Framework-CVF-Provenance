@@ -1638,8 +1638,8 @@ Utility and guard:
   - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts`
   - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.test.ts`
   - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/phase-e-workflow-binding.live.spec.ts`
-  - `docs/reviews/CVF_PHASE_E_E4_WORKFLOW_EXECUTE_WIRE_COMPLETION_2026-05-18.md`
-  - `docs/reviews/CVF_GC019_PHASE_E_E4_STRUCTURAL_CHANGE_DELTA_2026-05-18.md`
+  - `docs/reviews/archive/CVF_PHASE_E_E4_WORKFLOW_EXECUTE_WIRE_COMPLETION_2026-05-18.md`
+  - `docs/reviews/archive/CVF_GC019_PHASE_E_E4_STRUCTURAL_CHANGE_DELTA_2026-05-18.md`
 - Tests executed:
   - `npm run check` in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` -> PASS
   - `npm run test -- --run src/lib/workflows/workflow-resolver.test.ts src/app/api/execute/route.test.ts` in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` -> PASS, 2 files / 34 tests
@@ -1660,7 +1660,7 @@ Utility and guard:
   - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts`
   - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts`
   - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.test.ts`
-  - `docs/reviews/CVF_LEGACY_CONCEPT_AXIS_MATRIX_2026-05-18.md`
+  - `docs/reviews/archive/CVF_LEGACY_CONCEPT_AXIS_MATRIX_2026-05-18.md`
 - Tests executed:
   - `npm run check` in `EXTENSIONS/CVF_GUARD_CONTRACT` -> PASS
   - `npm run test -- --run src/contracts/contracts.phaseE-receipt-binding.test.ts src/contracts/contracts.phaseE-workflow-binding.test.ts` in `EXTENSIONS/CVF_GUARD_CONTRACT` -> PASS, 2 files / 9 tests
@@ -1676,9 +1676,9 @@ Utility and guard:
   - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts`
   - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.test.ts`
   - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/phase-e-workflow-binding.live.spec.ts`
-  - `docs/reviews/CVF_PHASE_E_EXECUTION_CHAIN_AUDIT_2026-05-18.md`
-  - `docs/reviews/CVF_PHASE_E_CLOSURE_2026-05-18.md`
-  - `docs/reviews/CVF_PHASE_E_FULL_CLOSURE_2026-05-18.md`
+  - `docs/reviews/archive/CVF_PHASE_E_EXECUTION_CHAIN_AUDIT_2026-05-18.md`
+  - `docs/reviews/archive/CVF_PHASE_E_CLOSURE_2026-05-18.md`
+  - `docs/reviews/archive/CVF_PHASE_E_FULL_CLOSURE_2026-05-18.md`
 - Tests executed:
   - `npm run check` in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` -> PASS
   - `npm run test -- --run src/app/api/execute/route.test.ts src/lib/workflows/workflow-resolver.test.ts` in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` -> PASS, 2 files / 34 tests

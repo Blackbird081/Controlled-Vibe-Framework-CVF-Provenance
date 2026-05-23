@@ -9,7 +9,7 @@ Date: 2026-05-19
 Supersedes: `docs/roadmaps/CVF_PHASE3_REVIEW_CLOSURE_ROADMAP_2026-05-19.md`
 
 Predecessor authority:
-`docs/reviews/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md`
+`docs/reviews/archive/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md`
 `docs/roadmaps/CVF_RUNTIME_MATURITY_DELTA_ROADMAP_V2_2026-05-19.md` (Phase 2 closed)
 
 V1 Codex rebuttal: BLOCKING — 4 findings addressed in this V2:
@@ -297,7 +297,7 @@ Authority: Orchestrator role (Claude), 2026-05-19.
 
 Predecessor authority chain:
 
-- `docs/reviews/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md` —
+- `docs/reviews/archive/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md` —
   operator-approved strategic anchor; established 3 required adjustments and
   the correct next-phase sequence.
 - `docs/roadmaps/CVF_RUNTIME_MATURITY_DELTA_ROADMAP_V2_2026-05-19.md` —

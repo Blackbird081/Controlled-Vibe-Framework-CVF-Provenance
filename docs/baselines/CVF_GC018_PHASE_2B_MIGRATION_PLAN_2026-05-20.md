@@ -41,7 +41,7 @@ has broad coherent runtime execution.
 - Phase 2.B rebuttal:
   `docs/reviews/CVF_PHASE_2B_MIGRATION_PLAN_CODEX_REBUTTAL_2026-05-20.md`
 - Gap record:
-  `docs/reviews/CVF_17_05_LEGACY_ABSORPTION_GAP_LEDGER_2026-05-18.md`
+  `docs/reviews/archive/CVF_17_05_LEGACY_ABSORPTION_GAP_LEDGER_2026-05-18.md`
 
 ---
 

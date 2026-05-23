@@ -3,7 +3,7 @@
 Memory class: SUMMARY_RECORD
 
 Status: FILED — 2026-05-19. Pre-GC-018 factual inventory per
-`docs/reviews/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md`
+`docs/reviews/archive/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md`
 Adjustment 1 requirement.
 
 ## Purpose
@@ -14,7 +14,7 @@ governed pack work.
 
 ## Source
 
-- `docs/reviews/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md` §
+- `docs/reviews/archive/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md` §
   Adjustment 1
 - Live scan of `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/`
   performed 2026-05-19 by coordinating agent (Claude)

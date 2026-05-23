@@ -8,7 +8,7 @@ Status: READY_FOR_IMPLEMENTATION — rewritten after Codex rebuttal
 BLOCKING_FINDINGS; all 5 findings incorporated.
 
 Predecessor authority:
-`docs/reviews/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md`
+`docs/reviews/archive/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md`
 `docs/reviews/CVF_RUNTIME_MATURITY_CDH_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`
 
 ---

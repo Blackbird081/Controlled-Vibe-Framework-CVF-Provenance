@@ -5,7 +5,7 @@ Status: OPERATOR_APPROVED — 2026-05-19
 
 ## Authorization / Decision
 
-Authority: `docs/reviews/CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md`
+Authority: `docs/reviews/archive/CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md`
 Session lift: `CVF_SESSION/ACTIVE_SESSION_STATE.json` mode `operator_lane_selection_active`
 Implementer: Codex (PROPOSER)
 Reviewer: Claude (REVIEWER)
@@ -52,9 +52,9 @@ Before filing any GC-018, Codex must:
 1. Read `CVF_SESSION_MEMORY.md` and confirm mode is `operator_lane_selection_active`.
 2. Read `AGENT_HANDOFF_V9_2026-05-18.md` — especially "Active Boundary —
    Gate 0 Decision Pack" and "Claim Boundary" sections.
-3. Read `docs/reviews/CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md`
+3. Read `docs/reviews/archive/CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md`
    — especially §4 Canonical Ownership Map and §6 Next Recommended Tranche.
-4. Read `docs/reviews/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md`
+4. Read `docs/reviews/archive/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md`
    — corrected problem map; know what already exists before building.
 
 Anti-duplication rule: Before writing any new file, grep for existing
@@ -532,8 +532,8 @@ Each lane must produce:
 
 ## Related Artifacts
 
-- `docs/reviews/CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md` — Gate 0 authority
-- `docs/reviews/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md` — corrected problem map
+- `docs/reviews/archive/CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md` — Gate 0 authority
+- `docs/reviews/archive/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md` — corrected problem map
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json` — mode `operator_lane_selection_active`
 - `AGENT_HANDOFF_V9_2026-05-18.md` — active session state
 - `docs/reference/CVF_GC018_CONTINUATION_CANDIDATE_TEMPLATE.md` — GC-018 template

@@ -16,7 +16,7 @@ implement live SSE streaming in the Next.js route — that is deferred.
 ## Source
 
 - `docs/roadmaps/CVF_NEXT_PHASE_ROADMAP_LANE_D_E_F_G_2026-05-19.md` — lane D spec
-- `docs/reviews/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md` —
+- `docs/reviews/archive/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md` —
   corrected problem map, Problem D
 - `AGENT_HANDOFF_V9_2026-05-18.md` — active session posture
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json` — current mode
@@ -34,7 +34,7 @@ a `stream()` stub. No live SSE in this lane.
 
 - Operator instruction: 2026-05-19 — implement Lane D/E/F/G in sequence
 - Roadmap: `docs/roadmaps/CVF_NEXT_PHASE_ROADMAP_LANE_D_E_F_G_2026-05-19.md`
-- Decision pack: `docs/reviews/CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md`
+- Decision pack: `docs/reviews/archive/CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md`
 - Active session: `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - Active handoff: `AGENT_HANDOFF_V9_2026-05-18.md`
 

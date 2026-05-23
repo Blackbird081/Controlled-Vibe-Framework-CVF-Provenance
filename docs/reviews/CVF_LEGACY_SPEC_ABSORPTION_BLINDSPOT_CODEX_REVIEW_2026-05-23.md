@@ -42,7 +42,7 @@ Sources checked:
 - `docs/reviews/archive/CVF_CONTROLLED_MEMORY_RUNTIME_ADOPTION_CLOSURE_2026-05-16.md`
 - `docs/reviews/archive/CVF_UNABSORBED_KNOWLEDGE_INVENTORY_2026-05-16.md`
 - `docs/roadmaps/archive/CVF_ADD_E1_SCOPED_KNOWLEDGE_RUNTIME_ADOPTION_ROADMAP_2026-05-17.md`
-- `docs/reviews/CVF_LEGACY_SCOPE_ABSORPTION_AUDIT_MATRIX_2026-05-18.md`
+- `docs/reviews/archive/CVF_LEGACY_SCOPE_ABSORPTION_AUDIT_MATRIX_2026-05-18.md`
 
 ---
 
@@ -123,7 +123,7 @@ Counter-evidence found by Codex:
   records `code-review-graph` under ADD-E1 Scoped Knowledge / Code Graph.
 - `docs/roadmaps/archive/CVF_ADD_E1_SCOPED_KNOWLEDGE_RUNTIME_ADOPTION_ROADMAP_2026-05-17.md`
   closes the read-only scoped-knowledge provider boundary.
-- `docs/reviews/CVF_LEGACY_SCOPE_ABSORPTION_AUDIT_MATRIX_2026-05-18.md`
+- `docs/reviews/archive/CVF_LEGACY_SCOPE_ABSORPTION_AUDIT_MATRIX_2026-05-18.md`
   records `agentmemory` as `partially_absorbed` and `code-review-graph` as
   `not_absorbed` for graph-context resolver implementation.
 

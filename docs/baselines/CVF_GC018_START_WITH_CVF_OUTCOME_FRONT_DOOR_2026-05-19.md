@@ -12,11 +12,11 @@ claims or changing the internal provenance repository.
 
 ## Source / Predecessor Evidence
 
-- `docs/reviews/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md`
+- `docs/reviews/archive/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md`
   line 379–383: recommends `docs/START_WITH_CVF.md` or updated README
   section leading with outcome capability before governance architecture;
   deferred from assessment baseline; requires separate GC-018
-- `docs/reviews/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md`
+- `docs/reviews/archive/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md`
   line 571: risk row — "Public-sync surface continues to understate CVF
   capability — Deferred: START_WITH_CVF.md or README outcome section —
   requires separate GC-018"

@@ -21,7 +21,7 @@ can be filed.
 ## Authorization / Decision Chain
 
 - GAP discovery record:
-  `docs/reviews/CVF_17_05_LEGACY_ABSORPTION_GAP_LEDGER_2026-05-18.md`
+  `docs/reviews/archive/CVF_17_05_LEGACY_ABSORPTION_GAP_LEDGER_2026-05-18.md`
   (`GAP-17.05-004`) records that broad Phase 2.B-style runtime expansion still
   needs migration order, owner assignment, done criterion, and dependency
   graph before another GC-018.
@@ -119,7 +119,7 @@ GC-018 and work order.
 - HN2.c freeze-release rule roadmap (parallel filing)
 - `.private_reference/legacy/CVF 17.05/REVIEW FOLDER/CVF_17_05_SYSTEM_RECONVERGENCE_STOP_DECISION_2026-05-17.md`
 - GAP discovery evidence:
-  `docs/reviews/CVF_17_05_LEGACY_ABSORPTION_GAP_LEDGER_2026-05-18.md`
+  `docs/reviews/archive/CVF_17_05_LEGACY_ABSORPTION_GAP_LEDGER_2026-05-18.md`
 
 ---
 

@@ -5,8 +5,8 @@ Status: OPERATOR_APPROVED — 2026-05-19
 
 ## Authorization / Decision
 
-Authority: `docs/reviews/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md`
-Decision pack: `docs/reviews/CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md`
+Authority: `docs/reviews/archive/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md`
+Decision pack: `docs/reviews/archive/CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md`
 Session: `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 Implementer: Codex (per lane, sequentially)
 Reviewer: Claude
@@ -62,9 +62,9 @@ Before filing the first GC-018 for Lane D, Codex must read:
 
 1. `CVF_SESSION_MEMORY.md` — active session mode
 2. `AGENT_HANDOFF_V9_2026-05-18.md` — active posture and stop-lift boundary
-3. `docs/reviews/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md` —
+3. `docs/reviews/archive/CVF_REVIEW_CVF_ASSESSMENT_AND_DIRECTION_2026-05-18.md` —
    corrected problem map; understand what already exists
-4. `docs/reviews/CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md`
+4. `docs/reviews/archive/CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md`
    — §4 Canonical Ownership Map
 5. `docs/roadmaps/CVF_NEXT_PHASE_ROADMAP_LANE_B_C_H_2026-05-19.md` —
    the B/C/H pattern; this roadmap follows the same structure

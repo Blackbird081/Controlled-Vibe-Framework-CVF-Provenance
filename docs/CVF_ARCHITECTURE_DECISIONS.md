@@ -1150,3 +1150,7 @@ Extend GC-045 with two bounded hardening rules:
 - `governance/toolkit/05_OPERATION/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_GUARD.md`
 - `governance/compat/check_markdown_structural_completeness.py`
 - `docs/reviews/CVF_WO_MULTI_ROLE_QUALITY_HARDENING_COMPLETION_2026-05-21.md`
+
+- 2026-05-24: Active archive hygiene run — 61 stale docs moved to archive; guard authoring fix on `CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD.md` (pre-existing Enforced-by path format issue). No architecture change.
+
+- 2026-05-24: Active archive hygiene run — 61 stale docs moved to archive; guard authoring fix on CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD.md (pre-existing  path format). No architecture change.
