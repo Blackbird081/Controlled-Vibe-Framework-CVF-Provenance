@@ -144,6 +144,10 @@ Current HEAD after D4 Qwen3 enable_thinking adapter dispatched:
 
 `97a3f53c` (docs: file D4 Qwen3 enable_thinking adapter GC-018 and work order)
 
+Current HEAD after D4 Qwen3 enable_thinking adapter blocker returned:
+
+`2519baa5` (docs: return D4 Qwen3 adapter blocker)
+
 ---
 
 ## Purpose
@@ -1012,15 +1016,39 @@ Boundary:
   no broad Qwen3 stability, no hosted/production readiness, and no freeze
   release.
 
+### 2026-05-23 - D4 Blocked; D5 Authorized
+
+D4 implemented the local Qwen3 adapter fix (`isQwen3Model` plus
+`enable_thinking: false` for Alibaba non-streaming Qwen3 calls) and focused
+provider tests passed `42/42`, but hosted proof stopped on the first
+`qwen3-32b` call: HTTP `400`, `success=false`, response model `blocked`, error
+`Safety filter triggered`, `rawSecretPrinted=false`.
+
+D4 blocker:
+
+- `docs/reviews/CVF_D4_QWEN3_ENABLE_THINKING_ADAPTER_BLOCKER_REVIEW_2026-05-23.md`
+
+D5 authorization:
+
+- `docs/baselines/CVF_GC018_D5_QWEN3_HOSTED_SAFE_PAYLOAD_RERUN_2026-05-23.md`
+- `docs/work_orders/CVF_WO_D5_QWEN3_HOSTED_SAFE_PAYLOAD_RERUN_2026-05-23.md`
+
+D5 scope: safety-filter-safe payload preflight, focused D4 adapter tests,
+`cvf-web` check, private provenance deployment confirmation if needed, then
+one `qwen3-32b` hosted call and one `qwen3-235b-a22b-thinking` hosted call only
+if the first call passes. Stop and file blocker on the first non-pass. No
+safety/route/auth/receipt/provider registry/capability/vision/reasoning/
+public-sync change or broad Qwen3/hosted readiness claim is authorized.
+
 ---
 
 ## Next Allowed Move
 
-Default next move: stop. G1, D2, E2, H2, F2, A2, P2, and HN1 are closed for
+Default next move: execute D5 only. G1, D2, E2, H2, F2, A2, P2, and HN1 are closed for
 the current private baseline. P0, P1, and the P1 dependency-audit residual are
 also closed. P3 direct hosted proof is closed PASS for the bounded one-call
-hosted protected workflow proof. D3 Qwen3 provider expansion is blocked at
-provider parameter compatibility after the first hosted proof.
+hosted protected workflow proof. D3 Qwen3 provider expansion was superseded by
+D4, and D4 returned blocked at the hosted safety filter.
 
 The fresh P2/P3/HN1 GC-018 packet is now closed for P2 and HN1 at:
 
@@ -1034,13 +1062,14 @@ Selected P3 roadmap:
 
 - `docs/roadmaps/CVF_P3_HOSTED_TARGET_PREFLIGHT_DECISION_ROADMAP_2026-05-23.md`
 
-D3 blocker:
-
-- `docs/reviews/CVF_D3_QWEN3_PROVIDER_EXPANSION_BLOCKER_REVIEW_2026-05-23.md`
-
 D4 blocker:
 
 - `docs/reviews/CVF_D4_QWEN3_ENABLE_THINKING_ADAPTER_BLOCKER_REVIEW_2026-05-23.md`
+
+D5 authorization:
+
+- `docs/baselines/CVF_GC018_D5_QWEN3_HOSTED_SAFE_PAYLOAD_RERUN_2026-05-23.md`
+- `docs/work_orders/CVF_WO_D5_QWEN3_HOSTED_SAFE_PAYLOAD_RERUN_2026-05-23.md`
 
 D4 implemented the bounded local adapter fix:
 
@@ -1077,8 +1106,12 @@ Disposition:
 - Per D4 stop rule, `qwen3-235b-a22b-thinking` was not attempted.
 - No retry loop was run.
 
-Default next move: stop. Do not rerun D3 or D4 hosted proof, and do not attempt
-the D4 thinking model under the closed D3/D4 work orders.
+Default next move: run D5 exactly as authorized. Do not rerun D3 or D4 hosted
+proof under the closed D3/D4 work orders. Under D5, preflight the safe payload,
+run focused local checks, confirm private provenance deployment posture if
+needed, then call `qwen3-32b` once. Only if it passes the full hosted matrix may
+`qwen3-235b-a22b-thinking` be attempted once. Stop and file blocker on the
+first non-pass.
 
 Do not widen into repeated hosted proof, public npm release, provider tuning,
 persistence/database beyond T5 ephemeral scope, Maika proof, public-sync, or

@@ -73,8 +73,8 @@ current.
 
 ## Current Session Mode
 
-- Current mode: `d4_qwen3_enable_thinking_adapter_blocked_hosted_safety_filter`
-- Previous mode: `d4_qwen3_enable_thinking_adapter_dispatched`
+- Current mode: `d5_qwen3_hosted_safe_payload_rerun_dispatched`
+- Previous mode: `d4_qwen3_enable_thinking_adapter_blocked_hosted_safety_filter`
 - Freeze posture: `governance_kernel_freeze_recommended`
 - Active handoff pointer: `AGENT_HANDOFF_V11_2026-05-21.md`
 - Historical handoff archive: `CVF_SESSION/handoffs/archive/`
@@ -91,7 +91,9 @@ The active post-B/C steering source remains `docs/reviews/CVF_REVIEW_CVF_POST_BC
 
 D4 Qwen3 enable-thinking adapter is returned blocked at `docs/reviews/CVF_D4_QWEN3_ENABLE_THINKING_ADAPTER_BLOCKER_REVIEW_2026-05-23.md`. Local adapter implementation added `isQwen3Model` and `enable_thinking=false` for non-streaming Alibaba Qwen3 calls; focused provider tests PASS `42/42`. Full `cvf-web` `npm test:run` did not get a clean all-pass due unrelated live/test-order variance. Hosted proof stopped after first call: `qwen3-32b` returned HTTP `400`, `success=false`, provider `alibaba`, response model `blocked`, error `Safety filter triggered`, `rawSecretPrinted=false`; `qwen3-235b-a22b-thinking` was not attempted per stop rule. Do not retry D4 hosted proof or claim P3/D4 pass without fresh GC-018/work order.
 
-Current mode marker: `d4_qwen3_enable_thinking_adapter_blocked_hosted_safety_filter`.
+D5 Qwen3 hosted safe-payload rerun is now authorized at `docs/baselines/CVF_GC018_D5_QWEN3_HOSTED_SAFE_PAYLOAD_RERUN_2026-05-23.md` with work order `docs/work_orders/CVF_WO_D5_QWEN3_HOSTED_SAFE_PAYLOAD_RERUN_2026-05-23.md`. Scope is limited to safety-filter-safe payload preflight, focused D4 adapter verification, private provenance deployment confirmation if needed, and the bounded hosted proof matrix. Run at most one hosted call for `qwen3-32b` first; only if it passes the full matrix may `qwen3-235b-a22b-thinking` be attempted once. Stop and file blocker on the first non-pass.
+
+Current mode marker: `d5_qwen3_hosted_safe_payload_rerun_dispatched`.
 
 ## Required First Reads
 
@@ -167,21 +169,22 @@ Terminal five-option hardening sweep is closed:
 - secret/auth boundary is currently healthy;
 - public claim audit required no public-sync edit.
 
-Next: stop by default. D3 Qwen3 provider expansion returned blocked at
-`docs/reviews/CVF_D3_QWEN3_PROVIDER_EXPANSION_BLOCKER_REVIEW_2026-05-23.md`.
-The additive registry/capability/test work is implemented and
-`EXTENSIONS/CVF_MODEL_GATEWAY` `npm test` passed `20/20` files and `81/81`
-tests. The first hosted proof for `qwen3-32b` reached live governance `ALLOW`
-with receipt `rcpt-env-mpi67ivg-pdduob` and trace `env-mpi67ivg-pdduob`, but
-returned `success=false` with provider error `parameter.enable_thinking must be
-set to false for non-streaming calls`. Per work order, `qwen3-235b-a22b-thinking`
-was not attempted and no retry loop was run.
+Next: execute D5 only. D4 Qwen3 enable-thinking adapter returned blocked at
+`docs/reviews/CVF_D4_QWEN3_ENABLE_THINKING_ADAPTER_BLOCKER_REVIEW_2026-05-23.md`
+because the first hosted `qwen3-32b` proof returned HTTP `400`,
+`success=false`, and error `Safety filter triggered`. D5 is now authorized at
+`docs/baselines/CVF_GC018_D5_QWEN3_HOSTED_SAFE_PAYLOAD_RERUN_2026-05-23.md`
+with work order
+`docs/work_orders/CVF_WO_D5_QWEN3_HOSTED_SAFE_PAYLOAD_RERUN_2026-05-23.md`.
 
-Do not continue D3 hosted proof, add `enable_thinking` behavior, change
-route/provider runtime, run provider soak, live benchmark, hosted readiness
-claims, public deployment readiness, persistence, Maika, public-sync,
-governance semantics, or freeze claims without fresh operator-selected
-authorization.
+Do not continue D4 under its closed work order. Under D5, run local
+safety-filter preflight, focused provider adapter tests, `cvf-web` check, and
+private provenance deployment confirmation if required. Then run at most one
+hosted call for `qwen3-32b`; only if it passes the matrix may one
+`qwen3-235b-a22b-thinking` hosted call be attempted. Stop and file blocker on
+the first non-pass. Do not change safety, route, auth, receipt schema,
+provider registry, capability metadata, vision/reasoning contracts, or
+public-sync.
 
 ## Enforcement And Verification
 
