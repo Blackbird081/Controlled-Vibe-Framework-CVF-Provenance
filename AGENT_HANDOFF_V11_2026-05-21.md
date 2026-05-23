@@ -112,6 +112,10 @@ Current HEAD after 2026-05-23 active-window archive hygiene:
 
 `def3b075` (docs: archive stale active-window records)
 
+Current HEAD after P2/P3/HN1 next-value GC-018 screening:
+
+`87ff23b5` (docs: open P2 P3 HN1 GC018 screening)
+
 ---
 
 ## Purpose
@@ -714,19 +718,57 @@ Boundary:
 - Mechanical archive hygiene only.
 - No product/runtime/provider/governance semantics changed.
 
+### 2026-05-23 - P2/P3/HN1 Next-Value GC-018 Screening Opened
+
+Operator requested a fresh GC-018 for the three remaining review-required
+candidates: P2 provider soak, P3 hosted protected workflow proof, and HN1
+template-skill linkage hygiene.
+
+Baseline packet:
+
+- `docs/baselines/CVF_GC018_P2_P3_HN1_NEXT_VALUE_SCREENING_2026-05-23.md`
+
+Commit:
+
+- `87ff23b5` (docs: open P2 P3 HN1 GC018 screening)
+
+Disposition:
+
+- P2 provider soak: `AUTHORIZE_AS_NEXT_SUBSTANTIVE_CANDIDATE`, but only via
+  bounded live-provider work order over the existing governed `/api/execute`
+  route.
+- HN1 template-skill linkage hygiene:
+  `AUTHORIZE_AS_LOW_RISK_HYGIENE_CANDIDATE`, limited to classify/map/exempt/
+  retire the current linkage gap class.
+- P3 hosted protected workflow proof: `CONDITIONAL_HOLD` until the operator
+  names a concrete hosted target, protected workflow, and auth/token posture.
+
+Boundary:
+
+- No implementation was performed.
+- No public-sync update was made.
+- No broad provider stability, hosted readiness, public deployment readiness,
+  runtime semantics, governance semantics, Maika, persistence, or freeze claim
+  is opened by this screening packet.
+
 ---
 
 ## Next Allowed Move
 
-Default next move: stop. G1, D2, E2, H2, F2, and A2 are closed for the current
-private baseline. P0, P1, and the P1 dependency-audit residual are also closed.
+Default next move: stop unless the operator selects one screened candidate.
+G1, D2, E2, H2, F2, and A2 are closed for the current private baseline. P0,
+P1, and the P1 dependency-audit residual are also closed.
 
-If continuing, open a fresh GC-018/work order before implementation. Remaining
-review-required candidates are:
+The fresh GC-018 screening packet is open at:
 
-- `P2_LONGER_HORIZON_PROVIDER_STABILITY_SOAK`
-- `P3_HOSTED_PROTECTED_WORKFLOW_PROOF`
-- `HN1_TEMPLATE_SKILL_LINKAGE_HYGIENE`
+- `docs/baselines/CVF_GC018_P2_P3_HN1_NEXT_VALUE_SCREENING_2026-05-23.md`
+
+If continuing, select exactly one:
+
+- `HN1_TEMPLATE_SKILL_LINKAGE_HYGIENE` for fast low-risk hygiene;
+- `P2_LONGER_HORIZON_PROVIDER_STABILITY_SOAK` for bounded live evidence;
+- `P3_HOSTED_PROTECTED_WORKFLOW_PROOF` only after hosted target/workflow/auth
+  details are concrete.
 
 Do not widen into public npm release, provider tuning,
 persistence/database beyond T5 ephemeral scope, Maika proof, public-sync,
