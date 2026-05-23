@@ -172,6 +172,19 @@ This closure does not implement or prove hosted protected workflow behavior.
 
 ---
 
+## Public Catalog Disposition
+
+Public catalog update: `N/A`.
+
+Reason: this tranche adds no new product capability, public command, runtime
+surface, provider method, template, workflow contract, or public developer
+onboarding path. It only records bounded live-provider evidence and re-validates
+existing HN1 linkage hygiene.
+
+No public-sync update was made.
+
+---
+
 ## Verification
 
 | Check | Result |

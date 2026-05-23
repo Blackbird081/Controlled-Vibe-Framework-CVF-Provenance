@@ -116,6 +116,10 @@ Current HEAD after P2/P3/HN1 next-value GC-018 screening:
 
 `87ff23b5` (docs: open P2 P3 HN1 GC018 screening)
 
+Current HEAD after P2/HN1 tranche closure:
+
+`38d64a21` (docs: close P2 HN1 tranche)
+
 ---
 
 ## Purpose
@@ -751,22 +755,72 @@ Boundary:
   runtime semantics, governance semantics, Maika, persistence, or freeze claim
   is opened by this screening packet.
 
+### 2026-05-23 - P2/HN1 Tranche Closed; P3 Held
+
+Operator requested both executable candidates to close the tranche.
+
+Closure:
+
+- `docs/reviews/CVF_P2_HN1_TRANCHE_CLOSURE_REVIEW_2026-05-23.md`
+
+P2 evidence:
+
+- `docs/reviews/CVF_P2_PROVIDER_SOAK_EVIDENCE_2026-05-23.md`
+- `docs/reviews/CVF_P2_PROVIDER_SOAK_EVIDENCE_2026-05-23.json`
+
+Commit:
+
+- `38d64a21` (docs: close P2 HN1 tranche)
+
+Disposition:
+
+- P2 provider soak: `CLOSED_BOUNDED_SOAK_PASS`.
+- HN1 linkage hygiene: `CLOSED_REVALIDATED`.
+- P3 hosted protected workflow proof: `CONDITIONAL_HOLD`.
+
+Evidence:
+
+- P2 live governed `/api/execute` soak PASS `12/12`.
+- Alibaba `qwen-turbo`: `6/6`.
+- DeepSeek `deepseek-chat`: `6/6`.
+- Every journey had HTTP 200, `success=true`, live evidence mode, route id
+  `/api/execute`, receipt id, trace id, routing `ALLOW`, provider match, and
+  raw secret printed `false`.
+- HN1 targeted verification PASS `22/22`:
+  `npx vitest run src/lib/templates/governance-enforcement.test.ts src/lib/skill-template-map.test.ts --reporter=verbose`.
+- Release gate bundle PASS `7/7` including live governance E2E:
+  `python scripts/run_cvf_release_gate_bundle.py --json`.
+
+Public catalog disposition:
+
+- N/A. No new capability, public command, runtime surface, provider method,
+  template, workflow contract, or public developer onboarding path was added.
+
+Boundary:
+
+- No source/runtime/provider behavior changed.
+- No public-sync update was made.
+- No broad provider stability, hosted readiness, public deployment readiness,
+  Maika, persistence, or freeze release claim is closed.
+
 ---
 
 ## Next Allowed Move
 
-Default next move: stop unless the operator selects one screened candidate.
-G1, D2, E2, H2, F2, and A2 are closed for the current private baseline. P0,
-P1, and the P1 dependency-audit residual are also closed.
+Default next move: stop. G1, D2, E2, H2, F2, A2, P2, and HN1 are closed for
+the current private baseline. P0, P1, and the P1 dependency-audit residual are
+also closed.
 
-The fresh GC-018 screening packet is open at:
+The fresh P2/P3/HN1 GC-018 packet is now closed for P2 and HN1 at:
 
 - `docs/baselines/CVF_GC018_P2_P3_HN1_NEXT_VALUE_SCREENING_2026-05-23.md`
 
-If continuing, select exactly one:
+Closure review:
 
-- `HN1_TEMPLATE_SKILL_LINKAGE_HYGIENE` for fast low-risk hygiene;
-- `P2_LONGER_HORIZON_PROVIDER_STABILITY_SOAK` for bounded live evidence;
+- `docs/reviews/CVF_P2_HN1_TRANCHE_CLOSURE_REVIEW_2026-05-23.md`
+
+Only remaining candidate from that packet:
+
 - `P3_HOSTED_PROTECTED_WORKFLOW_PROOF` only after hosted target/workflow/auth
   details are concrete.
 
