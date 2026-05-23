@@ -24,8 +24,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "d3_qwen3_provider_expansion_blocked_provider_parameter",
-  "previousMode": "d3_qwen3_provider_expansion_dispatched",
+  "currentMode": "d4_qwen3_enable_thinking_adapter_dispatched",
+  "previousMode": "d3_qwen3_provider_expansion_blocked_provider_parameter",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -103,7 +103,7 @@
     "blocked_work_classes",
     "next_allowed_move"
   ],
-  "nextAllowedMove": "Stop by default. D3 Qwen3 provider expansion returned blocked at docs/reviews/CVF_D3_QWEN3_PROVIDER_EXPANSION_BLOCKER_REVIEW_2026-05-23.md. Additive registry/capability/test work is implemented and CVF_MODEL_GATEWAY npm test PASS 20/20 files, 81/81 tests. First hosted proof for qwen3-32b reached live governance ALLOW with receipt rcpt-env-mpi67ivg-pdduob and trace env-mpi67ivg-pdduob, but route returned success=false with provider error 'parameter.enable_thinking must be set to false for non-streaming calls'. Per work order, qwen3-235b-a22b-thinking hosted proof was not attempted and no retry loop was run. Do not continue D3 hosted proof, add enable_thinking behavior, change route/provider runtime, public-sync, hosted readiness claims, Qwen3 stability claims, persistence, Maika, freeze release, or governance semantics without fresh authorization.",
+  "nextAllowedMove": "D4 Qwen3 enable_thinking adapter fix dispatched. GC-018 at docs/baselines/CVF_GC018_D4_QWEN3_ENABLE_THINKING_ADAPTER_2026-05-23.md and work order at docs/work_orders/CVF_WO_D4_QWEN3_ENABLE_THINKING_ADAPTER_2026-05-23.md are READY_FOR_IMPLEMENTATION. Codex must: (1) add isQwen3Model helper in EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts; (2) inject enable_thinking=false for non-streaming Qwen3 calls in executeAlibaba; (3) add unit test assertions for the injection; (4) run npm test:run in cvf-web - all PASS; (5) run one hosted proof call per model (qwen3-32b and qwen3-235b-a22b-thinking) against https://vibcode.netlify.app/api/execute using P3 pass/fail matrix; (6) file completion review with sanitized facts. Do not touch vision-contract.ts, reasoning-contract.ts, route.ts, PROVIDER_CAPABILITY_REGISTRY, capability.json, receipt schema, auth logic, or public-sync. Do not claim broad Qwen3 stability or production readiness. Free-tier expiry: 2026-06-02.",
   "phase2BRuntimeCoherenceClosure": "CLOSED_RUNTIME_COHERENCE_INTERNAL_PROOF at docs/reviews/CVF_PHASE_2B_RUNTIME_COHERENCE_COMPLETION_2026-05-21.md; Guard Contract graph schema phase2b-runtime-coherence-graph-1; adapter inventory checksum fnv1a32:5d3d2dac; harness PASS; liveProofProven=false",
   "phase2BLiveGovernanceProofClosure": "CLOSED_LIVE_GOVERNANCE_PROOF at docs/reviews/CVF_PHASE_2B_LIVE_GOVERNANCE_PROOF_COMPLETION_2026-05-21.md; mandatory release gate PASS; focused live receipt probe PASS; provider alibaba; model qwen-turbo; decision ALLOW; receipt rcpt-env-mpepcnmc-ier7bt; trace env-mpepcnmc-ier7bt; runtime coherence checksum fnv1a32:5d3d2dac",
   "postPhase2BPublicizationRoadmap": "CLOSED_PUBLICIZATION_READINESS_BOUNDED at docs/reviews/CVF_POST_PHASE_2B_PUBLICIZATION_READINESS_COMPLETION_2026-05-21.md; five PBR lanes closed: PBR-01 narrow provider repeatability PASS 4/4 across Alibaba qwen-turbo and DeepSeek deepseek-chat, PBR-02 readiness assessment filed, PBR-03 public-sync/public catalog pushed at public commit a0ac66de, PBR-04 persistence/database deferred as no current blocker, PBR-05 Maika proof demand-gated and deferred; D-06/D-07 remain deferred/rejected.",

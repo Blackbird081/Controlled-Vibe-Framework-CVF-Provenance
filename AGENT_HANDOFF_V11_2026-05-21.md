@@ -136,6 +136,14 @@ Current HEAD after P3 hosted protected workflow proof PASS:
 
 `8ff14c27` (docs: close P3 hosted protected proof pass)
 
+Current HEAD after D3 Qwen3 provider expansion blocker returned:
+
+`e736535e` (docs: return D3 Qwen3 proof blocker)
+
+Current HEAD after D4 Qwen3 enable_thinking adapter dispatched:
+
+`[D4_DISPATCH_SHA]` (docs: file D4 Qwen3 enable_thinking adapter GC-018 and work order)
+
 ---
 
 ## Purpose
