@@ -108,6 +108,10 @@ Current HEAD after public dependency audit triage closure:
 
 `b4f751df` (docs: close public dependency audit triage)
 
+Current HEAD after 2026-05-23 active-window archive hygiene:
+
+`def3b075` (docs: archive stale active-window records)
+
 ---
 
 ## Purpose
@@ -687,6 +691,28 @@ Boundary:
 - It does not claim live provider behavior, hosted readiness, full extension
   stack security certification, or broad dependency freshness outside public
   `cvf-web`.
+
+### 2026-05-23 - Active-Window Archive Hygiene
+
+The 2026-05-23 cutoff made 42 dated 2026-05-17 active docs stale under the
+active/archive hygiene guard. `python scripts/cvf_active_archive.py --execute`
+was run, moving the actionable stale files to their matching archive folders,
+rewriting exact-path references in active files, and refreshing
+`governance/compat/CVF_ACTIVE_ARCHIVE_BASELINE.json`.
+
+Commit:
+
+- `def3b075` (docs: archive stale active-window records)
+
+Verification:
+
+- `python scripts/cvf_active_archive.py --status`: `would_archive_now: 0`
+- pre-commit governance hook chain: PASS 11/11
+
+Boundary:
+
+- Mechanical archive hygiene only.
+- No product/runtime/provider/governance semantics changed.
 
 ---
 
