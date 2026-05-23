@@ -1184,3 +1184,7 @@ and freeze release remain unproven.
 Current HEAD after D9 Qwen3 thinking enable-true adapter dispatch:
 
 `70eced06` (fix(qwen3): split thinking enable flag)
+
+Current HEAD after D10 Qwen3 R1-compatible hosted proof closure:
+
+`7b194bfb` (docs(qwen3): close D10 hosted proof)
