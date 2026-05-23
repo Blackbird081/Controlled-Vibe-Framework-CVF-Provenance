@@ -73,7 +73,7 @@ current.
 
 ## Current Session Mode
 
-- Current mode: `p3_hosted_target_preflight_roadmap_selected`
+- Current mode: `p3_hosted_proof_returned_clarify_blocker`
 - Previous mode: `review_cvf_post_bc_f2_noncoder_outcome_ux_hardening_closed`
 - Freeze posture: `governance_kernel_freeze_recommended`
 - Active handoff pointer: `AGENT_HANDOFF_V11_2026-05-21.md`
@@ -87,9 +87,9 @@ T1, T2, T3, T4, and T5 of the Review-CVF pain-point delivery gap roadmap V2 are 
 
 G1 execution identity runtime gate is closed at `docs/reviews/CVF_G1_EXECUTION_IDENTITY_RUNTIME_GATE_COMPLETION_2026-05-22.md` in commit `64182879`. It delivered `cvf.executionIdentity.v1` on `/api/execute`, binding actor id, session role, resolved `CVFRole`, actor-role gate, output permission, context scope, execution boundary, and receipt ownership. Targeted tests PASS `44/44`; `cvf-web` TypeScript check PASS; local governance hook chain PASS `43/43`. `GovernanceEvidenceReceipt` is unchanged and denied governed-pack actors still stop before provider dispatch.
 
-The active post-B/C steering source remains `docs/reviews/CVF_REVIEW_CVF_POST_BC_REMAINING_PAIN_POINTS_ASSESSMENT_2026-05-22.md` plus `docs/roadmaps/CVF_REVIEW_CVF_POST_BC_REMAINING_PAIN_POINT_ROADMAP_2026-05-22.md`. Review CVF.md remains the deliverable-fit oracle. D2 provider capability matrix is closed at `docs/reviews/CVF_D2_PROVIDER_CAPABILITY_MATRIX_COMPLETION_2026-05-22.md` in commit `e918c690`. E2 operational benchmark suite is closed at `docs/reviews/CVF_E2_OPERATIONAL_BENCHMARK_SUITE_COMPLETION_2026-05-22.md` in commit `5fe76a75`: Governance CLI now has `cvf.operationalBenchmark.v1`, `cvf benchmark operational`, audit JSONL and release-gate JSON ingestion, evidence-mode breakdown, retry/human-correction counts, and an explicit hallucination-recovery deferred boundary. H2 runtime memory hierarchy phase 2 is closed at `docs/reviews/CVF_H2_RUNTIME_MEMORY_HIERARCHY_PHASE2_COMPLETION_2026-05-22.md` in commit `d0f057c7`: Learning Plane now has `cvf.runtimeMemoryHierarchy.v1`, a seven-tier actor-aware runtime map, deterministic write/retrieve/inject/reinject decisions, and ephemeral same-execution working-memory proof while keeping `canReinject=false` and no durable/cross-session memory. F2 noncoder outcome UX hardening is closed at `docs/reviews/CVF_F2_NONCODER_OUTCOME_UX_HARDENING_COMPLETION_2026-05-22.md`: Home now surfaces the six existing outcomes before template browsing, keeps export/receipt cues visible but secondary, and has browser mock proof for ordering plus one outcome-to-form journey. A2 coherence equivalence audit is closed at `docs/reviews/CVF_A2_COHERENCE_EQUIVALENCE_AUDIT_COMPLETION_2026-05-22.md`: existing owner-map, guard-chain, control-matrix, and bootstrap surfaces are equivalent for the five Problem A freeze points; no new kernel-law docs are recommended; the freeze remains in force. Fresh P2/P3/HN1 next-value GC-018 is now closed for executable candidates at `docs/reviews/CVF_P2_HN1_TRANCHE_CLOSURE_REVIEW_2026-05-23.md`: P2 provider soak PASS `12/12` live governed `/api/execute` across Alibaba `qwen-turbo` 6/6 and DeepSeek `deepseek-chat` 6/6; HN1 linkage hygiene revalidated PASS `22/22`; release gate PASS `7/7`. P3 hosted target preflight and decision is now selected at `docs/roadmaps/CVF_P3_HOSTED_TARGET_PREFLIGHT_DECISION_ROADMAP_2026-05-23.md`, with selection audit at `docs/reviews/CVF_P3_NEXT_ROADMAP_SELECTION_AUDIT_2026-05-23.md`; direct hosted proof remains blocked until the preflight names target/workflow/auth/secret/pass-fail details or records `NO_HOSTED_TARGET_AVAILABLE`.
+The active post-B/C steering source remains `docs/reviews/CVF_REVIEW_CVF_POST_BC_REMAINING_PAIN_POINTS_ASSESSMENT_2026-05-22.md` plus `docs/roadmaps/CVF_REVIEW_CVF_POST_BC_REMAINING_PAIN_POINT_ROADMAP_2026-05-22.md`. Review CVF.md remains the deliverable-fit oracle. D2 provider capability matrix is closed at `docs/reviews/CVF_D2_PROVIDER_CAPABILITY_MATRIX_COMPLETION_2026-05-22.md` in commit `e918c690`. E2 operational benchmark suite is closed at `docs/reviews/CVF_E2_OPERATIONAL_BENCHMARK_SUITE_COMPLETION_2026-05-22.md` in commit `5fe76a75`: Governance CLI now has `cvf.operationalBenchmark.v1`, `cvf benchmark operational`, audit JSONL and release-gate JSON ingestion, evidence-mode breakdown, retry/human-correction counts, and an explicit hallucination-recovery deferred boundary. H2 runtime memory hierarchy phase 2 is closed at `docs/reviews/CVF_H2_RUNTIME_MEMORY_HIERARCHY_PHASE2_COMPLETION_2026-05-22.md` in commit `d0f057c7`: Learning Plane now has `cvf.runtimeMemoryHierarchy.v1`, a seven-tier actor-aware runtime map, deterministic write/retrieve/inject/reinject decisions, and ephemeral same-execution working-memory proof while keeping `canReinject=false` and no durable/cross-session memory. F2 noncoder outcome UX hardening is closed at `docs/reviews/CVF_F2_NONCODER_OUTCOME_UX_HARDENING_COMPLETION_2026-05-22.md`: Home now surfaces the six existing outcomes before template browsing, keeps export/receipt cues visible but secondary, and has browser mock proof for ordering plus one outcome-to-form journey. A2 coherence equivalence audit is closed at `docs/reviews/CVF_A2_COHERENCE_EQUIVALENCE_AUDIT_COMPLETION_2026-05-22.md`: existing owner-map, guard-chain, control-matrix, and bootstrap surfaces are equivalent for the five Problem A freeze points; no new kernel-law docs are recommended; the freeze remains in force. Fresh P2/P3/HN1 next-value GC-018 is now closed for executable candidates at `docs/reviews/CVF_P2_HN1_TRANCHE_CLOSURE_REVIEW_2026-05-23.md`: P2 provider soak PASS `12/12` live governed `/api/execute` across Alibaba `qwen-turbo` 6/6 and DeepSeek `deepseek-chat` 6/6; HN1 linkage hygiene revalidated PASS `22/22`; release gate PASS `7/7`. P3 hosted proof was authorized at `docs/baselines/CVF_GC018_P3_HOSTED_PROTECTED_WORKFLOW_PROOF_2026-05-23.md` and returned blocked at `docs/reviews/CVF_P3_HOSTED_PROTECTED_WORKFLOW_PROOF_BLOCKER_REVIEW_2026-05-23.md`: hosted signed service-token route reached live governance evidence, but HTTP `422`/`CLARIFY` means P3 did not close as pass.
 
-Current mode marker: `p3_hosted_target_preflight_roadmap_selected`.
+Current mode marker: `p3_hosted_proof_returned_clarify_blocker`.
 
 ## Required First Reads
 
@@ -165,20 +165,20 @@ Terminal five-option hardening sweep is closed:
 - secret/auth boundary is currently healthy;
 - public claim audit required no public-sync edit.
 
-Next: P3 hosted target preflight and decision is the selected roadmap:
-`docs/roadmaps/CVF_P3_HOSTED_TARGET_PREFLIGHT_DECISION_ROADMAP_2026-05-23.md`.
-It was selected by
-`docs/reviews/CVF_P3_NEXT_ROADMAP_SELECTION_AUDIT_2026-05-23.md` in commit
-`f1ea6e05`.
+Next: stop by default. P3 direct hosted proof returned blocked at the hosted
+clarification gate:
+`docs/reviews/CVF_P3_HOSTED_PROTECTED_WORKFLOW_PROOF_BLOCKER_REVIEW_2026-05-23.md`.
+The hosted target was reachable and returned live governance evidence, receipt
+`rcpt-env-mpi3w54q-p5p7bj`, and trace `env-mpi3w54q-p5p7bj`, but the response
+was HTTP `422`, `success=false`, `enforcementStatus=CLARIFY`, so P3 did not
+close as pass.
 
-The preflight must exit as either `P3_DIRECT_PROOF_READY` with a concrete
-hosted target, protected workflow, auth/token posture, secret handling posture,
-and pass/fail matrix, or `NO_HOSTED_TARGET_AVAILABLE`. Direct hosted protected
-workflow proof remains blocked until a fresh GC-018/work order authorizes
-execution against a named target. Do not continue provider soak, direct hosted
-proof, live benchmark, workflow runtime, hosted readiness claims, public
-deployment readiness, persistence, Maika, public-sync, governance semantics, or
-freeze claims without a fresh operator-selected work order.
+Only next allowed move, if the operator asks: open a tiny fresh GC-018/work
+order for one revised concrete hosted payload or a known passing trusted-form
+payload. Do not rerun hosted proof, provider soak, live benchmark, workflow
+runtime, hosted readiness claims, public deployment readiness, persistence,
+Maika, public-sync, governance semantics, or freeze claims without fresh
+operator-selected authorization.
 
 ## Enforcement And Verification
 

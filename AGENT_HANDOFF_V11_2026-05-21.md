@@ -128,6 +128,10 @@ Current HEAD after P3 hosted proof authorization:
 
 `b6af38e2` (docs: authorize P3 hosted proof)
 
+Current HEAD after P3 hosted proof clarification blocker:
+
+`63b90530` (docs: return P3 hosted proof at clarify gate)
+
 ---
 
 ## Purpose
@@ -850,13 +854,58 @@ Boundary:
 - No hosted proof, deployment, tunnel, public-sync, runtime/provider semantics,
   hosted readiness claim, or freeze release was opened.
 
+### 2026-05-23 - P3 Hosted Proof Returned At Clarification Gate
+
+Operator/Claude reported `P3_DIRECT_PROOF_READY` and supplied hosted target
+`https://vibcode.netlify.app/api/execute`.
+
+Authorization:
+
+- `docs/baselines/CVF_GC018_P3_HOSTED_PROTECTED_WORKFLOW_PROOF_2026-05-23.md`
+- `docs/work_orders/CVF_WO_P3_HOSTED_PROTECTED_WORKFLOW_PROOF_2026-05-23.md`
+
+Blocker review:
+
+- `docs/reviews/CVF_P3_HOSTED_PROTECTED_WORKFLOW_PROOF_BLOCKER_REVIEW_2026-05-23.md`
+
+Commits:
+
+- `b6af38e2` (docs: authorize P3 hosted proof)
+- `63b90530` (docs: return P3 hosted proof at clarify gate)
+
+Evidence:
+
+- hosted signed service-token route reached live governance evidence;
+- HTTP `422`;
+- `success=false`;
+- `enforcementStatus=CLARIFY`;
+- `evidenceMode=live`;
+- provider `alibaba`;
+- model `clarify`;
+- receipt `rcpt-env-mpi3w54q-p5p7bj`;
+- trace `env-mpi3w54q-p5p7bj`;
+- raw secret printed `false`.
+
+Disposition:
+
+- `RETURNED_BLOCKED_CLARIFY`.
+- P3 direct hosted proof did not close as pass because acceptance required HTTP
+  `200`, `success=true`, and `ALLOW`.
+- The blocker is not network reachability and not service-token auth failure;
+  it is the hosted clarification gate for the submitted payload.
+
+Boundary:
+
+- No source, deployment, provider/runtime, public-sync, hosted readiness,
+  production readiness, broad provider stability, or freeze-release claim.
+
 ---
 
 ## Next Allowed Move
 
-Default next move: P3 hosted target preflight and decision. G1, D2, E2, H2,
-F2, A2, P2, and HN1 are closed for the current private baseline. P0, P1, and
-the P1 dependency-audit residual are also closed.
+Default next move: stop. G1, D2, E2, H2, F2, A2, P2, and HN1 are closed for
+the current private baseline. P0, P1, and the P1 dependency-audit residual are
+also closed. P3 direct hosted proof returned blocked at the clarification gate.
 
 The fresh P2/P3/HN1 GC-018 packet is now closed for P2 and HN1 at:
 
@@ -866,19 +915,19 @@ Closure review:
 
 - `docs/reviews/CVF_P2_HN1_TRANCHE_CLOSURE_REVIEW_2026-05-23.md`
 
-Selected roadmap:
+Selected P3 roadmap:
 
 - `docs/roadmaps/CVF_P3_HOSTED_TARGET_PREFLIGHT_DECISION_ROADMAP_2026-05-23.md`
 
-Selection audit:
+P3 hosted proof blocker:
 
-- `docs/reviews/CVF_P3_NEXT_ROADMAP_SELECTION_AUDIT_2026-05-23.md`
+- `docs/reviews/CVF_P3_HOSTED_PROTECTED_WORKFLOW_PROOF_BLOCKER_REVIEW_2026-05-23.md`
 
-Direct hosted protected workflow proof remains blocked until the preflight
-exits as `P3_DIRECT_PROOF_READY` with concrete hosted target/workflow/auth/
-secret/pass-fail details, or records `NO_HOSTED_TARGET_AVAILABLE`.
+Only next allowed move, if operator asks: open a tiny fresh GC-018/work order
+for one revised concrete hosted payload or a known passing trusted-form/template
+payload. Do not rerun hosted proof under the closed one-call work order.
 
-Do not widen into direct hosted proof, public npm release, provider tuning,
+Do not widen into repeated hosted proof, public npm release, provider tuning,
 persistence/database beyond T5 ephemeral scope, Maika proof, public-sync, or
 freeze release without fresh GC-018/work-order authorization.
 
