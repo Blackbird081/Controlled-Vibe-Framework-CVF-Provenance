@@ -899,13 +899,57 @@ Boundary:
 - No source, deployment, provider/runtime, public-sync, hosted readiness,
   production readiness, broad provider stability, or freeze-release claim.
 
+### 2026-05-23 - P3 Hosted Proof Rerun Closed Pass
+
+The operator requested full P3 pass after the clarification blocker. A tiny
+fresh GC-018/work order authorized exactly one revised concrete hosted payload.
+
+Authorization:
+
+- `docs/baselines/CVF_GC018_P3_HOSTED_PROTECTED_WORKFLOW_PROOF_RERUN_2026-05-23.md`
+- `docs/work_orders/CVF_WO_P3_HOSTED_PROTECTED_WORKFLOW_PROOF_RERUN_2026-05-23.md`
+
+Completion review:
+
+- `docs/reviews/CVF_P3_HOSTED_PROTECTED_WORKFLOW_PROOF_RERUN_COMPLETION_2026-05-23.md`
+
+Evidence:
+
+- hosted signed service-token route returned HTTP `200`;
+- `success=true`;
+- decision `ALLOW`;
+- routing decision `ALLOW`;
+- enforcement status `ALLOW`;
+- `evidenceMode=live`;
+- provider `alibaba`;
+- model `qwen-turbo`;
+- receipt `rcpt-env-mpi55je6-hiddxq`;
+- trace `env-mpi55je6-hiddxq`;
+- policy snapshot `pol-20260523-0001`;
+- output length `3917`;
+- raw secret printed `false`.
+
+Disposition:
+
+- `CLOSED_P3_HOSTED_PROTECTED_WORKFLOW_PROOF_PASS`.
+- The earlier `CLARIFY` packet remains historical evidence for the minimal
+  payload; the concrete-payload rerun closes P3 for the bounded one-call hosted
+  protected workflow proof.
+
+Boundary:
+
+- No source, deployment, provider/runtime, public-sync, hosted SaaS readiness,
+  production readiness, broad provider stability, persistence, Maika proof, or
+  freeze-release claim.
+
 ---
 
 ## Next Allowed Move
 
 Default next move: stop. G1, D2, E2, H2, F2, A2, P2, and HN1 are closed for
 the current private baseline. P0, P1, and the P1 dependency-audit residual are
-also closed. P3 direct hosted proof returned blocked at the clarification gate.
+also closed. P3 direct hosted proof is now closed PASS for the bounded one-call
+hosted protected workflow proof.
 
 The fresh P2/P3/HN1 GC-018 packet is now closed for P2 and HN1 at:
 
@@ -919,13 +963,12 @@ Selected P3 roadmap:
 
 - `docs/roadmaps/CVF_P3_HOSTED_TARGET_PREFLIGHT_DECISION_ROADMAP_2026-05-23.md`
 
-P3 hosted proof blocker:
+P3 hosted proof completion:
 
-- `docs/reviews/CVF_P3_HOSTED_PROTECTED_WORKFLOW_PROOF_BLOCKER_REVIEW_2026-05-23.md`
+- `docs/reviews/CVF_P3_HOSTED_PROTECTED_WORKFLOW_PROOF_RERUN_COMPLETION_2026-05-23.md`
 
-Only next allowed move, if operator asks: open a tiny fresh GC-018/work order
-for one revised concrete hosted payload or a known passing trusted-form/template
-payload. Do not rerun hosted proof under the closed one-call work order.
+Default next move: stop. Do not rerun hosted proof under the closed one-call
+work order.
 
 Do not widen into repeated hosted proof, public npm release, provider tuning,
 persistence/database beyond T5 ephemeral scope, Maika proof, public-sync, or
