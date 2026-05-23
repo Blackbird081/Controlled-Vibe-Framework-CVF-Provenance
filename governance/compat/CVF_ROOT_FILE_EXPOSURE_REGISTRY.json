@@ -19,31 +19,109 @@
   ],
   "ignoredRootFiles": [],
   "files": [
-    { "path": ".cvf-c5-web-dev.err.log", "exposureClass": "INTERNAL_ONLY" },
-    { "path": ".cvf-c5-web-dev.out.log", "exposureClass": "INTERNAL_ONLY" },
-    { "path": ".dt.log", "exposureClass": "INTERNAL_ONLY" },
-    { "path": ".git_commit_error.log", "exposureClass": "INTERNAL_ONLY" },
-    { "path": ".git_commit_msg.txt", "exposureClass": "INTERNAL_ONLY" },
-    { "path": ".gitignore", "exposureClass": "INTERNAL_ONLY" },
-    { "path": ".markdownlintrc", "exposureClass": "INTERNAL_ONLY" },
-    { "path": "AGENTS.md", "exposureClass": "PUBLIC_DOCS_ONLY" },
-    { "path": "AGENT_HANDOFF_V9_2026-05-18.md", "exposureClass": "INTERNAL_ONLY" },
-    { "path": "AGENT_HANDOFF_V10_2026-05-19.md", "exposureClass": "INTERNAL_ONLY" },
-    { "path": "AGENT_HANDOFF_V11_2026-05-21.md", "exposureClass": "INTERNAL_ONLY" },
-    { "path": "AGENT_PLATFORM_PROGRESS_2026-02-06.md", "exposureClass": "INTERNAL_ONLY" },
-    { "path": "ARCHITECTURE.md", "exposureClass": "PUBLIC_DOCS_ONLY" },
-    { "path": "CHANGELOG.md", "exposureClass": "PUBLIC_DOCS_ONLY" },
-    { "path": "CLAUDE.md", "exposureClass": "INTERNAL_ONLY" },
-    { "path": "CONTRIBUTORS.md", "exposureClass": "PUBLIC_DOCS_ONLY" },
-    { "path": "CVF_SESSION_MEMORY.md", "exposureClass": "INTERNAL_ONLY" },
-    { "path": "CVF_ECOSYSTEM_ARCHITECTURE.md", "exposureClass": "PUBLIC_DOCS_ONLY" },
-    { "path": "CVF_LITE.md", "exposureClass": "PUBLIC_DOCS_ONLY" },
-    { "path": "DESIGN.md", "exposureClass": "PUBLIC_DOCS_ONLY" },
-    { "path": "LICENSE", "exposureClass": "PUBLIC_DOCS_ONLY" },
-    { "path": "netlify.toml", "exposureClass": "INTERNAL_ONLY" },
-    { "path": "package-lock.json", "exposureClass": "INTERNAL_ONLY" },
-    { "path": "package.json", "exposureClass": "INTERNAL_ONLY" },
-    { "path": "README.md", "exposureClass": "PUBLIC_DOCS_ONLY" },
-    { "path": "START_HERE.md", "exposureClass": "PUBLIC_DOCS_ONLY" }
+    {
+      "path": ".cvf-c5-web-dev.err.log",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
+      "path": ".cvf-c5-web-dev.out.log",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
+      "path": ".dt.log",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
+      "path": ".git_commit_error.log",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
+      "path": ".git_commit_msg.txt",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
+      "path": ".gitignore",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
+      "path": ".markdownlintrc",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
+      "path": "AGENTS.md",
+      "exposureClass": "PUBLIC_DOCS_ONLY"
+    },
+    {
+      "path": "AGENT_HANDOFF_V9_2026-05-18.md",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
+      "path": "AGENT_HANDOFF_V10_2026-05-19.md",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
+      "path": "AGENT_PLATFORM_PROGRESS_2026-02-06.md",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
+      "path": "ARCHITECTURE.md",
+      "exposureClass": "PUBLIC_DOCS_ONLY"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "exposureClass": "PUBLIC_DOCS_ONLY"
+    },
+    {
+      "path": "CLAUDE.md",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
+      "path": "CONTRIBUTORS.md",
+      "exposureClass": "PUBLIC_DOCS_ONLY"
+    },
+    {
+      "path": "CVF_SESSION_MEMORY.md",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
+      "path": "CVF_ECOSYSTEM_ARCHITECTURE.md",
+      "exposureClass": "PUBLIC_DOCS_ONLY"
+    },
+    {
+      "path": "CVF_LITE.md",
+      "exposureClass": "PUBLIC_DOCS_ONLY"
+    },
+    {
+      "path": "DESIGN.md",
+      "exposureClass": "PUBLIC_DOCS_ONLY"
+    },
+    {
+      "path": "LICENSE",
+      "exposureClass": "PUBLIC_DOCS_ONLY"
+    },
+    {
+      "path": "netlify.toml",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
+      "path": "package-lock.json",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
+      "path": "package.json",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
+      "path": "README.md",
+      "exposureClass": "PUBLIC_DOCS_ONLY"
+    },
+    {
+      "path": "START_HERE.md",
+      "exposureClass": "PUBLIC_DOCS_ONLY"
+    },
+    {
+      "path": "AGENT_HANDOFF_V12_2026-05-23.md",
+      "exposureClass": "INTERNAL_ONLY"
+    }
   ]
 }

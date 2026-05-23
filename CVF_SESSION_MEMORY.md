@@ -73,10 +73,10 @@ current.
 
 ## Current Session Mode
 
-- Current mode: `d9_qwen3_thinking_enable_true_adapter_public_deploy_pending`
-- Previous mode: `d8_qwen3_ai_commit_hosted_proof_blocked_enable_thinking_parameter`
+- Current mode: `aif_roadmap_launched_aif_a_ready_for_dispatch`
+- Previous mode: `d10_qwen3_r1_compatible_hosted_proof_closed_pass`
 - Freeze posture: `governance_kernel_freeze_recommended`
-- Active handoff pointer: `AGENT_HANDOFF_V11_2026-05-21.md`
+- Active handoff pointer: `AGENT_HANDOFF_V12_2026-05-23.md`
 - Historical handoff archive: `CVF_SESSION/handoffs/archive/`
 - Operator approved lanes B+C+H on 2026-05-19. Lane-specific stop lifts
   are in `CVF_SESSION/ACTIVE_SESSION_STATE.json`. Lanes execute in order
@@ -133,6 +133,23 @@ or side-channel absorption records before declaring the next tranche shape.
 **Any future memory, graph, context-builder, operational-intelligence, or
 Review-CVF pain-point tranche must read this audit, the Codex review, and the
 legacy spec absorption registry before scoping.**
+
+## Agent Intelligence Foundations Roadmap — 2026-05-23
+
+The AIF roadmap is the active steering source for the three corrective tranches
+that address the legacy spec absorption blindspot. Roadmap:
+
+- `docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md`
+
+| Tranche | Name | Status |
+| --- | --- | --- |
+| AIF-A | Operational Reference Index | `WORK_ORDER_READY` — Fast Lane, no GC-018 |
+| AIF-B | Graph Knowledge Phase 1 | `DEMAND_GATED` — needs PBR-04 lift |
+| AIF-C | Memory Gateway Phase 2 | `DEMAND_GATED` — needs `new_memory_tiers_beyond_lane_h_scope` override |
+
+AIF-A work order is at `docs/work_orders/CVF_WO_AIF_A_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`.
+AIF-A is the only immediately authorized tranche. AIF-B and AIF-C require operator
+unblock before implementation can begin.
 
 ## Provider Proof Prerequisite References
 
@@ -210,27 +227,19 @@ Before material governed work, an agent should be able to state:
 
 ## Next Allowed Move
 
-Terminal five-option hardening sweep is closed:
+AIF-A Operational Reference Index is `WORK_ORDER_READY`. Work order:
+`docs/work_orders/CVF_WO_AIF_A_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`.
+Fast Lane eligible; no GC-018 required. AIF-A is the only immediately
+authorized AIF tranche. Dispatch to Codex to create
+`docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`.
 
-- clean-room public proof PASS with Windows long-path setup note;
-- public `cvf-web` install PASS;
-- public static CI gate PASS `7/7` with static tests `44/44`;
-- external hosted deployment proof remains blocked pending an operator host
-  target;
-- longer-horizon live stability remains deferred pending a scheduled soak
-  profile;
-- secret/auth boundary is currently healthy;
-- public claim audit required no public-sync edit.
+AIF-B and AIF-C are `DEMAND_GATED` — do not begin without operator unblock.
 
-Next: stop by default. D5 is returned blocked at
-`docs/reviews/CVF_D5_QWEN3_HOSTED_SAFE_PAYLOAD_RERUN_BLOCKER_REVIEW_2026-05-23.md`
-because `qwen3-235b-a22b-thinking` returned `success=false` with model
-unavailable/account-access error. Do not retry under D5. Any next hosted
-attempt, model-id correction, hosted account access/provisioning change,
-deployment step, or completion claim requires a fresh GC-018/work order. Do
-not change safety, route, auth, receipt schema, provider registry, capability
-metadata, vision/reasoning contracts, or public-sync without fresh
-authorization.
+D10 Qwen3 R1-compatible hosted proof: CLOSED PASS at
+`docs/reviews/CVF_D10_QWEN3_R1_COMPATIBLE_HOSTED_PROOF_COMPLETION_2026-05-23.md`.
+Any further Qwen3/hosted proof work requires fresh GC-018/work order AND must
+include `docs/reference/CVF_QWEN3_HOSTED_PROOF_PREREQUISITES_2026-05-23.md`
+in Required First Reads.
 
 ## Enforcement And Verification
 
