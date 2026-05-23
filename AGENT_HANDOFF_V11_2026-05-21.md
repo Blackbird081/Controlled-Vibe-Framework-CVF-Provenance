@@ -120,6 +120,10 @@ Current HEAD after P2/HN1 tranche closure:
 
 `38d64a21` (docs: close P2 HN1 tranche)
 
+Current HEAD after P3 hosted target preflight roadmap selection:
+
+`f1ea6e05` (docs: select P3 preflight roadmap)
+
 ---
 
 ## Purpose
@@ -803,13 +807,52 @@ Boundary:
 - No broad provider stability, hosted readiness, public deployment readiness,
   Maika, persistence, or freeze release claim is closed.
 
+### 2026-05-23 - P3 Hosted Target Preflight Roadmap Selected
+
+Operator asked to audit and choose the next roadmap after P2/HN1 closure.
+
+Selection audit:
+
+- `docs/reviews/CVF_P3_NEXT_ROADMAP_SELECTION_AUDIT_2026-05-23.md`
+
+Selected roadmap:
+
+- `docs/roadmaps/CVF_P3_HOSTED_TARGET_PREFLIGHT_DECISION_ROADMAP_2026-05-23.md`
+
+Commit:
+
+- `f1ea6e05` (docs: select P3 preflight roadmap)
+
+Decision:
+
+- P3 is the highest-value next surface because it moves evidence from local
+  provider repeatability toward hosted protected workflow readiness.
+- Direct hosted proof is not executable yet because no hosted target
+  URL/platform, protected workflow, auth/token path, secret posture, or
+  pass/fail matrix is present.
+- Therefore the selected next roadmap is a bounded preflight/decision tranche,
+  not direct hosted proof.
+
+Exit states:
+
+- `P3_DIRECT_PROOF_READY`: exact target/workflow/auth/secret/pass-fail details
+  are named, enabling a fresh GC-018/work order for direct hosted proof.
+- `NO_HOSTED_TARGET_AVAILABLE`: no controlled hosted target exists, so P3
+  remains blocked with cause.
+
+Boundary:
+
+- No implementation was performed.
+- No hosted proof, deployment, tunnel, public-sync, runtime/provider semantics,
+  hosted readiness claim, or freeze release was opened.
+
 ---
 
 ## Next Allowed Move
 
-Default next move: stop. G1, D2, E2, H2, F2, A2, P2, and HN1 are closed for
-the current private baseline. P0, P1, and the P1 dependency-audit residual are
-also closed.
+Default next move: P3 hosted target preflight and decision. G1, D2, E2, H2,
+F2, A2, P2, and HN1 are closed for the current private baseline. P0, P1, and
+the P1 dependency-audit residual are also closed.
 
 The fresh P2/P3/HN1 GC-018 packet is now closed for P2 and HN1 at:
 
@@ -819,14 +862,21 @@ Closure review:
 
 - `docs/reviews/CVF_P2_HN1_TRANCHE_CLOSURE_REVIEW_2026-05-23.md`
 
-Only remaining candidate from that packet:
+Selected roadmap:
 
-- `P3_HOSTED_PROTECTED_WORKFLOW_PROOF` only after hosted target/workflow/auth
-  details are concrete.
+- `docs/roadmaps/CVF_P3_HOSTED_TARGET_PREFLIGHT_DECISION_ROADMAP_2026-05-23.md`
 
-Do not widen into public npm release, provider tuning,
-persistence/database beyond T5 ephemeral scope, Maika proof, public-sync,
-or freeze release.
+Selection audit:
+
+- `docs/reviews/CVF_P3_NEXT_ROADMAP_SELECTION_AUDIT_2026-05-23.md`
+
+Direct hosted protected workflow proof remains blocked until the preflight
+exits as `P3_DIRECT_PROOF_READY` with concrete hosted target/workflow/auth/
+secret/pass-fail details, or records `NO_HOSTED_TARGET_AVAILABLE`.
+
+Do not widen into direct hosted proof, public npm release, provider tuning,
+persistence/database beyond T5 ephemeral scope, Maika proof, public-sync, or
+freeze release without fresh GC-018/work-order authorization.
 
 Still forbidden:
 
