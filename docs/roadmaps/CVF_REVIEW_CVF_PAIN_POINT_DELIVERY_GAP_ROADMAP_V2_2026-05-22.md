@@ -1,8 +1,8 @@
 # CVF Review-CVF Pain Point Delivery Gap Roadmap V2
 
-Memory class: FULL_RECORD
+Memory class: SUMMARY_RECORD
 
-Status: ACTIVE_ROADMAP_AUTHORIZED_FOR_T1_DISPATCH
+Status: ACTIVE_ROADMAP_T1_T5_CLOSED_WITH_DEMAND_GATED_SUCCESSORS
 
 docType: roadmap
 
@@ -45,6 +45,9 @@ Predecessor artifacts (mandatory reading):
 - Predecessor audit: `docs/audits/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_GAP_AUDIT_2026-05-22.md`
 - Codex blocking review: `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_CODEX_REVIEW_2026-05-22.md`
 - Source of original deliverables: `.private_reference/legacy/CVF 17.05/Review CVF.md`
+- Legacy blindspot audit: `docs/audits/CVF_LEGACY_SPEC_ABSORPTION_BLINDSPOT_AUDIT_2026-05-23.md`
+- Codex correction/review: `docs/reviews/CVF_LEGACY_SPEC_ABSORPTION_BLINDSPOT_CODEX_REVIEW_2026-05-23.md`
+- Legacy spec absorption registry: `docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
 
 ---
 
@@ -456,6 +459,95 @@ and retention proof.
   language for `new_memory_tiers_beyond_lane_h_scope` in the T5 GC-018
   baseline. The lift applies to ephemeral in-memory task-tier wiring
   only. File-backed storage and durable persistence remain blocked.
+
+### 2026-05-23 Legacy Spec Absorption Corrective Addendum
+
+Operator and Claude identified a blindspot after T1-T5 closure: this roadmap
+scoped pain-point closure from Review CVF and active reviews without requiring
+a scan of `.private_reference/legacy/` source specs or archived absorption
+evidence.
+
+Codex review corrected the exact failure mode: `agentmemory` and
+`code-review-graph` were not wholly invisible to repo history. They had prior
+absorption and scoped-knowledge records. The active pain-point chain failed
+because those records were archived or side-channel and not promoted into a
+current required-read registry.
+
+Corrective controls now apply to all successor tranches:
+
+- Every future GC-018 touching Review-CVF pain points, memory, graph knowledge,
+  context building, operational intelligence, or external knowledge absorption
+  must include the Legacy Spec Scan Block from
+  `docs/reference/CVF_GC018_CONTINUATION_CANDIDATE_TEMPLATE.md`.
+- The scan must cite
+  `docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`.
+- The scan must name exact legacy folders read and the source specs absorbed,
+  deferred, or out of scope.
+- A tranche cannot close by relying only on active reviews if relevant legacy
+  specs exist.
+
+### T-H2 — Memory Gateway Phase 2 (Demand-Gated Successor)
+
+**Status:** `DEMAND_GATED_NOT_AUTHORIZED`.
+
+**Source specs:**
+
+- `.private_reference/legacy/CVF 16.5/agentmemory/`
+- `docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
+- Existing memory evidence listed in the registry, including
+  `ControlledMemoryGatewayContract` and T5.
+
+**Purpose if later authorized:**
+
+Reconcile Pain H against the full memory-source lineage and decide whether the
+next useful product tranche is lifecycle decay, semantic/recency retrieval,
+context packaging, privacy-filtered reinjection, or live execute-path memory
+consumption.
+
+**Required preconditions:**
+
+- Fresh GC-018 with Legacy Spec Scan Block.
+- Explicit operator blocked-work override for memory expansion.
+- File-by-file table for all 10 `agentmemory` specs: absorbed, partially
+  absorbed, deferred, or out of scope.
+- No durable persistence, live reinjection, or public memory-readiness claim
+  unless that exact behavior is authorized and proven.
+
+**Claim boundary:**
+
+This addendum does not authorize T-H2. T5 remains closed for its bounded
+ephemeral task-memory contract.
+
+### T-GRAPH — Graph Knowledge Phase 1 (Demand-Gated Successor)
+
+**Status:** `DEMAND_GATED_NOT_AUTHORIZED`.
+
+**Source specs:**
+
+- `.private_reference/legacy/CVF ADD/code-review-graph/`
+- `docs/reference/CVF_SCOPED_KNOWLEDGE_PROVIDER_BOUNDARY_DOCTRINE_2026-05-07.md`
+- `docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
+
+**Purpose if later authorized:**
+
+Decide whether to implement a bounded graph knowledge foundation such as AST
+indexing, dependency graph construction, blast-radius resolution, context
+scoring, and a non-authoritative context-pack output for review/refactor tasks.
+
+**Required preconditions:**
+
+- Fresh GC-018 with Legacy Spec Scan Block.
+- Persistence/database boundary decision before any SQLite or durable index is
+  introduced.
+- Explicit scope distinction between read-only scoped knowledge provider
+  boundary and actual graph engine implementation.
+- No provider, route, policy-authority, or public intelligence claim without
+  separate proof.
+
+**Claim boundary:**
+
+This addendum does not authorize T-GRAPH. Existing ADD-E1 scoped knowledge
+remains a read-only boundary, not a graph runtime engine.
 
 ### Anti-Pattern Guardrails (apply to every tranche)
 

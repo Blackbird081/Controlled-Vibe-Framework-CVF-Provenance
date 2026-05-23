@@ -1194,3 +1194,7 @@ Current HEAD after D10 Qwen3 R1-compatible hosted proof closure:
 Current HEAD after D10 prerequisites reference and fast lane audit:
 
 `8f17832c` (docs(qwen3): add prerequisite reference and D10 fast lane audit)
+
+Current HEAD before legacy spec absorption correction:
+
+`41f2c8c5` (docs: file legacy absorption blindspot audit)

@@ -54,6 +54,30 @@ Counter-Evidence Block (required when a REVIEWER challenges a PROPOSER claim)
 
 See `governance/toolkit/05_OPERATION/CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD.md` for the full protocol.
 
+For any continuation candidate that touches Review-CVF pain points, memory,
+graph knowledge, context building, operational intelligence, external
+knowledge absorption, or legacy-source implementation, add this block before
+scoping:
+
+```text
+Legacy Spec Scan Block (required for legacy-adjacent scope)
+- Registry read: docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md
+- Legacy folders scanned:
+  - <path 1>
+  - <path 2>
+- Relevant source specs found:
+  - <file or folder>
+- Existing absorption evidence checked:
+  - <review/baseline/roadmap path>
+- Absorbed in this tranche:
+  - <source file or concept>
+- Explicitly deferred:
+  - <source file or concept + reason>
+- Out of scope:
+  - <source file or concept + reason>
+- Blindspot risk verdict: CLEAR | PARTIAL | BLOCKED
+```
+
 ```text
 GC-018 Continuation Candidate
 - Candidate ID: <stable id>
@@ -112,6 +136,7 @@ Tranche Closure Checklist
 - [ ] All new catalog paths Test-Path verified in public-sync clone
 - [ ] GC-020 handoff Current HEAD updated to this tranche's commit SHA
 - [ ] Evidence Trace Block present for all significant claims (GC-046)
+- [ ] Legacy Spec Scan Block present OR explicitly N/A: <reason>
 ```
 
 Omitting the catalog item without an explicit N/A is a closure defect.
@@ -127,6 +152,10 @@ but the checklist is the authoritative closure gate.
 - any `0` in `Risk reduction`, `Decision value`, or `Machine enforceability` should force `Decision: DEFER`
 - if the proposed step changes active-path implementation, the resulting packet must remain reviewable by the repository continuation gate
 - low-yield continuation classes (`VALIDATION_TEST`, `PACKAGING_ONLY`, `TRUTH_CLAIM`) must record a lateral alternative and may continue only if they improve a real decision boundary in a reviewable way
+- legacy-adjacent packets must not scope from active reviews alone; they must
+  reconcile the active review with `docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
+  and any relevant `.private_reference/legacy/` source folders before the
+  candidate can be treated as complete
 
 ## Preferred Placement
 
@@ -143,5 +172,6 @@ The same packet may be summarized in multiple places, but there should be one ob
 - `governance/toolkit/05_OPERATION/CVF_DEPTH_AUDIT_GUARD.md`
 - `governance/toolkit/05_OPERATION/CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD.md` (GC-046: Evidence Trace Block requirement for absorption review chains)
 - `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md#GC-018`
+- `docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
 - `governance/compat/check_depth_audit_continuation_compat.py`
 - `docs/roadmaps/CVF_SYSTEM_UNIFICATION_REMEDIATION_ROADMAP_2026-03-19.md`

@@ -121,8 +121,18 @@ T5 (ephemeral task store) was scoped without reading `agentmemory` specs; graph 
 has no tranche at all. Full analysis and corrective actions (CA-1/CA-2/CA-3) at:
 
 - `docs/audits/CVF_LEGACY_SPEC_ABSORPTION_BLINDSPOT_AUDIT_2026-05-23.md`
+- `docs/reviews/CVF_LEGACY_SPEC_ABSORPTION_BLINDSPOT_CODEX_REVIEW_2026-05-23.md`
+- `docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
 
-**Any future memory or graph tranche must read this audit before scoping.**
+Codex correction: the legacy folders were not invisible to the entire repo
+history. `agentmemory` had archived controlled-memory adoption evidence, and
+`code-review-graph` had ADD-E1/scoped-knowledge evidence. The actual failure
+was that active Review-CVF pain-point scoping did not resolve those archived
+or side-channel absorption records before declaring the next tranche shape.
+
+**Any future memory, graph, context-builder, operational-intelligence, or
+Review-CVF pain-point tranche must read this audit, the Codex review, and the
+legacy spec absorption registry before scoping.**
 
 ## Provider Proof Prerequisite References
 
