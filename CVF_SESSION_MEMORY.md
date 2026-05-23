@@ -73,7 +73,7 @@ current.
 
 ## Current Session Mode
 
-- Current mode: `d5_qwen3_hosted_safe_payload_rerun_dispatched`
+- Current mode: `d5_qwen3_hosted_safe_payload_rerun_blocked_model_access`
 - Previous mode: `d4_qwen3_enable_thinking_adapter_blocked_hosted_safety_filter`
 - Freeze posture: `governance_kernel_freeze_recommended`
 - Active handoff pointer: `AGENT_HANDOFF_V11_2026-05-21.md`
@@ -91,9 +91,9 @@ The active post-B/C steering source remains `docs/reviews/CVF_REVIEW_CVF_POST_BC
 
 D4 Qwen3 enable-thinking adapter is returned blocked at `docs/reviews/CVF_D4_QWEN3_ENABLE_THINKING_ADAPTER_BLOCKER_REVIEW_2026-05-23.md`. Local adapter implementation added `isQwen3Model` and `enable_thinking=false` for non-streaming Alibaba Qwen3 calls; focused provider tests PASS `42/42`. Full `cvf-web` `npm test:run` did not get a clean all-pass due unrelated live/test-order variance. Hosted proof stopped after first call: `qwen3-32b` returned HTTP `400`, `success=false`, provider `alibaba`, response model `blocked`, error `Safety filter triggered`, `rawSecretPrinted=false`; `qwen3-235b-a22b-thinking` was not attempted per stop rule. Do not retry D4 hosted proof or claim P3/D4 pass without fresh GC-018/work order.
 
-D5 Qwen3 hosted safe-payload rerun is now authorized at `docs/baselines/CVF_GC018_D5_QWEN3_HOSTED_SAFE_PAYLOAD_RERUN_2026-05-23.md` with work order `docs/work_orders/CVF_WO_D5_QWEN3_HOSTED_SAFE_PAYLOAD_RERUN_2026-05-23.md`. Scope is limited to safety-filter-safe payload preflight, focused D4 adapter verification, private provenance deployment confirmation if needed, and the bounded hosted proof matrix. Run at most one hosted call for `qwen3-32b` first; only if it passes the full matrix may `qwen3-235b-a22b-thinking` be attempted once. Stop and file blocker on the first non-pass.
+D5 Qwen3 hosted safe-payload rerun is returned blocked at `docs/reviews/CVF_D5_QWEN3_HOSTED_SAFE_PAYLOAD_RERUN_BLOCKER_REVIEW_2026-05-23.md`. Safety preflight passed for both payloads, focused provider tests PASS `42/42`, `cvf-web` check PASS, and private provenance push `6f0fbcd2` succeeded. Hosted `qwen3-32b` PASSed the matrix with HTTP `200`, `success=true`, `ALLOW`, `evidenceMode=live`, receipt `rcpt-env-mpidzqv4-ysriei`, trace `env-mpidzqv4-ysriei`, and `rawSecretPrinted=false`. Hosted `qwen3-235b-a22b-thinking` returned HTTP `200` and ALLOW/live receipt evidence, but `success=false` because the model does not exist or the hosted account lacks access; receipt `rcpt-env-mpie0q8c-zn6jku`, trace `env-mpie0q8c-zn6jku`, `rawSecretPrinted=false`. Do not retry under D5.
 
-Current mode marker: `d5_qwen3_hosted_safe_payload_rerun_dispatched`.
+Current mode marker: `d5_qwen3_hosted_safe_payload_rerun_blocked_model_access`.
 
 ## Required First Reads
 
@@ -169,22 +169,15 @@ Terminal five-option hardening sweep is closed:
 - secret/auth boundary is currently healthy;
 - public claim audit required no public-sync edit.
 
-Next: execute D5 only. D4 Qwen3 enable-thinking adapter returned blocked at
-`docs/reviews/CVF_D4_QWEN3_ENABLE_THINKING_ADAPTER_BLOCKER_REVIEW_2026-05-23.md`
-because the first hosted `qwen3-32b` proof returned HTTP `400`,
-`success=false`, and error `Safety filter triggered`. D5 is now authorized at
-`docs/baselines/CVF_GC018_D5_QWEN3_HOSTED_SAFE_PAYLOAD_RERUN_2026-05-23.md`
-with work order
-`docs/work_orders/CVF_WO_D5_QWEN3_HOSTED_SAFE_PAYLOAD_RERUN_2026-05-23.md`.
-
-Do not continue D4 under its closed work order. Under D5, run local
-safety-filter preflight, focused provider adapter tests, `cvf-web` check, and
-private provenance deployment confirmation if required. Then run at most one
-hosted call for `qwen3-32b`; only if it passes the matrix may one
-`qwen3-235b-a22b-thinking` hosted call be attempted. Stop and file blocker on
-the first non-pass. Do not change safety, route, auth, receipt schema,
-provider registry, capability metadata, vision/reasoning contracts, or
-public-sync.
+Next: stop by default. D5 is returned blocked at
+`docs/reviews/CVF_D5_QWEN3_HOSTED_SAFE_PAYLOAD_RERUN_BLOCKER_REVIEW_2026-05-23.md`
+because `qwen3-235b-a22b-thinking` returned `success=false` with model
+unavailable/account-access error. Do not retry under D5. Any next hosted
+attempt, model-id correction, hosted account access/provisioning change,
+deployment step, or completion claim requires a fresh GC-018/work order. Do
+not change safety, route, auth, receipt schema, provider registry, capability
+metadata, vision/reasoning contracts, or public-sync without fresh
+authorization.
 
 ## Enforcement And Verification
 

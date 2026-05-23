@@ -2366,3 +2366,35 @@ Utility and guard:
     `npm test:run` all-pass acceptance was not met.
   - No route/auth/receipt/provider registry/vision/reasoning/public-sync change
     was made.
+
+## [2026-05-23] Batch: D5 Qwen3 Hosted Safe Payload Rerun Blocker
+- Change reference:
+  - D5 authorization commit `6f0fbcd2`; blocker working tree after hosted proof.
+- Impacted scope:
+  - Hosted `/api/execute` proof path for Alibaba Qwen3 models.
+  - D4 provider adapter verification only; no new source-code change.
+- Tests executed:
+  - Local safety preflight using current `applySafetyFilters()` and
+    `buildExecutionPrompt()` -> PASS for both `qwen3-32b` and
+    `qwen3-235b-a22b-thinking`, `blocked=false`.
+  - `npm run test:run -- src/lib/ai/providers.test.ts` in
+    `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` -> PASS, 1 file / 42 tests.
+  - `npm run check` in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` -> PASS.
+- Hosted proof:
+  - Private provenance remote confirmed and `git push origin main` succeeded
+    at `6f0fbcd2`.
+  - `qwen3-32b` hosted call -> PASS: HTTP 200, `success=true`, ALLOW/live,
+    receipt `rcpt-env-mpidzqv4-ysriei`, trace `env-mpidzqv4-ysriei`,
+    `rawSecretPrinted=false`.
+  - `qwen3-235b-a22b-thinking` hosted call -> BLOCKED: HTTP 200,
+    `success=false`, ALLOW/live, receipt `rcpt-env-mpie0q8c-zn6jku`, trace
+    `env-mpie0q8c-zn6jku`, model unavailable or account lacks access,
+    `rawSecretPrinted=false`.
+- Skip scope:
+  - Full `cvf-web` regression: skipped because D5 made no source-code changes
+    and D4 focused adapter regression plus check passed.
+- Notes/Risks:
+  - D5 retired the safety-filter payload blocker for `qwen3-32b`, but the
+    two-model Qwen3 matrix remains blocked on model availability/access for
+    `qwen3-235b-a22b-thinking`.
+  - No retry loop was run after the second model returned `success=false`.

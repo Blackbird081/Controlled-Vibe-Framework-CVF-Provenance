@@ -148,6 +148,10 @@ Current HEAD after D4 Qwen3 enable_thinking adapter blocker returned:
 
 `2519baa5` (docs: return D4 Qwen3 adapter blocker)
 
+Current HEAD after D5 Qwen3 hosted safe-payload rerun authorization:
+
+`6f0fbcd2` (docs: authorize D5 Qwen3 hosted safe payload rerun)
+
 ---
 
 ## Purpose
@@ -1016,7 +1020,7 @@ Boundary:
   no broad Qwen3 stability, no hosted/production readiness, and no freeze
   release.
 
-### 2026-05-23 - D4 Blocked; D5 Authorized
+### 2026-05-23 - D4 Blocked; D5 Blocked
 
 D4 implemented the local Qwen3 adapter fix (`isQwen3Model` plus
 `enable_thinking: false` for Alibaba non-streaming Qwen3 calls) and focused
@@ -1028,27 +1032,32 @@ D4 blocker:
 
 - `docs/reviews/CVF_D4_QWEN3_ENABLE_THINKING_ADAPTER_BLOCKER_REVIEW_2026-05-23.md`
 
-D5 authorization:
+D5 authorization and blocker:
 
 - `docs/baselines/CVF_GC018_D5_QWEN3_HOSTED_SAFE_PAYLOAD_RERUN_2026-05-23.md`
 - `docs/work_orders/CVF_WO_D5_QWEN3_HOSTED_SAFE_PAYLOAD_RERUN_2026-05-23.md`
+- `docs/reviews/CVF_D5_QWEN3_HOSTED_SAFE_PAYLOAD_RERUN_BLOCKER_REVIEW_2026-05-23.md`
 
-D5 scope: safety-filter-safe payload preflight, focused D4 adapter tests,
-`cvf-web` check, private provenance deployment confirmation if needed, then
-one `qwen3-32b` hosted call and one `qwen3-235b-a22b-thinking` hosted call only
-if the first call passes. Stop and file blocker on the first non-pass. No
-safety/route/auth/receipt/provider registry/capability/vision/reasoning/
-public-sync change or broad Qwen3/hosted readiness claim is authorized.
+D5 results: payload preflight PASS for both model prompts, focused provider
+tests PASS `42/42`, `cvf-web` check PASS, and private provenance push
+`6f0fbcd2` succeeded. Hosted `qwen3-32b` PASSed with HTTP `200`,
+`success=true`, ALLOW/live, receipt `rcpt-env-mpidzqv4-ysriei`, trace
+`env-mpidzqv4-ysriei`. Hosted `qwen3-235b-a22b-thinking` returned HTTP `200`
+and ALLOW/live evidence but `success=false` because the model does not exist or
+the hosted account lacks access; receipt `rcpt-env-mpie0q8c-zn6jku`, trace
+`env-mpie0q8c-zn6jku`. D5 status:
+`RETURNED_BLOCKED_QWEN3_235B_MODEL_ACCESS`. No retry loop was run.
 
 ---
 
 ## Next Allowed Move
 
-Default next move: execute D5 only. G1, D2, E2, H2, F2, A2, P2, and HN1 are closed for
+Default next move: stop. G1, D2, E2, H2, F2, A2, P2, and HN1 are closed for
 the current private baseline. P0, P1, and the P1 dependency-audit residual are
 also closed. P3 direct hosted proof is closed PASS for the bounded one-call
 hosted protected workflow proof. D3 Qwen3 provider expansion was superseded by
-D4, and D4 returned blocked at the hosted safety filter.
+D4; D4 returned blocked at the hosted safety filter; D5 returned blocked on
+`qwen3-235b-a22b-thinking` model availability/access.
 
 The fresh P2/P3/HN1 GC-018 packet is now closed for P2 and HN1 at:
 
@@ -1066,10 +1075,9 @@ D4 blocker:
 
 - `docs/reviews/CVF_D4_QWEN3_ENABLE_THINKING_ADAPTER_BLOCKER_REVIEW_2026-05-23.md`
 
-D5 authorization:
+D5 blocker:
 
-- `docs/baselines/CVF_GC018_D5_QWEN3_HOSTED_SAFE_PAYLOAD_RERUN_2026-05-23.md`
-- `docs/work_orders/CVF_WO_D5_QWEN3_HOSTED_SAFE_PAYLOAD_RERUN_2026-05-23.md`
+- `docs/reviews/CVF_D5_QWEN3_HOSTED_SAFE_PAYLOAD_RERUN_BLOCKER_REVIEW_2026-05-23.md`
 
 D4 implemented the bounded local adapter fix:
 
@@ -1106,12 +1114,10 @@ Disposition:
 - Per D4 stop rule, `qwen3-235b-a22b-thinking` was not attempted.
 - No retry loop was run.
 
-Default next move: run D5 exactly as authorized. Do not rerun D3 or D4 hosted
-proof under the closed D3/D4 work orders. Under D5, preflight the safe payload,
-run focused local checks, confirm private provenance deployment posture if
-needed, then call `qwen3-32b` once. Only if it passes the full hosted matrix may
-`qwen3-235b-a22b-thinking` be attempted once. Stop and file blocker on the
-first non-pass.
+Default next move: stop. Do not rerun D3, D4, or D5 hosted proof under closed
+work orders. Any next hosted attempt, model-id correction, hosted account
+access/provisioning change, deployment step, or completion claim requires a
+fresh GC-018/work order.
 
 Do not widen into repeated hosted proof, public npm release, provider tuning,
 persistence/database beyond T5 ephemeral scope, Maika proof, public-sync, or
