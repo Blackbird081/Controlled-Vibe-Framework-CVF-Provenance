@@ -1180,3 +1180,7 @@ production-mode proof result, release-gate timeout maintenance, and terminal
 five-option hardening closure. Hosted SaaS readiness, public deployment
 readiness, broad provider stability, persistence readiness, Maika readiness,
 and freeze release remain unproven.
+
+Current HEAD after D9 Qwen3 thinking enable-true adapter dispatch:
+
+`70eced06` (fix(qwen3): split thinking enable flag)

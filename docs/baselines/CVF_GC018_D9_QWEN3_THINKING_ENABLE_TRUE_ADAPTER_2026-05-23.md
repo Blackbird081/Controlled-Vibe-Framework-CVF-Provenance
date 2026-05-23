@@ -81,3 +81,8 @@ D9 can claim only the corrected Qwen3 thinking model adapter proof and bounded
 hosted proof result. It cannot claim broad Qwen3 stability, hosted SaaS
 readiness, production readiness, provider account coverage beyond the observed
 call, public release readiness, or freeze release.
+
+## Handoff Sync Addendum
+
+Handoff V11 records commit `70eced06` as the D9 adapter dispatch head before
+public-sync deployment and the single hosted proof attempt.
