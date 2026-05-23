@@ -152,6 +152,10 @@ Current HEAD after D5 Qwen3 hosted safe-payload rerun authorization:
 
 `6f0fbcd2` (docs: authorize D5 Qwen3 hosted safe payload rerun)
 
+Current HEAD after D6 Qwen3 corrected-model proof blocker:
+
+`9e8d5a84` (docs(qwen3): return D6 corrected model proof blocker)
+
 ---
 
 ## Purpose
