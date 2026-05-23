@@ -124,6 +124,10 @@ Current HEAD after P3 hosted target preflight roadmap selection:
 
 `f1ea6e05` (docs: select P3 preflight roadmap)
 
+Current HEAD after P3 hosted proof authorization:
+
+`b6af38e2` (docs: authorize P3 hosted proof)
+
 ---
 
 ## Purpose
