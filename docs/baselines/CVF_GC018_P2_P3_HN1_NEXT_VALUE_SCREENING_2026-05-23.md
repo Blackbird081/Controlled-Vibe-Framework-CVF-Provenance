@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: OPENED_P2_P3_HN1_NEXT_VALUE_SCREENING
+Status: CLOSED_P2_HN1_P3_CONDITIONAL_HOLD
 
 Date: 2026-05-23
 
@@ -161,6 +161,48 @@ Recommended sequence:
 
 This packet is enough to open a narrow work order for HN1 or P2. P3 still
 requires a concrete hosted-target addendum before execution.
+
+## 2026-05-23 Execution Disposition
+
+Operator follow-up authorized doing both executable candidates to close the
+tranche.
+
+Execution disposition:
+
+- P2 longer-horizon provider stability soak: `CLOSED_BOUNDED_SOAK_PASS`.
+- HN1 template-skill linkage hygiene: `CLOSED_REVALIDATED`.
+- P3 hosted protected workflow proof: `CONDITIONAL_HOLD`.
+
+Evidence:
+
+- P2 evidence:
+  `docs/reviews/CVF_P2_PROVIDER_SOAK_EVIDENCE_2026-05-23.md`
+- P2 machine-readable evidence:
+  `docs/reviews/CVF_P2_PROVIDER_SOAK_EVIDENCE_2026-05-23.json`
+- P2/HN1 closure review:
+  `docs/reviews/CVF_P2_HN1_TRANCHE_CLOSURE_REVIEW_2026-05-23.md`
+
+P2 result:
+
+- command:
+  `$env:CVF_POST_PHASE2B_PROVIDERS='alibaba,deepseek'; $env:CVF_POST_PHASE2B_REPEATS='6'; $env:CVF_POST_PHASE2B_PROVIDER_STABILITY_PORT='3223'; node scripts/run_post_phase2b_provider_stability_probe.mjs`
+- live governed `/api/execute` pass count: `12/12`;
+- Alibaba `qwen-turbo`: `6/6`;
+- DeepSeek `deepseek-chat`: `6/6`;
+- every journey had HTTP 200, `success=true`, live evidence mode, route id
+  `/api/execute`, receipt id, trace id, routing `ALLOW`, provider match, and
+  raw secret printed `false`.
+
+HN1 result:
+
+- current exemption block for `individual_skills_folder` and
+  `vibe_workflow_folder` remains valid;
+- targeted verification:
+  `npx vitest run src/lib/templates/governance-enforcement.test.ts src/lib/skill-template-map.test.ts --reporter=verbose`;
+- result: `2` files passed, `22/22` tests passed.
+
+P3 remains held because the required hosted target URL/platform, protected
+workflow, auth/token path, and pass/fail criteria were not supplied.
 
 ## Evidence Trace Block
 
