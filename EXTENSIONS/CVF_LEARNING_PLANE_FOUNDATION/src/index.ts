@@ -26,6 +26,7 @@ export {
 export type {
   MemoryRetrievalCandidate,
   MemoryRetrievalMethod,
+  MemoryRetrievalPolicyOptions,
   MemoryRetrievalRequest,
   MemoryRetrievalResult,
 } from "./memory-retrieval-policy";
@@ -64,11 +65,17 @@ export {
 export type { ParsedGraphAst } from "./knowledge/graph/ast/ast-parser";
 export {
   buildSymbolIndex,
+  buildSymbolIndexFromGraph,
   buildSymbolIndexFromSources,
   createInMemoryGraphKnowledgeService,
   lookupSymbol,
 } from "./knowledge/graph/index/symbol-index";
-export type { SymbolIndex } from "./knowledge/graph/index/symbol-index";
+export type {
+  InMemoryGraphKnowledgeServiceOptions,
+  SymbolIndex,
+  SymbolIndexPersistenceStore,
+} from "./knowledge/graph/index/symbol-index";
+export { GraphSQLiteStore } from "./knowledge/graph/storage/graph-sqlite-store";
 export {
   mapTaskToQuery,
   resolveBlastRadius,

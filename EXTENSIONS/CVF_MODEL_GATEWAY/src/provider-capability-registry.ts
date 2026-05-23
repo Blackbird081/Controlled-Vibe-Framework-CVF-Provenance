@@ -82,4 +82,17 @@ export const PROVIDER_CAPABILITY_REGISTRY = [
       },
     ],
   },
+  {
+    contractVersion: "cvf.providerCapability.v1",
+    providerId: "openai",
+    capabilityRef: "provider-capability/openai",
+    ownerRefs: PROVIDER_CAPABILITY_OWNER_REFS,
+    models: [
+      {
+        modelId: "gpt-4o",
+        supportedMethods: ["complete", "chat", "json_mode", "vision"],
+        defaultMethod: "complete",
+      },
+    ],
+  },
 ] as const satisfies readonly ProviderCapabilityFile[];

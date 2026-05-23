@@ -44,6 +44,13 @@ describe("provider capability registry", () => {
     });
     expect(listRegistrySupportedMethods(PROVIDER_CAPABILITY_REGISTRY, "deepseek", "deepseek-chat"))
       .toEqual(["complete", "chat", "json_mode"]);
+    expect(getProviderMethodContract(PROVIDER_CAPABILITY_REGISTRY, "openai", "gpt-4o")).toEqual({
+      providerId: "openai",
+      modelId: "gpt-4o",
+      supportedMethods: ["complete", "chat", "json_mode", "vision"],
+      defaultMethod: "complete",
+      capabilityRef: "provider-capability/openai/gpt-4o",
+    });
   });
 
   it("preserves legacy chat as an alias for complete", () => {
@@ -131,6 +138,23 @@ describe("provider capability registry", () => {
       "alibaba",
       "qwen3-32b",
       "reasoning",
+    )).toThrow(UnsupportedMethodError);
+  });
+
+  it("registers OpenAI gpt-4o as the bounded third provider without broad parity claims", () => {
+    expect(listRegistrySupportedMethods(PROVIDER_CAPABILITY_REGISTRY, "openai", "gpt-4o"))
+      .toEqual(["complete", "chat", "json_mode", "vision"]);
+    expect(() => assertRegistryProviderMethodSupported(
+      PROVIDER_CAPABILITY_REGISTRY,
+      "openai",
+      "gpt-4o",
+      "complete",
+    )).not.toThrow();
+    expect(() => assertRegistryProviderMethodSupported(
+      PROVIDER_CAPABILITY_REGISTRY,
+      "openai",
+      "gpt-4o",
+      "embedding",
     )).toThrow(UnsupportedMethodError);
   });
 });

@@ -73,8 +73,8 @@ current.
 
 ## Current Session Mode
 
-- Current mode: `aif_foundations_closed_pass`
-- Previous mode: `d10_qwen3_r1_compatible_hosted_proof_closed_pass`
+- Current mode: `post_aif_next_value_closed_pass`
+- Previous mode: `aif_foundations_closed_pass`
 - Freeze posture: `governance_kernel_freeze_recommended`
 - Active handoff pointer: `AGENT_HANDOFF_V12_2026-05-23.md`
 - Historical handoff archive: `CVF_SESSION/handoffs/archive/`
@@ -103,7 +103,7 @@ D9 Qwen3 thinking enable-true adapter returned blocked at `docs/reviews/CVF_D9_Q
 
 D10 Qwen3 R1-compatible hosted proof is closed pass at `docs/reviews/CVF_D10_QWEN3_R1_COMPATIBLE_HOSTED_PROOF_COMPLETION_2026-05-23.md`: active mode marker `d10_qwen3_r1_compatible_hosted_proof_closed_pass`; focused providers test PASS `42/42`, `cvf-web` check PASS, local router preflight for Alibaba `R1` returned `ALLOW`, and the single hosted call returned HTTP `200`, `success=true`, `decision=ALLOW`, `routingDecision=ALLOW`, `enforcementStatus=ALLOW`, `evidenceMode=live`, provider `alibaba`, model `qwen3-235b-a22b-thinking-2507`, receipt `rcpt-env-mpigxtmn-pml5ky`, trace `env-mpigxtmn-pml5ky`, output length `4057`, `rawSecretPrinted=false`. Public repo contains the adapter fix at commit `811e59f6`.
 
-Current mode marker: `aif_foundations_closed_pass`.
+Current mode marker: `post_aif_next_value_closed_pass`.
 
 ## Legacy Spec Absorption Blindspot Audit — 2026-05-23
 
@@ -153,6 +153,37 @@ AIF-C delivered local in-memory memory gateway policy modules in
 graph schema, AST parser, symbol index, task-query mapper, and exported
 `GraphKnowledgeService`. Durable persistence, live memory reinjection, provider
 changes, public-sync, and broad product-readiness claims remain out of scope.
+
+## Post-AIF Next Value Roadmap — 2026-05-24 / Closed 2026-05-24
+
+Closed roadmap:
+
+- `docs/roadmaps/CVF_POST_AIF_NEXT_VALUE_ROADMAP_2026-05-24.md`
+
+| Tranche | Name | Status |
+| --- | --- | --- |
+| N4 | Skill Corpus Test Repair | `CLOSED_PASS` — `docs/reviews/CVF_N4_SKILL_CORPUS_TEST_REPAIR_COMPLETION_2026-05-24.md` |
+| N5 | Public Catalog AIF Update | `CLOSED_PASS` — `docs/reviews/CVF_N5_CATALOG_AIF_UPDATE_COMPLETION_2026-05-24.md` |
+| N6 | AIF graph_search Activation | `CLOSED_PASS` — `docs/reviews/CVF_N6_AIF_GRAPH_SEARCH_ACTIVATION_COMPLETION_2026-05-24.md` |
+| PBR-04 | Graph SQLite Persist | `CLOSED_PASS` — `docs/reviews/CVF_PBR04_GRAPH_SQLITE_PERSIST_COMPLETION_2026-05-24.md` |
+| N7 | Third Provider Expansion | `CLOSED_PASS` — `docs/reviews/CVF_N7_THIRD_PROVIDER_EXPANSION_COMPLETION_2026-05-24.md` |
+
+Evidence:
+
+- N4 targeted skill corpus test: 4/4 PASS.
+- N6/PBR-04 LPF full suite: 59 files / 1555 tests PASS.
+- N7 Model Gateway full suite: 20 files / 82 tests PASS.
+- `cvf-web` full suite: 221 files / 2753 passed / 2 skipped.
+- Mandatory release gate `python scripts/run_cvf_release_gate_bundle.py --json`: PASS.
+- N7 live OpenAI proof receipt: `rcpt-env-mpisddug-zq11zg`, trace
+  `env-mpisddug-zq11zg`, provider `openai`, model `gpt-4o`,
+  `evidenceMode=live`, `ALLOW`, `rawSecretPrinted=false`.
+
+Boundary: graph output remains advisory evidence, not authority. PBR-04 adds
+only optional SQLite persistence for the graph symbol index. No live memory
+reinjection, non-graph durable memory, graph scoring/productization, public-sync,
+broad OpenAI/provider stability, hosted readiness, production readiness, or
+freeze release is claimed.
 
 ## Provider Proof Prerequisite References
 
@@ -231,12 +262,12 @@ Before material governed work, an agent should be able to state:
 
 ## Next Allowed Move
 
-AIF roadmap is `CLOSED_PASS` for bounded AIF-A/AIF-C/AIF-B foundations. Use
+Post-AIF next-value roadmap is `CLOSED_PASS` for N4/N5/N6/PBR-04/N7. Use
 `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md` before scoping
 memory, graph, provider, public-sync, pain-point, or legacy-adjacent work.
-Future durable memory, live memory reinjection, graph storage/scoring,
-`graph_search` activation, provider changes, or public product claims require a
-fresh GC-018/work order.
+Future live memory reinjection, non-graph durable memory, graph scoring or
+authority, provider broad-stability claims, public-sync, or public product
+claims require a fresh GC-018/work order.
 
 D10 Qwen3 R1-compatible hosted proof: CLOSED PASS at
 `docs/reviews/CVF_D10_QWEN3_R1_COMPATIBLE_HOSTED_PROOF_COMPLETION_2026-05-23.md`.

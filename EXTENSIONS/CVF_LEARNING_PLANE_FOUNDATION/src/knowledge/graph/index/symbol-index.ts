@@ -18,6 +18,16 @@ export interface SymbolIndex {
   getDependents(nodeId: string): readonly GraphEdge[];
 }
 
+export interface SymbolIndexPersistenceStore {
+  save(index: SymbolIndex, dbPath: string): void;
+  load(dbPath: string): SymbolIndex | null;
+}
+
+export interface InMemoryGraphKnowledgeServiceOptions {
+  persistenceStore?: SymbolIndexPersistenceStore;
+  dbPath?: string;
+}
+
 function groupBy<T>(items: readonly T[], selector: (item: T) => string): ReadonlyMap<string, readonly T[]> {
   const grouped = new Map<string, T[]>();
   for (const item of items) {
@@ -27,15 +37,7 @@ function groupBy<T>(items: readonly T[], selector: (item: T) => string): Readonl
   return grouped;
 }
 
-export function buildSymbolIndexFromSources(
-  files: readonly GraphSourceFile[],
-): SymbolIndex {
-  const parsed = files.map((file) => parseFileToAST(file.filePath, file.source));
-  const graph = createDependencyGraph(
-    parsed.flatMap((ast) => ast.symbols),
-    parsed.flatMap((ast) => ast.dependencies),
-  );
-
+export function buildSymbolIndexFromGraph(graph: DependencyGraph): SymbolIndex {
   return {
     graph,
     byName: groupBy(graph.nodes, (node) => node.name),
@@ -47,6 +49,18 @@ export function buildSymbolIndexFromSources(
       return graph.edges.filter((edge) => edge.to === nodeId);
     },
   };
+}
+
+export function buildSymbolIndexFromSources(
+  files: readonly GraphSourceFile[],
+): SymbolIndex {
+  const parsed = files.map((file) => parseFileToAST(file.filePath, file.source));
+  const graph = createDependencyGraph(
+    parsed.flatMap((ast) => ast.symbols),
+    parsed.flatMap((ast) => ast.dependencies),
+  );
+
+  return buildSymbolIndexFromGraph(graph);
 }
 
 export function buildSymbolIndex(filePaths: readonly string[]): SymbolIndex {
@@ -62,8 +76,16 @@ export function lookupSymbol(index: SymbolIndex, name: string): readonly GraphNo
 
 export function createInMemoryGraphKnowledgeService(
   initialSources: readonly GraphSourceFile[] = [],
+  options: InMemoryGraphKnowledgeServiceOptions = {},
 ): GraphKnowledgeService & { index: SymbolIndex } {
-  let currentIndex = buildSymbolIndexFromSources(initialSources);
+  const { persistenceStore, dbPath } = options;
+  let currentIndex = persistenceStore && dbPath
+    ? persistenceStore.load(dbPath) ?? buildSymbolIndexFromSources(initialSources)
+    : buildSymbolIndexFromSources(initialSources);
+
+  if (persistenceStore && dbPath && initialSources.length > 0 && currentIndex.graph.nodes.length > 0) {
+    persistenceStore.save(currentIndex, dbPath);
+  }
 
   return {
     get index(): SymbolIndex {
@@ -71,6 +93,9 @@ export function createInMemoryGraphKnowledgeService(
     },
     async buildIndex(files: readonly string[]): Promise<SymbolIndex> {
       currentIndex = buildSymbolIndex(files);
+      if (persistenceStore && dbPath) {
+        persistenceStore.save(currentIndex, dbPath);
+      }
       return currentIndex;
     },
     queryImpact(input: {

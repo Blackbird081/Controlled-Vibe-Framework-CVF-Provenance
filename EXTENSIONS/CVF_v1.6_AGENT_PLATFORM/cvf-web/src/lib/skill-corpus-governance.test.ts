@@ -8,7 +8,7 @@ import path from 'node:path';
 const { loadSkillCorpusGovernance } = require('../../scripts/skill-corpus-governance');
 
 function loadSkillIndex() {
-  const raw = readFileSync(path.resolve(process.cwd(), 'public/data/skills-index.json'), 'utf8');
+  const raw = readFileSync(path.resolve(__dirname, '../../public/data/skills-index.json'), 'utf8');
   return JSON.parse(raw) as {
     archiveCategories?: unknown;
     categories: Array<{

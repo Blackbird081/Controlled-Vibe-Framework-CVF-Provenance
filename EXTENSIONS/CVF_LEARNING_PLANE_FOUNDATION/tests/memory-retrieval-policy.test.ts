@@ -4,6 +4,7 @@ import {
   MEMORY_RETRIEVAL_POLICY_VERSION,
   type MemoryRetrievalCandidate,
 } from "../src/memory-retrieval-policy";
+import { createInMemoryGraphKnowledgeService } from "../src/knowledge/graph/index/symbol-index";
 
 const candidates: MemoryRetrievalCandidate[] = [
   {
@@ -33,7 +34,7 @@ const candidates: MemoryRetrievalCandidate[] = [
   },
 ];
 
-describe("memory retrieval policy phase 2a", () => {
+describe("memory retrieval policy phase 2b", () => {
   it("filters by scope, privacy, and query before returning summaries", () => {
     const result = evaluateRetrievalRequest({
       method: "keyword",
@@ -70,7 +71,7 @@ describe("memory retrieval policy phase 2a", () => {
     });
   });
 
-  it("keeps graph search deferred in phase 2a", () => {
+  it("keeps graph search deferred until a graph service is injected", () => {
     expect(evaluateRetrievalRequest({
       method: "graph_search",
       query: "routing",
@@ -79,8 +80,45 @@ describe("memory retrieval policy phase 2a", () => {
       candidates,
     })).toMatchObject({
       status: "deferred",
-      reason: "graph_search_deferred_until_aif_b_integration",
+      reason: "graph_search_requires_injected_graph_knowledge_service",
       selected: [],
     });
+  });
+
+  it("uses injected graph knowledge service for advisory graph_search results", () => {
+    const graphKnowledgeService = createInMemoryGraphKnowledgeService([
+      {
+        filePath: "src/provider-router.ts",
+        source: "export function routeWebProvider() { return true; }",
+      },
+    ]);
+
+    const result = evaluateRetrievalRequest({
+      method: "graph_search",
+      query: "routeWebProvider",
+      scope: "project-a",
+      actorAuthorized: true,
+      candidates,
+      maxResults: 1,
+    }, { graphKnowledgeService });
+
+    expect(result).toMatchObject({
+      contractVersion: MEMORY_RETRIEVAL_POLICY_VERSION,
+      status: "allowed",
+      reason: "graph_search_policy_applied_advisory_only",
+      rawMemoryReleased: false,
+    });
+    expect(result.selected).toHaveLength(1);
+    expect(result.selected[0]).toMatchObject({
+      id: expect.stringContaining("graph:function:"),
+      scope: "project-a",
+      summary: expect.stringContaining("routeWebProvider"),
+      lifecycleState: "semantic",
+    });
+    expect(result.selected[0].content).toContain("advisory evidence only");
+    expect(result.excluded).toEqual([
+      { id: "mem-2", reason: "out_of_scope" },
+      { id: "mem-3", reason: "privacy_filtered" },
+    ]);
   });
 });

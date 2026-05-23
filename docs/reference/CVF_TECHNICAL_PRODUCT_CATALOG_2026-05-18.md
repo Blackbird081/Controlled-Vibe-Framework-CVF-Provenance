@@ -119,12 +119,13 @@ INTAKE -> DESIGN -> BUILD -> REVIEW -> FREEZE
 | Workflow capability packs | runtime-bound for certified product outcomes | `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/product-outcome.runtime.ts`; `governance/registries/cvf-certified-skill-pack-registry.json`; `cvf skill list --certified`; `cvf skill plan <pack-or-outcome>`; `cvf run <certified-pack>` resolves to existing execute templates with product outcome metadata |
 | External asset/capability governance | partially productized | `docs/reference/CVF_PUBLIC_STRUCTURE_OVERVIEW.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/external-asset-governance.ts` |
 | Role and agent governance | partially absorbed | role vocabulary and handoff governance exist; full enforceable role permission runtime is still roadmap work |
-| Memory and continuity | partially runtime-wired | knowledge store, audit, session continuity, handoff rules, and execute-route audit memory receipt exist; governed reinjection across all worker paths is not complete |
+| Memory and continuity | partially runtime-wired; Memory Gateway Phase 2a proven in-memory | knowledge store, audit, session continuity, handoff rules, execute-route audit memory receipt, and local lifecycle/retrieval/context-packager policy exist; `docs/reviews/CVF_AIF_C_MEMORY_GATEWAY_PHASE2_COMPLETION_2026-05-24.md`; durable memory and live reinjection are not claimed |
 | Provider method breadth | demand-gated | current slices use existing provider calls; streaming/tool-call/vision/embedding/reasoning methods need named consumer slices |
 | Operational observability | partially absorbed | `docs/CVF_INCREMENTAL_TEST_LOG.md`; `docs/reviews/archive/CVF_W130_EVIDENCE_PACK_EXPORT_EVIDENCE_2026-04-28.md` |
 | Tool/MCP/database action governance | roadmap | tool registry and guards exist; full canonical action taxonomy is still future work |
 | Async workers/subagents | roadmap | sandbox and worker concepts exist; canonical async work-ticket and delegation lifecycle remain future work |
-| Graph/code-intelligence context | roadmap | valuable legacy pattern; no full graph context resolver is claimed yet |
+| Graph/code-intelligence context (Phase 1) | proven - Phase 1 in-memory AST foundation | local schema, AST parser, symbol index, task-query mapper, and advisory `GraphKnowledgeService` exist; `docs/reviews/CVF_AIF_B_GRAPH_KNOWLEDGE_PHASE1_COMPLETION_2026-05-24.md`; durable graph storage, scoring, and live authority are not claimed |
+| Operational Reference Index | proven - agent discoverability lookup table deployed | active routing reference for memory, graph, provider, public-sync, pain-point, and legacy-adjacent work; `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`; `docs/reviews/CVF_AIF_A_OPERATIONAL_REFERENCE_INDEX_COMPLETION_2026-05-24.md` |
 
 ## B/C Closure Note For Agents
 
@@ -345,3 +346,5 @@ Public repository target:
 
 This catalog is deliberately conservative. It is useful for customer
 evaluation because it separates proven product behavior from roadmap ambition.
+
+Update note 2026-05-24: AIF A/B/C catalog rows were bounded to proven in-memory foundations and the operational index; public-sync remains deferred.

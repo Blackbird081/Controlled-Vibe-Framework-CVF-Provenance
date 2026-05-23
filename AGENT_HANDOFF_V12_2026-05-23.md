@@ -218,25 +218,67 @@ Work order: `docs/work_orders/CVF_WO_AIF_B_GRAPH_KNOWLEDGE_PHASE1_2026-05-23.md`
 
 ---
 
+## Post-AIF Next Value Closure - 2026-05-24
+
+Codex closed the operator-authorized post-AIF roadmap:
+
+`docs/roadmaps/CVF_POST_AIF_NEXT_VALUE_ROADMAP_2026-05-24.md`
+
+Closed reviews:
+
+- N4: `docs/reviews/CVF_N4_SKILL_CORPUS_TEST_REPAIR_COMPLETION_2026-05-24.md`
+- N5: `docs/reviews/CVF_N5_CATALOG_AIF_UPDATE_COMPLETION_2026-05-24.md`
+- N6: `docs/reviews/CVF_N6_AIF_GRAPH_SEARCH_ACTIVATION_COMPLETION_2026-05-24.md`
+- PBR-04: `docs/reviews/CVF_PBR04_GRAPH_SQLITE_PERSIST_COMPLETION_2026-05-24.md`
+- N7: `docs/reviews/CVF_N7_THIRD_PROVIDER_EXPANSION_COMPLETION_2026-05-24.md`
+
+Delivered:
+
+- skill corpus test path repair;
+- catalog AIF row updates;
+- in-memory advisory `graph_search` activation through injected
+  `GraphKnowledgeService`;
+- optional `GraphSQLiteStore` persistence for the graph symbol index;
+- OpenAI `gpt-4o` Model Gateway capability registry entry and governed live
+  receipt proof.
+
+Verification:
+
+- LPF full suite PASS: 59 files / 1555 tests.
+- Model Gateway full suite PASS: 20 files / 82 tests.
+- `cvf-web` full suite PASS: 221 files / 2753 passed / 2 skipped.
+- Mandatory release gate PASS:
+  `python scripts/run_cvf_release_gate_bundle.py --json`.
+- N7 receipt: `rcpt-env-mpisddug-zq11zg`, trace
+  `env-mpisddug-zq11zg`, provider `openai`, model `gpt-4o`,
+  `evidenceMode=live`, `ALLOW`, `rawSecretPrinted=false`.
+
+Boundary: no graph authority/scoring, live memory reinjection, non-graph durable
+memory, broad OpenAI/provider stability, public-sync, hosted readiness,
+production readiness, or freeze release.
+
 ## Next Allowed Move
 
-AIF roadmap is closed pass for the bounded AIF-A/AIF-C/AIF-B foundation scope.
+Post-AIF next-value roadmap is closed pass for the bounded
+N4/N5/N6/PBR-04/N7 scope.
 Future agents must use `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`
 before scoping memory, graph, provider, public-sync, pain-point, or
 legacy-adjacent work.
 
 Do not widen into repeated hosted proof, public npm release, provider tuning,
-durable persistence/database, live memory reinjection, graph scoring/product
-claims, Maika proof, public-sync, or freeze release without fresh
-GC-018/work-order authorization.
+non-graph durable persistence/database, live memory reinjection, graph
+scoring/product claims, Maika proof, public-sync, or freeze release without
+fresh GC-018/work-order authorization.
 
 Still forbidden:
 
 - hosted SaaS readiness claim;
 - public deployment readiness claim;
-- broad provider stability claim;
+- broad provider stability claim, including broad OpenAI stability beyond the
+  single N7 `gpt-4o` receipt;
 - Maika child-data/photo/vision proof;
-- persistence/database implementation;
+- persistence/database implementation beyond PBR-04 optional graph symbol-index
+  SQLite persistence;
 - kernel-owner replacement;
 - one-surface freeze release;
 - global freeze lift.
@@ -268,19 +310,16 @@ For older continuity before V12, read:
 - `f9e2f82d` — feat(aif): close agent intelligence foundations (2026-05-24)
 - `2a2460da` — docs(aif): launch AIF roadmap and dispatch work orders A/B/C (2026-05-23)
 
-Post-AIF next-value roadmap dispatched 2026-05-24:
+Post-AIF next-value roadmap closed 2026-05-24:
 `docs/roadmaps/CVF_POST_AIF_NEXT_VALUE_ROADMAP_2026-05-24.md`
 
-N4 (skill corpus test repair) and N5 (catalog AIF update) are WORK_ORDER_READY.
-N6 (graph_search activation) is WORK_ORDER_READY; PBR-04 (SQLite persist) is AUTO_AUTHORIZED after N6.
-N7 (OpenAI / gpt-4o / R2) is WORK_ORDER_READY.
+N4, N5, N6, PBR-04, and N7 are `CLOSED_PASS`.
 
 ---
 
 ## Claim Boundary
 
-V12 carries no new product claim. It records the AIF roadmap and work order
-launch context. AIF A/B/C are all CLOSED_PASS. Post-AIF N4/N5 are Fast Lane
-ready; N6/N7 are demand-gated. Legacy spec absorption blindspot is documented
+V12 now records the AIF and post-AIF next-value closures. AIF A/B/C are all
+`CLOSED_PASS`; Post-AIF N4/N5/N6/PBR-04/N7 are all `CLOSED_PASS`. Legacy spec absorption blindspot is documented
 and corrective systemic actions are in place. All prior D10, P3, P2/HN1,
 G1/D2/E2/H2/F2/A2, and T1–T5 claim boundaries remain unchanged.

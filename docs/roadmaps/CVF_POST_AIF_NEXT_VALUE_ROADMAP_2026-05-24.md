@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: ACTIVE_ROADMAP_AUTHORIZED_FOR_DISPATCH
+Status: CLOSED_PASS
 
 docType: roadmap
 
@@ -81,17 +81,19 @@ This roadmap does not authorize:
 - Production / hosted readiness
 - Memory reinjection on live `/api/execute` route
 - Broader provider stability beyond the specific nominated provider
-- Database or persistence layer
+- Database or persistence layer beyond the PBR-04 optional graph symbol-index
+  SQLite adapter
 
 ---
 
 ## Work Plan
 
 ```text
-N4  ──── Fast Lane; begin immediately (skill corpus test fix)
-N5  ──── Fast Lane; begin immediately (catalog update)
-N6  ──── Demand-gated; requires operator to name nominated provider for graph_search; AIF-B interface already exported
-N7  ──── Demand-gated; requires operator to name the third provider before GC-018
+N4      ──── CLOSED_PASS (skill corpus test fix)
+N5      ──── CLOSED_PASS (catalog update)
+N6      ──── CLOSED_PASS (advisory graph_search activation)
+PBR-04  ──── CLOSED_PASS (optional graph SQLite symbol-index persistence)
+N7      ──── CLOSED_PASS (OpenAI gpt-4o bounded live proof)
 ```
 
 N4 and N5 are independent and can run in parallel.
@@ -102,19 +104,19 @@ N7 is independent of N4/N5/N6.
 
 ## Acceptance Criteria
 
-- [ ] N4: `skill-corpus-governance.test.ts` 4/4 PASS; `cvf-web` full test suite
+- [x] N4: `skill-corpus-governance.test.ts` 4/4 PASS; `cvf-web` full test suite
       regression-clean
-- [ ] N4: Progress Tracker updated to `CLOSED_PASS`; completion review filed
-- [ ] N5: Catalog rows for graph, memory gateway, operational index updated to
+- [x] N4: Progress Tracker updated to `CLOSED_PASS`; completion review filed
+- [x] N5: Catalog rows for graph, memory gateway, operational index updated to
       `proven (Phase 1 in-memory)` with correct evidence paths
-- [ ] N5: Progress Tracker updated to `CLOSED_PASS`; completion review filed
-- [ ] N6: Operator confirms `graph_search` activation scope; GC-018 filed and
+- [x] N5: Progress Tracker updated to `CLOSED_PASS`; completion review filed
+- [x] N6: Operator confirms `graph_search` activation scope; GC-018 filed and
       accepted; `memory-retrieval-policy.ts` `graph_search` branch active;
       LPF test suite PASS; TypeScript check PASS
-- [ ] N6: Progress Tracker updated to `CLOSED_PASS`; completion review filed
-- [ ] N7: Operator names third provider; GC-018 filed and accepted; provider
+- [x] N6: Progress Tracker updated to `CLOSED_PASS`; completion review filed
+- [x] N7: Operator names third provider; GC-018 filed and accepted; provider
       capability registry updated; targeted tests PASS
-- [ ] N7: Progress Tracker updated to `CLOSED_PASS`; completion review filed
+- [x] N7: Progress Tracker updated to `CLOSED_PASS`; completion review filed
 
 ---
 
@@ -135,22 +137,22 @@ After each tranche closes, the implementer must produce:
 
 | Tranche | Name | Status | Completion review | Notes |
 | --- | --- | --- | --- | --- |
-| N4 | Skill Corpus Test Repair | `WORK_ORDER_READY` | — | Fast Lane; `process.cwd()` fix in vitest |
-| N5 | Public Catalog AIF Update | `WORK_ORDER_READY` | — | Fast Lane; doc-only row updates |
-| N6 | AIF Phase 2 graph_search Activation | `WORK_ORDER_READY` | — | Operator authorized 2026-05-24; in-memory-only; AIF-B interface ready |
-| N7 | Third Provider Expansion | `WORK_ORDER_READY` | — | Operator authorized 2026-05-24: OpenAI / gpt-4o / R2 / OPENAI_API_KEY |
-| PBR-04 | Graph SQLite Persist | `AUTO_AUTHORIZED_AFTER_N6` | — | Auto-starts after N6 CLOSED_PASS; no SQLite until N6 proves interface stable |
+| N4 | Skill Corpus Test Repair | `CLOSED_PASS` | `docs/reviews/CVF_N4_SKILL_CORPUS_TEST_REPAIR_COMPLETION_2026-05-24.md` | Path fix complete; targeted 4/4 and full cvf-web regression pass |
+| N5 | Public Catalog AIF Update | `CLOSED_PASS` | `docs/reviews/CVF_N5_CATALOG_AIF_UPDATE_COMPLETION_2026-05-24.md` | Catalog bounded to AIF in-memory proof; public-sync deferred |
+| N6 | AIF Phase 2 graph_search Activation | `CLOSED_PASS` | `docs/reviews/CVF_N6_AIF_GRAPH_SEARCH_ACTIVATION_COMPLETION_2026-05-24.md` | In-memory advisory `graph_search` active via injected `GraphKnowledgeService` |
+| N7 | Third Provider Expansion | `CLOSED_PASS` | `docs/reviews/CVF_N7_THIRD_PROVIDER_EXPANSION_COMPLETION_2026-05-24.md` | OpenAI / gpt-4o / R2 live receipt `rcpt-env-mpisddug-zq11zg` |
+| PBR-04 | Graph SQLite Persist | `CLOSED_PASS` | `docs/reviews/CVF_PBR04_GRAPH_SQLITE_PERSIST_COMPLETION_2026-05-24.md` | Optional SQLite symbol-index persistence complete; interface unchanged |
 
 ---
 
 ## Execution Order
 
 ```text
-N4  ──── WORK_ORDER_READY (start immediately)
-N5  ──── WORK_ORDER_READY (start immediately, parallel with N4)
-N6      ──── WORK_ORDER_READY (operator authorized 2026-05-24)
-PBR-04  ──── AUTO_AUTHORIZED after N6 CLOSED_PASS (no operator re-confirmation needed)
-N7      ──── WORK_ORDER_READY (operator authorized 2026-05-24: OpenAI/gpt-4o/R2)
+N4      ──── CLOSED_PASS
+N5      ──── CLOSED_PASS
+N6      ──── CLOSED_PASS
+PBR-04  ──── CLOSED_PASS
+N7      ──── CLOSED_PASS
 ```
 
 ---
@@ -209,6 +211,15 @@ This roadmap authorizes N4 and N5 immediately under Fast Lane. N6 and N7 are
 confirms the required scope decisions and fresh GC-018 packets are filed and
 accepted for each.
 
-This roadmap does not authorize: durable graph storage, cross-session memory,
-live reinjection, kernel-owner replacement, global freeze lift, public-sync
-update, or production readiness claim.
+This roadmap does not authorize: durable graph storage beyond the PBR-04
+optional symbol-index SQLite adapter, cross-session memory, live reinjection,
+kernel-owner replacement, global freeze lift, public-sync update, or production
+readiness claim.
+
+## Closure Note - 2026-05-24
+
+N4, N5, N6, N7, and the N6-triggered PBR-04 persistence tranche are closed pass.
+The durable graph storage boundary is lifted only for the optional symbol-index
+SQLite adapter delivered by PBR-04; cross-session memory, live reinjection,
+public-sync, production readiness, hosted readiness, and freeze release remain
+out of scope.

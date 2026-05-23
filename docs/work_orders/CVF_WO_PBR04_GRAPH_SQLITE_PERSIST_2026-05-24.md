@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: AUTO_AUTHORIZED_AFTER_N6
+Status: CLOSED_PASS
 
 docType: work_order
 
