@@ -72,6 +72,27 @@ Template:
 - Notes/Risks:
 ```
 
+## [2026-05-24] Batch: Post-AIF Operationalization And Release Gate Selector Hardening
+- Change reference:
+  - Working tree for `docs/roadmaps/CVF_POST_AIF_OPERATIONALIZATION_ROADMAP_2026-05-24.md`.
+- Impacted scope:
+  - `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION` AIF operational context preview.
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/admin-rbac.spec.ts`.
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/noncoder-governance-live.spec.ts`.
+- Tests executed:
+  - `npm test -- --run tests/aif-operational-context-preview.test.ts tests/memory-retrieval-policy.test.ts tests/memory-context-packager.test.ts` -> PASS.
+  - `npm run check` in `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION` -> PASS.
+  - `npx vitest run --config vitest.config.ts --pool=forks --maxWorkers=1 --minWorkers=1` in `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION` -> PASS, 60 files / 1559 tests.
+  - `python scripts/run_cvf_release_gate_bundle.py --e2e --json` -> PASS.
+  - `python scripts/run_cvf_release_gate_bundle.py --e2e-live --json` -> PASS.
+  - `python scripts/run_cvf_release_gate_bundle.py --json` -> PASS.
+- Skip scope:
+  - Full `cvf-web` unit suite: skipped because runtime web code was unchanged; release-gate build and Playwright mock/live suites covered the touched E2E selectors.
+  - Model Gateway full suite: skipped because provider registry/runtime files were unchanged.
+- Notes/Risks:
+  - Default parallel LPF Vitest exited non-zero without visible failing tests; single-worker forked full run passed and is the recorded full LPF proof.
+  - Initial full release gate exposed stale Playwright selectors; O4 hardening updated tests only and preserved live governance assertions.
+
 ## [2026-05-23] Batch: D3 Qwen3 Provider Expansion Blocker
 - Change reference:
   - D3 working tree after `d6989c15` authorization.

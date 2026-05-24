@@ -41,6 +41,16 @@ export type {
   MemoryContextPackageInput,
 } from "./memory-context-packager";
 export {
+  AIF_OPERATIONAL_CONTEXT_PREVIEW_VERSION,
+  buildAifOperationalContextPreview,
+} from "./aif-operational-context-preview";
+export type {
+  AifOperationalContextPreview,
+  AifOperationalContextPreviewInput,
+  AifOperationalContextPreviewOptions,
+  AifOperationalContextPreviewStatus,
+} from "./aif-operational-context-preview";
+export {
   GRAPH_KNOWLEDGE_SCHEMA_VERSION,
   createDependencyGraph,
   createGraphEdge,

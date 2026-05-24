@@ -257,18 +257,62 @@ Boundary: no graph authority/scoring, live memory reinjection, non-graph durable
 memory, broad OpenAI/provider stability, public-sync, hosted readiness,
 production readiness, or freeze release.
 
+## Post-AIF Operationalization Closure - 2026-05-24
+
+Codex closed the operator-authorized Post-AIF operationalization roadmap:
+
+`docs/roadmaps/CVF_POST_AIF_OPERATIONALIZATION_ROADMAP_2026-05-24.md`
+
+Closed reviews:
+
+- O1: `docs/reviews/CVF_O1_AIF_OPERATIONAL_CONTEXT_PREVIEW_COMPLETION_2026-05-24.md`
+- O2: `docs/reviews/CVF_O2_OPERATIONAL_READINESS_MATRIX_COMPLETION_2026-05-24.md`
+- O3: `docs/reviews/CVF_O3_POST_AIF_CLAIM_BOUNDARY_COMPLETION_2026-05-24.md`
+- O4: `docs/reviews/CVF_O4_RELEASE_GATE_E2E_SELECTOR_HARDENING_COMPLETION_2026-05-24.md`
+
+Delivered:
+
+- LPF `buildAifOperationalContextPreview()` in
+  `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/aif-operational-context-preview.ts`;
+- summary-only composition of memory retrieval, advisory graph search, and
+  memory context packaging;
+- Post-AIF readiness matrix at
+  `docs/reference/CVF_POST_AIF_OPERATIONAL_READINESS_MATRIX_2026-05-24.md`;
+- Post-AIF claim-boundary packet at
+  `docs/reviews/CVF_POST_AIF_CLAIM_BOUNDARY_PACKET_2026-05-24.md`;
+- release-gate Playwright selector hardening for current semantic UI.
+
+Verification:
+
+- LPF targeted preview/retrieval/packager tests PASS: 3 files / 10 tests.
+- LPF full suite PASS: 60 files / 1559 tests.
+- LPF TypeScript check PASS.
+- Mandatory release gate PASS:
+  `python scripts/run_cvf_release_gate_bundle.py --json`.
+- Targeted release-gate E2E modes PASS:
+  `python scripts/run_cvf_release_gate_bundle.py --e2e --json` and
+  `python scripts/run_cvf_release_gate_bundle.py --e2e-live --json`.
+
+Boundary: O1 is local summary-only operational preview only. It explicitly
+keeps `rawMemoryReleased=false`, `liveRouteInjected=false`,
+`canReinject=false`, and `graphAdvisoryOnly=true`. No live memory reinjection,
+graph authority, provider broad stability, public-sync, hosted readiness,
+production readiness, or freeze release is claimed.
+
 ## Next Allowed Move
 
-Post-AIF next-value roadmap is closed pass for the bounded
-N4/N5/N6/PBR-04/N7 scope.
-Future agents must use `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`
+Post-AIF operationalization roadmap is closed pass for the bounded O1/O2/O3/O4
+scope. Future agents must use
+`docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md` and
+`docs/reference/CVF_POST_AIF_OPERATIONAL_READINESS_MATRIX_2026-05-24.md`
 before scoping memory, graph, provider, public-sync, pain-point, or
 legacy-adjacent work.
 
 Do not widen into repeated hosted proof, public npm release, provider tuning,
-non-graph durable persistence/database, live memory reinjection, graph
-scoring/product claims, Maika proof, public-sync, or freeze release without
-fresh GC-018/work-order authorization.
+provider repeatability/stability claims, non-graph durable persistence/database,
+live memory reinjection, graph scoring/product claims, Maika proof, public-sync,
+hosted readiness, production readiness, or freeze release without fresh
+GC-018/work-order authorization.
 
 Still forbidden:
 
@@ -304,6 +348,7 @@ For older continuity before V12, read:
 
 ## Latest HEADs
 
+- `617660a1` — feat(post-aif): close next-value roadmap (2026-05-24)
 - `26174a60` — docs(n6+pbr04): authorize N6 graph_search + dispatch PBR-04 SQLite persist (2026-05-24)
 - `eb98d70a` — docs(post-aif): dispatch N4/N5/N6/N7 work orders and next-value roadmap (2026-05-24)
 - `cc6836bf` — chore(archive): active archive hygiene + guard authoring fix (2026-05-24)
@@ -315,11 +360,17 @@ Post-AIF next-value roadmap closed 2026-05-24:
 
 N4, N5, N6, PBR-04, and N7 are `CLOSED_PASS`.
 
+Post-AIF operationalization roadmap closed 2026-05-24:
+`docs/roadmaps/CVF_POST_AIF_OPERATIONALIZATION_ROADMAP_2026-05-24.md`
+
+O1, O2, O3, and O4 are `CLOSED_PASS`.
+
 ---
 
 ## Claim Boundary
 
-V12 now records the AIF and post-AIF next-value closures. AIF A/B/C are all
-`CLOSED_PASS`; Post-AIF N4/N5/N6/PBR-04/N7 are all `CLOSED_PASS`. Legacy spec absorption blindspot is documented
-and corrective systemic actions are in place. All prior D10, P3, P2/HN1,
-G1/D2/E2/H2/F2/A2, and T1–T5 claim boundaries remain unchanged.
+V12 now records the AIF, post-AIF next-value, and post-AIF operationalization
+closures. AIF A/B/C are all `CLOSED_PASS`; Post-AIF N4/N5/N6/PBR-04/N7 are all
+`CLOSED_PASS`; O1/O2/O3/O4 are all `CLOSED_PASS`. Legacy spec absorption blindspot
+is documented and corrective systemic actions are in place. All prior D10, P3,
+P2/HN1, G1/D2/E2/H2/F2/A2, and T1-T5 claim boundaries remain unchanged.

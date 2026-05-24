@@ -73,8 +73,8 @@ current.
 
 ## Current Session Mode
 
-- Current mode: `post_aif_next_value_closed_pass`
-- Previous mode: `aif_foundations_closed_pass`
+- Current mode: `post_aif_operationalization_closed_pass`
+- Previous mode: `post_aif_next_value_closed_pass`
 - Freeze posture: `governance_kernel_freeze_recommended`
 - Active handoff pointer: `AGENT_HANDOFF_V12_2026-05-23.md`
 - Historical handoff archive: `CVF_SESSION/handoffs/archive/`
@@ -103,7 +103,7 @@ D9 Qwen3 thinking enable-true adapter returned blocked at `docs/reviews/CVF_D9_Q
 
 D10 Qwen3 R1-compatible hosted proof is closed pass at `docs/reviews/CVF_D10_QWEN3_R1_COMPATIBLE_HOSTED_PROOF_COMPLETION_2026-05-23.md`: active mode marker `d10_qwen3_r1_compatible_hosted_proof_closed_pass`; focused providers test PASS `42/42`, `cvf-web` check PASS, local router preflight for Alibaba `R1` returned `ALLOW`, and the single hosted call returned HTTP `200`, `success=true`, `decision=ALLOW`, `routingDecision=ALLOW`, `enforcementStatus=ALLOW`, `evidenceMode=live`, provider `alibaba`, model `qwen3-235b-a22b-thinking-2507`, receipt `rcpt-env-mpigxtmn-pml5ky`, trace `env-mpigxtmn-pml5ky`, output length `4057`, `rawSecretPrinted=false`. Public repo contains the adapter fix at commit `811e59f6`.
 
-Current mode marker: `post_aif_next_value_closed_pass`.
+Current mode marker: `post_aif_operationalization_closed_pass`.
 
 ## Legacy Spec Absorption Blindspot Audit — 2026-05-23
 
@@ -185,6 +185,48 @@ reinjection, non-graph durable memory, graph scoring/productization, public-sync
 broad OpenAI/provider stability, hosted readiness, production readiness, or
 freeze release is claimed.
 
+## Post-AIF Operationalization Roadmap — 2026-05-24 / Closed 2026-05-24
+
+Closed roadmap:
+
+- `docs/roadmaps/CVF_POST_AIF_OPERATIONALIZATION_ROADMAP_2026-05-24.md`
+
+| Tranche | Name | Status |
+| --- | --- | --- |
+| O1 | AIF Operational Context Preview Harness | `CLOSED_PASS` — `docs/reviews/CVF_O1_AIF_OPERATIONAL_CONTEXT_PREVIEW_COMPLETION_2026-05-24.md` |
+| O2 | Operational Readiness Matrix | `CLOSED_PASS` — `docs/reviews/CVF_O2_OPERATIONAL_READINESS_MATRIX_COMPLETION_2026-05-24.md` |
+| O3 | Claim Boundary And Next Decision Packet | `CLOSED_PASS` — `docs/reviews/CVF_O3_POST_AIF_CLAIM_BOUNDARY_COMPLETION_2026-05-24.md` |
+| O4 | Release Gate E2E Selector Hardening | `CLOSED_PASS` — `docs/reviews/CVF_O4_RELEASE_GATE_E2E_SELECTOR_HARDENING_COMPLETION_2026-05-24.md` |
+
+Delivered:
+
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/aif-operational-context-preview.ts`
+  with `buildAifOperationalContextPreview()`;
+- summary-only context assembly over memory retrieval, advisory graph search,
+  and `packageMemoryContext()`;
+- Post-AIF readiness reference:
+  `docs/reference/CVF_POST_AIF_OPERATIONAL_READINESS_MATRIX_2026-05-24.md`;
+- claim-boundary packet:
+  `docs/reviews/CVF_POST_AIF_CLAIM_BOUNDARY_PACKET_2026-05-24.md`;
+- release-gate Playwright selector hardening for current semantic UI.
+
+Evidence:
+
+- LPF targeted preview/retrieval/packager tests: 3 files / 10 tests PASS.
+- LPF full suite: 60 files / 1559 tests PASS.
+- LPF TypeScript check: PASS.
+- Mandatory release gate `python scripts/run_cvf_release_gate_bundle.py --json`:
+  PASS.
+- Targeted release-gate E2E modes:
+  `python scripts/run_cvf_release_gate_bundle.py --e2e --json` PASS and
+  `python scripts/run_cvf_release_gate_bundle.py --e2e-live --json` PASS.
+
+Boundary: O1 is local summary-only operational preview. It explicitly returns
+`rawMemoryReleased=false`, `liveRouteInjected=false`, `canReinject=false`, and
+`graphAdvisoryOnly=true`. No live memory reinjection, graph authority, provider
+broad stability, public-sync, hosted readiness, production readiness, or freeze
+release is claimed.
+
 ## Provider Proof Prerequisite References
 
 Before authoring any work order that targets Alibaba DashScope Qwen3 models
@@ -262,12 +304,14 @@ Before material governed work, an agent should be able to state:
 
 ## Next Allowed Move
 
-Post-AIF next-value roadmap is `CLOSED_PASS` for N4/N5/N6/PBR-04/N7. Use
-`docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md` before scoping
-memory, graph, provider, public-sync, pain-point, or legacy-adjacent work.
-Future live memory reinjection, non-graph durable memory, graph scoring or
-authority, provider broad-stability claims, public-sync, or public product
-claims require a fresh GC-018/work order.
+Post-AIF operationalization roadmap is `CLOSED_PASS` for O1/O2/O3/O4. Use
+`docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md` and
+`docs/reference/CVF_POST_AIF_OPERATIONAL_READINESS_MATRIX_2026-05-24.md`
+before scoping memory, graph, provider, public-sync, pain-point, or
+legacy-adjacent work. Future live memory reinjection, non-graph durable memory,
+graph scoring or authority, provider repeatability/stability claims,
+public-sync, public product claims, hosted readiness, production readiness, or
+freeze release require a fresh GC-018/work order.
 
 D10 Qwen3 R1-compatible hosted proof: CLOSED PASS at
 `docs/reviews/CVF_D10_QWEN3_R1_COMPATIBLE_HOSTED_PROOF_COMPLETION_2026-05-23.md`.
