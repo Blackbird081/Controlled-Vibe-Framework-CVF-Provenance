@@ -38,7 +38,7 @@ Current HEAD before V12 transition:
 
 Current mode marker:
 
-`w4_operational_benchmark_scorecard_closed_pass_bounded`
+`w5_provider_method_fallback_normalization_authorized`
 
 ---
 
@@ -363,6 +363,30 @@ Boundary: local offline/evidence-ingest reporting only. No new live provider
 benchmark, provider adapter/router behavior, `/api/execute`, receipt envelope,
 output-quality scoring, runtime observability dashboard, public-sync, hosted
 readiness, production readiness, or freeze release.
+
+### 2026-05-24 - W5 Provider Method And Fallback Normalization Authorized
+
+Current HEAD before W5 authorization commit: `b0be08aa`.
+
+W5 authorization:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_W5_PROVIDER_METHOD_FALLBACK_NORMALIZATION_2026-05-24.md`
+- Work order:
+  `docs/work_orders/CVF_WO_W5_PROVIDER_METHOD_FALLBACK_NORMALIZATION_2026-05-24.md`
+
+Scope: local Model Gateway contract helper only. It should normalize method
+support, fallback/retry availability, provider failure class, and secret-safe
+user action before any adapter or repeated live run.
+
+Blind-spot control: CLEAR. Sources read include 10 `freellmapi` files, 7 `free
+Claude Code` files, and 23 `openrouter-cli.git` files or file-list entries.
+
+Forbidden for W5: live provider execution, OpenRouter runtime/command
+execution, new provider adapters, `/api/execute`, receipt-envelope fields,
+provider router behavior changes, proxy server, raw prompt/output logging,
+auth/RBAC, public-sync, hosted readiness, production readiness, or freeze
+release.
 
 Next ranked candidate: WC-3 Candidate 5 provider method and fallback
 normalization. It remains demand-gated; do not reopen broad provider soak

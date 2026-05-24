@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — WC-1/WC-2 CLOSED_PASS_BOUNDED; WC-3 CLOSED_MAPPING_ONLY; WC-4 CLOSED_CONTROL_ONLY; W1/W2/W3/W4 CLOSED_PASS_BOUNDED; W-series CONTINUES DEMAND_GATED
+Status: ACTIVE — WC-1/WC-2 CLOSED_PASS_BOUNDED; WC-3 CLOSED_MAPPING_ONLY; WC-4 CLOSED_CONTROL_ONLY; W1/W2/W3/W4 CLOSED_PASS_BOUNDED; W5 AUTHORIZED
 
 Date: 2026-05-24
 
@@ -353,6 +353,31 @@ Next ranked candidate:
 - Candidate 5 from WC-3: provider method and fallback normalization. It remains
   demand-gated. Do not reopen broad provider soak loops; tie any future work to
   a specific provider method, fallback, or diagnostic class.
+
+#### W5: Provider Method And Fallback Normalization
+
+**Gate:** AUTHORIZED.
+
+Authorization:
+
+- `docs/baselines/CVF_GC018_W5_PROVIDER_METHOD_FALLBACK_NORMALIZATION_2026-05-24.md`
+- `docs/work_orders/CVF_WO_W5_PROVIDER_METHOD_FALLBACK_NORMALIZATION_2026-05-24.md`
+
+Bounded target:
+
+- local Model Gateway contract helper only;
+- normalize provider/model/method support, fallback/retry posture, provider
+  failure class, and secret-safe user action before adapter or repeated live
+  execution;
+- reuse existing provider capability registry, fallback policy, and provider
+  output exit classification.
+
+Boundary:
+
+- no live provider execution, provider soak, new adapter, OpenRouter runtime or
+  command execution, `/api/execute`, receipt-envelope field, provider router
+  behavior, proxy server, raw prompt/output logging, auth/RBAC, public-sync,
+  hosted readiness, production readiness, or freeze release.
 
 ### WC-4: Knowledge Absorption Blind-Spot Standard
 

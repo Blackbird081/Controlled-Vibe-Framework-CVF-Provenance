@@ -6,15 +6,15 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-24
 
-Current mode marker: `w3_tool_mcp_database_action_taxonomy_closed_pass_bounded`
+Current mode marker: `w5_provider_method_fallback_normalization_authorized`
 Update 2026-05-24: WC roadmap is active at
 `docs/roadmaps/CVF_WC_WORKFLOW_CHAIN_AND_PAIN_POINT_ROADMAP_2026-05-24.md`;
 WC-1 and WC-2 are closed pass bounded; WC-3/WC-4 are closed; W1 workflow
 state-machine enforcement is closed pass bounded. W2 memory event hooks plus
 context packager hardening is closed pass bounded. W3 tool/MCP/database action
 taxonomy is closed pass bounded. W4 operational benchmark scorecard is closed
-pass bounded. Next ranked WC-3 candidate is Candidate 5 provider method and
-fallback normalization, demand-gated by fresh GC-018.
+pass bounded. W5 provider method and fallback normalization is authorized by
+fresh GC-018 and dispatched as a bounded Model Gateway contract-only tranche.
 
 R1/R2/R3 and V1/V2/V3 are closed pass bounded. All live runs must still follow
 `docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md`.
@@ -1049,3 +1049,28 @@ remains demand-gated and must start only from a concrete provider-method,
 fallback, or diagnostic-class need. Do not reopen broad provider soak loops.
 
 Marker: w4_operational_benchmark_scorecard_closed_pass_bounded.
+
+## W5 Provider Method And Fallback Normalization - Authorized 2026-05-24
+
+Current mode marker: `w5_provider_method_fallback_normalization_authorized`.
+
+W5 is authorized as WC-3 Candidate 5:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_W5_PROVIDER_METHOD_FALLBACK_NORMALIZATION_2026-05-24.md`
+- Work order:
+  `docs/work_orders/CVF_WO_W5_PROVIDER_METHOD_FALLBACK_NORMALIZATION_2026-05-24.md`
+
+Blind-spot control is CLEAR. Sources read include `freellmapi`, `free Claude
+Code`, and `openrouter-cli.git` detailed provider/fallback/error files.
+
+Bounded target: a local Model Gateway helper that normalizes provider method
+support, fallback/retry posture, provider exit/error class, and user action
+without making a provider call.
+
+Boundary: no live provider execution, new provider adapter, OpenRouter runtime,
+`/api/execute`, receipt-envelope fields, provider router behavior, proxy
+server, auth/RBAC, public-sync, hosted readiness, production readiness, or
+freeze release.
+
+Marker: w5_provider_method_fallback_normalization_authorized.
