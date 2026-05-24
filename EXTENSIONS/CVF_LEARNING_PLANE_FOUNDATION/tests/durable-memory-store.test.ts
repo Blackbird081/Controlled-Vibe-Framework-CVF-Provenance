@@ -1,4 +1,4 @@
-import { mkdtempSync, rmSync } from "node:fs";
+import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { tmpdir } from "node:os";
 import { afterEach, describe, expect, it } from "vitest";
@@ -108,6 +108,94 @@ describe("durable memory store m1", () => {
       memoryIds: ["long-term-1"],
       crossSession: true,
     });
+  });
+
+  it("handles corrupt file-backed JSON without throwing", () => {
+    tempDir = mkdtempSync(join(tmpdir(), "cvf-m1-memory-corrupt-"));
+    const filePath = join(tempDir, "durable-memory.json");
+    writeFileSync(filePath, "{not-json", "utf8");
+
+    const store = createFileBackedDurableMemoryStore(filePath);
+    const read = store.read({
+      tier: "skill",
+      scope: "project-a",
+      actorId: "reviewer-1",
+      actorRole: "REVIEWER",
+      actorAuthorized: true,
+    });
+
+    expect(store.list()).toEqual([]);
+    expect(read).toMatchObject({
+      records: [],
+      receipt: {
+        decision: "allowed",
+        reason: "durable_memory_read_authorized",
+        memoryIds: [],
+        crossSession: true,
+        canReinject: false,
+      },
+    });
+  });
+
+  it("filters malformed records from file-backed storage", () => {
+    tempDir = mkdtempSync(join(tmpdir(), "cvf-m1-memory-malformed-"));
+    const filePath = join(tempDir, "durable-memory.json");
+    writeFileSync(filePath, JSON.stringify([
+      { id: "bad-record", tier: "working", summary: "not durable" },
+      {
+        id: "skill-memory-valid",
+        tier: "skill",
+        scope: "project-a",
+        actorId: "builder-1",
+        summary: "Only valid durable records are listed.",
+        lifecycleState: "semantic",
+        provenanceScore: 0.91,
+        createdAt: 1770000000300,
+        updatedAt: 1770000000300,
+      },
+    ]), "utf8");
+
+    const store = createFileBackedDurableMemoryStore(filePath);
+
+    expect(store.list().map((record) => record.id)).toEqual(["skill-memory-valid"]);
+  });
+
+  it("emits unique receipt ids for repeated operations", () => {
+    const store = createInProcessDurableMemoryStore({ now: () => 1770000000200 });
+
+    const first = store.write({
+      id: "skill-memory-unique",
+      tier: "skill",
+      scope: "project-a",
+      actorId: "builder-1",
+      actorRole: "BUILDER",
+      summary: "Use a short planning memo.",
+      policyDecision: "allow",
+      actorAuthorized: true,
+    });
+    const second = store.read({
+      tier: "skill",
+      scope: "project-a",
+      actorId: "builder-1",
+      actorRole: "BUILDER",
+      actorAuthorized: true,
+    });
+    const third = store.read({
+      tier: "skill",
+      scope: "project-a",
+      actorId: "builder-1",
+      actorRole: "BUILDER",
+      actorAuthorized: true,
+    });
+
+    expect(first.receipt.receiptId).toMatch(/^m1-write-/);
+    expect(second.receipt.receiptId).toMatch(/^m1-read-/);
+    expect(third.receipt.receiptId).toMatch(/^m1-read-/);
+    expect(new Set([
+      first.receipt.receiptId,
+      second.receipt.receiptId,
+      third.receipt.receiptId,
+    ]).size).toBe(3);
   });
 
   it("filters secrets, blocked lifecycle states, low provenance, and raw payloads at write time", () => {

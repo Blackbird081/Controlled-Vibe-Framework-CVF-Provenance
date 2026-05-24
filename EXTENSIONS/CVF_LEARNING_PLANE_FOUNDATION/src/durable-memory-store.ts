@@ -1,4 +1,5 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { randomUUID } from "node:crypto";
 import { dirname } from "node:path";
 import { classifyMemoryTier, type MemoryTier } from "./memory-tier-classifier.contract";
 import {
@@ -93,6 +94,7 @@ export interface DurableMemoryStore {
 }
 
 const BLOCKED_LIFECYCLE_STATES = new Set(["expired", "disputed", "forgotten"]);
+const ALLOWED_LIFECYCLE_STATES = new Set(["semantic", "procedural"]);
 const MIN_PROVENANCE_SCORE = 0.7;
 
 export function createInProcessDurableMemoryStore(options: {
@@ -110,6 +112,26 @@ export function createFileBackedDurableMemoryStore(
 
 function isDurableTier(tier: MemoryTier): tier is DurableMemoryTier {
   return tier === "skill" || tier === "long-term";
+}
+
+function isDurableMemoryRecord(value: unknown): value is DurableMemoryRecord {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+  const record = value as Partial<DurableMemoryRecord>;
+  return typeof record.id === "string" &&
+    (record.tier === "skill" || record.tier === "long-term") &&
+    typeof record.scope === "string" &&
+    typeof record.actorId === "string" &&
+    typeof record.summary === "string" &&
+    typeof record.lifecycleState === "string" &&
+    ALLOWED_LIFECYCLE_STATES.has(record.lifecycleState) &&
+    typeof record.provenanceScore === "number" &&
+    Number.isFinite(record.provenanceScore) &&
+    typeof record.createdAt === "number" &&
+    Number.isFinite(record.createdAt) &&
+    typeof record.updatedAt === "number" &&
+    Number.isFinite(record.updatedAt);
 }
 
 function hasRawPayload(input: DurableMemoryWriteInput): boolean {
@@ -151,7 +173,7 @@ function makeReceipt(
     summaryOnly: true,
     canReinject: false,
     rawMemoryReleased: false,
-    receiptId: `m1-${input.operation}-${ids.join("-") || "none"}`,
+    receiptId: `m1-${input.operation}-${randomUUID()}`,
   };
 }
 
@@ -412,8 +434,15 @@ class FileBackedDurableMemoryStore extends BaseDurableMemoryStore {
     if (!existsSync(this.filePath)) {
       return [];
     }
-    const parsed = JSON.parse(readFileSync(this.filePath, "utf8")) as DurableMemoryRecord[];
-    return parsed.map(cloneRecord);
+    try {
+      const parsed = JSON.parse(readFileSync(this.filePath, "utf8")) as unknown;
+      if (!Array.isArray(parsed)) {
+        return [];
+      }
+      return parsed.filter(isDurableMemoryRecord).map(cloneRecord);
+    } catch {
+      return [];
+    }
   }
 
   private writeAll(records: readonly DurableMemoryRecord[]): void {
