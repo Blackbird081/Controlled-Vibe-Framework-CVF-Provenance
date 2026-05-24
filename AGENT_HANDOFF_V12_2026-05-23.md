@@ -535,6 +535,8 @@ For older continuity before V12, read:
 
 ## Latest HEADs
 
+- `095f017f` — docs(wc1): record public catalog evidence sync (2026-05-24)
+- `accc5ac8` — docs(session): sync wc1 closure head (2026-05-24)
 - `a081f9dc` — feat(wc1): prove live workflow chain read write loop (2026-05-24)
 - `de8710fe` — docs(session): sync wc2 closure evidence (2026-05-24)
 - `6c09d300` — fix(wc2): eliminate mock fallback after live failure (2026-05-24)
