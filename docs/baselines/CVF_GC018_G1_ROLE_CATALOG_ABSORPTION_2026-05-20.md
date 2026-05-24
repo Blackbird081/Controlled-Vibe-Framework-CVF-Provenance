@@ -19,7 +19,7 @@ Authorize reference-only absorption of the 11 CVF agent role templates.
 ## Source or Predecessor Evidence
 
 - `docs/work_orders/CVF_WO_RESIDUAL_G1_ROLE_CATALOG_ABSORPTION_2026-05-20.md`
-- `docs/reviews/CVF_LANE_G_RUNTIME_ACTOR_ENFORCEMENT_COMPLETION_2026-05-19.md`
+- `docs/reviews/archive/CVF_LANE_G_RUNTIME_ACTOR_ENFORCEMENT_COMPLETION_2026-05-19.md`
 - `.private_reference/legacy/CVF 16.5/Claude Kit/CVF_AGENT_ROLE_CATALOG.md`
 
 ---

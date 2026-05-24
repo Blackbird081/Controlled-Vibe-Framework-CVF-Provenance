@@ -26,8 +26,8 @@ In scope:
 
 - `docs/roadmaps/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md`
 - `docs/work_orders/CVF_WO_CDH_D_DELTA_REBUTTAL_2026-05-20.md`
-- `docs/reviews/CVF_D2_VISION_CONTRACT_COMPLETION_2026-05-19.md`
-- `docs/reviews/CVF_W1_PROVIDER_CONTRACT_COMPLETION_2026-05-19.md`
+- `docs/reviews/archive/CVF_D2_VISION_CONTRACT_COMPLETION_2026-05-19.md`
+- `docs/reviews/archive/CVF_W1_PROVIDER_CONTRACT_COMPLETION_2026-05-19.md`
 - `EXTENSIONS/CVF_MODEL_GATEWAY/src/vision-contract.ts`
 - `EXTENSIONS/CVF_MODEL_GATEWAY/src/reasoning-contract.ts`
 - matching contract tests
@@ -55,8 +55,8 @@ Expected response path:
 
 Prior closure evidence:
 
-- `docs/reviews/CVF_D2_VISION_CONTRACT_COMPLETION_2026-05-19.md`
-- `docs/reviews/CVF_W1_PROVIDER_CONTRACT_COMPLETION_2026-05-19.md`
+- `docs/reviews/archive/CVF_D2_VISION_CONTRACT_COMPLETION_2026-05-19.md`
+- `docs/reviews/archive/CVF_W1_PROVIDER_CONTRACT_COMPLETION_2026-05-19.md`
 
 ---
 

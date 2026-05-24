@@ -53,7 +53,7 @@ Forbidden:
 - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/governance-reliability-metrics.ts`
 - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/command.registry.ts`
 - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/tests/governance-reliability-metrics.test.ts`
-- `docs/baselines/CVF_GOVERNANCE_RELIABILITY_BASELINE_2026-05-19.md`
+- `docs/baselines/archive/CVF_GOVERNANCE_RELIABILITY_BASELINE_2026-05-19.md`
 
 ## Pre-Flight Checks
 

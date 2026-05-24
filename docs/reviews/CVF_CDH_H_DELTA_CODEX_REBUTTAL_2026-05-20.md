@@ -27,7 +27,7 @@ In scope:
 
 - `docs/roadmaps/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md`
 - `docs/work_orders/CVF_WO_CDH_H_DELTA_REBUTTAL_2026-05-20.md`
-- `docs/reviews/CVF_H2_AUDIT_MEMORY_POLICY_REFINEMENT_COMPLETION_2026-05-19.md`
+- `docs/reviews/archive/CVF_H2_AUDIT_MEMORY_POLICY_REFINEMENT_COMPLETION_2026-05-19.md`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/audit-memory-receipt.ts`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/audit-memory-receipt.test.ts`
 
@@ -54,7 +54,7 @@ Expected response path:
 
 Prior closure evidence:
 
-- `docs/reviews/CVF_H2_AUDIT_MEMORY_POLICY_REFINEMENT_COMPLETION_2026-05-19.md`
+- `docs/reviews/archive/CVF_H2_AUDIT_MEMORY_POLICY_REFINEMENT_COMPLETION_2026-05-19.md`
 
 ---
 

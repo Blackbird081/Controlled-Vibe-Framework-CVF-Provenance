@@ -28,9 +28,9 @@ vision requests on non-vision provider lanes.
 - CDH-D roadmap:
   `docs/roadmaps/CVF_CDH_D_VISION_RUNTIME_ROADMAP_2026-05-21.md`
 - D2 vision contract closure:
-  `docs/reviews/CVF_D2_VISION_CONTRACT_COMPLETION_2026-05-19.md`
+  `docs/reviews/archive/CVF_D2_VISION_CONTRACT_COMPLETION_2026-05-19.md`
 - W1 reasoning contract closure:
-  `docs/reviews/CVF_W1_PROVIDER_CONTRACT_COMPLETION_2026-05-19.md`
+  `docs/reviews/archive/CVF_W1_PROVIDER_CONTRACT_COMPLETION_2026-05-19.md`
 - GC-018 to be filed:
   `docs/baselines/CVF_GC018_CDH_D_VISION_RUNTIME_2026-05-21.md`
 
@@ -80,7 +80,7 @@ Out of scope:
 ## Required First Reads
 
 - `docs/reviews/CVF_CDH_D_DELTA_CODEX_REBUTTAL_2026-05-20.md`
-- `docs/reviews/CVF_D2_VISION_CONTRACT_COMPLETION_2026-05-19.md`
+- `docs/reviews/archive/CVF_D2_VISION_CONTRACT_COMPLETION_2026-05-19.md`
 - `EXTENSIONS/CVF_MODEL_GATEWAY/src/vision-contract.ts`
 - `EXTENSIONS/CVF_MODEL_GATEWAY/src/index.ts` (current exports)
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`

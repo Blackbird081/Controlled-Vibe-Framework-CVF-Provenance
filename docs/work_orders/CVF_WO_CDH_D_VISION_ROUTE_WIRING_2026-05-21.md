@@ -32,7 +32,7 @@ This closes the remaining blocker from the CDH-D adapter return review.
 - CDH-D delta rebuttal:
   `docs/reviews/CVF_CDH_D_DELTA_CODEX_REBUTTAL_2026-05-20.md`
 - D2 vision contract closure:
-  `docs/reviews/CVF_D2_VISION_CONTRACT_COMPLETION_2026-05-19.md`
+  `docs/reviews/archive/CVF_D2_VISION_CONTRACT_COMPLETION_2026-05-19.md`
 - GC-018 to be filed:
   `docs/baselines/CVF_GC018_CDH_D_VISION_ROUTE_WIRING_2026-05-21.md`
 

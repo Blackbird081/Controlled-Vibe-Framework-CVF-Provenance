@@ -36,7 +36,7 @@ current execution authority labels for governed packs.
 Predecessor evidence:
 
 - `.private_reference/legacy/CVF 16.5/Claude Kit/CVF_AGENT_ROLE_CATALOG.md`
-- `docs/reviews/CVF_LANE_G_RUNTIME_ACTOR_ENFORCEMENT_COMPLETION_2026-05-19.md`
+- `docs/reviews/archive/CVF_LANE_G_RUNTIME_ACTOR_ENFORCEMENT_COMPLETION_2026-05-19.md`
 - `docs/baselines/CVF_GC018_G1_ROLE_CATALOG_ABSORPTION_2026-05-20.md`
 
 ---

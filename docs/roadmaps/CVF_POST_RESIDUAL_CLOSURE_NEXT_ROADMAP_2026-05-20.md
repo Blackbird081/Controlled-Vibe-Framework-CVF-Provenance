@@ -19,9 +19,9 @@ Predecessor:
 - `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
   (AUTHORITATIVE direction: A–H all CLOSED; new work must be product expansion
   or fresh roadmap, not residual closure)
-- `docs/reviews/CVF_17_05_REVIEW_CVF_RESIDUAL_PAIN_POINTS_ASSESSMENT_2026-05-19.md`
-- `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md`
-- `docs/reviews/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`
+- `docs/reviews/archive/CVF_17_05_REVIEW_CVF_RESIDUAL_PAIN_POINTS_ASSESSMENT_2026-05-19.md`
+- `docs/roadmaps/archive/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md`
+- `docs/reviews/archive/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`
 - `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` (3 items pending)
 
 ---
@@ -138,7 +138,7 @@ work**.
 
 Predecessor evidence:
 
-- `docs/roadmaps/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_2026-05-19.md`
+- `docs/roadmaps/archive/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_2026-05-19.md`
   (READY_FOR_REBUTTAL since 2026-05-19)
 - `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` — priority 2 item
   `workflow-chain-governance-v2` (was priority 1 until 2026-05-20 when this
@@ -149,7 +149,7 @@ Predecessor evidence:
 In scope:
 
 - Dispatch Codex as Reviewer to file the second-round rebuttal on V2 at
-  `docs/reviews/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_CODEX_REBUTTAL_2026-05-19.md`.
+  `docs/reviews/archive/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_CODEX_REBUTTAL_2026-05-19.md`.
 - After rebuttal returns, update the queue item's `status` and
   `responsePath`.
 - If no-blocking verdict: dispatch GC-018 + work order per accepted candidate
@@ -394,9 +394,9 @@ roadmap.
 ## Related Artifacts
 
 - `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
-- `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md`
-- `docs/roadmaps/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_2026-05-19.md`
-- `docs/roadmaps/CVF_RUNTIME_MATURITY_CDH_ROADMAP_2026-05-19.md`
+- `docs/roadmaps/archive/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md`
+- `docs/roadmaps/archive/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_2026-05-19.md`
+- `docs/roadmaps/archive/CVF_RUNTIME_MATURITY_CDH_ROADMAP_2026-05-19.md`
 - `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 

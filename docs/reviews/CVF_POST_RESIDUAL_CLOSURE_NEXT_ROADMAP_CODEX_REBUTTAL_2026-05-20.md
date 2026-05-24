@@ -147,9 +147,9 @@ Correction:
 
 Accepted scope:
 
-- read `docs/roadmaps/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_2026-05-19.md`
+- read `docs/roadmaps/archive/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_2026-05-19.md`
 - file the expected reviewer response at
-  `docs/reviews/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_CODEX_REBUTTAL_2026-05-19.md`
+  `docs/reviews/archive/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_CODEX_REBUTTAL_2026-05-19.md`
 - update `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` for that queue item after the
   V2 rebuttal is filed
 

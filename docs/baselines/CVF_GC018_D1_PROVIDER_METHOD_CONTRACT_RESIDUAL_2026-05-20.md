@@ -20,8 +20,8 @@ asks.
 ## Source or Predecessor Evidence
 
 - `docs/work_orders/CVF_WO_RESIDUAL_D1_PROVIDER_METHOD_CONTRACT_2026-05-20.md`
-- `docs/reviews/CVF_W1_PROVIDER_CONTRACT_COMPLETION_2026-05-19.md`
-- `docs/reviews/CVF_LANE_D_PROVIDER_METHOD_PARITY_COMPLETION_2026-05-19.md`
+- `docs/reviews/archive/CVF_W1_PROVIDER_CONTRACT_COMPLETION_2026-05-19.md`
+- `docs/reviews/archive/CVF_LANE_D_PROVIDER_METHOD_PARITY_COMPLETION_2026-05-19.md`
 - `EXTENSIONS/CVF_MODEL_GATEWAY/src/fallback-policy.ts`
 - `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-output-contract.ts`
 - `EXTENSIONS/CVF_MODEL_GATEWAY/src/quota-ledger.ts`

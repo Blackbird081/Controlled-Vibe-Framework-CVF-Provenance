@@ -20,7 +20,7 @@ surface named by the Review-CVF audit.
 ## Source or Predecessor Evidence
 
 - `docs/work_orders/CVF_WO_RESIDUAL_C1_CLI_VERB_COMPLETION_2026-05-20.md`
-- `docs/reviews/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`
+- `docs/reviews/archive/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`
 - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/command.registry.ts`
 - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/execute.client.ts`
 

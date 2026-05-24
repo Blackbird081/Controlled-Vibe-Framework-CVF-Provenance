@@ -27,7 +27,7 @@ Authorized by:
 - CDH delta meta-roadmap:
   `docs/roadmaps/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md`
 - C2 prior closure:
-  `docs/reviews/CVF_C2_CLI_EXECUTE_HARDENING_COMPLETION_2026-05-19.md`
+  `docs/reviews/archive/CVF_C2_CLI_EXECUTE_HARDENING_COMPLETION_2026-05-19.md`
 
 This roadmap requires a fresh CDH-C GC-018 before implementation begins.
 

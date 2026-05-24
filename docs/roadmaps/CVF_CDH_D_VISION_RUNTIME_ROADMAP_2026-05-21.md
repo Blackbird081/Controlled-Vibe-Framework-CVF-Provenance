@@ -28,9 +28,9 @@ Authorized by:
 - CDH delta meta-roadmap:
   `docs/roadmaps/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md`
 - D2 vision contract closure:
-  `docs/reviews/CVF_D2_VISION_CONTRACT_COMPLETION_2026-05-19.md`
+  `docs/reviews/archive/CVF_D2_VISION_CONTRACT_COMPLETION_2026-05-19.md`
 - W1 reasoning contract closure:
-  `docs/reviews/CVF_W1_PROVIDER_CONTRACT_COMPLETION_2026-05-19.md`
+  `docs/reviews/archive/CVF_W1_PROVIDER_CONTRACT_COMPLETION_2026-05-19.md`
 
 This roadmap requires a fresh CDH-D GC-018 before implementation begins.
 Sub-surface selection: **vision runtime only**.

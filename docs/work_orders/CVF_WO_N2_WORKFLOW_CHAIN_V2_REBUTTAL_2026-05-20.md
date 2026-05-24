@@ -16,8 +16,8 @@ Predecessor:
 
 - `docs/roadmaps/CVF_POST_RESIDUAL_CLOSURE_NEXT_ROADMAP_2026-05-20.md` (REBUTTAL_FILED_NON_BLOCKING_WITH_GATE_UPDATE)
 - `docs/reviews/CVF_POST_RESIDUAL_CLOSURE_NEXT_ROADMAP_CODEX_REBUTTAL_2026-05-20.md` (Codex verdict on N2: NON_BLOCKING_AS_REBUTTAL_ONLY_WITH_QUEUE_CORRECTION)
-- `docs/roadmaps/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_2026-05-19.md` (READY_FOR_REBUTTAL since 2026-05-19; queue priority 2)
-- `docs/roadmaps/CVF_WORKFLOW_CHAIN_GOVERNANCE_PROPOSAL_2026-05-19.md`
+- `docs/roadmaps/archive/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_2026-05-19.md` (READY_FOR_REBUTTAL since 2026-05-19; queue priority 2)
+- `docs/roadmaps/archive/CVF_WORKFLOW_CHAIN_GOVERNANCE_PROPOSAL_2026-05-19.md`
   (`## Reviewer Rebuttal — 2026-05-19` section; first-round rebuttal on V1
   that triggered V2)
 - `docs/reviews/CVF_N1_PUBLIC_SYNC_CATALOG_UPDATE_CLOSURE_REVIEW_2026-05-20.md` (N1 closed at public commit `d11c772a`)
@@ -48,7 +48,7 @@ In scope:
 
 - Read the V2 roadmap end-to-end.
 - File the rebuttal at the queue's `expectedResponsePath`:
-  `docs/reviews/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_CODEX_REBUTTAL_2026-05-19.md`.
+  `docs/reviews/archive/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_CODEX_REBUTTAL_2026-05-19.md`.
 - Per-candidate verdict for C1 (public-sync guard hardening), C2 (governed
   pack contract guard), C3 (execute route step sequence guard), C4
   (continuation chain guard).
@@ -109,9 +109,9 @@ Orchestrator before filing the rebuttal. Do not invent verdicts.
 
 Read in order:
 
-1. `docs/roadmaps/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_2026-05-19.md` —
+1. `docs/roadmaps/archive/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_2026-05-19.md` —
    the artifact under review.
-2. `docs/roadmaps/CVF_WORKFLOW_CHAIN_GOVERNANCE_PROPOSAL_2026-05-19.md`
+2. `docs/roadmaps/archive/CVF_WORKFLOW_CHAIN_GOVERNANCE_PROPOSAL_2026-05-19.md`
    `## Reviewer Rebuttal — 2026-05-19` section — first-round rebuttal that
    triggered V2.
 3. The four governance/compat surfaces named by V2 candidates:
@@ -133,7 +133,7 @@ candidate verdicts accordingly. A candidate already CLOSED is grounds for a
 
 ### Step N2.2 — Author Rebuttal File
 
-File path: `docs/reviews/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_CODEX_REBUTTAL_2026-05-19.md`
+File path: `docs/reviews/archive/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_CODEX_REBUTTAL_2026-05-19.md`
 
 Required structure (per CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD review
 type):
@@ -200,7 +200,7 @@ The closure review must confirm:
 All of the following must be true before this work order is CLOSED:
 
 - [ ] Rebuttal file exists at
-      `docs/reviews/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_CODEX_REBUTTAL_2026-05-19.md`
+      `docs/reviews/archive/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_CODEX_REBUTTAL_2026-05-19.md`
       with all required structural sections.
 - [ ] Per-candidate verdict table present and complete for C1, C2, C3, C4.
 - [ ] Every candidate verdict cites at least one concrete evidence surface
@@ -256,9 +256,9 @@ All of the following must be true before this work order is CLOSED:
 
 ## Required First Reads
 
-1. `docs/roadmaps/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_2026-05-19.md` —
+1. `docs/roadmaps/archive/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_2026-05-19.md` —
    the artifact under review.
-2. `docs/roadmaps/CVF_WORKFLOW_CHAIN_GOVERNANCE_PROPOSAL_2026-05-19.md`
+2. `docs/roadmaps/archive/CVF_WORKFLOW_CHAIN_GOVERNANCE_PROPOSAL_2026-05-19.md`
    `## Reviewer Rebuttal — 2026-05-19` section — first-round rebuttal on V1.
 3. `docs/roadmaps/CVF_POST_RESIDUAL_CLOSURE_NEXT_ROADMAP_2026-05-20.md` —
    N2 scope.
@@ -286,7 +286,7 @@ All of the following must be true before this work order is CLOSED:
 
 May create only:
 
-- `docs/reviews/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_CODEX_REBUTTAL_2026-05-19.md`
+- `docs/reviews/archive/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_CODEX_REBUTTAL_2026-05-19.md`
   (new — the rebuttal file)
 - `docs/reviews/CVF_N2_WORKFLOW_CHAIN_V2_REBUTTAL_CLOSURE_REVIEW_2026-05-20.md`
   (new — the closure review)

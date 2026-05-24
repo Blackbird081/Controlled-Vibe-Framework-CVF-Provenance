@@ -74,20 +74,20 @@ Owner:
 Primary sources:
 
 - `.private_reference/legacy/CVF 17.05/Review CVF.md`
-- `docs/reviews/CVF_17_05_REVIEW_CVF_RESIDUAL_PAIN_POINTS_ASSESSMENT_2026-05-19.md`
-- `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md`
-- `docs/reviews/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`
+- `docs/reviews/archive/CVF_17_05_REVIEW_CVF_RESIDUAL_PAIN_POINTS_ASSESSMENT_2026-05-19.md`
+- `docs/roadmaps/archive/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md`
+- `docs/reviews/archive/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`
 - `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
 
 Secondary context:
 
-- `docs/assessments/CVF_QUALITY_ASSESSMENT_2026-05-19.md`
-- `docs/reviews/CVF_RUNTIME_MATURITY_CDH_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`
-- `docs/reviews/CVF_W1_PROVIDER_CONTRACT_COMPLETION_2026-05-19.md`
-- `docs/reviews/CVF_W2_GOVERNED_PACK_COMPLETION_2026-05-19.md`
-- `docs/reviews/CVF_W3_OFFLINE_BENCHMARK_EXTENSION_COMPLETION_2026-05-19.md`
-- `docs/reviews/CVF_LANE_G_RUNTIME_ACTOR_ENFORCEMENT_COMPLETION_2026-05-19.md`
-- `docs/reviews/CVF_H2_AUDIT_MEMORY_POLICY_REFINEMENT_COMPLETION_2026-05-19.md`
+- `docs/assessments/archive/CVF_QUALITY_ASSESSMENT_2026-05-19.md`
+- `docs/reviews/archive/CVF_RUNTIME_MATURITY_CDH_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`
+- `docs/reviews/archive/CVF_W1_PROVIDER_CONTRACT_COMPLETION_2026-05-19.md`
+- `docs/reviews/archive/CVF_W2_GOVERNED_PACK_COMPLETION_2026-05-19.md`
+- `docs/reviews/archive/CVF_W3_OFFLINE_BENCHMARK_EXTENSION_COMPLETION_2026-05-19.md`
+- `docs/reviews/archive/CVF_LANE_G_RUNTIME_ACTOR_ENFORCEMENT_COMPLETION_2026-05-19.md`
+- `docs/reviews/archive/CVF_H2_AUDIT_MEMORY_POLICY_REFINEMENT_COMPLETION_2026-05-19.md`
 
 ---
 
@@ -275,7 +275,7 @@ does not supersede candidate-specific GC-018 requirements.
 Static verification only:
 
 - This direction is consistent with the Codex rebuttal filed in
-  `docs/reviews/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`.
+  `docs/reviews/archive/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`.
 - It preserves the active review queue as the routing front door for ambiguous
   roadmap/review requests.
 - It does not modify implementation files or public claims.
@@ -285,10 +285,10 @@ Static verification only:
 ## Related Artifacts
 
 - `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
-- `docs/reviews/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`
-- `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md`
-- `docs/reviews/CVF_17_05_REVIEW_CVF_RESIDUAL_PAIN_POINTS_ASSESSMENT_2026-05-19.md`
-- `docs/assessments/CVF_QUALITY_ASSESSMENT_2026-05-19.md`
+- `docs/reviews/archive/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`
+- `docs/roadmaps/archive/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md`
+- `docs/reviews/archive/CVF_17_05_REVIEW_CVF_RESIDUAL_PAIN_POINTS_ASSESSMENT_2026-05-19.md`
+- `docs/assessments/archive/CVF_QUALITY_ASSESSMENT_2026-05-19.md`
 - `docs/reviews/CVF_A1_COHERENCE_FREEZE_CLOSURE_REVIEW_2026-05-20.md`
 - `docs/reviews/CVF_C1_CLI_VERB_COMPLETION_CLOSURE_REVIEW_2026-05-20.md`
 - `docs/reviews/CVF_D1_PROVIDER_METHOD_CONTRACT_CLOSURE_REVIEW_2026-05-20.md`

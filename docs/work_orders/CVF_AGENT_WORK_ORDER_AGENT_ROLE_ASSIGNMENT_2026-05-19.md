@@ -6,7 +6,7 @@ Status: CLOSED - completed as docs/reference prerequisite before Lane B/C/H
 implementation, with operator waiver to proceed without waiting for a separate
 Claude review in this overnight execution session. Post-hoc reviewer disposition
 recorded in
-`docs/reviews/CVF_WORK_ORDER_AGENT_ROLE_ASSIGNMENT_COMPLETION_2026-05-19.md`;
+`docs/reviews/archive/CVF_WORK_ORDER_AGENT_ROLE_ASSIGNMENT_COMPLETION_2026-05-19.md`;
 commit `45c477af` (governance).
 
 ## Purpose

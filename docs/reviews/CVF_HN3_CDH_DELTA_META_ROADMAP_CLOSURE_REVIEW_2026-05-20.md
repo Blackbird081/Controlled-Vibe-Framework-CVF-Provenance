@@ -24,7 +24,7 @@ to independent rebuttal queue items.
 - Meta-roadmap:
   `docs/roadmaps/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md`
 - Replaced roadmap:
-  `docs/roadmaps/CVF_RUNTIME_MATURITY_CDH_ROADMAP_2026-05-19.md`
+  `docs/roadmaps/archive/CVF_RUNTIME_MATURITY_CDH_ROADMAP_2026-05-19.md`
 - Queue:
   `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
 

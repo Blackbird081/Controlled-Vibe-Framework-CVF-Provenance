@@ -19,7 +19,7 @@ Authorize exactly one memory-tier contract path.
 ## Source or Predecessor Evidence
 
 - `docs/work_orders/CVF_WO_RESIDUAL_H1_MEMORY_TIER_GATE_2026-05-20.md`
-- `docs/reviews/CVF_H2_AUDIT_MEMORY_POLICY_REFINEMENT_COMPLETION_2026-05-19.md`
+- `docs/reviews/archive/CVF_H2_AUDIT_MEMORY_POLICY_REFINEMENT_COMPLETION_2026-05-19.md`
 - `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled.memory.gateway.contract.ts`
 - `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled.memory.subcontracts.ts`
 

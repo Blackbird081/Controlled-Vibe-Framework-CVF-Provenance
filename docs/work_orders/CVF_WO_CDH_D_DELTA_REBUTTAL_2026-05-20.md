@@ -16,11 +16,11 @@ separate implementation work order.
 - CDH delta meta-roadmap:
   `docs/roadmaps/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md#per-slice-section-d`
 - Original CDH blocking rebuttal:
-  `docs/reviews/CVF_RUNTIME_MATURITY_CDH_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`
+  `docs/reviews/archive/CVF_RUNTIME_MATURITY_CDH_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`
 - D2 completion anchor:
-  `docs/reviews/CVF_D2_VISION_CONTRACT_COMPLETION_2026-05-19.md`
+  `docs/reviews/archive/CVF_D2_VISION_CONTRACT_COMPLETION_2026-05-19.md`
 - Lane D provider-method parity evidence:
-  `docs/reviews/CVF_LANE_D_PROVIDER_METHOD_PARITY_COMPLETION_2026-05-19.md`
+  `docs/reviews/archive/CVF_LANE_D_PROVIDER_METHOD_PARITY_COMPLETION_2026-05-19.md`
 
 ## Agent Roles
 
@@ -74,10 +74,10 @@ Forbidden scope:
 1. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 2. `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
 3. `docs/roadmaps/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md`
-4. `docs/reviews/CVF_RUNTIME_MATURITY_CDH_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`
-5. `docs/reviews/CVF_LANE_D_PROVIDER_METHOD_PARITY_COMPLETION_2026-05-19.md`
-6. `docs/baselines/CVF_GC018_D2_VISION_CONTRACT_2026-05-19.md`
-7. `docs/reviews/CVF_D2_VISION_CONTRACT_COMPLETION_2026-05-19.md`
+4. `docs/reviews/archive/CVF_RUNTIME_MATURITY_CDH_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`
+5. `docs/reviews/archive/CVF_LANE_D_PROVIDER_METHOD_PARITY_COMPLETION_2026-05-19.md`
+6. `docs/baselines/archive/CVF_GC018_D2_VISION_CONTRACT_2026-05-19.md`
+7. `docs/reviews/archive/CVF_D2_VISION_CONTRACT_COMPLETION_2026-05-19.md`
 8. `EXTENSIONS/CVF_MODEL_GATEWAY/src/vision-contract.ts`
 9. `EXTENSIONS/CVF_MODEL_GATEWAY/tests/vision-contract.test.ts`
 10. `EXTENSIONS/CVF_MODEL_GATEWAY/src/reasoning-contract.ts`

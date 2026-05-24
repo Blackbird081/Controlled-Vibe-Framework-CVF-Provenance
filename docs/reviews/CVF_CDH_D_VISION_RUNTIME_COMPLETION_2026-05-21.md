@@ -47,8 +47,8 @@ Authority chain:
 
 - `docs/baselines/CVF_GC018_CDH_D_VISION_RUNTIME_2026-05-21.md`
 - `docs/reviews/CVF_CDH_D_DELTA_CODEX_REBUTTAL_2026-05-20.md`
-- `docs/reviews/CVF_D2_VISION_CONTRACT_COMPLETION_2026-05-19.md`
-- `docs/reviews/CVF_W1_PROVIDER_CONTRACT_COMPLETION_2026-05-19.md`
+- `docs/reviews/archive/CVF_D2_VISION_CONTRACT_COMPLETION_2026-05-19.md`
+- `docs/reviews/archive/CVF_W1_PROVIDER_CONTRACT_COMPLETION_2026-05-19.md`
 
 ---
 

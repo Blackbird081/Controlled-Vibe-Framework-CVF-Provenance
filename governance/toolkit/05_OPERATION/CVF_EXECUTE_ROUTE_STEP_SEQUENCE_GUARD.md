@@ -58,11 +58,11 @@ do so will cause the guard to fail on the next CI run.
 ## Related Artifacts
 
 - GC-018:
-  `docs/baselines/CVF_GC018_C3_EXECUTE_ROUTE_STEP_SEQUENCE_GUARD_2026-05-19.md`
+  `docs/baselines/archive/CVF_GC018_C3_EXECUTE_ROUTE_STEP_SEQUENCE_GUARD_2026-05-19.md`
 - Work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_C3_EXECUTE_ROUTE_STEP_SEQUENCE_GUARD_2026-05-19.md`
+  `docs/work_orders/archive/CVF_AGENT_WORK_ORDER_C3_EXECUTE_ROUTE_STEP_SEQUENCE_GUARD_2026-05-19.md`
 - Completion review:
-  `docs/reviews/CVF_C3_EXECUTE_ROUTE_STEP_SEQUENCE_GUARD_COMPLETION_2026-05-19.md`
+  `docs/reviews/archive/CVF_C3_EXECUTE_ROUTE_STEP_SEQUENCE_GUARD_COMPLETION_2026-05-19.md`
 
 ## Final Clause
 

@@ -26,7 +26,7 @@ In scope:
 
 - `docs/roadmaps/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md`
 - `docs/work_orders/CVF_WO_CDH_C_DELTA_REBUTTAL_2026-05-20.md`
-- `docs/reviews/CVF_C2_CLI_EXECUTE_HARDENING_COMPLETION_2026-05-19.md`
+- `docs/reviews/archive/CVF_C2_CLI_EXECUTE_HARDENING_COMPLETION_2026-05-19.md`
 - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/execute.client.ts`
 - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/command.registry.ts`
 
@@ -52,7 +52,7 @@ Expected response path:
 
 Prior closure evidence:
 
-- `docs/reviews/CVF_C2_CLI_EXECUTE_HARDENING_COMPLETION_2026-05-19.md`
+- `docs/reviews/archive/CVF_C2_CLI_EXECUTE_HARDENING_COMPLETION_2026-05-19.md`
 
 ---
 

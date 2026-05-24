@@ -20,7 +20,7 @@ Authorize the A1 closure decision after the necessity audit.
 
 - `docs/reviews/CVF_A1_COHERENCE_FREEZE_NECESSITY_AUDIT_2026-05-20.md`
 - `docs/work_orders/CVF_WO_RESIDUAL_A1_COHERENCE_FREEZE_DECISION_2026-05-20.md`
-- `docs/reviews/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`
+- `docs/reviews/archive/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`
 
 ---
 

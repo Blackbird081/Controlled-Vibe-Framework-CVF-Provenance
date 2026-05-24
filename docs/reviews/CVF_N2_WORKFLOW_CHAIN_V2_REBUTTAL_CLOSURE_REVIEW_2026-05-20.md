@@ -18,11 +18,11 @@ Work order:
 
 Rebuttal filed:
 
-- `docs/reviews/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_CODEX_REBUTTAL_2026-05-19.md`
+- `docs/reviews/archive/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_CODEX_REBUTTAL_2026-05-19.md`
 
 Roadmap reviewed:
 
-- `docs/roadmaps/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_2026-05-19.md`
+- `docs/roadmaps/archive/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_2026-05-19.md`
 
 Queue item:
 
@@ -48,17 +48,17 @@ N2 work order correction:
   `docs/reviews/CVF_WORKFLOW_CHAIN_GOVERNANCE_PROPOSAL_REVIEWER_REBUTTAL_2026-05-19.md`
   does not exist.
 - Correct source is
-  `docs/roadmaps/CVF_WORKFLOW_CHAIN_GOVERNANCE_PROPOSAL_2026-05-19.md`
+  `docs/roadmaps/archive/CVF_WORKFLOW_CHAIN_GOVERNANCE_PROPOSAL_2026-05-19.md`
   under `## Reviewer Rebuttal — 2026-05-19`.
 
 Per-candidate verdicts:
 
 | Candidate | Verdict | Evidence surface |
 | --- | --- | --- |
-| C1 | CLOSED_BY_PRIOR_TRANCHE | `docs/work_orders/CVF_AGENT_WORK_ORDER_C1_WORKFLOW_GUARD_HARDENING_2026-05-19.md`; handoff public commit `e04b4f00` |
-| C2 | CLOSED_BY_PRIOR_TRANCHE | `docs/reviews/CVF_C2_GOVERNED_PACK_CONTRACT_GUARD_COMPLETION_2026-05-19.md`; `governance/compat/check_governed_pack_contract.py` |
-| C3 | CLOSED_BY_PRIOR_TRANCHE | `docs/reviews/CVF_C3_EXECUTE_ROUTE_STEP_SEQUENCE_GUARD_COMPLETION_2026-05-19.md`; `governance/compat/check_execute_route_step_sequence.py` |
-| C4 | CLOSED_BY_PRIOR_TRANCHE | `docs/reviews/CVF_C4_CONTINUATION_CHAIN_GUARD_COMPLETION_2026-05-19.md`; `governance/compat/check_continuation_chain.py` |
+| C1 | CLOSED_BY_PRIOR_TRANCHE | `docs/work_orders/archive/CVF_AGENT_WORK_ORDER_C1_WORKFLOW_GUARD_HARDENING_2026-05-19.md`; handoff public commit `e04b4f00` |
+| C2 | CLOSED_BY_PRIOR_TRANCHE | `docs/reviews/archive/CVF_C2_GOVERNED_PACK_CONTRACT_GUARD_COMPLETION_2026-05-19.md`; `governance/compat/check_governed_pack_contract.py` |
+| C3 | CLOSED_BY_PRIOR_TRANCHE | `docs/reviews/archive/CVF_C3_EXECUTE_ROUTE_STEP_SEQUENCE_GUARD_COMPLETION_2026-05-19.md`; `governance/compat/check_execute_route_step_sequence.py` |
+| C4 | CLOSED_BY_PRIOR_TRANCHE | `docs/reviews/archive/CVF_C4_CONTINUATION_CHAIN_GUARD_COMPLETION_2026-05-19.md`; `governance/compat/check_continuation_chain.py` |
 
 Queue update:
 

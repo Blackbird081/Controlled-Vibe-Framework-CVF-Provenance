@@ -14,8 +14,8 @@ Date dispatched: 2026-05-20
 
 Predecessor:
 
-- `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (Candidate C1, corrected after rebuttal)
-- `docs/reviews/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md` (Codex: BLOCKING, corrected — GC-018 now required)
+- `docs/roadmaps/archive/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (Candidate C1, corrected after rebuttal)
+- `docs/reviews/archive/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md` (Codex: BLOCKING, corrected — GC-018 now required)
 
 Rebuttal correction note: the roadmap originally marked C1 as `GC-018 required: No`.
 Codex rebuttal identified this as an internal contradiction — adding five
@@ -193,7 +193,7 @@ All of the following must be true before this work order is CLOSED:
 ## Authority Chain
 
 - Authorized by: Codex rebuttal correction (C1: BLOCKING → GC-018 now required); roadmap corrected 2026-05-20
-- Roadmap: `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (REBUTTAL_ACCEPTED)
+- Roadmap: `docs/roadmaps/archive/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (REBUTTAL_ACCEPTED)
 - Orchestrator: Claude; Worker: Codex; Operator approval required for GC-018
 
 ---
@@ -207,8 +207,8 @@ All of the following must be true before this work order is CLOSED:
 
 ## Required First Reads
 
-1. `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` — C1 scope and per-verb mapping
-2. `docs/reviews/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md` — C1 BLOCKING finding and required corrections
+1. `docs/roadmaps/archive/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` — C1 scope and per-verb mapping
+2. `docs/reviews/archive/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md` — C1 BLOCKING finding and required corrections
 3. `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/command.registry.ts` — current registered commands
 4. `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/` — scan for existing skill registry, receipt, audit-log, provider registry access patterns
 

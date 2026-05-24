@@ -55,19 +55,19 @@ slice has its own GC-018 and work order.
 
 ## Predecessor Evidence
 
-- `docs/roadmaps/CVF_RUNTIME_MATURITY_CDH_ROADMAP_2026-05-19.md`
-- `docs/reviews/CVF_RUNTIME_MATURITY_CDH_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`
-- `docs/reviews/CVF_M1_MAIKA_TEXT_SUMMARY_COMPLETION_2026-05-19.md`
-- `docs/reviews/CVF_C2_CLI_EXECUTE_HARDENING_COMPLETION_2026-05-19.md`
-- `docs/reviews/CVF_D2_VISION_CONTRACT_COMPLETION_2026-05-19.md`
-- `docs/reviews/CVF_H2_AUDIT_MEMORY_POLICY_REFINEMENT_COMPLETION_2026-05-19.md`
+- `docs/roadmaps/archive/CVF_RUNTIME_MATURITY_CDH_ROADMAP_2026-05-19.md`
+- `docs/reviews/archive/CVF_RUNTIME_MATURITY_CDH_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`
+- `docs/reviews/archive/CVF_M1_MAIKA_TEXT_SUMMARY_COMPLETION_2026-05-19.md`
+- `docs/reviews/archive/CVF_C2_CLI_EXECUTE_HARDENING_COMPLETION_2026-05-19.md`
+- `docs/reviews/archive/CVF_D2_VISION_CONTRACT_COMPLETION_2026-05-19.md`
+- `docs/reviews/archive/CVF_H2_AUDIT_MEMORY_POLICY_REFINEMENT_COMPLETION_2026-05-19.md`
 
 ## Replacement Notice
 
 This meta-roadmap replaces the BLOCKED
-`docs/roadmaps/CVF_RUNTIME_MATURITY_CDH_ROADMAP_2026-05-19.md`. The four
+`docs/roadmaps/archive/CVF_RUNTIME_MATURITY_CDH_ROADMAP_2026-05-19.md`. The four
 BLOCKING_FINDINGS from
-`docs/reviews/CVF_RUNTIME_MATURITY_CDH_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`
+`docs/reviews/archive/CVF_RUNTIME_MATURITY_CDH_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`
 remain load-bearing per slice. Do not file GC-018 against the original roadmap;
 use the slice gates below.
 
@@ -88,7 +88,7 @@ text-summary surface.
 low-governance proof (Finding 4). Text-summary only through governed CVF path
 until vision runtime is separately accepted.
 
-`evidenceAnchor`: `docs/reviews/CVF_M1_MAIKA_TEXT_SUMMARY_COMPLETION_2026-05-19.md`
+`evidenceAnchor`: `docs/reviews/archive/CVF_M1_MAIKA_TEXT_SUMMARY_COMPLETION_2026-05-19.md`
 
 `downstreamGate`: Next step requires a rebuttal cycle, then a slice-specific
 GC-018, then a work order. Live proof must use deployed Supabase Edge Function
@@ -124,7 +124,7 @@ preserving the existing no-reinjection capture invariant.
 memory-capture write gate (Finding 2). Capture vs reinjection boundary is
 preserved.
 
-`evidenceAnchor`: `docs/reviews/CVF_H2_AUDIT_MEMORY_POLICY_REFINEMENT_COMPLETION_2026-05-19.md`
+`evidenceAnchor`: `docs/reviews/archive/CVF_H2_AUDIT_MEMORY_POLICY_REFINEMENT_COMPLETION_2026-05-19.md`
 
 `downstreamGate`: Next step requires a rebuttal cycle, then a slice-specific
 GC-018, then a work order. Live proof must exercise the existing `/api/execute`
@@ -159,7 +159,7 @@ tranche.
 `loadBearingConstraint`: Must NOT claim `cvf execute` is missing (Finding 1).
 Existing CLI execute surface remains the baseline.
 
-`evidenceAnchor`: `docs/reviews/CVF_C2_CLI_EXECUTE_HARDENING_COMPLETION_2026-05-19.md`
+`evidenceAnchor`: `docs/reviews/archive/CVF_C2_CLI_EXECUTE_HARDENING_COMPLETION_2026-05-19.md`
 
 `downstreamGate`: Next step requires a rebuttal cycle, then a slice-specific
 GC-018, then a work order. Live proof must call the current governed `/api/execute`
@@ -195,7 +195,7 @@ later.
 claims (Finding 3). Three sub-surfaces (vision contract / vision runtime /
 reasoning contract) gate independently.
 
-`evidenceAnchor`: `docs/reviews/CVF_D2_VISION_CONTRACT_COMPLETION_2026-05-19.md`
+`evidenceAnchor`: `docs/reviews/archive/CVF_D2_VISION_CONTRACT_COMPLETION_2026-05-19.md`
 
 `downstreamGate`: Next step requires a rebuttal cycle, then one slice-specific
 GC-018 per selected D sub-surface, then a work order. Vision runtime requires a
@@ -293,7 +293,7 @@ Static verification only:
 
 - `docs/work_orders/CVF_WO_HN3_CDH_DELTA_META_ROADMAP_2026-05-20.md`
 - `docs/reviews/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_CLAUDE_REBUTTAL_2026-05-20.md`
-- `docs/reviews/CVF_RUNTIME_MATURITY_CDH_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`
+- `docs/reviews/archive/CVF_RUNTIME_MATURITY_CDH_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`
 - `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
 
 ## Claim Boundary

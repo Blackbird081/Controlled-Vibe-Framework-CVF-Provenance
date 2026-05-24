@@ -65,9 +65,9 @@ work-order to review binding.
 
 ## Related Artifacts
 
-- `docs/baselines/CVF_GC018_C4_CONTINUATION_CHAIN_GUARD_2026-05-19.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_C4_CONTINUATION_CHAIN_GUARD_2026-05-19.md`
-- `docs/roadmaps/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_2026-05-19.md`
+- `docs/baselines/archive/CVF_GC018_C4_CONTINUATION_CHAIN_GUARD_2026-05-19.md`
+- `docs/work_orders/archive/CVF_AGENT_WORK_ORDER_C4_CONTINUATION_CHAIN_GUARD_2026-05-19.md`
+- `docs/roadmaps/archive/CVF_WORKFLOW_CHAIN_GOVERNANCE_ROADMAP_V2_2026-05-19.md`
 
 ## Final Clause
 

@@ -44,7 +44,7 @@ Authority chain:
 
 - `docs/baselines/CVF_GC018_CDH_C_CLI_LIVE_PROOF_2026-05-21.md`
 - `docs/reviews/CVF_CDH_C_DELTA_CODEX_REBUTTAL_2026-05-20.md`
-- `docs/reviews/CVF_C2_CLI_EXECUTE_HARDENING_COMPLETION_2026-05-19.md`
+- `docs/reviews/archive/CVF_C2_CLI_EXECUTE_HARDENING_COMPLETION_2026-05-19.md`
 
 ---
 

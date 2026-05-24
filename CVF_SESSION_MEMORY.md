@@ -1180,3 +1180,12 @@ action/tool/provider governance boundary. Otherwise start a new value-screened
 tranche.
 
 Marker: wc_workflow_chain_roadmap_closed_pass_bounded_candidate7_held.
+
+## C7A Product Skill Pack Top-10 - Authorized 2026-05-25
+
+Mode: `c7a_product_skill_pack_top10_authorized`. Add exactly three static
+certified packs (`competitor_review`, `data_analysis`,
+`app_requirements_spec`) to reach ten strong workflows. GC-018:
+`docs/baselines/CVF_GC018_C7A_PRODUCT_SKILL_PACK_TOP10_COMPLETION_2026-05-25.md`.
+Work order:
+`docs/work_orders/CVF_WO_C7A_PRODUCT_SKILL_PACK_TOP10_COMPLETION_2026-05-25.md`.

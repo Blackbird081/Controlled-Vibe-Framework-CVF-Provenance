@@ -43,8 +43,8 @@ Primary planning source:
 
 Evidence and predecessor sources checked:
 
-- `docs/reviews/CVF_RUNTIME_MATURITY_CDH_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`
-- `docs/reviews/CVF_M1_MAIKA_TEXT_SUMMARY_COMPLETION_2026-05-19.md`
+- `docs/reviews/archive/CVF_RUNTIME_MATURITY_CDH_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`
+- `docs/reviews/archive/CVF_M1_MAIKA_TEXT_SUMMARY_COMPLETION_2026-05-19.md`
 - `../CVF-Workspace/Nha tre Maika/supabase/functions/generate-daily-summary/index.ts`
 - `../CVF-Workspace/Nha tre Maika/src/pages/admin/DailyReports.jsx`
 
@@ -113,7 +113,7 @@ It must prove the deployed Edge Function path end to end.
 Evidence trace:
 
 - Claim checked: live deployment verification remains pending.
-- Source: `docs/reviews/CVF_M1_MAIKA_TEXT_SUMMARY_COMPLETION_2026-05-19.md`
+- Source: `docs/reviews/archive/CVF_M1_MAIKA_TEXT_SUMMARY_COMPLETION_2026-05-19.md`
 - Result: status is `CLOSED_WITH_DEPLOYMENT_VERIFICATION_PENDING`.
 - Disposition: GAP CONFIRMED.
 

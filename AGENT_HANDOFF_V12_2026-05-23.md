@@ -308,6 +308,20 @@ W7 compiler/environment normalization -> T1 static certification. The missing
 piece is a concrete Candidate-7 source/use-case binding into that chain, not a
 new intake framework.
 
+### 2026-05-25 - C7A Product Skill Pack Top-10 Authorized
+
+Current HEAD before C7A authorization commit: `1152d916`.
+
+GC-018:
+`docs/baselines/CVF_GC018_C7A_PRODUCT_SKILL_PACK_TOP10_COMPLETION_2026-05-25.md`
+
+Work order:
+`docs/work_orders/CVF_WO_C7A_PRODUCT_SKILL_PACK_TOP10_COMPLETION_2026-05-25.md`
+
+Scope: add exactly three static certified packs (`competitor_review`,
+`data_analysis`, `app_requirements_spec`) and update the registry to ten
+entries. No runtime/provider/receipt/UI/tool/public-sync work.
+
 ### 2026-05-24 - W1 Workflow State-Machine Enforcement Closed
 
 Current HEAD before W1 closure commit: `13966c38`.

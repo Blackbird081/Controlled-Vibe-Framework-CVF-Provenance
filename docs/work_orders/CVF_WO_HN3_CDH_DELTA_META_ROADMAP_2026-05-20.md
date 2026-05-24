@@ -16,13 +16,13 @@ Predecessor:
 
 - `docs/roadmaps/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md` (HN3 framing)
 - `docs/reviews/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_CLAUDE_REBUTTAL_2026-05-20.md` (Claude verdict on HN3: NON_BLOCKING_WITH_PER_SLICE_GATING)
-- `docs/roadmaps/CVF_RUNTIME_MATURITY_CDH_ROADMAP_2026-05-19.md` (BLOCKING; replaced by this meta-roadmap)
-- `docs/reviews/CVF_RUNTIME_MATURITY_CDH_ROADMAP_CODEX_REBUTTAL_2026-05-19.md` (BLOCKING_FINDINGS — still load-bearing for each slice)
+- `docs/roadmaps/archive/CVF_RUNTIME_MATURITY_CDH_ROADMAP_2026-05-19.md` (BLOCKING; replaced by this meta-roadmap)
+- `docs/reviews/archive/CVF_RUNTIME_MATURITY_CDH_ROADMAP_CODEX_REBUTTAL_2026-05-19.md` (BLOCKING_FINDINGS — still load-bearing for each slice)
 - Completion evidence already on file:
-  - `docs/reviews/CVF_M1_MAIKA_TEXT_SUMMARY_COMPLETION_2026-05-19.md`
-  - `docs/reviews/CVF_C2_CLI_EXECUTE_HARDENING_COMPLETION_2026-05-19.md`
-  - `docs/reviews/CVF_D2_VISION_CONTRACT_COMPLETION_2026-05-19.md`
-  - `docs/reviews/CVF_H2_AUDIT_MEMORY_POLICY_REFINEMENT_COMPLETION_2026-05-19.md`
+  - `docs/reviews/archive/CVF_M1_MAIKA_TEXT_SUMMARY_COMPLETION_2026-05-19.md`
+  - `docs/reviews/archive/CVF_C2_CLI_EXECUTE_HARDENING_COMPLETION_2026-05-19.md`
+  - `docs/reviews/archive/CVF_D2_VISION_CONTRACT_COMPLETION_2026-05-19.md`
+  - `docs/reviews/archive/CVF_H2_AUDIT_MEMORY_POLICY_REFINEMENT_COMPLETION_2026-05-19.md`
 
 Authority chain: Claude rebuttal on HN3 required per-slice gating —
 each of C / D / H / M slices carries its own rebuttal cycle, its own
@@ -95,7 +95,7 @@ Owner boundary:
 ## Load-Bearing Constraints from Existing CDH BLOCKING_FINDINGS
 
 The four findings from
-`docs/reviews/CVF_RUNTIME_MATURITY_CDH_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`
+`docs/reviews/archive/CVF_RUNTIME_MATURITY_CDH_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`
 remain load-bearing. Every slice section in the meta-roadmap must restate
 the relevant finding as a slice-level constraint:
 
@@ -138,13 +138,13 @@ D delta must additionally state its three sub-surfaces explicitly:
 
 Read in this order before authoring:
 
-1. `docs/reviews/CVF_RUNTIME_MATURITY_CDH_ROADMAP_CODEX_REBUTTAL_2026-05-19.md` —
+1. `docs/reviews/archive/CVF_RUNTIME_MATURITY_CDH_ROADMAP_CODEX_REBUTTAL_2026-05-19.md` —
    the four BLOCKING findings.
-2. `docs/reviews/CVF_M1_MAIKA_TEXT_SUMMARY_COMPLETION_2026-05-19.md`
-3. `docs/reviews/CVF_C2_CLI_EXECUTE_HARDENING_COMPLETION_2026-05-19.md`
-4. `docs/reviews/CVF_D2_VISION_CONTRACT_COMPLETION_2026-05-19.md`
-5. `docs/reviews/CVF_H2_AUDIT_MEMORY_POLICY_REFINEMENT_COMPLETION_2026-05-19.md`
-6. `docs/roadmaps/CVF_RUNTIME_MATURITY_CDH_ROADMAP_2026-05-19.md` — the
+2. `docs/reviews/archive/CVF_M1_MAIKA_TEXT_SUMMARY_COMPLETION_2026-05-19.md`
+3. `docs/reviews/archive/CVF_C2_CLI_EXECUTE_HARDENING_COMPLETION_2026-05-19.md`
+4. `docs/reviews/archive/CVF_D2_VISION_CONTRACT_COMPLETION_2026-05-19.md`
+5. `docs/reviews/archive/CVF_H2_AUDIT_MEMORY_POLICY_REFINEMENT_COMPLETION_2026-05-19.md`
+6. `docs/roadmaps/archive/CVF_RUNTIME_MATURITY_CDH_ROADMAP_2026-05-19.md` — the
    original BLOCKED roadmap (read for context; do not edit content).
 
 ### Step HN3.2 — Meta-Roadmap Authoring
@@ -184,14 +184,14 @@ authorized for implementation by this filing.
 ### Step HN3.3 — Mark Original CDH Roadmap REPLACED_BY_META
 
 Prepend a single status note to the top of
-`docs/roadmaps/CVF_RUNTIME_MATURITY_CDH_ROADMAP_2026-05-19.md` (immediately
+`docs/roadmaps/archive/CVF_RUNTIME_MATURITY_CDH_ROADMAP_2026-05-19.md` (immediately
 after the existing frontmatter, BEFORE any other content):
 
 ```markdown
 > Status update 2026-05-20: REPLACED_BY_META. This roadmap is superseded by
 > docs/roadmaps/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md per Claude rebuttal
 > NON_BLOCKING_WITH_PER_SLICE_GATING. BLOCKING_FINDINGS from
-> docs/reviews/CVF_RUNTIME_MATURITY_CDH_ROADMAP_CODEX_REBUTTAL_2026-05-19.md
+> docs/reviews/archive/CVF_RUNTIME_MATURITY_CDH_ROADMAP_CODEX_REBUTTAL_2026-05-19.md
 > remain load-bearing on each slice. Do not file GC-018 against this
 > roadmap; use the meta-roadmap's per-slice gates instead.
 ```
@@ -303,7 +303,7 @@ All of the following must be true before this work order is CLOSED:
 - Predecessor roadmap:
   `docs/roadmaps/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md`.
 - Predecessor BLOCKING source:
-  `docs/reviews/CVF_RUNTIME_MATURITY_CDH_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`.
+  `docs/reviews/archive/CVF_RUNTIME_MATURITY_CDH_ROADMAP_CODEX_REBUTTAL_2026-05-19.md`.
 - Orchestrator: Claude; Worker: Codex (Orchestrator-author role); Operator
   approval not required for meta-roadmap filing.
 
@@ -324,10 +324,10 @@ All of the following must be true before this work order is CLOSED:
 
 1. `docs/reviews/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_CLAUDE_REBUTTAL_2026-05-20.md` —
    HN3 per-slice gating + slice constraints.
-2. `docs/reviews/CVF_RUNTIME_MATURITY_CDH_ROADMAP_CODEX_REBUTTAL_2026-05-19.md` —
+2. `docs/reviews/archive/CVF_RUNTIME_MATURITY_CDH_ROADMAP_CODEX_REBUTTAL_2026-05-19.md` —
    the four BLOCKING_FINDINGS (still load-bearing).
 3. The four completion reviews (M1 / C2 / D2 / H2) listed in Predecessor.
-4. `docs/roadmaps/CVF_RUNTIME_MATURITY_CDH_ROADMAP_2026-05-19.md` —
+4. `docs/roadmaps/archive/CVF_RUNTIME_MATURITY_CDH_ROADMAP_2026-05-19.md` —
    original BLOCKED roadmap (read-only).
 5. `docs/reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md` —
    roadmap structural template.
@@ -357,7 +357,7 @@ May modify only:
 
 - `docs/work_orders/CVF_WO_HN3_CDH_DELTA_META_ROADMAP_2026-05-20.md`
   (status/checklist closure sync only)
-- `docs/roadmaps/CVF_RUNTIME_MATURITY_CDH_ROADMAP_2026-05-19.md`
+- `docs/roadmaps/archive/CVF_RUNTIME_MATURITY_CDH_ROADMAP_2026-05-19.md`
   (prepend status note ONLY; no other changes)
 - `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` (add four slice items)
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json` (nextAllowedMove update after

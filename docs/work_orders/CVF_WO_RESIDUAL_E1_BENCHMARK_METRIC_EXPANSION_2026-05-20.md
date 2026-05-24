@@ -14,12 +14,12 @@ Date dispatched: 2026-05-20
 
 Predecessor:
 
-- `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (Candidate E1, REBUTTAL_ACCEPTED)
-- `docs/reviews/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md` (Codex verdict: NON_BLOCKING_AFTER_ASSESSMENT_FIX)
-- `docs/reviews/CVF_LANE_E_BENCHMARK_REORIENTATION_COMPLETION_2026-05-19.md` (W3 closed)
+- `docs/roadmaps/archive/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (Candidate E1, REBUTTAL_ACCEPTED)
+- `docs/reviews/archive/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md` (Codex verdict: NON_BLOCKING_AFTER_ASSESSMENT_FIX)
+- `docs/reviews/archive/CVF_LANE_E_BENCHMARK_REORIENTATION_COMPLETION_2026-05-19.md` (W3 closed)
 
 Assessment correction already applied: Problem E is now scored PARTIAL overall
-in `docs/reviews/CVF_17_05_REVIEW_CVF_RESIDUAL_PAIN_POINTS_ASSESSMENT_2026-05-19.md`.
+in `docs/reviews/archive/CVF_17_05_REVIEW_CVF_RESIDUAL_PAIN_POINTS_ASSESSMENT_2026-05-19.md`.
 
 ---
 
@@ -221,8 +221,8 @@ All of the following must be true before this work order is CLOSED:
 ## Authority Chain
 
 - Authorized by: Codex rebuttal (E1: NON_BLOCKING_AFTER_ASSESSMENT_FIX); assessment correction applied 2026-05-20
-- Roadmap: `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (REBUTTAL_ACCEPTED)
-- Predecessor: `docs/reviews/CVF_LANE_E_BENCHMARK_REORIENTATION_COMPLETION_2026-05-19.md` (W3 CLOSED)
+- Roadmap: `docs/roadmaps/archive/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (REBUTTAL_ACCEPTED)
+- Predecessor: `docs/reviews/archive/CVF_LANE_E_BENCHMARK_REORIENTATION_COMPLETION_2026-05-19.md` (W3 CLOSED)
 - Orchestrator: Claude; Worker: Codex; Operator approval required for GC-018
 
 ---
@@ -236,9 +236,9 @@ All of the following must be true before this work order is CLOSED:
 
 ## Required First Reads
 
-1. `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` — E1 scope
-2. `docs/reviews/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md` — E1 verdict + downstream guards
-3. `docs/reviews/CVF_LANE_E_BENCHMARK_REORIENTATION_COMPLETION_2026-05-19.md` — W3 baseline (existing 9 metrics)
+1. `docs/roadmaps/archive/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` — E1 scope
+2. `docs/reviews/archive/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md` — E1 verdict + downstream guards
+3. `docs/reviews/archive/CVF_LANE_E_BENCHMARK_REORIENTATION_COMPLETION_2026-05-19.md` — W3 baseline (existing 9 metrics)
 4. `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/governance-reliability-metrics.ts` — current implementation
 
 ---

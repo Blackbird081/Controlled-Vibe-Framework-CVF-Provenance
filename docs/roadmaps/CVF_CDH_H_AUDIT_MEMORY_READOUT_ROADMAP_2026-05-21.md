@@ -27,7 +27,7 @@ Authorized by:
 - CDH delta meta-roadmap:
   `docs/roadmaps/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md`
 - H2 prior closure:
-  `docs/reviews/CVF_H2_AUDIT_MEMORY_POLICY_REFINEMENT_COMPLETION_2026-05-19.md`
+  `docs/reviews/archive/CVF_H2_AUDIT_MEMORY_POLICY_REFINEMENT_COMPLETION_2026-05-19.md`
 - Phase 2.B memory tail adapters:
   `docs/reviews/CVF_PHASE_2B_MEMORY_TAIL_ADAPTERS_MIGRATION_COMPLETION_2026-05-21.md`
 

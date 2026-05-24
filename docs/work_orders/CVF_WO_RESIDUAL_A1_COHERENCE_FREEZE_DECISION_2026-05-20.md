@@ -14,8 +14,8 @@ Date dispatched: 2026-05-20
 
 Predecessor:
 
-- `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (Candidate A1, REBUTTAL_ACCEPTED)
-- `docs/reviews/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md` (Codex verdict: NON_BLOCKING)
+- `docs/roadmaps/archive/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (Candidate A1, REBUTTAL_ACCEPTED)
+- `docs/reviews/archive/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md` (Codex verdict: NON_BLOCKING)
 
 ---
 
@@ -172,8 +172,8 @@ All of the following must be true before this work order is CLOSED:
 
 ## Authority Chain
 
-- Authorized by: Codex rebuttal `docs/reviews/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md` (A1: NON_BLOCKING)
-- Roadmap: `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (REBUTTAL_ACCEPTED)
+- Authorized by: Codex rebuttal `docs/reviews/archive/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md` (A1: NON_BLOCKING)
+- Roadmap: `docs/roadmaps/archive/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (REBUTTAL_ACCEPTED)
 - Orchestrator: Claude (dispatch role)
 - Worker: Codex (implementer role)
 - Operator approval required: Yes, for GC-018 baseline before any freeze files are authored
@@ -190,8 +190,8 @@ All of the following must be true before this work order is CLOSED:
 
 ## Required First Reads
 
-1. `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` — Candidate A1 scope
-2. `docs/reviews/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md` — A1 NON_BLOCKING verdict and downstream guard requirements
+1. `docs/roadmaps/archive/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` — Candidate A1 scope
+2. `docs/reviews/archive/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md` — A1 NON_BLOCKING verdict and downstream guard requirements
 3. `governance/toolkit/05_OPERATION/CVF_CONTINUATION_CHAIN_GUARD.md` — Rule A/B enforcement surface
 4. `governance/toolkit/05_OPERATION/` (scan the 43-guard chain to know what each guard already enforces)
 

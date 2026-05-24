@@ -14,10 +14,10 @@ Date dispatched: 2026-05-20
 
 Predecessor:
 
-- `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (Candidate D1, corrected after rebuttal)
-- `docs/reviews/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md` (Codex verdict: NON_BLOCKING_WITH_GATE_UPDATE)
-- `docs/reviews/CVF_W1_PROVIDER_CONTRACT_COMPLETION_2026-05-19.md` (W1 closed)
-- `docs/reviews/CVF_LANE_D_PROVIDER_METHOD_PARITY_COMPLETION_2026-05-19.md` (D2 closed)
+- `docs/roadmaps/archive/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (Candidate D1, corrected after rebuttal)
+- `docs/reviews/archive/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md` (Codex verdict: NON_BLOCKING_WITH_GATE_UPDATE)
+- `docs/reviews/archive/CVF_W1_PROVIDER_CONTRACT_COMPLETION_2026-05-19.md` (W1 closed)
+- `docs/reviews/archive/CVF_LANE_D_PROVIDER_METHOD_PARITY_COMPLETION_2026-05-19.md` (D2 closed)
 
 Prerequisite update (Codex rebuttal 2026-05-19): original prerequisite cited
 CDH Candidate D rebuttal. That requirement is superseded — W1 and D2 delta
@@ -198,8 +198,8 @@ All of the following must be true before this work order is CLOSED:
 ## Authority Chain
 
 - Authorized by: Codex rebuttal (D1: NON_BLOCKING_WITH_GATE_UPDATE); prerequisite updated to W1/D2 evidence 2026-05-20
-- Roadmap: `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (REBUTTAL_ACCEPTED)
-- Predecessors: `docs/reviews/CVF_W1_PROVIDER_CONTRACT_COMPLETION_2026-05-19.md` + `docs/reviews/CVF_LANE_D_PROVIDER_METHOD_PARITY_COMPLETION_2026-05-19.md`
+- Roadmap: `docs/roadmaps/archive/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` (REBUTTAL_ACCEPTED)
+- Predecessors: `docs/reviews/archive/CVF_W1_PROVIDER_CONTRACT_COMPLETION_2026-05-19.md` + `docs/reviews/archive/CVF_LANE_D_PROVIDER_METHOD_PARITY_COMPLETION_2026-05-19.md`
 - Orchestrator: Claude; Worker: Codex; Operator approval required for GC-018
 
 ---
@@ -213,8 +213,8 @@ All of the following must be true before this work order is CLOSED:
 
 ## Required First Reads
 
-1. `docs/roadmaps/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` — D1 scope and per-method analysis requirements
-2. `docs/reviews/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md` — D1 verdict and gate update
+1. `docs/roadmaps/archive/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_2026-05-19.md` — D1 scope and per-method analysis requirements
+2. `docs/reviews/archive/CVF_REVIEW_CVF_RESIDUAL_CLOSURE_ROADMAP_CODEX_REBUTTAL_2026-05-19.md` — D1 verdict and gate update
 3. `EXTENSIONS/CVF_MODEL_GATEWAY/src/` — all existing contract files (8 contracts)
 4. `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/` — `evaluate` command for `quickRiskScore` and cost/risk surfaces
 
