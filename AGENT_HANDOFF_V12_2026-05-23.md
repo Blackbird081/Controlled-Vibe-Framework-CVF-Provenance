@@ -38,7 +38,7 @@ Current HEAD before V12 transition:
 
 Current mode marker:
 
-`w2_memory_event_hooks_context_packager_closed_pass_bounded`
+`w3_tool_mcp_database_action_taxonomy_closed_pass_bounded`
 
 ---
 
@@ -296,6 +296,41 @@ public-sync, production readiness, or freeze release.
 Next ranked candidate: Candidate 3 from WC-3, tool/MCP/database action
 governance map. It remains demand-gated and should start as read-only taxonomy
 only with a fresh GC-018/work order and WC-4 Control Block.
+
+### 2026-05-24 - W3 Tool MCP Database Action Taxonomy Closed
+
+Current HEAD before W3 authorization commit: `e43ddbdf`.
+
+Authorization commit:
+`c87b80a7` — docs(w3): authorize tool action taxonomy tranche
+
+W3 completion:
+`docs/reviews/CVF_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_COMPLETION_2026-05-24.md`
+
+Implemented:
+
+- `governance/contracts/tool-action-taxonomy.ts` with
+  `cvf.toolActionTaxonomy.w3.v1`;
+- `evaluateToolActionTaxonomy()` for planned tool, command, MCP, capability,
+  and database-facing action classification;
+- secret-safe diagnostic posture, approval level, trace/audit, sandbox,
+  mutation-capture, rollback, and `runtimeExecutionAuthorized=false`;
+- focused W3 tests.
+
+Verification:
+
+- focused W3 tests PASS `11/11`;
+- full `governance/contracts` tests PASS `109/109`.
+
+Boundary: local taxonomy/contract proof only. No runtime tool execution, MCP
+bridge/client/server, database runtime adapter or mutation execution,
+`/api/execute`, provider behavior, governance evidence receipt envelope,
+auth/RBAC, public-sync, production readiness, or freeze release.
+
+Next ranked candidate: Candidate 4 from WC-3, operational benchmark scorecard.
+It remains demand-gated and should start with a fresh GC-018/work order and
+WC-4 Control Block, consuming existing evidence logs/diagnostics rather than
+opening broad provider soak loops.
 
 ### 2026-05-24 - WC-2 Mock Fallback Elimination Closed
 

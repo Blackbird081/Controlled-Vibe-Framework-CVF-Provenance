@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — WC-1/WC-2 CLOSED_PASS_BOUNDED; WC-3 CLOSED_MAPPING_ONLY; WC-4 CLOSED_CONTROL_ONLY; W1/W2 CLOSED_PASS_BOUNDED; W-series CONTINUES DEMAND_GATED
+Status: ACTIVE — WC-1/WC-2 CLOSED_PASS_BOUNDED; WC-3 CLOSED_MAPPING_ONLY; WC-4 CLOSED_CONTROL_ONLY; W1/W2/W3 CLOSED_PASS_BOUNDED; W-series CONTINUES DEMAND_GATED
 
 Date: 2026-05-24
 
@@ -276,6 +276,42 @@ Next ranked candidate:
 - Candidate 3 from WC-3: tool/MCP/database action governance map. It remains
   demand-gated and should start as read-only taxonomy only.
 
+#### W3: Tool/MCP/Database Action Taxonomy
+
+**Gate:** CLOSED_PASS_BOUNDED.
+
+Authorization:
+
+- `docs/baselines/CVF_GC018_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_2026-05-24.md`
+- `docs/work_orders/CVF_WO_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_2026-05-24.md`
+- `docs/reviews/CVF_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_COMPLETION_2026-05-24.md`
+
+Bounded target:
+
+- local `governance/contracts` taxonomy only;
+- deterministic planned-action evaluation for tool, command, MCP, capability,
+  and database-facing actions;
+- secret-safe diagnostic posture with approval, trace, sandbox,
+  mutation-capture, rollback, and runtime-execution boundary flags.
+
+Boundary:
+
+- no runtime tool execution, MCP bridge/client/server implementation,
+  database driver or mutation runtime, `/api/execute`, provider behavior,
+  governance evidence receipt envelope, auth/RBAC, public-sync, production
+  readiness, or freeze release.
+
+Verification:
+
+- focused W3 tests PASS `11/11`;
+- full `governance/contracts` tests PASS `109/109`.
+
+Next ranked candidate:
+
+- Candidate 4 from WC-3: operational benchmark scorecard. It remains
+  demand-gated and should consume existing evidence logs/diagnostics rather
+  than reopen broad soak loops.
+
 ### WC-4: Knowledge Absorption Blind-Spot Standard
 
 **Gate:** CLOSED_CONTROL_ONLY — doc/process control, no runtime surface.
@@ -350,6 +386,7 @@ Binding result:
 | WC-4 | Binding anti-blindspot standard | `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md` |
 | W1 | Product Brief workflow state-machine projection + live proof | `docs/reviews/CVF_W1_WORKFLOW_STATE_MACHINE_ENFORCEMENT_COMPLETION_2026-05-24.md` |
 | W2 | Memory event hooks + context packager hardening | `docs/reviews/CVF_W2_MEMORY_EVENT_HOOKS_CONTEXT_PACKAGER_COMPLETION_2026-05-24.md` |
+| W3 | Tool/MCP/database planned-action taxonomy | `docs/reviews/CVF_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_COMPLETION_2026-05-24.md` |
 
 ---
 
@@ -367,6 +404,8 @@ WC-4 (blind-spot control law)     <- Closed control only
 W1 (workflow state projection)    <- Closed pass bounded
   |
 W2 (memory hook/context package)   <- Closed pass bounded
+  |
+W3 (tool/MCP/database taxonomy)    <- Closed pass bounded
   |
 W-series next candidates          <- Demand-gated; fresh GC-018 required
 ```

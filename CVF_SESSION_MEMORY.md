@@ -6,13 +6,14 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-24
 
-Current mode marker: `w2_memory_event_hooks_context_packager_closed_pass_bounded`
+Current mode marker: `w3_tool_mcp_database_action_taxonomy_closed_pass_bounded`
 Update 2026-05-24: WC roadmap is active at
 `docs/roadmaps/CVF_WC_WORKFLOW_CHAIN_AND_PAIN_POINT_ROADMAP_2026-05-24.md`;
 WC-1 and WC-2 are closed pass bounded; WC-3/WC-4 are closed; W1 workflow
 state-machine enforcement is closed pass bounded. W2 memory event hooks plus
-context packager hardening is closed pass bounded. Next ranked WC-3 candidate
-is Candidate 3 tool/MCP/database action taxonomy, demand-gated by fresh GC-018.
+context packager hardening is closed pass bounded. W3 tool/MCP/database action
+taxonomy is closed pass bounded. Next ranked WC-3 candidate is Candidate 4
+operational benchmark scorecard, demand-gated by fresh GC-018.
 
 R1/R2/R3 and V1/V2/V3 are closed pass bounded. All live runs must still follow
 `docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md`.
