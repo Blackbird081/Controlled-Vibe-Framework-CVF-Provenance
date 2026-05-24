@@ -38,7 +38,7 @@ Current HEAD before V12 transition:
 
 Current mode marker:
 
-`w1_workflow_state_machine_enforcement_closed_pass_bounded`
+`w2_memory_event_hooks_context_packager_authorized`
 
 ---
 
@@ -245,6 +245,27 @@ Next ranked candidate: Candidate 2 from WC-3, memory event hooks plus context
 packager hardening. It is demand-gated and must start with a fresh GC-018/work
 order containing the WC-4 Knowledge Absorption Blind-Spot Control Block. Keep
 `canReinject=false`; do not open raw reinjection.
+
+### 2026-05-24 - W2 Memory Event Hooks And Context Packager Authorized
+
+Current HEAD before W2 authorization commit: `28134820`.
+
+W2 authorization:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_W2_MEMORY_EVENT_HOOKS_CONTEXT_PACKAGER_2026-05-24.md`
+- work order:
+  `docs/work_orders/CVF_WO_W2_MEMORY_EVENT_HOOKS_CONTEXT_PACKAGER_2026-05-24.md`
+
+Scope: local Learning Plane Foundation helper contracts only. Implement memory
+event-hook classification plus context-package evidence metadata in LPF, with
+focused tests and exports. Preserve `rawMemoryReleased=false`,
+summary-only packaging, and `canReinject=false`.
+
+Forbidden for W2: `/api/execute`, provider behavior, governance evidence
+receipt envelope fields, auth/RBAC, durable/cloud persistence, MCP/tool hooks,
+public-sync, production readiness, freeze release, raw memory prompt injection,
+or `canReinject=true`.
 
 ### 2026-05-24 - WC-2 Mock Fallback Elimination Closed
 
@@ -663,6 +684,7 @@ For older continuity before V12, read:
 
 ## Latest HEADs
 
+- `28134820` — feat(w1): enforce selected workflow state projection (2026-05-24)
 - `13966c38` — docs(w1): authorize workflow state machine tranche (2026-05-24)
 - `23677f2f` — docs(session): sync gc018 control clarification head (2026-05-24)
 - `3889e050` — docs(wc4): clarify gc018 control block requirement (2026-05-24)

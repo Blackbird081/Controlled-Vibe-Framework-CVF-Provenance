@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — WC-1/WC-2 CLOSED_PASS_BOUNDED; WC-3 CLOSED_MAPPING_ONLY; WC-4 CLOSED_CONTROL_ONLY; W1 CLOSED_PASS_BOUNDED; W-series CONTINUES DEMAND_GATED
+Status: ACTIVE — WC-1/WC-2 CLOSED_PASS_BOUNDED; WC-3 CLOSED_MAPPING_ONLY; WC-4 CLOSED_CONTROL_ONLY; W1 CLOSED_PASS_BOUNDED; W2 AUTHORIZED
 
 Date: 2026-05-24
 
@@ -242,6 +242,28 @@ Next ranked candidate:
   with the Knowledge Absorption Blind-Spot Control Block. Preserve
   `canReinject=false`; do not open raw reinjection.
 
+#### W2: Memory Event Hooks + Context Packager Hardening
+
+**Gate:** AUTHORIZED — fresh GC-018/work order issued after W1 closure.
+
+Authorization:
+
+- `docs/baselines/CVF_GC018_W2_MEMORY_EVENT_HOOKS_CONTEXT_PACKAGER_2026-05-24.md`
+- `docs/work_orders/CVF_WO_W2_MEMORY_EVENT_HOOKS_CONTEXT_PACKAGER_2026-05-24.md`
+
+Bounded target:
+
+- local Learning Plane Foundation memory event-hook classification;
+- summary-only context package evidence metadata;
+- focused LPF tests and exports.
+
+Boundary:
+
+- no `/api/execute`, provider behavior, governance evidence receipt envelope,
+  auth/RBAC, durable/cloud persistence, MCP/tool hooks, public-sync,
+  production readiness, freeze release, raw memory prompt injection, or
+  `canReinject=true`.
+
 ### WC-4: Knowledge Absorption Blind-Spot Standard
 
 **Gate:** CLOSED_CONTROL_ONLY — doc/process control, no runtime surface.
@@ -315,6 +337,7 @@ Binding result:
 | WC-3 | Mapping document | `docs/reference/CVF_LEGACY_HARVEST_SCAN_MAP_2026-05-24.md` |
 | WC-4 | Binding anti-blindspot standard | `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md` |
 | W1 | Product Brief workflow state-machine projection + live proof | `docs/reviews/CVF_W1_WORKFLOW_STATE_MACHINE_ENFORCEMENT_COMPLETION_2026-05-24.md` |
+| W2 | Authorized memory event hooks + context packager hardening | `docs/baselines/CVF_GC018_W2_MEMORY_EVENT_HOOKS_CONTEXT_PACKAGER_2026-05-24.md` |
 
 ---
 
@@ -330,6 +353,8 @@ WC-3 (legacy harvest scan)        <- Closed mapping only
 WC-4 (blind-spot control law)     <- Closed control only
   |
 W1 (workflow state projection)    <- Closed pass bounded
+  |
+W2 (memory hook/context package)   <- Authorized; local LPF helper contracts
   |
 W-series next candidates          <- Demand-gated; fresh GC-018 required
 ```
