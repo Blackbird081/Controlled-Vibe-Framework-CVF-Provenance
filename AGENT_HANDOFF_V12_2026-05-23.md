@@ -78,6 +78,38 @@ current.
 
 ## Latest Work / Changes
 
+### 2026-05-24 - WC-1 Workflow Chain Proof Closed
+
+Operator authorized opening implementation. WC-1 is closed pass bounded.
+
+Completion:
+`docs/reviews/CVF_WC1_WORKFLOW_CHAIN_PROOF_COMPLETION_2026-05-24.md`
+
+Evidence JSON:
+`docs/reviews/CVF_WC1_WORKFLOW_CHAIN_PROOF_EVIDENCE_2026-05-24.json`
+
+Implemented: `scripts/run_cvf_wc1_workflow_chain_probe.mjs` starts local CVF
+Web with a temporary durable-memory store and performs two signed live
+`/api/execute` calls. Turn 1 writes summary-only durable memory. Turn 2 reads
+the same memory id by durable-memory receipt evidence.
+
+Live proof PASS:
+
+- Turn 1 receipt `rcpt-env-mpjrwfuh-opgp5q`, trace `env-mpjrwfuh-opgp5q`,
+  memory id `s1-4da7cc23-8a60-4005-9084-a85787ed3660`.
+- Turn 2 receipt `rcpt-env-mpjrwowf-omx3d7`, trace `env-mpjrwowf-omx3d7`,
+  read memory ids include the turn 1 memory id.
+- Both calls: Alibaba `qwen-turbo`, `success=true`, `evidenceMode=live`.
+- Durable receipts preserve `summaryOnly=true`, `rawMemoryReleased=false`, and
+  `canReinject=false`.
+
+Verification: script syntax PASS; cvf-web TypeScript check PASS; markdown
+structural completeness PASS; docs governance PASS; mandatory release gate PASS
+`7/7`.
+
+Next: WC-3 legacy harvest scan remains demand-gated and requires fresh
+authorization/work order before implementation.
+
 ### 2026-05-24 - WC-2 Mock Fallback Elimination Closed
 
 Claude roadmap review:

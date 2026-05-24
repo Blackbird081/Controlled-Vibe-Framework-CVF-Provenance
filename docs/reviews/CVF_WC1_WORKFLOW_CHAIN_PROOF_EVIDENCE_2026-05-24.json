@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "cvf-wc1-workflow-chain-live-result-1",
+  "status": "PASS",
+  "claimClass": "bounded_two_turn_workflow_chain_write_then_read",
+  "scope": "project:wc1-workflow-chain",
+  "turn1": {
+    "httpStatus": 200,
+    "latencyMs": 11878,
+    "success": true,
+    "provider": "alibaba",
+    "model": "qwen-turbo",
+    "receiptId": "rcpt-env-mpjrwfuh-opgp5q",
+    "traceId": "env-mpjrwfuh-opgp5q",
+    "evidenceMode": "live",
+    "durableMemoryWriteReceipt": {
+      "decision": "allowed",
+      "reason": "durable_memory_write_authorized",
+      "memoryIds": [
+        "s1-4da7cc23-8a60-4005-9084-a85787ed3660"
+      ],
+      "rawMemoryReleased": false,
+      "canReinject": false
+    }
+  },
+  "turn2": {
+    "httpStatus": 200,
+    "latencyMs": 13475,
+    "success": true,
+    "provider": "alibaba",
+    "model": "qwen-turbo",
+    "receiptId": "rcpt-env-mpjrwowf-omx3d7",
+    "traceId": "env-mpjrwowf-omx3d7",
+    "evidenceMode": "live",
+    "durableMemoryRead": {
+      "decision": "allowed",
+      "reason": "durable_memory_read_authorized",
+      "memoryIds": [
+        "s1-4da7cc23-8a60-4005-9084-a85787ed3660"
+      ],
+      "summaryOnly": true,
+      "rawMemoryReleased": false,
+      "canReinject": false
+    }
+  },
+  "persistedRecordCount": 1,
+  "security": {
+    "rawSecretPrinted": false,
+    "rawMemoryReleased": false,
+    "requestHeadersPrinted": false
+  },
+  "assertions": {
+    "turn1HttpStatus200": true,
+    "turn1SuccessTrue": true,
+    "turn1EvidenceModeLive": true,
+    "turn1ReceiptPresent": true,
+    "writeReceiptAllowed": true,
+    "writeRawMemoryReleasedFalse": true,
+    "writeCanReinjectFalse": true,
+    "writePersistedRecord": true,
+    "turn2HttpStatus200": true,
+    "turn2SuccessTrue": true,
+    "turn2EvidenceModeLive": true,
+    "turn2ReceiptPresent": true,
+    "readReceiptAllowed": true,
+    "readIncludesWrittenMemory": true,
+    "readSummaryOnly": true,
+    "readRawMemoryReleasedFalse": true,
+    "readCanReinjectFalse": true,
+    "storeStillContainsRecord": true
+  },
+  "failedAssertions": []
+}

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — WC-2 CLOSED_PASS_BOUNDED; WC-1/WC-3/W-series DEMAND_GATED
+Status: ACTIVE — WC-1/WC-2 CLOSED_PASS_BOUNDED; WC-3/W-series DEMAND_GATED
 
 Date: 2026-05-24
 
@@ -138,7 +138,7 @@ Completed steps:
 
 ### WC-1: Workflow Chain Proof
 
-**Gate:** DEMAND_GATED — requires GC-018 authorization before implementation.
+**Gate:** CLOSED_PASS_BOUNDED.
 
 **Existing surfaces to wire (no new runtime surface expected):**
 
@@ -150,18 +150,18 @@ Completed steps:
 | V3 execution diagnostics | CLOSED_PASS | `execution-diagnostics.ts` |
 | Receipt envelope | LIVE | `GovernanceEvidenceReceipt` |
 
-Steps (after GC-018 authorization):
+Completed steps:
 
-1. Write a live probe script that sends two sequential calls:
+1. Wrote a live probe script that sends two sequential calls:
    - Call 1: standard skill execution with `durableMemoryWrite.enabled=true`
    - Call 2: reads prior session context, references call 1 receipt
-2. Verify: call 1 receipt includes `durableMemoryWriteReceipt`
-3. Verify: call 2 durable-memory read receipt shows allowed read with
+2. Verified: call 1 receipt includes `durableMemoryWriteReceipt`
+3. Verified: call 2 durable-memory read receipt shows allowed read with
    `memoryIds` and summary-only context injection. Model output may be
    supportive evidence, but it is not sufficient by itself.
-4. Confirm `rawMemoryReleased=false`, `canReinject=false`, `evidenceMode=live`,
+4. Confirmed `rawMemoryReleased=false`, `canReinject=false`, `evidenceMode=live`,
    `rawSecretPrinted=false`
-5. File completion review under `docs/reviews/`
+5. Filed completion review under `docs/reviews/`
 
 ### WC-3: Legacy Harvest Scan
 
@@ -210,14 +210,14 @@ new audits.
 
 ### WC-1
 
-- [ ] Live receipt from turn 1 includes `durableMemoryWriteReceipt`
-- [ ] Live receipt from turn 2 confirms prior session context retrieval through
+- [x] Live receipt from turn 1 includes `durableMemoryWriteReceipt`
+- [x] Live receipt from turn 2 confirms prior session context retrieval through
       durable-memory read evidence (`memoryIds`, summary-only, injected context)
-- [ ] `rawMemoryReleased=false` in both receipts
-- [ ] `canReinject=false` preserved (compile-time literal unchanged)
-- [ ] `evidenceMode=live` on both calls
-- [ ] `rawSecretPrinted=false`
-- [ ] Completion review filed under `docs/reviews/`
+- [x] `rawMemoryReleased=false` in both receipts
+- [x] `canReinject=false` preserved (compile-time literal unchanged)
+- [x] `evidenceMode=live` on both calls
+- [x] `rawSecretPrinted=false`
+- [x] Completion review filed under `docs/reviews/`
 
 ### WC-3
 
@@ -233,7 +233,7 @@ new audits.
 | Track | Evidence | Location |
 | --- | --- | --- |
 | WC-2 | Focused test run + release gate | `docs/reviews/CVF_WC2_MOCK_FALLBACK_ELIMINATION_COMPLETION_2026-05-24.md` |
-| WC-1 | Live probe script + two receipts | `scripts/run_cvf_wc1_workflow_chain_probe.mjs` (to be created) |
+| WC-1 | Live probe script + two receipts | `docs/reviews/CVF_WC1_WORKFLOW_CHAIN_PROOF_COMPLETION_2026-05-24.md` |
 | WC-3 | Mapping document | `docs/reference/CVF_LEGACY_HARVEST_SCAN_MAP_2026-*.md` |
 
 ---
@@ -243,9 +243,9 @@ new audits.
 ```text
 WC-2 (mock fallback elimination)  <- Fast Lane, can start now
   |
-WC-1 (workflow chain proof)       <- Demand-gated; GC-018 required
+WC-1 (workflow chain proof)       <- Closed pass bounded
   |
-WC-3 (legacy harvest scan)        <- Demand-gated; mapping exercise
+WC-3 (legacy harvest scan)        <- Next; demand-gated mapping exercise
   |
 W-series (real user pain points)  <- Demand-gated; depends on WC-3
 ```
