@@ -233,6 +233,37 @@ describe('ProcessingScreen — guided response (W88-T1)', () => {
     expect(panel.textContent).toContain('rcpt-env-v3');
     expect(onComplete).not.toHaveBeenCalled();
   });
+
+  it('renders unclassified live failure without falling back to mock output', async () => {
+    const onComplete = vi.fn();
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({
+      json: async () => ({
+        success: false,
+        error: 'Provider returned empty output',
+        provider: 'alibaba',
+        model: 'qwen-turbo',
+        governanceEvidenceReceipt: {
+          receiptId: 'rcpt-env-empty',
+          evidenceMode: 'live',
+          routeId: '/api/execute',
+          decision: 'ALLOW',
+          provider: 'alibaba',
+          model: 'qwen-turbo',
+          envelopeId: 'env-empty',
+          generatedAt: '2026-05-24T00:00:00.000Z',
+        },
+      }),
+    }));
+
+    render(<ProcessingScreen {...baseProps} onComplete={onComplete} />);
+
+    await waitFor(() => {
+      expect(screen.getByRole('alert').textContent).toContain('Provider returned empty output');
+    });
+
+    await new Promise((resolve) => setTimeout(resolve, 4200));
+    expect(onComplete).not.toHaveBeenCalled();
+  }, 10000);
 });
 
 // ── W94-T1: Risk Badge Visibility ────────────────────────────────────────────

@@ -6,16 +6,13 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-24
 
-Current mode marker: `v1_v2_v3_value_tranche_closed_pass_bounded`
-Update 2026-05-24: V1/V2/V3 are closed pass bounded. V3 implemented mandatory
-execution diagnostics; V1 hardened non-coder first-value failure recovery; V2
-added evidence-to-action receipt packaging. All live runs must still follow
-`docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md`.
+Current mode marker: `wc2_mock_fallback_elimination_closed_pass_bounded`
+Update 2026-05-24: WC roadmap is active at
+`docs/roadmaps/CVF_WC_WORKFLOW_CHAIN_AND_PAIN_POINT_ROADMAP_2026-05-24.md`;
+WC-2 is closed pass bounded; WC-1/WC-3 remain demand-gated.
 
-R1/R2/R3 post-M1 gap closure is closed. R2 delivered explicit policy-gated
-`/api/execute` durable-memory reads with live receipt
-`rcpt-env-mpjdj5rc-p1g9go`; R3 delivered the non-coder Step 0 API-key setup
-guide and public-sync commit `1160f1b9`.
+R1/R2/R3 and V1/V2/V3 are closed pass bounded. All live runs must still follow
+`docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md`.
 
 ## Purpose
 

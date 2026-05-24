@@ -120,7 +120,7 @@ export function ProcessingScreen({
     const [status, setStatus] = useState(isVi ? 'Đang khởi tạo...' : 'Initializing...');
     const [error, setError] = useState<string | null>(null);
     const [guidedResponse, setGuidedResponse] = useState<string | null>(null);
-    const [isRealExecution, setIsRealExecution] = useState(() => Boolean(inputs && intent && Object.keys(inputs).length > 0));
+    const [isRealExecution] = useState(() => Boolean(inputs && intent && Object.keys(inputs).length > 0));
     // W92-T1: Approval request state
     const [approvalRequestId, setApprovalRequestId] = useState<string | null>(null);
     const [approvalSubmitting, setApprovalSubmitting] = useState(false);
@@ -267,7 +267,7 @@ export function ProcessingScreen({
                 return true;
             }
 
-            // If real execution fails, show error but fall back to mock
+            // If real execution fails, render the classified failure truthfully.
             if (diagnostic) {
                 const nextAction = diagnostic.userAction.replaceAll('_', ' ');
                 setError(isVi
@@ -283,12 +283,17 @@ export function ProcessingScreen({
                 return true;
             }
 
-            setError(data.error || (isVi ? 'Thực thi API thất bại' : 'API execution failed'));
-            return false;
+            setError(data.error || (isVi
+                ? 'Thực thi API thất bại. Không tạo kết quả mẫu thay thế.'
+                : 'API execution failed. No mock output was generated.'));
+            return true;
         } catch (err) {
             setExecutionDiagnostic(null);
-            setError(err instanceof Error ? err.message : 'Network error');
-            return false;
+            const message = err instanceof Error ? err.message : 'Network error';
+            setError(isVi
+                ? `${message}. Không tạo kết quả mẫu thay thế.`
+                : `${message}. No mock output was generated.`);
+            return true;
         }
     }, [templateId, templateName, inputs, intent, onComplete, settings.preferences.defaultExportMode, isVi, executionOverrides, executionProvider, selectedModel]);
 
@@ -433,9 +438,9 @@ export function ProcessingScreen({
             const runId = setTimeout(() => {
                 executeReal().then(success => {
                     if (!success) {
-                        // Fall back to mock on failure
-                        setIsRealExecution(false);
-                        runMockExecution();
+                        setError(isVi
+                            ? 'Không thể bắt đầu thực thi thật. Không tạo kết quả mẫu thay thế.'
+                            : 'Unable to start real execution. No mock output was generated.');
                     }
                 });
             }, 0);

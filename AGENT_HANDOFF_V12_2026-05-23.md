@@ -78,6 +78,27 @@ current.
 
 ## Latest Work / Changes
 
+### 2026-05-24 - WC-2 Mock Fallback Elimination Closed
+
+Claude roadmap review:
+`docs/roadmaps/CVF_WC_WORKFLOW_CHAIN_AND_PAIN_POINT_ROADMAP_2026-05-24.md`
+was audited. Corrections applied:
+
+- active-session state was misaligned after roadmap commit `12a03b80`;
+- roadmap sequence now treats WC-2 as the executable first step;
+- WC-1 remains demand-gated and its read-back proof must rely on receipt and
+  durable-memory read evidence, not model-output inference alone.
+
+WC-2 completion:
+`docs/reviews/CVF_WC2_MOCK_FALLBACK_ELIMINATION_COMPLETION_2026-05-24.md`
+
+Implemented: ProcessingScreen no longer calls mock/demo output after a failed
+real `/api/execute` attempt, even when no V3 diagnostic is present. Classified
+diagnostic behavior and successful real execution behavior remain intact.
+
+Verification: ProcessingScreen focused tests PASS `23/23`; cvf-web TypeScript
+check PASS; mandatory release gate PASS `7/7`.
+
 ### 2026-05-24 - V1/V2/V3 Value-Screened Tranche Closed
 
 Operator directed Codex to process V1, V2, and V3 under the multi-role
@@ -470,6 +491,7 @@ For older continuity before V12, read:
 
 ## Latest HEADs
 
+- `12a03b80` — docs(wc-roadmap): dispatch workflow chain and pain point return roadmap (2026-05-24)
 - `46206abe` — feat(v-tranche): close v1 v2 v3 diagnostics and first value (2026-05-24)
 - `9fb8f31e` — docs(v3): define mandatory live-run diagnostics (2026-05-24)
 - `493d15f5` — docs(session): sync handoff after s2 closure (2026-05-24)
