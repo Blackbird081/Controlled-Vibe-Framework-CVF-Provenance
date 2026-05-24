@@ -69,6 +69,8 @@ Additional verification:
 
 - `npm run check`: PASS.
 - `python scripts/run_cvf_release_gate_bundle.py --json`: PASS `7/7`.
+- Public-safe evidence update: public-sync commit `ce6c921a` updates
+  `docs/evidence/execution-diagnostics-and-first-value-2026-05-24.md`.
 
 ## Acceptance Criteria
 

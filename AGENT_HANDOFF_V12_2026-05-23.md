@@ -92,12 +92,16 @@ was audited. Corrections applied:
 WC-2 completion:
 `docs/reviews/CVF_WC2_MOCK_FALLBACK_ELIMINATION_COMPLETION_2026-05-24.md`
 
+Commit:
+`6c09d300` (fix(wc2): eliminate mock fallback after live failure)
+
 Implemented: ProcessingScreen no longer calls mock/demo output after a failed
 real `/api/execute` attempt, even when no V3 diagnostic is present. Classified
 diagnostic behavior and successful real execution behavior remain intact.
 
 Verification: ProcessingScreen focused tests PASS `23/23`; cvf-web TypeScript
-check PASS; mandatory release gate PASS `7/7`.
+check PASS; mandatory release gate PASS `7/7`. Public-sync evidence updated at
+`ce6c921a`.
 
 ### 2026-05-24 - V1/V2/V3 Value-Screened Tranche Closed
 
@@ -491,6 +495,7 @@ For older continuity before V12, read:
 
 ## Latest HEADs
 
+- `6c09d300` — fix(wc2): eliminate mock fallback after live failure (2026-05-24)
 - `12a03b80` — docs(wc-roadmap): dispatch workflow chain and pain point return roadmap (2026-05-24)
 - `46206abe` — feat(v-tranche): close v1 v2 v3 diagnostics and first value (2026-05-24)
 - `9fb8f31e` — docs(v3): define mandatory live-run diagnostics (2026-05-24)
