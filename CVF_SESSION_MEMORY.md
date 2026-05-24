@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-25
 
-Current mode marker: `c7c_external_skill_candidate_record_validator_authorized`
+Current mode marker: `c7c_external_skill_candidate_record_validator_closed`
 
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Previous handoff archive:
 
 ## Current State
 
-Current mode: `c7c_external_skill_candidate_record_validator_authorized`.
+Current mode: `c7c_external_skill_candidate_record_validator_closed`.
 
 C7A closed PASS bounded at:
 
@@ -195,22 +195,26 @@ evolution/schema-contract patterns, deferred runtime/import/registry/new-pack
 work, and recommended C7C external skill candidate record validator/readout as
 the next highest-value bounded tranche.
 
-## Active Authorized Tranche
+## Latest Closed Tranche
 
-C7C External Skill Candidate Record Validator is authorized:
+C7C External Skill Candidate Record Validator is closed PASS bounded:
 
-`docs/baselines/CVF_GC018_C7C_EXTERNAL_SKILL_CANDIDATE_RECORD_VALIDATOR_2026-05-25.md`
+`docs/reviews/CVF_C7C_EXTERNAL_SKILL_CANDIDATE_RECORD_VALIDATOR_COMPLETION_2026-05-25.md`
 
-Work order:
+Implementation:
 
-`docs/work_orders/CVF_WO_C7C_EXTERNAL_SKILL_CANDIDATE_RECORD_VALIDATOR_2026-05-25.md`
+`governance/contracts/external-skill-candidate-screen.ts`
 
-C7C may add a local deterministic `governance/contracts` validator/readout for
-one external skill candidate record. It may not import external skills, modify
-packs, publish registries, execute tools/MCP/CLI/scripts/models/providers,
-fetch live external repositories, make public-sync/marketplace claims, or touch
-`/api/execute`, receipt envelopes, auth/RBAC, hosted readiness, production
-readiness, or freeze release.
+Tests:
+
+`governance/contracts/external-skill-candidate-screen.test.ts`
+
+C7C added local deterministic `cvf.externalSkillCandidateScreen.c7c.v1`.
+Focused tests PASS 9/9; full `governance/contracts` tests PASS 123/123. It
+does not import external skills, modify packs, publish registries, execute
+tools/MCP/CLI/scripts/models/providers, fetch live external repositories, make
+public-sync/marketplace claims, or touch `/api/execute`, receipt envelopes,
+auth/RBAC, hosted readiness, production readiness, or freeze release.
 
 ## Mandatory Standards
 

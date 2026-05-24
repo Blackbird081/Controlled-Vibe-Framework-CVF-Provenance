@@ -36,6 +36,8 @@ Current HEAD before C7B implementation closure commit: `237585d8`.
 
 Current HEAD before C7C authorization commit: `c32fe8f6`.
 
+Current HEAD before C7C implementation closure commit: `903cd565`.
+
 Remote tracking branch:
 
 `origin/main`
@@ -85,7 +87,7 @@ Previous long session memory snapshot was archived at:
 
 ## Current Mode
 
-`c7c_external_skill_candidate_record_validator_authorized`
+`c7c_external_skill_candidate_record_validator_closed`
 
 Freeze posture remains:
 
@@ -234,30 +236,36 @@ patterns; deferred runtime/import/registry/new-pack work; rejected bulk/direct
 import; and recommended C7C external skill candidate record validator/readout
 as the next highest-value bounded tranche.
 
+## Latest Work / Changes
+
+C7C External Skill Candidate Record Validator is closed PASS bounded:
+
+`docs/reviews/CVF_C7C_EXTERNAL_SKILL_CANDIDATE_RECORD_VALIDATOR_COMPLETION_2026-05-25.md`
+
+Implementation:
+
+`governance/contracts/external-skill-candidate-screen.ts`
+
+Tests:
+
+`governance/contracts/external-skill-candidate-screen.test.ts`
+
+C7C added `cvf.externalSkillCandidateScreen.c7c.v1` and
+`evaluateExternalSkillCandidateScreen()` for one ES1/C7B-style record. The
+readout reports missing fields, decision, risk, disposition, next safe action,
+and boundaries while preserving `runtimeExecutionAuthorized=false`,
+`registryPublicationAuthorized=false`, and `externalFetchAuthorized=false`.
+Verification: focused C7C tests PASS 9/9; full `governance/contracts` tests
+PASS 123/123.
+
 ## Next Allowed Move
 
-Recommended next work is C7C External Skill Candidate Record Validator/Readout,
-with fresh GC-018/work order and the Knowledge Absorption Blind-Spot Control
-Block. Candidate-specific external skill import may start only when the
-operator names a concrete source/use case and authorizes the required owner
-surface.
-
-## Active Authorized Tranche
-
-C7C External Skill Candidate Record Validator is authorized:
-
-`docs/baselines/CVF_GC018_C7C_EXTERNAL_SKILL_CANDIDATE_RECORD_VALIDATOR_2026-05-25.md`
-
-Work order:
-
-`docs/work_orders/CVF_WO_C7C_EXTERNAL_SKILL_CANDIDATE_RECORD_VALIDATOR_2026-05-25.md`
-
-C7C may add a local deterministic `governance/contracts` validator/readout plus
-tests. It may not import external skills, modify product packs, publish
-registries, execute tools/MCP/CLI/scripts/models/providers, fetch live external
-repositories, make public-sync/marketplace claims, or touch `/api/execute`,
-receipt envelopes, auth/RBAC, hosted readiness, production readiness, or freeze
-release.
+Recommended next work is C7D candidate-specific metadata screening only if the
+operator wants to screen a concrete local-catalog candidate such as
+`competitor-alternatives`, `data-context-extractor`, or `llm-evaluation`.
+Candidate-specific external skill import may start only when the operator names
+a concrete source/use case and authorizes the required owner surface with fresh
+GC-018/work order.
 
 Do not add real tool, command, MCP, database, browser, or provider execution;
 MCP bridge wiring; database adapter/driver/query/mutation/export/migration;
