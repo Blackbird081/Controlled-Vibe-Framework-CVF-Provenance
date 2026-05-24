@@ -292,6 +292,7 @@ operator use case, and the WC-4 Control Block.
 ### 2026-05-24 - WC Workflow Chain Roadmap Closed
 
 Current HEAD before roadmap closure commit: `96af02a4`.
+Current HEAD before Candidate 7 intake-chain clarification sync: `f0302217`.
 
 Closure:
 `docs/reviews/CVF_WC_WORKFLOW_CHAIN_AND_PAIN_POINT_ROADMAP_CLOSURE_2026-05-24.md`
