@@ -6,10 +6,12 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-24
 
-Current mode marker: `wc1_workflow_chain_proof_closed_pass_bounded`
+Current mode marker: `w1_workflow_state_machine_enforcement_authorized`
 Update 2026-05-24: WC roadmap is active at
 `docs/roadmaps/CVF_WC_WORKFLOW_CHAIN_AND_PAIN_POINT_ROADMAP_2026-05-24.md`;
-WC-1 and WC-2 are closed pass bounded; WC-3 remains demand-gated.
+WC-1 and WC-2 are closed pass bounded; WC-3/WC-4 are closed; W1 workflow
+state-machine enforcement is authorized with a fresh GC-018/work order and is
+the next implementation move.
 
 R1/R2/R3 and V1/V2/V3 are closed pass bounded. All live runs must still follow
 `docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md`.

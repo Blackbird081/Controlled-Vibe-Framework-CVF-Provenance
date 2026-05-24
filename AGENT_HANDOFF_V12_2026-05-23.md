@@ -38,7 +38,7 @@ Current HEAD before V12 transition:
 
 Current mode marker:
 
-`wc4_knowledge_absorption_blindspot_standard_closed_control_only`
+`w1_workflow_state_machine_enforcement_authorized`
 
 ---
 
@@ -183,6 +183,31 @@ adversarial role review, and thin proof/closure delta.
 
 Next: W-series implementation remains demand-gated and must use WC-3 map plus
 WC-4 blind-spot control before any runtime work.
+
+### 2026-05-24 - W1 Workflow State-Machine Enforcement Authorized
+
+Operator instructed Codex to proceed through the WC-3 ranked roadmap in priority
+order, committing after each part and updating session continuity. W1 is now
+authorized as the first W-series implementation tranche:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_W1_WORKFLOW_STATE_MACHINE_ENFORCEMENT_2026-05-24.md`
+- work order:
+  `docs/work_orders/CVF_WO_W1_WORKFLOW_STATE_MACHINE_ENFORCEMENT_2026-05-24.md`
+
+The mandatory WC-4 Knowledge Absorption Blind-Spot Control Block is included.
+Three role lenses converged on the same bounded surface: existing Product Brief
+workflow projection in
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts`.
+
+Implementation target: replay workflow transition state for one selected
+workflow so deferred reviewer gate step 4 cannot be skipped while step 5 is
+still reported as completed. Keep this to existing workflow binding, receipt
+binding, route audit metadata, execution identity, and V3 diagnostics. Do not
+widen into a global workflow engine, route-level invalid-transition BLOCK,
+provider semantics, new receipt envelope, role taxonomy, auth/RBAC, memory
+reinjection, public-sync, hosted readiness, production readiness, or freeze
+release.
 
 ### 2026-05-24 - WC-2 Mock Fallback Elimination Closed
 
@@ -601,6 +626,7 @@ For older continuity before V12, read:
 
 ## Latest HEADs
 
+- `23677f2f` — docs(session): sync gc018 control clarification head (2026-05-24)
 - `3889e050` — docs(wc4): clarify gc018 control block requirement (2026-05-24)
 - `148beab5` — docs(wc4): mandate knowledge absorption blindspot control across agents (2026-05-24)
 - `56d5597c` — docs(wc4): mandate knowledge absorption blindspot control (2026-05-24)
