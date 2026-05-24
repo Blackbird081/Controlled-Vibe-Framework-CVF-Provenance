@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-25
 
-Current mode marker: `lh1_legacy_harvest_closeout_ledger_closed`
+Current mode marker: `cb1_context_budget_request_shaping_readout_authorized`
 
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Previous handoff archive:
 
 ## Current State
 
-Current mode: `lh1_legacy_harvest_closeout_ledger_closed`.
+Current mode: `cb1_context_budget_request_shaping_readout_authorized`.
 
 C7A closed PASS bounded at:
 
@@ -112,13 +112,22 @@ over the ten certified packs, completed runtime bindings for
 risk/human-review/no-match readout. Verification: focused Governance CLI
 `cvf skill` tests PASS 10/10; Governance CLI TypeScript check PASS.
 
-## Recommended Next Move
+## Active Tranche
 
-No next implementation tranche is active.
+CB1 context-budget/request-shaping readout is authorized:
 
-Recommended next absorption candidate: context-budget and request-shaping
-readout from `caveman`, Human System Harness, and Workflow GoClaw. It still
-requires fresh GC-018 and work order before implementation.
+`docs/baselines/CVF_GC018_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_2026-05-25.md`
+
+Work order:
+
+`docs/work_orders/CVF_WO_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_2026-05-25.md`
+
+Target: deterministic local request-context readout nested in Governance CLI
+`cvf skill select`, absorbing context budgeting, relevance filtering,
+compaction, brief normalization, reverse-brief, and context packaging guardrail
+concepts. No LLM scoring, runtime context packager, provider/API call, memory
+injection, MCP/tool/database execution, public-sync, hosted readiness,
+production readiness, or freeze release.
 
 Candidate 7 external skill/model ingestion remains held until there is a
 concrete source/use-case binding.

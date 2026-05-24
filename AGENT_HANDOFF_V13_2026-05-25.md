@@ -14,6 +14,8 @@ Current HEAD before C8 implementation closure commit: `e5886810`.
 
 Current HEAD before LH1 closeout ledger commit: `acf2ce79`.
 
+Current HEAD before CB1 authorization commit: `488cb9da`.
+
 Remote tracking branch:
 
 `origin/main`
@@ -63,7 +65,7 @@ Previous long session memory snapshot was archived at:
 
 ## Current Mode
 
-`lh1_legacy_harvest_closeout_ledger_closed`
+`cb1_context_budget_request_shaping_readout_authorized`
 
 Freeze posture remains:
 
@@ -133,13 +135,20 @@ Candidate 7 may reopen only with a fresh GC-018, a concrete source/use-case
 binding, the mandatory Knowledge Absorption Blind-Spot Control Block, and an
 explicit action/tool/provider boundary.
 
-## Recommended Next Move
+## Active Tranche
 
-No next implementation tranche is active.
+CB1 context-budget/request-shaping readout is authorized:
 
-Recommended next absorption candidate: context-budget and request-shaping
-readout from `caveman`, Human System Harness, and Workflow GoClaw. It requires
-fresh GC-018 and work order before implementation.
+`docs/baselines/CVF_GC018_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_2026-05-25.md`
+
+Work order:
+
+`docs/work_orders/CVF_WO_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_2026-05-25.md`
+
+Target: deterministic local request-context readout nested in Governance CLI
+`cvf skill select`, absorbing context budgeting, relevance filtering,
+compaction, brief normalization, reverse-brief, and context packaging guardrail
+concepts.
 
 Do not add more packs, runtime execution, provider calls, receipt-envelope
 changes, memory, MCP/tool/database execution, public-sync, hosted readiness,
