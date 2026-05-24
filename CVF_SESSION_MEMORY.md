@@ -6,13 +6,13 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-24
 
-Current mode marker: `w2_memory_event_hooks_context_packager_authorized`
+Current mode marker: `w2_memory_event_hooks_context_packager_closed_pass_bounded`
 Update 2026-05-24: WC roadmap is active at
 `docs/roadmaps/CVF_WC_WORKFLOW_CHAIN_AND_PAIN_POINT_ROADMAP_2026-05-24.md`;
 WC-1 and WC-2 are closed pass bounded; WC-3/WC-4 are closed; W1 workflow
 state-machine enforcement is closed pass bounded. W2 memory event hooks plus
-context packager hardening is authorized with a fresh GC-018/work order and
-must stay in Learning Plane Foundation helper contracts.
+context packager hardening is closed pass bounded. Next ranked WC-3 candidate
+is Candidate 3 tool/MCP/database action taxonomy, demand-gated by fresh GC-018.
 
 R1/R2/R3 and V1/V2/V3 are closed pass bounded. All live runs must still follow
 `docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md`.
@@ -84,7 +84,7 @@ current.
 
 ## Current Session Mode
 
-- Current mode: `w2_memory_event_hooks_context_packager_authorized`
+- Current mode: `w2_memory_event_hooks_context_packager_closed_pass_bounded`
 - Previous mode: `r1_durable_memory_resilience_closed_r2_p2_gated`
 - Freeze posture: `governance_kernel_freeze_recommended`
 - Active handoff pointer: `AGENT_HANDOFF_V12_2026-05-23.md`
@@ -952,26 +952,34 @@ hardening, remains demand-gated. It requires a fresh GC-018/work order with the
 WC-4 Knowledge Absorption Blind-Spot Control Block and must preserve
 `canReinject=false`.
 
-## W2 Memory Event Hooks And Context Packager - Authorized 2026-05-24
+## W2 Memory Event Hooks And Context Packager - Closed 2026-05-24
 
-Current mode marker: `w2_memory_event_hooks_context_packager_authorized`.
+Current mode marker: `w2_memory_event_hooks_context_packager_closed_pass_bounded`.
 
-W2 is authorized as WC-3 Candidate 2:
+W2 is closed pass bounded as WC-3 Candidate 2:
 
 - GC-018:
   `docs/baselines/CVF_GC018_W2_MEMORY_EVENT_HOOKS_CONTEXT_PACKAGER_2026-05-24.md`
 - Work order:
   `docs/work_orders/CVF_WO_W2_MEMORY_EVENT_HOOKS_CONTEXT_PACKAGER_2026-05-24.md`
+- Completion:
+  `docs/reviews/CVF_W2_MEMORY_EVENT_HOOKS_CONTEXT_PACKAGER_COMPLETION_2026-05-24.md`
 
-Scope is local Learning Plane Foundation helper contracts only:
+W2 added local Learning Plane Foundation helper contracts only:
 
 - memory event-hook classification;
 - summary-only context-package evidence metadata;
 - focused LPF tests and exports.
+
+Evidence: focused LPF tests PASS `11/11`; LPF TypeScript check PASS; governed
+file size guard PASS.
 
 Hard boundaries: no `/api/execute`, provider behavior, governance evidence
 receipt envelope, auth/RBAC, durable/cloud persistence, MCP/tool hooks,
 public-sync, production readiness, freeze release, raw memory prompt injection,
 or `canReinject=true`.
 
-Marker: w2_memory_event_hooks_context_packager_authorized.
+Next: Candidate 3 from WC-3, tool/MCP/database action governance map, remains
+demand-gated and should start as read-only taxonomy only.
+
+Marker: w2_memory_event_hooks_context_packager_closed_pass_bounded.

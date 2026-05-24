@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — WC-1/WC-2 CLOSED_PASS_BOUNDED; WC-3 CLOSED_MAPPING_ONLY; WC-4 CLOSED_CONTROL_ONLY; W1 CLOSED_PASS_BOUNDED; W2 AUTHORIZED
+Status: ACTIVE — WC-1/WC-2 CLOSED_PASS_BOUNDED; WC-3 CLOSED_MAPPING_ONLY; WC-4 CLOSED_CONTROL_ONLY; W1/W2 CLOSED_PASS_BOUNDED; W-series CONTINUES DEMAND_GATED
 
 Date: 2026-05-24
 
@@ -244,12 +244,13 @@ Next ranked candidate:
 
 #### W2: Memory Event Hooks + Context Packager Hardening
 
-**Gate:** AUTHORIZED — fresh GC-018/work order issued after W1 closure.
+**Gate:** CLOSED_PASS_BOUNDED.
 
 Authorization:
 
 - `docs/baselines/CVF_GC018_W2_MEMORY_EVENT_HOOKS_CONTEXT_PACKAGER_2026-05-24.md`
 - `docs/work_orders/CVF_WO_W2_MEMORY_EVENT_HOOKS_CONTEXT_PACKAGER_2026-05-24.md`
+- `docs/reviews/CVF_W2_MEMORY_EVENT_HOOKS_CONTEXT_PACKAGER_COMPLETION_2026-05-24.md`
 
 Bounded target:
 
@@ -263,6 +264,17 @@ Boundary:
   auth/RBAC, durable/cloud persistence, MCP/tool hooks, public-sync,
   production readiness, freeze release, raw memory prompt injection, or
   `canReinject=true`.
+
+Verification:
+
+- focused LPF tests PASS `11/11`;
+- LPF TypeScript check PASS;
+- governed file size guard PASS.
+
+Next ranked candidate:
+
+- Candidate 3 from WC-3: tool/MCP/database action governance map. It remains
+  demand-gated and should start as read-only taxonomy only.
 
 ### WC-4: Knowledge Absorption Blind-Spot Standard
 
@@ -337,7 +349,7 @@ Binding result:
 | WC-3 | Mapping document | `docs/reference/CVF_LEGACY_HARVEST_SCAN_MAP_2026-05-24.md` |
 | WC-4 | Binding anti-blindspot standard | `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md` |
 | W1 | Product Brief workflow state-machine projection + live proof | `docs/reviews/CVF_W1_WORKFLOW_STATE_MACHINE_ENFORCEMENT_COMPLETION_2026-05-24.md` |
-| W2 | Authorized memory event hooks + context packager hardening | `docs/baselines/CVF_GC018_W2_MEMORY_EVENT_HOOKS_CONTEXT_PACKAGER_2026-05-24.md` |
+| W2 | Memory event hooks + context packager hardening | `docs/reviews/CVF_W2_MEMORY_EVENT_HOOKS_CONTEXT_PACKAGER_COMPLETION_2026-05-24.md` |
 
 ---
 
@@ -354,7 +366,7 @@ WC-4 (blind-spot control law)     <- Closed control only
   |
 W1 (workflow state projection)    <- Closed pass bounded
   |
-W2 (memory hook/context package)   <- Authorized; local LPF helper contracts
+W2 (memory hook/context package)   <- Closed pass bounded
   |
 W-series next candidates          <- Demand-gated; fresh GC-018 required
 ```

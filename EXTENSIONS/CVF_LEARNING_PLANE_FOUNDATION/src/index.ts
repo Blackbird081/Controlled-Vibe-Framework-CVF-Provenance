@@ -38,8 +38,24 @@ export type {
   ExcludedMemoryItem,
   MemoryContextBlock,
   MemoryContextItem,
+  MemoryContextPackageEvidence,
   MemoryContextPackageInput,
 } from "./memory-context-packager";
+export {
+  APPROVED_MEMORY_EVENT_HOOKS,
+  DISALLOWED_MEMORY_EVENT_HOOKS,
+  evaluateMemoryEventHook,
+  MEMORY_EVENT_HOOKS_VERSION,
+} from "./memory-event-hooks";
+export type {
+  DisallowedMemoryEventHookType,
+  MemoryEventHookDecision,
+  MemoryEventHookEvaluation,
+  MemoryEventHookInput,
+  MemoryEventHookPolicyDecision,
+  MemoryEventHookReceipt,
+  MemoryEventHookType,
+} from "./memory-event-hooks";
 export {
   AIF_OPERATIONAL_CONTEXT_PREVIEW_VERSION,
   buildAifOperationalContextPreview,

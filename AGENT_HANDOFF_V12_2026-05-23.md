@@ -38,7 +38,7 @@ Current HEAD before V12 transition:
 
 Current mode marker:
 
-`w2_memory_event_hooks_context_packager_authorized`
+`w2_memory_event_hooks_context_packager_closed_pass_bounded`
 
 ---
 
@@ -266,6 +266,36 @@ Forbidden for W2: `/api/execute`, provider behavior, governance evidence
 receipt envelope fields, auth/RBAC, durable/cloud persistence, MCP/tool hooks,
 public-sync, production readiness, freeze release, raw memory prompt injection,
 or `canReinject=true`.
+
+### 2026-05-24 - W2 Memory Event Hooks And Context Packager Closed
+
+Current HEAD before W2 closure commit: `771570b5`.
+
+W2 completion:
+`docs/reviews/CVF_W2_MEMORY_EVENT_HOOKS_CONTEXT_PACKAGER_COMPLETION_2026-05-24.md`
+
+Implemented:
+
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-event-hooks.ts`
+  with `cvf.memoryEventHooks.w2.v1`;
+- context package evidence metadata in
+  `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-context-packager.ts`;
+- LPF index exports and focused tests.
+
+Verification:
+
+- focused LPF tests PASS `11/11`;
+- LPF TypeScript check PASS;
+- governed file size guard PASS.
+
+Boundary: local LPF helper-contract proof only. No `/api/execute`, provider
+behavior, governance evidence receipt envelope fields, auth/RBAC, durable/cloud
+persistence, MCP/tool hooks, raw memory prompt injection, `canReinject=true`,
+public-sync, production readiness, or freeze release.
+
+Next ranked candidate: Candidate 3 from WC-3, tool/MCP/database action
+governance map. It remains demand-gated and should start as read-only taxonomy
+only with a fresh GC-018/work order and WC-4 Control Block.
 
 ### 2026-05-24 - WC-2 Mock Fallback Elimination Closed
 
@@ -684,6 +714,7 @@ For older continuity before V12, read:
 
 ## Latest HEADs
 
+- `771570b5` — docs(w2): authorize memory event hooks tranche (2026-05-24)
 - `28134820` — feat(w1): enforce selected workflow state projection (2026-05-24)
 - `13966c38` — docs(w1): authorize workflow state machine tranche (2026-05-24)
 - `23677f2f` — docs(session): sync gc018 control clarification head (2026-05-24)

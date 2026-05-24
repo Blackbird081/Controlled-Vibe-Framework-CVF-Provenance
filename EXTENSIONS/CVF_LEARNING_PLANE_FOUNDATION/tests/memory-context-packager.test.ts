@@ -26,6 +26,17 @@ describe("memory context packager phase 2a", () => {
 
     expect(block.contractVersion).toBe(MEMORY_CONTEXT_PACKAGER_VERSION);
     expect(block.rawMemoryReleased).toBe(false);
+    expect(block.evidence).toMatchObject({
+      policyDecision: "allow_summary_only",
+      sourceMemoryIds: ["mem-1"],
+      includedMemoryCount: 1,
+      excludedMemoryCount: 1,
+      tokenBudget: 100,
+      tokenEstimate: 20,
+      tokenBudgetExceeded: false,
+      rawMemoryReleased: false,
+      canReinject: false,
+    });
     expect(block.sourceMemoryIds).toEqual(["mem-1"]);
     expect(block.text).toContain("[MEMORY_CONTEXT]");
     expect(block.text).toContain("Do not print raw API keys.");
@@ -48,5 +59,12 @@ describe("memory context packager phase 2a", () => {
 
     expect(block.sourceMemoryIds).toEqual(["mem-1"]);
     expect(block.excludedMemory).toEqual([{ id: "mem-2", reason: "token_budget_exceeded" }]);
+    expect(block.evidence).toMatchObject({
+      includedMemoryCount: 1,
+      excludedMemoryCount: 1,
+      tokenBudgetExceeded: true,
+      rawMemoryReleased: false,
+      canReinject: false,
+    });
   });
 });
