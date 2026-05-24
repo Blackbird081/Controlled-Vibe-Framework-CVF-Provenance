@@ -28,6 +28,8 @@ Current HEAD before TA1 implementation closure commit: `74345c7e`.
 
 Current HEAD before ES1 authorization commit: `da526e18`.
 
+Current HEAD before ES1 implementation closure commit: `aa6c0cdf`.
+
 Remote tracking branch:
 
 `origin/main`
@@ -77,7 +79,7 @@ Previous long session memory snapshot was archived at:
 
 ## Current Mode
 
-`es1_external_skill_intake_screening_packet_authorized`
+`es1_external_skill_intake_screening_packet_closed`
 
 Freeze posture remains:
 
@@ -194,18 +196,27 @@ state, required/missing evidence, next safe action, concise safe message, and
 Verification: focused taxonomy tests PASS 16/16; full `governance/contracts`
 tests PASS 3 files, 114/114.
 
-## Active Tranche
+## Latest Work / Changes
 
-ES1 external skill intake screening packet is authorized:
+ES1 external skill intake screening packet is closed PASS bounded:
 
-`docs/baselines/CVF_GC018_ES1_EXTERNAL_SKILL_INTAKE_SCREENING_PACKET_2026-05-25.md`
+`docs/reviews/CVF_ES1_EXTERNAL_SKILL_INTAKE_SCREENING_PACKET_COMPLETION_2026-05-25.md`
 
-Work order:
+Reference:
 
-`docs/work_orders/CVF_WO_ES1_EXTERNAL_SKILL_INTAKE_SCREENING_PACKET_2026-05-25.md`
+`docs/reference/CVF_EXTERNAL_SKILL_INTAKE_SCREENING_PACKET_2026-05-25.md`
 
-Target: docs-only screening/reference packet for future Candidate 7 external
-skill intake.
+ES1 added the docs-only pre-import filter for Candidate 7: concrete source and
+use-case requirement, value screen, duplicate/dilution screen against ten
+certified packs, risk screen, normalization minimum, owner-surface routing,
+dispatch dispositions, stop conditions, and required screening record.
+
+## Next Allowed Move
+
+Next work should be demand-driven with fresh GC-018/work order and the
+Knowledge Absorption Blind-Spot Control Block. Candidate-specific external
+skill screening may start only when the operator names a concrete source/use
+case.
 
 Do not add real tool, command, MCP, database, browser, or provider execution;
 MCP bridge wiring; database adapter/driver/query/mutation/export/migration;
