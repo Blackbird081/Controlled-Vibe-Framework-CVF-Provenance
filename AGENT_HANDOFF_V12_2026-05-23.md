@@ -38,7 +38,7 @@ Current HEAD before V12 transition:
 
 Current mode marker:
 
-`v1_v2_v3_value_tranche_closed_pass_bounded`
+`wc1_workflow_chain_proof_closed_pass_bounded`
 
 ---
 
@@ -81,6 +81,9 @@ current.
 ### 2026-05-24 - WC-1 Workflow Chain Proof Closed
 
 Operator authorized opening implementation. WC-1 is closed pass bounded.
+
+Commit:
+`a081f9dc` — feat(wc1): prove live workflow chain read write loop
 
 Completion:
 `docs/reviews/CVF_WC1_WORKFLOW_CHAIN_PROOF_COMPLETION_2026-05-24.md`
@@ -527,6 +530,8 @@ For older continuity before V12, read:
 
 ## Latest HEADs
 
+- `a081f9dc` — feat(wc1): prove live workflow chain read write loop (2026-05-24)
+- `de8710fe` — docs(session): sync wc2 closure evidence (2026-05-24)
 - `6c09d300` — fix(wc2): eliminate mock fallback after live failure (2026-05-24)
 - `12a03b80` — docs(wc-roadmap): dispatch workflow chain and pain point return roadmap (2026-05-24)
 - `46206abe` — feat(v-tranche): close v1 v2 v3 diagnostics and first value (2026-05-24)
