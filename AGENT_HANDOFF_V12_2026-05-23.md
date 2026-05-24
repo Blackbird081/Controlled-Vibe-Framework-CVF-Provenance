@@ -83,7 +83,7 @@ current.
 Operator directed Codex to process C2-C5 to pass. Fresh combined GC-018 and
 work order were issued, implemented, verified, and closed:
 
-Commit: `1dae79b4` (feat(post-aif): close c2-c5 claim gates)
+Commit: `9b1615b8` (feat(post-aif): close c2-c5 claim gates)
 
 - GC-018:
   `docs/baselines/CVF_GC018_C2_C5_POST_AIF_CLAIM_GRADUATION_2026-05-24.md`
