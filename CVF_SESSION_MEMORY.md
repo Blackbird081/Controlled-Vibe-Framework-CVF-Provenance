@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-25
 
-Current mode marker: `ta1_tool_action_approval_readout_authorized`
+Current mode marker: `ta1_tool_action_approval_readout_closed`
 
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Previous handoff archive:
 
 ## Current State
 
-Current mode: `ta1_tool_action_approval_readout_authorized`.
+Current mode: `ta1_tool_action_approval_readout_closed`.
 
 C7A closed PASS bounded at:
 
@@ -143,21 +143,21 @@ check PASS.
 Candidate 7 external skill/model ingestion remains held until there is a
 concrete source/use-case binding.
 
-## Active Tranche
+## Latest Closed Tranche
 
-TA1 tool/action approval readout is authorized:
+TA1 tool/action approval readout is closed PASS bounded:
 
-`docs/baselines/CVF_GC018_TA1_TOOL_ACTION_APPROVAL_READOUT_2026-05-25.md`
+`docs/reviews/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
 
 Work order:
 
 `docs/work_orders/CVF_WO_TA1_TOOL_ACTION_APPROVAL_READOUT_2026-05-25.md`
 
-Target: deterministic local approval/readout on top of W3 tool action taxonomy.
-No real tool, command, MCP, database, browser, or provider execution; no MCP
-bridge; no database adapter/driver/query/mutation/export/migration; no
-`/api/execute`, receipt-envelope, auth/RBAC, public-sync, hosted readiness,
-production readiness, or freeze release.
+TA1 added deterministic local `cvf.toolActionApprovalReadout.ta1.v1` over W3
+tool action taxonomy. It reports approval state, required/missing evidence,
+next safe action, concise message, and explicit boundaries while preserving
+`runtimeExecutionAuthorized=false`. Verification: focused taxonomy tests PASS
+16/16; full `governance/contracts` tests PASS 114/114.
 
 Do not add packs, runtime execution, provider behavior, receipt envelopes,
 memory, MCP/tool/database execution, public-sync, hosted readiness, production

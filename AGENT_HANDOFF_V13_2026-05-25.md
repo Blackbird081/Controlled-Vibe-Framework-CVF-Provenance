@@ -24,6 +24,8 @@ Current HEAD before WR1 implementation closure commit: `43969712`.
 
 Current HEAD before TA1 authorization commit: `ea7824ef`.
 
+Current HEAD before TA1 implementation closure commit: `74345c7e`.
+
 Remote tracking branch:
 
 `origin/main`
@@ -73,7 +75,7 @@ Previous long session memory snapshot was archived at:
 
 ## Current Mode
 
-`ta1_tool_action_approval_readout_authorized`
+`ta1_tool_action_approval_readout_closed`
 
 Freeze posture remains:
 
@@ -172,19 +174,34 @@ provider/API call, `/api/execute` behavior change beyond existing projection
 data flow, receipt envelope, memory, MCP/tool/database execution, public-sync,
 hosted readiness, production readiness, or freeze release.
 
-## Active Tranche
+## Latest Work / Changes
 
-TA1 tool/action approval readout is authorized:
+TA1 tool/action approval readout is closed PASS bounded:
 
-`docs/baselines/CVF_GC018_TA1_TOOL_ACTION_APPROVAL_READOUT_2026-05-25.md`
+`docs/reviews/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
 
 Work order:
 
 `docs/work_orders/CVF_WO_TA1_TOOL_ACTION_APPROVAL_READOUT_2026-05-25.md`
 
-Target: deterministic local approval/readout on top of W3 tool action taxonomy,
-with approval state, required/missing evidence, next safe action, concise safe
-message, and `runtimeExecutionAuthorized=false` preserved.
+TA1 added deterministic local `cvf.toolActionApprovalReadout.ta1.v1` and
+`buildToolActionApprovalReadout()` over W3 tool action taxonomy, with approval
+state, required/missing evidence, next safe action, concise safe message, and
+`runtimeExecutionAuthorized=false` preserved.
+
+Verification: focused taxonomy tests PASS 16/16; full `governance/contracts`
+tests PASS 3 files, 114/114.
+
+## Next Allowed Move
+
+Any next absorption work must start with a fresh GC-018/work order and the
+Knowledge Absorption Blind-Spot Control Block.
+
+Remaining demand-gated LH1 candidates include:
+
+- external skill intake screening packet;
+- route-level workflow enforcement proof;
+- read-only tool runtime bridge design, only if explicitly authorized.
 
 Do not add real tool, command, MCP, database, browser, or provider execution;
 MCP bridge wiring; database adapter/driver/query/mutation/export/migration;

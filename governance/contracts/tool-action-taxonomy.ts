@@ -4,6 +4,7 @@ import type {
 } from './cross-channel-guard-contract.ts';
 
 export const TOOL_ACTION_TAXONOMY_VERSION = 'cvf.toolActionTaxonomy.w3.v1' as const;
+export const TOOL_ACTION_APPROVAL_READOUT_VERSION = 'cvf.toolActionApprovalReadout.ta1.v1' as const;
 
 export type ToolActionSurface =
   | 'local_tool'
@@ -60,6 +61,24 @@ export type ToolActionUserAction =
   | 'contact_admin'
   | 'do_not_retry_without_new_evidence';
 
+export type ToolActionApprovalState =
+  | 'not_required'
+  | 'pending_approval'
+  | 'satisfied_but_not_executable'
+  | 'blocked_before_approval'
+  | 'blocked_by_policy'
+  | 'incomplete_approval';
+
+export type ToolActionApprovalEvidence =
+  | 'scope_declaration'
+  | 'target_declaration'
+  | 'trace_binding'
+  | 'audit_receipt'
+  | 'sandbox_declaration'
+  | 'mutation_capture_plan'
+  | 'rollback_plan'
+  | 'approval_evidence';
+
 export interface ToolActionTaxonomyRequest {
   actionId: string;
   surface: ToolActionSurface;
@@ -100,6 +119,30 @@ export interface ToolActionTaxonomyEvaluation {
   runtimeExecutionAuthorized: false;
   diagnostic: ToolActionDiagnostic;
   reasons: string[];
+}
+
+export interface ToolActionApprovalReadoutContext {
+  approvalEvidenceId?: string;
+  approvedBy?: string;
+  approvalReason?: string;
+}
+
+export interface ToolActionApprovalReadout {
+  contractVersion: typeof TOOL_ACTION_APPROVAL_READOUT_VERSION;
+  actionId: string;
+  surface: ToolActionSurface;
+  sideEffect: ToolActionSideEffect;
+  taxonomyDecision: CVFCanonicalDecision;
+  riskLevel: CVFCanonicalRisk;
+  approvalLevel: ToolActionApprovalLevel;
+  approvalState: ToolActionApprovalState;
+  requiredEvidence: readonly ToolActionApprovalEvidence[];
+  missingEvidence: readonly ToolActionApprovalEvidence[];
+  runtimeExecutionAuthorized: false;
+  nextSafeAction: string;
+  safeMessage: string;
+  diagnostic: ToolActionDiagnostic;
+  boundaries: readonly string[];
 }
 
 const READ_ONLY_EFFECTS = new Set<ToolActionSideEffect>([
@@ -245,6 +288,41 @@ export function isRuntimeExecutionAuthorized(
 ): false {
   void evaluation;
   return false;
+}
+
+export function buildToolActionApprovalReadout(
+  evaluation: ToolActionTaxonomyEvaluation,
+  context: ToolActionApprovalReadoutContext = {},
+): ToolActionApprovalReadout {
+  const requiredEvidence = resolveRequiredApprovalEvidence(evaluation);
+  const missingEvidence = resolveMissingApprovalEvidence(evaluation, context);
+  const approvalState = resolveApprovalState(evaluation, missingEvidence);
+
+  return {
+    contractVersion: TOOL_ACTION_APPROVAL_READOUT_VERSION,
+    actionId: evaluation.actionId,
+    surface: evaluation.surface,
+    sideEffect: evaluation.sideEffect,
+    taxonomyDecision: evaluation.decision,
+    riskLevel: evaluation.riskLevel,
+    approvalLevel: evaluation.approvalLevel,
+    approvalState,
+    requiredEvidence,
+    missingEvidence,
+    runtimeExecutionAuthorized: false,
+    nextSafeAction: resolveNextSafeApprovalAction(approvalState, evaluation.approvalLevel),
+    safeMessage: resolveApprovalSafeMessage(approvalState),
+    diagnostic: evaluation.diagnostic,
+    boundaries: [
+      'readout_only',
+      'no_runtime_execution',
+      'no_mcp_bridge',
+      'no_database_driver',
+      'no_provider_call',
+      'no_receipt_envelope_change',
+      'no_approval_persistence',
+    ],
+  };
 }
 
 function resolveRiskLevel(request: ToolActionTaxonomyRequest): CVFCanonicalRisk {
@@ -414,4 +492,160 @@ function buildEvaluation(
     diagnostic: result.diagnostic,
     reasons: result.reasons,
   };
+}
+
+function resolveRequiredApprovalEvidence(
+  evaluation: ToolActionTaxonomyEvaluation,
+): readonly ToolActionApprovalEvidence[] {
+  const required = new Set<ToolActionApprovalEvidence>([
+    'trace_binding',
+    'audit_receipt',
+  ]);
+
+  if (evaluation.approvalLevel !== 'none') {
+    required.add('approval_evidence');
+  }
+
+  if (requiresScopeEvidence(evaluation)) {
+    required.add('scope_declaration');
+  }
+
+  if (requiresTargetEvidence(evaluation)) {
+    required.add('target_declaration');
+  }
+
+  if (evaluation.sandboxRequired) {
+    required.add('sandbox_declaration');
+  }
+
+  if (evaluation.mutationCaptureRequired) {
+    required.add('mutation_capture_plan');
+  }
+
+  if (evaluation.rollbackRequired) {
+    required.add('rollback_plan');
+  }
+
+  return [...required];
+}
+
+function resolveMissingApprovalEvidence(
+  evaluation: ToolActionTaxonomyEvaluation,
+  context: ToolActionApprovalReadoutContext,
+): readonly ToolActionApprovalEvidence[] {
+  const missing = new Set<ToolActionApprovalEvidence>();
+
+  if (evaluation.reasons.includes('scope_required')) {
+    missing.add('scope_declaration');
+  }
+
+  if (evaluation.reasons.includes('target_required')) {
+    missing.add('target_declaration');
+  }
+
+  if (evaluation.reasons.includes('trace_binding_missing')) {
+    missing.add('trace_binding');
+  }
+
+  if (evaluation.reasons.includes('sandbox_required')) {
+    missing.add('sandbox_declaration');
+  }
+
+  if (evaluation.reasons.includes('rollback_required')) {
+    missing.add('rollback_plan');
+  }
+
+  if (evaluation.diagnostic.class === 'approval_required') {
+    missing.add('approval_evidence');
+  }
+
+  if (
+    evaluation.decision === 'ALLOW'
+    && evaluation.approvalLevel !== 'none'
+    && (!context.approvalEvidenceId || !context.approvedBy || !context.approvalReason)
+  ) {
+    missing.add('approval_evidence');
+  }
+
+  return [...missing];
+}
+
+function resolveApprovalState(
+  evaluation: ToolActionTaxonomyEvaluation,
+  missingEvidence: readonly ToolActionApprovalEvidence[],
+): ToolActionApprovalState {
+  if (evaluation.diagnostic.class === 'policy_blocked') {
+    return 'blocked_by_policy';
+  }
+
+  if (evaluation.decision === 'BLOCK') {
+    return 'blocked_before_approval';
+  }
+
+  if (evaluation.diagnostic.class === 'approval_required') {
+    return 'pending_approval';
+  }
+
+  if (evaluation.approvalLevel === 'none') {
+    return 'not_required';
+  }
+
+  if (missingEvidence.includes('approval_evidence')) {
+    return 'incomplete_approval';
+  }
+
+  return 'satisfied_but_not_executable';
+}
+
+function resolveNextSafeApprovalAction(
+  approvalState: ToolActionApprovalState,
+  approvalLevel: ToolActionApprovalLevel,
+): string {
+  switch (approvalState) {
+    case 'not_required':
+      return 'No approval is required, but runtime execution still needs a separately authorized executor.';
+    case 'pending_approval':
+      return `Request ${approvalLevel} approval with the required evidence before any future runtime can execute this action.`;
+    case 'satisfied_but_not_executable':
+      return 'Hold for a separately authorized runtime executor; this approval readout does not execute actions.';
+    case 'blocked_before_approval':
+      return 'Add the missing scope, target, or trace evidence before requesting approval.';
+    case 'blocked_by_policy':
+      return 'Stop this action and open a fresh governed work order if the operator wants to pursue it.';
+    case 'incomplete_approval':
+      return 'Attach approval evidence, approver identity, and approval reason before treating approval as satisfied.';
+  }
+}
+
+function resolveApprovalSafeMessage(
+  approvalState: ToolActionApprovalState,
+): string {
+  switch (approvalState) {
+    case 'not_required':
+      return 'Approval is not required for this classified action, but execution is not authorized by this readout.';
+    case 'pending_approval':
+      return 'Approval is required before this action can be considered for a future runtime executor.';
+    case 'satisfied_but_not_executable':
+      return 'Approval evidence is satisfied, but this contract still grants no runtime execution authority.';
+    case 'blocked_before_approval':
+      return 'Required scope, target, or trace evidence is missing; approval cannot be evaluated yet.';
+    case 'blocked_by_policy':
+      return 'The action is policy-blocked under the local contract boundary.';
+    case 'incomplete_approval':
+      return 'Approval is incomplete; approver, reason, and evidence id are required.';
+  }
+}
+
+function requiresScopeEvidence(evaluation: ToolActionTaxonomyEvaluation): boolean {
+  return evaluation.surface === 'database' ||
+    evaluation.surface === 'mcp_tool' ||
+    evaluation.mutationCaptureRequired ||
+    evaluation.sideEffect === 'network_egress';
+}
+
+function requiresTargetEvidence(evaluation: ToolActionTaxonomyEvaluation): boolean {
+  return evaluation.surface === 'database' ||
+    evaluation.sideEffect === 'external_mutation' ||
+    evaluation.sideEffect === 'database_export' ||
+    evaluation.sideEffect === 'network_egress';
 }
