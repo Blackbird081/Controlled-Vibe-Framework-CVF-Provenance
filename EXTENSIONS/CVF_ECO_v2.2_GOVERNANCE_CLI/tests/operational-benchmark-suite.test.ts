@@ -95,6 +95,179 @@ describe("operational benchmark suite", () => {
     expect(report.metrics.receiptIntegrityRate.count).toBe(1);
   });
 
+  it("prefers nested live probe results over top-level proof status", () => {
+    const events = parseOperationalBenchmarkInput(JSON.stringify({
+      schemaVersion: "cvf-s3-governance-benchmark-live-evidence-1",
+      status: "PASS",
+      liveCallCount: 2,
+      results: [
+        {
+          run: 1,
+          httpStatus: 200,
+          success: true,
+          receiptId: "receipt-live-1",
+          traceId: "trace-live-1",
+          evidenceMode: "live",
+          provider: "alibaba",
+          model: "qwen-turbo",
+        },
+        {
+          run: 2,
+          httpStatus: 200,
+          success: true,
+          receiptId: "receipt-live-2",
+          traceId: "trace-live-2",
+          evidenceMode: "live",
+          provider: "alibaba",
+          model: "qwen-turbo",
+        },
+      ],
+    }));
+
+    const report = buildOperationalBenchmarkReport(events);
+
+    expect(events).toHaveLength(2);
+    expect(report.source).toMatchObject({
+      eventCount: 2,
+      evidenceModes: ["live"],
+      providerLanes: ["alibaba"],
+      modelLanes: ["qwen-turbo"],
+    });
+    expect(report.scorecard.callLevel).toMatchObject({
+      totalCalls: 2,
+      successfulCalls: 2,
+      liveCalls: 2,
+      receiptBackedCalls: 2,
+    });
+  });
+
+  it("separates call-level pass rate from event-model denominators", () => {
+    const events = parseOperationalBenchmarkInput([
+      JSON.stringify({
+        executionId: "exec-live-1",
+        eventType: "execution_completed",
+        evidenceMode: "live",
+        provider: "alibaba",
+        model: "qwen-turbo",
+        receiptId: "receipt-live-1",
+        decision: "allow",
+        enforcement: { status: "allow" },
+      }),
+      JSON.stringify({
+        executionId: "exec-live-1",
+        eventType: "receipt_emitted",
+        evidenceMode: "live",
+        provider: "alibaba",
+        model: "qwen-turbo",
+        receiptId: "receipt-live-1",
+        decision: "captured",
+        enforcement: { status: "allow" },
+      }),
+      JSON.stringify({
+        executionId: "exec-live-2",
+        eventType: "execution_completed",
+        evidenceMode: "live",
+        provider: "alibaba",
+        model: "qwen-turbo",
+        receiptId: "receipt-live-2",
+        decision: "allow",
+        enforcement: { status: "allow" },
+      }),
+      JSON.stringify({
+        executionId: "exec-live-2",
+        eventType: "receipt_emitted",
+        evidenceMode: "live",
+        provider: "alibaba",
+        model: "qwen-turbo",
+        receiptId: "receipt-live-2",
+        decision: "captured",
+        enforcement: { status: "allow" },
+      }),
+    ].join("\n"));
+
+    const report = buildOperationalBenchmarkReport(events);
+
+    expect(report.scorecard.callLevel).toMatchObject({
+      totalCalls: 2,
+      successfulCalls: 2,
+      failedCalls: 0,
+      liveCalls: 2,
+      receiptBackedCalls: 2,
+      callPassRate: { rate: 1, count: 2, total: 2 },
+    });
+    expect(report.metrics.taskCompletionRate).toEqual({ rate: 0.5, count: 2, total: 4 });
+    expect(report.scorecard.eventModel).toMatchObject({
+      totalEvents: 4,
+      eventsPerCall: 2,
+      taskCompletionRate: { rate: 0.5, count: 2, total: 4 },
+      receiptIntegrityRate: { rate: 0.5, count: 2, total: 4 },
+    });
+    expect(report.scorecard.clarityStatus).toBe("needs_context");
+    expect(report.scorecard.operatorSummary).toContain("2/2 call(s) passed");
+    expect(report.scorecard.operatorSummary).toContain("event model contains 4 event(s)");
+  });
+
+  it("counts diagnostics and user actions for failed calls", () => {
+    const events = parseOperationalBenchmarkInput([
+      JSON.stringify({
+        executionId: "exec-fail-1",
+        eventType: "execution_completed",
+        evidenceMode: "live",
+        decision: "deny",
+        enforcement: { status: "deny" },
+        diagnostic: {
+          class: "provider_timeout",
+          userAction: "wait_and_retry",
+        },
+      }),
+      JSON.stringify({
+        executionId: "exec-fail-2",
+        eventType: "execution_completed",
+        evidenceMode: "live",
+        decision: "deny",
+        enforcement: { status: "deny" },
+        diagnosticClass: "receipt_missing",
+        userAction: "inspect_receipt",
+        overconstraintDetected: true,
+        frictionSignals: ["excessive_procedure"],
+      }),
+      JSON.stringify({
+        executionId: "exec-fail-3",
+        eventType: "execution_completed",
+        evidenceMode: "live",
+        decision: "deny",
+        enforcement: { status: "deny" },
+      }),
+    ].join("\n"));
+
+    const report = buildOperationalBenchmarkReport(events);
+
+    expect(report.scorecard.callLevel).toMatchObject({
+      totalCalls: 3,
+      successfulCalls: 0,
+      failedCalls: 3,
+    });
+    expect(report.scorecard.diagnostics).toMatchObject({
+      diagnosticBackedFailures: 2,
+      failedCallsWithoutDiagnostic: 1,
+    });
+    expect(report.scorecard.diagnostics.classCounts).toEqual([
+      { label: "provider_timeout", count: 1 },
+      { label: "receipt_missing", count: 1 },
+    ]);
+    expect(report.scorecard.diagnostics.userActionCounts).toEqual([
+      { label: "inspect_receipt", count: 1 },
+      { label: "wait_and_retry", count: 1 },
+    ]);
+    expect(report.scorecard.advisorySignals.frictionSignals).toEqual([
+      { label: "excessive_procedure", count: 1 },
+    ]);
+    expect(report.scorecard.advisorySignals.overconstraintSignals).toEqual([
+      { label: "overconstraint_detected", count: 1 },
+    ]);
+    expect(report.scorecard.clarityStatus).toBe("needs_context");
+  });
+
   it("formats an operational report as a table with claim boundary", () => {
     const report = buildOperationalBenchmarkReport([
       {
@@ -110,6 +283,8 @@ describe("operational benchmark suite", () => {
     const output = formatOperationalBenchmarkReport(report, "table");
 
     expect(output).toContain("CVF Operational Governance Benchmark");
+    expect(output).toContain("callLevel 1/1 pass=1.000");
+    expect(output).toContain("eventModel events=1");
     expect(output).toContain("retryCount 0/1");
     expect(output).toContain("deferred: hallucinationRecovery");
     expect(output).toContain("claimBoundary:");
@@ -148,6 +323,10 @@ describe("operational benchmark suite", () => {
         },
         metrics: {
           taskCompletionRate: { count: 1, total: 1 },
+        },
+        scorecard: {
+          callLevel: { totalCalls: 1, successfulCalls: 1 },
+          eventModel: { totalEvents: 1 },
         },
       });
     } finally {

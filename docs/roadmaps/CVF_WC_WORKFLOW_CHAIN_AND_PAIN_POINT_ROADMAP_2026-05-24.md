@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — WC-1/WC-2 CLOSED_PASS_BOUNDED; WC-3 CLOSED_MAPPING_ONLY; WC-4 CLOSED_CONTROL_ONLY; W1/W2/W3 CLOSED_PASS_BOUNDED; W-series CONTINUES DEMAND_GATED
+Status: ACTIVE — WC-1/WC-2 CLOSED_PASS_BOUNDED; WC-3 CLOSED_MAPPING_ONLY; WC-4 CLOSED_CONTROL_ONLY; W1/W2/W3/W4 CLOSED_PASS_BOUNDED; W-series CONTINUES DEMAND_GATED
 
 Date: 2026-05-24
 
@@ -308,9 +308,51 @@ Verification:
 
 Next ranked candidate:
 
-- Candidate 4 from WC-3: operational benchmark scorecard. It remains
-  demand-gated and should consume existing evidence logs/diagnostics rather
-  than reopen broad soak loops.
+- Candidate 4 from WC-3 closed as W4. Next ranked candidate is Candidate 5:
+  provider method and fallback normalization. It remains demand-gated and
+  should start only if tied to a concrete provider-method claim or
+  operator-facing failure class.
+
+#### W4: Operational Benchmark Scorecard
+
+**Gate:** CLOSED_PASS_BOUNDED.
+
+Authorization:
+
+- `docs/baselines/CVF_GC018_W4_OPERATIONAL_BENCHMARK_SCORECARD_2026-05-24.md`
+- `docs/work_orders/CVF_WO_W4_OPERATIONAL_BENCHMARK_SCORECARD_2026-05-24.md`
+- `docs/reviews/CVF_W4_OPERATIONAL_BENCHMARK_SCORECARD_COMPLETION_2026-05-24.md`
+
+Bounded target:
+
+- existing Governance CLI operational benchmark report only;
+- add scorecard fields that separate call-level result from event-model
+  denominator;
+- add diagnostic class and user-action counts for existing evidence records;
+- improve table output labels for `callLevel` and `eventModel`.
+
+Boundary:
+
+- no new live provider benchmark or provider soak;
+- no provider adapter, model router, `/api/execute`, or receipt-envelope
+  change;
+- no output-quality scoring, runtime observability dashboard, public-sync,
+  hosted-readiness, production-readiness, or freeze-release claim.
+
+Verification:
+
+- focused operational benchmark tests PASS `7/7`;
+- focused operational + governance reliability tests PASS `32/32`;
+- full Governance CLI tests PASS `119/119`;
+- Governance CLI TypeScript check PASS;
+- Governance CLI build PASS;
+- existing S3 evidence CLI parse PASS with `callLevel 5/5 pass=1.000`.
+
+Next ranked candidate:
+
+- Candidate 5 from WC-3: provider method and fallback normalization. It remains
+  demand-gated. Do not reopen broad provider soak loops; tie any future work to
+  a specific provider method, fallback, or diagnostic class.
 
 ### WC-4: Knowledge Absorption Blind-Spot Standard
 
@@ -387,6 +429,7 @@ Binding result:
 | W1 | Product Brief workflow state-machine projection + live proof | `docs/reviews/CVF_W1_WORKFLOW_STATE_MACHINE_ENFORCEMENT_COMPLETION_2026-05-24.md` |
 | W2 | Memory event hooks + context packager hardening | `docs/reviews/CVF_W2_MEMORY_EVENT_HOOKS_CONTEXT_PACKAGER_COMPLETION_2026-05-24.md` |
 | W3 | Tool/MCP/database planned-action taxonomy | `docs/reviews/CVF_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_COMPLETION_2026-05-24.md` |
+| W4 | Operational benchmark scorecard | `docs/reviews/CVF_W4_OPERATIONAL_BENCHMARK_SCORECARD_COMPLETION_2026-05-24.md` |
 
 ---
 
@@ -406,6 +449,8 @@ W1 (workflow state projection)    <- Closed pass bounded
 W2 (memory hook/context package)   <- Closed pass bounded
   |
 W3 (tool/MCP/database taxonomy)    <- Closed pass bounded
+  |
+W4 (operational scorecard)         <- Closed pass bounded
   |
 W-series next candidates          <- Demand-gated; fresh GC-018 required
 ```
@@ -448,6 +493,11 @@ does not claim route-level invalid-transition blocking, a broad workflow
 engine, reviewer UI, recovery orchestration, provider behavior, auth/RBAC,
 receipt-envelope semantics, public capability, hosted readiness, production
 readiness, or freeze release.
+
+W4 claims only local operational scorecard generation from existing evidence
+records. It does not claim new live governance behavior, provider reliability,
+output quality, hallucination recovery, autonomous observability, public
+readiness, production readiness, or freeze release.
 
 No track in this roadmap claims `canReinject=true`, global freeze lift,
 enterprise SaaS readiness, or universal provider parity.

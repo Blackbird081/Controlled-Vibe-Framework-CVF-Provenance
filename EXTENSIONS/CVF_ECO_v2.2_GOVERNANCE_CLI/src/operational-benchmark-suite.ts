@@ -38,6 +38,44 @@ export interface OperationalBenchmarkModeBreakdown {
   readonly receiptIntegrityRate: MetricResult;
 }
 
+export interface OperationalBenchmarkLabelCount {
+  readonly label: string;
+  readonly count: number;
+}
+
+export type OperationalBenchmarkClarityStatus = "clear" | "needs_context" | "insufficient_evidence";
+
+export interface OperationalBenchmarkScorecard {
+  readonly callLevel: {
+    readonly totalCalls: number;
+    readonly successfulCalls: number;
+    readonly failedCalls: number;
+    readonly unknownCalls: number;
+    readonly liveCalls: number;
+    readonly receiptBackedCalls: number;
+    readonly callPassRate: MetricResult;
+  };
+  readonly eventModel: {
+    readonly totalEvents: number;
+    readonly eventsPerCall: number | null;
+    readonly taskCompletionRate: MetricResult;
+    readonly receiptIntegrityRate: MetricResult;
+    readonly denominatorNote: string;
+  };
+  readonly diagnostics: {
+    readonly classCounts: readonly OperationalBenchmarkLabelCount[];
+    readonly userActionCounts: readonly OperationalBenchmarkLabelCount[];
+    readonly diagnosticBackedFailures: number;
+    readonly failedCallsWithoutDiagnostic: number;
+  };
+  readonly advisorySignals: {
+    readonly frictionSignals: readonly OperationalBenchmarkLabelCount[];
+    readonly overconstraintSignals: readonly OperationalBenchmarkLabelCount[];
+  };
+  readonly clarityStatus: OperationalBenchmarkClarityStatus;
+  readonly operatorSummary: string;
+}
+
 export interface DeferredOperationalMetric {
   readonly metric: "hallucinationRecovery";
   readonly status: "deferred";
@@ -56,6 +94,7 @@ export interface OperationalBenchmarkReport {
   };
   readonly metrics: OperationalBenchmarkMetrics;
   readonly evidenceModeBreakdown: readonly OperationalBenchmarkModeBreakdown[];
+  readonly scorecard: OperationalBenchmarkScorecard;
   readonly deferredMetrics: readonly DeferredOperationalMetric[];
   readonly claimBoundary: string;
 }
@@ -78,6 +117,7 @@ export function buildOperationalBenchmarkReport(
   input?: string,
 ): OperationalBenchmarkReport {
   const reliability = computeGovernanceReliabilityReport(events);
+  const scorecard = buildOperationalBenchmarkScorecard(events);
   const modes = uniqueSorted(events.map(readEvidenceMode));
   const providerLanes = uniqueSorted(events.map((event) => readString(event.provider)));
   const modelLanes = uniqueSorted(events.map((event) => readString(event.model)));
@@ -103,6 +143,7 @@ export function buildOperationalBenchmarkReport(
       rollbackSuccessRate: reliability.rollbackSuccessRate,
     },
     evidenceModeBreakdown: buildEvidenceModeBreakdown(events),
+    scorecard,
     deferredMetrics: [
       {
         metric: "hallucinationRecovery",
@@ -131,6 +172,14 @@ export function formatOperationalBenchmarkReport(
     `providerLanes: ${report.source.providerLanes.join(", ") || "n/a"}`,
     `modelLanes: ${report.source.modelLanes.join(", ") || "n/a"}`,
     "",
+    "scorecard",
+    `callLevel ${report.scorecard.callLevel.successfulCalls}/${report.scorecard.callLevel.totalCalls} pass=${formatRate(report.scorecard.callLevel.callPassRate.rate)} live=${report.scorecard.callLevel.liveCalls} receiptBacked=${report.scorecard.callLevel.receiptBackedCalls}`,
+    `eventModel events=${report.scorecard.eventModel.totalEvents} eventsPerCall=${formatNullableNumber(report.scorecard.eventModel.eventsPerCall)} task=${formatRate(report.scorecard.eventModel.taskCompletionRate.rate)} receipt=${formatRate(report.scorecard.eventModel.receiptIntegrityRate.rate)}`,
+    `clarityStatus ${report.scorecard.clarityStatus}`,
+    `operatorSummary ${report.scorecard.operatorSummary}`,
+    `diagnosticClasses ${formatLabelCounts(report.scorecard.diagnostics.classCounts)}`,
+    `userActions ${formatLabelCounts(report.scorecard.diagnostics.userActionCounts)}`,
+    "",
     "metric value",
     `taskCompletionRate ${formatRate(report.metrics.taskCompletionRate.rate)}`,
     `retryCount ${report.metrics.retryCount.count}/${report.metrics.retryCount.total}`,
@@ -152,19 +201,77 @@ export function formatOperationalBenchmarkReport(
   ].join("\n");
 }
 
+export function buildOperationalBenchmarkScorecard(events: AuditEvent[]): OperationalBenchmarkScorecard {
+  const callGroups = groupEventsByCall(events);
+  const callSummaries = callGroups.map(summarizeCallGroup);
+  const totalCalls = callSummaries.length;
+  const successfulCalls = callSummaries.filter((call) => call.status === "success").length;
+  const failedCalls = callSummaries.filter((call) => call.status === "failed").length;
+  const unknownCalls = callSummaries.filter((call) => call.status === "unknown").length;
+  const liveCalls = callSummaries.filter((call) => call.evidenceMode === "live").length;
+  const receiptBackedCalls = callSummaries.filter((call) => call.hasReceipt).length;
+  const diagnosticBackedFailures = callSummaries.filter((call) => call.status === "failed" && call.hasDiagnostic).length;
+  const failedCallsWithoutDiagnostic = callSummaries.filter((call) => call.status === "failed" && !call.hasDiagnostic).length;
+  const eventsPerCall = totalCalls === 0 ? null : Number((events.length / totalCalls).toFixed(3));
+  const classCounts = countLabels(events.flatMap(readDiagnosticClasses));
+  const userActionCounts = countLabels(events.flatMap(readDiagnosticUserActions));
+  const frictionSignals = countLabels(events.flatMap(readFrictionSignals));
+  const overconstraintSignals = countLabels(events.flatMap(readOverconstraintSignals));
+  const clarityStatus = resolveClarityStatus({
+    totalCalls,
+    totalEvents: events.length,
+    failedCalls,
+    failedCallsWithoutDiagnostic,
+    eventsPerCall,
+  });
+
+  return {
+    callLevel: {
+      totalCalls,
+      successfulCalls,
+      failedCalls,
+      unknownCalls,
+      liveCalls,
+      receiptBackedCalls,
+      callPassRate: ratio(successfulCalls, totalCalls),
+    },
+    eventModel: {
+      totalEvents: events.length,
+      eventsPerCall,
+      taskCompletionRate: taskCompletionRate(events),
+      receiptIntegrityRate: receiptIntegrityRate(events),
+      denominatorNote: "Event-model rates use benchmark events as denominator and may differ from call-level pass rate.",
+    },
+    diagnostics: {
+      classCounts,
+      userActionCounts,
+      diagnosticBackedFailures,
+      failedCallsWithoutDiagnostic,
+    },
+    advisorySignals: {
+      frictionSignals,
+      overconstraintSignals,
+    },
+    clarityStatus,
+    operatorSummary: buildOperatorSummary(successfulCalls, totalCalls, events.length, failedCallsWithoutDiagnostic, clarityStatus),
+  };
+}
+
 function extractOperationalEvents(value: unknown): AuditEvent[] {
   if (Array.isArray(value)) {
     return value.flatMap(extractOperationalEvents);
   }
   if (!isRecord(value)) return [];
-  if (isAuditEventLike(value)) {
-    const receiptEvent = extractReceiptEvent(value);
-    return receiptEvent ? [normalizeOperationalEvent(value), receiptEvent] : [normalizeOperationalEvent(value)];
-  }
 
   const directContainers = ["events", "records", "auditEvents", "checks", "results"];
   const events = directContainers.flatMap((key) => extractOperationalEvents(value[key]));
   const receiptEvent = extractReceiptEvent(value);
+  if (events.length > 0) {
+    return receiptEvent ? [...events, receiptEvent] : events;
+  }
+  if (isAuditEventLike(value)) {
+    return receiptEvent ? [normalizeOperationalEvent(value), receiptEvent] : [normalizeOperationalEvent(value)];
+  }
   return receiptEvent ? [...events, receiptEvent] : events;
 }
 
@@ -221,6 +328,147 @@ function buildEvidenceModeBreakdown(events: AuditEvent[]): OperationalBenchmarkM
     }));
 }
 
+interface CallGroup {
+  readonly key: string;
+  readonly events: readonly AuditEvent[];
+}
+
+interface CallSummary {
+  readonly status: "success" | "failed" | "unknown";
+  readonly evidenceMode: OperationalBenchmarkEvidenceMode;
+  readonly hasReceipt: boolean;
+  readonly hasDiagnostic: boolean;
+}
+
+function groupEventsByCall(events: AuditEvent[]): CallGroup[] {
+  const groups = new Map<string, AuditEvent[]>();
+  events.forEach((event, index) => {
+    const key = readString(event.executionId) ?? readString(event.runId) ?? `event:${index}`;
+    groups.set(key, [...(groups.get(key) ?? []), event]);
+  });
+  return [...groups.entries()].map(([key, group]) => ({ key, events: group }));
+}
+
+function summarizeCallGroup(group: CallGroup): CallSummary {
+  const hasSuccess = group.events.some(isSuccessfulEvent);
+  const hasFailure = group.events.some(isFailedEvent);
+  return {
+    status: hasSuccess ? "success" : hasFailure ? "failed" : "unknown",
+    evidenceMode: group.events.some((event) => readEvidenceMode(event) === "live") ? "live" : readEvidenceMode(group.events[0] ?? {}),
+    hasReceipt: group.events.some((event) => Boolean(readString(event.receiptId))),
+    hasDiagnostic: group.events.some(hasDiagnostic),
+  };
+}
+
+function isSuccessfulEvent(event: AuditEvent): boolean {
+  const record = event as Record<string, unknown>;
+  const decision = readString(event.decision)?.toLowerCase();
+  const status = readString(event.enforcement?.status)?.toLowerCase() ?? readString(record.status)?.toLowerCase();
+  const success = record.success;
+  return decision === "allow" || status === "allow" || status === "pass" || success === true;
+}
+
+function isFailedEvent(event: AuditEvent): boolean {
+  const record = event as Record<string, unknown>;
+  const decision = readString(event.decision)?.toLowerCase();
+  const status = readString(event.enforcement?.status)?.toLowerCase() ?? readString(record.status)?.toLowerCase();
+  const success = record.success;
+  return decision === "deny"
+    || decision === "missing"
+    || status === "deny"
+    || status === "blocked"
+    || status === "fail"
+    || status === "failed"
+    || status === "error"
+    || success === false;
+}
+
+function hasDiagnostic(event: AuditEvent): boolean {
+  return readDiagnosticClasses(event).length > 0 || readDiagnosticUserActions(event).length > 0;
+}
+
+function readDiagnosticClasses(event: AuditEvent): string[] {
+  const record = event as Record<string, unknown>;
+  const diagnostic = isRecord(record.diagnostic) ? record.diagnostic : isRecord(record.executionDiagnostic) ? record.executionDiagnostic : null;
+  return [
+    readString(record.diagnosticClass),
+    readString(record.errorClass),
+    readString(record.class),
+    diagnostic ? readString(diagnostic.class) : undefined,
+  ].filter((value): value is string => Boolean(value));
+}
+
+function readDiagnosticUserActions(event: AuditEvent): string[] {
+  const record = event as Record<string, unknown>;
+  const diagnostic = isRecord(record.diagnostic) ? record.diagnostic : isRecord(record.executionDiagnostic) ? record.executionDiagnostic : null;
+  return [
+    readString(record.userAction),
+    diagnostic ? readString(diagnostic.userAction) : undefined,
+  ].filter((value): value is string => Boolean(value));
+}
+
+function readFrictionSignals(event: AuditEvent): string[] {
+  const record = event as Record<string, unknown>;
+  return [
+    ...readStringArray(record.frictionSignals),
+    ...readStringArray(record.auditFlags),
+    readString(record.governanceFrictionSignal),
+  ].filter((value): value is string => Boolean(value));
+}
+
+function readOverconstraintSignals(event: AuditEvent): string[] {
+  const record = event as Record<string, unknown>;
+  return [
+    ...readStringArray(record.overconstraintSignals),
+    readString(record.overconstraintSignal),
+    record.overconstraintDetected === true ? "overconstraint_detected" : undefined,
+    record.pathLockRisk === true ? "path_lock_risk" : undefined,
+  ].filter((value): value is string => Boolean(value));
+}
+
+function countLabels(values: readonly string[]): OperationalBenchmarkLabelCount[] {
+  const counts = new Map<string, number>();
+  values.forEach((value) => {
+    const label = value.trim();
+    if (!label) return;
+    counts.set(label, (counts.get(label) ?? 0) + 1);
+  });
+  return [...counts.entries()]
+    .sort(([leftLabel, leftCount], [rightLabel, rightCount]) => rightCount - leftCount || leftLabel.localeCompare(rightLabel))
+    .map(([label, count]) => ({ label, count }));
+}
+
+function resolveClarityStatus(input: {
+  readonly totalCalls: number;
+  readonly totalEvents: number;
+  readonly failedCalls: number;
+  readonly failedCallsWithoutDiagnostic: number;
+  readonly eventsPerCall: number | null;
+}): OperationalBenchmarkClarityStatus {
+  if (input.totalCalls === 0 || input.totalEvents === 0) return "insufficient_evidence";
+  if (input.failedCallsWithoutDiagnostic > 0) return "needs_context";
+  if (input.eventsPerCall !== null && input.eventsPerCall > 1) return "needs_context";
+  if (input.failedCalls > 0) return "needs_context";
+  return "clear";
+}
+
+function buildOperatorSummary(
+  successfulCalls: number,
+  totalCalls: number,
+  totalEvents: number,
+  failedCallsWithoutDiagnostic: number,
+  clarityStatus: OperationalBenchmarkClarityStatus,
+): string {
+  if (totalCalls === 0) return "No benchmark calls were found in the evidence input.";
+  const diagnosticNote = failedCallsWithoutDiagnostic > 0
+    ? `; ${failedCallsWithoutDiagnostic} failed call(s) need diagnostic classification`
+    : "";
+  const contextNote = clarityStatus === "needs_context"
+    ? "; read event-model rates with the event denominator"
+    : "";
+  return `${successfulCalls}/${totalCalls} call(s) passed; event model contains ${totalEvents} event(s)${diagnosticNote}${contextNote}.`;
+}
+
 function isAuditEventLike(value: Record<string, unknown>): boolean {
   return Boolean(
     value.eventType
@@ -238,7 +486,11 @@ function isAuditEventLike(value: Record<string, unknown>): boolean {
 
 function normalizeDecision(value: Record<string, unknown>): string | null {
   const raw = readString(value.decision) ?? readString(value.routingDecision) ?? readString(value.status);
-  if (!raw) return null;
+  if (!raw) {
+    if (value.success === true) return "allow";
+    if (value.success === false) return "deny";
+    return null;
+  }
   const lower = raw.toLowerCase();
   if (lower === "allow" || lower === "allowed" || lower === "pass" || lower === "passed") return "allow";
   if (lower === "deny" || lower === "blocked" || lower === "fail" || lower === "failed") return "deny";
@@ -270,10 +522,32 @@ function formatRate(rate: number | null): string {
   return rate === null ? "n/a" : rate.toFixed(3);
 }
 
+function formatNullableNumber(value: number | null): string {
+  return value === null ? "n/a" : value.toFixed(3);
+}
+
+function formatLabelCounts(values: readonly OperationalBenchmarkLabelCount[]): string {
+  return values.length ? values.map((value) => `${value.label}:${value.count}`).join(", ") : "none";
+}
+
 function isRecord(value: unknown): value is Record<string, unknown> {
   return Boolean(value) && typeof value === "object" && !Array.isArray(value);
 }
 
 function readString(value: unknown): string | undefined {
   return typeof value === "string" && value.trim() ? value.trim() : undefined;
+}
+
+function readStringArray(value: unknown): string[] {
+  return Array.isArray(value)
+    ? value.filter((item): item is string => typeof item === "string" && item.trim().length > 0)
+    : [];
+}
+
+function ratio(count: number, total: number): MetricResult {
+  return {
+    rate: total === 0 ? 0 : count / total,
+    count,
+    total,
+  };
 }

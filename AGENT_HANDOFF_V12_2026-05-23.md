@@ -38,7 +38,7 @@ Current HEAD before V12 transition:
 
 Current mode marker:
 
-`w3_tool_mcp_database_action_taxonomy_closed_pass_bounded`
+`w4_operational_benchmark_scorecard_closed_pass_bounded`
 
 ---
 
@@ -327,10 +327,46 @@ bridge/client/server, database runtime adapter or mutation execution,
 `/api/execute`, provider behavior, governance evidence receipt envelope,
 auth/RBAC, public-sync, production readiness, or freeze release.
 
-Next ranked candidate: Candidate 4 from WC-3, operational benchmark scorecard.
-It remains demand-gated and should start with a fresh GC-018/work order and
-WC-4 Control Block, consuming existing evidence logs/diagnostics rather than
-opening broad provider soak loops.
+Next ranked candidate: Candidate 4 from WC-3 closed as W4. Candidate 5,
+provider method and fallback normalization, remains demand-gated and should
+start only from a concrete provider-method, fallback, or diagnostic-class need.
+
+### 2026-05-24 - W4 Operational Benchmark Scorecard Closed
+
+Current HEAD before W4 authorization commit: `e10afbc5`.
+
+Authorization commit:
+`efb843c5` — docs(w4): authorize operational benchmark scorecard
+
+W4 completion:
+`docs/reviews/CVF_W4_OPERATIONAL_BENCHMARK_SCORECARD_COMPLETION_2026-05-24.md`
+
+Implemented:
+
+- `OperationalBenchmarkScorecard` inside `cvf.operationalBenchmark.v1`;
+- call-level pass rate separate from event-model denominator;
+- diagnostic class and user-action counts;
+- advisory friction and overconstraint signal counts;
+- table output labels for `callLevel` and `eventModel`;
+- nested `results[]` / `checks[]` parsing before top-level proof status.
+
+Verification:
+
+- focused operational benchmark tests PASS `7/7`;
+- operational + governance reliability tests PASS `32/32`;
+- full Governance CLI tests PASS `119/119`;
+- TypeScript check PASS;
+- build PASS;
+- existing S3 evidence CLI parse PASS with `callLevel 5/5 pass=1.000`.
+
+Boundary: local offline/evidence-ingest reporting only. No new live provider
+benchmark, provider adapter/router behavior, `/api/execute`, receipt envelope,
+output-quality scoring, runtime observability dashboard, public-sync, hosted
+readiness, production readiness, or freeze release.
+
+Next ranked candidate: WC-3 Candidate 5 provider method and fallback
+normalization. It remains demand-gated; do not reopen broad provider soak
+loops.
 
 ### 2026-05-24 - WC-2 Mock Fallback Elimination Closed
 

@@ -12,8 +12,9 @@ Update 2026-05-24: WC roadmap is active at
 WC-1 and WC-2 are closed pass bounded; WC-3/WC-4 are closed; W1 workflow
 state-machine enforcement is closed pass bounded. W2 memory event hooks plus
 context packager hardening is closed pass bounded. W3 tool/MCP/database action
-taxonomy is closed pass bounded. Next ranked WC-3 candidate is Candidate 4
-operational benchmark scorecard, demand-gated by fresh GC-018.
+taxonomy is closed pass bounded. W4 operational benchmark scorecard is closed
+pass bounded. Next ranked WC-3 candidate is Candidate 5 provider method and
+fallback normalization, demand-gated by fresh GC-018.
 
 R1/R2/R3 and V1/V2/V3 are closed pass bounded. All live runs must still follow
 `docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md`.
@@ -984,3 +985,67 @@ Next: Candidate 3 from WC-3, tool/MCP/database action governance map, remains
 demand-gated and should start as read-only taxonomy only.
 
 Marker: w2_memory_event_hooks_context_packager_closed_pass_bounded.
+
+## W3 Tool MCP Database Action Taxonomy - Closed 2026-05-24
+
+Current mode marker: `w3_tool_mcp_database_action_taxonomy_closed_pass_bounded`.
+
+W3 is closed pass bounded as WC-3 Candidate 3:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_2026-05-24.md`
+- Work order:
+  `docs/work_orders/CVF_WO_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_2026-05-24.md`
+- Completion:
+  `docs/reviews/CVF_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_COMPLETION_2026-05-24.md`
+
+W3 added `cvf.toolActionTaxonomy.w3.v1` under `governance/contracts` for
+deterministic planned-action evaluation across local tool, command, MCP,
+capability-provider, and database-facing actions.
+
+Evidence: focused W3 tests PASS `11/11`; full `governance/contracts` tests
+PASS `109/109`; mandatory release gate PASS `7/7`.
+
+Boundary: local taxonomy/contract proof only. No runtime tool execution, MCP
+bridge/client/server, database adapter/mutation execution, `/api/execute`,
+provider behavior, receipt-envelope change, auth/RBAC, public-sync, production
+readiness, or freeze release.
+
+## W4 Operational Benchmark Scorecard - Closed 2026-05-24
+
+Current mode marker: `w4_operational_benchmark_scorecard_closed_pass_bounded`.
+
+W4 is closed pass bounded as WC-3 Candidate 4:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_W4_OPERATIONAL_BENCHMARK_SCORECARD_2026-05-24.md`
+- Work order:
+  `docs/work_orders/CVF_WO_W4_OPERATIONAL_BENCHMARK_SCORECARD_2026-05-24.md`
+- Completion:
+  `docs/reviews/CVF_W4_OPERATIONAL_BENCHMARK_SCORECARD_COMPLETION_2026-05-24.md`
+
+W4 extended `cvf.operationalBenchmark.v1` with a scorecard that separates:
+
+- call-level pass rate;
+- event-model denominator and event rates;
+- diagnostic class and user-action counts;
+- advisory friction and overconstraint signals.
+
+It also fixed JSON evidence extraction so nested `results[]` and `checks[]`
+are consumed before top-level status fields. Existing S3 evidence now parses
+as `callLevel 5/5 pass=1.000` instead of one top-level event.
+
+Evidence: focused operational benchmark tests PASS `7/7`; operational +
+governance reliability tests PASS `32/32`; full Governance CLI tests PASS
+`119/119`; TypeScript check PASS; build PASS; S3 evidence CLI parse PASS.
+
+Boundary: local offline/evidence-ingest reporting only. No new live provider
+benchmark, provider adapter/router behavior, `/api/execute`, receipt envelope,
+output-quality scoring, runtime observability dashboard, public-sync, hosted
+readiness, production readiness, or freeze release.
+
+Next: Candidate 5 from WC-3, provider method and fallback normalization,
+remains demand-gated and must start only from a concrete provider-method,
+fallback, or diagnostic-class need. Do not reopen broad provider soak loops.
+
+Marker: w4_operational_benchmark_scorecard_closed_pass_bounded.

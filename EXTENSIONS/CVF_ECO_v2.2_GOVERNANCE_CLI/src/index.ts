@@ -22,14 +22,18 @@ export {
 } from "./product-outcome.runtime";
 export {
   buildOperationalBenchmarkReport,
+  buildOperationalBenchmarkScorecard,
   formatOperationalBenchmarkReport,
   parseOperationalBenchmarkInput,
   type CountMetricResult,
   type DeferredOperationalMetric,
+  type OperationalBenchmarkClarityStatus,
   type OperationalBenchmarkEvidenceMode,
+  type OperationalBenchmarkLabelCount,
   type OperationalBenchmarkMetrics,
   type OperationalBenchmarkModeBreakdown,
   type OperationalBenchmarkReport,
+  type OperationalBenchmarkScorecard,
 } from "./operational-benchmark-suite";
 export type {
   BenchmarkGovernanceOptions,
