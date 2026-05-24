@@ -577,6 +577,8 @@ For older continuity before V12, read:
 
 ## Latest HEADs
 
+- `0349a6cd` — docs(wc3): close legacy harvest scan map (2026-05-24)
+- `c94c09ea` — docs(session): sync wc1 public evidence head (2026-05-24)
 - `095f017f` — docs(wc1): record public catalog evidence sync (2026-05-24)
 - `accc5ac8` — docs(session): sync wc1 closure head (2026-05-24)
 - `a081f9dc` — feat(wc1): prove live workflow chain read write loop (2026-05-24)
