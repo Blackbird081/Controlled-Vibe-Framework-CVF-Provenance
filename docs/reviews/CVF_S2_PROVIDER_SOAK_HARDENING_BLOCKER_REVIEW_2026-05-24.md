@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: RETURNED_BLOCKED_DEEPSEEK_EXECUTE_FAILURE
+Status: SUPERSEDED_BY_S2_COMPLETION
 
 docType: review
 
@@ -84,6 +84,16 @@ evidence is retained.
 Per work order return-to-orchestrator rules, S2 cannot close pass because all
 journeys for one provider failed. Do not claim 3-provider soak hardening or
 broad provider stability from this evidence.
+
+Superseded 2026-05-24:
+
+- Superseding completion review:
+  `docs/reviews/CVF_S2_PROVIDER_SOAK_HARDENING_COMPLETION_2026-05-24.md`
+- Superseding result: Alibaba `5/5`, DeepSeek `5/5`, OpenAI `5/5`;
+  total `15/15 PASS` with bounded provider timeout `120000ms`.
+
+This blocker review remains historical evidence of the earlier DeepSeek
+timeout/execute-failure window. It is no longer the current S2 status.
 
 ## Claim Boundary
 

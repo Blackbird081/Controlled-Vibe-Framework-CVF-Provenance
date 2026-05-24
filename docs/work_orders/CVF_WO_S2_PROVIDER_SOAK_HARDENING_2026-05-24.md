@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: RETURNED_BLOCKED_DEEPSEEK_EXECUTE_FAILURE
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -200,10 +200,34 @@ fail, or `rawSecretPrinted=true` in any receipt.
 | Task | Status | Output |
 | --- | --- | --- |
 | Read C4 probe + evidence | DONE | Wrapper used existing probe with S2 repeat settings. |
-| Soak run (≥5 per provider) | DONE | 15 live attempts; Alibaba 5/5, DeepSeek 0/5, OpenAI 5/5. |
-| Failure classification | DONE | DeepSeek `execute_failure`, output length 0. |
-| Soak summary | DONE | Total/pass/fail recorded in blocker review. |
-| Completion review | DONE | Blocker review filed; no 3-provider pass claim. |
+| Soak run (≥5 per provider) | DONE | Superseding 15 live attempts; Alibaba 5/5, DeepSeek 5/5, OpenAI 5/5. |
+| Failure classification | DONE | Probe records redacted error diagnostics and timeout/rate-limit/balance/auth classes; superseding run had no failures. |
+| Soak summary | DONE | Total/pass/fail recorded in completion review. |
+| Completion review | DONE | Completion review filed with bounded 15/15 claim. |
+
+---
+
+## Superseding Closure - 2026-05-24
+
+The initial S2 run returned blocked because DeepSeek failed `0/5` with live
+ALLOW receipts but `success=false` after about 60s. A diagnostic follow-up
+showed the key, account balance, and `deepseek-chat` model were available. The
+probe was then hardened to retain redacted route errors and classify provider
+timeout/rate-limit/balance/auth failures.
+
+Superseding S2 run:
+
+- Command: `node scripts/run_cvf_s2_provider_soak_probe.mjs`
+- Provider timeout: `120000ms`
+- Alibaba `qwen-turbo`: `5/5`
+- DeepSeek `deepseek-chat`: `5/5`
+- OpenAI `gpt-4o`: `5/5`
+- Total: `15/15 PASS`
+- Completion review:
+  `docs/reviews/CVF_S2_PROVIDER_SOAK_HARDENING_COMPLETION_2026-05-24.md`
+
+The earlier blocker review remains historical evidence of a transient
+timeout/execute-failure window and is superseded for current S2 status.
 
 ---
 

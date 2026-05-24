@@ -38,7 +38,7 @@ Current HEAD before V12 transition:
 
 Current mode marker:
 
-`post_aif_claim_graduation_c1_c5_closed_pass_bounded`
+`s1_s2_s3_closed_value_screen_ready`
 
 ---
 
@@ -77,6 +77,34 @@ current.
 ---
 
 ## Latest Work / Changes
+
+### 2026-05-24 - S2 Superseding Closure + Value-Screened Next Tranche
+
+S2's earlier DeepSeek blocker was diagnosed and superseded. The provider soak
+probe now records redacted route error diagnostics and classifies
+timeout/rate-limit/balance/auth failure cases. With bounded provider timeout
+`120000ms`, the superseding full soak passed `15/15`:
+
+Commit: `861810c9` (docs(s2): close provider soak and screen next tranche)
+
+- Alibaba `qwen-turbo`: `5/5`
+- DeepSeek `deepseek-chat`: `5/5`
+- OpenAI `gpt-4o`: `5/5`
+
+Completion review:
+`docs/reviews/CVF_S2_PROVIDER_SOAK_HARDENING_COMPLETION_2026-05-24.md`
+
+Updated roadmap:
+`docs/roadmaps/CVF_S1_S2_S3_NEXT_VALUE_ROADMAP_2026-05-24.md`
+
+Next-value screening roadmap filed:
+`docs/roadmaps/CVF_VALUE_SCREENED_NEXT_TRANCHE_ROADMAP_2026-05-24.md`
+
+Recommendation: select V1 non-coder first-value journey hardening next, with V2
+evidence-to-action packaging allowed as a bounded companion if journey proof
+shows users cannot understand or reuse evidence. Hold broad provider soak
+expansion, model-specific proof loops, and F-1 tuning unless fresh product
+demand supersedes current boundaries.
 
 ### 2026-05-24 - Post-AIF Claim Graduation C2-C5 Closed Pass Bounded
 

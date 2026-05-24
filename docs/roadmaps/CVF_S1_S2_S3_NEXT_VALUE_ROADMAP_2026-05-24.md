@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: ACTIVE
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -79,7 +79,7 @@ Close four gaps identified in the post-R1/R2/R3 quality audit:
 | --- | --- | --- | --- | --- |
 | R4-fix | Route receipt-id determinism | R2 CLOSED_PASS | CLOSED_PASS | `docs/work_orders/CVF_WO_R4FIX_ROUTE_RECEIPT_ID_DETERMINISM_2026-05-24.md` |
 | S1 | Durable memory write path via `/api/execute` | R2 CLOSED_PASS | CLOSED_PASS | `docs/work_orders/CVF_WO_S1_DURABLE_MEMORY_WRITE_ROUTE_2026-05-24.md` |
-| S2 | Provider soak hardening | C4 CLOSED_PASS | RETURNED_BLOCKED_DEEPSEEK_EXECUTE_FAILURE | `docs/work_orders/CVF_WO_S2_PROVIDER_SOAK_HARDENING_2026-05-24.md` |
+| S2 | Provider soak hardening | C4 CLOSED_PASS | CLOSED_PASS_BOUNDED | `docs/work_orders/CVF_WO_S2_PROVIDER_SOAK_HARDENING_2026-05-24.md` |
 | S3 | Governance benchmark public claim | E2 CLOSED_PASS | CLOSED_PASS_BOUNDED | `docs/work_orders/CVF_WO_S3_GOVERNANCE_BENCHMARK_PUBLIC_CLAIM_2026-05-24.md` |
 
 All four tranches may begin immediately in parallel. R4-fix and S1 touch
@@ -167,12 +167,12 @@ S3:
 - [x] S1: durable write path wired. Policy double-gate (`enabled` +
       `actorAuthorized`) enforced. Write skipped on BLOCK. `canReinject=false`
       preserved. Live proof produces write receipt. Release gate PASS.
-- [ ] S2: soak probe run with ≥5 journeys per provider. Live receipts filed for
+- [x] S2: soak probe run with ≥5 journeys per provider. Live receipts filed for
       all journeys. Claim bounded to proven soak window only.
 - [x] S3: benchmark probe run against live hosted target. ≥3 metrics with live
       values. Public catalog row added. Test-Path PASS from public-sync.
-- [ ] No raw secret in any committed artifact across all tranches.
-- [ ] R4-fix applied before or within S1 to avoid file conflict.
+- [x] No raw secret in any committed artifact across all tranches.
+- [x] R4-fix applied before or within S1 to avoid file conflict.
 
 ---
 
@@ -195,7 +195,7 @@ S2:
 
 - `docs/baselines/CVF_GC018_S2_PROVIDER_SOAK_HARDENING_2026-05-24.md`
 - `docs/reviews/CVF_S2_PROVIDER_SOAK_HARDENING_COMPLETION_2026-05-24.md`
-- Live receipts for all soak journeys.
+- Live receipts for all 15 soak journeys.
 
 S3:
 
@@ -237,7 +237,7 @@ Still not claimed:
 | --- | --- | --- |
 | R4-fix | CLOSED_PASS | `docs/reviews/CVF_R4FIX_ROUTE_RECEIPT_ID_FAST_LANE_AUDIT_2026-05-24.md` |
 | S1 | CLOSED_PASS | `docs/reviews/CVF_S1_DURABLE_MEMORY_WRITE_ROUTE_COMPLETION_2026-05-24.md` |
-| S2 | RETURNED_BLOCKED_DEEPSEEK_EXECUTE_FAILURE | `docs/reviews/CVF_S2_PROVIDER_SOAK_HARDENING_BLOCKER_REVIEW_2026-05-24.md` |
+| S2 | CLOSED_PASS_BOUNDED | `docs/reviews/CVF_S2_PROVIDER_SOAK_HARDENING_COMPLETION_2026-05-24.md` |
 | S3 | CLOSED_PASS_BOUNDED | `docs/reviews/CVF_S3_GOVERNANCE_BENCHMARK_PUBLIC_CLAIM_COMPLETION_2026-05-24.md` |
 
 ## Closure / Blocker Note - 2026-05-24
@@ -246,3 +246,25 @@ R4-fix, S1, and S3 are closed. S2 returned blocked: Alibaba and OpenAI each
 passed `5/5`, but DeepSeek returned `0/5` successful journeys despite live
 ALLOW receipts, with `execute_failure` and empty output after about 60s per
 journey. The roadmap therefore must not claim 3-provider soak hardening.
+
+## S2 Superseding Closure Note - 2026-05-24
+
+The DeepSeek blocker was diagnosed as a transient timeout/execute-failure
+window rather than a dead key, exhausted balance, or unavailable
+`deepseek-chat` model. The S2 probe now records redacted route errors and
+classifies provider timeout/rate-limit/balance/auth failures.
+
+Superseding live rerun:
+
+- Command: `node scripts/run_cvf_s2_provider_soak_probe.mjs`
+- Bounded provider timeout: `120000ms`
+- Result: `15/15 PASS`
+- Alibaba `qwen-turbo`: `5/5`
+- DeepSeek `deepseek-chat`: `5/5`
+- OpenAI `gpt-4o`: `5/5`
+- Completion review:
+  `docs/reviews/CVF_S2_PROVIDER_SOAK_HARDENING_COMPLETION_2026-05-24.md`
+
+This closes S2 as `CLOSED_PASS_BOUNDED`. The earlier blocker review remains
+historical evidence only. The claim remains a bounded 15-call window, not
+universal provider stability, SLA, hosted readiness, or production readiness.

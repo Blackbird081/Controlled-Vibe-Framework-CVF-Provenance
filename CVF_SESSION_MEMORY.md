@@ -6,10 +6,12 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-24
 
-Current mode marker: `s1_s3_closed_s2_blocked_bounded`
+Current mode marker: `s1_s2_s3_closed_value_screen_ready`
 
-Update 2026-05-24: R4-fix/S1/S2/S3 execution is partially closed. R4-fix,
-S1, and S3 are closed; S2 returned blocked on DeepSeek execute failures.
+Update 2026-05-24: R4-fix/S1/S2/S3 execution is closed bounded. The earlier
+S2 DeepSeek blocker is superseded by a diagnostic tri-provider rerun: Alibaba
+5/5, DeepSeek 5/5, OpenAI 5/5, total 15/15. Next tranche screening is filed at
+`docs/roadmaps/CVF_VALUE_SCREENED_NEXT_TRANCHE_ROADMAP_2026-05-24.md`.
 
 R1/R2/R3 post-M1 gap closure is closed. R2 delivered explicit policy-gated
 `/api/execute` durable-memory reads with live receipt
@@ -157,8 +159,8 @@ Status:
   `docs/reviews/CVF_R4FIX_ROUTE_RECEIPT_ID_FAST_LANE_AUDIT_2026-05-24.md`
 - S1 `CLOSED_PASS`:
   `docs/reviews/CVF_S1_DURABLE_MEMORY_WRITE_ROUTE_COMPLETION_2026-05-24.md`
-- S2 `RETURNED_BLOCKED_DEEPSEEK_EXECUTE_FAILURE`:
-  `docs/reviews/CVF_S2_PROVIDER_SOAK_HARDENING_BLOCKER_REVIEW_2026-05-24.md`
+- S2 `CLOSED_PASS_BOUNDED`:
+  `docs/reviews/CVF_S2_PROVIDER_SOAK_HARDENING_COMPLETION_2026-05-24.md`
 - S3 `CLOSED_PASS_BOUNDED`:
   `docs/reviews/CVF_S3_GOVERNANCE_BENCHMARK_PUBLIC_CLAIM_COMPLETION_2026-05-24.md`
 
@@ -169,10 +171,13 @@ Alibaba `qwen-turbo` write receipt `rcpt-env-mpjfltku-sckj1z`, trace
 `s1-abd31b24-d71d-4bc3-a2f4-e727f3d1e18d`, `rawMemoryReleased=false`, and
 `canReinject=false`.
 
-S2 ran 5 journeys per provider. Alibaba passed `5/5`, OpenAI passed `5/5`,
-and DeepSeek failed `0/5` with live ALLOW receipts but `success=false`, output
-length `0`, and about 60s latency per journey. Do not claim 3-provider soak
-hardening or broad provider stability.
+S2 initially returned blocked on a DeepSeek timeout/execute-failure window, but
+the blocker is superseded by a diagnostic rerun. The S2 probe now records
+redacted route errors and timeout/rate-limit/balance/auth failure classes. The
+superseding live soak passed `15/15`: Alibaba `5/5`, DeepSeek `5/5`, and OpenAI
+`5/5`, bounded to `CVF_AI_PROVIDER_TIMEOUT_MS=120000`. Do not claim universal
+provider stability, SLA, hosted readiness, production readiness, or enterprise
+provider guarantee.
 
 S3 ran 5 hosted live benchmark calls on Alibaba `qwen-turbo`, filed private
 evidence JSON, and added a public-safe catalog row/summary in public-sync.
@@ -186,6 +191,19 @@ PASS; Governance CLI build PASS; mandatory release gate PASS `7/7`.
 Boundary: no autonomous write, `canReinject=true`, raw memory prompt injection,
 hosted/cloud persistence, universal provider stability, SLA, enterprise
 benchmark certification, hosted/production readiness, or freeze release.
+
+## Value-Screened Next Tranche - Proposed 2026-05-24
+
+Roadmap:
+
+- `docs/roadmaps/CVF_VALUE_SCREENED_NEXT_TRANCHE_ROADMAP_2026-05-24.md`
+
+Recommendation: select V1 non-coder first-value journey hardening next, with V2
+evidence-to-action packaging as a bounded companion if the journey proof shows
+users cannot understand or reuse the evidence artifact.
+
+Hold broad provider soak expansion, model-specific proof loops, and F-1 tuning
+unless a fresh explicit product demand supersedes the current boundary.
 
 ## Post-AIF Claim Graduation C2-C5 — Closed 2026-05-24
 

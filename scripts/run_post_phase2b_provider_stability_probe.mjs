@@ -62,6 +62,7 @@ const providers = String(process.env.CVF_POST_PHASE2B_PROVIDERS ?? 'alibaba,deep
 const repeats = Number(process.env.CVF_POST_PHASE2B_REPEATS ?? 2);
 const interJourneyDelayMs = Number(process.env.CVF_POST_PHASE2B_INTER_JOURNEY_DELAY_MS ?? 1500);
 const port = Number(process.env.CVF_POST_PHASE2B_PROVIDER_STABILITY_PORT ?? 3218);
+const providerTimeoutMs = Number(process.env.CVF_AI_PROVIDER_TIMEOUT_MS ?? 60_000);
 const baseUrl = `http://127.0.0.1:${port}`;
 
 function loadEnvFiles() {
@@ -111,6 +112,39 @@ function redactServerTail(value) {
 
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function sanitizeDiagnostic(value) {
+  if (value === undefined || value === null) return null;
+  let diagnostic = typeof value === 'string' ? value : JSON.stringify(value);
+  for (const keyName of secretKeyNames) {
+    const secret = process.env[keyName];
+    if (secret && secret.length > 8) diagnostic = diagnostic.split(secret).join('<redacted>');
+  }
+  return diagnostic.slice(0, 500);
+}
+
+function classifyFailure(assertions, body, responseStatus, latencyMs) {
+  const errorDiagnostic = sanitizeDiagnostic(body.error ?? body.parseError);
+  const normalizedError = String(errorDiagnostic ?? '').toLowerCase();
+  if (!assertions.httpStatus200) return 'http_status_failure';
+  if (!assertions.successTrue) {
+    if (
+      normalizedError.includes('abort') ||
+      normalizedError.includes('timeout') ||
+      latencyMs >= Math.max(providerTimeoutMs - 5_000, 1)
+    ) {
+      return 'provider_timeout';
+    }
+    if (responseStatus === 429 || normalizedError.includes('rate limit')) return 'provider_rate_limit';
+    if (normalizedError.includes('insufficient') || normalizedError.includes('balance')) return 'provider_balance_or_quota';
+    if (normalizedError.includes('auth') || normalizedError.includes('api key')) return 'provider_auth';
+    return 'execute_failure';
+  }
+  if (!assertions.receiptPresent || !assertions.envelopeLive) return 'governance_receipt_failure';
+  if (!assertions.providerMatched || !assertions.routingAllowed) return 'provider_routing_failure';
+  if (!assertions.noMockFallback || !assertions.outputNonMock) return 'mock_or_output_failure';
+  return 'assertion_failure';
 }
 
 function buildChildEnv() {
@@ -294,17 +328,7 @@ async function main() {
           .map(([name]) => name);
         const failureClass = failedAssertions.length === 0
           ? null
-          : !assertions.httpStatus200
-            ? 'http_status_failure'
-            : !assertions.successTrue
-              ? 'execute_failure'
-              : !assertions.receiptPresent || !assertions.envelopeLive
-                ? 'governance_receipt_failure'
-                : !assertions.providerMatched || !assertions.routingAllowed
-                  ? 'provider_routing_failure'
-                  : !assertions.noMockFallback || !assertions.outputNonMock
-                    ? 'mock_or_output_failure'
-                    : 'assertion_failure';
+          : classifyFailure(assertions, body, response.status(), latencyMs);
         results.push({
           provider: spec.provider,
           model: receipt.model ?? spec.model,
@@ -320,6 +344,7 @@ async function main() {
           evidenceMode: receipt.evidenceMode ?? envelope.evidenceMode ?? null,
           routeId: receipt.routeId ?? envelope.routeId ?? null,
           outputLength: output.length,
+          error: sanitizeDiagnostic(body.error ?? body.parseError),
           failedAssertions,
         });
         if (interJourneyDelayMs > 0) await delay(interJourneyDelayMs);
@@ -341,6 +366,7 @@ async function main() {
       providersRequested: selectedSpecs.map((spec) => spec.provider),
       repeatsPerProvider: repeats,
       interJourneyDelayMs,
+      providerTimeoutMs,
       passCount,
       failCount,
       providersPassed,
