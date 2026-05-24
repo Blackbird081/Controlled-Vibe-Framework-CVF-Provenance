@@ -6,12 +6,13 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-24
 
-Current mode marker: `w1_workflow_state_machine_enforcement_authorized`
+Current mode marker: `w1_workflow_state_machine_enforcement_closed_pass_bounded`
 Update 2026-05-24: WC roadmap is active at
 `docs/roadmaps/CVF_WC_WORKFLOW_CHAIN_AND_PAIN_POINT_ROADMAP_2026-05-24.md`;
 WC-1 and WC-2 are closed pass bounded; WC-3/WC-4 are closed; W1 workflow
-state-machine enforcement is authorized with a fresh GC-018/work order and is
-the next implementation move.
+state-machine enforcement is closed pass bounded. Next ranked WC-3 candidate is
+Candidate 2 memory event hooks plus context packager hardening, but it requires
+a fresh GC-018/work order with the WC-4 Control Block before implementation.
 
 R1/R2/R3 and V1/V2/V3 are closed pass bounded. All live runs must still follow
 `docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md`.
@@ -83,7 +84,7 @@ current.
 
 ## Current Session Mode
 
-- Current mode: `v1_v2_v3_value_tranche_closed_pass_bounded`
+- Current mode: `w1_workflow_state_machine_enforcement_closed_pass_bounded`
 - Previous mode: `r1_durable_memory_resilience_closed_r2_p2_gated`
 - Freeze posture: `governance_kernel_freeze_recommended`
 - Active handoff pointer: `AGENT_HANDOFF_V12_2026-05-23.md`
@@ -915,4 +916,40 @@ no universal provider stability, no enterprise SaaS/GA readiness, no Maika
 proof, and no broad production readiness beyond the P1 small-team/non-coder
 path.
 
-Marker: wc4_knowledge_absorption_blindspot_standard_closed_control_only.
+## W1 Workflow State-Machine Enforcement - Closed 2026-05-24
+
+Current mode marker: `w1_workflow_state_machine_enforcement_closed_pass_bounded`.
+
+W1 is closed pass bounded under the WC roadmap:
+
+- Roadmap:
+  `docs/roadmaps/CVF_WC_WORKFLOW_CHAIN_AND_PAIN_POINT_ROADMAP_2026-05-24.md`
+- GC-018:
+  `docs/baselines/CVF_GC018_W1_WORKFLOW_STATE_MACHINE_ENFORCEMENT_2026-05-24.md`
+- Work order:
+  `docs/work_orders/CVF_WO_W1_WORKFLOW_STATE_MACHINE_ENFORCEMENT_2026-05-24.md`
+- Completion:
+  `docs/reviews/CVF_W1_WORKFLOW_STATE_MACHINE_ENFORCEMENT_COMPLETION_2026-05-24.md`
+
+W1 added `cvf.workflowStateMachineProjection.v1` to the existing Product Brief
+workflow projection. The live Product Brief path now ends at `review_pending`;
+steps 1-3 are completed, step 4 reviewer gate is deferred, and step 5 receipt
+emission is also deferred because `freeze_ready` is unreachable. Route audit
+metadata includes the state-machine projection.
+
+Evidence: focused resolver/route tests PASS `34/34`; `cvf-web` TypeScript
+check PASS; live Phase E workflow-binding proof PASS with receipt
+`rcpt-env-mpjx22ch-aee3y6` and workflow audit event
+`c8d04faa-8474-4d02-beae-2c5519d179d2`; mandatory release gate PASS `7/7`.
+
+Boundary: no route-level invalid-transition `BLOCK`, broad workflow engine,
+reviewer UI, recovery/rollback orchestration, provider semantics, auth/RBAC,
+receipt-envelope change, memory reinjection, public-sync update, hosted
+readiness, production readiness, or freeze release.
+
+Next: Candidate 2 from the WC-3 map, memory event hooks plus context packager
+hardening, remains demand-gated. It requires a fresh GC-018/work order with the
+WC-4 Knowledge Absorption Blind-Spot Control Block and must preserve
+`canReinject=false`.
+
+Marker: w1_workflow_state_machine_enforcement_closed_pass_bounded.

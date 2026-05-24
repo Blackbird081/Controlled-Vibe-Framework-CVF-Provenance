@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — WC-1/WC-2 CLOSED_PASS_BOUNDED; WC-3 CLOSED_MAPPING_ONLY; WC-4 CLOSED_CONTROL_ONLY; W-series DEMAND_GATED
+Status: ACTIVE — WC-1/WC-2 CLOSED_PASS_BOUNDED; WC-3 CLOSED_MAPPING_ONLY; WC-4 CLOSED_CONTROL_ONLY; W1 CLOSED_PASS_BOUNDED; W-series CONTINUES DEMAND_GATED
 
 Date: 2026-05-24
 
@@ -205,6 +205,43 @@ new audits. Each W-series work order must include the Knowledge Absorption
 Blind-Spot Control Block from
 `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`.
 
+#### W1: Workflow State-Machine Enforcement
+
+**Gate:** CLOSED_PASS_BOUNDED.
+
+Completed output:
+
+- `docs/baselines/CVF_GC018_W1_WORKFLOW_STATE_MACHINE_ENFORCEMENT_2026-05-24.md`
+- `docs/work_orders/CVF_WO_W1_WORKFLOW_STATE_MACHINE_ENFORCEMENT_2026-05-24.md`
+- `docs/reviews/CVF_W1_WORKFLOW_STATE_MACHINE_ENFORCEMENT_COMPLETION_2026-05-24.md`
+
+Result:
+
+- added `cvf.workflowStateMachineProjection.v1` to the existing Product Brief
+  workflow execution projection;
+- Product Brief now ends at `review_pending` when reviewer gate step 4 is
+  deferred;
+- step 5 receipt emission is also deferred because its `freeze_ready` state is
+  unreachable;
+- only completed reachable steps emit workflow step receipts;
+- route audit event includes `stateMachine`.
+
+Verification:
+
+- focused resolver/route tests PASS `34/34`;
+- `cvf-web` TypeScript check PASS;
+- live Phase E workflow-binding spec PASS with receipt
+  `rcpt-env-mpjx22ch-aee3y6` and workflow audit event
+  `c8d04faa-8474-4d02-beae-2c5519d179d2`;
+- mandatory release gate PASS `7/7`.
+
+Next ranked candidate:
+
+- Candidate 2 from the WC-3 map: memory event hooks plus context packager
+  hardening. It remains demand-gated and requires a fresh GC-018/work order
+  with the Knowledge Absorption Blind-Spot Control Block. Preserve
+  `canReinject=false`; do not open raw reinjection.
+
 ### WC-4: Knowledge Absorption Blind-Spot Standard
 
 **Gate:** CLOSED_CONTROL_ONLY — doc/process control, no runtime surface.
@@ -277,6 +314,7 @@ Binding result:
 | WC-1 | Live probe script + two receipts | `docs/reviews/CVF_WC1_WORKFLOW_CHAIN_PROOF_COMPLETION_2026-05-24.md` |
 | WC-3 | Mapping document | `docs/reference/CVF_LEGACY_HARVEST_SCAN_MAP_2026-05-24.md` |
 | WC-4 | Binding anti-blindspot standard | `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md` |
+| W1 | Product Brief workflow state-machine projection + live proof | `docs/reviews/CVF_W1_WORKFLOW_STATE_MACHINE_ENFORCEMENT_COMPLETION_2026-05-24.md` |
 
 ---
 
@@ -291,7 +329,9 @@ WC-3 (legacy harvest scan)        <- Closed mapping only
   |
 WC-4 (blind-spot control law)     <- Closed control only
   |
-W-series (real user pain points)  <- Demand-gated; depends on WC-3
+W1 (workflow state projection)    <- Closed pass bounded
+  |
+W-series next candidates          <- Demand-gated; fresh GC-018 required
 ```
 
 ---
@@ -326,6 +366,12 @@ absorbed knowledge, nor does it open new tranches.
 WC-4 claims a mandatory process control for future knowledge absorption. It
 does not claim implementation of any absorbed knowledge, source-code runtime
 change, public capability, or production readiness.
+
+W1 claims only one selected Product Brief workflow state-machine projection. It
+does not claim route-level invalid-transition blocking, a broad workflow
+engine, reviewer UI, recovery orchestration, provider behavior, auth/RBAC,
+receipt-envelope semantics, public capability, hosted readiness, production
+readiness, or freeze release.
 
 No track in this roadmap claims `canReinject=true`, global freeze lift,
 enterprise SaaS readiness, or universal provider parity.

@@ -1,10 +1,10 @@
 import {
   bindStepReceipts,
-  getActiveWorkflowSteps,
   validateWorkflowBinding,
   type StepReceiptBindingResult,
   type StepReceiptObligation,
   type WorkflowBinding,
+  type WorkflowStepDecision,
   type WorkflowStepExecutionTrace,
 } from 'cvf-guard-contract';
 
@@ -17,6 +17,33 @@ export interface WorkflowStepReceipt {
   readonly obligationId: string;
 }
 
+export interface WorkflowStateMachineStepDecision {
+  readonly stepId: string;
+  readonly sequence: number;
+  readonly fromState: string;
+  readonly trigger: string;
+  readonly expectedToState: string;
+  readonly enteredState: string;
+  readonly decision: WorkflowStepDecision;
+  readonly reason:
+    | 'transition_completed'
+    | 'configured_deferred'
+    | 'from_state_unreachable';
+  readonly receiptRequired: boolean;
+  readonly receiptEmitted: boolean;
+}
+
+export interface WorkflowStateMachineProjection {
+  readonly contractVersion: 'cvf.workflowStateMachineProjection.v1';
+  readonly workflowId: string;
+  readonly initialState: string;
+  readonly finalState: string;
+  readonly completedStepIds: readonly string[];
+  readonly deferredStepIds: readonly string[];
+  readonly waitingStepIds: readonly string[];
+  readonly decisions: readonly WorkflowStateMachineStepDecision[];
+}
+
 export interface WorkflowExecutionProjection {
   readonly workflowId: string;
   readonly workflowVersion: string;
@@ -27,6 +54,7 @@ export interface WorkflowExecutionProjection {
   readonly receiptObligations: readonly StepReceiptObligation[];
   readonly receiptBinding: StepReceiptBindingResult;
   readonly deferredStepIds: readonly string[];
+  readonly stateMachine: WorkflowStateMachineProjection;
 }
 
 const WORKFLOW_BINDINGS: readonly WorkflowBinding[] = [
@@ -55,15 +83,61 @@ export function buildWorkflowExecutionProjection(
   binding: WorkflowBinding,
   receiptId: string,
 ): WorkflowExecutionProjection {
-  const activeSteps = getActiveWorkflowSteps(binding);
-  const stepTraces: WorkflowStepExecutionTrace[] = activeSteps.map((step) => ({
-    stepId: step.stepId,
+  const orderedSteps = [...binding.steps].sort((a, b) => a.sequence - b.sequence);
+  const initialState = orderedSteps[0]?.transition.fromState ?? 'intake_pending';
+  let currentState = initialState;
+  let blockedByDeferredStep = false;
+
+  const decisions: WorkflowStateMachineStepDecision[] = orderedSteps.map((step) => {
+    const canEnter = !blockedByDeferredStep && step.transition.fromState === currentState;
+    const isConfiguredDeferred = step.status === 'deferred_until_reviewer_surface';
+    let decision: WorkflowStepDecision;
+    let reason: WorkflowStateMachineStepDecision['reason'];
+    let receiptEmitted = false;
+
+    if (!canEnter) {
+      decision = 'deferred';
+      reason = 'from_state_unreachable';
+      blockedByDeferredStep = true;
+    } else if (isConfiguredDeferred) {
+      decision = 'deferred';
+      reason = 'configured_deferred';
+      blockedByDeferredStep = true;
+    } else {
+      decision = 'completed';
+      reason = 'transition_completed';
+      receiptEmitted = step.receiptRequired;
+      currentState = step.transition.toState;
+    }
+
+    return {
+      stepId: step.stepId,
+      sequence: step.sequence,
+      fromState: step.transition.fromState,
+      trigger: step.transition.trigger,
+      expectedToState: step.transition.toState,
+      enteredState: currentState,
+      decision,
+      reason,
+      receiptRequired: step.receiptRequired,
+      receiptEmitted,
+    };
+  });
+
+  const stepTraces: WorkflowStepExecutionTrace[] = decisions.map((decision) => ({
+    stepId: decision.stepId,
     preconditionChecked: true,
-    decision: 'completed',
-    receiptId,
+    decision: decision.decision,
+    receiptId: decision.receiptEmitted ? receiptId : null,
     source: 'route_dispatch',
   }));
   const receiptBinding = bindStepReceipts(binding, stepTraces);
+  const deferredStepIds = decisions
+    .filter((decision) => decision.decision === 'deferred')
+    .map((decision) => decision.stepId);
+  const completedStepIds = decisions
+    .filter((decision) => decision.decision === 'completed')
+    .map((decision) => decision.stepId);
 
   return {
     workflowId: binding.workflowId,
@@ -79,8 +153,18 @@ export function buildWorkflowExecutionProjection(
     })),
     receiptObligations: receiptBinding.obligations,
     receiptBinding,
-    deferredStepIds: binding.steps
-      .filter((step) => step.status === 'deferred_until_reviewer_surface')
-      .map((step) => step.stepId),
+    deferredStepIds,
+    stateMachine: {
+      contractVersion: 'cvf.workflowStateMachineProjection.v1',
+      workflowId: binding.workflowId,
+      initialState,
+      finalState: currentState,
+      completedStepIds,
+      deferredStepIds,
+      waitingStepIds: decisions
+        .filter((decision) => decision.reason === 'from_state_unreachable')
+        .map((decision) => decision.stepId),
+      decisions,
+    },
   };
 }

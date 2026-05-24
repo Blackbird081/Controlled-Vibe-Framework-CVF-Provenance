@@ -68,12 +68,13 @@ test('Phase E E.6 verifies governed Product Brief execution chain checkpoints', 
     'step-1-intake-validation',
     'step-2-knowledge-retrieval',
     'step-3-provider-call',
+    'step-4-review-gate',
     'step-5-receipt-emit',
   ]);
-  expect(body.stepTraces.every((trace: {
+  expect(body.stepTraces.filter((trace: { decision: string }) => trace.decision === 'completed').every((trace: {
     preconditionChecked: boolean;
     decision: string;
-    receiptId: string;
+    receiptId: string | null;
     source: string;
   }) => (
     trace.preconditionChecked === true
@@ -81,9 +82,32 @@ test('Phase E E.6 verifies governed Product Brief execution chain checkpoints', 
     && trace.receiptId === body.governanceEvidenceReceipt.receiptId
     && trace.source === 'route_dispatch'
   ))).toBe(true);
-  expect(body.stepTraces).not.toContainEqual(
-    expect.objectContaining({ stepId: 'step-4-review-gate' }),
-  );
+  expect(body.stepTraces).toContainEqual(expect.objectContaining({
+    stepId: 'step-4-review-gate',
+    decision: 'deferred',
+    receiptId: null,
+  }));
+  expect(body.stepTraces).toContainEqual(expect.objectContaining({
+    stepId: 'step-5-receipt-emit',
+    decision: 'deferred',
+    receiptId: null,
+  }));
+  expect(body.stateMachine).toMatchObject({
+    contractVersion: 'cvf.workflowStateMachineProjection.v1',
+    workflowId: 'workflow.product.create_product_brief.v1',
+    initialState: 'intake_pending',
+    finalState: 'review_pending',
+    completedStepIds: [
+      'step-1-intake-validation',
+      'step-2-knowledge-retrieval',
+      'step-3-provider-call',
+    ],
+    deferredStepIds: [
+      'step-4-review-gate',
+      'step-5-receipt-emit',
+    ],
+    waitingStepIds: ['step-5-receipt-emit'],
+  });
   expect(body.receiptObligations.map((obligation: { role: string; actionClass: string }) => [
     obligation.role,
     obligation.actionClass,
@@ -102,7 +126,15 @@ test('Phase E E.6 verifies governed Product Brief execution chain checkpoints', 
     source: 'governance_evidence_receipt',
     obligationId: emission.obligationId,
   })));
+  expect(body.receipts.map((receipt: { stepId: string }) => receipt.stepId)).toEqual([
+    'step-1-intake-validation',
+    'step-2-knowledge-retrieval',
+    'step-3-provider-call',
+  ]);
   expect(body.receiptBinding.fullMatrixDisposition).toBe('deferred_with_reason');
-  expect(body.deferredStepIds).toEqual(['step-4-review-gate']);
+  expect(body.deferredStepIds).toEqual([
+    'step-4-review-gate',
+    'step-5-receipt-emit',
+  ]);
   expect(String(body.output ?? '')).not.toContain('MOCK_');
 });

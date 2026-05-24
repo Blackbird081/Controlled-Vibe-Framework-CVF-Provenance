@@ -234,34 +234,24 @@ describe('/api/execute', () => {
             },
         });
         expect(data.workflowId).toBe('workflow.product.create_product_brief.v1');
-        expect(data.stepTraces.map((trace: { stepId: string }) => trace.stepId)).toEqual([
-            'step-1-intake-validation',
-            'step-2-knowledge-retrieval',
-            'step-3-provider-call',
-            'step-5-receipt-emit',
+        const stepIds = data.stepTraces.map((trace: { stepId: string }) => trace.stepId);
+        expect(stepIds).toEqual([
+            'step-1-intake-validation', 'step-2-knowledge-retrieval',
+            'step-3-provider-call', 'step-4-review-gate', 'step-5-receipt-emit',
         ]);
-        expect(data.stepTraces.every((trace: {
-            preconditionChecked: boolean;
-            decision: string;
-            receiptId: string;
-            source: string;
-        }) => (
-            trace.preconditionChecked === true
-            && trace.decision === 'completed'
-            && trace.receiptId === data.governanceEvidenceReceipt.receiptId
-            && trace.source === 'route_dispatch'
-        ))).toBe(true);
-        expect(data.stepTraces.map((trace: { stepId: string }) => trace.stepId))
-            .not.toContain('step-4-review-gate');
-        expect(data.receipts).toEqual(data.receiptBinding.emissions.map((emission: {
-            stepId: string;
-            obligationId: string;
-        }) => ({
-            stepId: emission.stepId,
-            receiptId: data.governanceEvidenceReceipt.receiptId,
-            source: 'governance_evidence_receipt',
-            obligationId: emission.obligationId,
-        })));
+        expect(data.stepTraces).toEqual(expect.arrayContaining([
+            expect.objectContaining({ stepId: 'step-4-review-gate', decision: 'deferred', receiptId: null }),
+            expect.objectContaining({ stepId: 'step-5-receipt-emit', decision: 'deferred', receiptId: null }),
+        ]));
+        expect(data.stateMachine).toMatchObject({
+            contractVersion: 'cvf.workflowStateMachineProjection.v1',
+            workflowId: 'workflow.product.create_product_brief.v1',
+            finalState: 'review_pending',
+            completedStepIds: stepIds.slice(0, 3),
+            deferredStepIds: stepIds.slice(3),
+            waitingStepIds: ['step-5-receipt-emit'],
+        });
+        expect(data.receipts.map((receipt: { stepId: string }) => receipt.stepId)).toEqual(stepIds.slice(0, 3));
         expect(data.receiptObligations.map((obligation: { role: string; actionClass: string }) => [
             obligation.role,
             obligation.actionClass,
@@ -276,7 +266,7 @@ describe('/api/execute', () => {
             workflowId: 'workflow.product.create_product_brief.v1',
             fullMatrixDisposition: 'deferred_with_reason',
         });
-        expect(data.deferredStepIds).toEqual(['step-4-review-gate']);
+        expect(data.deferredStepIds).toEqual(stepIds.slice(3));
         const workflowAuditEvent = appendAuditEventMock.mock.calls
             .map((call: unknown[]) => call[0] as { eventType?: string; payload?: Record<string, unknown> })
             .find((event) => event.eventType === 'WORKFLOW_BINDING_EXECUTED');
@@ -286,7 +276,8 @@ describe('/api/execute', () => {
             stepTraces: data.stepTraces,
             receipts: data.receipts,
             receiptBinding: data.receiptBinding,
-            deferredStepIds: ['step-4-review-gate'],
+            deferredStepIds: stepIds.slice(3),
+            stateMachine: data.stateMachine,
             rolePermission: data.rolePermission,
             executionIdentity: data.executionIdentity,
         });

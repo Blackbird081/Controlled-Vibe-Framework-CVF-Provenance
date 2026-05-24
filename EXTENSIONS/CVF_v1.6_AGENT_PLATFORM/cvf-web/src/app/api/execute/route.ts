@@ -886,6 +886,7 @@ export async function POST(request: NextRequest) {
                     receiptObligations: workflowExecution.receiptObligations,
                     receiptBinding: workflowExecution.receiptBinding,
                     deferredStepIds: workflowExecution.deferredStepIds,
+                    stateMachine: workflowExecution.stateMachine,
                     governanceReceiptId: governanceEvidenceReceipt.receiptId,
                     rolePermission: {
                         role: resolvedExecutionRole.role,
@@ -985,7 +986,6 @@ export async function POST(request: NextRequest) {
             ...(phase2cProductBrief ? { phase2cProductBrief } : {}),
             ...(phase3eOperationalMetrics ? { phase3eOperationalMetrics } : {}),
         });
-
     } catch (error) {
         console.error('Execute API error:', error);
         return NextResponse.json(

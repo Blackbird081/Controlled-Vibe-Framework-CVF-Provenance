@@ -38,7 +38,7 @@ Current HEAD before V12 transition:
 
 Current mode marker:
 
-`w1_workflow_state_machine_enforcement_authorized`
+`w1_workflow_state_machine_enforcement_closed_pass_bounded`
 
 ---
 
@@ -208,6 +208,43 @@ widen into a global workflow engine, route-level invalid-transition BLOCK,
 provider semantics, new receipt envelope, role taxonomy, auth/RBAC, memory
 reinjection, public-sync, hosted readiness, production readiness, or freeze
 release.
+
+### 2026-05-24 - W1 Workflow State-Machine Enforcement Closed
+
+Current HEAD before W1 closure commit: `13966c38`.
+
+W1 completion:
+`docs/reviews/CVF_W1_WORKFLOW_STATE_MACHINE_ENFORCEMENT_COMPLETION_2026-05-24.md`
+
+Implemented:
+
+- Product Brief workflow projection now emits
+  `cvf.workflowStateMachineProjection.v1`.
+- Final state is `review_pending`.
+- Completed steps are `step-1-intake-validation`,
+  `step-2-knowledge-retrieval`, and `step-3-provider-call`.
+- Deferred steps are `step-4-review-gate` and `step-5-receipt-emit`.
+- Route audit payload includes `stateMachine`.
+
+Verification:
+
+- focused resolver/route tests PASS `34/34`;
+- `cvf-web` TypeScript check PASS;
+- live Phase E workflow-binding proof PASS with receipt
+  `rcpt-env-mpjx22ch-aee3y6` and workflow audit event
+  `c8d04faa-8474-4d02-beae-2c5519d179d2`;
+- mandatory release gate PASS `7/7`.
+
+Boundary: this is one selected workflow projection only. It does not add
+route-level invalid-transition BLOCK, broad workflow engine, reviewer UI,
+recovery/rollback orchestration, provider semantics, auth/RBAC, receipt
+envelope fields, memory reinjection, public-sync, hosted readiness, production
+readiness, or freeze release.
+
+Next ranked candidate: Candidate 2 from WC-3, memory event hooks plus context
+packager hardening. It is demand-gated and must start with a fresh GC-018/work
+order containing the WC-4 Knowledge Absorption Blind-Spot Control Block. Keep
+`canReinject=false`; do not open raw reinjection.
 
 ### 2026-05-24 - WC-2 Mock Fallback Elimination Closed
 
@@ -626,6 +663,7 @@ For older continuity before V12, read:
 
 ## Latest HEADs
 
+- `13966c38` — docs(w1): authorize workflow state machine tranche (2026-05-24)
 - `23677f2f` — docs(session): sync gc018 control clarification head (2026-05-24)
 - `3889e050` — docs(wc4): clarify gc018 control block requirement (2026-05-24)
 - `148beab5` — docs(wc4): mandate knowledge absorption blindspot control across agents (2026-05-24)
