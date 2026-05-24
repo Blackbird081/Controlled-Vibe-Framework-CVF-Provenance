@@ -383,6 +383,7 @@ For older continuity before V12, read:
 
 ## Latest HEADs
 
+- `5a920a4c` — feat(memory): close s1 and benchmark claim with s2 blocker (2026-05-24)
 - `4c7b7bb7` — docs(s1-s2-s3): dispatch R4-fix/S1/S2/S3 work orders and roadmap (2026-05-24)
 - `045c9308` — docs(r1): close durable memory resilience gap (2026-05-24)
 - `032a16da` — fix(memory): harden durable store resilience (2026-05-24)
