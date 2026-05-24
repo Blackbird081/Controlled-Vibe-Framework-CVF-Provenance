@@ -85,7 +85,7 @@ probe now records redacted route error diagnostics and classifies
 timeout/rate-limit/balance/auth failure cases. With bounded provider timeout
 `120000ms`, the superseding full soak passed `15/15`:
 
-Commit: `861810c9` (docs(s2): close provider soak and screen next tranche)
+Commit: `afc31897` (docs(s2): close provider soak and screen next tranche)
 
 - Alibaba `qwen-turbo`: `5/5`
 - DeepSeek `deepseek-chat`: `5/5`
