@@ -6,6 +6,21 @@ Memory class: POINTER_RECORD
 
 Current HEAD before V13 handoff transition commit: `391ebedf`.
 
+Current HEAD before V13 structure sync commit: `50322987`.
+
+## Purpose
+
+Provide a compact active handoff after V12 and the session-memory front door
+approached the governed size threshold.
+
+## Scope / Target / Owner Boundary
+
+Owner surface: session continuity only. Target files are the active handoff,
+the compact session front door, and the machine-readable active-state pointer.
+
+Out of scope: feature implementation, runtime/provider behavior, public-sync,
+hosted readiness, production readiness, and freeze release.
+
 ## Startup
 
 Start at the compact session front door:
@@ -40,7 +55,13 @@ Freeze posture remains:
 
 `governance_kernel_freeze_recommended`
 
-## Latest Closure
+## Active Boundary
+
+Follow `CVF_SESSION/ACTIVE_SESSION_STATE.json` as the machine-readable source of
+truth. This handoff summarizes the latest active posture but does not supersede
+state, review packets, work orders, or governance guards.
+
+## Latest Work / Changes
 
 C7A product skill pack top-10 completion is closed PASS bounded:
 
@@ -108,3 +129,9 @@ F-1 output-quality parity is closed not met. Do not reopen broad F-1 tuning.
 This provenance workspace is private audit/provenance. Do not push public-facing
 changes from here. Public-facing changes must use the sibling public-sync clone
 after verifying remotes.
+
+## Claim Boundary
+
+Verified before handoff transition: active-session state gate PASS, compact
+front door has required markers, and C7A validator evidence remains PASS for
+all ten packs. No live proof is claimed by this handoff refresh.
