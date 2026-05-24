@@ -601,6 +601,7 @@ For older continuity before V12, read:
 
 ## Latest HEADs
 
+- `3889e050` — docs(wc4): clarify gc018 control block requirement (2026-05-24)
 - `148beab5` — docs(wc4): mandate knowledge absorption blindspot control across agents (2026-05-24)
 - `56d5597c` — docs(wc4): mandate knowledge absorption blindspot control (2026-05-24)
 - `0349a6cd` — docs(wc3): close legacy harvest scan map (2026-05-24)
