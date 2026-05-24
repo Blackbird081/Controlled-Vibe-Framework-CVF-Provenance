@@ -20,6 +20,8 @@ Current HEAD before CB1 implementation closure commit: `2e822b2c`.
 
 Current HEAD before WR1 authorization commit: `972e227a`.
 
+Current HEAD before WR1 implementation closure commit: `43969712`.
+
 Remote tracking branch:
 
 `origin/main`
@@ -69,7 +71,7 @@ Previous long session memory snapshot was archived at:
 
 ## Current Mode
 
-`wr1_workflow_recovery_state_proof_authorized`
+`wr1_workflow_recovery_state_proof_closed`
 
 Freeze posture remains:
 
@@ -151,19 +153,41 @@ action.
 Verification: Governance CLI focused `cvf skill` tests PASS 14/14; Governance
 CLI TypeScript check PASS.
 
-## Active Tranche
+WR1 workflow recovery state proof is closed PASS bounded:
 
-WR1 workflow recovery state proof is authorized:
+`docs/reviews/CVF_WR1_WORKFLOW_RECOVERY_STATE_PROOF_COMPLETION_2026-05-25.md`
+
+WR1 added deterministic local `cvf.workflowRecoveryReadout.wr1.v1` to the
+Product Brief workflow projection, with last restorable checkpoint, blocked
+steps, validation gate, requested-transition disposition, recovery action,
+recommended next action, and explicit boundaries.
+
+Verification: focused `workflow-resolver` tests PASS 5/5; `cvf-web`
+TypeScript check PASS.
+
+Boundary: no route-level invalid-transition `BLOCK`, broad workflow engine,
+provider/API call, `/api/execute` behavior change beyond existing projection
+data flow, receipt envelope, memory, MCP/tool/database execution, public-sync,
+hosted readiness, production readiness, or freeze release.
+
+## Next Allowed Move
+
+Any next absorption work must start with a fresh GC-018/work order and the
+Knowledge Absorption Blind-Spot Control Block.
+
+Valid demand-selected LH1 candidates include:
+
+- tool/action approval proof;
+- external skill intake screening packet;
+- route-level workflow enforcement proof, only if explicitly authorized.
+
+Previous WR1 authorization packet:
 
 `docs/baselines/CVF_GC018_WR1_WORKFLOW_RECOVERY_STATE_PROOF_2026-05-25.md`
 
 Work order:
 
 `docs/work_orders/CVF_WO_WR1_WORKFLOW_RECOVERY_STATE_PROOF_2026-05-25.md`
-
-Target: deterministic local workflow recovery/readout for one Product Brief
-workflow projection, with checkpoint, invalid-transition classification, and
-recovery action.
 
 Do not add more packs, runtime execution, provider calls, receipt-envelope
 changes, memory, MCP/tool/database execution, public-sync, hosted readiness,

@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-25
 
-Current mode marker: `wr1_workflow_recovery_state_proof_authorized`
+Current mode marker: `wr1_workflow_recovery_state_proof_closed`
 
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Previous handoff archive:
 
 ## Current State
 
-Current mode: `wr1_workflow_recovery_state_proof_authorized`.
+Current mode: `wr1_workflow_recovery_state_proof_closed`.
 
 C7A closed PASS bounded at:
 
@@ -124,22 +124,21 @@ missing signals, contamination/noise flags, preservation priority, and next
 action. Verification: focused Governance CLI `cvf skill` tests PASS 14/14;
 Governance CLI TypeScript check PASS.
 
-## Active Tranche
+## Latest Closed Tranche
 
-WR1 workflow recovery state proof is authorized:
+WR1 workflow recovery state proof is closed PASS bounded:
 
-`docs/baselines/CVF_GC018_WR1_WORKFLOW_RECOVERY_STATE_PROOF_2026-05-25.md`
+`docs/reviews/CVF_WR1_WORKFLOW_RECOVERY_STATE_PROOF_COMPLETION_2026-05-25.md`
 
 Work order:
 
 `docs/work_orders/CVF_WO_WR1_WORKFLOW_RECOVERY_STATE_PROOF_2026-05-25.md`
 
-Target: deterministic local workflow recovery/readout for one Product Brief
-workflow projection, with checkpoint, invalid-transition classification, and
-recovery action. No route-level invalid-transition `BLOCK`, broad workflow
-engine, provider/API call, receipt-envelope change, memory, MCP/tool/database
-execution, public-sync, hosted readiness, production readiness, or freeze
-release.
+WR1 added deterministic local `cvf.workflowRecoveryReadout.wr1.v1` to the
+Product Brief workflow projection, with checkpoint, invalid-transition
+classification, reviewer-gate hold, escalation action, and explicit boundaries.
+Verification: focused workflow resolver tests PASS 5/5; `cvf-web` TypeScript
+check PASS.
 
 Candidate 7 external skill/model ingestion remains held until there is a
 concrete source/use-case binding.
