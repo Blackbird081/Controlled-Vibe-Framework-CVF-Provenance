@@ -12,6 +12,8 @@ Current HEAD before C8 authorization commit: `9129fffe`.
 
 Current HEAD before C8 implementation closure commit: `e5886810`.
 
+Current HEAD before LH1 closeout ledger commit: `acf2ce79`.
+
 Remote tracking branch:
 
 `origin/main`
@@ -61,7 +63,7 @@ Previous long session memory snapshot was archived at:
 
 ## Current Mode
 
-`c8_product_skill_pack_selection_readout_closed`
+`lh1_legacy_harvest_closeout_ledger_closed`
 
 Freeze posture remains:
 
@@ -104,6 +106,18 @@ risk/human-review/no-match readout, and proved all-ten runtime plan resolution.
 Verification: Governance CLI focused `cvf skill` tests PASS 10/10; Governance
 CLI TypeScript check PASS.
 
+LH1 legacy harvest closeout ledger is closed PASS bounded:
+
+`docs/reviews/CVF_LH1_LEGACY_HARVEST_CLOSEOUT_LEDGER_COMPLETION_2026-05-25.md`
+
+Closeout ledger:
+
+`docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+
+LH1 dispositioned every WC-3 source family, linked absorbed slices to W1-W6,
+C7A, C8, AIF, and PBR evidence, and recorded the remaining high-value
+absorption queue. It does not claim full legacy absorption.
+
 ## Candidate 7 Disposition
 
 Candidate 7 is partially harvested, not broadly open.
@@ -123,7 +137,9 @@ explicit action/tool/provider boundary.
 
 No next implementation tranche is active.
 
-Next work requires operator selection and fresh GC-018.
+Recommended next absorption candidate: context-budget and request-shaping
+readout from `caveman`, Human System Harness, and Workflow GoClaw. It requires
+fresh GC-018 and work order before implementation.
 
 Do not add more packs, runtime execution, provider calls, receipt-envelope
 changes, memory, MCP/tool/database execution, public-sync, hosted readiness,

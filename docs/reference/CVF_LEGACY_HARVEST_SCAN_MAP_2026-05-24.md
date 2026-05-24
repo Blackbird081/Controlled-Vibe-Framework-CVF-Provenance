@@ -10,6 +10,21 @@ Date: 2026-05-24
 
 ---
 
+## LH1 Closeout Pointer
+
+This WC-3 scan map is closed as a source inventory, not as complete legacy
+absorption.
+
+The current closeout ledger is:
+
+`docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+
+LH1 completion:
+
+`docs/reviews/CVF_LH1_LEGACY_HARVEST_CLOSEOUT_LEDGER_COMPLETION_2026-05-25.md`
+
+Future agents must use the LH1 ledger before reopening any WC-3 source family.
+
 ## Purpose
 
 Preserve the combined WC-3 scan across CVF 16.5, CVF ADD, and CVF Edit so the

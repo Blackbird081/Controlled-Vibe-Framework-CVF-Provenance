@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-25
 
-Current mode marker: `c8_product_skill_pack_selection_readout_closed`
+Current mode marker: `lh1_legacy_harvest_closeout_ledger_closed`
 
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Previous handoff archive:
 
 ## Current State
 
-Current mode: `c8_product_skill_pack_selection_readout_closed`.
+Current mode: `lh1_legacy_harvest_closeout_ledger_closed`.
 
 C7A closed PASS bounded at:
 
@@ -90,6 +90,18 @@ Absorption Blind-Spot Control Block, and a concrete source/use-case binding.
 
 ## Latest Closed Tranche
 
+LH1 legacy harvest closeout ledger is closed PASS bounded:
+
+`docs/reviews/CVF_LH1_LEGACY_HARVEST_CLOSEOUT_LEDGER_COMPLETION_2026-05-25.md`
+
+Closeout ledger:
+
+`docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+
+LH1 dispositioned every WC-3 source family, linked absorbed slices to W1-W6,
+C7A, C8, AIF, and PBR evidence, and recorded the remaining high-value
+absorption queue. It does not claim full legacy absorption.
+
 C8 product skill pack selection/readout is closed PASS bounded:
 
 `docs/reviews/CVF_C8_PRODUCT_SKILL_PACK_SELECTION_READOUT_COMPLETION_2026-05-25.md`
@@ -104,9 +116,12 @@ risk/human-review/no-match readout. Verification: focused Governance CLI
 
 No next implementation tranche is active.
 
-Next work requires operator selection and fresh GC-018. Candidate 7 external
-skill/model ingestion remains held until there is a concrete source/use-case
-binding.
+Recommended next absorption candidate: context-budget and request-shaping
+readout from `caveman`, Human System Harness, and Workflow GoClaw. It still
+requires fresh GC-018 and work order before implementation.
+
+Candidate 7 external skill/model ingestion remains held until there is a
+concrete source/use-case binding.
 
 Do not add packs, runtime execution, provider behavior, receipt envelopes,
 memory, MCP/tool/database execution, public-sync, hosted readiness, production
