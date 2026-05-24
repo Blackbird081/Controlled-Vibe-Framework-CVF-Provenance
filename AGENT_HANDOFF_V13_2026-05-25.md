@@ -18,6 +18,8 @@ Current HEAD before CB1 authorization commit: `488cb9da`.
 
 Current HEAD before CB1 implementation closure commit: `2e822b2c`.
 
+Current HEAD before WR1 authorization commit: `972e227a`.
+
 Remote tracking branch:
 
 `origin/main`
@@ -67,7 +69,7 @@ Previous long session memory snapshot was archived at:
 
 ## Current Mode
 
-`cb1_context_budget_request_shaping_readout_closed`
+`wr1_workflow_recovery_state_proof_authorized`
 
 Freeze posture remains:
 
@@ -149,13 +151,19 @@ action.
 Verification: Governance CLI focused `cvf skill` tests PASS 14/14; Governance
 CLI TypeScript check PASS.
 
-## Recommended Next Move
+## Active Tranche
 
-No next implementation tranche is active.
+WR1 workflow recovery state proof is authorized:
 
-Recommended next absorption candidates from LH1: workflow recovery state proof,
-tool/action approval proof, or external skill intake screening packet. Any next
-work requires fresh GC-018 and work order.
+`docs/baselines/CVF_GC018_WR1_WORKFLOW_RECOVERY_STATE_PROOF_2026-05-25.md`
+
+Work order:
+
+`docs/work_orders/CVF_WO_WR1_WORKFLOW_RECOVERY_STATE_PROOF_2026-05-25.md`
+
+Target: deterministic local workflow recovery/readout for one Product Brief
+workflow projection, with checkpoint, invalid-transition classification, and
+recovery action.
 
 Do not add more packs, runtime execution, provider calls, receipt-envelope
 changes, memory, MCP/tool/database execution, public-sync, hosted readiness,
