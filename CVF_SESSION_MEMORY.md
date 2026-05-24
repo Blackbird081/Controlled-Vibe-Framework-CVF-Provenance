@@ -1169,8 +1169,14 @@ Closure:
 W1-W6 are closed. Candidate 7 external skill/model ingestion is held, not
 rejected, because it is high-risk and demand-gated in the WC-3 scan map.
 
-Next allowed move: open Candidate 7 only with fresh GC-018, concrete operator
-use case, WC-4 Control Block, and explicit action/tool/provider governance
-boundary. Otherwise start a new value-screened tranche.
+Clarification: Candidate 7 already has an existing rules chain to use:
+governed capability intake doctrine -> W7 external asset intake/profile ->
+W7 compiler/environment normalization -> T1 static certification. The missing
+piece is not new rules, but a concrete Candidate-7 source/use-case binding.
+
+Next allowed move: open Candidate 7 only with fresh GC-018 that binds a
+specific source/use case into that chain, plus WC-4 Control Block and explicit
+action/tool/provider governance boundary. Otherwise start a new value-screened
+tranche.
 
 Marker: wc_workflow_chain_roadmap_closed_pass_bounded_candidate7_held.

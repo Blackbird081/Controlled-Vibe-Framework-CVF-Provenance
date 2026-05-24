@@ -39,6 +39,11 @@ Source:
 
 - `docs/reference/CVF_LEGACY_HARVEST_SCAN_MAP_2026-05-24.md`
 - `docs/roadmaps/CVF_WC_WORKFLOW_CHAIN_AND_PAIN_POINT_ROADMAP_2026-05-24.md`
+- `docs/reference/CVF_GOVERNED_CAPABILITY_INTAKE_DOCTRINE_2026-05-07.md`
+- `docs/reference/CVF_W7_EXTERNAL_ASSET_INTAKE_PROFILE.md`
+- `docs/reference/CVF_W7_EXTERNAL_ASSET_COMPILER_GUIDE.md`
+- `docs/reference/CVF_W7_EXECUTION_ENVIRONMENT_NORMALIZATION_POLICY.md`
+- `docs/reviews/CVF_T1_CAPABILITY_INTAKE_PIPELINE_COMPLETION_2026-05-22.md`
 - W1-W6 completion packets and session memory.
 
 ## Evidence Trace Block
@@ -57,13 +62,23 @@ Source:
 - Candidate 7 source classification:
   `docs/reference/CVF_LEGACY_HARVEST_SCAN_MAP_2026-05-24.md`
   ranks external skill/model ingestion as high-risk and demand-gated.
+- Existing intake chain already exists:
+  - governed capability intake doctrine defines discover -> provenance ->
+    classify -> owner-bind -> allowed/blocked ops -> sandbox/adapter ->
+    evidence -> value evaluation.
+  - W7 external asset intake defines intake profile -> normalized asset
+    candidate -> registry-ready governed asset.
+  - W7 compiler guide binds normalize -> compile -> registry readiness.
+  - T1 certification validator proves static skill-pack certification with
+    eight required artifacts and negative missing-artifact checks.
 
 ## Knowledge Absorption Blind-Spot Control Block
 
 - Standard read:
   `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`
 - Prior absorption evidence resolved: WC-3 scan map and W1-W6 closure packets.
-- Accepted value: preserve Candidate 7 as a future option only.
+- Accepted value: preserve Candidate 7 as a future option and route it through
+  the existing W7/T1 intake chain, not a new ad hoc process.
 - Deferred value: external skill/model ingestion readiness, including Hugging
   Face, Hermes Agent, and Agent Engineer surfaces.
 - Rejected value: starting external ingestion without concrete use case,
@@ -83,7 +98,15 @@ Source:
 
 Roadmap status: `CLOSED_PASS_BOUNDED_WITH_CANDIDATE7_HELD`.
 
-Candidate 7 is not rejected; it is held. A future agent may open it only with:
+Clarification: Candidate 7 does not need a new rules framework before it can
+be scoped. CVF already has a canonical intake chain through governed capability
+intake doctrine, W7 external asset intake/profile/compiler policy, execution
+environment normalization, and T1 static certification. What remains missing
+is a Candidate-7-specific binding: source, use case, owner surface, allowed
+operations, blocked operations, and proof plan.
+
+Candidate 7 is not rejected; it is held. A future agent may open it only by
+binding a concrete source/use case into the existing W7/T1 chain with:
 
 - fresh GC-018;
 - concrete operator use case;
@@ -99,7 +122,8 @@ authorized by the roadmap.
 Finding: Candidate 7 is still valuable as future optional work, but its source
 surface is materially different from W1-W6 because it can widen external
 tool/provider/model ingestion. The correct closure posture is hold, not
-automatic implementation.
+  automatic implementation. The rules chain already exists; the missing piece
+  is a concrete Candidate-7 binding into that chain.
 
 ## Risk / Corrective Action
 

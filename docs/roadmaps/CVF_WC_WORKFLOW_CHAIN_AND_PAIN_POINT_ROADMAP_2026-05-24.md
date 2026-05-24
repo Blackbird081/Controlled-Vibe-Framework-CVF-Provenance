@@ -605,5 +605,11 @@ automatic next implementation step. It remains held until a concrete operator
 use case, fresh GC-018, WC-4 Control Block, and explicit action/tool/provider
 governance boundary exist.
 
+Clarification: Candidate 7 does not require inventing a new intake workflow.
+The existing chain is governed capability intake doctrine + W7 external asset
+intake/profile/compiler policy + execution-environment normalization + T1
+static certification. The missing work is a narrow Candidate-7 binding into
+that chain for a selected source and use case.
+
 No track in this roadmap claims `canReinject=true`, global freeze lift,
 enterprise SaaS readiness, or universal provider parity.
