@@ -20,6 +20,21 @@ continuing.
 
 **Current branch:** `cvf-next` (development). **Main branch:** `main` (production).
 
+## Mandatory Live Run Diagnostics
+
+Before rerunning any failed, partial, timed-out, empty-output, or ambiguous live
+provider/API-key/service-token/CLI/MCP/browser proof, follow:
+
+`docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md`
+
+Record a secret-safe diagnostic with stage, class, retryability, user action,
+provider/model when known, HTTP status/latency when available, receipt/trace
+when available, and a safe human-readable message. Do not print raw API keys,
+signed headers, bearer tokens, or unredacted provider request bodies.
+
+For benchmark evidence with multiple events per live call, report both
+call-level pass rate and event-model metric denominator.
+
 ---
 
 ## Commands

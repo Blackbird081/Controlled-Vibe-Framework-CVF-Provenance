@@ -6,12 +6,13 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-24
 
-Current mode marker: `s1_s2_s3_closed_value_screen_ready`
+Current mode marker: `v3_execution_diagnostic_selected`
 
-Update 2026-05-24: R4-fix/S1/S2/S3 execution is closed bounded. The earlier
-S2 DeepSeek blocker is superseded by a diagnostic tri-provider rerun: Alibaba
-5/5, DeepSeek 5/5, OpenAI 5/5, total 15/15. Next tranche screening is filed at
-`docs/roadmaps/CVF_VALUE_SCREENED_NEXT_TRANCHE_ROADMAP_2026-05-24.md`.
+Update 2026-05-24: V3 Execution Diagnostic Contract is selected as the
+mandatory next tranche. All AI/agent live runs must follow
+`docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md`: failed,
+partial, timed-out, empty-output, or rerun-triggering live runs require
+secret-safe diagnostics before rerun.
 
 R1/R2/R3 post-M1 gap closure is closed. R2 delivered explicit policy-gated
 `/api/execute` durable-memory reads with live receipt
@@ -198,9 +199,18 @@ Roadmap:
 
 - `docs/roadmaps/CVF_VALUE_SCREENED_NEXT_TRANCHE_ROADMAP_2026-05-24.md`
 
-Recommendation: select V1 non-coder first-value journey hardening next, with V2
-evidence-to-action packaging as a bounded companion if the journey proof shows
-users cannot understand or reuse the evidence artifact.
+Selected next tranche:
+
+- V3 Execution Diagnostic Contract:
+  `docs/work_orders/CVF_WO_V3_EXECUTION_DIAGNOSTIC_CONTRACT_2026-05-24.md`
+- GC-018:
+  `docs/baselines/CVF_GC018_V3_EXECUTION_DIAGNOSTIC_CONTRACT_2026-05-24.md`
+- Standard:
+  `docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md`
+
+V1 non-coder first-value journey hardening remains the recommended product
+tranche after V3, with V2 evidence-to-action packaging as a bounded companion if
+the journey proof shows users cannot understand or reuse evidence.
 
 Hold broad provider soak expansion, model-specific proof loops, and F-1 tuning
 unless a fresh explicit product demand supersedes the current boundary.

@@ -133,6 +133,27 @@ check/load that file before claiming no live key is available. Do not print raw
 values, do not copy that file into the public-sync repository, and only pass the
 values through process environment for live proof commands.
 
+## Mandatory Live Run Diagnostics - 2026-05-24
+
+Canonical standard:
+
+`docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md`
+
+Any AI/agent that runs a live provider/API-key/service-token/CLI/MCP/browser
+proof must classify failures before rerunning. A failed, partial, timed-out,
+empty-output, or rerun-triggering live run must record a secret-safe diagnostic
+with stage, class, retryability, user action, provider/model when known, HTTP
+status/latency when available, receipt/trace when available, and a safe
+human-readable message.
+
+Do not consume more live quota by repeating the same unclear test until the
+previous failure has a diagnostic or an explicit reason why diagnostic capture
+was impossible.
+
+Benchmark evidence that emits multiple events per live call must report both
+the call-level result and the event-model denominator so readers do not confuse
+event ratios with execution pass rate.
+
 ## Latest Closed Continuation Roadmap
 
 The latest closed continuation roadmap is `docs/roadmaps/CVF_W132_T1_PROVIDER_RUNTIME_STABILITY_AND_BROWSER_SESSION_HARDENING_ROADMAP_2026-04-30.md`.

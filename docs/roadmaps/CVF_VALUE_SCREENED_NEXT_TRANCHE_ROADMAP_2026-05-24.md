@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: PROPOSED_FOR_OPERATOR_SELECTION
+Status: V3_SELECTED_READY_FOR_IMPLEMENTATION
 
 docType: roadmap
 
@@ -42,11 +42,11 @@ In scope:
 
 Out of scope:
 
-- committing to V1/V2 implementation
+- committing to V1/V2 implementation before V3
 - broad provider soaking
 - model-specific retry loops
 - F-1 parity tuning
-- public-sync update
+- public-sync update except S3 metric-clarity wording
 
 ## Decision Principle
 
@@ -61,15 +61,42 @@ proposition.
 
 | Candidate | Value | Risk | Recommendation |
 | --- | --- | --- | --- |
-| V1 Non-coder first-value journey hardening | High | Medium | Preferred next tranche |
-| V2 Evidence-to-action product packaging | High | Low/Medium | Strong alternate or V1 companion |
-| V3 Provider diagnostics polish | Medium | Low | Do only as support work, not a standalone long tranche |
+| V1 Non-coder first-value journey hardening | High | Medium | Next after V3 |
+| V2 Evidence-to-action product packaging | High | Low/Medium | Strong alternate or V1 companion after V3 |
+| V3 Execution diagnostic contract | Critical | Medium | Selected mandatory next tranche |
 | V4 Graph/memory productization through real tasks | Medium/High | Medium/High | Worth doing only with a concrete user workflow |
 | V5 More provider soak windows | Low now | Low | Hold unless tied to a specific public claim |
 | V6 More Qwen/model-specific proof loops | Low now | Medium | Hold unless operator has a concrete model need |
 | V7 F-1 output-quality parity tuning | Rejected by rule | High | Do not reopen |
 
-## Recommended Next Tranche
+## Selected Next Tranche
+
+V3: Execution Diagnostic Contract.
+
+Authority:
+
+- Standard:
+  `docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md`
+- GC-018:
+  `docs/baselines/CVF_GC018_V3_EXECUTION_DIAGNOSTIC_CONTRACT_2026-05-24.md`
+- Work order:
+  `docs/work_orders/CVF_WO_V3_EXECUTION_DIAGNOSTIC_CONTRACT_2026-05-24.md`
+
+Bounded goal:
+
+- Every failed, partial, empty-output, or rerun-triggering live run must record
+  a secret-safe diagnostic with stable stage/class/retryability/userAction.
+- Future CLI/MCP/API-key users must not receive only `success=false` or "no
+  output" without a classified cause.
+
+Why V3 moves ahead of V1/V2:
+
+- V1/V2 rely on users understanding what happened when execution fails.
+- Repeated live reruns without classified causes waste token budget and
+  provider quota.
+- V3 makes future product journeys debuggable and supportable.
+
+## Next Product Tranche After V3
 
 V1: Non-coder first-value journey hardening.
 
@@ -177,11 +204,12 @@ Future selected tranche must add its own completion evidence.
 
 ## Current Recommendation
 
-Select V1 next, with V2 packaging allowed as a bounded sub-output if the journey
-proof shows users cannot understand or reuse the evidence artifact.
+Implement V3 first. Then select V1 next, with V2 packaging allowed as a bounded
+sub-output if the journey proof shows users cannot understand or reuse the
+evidence artifact.
 
 ## Claim / Final / Verification Boundary
 
-This roadmap claims only that the next tranche has been value-screened and that
-V1 is the recommended next selection. It does not authorize implementation by
-itself and does not claim any new runtime behavior.
+This roadmap claims that V3 has been selected as the mandatory diagnostic
+standard and next implementation tranche. It does not claim V3 runtime
+readiness until the V3 work order is implemented and verified.

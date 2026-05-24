@@ -38,7 +38,7 @@ Current HEAD before V12 transition:
 
 Current mode marker:
 
-`s1_s2_s3_closed_value_screen_ready`
+`v3_execution_diagnostic_selected`
 
 ---
 
@@ -77,6 +77,31 @@ current.
 ---
 
 ## Latest Work / Changes
+
+### 2026-05-24 - V3 Execution Diagnostic Contract Selected
+
+Operator selected V3 as mandatory next tranche and as a required standard for
+all AI/agent live runs.
+
+Standard:
+`docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md`
+
+GC-018:
+`docs/baselines/CVF_GC018_V3_EXECUTION_DIAGNOSTIC_CONTRACT_2026-05-24.md`
+
+Work order:
+`docs/work_orders/CVF_WO_V3_EXECUTION_DIAGNOSTIC_CONTRACT_2026-05-24.md`
+
+Rule: before rerunning any failed, partial, timed-out, empty-output, or
+ambiguous live provider/API-key/service-token/CLI/MCP/browser proof, the agent
+must record a secret-safe diagnostic with stage, class, retryability, user
+action, provider/model when known, HTTP status/latency when available,
+receipt/trace when available, and a safe message.
+
+S3 metric clarity was corrected: S3 had `5/5` live calls pass, while
+`taskCompletionRate=0.5` and `receiptIntegrityRate=0.5` are event-model
+metrics over 10 benchmark events because each call emits `execution_completed`
+and `receipt_emitted`.
 
 ### 2026-05-24 - S2 Superseding Closure + Value-Screened Next Tranche
 

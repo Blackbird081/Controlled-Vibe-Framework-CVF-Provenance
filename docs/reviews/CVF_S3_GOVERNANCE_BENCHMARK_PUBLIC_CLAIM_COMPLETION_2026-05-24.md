@@ -56,6 +56,8 @@ Live hosted target:
 Run result:
 
 - 5 live calls.
+- Call-level execution result: `5/5 PASS`.
+- Call-level receipt result: `5/5 receipts emitted`.
 - Provider/model: Alibaba `qwen-turbo`.
 - Receipts: `rcpt-env-mpjfw4h8-hquk50`, `rcpt-env-mpjfwdxu-pzio10`,
   `rcpt-env-mpjfwoei-nmpweq`, `rcpt-env-mpjfwxey-7ytgbo`,
@@ -67,6 +69,16 @@ Measured metrics under the current E2 event model:
 - `taskCompletionRate=0.5` (`5/10` events).
 - `policyViolationRate=0` (`0/10` events).
 - `receiptIntegrityRate=0.5` (`5/10` events).
+
+Metric clarity note:
+
+- The denominator is `10` because the S3 probe maps each live call to two
+  benchmark events: `execution_completed` and `receipt_emitted`.
+- `taskCompletionRate=0.5` means 5 execution-completion events out of 10 total
+  benchmark events, not 50% call failure.
+- `receiptIntegrityRate=0.5` means 5 receipt-emitted events out of 10 total
+  benchmark events, not 50% receipt failure.
+- Call-level pass rate for this S3 window is `5/5`.
 
 Public-sync update:
 
@@ -80,8 +92,8 @@ Public-sync update:
 
 ## Findings / Position
 
-Finding 1: PASS. The hosted benchmark produced 5 live successful calls and 5
-live receipts.
+Finding 1: PASS. The hosted benchmark produced 5/5 live successful calls and
+5/5 live receipts.
 
 Finding 2: PASS. The three required metric values were computed from the
 current E2 model and recorded exactly.
@@ -91,9 +103,11 @@ not private reviews, baselines, roadmaps, headers, or secrets.
 
 ## Risk / Corrective Action
 
-Risk: metric values may be misread as production-grade reliability.
+Risk: metric values may be misread as production-grade reliability or as
+call-level pass rates.
 Corrective action: the catalog row and public summary state the exact bounded
-window and deny SLA/production-readiness claims.
+window, separate call-level pass rate from event-model metric denominators, and
+deny SLA/production-readiness claims.
 
 ## Disposition
 
