@@ -601,6 +601,7 @@ For older continuity before V12, read:
 
 ## Latest HEADs
 
+- `56d5597c` — docs(wc4): mandate knowledge absorption blindspot control (2026-05-24)
 - `0349a6cd` — docs(wc3): close legacy harvest scan map (2026-05-24)
 - `c94c09ea` — docs(session): sync wc1 public evidence head (2026-05-24)
 - `095f017f` — docs(wc1): record public catalog evidence sync (2026-05-24)
