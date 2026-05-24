@@ -11,7 +11,7 @@
   "knowledgeAbsorptionBlindspotPreventionStandard": "docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md",
   "agentIntelligenceFoundationsRoadmap": "docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md",
   "operationalReferenceIndex": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
-  "activeHandoff": "AGENT_HANDOFF_V12_2026-05-23.md",
+  "activeHandoff": "AGENT_HANDOFF_V13_2026-05-25.md",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -23,7 +23,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V7_2026-05-16.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V8_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V9_2026-05-18.md",
-    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V10_2026-05-19.md"
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V10_2026-05-19.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V12_2026-05-23.md"
   ],
   "relatedHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_INTEGRATIONS_2026-05-17.md",
@@ -110,7 +111,7 @@
     "blocked_work_classes",
     "next_allowed_move"
   ],
-  "nextAllowedMove": "C7A product skill pack top-10 completion is CLOSED_PASS_BOUNDED at docs/reviews/CVF_C7A_PRODUCT_SKILL_PACK_TOP10_COMPLETION_2026-05-25.md. Default next move: operator review or a fresh GC-018/work order for selection/readout quality. Do not expand beyond ten packs, add runtime execution, provider behavior, receipt envelopes, memory, MCP/tool behavior, public-sync, hosted readiness, production readiness, or freeze release without a new authorized tranche.",
+  "nextAllowedMove": "C7A product skill pack top-10 completion is CLOSED_PASS_BOUNDED at docs/reviews/CVF_C7A_PRODUCT_SKILL_PACK_TOP10_COMPLETION_2026-05-25.md. Session front door was refreshed into a compact CVF_SESSION_MEMORY.md and active handoff advanced to AGENT_HANDOFF_V13_2026-05-25.md. Default next move: operator review or a fresh GC-018/work order for product skill pack selection/readout quality. Do not expand beyond ten packs, add runtime execution, provider behavior, receipt envelopes, memory, MCP/tool behavior, public-sync, hosted readiness, production readiness, or freeze release without a new authorized tranche.",
   "c7aProductSkillPackTop10": "CLOSED_PASS_BOUNDED. Added exactly three static certified packs: competitor_review, data_analysis, app_requirements_spec. Registry now contains 10 unique certified packs; validator PASS for all ten. Completion review: docs/reviews/CVF_C7A_PRODUCT_SKILL_PACK_TOP10_COMPLETION_2026-05-25.md. Boundary: static packs and registry only; no runtime execution, provider behavior, receipt envelope, UI recommender, external network/tool execution, hosted readiness, production readiness, or freeze release.",
   "wcWorkflowChainRoadmapClosure": "CLOSED_PASS_BOUNDED_WITH_CANDIDATE7_HELD at docs/reviews/CVF_WC_WORKFLOW_CHAIN_AND_PAIN_POINT_ROADMAP_CLOSURE_2026-05-24.md. W1-W6 are closed; Candidate 7 external skill/model ingestion remains high-risk and demand-gated per docs/reference/CVF_LEGACY_HARVEST_SCAN_MAP_2026-05-24.md. Clarification: Candidate 7 should use the existing governed capability intake + W7 + T1 rules chain; the missing piece is concrete source/use-case binding, not a new intake framework. Boundary: no external ingestion, new provider execution, tool execution, public-sync, hosted readiness, production readiness, or freeze release.",
   "w6NoncoderArtifactExportHardening": "CLOSED_PASS_BOUNDED at docs/reviews/CVF_W6_NONCODER_ARTIFACT_EXPORT_HARDENING_COMPLETION_2026-05-24.md. Added local cvf-web DeliverablePack artifactVerification with cvf.packArtifactVerification.w6.v1 provenance and markdown Artifact Verification serialization. Missing receipt is PASS_WITH_WARNINGS; empty output is blocking FAIL. Verification: focused deliverable-pack tests PASS 32/32; cvf-web TypeScript check PASS. Boundary: no new renderer/runtime, /api/execute, provider behavior, receipt envelope, auth/RBAC, memory reinjection, public-sync, hosted readiness, production readiness, or freeze release.",

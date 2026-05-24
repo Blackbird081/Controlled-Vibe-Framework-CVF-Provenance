@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: ACTIVE
+Status: ARCHIVED_SUPERSEDED_BY_V13_2026-05-25
 
 Active session front door:
 
@@ -1190,3 +1190,17 @@ static certification only, not runtime/provider behavior.
 Boundary: no runtime execution, `/api/execute`, provider behavior, receipt
 envelope, memory, MCP/tool execution, UI recommender, public-sync, hosted
 readiness, production readiness, or freeze release.
+
+## Session Front Door Refresh - 2026-05-25
+
+Current HEAD before front-door refresh commit: `391ebedf`.
+
+`CVF_SESSION_MEMORY.md` was refreshed into a compact active front door because
+the prior file was near the 1200-line threshold. The previous long snapshot was
+archived verbatim at
+`CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_PRE_C7A_REFRESH_ARCHIVE_2026-05-25.md`.
+
+Candidate 7 disposition for the next agent: C7A is closed for static top-10 pack
+inventory; broader external ingestion remains held. Recommended next tranche is
+pack selection/readout quality over the ten certified packs, with fresh GC-018
+and work order required before implementation.
