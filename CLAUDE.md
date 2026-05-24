@@ -35,6 +35,28 @@ signed headers, bearer tokens, or unredacted provider request bodies.
 For benchmark evidence with multiple events per live call, report both
 call-level pass rate and event-model metric denominator.
 
+## Mandatory Knowledge Absorption Blind-Spot Control
+
+This applies to **all agents** (Claude, Codex, Gemini, or any future agent)
+executing work that absorbs, reopens, scopes, or implements knowledge from
+`.private_reference/legacy/`, archived absorption packets, external capability
+sources, Review-CVF pain points, memory, graph, workflow, CLI/MCP/tool,
+provider, benchmark, context, or non-coder outcome surfaces.
+
+Before implementation, the agent must produce a Blind-Spot Control Block per
+the binding standard:
+
+`docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`
+
+The control block must be included in the GC-018 packet or work order, with
+all seven gates executed and a verdict of `CLEAR`, `PARTIAL`, or `BLOCKED`.
+Tranches with `BLOCKED` verdict cannot proceed. Operator may grant a one-off
+exception, which must be recorded in the GC-018 packet itself.
+
+Do not bypass this standard by claiming "the folder was already audited," "the
+summary is enough," "another agent already reviewed it," or any of the other
+rationalizations in the standard's Do-Not-Bypass List.
+
 ---
 
 ## Commands
