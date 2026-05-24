@@ -92,6 +92,8 @@ GC-018:
 Work order:
 `docs/work_orders/CVF_WO_V3_EXECUTION_DIAGNOSTIC_CONTRACT_2026-05-24.md`
 
+Commit: `9fb8f31e` (docs(v3): define mandatory live-run diagnostics)
+
 Rule: before rerunning any failed, partial, timed-out, empty-output, or
 ambiguous live provider/API-key/service-token/CLI/MCP/browser proof, the agent
 must record a secret-safe diagnostic with stage, class, retryability, user
@@ -436,6 +438,9 @@ For older continuity before V12, read:
 
 ## Latest HEADs
 
+- `9fb8f31e` — docs(v3): define mandatory live-run diagnostics (2026-05-24)
+- `493d15f5` — docs(session): sync handoff after s2 closure (2026-05-24)
+- `afc31897` — docs(s2): close provider soak and screen next tranche (2026-05-24)
 - `5a920a4c` — feat(memory): close s1 and benchmark claim with s2 blocker (2026-05-24)
 - `4c7b7bb7` — docs(s1-s2-s3): dispatch R4-fix/S1/S2/S3 work orders and roadmap (2026-05-24)
 - `045c9308` — docs(r1): close durable memory resilience gap (2026-05-24)
