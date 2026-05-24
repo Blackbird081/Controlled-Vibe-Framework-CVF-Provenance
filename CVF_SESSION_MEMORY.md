@@ -73,7 +73,7 @@ current.
 
 ## Current Session Mode
 
-- Current mode: `post_aif_operationalization_closed_pass`
+- Current mode: `post_aif_claim_graduation_c1_closed_pass`
 - Previous mode: `post_aif_next_value_closed_pass`
 - Freeze posture: `governance_kernel_freeze_recommended`
 - Active handoff pointer: `AGENT_HANDOFF_V12_2026-05-23.md`
@@ -103,7 +103,7 @@ D9 Qwen3 thinking enable-true adapter returned blocked at `docs/reviews/CVF_D9_Q
 
 D10 Qwen3 R1-compatible hosted proof is closed pass at `docs/reviews/CVF_D10_QWEN3_R1_COMPATIBLE_HOSTED_PROOF_COMPLETION_2026-05-23.md`: active mode marker `d10_qwen3_r1_compatible_hosted_proof_closed_pass`; focused providers test PASS `42/42`, `cvf-web` check PASS, local router preflight for Alibaba `R1` returned `ALLOW`, and the single hosted call returned HTTP `200`, `success=true`, `decision=ALLOW`, `routingDecision=ALLOW`, `enforcementStatus=ALLOW`, `evidenceMode=live`, provider `alibaba`, model `qwen3-235b-a22b-thinking-2507`, receipt `rcpt-env-mpigxtmn-pml5ky`, trace `env-mpigxtmn-pml5ky`, output length `4057`, `rawSecretPrinted=false`. Public repo contains the adapter fix at commit `811e59f6`.
 
-Current mode marker: `post_aif_operationalization_closed_pass`.
+Current mode marker: `post_aif_claim_graduation_c1_closed_pass`.
 
 ## Legacy Spec Absorption Blindspot Audit — 2026-05-23
 
@@ -227,6 +227,42 @@ Boundary: O1 is local summary-only operational preview. It explicitly returns
 broad stability, public-sync, hosted readiness, production readiness, or freeze
 release is claimed.
 
+## Post-AIF Claim Graduation Roadmap — 2026-05-24 / C1 Closed
+
+Active claim-graduation roadmap:
+
+- `docs/roadmaps/CVF_POST_AIF_CLAIM_GRADUATION_ROADMAP_2026-05-24.md`
+
+Closed tranche:
+
+- C1 public runtime availability for the AIF operational context preview
+  harness: `CLOSED_PASS`.
+- GC-018:
+  `docs/baselines/CVF_GC018_C1_PUBLIC_AIF_PREVIEW_RUNTIME_AVAILABILITY_2026-05-24.md`
+- Work order:
+  `docs/work_orders/CVF_WO_C1_PUBLIC_AIF_PREVIEW_RUNTIME_AVAILABILITY_2026-05-24.md`
+- Completion review:
+  `docs/reviews/CVF_C1_PUBLIC_AIF_PREVIEW_RUNTIME_AVAILABILITY_COMPLETION_2026-05-24.md`
+- Public-sync commit:
+  `ea889a46 feat(lpf): publish aif context preview harness`
+
+C1 public-sync verification:
+
+- Targeted preview test PASS: 1 file / 4 tests.
+- LPF TypeScript check PASS.
+- Full public-sync LPF suite PASS: 48 files / 1516 tests.
+
+Allowed claim after C1: the summary-only AIF operational context preview
+harness is available in the public-sync code subset.
+
+Still not allowed without fresh GC-018/work order:
+
+- C2 live memory reinjection;
+- C3 graph approval authority;
+- C4 broad provider stability;
+- C5 hosted readiness or production readiness;
+- freeze release.
+
 ## Provider Proof Prerequisite References
 
 Before authoring any work order that targets Alibaba DashScope Qwen3 models
@@ -304,14 +340,17 @@ Before material governed work, an agent should be able to state:
 
 ## Next Allowed Move
 
-Post-AIF operationalization roadmap is `CLOSED_PASS` for O1/O2/O3/O4. Use
-`docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md` and
+Post-AIF claim graduation is active with C1 `CLOSED_PASS`. Use
+`docs/roadmaps/CVF_POST_AIF_CLAIM_GRADUATION_ROADMAP_2026-05-24.md`,
+`docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`, and
 `docs/reference/CVF_POST_AIF_OPERATIONAL_READINESS_MATRIX_2026-05-24.md`
-before scoping memory, graph, provider, public-sync, pain-point, or
-legacy-adjacent work. Future live memory reinjection, non-graph durable memory,
-graph scoring or authority, provider repeatability/stability claims,
-public-sync, public product claims, hosted readiness, production readiness, or
-freeze release require a fresh GC-018/work order.
+before scoping memory, graph, provider, public-sync, hosted, production,
+pain-point, or legacy-adjacent work. C1 allows only public-sync availability of
+the local summary-only AIF preview harness at public-sync commit `ea889a46`.
+Future live memory reinjection, non-graph durable memory, graph scoring or
+authority, provider repeatability/stability claims, public product claims,
+hosted readiness, production readiness, or freeze release require a fresh
+GC-018/work order.
 
 D10 Qwen3 R1-compatible hosted proof: CLOSED PASS at
 `docs/reviews/CVF_D10_QWEN3_R1_COMPATIBLE_HOSTED_PROOF_COMPLETION_2026-05-23.md`.

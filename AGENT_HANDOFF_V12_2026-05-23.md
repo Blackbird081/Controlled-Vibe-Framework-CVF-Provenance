@@ -301,18 +301,19 @@ production readiness, or freeze release is claimed.
 
 ## Next Allowed Move
 
-Post-AIF operationalization roadmap is closed pass for the bounded O1/O2/O3/O4
-scope. Future agents must use
-`docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md` and
+Post-AIF claim graduation is active with C1 closed pass. Future agents must use
+`docs/roadmaps/CVF_POST_AIF_CLAIM_GRADUATION_ROADMAP_2026-05-24.md`,
+`docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`, and
 `docs/reference/CVF_POST_AIF_OPERATIONAL_READINESS_MATRIX_2026-05-24.md`
-before scoping memory, graph, provider, public-sync, pain-point, or
-legacy-adjacent work.
+before scoping memory, graph, provider, public-sync, hosted, production,
+pain-point, or legacy-adjacent work.
 
 Do not widen into repeated hosted proof, public npm release, provider tuning,
 provider repeatability/stability claims, non-graph durable persistence/database,
-live memory reinjection, graph scoring/product claims, Maika proof, public-sync,
-hosted readiness, production readiness, or freeze release without fresh
-GC-018/work-order authorization.
+live memory reinjection, graph scoring/product claims, Maika proof, hosted
+readiness, production readiness, or freeze release without fresh GC-018/work
+order authorization. Public-sync availability is allowed only for the bounded
+C1 summary-only preview harness at public-sync commit `ea889a46`.
 
 Still forbidden:
 
@@ -348,6 +349,7 @@ For older continuity before V12, read:
 
 ## Latest HEADs
 
+- `d1fa805a` — feat(post-aif): close operationalization roadmap (2026-05-24)
 - `617660a1` — feat(post-aif): close next-value roadmap (2026-05-24)
 - `26174a60` — docs(n6+pbr04): authorize N6 graph_search + dispatch PBR-04 SQLite persist (2026-05-24)
 - `eb98d70a` — docs(post-aif): dispatch N4/N5/N6/N7 work orders and next-value roadmap (2026-05-24)
@@ -365,12 +367,49 @@ Post-AIF operationalization roadmap closed 2026-05-24:
 
 O1, O2, O3, and O4 are `CLOSED_PASS`.
 
+Public-sync claim-graduation C1 commit 2026-05-24:
+
+- `ea889a46` — feat(lpf): publish aif context preview harness
+
+## Post-AIF Claim Graduation - 2026-05-24
+
+Codex opened the claim-graduation roadmap and closed C1:
+
+`docs/roadmaps/CVF_POST_AIF_CLAIM_GRADUATION_ROADMAP_2026-05-24.md`
+
+C1 closed artifacts:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_C1_PUBLIC_AIF_PREVIEW_RUNTIME_AVAILABILITY_2026-05-24.md`
+- Work order:
+  `docs/work_orders/CVF_WO_C1_PUBLIC_AIF_PREVIEW_RUNTIME_AVAILABILITY_2026-05-24.md`
+- Completion review:
+  `docs/reviews/CVF_C1_PUBLIC_AIF_PREVIEW_RUNTIME_AVAILABILITY_COMPLETION_2026-05-24.md`
+
+Public-sync commit:
+
+- `ea889a46 feat(lpf): publish aif context preview harness`
+
+Verification:
+
+- Public-sync targeted preview test PASS: 1 file / 4 tests.
+- Public-sync LPF TypeScript check PASS.
+- Public-sync full LPF suite PASS: 48 files / 1516 tests.
+
+Claim now allowed: public-sync code availability for the local summary-only AIF
+operational context preview harness.
+
+C2 live memory reinjection, C3 graph authority, C4 broad provider stability,
+and C5 hosted/production readiness remain `NEXT_TRANCHE_REQUIRED` with fresh
+GC-018 and the pass conditions in the claim-graduation roadmap.
+
 ---
 
 ## Claim Boundary
 
-V12 now records the AIF, post-AIF next-value, and post-AIF operationalization
-closures. AIF A/B/C are all `CLOSED_PASS`; Post-AIF N4/N5/N6/PBR-04/N7 are all
-`CLOSED_PASS`; O1/O2/O3/O4 are all `CLOSED_PASS`. Legacy spec absorption blindspot
-is documented and corrective systemic actions are in place. All prior D10, P3,
-P2/HN1, G1/D2/E2/H2/F2/A2, and T1-T5 claim boundaries remain unchanged.
+V12 now records the AIF, post-AIF next-value, post-AIF operationalization, and
+claim-graduation C1 closures. AIF A/B/C are all `CLOSED_PASS`; Post-AIF
+N4/N5/N6/PBR-04/N7 are all `CLOSED_PASS`; O1/O2/O3/O4 are all `CLOSED_PASS`;
+C1 is `CLOSED_PASS`. Legacy spec absorption blindspot is documented and
+corrective systemic actions are in place. All prior D10, P3, P2/HN1,
+G1/D2/E2/H2/F2/A2, and T1-T5 claim boundaries remain unchanged.

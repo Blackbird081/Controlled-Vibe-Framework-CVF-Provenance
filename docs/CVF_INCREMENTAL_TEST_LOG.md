@@ -2137,3 +2137,36 @@ Utility and guard:
     signed service-token call only.
   - It does not release Alibaba for R2 routing, broad Qwen3 stability, hosted
     SaaS readiness, production readiness, or freeze release.
+
+---
+## [2026-05-24] Batch: Post-AIF Claim Graduation C1 Public Preview Availability
+
+- Change reference:
+  - C1 GC-018:
+    `docs/baselines/CVF_GC018_C1_PUBLIC_AIF_PREVIEW_RUNTIME_AVAILABILITY_2026-05-24.md`
+  - C1 work order:
+    `docs/work_orders/CVF_WO_C1_PUBLIC_AIF_PREVIEW_RUNTIME_AVAILABILITY_2026-05-24.md`
+  - C1 completion review:
+    `docs/reviews/CVF_C1_PUBLIC_AIF_PREVIEW_RUNTIME_AVAILABILITY_COMPLETION_2026-05-24.md`
+  - Claim-graduation roadmap:
+    `docs/roadmaps/CVF_POST_AIF_CLAIM_GRADUATION_ROADMAP_2026-05-24.md`
+- Public-sync:
+  - Verified public remote:
+    `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`.
+  - Public commit `ea889a46` created with the summary-only AIF operational
+    context preview harness, minimal memory/graph dependencies, tests, exports,
+    and public-safe catalog/evidence updates.
+- Tests executed in public-sync `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION`:
+  - `npm test -- --run tests/aif-operational-context-preview.test.ts` -> PASS,
+    1 file / 4 tests.
+  - `npm run check` -> PASS.
+  - `npm test` -> PASS, 48 files / 1516 tests.
+- Depth classification:
+  - T1 public-sync contract/test coverage for public code availability.
+  - No live route, provider dispatch, hosted, or production proof.
+- Notes/Risks:
+  - C1 allows only the claim that the local summary-only preview harness is
+    available in the public-sync code subset.
+  - Live memory reinjection, graph authority, broad provider stability, hosted
+    readiness, production readiness, and freeze release remain gated by fresh
+    GC-018/work orders.

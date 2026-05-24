@@ -37,10 +37,10 @@ production readiness, or freeze release.
 | Memory Gateway Phase 2a | Proven local in-memory policy surface | `docs/reviews/CVF_AIF_C_MEMORY_GATEWAY_PHASE2_COMPLETION_2026-05-24.md` | Live reinjection requires fresh GC-018/work order. |
 | `graph_search` retrieval | Proven local advisory retrieval | `docs/reviews/CVF_N6_AIF_GRAPH_SEARCH_ACTIVATION_COMPLETION_2026-05-24.md` | Graph scoring/authority requires fresh GC-018 and must not bypass governance. |
 | Graph SQLite symbol-index persistence | Proven optional graph index persistence | `docs/reviews/CVF_PBR04_GRAPH_SQLITE_PERSIST_COMPLETION_2026-05-24.md` | Non-graph durable memory remains gated. |
-| AIF operational context preview | Proven local summary-only harness | `docs/reviews/CVF_O1_AIF_OPERATIONAL_CONTEXT_PREVIEW_COMPLETION_2026-05-24.md` | Route integration/live reinjection requires fresh GC-018. |
+| AIF operational context preview | Proven local summary-only harness; public-sync code availability now proven by C1 | `docs/reviews/CVF_O1_AIF_OPERATIONAL_CONTEXT_PREVIEW_COMPLETION_2026-05-24.md`; `docs/reviews/CVF_C1_PUBLIC_AIF_PREVIEW_RUNTIME_AVAILABILITY_COMPLETION_2026-05-24.md`; public-sync commit `ea889a46` | Route integration/live reinjection requires fresh GC-018. |
 | OpenAI `gpt-4o` provider lane | One bounded governed live receipt | `docs/reviews/CVF_N7_THIRD_PROVIDER_EXPANSION_COMPLETION_2026-05-24.md` | Provider repeatability/stability requires fresh GC-018 and live evidence window. |
 | Alibaba / DeepSeek lanes | Prior bounded repeatability windows only | Active state registry provider-stability entries | Broad provider stability remains unclaimed. |
-| Public repository | Public-sync deferred for this tranche | AGENTS critical repo boundary | Any public update must happen from public-sync clone after `git remote -v`. |
+| Public repository | C1 public-sync preview harness availability proven | `docs/reviews/CVF_C1_PUBLIC_AIF_PREVIEW_RUNTIME_AVAILABILITY_COMPLETION_2026-05-24.md`; public-sync commit `ea889a46` | Further public product claims still require public-sync clone after `git remote -v`. |
 | Hosted/product readiness | Not proven by AIF/Post-AIF | Active state hosted proof boundaries | Hosted readiness requires dedicated roadmap and live hosted proof. |
 
 ## Risk / Corrective Action
@@ -54,8 +54,9 @@ claim.
 Disposition: ACTIVE_REFERENCE.
 
 Recommended next choices are demand-gated: live memory reinjection proof,
-bounded tri-provider repeatability window, public-sync bounded evidence update,
-or hosted readiness decision.
+bounded tri-provider repeatability window, graph-authority decision, or hosted
+readiness decision. Public-sync preview harness availability is already closed
+by C1.
 
 ## Claim Boundary
 
