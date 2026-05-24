@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-25
 
-Current mode marker: `es1_external_skill_intake_screening_packet_closed`
+Current mode marker: `c7b_candidate7_external_skill_source_screening_authorized`
 
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Previous handoff archive:
 
 ## Current State
 
-Current mode: `es1_external_skill_intake_screening_packet_closed`.
+Current mode: `c7b_candidate7_external_skill_source_screening_authorized`.
 
 C7A closed PASS bounded at:
 
@@ -178,6 +178,23 @@ requirement, value screen, duplicate/dilution screen against ten certified
 packs, risk screen, normalization minimum, owner-surface routing, dispatch
 dispositions, stop conditions, and required screening record. No external skill
 import or runtime/public claim was opened.
+
+## Active Authorized Tranche
+
+C7B Candidate 7 external skill source screening matrix is authorized:
+
+`docs/baselines/CVF_GC018_C7B_CANDIDATE7_EXTERNAL_SKILL_SOURCE_SCREENING_MATRIX_2026-05-25.md`
+
+Work order:
+
+`docs/work_orders/CVF_WO_C7B_CANDIDATE7_EXTERNAL_SKILL_SOURCE_SCREENING_MATRIX_2026-05-25.md`
+
+C7B is docs-only. It may audit local Candidate 7 source families and produce a
+source-family screening matrix. It may not import external skills, create or
+modify packs, execute tools/MCP/CLI/scripts/models/providers, fetch live
+external repositories, publish registries, make public-sync/marketplace claims,
+or touch `/api/execute`, receipt envelopes, auth/RBAC, hosted readiness,
+production readiness, or freeze release.
 
 ## Mandatory Standards
 
