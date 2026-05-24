@@ -10,6 +10,16 @@ Current HEAD before V13 structure sync commit: `50322987`.
 
 Current HEAD before C8 authorization commit: `9129fffe`.
 
+Current HEAD before C8 implementation closure commit: `e5886810`.
+
+Remote tracking branch:
+
+`origin/main`
+
+Exact remote SHA must be derived live from git when needed.
+
+External agent memory files: non-canonical convenience only.
+
 ## Purpose
 
 Provide a compact active handoff after V12 and the session-memory front door
@@ -51,7 +61,7 @@ Previous long session memory snapshot was archived at:
 
 ## Current Mode
 
-`c8_product_skill_pack_selection_readout_authorized`
+`c8_product_skill_pack_selection_readout_closed`
 
 Freeze posture remains:
 
@@ -82,6 +92,18 @@ Registry:
 Evidence: validator PASS for all ten certified packs; registry check
 `entries=10 unique=10 c7a=3`.
 
+C8 product skill pack selection/readout is closed PASS bounded:
+
+`docs/reviews/CVF_C8_PRODUCT_SKILL_PACK_SELECTION_READOUT_COMPLETION_2026-05-25.md`
+
+C8 delivered deterministic read-only `cvf skill select <request> [--json]`
+over the ten certified packs, completed runtime bindings for
+`competitor_review`, `data_analysis`, and `app_requirements_spec`, surfaced
+risk/human-review/no-match readout, and proved all-ten runtime plan resolution.
+
+Verification: Governance CLI focused `cvf skill` tests PASS 10/10; Governance
+CLI TypeScript check PASS.
+
 ## Candidate 7 Disposition
 
 Candidate 7 is partially harvested, not broadly open.
@@ -99,25 +121,13 @@ explicit action/tool/provider boundary.
 
 ## Recommended Next Move
 
-C8 product skill pack selection/readout quality is authorized:
+No next implementation tranche is active.
 
-`docs/baselines/CVF_GC018_C8_PRODUCT_SKILL_PACK_SELECTION_READOUT_2026-05-25.md`
+Next work requires operator selection and fresh GC-018.
 
-Work order:
-
-`docs/work_orders/CVF_WO_C8_PRODUCT_SKILL_PACK_SELECTION_READOUT_2026-05-25.md`
-
-Target: product skill pack selection/readout quality over the ten certified
-packs.
-
-Target should be deterministic selection/readout only: pick the best certified
-pack for a noncoder request, explain why, expose risk/review requirements, and
-say when no pack should be used.
-
-Do not add more packs by default. Do not add runtime execution, provider calls,
-receipt-envelope changes, memory, MCP/tool/database execution, public-sync,
-hosted readiness, production readiness, or freeze release without a fresh
-authorized tranche.
+Do not add more packs, runtime execution, provider calls, receipt-envelope
+changes, memory, MCP/tool/database execution, public-sync, hosted readiness,
+production readiness, or freeze release without a fresh authorized tranche.
 
 ## Mandatory Standards
 

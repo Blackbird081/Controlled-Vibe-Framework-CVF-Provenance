@@ -24,6 +24,8 @@ import {
   assertProductOutcomeRuntimePlanFiles,
   listProductOutcomeRuntimePlans,
   resolveProductOutcomeRuntimePlan,
+  selectProductSkillPackForRequest,
+  type ProductSkillPackSelectionReadout,
   type ProductOutcomeRuntimePlan,
 } from "./product-outcome.runtime";
 
@@ -154,7 +156,7 @@ export class CommandRegistry {
     this.register({
       name: "skill",
       description: "Read-only skill registry inspection",
-      usage: "cvf skill <list|show|plan> [id] [--input <skills-index.json>] [--registry <certified-registry.json>] [--certified] [--json]",
+      usage: "cvf skill <list|show|plan|select> [id|request] [--input <skills-index.json>] [--registry <certified-registry.json>] [--certified] [--json]",
       execute: (args) => this.skillCommand(args),
     });
 
@@ -351,6 +353,20 @@ export class CommandRegistry {
     const subCommand = args.positional[0] ?? "list";
     const registryPath = stringFlag(args, "registry") || CERTIFIED_SKILL_PACK_REGISTRY_PATH;
 
+    if (subCommand === "select") {
+      const request = args.positional.slice(1).join(" ").trim() || stringFlag(args, "request");
+      if (!request) return { success: false, message: "Missing required noncoder request.", exitCode: 1 };
+      const readout = selectProductSkillPackForRequest(request, registryPath);
+      return {
+        success: true,
+        message: args.flags.json === true
+          ? JSON.stringify(readout, null, 2)
+          : formatProductSkillPackSelectionReadout(readout),
+        data: readout,
+        exitCode: 0,
+      };
+    }
+
     if (subCommand === "plan") {
       const id = args.positional[1];
       if (!id) return { success: false, message: "Missing required skill pack id or outcome key.", exitCode: 1 };
@@ -368,6 +384,8 @@ export class CommandRegistry {
           : [
             `${plan.skillPackId} -> ${plan.templateId}`,
             `outcome=${plan.outcomeKey}`,
+            `riskLevel=${plan.riskLevel}`,
+            `humanReviewRequired=${plan.humanReviewRequired}`,
             `command=${plan.command}`,
             `receiptSchema=${plan.receiptSchemaPath}`,
             `failureRecovery=${plan.failureRecoveryPath}`,
@@ -418,7 +436,7 @@ export class CommandRegistry {
       };
     }
 
-    return { success: false, message: "Unknown skill sub-command. Usage: cvf skill <list|show|plan> [id]", exitCode: 1 };
+    return { success: false, message: "Unknown skill sub-command. Usage: cvf skill <list|show|plan|select> [id|request]", exitCode: 1 };
   }
 
   private runtimePlanExecuteFlags(
@@ -659,6 +677,31 @@ function recordContainsValue(value: unknown, target: string): boolean {
 
 function formatMetricRate(rate: number | null, fractionDigits: number): string {
   return rate === null ? "n/a" : rate.toFixed(fractionDigits);
+}
+
+function formatProductSkillPackSelectionReadout(readout: ProductSkillPackSelectionReadout): string {
+  if (readout.status === "no_certified_pack_match") {
+    return [
+      "status=no_certified_pack_match",
+      `reason=${readout.reason}`,
+      `userAction=${readout.userAction}`,
+      `boundaries=${readout.boundaries.join(",")}`,
+    ].join("\n");
+  }
+  const plan = readout.selectedPlan;
+  return [
+    `status=${readout.status}`,
+    `selected=${plan?.skillPackId}`,
+    `outcome=${plan?.outcomeKey}`,
+    `template=${plan?.templateId}`,
+    `confidence=${readout.confidence}`,
+    `score=${readout.score}`,
+    `matchedTerms=${readout.matchedTerms.join(",")}`,
+    `riskLevel=${readout.riskLevel}`,
+    `humanReviewRequired=${readout.humanReviewRequired}`,
+    `userAction=${readout.userAction}`,
+    `boundaries=${readout.boundaries.join(",")}`,
+  ].join("\n");
 }
 
 function stringFlag(args: CLIArgs, name: string): string | undefined {

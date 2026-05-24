@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-25
 
-Current mode marker: `c8_product_skill_pack_selection_readout_authorized`
+Current mode marker: `c8_product_skill_pack_selection_readout_closed`
 
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Previous handoff archive:
 
 ## Current State
 
-Current mode: `c8_product_skill_pack_selection_readout_authorized`.
+Current mode: `c8_product_skill_pack_selection_readout_closed`.
 
 C7A closed PASS bounded at:
 
@@ -88,38 +88,29 @@ What remains held:
 Candidate 7 may reopen only with fresh GC-018, the mandatory Knowledge
 Absorption Blind-Spot Control Block, and a concrete source/use-case binding.
 
-## Active Tranche
+## Latest Closed Tranche
 
-C8 product skill pack selection/readout is authorized:
+C8 product skill pack selection/readout is closed PASS bounded:
 
-`docs/baselines/CVF_GC018_C8_PRODUCT_SKILL_PACK_SELECTION_READOUT_2026-05-25.md`
+`docs/reviews/CVF_C8_PRODUCT_SKILL_PACK_SELECTION_READOUT_COMPLETION_2026-05-25.md`
 
-Work order:
+C8 delivered deterministic read-only `cvf skill select <request> [--json]`
+over the ten certified packs, completed runtime bindings for
+`competitor_review`, `data_analysis`, and `app_requirements_spec`, and surfaced
+risk/human-review/no-match readout. Verification: focused Governance CLI
+`cvf skill` tests PASS 10/10; Governance CLI TypeScript check PASS.
 
-`docs/work_orders/CVF_WO_C8_PRODUCT_SKILL_PACK_SELECTION_READOUT_2026-05-25.md`
+## Recommended Next Move
 
-Bounded target: deterministic read-only Governance CLI selection/readout over
-the ten certified packs. No runtime/provider/receipt/memory/MCP/tool/database
-execution, public-sync, hosted readiness, production readiness, or freeze
-release.
+No next implementation tranche is active.
 
-## Recommended Next Tranche
+Next work requires operator selection and fresh GC-018. Candidate 7 external
+skill/model ingestion remains held until there is a concrete source/use-case
+binding.
 
-Recommended next value tranche: product skill pack selection/readout quality.
-
-Rationale: after C7A, CVF has enough pack inventory to choose from. The higher
-value move is now helping LLM/agents select the right certified pack, explain
-why, report risk/review requirements, and say when no pack should be used.
-
-Bounded target for that future tranche:
-
-- deterministic pack selection/readout helper over the ten certified packs;
-- no new packs by default;
-- no runtime execution;
-- no provider calls;
-- no receipt-envelope change;
-- no memory, MCP, database, tool, public-sync, hosted readiness, production
-  readiness, or freeze-release change.
+Do not add packs, runtime execution, provider behavior, receipt envelopes,
+memory, MCP/tool/database execution, public-sync, hosted readiness, production
+readiness, or freeze release without a new authorized tranche.
 
 Required before implementation: fresh GC-018 and work order.
 

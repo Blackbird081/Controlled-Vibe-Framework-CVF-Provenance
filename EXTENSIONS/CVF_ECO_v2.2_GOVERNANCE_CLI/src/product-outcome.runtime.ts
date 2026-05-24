@@ -27,6 +27,7 @@ export interface ProductOutcomeRuntimePlan {
   name: string;
   domain: string;
   riskLevel: string;
+  humanReviewRequired: boolean;
   status: string;
   templateId: string;
   routeOwner: "cvf-web /api/execute";
@@ -39,6 +40,33 @@ export interface ProductOutcomeRuntimePlan {
   authorityScopePath: string;
   workflowSpecPath: string;
   policyRefs: string[];
+}
+
+export type ProductSkillPackSelectionStatus = "selected" | "no_certified_pack_match";
+export type ProductSkillPackSelectionConfidence = "exact" | "high" | "medium" | "none";
+
+export interface ProductSkillPackSelectionAlternative {
+  skillPackId: string;
+  outcomeKey: string;
+  name: string;
+  score: number;
+  matchedTerms: string[];
+}
+
+export interface ProductSkillPackSelectionReadout {
+  readoutVersion: "cvf.productSkillPackSelectionReadout.v1";
+  request: string;
+  status: ProductSkillPackSelectionStatus;
+  selectedPlan?: ProductOutcomeRuntimePlan;
+  confidence: ProductSkillPackSelectionConfidence;
+  score: number;
+  reason: string;
+  matchedTerms: string[];
+  alternatives: ProductSkillPackSelectionAlternative[];
+  riskLevel?: string;
+  humanReviewRequired?: boolean;
+  userAction: string;
+  boundaries: string[];
 }
 
 interface RuntimeBinding {
@@ -83,7 +111,73 @@ const RUNTIME_BINDINGS: Record<string, RuntimeBinding> = {
     inputContract: "offer, audience, proof_points, constraints",
     outputContract: "Landing page copy and build handoff",
   },
+  competitor_review: {
+    templateId: "competitor_review",
+    inputContract: "market, competitors, offering, audience, decision_goal",
+    outputContract: "Competitor review with positioning risks and next moves",
+  },
+  data_analysis: {
+    templateId: "data_analysis",
+    inputContract: "dataset_summary, question, metrics, timeframe, constraints",
+    outputContract: "Data analysis readout with findings, caveats, and actions",
+  },
+  app_requirements_spec: {
+    templateId: "app_requirements_spec",
+    inputContract: "app_goal, users, core_workflows, constraints, success_criteria",
+    outputContract: "App requirements specification with user workflows and acceptance criteria",
+  },
 };
+
+const SELECTION_TERMS: Record<string, string[]> = {
+  strategy_analysis: [
+    "strategy", "strategic", "business strategy", "options", "decision", "tradeoff", "recommendation",
+    "market entry", "go to market", "positioning", "prioritize",
+  ],
+  product_brief: [
+    "product brief", "product requirements", "prd", "product idea", "feature brief", "problem statement",
+    "target user", "mvp", "scope product",
+  ],
+  sop_generator: [
+    "sop", "standard operating procedure", "procedure", "process", "operations", "checklist",
+    "workflow steps", "runbook", "control",
+  ],
+  proposal_writer: [
+    "proposal", "sales proposal", "client proposal", "scope of work", "customer need", "offer",
+    "commercial", "pitch", "timeline",
+  ],
+  meeting_summarizer: [
+    "meeting", "meeting notes", "summarize meeting", "minutes", "decisions", "action items",
+    "participants", "follow up",
+  ],
+  contract_review: [
+    "contract", "agreement", "terms", "legal", "clause", "liability", "jurisdiction", "risk review",
+    "tos", "service terms",
+  ],
+  landing_page_builder: [
+    "landing page", "web page", "homepage", "campaign page", "copy", "headline", "hero",
+    "conversion", "cta",
+  ],
+  competitor_review: [
+    "competitor", "competitors", "competitive", "competition", "market landscape", "positioning",
+    "benchmark rivals", "compare alternatives", "pricing comparison",
+  ],
+  data_analysis: [
+    "data", "dataset", "analysis", "analyze", "analytics", "metrics", "kpi", "cohort", "trend",
+    "anomaly", "dashboard", "csv", "spreadsheet", "financial data", "q2",
+  ],
+  app_requirements_spec: [
+    "app", "application", "software requirements", "requirements spec", "user stories",
+    "acceptance criteria", "screens", "workflows", "backend", "frontend", "build an app",
+  ],
+};
+
+const SELECTION_BOUNDARIES = [
+  "read_only_cli_selection",
+  "no_runtime_execution",
+  "no_provider_api_call",
+  "no_receipt_envelope_change",
+  "no_memory_mcp_tool_or_database_execution",
+];
 
 export function loadCertifiedSkillPackRegistry(
   path = CERTIFIED_SKILL_PACK_REGISTRY_PATH,
@@ -115,11 +209,63 @@ export function resolveProductOutcomeRuntimePlan(
   });
 }
 
+export function selectProductSkillPackForRequest(
+  request: string,
+  registryPath = CERTIFIED_SKILL_PACK_REGISTRY_PATH,
+): ProductSkillPackSelectionReadout {
+  const normalizedRequest = normalizeForSelection(request);
+  const plans = listProductOutcomeRuntimePlans(registryPath);
+  const scored = plans.map((plan) => scoreProductSkillPackPlan(plan, normalizedRequest, request));
+  scored.sort((a, b) => b.score - a.score || a.plan.skillPackId.localeCompare(b.plan.skillPackId));
+
+  const best = scored[0];
+  if (!normalizedRequest || !best || best.score < 2) {
+    return {
+      readoutVersion: "cvf.productSkillPackSelectionReadout.v1",
+      request,
+      status: "no_certified_pack_match",
+      confidence: "none",
+      score: 0,
+      reason: "no_certified_pack_match",
+      matchedTerms: [],
+      alternatives: scored
+        .filter((candidate) => candidate.score > 0)
+        .slice(0, 3)
+        .map(toSelectionAlternative),
+      userAction: "Clarify the desired outcome or open a fresh intake before using a certified product skill pack.",
+      boundaries: SELECTION_BOUNDARIES,
+    };
+  }
+
+  const confidence = best.exact ? "exact" : best.score >= 4 ? "high" : "medium";
+  return {
+    readoutVersion: "cvf.productSkillPackSelectionReadout.v1",
+    request,
+    status: "selected",
+    selectedPlan: best.plan,
+    confidence,
+    score: best.score,
+    reason: best.exact ? "exact_certified_pack_match" : "keyword_certified_pack_match",
+    matchedTerms: best.matchedTerms,
+    alternatives: scored
+      .filter((candidate) => candidate.plan.skillPackId !== best.plan.skillPackId && candidate.score > 0)
+      .slice(0, 3)
+      .map(toSelectionAlternative),
+    riskLevel: best.plan.riskLevel,
+    humanReviewRequired: best.plan.humanReviewRequired,
+    userAction: best.plan.humanReviewRequired
+      ? "Use the selected certified pack only with human review before operational, financial, legal, or customer-facing reliance."
+      : "Use the selected certified pack as the bounded starting workflow; keep execution inside existing CVF runtime boundaries.",
+    boundaries: SELECTION_BOUNDARIES,
+  };
+}
+
 export function buildProductOutcomeRuntimePlan(entry: CertifiedSkillPackEntry): ProductOutcomeRuntimePlan {
   const binding = RUNTIME_BINDINGS[entry.id] ?? RUNTIME_BINDINGS[entry.outcomeKey];
   if (!binding) {
     throw new Error(`No product outcome runtime binding for certified pack: ${entry.id}`);
   }
+  const riskProfile = loadSkillPackRiskProfile(entry.path);
 
   return {
     planVersion: "cvf.productOutcomeRuntime.v1",
@@ -128,6 +274,7 @@ export function buildProductOutcomeRuntimePlan(entry: CertifiedSkillPackEntry): 
     name: entry.name,
     domain: entry.domain,
     riskLevel: entry.riskLevel,
+    humanReviewRequired: riskProfile?.humanReviewRequired ?? entry.riskLevel === "R2",
     status: entry.status,
     templateId: binding.templateId,
     routeOwner: "cvf-web /api/execute",
@@ -162,4 +309,85 @@ function resolveWorkspacePath(path: string): string | undefined {
   const fromPackage = join(process.cwd(), "..", "..", path);
   if (existsSync(fromPackage)) return fromPackage;
   return undefined;
+}
+
+interface SkillPackRiskProfile {
+  humanReviewRequired?: boolean;
+}
+
+interface ScoredProductSkillPackPlan {
+  plan: ProductOutcomeRuntimePlan;
+  score: number;
+  exact: boolean;
+  matchedTerms: string[];
+}
+
+function loadSkillPackRiskProfile(packPath: string): SkillPackRiskProfile | undefined {
+  const resolvedPath = resolveWorkspacePath(`${packPath}/risk.profile.json`);
+  if (!resolvedPath) return undefined;
+  try {
+    const payload = JSON.parse(readFileSync(resolvedPath, "utf8")) as SkillPackRiskProfile;
+    return payload && typeof payload === "object" ? payload : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+function scoreProductSkillPackPlan(
+  plan: ProductOutcomeRuntimePlan,
+  normalizedRequest: string,
+  rawRequest: string,
+): ScoredProductSkillPackPlan {
+  const identityTerms = [
+    plan.skillPackId,
+    plan.outcomeKey,
+    plan.name,
+  ].map(normalizeForSelection);
+  const exact = identityTerms.some((term) => term && term === normalizedRequest)
+    || [plan.skillPackId, plan.outcomeKey].includes(rawRequest.trim());
+  if (exact) {
+    return {
+      plan,
+      score: 100,
+      exact: true,
+      matchedTerms: [plan.skillPackId],
+    };
+  }
+
+  const candidateTerms = uniqueStrings([
+    ...identityTerms,
+    normalizeForSelection(plan.domain),
+    normalizeForSelection(plan.templateId),
+    ...plan.inputContract.split(",").map(normalizeForSelection),
+    ...plan.outputContract.split(/\s+/).map(normalizeForSelection),
+    ...(SELECTION_TERMS[plan.skillPackId] ?? []).map(normalizeForSelection),
+  ]).filter((term) => term.length > 2);
+
+  const matchedTerms = candidateTerms.filter((term) => normalizedRequest.includes(term));
+  const phraseBonus = matchedTerms.some((term) => term.includes(" ")) ? 1 : 0;
+  const identityBonus = identityTerms.some((term) => term && normalizedRequest.includes(term)) ? 2 : 0;
+  return {
+    plan,
+    score: matchedTerms.length + phraseBonus + identityBonus,
+    exact: false,
+    matchedTerms,
+  };
+}
+
+function toSelectionAlternative(candidate: ScoredProductSkillPackPlan): ProductSkillPackSelectionAlternative {
+  return {
+    skillPackId: candidate.plan.skillPackId,
+    outcomeKey: candidate.plan.outcomeKey,
+    name: candidate.plan.name,
+    score: candidate.score,
+    matchedTerms: candidate.matchedTerms,
+  };
+}
+
+function normalizeForSelection(value: string): string {
+  return value.toLowerCase().replace(/[_-]+/g, " ").replace(/[^a-z0-9 ]+/g, " ").replace(/\s+/g, " ").trim();
+}
+
+function uniqueStrings(values: string[]): string[] {
+  return [...new Set(values)];
 }
