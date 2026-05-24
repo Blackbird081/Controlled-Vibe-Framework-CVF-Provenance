@@ -6,6 +6,12 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-24
 
+Current mode marker: `r1_durable_memory_resilience_closed_r2_p2_gated`
+
+R1 durable-memory store resilience is closed at commit `032a16da`. R2
+`/api/execute` durable-memory wiring and P2 non-coder Step 0 API-key setup
+remain demand-gated pending fresh authority/proof.
+
 ## Purpose
 
 This file is the single session-memory entry point for new agents, resumed

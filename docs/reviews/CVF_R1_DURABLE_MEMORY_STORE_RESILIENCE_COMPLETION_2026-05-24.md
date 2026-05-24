@@ -73,6 +73,10 @@ R2 remains gated because route-level `/api/execute` behavior was not changed
 in R1. P2 remains gated because public onboarding/Step 0 documentation was not
 changed in R1.
 
+Public catalog update: N/A. R1 is an internal resilience correction for an
+already documented M1 durable-memory store and does not add a new public
+capability claim.
+
 ---
 
 ## Evidence

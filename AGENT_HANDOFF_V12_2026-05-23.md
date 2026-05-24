@@ -383,6 +383,9 @@ For older continuity before V12, read:
 
 ## Latest HEADs
 
+- `032a16da` — fix(memory): harden durable store resilience (2026-05-24)
+- `e8560519` — feat(memory): close m1 m2 p1 roadmap (2026-05-24)
+- `0d2b44d6` — docs(m1-m2-p1): dispatch M2/M1/P1 work orders and roadmap (2026-05-24)
 - `d1fa805a` — feat(post-aif): close operationalization roadmap (2026-05-24)
 - `617660a1` — feat(post-aif): close next-value roadmap (2026-05-24)
 - `26174a60` — docs(n6+pbr04): authorize N6 graph_search + dispatch PBR-04 SQLite persist (2026-05-24)
@@ -495,3 +498,33 @@ Boundary:
   injection, graph approval authority, universal provider stability,
   enterprise SaaS/GA readiness, Maika proof, or broad production readiness is
   claimed.
+
+## R1/R2/P2 Post-M1 Gap Closure - 2026-05-24
+
+R1 durable-memory store resilience is `CLOSED_PASS`:
+
+- Roadmap:
+  `docs/roadmaps/CVF_R1_R2_P2_POST_M1_GAP_CLOSURE_ROADMAP_2026-05-24.md`
+- Work order:
+  `docs/work_orders/CVF_WO_R1_DURABLE_MEMORY_STORE_RESILIENCE_2026-05-24.md`
+- Completion review:
+  `docs/reviews/CVF_R1_DURABLE_MEMORY_STORE_RESILIENCE_COMPLETION_2026-05-24.md`
+- Commit: `032a16da`.
+
+R1 changed only LPF durable-memory store resilience:
+
+- file-backed `list()` now degrades safely on corrupt or invalid JSON;
+- malformed durable records are filtered before return;
+- durable-memory receipt ids are UUID-based per operation;
+- targeted LPF durable-memory tests PASS `8/8`;
+- LPF TypeScript check PASS.
+
+R2 remains `DEMAND_GATED`: `/api/execute` durable-memory wiring requires a
+fresh GC-018 and live governance proof before implementation.
+
+P2 remains `DEMAND_GATED`: non-coder Step 0 API-key setup requires a
+public/onboarding gate and secret-hygiene/public-sync verification before
+claim closure.
+
+Do not claim live web UI cross-session memory benefit or public operator
+self-onboarding until R2/P2 are closed with required evidence.
