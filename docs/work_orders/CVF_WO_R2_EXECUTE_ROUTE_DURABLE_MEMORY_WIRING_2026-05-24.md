@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DEMAND_GATED
+Status: CLOSED_PASS
 
 docType: work_order
 
@@ -35,7 +35,7 @@ cross-session memory only through explicit policy gates and receipt evidence.
 
 ## Authority Chain
 
-- Required future GC-018 baseline: not yet issued.
+- GC-018: `docs/baselines/CVF_GC018_R2_EXECUTE_ROUTE_DURABLE_MEMORY_WIRING_2026-05-24.md`
 - Roadmap: `docs/roadmaps/CVF_R1_R2_P2_POST_M1_GAP_CLOSURE_ROADMAP_2026-05-24.md`
 - M1 completion review:
   `docs/reviews/CVF_M1_DURABLE_CROSS_SESSION_MEMORY_COMPLETION_2026-05-24.md`
@@ -145,13 +145,13 @@ Allowed after GC-018 only:
 
 ## Acceptance Criteria
 
-- [ ] Fresh GC-018 baseline exists and authorizes R2.
-- [ ] Route reads durable memory only when policy allows it.
-- [ ] Receipt evidence includes durable-memory read decision and memory ids.
-- [ ] Provider prompt contains only authorized summary context.
-- [ ] `canReinject=false` remains binding.
-- [ ] Live proof PASS with approved provider key and no raw secret printed.
-- [ ] Completion review filed and roadmap updated.
+- [x] Fresh GC-018 baseline exists and authorizes R2.
+- [x] Route reads durable memory only when policy allows it.
+- [x] Receipt evidence includes durable-memory read decision and memory ids.
+- [x] Provider prompt contains only authorized summary context.
+- [x] `canReinject=false` remains binding.
+- [x] Live proof PASS with approved provider key and no raw secret printed.
+- [x] Completion review filed and roadmap updated.
 
 ---
 
@@ -165,19 +165,19 @@ raw secret or raw memory release.
 
 ## Operator Checkpoint
 
-R2 is registered from the Claude audit but not authorized for implementation
-in this fast-lane R1 commit.
+Operator authorized R2 on 2026-05-24 by asking Codex to handle R2 and R3 under
+the prior workflow rules.
 
 ---
 
 ## Closure Checklist
 
-- [ ] GC-018 filed.
-- [ ] Route durable-memory policy implemented.
-- [ ] Route tests PASS.
-- [ ] Live proof PASS.
-- [ ] Release gate PASS.
-- [ ] Completion review filed.
+- [x] GC-018 filed.
+- [x] Route durable-memory policy implemented.
+- [x] Route tests PASS.
+- [x] Live proof PASS.
+- [x] Release gate PASS.
+- [x] Completion review filed.
 
 ---
 
@@ -191,7 +191,7 @@ release.
 
 ## Claim Boundary
 
-R2, once complete, may support a bounded claim that the governed web execution
-route can use durable skill/long-term memory under policy gate and receipt
-evidence. It must not claim broad memory authority, autonomous reinjection, or
-production-grade hosted durable memory.
+R2 supports a bounded claim that the governed web execution route can use
+durable skill/long-term memory under explicit policy gate and receipt evidence.
+It does not claim broad memory authority, autonomous reinjection, raw-memory
+prompt release, or production-grade hosted durable memory.

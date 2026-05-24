@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: PARTIAL_PASS_R2_P2_GATED
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -24,10 +24,10 @@ Decision: R1 is authorized as a fast-lane corrective bugfix because it is
 localized to the M1 durable store and does not change route behavior or public
 claims.
 
-Decision: R2 and P2 are registered as next work orders but remain
-`DEMAND_GATED`. R2 needs a fresh GC-018 before `/api/execute` behavior changes.
-P2 needs a public/onboarding gate before any public self-onboarding claim is
-updated.
+Decision: R2 and R3 are closed after fresh authority, implementation, live
+proof, and public-safe onboarding verification. R3 supersedes the original P2
+label to avoid mixing the gated roadmap row with the operator-authorized
+execution tranche.
 
 ---
 
@@ -65,8 +65,9 @@ Claude audit input, 2026-05-24:
 | Tranche | Title | Depends On | Status | Work Order |
 | --- | --- | --- | --- | --- |
 | R1 | Durable memory store resilience | M1 CLOSED_PASS | CLOSED_PASS | `docs/work_orders/CVF_WO_R1_DURABLE_MEMORY_STORE_RESILIENCE_2026-05-24.md` |
-| R2 | `/api/execute` durable memory route wiring | Fresh GC-018 | DEMAND_GATED | `docs/work_orders/CVF_WO_R2_EXECUTE_ROUTE_DURABLE_MEMORY_WIRING_2026-05-24.md` |
-| P2 | Non-coder Step 0 API-key setup | Public/onboarding claim gate | DEMAND_GATED | `docs/work_orders/CVF_WO_P2_NONCODER_STEP0_API_KEY_SETUP_2026-05-24.md` |
+| R2 | `/api/execute` durable memory route wiring | Fresh GC-018 | CLOSED_PASS | `docs/work_orders/CVF_WO_R2_EXECUTE_ROUTE_DURABLE_MEMORY_WIRING_2026-05-24.md` |
+| P2 | Non-coder Step 0 API-key setup | Public/onboarding claim gate | SUPERSEDED_BY_R3 | `docs/work_orders/CVF_WO_P2_NONCODER_STEP0_API_KEY_SETUP_2026-05-24.md` |
+| R3 | Non-coder Step 0 API-key setup | Fresh GC-018 and public-sync verification | CLOSED_PASS | `docs/work_orders/CVF_WO_R3_NONCODER_STEP0_API_KEY_SETUP_2026-05-24.md` |
 
 ---
 
@@ -74,12 +75,11 @@ Claude audit input, 2026-05-24:
 
 Execution order:
 
-1. R1 is fast-lane because it is a localized resilience bug in the store
-   delivered by M1.
-2. R2 must not begin until a fresh GC-018 authorizes route-level behavior
-   change to `/api/execute`.
-3. P2 must not be claimed closed until a public-safe setup guide and any
-   public-sync update are complete and verified for secret hygiene.
+1. R1 closed first as a localized resilience bug in the store delivered by M1.
+2. R2 closed after fresh GC-018 authorized route-level behavior change to
+   `/api/execute`, with unit and live-provider proof.
+3. R3 closed after fresh GC-018 authorized public-safe Step 0 setup docs,
+   public-sync update, and secret-hygiene verification.
 
 ---
 
@@ -99,13 +99,13 @@ Execution order:
 
 - [x] R1: corrupt file-backed durable memory JSON does not throw.
 - [x] R1: repeated durable-memory operations produce unique receipt ids.
-- [ ] R2: `/api/execute` reads bounded durable memories through the existing
+- [x] R2: `/api/execute` reads bounded durable memories through the existing
       policy gate, emits durable-memory receipt evidence, and never releases
       raw memory into provider prompts.
-- [ ] R2: live governance proof proves one web-route cross-session memory
+- [x] R2: live governance proof proves one web-route cross-session memory
       benefit with `canReinject=false` preserved.
-- [ ] P2: Step 0 provider-key setup guide exists in non-coder language.
-- [ ] P2: public-safe guide/catalog paths are updated from public-sync if a
+- [x] R3: Step 0 provider-key setup guide exists in non-coder language.
+- [x] R3: public-safe guide/catalog paths are updated from public-sync if a
       public claim is changed.
 
 ---
@@ -117,24 +117,47 @@ R1 evidence:
 - `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/durable-memory-store.test.ts`
 - `docs/reviews/CVF_R1_DURABLE_MEMORY_STORE_RESILIENCE_COMPLETION_2026-05-24.md`
 
-R2 required future evidence:
+R2 evidence:
 
-- GC-018 baseline.
-- Route unit tests for durable-memory read/receipt.
-- Targeted `/api/execute` live proof using an approved provider key.
-- Release gate if governance behavior is claimed.
+- GC-018 baseline:
+  `docs/baselines/CVF_GC018_R2_EXECUTE_ROUTE_DURABLE_MEMORY_WIRING_2026-05-24.md`
+- Route unit tests:
+  `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.durable-memory.test.ts`
+- Targeted live route proof:
+  `node scripts/run_cvf_r2_durable_memory_route_live_probe.mjs` -> PASS,
+  receipt `rcpt-env-mpjdj5rc-p1g9go`, trace `env-mpjdj5rc-p1g9go`,
+  provider `alibaba`, model `qwen-turbo`, memory id `r2-skill-safe`,
+  `rawMemoryReleased=false`, `canReinject=false`.
+- Mandatory release gate:
+  `python scripts/run_cvf_release_gate_bundle.py --json` -> PASS, 7/7.
+- Completion review:
+  `docs/reviews/CVF_R2_EXECUTE_ROUTE_DURABLE_MEMORY_WIRING_COMPLETION_2026-05-24.md`
 
-P2 required future evidence:
+R3 evidence:
 
-- Step 0 setup guide.
-- Secret hygiene scan.
-- Public-sync Test-Path verification if public catalog/guide is updated.
+- GC-018 baseline:
+  `docs/baselines/CVF_GC018_R3_NONCODER_STEP0_API_KEY_SETUP_2026-05-24.md`
+- Private Step 0 guide:
+  `docs/guides/CVF_NON_CODER_STEP0_API_KEY_SETUP_2026-05-24.md`
+- Public-sync Step 0 guide and catalog update committed at public-sync commit
+  `1160f1b9`.
+- Public-sync remote verified as
+  `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`.
+- Secret-hygiene scan PASS for the updated public-safe docs.
+- Completion review:
+  `docs/reviews/CVF_R3_NONCODER_STEP0_API_KEY_SETUP_COMPLETION_2026-05-24.md`
 
 ---
 
 ## Claim Boundary
 
-After R1 only, CVF may claim improved resilience of the M1 file-backed durable
-store. It may not claim live web UI cross-session memory benefit, public
-operator self-onboarding, or hosted production readiness until R2/P2 are closed
-with their required evidence.
+After R1/R2/R3, CVF may claim: the M1 file-backed durable store is resilient to
+corrupt JSON; `/api/execute` can perform an explicit, policy-gated,
+summary-only durable skill/long-term memory read with receipt evidence; and a
+public-safe Step 0 provider-key setup guide exists for small-team/non-coder
+operators.
+
+Still not claimed: autonomous memory reinjection, `canReinject=true`, graph
+approval authority, universal provider stability, automated provider account
+procurement, hosted secret-vault operations, enterprise SaaS/GA readiness, or
+broad production availability.

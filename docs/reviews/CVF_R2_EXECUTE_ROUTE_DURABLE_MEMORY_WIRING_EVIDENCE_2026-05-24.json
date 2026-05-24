@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "cvf-r2-durable-memory-route-evidence-1",
+  "date": "2026-05-24",
+  "roadmap": "docs/roadmaps/CVF_R1_R2_P2_POST_M1_GAP_CLOSURE_ROADMAP_2026-05-24.md",
+  "workOrder": "docs/work_orders/CVF_WO_R2_EXECUTE_ROUTE_DURABLE_MEMORY_WIRING_2026-05-24.md",
+  "gc018": "docs/baselines/CVF_GC018_R2_EXECUTE_ROUTE_DURABLE_MEMORY_WIRING_2026-05-24.md",
+  "liveProof": {
+    "command": "node scripts/run_cvf_r2_durable_memory_route_live_probe.mjs",
+    "status": "PASS",
+    "claimClass": "bounded_execute_route_durable_memory_read",
+    "httpStatus": 200,
+    "provider": "alibaba",
+    "model": "qwen-turbo",
+    "receiptId": "rcpt-env-mpjdj5rc-p1g9go",
+    "traceId": "env-mpjdj5rc-p1g9go",
+    "evidenceMode": "live",
+    "durableMemoryIds": [
+      "r2-skill-safe"
+    ],
+    "durableReason": "durable_memory_read_authorized",
+    "security": {
+      "rawSecretPrinted": false,
+      "rawMemoryReleased": false,
+      "requestHeadersPrinted": false
+    },
+    "assertions": {
+      "httpStatus200": true,
+      "successTrue": true,
+      "receiptPresent": true,
+      "evidenceModeLive": true,
+      "providerMatched": true,
+      "durableReadAllowed": true,
+      "durableMemoryIdProven": true,
+      "durableSummaryOnly": true,
+      "durableCanReinjectFalse": true,
+      "rawMemoryReleasedFalse": true
+    }
+  },
+  "releaseGate": {
+    "command": "python scripts/run_cvf_release_gate_bundle.py --json",
+    "status": "PASS",
+    "checks": 7
+  },
+  "boundary": {
+    "allowed": "Explicit policy-gated /api/execute durable skill/long-term memory read with summary-only receipt evidence.",
+    "notClaimed": [
+      "autonomous memory reinjection",
+      "canReinject=true",
+      "raw-memory prompt release",
+      "hosted/cloud durable persistence",
+      "broad production readiness"
+    ]
+  }
+}

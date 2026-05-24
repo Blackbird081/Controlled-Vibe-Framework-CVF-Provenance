@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: DEMAND_GATED
+Status: SUPERSEDED_BY_R3
 
 docType: work_order
 
@@ -18,6 +18,14 @@ Roadmap: `docs/roadmaps/CVF_R1_R2_P2_POST_M1_GAP_CLOSURE_ROADMAP_2026-05-24.md`
 
 Do not claim P2 closed until the setup guide is public-safe, secret-free, and
 verified from the public-sync clone if it changes public onboarding claims.
+
+R3 supersedes this P2 label on 2026-05-24:
+
+`docs/baselines/CVF_GC018_R3_NONCODER_STEP0_API_KEY_SETUP_2026-05-24.md`
+
+R3 closed pass on 2026-05-24:
+
+`docs/reviews/CVF_R3_NONCODER_STEP0_API_KEY_SETUP_COMPLETION_2026-05-24.md`
 
 ---
 
@@ -128,11 +136,11 @@ The guide must tell a non-coder/small-team operator:
 
 ## Acceptance Criteria
 
-- [ ] Step 0 setup guide filed.
-- [ ] Existing first-receipt guide links to Step 0.
-- [ ] Secret hygiene check PASS.
-- [ ] Public-sync guide/catalog update complete if public claim changes.
-- [ ] Completion review filed.
+- [x] Step 0 setup guide filed by R3.
+- [x] Existing first-receipt guide links to Step 0 by R3.
+- [x] Secret hygiene check PASS by R3.
+- [x] Public-sync guide/catalog update complete by R3.
+- [x] Completion review filed by R3.
 
 ---
 
@@ -152,11 +160,11 @@ confirms the public/onboarding claim update should be executed.
 
 ## Closure Checklist
 
-- [ ] Step 0 guide filed.
-- [ ] First-receipt guide linked.
-- [ ] Secret hygiene PASS.
-- [ ] Public-sync update complete if needed.
-- [ ] Completion review filed.
+- [x] Step 0 guide filed by R3.
+- [x] First-receipt guide linked by R3.
+- [x] Secret hygiene PASS by R3.
+- [x] Public-sync update complete by R3.
+- [x] Completion review filed by R3.
 
 ---
 

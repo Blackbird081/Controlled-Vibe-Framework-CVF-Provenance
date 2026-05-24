@@ -1,0 +1,148 @@
+import {
+    createFileBackedDurableMemoryStore,
+    DURABLE_MEMORY_STORE_VERSION,
+    type DurableMemoryReceipt,
+    type DurableMemoryRecord,
+    type RuntimeMemoryActorRole,
+} from 'cvf-learning-plane-foundation';
+
+import type { ExecutionRequest } from '@/lib/ai';
+
+export interface DurableMemoryRouteResult {
+    requested: boolean;
+    injected: boolean;
+    receipt?: DurableMemoryReceipt;
+    records: readonly DurableMemoryRecord[];
+    promptBlock?: string;
+}
+
+const ROUTE_DURABLE_MEMORY_STORE_ENV = 'CVF_DURABLE_MEMORY_STORE_PATH';
+
+function emptyReceipt(input: {
+    reason: string;
+    scope: string;
+    tier?: 'skill' | 'long-term';
+    decision?: 'allowed' | 'denied';
+}): DurableMemoryReceipt {
+    return {
+        contractVersion: DURABLE_MEMORY_STORE_VERSION,
+        operation: 'read',
+        decision: input.decision ?? 'denied',
+        reason: input.reason,
+        tier: input.tier,
+        scope: input.scope,
+        memoryIds: [],
+        excluded: [],
+        durablePersistence: false,
+        crossSession: false,
+        summaryOnly: true,
+        canReinject: false,
+        rawMemoryReleased: false,
+        receiptId: `r2-read-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`,
+    };
+}
+
+export function resolveDurableMemoryActorRole(role: string | null | undefined): RuntimeMemoryActorRole {
+    const normalized = role?.trim().toUpperCase();
+    if (
+        normalized === 'OPERATOR' ||
+        normalized === 'GOVERNOR' ||
+        normalized === 'HUMAN' ||
+        normalized === 'BUILDER' ||
+        normalized === 'AI_AGENT' ||
+        normalized === 'REVIEWER' ||
+        normalized === 'SERVICE_AGENT' ||
+        normalized === 'OBSERVER' ||
+        normalized === 'ANALYST'
+    ) {
+        return normalized;
+    }
+    return 'unknown';
+}
+
+export function buildDurableMemorySystemPrompt(basePrompt: string, promptBlock: string): string {
+    return [basePrompt.trimEnd(), '', '---', '', '## GOVERNED DURABLE MEMORY CONTEXT', '', promptBlock, '', '---', ''].join('\n');
+}
+
+export function evaluateDurableMemoryRoute(input: {
+    request: Partial<ExecutionRequest>;
+    actorId: string;
+    actorRole: RuntimeMemoryActorRole;
+    defaultQuery: string;
+    storePath?: string;
+}): DurableMemoryRouteResult {
+    const durableRequest = input.request.durableMemory;
+    if (!durableRequest?.enabled) {
+        return { requested: false, injected: false, records: [] };
+    }
+
+    const tier = durableRequest.tier ?? 'skill';
+    const scope = durableRequest.scope?.trim() || `user:${input.actorId}`;
+
+    if (durableRequest.policy?.actorAuthorized !== true) {
+        return {
+            requested: true,
+            injected: false,
+            records: [],
+            receipt: emptyReceipt({
+                reason: 'durable_memory_policy_denied',
+                scope,
+                tier,
+            }),
+        };
+    }
+
+    const storePath = input.storePath ?? process.env[ROUTE_DURABLE_MEMORY_STORE_ENV];
+    if (!storePath?.trim()) {
+        return {
+            requested: true,
+            injected: false,
+            records: [],
+            receipt: emptyReceipt({
+                reason: 'durable_memory_store_not_configured',
+                scope,
+                tier,
+            }),
+        };
+    }
+
+    const store = createFileBackedDurableMemoryStore(storePath);
+    const read = store.read({
+        tier,
+        scope,
+        actorId: input.actorId,
+        actorRole: input.actorRole,
+        actorAuthorized: true,
+        query: durableRequest.query ?? input.defaultQuery,
+        maxResults: Math.max(1, Math.min(durableRequest.maxResults ?? 3, 5)),
+    });
+
+    if (read.records.length === 0) {
+        return {
+            requested: true,
+            injected: false,
+            records: [],
+            receipt: read.receipt,
+        };
+    }
+
+    const promptBlock = [
+        '[DURABLE_MEMORY_CONTEXT]',
+        `scope: ${scope}`,
+        `tier: ${tier}`,
+        'mode: summary_only',
+        'policy: context only; not approval authority; canReinject=false.',
+        'approved_memory:',
+        ...read.records.map((record) => `- ${record.id}: ${record.summary.trim()}`),
+        '[/DURABLE_MEMORY_CONTEXT]',
+    ].join('\n');
+
+    return {
+        requested: true,
+        injected: true,
+        records: read.records,
+        receipt: read.receipt,
+        promptBlock,
+    };
+}
+

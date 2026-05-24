@@ -72,6 +72,45 @@ Template:
 - Notes/Risks:
 ```
 
+## [2026-05-24] Batch: R2/R3 Durable Memory Route And Step 0 Setup
+- Change reference:
+  - Roadmap:
+    `docs/roadmaps/CVF_R1_R2_P2_POST_M1_GAP_CLOSURE_ROADMAP_2026-05-24.md`
+  - R2 completion:
+    `docs/reviews/CVF_R2_EXECUTE_ROUTE_DURABLE_MEMORY_WIRING_COMPLETION_2026-05-24.md`
+  - R3 completion:
+    `docs/reviews/CVF_R3_NONCODER_STEP0_API_KEY_SETUP_COMPLETION_2026-05-24.md`
+- Impacted scope:
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts`
+    durable-memory read path.
+  - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/durable-memory-route.ts`.
+  - Non-coder Step 0 setup guides and public-sync catalog pointers.
+- Tests/proofs executed:
+  - `npm run test:run -- src/app/api/execute/route.durable-memory.test.ts`
+    in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` -> PASS, 3/3.
+  - `npm run check` in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` -> PASS.
+  - `node --check scripts/run_cvf_r2_durable_memory_route_live_probe.mjs`
+    -> PASS.
+  - `node scripts/run_cvf_r2_durable_memory_route_live_probe.mjs` -> PASS,
+    live receipt `rcpt-env-mpjdj5rc-p1g9go`, trace
+    `env-mpjdj5rc-p1g9go`, provider `alibaba`, model `qwen-turbo`,
+    memory id `r2-skill-safe`, `rawMemoryReleased=false`.
+  - `python scripts/run_cvf_release_gate_bundle.py --json` -> PASS, 7/7.
+  - Public-sync `Test-Path` for Step 0 guide, first-receipt guide, and public
+    catalog -> PASS.
+  - Public-sync secret-hygiene scan over updated docs -> PASS, no matches.
+  - Public-sync `git diff --check` -> PASS.
+- Skip scope:
+  - Full `cvf-web` unit suite: skipped because R2 touched a bounded route
+    branch with focused coverage, TypeScript check, live route proof, and full
+    release gate PASS.
+  - LPF durable-memory full suite: skipped because R2 consumed the existing R1
+    store contract and did not change LPF code.
+- Notes/Risks:
+  - R2 is explicit opt-in only and preserves `canReinject=false`.
+  - R3 documents setup; it does not provide provider procurement or hosted
+    credential management.
+
 ## [2026-05-24] Batch: Post-AIF Operationalization And Release Gate Selector Hardening
 - Change reference:
   - Working tree for `docs/roadmaps/CVF_POST_AIF_OPERATIONALIZATION_ROADMAP_2026-05-24.md`.

@@ -30,6 +30,7 @@ import { buildPhase2CProductBriefSliceForRoute } from '@/lib/phase2c-product-bri
 import { buildPhase3EOperationalMetricsForRoute } from '@/lib/phase3e-operational-emission';
 import { buildWorkflowExecutionProjection, resolveWorkflowBindingForExecution } from '@/lib/workflows/workflow-resolver';
 import { buildRouteAuditMemoryCapture } from '@/lib/audit-memory-receipt';
+import { buildDurableMemorySystemPrompt, evaluateDurableMemoryRoute, resolveDurableMemoryActorRole } from '@/lib/durable-memory-route';
 import { buildRoleOutputDeniedResponse, buildRolePermissionDeniedResponse } from '@/lib/execute-role-permission-gate';
 import { buildExecutionIdentityDecision } from '@/lib/execution-identity';
 import { evaluateExecutionActorRoleGate, resolveExecutionCVFRole, resolveExecutionOutputClass } from '@/lib/execute-role-resolver';
@@ -643,6 +644,8 @@ export async function POST(request: NextRequest) {
         const knowledgeSystemPrompt = knowledgeInjected
             ? buildKnowledgeSystemPrompt(CVF_SYSTEM_PROMPT, finalKnowledgeContext, { orgId: session?.orgId, teamId: session?.teamId })
             : CVF_SYSTEM_PROMPT;
+        const durableMemoryRoute = evaluateDurableMemoryRoute({ request: body, actorId: executionActorId, actorRole: resolveDurableMemoryActorRole(resolvedExecutionRole.role), defaultQuery: body.intent! });
+        const durableMemorySystemPrompt = durableMemoryRoute.promptBlock ? buildDurableMemorySystemPrompt(knowledgeSystemPrompt, durableMemoryRoute.promptBlock) : knowledgeSystemPrompt;
         const aifMemoryReinjection = evaluateAifMemoryReinjection(body.aifMemoryReinjection);
         await appendAifMemoryReinjectionAudit({ decision: aifMemoryReinjection, request: body, session });
 
@@ -650,11 +653,7 @@ export async function POST(request: NextRequest) {
             return buildAifMemoryReinjectionDeniedResponse({ decision: aifMemoryReinjection, envelope: govEnvelope, enforcement, guardResult, provider: routedProvider, routingResult, knowledgeSource, knowledgeInjected, knowledgeCollectionId: requestedKnowledgeCollectionId, knowledgeChunkCount: retrievalResult.allowedChunkCount });
         }
 
-        const enrichedSystemPrompt = aifMemoryReinjection.promptBlock
-            ? buildAifMemoryReinjectionSystemPrompt(knowledgeSystemPrompt, aifMemoryReinjection.promptBlock)
-            : knowledgeInjected
-                ? knowledgeSystemPrompt
-                : undefined;
+        const enrichedSystemPrompt = aifMemoryReinjection.promptBlock ? buildAifMemoryReinjectionSystemPrompt(durableMemorySystemPrompt, aifMemoryReinjection.promptBlock) : knowledgeInjected || durableMemoryRoute.injected ? durableMemorySystemPrompt : undefined;
 
         if (retrievalResult.droppedChunkCount > 0) {
             await appendAuditEvent({
@@ -699,6 +698,7 @@ export async function POST(request: NextRequest) {
                         knowledgeCollectionId: requestedKnowledgeCollectionId,
                         knowledgeChunkCount: retrievalResult.allowedChunkCount,
                         aifMemoryReinjection: aifMemoryReinjection.receipt,
+                        durableMemoryRead: durableMemoryRoute.receipt,
                     }),
                 },
                 { status: 400 }
@@ -801,6 +801,7 @@ export async function POST(request: NextRequest) {
                         approvalId: approvedRequestRecord?.id,
                         validationHint: outputValidation.qualityHint,
                         aifMemoryReinjection: aifMemoryReinjection.receipt,
+                        durableMemoryRead: durableMemoryRoute.receipt,
                     }),
                 },
                 { status: 422 },
@@ -860,6 +861,7 @@ export async function POST(request: NextRequest) {
             approvalId: approvedRequestRecord?.id,
             validationHint: outputValidation?.qualityHint,
             aifMemoryReinjection: aifMemoryReinjection.receipt,
+            durableMemoryRead: durableMemoryRoute.receipt,
         });
         if (isVisionExecution) governanceEvidenceReceipt.vision = true;
         const workflowExecution = aiResult.success && workflowBinding
@@ -968,6 +970,7 @@ export async function POST(request: NextRequest) {
                 allowedCollectionIds: retrievalResult.allowedCollectionIds,
             },
             aifMemoryReinjection: aifMemoryReinjection.receipt,
+            durableMemoryRead: durableMemoryRoute.receipt,
             outputValidation: outputValidation ? {
                 qualityHint: outputValidation.qualityHint,
                 issues: outputValidation.issues,

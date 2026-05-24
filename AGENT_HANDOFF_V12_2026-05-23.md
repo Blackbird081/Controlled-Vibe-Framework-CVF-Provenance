@@ -383,6 +383,7 @@ For older continuity before V12, read:
 
 ## Latest HEADs
 
+- `045c9308` — docs(r1): close durable memory resilience gap (2026-05-24)
 - `032a16da` — fix(memory): harden durable store resilience (2026-05-24)
 - `e8560519` — feat(memory): close m1 m2 p1 roadmap (2026-05-24)
 - `0d2b44d6` — docs(m1-m2-p1): dispatch M2/M1/P1 work orders and roadmap (2026-05-24)
@@ -528,3 +529,34 @@ claim closure.
 
 Do not claim live web UI cross-session memory benefit or public operator
 self-onboarding until R2/P2 are closed with required evidence.
+
+## R2/R3 Post-M1 Gap Closure - 2026-05-24
+
+R2 and R3 are `CLOSED_PASS` under the post-M1 gap closure roadmap:
+
+- Roadmap:
+  `docs/roadmaps/CVF_R1_R2_P2_POST_M1_GAP_CLOSURE_ROADMAP_2026-05-24.md`
+- R2 completion:
+  `docs/reviews/CVF_R2_EXECUTE_ROUTE_DURABLE_MEMORY_WIRING_COMPLETION_2026-05-24.md`
+- R3 completion:
+  `docs/reviews/CVF_R3_NONCODER_STEP0_API_KEY_SETUP_COMPLETION_2026-05-24.md`
+- R2 evidence:
+  `docs/reviews/CVF_R2_EXECUTE_ROUTE_DURABLE_MEMORY_WIRING_EVIDENCE_2026-05-24.json`
+
+R2 delivered explicit policy-gated `/api/execute` durable skill/long-term
+memory reads with summary-only prompt context and receipt evidence. Live route
+proof PASS: receipt `rcpt-env-mpjdj5rc-p1g9go`, trace
+`env-mpjdj5rc-p1g9go`, provider `alibaba`, model `qwen-turbo`, memory id
+`r2-skill-safe`, `rawMemoryReleased=false`, `canReinject=false`. Mandatory
+release gate PASS 7/7.
+
+R3 superseded P2 for non-coder Step 0 API-key setup. Private guide and
+first-receipt guide are updated. Public-sync guide/catalog changes are
+committed at public-sync commit `1160f1b9` after remote verification and
+secret-hygiene scan.
+
+Boundary: R2/R3 do not claim autonomous memory reinjection, `canReinject=true`,
+raw-memory prompt injection, graph approval authority, hosted/cloud memory
+persistence, automated provider procurement, hosted secret-vault operations,
+enterprise SaaS/GA readiness, universal provider stability, Maika proof, broad
+production readiness, or freeze release.

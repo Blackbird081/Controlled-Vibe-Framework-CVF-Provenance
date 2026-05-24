@@ -6,11 +6,12 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-24
 
-Current mode marker: `r1_durable_memory_resilience_closed_r2_p2_gated`
+Current mode marker: `r2_r3_gap_closure_closed_pass_bounded`
 
-R1 durable-memory store resilience is closed at commit `032a16da`. R2
-`/api/execute` durable-memory wiring and P2 non-coder Step 0 API-key setup
-remain demand-gated pending fresh authority/proof.
+R1/R2/R3 post-M1 gap closure is closed. R2 delivered explicit policy-gated
+`/api/execute` durable-memory reads with live receipt
+`rcpt-env-mpjdj5rc-p1g9go`; R3 delivered the non-coder Step 0 API-key setup
+guide and public-sync commit `1160f1b9`.
 
 ## Purpose
 
@@ -79,8 +80,8 @@ current.
 
 ## Current Session Mode
 
-- Current mode: `post_aif_claim_graduation_c1_c5_closed_pass_bounded`
-- Previous mode: `post_aif_next_value_closed_pass`
+- Current mode: `r2_r3_gap_closure_closed_pass_bounded`
+- Previous mode: `r1_durable_memory_resilience_closed_r2_p2_gated`
 - Freeze posture: `governance_kernel_freeze_recommended`
 - Active handoff pointer: `AGENT_HANDOFF_V12_2026-05-23.md`
 - Historical handoff archive: `CVF_SESSION/handoffs/archive/`
@@ -109,7 +110,37 @@ D9 Qwen3 thinking enable-true adapter returned blocked at `docs/reviews/CVF_D9_Q
 
 D10 Qwen3 R1-compatible hosted proof is closed pass at `docs/reviews/CVF_D10_QWEN3_R1_COMPATIBLE_HOSTED_PROOF_COMPLETION_2026-05-23.md`: active mode marker `d10_qwen3_r1_compatible_hosted_proof_closed_pass`; focused providers test PASS `42/42`, `cvf-web` check PASS, local router preflight for Alibaba `R1` returned `ALLOW`, and the single hosted call returned HTTP `200`, `success=true`, `decision=ALLOW`, `routingDecision=ALLOW`, `enforcementStatus=ALLOW`, `evidenceMode=live`, provider `alibaba`, model `qwen3-235b-a22b-thinking-2507`, receipt `rcpt-env-mpigxtmn-pml5ky`, trace `env-mpigxtmn-pml5ky`, output length `4057`, `rawSecretPrinted=false`. Public repo contains the adapter fix at commit `811e59f6`.
 
-Current mode marker: `post_aif_claim_graduation_c1_c5_closed_pass_bounded`.
+Current mode marker: `r2_r3_gap_closure_closed_pass_bounded`.
+
+## R2/R3 Post-M1 Gap Closure - Closed 2026-05-24
+
+Roadmap:
+
+- `docs/roadmaps/CVF_R1_R2_P2_POST_M1_GAP_CLOSURE_ROADMAP_2026-05-24.md`
+
+Closure artifacts:
+
+- R2 completion:
+  `docs/reviews/CVF_R2_EXECUTE_ROUTE_DURABLE_MEMORY_WIRING_COMPLETION_2026-05-24.md`
+- R3 completion:
+  `docs/reviews/CVF_R3_NONCODER_STEP0_API_KEY_SETUP_COMPLETION_2026-05-24.md`
+- R2 evidence JSON:
+  `docs/reviews/CVF_R2_EXECUTE_ROUTE_DURABLE_MEMORY_WIRING_EVIDENCE_2026-05-24.json`
+
+R2 closed the `/api/execute` durable-memory route wiring gap with explicit
+request opt-in, actor policy authorization, summary-only prompt context, and
+receipt evidence. Live proof PASS on Alibaba `qwen-turbo` with receipt
+`rcpt-env-mpjdj5rc-p1g9go`, trace `env-mpjdj5rc-p1g9go`, memory id
+`r2-skill-safe`, `rawMemoryReleased=false`, and `canReinject=false`.
+
+R3 superseded P2 and closed Step 0 API-key setup docs. Public-sync remote was
+verified as the public CVF repo and public-safe docs/catalog changes were
+committed at `1160f1b9`.
+
+Boundary: no autonomous memory reinjection, `canReinject=true`, raw-memory
+prompt injection, automated provider procurement, hosted secret-vault
+operations, enterprise SaaS/GA readiness, graph approval authority, universal
+provider stability, or broad production readiness is claimed.
 
 ## Post-AIF Claim Graduation C2-C5 — Closed 2026-05-24
 
