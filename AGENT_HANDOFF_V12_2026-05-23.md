@@ -110,6 +110,11 @@ Verification: script syntax PASS; cvf-web TypeScript check PASS; markdown
 structural completeness PASS; docs governance PASS; mandatory release gate PASS
 `7/7`.
 
+Public-sync: commit `dc2583f6` added
+`docs/evidence/workflow-chain-memory-proof-2026-05-24.md` and updated
+`docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md` after verifying
+the public remote.
+
 Next: WC-3 legacy harvest scan remains demand-gated and requires fresh
 authorization/work order before implementation.
 

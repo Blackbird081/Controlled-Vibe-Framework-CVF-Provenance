@@ -112,6 +112,16 @@ Additional verification:
 - Markdown structural completeness: PASS.
 - `python scripts/run_cvf_release_gate_bundle.py --json`: PASS `7/7`.
 
+Public-safe catalog update:
+
+- public-sync remote verified as
+  `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`.
+- public-sync commit `dc2583f6` added
+  `docs/evidence/workflow-chain-memory-proof-2026-05-24.md` and updated
+  `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`.
+- public evidence boundary remains bounded to the two-turn local workflow-chain
+  proof and does not expose raw private payloads or secrets.
+
 ## Acceptance Criteria
 
 - [x] Live receipt from turn 1 includes `durableMemoryWriteReceipt`.
