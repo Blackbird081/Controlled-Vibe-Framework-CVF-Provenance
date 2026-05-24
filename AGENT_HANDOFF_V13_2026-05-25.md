@@ -34,6 +34,8 @@ Current HEAD before C7B authorization commit: `cb13d02a`.
 
 Current HEAD before C7B implementation closure commit: `237585d8`.
 
+Current HEAD before C7C authorization commit: `c32fe8f6`.
+
 Remote tracking branch:
 
 `origin/main`
@@ -83,7 +85,7 @@ Previous long session memory snapshot was archived at:
 
 ## Current Mode
 
-`c7b_candidate7_external_skill_source_screening_closed`
+`c7c_external_skill_candidate_record_validator_authorized`
 
 Freeze posture remains:
 
@@ -239,6 +241,23 @@ with fresh GC-018/work order and the Knowledge Absorption Blind-Spot Control
 Block. Candidate-specific external skill import may start only when the
 operator names a concrete source/use case and authorizes the required owner
 surface.
+
+## Active Authorized Tranche
+
+C7C External Skill Candidate Record Validator is authorized:
+
+`docs/baselines/CVF_GC018_C7C_EXTERNAL_SKILL_CANDIDATE_RECORD_VALIDATOR_2026-05-25.md`
+
+Work order:
+
+`docs/work_orders/CVF_WO_C7C_EXTERNAL_SKILL_CANDIDATE_RECORD_VALIDATOR_2026-05-25.md`
+
+C7C may add a local deterministic `governance/contracts` validator/readout plus
+tests. It may not import external skills, modify product packs, publish
+registries, execute tools/MCP/CLI/scripts/models/providers, fetch live external
+repositories, make public-sync/marketplace claims, or touch `/api/execute`,
+receipt envelopes, auth/RBAC, hosted readiness, production readiness, or freeze
+release.
 
 Do not add real tool, command, MCP, database, browser, or provider execution;
 MCP bridge wiring; database adapter/driver/query/mutation/export/migration;
