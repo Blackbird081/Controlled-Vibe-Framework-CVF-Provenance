@@ -46,7 +46,11 @@ export interface RuntimeMemoryTierRule {
   durablePersistenceAllowed: boolean;
   crossSessionAccessAllowed: boolean;
   canReinject: false;
-  runtimeProof: "h2_working_ephemeral" | "t5_task_ephemeral" | "policy_map_only";
+  runtimeProof:
+    | "h2_working_ephemeral"
+    | "t5_task_ephemeral"
+    | "m1_durable_cross_session"
+    | "policy_map_only";
   boundary: string;
 }
 
@@ -70,9 +74,9 @@ export interface RuntimeMemoryActionDecision {
   privacyScope: RuntimeMemoryTierRule["privacyScope"];
   persistenceClass: RuntimeMemoryTierRule["persistenceClass"];
   canReinject: false;
-  durablePersistenceAllowed: false;
+  durablePersistenceAllowed: boolean;
   crossSessionAccessAllowed: boolean;
-  persistentStoreCreated: false;
+  persistentStoreCreated: boolean;
   newMemoryTierCreated: false;
 }
 
@@ -166,15 +170,16 @@ const TIER_RUNTIME_RULES: Record<MemoryTier, RuntimeMemoryTierRule> = {
   },
   skill: {
     ...describeMemoryTier({ tier: "skill" }),
-    allowedActions: ["retrieve"],
+    allowedActions: ["write", "retrieve"],
     allowedActors: {
+      write: ["OPERATOR", "GOVERNOR", "BUILDER", "SERVICE_AGENT"],
       retrieve: ["OPERATOR", "GOVERNOR", "REVIEWER", "BUILDER", "SERVICE_AGENT"],
     },
-    durablePersistenceAllowed: false,
-    crossSessionAccessAllowed: false,
+    durablePersistenceAllowed: true,
+    crossSessionAccessAllowed: true,
     canReinject: false,
-    runtimeProof: "policy_map_only",
-    boundary: "certified_skill_catalog_metadata_only",
+    runtimeProof: "m1_durable_cross_session",
+    boundary: "m1_policy_gated_skill_memory_summary_only",
   },
   organizational: {
     ...describeMemoryTier({ tier: "organizational" }),
@@ -188,13 +193,16 @@ const TIER_RUNTIME_RULES: Record<MemoryTier, RuntimeMemoryTierRule> = {
   },
   "long-term": {
     ...describeMemoryTier({ tier: "long-term" }),
-    allowedActions: [],
-    allowedActors: {},
-    durablePersistenceAllowed: false,
-    crossSessionAccessAllowed: false,
+    allowedActions: ["write", "retrieve"],
+    allowedActors: {
+      write: ["OPERATOR", "GOVERNOR", "SERVICE_AGENT"],
+      retrieve: ["OPERATOR", "GOVERNOR", "REVIEWER", "SERVICE_AGENT"],
+    },
+    durablePersistenceAllowed: true,
+    crossSessionAccessAllowed: true,
     canReinject: false,
-    runtimeProof: "policy_map_only",
-    boundary: "long_term_memory_not_authorized_in_h2",
+    runtimeProof: "m1_durable_cross_session",
+    boundary: "m1_policy_gated_long_term_memory_summary_only",
   },
   audit: {
     ...describeMemoryTier({ tier: "audit" }),
@@ -380,9 +388,11 @@ function buildDecision(
     privacyScope: rule.privacyScope,
     persistenceClass: rule.persistenceClass,
     canReinject: false,
-    durablePersistenceAllowed: false,
+    durablePersistenceAllowed: rule.durablePersistenceAllowed,
     crossSessionAccessAllowed: rule.crossSessionAccessAllowed,
-    persistentStoreCreated: false,
+    persistentStoreCreated: rule.durablePersistenceAllowed &&
+      input.durablePersistenceRequested === true &&
+      decision === "allowed",
     newMemoryTierCreated: false,
   };
 }

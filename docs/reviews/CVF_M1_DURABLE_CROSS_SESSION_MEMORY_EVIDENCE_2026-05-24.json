@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "cvf-m1-durable-memory-evidence-1",
+  "status": "PASS",
+  "date": "2026-05-24",
+  "unitEvidence": {
+    "learningPlaneTargeted": "PASS 2 files / 16 tests",
+    "learningPlaneCheck": "PASS"
+  },
+  "liveEvidence": {
+    "command": "node scripts/run_cvf_m1_durable_memory_live_probe.mjs",
+    "status": "PASS",
+    "claimClass": "bounded_durable_skill_memory_cross_session_summary_reinjection",
+    "httpStatus": 200,
+    "provider": "alibaba",
+    "model": "qwen-turbo",
+    "receiptId": "rcpt-env-mpjb6x9o-552qp0",
+    "traceId": "env-mpjb6x9o-552qp0",
+    "evidenceMode": "live",
+    "writeMemoryIds": [
+      "m1-skill-safe"
+    ],
+    "readMemoryIds": [
+      "m1-skill-safe"
+    ],
+    "reinjectedMemoryIds": [
+      "m1-skill-safe"
+    ],
+    "excluded": [
+      {
+        "id": "m1-raw-rejected",
+        "reason": "raw_memory_payload_rejected"
+      }
+    ],
+    "rawSecretPrinted": false,
+    "rawMemoryReleased": false
+  },
+  "boundary": {
+    "durableTiers": [
+      "skill",
+      "long-term"
+    ],
+    "canReinject": false,
+    "summaryOnlyReuse": true,
+    "hostedCloudPersistence": false,
+    "autonomousMemoryWrite": false
+  }
+}

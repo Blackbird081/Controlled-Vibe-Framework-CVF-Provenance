@@ -447,3 +447,51 @@ N4/N5/N6/PBR-04/N7 are all `CLOSED_PASS`; O1/O2/O3/O4 are all `CLOSED_PASS`;
 C1 is `CLOSED_PASS`. Legacy spec absorption blindspot is documented and
 corrective systemic actions are in place. All prior D10, P3, P2/HN1,
 G1/D2/E2/H2/F2/A2, and T1-T5 claim boundaries remain unchanged.
+
+## M1/M2/P1 Next-Value Closure - 2026-05-24
+
+Latest M1/M2/P1 roadmap:
+
+- `docs/roadmaps/CVF_M1_M2_P1_NEXT_VALUE_ROADMAP_2026-05-24.md`
+
+Status: `CLOSED_PASS_BOUNDED`.
+
+Codex audited Claude dispatch commit `0d2b44d6` before implementation and
+patched the work orders:
+
+- M2 now includes the required different-role reviewer rebuttal.
+- M1 uses the correct runtime-memory hierarchy path.
+- P1 public catalog evidence points to a public-safe guide path in public-sync,
+  not private review artifacts.
+
+Closed artifacts:
+
+- M2 completion:
+  `docs/reviews/CVF_M2_D06_MEMORY_TIER_FREEZE_RELEASE_COMPLETION_2026-05-24.md`
+- M1 completion:
+  `docs/reviews/CVF_M1_DURABLE_CROSS_SESSION_MEMORY_COMPLETION_2026-05-24.md`
+- P1 completion:
+  `docs/reviews/CVF_P1_PRODUCTION_READINESS_SMALL_TEAM_COMPLETION_2026-05-24.md`
+
+Evidence:
+
+- M2 one-surface freeze-release packet:
+  `docs/reviews/CVF_FREEZE_RELEASE_PACKET_M2_MEMORY_TIER_2026-05-24.md`
+- M2 reviewer rebuttal:
+  `docs/reviews/CVF_GC019_M2_D06_MEMORY_TIER_FREEZE_RELEASE_REBUTTAL_2026-05-24.md`
+- M1 durable-memory live receipt: `rcpt-env-mpjb6x9o-552qp0`; trace
+  `env-mpjb6x9o-552qp0`.
+- P1 hosted non-coder live receipt: `rcpt-env-mpjb7f0k-ruyeo3`; trace
+  `env-mpjb7f0k-ruyeo3`.
+- Mandatory release gate PASS.
+
+Boundary:
+
+- M2 releases only the memory tier classifier contract surface.
+- M1 persists only existing `skill` and `long-term` tiers and keeps
+  `canReinject=false`.
+- P1 proves only the small-team/non-coder first-receipt path.
+- No global freeze lift, autonomous memory reinjection, raw memory prompt
+  injection, graph approval authority, universal provider stability,
+  enterprise SaaS/GA readiness, Maika proof, or broad production readiness is
+  claimed.

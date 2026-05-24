@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "cvf-p1-noncoder-e2e-evidence-1",
+  "status": "PASS",
+  "date": "2026-05-24",
+  "command": "node scripts/run_cvf_p1_noncoder_e2e_probe.mjs",
+  "claimClass": "bounded_small_team_noncoder_production_path",
+  "target": "https://vibcode.netlify.app/api/execute",
+  "httpStatus": 200,
+  "templateId": "strategy_analysis",
+  "provider": "alibaba",
+  "model": "qwen-turbo",
+  "receiptId": "rcpt-env-mpjb7f0k-ruyeo3",
+  "traceId": "env-mpjb7f0k-ruyeo3",
+  "evidenceMode": "live",
+  "routeId": "/api/execute",
+  "decision": "ALLOW",
+  "routingDecision": "ALLOW",
+  "outputLength": 4504,
+  "rawSecretPrinted": false,
+  "requestHeadersPrinted": false,
+  "noMockFallback": true,
+  "boundary": {
+    "smallTeamNonCoderPathOnly": true,
+    "enterpriseSaaSReadiness": false,
+    "multiTenantHostedGA": false,
+    "broadProviderStability": false
+  }
+}

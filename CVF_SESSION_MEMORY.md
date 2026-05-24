@@ -1040,3 +1040,51 @@ kernel-owner replacement, or global freeze lift.
 This artifact establishes a governed session-memory front door and machine
 checkable active-state pointer. It does not complete the broader Governance
 Kernel Freeze or system reconvergence work.
+
+## M1/M2/P1 Next-Value Closure - 2026-05-24
+
+Current mode marker: `m1_m2_p1_next_value_closed_pass_bounded`.
+
+Codex audited Claude's M1/M2/P1 dispatch at commit `0d2b44d6`, corrected three
+work-order issues before implementation, and closed the roadmap:
+
+- added the missing different-role M2 reviewer rebuttal requirement;
+- corrected the M1 runtime-memory path;
+- corrected P1 public catalog evidence routing so public-sync cites only a
+  public-safe guide, not private review/baseline/roadmap artifacts.
+
+Closed roadmap:
+
+- `docs/roadmaps/CVF_M1_M2_P1_NEXT_VALUE_ROADMAP_2026-05-24.md`
+
+Closed tranches:
+
+- M2 `CLOSED_PASS`: one-surface freeze release for
+  `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-tier-classifier.contract.ts`.
+  Packet:
+  `docs/reviews/CVF_FREEZE_RELEASE_PACKET_M2_MEMORY_TIER_2026-05-24.md`.
+  Rebuttal:
+  `docs/reviews/CVF_GC019_M2_D06_MEMORY_TIER_FREEZE_RELEASE_REBUTTAL_2026-05-24.md`.
+- M1 `CLOSED_PASS`: bounded durable memory for existing `skill` and
+  `long-term` tiers with policy-gated write/read receipts. Live proof receipt:
+  `rcpt-env-mpjb6x9o-552qp0`; trace `env-mpjb6x9o-552qp0`.
+- P1 `CLOSED_PASS_BOUNDED`: small-team/non-coder trusted-template-to-live-
+  receipt path. Hosted proof receipt: `rcpt-env-mpjb7f0k-ruyeo3`; trace
+  `env-mpjb7f0k-ruyeo3`.
+
+Verification:
+
+- LPF targeted durable memory/runtime hierarchy tests PASS, 2 files / 16 tests.
+- LPF TypeScript check PASS.
+- cvf-web TypeScript check PASS.
+- M1 live proof PASS.
+- P1 hosted non-coder proof PASS.
+- Mandatory release gate PASS.
+- Public-sync path check PASS for the non-coder guide and catalog.
+
+Boundary: no global freeze lift, no autonomous memory reinjection, no raw memory
+prompt injection, no organizational/working/task/audit/receipt tier durable
+persistence, no hosted/cloud memory persistence, no graph approval authority,
+no universal provider stability, no enterprise SaaS/GA readiness, no Maika
+proof, and no broad production readiness beyond the P1 small-team/non-coder
+path.

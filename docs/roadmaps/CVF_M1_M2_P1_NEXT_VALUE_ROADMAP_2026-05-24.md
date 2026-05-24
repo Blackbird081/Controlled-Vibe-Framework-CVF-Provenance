@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: ACTIVE
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -53,9 +53,9 @@ production path for CVF's declared addressable audience.
 
 | Tranche | Title | Depends On | Status | Work Order |
 | --- | --- | --- | --- | --- |
-| M2 | D-06 memory tier model freeze release | — | WORK_ORDER_READY | `docs/work_orders/CVF_WO_M2_D06_MEMORY_TIER_FREEZE_RELEASE_2026-05-24.md` |
-| M1 | Durable/cross-session memory | M2 CLOSED_PASS | DEMAND_GATED | `docs/work_orders/CVF_WO_M1_DURABLE_CROSS_SESSION_MEMORY_2026-05-24.md` |
-| P1 | Production readiness for small team/non-coder | — | WORK_ORDER_READY | `docs/work_orders/CVF_WO_P1_PRODUCTION_READINESS_SMALL_TEAM_2026-05-24.md` |
+| M2 | D-06 memory tier model freeze release | — | CLOSED_PASS | `docs/work_orders/CVF_WO_M2_D06_MEMORY_TIER_FREEZE_RELEASE_2026-05-24.md` |
+| M1 | Durable/cross-session memory | M2 CLOSED_PASS | CLOSED_PASS | `docs/work_orders/CVF_WO_M1_DURABLE_CROSS_SESSION_MEMORY_2026-05-24.md` |
+| P1 | Production readiness for small team/non-coder | — | CLOSED_PASS_BOUNDED | `docs/work_orders/CVF_WO_P1_PRODUCTION_READINESS_SMALL_TEAM_2026-05-24.md` |
 
 ---
 
@@ -84,6 +84,8 @@ Execution order:
 M2 deliverables:
 
 - Formal freeze-release packet for `memory-tier-classifier.contract.ts`.
+- Different-role reviewer rebuttal/GC-019 disposition for the one-surface
+  release packet.
 - Owner map entry updated with `freeze_released: true`.
 - TypeScript check PASS.
 - Completion review filed.
@@ -103,21 +105,23 @@ P1 deliverables:
 - Minimum setup doc for non-coder persona.
 - End-to-end proof: non-coder persona → template → governed `/api/execute` →
   live receipt.
-- Public catalog row updated with bounded claim and verified evidence path.
+- Public catalog row updated with bounded claim and verified public-safe guide
+  path in the public-sync clone; internal completion reviews must not be used
+  as public-sync evidence paths.
 - Completion review filed.
 
 ---
 
 ## Acceptance Criteria
 
-- [ ] M2: freeze-release packet filed, owner map updated, TypeScript PASS,
-      completion review filed.
-- [ ] M1: durable store for skill/long-term tiers, cross-session receipts,
+- [x] M2: freeze-release packet filed, different-role reviewer rebuttal filed,
+      owner map updated, TypeScript PASS, completion review filed.
+- [x] M1: durable store for skill/long-term tiers, cross-session receipts,
       `canReinject=false` test PASS, release gate PASS, completion review filed.
-- [ ] P1: non-coder onboarding doc, friction points closed, live proof receipt,
+- [x] P1: non-coder onboarding doc, friction points closed, live proof receipt,
       public catalog updated, completion review filed.
-- [ ] M1 must not start before M2 CLOSED_PASS is confirmed.
-- [ ] No raw secret in any committed artifact across all tranches.
+- [x] M1 must not start before M2 CLOSED_PASS is confirmed.
+- [x] No raw secret in any committed artifact across all tranches.
 
 ---
 
@@ -142,7 +146,8 @@ P1:
 - `docs/reviews/CVF_P1_PRODUCTION_READINESS_SMALL_TEAM_COMPLETION_2026-05-24.md`
 - Live proof receipt: HTTP 200, `success=true`, `evidenceMode=live`,
   `rawSecretPrinted=false`.
-- Public catalog updated row with Test-Path PASS from public-sync clone.
+- Public catalog updated row with Test-Path PASS from public-sync clone against
+  public-safe documentation/evidence paths only.
 
 ---
 
@@ -171,6 +176,21 @@ Still not allowed after this roadmap closes:
 
 | Tranche | Status | Completion Review |
 | --- | --- | --- |
-| M2 | WORK_ORDER_READY | — |
-| M1 | DEMAND_GATED | — |
-| P1 | WORK_ORDER_READY | — |
+| M2 | CLOSED_PASS | `docs/reviews/CVF_M2_D06_MEMORY_TIER_FREEZE_RELEASE_COMPLETION_2026-05-24.md` |
+| M1 | CLOSED_PASS | `docs/reviews/CVF_M1_DURABLE_CROSS_SESSION_MEMORY_COMPLETION_2026-05-24.md` |
+| P1 | CLOSED_PASS_BOUNDED | `docs/reviews/CVF_P1_PRODUCTION_READINESS_SMALL_TEAM_COMPLETION_2026-05-24.md` |
+
+---
+
+## Closure Note - 2026-05-24
+
+M2, M1, and P1 are closed. M2 released one governance-kernel surface only:
+the memory tier classifier contract. M1 delivered bounded durable memory for
+`skill` and `long-term` tiers with cross-session receipts and summary-only C2
+reuse. P1 proved the small-team/non-coder first-receipt path with hosted live
+receipt `rcpt-env-mpjb7f0k-ruyeo3`.
+
+Remaining boundaries: no global freeze lift, no autonomous memory reinjection,
+no graph approval authority, no universal provider stability, no enterprise
+SaaS/GA readiness, no Maika proof, and no broad production readiness beyond the
+small-team/non-coder path proven here.

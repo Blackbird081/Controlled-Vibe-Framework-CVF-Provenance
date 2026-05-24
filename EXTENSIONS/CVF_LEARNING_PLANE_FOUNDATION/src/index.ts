@@ -134,6 +134,23 @@ export type {
   MemoryRetentionDecision,
 } from "./controlled.memory.subcontracts";
 export {
+  createFileBackedDurableMemoryStore,
+  createInProcessDurableMemoryStore,
+  DURABLE_MEMORY_STORE_VERSION,
+} from "./durable-memory-store";
+export type {
+  DurableMemoryLifecycleState,
+  DurableMemoryOperation,
+  DurableMemoryReadInput,
+  DurableMemoryReadResult,
+  DurableMemoryReceipt,
+  DurableMemoryRecord,
+  DurableMemoryStore,
+  DurableMemoryTier,
+  DurableMemoryWriteInput,
+  DurableMemoryWriteResult,
+} from "./durable-memory-store";
+export {
   createWorkingMemoryRuntimeStore,
   describeRuntimeMemoryTier,
   evaluateRuntimeMemoryAction,

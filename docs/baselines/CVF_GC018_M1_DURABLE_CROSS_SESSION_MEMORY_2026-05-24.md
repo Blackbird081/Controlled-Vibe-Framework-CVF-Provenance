@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: DEMAND_GATED
+Status: CLOSED_PASS
 
 docType: baseline
 
@@ -148,4 +148,4 @@ authorized.
 
 ## Disposition
 
-DEMAND_GATED. Opens after M2 CLOSED_PASS. Closed by work order completion review.
+Closed by `docs/reviews/CVF_M1_DURABLE_CROSS_SESSION_MEMORY_COMPLETION_2026-05-24.md`.

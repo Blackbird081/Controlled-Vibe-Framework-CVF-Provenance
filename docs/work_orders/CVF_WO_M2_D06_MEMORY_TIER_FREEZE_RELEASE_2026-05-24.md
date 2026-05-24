@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: WORK_ORDER_READY
+Status: CLOSED_PASS
 
 docType: work_order
 
@@ -50,7 +50,7 @@ an outcome.
 | --- | --- |
 | Planner | Read freeze-release rule; confirm one-surface scope. |
 | Implementer | Produce freeze-release packet; update owner map entry. |
-| Governance Reviewer | Confirm no scope creep, no D-07 implication, correct owner map update. |
+| Governance Reviewer | File a different-role rebuttal/GC-019 disposition; confirm no scope creep, no D-07 implication, correct owner map update. |
 | Release Manager | File completion review; commit closure. |
 
 ---
@@ -80,9 +80,11 @@ an outcome.
 
 ## Write Ownership
 
-- `docs/governance/` — freeze-release packet.
+- `docs/reviews/` — freeze-release packet.
 - `docs/reference/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md` — owner map
   entry update for `memory-tier-classifier.contract.ts`.
+- `docs/reviews/CVF_GC019_M2_D06_MEMORY_TIER_FREEZE_RELEASE_REBUTTAL_2026-05-24.md`
+  — different-role reviewer disposition required by the freeze-release rule.
 - `docs/reviews/CVF_M2_D06_MEMORY_TIER_FREEZE_RELEASE_COMPLETION_2026-05-24.md`
 - `docs/roadmaps/CVF_M1_M2_P1_NEXT_VALUE_ROADMAP_2026-05-24.md` — update M2
   row status to `CLOSED_PASS`.
@@ -99,6 +101,7 @@ Allowed:
 - Owner map entry update: add `freeze_released: true`, `freeze_release_date`,
   `freeze_release_rationale`, and link to this work order.
 - Completion review and governance sign-off.
+- Different-role reviewer rebuttal/GC-019 disposition before closure.
 - TypeScript check of any modified files.
 
 Forbidden:
@@ -119,15 +122,18 @@ Forbidden:
 2. Read `memory-tier-classifier.contract.ts` to confirm surface scope.
 3. Read owner map entry for this surface.
 4. Produce freeze-release packet at:
-   `docs/governance/CVF_FREEZE_RELEASE_PACKET_M2_MEMORY_TIER_2026-05-24.md`
+   `docs/reviews/CVF_FREEZE_RELEASE_PACKET_M2_MEMORY_TIER_2026-05-24.md`
    (or equivalent path per freeze-release rule convention).
 5. Update owner map entry for `memory-tier-classifier.contract.ts` with
    `freeze_released` status.
-6. Run TypeScript check.
-7. File completion review at:
+6. File reviewer rebuttal at:
+   `docs/reviews/CVF_GC019_M2_D06_MEMORY_TIER_FREEZE_RELEASE_REBUTTAL_2026-05-24.md`
+   with non-blocking disposition.
+7. Run TypeScript check.
+8. File completion review at:
    `docs/reviews/CVF_M2_D06_MEMORY_TIER_FREEZE_RELEASE_COMPLETION_2026-05-24.md`
-8. Commit all artifacts.
-9. Verify M1 work order is unblocked (change its status from `DEMAND_GATED` to
+9. Commit all artifacts.
+10. Verify M1 work order is unblocked (change its status from `DEMAND_GATED` to
    `WORK_ORDER_READY` and note M2 CLOSED_PASS as the unblock condition met).
 
 ---
@@ -136,6 +142,7 @@ Forbidden:
 
 - Freeze-release packet: rationale, scope, approver, surface path, evidence
   that only one surface is affected.
+- Reviewer rebuttal: different-role non-blocking disposition.
 - Owner map diff: `freeze_released: true` entry for target surface.
 - TypeScript check: PASS.
 - Completion review filed.
@@ -146,6 +153,7 @@ Forbidden:
 
 - [ ] Freeze-release rule read and respected.
 - [ ] Packet filed with all required components.
+- [ ] Different-role reviewer rebuttal filed.
 - [ ] Owner map entry updated.
 - [ ] No other kernel surface modified.
 - [ ] TypeScript check PASS.
@@ -160,6 +168,7 @@ The completion review must confirm:
 
 - One surface only was modified (memory tier model).
 - No runtime wiring or memory storage change was introduced.
+- Different-role reviewer rebuttal was filed with non-blocking disposition.
 - Owner map diff is present and correct.
 - D-07 is not mentioned as an outcome or implication.
 - TypeScript check PASS is recorded.
@@ -197,13 +206,14 @@ freeze-release rule requirements cannot be met.
 
 | Task | Status | Output |
 | --- | --- | --- |
-| Read freeze-release rule | PENDING | Confirm required packet components. |
-| Read surface + owner map | PENDING | Confirm scope. |
-| Produce freeze-release packet | PENDING | `docs/governance/CVF_FREEZE_RELEASE_PACKET_M2_*` |
-| Update owner map | PENDING | `freeze_released: true` entry. |
-| TypeScript check | PENDING | PASS. |
-| Completion review | PENDING | `docs/reviews/CVF_M2_*_COMPLETION_2026-05-24.md` |
-| Unblock M1 | PENDING | M1 work order status → `WORK_ORDER_READY`. |
+| Read freeze-release rule | DONE | Required five conditions recorded. |
+| Read surface + owner map | DONE | Scope confirmed as one memory tier model owner row. |
+| Produce freeze-release packet | DONE | `docs/reviews/CVF_FREEZE_RELEASE_PACKET_M2_MEMORY_TIER_2026-05-24.md` |
+| File reviewer rebuttal | DONE | `docs/reviews/CVF_GC019_M2_D06_MEMORY_TIER_FREEZE_RELEASE_REBUTTAL_2026-05-24.md` |
+| Update owner map | DONE | `freeze_released: true` entry recorded in owner-map row. |
+| TypeScript check | DONE | PASS recorded in completion review. |
+| Completion review | DONE | `docs/reviews/CVF_M2_D06_MEMORY_TIER_FREEZE_RELEASE_COMPLETION_2026-05-24.md` |
+| Unblock M1 | DONE | M1 work order status → `WORK_ORDER_READY`. |
 
 ---
 

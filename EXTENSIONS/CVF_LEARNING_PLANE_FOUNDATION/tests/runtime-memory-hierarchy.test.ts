@@ -175,7 +175,7 @@ describe("runtime memory hierarchy", () => {
     });
   });
 
-  it("keeps long-term and organizational memory as policy-map-only surfaces", () => {
+  it("allows M1 long-term memory while keeping organizational memory policy-map-only", () => {
     const longTerm = evaluateRuntimeMemoryAction({
       tier: "long-term",
       action: "write",
@@ -188,8 +188,9 @@ describe("runtime memory hierarchy", () => {
     });
 
     expect(longTerm).toMatchObject({
-      decision: "denied",
-      reason: "long-term_memory_action_not_authorized",
+      decision: "allowed",
+      reason: "runtime_memory_action_authorized",
+      durablePersistenceAllowed: true,
       persistentStoreCreated: false,
       newMemoryTierCreated: false,
     });

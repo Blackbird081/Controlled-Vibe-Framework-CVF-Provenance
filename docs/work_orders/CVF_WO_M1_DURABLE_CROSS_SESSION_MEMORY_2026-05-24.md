@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DEMAND_GATED
+Status: CLOSED_PASS
 
 docType: work_order
 
@@ -16,12 +16,19 @@ Roadmap: `docs/roadmaps/CVF_M1_M2_P1_NEXT_VALUE_ROADMAP_2026-05-24.md`
 
 ## STOP — Demand Gate
 
-This work order is `DEMAND_GATED`. Do not begin implementation until M2
+This work order was `DEMAND_GATED`. Do not begin implementation until M2
 (`docs/work_orders/CVF_WO_M2_D06_MEMORY_TIER_FREEZE_RELEASE_2026-05-24.md`)
 has status `CLOSED_PASS`.
 
 Verify M2 status before proceeding. If M2 is not `CLOSED_PASS`, stop here and
 return to operator.
+
+M2 status verified on 2026-05-24:
+
+- `docs/reviews/CVF_M2_D06_MEMORY_TIER_FREEZE_RELEASE_COMPLETION_2026-05-24.md`
+  is `CLOSED_PASS`.
+- Owner map records `freeze_released: true` for the memory tier classifier
+  surface.
 
 ---
 
@@ -52,7 +59,7 @@ Target surfaces:
 - `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts`
 - `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-lifecycle-policy.ts`
 - `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-retrieval-policy.ts`
-- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/memory/runtime-memory-hierarchy.ts`
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/runtime-memory-hierarchy.ts`
 - New: durable store implementation file(s) (Codex to name per convention)
 
 Out of scope:
@@ -88,7 +95,7 @@ Out of scope:
 - `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts`
 - `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-lifecycle-policy.ts`
 - `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-retrieval-policy.ts`
-- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/memory/runtime-memory-hierarchy.ts`
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/runtime-memory-hierarchy.ts`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/aif-memory-reinjection.ts`
 - M2 completion review (read before design to confirm what was actually unfrozen)
 
@@ -239,16 +246,16 @@ beyond skill and long-term.
 
 | Task | Status | Output |
 | --- | --- | --- |
-| M2 pre-flight check | PENDING | Confirm CLOSED_PASS. |
-| Legacy spec read | PENDING | Notes filed in completion review. |
-| Durable store implementation | PENDING | New file(s) in LPF. |
-| Write path + privacy filters | PENDING | Tested. |
-| Read path + receipt | PENDING | Tested. |
-| AIF C2 reinjection proof | PENDING | Live receipt. |
-| `canReinject=false` test | PENDING | PASS. |
-| TypeScript check | PENDING | PASS. |
-| Release gate | PENDING | PASS. |
-| Completion review | PENDING | Filed. |
+| M2 pre-flight check | DONE | M2 completion review confirmed CLOSED_PASS. |
+| Legacy spec read | DONE | Notes filed in completion review. |
+| Durable store implementation | DONE | `src/durable-memory-store.ts`. |
+| Write path + privacy filters | DONE | Tested in `durable-memory-store.test.ts`. |
+| Read path + receipt | DONE | Tested in `durable-memory-store.test.ts`. |
+| AIF C2 reinjection proof | DONE | Live receipt `rcpt-env-mpjb6x9o-552qp0`. |
+| `canReinject=false` test | DONE | PASS in runtime hierarchy + durable store tests. |
+| TypeScript check | DONE | LPF and cvf-web checks PASS. |
+| Release gate | DONE | PASS recorded in roadmap closure. |
+| Completion review | DONE | `docs/reviews/CVF_M1_DURABLE_CROSS_SESSION_MEMORY_COMPLETION_2026-05-24.md`. |
 
 ---
 

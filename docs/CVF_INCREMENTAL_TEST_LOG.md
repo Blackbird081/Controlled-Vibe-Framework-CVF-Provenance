@@ -93,6 +93,48 @@ Template:
   - Default parallel LPF Vitest exited non-zero without visible failing tests; single-worker forked full run passed and is the recorded full LPF proof.
   - Initial full release gate exposed stale Playwright selectors; O4 hardening updated tests only and preserved live governance assertions.
 
+## [2026-05-24] Batch: M1/M2/P1 Next-Value Roadmap Closure
+- Change reference:
+  - Roadmap:
+    `docs/roadmaps/CVF_M1_M2_P1_NEXT_VALUE_ROADMAP_2026-05-24.md`
+  - M2 completion:
+    `docs/reviews/CVF_M2_D06_MEMORY_TIER_FREEZE_RELEASE_COMPLETION_2026-05-24.md`
+  - M1 completion:
+    `docs/reviews/CVF_M1_DURABLE_CROSS_SESSION_MEMORY_COMPLETION_2026-05-24.md`
+  - P1 completion:
+    `docs/reviews/CVF_P1_PRODUCTION_READINESS_SMALL_TEAM_COMPLETION_2026-05-24.md`
+- Impacted scope:
+  - `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION` durable memory store and runtime
+    memory hierarchy.
+  - `scripts/run_cvf_m1_durable_memory_live_probe.mjs`.
+  - `scripts/run_cvf_p1_noncoder_e2e_probe.mjs`.
+  - Public-safe guide/catalog docs.
+- Tests/proofs executed:
+  - `npm test -- durable-memory-store.test.ts runtime-memory-hierarchy.test.ts`
+    in `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION` -> PASS, 2 files / 16 tests.
+  - `npm run check` in `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION` -> PASS.
+  - `npm run check` in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` -> PASS.
+  - `node --check scripts/run_cvf_m1_durable_memory_live_probe.mjs` -> PASS.
+  - `node --check scripts/run_cvf_p1_noncoder_e2e_probe.mjs` -> PASS.
+  - `node scripts/run_cvf_m1_durable_memory_live_probe.mjs` -> PASS, live
+    receipt `rcpt-env-mpjb6x9o-552qp0`, trace `env-mpjb6x9o-552qp0`.
+  - `node scripts/run_cvf_p1_noncoder_e2e_probe.mjs` -> PASS, hosted live
+    receipt `rcpt-env-mpjb7f0k-ruyeo3`, trace `env-mpjb7f0k-ruyeo3`.
+  - Public-sync `Test-Path` for
+    `docs/guides/CVF_NON_CODER_SETUP_GUIDE_2026-05-24.md` and
+    `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md` -> PASS.
+  - `python scripts/run_cvf_release_gate_bundle.py --json` -> PASS.
+- Skip scope:
+  - Full LPF suite is not used as closure evidence because `npm test` exits
+    non-zero despite listed files passing; targeted impacted coverage and
+    TypeScript check are the recorded LPF proof.
+- Notes/Risks:
+  - M2 released one kernel surface only: the memory tier classifier contract.
+  - M1 persists only existing `skill` and `long-term` tiers; `canReinject=false`
+    remains binding.
+  - P1 proves a bounded small-team/non-coder path only, not enterprise SaaS or
+    broad production readiness.
+
 ## [2026-05-23] Batch: D3 Qwen3 Provider Expansion Blocker
 - Change reference:
   - D3 working tree after `d6989c15` authorization.

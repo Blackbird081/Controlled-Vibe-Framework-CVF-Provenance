@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: WORK_ORDER_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -43,6 +43,8 @@ Target surfaces:
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/` — web UI onboarding path.
 - `docs/guides/` — minimum setup documentation.
 - Public catalog (public-sync): `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`
+- Public-safe guide/evidence page in public-sync:
+  `docs/guides/CVF_NON_CODER_SETUP_GUIDE_2026-05-24.md`
 
 Out of scope:
 
@@ -111,7 +113,7 @@ Allowed:
 - End-to-end proof call: non-coder persona → template → `/api/execute` →
   receipt, using approved local provider keys.
 - Public catalog row update: small-team production readiness claim with
-  evidence path.
+  verified public-safe guide/evidence path.
 
 Forbidden:
 
@@ -141,7 +143,9 @@ Forbidden:
    - `rawSecretPrinted=false` enforced.
 6. Update public catalog in public-sync clone:
    a. Add or update row for small-team production readiness claim.
-   b. Evidence path must point to the completion review.
+   b. Evidence path must point to a public-safe guide/evidence artifact in
+      public-sync, not to private `docs/reviews/`, `docs/baselines/`, or
+      `docs/roadmaps/` artifacts.
    c. Run Test-Path on every new or modified path from public-sync clone.
 7. File completion review at:
    `docs/reviews/CVF_P1_PRODUCTION_READINESS_SMALL_TEAM_COMPLETION_2026-05-24.md`
@@ -171,6 +175,8 @@ The proof must work for this persona.
 - End-to-end proof: live receipt, HTTP 200, `success=true`, `evidenceMode=live`,
   `rawSecretPrinted=false`.
 - Public catalog: updated row with verified evidence path.
+- Public evidence path: verified in public-sync and contains no internal
+  receipt payload, service-token header, or private review content.
 - Completion review: filed.
 
 ---
@@ -236,12 +242,12 @@ verification, or friction point analysis cannot identify a viable non-coder path
 
 | Task | Status | Output |
 | --- | --- | --- |
-| Persona journey map | PENDING | Analysis in completion review. |
-| Minimum setup doc | PENDING | `docs/guides/CVF_NON_CODER_SETUP_GUIDE_2026-05-24.md` |
-| Friction point analysis | PENDING | Top-3 with close/defer status. |
-| End-to-end proof | PENDING | Live receipt, `rawSecretPrinted=false`. |
-| Public catalog update | PENDING | Bounded row with verified evidence path. |
-| Completion review | PENDING | `docs/reviews/CVF_P1_*_COMPLETION_2026-05-24.md` |
+| Persona journey map | DONE | Analysis in completion review. |
+| Minimum setup doc | DONE | `docs/guides/CVF_NON_CODER_SETUP_GUIDE_2026-05-24.md` |
+| Friction point analysis | DONE | Top-3 with close/defer status. |
+| End-to-end proof | DONE | Live receipt `rcpt-env-mpjb7f0k-ruyeo3`, `rawSecretPrinted=false`. |
+| Public catalog update | DONE | Bounded row with verified public-safe guide path. |
+| Completion review | DONE | `docs/reviews/CVF_P1_PRODUCTION_READINESS_SMALL_TEAM_COMPLETION_2026-05-24.md` |
 
 ---
 

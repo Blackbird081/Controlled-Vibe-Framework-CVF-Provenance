@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: OPEN
+Status: CLOSED_PASS
 
 docType: baseline
 
@@ -91,7 +91,8 @@ entry for this surface to `freeze_released`, and file the governance review.
 
 Required evidence before this baseline is closed:
 
-- Freeze-release packet filed at `docs/governance/` per freeze-release rule.
+- Freeze-release packet filed at `docs/reviews/` per the active docs taxonomy
+  and freeze-release rule.
 - Owner map entry for `memory-tier-classifier.contract.ts` updated with
   `freeze_released: true` status and date.
 - TypeScript check PASS on any modified files.
@@ -110,4 +111,4 @@ any other kernel surface modification.
 
 ## Disposition
 
-Open. Closed by work order completion review.
+Closed by `docs/reviews/CVF_M2_D06_MEMORY_TIER_FREEZE_RELEASE_COMPLETION_2026-05-24.md`.
