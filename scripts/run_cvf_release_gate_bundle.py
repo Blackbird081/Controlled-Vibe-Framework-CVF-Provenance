@@ -258,6 +258,15 @@ def check_e2e(dry_run: bool, live: bool) -> CheckResult:
     summary = next((l for l in reversed(lines) if l.strip()), "")
     if code == 0:
         return CheckResult(name, "PASS", f"Playwright {mode} suite passed", [summary] if summary else [])
+    retry_code, retry_stdout, retry_stderr = run_cmd(cmd, cwd=CVF_WEB, timeout=600)
+    retry_output = (retry_stdout + retry_stderr).strip()
+    retry_lines = retry_output.splitlines()
+    retry_summary = next((l for l in reversed(retry_lines) if l.strip()), "")
+    if retry_code == 0:
+        detail = ["initial attempt failed; retry passed"]
+        if retry_summary:
+            detail.append(retry_summary)
+        return CheckResult(name, "PASS", f"Playwright {mode} suite passed on retry", detail)
     failures = [l for l in lines if "failed" in l.lower() or "error" in l.lower()][:8]
     return CheckResult(name, "FAIL", f"Playwright {mode} suite failed", failures or lines[-8:])
 

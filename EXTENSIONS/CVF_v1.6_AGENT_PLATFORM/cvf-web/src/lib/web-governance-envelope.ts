@@ -1,4 +1,5 @@
 import type { GovernanceEvidenceReceipt } from '@/lib/ai';
+import type { AifMemoryReinjectionReceipt } from '@/lib/aif-memory-reinjection';
 
 /**
  * Web Governance Envelope — CVF W112-T1 (CP7)
@@ -73,6 +74,7 @@ export interface BuildGovernanceEvidenceReceiptInput {
     knowledgeChunkCount?: number;
     approvalId?: string;
     validationHint?: string;
+    aifMemoryReinjection?: AifMemoryReinjectionReceipt;
 }
 
 /**
@@ -119,6 +121,7 @@ export function buildEvidenceReceipt(
         knowledgeChunkCount: input.knowledgeChunkCount,
         approvalId: input.approvalId,
         validationHint: input.validationHint,
+        aifMemoryReinjection: input.aifMemoryReinjection,
         generatedAt: input.envelope.requestTimestamp,
     };
 }

@@ -36,6 +36,10 @@ Current HEAD before V12 transition:
 
 `069957a7` (docs(legacy): lock legacy spec absorption scan)
 
+Current mode marker:
+
+`post_aif_claim_graduation_c1_c5_closed_pass_bounded`
+
 ---
 
 ## Purpose
@@ -73,6 +77,36 @@ current.
 ---
 
 ## Latest Work / Changes
+
+### 2026-05-24 - Post-AIF Claim Graduation C2-C5 Closed Pass Bounded
+
+Operator directed Codex to process C2-C5 to pass. Fresh combined GC-018 and
+work order were issued, implemented, verified, and closed:
+
+Commit: `1dae79b4` (feat(post-aif): close c2-c5 claim gates)
+
+- GC-018:
+  `docs/baselines/CVF_GC018_C2_C5_POST_AIF_CLAIM_GRADUATION_2026-05-24.md`
+- Work order:
+  `docs/work_orders/CVF_WO_C2_C5_POST_AIF_CLAIM_GRADUATION_2026-05-24.md`
+- Completion review:
+  `docs/reviews/CVF_C2_C5_POST_AIF_CLAIM_GRADUATION_COMPLETION_2026-05-24.md`
+- Evidence:
+  `docs/reviews/CVF_C2_C5_POST_AIF_CLAIM_GRADUATION_EVIDENCE_2026-05-24.json`
+
+Closed bounded claims:
+
+| Claim | Status | Evidence |
+| --- | --- | --- |
+| C2 live memory reinjection | `CLOSED_PASS_BOUNDED` | route-level summary-only reinjection; live receipt `rcpt-env-mpj7szdm-oqmnn6`; memory id `c2-safe`; raw item excluded |
+| C3 graph authority | `CLOSED_PASS_BOUNDED` | LPF graph authority gate; policy-dominant advisory-only receipt; tests 5/5 |
+| C4 provider stability | `CLOSED_PASS_BOUNDED` | 6/6 live receipts across Alibaba, DeepSeek, OpenAI |
+| C5 hosted readiness smoke | `CLOSED_PASS_BOUNDED` | hosted signed `/api/execute` smoke receipt `rcpt-env-mpj7qxmc-c5c4nz`; release gate PASS |
+
+Boundary: no durable/cross-session memory, autonomous reinjection, graph
+approval authority, universal provider stability, full hosted SaaS/GA readiness,
+full production readiness, Maika proof, Alibaba R2 routing, broad Qwen3
+stability, or freeze release.
 
 ### 2026-05-23 - Legacy Spec Absorption Blindspot Audit Filed
 

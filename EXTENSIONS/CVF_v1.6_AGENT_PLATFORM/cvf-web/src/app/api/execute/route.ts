@@ -12,6 +12,8 @@ import { validateOutput, shouldRetry, type ValidationResult, type RetryState } f
 import { routeWebProvider } from '@/lib/ai/provider-router-adapter';
 import { lookupGuidedResponse } from './guided.response.registry';
 import { buildKnowledgeSystemPrompt, hasKnowledgeContext } from '@/lib/knowledge-context-injector';
+import { buildAifMemoryReinjectionSystemPrompt, evaluateAifMemoryReinjection } from '@/lib/aif-memory-reinjection';
+import { appendAifMemoryReinjectionAudit, buildAifMemoryReinjectionDeniedResponse } from '@/lib/aif-memory-reinjection-route';
 import { buildExecutionPrompt } from '@/lib/execute-prompt-contract';
 import { emitExecutionTelemetry, resolveTokenUsage } from '@/lib/execute-telemetry';
 import { checkTeamQuota } from '@/lib/quota-guard';
@@ -26,31 +28,14 @@ import { hasValidationRetryBudget, resolveExecutionMaxTokens } from '@/lib/execu
 import { recordReportableDecisionObserved } from '@/lib/false-positive-report';
 import { buildPhase2CProductBriefSliceForRoute } from '@/lib/phase2c-product-brief-slice';
 import { buildPhase3EOperationalMetricsForRoute } from '@/lib/phase3e-operational-emission';
-import {
-    buildWorkflowExecutionProjection,
-    resolveWorkflowBindingForExecution,
-} from '@/lib/workflows/workflow-resolver';
+import { buildWorkflowExecutionProjection, resolveWorkflowBindingForExecution } from '@/lib/workflows/workflow-resolver';
 import { buildRouteAuditMemoryCapture } from '@/lib/audit-memory-receipt';
-import {
-    buildRoleOutputDeniedResponse,
-    buildRolePermissionDeniedResponse,
-} from '@/lib/execute-role-permission-gate';
+import { buildRoleOutputDeniedResponse, buildRolePermissionDeniedResponse } from '@/lib/execute-role-permission-gate';
 import { buildExecutionIdentityDecision } from '@/lib/execution-identity';
 import { evaluateExecutionActorRoleGate, resolveExecutionCVFRole, resolveExecutionOutputClass } from '@/lib/execute-role-resolver';
-import {
-    buildOutputBypassGuardResult,
-    checkRoleOutputPermission,
-    detectBypassInOutput,
-    resolveGuardAction,
-    shouldRequireSkillPreflight,
-} from '@/lib/execute-route-guards';
+import { buildOutputBypassGuardResult, checkRoleOutputPermission, detectBypassInOutput, resolveGuardAction, shouldRequireSkillPreflight } from '@/lib/execute-route-guards';
 import { getApprovalStore, type ApprovalRequestRecord } from '../approvals/store';
-import {
-    approvalRecordMatchesActor,
-    buildApprovalActorBinding,
-    buildApprovalRequestSnapshot,
-    computeApprovalRequestHash,
-} from '../approvals/approval-binding';
+import { approvalRecordMatchesActor, buildApprovalActorBinding, buildApprovalRequestSnapshot, computeApprovalRequestHash } from '../approvals/approval-binding';
 import { executeVisionRouteRequest, prepareVisionRouteRequest } from './vision-route-helper';
 
 export async function POST(request: NextRequest) {
@@ -655,12 +640,21 @@ export async function POST(request: NextRequest) {
                 : null;
         const knowledgeInjected = hasKnowledgeContext(finalKnowledgeContext);
         const knowledgeSource = knowledgeInjected ? 'retrieval' : 'none';
-        const enrichedSystemPrompt = knowledgeInjected
-            ? buildKnowledgeSystemPrompt(CVF_SYSTEM_PROMPT, finalKnowledgeContext, {
-                orgId: session?.orgId,
-                teamId: session?.teamId,
-            })
-            : undefined;
+        const knowledgeSystemPrompt = knowledgeInjected
+            ? buildKnowledgeSystemPrompt(CVF_SYSTEM_PROMPT, finalKnowledgeContext, { orgId: session?.orgId, teamId: session?.teamId })
+            : CVF_SYSTEM_PROMPT;
+        const aifMemoryReinjection = evaluateAifMemoryReinjection(body.aifMemoryReinjection);
+        await appendAifMemoryReinjectionAudit({ decision: aifMemoryReinjection, request: body, session });
+
+        if (aifMemoryReinjection.status === 'denied') {
+            return buildAifMemoryReinjectionDeniedResponse({ decision: aifMemoryReinjection, envelope: govEnvelope, enforcement, guardResult, provider: routedProvider, routingResult, knowledgeSource, knowledgeInjected, knowledgeCollectionId: requestedKnowledgeCollectionId, knowledgeChunkCount: retrievalResult.allowedChunkCount });
+        }
+
+        const enrichedSystemPrompt = aifMemoryReinjection.promptBlock
+            ? buildAifMemoryReinjectionSystemPrompt(knowledgeSystemPrompt, aifMemoryReinjection.promptBlock)
+            : knowledgeInjected
+                ? knowledgeSystemPrompt
+                : undefined;
 
         if (retrievalResult.droppedChunkCount > 0) {
             await appendAuditEvent({
@@ -704,6 +698,7 @@ export async function POST(request: NextRequest) {
                         knowledgeInjected,
                         knowledgeCollectionId: requestedKnowledgeCollectionId,
                         knowledgeChunkCount: retrievalResult.allowedChunkCount,
+                        aifMemoryReinjection: aifMemoryReinjection.receipt,
                     }),
                 },
                 { status: 400 }
@@ -745,6 +740,7 @@ export async function POST(request: NextRequest) {
                 aiResult = await executeAI(routedProvider, routedApiKey, retryPrompt, {
                     model: body.model,
                     maxTokens: executionMaxTokens,
+                    ...(enrichedSystemPrompt ? { systemPrompt: enrichedSystemPrompt } : {}),
                 });
                 if (!aiResult.success) break;
 
@@ -804,6 +800,7 @@ export async function POST(request: NextRequest) {
                         knowledgeChunkCount: retrievalResult.allowedChunkCount,
                         approvalId: approvedRequestRecord?.id,
                         validationHint: outputValidation.qualityHint,
+                        aifMemoryReinjection: aifMemoryReinjection.receipt,
                     }),
                 },
                 { status: 422 },
@@ -862,6 +859,7 @@ export async function POST(request: NextRequest) {
             knowledgeChunkCount: retrievalResult.allowedChunkCount,
             approvalId: approvedRequestRecord?.id,
             validationHint: outputValidation?.qualityHint,
+            aifMemoryReinjection: aifMemoryReinjection.receipt,
         });
         if (isVisionExecution) governanceEvidenceReceipt.vision = true;
         const workflowExecution = aiResult.success && workflowBinding
@@ -969,6 +967,7 @@ export async function POST(request: NextRequest) {
                 collectionId: requestedKnowledgeCollectionId,
                 allowedCollectionIds: retrievalResult.allowedCollectionIds,
             },
+            aifMemoryReinjection: aifMemoryReinjection.receipt,
             outputValidation: outputValidation ? {
                 qualityHint: outputValidation.qualityHint,
                 issues: outputValidation.issues,

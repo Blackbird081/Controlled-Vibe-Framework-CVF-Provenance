@@ -2170,3 +2170,39 @@ Utility and guard:
   - Live memory reinjection, graph authority, broad provider stability, hosted
     readiness, production readiness, and freeze release remain gated by fresh
     GC-018/work orders.
+
+---
+## [2026-05-24] Batch: Post-AIF Claim Graduation C2-C5
+
+- Change reference:
+  - C2-C5 GC-018:
+    `docs/baselines/CVF_GC018_C2_C5_POST_AIF_CLAIM_GRADUATION_2026-05-24.md`
+  - C2-C5 work order:
+    `docs/work_orders/CVF_WO_C2_C5_POST_AIF_CLAIM_GRADUATION_2026-05-24.md`
+  - C2-C5 completion review:
+    `docs/reviews/CVF_C2_C5_POST_AIF_CLAIM_GRADUATION_COMPLETION_2026-05-24.md`
+  - Evidence JSON:
+    `docs/reviews/CVF_C2_C5_POST_AIF_CLAIM_GRADUATION_EVIDENCE_2026-05-24.json`
+- Tests/proofs executed:
+  - `npm run test:run -- src/lib/aif-memory-reinjection.test.ts src/app/api/execute/route.knowledge.test.ts`
+    in `cvf-web` -> PASS, 2 files / 12 tests.
+  - `npm test -- graph-authority-gate.test.ts` in LPF -> PASS, 1 file /
+    5 tests.
+  - `npm run check` in LPF -> PASS.
+  - `npm run check` in `cvf-web` -> PASS.
+  - `node scripts/run_cvf_c2_memory_reinjection_live_probe.mjs` -> PASS,
+    live receipt `rcpt-env-mpj7szdm-oqmnn6`, memory id `c2-safe`.
+  - `node scripts/run_post_phase2b_provider_stability_probe.mjs` with
+    Alibaba/DeepSeek/OpenAI and repeats=2 -> PASS 6/6.
+  - `node scripts/run_cvf_hosted_readiness_probe.mjs` -> PASS, hosted receipt
+    `rcpt-env-mpj7qxmc-c5c4nz`.
+  - `python scripts/run_cvf_release_gate_bundle.py --json` -> PASS.
+- Depth classification:
+  - T1/T2 implementation and live governance proof for C2-C5 bounded claims.
+- Notes/Risks:
+  - C2 does not prove durable/cross-session or autonomous memory.
+  - C3 does not grant graph approval authority or policy bypass.
+  - C4 is a bounded tri-provider repeatability window, not universal provider
+    stability.
+  - C5 is a hosted protected-workflow smoke, not full hosted SaaS/GA or
+    production readiness.

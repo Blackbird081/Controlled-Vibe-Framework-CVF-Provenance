@@ -73,7 +73,7 @@ current.
 
 ## Current Session Mode
 
-- Current mode: `post_aif_claim_graduation_c1_closed_pass`
+- Current mode: `post_aif_claim_graduation_c1_c5_closed_pass_bounded`
 - Previous mode: `post_aif_next_value_closed_pass`
 - Freeze posture: `governance_kernel_freeze_recommended`
 - Active handoff pointer: `AGENT_HANDOFF_V12_2026-05-23.md`
@@ -103,7 +103,45 @@ D9 Qwen3 thinking enable-true adapter returned blocked at `docs/reviews/CVF_D9_Q
 
 D10 Qwen3 R1-compatible hosted proof is closed pass at `docs/reviews/CVF_D10_QWEN3_R1_COMPATIBLE_HOSTED_PROOF_COMPLETION_2026-05-23.md`: active mode marker `d10_qwen3_r1_compatible_hosted_proof_closed_pass`; focused providers test PASS `42/42`, `cvf-web` check PASS, local router preflight for Alibaba `R1` returned `ALLOW`, and the single hosted call returned HTTP `200`, `success=true`, `decision=ALLOW`, `routingDecision=ALLOW`, `enforcementStatus=ALLOW`, `evidenceMode=live`, provider `alibaba`, model `qwen3-235b-a22b-thinking-2507`, receipt `rcpt-env-mpigxtmn-pml5ky`, trace `env-mpigxtmn-pml5ky`, output length `4057`, `rawSecretPrinted=false`. Public repo contains the adapter fix at commit `811e59f6`.
 
-Current mode marker: `post_aif_claim_graduation_c1_closed_pass`.
+Current mode marker: `post_aif_claim_graduation_c1_c5_closed_pass_bounded`.
+
+## Post-AIF Claim Graduation C2-C5 — Closed 2026-05-24
+
+Roadmap:
+
+- `docs/roadmaps/CVF_POST_AIF_CLAIM_GRADUATION_ROADMAP_2026-05-24.md`
+
+Closure artifacts:
+
+- GC-018: `docs/baselines/CVF_GC018_C2_C5_POST_AIF_CLAIM_GRADUATION_2026-05-24.md`
+- Work order: `docs/work_orders/CVF_WO_C2_C5_POST_AIF_CLAIM_GRADUATION_2026-05-24.md`
+- Completion review: `docs/reviews/CVF_C2_C5_POST_AIF_CLAIM_GRADUATION_COMPLETION_2026-05-24.md`
+- Evidence JSON: `docs/reviews/CVF_C2_C5_POST_AIF_CLAIM_GRADUATION_EVIDENCE_2026-05-24.json`
+
+C2 closed bounded live summary-memory reinjection on `/api/execute`: route-level
+opt-in, policy gate, summary-only prompt block, receipt field, negative tests
+for unauthorized/secret/disputed/raw memory, and one live Alibaba receipt
+`rcpt-env-mpj7szdm-oqmnn6` / trace `env-mpj7szdm-oqmnn6` proving
+`memoryIds=["c2-safe"]`.
+
+C3 closed bounded graph context authority: LPF graph authority gate emits
+policy-dominant advisory-only receipts; tests prove a governance `BLOCK`
+cannot be bypassed by high-confidence graph evidence.
+
+C4 closed bounded tri-provider repeatability window: 6/6 live governed
+`/api/execute` journeys across Alibaba `qwen-turbo`, DeepSeek `deepseek-chat`,
+and OpenAI `gpt-4o`, with cooldown and live receipts.
+
+C5 closed bounded hosted protected-workflow smoke:
+`https://vibcode.netlify.app/api/execute` returned HTTP 200, live receipt
+`rcpt-env-mpj7qxmc-c5c4nz`, trace `env-mpj7qxmc-c5c4nz`, provider Alibaba
+`qwen-turbo`, and release gate PASS.
+
+Allowed claims remain bounded. Do not claim durable/cross-session memory,
+autonomous reinjection, graph approval authority or policy bypass, universal
+provider stability, full hosted SaaS/GA readiness, full production readiness,
+Maika proof, Alibaba R2 routing, broad Qwen3 stability, or freeze release
+without a new roadmap and fresh proof.
 
 ## Legacy Spec Absorption Blindspot Audit — 2026-05-23
 

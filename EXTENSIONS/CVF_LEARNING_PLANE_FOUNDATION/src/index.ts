@@ -94,6 +94,18 @@ export type {
   TaskQuery,
   TaskQueryType,
 } from "./context_builder/graph/task-query-mapper";
+export {
+  GRAPH_AUTHORITY_GATE_VERSION,
+  evaluateGraphAuthorityGate,
+} from "./knowledge/graph/authority/graph-authority-gate";
+export type {
+  GraphAuthorityDecision,
+  GraphAuthorityGateInput,
+  GraphAuthorityGateResult,
+  GraphAuthorityPolicyDecision,
+  GraphAuthorityReceipt,
+  GraphAuthorityThresholds,
+} from "./knowledge/graph/authority/graph-authority-gate";
 
 // W4-T8 — Evaluation Engine Consumer Pipeline Bridge (CP1)
 export {

@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: ACTIVE_C1_CLOSED_C2_C5_NEXT_TRANCHE_REQUIRED
+Status: CLOSED_C1_C5_PASS_BOUNDED
 
 docType: roadmap
 
@@ -28,8 +28,8 @@ Decision:
 - C1 public runtime availability for the preview harness is feasible now and is
   CLOSED_PASS.
 - C2 live memory reinjection, C3 graph authority, C4 broad provider stability,
-  and C5 hosted/production readiness are not safe to claim from the current
-  evidence and must proceed through fresh GC-018 work orders.
+  and C5 hosted/production readiness proceeded through a fresh C2-C5 GC-018
+  and are now CLOSED_PASS_BOUNDED.
 
 ---
 
@@ -53,13 +53,13 @@ In scope:
 - Close C1 through public-sync code availability and tests.
 - Define exact pass conditions for C2-C5.
 
-Out of scope until their own fresh GC-018:
+Out of scope beyond the bounded C2-C5 completion evidence:
 
-- live `/api/execute` memory reinjection;
-- graph-governed approval authority;
-- broad provider stability certification;
-- hosted SaaS readiness;
-- production readiness.
+- durable or autonomous memory reinjection;
+- graph-governed approval authority or policy bypass;
+- universal provider stability certification;
+- hosted SaaS/GA readiness;
+- full production readiness.
 
 ---
 
@@ -74,11 +74,12 @@ claim. Runtime and ops claims require live proof.
 
 | Role | Responsibility | Disposition |
 | --- | --- | --- |
-| Planner | Split feasible public code availability from runtime/ops claims. | CLOSED for C1, staged for C2-C5. |
-| Governance Reviewer | Preserve no-overclaim boundaries. | CLOSED for C1. |
+| Planner | Split feasible public code availability from runtime/ops claims. | CLOSED for C1-C5. |
+| Governance Reviewer | Preserve no-overclaim boundaries. | CLOSED for C1-C5. |
 | Implementer | Publish C1 public-sync code. | CLOSED_PASS. |
-| QA | Verify C1 public-sync LPF tests and TypeScript. | CLOSED_PASS. |
-| Release Manager | Commit public-sync and record provenance. | CLOSED_PASS. |
+| Implementer | Implement C2-C5 runtime/probe contracts in private provenance. | CLOSED_PASS_BOUNDED. |
+| QA | Verify C1 public-sync and C2-C5 private runtime/probe evidence. | CLOSED_PASS. |
+| Release Manager | Commit public-sync/provenance and record evidence. | CLOSED_PASS. |
 
 ---
 
@@ -87,10 +88,10 @@ claim. Runtime and ops claims require live proof.
 | Tranche | Claim target | Status | Required pass condition |
 | --- | --- | --- | --- |
 | C1 | Public runtime availability for preview harness | `CLOSED_PASS` | Public-sync code, exports, targeted test, TypeScript check, full LPF suite, public-safe catalog/evidence. |
-| C2 | Live memory reinjection | `NEXT_TRANCHE_REQUIRED` | Fresh GC-018; route-level opt-in; policy gate; summary-only prompt injection; receipt field proving injected memory ids; live provider E2E; negative tests for unauthorized/secret/disputed memory. |
-| C3 | Graph authority | `NEXT_TRANCHE_REQUIRED` | Fresh GC-018; authority model separating advisory graph evidence from governance decision; scoring thresholds; audit receipts; deny/allow tests; proof graph cannot bypass policy. |
-| C4 | Broad provider stability | `NEXT_TRANCHE_REQUIRED` | Fresh GC-018; preregistered tri-provider matrix; minimum sample window and cooldown; live receipts across Alibaba, DeepSeek, OpenAI; failure classification; release-gate PASS. |
-| C5 | Hosted/production readiness | `NEXT_TRANCHE_REQUIRED` | Fresh GC-018; hosted environment checklist; secrets/keys/observability; live hosted smoke; rollback and incident packet; security/release gate; public claim packet. |
+| C2 | Live memory reinjection | `CLOSED_PASS_BOUNDED` | Fresh GC-018; route-level opt-in; policy gate; summary-only prompt injection; receipt field proving injected memory ids; live provider E2E; negative tests for unauthorized/secret/disputed memory. |
+| C3 | Graph authority | `CLOSED_PASS_BOUNDED` | Fresh GC-018; authority model separating advisory graph evidence from governance decision; scoring thresholds; audit receipts; deny/allow tests; proof graph cannot bypass policy. |
+| C4 | Broad provider stability | `CLOSED_PASS_BOUNDED` | Fresh GC-018; preregistered tri-provider matrix; minimum sample window and cooldown; live receipts across Alibaba, DeepSeek, OpenAI; failure classification; release-gate PASS. |
+| C5 | Hosted/production readiness | `CLOSED_PASS_BOUNDED` | Fresh GC-018; hosted environment checklist; secrets/keys/observability; live hosted smoke; rollback and incident packet; security/release gate; public claim packet. |
 
 ---
 
@@ -103,6 +104,10 @@ claim. Runtime and ops claims require live proof.
 - [x] C1: public-sync full LPF suite passed.
 - [x] C1: public-sync catalog/evidence updated and committed.
 - [x] C2-C5: pass conditions explicitly defined instead of silently claimed.
+- [x] C2: live memory reinjection proved with receipt memory id and negative tests.
+- [x] C3: graph authority gate proved policy-dominant and advisory-only.
+- [x] C4: bounded tri-provider repeatability window proved 6/6.
+- [x] C5: hosted protected-workflow smoke and release gate PASS.
 
 ---
 
@@ -111,10 +116,10 @@ claim. Runtime and ops claims require live proof.
 | Tranche | Status | Evidence |
 | --- | --- | --- |
 | C1 | `CLOSED_PASS` | `docs/reviews/CVF_C1_PUBLIC_AIF_PREVIEW_RUNTIME_AVAILABILITY_COMPLETION_2026-05-24.md`; public commit `ea889a46` |
-| C2 | `NEXT_TRANCHE_REQUIRED` | Fresh GC-018 required before implementation. |
-| C3 | `NEXT_TRANCHE_REQUIRED` | Fresh GC-018 required before implementation. |
-| C4 | `NEXT_TRANCHE_REQUIRED` | Fresh GC-018 required before live soak. |
-| C5 | `NEXT_TRANCHE_REQUIRED` | Fresh GC-018 required before hosted/production claim. |
+| C2 | `CLOSED_PASS_BOUNDED` | `docs/reviews/CVF_C2_C5_POST_AIF_CLAIM_GRADUATION_COMPLETION_2026-05-24.md`; receipt `rcpt-env-mpj7szdm-oqmnn6` |
+| C3 | `CLOSED_PASS_BOUNDED` | `docs/reviews/CVF_C2_C5_POST_AIF_CLAIM_GRADUATION_COMPLETION_2026-05-24.md`; LPF graph authority gate tests 5/5 |
+| C4 | `CLOSED_PASS_BOUNDED` | `docs/reviews/CVF_C2_C5_POST_AIF_CLAIM_GRADUATION_EVIDENCE_2026-05-24.json`; 6/6 tri-provider live receipts |
+| C5 | `CLOSED_PASS_BOUNDED` | `docs/reviews/CVF_C2_C5_POST_AIF_CLAIM_GRADUATION_COMPLETION_2026-05-24.md`; hosted receipt `rcpt-env-mpj7qxmc-c5c4nz`; release gate PASS |
 
 ---
 
@@ -127,6 +132,17 @@ C1 public-sync verification:
 - Full LPF public-sync suite: PASS, 48 files / 1516 tests.
 - Public-sync commit:
   `ea889a46 feat(lpf): publish aif context preview harness`.
+
+C2-C5 private provenance verification:
+
+- C2 helper/API tests: PASS, 2 files / 12 tests.
+- C2 live reinjection proof: PASS, receipt `rcpt-env-mpj7szdm-oqmnn6`.
+- C3 LPF graph authority test: PASS, 1 file / 5 tests.
+- LPF TypeScript check: PASS.
+- `cvf-web` TypeScript check: PASS.
+- C4 tri-provider probe: PASS, 6/6 across Alibaba, DeepSeek, and OpenAI.
+- C5 hosted smoke: PASS, hosted receipt `rcpt-env-mpj7qxmc-c5c4nz`.
+- Mandatory release gate: PASS.
 
 ---
 
@@ -147,30 +163,35 @@ C1 public-sync verification:
 - `docs/baselines/CVF_GC018_C1_PUBLIC_AIF_PREVIEW_RUNTIME_AVAILABILITY_2026-05-24.md`
 - `docs/work_orders/CVF_WO_C1_PUBLIC_AIF_PREVIEW_RUNTIME_AVAILABILITY_2026-05-24.md`
 - `docs/reviews/CVF_C1_PUBLIC_AIF_PREVIEW_RUNTIME_AVAILABILITY_COMPLETION_2026-05-24.md`
+- `docs/baselines/CVF_GC018_C2_C5_POST_AIF_CLAIM_GRADUATION_2026-05-24.md`
+- `docs/work_orders/CVF_WO_C2_C5_POST_AIF_CLAIM_GRADUATION_2026-05-24.md`
+- `docs/reviews/CVF_C2_C5_POST_AIF_CLAIM_GRADUATION_COMPLETION_2026-05-24.md`
+- `docs/reviews/CVF_C2_C5_POST_AIF_CLAIM_GRADUATION_EVIDENCE_2026-05-24.json`
 - `docs/reference/CVF_POST_AIF_OPERATIONAL_READINESS_MATRIX_2026-05-24.md`
 
 ---
 
 ## Decision / Recommendation / Disposition
 
-Disposition: C1 CLOSED_PASS; C2-C5 moved to explicit next-tranche gates.
+Disposition: C1 CLOSED_PASS; C2-C5 CLOSED_PASS_BOUNDED.
 
-Recommended next execution order:
-
-1. C4 bounded tri-provider stability window, because it can improve evidence
-   without changing runtime semantics.
-2. C2 live memory reinjection, only after a narrow opt-in route design is
-   accepted.
-3. C3 graph authority, only after C2 and a policy-dominance model exist.
-4. C5 hosted/production readiness, after runtime claims and provider stability
-   are stronger.
+Recommended next execution order: open a new roadmap for post-C2-C5 product
+hardening only if the operator wants durability, broader provider soak,
+production observability, or public-sync claim publication.
 
 ---
 
 ## Claim Boundary
 
-Allowed after C1: public-sync runtime availability of the local, summary-only
-AIF operational context preview harness.
+Allowed after C1-C5:
 
-Still not allowed: live memory reinjection, graph authority, broad provider
-stability, hosted readiness, production readiness, or freeze release.
+- public-sync runtime availability of the local, summary-only AIF operational
+  context preview harness;
+- bounded live route-level summary memory reinjection;
+- bounded advisory graph context authority under policy dominance;
+- bounded tri-provider repeatability window for the tested sample;
+- bounded hosted protected-workflow smoke readiness.
+
+Still not allowed: durable/cross-session memory, autonomous reinjection, graph
+approval authority or policy bypass, universal provider stability, full hosted
+SaaS/GA readiness, full production readiness, Maika proof, or freeze release.

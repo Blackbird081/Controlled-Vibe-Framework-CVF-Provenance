@@ -1,0 +1,140 @@
+{
+  "schemaVersion": "cvf-c2-c5-post-aif-claim-graduation-evidence-1",
+  "date": "2026-05-24",
+  "status": "PASS",
+  "c2MemoryReinjectionLive": {
+    "schemaVersion": "cvf-c2-memory-reinjection-live-result-1",
+    "status": "PASS",
+    "claimClass": "bounded_live_summary_memory_reinjection",
+    "httpStatus": 200,
+    "latencyMs": 9802,
+    "provider": "alibaba",
+    "model": "qwen-turbo",
+    "receiptId": "rcpt-env-mpj7szdm-oqmnn6",
+    "traceId": "env-mpj7szdm-oqmnn6",
+    "evidenceMode": "live",
+    "routeId": "/api/execute",
+    "memoryIds": ["c2-safe"],
+    "excluded": [
+      {
+        "id": "c2-raw-rejected",
+        "reason": "raw_memory_payload_rejected"
+      }
+    ],
+    "outputLength": 3266,
+    "failedAssertions": []
+  },
+  "c4ProviderStability": {
+    "schemaVersion": "post-phase2b-provider-stability-result-1",
+    "status": "PASS",
+    "claimClass": "bounded_tri_provider_repeatability_window",
+    "providersRequested": ["alibaba", "deepseek", "openai"],
+    "repeatsPerProvider": 2,
+    "interJourneyDelayMs": 1500,
+    "passCount": 6,
+    "failCount": 0,
+    "providersPassed": ["alibaba", "deepseek", "openai"],
+    "providersFailed": [],
+    "results": [
+      {
+        "provider": "alibaba",
+        "model": "qwen-turbo",
+        "journey": 1,
+        "status": "PASS",
+        "httpStatus": 200,
+        "latencyMs": 12009,
+        "receiptId": "rcpt-env-mpj7o9kb-j2zunf",
+        "traceId": "env-mpj7o9kb-j2zunf",
+        "outputLength": 3840
+      },
+      {
+        "provider": "alibaba",
+        "model": "qwen-turbo",
+        "journey": 2,
+        "status": "PASS",
+        "httpStatus": 200,
+        "latencyMs": 9345,
+        "receiptId": "rcpt-env-mpj7ojpc-ldcpqm",
+        "traceId": "env-mpj7ojpc-ldcpqm",
+        "outputLength": 4055
+      },
+      {
+        "provider": "deepseek",
+        "model": "deepseek-chat",
+        "journey": 1,
+        "status": "PASS",
+        "httpStatus": 200,
+        "latencyMs": 15397,
+        "receiptId": "rcpt-env-mpj7os32-ld34o7",
+        "traceId": "env-mpj7os32-ld34o7",
+        "outputLength": 6750
+      },
+      {
+        "provider": "deepseek",
+        "model": "deepseek-chat",
+        "journey": 2,
+        "status": "PASS",
+        "httpStatus": 200,
+        "latencyMs": 17283,
+        "receiptId": "rcpt-env-mpj7p54b-jv85hm",
+        "traceId": "env-mpj7p54b-jv85hm",
+        "outputLength": 7582
+      },
+      {
+        "provider": "openai",
+        "model": "gpt-4o",
+        "journey": 1,
+        "status": "PASS",
+        "httpStatus": 200,
+        "latencyMs": 6028,
+        "receiptId": "rcpt-env-mpj7pjmg-z7yyct",
+        "traceId": "env-mpj7pjmg-z7yyct",
+        "outputLength": 3512
+      },
+      {
+        "provider": "openai",
+        "model": "gpt-4o",
+        "journey": 2,
+        "status": "PASS",
+        "httpStatus": 200,
+        "latencyMs": 5031,
+        "receiptId": "rcpt-env-mpj7ppg7-wydtlc",
+        "traceId": "env-mpj7ppg7-wydtlc",
+        "outputLength": 2983
+      }
+    ]
+  },
+  "c5HostedReadinessSmoke": {
+    "schemaVersion": "cvf-hosted-readiness-smoke-result-1",
+    "status": "PASS",
+    "claimClass": "bounded_hosted_protected_workflow_readiness_smoke",
+    "target": "https://vibcode.netlify.app/api/execute",
+    "httpStatus": 200,
+    "latencyMs": 19557,
+    "receiptId": "rcpt-env-mpj7qxmc-c5c4nz",
+    "traceId": "env-mpj7qxmc-c5c4nz",
+    "policySnapshotId": "pol-20260524-0001",
+    "evidenceMode": "live",
+    "routeId": "/api/execute",
+    "provider": "alibaba",
+    "model": "qwen-turbo",
+    "decision": "ALLOW",
+    "routingDecision": "ALLOW",
+    "outputLength": 3500,
+    "failedAssertions": []
+  },
+  "releaseGate": {
+    "command": "python scripts/run_cvf_release_gate_bundle.py --json",
+    "gate_result": "PASS",
+    "checks": [
+      "Web build PASS",
+      "Guard contract TypeScript PASS",
+      "Provider readiness PASS - CERTIFIED lanes: 3",
+      "Secrets scan PASS",
+      "Docs governance PASS",
+      "E2E Playwright UI mock PASS",
+      "E2E Playwright Governance live PASS"
+    ]
+  },
+  "rawSecretPrinted": false
+}

@@ -1,6 +1,7 @@
 import type { EnforcementResult } from '@/lib/enforcement';
 import type { LaneStatus } from '@/lib/provider-lane-status';
 import type { WorkflowCompositionSummary } from '@/lib/workflow-composition';
+import type { AifMemoryReinjectionReceipt, AifMemoryReinjectionRequest } from '@/lib/aif-memory-reinjection';
 
 // AI Provider Types and Interfaces
 export type AIProvider = 'openai' | 'claude' | 'gemini' | 'alibaba' | 'openrouter' | 'deepseek';
@@ -43,6 +44,8 @@ export interface ExecutionRequest {
     knowledgeCollectionId?: string;
     /** Approval request id returned by NEEDS_APPROVAL flow */
     approvalId?: string;
+    /** C2 — explicit, summary-only AIF memory reinjection opt-in */
+    aifMemoryReinjection?: AifMemoryReinjectionRequest;
 }
 
 export interface GovernanceEvidenceReceipt {
@@ -63,6 +66,7 @@ export interface GovernanceEvidenceReceipt {
     approvalId?: string;
     validationHint?: string;
     vision?: boolean;
+    aifMemoryReinjection?: AifMemoryReinjectionReceipt;
     workflowComposition?: WorkflowCompositionSummary;
     generatedAt: string;
 }

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Post Phase 2.B narrow provider stability probe.
+ * Post Phase 2.B provider stability probe.
  *
  * Starts the CVF web app locally, signs in through the real login UI, then
  * performs repeated governed `/api/execute` requests for the configured
@@ -30,6 +30,8 @@ const secretKeyNames = [
   'DEEPSEEK_API_KEY',
   'CVF_BENCHMARK_DEEPSEEK_KEY',
   'CVF_DEEPSEEK_API_KEY',
+  'OPENAI_API_KEY',
+  'CVF_OPENAI_API_KEY',
 ];
 
 const providerSpecs = {
@@ -45,13 +47,20 @@ const providerSpecs = {
     envNames: ['DEEPSEEK_API_KEY', 'CVF_BENCHMARK_DEEPSEEK_KEY', 'CVF_DEEPSEEK_API_KEY'],
     canonicalEnv: 'DEEPSEEK_API_KEY',
   },
+  openai: {
+    provider: 'openai',
+    model: 'gpt-4o',
+    envNames: ['OPENAI_API_KEY', 'CVF_OPENAI_API_KEY'],
+    canonicalEnv: 'OPENAI_API_KEY',
+  },
 };
 
-const providers = String(process.env.CVF_POST_PHASE2B_PROVIDERS ?? 'alibaba,deepseek')
+const providers = String(process.env.CVF_POST_PHASE2B_PROVIDERS ?? 'alibaba,deepseek,openai')
   .split(',')
   .map((item) => item.trim())
   .filter(Boolean);
 const repeats = Number(process.env.CVF_POST_PHASE2B_REPEATS ?? 2);
+const interJourneyDelayMs = Number(process.env.CVF_POST_PHASE2B_INTER_JOURNEY_DELAY_MS ?? 1500);
 const port = Number(process.env.CVF_POST_PHASE2B_PROVIDER_STABILITY_PORT ?? 3218);
 const baseUrl = `http://127.0.0.1:${port}`;
 
@@ -96,7 +105,7 @@ function redactServerTail(value) {
     if (secret && secret.length > 8) redacted = redacted.split(secret).join('<redacted>');
   }
   return redacted
-    .replace(/(DASHSCOPE_API_KEY|ALIBABA_API_KEY|CVF_ALIBABA_API_KEY|CVF_BENCHMARK_ALIBABA_KEY|DEEPSEEK_API_KEY|CVF_BENCHMARK_DEEPSEEK_KEY|CVF_DEEPSEEK_API_KEY)=\S+/g, '$1=<redacted>')
+    .replace(/(DASHSCOPE_API_KEY|ALIBABA_API_KEY|CVF_ALIBABA_API_KEY|CVF_BENCHMARK_ALIBABA_KEY|DEEPSEEK_API_KEY|CVF_BENCHMARK_DEEPSEEK_KEY|CVF_DEEPSEEK_API_KEY|OPENAI_API_KEY|CVF_OPENAI_API_KEY)=\S+/g, '$1=<redacted>')
     .slice(-1600);
 }
 
@@ -113,6 +122,7 @@ function buildChildEnv() {
   }
   childEnv.DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY;
   childEnv.DEEPSEEK_API_KEY = process.env.DEEPSEEK_API_KEY;
+  childEnv.OPENAI_API_KEY = process.env.OPENAI_API_KEY;
   childEnv.CVF_PLAYWRIGHT_PORT = String(port);
   childEnv.PORT = String(port);
   return childEnv;
@@ -226,6 +236,7 @@ async function main() {
         providers: {
           alibaba: { apiKey: keys.alibaba, enabled: Boolean(keys.alibaba), selectedModel: 'qwen-turbo' },
           deepseek: { apiKey: keys.deepseek, enabled: Boolean(keys.deepseek), selectedModel: 'deepseek-chat' },
+          openai: { apiKey: keys.openai, enabled: Boolean(keys.openai), selectedModel: 'gpt-4o' },
         },
         preferences: {
           defaultProvider: 'alibaba',
@@ -239,6 +250,7 @@ async function main() {
     }, {
       alibaba: process.env.DASHSCOPE_API_KEY ?? '',
       deepseek: process.env.DEEPSEEK_API_KEY ?? '',
+      openai: process.env.OPENAI_API_KEY ?? '',
     });
 
     await page.goto('/login');
@@ -280,11 +292,25 @@ async function main() {
         const failedAssertions = Object.entries(assertions)
           .filter(([, passed]) => !passed)
           .map(([name]) => name);
+        const failureClass = failedAssertions.length === 0
+          ? null
+          : !assertions.httpStatus200
+            ? 'http_status_failure'
+            : !assertions.successTrue
+              ? 'execute_failure'
+              : !assertions.receiptPresent || !assertions.envelopeLive
+                ? 'governance_receipt_failure'
+                : !assertions.providerMatched || !assertions.routingAllowed
+                  ? 'provider_routing_failure'
+                  : !assertions.noMockFallback || !assertions.outputNonMock
+                    ? 'mock_or_output_failure'
+                    : 'assertion_failure';
         results.push({
           provider: spec.provider,
           model: receipt.model ?? spec.model,
           journey: journeyIndex + 1,
           status: failedAssertions.length === 0 ? 'PASS' : 'FAIL',
+          failureClass,
           httpStatus: response.status(),
           latencyMs,
           decision: receipt.decision ?? routing.decision ?? null,
@@ -296,6 +322,7 @@ async function main() {
           outputLength: output.length,
           failedAssertions,
         });
+        if (interJourneyDelayMs > 0) await delay(interJourneyDelayMs);
       }
     }
 
@@ -306,9 +333,14 @@ async function main() {
     const proof = {
       schemaVersion: 'post-phase2b-provider-stability-result-1',
       status: failCount === 0 ? 'PASS' : 'FAIL',
-      claimClass: failCount === 0 ? 'narrow_two_provider_repeatability' : 'partial_provider_stability_evidence',
+      claimClass: failCount === 0 && selectedSpecs.length >= 3
+        ? 'bounded_tri_provider_repeatability_window'
+        : failCount === 0
+          ? 'narrow_provider_repeatability'
+          : 'partial_provider_stability_evidence',
       providersRequested: selectedSpecs.map((spec) => spec.provider),
       repeatsPerProvider: repeats,
+      interJourneyDelayMs,
       passCount,
       failCount,
       providersPassed,
