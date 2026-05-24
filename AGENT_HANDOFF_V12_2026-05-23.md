@@ -83,6 +83,8 @@ current.
 Operator directed Codex to process V1, V2, and V3 under the multi-role
 workflow. Disposition is closed pass bounded:
 
+- Commit:
+  `46206abe` (feat(v-tranche): close v1 v2 v3 diagnostics and first value)
 - V3 completion:
   `docs/reviews/CVF_V3_EXECUTION_DIAGNOSTIC_CONTRACT_COMPLETION_2026-05-24.md`
 - V1 completion:
@@ -468,6 +470,7 @@ For older continuity before V12, read:
 
 ## Latest HEADs
 
+- `46206abe` — feat(v-tranche): close v1 v2 v3 diagnostics and first value (2026-05-24)
 - `9fb8f31e` — docs(v3): define mandatory live-run diagnostics (2026-05-24)
 - `493d15f5` — docs(session): sync handoff after s2 closure (2026-05-24)
 - `afc31897` — docs(s2): close provider soak and screen next tranche (2026-05-24)
