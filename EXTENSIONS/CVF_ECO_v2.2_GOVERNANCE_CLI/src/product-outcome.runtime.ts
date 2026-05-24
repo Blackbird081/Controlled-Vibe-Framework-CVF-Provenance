@@ -44,6 +44,12 @@ export interface ProductOutcomeRuntimePlan {
 
 export type ProductSkillPackSelectionStatus = "selected" | "no_certified_pack_match";
 export type ProductSkillPackSelectionConfidence = "exact" | "high" | "medium" | "none";
+export type ProductSkillPackRequestContextBudgetTier = "minimal" | "standard" | "expanded";
+export type ProductSkillPackRequestContextReadiness =
+  | "ready"
+  | "needs_clarification"
+  | "needs_context_compaction"
+  | "blocked_contaminated_brief";
 
 export interface ProductSkillPackSelectionAlternative {
   skillPackId: string;
@@ -58,6 +64,7 @@ export interface ProductSkillPackSelectionReadout {
   request: string;
   status: ProductSkillPackSelectionStatus;
   selectedPlan?: ProductOutcomeRuntimePlan;
+  requestContext: ProductSkillPackRequestContextReadout;
   confidence: ProductSkillPackSelectionConfidence;
   score: number;
   reason: string;
@@ -66,6 +73,23 @@ export interface ProductSkillPackSelectionReadout {
   riskLevel?: string;
   humanReviewRequired?: boolean;
   userAction: string;
+  boundaries: string[];
+}
+
+export interface ProductSkillPackRequestContextReadout {
+  readoutVersion: "cvf.productSkillPackRequestContext.v1";
+  request: string;
+  budgetTier: ProductSkillPackRequestContextBudgetTier;
+  readiness: ProductSkillPackRequestContextReadiness;
+  approxTokens: number;
+  wordCount: number;
+  signalDensity: number;
+  detectedSignals: string[];
+  missingSignals: string[];
+  contaminationFlags: string[];
+  noiseFlags: string[];
+  preservedPriority: string[];
+  recommendedNextAction: string;
   boundaries: string[];
 }
 
@@ -179,6 +203,25 @@ const SELECTION_BOUNDARIES = [
   "no_memory_mcp_tool_or_database_execution",
 ];
 
+const REQUEST_CONTEXT_BOUNDARIES = [
+  "deterministic_local_readout",
+  "no_llm_scoring",
+  "no_runtime_context_packaging",
+  "no_memory_injection",
+  "no_tool_mcp_database_or_provider_execution",
+];
+
+const CONTEXT_PRESERVATION_PRIORITY = [
+  "active_task_objective",
+  "hard_constraints_and_invariants",
+  "risk_policy_requirements",
+  "exact_artifact_code_path_error_references",
+  "recent_decisions",
+  "minimal_supporting_evidence",
+  "prior_alternatives",
+  "general_narrative_history",
+];
+
 export function loadCertifiedSkillPackRegistry(
   path = CERTIFIED_SKILL_PACK_REGISTRY_PATH,
 ): CertifiedSkillPackRegistry {
@@ -214,6 +257,7 @@ export function selectProductSkillPackForRequest(
   registryPath = CERTIFIED_SKILL_PACK_REGISTRY_PATH,
 ): ProductSkillPackSelectionReadout {
   const normalizedRequest = normalizeForSelection(request);
+  const requestContext = buildProductSkillPackRequestContextReadout(request);
   const plans = listProductOutcomeRuntimePlans(registryPath);
   const scored = plans.map((plan) => scoreProductSkillPackPlan(plan, normalizedRequest, request));
   scored.sort((a, b) => b.score - a.score || a.plan.skillPackId.localeCompare(b.plan.skillPackId));
@@ -224,6 +268,7 @@ export function selectProductSkillPackForRequest(
       readoutVersion: "cvf.productSkillPackSelectionReadout.v1",
       request,
       status: "no_certified_pack_match",
+      requestContext,
       confidence: "none",
       score: 0,
       reason: "no_certified_pack_match",
@@ -243,6 +288,7 @@ export function selectProductSkillPackForRequest(
     request,
     status: "selected",
     selectedPlan: best.plan,
+    requestContext,
     confidence,
     score: best.score,
     reason: best.exact ? "exact_certified_pack_match" : "keyword_certified_pack_match",
@@ -257,6 +303,45 @@ export function selectProductSkillPackForRequest(
       ? "Use the selected certified pack only with human review before operational, financial, legal, or customer-facing reliance."
       : "Use the selected certified pack as the bounded starting workflow; keep execution inside existing CVF runtime boundaries.",
     boundaries: SELECTION_BOUNDARIES,
+  };
+}
+
+export function buildProductSkillPackRequestContextReadout(request: string): ProductSkillPackRequestContextReadout {
+  const normalized = normalizeForSelection(request);
+  const wordCount = normalized ? normalized.split(" ").length : 0;
+  const approxTokens = Math.ceil(request.length / 4);
+  const detectedSignals = detectRequestContextSignals(request, normalized);
+  const missingSignals = detectMissingRequestContextSignals(detectedSignals, wordCount);
+  const contaminationFlags = detectRequestContaminationFlags(request, normalized);
+  const noiseFlags = detectRequestNoiseFlags(request, normalized, approxTokens);
+  const readiness = classifyRequestContextReadiness({
+    wordCount,
+    approxTokens,
+    missingSignals,
+    contaminationFlags,
+    noiseFlags,
+  });
+  const budgetTier = classifyRequestContextBudgetTier(approxTokens, readiness, missingSignals.length);
+  const denominator = Math.max(
+    1,
+    detectedSignals.length + missingSignals.length + contaminationFlags.length + noiseFlags.length,
+  );
+
+  return {
+    readoutVersion: "cvf.productSkillPackRequestContext.v1",
+    request,
+    budgetTier,
+    readiness,
+    approxTokens,
+    wordCount,
+    signalDensity: Number((detectedSignals.length / denominator).toFixed(3)),
+    detectedSignals,
+    missingSignals,
+    contaminationFlags,
+    noiseFlags,
+    preservedPriority: CONTEXT_PRESERVATION_PRIORITY,
+    recommendedNextAction: recommendedRequestContextAction(readiness),
+    boundaries: REQUEST_CONTEXT_BOUNDARIES,
   };
 }
 
@@ -390,4 +475,108 @@ function normalizeForSelection(value: string): string {
 
 function uniqueStrings(values: string[]): string[] {
   return [...new Set(values)];
+}
+
+function detectRequestContextSignals(rawRequest: string, normalizedRequest: string): string[] {
+  const signals: string[] = [];
+  if (/\b(analy[sz]e|compare|review|write|create|build|draft|summari[sz]e|plan|prioriti[sz]e|spec|design)\b/.test(normalizedRequest)) {
+    signals.push("active_task_objective");
+  }
+  if (/\b(user|customer|audience|stakeholder|team|market|business|buyer|founder|founders|operator|developer|noncoder|non coder|b2b|saas)\b/.test(normalizedRequest)) {
+    signals.push("business_goal_or_audience");
+  }
+  if (/\b(constraint|constraints|must|cannot|without|budget|deadline|timeline|compliance|risk|risks|scope|limit|language|tone|format)\b/.test(normalizedRequest)) {
+    signals.push("constraints_or_risks");
+  }
+  if (/\b(success|acceptance|done when|deliverable|output|include|section|criteria)\b/.test(normalizedRequest)) {
+    signals.push("acceptance_or_output_shape");
+  }
+  if (/(^|\s)([\w.-]+\/[\w./-]+|[\w.-]+\.(md|json|csv|tsx|ts|js|py|txt|docx|xlsx))(\s|$)/i.test(rawRequest)
+    || /\b(dataset|spreadsheet|contract|meeting notes|log|trace|receipt|roadmap|registry)\b/.test(normalizedRequest)) {
+    signals.push("artifact_or_evidence_reference");
+  }
+  return uniqueStrings(signals);
+}
+
+function detectMissingRequestContextSignals(detectedSignals: string[], wordCount: number): string[] {
+  const missing: string[] = [];
+  if (!detectedSignals.includes("active_task_objective")) missing.push("problem_statement_or_task_objective");
+  if (!detectedSignals.includes("business_goal_or_audience")) missing.push("business_goal_or_audience");
+  if (!detectedSignals.includes("constraints_or_risks") && wordCount > 3) missing.push("constraints_or_risks");
+  if (!detectedSignals.includes("acceptance_or_output_shape") && wordCount > 8) missing.push("acceptance_or_output_shape");
+  return missing;
+}
+
+function detectRequestContaminationFlags(rawRequest: string, normalizedRequest: string): string[] {
+  const flags: string[] = [];
+  if (/```/.test(rawRequest)) flags.push("contains_code_block");
+  if (/<[a-z][\s\S]*>/i.test(rawRequest)) flags.push("contains_markup_or_ui_artifact");
+  if (/\b(use react|use next|postgres|database schema|deploy|implementation|architecture prescription|build this now)\b/.test(normalizedRequest)) {
+    flags.push("solution_biased_or_implementation_heavy");
+  }
+  if (/\b(pseudo mvp|continue from this mvp|existing code|html mock|ui mock)\b/.test(normalizedRequest)) {
+    flags.push("continuation_from_unvalidated_artifact");
+  }
+  return uniqueStrings(flags);
+}
+
+function detectRequestNoiseFlags(rawRequest: string, normalizedRequest: string, approxTokens: number): string[] {
+  const flags: string[] = [];
+  const errorMentions = (normalizedRequest.match(/\berror\b/g) ?? []).length;
+  if (approxTokens > 900) flags.push("oversized_context");
+  if (errorMentions > 8 || /\b(stack trace|traceback|full log|entire log)\b/.test(normalizedRequest)) {
+    flags.push("raw_log_stream");
+  }
+  if (approxTokens > 600 && /\b(import|function|class|const|export|return)\b/.test(normalizedRequest)) {
+    flags.push("whole_file_or_code_paste");
+  }
+  if ((rawRequest.match(/\n/g) ?? []).length > 80) flags.push("large_multiline_paste");
+  return uniqueStrings(flags);
+}
+
+function classifyRequestContextReadiness(input: {
+  wordCount: number;
+  approxTokens: number;
+  missingSignals: string[];
+  contaminationFlags: string[];
+  noiseFlags: string[];
+}): ProductSkillPackRequestContextReadiness {
+  const severeContamination = input.contaminationFlags.includes("contains_code_block")
+    || input.contaminationFlags.includes("contains_markup_or_ui_artifact")
+    || input.contaminationFlags.includes("solution_biased_or_implementation_heavy");
+  if (severeContamination && input.missingSignals.includes("business_goal_or_audience")) {
+    return "blocked_contaminated_brief";
+  }
+  if (input.noiseFlags.length > 0 && (input.approxTokens > 500 || input.noiseFlags.includes("raw_log_stream"))) {
+    return "needs_context_compaction";
+  }
+  if (input.wordCount < 4 || input.missingSignals.includes("problem_statement_or_task_objective") || input.missingSignals.length >= 3) {
+    return "needs_clarification";
+  }
+  return "ready";
+}
+
+function classifyRequestContextBudgetTier(
+  approxTokens: number,
+  readiness: ProductSkillPackRequestContextReadiness,
+  missingSignalCount: number,
+): ProductSkillPackRequestContextBudgetTier {
+  if (readiness === "needs_context_compaction" || readiness === "blocked_contaminated_brief" || approxTokens > 700) {
+    return "expanded";
+  }
+  if (approxTokens <= 120 && missingSignalCount <= 1) return "minimal";
+  return "standard";
+}
+
+function recommendedRequestContextAction(readiness: ProductSkillPackRequestContextReadiness): string {
+  switch (readiness) {
+    case "ready":
+      return "Proceed with the selected certified pack inside existing CVF runtime boundaries.";
+    case "needs_clarification":
+      return "Ask for the missing problem, audience, constraints, or acceptance criteria before spending provider quota.";
+    case "needs_context_compaction":
+      return "Compact the request to objective, constraints, relevant evidence, current state, blockers, and next action before execution.";
+    case "blocked_contaminated_brief":
+      return "Run reverse-brief recovery before build or execution; separate problem, constraints, assumptions, and implementation artifacts.";
+  }
 }

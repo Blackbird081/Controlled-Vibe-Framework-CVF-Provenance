@@ -115,6 +115,7 @@ describe("cvf skill", () => {
       reason: "exact_certified_pack_match",
       selectedPlan: { skillPackId: "competitor_review" },
     });
+    expect(readout.requestContext.readoutVersion).toBe("cvf.productSkillPackRequestContext.v1");
   });
 
   it("selects by keyword and surfaces R2 human review", () => {
@@ -131,6 +132,69 @@ describe("cvf skill", () => {
     expect(readout.riskLevel).toBe("R2");
     expect(readout.humanReviewRequired).toBe(true);
     expect(readout.userAction).toContain("human review");
+  });
+
+  it("reports ready request context when the request has objective, audience, and constraints", () => {
+    const result = new CommandRegistry().execute({
+      command: "skill",
+      positional: [
+        "select",
+        "write a competitor review for B2B SaaS founders, include pricing risks and output sections",
+      ],
+      flags: { json: true },
+    });
+
+    expect(result.success).toBe(true);
+    const readout = JSON.parse(result.message);
+    expect(readout.selectedPlan.skillPackId).toBe("competitor_review");
+    expect(readout.requestContext.readiness).toBe("ready");
+    expect(readout.requestContext.detectedSignals).toContain("active_task_objective");
+    expect(readout.requestContext.detectedSignals).toContain("business_goal_or_audience");
+    expect(readout.requestContext.detectedSignals).toContain("constraints_or_risks");
+  });
+
+  it("reports clarification need for vague requests before wasting provider quota", () => {
+    const result = new CommandRegistry().execute({
+      command: "skill",
+      positional: ["select", "make it better"],
+      flags: { json: true },
+    });
+
+    expect(result.success).toBe(true);
+    const readout = JSON.parse(result.message);
+    expect(readout.requestContext.readiness).toBe("needs_clarification");
+    expect(readout.requestContext.missingSignals).toContain("problem_statement_or_task_objective");
+    expect(readout.requestContext.recommendedNextAction).toContain("Ask for the missing");
+  });
+
+  it("reports compaction need for oversized noisy log-style requests", () => {
+    const noisyRequest = `analyze data incident for ops team ${"error timeout stack trace ".repeat(180)}`;
+    const result = new CommandRegistry().execute({
+      command: "skill",
+      positional: ["select", noisyRequest],
+      flags: { json: true },
+    });
+
+    expect(result.success).toBe(true);
+    const readout = JSON.parse(result.message);
+    expect(readout.requestContext.readiness).toBe("needs_context_compaction");
+    expect(readout.requestContext.noiseFlags).toContain("raw_log_stream");
+    expect(readout.requestContext.recommendedNextAction).toContain("Compact");
+  });
+
+  it("blocks contaminated implementation-heavy pseudo-briefs", () => {
+    const contaminated = "Build this now with React and Postgres:\n```tsx\nfunction App() { return <div /> }\n```";
+    const result = new CommandRegistry().execute({
+      command: "skill",
+      positional: ["select", contaminated],
+      flags: { json: true },
+    });
+
+    expect(result.success).toBe(true);
+    const readout = JSON.parse(result.message);
+    expect(readout.requestContext.readiness).toBe("blocked_contaminated_brief");
+    expect(readout.requestContext.contaminationFlags).toContain("contains_code_block");
+    expect(readout.requestContext.recommendedNextAction).toContain("reverse-brief");
   });
 
   it("returns a no-match readout without pretending a pack fits", () => {

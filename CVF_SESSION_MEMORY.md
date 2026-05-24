@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-25
 
-Current mode marker: `cb1_context_budget_request_shaping_readout_authorized`
+Current mode marker: `cb1_context_budget_request_shaping_readout_closed`
 
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Previous handoff archive:
 
 ## Current State
 
-Current mode: `cb1_context_budget_request_shaping_readout_authorized`.
+Current mode: `cb1_context_budget_request_shaping_readout_closed`.
 
 C7A closed PASS bounded at:
 
@@ -112,22 +112,25 @@ over the ten certified packs, completed runtime bindings for
 risk/human-review/no-match readout. Verification: focused Governance CLI
 `cvf skill` tests PASS 10/10; Governance CLI TypeScript check PASS.
 
-## Active Tranche
+## Latest Closed Tranche
 
-CB1 context-budget/request-shaping readout is authorized:
+CB1 context-budget/request-shaping readout is closed PASS bounded:
 
-`docs/baselines/CVF_GC018_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_2026-05-25.md`
+`docs/reviews/CVF_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_COMPLETION_2026-05-25.md`
 
-Work order:
+CB1 added deterministic local `cvf.productSkillPackRequestContext.v1` inside
+Governance CLI `cvf skill select`, with budget tier, readiness, detected and
+missing signals, contamination/noise flags, preservation priority, and next
+action. Verification: focused Governance CLI `cvf skill` tests PASS 14/14;
+Governance CLI TypeScript check PASS.
 
-`docs/work_orders/CVF_WO_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_2026-05-25.md`
+## Recommended Next Move
 
-Target: deterministic local request-context readout nested in Governance CLI
-`cvf skill select`, absorbing context budgeting, relevance filtering,
-compaction, brief normalization, reverse-brief, and context packaging guardrail
-concepts. No LLM scoring, runtime context packager, provider/API call, memory
-injection, MCP/tool/database execution, public-sync, hosted readiness,
-production readiness, or freeze release.
+No next implementation tranche is active.
+
+Recommended next absorption candidates from LH1: workflow recovery state proof,
+tool/action approval proof, or external skill intake screening packet. Any next
+work requires fresh GC-018 and work order.
 
 Candidate 7 external skill/model ingestion remains held until there is a
 concrete source/use-case binding.

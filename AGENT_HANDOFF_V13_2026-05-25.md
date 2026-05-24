@@ -16,6 +16,8 @@ Current HEAD before LH1 closeout ledger commit: `acf2ce79`.
 
 Current HEAD before CB1 authorization commit: `488cb9da`.
 
+Current HEAD before CB1 implementation closure commit: `2e822b2c`.
+
 Remote tracking branch:
 
 `origin/main`
@@ -65,7 +67,7 @@ Previous long session memory snapshot was archived at:
 
 ## Current Mode
 
-`cb1_context_budget_request_shaping_readout_authorized`
+`cb1_context_budget_request_shaping_readout_closed`
 
 Freeze posture remains:
 
@@ -135,20 +137,25 @@ Candidate 7 may reopen only with a fresh GC-018, a concrete source/use-case
 binding, the mandatory Knowledge Absorption Blind-Spot Control Block, and an
 explicit action/tool/provider boundary.
 
-## Active Tranche
+CB1 context-budget/request-shaping readout is closed PASS bounded:
 
-CB1 context-budget/request-shaping readout is authorized:
+`docs/reviews/CVF_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_COMPLETION_2026-05-25.md`
 
-`docs/baselines/CVF_GC018_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_2026-05-25.md`
+CB1 added deterministic local `cvf.productSkillPackRequestContext.v1` inside
+Governance CLI `cvf skill select`, with budget tier, readiness, detected and
+missing signals, contamination/noise flags, preservation priority, and next
+action.
 
-Work order:
+Verification: Governance CLI focused `cvf skill` tests PASS 14/14; Governance
+CLI TypeScript check PASS.
 
-`docs/work_orders/CVF_WO_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_2026-05-25.md`
+## Recommended Next Move
 
-Target: deterministic local request-context readout nested in Governance CLI
-`cvf skill select`, absorbing context budgeting, relevance filtering,
-compaction, brief normalization, reverse-brief, and context packaging guardrail
-concepts.
+No next implementation tranche is active.
+
+Recommended next absorption candidates from LH1: workflow recovery state proof,
+tool/action approval proof, or external skill intake screening packet. Any next
+work requires fresh GC-018 and work order.
 
 Do not add more packs, runtime execution, provider calls, receipt-envelope
 changes, memory, MCP/tool/database execution, public-sync, hosted readiness,

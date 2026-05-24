@@ -684,6 +684,10 @@ function formatProductSkillPackSelectionReadout(readout: ProductSkillPackSelecti
     return [
       "status=no_certified_pack_match",
       `reason=${readout.reason}`,
+      `requestReadiness=${readout.requestContext.readiness}`,
+      `contextBudgetTier=${readout.requestContext.budgetTier}`,
+      `missingSignals=${readout.requestContext.missingSignals.join(",")}`,
+      `contextAction=${readout.requestContext.recommendedNextAction}`,
       `userAction=${readout.userAction}`,
       `boundaries=${readout.boundaries.join(",")}`,
     ].join("\n");
@@ -699,6 +703,12 @@ function formatProductSkillPackSelectionReadout(readout: ProductSkillPackSelecti
     `matchedTerms=${readout.matchedTerms.join(",")}`,
     `riskLevel=${readout.riskLevel}`,
     `humanReviewRequired=${readout.humanReviewRequired}`,
+    `requestReadiness=${readout.requestContext.readiness}`,
+    `contextBudgetTier=${readout.requestContext.budgetTier}`,
+    `missingSignals=${readout.requestContext.missingSignals.join(",")}`,
+    `contaminationFlags=${readout.requestContext.contaminationFlags.join(",")}`,
+    `noiseFlags=${readout.requestContext.noiseFlags.join(",")}`,
+    `contextAction=${readout.requestContext.recommendedNextAction}`,
     `userAction=${readout.userAction}`,
     `boundaries=${readout.boundaries.join(",")}`,
   ].join("\n");
