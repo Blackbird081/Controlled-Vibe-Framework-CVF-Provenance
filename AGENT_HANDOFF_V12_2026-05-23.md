@@ -38,7 +38,7 @@ Current HEAD before V12 transition:
 
 Current mode marker:
 
-`v3_execution_diagnostic_selected`
+`v1_v2_v3_value_tranche_closed_pass_bounded`
 
 ---
 
@@ -77,6 +77,36 @@ current.
 ---
 
 ## Latest Work / Changes
+
+### 2026-05-24 - V1/V2/V3 Value-Screened Tranche Closed
+
+Operator directed Codex to process V1, V2, and V3 under the multi-role
+workflow. Disposition is closed pass bounded:
+
+- V3 completion:
+  `docs/reviews/CVF_V3_EXECUTION_DIAGNOSTIC_CONTRACT_COMPLETION_2026-05-24.md`
+- V1 completion:
+  `docs/reviews/CVF_V1_NONCODER_FIRST_VALUE_JOURNEY_HARDENING_COMPLETION_2026-05-24.md`
+- V2 completion:
+  `docs/reviews/CVF_V2_EVIDENCE_TO_ACTION_PACKAGING_COMPLETION_2026-05-24.md`
+
+V3 implemented `cvf.executionDiagnostic.v1`, provider/route diagnostic
+classification, script-facing rendering, and live diagnostic probe
+`scripts/run_cvf_v3_execution_diagnostic_live_probe.mjs`. Live proof PASS:
+Alibaba unavailable-model boundary returned `success=false`,
+`diagnostic.class=model_unavailable`, `userAction=change_model`, receipt
+`rcpt-env-mpjiqzqg-v3k25r`, trace `env-mpjiqzqg-v3k25r`, `evidenceMode=live`,
+and `rawSecretPrinted=false`.
+
+V1 hardened ProcessingScreen so classified live execution failures render a
+diagnostic panel and do not fall back to mock output.
+
+V2 hardened ResultViewer evidence export/copy content with "What happened",
+"Why this can be used", and "What to do next" while preserving raw receipt
+fields and secret hygiene.
+
+Verification: focused cvf-web tests PASS `107/107`; cvf-web TypeScript check
+PASS; mandatory release gate PASS `7/7`.
 
 ### 2026-05-24 - V3 Execution Diagnostic Contract Selected
 

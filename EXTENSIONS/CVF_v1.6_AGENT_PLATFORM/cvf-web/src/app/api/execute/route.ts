@@ -35,10 +35,10 @@ import { buildRoleOutputDeniedResponse, buildRolePermissionDeniedResponse } from
 import { buildExecutionIdentityDecision } from '@/lib/execution-identity';
 import { evaluateExecutionActorRoleGate, resolveExecutionCVFRole, resolveExecutionOutputClass } from '@/lib/execute-role-resolver';
 import { buildOutputBypassGuardResult, checkRoleOutputPermission, detectBypassInOutput, resolveGuardAction, shouldRequireSkillPreflight } from '@/lib/execute-route-guards';
+import { attachReceiptToDiagnostic, buildExecutionDiagnostic } from '@/lib/execution-diagnostics';
 import { getApprovalStore, type ApprovalRequestRecord } from '../approvals/store';
 import { approvalRecordMatchesActor, buildApprovalActorBinding, buildApprovalRequestSnapshot, computeApprovalRequestHash } from '../approvals/approval-binding';
 import { executeVisionRouteRequest, prepareVisionRouteRequest } from './vision-route-helper';
-
 export async function POST(request: NextRequest) {
     const routeStartedAtMs = Date.now();
     try {
@@ -71,11 +71,9 @@ export async function POST(request: NextRequest) {
                 { status: 401 }
             );
         }
-
         if (!rawBody || typeof rawBody !== 'object') {
             return NextResponse.json({ success: false, error: 'Invalid input payload.' }, { status: 400 });
         }
-
         const body = rawBody as Partial<ExecutionRequest>;
         body.inputs = Object.fromEntries(Object.entries(body.inputs || {}).map(([k, v]) => [k, String(v ?? '').trim()]));
         if (typeof body.model === 'string') body.model = body.model.trim() || undefined;
@@ -103,15 +101,17 @@ export async function POST(request: NextRequest) {
                 { status: 429, headers: { 'Retry-After': String(limitResult.retryAfterSeconds) } }
             );
         }
-
         // Validate required fields
         if (!body.templateName || !body.inputs || !body.intent) {
             return NextResponse.json(
-                { success: false, error: 'Missing required fields: templateName, inputs, intent' },
+                {
+                    success: false,
+                    error: 'Missing required fields: templateName, inputs, intent',
+                    diagnostic: buildExecutionDiagnostic({ stage: 'request_validation', class: 'invalid_input', httpStatus: 400 }),
+                },
                 { status: 400 }
             );
         }
-
         if (!session && isServiceAllowed && typeof body.knowledgeContext === 'string' && body.knowledgeContext.trim()) {
             await appendAuditEvent({
                 eventType: 'INLINE_KNOWLEDGE_CONTEXT_BLOCKED',
@@ -232,7 +232,6 @@ export async function POST(request: NextRequest) {
 
             approvedRequestRecord = approvalRecord;
         }
-
         // Get API key from environment
         const apiKeyMap: Record<AIProvider, string | undefined> = {
             openai: process.env.OPENAI_API_KEY,
@@ -242,7 +241,6 @@ export async function POST(request: NextRequest) {
             openrouter: process.env.OPENROUTER_API_KEY,
             deepseek: process.env.DEEPSEEK_API_KEY,
         };
-
         // Build the prompt from template inputs
         const userPrompt = buildExecutionPrompt(body as ExecutionRequest);
         const dlpResult = await applyDLPFilter(userPrompt);
@@ -264,7 +262,6 @@ export async function POST(request: NextRequest) {
                 }),
             });
         }
-
         // Safety filters
         const safety = applySafetyFilters(filteredPrompt);
         if (safety.blocked) {
@@ -279,7 +276,6 @@ export async function POST(request: NextRequest) {
                 { status: 400 }
             );
         }
-
         const quotaCheck = await checkTeamQuota(session?.teamId);
         if (quotaCheck.exceeded) {
             try {
@@ -569,6 +565,7 @@ export async function POST(request: NextRequest) {
                         model: 'router-denied',
                         routingDecision: routingResult.decision,
                     }),
+                    diagnostic: buildExecutionDiagnostic({ stage: 'routing', class: 'routing_denied', provider, model: 'router-denied', httpStatus: 403 }),
                 },
                 { status: 403 }
             );
@@ -678,6 +675,20 @@ export async function POST(request: NextRequest) {
         }
 
         if (!routedApiKey) {
+            const governanceEvidenceReceipt = buildEvidenceReceipt({
+                envelope: govEnvelope,
+                decision: enforcement.status,
+                riskLevel: enforcement.riskGate?.riskLevel,
+                provider: routedProvider,
+                model: 'not configured',
+                routingDecision: routingResult.decision,
+                knowledgeSource,
+                knowledgeInjected,
+                knowledgeCollectionId: requestedKnowledgeCollectionId,
+                knowledgeChunkCount: retrievalResult.allowedChunkCount,
+                aifMemoryReinjection: aifMemoryReinjection.receipt,
+                durableMemoryRead: durableMemoryRoute.receipt,
+            });
             return NextResponse.json(
                 {
                     success: false,
@@ -686,20 +697,7 @@ export async function POST(request: NextRequest) {
                     model: 'not configured',
                     governanceEnvelope: govEnvelope,
                     policySnapshotId: govEnvelope.policySnapshotId,
-                    governanceEvidenceReceipt: buildEvidenceReceipt({
-                        envelope: govEnvelope,
-                        decision: enforcement.status,
-                        riskLevel: enforcement.riskGate?.riskLevel,
-                        provider: routedProvider,
-                        model: 'not configured',
-                        routingDecision: routingResult.decision,
-                        knowledgeSource,
-                        knowledgeInjected,
-                        knowledgeCollectionId: requestedKnowledgeCollectionId,
-                        knowledgeChunkCount: retrievalResult.allowedChunkCount,
-                        aifMemoryReinjection: aifMemoryReinjection.receipt,
-                        durableMemoryRead: durableMemoryRoute.receipt,
-                    }),
+                    governanceEvidenceReceipt,
                 },
                 { status: 400 }
             );
@@ -866,6 +864,7 @@ export async function POST(request: NextRequest) {
             durableMemoryWriteReceipt,
         });
         if (isVisionExecution) governanceEvidenceReceipt.vision = true;
+        const executionDiagnostic = !aiResult.success ? attachReceiptToDiagnostic(aiResult.diagnostic, buildExecutionDiagnostic({ stage: 'provider', class: 'unknown_error', provider: routedProvider, model: body.model ?? aiResult.model ?? routedProvider, latencyMs: aiResult.executionTime }), governanceEvidenceReceipt.receiptId, governanceEvidenceReceipt.envelopeId) : aiResult.success && !aiResult.output ? buildExecutionDiagnostic({ stage: 'provider', class: 'provider_empty_output', provider: routedProvider, model: body.model ?? aiResult.model ?? routedProvider, latencyMs: aiResult.executionTime, receiptId: governanceEvidenceReceipt.receiptId, traceId: governanceEvidenceReceipt.envelopeId }) : undefined;
         const workflowExecution = aiResult.success && workflowBinding ? buildWorkflowExecutionProjection(workflowBinding, governanceEvidenceReceipt.receiptId) : undefined;
         if (workflowExecution) {
             await appendAuditEvent({
@@ -980,6 +979,7 @@ export async function POST(request: NextRequest) {
             governanceEnvelope: govEnvelope,
             policySnapshotId: govEnvelope.policySnapshotId,
             governanceEvidenceReceipt,
+            ...(executionDiagnostic ? { diagnostic: executionDiagnostic } : {}),
             auditMemoryReceipt,
             ...(workflowExecution ? workflowExecution : {}),
             ...(phase2cProductBrief ? { phase2cProductBrief } : {}),

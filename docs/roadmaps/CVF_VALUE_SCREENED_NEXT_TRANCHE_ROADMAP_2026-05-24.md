@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: V3_SELECTED_READY_FOR_IMPLEMENTATION
+Status: V1_V2_V3_CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -137,6 +137,33 @@ Bounded goal:
 This is attractive if the operator wants near-term demo clarity rather than new
 runtime depth.
 
+## Closure Update - 2026-05-24
+
+Operator authorized Codex to process V1, V2, and V3 under the multi-role
+workflow.
+
+Disposition:
+
+- V3 `CLOSED_PASS_BOUNDED`:
+  `docs/reviews/CVF_V3_EXECUTION_DIAGNOSTIC_CONTRACT_COMPLETION_2026-05-24.md`
+- V1 `CLOSED_PASS_BOUNDED`:
+  `docs/reviews/CVF_V1_NONCODER_FIRST_VALUE_JOURNEY_HARDENING_COMPLETION_2026-05-24.md`
+- V2 `CLOSED_PASS_BOUNDED`:
+  `docs/reviews/CVF_V2_EVIDENCE_TO_ACTION_PACKAGING_COMPLETION_2026-05-24.md`
+
+V3 delivered `cvf.executionDiagnostic.v1`, provider/route diagnostic mapping,
+script rendering, and a live diagnostic proof with receipt
+`rcpt-env-mpjiqzqg-v3k25r`, trace `env-mpjiqzqg-v3k25r`, diagnostic class
+`model_unavailable`, and `userAction=change_model`.
+
+V1 delivered non-coder first-value recovery hardening: classified live
+execution failures now render an execution diagnostic panel and do not fall
+back to mock output.
+
+V2 delivered evidence-to-action packaging: copied/exported evidence receipts
+now include "What happened", "Why this can be used", and "What to do next"
+while preserving raw receipt fields and secret hygiene.
+
 ## Holds
 
 Hold broad provider proof expansion. S2 is now clean enough for a bounded
@@ -204,12 +231,13 @@ Future selected tranche must add its own completion evidence.
 
 ## Current Recommendation
 
-Implement V3 first. Then select V1 next, with V2 packaging allowed as a bounded
-sub-output if the journey proof shows users cannot understand or reuse the
-evidence artifact.
+V1, V2, and V3 are closed for the bounded implementation scope above. The next
+move should be a fresh value screen, not broad provider soaking, model-specific
+proof loops, or F-1 tuning.
 
 ## Claim / Final / Verification Boundary
 
-This roadmap claims that V3 has been selected as the mandatory diagnostic
-standard and next implementation tranche. It does not claim V3 runtime
-readiness until the V3 work order is implemented and verified.
+This roadmap claims bounded closure for V1, V2, and V3. It does not claim
+universal provider stability, hosted readiness, production readiness, memory
+reinjection, graph authority, public benchmark certification, or freeze
+release.

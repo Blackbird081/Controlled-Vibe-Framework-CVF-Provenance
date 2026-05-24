@@ -6,13 +6,11 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-24
 
-Current mode marker: `v3_execution_diagnostic_selected`
-
-Update 2026-05-24: V3 Execution Diagnostic Contract is selected as the
-mandatory next tranche. All AI/agent live runs must follow
-`docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md`: failed,
-partial, timed-out, empty-output, or rerun-triggering live runs require
-secret-safe diagnostics before rerun.
+Current mode marker: `v1_v2_v3_value_tranche_closed_pass_bounded`
+Update 2026-05-24: V1/V2/V3 are closed pass bounded. V3 implemented mandatory
+execution diagnostics; V1 hardened non-coder first-value failure recovery; V2
+added evidence-to-action receipt packaging. All live runs must still follow
+`docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md`.
 
 R1/R2/R3 post-M1 gap closure is closed. R2 delivered explicit policy-gated
 `/api/execute` durable-memory reads with live receipt
@@ -86,15 +84,14 @@ current.
 
 ## Current Session Mode
 
-- Current mode: `r2_r3_gap_closure_closed_pass_bounded`
+- Current mode: `v1_v2_v3_value_tranche_closed_pass_bounded`
 - Previous mode: `r1_durable_memory_resilience_closed_r2_p2_gated`
 - Freeze posture: `governance_kernel_freeze_recommended`
 - Active handoff pointer: `AGENT_HANDOFF_V12_2026-05-23.md`
 - Historical handoff archive: `CVF_SESSION/handoffs/archive/`
-- Operator approved lanes B+C+H on 2026-05-19. Lane-specific stop lifts
-  are in `CVF_SESSION/ACTIVE_SESSION_STATE.json`. Lanes execute in order
-  B→C→H, each requiring its own GC-018. Broad absorption and new
-  governance semantics remain blocked outside lane scopes.
+- Operator approved lanes B+C+H on 2026-05-19; lane-specific stop lifts are in
+  `CVF_SESSION/ACTIVE_SESSION_STATE.json`. Broad absorption and new governance
+  semantics remain blocked outside lane scopes.
 
 T1, T2, T3, T4, and T5 of the Review-CVF pain-point delivery gap roadmap V2 are closed. The follow-on canonical CLI runtime gateway tranche is closed at `docs/reviews/CVF_CANONICAL_CLI_RUNTIME_GATEWAY_COMPLETION_2026-05-22.md`. The B/C clean-closure tranche is closed at `docs/reviews/CVF_BC_PRODUCT_OUTCOME_RUNTIME_AND_CLI_DISTRIBUTION_COMPLETION_2026-05-22.md`, with product-outcome runtime plans for all seven certified packs and package-level `cvf`/`cvf-guard` bin semantics. The technical product catalog now records this bounded B/C closure addendum at `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md` so future devs/agents should treat B/C as closed unless a new review proves the core pack/workflow/outcome-runtime contract absent or materially nonfunctional. Release gate bundle PASS included live governance E2E after ignored clean-room runtime residue cleanup.
 
@@ -199,18 +196,21 @@ Roadmap:
 
 - `docs/roadmaps/CVF_VALUE_SCREENED_NEXT_TRANCHE_ROADMAP_2026-05-24.md`
 
-Selected next tranche:
+Closed tranches:
 
 - V3 Execution Diagnostic Contract:
-  `docs/work_orders/CVF_WO_V3_EXECUTION_DIAGNOSTIC_CONTRACT_2026-05-24.md`
-- GC-018:
-  `docs/baselines/CVF_GC018_V3_EXECUTION_DIAGNOSTIC_CONTRACT_2026-05-24.md`
-- Standard:
-  `docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md`
+  `docs/reviews/CVF_V3_EXECUTION_DIAGNOSTIC_CONTRACT_COMPLETION_2026-05-24.md`
+- V1 Non-coder first-value journey hardening:
+  `docs/reviews/CVF_V1_NONCODER_FIRST_VALUE_JOURNEY_HARDENING_COMPLETION_2026-05-24.md`
+- V2 Evidence-to-action packaging:
+  `docs/reviews/CVF_V2_EVIDENCE_TO_ACTION_PACKAGING_COMPLETION_2026-05-24.md`
 
-V1 non-coder first-value journey hardening remains the recommended product
-tranche after V3, with V2 evidence-to-action packaging as a bounded companion if
-the journey proof shows users cannot understand or reuse evidence.
+V3 live diagnostic proof PASS: Alibaba unavailable-model boundary returned
+`success=false`, `model_unavailable`, `userAction=change_model`, receipt
+`rcpt-env-mpjiqzqg-v3k25r`, trace `env-mpjiqzqg-v3k25r`, live evidence.
+
+V1 prevents diagnostic failures from falling back to mock output. V2 adds
+"What happened", "Why this can be used", and "What to do next" to receipt export.
 
 Hold broad provider soak expansion, model-specific proof loops, and F-1 tuning
 unless a fresh explicit product demand supersedes the current boundary.

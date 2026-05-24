@@ -3,6 +3,7 @@ import type { LaneStatus } from '@/lib/provider-lane-status';
 import type { WorkflowCompositionSummary } from '@/lib/workflow-composition';
 import type { AifMemoryReinjectionReceipt, AifMemoryReinjectionRequest } from '@/lib/aif-memory-reinjection';
 import type { DurableMemoryReceipt } from 'cvf-learning-plane-foundation';
+import type { ExecutionDiagnostic } from '@/lib/execution-diagnostics';
 
 // AI Provider Types and Interfaces
 export type AIProvider = 'openai' | 'claude' | 'gemini' | 'alibaba' | 'openrouter' | 'deepseek';
@@ -112,6 +113,7 @@ export interface ExecutionResponse {
     executionTime?: number;
     enforcement?: EnforcementResult;
     governanceEvidenceReceipt?: GovernanceEvidenceReceipt;
+    diagnostic?: ExecutionDiagnostic;
 }
 
 export interface ProviderStatus {

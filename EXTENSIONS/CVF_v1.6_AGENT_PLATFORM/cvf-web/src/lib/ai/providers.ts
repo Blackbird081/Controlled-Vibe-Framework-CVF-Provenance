@@ -1,4 +1,5 @@
 import { AIConfig, ExecutionResponse, AIProvider, DEFAULT_MODELS, CVF_SYSTEM_PROMPT } from './types';
+import { buildProviderExecutionDiagnostic } from '@/lib/execution-diagnostics';
 
 function isAlibabaStreamingOnlyModel(model: string): boolean {
     return /^qvq-/i.test(model);
@@ -122,12 +123,14 @@ async function executeOpenAI(
             executionTime: Date.now() - startTime,
         };
     } catch (error) {
+        const executionTime = Date.now() - startTime;
         return {
             success: false,
             error: error instanceof Error ? error.message : 'Unknown error',
             provider: 'openai',
             model: config.model,
-            executionTime: Date.now() - startTime,
+            executionTime,
+            diagnostic: buildProviderExecutionDiagnostic({ provider: 'openai', model: config.model, error, latencyMs: executionTime }),
         };
     }
 }
@@ -178,12 +181,14 @@ async function executeClaude(
             executionTime: Date.now() - startTime,
         };
     } catch (error) {
+        const executionTime = Date.now() - startTime;
         return {
             success: false,
             error: error instanceof Error ? error.message : 'Unknown error',
             provider: 'claude',
             model: config.model,
-            executionTime: Date.now() - startTime,
+            executionTime,
+            diagnostic: buildProviderExecutionDiagnostic({ provider: 'claude', model: config.model, error, latencyMs: executionTime }),
         };
     }
 }
@@ -240,12 +245,14 @@ async function executeGemini(
             executionTime: Date.now() - startTime,
         };
     } catch (error) {
+        const executionTime = Date.now() - startTime;
         return {
             success: false,
             error: error instanceof Error ? error.message : 'Unknown error',
             provider: 'gemini',
             model: config.model,
-            executionTime: Date.now() - startTime,
+            executionTime,
+            diagnostic: buildProviderExecutionDiagnostic({ provider: 'gemini', model: config.model, error, latencyMs: executionTime }),
         };
     }
 }
@@ -332,12 +339,14 @@ async function executeAlibaba(
             executionTime: Date.now() - startTime,
         };
     } catch (error) {
+        const executionTime = Date.now() - startTime;
         return {
             success: false,
             error: error instanceof Error ? error.message : 'Unknown error',
             provider: 'alibaba',
             model: config.model,
-            executionTime: Date.now() - startTime,
+            executionTime,
+            diagnostic: buildProviderExecutionDiagnostic({ provider: 'alibaba', model: config.model, error, latencyMs: executionTime }),
         };
     }
 }
@@ -390,12 +399,14 @@ async function executeOpenRouter(
             executionTime: Date.now() - startTime,
         };
     } catch (error) {
+        const executionTime = Date.now() - startTime;
         return {
             success: false,
             error: error instanceof Error ? error.message : 'Unknown error',
             provider: 'openrouter',
             model: config.model,
-            executionTime: Date.now() - startTime,
+            executionTime,
+            diagnostic: buildProviderExecutionDiagnostic({ provider: 'openrouter', model: config.model, error, latencyMs: executionTime }),
         };
     }
 }
@@ -450,12 +461,14 @@ async function executeDeepSeek(
             executionTime: Date.now() - startTime,
         };
     } catch (error) {
+        const executionTime = Date.now() - startTime;
         return {
             success: false,
             error: error instanceof Error ? error.message : 'Unknown error',
             provider: 'deepseek',
             model: config.model,
-            executionTime: Date.now() - startTime,
+            executionTime,
+            diagnostic: buildProviderExecutionDiagnostic({ provider: 'deepseek', model: config.model, error, latencyMs: executionTime }),
         };
     }
 }
