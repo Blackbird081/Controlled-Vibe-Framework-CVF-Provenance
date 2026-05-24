@@ -261,6 +261,34 @@ verification/provenance metadata and markdown serialization. Do not open new
 renderer/runtime behavior, `/api/execute`, provider behavior, receipt-envelope
 schema, public-sync, hosted readiness, production readiness, or freeze release.
 
+### 2026-05-24 - W6 Noncoder Artifact Export Hardening Closed
+
+W6 completion:
+`docs/reviews/CVF_W6_NONCODER_ARTIFACT_EXPORT_HARDENING_COMPLETION_2026-05-24.md`
+
+Implemented:
+
+- `DeliverablePack.artifactVerification`
+- `cvf.packArtifactVerification.w6.v1` provenance
+- markdown `## Artifact Verification` serialization
+- missing receipt remains `PASS_WITH_WARNINGS`
+- empty output is blocking `FAIL`
+
+Verification:
+
+- `npm run test:run -- src/lib/deliverable-pack.test.ts` PASS `32/32`
+- `npm run check` PASS
+
+Live proof was not required or run; W6 is local export serialization only.
+
+Boundary: no new renderer/runtime, `/api/execute`, provider behavior,
+receipt-envelope change, auth/RBAC, memory reinjection, public-sync, hosted
+readiness, production readiness, or freeze release.
+
+Next ranked WC-3 candidate: Candidate 7 external skill/model ingestion
+readiness. It remains high-risk and demand-gated by fresh GC-018, concrete
+operator use case, and the WC-4 Control Block.
+
 ### 2026-05-24 - W1 Workflow State-Machine Enforcement Closed
 
 Current HEAD before W1 closure commit: `13966c38`.

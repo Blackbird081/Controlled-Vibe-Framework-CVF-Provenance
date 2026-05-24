@@ -1129,3 +1129,31 @@ envelope, auth/RBAC, memory reinjection, public-sync, hosted readiness,
 production readiness, or freeze release.
 
 Marker: w6_noncoder_artifact_export_hardening_authorized.
+
+## W6 Noncoder Artifact Export Hardening - Closed 2026-05-24
+
+Current mode marker: `w6_noncoder_artifact_export_hardening_closed_pass_bounded`.
+
+W6 is closed pass bounded as WC-3 Candidate 6:
+
+- Completion:
+  `docs/reviews/CVF_W6_NONCODER_ARTIFACT_EXPORT_HARDENING_COMPLETION_2026-05-24.md`
+
+Delivered: `DeliverablePack.artifactVerification` with
+`cvf.packArtifactVerification.w6.v1` provenance and markdown
+`## Artifact Verification` serialization. Missing receipts are visible as
+`PASS_WITH_WARNINGS`; empty output is a blocking `FAIL`.
+
+Evidence: focused deliverable-pack tests PASS `32/32`; `cvf-web`
+TypeScript check PASS. Live proof was not required or run because W6 is local
+serialization only.
+
+Boundary: no new renderer/runtime, `/api/execute`, provider behavior, receipt
+envelope, auth/RBAC, memory reinjection, public-sync, hosted readiness,
+production readiness, or freeze release.
+
+Next: WC-3 Candidate 7, external skill/model ingestion readiness, remains
+high-risk and demand-gated by fresh GC-018, concrete operator use case, and
+WC-4 Control Block.
+
+Marker: w6_noncoder_artifact_export_hardening_closed_pass_bounded.
