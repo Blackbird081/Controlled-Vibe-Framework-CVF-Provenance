@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — WC-1/WC-2 CLOSED_PASS_BOUNDED; WC-3 CLOSED_MAPPING_ONLY; WC-4 CLOSED_CONTROL_ONLY; W1/W2/W3/W4 CLOSED_PASS_BOUNDED; W5 AUTHORIZED
+Status: ACTIVE — WC-1/WC-2 CLOSED_PASS_BOUNDED; WC-3 CLOSED_MAPPING_ONLY; WC-4 CLOSED_CONTROL_ONLY; W1/W2/W3/W4/W5 CLOSED_PASS_BOUNDED; W-series CONTINUES DEMAND_GATED
 
 Date: 2026-05-24
 
@@ -356,7 +356,7 @@ Next ranked candidate:
 
 #### W5: Provider Method And Fallback Normalization
 
-**Gate:** AUTHORIZED.
+**Gate:** CLOSED_PASS_BOUNDED.
 
 Authorization:
 
@@ -378,6 +378,34 @@ Boundary:
   command execution, `/api/execute`, receipt-envelope field, provider router
   behavior, proxy server, raw prompt/output logging, auth/RBAC, public-sync,
   hosted readiness, production readiness, or freeze release.
+
+Completion:
+
+- `docs/reviews/CVF_W5_PROVIDER_METHOD_FALLBACK_NORMALIZATION_COMPLETION_2026-05-24.md`
+
+Result:
+
+- added `cvf.providerMethodFallbackNormalization.w5.v1` and
+  `evaluateProviderMethodFallback()` in Model Gateway;
+- supported method, missing provider/model, unsupported method, retryable
+  timeout/rate-limit, quota denial, provider unavailable, key/balance failures,
+  and empty-output failures now normalize to secret-safe diagnostic classes,
+  fallback posture, and user actions;
+- no provider call or runtime fallback is executed by the helper.
+
+Verification:
+
+- focused W5 tests PASS `9/9`;
+- adjacent provider method/fallback/output tests PASS `29/29`;
+- full Model Gateway tests PASS `91/91`;
+- Model Gateway TypeScript check PASS.
+
+Next ranked candidate:
+
+- Candidate 6 from WC-3: noncoder artifact/export product hardening. It remains
+  demand-gated and requires a fresh GC-018/work order with the WC-4 Control
+  Block. Keep it product-facing; do not reopen provider, receipt-envelope,
+  memory, public-sync, or production-readiness scope without a fresh gate.
 
 ### WC-4: Knowledge Absorption Blind-Spot Standard
 
@@ -455,6 +483,7 @@ Binding result:
 | W2 | Memory event hooks + context packager hardening | `docs/reviews/CVF_W2_MEMORY_EVENT_HOOKS_CONTEXT_PACKAGER_COMPLETION_2026-05-24.md` |
 | W3 | Tool/MCP/database planned-action taxonomy | `docs/reviews/CVF_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_COMPLETION_2026-05-24.md` |
 | W4 | Operational benchmark scorecard | `docs/reviews/CVF_W4_OPERATIONAL_BENCHMARK_SCORECARD_COMPLETION_2026-05-24.md` |
+| W5 | Provider method and fallback normalization | `docs/reviews/CVF_W5_PROVIDER_METHOD_FALLBACK_NORMALIZATION_COMPLETION_2026-05-24.md` |
 
 ---
 
@@ -523,6 +552,11 @@ W4 claims only local operational scorecard generation from existing evidence
 records. It does not claim new live governance behavior, provider reliability,
 output quality, hallucination recovery, autonomous observability, public
 readiness, production readiness, or freeze release.
+
+W5 claims only local provider method/fallback/error clarity in Model Gateway
+contracts. It does not claim provider reliability, DeepSeek repair,
+OpenRouter support, runtime fallback execution, public capability, production
+readiness, hosted readiness, or freeze release.
 
 No track in this roadmap claims `canReinject=true`, global freeze lift,
 enterprise SaaS readiness, or universal provider parity.

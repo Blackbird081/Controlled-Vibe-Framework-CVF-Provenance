@@ -38,7 +38,7 @@ Current HEAD before V12 transition:
 
 Current mode marker:
 
-`w5_provider_method_fallback_normalization_authorized`
+`w5_provider_method_fallback_normalization_closed_pass_bounded`
 
 ---
 
@@ -208,6 +208,42 @@ widen into a global workflow engine, route-level invalid-transition BLOCK,
 provider semantics, new receipt envelope, role taxonomy, auth/RBAC, memory
 reinjection, public-sync, hosted readiness, production readiness, or freeze
 release.
+
+### 2026-05-24 - W5 Provider Method And Fallback Normalization Closed
+
+Current HEAD before W5 closure commit: `ebef3971`.
+
+W5 completion:
+`docs/reviews/CVF_W5_PROVIDER_METHOD_FALLBACK_NORMALIZATION_COMPLETION_2026-05-24.md`
+
+Implementation:
+
+- `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-method-fallback-normalization.ts`
+- `EXTENSIONS/CVF_MODEL_GATEWAY/src/index.ts`
+- `EXTENSIONS/CVF_MODEL_GATEWAY/tests/provider-method-fallback-normalization.test.ts`
+
+Result: added `cvf.providerMethodFallbackNormalization.w5.v1` and
+`evaluateProviderMethodFallback()` for local provider method/fallback/error
+clarity. The helper reports supported methods, missing provider/model,
+unsupported method, retry/fallback availability, diagnostic class, user action,
+and `adapterExecutionAuthorized` without running provider calls.
+
+Verification:
+
+- focused W5 tests PASS `9/9`;
+- adjacent provider method/fallback/output tests PASS `29/29`;
+- full Model Gateway tests PASS `91/91`;
+- Model Gateway TypeScript check PASS.
+
+Live proof: not required and not run; W5 is contract-only.
+
+Boundary: no live provider execution, new adapter, OpenRouter runtime,
+`/api/execute`, receipt-envelope change, provider router behavior, proxy
+server, raw prompt/output logging, auth/RBAC, public-sync, hosted readiness,
+production readiness, or freeze release.
+
+Next ranked candidate: Candidate 6 from WC-3, noncoder artifact/export product
+hardening, demand-gated by fresh GC-018/work order with WC-4 Control Block.
 
 ### 2026-05-24 - W1 Workflow State-Machine Enforcement Closed
 

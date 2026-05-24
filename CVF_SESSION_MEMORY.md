@@ -6,15 +6,16 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-24
 
-Current mode marker: `w5_provider_method_fallback_normalization_authorized`
+Current mode marker: `w5_provider_method_fallback_normalization_closed_pass_bounded`
 Update 2026-05-24: WC roadmap is active at
 `docs/roadmaps/CVF_WC_WORKFLOW_CHAIN_AND_PAIN_POINT_ROADMAP_2026-05-24.md`;
 WC-1 and WC-2 are closed pass bounded; WC-3/WC-4 are closed; W1 workflow
 state-machine enforcement is closed pass bounded. W2 memory event hooks plus
 context packager hardening is closed pass bounded. W3 tool/MCP/database action
 taxonomy is closed pass bounded. W4 operational benchmark scorecard is closed
-pass bounded. W5 provider method and fallback normalization is authorized by
-fresh GC-018 and dispatched as a bounded Model Gateway contract-only tranche.
+pass bounded. W5 provider method and fallback normalization is closed pass
+bounded. Next ranked candidate is Candidate 6 noncoder artifact/export product
+hardening, demand-gated by fresh GC-018 and WC-4 control block.
 
 R1/R2/R3 and V1/V2/V3 are closed pass bounded. All live runs must still follow
 `docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md`.
@@ -1074,3 +1075,36 @@ server, auth/RBAC, public-sync, hosted readiness, production readiness, or
 freeze release.
 
 Marker: w5_provider_method_fallback_normalization_authorized.
+
+## W5 Provider Method And Fallback Normalization - Closed 2026-05-24
+
+Current mode marker: `w5_provider_method_fallback_normalization_closed_pass_bounded`.
+
+W5 is closed pass bounded as WC-3 Candidate 5:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_W5_PROVIDER_METHOD_FALLBACK_NORMALIZATION_2026-05-24.md`
+- Work order:
+  `docs/work_orders/CVF_WO_W5_PROVIDER_METHOD_FALLBACK_NORMALIZATION_2026-05-24.md`
+- Completion:
+  `docs/reviews/CVF_W5_PROVIDER_METHOD_FALLBACK_NORMALIZATION_COMPLETION_2026-05-24.md`
+
+W5 added `cvf.providerMethodFallbackNormalization.w5.v1` and
+`evaluateProviderMethodFallback()` under Model Gateway. It normalizes
+provider/model/method support, unsupported alternatives, fallback/retry
+posture, diagnostic class, and user action without running a provider call.
+
+Evidence: focused W5 tests PASS `9/9`; adjacent provider
+method/fallback/output tests PASS `29/29`; full Model Gateway tests PASS
+`91/91`; Model Gateway TypeScript check PASS.
+
+Boundary: local contract/evaluation helper only. No live provider execution,
+new adapter, OpenRouter runtime, `/api/execute`, receipt envelope, provider
+router behavior, proxy server, raw prompt/output logging, auth/RBAC,
+public-sync, hosted readiness, production readiness, or freeze release.
+
+Next: Candidate 6 from WC-3, noncoder artifact/export product hardening,
+remains demand-gated and requires a fresh GC-018/work order with the WC-4
+Knowledge Absorption Blind-Spot Control Block.
+
+Marker: w5_provider_method_fallback_normalization_closed_pass_bounded.

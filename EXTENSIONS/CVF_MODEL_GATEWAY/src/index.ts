@@ -137,6 +137,20 @@ export {
 } from "./provider-method-gate";
 
 export type {
+  ProviderFallbackDiagnosticClass,
+  ProviderFallbackPosture,
+  ProviderFallbackUserAction,
+  ProviderMethodFailureInput,
+  ProviderMethodFallbackEvaluation,
+  ProviderMethodFallbackEvaluationInput,
+  ProviderMethodFallbackStatus,
+} from "./provider-method-fallback-normalization";
+export {
+  evaluateProviderMethodFallback,
+  PROVIDER_METHOD_FALLBACK_NORMALIZATION_VERSION,
+} from "./provider-method-fallback-normalization";
+
+export type {
   StreamCapableProvider,
   StreamContract,
   StreamRequest,
