@@ -8,6 +8,8 @@ Current HEAD before V13 handoff transition commit: `391ebedf`.
 
 Current HEAD before V13 structure sync commit: `50322987`.
 
+Current HEAD before C8 authorization commit: `9129fffe`.
+
 ## Purpose
 
 Provide a compact active handoff after V12 and the session-memory front door
@@ -49,7 +51,7 @@ Previous long session memory snapshot was archived at:
 
 ## Current Mode
 
-`c7a_product_skill_pack_top10_closed`
+`c8_product_skill_pack_selection_readout_authorized`
 
 Freeze posture remains:
 
@@ -97,8 +99,16 @@ explicit action/tool/provider boundary.
 
 ## Recommended Next Move
 
-Recommended next tranche: product skill pack selection/readout quality over the
-ten certified packs.
+C8 product skill pack selection/readout quality is authorized:
+
+`docs/baselines/CVF_GC018_C8_PRODUCT_SKILL_PACK_SELECTION_READOUT_2026-05-25.md`
+
+Work order:
+
+`docs/work_orders/CVF_WO_C8_PRODUCT_SKILL_PACK_SELECTION_READOUT_2026-05-25.md`
+
+Target: product skill pack selection/readout quality over the ten certified
+packs.
 
 Target should be deterministic selection/readout only: pick the best certified
 pack for a noncoder request, explain why, expose risk/review requirements, and

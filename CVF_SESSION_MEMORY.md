@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-25
 
-Current mode marker: `c7a_product_skill_pack_top10_closed`
+Current mode marker: `c8_product_skill_pack_selection_readout_authorized`
 
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Previous handoff archive:
 
 ## Current State
 
-Current mode: `c7a_product_skill_pack_top10_closed`.
+Current mode: `c8_product_skill_pack_selection_readout_authorized`.
 
 C7A closed PASS bounded at:
 
@@ -87,6 +87,21 @@ What remains held:
 
 Candidate 7 may reopen only with fresh GC-018, the mandatory Knowledge
 Absorption Blind-Spot Control Block, and a concrete source/use-case binding.
+
+## Active Tranche
+
+C8 product skill pack selection/readout is authorized:
+
+`docs/baselines/CVF_GC018_C8_PRODUCT_SKILL_PACK_SELECTION_READOUT_2026-05-25.md`
+
+Work order:
+
+`docs/work_orders/CVF_WO_C8_PRODUCT_SKILL_PACK_SELECTION_READOUT_2026-05-25.md`
+
+Bounded target: deterministic read-only Governance CLI selection/readout over
+the ten certified packs. No runtime/provider/receipt/memory/MCP/tool/database
+execution, public-sync, hosted readiness, production readiness, or freeze
+release.
 
 ## Recommended Next Tranche
 
