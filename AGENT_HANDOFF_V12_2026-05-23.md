@@ -289,6 +289,18 @@ Next ranked WC-3 candidate: Candidate 7 external skill/model ingestion
 readiness. It remains high-risk and demand-gated by fresh GC-018, concrete
 operator use case, and the WC-4 Control Block.
 
+### 2026-05-24 - WC Workflow Chain Roadmap Closed
+
+Current HEAD before roadmap closure commit: `96af02a4`.
+
+Closure:
+`docs/reviews/CVF_WC_WORKFLOW_CHAIN_AND_PAIN_POINT_ROADMAP_CLOSURE_2026-05-24.md`
+
+W1-W6 are closed. Candidate 7 is held, not rejected. Do not auto-dispatch
+external skill/model ingestion. It requires fresh GC-018, concrete operator use
+case, WC-4 Control Block, and explicit action/tool/provider governance
+boundary.
+
 ### 2026-05-24 - W1 Workflow State-Machine Enforcement Closed
 
 Current HEAD before W1 closure commit: `13966c38`.

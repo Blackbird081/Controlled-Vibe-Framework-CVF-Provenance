@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — WC-1/WC-2 CLOSED_PASS_BOUNDED; WC-3 CLOSED_MAPPING_ONLY; WC-4 CLOSED_CONTROL_ONLY; W1/W2/W3/W4/W5/W6 CLOSED_PASS_BOUNDED
+Status: CLOSED_PASS_BOUNDED_WITH_CANDIDATE7_HELD — WC-1/WC-2 CLOSED_PASS_BOUNDED; WC-3 CLOSED_MAPPING_ONLY; WC-4 CLOSED_CONTROL_ONLY; W1/W2/W3/W4/W5/W6 CLOSED_PASS_BOUNDED; Candidate 7 demand-gated
 
 Date: 2026-05-24
 
@@ -591,6 +591,19 @@ Verification:
 Next: Candidate 7, external skill/model ingestion readiness, remains high-risk
 and demand-gated by fresh GC-018, concrete operator use case, and WC-4 Control
 Block.
+
+#### Roadmap Closure
+
+**Gate:** CLOSED_PASS_BOUNDED_WITH_CANDIDATE7_HELD.
+
+Closure:
+
+- `docs/reviews/CVF_WC_WORKFLOW_CHAIN_AND_PAIN_POINT_ROADMAP_CLOSURE_2026-05-24.md`
+
+Disposition: W1-W6 are closed. Candidate 7 is not rejected, but it is not an
+automatic next implementation step. It remains held until a concrete operator
+use case, fresh GC-018, WC-4 Control Block, and explicit action/tool/provider
+governance boundary exist.
 
 No track in this roadmap claims `canReinject=true`, global freeze lift,
 enterprise SaaS readiness, or universal provider parity.

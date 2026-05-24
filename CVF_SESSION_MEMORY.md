@@ -1157,3 +1157,20 @@ high-risk and demand-gated by fresh GC-018, concrete operator use case, and
 WC-4 Control Block.
 
 Marker: w6_noncoder_artifact_export_hardening_closed_pass_bounded.
+
+## WC Workflow Chain Roadmap - Closed 2026-05-24
+
+Current mode marker:
+`wc_workflow_chain_roadmap_closed_pass_bounded_candidate7_held`.
+
+Closure:
+`docs/reviews/CVF_WC_WORKFLOW_CHAIN_AND_PAIN_POINT_ROADMAP_CLOSURE_2026-05-24.md`
+
+W1-W6 are closed. Candidate 7 external skill/model ingestion is held, not
+rejected, because it is high-risk and demand-gated in the WC-3 scan map.
+
+Next allowed move: open Candidate 7 only with fresh GC-018, concrete operator
+use case, WC-4 Control Block, and explicit action/tool/provider governance
+boundary. Otherwise start a new value-screened tranche.
+
+Marker: wc_workflow_chain_roadmap_closed_pass_bounded_candidate7_held.
