@@ -166,6 +166,10 @@ sources, Review-CVF pain points, memory, graph, workflow, CLI/MCP/tool,
 provider, benchmark, context, or non-coder outcome surfaces must complete the
 Knowledge Absorption Blind-Spot Control Block before implementation.
 
+Every future `GC-018` packet touching memory, graph, or intelligence work must
+include that Control Block. A missing block makes the packet incomplete and
+implementation must not be dispatched.
+
 Do not scope from active summaries alone. Resolve prior absorption evidence,
 read detailed source files when present, normalize accepted value into existing
 CVF owner surfaces, record accept/defer/reject dispositions, run adversarial

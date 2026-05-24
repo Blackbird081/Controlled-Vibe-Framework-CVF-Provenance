@@ -68,6 +68,11 @@ order must complete the Knowledge Absorption Blind-Spot Control Block in
 `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`.
 WC-3 is a map, not implementation authorization.
 
+Mandatory GC-018 control: every future `GC-018` packet that touches memory,
+graph, or intelligence work must include the Knowledge Absorption Blind-Spot
+Control Block. If the block is missing, the packet is incomplete and must not
+dispatch implementation.
+
 ## Pain-Point Mapping
 
 | Pain point | Current status | Legacy source families | WC-3 judgment |
