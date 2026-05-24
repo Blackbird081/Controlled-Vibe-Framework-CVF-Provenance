@@ -32,6 +32,8 @@ Current HEAD before ES1 implementation closure commit: `aa6c0cdf`.
 
 Current HEAD before C7B authorization commit: `cb13d02a`.
 
+Current HEAD before C7B implementation closure commit: `237585d8`.
+
 Remote tracking branch:
 
 `origin/main`
@@ -81,7 +83,7 @@ Previous long session memory snapshot was archived at:
 
 ## Current Mode
 
-`c7b_candidate7_external_skill_source_screening_authorized`
+`c7b_candidate7_external_skill_source_screening_closed`
 
 Freeze posture remains:
 
@@ -213,30 +215,30 @@ use-case requirement, value screen, duplicate/dilution screen against ten
 certified packs, risk screen, normalization minimum, owner-surface routing,
 dispatch dispositions, stop conditions, and required screening record.
 
-## Active Authorized Tranche
+## Latest Work / Changes
 
-C7B Candidate 7 external skill source screening matrix is authorized:
+C7B Candidate 7 external skill source screening matrix is closed PASS bounded:
 
-`docs/baselines/CVF_GC018_C7B_CANDIDATE7_EXTERNAL_SKILL_SOURCE_SCREENING_MATRIX_2026-05-25.md`
+`docs/reviews/CVF_C7B_CANDIDATE7_EXTERNAL_SKILL_SOURCE_SCREENING_MATRIX_COMPLETION_2026-05-25.md`
 
-Work order:
+Reference:
 
-`docs/work_orders/CVF_WO_C7B_CANDIDATE7_EXTERNAL_SKILL_SOURCE_SCREENING_MATRIX_2026-05-25.md`
+`docs/reference/CVF_CANDIDATE7_EXTERNAL_SKILL_SOURCE_SCREENING_MATRIX_2026-05-25.md`
 
-C7B may audit local source-family evidence for Hugging Face, Hermes,
-Memento-Skills, Agent Engineer, and local repository catalogs if relevant. It
-may create a docs/reference matrix only. No import, pack creation/modification,
-runtime execution, registry publication, live external fetch, provider call,
-public-sync/marketplace claim, `/api/execute`, receipt envelope, auth/RBAC,
-hosted readiness, production readiness, or freeze release is authorized.
+C7B audited Hugging Face, Hermes Agent, Memento-Skills, Agent Engineer, and the
+local skillsmp shortlist as evidence only. It accepted high-value
+normalization, package metadata, proposal-only evolution, and strict-schema
+patterns; deferred runtime/import/registry/new-pack work; rejected bulk/direct
+import; and recommended C7C external skill candidate record validator/readout
+as the next highest-value bounded tranche.
 
 ## Next Allowed Move
 
-C7B is the next authorized move. After C7B, next work should remain
-demand-driven with fresh GC-018/work order and the Knowledge Absorption
-Blind-Spot Control Block. Candidate-specific external skill import may start
-only when the operator names a concrete source/use case and authorizes the
-required owner surface.
+Recommended next work is C7C External Skill Candidate Record Validator/Readout,
+with fresh GC-018/work order and the Knowledge Absorption Blind-Spot Control
+Block. Candidate-specific external skill import may start only when the
+operator names a concrete source/use case and authorizes the required owner
+surface.
 
 Do not add real tool, command, MCP, database, browser, or provider execution;
 MCP bridge wiring; database adapter/driver/query/mutation/export/migration;

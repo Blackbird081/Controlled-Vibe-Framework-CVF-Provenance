@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-25
 
-Current mode marker: `c7b_candidate7_external_skill_source_screening_authorized`
+Current mode marker: `c7b_candidate7_external_skill_source_screening_closed`
 
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Previous handoff archive:
 
 ## Current State
 
-Current mode: `c7b_candidate7_external_skill_source_screening_authorized`.
+Current mode: `c7b_candidate7_external_skill_source_screening_closed`.
 
 C7A closed PASS bounded at:
 
@@ -179,22 +179,21 @@ packs, risk screen, normalization minimum, owner-surface routing, dispatch
 dispositions, stop conditions, and required screening record. No external skill
 import or runtime/public claim was opened.
 
-## Active Authorized Tranche
+## Latest Closed Tranche
 
-C7B Candidate 7 external skill source screening matrix is authorized:
+C7B Candidate 7 external skill source screening matrix is closed PASS bounded:
 
-`docs/baselines/CVF_GC018_C7B_CANDIDATE7_EXTERNAL_SKILL_SOURCE_SCREENING_MATRIX_2026-05-25.md`
+`docs/reviews/CVF_C7B_CANDIDATE7_EXTERNAL_SKILL_SOURCE_SCREENING_MATRIX_COMPLETION_2026-05-25.md`
 
-Work order:
+Reference:
 
-`docs/work_orders/CVF_WO_C7B_CANDIDATE7_EXTERNAL_SKILL_SOURCE_SCREENING_MATRIX_2026-05-25.md`
+`docs/reference/CVF_CANDIDATE7_EXTERNAL_SKILL_SOURCE_SCREENING_MATRIX_2026-05-25.md`
 
-C7B is docs-only. It may audit local Candidate 7 source families and produce a
-source-family screening matrix. It may not import external skills, create or
-modify packs, execute tools/MCP/CLI/scripts/models/providers, fetch live
-external repositories, publish registries, make public-sync/marketplace claims,
-or touch `/api/execute`, receipt envelopes, auth/RBAC, hosted readiness,
-production readiness, or freeze release.
+C7B audited Hugging Face, Hermes Agent, Memento-Skills, Agent Engineer, and the
+local skillsmp shortlist as evidence only. It accepted normalization/package/
+evolution/schema-contract patterns, deferred runtime/import/registry/new-pack
+work, and recommended C7C external skill candidate record validator/readout as
+the next highest-value bounded tranche.
 
 ## Mandatory Standards
 
