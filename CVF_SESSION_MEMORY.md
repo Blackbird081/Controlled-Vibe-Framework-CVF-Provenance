@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-25
 
-Current mode marker: `ta1_tool_action_approval_readout_closed`
+Current mode marker: `es1_external_skill_intake_screening_packet_authorized`
 
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Previous handoff archive:
 
 ## Current State
 
-Current mode: `ta1_tool_action_approval_readout_closed`.
+Current mode: `es1_external_skill_intake_screening_packet_authorized`.
 
 C7A closed PASS bounded at:
 
@@ -163,7 +163,21 @@ Do not add packs, runtime execution, provider behavior, receipt envelopes,
 memory, MCP/tool/database execution, public-sync, hosted readiness, production
 readiness, or freeze release without a new authorized tranche.
 
-Required before implementation: fresh GC-018 and work order.
+## Active Tranche
+
+ES1 external skill intake screening packet is authorized:
+
+`docs/baselines/CVF_GC018_ES1_EXTERNAL_SKILL_INTAKE_SCREENING_PACKET_2026-05-25.md`
+
+Work order:
+
+`docs/work_orders/CVF_WO_ES1_EXTERNAL_SKILL_INTAKE_SCREENING_PACKET_2026-05-25.md`
+
+Target: docs-only screening/reference packet for future Candidate 7 external
+skill intake. No external skill import, pack creation/modification, external
+tool/MCP/CLI/script/model/provider execution, live external repo fetch,
+registry publication, marketplace/public-sync claim, `/api/execute`, receipt
+envelope, auth/RBAC, hosted readiness, production readiness, or freeze release.
 
 ## Mandatory Standards
 
