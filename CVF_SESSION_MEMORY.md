@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-25
 
-Current mode marker: `wr1_workflow_recovery_state_proof_closed`
+Current mode marker: `ta1_tool_action_approval_readout_authorized`
 
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Previous handoff archive:
 
 ## Current State
 
-Current mode: `wr1_workflow_recovery_state_proof_closed`.
+Current mode: `ta1_tool_action_approval_readout_authorized`.
 
 C7A closed PASS bounded at:
 
@@ -142,6 +142,22 @@ check PASS.
 
 Candidate 7 external skill/model ingestion remains held until there is a
 concrete source/use-case binding.
+
+## Active Tranche
+
+TA1 tool/action approval readout is authorized:
+
+`docs/baselines/CVF_GC018_TA1_TOOL_ACTION_APPROVAL_READOUT_2026-05-25.md`
+
+Work order:
+
+`docs/work_orders/CVF_WO_TA1_TOOL_ACTION_APPROVAL_READOUT_2026-05-25.md`
+
+Target: deterministic local approval/readout on top of W3 tool action taxonomy.
+No real tool, command, MCP, database, browser, or provider execution; no MCP
+bridge; no database adapter/driver/query/mutation/export/migration; no
+`/api/execute`, receipt-envelope, auth/RBAC, public-sync, hosted readiness,
+production readiness, or freeze release.
 
 Do not add packs, runtime execution, provider behavior, receipt envelopes,
 memory, MCP/tool/database execution, public-sync, hosted readiness, production

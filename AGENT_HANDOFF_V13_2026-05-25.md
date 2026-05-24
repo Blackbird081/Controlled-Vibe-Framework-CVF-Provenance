@@ -22,6 +22,8 @@ Current HEAD before WR1 authorization commit: `972e227a`.
 
 Current HEAD before WR1 implementation closure commit: `43969712`.
 
+Current HEAD before TA1 authorization commit: `ea7824ef`.
+
 Remote tracking branch:
 
 `origin/main`
@@ -71,7 +73,7 @@ Previous long session memory snapshot was archived at:
 
 ## Current Mode
 
-`wr1_workflow_recovery_state_proof_closed`
+`ta1_tool_action_approval_readout_authorized`
 
 Freeze posture remains:
 
@@ -170,16 +172,26 @@ provider/API call, `/api/execute` behavior change beyond existing projection
 data flow, receipt envelope, memory, MCP/tool/database execution, public-sync,
 hosted readiness, production readiness, or freeze release.
 
-## Next Allowed Move
+## Active Tranche
 
-Any next absorption work must start with a fresh GC-018/work order and the
-Knowledge Absorption Blind-Spot Control Block.
+TA1 tool/action approval readout is authorized:
 
-Valid demand-selected LH1 candidates include:
+`docs/baselines/CVF_GC018_TA1_TOOL_ACTION_APPROVAL_READOUT_2026-05-25.md`
 
-- tool/action approval proof;
-- external skill intake screening packet;
-- route-level workflow enforcement proof, only if explicitly authorized.
+Work order:
+
+`docs/work_orders/CVF_WO_TA1_TOOL_ACTION_APPROVAL_READOUT_2026-05-25.md`
+
+Target: deterministic local approval/readout on top of W3 tool action taxonomy,
+with approval state, required/missing evidence, next safe action, concise safe
+message, and `runtimeExecutionAuthorized=false` preserved.
+
+Do not add real tool, command, MCP, database, browser, or provider execution;
+MCP bridge wiring; database adapter/driver/query/mutation/export/migration;
+`/api/execute` route changes; receipt envelopes; auth/RBAC; public-sync; hosted
+readiness; production readiness; or freeze release.
+
+## WR1 Source Pointers
 
 Previous WR1 authorization packet:
 
