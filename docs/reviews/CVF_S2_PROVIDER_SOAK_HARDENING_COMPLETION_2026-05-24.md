@@ -128,6 +128,31 @@ this diagnostic rerun.
 This completion does not prove universal provider stability or SLA-level
 availability. It proves only the bounded 15-call repeatability window above.
 
+## Operator Top-Up Rerun Addendum - 2026-05-24
+
+After the operator topped up the DeepSeek account, Codex reran only the
+DeepSeek lane to avoid spending unrelated provider quota.
+
+Command:
+
+```bash
+CVF_POST_PHASE2B_PROVIDERS=deepseek CVF_POST_PHASE2B_REPEATS=5 node scripts/run_cvf_s2_provider_soak_probe.mjs
+```
+
+Result: `PASS 5/5`.
+
+| Journey | Receipt | Trace | Status | Latency |
+| --- | --- | --- | --- | --- |
+| 1 | `rcpt-env-mpju5p4n-vz21an` | `env-mpju5p4n-vz21an` | PASS | 15650 ms |
+| 2 | `rcpt-env-mpju629l-193w3g` | `env-mpju629l-193w3g` | PASS | 20081 ms |
+| 3 | `rcpt-env-mpju6ixe-3htqmx` | `env-mpju6ixe-3htqmx` | PASS | 17993 ms |
+| 4 | `rcpt-env-mpju6xz6-59w5jr` | `env-mpju6xz6-59w5jr` | PASS | 18179 ms |
+| 5 | `rcpt-env-mpju7d61-69skn2` | `env-mpju7d61-69skn2` | PASS | 16501 ms |
+
+All five calls returned HTTP `200`, `success=true`, `decision=ALLOW`,
+`routingDecision=ALLOW`, `evidenceMode=live`, route `/api/execute`, and
+`rawSecretPrinted=false`. No failure class was emitted.
+
 ## Risk / Corrective Action
 
 Risk: The superseding `15/15` result could be overstated as broad provider

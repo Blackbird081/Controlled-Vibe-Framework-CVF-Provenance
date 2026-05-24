@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — WC-1/WC-2 CLOSED_PASS_BOUNDED; WC-3/W-series DEMAND_GATED
+Status: ACTIVE — WC-1/WC-2 CLOSED_PASS_BOUNDED; WC-3 CLOSED_MAPPING_ONLY; W-series DEMAND_GATED
 
 Date: 2026-05-24
 
@@ -165,7 +165,7 @@ Completed steps:
 
 ### WC-3: Legacy Harvest Scan
 
-**Gate:** DEMAND_GATED — requires operator authorization before scan begins.
+**Gate:** CLOSED_MAPPING_ONLY — operator authorized after DeepSeek rerun.
 
 **Method:** Single combined mapping exercise across:
 
@@ -183,7 +183,12 @@ unaddressed or partially addressed.
 - Pain point mapping per legacy file
 - Ranked absorption candidates (highest value first)
 
-No new implementation work is opened during the scan itself. Scan output
+Completed output:
+
+- `docs/reference/CVF_LEGACY_HARVEST_SCAN_MAP_2026-05-24.md`
+- `docs/reviews/CVF_WC3_LEGACY_HARVEST_SCAN_COMPLETION_2026-05-24.md`
+
+No new implementation work was opened during the scan itself. Scan output
 becomes the input to future work orders.
 
 ### W-Series: Return to Real User Pain Points
@@ -221,10 +226,10 @@ new audits.
 
 ### WC-3
 
-- [ ] Mapping document covers all files in CVF 16.5, CVF ADD, CVF Edit
-- [ ] Each file entry states: implemented / not implemented / partial
-- [ ] Pain point cross-reference complete
-- [ ] No source code changes committed during scan
+- [x] Mapping document covers all files in CVF 16.5, CVF ADD, CVF Edit
+- [x] Each source family states implemented / not implemented / partial
+- [x] Pain point cross-reference complete
+- [x] No source code changes committed during scan
 
 ---
 
@@ -234,7 +239,7 @@ new audits.
 | --- | --- | --- |
 | WC-2 | Focused test run + release gate | `docs/reviews/CVF_WC2_MOCK_FALLBACK_ELIMINATION_COMPLETION_2026-05-24.md` |
 | WC-1 | Live probe script + two receipts | `docs/reviews/CVF_WC1_WORKFLOW_CHAIN_PROOF_COMPLETION_2026-05-24.md` |
-| WC-3 | Mapping document | `docs/reference/CVF_LEGACY_HARVEST_SCAN_MAP_2026-*.md` |
+| WC-3 | Mapping document | `docs/reference/CVF_LEGACY_HARVEST_SCAN_MAP_2026-05-24.md` |
 
 ---
 
@@ -245,7 +250,7 @@ WC-2 (mock fallback elimination)  <- Fast Lane, can start now
   |
 WC-1 (workflow chain proof)       <- Closed pass bounded
   |
-WC-3 (legacy harvest scan)        <- Next; demand-gated mapping exercise
+WC-3 (legacy harvest scan)        <- Closed mapping only
   |
 W-series (real user pain points)  <- Demand-gated; depends on WC-3
 ```

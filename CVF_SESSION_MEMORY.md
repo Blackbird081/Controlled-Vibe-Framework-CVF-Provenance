@@ -1195,3 +1195,5 @@ persistence, no hosted/cloud memory persistence, no graph approval authority,
 no universal provider stability, no enterprise SaaS/GA readiness, no Maika
 proof, and no broad production readiness beyond the P1 small-team/non-coder
 path.
+
+Marker: wc3_legacy_harvest_scan_closed_mapping_only.

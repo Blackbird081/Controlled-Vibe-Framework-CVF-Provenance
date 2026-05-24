@@ -38,7 +38,7 @@ Current HEAD before V12 transition:
 
 Current mode marker:
 
-`wc1_workflow_chain_proof_closed_pass_bounded`
+`wc3_legacy_harvest_scan_closed_mapping_only`
 
 ---
 
@@ -77,6 +77,48 @@ current.
 ---
 
 ## Latest Work / Changes
+
+### 2026-05-24 - DeepSeek Top-Up Rerun and WC-3 Closed
+
+Operator reported DeepSeek balance replenished and requested a rerun before
+WC-3. Codex ran a DeepSeek-only S2 soak rerun:
+
+- command class: `CVF_POST_PHASE2B_PROVIDERS=deepseek`,
+  `CVF_POST_PHASE2B_REPEATS=5`
+- result: PASS `5/5`
+- receipts: `rcpt-env-mpju5p4n-vz21an`, `rcpt-env-mpju629l-193w3g`,
+  `rcpt-env-mpju6ixe-3htqmx`, `rcpt-env-mpju6xz6-59w5jr`,
+  `rcpt-env-mpju7d61-69skn2`
+- all calls: HTTP 200, `success=true`, `decision=ALLOW`,
+  `routingDecision=ALLOW`, `evidenceMode=live`, route `/api/execute`,
+  `rawSecretPrinted=false`
+
+Addendum:
+`docs/reviews/CVF_S2_PROVIDER_SOAK_HARDENING_COMPLETION_2026-05-24.md`
+
+WC-3 is closed mapping-only:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_WC3_LEGACY_HARVEST_SCAN_2026-05-24.md`
+- work order:
+  `docs/work_orders/CVF_WO_WC3_LEGACY_HARVEST_SCAN_2026-05-24.md`
+- map:
+  `docs/reference/CVF_LEGACY_HARVEST_SCAN_MAP_2026-05-24.md`
+- completion:
+  `docs/reviews/CVF_WC3_LEGACY_HARVEST_SCAN_COMPLETION_2026-05-24.md`
+
+Scan coverage: CVF 16.5 `100` files, CVF ADD `167` files, CVF Edit `10`
+files; total `277`.
+
+Recommended next candidates from the map:
+
+1. bounded workflow state-machine proof;
+2. memory event hooks and summary-only context packaging;
+3. tool/MCP/database action governance taxonomy;
+4. operational benchmark scorecard;
+5. provider method/fallback normalization.
+
+Next implementation remains demand-gated and requires fresh GC-018/work order.
 
 ### 2026-05-24 - WC-1 Workflow Chain Proof Closed
 
