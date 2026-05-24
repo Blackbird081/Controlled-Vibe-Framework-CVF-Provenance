@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: WORK_ORDER_READY
+Status: CLOSED_PASS
 
 docType: work_order
 
@@ -173,10 +173,10 @@ assertion on another receipt field.
 
 | Task | Status | Output |
 | --- | --- | --- |
-| Fix `emptyReceipt()` receiptId | PENDING | `randomUUID()` in place. |
-| Update test assertion | PENDING | UUID pattern asserted. |
-| TypeScript check | PENDING | PASS. |
-| Fast Lane audit | PENDING | Filed. |
+| Fix `emptyReceipt()` receiptId | DONE | `randomUUID()` in place. |
+| Update test assertion | DONE | UUID pattern asserted. |
+| TypeScript check | DONE | PASS. |
+| Fast Lane audit | DONE | Filed. |
 
 ---
 

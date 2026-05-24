@@ -31,8 +31,8 @@ governance proof, not just structural claims.
 ## Source / Predecessor Evidence
 
 - E2 deliverables:
-  - `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/operational-benchmark-suite.ts`
-  - `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/governance-reliability-metrics.ts`
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/operational-benchmark-suite.ts`
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/governance-reliability-metrics.ts`
 - E2 completion: `docs/reviews/` (post-B/C batch G1/D2/E2/H2/F2/A2 completion)
 - C5 hosted smoke: `docs/reviews/CVF_C2_C5_POST_AIF_CLAIM_GRADUATION_COMPLETION_2026-05-24.md`
 - Public catalog: `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`

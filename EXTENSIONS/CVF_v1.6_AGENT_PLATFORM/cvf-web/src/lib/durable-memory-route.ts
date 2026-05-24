@@ -1,3 +1,4 @@
+import { randomUUID } from 'node:crypto';
 import {
     createFileBackedDurableMemoryStore,
     DURABLE_MEMORY_STORE_VERSION,
@@ -17,16 +18,19 @@ export interface DurableMemoryRouteResult {
 }
 
 const ROUTE_DURABLE_MEMORY_STORE_ENV = 'CVF_DURABLE_MEMORY_STORE_PATH';
+const DEFAULT_WRITE_SUMMARY_LENGTH = 500;
+const MAX_WRITE_SUMMARY_LENGTH = 1000;
 
 function emptyReceipt(input: {
     reason: string;
     scope: string;
     tier?: 'skill' | 'long-term';
     decision?: 'allowed' | 'denied';
+    operation?: 'read' | 'write';
 }): DurableMemoryReceipt {
     return {
         contractVersion: DURABLE_MEMORY_STORE_VERSION,
-        operation: 'read',
+        operation: input.operation ?? 'read',
         decision: input.decision ?? 'denied',
         reason: input.reason,
         tier: input.tier,
@@ -38,8 +42,21 @@ function emptyReceipt(input: {
         summaryOnly: true,
         canReinject: false,
         rawMemoryReleased: false,
-        receiptId: `r2-read-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`,
+        receiptId: randomUUID(),
     };
+}
+
+function clampSummaryLength(value: number | undefined): number {
+    if (!Number.isFinite(value)) return DEFAULT_WRITE_SUMMARY_LENGTH;
+    return Math.max(1, Math.min(Math.floor(value as number), MAX_WRITE_SUMMARY_LENGTH));
+}
+
+function summarizeExecutionOutput(output: string, maxSummaryLength: number): string {
+    const trimmed = output.trim().replace(/\s+/g, ' ');
+    const summary = trimmed.slice(0, maxSummaryLength);
+    return trimmed.length > maxSummaryLength
+        ? `${summary} [truncated_summary_only]`
+        : summary;
 }
 
 export function resolveDurableMemoryActorRole(role: string | null | undefined): RuntimeMemoryActorRole {
@@ -146,3 +163,56 @@ export function evaluateDurableMemoryRoute(input: {
     };
 }
 
+export function evaluateDurableMemoryWrite(input: {
+    request: Partial<ExecutionRequest>;
+    actorId: string;
+    actorRole: RuntimeMemoryActorRole;
+    output: string;
+    storePath?: string;
+}): DurableMemoryReceipt | undefined {
+    const writeRequest = input.request.durableMemoryWrite;
+    if (!writeRequest?.enabled) return undefined;
+
+    const tier = writeRequest.tier ?? 'skill';
+    const scope = writeRequest.scope?.trim() || `user:${input.actorId}`;
+
+    if (writeRequest.policy?.actorAuthorized !== true) {
+        return emptyReceipt({
+            reason: 'durable_memory_write_policy_denied',
+            scope,
+            tier,
+            decision: 'denied',
+            operation: 'write',
+        });
+    }
+
+    const storePath = input.storePath ?? process.env[ROUTE_DURABLE_MEMORY_STORE_ENV];
+    if (!storePath?.trim()) {
+        return emptyReceipt({
+            reason: 'durable_memory_write_store_not_configured',
+            scope,
+            tier,
+            decision: 'denied',
+            operation: 'write',
+        });
+    }
+
+    const maxSummaryLength = clampSummaryLength(writeRequest.maxSummaryLength);
+    const summary = summarizeExecutionOutput(input.output, maxSummaryLength);
+    const store = createFileBackedDurableMemoryStore(storePath);
+    const write = store.write({
+        id: `s1-${randomUUID()}`,
+        tier,
+        scope,
+        actorId: input.actorId,
+        actorRole: input.actorRole,
+        summary,
+        lifecycleState: 'semantic',
+        provenanceScore: 1,
+        actorAuthorized: true,
+        policyDecision: 'allow',
+        sensitivity: 'internal',
+    });
+
+    return write.receipt;
+}

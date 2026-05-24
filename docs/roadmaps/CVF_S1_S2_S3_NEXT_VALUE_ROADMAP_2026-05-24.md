@@ -77,10 +77,10 @@ Close four gaps identified in the post-R1/R2/R3 quality audit:
 
 | Tranche | Title | Depends On | Status | Work Order |
 | --- | --- | --- | --- | --- |
-| R4-fix | Route receipt-id determinism | R2 CLOSED_PASS | WORK_ORDER_READY | `docs/work_orders/CVF_WO_R4FIX_ROUTE_RECEIPT_ID_DETERMINISM_2026-05-24.md` |
-| S1 | Durable memory write path via `/api/execute` | R2 CLOSED_PASS | WORK_ORDER_READY | `docs/work_orders/CVF_WO_S1_DURABLE_MEMORY_WRITE_ROUTE_2026-05-24.md` |
-| S2 | Provider soak hardening | C4 CLOSED_PASS | WORK_ORDER_READY | `docs/work_orders/CVF_WO_S2_PROVIDER_SOAK_HARDENING_2026-05-24.md` |
-| S3 | Governance benchmark public claim | E2 CLOSED_PASS | WORK_ORDER_READY | `docs/work_orders/CVF_WO_S3_GOVERNANCE_BENCHMARK_PUBLIC_CLAIM_2026-05-24.md` |
+| R4-fix | Route receipt-id determinism | R2 CLOSED_PASS | CLOSED_PASS | `docs/work_orders/CVF_WO_R4FIX_ROUTE_RECEIPT_ID_DETERMINISM_2026-05-24.md` |
+| S1 | Durable memory write path via `/api/execute` | R2 CLOSED_PASS | CLOSED_PASS | `docs/work_orders/CVF_WO_S1_DURABLE_MEMORY_WRITE_ROUTE_2026-05-24.md` |
+| S2 | Provider soak hardening | C4 CLOSED_PASS | RETURNED_BLOCKED_DEEPSEEK_EXECUTE_FAILURE | `docs/work_orders/CVF_WO_S2_PROVIDER_SOAK_HARDENING_2026-05-24.md` |
+| S3 | Governance benchmark public claim | E2 CLOSED_PASS | CLOSED_PASS_BOUNDED | `docs/work_orders/CVF_WO_S3_GOVERNANCE_BENCHMARK_PUBLIC_CLAIM_2026-05-24.md` |
 
 All four tranches may begin immediately in parallel. R4-fix and S1 touch
 overlapping files (`durable-memory-route.ts`) — Codex must apply R4-fix first
@@ -146,9 +146,9 @@ S2:
 
 S3:
 
-- Read `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src` `operational-benchmark-suite.ts`
-  and `governance-reliability-metrics.ts` (E2 deliverables) fully before
-  designing the probe.
+- Read `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/operational-benchmark-suite.ts`
+  and `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/governance-reliability-metrics.ts`
+  (E2 deliverables) fully before designing the probe.
 - Run the benchmark suite against the live hosted `/api/execute` target.
 - Record evidence: at least 3 of the 9 metrics with live values
   (taskCompletionRate, policyViolationRate, receiptIntegrityRate are the
@@ -162,14 +162,14 @@ S3:
 
 ## Acceptance Criteria
 
-- [ ] R4-fix: `receiptId` in `emptyReceipt()` uses `randomUUID()`. Route tests
+- [x] R4-fix: `receiptId` in `emptyReceipt()` uses `randomUUID()`. Route tests
       assert UUID pattern. TypeScript PASS. Fast Lane audit filed.
-- [ ] S1: durable write path wired. Policy double-gate (`enabled` +
+- [x] S1: durable write path wired. Policy double-gate (`enabled` +
       `actorAuthorized`) enforced. Write skipped on BLOCK. `canReinject=false`
       preserved. Live proof produces write receipt. Release gate PASS.
 - [ ] S2: soak probe run with ≥5 journeys per provider. Live receipts filed for
       all journeys. Claim bounded to proven soak window only.
-- [ ] S3: benchmark probe run against live hosted target. ≥3 metrics with live
+- [x] S3: benchmark probe run against live hosted target. ≥3 metrics with live
       values. Public catalog row added. Test-Path PASS from public-sync.
 - [ ] No raw secret in any committed artifact across all tranches.
 - [ ] R4-fix applied before or within S1 to avoid file conflict.
@@ -235,7 +235,14 @@ Still not claimed:
 
 | Tranche | Status | Completion Review |
 | --- | --- | --- |
-| R4-fix | WORK_ORDER_READY | — |
-| S1 | WORK_ORDER_READY | — |
-| S2 | WORK_ORDER_READY | — |
-| S3 | WORK_ORDER_READY | — |
+| R4-fix | CLOSED_PASS | `docs/reviews/CVF_R4FIX_ROUTE_RECEIPT_ID_FAST_LANE_AUDIT_2026-05-24.md` |
+| S1 | CLOSED_PASS | `docs/reviews/CVF_S1_DURABLE_MEMORY_WRITE_ROUTE_COMPLETION_2026-05-24.md` |
+| S2 | RETURNED_BLOCKED_DEEPSEEK_EXECUTE_FAILURE | `docs/reviews/CVF_S2_PROVIDER_SOAK_HARDENING_BLOCKER_REVIEW_2026-05-24.md` |
+| S3 | CLOSED_PASS_BOUNDED | `docs/reviews/CVF_S3_GOVERNANCE_BENCHMARK_PUBLIC_CLAIM_COMPLETION_2026-05-24.md` |
+
+## Closure / Blocker Note - 2026-05-24
+
+R4-fix, S1, and S3 are closed. S2 returned blocked: Alibaba and OpenAI each
+passed `5/5`, but DeepSeek returned `0/5` successful journeys despite live
+ALLOW receipts, with `execute_failure` and empty output after about 60s per
+journey. The roadmap therefore must not claim 3-provider soak hardening.

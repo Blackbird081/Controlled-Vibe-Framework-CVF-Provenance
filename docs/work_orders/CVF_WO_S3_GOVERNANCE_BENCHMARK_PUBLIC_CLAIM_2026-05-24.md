@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: WORK_ORDER_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -30,8 +30,8 @@ evidence claim.
 - GC-018: `docs/baselines/CVF_GC018_S3_GOVERNANCE_BENCHMARK_PUBLIC_CLAIM_2026-05-24.md`
 - Roadmap: `docs/roadmaps/CVF_S1_S2_S3_NEXT_VALUE_ROADMAP_2026-05-24.md`
 - E2 deliverables:
-  - `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/operational-benchmark-suite.ts`
-  - `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/governance-reliability-metrics.ts`
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/operational-benchmark-suite.ts`
+  - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/governance-reliability-metrics.ts`
 - Public catalog: `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`
   (public-sync)
 - Public catalog rule: `CLAUDE.md` — "Public Catalog Update Rule (GC-024)"
@@ -76,9 +76,9 @@ Out of scope:
 
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/operational-benchmark-suite.ts`
+- `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/operational-benchmark-suite.ts`
   — ALL content. Must read before designing probe.
-- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/governance-reliability-metrics.ts`
+- `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/governance-reliability-metrics.ts`
   — ALL content. Must read before designing probe.
 - `docs/reviews/CVF_R2_EXECUTE_ROUTE_DURABLE_MEMORY_WIRING_COMPLETION_2026-05-24.md`
   (live proof pattern to reference for probe design)
@@ -248,12 +248,12 @@ public-sync remote cannot be verified.
 
 | Task | Status | Output |
 | --- | --- | --- |
-| Read E2 sources | PENDING | Types and metric definitions noted. |
-| Design + write probe | PENDING | `scripts/run_cvf_s3_governance_benchmark_probe.mjs` |
-| Run probe (≥5 live calls) | PENDING | ≥3 metric values from live run. |
-| Evidence JSON | PENDING | Filed. |
-| Public catalog update | PENDING | Row added, Test-Path PASS. |
-| Completion review | PENDING | Filed with exact metric values. |
+| Read E2 sources | DONE | Types and metric definitions noted. |
+| Design + write probe | DONE | `scripts/run_cvf_s3_governance_benchmark_probe.mjs` |
+| Run probe (≥5 live calls) | DONE | ≥3 metric values from live run. |
+| Evidence JSON | DONE | Filed. |
+| Public catalog update | DONE | Row added, Test-Path PASS. |
+| Completion review | DONE | Filed with exact metric values. |
 
 ---
 

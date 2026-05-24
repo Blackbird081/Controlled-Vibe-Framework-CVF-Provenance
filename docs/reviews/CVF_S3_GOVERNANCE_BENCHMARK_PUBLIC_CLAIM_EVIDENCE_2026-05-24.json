@@ -1,0 +1,203 @@
+{
+  "schemaVersion": "cvf-s3-governance-benchmark-live-evidence-1",
+  "status": "PASS",
+  "hostedUrl": "https://vibcode.netlify.app/api/execute",
+  "liveCallCount": 5,
+  "sourceFilesRead": [
+    "EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/operational-benchmark-suite.ts",
+    "EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/governance-reliability-metrics.ts"
+  ],
+  "metrics": {
+    "taskCompletionRate": {
+      "rate": 0.5,
+      "count": 5,
+      "total": 10
+    },
+    "policyViolationRate": {
+      "rate": 0,
+      "count": 0,
+      "total": 10
+    },
+    "receiptIntegrityRate": {
+      "rate": 0.5,
+      "count": 5,
+      "total": 10
+    }
+  },
+  "report": {
+    "schemaVersion": "cvf.operationalBenchmark.v1",
+    "source": {
+      "input": "https://vibcode.netlify.app/api/execute",
+      "eventCount": 10,
+      "evidenceModes": [
+        "live"
+      ],
+      "providerLanes": [
+        "alibaba"
+      ],
+      "modelLanes": [
+        "qwen-turbo"
+      ]
+    },
+    "metrics": {
+      "taskCompletionRate": {
+        "rate": 0.5,
+        "count": 5,
+        "total": 10
+      },
+      "retryCount": {
+        "count": 0,
+        "total": 10
+      },
+      "policyViolationRate": {
+        "rate": 0,
+        "count": 0,
+        "total": 10
+      },
+      "humanCorrectionCount": {
+        "count": 0,
+        "total": 5
+      },
+      "crossSessionContinuityRate": {
+        "rate": 1,
+        "count": 1,
+        "total": 1
+      },
+      "longHorizonStabilityRate": {
+        "rate": 1,
+        "count": 5,
+        "total": 5
+      },
+      "receiptIntegrityRate": {
+        "rate": 0.5,
+        "count": 5,
+        "total": 10
+      },
+      "deterministicConsistencyRate": {
+        "rate": 0,
+        "count": 0,
+        "total": 5
+      },
+      "rollbackSuccessRate": {
+        "rate": null,
+        "count": 0,
+        "total": 0
+      }
+    },
+    "evidenceModeBreakdown": [
+      {
+        "evidenceMode": "live",
+        "eventCount": 10,
+        "taskCompletionRate": {
+          "rate": 0.5,
+          "count": 5,
+          "total": 10
+        },
+        "policyViolationRate": {
+          "rate": 0,
+          "count": 0,
+          "total": 10
+        },
+        "receiptIntegrityRate": {
+          "rate": 0.5,
+          "count": 5,
+          "total": 10
+        }
+      }
+    ],
+    "deferredMetrics": [
+      {
+        "metric": "hallucinationRecovery",
+        "status": "deferred",
+        "replacementMetrics": [
+          "policyViolationRate",
+          "humanCorrectionCount",
+          "rollbackSuccessRate"
+        ],
+        "reason": "No bounded hallucination-recovery event contract exists in the current private baseline."
+      }
+    ],
+    "claimBoundary": "Operational benchmark foundation only; report does not prove broad provider reliability or output quality."
+  },
+  "results": [
+    {
+      "run": 1,
+      "httpStatus": 200,
+      "success": true,
+      "latencyMs": 16594,
+      "receiptId": "rcpt-env-mpjfw4h8-hquk50",
+      "traceId": "env-mpjfw4h8-hquk50",
+      "evidenceMode": "live",
+      "provider": "alibaba",
+      "model": "qwen-turbo",
+      "decision": "ALLOW",
+      "routingDecision": "ALLOW",
+      "error": null,
+      "outputLength": 3823
+    },
+    {
+      "run": 2,
+      "httpStatus": 200,
+      "success": true,
+      "latencyMs": 13598,
+      "receiptId": "rcpt-env-mpjfwdxu-pzio10",
+      "traceId": "env-mpjfwdxu-pzio10",
+      "evidenceMode": "live",
+      "provider": "alibaba",
+      "model": "qwen-turbo",
+      "decision": "ALLOW",
+      "routingDecision": "ALLOW",
+      "error": null,
+      "outputLength": 4087
+    },
+    {
+      "run": 3,
+      "httpStatus": 200,
+      "success": true,
+      "latencyMs": 11671,
+      "receiptId": "rcpt-env-mpjfwoei-nmpweq",
+      "traceId": "env-mpjfwoei-nmpweq",
+      "evidenceMode": "live",
+      "provider": "alibaba",
+      "model": "qwen-turbo",
+      "decision": "ALLOW",
+      "routingDecision": "ALLOW",
+      "error": null,
+      "outputLength": 3591
+    },
+    {
+      "run": 4,
+      "httpStatus": 200,
+      "success": true,
+      "latencyMs": 13373,
+      "receiptId": "rcpt-env-mpjfwxey-7ytgbo",
+      "traceId": "env-mpjfwxey-7ytgbo",
+      "evidenceMode": "live",
+      "provider": "alibaba",
+      "model": "qwen-turbo",
+      "decision": "ALLOW",
+      "routingDecision": "ALLOW",
+      "error": null,
+      "outputLength": 3752
+    },
+    {
+      "run": 5,
+      "httpStatus": 200,
+      "success": true,
+      "latencyMs": 13501,
+      "receiptId": "rcpt-env-mpjfx7qr-pqur19",
+      "traceId": "env-mpjfx7qr-pqur19",
+      "evidenceMode": "live",
+      "provider": "alibaba",
+      "model": "qwen-turbo",
+      "decision": "ALLOW",
+      "routingDecision": "ALLOW",
+      "error": null,
+      "outputLength": 3860
+    }
+  ],
+  "security": {
+    "rawSecretPrinted": false,
+    "requestHeadersPrinted": false
+  }
+}

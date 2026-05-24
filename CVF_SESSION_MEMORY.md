@@ -6,7 +6,10 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-24
 
-Current mode marker: `r2_r3_gap_closure_closed_pass_bounded`
+Current mode marker: `s1_s3_closed_s2_blocked_bounded`
+
+Update 2026-05-24: R4-fix/S1/S2/S3 execution is partially closed. R4-fix,
+S1, and S3 are closed; S2 returned blocked on DeepSeek execute failures.
 
 R1/R2/R3 post-M1 gap closure is closed. R2 delivered explicit policy-gated
 `/api/execute` durable-memory reads with live receipt
@@ -141,6 +144,48 @@ Boundary: no autonomous memory reinjection, `canReinject=true`, raw-memory
 prompt injection, automated provider procurement, hosted secret-vault
 operations, enterprise SaaS/GA readiness, graph approval authority, universal
 provider stability, or broad production readiness is claimed.
+
+## S1/S2/S3 Next-Value Execution - 2026-05-24
+
+Roadmap:
+
+- `docs/roadmaps/CVF_S1_S2_S3_NEXT_VALUE_ROADMAP_2026-05-24.md`
+
+Status:
+
+- R4-fix `CLOSED_PASS`:
+  `docs/reviews/CVF_R4FIX_ROUTE_RECEIPT_ID_FAST_LANE_AUDIT_2026-05-24.md`
+- S1 `CLOSED_PASS`:
+  `docs/reviews/CVF_S1_DURABLE_MEMORY_WRITE_ROUTE_COMPLETION_2026-05-24.md`
+- S2 `RETURNED_BLOCKED_DEEPSEEK_EXECUTE_FAILURE`:
+  `docs/reviews/CVF_S2_PROVIDER_SOAK_HARDENING_BLOCKER_REVIEW_2026-05-24.md`
+- S3 `CLOSED_PASS_BOUNDED`:
+  `docs/reviews/CVF_S3_GOVERNANCE_BENCHMARK_PUBLIC_CLAIM_COMPLETION_2026-05-24.md`
+
+R4-fix replaced the route `emptyReceipt()` id pattern with `randomUUID()`.
+S1 added explicit policy-gated route durable memory writes and proved one live
+Alibaba `qwen-turbo` write receipt `rcpt-env-mpjfltku-sckj1z`, trace
+`env-mpjfltku-sckj1z`, memory id
+`s1-abd31b24-d71d-4bc3-a2f4-e727f3d1e18d`, `rawMemoryReleased=false`, and
+`canReinject=false`.
+
+S2 ran 5 journeys per provider. Alibaba passed `5/5`, OpenAI passed `5/5`,
+and DeepSeek failed `0/5` with live ALLOW receipts but `success=false`, output
+length `0`, and about 60s latency per journey. Do not claim 3-provider soak
+hardening or broad provider stability.
+
+S3 ran 5 hosted live benchmark calls on Alibaba `qwen-turbo`, filed private
+evidence JSON, and added a public-safe catalog row/summary in public-sync.
+Measured E2 event-model metrics: `taskCompletionRate=0.5`,
+`policyViolationRate=0`, and `receiptIntegrityRate=0.5`.
+
+Verification: route durable-memory tests PASS `7/7`; LPF durable/runtime
+memory targeted tests PASS `19/19`; `cvf-web` TypeScript check PASS; LPF check
+PASS; Governance CLI build PASS; mandatory release gate PASS `7/7`.
+
+Boundary: no autonomous write, `canReinject=true`, raw memory prompt injection,
+hosted/cloud persistence, universal provider stability, SLA, enterprise
+benchmark certification, hosted/production readiness, or freeze release.
 
 ## Post-AIF Claim Graduation C2-C5 — Closed 2026-05-24
 

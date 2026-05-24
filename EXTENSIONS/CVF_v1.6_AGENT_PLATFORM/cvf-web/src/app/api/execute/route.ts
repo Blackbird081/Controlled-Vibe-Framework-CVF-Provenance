@@ -30,7 +30,7 @@ import { buildPhase2CProductBriefSliceForRoute } from '@/lib/phase2c-product-bri
 import { buildPhase3EOperationalMetricsForRoute } from '@/lib/phase3e-operational-emission';
 import { buildWorkflowExecutionProjection, resolveWorkflowBindingForExecution } from '@/lib/workflows/workflow-resolver';
 import { buildRouteAuditMemoryCapture } from '@/lib/audit-memory-receipt';
-import { buildDurableMemorySystemPrompt, evaluateDurableMemoryRoute, resolveDurableMemoryActorRole } from '@/lib/durable-memory-route';
+import { buildDurableMemorySystemPrompt, evaluateDurableMemoryRoute, evaluateDurableMemoryWrite, resolveDurableMemoryActorRole } from '@/lib/durable-memory-route';
 import { buildRoleOutputDeniedResponse, buildRolePermissionDeniedResponse } from '@/lib/execute-role-permission-gate';
 import { buildExecutionIdentityDecision } from '@/lib/execution-identity';
 import { evaluateExecutionActorRoleGate, resolveExecutionCVFRole, resolveExecutionOutputClass } from '@/lib/execute-role-resolver';
@@ -843,8 +843,9 @@ export async function POST(request: NextRequest) {
             }
         }
 
-        const usage = aiResult.success && aiResult.output
-            ? resolveTokenUsage(filteredPrompt, aiResult.output, aiResult)
+        const usage = aiResult.success && aiResult.output ? resolveTokenUsage(filteredPrompt, aiResult.output, aiResult) : undefined;
+        const durableMemoryWriteReceipt = aiResult.success && aiResult.output
+            ? evaluateDurableMemoryWrite({ request: body, actorId: executionActorId, actorRole: resolveDurableMemoryActorRole(resolvedExecutionRole.role), output: aiResult.output })
             : undefined;
 
         const governanceEvidenceReceipt = buildEvidenceReceipt({
@@ -862,11 +863,10 @@ export async function POST(request: NextRequest) {
             validationHint: outputValidation?.qualityHint,
             aifMemoryReinjection: aifMemoryReinjection.receipt,
             durableMemoryRead: durableMemoryRoute.receipt,
+            durableMemoryWriteReceipt,
         });
         if (isVisionExecution) governanceEvidenceReceipt.vision = true;
-        const workflowExecution = aiResult.success && workflowBinding
-            ? buildWorkflowExecutionProjection(workflowBinding, governanceEvidenceReceipt.receiptId)
-            : undefined;
+        const workflowExecution = aiResult.success && workflowBinding ? buildWorkflowExecutionProjection(workflowBinding, governanceEvidenceReceipt.receiptId) : undefined;
         if (workflowExecution) {
             await appendAuditEvent({
                 eventType: 'WORKFLOW_BINDING_EXECUTED',
@@ -971,6 +971,7 @@ export async function POST(request: NextRequest) {
             },
             aifMemoryReinjection: aifMemoryReinjection.receipt,
             durableMemoryRead: durableMemoryRoute.receipt,
+            durableMemoryWriteReceipt,
             outputValidation: outputValidation ? {
                 qualityHint: outputValidation.qualityHint,
                 issues: outputValidation.issues,

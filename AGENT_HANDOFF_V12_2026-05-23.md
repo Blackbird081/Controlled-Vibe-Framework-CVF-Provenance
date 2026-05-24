@@ -383,6 +383,7 @@ For older continuity before V12, read:
 
 ## Latest HEADs
 
+- `4c7b7bb7` — docs(s1-s2-s3): dispatch R4-fix/S1/S2/S3 work orders and roadmap (2026-05-24)
 - `045c9308` — docs(r1): close durable memory resilience gap (2026-05-24)
 - `032a16da` — fix(memory): harden durable store resilience (2026-05-24)
 - `e8560519` — feat(memory): close m1 m2 p1 roadmap (2026-05-24)
@@ -560,3 +561,58 @@ raw-memory prompt injection, graph approval authority, hosted/cloud memory
 persistence, automated provider procurement, hosted secret-vault operations,
 enterprise SaaS/GA readiness, universal provider stability, Maika proof, broad
 production readiness, or freeze release.
+
+## R4-fix / S1 / S2 / S3 Next-Value Execution - 2026-05-24
+
+Roadmap:
+
+- `docs/roadmaps/CVF_S1_S2_S3_NEXT_VALUE_ROADMAP_2026-05-24.md`
+
+Disposition:
+
+- R4-fix `CLOSED_PASS`:
+  `docs/reviews/CVF_R4FIX_ROUTE_RECEIPT_ID_FAST_LANE_AUDIT_2026-05-24.md`
+- S1 `CLOSED_PASS`:
+  `docs/reviews/CVF_S1_DURABLE_MEMORY_WRITE_ROUTE_COMPLETION_2026-05-24.md`
+- S2 `RETURNED_BLOCKED_DEEPSEEK_EXECUTE_FAILURE`:
+  `docs/reviews/CVF_S2_PROVIDER_SOAK_HARDENING_BLOCKER_REVIEW_2026-05-24.md`
+- S3 `CLOSED_PASS_BOUNDED`:
+  `docs/reviews/CVF_S3_GOVERNANCE_BENCHMARK_PUBLIC_CLAIM_COMPLETION_2026-05-24.md`
+
+Codex audit correction: S3 work order/GC-018/roadmap incorrectly cited E2
+sources under `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src`. Correct sources
+are under `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src`.
+
+S1 live proof PASS:
+
+- receipt `rcpt-env-mpjfltku-sckj1z`;
+- trace `env-mpjfltku-sckj1z`;
+- durable write memory id
+  `s1-abd31b24-d71d-4bc3-a2f4-e727f3d1e18d`;
+- provider Alibaba `qwen-turbo`;
+- `rawMemoryReleased=false`, `canReinject=false`.
+
+S2 blocker:
+
+- Alibaba `5/5 PASS`;
+- OpenAI `5/5 PASS`;
+- DeepSeek `0/5 FAIL`, HTTP 200 with live ALLOW receipts but
+  `success=false`, output length `0`, about 60s latency per journey.
+
+S3 hosted benchmark PASS:
+
+- 5 hosted live Alibaba `qwen-turbo` calls;
+- metrics: `taskCompletionRate=0.5`, `policyViolationRate=0`,
+  `receiptIntegrityRate=0.5`;
+- public-safe summary:
+  `docs/evidence/governance-benchmark-live-metrics-2026-05-24.md` in
+  public-sync;
+- public catalog row updated after public-sync remote and `Test-Path`
+  verification.
+
+Mandatory release gate PASS `7/7`.
+
+Boundary: no three-provider soak pass claim, universal provider stability, SLA,
+enterprise benchmark certification, autonomous memory write, `canReinject=true`,
+raw memory prompt injection, hosted/cloud persistence, production readiness, or
+freeze release.

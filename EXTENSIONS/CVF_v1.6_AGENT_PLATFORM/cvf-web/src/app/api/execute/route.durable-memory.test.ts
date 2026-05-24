@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { mkdtemp, rm, writeFile } from 'node:fs/promises';
+import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 
@@ -38,6 +38,7 @@ import { POST } from './route';
 describe('/api/execute durable memory route wiring', () => {
   const originalEnv = { ...process.env };
   const validOutput = '## Durable Memory Result\n\nThis response includes enough detail for validation.\n\n1. Preserve bounded route context.\n2. Keep memory summary-only.\n3. Return a governed next-step plan.';
+  const uuidPattern = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
   let tempDir = '';
   let storePath = '';
 
@@ -148,6 +149,7 @@ describe('/api/execute durable memory route wiring', () => {
       canReinject: false,
       rawMemoryReleased: false,
     });
+    expect(data.durableMemoryRead.receiptId).toMatch(/^m1-read-/);
     expect(data.governanceEvidenceReceipt.durableMemoryRead.memoryIds).toEqual(['r2-skill-safe']);
     expect(JSON.stringify(data)).not.toContain('openai-test-key');
   });
@@ -219,7 +221,132 @@ describe('/api/execute durable memory route wiring', () => {
       memoryIds: [],
       canReinject: false,
     });
+    expect(data.durableMemoryRead.receiptId).toMatch(uuidPattern);
     expect(data.governanceEvidenceReceipt.durableMemoryRead.reason).toBe('durable_memory_policy_denied');
   });
-});
 
+  it('writes authorized durable memory summaries after successful governed execution', async () => {
+    const res = await POST(new Request('http://localhost/api/execute', {
+      method: 'POST',
+      body: JSON.stringify({
+        templateId: 'strategy_analysis',
+        templateName: 'Strategy Analysis',
+        intent: 'Write a governed durable memory summary',
+        inputs: { topic: 'S1', context: 'write route', options: 'continue', constraints: 'summary only', priority: 'R1' },
+        provider: 'openai',
+        durableMemoryWrite: {
+          enabled: true,
+          tier: 'skill',
+          scope: 'project:s1-route',
+          policy: { actorAuthorized: true },
+          maxSummaryLength: 80,
+        },
+      }),
+    }) as never);
+
+    const data = await res.json();
+    const records = JSON.parse(await readFile(storePath, 'utf8')) as Array<{ summary: string; scope: string; tier: string }>;
+
+    expect(res.status).toBe(200);
+    expect(data.success).toBe(true);
+    expect(data.durableMemoryWriteReceipt).toMatchObject({
+      operation: 'write',
+      decision: 'allowed',
+      reason: 'durable_memory_write_authorized',
+      tier: 'skill',
+      scope: 'project:s1-route',
+      summaryOnly: true,
+      canReinject: false,
+      rawMemoryReleased: false,
+    });
+    expect(data.governanceEvidenceReceipt.durableMemoryWriteReceipt.memoryIds).toHaveLength(1);
+    expect(records).toHaveLength(1);
+    expect(records[0].scope).toBe('project:s1-route');
+    expect(records[0].tier).toBe('skill');
+    expect(records[0].summary.length).toBeLessThanOrEqual(105);
+    expect(records[0].summary).toContain('truncated_summary_only');
+  });
+
+  it('denies durable memory write when actor policy is not authorized', async () => {
+    const res = await POST(new Request('http://localhost/api/execute', {
+      method: 'POST',
+      body: JSON.stringify({
+        templateId: 'strategy_analysis',
+        templateName: 'Strategy Analysis',
+        intent: 'Attempt unauthorized durable memory write',
+        inputs: { topic: 'S1', context: 'deny write', options: 'continue', constraints: 'safe', priority: 'R1' },
+        provider: 'openai',
+        durableMemoryWrite: {
+          enabled: true,
+          tier: 'skill',
+          scope: 'project:s1-route',
+          policy: { actorAuthorized: false },
+        },
+      }),
+    }) as never);
+
+    const data = await res.json();
+
+    expect(res.status).toBe(200);
+    expect(data.success).toBe(true);
+    expect(data.durableMemoryWriteReceipt).toMatchObject({
+      operation: 'write',
+      decision: 'denied',
+      reason: 'durable_memory_write_policy_denied',
+      memoryIds: [],
+      canReinject: false,
+      rawMemoryReleased: false,
+    });
+    await expect(readFile(storePath, 'utf8')).rejects.toThrow();
+  });
+
+  it('skips durable memory write when enforcement blocks execution', async () => {
+    evaluateEnforcementMock.mockReturnValue({ status: 'BLOCK', reasons: ['blocked for test'], riskGate: { riskLevel: 'R4' } });
+
+    const res = await POST(new Request('http://localhost/api/execute', {
+      method: 'POST',
+      body: JSON.stringify({
+        templateId: 'strategy_analysis',
+        templateName: 'Strategy Analysis',
+        intent: 'Blocked durable memory write',
+        inputs: { topic: 'S1', context: 'block', options: 'continue', constraints: 'safe', priority: 'R4' },
+        provider: 'openai',
+        durableMemoryWrite: {
+          enabled: true,
+          tier: 'skill',
+          scope: 'project:s1-route',
+          policy: { actorAuthorized: true },
+        },
+      }),
+    }) as never);
+
+    const data = await res.json();
+
+    expect(res.status).toBe(400);
+    expect(data.success).toBe(false);
+    expect(data.durableMemoryWriteReceipt).toBeUndefined();
+    expect(data.governanceEvidenceReceipt.durableMemoryWriteReceipt).toBeUndefined();
+    await expect(readFile(storePath, 'utf8')).rejects.toThrow();
+  });
+
+  it('does not write durable memory without explicit write opt-in', async () => {
+    const res = await POST(new Request('http://localhost/api/execute', {
+      method: 'POST',
+      body: JSON.stringify({
+        templateId: 'strategy_analysis',
+        templateName: 'Strategy Analysis',
+        intent: 'No durable memory write opt in',
+        inputs: { topic: 'S1', context: 'absent write request', options: 'continue', constraints: 'safe', priority: 'R1' },
+        provider: 'openai',
+      }),
+    }) as never);
+
+    const data = await res.json();
+
+    expect(res.status).toBe(200);
+    expect(data.success).toBe(true);
+    expect(data.durableMemoryWriteReceipt).toBeUndefined();
+    expect(data.governanceEvidenceReceipt.durableMemoryWriteReceipt).toBeUndefined();
+    await expect(readFile(storePath, 'utf8')).rejects.toThrow();
+  });
+});

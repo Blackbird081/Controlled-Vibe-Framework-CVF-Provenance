@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: WORK_ORDER_READY
+Status: RETURNED_BLOCKED_DEEPSEEK_EXECUTE_FAILURE
 
 docType: work_order
 
@@ -199,11 +199,11 @@ fail, or `rawSecretPrinted=true` in any receipt.
 
 | Task | Status | Output |
 | --- | --- | --- |
-| Read C4 probe + evidence | PENDING | Design decision noted. |
-| Soak run (≥5 per provider) | PENDING | 15+ live receipts. |
-| Failure classification | PENDING | Per-journey reason or "none". |
-| Soak summary | PENDING | Total/pass/fail per provider. |
-| Completion review | PENDING | Filed with exact N/N claim. |
+| Read C4 probe + evidence | DONE | Wrapper used existing probe with S2 repeat settings. |
+| Soak run (≥5 per provider) | DONE | 15 live attempts; Alibaba 5/5, DeepSeek 0/5, OpenAI 5/5. |
+| Failure classification | DONE | DeepSeek `execute_failure`, output length 0. |
+| Soak summary | DONE | Total/pass/fail recorded in blocker review. |
+| Completion review | DONE | Blocker review filed; no 3-provider pass claim. |
 
 ---
 

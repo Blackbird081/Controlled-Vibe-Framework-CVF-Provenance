@@ -77,6 +77,7 @@ export interface BuildGovernanceEvidenceReceiptInput {
     validationHint?: string;
     aifMemoryReinjection?: AifMemoryReinjectionReceipt;
     durableMemoryRead?: DurableMemoryReceipt;
+    durableMemoryWriteReceipt?: DurableMemoryReceipt;
 }
 
 /**
@@ -125,6 +126,7 @@ export function buildEvidenceReceipt(
         validationHint: input.validationHint,
         aifMemoryReinjection: input.aifMemoryReinjection,
         durableMemoryRead: input.durableMemoryRead,
+        durableMemoryWriteReceipt: input.durableMemoryWriteReceipt,
         generatedAt: input.envelope.requestTimestamp,
     };
 }

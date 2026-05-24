@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: WORK_ORDER_READY
+Status: CLOSED_PASS
 
 docType: work_order
 
@@ -251,17 +251,17 @@ fails, or release gate fails.
 
 | Task | Status | Output |
 | --- | --- | --- |
-| R4-fix (if not applied) | PENDING | `randomUUID()` in `emptyReceipt()`. |
-| `durableMemoryWrite` type | PENDING | In `types.ts`. |
-| `evaluateDurableMemoryWrite()` | PENDING | In `durable-memory-route.ts`. |
-| Governance envelope field | PENDING | `durableMemoryWriteReceipt` in envelope. |
-| Route wiring | PENDING | In `route.ts`. |
-| Route tests (4 cases) | PENDING | PASS. |
-| `canReinject=false` test | PENDING | PASS. |
-| Live probe script | PENDING | Write receipt, `rawMemoryReleased=false`. |
-| TypeScript check | PENDING | PASS. |
-| Release gate | PENDING | 7/7 PASS. |
-| Completion review | PENDING | Filed. |
+| R4-fix (if not applied) | DONE | `randomUUID()` in `emptyReceipt()`. |
+| `durableMemoryWrite` type | DONE | In `types.ts`. |
+| `evaluateDurableMemoryWrite()` | DONE | In `durable-memory-route.ts`. |
+| Governance envelope field | DONE | `durableMemoryWriteReceipt` in envelope. |
+| Route wiring | DONE | In `route.ts`. |
+| Route tests (4 cases) | DONE | PASS. |
+| `canReinject=false` test | DONE | PASS. |
+| Live probe script | DONE | Write receipt, `rawMemoryReleased=false`. |
+| TypeScript check | DONE | PASS. |
+| Release gate | DONE | 7/7 PASS. |
+| Completion review | DONE | Filed. |
 
 ---
 

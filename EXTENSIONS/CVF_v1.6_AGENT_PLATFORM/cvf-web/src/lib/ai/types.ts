@@ -58,6 +58,16 @@ export interface ExecutionRequest {
             actorAuthorized?: boolean;
         };
     };
+    /** S1 — explicit, policy-gated durable memory write opt-in */
+    durableMemoryWrite?: {
+        enabled?: boolean;
+        tier?: 'skill' | 'long-term';
+        scope?: string;
+        policy?: {
+            actorAuthorized?: boolean;
+        };
+        maxSummaryLength?: number;
+    };
 }
 
 export interface GovernanceEvidenceReceipt {
@@ -80,6 +90,7 @@ export interface GovernanceEvidenceReceipt {
     vision?: boolean;
     aifMemoryReinjection?: AifMemoryReinjectionReceipt;
     durableMemoryRead?: DurableMemoryReceipt;
+    durableMemoryWriteReceipt?: DurableMemoryReceipt;
     workflowComposition?: WorkflowCompositionSummary;
     generatedAt: string;
 }
