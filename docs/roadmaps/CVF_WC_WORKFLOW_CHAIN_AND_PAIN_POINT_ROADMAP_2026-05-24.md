@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — WC-1/WC-2 CLOSED_PASS_BOUNDED; WC-3 CLOSED_MAPPING_ONLY; WC-4 CLOSED_CONTROL_ONLY; W1/W2/W3/W4/W5 CLOSED_PASS_BOUNDED; W-series CONTINUES DEMAND_GATED
+Status: ACTIVE — WC-1/WC-2 CLOSED_PASS_BOUNDED; WC-3 CLOSED_MAPPING_ONLY; WC-4 CLOSED_CONTROL_ONLY; W1/W2/W3/W4/W5 CLOSED_PASS_BOUNDED; W6 AUTHORIZED
 
 Date: 2026-05-24
 
@@ -557,6 +557,21 @@ W5 claims only local provider method/fallback/error clarity in Model Gateway
 contracts. It does not claim provider reliability, DeepSeek repair,
 OpenRouter support, runtime fallback execution, public capability, production
 readiness, hosted readiness, or freeze release.
+
+#### W6: Noncoder Artifact Export Hardening
+
+**Gate:** AUTHORIZED.
+
+Authorization:
+
+- `docs/baselines/CVF_GC018_W6_NONCODER_ARTIFACT_EXPORT_HARDENING_2026-05-24.md`
+- `docs/work_orders/CVF_WO_W6_NONCODER_ARTIFACT_EXPORT_HARDENING_2026-05-24.md`
+
+Bounded target:
+
+- existing `cvf-web` deliverable pack/export path only;
+- add artifact verification/provenance metadata and markdown serialization;
+- no new renderer, route, provider, receipt-envelope, or public-sync behavior.
 
 No track in this roadmap claims `canReinject=true`, global freeze lift,
 enterprise SaaS readiness, or universal provider parity.

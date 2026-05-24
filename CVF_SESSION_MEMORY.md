@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-24
 
-Current mode marker: `w5_provider_method_fallback_normalization_closed_pass_bounded`
+Current mode marker: `w6_noncoder_artifact_export_hardening_authorized`
 Update 2026-05-24: WC roadmap is active at
 `docs/roadmaps/CVF_WC_WORKFLOW_CHAIN_AND_PAIN_POINT_ROADMAP_2026-05-24.md`;
 WC-1 and WC-2 are closed pass bounded; WC-3/WC-4 are closed; W1 workflow
@@ -14,8 +14,8 @@ state-machine enforcement is closed pass bounded. W2 memory event hooks plus
 context packager hardening is closed pass bounded. W3 tool/MCP/database action
 taxonomy is closed pass bounded. W4 operational benchmark scorecard is closed
 pass bounded. W5 provider method and fallback normalization is closed pass
-bounded. Next ranked candidate is Candidate 6 noncoder artifact/export product
-hardening, demand-gated by fresh GC-018 and WC-4 control block.
+bounded. W6 noncoder artifact/export product hardening is authorized by fresh
+GC-018 and dispatched as local deliverable-pack serialization hardening.
 
 R1/R2/R3 and V1/V2/V3 are closed pass bounded. All live runs must still follow
 `docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md`.
@@ -1108,3 +1108,24 @@ remains demand-gated and requires a fresh GC-018/work order with the WC-4
 Knowledge Absorption Blind-Spot Control Block.
 
 Marker: w5_provider_method_fallback_normalization_closed_pass_bounded.
+
+## W6 Noncoder Artifact Export Hardening - Authorized 2026-05-24
+
+Current mode marker: `w6_noncoder_artifact_export_hardening_authorized`.
+
+W6 is authorized as WC-3 Candidate 6:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_W6_NONCODER_ARTIFACT_EXPORT_HARDENING_2026-05-24.md`
+- Work order:
+  `docs/work_orders/CVF_WO_W6_NONCODER_ARTIFACT_EXPORT_HARDENING_2026-05-24.md`
+
+Bounded target: existing `cvf-web` deliverable pack/export path only. Add
+artifact verification/provenance metadata and markdown serialization so
+noncoder exports show what is proven, missing, and traceable.
+
+Boundary: no new renderer/runtime, `/api/execute`, provider behavior, receipt
+envelope, auth/RBAC, memory reinjection, public-sync, hosted readiness,
+production readiness, or freeze release.
+
+Marker: w6_noncoder_artifact_export_hardening_authorized.

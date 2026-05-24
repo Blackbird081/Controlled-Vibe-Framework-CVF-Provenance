@@ -38,7 +38,7 @@ Current HEAD before V12 transition:
 
 Current mode marker:
 
-`w5_provider_method_fallback_normalization_closed_pass_bounded`
+`w6_noncoder_artifact_export_hardening_authorized`
 
 ---
 
@@ -244,6 +244,22 @@ production readiness, or freeze release.
 
 Next ranked candidate: Candidate 6 from WC-3, noncoder artifact/export product
 hardening, demand-gated by fresh GC-018/work order with WC-4 Control Block.
+
+### 2026-05-24 - W6 Noncoder Artifact Export Hardening Authorized
+
+Current HEAD before W6 authorization commit: `1de037ba`.
+
+W6 authorization:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_W6_NONCODER_ARTIFACT_EXPORT_HARDENING_2026-05-24.md`
+- Work order:
+  `docs/work_orders/CVF_WO_W6_NONCODER_ARTIFACT_EXPORT_HARDENING_2026-05-24.md`
+
+Scope: existing `cvf-web` deliverable pack/export path only. Add artifact
+verification/provenance metadata and markdown serialization. Do not open new
+renderer/runtime behavior, `/api/execute`, provider behavior, receipt-envelope
+schema, public-sync, hosted readiness, production readiness, or freeze release.
 
 ### 2026-05-24 - W1 Workflow State-Machine Enforcement Closed
 
