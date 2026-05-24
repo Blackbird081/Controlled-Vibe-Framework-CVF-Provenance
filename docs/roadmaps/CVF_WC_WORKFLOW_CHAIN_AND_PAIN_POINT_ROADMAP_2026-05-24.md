@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE — WC-1/WC-2 CLOSED_PASS_BOUNDED; WC-3 CLOSED_MAPPING_ONLY; W-series DEMAND_GATED
+Status: ACTIVE — WC-1/WC-2 CLOSED_PASS_BOUNDED; WC-3 CLOSED_MAPPING_ONLY; WC-4 CLOSED_CONTROL_ONLY; W-series DEMAND_GATED
 
 Date: 2026-05-24
 
@@ -18,6 +18,8 @@ tracks are governed in execution order:
    connect what exists with live evidence)
 3. **WC-3** — Legacy harvest scan (combined mapping, not isolated audit
    tranches)
+4. **WC-4** — Mandatory knowledge-absorption blind-spot prevention standard
+   before any W-series implementation
 
 This roadmap also records the operator's stated philosophy on legacy absorption
 as binding guidance for all future implementation work.
@@ -80,6 +82,7 @@ Scope:
 - WC-1: no new production runtime surfaces; a live proof script and a GC-018
   baseline document are expected evidence artifacts
 - WC-3: documentation mapping exercise only; no source code changes
+- WC-4: documentation/process control only; no source code changes
 
 Out of scope for this roadmap:
 
@@ -194,10 +197,35 @@ becomes the input to future work orders.
 ### W-Series: Return to Real User Pain Points
 
 **Gate:** DEMAND_GATED — depends on WC-3 scan output for prioritization.
-Pre-condition: WC-1 must be closed first.
+Pre-condition: WC-1 must be closed first and WC-4 blind-spot control must be
+applied to any knowledge-absorption or legacy-adjacent implementation scope.
 
 **Method:** W-series work orders drawn from WC-3 mapping output, not from
-new audits.
+new audits. Each W-series work order must include the Knowledge Absorption
+Blind-Spot Control Block from
+`docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`.
+
+### WC-4: Knowledge Absorption Blind-Spot Standard
+
+**Gate:** CLOSED_CONTROL_ONLY — doc/process control, no runtime surface.
+
+**Reason:** The first post-WC3 step is to prevent future agents from skipping
+detailed legacy source files or treating WC-3's map as implementation
+authorization.
+
+Completed output:
+
+- `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`
+- `docs/baselines/CVF_GC018_WC4_KNOWLEDGE_ABSORPTION_BLINDSPOT_STANDARD_2026-05-24.md`
+- `docs/work_orders/CVF_WO_WC4_KNOWLEDGE_ABSORPTION_BLINDSPOT_STANDARD_2026-05-24.md`
+- `docs/reviews/CVF_WC4_KNOWLEDGE_ABSORPTION_BLINDSPOT_STANDARD_COMPLETION_2026-05-24.md`
+
+Binding result:
+
+- future knowledge-absorption and legacy-adjacent tranches must complete source
+  inventory, prior absorption resolution, file-level value extraction,
+  owner-surface normalization, accept/defer/reject disposition, adversarial
+  role review, and thin proof/closure delta before implementation.
 
 ---
 
@@ -231,6 +259,14 @@ new audits.
 - [x] Pain point cross-reference complete
 - [x] No source code changes committed during scan
 
+### WC-4
+
+- [x] Binding anti-blindspot standard created
+- [x] GC-018 template updated with Knowledge Absorption Blind-Spot Control Block
+- [x] AGENTS updated with mandatory rule
+- [x] W-series precondition updated
+- [x] No runtime/source-code behavior changed
+
 ---
 
 ## Verification / Evidence
@@ -240,6 +276,7 @@ new audits.
 | WC-2 | Focused test run + release gate | `docs/reviews/CVF_WC2_MOCK_FALLBACK_ELIMINATION_COMPLETION_2026-05-24.md` |
 | WC-1 | Live probe script + two receipts | `docs/reviews/CVF_WC1_WORKFLOW_CHAIN_PROOF_COMPLETION_2026-05-24.md` |
 | WC-3 | Mapping document | `docs/reference/CVF_LEGACY_HARVEST_SCAN_MAP_2026-05-24.md` |
+| WC-4 | Binding anti-blindspot standard | `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md` |
 
 ---
 
@@ -251,6 +288,8 @@ WC-2 (mock fallback elimination)  <- Fast Lane, can start now
 WC-1 (workflow chain proof)       <- Closed pass bounded
   |
 WC-3 (legacy harvest scan)        <- Closed mapping only
+  |
+WC-4 (blind-spot control law)     <- Closed control only
   |
 W-series (real user pain points)  <- Demand-gated; depends on WC-3
 ```
@@ -266,6 +305,7 @@ W-series (real user pain points)  <- Demand-gated; depends on WC-3
 | `docs/reviews/CVF_S1_DURABLE_MEMORY_WRITE_ROUTE_COMPLETION_2026-05-24.md` | S1 closure — memory write surface for WC-1 |
 | `docs/audits/CVF_LEGACY_SPEC_ABSORPTION_BLINDSPOT_AUDIT_2026-05-23.md` | Original blindspot audit — context for WC-3 |
 | `docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md` | Full registry — WC-3 scan starting point |
+| `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md` | Mandatory anti-blindspot law for future absorption |
 | Memory: `project_operator_absorption_philosophy_2026-05-24.md` | Operator philosophy — decision basis for this roadmap |
 
 ---
@@ -282,6 +322,10 @@ persistence, autonomous reinjection, or broad production readiness.
 
 WC-3 claims a mapping document. It does not claim implementation of any
 absorbed knowledge, nor does it open new tranches.
+
+WC-4 claims a mandatory process control for future knowledge absorption. It
+does not claim implementation of any absorbed knowledge, source-code runtime
+change, public capability, or production readiness.
 
 No track in this roadmap claims `canReinject=true`, global freeze lift,
 enterprise SaaS readiness, or universal provider parity.

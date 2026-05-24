@@ -13,13 +13,13 @@ current:
 
 The current active handoff in that registry is:
 
-`AGENT_HANDOFF_V10_2026-05-19.md`
+`AGENT_HANDOFF_V12_2026-05-23.md`
 
 Historical handoffs are archived under:
 
 `CVF_SESSION/handoffs/archive/`
 
-This includes `AGENT_HANDOFF.md`, V2-V9, and side-channel handoff files. Do not
+This includes `AGENT_HANDOFF.md`, V2-V11, and side-channel handoff files. Do not
 append new status to archived handoffs; update the active handoff named by
 `CVF_SESSION/ACTIVE_SESSION_STATE.json` or open a later versioned handoff when
 the active handoff approaches the limit.
@@ -153,6 +153,25 @@ was impossible.
 Benchmark evidence that emits multiple events per live call must report both
 the call-level result and the event-model denominator so readers do not confuse
 event ratios with execution pass rate.
+
+## Mandatory Knowledge Absorption Blind-Spot Prevention - 2026-05-24
+
+Canonical standard:
+
+`docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`
+
+Any AI/agent that absorbs, reopens, scopes, or implements knowledge from
+`.private_reference/legacy/`, archived absorption packets, external capability
+sources, Review-CVF pain points, memory, graph, workflow, CLI/MCP/tool,
+provider, benchmark, context, or non-coder outcome surfaces must complete the
+Knowledge Absorption Blind-Spot Control Block before implementation.
+
+Do not scope from active summaries alone. Resolve prior absorption evidence,
+read detailed source files when present, normalize accepted value into existing
+CVF owner surfaces, record accept/defer/reject dispositions, run adversarial
+role review, and close with a blind-spot delta. If the block is `PARTIAL` or
+`BLOCKED`, the implementation must stop or explicitly record why the remaining
+blind spot is low-risk and out of scope.
 
 ## Latest Closed Continuation Roadmap
 

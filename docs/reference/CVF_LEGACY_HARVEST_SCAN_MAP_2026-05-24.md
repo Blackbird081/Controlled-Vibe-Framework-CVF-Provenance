@@ -63,6 +63,11 @@ legacy families already present in the repo. The current best sequence is:
 5. provider gateway method normalization from freellmapi, free Claude Code, and
    openrouter-cli.
 
+Post-WC3 control: before any candidate below becomes implementation, the work
+order must complete the Knowledge Absorption Blind-Spot Control Block in
+`docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`.
+WC-3 is a map, not implementation authorization.
+
 ## Pain-Point Mapping
 
 | Pain point | Current status | Legacy source families | WC-3 judgment |

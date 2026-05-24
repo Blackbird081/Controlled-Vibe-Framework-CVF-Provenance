@@ -38,7 +38,7 @@ Current HEAD before V12 transition:
 
 Current mode marker:
 
-`wc3_legacy_harvest_scan_closed_mapping_only`
+`wc4_knowledge_absorption_blindspot_standard_closed_control_only`
 
 ---
 
@@ -157,8 +157,32 @@ Public-sync: commit `dc2583f6` added
 `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md` after verifying
 the public remote.
 
-Next: WC-3 legacy harvest scan remains demand-gated and requires fresh
-authorization/work order before implementation.
+Next: WC-4 anti-blindspot control is now closed; W-series implementation
+remains demand-gated and requires fresh GC-018/work order before implementation.
+
+### 2026-05-24 - WC-4 Knowledge Absorption Blind-Spot Standard Closed
+
+Operator identified the first required post-WC3 step: establish a mandatory
+anti-blindspot mechanism before opening W-series implementation. Codex closed
+WC-4 as process-control only:
+
+- standard:
+  `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`
+- GC-018:
+  `docs/baselines/CVF_GC018_WC4_KNOWLEDGE_ABSORPTION_BLINDSPOT_STANDARD_2026-05-24.md`
+- work order:
+  `docs/work_orders/CVF_WO_WC4_KNOWLEDGE_ABSORPTION_BLINDSPOT_STANDARD_2026-05-24.md`
+- completion:
+  `docs/reviews/CVF_WC4_KNOWLEDGE_ABSORPTION_BLINDSPOT_STANDARD_COMPLETION_2026-05-24.md`
+
+Binding rule: future knowledge-absorption or legacy-adjacent work must include
+the Knowledge Absorption Blind-Spot Control Block before implementation. The
+block requires source inventory, prior absorption resolution, file-level value
+extraction, owner-surface normalization, accept/defer/reject disposition,
+adversarial role review, and thin proof/closure delta.
+
+Next: W-series implementation remains demand-gated and must use WC-3 map plus
+WC-4 blind-spot control before any runtime work.
 
 ### 2026-05-24 - WC-2 Mock Fallback Elimination Closed
 

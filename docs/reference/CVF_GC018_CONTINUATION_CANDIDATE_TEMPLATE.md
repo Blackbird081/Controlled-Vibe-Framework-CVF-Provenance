@@ -78,6 +78,39 @@ Legacy Spec Scan Block (required for legacy-adjacent scope)
 - Blindspot risk verdict: CLEAR | PARTIAL | BLOCKED
 ```
 
+For any continuation candidate that absorbs, reopens, scopes, or implements
+knowledge from `.private_reference/legacy/`, archived absorption packets,
+external capability sources, Review-CVF pain points, memory, graph, workflow,
+CLI/MCP/tool, provider, benchmark, context, or non-coder outcome surfaces, add
+this block before implementation:
+
+```text
+Knowledge Absorption Blind-Spot Control Block
+- Standard read: docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md
+- Source inventory:
+  - <root/family + file count>
+- Prior absorption evidence resolved:
+  - <registry/review/baseline/roadmap paths>
+- Detailed source files used:
+  - <file path>
+- Source families skipped:
+  - <family + reason>
+- File-level accepted value:
+  - <source path -> value>
+- Owner-surface normalization:
+  - <value -> existing CVF owner>
+- Accept/defer/reject matrix:
+  - <source/value -> disposition + reason>
+- Adversarial roles completed:
+  - Implementer: <finding>
+  - Skeptic/Auditor: <finding>
+  - Product/Operator Advocate: <finding>
+  - Safety/Boundary Owner: <finding or N/A>
+- Thin proof target:
+  - <bounded proof>
+- Blind-spot verdict: CLEAR | PARTIAL | BLOCKED
+```
+
 ```text
 GC-018 Continuation Candidate
 - Candidate ID: <stable id>
@@ -137,6 +170,8 @@ Tranche Closure Checklist
 - [ ] GC-020 handoff Current HEAD updated to this tranche's commit SHA
 - [ ] Evidence Trace Block present for all significant claims (GC-046)
 - [ ] Legacy Spec Scan Block present OR explicitly N/A: <reason>
+- [ ] Knowledge Absorption Blind-Spot Control Block present OR explicitly N/A:
+      <reason>
 ```
 
 Omitting the catalog item without an explicit N/A is a closure defect.
@@ -156,6 +191,10 @@ but the checklist is the authoritative closure gate.
   reconcile the active review with `docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
   and any relevant `.private_reference/legacy/` source folders before the
   candidate can be treated as complete
+- knowledge-absorption packets must follow
+  `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`
+  and must include the Knowledge Absorption Blind-Spot Control Block before any
+  implementation begins
 
 ## Preferred Placement
 
@@ -173,5 +212,6 @@ The same packet may be summarized in multiple places, but there should be one ob
 - `governance/toolkit/05_OPERATION/CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD.md` (GC-046: Evidence Trace Block requirement for absorption review chains)
 - `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md#GC-018`
 - `docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
+- `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`
 - `governance/compat/check_depth_audit_continuation_compat.py`
 - `docs/roadmaps/CVF_SYSTEM_UNIFICATION_REMEDIATION_ROADMAP_2026-03-19.md`
