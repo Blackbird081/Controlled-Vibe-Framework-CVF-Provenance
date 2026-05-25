@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-25
 
-Current mode marker: `vi5_multi_role_convergence_correction_pending`
+Current mode marker: `vi5_t1_language_state_authorized`
 
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,9 +42,9 @@ Previous handoff archive:
 
 ## Current State
 
-Current mode: `vi5_multi_role_convergence_correction_pending`.
+Current mode: `vi5_t1_language_state_authorized`.
 
-VI5 is held pending Multi-Role Orchestrated Convergence correction:
+VI5 Multi-Role Orchestrated Convergence is accepted and VI5-T1 is authorized:
 
 `docs/reference/CVF_MULTI_ROLE_ORCHESTRATED_CONVERGENCE_CAPTURE_FORM_2026-05-25.md`
 
@@ -58,10 +58,27 @@ planner, workers/subagents, reviewer, auditor, integrator, then final operator
 delivery. Also do not let VI5-T1 claim Spec English freeze if VI5-T0 finds
 mixed-language Spec body content.
 
-Next allowed move: Claude/operator accepts, rebuts, or waives this correction;
-then VI5-T0 L1 baseline audit may proceed. Do not dispatch VI5-T1
-implementation until convergence is accepted and fresh GC-018/work order are
-filed.
+VI5-T0 baseline:
+
+`docs/reviews/CVF_VI5_T0_L1_BASELINE_AUDIT_2026-05-25.md`
+
+VI5-T1 roadmap:
+
+`docs/roadmaps/CVF_VI5_T1_LANGUAGE_STATE_AND_STRATEGY_GUIDED_CATALOG_ROADMAP_2026-05-25.md`
+
+VI5-T1 GC-018:
+
+`docs/baselines/CVF_GC018_VI5_T1_LANGUAGE_STATE_AND_STRATEGY_GUIDED_CATALOG_2026-05-25.md`
+
+VI5-T1 work order:
+
+`docs/work_orders/CVF_WO_VI5_T1_LANGUAGE_STATE_AND_STRATEGY_GUIDED_CATALOG_2026-05-25.md`
+
+Next allowed move: implement only the bounded VI5-T1 additive
+`languageState`, `guidedStepState`, `specBoundary`, and Strategy presentation
+catalog scope. Do not implement Spec English Freeze, provider/prompt/receipt
+changes, UI shell i18n, all-pack catalogs, hosted/public readiness,
+production readiness, or runtime multi-agent scheduling.
 
 C7A closed PASS bounded at:
 

@@ -46,6 +46,8 @@ Current HEAD before Claude acceptance of multi-role convergence correction commi
 
 Current HEAD before multi-role convergence protocol commit: `215311a3`.
 
+Current HEAD before VI5-T1 authorization commit: `e0e8b5be`.
+
 Remote tracking branch:
 
 `origin/main`
@@ -95,7 +97,7 @@ Previous long session memory snapshot was archived at:
 
 ## Current Mode
 
-`vi5_multi_role_convergence_correction_pending`
+`vi5_t1_language_state_authorized`
 
 Freeze posture remains:
 
@@ -122,13 +124,28 @@ to Vibe-to-Spec:
 
 `docs/concepts/CVF_LAYERED_PRODUCT_ARCHITECTURE_AND_VIBE_DIALOG_PATTERN_2026-05-25.md`
 
-Status: VI5 implementation remains on hold. The process correction is that
-Claude's proposed "Two-Agent Convergence" must be generalized to
-Multi-Role Orchestrated Convergence, and VI5-T1 must not falsely claim Spec
-English freeze if T0 finds mixed-language Spec body content.
+Status: Multi-role convergence is accepted and VI5-T0 baseline is recorded.
+VI5-T1 is authorized for a bounded additive implementation. It must not claim
+Spec English freeze because VI5-T0 found mixed-language Spec body content.
 
-Verification: docs governance compatibility PASS; markdown structural
-completeness PASS; pre-commit hook chain PASS for commit `215311a3`.
+VI5-T0 baseline:
+
+`docs/reviews/CVF_VI5_T0_L1_BASELINE_AUDIT_2026-05-25.md`
+
+VI5-T1 roadmap:
+
+`docs/roadmaps/CVF_VI5_T1_LANGUAGE_STATE_AND_STRATEGY_GUIDED_CATALOG_ROADMAP_2026-05-25.md`
+
+VI5-T1 authorization packet:
+
+`docs/baselines/CVF_GC018_VI5_T1_LANGUAGE_STATE_AND_STRATEGY_GUIDED_CATALOG_2026-05-25.md`
+
+VI5-T1 work order:
+
+`docs/work_orders/CVF_WO_VI5_T1_LANGUAGE_STATE_AND_STRATEGY_GUIDED_CATALOG_2026-05-25.md`
+
+Verification before authorization commit: docs governance compatibility PASS;
+markdown structural completeness PASS; `git diff --check` PASS.
 
 Public Catalog Sync for the VI wave is closed PASS bounded:
 
