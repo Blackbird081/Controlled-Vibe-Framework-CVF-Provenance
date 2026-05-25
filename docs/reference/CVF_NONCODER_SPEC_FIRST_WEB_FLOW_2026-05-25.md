@@ -110,6 +110,38 @@ external AI-assisted draft -> CVF validation/normalization -> standard Spec
 The user may translate or refine the prompt before CVF, but CVF still owns the
 final execution contract.
 
+### 4. User-Paid Provider Advisory Lane
+
+Some users will intentionally spend their own API-key budget inside or beside
+CVF to choose a provider/model and ask an LLM to advise on the idea, context,
+template, skill, wording, or initial requirements.
+
+This lane is advisory only. The selected provider/model may help the user think,
+but it does not authorize implementation and does not produce the final agent
+contract by itself.
+
+The required flow is:
+
+```text
+user selects provider/model
+-> advisory LLM helps refine idea/context/template/skill/prompt
+-> user accepts or edits the advisory draft
+-> CVF validation/normalization runs
+-> standard CVF Spec is emitted
+-> agent implementation may begin only from the Spec
+```
+
+The final Spec must record the advisory lane without treating it as a
+governance receipt:
+
+- advisory provider/model when known;
+- whether user-paid API keys were used;
+- advisory draft summary;
+- CVF normalization status;
+- final Spec generation status;
+- explicit note that advisory output is source material, not implementation
+  authorization.
+
 ## Standard CVF Spec Output
 
 Every web-facing entry mode should converge to one copy-ready Spec with these
@@ -127,6 +159,8 @@ sections:
 - Governed Response Rules;
 - Knowledge Context Preference;
 - Risk / Approval Posture;
+- Advisory Source Notes when an external or user-paid LLM helped draft the
+  request;
 - Agent Handoff Instructions;
 - Final User Review Checkpoint.
 
@@ -172,6 +206,8 @@ material, not the agent execution contract.
 Requirements:
 
 - preserve original user intent;
+- record advisory provider/model usage when the user uses paid keys or an
+  external LLM for drafting;
 - normalize into a structured Spec;
 - expose constraints, validation hooks, and review checkpoints;
 - state allowed and forbidden agent actions;
@@ -187,6 +223,8 @@ Future implementation should verify:
   user edit/confirmation;
 - AI-Assisted Prompt Preparation emits all standard Spec sections after CVF
   validation/normalization;
+- User-Paid Provider Advisory Lane records advisory provider/model usage and
+  still requires CVF validation/normalization before Spec emission;
 - Vietnamese input remains valid;
 - copy-ready Spec output is agent-readable without hidden UI state;
 - implementation authorization is explicit and not implied.
@@ -196,6 +234,8 @@ Future implementation should verify:
 Non-goals:
 
 - direct autonomous agent execution from vague chat text;
+- treating advisory LLM/provider output as the final implementation contract;
+- treating user-paid API-key usage as governance proof;
 - hiding governance evidence;
 - replacing user review checkpoints;
 - claiming hosted readiness;

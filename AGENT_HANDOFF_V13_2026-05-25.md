@@ -171,9 +171,11 @@ Product flow direction:
 
 `docs/reference/CVF_NONCODER_SPEC_FIRST_WEB_FLOW_2026-05-25.md`
 
-Core product principle: Template-First, Describe Your Goal, and AI-Assisted
-Prompt Preparation must all converge to one standard copy-ready CVF Spec. The
-Spec is the agent control point.
+Core product principle: Template-First, Describe Your Goal, AI-Assisted Prompt
+Preparation, and User-Paid Provider Advisory Lane must all converge to one
+standard copy-ready CVF Spec. User-paid provider/model advisory output is
+source material only and must pass through CVF validation/normalization before
+Spec emission. The Spec is the agent control point.
 
 Next implementation requires fresh value-screened GC-018 and work order. Do
 not open hosted readiness, public readiness, provider soak, workflow scale,

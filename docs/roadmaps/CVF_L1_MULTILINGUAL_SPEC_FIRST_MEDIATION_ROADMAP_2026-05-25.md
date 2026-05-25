@@ -98,9 +98,13 @@ Web-facing product model:
 3. AI-Assisted Prompt Preparation: user may use paid API keys or external LLMs
    to refine the idea first, but CVF remains the normalizer and emits the final
    standard Spec for agents.
+4. User-Paid Provider Advisory Lane: user selects a provider/model and spends
+   their own API-key budget for LLM advice on idea, context, template, skill,
+   or prompt wording, but that advisory output must still pass back through CVF
+   validation/normalization before a Spec can be emitted.
 
 The central control point is the Spec. The web product should not treat loose
-chat text as the implementation contract.
+chat text or advisory LLM output as the implementation contract.
 
 ## Required Contract Fields
 
@@ -116,6 +120,10 @@ least:
 - `clarificationRequired`
 - `localizedEvidenceSummary`
 - `rawTechnicalEvidenceAvailable`
+- `advisoryProvider`
+- `advisoryModel`
+- `userPaidAdvisoryUsed`
+- `advisoryOutputIsSourceOnly`
 
 ## Non-Goals
 
@@ -165,6 +173,8 @@ Every web-facing entry mode should converge to one copy-ready Spec with:
 - Governed Response Rules;
 - Knowledge Context Preference;
 - Risk / Approval Posture;
+- Advisory Source Notes when an external or user-paid LLM helped draft the
+  request;
 - Agent Handoff Instructions;
 - Final User Review Checkpoint.
 
@@ -178,11 +188,13 @@ Proposed L1 implementation sequence after fresh GC-018:
 3. Add localized short evidence summary generation from existing VI4 fields.
 4. Add the Template-First, Describe Your Goal, and AI-Assisted Prompt
    Preparation convergence contract as deterministic spec-generation paths.
-5. Wire the spec/readout into the existing Strategy `/api/execute` response
+5. Add User-Paid Provider Advisory Lane metadata so provider/model advice is
+   recorded as source material, not final authorization or governance proof.
+6. Wire the spec/readout into the existing Strategy `/api/execute` response
    without changing provider adapters or receipt envelopes.
-6. Add unit coverage for Vietnamese, English, ambiguous-language cases, and
-   all three web-facing entry modes.
-7. Run one live Vietnamese Strategy proof and record receipt, provider/model,
+7. Add unit coverage for Vietnamese, English, ambiguous-language cases, and
+   all four web-facing entry modes.
+8. Run one live Vietnamese Strategy proof and record receipt, provider/model,
    localized output, and raw evidence availability.
 
 ## Acceptance Criteria
@@ -192,8 +204,11 @@ Minimum acceptance for L1:
 - Vietnamese input remains valid; user is not forced to write English.
 - The original prompt is preserved.
 - The normalized CVF Execution Spec is emitted and readable by agents.
-- Template-First, Describe Your Goal, and AI-Assisted Prompt Preparation all
+- Template-First, Describe Your Goal, AI-Assisted Prompt Preparation, and
+  User-Paid Provider Advisory Lane all
   converge to the same standard Spec sections.
+- User-paid advisory provider/model usage is recorded as source context only
+  and cannot bypass CVF validation/normalization.
 - User-facing answer is Vietnamese when `sourceLanguage=vi`.
 - Evidence summary is short and Vietnamese-readable by default.
 - Raw VI4/technical evidence remains accessible.
@@ -208,6 +223,8 @@ Targeted tests:
 - English prompt -> English spec -> English answer.
 - Ambiguous Vietnamese prompt -> clarification required, no silent risky
   translation.
+- User-paid provider/model advisory draft -> CVF normalization -> Spec, with
+  advisory source marked as non-authoritative.
 - Raw technical evidence remains present but not the default non-coder summary.
 
 Live proof:
