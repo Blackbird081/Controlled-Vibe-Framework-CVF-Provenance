@@ -570,6 +570,26 @@ unless a fresh GC-018/value-screened tranche is opened.
 
 ## Latest Closed Tranche
 
+## Latest VI5 Review Decision
+
+VI5-T3 Codex rebuttal filed:
+
+Mode marker: `vi5_t3_portable_handoff_readiness_proposed`
+
+`docs/reviews/CVF_VI5_T3_CODEX_REBUTTAL_AND_SOLUTION_TO_CLAUDE_2026-05-25.md`
+
+Codex accepts Claude's finding that VI5-T2 is not enough for non-coder /
+external-agent handoff, but amends the implementation path. Do not open a
+semantic translation tranche next. Do not implement the full 3-layer envelope
+yet. Recommended next move is a fresh VI5-T3 Portable Handoff Readiness
+roadmap/GC-018 with exactly three additive outputs:
+`specHandoffReadiness`, `portableAgentPacket`, and `localizedHandoffGuide`.
+
+Boundary: T2 remains `CLOSED_PASS_BOUNDED` for English freeze integrity.
+Handoff readiness must be a separate contract; `englishFreezeEnforced=true`
+must not be interpreted as "ready for a non-coder to copy into an external
+agent."
+
 C Workflow Scale VI Proof is closed PASS bounded:
 
 Mode marker: `c_workflow_scale_vi_proof_closed`

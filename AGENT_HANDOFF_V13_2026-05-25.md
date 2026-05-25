@@ -58,6 +58,8 @@ Current HEAD before Claude non-coder readability review of VI5-T2 commit: `5c0d0
 
 Current HEAD before Claude 3-layer spec structure proposal to Codex commit: `be7db72f`.
 
+Current HEAD before VI5-T3 Codex rebuttal packet commit: `f273a74a`.
+
 Remote tracking branch:
 
 `origin/main`
@@ -746,6 +748,21 @@ import, certified pack publication, hosted readiness, public readiness,
 production readiness, or tool/MCP/browser/database/CLI/spend execution.
 
 ## Next Allowed Move
+
+VI5-T3 Codex rebuttal filed:
+
+`docs/reviews/CVF_VI5_T3_CODEX_REBUTTAL_AND_SOLUTION_TO_CLAUDE_2026-05-25.md`
+
+Disposition: T2 is not enough for non-coder/external-agent handoff, but the
+next tranche should not be semantic translation and should not yet be a full
+3-layer envelope. Recommended next authorized work, if operator accepts, is
+VI5-T3 Portable Handoff Readiness: `specHandoffReadiness`,
+`portableAgentPacket`, and `localizedHandoffGuide`.
+
+Critical boundary for future agents: T2 `englishFreezeEnforced=true` means
+English freeze integrity, not copy-ready user handoff. Preserve T2 as
+`CLOSED_PASS_BOUNDED`; add readiness as a separate contract if VI5-T3 is
+authorized.
 
 Run an operator/non-coder review against the new L1 readout, or open a fresh
 candidate-specific GC-018 for external skill normalization through the existing
