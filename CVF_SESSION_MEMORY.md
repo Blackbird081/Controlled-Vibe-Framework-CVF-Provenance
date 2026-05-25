@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-25
 
-Current mode marker: `vi5_t2_spec_english_freeze_authorized`
+Current mode marker: `vi5_t2_spec_english_freeze_closed`
 
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Previous handoff archive:
 
 ## Current State
 
-Current mode: `vi5_t2_spec_english_freeze_authorized`.
+Current mode: `vi5_t2_spec_english_freeze_closed`.
 
 VI5 Multi-Role Orchestrated Convergence is accepted and VI5-T1 is closed PASS
 bounded:
@@ -98,12 +98,20 @@ VI5-T2 work order:
 
 `docs/work_orders/CVF_WO_VI5_T2_SPEC_ENGLISH_FREEZE_2026-05-25.md`
 
-Next allowed move: implement bounded response-level `englishSpecFreeze`, update
-`specBoundary` from validator-backed freeze state, run focused deterministic
-tests and one Vietnamese Strategy live proof. Do not change provider adapters,
-provider routing, model registry, receipt envelopes, workflow blocking, UI
-shell i18n, all-pack catalogs, external skill import, hosted/public readiness,
-production readiness, or runtime multi-agent scheduling.
+VI5-T2 is closed PASS bounded:
+
+`docs/reviews/CVF_VI5_T2_SPEC_ENGLISH_FREEZE_COMPLETION_2026-05-25.md`
+
+Live proof: Alibaba `qwen-turbo`, receipt `rcpt-env-mpl6equw-qdarbu`,
+`englishSpecFreeze.status=frozen`, `observedSpecBodyLanguage=mixed`,
+`englishFreezeEnforced=true`, raw secret not printed.
+
+Next allowed move: operator/non-coder review of the frozen English Spec
+artifact. Do not change provider adapters, provider routing, model registry,
+receipt envelopes, workflow blocking, UI shell i18n, all-pack catalogs,
+external skill import, hosted/public readiness, production readiness, runtime
+multi-agent scheduling, semantic translation, or broad freeze release without
+fresh authorization.
 
 C7A closed PASS bounded at:
 

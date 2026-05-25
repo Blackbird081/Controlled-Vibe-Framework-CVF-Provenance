@@ -52,6 +52,8 @@ Current HEAD before VI5-T1 implementation closure commit: `5c7640cb`.
 
 Current HEAD before VI5-T2 authorization commit: `f2e9b2eb`.
 
+Current HEAD before VI5-T2 implementation closure commit: `139eac62`.
+
 Remote tracking branch:
 
 `origin/main`
@@ -101,7 +103,7 @@ Previous long session memory snapshot was archived at:
 
 ## Current Mode
 
-`vi5_t2_spec_english_freeze_authorized`
+`vi5_t2_spec_english_freeze_closed`
 
 Freeze posture remains:
 
@@ -188,6 +190,26 @@ Forbidden: provider adapter/routing/model changes, broad prompt tuning, receipt
 envelope changes, workflow execution blocking, UI shell i18n, all-pack catalog
 expansion, external skill import, hosted/public/production readiness claims, or
 broad governance freeze release.
+
+VI5-T2 is closed PASS bounded:
+
+`docs/reviews/CVF_VI5_T2_SPEC_ENGLISH_FREEZE_COMPLETION_2026-05-25.md`
+
+Delivered `cvf.englishSpecFreeze.vi5.t2.v1`, validator-backed English Spec
+freeze artifact, route response wiring, and `specBoundary` freeze booleans tied
+to validator status. L1 observed Spec body remains reported as `mixed`; T2
+frozen artifact is `frozen`.
+
+Verification: focused tests PASS 5 files / 45 tests; cvf-web `npm run check`
+PASS; live Alibaba `qwen-turbo` proof PASS receipt
+`rcpt-env-mpl6equw-qdarbu`, `englishSpecFreeze.status=frozen`,
+`observedSpecBodyLanguage=mixed`, `englishFreezeEnforced=true`,
+rawSecretPrinted=false. Route remains 1000 lines.
+
+Next allowed move: operator/non-coder review of the frozen English Spec
+artifact. Do not open semantic translation, all-pack freeze, UI shell i18n,
+provider/prompt/receipt changes, hosted/public readiness, production
+readiness, or broad freeze release without fresh authorization.
 
 Public Catalog Sync for the VI wave is closed PASS bounded:
 

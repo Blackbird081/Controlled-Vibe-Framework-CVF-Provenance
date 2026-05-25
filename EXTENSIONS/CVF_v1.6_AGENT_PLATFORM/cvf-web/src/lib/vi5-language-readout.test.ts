@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { getTemplateById } from '@/lib/templates';
 import { buildSpecFirstMediationReadout } from '@/lib/spec-first-mediation';
+import { buildEnglishSpecFreezeReadout } from '@/lib/spec-english-freeze';
 import {
   buildVi5LanguageReadout,
   classifyObservedSpecBodyLanguage,
@@ -117,6 +118,37 @@ describe('VI5 language readout', () => {
     expect(readout.guidedStepState.guidedModeAvailable).toBe(false);
     expect(readout.guidedStepState.transitionState).toBe('chat_mode_only');
     expect(readout.guidedStepState.presentedOptions).toEqual([]);
+  });
+
+  it('marks Spec English Freeze enforced only when the T2 artifact validates', () => {
+    const specFirstMediation = buildSpecFirstMediationReadout({
+      request: {
+        templateId: 'strategy_analysis',
+        inputs: { topic: 'Mở rộng thị trường', context: 'SME B2B SaaS' },
+        specFirst: {
+          sourceLanguage: 'vi',
+          outputLanguage: 'vi',
+          originalPrompt: 'Cần phân tích chiến lược mở rộng thị trường.',
+        },
+      },
+      template: getTemplateById('strategy_analysis'),
+    });
+    const englishSpecFreeze = buildEnglishSpecFreezeReadout({
+      request: { templateId: 'strategy_analysis', inputs: { topic: 'Mở rộng thị trường' } },
+      specFirstMediation,
+    });
+
+    const readout = buildVi5LanguageReadout({
+      request: { templateId: 'strategy_analysis' },
+      specFirstMediation,
+      englishSpecFreeze,
+    });
+
+    expect(englishSpecFreeze.status).toBe('frozen');
+    expect(readout.specBoundary.frozen).toBe(true);
+    expect(readout.specBoundary.englishFreezeEnforced).toBe(true);
+    expect(readout.specBoundary.observedSpecBodyLanguage).toBe('mixed');
+    expect(readout.specBoundary.frozenAt).toEqual(expect.any(String));
   });
 
   it('classifies observed Spec body language deterministically', () => {

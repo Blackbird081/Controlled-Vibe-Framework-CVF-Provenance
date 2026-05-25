@@ -1,9 +1,9 @@
 /**
- * VI5-T1 Language State — Alibaba Live Proof
+ * VI5-T2 English Spec Freeze — Alibaba Live Proof
  *
- * Proves the additive languageState/guidedStepState/specBoundary readouts on
- * one live Vietnamese Strategy /api/execute call. This does not prove Spec
- * English Freeze or all-pack guided catalog coverage.
+ * Proves additive languageState/guidedStepState/specBoundary plus the
+ * response-level englishSpecFreeze artifact on one live Vietnamese Strategy
+ * /api/execute call. This does not prove all-pack guided catalog coverage.
  */
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { resolveAlibabaApiKey } from '@/lib/alibaba-env';
@@ -42,7 +42,7 @@ import { POST } from './route';
 const ALIBABA_API_KEY = resolveAlibabaApiKey();
 
 describe.skipIf(!ALIBABA_API_KEY)(
-  '/api/execute VI5-T1 language state live proof — Alibaba governed path',
+  '/api/execute VI5-T2 English Spec freeze live proof — Alibaba governed path',
   () => {
     const originalEnv = { ...process.env };
 
@@ -76,7 +76,7 @@ describe.skipIf(!ALIBABA_API_KEY)(
       process.env = { ...originalEnv };
     });
 
-    it('returns additive VI5 language and Strategy guided readouts', async () => {
+    it('returns additive VI5 language, Strategy guided, and English freeze readouts', async () => {
       const template = getTemplateById('strategy_analysis');
       expect(template).toBeDefined();
 
@@ -100,7 +100,7 @@ describe.skipIf(!ALIBABA_API_KEY)(
             model: 'qwen-turbo',
             mode: 'simple',
             cvfRiskLevel: 'R1',
-            action: 'analyze a Vietnamese Strategy workflow request for VI5 T1 language state proof',
+            action: 'analyze a Vietnamese Strategy workflow request for VI5 T2 English Spec freeze proof',
             skillPreflightPassed: true,
             skillPreflightDeclaration: 'SKILL PREFLIGHT PASS: VI5-T1 readout proof only, no implementation.',
             skillIds: ['strategy-analysis'],
@@ -113,13 +113,13 @@ describe.skipIf(!ALIBABA_API_KEY)(
             verticalIntegrationChain: {
               threadId: `vi5-t1-language-state-${Date.now()}`,
               turnIndex: 1,
-              operatorGoal: 'prove VI5-T1 language state and Strategy guided catalog readouts',
+              operatorGoal: 'prove VI5-T2 English Spec freeze readout',
             },
             aiCommit: {
               commitId: 'vi5-t1-language-state',
               agentId: 'codex-vi5-t1',
               timestamp: Date.now(),
-              description: 'VI5-T1 language state live proof',
+              description: 'VI5-T2 English Spec freeze live proof',
             },
           }),
         }) as never,
@@ -128,7 +128,7 @@ describe.skipIf(!ALIBABA_API_KEY)(
       const body = await response.json() as Record<string, unknown>;
       if (response.status !== 200 || body.success !== true) {
         const guard = body.guardResult as { blockedBy?: string; finalDecision?: string } | undefined;
-        throw new Error(`VI5-T1 live proof failed: http=${response.status}; success=${String(body.success)}; error=${String(body.error ?? body.model ?? 'unknown')}; guard=${guard?.finalDecision ?? 'unknown'}:${guard?.blockedBy ?? 'none'}`);
+        throw new Error(`VI5-T2 live proof failed: http=${response.status}; success=${String(body.success)}; error=${String(body.error ?? body.model ?? 'unknown')}; guard=${guard?.finalDecision ?? 'unknown'}:${guard?.blockedBy ?? 'none'}`);
       }
 
       const receipt = body.governanceEvidenceReceipt as Record<string, unknown> | undefined;
@@ -162,16 +162,32 @@ describe.skipIf(!ALIBABA_API_KEY)(
         contractVersion: 'cvf.specBoundary.vi5.t1.v1',
         specBlockLanguage: 'en',
         observedSpecBodyLanguage: 'mixed',
-        englishFreezeEnforced: false,
+        englishFreezeEnforced: true,
         sourcePromptPreserved: true,
         normalizedSpecAvailable: true,
+      });
+      expect(body.englishSpecFreeze).toMatchObject({
+        contractVersion: 'cvf.englishSpecFreeze.vi5.t2.v1',
+        status: 'frozen',
+        frozenSpecLanguage: 'en',
+        sourcePromptLanguage: 'vi',
+        sourcePromptPreserved: true,
+        agentHandoffReady: true,
+        userReviewRequired: true,
+      });
+      expect((body.englishSpecFreeze as { validation: Record<string, unknown> }).validation).toMatchObject({
+        englishOnlyBody: true,
+        requiredSectionsPresent: true,
+        sourceEvidenceSeparated: true,
+        blockedReasons: [],
       });
       expect(JSON.stringify(body)).not.toContain(ALIBABA_API_KEY);
 
       console.info(JSON.stringify({
-        vi5T1LanguageStateLiveReceipt: receipt?.receiptId,
+        vi5T2EnglishSpecFreezeLiveReceipt: receipt?.receiptId,
         provider: 'alibaba',
         model: 'qwen-turbo',
+        englishSpecFreezeStatus: (body.englishSpecFreeze as Record<string, unknown>).status,
         observedSpecBodyLanguage: (body.specBoundary as Record<string, unknown>).observedSpecBodyLanguage,
         englishFreezeEnforced: (body.specBoundary as Record<string, unknown>).englishFreezeEnforced,
         rawSecretPrinted: false,

@@ -4,6 +4,7 @@ import {
   type WorkflowPresentationCatalog,
   type WorkflowPresentationOption,
 } from '@/lib/presentation-loader';
+import type { EnglishSpecFreezeReadout } from '@/lib/spec-english-freeze';
 import type { SpecFirstLanguage, SpecFirstMediationReadout } from '@/lib/spec-first-mediation';
 
 export const LANGUAGE_STATE_VERSION = 'cvf.languageState.vi5.t1.v1' as const;
@@ -39,11 +40,11 @@ export interface GuidedStepState {
 
 export interface SpecBoundary {
   contractVersion: typeof SPEC_BOUNDARY_VERSION;
-  frozen: false;
+  frozen: boolean;
   specBlockLanguage: 'en';
   observedSpecBodyLanguage: ObservedSpecBodyLanguage;
-  englishFreezeEnforced: false;
-  frozenAt: null;
+  englishFreezeEnforced: boolean;
+  frozenAt: string | null;
   editAfterFreezeWarning: true;
   sourcePromptPreserved: boolean;
   normalizedSpecAvailable: boolean;
@@ -61,6 +62,7 @@ const EN_PATTERN = /\b(context|user input|task|intent|expected output|validation
 export function buildVi5LanguageReadout(input: {
   request: Partial<ExecutionRequest>;
   specFirstMediation: SpecFirstMediationReadout;
+  englishSpecFreeze?: EnglishSpecFreezeReadout;
   workflowId?: string | null;
 }): Vi5LanguageReadout {
   const templateId = input.request.templateId ?? input.specFirstMediation.selectedTemplate.id;
@@ -85,11 +87,11 @@ export function buildVi5LanguageReadout(input: {
     }),
     specBoundary: {
       contractVersion: SPEC_BOUNDARY_VERSION,
-      frozen: false,
+      frozen: input.englishSpecFreeze?.status === 'frozen',
       specBlockLanguage: 'en',
       observedSpecBodyLanguage: classifyObservedSpecBodyLanguage(input.specFirstMediation.normalizedExecutionSpec),
-      englishFreezeEnforced: false,
-      frozenAt: null,
+      englishFreezeEnforced: input.englishSpecFreeze?.status === 'frozen',
+      frozenAt: input.englishSpecFreeze?.frozenAt ?? null,
       editAfterFreezeWarning: true,
       sourcePromptPreserved: input.specFirstMediation.originalPromptPreserved,
       normalizedSpecAvailable: input.specFirstMediation.normalizedExecutionSpec.trim().length > 0,

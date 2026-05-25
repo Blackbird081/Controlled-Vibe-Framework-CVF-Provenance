@@ -112,11 +112,28 @@ describe('/api/execute VI5-T1 language state deterministic route readout', () =>
     });
     expect(data.guidedStepState.presentedOptions.map((option: { id: string }) => option.id)).toEqual(['strategic_decision', 'market_entry', 'competitive_response', 'other']);
     expect(data.guidedStepState.capturedSpecFields).toEqual(['strategy.type', 'strategy.constraints', 'strategy.outputFormat']);
+    expect(data.englishSpecFreeze).toMatchObject({
+      contractVersion: 'cvf.englishSpecFreeze.vi5.t2.v1',
+      status: 'frozen',
+      frozenSpecLanguage: 'en',
+      sourcePromptLanguage: 'vi',
+      sourcePromptPreserved: true,
+      agentHandoffReady: true,
+      userReviewRequired: true,
+    });
+    expect(data.englishSpecFreeze.validation).toMatchObject({
+      englishOnlyBody: true,
+      requiredSectionsPresent: true,
+      sourceEvidenceSeparated: true,
+      blockedReasons: [],
+    });
+    expect(data.englishSpecFreeze.frozenSpec).not.toContain('miền Trung');
     expect(data.specBoundary).toMatchObject({
       contractVersion: 'cvf.specBoundary.vi5.t1.v1',
       observedSpecBodyLanguage: 'mixed',
-      englishFreezeEnforced: false,
+      englishFreezeEnforced: true,
       sourcePromptPreserved: true,
     });
+    expect(data.specBoundary.frozen).toBe(true);
   });
 });
