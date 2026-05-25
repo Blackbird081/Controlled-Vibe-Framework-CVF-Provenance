@@ -21,6 +21,10 @@ Source result:
 
 `docs/reviews/CVF_REAL_NONCODER_USAGE_TEST_RESULT_2026-05-25.md`
 
+Product flow direction:
+
+`docs/reference/CVF_NONCODER_SPEC_FIRST_WEB_FLOW_2026-05-25.md`
+
 ## Scope / Methodology
 
 Scope: language mediation and spec-first packaging only.
@@ -85,6 +89,19 @@ user supplies English prompt
 -> user-facing result may remain localized or bilingual
 ```
 
+Web-facing product model:
+
+1. Template-First: user chooses a prepared template by topic, content type, or
+   complexity, edits it, and exports a standard CVF Spec.
+2. Describe Your Goal: user describes the idea, CVF recommends template/skill,
+   user confirms or edits, and CVF exports the same standard Spec.
+3. AI-Assisted Prompt Preparation: user may use paid API keys or external LLMs
+   to refine the idea first, but CVF remains the normalizer and emits the final
+   standard Spec for agents.
+
+The central control point is the Spec. The web product should not treat loose
+chat text as the implementation contract.
+
 ## Required Contract Fields
 
 The next tranche should introduce a stable language mediation readout with at
@@ -134,6 +151,23 @@ The normalized spec should be Markdown-compatible and agent-readable:
 This spec is the shared contract for Codex, Claude, DeepSeek, CLI, MCP, and
 future agents before implementation.
 
+Every web-facing entry mode should converge to one copy-ready Spec with:
+
+- Context;
+- User Input;
+- Input Coverage;
+- Task / Intent;
+- Expected Output Format;
+- Output Template when applicable;
+- Execution Constraints;
+- Validation Hooks;
+- Non-Coder Success Standard;
+- Governed Response Rules;
+- Knowledge Context Preference;
+- Risk / Approval Posture;
+- Agent Handoff Instructions;
+- Final User Review Checkpoint.
+
 ## Work Plan
 
 Proposed L1 implementation sequence after fresh GC-018:
@@ -142,10 +176,13 @@ Proposed L1 implementation sequence after fresh GC-018:
    minimum schema.
 2. Add deterministic language/source/output metadata without provider calls.
 3. Add localized short evidence summary generation from existing VI4 fields.
-4. Wire the spec/readout into the existing Strategy `/api/execute` response
+4. Add the Template-First, Describe Your Goal, and AI-Assisted Prompt
+   Preparation convergence contract as deterministic spec-generation paths.
+5. Wire the spec/readout into the existing Strategy `/api/execute` response
    without changing provider adapters or receipt envelopes.
-5. Add unit coverage for Vietnamese, English, and ambiguous-language cases.
-6. Run one live Vietnamese Strategy proof and record receipt, provider/model,
+6. Add unit coverage for Vietnamese, English, ambiguous-language cases, and
+   all three web-facing entry modes.
+7. Run one live Vietnamese Strategy proof and record receipt, provider/model,
    localized output, and raw evidence availability.
 
 ## Acceptance Criteria
@@ -155,6 +192,8 @@ Minimum acceptance for L1:
 - Vietnamese input remains valid; user is not forced to write English.
 - The original prompt is preserved.
 - The normalized CVF Execution Spec is emitted and readable by agents.
+- Template-First, Describe Your Goal, and AI-Assisted Prompt Preparation all
+  converge to the same standard Spec sections.
 - User-facing answer is Vietnamese when `sourceLanguage=vi`.
 - Evidence summary is short and Vietnamese-readable by default.
 - Raw VI4/technical evidence remains accessible.

@@ -151,6 +151,8 @@ Current HEAD after operator sample commit: `f77d4283`.
 
 Current HEAD before operator result closure commit: `309f93f8`.
 
+Current HEAD before spec-first web flow commit: `8079fec9`.
+
 Result packet:
 
 `docs/reviews/CVF_REAL_NONCODER_USAGE_TEST_RESULT_2026-05-25.md`
@@ -164,6 +166,14 @@ stable normalized CVF Spec or English execution brief.
 Next roadmap:
 
 `docs/roadmaps/CVF_L1_MULTILINGUAL_SPEC_FIRST_MEDIATION_ROADMAP_2026-05-25.md`
+
+Product flow direction:
+
+`docs/reference/CVF_NONCODER_SPEC_FIRST_WEB_FLOW_2026-05-25.md`
+
+Core product principle: Template-First, Describe Your Goal, and AI-Assisted
+Prompt Preparation must all converge to one standard copy-ready CVF Spec. The
+Spec is the agent control point.
 
 Next implementation requires fresh value-screened GC-018 and work order. Do
 not open hosted readiness, public readiness, provider soak, workflow scale,

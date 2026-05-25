@@ -143,6 +143,14 @@ Next roadmap:
 
 `docs/roadmaps/CVF_L1_MULTILINGUAL_SPEC_FIRST_MEDIATION_ROADMAP_2026-05-25.md`
 
+Product flow direction:
+
+`docs/reference/CVF_NONCODER_SPEC_FIRST_WEB_FLOW_2026-05-25.md`
+
+Core product principle: Template-First, Describe Your Goal, and AI-Assisted
+Prompt Preparation must all converge to one standard copy-ready CVF Spec. The
+Spec is the agent control point.
+
 Do not open hosted readiness, public readiness, provider soak, workflow scale,
 route/provider adapter changes, public-sync, production readiness, broad
 workflow claims, or freeze release before L1/VI5 is authorized and completed.
