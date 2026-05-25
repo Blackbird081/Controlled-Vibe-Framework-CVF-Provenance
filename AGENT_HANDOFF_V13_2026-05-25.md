@@ -160,6 +160,57 @@ workflow scale, route/provider/prompt/receipt changes, public-sync, production
 readiness, broad workflow claims, or freeze release until the human result
 exists.
 
+## Inbound External Feedback — CVF 25.05 (NEW, FRESH, NOT YET DISPOSITIONED)
+
+Operator placed an outside-view GAP analysis under
+`.private_reference/legacy/CVF 25.05/Gop_y.md` on 2026-05-25.
+
+**IMPORTANT:** This folder is **inbound external feedback dated 2026-05-25**,
+NOT legacy spec absorption material. The operator put it under `legacy/` for
+inventory convenience (folders named by date). Do not apply WC-4 Knowledge
+Absorption Blind-Spot Control as if it were legacy spec — that standard is for
+absorbing pre-existing legacy specs into runtime, not for evaluating inbound
+external reviews.
+
+Claude filed a review of `Gop_y.md` at:
+
+`.private_reference/legacy/CVF 25.05/CLAUDE_REVIEW_OF_GOP_Y_2026-05-25.md`
+
+The review:
+
+- validates `Gop_y.md` accuracy GAP-by-GAP against current repo state
+  (governance HEAD `df372791`, public-sync HEAD `f6b3e6d3`);
+- confirms 9 GAPs (most VALID, some PARTIALLY_DONE, one PARTIALLY_OUTDATED);
+- proposes a P0/P1/P2 sequence conditional on the Real Non-Coder Usage Test
+  outcome;
+- explicitly does NOT authorize any tranche.
+
+**Handling rules for future agents:**
+
+1. Treat `CVF 25.05/` as **fresh inbound feedback**, not yet dispositioned.
+2. Keep both `Gop_y.md` and `CLAUDE_REVIEW_OF_GOP_Y_2026-05-25.md` — do not
+   delete either when archiving.
+3. Do NOT open any tranche based on `Gop_y.md` GAPs until:
+   - The Real Non-Coder Usage Test gate (above) has been closed by a human;
+   - AND the operator explicitly authorizes a GAP-closure roadmap.
+4. If a GAP-closure tranche is later authorized, cite specific Gop_y GAP
+   numbers (1-9) in the GC-018, and apply WC-4 Control Block as for any
+   implementation tranche (because the implementation absorbs from legacy
+   sources, not from `Gop_y.md` itself).
+5. If more external feedback arrives, the operator may continue placing it
+   under `.private_reference/legacy/CVF <YYYY.MM>/`. Future agents should
+   recognize this pattern: dated folders containing `Gop_y.md` or similar
+   review files are inbound feedback channels, not legacy spec absorption
+   material.
+
+Cross-validation note: `Gop_y.md` is the first outside-view review where the
+reviewer correctly understood CVF after the P-CAT-1 public catalog sync
+(`f6b3e6d3`). This validates that the catalog sync had real effect — the
+reviewer was NOT able to make the 2026-05-17 Review CVF.md errors about
+"CVF lacks CLI/benchmark/Skill/Provider/Memory foundations." Subsequent agents
+should preserve this as evidence that the public-sync rule (CLAUDE.md "Public
+Catalog Update Rule") is load-bearing.
+
 ## Latest Work / Changes
 
 C7A product skill pack top-10 completion is closed PASS bounded:
