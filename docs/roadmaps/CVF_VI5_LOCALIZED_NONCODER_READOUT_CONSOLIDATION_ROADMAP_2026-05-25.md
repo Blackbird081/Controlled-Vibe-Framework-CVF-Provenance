@@ -4,7 +4,23 @@ Memory class: ROADMAP_RECORD
 
 Date: 2026-05-25
 
-Status: PROPOSED_FOR_OPERATOR_REVIEW
+Status: SUPERSEDED_BY `docs/roadmaps/CVF_VI5_T1_LANGUAGE_STATE_AND_STRATEGY_GUIDED_CATALOG_ROADMAP_2026-05-25.md`
+
+Supersession date: 2026-05-25
+
+Supersession reason: the 4-layer architecture and Multi-Role Orchestrated
+Convergence review replaced the earlier `localizedNonCoderReadout` surface
+with narrower `languageState`, `guidedStepState`, `specBoundary`, and
+per-workflow presentation catalogs. See:
+
+- `docs/concepts/CVF_LAYERED_PRODUCT_ARCHITECTURE_AND_VIBE_DIALOG_PATTERN_2026-05-25.md`
+- `docs/reviews/CVF_VI5_LAYERED_ARCHITECTURE_CODEX_REBUTTAL_TO_CLAUDE_2026-05-25.md`
+- `docs/reviews/CVF_VI5_LAYERED_ARCHITECTURE_CLAUDE_RESPONSE_TO_CODEX_REBUTTAL_2026-05-25.md`
+- `docs/reviews/CVF_VI5_MULTI_ROLE_CONVERGENCE_CORRECTION_TO_CLAUDE_2026-05-25.md`
+- `docs/reviews/CVF_VI5_MULTI_ROLE_CONVERGENCE_CLAUDE_ACCEPTANCE_2026-05-25.md`
+
+Implementation boundary: do not implement this roadmap as written. Use the
+superseding VI5-T1 roadmap.
 
 ## Purpose
 
