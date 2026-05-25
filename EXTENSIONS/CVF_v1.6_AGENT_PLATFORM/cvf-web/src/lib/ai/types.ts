@@ -69,6 +69,14 @@ export interface ExecutionRequest {
         };
         maxSummaryLength?: number;
     };
+    /** VI1 — optional response-level chain descriptor for vertical integration proof */
+    verticalIntegrationChain?: {
+        threadId?: string;
+        rootReceiptId?: string;
+        parentReceiptId?: string;
+        turnIndex?: number;
+        operatorGoal?: string;
+    };
 }
 
 export interface GovernanceEvidenceReceipt {

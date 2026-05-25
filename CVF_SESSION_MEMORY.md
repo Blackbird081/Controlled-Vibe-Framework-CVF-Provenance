@@ -216,11 +216,15 @@ tools/MCP/CLI/scripts/models/providers, fetch live external repositories, make
 public-sync/marketplace claims, or touch `/api/execute`, receipt envelopes,
 auth/RBAC, hosted readiness, production readiness, or freeze release.
 
-## Active Authorized Tranche
+## Latest Closed Tranche
 
-VI1 W-Series Vertical Execute Chain is authorized:
+VI1 W-Series Vertical Execute Chain is closed PASS bounded:
 
-Mode marker: `vi1_w_series_vertical_execute_chain_authorized`
+Mode marker: `vi1_w_series_vertical_execute_chain_closed`
+
+`docs/reviews/CVF_VI1_W_SERIES_VERTICAL_EXECUTE_CHAIN_COMPLETION_2026-05-25.md`
+
+Authorization:
 
 `docs/baselines/CVF_GC018_VI1_W_SERIES_VERTICAL_EXECUTE_CHAIN_2026-05-25.md`
 
@@ -228,12 +232,23 @@ Work order:
 
 `docs/work_orders/CVF_WO_VI1_W_SERIES_VERTICAL_EXECUTE_CHAIN_2026-05-25.md`
 
-VI1 follows Claude's recommended vertical integration path: wire existing
-W-series/adjacent surfaces into one `/api/execute` response-level
-`verticalIntegrationReadout` and prove a 2-turn live chain. Allowed work is
-limited to the readout helper, execute request typing, route response wiring,
-focused tests, one Alibaba-compatible live 2-turn proof, completion/session/
-handoff updates, and commit.
+VI1 added `cvf.verticalWorkflowIntegration.vi1.v1`, optional
+`verticalIntegrationChain` typing, `/api/execute` response wiring, and
+unit/route/live tests. Live Alibaba-compatible 2-turn proof PASS:
+turn 1 `rcpt-env-mpkh0117-b27yr9`, turn 2
+`rcpt-env-mpkh0dbw-kvohgm`. Second turn asserted `status=integrated`,
+`integratedSurfaceCount=6`, `requiredSurfaceCount=5`,
+`continuityProven=true`, and W2 memory hook
+`rawMemoryReleased=false` / `canReinject=false`.
+
+Verification: focused VI1/route tests PASS 33/33, cvf-web check PASS, live
+VI1 test PASS 1/1.
+
+Recommended next work is VI2 candidate selection for vertical-adjacent
+horizontal absorption only after fresh GC-018: choose caveman context engine
+wiring, Workflow GoClaw runtime normalization, or agentmemory event capture
+only if it adds concrete diagnostic value to `verticalIntegrationReadout`
+without widening runtime authority.
 
 Do not create a new receipt envelope schema, workflow engine, route-level
 transition blocking, memory reinjection, MCP/tool/database/browser automation,

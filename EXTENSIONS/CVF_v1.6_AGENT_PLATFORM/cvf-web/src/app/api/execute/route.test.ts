@@ -456,6 +456,8 @@ describe('/api/execute', () => {
         ]);
         expect(data.phase3eOperationalMetrics.metrics).toHaveLength(3);
         expect(data.phase3eOperationalMetrics.skippedMetrics.length).toBeGreaterThanOrEqual(7);
+        expect(data.verticalIntegrationReadout.status).toBe('integrated');
+        expect(data.verticalIntegrationReadout.liveReceipt.receiptId).toBe(data.governanceEvidenceReceipt.receiptId);
     });
 
     it('does not attach the Phase 2.C product brief slice for other templates', async () => {

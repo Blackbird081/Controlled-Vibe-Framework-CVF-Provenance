@@ -258,9 +258,13 @@ and boundaries while preserving `runtimeExecutionAuthorized=false`,
 Verification: focused C7C tests PASS 9/9; full `governance/contracts` tests
 PASS 123/123.
 
-## Active Work / Changes
+## Latest Work / Changes
 
-VI1 W-Series Vertical Execute Chain is authorized:
+VI1 W-Series Vertical Execute Chain is closed PASS bounded:
+
+`docs/reviews/CVF_VI1_W_SERIES_VERTICAL_EXECUTE_CHAIN_COMPLETION_2026-05-25.md`
+
+Authorization:
 
 `docs/baselines/CVF_GC018_VI1_W_SERIES_VERTICAL_EXECUTE_CHAIN_2026-05-25.md`
 
@@ -268,25 +272,37 @@ Work order:
 
 `docs/work_orders/CVF_WO_VI1_W_SERIES_VERTICAL_EXECUTE_CHAIN_2026-05-25.md`
 
-Current HEAD before VI1 authorization commit: `0bca1387`.
+Current HEAD before VI1 implementation closure commit: `c7104ead`.
 
-Claude's recommended path is vertical integration before more horizontal
-absorption. VI1 may add only a response-level `verticalIntegrationReadout` to
-existing `/api/execute` surfaces, an optional 2-turn chain descriptor, focused
-tests, one Alibaba-compatible live 2-turn proof, completion/session updates,
-and commit.
+VI1 added `cvf.verticalWorkflowIntegration.vi1.v1`, optional
+`verticalIntegrationChain` typing, `/api/execute` response wiring, and
+unit/route/live tests. Live Alibaba-compatible 2-turn proof PASS:
+turn 1 `rcpt-env-mpkh0117-b27yr9`, turn 2
+`rcpt-env-mpkh0dbw-kvohgm`. Second turn asserted `status=integrated`,
+`integratedSurfaceCount=6`, `requiredSurfaceCount=5`,
+`continuityProven=true`, and W2 memory hook no raw memory release/no
+reinjection.
 
-Forbidden: new receipt envelope schema, broad workflow engine, route-level
+Verification: focused VI1/route tests PASS 33/33, cvf-web check PASS, live
+VI1 test PASS 1/1.
+
+Boundary: no new receipt envelope schema, broad workflow engine, route-level
 transition blocking, memory reinjection, MCP/tool/database/browser automation,
 external skill import, provider adapter semantic changes, public-sync claims,
 hosted readiness, production readiness, or freeze release.
 
 ## Next Allowed Move
 
-Implement VI1 only within the authorized files and verification plan. Stop and
-return to orchestrator if the work requires receipt schema changes, workflow
-enforcement, memory reinjection, provider adapter behavior, external skill
-import, public-sync, hosted readiness, production readiness, or freeze release.
+Recommended next work is VI2 candidate selection for vertical-adjacent
+horizontal absorption only after fresh GC-018: choose caveman context engine
+wiring, Workflow GoClaw runtime normalization, or agentmemory event capture
+only if it can add concrete diagnostic value to `verticalIntegrationReadout`
+without widening runtime authority.
+
+Stop and return to orchestrator if next work requires receipt schema changes,
+workflow enforcement, memory reinjection, provider adapter behavior, external
+skill import, public-sync, hosted readiness, production readiness, or freeze
+release.
 
 ## WR1 Source Pointers
 

@@ -1,0 +1,149 @@
+import { describe, expect, it } from 'vitest';
+import { buildAuditMemoryReceipt } from '@/lib/audit-memory-receipt';
+import { buildPhase2CProductBriefSliceForRoute } from '@/lib/phase2c-product-brief-slice';
+import { buildPhase3EOperationalMetricsForRoute } from '@/lib/phase3e-operational-emission';
+import { buildVerticalIntegrationReadout } from '@/lib/vertical-integration-readout';
+import { buildWorkflowExecutionProjection, resolveWorkflowBindingForExecution } from '@/lib/workflows/workflow-resolver';
+import type { GovernanceEvidenceReceipt } from '@/lib/ai';
+
+const output = [
+    '## Product Brief',
+    '',
+    'TaskFlow helps small product teams plan lightweight work with task boards, owner fields, and status filters.',
+    '',
+    '## Acceptance Criteria',
+    '',
+    '1. Users can create a task quickly.',
+    '2. Users can filter tasks by status.',
+].join('\n');
+
+function buildReceipt(): GovernanceEvidenceReceipt {
+    return {
+        receiptId: 'rcpt-env-vi1-test',
+        evidenceMode: 'live',
+        routeId: '/api/execute',
+        decision: 'ALLOW',
+        riskLevel: 'R1',
+        provider: 'alibaba',
+        model: 'qwen-turbo',
+        routingDecision: 'selected',
+        policySnapshotId: 'pol-vi1-0001',
+        envelopeId: 'env-vi1-test',
+        generatedAt: '2026-05-25T00:00:00.000Z',
+    };
+}
+
+describe('vertical integration readout', () => {
+    it('reports integrated when existing W-series execute surfaces are present', () => {
+        const evidenceReceipt = buildReceipt();
+        const binding = resolveWorkflowBindingForExecution('app_builder_complete');
+        expect(binding).toBeTruthy();
+        const workflowExecution = buildWorkflowExecutionProjection(binding!, evidenceReceipt.receiptId);
+        const auditMemoryReceipt = buildAuditMemoryReceipt({
+            governanceReceiptId: evidenceReceipt.receiptId,
+            actorId: 'operator-1',
+            actorRole: 'OPERATOR',
+            sessionId: 'thread-vi1',
+            templateId: 'app_builder_complete',
+            workflowId: workflowExecution.workflowId,
+            provider: 'alibaba',
+            model: 'qwen-turbo',
+            decision: 'ALLOW',
+            stepTraceIds: workflowExecution.stepTraces.map(trace => trace.stepId),
+        });
+        const phase2cProductBrief = buildPhase2CProductBriefSliceForRoute({
+            responseSuccess: true,
+            templateId: 'app_builder_complete',
+            templateName: 'App Builder Complete',
+            category: 'development',
+            inputs: {
+                appName: 'TaskFlow',
+                problem: 'Small teams need a lighter way to plan work.',
+            },
+            intent: 'Create Product Brief for TaskFlow',
+            output,
+            evidenceReceipt,
+        });
+        const phase3eOperationalMetrics = buildPhase3EOperationalMetricsForRoute({
+            phase2cProductBrief,
+            evidenceReceipt,
+            responseSuccess: true,
+        });
+
+        const readout = buildVerticalIntegrationReadout({
+            evidenceReceipt,
+            workflowExecution,
+            auditMemoryReceipt,
+            phase2cProductBrief,
+            phase3eOperationalMetrics,
+            actorId: 'operator-1',
+            templateId: 'app_builder_complete',
+            chainRequest: {
+                threadId: 'thread-vi1',
+                rootReceiptId: 'rcpt-env-vi1-root',
+                parentReceiptId: 'rcpt-env-vi1-root',
+                turnIndex: 2,
+            },
+        });
+
+        expect(readout).toMatchObject({
+            contractVersion: 'cvf.verticalWorkflowIntegration.vi1.v1',
+            status: 'integrated',
+            requiredSurfaceCount: 5,
+            integratedSurfaceCount: 6,
+            liveReceipt: {
+                present: true,
+                receiptId: evidenceReceipt.receiptId,
+                evidenceMode: 'live',
+            },
+            chain: {
+                threadId: 'thread-vi1',
+                parentReceiptId: 'rcpt-env-vi1-root',
+                continuityProven: true,
+            },
+        });
+        expect(readout.surfaces.map(surface => surface.surfaceId)).toEqual([
+            'governance_receipt',
+            'workflow_state_machine',
+            'workflow_recovery',
+            'memory_event_hook',
+            'artifact_verification',
+            'operational_metrics',
+        ]);
+        expect(readout.surfaces.every(surface => surface.present)).toBe(true);
+        expect(readout.memoryEventHook.receipt).toMatchObject({
+            contractVersion: 'cvf.memoryEventHooks.w2.v1',
+            eventType: 'execution_result',
+            rawMemoryReleased: false,
+            canReinject: false,
+        });
+    });
+
+    it('stays partial and visible when pack and metric surfaces are missing', () => {
+        const evidenceReceipt = buildReceipt();
+        const readout = buildVerticalIntegrationReadout({
+            evidenceReceipt,
+            actorId: 'operator-1',
+            templateId: 'documentation',
+            chainRequest: {
+                threadId: 'thread-vi1',
+                turnIndex: 2,
+            },
+        });
+
+        expect(readout.status).toBe('partial');
+        expect(readout.integratedSurfaceCount).toBe(2);
+        expect(readout.chain).toMatchObject({
+            continuityProven: false,
+            reason: 'continuity_metadata_incomplete',
+        });
+        expect(readout.surfaces.filter(surface => !surface.present).map(surface => surface.surfaceId)).toEqual([
+            'workflow_state_machine',
+            'workflow_recovery',
+            'artifact_verification',
+            'operational_metrics',
+        ]);
+        expect(readout.memoryEventHook.receipt.canReinject).toBe(false);
+        expect(readout.memoryEventHook.receipt.rawMemoryReleased).toBe(false);
+    });
+});
