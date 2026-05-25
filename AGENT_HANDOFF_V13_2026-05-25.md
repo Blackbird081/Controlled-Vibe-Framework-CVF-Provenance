@@ -87,7 +87,7 @@ Previous long session memory snapshot was archived at:
 
 ## Current Mode
 
-`real_noncoder_usage_test_ready_for_operator`
+`real_noncoder_usage_test_closed_hold_l1_multilingual_next`
 
 Freeze posture remains:
 
@@ -128,9 +128,9 @@ Public evidence summary:
 Public-sync verification: cited paths PASS, evidence manifest verify PASS
 260/260, static CI gate PASS 7/7.
 
-## Active Operator-Required Work
+## Active Operator Usability Result
 
-Real Non-Coder Usage Test is ready for operator:
+Real Non-Coder Usage Test is closed HOLD:
 
 `docs/work_orders/CVF_WO_REAL_NONCODER_USAGE_TEST_2026-05-25.md`
 
@@ -149,11 +149,26 @@ Current HEAD before sample packet cleanup amend: `e1ba2d74`.
 
 Current HEAD after operator sample commit: `f77d4283`.
 
-This is intentionally not self-passable by Codex. A real operator/non-coder
-must inspect a Strategy workflow response and VI4 package, then record PASS,
-HOLD_FOR_VI5_CONSOLIDATION, or BLOCKED. If the 11-surface VI4 package is too
-confusing, the next implementation should be VI5 readout consolidation rather
-than hosted readiness.
+Current HEAD before operator result closure commit: `309f93f8`.
+
+Result packet:
+
+`docs/reviews/CVF_REAL_NONCODER_USAGE_TEST_RESULT_2026-05-25.md`
+
+Decision: `HOLD_FOR_VI5_CONSOLIDATION`.
+
+Primary blocker: public CVF cannot assume English input/output for non-coders.
+Vietnamese users need native-language input/output while agents still need a
+stable normalized CVF Spec or English execution brief.
+
+Next roadmap:
+
+`docs/roadmaps/CVF_L1_MULTILINGUAL_SPEC_FIRST_MEDIATION_ROADMAP_2026-05-25.md`
+
+Next implementation requires fresh value-screened GC-018 and work order. Do
+not open hosted readiness, public readiness, provider soak, workflow scale,
+route/provider adapter changes, public-sync, production readiness, broad
+workflow claims, or freeze release before L1/VI5 is authorized and completed.
 
 Do not open more W/C/VI/D implementation, hosted readiness, provider soak,
 workflow scale, route/provider/prompt/receipt changes, public-sync, production

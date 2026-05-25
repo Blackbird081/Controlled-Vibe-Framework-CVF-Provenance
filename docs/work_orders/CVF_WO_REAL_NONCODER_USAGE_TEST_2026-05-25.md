@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: READY_FOR_OPERATOR
+Status: CLOSED_HOLD_FOR_VI5_CONSOLIDATION
 
 Date: 2026-05-25
 
@@ -212,16 +212,32 @@ Required fields:
 
 ## Closure Checklist
 
-- [ ] operator/non-coder judgment recorded
-- [ ] receipt id recorded
-- [ ] provider/model recorded
-- [ ] six pass questions answered
-- [ ] confusion notes recorded
-- [ ] decision recorded
-- [ ] result packet filed
-- [ ] session state/front door/handoff updated
-- [ ] guards run
-- [ ] commit created
+- [x] operator/non-coder judgment recorded
+- [x] receipt id recorded
+- [x] provider/model recorded
+- [x] six pass questions answered
+- [x] confusion notes recorded
+- [x] decision recorded
+- [x] result packet filed
+- [x] session state/front door/handoff updated
+- [x] guards run
+- [x] commit created
+
+## Closure Result
+
+Result packet:
+
+`docs/reviews/CVF_REAL_NONCODER_USAGE_TEST_RESULT_2026-05-25.md`
+
+Decision: HOLD_FOR_VI5_CONSOLIDATION.
+
+Primary blocker: public CVF cannot assume English input/output for non-coders.
+Vietnamese users need native-language input/output while agents still need a
+stable normalized CVF Spec or English execution brief.
+
+Next roadmap:
+
+`docs/roadmaps/CVF_L1_MULTILINGUAL_SPEC_FIRST_MEDIATION_ROADMAP_2026-05-25.md`
 
 ## Return-To-Orchestrator Conditions
 

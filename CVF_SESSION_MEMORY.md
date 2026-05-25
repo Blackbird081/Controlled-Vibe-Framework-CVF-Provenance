@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-25
 
-Current mode marker: `real_noncoder_usage_test_ready_for_operator`
+Current mode marker: `real_noncoder_usage_test_closed_hold_l1_multilingual_next`
 
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Previous handoff archive:
 
 ## Current State
 
-Current mode: `real_noncoder_usage_test_ready_for_operator`.
+Current mode: `real_noncoder_usage_test_closed_hold_l1_multilingual_next`.
 
 C7A closed PASS bounded at:
 
@@ -113,11 +113,11 @@ Public evidence:
 Verification in public-sync: cited paths PASS, evidence manifest verify PASS
 260/260, static CI gate PASS 7/7.
 
-## Active Operator-Required Work
+## Latest Operator Usability Result
 
-Real Non-Coder Usage Test is ready for operator:
+Real Non-Coder Usage Test is closed HOLD:
 
-Mode marker: `real_noncoder_usage_test_ready_for_operator`
+Mode marker: `real_noncoder_usage_test_closed_hold_l1_multilingual_next`
 
 `docs/work_orders/CVF_WO_REAL_NONCODER_USAGE_TEST_2026-05-25.md`
 
@@ -129,12 +129,23 @@ Receipt: `rcpt-env-mpkoa8dy-4zf8rz`
 
 Provider/model: `alibaba/qwen-turbo`
 
-This must not be self-passed by Codex. A real operator/non-coder must inspect a
-Strategy workflow response and VI4 package, then record PASS,
-HOLD_FOR_VI5_CONSOLIDATION, or BLOCKED. Do not open more W/C/VI/D
-implementation, hosted readiness, provider soak, workflow scale, route/provider
-changes, public-sync, production readiness, broad workflow claims, or freeze
-release until that human result exists.
+Result packet:
+
+`docs/reviews/CVF_REAL_NONCODER_USAGE_TEST_RESULT_2026-05-25.md`
+
+Decision: `HOLD_FOR_VI5_CONSOLIDATION`.
+
+Primary blocker: public CVF cannot assume English input/output for non-coders.
+Vietnamese users need native-language input/output while agents still need a
+stable normalized CVF Spec or English execution brief.
+
+Next roadmap:
+
+`docs/roadmaps/CVF_L1_MULTILINGUAL_SPEC_FIRST_MEDIATION_ROADMAP_2026-05-25.md`
+
+Do not open hosted readiness, public readiness, provider soak, workflow scale,
+route/provider adapter changes, public-sync, production readiness, broad
+workflow claims, or freeze release before L1/VI5 is authorized and completed.
 
 ## Latest Closed Tranche
 
