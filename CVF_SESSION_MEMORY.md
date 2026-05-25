@@ -328,6 +328,29 @@ Recommended next work requires fresh GC-018. Prefer operator/API evidence
 packaging that exposes VI1-VI3 response diagnostics to non-coder/API consumers
 without changing runtime authority.
 
+## Active Authorized Tranche
+
+VI4 Vertical Evidence Surface Expansion is authorized:
+
+Mode marker: `vi4_vertical_evidence_surface_expansion_authorized`
+
+`docs/baselines/CVF_GC018_VI4_VERTICAL_EVIDENCE_SURFACE_EXPANSION_2026-05-25.md`
+
+Work order:
+
+`docs/work_orders/CVF_WO_VI4_VERTICAL_EVIDENCE_SURFACE_EXPANSION_2026-05-25.md`
+
+VI4 combines Claude B and Codex evidence-packaging direction: wire bounded
+W3, W4, W5, and TA1 readout surfaces into VI and expose a concise response
+package for API/operator readers. W4 is current-call packaging only, not a
+claim that the offline benchmark suite ran. D provider scale and C workflow
+scale remain deferred until after VI4 closure.
+
+Forbidden: route blocking from the new surfaces, tool/MCP/database/browser
+execution, provider routing/adapter changes, receipt-envelope changes, prompt
+mutation, memory reinjection, public-sync, hosted readiness, production
+readiness, or freeze release.
+
 ## Mandatory Standards
 
 Live run diagnostics:

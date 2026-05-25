@@ -382,6 +382,29 @@ reinjection, external memory adapters, provider routing changes, receipt
 envelope changes, public-sync, hosted readiness, production readiness, or
 freeze release.
 
+## Active Work / Changes
+
+VI4 Vertical Evidence Surface Expansion is authorized:
+
+`docs/baselines/CVF_GC018_VI4_VERTICAL_EVIDENCE_SURFACE_EXPANSION_2026-05-25.md`
+
+Work order:
+
+`docs/work_orders/CVF_WO_VI4_VERTICAL_EVIDENCE_SURFACE_EXPANSION_2026-05-25.md`
+
+Current HEAD before VI4 authorization commit: `0dfaa59c`.
+
+VI4 combines Claude B and Codex evidence-packaging direction: wire bounded W3,
+W4, W5, and TA1 readout surfaces into VI and expose a concise response package
+for API/operator readers. W4 is current-call packaging only, not a claim that
+the offline benchmark suite ran. D provider scale and C workflow scale remain
+deferred until after VI4 closure.
+
+Forbidden: route blocking from new surfaces, tool/MCP/database/browser
+execution, provider routing/adapter changes, receipt-envelope changes, prompt
+mutation, memory reinjection, public-sync, hosted readiness, production
+readiness, or freeze release.
+
 ## WR1 Source Pointers
 
 Previous WR1 authorization packet:
