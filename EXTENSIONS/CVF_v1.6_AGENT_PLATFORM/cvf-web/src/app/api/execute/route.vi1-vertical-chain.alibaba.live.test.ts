@@ -131,7 +131,7 @@ describe.skipIf(!ALIBABA_API_KEY)(
         expect(firstReadout).toMatchObject({
           contractVersion: 'cvf.verticalWorkflowIntegration.vi1.v1',
           status: 'integrated',
-          integratedSurfaceCount: 7,
+          integratedSurfaceCount: 11,
           chain: {
             threadId,
             turnIndex: 1,
@@ -185,6 +185,7 @@ describe.skipIf(!ALIBABA_API_KEY)(
         const captureRecord = secondAuditMemoryReceipt?.captureRecord as Record<string, unknown> | undefined;
         const memoryEventHook = secondReadout?.memoryEventHook as Record<string, unknown> | undefined;
         const memoryReceipt = memoryEventHook?.receipt as Record<string, unknown> | undefined;
+        const evidencePackage = secondReadout?.evidencePackage as Record<string, unknown> | undefined;
         const surfaces = secondReadout?.surfaces as Array<{ surfaceId: string; present: boolean; summary?: string; evidenceRefs?: string[] }> | undefined;
 
         expect(secondResponse.status).toBe(200);
@@ -200,7 +201,7 @@ describe.skipIf(!ALIBABA_API_KEY)(
         expect(secondReadout).toMatchObject({
           contractVersion: 'cvf.verticalWorkflowIntegration.vi1.v1',
           status: 'integrated',
-          integratedSurfaceCount: 7,
+          integratedSurfaceCount: 11,
           requiredSurfaceCount: 5,
           liveReceipt: {
             present: true,
@@ -222,10 +223,46 @@ describe.skipIf(!ALIBABA_API_KEY)(
           'workflow_recovery',
           'request_context_profile',
           'memory_event_hook',
+          'tool_action_taxonomy',
+          'tool_action_approval',
+          'provider_method_fallback',
+          'operational_scorecard',
           'artifact_verification',
           'operational_metrics',
         ]);
         expect(surfaces?.every(surface => surface.present)).toBe(true);
+        expect(evidencePackage).toMatchObject({
+          contractVersion: 'cvf.verticalEvidencePackage.vi4.v1',
+          callLevel: {
+            totalCalls: 1,
+            successfulCalls: 1,
+            failedCalls: 0,
+            liveCalls: 1,
+            receiptBackedCalls: 1,
+            callPassRate: 1,
+          },
+          eventModel: {
+            totalEvents: 11,
+            eventsPerCall: 11,
+          },
+          toolAction: {
+            taxonomyVersion: 'cvf.toolActionTaxonomy.w3.v1',
+            decision: 'ALLOW',
+            runtimeExecutionAuthorized: false,
+          },
+          toolActionApproval: {
+            contractVersion: 'cvf.toolActionApprovalReadout.ta1.v1',
+            approvalState: 'not_required',
+            runtimeExecutionAuthorized: false,
+          },
+          providerMethod: {
+            contractVersion: 'cvf.providerMethodFallbackNormalization.w5.v1',
+            status: 'ready',
+            adapterExecutionAuthorized: true,
+            diagnosticClass: 'none',
+          },
+        });
+        expect(String((evidencePackage?.eventModel as Record<string, unknown> | undefined)?.denominatorNote ?? '')).toContain('event totals are not the call-level pass-rate denominator');
         const memorySurface = surfaces?.find(surface => surface.surfaceId === 'memory_event_hook');
         expect(memorySurface?.summary).toContain('capture=captured');
         expect(memoryReceipt).toMatchObject({

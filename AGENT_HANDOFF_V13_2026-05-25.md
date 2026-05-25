@@ -87,7 +87,7 @@ Previous long session memory snapshot was archived at:
 
 ## Current Mode
 
-`c7c_external_skill_candidate_record_validator_closed`
+`vi4_vertical_evidence_surface_expansion_closed`
 
 Freeze posture remains:
 
@@ -382,9 +382,11 @@ reinjection, external memory adapters, provider routing changes, receipt
 envelope changes, public-sync, hosted readiness, production readiness, or
 freeze release.
 
-## Active Work / Changes
+## Latest Work / Changes
 
-VI4 Vertical Evidence Surface Expansion is authorized:
+VI4 Vertical Evidence Surface Expansion is closed PASS bounded:
+
+`docs/reviews/CVF_VI4_VERTICAL_EVIDENCE_SURFACE_EXPANSION_COMPLETION_2026-05-25.md`
 
 `docs/baselines/CVF_GC018_VI4_VERTICAL_EVIDENCE_SURFACE_EXPANSION_2026-05-25.md`
 
@@ -394,16 +396,30 @@ Work order:
 
 Current HEAD before VI4 authorization commit: `0dfaa59c`.
 
-VI4 combines Claude B and Codex evidence-packaging direction: wire bounded W3,
-W4, W5, and TA1 readout surfaces into VI and expose a concise response package
-for API/operator readers. W4 is current-call packaging only, not a claim that
-the offline benchmark suite ran. D provider scale and C workflow scale remain
-deferred until after VI4 closure.
+Current HEAD before VI4 completion catalog-note amend commit: `8dd2dada`.
+
+VI4 adds `cvf.verticalEvidencePackage.vi4.v1` inside
+`verticalIntegrationReadout`, with bounded W3, W4, W5, and TA1 response-level
+surfaces for API/operator readers. W4 is current-call packaging only, not a
+claim that the offline benchmark suite ran.
+
+Verification: focused VI/route tests PASS 33/33; cvf-web check PASS; live
+Alibaba-compatible 2-turn proof PASS with receipts turn 1
+`rcpt-env-mpkkmldw-j6hzrr` and turn 2 `rcpt-env-mpkkmvtx-szulhn`. Live proof
+asserted `integratedSurfaceCount=11`, call-level pass-rate 1, event denominator
+11, W3/TA1 `runtimeExecutionAuthorized=false`, and W5 status `ready`.
+`/api/execute/route.ts` was not edited and remains 999 lines.
 
 Forbidden: route blocking from new surfaces, tool/MCP/database/browser
 execution, provider routing/adapter changes, receipt-envelope changes, prompt
 mutation, memory reinjection, public-sync, hosted readiness, production
 readiness, or freeze release.
+
+## Next Allowed Move
+
+Proceed to D provider scale only after fresh GC-018 and work order. D may use
+live provider/API keys and must classify live failures before rerun. C workflow
+scale remains after D unless a later authorized roadmap changes the order.
 
 ## WR1 Source Pointers
 

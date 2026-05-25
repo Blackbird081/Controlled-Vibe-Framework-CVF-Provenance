@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-25
 
-Current mode marker: `c7c_external_skill_candidate_record_validator_closed`
+Current mode marker: `vi4_vertical_evidence_surface_expansion_closed`
 
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Previous handoff archive:
 
 ## Current State
 
-Current mode: `c7c_external_skill_candidate_record_validator_closed`.
+Current mode: `vi4_vertical_evidence_surface_expansion_closed`.
 
 C7A closed PASS bounded at:
 
@@ -328,11 +328,13 @@ Recommended next work requires fresh GC-018. Prefer operator/API evidence
 packaging that exposes VI1-VI3 response diagnostics to non-coder/API consumers
 without changing runtime authority.
 
-## Active Authorized Tranche
+## Latest Closed Tranche
 
-VI4 Vertical Evidence Surface Expansion is authorized:
+VI4 Vertical Evidence Surface Expansion is closed PASS bounded:
 
-Mode marker: `vi4_vertical_evidence_surface_expansion_authorized`
+Mode marker: `vi4_vertical_evidence_surface_expansion_closed`
+
+`docs/reviews/CVF_VI4_VERTICAL_EVIDENCE_SURFACE_EXPANSION_COMPLETION_2026-05-25.md`
 
 `docs/baselines/CVF_GC018_VI4_VERTICAL_EVIDENCE_SURFACE_EXPANSION_2026-05-25.md`
 
@@ -340,16 +342,22 @@ Work order:
 
 `docs/work_orders/CVF_WO_VI4_VERTICAL_EVIDENCE_SURFACE_EXPANSION_2026-05-25.md`
 
-VI4 combines Claude B and Codex evidence-packaging direction: wire bounded
-W3, W4, W5, and TA1 readout surfaces into VI and expose a concise response
-package for API/operator readers. W4 is current-call packaging only, not a
-claim that the offline benchmark suite ran. D provider scale and C workflow
-scale remain deferred until after VI4 closure.
+VI4 adds `cvf.verticalEvidencePackage.vi4.v1` inside
+`verticalIntegrationReadout`, with bounded W3, W4, W5, and TA1 response-level
+surfaces for API/operator readers. W4 is current-call packaging only, not a
+claim that the offline benchmark suite ran. Live proof PASS: turn 1
+`rcpt-env-mpkkmldw-j6hzrr`, turn 2 `rcpt-env-mpkkmvtx-szulhn`. Focused tests
+PASS 33/33; cvf-web check PASS. `/api/execute/route.ts` was not edited and
+remains 999 lines.
 
 Forbidden: route blocking from the new surfaces, tool/MCP/database/browser
 execution, provider routing/adapter changes, receipt-envelope changes, prompt
 mutation, memory reinjection, public-sync, hosted readiness, production
 readiness, or freeze release.
+
+Next allowed move: D provider scale only after fresh GC-018 and work order,
+with live-run diagnostics required before reruns. C workflow scale remains
+after D unless a later authorized roadmap changes the order.
 
 ## Mandatory Standards
 

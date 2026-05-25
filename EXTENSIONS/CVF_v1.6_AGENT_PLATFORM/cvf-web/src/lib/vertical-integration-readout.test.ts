@@ -115,7 +115,7 @@ describe('vertical integration readout', () => {
             contractVersion: 'cvf.verticalWorkflowIntegration.vi1.v1',
             status: 'integrated',
             requiredSurfaceCount: 5,
-            integratedSurfaceCount: 7,
+            integratedSurfaceCount: 11,
             liveReceipt: {
                 present: true,
                 receiptId: evidenceReceipt.receiptId,
@@ -133,10 +133,46 @@ describe('vertical integration readout', () => {
             'workflow_recovery',
             'request_context_profile',
             'memory_event_hook',
+            'tool_action_taxonomy',
+            'tool_action_approval',
+            'provider_method_fallback',
+            'operational_scorecard',
             'artifact_verification',
             'operational_metrics',
         ]);
         expect(readout.surfaces.every(surface => surface.present)).toBe(true);
+        expect(readout.evidencePackage).toMatchObject({
+            contractVersion: 'cvf.verticalEvidencePackage.vi4.v1',
+            callLevel: {
+                totalCalls: 1,
+                successfulCalls: 1,
+                failedCalls: 0,
+                liveCalls: 1,
+                receiptBackedCalls: 1,
+                callPassRate: 1,
+            },
+            eventModel: {
+                totalEvents: 11,
+                eventsPerCall: 11,
+            },
+            toolAction: {
+                taxonomyVersion: 'cvf.toolActionTaxonomy.w3.v1',
+                decision: 'ALLOW',
+                runtimeExecutionAuthorized: false,
+            },
+            toolActionApproval: {
+                contractVersion: 'cvf.toolActionApprovalReadout.ta1.v1',
+                approvalState: 'not_required',
+                runtimeExecutionAuthorized: false,
+            },
+            providerMethod: {
+                contractVersion: 'cvf.providerMethodFallbackNormalization.w5.v1',
+                status: 'ready',
+                adapterExecutionAuthorized: true,
+                diagnosticClass: 'none',
+            },
+        });
+        expect(readout.evidencePackage.eventModel.denominatorNote).toContain('event totals are not the call-level pass-rate denominator');
         expect(readout.memoryEventHook.receipt).toMatchObject({
             contractVersion: 'cvf.memoryEventHooks.w2.v1',
             eventType: 'execution_result',
@@ -163,7 +199,7 @@ describe('vertical integration readout', () => {
         });
     });
 
-    it('stays partial and visible when pack and metric surfaces are missing', () => {
+    it('keeps missing legacy pack surfaces visible while VI4 readouts stay integrated', () => {
         const evidenceReceipt = buildReceipt();
         const readout = buildVerticalIntegrationReadout({
             evidenceReceipt,
@@ -175,8 +211,8 @@ describe('vertical integration readout', () => {
             },
         });
 
-        expect(readout.status).toBe('partial');
-        expect(readout.integratedSurfaceCount).toBe(2);
+        expect(readout.status).toBe('integrated');
+        expect(readout.integratedSurfaceCount).toBe(6);
         expect(readout.chain).toMatchObject({
             continuityProven: false,
             reason: 'continuity_metadata_incomplete',
@@ -188,6 +224,15 @@ describe('vertical integration readout', () => {
             'artifact_verification',
             'operational_metrics',
         ]);
+        expect(readout.evidencePackage.callLevel).toMatchObject({
+            totalCalls: 1,
+            successfulCalls: 1,
+            callPassRate: 1,
+        });
+        expect(readout.evidencePackage.eventModel).toMatchObject({
+            totalEvents: 11,
+            eventsPerCall: 11,
+        });
         expect(readout.memoryEventHook.receipt.canReinject).toBe(false);
         expect(readout.memoryEventHook.receipt.rawMemoryReleased).toBe(false);
     });
