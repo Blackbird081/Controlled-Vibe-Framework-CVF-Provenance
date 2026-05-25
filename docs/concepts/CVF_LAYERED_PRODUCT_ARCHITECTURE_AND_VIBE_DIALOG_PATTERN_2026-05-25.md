@@ -421,6 +421,31 @@ This document does not authorize building runtime support for the form. It
 records that the form template is the next architectural artifact worth
 creating.
 
+### Companion Pattern: Multi-Role Orchestrated Convergence
+
+The Vibe-to-Spec form governs non-coder-to-agent intent refinement. It is not
+the full protocol for agent-internal audit, rebuttal, role assignment,
+delegation, and convergence.
+
+For internal CVF work where an operator/CEO intent is decomposed by an
+orchestrator across multiple roles, agents, or bounded subagents, use the
+companion template:
+
+`docs/reference/CVF_MULTI_ROLE_ORCHESTRATED_CONVERGENCE_CAPTURE_FORM_2026-05-25.md`
+
+This companion form generalizes two-agent rebuttal into N-role convergence:
+
+```text
+Operator / CEO intent
+  -> Orchestrator assigns bounded role lanes
+  -> Workers, reviewers, auditors, and specialists produce independent outputs
+  -> Integrator records accepted, rejected, deferred, and unresolved findings
+  -> Operator receives the final delivery packet
+```
+
+This is a governed operating protocol, not a claim that CVF currently has a
+live autonomous subagent scheduler or runtime worker isolation.
+
 ---
 
 ## Part 7: Implications for Codex on Future Tranches
