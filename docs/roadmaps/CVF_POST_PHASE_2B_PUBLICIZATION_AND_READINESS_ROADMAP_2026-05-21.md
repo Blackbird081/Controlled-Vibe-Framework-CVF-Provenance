@@ -26,13 +26,13 @@ next proof as small as possible before widening any claim.
 - Active session state:
   `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - Phase 2.B static migration plan:
-  `docs/reference/CVF_PHASE_2B_MIGRATION_PLAN_2026-05-20.md`
+  `docs/reference/archive/CVF_PHASE_2B_MIGRATION_PLAN_2026-05-20.md`
 - Runtime coherence completion:
   `docs/reviews/CVF_PHASE_2B_RUNTIME_COHERENCE_COMPLETION_2026-05-21.md`
 - Live governance proof completion:
   `docs/reviews/CVF_PHASE_2B_LIVE_GOVERNANCE_PROOF_COMPLETION_2026-05-21.md`
 - Governance kernel owner map:
-  `docs/reference/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`
+  `docs/reference/archive/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`
 - Governance kernel freeze-release rule:
   `governance/toolkit/05_OPERATION/CVF_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE.md`
 - Public repository boundary:

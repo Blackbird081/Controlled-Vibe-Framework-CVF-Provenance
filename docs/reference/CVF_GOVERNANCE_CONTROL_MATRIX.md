@@ -121,7 +121,7 @@ contracts.
 - `GC-045` complements `GC-032`: `GC-032` protects source-truth and typed evidence, while `GC-045` protects structural completeness so governed Markdown is readable, reviewable, and professional by default.
 - `GC-046` complements `GC-027`, `GC-043`, and `GC-018`: multi-agent review governs doc chain structure, knowledge absorption priority governs posture sequence, continuation governs whether implementation may open, and `GC-046` prevents two agents from converging on a shared blind spot by requiring adversarial role assignment and evidence-traced claims before any convergence verdict authorizes implementation.
 - The authoritative HN2.b kernel owner-map routing artifact is
-  `docs/reference/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`. It classifies
+  `docs/reference/archive/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`. It classifies
   owner locations and aliases for the 12 governance-kernel surfaces. It is a
   routing/reference map only; it does not replace the per-control owners in
   this matrix and does not create runtime enforcement.
@@ -130,7 +130,7 @@ contracts.
   It governs release intake for owner-map surfaces, prohibits global lift, and
   requires per-surface release packets. It is policy text, not a runtime guard.
 - The Phase 2.B migration plan is
-  `docs/reference/CVF_PHASE_2B_MIGRATION_PLAN_2026-05-20.md`. It locks the
+  `docs/reference/archive/CVF_PHASE_2B_MIGRATION_PLAN_2026-05-20.md`. It locks the
   migration order, owner/reviewer assignment, done tiers, dependency graph, and
   citation rule for 46 primary targets. It is a static dispatch plan only; it
   does not implement adapters or prove runtime coherence.

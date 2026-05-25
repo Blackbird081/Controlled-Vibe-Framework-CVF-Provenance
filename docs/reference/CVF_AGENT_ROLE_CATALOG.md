@@ -37,7 +37,7 @@ Predecessor evidence:
 
 - `.private_reference/legacy/CVF 16.5/Claude Kit/CVF_AGENT_ROLE_CATALOG.md`
 - `docs/reviews/archive/CVF_LANE_G_RUNTIME_ACTOR_ENFORCEMENT_COMPLETION_2026-05-19.md`
-- `docs/baselines/CVF_GC018_G1_ROLE_CATALOG_ABSORPTION_2026-05-20.md`
+- `docs/baselines/archive/CVF_GC018_G1_ROLE_CATALOG_ABSORPTION_2026-05-20.md`
 
 ---
 
@@ -169,8 +169,8 @@ Enforcement remains outside this file:
 
 ## Related Artifacts
 
-- `docs/work_orders/CVF_WO_RESIDUAL_G1_ROLE_CATALOG_ABSORPTION_2026-05-20.md`
-- `docs/reviews/CVF_G1_ROLE_CATALOG_ABSORPTION_CLOSURE_REVIEW_2026-05-20.md`
+- `docs/work_orders/archive/CVF_WO_RESIDUAL_G1_ROLE_CATALOG_ABSORPTION_2026-05-20.md`
+- `docs/reviews/archive/CVF_G1_ROLE_CATALOG_ABSORPTION_CLOSURE_REVIEW_2026-05-20.md`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-role-resolver.ts`
 
 ---

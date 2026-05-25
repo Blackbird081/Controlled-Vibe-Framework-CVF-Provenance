@@ -36,7 +36,7 @@ Source artifacts:
 - `docs/roadmaps/CVF_REVIEW_CVF_POST_BC_REMAINING_PAIN_POINT_ROADMAP_2026-05-22.md`
 - `docs/baselines/CVF_GC018_A2_COHERENCE_EQUIVALENCE_AUDIT_2026-05-22.md`
 - `docs/work_orders/CVF_WO_A2_COHERENCE_EQUIVALENCE_AUDIT_2026-05-22.md`
-- `docs/reference/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`
+- `docs/reference/archive/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`
 - `governance/toolkit/05_OPERATION/CVF_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE.md`
 - `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md`
 - `docs/reference/CVF_SESSION_GOVERNANCE_BOOTSTRAP.md`
@@ -72,9 +72,9 @@ route. A2 does not release any frozen surface.
 
 | Problem A freeze point | Current owner surface | Equivalence result | Rationale |
 | --- | --- | --- | --- |
-| Authority hierarchy | `docs/reference/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/orchestrator.contract.ts`; `governance/toolkit/05_OPERATION/CVF_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE.md` | `equivalent_with_boundary` | Owner map names authority-model ownership and aliases; orchestrator contract defines delegation authority; freeze-release rule blocks silent owner replacement. Boundary: no global freeze release or new role taxonomy. |
-| Execution lifecycle | `docs/reference/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/runtime-workflow.contract.ts`; `governance/toolkit/05_OPERATION/CVF_EXECUTE_ROUTE_STEP_SEQUENCE_GUARD.md` | `equivalent_with_boundary` | Owner map names runtime workflow as lifecycle owner; runtime workflow contract defines INTAKE/DESIGN/BUILD/REVIEW/FREEZE states and receipt-linked transitions; route sequence guard protects the active execute route call order. Boundary: static and deterministic proof, not a new live runtime claim. |
-| Governance ownership | `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md`; `docs/reference/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json` | `equivalent` | Control matrix assigns primary enforcement owners by control ID; owner map assigns kernel-surface owners and alias classes; active state carries current work boundary and blocked work classes. |
+| Authority hierarchy | `docs/reference/archive/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/orchestrator.contract.ts`; `governance/toolkit/05_OPERATION/CVF_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE.md` | `equivalent_with_boundary` | Owner map names authority-model ownership and aliases; orchestrator contract defines delegation authority; freeze-release rule blocks silent owner replacement. Boundary: no global freeze release or new role taxonomy. |
+| Execution lifecycle | `docs/reference/archive/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/runtime-workflow.contract.ts`; `governance/toolkit/05_OPERATION/CVF_EXECUTE_ROUTE_STEP_SEQUENCE_GUARD.md` | `equivalent_with_boundary` | Owner map names runtime workflow as lifecycle owner; runtime workflow contract defines INTAKE/DESIGN/BUILD/REVIEW/FREEZE states and receipt-linked transitions; route sequence guard protects the active execute route call order. Boundary: static and deterministic proof, not a new live runtime claim. |
+| Governance ownership | `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md`; `docs/reference/archive/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json` | `equivalent` | Control matrix assigns primary enforcement owners by control ID; owner map assigns kernel-surface owners and alias classes; active state carries current work boundary and blocked work classes. |
 | Policy scope | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/policy-decision.contract.ts`; `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md`; `governance/toolkit/05_OPERATION/CVF_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE.md` | `equivalent_with_boundary` | Policy decision contract owns policy decision shape; control matrix maps policy/risk controls to enforcement owners; freeze-release rule blocks new policy/risk/guard engines without release intake. Boundary: A2 adds no new policy semantics. |
 | Runtime semantics | `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md`; `docs/reference/CVF_SESSION_GOVERNANCE_BOOTSTRAP.md`; `governance/compat/run_local_governance_hook_chain.py`; `scripts/run_cvf_release_gate_bundle.py` | `equivalent_with_boundary` | Runtime semantics are bounded by control ownership, session bootstrap routing, local hook enforcement, and mandatory live proof for release-quality governance claims. Boundary: A2 itself is docs-only and does not prove new live behavior. |
 
@@ -111,7 +111,7 @@ Source checks:
 git remote -v
 -> origin https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF-Provenance.git
 
-docs/reference/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md
+docs/reference/archive/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md
 -> authority model, execution lifecycle, policy decision surface, guard model,
    receipt envelope, memory tier model, provider execution semantics, and
    vocabulary aliases all have classified owner rows.

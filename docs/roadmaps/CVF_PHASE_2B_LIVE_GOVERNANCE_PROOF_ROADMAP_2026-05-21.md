@@ -23,7 +23,7 @@ coverage or internal runtime-coherence work.
 ## Authority Chain
 
 - Static Phase 2.B migration plan:
-  `docs/reference/CVF_PHASE_2B_MIGRATION_PLAN_2026-05-20.md`
+  `docs/reference/archive/CVF_PHASE_2B_MIGRATION_PLAN_2026-05-20.md`
 - Final table-coverage completion:
   `docs/reviews/CVF_PHASE_2B_MEMORY_TAIL_ADAPTERS_MIGRATION_COMPLETION_2026-05-21.md`
 - Runtime-coherence prerequisite roadmap:

@@ -40,7 +40,7 @@ Owner boundary: additive adapter/snapshot and export surfaces only.
 
 Primary sources:
 
-- `docs/reference/CVF_PHASE_2B_MIGRATION_PLAN_2026-05-20.md`
+- `docs/reference/archive/CVF_PHASE_2B_MIGRATION_PLAN_2026-05-20.md`
 - `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/agent.definition.boundary.contract.ts`
 - `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/design.contract.ts`
 - `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/orchestration.contract.ts`
@@ -70,7 +70,7 @@ this tranche.
 
 | Claim | Evidence | Result |
 | --- | --- | --- |
-| The requested rows are in Phase 2.B | `docs/reference/CVF_PHASE_2B_MIGRATION_PLAN_2026-05-20.md` rows I-01/I-02/I-03/I-04/I-05/I-06/I-07 and E-07 | in scope |
+| The requested rows are in Phase 2.B | `docs/reference/archive/CVF_PHASE_2B_MIGRATION_PLAN_2026-05-20.md` rows I-01/I-02/I-03/I-04/I-05/I-06/I-07 and E-07 | in scope |
 | I-01 anchors I-02/I-04 | Phase 2.B dependency graph | accepted prerequisite |
 | I-02 anchors I-03 and I-07 | Phase 2.B dependency graph plus operator-bounded chain | accepted prerequisite |
 | I-03 anchors I-06 | Phase 2.B dependency graph | accepted prerequisite |

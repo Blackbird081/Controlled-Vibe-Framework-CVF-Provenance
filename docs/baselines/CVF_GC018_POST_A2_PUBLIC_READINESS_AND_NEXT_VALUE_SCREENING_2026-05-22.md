@@ -42,7 +42,7 @@ Inputs:
 - `docs/reviews/CVF_A2_COHERENCE_EQUIVALENCE_AUDIT_COMPLETION_2026-05-22.md`
 - `docs/baselines/CVF_GC018_A2_COHERENCE_EQUIVALENCE_AUDIT_2026-05-22.md`
 - `docs/roadmaps/CVF_REVIEW_CVF_POST_BC_REMAINING_PAIN_POINT_ROADMAP_2026-05-22.md`
-- `docs/roadmaps/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md`
+- `docs/roadmaps/archive/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md`
 - public-sync commit `77d1d70b docs: record A2 public docs sync in changelog`
 - public-sync commit `a14c0f23 docs: refresh latest release gate evidence`
 - public-sync commit `30976e49 docs: prove public developer onboarding path`
@@ -242,6 +242,6 @@ governance behavior.
 
 - `docs/reviews/CVF_A2_COHERENCE_EQUIVALENCE_AUDIT_COMPLETION_2026-05-22.md`
 - `docs/baselines/CVF_GC018_A2_COHERENCE_EQUIVALENCE_AUDIT_2026-05-22.md`
-- `docs/roadmaps/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md`
+- `docs/roadmaps/archive/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md`
 - public-sync `docs/evidence/latest-release-gate.md`
 - public-sync `docs/evidence/public-developer-onboarding-proof-2026-05-22.md`

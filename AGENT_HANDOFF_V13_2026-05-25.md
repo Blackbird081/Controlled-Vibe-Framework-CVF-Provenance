@@ -60,6 +60,8 @@ Current HEAD before Claude 3-layer spec structure proposal to Codex commit: `be7
 
 Current HEAD before VI5-T3 Codex rebuttal packet commit: `f273a74a`.
 
+Current HEAD before Claude acceptance of Codex VI5-T3 solution commit: `0ab7a5ad`.
+
 Remote tracking branch:
 
 `origin/main`

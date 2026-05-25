@@ -5,7 +5,7 @@ Memory class: FULL_RECORD
 Status: RULE_BINDING
 
 Applies to: Future work that touches a governance-kernel surface classified in
-`docs/reference/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`.
+`docs/reference/archive/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`.
 
 Enforced by: Rebuttal intake, GC-018 baselines, work-order review, and future
 mechanical guard work if separately authorized.
@@ -40,11 +40,11 @@ changes.
 Source lineage:
 
 - HN2.b owner map:
-  `docs/reference/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`
+  `docs/reference/archive/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`
 - HN2.c GC-018:
-  `docs/baselines/CVF_GC018_HN2C_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE_2026-05-20.md`
+  `docs/baselines/archive/CVF_GC018_HN2C_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE_2026-05-20.md`
 - HN2.c rebuttal:
-  `docs/reviews/CVF_HN2C_FREEZE_RELEASE_RULE_CODEX_REBUTTAL_2026-05-20.md`
+  `docs/reviews/archive/CVF_HN2C_FREEZE_RELEASE_RULE_CODEX_REBUTTAL_2026-05-20.md`
 
 ---
 
@@ -109,7 +109,7 @@ The frozen surfaces are:
 
 Source of truth:
 
-- `docs/reference/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`
+- `docs/reference/archive/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`
 
 ---
 
@@ -191,7 +191,7 @@ ruleId: CVF_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE
 version: "2026-05-20"
 status: RULE_BINDING
 globalLiftAllowed: false
-ownerMap: docs/reference/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md
+ownerMap: docs/reference/archive/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md
 surfacePosture:
   authority_model: frozen
   role_model: frozen
@@ -219,9 +219,9 @@ mechanicalGuard: separate_follow_on_gc018_required
 ## Related Artifacts
 
 - `ECOSYSTEM/doctrine/CVF_DOCTRINE_RULES.md`
-- `docs/reference/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`
-- `docs/baselines/CVF_GC018_HN2C_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE_2026-05-20.md`
-- `docs/reviews/CVF_HN2C_FREEZE_RELEASE_RULE_CODEX_REBUTTAL_2026-05-20.md`
+- `docs/reference/archive/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`
+- `docs/baselines/archive/CVF_GC018_HN2C_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE_2026-05-20.md`
+- `docs/reviews/archive/CVF_HN2C_FREEZE_RELEASE_RULE_CODEX_REBUTTAL_2026-05-20.md`
 
 ---
 

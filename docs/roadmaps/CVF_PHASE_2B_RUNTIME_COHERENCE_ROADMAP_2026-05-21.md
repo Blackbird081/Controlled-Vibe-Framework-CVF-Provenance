@@ -23,11 +23,11 @@ have bounded adapter/receipt coverage recorded.
 ## Authority Chain
 
 - Static Phase 2.B migration plan:
-  `docs/reference/CVF_PHASE_2B_MIGRATION_PLAN_2026-05-20.md`
+  `docs/reference/archive/CVF_PHASE_2B_MIGRATION_PLAN_2026-05-20.md`
 - Final table-coverage completion:
   `docs/reviews/CVF_PHASE_2B_MEMORY_TAIL_ADAPTERS_MIGRATION_COMPLETION_2026-05-21.md`
 - HN2.b owner map:
-  `docs/reference/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`
+  `docs/reference/archive/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`
 - HN2.c freeze-release rule:
   `governance/toolkit/05_OPERATION/CVF_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE.md`
 

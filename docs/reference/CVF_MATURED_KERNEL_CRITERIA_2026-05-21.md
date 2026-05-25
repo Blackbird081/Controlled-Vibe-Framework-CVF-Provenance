@@ -51,7 +51,7 @@ Out of scope:
 2. Operator:
    explicit future approval for any release.
 3. HN2.b owner map:
-   `docs/reference/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`
+   `docs/reference/archive/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`
 4. HN2.c freeze-release rule:
    `governance/toolkit/05_OPERATION/CVF_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE.md`
 5. This criteria reference:
@@ -241,7 +241,7 @@ Future reviewers should verify:
 
 ## Related Artifacts
 
-- `docs/reference/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`
+- `docs/reference/archive/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`
 - `governance/toolkit/05_OPERATION/CVF_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE.md`
 - `docs/roadmaps/CVF_MATURED_KERNEL_CRITERIA_ROADMAP_2026-05-21.md`
 - `docs/baselines/CVF_GC018_MATURED_KERNEL_CRITERIA_2026-05-21.md`

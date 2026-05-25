@@ -32,7 +32,7 @@ completion evidence only.
 ## Target / Source Under Review
 
 - `docs/roadmaps/CVF_PHASE_2B_RUNTIME_COHERENCE_ROADMAP_2026-05-21.md`
-- `docs/reference/CVF_PHASE_2B_MIGRATION_PLAN_2026-05-20.md`
+- `docs/reference/archive/CVF_PHASE_2B_MIGRATION_PLAN_2026-05-20.md`
 - `docs/reviews/CVF_PHASE_2B_MEMORY_TAIL_ADAPTERS_MIGRATION_COMPLETION_2026-05-21.md`
 
 ---

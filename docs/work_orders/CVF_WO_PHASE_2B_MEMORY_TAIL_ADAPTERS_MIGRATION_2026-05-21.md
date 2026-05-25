@@ -22,7 +22,7 @@ Implement the bounded Phase 2.B memory-tail adapter tranche:
 ## Authority Chain
 
 - `docs/baselines/CVF_GC018_PHASE_2B_MEMORY_TAIL_ADAPTERS_MIGRATION_2026-05-21.md`
-- `docs/reference/CVF_PHASE_2B_MIGRATION_PLAN_2026-05-20.md`
+- `docs/reference/archive/CVF_PHASE_2B_MIGRATION_PLAN_2026-05-20.md`
 - `docs/reviews/CVF_PHASE_2B_MEMORY_TAIL_ADAPTERS_MIGRATION_CODEX_REBUTTAL_2026-05-21.md`
 - `docs/reviews/CVF_PHASE_2B_SAFETY_EXTERNAL_POLICY_RISK_FANOUT_MIGRATION_COMPLETION_2026-05-21.md`
 
@@ -81,8 +81,8 @@ Forbidden:
 
 ## Required First Reads
 
-- `docs/reference/CVF_PHASE_2B_MIGRATION_PLAN_2026-05-20.md`
-- `docs/reference/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`
+- `docs/reference/archive/CVF_PHASE_2B_MIGRATION_PLAN_2026-05-20.md`
+- `docs/reference/archive/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`
 - `governance/toolkit/05_OPERATION/CVF_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE.md`
 - `docs/reviews/CVF_PHASE_2B_SAFETY_EXTERNAL_POLICY_RISK_FANOUT_MIGRATION_COMPLETION_2026-05-21.md`
 

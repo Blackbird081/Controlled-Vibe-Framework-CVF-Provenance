@@ -32,8 +32,8 @@ child-data, photo, or vision proof is authorized.
 ## Target / Source Under Review
 
 - `docs/roadmaps/CVF_POST_PHASE_2B_PUBLICIZATION_AND_READINESS_ROADMAP_2026-05-21.md`
-- `docs/reviews/CVF_CDH_M_MAIKA_TEXT_SUMMARY_DEPLOYED_VALUE_PROOF_2026-05-20.md`
-- `docs/reviews/CVF_CDH_M_MAIKA_TEXT_SUMMARY_PRIVACY_CONTROLS_COMPLETION_2026-05-20.md`
+- `docs/reviews/archive/CVF_CDH_M_MAIKA_TEXT_SUMMARY_DEPLOYED_VALUE_PROOF_2026-05-20.md`
+- `docs/reviews/archive/CVF_CDH_M_MAIKA_TEXT_SUMMARY_PRIVACY_CONTROLS_COMPLETION_2026-05-20.md`
 
 ---
 

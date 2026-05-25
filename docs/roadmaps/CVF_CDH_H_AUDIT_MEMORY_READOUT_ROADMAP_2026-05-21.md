@@ -23,9 +23,9 @@ degraded-capture reason is visible in receipt output.
 Authorized by:
 
 - CDH-H delta rebuttal:
-  `docs/reviews/CVF_CDH_H_DELTA_CODEX_REBUTTAL_2026-05-20.md`
+  `docs/reviews/archive/CVF_CDH_H_DELTA_CODEX_REBUTTAL_2026-05-20.md`
 - CDH delta meta-roadmap:
-  `docs/roadmaps/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md`
+  `docs/roadmaps/archive/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md`
 - H2 prior closure:
   `docs/reviews/archive/CVF_H2_AUDIT_MEMORY_POLICY_REFINEMENT_COMPLETION_2026-05-19.md`
 - Phase 2.B memory tail adapters:

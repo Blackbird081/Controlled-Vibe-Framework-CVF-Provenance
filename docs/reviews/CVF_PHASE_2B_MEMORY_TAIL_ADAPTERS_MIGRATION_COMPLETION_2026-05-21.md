@@ -152,7 +152,7 @@ Closed:
 Table coverage note:
 
 - With this tranche, all 46 primary rows in
-  `docs/reference/CVF_PHASE_2B_MIGRATION_PLAN_2026-05-20.md` have bounded
+  `docs/reference/archive/CVF_PHASE_2B_MIGRATION_PLAN_2026-05-20.md` have bounded
   adapter coverage recorded in completion packets.
 
 Not closed:

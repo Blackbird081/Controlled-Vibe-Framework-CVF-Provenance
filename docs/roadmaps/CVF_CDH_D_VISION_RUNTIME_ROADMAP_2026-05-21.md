@@ -24,9 +24,9 @@ requests on non-vision provider lanes.
 Authorized by:
 
 - CDH-D delta rebuttal:
-  `docs/reviews/CVF_CDH_D_DELTA_CODEX_REBUTTAL_2026-05-20.md`
+  `docs/reviews/archive/CVF_CDH_D_DELTA_CODEX_REBUTTAL_2026-05-20.md`
 - CDH delta meta-roadmap:
-  `docs/roadmaps/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md`
+  `docs/roadmaps/archive/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md`
 - D2 vision contract closure:
   `docs/reviews/archive/CVF_D2_VISION_CONTRACT_COMPLETION_2026-05-19.md`
 - W1 reasoning contract closure:

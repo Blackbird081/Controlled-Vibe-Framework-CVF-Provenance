@@ -45,8 +45,8 @@ Primary source:
 
 Comparison sources:
 
-- `docs/work_orders/CVF_WO_HN2B_GOVERNANCE_KERNEL_OWNER_MAP_IMPLEMENTATION_2026-05-20.md`
-- `docs/work_orders/CVF_WO_HN2C_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE_IMPLEMENTATION_2026-05-20.md`
+- `docs/work_orders/archive/CVF_WO_HN2B_GOVERNANCE_KERNEL_OWNER_MAP_IMPLEMENTATION_2026-05-20.md`
+- `docs/work_orders/archive/CVF_WO_HN2C_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE_IMPLEMENTATION_2026-05-20.md`
 - `docs/reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md`
 - `governance/compat/check_markdown_structural_completeness.py`
 - `docs/INDEX.md`
@@ -75,8 +75,8 @@ Codex reviewed Claude's four notes against current repository evidence:
 | --- | --- | --- |
 | Current quality-hardening work order is structurally valid | `python governance/compat/check_markdown_structural_completeness.py --base HEAD --head HEAD --enforce` | PASS for `docs/work_orders/CVF_WO_MULTI_ROLE_QUALITY_HARDENING_2026-05-21.md` |
 | Current quality-hardening work order follows docs governance path rules | `python governance/compat/check_docs_governance_compat.py --base HEAD --head HEAD --enforce` | PASS |
-| HN2.b work order has the allegedly missing sections | direct review of `docs/work_orders/CVF_WO_HN2B_GOVERNANCE_KERNEL_OWNER_MAP_IMPLEMENTATION_2026-05-20.md` | Claude premise rejected |
-| HN2.c work order has the allegedly missing sections | direct review of `docs/work_orders/CVF_WO_HN2C_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE_IMPLEMENTATION_2026-05-20.md` | Claude premise rejected |
+| HN2.b work order has the allegedly missing sections | direct review of `docs/work_orders/archive/CVF_WO_HN2B_GOVERNANCE_KERNEL_OWNER_MAP_IMPLEMENTATION_2026-05-20.md` | Claude premise rejected |
+| HN2.c work order has the allegedly missing sections | direct review of `docs/work_orders/archive/CVF_WO_HN2C_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE_IMPLEMENTATION_2026-05-20.md` | Claude premise rejected |
 | Retrospective scan exposes a real control-matrix false positive | `python governance/compat/check_markdown_structural_completeness.py --base 6a45310e --head HEAD --all-changed --json` | violation only on `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md` classified as `baseline` |
 | `docs/assessments/` is recognized by current governance | `docs/INDEX.md`; `check_docs_governance_compat.py`; `check_memory_governance_compat.py`; `check_markdown_structural_completeness.py` | Claude minor finding rejected as stale CLAUDE.md context |
 | Public-sync push had operator authority | operator clarification 2026-05-21: "Tôi quên nói claude là cho phép bạn đẩy lên git" | Claude caution narrowed to future-checkpoint preference |

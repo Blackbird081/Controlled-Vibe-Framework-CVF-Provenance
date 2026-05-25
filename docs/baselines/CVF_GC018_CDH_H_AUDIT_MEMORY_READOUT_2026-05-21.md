@@ -12,7 +12,7 @@ Date: 2026-05-21
 
 ## Source / Predecessor Evidence
 
-- `docs/reviews/CVF_CDH_H_DELTA_CODEX_REBUTTAL_2026-05-20.md`
+- `docs/reviews/archive/CVF_CDH_H_DELTA_CODEX_REBUTTAL_2026-05-20.md`
 - `docs/roadmaps/CVF_CDH_H_AUDIT_MEMORY_READOUT_ROADMAP_2026-05-21.md`
 - `docs/work_orders/CVF_WO_CDH_H_AUDIT_MEMORY_READOUT_2026-05-21.md`
 - `docs/reviews/archive/CVF_H2_AUDIT_MEMORY_POLICY_REFINEMENT_COMPLETION_2026-05-19.md`

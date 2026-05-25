@@ -51,7 +51,7 @@ Predecessors:
 - `docs/reviews/CVF_A2_COHERENCE_EQUIVALENCE_AUDIT_COMPLETION_2026-05-22.md`
 - `docs/reviews/CVF_POST_PUBLICIZATION_PROVIDER_STABILITY_HARDENING_COMPLETION_2026-05-21.md`
 - `docs/roadmaps/CVF_HOSTED_PRODUCT_READINESS_PROOF_ROADMAP_2026-05-21.md`
-- `docs/roadmaps/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md`
+- `docs/roadmaps/archive/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md`
 
 Current closed baseline:
 
@@ -238,7 +238,7 @@ Claim: HN1 is a small linkage hygiene question, not a dead-reference emergency.
 
 Evidence:
 
-- `docs/roadmaps/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md`
+- `docs/roadmaps/archive/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md`
 
 Verdict: EXISTS.
 

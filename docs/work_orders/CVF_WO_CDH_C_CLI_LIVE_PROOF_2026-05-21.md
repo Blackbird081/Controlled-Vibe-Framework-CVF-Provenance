@@ -23,7 +23,7 @@ operator diagnostic error path.
 ## Authority Chain
 
 - CDH-C delta rebuttal:
-  `docs/reviews/CVF_CDH_C_DELTA_CODEX_REBUTTAL_2026-05-20.md`
+  `docs/reviews/archive/CVF_CDH_C_DELTA_CODEX_REBUTTAL_2026-05-20.md`
 - CDH-C roadmap:
   `docs/roadmaps/CVF_CDH_C_CLI_LIVE_PROOF_ROADMAP_2026-05-21.md`
 - C2 prior closure:
@@ -68,7 +68,7 @@ Out of scope:
 
 ## Required First Reads
 
-- `docs/reviews/CVF_CDH_C_DELTA_CODEX_REBUTTAL_2026-05-20.md`
+- `docs/reviews/archive/CVF_CDH_C_DELTA_CODEX_REBUTTAL_2026-05-20.md`
 - `docs/reviews/archive/CVF_C2_CLI_EXECUTE_HARDENING_COMPLETION_2026-05-19.md`
 - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/command.registry.ts`
 - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/execute.client.ts`

@@ -21,11 +21,11 @@
     {
       "id": "post-pain-point-hardening-roadmap",
       "artifactType": "roadmap",
-      "path": "docs/roadmaps/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md",
+      "path": "docs/roadmaps/archive/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md",
       "status": "REBUTTAL_FILED_NON_BLOCKING_WITH_SCOPE_REFINEMENT",
       "requestedReviewer": "Claude",
-      "expectedResponsePath": "docs/reviews/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_CLAUDE_REBUTTAL_2026-05-20.md",
-      "responsePath": "docs/reviews/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_CLAUDE_REBUTTAL_2026-05-20.md",
+      "expectedResponsePath": "docs/reviews/archive/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_CLAUDE_REBUTTAL_2026-05-20.md",
+      "responsePath": "docs/reviews/archive/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_CLAUDE_REBUTTAL_2026-05-20.md",
       "priority": 1,
       "source": "AGENT_HANDOFF_V10_2026-05-19.md",
       "notes": "Claude rebuttal filed 2026-05-20. Overall NON_BLOCKING_WITH_SCOPE_REFINEMENT. HN1 verified inventory (60/58/2/0); collapse from full roadmap to single Fast-Lane audit under GC-024. HN2 must split into HN2.a inventory (Fast-Lane), HN2.b owner map (GC-018), HN2.c freeze-release rule (GC-018). HN3 must stay per-slice gated; each of C/D/H/M carries own rebuttal+GC-018+work order; existing CDH BLOCKING_FINDINGS still load-bearing. Operator picks one of HN1, HN2.a, or one HN3 slice next."
@@ -33,11 +33,11 @@
     {
       "id": "post-residual-closure-next-roadmap",
       "artifactType": "roadmap",
-      "path": "docs/roadmaps/CVF_POST_RESIDUAL_CLOSURE_NEXT_ROADMAP_2026-05-20.md",
+      "path": "docs/roadmaps/archive/CVF_POST_RESIDUAL_CLOSURE_NEXT_ROADMAP_2026-05-20.md",
       "status": "REBUTTAL_FILED_NON_BLOCKING_WITH_GATE_UPDATE",
       "requestedReviewer": "Codex",
-      "expectedResponsePath": "docs/reviews/CVF_POST_RESIDUAL_CLOSURE_NEXT_ROADMAP_CODEX_REBUTTAL_2026-05-20.md",
-      "responsePath": "docs/reviews/CVF_POST_RESIDUAL_CLOSURE_NEXT_ROADMAP_CODEX_REBUTTAL_2026-05-20.md",
+      "expectedResponsePath": "docs/reviews/archive/CVF_POST_RESIDUAL_CLOSURE_NEXT_ROADMAP_CODEX_REBUTTAL_2026-05-20.md",
+      "responsePath": "docs/reviews/archive/CVF_POST_RESIDUAL_CLOSURE_NEXT_ROADMAP_CODEX_REBUTTAL_2026-05-20.md",
       "priority": 2,
       "source": "AGENT_HANDOFF_V10_2026-05-19.md",
       "notes": "Codex rebuttal filed 2026-05-20. Overall NON_BLOCKING_WITH_GATE_UPDATE: N1 accepted as public-safe catalog maintenance under GC-024/Fast-Lane only; N2 accepted as rebuttal-only with queue priority correction (workflow V2 is priority 2, not priority 1); N3 accepted as roadmap-only with downstream rebuttal + GC-018 + work order required before implementation."
@@ -79,7 +79,7 @@
     {
       "id": "cdh-m-delta",
       "artifactType": "roadmap_slice",
-      "path": "docs/roadmaps/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md",
+      "path": "docs/roadmaps/archive/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md",
       "anchor": "#per-slice-section-m",
       "status": "CLOSED_DEPLOYED_VALUE_PROOF_WITH_TEMP_CVF_TUNNEL",
       "requestedReviewer": "Codex",
@@ -92,7 +92,7 @@
     {
       "id": "cdh-h-delta",
       "artifactType": "roadmap_slice",
-      "path": "docs/roadmaps/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md",
+      "path": "docs/roadmaps/archive/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md",
       "anchor": "#per-slice-section-h",
       "status": "CLOSED_AUDIT_MEMORY_READOUT_HARDENED",
       "requestedReviewer": "Codex",
@@ -105,7 +105,7 @@
     {
       "id": "cdh-c-delta",
       "artifactType": "roadmap_slice",
-      "path": "docs/roadmaps/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md",
+      "path": "docs/roadmaps/archive/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md",
       "anchor": "#per-slice-section-c",
       "status": "CLOSED_CLI_LIVE_PROOF",
       "requestedReviewer": "Codex",
@@ -118,7 +118,7 @@
     {
       "id": "cdh-d-delta",
       "artifactType": "roadmap_slice",
-      "path": "docs/roadmaps/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md",
+      "path": "docs/roadmaps/archive/CVF_CDH_DELTA_META_ROADMAP_2026-05-20.md",
       "anchor": "#per-slice-section-d",
       "status": "CLOSED_VISION_ROUTE_WIRING_PROOF",
       "requestedReviewer": "Codex",
@@ -131,7 +131,7 @@
     {
       "id": "hn2b-owner-map-roadmap",
       "artifactType": "roadmap",
-      "path": "docs/roadmaps/CVF_HN2B_GOVERNANCE_KERNEL_OWNER_MAP_ROADMAP_2026-05-20.md",
+      "path": "docs/roadmaps/archive/CVF_HN2B_GOVERNANCE_KERNEL_OWNER_MAP_ROADMAP_2026-05-20.md",
       "status": "CLOSED_OWNER_MAP_LOCKED",
       "requestedReviewer": "Codex",
       "expectedResponsePath": "docs/reviews/CVF_HN2B_GOVERNANCE_KERNEL_OWNER_MAP_CODEX_REBUTTAL_2026-05-20.md",
@@ -143,7 +143,7 @@
     {
       "id": "hn2c-freeze-release-rule-roadmap",
       "artifactType": "roadmap",
-      "path": "docs/roadmaps/CVF_HN2C_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE_ROADMAP_2026-05-20.md",
+      "path": "docs/roadmaps/archive/CVF_HN2C_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE_ROADMAP_2026-05-20.md",
       "status": "CLOSED_FREEZE_RELEASE_RULE_BINDING",
       "requestedReviewer": "Codex",
       "expectedResponsePath": "docs/reviews/CVF_HN2C_FREEZE_RELEASE_RULE_CODEX_REBUTTAL_2026-05-20.md",
@@ -155,7 +155,7 @@
     {
       "id": "phase-2b-migration-plan-roadmap",
       "artifactType": "roadmap",
-      "path": "docs/roadmaps/CVF_PHASE_2B_MIGRATION_PLAN_ROADMAP_2026-05-20.md",
+      "path": "docs/roadmaps/archive/CVF_PHASE_2B_MIGRATION_PLAN_ROADMAP_2026-05-20.md",
       "status": "CLOSED_STATIC_MIGRATION_PLAN_LOCKED",
       "requestedReviewer": "Codex",
       "expectedResponsePath": "docs/reviews/CVF_PHASE_2B_MIGRATION_PLAN_CODEX_REBUTTAL_2026-05-20.md",
@@ -167,7 +167,7 @@
     {
       "id": "phase-2b-receipt-critical-path-migration",
       "artifactType": "roadmap",
-      "path": "docs/roadmaps/CVF_PHASE_2B_RECEIPT_CRITICAL_PATH_MIGRATION_ROADMAP_2026-05-20.md",
+      "path": "docs/roadmaps/archive/CVF_PHASE_2B_RECEIPT_CRITICAL_PATH_MIGRATION_ROADMAP_2026-05-20.md",
       "status": "CLOSED_RECEIPT_CRITICAL_PATH_MIGRATED",
       "requestedReviewer": "Codex",
       "expectedResponsePath": "docs/reviews/CVF_PHASE_2B_RECEIPT_CRITICAL_PATH_MIGRATION_CODEX_REBUTTAL_2026-05-20.md",
@@ -179,7 +179,7 @@
     {
       "id": "phase-2b-execution-bridge-receipt-chain-migration",
       "artifactType": "roadmap",
-      "path": "docs/roadmaps/CVF_PHASE_2B_EXECUTION_BRIDGE_RECEIPT_CHAIN_MIGRATION_ROADMAP_2026-05-20.md",
+      "path": "docs/roadmaps/archive/CVF_PHASE_2B_EXECUTION_BRIDGE_RECEIPT_CHAIN_MIGRATION_ROADMAP_2026-05-20.md",
       "status": "CLOSED_EXECUTION_BRIDGE_RECEIPT_CHAIN_MIGRATION",
       "requestedReviewer": "Codex",
       "expectedResponsePath": "docs/reviews/CVF_PHASE_2B_EXECUTION_BRIDGE_RECEIPT_CHAIN_MIGRATION_CODEX_REBUTTAL_2026-05-20.md",
@@ -191,7 +191,7 @@
     {
       "id": "phase-2b-audit-trace-task-receipt-chains-migration",
       "artifactType": "roadmap",
-      "path": "docs/roadmaps/CVF_PHASE_2B_AUDIT_TRACE_TASK_RECEIPT_CHAINS_MIGRATION_ROADMAP_2026-05-20.md",
+      "path": "docs/roadmaps/archive/CVF_PHASE_2B_AUDIT_TRACE_TASK_RECEIPT_CHAINS_MIGRATION_ROADMAP_2026-05-20.md",
       "status": "CLOSED_AUDIT_TRACE_TASK_RECEIPT_CHAINS_MIGRATION",
       "requestedReviewer": "Codex",
       "expectedResponsePath": "docs/reviews/CVF_PHASE_2B_AUDIT_TRACE_TASK_RECEIPT_CHAINS_MIGRATION_CODEX_REBUTTAL_2026-05-20.md",
@@ -203,7 +203,7 @@
     {
       "id": "phase-2b-policy-risk-chain-adapters-migration",
       "artifactType": "roadmap",
-      "path": "docs/roadmaps/CVF_PHASE_2B_POLICY_RISK_CHAIN_ADAPTERS_MIGRATION_ROADMAP_2026-05-20.md",
+      "path": "docs/roadmaps/archive/CVF_PHASE_2B_POLICY_RISK_CHAIN_ADAPTERS_MIGRATION_ROADMAP_2026-05-20.md",
       "status": "CLOSED_POLICY_RISK_CHAIN_ADAPTERS_MIGRATION",
       "requestedReviewer": "Codex",
       "expectedResponsePath": "docs/reviews/CVF_PHASE_2B_POLICY_RISK_CHAIN_ADAPTERS_MIGRATION_CODEX_REBUTTAL_2026-05-20.md",

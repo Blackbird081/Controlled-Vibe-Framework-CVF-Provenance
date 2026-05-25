@@ -48,9 +48,9 @@ Owner boundary:
 - GC-018:
   `docs/baselines/CVF_GC018_P2_P3_HN1_NEXT_VALUE_SCREENING_2026-05-23.md`
 - HN1 prior closure:
-  `docs/reviews/CVF_HN1_TEMPLATE_LINKAGE_EXEMPTION_CLOSURE_REVIEW_2026-05-20.md`
+  `docs/reviews/archive/CVF_HN1_TEMPLATE_LINKAGE_EXEMPTION_CLOSURE_REVIEW_2026-05-20.md`
 - HN1 work order:
-  `docs/work_orders/CVF_WO_HN1_TEMPLATE_LINKAGE_EXEMPTION_FAST_LANE_2026-05-20.md`
+  `docs/work_orders/archive/CVF_WO_HN1_TEMPLATE_LINKAGE_EXEMPTION_FAST_LANE_2026-05-20.md`
 - P2 evidence:
   `docs/reviews/CVF_P2_PROVIDER_SOAK_EVIDENCE_2026-05-23.md`
 - P2 machine-readable evidence:
@@ -68,7 +68,7 @@ P2 source under review:
 HN1 source under review:
 
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/data/skill-template-map.json`
-- `docs/reviews/CVF_HN1_TEMPLATE_LINKAGE_EXEMPTION_CLOSURE_REVIEW_2026-05-20.md`
+- `docs/reviews/archive/CVF_HN1_TEMPLATE_LINKAGE_EXEMPTION_CLOSURE_REVIEW_2026-05-20.md`
 
 P3 source under review:
 

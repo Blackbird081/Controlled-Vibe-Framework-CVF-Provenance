@@ -62,7 +62,7 @@ The memory tier model surface has a one-surface freeze release recorded for:
 | --- | --- | --- |
 | Freeze-release packet | `docs/reviews/CVF_FREEZE_RELEASE_PACKET_M2_MEMORY_TIER_2026-05-24.md` | PASS |
 | Different-role reviewer rebuttal | `docs/reviews/CVF_GC019_M2_D06_MEMORY_TIER_FREEZE_RELEASE_REBUTTAL_2026-05-24.md` | PASS |
-| Owner map updated | `docs/reference/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md` memory tier classifier row | PASS |
+| Owner map updated | `docs/reference/archive/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md` memory tier classifier row | PASS |
 | One surface only | Git diff limited to M2 docs/owner-map plus roadmap/work-order audit corrections before M1 | PASS |
 | TypeScript check | `npm run check` in `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION` | PASS |
 

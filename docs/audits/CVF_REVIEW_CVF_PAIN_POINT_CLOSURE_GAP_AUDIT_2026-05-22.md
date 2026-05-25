@@ -33,7 +33,7 @@ Target under audit:
 - `.private_reference/legacy/CVF 17.05/Review CVF.md` — the 17.05 audit
   source, 664 lines, defining problems A–H and the four-phase strategic
   priority order.
-- `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
+- `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
   — the SUPERSEDED_CLOSED_BY_HARDENING_ROADMAP direction packet that
   marked all eight pain points CLOSED.
 - Six closure reviews on 2026-05-20:
@@ -69,7 +69,7 @@ Primary authority chain:
 - `.private_reference/legacy/CVF 17.05/Review CVF.md` (the requirement)
 - 6 × 2026-05-20 `CVF_{A,C,D,E,G,H}1_*_CLOSURE_REVIEW_2026-05-20.md`
   (the bounded closures)
-- `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
+- `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
   (the disposition record)
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json` (current posture)
 

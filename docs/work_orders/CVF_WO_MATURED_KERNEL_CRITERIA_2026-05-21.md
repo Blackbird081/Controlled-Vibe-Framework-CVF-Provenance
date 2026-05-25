@@ -26,7 +26,7 @@ infrastructure tranche.
 - GC-018:
   `docs/baselines/CVF_GC018_MATURED_KERNEL_CRITERIA_2026-05-21.md`
 - HN2.b owner map:
-  `docs/reference/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`
+  `docs/reference/archive/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`
 - HN2.c freeze-release rule:
   `governance/toolkit/05_OPERATION/CVF_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE.md`
 - Active handoff: `AGENT_HANDOFF_V10_2026-05-19.md`
@@ -113,7 +113,7 @@ Primary target:
 
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `docs/reference/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`
+- `docs/reference/archive/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`
 - `governance/toolkit/05_OPERATION/CVF_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE.md`
 - `docs/roadmaps/CVF_MATURED_KERNEL_CRITERIA_ROADMAP_2026-05-21.md`
 

@@ -29,11 +29,11 @@ It does not lift the freeze.
 
 - Active state: `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - HN2.b owner map:
-  `docs/reference/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`
+  `docs/reference/archive/CVF_GOVERNANCE_KERNEL_OWNER_MAP_2026-05-20.md`
 - HN2.c freeze-release rule:
   `governance/toolkit/05_OPERATION/CVF_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE.md`
 - HN2.c roadmap:
-  `docs/roadmaps/CVF_HN2C_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE_ROADMAP_2026-05-20.md`
+  `docs/roadmaps/archive/CVF_HN2C_GOVERNANCE_KERNEL_FREEZE_RELEASE_RULE_ROADMAP_2026-05-20.md`
 - Post-Phase 2.B publicization readiness completion:
   `docs/reviews/CVF_POST_PHASE_2B_PUBLICIZATION_READINESS_COMPLETION_2026-05-21.md`
 - Operator decision: 2026-05-21 approval to proceed with a matured-kernel

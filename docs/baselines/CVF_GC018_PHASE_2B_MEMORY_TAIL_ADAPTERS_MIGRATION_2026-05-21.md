@@ -18,10 +18,10 @@ Accepted for one grouped but bounded memory-tail implementation tranche.
 
 ## Source / Predecessor Evidence
 
-- `docs/reference/CVF_PHASE_2B_MIGRATION_PLAN_2026-05-20.md`
+- `docs/reference/archive/CVF_PHASE_2B_MIGRATION_PLAN_2026-05-20.md`
 - `docs/roadmaps/CVF_PHASE_2B_MEMORY_TAIL_ADAPTERS_MIGRATION_ROADMAP_2026-05-21.md`
 - `docs/reviews/CVF_PHASE_2B_MEMORY_TAIL_ADAPTERS_MIGRATION_CODEX_REBUTTAL_2026-05-21.md`
-- `docs/reviews/CVF_PHASE_2B_RECEIPT_CRITICAL_PATH_MIGRATION_COMPLETION_2026-05-20.md`
+- `docs/reviews/archive/CVF_PHASE_2B_RECEIPT_CRITICAL_PATH_MIGRATION_COMPLETION_2026-05-20.md`
 - `docs/reviews/CVF_PHASE_2B_SAFETY_EXTERNAL_POLICY_RISK_FANOUT_MIGRATION_COMPLETION_2026-05-21.md`
 
 ---
