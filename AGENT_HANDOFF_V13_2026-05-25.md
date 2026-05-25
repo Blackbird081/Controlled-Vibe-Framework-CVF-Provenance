@@ -147,6 +147,8 @@ PASS 1/1.
 
 Current HEAD before sample packet cleanup amend: `e1ba2d74`.
 
+Current HEAD after operator sample commit: `f77d4283`.
+
 This is intentionally not self-passable by Codex. A real operator/non-coder
 must inspect a Strategy workflow response and VI4 package, then record PASS,
 HOLD_FOR_VI5_CONSOLIDATION, or BLOCKED. If the 11-surface VI4 package is too
