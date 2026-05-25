@@ -560,7 +560,7 @@ describe('/api/execute', () => {
         const res = await POST(req as never);
         const data = await res.json();
         expect(res.status).toBe(200);
-        expect(data.success).toBe(true);
+        expect(data.success).toBe(true); expect(data.specFirstMediation).toMatchObject({ contractVersion: 'cvf.specFirstMediation.l1.v1', entryMode: 'template_first', workingLanguage: 'en', originalPromptPreserved: true, advisoryOutputIsSourceOnly: true, rawTechnicalEvidenceAvailable: true, implementationAuthorization: 'route_governance_required' });
         expect(executeAIMock).toHaveBeenCalledWith('claude', 'claude-key', expect.any(String), {
             model: undefined,
         });
