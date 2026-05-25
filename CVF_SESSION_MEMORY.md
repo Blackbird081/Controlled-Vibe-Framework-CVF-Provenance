@@ -216,6 +216,30 @@ tools/MCP/CLI/scripts/models/providers, fetch live external repositories, make
 public-sync/marketplace claims, or touch `/api/execute`, receipt envelopes,
 auth/RBAC, hosted readiness, production readiness, or freeze release.
 
+## Active Authorized Tranche
+
+VI1 W-Series Vertical Execute Chain is authorized:
+
+Mode marker: `vi1_w_series_vertical_execute_chain_authorized`
+
+`docs/baselines/CVF_GC018_VI1_W_SERIES_VERTICAL_EXECUTE_CHAIN_2026-05-25.md`
+
+Work order:
+
+`docs/work_orders/CVF_WO_VI1_W_SERIES_VERTICAL_EXECUTE_CHAIN_2026-05-25.md`
+
+VI1 follows Claude's recommended vertical integration path: wire existing
+W-series/adjacent surfaces into one `/api/execute` response-level
+`verticalIntegrationReadout` and prove a 2-turn live chain. Allowed work is
+limited to the readout helper, execute request typing, route response wiring,
+focused tests, one Alibaba-compatible live 2-turn proof, completion/session/
+handoff updates, and commit.
+
+Do not create a new receipt envelope schema, workflow engine, route-level
+transition blocking, memory reinjection, MCP/tool/database/browser automation,
+external skill import, provider adapter semantic change, public-sync claim,
+hosted readiness, production readiness, or freeze release.
+
 ## Mandatory Standards
 
 Live run diagnostics:

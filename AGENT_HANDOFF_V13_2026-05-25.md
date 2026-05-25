@@ -258,21 +258,35 @@ and boundaries while preserving `runtimeExecutionAuthorized=false`,
 Verification: focused C7C tests PASS 9/9; full `governance/contracts` tests
 PASS 123/123.
 
+## Active Work / Changes
+
+VI1 W-Series Vertical Execute Chain is authorized:
+
+`docs/baselines/CVF_GC018_VI1_W_SERIES_VERTICAL_EXECUTE_CHAIN_2026-05-25.md`
+
+Work order:
+
+`docs/work_orders/CVF_WO_VI1_W_SERIES_VERTICAL_EXECUTE_CHAIN_2026-05-25.md`
+
+Current HEAD before VI1 authorization commit: `0bca1387`.
+
+Claude's recommended path is vertical integration before more horizontal
+absorption. VI1 may add only a response-level `verticalIntegrationReadout` to
+existing `/api/execute` surfaces, an optional 2-turn chain descriptor, focused
+tests, one Alibaba-compatible live 2-turn proof, completion/session updates,
+and commit.
+
+Forbidden: new receipt envelope schema, broad workflow engine, route-level
+transition blocking, memory reinjection, MCP/tool/database/browser automation,
+external skill import, provider adapter semantic changes, public-sync claims,
+hosted readiness, production readiness, or freeze release.
+
 ## Next Allowed Move
 
-Recommended next work is C7D candidate-specific metadata screening only if the
-operator wants to screen a concrete local-catalog candidate such as
-`competitor-alternatives`, `data-context-extractor`, or `llm-evaluation`.
-Candidate-specific external skill import may start only when the operator names
-a concrete source/use case and authorizes the required owner surface with fresh
-GC-018/work order.
-
-Do not add real tool, command, MCP, database, browser, or provider execution;
-MCP bridge wiring; database adapter/driver/query/mutation/export/migration;
-external skill import, pack creation/modification, live external repo fetch,
-registry publication, marketplace/public-sync claims, `/api/execute` route
-changes, receipt envelopes, auth/RBAC, hosted readiness, production readiness,
-or freeze release.
+Implement VI1 only within the authorized files and verification plan. Stop and
+return to orchestrator if the work requires receipt schema changes, workflow
+enforcement, memory reinjection, provider adapter behavior, external skill
+import, public-sync, hosted readiness, production readiness, or freeze release.
 
 ## WR1 Source Pointers
 
