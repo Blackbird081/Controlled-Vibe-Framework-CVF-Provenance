@@ -345,11 +345,23 @@ After 5 simplifications, VI5 scope is:
 ### Required response fields
 
 **`languageState`** (5 sub-fields):
+
 - `userInputLanguage` (detected per request: vi/en/auto)
 - `userFacingResponseLanguage` (matches userInputLanguage)
 - `engineRoomLanguage` (always "en", invariant)
-- `specLanguage` (always "en", invariant)
+- `specContractLanguage` (always "en" — CVF intent declaration; not an
+  enforcement claim on existing Spec body content)
 - `uiLayerLanguage` (from i18n session, exposed not owned)
+
+Note (added per Multi-Role Convergence Correction 2026-05-25): the earlier
+draft of this Part listed `specLanguage` as an invariant claim. That was
+premature because VI5-T0 baseline audit had not yet verified whether
+L1 T1's `normalizedExecutionSpec` body is empirically English. The corrected
+structure separates intent (`specContractLanguage`), observed state
+(`specBoundary.observedSpecBodyLanguage`), and enforcement
+(`specBoundary.englishFreezeEnforced`). VI5-T1 reports state; VI5-T2 Spec
+English Freeze enforces it. See acceptance packet
+`docs/reviews/CVF_VI5_MULTI_ROLE_CONVERGENCE_CLAUDE_ACCEPTANCE_2026-05-25.md`.
 
 **`guidedStepState`** (7 sub-fields):
 - `currentStep` (numbered identifier)
@@ -360,9 +372,15 @@ After 5 simplifications, VI5 scope is:
 - `allowFreeformAlternative` (boolean)
 - `userMustChoose` (boolean, vs multi-select or skip)
 
-**`specBoundary`** (4 sub-fields):
+**`specBoundary`** (6 sub-fields per Multi-Role Convergence correction):
+
 - `frozen` (boolean)
-- `specBlockLanguage` (always "en")
+- `specBlockLanguage` (always "en" — intent declaration for new Spec
+  emission, not retroactive claim)
+- `observedSpecBodyLanguage` ("en" | "vi" | "mixed" | "unknown" —
+  empirical result from VI5-T0 baseline audit of L1 T1 output)
+- `englishFreezeEnforced` (false in VI5-T1; true only after VI5-T2 Spec
+  English Freeze ships)
 - `frozenAt` (ISO timestamp)
 - `editAfterFreezeWarning` (boolean)
 
@@ -530,10 +548,19 @@ This is not a substitute for handling those GAPs in their own tranches.
 
 1. CVF's canonical product architecture is the 4-layer model (Part 2).
 2. CVF's product identity is Guided Wizard, not Free-form Chat (Part 3).
-3. VI5 final scope is the 3-field design (Part 5).
+3. VI5 final scope is the 3-field design (Part 5), with Spec language
+   handled as three empirical fields (`specContractLanguage` /
+   `observedSpecBodyLanguage` / `englishFreezeEnforced`) rather than a
+   single premature invariant claim.
 4. The Vibe-to-Spec conversation pattern is the canonical dialog shape
    for non-coder + CVF agent interaction (Part 4).
 5. The dialog shape should be standardized as a form template (Part 6).
+6. The agent-internal companion pattern is **Multi-Role Orchestrated
+   Convergence**, not a "two-agent" pattern. Canonical template:
+   `docs/reference/CVF_MULTI_ROLE_ORCHESTRATED_CONVERGENCE_CAPTURE_FORM_2026-05-25.md`.
+   This supports two agents as a special case but generalizes to N roles
+   (orchestrator, planner, workers, reviewers, auditors, integrator,
+   specialist subagents) per CVF's existing role architecture.
 
 **Recommendations for next steps (in priority order):**
 
