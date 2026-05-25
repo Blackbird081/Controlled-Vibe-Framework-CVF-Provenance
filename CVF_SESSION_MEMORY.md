@@ -255,6 +255,34 @@ transition blocking, memory reinjection, MCP/tool/database/browser automation,
 external skill import, provider adapter semantic change, public-sync claim,
 hosted readiness, production readiness, or freeze release.
 
+## Active Authorized Tranche
+
+VI2 Route Request Context Profile Readout is authorized:
+
+Mode marker: `vi2_route_request_context_profile_readout_authorized`
+
+`docs/baselines/CVF_GC018_VI2_ROUTE_REQUEST_CONTEXT_PROFILE_READOUT_2026-05-25.md`
+
+Work order:
+
+`docs/work_orders/CVF_WO_VI2_ROUTE_REQUEST_CONTEXT_PROFILE_READOUT_2026-05-25.md`
+
+VI2 selects caveman context budgeting/relevance plus Workflow GoClaw context
+profile/guardrail concepts as the next vertical-adjacent source because CB1
+proved the value in CLI, while `/api/execute` still lacks request-context
+readiness/profile visibility inside `verticalIntegrationReadout`. Agentmemory
+event capture is deferred because VI1 already wires W2 memory hook and audit
+memory receipt into the route chain.
+
+Allowed work: response-level `requestContextReadout`,
+`request_context_profile` surface on `verticalIntegrationReadout`, focused
+tests, one live VI route proof, completion/session/handoff update, and commit.
+
+Forbidden: runtime context injection, prompt mutation, route blocking based on
+context profile, receipt-envelope change, LLM scoring, provider routing change,
+memory reinjection, MCP/tool/database/browser automation, external skill
+import, public-sync, hosted readiness, production readiness, or freeze release.
+
 ## Mandatory Standards
 
 Live run diagnostics:

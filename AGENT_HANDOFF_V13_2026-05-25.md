@@ -304,6 +304,29 @@ workflow enforcement, memory reinjection, provider adapter behavior, external
 skill import, public-sync, hosted readiness, production readiness, or freeze
 release.
 
+## Active Work / Changes
+
+VI2 Route Request Context Profile Readout is authorized:
+
+`docs/baselines/CVF_GC018_VI2_ROUTE_REQUEST_CONTEXT_PROFILE_READOUT_2026-05-25.md`
+
+Work order:
+
+`docs/work_orders/CVF_WO_VI2_ROUTE_REQUEST_CONTEXT_PROFILE_READOUT_2026-05-25.md`
+
+Current HEAD before VI2 authorization commit: `eada6f81`.
+
+Selected source: caveman context budgeting/relevance plus Workflow GoClaw
+context profile/guardrails, with CB1 as prior CLI proof. VI2 may add only
+response-level `requestContextReadout`, a `request_context_profile` surface in
+`verticalIntegrationReadout`, focused tests, one live VI route proof,
+completion/session updates, and commit.
+
+Forbidden: runtime context injection, prompt mutation, route blocking based on
+context profile, receipt-envelope change, LLM scoring, provider routing change,
+memory reinjection, MCP/tool/database/browser automation, external skill
+import, public-sync, hosted readiness, production readiness, or freeze release.
+
 ## WR1 Source Pointers
 
 Previous WR1 authorization packet:
