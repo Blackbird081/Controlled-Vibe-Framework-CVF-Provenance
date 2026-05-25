@@ -11,7 +11,8 @@
       "status": "certified",
       "certifiedAt": "2026-05-22",
       "tranche": "T1",
-      "outcomeKey": "strategy_analysis"
+      "outcomeKey": "strategy_analysis",
+      "guided_mode_available": true
     },
     {
       "id": "product_brief",
@@ -22,7 +23,8 @@
       "status": "certified",
       "certifiedAt": "2026-05-22",
       "tranche": "T2",
-      "outcomeKey": "product_brief"
+      "outcomeKey": "product_brief",
+      "guided_mode_available": false
     },
     {
       "id": "sop_generator",
@@ -33,7 +35,8 @@
       "status": "certified",
       "certifiedAt": "2026-05-22",
       "tranche": "T2",
-      "outcomeKey": "sop_generator"
+      "outcomeKey": "sop_generator",
+      "guided_mode_available": false
     },
     {
       "id": "proposal_writer",
@@ -44,7 +47,8 @@
       "status": "certified",
       "certifiedAt": "2026-05-22",
       "tranche": "T2",
-      "outcomeKey": "proposal_writer"
+      "outcomeKey": "proposal_writer",
+      "guided_mode_available": false
     },
     {
       "id": "meeting_summarizer",
@@ -55,7 +59,8 @@
       "status": "certified",
       "certifiedAt": "2026-05-22",
       "tranche": "T2",
-      "outcomeKey": "meeting_summarizer"
+      "outcomeKey": "meeting_summarizer",
+      "guided_mode_available": false
     },
     {
       "id": "contract_review",
@@ -66,7 +71,8 @@
       "status": "certified",
       "certifiedAt": "2026-05-22",
       "tranche": "T2",
-      "outcomeKey": "contract_review"
+      "outcomeKey": "contract_review",
+      "guided_mode_available": false
     },
     {
       "id": "landing_page_builder",
@@ -77,7 +83,8 @@
       "status": "certified",
       "certifiedAt": "2026-05-22",
       "tranche": "T2",
-      "outcomeKey": "landing_page_builder"
+      "outcomeKey": "landing_page_builder",
+      "guided_mode_available": false
     },
     {
       "id": "competitor_review",
@@ -88,7 +95,8 @@
       "status": "certified",
       "certifiedAt": "2026-05-25",
       "tranche": "C7A",
-      "outcomeKey": "competitor_review"
+      "outcomeKey": "competitor_review",
+      "guided_mode_available": false
     },
     {
       "id": "data_analysis",
@@ -99,7 +107,8 @@
       "status": "certified",
       "certifiedAt": "2026-05-25",
       "tranche": "C7A",
-      "outcomeKey": "data_analysis"
+      "outcomeKey": "data_analysis",
+      "guided_mode_available": false
     },
     {
       "id": "app_requirements_spec",
@@ -110,7 +119,8 @@
       "status": "certified",
       "certifiedAt": "2026-05-25",
       "tranche": "C7A",
-      "outcomeKey": "app_requirements_spec"
+      "outcomeKey": "app_requirements_spec",
+      "guided_mode_available": false
     }
   ]
 }
