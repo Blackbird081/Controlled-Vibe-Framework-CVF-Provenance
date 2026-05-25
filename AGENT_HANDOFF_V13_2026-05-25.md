@@ -153,6 +153,8 @@ Current HEAD before operator result closure commit: `309f93f8`.
 
 Current HEAD before spec-first web flow commit: `8079fec9`.
 
+Current HEAD before user-paid provider advisory sync: `1e7510fa`.
+
 Result packet:
 
 `docs/reviews/CVF_REAL_NONCODER_USAGE_TEST_RESULT_2026-05-25.md`
