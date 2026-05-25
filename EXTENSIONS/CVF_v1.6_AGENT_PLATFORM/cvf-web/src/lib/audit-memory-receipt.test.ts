@@ -50,8 +50,42 @@ describe('audit-memory-receipt', () => {
                 actorId: 'user-1',
                 provenanceRequired: true,
             },
+            captureRecord: {
+                contractVersion: 'cvf.agentMemoryCaptureRecord.vi3.v1',
+                eventId: 'agentmemory-receipt-123',
+                actorId: 'user-1',
+                projectId: 'workflow.product.create_product_brief.v1',
+                eventType: 'execution_result',
+                payloadSummary: 'Governance audit receipt receipt-123 observed for workflow.product.create_product_brief.v1; decision=ALLOW.',
+                domainScope: 'route_audit_memory',
+                phaseScope: 'PHASE H',
+                riskLevel: 'R1',
+                policyContext: {
+                    policyDecision: 'ALLOW',
+                    actorRole: 'worker',
+                    allowedScopes: ['session'],
+                    canWrite: true,
+                    canReinject: false,
+                },
+                rawSecretStored: false,
+                rawToolOutputStored: false,
+                crossProjectDataStored: false,
+                privateReasoningCaptured: false,
+                promotion: {
+                    initialKind: 'episodic',
+                    automaticPromotion: false,
+                },
+            },
         });
         expect(auditMemoryReceipt.receipt.memoryIds).toHaveLength(1);
+        expect(auditMemoryReceipt.captureRecord.disallowedBehaviors).toEqual(expect.arrayContaining([
+            'direct_memory_search',
+            'direct_secret_storage',
+            'private_credential_capture',
+            'agent_private_reasoning_capture',
+            'automatic_semantic_or_procedural_promotion',
+        ]));
+        expect(auditMemoryReceipt.captureRecord.boundaries).toContain('capture_is_observation_not_permission');
     });
 
     it('session ownerRole is OPERATOR', () => {
@@ -97,6 +131,11 @@ describe('audit-memory-receipt', () => {
             memoryReceiptDecision: 'captured',
             memoryCaptureMode: 'captured',
             memoryCaptureReason: 'memory_captured_after_policy_and_privacy',
+            memoryCaptureRecordVersion: 'cvf.agentMemoryCaptureRecord.vi3.v1',
+            memoryCaptureEventType: 'execution_result',
+            memoryCaptureCanReinject: false,
+            memoryCaptureRawSecretStored: false,
+            memoryCaptureAutomaticPromotion: false,
             taskMemoryDecision: 'NOT_APPLICABLE',
             taskMemoryReason: 'task memory not wired to this context',
         });
@@ -243,9 +282,16 @@ describe('audit-memory-receipt', () => {
             memoryReceiptDecision: 'policy_skipped',
             memoryCaptureMode: 'degraded',
             memoryCaptureReason: 'memory_tier_does_not_require_receipt_write',
+            memoryCaptureRecordVersion: 'cvf.agentMemoryCaptureRecord.vi3.v1',
+            memoryCaptureEventType: 'execution_result',
+            memoryCaptureCanReinject: false,
+            memoryCaptureRawSecretStored: false,
+            memoryCaptureAutomaticPromotion: false,
             taskMemoryDecision: 'NOT_APPLICABLE',
             taskMemoryReason: 'task memory not wired to this context',
         });
+        expect(result.auditMemoryReceipt.captureRecord.captureDecision).toBe('policy_skipped');
+        expect(result.auditMemoryReceipt.captureRecord.policyContext.canWrite).toBe(false);
         expect(capture).not.toHaveBeenCalled();
         expect(JSON.stringify(result.auditEventPayload.payload)).not.toContain('reinjectionAllowed');
     });

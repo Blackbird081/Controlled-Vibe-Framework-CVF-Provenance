@@ -11,6 +11,46 @@ import {
 
 export type TaskMemoryReadoutDecision = 'CAPTURED' | 'SKIPPED' | 'EXPIRED' | 'NOT_APPLICABLE';
 
+export const AGENT_MEMORY_CAPTURE_RECORD_VERSION = 'cvf.agentMemoryCaptureRecord.vi3.v1';
+
+export interface AgentMemoryCaptureRecord {
+    contractVersion: typeof AGENT_MEMORY_CAPTURE_RECORD_VERSION;
+    eventId: string;
+    sessionId?: string;
+    actorId: string;
+    projectId: string;
+    eventType: 'execution_result';
+    timestamp: string;
+    payloadSummary: string;
+    domainScope: 'route_audit_memory';
+    phaseScope: string;
+    riskLevel: string;
+    policyContext: {
+        policyDecision: string;
+        actorRole: 'operator' | 'orchestrator' | 'worker' | 'reviewer' | 'system';
+        allowedScopes: readonly ['session'];
+        canWrite: boolean;
+        canReinject: false;
+    };
+    captureFlow: readonly string[];
+    privacyFilters: readonly string[];
+    disallowedBehaviors: readonly string[];
+    captureDecision: string;
+    memoryIds: readonly string[];
+    auditReceiptId: string;
+    rawSecretStored: false;
+    rawToolOutputStored: false;
+    crossProjectDataStored: false;
+    privateReasoningCaptured: false;
+    promotion: {
+        initialKind: 'episodic';
+        automaticPromotion: false;
+        requiredBeforePromotion: readonly string[];
+    };
+    nextSafeAction: string;
+    boundaries: readonly string[];
+}
+
 export interface RouteTaskMemoryEntry {
     taskId: string;
     expiresAt: number;
@@ -35,6 +75,8 @@ export interface BuildAuditMemoryReceiptInput {
     provider?: string;
     model?: string;
     decision?: string;
+    riskLevel?: string;
+    phase?: string;
     stepTraceIds?: string[];
     rolePermission?: {
         role?: string | null;
@@ -58,6 +100,7 @@ export interface AuditMemoryReceipt {
         receiptRequired: true;
     };
     receipt: ControlledMemoryReceipt;
+    captureRecord: AgentMemoryCaptureRecord;
 }
 
 const auditMemoryGateway = createControlledMemoryGatewayContract();
@@ -92,6 +135,12 @@ export function buildAuditMemoryReceipt(input: BuildAuditMemoryReceiptInput): Au
                 actorId: input.actorId, memoryIds: [], maskedTokenCount: 0, estimatedTokens: 0,
                 provenanceRequired: true,
             } as unknown as ControlledMemoryReceipt,
+            captureRecord: buildAgentMemoryCaptureRecord(input, {
+                receiptId: '',
+                decision: 'policy_skipped',
+                memoryIds: [],
+                createdAt: new Date().toISOString(),
+            }, ownerPolicy.privacyFilters, false),
         };
     }
 
@@ -125,6 +174,90 @@ export function buildAuditMemoryReceipt(input: BuildAuditMemoryReceiptInput): Au
         privacyFilters: ownerPolicy.privacyFilters,
         reinjectionPolicy: buildSessionReinjectionPolicy(reinjectionPolicy),
         receipt: capture.receipt,
+        captureRecord: buildAgentMemoryCaptureRecord(input, capture.receipt, ownerPolicy.privacyFilters, true),
+    };
+}
+
+function buildAgentMemoryCaptureRecord(
+    input: BuildAuditMemoryReceiptInput,
+    receipt: { receiptId: string; decision: string; memoryIds: readonly string[]; createdAt: string },
+    privacyFilters: readonly string[],
+    canWrite: boolean,
+): AgentMemoryCaptureRecord {
+    const actorRole = mapMemoryActorRole(input.actorRole);
+    const projectId = input.workflowId ?? input.templateId ?? input.governanceReceiptId;
+    const policyDecision = input.decision ?? 'UNKNOWN';
+
+    return {
+        contractVersion: AGENT_MEMORY_CAPTURE_RECORD_VERSION,
+        eventId: `agentmemory-${input.governanceReceiptId}`,
+        sessionId: input.sessionId,
+        actorId: input.actorId,
+        projectId,
+        eventType: 'execution_result',
+        timestamp: receipt.createdAt,
+        payloadSummary: `Governance audit receipt ${input.governanceReceiptId} observed for ${projectId}; decision=${policyDecision}.`,
+        domainScope: 'route_audit_memory',
+        phaseScope: input.phase ?? 'PHASE H',
+        riskLevel: input.riskLevel ?? 'R1',
+        policyContext: {
+            policyDecision,
+            actorRole,
+            allowedScopes: ['session'],
+            canWrite,
+            canReinject: false,
+        },
+        captureFlow: [
+            'raw_event',
+            'cvf_event_dispatcher',
+            'memory_capture_adapter',
+            'privacy_filter_policy',
+            'memory_lifecycle_policy',
+            'controlled_memory_gateway',
+            'audit_receipt',
+        ],
+        privacyFilters,
+        disallowedBehaviors: [
+            'direct_memory_search',
+            'direct_context_injection',
+            'direct_policy_change',
+            'direct_secret_storage',
+            'direct_terminal_history_capture',
+            'direct_clipboard_capture',
+            'browser_history_capture',
+            'private_credential_capture',
+            'agent_private_reasoning_capture',
+            'automatic_semantic_or_procedural_promotion',
+        ],
+        captureDecision: receipt.decision,
+        memoryIds: receipt.memoryIds,
+        auditReceiptId: receipt.receiptId,
+        rawSecretStored: false,
+        rawToolOutputStored: false,
+        crossProjectDataStored: false,
+        privateReasoningCaptured: false,
+        promotion: {
+            initialKind: 'episodic',
+            automaticPromotion: false,
+            requiredBeforePromotion: [
+                'reinforcement',
+                'audit_trust',
+                'policy_approval',
+                'contradiction_check',
+            ],
+        },
+        nextSafeAction: canWrite
+            ? 'Use this capture as audit evidence only; retrieval and reinjection require separate approval.'
+            : 'Treat memory capture as skipped by policy; do not retry as a hook-triggered direct write.',
+        boundaries: [
+            'capture_is_observation_not_permission',
+            'no_direct_memory_search',
+            'no_direct_context_injection',
+            'no_memory_reinjection',
+            'no_raw_secret_storage',
+            'no_private_reasoning_capture',
+            'no_automatic_memory_promotion',
+        ],
     };
 }
 
@@ -197,6 +330,8 @@ export function buildRouteAuditMemoryCapture(
         provider: ctx.provider,
         model: ctx.model,
         decision: ctx.decision,
+        riskLevel: ctx.riskLevel,
+        phase: ctx.phase,
         stepTraceIds: ctx.stepTraceIds,
         rolePermission: ctx.rolePermission,
     });
@@ -223,6 +358,11 @@ export function buildRouteAuditMemoryCapture(
                 memoryReceiptDecision: auditMemoryReceipt.receipt.decision,
                 memoryCaptureMode: auditMemoryReceipt.receipt.decision === 'captured' ? 'captured' : 'degraded',
                 memoryCaptureReason: auditMemoryReceipt.receipt.reason,
+                memoryCaptureRecordVersion: auditMemoryReceipt.captureRecord.contractVersion,
+                memoryCaptureEventType: auditMemoryReceipt.captureRecord.eventType,
+                memoryCaptureCanReinject: auditMemoryReceipt.captureRecord.policyContext.canReinject,
+                memoryCaptureRawSecretStored: auditMemoryReceipt.captureRecord.rawSecretStored,
+                memoryCaptureAutomaticPromotion: auditMemoryReceipt.captureRecord.promotion.automaticPromotion,
                 taskMemoryDecision: taskMemoryReadout.decision,
                 taskMemoryReason: taskMemoryReadout.reason,
             },

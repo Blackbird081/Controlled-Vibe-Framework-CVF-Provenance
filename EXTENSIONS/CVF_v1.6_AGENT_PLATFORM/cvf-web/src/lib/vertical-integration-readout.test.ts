@@ -143,6 +143,24 @@ describe('vertical integration readout', () => {
             rawMemoryReleased: false,
             canReinject: false,
         });
+        const memorySurface = readout.surfaces.find(surface => surface.surfaceId === 'memory_event_hook');
+        expect(memorySurface?.summary).toContain('capture=captured');
+        expect(memorySurface?.evidenceRefs).toEqual(expect.arrayContaining([
+            auditMemoryReceipt.captureRecord.eventId,
+            auditMemoryReceipt.captureRecord.auditReceiptId,
+        ]));
+        expect(auditMemoryReceipt.captureRecord).toMatchObject({
+            contractVersion: 'cvf.agentMemoryCaptureRecord.vi3.v1',
+            eventType: 'execution_result',
+            policyContext: {
+                canReinject: false,
+            },
+            rawSecretStored: false,
+            privateReasoningCaptured: false,
+            promotion: {
+                automaticPromotion: false,
+            },
+        });
     });
 
     it('stays partial and visible when pack and metric surfaces are missing', () => {

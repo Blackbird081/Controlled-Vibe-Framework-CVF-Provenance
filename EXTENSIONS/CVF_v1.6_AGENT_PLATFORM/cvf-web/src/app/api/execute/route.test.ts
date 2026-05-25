@@ -292,6 +292,8 @@ describe('/api/execute', () => {
                 provenanceRequired: true,
             },
         });
+        expect(data.auditMemoryReceipt.captureRecord).toMatchObject({ contractVersion: 'cvf.agentMemoryCaptureRecord.vi3.v1', eventType: 'execution_result', policyContext: { canReinject: false }, rawSecretStored: false, privateReasoningCaptured: false, promotion: { automaticPromotion: false } });
+        expect(data.auditMemoryReceipt.captureRecord.boundaries).toContain('capture_is_observation_not_permission');
         expect(data.auditMemoryReceipt.receipt.memoryIds).toHaveLength(1);
         const auditMemoryEvent = appendAuditEventMock.mock.calls
             .map((call: unknown[]) => call[0] as { eventType?: string; payload?: Record<string, unknown> })
@@ -302,6 +304,10 @@ describe('/api/execute', () => {
             memoryIds: data.auditMemoryReceipt.receipt.memoryIds,
             memoryTier: 'session',
             memoryContractVersion: 'phaseD.memoryContinuity.v1',
+            memoryCaptureRecordVersion: 'cvf.agentMemoryCaptureRecord.vi3.v1',
+            memoryCaptureCanReinject: false,
+            memoryCaptureRawSecretStored: false,
+            memoryCaptureAutomaticPromotion: false,
             actor_role_gate_result: 'permitted',
             executionIdentity: data.executionIdentity,
         });

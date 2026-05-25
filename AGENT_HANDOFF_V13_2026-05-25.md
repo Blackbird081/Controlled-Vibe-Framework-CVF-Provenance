@@ -343,9 +343,13 @@ the existing route, such as bounded agentmemory capture expansion or an
 operator-facing VI readout display, only if it has a concrete owner surface and
 does not widen runtime authority.
 
-## Active Work / Changes
+## Latest Work / Changes
 
-VI3 Agentmemory Capture Record Readout is authorized:
+VI3 Agentmemory Capture Record Readout is closed PASS bounded:
+
+`docs/reviews/CVF_VI3_AGENTMEMORY_CAPTURE_RECORD_READOUT_COMPLETION_2026-05-25.md`
+
+Authorization:
 
 `docs/baselines/CVF_GC018_VI3_AGENTMEMORY_CAPTURE_RECORD_READOUT_2026-05-25.md`
 
@@ -356,16 +360,27 @@ Work order:
 Current HEAD before VI3 authorization commit: `701d1482`.
 
 Selected source: agentmemory hook/capture contract from
-`.private_reference/legacy/CVF 16.5/agentmemory`. VI3 may add only
-response-level `auditMemoryReceipt.captureRecord`, reference it from the VI
-memory surface, update focused tests and one live VI route proof, then close
-with session updates and commit.
+`.private_reference/legacy/CVF 16.5/agentmemory`. Delivered response-level
+`auditMemoryReceipt.captureRecord` and VI memory surface references. Focused
+tests PASS 42/42, cvf-web check PASS, live Alibaba-compatible 2-turn route
+proof PASS with receipts turn 1 `rcpt-env-mpkjrcho-bped1p` and turn 2
+`rcpt-env-mpkjrojq-o9wc3n`. `/api/execute/route.ts` was not modified and
+remains 999 lines.
 
 Forbidden: editing `/api/execute/route.ts`, memory reinjection, direct memory
 search/write beyond existing governed audit capture, automatic promotion,
 external memory adapters, provider routing changes, receipt-envelope changes,
 MCP/tool/database/browser automation, public-sync, hosted readiness, production
 readiness, or freeze release.
+
+## Next Allowed Move
+
+Fresh GC-018 required. Prefer operator/API evidence packaging that exposes
+VI1-VI3 response diagnostics to non-coder/API consumers without changing
+runtime authority. Stop if next work requires route step-order edits, memory
+reinjection, external memory adapters, provider routing changes, receipt
+envelope changes, public-sync, hosted readiness, production readiness, or
+freeze release.
 
 ## WR1 Source Pointers
 

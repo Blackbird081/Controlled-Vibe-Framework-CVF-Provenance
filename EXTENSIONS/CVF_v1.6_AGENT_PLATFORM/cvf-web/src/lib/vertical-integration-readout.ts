@@ -142,6 +142,7 @@ export function buildVerticalIntegrationReadout(
 ): VerticalIntegrationReadout {
     const receipt = input.evidenceReceipt;
     const memoryIds = input.auditMemoryReceipt?.receipt.memoryIds ?? [];
+    const captureRecord = input.auditMemoryReceipt?.captureRecord;
     const chain = buildChainReadout(receipt, input.chainRequest);
     const memoryEventHook = evaluateMemoryEventHook({
         eventId: `vi1-${receipt.receiptId}`,
@@ -199,8 +200,8 @@ export function buildVerticalIntegrationReadout(
             'memory_event_hook',
             MEMORY_EVENT_HOOKS_VERSION,
             memoryEventHook.allowed,
-            `${memoryEventHook.decision}; rawMemoryReleased=${memoryEventHook.receipt.rawMemoryReleased}; canReinject=${memoryEventHook.receipt.canReinject}`,
-            [...memoryIds],
+            `${memoryEventHook.decision}; capture=${captureRecord?.captureDecision ?? 'missing'}; rawMemoryReleased=${memoryEventHook.receipt.rawMemoryReleased}; canReinject=${memoryEventHook.receipt.canReinject}`,
+            [...memoryIds, captureRecord?.eventId, captureRecord?.auditReceiptId].filter(Boolean) as string[],
         ),
         buildSurface(
             'artifact_verification',

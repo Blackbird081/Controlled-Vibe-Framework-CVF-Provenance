@@ -181,9 +181,11 @@ describe.skipIf(!ALIBABA_API_KEY)(
         const secondBody = await secondResponse.json() as Record<string, unknown>;
         const secondReceipt = secondBody.governanceEvidenceReceipt as Record<string, unknown> | undefined;
         const secondReadout = secondBody.verticalIntegrationReadout as Record<string, unknown> | undefined;
+        const secondAuditMemoryReceipt = secondBody.auditMemoryReceipt as Record<string, unknown> | undefined;
+        const captureRecord = secondAuditMemoryReceipt?.captureRecord as Record<string, unknown> | undefined;
         const memoryEventHook = secondReadout?.memoryEventHook as Record<string, unknown> | undefined;
         const memoryReceipt = memoryEventHook?.receipt as Record<string, unknown> | undefined;
-        const surfaces = secondReadout?.surfaces as Array<{ surfaceId: string; present: boolean }> | undefined;
+        const surfaces = secondReadout?.surfaces as Array<{ surfaceId: string; present: boolean; summary?: string; evidenceRefs?: string[] }> | undefined;
 
         expect(secondResponse.status).toBe(200);
         expect(secondBody.success).toBe(true);
@@ -224,12 +226,30 @@ describe.skipIf(!ALIBABA_API_KEY)(
           'operational_metrics',
         ]);
         expect(surfaces?.every(surface => surface.present)).toBe(true);
+        const memorySurface = surfaces?.find(surface => surface.surfaceId === 'memory_event_hook');
+        expect(memorySurface?.summary).toContain('capture=captured');
         expect(memoryReceipt).toMatchObject({
           contractVersion: 'cvf.memoryEventHooks.w2.v1',
           eventType: 'execution_result',
           rawMemoryReleased: false,
           canReinject: false,
         });
+        expect(captureRecord).toMatchObject({
+          contractVersion: 'cvf.agentMemoryCaptureRecord.vi3.v1',
+          eventType: 'execution_result',
+          policyContext: {
+            canReinject: false,
+          },
+          rawSecretStored: false,
+          privateReasoningCaptured: false,
+          promotion: {
+            automaticPromotion: false,
+          },
+        });
+        expect(memorySurface?.evidenceRefs).toEqual(expect.arrayContaining([
+          captureRecord?.eventId,
+          captureRecord?.auditReceiptId,
+        ]));
       },
       120_000,
     );
