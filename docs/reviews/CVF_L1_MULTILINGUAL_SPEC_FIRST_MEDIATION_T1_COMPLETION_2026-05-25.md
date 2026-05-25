@@ -147,8 +147,9 @@ wire-in. It does not prove:
       foundation work and not yet a public proven capability claim.
 - [x] All new catalog paths Test-Path verified in public-sync clone: N/A,
       no public-sync catalog paths added.
-- [ ] GC-020 handoff Current HEAD updated to this tranche's commit SHA:
-      pending commit.
+- [x] GC-020 handoff Current HEAD updated to this tranche's commit SHA:
+      implementation commit `80357d9f`; handoff sync follows in a separate
+      state commit.
 - [x] Evidence Trace Block present for all significant claims: N/A for this
       direct implementation tranche; test evidence listed above.
 - [x] Legacy Spec Scan Block present OR explicitly N/A: N/A; no legacy-source

@@ -399,6 +399,50 @@ without changing runtime authority.
 
 ## Latest Closed Tranche
 
+CLOSED_PASS_BOUNDED: L1 Multilingual Spec-First Mediation T1.
+
+Mode marker: `l1_multilingual_spec_first_mediation_t1_closed`
+
+Completion:
+
+`docs/reviews/CVF_L1_MULTILINGUAL_SPEC_FIRST_MEDIATION_T1_COMPLETION_2026-05-25.md`
+
+Authorization:
+
+`docs/baselines/CVF_GC018_L1_MULTILINGUAL_SPEC_FIRST_MEDIATION_2026-05-25.md`
+
+Work order:
+
+`docs/work_orders/CVF_WO_L1_MULTILINGUAL_SPEC_FIRST_MEDIATION_2026-05-25.md`
+
+Implementation commit: `80357d9f`.
+
+Delivered `cvf.specFirstMediation.l1.v1` as an additive deterministic
+`/api/execute` response readout plus reusable compiler at
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/spec-first-mediation.ts`.
+It supports Template-First, Describe Your Goal, AI-Assisted Prompt Preparation,
+and User-Paid Provider Advisory Lane. The readout preserves original prompt,
+source/working/output language, template recommendations, related skill
+mapping, a normalized copy-ready CVF Execution Spec, localized evidence
+summary, and raw technical evidence availability. Advisory provider/model
+usage is recorded as source material only.
+
+Verification: `npm run test:run -- src/lib/spec-first-mediation.test.ts
+src/app/api/execute/route.test.ts` PASS 2 files / 36 tests; `npm run check`
+PASS.
+
+Boundary: Real Non-Coder Usage Test remains
+`CLOSED_HOLD_FOR_VI5_CONSOLIDATION` until a later operator/non-coder review
+inspects the new L1 readout. No provider adapter, receipt envelope, external
+skill import, certified pack publication, hosted readiness, public readiness,
+tool/MCP/browser/database/CLI/spend execution, or production readiness claim.
+
+Next allowed move: operator/non-coder review of the new L1 readout, or a fresh
+candidate-specific GC-018 for external skill normalization. Do not bulk import
+external skills directly.
+
+## Latest Closed Tranche
+
 VI4 Vertical Evidence Surface Expansion is closed PASS bounded:
 
 Mode marker: `vi4_vertical_evidence_surface_expansion_closed`

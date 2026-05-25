@@ -599,6 +599,46 @@ freeze release.
 
 ## Latest Work / Changes
 
+L1 Multilingual Spec-First Mediation T1 is closed PASS bounded:
+
+`docs/reviews/CVF_L1_MULTILINGUAL_SPEC_FIRST_MEDIATION_T1_COMPLETION_2026-05-25.md`
+
+Authorization:
+
+`docs/baselines/CVF_GC018_L1_MULTILINGUAL_SPEC_FIRST_MEDIATION_2026-05-25.md`
+
+Work order:
+
+`docs/work_orders/CVF_WO_L1_MULTILINGUAL_SPEC_FIRST_MEDIATION_2026-05-25.md`
+
+Implementation commit: `80357d9f`.
+
+Delivered additive `specFirstMediation` response readout and reusable
+`cvf.specFirstMediation.l1.v1` compiler for Template-First, Describe Your Goal,
+AI-Assisted Prompt Preparation, and User-Paid Provider Advisory Lane. The
+readout includes source/working/output language, original prompt preservation,
+standard CVF Execution Spec sections, template recommendations, related skill
+mapping, advisory provider/model source-only metadata, localized evidence
+summary, and raw technical evidence availability.
+
+Verification: focused spec-first/route tests PASS 36/36; cvf-web `npm run
+check` PASS. Commit hook passed after line-count compression kept
+`route.ts=1000` and `route.test.ts=1199`.
+
+Boundary: the prior Real Non-Coder Usage Test remains
+`CLOSED_HOLD_FOR_VI5_CONSOLIDATION`; T1 does not self-pass the human usability
+gate. No provider adapter changes, receipt-envelope changes, external skill
+import, certified pack publication, hosted readiness, public readiness,
+production readiness, or tool/MCP/browser/database/CLI/spend execution.
+
+## Next Allowed Move
+
+Run an operator/non-coder review against the new L1 readout, or open a fresh
+candidate-specific GC-018 for external skill normalization through the existing
+C7C screening process. Do not bulk import external skills directly.
+
+## Latest Work / Changes
+
 C Workflow Scale VI Proof is closed PASS bounded:
 
 `docs/reviews/CVF_C_WORKFLOW_SCALE_VI_PROOF_COMPLETION_2026-05-25.md`
