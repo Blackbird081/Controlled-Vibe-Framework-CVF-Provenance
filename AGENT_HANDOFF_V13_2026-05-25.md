@@ -87,7 +87,7 @@ Previous long session memory snapshot was archived at:
 
 ## Current Mode
 
-`c_workflow_scale_vi_proof_closed`
+`real_noncoder_usage_test_ready_for_operator`
 
 Freeze posture remains:
 
@@ -98,6 +98,52 @@ Freeze posture remains:
 Follow `CVF_SESSION/ACTIVE_SESSION_STATE.json` as the machine-readable source of
 truth. This handoff summarizes the latest active posture but does not supersede
 state, review packets, work orders, or governance guards.
+
+## Latest Work / Changes
+
+Public Catalog Sync for the VI wave is closed PASS bounded:
+
+`docs/reviews/CVF_PUBLIC_CATALOG_SYNC_VI_WAVE_COMPLETION_2026-05-25.md`
+
+Current HEAD before public catalog sync provenance record commit: `71a91ede`.
+
+Public-sync repository:
+
+`d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync`
+
+Public-sync commit pushed:
+
+`f6b3e6d3 docs(catalog): publish vertical integration coverage evidence`
+
+Public remote was verified before push as:
+
+`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+
+The public catalog now includes Vertical Integration Chain, Multi-Provider VI4
+Coverage, Multi-Workflow VI Coverage, and R1/R2/R3 public claim posture.
+Public evidence summary:
+
+`docs/evidence/vertical-integration-provider-workflow-coverage-2026-05-25.md`
+
+Public-sync verification: cited paths PASS, evidence manifest verify PASS
+260/260, static CI gate PASS 7/7.
+
+## Active Operator-Required Work
+
+Real Non-Coder Usage Test is ready for operator:
+
+`docs/work_orders/CVF_WO_REAL_NONCODER_USAGE_TEST_2026-05-25.md`
+
+This is intentionally not self-passable by Codex. A real operator/non-coder
+must inspect a Strategy workflow response and VI4 package, then record PASS,
+HOLD_FOR_VI5_CONSOLIDATION, or BLOCKED. If the 11-surface VI4 package is too
+confusing, the next implementation should be VI5 readout consolidation rather
+than hosted readiness.
+
+Do not open more W/C/VI/D implementation, hosted readiness, provider soak,
+workflow scale, route/provider/prompt/receipt changes, public-sync, production
+readiness, broad workflow claims, or freeze release until the human result
+exists.
 
 ## Latest Work / Changes
 
