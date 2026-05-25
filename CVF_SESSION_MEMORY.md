@@ -255,11 +255,15 @@ transition blocking, memory reinjection, MCP/tool/database/browser automation,
 external skill import, provider adapter semantic change, public-sync claim,
 hosted readiness, production readiness, or freeze release.
 
-## Active Authorized Tranche
+## Latest Closed Tranche
 
-VI2 Route Request Context Profile Readout is authorized:
+VI2 Route Request Context Profile Readout is closed PASS bounded:
 
-Mode marker: `vi2_route_request_context_profile_readout_authorized`
+Mode marker: `vi2_route_request_context_profile_readout_closed`
+
+`docs/reviews/CVF_VI2_ROUTE_REQUEST_CONTEXT_PROFILE_READOUT_COMPLETION_2026-05-25.md`
+
+Authorization:
 
 `docs/baselines/CVF_GC018_VI2_ROUTE_REQUEST_CONTEXT_PROFILE_READOUT_2026-05-25.md`
 
@@ -274,14 +278,22 @@ readiness/profile visibility inside `verticalIntegrationReadout`. Agentmemory
 event capture is deferred because VI1 already wires W2 memory hook and audit
 memory receipt into the route chain.
 
-Allowed work: response-level `requestContextReadout`,
-`request_context_profile` surface on `verticalIntegrationReadout`, focused
-tests, one live VI route proof, completion/session/handoff update, and commit.
+Delivered: deterministic `cvf.routeRequestContextProfile.vi2.v1`,
+response-level `requestContextReadout`, and `request_context_profile` surface
+on `verticalIntegrationReadout`. Successful route responses now expose profile,
+budget tier, readiness, signal/noise/contamination fields, execution ceiling,
+next action, and boundaries. Live VI route proof PASS: turn 1
+`rcpt-env-mpkjdbnb-8jl53i`, turn 2 `rcpt-env-mpkjdnuv-e7os02`.
 
 Forbidden: runtime context injection, prompt mutation, route blocking based on
 context profile, receipt-envelope change, LLM scoring, provider routing change,
 memory reinjection, MCP/tool/database/browser automation, external skill
 import, public-sync, hosted readiness, production readiness, or freeze release.
+
+Recommended next work needs fresh GC-018 and value screen. Prefer a VI3 that
+makes existing live route behavior easier to diagnose, such as bounded
+agentmemory capture expansion or an operator-facing readout display, instead
+of broad horizontal absorption.
 
 ## Mandatory Standards
 

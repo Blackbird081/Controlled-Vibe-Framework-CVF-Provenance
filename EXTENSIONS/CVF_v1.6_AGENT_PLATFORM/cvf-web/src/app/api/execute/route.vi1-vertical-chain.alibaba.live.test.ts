@@ -131,7 +131,7 @@ describe.skipIf(!ALIBABA_API_KEY)(
         expect(firstReadout).toMatchObject({
           contractVersion: 'cvf.verticalWorkflowIntegration.vi1.v1',
           status: 'integrated',
-          integratedSurfaceCount: 6,
+          integratedSurfaceCount: 7,
           chain: {
             threadId,
             turnIndex: 1,
@@ -198,7 +198,7 @@ describe.skipIf(!ALIBABA_API_KEY)(
         expect(secondReadout).toMatchObject({
           contractVersion: 'cvf.verticalWorkflowIntegration.vi1.v1',
           status: 'integrated',
-          integratedSurfaceCount: 6,
+          integratedSurfaceCount: 7,
           requiredSurfaceCount: 5,
           liveReceipt: {
             present: true,
@@ -218,6 +218,7 @@ describe.skipIf(!ALIBABA_API_KEY)(
           'governance_receipt',
           'workflow_state_machine',
           'workflow_recovery',
+          'request_context_profile',
           'memory_event_hook',
           'artifact_verification',
           'operational_metrics',

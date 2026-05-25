@@ -30,6 +30,7 @@ import { buildPhase2CProductBriefSliceForRoute } from '@/lib/phase2c-product-bri
 import { buildPhase3EOperationalMetricsForRoute } from '@/lib/phase3e-operational-emission';
 import { buildWorkflowExecutionProjection, resolveWorkflowBindingForExecution } from '@/lib/workflows/workflow-resolver';
 import { buildRouteAuditMemoryCapture } from '@/lib/audit-memory-receipt';
+import { buildRouteRequestContextReadout } from '@/lib/route-request-context-readout';
 import { buildVerticalIntegrationReadout } from '@/lib/vertical-integration-readout';
 import { buildDurableMemorySystemPrompt, evaluateDurableMemoryRoute, evaluateDurableMemoryWrite, resolveDurableMemoryActorRole } from '@/lib/durable-memory-route';
 import { buildRoleOutputDeniedResponse, buildRolePermissionDeniedResponse } from '@/lib/execute-role-permission-gate';
@@ -939,7 +940,8 @@ export async function POST(request: NextRequest) {
             phase: body.cvfPhase,
         });
         await appendAuditEvent({ ...auditEventPayload, payload: withSessionAuditPayload(session, { ...auditEventPayload.payload, actor_role_gate_result: actorRoleGate.result, executionIdentity }) });
-        const verticalIntegrationReadout = buildVerticalIntegrationReadout({ evidenceReceipt: governanceEvidenceReceipt, workflowExecution, auditMemoryReceipt, phase2cProductBrief, phase3eOperationalMetrics, chainRequest: body.verticalIntegrationChain, actorId: session?.userId ?? (isServiceAllowed ? 'service-account' : 'unknown-actor'), templateId: executionTemplateId });
+        const requestContextReadout = buildRouteRequestContextReadout({ request: body, knowledgeContextLength: finalKnowledgeContext?.length ?? 0, retrievedChunkCount: retrievalResult.allowedChunkCount, chainTurnIndex: body.verticalIntegrationChain?.turnIndex });
+        const verticalIntegrationReadout = buildVerticalIntegrationReadout({ evidenceReceipt: governanceEvidenceReceipt, workflowExecution, auditMemoryReceipt, requestContextReadout, phase2cProductBrief, phase3eOperationalMetrics, chainRequest: body.verticalIntegrationChain, actorId: session?.userId ?? (isServiceAllowed ? 'service-account' : 'unknown-actor'), templateId: executionTemplateId });
 
         return NextResponse.json({
             ...aiResult,
@@ -984,6 +986,7 @@ export async function POST(request: NextRequest) {
             governanceEvidenceReceipt,
             ...(executionDiagnostic ? { diagnostic: executionDiagnostic } : {}),
             auditMemoryReceipt,
+            requestContextReadout,
             verticalIntegrationReadout,
             ...(workflowExecution ? workflowExecution : {}),
             ...(phase2cProductBrief ? { phase2cProductBrief } : {}),

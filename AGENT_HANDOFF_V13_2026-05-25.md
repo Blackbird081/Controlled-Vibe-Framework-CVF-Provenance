@@ -304,9 +304,13 @@ workflow enforcement, memory reinjection, provider adapter behavior, external
 skill import, public-sync, hosted readiness, production readiness, or freeze
 release.
 
-## Active Work / Changes
+## Latest Work / Changes
 
-VI2 Route Request Context Profile Readout is authorized:
+VI2 Route Request Context Profile Readout is closed PASS bounded:
+
+`docs/reviews/CVF_VI2_ROUTE_REQUEST_CONTEXT_PROFILE_READOUT_COMPLETION_2026-05-25.md`
+
+Authorization:
 
 `docs/baselines/CVF_GC018_VI2_ROUTE_REQUEST_CONTEXT_PROFILE_READOUT_2026-05-25.md`
 
@@ -314,18 +318,30 @@ Work order:
 
 `docs/work_orders/CVF_WO_VI2_ROUTE_REQUEST_CONTEXT_PROFILE_READOUT_2026-05-25.md`
 
-Current HEAD before VI2 authorization commit: `eada6f81`.
+Current HEAD before VI2 implementation closure commit: `52b5870b`.
 
 Selected source: caveman context budgeting/relevance plus Workflow GoClaw
 context profile/guardrails, with CB1 as prior CLI proof. VI2 may add only
-response-level `requestContextReadout`, a `request_context_profile` surface in
-`verticalIntegrationReadout`, focused tests, one live VI route proof,
-completion/session updates, and commit.
+response-level diagnostics and no runtime authority.
+
+Delivered: `cvf.routeRequestContextProfile.vi2.v1`,
+`requestContextReadout` on successful `/api/execute` responses, and
+`request_context_profile` in `verticalIntegrationReadout`. Focused tests PASS
+37/37, cvf-web check PASS, live Alibaba-compatible 2-turn route proof PASS
+with receipts turn 1 `rcpt-env-mpkjdbnb-8jl53i` and turn 2
+`rcpt-env-mpkjdnuv-e7os02`.
 
 Forbidden: runtime context injection, prompt mutation, route blocking based on
 context profile, receipt-envelope change, LLM scoring, provider routing change,
 memory reinjection, MCP/tool/database/browser automation, external skill
 import, public-sync, hosted readiness, production readiness, or freeze release.
+
+## Next Allowed Move
+
+Fresh GC-018 required. Prefer a VI3 that reduces operator/live-run confusion on
+the existing route, such as bounded agentmemory capture expansion or an
+operator-facing VI readout display, only if it has a concrete owner surface and
+does not widen runtime authority.
 
 ## WR1 Source Pointers
 
@@ -364,6 +380,6 @@ after verifying remotes.
 
 ## Claim Boundary
 
-Verified before handoff transition: active-session state gate PASS, compact
-front door has required markers, and C7A validator evidence remains PASS for
-all ten packs. No live proof is claimed by this handoff refresh.
+Verified before handoff transition: active-session state gate PASS and handoff
+guard PASS. VI2 live proof is claimed only for the narrow Alibaba-compatible
+2-turn `/api/execute` route chain recorded above.

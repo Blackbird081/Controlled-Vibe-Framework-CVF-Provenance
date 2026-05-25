@@ -69,11 +69,36 @@ describe('vertical integration readout', () => {
             evidenceReceipt,
             responseSuccess: true,
         });
+        const requestContextReadout = {
+            readoutVersion: 'cvf.routeRequestContextProfile.vi2.v1' as const,
+            profile: 'task' as const,
+            budgetTier: 'minimal' as const,
+            readiness: 'ready' as const,
+            approxTokens: 120,
+            wordCount: 60,
+            signalDensity: 1,
+            detectedSignals: ['active_task_objective', 'business_goal_or_audience', 'constraints_or_risks'],
+            missingSignals: [],
+            noiseFlags: [],
+            contaminationFlags: [],
+            includedSurfaces: ['identity_invariant', 'safety_baseline', 'policy_baseline', 'task_objective'],
+            excludedSurfaces: ['raw_memory_injection'],
+            executionCeiling: {
+                modelProviderCall: 'existing_route_only' as const,
+                toolExecution: false as const,
+                mcpAccess: false as const,
+                memoryInjection: false as const,
+                profileEscalation: 'advisory_only' as const,
+            },
+            recommendedNextAction: 'Proceed with existing governed route execution; no context-profile escalation is needed.',
+            boundaries: ['advisory_readout_only', 'no_prompt_mutation'],
+        };
 
         const readout = buildVerticalIntegrationReadout({
             evidenceReceipt,
             workflowExecution,
             auditMemoryReceipt,
+            requestContextReadout,
             phase2cProductBrief,
             phase3eOperationalMetrics,
             actorId: 'operator-1',
@@ -90,7 +115,7 @@ describe('vertical integration readout', () => {
             contractVersion: 'cvf.verticalWorkflowIntegration.vi1.v1',
             status: 'integrated',
             requiredSurfaceCount: 5,
-            integratedSurfaceCount: 6,
+            integratedSurfaceCount: 7,
             liveReceipt: {
                 present: true,
                 receiptId: evidenceReceipt.receiptId,
@@ -106,6 +131,7 @@ describe('vertical integration readout', () => {
             'governance_receipt',
             'workflow_state_machine',
             'workflow_recovery',
+            'request_context_profile',
             'memory_event_hook',
             'artifact_verification',
             'operational_metrics',
@@ -140,6 +166,7 @@ describe('vertical integration readout', () => {
         expect(readout.surfaces.filter(surface => !surface.present).map(surface => surface.surfaceId)).toEqual([
             'workflow_state_machine',
             'workflow_recovery',
+            'request_context_profile',
             'artifact_verification',
             'operational_metrics',
         ]);

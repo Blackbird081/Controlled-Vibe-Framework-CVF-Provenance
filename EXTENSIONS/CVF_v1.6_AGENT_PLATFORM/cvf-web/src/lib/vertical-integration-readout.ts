@@ -7,6 +7,7 @@ import type { ExecutionRequest, GovernanceEvidenceReceipt } from '@/lib/ai';
 import type { AuditMemoryReceipt } from '@/lib/audit-memory-receipt';
 import type { Phase2CProductBriefSlice } from '@/lib/phase2c-product-brief-slice';
 import type { Phase3EEmissionPilot } from '@/lib/phase3e-operational-emission';
+import type { RouteRequestContextReadout } from '@/lib/route-request-context-readout';
 import type { WorkflowExecutionProjection } from '@/lib/workflows/workflow-resolver';
 
 export const VERTICAL_INTEGRATION_READOUT_VERSION = 'cvf.verticalWorkflowIntegration.vi1.v1';
@@ -17,6 +18,7 @@ export type VerticalIntegrationSurfaceId =
     | 'governance_receipt'
     | 'workflow_state_machine'
     | 'workflow_recovery'
+    | 'request_context_profile'
     | 'memory_event_hook'
     | 'artifact_verification'
     | 'operational_metrics';
@@ -63,6 +65,7 @@ export interface BuildVerticalIntegrationReadoutInput {
     evidenceReceipt: GovernanceEvidenceReceipt;
     workflowExecution?: WorkflowExecutionProjection;
     auditMemoryReceipt?: AuditMemoryReceipt;
+    requestContextReadout?: RouteRequestContextReadout;
     phase2cProductBrief?: Phase2CProductBriefSlice;
     phase3eOperationalMetrics?: Phase3EEmissionPilot;
     chainRequest?: ExecutionRequest['verticalIntegrationChain'];
@@ -182,6 +185,15 @@ export function buildVerticalIntegrationReadout(
             input.workflowExecution?.recovery.lastRestorableCheckpoint?.receiptId
                 ? [input.workflowExecution.recovery.lastRestorableCheckpoint.receiptId]
                 : [],
+        ),
+        buildSurface(
+            'request_context_profile',
+            'cvf.routeRequestContextProfile.vi2.v1',
+            input.requestContextReadout?.readoutVersion === 'cvf.routeRequestContextProfile.vi2.v1',
+            input.requestContextReadout
+                ? `request context ${input.requestContextReadout.readiness}; profile ${input.requestContextReadout.profile}`
+                : 'request context profile readout is not present',
+            input.requestContextReadout?.detectedSignals ?? [],
         ),
         buildSurface(
             'memory_event_hook',
