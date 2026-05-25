@@ -62,6 +62,8 @@ Current HEAD before VI5-T3 Codex rebuttal packet commit: `f273a74a`.
 
 Current HEAD before Claude acceptance of Codex VI5-T3 solution commit: `0ab7a5ad`.
 
+Current HEAD before operator-agent authority and surface fidelity rules commit: `6f01a57f`.
+
 Remote tracking branch:
 
 `origin/main`
