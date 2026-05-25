@@ -9,6 +9,9 @@ import {
 } from 'cvf-guard-contract';
 
 import createProductBriefWorkflow from './workflow.product.create_product_brief.v1.json';
+import strategyAnalysisWorkflow from './workflow.strategy.strategy_analysis.v1.json';
+import marketingCampaignWorkflow from './workflow.marketing.create_campaign_brief.v1.json';
+import brandVoiceWorkflow from './workflow.brand.brand_voice_review.v1.json';
 
 export interface WorkflowStepReceipt {
   readonly stepId: string;
@@ -108,6 +111,9 @@ export interface WorkflowExecutionProjection {
 
 const WORKFLOW_BINDINGS: readonly WorkflowBinding[] = [
   createProductBriefWorkflow as WorkflowBinding,
+  strategyAnalysisWorkflow as WorkflowBinding,
+  marketingCampaignWorkflow as WorkflowBinding,
+  brandVoiceWorkflow as WorkflowBinding,
 ];
 
 export function resolveWorkflowBindingForExecution(templateId?: string): WorkflowBinding | undefined {

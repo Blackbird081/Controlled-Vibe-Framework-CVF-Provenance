@@ -13,6 +13,78 @@ describe('workflow-resolver', () => {
     expect(binding?.steps).toHaveLength(5);
   });
 
+  it('resolves C workflow scale bindings with the same reviewer-gated projection shape', () => {
+    const cases = [
+      {
+        templateId: 'strategy_analysis',
+        workflowId: 'workflow.strategy.strategy_analysis.v1',
+        completedStepIds: [
+          'step-1-intake-validation',
+          'step-2-context-framing',
+          'step-3-provider-analysis',
+        ],
+        freezeTrigger: 'freeze_requested',
+      },
+      {
+        templateId: 'marketing_campaign_wizard',
+        workflowId: 'workflow.marketing.create_campaign_brief.v1',
+        completedStepIds: [
+          'step-1-intake-validation',
+          'step-2-audience-framing',
+          'step-3-provider-campaign-plan',
+        ],
+        freezeTrigger: 'freeze_requested',
+      },
+      {
+        templateId: 'brand_voice',
+        workflowId: 'workflow.brand.brand_voice_review.v1',
+        completedStepIds: [
+          'step-1-intake-validation',
+          'step-2-sample-framing',
+          'step-3-provider-voice-review',
+        ],
+        freezeTrigger: 'freeze_requested',
+      },
+    ] as const;
+
+    for (const entry of cases) {
+      const binding = resolveWorkflowBindingForExecution(entry.templateId);
+      expect(binding?.workflowId).toBe(entry.workflowId);
+      expect(binding?.steps).toHaveLength(5);
+
+      const projection = buildWorkflowExecutionProjection(binding!, `receipt-${entry.templateId}`);
+      expect(projection).toMatchObject({
+        workflowId: entry.workflowId,
+        templateId: entry.templateId,
+        stateMachine: {
+          finalState: 'review_pending',
+          completedStepIds: entry.completedStepIds,
+          deferredStepIds: [
+            'step-4-review-gate',
+            'step-5-receipt-emit',
+          ],
+          waitingStepIds: ['step-5-receipt-emit'],
+        },
+        recovery: {
+          validationGate: 'blocked',
+          recoveryAction: 'hold_for_reviewer_gate',
+        },
+      });
+      expect(projection.receipts.map((receipt) => receipt.stepId)).toEqual(entry.completedStepIds);
+      expect(projection.receiptBinding.fullMatrixDisposition).toBe('deferred_with_reason');
+
+      const invalidFreezeProjection = buildWorkflowExecutionProjection(binding!, 'receipt-123', {
+        trigger: entry.freezeTrigger,
+        fromState: 'review_pending',
+        toState: 'completed',
+      });
+      expect(invalidFreezeProjection.recovery.requestedTransition).toMatchObject({
+        disposition: 'invalid_from_current_state',
+        matchedStepId: 'step-5-receipt-emit',
+      });
+    }
+  });
+
   it('replays workflow state and does not complete steps past the deferred reviewer gate', () => {
     const binding = resolveWorkflowBindingForExecution('app_builder_complete');
     expect(binding).toBeDefined();

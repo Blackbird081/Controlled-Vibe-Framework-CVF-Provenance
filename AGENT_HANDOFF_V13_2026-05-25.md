@@ -87,7 +87,7 @@ Previous long session memory snapshot was archived at:
 
 ## Current Mode
 
-`c_workflow_scale_vi_proof_authorized`
+`c_workflow_scale_vi_proof_closed`
 
 Freeze posture remains:
 
@@ -456,9 +456,13 @@ provider/router/route behavior changes, new receipt envelopes, public-sync,
 hosted readiness, production readiness, broad workflow platform claims, or
 freeze release.
 
-## Active Work / Changes
+## Latest Work / Changes
 
-C Workflow Scale VI Proof is authorized:
+C Workflow Scale VI Proof is closed PASS bounded:
+
+`docs/reviews/CVF_C_WORKFLOW_SCALE_VI_PROOF_COMPLETION_2026-05-25.md`
+
+Authorization:
 
 `docs/baselines/CVF_GC018_C_WORKFLOW_SCALE_VI_PROOF_2026-05-25.md`
 
@@ -468,15 +472,31 @@ Work order:
 
 Current HEAD before C workflow scale authorization commit: `442973b1`.
 
-Scope: add deterministic workflow bindings for `strategy_analysis`,
+Current HEAD before C workflow scale implementation closure commit: `f8fbc27f`.
+
+Delivered deterministic workflow bindings for `strategy_analysis`,
 `marketing_campaign_wizard`, and `brand_voice`, plus resolver tests and a
-focused live route proof. This is bounded workflow binding scale, not a broad
-workflow engine.
+focused Alibaba live route proof. Evidence: workflow resolver tests PASS 6/6;
+cvf-web check PASS; C live spec PASS 1/1. Live receipts:
+`strategy_analysis` `rcpt-env-mpkllvuc-ob4af6`,
+`marketing_campaign_wizard` `rcpt-env-mpklmhlb-sj4uju`, and `brand_voice`
+`rcpt-env-mpklmr3d-pkhoeb`.
+
+Diagnostic note: first live C run was HTTP 200 `success=true` but failed the
+test harness because the spec expected a nested `workflowExecution` object
+while route response spreads workflow fields at root. Classified as
+`test_harness_contract_mismatch`; corrected before rerun.
 
 Forbidden: `/api/execute/route.ts` behavior changes, provider router/adapter
 changes, prompt mutation, receipt envelope changes, workflow transition
 blocking, public-sync, hosted readiness, production readiness, broad workflow
 platform claims, or freeze release.
+
+## Next Allowed Move
+
+Pause for operator review unless a fresh GC-018/value-screened tranche is
+opened. Do not continue workflow scale horizontally without a concrete
+non-coder outcome reason and new authorization.
 
 ## WR1 Source Pointers
 
@@ -516,5 +536,5 @@ after verifying remotes.
 ## Claim Boundary
 
 Verified before handoff transition: active-session state gate PASS and handoff
-guard PASS. VI2 live proof is claimed only for the narrow Alibaba-compatible
-2-turn `/api/execute` route chain recorded above.
+guard PASS. C workflow scale is claimed only for the three selected workflow
+bindings and the live Alibaba `/api/execute` proof receipts recorded above.

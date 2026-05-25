@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-25
 
-Current mode marker: `c_workflow_scale_vi_proof_authorized`
+Current mode marker: `c_workflow_scale_vi_proof_closed`
 
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Previous handoff archive:
 
 ## Current State
 
-Current mode: `c_workflow_scale_vi_proof_authorized`.
+Current mode: `c_workflow_scale_vi_proof_closed`.
 
 C7A closed PASS bounded at:
 
@@ -383,13 +383,18 @@ changes, model registry changes, retry soak, receipt-envelope changes, prompt
 mutation, public-sync, hosted readiness, production readiness, broad provider
 stability, or freeze release.
 
-Next allowed move: C workflow scale only after fresh GC-018 and work order.
+Next allowed move: C workflow scale is now closed. Pause for operator review
+unless a fresh GC-018/value-screened tranche is opened.
 
-## Active Authorized Tranche
+## Latest Closed Tranche
 
-C Workflow Scale VI Proof is authorized:
+C Workflow Scale VI Proof is closed PASS bounded:
 
-Mode marker: `c_workflow_scale_vi_proof_authorized`
+Mode marker: `c_workflow_scale_vi_proof_closed`
+
+`docs/reviews/CVF_C_WORKFLOW_SCALE_VI_PROOF_COMPLETION_2026-05-25.md`
+
+Authorization:
 
 `docs/baselines/CVF_GC018_C_WORKFLOW_SCALE_VI_PROOF_2026-05-25.md`
 
@@ -397,10 +402,19 @@ Work order:
 
 `docs/work_orders/CVF_WO_C_WORKFLOW_SCALE_VI_PROOF_2026-05-25.md`
 
-C adds bounded workflow bindings for exactly three selected non-Product-Brief
-workflows: `strategy_analysis`, `marketing_campaign_wizard`, and `brand_voice`.
-The goal is to expose existing VI workflow state-machine/recovery surfaces, not
-to create a broad workflow engine.
+C added deterministic workflow bindings for exactly three selected
+non-Product-Brief workflows: `strategy_analysis`,
+`marketing_campaign_wizard`, and `brand_voice`. The existing live `/api/execute`
+VI path now exposes workflow state-machine/recovery surfaces for those
+workflows. Live Alibaba `qwen-turbo` proof PASS: `strategy_analysis`
+`rcpt-env-mpkllvuc-ob4af6`, `marketing_campaign_wizard`
+`rcpt-env-mpklmhlb-sj4uju`, and `brand_voice`
+`rcpt-env-mpklmr3d-pkhoeb`.
+
+Verification: focused workflow resolver tests PASS 6/6; cvf-web check PASS;
+C live proof PASS 1/1. First live run diagnostic was
+`test_harness_contract_mismatch` because the route spreads workflow fields at
+response root; the harness was corrected before rerun.
 
 Forbidden: `/api/execute/route.ts` behavior changes, provider routing/adapter
 changes, prompt mutation, receipt-envelope changes, workflow transition
