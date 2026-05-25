@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-25
 
-Current mode marker: `real_noncoder_usage_test_closed_hold_l1_multilingual_next`
+Current mode marker: `vi5_multi_role_convergence_correction_pending`
 
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,26 @@ Previous handoff archive:
 
 ## Current State
 
-Current mode: `real_noncoder_usage_test_closed_hold_l1_multilingual_next`.
+Current mode: `vi5_multi_role_convergence_correction_pending`.
+
+VI5 is held pending Multi-Role Orchestrated Convergence correction:
+
+`docs/reference/CVF_MULTI_ROLE_ORCHESTRATED_CONVERGENCE_CAPTURE_FORM_2026-05-25.md`
+
+Codex correction packet for Claude:
+
+`docs/reviews/CVF_VI5_MULTI_ROLE_CONVERGENCE_CORRECTION_TO_CLAUDE_2026-05-25.md`
+
+Key point: do not narrow CVF internal convergence to a two-agent-only pattern.
+Use N-role orchestrated convergence: operator/CEO intent, orchestrator,
+planner, workers/subagents, reviewer, auditor, integrator, then final operator
+delivery. Also do not let VI5-T1 claim Spec English freeze if VI5-T0 finds
+mixed-language Spec body content.
+
+Next allowed move: Claude/operator accepts, rebuts, or waives this correction;
+then VI5-T0 L1 baseline audit may proceed. Do not dispatch VI5-T1
+implementation until convergence is accepted and fresh GC-018/work order are
+filed.
 
 C7A closed PASS bounded at:
 

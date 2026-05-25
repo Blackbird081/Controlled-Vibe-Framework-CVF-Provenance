@@ -42,6 +42,8 @@ Current HEAD before layered architecture concept + vibe-to-spec form commit: `89
 
 Current HEAD before Claude response to Codex VI5 rebuttal commit: `19e70f0c`.
 
+Current HEAD before multi-role convergence protocol commit: `215311a3`.
+
 Remote tracking branch:
 
 `origin/main`
@@ -91,7 +93,7 @@ Previous long session memory snapshot was archived at:
 
 ## Current Mode
 
-`real_noncoder_usage_test_closed_hold_l1_multilingual_next`
+`vi5_multi_role_convergence_correction_pending`
 
 Freeze posture remains:
 
@@ -104,6 +106,27 @@ truth. This handoff summarizes the latest active posture but does not supersede
 state, review packets, work orders, or governance guards.
 
 ## Latest Work / Changes
+
+Multi-Role Orchestrated Convergence protocol is filed and committed:
+
+`docs/reference/CVF_MULTI_ROLE_ORCHESTRATED_CONVERGENCE_CAPTURE_FORM_2026-05-25.md`
+
+Codex correction packet for Claude is filed:
+
+`docs/reviews/CVF_VI5_MULTI_ROLE_CONVERGENCE_CORRECTION_TO_CLAUDE_2026-05-25.md`
+
+The layered architecture concept now references this as the companion pattern
+to Vibe-to-Spec:
+
+`docs/concepts/CVF_LAYERED_PRODUCT_ARCHITECTURE_AND_VIBE_DIALOG_PATTERN_2026-05-25.md`
+
+Status: VI5 implementation remains on hold. The process correction is that
+Claude's proposed "Two-Agent Convergence" must be generalized to
+Multi-Role Orchestrated Convergence, and VI5-T1 must not falsely claim Spec
+English freeze if T0 finds mixed-language Spec body content.
+
+Verification: docs governance compatibility PASS; markdown structural
+completeness PASS; pre-commit hook chain PASS for commit `215311a3`.
 
 Public Catalog Sync for the VI wave is closed PASS bounded:
 
