@@ -134,6 +134,19 @@ Real Non-Coder Usage Test is ready for operator:
 
 `docs/work_orders/CVF_WO_REAL_NONCODER_USAGE_TEST_2026-05-25.md`
 
+Fresh live operator-review sample is prepared:
+
+`docs/reviews/CVF_REAL_NONCODER_USAGE_TEST_OPERATOR_SAMPLE_2026-05-25.md`
+
+Receipt: `rcpt-env-mpkoa8dy-4zf8rz`
+
+Provider/model: `alibaba/qwen-turbo`
+
+Verification: `npm run test:run -- src/app/api/execute/route.real-noncoder-usage-sample.alibaba.live.test.ts`
+PASS 1/1.
+
+Current HEAD before sample packet cleanup amend: `e1ba2d74`.
+
 This is intentionally not self-passable by Codex. A real operator/non-coder
 must inspect a Strategy workflow response and VI4 package, then record PASS,
 HOLD_FOR_VI5_CONSOLIDATION, or BLOCKED. If the 11-surface VI4 package is too

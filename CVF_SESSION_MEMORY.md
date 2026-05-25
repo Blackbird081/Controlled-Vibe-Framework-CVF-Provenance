@@ -121,6 +121,14 @@ Mode marker: `real_noncoder_usage_test_ready_for_operator`
 
 `docs/work_orders/CVF_WO_REAL_NONCODER_USAGE_TEST_2026-05-25.md`
 
+Fresh live operator-review sample is prepared:
+
+`docs/reviews/CVF_REAL_NONCODER_USAGE_TEST_OPERATOR_SAMPLE_2026-05-25.md`
+
+Receipt: `rcpt-env-mpkoa8dy-4zf8rz`
+
+Provider/model: `alibaba/qwen-turbo`
+
 This must not be self-passed by Codex. A real operator/non-coder must inspect a
 Strategy workflow response and VI4 package, then record PASS,
 HOLD_FOR_VI5_CONSOLIDATION, or BLOCKED. Do not open more W/C/VI/D

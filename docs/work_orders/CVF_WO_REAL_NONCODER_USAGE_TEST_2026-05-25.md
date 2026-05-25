@@ -130,6 +130,25 @@ small, and the team needs a practical next action.
 5. File the result packet with PASS, HOLD_FOR_VI5_CONSOLIDATION, or BLOCKED.
 6. Update session state and handoff.
 
+## Prepared Operator Sample
+
+Status: READY_FOR_OPERATOR_REVIEW.
+
+Fresh live Strategy sample was prepared on 2026-05-25:
+
+`docs/reviews/CVF_REAL_NONCODER_USAGE_TEST_OPERATOR_SAMPLE_2026-05-25.md`
+
+Receipt: `rcpt-env-mpkoa8dy-4zf8rz`
+
+Provider/model: `alibaba/qwen-turbo`
+
+Verification: `npm run test:run -- src/app/api/execute/route.real-noncoder-usage-sample.alibaba.live.test.ts`
+PASS 1/1.
+
+Boundary: this is sample preparation only. Codex did not self-pass the
+operator usability gate. The result packet still requires the operator's six
+answers and final PASS, HOLD_FOR_VI5_CONSOLIDATION, or BLOCKED decision.
+
 ## Pass / Hold Criteria
 
 PASS only if the human/operator can answer all of these without agent
