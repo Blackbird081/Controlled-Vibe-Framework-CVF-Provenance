@@ -343,6 +343,30 @@ the existing route, such as bounded agentmemory capture expansion or an
 operator-facing VI readout display, only if it has a concrete owner surface and
 does not widen runtime authority.
 
+## Active Work / Changes
+
+VI3 Agentmemory Capture Record Readout is authorized:
+
+`docs/baselines/CVF_GC018_VI3_AGENTMEMORY_CAPTURE_RECORD_READOUT_2026-05-25.md`
+
+Work order:
+
+`docs/work_orders/CVF_WO_VI3_AGENTMEMORY_CAPTURE_RECORD_READOUT_2026-05-25.md`
+
+Current HEAD before VI3 authorization commit: `701d1482`.
+
+Selected source: agentmemory hook/capture contract from
+`.private_reference/legacy/CVF 16.5/agentmemory`. VI3 may add only
+response-level `auditMemoryReceipt.captureRecord`, reference it from the VI
+memory surface, update focused tests and one live VI route proof, then close
+with session updates and commit.
+
+Forbidden: editing `/api/execute/route.ts`, memory reinjection, direct memory
+search/write beyond existing governed audit capture, automatic promotion,
+external memory adapters, provider routing changes, receipt-envelope changes,
+MCP/tool/database/browser automation, public-sync, hosted readiness, production
+readiness, or freeze release.
+
 ## WR1 Source Pointers
 
 Previous WR1 authorization packet:

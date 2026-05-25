@@ -295,6 +295,30 @@ makes existing live route behavior easier to diagnose, such as bounded
 agentmemory capture expansion or an operator-facing readout display, instead
 of broad horizontal absorption.
 
+## Active Authorized Tranche
+
+VI3 Agentmemory Capture Record Readout is authorized:
+
+Mode marker: `vi3_agentmemory_capture_record_readout_authorized`
+
+`docs/baselines/CVF_GC018_VI3_AGENTMEMORY_CAPTURE_RECORD_READOUT_2026-05-25.md`
+
+Work order:
+
+`docs/work_orders/CVF_WO_VI3_AGENTMEMORY_CAPTURE_RECORD_READOUT_2026-05-25.md`
+
+VI3 selects the agentmemory hook/capture contract as the next bounded
+vertical-adjacent source. Allowed work: add response-level
+`auditMemoryReceipt.captureRecord`, reference it from the VI memory surface,
+update focused tests and one live VI proof, then close with session/handoff
+updates and commit.
+
+Forbidden: editing `/api/execute/route.ts`, memory reinjection, direct memory
+search/write beyond the existing governed audit capture, automatic memory
+promotion, external memory adapters, provider routing changes, receipt-envelope
+changes, MCP/tool/database/browser automation, public-sync, hosted readiness,
+production readiness, or freeze release.
+
 ## Mandatory Standards
 
 Live run diagnostics:
