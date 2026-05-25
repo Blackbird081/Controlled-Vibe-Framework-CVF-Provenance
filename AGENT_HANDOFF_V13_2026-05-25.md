@@ -50,6 +50,8 @@ Current HEAD before VI5-T1 authorization commit: `e0e8b5be`.
 
 Current HEAD before VI5-T1 implementation closure commit: `5c7640cb`.
 
+Current HEAD before VI5-T2 authorization commit: `f2e9b2eb`.
+
 Remote tracking branch:
 
 `origin/main`
@@ -99,7 +101,7 @@ Previous long session memory snapshot was archived at:
 
 ## Current Mode
 
-`vi5_t1_language_state_closed`
+`vi5_t2_spec_english_freeze_authorized`
 
 Freeze posture remains:
 
@@ -126,9 +128,8 @@ to Vibe-to-Spec:
 
 `docs/concepts/CVF_LAYERED_PRODUCT_ARCHITECTURE_AND_VIBE_DIALOG_PATTERN_2026-05-25.md`
 
-Status: Multi-role convergence is accepted and VI5-T0 baseline is recorded.
-VI5-T1 is authorized for a bounded additive implementation. It must not claim
-Spec English freeze because VI5-T0 found mixed-language Spec body content.
+Status: Multi-role convergence is accepted, VI5-T0 baseline is recorded,
+VI5-T1 is closed, and VI5-T2 is authorized for bounded implementation.
 
 VI5-T0 baseline:
 
@@ -170,6 +171,23 @@ Live proof PASS: Alibaba `qwen-turbo`, receipt
 
 Verification: focused tests PASS 5 files / 45 tests; cvf-web `npm run check`
 PASS; VI5-T1 live test PASS 1/1.
+
+VI5-T2 Spec English Freeze is authorized:
+
+`docs/roadmaps/CVF_VI5_T2_SPEC_ENGLISH_FREEZE_ROADMAP_2026-05-25.md`
+
+`docs/baselines/CVF_GC018_VI5_T2_SPEC_ENGLISH_FREEZE_2026-05-25.md`
+
+`docs/work_orders/CVF_WO_VI5_T2_SPEC_ENGLISH_FREEZE_2026-05-25.md`
+
+Allowed scope: add response-level `englishSpecFreeze`, a canonical English Spec
+freeze builder/validator, `specBoundary` freeze booleans backed by that
+validator, focused deterministic tests, and one Vietnamese Strategy live proof.
+
+Forbidden: provider adapter/routing/model changes, broad prompt tuning, receipt
+envelope changes, workflow execution blocking, UI shell i18n, all-pack catalog
+expansion, external skill import, hosted/public/production readiness claims, or
+broad governance freeze release.
 
 Public Catalog Sync for the VI wave is closed PASS bounded:
 
