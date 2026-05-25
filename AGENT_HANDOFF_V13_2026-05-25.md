@@ -87,7 +87,7 @@ Previous long session memory snapshot was archived at:
 
 ## Current Mode
 
-`vi4_vertical_evidence_surface_expansion_closed`
+`d_provider_scale_live_vi_proof_authorized`
 
 Freeze posture remains:
 
@@ -420,6 +420,28 @@ readiness, or freeze release.
 Proceed to D provider scale only after fresh GC-018 and work order. D may use
 live provider/API keys and must classify live failures before rerun. C workflow
 scale remains after D unless a later authorized roadmap changes the order.
+
+## Active Work / Changes
+
+D Provider Scale Live VI Proof is authorized:
+
+`docs/baselines/CVF_GC018_D_PROVIDER_SCALE_LIVE_VI_PROOF_2026-05-25.md`
+
+Work order:
+
+`docs/work_orders/CVF_WO_D_PROVIDER_SCALE_LIVE_VI_PROOF_2026-05-25.md`
+
+Current HEAD before D provider scale authorization commit: `5852aca0`.
+
+Scope: add one bounded DeepSeek + OpenAI live `/api/execute` proof that asserts
+the existing VI4 evidence package on both lanes. Alibaba is already proven by
+VI4. This is provider breadth proof, not a repeated soak or broad stability
+claim.
+
+Forbidden: provider router/adapter changes, `/api/execute/route.ts` behavior
+changes, model registry changes, retry soak, receipt envelope changes, prompt
+mutation, public-sync, hosted readiness, production readiness, broad provider
+stability, or freeze release.
 
 ## WR1 Source Pointers
 

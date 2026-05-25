@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-25
 
-Current mode marker: `vi4_vertical_evidence_surface_expansion_closed`
+Current mode marker: `d_provider_scale_live_vi_proof_authorized`
 
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Previous handoff archive:
 
 ## Current State
 
-Current mode: `vi4_vertical_evidence_surface_expansion_closed`.
+Current mode: `d_provider_scale_live_vi_proof_authorized`.
 
 C7A closed PASS bounded at:
 
@@ -358,6 +358,28 @@ readiness, or freeze release.
 Next allowed move: D provider scale only after fresh GC-018 and work order,
 with live-run diagnostics required before reruns. C workflow scale remains
 after D unless a later authorized roadmap changes the order.
+
+## Active Authorized Tranche
+
+D Provider Scale Live VI Proof is authorized:
+
+Mode marker: `d_provider_scale_live_vi_proof_authorized`
+
+`docs/baselines/CVF_GC018_D_PROVIDER_SCALE_LIVE_VI_PROOF_2026-05-25.md`
+
+Work order:
+
+`docs/work_orders/CVF_WO_D_PROVIDER_SCALE_LIVE_VI_PROOF_2026-05-25.md`
+
+D proves only that the existing VI4 evidence package works on live DeepSeek
+and OpenAI `/api/execute` lanes, in addition to the already-proven Alibaba
+lane. It must use secret-safe keys from `.env.local` and classify any failed or
+partial live run before rerun.
+
+Forbidden: provider routing/adapter changes, `/api/execute/route.ts` behavior
+changes, model registry changes, retry soak, receipt-envelope changes, prompt
+mutation, public-sync, hosted readiness, production readiness, broad provider
+stability, or freeze release.
 
 ## Mandatory Standards
 
