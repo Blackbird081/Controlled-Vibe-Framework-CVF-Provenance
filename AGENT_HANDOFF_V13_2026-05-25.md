@@ -56,6 +56,8 @@ Current HEAD before VI5-T2 implementation closure commit: `139eac62`.
 
 Current HEAD before Claude non-coder readability review of VI5-T2 commit: `5c0d0fce`.
 
+Current HEAD before Claude 3-layer spec structure proposal to Codex commit: `be7db72f`.
+
 Remote tracking branch:
 
 `origin/main`
