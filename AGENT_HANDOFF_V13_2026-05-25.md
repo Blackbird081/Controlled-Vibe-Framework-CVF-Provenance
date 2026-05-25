@@ -87,7 +87,7 @@ Previous long session memory snapshot was archived at:
 
 ## Current Mode
 
-`d_provider_scale_live_vi_proof_closed`
+`c_workflow_scale_vi_proof_authorized`
 
 Freeze posture remains:
 
@@ -455,6 +455,28 @@ apply the VI1/VI4 pattern to bounded non-Product-Brief workflows without
 provider/router/route behavior changes, new receipt envelopes, public-sync,
 hosted readiness, production readiness, broad workflow platform claims, or
 freeze release.
+
+## Active Work / Changes
+
+C Workflow Scale VI Proof is authorized:
+
+`docs/baselines/CVF_GC018_C_WORKFLOW_SCALE_VI_PROOF_2026-05-25.md`
+
+Work order:
+
+`docs/work_orders/CVF_WO_C_WORKFLOW_SCALE_VI_PROOF_2026-05-25.md`
+
+Current HEAD before C workflow scale authorization commit: `442973b1`.
+
+Scope: add deterministic workflow bindings for `strategy_analysis`,
+`marketing_campaign_wizard`, and `brand_voice`, plus resolver tests and a
+focused live route proof. This is bounded workflow binding scale, not a broad
+workflow engine.
+
+Forbidden: `/api/execute/route.ts` behavior changes, provider router/adapter
+changes, prompt mutation, receipt envelope changes, workflow transition
+blocking, public-sync, hosted readiness, production readiness, broad workflow
+platform claims, or freeze release.
 
 ## WR1 Source Pointers
 

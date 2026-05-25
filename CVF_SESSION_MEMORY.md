@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-25
 
-Current mode marker: `d_provider_scale_live_vi_proof_closed`
+Current mode marker: `c_workflow_scale_vi_proof_authorized`
 
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Previous handoff archive:
 
 ## Current State
 
-Current mode: `d_provider_scale_live_vi_proof_closed`.
+Current mode: `c_workflow_scale_vi_proof_authorized`.
 
 C7A closed PASS bounded at:
 
@@ -384,6 +384,28 @@ mutation, public-sync, hosted readiness, production readiness, broad provider
 stability, or freeze release.
 
 Next allowed move: C workflow scale only after fresh GC-018 and work order.
+
+## Active Authorized Tranche
+
+C Workflow Scale VI Proof is authorized:
+
+Mode marker: `c_workflow_scale_vi_proof_authorized`
+
+`docs/baselines/CVF_GC018_C_WORKFLOW_SCALE_VI_PROOF_2026-05-25.md`
+
+Work order:
+
+`docs/work_orders/CVF_WO_C_WORKFLOW_SCALE_VI_PROOF_2026-05-25.md`
+
+C adds bounded workflow bindings for exactly three selected non-Product-Brief
+workflows: `strategy_analysis`, `marketing_campaign_wizard`, and `brand_voice`.
+The goal is to expose existing VI workflow state-machine/recovery surfaces, not
+to create a broad workflow engine.
+
+Forbidden: `/api/execute/route.ts` behavior changes, provider routing/adapter
+changes, prompt mutation, receipt-envelope changes, workflow transition
+blocking, public-sync, hosted readiness, production readiness, broad workflow
+platform claims, or freeze release.
 
 ## Mandatory Standards
 
