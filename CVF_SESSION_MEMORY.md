@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-25
 
-Current mode marker: `d_provider_scale_live_vi_proof_authorized`
+Current mode marker: `d_provider_scale_live_vi_proof_closed`
 
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Previous handoff archive:
 
 ## Current State
 
-Current mode: `d_provider_scale_live_vi_proof_authorized`.
+Current mode: `d_provider_scale_live_vi_proof_closed`.
 
 C7A closed PASS bounded at:
 
@@ -359,11 +359,13 @@ Next allowed move: D provider scale only after fresh GC-018 and work order,
 with live-run diagnostics required before reruns. C workflow scale remains
 after D unless a later authorized roadmap changes the order.
 
-## Active Authorized Tranche
+## Latest Closed Tranche
 
-D Provider Scale Live VI Proof is authorized:
+D Provider Scale Live VI Proof is closed PASS bounded:
 
-Mode marker: `d_provider_scale_live_vi_proof_authorized`
+Mode marker: `d_provider_scale_live_vi_proof_closed`
+
+`docs/reviews/CVF_D_PROVIDER_SCALE_LIVE_VI_PROOF_COMPLETION_2026-05-25.md`
 
 `docs/baselines/CVF_GC018_D_PROVIDER_SCALE_LIVE_VI_PROOF_2026-05-25.md`
 
@@ -373,13 +375,15 @@ Work order:
 
 D proves only that the existing VI4 evidence package works on live DeepSeek
 and OpenAI `/api/execute` lanes, in addition to the already-proven Alibaba
-lane. It must use secret-safe keys from `.env.local` and classify any failed or
-partial live run before rerun.
+lane. Live proof PASS: DeepSeek `rcpt-env-mpkl3fnx-c8dlwj`, OpenAI
+`rcpt-env-mpkl3yqb-zxzn84`. cvf-web check PASS.
 
 Forbidden: provider routing/adapter changes, `/api/execute/route.ts` behavior
 changes, model registry changes, retry soak, receipt-envelope changes, prompt
 mutation, public-sync, hosted readiness, production readiness, broad provider
 stability, or freeze release.
+
+Next allowed move: C workflow scale only after fresh GC-018 and work order.
 
 ## Mandatory Standards
 

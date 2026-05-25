@@ -87,7 +87,7 @@ Previous long session memory snapshot was archived at:
 
 ## Current Mode
 
-`d_provider_scale_live_vi_proof_authorized`
+`d_provider_scale_live_vi_proof_closed`
 
 Freeze posture remains:
 
@@ -421,9 +421,11 @@ Proceed to D provider scale only after fresh GC-018 and work order. D may use
 live provider/API keys and must classify live failures before rerun. C workflow
 scale remains after D unless a later authorized roadmap changes the order.
 
-## Active Work / Changes
+## Latest Work / Changes
 
-D Provider Scale Live VI Proof is authorized:
+D Provider Scale Live VI Proof is closed PASS bounded:
+
+`docs/reviews/CVF_D_PROVIDER_SCALE_LIVE_VI_PROOF_COMPLETION_2026-05-25.md`
 
 `docs/baselines/CVF_GC018_D_PROVIDER_SCALE_LIVE_VI_PROOF_2026-05-25.md`
 
@@ -433,15 +435,26 @@ Work order:
 
 Current HEAD before D provider scale authorization commit: `5852aca0`.
 
-Scope: add one bounded DeepSeek + OpenAI live `/api/execute` proof that asserts
-the existing VI4 evidence package on both lanes. Alibaba is already proven by
-VI4. This is provider breadth proof, not a repeated soak or broad stability
-claim.
+Current HEAD before D provider scale implementation closure commit: `6e8b099e`.
+
+Delivered one bounded DeepSeek + OpenAI live `/api/execute` proof asserting the
+existing VI4 evidence package on both lanes. Alibaba is already proven by VI4.
+Evidence: cvf-web check PASS; live spec PASS 2/2; DeepSeek receipt
+`rcpt-env-mpkl3fnx-c8dlwj`; OpenAI receipt `rcpt-env-mpkl3yqb-zxzn84`.
+This is provider breadth proof, not a repeated soak or broad stability claim.
 
 Forbidden: provider router/adapter changes, `/api/execute/route.ts` behavior
 changes, model registry changes, retry soak, receipt envelope changes, prompt
 mutation, public-sync, hosted readiness, production readiness, broad provider
 stability, or freeze release.
+
+## Next Allowed Move
+
+Proceed to C workflow scale only after fresh GC-018 and work order. C should
+apply the VI1/VI4 pattern to bounded non-Product-Brief workflows without
+provider/router/route behavior changes, new receipt envelopes, public-sync,
+hosted readiness, production readiness, broad workflow platform claims, or
+freeze release.
 
 ## WR1 Source Pointers
 
