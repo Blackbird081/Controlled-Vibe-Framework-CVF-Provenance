@@ -4,7 +4,9 @@ Status: ACTIVE
 
 Current HEAD before LHW1 roadmap commit: `aabf0509535b232cc543a8da6bc77936256ef02a`.
 
-Current HEAD (updated per GC-020): `ba91dc0d9ed52ae8b48ba794433da22853c861dd` (LHW1-T1 commit).
+Current HEAD before LHW1-T2 commit: `ba91dc0d9ed52ae8b48ba794433da22853c861dd`.
+
+Current HEAD (updated per GC-020): `a3defa22` (LHW1-T2 commit; T3 in progress).
 
 ## Startup Acknowledgment
 
@@ -147,6 +149,34 @@ T3 must specify that mapping.
 T3 pre-conditions: T1 CLOSED_PASS ✓, T2 CLOSED_PASS ✓, named context gap ✓.
 T3 is authorized to proceed per
 `docs/work_orders/CVF_WO_LHW1_T3_CONTEXT_PROFILE_CONNECTOR_2026-05-27.md`.
+
+## LHW1-T3 Closure + LHW1 Roadmap Closed
+
+LHW1-T3 Context Profile Connector is CLOSED_PASS_BOUNDED.
+
+Mode marker: `lhw1_t3_context_profile_connector_closed_pass_bounded`
+
+Spec: `docs/reference/CVF_LHW1_CONTEXT_PROFILE_CONNECTOR_SPEC_2026-05-27.md`
+
+Completion: `docs/reviews/CVF_LHW1_T3_CONTEXT_PROFILE_CONNECTOR_COMPLETION_2026-05-27.md`
+
+Contract version: `cvf.contextProfileConnector.lhw1.t3.v1`
+
+Delivered: 5-section context profile connector spec addressing the T2 context
+gap (intake_pending→design_ready required context profile readiness; neither
+T1 nor T2 defined which VI2 fields must be populated). Section 2 maps 5
+field rows (user goal, packId, VI2 readiness/profile, VI2 missingSectors →
+successCriteria gap, VI3 captureRecord.sessionRole → T2 phase-role). Section 3
+provides 5 advisory compaction/relevance rules source-attributed to caveman
+(Rules 1-2) and Workflow GoClaw (Rules 3-4) and VI3/M1/M2 (Rule 5). Section 4
+maps fields through all 5 W1 phases. Section 5 closes demand-gated items.
+canReinject=false preserved throughout. VI2/VI3 field names verbatim (uncertain
+names marked † with confirm-against-source note). No code file modified.
+
+Reviewer verdict: PASS.
+
+LHW1 roadmap CLOSED_PASS_BOUNDED: T1 + T2 + T3 all delivered.
+`docs/roadmaps/CVF_LHW1_LEGACY_WORKFLOW_CONNECTOR_ABSORPTION_ROADMAP_2026-05-27.md`
 
 ## Mandatory Standards
 

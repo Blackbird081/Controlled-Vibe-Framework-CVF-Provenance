@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: PROPOSED_NEXT_TRANCHE
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-05-27
 

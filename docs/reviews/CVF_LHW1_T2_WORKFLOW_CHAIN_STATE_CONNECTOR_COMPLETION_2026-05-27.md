@@ -116,6 +116,11 @@ T3 pre-conditions are therefore met:
 
 T3 is authorized to proceed.
 
+## Public Catalog
+
+N/A. LHW1-T2 is a documentation-only connector spec. No new proven runtime
+capability was added; no public catalog update required per GC-024.
+
 ## Claim Boundary
 
 LHW1-T2 claims only a documentation artifact binding W1 phases to roles,

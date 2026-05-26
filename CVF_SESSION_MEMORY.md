@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-27
 
-Current mode marker: `lhw1_t2_workflow_chain_state_connector_closed_pass_bounded`
+Current mode marker: `lhw1_t3_context_profile_connector_closed_pass_bounded`
 
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -1034,6 +1034,39 @@ Roadmap filed:
 `docs/roadmaps/CVF_LHW1_LEGACY_WORKFLOW_CONNECTOR_ABSORPTION_ROADMAP_2026-05-27.md`.
 
 ## Latest Legacy Workflow Connector Tranche
+
+Mode marker: `lhw1_t3_context_profile_connector_closed_pass_bounded`
+
+Previous mode marker: `lhw1_t2_workflow_chain_state_connector_closed_pass_bounded`
+
+LHW1-T3 Context Profile Connector is CLOSED_PASS_BOUNDED.
+
+Work order:
+`docs/work_orders/CVF_WO_LHW1_T3_CONTEXT_PROFILE_CONNECTOR_2026-05-27.md`
+
+Fast Lane audit decision FAST_LANE_READY:
+`docs/reviews/CVF_LHW1_T3_FAST_LANE_AUDIT_2026-05-27.md`
+
+Connector spec (contract version `cvf.contextProfileConnector.lhw1.t3.v1`, sections 1-5):
+`docs/reference/CVF_LHW1_CONTEXT_PROFILE_CONNECTOR_SPEC_2026-05-27.md`
+
+Completion review:
+`docs/reviews/CVF_LHW1_T3_CONTEXT_PROFILE_CONNECTOR_COMPLETION_2026-05-27.md`
+
+Reviewer perspective PASS: all 5 sections, VI2/VI3 field names verbatim, compaction rules
+source-attributed (caveman/GoClaw), `canReinject: false` preserved, demand-gated items
+explicit, no code file modified.
+
+LHW1 roadmap CLOSED_PASS_BOUNDED: T1 + T2 + T3 all delivered.
+`docs/roadmaps/CVF_LHW1_LEGACY_WORKFLOW_CONNECTOR_ABSORPTION_ROADMAP_2026-05-27.md`
+
+Claim boundary: documentation-only connector spec. No runtime context enforcement,
+VI2 injection, VI3 reinjection, route change, receipt envelope extension,
+public-sync, hosted readiness, production readiness, or freeze release.
+
+---
+
+### LHW1-T2 Record (for reference)
 
 Mode marker: `lhw1_t2_workflow_chain_state_connector_closed_pass_bounded`
 
