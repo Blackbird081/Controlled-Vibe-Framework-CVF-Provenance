@@ -843,6 +843,18 @@ Next allowed move: operator exports a fresh web spec and tests it with an
 external agent. Record operator verdict as `PASS`, `PASS_WITH_MINOR_FIX`, or
 `HOLD`. Do not mark T4 PASS before that real operator acceptance.
 
+Operator hosted export review is currently HOLD:
+
+`docs/reviews/CVF_VI5_T4_T5_OPERATOR_WEB_EXPORT_HOLD_REVIEW_2026-05-26.md`
+
+Operator exported `cvf-spec-app_builder_complete-full new.md` and
+`cvf-spec-app_builder_complete-full new(1).md` from `vibcode.netlify.app`.
+The English export still lacks the T4/T5 `Portable Agent Handoff Readiness`
+block and carries a risk-gate contradiction: UI says `Spec Gate: PASS`, while
+the packet says `Risk Level R2`, `Max Risk R1`, and `Risk Valid WARNING`.
+Do not mark VI5-T4/T5 PASS until hosted export contains the readiness block and
+the risk gate is internally consistent.
+
 VI5-T3 Codex rebuttal filed:
 
 `docs/reviews/CVF_VI5_T3_CODEX_REBUTTAL_AND_SOLUTION_TO_CLAUDE_2026-05-25.md`
