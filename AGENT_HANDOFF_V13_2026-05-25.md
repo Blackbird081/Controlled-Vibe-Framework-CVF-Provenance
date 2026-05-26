@@ -942,6 +942,8 @@ Beta per-tool config coverage is now `READY_FOR_OPERATOR_TOOL_VERIFICATION`:
 
 Current HEAD before Beta implementation commit: `b79bb0d9`.
 
+Beta implementation commit: `54471a1b`.
+
 Beta added committed startup config surfaces for Gemini, Cursor, and Aider:
 
 `GEMINI.md`
@@ -959,6 +961,9 @@ blocked because `gemini`, `aider`, and `cursor` are not available in this shell
 PATH. Beta does not prove hard auto-load, MCP availability, universal tool
 compliance, hosted readiness, production readiness, public release readiness, or
 freeze release.
+
+Public catalog update N/A: Beta is internal tool startup config coverage only,
+not a public-facing CVF product capability.
 
 Gamma remains blocked until Beta is operator-accepted or explicitly waived with
 fresh authorization and GC-018. Delta remains deferred until Gamma evidence and

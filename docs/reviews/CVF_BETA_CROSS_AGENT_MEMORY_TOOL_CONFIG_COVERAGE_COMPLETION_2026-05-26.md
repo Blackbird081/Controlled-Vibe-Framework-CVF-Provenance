@@ -95,6 +95,12 @@ operator-accepted and Gamma may be considered with a fresh GC-018. If any tool
 does not comply, keep Gamma blocked and either adjust the tool-specific config
 or mark that tool as unsupported for automatic startup acknowledgment.
 
+## Public Catalog Update
+
+N/A. This tranche adds internal repository startup config coverage only. It does
+not add a public-facing CVF product capability, governance runtime behavior, or
+external user feature.
+
 ## Claim Boundary
 
 This completion may claim only Beta per-tool config coverage. It cannot claim
