@@ -7,6 +7,13 @@ import { generateIntent } from '@/lib/templates';
 import { SpecExport } from './SpecExport';
 import { useLanguage } from '@/lib/i18n';
 import { getSkillForTemplate } from '@/lib/skill-template-map';
+import {
+    getTemplateDescription,
+    getTemplateFieldChrome,
+    getTemplateFieldLabel,
+    getTemplateIntentPattern,
+    getTemplateName,
+} from '@/lib/template-i18n';
 
 interface DynamicFormProps {
     template: Template;
@@ -80,13 +87,29 @@ export function DynamicForm({ template, onSubmit, onBack, onSendToAgent }: Dynam
     const formValues = Object.fromEntries(
         Object.entries(watchedValues || {}).map(([key, value]) => [key, value || ''])
     ) as Record<string, string>;
-    const previewIntent = generateIntent(template, formValues);
+    const localizedTemplate: Template = {
+        ...template,
+        name: getTemplateName(template.id, template.name, language),
+        description: getTemplateDescription(template.id, template.description, language),
+        intentPattern: getTemplateIntentPattern(template.id, template.intentPattern, language),
+        fields: template.fields.map(field => {
+            const chrome = getTemplateFieldChrome(template.id, field.id, language);
+            return {
+                ...field,
+                label: getTemplateFieldLabel(template.id, field.id, field.label, language),
+                placeholder: chrome.placeholder ?? field.placeholder,
+                hint: chrome.hint ?? field.hint,
+                example: chrome.example ?? field.example,
+            };
+        }),
+    };
+    const previewIntent = generateIntent(localizedTemplate, formValues);
 
-    const requiredFields = template.fields.filter(f => f.section !== 'advanced');
-    const advancedFields = template.fields.filter(f => f.section === 'advanced');
+    const requiredFields = localizedTemplate.fields.filter(f => f.section !== 'advanced');
+    const advancedFields = localizedTemplate.fields.filter(f => f.section === 'advanced');
 
     const onFormSubmit = (data: Record<string, string>) => {
-        const intent = generateIntent(template, data);
+        const intent = generateIntent(localizedTemplate, data);
         onSubmit(data, intent);
     };
 
@@ -105,10 +128,10 @@ export function DynamicForm({ template, onSubmit, onBack, onSendToAgent }: Dynam
                 <div>
                     <h1 className="text-2xl font-bold flex items-center gap-3">
                         <span>{template.icon}</span>
-                        <span>{template.name}</span>
+                        <span>{localizedTemplate.name}</span>
                     </h1>
                     <div className="flex items-center gap-2 mt-1">
-                        <p className="text-gray-600 dark:text-gray-400">{template.description}</p>
+                        <p className="text-gray-600 dark:text-gray-400">{localizedTemplate.description}</p>
                         {(() => {
                             const skillRef = getSkillForTemplate(template.id);
                             if (!skillRef) return null;
@@ -159,7 +182,7 @@ export function DynamicForm({ template, onSubmit, onBack, onSendToAgent }: Dynam
                         )}
                         {field.example && (
                             <p className="mt-1 text-xs text-gray-400 dark:text-gray-500 italic">
-                                VD: {field.example}
+                                {language === 'en' ? 'Example' : 'VD'}: {field.example}
                             </p>
                         )}
                     </div>
@@ -198,7 +221,7 @@ export function DynamicForm({ template, onSubmit, onBack, onSendToAgent }: Dynam
                                         )}
                                         {field.example && (
                                             <p className="mt-1 text-xs text-gray-400 dark:text-gray-500 italic">
-                                                VD: {field.example}
+                                                {language === 'en' ? 'Example' : 'VD'}: {field.example}
                                             </p>
                                         )}
                                     </div>

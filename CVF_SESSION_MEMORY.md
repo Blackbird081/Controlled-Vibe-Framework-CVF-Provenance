@@ -952,3 +952,34 @@ Next allowed move after MA1: use MA1 as the control packet for Surface 1
 `app_builder_complete` i18n form body, Portable Agent Handoff Readiness, and
 risk-gate contradiction fix. This tranche remains deterministic web/export
 work unless live governance behavior is claimed.
+
+Surface 1 form i18n/readiness/risk-gate fix is ready for operator retest:
+
+`docs/roadmaps/CVF_SURFACE1_FORM_I18N_READINESS_RISK_GATE_FIX_ROADMAP_2026-05-26.md`
+
+`docs/baselines/CVF_GC018_SURFACE1_FORM_I18N_READINESS_RISK_GATE_FIX_2026-05-26.md`
+
+`docs/work_orders/CVF_WO_SURFACE1_FORM_I18N_READINESS_RISK_GATE_FIX_2026-05-26.md`
+
+`docs/work_orders/CVF_MA1_TRANSFER_SURFACE1_FORM_I18N_READINESS_RISK_GATE_FIX_2026-05-26.md`
+
+`docs/reviews/CVF_SURFACE1_FORM_I18N_READINESS_RISK_GATE_FIX_COMPLETION_2026-05-26.md`
+
+Current HEAD before Surface 1 fix implementation commit: `99e0fc6a`.
+
+Implementation changes:
+
+- `DynamicForm.tsx` now renders localized `app_builder_complete` title,
+  description, labels, hints, placeholders, examples, and preview intent.
+- `template-i18n.ts` now includes field-chrome translations for
+  `app_builder_complete`.
+- `SpecExport.tsx` now localizes missing-required labels and evaluates export
+  governance risk from user values rather than control chrome.
+
+Verification: focused Surface 1 tests PASS 4 files / 104 tests; cvf-web
+`npm run check` PASS.
+
+Boundary: no live provider/API proof required; no hosted deploy proof yet; no
+external-agent PASS claim yet. Operator must retest after public/hosted update
+by exporting a fresh English Full / Guided spec and sending it to an external
+agent.

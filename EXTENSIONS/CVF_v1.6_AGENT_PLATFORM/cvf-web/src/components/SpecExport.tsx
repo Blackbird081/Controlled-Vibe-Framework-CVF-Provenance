@@ -748,6 +748,7 @@ export function generateSpec(
     };
 
     const intent = renderTemplateIntent(localizedIntentPattern, values);
+    const userValueText = Object.values(values).filter(Boolean).join(' ');
     const cvfWebDnaAppendix = shouldAttachCvfWebRedesignDna({
         templateId: template.id,
         templateName: template.name,
@@ -814,7 +815,7 @@ ${userContext}` : ''}
 ## ✅ ${labels.inputCoverage}
 
 ${inputCoverage}
-${missingRequired.length ? `\n\n**${lang === 'vi' ? 'Thiếu input bắt buộc' : 'Missing Required Inputs'}:** ${missingRequired.map((field: { label: string }) => field.label).join(', ')}` : ''}
+${missingRequired.length ? `\n\n**${lang === 'vi' ? 'Thiếu input bắt buộc' : 'Missing Required Inputs'}:** ${missingRequired.map(field => getTemplateFieldLabel(template.id, field.id, field.label, lang)).join(', ')}` : ''}
 
 ${portableHandoffReadiness}
 
@@ -900,7 +901,7 @@ ${lang === 'vi'
     if (mode === 'governance' || mode === 'full') {
         const detected = autoDetectGovernance({
             templateCategory: template.category,
-            messageText: intent,
+            messageText: userValueText || intent,
             exportMode: mode,
         });
         const govState: GovernanceState = {
@@ -1229,7 +1230,9 @@ export function SpecExport({ template, values, onClose, onSendToAgent }: SpecExp
                 </div>
                 {missingRequired.length > 0 && (
                     <div className="text-xs mt-1">
-                        {specGateLabels.missing}: {missingRequired.map(field => field.label).join(', ')}
+                        {specGateLabels.missing}: {missingRequired
+                            .map(field => getTemplateFieldLabel(template.id, field.id, field.label, exportLang))
+                            .join(', ')}
                     </div>
                 )}
                 {specGateError && !canSendToAgent && (

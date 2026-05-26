@@ -1114,32 +1114,34 @@ production readiness, or freeze release without a fresh authorized tranche.
 
 ## MA1 Internal Multi-Agent Work Transfer Packet
 
-MA1 is closed PASS bounded:
+MA1 is closed PASS bounded. Canonical standard:
+`docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`;
+roadmap/GC/work order/completion:
+`docs/roadmaps/CVF_MA1_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_ROADMAP_2026-05-26.md`,
+`docs/baselines/CVF_GC018_MA1_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_2026-05-26.md`,
+`docs/work_orders/CVF_WO_MA1_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_2026-05-26.md`,
+`docs/reviews/CVF_MA1_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_COMPLETION_2026-05-26.md`.
+Contract: `cvf.internalMultiAgentTransfer.ma1.v1`. Boundary: English internal
+transfer packet only; no runtime scheduling, role isolation, provider behavior,
+MCP enforcement, hosted/public/production readiness, or downstream acceptance
+claim. Surface 1 fix must use MA1 as control packet.
 
-`docs/roadmaps/CVF_MA1_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_ROADMAP_2026-05-26.md`
+## Surface 1 Form i18n / Readiness / Risk Gate Fix
 
-`docs/baselines/CVF_GC018_MA1_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_2026-05-26.md`
-
-`docs/work_orders/CVF_WO_MA1_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_2026-05-26.md`
-
-`docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
-
-`docs/reviews/CVF_MA1_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_COMPLETION_2026-05-26.md`
-
-MA1 contract version: `cvf.internalMultiAgentTransfer.ma1.v1`.
-
-MA1 is a 100% English internal work-transfer packet for orchestrator,
-role-agent, reviewer, auditor, integrator, provider-lane, or future CVF client
-handoff. It standardizes Surface Fidelity Gate, Authority Chain, Source Packet,
-Role Assignment, Execution Instructions, Role Output Schema, Dissent Ledger,
-Integration Decision, Completion Evidence, and Claim Boundary.
-
-Boundary: MA1 does not claim runtime subagent scheduling, live role isolation,
-provider behavior, MCP enforcement, hosted readiness, production readiness,
-public readiness, or operator acceptance of any downstream implementation.
-
-Next use: Surface 1 i18n/readiness/risk-gate fix must use MA1 as its internal
-control packet.
+Surface 1 fix is ready for operator retest:
+Roadmap/GC/work order/MA1 transfer/completion:
+`docs/roadmaps/CVF_SURFACE1_FORM_I18N_READINESS_RISK_GATE_FIX_ROADMAP_2026-05-26.md`,
+`docs/baselines/CVF_GC018_SURFACE1_FORM_I18N_READINESS_RISK_GATE_FIX_2026-05-26.md`,
+`docs/work_orders/CVF_WO_SURFACE1_FORM_I18N_READINESS_RISK_GATE_FIX_2026-05-26.md`,
+`docs/work_orders/CVF_MA1_TRANSFER_SURFACE1_FORM_I18N_READINESS_RISK_GATE_FIX_2026-05-26.md`,
+`docs/reviews/CVF_SURFACE1_FORM_I18N_READINESS_RISK_GATE_FIX_COMPLETION_2026-05-26.md`.
+Current HEAD before implementation: `99e0fc6a`. Implementation localizes
+`DynamicForm.tsx` app-builder chrome/preview, adds field chrome in
+`template-i18n.ts`, and aligns `SpecExport.tsx` missing-label/risk detection
+with localized user-value behavior. Verification: focused tests PASS 4 files /
+104 tests; cvf-web `npm run check` PASS. Boundary: local deterministic
+readiness only; hosted/public update and operator external-agent retest remain
+pending.
 
 ## Mandatory Standards
 
