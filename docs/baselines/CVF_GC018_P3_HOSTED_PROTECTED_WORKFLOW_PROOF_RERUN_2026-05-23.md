@@ -55,7 +55,7 @@ not satisfy P3 pass criteria because the proof payload returned HTTP `422` with
 Known passing payload source:
 
 - `scripts/run_phase2b_live_governance_receipt_probe.mjs`
-- `docs/reviews/CVF_PHASE_2B_LIVE_GOVERNANCE_PROOF_COMPLETION_2026-05-21.md`
+- `docs/reviews/archive/CVF_PHASE_2B_LIVE_GOVERNANCE_PROOF_COMPLETION_2026-05-21.md`
 
 ---
 

@@ -215,7 +215,7 @@
     {
       "id": "phase-2b-identity-control-plane-adapters-migration",
       "artifactType": "roadmap",
-      "path": "docs/roadmaps/CVF_PHASE_2B_IDENTITY_CONTROL_PLANE_ADAPTERS_MIGRATION_ROADMAP_2026-05-21.md",
+      "path": "docs/roadmaps/archive/CVF_PHASE_2B_IDENTITY_CONTROL_PLANE_ADAPTERS_MIGRATION_ROADMAP_2026-05-21.md",
       "status": "CLOSED_IDENTITY_CONTROL_PLANE_ADAPTERS_MIGRATION",
       "requestedReviewer": "Codex",
       "expectedResponsePath": "docs/reviews/CVF_PHASE_2B_IDENTITY_CONTROL_PLANE_ADAPTERS_MIGRATION_CODEX_REBUTTAL_2026-05-21.md",
@@ -227,7 +227,7 @@
     {
       "id": "phase-2b-safety-external-policy-risk-fanout-migration",
       "artifactType": "roadmap",
-      "path": "docs/roadmaps/CVF_PHASE_2B_SAFETY_EXTERNAL_POLICY_RISK_FANOUT_MIGRATION_ROADMAP_2026-05-21.md",
+      "path": "docs/roadmaps/archive/CVF_PHASE_2B_SAFETY_EXTERNAL_POLICY_RISK_FANOUT_MIGRATION_ROADMAP_2026-05-21.md",
       "status": "CLOSED_SAFETY_EXTERNAL_POLICY_RISK_FANOUT_MIGRATION",
       "requestedReviewer": "Codex",
       "expectedResponsePath": "docs/reviews/CVF_PHASE_2B_SAFETY_EXTERNAL_POLICY_RISK_FANOUT_MIGRATION_CODEX_REBUTTAL_2026-05-21.md",
@@ -239,7 +239,7 @@
     {
       "id": "phase-2b-memory-tail-adapters-migration",
       "artifactType": "roadmap",
-      "path": "docs/roadmaps/CVF_PHASE_2B_MEMORY_TAIL_ADAPTERS_MIGRATION_ROADMAP_2026-05-21.md",
+      "path": "docs/roadmaps/archive/CVF_PHASE_2B_MEMORY_TAIL_ADAPTERS_MIGRATION_ROADMAP_2026-05-21.md",
       "status": "CLOSED_MEMORY_TAIL_ADAPTERS_MIGRATION",
       "requestedReviewer": "Codex",
       "expectedResponsePath": "docs/reviews/CVF_PHASE_2B_MEMORY_TAIL_ADAPTERS_MIGRATION_CODEX_REBUTTAL_2026-05-21.md",
@@ -251,7 +251,7 @@
     {
       "id": "phase-2b-runtime-coherence-roadmap",
       "artifactType": "roadmap",
-      "path": "docs/roadmaps/CVF_PHASE_2B_RUNTIME_COHERENCE_ROADMAP_2026-05-21.md",
+      "path": "docs/roadmaps/archive/CVF_PHASE_2B_RUNTIME_COHERENCE_ROADMAP_2026-05-21.md",
       "status": "CLOSED_RUNTIME_COHERENCE_INTERNAL_PROOF",
       "requestedReviewer": "Codex",
       "expectedResponsePath": "docs/reviews/CVF_PHASE_2B_RUNTIME_COHERENCE_CODEX_REBUTTAL_2026-05-21.md",
@@ -264,7 +264,7 @@
     {
       "id": "phase-2b-live-governance-proof-roadmap",
       "artifactType": "roadmap",
-      "path": "docs/roadmaps/CVF_PHASE_2B_LIVE_GOVERNANCE_PROOF_ROADMAP_2026-05-21.md",
+      "path": "docs/roadmaps/archive/CVF_PHASE_2B_LIVE_GOVERNANCE_PROOF_ROADMAP_2026-05-21.md",
       "status": "CLOSED_LIVE_GOVERNANCE_PROOF",
       "requestedReviewer": "Codex",
       "expectedResponsePath": "docs/reviews/CVF_PHASE_2B_LIVE_GOVERNANCE_PROOF_CODEX_REBUTTAL_2026-05-21.md",
@@ -277,7 +277,7 @@
     {
       "id": "post-phase-2b-publicization-and-readiness-roadmap",
       "artifactType": "roadmap",
-      "path": "docs/roadmaps/CVF_POST_PHASE_2B_PUBLICIZATION_AND_READINESS_ROADMAP_2026-05-21.md",
+      "path": "docs/roadmaps/archive/CVF_POST_PHASE_2B_PUBLICIZATION_AND_READINESS_ROADMAP_2026-05-21.md",
       "status": "CLOSED_PUBLICIZATION_READINESS_BOUNDED",
       "requestedReviewer": "Codex",
       "expectedResponsePath": "docs/reviews/CVF_POST_PHASE_2B_PUBLICIZATION_AND_READINESS_ROADMAP_CODEX_REBUTTAL_2026-05-21.md",
@@ -290,7 +290,7 @@
     {
       "id": "post-publicization-provider-stability-hardening",
       "artifactType": "roadmap",
-      "path": "docs/roadmaps/CVF_POST_PUBLICIZATION_PROVIDER_STABILITY_HARDENING_ROADMAP_2026-05-21.md",
+      "path": "docs/roadmaps/archive/CVF_POST_PUBLICIZATION_PROVIDER_STABILITY_HARDENING_ROADMAP_2026-05-21.md",
       "status": "CLOSED_PROVIDER_STABILITY_HARDENING_BOUNDED",
       "requestedReviewer": "Codex",
       "completionPath": "docs/reviews/CVF_POST_PUBLICIZATION_PROVIDER_STABILITY_HARDENING_COMPLETION_2026-05-21.md",
@@ -301,7 +301,7 @@
     {
       "id": "matured-kernel-criteria",
       "artifactType": "roadmap",
-      "path": "docs/roadmaps/CVF_MATURED_KERNEL_CRITERIA_ROADMAP_2026-05-21.md",
+      "path": "docs/roadmaps/archive/CVF_MATURED_KERNEL_CRITERIA_ROADMAP_2026-05-21.md",
       "status": "CLOSED_MATURED_KERNEL_CRITERIA_FILED",
       "requestedReviewer": "Codex",
       "completionPath": "docs/reviews/CVF_MATURED_KERNEL_CRITERIA_COMPLETION_2026-05-21.md",
@@ -312,7 +312,7 @@
     {
       "id": "cdh-c-cli-live-proof",
       "artifactType": "work_order",
-      "path": "docs/work_orders/CVF_WO_CDH_C_CLI_LIVE_PROOF_2026-05-21.md",
+      "path": "docs/work_orders/archive/CVF_WO_CDH_C_CLI_LIVE_PROOF_2026-05-21.md",
       "roadmapPath": "docs/roadmaps/CVF_CDH_C_CLI_LIVE_PROOF_ROADMAP_2026-05-21.md",
       "status": "CLOSED_CLI_LIVE_PROOF",
       "requestedReviewer": "Codex",
@@ -327,7 +327,7 @@
     {
       "id": "cdh-h-audit-memory-readout",
       "artifactType": "work_order",
-      "path": "docs/work_orders/CVF_WO_CDH_H_AUDIT_MEMORY_READOUT_2026-05-21.md",
+      "path": "docs/work_orders/archive/CVF_WO_CDH_H_AUDIT_MEMORY_READOUT_2026-05-21.md",
       "roadmapPath": "docs/roadmaps/CVF_CDH_H_AUDIT_MEMORY_READOUT_ROADMAP_2026-05-21.md",
       "status": "CLOSED_AUDIT_MEMORY_READOUT_HARDENED",
       "requestedReviewer": "Codex",
@@ -342,7 +342,7 @@
     {
       "id": "cdh-d-vision-runtime",
       "artifactType": "work_order",
-      "path": "docs/work_orders/CVF_WO_CDH_D_VISION_RUNTIME_2026-05-21.md",
+      "path": "docs/work_orders/archive/CVF_WO_CDH_D_VISION_RUNTIME_2026-05-21.md",
       "roadmapPath": "docs/roadmaps/CVF_CDH_D_VISION_RUNTIME_ROADMAP_2026-05-21.md",
       "status": "CLOSED_BY_ROUTE_WIRING_PROOF",
       "requestedReviewer": "Codex",
@@ -357,7 +357,7 @@
     {
       "id": "cdh-d-vision-route-wiring",
       "artifactType": "work_order",
-      "path": "docs/work_orders/CVF_WO_CDH_D_VISION_ROUTE_WIRING_2026-05-21.md",
+      "path": "docs/work_orders/archive/CVF_WO_CDH_D_VISION_ROUTE_WIRING_2026-05-21.md",
       "status": "CLOSED_VISION_ROUTE_WIRING_PROOF",
       "requestedReviewer": "Codex",
       "expectedCompletionPath": "docs/reviews/CVF_CDH_D_VISION_ROUTE_WIRING_COMPLETION_2026-05-21.md",
@@ -371,7 +371,7 @@
     {
       "id": "hosted-product-readiness-proof",
       "artifactType": "work_order",
-      "path": "docs/work_orders/CVF_WO_HOSTED_PRODUCT_READINESS_PROOF_2026-05-21.md",
+      "path": "docs/work_orders/archive/CVF_WO_HOSTED_PRODUCT_READINESS_PROOF_2026-05-21.md",
       "roadmapPath": "docs/roadmaps/CVF_HOSTED_PRODUCT_READINESS_PROOF_ROADMAP_2026-05-21.md",
       "status": "CLOSED_LOCAL_PRODUCTION_PROOF",
       "requestedReviewer": "Codex",
@@ -386,7 +386,7 @@
     {
       "id": "release-gate-build-timeout-maintenance",
       "artifactType": "work_order",
-      "path": "docs/work_orders/CVF_WO_RELEASE_GATE_BUILD_TIMEOUT_MAINTENANCE_2026-05-21.md",
+      "path": "docs/work_orders/archive/CVF_WO_RELEASE_GATE_BUILD_TIMEOUT_MAINTENANCE_2026-05-21.md",
       "roadmapPath": "docs/roadmaps/CVF_RELEASE_GATE_BUILD_TIMEOUT_MAINTENANCE_ROADMAP_2026-05-21.md",
       "status": "CLOSED_TIMEOUT_MAINTENANCE",
       "requestedReviewer": "Codex",
@@ -401,7 +401,7 @@
     {
       "id": "terminal-hardening-five-option-closure",
       "artifactType": "work_order",
-      "path": "docs/work_orders/CVF_WO_TERMINAL_HARDENING_FIVE_OPTION_CLOSURE_2026-05-21.md",
+      "path": "docs/work_orders/archive/CVF_WO_TERMINAL_HARDENING_FIVE_OPTION_CLOSURE_2026-05-21.md",
       "roadmapPath": "docs/roadmaps/CVF_TERMINAL_HARDENING_FIVE_OPTION_CLOSURE_ROADMAP_2026-05-21.md",
       "status": "CLOSED_TERMINAL_HARDENING_SWEEP_WITH_BOUNDARIES",
       "requestedReviewer": "Codex",

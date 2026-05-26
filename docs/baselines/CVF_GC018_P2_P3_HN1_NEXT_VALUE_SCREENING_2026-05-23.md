@@ -49,8 +49,8 @@ Predecessors:
 - `docs/baselines/CVF_GC018_POST_A2_PUBLIC_READINESS_AND_NEXT_VALUE_SCREENING_2026-05-22.md`
 - `docs/baselines/CVF_GC018_PUBLIC_DEPENDENCY_AUDIT_TRIAGE_2026-05-22.md`
 - `docs/reviews/CVF_A2_COHERENCE_EQUIVALENCE_AUDIT_COMPLETION_2026-05-22.md`
-- `docs/reviews/CVF_POST_PUBLICIZATION_PROVIDER_STABILITY_HARDENING_COMPLETION_2026-05-21.md`
-- `docs/roadmaps/CVF_HOSTED_PRODUCT_READINESS_PROOF_ROADMAP_2026-05-21.md`
+- `docs/reviews/archive/CVF_POST_PUBLICIZATION_PROVIDER_STABILITY_HARDENING_COMPLETION_2026-05-21.md`
+- `docs/roadmaps/archive/CVF_HOSTED_PRODUCT_READINESS_PROOF_ROADMAP_2026-05-21.md`
 - `docs/roadmaps/archive/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md`
 
 Current closed baseline:
@@ -221,7 +221,7 @@ Claim: P2 must use live provider proof if it asserts provider behavior.
 Evidence:
 
 - `AGENTS.md` mandatory live governance proof rule
-- `docs/reviews/CVF_POST_PUBLICIZATION_PROVIDER_STABILITY_HARDENING_COMPLETION_2026-05-21.md`
+- `docs/reviews/archive/CVF_POST_PUBLICIZATION_PROVIDER_STABILITY_HARDENING_COMPLETION_2026-05-21.md`
 
 Verdict: EXISTS.
 
@@ -229,7 +229,7 @@ Claim: P3 is not executable without a hosted target.
 
 Evidence:
 
-- `docs/roadmaps/CVF_HOSTED_PRODUCT_READINESS_PROOF_ROADMAP_2026-05-21.md`
+- `docs/roadmaps/archive/CVF_HOSTED_PRODUCT_READINESS_PROOF_ROADMAP_2026-05-21.md`
 - prior handoff boundary retaining hosted readiness as unproven
 
 Verdict: EXISTS.

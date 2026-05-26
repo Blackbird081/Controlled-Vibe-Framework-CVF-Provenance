@@ -51,7 +51,7 @@ Owner boundary:
 - P2/P3/HN1 GC-018 screening:
   `docs/baselines/CVF_GC018_P2_P3_HN1_NEXT_VALUE_SCREENING_2026-05-23.md`
 - Prior local hosted/product proof roadmap:
-  `docs/roadmaps/CVF_HOSTED_PRODUCT_READINESS_PROOF_ROADMAP_2026-05-21.md`
+  `docs/roadmaps/archive/CVF_HOSTED_PRODUCT_READINESS_PROOF_ROADMAP_2026-05-21.md`
 
 ---
 
@@ -64,7 +64,7 @@ Primary source under review:
 
 Supporting source under review:
 
-- `docs/roadmaps/CVF_HOSTED_PRODUCT_READINESS_PROOF_ROADMAP_2026-05-21.md`
+- `docs/roadmaps/archive/CVF_HOSTED_PRODUCT_READINESS_PROOF_ROADMAP_2026-05-21.md`
 
 ---
 
@@ -138,7 +138,7 @@ Evidence:
 
 - `docs/reviews/CVF_P2_HN1_TRANCHE_CLOSURE_REVIEW_2026-05-23.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `docs/roadmaps/CVF_HOSTED_PRODUCT_READINESS_PROOF_ROADMAP_2026-05-21.md`
+- `docs/roadmaps/archive/CVF_HOSTED_PRODUCT_READINESS_PROOF_ROADMAP_2026-05-21.md`
 
 Verdict:
 

@@ -72,7 +72,7 @@ HN1 source under review:
 
 P3 source under review:
 
-- `docs/roadmaps/CVF_HOSTED_PRODUCT_READINESS_PROOF_ROADMAP_2026-05-21.md`
+- `docs/roadmaps/archive/CVF_HOSTED_PRODUCT_READINESS_PROOF_ROADMAP_2026-05-21.md`
 - no concrete hosted target/workflow/auth addendum supplied in this tranche.
 
 ---

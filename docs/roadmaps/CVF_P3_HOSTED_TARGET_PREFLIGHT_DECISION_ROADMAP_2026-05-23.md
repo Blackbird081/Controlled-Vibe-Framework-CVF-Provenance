@@ -30,7 +30,7 @@ and pass/fail matrix.
 - Active session state:
   `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - Prior local product proof roadmap:
-  `docs/roadmaps/CVF_HOSTED_PRODUCT_READINESS_PROOF_ROADMAP_2026-05-21.md`
+  `docs/roadmaps/archive/CVF_HOSTED_PRODUCT_READINESS_PROOF_ROADMAP_2026-05-21.md`
 
 ---
 

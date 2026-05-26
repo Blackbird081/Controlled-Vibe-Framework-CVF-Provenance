@@ -42,7 +42,7 @@ T4 pre-condition is closed at
 status `CLOSED_T4_PROVIDER_METHOD_COVERAGE`.
 
 Prior audit-memory readout hardening closed at
-`docs/reviews/CVF_CDH_H_AUDIT_MEMORY_READOUT_COMPLETION_2026-05-21.md`.
+`docs/reviews/archive/CVF_CDH_H_AUDIT_MEMORY_READOUT_COMPLETION_2026-05-21.md`.
 
 Active registry authority:
 

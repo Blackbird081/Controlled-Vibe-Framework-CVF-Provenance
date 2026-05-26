@@ -46,7 +46,7 @@ Source under review:
 
 Predecessor evidence:
 
-- `docs/reviews/CVF_POST_PUBLICIZATION_PROVIDER_STABILITY_HARDENING_COMPLETION_2026-05-21.md`
+- `docs/reviews/archive/CVF_POST_PUBLICIZATION_PROVIDER_STABILITY_HARDENING_COMPLETION_2026-05-21.md`
 - `docs/baselines/CVF_GC018_P2_P3_HN1_NEXT_VALUE_SCREENING_2026-05-23.md`
 
 ---
@@ -99,7 +99,7 @@ app, signs in through the real login UI, and executes repeated governed
 
 Runtime coherence anchor:
 
-- completion: `docs/reviews/CVF_PHASE_2B_RUNTIME_COHERENCE_COMPLETION_2026-05-21.md`
+- completion: `docs/reviews/archive/CVF_PHASE_2B_RUNTIME_COHERENCE_COMPLETION_2026-05-21.md`
 - graph schema version: `phase2b-runtime-coherence-graph-1`
 - adapter inventory checksum: `fnv1a32:5d3d2dac`
 

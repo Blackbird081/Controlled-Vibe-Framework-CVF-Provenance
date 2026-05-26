@@ -46,7 +46,7 @@ This work order is authorized by:
 
 - `docs/baselines/CVF_GC018_CANONICAL_CLI_RUNTIME_GATEWAY_2026-05-22.md`
 - `docs/audits/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_GAP_AUDIT_2026-05-22.md`
-- `docs/reviews/CVF_CDH_C_CLI_LIVE_PROOF_COMPLETION_2026-05-21.md`
+- `docs/reviews/archive/CVF_CDH_C_CLI_LIVE_PROOF_COMPLETION_2026-05-21.md`
 - operator request 2026-05-22
 
 ## Agent Roles
@@ -58,7 +58,7 @@ This work order is authorized by:
 ## Required First Reads
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `docs/audits/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_GAP_AUDIT_2026-05-22.md`
-- `docs/reviews/CVF_CDH_C_CLI_LIVE_PROOF_COMPLETION_2026-05-21.md`
+- `docs/reviews/archive/CVF_CDH_C_CLI_LIVE_PROOF_COMPLETION_2026-05-21.md`
 - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/command.registry.ts`
 - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/tests/`
 
@@ -76,7 +76,7 @@ Authority:
 
 - GC-018: `docs/baselines/CVF_GC018_CANONICAL_CLI_RUNTIME_GATEWAY_2026-05-22.md`
 - Audit gap: `docs/audits/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_GAP_AUDIT_2026-05-22.md`
-- Existing CLI live proof: `docs/reviews/CVF_CDH_C_CLI_LIVE_PROOF_COMPLETION_2026-05-21.md`
+- Existing CLI live proof: `docs/reviews/archive/CVF_CDH_C_CLI_LIVE_PROOF_COMPLETION_2026-05-21.md`
 
 ## Scope / Methodology
 Implementation steps:

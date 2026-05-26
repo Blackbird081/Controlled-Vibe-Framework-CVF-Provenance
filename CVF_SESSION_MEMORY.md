@@ -4,9 +4,9 @@ Memory class: POINTER_RECORD
 
 Status: ACTIVE SESSION FRONT DOOR
 
-Last updated: 2026-05-26
+Last updated: 2026-05-27
 
-Current mode marker: `gamma_t1_t5_mcp_memory_bootstrap_closed_pass_bounded`
+Current mode marker: `lhw1_t1_product_skill_pack_workflow_connector_closed_pass_bounded`
 
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -1032,3 +1032,42 @@ connector absorption, prioritizing high-value flows with existing disconnected
 pieces and using the blind-spot control plus MA1 where role transfer is needed.
 Roadmap filed:
 `docs/roadmaps/CVF_LHW1_LEGACY_WORKFLOW_CONNECTOR_ABSORPTION_ROADMAP_2026-05-27.md`.
+
+## Latest Legacy Workflow Connector Tranche
+
+Mode marker: `lhw1_t1_product_skill_pack_workflow_connector_closed_pass_bounded`
+
+Previous mode marker: `gamma_t1_t5_mcp_memory_bootstrap_closed_pass_bounded`
+
+LHW1-T1 Product Skill Pack Workflow Connector is CLOSED_PASS_BOUNDED.
+
+Work order:
+`docs/work_orders/CVF_WO_LHW1_T1_PRODUCT_SKILL_PACK_WORKFLOW_CONNECTOR_2026-05-27.md`
+
+Fast Lane audit decision FAST_LANE_READY:
+`docs/reviews/CVF_LHW1_T1_FAST_LANE_AUDIT_2026-05-27.md`
+
+Connector spec (contract version `cvf.productSkillPackWorkflowConnector.lhw1.t1.v1`,
+sections 1-8, 167 lines):
+`docs/reference/CVF_LHW1_PRODUCT_SKILL_PACK_WORKFLOW_CONNECTOR_SPEC_2026-05-27.md`
+
+Example records (section 9, `product_brief` + `strategy_analysis`, 247 lines,
+split per GC-023):
+`docs/reference/CVF_LHW1_PRODUCT_SKILL_PACK_WORKFLOW_CONNECTOR_EXAMPLES_2026-05-27.md`
+
+Completion review:
+`docs/reviews/CVF_LHW1_T1_PRODUCT_SKILL_PACK_WORKFLOW_CONNECTOR_COMPLETION_2026-05-27.md`
+
+Reviewer perspective PASS: all 9 sections, `canReinject: false` in both
+example records, W1/WR1/MA1/W3/TA1 vocabulary correctly applied, no code file
+modified.
+
+Claim boundary: documentation-only connector spec. No runtime workflow
+enforcement, live provider call, memory reinjection, receipt envelope change,
+code file modification, external skill ingestion, public-sync, hosted
+readiness, production readiness, or freeze release.
+
+Parked operator checkpoint remains VI5-T4/T5: operator will later export a
+fresh hosted web spec and test it with an external agent. T2 (Workflow Chain
+State Connector) requires a fresh Fast Lane audit referencing T1 outcome.
+Active handoff: `AGENT_HANDOFF_V14_2026-05-27.md`.

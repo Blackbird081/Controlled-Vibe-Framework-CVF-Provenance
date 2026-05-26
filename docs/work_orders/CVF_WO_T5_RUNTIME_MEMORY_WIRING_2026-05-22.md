@@ -44,7 +44,7 @@ Pre-condition: T4 must be closed before T5 begins.
 - T4 completion review (must be filed before T5 starts):
   `docs/reviews/CVF_T4_PROVIDER_METHOD_COVERAGE_COMPLETION_2026-05-22.md`
 - CDH-H audit-memory readout (related prior art):
-  `docs/reviews/CVF_CDH_H_AUDIT_MEMORY_READOUT_COMPLETION_2026-05-21.md`
+  `docs/reviews/archive/CVF_CDH_H_AUDIT_MEMORY_READOUT_COMPLETION_2026-05-21.md`
 - Source review (original requirement):
   `.private_reference/legacy/CVF 17.05/Review CVF.md`
 - GC-018 to be filed:
@@ -152,7 +152,7 @@ Checkpoint.
 - `docs/work_orders/CVF_WO_T4_PROVIDER_METHOD_COVERAGE_2026-05-22.md`
 - `docs/reviews/CVF_T4_PROVIDER_METHOD_COVERAGE_COMPLETION_2026-05-22.md`
   (T4 pre-condition check)
-- `docs/reviews/CVF_CDH_H_AUDIT_MEMORY_READOUT_COMPLETION_2026-05-21.md`
+- `docs/reviews/archive/CVF_CDH_H_AUDIT_MEMORY_READOUT_COMPLETION_2026-05-21.md`
   (CDH-H prior art — understand existing audit-memory readout fields)
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/audit/audit-memory-receipt.ts`
   (read current shape — read the exact existing fields before editing)

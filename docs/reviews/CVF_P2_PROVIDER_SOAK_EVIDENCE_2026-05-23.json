@@ -18,7 +18,7 @@
   ],
   "providersFailed": [],
   "runtimeCoherence": {
-    "completion": "docs/reviews/CVF_PHASE_2B_RUNTIME_COHERENCE_COMPLETION_2026-05-21.md",
+    "completion": "docs/reviews/archive/CVF_PHASE_2B_RUNTIME_COHERENCE_COMPLETION_2026-05-21.md",
     "graphSchemaVersion": "phase2b-runtime-coherence-graph-1",
     "adapterInventoryChecksum": "fnv1a32:5d3d2dac"
   },

@@ -29,7 +29,7 @@ Authority chain:
 - GC-018: `docs/baselines/CVF_GC018_CANONICAL_CLI_RUNTIME_GATEWAY_2026-05-22.md`
 - Work order: `docs/work_orders/CVF_WO_CANONICAL_CLI_RUNTIME_GATEWAY_2026-05-22.md`
 - Original audit gap: `docs/audits/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_GAP_AUDIT_2026-05-22.md`
-- Existing CLI live proof boundary: `docs/reviews/CVF_CDH_C_CLI_LIVE_PROOF_COMPLETION_2026-05-21.md`
+- Existing CLI live proof boundary: `docs/reviews/archive/CVF_CDH_C_CLI_LIVE_PROOF_COMPLETION_2026-05-21.md`
 
 ## Scope / Methodology
 Codex executed the bounded tranche as Orchestrator, Reviewer, Implementer, and Auditor:

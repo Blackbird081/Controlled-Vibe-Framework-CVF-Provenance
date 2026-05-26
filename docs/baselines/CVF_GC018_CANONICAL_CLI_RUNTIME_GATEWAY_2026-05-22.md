@@ -38,13 +38,13 @@ Source driver: operator request on 2026-05-22 to make CVF have a unified canonic
 Prior evidence:
 
 - `docs/audits/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_GAP_AUDIT_2026-05-22.md`
-- `docs/reviews/CVF_CDH_C_CLI_LIVE_PROOF_COMPLETION_2026-05-21.md`
+- `docs/reviews/archive/CVF_CDH_C_CLI_LIVE_PROOF_COMPLETION_2026-05-21.md`
 - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/command.registry.ts`
 
 ## Source / Predecessor Evidence
 Predecessor evidence establishes that `cvf execute` already exists and that the remaining gap is a unified canonical `cvf` gateway posture:
 
-- `docs/reviews/CVF_CDH_C_CLI_LIVE_PROOF_COMPLETION_2026-05-21.md`
+- `docs/reviews/archive/CVF_CDH_C_CLI_LIVE_PROOF_COMPLETION_2026-05-21.md`
 - `docs/audits/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_GAP_AUDIT_2026-05-22.md`
 - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/command.registry.ts`
 
