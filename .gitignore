@@ -75,6 +75,9 @@ Xd_App/
 # REVIEW folder (local temporary review workspace)
 REVIEW/
 
+# Local web export samples / operator scratch artifacts
+cvf-spec-*.md
+
 # Local-only hidden recovery space for retired pre-public roots
 .private_reference/
 

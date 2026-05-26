@@ -769,10 +769,25 @@ English Spec reliability premise was not verified for Surface 1; T2 only proves
 Surface 2 English-freeze integrity. The Multi-Role Convergence Form now has
 Section 0 Surface Fidelity Gate.
 
-Next allowed decision: operator chooses whether to open a fresh Surface 1 web
-export i18n coverage roadmap/GC-018, hold for renderer evidence, defer, or
-explicitly return to T2 portable handoff readiness knowing it does not fix the
-current web export blocker. Cross-agent memory Alpha/Beta/Gamma/Delta remains
+Surface 1 web export i18n dispatch packet is filed:
+
+`docs/reviews/CVF_SURFACE1_WEB_EXPORT_RENDERER_TRACE_AND_LEAK_INVENTORY_2026-05-26.md`
+
+`docs/roadmaps/CVF_SURFACE1_WEB_EXPORT_I18N_COVERAGE_ROADMAP_2026-05-26.md`
+
+`docs/baselines/CVF_GC018_SURFACE1_WEB_EXPORT_I18N_COVERAGE_2026-05-26.md`
+
+`docs/work_orders/CVF_WO_SURFACE1_WEB_EXPORT_I18N_COVERAGE_2026-05-26.md`
+
+Current HEAD before Surface 1 i18n authorization commit: `0eaa47a0`.
+
+Next allowed move: implement only Surface 1 `SpecExport.tsx` /
+`template-i18n.ts` coverage for `app_builder_complete`: English template
+metadata, field labels, intent chrome, protocol chrome, and deterministic leak
+tests that preserve user-entered Vietnamese values as source data. Do not touch
+providers, `/api/execute` contracts, receipt envelopes, workflow execution, UI
+shell i18n, all-template migration, public-sync, hosted readiness, production
+readiness, or freeze release. Cross-agent memory Alpha/Beta/Gamma/Delta remains
 separate and pending.
 
 VI5-T3 Codex rebuttal filed:
