@@ -829,6 +829,7 @@ Local setup guide:
 `docs/guides/CVF_GAMMA_MCP_SERVER_LOCAL_SETUP_2026-05-26.md`
 
 Current HEAD before Gamma-T1-T5 implementation commit: `069f1150`.
+Implementation commit: `77741df1`.
 
 Implemented in `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER`: seven additional Gamma
 MCP tools on top of the existing seven guard tools:
@@ -847,8 +848,9 @@ with `toolCount=14`, `auditEntries=5`, and `rawSecretPrinted=false`.
 
 Boundary: local MCP server and local SDK-client stdio proof only. External
 operator UI client auto-start remains operator-tested. No provider/API route
-change, public-sync, hosted readiness, production readiness, Alpha/Beta
-retirement, durable audit storage, remote transport, or freeze release.
+change, public-sync/public product claim before operator client evidence,
+hosted readiness, production readiness, Alpha/Beta retirement, durable audit
+storage, remote transport, or freeze release.
 
 Next allowed move: operator may test Gamma in external MCP-compatible clients.
 Delta remains deferred until Gamma external-client evidence and product
