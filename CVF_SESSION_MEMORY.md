@@ -627,6 +627,30 @@ Next allowed move: pause for operator review of the Surface 1 export, or open a
 fresh GC-018/value-screened tranche. Cross-agent memory Alpha/Beta/Gamma/Delta
 remains a separate pending decision.
 
+## Latest Surface 1 Export Readiness Tranche
+
+Mode marker: `vi5_t4_t5_surface1_export_acceptance_ready`
+
+VI5-T4/T5 roadmap, GC-018, work order, and completion packet filed:
+
+`docs/roadmaps/CVF_VI5_T4_T5_SURFACE1_EXPORT_ACCEPTANCE_AND_PORTABLE_HANDOFF_ROADMAP_2026-05-26.md`
+
+`docs/baselines/CVF_GC018_VI5_T4_T5_SURFACE1_EXPORT_ACCEPTANCE_AND_PORTABLE_HANDOFF_2026-05-26.md`
+
+`docs/work_orders/CVF_WO_VI5_T4_T5_SURFACE1_EXPORT_ACCEPTANCE_AND_PORTABLE_HANDOFF_2026-05-26.md`
+
+`docs/reviews/CVF_VI5_T4_T5_SURFACE1_EXPORT_ACCEPTANCE_AND_PORTABLE_HANDOFF_COMPLETION_2026-05-26.md`
+
+Current HEAD before VI5-T4/T5 implementation commit: `a3dd70bf`.
+
+Implementation adds a bounded `Portable Agent Handoff Readiness` block to
+English Full / Guided `app_builder_complete` Surface 1 export only. Focused
+tests PASS 40/40; cvf-web `npm run check` PASS.
+
+Next allowed move: operator exports a fresh web spec and tests it with an
+external agent. Record operator verdict as `PASS`, `PASS_WITH_MINOR_FIX`, or
+`HOLD`. Do not mark T4 PASS before that real operator acceptance.
+
 VI5-T3 Codex rebuttal filed:
 
 Mode marker: `vi5_t3_portable_handoff_readiness_proposed`

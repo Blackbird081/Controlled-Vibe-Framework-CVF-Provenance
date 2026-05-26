@@ -16,6 +16,7 @@ import {
     getTemplateIntentPattern,
     getTemplateName,
 } from '@/lib/template-i18n';
+import { buildPortableAgentHandoffReadiness } from '@/lib/spec-export-portable-handoff';
 import {
     autoDetectGovernance,
     buildGovernanceSpecBlock,
@@ -768,6 +769,7 @@ export function generateSpec(
             })
         ].join('\n')
         : labels.noRequired;
+    const portableHandoffReadiness = buildPortableAgentHandoffReadiness(template, values, lang, mode);
 
     let spec = `---
 # ${labels.specTitle}
@@ -813,6 +815,8 @@ ${userContext}` : ''}
 
 ${inputCoverage}
 ${missingRequired.length ? `\n\n**${lang === 'vi' ? 'Thiếu input bắt buộc' : 'Missing Required Inputs'}:** ${missingRequired.map((field: { label: string }) => field.label).join(', ')}` : ''}
+
+${portableHandoffReadiness}
 
 ---
 
