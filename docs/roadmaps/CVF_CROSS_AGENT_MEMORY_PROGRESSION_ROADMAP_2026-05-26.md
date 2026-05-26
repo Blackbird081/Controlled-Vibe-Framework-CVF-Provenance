@@ -21,8 +21,8 @@ Authors:
 
 Step 1 Alpha: CLOSED (commit `910043af`).
 Step 2 Beta: CLOSED_PASS_BOUNDED for active operator toolchain.
-Step 3 Gamma: T0 readiness audit CLOSED_PASS_BOUNDED; T1 implementation
-requires fresh GC-018 before code changes.
+Step 3 Gamma: T0 readiness audit CLOSED_PASS_BOUNDED; T1-T5 local MCP
+memory-bootstrap implementation CLOSED_PASS_BOUNDED.
 Step 4 Delta: DEFERRED_DEMAND_GATED pending Gamma evidence + product
 direction decision.
 
@@ -35,9 +35,10 @@ Status update 2026-05-26:
   `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER` builds and passes local tests, and
   should be reused as the Gamma substrate rather than creating a second MCP
   tree.
-- Gamma-T1 remains unopened. It requires a fresh GC-018 and must check current
-  official MCP SDK/tool registration expectations before adding memory
-  bootstrap tools.
+- Gamma-T1-T5 closed local MCP memory-bootstrap implementation. The existing
+  MCP server now exposes seven guard tools plus seven Gamma memory/governance
+  tools. Local SDK-client stdio verification passes. External third-party
+  client auto-start remains operator-tested before any Alpha/Beta retirement.
 
 ## Authorization Or Decision
 
@@ -164,7 +165,8 @@ Beta produces evidence required for Step 3 Gamma:
 
 ### Step 3 Gamma: cvf-mcp-server Build
 
-Gate: Gamma-T0 CLOSED_PASS_BOUNDED. Gamma-T1 cannot dispatch until:
+Gate: Gamma-T1-T5 CLOSED_PASS_BOUNDED for local MCP server and local SDK-client
+verification.
 
 - Beta evidence available (or operator explicitly waives Beta
   prerequisite with reason recorded).
@@ -177,14 +179,20 @@ Sub-tranches:
 - Gamma-T1: MCP server scaffold (TypeScript, dependencies, minimum
   tool registration). After Gamma-T0, default approach is reuse/adapt
   `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER` rather than create a new server tree.
+  CLOSED_PASS_BOUNDED as part of Gamma-T1-T5.
 - Gamma-T2: Core memory tools (`get_session_memory()`,
-  `get_active_handoff()`, `get_session_state()`).
+  `get_active_handoff()`, `get_session_state()`). CLOSED_PASS_BOUNDED as
+  `cvf_get_session_memory`, `cvf_get_active_handoff`, and
+  `cvf_get_session_state`, plus `cvf_get_startup_acknowledgment`.
 - Gamma-T3: Governance tools (`get_rules(topic)`,
-  `check_governance(action)`).
+  `check_governance(action)`). CLOSED_PASS_BOUNDED as
+  `cvf_get_governance_rules` and `cvf_check_governance_action`.
 - Gamma-T4: Local deployment + client setup guides (Claude Code,
-  Codex CLI, Gemini, others per Beta evidence).
+  Codex CLI, Gemini, others per Beta evidence). CLOSED_PASS_BOUNDED for local
+  setup guide and generic stdio MCP config.
 - Gamma-T5: Cross-tool verification (live test from each supported
-  client).
+  client). CLOSED_PASS_BOUNDED for local SDK-client stdio verification;
+  external operator UI client auto-start remains operator-tested.
 
 Estimated effort: multi-tranche project. Each sub-tranche ~weeks of
 work depending on scope decisions made at GC-018 time.
@@ -201,14 +209,17 @@ Acceptance criteria for Gamma (overall):
 - Deprecation plan for Alpha mandatory ack documented (Alpha retired
   only after Gamma proven, not as part of Gamma).
 
-Gamma-T1 entry criteria after T0:
+Gamma-T1-T5 closure evidence:
 
-- Fresh GC-018 referencing
-  `docs/reviews/CVF_GAMMA_T0_MCP_SERVER_READINESS_AUDIT_COMPLETION_2026-05-26.md`.
-- Official MCP SDK/tool registration expectations checked before code changes.
-- Existing seven guard tools preserved.
-- Initial memory-bootstrap tools must be read-only and secret-safe.
-- No external client compatibility claim until Gamma-T5.
+- GC-018:
+  `docs/baselines/CVF_GC018_GAMMA_T1_T5_MCP_MEMORY_BOOTSTRAP_2026-05-26.md`.
+- Completion:
+  `docs/reviews/CVF_GAMMA_T1_T5_MCP_MEMORY_BOOTSTRAP_COMPLETION_2026-05-26.md`.
+- Local setup:
+  `docs/guides/CVF_GAMMA_MCP_SERVER_LOCAL_SETUP_2026-05-26.md`.
+- Verification:
+  `npm run test:run` PASS 17 files / 485 tests, `npm run build` PASS,
+  `npm run verify:gamma` PASS with 14 tools and rawSecretPrinted=false.
 
 Gamma decision point after T5:
 

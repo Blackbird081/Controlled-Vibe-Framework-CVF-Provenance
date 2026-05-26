@@ -12,7 +12,8 @@
     "start": "node dist/index.js",
     "dev": "tsx src/index.ts",
     "test": "vitest",
-    "test:run": "vitest run"
+    "test:run": "vitest run",
+    "verify:gamma": "node scripts/verify-gamma-mcp-memory-tools.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.1",

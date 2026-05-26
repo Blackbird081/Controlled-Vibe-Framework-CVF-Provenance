@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-26
 
-Current mode marker: `alpha_mandatory_startup_acknowledgment_closed`
+Current mode marker: `gamma_t1_t5_mcp_memory_bootstrap_closed_pass_bounded`
 
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -706,9 +706,9 @@ platform claims, or freeze release.
 
 ## Latest Cross-Agent Memory Tranche
 
-Mode marker: `gamma_t0_mcp_server_readiness_audit_closed_pass_bounded`
+Mode marker: `gamma_t1_t5_mcp_memory_bootstrap_closed_pass_bounded`
 
-Previous mode marker: `beta_cross_agent_memory_tool_config_closed_pass_bounded`
+Previous mode marker: `gamma_t0_mcp_server_readiness_audit_closed_pass_bounded`
 
 Alpha Mandatory Startup Acknowledgment roadmap, GC-018, work order, and
 completion packet filed:
@@ -815,6 +815,44 @@ GC-018 referencing Gamma-T0. Gamma-T1 must check current official MCP SDK/tool
 registration expectations before code changes, preserve the seven existing
 guard tools, and add only read-only secret-safe memory-bootstrap tools.
 Delta remains deferred until Gamma evidence and product-direction decision.
+
+Gamma-T1-T5 MCP memory bootstrap is closed PASS bounded:
+
+`docs/baselines/CVF_GC018_GAMMA_T1_T5_MCP_MEMORY_BOOTSTRAP_2026-05-26.md`
+
+`docs/work_orders/CVF_WO_GAMMA_T1_T5_MCP_MEMORY_BOOTSTRAP_2026-05-26.md`
+
+`docs/reviews/CVF_GAMMA_T1_T5_MCP_MEMORY_BOOTSTRAP_COMPLETION_2026-05-26.md`
+
+Local setup guide:
+
+`docs/guides/CVF_GAMMA_MCP_SERVER_LOCAL_SETUP_2026-05-26.md`
+
+Current HEAD before Gamma-T1-T5 implementation commit: `069f1150`.
+
+Implemented in `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER`: seven additional Gamma
+MCP tools on top of the existing seven guard tools:
+
+- `cvf_get_session_memory`
+- `cvf_get_active_handoff`
+- `cvf_get_session_state`
+- `cvf_get_startup_acknowledgment`
+- `cvf_get_governance_rules`
+- `cvf_check_governance_action`
+- `cvf_get_mcp_tool_audit_log`
+
+Verification: focused tests PASS 2 files / 8 tests; full MCP package tests
+PASS 17 files / 485 tests; `npm run build` PASS; `npm run verify:gamma` PASS
+with `toolCount=14`, `auditEntries=5`, and `rawSecretPrinted=false`.
+
+Boundary: local MCP server and local SDK-client stdio proof only. External
+operator UI client auto-start remains operator-tested. No provider/API route
+change, public-sync, hosted readiness, production readiness, Alpha/Beta
+retirement, durable audit storage, remote transport, or freeze release.
+
+Next allowed move: operator may test Gamma in external MCP-compatible clients.
+Delta remains deferred until Gamma external-client evidence and product
+direction justify production hardening.
 
 ## Mandatory Standards
 

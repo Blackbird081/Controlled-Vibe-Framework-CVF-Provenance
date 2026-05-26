@@ -17,6 +17,7 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { z } from 'zod';
+import { getMcpToolAuditSnapshot, withMcpToolAudit } from './audit/mcp-tool-audit.js';
 import {
   createGuardEngine,
   GuardRuntimeEngine,
@@ -25,6 +26,14 @@ import {
   RISK_DESCRIPTIONS,
 } from './guards/index.js';
 import type { CVFPhase, CVFRiskLevel, CVFRole, GuardRequestContext } from './guards/types.js';
+import {
+  buildStartupAcknowledgment,
+  checkGovernanceAction,
+  getActiveHandoff,
+  getGovernanceRules,
+  getSessionMemory,
+  getSessionState,
+} from './startup/startup-state.js';
 
 // ─── Singleton Guard Engine ───────────────────────────────────────────
 
@@ -412,6 +421,117 @@ server.tool(
   }
 );
 
+// ─── Gamma Tool 8: cvf_get_session_memory ─────────────────────────────
+
+server.tool(
+  'cvf_get_session_memory',
+  'Read the active CVF session memory front door (CVF_SESSION_MEMORY.md) with secret redaction for startup bootstrap.',
+  {
+    maxChars: z.number().optional().describe('Maximum redacted characters to return (default: 12000, max: 100000)'),
+  },
+  async (args) => withMcpToolAudit('cvf_get_session_memory', args, async () => {
+    const response = getSessionMemory(args.maxChars);
+    return {
+      content: [{ type: 'text' as const, text: JSON.stringify(response, null, 2) }],
+    };
+  })
+);
+
+// ─── Gamma Tool 9: cvf_get_active_handoff ─────────────────────────────
+
+server.tool(
+  'cvf_get_active_handoff',
+  'Read the active handoff file named by CVF_SESSION/ACTIVE_SESSION_STATE.json with secret redaction.',
+  {
+    maxChars: z.number().optional().describe('Maximum redacted characters to return (default: 12000, max: 100000)'),
+  },
+  async (args) => withMcpToolAudit('cvf_get_active_handoff', args, async () => {
+    const response = getActiveHandoff(args.maxChars);
+    return {
+      content: [{ type: 'text' as const, text: JSON.stringify(response, null, 2) }],
+    };
+  })
+);
+
+// ─── Gamma Tool 10: cvf_get_session_state ─────────────────────────────
+
+server.tool(
+  'cvf_get_session_state',
+  'Read CVF_SESSION/ACTIVE_SESSION_STATE.json with secret redaction for machine-readable startup state.',
+  {
+    maxChars: z.number().optional().describe('Maximum redacted characters to return (default: 12000, max: 100000)'),
+  },
+  async (args) => withMcpToolAudit('cvf_get_session_state', args, async () => {
+    const response = getSessionState(args.maxChars);
+    return {
+      content: [{ type: 'text' as const, text: JSON.stringify(response, null, 2) }],
+    };
+  })
+);
+
+// ─── Gamma Tool 11: cvf_get_startup_acknowledgment ────────────────────
+
+server.tool(
+  'cvf_get_startup_acknowledgment',
+  'Build the mandatory CVF startup acknowledgment from current session state.',
+  {},
+  async (args) => withMcpToolAudit('cvf_get_startup_acknowledgment', args, async () => {
+    const response = buildStartupAcknowledgment();
+    return {
+      content: [{ type: 'text' as const, text: JSON.stringify(response, null, 2) }],
+    };
+  })
+);
+
+// ─── Gamma Tool 12: cvf_get_governance_rules ──────────────────────────
+
+server.tool(
+  'cvf_get_governance_rules',
+  'Read selected CVF governance rule files by topic (startup, live_run, blindspot, public_sync, mcp_gamma, f1_stop_rule).',
+  {
+    topic: z.string().optional().describe('Governance topic to load. Default: startup'),
+    maxChars: z.number().optional().describe('Maximum redacted characters per file (default: 12000, max: 100000)'),
+  },
+  async (args) => withMcpToolAudit('cvf_get_governance_rules', args, async () => {
+    const response = getGovernanceRules(args.topic, args.maxChars);
+    return {
+      content: [{ type: 'text' as const, text: JSON.stringify(response, null, 2) }],
+    };
+  })
+);
+
+// ─── Gamma Tool 13: cvf_check_governance_action ───────────────────────
+
+server.tool(
+  'cvf_check_governance_action',
+  'Classify a planned CVF action and list required governance guards/artifacts before proceeding.',
+  {
+    action: z.string().describe('Planned governed action to classify.'),
+  },
+  async (args) => withMcpToolAudit('cvf_check_governance_action', args, async () => {
+    const response = checkGovernanceAction(args.action);
+    return {
+      content: [{ type: 'text' as const, text: JSON.stringify(response, null, 2) }],
+    };
+  })
+);
+
+// ─── Gamma Tool 14: cvf_get_mcp_tool_audit_log ────────────────────────
+
+server.tool(
+  'cvf_get_mcp_tool_audit_log',
+  'Retrieve the secret-safe in-process audit trail for Gamma MCP memory/governance tool calls.',
+  {
+    limit: z.number().optional().describe('Maximum entries to return (default: 50, max: 200)'),
+  },
+  async (args) => withMcpToolAudit('cvf_get_mcp_tool_audit_log', args, async () => {
+    const response = getMcpToolAuditSnapshot(args.limit);
+    return {
+      content: [{ type: 'text' as const, text: JSON.stringify(response, null, 2) }],
+    };
+  })
+);
+
 // ─── Start Server ─────────────────────────────────────────────────────
 
 async function main() {
@@ -419,6 +539,7 @@ async function main() {
   await server.connect(transport);
   console.error('CVF MCP Server v1.7.0 running on stdio');
   console.error(`Guards loaded: ${engine.getGuardCount()}`);
+  console.error('Gamma startup memory tools loaded: 7');
   console.error(`Session phase: ${engine.getSessionPhase()}`);
 }
 

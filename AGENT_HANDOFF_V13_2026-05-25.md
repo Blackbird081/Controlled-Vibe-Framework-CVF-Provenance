@@ -1003,6 +1003,40 @@ registration expectations before code changes, preserve the seven existing
 guard tools, and add only read-only secret-safe memory-bootstrap tools.
 Delta remains deferred until Gamma evidence and product-direction decision.
 
+Gamma-T1-T5 MCP memory bootstrap is closed PASS bounded:
+
+`docs/baselines/CVF_GC018_GAMMA_T1_T5_MCP_MEMORY_BOOTSTRAP_2026-05-26.md`
+
+`docs/work_orders/CVF_WO_GAMMA_T1_T5_MCP_MEMORY_BOOTSTRAP_2026-05-26.md`
+
+`docs/reviews/CVF_GAMMA_T1_T5_MCP_MEMORY_BOOTSTRAP_COMPLETION_2026-05-26.md`
+
+Local setup guide:
+
+`docs/guides/CVF_GAMMA_MCP_SERVER_LOCAL_SETUP_2026-05-26.md`
+
+Current HEAD before Gamma-T1-T5 implementation commit: `069f1150`.
+
+Implemented in `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER`: seven additional Gamma
+MCP tools on top of the existing seven guard tools:
+
+- `cvf_get_session_memory`
+- `cvf_get_active_handoff`
+- `cvf_get_session_state`
+- `cvf_get_startup_acknowledgment`
+- `cvf_get_governance_rules`
+- `cvf_check_governance_action`
+- `cvf_get_mcp_tool_audit_log`
+
+Verification: focused tests PASS 2 files / 8 tests; full MCP package tests
+PASS 17 files / 485 tests; `npm run build` PASS; `npm run verify:gamma` PASS
+with `toolCount=14`, `auditEntries=5`, and `rawSecretPrinted=false`.
+
+Boundary: local MCP server and local SDK-client stdio proof only. External
+operator UI client auto-start remains operator-tested. No provider/API route
+change, public-sync, hosted readiness, production readiness, Alpha/Beta
+retirement, durable audit storage, remote transport, or freeze release.
+
 ## Next Allowed Move
 
 VI5-T4/T5 remains parked for operator acceptance: operator will later export a
@@ -1010,10 +1044,10 @@ fresh web spec and test it with an external agent. Record the verdict as `PASS`,
 `PASS_WITH_MINOR_FIX`, or `HOLD`; do not mark T4 PASS before that real
 operator/external-agent verdict.
 
-Next allowed move: if the operator wants to continue cross-agent memory, open
-Gamma-T1 memory-bootstrap MCP implementation with fresh GC-018 referencing
-Gamma-T0. Do not claim client auto-load or MCP cross-tool verification before
-Gamma-T5.
+Next allowed move: operator may test Gamma in external MCP-compatible clients.
+Do not retire Alpha/Beta startup acknowledgment until that operator/client
+evidence is recorded. Delta remains deferred until Gamma external-client
+evidence and product direction justify production hardening.
 
 ## WR1 Source Pointers
 
