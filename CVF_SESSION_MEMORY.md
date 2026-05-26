@@ -797,6 +797,8 @@ Gamma-T0 MCP server readiness audit is closed PASS bounded:
 
 Current HEAD before Gamma-T0 implementation commit: `1585a411`.
 
+Gamma-T0 implementation commit: `2e081a5f`.
+
 Gamma-T0 found existing `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER` is present, local
 tests pass 15 files / 477 tests, and `npm run build` passes. Decision: reuse
 and adapt the existing MCP package as the Gamma substrate instead of creating
