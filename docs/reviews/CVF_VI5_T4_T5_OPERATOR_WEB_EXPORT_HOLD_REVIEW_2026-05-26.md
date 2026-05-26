@@ -63,7 +63,7 @@ Method:
 - Classified contradictions that could cause a receiving external agent to
   stop, misunderstand source values, or bypass CVF control intent.
 
-## Evidence Trace
+## Evidence Trace Block
 
 | Claim | Evidence |
 | --- | --- |

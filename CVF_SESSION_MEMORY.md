@@ -657,6 +657,8 @@ Operator hosted export review is currently HOLD:
 
 `docs/reviews/CVF_VI5_T4_T5_OPERATOR_WEB_EXPORT_HOLD_REVIEW_2026-05-26.md`
 
+Operator hosted export HOLD review commit: `b130cc39`.
+
 Operator exported `cvf-spec-app_builder_complete-full new.md` and
 `cvf-spec-app_builder_complete-full new(1).md` from `vibcode.netlify.app`.
 The English export still lacks the T4/T5 `Portable Agent Handoff Readiness`
