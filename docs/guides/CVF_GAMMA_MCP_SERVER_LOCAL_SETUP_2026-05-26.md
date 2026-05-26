@@ -45,6 +45,9 @@ Requirements:
 - The local client config must point to `dist/index.js`, not `src/index.ts`.
 - External client proof remains operator-tested. Local SDK-client verification
   proves the server contract only.
+- If a client provides an official MCP management CLI, use that CLI instead of
+  hand-writing an inferred config file. Client config file names and load paths
+  are tool-specific and may differ from generic MCP examples.
 
 ## Build And Verify
 
@@ -89,6 +92,26 @@ Replace the absolute path with the local workspace path.
   }
 }
 ```
+
+Claude Code local project config should be created through the official Claude
+Code MCP CLI:
+
+```bash
+claude mcp add -s local cvf-gamma-memory -- node "d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF\EXTENSIONS\CVF_ECO_v2.5_MCP_SERVER\dist\index.js"
+claude mcp list
+claude mcp get cvf-gamma-memory
+```
+
+Expected Claude Code health result:
+
+```text
+cvf-gamma-memory ... Connected
+Scope: Local config (private to you in this project)
+```
+
+Do not rely on a hand-written `C:\Users\DELL\.claude\mcp.json` for Claude Code;
+the 2026-05-26 operator test showed Claude Code did not load that file, while
+`claude mcp add -s local ...` produced a connected server.
 
 ## Gamma Tools
 
@@ -153,9 +176,20 @@ accepted only if it can call `cvf_get_startup_acknowledgment` and return the
 same active mode, handoff, next allowed move, and parked checkpoint recorded in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
+Observed external-client evidence:
+
+- 2026-05-26 Claude Code PASS: operator restarted Claude Code after adding
+  `cvf-gamma-memory` with `claude mcp add -s local`; Claude Code successfully
+  called `cvf_get_startup_acknowledgment` and returned
+  `contractVersion=cvf.mcpStartupState.gamma.v1`,
+  `currentMode=gamma_t1_t5_mcp_memory_bootstrap_closed_pass_bounded`,
+  `activeHandoff=AGENT_HANDOFF_V13_2026-05-25.md`, the correct repo root,
+  next allowed move, and parked checkpoint.
+
 ## Claim Boundary
 
-This guide proves only local MCP server setup and local SDK-client verification.
+This guide proves local MCP server setup, local SDK-client verification, and
+one operator-observed Claude Code external-client startup acknowledgment proof.
 It does not prove every third-party MCP client auto-starts the server, hosted
 availability, public release readiness, provider behavior, route behavior,
 production readiness, or freeze release.

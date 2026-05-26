@@ -851,15 +851,30 @@ with `toolCount=14`, `auditEntries=5`, and `rawSecretPrinted=false`.
 Micro-fix verification: `startup-state.test.ts` PASS 7/7, `npm run build`
 PASS, `npm run verify:gamma` PASS.
 
-Boundary: local MCP server and local SDK-client stdio proof only. External
-operator UI client auto-start remains operator-tested. No provider/API route
-change, public-sync/public product claim before operator client evidence,
-hosted readiness, production readiness, Alpha/Beta retirement, durable audit
-storage, remote transport, or freeze release.
+Operator external-client proof: 2026-05-26 Claude Code PASS. Initial
+hand-written `C:\Users\DELL\.claude\mcp.json` was not loaded by Claude Code.
+Using the official Claude Code MCP CLI fixed wiring:
+`claude mcp add -s local cvf-gamma-memory -- node <absolute dist/index.js>`.
+`claude mcp list` then showed `cvf-gamma-memory` connected, and Claude Code
+successfully called `cvf_get_startup_acknowledgment`, returning
+`contractVersion=cvf.mcpStartupState.gamma.v1`, current mode
+`gamma_t1_t5_mcp_memory_bootstrap_closed_pass_bounded`, active handoff
+`AGENT_HANDOFF_V13_2026-05-25.md`, correct repo root, next allowed move, and
+parked checkpoint.
 
-Next allowed move: operator may test Gamma in external MCP-compatible clients.
-Delta remains deferred until Gamma external-client evidence and product
-direction justify production hardening.
+Gamma client-wiring standard: when a client provides an official MCP
+management CLI, use that CLI instead of hand-writing an inferred config file.
+Additional CLI/client tests should be demand-driven, not open-ended soak.
+
+Boundary: local MCP server, local SDK-client stdio proof, and one
+operator-observed Claude Code external-client startup acknowledgment proof. No
+provider/API route change, broad external-client matrix, public-sync/public
+product claim, hosted readiness, production readiness, Alpha/Beta retirement,
+durable audit storage, remote transport, or freeze release.
+
+Next allowed move: no further Gamma CLI soak is required unless the operator
+needs a specific client. Delta remains deferred until product direction
+justifies production hardening.
 
 ## Mandatory Standards
 

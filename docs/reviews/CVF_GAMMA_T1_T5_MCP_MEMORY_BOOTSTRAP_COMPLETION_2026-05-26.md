@@ -32,7 +32,8 @@ Out of scope:
 - remote MCP transport;
 - persistent audit storage;
 - public-sync;
-- external GUI client proof;
+- broad external GUI/client matrix proof beyond the operator-observed Claude
+  Code check;
 - hosted readiness, production readiness, or freeze release.
 
 ## Target / Source
@@ -97,6 +98,22 @@ Evidence Trace Block:
 
 Evidence Trace Block:
 
+- Claim: Gamma MCP startup acknowledgment is callable from the operator's
+  Claude Code external client.
+- Command / action: operator configured Claude Code with
+  `claude mcp add -s local cvf-gamma-memory -- node <absolute dist/index.js>`;
+  then restarted Claude Code and requested `cvf_get_startup_acknowledgment`.
+- Result: PASS. Claude Code returned `contractVersion=cvf.mcpStartupState.gamma.v1`,
+  `currentMode=gamma_t1_t5_mcp_memory_bootstrap_closed_pass_bounded`,
+  `activeHandoff=AGENT_HANDOFF_V13_2026-05-25.md`, the correct repo root,
+  next allowed move, parked checkpoint, and canonical acknowledgment string.
+- Key path: `docs/guides/CVF_GAMMA_MCP_SERVER_LOCAL_SETUP_2026-05-26.md`
+- Verdict: EXISTS.
+- Counter-evidence: this proves Claude Code client wiring only, not every MCP
+  client or hosted/remote MCP transport.
+
+Evidence Trace Block:
+
 - Claim: MCP package builds after Gamma additions.
 - Command: `npm run build`
 - Result: PASS.
@@ -129,7 +146,7 @@ Evidence Trace Block:
   - in-process secret-safe audit;
   - local SDK-client verification.
 - Deferred:
-  - external GUI/client verification;
+  - broad external GUI/client matrix verification beyond Claude Code;
   - durable audit;
   - remote transport;
   - Alpha/Beta retirement.
@@ -162,16 +179,17 @@ classification, and Gamma MCP tool audit log.
 | Existing guard server behavior regresses | Full MCP package tests pass 17 files / 485 tests |
 | Tool registration exists but cannot be called | `verify:gamma` spawns built server through SDK stdio client and calls required tools |
 | Audit overclaimed as durable | Completion states audit is in-process only |
-| External client auto-start overclaimed | Completion leaves external client verification operator-gated |
+| External client auto-start overclaimed | Completion records only one Claude Code external-client PASS and leaves broader client coverage bounded |
+| Hand-written client config path is wrong | Guide now requires official client MCP CLI where available; Claude Code uses `claude mcp add -s local ...` |
 
 ## Decision / Recommendation / Disposition
 
 Disposition: `CLOSED_PASS_BOUNDED`.
 
-Recommendation: operator may now test external MCP-compatible clients using
-`docs/guides/CVF_GAMMA_MCP_SERVER_LOCAL_SETUP_2026-05-26.md`. Do not retire
-Alpha/Beta startup acknowledgment until external client testing proves Gamma is
-reliable in the operator's actual toolchain.
+Recommendation: Claude Code Gamma external-client startup acknowledgment may be
+treated as PASS. Additional CLI/client testing should be demand-driven, not
+open-ended soak. Do not retire Alpha/Beta startup acknowledgment globally until
+the operator explicitly accepts Gamma as sufficient for the active toolchain.
 
 ## Verification
 
@@ -191,6 +209,10 @@ reliable in the operator's actual toolchain.
   `npm run verify:gamma`
   - PASS, `toolCount=14`, required Gamma tools present, `auditEntries=5`,
     `rawSecretPrinted=false`.
+- Operator external-client proof:
+  - Claude Code PASS after official `claude mcp add -s local` wiring;
+    `cvf_get_startup_acknowledgment` returned the expected current mode,
+    active handoff, next allowed move, parked checkpoint, and repo root.
 
 ## Public Catalog
 
@@ -201,8 +223,9 @@ not add a public-facing product capability or public release claim.
 
 ## Claim Boundary
 
-Gamma claims local MCP memory-bootstrap readiness only. It does not claim every
-third-party MCP client auto-starts the server, hosted availability, public
-release readiness, production readiness, provider behavior, route behavior,
-Alpha/Beta retirement, durable audit storage, remote transport, or freeze
-release.
+Gamma claims local MCP memory-bootstrap readiness and one operator-observed
+Claude Code external-client startup acknowledgment proof. It does not claim
+every third-party MCP client auto-starts the server, hosted availability,
+public release readiness, production readiness, provider behavior, route
+behavior, Alpha/Beta retirement, durable audit storage, remote transport, or
+freeze release.
