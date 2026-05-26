@@ -1135,13 +1135,16 @@ Roadmap/GC/work order/MA1 transfer/completion:
 `docs/work_orders/CVF_WO_SURFACE1_FORM_I18N_READINESS_RISK_GATE_FIX_2026-05-26.md`,
 `docs/work_orders/CVF_MA1_TRANSFER_SURFACE1_FORM_I18N_READINESS_RISK_GATE_FIX_2026-05-26.md`,
 `docs/reviews/CVF_SURFACE1_FORM_I18N_READINESS_RISK_GATE_FIX_COMPLETION_2026-05-26.md`.
-Current HEAD before implementation: `99e0fc6a`. Implementation localizes
-`DynamicForm.tsx` app-builder chrome/preview, adds field chrome in
-`template-i18n.ts`, and aligns `SpecExport.tsx` missing-label/risk detection
-with localized user-value behavior. Verification: focused tests PASS 4 files /
-104 tests; cvf-web `npm run check` PASS. Boundary: local deterministic
-readiness only; hosted/public update and operator external-agent retest remain
-pending.
+Current HEAD before implementation: `99e0fc6a`. Private implementation commit:
+`38cb3dbb`. Public-sync repo remote verified as
+`Controlled-Vibe-Framework-CVF.git`; public commit `b08af291` pushed. Fix
+localizes `DynamicForm.tsx` app-builder chrome/preview, adds field chrome in
+`template-i18n.ts`, aligns `SpecExport.tsx` missing-label/risk detection with
+localized user-value behavior, and carries the portable readiness helper.
+Verification: private and public focused tests PASS 4 files / 104 tests; private
+and public cvf-web `npm run check` PASS. Boundary: deterministic source/public
+code readiness only; hosted deployment freshness and operator external-agent
+retest remain pending.
 
 ## Mandatory Standards
 

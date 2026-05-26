@@ -93,7 +93,7 @@ used user values; export now does the same.
 | User values get translated or lost | Tests assert Vietnamese source values remain. |
 | Readiness block disappears again | Existing SpecExport regression retained and re-run. |
 | UI PASS conflicts with packet risk warning | Export risk detection now uses user values, matching UI behavior for the ordinary sample. |
-| Hosted site still stale | Public-sync and hosted redeploy remain separate; operator retest is required after deploy. |
+| Hosted site still stale | Public source is synced; hosted redeploy freshness remains separate, and operator retest is required after deploy. |
 
 ## Decision / Recommendation / Disposition
 
@@ -106,8 +106,8 @@ Disposition:
 - Risk-gate consistency: `COMPLETE_BOUNDED`.
 - Final Surface 1 operator acceptance: `PENDING_OPERATOR_RETEST`.
 
-Recommended next action: sync public-safe code, then operator exports a fresh
-English Full / Guided spec from web and tests it with an external agent.
+Recommended next action: after hosted redeploy, operator exports a fresh English
+Full / Guided spec from web and tests it with an external agent.
 
 ## Verification
 
@@ -125,14 +125,25 @@ npm run check
 
 Result: PASS.
 
+Public-sync verification:
+
+- Remote verified:
+  `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+- Public commit: `b08af291`
+  (`fix(web): localize app builder Surface 1 export gate`)
+- Same focused test command: PASS, 4 files / 104 tests.
+- Same `npm run check`: PASS.
+
 ## Public Catalog Disposition
 
 Public catalog update: N/A for this private commit. This is a bounded web
 Surface 1 defect fix and not a new proven public capability claim. Public-safe
-code may be synchronized so the hosted web surface can be retested.
+code is synchronized in public commit `b08af291` so the hosted web surface can
+be retested after deployment.
 
 ## Claim Boundary
 
-This completion proves deterministic local readiness only. It does not prove
-hosted deploy freshness, external-agent acceptance, provider behavior,
-production readiness, public release readiness, or all-template i18n coverage.
+This completion proves deterministic source/public-code readiness only. It does
+not prove hosted deploy freshness, external-agent acceptance, provider
+behavior, production readiness, public release readiness, or all-template i18n
+coverage.

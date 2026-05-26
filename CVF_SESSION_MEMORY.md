@@ -966,6 +966,8 @@ Surface 1 form i18n/readiness/risk-gate fix is ready for operator retest:
 `docs/reviews/CVF_SURFACE1_FORM_I18N_READINESS_RISK_GATE_FIX_COMPLETION_2026-05-26.md`
 
 Current HEAD before Surface 1 fix implementation commit: `99e0fc6a`.
+Private implementation commit: `38cb3dbb`. Public-sync remote was verified as
+`Controlled-Vibe-Framework-CVF.git`; public code commit `b08af291` was pushed.
 
 Implementation changes:
 
@@ -976,10 +978,10 @@ Implementation changes:
 - `SpecExport.tsx` now localizes missing-required labels and evaluates export
   governance risk from user values rather than control chrome.
 
-Verification: focused Surface 1 tests PASS 4 files / 104 tests; cvf-web
-`npm run check` PASS.
+Verification: private and public focused Surface 1 tests PASS 4 files / 104
+tests; private and public cvf-web `npm run check` PASS.
 
-Boundary: no live provider/API proof required; no hosted deploy proof yet; no
-external-agent PASS claim yet. Operator must retest after public/hosted update
-by exporting a fresh English Full / Guided spec and sending it to an external
-agent.
+Boundary: no live provider/API proof required; public source is pushed, but no
+hosted deployment freshness proof or external-agent PASS claim yet. Operator
+must retest after hosted update by exporting a fresh English Full / Guided spec
+and sending it to an external agent.
