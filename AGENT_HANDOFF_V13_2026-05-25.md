@@ -783,14 +783,22 @@ Current HEAD before Surface 1 i18n authorization commit: `0eaa47a0`.
 
 Surface 1 i18n authorization commit: `aef71e19`.
 
-Next allowed move: implement only Surface 1 `SpecExport.tsx` /
-`template-i18n.ts` coverage for `app_builder_complete`: English template
-metadata, field labels, intent chrome, protocol chrome, and deterministic leak
-tests that preserve user-entered Vietnamese values as source data. Do not touch
-providers, `/api/execute` contracts, receipt envelopes, workflow execution, UI
-shell i18n, all-template migration, public-sync, hosted readiness, production
-readiness, or freeze release. Cross-agent memory Alpha/Beta/Gamma/Delta remains
-separate and pending.
+Surface 1 web export i18n implementation is closed PASS bounded:
+
+`docs/reviews/CVF_SURFACE1_WEB_EXPORT_I18N_COVERAGE_COMPLETION_2026-05-26.md`
+
+Current HEAD before Surface 1 i18n implementation commit: `93a86ea6`.
+
+Implementation changed only `SpecExport.tsx`, `template-i18n.ts`, and focused
+tests. English-mode `app_builder_complete` export now localizes template
+metadata, field labels, intent chrome, and full-mode protocol chrome while
+preserving Vietnamese user source values. Verification: focused tests PASS
+39/39; cvf-web `npm run check` PASS.
+
+Next allowed move: public-safe sync/push from sibling public-sync clone only,
+after verifying its remote is `Controlled-Vibe-Framework-CVF.git`. Do not push
+from provenance. Cross-agent memory Alpha/Beta/Gamma/Delta remains separate and
+pending.
 
 VI5-T3 Codex rebuttal filed:
 
