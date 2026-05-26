@@ -488,6 +488,122 @@ before VI5-T3 implementation begins.
 
 ---
 
+## Part 6.5: Bridge Implementation Pattern
+
+Added 2026-05-26 after operator validated Codex's pre-authorization of
+Alpha mandatory startup acknowledgment.
+
+Operator stated:
+
+> "chọn alpha vì đơn giản, nhưng không phải lâu dài, chúng ta cần xử
+> lý cho hoàn thiện hơn"
+
+This validation distinguishes between:
+
+- **Bridge implementation** (acceptable agent pre-authorization)
+- **Speculative architecture** (forbidden agent pre-authorization)
+
+The distinction matters because agents must know when self-dispatch
+is governance-safe versus governance-violating. Without explicit rule,
+agents either over-restrict (everything needs operator authorization,
+slowing progress) or over-extend (treat any low-risk work as
+authorized, drifting into AP4 anti-pattern).
+
+### Rule BP1: Bridge Implementation Pattern
+
+Agents MAY pre-authorize and ship a bridge implementation without
+prior operator GC-018 if and only if ALL four conditions are met:
+
+| # | Condition | Test |
+|---|---|---|
+| 1 | **Low risk** | No runtime change, no provider/adapter change, no receipt envelope change, no public-sync change, no freeze release. Docs-only or behavioral rule change. |
+| 2 | **Reversible** | Can be undone in single commit. No data migration. No external system dependency added. No public claim made. |
+| 3 | **Honest about limits** | Implementation explicitly states what it does NOT achieve. Does not claim runtime auto-load, universal coverage, hard enforcement, or "complete" status when only "bridge" applies. |
+| 4 | **Clear path forward documented** | A roadmap or assessment document records the long-term progression. Bridge step is explicitly named as "step 1 of N" or equivalent. Future steps gated by operator authorization. |
+
+If any condition fails, agent MUST file fresh GC-018 and wait for
+operator ACCEPT before implementation.
+
+### Why this rule exists
+
+Without Rule BP1, agents face binary choice:
+
+- **Strict reading:** every implementation requires operator GC-018.
+  Slows bridge work that has high value-to-effort ratio. Discourages
+  experimentation with low-risk docs/behavioral changes.
+- **Loose reading:** agents self-dispatch anything "low risk." Drifts
+  into anti-pattern AP4 (architectural commitment before evidence).
+  Operator authority eroded gradually.
+
+Rule BP1 provides middle ground: agent self-dispatch acceptable for
+bridge work meeting all 4 conditions, blocked for everything else.
+
+### Example: Alpha mandatory startup acknowledgment
+
+Reference: commit `910043af` (CLAUDE.md + AGENTS.md additions).
+
+| BP1 Condition | Alpha satisfies? |
+|---|---|
+| 1 Low risk | YES — docs-only change to instruction files |
+| 2 Reversible | YES — single revert restores prior CLAUDE.md/AGENTS.md |
+| 3 Honest about limits | YES — text explicitly says "soft-accountability requirement only. It does not claim runtime auto-load, universal tool support, MCP availability, or hidden cross-agent memory transfer" |
+| 4 Clear path forward | YES — `CVF_CROSS_AGENT_MEMORY_AND_AUTO_LOAD_ASSESSMENT_2026-05-26.md` (committed earlier) documents 4-step progression with Alpha as Step 1 |
+
+All 4 conditions met. Pre-authorization acceptable.
+
+### Counter-example: Speculative architecture commitment
+
+Hypothetical: agent decides to build cvf-mcp-server scaffold without
+operator authorization "because it's clearly needed eventually."
+
+| BP1 Condition | Hypothetical satisfies? |
+|---|---|
+| 1 Low risk | NO — new runtime, server hosting, dependency on availability |
+| 2 Reversible | NO — once deployed, agents start depending on it; rolling back affects integrations |
+| 3 Honest about limits | Possibly — depends on documentation |
+| 4 Clear path forward | Maybe — but path itself is speculation, not evidence-based |
+
+Conditions 1 and 2 fail. Pre-authorization NOT acceptable. Requires
+fresh GC-018.
+
+### Anti-pattern relationships
+
+Rule BP1 complements existing anti-patterns:
+
+- AP4 (architectural commitment before evidence): violated by any
+  pre-authorization that fails BP1 conditions 1, 2, or 4.
+- AP3 (treating operator verdict as data needing interpretation):
+  Rule BP1 does NOT override operator verdict on artifact already
+  reviewed. BP1 applies only to NEW bridge implementations.
+- Rule A4 (CVF process governs HOW; operator governs WHAT): bridge
+  implementations under BP1 are HOW decisions (procedural mechanism).
+  If implementation would change WHAT (product behavior, user-visible
+  output, public claim), BP1 does not apply.
+
+### Operator override
+
+Operator may at any time:
+
+- Add additional conditions to BP1 (e.g., for specific surfaces).
+- Suspend BP1 entirely if pre-authorization pattern produces
+  unintended drift.
+- Retroactively reject a bridge implementation that satisfied BP1
+  but operator no longer wants. Agent must revert and file fresh
+  GC-018 for any replacement.
+
+BP1 is a default permission, not an entitlement.
+
+### Recording bridge implementations
+
+When agent ships under BP1, commit message MUST include phrase
+"bridge implementation per Rule BP1" so operator can identify and
+review later.
+
+Each bridge implementation MUST cite which clear-path-forward
+document (Condition 4) it ships under.
+
+---
+
 ## Part 7: Rules Catalog (Summary For Quick Reference)
 
 | Rule | Statement |
@@ -508,9 +624,14 @@ before VI5-T3 implementation begins.
 | AP3 | Anti-pattern: treating operator verdict as data needing interpretation |
 | AP4 | Anti-pattern: architectural commitment before operator evidence |
 | AP5 | Anti-pattern: convergence loop length as quality signal |
+| BP1 | Bridge implementation pattern (agent pre-authorization acceptable if low risk + reversible + honest about limits + clear path forward documented) |
 
 Cross-reference to Multi-Role Convergence Form Section 0 (Surface
 Fidelity Gate) for enforcement at loop start.
+
+Cross-reference to `CVF_CROSS_AGENT_MEMORY_PROGRESSION_ROADMAP_2026-05-26.md`
+for canonical example of BP1 clear-path-forward documentation (Alpha
+shipped under BP1 referencing this roadmap).
 
 ---
 

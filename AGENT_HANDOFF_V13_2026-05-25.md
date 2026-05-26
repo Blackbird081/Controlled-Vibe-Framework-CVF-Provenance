@@ -72,6 +72,8 @@ Current HEAD before Alpha mandatory startup acknowledgment commit: `34ed43b8`.
 
 Alpha mandatory startup acknowledgment implementation commit: `910043af`.
 
+Current HEAD before cross-agent memory progression roadmap + Rule BP1 commit: `0baf9d60`.
+
 Remote tracking branch:
 
 `origin/main`
