@@ -4,9 +4,9 @@ Memory class: POINTER_RECORD
 
 Status: ACTIVE SESSION FRONT DOOR
 
-Last updated: 2026-05-25
+Last updated: 2026-05-26
 
-Current mode marker: `vi5_t2_spec_english_freeze_closed`
+Current mode marker: `alpha_mandatory_startup_acknowledgment_closed`
 
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Previous handoff archive:
 
 ## Current State
 
-Current mode: `vi5_t2_spec_english_freeze_closed`.
+Current mode: `alpha_mandatory_startup_acknowledgment_closed`.
 
 VI5 Multi-Role Orchestrated Convergence is accepted and VI5-T1 is closed PASS
 bounded:
@@ -703,6 +703,38 @@ Forbidden: `/api/execute/route.ts` behavior changes, provider routing/adapter
 changes, prompt mutation, receipt-envelope changes, workflow transition
 blocking, public-sync, hosted readiness, production readiness, broad workflow
 platform claims, or freeze release.
+
+## Latest Cross-Agent Memory Tranche
+
+Mode marker: `alpha_mandatory_startup_acknowledgment_closed`
+
+Alpha Mandatory Startup Acknowledgment roadmap, GC-018, work order, and
+completion packet filed:
+
+`docs/roadmaps/CVF_ALPHA_MANDATORY_STARTUP_ACKNOWLEDGMENT_ROADMAP_2026-05-26.md`
+
+`docs/baselines/CVF_GC018_ALPHA_MANDATORY_STARTUP_ACKNOWLEDGMENT_2026-05-26.md`
+
+`docs/work_orders/CVF_WO_ALPHA_MANDATORY_STARTUP_ACKNOWLEDGMENT_2026-05-26.md`
+
+`docs/reviews/CVF_ALPHA_MANDATORY_STARTUP_ACKNOWLEDGMENT_COMPLETION_2026-05-26.md`
+
+Current HEAD before Alpha implementation commit: `34ed43b8`.
+
+Alpha adds a mandatory startup acknowledgment section to `AGENTS.md` and
+`CLAUDE.md`. Before material governed work, agents must read
+`CVF_SESSION_MEMORY.md`, resolve `CVF_SESSION/ACTIVE_SESSION_STATE.json`,
+identify the active handoff, and state or record current mode, active handoff,
+next allowed move, and any parked operator checkpoint.
+
+Claim boundary: soft accountability only. No runtime auto-load, universal tool
+support, MCP availability, hidden cross-agent memory transfer, provider change,
+route change, public-sync, hosted readiness, production readiness, or freeze
+release.
+
+Parked operator checkpoint remains VI5-T4/T5: operator will later export a
+fresh web spec and test it with an external agent. Do not mark T4 PASS before
+that real verdict.
 
 ## Mandatory Standards
 

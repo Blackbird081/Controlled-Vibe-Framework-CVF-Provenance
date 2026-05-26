@@ -14,6 +14,23 @@ State or internally confirm the active session mode, active handoff path,
 required first reads, blocked work classes, and next allowed move before
 continuing.
 
+## Mandatory Startup Acknowledgment
+
+Before material governed work in any new or resumed session, state to the
+operator or record in the active handoff/session state one concise startup
+acknowledgment naming current mode, active handoff, next allowed move, and any
+parked operator checkpoint.
+
+Suggested format:
+
+`Startup acknowledged: current mode=<mode>; active handoff=<handoff>; next allowed move=<summary>; parked checkpoint=<none|summary>.`
+
+This is a soft-accountability requirement only. It does not claim runtime
+auto-load, universal tool support, MCP availability, or hidden cross-agent
+memory transfer. Trivial direct answers may keep the confirmation internal, but
+roadmap, implementation, review, live run, commit, handoff, or public-sync work
+must satisfy it first.
+
 ## What This Repository Is
 
 **Controlled Vibe Framework (CVF)** is a governance-first control plane for AI-assisted software development. It is not a code library — it is a governance framework with executable controls, process standards, and multi-layer architecture (L0–L5). The core workflow is: `INTAKE → DESIGN → BUILD → REVIEW → FREEZE`.

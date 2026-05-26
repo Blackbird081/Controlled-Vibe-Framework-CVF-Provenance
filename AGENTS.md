@@ -24,6 +24,30 @@ append new status to archived handoffs; update the active handoff named by
 `CVF_SESSION/ACTIVE_SESSION_STATE.json` or open a later versioned handoff when
 the active handoff approaches the limit.
 
+## Mandatory Startup Acknowledgment - 2026-05-26
+
+Before material governed work in any new or resumed session, the agent must read
+`CVF_SESSION_MEMORY.md`, resolve `CVF_SESSION/ACTIVE_SESSION_STATE.json`, and
+identify the active handoff named by that registry.
+
+The agent must then state to the operator or record in the active handoff/session
+state one concise acknowledgment naming:
+
+- current mode;
+- active handoff;
+- next allowed move;
+- any parked operator checkpoint.
+
+Suggested format:
+
+`Startup acknowledged: current mode=<mode>; active handoff=<handoff>; next allowed move=<summary>; parked checkpoint=<none|summary>.`
+
+This is a soft-accountability requirement, not proof of runtime auto-load,
+universal tool support, MCP availability, or hidden cross-agent memory transfer.
+Trivial direct answers may keep the confirmation internal, but any roadmap,
+implementation, review, live run, commit, handoff, or public-sync work must
+satisfy this acknowledgment first.
+
 ## Mandatory F-1 Diminishing Returns Stop Rule - 2026-05-15
 
 This rule is agent-enforced. Future agents must obey it without waiting for a

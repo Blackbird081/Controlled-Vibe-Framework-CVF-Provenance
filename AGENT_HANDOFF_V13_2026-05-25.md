@@ -68,6 +68,8 @@ Current HEAD before cross-agent memory and auto-load assessment commit: `6ef2280
 
 Current HEAD before Codex surface fidelity response and convergence form gate commit: `dd9649bf`.
 
+Current HEAD before Alpha mandatory startup acknowledgment commit: `34ed43b8`.
+
 Remote tracking branch:
 
 `origin/main`
@@ -117,7 +119,7 @@ Previous long session memory snapshot was archived at:
 
 ## Current Mode
 
-`vi5_t2_spec_english_freeze_closed`
+`alpha_mandatory_startup_acknowledgment_closed`
 
 Freeze posture remains:
 
@@ -888,11 +890,45 @@ changes, prompt mutation, receipt envelope changes, workflow transition
 blocking, public-sync, hosted readiness, production readiness, broad workflow
 platform claims, or freeze release.
 
+## Latest Cross-Agent Memory Tranche
+
+Alpha Mandatory Startup Acknowledgment is closed PASS bounded:
+
+`docs/reviews/CVF_ALPHA_MANDATORY_STARTUP_ACKNOWLEDGMENT_COMPLETION_2026-05-26.md`
+
+Authorization:
+
+`docs/baselines/CVF_GC018_ALPHA_MANDATORY_STARTUP_ACKNOWLEDGMENT_2026-05-26.md`
+
+Work order:
+
+`docs/work_orders/CVF_WO_ALPHA_MANDATORY_STARTUP_ACKNOWLEDGMENT_2026-05-26.md`
+
+Roadmap:
+
+`docs/roadmaps/CVF_ALPHA_MANDATORY_STARTUP_ACKNOWLEDGMENT_ROADMAP_2026-05-26.md`
+
+Delivered docs-only front-door hardening in `AGENTS.md` and `CLAUDE.md`.
+Agents must read `CVF_SESSION_MEMORY.md`, resolve
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`, identify the active handoff, and state
+or record current mode, active handoff, next allowed move, and any parked
+operator checkpoint before material governed work.
+
+Boundary: soft accountability only. Alpha does not prove runtime auto-load,
+universal tool support, MCP availability, hidden cross-agent memory transfer,
+provider behavior, route behavior, public-sync, hosted readiness, production
+readiness, or freeze release.
+
 ## Next Allowed Move
 
-Pause for operator review unless a fresh GC-018/value-screened tranche is
-opened. Do not continue workflow scale horizontally without a concrete
-non-coder outcome reason and new authorization.
+VI5-T4/T5 remains parked for operator acceptance: operator will later export a
+fresh web spec and test it with an external agent. Record the verdict as `PASS`,
+`PASS_WITH_MINOR_FIX`, or `HOLD`; do not mark T4 PASS before that real
+operator/external-agent verdict.
+
+If the operator wants to continue cross-agent memory beyond Alpha, open a fresh
+Beta/Gamma/Delta tranche. Do not claim hard auto-load or MCP behavior from
+Alpha alone.
 
 ## WR1 Source Pointers
 
