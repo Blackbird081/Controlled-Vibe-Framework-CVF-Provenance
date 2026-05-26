@@ -738,6 +738,15 @@ Parked operator checkpoint remains VI5-T4/T5: operator will later export a
 fresh web spec and test it with an external agent. Do not mark T4 PASS before
 that real verdict.
 
+Cross-agent memory progression roadmap filed by Claude at commit `cf414110`:
+
+`docs/roadmaps/CVF_CROSS_AGENT_MEMORY_PROGRESSION_ROADMAP_2026-05-26.md`
+
+Interpretation: Alpha is the closed bridge/prerequisite; the three future steps
+are Beta, Gamma, and Delta. Beta is `WORK_ORDER_READY` but still requires fresh
+operator authorization and GC-018. Gamma remains demand-gated on Beta evidence.
+Delta remains deferred until Gamma evidence and product-direction decision.
+
 ## Mandatory Standards
 
 Live run diagnostics:

@@ -74,6 +74,8 @@ Alpha mandatory startup acknowledgment implementation commit: `910043af`.
 
 Current HEAD before cross-agent memory progression roadmap + Rule BP1 commit: `0baf9d60`.
 
+Cross-agent memory progression roadmap + Rule BP1 commit: `cf414110`.
+
 Remote tracking branch:
 
 `origin/main`
@@ -923,6 +925,15 @@ universal tool support, MCP availability, hidden cross-agent memory transfer,
 provider behavior, route behavior, public-sync, hosted readiness, production
 readiness, or freeze release.
 
+Claude filed the cross-agent memory progression roadmap at commit `cf414110`:
+
+`docs/roadmaps/CVF_CROSS_AGENT_MEMORY_PROGRESSION_ROADMAP_2026-05-26.md`
+
+Interpretation: Alpha is the closed bridge/prerequisite; the three future steps
+are Beta, Gamma, and Delta. Beta is `WORK_ORDER_READY` but still requires fresh
+operator authorization and GC-018. Gamma remains demand-gated on Beta evidence.
+Delta remains deferred until Gamma evidence and product-direction decision.
+
 ## Next Allowed Move
 
 VI5-T4/T5 remains parked for operator acceptance: operator will later export a
@@ -930,9 +941,9 @@ fresh web spec and test it with an external agent. Record the verdict as `PASS`,
 `PASS_WITH_MINOR_FIX`, or `HOLD`; do not mark T4 PASS before that real
 operator/external-agent verdict.
 
-If the operator wants to continue cross-agent memory beyond Alpha, open a fresh
-Beta/Gamma/Delta tranche. Do not claim hard auto-load or MCP behavior from
-Alpha alone.
+If the operator wants to continue cross-agent memory beyond Alpha, the next
+allowed implementation is Beta only, after fresh operator authorization and
+GC-018. Do not claim hard auto-load or MCP behavior from Alpha/Beta alone.
 
 ## WR1 Source Pointers
 

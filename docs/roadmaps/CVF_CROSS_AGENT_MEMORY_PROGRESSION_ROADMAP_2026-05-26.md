@@ -43,15 +43,16 @@ Decision basis:
 - Operator authorization required per step. No agent self-dispatches
   beyond bridge step (Alpha).
 
-This roadmap establishes the sequence. Each step's implementation
+This roadmap establishes the sequence. Each future step's implementation
 requires its own GC-018 with operator ACCEPT after this roadmap.
 
 ## Purpose
 
-Establish a sequential 3-step progression from the Alpha bridge step
-toward complete cross-agent memory infrastructure. Each step is bounded,
-evidence-gated, and reversible. Operator authorization required per
-step. No bundling permitted.
+Establish a sequential progression from the closed Alpha bridge step
+toward complete cross-agent memory infrastructure. Alpha is the already
+shipped bridge/prerequisite; the three future steps are Beta, Gamma, and
+Delta. Each future step is bounded, evidence-gated, and reversible.
+Operator authorization required per step. No bundling permitted.
 
 ## Why This Tranche
 
