@@ -76,6 +76,17 @@ All 5 spec sections present and verified:
 `canReinject: false` preserved throughout. No TypeScript, JavaScript, or
 Python file modified.
 
+## Source Verification Table
+
+Added after work-order correction to prevent guessed runtime field names.
+
+| Claimed field | Source file | Verified field path | Owning interface/function | Disposition |
+|---|---|---|---|---|
+| VI2 missing context gaps | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-request-context-readout.ts` | `RouteRequestContextReadout.missingSignals` | `RouteRequestContextReadout` | ACCEPT |
+| VI3 capture-record role | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/audit-memory-receipt.ts` | `AgentMemoryCaptureRecord.policyContext.actorRole` | `AgentMemoryCaptureRecord` | ACCEPT |
+| Original guessed field | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-request-context-readout.ts` | `requestContextReadout.missingSectors` | N/A | REJECT — not present in current source |
+| Original guessed field | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/audit-memory-receipt.ts` | `captureRecord.sessionRole` | N/A | REJECT as capture-record field; route input `RouteAuditMemoryContext.sessionRole` is not the capture-record field |
+
 ## Risk / Corrective Action
 
 | Risk | Corrective action |

@@ -12,6 +12,8 @@ Current HEAD before LHW1-T3 field/state correction commit: `a858d32e`.
 
 Current HEAD after LHW1-T3 field/state correction commit (parent of handoff sync): `166925e9`.
 
+Current HEAD before LHW1-T3 work-order correction commit: `fe5bfbf9`.
+
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=gamma_t1_t5_mcp_memory_bootstrap_closed_pass_bounded; active handoff=AGENT_HANDOFF_V14_2026-05-27.md; next allowed move=close bounded Surface 1 priority-template English export scale, then return to legacy/workflow absorption for high-value connector gaps; parked checkpoint=hosted Netlify freshness and operator external-agent retest for VI5-T4/T5 remain pending.
@@ -183,6 +185,13 @@ Reviewer verdict: PASS.
 
 LHW1 roadmap CLOSED_PASS_BOUNDED: T1 + T2 + T3 all delivered.
 `docs/roadmaps/CVF_LHW1_LEGACY_WORKFLOW_CONNECTOR_ABSORPTION_ROADMAP_2026-05-27.md`
+
+Work-order correction: `docs/work_orders/CVF_WO_LHW1_T3_CONTEXT_PROFILE_CONNECTOR_2026-05-27.md`
+now has a mandatory Runtime Field Source Verification gate. Any future connector
+work order that maps runtime/source fields must include a Source Verification
+Table and must return to Orchestrator if a field is guessed, inferred, absent,
+or left as "confirm later". T3 completion review was retrofitted with the
+verification table.
 
 ## Mandatory Standards
 

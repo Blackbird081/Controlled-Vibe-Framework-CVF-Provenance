@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: CLOSED_PASS_BOUNDED
+Status: CLOSED_PASS_BOUNDED_CORRECTED
 
 docType: work_order
 
@@ -18,6 +18,40 @@ and relevance rules drawn from the caveman/GoClaw legacy sources.
 
 This work order authorizes a documentation-only tranche. No source code,
 runtime module, route, or provider behavior is changed.
+
+## Correction Addendum — Runtime Field Source Verification
+
+This work order was corrected after closure because the original instructions
+allowed the worker to write uncertain runtime field names with
+"confirm-against-source" notes. That was too loose. A connector spec that maps
+runtime fields must not pass with guessed or uncertain field paths.
+
+Binding correction:
+
+- Any field copied from a runtime source file must be verified against the
+  actual source file before the spec can close.
+- The worker must include a Source Verification Table in the spec or completion
+  packet with: `Claimed field`, `Source file`, `Verified field path`,
+  `Owning interface/function`, and `Disposition`.
+- If a field cannot be verified, the field must be marked `BLOCKED_SOURCE_NOT_FOUND`
+  and the work order must return to Orchestrator. Do not invent names, do not
+  use placeholder names, and do not close with "confirm later" language.
+- Reviewers must fail the work order if any runtime field mapping lacks source
+  verification.
+
+Corrected source-verified T3 field mappings:
+
+| Claimed connector need | Source file | Verified field path | Disposition |
+|---|---|---|---|
+| VI2 missing context gaps | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-request-context-readout.ts` | `RouteRequestContextReadout.missingSignals` | ACCEPT |
+| VI3 capture-record role | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/audit-memory-receipt.ts` | `AgentMemoryCaptureRecord.policyContext.actorRole` | ACCEPT |
+
+Rejected original guesses:
+
+- `requestContextReadout.missingSectors` — REJECT, not present in current source.
+- `captureRecord.sessionRole` — REJECT as capture-record field; a
+  `RouteAuditMemoryContext.sessionRole` input exists, but it is not
+  `auditMemoryReceipt.captureRecord.sessionRole`.
 
 ## Authority Chain
 
@@ -70,9 +104,15 @@ After confirming all three gates:
 5. `docs/reviews/CVF_VI2_ROUTE_REQUEST_CONTEXT_PROFILE_READOUT_COMPLETION_2026-05-25.md`
    — understand the `cvf.routeRequestContextProfile.vi2.v1` readout
    field names. T3 must reuse these names; do not invent new ones.
+   If the completion review does not expose exact field paths, read
+   `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-request-context-readout.ts`
+   before writing any field name.
 6. `docs/reviews/CVF_VI3_AGENTMEMORY_CAPTURE_RECORD_READOUT_COMPLETION_2026-05-25.md`
    — understand the `cvf.agentMemoryCaptureRecord.vi3.v1` fields,
    especially `canReinject=false` and `rawMemoryReleased=false` bindings.
+   If the completion review does not expose exact field paths, read
+   `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/audit-memory-receipt.ts`
+   before writing any field name.
 7. `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
    — sections: `caveman` (DEFER_DEMAND_GATED) and `Workflow GoClaw`
    (PARTIALLY_ABSORBED). Read the remaining trigger text for both.
@@ -131,17 +171,33 @@ The spec must contain all of the following sections:
 A table mapping non-coder input fields to their workflow packet destination.
 Columns: `Input field` | `Source surface` | `Workflow packet field` | `Compaction rule`.
 
+This section has a hard source-verification gate. Before writing or closing
+the mapping table, create a Source Verification Table with:
+
+`Claimed field` | `Source file` | `Verified field path` | `Owning interface/function` | `Disposition`.
+
+Allowed dispositions:
+
+- `ACCEPT` — exact field exists in the cited source file.
+- `REJECT` — field does not exist; do not use it in the connector.
+- `BLOCKED_SOURCE_NOT_FOUND` — source could not be verified; stop and return
+  to Orchestrator.
+
+The mapping table must use only `ACCEPT` fields. It must not use field names
+that are inferred from prose, copied from memory, or left for later
+confirmation.
+
 Minimum rows to cover:
 
 - User goal / outcome request → intake context → `workflowSpec.phases[intake].inputs`
 - Skill pack selected → C8 readout → `packId` in T1 connector record
 - Readiness signals (from VI2 `requestContextReadout`) → route readout → intake phase context profile
-- Missing signals (from VI2 `missingSectors` if present) → intake → `workflowSpec.phases[intake].successCriteria` gap note
-- Session role (from VI3 `captureRecord.sessionRole`) → audit capture → T2 phase-role assignment field
+- Missing signals (from VI2 `requestContextReadout.missingSignals`) → intake → `workflowSpec.phases[intake].successCriteria` gap note
+- Policy actor role (from VI3 `captureRecord.policyContext.actorRole`) → audit capture → T2 phase-role assignment field
 
-Use VI2 field names verbatim. If a VI2 field name is uncertain,
-state "confirm field name against `route-request-context-readout.ts`"
-rather than inventing a name.
+Use VI2/VI3 field names only after source verification. If any field name is
+uncertain, stop and return to Orchestrator; do not write a guessed name with a
+future confirmation note.
 
 ### Section 3 — Compaction and relevance rules
 
@@ -229,15 +285,18 @@ roadmap to `CLOSED_PASS_BOUNDED`.
 - [ ] Gate 2: T2 `CLOSED_PASS` confirmed
 - [ ] Gate 3: named context gap present in T2 completion note
 - [ ] working tree clean; all required first reads done
-- [ ] VI2 field names confirmed from VI2 completion review
+- [ ] VI2 field names confirmed from actual source or source-backed completion review
+- [ ] VI3 field names confirmed from actual source or source-backed completion review
+- [ ] Source Verification Table prepared before writing field mapping
 
 ## Agent Roles
 
 Implementer confirms all 3 gates, writes spec, updates session continuity.
-Reviewer checks gap is addressed, VI2/VI3 field names correct, compaction
-rules sourced from caveman/GoClaw, `canReinject: false` preserved, no `.ts`
-file touched. Auditor confirms gates documented, demand-gated items remain
-gated, no new runtime claim, roadmap closed. No self-review.
+Reviewer checks gap is addressed, VI2/VI3 field names are source-verified,
+compaction rules sourced from caveman/GoClaw, `canReinject: false` preserved,
+no `.ts` file touched. Auditor confirms gates documented, the Source
+Verification Table exists, demand-gated items remain gated, no new runtime
+claim, roadmap closed. No self-review.
 
 ## Write Ownership
 
@@ -264,13 +323,16 @@ Spec size guard: < 200 lines. Trim Section 4 prose if approaching 180 lines.
 ## Review Gate
 
 Before committing: Reviewer perspective completed; all 3 gate conditions
-documented; `canReinject: false` confirmed; demand-gated items listed;
+documented; Source Verification Table present with no `BLOCKED_SOURCE_NOT_FOUND`
+runtime fields; `canReinject: false` confirmed; demand-gated items listed;
 no code file in diff.
 
 ## Closure Checklist
 
 - [ ] All 3 gate conditions confirmed and documented
 - [ ] Named context gap addressed in spec (or deferral documented)
+- [ ] Source Verification Table present for every runtime field mapping
+- [ ] No guessed, inferred, or "confirm later" runtime field names remain
 - [ ] Compaction/relevance rules present with legacy source attribution
 - [ ] `canReinject: false` stated explicitly
 - [ ] No code file in diff
@@ -279,9 +341,10 @@ no code file in diff.
 
 ## Evidence Requirements
 
-Spec at target path; all 3 gate conditions documented; context field mapping
-table present; compaction rules sourced from caveman/GoClaw; `canReinject: false`
-explicit; no code file in diff; LHW1 roadmap updated; completion review written.
+Spec at target path; all 3 gate conditions documented; Source Verification
+Table present; context field mapping table uses only verified fields; compaction
+rules sourced from caveman/GoClaw; `canReinject: false` explicit; no code file
+in diff; LHW1 roadmap updated; completion review written.
 If T3 deferred: deferral note present in handoff; roadmap marked
 `CLOSED_PASS_BOUNDED`.
 
@@ -290,6 +353,8 @@ If T3 deferred: deferral note present in handoff; roadmap marked
 - [ ] All 3 gate conditions confirmed and documented
 - [ ] Named context gap addressed in spec (or deferral documented)
 - [ ] Context field mapping table covers minimum 5 rows
+- [ ] Source Verification Table covers every runtime field path
+- [ ] No runtime field mapping is unresolved or guessed
 - [ ] All 5 compaction/relevance rules present with legacy source attribution
 - [ ] Demand-gated items (caveman runtime, GoClaw runtime, LLM scoring) listed
 - [ ] `canReinject: false` stated explicitly
@@ -302,9 +367,9 @@ If T3 deferred: deferral note present in handoff; roadmap marked
 Stop and report to Orchestrator if:
 
 - any gate condition is not met;
-- VI2 field names cannot be confirmed without reading `route-request-context-readout.ts`
-  (in that case: Implementer may read the file to confirm names but must
-  not modify it; record the confirmed field names in the completion note);
+- VI2 or VI3 field names cannot be confirmed from source;
+- a required field does not exist in source and no existing field can satisfy
+  the connector need without semantic drift;
 - writing the connector requires re-opening the caveman runtime demand-gate;
 - spec exceeds 200 lines before Section 4 is complete.
 

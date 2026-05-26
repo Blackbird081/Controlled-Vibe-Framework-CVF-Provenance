@@ -1064,6 +1064,12 @@ fields in the current source.
 LHW1 roadmap CLOSED_PASS_BOUNDED: T1 + T2 + T3 all delivered.
 `docs/roadmaps/CVF_LHW1_LEGACY_WORKFLOW_CONNECTOR_ABSORPTION_ROADMAP_2026-05-27.md`
 
+Work-order correction: `docs/work_orders/CVF_WO_LHW1_T3_CONTEXT_PROFILE_CONNECTOR_2026-05-27.md`
+now requires a Source Verification Table for any runtime/source field mapping.
+Future connector work orders must block guessed fields, inferred names, and
+"confirm later" language. The T3 completion review now includes the verification
+table.
+
 Claim boundary: documentation-only connector spec. No runtime context enforcement,
 VI2 injection, VI3 reinjection, route change, receipt envelope extension,
 public-sync, hosted readiness, production readiness, or freeze release.

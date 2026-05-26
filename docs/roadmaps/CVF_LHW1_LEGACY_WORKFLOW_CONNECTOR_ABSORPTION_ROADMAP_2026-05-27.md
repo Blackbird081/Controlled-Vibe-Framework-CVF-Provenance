@@ -139,6 +139,11 @@ Implementation-level verification, when authorized:
 
 - static unit tests for connector schema or validator if code is added;
 - document lint/consistency checks for examples;
+- Source Verification Table for any runtime/source field used by a connector
+  spec. Required columns: `Claimed field`, `Source file`,
+  `Verified field path`, `Owning interface/function`, and `Disposition`.
+  Any guessed field, unresolved field, or "confirm later" note blocks closure
+  and returns the work order to Orchestrator.
 - live provider proof only if the tranche claims governance behavior through
   `/api/execute` or provider execution.
 
