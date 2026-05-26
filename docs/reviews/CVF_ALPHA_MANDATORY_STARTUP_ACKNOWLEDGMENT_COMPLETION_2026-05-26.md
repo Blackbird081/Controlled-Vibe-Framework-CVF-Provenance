@@ -32,6 +32,7 @@ MCP, hosted, public-sync, or UI behavior is in scope.
 | Docs governance | PASS |
 | Markdown structural completeness | PASS |
 | Active session state | PASS |
+| Public catalog update | N/A - internal front-door accountability rule only |
 
 ## Findings / Position
 
@@ -67,6 +68,10 @@ Next recommended move remains outside Alpha: either resume VI5-T4/T5 after the
 operator returns the external-agent verdict, or open a separate Beta/Gamma/Delta
 cross-agent memory tranche if the operator chooses hard tooling beyond front-door
 accountability.
+
+Public catalog update is not required because Alpha adds no public product
+capability, provider support, user-facing workflow, or externally reviewable
+runtime behavior. It only hardens private/front-door agent startup instructions.
 
 ## Claim Boundary
 

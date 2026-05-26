@@ -70,6 +70,8 @@ Current HEAD before Codex surface fidelity response and convergence form gate co
 
 Current HEAD before Alpha mandatory startup acknowledgment commit: `34ed43b8`.
 
+Alpha mandatory startup acknowledgment implementation commit: `910043af`.
+
 Remote tracking branch:
 
 `origin/main`

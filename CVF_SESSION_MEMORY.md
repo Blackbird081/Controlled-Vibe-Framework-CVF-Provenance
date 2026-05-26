@@ -721,6 +721,8 @@ completion packet filed:
 
 Current HEAD before Alpha implementation commit: `34ed43b8`.
 
+Alpha implementation commit: `910043af`.
+
 Alpha adds a mandatory startup acknowledgment section to `AGENTS.md` and
 `CLAUDE.md`. Before material governed work, agents must read
 `CVF_SESSION_MEMORY.md`, resolve `CVF_SESSION/ACTIVE_SESSION_STATE.json`,
