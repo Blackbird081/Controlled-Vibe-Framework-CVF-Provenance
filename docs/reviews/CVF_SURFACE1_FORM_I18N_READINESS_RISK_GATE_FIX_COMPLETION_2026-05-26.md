@@ -236,6 +236,8 @@ Implementation:
 
 Public-sync:
 
+- Private implementation/transition commit: `76ddedae`
+  (`fix(web): scale English export normalization`).
 - Public repo remote verified as
   `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`.
 - Public commit pushed: `41ba7b5e`

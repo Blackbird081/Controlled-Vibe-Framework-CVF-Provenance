@@ -2,7 +2,7 @@
 
 Status: ACTIVE
 
-Current HEAD before V14 transition commit: `eb7a6f96607590e2cd1183cd81b14e2464a1dd1e`.
+Current HEAD before V14 state-sync commit: `76ddedae7ecaef602b58be689ad776c97104776c`.
 
 ## Startup Acknowledgment
 
@@ -29,6 +29,8 @@ New V14 continuation:
 
 Public-sync status:
 
+- Private implementation/transition commit: `76ddedae`
+  (`fix(web): scale English export normalization`).
 - Public repo verified: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`.
 - Public commit pushed: `41ba7b5e fix(web): scale English export normalization`.
 

@@ -1018,8 +1018,8 @@ i18n.
 
 Priority-template English export scale completed after the operator accepted
 local app-builder proof and deferred Netlify timing. Active handoff moved to
-`AGENT_HANDOFF_V14_2026-05-27.md`; V13 is archived. Public-sync commit
-`41ba7b5e` is pushed. The bounded source change extends English field chrome,
+`AGENT_HANDOFF_V14_2026-05-27.md`; V13 is archived. Private commit `76ddedae`
+and public-sync commit `41ba7b5e` are pushed/recorded. The bounded source change extends English field chrome,
 intent/output-template localization, and English working-value normalization to
 `strategy_analysis`, `marketing_campaign_wizard`, `brand_voice`, and
 `web_build_handoff` in addition to `app_builder_complete`. Verification:
