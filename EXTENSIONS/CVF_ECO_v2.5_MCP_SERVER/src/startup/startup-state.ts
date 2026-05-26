@@ -141,9 +141,17 @@ export function getSessionState(maxChars = 12000, startDir?: string): RedactedFi
 export function getActiveHandoff(maxChars = 12000, startDir?: string): RedactedFileReadout {
   const repo = resolveCvfRepo(startDir);
   const state = readActiveState(repo.repoRoot);
-  const activeHandoff = typeof state.activeHandoff === 'string'
-    ? state.activeHandoff
-    : 'AGENT_HANDOFF_V13_2026-05-25.md';
+  const activeHandoff = stringOrNull(state.activeHandoff);
+  if (!activeHandoff) {
+    return {
+      path: '<unresolved-active-handoff>',
+      exists: false,
+      sha256: null,
+      bytes: 0,
+      truncated: false,
+      content: 'ACTIVE_SESSION_STATE.json does not define a valid activeHandoff. Resolve the state registry before reading a handoff.',
+    };
+  }
   return readRedactedFile(repo.repoRoot, activeHandoff, maxChars);
 }
 

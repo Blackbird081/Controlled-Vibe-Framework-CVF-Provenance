@@ -75,6 +75,22 @@ describe('startup-state', () => {
     expect(getSessionState(1000, repo).content).toContain('demo_mode');
   });
 
+  it('does not fall back to a stale handoff when active state is missing activeHandoff', () => {
+    const repo = createFixtureRepo();
+    writeFileSync(
+      path.join(repo, 'CVF_SESSION', 'ACTIVE_SESSION_STATE.json'),
+      JSON.stringify({
+        currentMode: 'demo_mode',
+        nextAllowedMove: 'Continue.',
+      }),
+    );
+
+    const handoff = getActiveHandoff(1000, repo);
+    expect(handoff.exists).toBe(false);
+    expect(handoff.path).toBe('<unresolved-active-handoff>');
+    expect(handoff.content).toContain('does not define a valid activeHandoff');
+  });
+
   it('returns governance rules by topic', () => {
     const repo = createFixtureRepo();
 
