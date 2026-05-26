@@ -112,6 +112,9 @@ explicitly and records how conflict of interest was controlled.
 6. Operator delivery is the final packet, not the raw internal debate.
 7. No implementation may begin from a convergence packet unless the required
    roadmap, GC-018, and work order gates are satisfied.
+8. Surface identity must be verified before role evaluation begins. If the
+   operator verdict refers to a different artifact than the convergence target,
+   the loop stops and the target must be corrected.
 
 ## Form Structure
 
@@ -127,6 +130,31 @@ docType: review
 Date: <YYYY-MM-DD>
 
 Status: <DRAFT | IN_REVIEW | CONVERGED | HOLD | REJECTED>
+
+## 0. Surface Fidelity Gate
+
+Before any agent role evaluates the artifact, all participants confirm:
+
+- Source code path that generates the artifact under review:
+- Output file path or response field where the artifact appears:
+- Audience the artifact serves:
+  - [ ] Non-coder reading directly
+  - [ ] External agent receiving copy-paste from non-coder
+  - [ ] CVF-aware agent consuming structured response
+  - [ ] Auditor reviewing evidence
+  - [ ] Other:
+- Language layer the artifact belongs to:
+  - [ ] Layer 1 UI Shell (i18n catalog, user toggle)
+  - [ ] Layer 2 Guided Wizard (per-workflow presentation catalog)
+  - [ ] Layer 3 User Chat + Agent Response (matched per request)
+  - [ ] Layer 4 Engine Room (always-English invariant)
+- Generation trigger (user action that creates the artifact):
+- Operator verdict, if any, explicitly references this same artifact:
+  - [ ] Yes — verdict path:
+  - [ ] No — verdict refers to different artifact:
+
+If any field is unknown, convergence pauses until source inspection verifies
+the field. Do not proceed with assumed surface identity.
 
 ## 1. Trigger
 

@@ -572,6 +572,27 @@ unless a fresh GC-018/value-screened tranche is opened.
 
 ## Latest VI5 Review Decision
 
+## Latest Surface Fidelity Correction
+
+Mode marker: `vi5_surface_fidelity_pivot_pending_operator_decision`
+
+Codex response filed:
+
+`docs/reviews/CVF_VI5_SURFACE_FIDELITY_CODEX_RESPONSE_2026-05-26.md`
+
+Decision: previous VI5-T3 convergence targeted Surface 2
+`englishSpecFreeze`, while the operator HOLD artifact is Surface 1 web export
+markdown. Do not dispatch VI5-T3 implementation from the prior convergence.
+Codex's English Spec reliability premise was not verified for Surface 1; T2
+only proves Surface 2 English-freeze integrity. The convergence form now has
+Section 0 Surface Fidelity Gate.
+
+Next operator decision: either pivot to a fresh Surface 1 web export i18n
+coverage roadmap/GC-018, hold for more renderer evidence, defer, or explicitly
+return to T2 portable handoff readiness knowing it does not fix the current web
+export blocker. Cross-agent memory Alpha/Beta/Gamma/Delta remains a separate
+pending decision.
+
 VI5-T3 Codex rebuttal filed:
 
 Mode marker: `vi5_t3_portable_handoff_readiness_proposed`

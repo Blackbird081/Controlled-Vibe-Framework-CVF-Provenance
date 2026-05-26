@@ -66,6 +66,8 @@ Current HEAD before operator-agent authority and surface fidelity rules commit: 
 
 Current HEAD before cross-agent memory and auto-load assessment commit: `6ef22800`.
 
+Current HEAD before Codex surface fidelity response and convergence form gate commit: `dd9649bf`.
+
 Remote tracking branch:
 
 `origin/main`
@@ -754,6 +756,24 @@ import, certified pack publication, hosted readiness, public readiness,
 production readiness, or tool/MCP/browser/database/CLI/spend execution.
 
 ## Next Allowed Move
+
+VI5 Surface Fidelity correction filed:
+
+`docs/reviews/CVF_VI5_SURFACE_FIDELITY_CODEX_RESPONSE_2026-05-26.md`
+
+Disposition: previous VI5-T3 convergence is HOLD_WRONG_TARGET for the
+operator's Real Non-Coder Usage Test blocker. It targeted Surface 2
+`englishSpecFreeze`; operator HOLD referred to Surface 1 web export markdown.
+Do not dispatch VI5-T3 implementation from the prior convergence. Codex's
+English Spec reliability premise was not verified for Surface 1; T2 only proves
+Surface 2 English-freeze integrity. The Multi-Role Convergence Form now has
+Section 0 Surface Fidelity Gate.
+
+Next allowed decision: operator chooses whether to open a fresh Surface 1 web
+export i18n coverage roadmap/GC-018, hold for renderer evidence, defer, or
+explicitly return to T2 portable handoff readiness knowing it does not fix the
+current web export blocker. Cross-agent memory Alpha/Beta/Gamma/Delta remains
+separate and pending.
 
 VI5-T3 Codex rebuttal filed:
 
