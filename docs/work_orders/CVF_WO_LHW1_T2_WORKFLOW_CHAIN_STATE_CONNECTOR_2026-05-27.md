@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: FAST_LANE_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 

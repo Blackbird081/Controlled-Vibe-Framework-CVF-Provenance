@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-27
 
-Current mode marker: `lhw1_t1_product_skill_pack_workflow_connector_closed_pass_bounded`
+Current mode marker: `lhw1_t2_workflow_chain_state_connector_closed_pass_bounded`
 
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -1034,6 +1034,40 @@ Roadmap filed:
 `docs/roadmaps/CVF_LHW1_LEGACY_WORKFLOW_CONNECTOR_ABSORPTION_ROADMAP_2026-05-27.md`.
 
 ## Latest Legacy Workflow Connector Tranche
+
+Mode marker: `lhw1_t2_workflow_chain_state_connector_closed_pass_bounded`
+
+Previous mode marker: `lhw1_t1_product_skill_pack_workflow_connector_closed_pass_bounded`
+
+LHW1-T2 Workflow Chain State Connector is CLOSED_PASS_BOUNDED.
+
+Work order:
+`docs/work_orders/CVF_WO_LHW1_T2_WORKFLOW_CHAIN_STATE_CONNECTOR_2026-05-27.md`
+
+Fast Lane audit decision FAST_LANE_READY:
+`docs/reviews/CVF_LHW1_T2_FAST_LANE_AUDIT_2026-05-27.md`
+
+Connector spec (contract version `cvf.workflowChainStateConnector.lhw1.t2.v1`, sections 1-7):
+`docs/reference/CVF_LHW1_WORKFLOW_CHAIN_STATE_CONNECTOR_SPEC_2026-05-27.md`
+
+Completion review:
+`docs/reviews/CVF_LHW1_T2_WORKFLOW_CHAIN_STATE_CONNECTOR_COMPLETION_2026-05-27.md`
+
+Reviewer perspective PASS: all 7 sections, W1 vocabulary verbatim, MA1 refs correct,
+WR1 transition classes accurate, `canReinject: false` explicit, boundary table honest,
+no code file modified.
+
+T3 gate: YES — concrete context gap: `intake_pending` → `design_ready` requires context
+profile readiness confirmed but neither T1 nor T2 defines which VI2
+`routeRequestContextProfile` fields must be populated. T3 must specify that mapping.
+
+Claim boundary: documentation-only connector spec. No runtime phase enforcement,
+role-gate, MA1 packet validation, receipt envelope extension, code modification,
+public-sync, hosted readiness, production readiness, or freeze release.
+
+---
+
+### LHW1-T1 Record (for reference)
 
 Mode marker: `lhw1_t1_product_skill_pack_workflow_connector_closed_pass_bounded`
 

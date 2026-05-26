@@ -4,6 +4,8 @@ Status: ACTIVE
 
 Current HEAD before LHW1 roadmap commit: `aabf0509535b232cc543a8da6bc77936256ef02a`.
 
+Current HEAD (updated per GC-020): `ba91dc0d9ed52ae8b48ba794433da22853c861dd` (LHW1-T1 commit).
+
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=gamma_t1_t5_mcp_memory_bootstrap_closed_pass_bounded; active handoff=AGENT_HANDOFF_V14_2026-05-27.md; next allowed move=close bounded Surface 1 priority-template English export scale, then return to legacy/workflow absorption for high-value connector gaps; parked checkpoint=hosted Netlify freshness and operator external-agent retest for VI5-T4/T5 remain pending.
@@ -114,6 +116,37 @@ Examples file (247 lines) exceeds 200-line split registration note; recorded in 
 
 T2 (Workflow Chain State Connector) may be dispatched only with a fresh Fast Lane audit
 referencing T1 as its authority source. T3 is deferred.
+
+## LHW1-T2 Closure
+
+LHW1-T2 Workflow Chain State Connector is CLOSED_PASS_BOUNDED.
+
+Mode marker: `lhw1_t2_workflow_chain_state_connector_closed_pass_bounded`
+
+Spec: `docs/reference/CVF_LHW1_WORKFLOW_CHAIN_STATE_CONNECTOR_SPEC_2026-05-27.md`
+
+Completion: `docs/reviews/CVF_LHW1_T2_WORKFLOW_CHAIN_STATE_CONNECTOR_COMPLETION_2026-05-27.md`
+
+Contract version: `cvf.workflowChainStateConnector.lhw1.t2.v1`
+
+Delivered: state connector spec with 7 sections binding W1 five-phase vocabulary
+(intake_pending/design_ready/build_running/review_pending/freeze_ready/completed) to
+role assignments, MA1-compatible transfer packet fields (sections 0–9, R/O/N/A per
+phase), dissent/review handoff requirements (WR1 deferred gate + Auditor challenge),
+WR1 recovery state binding (all four transition classes mapped), evidence receipt
+binding (GovernanceEvidenceReceipt fields only, no new envelope), and runtime boundary
+table (W1/WR1 runtime; all others doc-only). canReinject=false explicit.
+
+Reviewer verdict: PASS. No code file modified.
+
+T3 gate answer: YES — concrete context gap: intake_pending→design_ready requires
+"context profile readiness confirmed" but neither T1 nor T2 defines which VI2
+routeRequestContextProfile fields (specifically missingSectors) must be populated.
+T3 must specify that mapping.
+
+T3 pre-conditions: T1 CLOSED_PASS ✓, T2 CLOSED_PASS ✓, named context gap ✓.
+T3 is authorized to proceed per
+`docs/work_orders/CVF_WO_LHW1_T3_CONTEXT_PROFILE_CONNECTOR_2026-05-27.md`.
 
 ## Mandatory Standards
 
