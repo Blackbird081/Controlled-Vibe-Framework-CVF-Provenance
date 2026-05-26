@@ -993,3 +993,12 @@ commit `b08af291` or equivalent assets. The observed trace-copy ENOENT for
 classified before relying on hosted exports. MA1 remains first-use only and
 needs retrospective after 2-3 more transfers. Current i18n fix covers
 `app_builder_complete` only, not all templates.
+
+Route trace cleanup completed after the Netlify ENOENT report. Private commit
+`5ef669f6` and public-sync commit `5cec6000` remove redundant redirect-only
+route `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/page.tsx`.
+Private and public `npm run check` PASS; private and public `npm run build`
+PASS; the build route list no longer includes `/(dashboard)`. Remaining
+`source-map-support` build warning is unrelated. Operator retest remains gated
+on hosted Netlify deploying public commit `5cec6000` and serving the refreshed
+English `app_builder_complete` form/export.

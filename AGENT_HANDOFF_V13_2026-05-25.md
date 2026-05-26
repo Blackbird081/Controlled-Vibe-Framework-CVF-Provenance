@@ -1151,6 +1151,18 @@ hosted freshness blocker until deploy status/assets are verified; MA1 needs a
 2-3 transfer retrospective before maturity claim; i18n PASS is only for
 `app_builder_complete`, not all templates. Risk note commit: `58b52950`.
 
+Route trace cleanup: private commit `5ef669f6` and public-sync commit
+`5cec6000` remove redundant redirect-only route
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/page.tsx`.
+Private and public `npm run check` PASS; private and public `npm run build`
+PASS. The Next route list no longer includes `/(dashboard)`, so the observed
+`app/(dashboard)/page_client-reference-manifest.js` Netlify trace-copy ENOENT
+should be removed on the next hosted deploy. Remaining `source-map-support`
+warning in build logs is unrelated to this route cleanup. Next action: wait for
+Netlify to deploy public commit `5cec6000`, confirm hosted English
+`app_builder_complete` form body/export freshness, then run operator external
+agent retest.
+
 ## Mandatory Standards
 
 Live run diagnostics:

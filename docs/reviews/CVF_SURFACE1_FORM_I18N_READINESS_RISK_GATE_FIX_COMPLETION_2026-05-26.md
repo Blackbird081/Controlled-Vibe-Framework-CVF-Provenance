@@ -154,6 +154,17 @@ Risk 1 - hosted deployment gate:
 - Required retest precondition: hosted form body in English mode shows English
   `app_builder_complete` chrome before exporting a fresh spec.
 
+Route trace cleanup:
+
+- Root `/` and `/home` already provide the intended entry routes, so the
+  redirect-only route `src/app/(dashboard)/page.tsx` was redundant.
+- Private commit `5ef669f6` and public-sync commit `5cec6000` remove that route
+  so Next no longer needs to trace `app/(dashboard)/page_client-reference-manifest.js`.
+- Verification: private and public `npm run check` PASS; private and public
+  `npm run build` PASS; the build route list no longer includes `/(dashboard)`.
+- Remaining `source-map-support` warning is unrelated to this route cleanup.
+- Operator retest should wait for Netlify to deploy public commit `5cec6000`.
+
 Risk 2 - MA1 first-use evidence:
 
 - MA1 was used successfully as the control packet for this Surface 1 fix, but
