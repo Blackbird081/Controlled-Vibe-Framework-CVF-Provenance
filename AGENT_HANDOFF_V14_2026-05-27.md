@@ -2,7 +2,7 @@
 
 Status: ACTIVE
 
-Current HEAD before V14 state-sync commit: `76ddedae7ecaef602b58be689ad776c97104776c`.
+Current HEAD before LHW1 roadmap commit: `aabf0509535b232cc543a8da6bc77936256ef02a`.
 
 ## Startup Acknowledgment
 
@@ -61,6 +61,10 @@ Netlify deployment freshness remains outside this local closure. Netlify timing 
 Return to legacy knowledge absorption and workflow completion.
 
 Recommended next tranche: `LHW1 Legacy Workflow Connector Absorption`.
+
+Roadmap filed:
+
+`docs/roadmaps/CVF_LHW1_LEGACY_WORKFLOW_CONNECTOR_ABSORPTION_ROADMAP_2026-05-27.md`
 
 Purpose:
 

@@ -1030,3 +1030,5 @@ coverage only; no hosted freshness, external-agent PASS, all-template i18n, or
 semantic translation claim. Next roadmap direction: return to legacy workflow
 connector absorption, prioritizing high-value flows with existing disconnected
 pieces and using the blind-spot control plus MA1 where role transfer is needed.
+Roadmap filed:
+`docs/roadmaps/CVF_LHW1_LEGACY_WORKFLOW_CONNECTOR_ABSORPTION_ROADMAP_2026-05-27.md`.
