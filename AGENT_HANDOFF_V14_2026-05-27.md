@@ -8,6 +8,8 @@ Current HEAD before LHW1-T2 commit: `ba91dc0d9ed52ae8b48ba794433da22853c861dd`.
 
 Current HEAD (updated per GC-020): `838a407f` (LHW1-T3 commit; LHW1 roadmap CLOSED_PASS_BOUNDED).
 
+Current HEAD before LHW1-T3 field/state correction commit: `a858d32e`.
+
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=gamma_t1_t5_mcp_memory_bootstrap_closed_pass_bounded; active handoff=AGENT_HANDOFF_V14_2026-05-27.md; next allowed move=close bounded Surface 1 priority-template English export scale, then return to legacy/workflow absorption for high-value connector gaps; parked checkpoint=hosted Netlify freshness and operator external-agent retest for VI5-T4/T5 remain pending.
@@ -116,8 +118,8 @@ LH1 ledger reopen trigger met; no runtime claim in spec.
 GC-023 split: combined spec+examples is 414 lines (>250 threshold), split into two files.
 Examples file (247 lines) exceeds 200-line split registration note; recorded in completion review.
 
-T2 (Workflow Chain State Connector) may be dispatched only with a fresh Fast Lane audit
-referencing T1 as its authority source. T3 is deferred.
+Historical T1 next step was to dispatch T2 with fresh Fast Lane audit. Superseded:
+T2 and T3 are now CLOSED_PASS_BOUNDED, with T3 field/state correction recorded below.
 
 ## LHW1-T2 Closure
 
@@ -143,7 +145,7 @@ Reviewer verdict: PASS. No code file modified.
 
 T3 gate answer: YES — concrete context gap: intake_pending→design_ready requires
 "context profile readiness confirmed" but neither T1 nor T2 defines which VI2
-routeRequestContextProfile fields (specifically missingSectors) must be populated.
+routeRequestContextProfile fields (specifically `missingSignals`) must be populated.
 T3 must specify that mapping.
 
 T3 pre-conditions: T1 CLOSED_PASS ✓, T2 CLOSED_PASS ✓, named context gap ✓.
@@ -165,13 +167,15 @@ Contract version: `cvf.contextProfileConnector.lhw1.t3.v1`
 Delivered: 5-section context profile connector spec addressing the T2 context
 gap (intake_pending→design_ready required context profile readiness; neither
 T1 nor T2 defined which VI2 fields must be populated). Section 2 maps 5
-field rows (user goal, packId, VI2 readiness/profile, VI2 missingSectors →
-successCriteria gap, VI3 captureRecord.sessionRole → T2 phase-role). Section 3
+field rows (user goal, packId, VI2 readiness/profile, VI2 `missingSignals` →
+successCriteria gap, VI3 `captureRecord.policyContext.actorRole` → T2 phase-role). Section 3
 provides 5 advisory compaction/relevance rules source-attributed to caveman
 (Rules 1-2) and Workflow GoClaw (Rules 3-4) and VI3/M1/M2 (Rule 5). Section 4
 maps fields through all 5 W1 phases. Section 5 closes demand-gated items.
-canReinject=false preserved throughout. VI2/VI3 field names verbatim (uncertain
-names marked † with confirm-against-source note). No code file modified.
+canReinject=false preserved throughout. VI2/VI3 field names are source-verified
+against `route-request-context-readout.ts` and `audit-memory-receipt.ts`. Earlier
+T3 wording naming `missingSectors` and `captureRecord.sessionRole` was corrected
+because those are not the current source fields. No code file modified.
 
 Reviewer verdict: PASS.
 

@@ -77,23 +77,26 @@ into the workflow packet; it does not flow back into the provider prompt.
 ## Section 2 — Context Capture Field Mapping
 
 A mapping of non-coder input fields to their workflow packet destination.
-Use VI2 and VI3 field names verbatim; field names marked with `†` should be
-confirmed against `route-request-context-readout.ts` if uncertain.
+Use VI2 and VI3 field names verified against the current source files:
+`route-request-context-readout.ts` and `audit-memory-receipt.ts`.
 
 | Input field | Source surface | Workflow packet field | Compaction rule |
 |---|---|---|---|
 | User goal / outcome request | Non-coder form input | `workflowSpec.phases[intake].inputs` | Summarize to one sentence if > 500 chars (Rule 2) |
 | Skill pack selected | C8 `/api/execute` readout | `packId` in T1 connector record | Exact value; no truncation |
 | Readiness signals (`requestContextReadout.readiness`, `requestContextReadout.profile`) | VI2 `requestContextReadout` | Intake phase context profile header | Map `readiness` level verbatim; drop sub-signals that have no phase mapping (Rule 1) |
-| Missing signals (`requestContextReadout.missingSectors`†) | VI2 `requestContextReadout` | `workflowSpec.phases[intake].successCriteria` gap note | List each missing sector as a named gap; phase does not advance until resolved or waived (Rule 4) |
-| Session role (`captureRecord.sessionRole`†) | VI3 `auditMemoryReceipt.captureRecord` | T2 Section 2 phase-role assignment (`Primary role` column) | Exact token; do not infer role from other fields |
+| Missing signals (`requestContextReadout.missingSignals`) | VI2 `requestContextReadout` | `workflowSpec.phases[intake].successCriteria` gap note | List each missing signal as a named gap; phase does not advance until resolved or waived (Rule 4) |
+| Policy actor role (`captureRecord.policyContext.actorRole`) | VI3 `auditMemoryReceipt.captureRecord` | T2 Section 2 phase-role assignment (`Primary role` column) | Exact token; do not infer role from other fields |
 
 Notes:
-- `requestContextReadout.missingSectors` — if present, each item is a named
-  sector (e.g. `targetUsers`, `successCriteria`). Confirm field name against
-  `route-request-context-readout.ts`.
-- `captureRecord.sessionRole` — confirm field name against `audit-memory-receipt.ts`.
-  If absent, record as unknown; do not infer.
+- `requestContextReadout.missingSignals` is the current VI2 field. Each item
+  is a named missing context signal (for example
+  `target_user_or_audience` or `constraints_or_success_criteria`).
+- `captureRecord.policyContext.actorRole` is the current VI3 capture-record
+  role field. `RouteAuditMemoryContext.sessionRole` exists as route input
+  context, but it is not a `captureRecord.sessionRole` field.
+- If either field is absent in a future implementation, record the value as
+  unknown and stop for source re-verification; do not infer.
 
 ---
 
@@ -120,8 +123,8 @@ implementer; they do not describe current route behavior.
    workflow packet.
 
 4. **Missing-signal rule** *(Workflow GoClaw, session classification)*: If a
-   required context field is absent (e.g. `missingSectors` is non-empty for a
-   required sector), the intake phase records it as a `successCriteria` gap.
+   required context field is absent (e.g. `missingSignals` is non-empty for a
+   required signal), the intake phase records it as a `successCriteria` gap.
    The phase does not advance to `design_ready` until the gap is resolved or
    explicitly waived by the Orchestrator.
 
@@ -143,7 +146,7 @@ the phase can advance to `design_ready`:
 - Skill pack selection (`packId` non-null)
 - VI2 `requestContextReadout.readiness` level (any value, including LOW;
   LOW triggers a `successCriteria` gap note but does not auto-block)
-- VI2 `missingSectors`: if non-empty, each sector is recorded as a named
+- VI2 `missingSignals`: if non-empty, each signal is recorded as a named
   gap in `workflowSpec.phases[intake].successCriteria`; Orchestrator must
   resolve or waive each gap before `design_ready` entry
 
@@ -164,9 +167,10 @@ the phase can advance to `design_ready`:
 **At `review_pending`:** The Reviewer needs:
 - original user goal (for outcome alignment check)
 - skill pack name/`packId` (to verify output matches selected pack)
-- the initial `missingSectors` list (to verify outstanding gaps were
+- the initial `missingSignals` list (to verify outstanding gaps were
   addressed)
-- VI3 `captureRecord.sessionRole` (for role-gate audit confirmation)
+- VI3 `captureRecord.policyContext.actorRole` (for role-gate audit
+  confirmation)
 
 **At `freeze_ready`:** Context fields archived in the receipt:
 - user goal summary (compacted form)

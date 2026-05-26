@@ -1053,9 +1053,13 @@ Connector spec (contract version `cvf.contextProfileConnector.lhw1.t3.v1`, secti
 Completion review:
 `docs/reviews/CVF_LHW1_T3_CONTEXT_PROFILE_CONNECTOR_COMPLETION_2026-05-27.md`
 
-Reviewer perspective PASS: all 5 sections, VI2/VI3 field names verbatim, compaction rules
-source-attributed (caveman/GoClaw), `canReinject: false` preserved, demand-gated items
-explicit, no code file modified.
+Reviewer perspective PASS after correction: all 5 sections, VI2/VI3 field names
+source-verified (`requestContextReadout.missingSignals` and
+`captureRecord.policyContext.actorRole`), compaction rules source-attributed
+(caveman/GoClaw), `canReinject: false` preserved, demand-gated items explicit,
+no code file modified. Earlier T3 wording that named `missingSectors` and
+`captureRecord.sessionRole` was corrected because those are not capture-record
+fields in the current source.
 
 LHW1 roadmap CLOSED_PASS_BOUNDED: T1 + T2 + T3 all delivered.
 `docs/roadmaps/CVF_LHW1_LEGACY_WORKFLOW_CONNECTOR_ABSORPTION_ROADMAP_2026-05-27.md`

@@ -14,7 +14,7 @@ Date: 2026-05-27
 
 Close LHW1-T3 Context Profile Connector as CLOSED_PASS_BOUNDED and mark the
 LHW1 roadmap CLOSED_PASS_BOUNDED after confirming all five spec sections are
-present, VI2/VI3 field names are verbatim, compaction rules are source-attributed,
+present, VI2/VI3 field names are source-verified, compaction rules are source-attributed,
 `canReinject: false` is preserved throughout, demand-gated items are explicit, and
 no code file was modified.
 
@@ -43,7 +43,7 @@ update, hosted readiness claim, production readiness claim.
 - Fast Lane audit: `docs/reviews/CVF_LHW1_T3_FAST_LANE_AUDIT_2026-05-27.md`
 - T1 gate: CLOSED_PASS_BOUNDED ✓
 - T2 gate: CLOSED_PASS_BOUNDED ✓
-- Named context gap: VI2 `missingSectors` / intake phase entry condition ✓
+- Named context gap: VI2 `missingSignals` / intake phase entry condition ✓
 
 ---
 
@@ -57,9 +57,10 @@ All 5 spec sections present and verified:
   do; `canReinject: false` preserved from VI3/M1/M2 boundaries.
 - Section 2 — Context capture field mapping: 5 rows covering user goal,
   `packId`, VI2 `requestContextReadout.readiness`/`profile`, VI2
-  `missingSectors` → `successCriteria` gap note, VI3
-  `captureRecord.sessionRole` → T2 phase-role. Uncertain field names
-  marked `†` with confirm-against-source note.
+  `missingSignals` → `successCriteria` gap note, VI3
+  `captureRecord.policyContext.actorRole` → T2 phase-role. Field names were
+  verified against `route-request-context-readout.ts` and
+  `audit-memory-receipt.ts`.
 - Section 3 — Compaction and relevance rules: 5 rules, each source-attributed
   to caveman (Rules 1–2: relevance + compaction) or Workflow GoClaw (Rules
   3–4: noise filter + missing-signal) or VI3/M1/M2 (Rule 5: memory
@@ -79,7 +80,7 @@ Python file modified.
 
 | Risk | Corrective action |
 |---|---|
-| VI2/VI3 field names drift if source files are updated | Fields marked `†` must be re-verified against source files before any future runtime implementation |
+| VI2/VI3 field names drift if source files are updated | `missingSignals` and `captureRecord.policyContext.actorRole` must be re-verified against source files before any future runtime implementation |
 | Compaction rules misread as current route behavior | Section 3 explicit advisory note; Section 1 claim boundary restates this |
 | LHW1 roadmap not closed after T3 | Roadmap status updated to CLOSED_PASS_BOUNDED in this commit |
 
