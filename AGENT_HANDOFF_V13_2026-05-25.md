@@ -781,6 +781,8 @@ Surface 1 web export i18n dispatch packet is filed:
 
 Current HEAD before Surface 1 i18n authorization commit: `0eaa47a0`.
 
+Surface 1 i18n authorization commit: `aef71e19`.
+
 Next allowed move: implement only Surface 1 `SpecExport.tsx` /
 `template-i18n.ts` coverage for `app_builder_complete`: English template
 metadata, field labels, intent chrome, protocol chrome, and deterministic leak
