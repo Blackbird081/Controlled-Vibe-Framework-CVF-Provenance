@@ -1055,6 +1055,13 @@ Gamma client-wiring standard: when a client provides an official MCP
 management CLI, use that CLI instead of hand-writing an inferred config file.
 Additional CLI/client tests should be demand-driven, not open-ended soak.
 
+CVF Core product direction: CVF is agent/client neutral. Any capable agent or
+client should be able to call into CVF through the appropriate CVF interface
+such as MCP, CLI, API, or future hosted boundary, and let CVF provide the
+startup state, governance context, evidence requirements, and control boundary
+before the coding agent acts. This is a product architecture direction, not a
+claim that every client has already been integration-tested.
+
 Boundary: local MCP server, local SDK-client stdio proof, and one
 operator-observed Claude Code external-client startup acknowledgment proof. No
 provider/API route change, broad external-client matrix, public-sync/public
@@ -1068,11 +1075,12 @@ fresh web spec and test it with an external agent. Record the verdict as `PASS`,
 `PASS_WITH_MINOR_FIX`, or `HOLD`; do not mark T4 PASS before that real
 operator/external-agent verdict.
 
-Next allowed move: no further Gamma CLI soak is required unless the operator
-needs a specific client. Do not globally retire Alpha/Beta startup
-acknowledgment until the operator explicitly accepts Gamma as sufficient for
-the active toolchain. Delta remains deferred until product direction justifies
-production hardening.
+Next allowed move: accept Gamma as sufficient for the active toolchain and move
+on unless the operator needs a specific client. Do not globally retire
+Alpha/Beta startup acknowledgment until the operator explicitly accepts Gamma
+as sufficient for the active toolchain. Delta is parked as future production
+hardening for durable audit, remote/multi-user transport, official
+installer/matrix, or public MCP release needs.
 
 ## WR1 Source Pointers
 
