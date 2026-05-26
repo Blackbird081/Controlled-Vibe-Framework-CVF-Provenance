@@ -1002,3 +1002,16 @@ PASS; the build route list no longer includes `/(dashboard)`. Remaining
 `source-map-support` build warning is unrelated. Operator retest remains gated
 on hosted Netlify deploying public commit `5cec6000` and serving the refreshed
 English `app_builder_complete` form/export.
+
+English working-value closure completed for the same Surface 1 path. Private
+commit `5b1500f8` and public-sync commit `722daaf1` add bounded
+`app_builder_complete` English working-value normalization for English exports:
+agent-facing User Input, Task, Output Template, and governance auto-detect use
+English working values; known Vietnamese personal-finance sample values are
+normalized; unknown non-English values become an English `TRANSLATION_REQUIRED`
+marker. Local browser proof on `http://127.0.0.1:3106/home`: Spec Gate PASS,
+English Working Brief present, `READY_FOR_EXTERNAL_AGENT_REVIEW` present, and
+no Vietnamese leak terms in the export preview. Verification: private/public
+focused tests PASS 46/46; private/public check/build PASS. Boundary: bounded
+local normalization only, not universal semantic translation or all-template
+i18n.

@@ -1163,6 +1163,23 @@ Netlify to deploy public commit `5cec6000`, confirm hosted English
 `app_builder_complete` form body/export freshness, then run operator external
 agent retest.
 
+English working-value closure: private commit `5b1500f8` and public-sync commit
+`722daaf1` add bounded English working-value normalization for Surface 1
+`app_builder_complete` English exports. `SpecExport.tsx` now feeds English
+working values into User Input, Task, Output Template, and governance
+auto-detect for EN exports; `spec-export-english-working-brief.ts` records
+translation status and maps the operator's personal-finance Vietnamese sample
+to English. Unknown non-English field values are replaced with an English
+`TRANSLATION_REQUIRED` marker instead of leaking Vietnamese into the receiving
+agent packet. Local browser proof on `http://127.0.0.1:3106/home`: Spec Gate
+PASS, English Working Brief present, `READY_FOR_EXTERNAL_AGENT_REVIEW` present,
+personal-finance sample normalized, and no Vietnamese leak terms in preview.
+Verification: private/public focused tests PASS 46/46; private/public
+`npm run check` PASS; private/public `npm run build` PASS with only unrelated
+`source-map-support` warning. Boundary: bounded local normalization for
+`app_builder_complete`; not universal semantic translation and not all-template
+i18n.
+
 ## Mandatory Standards
 
 Live run diagnostics:

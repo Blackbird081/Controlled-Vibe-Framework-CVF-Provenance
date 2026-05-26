@@ -165,6 +165,29 @@ Route trace cleanup:
 - Remaining `source-map-support` warning is unrelated to this route cleanup.
 - Operator retest should wait for Netlify to deploy public commit `5cec6000`.
 
+English working-value closure:
+
+- Private commit `5b1500f8` and public-sync commit `722daaf1` add bounded
+  English working-value normalization for `app_builder_complete` English
+  exports.
+- Agent-facing User Input, Task, Output Template, and governance auto-detect now
+  use English working values rather than raw Vietnamese source values.
+- Known operator sample values such as "App tài chính cá nhân", "Quản lý tài
+  chính cá nhân...", "Người Việt không chuyên kỹ thuật", and the cash-flow
+  feature list normalize into English.
+- Unknown non-English values are replaced with an English
+  `TRANSLATION_REQUIRED` marker instead of leaking multilingual source text into
+  the receiving-agent packet.
+- Local browser proof on `http://127.0.0.1:3106/home`: `Spec Gate: PASS`,
+  `English Working Brief` present, `READY_FOR_EXTERNAL_AGENT_REVIEW` present,
+  personal-finance sample normalized, and no Vietnamese leak terms in the export
+  preview.
+- Verification: private/public focused tests PASS 46/46; private/public
+  `npm run check` PASS; private/public `npm run build` PASS with only the
+  unrelated `source-map-support` warning.
+- Boundary: this is bounded local normalization for `app_builder_complete`, not
+  universal semantic translation and not all-template i18n.
+
 Risk 2 - MA1 first-use evidence:
 
 - MA1 was used successfully as the control packet for this Surface 1 fix, but
