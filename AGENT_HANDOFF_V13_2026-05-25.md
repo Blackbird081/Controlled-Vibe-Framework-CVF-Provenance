@@ -1017,6 +1017,9 @@ Local setup guide:
 
 Current HEAD before Gamma-T1-T5 implementation commit: `069f1150`.
 Implementation commit: `77741df1`.
+Post-closure micro-fix commit: `cfff3679` removes stale V13 fallback when
+`ACTIVE_SESSION_STATE.json` lacks a valid `activeHandoff`; MCP now returns an
+unresolved-handoff diagnostic instead of silently reading an old handoff file.
 
 Implemented in `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER`: seven additional Gamma
 MCP tools on top of the existing seven guard tools:
@@ -1032,6 +1035,8 @@ MCP tools on top of the existing seven guard tools:
 Verification: focused tests PASS 2 files / 8 tests; full MCP package tests
 PASS 17 files / 485 tests; `npm run build` PASS; `npm run verify:gamma` PASS
 with `toolCount=14`, `auditEntries=5`, and `rawSecretPrinted=false`.
+Micro-fix verification: `startup-state.test.ts` PASS 7/7, `npm run build`
+PASS, `npm run verify:gamma` PASS.
 
 Boundary: local MCP server and local SDK-client stdio proof only. External
 operator UI client auto-start remains operator-tested. No provider/API route
