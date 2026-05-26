@@ -131,6 +131,14 @@ Disposition:
 Recommended next action: operator exports the fresh Surface 1 spec from web,
 then tests it with an external agent.
 
+## Public Catalog Disposition
+
+Public catalog update: N/A for this commit because VI5-T4 is not yet an
+accepted public capability. The bounded implementation is ready for operator
+acceptance, but public catalog synchronization should wait until the operator's
+fresh web export plus external-agent review returns `PASS` or an explicitly
+accepted `PASS_WITH_MINOR_FIX`.
+
 ## Claim Boundary
 
 This completion proves deterministic renderer readiness only. It does not prove

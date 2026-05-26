@@ -643,6 +643,8 @@ VI5-T4/T5 roadmap, GC-018, work order, and completion packet filed:
 
 Current HEAD before VI5-T4/T5 implementation commit: `a3dd70bf`.
 
+VI5-T4/T5 implementation commit: `3ae09eb2`.
+
 Implementation adds a bounded `Portable Agent Handoff Readiness` block to
 English Full / Guided `app_builder_complete` Surface 1 export only. Focused
 tests PASS 40/40; cvf-web `npm run check` PASS.
