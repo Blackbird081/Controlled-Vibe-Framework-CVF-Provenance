@@ -974,8 +974,32 @@ readiness, or freeze release.
 Public catalog update N/A: Beta is internal tool startup config coverage only,
 not a public-facing CVF product capability.
 
-Gamma may be considered next only with fresh authorization and GC-018. Delta
-remains deferred until Gamma evidence and product-direction decision.
+Gamma-T0 MCP server readiness audit is closed PASS bounded:
+
+`docs/baselines/CVF_GC018_GAMMA_T0_MCP_SERVER_READINESS_AUDIT_2026-05-26.md`
+
+`docs/work_orders/CVF_WO_GAMMA_T0_MCP_SERVER_READINESS_AUDIT_2026-05-26.md`
+
+`docs/reviews/CVF_GAMMA_T0_MCP_SERVER_READINESS_AUDIT_COMPLETION_2026-05-26.md`
+
+Current HEAD before Gamma-T0 implementation commit: `1585a411`.
+
+Gamma-T0 found existing `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER` is present, local
+tests pass 15 files / 477 tests, and `npm run build` passes. Decision: reuse
+and adapt the existing MCP package as the Gamma substrate instead of creating
+a second MCP tree.
+
+Boundary: existing MCP package is guard-runtime oriented and does not yet expose
+Gamma memory-bootstrap tools. Gamma-T0 does not prove cross-agent memory through
+MCP, client auto-load, external MCP client compatibility, production readiness,
+public readiness, hosted readiness, provider behavior, route behavior, or freeze
+release.
+
+Next allowed move: Gamma-T1 implementation may be considered only with a fresh
+GC-018 referencing Gamma-T0. Gamma-T1 must check current official MCP SDK/tool
+registration expectations before code changes, preserve the seven existing
+guard tools, and add only read-only secret-safe memory-bootstrap tools.
+Delta remains deferred until Gamma evidence and product-direction decision.
 
 ## Next Allowed Move
 
@@ -985,8 +1009,9 @@ fresh web spec and test it with an external agent. Record the verdict as `PASS`,
 operator/external-agent verdict.
 
 Next allowed move: if the operator wants to continue cross-agent memory, open
-Gamma cvf-mcp-server planning with fresh GC-018. Do not implement Gamma from
-Beta alone.
+Gamma-T1 memory-bootstrap MCP implementation with fresh GC-018 referencing
+Gamma-T0. Do not claim client auto-load or MCP cross-tool verification before
+Gamma-T5.
 
 ## WR1 Source Pointers
 

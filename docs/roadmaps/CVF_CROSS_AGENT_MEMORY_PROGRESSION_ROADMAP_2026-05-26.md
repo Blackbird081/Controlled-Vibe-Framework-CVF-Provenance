@@ -20,10 +20,24 @@ Authors:
 ## Status
 
 Step 1 Alpha: CLOSED (commit `910043af`).
-Step 2 Beta: WORK_ORDER_READY pending operator authorization.
-Step 3 Gamma: DEMAND_GATED pending Beta evidence + operator authorization.
+Step 2 Beta: CLOSED_PASS_BOUNDED for active operator toolchain.
+Step 3 Gamma: T0 readiness audit CLOSED_PASS_BOUNDED; T1 implementation
+requires fresh GC-018 before code changes.
 Step 4 Delta: DEFERRED_DEMAND_GATED pending Gamma evidence + product
 direction decision.
+
+Status update 2026-05-26:
+
+- Beta closed with active toolchain evidence: Claude Haiku
+  PASS_WITH_MINOR_NOTE, Gemini PASS, Cursor/Aider waived by operator because
+  they are not active tools.
+- Gamma-T0 closed the readiness audit. Existing
+  `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER` builds and passes local tests, and
+  should be reused as the Gamma substrate rather than creating a second MCP
+  tree.
+- Gamma-T1 remains unopened. It requires a fresh GC-018 and must check current
+  official MCP SDK/tool registration expectations before adding memory
+  bootstrap tools.
 
 ## Authorization Or Decision
 
@@ -115,7 +129,7 @@ This roadmap does NOT authorize:
 
 ### Step 2 Beta: Per-Tool Config Coverage Expansion
 
-Gate: WORK_ORDER_READY pending operator authorization.
+Gate: CLOSED_PASS_BOUNDED for active operator toolchain.
 
 Sub-tranches:
 
@@ -150,7 +164,7 @@ Beta produces evidence required for Step 3 Gamma:
 
 ### Step 3 Gamma: cvf-mcp-server Build
 
-Gate: DEMAND_GATED. Cannot dispatch until:
+Gate: Gamma-T0 CLOSED_PASS_BOUNDED. Gamma-T1 cannot dispatch until:
 
 - Beta evidence available (or operator explicitly waives Beta
   prerequisite with reason recorded).
@@ -158,8 +172,11 @@ Gate: DEMAND_GATED. Cannot dispatch until:
 
 Sub-tranches:
 
+- Gamma-T0: Existing MCP surface readiness audit and reuse/deconflict
+  decision. CLOSED_PASS_BOUNDED on 2026-05-26.
 - Gamma-T1: MCP server scaffold (TypeScript, dependencies, minimum
-  tool registration).
+  tool registration). After Gamma-T0, default approach is reuse/adapt
+  `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER` rather than create a new server tree.
 - Gamma-T2: Core memory tools (`get_session_memory()`,
   `get_active_handoff()`, `get_session_state()`).
 - Gamma-T3: Governance tools (`get_rules(topic)`,
@@ -183,6 +200,15 @@ Acceptance criteria for Gamma (overall):
 - No runtime change to existing CVF tranches.
 - Deprecation plan for Alpha mandatory ack documented (Alpha retired
   only after Gamma proven, not as part of Gamma).
+
+Gamma-T1 entry criteria after T0:
+
+- Fresh GC-018 referencing
+  `docs/reviews/CVF_GAMMA_T0_MCP_SERVER_READINESS_AUDIT_COMPLETION_2026-05-26.md`.
+- Official MCP SDK/tool registration expectations checked before code changes.
+- Existing seven guard tools preserved.
+- Initial memory-bootstrap tools must be read-only and secret-safe.
+- No external client compatibility claim until Gamma-T5.
 
 Gamma decision point after T5:
 
