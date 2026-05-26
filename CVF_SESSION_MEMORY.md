@@ -757,6 +757,8 @@ Current HEAD before Beta implementation commit: `b79bb0d9`.
 
 Beta implementation commit: `54471a1b`.
 
+Beta operator acceptance update commit: `568961ef`.
+
 Beta added committed startup config surfaces for Gemini, Cursor, and Aider:
 
 `GEMINI.md`
