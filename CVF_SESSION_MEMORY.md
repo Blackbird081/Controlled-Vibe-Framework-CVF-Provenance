@@ -862,6 +862,8 @@ successfully called `cvf_get_startup_acknowledgment`, returning
 `AGENT_HANDOFF_V13_2026-05-25.md`, correct repo root, next allowed move, and
 parked checkpoint.
 
+External-client proof documentation commit: `d6178731`.
+
 Gamma client-wiring standard: when a client provides an official MCP
 management CLI, use that CLI instead of hand-writing an inferred config file.
 Additional CLI/client tests should be demand-driven, not open-ended soak.
