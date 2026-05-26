@@ -1015,3 +1015,18 @@ no Vietnamese leak terms in the export preview. Verification: private/public
 focused tests PASS 46/46; private/public check/build PASS. Boundary: bounded
 local normalization only, not universal semantic translation or all-template
 i18n.
+
+Priority-template English export scale completed after the operator accepted
+local app-builder proof and deferred Netlify timing. Active handoff moved to
+`AGENT_HANDOFF_V14_2026-05-27.md`; V13 is archived. Public-sync commit
+`41ba7b5e` is pushed. The bounded source change extends English field chrome,
+intent/output-template localization, and English working-value normalization to
+`strategy_analysis`, `marketing_campaign_wizard`, `brand_voice`, and
+`web_build_handoff` in addition to `app_builder_complete`. Verification:
+private/public focused tests PASS 50/50; private/public `npm run check` PASS;
+private/public `npm run build` PASS with only the unrelated
+`source-map-support` warning. Boundary: five-template deterministic source
+coverage only; no hosted freshness, external-agent PASS, all-template i18n, or
+semantic translation claim. Next roadmap direction: return to legacy workflow
+connector absorption, prioritizing high-value flows with existing disconnected
+pieces and using the blind-spot control plus MA1 where role transfer is needed.

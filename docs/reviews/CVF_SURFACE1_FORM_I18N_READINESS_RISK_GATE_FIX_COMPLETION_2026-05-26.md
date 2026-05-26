@@ -204,6 +204,67 @@ Risk 3 - template coverage boundary:
   remaining high-value public templates only after hosted `app_builder_complete`
   retest is clean.
 
+## Priority Template Scale Addendum - 2026-05-27
+
+Operator decision: Netlify timing is outside the local closure. Since
+`app_builder_complete` local proof is acceptable, scale the same bounded source
+pattern to the next high-value templates before returning to legacy workflow
+absorption.
+
+Priority templates covered:
+
+- `strategy_analysis`
+- `marketing_campaign_wizard`
+- `brand_voice`
+- `web_build_handoff`
+- Existing `app_builder_complete` coverage retained
+
+Implementation:
+
+- `template-i18n.ts` now includes English field chrome, labels, and intent
+  patterns for `strategy_analysis`, `brand_voice`, and `web_build_handoff`.
+- `template-i18n.ts` now includes an English `strategy_analysis`
+  output-template override so the English export does not carry the source
+  Vietnamese success-checklist text.
+- `spec-export-english-working-brief.ts` now applies bounded English working
+  values to the five supported template IDs.
+- Known Vietnamese sample values normalize into English. Unknown non-English
+  values become English `TRANSLATION_REQUIRED` markers instead of leaking raw
+  multilingual control content into a receiving-agent packet.
+- `SpecExport.tsx` now uses localized output-template overrides for English
+  exports.
+
+Public-sync:
+
+- Public repo remote verified as
+  `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`.
+- Public commit pushed: `41ba7b5e`
+  (`fix(web): scale English export normalization`).
+
+Verification:
+
+- Private focused tests PASS: 2 files / 50 tests.
+- Private `npm run check` PASS.
+- Private `npm run build` PASS with only the pre-existing unrelated
+  `source-map-support` warning.
+- Public-sync focused tests PASS: 2 files / 50 tests.
+- Public-sync `npm run check` PASS.
+- Public-sync `npm run build` PASS with only the pre-existing unrelated
+  `source-map-support` warning.
+- `SpecExport.tsx` line count is 1299, still inside the approved 1300-line
+  exception.
+
+Boundary:
+
+- This addendum proves deterministic local/public-source coverage for the five
+  named templates only.
+- It is not universal semantic translation, all-template i18n, hosted Netlify
+  freshness, external-agent acceptance, provider behavior, production
+  readiness, or public release readiness.
+- Marketing Campaign Wizard has a separate wizard UI path; this addendum covers
+  shared export/packet normalization and field-id support for campaign packet
+  values, not a new live wizard runtime proof.
+
 ## Claim Boundary
 
 This completion proves deterministic source/public-code readiness only. It does
