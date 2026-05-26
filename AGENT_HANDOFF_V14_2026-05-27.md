@@ -14,6 +14,8 @@ Current HEAD after LHW1-T3 field/state correction commit (parent of handoff sync
 
 Current HEAD before LHW1-T3 work-order correction commit: `fe5bfbf9`.
 
+Current HEAD after LHW1-T3 work-order correction commit (parent of handoff sync): `64f28977`.
+
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=gamma_t1_t5_mcp_memory_bootstrap_closed_pass_bounded; active handoff=AGENT_HANDOFF_V14_2026-05-27.md; next allowed move=close bounded Surface 1 priority-template English export scale, then return to legacy/workflow absorption for high-value connector gaps; parked checkpoint=hosted Netlify freshness and operator external-agent retest for VI5-T4/T5 remain pending.
