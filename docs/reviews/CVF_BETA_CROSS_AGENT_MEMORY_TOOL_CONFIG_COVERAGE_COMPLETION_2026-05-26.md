@@ -6,7 +6,7 @@ docType: review
 
 Date: 2026-05-26
 
-Status: READY_FOR_OPERATOR_TOOL_VERIFICATION
+Status: CLOSED_PASS_BOUNDED
 
 ## Purpose
 
@@ -38,7 +38,10 @@ hosted, public-sync, or UI behavior is in scope.
 | Cursor config path | PASS: `.cursor/rules/cvf-startup-acknowledgment.mdc` exists. |
 | Aider config path | PASS: `.aider.conf.yml` and `CONVENTIONS.md` exist. |
 | Shared startup acknowledgment text | PASS: all three tool config surfaces include `CVF_SESSION_MEMORY.md`, `ACTIVE_SESSION_STATE.json`, `Startup acknowledged`, and soft-accountability boundary text. |
-| Local tool availability | BLOCKED: `gemini`, `aider`, and `cursor` were not available in this shell PATH, so live tool-launch behavior was not verified locally. |
+| Local tool availability | BLOCKED locally: `gemini`, `aider`, and `cursor` were not available in this shell PATH, so local tool-launch behavior was not verified. |
+| Operator Claude Haiku verification | PASS_WITH_MINOR_NOTE: operator screenshot shows Claude Haiku read `AGENTS.md` and session files, then stated the correct current mode and active handoff. Minor note: it reported parked checkpoint as `none` instead of VI5-T4/T5. |
+| Operator Gemini verification | PASS: operator screenshot shows Gemini stated the correct current mode, active handoff, Beta next allowed move, and VI5-T4/T5 parked checkpoint. |
+| Cursor/Aider verification | WAIVED_BY_OPERATOR: operator stated Cursor and Aider are not part of the active toolchain and have never been used. Config files remain present for future use but no runtime compliance claim is made for them. |
 | Docs governance | PASS. |
 | Markdown structural completeness | PASS. |
 | Governed file size | PASS with advisory inherited for existing large active handoff. |
@@ -50,18 +53,27 @@ Beta per-tool config coverage is complete and bounded. Gemini, Cursor, and
 Aider now have committed repository-level startup guidance that points new
 agents toward the CVF session front door and active state registry.
 
+Operator acceptance closes Beta for the active toolchain: Claude/Codex/Alibaba
+and Gemini are the primary agents/providers, with DeepSeek used for test
+coverage. Operator-supplied screenshots verified Claude Haiku and Gemini
+startup acknowledgment behavior. Cursor and Aider verification is explicitly
+waived because they are not active operator tools.
+
 This is not hard auto-load proof. The repository can now ask each tool to follow
 the startup acknowledgment pattern, but actual tool behavior still depends on
 tool installation, launch mode, account/session state, and model compliance.
-The next responsible checkpoint is operator/tool-launch verification.
+The next responsible checkpoint is Gamma planning only if the operator asks to
+proceed, with fresh GC-018 and without converting this Beta pass into a hard
+auto-load claim.
 
 ## Risk / Corrective Action
 
 | Risk | Corrective action |
 | --- | --- |
 | Config files are mistaken for hard auto-load | Every file states soft-accountability boundary. |
-| Tool-specific behavior cannot be proven locally | Record operator/tool launch verification as pending, not PASS. |
-| Gamma starts too early | Completion blocks Gamma until Beta evidence is operator-accepted. |
+| Tool-specific behavior cannot be proven locally | Record local proof as blocked and separate it from operator-supplied screenshots. |
+| Cursor/Aider are later used without verification | Keep their configs as soft startup guidance and require first-use verification before relying on them. |
+| Gamma starts too early | Gamma still requires fresh GC-018 and operator authorization. |
 
 ## Verification
 
@@ -86,14 +98,12 @@ git diff --check
 
 ## Decision / Recommendation / Disposition
 
-Decision: `READY_FOR_OPERATOR_TOOL_VERIFICATION`.
+Decision: `CLOSED_PASS_BOUNDED`.
 
-Recommendation: launch Gemini, Cursor, and Aider against this repository and
-verify whether each one states or records the mandatory startup acknowledgment
-before material governed work. If all selected tools comply, Beta may be marked
-operator-accepted and Gamma may be considered with a fresh GC-018. If any tool
-does not comply, keep Gamma blocked and either adjust the tool-specific config
-or mark that tool as unsupported for automatic startup acknowledgment.
+Disposition: operator accepts Beta for the active operator toolchain. Cursor and
+Aider verification is waived because they are not used by the operator. Gamma
+may now be considered as the next tranche only through fresh GC-018 and explicit
+operator authorization.
 
 ## Public Catalog Update
 

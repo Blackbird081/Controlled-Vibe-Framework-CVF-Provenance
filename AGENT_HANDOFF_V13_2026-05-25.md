@@ -932,7 +932,7 @@ Claude filed the cross-agent memory progression roadmap at commit `cf414110`:
 Interpretation: Alpha is the closed bridge/prerequisite; the three future steps
 are Beta, Gamma, and Delta.
 
-Beta per-tool config coverage is now `READY_FOR_OPERATOR_TOOL_VERIFICATION`:
+Beta per-tool config coverage is now `CLOSED_PASS_BOUNDED`:
 
 `docs/baselines/CVF_GC018_BETA_CROSS_AGENT_MEMORY_TOOL_CONFIG_COVERAGE_2026-05-26.md`
 
@@ -958,16 +958,22 @@ Static verification passed: all files exist and include the mandatory startup
 acknowledgment pattern pointing to `CVF_SESSION_MEMORY.md` and
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`. Local tool-launch verification is
 blocked because `gemini`, `aider`, and `cursor` are not available in this shell
-PATH. Beta does not prove hard auto-load, MCP availability, universal tool
-compliance, hosted readiness, production readiness, public release readiness, or
-freeze release.
+PATH.
+
+Operator acceptance evidence: Claude Haiku screenshot PASS_WITH_MINOR_NOTE and
+Gemini screenshot PASS. Cursor and Aider verification is waived by the operator
+because they are not active operator tools; their config files remain committed
+as soft first-use guidance.
+
+Beta does not prove hard auto-load, MCP availability, universal Cursor/Aider
+runtime compliance, hosted readiness, production readiness, public release
+readiness, or freeze release.
 
 Public catalog update N/A: Beta is internal tool startup config coverage only,
 not a public-facing CVF product capability.
 
-Gamma remains blocked until Beta is operator-accepted or explicitly waived with
-fresh authorization and GC-018. Delta remains deferred until Gamma evidence and
-product-direction decision.
+Gamma may be considered next only with fresh authorization and GC-018. Delta
+remains deferred until Gamma evidence and product-direction decision.
 
 ## Next Allowed Move
 
@@ -976,10 +982,9 @@ fresh web spec and test it with an external agent. Record the verdict as `PASS`,
 `PASS_WITH_MINOR_FIX`, or `HOLD`; do not mark T4 PASS before that real
 operator/external-agent verdict.
 
-Next allowed move: operator/tool-launch verification for Beta. Launch Gemini,
-Cursor, and Aider against this repository and confirm each one states or records
-the mandatory startup acknowledgment before material governed work. Do not
-proceed to Gamma until that checkpoint is accepted or explicitly waived.
+Next allowed move: if the operator wants to continue cross-agent memory, open
+Gamma cvf-mcp-server planning with fresh GC-018. Do not implement Gamma from
+Beta alone.
 
 ## WR1 Source Pointers
 
