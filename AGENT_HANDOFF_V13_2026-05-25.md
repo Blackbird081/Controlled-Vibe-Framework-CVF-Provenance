@@ -1112,6 +1112,35 @@ Do not add more packs, runtime execution, provider calls, receipt-envelope
 changes, memory, MCP/tool/database execution, public-sync, hosted readiness,
 production readiness, or freeze release without a fresh authorized tranche.
 
+## MA1 Internal Multi-Agent Work Transfer Packet
+
+MA1 is closed PASS bounded:
+
+`docs/roadmaps/CVF_MA1_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_ROADMAP_2026-05-26.md`
+
+`docs/baselines/CVF_GC018_MA1_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_2026-05-26.md`
+
+`docs/work_orders/CVF_WO_MA1_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_2026-05-26.md`
+
+`docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
+
+`docs/reviews/CVF_MA1_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_COMPLETION_2026-05-26.md`
+
+MA1 contract version: `cvf.internalMultiAgentTransfer.ma1.v1`.
+
+MA1 is a 100% English internal work-transfer packet for orchestrator,
+role-agent, reviewer, auditor, integrator, provider-lane, or future CVF client
+handoff. It standardizes Surface Fidelity Gate, Authority Chain, Source Packet,
+Role Assignment, Execution Instructions, Role Output Schema, Dissent Ledger,
+Integration Decision, Completion Evidence, and Claim Boundary.
+
+Boundary: MA1 does not claim runtime subagent scheduling, live role isolation,
+provider behavior, MCP enforcement, hosted readiness, production readiness,
+public readiness, or operator acceptance of any downstream implementation.
+
+Next use: Surface 1 i18n/readiness/risk-gate fix must use MA1 as its internal
+control packet.
+
 ## Mandatory Standards
 
 Live run diagnostics:
