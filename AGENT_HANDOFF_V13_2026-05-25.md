@@ -1149,7 +1149,7 @@ to serve public commit `b08af291` before retest can PASS; the observed
 `app/(dashboard)/page_client-reference-manifest.js` trace-copy ENOENT is a
 hosted freshness blocker until deploy status/assets are verified; MA1 needs a
 2-3 transfer retrospective before maturity claim; i18n PASS is only for
-`app_builder_complete`, not all templates.
+`app_builder_complete`, not all templates. Risk note commit: `58b52950`.
 
 ## Mandatory Standards
 
