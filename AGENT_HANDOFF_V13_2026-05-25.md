@@ -76,6 +76,8 @@ Current HEAD before cross-agent memory progression roadmap + Rule BP1 commit: `0
 
 Cross-agent memory progression roadmap + Rule BP1 commit: `cf414110`.
 
+Gamma MCP client-neutral direction note commit: `a52f6d44`.
+
 Remote tracking branch:
 
 `origin/main`

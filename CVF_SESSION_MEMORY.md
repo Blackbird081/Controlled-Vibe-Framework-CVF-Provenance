@@ -864,6 +864,8 @@ parked checkpoint.
 
 External-client proof documentation commit: `d6178731`.
 
+Gamma MCP client-neutral direction note commit: `a52f6d44`.
+
 Gamma client-wiring standard: when a client provides an official MCP
 management CLI, use that CLI instead of hand-writing an inferred config file.
 Additional CLI/client tests should be demand-driven, not open-ended soak.
