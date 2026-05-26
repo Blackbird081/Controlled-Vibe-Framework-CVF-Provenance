@@ -985,3 +985,11 @@ Boundary: no live provider/API proof required; public source is pushed, but no
 hosted deployment freshness proof or external-agent PASS claim yet. Operator
 must retest after hosted update by exporting a fresh English Full / Guided spec
 and sending it to an external agent.
+
+Post-review risk note: hosted Netlify deploy is the active retest bottleneck.
+Do not mark Surface 1 PASS until `vibcode.netlify.app` is proven to serve public
+commit `b08af291` or equivalent assets. The observed trace-copy ENOENT for
+`app/(dashboard)/page_client-reference-manifest.js` should be resolved or
+classified before relying on hosted exports. MA1 remains first-use only and
+needs retrospective after 2-3 more transfers. Current i18n fix covers
+`app_builder_complete` only, not all templates.

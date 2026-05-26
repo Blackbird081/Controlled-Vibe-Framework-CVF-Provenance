@@ -1144,7 +1144,12 @@ localized user-value behavior, and carries the portable readiness helper.
 Verification: private and public focused tests PASS 4 files / 104 tests; private
 and public cvf-web `npm run check` PASS. Boundary: deterministic source/public
 code readiness only; hosted deployment freshness and operator external-agent
-retest remain pending.
+retest remain pending. Post-review risks: Netlify hosted deploy must be proven
+to serve public commit `b08af291` before retest can PASS; the observed
+`app/(dashboard)/page_client-reference-manifest.js` trace-copy ENOENT is a
+hosted freshness blocker until deploy status/assets are verified; MA1 needs a
+2-3 transfer retrospective before maturity claim; i18n PASS is only for
+`app_builder_complete`, not all templates.
 
 ## Mandatory Standards
 

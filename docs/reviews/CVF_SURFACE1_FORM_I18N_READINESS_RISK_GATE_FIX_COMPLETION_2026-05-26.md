@@ -141,6 +141,35 @@ Surface 1 defect fix and not a new proven public capability claim. Public-safe
 code is synchronized in public commit `b08af291` so the hosted web surface can
 be retested after deployment.
 
+## Post-Review Risk Addendum
+
+Risk 1 - hosted deployment gate:
+
+- Public source is synced, but `vibcode.netlify.app` must be proven to serve a
+  build containing public commit `b08af291` before operator retest can PASS.
+- Netlify build logs showing `ENOENT` during trace copy for
+  `app/(dashboard)/page_client-reference-manifest.js` are treated as a hosted
+  deploy freshness blocker until deploy status and hosted asset content are
+  verified.
+- Required retest precondition: hosted form body in English mode shows English
+  `app_builder_complete` chrome before exporting a fresh spec.
+
+Risk 2 - MA1 first-use evidence:
+
+- MA1 was used successfully as the control packet for this Surface 1 fix, but
+  one use case is not enough to freeze the MA1 standard as mature.
+- After two or three additional MA1-governed transfers, run a bounded
+  retrospective to decide whether the MA1 schema needs refinement.
+
+Risk 3 - template coverage boundary:
+
+- This tranche only covers `app_builder_complete`.
+- Other template families may still leak Vietnamese form body text in English
+  mode and must not inherit this PASS claim.
+- Follow-up should scale the same i18n/readiness/risk-gate pattern to the
+  remaining high-value public templates only after hosted `app_builder_complete`
+  retest is clean.
+
 ## Claim Boundary
 
 This completion proves deterministic source/public-code readiness only. It does
