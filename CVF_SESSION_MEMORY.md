@@ -706,7 +706,7 @@ platform claims, or freeze release.
 
 ## Latest Cross-Agent Memory Tranche
 
-Mode marker: `alpha_mandatory_startup_acknowledgment_closed`
+Mode marker: `beta_cross_agent_memory_tool_config_ready_for_operator_verification`
 
 Alpha Mandatory Startup Acknowledgment roadmap, GC-018, work order, and
 completion packet filed:
@@ -743,9 +743,38 @@ Cross-agent memory progression roadmap filed by Claude at commit `cf414110`:
 `docs/roadmaps/CVF_CROSS_AGENT_MEMORY_PROGRESSION_ROADMAP_2026-05-26.md`
 
 Interpretation: Alpha is the closed bridge/prerequisite; the three future steps
-are Beta, Gamma, and Delta. Beta is `WORK_ORDER_READY` but still requires fresh
-operator authorization and GC-018. Gamma remains demand-gated on Beta evidence.
-Delta remains deferred until Gamma evidence and product-direction decision.
+are Beta, Gamma, and Delta.
+
+Beta per-tool config coverage is now ready for operator/tool verification:
+
+`docs/baselines/CVF_GC018_BETA_CROSS_AGENT_MEMORY_TOOL_CONFIG_COVERAGE_2026-05-26.md`
+
+`docs/work_orders/CVF_WO_BETA_CROSS_AGENT_MEMORY_TOOL_CONFIG_COVERAGE_2026-05-26.md`
+
+`docs/reviews/CVF_BETA_CROSS_AGENT_MEMORY_TOOL_CONFIG_COVERAGE_COMPLETION_2026-05-26.md`
+
+Current HEAD before Beta implementation commit: `b79bb0d9`.
+
+Beta added committed startup config surfaces for Gemini, Cursor, and Aider:
+
+`GEMINI.md`
+
+`.cursor/rules/cvf-startup-acknowledgment.mdc`
+
+`.aider.conf.yml`
+
+`CONVENTIONS.md`
+
+Static verification passed: all files exist and include the mandatory startup
+acknowledgment pattern pointing to `CVF_SESSION_MEMORY.md` and
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`. Local tool-launch verification is
+blocked because `gemini`, `aider`, and `cursor` are not available in this shell
+PATH. Therefore Beta is `READY_FOR_OPERATOR_TOOL_VERIFICATION`, not hard
+auto-load proof.
+
+Gamma remains blocked until Beta is operator-accepted or explicitly waived with
+fresh authorization and GC-018. Delta remains deferred until Gamma evidence and
+product-direction decision.
 
 ## Mandatory Standards
 

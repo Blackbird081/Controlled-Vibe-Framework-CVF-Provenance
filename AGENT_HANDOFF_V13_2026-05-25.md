@@ -930,9 +930,39 @@ Claude filed the cross-agent memory progression roadmap at commit `cf414110`:
 `docs/roadmaps/CVF_CROSS_AGENT_MEMORY_PROGRESSION_ROADMAP_2026-05-26.md`
 
 Interpretation: Alpha is the closed bridge/prerequisite; the three future steps
-are Beta, Gamma, and Delta. Beta is `WORK_ORDER_READY` but still requires fresh
-operator authorization and GC-018. Gamma remains demand-gated on Beta evidence.
-Delta remains deferred until Gamma evidence and product-direction decision.
+are Beta, Gamma, and Delta.
+
+Beta per-tool config coverage is now `READY_FOR_OPERATOR_TOOL_VERIFICATION`:
+
+`docs/baselines/CVF_GC018_BETA_CROSS_AGENT_MEMORY_TOOL_CONFIG_COVERAGE_2026-05-26.md`
+
+`docs/work_orders/CVF_WO_BETA_CROSS_AGENT_MEMORY_TOOL_CONFIG_COVERAGE_2026-05-26.md`
+
+`docs/reviews/CVF_BETA_CROSS_AGENT_MEMORY_TOOL_CONFIG_COVERAGE_COMPLETION_2026-05-26.md`
+
+Current HEAD before Beta implementation commit: `b79bb0d9`.
+
+Beta added committed startup config surfaces for Gemini, Cursor, and Aider:
+
+`GEMINI.md`
+
+`.cursor/rules/cvf-startup-acknowledgment.mdc`
+
+`.aider.conf.yml`
+
+`CONVENTIONS.md`
+
+Static verification passed: all files exist and include the mandatory startup
+acknowledgment pattern pointing to `CVF_SESSION_MEMORY.md` and
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`. Local tool-launch verification is
+blocked because `gemini`, `aider`, and `cursor` are not available in this shell
+PATH. Beta does not prove hard auto-load, MCP availability, universal tool
+compliance, hosted readiness, production readiness, public release readiness, or
+freeze release.
+
+Gamma remains blocked until Beta is operator-accepted or explicitly waived with
+fresh authorization and GC-018. Delta remains deferred until Gamma evidence and
+product-direction decision.
 
 ## Next Allowed Move
 
@@ -941,9 +971,10 @@ fresh web spec and test it with an external agent. Record the verdict as `PASS`,
 `PASS_WITH_MINOR_FIX`, or `HOLD`; do not mark T4 PASS before that real
 operator/external-agent verdict.
 
-If the operator wants to continue cross-agent memory beyond Alpha, the next
-allowed implementation is Beta only, after fresh operator authorization and
-GC-018. Do not claim hard auto-load or MCP behavior from Alpha/Beta alone.
+Next allowed move: operator/tool-launch verification for Beta. Launch Gemini,
+Cursor, and Aider against this repository and confirm each one states or records
+the mandatory startup acknowledgment before material governed work. Do not
+proceed to Gamma until that checkpoint is accepted or explicitly waived.
 
 ## WR1 Source Pointers
 
