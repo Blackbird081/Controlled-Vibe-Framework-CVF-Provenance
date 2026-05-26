@@ -609,6 +609,8 @@ Mode marker: `surface1_web_export_i18n_coverage_closed_pass_bounded`
 
 Current HEAD before Surface 1 i18n implementation commit: `93a86ea6`.
 
+Surface 1 i18n implementation commit: `a66bc606`.
+
 Implementation changed only `SpecExport.tsx`, `template-i18n.ts`, and focused
 tests. English-mode `app_builder_complete` export now localizes template
 metadata, field labels, intent chrome, and full-mode protocol chrome while

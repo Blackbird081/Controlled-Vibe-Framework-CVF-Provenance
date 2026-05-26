@@ -789,6 +789,8 @@ Surface 1 web export i18n implementation is closed PASS bounded:
 
 Current HEAD before Surface 1 i18n implementation commit: `93a86ea6`.
 
+Surface 1 i18n implementation commit: `a66bc606`.
+
 Implementation changed only `SpecExport.tsx`, `template-i18n.ts`, and focused
 tests. English-mode `app_builder_complete` export now localizes template
 metadata, field labels, intent chrome, and full-mode protocol chrome while
