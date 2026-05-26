@@ -6,7 +6,7 @@ Current HEAD before LHW1 roadmap commit: `aabf0509535b232cc543a8da6bc77936256ef0
 
 Current HEAD before LHW1-T2 commit: `ba91dc0d9ed52ae8b48ba794433da22853c861dd`.
 
-Current HEAD (updated per GC-020): `a3defa22` (LHW1-T2 commit; T3 in progress).
+Current HEAD (updated per GC-020): `838a407f` (LHW1-T3 commit; LHW1 roadmap CLOSED_PASS_BOUNDED).
 
 ## Startup Acknowledgment
 
