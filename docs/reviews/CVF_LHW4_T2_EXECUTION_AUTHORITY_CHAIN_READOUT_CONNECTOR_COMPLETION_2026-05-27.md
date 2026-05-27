@@ -117,6 +117,13 @@ dispatch gate enforcement as Document-only with explicit future-path notes.
 S1 states the packet is a governance advisory and does not grant execution
 authority.
 
+## GC-024 Public Catalog Update
+
+Public catalog update: N/A. LHW4-T2 is a documentation-only connector spec.
+It does not add a new proven runtime capability, certified pack, live provider
+lane, or new CLI/API surface. No catalog row update is required for this
+tranche.
+
 ## Claim Boundary
 
 LHW4-T2 is closed as a documentation-only connector. It does not claim G1/W3/TA1

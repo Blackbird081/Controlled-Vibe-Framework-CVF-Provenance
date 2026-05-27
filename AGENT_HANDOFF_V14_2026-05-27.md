@@ -487,6 +487,8 @@ authority-chain readout for actor/role/action approval posture.
 
 Current HEAD before T2 implementation: `41c0cdac`
 
+T2 implementation commit: `f9f09a19`
+
 Mode marker: `lhw4_t2_complete`
 
 Spec:
