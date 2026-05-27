@@ -81,7 +81,8 @@ If any required file is missing, stop and report to Orchestrator.
 | --- | --- | --- | --- | --- | --- |
 | W3 surface tokens | `governance/contracts/tool-action-taxonomy.ts` | lines 9-14 | `local_tool`, `command_runtime`, `mcp_tool`, `database`, `capability_provider` | `ToolActionSurface` | ACCEPT |
 | W3 sideEffect database tokens | `governance/contracts/tool-action-taxonomy.ts` | lines 23-28 | `database_read`, `database_write`, `database_export`, `database_schema_mutation`, `database_recovery`, `database_admin` | `ToolActionSideEffect` | ACCEPT |
-| W3 `DatabaseActionFamily` values | `governance/contracts/tool-action-taxonomy.ts` | lines 33-40 | `schema_inspection`, `query_drafting`, `read_execution`, `write_execution`, `schema_mutation` | `DatabaseActionFamily` | ACCEPT |
+| W3 `DatabaseActionFamily` values | `governance/contracts/tool-action-taxonomy.ts` | lines 33-40 | `schema_inspection`, `query_drafting`, `read_execution`, `write_execution`, `schema_mutation`, `export_movement`, `backup_recovery`, `administrative` | `DatabaseActionFamily` | ACCEPT |
+| W3 `destructive` sideEffect token | `governance/contracts/tool-action-taxonomy.ts` | lines 29-31 | `destructive` | `ToolActionSideEffect` | ACCEPT |
 | W3 `databaseFamily` field | `governance/contracts/tool-action-taxonomy.ts` | lines 82-96 | `databaseFamily?: DatabaseActionFamily` | `ToolActionTaxonomyRequest` | ACCEPT |
 | W3 `runtimeExecutionAuthorized=false` | `governance/contracts/tool-action-taxonomy.ts` | lines 106-120, 130-142 | `runtimeExecutionAuthorized` | `ToolActionTaxonomyEvaluation` / `ToolActionApprovalReadout` | ACCEPT |
 | TA1 approval state tokens | `governance/contracts/tool-action-taxonomy.ts` | lines 64-70, 130-142 | `not_required`, `pending_approval`, `satisfied_but_not_executable`, `blocked_before_approval`, `blocked_by_policy`, `incomplete_approval` | `ToolActionApprovalState` / `ToolActionApprovalReadout` | ACCEPT |
@@ -108,9 +109,9 @@ Required sections:
 - Explicit statement: "`databaseMutationAuthorized=false` is invariant. The
   database-action boundary packet is a governance advisory; it does not grant
   query execution, mutation authority, or schema-change permission. All
-  database_write, database_schema_mutation, database_admin, and destructive
-  sideEffects map to `blocked` dispatchDecision unless a future tranche
-  explicitly lifts this."
+  `database_write`, `database_schema_mutation`, `database_admin`,
+  `database_recovery`, and `destructive` sideEffects map to `blocked`
+  `dbBoundaryDecision` unless a future tranche explicitly lifts this."
 
 ### S2 — W3 database surface → TA1 approval → LHW4-T2 dispatch field mapping
 
@@ -127,6 +128,10 @@ Minimum rows:
   mutation blocked by policy; `databaseMutationAuthorized=false`
 - `database_schema_mutation` + `schema_mutation` (any TA1 state) → `blocked` →
   schema change blocked; always maps to blocked regardless of approval state
+- `database_recovery` + `backup_recovery` (any TA1 state) → `blocked` →
+  recovery/admin path remains blocked in the current boundary
+- `database_admin` + `administrative` (any TA1 state) → `blocked` →
+  administrative path remains blocked in the current boundary
 - `database_export` + (any family) + `satisfied_but_not_executable` → `blocked` →
   export approved but not executable; `runtimeExecutionAuthorized=false`
 
@@ -171,7 +176,9 @@ Required columns: `Claimed item` | `Source file` | `Verified line/section` |
 `Verified path or symbol` | `Owning interface/function/schema` | `Disposition`
 
 Cover every W3 surface/sideEffect/databaseFamily token, TA1 approval state
-token, and LHW4-T2 dispatch field cited in S2 and S3.
+token, and LHW4-T2 dispatch field cited in S2 and S3. This includes
+`export_movement`, `backup_recovery`, and `administrative` when those families
+are named in the connector.
 
 ## Pre-Flight
 

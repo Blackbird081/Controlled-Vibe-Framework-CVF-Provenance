@@ -545,6 +545,24 @@ contained stale descriptive vocabulary (`actionCategory`, `nextAction`, and
 source contracts. Cleanup scope is documentation-only: align roadmap prose with
 the delivered source-verified connectors and mark acceptance criteria complete.
 
+## LHW5 Pre-Dispatch Audit Corrections
+
+Current HEAD before correction sync: `3a41134c`
+
+Pre-dispatch review found three work-order readiness issues to correct before
+implementation:
+
+- the LHW5 roadmap accepted-source rule leaned on completion reviews instead of
+  runtime/canonical source first;
+- LHW5-T1 source verification omitted live W3 `DatabaseActionFamily` values
+  `export_movement`, `backup_recovery`, and `administrative`, plus the cited
+  `destructive` sideEffect token;
+- LHW5-T3 claimed WR1 action coverage but omitted live runtime action
+  `request_human_review`.
+
+Correction scope is documentation-only: tighten roadmap/work-order source
+fidelity so downstream implementers do not fill gaps by inference.
+
 ## Mandatory Standards
 
 Live run diagnostics:

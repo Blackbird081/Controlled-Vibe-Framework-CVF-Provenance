@@ -97,8 +97,10 @@ Source families addressed per LH1 ledger triggers:
 | `md2html` + artifact renderer | PARTIALLY_ABSORBED | Reopen for actual renderer/product export expansion; no new renderer by default | T2 |
 | `Failure Simulation cho CVF.md` | PARTIALLY_ABSORBED | Reopen for failure-simulation harness over existing evidence | T3 |
 
-Accepted-source rule: each tranche reads the detailed completion reviews for
-its runtime surfaces before implementation. Do not scope from summaries alone.
+Accepted-source rule: each tranche must read current runtime/canonical source
+files first for any field, enum, interface, schema key, or token that already
+exists in source. Completion reviews may be used to confirm closure posture or
+supporting evidence only. Do not scope from summaries alone.
 
 Blind-spot adversarial roles:
 

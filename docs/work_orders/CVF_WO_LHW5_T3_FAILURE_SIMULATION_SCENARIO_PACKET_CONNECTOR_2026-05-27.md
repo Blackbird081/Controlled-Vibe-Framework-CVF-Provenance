@@ -85,7 +85,7 @@ blocked.
    interface fields: `contractVersion`, `stage`, `class`, `retryable`, `userAction`
 6. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts`
    — confirm WR1 `WorkflowRecoveryAction` values: `resume_from_checkpoint`,
-   `hold_for_reviewer_gate`, `escalate_to_governance`; confirm
+   `hold_for_reviewer_gate`, `escalate_to_governance`, `request_human_review`; confirm
    `WorkflowRecoveryReadout` fields: `contractVersion`, `lastRestorableCheckpoint`,
    `blockedStepIds`, `validationGate`, `recoveryAction`, `recommendedNextAction`
 7. `docs/reference/CVF_LHW3_OPERATIONAL_FAILURE_TREND_READOUT_CONNECTOR_SPEC_2026-05-27.md`
@@ -101,9 +101,9 @@ If any required file is missing, stop and report to Orchestrator.
 | --- | --- | --- | --- | --- | --- |
 | W4 `OperationalBenchmarkReport` schema version | `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/operational-benchmark-suite.ts` | lines 86-88 | `schemaVersion: "cvf.operationalBenchmark.v1"` | `OperationalBenchmarkReport` | ACCEPT |
 | W4 metric fields | `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/operational-benchmark-suite.ts` | lines 21-38 | `taskCompletionRate`, `policyViolationRate`, `retryCount`, `humanCorrectionCount` | `OperationalBenchmarkMetrics` | ACCEPT |
-| V3 `ExecutionDiagnosticClass` tokens | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts` | lines 16-32 | `invalid_input`, `policy_blocked`, `routing_denied`, `provider_empty_output`, `model_unavailable`, `provider_http_error`, `unknown_error` | `ExecutionDiagnosticClass` | ACCEPT |
+| V3 `ExecutionDiagnosticClass` tokens | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts` | lines 16-32 | `invalid_input`, `policy_blocked`, `routing_denied`, `provider_empty_output`, `model_unavailable`, `provider_http_error`, `output_validation_failed`, `unknown_error` | `ExecutionDiagnosticClass` | ACCEPT |
 | V3 `ExecutionDiagnostic` fields | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts` | lines 54-58 | `contractVersion`, `stage`, `class`, `retryable`, `userAction` | `ExecutionDiagnostic` | ACCEPT |
-| WR1 `WorkflowRecoveryAction` values | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts` | lines 50-54 | `resume_from_checkpoint`, `hold_for_reviewer_gate`, `escalate_to_governance` | `WorkflowRecoveryAction` | ACCEPT |
+| WR1 `WorkflowRecoveryAction` values | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts` | lines 50-54 | `resume_from_checkpoint`, `hold_for_reviewer_gate`, `escalate_to_governance`, `request_human_review` | `WorkflowRecoveryAction` | ACCEPT |
 | WR1 `WorkflowRecoveryReadout` fields | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts` | lines 85-94 | `contractVersion`, `lastRestorableCheckpoint`, `blockedStepIds`, `validationGate`, `recoveryAction`, `recommendedNextAction` | `WorkflowRecoveryReadout` | ACCEPT |
 | LHW3-T1 trend signal labels | `docs/reference/CVF_LHW3_OPERATIONAL_FAILURE_TREND_READOUT_CONNECTOR_SPEC_2026-05-27.md` | lines 46-52 (approx) | `overconstraint signal`, `provider instability signal`, `underspecification signal`, `degraded-output or drift signal`, `audit gap signal` | LHW3-T1 trend mapping | ACCEPT |
 
@@ -148,6 +148,9 @@ Minimum rows:
 - `humanCorrectionCount` high + `unknown_error` + `hold_for_reviewer_gate` +
   `degraded-output or drift signal` → **output_drift scenario** → expect
   reviewer gate to halt progression and require output correction
+- `humanCorrectionCount` high + `output_validation_failed` +
+  `request_human_review` + `degraded-output or drift signal` →
+  **human_review scenario** → expect manual human review before continuation
 - `taskCompletionRate` low + `routing_denied` + `escalate_to_governance` →
   **routing_block scenario** → expect governance escalation; no recovery
   without routing fix
@@ -165,7 +168,7 @@ Every simulation scenario packet must contain:
 
 - `scenarioId`: unique token
 - `scenarioType`: one of `policy_block` | `provider_failure` | `output_drift` |
-  `routing_block` | `model_failure`
+  `human_review` | `routing_block` | `model_failure`
 - `triggerMetric`: the W4 metric that triggered this scenario (`taskCompletionRate`,
   `policyViolationRate`, `retryCount`, `humanCorrectionCount`, or `none`)
 - `v3DiagnosticClass`: from V3 `ExecutionDiagnosticClass`
@@ -200,7 +203,8 @@ Required columns: `Claimed item` | `Source file` | `Verified line/section` |
 `Verified path or symbol` | `Owning interface/function/schema` | `Disposition`
 
 Cover every W4 metric field, V3 class token, WR1 action token, and LHW3-T1
-signal label cited in S2 and S3.
+signal label cited in S2 and S3. This includes `request_human_review` when the
+connector claims full current WR1 action coverage.
 
 ## Pre-Flight
 
