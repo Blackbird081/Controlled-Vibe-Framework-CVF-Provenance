@@ -33,7 +33,7 @@ Template: `docs/reference/CVF_FAST_LANE_AUDIT_TEMPLATE.md`
 | --- | --- | --- | --- |
 | 1 | Is the tranche documentation-only? | YES | Connector spec only; no `.ts`/`.tsx`/`.js`/`.py` file modified |
 | 2 | Does it add new runtime claims? | NO | Boundary table explicitly labels all rows doc-only |
-| 3 | Does it touch receipt envelope schema? | NO | References existing `GovernanceEvidenceReceipt` field names only |
+| 3 | Does it touch receipt envelope schema? | NO | References existing controlled-memory receipt field names only |
 | 4 | Does it require a live provider proof? | NO | No `/api/execute` behavior claimed |
 | 5 | Does it open a demand-gated source family? | NO | `agentmemory` LH1 trigger is met; Candidate 7 remains HOLD |
 | 6 | Does it require new memory tier or raw reinjection? | NO | `canReinject=false` and `rawMemoryReleased=false` preserved throughout |

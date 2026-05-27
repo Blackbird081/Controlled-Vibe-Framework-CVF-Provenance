@@ -263,6 +263,12 @@ Valid dispositions are `ACCEPT`, `REJECT`, and `BLOCKED_SOURCE_NOT_FOUND`.
 field discovery down to the worker when the dispatch instruction itself relies
 on the field.
 
+Forbidden closeout vocabulary for source facts includes `UNVERIFIED`, `TBD`,
+`TODO`, `confirm later`, `confirm field name`, and
+`verify during implementation`. Treat those terms as dispatch blockers unless
+they appear only in a defect note that explicitly returns the work order to the
+Orchestrator.
+
 ### Step 4 - GC-018 Authorization
 
 Use before implementation when the lane opens new implementation scope,

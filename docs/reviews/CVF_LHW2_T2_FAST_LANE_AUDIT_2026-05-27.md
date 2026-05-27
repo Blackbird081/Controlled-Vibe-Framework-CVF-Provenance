@@ -39,7 +39,7 @@ If T1 is not CLOSED_PASS, do not proceed with T2.
 | --- | --- | --- | --- |
 | 1 | Is the tranche documentation-only? | YES | Connector spec only; no source file modified |
 | 2 | Does it add new runtime claims? | NO | Boundary table labels all rows doc-only; WR1 runtime is referenced, not extended |
-| 3 | Does it touch receipt envelope schema? | NO | References existing `GovernanceEvidenceReceipt` field names only |
+| 3 | Does it touch receipt envelope schema? | NO | References existing receipt/evidence boundary terms only |
 | 4 | Does it require a live provider proof? | NO | No `/api/execute` or route behavior claimed |
 | 5 | Does it open a demand-gated source family? | NO | `Agent Harnesses` LH1 trigger is met; `deepagents` advisory use only |
 | 6 | Does it require broad workflow orchestration or async worker runtime? | NO | Recovery packet is a doc standard; no executor or scheduler is implemented |

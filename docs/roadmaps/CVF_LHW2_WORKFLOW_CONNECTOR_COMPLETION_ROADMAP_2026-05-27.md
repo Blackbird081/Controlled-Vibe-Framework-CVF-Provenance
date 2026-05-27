@@ -129,7 +129,7 @@ provider, or memory reinjection surface is claimed in T1/T2/T3.
 Deliverables:
 
 - A canonical connector spec binding W2 event hook classes → VI3 capture record
-  fields → GovernanceEvidenceReceipt fields.
+  fields → controlled-memory receipt fields.
 - Field mapping table: event hook class → capture record field → receipt field →
   propagation rule.
 - Loop completion standard: when `canReinject=false` and `rawMemoryReleased=false`

@@ -99,13 +99,14 @@ One packet template per WR1 transition class. For each class:
   - Packet type, when issued, MA1 sections R/O/N/A, minimum fields,
     `escalate_to_governance` action binding, stop condition
 
-For MA1 section references, use section numbers from the canonical standard
-(## 0 through ## 9). Mark each R (Required), O (Optional), or N/A.
+For MA1 section references, use section numbers and names from the canonical
+standard (##0 through ##10). Mark each R (Required), O (Optional), or N/A.
 
 ### S3 — lastRestorableCheckpoint to restore packet
 
 Prose description: how `lastRestorableCheckpoint` (the most recently completed
-reachable W1 phase) feeds into a recovery packet's `## 4 Input Package` field.
+reachable W1 phase) feeds into a recovery packet's `##3 Source Packet` field as
+`restoreFromPhase`.
 
 - What phase name / token is used as the restore point
 - What evidence must be present before a restore can begin
@@ -118,8 +119,8 @@ Cover in prose:
 - When `invalid_from_current_state` triggers the escalate packet: what the
   receiving Orchestrator must do next (do not advance; log; seek governance).
 - When `configured_deferred_gate` triggers the hold packet: which role holds the
-  next action token, and how the gate is lifted (Reviewer response via MA1
-  `## 9 Return Protocol`).
+  next action token, and how the gate is lifted (Reviewer response recorded in
+  MA1 `##8 Integration Decision` with supporting `##9 Completion Evidence`).
 - Minimum evidence Auditor must confirm before an escalation packet is accepted.
 
 ### S5 — Runtime-enforcement boundary table
@@ -135,20 +136,35 @@ Cover in prose:
 
 Do not label any row "Runtime" unless a closed PASS tranche implements it.
 
+### S6 — Source Verification Table (mandatory)
+
+Required columns: `Claimed item` | `Source file` | `Verified path or symbol` |
+`Owning interface/function/schema` | `Disposition`.
+
+Cover every WR1 runtime/source item cited in S2-S4, including all transition
+class tokens, `lastRestorableCheckpoint`, and recovery action tokens
+`hold_for_reviewer_gate` and `escalate_to_governance`. Valid dispositions are
+`ACCEPT`, `REJECT`, and `BLOCKED_SOURCE_NOT_FOUND`. If any item cannot be
+source-verified against `workflow-resolver.ts` or the MA1 standard, mark it
+`BLOCKED_SOURCE_NOT_FOUND`, stop, and return to Orchestrator. Do not close with
+`UNVERIFIED`, `TBD`, "confirm later", or "verify during implementation" wording.
+
 ## Pre-Flight
 
 - [ ] T1 CLOSED_PASS confirmed
 - [ ] Working tree clean
 - [ ] All required first reads done
-- [ ] WR1 four transition classes confirmed from WR1 completion review
+- [ ] WR1 four transition classes confirmed from `workflow-resolver.ts`
+- [ ] MA1 section numbers confirmed from the canonical MA1 standard
 
 ## Agent Roles
 
-Implementer writes spec (S1–S5) opening with the T1 foundation. Reviewer checks
+Implementer writes spec (S1–S6) opening with the T1 foundation. Reviewer checks
 WR1 transition class names verbatim, MA1 section refs correct, boundary table
 honest, no runtime claim added, no `.ts` file touched. Auditor confirms T1 gate
 documented, Agent Harnesses LH1 trigger recorded, no async worker or orchestration
-runtime claim. No self-review.
+runtime claim. Reviewer also checks S6 has no `BLOCKED_SOURCE_NOT_FOUND` rows.
+No self-review.
 
 ## Write Ownership
 
@@ -158,28 +174,30 @@ Implementer owns all new files. No file outside the Allowed list may be modified
 
 1. Confirm T1 gate.
 2. Read all required first reads.
-3. Draft spec (S1–S5).
+3. Draft spec (S1–S6) including Source Verification Table.
 4. Confirm no code file staged.
 5. Reviewer perspective — record result.
 6. Update session continuity (`lhw2_t2_complete`).
 7. Commit: `docs(lhw2-t2): add workflow recovery action packet connector spec`.
 8. Write completion review; include T3 gate answer (see below).
 
-Spec size guard: < 250 lines. Trim S3/S4 prose if approaching 220 lines.
+Spec size guard: < 270 lines. Trim S3/S4 prose if approaching 240 lines.
 
 ## Review Gate
 
 Before committing: Reviewer perspective completed; all WR1 class names verbatim;
-MA1 section refs correct; boundary table honest; no code file in diff.
+MA1 section refs correct; Source Verification Table complete with no
+`BLOCKED_SOURCE_NOT_FOUND` rows; boundary table honest; no code file in diff.
 
 ## Acceptance Criteria
 
-- [ ] Spec with all 5 sections created
+- [ ] Spec with all 6 sections created
 - [ ] All 4 WR1 transition classes mapped to distinct packet templates
 - [ ] MA1 sections marked R/O/N/A per packet type
 - [ ] `lastRestorableCheckpoint` to restore packet mapping present
 - [ ] Dissent and escalation handoff rules documented
 - [ ] Runtime boundary table present and honest
+- [ ] Source Verification Table present with no `BLOCKED_SOURCE_NOT_FOUND` rows
 - [ ] No code file in diff
 - [ ] Session continuity updated
 
@@ -194,12 +212,13 @@ T2 work?"
 
 ## Evidence Requirements
 
-- Spec at target path with all 5 sections present
+- Spec at target path with all 6 sections present
 - All 4 WR1 transition classes mapped to distinct packet templates in S2
 - MA1 sections marked R/O/N/A per packet type using canonical section numbers
 - `lastRestorableCheckpoint` to restore packet mapping present in S3
 - Dissent and escalation handoff rules documented in S4
 - S5 boundary table present; no doc-only row labeled Runtime
+- S6 Source Verification Table complete; no `BLOCKED_SOURCE_NOT_FOUND` rows
 - No `.ts`/`.tsx`/`.js`/`.py` file in `git diff --name-only`
 - Session continuity updated to `lhw2_t2_complete`
 - Completion review written with T3 gate answer
@@ -207,9 +226,10 @@ T2 work?"
 ## Closure Checklist
 
 - [ ] T1 gate confirmed documented
-- [ ] Spec created with all 5 sections
+- [ ] Spec created with all 6 sections
 - [ ] All 4 WR1 transition classes mapped with MA1 sections R/O/N/A
 - [ ] `lastRestorableCheckpoint` restore mapping present
+- [ ] S6 Source Verification Table complete; no `BLOCKED_SOURCE_NOT_FOUND` rows
 - [ ] S5 boundary table honest; no doc-only row labeled Runtime
 - [ ] No code file in diff
 - [ ] Session continuity updated
@@ -223,8 +243,10 @@ Stop and report to Orchestrator if:
 - any required first read file is missing or unreadable;
 - writing the connector requires a new WR1 transition class not in the existing
   4-class vocabulary;
+- any WR1 field/token cannot be source-verified and would require
+  `BLOCKED_SOURCE_NOT_FOUND`;
 - writing the connector requires modifying `workflow-resolver.ts`;
-- spec exceeds 250 lines before S4 is complete.
+- spec exceeds 270 lines before S4 is complete.
 
 ## Operator Checkpoint
 

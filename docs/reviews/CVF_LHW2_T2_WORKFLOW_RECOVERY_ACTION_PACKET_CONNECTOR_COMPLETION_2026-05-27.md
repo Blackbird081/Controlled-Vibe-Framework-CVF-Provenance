@@ -12,10 +12,11 @@ Date: 2026-05-27
 
 ## Purpose
 
-Close LHW2-T2 as CLOSED_PASS_BOUNDED. Confirm all 5 spec sections present,
+Close LHW2-T2 as CLOSED_PASS_BOUNDED. Confirm all 6 spec sections present,
 all 4 WR1 transition classes mapped to distinct MA1-compatible packet templates,
 `lastRestorableCheckpoint` restore mapping present, dissent/escalation rules
-documented, boundary table honest, and no code file modified.
+documented, Source Verification Table complete, boundary table honest, and no
+code file modified.
 
 ## Target
 
@@ -43,7 +44,7 @@ worker runtime, memory reinjection, receipt envelope extension, public-sync.
 
 ## Findings
 
-All 5 spec sections present and verified:
+All 6 spec sections present and verified:
 
 - S1: Purpose and claim boundary. Explicit authority statement:
   "WR1 `workflowRecoveryReadout` is the runtime authority for transition
@@ -56,25 +57,33 @@ All 5 spec sections present and verified:
   packet templates with packet type, trigger, MA1 sections R/O/N/A, minimum
   fields, and next role action.
 - S3: `lastRestorableCheckpoint` to restore packet mapping present. Describes
-  what phase token is used, how it feeds into MA1 ##4 Input Package as
+  what phase token is used, how it feeds into MA1 ##3 Source Packet as
   `restoreFromPhase`, what evidence is required, and what Orchestrator confirms.
 - S4: Dissent and escalation handoff rules. Covers `invalid_from_current_state`
   escalation (stop, log, governance review, no retry without clearance),
-  `configured_deferred_gate` gate lift (Reviewer via MA1 ##9 only), and
-  minimum Auditor evidence requirements for escalation packets.
+  `configured_deferred_gate` gate lift (Reviewer records MA1 ##8 Integration
+  Decision with supporting ##9 Completion Evidence), and minimum Auditor
+  evidence requirements for escalation packets.
 - S5: Runtime-enforcement boundary table. 6 rows; WR1 and W1 runtime rows
   reference `workflow-resolver.ts` (proven closed tranche). All doc-only rows
   correctly labeled. No doc-only row labeled Runtime.
+- S6: Source Verification Table. 8 rows; all ACCEPT; no
+  `BLOCKED_SOURCE_NOT_FOUND` rows. WR1 transition classes,
+  `lastRestorableCheckpoint`, recovery action tokens, and MA1 section numbers
+  were source-verified.
 
 No TypeScript, JavaScript, or Python file modified.
 
 ## Risk / Corrective Action
 
-No material risk identified. The connector is documentation-only. WR1 transition
-class names are verbatim from the closed WR1 completion review; MA1 section
-numbers reference the canonical standard. Recovery packet structure (S2), restore
-point enforcement (S3), and escalation routing (S4) are all DOC_ONLY and honestly
-labeled. No corrective action required.
+Corrective cleanup applied after review: the original spec relied on WR1 review
+language without recording a Source Verification Table and used stale MA1
+section semantics (`##9 Return Protocol`). The spec now verifies WR1 tokens
+against `workflow-resolver.ts`, verifies MA1 section numbers against the MA1
+standard, and routes gate-lift/escalation decisions through MA1 ##8 Integration
+Decision plus ##9 Completion Evidence. Recovery packet structure (S2), restore
+point enforcement (S3), and escalation routing (S4) remain DOC_ONLY and honestly
+labeled.
 
 ## Decision / Recommendation / Disposition
 

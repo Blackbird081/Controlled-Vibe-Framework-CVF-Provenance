@@ -22,9 +22,11 @@ Current HEAD before Work Order Source Verification rule commit: `60868914`.
 
 Current HEAD after Work Order Source Verification rule commit (parent of handoff sync): `c9e55d6a`.
 
+Current HEAD before LHW2 work-order cleanup commit: `f74e66bf`.
+
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=work_order_source_verification_rule_added; active handoff=AGENT_HANDOFF_V14_2026-05-27.md; next allowed move=next legacy workflow connector requires fresh GC-018/work order and Source Verification when source-level facts are used; parked checkpoint=hosted Netlify freshness and operator external-agent retest for VI5-T4/T5 remain pending.
+Startup acknowledged: current mode=lhw2_work_order_cleanup_closed_pass_bounded; active handoff=AGENT_HANDOFF_V14_2026-05-27.md; next allowed move=next legacy workflow connector requires fresh GC-018/work order and strict Source Verification when source-level facts or MA1 section refs are used; parked checkpoint=hosted Netlify freshness and operator external-agent retest for VI5-T4/T5 remain pending.
 
 Previous active handoff `AGENT_HANDOFF_V13_2026-05-25.md` was archived because it exceeded the governed active-markdown size guard. Do not append new status to V13.
 
@@ -205,7 +207,7 @@ verification table.
 
 LHW2 Workflow Connector Completion is CLOSED_PASS_BOUNDED (T1 + T2 + T3).
 
-Mode marker: `lhw2_t3_tool_approval_ma1_handoff_connector_closed_pass_bounded`
+Mode marker: `lhw2_work_order_cleanup_closed_pass_bounded`
 
 Roadmap: `docs/roadmaps/CVF_LHW2_WORKFLOW_CONNECTOR_COMPLETION_ROADMAP_2026-05-27.md`
 
@@ -214,19 +216,21 @@ Spec: `docs/reference/CVF_LHW2_MEMORY_EVENT_CAPTURE_WORKFLOW_RECEIPT_LOOP_CONNEC
 Contract: `cvf.memoryEventCaptureWorkflowReceiptLoopConnector.lhw2.t1.v1`
 Completion: `docs/reviews/CVF_LHW2_T1_MEMORY_EVENT_CAPTURE_WORKFLOW_RECEIPT_LOOP_CONNECTOR_COMPLETION_2026-05-27.md`
 Delivered: S1–S6; 5 W2 hook decisions → VI3 captureRecord fields (source-verified
-from `memory-event-hooks.ts`); 5 captureRecord → GovernanceEvidenceReceipt bindings
-(RUNTIME_PROVEN/DOC_ONLY); loop completion traceability condition explicit;
-Source Verification Table 11 rows all ACCEPT. No code file modified.
+from `memory-event-hooks.ts`); 5 captureRecord → controlled-memory receipt
+bindings (RUNTIME_PROVEN/DOC_ONLY); loop completion traceability condition
+explicit; Source Verification Table 15 rows all ACCEPT. No code file modified.
 
 T2 — Workflow Recovery Action Packet Connector:
 Spec: `docs/reference/CVF_LHW2_WORKFLOW_RECOVERY_ACTION_PACKET_CONNECTOR_SPEC_2026-05-27.md`
 Contract: `cvf.workflowRecoveryActionPacketConnector.lhw2.t2.v1`
 Completion: `docs/reviews/CVF_LHW2_T2_WORKFLOW_RECOVERY_ACTION_PACKET_CONNECTOR_COMPLETION_2026-05-27.md`
-T1 gate: CLOSED_PASS ✓. Delivered: S1–S5; all 4 WR1 transition classes mapped
+T1 gate: CLOSED_PASS ✓. Delivered: S1–S6; all 4 WR1 transition classes mapped
 to distinct MA1-compatible packet templates (advisory_hold, reviewer_gate_hold,
 advance, escalate_to_governance) with MA1 sections R/O/N/A; lastRestorableCheckpoint
-→ MA1 ##4 Input Package restoreFromPhase; dissent and escalation handoff rules.
-No code file modified.
+→ MA1 ##3 Source Packet restoreFromPhase; dissent and escalation handoff rules
+route gate-lift/escalation through MA1 ##8 Integration Decision plus ##9
+Completion Evidence; Source Verification Table 8 rows all ACCEPT. No code file
+modified.
 
 T3 — Tool Approval MA1 Handoff Connector:
 Spec: `docs/reference/CVF_LHW2_TOOL_APPROVAL_MA1_HANDOFF_CONNECTOR_SPEC_2026-05-27.md`
@@ -235,9 +239,10 @@ Completion: `docs/reviews/CVF_LHW2_T3_TOOL_APPROVAL_MA1_HANDOFF_CONNECTOR_COMPLE
 T1 gate: CLOSED_PASS ✓. T2 gate: CLOSED_PASS ✓. Delivered: S1–S5; all 6 TA1
 approval states mapped (not_required / pending_approval / satisfied_but_not_executable /
 blocked_before_approval / blocked_by_policy / incomplete_approval) with MA1 R/O/N/A
-per packet type; Source Verification Table 7 rows all ACCEPT from
-`tool-action-taxonomy.ts`; demand-gated items listed; runtimeExecutionAuthorized=false
-explicit. No code file modified. LHW2 roadmap CLOSED_PASS_BOUNDED.
+per packet type; Source Verification Table 8 rows all ACCEPT from
+`tool-action-taxonomy.ts` and the MA1 standard; demand-gated items listed;
+runtimeExecutionAuthorized=false explicit. No code file modified. LHW2 roadmap
+CLOSED_PASS_BOUNDED.
 
 ## Mandatory Work Order Source Verification Rule
 
@@ -267,6 +272,15 @@ Valid dispositions: `ACCEPT`, `REJECT`, `BLOCKED_SOURCE_NOT_FOUND`.
 `BLOCKED_SOURCE_NOT_FOUND` returns the work order to Orchestrator. Guessed
 fields, inferred names, placeholder source paths, stale memory-only vocabulary,
 and "confirm later" language cannot close.
+
+LHW2 cleanup tightened this rule: `UNVERIFIED`, `TBD`, `TODO`,
+`confirm field name`, and `verify during implementation` are also forbidden
+closeout vocabulary for source facts. They may appear only as explicit blocking
+defect notes. Work orders that reference MA1 sections must source-verify the
+section numbers and names against the canonical MA1 standard.
+
+Cleanup completion review:
+`docs/reviews/CVF_LHW2_WORK_ORDER_CLEANUP_COMPLETION_2026-05-27.md`
 
 ## Mandatory Standards
 

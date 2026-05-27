@@ -59,17 +59,17 @@ hardcoded literal). See S3 Source Verification Table.
 
 TA1 approval state names are verbatim from `ToolActionApprovalState` in
 `governance/contracts/tool-action-taxonomy.ts` (lines 64–70).
-MA1 section numbers (##0–##9) from
+MA1 section numbers (##0-##10) from
 `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`.
 
 | TA1 state | Packet type | When issued | Required MA1 sections | Minimum packet fields | Next role action |
 |---|---|---|---|---|---|
 | `not_required` | No packet | Approval level is `none`; advance immediately | N/A all | — | Proceed; `runtimeExecutionAuthorized=false` still holds; a separately authorized executor is required |
-| `pending_approval` | `approval_request_packet` | Approval required; evidence not yet submitted | R: ##0, ##1, ##2, ##6, ##8; O: ##3 | `approvalState`, `approvalLevel`, `requiredEvidence`, `missingEvidence`, `receiverRole` | Designated approver submits evidence; responds via MA1 ##9 |
-| `satisfied_but_not_executable` | `readiness_confirmed_packet` | Evidence satisfied but no runtime executor authorized | R: ##0, ##2; N/A: ##4, ##5 | `approvalState`, `pendingGate: runtime_executor_not_yet_authorized` | Hold; do not execute; await dedicated execution tranche |
-| `blocked_before_approval` | `block_notification_packet` | Required scope/target/trace evidence missing before approval can be evaluated | R: ##0, ##8; O: ##3 | `approvalState`, `safeMessage`, `correctiveAction: add_missing_evidence` | Stop; add missing evidence; resubmit for approval |
-| `blocked_by_policy` | `policy_block_packet` | Action is blocked by local policy contract | R: ##0, ##1, ##8; O: ##6 | `approvalState`, `safeMessage`, `escalationPath: open_governed_work_order` | Stop; Auditor confirms; open fresh governed work order if operator pursues |
-| `incomplete_approval` | `missing_evidence_packet` | Approval partially submitted but missing approver id, reason, or evidence id | R: ##0, ##6; O: ##3 | `approvalState`, `missingEvidence` (list), `resolverRole` | Named resolver attaches approval evidence; resubmits |
+| `pending_approval` | `approval_request_packet` | Approval required; evidence not yet submitted | R: ##0, ##1, ##2, ##3, ##4, ##7, ##8, ##9 | `approvalState`, `approvalLevel`, `requiredEvidence`, `missingEvidence`, `receiverRole` | Designated approver submits evidence; records decision in MA1 ##8 and evidence in ##9 |
+| `satisfied_but_not_executable` | `readiness_confirmed_packet` | Evidence satisfied but no runtime executor authorized | R: ##0, ##1, ##2, ##8, ##10; N/A: ##5 | `approvalState`, `pendingGate: runtime_executor_not_yet_authorized` | Hold; do not execute; await dedicated execution tranche |
+| `blocked_before_approval` | `block_notification_packet` | Required scope/target/trace evidence missing before approval can be evaluated | R: ##0, ##1, ##2, ##3, ##8, ##10 | `approvalState`, `safeMessage`, `correctiveAction: add_missing_evidence` | Stop; add missing evidence; resubmit for approval |
+| `blocked_by_policy` | `policy_block_packet` | Action is blocked by local policy contract | R: ##0, ##1, ##2, ##7, ##8, ##10; O: ##3 | `approvalState`, `safeMessage`, `escalationPath: open_governed_work_order` | Stop; Auditor confirms; open fresh governed work order if operator pursues |
+| `incomplete_approval` | `missing_evidence_packet` | Approval partially submitted but missing approver id, reason, or evidence id | R: ##0, ##1, ##2, ##3, ##4, ##7 | `approvalState`, `missingEvidence` (list), `resolverRole` | Named resolver attaches approval evidence; resubmits |
 
 ---
 
@@ -84,8 +84,9 @@ MA1 section numbers (##0–##9) from
 | `blocked_by_policy` | `governance/contracts/tool-action-taxonomy.ts` | `ToolActionApprovalState = 'blocked_by_policy'` (line 69) | `ToolActionApprovalState` type | ACCEPT |
 | `incomplete_approval` | `governance/contracts/tool-action-taxonomy.ts` | `ToolActionApprovalState = 'incomplete_approval'` (line 70) | `ToolActionApprovalState` type | ACCEPT |
 | `runtimeExecutionAuthorized: false` | `governance/contracts/tool-action-taxonomy.ts` | `ToolActionApprovalReadout.runtimeExecutionAuthorized: false` (line 141) | `ToolActionApprovalReadout` interface | ACCEPT |
+| MA1 section numbers `##0`-`##10` | `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | Section headers `## 0` through `## 10` | MA1 standard | ACCEPT |
 
-No UNVERIFIED rows.
+No `BLOCKED_SOURCE_NOT_FOUND` rows.
 
 ---
 

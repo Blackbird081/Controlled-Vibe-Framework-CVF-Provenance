@@ -54,7 +54,7 @@ packet shape usable by Orchestrator and role agents."
 
 WR1 transition class vocabulary is verbatim from
 `docs/reviews/CVF_WR1_WORKFLOW_RECOVERY_STATE_PROOF_COMPLETION_2026-05-25.md`.
-MA1 section numbers (##0–##9) are from
+MA1 section numbers (##0-##10) are from
 `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`.
 
 ### `no_requested_transition` → Advisory Hold Packet
@@ -63,8 +63,8 @@ Packet type: `advisory_hold_packet`
 
 When issued: no phase transition was requested; system in advisory steady state.
 
-MA1 sections: R: ##0 (Transfer Header), ##1 (Transfer Objective);
-O: ##3 (Source Packet — current phase record); N/A: ##2, ##4, ##5, ##6, ##7, ##9.
+MA1 sections: R: ##0 (Surface Fidelity Gate), ##1 (Authority Chain),
+##2 (Transfer Objective); O: ##3 (Source Packet — current phase record).
 
 Minimum fields: `currentPhase` (W1 phase token), `readoutClass: no_requested_transition`,
 `advisoryNote` (reason no transition was requested).
@@ -78,16 +78,17 @@ Packet type: `reviewer_gate_hold_packet`
 When issued: a transition was requested but a configured reviewer gate is
 required before the phase can advance.
 
-MA1 sections: R: ##0, ##1, ##2 (Role Assignment — reviewer identity),
-##6 (Dissent and Review Ledger), ##9 (Return Protocol — gate lift response);
-O: ##3 (Source Packet).
+MA1 sections: R: ##0 (Surface Fidelity Gate), ##1 (Authority Chain),
+##2 (Transfer Objective), ##3 (Source Packet), ##4 (Role Assignment —
+reviewer identity), ##7 (Dissent And Review Ledger), ##8 (Integration
+Decision), ##9 (Completion Evidence).
 
 Minimum fields: `currentPhase`, `readoutClass: configured_deferred_gate`,
 `reviewerRole` (role that must respond), `gateCondition` (what the reviewer
 must confirm), `action: hold_for_reviewer_gate`.
 
-Next role action: Reviewer receives packet, records decision in MA1 ##6, and
-responds via MA1 ##9 Return Protocol to lift the gate.
+Next role action: Reviewer receives packet, records decision in MA1 ##7, and
+records the gate-lift outcome in MA1 ##8 plus evidence in MA1 ##9.
 
 ### `valid_from_current_state` → Advance Packet
 
@@ -95,8 +96,9 @@ Packet type: `advance_packet`
 
 When issued: the requested phase transition is valid from the current W1 state.
 
-MA1 sections: R: ##0, ##1, ##4 (Input Package — next phase inputs),
-##5 (Execution Instructions); O: ##3; N/A: ##6, ##8.
+MA1 sections: R: ##0 (Surface Fidelity Gate), ##1 (Authority Chain),
+##2 (Transfer Objective), ##3 (Source Packet), ##4 (Role Assignment),
+##5 (Execution Instructions); O: ##9 (Completion Evidence).
 
 Minimum fields: `currentPhase`, `nextPhase` (target W1 phase token),
 `transitionToken`, `readoutClass: valid_from_current_state`.
@@ -111,8 +113,9 @@ Packet type: `escalate_to_governance_packet`
 When issued: the requested transition is not valid from the current W1 phase;
 possible workflow state corruption.
 
-MA1 sections: R: ##0, ##1, ##8 (Safety/Risk Boundary),
-##9 (Return Protocol — escalation); O: ##3 (Source Packet), ##6 (Dissent Ledger).
+MA1 sections: R: ##0 (Surface Fidelity Gate), ##1 (Authority Chain),
+##2 (Transfer Objective), ##3 (Source Packet), ##7 (Dissent And Review Ledger),
+##8 (Integration Decision), ##10 (Claim Boundary).
 
 Minimum fields: `currentPhase`, `attemptedTransition`, `reason`,
 `readoutClass: invalid_from_current_state`, `action: escalate_to_governance`,
@@ -132,7 +135,7 @@ token (e.g., `design_ready` after `intake_pending` was successfully closed).
 stored in `lastRestorableCheckpoint` at the time WR1 was evaluated.
 
 **How it feeds into a recovery packet:** the restore phase token populates
-`## 4 Input Package` under the field `restoreFromPhase`. The advance packet
+`##3 Source Packet` under the field `restoreFromPhase`. The advance packet
 (for `valid_from_current_state`) or the escalation packet (for
 `invalid_from_current_state`) must include `restoreFromPhase` in ##4.
 
@@ -151,15 +154,15 @@ confirmed-closed W1 phase; receipt exists; no concurrent advance.
 
 **When `invalid_from_current_state` triggers escalation:** The receiving
 Orchestrator must not advance the phase. Log the escalation packet. Record
-it in the MA1 ##6 Dissent and Review Ledger. Seek governance review via the
-return protocol (##9) before any further action. Retrying the same transition
+it in the MA1 ##7 Dissent And Review Ledger. Seek governance review and record
+the decision in MA1 ##8 before any further action. Retrying the same transition
 without governance clearance is a stop condition.
 
 **When `configured_deferred_gate` triggers a hold:** The role that holds the
 next action token is identified in the packet `reviewerRole` field. The gate
-is lifted only by a Reviewer response recorded in MA1 ##9 Return Protocol
-explicitly stating gate-lifted and the condition satisfied. No other role may
-lift the gate unilaterally.
+is lifted only by a Reviewer response recorded in MA1 ##8 Integration Decision
+with supporting evidence in MA1 ##9 Completion Evidence. No other role may lift
+the gate unilaterally.
 
 **Minimum evidence Auditor must confirm before accepting an escalation packet:**
 
@@ -180,6 +183,23 @@ lift the gate unilaterally.
 | Restore point enforcement | Document-only | Future: route-level checkpoint restore |
 | Escalation routing | Document-only | Future: governance escalation queue |
 | Reviewer gate lift | Document-only | Future: reviewer gate signal in `/api/execute` |
+
+---
+
+## S6 — Source Verification Table
+
+| Claimed item | Source file | Verified path or symbol | Owning interface/function/schema | Disposition |
+|---|---|---|---|---|
+| `no_requested_transition` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts` | `WorkflowTransitionDisposition = 'no_requested_transition'` | `WorkflowTransitionDisposition` type | ACCEPT |
+| `configured_deferred_gate` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts` | `WorkflowTransitionDisposition = 'configured_deferred_gate'` | `WorkflowTransitionDisposition` type | ACCEPT |
+| `valid_from_current_state` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts` | `WorkflowTransitionDisposition = 'valid_from_current_state'` | `WorkflowTransitionDisposition` type | ACCEPT |
+| `invalid_from_current_state` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts` | `WorkflowTransitionDisposition = 'invalid_from_current_state'` | `WorkflowTransitionDisposition` type | ACCEPT |
+| `lastRestorableCheckpoint` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts` | `WorkflowRecoveryReadout.lastRestorableCheckpoint` | `WorkflowRecoveryReadout` interface | ACCEPT |
+| `hold_for_reviewer_gate` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts` | `WorkflowRecoveryAction = 'hold_for_reviewer_gate'` | `WorkflowRecoveryAction` type | ACCEPT |
+| `escalate_to_governance` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts` | `WorkflowRecoveryAction = 'escalate_to_governance'` | `WorkflowRecoveryAction` type | ACCEPT |
+| MA1 section numbers `##0`-`##10` | `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | Section headers `## 0` through `## 10` | MA1 standard | ACCEPT |
+
+No `BLOCKED_SOURCE_NOT_FOUND` rows.
 
 ---
 

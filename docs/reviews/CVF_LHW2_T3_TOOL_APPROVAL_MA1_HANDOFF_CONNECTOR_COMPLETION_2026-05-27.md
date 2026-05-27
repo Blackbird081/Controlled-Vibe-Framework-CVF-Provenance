@@ -14,7 +14,8 @@ Date: 2026-05-27
 
 Close LHW2-T3 as CLOSED_PASS_BOUNDED and mark the LHW2 roadmap
 CLOSED_PASS_BOUNDED. Confirm both gate conditions met, all 6 TA1 approval
-states mapped, Source Verification Table complete with no UNVERIFIED rows,
+states mapped, Source Verification Table complete with no
+`BLOCKED_SOURCE_NOT_FOUND` rows,
 demand-gated items explicit, `runtimeExecutionAuthorized=false` stated, and
 no code file modified.
 
@@ -61,9 +62,11 @@ All 5 spec sections present and verified:
   `blocked_before_approval`, `blocked_by_policy`, `incomplete_approval`) mapped
   to distinct packet outcomes. MA1 sections marked R/O/N/A per packet type using
   canonical section numbers. State names verbatim from source.
-- S3: Source Verification Table. 7 rows; all ACCEPT; no UNVERIFIED rows. All 6
-  TA1 state names and `runtimeExecutionAuthorized: false` confirmed from
-  `governance/contracts/tool-action-taxonomy.ts`.
+- S3: Source Verification Table. 8 rows; all ACCEPT; no
+  `BLOCKED_SOURCE_NOT_FOUND` rows. All 6 TA1 state names and
+  `runtimeExecutionAuthorized: false` confirmed from
+  `governance/contracts/tool-action-taxonomy.ts`; MA1 section numbers confirmed
+  from the MA1 standard.
 - S4: Demand-gated items explicitly listed: `pancake-pos-mcp` transport,
   persisted approval tickets/queue, live tool/MCP/database execution, and
   CLI-Anything sandboxed execution.
@@ -76,12 +79,15 @@ confirmed and documented.
 
 ## Risk / Corrective Action
 
-No material risk identified. The connector is documentation-only. All 6 TA1
-approval state names are ACCEPT-verified from `governance/contracts/tool-action-taxonomy.ts`
-and `runtimeExecutionAuthorized: false` is explicitly cited with source line.
-Demand-gated items are listed; no execution authority is granted or implied.
-Approval request packet routing, block notification delivery, and execution gate
-enforcement are DOC_ONLY and honestly labeled. No corrective action required.
+Corrective cleanup applied after review: source verification language now uses
+`BLOCKED_SOURCE_NOT_FOUND` instead of `UNVERIFIED`, and MA1 section references
+were aligned to the canonical MA1 standard (##0-##10). The connector is
+documentation-only. All 6 TA1 approval state names are ACCEPT-verified from
+`governance/contracts/tool-action-taxonomy.ts`, `runtimeExecutionAuthorized:
+false` is explicitly cited with source line, and MA1 section numbers are
+source-verified. Demand-gated items are listed; no execution authority is
+granted or implied. Approval request packet routing, block notification
+delivery, and execution gate enforcement are DOC_ONLY and honestly labeled.
 
 ## Decision / Recommendation / Disposition
 

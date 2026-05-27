@@ -13,7 +13,7 @@ Date: 2026-05-27
 ## Purpose
 
 Implement LHW2-T1: a connector spec binding W2 memory event hook classes →
-VI3 agent memory capture record fields → GovernanceEvidenceReceipt fields into a
+VI3 agent memory capture record fields → controlled-memory receipt fields into a
 traceable loop. Closes the gap where W2, VI3, and M1 each exist as proven runtime
 pieces but no connector standard ties them into a coherent handoff chain.
 
@@ -39,7 +39,7 @@ behavior is changed.
 4. `docs/reviews/CVF_VI3_AGENTMEMORY_CAPTURE_RECORD_READOUT_COMPLETION_2026-05-25.md`
    — understand `cvf.agentMemoryCaptureRecord.vi3.v1` fields and source-verified paths
 5. `docs/reviews/CVF_LHW1_T2_WORKFLOW_CHAIN_STATE_CONNECTOR_COMPLETION_2026-05-27.md`
-   — understand evidence receipt binding from S6 (GovernanceEvidenceReceipt field names)
+   — understand evidence binding boundaries from S6
 6. `docs/reviews/CVF_M1_DURABLE_CROSS_SESSION_MEMORY_COMPLETION_2026-05-24.md`
    — understand durable memory read/write boundaries and what is visible in receipt
 7. `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-event-hooks.ts`
@@ -69,7 +69,7 @@ Required sections:
 ### S1 — Purpose and claim boundary
 
 - State what the connector is: a normative doc binding W2 event hook classes to
-  VI3 capture record fields and GovernanceEvidenceReceipt fields.
+  VI3 capture record fields and controlled-memory receipt fields.
 - State what it is not: not a W2/VI3 runtime extension; not a new memory tier;
   not a reinjection path.
 - Explicit statement: "`canReinject: false` and `rawMemoryReleased: false` are
@@ -89,18 +89,21 @@ Minimum rows:
 - `deny` → `captureRecord.captureDecision` → excluded; record denial reason
 - `require_human_approval` → `captureRecord.policyContext` → hold; approval required
 
-Use W2 and VI3 field names verbatim. If a field name is uncertain, write
-"confirm field name against `memory-event-hooks.ts` or `audit-memory-receipt.ts`"
-rather than inventing a name.
+Use W2 and VI3 field names verbatim. If a field name cannot be verified from
+`memory-event-hooks.ts` or `audit-memory-receipt.ts`, mark it
+`BLOCKED_SOURCE_NOT_FOUND`, stop the work order, and return it to Orchestrator.
+Do not carry `UNVERIFIED`, `TBD`, or "confirm later" wording into the spec.
 
-### S3 — Capture record to GovernanceEvidenceReceipt binding
+### S3 — Capture record to Controlled Memory Receipt binding
 
-Table columns: `VI3 captureRecord field` | `GovernanceEvidenceReceipt field` |
+Table columns: `VI3 captureRecord field` | `ControlledMemoryReceipt field` |
 `Binding rule` | `Current status`
 
 Minimum rows must cover: captureDecision, privacyFilters, memoryIds,
-rawMemoryReleased, canReinject. Use existing `GovernanceEvidenceReceipt` field
-names only. Do not define new receipt envelope fields.
+rawMemoryReleased, canReinject. Use existing `ControlledMemoryReceipt` field
+names only. Do not define new receipt envelope fields. Do not claim
+`ControlledMemoryReceipt` and `/api/execute` `GovernanceEvidenceReceipt` are
+the same type unless a source-verified bridge is added in a future tranche.
 
 `Current status` column must use one of: `RUNTIME_PROVEN` (if the field is
 already wired in a closed PASS tranche) or `DOC_ONLY` (if the binding is
@@ -113,7 +116,7 @@ Prose description: when a memory event completes the full loop (hook → capture
 
 - At hook evaluation: W2 decision returned
 - At capture record: VI3 fields populated
-- At receipt: which GovernanceEvidenceReceipt fields carry the evidence
+- At controlled-memory receipt: which `ControlledMemoryReceipt` fields carry the evidence
 - Loop closed indicator: what confirms the loop is traceable end-to-end
 
 State explicitly: "The loop is traceable when a receipt contains the memory ids
@@ -137,9 +140,11 @@ Do not label any row "Runtime" unless a closed PASS tranche implements it.
 Required columns: `Claimed field` | `Source file` | `Verified field path` |
 `Owning interface/function` | `Disposition`
 
-Cover every W2 and VI3 field name cited in S2 and S3. If any field cannot be
-source-verified, mark Disposition as `UNVERIFIED — return to Orchestrator`.
-No unverified field may remain in S2/S3.
+Cover every W2 and VI3 field name cited in S2 and S3. Valid dispositions are
+`ACCEPT`, `REJECT`, and `BLOCKED_SOURCE_NOT_FOUND`. If any field cannot be
+source-verified, mark Disposition as `BLOCKED_SOURCE_NOT_FOUND`, stop, and
+return to Orchestrator. No blocked, guessed, inferred, or confirm-later field
+may remain in S2/S3.
 
 ## Pre-Flight
 
@@ -177,16 +182,16 @@ Spec size guard: < 250 lines. Split at 200 if needed (S1–S3 / S4–S6).
 
 Before committing: Reviewer perspective completed; `canReinject=false` and
 `rawMemoryReleased=false` confirmed explicit; Source Verification Table complete
-with no UNVERIFIED rows; no code file in diff.
+with no `BLOCKED_SOURCE_NOT_FOUND` rows; no code file in diff.
 
 ## Acceptance Criteria
 
 - [ ] Spec with all 6 sections created
 - [ ] S2 field mapping table uses W2 and VI3 vocabulary verbatim
-- [ ] S3 GovernanceEvidenceReceipt binding uses existing field names only
+- [ ] S3 ControlledMemoryReceipt binding uses existing field names only
 - [ ] S4 loop completion standard explicitly states traceability condition
 - [ ] S5 boundary table honest (no doc-only row labeled Runtime)
-- [ ] S6 Source Verification Table complete with no UNVERIFIED rows
+- [ ] S6 Source Verification Table complete with no `BLOCKED_SOURCE_NOT_FOUND` rows
 - [ ] `canReinject: false` and `rawMemoryReleased: false` explicit in S1
 - [ ] No code file in diff
 - [ ] Session continuity updated
@@ -203,10 +208,10 @@ Answer explicitly: "Was a concrete recovery packet gap identified during T1 work
 
 - Spec at target path with all 6 sections present
 - S2 field mapping uses W2 and VI3 vocabulary verbatim (no invented names)
-- S3 GovernanceEvidenceReceipt binding uses existing field names only
+- S3 ControlledMemoryReceipt binding uses existing field names only
 - S4 loop completion states traceability condition explicitly
 - S5 boundary table present; no doc-only row labeled Runtime
-- S6 Source Verification Table complete; no UNVERIFIED rows
+- S6 Source Verification Table complete; no `BLOCKED_SOURCE_NOT_FOUND` rows
 - `canReinject: false` and `rawMemoryReleased: false` explicit in S1
 - No `.ts`/`.tsx`/`.js`/`.py` file in `git diff --name-only`
 - Session continuity updated to `lhw2_t1_complete`
@@ -216,7 +221,7 @@ Answer explicitly: "Was a concrete recovery packet gap identified during T1 work
 
 - [ ] Spec created with all 6 sections
 - [ ] S2 mapping table uses W2 + VI3 vocabulary verbatim
-- [ ] S6 Source Verification Table complete; no UNVERIFIED rows
+- [ ] S6 Source Verification Table complete; no `BLOCKED_SOURCE_NOT_FOUND` rows
 - [ ] `canReinject: false` and `rawMemoryReleased: false` explicit
 - [ ] No code file in diff
 - [ ] Session continuity updated

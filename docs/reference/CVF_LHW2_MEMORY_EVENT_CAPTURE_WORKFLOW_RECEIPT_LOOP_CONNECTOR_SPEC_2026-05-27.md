@@ -17,9 +17,10 @@ Authority: `docs/work_orders/CVF_WO_LHW2_T1_MEMORY_EVENT_CAPTURE_WORKFLOW_RECEIP
 ## Purpose
 
 A normative document binding W2 memory event hook decision classes to VI3
-agent memory capture record fields and GovernanceEvidenceReceipt fields into
-a traceable loop. Closes the gap where W2, VI3, and M1 each exist as proven
-runtime pieces but no connector standard ties them into a coherent handoff chain.
+agent memory capture record fields and the controlled-memory receipt used by
+the audit-memory route into a traceable loop. Closes the gap where W2, VI3,
+and M1 each exist as proven runtime pieces but no connector standard ties them
+into a coherent handoff chain.
 
 ## Scope
 
@@ -42,7 +43,7 @@ This connector is a documentation artifact. It does not modify
 `memory-event-hooks.ts`, `audit-memory-receipt.ts`, or any other source file.
 
 What this connector is: a normative doc binding W2 event hook decision classes
-to VI3 capture record fields and GovernanceEvidenceReceipt fields.
+to VI3 capture record fields and controlled-memory receipt fields.
 
 What this connector is not: not a W2/VI3 runtime extension; not a new memory
 tier; not a reinjection path; not an M1 persistence change.
@@ -70,17 +71,19 @@ Source-verified from
 
 ---
 
-## S3 — Capture Record to GovernanceEvidenceReceipt Binding
+## S3 — Capture Record to Controlled Memory Receipt Binding
 
-Uses existing `GovernanceEvidenceReceipt` (= `ControlledMemoryReceipt`) field
-names only. No new receipt envelope fields are defined.
+Uses existing `ControlledMemoryReceipt` fields in the `audit-memory-receipt`
+path. `GovernanceEvidenceReceipt` is a separate `/api/execute` evidence type;
+this connector does not claim those two receipt shapes are equivalent and does
+not define new receipt envelope fields.
 
-| VI3 captureRecord field | GovernanceEvidenceReceipt field | Binding rule | Current status |
+| VI3 captureRecord field | ControlledMemoryReceipt field | Binding rule | Current status |
 |---|---|---|---|
 | `captureDecision` | `decision` | Capture decision string maps to receipt `decision` token | RUNTIME_PROVEN (VI3: `captureDecision: receipt.decision` wired in route) |
 | `privacyFilters` | `reason` | Privacy filter label recorded as redaction reason in receipt | DOC_ONLY |
 | `memoryIds` | `memoryIds` | Memory event ids propagate into receipt `memoryIds` array | RUNTIME_PROVEN (VI3: `memoryIds: receipt.memoryIds` wired in route) |
-| `rawMemoryReleased: false` (W2 hook receipt boundary) | *(no GovernanceEvidenceReceipt field)* | Enforced at W2 hook level; `MemoryEventHookReceipt.rawMemoryReleased: false` literal; receipt confirms by absence | RUNTIME_PROVEN (W2 LPF: literal in `MemoryEventHookReceipt`) |
+| `rawMemoryReleased: false` (W2 hook receipt boundary) | *(no controlled-memory receipt field)* | Enforced at W2 hook level; `MemoryEventHookReceipt.rawMemoryReleased: false` literal; receipt confirms by absence | RUNTIME_PROVEN (W2 LPF: literal in `MemoryEventHookReceipt`) |
 | `policyContext.canReinject: false` | `provenanceRequired: true` | `canReinject: false` enforced in `AgentMemoryCaptureRecord.policyContext`; receipt signals `provenanceRequired: true` as boundary indicator | DOC_ONLY binding |
 
 ---
@@ -99,7 +102,7 @@ a `MemoryEventHookReceipt` with `rawMemoryReleased: false` and `canReinject: fal
 `memoryIds`), `privacyFilters` (when `allow_redacted_capture`), and
 `policyContext.canReinject: false`.
 
-**At receipt:** `GovernanceEvidenceReceipt` carries `decision` (= captureDecision),
+**At controlled-memory receipt:** `ControlledMemoryReceipt` carries `decision` (= captureDecision),
 `memoryIds` (= captureRecord.memoryIds), and `provenanceRequired: true`.
 
 "The loop is traceable when a receipt contains the memory ids from
@@ -136,6 +139,10 @@ W2 hook receipt for the same event."
 | `privacyFilters` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/audit-memory-receipt.ts` | `AgentMemoryCaptureRecord.privacyFilters` | `AgentMemoryCaptureRecord` interface | ACCEPT |
 | `memoryIds` (capture) | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/audit-memory-receipt.ts` | `AgentMemoryCaptureRecord.memoryIds` | `AgentMemoryCaptureRecord` interface | ACCEPT |
 | `policyContext.canReinject` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/audit-memory-receipt.ts` | `AgentMemoryCaptureRecord.policyContext.canReinject: false` | `AgentMemoryCaptureRecord` interface | ACCEPT |
+| `decision` (receipt) | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled.memory.gateway.contract.ts` | `ControlledMemoryReceipt.decision` | `ControlledMemoryReceipt` interface | ACCEPT |
+| `reason` (receipt) | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled.memory.gateway.contract.ts` | `ControlledMemoryReceipt.reason` | `ControlledMemoryReceipt` interface | ACCEPT |
+| `memoryIds` (receipt) | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled.memory.gateway.contract.ts` | `ControlledMemoryReceipt.memoryIds` | `ControlledMemoryReceipt` interface | ACCEPT |
+| `provenanceRequired` (receipt) | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled.memory.gateway.contract.ts` | `ControlledMemoryReceipt.provenanceRequired` | `ControlledMemoryReceipt` interface | ACCEPT |
 
 ---
 

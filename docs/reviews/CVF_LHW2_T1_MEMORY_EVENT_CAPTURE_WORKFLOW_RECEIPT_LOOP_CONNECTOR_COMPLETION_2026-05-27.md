@@ -13,7 +13,7 @@ Date: 2026-05-27
 ## Purpose
 
 Close LHW2-T1 as CLOSED_PASS_BOUNDED. Confirm all 6 spec sections present,
-Source Verification Table complete with no UNVERIFIED rows, `canReinject: false`
+Source Verification Table complete with no `BLOCKED_SOURCE_NOT_FOUND` rows, `canReinject: false`
 and `rawMemoryReleased: false` explicit, and no code file modified.
 
 ## Target
@@ -26,7 +26,7 @@ Work order:
 ## Scope / Target / Owner Boundary
 
 T1 deliverable only: documentation connector spec binding W2 hook decisions to
-VI3 capture record fields and GovernanceEvidenceReceipt fields.
+VI3 capture record fields and controlled-memory receipt fields.
 
 Out of scope: any code file, runtime surface, receipt envelope extension,
 M1/W2/VI3 behavior change, public-sync update.
@@ -50,28 +50,34 @@ All 6 spec sections present and verified:
   `MemoryEventHookDecision` values (`allow_capture`, `allow_redacted_capture`,
   `allow_context_read`, `deny`, `require_human_approval`). W2 and VI3 field
   names verbatim.
-- S3: Capture record to GovernanceEvidenceReceipt binding. 5 rows covering
+- S3: Capture record to Controlled Memory Receipt binding. 5 rows covering
   `captureDecision`, `privacyFilters`, `memoryIds`, `rawMemoryReleased`, and
-  `policyContext.canReinject`. Existing receipt field names only; no new envelope
-  field defined. RUNTIME_PROVEN / DOC_ONLY labels honest.
+  `policyContext.canReinject`. It now distinguishes `ControlledMemoryReceipt`
+  from the separate `/api/execute` `GovernanceEvidenceReceipt` type. Existing
+  receipt field names only; no new envelope field defined. RUNTIME_PROVEN /
+  DOC_ONLY labels honest.
 - S4: Loop completion standard. Explicit traceability condition: "The loop is
   traceable when a receipt contains the memory ids from `captureRecord.memoryIds`
   and `rawMemoryReleased: false` is confirmed in the W2 hook receipt."
 - S5: Runtime-enforcement boundary table. 6 rows; no DOC_ONLY row labeled
   Runtime. W2/VI3/M1 runtime rows are proven-closed tranches.
-- S6: Source Verification Table. 11 rows; all ACCEPT; no UNVERIFIED rows.
-  W2 hook decisions confirmed from `memory-event-hooks.ts`; VI3 captureRecord
-  fields confirmed from `audit-memory-receipt.ts`.
+- S6: Source Verification Table. 15 rows; all ACCEPT; no
+  `BLOCKED_SOURCE_NOT_FOUND` rows. W2 hook decisions confirmed from
+  `memory-event-hooks.ts`; VI3 captureRecord fields confirmed from
+  `audit-memory-receipt.ts`; controlled-memory receipt fields confirmed from
+  `controlled.memory.gateway.contract.ts`.
 
 No TypeScript, JavaScript, or Python file modified.
 
 ## Risk / Corrective Action
 
-No material risk identified. The connector is documentation-only. All S6 source
-fields are ACCEPT with direct verification from TypeScript source files. The
-only residual is that five binding rows in S3 are DOC_ONLY (hook-to-capture
-binding, capture-to-receipt binding, loop completion verification) — these are
-honestly labeled and carry no runtime claim. No corrective action required.
+Corrective cleanup applied after review: the original wording implied
+`GovernanceEvidenceReceipt` and `ControlledMemoryReceipt` were equivalent. That
+has been corrected; the spec now names `ControlledMemoryReceipt` for the
+audit-memory path and treats `/api/execute` `GovernanceEvidenceReceipt` as a
+separate type. The connector is documentation-only. All S6 source fields are
+ACCEPT with direct verification from source files. The DOC_ONLY binding rows
+remain honestly labeled and carry no runtime claim.
 
 ## Decision / Recommendation / Disposition
 
@@ -99,8 +105,8 @@ T2 proceeds per roadmap rationale.
 
 ## Claim Boundary
 
-LHW2-T1 claims only a documentation artifact binding W2/VI3/GovernanceEvidenceReceipt
-fields. No runtime context enforcement, W2/VI3 extension, memory reinjection,
+LHW2-T1 claims only a documentation artifact binding W2/VI3 controlled-memory
+receipt fields. No runtime context enforcement, W2/VI3 extension, memory reinjection,
 receipt envelope extension, public-sync, hosted readiness, production readiness,
 or freeze release.
 

@@ -265,6 +265,11 @@ Rules:
 - `BLOCKED_SOURCE_NOT_FOUND` stops dispatch and returns to Orchestrator.
 - Do not dispatch implementation with guessed fields, inferred names,
   placeholder paths, stale memory-only vocabulary, or "confirm later" language.
+- Forbidden closeout vocabulary for source facts includes `UNVERIFIED`, `TBD`,
+  `TODO`, `confirm later`, `confirm field name`, and
+  `verify during implementation`. These terms may appear only as a blocking
+  defect note, not as an allowed disposition, acceptance criterion, evidence
+  requirement, or closure checklist item.
 
 ## 7. Write Ownership
 

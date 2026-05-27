@@ -205,6 +205,13 @@ language for a runtime/source contract. If a work order author is unsure, the
 work order must assign a source-verification task to the orchestrator/reviewer
 before dispatching implementation.
 
+Forbidden closeout vocabulary for applicable source facts includes
+`UNVERIFIED`, `TBD`, `TODO`, `confirm later`, `confirm field name`, and
+`verify during implementation`. These terms may appear only inside an explicit
+defect note that blocks dispatch. They must not appear in acceptance criteria,
+evidence requirements, completion reviews, or closure checklists as if they
+were allowed dispositions.
+
 ## Mandatory Knowledge Absorption Blind-Spot Prevention - 2026-05-24
 
 Canonical standard:

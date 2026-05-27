@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-27
 
-Current mode marker: `lhw2_t3_tool_approval_ma1_handoff_connector_closed_pass_bounded`
+Current mode marker: `lhw2_work_order_cleanup_closed_pass_bounded`
 
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Previous handoff archive:
 
 ## Current State
 
-Current mode: `work_order_source_verification_rule_added`.
+Current mode: `lhw2_work_order_cleanup_closed_pass_bounded`.
 
 VI5 Multi-Role Orchestrated Convergence is accepted and VI5-T1 is closed PASS
 bounded:
@@ -915,16 +915,14 @@ Knowledge absorption blind-spot prevention:
 Every GC-018 memory/graph/intelligence tranche must include the Knowledge
 Absorption Blind-Spot Control Block.
 
-Work order source verification:
-
-Future work orders that name runtime/source fields, existing symbols, schemas,
-receipt fields, diagnostic classes, role values, route states, template/pack
-IDs, policy enums, config keys, CLI/MCP tool names, or existing source paths
-must include a Source Verification Table before implementation. Required
-columns: `Claimed item`, `Source file`, `Verified path or symbol`, `Owning
-interface/function/schema`, and `Disposition`. Guessed names, inferred fields,
-placeholder paths, stale memory-only vocabulary, and "confirm later" language
-block dispatch and return to Orchestrator.
+Work order source verification: future work orders that name runtime/source
+facts or MA1 sections must include a Source Verification Table before
+implementation. Columns: `Claimed item`, `Source file`, `Verified path or
+symbol`, `Owning interface/function/schema`, `Disposition`. Valid dispositions:
+`ACCEPT`, `REJECT`, `BLOCKED_SOURCE_NOT_FOUND`. Guessed, inferred, placeholder,
+stale-memory, "confirm later", `UNVERIFIED`, `TBD`, `TODO`,
+`confirm field name`, and `verify during implementation` source facts block
+dispatch and return to Orchestrator.
 
 ## Boundary
 
@@ -1046,7 +1044,7 @@ Roadmap filed:
 
 ## Latest Legacy Workflow Connector Tranche
 
-Mode marker: `lhw2_t3_tool_approval_ma1_handoff_connector_closed_pass_bounded`
+Mode marker: `lhw2_work_order_cleanup_closed_pass_bounded`
 
 Previous mode marker: `lhw1_t3_context_profile_connector_closed_pass_bounded`
 
@@ -1070,9 +1068,11 @@ T3 — Tool Approval MA1 Handoff Connector:
 Contract: `cvf.toolApprovalMA1HandoffConnector.lhw2.t3.v1`
 Completion: `docs/reviews/CVF_LHW2_T3_TOOL_APPROVAL_MA1_HANDOFF_CONNECTOR_COMPLETION_2026-05-27.md`
 
-Source verification: all W2/VI3 fields confirmed from `memory-event-hooks.ts`
-and `audit-memory-receipt.ts`; all TA1 states confirmed from
-`tool-action-taxonomy.ts`. All ACCEPT; no UNVERIFIED rows.
+Source verification after cleanup: W2/VI3, controlled-memory receipt, WR1
+transition/recovery tokens, TA1 states, and MA1 section refs all source-verified
+ACCEPT; no `BLOCKED_SOURCE_NOT_FOUND` rows. Cleanup removed stale `UNVERIFIED`
+closeout language and corrected false `MA1 ##9 Return Protocol` /
+`##4 Input Package` references.
 
 Claim boundary: documentation-only connector specs. No runtime extension,
 memory reinjection, execution authority, receipt envelope extension,

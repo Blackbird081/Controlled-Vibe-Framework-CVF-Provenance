@@ -1190,6 +1190,9 @@ Valid dispositions are `ACCEPT`, `REJECT`, and `BLOCKED_SOURCE_NOT_FOUND`.
   worker discover invented or stale instructions.
 - Reviewers must fail work orders that rely on guessed, inferred, placeholder,
   memory-only, or "confirm later" source vocabulary.
+- `UNVERIFIED`, `TBD`, `TODO`, `confirm field name`, and
+  `verify during implementation` are forbidden closeout vocabulary for
+  source facts. They may appear only as explicit blocking defect notes.
 - `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`,
   `docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md`,
   `docs/reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md`, and

@@ -101,28 +101,32 @@ One row per TA1 approval state. Columns:
 Minimum rows:
 
 - `not_required` — no packet needed; advance immediately
-- `pending_approval` — approval request packet; R: ## 0, ## 1, ## 2, ## 6, ## 8;
-  who approves, what evidence is missing, which role receives packet
-- `satisfied_but_not_executable` — readiness-confirmed packet; R: ## 0, ## 2;
-  note: execution remains gated; what additional gate is pending
-- `blocked_before_approval` — block notification packet; R: ## 0, ## 8;
-  stop condition, safe message, corrective action
-- `blocked_by_policy` — policy block packet; R: ## 0, ## 1, ## 8; Auditor
-  must confirm; escalation path
-- `incomplete_approval` — missing-evidence packet; R: ## 0, ## 6; list missing
-  evidence fields; which role resolves
+- `pending_approval` — approval request packet; R: ##0, ##1, ##2, ##3, ##4,
+  ##7, ##8, ##9; who approves, what evidence is missing, which role receives packet
+- `satisfied_but_not_executable` — readiness-confirmed packet; R: ##0, ##1,
+  ##2, ##8, ##10; note: execution remains gated; what additional gate is pending
+- `blocked_before_approval` — block notification packet; R: ##0, ##1, ##2,
+  ##3, ##8, ##10; stop condition, safe message, corrective action
+- `blocked_by_policy` — policy block packet; R: ##0, ##1, ##2, ##7, ##8,
+  ##10; Auditor must confirm; escalation path
+- `incomplete_approval` — missing-evidence packet; R: ##0, ##1, ##2, ##3,
+  ##4, ##7; list missing evidence fields; which role resolves
 
-Use TA1 approval state names verbatim. Reference MA1 section numbers from the
-canonical standard — do not re-define MA1 structure.
+Use TA1 approval state names verbatim. Reference MA1 section numbers and names
+from the canonical standard (##0 through ##10) — do not re-define MA1 structure.
 
 ### S3 — Source Verification Table (mandatory)
 
 Required columns: `Claimed field` | `Source file` | `Verified field path` |
 `Owning interface/function` | `Disposition`
 
-Cover every TA1 approval state name cited in S2. If any state name cannot be
-source-verified against `tool-action-taxonomy.ts`, mark Disposition as
-`UNVERIFIED — return to Orchestrator`. No unverified state may remain in S2.
+Cover every TA1 approval state name cited in S2 and the MA1 section-number
+contract used in S2. Valid dispositions are `ACCEPT`, `REJECT`, and
+`BLOCKED_SOURCE_NOT_FOUND`. If any state name or MA1 section reference cannot
+be source-verified against `tool-action-taxonomy.ts` or the canonical MA1
+standard, mark Disposition as `BLOCKED_SOURCE_NOT_FOUND`, stop, and return to
+Orchestrator. No blocked, guessed, inferred, or confirm-later state may remain
+in S2.
 
 ### S4 — Demand-gated items
 
@@ -194,7 +198,7 @@ Verification Table complete; no code file in diff.
 - [ ] Both gate conditions confirmed and documented
 - [ ] All 6 TA1 approval states mapped to distinct packet outcomes
 - [ ] MA1 sections marked R/O/N/A per packet type
-- [ ] Source Verification Table present with no UNVERIFIED rows
+- [ ] Source Verification Table present with no `BLOCKED_SOURCE_NOT_FOUND` rows
 - [ ] Demand-gated items explicitly listed in S4
 - [ ] `runtimeExecutionAuthorized=false` stated explicitly
 - [ ] Runtime boundary table present and honest
@@ -208,7 +212,7 @@ Verification Table complete; no code file in diff.
 - Both gate conditions confirmed and documented in completion review
 - All 6 TA1 approval states mapped to distinct packet outcomes in S2
 - MA1 sections marked R/O/N/A per packet type using canonical section numbers
-- S3 Source Verification Table complete; no UNVERIFIED rows
+- S3 Source Verification Table complete; no `BLOCKED_SOURCE_NOT_FOUND` rows
 - Demand-gated items explicitly listed in S4
 - `runtimeExecutionAuthorized=false` stated explicitly in S1
 - S5 boundary table present; no doc-only row labeled Runtime
@@ -223,7 +227,7 @@ Verification Table complete; no code file in diff.
 - [ ] Gate 2 (T2 CLOSED_PASS) confirmed and documented
 - [ ] Spec created with all 5 sections
 - [ ] All 6 TA1 approval states mapped with MA1 sections R/O/N/A
-- [ ] S3 Source Verification Table complete; no UNVERIFIED rows
+- [ ] S3 Source Verification Table complete; no `BLOCKED_SOURCE_NOT_FOUND` rows
 - [ ] Demand-gated items listed in S4
 - [ ] `runtimeExecutionAuthorized=false` explicit
 - [ ] S5 boundary table honest; no doc-only row labeled Runtime

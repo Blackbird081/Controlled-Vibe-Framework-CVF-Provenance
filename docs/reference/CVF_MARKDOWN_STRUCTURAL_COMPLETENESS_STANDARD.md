@@ -198,6 +198,11 @@ bad or stale claim and the corrected symbol when known. `BLOCKED_SOURCE_NOT_FOUN
 stops dispatch and returns to Orchestrator. "Confirm later" wording does not
 satisfy this requirement.
 
+Forbidden closeout vocabulary for source facts includes `UNVERIFIED`, `TBD`,
+`TODO`, `confirm field name`, and `verify during implementation`. These terms
+are valid only inside an explicit blocking defect note. They are not valid
+acceptance, evidence, or completion language.
+
 ### Review / Rebuttal / Response
 
 Required sections:
