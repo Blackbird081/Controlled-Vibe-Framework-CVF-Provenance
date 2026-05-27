@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -209,15 +209,36 @@ continuity update → commit.
 
 ## Acceptance Criteria
 
-- [ ] T1 spec created; W4 scorecard fields and V3 classes used verbatim; Source
+- [x] T1 spec created; W4 scorecard fields and V3 classes used verbatim; Source
   Verification Table complete; drift signal table honest
-- [ ] T2 spec created; all CB1 signal classes mapped to clarification request
+- [x] T2 spec created; all CB1 signal classes mapped to clarification request
   types; loop re-entry standard present; boundary table honest
-- [ ] T3 spec created; all W1 change-trigger phases mapped; MA1 sections marked
+- [x] T3 spec created; all W1 change-trigger phases mapped; MA1 sections marked
   R/O/N/A; `runtimeExecutionAuthorized=false` (change packet is not an executor);
   LHW3 roadmap updated to `CLOSED_PASS_BOUNDED`
-- [ ] No `.ts`/`.tsx`/`.js`/`.py` file in diff across all three tranches
-- [ ] Session continuity updated after each tranche
+- [x] No `.ts`/`.tsx`/`.js`/`.py` file in diff across all three tranches
+- [x] Session continuity updated after each tranche
+
+## Closure
+
+LHW3 is `CLOSED_PASS_BOUNDED`.
+
+Delivered connector specs:
+
+- T1: `docs/reference/CVF_LHW3_OPERATIONAL_FAILURE_TREND_READOUT_CONNECTOR_SPEC_2026-05-27.md`
+- T2: `docs/reference/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md`
+- T3: `docs/reference/CVF_LHW3_SPEC_CHANGE_WORKFLOW_PACKET_CONNECTOR_SPEC_2026-05-27.md`
+
+Completion reviews:
+
+- `docs/reviews/CVF_LHW3_T1_OPERATIONAL_FAILURE_TREND_READOUT_CONNECTOR_COMPLETION_2026-05-27.md`
+- `docs/reviews/CVF_LHW3_T2_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_COMPLETION_2026-05-27.md`
+- `docs/reviews/CVF_LHW3_T3_SPEC_CHANGE_WORKFLOW_PACKET_CONNECTOR_COMPLETION_2026-05-27.md`
+
+Boundary: LHW3 closes documentation connector standards only. It does not claim
+runtime observability, live clarification execution, spec-change enforcement,
+receipt schema extension, provider behavior change, hosted readiness,
+production readiness, or public release readiness.
 
 ## Verification
 

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: READY_FOR_DISPATCH
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -227,12 +227,12 @@ After T3 is CLOSED_PASS: update LHW3 roadmap Status to `CLOSED_PASS_BOUNDED`.
 
 ## Pre-Flight
 
-- [ ] T1 CLOSED_PASS confirmed
-- [ ] T2 CLOSED_PASS confirmed
-- [ ] Working tree clean
-- [ ] All required first reads done
-- [ ] W1 phase tokens confirmed from workflow source or LHW1-T2 connector spec
-- [ ] MA1 section numbers confirmed from MA1 standard
+- [x] T1 CLOSED_PASS confirmed
+- [x] T2 CLOSED_PASS confirmed
+- [x] Working tree clean
+- [x] All required first reads done
+- [x] W1 phase tokens confirmed from workflow source or LHW1-T2 connector spec
+- [x] MA1 section numbers confirmed from MA1 standard
 
 ## Write Ownership
 
@@ -268,14 +268,14 @@ Spec size guard: < 200 lines. Trim S3 prose if approaching 180 lines.
 
 ## Acceptance Criteria
 
-- [ ] Spec with all 5 sections created
-- [ ] All 6 W1 phases mapped with change-trigger disposition
-- [ ] `runtimeExecutionAuthorized=false` and change-packet-is-not-executor explicit
-- [ ] S4 Source Verification Table complete with no `BLOCKED_SOURCE_NOT_FOUND` rows
-- [ ] S5 boundary table honest (no doc-only row labeled Runtime)
-- [ ] LHW3 roadmap updated to `CLOSED_PASS_BOUNDED`
-- [ ] No code file in diff
-- [ ] Session continuity updated
+- [x] Spec with all 5 sections created
+- [x] All 6 W1 phases mapped with change-trigger disposition
+- [x] `runtimeExecutionAuthorized=false` and change-packet-is-not-executor explicit
+- [x] S4 Source Verification Table complete with no `BLOCKED_SOURCE_NOT_FOUND` rows
+- [x] S5 boundary table honest (no doc-only row labeled Runtime)
+- [x] LHW3 roadmap updated to `CLOSED_PASS_BOUNDED`
+- [x] No code file in diff
+- [x] Session continuity updated
 
 ## Review Gate
 
@@ -286,17 +286,17 @@ rows; S5 boundary table honest; no code file in diff.
 
 ## Closure Checklist
 
-- [ ] T1 gate confirmed documented
-- [ ] T2 gate confirmed documented
-- [ ] Spec created with all 5 sections
-- [ ] All 6 W1 phases covered in S2
-- [ ] `runtimeExecutionAuthorized=false` explicit in S1
-- [ ] S4 Source Verification Table complete; no `BLOCKED_SOURCE_NOT_FOUND` rows
-- [ ] S5 boundary table honest; no doc-only row labeled Runtime
-- [ ] LHW3 roadmap updated to `CLOSED_PASS_BOUNDED`
-- [ ] No code file in diff
-- [ ] Session continuity updated
-- [ ] Completion review written
+- [x] T1 gate confirmed documented
+- [x] T2 gate confirmed documented
+- [x] Spec created with all 5 sections
+- [x] All 6 W1 phases covered in S2
+- [x] `runtimeExecutionAuthorized=false` explicit in S1
+- [x] S4 Source Verification Table complete; no `BLOCKED_SOURCE_NOT_FOUND` rows
+- [x] S5 boundary table honest; no doc-only row labeled Runtime
+- [x] LHW3 roadmap updated to `CLOSED_PASS_BOUNDED`
+- [x] No code file in diff
+- [x] Session continuity updated
+- [x] Completion review written
 
 ## Return-To-Orchestrator Conditions
 
