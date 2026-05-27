@@ -483,6 +483,33 @@ composition, validation, and scheduling remain document-only future paths.
 T2 gate answer: YES — snapshot package consumption needs a source-verified
 authority-chain readout for actor/role/action approval posture.
 
+## LHW4-T2 Execution Authority Chain Readout Connector Closure
+
+Current HEAD before T2 implementation: `41c0cdac`
+
+Mode marker: `lhw4_t2_complete`
+
+Spec:
+`docs/reference/CVF_LHW4_EXECUTION_AUTHORITY_CHAIN_READOUT_CONNECTOR_SPEC_2026-05-27.md`
+
+Completion:
+`docs/reviews/CVF_LHW4_T2_EXECUTION_AUTHORITY_CHAIN_READOUT_CONNECTOR_COMPLETION_2026-05-27.md`
+
+Contract version: `cvf.executionAuthorityChainReadout.lhw4.t2.v1`
+
+Delivered: documentation-only connector binding source-verified G1 identity
+fields (`actorId`, `cvfRole`, `executionBoundary.boundary`, `decision`), W3
+surface/sideEffect/transport tokens, and TA1 `approvalState` values into a
+single authority-chain readout packet with `dispatchDecision` and MA1 `## 4.
+Role Assignment` / `## 8. Integration Decision` references. Six chain
+combinations mapped in S2; key rule: G1 `role_resolution_denied` overrides TA1
+approval for any role. S5 Source Verification Table has 14 rows, all ACCEPT.
+No code file modified. `runtimeExecutionAuthorized=false` explicit throughout.
+
+T3 gate answer: YES — `blocked_by_policy` and `hold_for_approval` dispatch
+decisions have no plain-language advisory packet for non-coders; T3 closes
+that gap.
+
 ## Mandatory Standards
 
 Live run diagnostics:
