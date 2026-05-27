@@ -180,6 +180,10 @@ event ratios with execution pass rate.
 
 ## Mandatory Work Order Source Verification - 2026-05-27
 
+Canonical work-order template:
+
+`docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
+
 Any future CVF work order that names, maps, modifies, consumes, or instructs an
 agent to use a runtime field, interface, function, type, schema key, receipt
 field, diagnostic class, role value, route state, template ID, pack ID, policy
@@ -190,6 +194,7 @@ Required Source Verification Table columns:
 
 - `Claimed item`
 - `Source file`
+- `Verified line/section`
 - `Verified path or symbol`
 - `Owning interface/function/schema`
 - `Disposition`
@@ -199,6 +204,26 @@ Allowed dispositions are `ACCEPT`, `REJECT`, or `BLOCKED_SOURCE_NOT_FOUND`.
 contract. `REJECT` must name the corrected field/symbol when known.
 `BLOCKED_SOURCE_NOT_FOUND` stops the work order and returns it to Orchestrator.
 
+Work-order authors must run a pre-dispatch source-fidelity pass before assigning
+implementation:
+
+- cite source file plus line, symbol, or canonical section for every source fact;
+- prefer current runtime source or canonical contract over completion reviews,
+  handoffs, or memory summaries when a runtime/source file exists;
+- search the repo for each named token/field/class/enum/tool/section label; if
+  the term appears only in the draft work order, dispatch is blocked unless it
+  is explicitly listed as a new doc-only field in a separate "New Doc-Only
+  Fields" table;
+- do not put newly proposed connector/documentation fields in the Source
+  Verification Table as if they already exist in runtime/source;
+- source-verify any MA1 section reference against
+  `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
+  using the canonical section names: `## 0. Surface Fidelity Gate`, `## 1.
+  Authority Chain`, `## 2. Transfer Objective`, `## 3. Source Packet`, `## 4.
+  Role Assignment`, `## 5. Execution Instructions`, `## 6. Role Output Schema`,
+  `## 7. Dissent And Review Ledger`, `## 8. Integration Decision`, `## 9.
+  Completion Evidence`, and `## 10. Claim Boundary`.
+
 No future agent may close a work order with guessed fields, inferred names,
 placeholder source paths, stale memory-only vocabulary, or "confirm later"
 language for a runtime/source contract. If a work order author is unsure, the
@@ -206,11 +231,12 @@ work order must assign a source-verification task to the orchestrator/reviewer
 before dispatching implementation.
 
 Forbidden closeout vocabulary for applicable source facts includes
-`UNVERIFIED`, `TBD`, `TODO`, `confirm later`, `confirm field name`, and
-`verify during implementation`. These terms may appear only inside an explicit
+`UNVERIFIED`, `TBD`, `TODO`, `confirm later`, `confirm field name`,
+`verify during implementation`, `inferred`, `stale-memory`, `placeholder`,
+`assume`, and `to be confirmed`. These terms may appear only inside an explicit
 defect note that blocks dispatch. They must not appear in acceptance criteria,
-evidence requirements, completion reviews, or closure checklists as if they
-were allowed dispositions.
+evidence requirements, completion reviews, or closure checklists as if they were
+allowed dispositions.
 
 ## Mandatory Knowledge Absorption Blind-Spot Prevention - 2026-05-24
 

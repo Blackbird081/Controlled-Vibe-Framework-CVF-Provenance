@@ -74,6 +74,28 @@ Do not bypass this standard by claiming "the folder was already audited," "the
 summary is enough," "another agent already reviewed it," or any of the other
 rationalizations in the standard's Do-Not-Bypass List.
 
+## Mandatory Work Order Source Verification
+
+Before authoring or dispatching a CVF work order, follow the canonical template:
+
+`docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
+
+If the work order names runtime/source fields, interfaces, functions, schema
+keys, receipt fields, diagnostic classes, role values, route states,
+template/pack IDs, policy enums, config keys, CLI/MCP tool names, existing
+source paths, or MA1 section references, it must include a Source Verification
+Table with source file plus verified line/section.
+
+Use current runtime source or canonical contracts before completion reviews,
+handoffs, or memory summaries. Search the repo for every named token. If a
+token appears only in the draft work order, dispatch is blocked unless it is
+explicitly listed as a new documentation-only field with no runtime claim.
+
+MA1 section references must match
+`docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
+exactly. Do not invent MA1 labels such as `Input Package`, `Purpose`, or
+`Return Protocol`.
+
 ---
 
 ## Commands

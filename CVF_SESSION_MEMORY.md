@@ -917,12 +917,14 @@ Absorption Blind-Spot Control Block.
 
 Work order source verification: future work orders that name runtime/source
 facts or MA1 sections must include a Source Verification Table before
-implementation. Columns: `Claimed item`, `Source file`, `Verified path or
-symbol`, `Owning interface/function/schema`, `Disposition`. Valid dispositions:
+implementation. Columns: `Claimed item`, `Source file`, `Verified line/section`,
+`Verified path or symbol`, `Owning interface/function/schema`, `Disposition`. Valid dispositions:
 `ACCEPT`, `REJECT`, `BLOCKED_SOURCE_NOT_FOUND`. Guessed, inferred, placeholder,
 stale-memory, "confirm later", `UNVERIFIED`, `TBD`, `TODO`,
 `confirm field name`, and `verify during implementation` source facts block
 dispatch and return to Orchestrator.
+
+work_order_authoring_hardening_closed_pass_bounded: pre-dispatch token search, source file plus line/section, runtime/canonical source priority, draft-only token block unless new doc-only field, and exact MA1 section labels are binding.
 
 ## Boundary
 

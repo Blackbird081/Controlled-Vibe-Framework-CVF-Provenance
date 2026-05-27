@@ -78,6 +78,8 @@ Verification requirements:
 - pre-flight commands must be listed;
 - existing paths, symbols, role values, template IDs, and policy fields must be
   source-verified before the work order is marked ready;
+- work-order authors must verify source facts before dispatch, not delegate
+  ambiguous source discovery to the implementer;
 - acceptance criteria must be observable;
 - evidence must use command/result/path form where possible;
 - completion must record changed files and required governance updates.
@@ -233,6 +235,7 @@ work order depends on:
 ```powershell
 Test-Path "<existing path named in first reads>"
 rg -n "<claimed function/type/templateId/role/policy field>" <source path>
+rg -n --fixed-strings "<claimed token>" .
 ```
 
 Required source-fidelity notes:
@@ -241,11 +244,24 @@ Required source-fidelity notes:
 - Planned new paths clearly marked as NEW:
 - Canonical role/type values verified from:
 - Canonical template or pack IDs verified from:
+- Runtime/source facts verified from current source or canonical contract:
+- Completion review facts used only when no runtime/source contract exists:
+- Draft-only tokens that appear nowhere else in repo:
 - Any missing or ambiguous source fact:
 
 If a source fact cannot be verified, either correct the work order or return to
 the orchestrator. Do not ask the implementer to discover that the work order
 invented a path, symbol, role value, or baseline source.
+
+Source priority:
+
+1. current runtime/source file or schema;
+2. canonical reference/contract document;
+3. completion review with explicit source trace;
+4. handoff/session memory summary only as a pointer, not as source authority.
+
+If a current runtime/source file exists, a completion review alone is not enough
+to verify a field, enum, diagnostic class, route state, tool name, or schema key.
 
 If the work order names, maps, modifies, consumes, or instructs an agent to use
 any runtime field, interface, function, type, schema key, receipt field,
@@ -253,9 +269,9 @@ diagnostic class, role value, route state, template ID, pack ID, policy enum,
 config key, CLI/MCP tool name, or existing source path, include this table
 before implementation:
 
-| Claimed item | Source file | Verified path or symbol | Owning interface/function/schema | Disposition |
-|---|---|---|---|---|
-| <field/type/path/etc.> | <source path> | <verified field/symbol> | <owner> | <ACCEPT/REJECT/BLOCKED_SOURCE_NOT_FOUND> |
+| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
+|---|---|---|---|---|---|
+| <field/type/path/etc.> | <source path> | <line number or canonical section> | <verified field/symbol> | <owner> | <ACCEPT/REJECT/BLOCKED_SOURCE_NOT_FOUND> |
 
 Rules:
 
@@ -263,6 +279,12 @@ Rules:
   contract.
 - `REJECT` must name the corrected field/symbol when known.
 - `BLOCKED_SOURCE_NOT_FOUND` stops dispatch and returns to Orchestrator.
+- A source fact with no file plus line/section is not verified.
+- If a claimed token appears only in this draft work order, mark it
+  `BLOCKED_SOURCE_NOT_FOUND` unless it is explicitly listed as a new doc-only
+  field in the table below.
+- Newly proposed documentation/connector fields must not be placed in the
+  Source Verification Table as if they already exist.
 - Do not dispatch implementation with guessed fields, inferred names,
   placeholder paths, stale memory-only vocabulary, or "confirm later" language.
 - Forbidden closeout vocabulary for source facts includes `UNVERIFIED`, `TBD`,
@@ -270,6 +292,33 @@ Rules:
   `verify during implementation`. These terms may appear only as a blocking
   defect note, not as an allowed disposition, acceptance criterion, evidence
   requirement, or closure checklist item.
+
+When the work order introduces new documentation-only connector fields, include
+this separate table:
+
+| New doc-only field | Purpose | Not sourced from runtime? | Runtime claim blocked? | Validation expectation |
+|---|---|---|---|---|
+| <field name> | <why it exists> | Yes | Yes | <doc/schema/checklist validation only> |
+
+MA1 section references are locked to the canonical standard at
+`docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`.
+Do not invent or rename MA1 sections. Use only:
+
+- `## 0. Surface Fidelity Gate`
+- `## 1. Authority Chain`
+- `## 2. Transfer Objective`
+- `## 3. Source Packet`
+- `## 4. Role Assignment`
+- `## 5. Execution Instructions`
+- `## 6. Role Output Schema`
+- `## 7. Dissent And Review Ledger`
+- `## 8. Integration Decision`
+- `## 9. Completion Evidence`
+- `## 10. Claim Boundary`
+
+Any alternate MA1 section label, including `Input Package`, `Purpose`, or
+`Return Protocol`, is a blocking defect unless the canonical MA1 standard has
+been updated first in a separate governed change.
 
 ## 7. Write Ownership
 

@@ -26,6 +26,8 @@ Current HEAD before LHW2 work-order cleanup commit: `f74e66bf`.
 
 Current HEAD after LHW2 work-order cleanup commit (parent of handoff sync): `11db8878`.
 
+Current HEAD before Work Order Authoring Hardening commit: `b3b18c53`.
+
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=lhw2_work_order_cleanup_closed_pass_bounded; active handoff=AGENT_HANDOFF_V14_2026-05-27.md; next allowed move=next legacy workflow connector requires fresh GC-018/work order and strict Source Verification when source-level facts or MA1 section refs are used; parked checkpoint=hosted Netlify freshness and operator external-agent retest for VI5-T4/T5 remain pending.
@@ -268,7 +270,8 @@ drift. The rule is now binding beyond LHW1:
 - LHW1 T3 work order table now includes the `Owning interface/function` column.
 
 Required table columns: `Claimed item`, `Source file`, `Verified path or
-symbol`, `Owning interface/function/schema`, and `Disposition`.
+line/section`, `Verified path or symbol`, `Owning interface/function/schema`,
+and `Disposition`.
 
 Valid dispositions: `ACCEPT`, `REJECT`, `BLOCKED_SOURCE_NOT_FOUND`.
 `BLOCKED_SOURCE_NOT_FOUND` returns the work order to Orchestrator. Guessed
@@ -280,6 +283,16 @@ LHW2 cleanup tightened this rule: `UNVERIFIED`, `TBD`, `TODO`,
 closeout vocabulary for source facts. They may appear only as explicit blocking
 defect notes. Work orders that reference MA1 sections must source-verify the
 section numbers and names against the canonical MA1 standard.
+
+2026-05-27 hardening after LHW3 work-order review: future work-order authors
+must run pre-dispatch source-fidelity search, cite source file plus line/section
+for every runtime/source fact, prefer runtime source/canonical contracts over
+completion reviews when source exists, block tokens that appear only in the
+draft work order unless listed as new doc-only fields, and separate new
+doc-only connector fields from Source Verification. MA1 section references are
+locked to the canonical MA1 standard section names; `Input Package`, `Purpose`,
+and `Return Protocol` are blocking defects unless the MA1 standard is updated
+first.
 
 Cleanup completion review:
 `docs/reviews/CVF_LHW2_WORK_ORDER_CLEANUP_COMPLETION_2026-05-27.md`
