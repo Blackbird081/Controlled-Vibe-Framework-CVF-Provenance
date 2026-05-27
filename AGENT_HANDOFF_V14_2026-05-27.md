@@ -391,6 +391,39 @@ after a workflow has already passed intake, so CVF needs a standard spec-change
 packet for mid-phase delta approval rather than silently mutating the active
 workflow. T3 may proceed.
 
+## LHW3-T3 Closure And Wave Close
+
+Mode marker: `lhw3_workflow_connector_wave3_closed_pass_bounded`
+
+Commit: `0663209f docs(lhw3-t3): add spec-change workflow packet connector spec`
+
+Spec:
+`docs/reference/CVF_LHW3_SPEC_CHANGE_WORKFLOW_PACKET_CONNECTOR_SPEC_2026-05-27.md`
+
+Completion:
+`docs/reviews/CVF_LHW3_T3_SPEC_CHANGE_WORKFLOW_PACKET_CONNECTOR_COMPLETION_2026-05-27.md`
+
+Roadmap:
+`docs/roadmaps/CVF_LHW3_WORKFLOW_CONNECTOR_WAVE3_ROADMAP_2026-05-27.md`
+
+Contract version: `cvf.specChangeWorkflowPacketConnector.lhw3.t3.v1`
+
+Delivered: documentation-only connector mapping all six W1 phase tokens
+(`intake_pending`, `design_ready`, `build_running`, `review_pending`,
+`freeze_ready`, `completed`) to spec-change dispositions, MA1 section
+requirements, approver role, and re-entry phase token. The spec preserves
+`runtimeExecutionAuthorized=false`, makes the change packet a governance record
+only, and blocks automatic mutation of a running workflow. S4 Source
+Verification Table has no `BLOCKED_SOURCE_NOT_FOUND` rows. No code file
+modified.
+
+LHW3 status: `CLOSED_PASS_BOUNDED` across T1/T2/T3.
+
+Next allowed move: publish public-safe LHW3 connector documentation from the
+public-sync clone only after verifying its remote points to
+`Controlled-Vibe-Framework-CVF`, then return to the next legacy workflow
+connector roadmap only with fresh GC-018/work orders.
+
 ## Mandatory Standards
 
 Live run diagnostics:

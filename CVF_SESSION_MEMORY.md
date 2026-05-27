@@ -1197,4 +1197,4 @@ Parked operator checkpoint remains VI5-T4/T5: operator will later export a
 fresh hosted web spec and test it with an external agent. LHW1-T1/T2/T3 are
 closed; any next legacy workflow connector requires fresh GC-018/work order and
 must include Source Verification when source-level facts are used.
-Active handoff: `AGENT_HANDOFF_V14_2026-05-27.md`.
+Active handoff: `AGENT_HANDOFF_V14_2026-05-27.md`; latest mode marker: `lhw3_workflow_connector_wave3_closed_pass_bounded`.
