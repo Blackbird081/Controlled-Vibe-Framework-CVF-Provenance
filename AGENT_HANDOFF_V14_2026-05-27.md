@@ -462,6 +462,27 @@ signal tokens and `nextAction` with LHW3-T1 signal labels and source-verified
 `recommendedNextAction`. Implementation must proceed only from corrected work
 orders.
 
+## LHW4-T1 Memory Snapshot Governance Connector Closure
+
+Current HEAD before T1 implementation: `68187bfa`
+
+Mode marker: `lhw4_t1_complete`
+
+Spec:
+`docs/reference/CVF_LHW4_MEMORY_SNAPSHOT_GOVERNANCE_CONNECTOR_SPEC_2026-05-27.md`
+
+Completion:
+`docs/reviews/CVF_LHW4_T1_MEMORY_SNAPSHOT_GOVERNANCE_CONNECTOR_COMPLETION_2026-05-27.md`
+
+Delivered: documentation-only connector for governed memory snapshot packaging.
+It maps source-verified AIF-B graph references, AIF-C gateway decisions, M1
+durable memory receipt fields, VI3 capture records, and H2 memory-tier rules.
+`canReinject=false` and `rawMemoryReleased=false` are explicit. Snapshot
+composition, validation, and scheduling remain document-only future paths.
+
+T2 gate answer: YES — snapshot package consumption needs a source-verified
+authority-chain readout for actor/role/action approval posture.
+
 ## Mandatory Standards
 
 Live run diagnostics:

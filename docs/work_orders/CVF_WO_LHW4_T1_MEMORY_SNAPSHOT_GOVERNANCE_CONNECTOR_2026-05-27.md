@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: READY_FOR_DISPATCH
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
