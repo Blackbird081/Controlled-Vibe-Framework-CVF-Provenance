@@ -34,6 +34,8 @@ Current HEAD after LHW3 work-order correction commit (parent of handoff sync): `
 
 Current HEAD after LHW3-T1 implementation commit (parent of handoff sync): `7c971b96`.
 
+Current HEAD after LHW3-T2 implementation commit (parent of handoff sync): `34a42b70`.
+
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=lhw2_work_order_cleanup_closed_pass_bounded; active handoff=AGENT_HANDOFF_V14_2026-05-27.md; next allowed move=next legacy workflow connector requires fresh GC-018/work order and strict Source Verification when source-level facts or MA1 section refs are used; parked checkpoint=hosted Netlify freshness and operator external-agent retest for VI5-T4/T5 remain pending.
@@ -362,6 +364,32 @@ and audit gap. S5 Source Verification Table has no
 T2 gate answer: YES — Low `taskCompletionRate` paired with `invalid_input`
 creates an underspecification signal that should route to a standard
 clarification re-intake packet instead of blind reruns. T2 may proceed.
+
+## LHW3-T2 Closure
+
+Mode marker: `lhw3_t2_request_clarification_re_intake_closed_pass_bounded`
+
+Commit: `34a42b70 docs(lhw3-t2): add request clarification re-intake loop connector spec`
+
+Spec:
+`docs/reference/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md`
+
+Completion:
+`docs/reviews/CVF_LHW3_T2_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_COMPLETION_2026-05-27.md`
+
+Contract version: `cvf.requestClarificationReIntakeLoopConnector.lhw3.t2.v1`
+
+Delivered: documentation-only connector mapping source-verified CB1/C8/VI2
+signals to 4 clarification packet types: missing-context, noisy-context,
+ambiguous-outcome, and unmatched-request. Loop re-entry is manual or
+operator-triggered; no live routing or intake executor is claimed. S5 Source
+Verification Table has no `BLOCKED_SOURCE_NOT_FOUND` rows. No code file
+modified.
+
+T3 gate answer: YES — Manual clarification re-entry can change the request
+after a workflow has already passed intake, so CVF needs a standard spec-change
+packet for mid-phase delta approval rather than silently mutating the active
+workflow. T3 may proceed.
 
 ## Mandatory Standards
 
