@@ -424,6 +424,27 @@ public-sync clone only after verifying its remote points to
 `Controlled-Vibe-Framework-CVF`, then return to the next legacy workflow
 connector roadmap only with fresh GC-018/work orders.
 
+## LHW3 Public Sync Closure
+
+Mode marker: `lhw3_public_sync_closed_pass_bounded`
+
+Private continuity commit before public sync note: `a4ec89ce docs(handoff): sync lhw3 wave closure head`
+
+Public-sync commit pushed to `origin/main`:
+`6d1a2d28 docs(lhw3): publish workflow connector standards`
+
+Public remote verified before push:
+`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+
+Published public-safe artifacts: LHW3 roadmap, T1/T2/T3 connector specs, T1/T2/T3
+completion reviews, and `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`
+catalog row/status update.
+
+Next allowed move: begin the next legacy workflow connector only through a fresh
+GC-018/roadmap/work-order chain with Source Verification and Knowledge
+Absorption Blind-Spot Control. VI5-T4/T5 hosted operator retest and Delta
+production hardening remain parked.
+
 ## Mandatory Standards
 
 Live run diagnostics:
