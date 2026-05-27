@@ -535,6 +535,16 @@ No code file modified. LHW4 roadmap updated to `CLOSED_PASS_BOUNDED`.
 LHW4 wave fully closed: T1 + T2 + T3 all `CLOSED_PASS_BOUNDED`. Any future
 connector wave requires a fresh GC-018, roadmap, and source-verified work orders.
 
+## LHW4 Closure Cleanup
+
+Current HEAD before cleanup sync: `1b160e1b`
+
+Roadmap cleanup required after closure verification: the LHW4 roadmap still
+contained stale descriptive vocabulary (`actionCategory`, `nextAction`, and
+`signal token`) even though T2/T3 implementation had already corrected those
+source contracts. Cleanup scope is documentation-only: align roadmap prose with
+the delivered source-verified connectors and mark acceptance criteria complete.
+
 ## Mandatory Standards
 
 Live run diagnostics:

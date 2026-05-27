@@ -154,10 +154,10 @@ No `.ts`/`.tsx` or `EXTENSIONS/` file modified.
 Deliverables:
 
 - A connector spec binding G1 execution identity fields → W3 tool action
-  taxonomy → TA1 approval state → MA1 role assignment into a single authority-
+  taxonomy surface/side-effect/transport → TA1 approval state → MA1 role assignment into a single authority-
   chain readout packet:
-  - field mapping: G1 actorId/cvfRole/executionBoundary → W3 actionCategory →
-    TA1 approvalState → MA1 ##4 Role Assignment
+  - field mapping: G1 actorId/cvfRole/executionBoundary.boundary → W3
+    surface/sideEffect/transport → TA1 approvalState → MA1 ##4 Role Assignment
   - authority chain packet minimum fields
   - dissent path: what happens when G1 denies an actor and TA1 reports
     `blocked_by_policy` — how the packet signals stop condition to Orchestrator
@@ -173,15 +173,15 @@ Deliverables:
 - A connector spec turning LHW3-T1 overconstraint/underspecification trend
   signals and CB1 advisory readout into a plain-language friction advisory
   packet for non-coders:
-  - signal-to-advisory table: which LHW3-T1 trend signal + CB1 nextAction
-    combination triggers which advisory type (overconstraint, missing-context,
-    no-match, instability)
+  - signal-to-advisory table: which LHW3-T1 trend signal label + CB1/C8
+    request-context combination triggers which advisory type
+    (overconstraint, missing-context, no-match, instability)
   - advisory packet minimum fields: plain-language message, signal source,
     recommended next step (in operator language, not technical terms)
   - explicit statement: "This connector does not block workflow execution. It
     produces an advisory record only."
   - boundary table: doc-only versus runtime-proven rows
-- Source Verification Table covering every LHW3-T1 signal token and CB1
+- Source Verification Table covering every LHW3-T1 signal label and CB1/C8
   field cited.
 
 Dispatch only after T1 + T2 are CLOSED_PASS.
@@ -212,16 +212,16 @@ continuity update → commit.
 
 ## Acceptance Criteria
 
-- [ ] T1 spec created; AIF-B/AIF-C/M1/VI3 field names used verbatim;
+- [x] T1 spec created; AIF-B/AIF-C/M1/VI3 field names used verbatim;
   `canReinject=false` and `rawMemoryReleased=false` explicit; Source
   Verification Table complete
-- [ ] T2 spec created; G1/W3/TA1/MA1 field names used verbatim; authority
+- [x] T2 spec created; G1/W3/TA1/MA1 field names used verbatim; authority
   chain packet minimum fields present; boundary table honest
-- [ ] T3 spec created; LHW3-T1 signal tokens and CB1 field names used verbatim;
-  plain-language advisory fields present; advisory-only (no blocking) explicit;
-  LHW4 roadmap updated to `CLOSED_PASS_BOUNDED`
-- [ ] No `.ts`/`.tsx`/`.js`/`.py` file in diff across all three tranches
-- [ ] Session continuity updated after each tranche
+- [x] T3 spec created; LHW3-T1 signal labels and CB1/C8 field names used
+  verbatim; plain-language advisory fields present; advisory-only (no blocking)
+  explicit; LHW4 roadmap updated to `CLOSED_PASS_BOUNDED`
+- [x] No `.ts`/`.tsx`/`.js`/`.py` file in diff across all three tranches
+- [x] Session continuity updated after each tranche
 
 ## Verification
 
