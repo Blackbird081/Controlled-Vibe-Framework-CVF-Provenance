@@ -18,6 +18,8 @@ Current HEAD after LHW1-T3 work-order correction commit (parent of handoff sync)
 
 Current HEAD before Work Order Source Verification rule commit: `60868914`.
 
+Current HEAD after Work Order Source Verification rule commit (parent of handoff sync): `c9e55d6a`.
+
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=work_order_source_verification_rule_added; active handoff=AGENT_HANDOFF_V14_2026-05-27.md; next allowed move=next legacy workflow connector requires fresh GC-018/work order and Source Verification when source-level facts are used; parked checkpoint=hosted Netlify freshness and operator external-agent retest for VI5-T4/T5 remain pending.
