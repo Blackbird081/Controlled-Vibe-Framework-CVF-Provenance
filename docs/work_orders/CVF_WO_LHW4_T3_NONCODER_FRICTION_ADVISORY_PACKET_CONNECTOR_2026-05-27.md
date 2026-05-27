@@ -45,8 +45,8 @@ If either gate is not CLOSED_PASS, stop and report to Orchestrator.
 
 ## Agent Roles
 
-Implementer writes spec (S1–S5) using LHW3-T1 signal tokens and CB1 field
-names verbatim. Reviewer checks signal tokens verbatim, CB1 `nextAction`
+Implementer writes spec (S1–S5) using LHW3-T1 signal labels and CB1 field
+names verbatim. Reviewer checks signal labels verbatim, CB1 `recommendedNextAction`
 vocabulary verbatim, plain-language advisory text non-technical, advisory-only
 (no blocking) explicit, S5 Source Verification complete. Auditor confirms both
 gates documented, `AI-first vs Human-first` LH1 trigger recorded, no workflow
@@ -72,21 +72,42 @@ Live friction scoring, UX enforcement, and workflow blocking remain blocked.
 2. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 3. T1 and T2 completions (understand the chain both tranches establish)
 4. `docs/reference/CVF_LHW3_OPERATIONAL_FAILURE_TREND_READOUT_CONNECTOR_SPEC_2026-05-27.md`
-   — confirm LHW3-T1 trend signal tokens: `overconstraint_signal`,
-   `instability_signal`, `underspecification_signal`, `drift_signal`,
-   `audit_gap_signal`; confirm S3 advisory-only constraint
-5. `docs/reviews/CVF_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_COMPLETION_2026-05-25.md`
-   — confirm CB1 `nextAction` vocabulary; `readiness` field states;
-   `missingSignals` and `contaminationFlags` array names
-6. `docs/reviews/CVF_C8_PRODUCT_SKILL_PACK_SELECTION_READOUT_COMPLETION_2026-05-25.md`
+   — confirm LHW3-T1 trend signal labels: `overconstraint signal`,
+   `provider instability signal`, `underspecification signal`,
+   `degraded-output or drift signal`, `audit gap signal`; confirm S3
+   advisory-only constraint
+5. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-request-context-readout.ts`
+   and `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/product-outcome.runtime.ts`
+   — confirm `recommendedNextAction`, `readiness`, `missingSignals`,
+   `contaminationFlags`, and `noiseFlags` field names and values
+6. `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/product-outcome.runtime.ts`
    — confirm `no_certified_pack_match` token
 7. `docs/reference/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md`
    — confirm S2 clarification packet type tokens used in the re-intake loop;
    the T3 advisory packet must point to the T2 loop as the next action path
-8. `docs/reference/CVF_LHW4_WORKFLOW_CONNECTOR_WAVE4_ROADMAP_2026-05-27.md`
+8. `docs/roadmaps/CVF_LHW4_WORKFLOW_CONNECTOR_WAVE4_ROADMAP_2026-05-27.md`
    — confirm T3 deliverable shape
 
 If any required file is missing, stop and report to Orchestrator.
+
+## Pre-Dispatch Source Verification Block
+
+Every existing signal label, runtime field, selection status, and clarification
+packet token must be verified before implementation. Completion reviews may
+support closure status only.
+
+| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
+| --- | --- | --- | --- | --- | --- |
+| LHW3-T1 trend signal labels | `docs/reference/CVF_LHW3_OPERATIONAL_FAILURE_TREND_READOUT_CONNECTOR_SPEC_2026-05-27.md` | lines 46-52 | `overconstraint signal`, `provider instability signal`, `underspecification signal`, `degraded-output or drift signal`, `audit gap signal` | LHW3-T1 trend mapping | ACCEPT |
+| VI2 route context fields | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-request-context-readout.ts` | lines 7-35, 193-198 | `readiness`, `missingSignals`, `noiseFlags`, `contaminationFlags`, `recommendedNextAction` | `RouteRequestContextReadout` | ACCEPT |
+| C8 request context fields | `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/product-outcome.runtime.ts` | lines 45-52, 79-93, 330-343 | `readiness`, `missingSignals`, `contaminationFlags`, `noiseFlags`, `recommendedNextAction` | `ProductSkillPackRequestContextReadout` | ACCEPT |
+| C8 no-match token | `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/product-outcome.runtime.ts` | lines 45, 270, 274 | `no_certified_pack_match` | `ProductSkillPackSelectionStatus` / selection reason | ACCEPT |
+| LHW3-T2 clarification packet types | `docs/reference/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md` | lines 47-50 | `missing_context_clarification_packet`, `noisy_context_clarification_packet`, `ambiguous_outcome_clarification_packet`, `unmatched_request_clarification_packet` | LHW3-T2 re-intake loop | ACCEPT |
+
+New doc-only fields proposed by this work order: `advisoryId`,
+`advisoryType`, `signalSource`, `plainLanguageMessage`,
+`suggestedNextStep`, `nextStepLoopRef`, and `advisoryBlocking`.
+These must be labeled documentation-only in the connector spec.
 
 ## Deliverable — Connector Spec
 
@@ -114,24 +135,25 @@ Table columns: `LHW3-T1 trend signal` | `CB1 field / value` |
 
 Minimum rows:
 
-- `overconstraint_signal` + `policyViolationRate` high → **Overconstraint Advisory**
+- `overconstraint signal` + `policyViolationRate` high → **Overconstraint Advisory**
   → "CVF declined this action because it doesn't match the current safety
   rules." → "Try a lower-risk request or contact your administrator to adjust
   the policy."
-- `underspecification_signal` + `missingSignals` non-empty → **Missing Context Advisory**
+- `underspecification signal` + `missingSignals` non-empty → **Missing Context Advisory**
   → "Your request is missing some information CVF needs to match a workflow."
   → "Add the missing details and try again." (reference LHW3-T2 re-intake loop)
-- `instability_signal` + `retryCount` high → **Provider Instability Advisory**
+- `provider instability signal` + `retryCount` high → **Provider Instability Advisory**
   → "CVF had trouble reaching the AI provider." → "Wait a moment and try again,
   or ask your administrator about provider status."
-- `drift_signal` + `humanCorrectionCount` high → **Output Drift Advisory**
+- `degraded-output or drift signal` + `humanCorrectionCount` high → **Output Drift Advisory**
   → "The AI output needed human corrections recently." → "Review the output
   carefully and provide more specific instructions next time."
 - `no_certified_pack_match` (C8 outcome) → **No Match Advisory**
   → "CVF could not find a workflow that matches your request." → "Try rephrasing
   your goal or use the clarification option." (reference LHW3-T2 re-intake loop)
 
-All signal tokens must be used verbatim from LHW3-T1 and CB1. Plain-language
+All signal labels must be used verbatim from LHW3-T1 and CB1/C8 fields must be
+source-verified. Plain-language
 message templates are documentation examples — implementers may adjust wording
 but must preserve the signal source and next-step link.
 
@@ -144,7 +166,7 @@ Every friction advisory packet must contain:
 - `advisoryId`: unique token
 - `advisoryType`: one of `overconstraint` | `missing_context` | `instability` |
   `output_drift` | `no_match`
-- `signalSource`: the LHW3-T1 trend signal token or C8 outcome that triggered
+- `signalSource`: the LHW3-T1 trend signal label or C8 outcome that triggered
   the advisory
 - `plainLanguageMessage`: non-technical human-readable message
 - `suggestedNextStep`: one-sentence action for the operator or non-coder
@@ -173,10 +195,10 @@ After T3 is CLOSED_PASS: update LHW4 roadmap Status to `CLOSED_PASS_BOUNDED`.
 
 ### S5 — Source Verification Table (mandatory)
 
-Required columns: `Claimed item` | `Source file` | `Verified path or symbol` |
-`Owning interface/function/schema` | `Disposition`
+Required columns: `Claimed item` | `Source file` | `Verified line/section` |
+`Verified path or symbol` | `Owning interface/function/schema` | `Disposition`
 
-Cover every LHW3-T1 signal token, CB1 field name, and C8 vocabulary item cited
+Cover every LHW3-T1 signal label, CB1/C8 field name, and C8 vocabulary item cited
 in S2 and S3. Valid dispositions are `ACCEPT`, `REJECT`, and
 `BLOCKED_SOURCE_NOT_FOUND`. No blocked, guessed, or confirm-later item may
 remain in S2.
@@ -187,8 +209,8 @@ remain in S2.
 - [ ] T2 CLOSED_PASS confirmed
 - [ ] Working tree clean
 - [ ] All required first reads done
-- [ ] LHW3-T1 trend signal tokens confirmed from LHW3-T1 spec
-- [ ] CB1 nextAction vocabulary confirmed from CB1 completion review
+- [ ] LHW3-T1 trend signal labels confirmed from LHW3-T1 spec
+- [ ] CB1/C8 `recommendedNextAction` vocabulary confirmed from source files
 
 ## Write Ownership
 

@@ -60,27 +60,53 @@ blocked.
 
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-3. `docs/reviews/CVF_AIF_B_GRAPH_KNOWLEDGE_PHASE1_COMPLETION_2026-05-24.md`
-   — confirm the AIF-B graph schema surface: `GraphKnowledgeService`,
-   `SymbolIndex`, `ASTParser` — read-only; confirm what a graph index contains
-4. `docs/reviews/CVF_AIF_C_MEMORY_GATEWAY_PHASE2_COMPLETION_2026-05-24.md`
-   — confirm AIF-C memory gateway/lifecycle/retrieval module names;
-   `canReinject=false` binding; `rawMemoryReleased=false`
-5. `docs/reviews/CVF_M1_DURABLE_CROSS_SESSION_MEMORY_COMPLETION_2026-05-24.md`
-   — confirm M1 durable tier names: `skill-tier`, `long-term-tier`; confirm
-   that only summary-only access is allowed via AIF-C C2 gate
-6. `docs/reviews/CVF_VI3_AGENTMEMORY_CAPTURE_RECORD_READOUT_COMPLETION_2026-05-25.md`
-   — confirm VI3 `captureRecord` field names: `captureDecision`,
-   `privacyFilters`, `memoryIds`, `rawMemoryReleased`, `canReinject`,
-   `policyContext.actorRole`
-7. `docs/reviews/CVF_H2_RUNTIME_MEMORY_HIERARCHY_PHASE2_COMPLETION_2026-05-22.md`
+3. `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/graph/schema/graph-schema.ts`
+   and `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/graph/index/symbol-index.ts`
+   — confirm `GraphKnowledgeService`, `GraphQueryResult`, and `SymbolIndex`
+4. `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts`
+   — confirm `MemoryGatewayRequest.actorId`, `MemoryGatewayDecision.memoryIdsAffected`,
+   `auditReceiptRequired`, `canReinject`, and `rawMemoryReleased`
+5. `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/durable-memory-store.ts`
+   — confirm M1 durable tier values `skill` and `long-term`; confirm
+   `DurableMemoryReceipt.summaryOnly`, `memoryIds`, `canReinject`, and
+   `rawMemoryReleased`
+6. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/audit-memory-receipt.ts`
+   — confirm VI3 `AgentMemoryCaptureRecord` fields: `captureDecision`,
+   `privacyFilters`, `memoryIds`, `policyContext.actorRole`,
+   `policyContext.canReinject`
+7. `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/runtime-memory-hierarchy.ts`
+   and `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-tier-classifier.contract.ts`
    — confirm H2 seven-tier vocabulary: `working`, `task`, `skill`,
    `organizational`, `long-term`, `audit`, `receipt`; which tiers are
    `canReinject=false` and `durablePersistenceAllowed=false`
-8. `docs/reference/CVF_LHW4_WORKFLOW_CONNECTOR_WAVE4_ROADMAP_2026-05-27.md`
+8. Supporting completion reviews for AIF-B/AIF-C/M1/VI3/H2 to confirm closure status
+9. `docs/roadmaps/CVF_LHW4_WORKFLOW_CONNECTOR_WAVE4_ROADMAP_2026-05-27.md`
    — confirm T1 deliverable shape
 
 If any required file is missing, stop and report to Orchestrator.
+
+## Pre-Dispatch Source Verification Block
+
+The implementation must source-verify every existing field/type/tier from the
+runtime or canonical contract files above before writing the connector spec.
+Completion reviews may support closure status only. They must not be the sole
+source for field names when source files exist.
+
+| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
+| --- | --- | --- | --- | --- | --- |
+| `GraphKnowledgeService` / `GraphQueryResult` | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/graph/schema/graph-schema.ts` | lines 50-69 | graph query/readout contract | AIF-B graph schema | ACCEPT |
+| `SymbolIndex` | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/graph/index/symbol-index.ts` | lines 13-19 | symbol index graph reference | AIF-B symbol index | ACCEPT |
+| `MemoryGatewayRequest.actorId` / `MemoryGatewayDecision.memoryIdsAffected` | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts` | lines 25-50 | gateway request and decision fields | AIF-C memory gateway | ACCEPT |
+| `auditReceiptRequired`, `canReinject`, `rawMemoryReleased` | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts` | lines 47-50, 83-88 | gateway decision invariants | AIF-C memory gateway | ACCEPT |
+| `skill` / `long-term` durable tiers | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/durable-memory-store.ts` | lines 13, 113-115 | `DurableMemoryTier` | M1 durable memory store | ACCEPT |
+| `DurableMemoryReceipt.memoryIds`, `summaryOnly`, `canReinject`, `rawMemoryReleased` | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/durable-memory-store.ts` | lines 35-49, 169-175 | receipt fields | M1 durable memory store | ACCEPT |
+| H2 tier values and `canReinject=false` | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/runtime-memory-hierarchy.ts` | lines 144-230 | `TIER_RUNTIME_RULES` | H2 runtime memory hierarchy | ACCEPT |
+| `AgentMemoryCaptureRecord.captureDecision` / `memoryIds` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/audit-memory-receipt.ts` | lines 16-40, 232-233 | capture record fields | VI3 audit memory receipt | ACCEPT |
+
+New doc-only fields proposed by this work order: `snapshotId`,
+`snapshotBoundary`, and `evidencePaths`. These fields must be labeled
+documentation-only in the connector spec and must not appear in the Source
+Verification Table as existing runtime fields.
 
 ## Deliverable — Connector Spec
 
@@ -107,14 +133,14 @@ Table columns: `Memory surface` | `AIF-B/AIF-C/M1/VI3/H2 owner` |
 
 Minimum rows:
 
-- AIF-B graph index → `GraphKnowledgeService` → advisory-only (no scoring authority) → include as index reference only → DOC_ONLY binding
-- AIF-C gateway retrieval result → `controlled-memory-gateway.ts` → summary-only → include summary; no raw item export → DOC_ONLY binding
-- M1 `skill-tier` → durable store → includable → summary + evidence path only; no raw content → RUNTIME_PROVEN (M1 closed)
-- M1 `long-term-tier` → durable store → includable → summary + evidence path only → RUNTIME_PROVEN (M1 closed)
+- AIF-B graph index → `GraphKnowledgeService` / `SymbolIndex` → advisory-only (no scoring authority) → include as index reference only → SOURCE_DEFINED; snapshot binding DOC_ONLY
+- AIF-C gateway retrieval result → `MemoryGatewayDecision.memoryIdsAffected` → summary-only → include ids/summary; no raw item export → SOURCE_DEFINED; snapshot binding DOC_ONLY
+- M1 `skill` tier → `DurableMemoryReceipt` → includable → summary + evidence path only; no raw content → RUNTIME_PROVEN (M1 closed)
+- M1 `long-term` tier → `DurableMemoryReceipt` → includable → summary + evidence path only → RUNTIME_PROVEN (M1 closed)
 - VI3 `captureRecord.memoryIds` → `audit-memory-receipt.ts` → includable → ids only; no raw memory content → RUNTIME_PROVEN (VI3 closed)
 - H2 `working` / `task` tiers → in-process only → not includable → ephemeral; not persistent → DOC_ONLY boundary
 
-Use field names verbatim from each completion review. If any field name cannot
+Use field names verbatim from source files. If any field name cannot
 be confirmed, mark `BLOCKED_SOURCE_NOT_FOUND`, stop, and return to Orchestrator.
 
 ### S3 — Snapshot receipt minimum field list
@@ -124,7 +150,8 @@ Prose + field list (max 10 lines):
 Every governed memory snapshot receipt must contain:
 
 - `snapshotId`: unique token
-- `snapshotActor`: G1 actorId at time of snapshot
+- `snapshotActor`: `actorId` from the producing memory gateway request or
+  capture record when available
 - `includedTiers`: list of H2 tier tokens included
 - `captureDecision`: from VI3 `captureRecord.captureDecision`
 - `evidencePaths`: list of M1 / AIF-B evidence file paths included
@@ -152,8 +179,8 @@ Do not label any row "Runtime" unless a closed PASS tranche implements it.
 
 ### S5 — Source Verification Table (mandatory)
 
-Required columns: `Claimed item` | `Source file` | `Verified path or symbol` |
-`Owning interface/function/schema` | `Disposition`
+Required columns: `Claimed item` | `Source file` | `Verified line/section` |
+`Verified path or symbol` | `Owning interface/function/schema` | `Disposition`
 
 Cover every AIF-B, AIF-C, M1, VI3, and H2 field name cited in S2 and S3.
 Valid dispositions are `ACCEPT`, `REJECT`, and `BLOCKED_SOURCE_NOT_FOUND`. If
@@ -165,10 +192,10 @@ remain in S2.
 
 - [ ] Working tree clean
 - [ ] All required first reads done
-- [ ] AIF-B/AIF-C module names confirmed from completion reviews
-- [ ] M1 tier names confirmed from M1 completion review
-- [ ] VI3 captureRecord field names confirmed from VI3 completion review
-- [ ] H2 tier tokens confirmed from H2 completion review
+- [ ] AIF-B/AIF-C module names confirmed from source files
+- [ ] M1 tier names confirmed from source files
+- [ ] VI3 captureRecord field names confirmed from source files
+- [ ] H2 tier tokens confirmed from source files
 
 ## Write Ownership
 

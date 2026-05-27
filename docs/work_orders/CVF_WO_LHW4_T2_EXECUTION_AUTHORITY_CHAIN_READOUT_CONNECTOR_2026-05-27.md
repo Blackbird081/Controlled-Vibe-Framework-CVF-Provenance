@@ -13,7 +13,7 @@ Date: 2026-05-27
 ## Purpose
 
 Implement LHW4-T2: a connector spec binding G1 execution identity fields →
-W3 tool action category → TA1 approval state → MA1 role assignment into a
+W3 tool action surface/side-effect/transport → TA1 approval state → MA1 role assignment into a
 single authority-chain readout packet. Closes the gap where G1, W3, and TA1
 are each proven closed surfaces but no connector ties them into a readable
 packet that an Orchestrator can evaluate before dispatching work to a role agent.
@@ -43,7 +43,7 @@ If T1 is not CLOSED_PASS, stop and report to Orchestrator.
 ## Agent Roles
 
 Implementer writes spec (S1–S5) using G1, W3, TA1, and MA1 vocabulary verbatim.
-Reviewer checks G1 field names verbatim, W3 category tokens verbatim, TA1 state
+Reviewer checks G1 field names verbatim, W3 surface/transport tokens verbatim, TA1 state
 names verbatim, MA1 section numbers correct (##0–##10), boundary table honest,
 `runtimeExecutionAuthorized=false` explicit, no `.ts` file touched, S5 Source
 Verification complete. Auditor confirms T1 gate documented, `Claude Kit` LH1
@@ -67,25 +67,50 @@ New role taxonomy, RBAC changes, and execution authority remain blocked.
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 3. T1 completion (understand memory snapshot foundation T2 builds beside)
-4. `docs/reviews/CVF_G1_EXECUTION_IDENTITY_RUNTIME_GATE_COMPLETION_2026-05-22.md`
+4. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-identity.ts`
+   and `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-role-resolver.ts`
    — confirm G1 fields: `actorId`, `sessionRole`, `cvfRole`,
-   `contextScope`, `executionBoundary`, `receiptOwnership`; confirm
-   existing CVFRole values (e.g. `ORCHESTRATOR`, `REVIEWER`, `IMPLEMENTER`,
-   `AUDITOR`)
-5. `docs/reviews/CVF_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_COMPLETION_2026-05-24.md`
-   — confirm W3 `actionCategory` tokens: `tool`, `command`, `mcp`,
-   `capability`, `database`; confirm `runtimeExecutionAuthorized=false`
-6. `docs/reviews/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
+   `authority.canExecute`, `authority.allowedActorRoles`, `contextScope`,
+   `executionBoundary`, `receiptOwnership`; confirm role resolver behavior
+5. `EXTENSIONS/CVF_GUARD_CONTRACT/src/types.ts`
+   — confirm existing `CVFRole` values: `OBSERVER`, `ANALYST`, `BUILDER`,
+   `REVIEWER`, `GOVERNOR`, `HUMAN`, `AI_AGENT`, `OPERATOR`, `SERVICE_AGENT`
+6. `governance/contracts/tool-action-taxonomy.ts`
+   — confirm W3 `surface`, `sideEffect`, `transport`, `databaseFamily`,
+   `runtimeExecutionAuthorized=false`, and TA1 `approvalState` tokens
+7. `docs/reviews/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
    — confirm TA1 approval state tokens: `not_required`, `pending_approval`,
    `satisfied_but_not_executable`, `blocked_before_approval`,
    `blocked_by_policy`, `incomplete_approval`
-7. `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
+8. `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
    — sections ##0–##10; confirm ##4 Role Assignment and ##8 Integration
    Decision section names verbatim
-8. `docs/reference/CVF_LHW4_WORKFLOW_CONNECTOR_WAVE4_ROADMAP_2026-05-27.md`
+9. Supporting completion reviews for G1/W3/TA1 to confirm closure status
+10. `docs/roadmaps/CVF_LHW4_WORKFLOW_CONNECTOR_WAVE4_ROADMAP_2026-05-27.md`
    — confirm T2 deliverable shape
 
 If any required file is missing, stop and report to Orchestrator.
+
+## Pre-Dispatch Source Verification Block
+
+Every existing role, field, state, and MA1 section reference must be verified
+from the runtime source or canonical contract before implementation.
+Completion reviews may support closure status only.
+
+| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
+| --- | --- | --- | --- | --- | --- |
+| G1 identity fields | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-identity.ts` | lines 25-50, 138-155 | `actorId`, `sessionRole`, `cvfRole`, `authority`, `contextScope`, `executionBoundary`, `receiptOwnership` | `ExecutionIdentityDecision` | ACCEPT |
+| G1 boundary values | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-identity.ts` | lines 20-23, 90-103 | `governed_pack_actor_policy`, `template_execution_policy`, `role_resolution_denied` | `ExecutionIdentityBoundary` / `resolveBoundary` | ACCEPT |
+| CVF role values | `EXTENSIONS/CVF_GUARD_CONTRACT/src/types.ts` | lines 35-44 | `OBSERVER`, `ANALYST`, `BUILDER`, `REVIEWER`, `GOVERNOR`, `HUMAN`, `AI_AGENT`, `OPERATOR`, `SERVICE_AGENT` | `CVFRole` | ACCEPT |
+| Session RBAC role mapping | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-role-resolver.ts` | lines 34-40, 60-75 | `owner/admin→OPERATOR`, `developer→BUILDER`, `reviewer→REVIEWER`, `viewer→OBSERVER`, service token→`SERVICE_AGENT` | `resolveExecutionCVFRole` | ACCEPT |
+| W3 action fields | `governance/contracts/tool-action-taxonomy.ts` | lines 82-96, 106-120 | `surface`, `sideEffect`, `databaseFamily`, `transport`, `runtimeExecutionAuthorized` | `ToolActionTaxonomyRequest` / `ToolActionTaxonomyEvaluation` | ACCEPT |
+| W3 surface tokens | `governance/contracts/tool-action-taxonomy.ts` | lines 9-14 | `local_tool`, `command_runtime`, `mcp_tool`, `database`, `capability_provider` | `ToolActionSurface` | ACCEPT |
+| W3/TA1 approval states | `governance/contracts/tool-action-taxonomy.ts` | lines 64-70, 130-142 | `approvalState`, `runtimeExecutionAuthorized=false` | `ToolActionApprovalState` / `ToolActionApprovalReadout` | ACCEPT |
+| MA1 section references | `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | lines 53-151 | canonical sections `## 0` through `## 10` | MA1 packet standard | ACCEPT |
+
+New doc-only fields proposed by this work order: `chainId`,
+`dispatchDecision`, `authorityChainSignal`, and `ma1RoleAssignmentSection`.
+These must be labeled documentation-only in the connector spec.
 
 ## Deliverable — Connector Spec
 
@@ -96,7 +121,7 @@ Required sections:
 ### S1 — Purpose and claim boundary
 
 - State what the connector is: a normative doc binding G1 execution identity
-  → W3 tool category → TA1 approval state → MA1 role assignment into a single
+  → W3 action surface/side-effect/transport → TA1 approval state → MA1 role assignment into a single
   authority-chain readout packet readable by Orchestrator before dispatch.
 - State what it is not: not a G1/W3/TA1 runtime extension; not a new role
   taxonomy; not an execution authority grant.
@@ -111,15 +136,15 @@ Table columns: `G1 field` | `W3 field / token` | `TA1 state` | `MA1 section` |
 
 Minimum rows:
 
-- `cvfRole=ORCHESTRATOR` + any `actionCategory` + `not_required` TA1 →
+- `cvfRole=OPERATOR` + any `surface` + `not_required` TA1 →
   ##4 Role Assignment R → dispatch allowed; no approval gate
-- `cvfRole=IMPLEMENTER` + `actionCategory=tool` or `command` + `pending_approval` →
+- `cvfRole=BUILDER` + `surface=local_tool` or `command_runtime` + `pending_approval` →
   ##4 R, ##8 Integration Decision R → hold for approval before dispatch
-- `cvfRole=IMPLEMENTER` + `actionCategory=mcp` or `database` + `blocked_by_policy` →
+- `cvfRole=BUILDER` + `surface=mcp_tool` or `database` + `blocked_by_policy` →
   ##4 R, ##8 R → dispatch blocked; stop and record in ##8
-- `executionBoundary=denied` (any role, any action) + any TA1 state →
+- `executionBoundary.boundary=role_resolution_denied` (any role, any action) + any TA1 state →
   ##4 R, ##8 R → dispatch blocked; G1 denial overrides TA1 approval
-- `cvfRole=REVIEWER` + `actionCategory=capability` + `satisfied_but_not_executable` →
+- `cvfRole=REVIEWER` + `surface=capability_provider` + `satisfied_but_not_executable` →
   ##4 R, ##8 O → advisory: capability approved but not yet executable
 
 Use G1, W3, and TA1 field and token names verbatim. If any name cannot be
@@ -135,7 +160,9 @@ Every authority-chain readout packet must contain:
 - `actorId`: from G1
 - `cvfRole`: from G1
 - `executionBoundary`: from G1
-- `actionCategory`: from W3
+- `surface`: from W3
+- `sideEffect`: from W3
+- `transport`: from W3 when present
 - `approvalState`: from TA1
 - `dispatchDecision`: one of `allowed` | `hold_for_approval` | `blocked`
 - `authorityChainSignal`: plain-language summary of the chain signal
@@ -160,10 +187,10 @@ Do not label any row "Runtime" unless a closed PASS tranche implements it.
 
 ### S5 — Source Verification Table (mandatory)
 
-Required columns: `Claimed item` | `Source file` | `Verified path or symbol` |
-`Owning interface/function/schema` | `Disposition`
+Required columns: `Claimed item` | `Source file` | `Verified line/section` |
+`Verified path or symbol` | `Owning interface/function/schema` | `Disposition`
 
-Cover every G1 field, W3 category token, TA1 state token, and MA1 section
+Cover every G1 field, W3 surface/transport token, TA1 state token, and MA1 section
 reference cited in S2 and S3. Valid dispositions are `ACCEPT`, `REJECT`, and
 `BLOCKED_SOURCE_NOT_FOUND`. No blocked, guessed, or confirm-later item may
 remain in S2.
@@ -173,9 +200,9 @@ remain in S2.
 - [ ] T1 CLOSED_PASS confirmed
 - [ ] Working tree clean
 - [ ] All required first reads done
-- [ ] G1 field names confirmed from G1 completion review
-- [ ] W3 actionCategory tokens confirmed from W3 completion review
-- [ ] TA1 approval state tokens confirmed from TA1 completion review
+- [ ] G1 field names confirmed from source files
+- [ ] W3 surface/transport tokens confirmed from source files
+- [ ] TA1 approval state tokens confirmed from source files
 - [ ] MA1 section names confirmed from MA1 standard
 
 ## Write Ownership

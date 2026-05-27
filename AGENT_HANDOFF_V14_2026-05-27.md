@@ -445,6 +445,23 @@ GC-018/roadmap/work-order chain with Source Verification and Knowledge
 Absorption Blind-Spot Control. VI5-T4/T5 hosted operator retest and Delta
 production hardening remain parked.
 
+## LHW4 Work Order Source-Fidelity Audit
+
+Current HEAD before correction: `a7619554`
+
+Roadmap/work-order dispatch is active for:
+`docs/roadmaps/CVF_LHW4_WORKFLOW_CONNECTOR_WAVE4_ROADMAP_2026-05-27.md`
+
+Audit finding: Claude-created LHW4 work orders were directionally useful but
+not source-clean enough for dispatch. Corrections required before implementation:
+T1 must use runtime/source files for AIF-B/AIF-C/M1/VI3/H2 field names and
+fix the roadmap path; T2 must replace stale role/action vocabulary
+(`ORCHESTRATOR`, `IMPLEMENTER`, `actionCategory`) with current source-verified
+`CVFRole` and W3 `surface` vocabulary; T3 must replace invented underscore
+signal tokens and `nextAction` with LHW3-T1 signal labels and source-verified
+`recommendedNextAction`. Implementation must proceed only from corrected work
+orders.
+
 ## Mandatory Standards
 
 Live run diagnostics:
