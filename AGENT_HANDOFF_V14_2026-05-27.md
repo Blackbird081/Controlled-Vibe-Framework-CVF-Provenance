@@ -32,6 +32,8 @@ Current HEAD after Work Order Authoring Hardening commit (parent of handoff sync
 
 Current HEAD after LHW3 work-order correction commit (parent of handoff sync): `e531acf2`.
 
+Current HEAD after LHW3-T1 implementation commit (parent of handoff sync): `7c971b96`.
+
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=lhw2_work_order_cleanup_closed_pass_bounded; active handoff=AGENT_HANDOFF_V14_2026-05-27.md; next allowed move=next legacy workflow connector requires fresh GC-018/work order and strict Source Verification when source-level facts or MA1 section refs are used; parked checkpoint=hosted Netlify freshness and operator external-agent retest for VI5-T4/T5 remain pending.
@@ -336,6 +338,30 @@ Dispatch rule for Claude/worker:
   doc-only connector fields as runtime/source fields.
 - T1 may proceed first. T2 remains gated on T1 CLOSED_PASS. T3 remains gated on
   T1 + T2 CLOSED_PASS.
+
+## LHW3-T1 Closure
+
+Mode marker: `lhw3_t1_operational_failure_trend_readout_closed_pass_bounded`
+
+Commit: `7c971b96 docs(lhw3-t1): add operational failure trend readout connector spec`
+
+Spec:
+`docs/reference/CVF_LHW3_OPERATIONAL_FAILURE_TREND_READOUT_CONNECTOR_SPEC_2026-05-27.md`
+
+Completion:
+`docs/reviews/CVF_LHW3_T1_OPERATIONAL_FAILURE_TREND_READOUT_CONNECTOR_COMPLETION_2026-05-27.md`
+
+Contract version: `cvf.operationalFailureTrendReadoutConnector.lhw3.t1.v1`
+
+Delivered: documentation-only connector mapping source-verified W4 scorecard
+fields and V3 diagnostic class tokens to 5 advisory trend signals:
+overconstraint, provider instability, underspecification, degraded-output/drift,
+and audit gap. S5 Source Verification Table has no
+`BLOCKED_SOURCE_NOT_FOUND` rows. No code file modified.
+
+T2 gate answer: YES — Low `taskCompletionRate` paired with `invalid_input`
+creates an underspecification signal that should route to a standard
+clarification re-intake packet instead of blind reruns. T2 may proceed.
 
 ## Mandatory Standards
 
