@@ -512,6 +512,29 @@ T3 gate answer: YES — `blocked_by_policy` and `hold_for_approval` dispatch
 decisions have no plain-language advisory packet for non-coders; T3 closes
 that gap.
 
+## LHW4-T3 Noncoder Friction Advisory Packet Connector Closure
+
+Mode marker: `lhw4_t3_complete`
+
+Spec:
+`docs/reference/CVF_LHW4_NONCODER_FRICTION_ADVISORY_PACKET_CONNECTOR_SPEC_2026-05-27.md`
+
+Completion:
+`docs/reviews/CVF_LHW4_T3_NONCODER_FRICTION_ADVISORY_PACKET_CONNECTOR_COMPLETION_2026-05-27.md`
+
+Contract version: `cvf.noncoderFrictionAdvisoryPacket.lhw4.t3.v1`
+
+Delivered: documentation-only connector mapping five LHW3-T1 trend signals
+(`overconstraint signal`, `underspecification signal`, `provider instability
+signal`, `degraded-output or drift signal`) + C8 `no_certified_pack_match` →
+plain-language advisory packet types with non-blocking `advisoryBlocking=false`
+invariant. References LHW3-T2 re-intake loop for `missing_context` and
+`no_match` advisory types. S5 Source Verification Table has 6 rows, all ACCEPT.
+No code file modified. LHW4 roadmap updated to `CLOSED_PASS_BOUNDED`.
+
+LHW4 wave fully closed: T1 + T2 + T3 all `CLOSED_PASS_BOUNDED`. Any future
+connector wave requires a fresh GC-018, roadmap, and source-verified work orders.
+
 ## Mandatory Standards
 
 Live run diagnostics:
