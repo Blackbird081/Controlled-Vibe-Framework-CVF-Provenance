@@ -8,7 +8,7 @@ Current HEAD before LHW1-T2 commit: `ba91dc0d9ed52ae8b48ba794433da22853c861dd`.
 
 Current HEAD before LHW2 commit: `a858d32e`.
 
-Current HEAD (updated per GC-020): *pending — updated after LHW2 commit*.
+Current HEAD (updated per GC-020): `f5b7898c` (LHW2 commit; LHW2 roadmap CLOSED_PASS_BOUNDED).
 
 Current HEAD before LHW1-T3 field/state correction commit: `a858d32e`.
 
