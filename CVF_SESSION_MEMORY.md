@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-27
 
-Current mode marker: `lhw1_t3_context_profile_connector_closed_pass_bounded`
+Current mode marker: `lhw2_t3_tool_approval_ma1_handoff_connector_closed_pass_bounded`
 
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -1045,6 +1045,42 @@ Roadmap filed:
 `docs/roadmaps/CVF_LHW1_LEGACY_WORKFLOW_CONNECTOR_ABSORPTION_ROADMAP_2026-05-27.md`.
 
 ## Latest Legacy Workflow Connector Tranche
+
+Mode marker: `lhw2_t3_tool_approval_ma1_handoff_connector_closed_pass_bounded`
+
+Previous mode marker: `lhw1_t3_context_profile_connector_closed_pass_bounded`
+
+LHW2 Workflow Connector Completion is CLOSED_PASS_BOUNDED (T1 + T2 + T3).
+
+Roadmap:
+`docs/roadmaps/CVF_LHW2_WORKFLOW_CONNECTOR_COMPLETION_ROADMAP_2026-05-27.md`
+
+T1 — Memory Event Capture Workflow Receipt Loop Connector:
+`docs/reference/CVF_LHW2_MEMORY_EVENT_CAPTURE_WORKFLOW_RECEIPT_LOOP_CONNECTOR_SPEC_2026-05-27.md`
+Contract: `cvf.memoryEventCaptureWorkflowReceiptLoopConnector.lhw2.t1.v1`
+Completion: `docs/reviews/CVF_LHW2_T1_MEMORY_EVENT_CAPTURE_WORKFLOW_RECEIPT_LOOP_CONNECTOR_COMPLETION_2026-05-27.md`
+
+T2 — Workflow Recovery Action Packet Connector:
+`docs/reference/CVF_LHW2_WORKFLOW_RECOVERY_ACTION_PACKET_CONNECTOR_SPEC_2026-05-27.md`
+Contract: `cvf.workflowRecoveryActionPacketConnector.lhw2.t2.v1`
+Completion: `docs/reviews/CVF_LHW2_T2_WORKFLOW_RECOVERY_ACTION_PACKET_CONNECTOR_COMPLETION_2026-05-27.md`
+
+T3 — Tool Approval MA1 Handoff Connector:
+`docs/reference/CVF_LHW2_TOOL_APPROVAL_MA1_HANDOFF_CONNECTOR_SPEC_2026-05-27.md`
+Contract: `cvf.toolApprovalMA1HandoffConnector.lhw2.t3.v1`
+Completion: `docs/reviews/CVF_LHW2_T3_TOOL_APPROVAL_MA1_HANDOFF_CONNECTOR_COMPLETION_2026-05-27.md`
+
+Source verification: all W2/VI3 fields confirmed from `memory-event-hooks.ts`
+and `audit-memory-receipt.ts`; all TA1 states confirmed from
+`tool-action-taxonomy.ts`. All ACCEPT; no UNVERIFIED rows.
+
+Claim boundary: documentation-only connector specs. No runtime extension,
+memory reinjection, execution authority, receipt envelope extension,
+public-sync, hosted readiness, production readiness, or freeze release.
+
+---
+
+### LHW1 Record (for reference)
 
 Mode marker: `lhw1_t3_context_profile_connector_closed_pass_bounded`
 

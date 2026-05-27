@@ -6,7 +6,9 @@ Current HEAD before LHW1 roadmap commit: `aabf0509535b232cc543a8da6bc77936256ef0
 
 Current HEAD before LHW1-T2 commit: `ba91dc0d9ed52ae8b48ba794433da22853c861dd`.
 
-Current HEAD (updated per GC-020): `838a407f` (LHW1-T3 commit; LHW1 roadmap CLOSED_PASS_BOUNDED).
+Current HEAD before LHW2 commit: `a858d32e`.
+
+Current HEAD (updated per GC-020): *pending — updated after LHW2 commit*.
 
 Current HEAD before LHW1-T3 field/state correction commit: `a858d32e`.
 
@@ -198,6 +200,44 @@ work order that maps runtime/source fields must include a Source Verification
 Table and must return to Orchestrator if a field is guessed, inferred, absent,
 or left as "confirm later". T3 completion review was retrofitted with the
 verification table.
+
+## LHW2 Closure + LHW2 Roadmap Closed
+
+LHW2 Workflow Connector Completion is CLOSED_PASS_BOUNDED (T1 + T2 + T3).
+
+Mode marker: `lhw2_t3_tool_approval_ma1_handoff_connector_closed_pass_bounded`
+
+Roadmap: `docs/roadmaps/CVF_LHW2_WORKFLOW_CONNECTOR_COMPLETION_ROADMAP_2026-05-27.md`
+
+T1 — Memory Event Capture Workflow Receipt Loop Connector:
+Spec: `docs/reference/CVF_LHW2_MEMORY_EVENT_CAPTURE_WORKFLOW_RECEIPT_LOOP_CONNECTOR_SPEC_2026-05-27.md`
+Contract: `cvf.memoryEventCaptureWorkflowReceiptLoopConnector.lhw2.t1.v1`
+Completion: `docs/reviews/CVF_LHW2_T1_MEMORY_EVENT_CAPTURE_WORKFLOW_RECEIPT_LOOP_CONNECTOR_COMPLETION_2026-05-27.md`
+Delivered: S1–S6; 5 W2 hook decisions → VI3 captureRecord fields (source-verified
+from `memory-event-hooks.ts`); 5 captureRecord → GovernanceEvidenceReceipt bindings
+(RUNTIME_PROVEN/DOC_ONLY); loop completion traceability condition explicit;
+Source Verification Table 11 rows all ACCEPT. No code file modified.
+
+T2 — Workflow Recovery Action Packet Connector:
+Spec: `docs/reference/CVF_LHW2_WORKFLOW_RECOVERY_ACTION_PACKET_CONNECTOR_SPEC_2026-05-27.md`
+Contract: `cvf.workflowRecoveryActionPacketConnector.lhw2.t2.v1`
+Completion: `docs/reviews/CVF_LHW2_T2_WORKFLOW_RECOVERY_ACTION_PACKET_CONNECTOR_COMPLETION_2026-05-27.md`
+T1 gate: CLOSED_PASS ✓. Delivered: S1–S5; all 4 WR1 transition classes mapped
+to distinct MA1-compatible packet templates (advisory_hold, reviewer_gate_hold,
+advance, escalate_to_governance) with MA1 sections R/O/N/A; lastRestorableCheckpoint
+→ MA1 ##4 Input Package restoreFromPhase; dissent and escalation handoff rules.
+No code file modified.
+
+T3 — Tool Approval MA1 Handoff Connector:
+Spec: `docs/reference/CVF_LHW2_TOOL_APPROVAL_MA1_HANDOFF_CONNECTOR_SPEC_2026-05-27.md`
+Contract: `cvf.toolApprovalMA1HandoffConnector.lhw2.t3.v1`
+Completion: `docs/reviews/CVF_LHW2_T3_TOOL_APPROVAL_MA1_HANDOFF_CONNECTOR_COMPLETION_2026-05-27.md`
+T1 gate: CLOSED_PASS ✓. T2 gate: CLOSED_PASS ✓. Delivered: S1–S5; all 6 TA1
+approval states mapped (not_required / pending_approval / satisfied_but_not_executable /
+blocked_before_approval / blocked_by_policy / incomplete_approval) with MA1 R/O/N/A
+per packet type; Source Verification Table 7 rows all ACCEPT from
+`tool-action-taxonomy.ts`; demand-gated items listed; runtimeExecutionAuthorized=false
+explicit. No code file modified. LHW2 roadmap CLOSED_PASS_BOUNDED.
 
 ## Mandatory Work Order Source Verification Rule
 
