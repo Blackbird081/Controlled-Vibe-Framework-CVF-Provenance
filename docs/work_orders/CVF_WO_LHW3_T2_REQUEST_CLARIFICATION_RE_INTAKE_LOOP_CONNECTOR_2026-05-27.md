@@ -29,6 +29,8 @@ behavior is changed.
 - CB1: `docs/reviews/CVF_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_COMPLETION_2026-05-25.md`
 - VI2: `docs/reviews/CVF_VI2_ROUTE_REQUEST_CONTEXT_PROFILE_READOUT_COMPLETION_2026-05-25.md`
 - C8: `docs/reviews/CVF_C8_PRODUCT_SKILL_PACK_SELECTION_READOUT_COMPLETION_2026-05-25.md`
+- CB1/C8 source: `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/product-outcome.runtime.ts`
+- VI2 source: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-request-context-readout.ts`
 - LHW3-T1 spec: `docs/reference/CVF_LHW3_OPERATIONAL_FAILURE_TREND_READOUT_CONNECTOR_SPEC_2026-05-27.md`
 
 ## Gate Condition — CHECK FIRST
@@ -67,19 +69,45 @@ remain blocked.
 2. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 3. T1 completion (understand the trend-signal pattern T2 must complement)
 4. `docs/reviews/CVF_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_COMPLETION_2026-05-25.md`
-   — confirm CB1 signal classes: `budget_tier` values, `readiness` states,
+   — understand CB1 signal classes: `budgetTier` values, `readiness` states,
    `missingSignals` array, `contaminationFlags`, `noiseFlags`,
-   `nextAction` vocabulary
+   `recommendedNextAction` vocabulary
 5. `docs/reviews/CVF_VI2_ROUTE_REQUEST_CONTEXT_PROFILE_READOUT_COMPLETION_2026-05-25.md`
    — confirm `requestContextReadout.missingSignals` field name and
    `requestContextReadout.readiness` field name
 6. `docs/reviews/CVF_C8_PRODUCT_SKILL_PACK_SELECTION_READOUT_COMPLETION_2026-05-25.md`
    — confirm pack selection states: `no_certified_pack_match`, selected pack
    `packId` vocabulary
-7. `docs/reference/CVF_LHW3_WORKFLOW_CONNECTOR_WAVE3_ROADMAP_2026-05-27.md`
+7. `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/product-outcome.runtime.ts`
+   — source-verify CB1/C8 fields and values:
+   `ProductSkillPackRequestContextReadiness`, `missingSignals`,
+   `contaminationFlags`, `noiseFlags`, `recommendedNextAction`,
+   `ProductSkillPackSelectionStatus`, and `no_certified_pack_match`
+8. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-request-context-readout.ts`
+   — source-verify VI2 `RouteRequestContextReadout`,
+   `RouteRequestContextReadiness`, `missingSignals`, `contaminationFlags`,
+   `noiseFlags`, and `recommendedNextAction`
+9. `docs/reference/CVF_LHW3_WORKFLOW_CONNECTOR_WAVE3_ROADMAP_2026-05-27.md`
    — confirm T2 deliverable shape
 
 If any required file is missing, stop and report to Orchestrator.
+
+## Pre-Dispatch Source Verification Block
+
+The work-order author has verified these source anchors before dispatch.
+Worker must preserve these exact source-backed names and must not introduce
+draft-only readiness values or stale field names.
+
+| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
+| --- | --- | --- | --- | --- | --- |
+| CB1 request-context readiness values | `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/product-outcome.runtime.ts` | lines 48-52 | `ready`, `needs_clarification`, `needs_context_compaction`, `blocked_contaminated_brief` | `ProductSkillPackRequestContextReadiness` | ACCEPT |
+| CB1 request-context readout fields | `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/product-outcome.runtime.ts` | lines 79-92 | `missingSignals`, `contaminationFlags`, `noiseFlags`, `recommendedNextAction` | `ProductSkillPackRequestContextReadout` | ACCEPT |
+| C8 pack-selection status and no-match value | `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/product-outcome.runtime.ts` | lines 45, 270, 274 | `selected`, `no_certified_pack_match` | `ProductSkillPackSelectionStatus` / selection readout | ACCEPT |
+| VI2 route-context version | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-request-context-readout.ts` | line 3 | `cvf.routeRequestContextProfile.vi2.v1` | VI2 route request context readout | ACCEPT |
+| VI2 readiness values and readout fields | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-request-context-readout.ts` | lines 7-34 | `RouteRequestContextReadiness`, `RouteRequestContextReadout`, `missingSignals`, `contaminationFlags`, `noiseFlags`, `recommendedNextAction` | VI2 readout contract | ACCEPT |
+
+If implementation evidence contradicts any row above, worker must stop and
+return `BLOCKED_SOURCE_CONFLICT` instead of inventing replacement vocabulary.
 
 ## Deliverable — Connector Spec
 
@@ -111,15 +139,15 @@ Minimum rows:
   → fields: actor, original packId, missingSignals list, returnPath=C8
 - `contaminationFlags` non-empty → noisy-context clarification packet
   → fields: actor, original packId, contaminationFlags list, returnPath=C8
-- `readiness=not_ready` (no missingSignals, no flags) → ambiguous-outcome
+- `readiness=needs_clarification` (missing context or very short request) → ambiguous-outcome
   clarification packet → fields: actor, original packId, goalStatement,
   returnPath=C8
 - `no_certified_pack_match` (C8 outcome) → unmatched-request clarification
   packet → fields: actor, request summary, returnPath=C8 re-select
 
-Use CB1 and VI2 field names verbatim. If a field name cannot be verified from
-the CB1 or VI2 completion reviews, mark it `BLOCKED_SOURCE_NOT_FOUND`, stop,
-and return to Orchestrator.
+Use CB1, VI2, and C8 field names verbatim. If a field name cannot be verified
+from the current source or canonical completion evidence above, mark it
+`BLOCKED_SOURCE_NOT_FOUND`, stop, and return to Orchestrator.
 
 ### S3 — Loop re-entry standard
 
@@ -129,8 +157,8 @@ Prose description (max 10 lines):
   operator or agent receives the clarification packet, supplies the missing
   information, and re-submits to the C8 `cvf skill select` surface.
 - What the receiving agent must confirm before re-entering: `missingSignals`
-  resolved, `contaminationFlags` resolved, `no_certified_pack_match` re-tried
-  with updated request.
+  resolved, `contaminationFlags` and `noiseFlags` resolved where present,
+  `no_certified_pack_match` re-tried with updated request.
 - State explicitly: "The loop re-entry is manual or operator-triggered. This
   connector does not claim an automated clarification routing runtime."
 
@@ -149,22 +177,23 @@ Do not label any row "Runtime" unless a closed PASS tranche implements it.
 
 ### S5 — Source Verification Table (mandatory)
 
-Required columns: `Claimed item` | `Source file` | `Verified path or symbol` |
-`Owning interface/function/schema` | `Disposition`
+Required columns: `Claimed item` | `Source file` | `Verified line/section` |
+`Verified path or symbol` | `Owning interface/function/schema` | `Disposition`
 
 Cover every CB1 field, VI2 field, and C8 vocabulary item cited in S2. Valid
 dispositions are `ACCEPT`, `REJECT`, and `BLOCKED_SOURCE_NOT_FOUND`. If any
 item cannot be source-verified, mark it `BLOCKED_SOURCE_NOT_FOUND`, stop, and
-return to Orchestrator. No blocked, guessed, or confirm-later item may remain
-in S2.
+return to Orchestrator. No blocked, guessed, draft-only, or unstaged source
+fact may remain in S2.
 
 ## Pre-Flight
 
 - [ ] T1 CLOSED_PASS confirmed
 - [ ] Working tree clean
 - [ ] All required first reads done
-- [ ] CB1 signal class / field names confirmed from CB1 completion review
-- [ ] VI2 missingSignals field name confirmed from VI2 completion review
+- [ ] CB1/C8 signal class and field names confirmed from
+      `product-outcome.runtime.ts`
+- [ ] VI2 field names confirmed from `route-request-context-readout.ts`
 
 ## Write Ownership
 
@@ -198,7 +227,7 @@ Spec size guard: < 200 lines. Trim S3 prose if approaching 180 lines.
 ## Acceptance Criteria
 
 - [ ] Spec with all 5 sections created
-- [ ] All 4 CB1 signal class combinations mapped to distinct packet types
+- [ ] All 4 CB1/C8 signal combinations mapped to distinct packet types
 - [ ] Loop re-entry standard explicitly states manual/operator-triggered
 - [ ] S4 boundary table honest (no doc-only row labeled Runtime)
 - [ ] S5 Source Verification Table complete with no `BLOCKED_SOURCE_NOT_FOUND` rows
@@ -228,7 +257,8 @@ Stop and report to Orchestrator if:
 
 - T1 gate is not CLOSED_PASS;
 - any required first read file is missing or unreadable;
-- a CB1 or VI2 field name cannot be confirmed from completion reviews;
+- a CB1, VI2, or C8 field/value cannot be confirmed from current source or
+  canonical completion evidence;
 - writing the connector requires adding a new CB1 signal class not in the
   existing vocabulary;
 - spec exceeds 200 lines before S4 is complete.
@@ -245,8 +275,8 @@ T2 work?"
 ## Operator Checkpoint
 
 operator.checkpoint.waiver: Low-risk documentation-only tranche gated by T1
-CLOSED_PASS and source-verified CB1/VI2 field names; no operator checkpoint
-required unless a conflict with CB1/VI2 vocabulary is discovered during
+CLOSED_PASS and source-verified CB1/VI2/C8 field names; no operator checkpoint
+required unless a conflict with CB1/VI2/C8 vocabulary is discovered during
 implementation.
 
 ## Claim Boundary

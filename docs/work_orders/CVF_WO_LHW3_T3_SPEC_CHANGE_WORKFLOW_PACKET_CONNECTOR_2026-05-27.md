@@ -30,6 +30,8 @@ behavior is changed.
 - MA1 standard: `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
   (read full sections ##0 through ##10)
 - W1: `docs/reviews/CVF_W1_WORKFLOW_STATE_MACHINE_ENFORCEMENT_COMPLETION_2026-05-24.md`
+- W1 workflow source: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow.product.create_product_brief.v1.json`
+- LHW2 T3 boundary source: `docs/reference/CVF_LHW2_TOOL_APPROVAL_MA1_HANDOFF_CONNECTOR_SPEC_2026-05-27.md`
 - LHW3-T2 spec: `docs/reference/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md`
 
 ## Gate Conditions — CHECK FIRST
@@ -79,16 +81,43 @@ spec-change enforcement, and execution gating remain blocked.
    understand which phases allow dissent and which require Auditor challenge
 5. `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
    — sections ##0 through ##10; confirm MA1 section names and numbers for
-   ##3 Source Packet, ##4 Input Package, ##5 Execution Instructions,
-   ##8 Integration Decision, ##9 Completion Evidence
+   ##0 Surface Fidelity Gate, ##1 Authority Chain, ##2 Transfer Objective,
+   ##3 Source Packet, ##4 Role Assignment, ##5 Execution Instructions,
+   ##6 Role Output Schema, ##7 Dissent And Review Ledger,
+   ##8 Integration Decision, ##9 Completion Evidence, and
+   ##10 Claim Boundary
 6. `docs/reviews/CVF_W1_WORKFLOW_STATE_MACHINE_ENFORCEMENT_COMPLETION_2026-05-24.md`
-   — confirm W1 phase tokens verbatim:
+   — understand W1 closure evidence and phase vocabulary:
    `intake_pending`, `design_ready`, `build_running`, `review_pending`,
    `freeze_ready`, `completed`
-7. `docs/reference/CVF_LHW3_WORKFLOW_CONNECTOR_WAVE3_ROADMAP_2026-05-27.md`
+7. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow.product.create_product_brief.v1.json`
+   — source-verify phase transition token spelling from existing workflow
+   transition records
+8. `docs/reference/CVF_LHW2_TOOL_APPROVAL_MA1_HANDOFF_CONNECTOR_SPEC_2026-05-27.md`
+   — source-verify the doc-only boundary phrase
+   `runtimeExecutionAuthorized=false`
+9. `docs/reference/CVF_LHW3_WORKFLOW_CONNECTOR_WAVE3_ROADMAP_2026-05-27.md`
    — confirm T3 deliverable shape
 
 If any required file is missing, stop and report to Orchestrator.
+
+## Pre-Dispatch Source Verification Block
+
+The work-order author has verified these source anchors before dispatch.
+Worker must preserve exact MA1 section names, W1 phase tokens, and doc-only
+boundary wording. New packet fields remain connector-document fields only.
+
+| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
+| --- | --- | --- | --- | --- | --- |
+| W1 phase tokens | `docs/reference/CVF_LHW1_WORKFLOW_CHAIN_STATE_CONNECTOR_SPEC_2026-05-27.md` | lines 68-73 | `intake_pending`, `design_ready`, `build_running`, `review_pending`, `freeze_ready`, `completed` | LHW1-T2 phase-to-role table | ACCEPT |
+| Existing workflow transition tokens | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow.product.create_product_brief.v1.json` | lines 17-18, 35-36, 53-54, 71-72, 89-90 | `fromState` / `toState` transition records | product brief workflow JSON | ACCEPT |
+| MA1 section references | `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | lines 53, 66, 77, 84, 92, 104, 114, 127, 134, 142, 151 | `##0 Surface Fidelity Gate` through `##10 Claim Boundary` | MA1 packet standard | ACCEPT |
+| Tool-approval boundary phrase | `docs/reference/CVF_LHW2_TOOL_APPROVAL_MA1_HANDOFF_CONNECTOR_SPEC_2026-05-27.md` | line 48 | `runtimeExecutionAuthorized=false` | LHW2-T3 tool approval MA1 handoff connector boundary | ACCEPT |
+| New change-packet fields | this work order | S3A | `changeId`, `requestingActor`, `currentPhase`, `deltaDescription`, `affectedPhaseRange`, `approverRole`, `reEntryPhaseToken`, `changePacketStatus` | doc-only connector fields, not runtime/source fields | ACCEPT |
+
+If implementation evidence contradicts any source-backed row above, worker must
+stop and return `BLOCKED_SOURCE_CONFLICT`. Worker must not cite the S3A
+doc-only fields as runtime/source fields in the generated S4 table.
 
 ## Deliverable — Connector Spec
 
@@ -116,10 +145,11 @@ Table columns: `W1 phase` | `Change allowed?` | `Approver role` |
 Minimum rows covering all 6 W1 phases:
 
 - `intake_pending` — change allowed (spec not yet committed) → Orchestrator
-  approves → ##0 Purpose/##4 Input Package R; re-entry: `intake_pending`
+  approves → ##0 Surface Fidelity Gate, ##2 Transfer Objective, and
+  ##3 Source Packet R; re-entry: `intake_pending`
 - `design_ready` — change allowed with Reviewer sign-off → Reviewer approves
-  → ##0/##4/##8 R, ##9 O; re-entry: `design_ready`
-- `build_running` — change requires pause + Reviewer + Auditor → ##0/##4/##8/##9 R;
+  → ##0/##2/##3/##8 R, ##9 O; re-entry: `design_ready`
+- `build_running` — change requires pause + Reviewer + Auditor → ##0/##2/##3/##8/##9 R;
   re-entry: `design_ready` (must re-validate design before continuing build)
 - `review_pending` — change blocked until review completes; if urgent,
   `escalate_to_governance` → ##0/##8/##9 R; re-entry: `design_ready`
@@ -128,7 +158,8 @@ Minimum rows covering all 6 W1 phases:
 - `completed` — change not applicable; new workflow instance required
 
 Use W1 phase tokens verbatim. If a phase token cannot be verified from the W1
-completion review, mark it `BLOCKED_SOURCE_NOT_FOUND` and stop.
+workflow source, LHW1-T2 connector spec, or W1 completion evidence, mark it
+`BLOCKED_SOURCE_NOT_FOUND` and stop.
 
 ### S3 — Change packet minimum field list
 
@@ -148,16 +179,36 @@ Every spec-change packet must contain:
 State explicitly: "These fields are documentation-only minimum requirements.
 They do not extend GovernanceEvidenceReceipt or any existing receipt envelope."
 
+### S3A — New Doc-Only Fields Table
+
+Required because these fields are newly proposed connector-document fields, not
+current runtime/source fields:
+
+| New doc-only field | Purpose | Not sourced from runtime? | Runtime claim blocked? | Validation expectation |
+| --- | --- | --- | --- | --- |
+| `changeId` | stable ID for the change packet | Yes | Yes | present in connector examples/checklist |
+| `requestingActor` | actor initiating the change | Yes | Yes | present in connector examples/checklist |
+| `currentPhase` | W1 phase token at request time | Yes | Yes | value must source-verify against W1 phase tokens |
+| `deltaDescription` | one-sentence change summary | Yes | Yes | present in connector examples/checklist |
+| `affectedPhaseRange` | W1 phases requiring re-run | Yes | Yes | values must source-verify against W1 phase tokens |
+| `approverRole` | role signing MA1 ##8 Integration Decision | Yes | Yes | role label is doc-only unless sourced elsewhere |
+| `reEntryPhaseToken` | W1 phase token for re-entry | Yes | Yes | value must source-verify against W1 phase tokens |
+| `changePacketStatus` | change packet disposition | Yes | Yes | doc-only enum: pending_approval / approved / rejected |
+
 ### S4 — Source Verification Table (mandatory)
 
-Required columns: `Claimed item` | `Source file` | `Verified path or symbol` |
-`Owning interface/function/schema` | `Disposition`
+Required columns: `Claimed item` | `Source file` | `Verified line/section` |
+`Verified path or symbol` | `Owning interface/function/schema` | `Disposition`
 
 Cover every W1 phase token, MA1 section reference, and LHW1-T2 vocabulary item
-cited in S2 and S3. Valid dispositions are `ACCEPT`, `REJECT`, and
-`BLOCKED_SOURCE_NOT_FOUND`. If any item cannot be source-verified, mark it
-`BLOCKED_SOURCE_NOT_FOUND`, stop, and return to Orchestrator. No blocked,
-guessed, or confirm-later item may remain.
+cited in S2 and S3. Cover `runtimeExecutionAuthorized=false` from the existing
+LHW2 T3 tool-approval MA1 handoff connector if the spec uses that boundary
+language. Do not put S3A new doc-only fields in the Source Verification Table
+as if they already exist in runtime/source. Valid dispositions are `ACCEPT`,
+`REJECT`, and `BLOCKED_SOURCE_NOT_FOUND`. If any source fact cannot be
+source-verified, mark it `BLOCKED_SOURCE_NOT_FOUND`, stop, and return to
+Orchestrator. No blocked, guessed, draft-only, or unstaged source fact may
+remain.
 
 ### S5 — Runtime-enforcement boundary table
 
@@ -180,7 +231,7 @@ After T3 is CLOSED_PASS: update LHW3 roadmap Status to `CLOSED_PASS_BOUNDED`.
 - [ ] T2 CLOSED_PASS confirmed
 - [ ] Working tree clean
 - [ ] All required first reads done
-- [ ] W1 phase tokens confirmed from W1 completion review
+- [ ] W1 phase tokens confirmed from workflow source or LHW1-T2 connector spec
 - [ ] MA1 section numbers confirmed from MA1 standard
 
 ## Write Ownership
@@ -253,7 +304,8 @@ Stop and report to Orchestrator if:
 
 - T1 or T2 gate is not CLOSED_PASS;
 - any required first read file is missing or unreadable;
-- a W1 phase token cannot be verified from W1 completion review;
+- a W1 phase token cannot be verified from workflow source or LHW1-T2 connector
+  spec;
 - a MA1 section number cannot be verified from the MA1 standard;
 - writing the connector requires modifying `workflow-resolver.ts`;
 - spec exceeds 200 lines before S4 is complete.
