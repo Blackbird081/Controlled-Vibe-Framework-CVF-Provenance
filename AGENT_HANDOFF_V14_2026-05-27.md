@@ -30,6 +30,8 @@ Current HEAD before Work Order Authoring Hardening commit: `b3b18c53`.
 
 Current HEAD after Work Order Authoring Hardening commit (parent of handoff sync): `8da239c3`.
 
+Current HEAD after LHW3 work-order correction commit (parent of handoff sync): `e531acf2`.
+
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=lhw2_work_order_cleanup_closed_pass_bounded; active handoff=AGENT_HANDOFF_V14_2026-05-27.md; next allowed move=next legacy workflow connector requires fresh GC-018/work order and strict Source Verification when source-level facts or MA1 section refs are used; parked checkpoint=hosted Netlify freshness and operator external-agent retest for VI5-T4/T5 remain pending.
@@ -298,6 +300,42 @@ first.
 
 Cleanup completion review:
 `docs/reviews/CVF_LHW2_WORK_ORDER_CLEANUP_COMPLETION_2026-05-27.md`
+
+## LHW3 Work Orders Corrected For Claude Dispatch
+
+Mode marker: `lhw3_work_orders_corrected_ready_for_claude_dispatch`
+
+Commit: `e531acf2 docs(lhw3): correct work orders for source-verified dispatch`
+
+Corrected work orders:
+
+- `docs/work_orders/CVF_WO_LHW3_T1_OPERATIONAL_FAILURE_TREND_READOUT_CONNECTOR_2026-05-27.md`
+- `docs/work_orders/CVF_WO_LHW3_T2_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_2026-05-27.md`
+- `docs/work_orders/CVF_WO_LHW3_T3_SPEC_CHANGE_WORKFLOW_PACKET_CONNECTOR_2026-05-27.md`
+
+What changed:
+
+- Each work order now includes a Pre-Dispatch Source Verification Block with
+  source file, verified line/section, symbol/path, owning interface/schema, and
+  disposition.
+- T1 no longer relies on WR1 as V3 diagnostic class authority and no longer
+  carries invented diagnostic tokens. It binds W4 metric fields to W4 source
+  files and V3/route/benchmark diagnostic tokens only.
+- T2 replaces stale `budget_tier`, `nextAction`, and `readiness=not_ready`
+  vocabulary with source-backed `budgetTier`, `recommendedNextAction`, and
+  `needs_clarification` / C8 `no_certified_pack_match` vocabulary.
+- T3 removes stale MA1 section references such as `Input Package` and `Purpose`,
+  uses canonical MA1 section names, separates S3A new doc-only change-packet
+  fields from source verification, and preserves `runtimeExecutionAuthorized=false`.
+
+Dispatch rule for Claude/worker:
+
+- If source evidence contradicts the pre-dispatch block, return
+  `BLOCKED_SOURCE_CONFLICT`.
+- Do not invent replacement names, infer runtime fields from memory, or cite
+  doc-only connector fields as runtime/source fields.
+- T1 may proceed first. T2 remains gated on T1 CLOSED_PASS. T3 remains gated on
+  T1 + T2 CLOSED_PASS.
 
 ## Mandatory Standards
 
