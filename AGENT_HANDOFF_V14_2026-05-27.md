@@ -16,9 +16,11 @@ Current HEAD before LHW1-T3 work-order correction commit: `fe5bfbf9`.
 
 Current HEAD after LHW1-T3 work-order correction commit (parent of handoff sync): `64f28977`.
 
+Current HEAD before Work Order Source Verification rule commit: `60868914`.
+
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=gamma_t1_t5_mcp_memory_bootstrap_closed_pass_bounded; active handoff=AGENT_HANDOFF_V14_2026-05-27.md; next allowed move=close bounded Surface 1 priority-template English export scale, then return to legacy/workflow absorption for high-value connector gaps; parked checkpoint=hosted Netlify freshness and operator external-agent retest for VI5-T4/T5 remain pending.
+Startup acknowledged: current mode=work_order_source_verification_rule_added; active handoff=AGENT_HANDOFF_V14_2026-05-27.md; next allowed move=next legacy workflow connector requires fresh GC-018/work order and Source Verification when source-level facts are used; parked checkpoint=hosted Netlify freshness and operator external-agent retest for VI5-T4/T5 remain pending.
 
 Previous active handoff `AGENT_HANDOFF_V13_2026-05-25.md` was archived because it exceeded the governed active-markdown size guard. Do not append new status to V13.
 
@@ -194,6 +196,35 @@ work order that maps runtime/source fields must include a Source Verification
 Table and must return to Orchestrator if a field is guessed, inferred, absent,
 or left as "confirm later". T3 completion review was retrofitted with the
 verification table.
+
+## Mandatory Work Order Source Verification Rule
+
+Mode marker: `work_order_source_verification_rule_added`
+
+The operator accepted the diagnosis that stronger work orders prevent worker
+drift. The rule is now binding beyond LHW1:
+
+- `AGENTS.md` includes Mandatory Work Order Source Verification.
+- `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md` now requires a
+  Source Verification Table when a work order names runtime/source fields,
+  existing symbols, schemas, receipt fields, diagnostic classes, role values,
+  route states, template/pack IDs, policy enums, config keys, CLI/MCP tool
+  names, or existing source paths.
+- `docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md` makes missing
+  source verification a dispatch blocker.
+- `docs/reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md` makes the
+  block structurally required for applicable work orders.
+- `docs/CVF_ARCHITECTURE_DECISIONS.md` records ADR-050.
+- LHW1 T1/T2 work orders have retroactive addenda for future reuse/amendment.
+- LHW1 T3 work order table now includes the `Owning interface/function` column.
+
+Required table columns: `Claimed item`, `Source file`, `Verified path or
+symbol`, `Owning interface/function/schema`, and `Disposition`.
+
+Valid dispositions: `ACCEPT`, `REJECT`, `BLOCKED_SOURCE_NOT_FOUND`.
+`BLOCKED_SOURCE_NOT_FOUND` returns the work order to Orchestrator. Guessed
+fields, inferred names, placeholder source paths, stale memory-only vocabulary,
+and "confirm later" language cannot close.
 
 ## Mandatory Standards
 

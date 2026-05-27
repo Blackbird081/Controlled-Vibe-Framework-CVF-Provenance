@@ -29,7 +29,7 @@ verbatim at
 3. Resolve review queue:
    `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
 4. Resolve active handoff:
-   `AGENT_HANDOFF_V13_2026-05-25.md`
+   `AGENT_HANDOFF_V14_2026-05-27.md`
 5. Read mandatory startup guards listed in the state registry.
 
 Pain-point closure direction:
@@ -38,11 +38,11 @@ Pain-point closure direction:
 
 Previous handoff archive:
 
-`CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V12_2026-05-23.md`
+`CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V13_2026-05-25.md`
 
 ## Current State
 
-Current mode: `alpha_mandatory_startup_acknowledgment_closed`.
+Current mode: `work_order_source_verification_rule_added`.
 
 VI5 Multi-Role Orchestrated Convergence is accepted and VI5-T1 is closed PASS
 bounded:
@@ -915,6 +915,17 @@ Knowledge absorption blind-spot prevention:
 Every GC-018 memory/graph/intelligence tranche must include the Knowledge
 Absorption Blind-Spot Control Block.
 
+Work order source verification:
+
+Future work orders that name runtime/source fields, existing symbols, schemas,
+receipt fields, diagnostic classes, role values, route states, template/pack
+IDs, policy enums, config keys, CLI/MCP tool names, or existing source paths
+must include a Source Verification Table before implementation. Required
+columns: `Claimed item`, `Source file`, `Verified path or symbol`, `Owning
+interface/function/schema`, and `Disposition`. Guessed names, inferred fields,
+placeholder paths, stale memory-only vocabulary, and "confirm later" language
+block dispatch and return to Orchestrator.
+
 ## Boundary
 
 This front door is routing state only. It does not replace evidence packets,
@@ -1145,6 +1156,7 @@ code file modification, external skill ingestion, public-sync, hosted
 readiness, production readiness, or freeze release.
 
 Parked operator checkpoint remains VI5-T4/T5: operator will later export a
-fresh hosted web spec and test it with an external agent. T2 (Workflow Chain
-State Connector) requires a fresh Fast Lane audit referencing T1 outcome.
+fresh hosted web spec and test it with an external agent. LHW1-T1/T2/T3 are
+closed; any next legacy workflow connector requires fresh GC-018/work order and
+must include Source Verification when source-level facts are used.
 Active handoff: `AGENT_HANDOFF_V14_2026-05-27.md`.

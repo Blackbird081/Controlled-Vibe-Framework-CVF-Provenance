@@ -155,6 +155,10 @@ Required sections:
 - Closure Checklist or Completion Requirements
 - Return-To-Orchestrator Conditions
 - Operator Checkpoint or `operator.checkpoint.waiver`
+- Source Verification Block when the work order names runtime/source fields,
+  existing symbols, schemas, receipt fields, diagnostic classes, role values,
+  route states, template/pack IDs, policy enums, config keys, CLI/MCP tool
+  names, or existing source paths
 - Claim Boundary
 
 Work orders are tactical execution packets, not reviews. They are mandatory
@@ -178,6 +182,21 @@ operator.checkpoint.waiver: [one-sentence justification]
 
 Work orders already present at adoption commit `c043fa33` are grandfathered;
 new work orders after that commit must satisfy this requirement.
+
+Source verification requirement:
+
+```markdown
+## Source Verification
+
+| Claimed item | Source file | Verified path or symbol | Owning interface/function/schema | Disposition |
+|---|---|---|---|---|
+```
+
+This block is mandatory when source-level facts drive the work order. `ACCEPT`
+requires direct source or canonical-contract verification. `REJECT` records a
+bad or stale claim and the corrected symbol when known. `BLOCKED_SOURCE_NOT_FOUND`
+stops dispatch and returns to Orchestrator. "Confirm later" wording does not
+satisfy this requirement.
 
 ### Review / Rebuttal / Response
 

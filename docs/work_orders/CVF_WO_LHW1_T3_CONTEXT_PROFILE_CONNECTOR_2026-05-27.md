@@ -41,10 +41,10 @@ Binding correction:
 
 Corrected source-verified T3 field mappings:
 
-| Claimed connector need | Source file | Verified field path | Disposition |
-|---|---|---|---|
-| VI2 missing context gaps | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-request-context-readout.ts` | `RouteRequestContextReadout.missingSignals` | ACCEPT |
-| VI3 capture-record role | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/audit-memory-receipt.ts` | `AgentMemoryCaptureRecord.policyContext.actorRole` | ACCEPT |
+| Claimed connector need | Source file | Verified field path | Owning interface/function | Disposition |
+|---|---|---|---|---|
+| VI2 missing context gaps | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-request-context-readout.ts` | `RouteRequestContextReadout.missingSignals` | `RouteRequestContextReadout` | ACCEPT |
+| VI3 capture-record role | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/audit-memory-receipt.ts` | `AgentMemoryCaptureRecord.policyContext.actorRole` | `AgentMemoryCaptureRecord` | ACCEPT |
 
 Rejected original guesses:
 

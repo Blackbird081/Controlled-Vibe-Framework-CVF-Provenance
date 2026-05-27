@@ -88,6 +88,13 @@ exist, uses invented runtime vocabulary, maps a user-facing label to the wrong
 canonical template/pack, or presents synthetic fixture data as an operational
 baseline.
 
+Requirement 7: any work order that names, maps, modifies, consumes, or instructs
+an agent to use a runtime field, interface, function, type, schema key, receipt
+field, diagnostic class, role value, route state, template ID, pack ID, policy
+enum, config key, CLI/MCP tool name, or existing source path must include a
+Source Verification Table before implementation. Missing, guessed, inferred, or
+"confirm later" source facts block dispatch and return to Orchestrator.
+
 ## Inputs And Outputs
 
 Input artifacts:
@@ -244,6 +251,17 @@ Before the work order may move to implementation, run a Source-Fidelity Pass:
   policy files;
 - record any invented, missing, or ambiguous item as a correction or
   return-to-orchestrator condition.
+
+If the work order depends on concrete source contracts, include a Source
+Verification Table with these columns before dispatch:
+
+| Claimed item | Source file | Verified path or symbol | Owning interface/function/schema | Disposition |
+|---|---|---|---|---|
+
+Valid dispositions are `ACCEPT`, `REJECT`, and `BLOCKED_SOURCE_NOT_FOUND`.
+`BLOCKED_SOURCE_NOT_FOUND` blocks implementation. A work order must not push
+field discovery down to the worker when the dispatch instruction itself relies
+on the field.
 
 ### Step 4 - GC-018 Authorization
 

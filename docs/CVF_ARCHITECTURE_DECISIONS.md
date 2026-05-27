@@ -1154,3 +1154,45 @@ Extend GC-045 with two bounded hardening rules:
 - 2026-05-24: Active archive hygiene run — 61 stale docs moved to archive; guard authoring fix on `CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD.md` (pre-existing Enforced-by path format issue). No architecture change.
 
 - 2026-05-24: Active archive hygiene run — 61 stale docs moved to archive; guard authoring fix on CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD.md (pre-existing  path format). No architecture change.
+
+## ADR-050: Work Order Source Verification Becomes Mandatory
+
+### Status
+ACCEPTED — 2026-05-27
+
+### Context
+LHW1-T3 exposed a work-order quality gap: the original instruction allowed a
+worker to carry uncertain runtime field names with "confirm later" language.
+That let incorrect names reach a closed connector draft before review caught
+the mismatch. The defect was not the connector idea; it was an under-specified
+dispatch packet.
+
+### Decision
+Future work orders must include a Source Verification Block before
+implementation whenever they depend on source-level facts: runtime fields,
+interfaces, functions, types, schema keys, receipt fields, diagnostic classes,
+role values, route states, template IDs, pack IDs, policy enums, config keys,
+CLI/MCP tool names, or existing source paths.
+
+The required table columns are:
+
+- `Claimed item`
+- `Source file`
+- `Verified path or symbol`
+- `Owning interface/function/schema`
+- `Disposition`
+
+Valid dispositions are `ACCEPT`, `REJECT`, and `BLOCKED_SOURCE_NOT_FOUND`.
+`BLOCKED_SOURCE_NOT_FOUND` blocks implementation and returns to Orchestrator.
+
+### Consequences
+- Work-order authors must verify fields before dispatch instead of making the
+  worker discover invented or stale instructions.
+- Reviewers must fail work orders that rely on guessed, inferred, placeholder,
+  memory-only, or "confirm later" source vocabulary.
+- `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`,
+  `docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md`,
+  `docs/reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md`, and
+  `AGENTS.md` carry the binding rule.
+- Previously closed work orders are not retroactively failed, but any reuse,
+  amendment, continuation, or template promotion must satisfy the rule.

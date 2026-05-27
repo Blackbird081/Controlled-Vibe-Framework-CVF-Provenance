@@ -19,6 +19,28 @@ evidence receipts, recovery states, and MA1-compatible transfer packet fields.
 Documentation-only tranche. No source code, runtime module, route, or
 provider behavior is changed.
 
+## Retroactive Source Verification Addendum
+
+This work order is closed, but future reuse or amendment must satisfy the
+2026-05-27 Mandatory Work Order Source Verification rule.
+
+T2 references W1 phase vocabulary, WR1 transition classes,
+MA1 section/role-transfer vocabulary, and existing `GovernanceEvidenceReceipt`
+fields. A successor or amended work order must include a Source Verification
+Table before implementation whenever it instructs a worker to use concrete
+runtime/source field names, type names, receipt fields, diagnostic classes,
+role values, route states, pack IDs, policy enums, source paths, or schema keys.
+
+Required columns:
+
+| Claimed item | Source file | Verified path or symbol | Owning interface/function/schema | Disposition |
+|---|---|---|---|---|
+
+`ACCEPT` requires direct source or canonical-contract verification. `REJECT`
+must record the corrected symbol when known. `BLOCKED_SOURCE_NOT_FOUND` returns
+the work order to Orchestrator. Guessed names, stale memory-only vocabulary,
+placeholder source paths, and "confirm later" language are not allowed.
+
 ## Authority Chain
 
 - Operator authorized LHW1 roadmap on 2026-05-27.

@@ -178,6 +178,33 @@ Benchmark evidence that emits multiple events per live call must report both
 the call-level result and the event-model denominator so readers do not confuse
 event ratios with execution pass rate.
 
+## Mandatory Work Order Source Verification - 2026-05-27
+
+Any future CVF work order that names, maps, modifies, consumes, or instructs an
+agent to use a runtime field, interface, function, type, schema key, receipt
+field, diagnostic class, role value, route state, template ID, pack ID, policy
+enum, config key, CLI/MCP tool name, or existing source path must include a
+Source Verification Block before implementation.
+
+Required Source Verification Table columns:
+
+- `Claimed item`
+- `Source file`
+- `Verified path or symbol`
+- `Owning interface/function/schema`
+- `Disposition`
+
+Allowed dispositions are `ACCEPT`, `REJECT`, or `BLOCKED_SOURCE_NOT_FOUND`.
+`ACCEPT` requires direct verification from the cited source file or canonical
+contract. `REJECT` must name the corrected field/symbol when known.
+`BLOCKED_SOURCE_NOT_FOUND` stops the work order and returns it to Orchestrator.
+
+No future agent may close a work order with guessed fields, inferred names,
+placeholder source paths, stale memory-only vocabulary, or "confirm later"
+language for a runtime/source contract. If a work order author is unsure, the
+work order must assign a source-verification task to the orchestrator/reviewer
+before dispatching implementation.
+
 ## Mandatory Knowledge Absorption Blind-Spot Prevention - 2026-05-24
 
 Canonical standard:

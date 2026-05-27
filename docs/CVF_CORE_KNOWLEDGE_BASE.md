@@ -869,6 +869,11 @@ Canonical rule:
 - new work orders must include `## Operator Checkpoint` or
   `operator.checkpoint.waiver`; work orders already present at adoption commit
   `c043fa33` are grandfathered
+- new work orders must include a Source Verification Block when they name
+  runtime/source fields, existing symbols, schemas, receipt fields, diagnostic
+  classes, role values, route states, template/pack IDs, policy enums, config
+  keys, CLI/MCP tool names, or existing source paths. Guessed, inferred,
+  placeholder, stale-memory, or "confirm later" source facts block dispatch
 - legacy dense files are not retroactively blocked, but material rewrites and
   promotions should migrate into the standard
 
@@ -878,6 +883,8 @@ Canonical references:
 - `governance/toolkit/05_OPERATION/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_GUARD.md`
 - `governance/compat/check_markdown_structural_completeness.py`
 - `docs/reviews/archive/CVF_WO_MULTI_ROLE_QUALITY_HARDENING_COMPLETION_2026-05-21.md`
+- `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
+- `docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md`
 
 ---
 

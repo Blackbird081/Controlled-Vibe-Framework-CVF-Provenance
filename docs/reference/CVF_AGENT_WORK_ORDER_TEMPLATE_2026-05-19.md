@@ -247,6 +247,25 @@ If a source fact cannot be verified, either correct the work order or return to
 the orchestrator. Do not ask the implementer to discover that the work order
 invented a path, symbol, role value, or baseline source.
 
+If the work order names, maps, modifies, consumes, or instructs an agent to use
+any runtime field, interface, function, type, schema key, receipt field,
+diagnostic class, role value, route state, template ID, pack ID, policy enum,
+config key, CLI/MCP tool name, or existing source path, include this table
+before implementation:
+
+| Claimed item | Source file | Verified path or symbol | Owning interface/function/schema | Disposition |
+|---|---|---|---|---|
+| <field/type/path/etc.> | <source path> | <verified field/symbol> | <owner> | <ACCEPT/REJECT/BLOCKED_SOURCE_NOT_FOUND> |
+
+Rules:
+
+- `ACCEPT` requires direct verification from the cited source file or canonical
+  contract.
+- `REJECT` must name the corrected field/symbol when known.
+- `BLOCKED_SOURCE_NOT_FOUND` stops dispatch and returns to Orchestrator.
+- Do not dispatch implementation with guessed fields, inferred names,
+  placeholder paths, stale memory-only vocabulary, or "confirm later" language.
+
 ## 7. Write Ownership
 
 Owned files or modules:

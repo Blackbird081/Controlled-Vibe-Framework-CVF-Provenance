@@ -18,6 +18,28 @@ product skill pack into a non-coder workflow chain.
 This work order authorizes a documentation-only tranche. No source code,
 runtime module, route, or provider behavior is changed.
 
+## Retroactive Source Verification Addendum
+
+This work order is closed, but future reuse or amendment must satisfy the
+2026-05-27 Mandatory Work Order Source Verification rule.
+
+T1 references existing source-contract vocabulary from W1/WR1, MA1,
+`GovernanceEvidenceReceipt`, V3 diagnostics, W3/TA1 action taxonomy, and the
+C7A certified pack inventory. A successor or amended work order must include a
+Source Verification Table before implementation whenever it instructs a worker
+to use concrete field names, type names, receipt fields, diagnostic classes,
+role values, route states, pack IDs, policy enums, source paths, or schema keys.
+
+Required columns:
+
+| Claimed item | Source file | Verified path or symbol | Owning interface/function/schema | Disposition |
+|---|---|---|---|---|
+
+`ACCEPT` requires direct source or canonical-contract verification. `REJECT`
+must record the corrected symbol when known. `BLOCKED_SOURCE_NOT_FOUND` returns
+the work order to Orchestrator. Guessed names, stale memory-only vocabulary,
+placeholder source paths, and "confirm later" language are not allowed.
+
 ## Authority Chain
 
 - Operator directed legacy knowledge absorption continuation on 2026-05-27.
