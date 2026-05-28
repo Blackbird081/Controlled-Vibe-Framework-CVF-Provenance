@@ -147,12 +147,17 @@ Required sections:
 - Scope, Allowed Scope, or Forbidden Scope
 - Required First Reads
 - Pre-Flight Checks
+- Roadmap-To-Work-Order Trace Matrix when roadmap-derived
 - Write Ownership
 - Execution Plan or Execution Rules
 - Evidence Requirements
 - Acceptance Criteria
+- Fail Conditions when missing fields, source mismatches, ambiguous thresholds,
+  public/provenance boundary errors, or forbidden runtime claims would
+  invalidate the task
 - Review Gate
 - Closure Checklist or Completion Requirements
+- Closure Quality Gate evidence when the work order is closed
 - Return-To-Orchestrator Conditions
 - Operator Checkpoint or `operator.checkpoint.waiver`
 - Source Verification Block when the work order names runtime/source fields,
@@ -188,8 +193,8 @@ Source verification requirement:
 ```markdown
 ## Source Verification
 
-| Claimed item | Source file | Verified path or symbol | Owning interface/function/schema | Disposition |
-|---|---|---|---|---|
+| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
+|---|---|---|---|---|---|
 ```
 
 This block is mandatory when source-level facts drive the work order. `ACCEPT`
@@ -202,6 +207,25 @@ Forbidden closeout vocabulary for source facts includes `UNVERIFIED`, `TBD`,
 `TODO`, `confirm field name`, and `verify during implementation`. These terms
 are valid only inside an explicit blocking defect note. They are not valid
 acceptance, evidence, or completion language.
+
+Closure quality requirement:
+
+```markdown
+## Closure Quality Gate
+
+| Gate | Evidence | Verdict |
+|---|---|---|
+| Roadmap-to-work-order trace matrix | <path/check> | <PASS/BLOCKED/N/A> |
+| Closure diff gate | <summary/path> | <PASS/BLOCKED/N/A> |
+| Claim integrity scan | <command/path> | <PASS/BLOCKED/N/A> |
+| Fail-condition scan | <summary/path> | <PASS/BLOCKED/N/A> |
+| Checklist finalization | <path> | <PASS/BLOCKED/N/A> |
+| Continuity sync | <path/commit> | <PASS/BLOCKED/N/A> |
+```
+
+This block is mandatory for new completion packets and for work orders that
+carry their own closure record. It implements
+`docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md`.
 
 ### Review / Rebuttal / Response
 

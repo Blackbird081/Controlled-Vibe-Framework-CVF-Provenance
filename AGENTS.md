@@ -238,6 +238,37 @@ defect note that blocks dispatch. They must not appear in acceptance criteria,
 evidence requirements, completion reviews, or closure checklists as if they were
 allowed dispositions.
 
+## Mandatory Work Order Closure Quality Gate - 2026-05-28
+
+Canonical standard:
+
+`docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md`
+
+Any future CVF work order, roadmap task, completion review, public-sync batch,
+or delegated agent execution must satisfy the closure-quality gate before it is
+marked `CLOSED`, `CLOSED_PASS`, `CLOSED_PASS_BOUNDED`, or equivalent.
+
+Binding requirements:
+
+- include a Roadmap-to-Work-Order Trace Matrix for work derived from a roadmap;
+- run a Closure Diff Gate comparing roadmap requirements, work-order
+  instructions, final artifacts, and completion claims;
+- back file-change and no-runtime/no-public/no-live-proof claims with
+  `git diff --name-status`, `git status --short`, committed diff output,
+  receipts, command output, or explicit `N/A with reason`;
+- include explicit fail conditions for missing fields, ambiguous thresholds,
+  stale source facts, public/provenance boundary errors, and forbidden runtime
+  claims;
+- resolve every closure checklist item as checked, `N/A with reason`, or
+  `BLOCKED` with return-to-orchestrator action;
+- update active session front door, machine-readable state, and active handoff
+  when current mode, next allowed move, public-sync status, roadmap status, or
+  handoff status changes.
+
+Open checkbox residue, stale continuity state, memory-based file-change claims,
+and roadmap requirements lost between dispatch and final artifact are closure
+defects. Operator silence is not a waiver.
+
 ## Mandatory Knowledge Absorption Blind-Spot Prevention - 2026-05-24
 
 Canonical standard:

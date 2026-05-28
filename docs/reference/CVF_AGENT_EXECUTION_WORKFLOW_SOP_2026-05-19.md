@@ -95,6 +95,13 @@ enum, config key, CLI/MCP tool name, or existing source path must include a
 Source Verification Table before implementation. Missing, guessed, inferred, or
 "confirm later" source facts block dispatch and return to Orchestrator.
 
+Requirement 8: every roadmap-derived work order and every delegated closure
+must satisfy
+`docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md`.
+Closure requires roadmap-to-work-order traceability, closure diff review, claim
+integrity evidence, fail-condition review, checklist finalization, and
+continuity sync when state changes.
+
 ## Inputs And Outputs
 
 Input artifacts:
@@ -227,10 +234,12 @@ Minimum content:
 - allowed and forbidden scope;
 - required first reads;
 - pre-flight commands;
+- Roadmap-to-Work-Order Trace Matrix when roadmap-derived;
 - write ownership;
 - execution plan;
 - evidence requirements;
 - acceptance criteria;
+- explicit fail conditions;
 - review gate;
 - closure checklist;
 - return-to-orchestrator conditions.
@@ -268,6 +277,11 @@ Forbidden closeout vocabulary for source facts includes `UNVERIFIED`, `TBD`,
 `verify during implementation`. Treat those terms as dispatch blockers unless
 they appear only in a defect note that explicitly returns the work order to the
 Orchestrator.
+
+For roadmap-derived work, the work order must also include a
+Roadmap-to-Work-Order Trace Matrix. Every roadmap acceptance item must map to a
+work-order section, output artifact or field, verification command or check,
+and status. Missing trace rows block dispatch or closure.
 
 ### Step 4 - GC-018 Authorization
 
@@ -315,6 +329,13 @@ Output:
 Closure records:
 
 - acceptance criteria;
+- roadmap-to-work-order trace matrix final status;
+- closure diff result comparing roadmap, work order, final artifact, and
+  completion claims;
+- claim integrity evidence for file-change, boundary, public, runtime, live
+  proof, hosted, production, and operator-acceptance claims;
+- fail-condition review result;
+- closure checklist finalization with no open checkbox residue;
 - changed files;
 - evidence commands/results;
 - reviewer disposition;
@@ -407,6 +428,10 @@ remains subject to future scoped implementation work.
 | Final roadmap exists but no work order | Stop before implementation and create work order. |
 | Work order lacks authority chain | Stop and add authority chain. |
 | Work order cites a missing path or invented symbol | Stop and run the Source-Fidelity Pass; correct the work order before GC-018. |
+| Roadmap-derived work order lacks trace matrix | Stop and add the Roadmap-to-Work-Order Trace Matrix before dispatch. |
+| Completion claim is not backed by command/path/receipt evidence | Stop closure; run the required evidence command or downgrade the claim. |
+| Open checkbox residue remains in closure artifacts | Stop closure; mark each item checked, N/A with reason, or BLOCKED. |
+| Active front door, state registry, and handoff disagree after mode/status change | Stop closure; sync continuity surfaces before claiming closed. |
 | Implementer needs to touch forbidden path | Return to orchestrator. |
 | Reviewer is silent | Wait or get explicit operator waiver. |
 | Public/provenance boundary unclear | Stop and run `git remote -v` in the relevant workspace. |

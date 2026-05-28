@@ -6,6 +6,12 @@ Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-05-27
 
+## Authorization / Decision
+
+Authorized by the active session direction after priority-template Surface 1
+export scale: return to legacy workflow connector absorption with fresh
+bounded work orders and knowledge absorption blind-spot controls.
+
 ## Purpose
 
 Return from Surface 1 export cleanup to legacy knowledge absorption, but only
@@ -16,6 +22,27 @@ LHW1 is not broad legacy archaeology. It is a connector tranche: identify
 disconnected workflow parts, normalize the accepted value into CVF-owned
 workflow surfaces, and produce the minimum standard needed for later runtime or
 UI implementation.
+
+## Scope
+
+In scope:
+
+- identify high-value legacy workflow connector families;
+- dispatch bounded documentation-only connector standards for accepted
+  families;
+- preserve source verification and blind-spot control before implementation;
+- close only the T1/T2/T3 connector standards delivered by this roadmap.
+
+## Non-Goals
+
+Out of scope:
+
+- runtime workflow enforcement;
+- provider or route behavior changes;
+- external skill ingestion;
+- tool/MCP/database execution;
+- memory reinjection;
+- hosted readiness, production readiness, or public release readiness claims.
 
 ## Operator Direction
 
@@ -87,6 +114,13 @@ in T1/T2/T3.
 
 ## Recommended Sequence
 
+## Work Plan
+
+The work plan is the recommended sequence below: T1 establishes the product
+skill pack workflow connector, T2 adds the workflow chain state connector if T1
+is useful, and T3 adds the context profile connector only if T1/T2 expose a
+concrete context gap.
+
 ### LHW1-T1 - Product Skill Pack Workflow Connector
 
 Deliverables:
@@ -124,6 +158,18 @@ Deliverables:
 - no raw memory reinjection and no provider route behavior change.
 
 Dispatch only if T1/T2 expose a concrete context gap.
+
+## Acceptance Criteria
+
+- T1 product skill pack workflow connector is closed with a bounded spec and
+  examples.
+- T2 workflow chain state connector is closed only after T1 proves useful.
+- T3 context profile connector is closed only after T1/T2 expose a concrete
+  context gap.
+- Source Verification is required for any runtime/source field used by a
+  connector spec.
+- Claim boundary remains documentation-only unless a later authorized tranche
+  supplies runtime/live proof.
 
 ## Verification
 

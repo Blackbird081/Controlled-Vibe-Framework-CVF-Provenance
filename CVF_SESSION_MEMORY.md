@@ -1,12 +1,9 @@
 # CVF Session Memory Front Door
-
 Memory class: POINTER_RECORD
-
 Status: ACTIVE SESSION FRONT DOOR
+Last updated: 2026-05-28
 
-Last updated: 2026-05-27
-
-Current mode marker: `lhw5_quality_review_fix_complete`
+Current mode marker: `work_order_closure_quality_gate_rule_added`
 
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +39,7 @@ Previous handoff archive:
 
 ## Current State
 
-Current mode: `lhw5_quality_review_fix_complete`.
+Current mode: `work_order_closure_quality_gate_rule_added`.
 
 VI5 Multi-Role Orchestrated Convergence is accepted and VI5-T1 is closed PASS
 bounded:
@@ -926,6 +923,9 @@ dispatch and return to Orchestrator.
 
 work_order_authoring_hardening_closed_pass_bounded: pre-dispatch token search, source file plus line/section, runtime/canonical source priority, draft-only token block unless new doc-only field, and exact MA1 section labels are binding.
 
+Work order closure quality gate: `docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md`.
+Future delegated work must pass trace matrix, closure diff, claim integrity, fail-condition, checklist, and continuity-sync gates before `CLOSED_PASS`.
+
 ## Boundary
 
 This front door is routing state only. It does not replace evidence packets,
@@ -1197,4 +1197,4 @@ Parked operator checkpoint remains VI5-T4/T5: operator will later export a
 fresh hosted web spec and test it with an external agent. LHW1-T1/T2/T3 are
 closed; any next legacy workflow connector requires fresh GC-018/work order and
 must include Source Verification when source-level facts are used.
-Active handoff: `AGENT_HANDOFF_V14_2026-05-27.md`; latest mode marker: `lhw5_t3_complete`.
+Active handoff: `AGENT_HANDOFF_V14_2026-05-27.md`; latest mode marker: `work_order_closure_quality_gate_rule_added`.

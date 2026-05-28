@@ -80,9 +80,14 @@ Verification requirements:
   source-verified before the work order is marked ready;
 - work-order authors must verify source facts before dispatch, not delegate
   ambiguous source discovery to the implementer;
+- roadmap-derived work orders must include a Roadmap-to-Work-Order Trace Matrix;
 - acceptance criteria must be observable;
+- fail conditions must be explicit when missing fields, stale source facts,
+  ambiguous thresholds, public/provenance boundary errors, or forbidden runtime
+  claims would invalidate the task;
 - evidence must use command/result/path form where possible;
-- completion must record changed files and required governance updates.
+- completion must record changed files, closure diff status, checklist
+  finalization, and required governance updates.
 
 The work order is invalid for execution if it does not name stop conditions.
 
@@ -320,6 +325,23 @@ Any alternate MA1 section label, including `Input Package`, `Purpose`, or
 `Return Protocol`, is a blocking defect unless the canonical MA1 standard has
 been updated first in a separate governed change.
 
+## 6B. Roadmap-To-Work-Order Trace Matrix
+
+If this work order is derived from a roadmap, map every roadmap requirement to
+the executable instruction and closure evidence:
+
+| Roadmap requirement | Work order section | Output artifact or field | Verification command or check | Status |
+|---|---|---|---|---|
+| <requirement> | <section> | <path/field> | <command/check> | <PASS/BLOCKED/N/A with reason> |
+
+Rules:
+
+- every roadmap acceptance item must have a row or explicit `N/A with reason`;
+- every required roadmap field must appear in the output artifact or in the
+  New Doc-Only Fields table;
+- `PASS` is allowed only after the final artifact exists and has been checked;
+- missing rows block dispatch or closure.
+
 ## 7. Write Ownership
 
 Owned files or modules:
@@ -375,6 +397,14 @@ Evidence Trace Block requirements:
 
 Criteria must be observable through files, commands, tests, or review records.
 
+Fail conditions:
+
+- [ ] <blocking missing field, source mismatch, boundary error, or ambiguous
+  threshold condition>
+- [ ] <forbidden runtime/public/live-proof claim condition>
+
+Closure is blocked if any fail condition is present.
+
 ## 11. Review Gate
 
 Implementation may proceed only after:
@@ -392,9 +422,20 @@ waiver for this work order.
 
 - [ ] All acceptance criteria satisfied or explicitly marked N/A with reason
 - [ ] Required tests or evidence commands run
+- [ ] Roadmap-to-work-order trace matrix final statuses are PASS or N/A with reason
+- [ ] Closure Diff Gate completed: roadmap, work order, final artifact, and
+  completion claims were compared
+- [ ] Claim Integrity Scan completed with `git diff --name-status`,
+  `git status --short`, committed diff output, receipt, command output, or N/A
+  evidence for file-change and boundary claims
+- [ ] Fail conditions checked and absent, or work returned BLOCKED
+- [ ] No open checkbox residue remains in roadmap, work order, completion
+  packet, or public-sync checklist
 - [ ] Public catalog updated or explicitly N/A with reason
 - [ ] Public/provenance repository boundary checked if public files changed
 - [ ] GC-020 handoff updated with current HEAD after commit
+- [ ] Active session front door and state registry updated if mode, next
+  allowed move, public-sync status, roadmap status, or handoff status changed
 - [ ] Completion packet filed if the roadmap requires one
 - [ ] Changed files listed for reviewer
 

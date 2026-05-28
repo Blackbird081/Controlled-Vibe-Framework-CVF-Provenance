@@ -1199,3 +1199,49 @@ Valid dispositions are `ACCEPT`, `REJECT`, and `BLOCKED_SOURCE_NOT_FOUND`.
   `AGENTS.md` carry the binding rule.
 - Previously closed work orders are not retroactively failed, but any reuse,
   amendment, continuation, or template promotion must satisfy the rule.
+
+## ADR-051: Work Order Closure Quality Gate Becomes Mandatory
+
+### Status
+ACCEPTED — 2026-05-28
+
+### Context
+The LHW5 quality review found closure defects that were not source-verification
+defects alone: roadmap reproducibility requirements were weakened before final
+artifact closure, front-door state was stale, checklist residue remained open,
+and a file-change claim overstated the actual diff. The failure pattern was
+mixed: the work order did not make all closure checks machine-like enough, and
+the worker closed without running a strict final comparison.
+
+### Decision
+CVF adopts a mandatory Work Order Closure Quality Gate for all new or amended
+delegated work:
+
+- roadmap-derived work orders must carry a Roadmap-to-Work-Order Trace Matrix;
+- closure must compare roadmap requirements, work-order instructions, final
+  artifacts, and completion claims;
+- file-change and boundary claims must be backed by command/path/receipt
+  evidence, not memory;
+- fail conditions must be explicit and checked;
+- open checkbox residue is a closure defect;
+- front-door, state registry, and active handoff must be synchronized when
+  mode, roadmap status, next allowed move, or public-sync status changes.
+
+### Consequences
+- Work-order authors are responsible for making dispatch requirements
+  traceable and closure-checkable.
+- Implementers remain responsible for detecting roadmap/work-order/artifact
+  mismatches before closure.
+- Reviewers must treat stale continuity state, unsupported file-change claims,
+  missing trace rows, ambiguous thresholds, and unchecked closure items as
+  blocking closure defects.
+- The new standard is canonical at
+  `docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md`.
+
+### Related Files
+- `AGENTS.md`
+- `docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md`
+- `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
+- `docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md`
+- `docs/reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md`
+- `docs/reference/CVF_QUALITY_ASSESSMENT_STANDARD.md`

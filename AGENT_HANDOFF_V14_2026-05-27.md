@@ -1,6 +1,40 @@
 # AGENT HANDOFF V14 - 2026-05-27
 
+Memory class: POINTER_RECORD
+
 Status: ACTIVE
+
+## Purpose
+
+This active handoff records current CVF continuity, closed work, active
+boundaries, next allowed moves, parked checkpoints, and mandatory standards for
+new or resumed agents.
+
+## Scope
+
+Scope: active private provenance continuity for the current CVF repository and
+agents that resolve the active session front door. It does not replace source
+files, completion packets, public-sync evidence, or live-proof artifacts.
+
+## Active Boundary
+
+Use this handoff only with `CVF_SESSION_MEMORY.md` and
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`. Do not append status to archived
+handoffs. Public-facing work must still be performed from the public-sync
+clone after remote verification.
+
+## Latest Work / Changes
+
+Latest mode marker: `work_order_closure_quality_gate_rule_added`.
+
+The latest update adds the mandatory Work Order Closure Quality Gate and syncs
+session/front-door continuity for future delegated agent work.
+
+## Claim Boundary
+
+This handoff is a continuity and routing artifact. It does not prove runtime
+behavior, provider behavior, hosted freshness, public readiness, production
+readiness, or universal auto-load by external agents.
 
 Current HEAD before LHW1 roadmap commit: `aabf0509535b232cc543a8da6bc77936256ef02a`.
 
@@ -38,7 +72,7 @@ Current HEAD after LHW3-T2 implementation commit (parent of handoff sync): `34a4
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=lhw2_work_order_cleanup_closed_pass_bounded; active handoff=AGENT_HANDOFF_V14_2026-05-27.md; next allowed move=next legacy workflow connector requires fresh GC-018/work order and strict Source Verification when source-level facts or MA1 section refs are used; parked checkpoint=hosted Netlify freshness and operator external-agent retest for VI5-T4/T5 remain pending.
+Startup acknowledged: current mode=work_order_closure_quality_gate_rule_added; active handoff=AGENT_HANDOFF_V14_2026-05-27.md; next allowed move=future connector waves require fresh GC-018, roadmap, source-verified work orders, roadmap-to-work-order trace matrix, closure diff gate, claim integrity scan, fail-condition scan, checklist finalization, and continuity sync; parked checkpoint=hosted Netlify freshness and operator external-agent retest for VI5-T4/T5 remain pending.
 
 Previous active handoff `AGENT_HANDOFF_V13_2026-05-25.md` was archived because it exceeded the governed active-markdown size guard. Do not append new status to V13.
 
@@ -669,6 +703,53 @@ Boundary remains unchanged: no runtime code, provider behavior, receipt
 envelope, hosted readiness, production readiness, or public release readiness
 claim.
 
+## Work Order Closure Quality Gate Rule Added
+
+Mode marker: `work_order_closure_quality_gate_rule_added`
+
+Current HEAD before rule commit: `b3f0dfa3`
+
+The operator asked to make the LHW5 review lessons mandatory for future
+agent-led work because CVF relies on agents to divide roles, implement, review,
+and close without continuous user intervention.
+
+Canonical standard:
+`docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md`
+
+Binding surfaces updated:
+
+- `AGENTS.md`
+- `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
+- `docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md`
+- `docs/reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md`
+- `docs/reference/CVF_QUALITY_ASSESSMENT_STANDARD.md`
+- `docs/CVF_ARCHITECTURE_DECISIONS.md` ADR-051
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- active handoff
+
+New mandatory closure gates:
+
+- Roadmap-to-Work-Order Trace Matrix;
+- Closure Diff Gate comparing roadmap, work order, final artifact, and
+  completion claims;
+- Claim Integrity Scan backed by `git diff --name-status`, `git status
+  --short`, committed diff output, receipt, command output, or explicit `N/A`;
+- explicit fail-condition scan;
+- checklist finalization with no open checkbox residue;
+- continuity sync across front door, state registry, and active handoff when
+  mode/status changes.
+
+Responsibility doctrine: under-specified work orders and weak worker closeout
+are both defects. Work-order authors must make dispatch requirements traceable
+and closure-checkable. Workers remain responsible for catching roadmap,
+work-order, artifact, and evidence mismatches before claiming closure.
+
+Boundary: this is an internal process/governance rule only. It does not claim
+new runtime enforcement, provider behavior, public readiness, hosted readiness,
+production readiness, or automatic agent compliance outside agents that read
+and follow the CVF front door/instructions.
+
 ## Mandatory Standards
 
 Live run diagnostics:
@@ -678,6 +759,10 @@ Live run diagnostics:
 Knowledge absorption blind-spot prevention:
 
 `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`
+
+Work order closure quality gate:
+
+`docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md`
 
 F-1 output-quality parity remains closed not met. Do not reopen broad F-1 tuning.
 
