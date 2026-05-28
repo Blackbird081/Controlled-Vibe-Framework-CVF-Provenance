@@ -38,8 +38,8 @@ Source authority:
 
 - `.private_reference/legacy/CVF 16.5/agentmemory/` — 10 spec files (read directly)
 - `.private_reference/legacy/CVF ADD/code-review-graph/` — 5 spec files + README (read directly)
-- `docs/audits/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_GAP_AUDIT_2026-05-22.md` — grep verified: zero matches for `agentmemory`, `code-review-graph`, `CVF 16.5`, `CVF ADD`
-- `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_CODEX_REVIEW_2026-05-22.md` — grep verified: zero matches for same terms
+- `docs/audits/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_GAP_AUDIT_2026-05-22.md` — grep verified: zero matches for `agentmemory`, `code-review-graph`, `CVF 16.5`, `CVF ADD`
+- `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_CODEX_REVIEW_2026-05-22.md` — grep verified: zero matches for same terms
 - Operator discovery statement on 2026-05-23 (direct session input)
 
 ---
@@ -50,11 +50,11 @@ Target under audit:
 
 - `.private_reference/legacy/CVF 16.5/agentmemory/` — 10 spec files
 - `.private_reference/legacy/CVF ADD/code-review-graph/` — 5 spec files + README
-- `docs/audits/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_GAP_AUDIT_2026-05-22.md`
+- `docs/audits/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_GAP_AUDIT_2026-05-22.md`
   — predecessor audit that missed these specs
-- `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_CODEX_REVIEW_2026-05-22.md`
+- `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_CODEX_REVIEW_2026-05-22.md`
   — Codex review that missed these specs
-- `docs/roadmaps/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_V2_2026-05-22.md`
+- `docs/roadmaps/archive/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_V2_2026-05-22.md`
   — roadmap whose T5 (memory) was scoped without consulting these specs
 
 Owner boundary:
@@ -344,10 +344,10 @@ Static verification:
   present.
 - `.private_reference/legacy/CVF ADD/code-review-graph/` — 5 spec files
   + README confirmed present.
-- `docs/audits/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_GAP_AUDIT_2026-05-22.md`
+- `docs/audits/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_GAP_AUDIT_2026-05-22.md`
   — grep for "agentmemory", "code-review-graph", "CVF 16.5", "CVF ADD"
   returns no matches. Confirmed: these folders were not referenced.
-- `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_CODEX_REVIEW_2026-05-22.md`
+- `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_CODEX_REVIEW_2026-05-22.md`
   — same grep: no matches.
 - HEAD at time of filing: `e5a1d26d`.
 
@@ -399,11 +399,11 @@ audit was filed to correct.
 
 ## Related Artifacts
 
-- `docs/audits/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_GAP_AUDIT_2026-05-22.md`
+- `docs/audits/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_GAP_AUDIT_2026-05-22.md`
   — predecessor gap audit; does not reference legacy specs (verified)
-- `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_CODEX_REVIEW_2026-05-22.md`
+- `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_CODEX_REVIEW_2026-05-22.md`
   — Codex blocking review; does not reference legacy specs (verified)
-- `docs/roadmaps/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_V2_2026-05-22.md`
+- `docs/roadmaps/archive/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_V2_2026-05-22.md`
   — V2 roadmap; T5 scoped without `agentmemory` specs; T-H2/T-GRAPH
   demand-gated entries to be added per CA-3
 - `.private_reference/legacy/CVF 16.5/agentmemory/` — 10 spec files,

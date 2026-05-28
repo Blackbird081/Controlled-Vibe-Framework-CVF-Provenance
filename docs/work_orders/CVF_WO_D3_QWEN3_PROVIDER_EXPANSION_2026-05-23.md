@@ -34,7 +34,7 @@ before the free-tier quota expires on 2026-06-02.
 ## Authority Chain
 
 - GC-018: `docs/baselines/CVF_GC018_D3_QWEN3_PROVIDER_EXPANSION_2026-05-23.md`
-- D2 predecessor: `docs/baselines/CVF_GC018_D2_PROVIDER_CAPABILITY_MATRIX_2026-05-22.md`
+- D2 predecessor: `docs/baselines/archive/CVF_GC018_D2_PROVIDER_CAPABILITY_MATRIX_2026-05-22.md`
 - P3 hosted proof: `docs/baselines/CVF_GC018_P3_HOSTED_PROTECTED_WORKFLOW_PROOF_RERUN_2026-05-23.md`
 - Operator authorization: explicit — "nên tiến hành cái này, tăng giá trị cho CVF và tận dụng free tier"
 

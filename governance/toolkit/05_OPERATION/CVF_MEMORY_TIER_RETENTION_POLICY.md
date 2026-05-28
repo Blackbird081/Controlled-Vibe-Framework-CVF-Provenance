@@ -71,18 +71,18 @@ Primary enforcement surfaces:
 
 - `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/task-memory/`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/audit-memory-receipt.ts`
-- `docs/baselines/CVF_GC018_T5_RUNTIME_MEMORY_WIRING_2026-05-22.md`
-- `docs/reviews/CVF_T5_RUNTIME_MEMORY_WIRING_COMPLETION_2026-05-22.md`
+- `docs/baselines/archive/CVF_GC018_T5_RUNTIME_MEMORY_WIRING_2026-05-22.md`
+- `docs/reviews/archive/CVF_T5_RUNTIME_MEMORY_WIRING_COMPLETION_2026-05-22.md`
 
 Verification must confirm that the task-memory store imports no filesystem,
 network, database, or provider client.
 
 ## Related Artifacts
 
-- `docs/roadmaps/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_V2_2026-05-22.md`
-- `docs/work_orders/CVF_WO_T5_RUNTIME_MEMORY_WIRING_2026-05-22.md`
-- `docs/baselines/CVF_GC018_T5_RUNTIME_MEMORY_WIRING_2026-05-22.md`
-- `docs/reviews/CVF_T5_RUNTIME_MEMORY_WIRING_COMPLETION_2026-05-22.md`
+- `docs/roadmaps/archive/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_V2_2026-05-22.md`
+- `docs/work_orders/archive/CVF_WO_T5_RUNTIME_MEMORY_WIRING_2026-05-22.md`
+- `docs/baselines/archive/CVF_GC018_T5_RUNTIME_MEMORY_WIRING_2026-05-22.md`
+- `docs/reviews/archive/CVF_T5_RUNTIME_MEMORY_WIRING_COMPLETION_2026-05-22.md`
 
 ## Final Clause
 

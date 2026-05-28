@@ -563,6 +563,29 @@ implementation:
 Correction scope is documentation-only: tighten roadmap/work-order source
 fidelity so downstream implementers do not fill gaps by inference.
 
+## LHW5-T1 Database Action Boundary Connector Closure
+
+Mode marker: `lhw5_t1_complete`
+
+Spec:
+`docs/reference/CVF_LHW5_DATABASE_ACTION_BOUNDARY_CONNECTOR_SPEC_2026-05-27.md`
+
+Completion:
+`docs/reviews/CVF_LHW5_T1_DATABASE_ACTION_BOUNDARY_CONNECTOR_COMPLETION_2026-05-27.md`
+
+Contract version: `cvf.databaseActionBoundaryConnector.lhw5.t1.v1`
+
+Delivered: documentation-only connector binding W3 `database` surface +
+7 sideEffect/DatabaseActionFamily combinations → TA1 approval state →
+LHW4-T2 `dispatchDecision`. Only `database_read` + `read_execution` maps to
+`allowed`; all mutation/schema/recovery/admin/export families map to `blocked`.
+`databaseMutationAuthorized=false` is invariant. S5 has 8 rows, all ACCEPT.
+LH1 `gridex` trigger absorbed. No code file modified.
+
+T2 gate answer: YES — W6 artifact verification and V3 diagnostic classes
+classify export shapes and failures, but no connector defines the export-boundary
+advisory packet. T2 proceeds.
+
 ## Mandatory Standards
 
 Live run diagnostics:

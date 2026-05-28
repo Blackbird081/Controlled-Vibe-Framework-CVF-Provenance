@@ -43,7 +43,7 @@ Source:
 - `docs/reference/CVF_W7_EXTERNAL_ASSET_INTAKE_PROFILE.md`
 - `docs/reference/CVF_W7_EXTERNAL_ASSET_COMPILER_GUIDE.md`
 - `docs/reference/CVF_W7_EXECUTION_ENVIRONMENT_NORMALIZATION_POLICY.md`
-- `docs/reviews/CVF_T1_CAPABILITY_INTAKE_PIPELINE_COMPLETION_2026-05-22.md`
+- `docs/reviews/archive/CVF_T1_CAPABILITY_INTAKE_PIPELINE_COMPLETION_2026-05-22.md`
 - W1-W6 completion packets and session memory.
 
 ## Evidence Trace Block

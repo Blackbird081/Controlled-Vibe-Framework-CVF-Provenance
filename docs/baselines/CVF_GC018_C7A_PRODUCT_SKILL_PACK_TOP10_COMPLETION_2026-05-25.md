@@ -47,8 +47,8 @@ Out of scope:
 - `docs/reference/CVF_W7_EXTERNAL_ASSET_INTAKE_PROFILE.md`
 - `docs/reference/CVF_W7_EXTERNAL_ASSET_COMPILER_GUIDE.md`
 - `docs/reference/CVF_W7_EXECUTION_ENVIRONMENT_NORMALIZATION_POLICY.md`
-- `docs/reviews/CVF_T1_CAPABILITY_INTAKE_PIPELINE_COMPLETION_2026-05-22.md`
-- `docs/reviews/CVF_T2_PRODUCT_SKILL_PACK_MVP_COMPLETION_2026-05-22.md`
+- `docs/reviews/archive/CVF_T1_CAPABILITY_INTAKE_PIPELINE_COMPLETION_2026-05-22.md`
+- `docs/reviews/archive/CVF_T2_PRODUCT_SKILL_PACK_MVP_COMPLETION_2026-05-22.md`
 - `governance/registries/cvf-certified-skill-pack-registry.json`
 - `scripts/validate_skill_pack_certification.py`
 

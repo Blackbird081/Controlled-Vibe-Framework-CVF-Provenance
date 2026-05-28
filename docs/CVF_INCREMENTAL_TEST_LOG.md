@@ -1864,7 +1864,7 @@ Utility and guard:
 ## [2026-05-22] Batch: T5 Runtime Memory Wiring
 
 - Change reference: provenance working tree; GC-018 baseline
-  `docs/baselines/CVF_GC018_T5_RUNTIME_MEMORY_WIRING_2026-05-22.md`
+  `docs/baselines/archive/CVF_GC018_T5_RUNTIME_MEMORY_WIRING_2026-05-22.md`
 - Impacted scope:
   - `governance/toolkit/05_OPERATION/CVF_MEMORY_TIER_RETENTION_POLICY.md`
   - `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/task-memory/`
@@ -1901,7 +1901,7 @@ Utility and guard:
 ## [2026-05-22] Batch: Canonical CLI Runtime Gateway
 
 - Change reference: provenance working tree; GC-018 baseline
-  `docs/baselines/CVF_GC018_CANONICAL_CLI_RUNTIME_GATEWAY_2026-05-22.md`
+  `docs/baselines/archive/CVF_GC018_CANONICAL_CLI_RUNTIME_GATEWAY_2026-05-22.md`
 - Impacted scope:
   - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/canonical.gateway.ts`
   - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/index.ts`
@@ -1928,7 +1928,7 @@ Utility and guard:
 ## [2026-05-22] Batch: B/C Product Outcome Runtime and CLI Distribution
 
 - Change reference: provenance working tree; GC-018 baseline
-  `docs/baselines/CVF_GC018_BC_PRODUCT_OUTCOME_RUNTIME_AND_CLI_DISTRIBUTION_2026-05-22.md`
+  `docs/baselines/archive/CVF_GC018_BC_PRODUCT_OUTCOME_RUNTIME_AND_CLI_DISTRIBUTION_2026-05-22.md`
 - Impacted scope:
   - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/product-outcome.runtime.ts`
   - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/bin/cvf.ts`
@@ -1965,7 +1965,7 @@ Utility and guard:
 ## [2026-05-22] Batch: G1 Execution Identity Runtime Gate
 
 - Change reference: provenance working tree; GC-018 baseline
-  `docs/baselines/CVF_GC018_G1_EXECUTION_IDENTITY_RUNTIME_GATE_2026-05-22.md`
+  `docs/baselines/archive/CVF_GC018_G1_EXECUTION_IDENTITY_RUNTIME_GATE_2026-05-22.md`
 - Impacted scope:
   - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-identity.ts`
   - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-role-permission-gate.ts`
@@ -1987,7 +1987,7 @@ Utility and guard:
 ## [2026-05-22] Batch: D2 Provider Capability Matrix
 
 - Change reference: provenance working tree; GC-018 baseline
-  `docs/baselines/CVF_GC018_D2_PROVIDER_CAPABILITY_MATRIX_2026-05-22.md`
+  `docs/baselines/archive/CVF_GC018_D2_PROVIDER_CAPABILITY_MATRIX_2026-05-22.md`
 - Impacted scope:
   - `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-method-contract.ts`
   - `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-registry.ts`
@@ -2014,7 +2014,7 @@ Utility and guard:
 ## [2026-05-22] Batch: E2 Operational Benchmark Suite
 
 - Change reference: provenance working tree; GC-018 baseline
-  `docs/baselines/CVF_GC018_E2_OPERATIONAL_BENCHMARK_SUITE_2026-05-22.md`
+  `docs/baselines/archive/CVF_GC018_E2_OPERATIONAL_BENCHMARK_SUITE_2026-05-22.md`
 - Impacted scope:
   - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/operational-benchmark-suite.ts`
   - `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/governance-reliability-metrics.ts`

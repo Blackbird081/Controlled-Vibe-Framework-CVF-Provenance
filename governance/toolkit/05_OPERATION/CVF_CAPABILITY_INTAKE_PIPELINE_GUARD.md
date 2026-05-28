@@ -43,10 +43,10 @@ A pack MUST be rejected when any artifact is missing, invalid JSON, missing a re
 The enforcement surface is `scripts/validate_skill_pack_certification.py` using schemas under `governance/schemas/skill-pack/`.
 
 ## Related Artifacts
-- `docs/roadmaps/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_V2_2026-05-22.md`
-- `docs/work_orders/CVF_WO_T1_CAPABILITY_INTAKE_PIPELINE_2026-05-22.md`
-- `docs/baselines/CVF_GC018_T1_CAPABILITY_INTAKE_PIPELINE_2026-05-22.md`
-- `docs/reviews/CVF_T1_CAPABILITY_INTAKE_PIPELINE_COMPLETION_2026-05-22.md`
+- `docs/roadmaps/archive/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_V2_2026-05-22.md`
+- `docs/work_orders/archive/CVF_WO_T1_CAPABILITY_INTAKE_PIPELINE_2026-05-22.md`
+- `docs/baselines/archive/CVF_GC018_T1_CAPABILITY_INTAKE_PIPELINE_2026-05-22.md`
+- `docs/reviews/archive/CVF_T1_CAPABILITY_INTAKE_PIPELINE_COMPLETION_2026-05-22.md`
 
 ## Boundary
 This guard certifies static pack readiness only. It does not invoke providers, create runtime routes, persist memory, publish public-facing material, or claim hosted readiness.

@@ -7,7 +7,7 @@
     {
       "id": "review-cvf-post-bc-remaining-pain-point-roadmap",
       "artifactType": "roadmap",
-      "path": "docs/roadmaps/CVF_REVIEW_CVF_POST_BC_REMAINING_PAIN_POINT_ROADMAP_2026-05-22.md",
+      "path": "docs/roadmaps/archive/CVF_REVIEW_CVF_POST_BC_REMAINING_PAIN_POINT_ROADMAP_2026-05-22.md",
       "status": "CLOSED_ROADMAP_G1_D2_E2_H2_F2_A2",
       "requestedReviewer": "Codex",
       "expectedResponsePath": "docs/reviews/CVF_REVIEW_CVF_POST_BC_ROADMAP_MULTI_ROLE_REBUTTAL_2026-05-22.md",
@@ -416,7 +416,7 @@
     {
       "id": "review-cvf-pain-point-delivery-gap-roadmap",
       "artifactType": "roadmap",
-      "path": "docs/roadmaps/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_2026-05-22.md",
+      "path": "docs/roadmaps/archive/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_2026-05-22.md",
       "status": "SUPERSEDED_BY_V2",
       "requestedReviewer": "Codex",
       "responsePath": "docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_CODEX_REVIEW_2026-05-22.md",
@@ -428,7 +428,7 @@
     {
       "id": "review-cvf-pain-point-delivery-gap-roadmap-v2",
       "artifactType": "roadmap",
-      "path": "docs/roadmaps/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_V2_2026-05-22.md",
+      "path": "docs/roadmaps/archive/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_V2_2026-05-22.md",
       "status": "ACTIVE_ROADMAP_T1_T2_T3_T4_T5_CLOSED_PENDING_OPERATOR_REVIEW",
       "requestedReviewer": "Codex",
       "supersedes": "docs/roadmaps/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_2026-05-22.md",
@@ -440,7 +440,7 @@
     {
       "id": "t1-capability-intake-pipeline",
       "artifactType": "work_order",
-      "path": "docs/work_orders/CVF_WO_T1_CAPABILITY_INTAKE_PIPELINE_2026-05-22.md",
+      "path": "docs/work_orders/archive/CVF_WO_T1_CAPABILITY_INTAKE_PIPELINE_2026-05-22.md",
       "roadmapPath": "docs/roadmaps/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_V2_2026-05-22.md",
       "status": "CLOSED_T1_INTAKE_PIPELINE_AND_REFERENCE_PACK",
       "requestedReviewer": "Codex",
@@ -455,7 +455,7 @@
     {
       "id": "t2-product-skill-pack-mvp",
       "artifactType": "work_order",
-      "path": "docs/work_orders/CVF_WO_T2_PRODUCT_SKILL_PACK_MVP_2026-05-22.md",
+      "path": "docs/work_orders/archive/CVF_WO_T2_PRODUCT_SKILL_PACK_MVP_2026-05-22.md",
       "roadmapPath": "docs/roadmaps/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_V2_2026-05-22.md",
       "status": "CLOSED_T2_PRODUCT_SKILL_PACK_MVP",
       "requestedReviewer": "Codex",
@@ -470,7 +470,7 @@
     {
       "id": "t3-workflow-composition-outcome-surface",
       "artifactType": "work_order",
-      "path": "docs/work_orders/CVF_WO_T3_WORKFLOW_COMPOSITION_OUTCOME_SURFACE_2026-05-22.md",
+      "path": "docs/work_orders/archive/CVF_WO_T3_WORKFLOW_COMPOSITION_OUTCOME_SURFACE_2026-05-22.md",
       "roadmapPath": "docs/roadmaps/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_V2_2026-05-22.md",
       "status": "CLOSED_T3_WORKFLOW_COMPOSITION_OUTCOME_SURFACE",
       "requestedReviewer": "Codex",
@@ -485,7 +485,7 @@
     {
       "id": "t4-provider-method-coverage",
       "artifactType": "work_order",
-      "path": "docs/work_orders/CVF_WO_T4_PROVIDER_METHOD_COVERAGE_2026-05-22.md",
+      "path": "docs/work_orders/archive/CVF_WO_T4_PROVIDER_METHOD_COVERAGE_2026-05-22.md",
       "roadmapPath": "docs/roadmaps/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_V2_2026-05-22.md",
       "status": "CLOSED_T4_PROVIDER_METHOD_COVERAGE",
       "requestedReviewer": "Codex",
@@ -500,7 +500,7 @@
     {
       "id": "t5-runtime-memory-wiring",
       "artifactType": "work_order",
-      "path": "docs/work_orders/CVF_WO_T5_RUNTIME_MEMORY_WIRING_2026-05-22.md",
+      "path": "docs/work_orders/archive/CVF_WO_T5_RUNTIME_MEMORY_WIRING_2026-05-22.md",
       "roadmapPath": "docs/roadmaps/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_V2_2026-05-22.md",
       "status": "CLOSED_T5_RUNTIME_MEMORY_WIRING",
       "requestedReviewer": "Codex",
@@ -515,7 +515,7 @@
     {
       "id": "canonical-cli-runtime-gateway",
       "artifactType": "work_order",
-      "path": "docs/work_orders/CVF_WO_CANONICAL_CLI_RUNTIME_GATEWAY_2026-05-22.md",
+      "path": "docs/work_orders/archive/CVF_WO_CANONICAL_CLI_RUNTIME_GATEWAY_2026-05-22.md",
       "status": "CLOSED_CANONICAL_CLI_RUNTIME_GATEWAY",
       "requestedReviewer": "Codex",
       "expectedCompletionPath": "docs/reviews/CVF_CANONICAL_CLI_RUNTIME_GATEWAY_COMPLETION_2026-05-22.md",
@@ -529,7 +529,7 @@
     {
       "id": "bc-product-outcome-runtime-cli-distribution",
       "artifactType": "work_order",
-      "path": "docs/work_orders/CVF_WO_BC_PRODUCT_OUTCOME_RUNTIME_AND_CLI_DISTRIBUTION_2026-05-22.md",
+      "path": "docs/work_orders/archive/CVF_WO_BC_PRODUCT_OUTCOME_RUNTIME_AND_CLI_DISTRIBUTION_2026-05-22.md",
       "status": "CLOSED_BC_PRODUCT_OUTCOME_RUNTIME_AND_CLI_DISTRIBUTION",
       "requestedReviewer": "Codex",
       "expectedCompletionPath": "docs/reviews/CVF_BC_PRODUCT_OUTCOME_RUNTIME_AND_CLI_DISTRIBUTION_COMPLETION_2026-05-22.md",

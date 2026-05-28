@@ -82,7 +82,7 @@ Before filing GC-018 (mandatory):
 - `docs/audits/CVF_LEGACY_SPEC_ABSORPTION_BLINDSPOT_AUDIT_2026-05-23.md`
 - `docs/reviews/CVF_LEGACY_SPEC_ABSORPTION_BLINDSPOT_CODEX_REVIEW_2026-05-23.md`
 - `docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
-- `docs/reviews/CVF_T5_RUNTIME_MEMORY_WIRING_COMPLETION_2026-05-22.md`
+- `docs/reviews/archive/CVF_T5_RUNTIME_MEMORY_WIRING_COMPLETION_2026-05-22.md`
 - All 10 spec files under `.private_reference/legacy/CVF 16.5/agentmemory/`
 
 ---
@@ -169,7 +169,7 @@ Predecessor evidence (mandatory reading before GC-018):
   - `CVF_MEMORY_REINJECTION_PROTOCOL.md`
   - `CVF_MEMORY_RETRIEVAL_POLICY.md`
 - T5 completion review:
-  `docs/reviews/CVF_T5_RUNTIME_MEMORY_WIRING_COMPLETION_2026-05-22.md`
+  `docs/reviews/archive/CVF_T5_RUNTIME_MEMORY_WIRING_COMPLETION_2026-05-22.md`
 
 ---
 

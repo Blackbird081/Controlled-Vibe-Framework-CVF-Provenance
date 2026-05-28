@@ -46,7 +46,7 @@ Out of scope:
 
 ## Source / Predecessor Evidence
 
-- D2 closure: `docs/baselines/CVF_GC018_D2_PROVIDER_CAPABILITY_MATRIX_2026-05-22.md`
+- D2 closure: `docs/baselines/archive/CVF_GC018_D2_PROVIDER_CAPABILITY_MATRIX_2026-05-22.md`
 - P3 hosted proof: `docs/baselines/CVF_GC018_P3_HOSTED_PROTECTED_WORKFLOW_PROOF_RERUN_2026-05-23.md`
 - P3 pass/fail matrix: HTTP 200, success=true, decision ALLOW,
   evidenceMode=live, receipt present, trace present, rawSecretPrinted=false

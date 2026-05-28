@@ -72,7 +72,7 @@ Rationale:
 - Live-run diagnostic standard:
   `docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md`
 - E2 operational benchmark closure:
-  `docs/reviews/CVF_E2_OPERATIONAL_BENCHMARK_SUITE_COMPLETION_2026-05-22.md`
+  `docs/reviews/archive/CVF_E2_OPERATIONAL_BENCHMARK_SUITE_COMPLETION_2026-05-22.md`
 - S3 live benchmark evidence model:
   `scripts/run_cvf_s3_governance_benchmark_probe.mjs`
 
@@ -109,8 +109,8 @@ Proposed tranche:
 - Prior absorption evidence resolved:
   - `docs/reference/CVF_LEGACY_HARVEST_SCAN_MAP_2026-05-24.md`
   - `docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
-  - `docs/reviews/CVF_E2_OPERATIONAL_BENCHMARK_SUITE_COMPLETION_2026-05-22.md`
-  - `docs/work_orders/CVF_WO_E2_OPERATIONAL_BENCHMARK_SUITE_2026-05-22.md`
+  - `docs/reviews/archive/CVF_E2_OPERATIONAL_BENCHMARK_SUITE_COMPLETION_2026-05-22.md`
+  - `docs/work_orders/archive/CVF_WO_E2_OPERATIONAL_BENCHMARK_SUITE_2026-05-22.md`
   - `docs/reviews/CVF_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_COMPLETION_2026-05-24.md`
 - Detailed source files used:
   - `.private_reference/legacy/CVF 16.5/abtop/CVF_OBSERVABILITY_PLANE_FOUNDATION/README.md`

@@ -64,7 +64,7 @@ Forbidden files/classes:
 - `docs/baselines/CVF_GC018_W5_PROVIDER_METHOD_FALLBACK_NORMALIZATION_2026-05-24.md`
 - `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`
 - `docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md`
-- `docs/reviews/CVF_D2_PROVIDER_CAPABILITY_MATRIX_COMPLETION_2026-05-22.md`
+- `docs/reviews/archive/CVF_D2_PROVIDER_CAPABILITY_MATRIX_COMPLETION_2026-05-22.md`
 - `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-method-contract.ts`
 - `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-method-gate.ts`
 - `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-registry.ts`
