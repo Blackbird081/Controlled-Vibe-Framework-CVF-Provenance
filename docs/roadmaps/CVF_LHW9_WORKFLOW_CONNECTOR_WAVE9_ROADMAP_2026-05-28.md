@@ -115,11 +115,17 @@ Blind-spot verdict: CLEAR.
 
 Rejection log:
 
-- Runtime observability dashboard (`abtop`) — rejected: requires live provider
-  route beyond doc connector scope.
+- Runtime observability dashboard (`abtop`) — rejected *from this LHW wave*
+  (LHW scope is documentation-only; `abtop` needs live route execution). NOT a
+  permanent block — eligible for live-proof roadmap after LHW waves exhausted.
+  LH1 trigger: "Reopen only for runtime observability dashboard or live
+  failure-class trend readout." API keys available.
 - External skill ingestion — rejected: Candidate 7 remains demand-gated.
-- Database mutation proof (`gridex`) — rejected: read-only proof requires live
-  route, not doc connector.
+- Database action proof (`gridex`) — rejected *from this LHW wave* (same reason:
+  read-only database proof requires actual query execution, out of LHW scope).
+  NOT a permanent block — eligible for live-proof roadmap post-LHW, read-only
+  boundary only; mutation remains blocked. LH1 trigger: "Reopen only for
+  read-only database action proof."
 
 ## Recommended Sequence
 

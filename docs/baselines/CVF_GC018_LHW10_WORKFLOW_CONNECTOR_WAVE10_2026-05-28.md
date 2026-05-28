@@ -124,6 +124,23 @@ python governance/compat/check_docs_governance_compat.py --base 118b8d48 --head 
 
 ---
 
+## LHW Rejection Language Rule (operator direction 2026-05-28)
+
+When writing a rejection log entry in any LHW roadmap, always state that the
+rejection is scope-specific, not permanent:
+
+- BAD: "rejected: requires live route"
+- GOOD: "rejected *from this LHW wave* (doc-only scope) — eligible for
+  live-proof roadmap after LHW waves are exhausted"
+
+`abtop` and `gridex` are NOT permanently blocked. They are rejected from
+documentation-only LHW waves because they require live route execution to prove
+value. API keys are available. They become eligible once LHW waves have
+exhausted all PARTIALLY_ABSORBED LH1 families.
+
+Scope sequencing: complete all LHW connector waves first, then open live-proof
+roadmap scope.
+
 ## Claim Boundary
 
 LHW10 is a connector-normalization wave. It does not claim MCP transport, tool

@@ -117,13 +117,25 @@ Blind-spot verdict: CLEAR.
 
 Rejection log:
 
-- `abtop` runtime observability dashboard — rejected: requires live provider
-  route beyond doc connector scope.
-- `gridex` database mutation proof — rejected: requires live route.
+- `abtop` runtime observability dashboard — rejected *from this LHW wave* (LHW
+  scope is documentation-only connector specs; `abtop` needs live route execution
+  to prove value). NOT a permanent block — eligible for a separate live-proof
+  roadmap after LHW waves are exhausted. LH1 trigger: "Reopen only for runtime
+  observability dashboard or live failure-class trend readout." API keys available.
+- `gridex` database action proof — rejected *from this LHW wave* (same reason:
+  read-only database proof needs actual query execution, out of LHW doc-only scope).
+  NOT a permanent block — eligible for live-proof roadmap post-LHW, read-only
+  boundary only; mutation remains blocked. LH1 trigger: "Reopen only for read-only
+  database action proof; mutation remains blocked."
 - `md2html` renderer expansion — rejected: no connector gap; W6 artifact export
   fully closed.
 - `OpenSpec` spec-change workflow — rejected: LHW3-T3 already closed spec-change
   packet connector.
+
+**Scope sequencing rule (operator direction 2026-05-28):** Complete all LHW waves
+exhausting PARTIALLY_ABSORBED LH1 families before opening live-proof scope.
+"Rejected from LHW" never means permanently blocked — it means wrong scope for
+this wave type.
 
 ## Recommended Sequence
 

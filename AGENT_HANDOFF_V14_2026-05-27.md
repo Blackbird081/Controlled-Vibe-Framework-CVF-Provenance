@@ -116,6 +116,10 @@ Current HEAD after LHW9 handoff sync: `41cc51ba`.
 Current HEAD (updated per GC-020): `6c6adbd2` (governance gate enforcement after LHW9).
 LHW8 wave fully closed with all three tranches CLOSED_PASS_BOUNDED.
 
+Current HEAD before LHW10-T1 implementation: `6c687704`.
+Current HEAD after LHW10-T1 implementation: `6c687704` (pending commit).
+LHW10-T1 CLOSED_PASS_BOUNDED: cvf.workflowTransitionEnforcementAdvisory.lhw10.t1.v1.
+
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=agent_autorun_workflow_control_enforced; active handoff=AGENT_HANDOFF_V14_2026-05-27.md; next allowed move=any follow-on wave must pass autorun pre-dispatch, pre-implementation, pre-closure, and applicable pre-push gates before worker claims can be trusted; parked checkpoint=hosted Netlify freshness and operator external-agent retest for VI5-T4/T5 remain pending.
