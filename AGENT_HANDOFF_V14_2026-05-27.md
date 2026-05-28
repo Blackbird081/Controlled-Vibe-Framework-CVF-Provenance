@@ -611,6 +611,31 @@ T3 gate answer: YES — W4 scorecard signals, V3 diagnostic classes, WR1 recover
 actions, and LHW3-T1 trend labels are proven but no connector maps them into
 reproducible simulation scenario packets. T3 proceeds.
 
+## LHW5-T3 Failure Simulation Scenario Packet Connector Closure
+
+Current HEAD before T3 implementation: `83e7cd72`
+
+Mode marker: `lhw5_t3_complete`
+
+Spec:
+`docs/reference/CVF_LHW5_FAILURE_SIMULATION_SCENARIO_PACKET_CONNECTOR_SPEC_2026-05-27.md`
+
+Completion:
+`docs/reviews/CVF_LHW5_T3_FAILURE_SIMULATION_SCENARIO_PACKET_CONNECTOR_COMPLETION_2026-05-27.md`
+
+Contract version: `cvf.failureSimulationScenarioPacket.lhw5.t3.v1`
+
+Delivered: documentation-only connector mapping W4 `OperationalBenchmarkMetrics`
+fields (`taskCompletionRate`, `policyViolationRate`, `retryCount`,
+`humanCorrectionCount`) + 7 V3 `ExecutionDiagnosticClass` tokens + all 4 WR1
+`WorkflowRecoveryAction` values + LHW3-T1 trend signals → 6 scenario types
+(`policy_block`, `provider_failure`, `output_drift`, `human_review`,
+`routing_block`, `model_failure`). `scenarioPlanningOnly=true` is invariant. S5
+has 10 rows, all ACCEPT. LH1 `Failure Simulation cho CVF` trigger absorbed.
+No code file modified. LHW5 roadmap updated to CLOSED_PASS_BOUNDED.
+
+**LHW5 wave CLOSED_PASS_BOUNDED — T1 + T2 + T3 all closed.**
+
 ## Mandatory Standards
 
 Live run diagnostics:
