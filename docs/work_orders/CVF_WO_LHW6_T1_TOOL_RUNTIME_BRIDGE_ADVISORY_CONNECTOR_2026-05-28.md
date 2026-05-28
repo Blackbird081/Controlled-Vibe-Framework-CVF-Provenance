@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -26,6 +26,7 @@ behavior is changed. Tool execution remains blocked.
 ## Authority Chain
 
 - LHW6 roadmap: `docs/roadmaps/CVF_LHW6_WORKFLOW_CONNECTOR_WAVE6_ROADMAP_2026-05-28.md`
+- LHW6 GC-018: `docs/baselines/CVF_GC018_LHW6_WORKFLOW_CONNECTOR_WAVE6_2026-05-28.md`
 - Fast Lane audit: `docs/reviews/CVF_LHW6_T1_FAST_LANE_AUDIT_2026-05-28.md` → FAST_LANE_READY
 - LH1 ledger (`OpenAgentd` trigger): `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
 - W3: `docs/reviews/CVF_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_COMPLETION_2026-05-24.md`
@@ -60,9 +61,8 @@ blocked.
 2. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 3. `governance/contracts/tool-action-taxonomy.ts`
    — confirm W3 `ToolActionSurface` values: `local_tool`, `command_runtime`;
-   confirm `ToolActionSideEffect` local/command-relevant values: `read_only`,
-   `local_write`, `workspace_mutation`, `install`, `network_egress`, `destructive`,
-   `privileged`; confirm `ToolTransport` values; confirm
+   confirm `ToolActionSideEffect` values from source before selecting the
+   local/command-relevant subset used by the spec; confirm `ToolTransport` values; confirm
    `runtimeExecutionAuthorized=false`; confirm `ToolActionApprovalReadout`
 4. `docs/reviews/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
    — confirm TA1 approval state tokens: `not_required`, `pending_approval`,
@@ -81,16 +81,26 @@ If any required file is missing, stop and report to Orchestrator.
 | Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 | --- | --- | --- | --- | --- | --- |
 | W3 `local_tool` / `command_runtime` surface tokens | `governance/contracts/tool-action-taxonomy.ts` | lines 9-14 | `local_tool`, `command_runtime` | `ToolActionSurface` | ACCEPT |
-| W3 local/command sideEffect tokens | `governance/contracts/tool-action-taxonomy.ts` | lines 16-31 | `read_only`, `local_write`, `workspace_mutation`, `install`, `network_egress`, `destructive`, `privileged` | `ToolActionSideEffect` | ACCEPT |
-| W3 `ToolTransport` values | `governance/contracts/tool-action-taxonomy.ts` | line 43 | `local`, `stdio_mcp`, `remote_mcp`, `http`, `browser`, `database_connection` | `ToolTransport` | ACCEPT |
+| W3 `ToolActionSideEffect` values: `read_only`, `local_write`, `workspace_mutation`, `external_mutation`, `install`, `network_egress`, `database_read`, `database_write`, `database_export`, `database_schema_mutation`, `database_recovery`, `database_admin`, `destructive`, `privileged`, `unknown` | `governance/contracts/tool-action-taxonomy.ts` | lines 16-31 | `ToolActionSideEffect` | `ToolActionSideEffect` | ACCEPT |
+| W3 `ToolTransport` values: `local`, `stdio_mcp`, `remote_mcp`, `http`, `browser`, `database_connection` | `governance/contracts/tool-action-taxonomy.ts` | line 43 | `ToolTransport` | `ToolTransport` | ACCEPT |
 | W3 `runtimeExecutionAuthorized=false` | `governance/contracts/tool-action-taxonomy.ts` | lines 106-120, 130-142 | `runtimeExecutionAuthorized` | `ToolActionTaxonomyEvaluation` / `ToolActionApprovalReadout` | ACCEPT |
-| TA1 approval state tokens | `governance/contracts/tool-action-taxonomy.ts` | lines 64-70, 130-142 | `not_required`, `pending_approval`, `satisfied_but_not_executable`, `blocked_before_approval`, `blocked_by_policy`, `incomplete_approval` | `ToolActionApprovalState` / `ToolActionApprovalReadout` | ACCEPT |
+| TA1 approval state values: `not_required`, `pending_approval`, `satisfied_but_not_executable`, `blocked_before_approval`, `blocked_by_policy`, `incomplete_approval` | `governance/contracts/tool-action-taxonomy.ts` | lines 64-70, 130-142 | `ToolActionApprovalState` | `ToolActionApprovalState` / `ToolActionApprovalReadout` | ACCEPT |
 | LHW4-T2 `dispatchDecision` values | `docs/reference/CVF_LHW4_EXECUTION_AUTHORITY_CHAIN_READOUT_CONNECTOR_SPEC_2026-05-27.md` | S3 field list | `allowed`, `hold_for_approval`, `blocked` | LHW4-T2 authority chain packet | ACCEPT |
 
 New doc-only fields proposed by this work order: `bridgeAdvisoryId`,
 `bridgeSurface`, `bridgeAdvisoryType`, `toolBridgeSignal`, and
 `toolBridgeBlocking`. These must be labeled documentation-only in the
 connector spec.
+
+## Roadmap-To-Work-Order Trace Matrix
+
+| Roadmap requirement | Work order section | Output artifact or field | Verification command or check | Status |
+|---|---|---|---|---|
+| T1 spec created; W3/TA1/LHW4-T2 field names used verbatim | S1-S5 deliverable sections | `docs/reference/CVF_LHW6_TOOL_RUNTIME_BRIDGE_ADVISORY_CONNECTOR_SPEC_2026-05-28.md` | Reviewer confirms source-verbatim field names | BLOCKED until spec exists |
+| Tool execution blocked explicit | S1, S3, S4, Claim Boundary | `runtimeExecutionAuthorized=false`; tool execution non-claim | `rg -n "runtimeExecutionAuthorized=false|does not execute tool" <spec>` | BLOCKED until spec exists |
+| Source Verification Table complete | S5 | Source Verification Table | `rg -n "Source Verification Table|Disposition" <spec>` plus reviewer check | BLOCKED until spec exists |
+| No code file modified | Evidence Requirements | Git diff output | `git diff --name-only` | BLOCKED until closure evidence exists |
+| Session continuity updated | Execution Plan | `CVF_SESSION_MEMORY.md`, `CVF_SESSION/ACTIVE_SESSION_STATE.json`, active handoff as applicable | `git diff --name-status` | BLOCKED until closure evidence exists |
 
 ## Deliverable — Connector Spec
 
@@ -122,8 +132,11 @@ Minimum rows:
   local write must be reviewed before tool dispatch
 - `command_runtime` + `workspace_mutation` + `blocked_by_policy` → `blocked` →
   command runtime mutation blocked by policy
-- `command_runtime` + `install` (any TA1 state) → `blocked` →
-  install/privileged commands always blocked; `runtimeExecutionAuthorized=false`
+- `command_runtime` + `install` + `pending_approval` → `hold_for_approval` →
+  install is R3 explicit approval; advisory holds before any dispatch;
+  `runtimeExecutionAuthorized=false`
+- `command_runtime` + `destructive` + `blocked_by_policy` → `blocked` →
+  destructive commands are blocked by W3 policy; `runtimeExecutionAuthorized=false`
 - `local_tool` + `network_egress` + `satisfied_but_not_executable` → `blocked` →
   network egress approved but not executable in current boundary
 
@@ -217,6 +230,14 @@ Spec size guard: < 200 lines. Trim S3 prose if approaching 180 lines.
 - [ ] No code file in diff
 - [ ] Session continuity updated
 
+Fail conditions:
+
+- [ ] Missing LHW6 GC-018 baseline, missing Source Verification row, or
+  Source Verification `ACCEPT` row citing a non-existent file
+- [ ] Any claim that this connector executes tools, authorizes runtime
+  execution, extends receipt envelopes, or treats `install` as policy-blocked
+  without source-backed approval/escalation mapping
+
 ## Review Gate
 
 Before committing: Reviewer perspective completed; all W3/TA1 field names
@@ -226,14 +247,14 @@ in diff.
 
 ## Closure Checklist
 
-- [ ] Spec created with all 5 sections
-- [ ] S2 tool bridge mapping uses W3+TA1+LHW4-T2 vocabulary verbatim
-- [ ] `runtimeExecutionAuthorized=false` explicit
-- [ ] S5 Source Verification Table complete; no `BLOCKED_SOURCE_NOT_FOUND` rows
-- [ ] S4 boundary table honest; no doc-only row labeled Runtime
-- [ ] No code file in diff
-- [ ] Session continuity updated
-- [ ] Completion review with T2 gate answer written
+- [x] Spec created with all 5 sections
+- [x] S2 tool bridge mapping uses W3+TA1+LHW4-T2 vocabulary verbatim
+- [x] `runtimeExecutionAuthorized=false` explicit
+- [x] S5 Source Verification Table complete; no `BLOCKED_SOURCE_NOT_FOUND` rows
+- [x] S4 boundary table honest; no doc-only row labeled Runtime
+- [x] No code file in diff
+- [x] Session continuity updated
+- [x] Completion review with T2 gate answer written
 
 ## Return-To-Orchestrator Conditions
 

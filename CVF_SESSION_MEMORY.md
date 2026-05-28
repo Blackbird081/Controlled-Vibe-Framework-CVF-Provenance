@@ -3,7 +3,7 @@ Memory class: POINTER_RECORD
 Status: ACTIVE SESSION FRONT DOOR
 Last updated: 2026-05-28
 
-Current mode marker: `work_order_closure_quality_gate_rule_added`
+Current mode marker: `lhw6_t3_complete`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 GC-043 markers: broad external knowledge absorption; blocked work classes.
 
@@ -39,7 +39,7 @@ Previous handoff archive:
 
 ## Current State
 
-Current mode: `work_order_closure_quality_gate_rule_added`.
+Current mode: `lhw6_t3_complete`.
 
 VI5 Multi-Role Orchestrated Convergence is accepted and VI5-T1 is closed PASS
 bounded:
@@ -1046,6 +1046,49 @@ Roadmap filed:
 
 ## Latest Legacy Workflow Connector Tranche
 
+Mode marker: `lhw6_t3_complete`
+
+Previous mode marker: `work_order_dispatch_quality_gate_enforced`
+
+LHW6 Workflow Connector Wave 6 is CLOSED_PASS_BOUNDED (T1 + T2 + T3).
+
+Roadmap:
+`docs/roadmaps/CVF_LHW6_WORKFLOW_CONNECTOR_WAVE6_ROADMAP_2026-05-28.md`
+
+GC-018:
+`docs/baselines/CVF_GC018_LHW6_WORKFLOW_CONNECTOR_WAVE6_2026-05-28.md`
+
+T1 — Tool Runtime Bridge Advisory Connector:
+`docs/reference/CVF_LHW6_TOOL_RUNTIME_BRIDGE_ADVISORY_CONNECTOR_SPEC_2026-05-28.md`
+Contract: `cvf.toolRuntimeBridgeAdvisoryConnector.lhw6.t1.v1`
+Completion: `docs/reviews/CVF_LHW6_T1_TOOL_RUNTIME_BRIDGE_ADVISORY_CONNECTOR_COMPLETION_2026-05-28.md`
+LH1 trigger closed: OpenAgentd.
+
+T2 — CLI Tool Onboarding Governance Connector:
+`docs/reference/CVF_LHW6_CLI_TOOL_ONBOARDING_GOVERNANCE_CONNECTOR_SPEC_2026-05-28.md`
+Contract: `cvf.cliToolOnboardingGovernanceConnector.lhw6.t2.v1`
+Completion: `docs/reviews/CVF_LHW6_T2_CLI_TOOL_ONBOARDING_GOVERNANCE_CONNECTOR_COMPLETION_2026-05-28.md`
+LH1 trigger closed: CLI-Anything.
+
+T3 — Project Memory Readout Connector:
+`docs/reference/CVF_LHW6_PROJECT_MEMORY_READOUT_CONNECTOR_SPEC_2026-05-28.md`
+Contract: `cvf.projectMemoryReadoutConnector.lhw6.t3.v1`
+Completion: `docs/reviews/CVF_LHW6_T3_PROJECT_MEMORY_READOUT_CONNECTOR_COMPLETION_2026-05-28.md`
+LH1 trigger closed: Review CVF_1.md.
+
+Source verification: W3/TA1 tokens, `command_runtime` `sandboxRequired`, LHW6-T1
+`bridgeAdvisoryType`, M1 `DurableMemoryTier`/`DurableMemoryReceipt`, AIF-C
+`MemoryGatewayDecision`, WR1 `WorkflowRecoveryReadout` all source-verified
+ACCEPT; no `BLOCKED_SOURCE_NOT_FOUND` rows.
+
+Claim boundary: documentation-only connector specs. No runtime extension,
+CLI execution, memory reinjection, receipt envelope extension, public-sync,
+hosted readiness, production readiness, or freeze release.
+
+---
+
+### LHW2 Record (for reference)
+
 Mode marker: `lhw2_work_order_cleanup_closed_pass_bounded`
 
 Previous mode marker: `lhw1_t3_context_profile_connector_closed_pass_bounded`
@@ -1123,78 +1166,8 @@ Claim boundary: documentation-only connector spec. No runtime context enforcemen
 VI2 injection, VI3 reinjection, route change, receipt envelope extension,
 public-sync, hosted readiness, production readiness, or freeze release.
 
----
-
-### LHW1-T2 Record (for reference)
-
-Mode marker: `lhw1_t2_workflow_chain_state_connector_closed_pass_bounded`
-
-Previous mode marker: `lhw1_t1_product_skill_pack_workflow_connector_closed_pass_bounded`
-
-LHW1-T2 Workflow Chain State Connector is CLOSED_PASS_BOUNDED.
-
-Work order:
-`docs/work_orders/CVF_WO_LHW1_T2_WORKFLOW_CHAIN_STATE_CONNECTOR_2026-05-27.md`
-
-Fast Lane audit decision FAST_LANE_READY:
-`docs/reviews/CVF_LHW1_T2_FAST_LANE_AUDIT_2026-05-27.md`
-
-Connector spec (contract version `cvf.workflowChainStateConnector.lhw1.t2.v1`, sections 1-7):
-`docs/reference/CVF_LHW1_WORKFLOW_CHAIN_STATE_CONNECTOR_SPEC_2026-05-27.md`
-
-Completion review:
-`docs/reviews/CVF_LHW1_T2_WORKFLOW_CHAIN_STATE_CONNECTOR_COMPLETION_2026-05-27.md`
-
-Reviewer perspective PASS: all 7 sections, W1 vocabulary verbatim, MA1 refs correct,
-WR1 transition classes accurate, `canReinject: false` explicit, boundary table honest,
-no code file modified.
-
-T3 gate: YES — concrete context gap: `intake_pending` → `design_ready` requires context
-profile readiness confirmed but neither T1 nor T2 defines which VI2
-`routeRequestContextProfile` fields must be populated. T3 must specify that mapping.
-
-Claim boundary: documentation-only connector spec. No runtime phase enforcement,
-role-gate, MA1 packet validation, receipt envelope extension, code modification,
-public-sync, hosted readiness, production readiness, or freeze release.
-
----
-
-### LHW1-T1 Record (for reference)
-
-Mode marker: `lhw1_t1_product_skill_pack_workflow_connector_closed_pass_bounded`
-
-Previous mode marker: `gamma_t1_t5_mcp_memory_bootstrap_closed_pass_bounded`
-
-LHW1-T1 Product Skill Pack Workflow Connector is CLOSED_PASS_BOUNDED.
-
-Work order:
-`docs/work_orders/CVF_WO_LHW1_T1_PRODUCT_SKILL_PACK_WORKFLOW_CONNECTOR_2026-05-27.md`
-
-Fast Lane audit decision FAST_LANE_READY:
-`docs/reviews/CVF_LHW1_T1_FAST_LANE_AUDIT_2026-05-27.md`
-
-Connector spec (contract version `cvf.productSkillPackWorkflowConnector.lhw1.t1.v1`,
-sections 1-8, 167 lines):
-`docs/reference/CVF_LHW1_PRODUCT_SKILL_PACK_WORKFLOW_CONNECTOR_SPEC_2026-05-27.md`
-
-Example records (section 9, `product_brief` + `strategy_analysis`, 247 lines,
-split per GC-023):
-`docs/reference/CVF_LHW1_PRODUCT_SKILL_PACK_WORKFLOW_CONNECTOR_EXAMPLES_2026-05-27.md`
-
-Completion review:
-`docs/reviews/CVF_LHW1_T1_PRODUCT_SKILL_PACK_WORKFLOW_CONNECTOR_COMPLETION_2026-05-27.md`
-
-Reviewer perspective PASS: all 9 sections, `canReinject: false` in both
-example records, W1/WR1/MA1/W3/TA1 vocabulary correctly applied, no code file
-modified.
-
-Claim boundary: documentation-only connector spec. No runtime workflow
-enforcement, live provider call, memory reinjection, receipt envelope change,
-code file modification, external skill ingestion, public-sync, hosted
-readiness, production readiness, or freeze release.
-
 Parked operator checkpoint remains VI5-T4/T5: operator will later export a
 fresh hosted web spec and test it with an external agent. LHW1-T1/T2/T3 are
 closed; any next legacy workflow connector requires fresh GC-018/work order and
 must include Source Verification when source-level facts are used.
-Active handoff: `AGENT_HANDOFF_V14_2026-05-27.md`; latest mode marker: `work_order_closure_quality_gate_rule_added`.
+Active handoff: `AGENT_HANDOFF_V14_2026-05-27.md`; latest mode marker: `lhw6_t3_complete`.

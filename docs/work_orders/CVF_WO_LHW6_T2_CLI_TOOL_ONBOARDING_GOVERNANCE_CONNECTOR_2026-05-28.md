@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -27,7 +27,8 @@ behavior is changed. CLI command execution remains blocked.
 ## Authority Chain
 
 - LHW6 roadmap: `docs/roadmaps/CVF_LHW6_WORKFLOW_CONNECTOR_WAVE6_ROADMAP_2026-05-28.md`
-- Fast Lane audit: `docs/reviews/CVF_LHW6_T2_FAST_LANE_AUDIT_2026-05-28.md` → FAST_LANE_READY
+- LHW6 GC-018: `docs/baselines/CVF_GC018_LHW6_WORKFLOW_CONNECTOR_WAVE6_2026-05-28.md`
+- Fast Lane audit: `docs/reviews/CVF_LHW6_T2_FAST_LANE_AUDIT_2026-05-28.md` → HOLD_PENDING_T1
 - LH1 ledger (`CLI-Anything` trigger): `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
 - W3: `docs/reviews/CVF_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_COMPLETION_2026-05-24.md`
 - TA1: `docs/reviews/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
@@ -71,9 +72,9 @@ CLI command execution and command runtime bridging remain blocked.
 2. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 3. T1 completion (understand the bridge advisory chain T2 builds on)
 4. `governance/contracts/tool-action-taxonomy.ts`
-   — confirm W3 `surface=command_runtime`; confirm relevant sideEffect values
-   for command_runtime: `read_only`, `local_write`, `workspace_mutation`,
-   `install`, `network_egress`, `destructive`, `privileged`;
+   — confirm W3 `surface=command_runtime`; confirm `ToolActionSideEffect`
+   values from source before selecting the command-runtime-relevant subset
+   used by the spec;
    confirm `runtimeExecutionAuthorized=false`; confirm `sandboxRequired` logic
    for `command_runtime` surface
 5. `docs/reviews/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
@@ -91,16 +92,26 @@ If any required file is missing, stop and report to Orchestrator.
 | Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 | --- | --- | --- | --- | --- | --- |
 | W3 `command_runtime` surface token | `governance/contracts/tool-action-taxonomy.ts` | lines 9-14 | `command_runtime` | `ToolActionSurface` | ACCEPT |
-| W3 `command_runtime` sideEffect values | `governance/contracts/tool-action-taxonomy.ts` | lines 16-31 | `read_only`, `local_write`, `workspace_mutation`, `install`, `network_egress`, `destructive`, `privileged` | `ToolActionSideEffect` | ACCEPT |
+| W3 `ToolActionSideEffect` values: `read_only`, `local_write`, `workspace_mutation`, `external_mutation`, `install`, `network_egress`, `database_read`, `database_write`, `database_export`, `database_schema_mutation`, `database_recovery`, `database_admin`, `destructive`, `privileged`, `unknown` | `governance/contracts/tool-action-taxonomy.ts` | lines 16-31 | `ToolActionSideEffect` | `ToolActionSideEffect` | ACCEPT |
 | W3 `sandboxRequired` for `command_runtime` | `governance/contracts/tool-action-taxonomy.ts` | lines 381-386 | `surface === 'command_runtime'` → sandbox required | `resolveSandboxRequired` | ACCEPT |
 | W3 `runtimeExecutionAuthorized=false` | `governance/contracts/tool-action-taxonomy.ts` | lines 106-120, 130-142 | `runtimeExecutionAuthorized` | `ToolActionTaxonomyEvaluation` / `ToolActionApprovalReadout` | ACCEPT |
-| TA1 approval state tokens | `governance/contracts/tool-action-taxonomy.ts` | lines 64-70, 130-142 | `not_required`, `pending_approval`, `satisfied_but_not_executable`, `blocked_before_approval`, `blocked_by_policy`, `incomplete_approval` | `ToolActionApprovalState` / `ToolActionApprovalReadout` | ACCEPT |
-| LHW6-T1 `bridgeAdvisoryType` values | `docs/reference/CVF_LHW6_TOOL_RUNTIME_BRIDGE_ADVISORY_CONNECTOR_SPEC_2026-05-28.md` | S3 field list | `advisory_allowed`, `hold_for_approval`, `blocked` | LHW6-T1 bridge advisory packet | ACCEPT |
+| TA1 approval state values: `not_required`, `pending_approval`, `satisfied_but_not_executable`, `blocked_before_approval`, `blocked_by_policy`, `incomplete_approval` | `governance/contracts/tool-action-taxonomy.ts` | lines 64-70, 130-142 | `ToolActionApprovalState` | `ToolActionApprovalState` / `ToolActionApprovalReadout` | ACCEPT |
+| LHW6-T1 `bridgeAdvisoryType` values | `docs/reference/CVF_LHW6_TOOL_RUNTIME_BRIDGE_ADVISORY_CONNECTOR_SPEC_2026-05-28.md` | S3 field list after T1 closure | `advisory_allowed`, `hold_for_approval`, `blocked` | LHW6-T1 bridge advisory packet | BLOCKED_SOURCE_NOT_FOUND until T1 spec exists and T1 is CLOSED_PASS |
 
 New doc-only fields proposed by this work order: `onboardingPacketId`,
 `cliToolId`, `onboardingClassification`, `firstRunApprovalRequired`,
 `bridgeAdvisoryRef`, and `onboardingGuidance`. These must be labeled
 documentation-only in the connector spec.
+
+## Roadmap-To-Work-Order Trace Matrix
+
+| Roadmap requirement | Work order section | Output artifact or field | Verification command or check | Status |
+|---|---|---|---|---|
+| T2 dispatch only after T1 CLOSED_PASS | Gate Condition, Pre-Flight, Review Gate | T1 completion review path | `Test-Path docs/reviews/CVF_LHW6_T1_*_COMPLETION_2026-05-28.md` plus status check | BLOCKED until T1 closes |
+| T2 spec created; W3/TA1/LHW6-T1 field names used verbatim | S1-S5 deliverable sections | `docs/reference/CVF_LHW6_CLI_TOOL_ONBOARDING_GOVERNANCE_CONNECTOR_SPEC_2026-05-28.md` | Reviewer confirms source-verbatim field names | BLOCKED until T1 closes and spec exists |
+| CLI onboarding planning-only explicit | S1, S3, S4, Claim Boundary | `runtimeExecutionAuthorized=false`; CLI execution non-claim | `rg -n "runtimeExecutionAuthorized=false|does not execute CLI" <spec>` | BLOCKED until spec exists |
+| Source Verification Table complete | S5 | Source Verification Table | `rg -n "Source Verification Table|Disposition" <spec>` plus reviewer check | BLOCKED until spec exists |
+| No code file modified | Evidence Requirements | Git diff output | `git diff --name-only` | BLOCKED until closure evidence exists |
 
 ## Deliverable — Connector Spec
 
@@ -228,6 +239,13 @@ Spec size guard: < 200 lines. Trim S3 prose if approaching 180 lines.
 - [ ] No code file in diff
 - [ ] Session continuity updated
 
+Fail conditions:
+
+- [ ] T1 completion missing, not `CLOSED_PASS`, or T1 spec path missing
+- [ ] Source Verification `ACCEPT` row citing a non-existent file
+- [ ] Any claim that this connector executes CLI commands, creates a sandbox,
+  authorizes runtime execution, or extends receipt envelopes
+
 ## Review Gate
 
 Before committing: Reviewer perspective completed; all W3/TA1 field names
@@ -237,15 +255,15 @@ in diff.
 
 ## Closure Checklist
 
-- [ ] T1 gate confirmed documented
-- [ ] Spec created with all 5 sections
-- [ ] S2 onboarding mapping uses W3+TA1+LHW6-T1 vocabulary verbatim
-- [ ] `runtimeExecutionAuthorized=false` explicit
-- [ ] S5 Source Verification Table complete; no `BLOCKED_SOURCE_NOT_FOUND` rows
-- [ ] S4 boundary table honest; no doc-only row labeled Runtime
-- [ ] No code file in diff
-- [ ] Session continuity updated
-- [ ] Completion review with T3 gate answer written
+- [x] T1 gate confirmed documented
+- [x] Spec created with all 5 sections
+- [x] S2 onboarding mapping uses W3+TA1+LHW6-T1 vocabulary verbatim
+- [x] `runtimeExecutionAuthorized=false` explicit
+- [x] S5 Source Verification Table complete; no `BLOCKED_SOURCE_NOT_FOUND` rows
+- [x] S4 boundary table honest; no doc-only row labeled Runtime
+- [x] No code file in diff
+- [x] Session continuity updated
+- [x] Completion review with T3 gate answer written
 
 ## Return-To-Orchestrator Conditions
 

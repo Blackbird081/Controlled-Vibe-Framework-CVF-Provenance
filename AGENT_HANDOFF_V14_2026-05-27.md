@@ -31,10 +31,12 @@ Handoff context:
 
 ## Latest Work / Changes
 
-Latest mode marker: `work_order_closure_quality_gate_rule_added`.
+Latest mode marker: `work_order_dispatch_quality_gate_enforced`.
 
-The latest update adds the mandatory Work Order Closure Quality Gate and syncs
-session/front-door continuity for future delegated agent work.
+The latest update upgrades the mandatory Work Order Closure Quality Gate into
+machine enforcement through `governance/compat/check_work_order_dispatch_quality.py`.
+The guard is wired into the local hook chain and documentation CI workflow and
+was verified against the LHW6 dispatch range.
 
 ## Claim Boundary
 
@@ -78,7 +80,29 @@ Current HEAD after LHW3-T2 implementation commit (parent of handoff sync): `34a4
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=work_order_closure_quality_gate_rule_added; active handoff=AGENT_HANDOFF_V14_2026-05-27.md; next allowed move=future connector waves require fresh GC-018, roadmap, source-verified work orders, roadmap-to-work-order trace matrix, closure diff gate, claim integrity scan, fail-condition scan, checklist finalization, and continuity sync; parked checkpoint=hosted Netlify freshness and operator external-agent retest for VI5-T4/T5 remain pending.
+Startup acknowledged: current mode=work_order_dispatch_quality_gate_enforced; active handoff=AGENT_HANDOFF_V14_2026-05-27.md; next allowed move=future connector waves require fresh GC-018, roadmap, source-verified work orders, roadmap-to-work-order trace matrix, closure diff gate, claim integrity scan, fail-condition scan, checklist finalization, continuity sync, and passing `check_work_order_dispatch_quality.py`; parked checkpoint=hosted Netlify freshness and operator external-agent retest for VI5-T4/T5 remain pending.
+
+## Work Order Dispatch Quality Gate
+
+Hard enforcement is active through
+`governance/compat/check_work_order_dispatch_quality.py`.
+
+The guard blocks:
+
+- connector-wave ready/dispatch status without a matching fresh GC-018;
+- roadmap-derived ready/dispatch work orders without a Roadmap-to-Work-Order
+  Trace Matrix;
+- Source Verification `ACCEPT` rows that cite missing files or omit
+  source-declared values;
+- ready/dispatch packets with unresolved `CLOSED_PASS` prerequisites;
+- Fast Lane audits marked `FAST_LANE_READY` while still conditional;
+- unsupported `install always blocked` policy language unless reconciled with
+  source policy.
+
+Verification: running the guard against `68e3fa54..dc1feffb` catches the LHW6
+dispatch defects raised in review. The current implementation work does not
+repair LHW6; it makes the defect machine-detectable so future agent dispatches
+fail before execution.
 
 Previous active handoff `AGENT_HANDOFF_V13_2026-05-25.md` was archived because it exceeded the governed active-markdown size guard. Do not append new status to V13.
 
@@ -780,6 +804,58 @@ Boundary: this is an internal process/governance rule only. It does not claim
 new runtime enforcement, provider behavior, public readiness, hosted readiness,
 production readiness, or automatic agent compliance outside agents that read
 and follow the CVF front door/instructions.
+
+## LHW6 Workflow Connector Wave 6
+
+LHW6 is CLOSED_PASS_BOUNDED (T1 + T2 + T3). All three tranches are
+documentation-only connector specs. No runtime code file was modified.
+
+Mode: `lhw6_t3_complete`. Previous mode: `work_order_dispatch_quality_gate_enforced`.
+
+GC-018: `docs/baselines/CVF_GC018_LHW6_WORKFLOW_CONNECTOR_WAVE6_2026-05-28.md`
+
+Roadmap: `docs/roadmaps/CVF_LHW6_WORKFLOW_CONNECTOR_WAVE6_ROADMAP_2026-05-28.md`
+Status: CLOSED_PASS_BOUNDED.
+
+LH1 trigger families closed:
+
+- T1 — OpenAgentd → Tool Runtime Bridge Advisory Connector
+  - Spec: `docs/reference/CVF_LHW6_TOOL_RUNTIME_BRIDGE_ADVISORY_CONNECTOR_SPEC_2026-05-28.md`
+  - Contract: `cvf.toolRuntimeBridgeAdvisoryConnector.lhw6.t1.v1`
+  - Completion: `docs/reviews/CVF_LHW6_T1_TOOL_RUNTIME_BRIDGE_ADVISORY_CONNECTOR_COMPLETION_2026-05-28.md`
+  - Work order: `docs/work_orders/CVF_WO_LHW6_T1_TOOL_RUNTIME_BRIDGE_ADVISORY_CONNECTOR_2026-05-28.md`
+
+- T2 — CLI-Anything → CLI Tool Onboarding Governance Connector
+  - Spec: `docs/reference/CVF_LHW6_CLI_TOOL_ONBOARDING_GOVERNANCE_CONNECTOR_SPEC_2026-05-28.md`
+  - Contract: `cvf.cliToolOnboardingGovernanceConnector.lhw6.t2.v1`
+  - Completion: `docs/reviews/CVF_LHW6_T2_CLI_TOOL_ONBOARDING_GOVERNANCE_CONNECTOR_COMPLETION_2026-05-28.md`
+  - Work order: `docs/work_orders/CVF_WO_LHW6_T2_CLI_TOOL_ONBOARDING_GOVERNANCE_CONNECTOR_2026-05-28.md`
+
+- T3 — Review CVF_1.md → Project Memory Readout Connector
+  - Spec: `docs/reference/CVF_LHW6_PROJECT_MEMORY_READOUT_CONNECTOR_SPEC_2026-05-28.md`
+  - Contract: `cvf.projectMemoryReadoutConnector.lhw6.t3.v1`
+  - Completion: `docs/reviews/CVF_LHW6_T3_PROJECT_MEMORY_READOUT_CONNECTOR_COMPLETION_2026-05-28.md`
+  - Work order: `docs/work_orders/CVF_WO_LHW6_T3_PROJECT_MEMORY_READOUT_CONNECTOR_2026-05-28.md`
+
+Fast Lane audit T1: `docs/reviews/CVF_LHW6_T1_FAST_LANE_AUDIT_2026-05-28.md`
+(FAST_LANE_READY, R0). T2 and T3 are R0, documentation-only, same Fast Lane
+criteria.
+
+Source verification summary: W3 `ToolActionSurface`/`ToolActionSideEffect`/
+`ToolActionApprovalState`/`runtimeExecutionAuthorized`/`resolveSandboxRequired`
+(`governance/contracts/tool-action-taxonomy.ts` L9–14, L16–31, L64–70,
+L119, L141, L381–386), M1 `DurableMemoryTier`/`DurableMemoryReceipt`
+(`EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/durable-memory-store.ts`
+L13, L35–49), AIF-C `MemoryGatewayDecision`
+(`EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts`
+L40–51), WR1 `WorkflowRecoveryReadout`/`WorkflowRecoveryAction`
+(`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts`
+L50–54, L85–96). All rows ACCEPT; no `BLOCKED_SOURCE_NOT_FOUND`.
+
+Boundary: documentation-only connector specs. No W3/TA1/M1/AIF-C/WR1 runtime
+extension, CLI execution, memory reinjection, receipt envelope extension,
+provider behavior, hosted readiness, production readiness, or public release
+readiness claim.
 
 ## Mandatory Standards
 

@@ -1,8 +1,8 @@
 # CVF LHW6 Workflow Connector Wave 6 Roadmap
 
-Memory class: FULL_RECORD
+Memory class: SUMMARY_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -19,6 +19,12 @@ flow đã có miếng rời rạc, chỉ còn thiếu chuẩn kết nối' để
 LHW5 is CLOSED_PASS_BOUNDED_AFTER_QUALITY_FIX. Session state `nextAllowedMove`
 confirms: "Any future connector wave requires a fresh GC-018, roadmap, and
 source-verified work orders." LHW6 is the direct continuation under those rules.
+
+Fresh GC-018:
+`docs/baselines/CVF_GC018_LHW6_WORKFLOW_CONNECTOR_WAVE6_2026-05-28.md`
+
+Dispatch status: T1 CLOSED_PASS_BOUNDED. T2 CLOSED_PASS_BOUNDED. T3 CLOSED_PASS_BOUNDED.
+LHW6 wave CLOSED_PASS_BOUNDED.
 
 ## Scope / Target / Owner Boundary
 
@@ -197,23 +203,23 @@ Dispatch only after T1 + T2 are CLOSED_PASS.
 | Tranche | Deliverable | Gate |
 | --- | --- | --- |
 | T1 | Tool Runtime Bridge Advisory Connector spec (5 sections) | None — open |
-| T2 | CLI Tool Onboarding Governance Connector spec (5 sections) | T1 CLOSED_PASS |
-| T3 | Project Memory Readout Connector spec (5 sections) | T1 + T2 CLOSED_PASS |
+| T2 | CLI Tool Onboarding Governance Connector spec (5 sections) | HOLD until T1 CLOSED_PASS |
+| T3 | Project Memory Readout Connector spec (5 sections) | HOLD until T1 + T2 CLOSED_PASS |
 
 Each tranche: Fast Lane audit → work order → spec → completion review → session
 continuity update → commit.
 
 ## Acceptance Criteria
 
-- [ ] T1 spec created; W3/TA1/LHW4-T2 field names used verbatim;
+- [x] T1 spec created; W3/TA1/LHW4-T2 field names used verbatim;
   tool-execution-blocked explicit; Source Verification Table complete
-- [ ] T2 spec created; W3/TA1/LHW6-T1 field names used verbatim; CLI
+- [x] T2 spec created; W3/TA1/LHW6-T1 field names used verbatim; CLI
   onboarding planning-only explicit; boundary table honest
-- [ ] T3 spec created; M1/WR1/AIF-C field names used verbatim;
+- [x] T3 spec created; M1/WR1/AIF-C field names used verbatim;
   `canReinject=false` and `rawMemoryReleased=false` explicit; LHW6 roadmap
   updated to `CLOSED_PASS_BOUNDED`
-- [ ] No `.ts`/`.tsx`/`.js`/`.py` file in diff across all three tranches
-- [ ] Session continuity updated after each tranche
+- [x] No `.ts`/`.tsx`/`.js`/`.py` file in diff across all three tranches
+- [x] Session continuity updated after each tranche
 
 ## Verification
 

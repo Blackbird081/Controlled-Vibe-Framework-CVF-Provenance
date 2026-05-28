@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -27,7 +27,8 @@ behavior is changed.
 ## Authority Chain
 
 - LHW6 roadmap: `docs/roadmaps/CVF_LHW6_WORKFLOW_CONNECTOR_WAVE6_ROADMAP_2026-05-28.md`
-- Fast Lane audit: `docs/reviews/CVF_LHW6_T3_FAST_LANE_AUDIT_2026-05-28.md` → FAST_LANE_READY
+- LHW6 GC-018: `docs/baselines/CVF_GC018_LHW6_WORKFLOW_CONNECTOR_WAVE6_2026-05-28.md`
+- Fast Lane audit: `docs/reviews/CVF_LHW6_T3_FAST_LANE_AUDIT_2026-05-28.md` → HOLD_PENDING_T1_T2
 - LH1 ledger (`Review CVF_1.md` trigger): `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
 - M1 source: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/durable-memory-store.ts`
 - AIF-C source: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts`
@@ -79,8 +80,10 @@ Memory reinjection, new memory tiers, and raw memory release remain blocked.
 3. T1 and T2 completions (understand the tool boundary chain T3 builds beside)
 4. `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/durable-memory-store.ts`
    — confirm M1 `DurableMemoryTier` values: `skill`, `long-term`; confirm
-   `DurableMemoryReceipt` fields: `contractVersion`, `operation`, `tier`,
-   `scope`, `memoryIds`, `summaryOnly`, `canReinject`, `rawMemoryReleased`;
+   `DurableMemoryReceipt` fields: `contractVersion`, `operation`, `decision`,
+   `reason`, `tier`, `scope`, `memoryIds`, `excluded`,
+   `durablePersistence`, `crossSession`, `summaryOnly`, `canReinject`,
+   `rawMemoryReleased`, `receiptId`;
    confirm `DURABLE_MEMORY_STORE_VERSION = "cvf.durableMemoryStore.m1.v1"`
 5. `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts`
    — confirm AIF-C `MemoryGatewayDecision` fields: `contractVersion`,
@@ -88,10 +91,12 @@ Memory reinjection, new memory tiers, and raw memory release remain blocked.
    `rawMemoryReleased`; confirm `rawMemoryReleased: false` is hardcoded
 6. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts`
    — confirm WR1 `WorkflowRecoveryReadout` fields: `contractVersion`,
-   `workflowId`, `lastRestorableCheckpoint`, `blockedStepIds`,
-   `validationGate`, `recoveryAction`, `recommendedNextAction`;
+   `workflowId`, `currentState`, `requestedTransition`,
+   `lastRestorableCheckpoint`, `blockedStepIds`, `validationGate`,
+   `recoveryAction`, `recommendedNextAction`, `boundaries`;
    confirm `WorkflowRecoveryAction` values: `resume_from_checkpoint`,
-   `hold_for_reviewer_gate`, `escalate_to_governance`
+   `hold_for_reviewer_gate`, `escalate_to_governance`,
+   `request_human_review`
 7. `docs/reference/CVF_LHW4_MEMORY_SNAPSHOT_GOVERNANCE_CONNECTOR_SPEC_2026-05-27.md`
    — confirm S3 `snapshotBoundary` values and `canReinject=false` invariant;
    use LHW4-T1 snapshot receipt as evidence anchor for T3
@@ -104,19 +109,29 @@ If any required file is missing, stop and report to Orchestrator.
 
 | Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 | --- | --- | --- | --- | --- | --- |
-| M1 `DurableMemoryTier` values | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/durable-memory-store.ts` | line 13 | `skill`, `long-term` | `DurableMemoryTier` | ACCEPT |
-| M1 `DurableMemoryReceipt` fields | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/durable-memory-store.ts` | lines 35-49 | `contractVersion`, `tier`, `scope`, `memoryIds`, `summaryOnly`, `canReinject`, `rawMemoryReleased` | `DurableMemoryReceipt` | ACCEPT |
+| M1 `DurableMemoryTier` values: `skill`, `long-term` | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/durable-memory-store.ts` | line 13 | `DurableMemoryTier` | `DurableMemoryTier` | ACCEPT |
+| M1 `DurableMemoryReceipt` fields | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/durable-memory-store.ts` | lines 35-49 | `contractVersion`, `operation`, `decision`, `reason`, `tier`, `scope`, `memoryIds`, `excluded`, `durablePersistence`, `crossSession`, `summaryOnly`, `canReinject`, `rawMemoryReleased`, `receiptId` | `DurableMemoryReceipt` | ACCEPT |
 | M1 `summaryOnly=true` invariant | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/durable-memory-store.ts` | line 46 | `summaryOnly: true` | `DurableMemoryReceipt` | ACCEPT |
 | M1 `canReinject=false` / `rawMemoryReleased=false` invariants | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/durable-memory-store.ts` | lines 47-48 | `canReinject: false`, `rawMemoryReleased: false` | `DurableMemoryReceipt` | ACCEPT |
 | AIF-C `MemoryGatewayDecision.memoryIdsAffected` | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts` | lines 40-51 | `memoryIdsAffected`, `auditReceiptRequired`, `canReinject`, `rawMemoryReleased` | `MemoryGatewayDecision` | ACCEPT |
 | AIF-C `rawMemoryReleased: false` hardcoded | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts` | line 50 | `rawMemoryReleased: false` | `MemoryGatewayDecision` | ACCEPT |
-| WR1 `WorkflowRecoveryReadout` fields | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts` | lines 85-94 | `contractVersion`, `lastRestorableCheckpoint`, `blockedStepIds`, `validationGate`, `recoveryAction`, `recommendedNextAction` | `WorkflowRecoveryReadout` | ACCEPT |
-| WR1 `WorkflowRecoveryAction` values | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts` | lines 50-54 | `resume_from_checkpoint`, `hold_for_reviewer_gate`, `escalate_to_governance` | `WorkflowRecoveryAction` | ACCEPT |
+| WR1 `WorkflowRecoveryReadout` fields | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts` | lines 85-96 | `contractVersion`, `workflowId`, `currentState`, `requestedTransition`, `lastRestorableCheckpoint`, `blockedStepIds`, `validationGate`, `recoveryAction`, `recommendedNextAction`, `boundaries` | `WorkflowRecoveryReadout` | ACCEPT |
+| WR1 `WorkflowRecoveryAction` values: `resume_from_checkpoint`, `hold_for_reviewer_gate`, `escalate_to_governance`, `request_human_review` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts` | lines 50-54 | `WorkflowRecoveryAction` | `WorkflowRecoveryAction` | ACCEPT |
 
 New doc-only fields proposed by this work order: `projectMemoryReadoutId`,
 `durableTierSummary`, `gatewayMemoryIds`, `recoveryAnchor`,
 `projectMemoryReadoutBoundary`, and `projectMemoryCanResume`. These must be
 labeled documentation-only in the connector spec.
+
+## Roadmap-To-Work-Order Trace Matrix
+
+| Roadmap requirement | Work order section | Output artifact or field | Verification command or check | Status |
+|---|---|---|---|---|
+| T3 dispatch only after T1 and T2 CLOSED_PASS | Gate Conditions, Pre-Flight, Review Gate | T1/T2 completion review paths | `Test-Path docs/reviews/CVF_LHW6_T1_*_COMPLETION_2026-05-28.md`; `Test-Path docs/reviews/CVF_LHW6_T2_*_COMPLETION_2026-05-28.md`; status checks | BLOCKED until T1/T2 close |
+| T3 spec created; M1/WR1/AIF-C field names used verbatim | S1-S5 deliverable sections | `docs/reference/CVF_LHW6_PROJECT_MEMORY_READOUT_CONNECTOR_SPEC_2026-05-28.md` | Reviewer confirms source-verbatim field names | BLOCKED until prerequisites close and spec exists |
+| `canReinject=false` and `rawMemoryReleased=false` explicit | S1, S3, S4, Claim Boundary | Invariant fields | `rg -n "canReinject=false|rawMemoryReleased=false" <spec>` | BLOCKED until spec exists |
+| LHW6 roadmap updated to `CLOSED_PASS_BOUNDED` after T3 | Execution Plan, Evidence Requirements | Roadmap status | `rg -n "Status: CLOSED_PASS_BOUNDED" docs/roadmaps/CVF_LHW6_WORKFLOW_CONNECTOR_WAVE6_ROADMAP_2026-05-28.md` | BLOCKED until T3 closure |
+| No code file modified | Evidence Requirements | Git diff output | `git diff --name-only` | BLOCKED until closure evidence exists |
 
 ## Deliverable — Connector Spec
 
@@ -260,6 +275,15 @@ Spec size guard: < 200 lines. Trim S3 prose if approaching 180 lines.
 - [ ] No code file in diff
 - [ ] Session continuity updated
 
+Fail conditions:
+
+- [ ] T1 or T2 completion missing, not `CLOSED_PASS`, or prerequisite spec path
+  missing
+- [ ] Source Verification `ACCEPT` row citing a non-existent file or omitting
+  source-declared values
+- [ ] Any claim that this connector reinjects memory, releases raw memory,
+  adds a memory tier, authorizes runtime execution, or extends receipt envelopes
+
 ## Review Gate
 
 Before committing: Reviewer perspective completed; all M1/AIF-C/WR1 field
@@ -269,17 +293,17 @@ code file in diff.
 
 ## Closure Checklist
 
-- [ ] T1 gate confirmed documented
-- [ ] T2 gate confirmed documented
-- [ ] Spec created with all 5 sections
-- [ ] S2 project memory mapping uses M1+AIF-C+WR1 vocabulary verbatim
-- [ ] `canReinject=false` and `rawMemoryReleased=false` explicit
-- [ ] S5 Source Verification Table complete; no `BLOCKED_SOURCE_NOT_FOUND` rows
-- [ ] S4 boundary table honest; no doc-only row labeled Runtime
-- [ ] LHW6 roadmap updated to `CLOSED_PASS_BOUNDED`
-- [ ] No code file in diff
-- [ ] Session continuity updated
-- [ ] Completion review written
+- [x] T1 gate confirmed documented
+- [x] T2 gate confirmed documented
+- [x] Spec created with all 5 sections
+- [x] S2 project memory mapping uses M1+AIF-C+WR1 vocabulary verbatim
+- [x] `canReinject=false` and `rawMemoryReleased=false` explicit
+- [x] S5 Source Verification Table complete; no `BLOCKED_SOURCE_NOT_FOUND` rows
+- [x] S4 boundary table honest; no doc-only row labeled Runtime
+- [x] LHW6 roadmap updated to `CLOSED_PASS_BOUNDED`
+- [x] No code file in diff
+- [x] Session continuity updated
+- [x] Completion review written
 
 ## Return-To-Orchestrator Conditions
 
