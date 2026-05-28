@@ -161,6 +161,149 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
             report["violations"][0]["issues"],
         )
 
+    def test_ready_work_order_with_blocked_source_row_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_PM1_TEST_2026-05-29.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: READY_FOR_IMPLEMENTATION",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| Executable proof path | `docs/reference/CVF_MISSING_METHOD_SPEC.md` | missing | `json_mode` | Method runner | BLOCKED_SOURCE_NOT_FOUND |",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "dispatch/ready work order contains blocking Source Verification disposition; "
+            "use HOLD/DRAFT until source facts are resolved",
+            report["violations"][0]["issues"],
+        )
+
+    def test_new_doc_only_field_in_source_verification_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_LHW12_T1_TEST_2026-05-29.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: HOLD_PENDING_T1",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| `modelTierAdvisoryType` (new doc-only field) | N/A - canonical doc-only field | S3 | `modelTierAdvisoryType` | LHW12-T1 packet | ACCEPT |",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "New doc-only fields must be listed in a separate New Doc-Only Fields table, "
+            "not as Source Verification ACCEPT rows",
+            report["violations"][0]["issues"],
+        )
+
+    def test_ready_live_method_proof_without_executable_path_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_PM1_JSON_MODE_TEST_2026-05-29.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: READY_FOR_IMPLEMENTATION",
+                    "Purpose: live proof for provider method json_mode.",
+                    "Run `/api/execute` with a method flag.",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| Provider lane | `governance/contracts/example.ts` | line 1 | `provider` | Provider map | ACCEPT |",
+                ]
+            ),
+        )
+        self._write("governance/contracts/example.ts", "export const provider = 'deepseek';\n")
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "dispatch/ready live-method proof cites generic `/api/execute` or a method flag "
+            "without a source-verified executable proof path",
+            report["violations"][0]["issues"],
+        )
+
+    def test_memory_gateway_can_reinject_false_prose_without_source_fails(self) -> None:
+        baseline = "docs/baselines/CVF_GC018_LHW13_TEST_2026-05-29.md"
+        self._write(
+            baseline,
+            "\n".join(
+                [
+                    "# Baseline",
+                    "Status: PROPOSED",
+                    "GC says `MemoryGatewayDecision.canReinject=false` is preserved.",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([baseline])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "Prose claims `MemoryGatewayDecision.canReinject=false`; the known source contract "
+            "declares `canReinject` as a boolean unless a cited source proves a literal false assignment",
+            report["violations"][0]["issues"],
+        )
+
+    def test_connector_doc_only_field_accept_citing_roadmap_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_EL3_TEST_2026-05-29.md"
+        roadmap = "docs/roadmaps/CVF_LHW12_TEST_ROADMAP_2026-05-29.md"
+        self._write(roadmap, "# Roadmap\nStatus: PROPOSED\n")
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: HOLD_PENDING_T1",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| `modelTierAdvisoryType` doc-only field | `docs/roadmaps/CVF_LHW12_TEST_ROADMAP_2026-05-29.md` | S3 planned field list | `modelTierAdvisoryType` | LHW12-T1 doc-only field | ACCEPT |",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order, roadmap])
+
+        self.assertFalse(report["compliant"])
+        issues = [
+            issue
+            for violation in report["violations"]
+            if violation["path"] == work_order
+            for issue in violation["issues"]
+        ]
+        self.assertIn(
+            "Source Verification ACCEPT for connector doc-only field cites a roadmap; "
+            "cite the connector spec after it exists or move the field to New Doc-Only Fields",
+            issues,
+        )
+        self.assertIn(
+            "Source Verification ACCEPT uses pending/planned/future line or section language; "
+            "use BLOCKED_SOURCE_NOT_FOUND until the source exists",
+            issues,
+        )
+
     def test_compliant_hold_packet_passes(self) -> None:
         work_order = "docs/work_orders/CVF_WO_LHW6_T1_TEST_2026-05-28.md"
         self._write(

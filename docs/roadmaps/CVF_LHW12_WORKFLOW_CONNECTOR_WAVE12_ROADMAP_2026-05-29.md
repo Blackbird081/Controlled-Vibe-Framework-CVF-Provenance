@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: ACTIVE
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -20,8 +20,7 @@ gaps) — identifies three doc-only connector gaps eligible for LHW12.
 Fresh GC-018:
 `docs/baselines/CVF_GC018_LHW12_WORKFLOW_CONNECTOR_WAVE12_2026-05-29.md`
 
-Dispatch status: T1 WORK_ORDER_READY. T2 HOLD until T1 CLOSED_PASS.
-T3 HOLD until T1 + T2 CLOSED_PASS.
+Dispatch status: CLOSED_PASS_BOUNDED for all three tranches.
 
 ## Scope / Target / Owner Boundary
 
@@ -164,7 +163,7 @@ Deliverables:
 - S5 Source Verification: individual rows for all 10 pack IDs and all
   `ProductSkillPackSelectionStatus` values
 
-Dispatch only after T1 is CLOSED_PASS.
+Dispatch only after T1 pass evidence exists.
 
 ### LHW12-T3 — Async Worker Lifecycle Boundary Connector
 
@@ -182,7 +181,7 @@ Deliverables:
   autonomous execution. The lifecycle advisory is a governance planning record."
 - S5 Source Verification: individual rows per WR1 value (4), MA1 role (4)
 
-Dispatch only after T1 + T2 are CLOSED_PASS.
+Dispatch only after T1 + T2 pass evidence exists.
 
 ## Non-Goals
 
@@ -201,21 +200,21 @@ Dispatch only after T1 + T2 are CLOSED_PASS.
 | Tranche | Deliverable | Gate |
 | --- | --- | --- |
 | T1 | Posture-to-Model Tier Advisory spec (5 sections) | None — open after GC-018 |
-| T2 | Outcome Pack Taxonomy Grouping spec (5 sections) | HOLD until T1 CLOSED_PASS |
-| T3 | Async Worker Lifecycle Boundary spec (5 sections) | HOLD until T1 + T2 CLOSED_PASS |
+| T2 | Outcome Pack Taxonomy Grouping spec (5 sections) | SATISFIED_T1_PASS |
+| T3 | Async Worker Lifecycle Boundary spec (5 sections) | SATISFIED_T1_AND_T2_PASS |
 
 ## Acceptance Criteria
 
-- [ ] T1: `sessionGovernancePostureType` (3 values) and `budgetTier` (3 values)
+- [x] T1: `sessionGovernancePostureType` (3 values) and `budgetTier` (3 values)
   individually row-verified in S5; `runtimeExecutionAuthorized=false` explicit
-- [ ] T2: all 10 pack IDs individually row-verified in S5; no pack execution claimed
-- [ ] T3: WR1 values (4) and MA1 roles (4) individually row-verified in S5;
+- [x] T2: all 10 pack IDs individually row-verified in S5; no pack execution claimed
+- [x] T3: WR1 values (4) and MA1 roles (4) individually row-verified in S5;
   no subagent spawn claimed
-- [ ] No `.ts`/`.tsx`/`.js`/`.py` file in diff across all three tranches
-- [ ] No `EXTENSIONS/` source file in diff
-- [ ] Each spec < 250 lines per GC-023
-- [ ] Both governance gates PASS per tranche
-- [ ] Session continuity updated after each tranche
+- [x] No `.ts`/`.tsx`/`.js`/`.py` file in diff across all three tranches
+- [x] No `EXTENSIONS/` source file in diff
+- [x] Each spec < 250 lines per GC-023
+- [x] Both governance gates PASS per tranche
+- [x] Session continuity updated after each tranche
 
 ## Verification
 

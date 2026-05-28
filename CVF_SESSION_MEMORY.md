@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-29
 
-Current mode marker: `lhw11_wave_closed_pass_bounded`
+Current mode marker: `lhw12_wave_closed_pass_bounded`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
 ---
@@ -65,7 +65,7 @@ This applies to broad external knowledge absorption records, session front
 doors, handoffs, reviews, work orders, and other blocked work classes that
 would become hard to test or review if oversized.
 
-Canonical size guard:
+Redefine size guard:
 
 `governance/toolkit/05_OPERATION/CVF_GOVERNED_FILE_SIZE_GUARD.md`
 
@@ -94,9 +94,8 @@ roadmap dispatch/hold residue, or Fast Lane active/pass status conflicts.
 
 Status-token and Source Verification symbol hygiene are now machine-enforced:
 `HOLD_*`, `DRAFT`, or `PROPOSED` statuses must not contain `CLOSED`, and
-`Verified path or symbol` cells must contain symbols only, not value
-assignments or type annotations such as `rawMemoryReleased: false` or
-`canReinject: boolean`.
+`Verified path or symbol` cells must contain only symbols only, not value
+assignments such as `rawMemoryReleased: false`.
 
 Allowed-scope and whole-wave range closure hygiene are now machine-enforced:
 single-work-order closure ranges must not include files outside Allowed scope,
@@ -121,11 +120,7 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LHW11 is the latest fully `CLOSED_PASS_BOUNDED` connector wave. Any further
-connector wave requires a fresh roadmap, GC-018, and source-verified work orders.
-Any follow-on closure must be reviewed through the autorun `pre-dispatch`,
-`pre-implementation`, `pre-closure`, and applicable `pre-push` gates before
-it can be trusted as closed.
+LHW12 is the latest fully `CLOSED_PASS_BOUNDED` connector wave. Any further connector wave (such as LHW13) or follow-on closure must be reviewed through the autorun `pre-dispatch`, `pre-implementation`, `pre-closure`, and applicable `pre-push` gates before it can be trusted.
 
 LHW sequencing remains: continue connector absorption first. Do not move
 `abtop`, `gridex`, or other route-execution families into a live-proof roadmap

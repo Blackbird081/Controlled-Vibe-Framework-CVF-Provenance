@@ -47,9 +47,11 @@ governance gates PASS.
   (lines 104–115); EL-3 from ReviewDeadlockException (lines 123–148)
 - CVF 28.05 gap record: GC-018 LHW11 section "New Source Family: CVF 28.05"
 - Execution Layer Roadmap: `docs/roadmaps/CVF_EXECUTION_LAYER_ROADMAP_2026-05-29.md`
-- LHW12-T1 posture advisory (prerequisite for EL-1 model tier reference):
+- LHW12-T1 posture advisory (planned prerequisite for EL-1 model tier reference;
+  source path becomes valid only after LHW12-T1 closure):
   `docs/reference/CVF_LHW12_T1_POSTURE_TO_MODEL_TIER_ADVISORY_CONNECTOR_SPEC_2026-05-29.md`
-- LHW12-T3 worker lifecycle advisory (prerequisite for EL-1/EL-2/EL-3):
+- LHW12-T3 worker lifecycle advisory (planned prerequisite for EL-1/EL-2/EL-3;
+  source path becomes valid only after LHW12-T3 closure):
   `docs/reference/CVF_LHW12_T3_ASYNC_WORKER_LIFECYCLE_BOUNDARY_CONNECTOR_SPEC_2026-05-29.md`
 - WR1 `WorkflowRecoveryAction`: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts`
 - MA1 transfer standard: `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`

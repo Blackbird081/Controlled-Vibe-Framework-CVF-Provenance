@@ -29,7 +29,8 @@ requires a separate GC-018.
 - PD Roadmap: `docs/roadmaps/CVF_PRODUCT_DEPTH_ROADMAP_2026-05-29.md`
 - ES1: `docs/reference/CVF_EXTERNAL_SKILL_INTAKE_SCREENING_PACKET_2026-05-25.md`
 - C7C validator: `governance/contracts/external-skill-candidate-screen.ts`
-  — `ExternalSkillCandidateScreenRecord`; `runtimeExecutionAuthorized=false`
+  — `ExternalSkillCandidateScreenRecord`; `ExternalSkillCandidateScreenReadout`
+    literal false fields
 - LHW9-T1 MCP approval: `docs/reference/CVF_LHW9_T1_MCP_TOOL_APPROVAL_ADVISORY_CONNECTOR_SPEC_2026-05-28.md`
 - LHW6-T2 CLI onboarding: `docs/reference/CVF_LHW6_CLI_TOOL_ONBOARDING_GOVERNANCE_CONNECTOR_SPEC_2026-05-28.md`
 
@@ -61,8 +62,10 @@ file change, receipt envelope schema, MCP execution, public-sync repo.
    — ES1 template: intake metadata, source check, risk classification, capability
    boundary, allowed roles, sandbox requirement, evidence requirement
 4. `governance/contracts/external-skill-candidate-screen.ts`
-   — confirm `ExternalSkillCandidateScreenRecord`; `runtimeExecutionAuthorized`
-   and `registryPublicationAuthorized` and `externalFetchAuthorized` fields
+   — confirm `ExternalSkillCandidateScreenRecord`; confirm
+   `ExternalSkillCandidateScreenReadout.runtimeExecutionAuthorized`,
+   `registryPublicationAuthorized`, and `externalFetchAuthorized` literal
+   false fields
 5. `docs/reference/CVF_LHW9_T1_MCP_TOOL_APPROVAL_ADVISORY_CONNECTOR_SPEC_2026-05-28.md`
    — MCP boundary pattern: approval advisory, `runtimeExecutionAuthorized=false`
 6. `docs/reference/CVF_LHW6_CLI_TOOL_ONBOARDING_GOVERNANCE_CONNECTOR_SPEC_2026-05-28.md`
@@ -74,8 +77,8 @@ file change, receipt envelope schema, MCP execution, public-sync repo.
 | --- | --- | --- | --- | --- | --- |
 | ES1 admission template | `docs/reference/CVF_EXTERNAL_SKILL_INTAKE_SCREENING_PACKET_2026-05-25.md` | full document | intake screening template | ES1 | ACCEPT |
 | `ExternalSkillCandidateScreenRecord` | `governance/contracts/external-skill-candidate-screen.ts` | interface definition | `ExternalSkillCandidateScreenRecord` | C7C contract | ACCEPT |
-| `externalFetchAuthorized` | `governance/contracts/external-skill-candidate-screen.ts` | field in record | `externalFetchAuthorized` | `ExternalSkillCandidateScreenRecord` | ACCEPT |
-| `runtimeExecutionAuthorized` (C7C) | `governance/contracts/external-skill-candidate-screen.ts` | field in record | `runtimeExecutionAuthorized` | `ExternalSkillCandidateScreenRecord` | ACCEPT |
+| LITERAL_INVARIANT: `externalFetchAuthorized=false` | `governance/contracts/external-skill-candidate-screen.ts` | `ExternalSkillCandidateScreenReadout` field | `externalFetchAuthorized` | `ExternalSkillCandidateScreenReadout` | ACCEPT |
+| LITERAL_INVARIANT: `runtimeExecutionAuthorized=false` | `governance/contracts/external-skill-candidate-screen.ts` | `ExternalSkillCandidateScreenReadout` field | `runtimeExecutionAuthorized` | `ExternalSkillCandidateScreenReadout` | ACCEPT |
 | MCP approval boundary pattern | `docs/reference/CVF_LHW9_T1_MCP_TOOL_APPROVAL_ADVISORY_CONNECTOR_SPEC_2026-05-28.md` | S4 boundary table | MCP execution not authorized | LHW9-T1 | ACCEPT |
 | CLI onboarding classification | `docs/reference/CVF_LHW6_CLI_TOOL_ONBOARDING_GOVERNANCE_CONNECTOR_SPEC_2026-05-28.md` | S2 mapping | `onboardingClassification` values | LHW6-T2 | ACCEPT |
 | PD GC-018 authorization | `docs/baselines/CVF_GC018_PRODUCT_DEPTH_2026-05-29.md` | full document | PD-2 authorization | PD GC-018 | ACCEPT |

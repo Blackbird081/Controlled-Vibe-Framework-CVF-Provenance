@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: HOLD_UNTIL_PM1_PASS
+Status: HOLD_UNTIL_PM1_PASS_AND_SOURCE_VERIFIED_PROOF_PATH
 
 docType: work_order
 
@@ -12,7 +12,7 @@ Date: 2026-05-29
 
 ## Purpose
 
-Collect live receipt evidence for `stream` method on Alibaba `qwen-turbo`.
+Prepare live receipt evidence for `stream` method on Alibaba `qwen-turbo`.
 Produces evidence packet in `docs/evidence/provider-methods/streaming/`.
 Closes the streaming half of CVF 25.05 Gap 3.
 
@@ -32,8 +32,10 @@ all use `complete` method.
 
 ## Agent Roles
 
-Implementer makes 1 live streaming call (Alibaba qwen-turbo), collects first-
-token receipt, writes evidence packet. Reviewer checks: `evidenceMode=live`;
+Implementer may proceed only after source-verifying an executable streaming
+path for this provider/model. After that gate, implementer makes 1 live
+streaming call (Alibaba qwen-turbo), collects first-token receipt, writes
+evidence packet. Reviewer checks: `evidenceMode=live`;
 `rawSecretPrinted=false`; streaming tokens received; `http_status=200`.
 No self-review.
 
@@ -68,6 +70,7 @@ routing changes, `governance/` changes, public-sync repo.
 | `qwen-turbo` supports `stream` | `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-registry.ts` | line 52 | `stream` in supportedMethods | alibaba model capability | ACCEPT |
 | Live run diagnostic standard | `docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md` | full document | diagnostic classification guide | CVF live run standard | ACCEPT |
 | PM GC-018 authorization | `docs/baselines/CVF_GC018_PROVIDER_METHOD_LIVE_PROOF_2026-05-29.md` | full document | stream authorization | PM GC-018 | ACCEPT |
+| Executable `stream` proof path | source path not yet verified | blocked before implementation | method-specific runtime path | provider method execution path | BLOCKED_SOURCE_NOT_FOUND |
 
 ## Roadmap-To-Work-Order Trace Matrix
 
@@ -77,6 +80,7 @@ routing changes, `governance/` changes, public-sync repo.
 | first-token receipt | Evidence Requirements | receipt_id in packet | `rawSecretPrinted=false` | OPEN |
 | streaming tokens documented | Evidence Requirements | token count or stream chunks noted | packet documents stream behavior | OPEN |
 | PM-1 gate confirmed | Authority Chain | PM-1 completion review | Read PM-1 review | OPEN |
+| Executable `stream` proof path source-verified | Pre-Dispatch | current runtime path | Generic `/api/execute` receipt is insufficient | BLOCKED |
 
 ## Evidence Packet Structure
 
@@ -122,7 +126,7 @@ SSE stream response captured; full response not stored.
 
 - [ ] Working tree clean
 - [ ] All required first reads done
-- [ ] Gate confirmations checked
+- [ ] PM-1 gate and executable `stream` proof path checked
 
 ## Write Ownership
 
@@ -136,7 +140,10 @@ Before committing: all source symbols verified; required evidence present; no fo
 
 1. Read all required first reads; confirm PM-1 gate.
 2. Classify any prior diagnostic before attempting.
-3. POST streaming request to `/api/execute` with `stream` method flag.
+3. Source-verify the executable method path before any live call. A generic
+   `/api/execute` request with an unsourced `method` flag is not valid proof.
+   Use the verified model-gateway adapter path or a separately authorized
+   runtime change; otherwise return BLOCKED.
 4. Capture first-token latency, receipt_id, http_status.
 5. Write evidence packet.
 6. Write completion review.
@@ -150,6 +157,7 @@ Before committing: all source symbols verified; required evidence present; no fo
 - `rawSecretPrinted=false`
 - Streaming tokens received and documented
 - `http_status=200` (or FAIL with diagnostic class)
+- Source-verified evidence that the live call actually executed `stream`
 - No EXTENSIONS/ source modified
 
 ## Acceptance Criteria
@@ -158,6 +166,7 @@ Before committing: all source symbols verified; required evidence present; no fo
 - [ ] `docs/evidence/provider-methods/streaming/qwen-turbo.md` created
 - [ ] Live receipt id present; `rawSecretPrinted=false`
 - [ ] Streaming behavior documented
+- [ ] Method-specific executable proof path cited in the packet
 - [ ] No code file in diff
 - [ ] Session continuity updated
 
@@ -172,8 +181,9 @@ Before committing: all source symbols verified; required evidence present; no fo
 
 ## Return-To-Orchestrator Conditions
 
-Stop if: PM-1 gate not confirmed; streaming API not supported by current
-route implementation; failure classified as non-retryable after 2 attempts.
+Stop if: PM-1 gate not confirmed; executable `stream` proof path cannot be
+source-verified; streaming API not supported by current route implementation;
+failure classified as non-retryable after 2 attempts.
 
 ## PM-3 Gate Output
 

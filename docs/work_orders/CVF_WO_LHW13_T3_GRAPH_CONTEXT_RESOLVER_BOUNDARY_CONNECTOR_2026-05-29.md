@@ -18,8 +18,10 @@ LHW11-T3 `memoryContextSeedDecayAdvisoryType` →
 `graphContextResolverBoundaryAdvisoryType` + `activeResolutionMode` +
 `phaseToNextMode`.
 
-Source: CVF 25.05 Gop_y.md Gap 9 — AIF-B graph modules exist (`GraphKnowledgeService`
-in graph-schema.ts at line 62) but are not wired into any runtime path. No
+Source: CVF 25.05 Gop_y.md Gap 9 — AIF-B graph modules exist
+(`GraphKnowledgeService` in
+`EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/graph/schema/graph-schema.ts`
+at line 62) but are not wired into any runtime path. No
 connector defines which resolution mode is active (text-retrieval /
 project-knowledge / graph-future) and what phase boundary separates them.
 Gap 9 direction: "Do not build now, just define boundary."
@@ -46,8 +48,9 @@ This connector is advisory only. It does NOT execute graph retrieval.
 ## Agent Roles
 
 Implementer writes spec (S1–S5). Reviewer checks: `GraphKnowledgeService`
-interface individually row-verified in S5; all 3 `activeResolutionMode` values
-individually row-verified; `runtimeExecutionAuthorized=false` explicit; no
+interface individually row-verified in S5; all 3 doc-only
+`graphServiceBoundaryStatus` values covered; `runtimeExecutionAuthorized=false`
+explicit; no
 graph retrieval execution claimed. Auditor confirms `tolaria` and CVF 25.05
 Gap 9 cited; defines boundary not execution. No self-review.
 
@@ -84,15 +87,21 @@ file, receipt envelope schema, public-sync repo.
 
 | Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 | --- | --- | --- | --- | --- | --- |
-| `GraphKnowledgeService` interface | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/graph/schema/graph-schema.ts` | line 62 | `export interface GraphKnowledgeService` | `GraphKnowledgeService` | ACCEPT |
+| `GraphKnowledgeService` interface | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/graph/schema/graph-schema.ts` | line 62 | `GraphKnowledgeService` | `GraphKnowledgeService` | ACCEPT |
 | `buildIndex` method | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/graph/schema/graph-schema.ts` | line 63 | `buildIndex` | `GraphKnowledgeService` | ACCEPT |
 | `queryImpact` method | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/graph/schema/graph-schema.ts` | line 64 | `queryImpact` | `GraphKnowledgeService` | ACCEPT |
 | `signalsStillMissing` field | `docs/reference/CVF_LHW7_T2_PROJECT_MEMORY_CONTEXT_BUDGET_HANDOFF_CONNECTOR_SPEC_2026-05-28.md` | S3 line 114 | `signalsStillMissing` | LHW7-T2 doc-only field | ACCEPT |
 | `memoryContextSeedDecayAdvisoryType` field | `docs/reference/CVF_LHW11_T3_MEMORY_CONTEXT_SEED_DECAY_ADVISORY_CONNECTOR_SPEC_2026-05-28.md` | S3 field list | `memoryContextSeedDecayAdvisoryType` | LHW11-T3 doc-only field | ACCEPT |
 | LH1 `tolaria` trigger | `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | line 129 | `tolaria` | LH1 CVF 16.5 ledger | ACCEPT |
-| `graphContextResolverBoundaryAdvisoryType` (new) | N/A — canonical doc-only field | S3 new fields | doc-only | Graph context resolver boundary packet | ACCEPT |
-| `activeResolutionMode` (new) | N/A — canonical doc-only field | S3 new fields | doc-only | Graph context resolver boundary packet | ACCEPT |
-| `phaseToNextMode` (new) | N/A — canonical doc-only field | S3 new fields | doc-only | Graph context resolver boundary packet | ACCEPT |
+
+New doc-only fields:
+
+| New doc-only field | Purpose | Not sourced from runtime? | Runtime claim blocked? | Validation expectation |
+| --- | --- | --- | --- | --- |
+| `graphContextResolverBoundaryAdvisoryType` | Names the graph resolver boundary planning advisory. | Yes | Yes | Defined only in the connector spec and verified by documentation review. |
+| `graphServiceBoundaryStatus` values: `interface_only`, `schema_proven`, `route_wired` | Defines the graph boundary status taxonomy for this connector. | Yes | Yes | Defined only in the connector spec; no runtime route wiring claim. |
+| `activeResolutionMode` | Records the currently permitted resolution mode as advisory text. | Yes | Yes | Defined only in the connector spec and verified by documentation review. |
+| `phaseToNextMode` | States the doc-only phase boundary before another mode may be claimed. | Yes | Yes | Defined only in the connector spec and verified by documentation review. |
 
 ## Roadmap-To-Work-Order Trace Matrix
 
@@ -100,7 +109,7 @@ file, receipt envelope schema, public-sync repo.
 | --- | --- | --- | --- | --- |
 | T3 spec; AIF-B/LHW7-T2/LHW11-T3 field names verbatim | S1–S5 | spec at target path | Reviewer confirms verbatim | OPEN |
 | `GraphKnowledgeService` interface individually row-verified | S5 | interface row | No aggregate | OPEN |
-| All 3 `activeResolutionMode` values individually row-verified | S5 | 3 rows | No aggregate | OPEN |
+| All 3 doc-only `graphServiceBoundaryStatus` values covered | S5 | 3 rows | No aggregate | OPEN |
 | `runtimeExecutionAuthorized=false` explicit; no graph retrieval | S1, S3 | invariant | grep check | OPEN |
 | T1 AND T2 gates confirmed | Authority Chain | both completion reviews | Read both | OPEN |
 | LHW13 wave closure summary in completion review | Closure Checklist | T1+T2+T3 table | Reviewer checks | OPEN |
@@ -159,7 +168,7 @@ Implementer owns all new files. No file outside Allowed list may be modified.
 
 - Spec < 250 lines
 - `GraphKnowledgeService` interface individually row-verified
-- All 3 `activeResolutionMode` values individually row-verified
+- All 3 doc-only `graphServiceBoundaryStatus` values covered
 - `runtimeExecutionAuthorized=false` explicit; no graph retrieval
 - T1 AND T2 gates confirmed
 - No code file in diff
@@ -170,7 +179,7 @@ Implementer owns all new files. No file outside Allowed list may be modified.
 - [ ] T1 AND T2 CLOSED_PASS_BOUNDED confirmed
 - [ ] Spec with all 5 sections; < 250 lines
 - [ ] `GraphKnowledgeService` interface individually row-verified in S5
-- [ ] All 3 `activeResolutionMode` values individually row-verified
+- [ ] All 3 doc-only `graphServiceBoundaryStatus` values covered
 - [ ] `runtimeExecutionAuthorized=false` explicit; no graph execution claimed
 - [ ] `tolaria` and CVF 25.05 Gap 9 cited in S1
 - [ ] No code file in diff
@@ -181,13 +190,13 @@ Implementer owns all new files. No file outside Allowed list may be modified.
 Fail conditions:
 - T1 or T2 gate not confirmed
 - Connector claims to execute graph retrieval or wire `GraphKnowledgeService`
-- `activeResolutionMode` values aggregated in S5
+- `graphServiceBoundaryStatus` values aggregated in S5
 
 ## Review Gate
 
-T1 and T2 confirmed; `GraphKnowledgeService` + 3 resolution modes individually
-verified; `runtimeExecutionAuthorized=false`; no graph execution; spec < 250
-lines; no code file.
+T1 and T2 confirmed; `GraphKnowledgeService` verified and all 3 doc-only graph
+boundary status values covered; `runtimeExecutionAuthorized=false`; no graph
+execution; spec < 250 lines; no code file.
 
 ## Closure Checklist
 

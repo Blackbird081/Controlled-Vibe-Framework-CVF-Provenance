@@ -67,7 +67,10 @@ Confirmed provider/method pairs at HEAD `a8d2a0eb`:
 ## Decision / Baseline
 
 PM-1, PM-2, PM-3 are authorized. PM-1 and PM-2 require live API calls using
-existing keys. PM-3 is documentation-only (gap boundary record).
+existing keys plus a source-verified executable method path. A generic
+`/api/execute` receipt is not valid method proof unless the route is
+source-verified to execute the named method. PM-3 is documentation-only (gap
+boundary record).
 
 Sequencing: PM-1 → PM-2 → PM-3.
 

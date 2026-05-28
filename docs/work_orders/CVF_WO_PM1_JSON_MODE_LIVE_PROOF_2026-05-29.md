@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: READY_FOR_IMPLEMENTATION
+Status: HOLD_SOURCE_VERIFIED_PROOF_PATH_REQUIRED
 
 docType: work_order
 
@@ -12,7 +12,7 @@ Date: 2026-05-29
 
 ## Purpose
 
-Collect live receipt evidence for `json_mode` method on DeepSeek
+Prepare live receipt evidence for `json_mode` method on DeepSeek
 `deepseek-chat` and OpenAI `gpt-4o`. Produces structured evidence packets in
 `docs/evidence/provider-methods/json-mode/`. Closes the `json_mode` half of
 CVF 25.05 Gap 3.
@@ -32,7 +32,9 @@ but has no live receipt proof. D-wave used `complete` method only.
 
 ## Agent Roles
 
-Implementer makes 2 live calls (DeepSeek + OpenAI), collects receipts, writes
+Implementer may proceed only after source-verifying an executable `json_mode`
+path. After that gate, implementer makes 2 live calls (DeepSeek + OpenAI),
+collects receipts, writes
 evidence packets. Reviewer checks: `evidenceMode=live` on both receipts;
 `rawSecretPrinted=false`; response validates as JSON; `http_status=200`.
 Auditor confirms boundary: no provider routing change, no receipt envelope
@@ -73,6 +75,7 @@ provider routing changes, `governance/` changes, public-sync repo.
 | `gpt-4o` supports `json_mode` | `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-registry.ts` | line 93 | `json_mode` in supportedMethods | openai model capability | ACCEPT |
 | Live run diagnostic standard | `docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md` | full document | diagnostic classification guide | CVF live run standard | ACCEPT |
 | PM-1 GC-018 authorization | `docs/baselines/CVF_GC018_PROVIDER_METHOD_LIVE_PROOF_2026-05-29.md` | full document | json_mode authorization | PM GC-018 | ACCEPT |
+| Executable `json_mode` proof path | source path not yet verified | blocked before implementation | method-specific runtime path | provider method execution path | BLOCKED_SOURCE_NOT_FOUND |
 
 ## Roadmap-To-Work-Order Trace Matrix
 
@@ -82,6 +85,7 @@ provider routing changes, `governance/` changes, public-sync repo.
 | Live receipt on each call | Evidence Requirements | receipt_id in each packet | `rawSecretPrinted=false` | OPEN |
 | JSON response validation | Evidence Requirements | response validates as JSON | packet documents validation | OPEN |
 | No provider routing change | Scope Forbidden | git diff | `git diff --name-only` | OPEN |
+| Executable `json_mode` proof path source-verified | Pre-Dispatch | current runtime path | Generic `/api/execute` receipt is insufficient | BLOCKED |
 
 ## Evidence Packet Structure
 
@@ -127,7 +131,7 @@ PASS / FAIL
 
 - [ ] Working tree clean
 - [ ] All required first reads done
-- [ ] Gate confirmations checked
+- [ ] Executable `json_mode` proof path source-verified; generic `/api/execute` receipt not accepted as method proof
 
 ## Write Ownership
 
@@ -136,10 +140,10 @@ Implementer owns all new files. No file outside the Allowed list may be modified
 ## Execution Plan
 
 1. Read all required first reads and live run diagnostic standard.
-2. POST to `/api/execute` (local dev server or hosted) with `json_mode` payload:
-   - DeepSeek: `{"provider": "deepseek", "model": "deepseek-chat", "method": "json_mode", ...}`
-   - OpenAI: `{"provider": "openai", "model": "gpt-4o", "method": "json_mode", ...}`
-   - Use `cvfRiskLevel: "R1"` in payload.
+2. Source-verify the executable method path before any live call. A generic
+   `/api/execute` request with an unsourced `method` flag is not valid proof.
+   Use the verified model-gateway adapter path or a separately authorized
+   runtime change; otherwise return BLOCKED.
 3. Record receipt_id, http_status, duration_ms for each call.
 4. Classify any failure per live run diagnostic standard before re-attempting.
 5. Write 2 evidence packets.
@@ -156,6 +160,7 @@ Implementer owns all new files. No file outside the Allowed list may be modified
 - `http_status=200` on both (or FAIL documented with diagnostic class)
 - No provider routing change in diff
 - No `EXTENSIONS/` source file modified
+- Source-verified evidence that the live call actually executed `json_mode`
 
 ## Acceptance Criteria
 
@@ -164,12 +169,14 @@ Implementer owns all new files. No file outside the Allowed list may be modified
 - [ ] Both packets have live receipt ids and `rawSecretPrinted=false`
 - [ ] JSON validation documented in each packet
 - [ ] No code file in diff
+- [ ] Method-specific executable proof path cited in each packet
 - [ ] Session continuity updated
 
 Fail conditions:
 - `rawSecretPrinted=true` anywhere
 - Receipt id is synthetic/placeholder rather than live
 - Provider routing or EXTENSIONS/ source modified
+- Evidence relies only on generic `/api/execute` with an unverified `method` flag
 
 ## Review Gate
 
@@ -188,7 +195,8 @@ response validated; no code file; no provider routing change.
 
 ## Return-To-Orchestrator Conditions
 
-Stop if: live run fails 2× with non-retryable diagnostic class; API key is
+Stop if: executable `json_mode` proof path cannot be source-verified; live run
+fails 2× with non-retryable diagnostic class; API key is
 invalid or quota exhausted; `json_mode` method returns non-JSON response that
 cannot be classified as provider behavior gap.
 

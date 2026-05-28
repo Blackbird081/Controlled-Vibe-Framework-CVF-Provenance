@@ -439,6 +439,76 @@ def _validate_false_invariant_prose(text: str, rows: list[dict[str, str]]) -> li
     return issues
 
 
+def _validate_known_false_invariant_claims(text: str) -> list[str]:
+    issues: list[str] = []
+    for block in _non_table_blocks(text):
+        if not re.search(r"\bMemoryGatewayDecision\b", block):
+            continue
+        if not re.search(r"\bcanReinject`?\s*(?:=|:)\s*false\b", block):
+            continue
+        if re.search(
+            r"connector-normalized|not\s+source[- ](?:proof|verified)|not\s+source-claimed|boolean\s+field",
+            block,
+            re.IGNORECASE,
+        ):
+            continue
+        issues.append(
+            "Prose claims `MemoryGatewayDecision.canReinject=false`; the known source contract "
+            "declares `canReinject` as a boolean unless a cited source proves a literal false assignment"
+        )
+        break
+    return issues
+
+
+def _row_has_blocking_disposition(row: dict[str, str]) -> bool:
+    disposition = row.get("Disposition", "").upper()
+    return "BLOCKED_SOURCE_NOT_FOUND" in disposition or disposition == "BLOCKED"
+
+
+def _validate_ready_source_blockers(text: str) -> list[str]:
+    rows = _parse_markdown_tables(text)
+    blocked = [row for row in rows if _row_has_blocking_disposition(row)]
+    if not blocked:
+        return []
+    return [
+        "dispatch/ready work order contains blocking Source Verification disposition; "
+        "use HOLD/DRAFT until source facts are resolved"
+    ]
+
+
+def _looks_like_live_method_proof(text: str) -> bool:
+    lowered = text.lower()
+    return (
+        "live proof" in lowered
+        and ("provider method" in lowered or "json_mode" in lowered or "streaming" in lowered or "tool_call" in lowered)
+    )
+
+
+def _has_source_verified_executable_proof_path(text: str) -> bool:
+    for row in _parse_markdown_tables(text):
+        if "ACCEPT" not in row.get("Disposition", "").upper():
+            continue
+        joined = " ".join(row.values()).lower()
+        if "executable" not in joined or "proof path" not in joined:
+            continue
+        if any(_exists_rel(source_path) for source_path in _extract_paths(row.get("Source file", ""))):
+            return True
+    return False
+
+
+def _validate_ready_live_method_proof_path(text: str) -> list[str]:
+    if not _looks_like_live_method_proof(text):
+        return []
+    if "/api/execute" not in text and "method flag" not in text.lower():
+        return []
+    if _has_source_verified_executable_proof_path(text):
+        return []
+    return [
+        "dispatch/ready live-method proof cites generic `/api/execute` or a method flag "
+        "without a source-verified executable proof path"
+    ]
+
+
 def _validate_accepted_source_rows(path: str, text: str) -> list[str]:
     issues: list[str] = []
     rows = _parse_markdown_tables(text)
@@ -456,6 +526,13 @@ def _validate_accepted_source_rows(path: str, text: str) -> list[str]:
         source_cell = row.get("Source file", "")
         source_paths = _extract_paths(source_cell)
         if not source_paths:
+            joined = " ".join(row.values()).lower()
+            if "doc-only" in joined or "(new)" in joined:
+                issues.append(
+                    "New doc-only fields must be listed in a separate New Doc-Only Fields table, "
+                    "not as Source Verification ACCEPT rows"
+                )
+                continue
             if "canonical" not in source_cell.lower() and "n/a" not in source_cell.lower():
                 issues.append("Source Verification ACCEPT row lacks a concrete source file or canonical-contract marker")
             continue
@@ -468,6 +545,20 @@ def _validate_accepted_source_rows(path: str, text: str) -> list[str]:
             false_issue = _validate_false_invariant_against_source(source_path, source_text, row)
             if false_issue:
                 issues.append(false_issue)
+            joined = " ".join(row.values()).lower()
+            if (
+                source_path.startswith("docs/roadmaps/")
+                and ("doc-only field" in joined or "advisorytype" in joined or "boundarymarker" in joined)
+            ):
+                issues.append(
+                    "Source Verification ACCEPT for connector doc-only field cites a roadmap; "
+                    "cite the connector spec after it exists or move the field to New Doc-Only Fields"
+                )
+            if re.search(r"\b(?:pending|planned|future)\b", row.get("Verified line/section", ""), re.IGNORECASE):
+                issues.append(
+                    "Source Verification ACCEPT uses pending/planned/future line or section language; "
+                    "use BLOCKED_SOURCE_NOT_FOUND until the source exists"
+                )
             if "values" not in f"{claimed} {verified_symbol}".lower():
                 continue
             declared_values = _extract_declared_string_values(source_text, verified_symbol)
@@ -481,6 +572,7 @@ def _validate_accepted_source_rows(path: str, text: str) -> list[str]:
                     f"`{verified_symbol.strip().strip('`')}` but omits source value(s): {', '.join(missing_values)}"
                 )
     issues.extend(_validate_false_invariant_prose(text, rows))
+    issues.extend(_validate_known_false_invariant_claims(text))
     return issues
 
 
@@ -528,6 +620,8 @@ def _validate_work_order(path: str, text: str) -> list[str]:
         )
         if blocking_precondition:
             issues.append("dispatch/ready status conflicts with unresolved CLOSED_PASS precondition language")
+        issues.extend(_validate_ready_source_blockers(text))
+        issues.extend(_validate_ready_live_method_proof_path(text))
 
     issues.extend(_validate_accepted_source_rows(path, text))
     issues.extend(_validate_no_empty_range_commands(text))
@@ -548,6 +642,15 @@ def _validate_roadmap(path: str, text: str) -> list[str]:
         wave_id = _extract_wave_id(path, text)
         if wave_id is not None and not _has_gc018_for_wave(wave_id):
             issues.append(f"LHW{wave_id} connector roadmap is dispatch/ready without fresh GC-018 baseline")
+    issues.extend(_validate_accepted_source_rows(path, text))
+    issues.extend(_validate_no_empty_range_commands(text))
+    return issues
+
+
+def _validate_baseline(path: str, text: str) -> list[str]:
+    issues: list[str] = []
+    issues.extend(_validate_status_token_hygiene(text, "baseline"))
+    issues.extend(_validate_closed_artifact_finality(text, "baseline"))
     issues.extend(_validate_accepted_source_rows(path, text))
     issues.extend(_validate_no_empty_range_commands(text))
     return issues
@@ -720,6 +823,7 @@ def _is_target(path: str) -> bool:
     return normalized.endswith(".md") and (
         normalized.startswith("docs/work_orders/")
         or normalized.startswith("docs/roadmaps/")
+        or normalized.startswith("docs/baselines/")
         or normalized.startswith("docs/reviews/")
         or (
             normalized.startswith("docs/reference/CVF_LHW")
@@ -737,6 +841,8 @@ def _validate_path(path: str) -> list[str]:
         return _validate_work_order(normalized, text)
     if normalized.startswith("docs/roadmaps/"):
         return _validate_roadmap(normalized, text)
+    if normalized.startswith("docs/baselines/"):
+        return _validate_baseline(normalized, text)
     if normalized.startswith("docs/reviews/") and "FAST_LANE_AUDIT" in normalized.upper():
         return _validate_fast_lane_audit(normalized, text)
     if normalized.startswith("docs/reviews/") or (

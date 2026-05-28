@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: HOLD_UNTIL_T1_PASS
+Status: CLOSED_PASS
 
 docType: work_order
 
@@ -93,20 +93,25 @@ schema, public-sync repo.
 | `competitor_review` pack id | `governance/registries/cvf-certified-skill-pack-registry.json` | entry 8 `id` | `competitor_review` | skill pack registry | ACCEPT |
 | `data_analysis` pack id | `governance/registries/cvf-certified-skill-pack-registry.json` | entry 9 `id` | `data_analysis` | skill pack registry | ACCEPT |
 | `app_requirements_spec` pack id | `governance/registries/cvf-certified-skill-pack-registry.json` | entry 10 `id` | `app_requirements_spec` | skill pack registry | ACCEPT |
-| `outcomeGroupAdvisoryType` (new) | N/A — canonical doc-only field | S3 new fields | doc-only | Outcome pack taxonomy grouping packet | ACCEPT |
-| `packGroupRecommendation` (new) | N/A — canonical doc-only field | S3 new fields | doc-only | Outcome pack taxonomy grouping packet | ACCEPT |
-| `contextSignalsNeeded` (new) | N/A — canonical doc-only field | S3 new fields | doc-only | Outcome pack taxonomy grouping packet | ACCEPT |
+
+New doc-only fields:
+
+| New doc-only field | Purpose | Not sourced from runtime? | Runtime claim blocked? | Validation expectation |
+| --- | --- | --- | --- | --- |
+| `outcomeGroupAdvisoryType` | Names the outcome grouping advisory for pack planning. | Yes | Yes | Defined only in the connector spec and verified by documentation review. |
+| `packGroupRecommendation` | Records a non-executing group recommendation. | Yes | Yes | Defined only in the connector spec and verified by documentation review. |
+| `contextSignalsNeeded` | Lists planning context still needed before pack work. | Yes | Yes | Defined only in the connector spec and verified by documentation review. |
 
 ## Roadmap-To-Work-Order Trace Matrix
 
 | Roadmap requirement | Work order section | Output artifact | Verification | Status |
 | --- | --- | --- | --- | --- |
-| T2 spec; C8/CB1/registry field names verbatim | S1–S5 | spec at target path | Reviewer confirms verbatim | OPEN |
-| All 10 pack IDs individually row-verified | S5 | 10 rows | No aggregate | OPEN |
-| Both `ProductSkillPackSelectionStatus` values individually row-verified | S5 | 2 rows | No aggregate | OPEN |
-| `runtimeExecutionAuthorized=false` explicit | S1, S3 | invariant | grep check | OPEN |
-| T1 gate confirmed | Authority Chain | T1 completion review | Read T1 review | OPEN |
-| No pack execution claimed | Evidence | git diff | `git diff --name-only` | OPEN |
+| T2 spec; C8/CB1/registry field names verbatim | S1-S5 | spec at target path | Reviewer confirms verbatim | CLOSED |
+| All 10 pack IDs individually row-verified | S5 | 10 rows | No aggregate | CLOSED |
+| Both `ProductSkillPackSelectionStatus` values individually row-verified | S5 | 2 rows | No aggregate | CLOSED |
+| `runtimeExecutionAuthorized=false` explicit | S1, S3 | invariant | grep check | CLOSED |
+| T1 gate confirmed | Authority Chain | T1 completion review | Read T1 review | CLOSED |
+| No pack execution claimed | Evidence | git diff | `git diff --name-only` | CLOSED |
 
 ## Deliverable — Connector Spec
 
@@ -136,10 +141,10 @@ Key invariant: "This connector does not select or execute a pack.
 
 ## Pre-Flight
 
-- [ ] Working tree clean
-- [ ] T1 CLOSED_PASS_BOUNDED confirmed
-- [ ] All 10 pack IDs confirmed from registry
-- [ ] `ProductSkillPackSelectionStatus` values confirmed from source line 45
+- [x] Working tree clean
+- [x] T1 CLOSED_PASS_BOUNDED confirmed
+- [x] All 10 pack IDs confirmed from registry
+- [x] `ProductSkillPackSelectionStatus` values confirmed from source line 45
 
 ## Write Ownership
 
@@ -168,15 +173,15 @@ Implementer owns all new files. No file outside Allowed list may be modified.
 
 ## Acceptance Criteria
 
-- [ ] T1 CLOSED_PASS_BOUNDED confirmed before dispatch
-- [ ] Spec with all 5 sections; < 250 lines
-- [ ] S2 taxonomy covers all 10 packs mapped to 5 outcome groups
-- [ ] All 10 pack IDs individually row-verified in S5
-- [ ] Both `ProductSkillPackSelectionStatus` values individually row-verified
-- [ ] `runtimeExecutionAuthorized=false` explicit
-- [ ] No pack execution claimed
-- [ ] No code file in diff
-- [ ] Session continuity updated
+- [x] T1 CLOSED_PASS_BOUNDED confirmed before dispatch
+- [x] Spec with all 5 sections; < 250 lines
+- [x] S2 taxonomy covers all 10 packs mapped to 5 outcome groups
+- [x] All 10 pack IDs individually row-verified in S5
+- [x] Both `ProductSkillPackSelectionStatus` values individually row-verified
+- [x] `runtimeExecutionAuthorized=false` explicit
+- [x] No pack execution claimed
+- [x] No code file in diff
+- [x] Session continuity updated
 
 Fail conditions:
 - T1 gate not confirmed
@@ -190,15 +195,15 @@ T1 gate confirmed; all 10 pack IDs individually verified; verbatim field names;
 
 ## Closure Checklist
 
-- [ ] T1 CLOSED_PASS_BOUNDED confirmed
-- [ ] Spec with all 5 sections
-- [ ] S2 taxonomy grouping uses C8/CB1/registry vocabulary verbatim
-- [ ] `runtimeExecutionAuthorized=false` explicit
-- [ ] S5 complete; no aggregate rows
-- [ ] No code file in diff
-- [ ] Fast Lane audit created
-- [ ] Session continuity updated
-- [ ] Completion review with T3 gate answer written
+- [x] T1 CLOSED_PASS_BOUNDED confirmed
+- [x] Spec with all 5 sections
+- [x] S2 taxonomy grouping uses C8/CB1/registry vocabulary verbatim
+- [x] `runtimeExecutionAuthorized=false` explicit
+- [x] S5 complete; no aggregate rows
+- [x] No code file in diff
+- [x] Fast Lane audit created
+- [x] Session continuity updated
+- [x] Completion review with T3 gate answer written
 
 ## Return-To-Orchestrator Conditions
 

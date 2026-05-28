@@ -74,7 +74,8 @@ LHW12 is authorized. Each tranche is documentation-only, binds surfaces already
 CLOSED_PASS_BOUNDED in HEAD, adds no runtime authority, and extends no receipt
 envelope schema.
 
-T2 is gated on T1 CLOSED_PASS. T3 is gated on T1 + T2 CLOSED_PASS.
+T2 is gated as `HOLD_UNTIL_T1_PASS`. T3 is gated as
+`HOLD_UNTIL_T1_AND_T2_PASS`.
 
 The blocked-work-class list in `ACTIVE_SESSION_STATE.json` remains in force.
 LHW12 does NOT implement posture-based model routing in runtime. The connector

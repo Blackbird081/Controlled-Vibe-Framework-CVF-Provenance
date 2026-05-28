@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: HOLD_UNTIL_T1_AND_T2_PASS
+Status: CLOSED_PASS
 
 docType: work_order
 
@@ -97,21 +97,26 @@ file, receipt envelope schema, public-sync repo.
 | `transitionEnforcementAdvisoryType` field | `docs/reference/CVF_LHW10_T1_WORKFLOW_TRANSITION_ENFORCEMENT_ADVISORY_CONNECTOR_SPEC_2026-05-28.md` | S3 line 137 | `transitionEnforcementAdvisoryType` | LHW10-T1 doc-only field | ACCEPT |
 | `escalated_blocked` | `docs/reference/CVF_LHW10_T1_WORKFLOW_TRANSITION_ENFORCEMENT_ADVISORY_CONNECTOR_SPEC_2026-05-28.md` | S2 lines 88–102 | blocked-tier value | LHW10-T1 S2 mapping | ACCEPT |
 | LH1 `deepagents` trigger | `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | line 156 | `deepagents` | LH1 CVF ADD ledger | ACCEPT |
-| `workerLifecycleAdvisoryType` (new) | N/A — canonical doc-only field | S3 new fields | doc-only | Async worker lifecycle boundary packet | ACCEPT |
-| `spawnAuthorizationAdvisory` (new) | N/A — canonical doc-only field | S3 new fields | doc-only | Async worker lifecycle boundary packet | ACCEPT |
-| `maxScopeAdvisory` (new) | N/A — canonical doc-only field | S3 new fields | doc-only | Async worker lifecycle boundary packet | ACCEPT |
+
+New doc-only fields:
+
+| New doc-only field | Purpose | Not sourced from runtime? | Runtime claim blocked? | Validation expectation |
+| --- | --- | --- | --- | --- |
+| `workerLifecycleAdvisoryType` | Names the worker lifecycle planning advisory. | Yes | Yes | Defined only in the connector spec and verified by documentation review. |
+| `spawnAuthorizationAdvisory` | Records advisory-only spawn posture without runtime authority. | Yes | Yes | Defined only in the connector spec and verified by documentation review. |
+| `maxScopeAdvisory` | States the maximum advisory scope for a worker sub-task. | Yes | Yes | Defined only in the connector spec and verified by documentation review. |
 
 ## Roadmap-To-Work-Order Trace Matrix
 
 | Roadmap requirement | Work order section | Output artifact | Verification | Status |
 | --- | --- | --- | --- | --- |
-| T3 spec; WR1/MA1/LHW10-T1 field names verbatim | S1–S5 | spec at target path | Reviewer confirms verbatim | OPEN |
-| All 4 `WorkflowRecoveryAction` values individually row-verified | S5 | 4 rows | No aggregate | OPEN |
-| All 4 MA1 role lane values individually row-verified | S5 | 4 rows | No aggregate | OPEN |
-| LH1 `deepagents` trigger cited | S1 | explicit in S1 Purpose | Auditor checks | OPEN |
-| `runtimeExecutionAuthorized=false` explicit | S1, S3 | invariant | grep check | OPEN |
-| T1 AND T2 gates confirmed | Authority Chain | both completion reviews | Read both | OPEN |
-| LHW12 wave closure summary in completion review | Closure Checklist | T1+T2+T3 table | Reviewer checks | OPEN |
+| T3 spec; WR1/MA1/LHW10-T1 field names verbatim | S1–S5 | spec at target path | Reviewer confirms verbatim | CLOSED |
+| All 4 `WorkflowRecoveryAction` values individually row-verified | S5 | 4 rows | No aggregate | CLOSED |
+| All 4 MA1 role lane values individually row-verified | S5 | 4 rows | No aggregate | CLOSED |
+| LH1 `deepagents` trigger cited | S1 | explicit in S1 Purpose | Auditor checks | CLOSED |
+| `runtimeExecutionAuthorized=false` explicit | S1, S3 | invariant | grep check | CLOSED |
+| T1 AND T2 gates confirmed | Authority Chain | both completion reviews | Read both | CLOSED |
+| LHW12 wave closure summary in completion review | Closure Checklist | T1+T2+T3 table | Reviewer checks | CLOSED |
 
 ## Deliverable — Connector Spec
 
@@ -138,11 +143,11 @@ only — no runtime spawn gate."
 
 ## Pre-Flight
 
-- [ ] Working tree clean
-- [ ] T1 AND T2 CLOSED_PASS_BOUNDED confirmed
-- [ ] `WorkflowRecoveryAction` values confirmed from workflow-resolver.ts lines 50–54
-- [ ] MA1 role lanes confirmed from MA1 standard lines 96–99
-- [ ] LH1 `deepagents` trigger at line 156 confirmed
+- [x] Working tree clean
+- [x] T1 AND T2 CLOSED_PASS_BOUNDED confirmed
+- [x] `WorkflowRecoveryAction` values confirmed from workflow-resolver.ts lines 50–54
+- [x] MA1 role lanes confirmed from MA1 standard lines 96–99
+- [x] LH1 `deepagents` trigger at line 156 confirmed
 
 ## Write Ownership
 
@@ -174,16 +179,16 @@ Implementer owns all new files. No file outside Allowed list may be modified.
 
 ## Acceptance Criteria
 
-- [ ] T1 AND T2 CLOSED_PASS_BOUNDED confirmed before dispatch
-- [ ] Spec with all 5 sections; < 250 lines
-- [ ] All 4 `WorkflowRecoveryAction` values individually row-verified in S5
-- [ ] All 4 MA1 role lane values individually row-verified in S5
-- [ ] LH1 `deepagents` trigger cited in S1
-- [ ] `runtimeExecutionAuthorized=false` explicit; no subagent spawn claimed
-- [ ] No code file in diff
-- [ ] Session continuity updated; LHW12 CLOSED_PASS_BOUNDED
-- [ ] LHW12 roadmap Status → CLOSED_PASS_BOUNDED; actual commit SHA in Verification
-- [ ] Completion review includes LHW12 wave closure summary table
+- [x] T1 AND T2 CLOSED_PASS_BOUNDED confirmed before dispatch
+- [x] Spec with all 5 sections; < 250 lines
+- [x] All 4 `WorkflowRecoveryAction` values individually row-verified in S5
+- [x] All 4 MA1 role lane values individually row-verified in S5
+- [x] LH1 `deepagents` trigger cited in S1
+- [x] `runtimeExecutionAuthorized=false` explicit; no subagent spawn claimed
+- [x] No code file in diff
+- [x] Session continuity updated; LHW12 CLOSED_PASS_BOUNDED
+- [x] LHW12 roadmap Status → CLOSED_PASS_BOUNDED; actual commit SHA in Verification
+- [x] Completion review includes LHW12 wave closure summary table
 
 Fail conditions:
 - T1 or T2 gate not confirmed
@@ -197,16 +202,16 @@ T1 and T2 confirmed; all WR1 (4) + MA1 (4) individually verified; `runtimeExecut
 
 ## Closure Checklist
 
-- [ ] T1 AND T2 CLOSED_PASS_BOUNDED confirmed
-- [ ] Spec with all 5 sections
-- [ ] S2 mapping uses WR1/MA1/LHW10-T1 vocabulary verbatim
-- [ ] `runtimeExecutionAuthorized=false` explicit; no subagent spawn
-- [ ] S5 complete; no aggregate rows
-- [ ] No code file in diff
-- [ ] Fast Lane audit created
-- [ ] Session continuity: LHW12 CLOSED_PASS_BOUNDED
-- [ ] LHW12 roadmap updated with actual commit SHA + Status CLOSED_PASS_BOUNDED
-- [ ] Completion review with LHW12 wave closure summary written
+- [x] T1 AND T2 CLOSED_PASS_BOUNDED confirmed
+- [x] Spec with all 5 sections
+- [x] S2 mapping uses WR1/MA1/LHW10-T1 vocabulary verbatim
+- [x] `runtimeExecutionAuthorized=false` explicit; no subagent spawn
+- [x] S5 complete; no aggregate rows
+- [x] No code file in diff
+- [x] Fast Lane audit created
+- [x] Session continuity: LHW12 CLOSED_PASS_BOUNDED
+- [x] LHW12 roadmap updated with actual commit SHA + Status CLOSED_PASS_BOUNDED
+- [x] Completion review with LHW12 wave closure summary written
 
 ## Return-To-Orchestrator Conditions
 

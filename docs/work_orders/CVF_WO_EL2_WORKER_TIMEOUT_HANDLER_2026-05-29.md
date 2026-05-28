@@ -24,7 +24,7 @@ detection → sandbox clear → restart → re-dispatch). CVF has no equivalent.
 
 - EL GC-018: `docs/baselines/CVF_GC018_EXECUTION_LAYER_2026-05-29.md`
 - EL Roadmap: `docs/roadmaps/CVF_EXECUTION_LAYER_ROADMAP_2026-05-29.md`
-- CVF 28.05: `docs/baselines/CVF_GC018_EXECUTION_LAYER_2026-05-29.md` lines 104–115
+- CVF 28.05: `.private_reference/legacy/CVF 28.05/cvf_cli.py` lines 104–115
 - Live run diagnostic standard: `docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md`
 - V3 diagnostics: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts`
   — `ExecutionDiagnosticClass`; add `worker_timeout` class here
@@ -62,7 +62,7 @@ public-sync repo.
 3. `docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md`
 4. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts`
    — existing `ExecutionDiagnosticClass` values at lines 16–38
-5. `docs/baselines/CVF_GC018_EXECUTION_LAYER_2026-05-29.md` — timeout recovery lines 104–115
+5. `.private_reference/legacy/CVF 28.05/cvf_cli.py` — timeout recovery lines 104–115
 6. `docs/reviews/CVF_EL1_PIPELINE_CHAIN_ORCHESTRATOR_CONTRACT_COMPLETION_2026-05-29.md`
    — confirm EL-1 CLOSED_PASS
 
@@ -71,7 +71,7 @@ public-sync repo.
 | Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 | --- | --- | --- | --- | --- | --- |
 | `ExecutionDiagnosticClass` type | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts` | lines 16–38 | `ExecutionDiagnosticClass` | `ExecutionDiagnostic` | ACCEPT |
-| CVF 28.05 timeout recovery | `docs/baselines/CVF_GC018_EXECUTION_LAYER_2026-05-29.md` | lines 104–115 | `WorkerTimeoutException` recovery | `CVFOrchestratorCLI.run_workflow` | ACCEPT |
+| CVF 28.05 timeout recovery | canonical-contract: `.private_reference/legacy/CVF 28.05/cvf_cli.py` | lines 104–115 | `WorkerTimeoutException` | `CVFOrchestratorCLI.run_workflow` | ACCEPT |
 | Live run diagnostic standard | `docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md` | full document | diagnostic classification | CVF live run standard | ACCEPT |
 | EL GC-018 authorization | `docs/baselines/CVF_GC018_EXECUTION_LAYER_2026-05-29.md` | full document | EL-2 authorization | EL GC-018 | ACCEPT |
 

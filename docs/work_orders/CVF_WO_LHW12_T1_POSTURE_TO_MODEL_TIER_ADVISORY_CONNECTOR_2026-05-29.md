@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: READY_FOR_IMPLEMENTATION
+Status: CLOSED_PASS
 
 docType: work_order
 
@@ -85,18 +85,23 @@ file, receipt envelope schema, public-sync repo, provider routing change.
 | `budgetTier` field | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-request-context-readout.ts` | line 16 | `budgetTier` | `RouteRequestContextReadout` | ACCEPT |
 | `CVFRole` type | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-identity.ts` | line 1 import | `CVFRole` from `cvf-guard-contract` | `ExecutionIdentityDecision.cvfRole` | ACCEPT |
 | `cvfRole` field | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-identity.ts` | line 29 | `cvfRole: CVFRole \| null` | `ExecutionIdentityDecision` | ACCEPT |
-| `modelTierAdvisoryType` (new) | N/A — canonical doc-only field | S3 new fields | doc-only | Posture-to-model tier advisory packet | ACCEPT |
-| `recommendedModelTier` (new) | N/A — canonical doc-only field | S3 new fields | doc-only | Posture-to-model tier advisory packet | ACCEPT |
+
+New doc-only fields:
+
+| New doc-only field | Purpose | Not sourced from runtime? | Runtime claim blocked? | Validation expectation |
+| --- | --- | --- | --- | --- |
+| `modelTierAdvisoryType` | Names the posture-to-model planning advisory. | Yes | Yes | Defined only in the connector spec and verified by documentation review. |
+| `recommendedModelTier` | Records the non-executing model tier recommendation. | Yes | Yes | Defined only in the connector spec and verified by documentation review. |
 
 ## Roadmap-To-Work-Order Trace Matrix
 
 | Roadmap requirement | Work order section | Output artifact | Verification | Status |
 | --- | --- | --- | --- | --- |
-| T1 spec; LHW11-T1/CB1/G1 field names verbatim | S1–S5 | spec at target path | Reviewer confirms verbatim | OPEN |
-| 3 `sessionGovernancePostureType` values individually row-verified | S5 | 3 rows | No aggregate | OPEN |
-| 3 `budgetTier` values individually row-verified | S5 | 3 rows | No aggregate | OPEN |
-| `runtimeExecutionAuthorized=false` explicit | S1, S3 | invariant | grep check | OPEN |
-| No provider routing change | Evidence | git diff | `git diff --name-only` | OPEN |
+| T1 spec; LHW11-T1/CB1/G1 field names verbatim | S1-S5 | spec at target path | Reviewer confirms verbatim | CLOSED |
+| 3 `sessionGovernancePostureType` values individually row-verified | S5 | 3 rows | No aggregate | CLOSED |
+| 3 `budgetTier` values individually row-verified | S5 | 3 rows | No aggregate | CLOSED |
+| `runtimeExecutionAuthorized=false` explicit | S1, S3 | invariant | grep check | CLOSED |
+| No provider routing change | Evidence | git diff | `git diff --name-only` | CLOSED |
 
 ## Deliverable — Connector Spec
 
@@ -120,10 +125,10 @@ change provider routing. `modelTierAdvisoryType` is a governance planning record
 
 ## Pre-Flight
 
-- [ ] Working tree clean
-- [ ] All required first reads done
-- [ ] `sessionGovernancePostureType` values confirmed from LHW11-T1 S3
-- [ ] `budgetTier` values confirmed from CB1 source line 6
+- [x] Working tree clean
+- [x] All required first reads done
+- [x] `sessionGovernancePostureType` values confirmed from LHW11-T1 S3
+- [x] `budgetTier` values confirmed from CB1 source line 6
 
 ## Write Ownership
 
@@ -153,14 +158,14 @@ Implementer owns all new files. No file outside Allowed list may be modified.
 
 ## Acceptance Criteria
 
-- [ ] Spec with all 5 sections; < 250 lines
-- [ ] S2 mapping covers all 3 × 3 posture × budget combinations
-- [ ] All 3 `sessionGovernancePostureType` values individually row-verified in S5
-- [ ] All 3 `budgetTier` values individually row-verified in S5
-- [ ] `runtimeExecutionAuthorized=false` explicit
-- [ ] No model dispatch or provider routing change claimed
-- [ ] No code file in diff
-- [ ] Session continuity updated
+- [x] Spec with all 5 sections; < 250 lines
+- [x] S2 mapping covers all 3 × 3 posture × budget combinations
+- [x] All 3 `sessionGovernancePostureType` values individually row-verified in S5
+- [x] All 3 `budgetTier` values individually row-verified in S5
+- [x] `runtimeExecutionAuthorized=false` explicit
+- [x] No model dispatch or provider routing change claimed
+- [x] No code file in diff
+- [x] Session continuity updated
 
 Fail conditions:
 - Any claim that this connector dispatches model selection or routes providers
@@ -174,15 +179,15 @@ All 3 `sessionGovernancePostureType` + 3 `budgetTier` individually verified;
 
 ## Closure Checklist
 
-- [ ] Spec created with all 5 sections
-- [ ] S2 mapping uses LHW11-T1/CB1/G1 vocabulary verbatim
-- [ ] `runtimeExecutionAuthorized=false` explicit
-- [ ] S5 complete; no aggregate rows
-- [ ] S4 boundary honest
-- [ ] No code file in diff
-- [ ] Fast Lane audit created
-- [ ] Session continuity updated
-- [ ] Completion review with T2 gate answer written
+- [x] Spec created with all 5 sections
+- [x] S2 mapping uses LHW11-T1/CB1/G1 vocabulary verbatim
+- [x] `runtimeExecutionAuthorized=false` explicit
+- [x] S5 complete; no aggregate rows
+- [x] S4 boundary honest
+- [x] No code file in diff
+- [x] Fast Lane audit created
+- [x] Session continuity updated
+- [x] Completion review with T2 gate answer written
 
 ## Return-To-Orchestrator Conditions
 

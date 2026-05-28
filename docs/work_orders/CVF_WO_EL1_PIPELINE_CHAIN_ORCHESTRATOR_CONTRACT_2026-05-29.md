@@ -28,10 +28,12 @@ is included as a bounded implementation within this tranche.
 
 - EL GC-018: `docs/baselines/CVF_GC018_EXECUTION_LAYER_2026-05-29.md`
 - EL Roadmap: `docs/roadmaps/CVF_EXECUTION_LAYER_ROADMAP_2026-05-29.md`
-- CVF 28.05 prototype: `docs/baselines/CVF_GC018_EXECUTION_LAYER_2026-05-29.md`
+- CVF 28.05 prototype: `.private_reference/legacy/CVF 28.05/cvf_cli.py`
   — pipeline orchestration at lines 56–166
-- LHW12-T1 posture advisory: `docs/roadmaps/CVF_LHW12_WORKFLOW_CONNECTOR_WAVE12_ROADMAP_2026-05-29.md`
-- LHW12-T3 worker lifecycle: `docs/roadmaps/CVF_LHW12_WORKFLOW_CONNECTOR_WAVE12_ROADMAP_2026-05-29.md`
+- LHW12-T1 posture advisory: planned spec
+  `docs/reference/CVF_LHW12_T1_POSTURE_TO_MODEL_TIER_ADVISORY_CONNECTOR_SPEC_2026-05-29.md`
+- LHW12-T3 worker lifecycle: planned spec
+  `docs/reference/CVF_LHW12_T3_ASYNC_WORKER_LIFECYCLE_BOUNDARY_CONNECTOR_SPEC_2026-05-29.md`
 - MA1 transfer standard: `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
 - **Gate: LHW12 AND LHW13 must both be CLOSED_PASS_BOUNDED before dispatch**
 
@@ -63,14 +65,15 @@ without gate, public-sync repo.
 
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-3. `docs/baselines/CVF_GC018_EXECUTION_LAYER_2026-05-29.md` — pipeline structure
+3. `.private_reference/legacy/CVF 28.05/cvf_cli.py` — pipeline structure
    lines 56–166; exception classes lines 15–25; config pattern lines 31–38
 4. `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
    — MA1 role lanes (Orchestrator/Implementer/Reviewer/Auditor)
-5. `docs/roadmaps/CVF_LHW12_WORKFLOW_CONNECTOR_WAVE12_ROADMAP_2026-05-29.md`
-   — `modelTierAdvisoryType` for model selection advisory
-6. `docs/roadmaps/CVF_LHW12_WORKFLOW_CONNECTOR_WAVE12_ROADMAP_2026-05-29.md`
-   — `workerLifecycleAdvisoryType` and `spawnAuthorizationAdvisory`
+5. `docs/reference/CVF_LHW12_T1_POSTURE_TO_MODEL_TIER_ADVISORY_CONNECTOR_SPEC_2026-05-29.md`
+   — required after LHW12-T1 closure; `modelTierAdvisoryType`
+6. `docs/reference/CVF_LHW12_T3_ASYNC_WORKER_LIFECYCLE_BOUNDARY_CONNECTOR_SPEC_2026-05-29.md`
+   — required after LHW12-T3 closure; `workerLifecycleAdvisoryType` and
+   `spawnAuthorizationAdvisory`
 7. Gate evidence: LHW12 roadmap CLOSED_PASS_BOUNDED + LHW13 roadmap
    CLOSED_PASS_BOUNDED (confirm before dispatch)
 
@@ -78,13 +81,13 @@ without gate, public-sync repo.
 
 | Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 | --- | --- | --- | --- | --- | --- |
-| CVF 28.05 pipeline structure | `docs/baselines/CVF_GC018_EXECUTION_LAYER_2026-05-29.md` | lines 56–166 | `run_workflow` method | `CVFOrchestratorCLI` | ACCEPT |
-| CVF 28.05 exception classes | `docs/baselines/CVF_GC018_EXECUTION_LAYER_2026-05-29.md` | lines 15–25 | Exception class definitions | `CVFOrchestratorCLI` | ACCEPT |
+| CVF 28.05 pipeline structure | canonical-contract: `.private_reference/legacy/CVF 28.05/cvf_cli.py` | lines 56–166 | `run_workflow` | `CVFOrchestratorCLI` | ACCEPT |
+| CVF 28.05 exception classes | canonical-contract: `.private_reference/legacy/CVF 28.05/cvf_cli.py` | lines 15–25 | exception classes | `CVFOrchestratorCLI` | ACCEPT |
 | MA1 `Orchestrator` role | `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | line 96 | `Orchestrator` | MA1 role lane | ACCEPT |
 | MA1 `Implementer` role | `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | line 97 | `Implementer` | MA1 role lane | ACCEPT |
 | MA1 `Reviewer` role | `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | line 98 | `Reviewer` | MA1 role lane | ACCEPT |
-| `modelTierAdvisoryType` field | `docs/roadmaps/CVF_LHW12_WORKFLOW_CONNECTOR_WAVE12_ROADMAP_2026-05-29.md` | S3 field list | `modelTierAdvisoryType` | LHW12-T1 doc-only field | ACCEPT |
-| `workerLifecycleAdvisoryType` field | `docs/roadmaps/CVF_LHW12_WORKFLOW_CONNECTOR_WAVE12_ROADMAP_2026-05-29.md` | S3 field list | `workerLifecycleAdvisoryType` | LHW12-T3 doc-only field | ACCEPT |
+| `modelTierAdvisoryType` field | `docs/reference/CVF_LHW12_T1_POSTURE_TO_MODEL_TIER_ADVISORY_CONNECTOR_SPEC_2026-05-29.md` | pending LHW12-T1 closure | `modelTierAdvisoryType` | LHW12-T1 doc-only field | BLOCKED_SOURCE_NOT_FOUND |
+| `workerLifecycleAdvisoryType` field | `docs/reference/CVF_LHW12_T3_ASYNC_WORKER_LIFECYCLE_BOUNDARY_CONNECTOR_SPEC_2026-05-29.md` | pending LHW12-T3 closure | `workerLifecycleAdvisoryType` | LHW12-T3 doc-only field | BLOCKED_SOURCE_NOT_FOUND |
 | EL GC-018 authorization | `docs/baselines/CVF_GC018_EXECUTION_LAYER_2026-05-29.md` | full document | EL-1 authorization | EL GC-018 | ACCEPT |
 
 ## Roadmap-To-Work-Order Trace Matrix
@@ -95,7 +98,7 @@ without gate, public-sync repo.
 | MA1 handoff between stages | Deliverable | contract references MA1 | Reviewer checks | OPEN |
 | Receipt gate at each stage | Deliverable | contract spec | Each stage has receipt requirement | OPEN |
 | Human-intervention signal defined | Deliverable | contract spec | `HumanInterventionRequired` event defined | OPEN |
-| LHW12 + LHW13 gate confirmed | Authority Chain | both roadmap CLOSED | Read roadmaps | OPEN |
+| LHW12 + LHW13 gate confirmed | Authority Chain | both roadmap CLOSED | Read roadmaps | BLOCKED |
 
 ## Deliverable
 

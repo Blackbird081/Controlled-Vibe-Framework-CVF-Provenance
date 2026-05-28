@@ -222,7 +222,7 @@ LHW13 OPEN parallel (T1 READY, T2/T3 HOLD): agent reading protocol governance,
 memory continuity level advisory (L0-L3), graph context resolver boundary.
 Source: CVF 25.05 Gop_y.md Gaps 1, 4, 9.
 
-Current HEAD (updated per GC-020): `7de75901`.
+Current HEAD (updated per GC-020): `a58c37af`.
 
 Current HEAD after 3 DEMAND_GATED roadmaps + GC-018s + PM/PD/EL work orders: `a8d2a0eb`.
 Roadmaps: CVF_EXECUTION_LAYER_ROADMAP, CVF_PROVIDER_METHOD_LIVE_PROOF_ROADMAP,
@@ -1080,3 +1080,28 @@ F-1 output-quality parity remains closed not met. Do not reopen broad F-1 tuning
 ## Public Boundary
 
 This provenance workspace is private audit/provenance. Do not push public-facing changes from here. Public-facing changes must use the sibling public-sync clone after verifying remotes.
+
+## LHW12 Wave Closure
+
+LHW12 Workflow Connector Wave 12 is now fully closed across all three tranches. All three tranches are documentation-only connector specs. No runtime code file was modified.
+
+- T1 — Posture-to-Model Tier Advisory Connector
+  - Spec: `docs/reference/CVF_LHW12_T1_POSTURE_TO_MODEL_TIER_ADVISORY_CONNECTOR_SPEC_2026-05-29.md`
+  - Contract: `cvf.modelTierAdvisory.lhw12.t1.v1`
+  - Completion: `docs/reviews/CVF_LHW12_T1_POSTURE_TO_MODEL_TIER_ADVISORY_CONNECTOR_COMPLETION_2026-05-29.md`
+  - Binds LHW11-T1 `sessionGovernancePostureType` × CB1 `budgetTier` × G1 `cvfRole` into modelTierAdvisoryType + recommendedModelTier. `runtimeExecutionAuthorized=false` invariant.
+- T2 — Outcome Pack Taxonomy Grouping Connector
+  - Spec: `docs/reference/CVF_LHW12_T2_OUTCOME_PACK_TAXONOMY_GROUPING_CONNECTOR_SPEC_2026-05-29.md`
+  - Contract: `cvf.outcomePackTaxonomy.lhw12.t2.v1`
+  - Completion: `docs/reviews/CVF_LHW12_T2_OUTCOME_PACK_TAXONOMY_GROUPING_CONNECTOR_COMPLETION_2026-05-29.md`
+  - Binds flat list of 10 certified packs (C8 selectionStatus × pack domain × CB1 `missingSignals`) into outcomeGroupAdvisoryType + packGroupRecommendation + contextSignalsNeeded. `runtimeExecutionAuthorized=false` invariant.
+- T3 — Async Worker Lifecycle Boundary Connector
+  - Spec: `docs/reference/CVF_LHW12_T3_ASYNC_WORKER_LIFECYCLE_BOUNDARY_CONNECTOR_SPEC_2026-05-29.md`
+  - Contract: `cvf.workerLifecycleBoundary.lhw12.t3.v1`
+  - Completion: `docs/reviews/CVF_LHW12_T3_ASYNC_WORKER_LIFECYCLE_BOUNDARY_CONNECTOR_COMPLETION_2026-05-29.md`
+  - Binds WR1 `WorkflowRecoveryAction` × MA1 role lanes × LHW10-T1 `transitionEnforcementAdvisoryType` into workerLifecycleAdvisoryType + spawnAuthorizationAdvisory + maxScopeAdvisory. `runtimeExecutionAuthorized=false` invariant.
+
+LHW12 status: CLOSED_PASS_BOUNDED across all three tranches.
+
+Next allowed move: LHW sequencing remains: continue LHW connector absorption first. Any further connector wave (such as LHW13) or follow-on closure must be reviewed through the autorun phase gates. Do not move abtop, gridex, or other route-execution families into a live-proof roadmap until Orchestrator confirms there is no remaining connector value in LH1 partially absorbed families.
+

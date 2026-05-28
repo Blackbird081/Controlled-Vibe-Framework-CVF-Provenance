@@ -42,12 +42,12 @@ Each sub-tranche = one method × one or more providers = one evidence packet:
 ```
 docs/evidence/provider-methods/
   json-mode/
-    alibaba-qwen-turbo.md     ← PM-1
     deepseek-chat.md          ← PM-1
-  tool-call/
-    alibaba-qwen-turbo.md     ← PM-2
+    gpt-4o.md                 ← PM-1
   streaming/
-    alibaba-qwen-turbo.md     ← PM-3
+    qwen-turbo.md             ← PM-2
+  tool-call/
+    boundary-record.md        ← PM-3
   embedding/                  ← PM-4 (demand-gated separately)
   reasoning-contract/         ← PM-5 (demand-gated separately)
 ```
@@ -66,30 +66,17 @@ docs/evidence/provider-methods/
 - limitation notes
 - PASS/FAIL
 
-**Providers to test:** Alibaba qwen-turbo + DeepSeek deepseek-chat (both have
-`json_mode` in PROVIDER_CAPABILITY_REGISTRY).
+**Providers to test:** DeepSeek deepseek-chat + OpenAI gpt-4o (both have
+`json_mode` in the provider capability registry).
 
 **Risk class:** R1 — live provider call, existing API keys.
 
-**Prerequisites:** Fresh GC-018; API keys available (Alibaba + DeepSeek).
+**Prerequisites:** Fresh GC-018; API keys available for selected providers
+(DeepSeek + OpenAI for PM-1; Alibaba for PM-2).
 
 ---
 
-### PM-2 — Tool Call Evidence Packets (Priority: HIGH)
-
-**Gap:** `tool_call` method contract schema-defined; no live proof.
-
-**What to collect:** Same packet structure as PM-1 but for `tool_call` method
-— send a tool-definition payload, validate the provider returns a tool-call
-response, capture receipt.
-
-**Risk class:** R1.
-
-**Prerequisites:** PM-1 CLOSED_PASS; fresh GC-018.
-
----
-
-### PM-3 — Streaming Evidence Packets (Priority: MEDIUM)
+### PM-2 — Streaming Evidence Packet (Priority: HIGH)
 
 **Gap:** `streaming` method contract schema-defined; no live proof. Alibaba
 qwen-turbo has `stream` in `supportedMethods`.
@@ -100,6 +87,22 @@ with `evidenceMode=live`.
 **Risk class:** R1 — streaming response handling; no new route changes needed.
 
 **Prerequisites:** PM-1 CLOSED_PASS; fresh GC-018.
+
+---
+
+### PM-3 — Tool Call Boundary Documentation (Priority: MEDIUM)
+
+**Gap:** `tool_call` method is declared in the registry type but no current
+provider/model includes it in `supportedMethods`, so live proof is not yet a
+valid target.
+
+**What to collect:** A boundary record documenting the source-verified absence
+of supported `tool_call`, the unlock condition, and the no-live-proof claim
+boundary.
+
+**Risk class:** R0 — documentation-only boundary record.
+
+**Prerequisites:** PM-2 CLOSED_PASS; fresh GC-018.
 
 ---
 
@@ -131,31 +134,37 @@ Gap 3 will be closed when PM-1 + PM-2 + PM-3 are all CLOSED_PASS with live
 receipts in `docs/evidence/provider-methods/`. PM-4/PM-5 remain demand-gated
 but do not block Gap 3 closure.
 
-- [ ] PM-1 json_mode: Alibaba + DeepSeek evidence packets
-- [ ] PM-2 tool_call: at least 1 provider evidence packet
-- [ ] PM-3 streaming: at least 1 provider evidence packet
+- [ ] PM-1 json_mode: DeepSeek + OpenAI evidence packets
+- [ ] PM-2 streaming: at least 1 provider evidence packet
+- [ ] PM-3 tool_call: source-verified boundary record with no live-proof claim
 - [ ] PM-4 embedding: DEMAND_GATED
 - [ ] PM-5 reasoning-contract: DEMAND_GATED (D10 receipt already exists as partial proof)
 
 ## Sequencing
 
 ```
-PM-1 (json_mode) → PM-2 (tool_call) → PM-3 (streaming)
+PM-1 (json_mode) → PM-2 (streaming) → PM-3 (tool_call boundary)
 PM-4 / PM-5 demand-gated independently
 ```
 
 ## Unlock Conditions
 
 - Operator authorizes PM-1
-- API keys available (Alibaba + DeepSeek — confirmed available)
+- API keys available for the selected providers — DeepSeek/OpenAI for PM-1 and
+  Alibaba for PM-2
+- PM-1 and PM-2 dispatch require a source-verified executable path that proves
+  the named provider method. A normal `/api/execute` receipt without a
+  method-specific runtime path is not valid method proof.
 - LHW12/LHW13 not required as prerequisites (can run in parallel)
 - Fresh GC-018 per sub-tranche
 
 ## Authorization / Decision
 
 Status: DEMAND_GATED. Operator must authorize PM-1 and issue a fresh GC-018
-before any sub-tranche begins. LHW12/LHW13 completion is not a prerequisite
-— PM-1/PM-2/PM-3 can run in parallel with LHW waves.
+before any sub-tranche begins. PM-1/PM-2 additionally require source-verified
+method execution paths before implementation. LHW12/LHW13 completion is not a
+prerequisite — PM-1/PM-2/PM-3 can run in parallel with LHW waves after their
+own proof paths are verified.
 
 ## Non-Goals
 
@@ -168,21 +177,22 @@ before any sub-tranche begins. LHW12/LHW13 completion is not a prerequisite
 
 | Tranche | Deliverable | Gate |
 | --- | --- | --- |
-| PM-1 | json_mode evidence packets (Alibaba + DeepSeek) | Operator authorization + fresh GC-018 |
-| PM-2 | tool_call evidence packet (1+ provider) | PM-1 CLOSED_PASS |
-| PM-3 | streaming evidence packet (1+ provider) | PM-1 CLOSED_PASS |
+| PM-1 | json_mode evidence packets (DeepSeek + OpenAI) | Operator authorization + fresh GC-018 |
+| PM-2 | streaming evidence packet (Alibaba qwen-turbo) | PM-1 CLOSED_PASS |
+| PM-3 | tool_call boundary record (no provider currently supports it) | PM-2 CLOSED_PASS |
 | PM-4 | embedding evidence packet | DEMAND_GATED separately |
 | PM-5 | reasoning_contract formal packet | DEMAND_GATED separately |
 
 ## Acceptance Criteria
 
-PM-1: 2 evidence packets (Alibaba + DeepSeek) with live receipts in
+PM-1: 2 evidence packets (DeepSeek + OpenAI) with live receipts in
 `docs/evidence/provider-methods/json-mode/`; `evidenceMode=live`; PASS/FAIL
 documented; GC-018 + work order + completion review; governance gates PASS.
 
-PM-2: 1+ evidence packet in `docs/evidence/provider-methods/tool-call/`.
+PM-2: 1+ evidence packet in `docs/evidence/provider-methods/streaming/`.
 
-PM-3: 1+ evidence packet in `docs/evidence/provider-methods/streaming/`.
+PM-3: source-verified boundary record in
+`docs/evidence/provider-methods/tool-call/` with no live-proof claim.
 
 Gap 3 closure: PM-1 + PM-2 + PM-3 all CLOSED_PASS.
 
@@ -197,4 +207,6 @@ python governance/compat/check_markdown_structural_completeness.py --base <pre-P
 
 This roadmap is a planning record. It does not authorize implementation and
 does not claim any provider method is currently proven beyond what D-wave
-evidence already supports.
+evidence already supports. A live receipt from a generic route is not method
+proof unless the route or adapter path is source-verified to execute the named
+method.

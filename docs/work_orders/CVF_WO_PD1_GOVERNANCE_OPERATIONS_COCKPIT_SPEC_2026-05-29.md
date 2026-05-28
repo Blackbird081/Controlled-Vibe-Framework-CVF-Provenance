@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: READY_FOR_IMPLEMENTATION
+Status: HOLD_SOURCE_VERIFICATION_REQUIRED
 
 docType: work_order
 
@@ -12,7 +12,7 @@ Date: 2026-05-29
 
 ## Purpose
 
-Create `docs/product/CVF_GOVERNANCE_OPERATIONS_COCKPIT_SPEC.md` — a
+Prepare `docs/product/CVF_GOVERNANCE_OPERATIONS_COCKPIT_SPEC.md` — a
 documentation spec mapping each cockpit element to an existing CVF surface.
 Closes CVF 25.05 Gap 5 at Phase A.
 
@@ -34,8 +34,8 @@ requires a separate GC-018.
 
 ## Agent Roles
 
-Implementer writes cockpit spec mapping each dashboard element to a CVF surface
-with verified source path. Reviewer checks: each element has a source-verified
+Implementer may proceed only after every cockpit element has an existing
+source/canonical contract. Reviewer checks: each element has a source-verified
 CVF surface; no UI implementation claimed; Phase B explicitly deferred.
 No self-review.
 
@@ -64,6 +64,9 @@ envelope schema, public-sync repo.
    — line 75 `clarityStatus`; line 46 `OperationalBenchmarkClarityStatus`
 6. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts`
    — lines 16–38 `ExecutionDiagnosticClass`
+7. `docs/reference/CVF_LHW13_T2_MEMORY_CONTINUITY_LEVEL_ADVISORY_CONNECTOR_SPEC_2026-05-29.md`
+   — required only after LHW13-T2 closes; dispatch remains blocked until this
+   exists
 
 ## Pre-Dispatch Source Verification Block
 
@@ -74,6 +77,9 @@ envelope schema, public-sync repo.
 | `clarityStatus` | `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/operational-benchmark-suite.ts` | line 75 | `clarityStatus` | `OperationalBenchmarkScorecard` | ACCEPT |
 | `ExecutionDiagnosticClass` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts` | lines 16–38 | `ExecutionDiagnosticClass` | `ExecutionDiagnostic` | ACCEPT |
 | `mcpApprovalAdvisoryType` | `docs/reference/CVF_LHW9_T1_MCP_TOOL_APPROVAL_ADVISORY_CONNECTOR_SPEC_2026-05-28.md` | S3 field list | `mcpApprovalAdvisoryType` | LHW9-T1 doc-only field | ACCEPT |
+| `memoryContinuityLevelAdvisoryType` | `docs/reference/CVF_LHW13_T2_MEMORY_CONTINUITY_LEVEL_ADVISORY_CONNECTOR_SPEC_2026-05-29.md` | pending LHW13-T2 closure | `memoryContinuityLevelAdvisoryType` | LHW13-T2 doc-only field | BLOCKED_SOURCE_NOT_FOUND |
+| latest release gate evidence file | `docs/evidence/latest-release-gate.md` | file missing at dispatch | `docs/evidence/latest-release-gate.md` | release gate evidence surface | BLOCKED_SOURCE_NOT_FOUND |
+| `ExecutionIdentityDecision.decision` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-identity.ts` | source verification required before dispatch | `decision` | `ExecutionIdentityDecision` | BLOCKED_SOURCE_NOT_FOUND |
 | PD GC-018 authorization | `docs/baselines/CVF_GC018_PRODUCT_DEPTH_2026-05-29.md` | full document | PD-1 authorization | PD GC-018 | ACCEPT |
 
 ## Roadmap-To-Work-Order Trace Matrix
@@ -84,6 +90,7 @@ envelope schema, public-sync repo.
 | Refresh cadence defined | Deliverable | spec doc | per-call vs session-level noted | OPEN |
 | Phase B explicitly deferred | Deliverable | spec doc claim boundary | UI wiring not claimed | OPEN |
 | No UI code change | Scope Forbidden | git diff | `git diff --name-only` | OPEN |
+| All 9 cockpit elements source-verified before dispatch | Pre-Dispatch | source verification table | no `BLOCKED_SOURCE_NOT_FOUND` rows | BLOCKED |
 
 ## Deliverable — Cockpit Spec
 
@@ -100,7 +107,7 @@ The spec must define 9 cockpit elements, each mapped to a verified CVF surface:
 | MCP approval posture | LHW9-T1 `mcpApprovalAdvisoryType` | LHW9-T1 spec S3 | Per-call |
 | Memory continuity level | LHW13-T2 `memoryContinuityLevelAdvisoryType` (after T2 closes) | LHW13-T2 spec | Per-session |
 | Policy block/allow ratio | V3 `policyViolationRate` from W4 | `operational-benchmark-suite.ts` | Per-session aggregate |
-| Release gate status | `docs/evidence/latest-release-gate.md` | evidence file | On-demand |
+| Release gate status | blocked until a current release-gate evidence path is selected | source path required before dispatch | On-demand |
 | Role rejection events | G1 `ExecutionIdentityDecision.decision` | `execution-identity.ts` line 53 | Per-call |
 
 Spec must also define: drill-down paths (which surface to read for detail),
@@ -110,7 +117,7 @@ Phase B deferral statement, claim boundary.
 
 - [ ] Working tree clean
 - [ ] All required first reads done
-- [ ] Gate confirmations checked
+- [ ] Gate confirmations checked; no `BLOCKED_SOURCE_NOT_FOUND` rows remain
 
 ## Write Ownership
 
@@ -118,12 +125,15 @@ Implementer owns all new files. No file outside the Allowed list may be modified
 
 ## Return-To-Orchestrator Conditions
 
-Stop if: required gate evidence missing; a cited source file cannot be found; implementing the deliverable requires a forbidden file change.
+Stop if: required gate evidence missing; a cited source file cannot be found;
+any cockpit element remains source-unverified; implementing the deliverable
+requires a forbidden file change.
 
 ## Execution Plan
 
 1. Read all required first reads.
-2. Verify all 9 source paths exist and fields are correct.
+2. Verify all 9 source paths exist and fields are correct; if not, keep this
+   work order on HOLD.
 3. Write cockpit spec with element table and Phase B deferral.
 4. Write completion review.
 5. Run governance gates.
@@ -147,7 +157,8 @@ Stop if: required gate evidence missing; a cited source file cannot be found; im
 
 ## Review Gate
 
-All elements source-verified; Phase B deferred; no UI code; no code file.
+All elements source-verified; no `BLOCKED_SOURCE_NOT_FOUND` rows remain;
+Phase B deferred; no UI code; no code file.
 
 ## Closure Checklist
 

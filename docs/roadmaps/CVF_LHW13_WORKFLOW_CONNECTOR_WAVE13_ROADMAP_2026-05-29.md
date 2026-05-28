@@ -19,8 +19,8 @@ dependencies). Source: CVF 25.05 Gop_y.md GAPs 1, 4, 9.
 Fresh GC-018:
 `docs/baselines/CVF_GC018_LHW13_WORKFLOW_CONNECTOR_WAVE13_2026-05-29.md`
 
-Dispatch status: T1 WORK_ORDER_READY. T2 HOLD until T1 CLOSED_PASS.
-T3 HOLD until T1 + T2 CLOSED_PASS.
+Dispatch status: T1 WORK_ORDER_READY. T2 HOLD_UNTIL_T1_PASS.
+T3 HOLD_UNTIL_T1_AND_T2_PASS.
 
 ## Scope / Target / Owner Boundary
 
@@ -51,8 +51,9 @@ CVF 25.05 Gap 1: CLAUDE.md + AGENTS.md cover reading rules piecemeal; no
 connector maps canonical-file × claim-tier × phase-gate → a named
 `agentReadingAdvisoryType` for Orchestrators routing incoming agent actions.
 CVF 25.05 Gap 4: CVF is at L0/L1 memory; no connector maps
-`memorySnapshotAdvisoryType` × `canReinject` × `memoryContextSeedDecayAdvisoryType`
-→ `memoryContinuityLevelAdvisoryType` telling Orchestrator what level is active.
+`memorySnapshotAdvisoryType` × source `canReinject` boundary ×
+`memoryContextSeedDecayAdvisoryType` → `memoryContinuityLevelAdvisoryType`
+telling Orchestrator what level is active.
 CVF 25.05 Gap 9: AIF-B graph modules exist but are not wired; no connector
 maps AIF-B `GraphKnowledgeService` boundary × current text-retrieval posture
 → `graphContextResolverBoundaryAdvisoryType` defining phases.
@@ -76,7 +77,7 @@ Prior surfaces used (all CLOSED_PASS_BOUNDED or runtime-proven at HEAD
 - `docs/reference/CVF_LHW8_T1_MEMORY_EVENT_HOOK_GOVERNANCE_SNAPSHOT_CONNECTOR_SPEC_2026-05-28.md`
 - `docs/reference/CVF_LHW11_T3_MEMORY_CONTEXT_SEED_DECAY_ADVISORY_CONNECTOR_SPEC_2026-05-28.md`
 - `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts`
-- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/graph-schema.ts`
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/graph/schema/graph-schema.ts`
 
 Source families:
 
@@ -98,14 +99,16 @@ Blind-spot verdict: CLEAR.
 
 | Priority | Connector | Existing surfaces | Gap | Disposition |
 | --- | --- | --- | --- | --- |
-| 1 | Agent Reading Protocol Governance | CLAUDE.md startup acknowledgment; `CVF_SESSION_MEMORY.md` front door; `ACTIVE_SESSION_STATE.json` `requiredFirstReads`; status-tier vocabulary (roadmap/schema-defined/active/proven) in governance docs | No connector maps claim-tier × canonical-file-type × phase-gate state → a named `agentReadingAdvisoryType` that Orchestrators can check to route agent action (e.g. "this agent claimed X but X is only schema-defined, not runtime-proven"). Gap 1: "CVF has rules but no single binding protocol connector." | ACCEPT for T1 |
-| 2 | Memory Continuity Level Advisory | LHW8-T1 `memorySnapshotAdvisoryType` (6 values); LHW11-T3 `memoryContextSeedDecayAdvisoryType`; AIF-C `MemoryGatewayDecision.canReinject=false` | CVF is at L0 (receipt-only) + partial L1 (session summary). LHW8-T1 says snapshot advisory; LHW11-T3 says decay advisory. But no connector maps these into a named `memoryContinuityLevelAdvisoryType` (L0/L1/L2/L3) per Gap 4 taxonomy, with `canReinject=false` binding. Orchestrators cannot currently determine what memory continuity level is active. | ACCEPT for T2 |
+| 1 | Agent Reading Protocol Governance | CLAUDE.md startup acknowledgment; `CVF_SESSION_MEMORY.md` front door; `ACTIVE_SESSION_STATE.json` `requiredFirstReads` + `startupAcknowledgmentRequired`; source status vocabulary normalized into doc-only claim tiers | No connector maps claim-tier × canonical-file-type × startup acknowledgment status → a named `agentReadingAdvisoryType` that Orchestrators can check to route agent action (e.g. "this agent claimed X but X is only schema-defined, not runtime-proven"). Gap 1: "CVF has rules but no single binding protocol connector." | ACCEPT for T1 |
+| 2 | Memory Continuity Level Advisory | LHW8-T1 `memorySnapshotAdvisoryType` (6 values); LHW11-T3 `memoryContextSeedDecayAdvisoryType`; AIF-C `MemoryGatewayDecision.canReinject` boolean field | CVF is at L0 (receipt-only) + partial L1 (session summary). LHW8-T1 says snapshot advisory; LHW11-T3 says decay advisory. But no connector maps these into a named `memoryContinuityLevelAdvisoryType` (L0/L1/L2/L3) per Gap 4 taxonomy, with a connector-normalized no-reinjection boundary. Orchestrators cannot currently determine what memory continuity level is active. | ACCEPT for T2 |
 | 3 | Graph Context Resolver Boundary | AIF-B `GraphKnowledgeService` interface (graph-schema.ts); LH1 `tolaria` trigger; current text-retrieval posture (LHW7-T2 `signalsStillMissing`) | AIF-B graph modules exist but are not wired into any runtime path. No connector maps AIF-B graph capability boundary × current text-retrieval readout → `graphContextResolverBoundaryAdvisoryType` defining which resolution mode (text/project-knowledge/graph-future) is active and what the phase boundary is. Gap 9: "Do not build now, just define boundary." | ACCEPT for T3 |
 
 Rejection log:
 
-- `abtop` — rejected *from this LHW wave* (doc-only scope). NOT permanent.
-- `gridex` — rejected *from this LHW wave* (doc-only scope). NOT permanent.
+- `abtop` — rejected from this LHW wave (doc-only scope) - requires live
+  route; eligible for separate live-proof roadmap post-LHW.
+- `gridex` — rejected from this LHW wave (doc-only scope) - requires live
+  route; eligible for separate live-proof roadmap post-LHW.
 - Operations Cockpit (CVF 25.05 Gap 5) — requires product UX surface; not
   a doc connector. Eligible for separate product roadmap.
 - External Capability Admission Expansion (CVF 25.05 Gap 6) — requires MCP/tool
@@ -115,7 +118,8 @@ Rejection log:
 
 ### LHW13-T1 — Agent Reading Protocol Governance Connector
 
-Maps: claim-tier vocabulary (`roadmap`/`schema_defined`/`active`/`proven`) ×
+Maps: connector-normalized claim-tier vocabulary
+(`roadmap`/`schema_defined`/`active`/`proven`) ×
 canonical-file-type (`session_front_door`/`gc018_baseline`/`completion_review`/
 `runtime_source`) × startup acknowledgment status →
 `agentReadingAdvisoryType` + `claimValidationAdvisory`
@@ -129,12 +133,15 @@ Maps: LHW8-T1 `memorySnapshotAdvisoryType` (6 values) ×
 LHW11-T3 `memoryContextSeedDecayAdvisoryType` ×
 AIF-C `MemoryGatewayDecision.canReinject` →
 `memoryContinuityLevelAdvisoryType` (L0/L1/L2/L3) +
-`continuityLevelBoundaryNote` + `canReinject=false` preserved
+`continuityLevelBoundaryNote` + connector-normalized `canReinject=false`
+planning boundary. The source `canReinject` field is a boolean and must not be
+cited as source proof that false is invariant.
 
 ### LHW13-T3 — Graph Context Resolver Boundary Connector
 
-Maps: AIF-B `GraphKnowledgeService` boundary status (`interface_only`/`wired`/
-`active`) × LHW7-T2 `signalsStillMissing` (context completeness) ×
+Maps: AIF-B `GraphKnowledgeService` boundary status
+(`interface_only`/`schema_proven`/`route_wired`) × LHW7-T2
+`signalsStillMissing` (context completeness) ×
 current text-retrieval posture →
 `graphContextResolverBoundaryAdvisoryType` +
 `activeResolutionMode` (`text_retrieval`/`project_knowledge`/`graph_future`) +
@@ -155,14 +162,14 @@ current text-retrieval posture →
 | Tranche | Deliverable | Gate |
 | --- | --- | --- |
 | T1 | Agent Reading Protocol Governance spec (5 sections) | None |
-| T2 | Memory Continuity Level Advisory spec (5 sections) | HOLD until T1 CLOSED_PASS |
-| T3 | Graph Context Resolver Boundary spec (5 sections) | HOLD until T1 + T2 CLOSED_PASS |
+| T2 | Memory Continuity Level Advisory spec (5 sections) | HOLD_UNTIL_T1_PASS |
+| T3 | Graph Context Resolver Boundary spec (5 sections) | HOLD_UNTIL_T1_AND_T2_PASS |
 
 ## Acceptance Criteria
 
-- [ ] T1: claim-tier vocabulary values (4) individually row-verified; no runtime enforcement claimed
-- [ ] T2: `memorySnapshotAdvisoryType` (6 values) individually row-verified; `canReinject=false` preserved
-- [ ] T3: `GraphKnowledgeService` boundary status values individually row-verified; no graph retrieval execution claimed
+- [ ] T1: connector-normalized claim-tier vocabulary values (4), canonical-file-type values (4), and startup acknowledgment status axis individually covered; no runtime enforcement claimed
+- [ ] T2: `memorySnapshotAdvisoryType` (6 values) individually row-verified; connector-normalized `canReinject=false` boundary does not cite the source boolean as a false invariant
+- [ ] T3: `GraphKnowledgeService` interface and doc-only `graphServiceBoundaryStatus` values individually covered; no graph retrieval execution claimed
 - [ ] No `.ts`/`.tsx`/`.js`/`.py` file in diff across all three tranches
 - [ ] Each spec < 250 lines
 - [ ] Both governance gates PASS per tranche

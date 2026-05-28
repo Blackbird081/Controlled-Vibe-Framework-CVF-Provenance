@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: HOLD_UNTIL_T1_PASS
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -23,9 +23,9 @@ existing snapshot and decay advisories into a named L0-L3 taxonomy advisory.
 The 4-level taxonomy (L0 receipt-only, L1 session summary, L2 governed
 reinjection, L3 cross-workflow) makes the boundary visible and explicit.
 
-This connector is advisory only. It does NOT reinject memory or lift
-`canReinject=false`. Invariants: `canReinject=false` preserved;
-`runtimeExecutionAuthorized=false`.
+This connector is advisory only. It does NOT reinject memory or enable
+reinjection. Invariants: connector-normalized `canReinject=false` for this
+planning packet; `runtimeExecutionAuthorized=false`.
 
 ## Authority Chain
 
@@ -44,8 +44,10 @@ This connector is advisory only. It does NOT reinject memory or lift
 ## Agent Roles
 
 Implementer writes spec (S1–S5). Reviewer checks: all 6 `memorySnapshotAdvisoryType`
-values individually row-verified in S5; `canReinject=false` preserved and NOT
-overridden; `runtimeExecutionAuthorized=false` explicit. Auditor confirms
+values individually row-verified in S5; source `canReinject` is treated as a
+boolean field, not a source-proven false invariant; connector-normalized
+`canReinject=false` is explicit and NOT overridden;
+`runtimeExecutionAuthorized=false` explicit. Auditor confirms
 `tolaria` trigger and CVF 25.05 Gap 4 cited; no memory reinjection claimed.
 No self-review.
 
@@ -90,27 +92,34 @@ file, receipt envelope schema, public-sync repo.
 | `snapshot_denied` | `docs/reference/CVF_LHW8_T1_MEMORY_EVENT_HOOK_GOVERNANCE_SNAPSHOT_CONNECTOR_SPEC_2026-05-28.md` | S2 line 70 | `memorySnapshotAdvisoryType` value | LHW8-T1 S2 | ACCEPT |
 | `snapshot_approval_pending` | `docs/reference/CVF_LHW8_T1_MEMORY_EVENT_HOOK_GOVERNANCE_SNAPSHOT_CONNECTOR_SPEC_2026-05-28.md` | S2 line 71 | `memorySnapshotAdvisoryType` value | LHW8-T1 S2 | ACCEPT |
 | `memoryContextSeedDecayAdvisoryType` field | `docs/reference/CVF_LHW11_T3_MEMORY_CONTEXT_SEED_DECAY_ADVISORY_CONNECTOR_SPEC_2026-05-28.md` | S3 field list | `memoryContextSeedDecayAdvisoryType` | LHW11-T3 doc-only field | ACCEPT |
-| `MemoryGatewayDecision.canReinject` | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts` | line 49 | `canReinject` | `MemoryGatewayDecision` | ACCEPT |
-| `MemoryGatewayDecision.rawMemoryReleased` | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts` | line 50 | `rawMemoryReleased` | `MemoryGatewayDecision` | ACCEPT |
+| EXISTS: `MemoryGatewayDecision.canReinject` boolean field | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts` | line 49 | `canReinject` | `MemoryGatewayDecision` | ACCEPT |
+| LITERAL_INVARIANT: `MemoryGatewayDecision.rawMemoryReleased=false` | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts` | line 50 | `rawMemoryReleased` | `MemoryGatewayDecision` | ACCEPT |
 | LH1 `tolaria` trigger | `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | line 129 | `tolaria` | LH1 CVF 16.5 ledger | ACCEPT |
-| `memoryContinuityLevelAdvisoryType` (new) | N/A — canonical doc-only field | S3 new fields | doc-only | Memory continuity level advisory packet | ACCEPT |
-| `continuityLevelBoundaryNote` (new) | N/A — canonical doc-only field | S3 new fields | doc-only | Memory continuity level advisory packet | ACCEPT |
+
+New doc-only fields:
+
+| New doc-only field | Purpose | Not sourced from runtime? | Runtime claim blocked? | Validation expectation |
+| --- | --- | --- | --- | --- |
+| `memoryContinuityLevelAdvisoryType` | Names the L0-L3 continuity planning advisory. | Yes | Yes | Defined only in the connector spec and verified by documentation review. |
+| `continuityLevelBoundaryNote` | Records the memory continuity boundary in plain language. | Yes | Yes | Defined only in the connector spec and verified by documentation review. |
+| connector-normalized `canReinject=false` | Blocks this connector from treating the source boolean as reinjection authority. | Yes | Yes | Defined only in the connector spec; source boolean must not be cited as a false invariant. |
 
 ## Roadmap-To-Work-Order Trace Matrix
 
 | Roadmap requirement | Work order section | Output artifact | Verification | Status |
 | --- | --- | --- | --- | --- |
-| T2 spec; LHW8-T1/LHW11-T3/AIF-C field names verbatim | S1–S5 | spec at target path | Reviewer confirms verbatim | OPEN |
-| All 6 `memorySnapshotAdvisoryType` values individually row-verified | S5 | 6 rows | No aggregate | OPEN |
-| `canReinject=false` preserved and not overridden | S1, S3 | invariant preserved | grep check | OPEN |
-| L0-L3 taxonomy mapped in S2 | S2 | 4-level advisory table | Reviewer checks | OPEN |
-| T1 gate confirmed | Authority Chain | T1 completion review | Read T1 review | OPEN |
+| T2 spec; LHW8-T1/LHW11-T3/AIF-C field names verbatim | S1–S5 | spec at target path | Reviewer confirms verbatim | CLOSED |
+| All 6 `memorySnapshotAdvisoryType` values individually row-verified | S5 | 6 rows | No aggregate | CLOSED |
+| connector-normalized `canReinject=false` stated and not source-claimed | S1, S3 | connector invariant | grep check | CLOSED |
+| L0-L3 taxonomy mapped in S2 | S2 | 4-level advisory table | Reviewer checks | CLOSED |
+| T1 gate confirmed | Authority Chain | T1 completion review | Read T1 review | CLOSED |
 
 ## Deliverable — Connector Spec
 
 File: `docs/reference/CVF_LHW13_T2_MEMORY_CONTINUITY_LEVEL_ADVISORY_CONNECTOR_SPEC_2026-05-29.md`
 
-S2 design — map `memorySnapshotAdvisoryType` × `canReinject` ×
+S2 design — map `memorySnapshotAdvisoryType` × connector-normalized
+`canReinject=false` ×
 `memoryContextSeedDecayAdvisoryType` → `memoryContinuityLevelAdvisoryType`:
 
 | `memorySnapshotAdvisoryType` | `canReinject` | decay advisory | `memoryContinuityLevelAdvisoryType` | `continuityLevelBoundaryNote` |
@@ -122,21 +131,22 @@ S2 design — map `memorySnapshotAdvisoryType` × `canReinject` ×
 | `snapshot_denied` | `false` | any | `L0_no_capture` | L0: no capture; receipt-only; no continuity |
 | `snapshot_approval_pending` | `false` | any | `L0_pending_approval` | L0: approval pending; no continuity until capture approved |
 | any | `false` | high contamination | `L0_contamination_hold` | L0: contamination; hold all continuity claims |
-| N/A — L2 | N/A | N/A | `L2_governed_reinjection_not_claimed` | L2 is NOT claimed by CVF; `canReinject=false` is invariant |
+| N/A — L2 | N/A | N/A | `L2_governed_reinjection_not_claimed` | L2 is NOT claimed by CVF; connector-normalized `canReinject=false` applies |
 | N/A — L3 | N/A | N/A | `L3_cross_workflow_not_claimed` | L3 is NOT claimed by CVF; no cross-workflow memory |
 
 Key invariants in S1:
-- "`canReinject=false` is invariant. This connector does not lift it."
+- "Source `canReinject` is a boolean field, not a source-proven false invariant."
+- "Connector-normalized `canReinject=false` applies to this planning packet."
 - "L2 and L3 are NOT currently claimed by CVF."
 - "`memoryContinuityLevelAdvisoryType` is a governance planning record."
 - `runtimeExecutionAuthorized=false`.
 
 ## Pre-Flight
 
-- [ ] Working tree clean
-- [ ] T1 CLOSED_PASS_BOUNDED confirmed
-- [ ] All 6 `memorySnapshotAdvisoryType` values confirmed from LHW8-T1 S2
-- [ ] `canReinject` field confirmed from AIF-C source line 49
+- [x] Working tree clean
+- [x] T1 CLOSED_PASS_BOUNDED confirmed
+- [x] All 6 `memorySnapshotAdvisoryType` values confirmed from LHW8-T1 S2
+- [x] `canReinject` field confirmed from AIF-C source line 49
 
 ## Write Ownership
 
@@ -157,48 +167,49 @@ Implementer owns all new files. No file outside Allowed list may be modified.
 
 - Spec < 250 lines
 - All 6 `memorySnapshotAdvisoryType` values individually row-verified
-- `canReinject=false` preserved and NOT overridden
+- connector-normalized `canReinject=false` stated and NOT overridden
 - L2/L3 explicitly stated as NOT claimed
 - T1 gate confirmed
 - No code file in diff
 
 ## Acceptance Criteria
 
-- [ ] T1 CLOSED_PASS_BOUNDED confirmed
-- [ ] Spec with all 5 sections; < 250 lines
-- [ ] All 6 `memorySnapshotAdvisoryType` values individually row-verified in S5
-- [ ] `canReinject=false` preserved; L2/L3 explicitly NOT claimed
-- [ ] `runtimeExecutionAuthorized=false` explicit
-- [ ] No code file in diff
-- [ ] Session continuity updated
+- [x] T1 CLOSED_PASS_BOUNDED confirmed
+- [x] Spec with all 5 sections; < 250 lines
+- [x] All 6 `memorySnapshotAdvisoryType` values individually row-verified in S5
+- [x] connector-normalized `canReinject=false` stated; L2/L3 explicitly NOT claimed
+- [x] `runtimeExecutionAuthorized=false` explicit
+- [x] No code file in diff
+- [x] Session continuity updated
 
 Fail conditions:
 - T1 gate not confirmed
-- `canReinject=true` anywhere in spec
+- `canReinject=true` claimed as active capability anywhere in spec
 - L2/L3 claimed as active CVF capability
 - Aggregate rows in S5
 
 ## Review Gate
 
 T1 confirmed; all 6 `memorySnapshotAdvisoryType` individually verified;
-`canReinject=false` preserved; L2/L3 not claimed; spec < 250 lines; no code file.
+connector-normalized `canReinject=false`; L2/L3 not claimed; spec < 250 lines; no code file.
 
 ## Closure Checklist
 
-- [ ] T1 CLOSED_PASS_BOUNDED confirmed
-- [ ] Spec with all 5 sections
-- [ ] S2 L0-L3 taxonomy uses LHW8-T1/LHW11-T3/AIF-C vocabulary verbatim
-- [ ] `canReinject=false` preserved
-- [ ] S5 complete; no aggregate rows
-- [ ] No code file in diff
-- [ ] Fast Lane audit created
-- [ ] Session continuity updated
-- [ ] Completion review with T3 gate answer written
+- [x] T1 CLOSED_PASS_BOUNDED confirmed
+- [x] Spec with all 5 sections
+- [x] S2 L0-L3 taxonomy uses LHW8-T1/LHW11-T3/AIF-C vocabulary verbatim
+- [x] connector-normalized `canReinject=false`
+- [x] S5 complete; no aggregate rows
+- [x] No code file in diff
+- [x] Fast Lane audit created
+- [x] Session continuity updated
+- [x] Completion review with T3 gate answer written
 
 ## Return-To-Orchestrator Conditions
 
-Stop if: T1 gate missing; `canReinject` cannot be confirmed; connector lifts
-`canReinject=false` or claims L2/L3; spec > 250 lines before S4.
+Stop if: T1 gate missing; `canReinject` cannot be confirmed; connector treats
+the source boolean as a false invariant, enables reinjection, or claims L2/L3;
+spec > 250 lines before S4.
 
 ## T3 Gate Output
 
@@ -217,5 +228,5 @@ operator.checkpoint.waiver: Low-risk documentation-only tranche.
 ## Claim Boundary
 
 LHW13-T2 produces a documentation artifact. It does not claim memory reinjection,
-`canReinject=true`, L2/L3 memory levels, receipt envelope extension, hosted
+active `canReinject=true`, L2/L3 memory levels, receipt envelope extension, hosted
 readiness, production readiness, or public release readiness.

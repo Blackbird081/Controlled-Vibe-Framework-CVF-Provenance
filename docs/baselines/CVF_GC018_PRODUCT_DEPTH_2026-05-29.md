@@ -56,7 +56,9 @@ No receipt envelope schema. No public-sync repo. No MCP execution.
 ## Decision / Baseline
 
 PD-1 and PD-2 Phase A are authorized as documentation-only spec files.
-PD-2 may begin in parallel with PD-1 — no shared dependencies.
+PD-2 may begin in parallel with PD-1 — no shared dependencies. PD-1 dispatch
+is blocked until every cockpit element has an existing source/canonical
+contract or the unverified element is explicitly deferred in the work order.
 
 ---
 

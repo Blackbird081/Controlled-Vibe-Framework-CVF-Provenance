@@ -73,7 +73,10 @@ Phase B (UI surface, medium risk, separate GC-018):
 **Risk class:** Phase A = R0 (docs only); Phase B = R1 (UI extension).
 
 **Prerequisites:** LHW11 CLOSED_PASS_BOUNDED (posture aggregator needed);
-LHW10 CLOSED_PASS_BOUNDED (provider health advisory needed); fresh GC-018.
+LHW10 CLOSED_PASS_BOUNDED (provider health advisory needed); every cockpit
+element source path verified before dispatch; fresh GC-018. If the cockpit
+includes memory continuity level, LHW13-T2 must close first or that element
+must be explicitly deferred.
 
 **CVF 25.05 Gap 5 closure condition:** Phase A spec CLOSED_PASS counts as
 gap closed; Phase B is product enhancement beyond gap closure.
@@ -152,14 +155,17 @@ source dependencies.
 ## Unlock Conditions
 
 - Operator explicitly authorizes PD-1 or PD-2
-- LHW12/LHW13 not required as prerequisites for PD-1/PD-2 Phase A
+- LHW12/LHW13 are not global prerequisites for PD-1/PD-2 Phase A, but any
+  element that cites an LHW12/LHW13 connector must remain HOLD until that
+  connector exists and is source-verified.
 - Fresh GC-018 per sub-tranche
 
 ## Authorization / Decision
 
 Status: DEMAND_GATED. Operator must authorize PD-1 or PD-2 individually and
-issue a fresh GC-018 per sub-tranche. LHW12/LHW13 are not prerequisites for
-Phase A of either tranche.
+issue a fresh GC-018 per sub-tranche. LHW12/LHW13 are not blanket
+prerequisites for Phase A, but PD-1 dispatch is blocked while any cockpit
+element depends on a future LHW connector or missing evidence path.
 
 ## Non-Goals
 
@@ -172,7 +178,7 @@ Phase A of either tranche.
 
 | Tranche | Deliverable | Gate |
 | --- | --- | --- |
-| PD-1 Phase A | Cockpit spec doc mapping CVF surfaces to dashboard elements | Operator authorization + fresh GC-018 |
+| PD-1 Phase A | Cockpit spec doc mapping CVF surfaces to dashboard elements | Operator authorization + fresh GC-018 + all cockpit element sources verified |
 | PD-1 Phase B | UI surface wiring in cvf-web | PD-1 Phase A CLOSED_PASS + fresh GC-018 |
 | PD-2 Phase A | External Capability Admission Contract doc (MCP + repo scope) | Operator authorization + fresh GC-018 |
 | PD-2 Phase B | Runtime enforcement wiring | PD-2 Phase A CLOSED_PASS + fresh GC-018 |

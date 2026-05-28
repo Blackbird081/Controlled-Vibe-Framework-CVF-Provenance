@@ -25,8 +25,9 @@ CVF has no equivalent.
 
 - EL GC-018: `docs/baselines/CVF_GC018_EXECUTION_LAYER_2026-05-29.md`
 - EL Roadmap: `docs/roadmaps/CVF_EXECUTION_LAYER_ROADMAP_2026-05-29.md`
-- CVF 28.05: `docs/baselines/CVF_GC018_EXECUTION_LAYER_2026-05-29.md` lines 123–148
+- CVF 28.05: `.private_reference/legacy/CVF 28.05/cvf_cli.py` lines 123–148
 - LHW12-T1 posture advisory: reference for model tier upgrade on deadlock
+  after LHW12-T1 closes
 - Live run diagnostic standard: `docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md`
 - V3 diagnostics: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts`
 - **EL-2 gate: `docs/reviews/CVF_EL2_WORKER_TIMEOUT_HANDLER_COMPLETION_2026-05-29.md`
@@ -62,11 +63,12 @@ permanent agent spawning, public-sync repo.
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 3. `docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md`
-4. `docs/baselines/CVF_GC018_EXECUTION_LAYER_2026-05-29.md` — deadlock logic lines 123–148
+4. `.private_reference/legacy/CVF 28.05/cvf_cli.py` — deadlock logic lines 123–148
 5. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts`
    — existing diagnostic classes lines 16–38
-6. `docs/roadmaps/CVF_LHW12_WORKFLOW_CONNECTOR_WAVE12_ROADMAP_2026-05-29.md`
-   — `modelTierAdvisoryType` for tier upgrade advisory on decomposition
+6. `docs/reference/CVF_LHW12_T1_POSTURE_TO_MODEL_TIER_ADVISORY_CONNECTOR_SPEC_2026-05-29.md`
+   — required after LHW12-T1 closure; `modelTierAdvisoryType` for tier upgrade
+   advisory on decomposition
 7. `docs/reviews/CVF_EL2_WORKER_TIMEOUT_HANDLER_COMPLETION_2026-05-29.md`
    — confirm EL-2 CLOSED_PASS
 
@@ -75,8 +77,8 @@ permanent agent spawning, public-sync repo.
 | Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 | --- | --- | --- | --- | --- | --- |
 | `ExecutionDiagnosticClass` type | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts` | lines 16–38 | `ExecutionDiagnosticClass` | `ExecutionDiagnostic` | ACCEPT |
-| CVF 28.05 deadlock logic | `docs/baselines/CVF_GC018_EXECUTION_LAYER_2026-05-29.md` | lines 123–148 | `ReviewDeadlockException` handling | `CVFOrchestratorCLI.run_workflow` | ACCEPT |
-| `modelTierAdvisoryType` field | `docs/roadmaps/CVF_LHW12_WORKFLOW_CONNECTOR_WAVE12_ROADMAP_2026-05-29.md` | S3 field list | `modelTierAdvisoryType` | LHW12-T1 doc-only field | ACCEPT |
+| CVF 28.05 deadlock logic | canonical-contract: `.private_reference/legacy/CVF 28.05/cvf_cli.py` | lines 123–148 | `ReviewDeadlockException` | `CVFOrchestratorCLI.run_workflow` | ACCEPT |
+| `modelTierAdvisoryType` field | `docs/reference/CVF_LHW12_T1_POSTURE_TO_MODEL_TIER_ADVISORY_CONNECTOR_SPEC_2026-05-29.md` | pending LHW12-T1 closure | `modelTierAdvisoryType` | LHW12-T1 doc-only field | BLOCKED_SOURCE_NOT_FOUND |
 | Live run diagnostic standard | `docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md` | full document | diagnostic classification | CVF live run standard | ACCEPT |
 | EL GC-018 authorization | `docs/baselines/CVF_GC018_EXECUTION_LAYER_2026-05-29.md` | full document | EL-3 authorization | EL GC-018 | ACCEPT |
 
@@ -85,7 +87,7 @@ permanent agent spawning, public-sync repo.
 | Roadmap requirement | Work order section | Output artifact | Verification | Status |
 | --- | --- | --- | --- | --- |
 | Retry counter + deadlock detection | Deliverable | handler logic | Counter threshold = 3 | OPEN |
-| Micro-task decomposition or model tier upgrade | Deliverable | `WorkOrderDecomposer` | References LHW12-T1 advisory | OPEN |
+| Micro-task decomposition or model tier upgrade | Deliverable | `WorkOrderDecomposer` | References LHW12-T1 advisory after source exists | BLOCKED |
 | `HumanInterventionRequired` signal | Deliverable | handler logic | Signal defined | OPEN |
 | Live receipt with deadlock evidence | Evidence | receipt `.md` | `evidenceMode=live` | OPEN |
 | EL-2 gate confirmed | Authority Chain | EL-2 completion review | Read EL-2 | OPEN |
