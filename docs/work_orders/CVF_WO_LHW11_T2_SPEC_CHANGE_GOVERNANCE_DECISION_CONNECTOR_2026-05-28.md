@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: HOLD_UNTIL_T1_PASS
+Status: CLOSED_PASS
 
 docType: work_order
 
@@ -97,12 +97,12 @@ file, receipt envelope schema, public-sync repo.
 
 | Roadmap requirement | Work order section | Output artifact or field | Verification | Status |
 | --- | --- | --- | --- | --- |
-| T2 spec; LHW7-T3/LHW10-T1/LHW3-T3 field names verbatim | S1–S5 | spec at target path | Reviewer confirms verbatim | OPEN |
-| `rollbackRecommended` boolean explicit | S3 | boolean field with derivation rule | Reviewer checks S3 | OPEN |
-| All 6 `faultToRespecAdvisoryType` values individually row-verified | S5 | 6 rows | No aggregate | OPEN |
-| All 3 `changePacketStatus` values individually row-verified | S5 | 3 rows | No aggregate | OPEN |
-| `runtimeExecutionAuthorized=false` explicit | S1, S3 | invariant | `rg` check | OPEN |
-| T1 gate confirmed | Authority Chain | T1 completion review | Read T1 review | OPEN |
+| T2 spec; LHW7-T3/LHW10-T1/LHW3-T3 field names verbatim | S1–S5 | spec at target path | Reviewer confirms verbatim | CLOSED |
+| `rollbackRecommended` boolean explicit | S3 | boolean field with derivation rule | Reviewer checks S3 | CLOSED |
+| All 6 `faultToRespecAdvisoryType` values individually row-verified | S5 | 6 rows | No aggregate | CLOSED |
+| All 3 `changePacketStatus` values individually row-verified | S5 | 3 rows | No aggregate | CLOSED |
+| `runtimeExecutionAuthorized=false` explicit | S1, S3 | invariant | `rg` check | CLOSED |
+| T1 gate confirmed | Authority Chain | T1 completion review | Read T1 review | CLOSED |
 
 ## Deliverable — Connector Spec
 
@@ -128,10 +128,10 @@ state." `runtimeExecutionAuthorized=false`.
 
 ## Pre-Flight
 
-- [ ] Working tree clean
-- [ ] T1 CLOSED_PASS_BOUNDED confirmed
-- [ ] All `faultToRespecAdvisoryType` values confirmed from LHW7-T3 S2
-- [ ] All `changePacketStatus` values confirmed from LHW3-T3 S3
+- [x] Working tree clean
+- [x] T1 CLOSED_PASS_BOUNDED confirmed
+- [x] All `faultToRespecAdvisoryType` values confirmed from LHW7-T3 S2
+- [x] All `changePacketStatus` values confirmed from LHW3-T3 S3
 
 ## Write Ownership
 
@@ -160,14 +160,14 @@ Implementer owns all new files. No file outside Allowed list may be modified.
 
 ## Acceptance Criteria
 
-- [ ] T1 CLOSED_PASS_BOUNDED confirmed before dispatch
-- [ ] Spec with all 5 sections; < 250 lines
-- [ ] All 6 `faultToRespecAdvisoryType` values individually row-verified in S5
-- [ ] All 3 `changePacketStatus` values individually row-verified in S5
-- [ ] `rollbackRecommended` boolean with derivation rule explicit in S3
-- [ ] `runtimeExecutionAuthorized=false` explicit
-- [ ] No code file in diff
-- [ ] Session continuity updated
+- [x] T1 CLOSED_PASS_BOUNDED confirmed before dispatch
+- [x] Spec with all 5 sections; < 250 lines
+- [x] All 6 `faultToRespecAdvisoryType` values individually row-verified in S5
+- [x] All 3 `changePacketStatus` values individually row-verified in S5
+- [x] `rollbackRecommended` boolean with derivation rule explicit in S3
+- [x] `runtimeExecutionAuthorized=false` explicit
+- [x] No code file in diff
+- [x] Session continuity updated
 
 Fail conditions:
 
@@ -183,15 +183,15 @@ lines; no code file.
 
 ## Closure Checklist
 
-- [ ] T1 CLOSED_PASS_BOUNDED confirmed
-- [ ] Spec with all 5 sections
-- [ ] S2 maps `faultToRespecAdvisoryType` × transition posture → governance decision
-- [ ] `runtimeExecutionAuthorized=false` explicit
-- [ ] S5 Source Verification: no aggregate rows
-- [ ] No code file in diff
-- [ ] Fast Lane audit created
-- [ ] Session continuity updated
-- [ ] Completion review with T3 gate answer
+- [x] T1 CLOSED_PASS_BOUNDED confirmed
+- [x] Spec with all 5 sections
+- [x] S2 maps `faultToRespecAdvisoryType` × transition posture → governance decision
+- [x] `runtimeExecutionAuthorized=false` explicit
+- [x] S5 Source Verification: no aggregate rows
+- [x] No code file in diff
+- [x] Fast Lane audit created
+- [x] Session continuity updated
+- [x] Completion review with T3 gate answer
 
 ## Return-To-Orchestrator Conditions
 
@@ -202,12 +202,7 @@ requires spec mutation or transition execution; spec exceeds 250 lines before S4
 
 Was a concrete memory context seed decay advisory gap identified during T2?
 
-**Expected YES:** T2 spec-change decision mapping reveals that when a spec
-change is pending AND memory snapshot advisory shows contaminated context
-(`memorySnapshotAdvisoryType=snapshot_redacted_capture` or
-`snapshot_approval_pending`), no connector maps this combination + LHW7-T2
-`signalsStillMissing` + AIF-C `MemoryGatewayDecision.decision` into a named
-`memoryContextSeedDecayAdvisoryType`. T3 closes that gap.
+**YES** — T2 spec-change decision mapping reveals that when a spec change is pending AND memory snapshot advisory shows contaminated context (`memorySnapshotAdvisoryType=snapshot_redacted_capture` or `snapshot_approval_pending`), no connector maps this combination + LHW7-T2 `signalsStillMissing` + AIF-C `MemoryGatewayDecision.decision` into a named `memoryContextSeedDecayAdvisoryType`. T3 closes that gap.
 
 ## Operator Checkpoint
 
