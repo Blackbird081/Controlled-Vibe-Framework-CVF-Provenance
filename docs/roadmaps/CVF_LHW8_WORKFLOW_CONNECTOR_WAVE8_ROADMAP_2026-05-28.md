@@ -239,9 +239,9 @@ session continuity update → commit.
 Pre-dispatch verification (per work order):
 
 ```powershell
-python governance/compat/check_work_order_dispatch_quality.py --base HEAD --head HEAD --enforce
-python governance/compat/check_markdown_structural_completeness.py --base HEAD --head HEAD --enforce
-python governance/compat/check_docs_governance_compat.py --base HEAD --head HEAD --enforce
+python governance/compat/check_work_order_dispatch_quality.py --base 9964d24e --head 00008651 --enforce
+python governance/compat/check_markdown_structural_completeness.py --base 9964d24e --head 00008651 --enforce
+python governance/compat/check_docs_governance_compat.py --base 9964d24e --head 00008651 --enforce
 ```
 
 ## Claim Boundary

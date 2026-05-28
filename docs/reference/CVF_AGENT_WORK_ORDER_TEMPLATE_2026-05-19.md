@@ -223,11 +223,12 @@ Before filing GC-018 or editing files, read:
 Commands to run before implementation:
 
 ```powershell
+git rev-parse --short HEAD
 <command 1>
 <command 2>
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation
-python governance/compat/check_work_order_dispatch_quality.py --base HEAD --head HEAD --enforce
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base <baseHead> --head HEAD
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <baseHead> --head HEAD
+python governance/compat/check_work_order_dispatch_quality.py --base <baseHead> --head HEAD --enforce
 ```
 
 Expected results:
@@ -294,6 +295,17 @@ Rules:
 - `REJECT` must name the corrected field/symbol when known.
 - `BLOCKED_SOURCE_NOT_FOUND` stops dispatch and returns to Orchestrator.
 - A source fact with no file plus line/section is not verified.
+- Source Verification row type must be clear in the claimed item or owning
+  schema: `EXISTS`, `VALUE_SET`, `LITERAL_INVARIANT`, `RUNTIME_BEHAVIOR`, or
+  `DOC_ONLY_NEW`.
+- `LITERAL_INVARIANT` requires the cited source to declare or assign the value
+  literally, for example `field: false` or `field = false`.
+- If the source type is `boolean`, the worker must not claim "`field=false`
+  preserved from source" unless a cited runtime branch or literal source line
+  proves that invariant for the specific connector path.
+- If the connector requires a safer value than the source globally guarantees,
+  mark it as `DOC_ONLY_NEW` or "connector-normalized requirement", not as a
+  source-proven invariant.
 - If a claimed token appears only in this draft work order, mark it
   `BLOCKED_SOURCE_NOT_FOUND` unless it is explicitly listed as a new doc-only
   field in the table below.
@@ -435,7 +447,8 @@ waiver for this work order.
 - [ ] All acceptance criteria satisfied or explicitly marked N/A with reason
 - [ ] Required tests or evidence commands run
 - [ ] Autorun `pre-closure` gate passed:
-  `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure`
+  `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base <baseHead> --head HEAD`
+- [ ] Closure gate used a non-empty committed diff range; no `--base HEAD --head HEAD`
 - [ ] Roadmap-to-work-order trace matrix final statuses are PASS or N/A with reason
 - [ ] Closure Diff Gate completed: roadmap, work order, final artifact, and
   completion claims were compared
@@ -448,6 +461,8 @@ waiver for this work order.
 - [ ] Public catalog updated or explicitly N/A with reason
 - [ ] Public/provenance repository boundary checked if public files changed
 - [ ] GC-020 handoff updated with current HEAD after commit
+- [ ] Post-commit active-session gate passed:
+  `python governance/compat/check_active_session_state.py --enforce`
 - [ ] Active session front door and state registry updated if mode, next
   allowed move, public-sync status, roadmap status, or handoff status changed
 - [ ] Completion packet filed if the roadmap requires one

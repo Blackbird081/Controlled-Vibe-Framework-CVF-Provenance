@@ -78,6 +78,11 @@ Canonical autorun standard:
 
 `docs/reference/CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28.md`
 
+Autorun gates are now range-aware. Governed closure must use a captured
+`baseHead` and a non-empty committed range; `--base HEAD --head HEAD` is not
+valid closure evidence for changed artifacts. Source Verification false
+invariants require literal source proof or runtime-path proof.
+
 ## Next Allowed Move
 
 LHW6 is present in HEAD as `CLOSED_PASS_BOUNDED` and any follow-on wave must be

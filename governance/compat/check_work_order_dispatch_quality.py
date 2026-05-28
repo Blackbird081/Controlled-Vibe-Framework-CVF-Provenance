@@ -238,6 +238,121 @@ def _row_literal_tokens(row: dict[str, str]) -> set[str]:
     return {token for token in tokens if re.match(r"^[A-Za-z0-9_.:-]+$", token)}
 
 
+def _symbol_field_name(symbol: str) -> str:
+    cleaned = symbol.strip().strip("`")
+    parts = re.findall(r"[A-Za-z_][A-Za-z0-9_]*", cleaned)
+    return parts[-1] if parts else ""
+
+
+def _claims_false_invariant(*cells: str) -> bool:
+    joined = " ".join(cells)
+    return re.search(r"[A-Za-z0-9_.]+\s*(?:=|:)\s*false\b", joined) is not None
+
+
+def _source_has_literal_false(source_text: str, field_name: str) -> bool:
+    if not field_name:
+        return False
+    return re.search(rf"\b{re.escape(field_name)}\s*:\s*false\b", source_text) is not None or re.search(
+        rf"\b{re.escape(field_name)}\s*=\s*false\b",
+        source_text,
+    ) is not None
+
+
+def _validate_false_invariant_against_source(
+    source_path: str,
+    source_text: str,
+    row: dict[str, str],
+) -> str | None:
+    claimed = row.get("Claimed item", "")
+    verified_symbol = row.get("Verified path or symbol", "")
+    owner = row.get("Owning interface/function/schema", "")
+    if not _claims_false_invariant(claimed, verified_symbol, owner):
+        return None
+    field_name = _symbol_field_name(verified_symbol or claimed)
+    if _source_has_literal_false(source_text, field_name):
+        return None
+    return (
+        "Source Verification ACCEPT row claims a false invariant for "
+        f"`{field_name or verified_symbol.strip().strip('`')}` but `{source_path}` "
+        "does not declare or assign that field as literal false"
+    )
+
+
+def _source_rows_for_symbol(rows: list[dict[str, str]]) -> list[tuple[str, str, str, str]]:
+    refs: list[tuple[str, str, str, str]] = []
+    for row in rows:
+        if "ACCEPT" not in row.get("Disposition", "").upper():
+            continue
+        source_paths = _extract_paths(row.get("Source file", ""))
+        if not source_paths:
+            continue
+        symbol = row.get("Verified path or symbol", "")
+        owner = row.get("Owning interface/function/schema", "")
+        field_name = _symbol_field_name(symbol or row.get("Claimed item", ""))
+        if not field_name:
+            continue
+        for source_path in source_paths:
+            refs.append((field_name, symbol, owner, source_path))
+    return refs
+
+
+def _non_table_blocks(text: str) -> list[str]:
+    blocks: list[str] = []
+    current: list[str] = []
+    for line in text.splitlines():
+        stripped = line.strip()
+        if stripped.startswith("|") and stripped.endswith("|"):
+            if current:
+                blocks.append(" ".join(current))
+                current = []
+            continue
+        if re.match(r"^(?:[-*]\s+|\d+\.\s+)", stripped) and current:
+            blocks.append(" ".join(current))
+            current = []
+        if not stripped:
+            if current:
+                blocks.append(" ".join(current))
+                current = []
+            continue
+        current.append(stripped)
+    if current:
+        blocks.append(" ".join(current))
+    return blocks
+
+
+def _validate_false_invariant_prose(text: str, rows: list[dict[str, str]]) -> list[str]:
+    issues: list[str] = []
+    blocks = _non_table_blocks(text)
+    for field_name, symbol, owner, source_path in _source_rows_for_symbol(rows):
+        source_text = _read_rel(source_path)
+        if not source_text or _source_has_literal_false(source_text, field_name):
+            continue
+        owner_tokens = {token for token in (owner.strip("`"),) if token}
+        symbol_parts = symbol.replace("`", "").split(".")
+        if len(symbol_parts) > 1:
+            owner_tokens.add(".".join(symbol_parts[:-1]))
+            owner_tokens.update(part for part in symbol_parts[:-1] if part)
+        owner_tokens.update(token for token in owner.replace("`", "").split(".") if token)
+        for block in blocks:
+            if not re.search(rf"`?{re.escape(field_name)}`?\s*(?:=|:)\s*false\b", block):
+                continue
+            if not any(token and token in block for token in owner_tokens):
+                continue
+            if re.search(
+                r"connector-normalized|normalizes|normalise|advisory\s+packet\s+requires|connector\s+requires",
+                block,
+                re.IGNORECASE,
+            ):
+                continue
+            issues.append(
+                "Prose claims a false invariant for "
+                f"`{field_name}` from `{owner.strip('`') or symbol.strip('`')}` but `{source_path}` "
+                "does not declare or assign that field as literal false"
+            )
+            break
+    return issues
+
+
 def _validate_accepted_source_rows(path: str, text: str) -> list[str]:
     issues: list[str] = []
     rows = _parse_markdown_tables(text)
@@ -257,9 +372,12 @@ def _validate_accepted_source_rows(path: str, text: str) -> list[str]:
                 continue
             claimed = row.get("Claimed item", "")
             verified_symbol = row.get("Verified path or symbol", "")
+            source_text = _read_rel(source_path)
+            false_issue = _validate_false_invariant_against_source(source_path, source_text, row)
+            if false_issue:
+                issues.append(false_issue)
             if "values" not in f"{claimed} {verified_symbol}".lower():
                 continue
-            source_text = _read_rel(source_path)
             declared_values = _extract_declared_string_values(source_text, verified_symbol)
             if not declared_values:
                 continue
@@ -270,7 +388,17 @@ def _validate_accepted_source_rows(path: str, text: str) -> list[str]:
                     "Source Verification ACCEPT row claims values for "
                     f"`{verified_symbol.strip().strip('`')}` but omits source value(s): {', '.join(missing_values)}"
                 )
+    issues.extend(_validate_false_invariant_prose(text, rows))
     return issues
+
+
+def _validate_no_empty_range_commands(text: str) -> list[str]:
+    if re.search(r"--base\s+HEAD\s+--head\s+HEAD", text):
+        return [
+            "artifact records an empty `--base HEAD --head HEAD` verification range; "
+            "use the actual base/head range or the autorun wrapper default for closure"
+        ]
+    return []
 
 
 def _validate_required_first_reads(text: str) -> list[str]:
@@ -308,6 +436,7 @@ def _validate_work_order(path: str, text: str) -> list[str]:
             issues.append("dispatch/ready status conflicts with unresolved CLOSED_PASS precondition language")
 
     issues.extend(_validate_accepted_source_rows(path, text))
+    issues.extend(_validate_no_empty_range_commands(text))
 
     if re.search(r"install[\s\S]{0,120}always blocked|always blocked[\s\S]{0,120}install", text, re.IGNORECASE):
         issues.append("work order asserts `install` is always blocked; cite a source policy or map it to approval/escalation")
@@ -322,6 +451,8 @@ def _validate_roadmap(path: str, text: str) -> list[str]:
         wave_id = _extract_wave_id(path, text)
         if wave_id is not None and not _has_gc018_for_wave(wave_id):
             issues.append(f"LHW{wave_id} connector roadmap is dispatch/ready without fresh GC-018 baseline")
+    issues.extend(_validate_accepted_source_rows(path, text))
+    issues.extend(_validate_no_empty_range_commands(text))
     return issues
 
 
@@ -338,6 +469,15 @@ def _validate_fast_lane_audit(path: str, text: str) -> list[str]:
         wave_id = _extract_wave_id(path, text)
         if wave_id is not None and not _has_gc018_for_wave(wave_id):
             issues.append(f"LHW{wave_id} fast-lane audit is ready without fresh GC-018 baseline")
+    issues.extend(_validate_accepted_source_rows(path, text))
+    issues.extend(_validate_no_empty_range_commands(text))
+    return issues
+
+
+def _validate_completion_or_spec(path: str, text: str) -> list[str]:
+    issues: list[str] = []
+    issues.extend(_validate_accepted_source_rows(path, text))
+    issues.extend(_validate_no_empty_range_commands(text))
     return issues
 
 
@@ -347,6 +487,10 @@ def _is_target(path: str) -> bool:
         normalized.startswith("docs/work_orders/")
         or normalized.startswith("docs/roadmaps/")
         or normalized.startswith("docs/reviews/")
+        or (
+            normalized.startswith("docs/reference/CVF_LHW")
+            and "CONNECTOR_SPEC" in normalized.upper()
+        )
     )
 
 
@@ -361,6 +505,10 @@ def _validate_path(path: str) -> list[str]:
         return _validate_roadmap(normalized, text)
     if normalized.startswith("docs/reviews/") and "FAST_LANE_AUDIT" in normalized.upper():
         return _validate_fast_lane_audit(normalized, text)
+    if normalized.startswith("docs/reviews/") or (
+        normalized.startswith("docs/reference/CVF_LHW") and "CONNECTOR_SPEC" in normalized.upper()
+    ):
+        return _validate_completion_or_spec(normalized, text)
     return []
 
 

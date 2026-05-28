@@ -97,6 +97,9 @@ Current HEAD before LHW8 implementation commit: `1ca009f6`.
 LHW8 CLOSED_PASS_BOUNDED: T1 cvf.memoryEventHookGovernanceSnapshot.lhw8.t1.v1;
 T2 cvf.executionIdentityAuthorityChainReadout.lhw8.t2.v1;
 T3 cvf.operationalBenchmarkFailureClassReIntake.lhw8.t3.v1.
+Current HEAD after LHW8 implementation commit: `00008651`.
+Post-LHW8 rule hardening now blocks empty closure ranges and source invariant
+claims stronger than cited source proof.
 
 ## Startup Acknowledgment
 

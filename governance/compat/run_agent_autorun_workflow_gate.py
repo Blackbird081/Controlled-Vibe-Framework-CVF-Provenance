@@ -25,43 +25,48 @@ class GateCommand:
     command: tuple[str, ...]
 
 
-COMMON_COMMANDS: tuple[GateCommand, ...] = (
-    GateCommand(
-        "docs governance compatibility",
+RANGE_GATE_NAMES = (
+    "docs governance compatibility",
+    "markdown structural completeness",
+    "work-order dispatch quality",
+)
+
+
+def _range_command(name: str, script: str, base: str, head: str) -> GateCommand:
+    return GateCommand(
+        name,
         (
             "python",
+            script,
+            "--base",
+            base,
+            "--head",
+            head,
+            "--enforce",
+        ),
+    )
+
+
+def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
+    return (
+        _range_command(
+            "docs governance compatibility",
             "governance/compat/check_docs_governance_compat.py",
-            "--base",
-            "HEAD",
-            "--head",
-            "HEAD",
-            "--enforce",
+            base,
+            head,
         ),
-    ),
-    GateCommand(
-        "markdown structural completeness",
-        (
-            "python",
+        _range_command(
+            "markdown structural completeness",
             "governance/compat/check_markdown_structural_completeness.py",
-            "--base",
-            "HEAD",
-            "--head",
-            "HEAD",
-            "--enforce",
+            base,
+            head,
         ),
-    ),
-    GateCommand(
-        "work-order dispatch quality",
-        (
-            "python",
+        _range_command(
+            "work-order dispatch quality",
             "governance/compat/check_work_order_dispatch_quality.py",
-            "--base",
-            "HEAD",
-            "--head",
-            "HEAD",
-            "--enforce",
+            base,
+            head,
         ),
-    ),
     GateCommand(
         "active session state compatibility",
         ("python", "governance/compat/check_active_session_state.py", "--enforce"),
@@ -70,7 +75,7 @@ COMMON_COMMANDS: tuple[GateCommand, ...] = (
         "governed file size compatibility",
         ("python", "governance/compat/check_governed_file_size.py", "--enforce"),
     ),
-)
+    )
 
 PRE_PUSH_COMMANDS: tuple[GateCommand, ...] = (
     GateCommand("git remote verification", ("git", "remote", "-v")),
@@ -111,15 +116,73 @@ def _git_status_short() -> str:
     return proc.stdout.strip()
 
 
-def _run_phase(phase: str) -> int:
+def _git_rev_parse(ref: str) -> str:
+    proc = subprocess.run(
+        ["git", "rev-parse", "--short", ref],
+        cwd=REPO_ROOT,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+    )
+    if proc.returncode != 0:
+        raise RuntimeError(proc.stdout.strip() or f"failed to resolve {ref}")
+    return proc.stdout.strip()
+
+
+def _git_diff_name_status(base: str, head: str) -> str:
+    proc = subprocess.run(
+        ["git", "diff", "--name-status", f"{base}..{head}"],
+        cwd=REPO_ROOT,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+    )
+    if proc.returncode != 0:
+        return proc.stdout.strip()
+    return proc.stdout.strip()
+
+
+def _default_base_for_phase(phase: str) -> str:
+    if phase in {"pre-closure", "pre-push"}:
+        return "HEAD~1"
+    return "HEAD"
+
+
+def _run_phase(phase: str, base: str | None, head: str) -> int:
+    resolved_base = base or _default_base_for_phase(phase)
     print("=== CVF Agent Autorun Workflow Gate ===")
     print(f"Phase: {phase}")
     print("Policy: docs/reference/CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28.md")
+    print(f"Range: {resolved_base}..{head}")
+
+    try:
+        base_sha = _git_rev_parse(resolved_base)
+        head_sha = _git_rev_parse(head)
+    except RuntimeError as exc:
+        print(f"FAIL: could not resolve autorun gate range: {exc}")
+        return 1
+    print(f"Base HEAD anchor: {base_sha}")
+    print(f"Head anchor: {head_sha}")
 
     failures = 0
-    commands: list[GateCommand] = list(COMMON_COMMANDS)
+    commands: list[GateCommand] = list(_common_commands(resolved_base, head))
     if phase == "pre-push":
         commands.extend(PRE_PUSH_COMMANDS)
+
+    if phase in {"pre-closure", "pre-push"} and base_sha == head_sha:
+        print(
+            "FAIL: closure/push autorun gates require a non-empty committed "
+            "range. Pass --base <baseHead> --head HEAD or run after a commit "
+            "with default HEAD~1..HEAD."
+        )
+        failures += 1
+    elif phase in {"pre-closure", "pre-push"}:
+        changed = _git_diff_name_status(resolved_base, head)
+        print("\n=== committed range evidence ===")
+        print(changed if changed else "No committed files changed in range.")
+        if not changed:
+            print("FAIL: closure/push range has no committed diff evidence.")
+            failures += 1
 
     for command in commands:
         failures += 1 if _run(command) != 0 else 0
@@ -152,8 +215,14 @@ def main() -> int:
         choices=("pre-dispatch", "pre-implementation", "pre-closure", "pre-push"),
         required=True,
     )
+    parser.add_argument(
+        "--base",
+        default=None,
+        help="Base commit/ref for range-aware gates. Defaults to HEAD for pre-dispatch/pre-implementation and HEAD~1 for pre-closure/pre-push.",
+    )
+    parser.add_argument("--head", default="HEAD", help="Head commit/ref for range-aware gates.")
     args = parser.parse_args()
-    return _run_phase(args.phase)
+    return _run_phase(args.phase, args.base, args.head)
 
 
 if __name__ == "__main__":

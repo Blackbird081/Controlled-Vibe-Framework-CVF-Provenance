@@ -42,6 +42,12 @@ passes the following gates:
 If any gate is incomplete, the worker must return to Orchestrator or file a
 blocking defect. Operator silence is not a waiver.
 
+Before implementation, the worker must capture a batch base anchor with
+`git rev-parse --short HEAD`. Closure gates must use that `baseHead` so the
+review checks the actual changed range. Empty closure ranges such as
+`--base HEAD --head HEAD` are invalid for any batch that creates or modifies
+governed artifacts.
+
 ## Requirements
 
 ### 1. Roadmap-To-Work-Order Trace Matrix
@@ -93,6 +99,12 @@ forbidden runtime claims would invalidate the task.
 At closure, the worker must confirm each fail condition is absent or mark the
 work `BLOCKED`.
 
+Source invariant claims are fail conditions unless source-backed. If a cited
+source exposes a field as `boolean` or as an interface property, the worker may
+not claim "`field=false` is preserved from source" unless a cited line declares
+or assigns the field as literal `false`, or a cited runtime branch proves that
+specific connector path.
+
 ### 5. Checklist Finalization Gate
 
 Closure checklists are evidence controls, not decoration. Any unchecked item in
@@ -119,12 +131,22 @@ claim in conflict.
 Before any closed-equivalent status claim, run:
 
 ```powershell
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base <baseHead> --head HEAD
 ```
 
-The completion packet must record the command and result. If the command fails,
-the artifact must remain `DRAFT`, `HOLD_*`, `BLOCKED`, or equivalent until the
-blocking gate is fixed or explicitly waived by the operator.
+The completion packet must record the command, range, and result. If the
+command fails, the artifact must remain `DRAFT`, `HOLD_*`, `BLOCKED`, or
+equivalent until the blocking gate is fixed or explicitly waived by the
+operator.
+
+After the closure commit, run:
+
+```powershell
+python governance/compat/check_active_session_state.py --enforce
+```
+
+If the active handoff lacks the new HEAD or the parent HEAD for an explicit
+handoff-sync commit, the closure is incomplete.
 
 Pre-closure cannot be satisfied by handwritten `PASS` tables when the machine
 gate reports source-verification, structural-completeness, continuity,
@@ -151,7 +173,8 @@ This standard is enforced by:
 - `governance/compat/check_work_order_dispatch_quality.py`, which hard-fails
   dispatch/ready work orders, connector-wave roadmaps, and fast-lane audits
   when prerequisite GC-018 baselines, source files, source-verification truth,
-  roadmap trace matrices, or prerequisite completion evidence are missing.
+  roadmap trace matrices, source-invariant proof, non-empty verification
+  ranges, or prerequisite completion evidence are missing.
 - `governance/compat/run_agent_autorun_workflow_gate.py`, which bundles the
   mandatory phase gates for pre-dispatch, pre-implementation, pre-closure, and
   pre-push agent workflows.

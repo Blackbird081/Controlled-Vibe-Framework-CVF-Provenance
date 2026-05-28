@@ -63,6 +63,18 @@ An agent must not continue to the next phase when the current phase fails.
 Operator silence is not a waiver. A waiver must name the failed gate, reason,
 scope, and follow-up owner.
 
+Every governed batch must capture a base HEAD anchor before work starts:
+
+```powershell
+git rev-parse --short HEAD
+```
+
+The captured value is the batch `baseHead`. Roadmaps, work orders, completion
+reviews, and handoff notes must not cite an older base than the actual current
+HEAD unless the artifact explicitly explains a rebase/merge and records the new
+anchor. If the artifact base and actual HEAD disagree, implementation is
+blocked until the orchestrator re-anchors the packet.
+
 ## Inputs And Outputs
 
 Inputs:
@@ -124,7 +136,7 @@ clone after `git remote -v` proves the target repository.
 Required command:
 
 ```powershell
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base <baseHead> --head HEAD
 ```
 
 The gate must include source verification schema, roadmap trace matrix,
@@ -135,6 +147,7 @@ Dispatch is blocked when:
 
 - the work order uses non-canonical Source Verification columns;
 - runtime/source facts are guessed, stale, wildcarded, or source-less;
+- a source invariant claim is stronger than the cited source proves;
 - roadmap-derived work lacks a trace matrix;
 - prerequisites are conditional or pending;
 - checkboxes needed for ready/dispatch remain open;
@@ -145,7 +158,7 @@ Dispatch is blocked when:
 Required command:
 
 ```powershell
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <baseHead> --head HEAD
 ```
 
 The Worker confirms that dispatch artifacts pass the same checks immediately
@@ -165,13 +178,16 @@ Implementation is blocked when:
 Required command:
 
 ```powershell
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base <baseHead> --head HEAD
 ```
 
 Closure is blocked when:
 
 - any dispatch, structural, docs governance, session-state, or file-size gate
   fails;
+- the closure command uses an empty `--base HEAD --head HEAD` range for work
+  that changed governed artifacts;
+- the committed diff range has no files for a closed-equivalent claim;
 - `git status --short` contains untracked or modified files without an explicit
   committed-diff evidence path;
 - roadmap/work-order/completion statuses disagree;
@@ -184,15 +200,25 @@ Closure is blocked when:
   explicit `N/A with reason`.
 
 The closure packet must say which autorun phase was run and include the command
-result. If `pre-closure` fails, the artifact status must be `BLOCKED`,
-`HOLD_*`, `DRAFT`, or equivalent, not `CLOSED_PASS_BOUNDED`.
+result, including the base/head range. If `pre-closure` fails, the artifact
+status must be `BLOCKED`, `HOLD_*`, `DRAFT`, or equivalent, not
+`CLOSED_PASS_BOUNDED`.
+
+After the closure commit, the worker must run:
+
+```powershell
+python governance/compat/check_active_session_state.py --enforce
+```
+
+If the active handoff does not contain the new HEAD or the parent HEAD for a
+handoff-sync commit, closure is incomplete.
 
 ### Step 4 - Pre-Push Gate
 
 Required command:
 
 ```powershell
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-push
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-push --base <baseHead> --head HEAD
 ```
 
 The gate must run the local pre-push governance hook chain and require repository
@@ -213,9 +239,9 @@ that rejected the artifact.
 
 Minimum included guards:
 
-- `check_docs_governance_compat.py --base HEAD --head HEAD --enforce`
-- `check_markdown_structural_completeness.py --base HEAD --head HEAD --enforce`
-- `check_work_order_dispatch_quality.py --base HEAD --head HEAD --enforce`
+- `check_docs_governance_compat.py --base <baseHead> --head HEAD --enforce`
+- `check_markdown_structural_completeness.py --base <baseHead> --head HEAD --enforce`
+- `check_work_order_dispatch_quality.py --base <baseHead> --head HEAD --enforce`
 - `check_active_session_state.py --enforce`
 - `check_governed_file_size.py --enforce`
 
@@ -238,6 +264,9 @@ This standard does not:
 
 | Failure mode | Required action |
 |---|---|
+| Artifact base HEAD differs from actual current HEAD | Re-anchor the roadmap/work order before implementation. |
+| Empty closure range | Re-run with the captured base HEAD and do not claim closure from `HEAD..HEAD`. |
+| Source invariant claim exceeds source proof | Downgrade the claim to doc-only normalization or cite a literal source invariant. |
 | `pre-dispatch` fails | Keep artifact in `DRAFT`, `HOLD_*`, or `BLOCKED`; return to Orchestrator. |
 | `pre-implementation` fails | Stop edits; return the blocker to Orchestrator or Reviewer. |
 | `pre-closure` fails | Do not mark closed; file a blocking finding or correction batch. |

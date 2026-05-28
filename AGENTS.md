@@ -273,6 +273,10 @@ Hard enforcement:
 
 - `governance/compat/check_work_order_dispatch_quality.py` is mandatory in the
   local hook chain and CI documentation workflow.
+- Agent autorun gates must use a real changed range. Capture `baseHead` with
+  `git rev-parse --short HEAD` before implementation and run closure/push gates
+  as `--base <baseHead> --head HEAD`; `--base HEAD --head HEAD` is not valid
+  closure evidence for changed governed artifacts.
 - Any work order, connector roadmap, or Fast Lane audit that is marked
   `DISPATCHED`, `FAST_LANE_READY`, `READY`, `CLOSED`, `CLOSED_PASS`, or an
   equivalent execution/closure status must satisfy the machine gate before the
@@ -282,6 +286,12 @@ Hard enforcement:
 - A Source Verification `ACCEPT` row must cite an existing source file or a
   canonical-contract marker, and value rows must include the source-declared
   values they claim.
+- Source Verification must distinguish `EXISTS`, `VALUE_SET`,
+  `LITERAL_INVARIANT`, `RUNTIME_BEHAVIOR`, and `DOC_ONLY_NEW`. A false
+  invariant such as `canReinject=false` may be source-claimed only when the
+  cited source line literally declares/assigns false or the cited runtime path
+  proves that connector-specific invariant. A `boolean` field alone is not a
+  false-invariant proof.
 - Roadmap-derived work orders must include the Roadmap-to-Work-Order Trace
   Matrix before ready/dispatch.
 - Conditional prerequisites such as `CLOSED_PASS` must keep the artifact in a
@@ -329,14 +339,14 @@ inspect whether a worker agent followed the process.
 Required phase gates:
 
 - before ready/dispatch:
-  `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch`
+  `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base <baseHead> --head HEAD`
 - before material implementation:
-  `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation`
+  `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <baseHead> --head HEAD`
 - before any `CLOSED`, `CLOSED_PASS`, `CLOSED_PASS_BOUNDED`, or equivalent
   claim:
-  `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure`
+  `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base <baseHead> --head HEAD`
 - before push:
-  `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-push`
+  `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-push --base <baseHead> --head HEAD`
 
 If a phase gate fails, the agent must stop at that phase and mark the artifact
 `DRAFT`, `HOLD_*`, `BLOCKED`, or return it to Orchestrator. A worker may not

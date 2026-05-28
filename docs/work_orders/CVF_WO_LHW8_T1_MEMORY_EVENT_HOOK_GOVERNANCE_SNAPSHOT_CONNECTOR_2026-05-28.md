@@ -41,9 +41,9 @@ blocked.
 Implementer writes spec (S1–S5) using W2, AIF-C, and VI3 vocabulary verbatim.
 Reviewer checks all `MemoryEventHookDecision` values verbatim, all
 `MemoryGatewayPolicyDecision` values verbatim, `runtimeExecutionAuthorized=false`
-and `canReinject=false` explicit, boundary table honest, S5 Source Verification
-complete. Auditor confirms LH1 triggers recorded, no memory injection or raw
-memory release claimed. No self-review.
+and connector-normalized advisory `canReinject=false` explicit, boundary table
+honest, S5 Source Verification complete. Auditor confirms LH1 triggers
+recorded, no memory injection or raw memory release claimed. No self-review.
 
 ## Scope
 
@@ -108,7 +108,7 @@ If any required file is missing, stop and report to Orchestrator.
 | --- | --- | --- | --- | --- |
 | T1 spec; W2/AIF-C/VI3 field names verbatim | S1–S5 | `docs/reference/CVF_LHW8_T1_MEMORY_EVENT_HOOK_GOVERNANCE_SNAPSHOT_CONNECTOR_SPEC_2026-05-28.md` | Reviewer confirms source-verbatim field names | CLOSED |
 | Memory re-execution blocked explicit | S1, S3, Claim Boundary | `runtimeExecutionAuthorized=false`; explicit not-reexecute statement | `rg -n "runtimeExecutionAuthorized=false" <spec>` | CLOSED |
-| `canReinject=false` and `rawMemoryReleased=false` invariants explicit | S1, S3 | invariants stated | Reviewer checks | CLOSED |
+| W2 `canReinject=false`, AIF-C advisory `canReinject=false` normalization, and `rawMemoryReleased=false` explicit | S1, S3 | invariants and connector-normalized requirement stated | Reviewer checks | CLOSED |
 | Source Verification Table complete | S5 | Source Verification Table | Reviewer checks no `BLOCKED_SOURCE_NOT_FOUND` row | CLOSED |
 | No code file modified | Evidence Requirements | git diff output | `git diff --name-only` | CLOSED |
 

@@ -108,6 +108,11 @@ An agent must pass the relevant `pre-dispatch`, `pre-implementation`,
 `pre-closure`, or `pre-push` phase gate before moving to the next workflow
 state. A failed phase gate is a stop condition, not an advisory.
 
+Requirement 10: every governed batch must capture `baseHead` with
+`git rev-parse --short HEAD` before implementation. Range-aware gates must use
+`--base <baseHead> --head HEAD`; empty closure ranges are not valid evidence for
+changed governed artifacts.
+
 ## Inputs And Outputs
 
 Input artifacts:
@@ -292,7 +297,8 @@ and status. Missing trace rows block dispatch or closure.
 Before ready/dispatch, run:
 
 ```powershell
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch
+git rev-parse --short HEAD
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base <baseHead> --head HEAD
 ```
 
 If this command fails, keep the work order in `DRAFT`, `HOLD_*`, or `BLOCKED`.
@@ -313,7 +319,7 @@ Implementation follows only the current work order and GC-018.
 Before material implementation begins, run:
 
 ```powershell
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <baseHead> --head HEAD
 ```
 
 Output:
@@ -365,7 +371,7 @@ Closure records:
 Before closure may be claimed, run:
 
 ```powershell
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base <baseHead> --head HEAD
 ```
 
 If the gate fails, do not mark the task `CLOSED`, `CLOSED_PASS`,
@@ -376,9 +382,9 @@ If the gate fails, do not mark the task `CLOSED`, `CLOSED_PASS`,
 Mandatory local gates for workflow artifacts:
 
 ```powershell
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base <baseHead> --head HEAD
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <baseHead> --head HEAD
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base <baseHead> --head HEAD
 python governance/compat/check_docs_governance_compat.py
 python governance/compat/check_markdown_structural_completeness.py
 python governance/compat/check_active_session_state.py --enforce
@@ -435,7 +441,7 @@ Minimum push evidence for a governed batch:
 ```powershell
 git remote -v
 git status --short
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-push
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-push --base <baseHead> --head HEAD
 python governance/compat/run_local_governance_hook_chain.py --hook pre-push
 ```
 

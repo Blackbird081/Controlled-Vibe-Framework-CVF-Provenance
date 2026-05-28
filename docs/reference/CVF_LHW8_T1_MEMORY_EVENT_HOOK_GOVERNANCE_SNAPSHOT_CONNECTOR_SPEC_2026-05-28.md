@@ -51,8 +51,9 @@ behavior.
 **Invariants:**
 
 - `runtimeExecutionAuthorized=false`
-- `canReinject=false` (preserved from W2 `MemoryEventHookReceipt` and AIF-C
-  `MemoryGatewayDecision`)
+- `canReinject=false` (preserved from W2 `MemoryEventHookReceipt`; connector
+  packet normalizes AIF-C `MemoryGatewayDecision.canReinject` to false for
+  this advisory and must not represent an authorized reinjection path)
 - `rawMemoryReleased=false` (preserved from W2 `MemoryEventHookReceipt` and
   AIF-C `MemoryGatewayDecision`)
 
@@ -85,7 +86,7 @@ Runtime-proven.
 | `hookDecision` | W2 `MemoryEventHookDecision` | — | One of 5 W2 values verbatim |
 | `gatewayOperation` | AIF-C `MemoryGatewayDecision.operation` | — | Named gateway operation |
 | `gatewayDecision` | AIF-C `MemoryGatewayDecision.decision` | — | AIF-C policy outcome |
-| `gatewayCanReinject` | AIF-C `MemoryGatewayDecision.canReinject` | `=false` | Preserved invariant |
+| `gatewayCanReinject` | AIF-C `MemoryGatewayDecision.canReinject` | connector-normalized `=false` | Source field is boolean; this advisory packet requires false |
 | `gatewayRawMemoryReleased` | AIF-C `MemoryGatewayDecision.rawMemoryReleased` | `=false` | Preserved invariant |
 | `captureDecision` | VI3 `AgentMemoryCaptureRecord.captureDecision` | — | Actual capture outcome |
 | `policyContext` | VI3 `AgentMemoryCaptureRecord.policyContext` | — | Actor/scope/canReinject context |
