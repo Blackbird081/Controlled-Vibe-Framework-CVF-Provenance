@@ -120,11 +120,13 @@ Current HEAD after LHW10 GC-018 + roadmap + 3 work orders commit: `6c687704`.
 Current HEAD after LHW10-T1 implementation commit: `ff8aa5c8`
 (`docs(lhw10-t1): close LHW10-T1 Workflow Transition Enforcement Advisory Connector CLOSED_PASS_BOUNDED`).
 LHW10-T1 CLOSED_PASS_BOUNDED: cvf.workflowTransitionEnforcementAdvisory.lhw10.t1.v1.
-LHW10 wave: T1 CLOSED_PASS_BOUNDED; T2 READY_FOR_IMPLEMENTATION; T3 HOLD until T1+T2 closed.
-T2: cvf.runtimeMaturityEvidenceChain.lhw10.t2.v1 (VI1/G1/LHW8-T2).
+Current HEAD after LHW10-T1 handoff sync: `25d0e914`.
+Current HEAD after LHW10-T2 implementation: `25d0e914` (pending commit).
+LHW10-T2 CLOSED_PASS_BOUNDED: cvf.runtimeMaturityEvidenceChain.lhw10.t2.v1.
+LHW10 wave: T1 CLOSED_PASS_BOUNDED; T2 CLOSED_PASS_BOUNDED; T3 READY_FOR_IMPLEMENTATION.
 T3: cvf.providerHealthDegradationAdvisory.lhw10.t3.v1 (W5/W4/LHW9-T1).
 
-Current HEAD (updated per GC-020): `ff8aa5c8`.
+Current HEAD (updated per GC-020): `25d0e914`.
 
 ## Startup Acknowledgment
 

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: HOLD_UNTIL_T1_CLOSED_PASS
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
