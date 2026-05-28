@@ -20,6 +20,7 @@ Template: `docs/reference/CVF_FAST_LANE_AUDIT_TEMPLATE.md`
 ## Authority Chain
 
 - LHW6 roadmap: `docs/roadmaps/CVF_LHW6_WORKFLOW_CONNECTOR_WAVE6_ROADMAP_2026-05-28.md`
+- LHW6 GC-018: `docs/baselines/CVF_GC018_LHW6_WORKFLOW_CONNECTOR_WAVE6_2026-05-28.md`
 - LH1 ledger trigger: `OpenAgentd` PARTIALLY_ABSORBED — "Reopen only for
   read-only tool runtime bridge design; execution remains blocked"
 - W3 completion: `docs/reviews/CVF_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_COMPLETION_2026-05-24.md`
@@ -86,7 +87,8 @@ non-MCP runtime surface.
 
 **FAST_LANE_READY** (no gate — T1 is the first tranche).
 
-LHW6-T1 may proceed immediately under Fast Lane governance.
+LHW6-T1 may proceed under Fast Lane governance after the dispatch-quality gate
+passes.
 Work order dispatched at:
 `docs/work_orders/CVF_WO_LHW6_T1_TOOL_RUNTIME_BRIDGE_ADVISORY_CONNECTOR_2026-05-28.md`
 

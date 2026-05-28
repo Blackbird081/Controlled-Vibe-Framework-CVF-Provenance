@@ -143,8 +143,8 @@ Minimum rows:
   "This CLI command modifies local state. Obtain approval before first run."
 - `workspace_mutation` + `blocked_by_policy` + `blocked` → `blocked_first_use` →
   "This CLI command mutates the workspace. Blocked by current policy."
-- `install` + `blocked_by_policy` + `blocked` → `install_blocked` →
-  "Install commands are blocked. Contact your administrator."
+- `install` + `pending_approval` + `hold_for_approval` → `install_review_required` →
+  "Install commands require explicit review approval before first run."
 - `network_egress` + `pending_approval` + `hold_for_approval` → `network_review_required` →
   "This command reaches external networks. Network review required before first run."
 
@@ -164,7 +164,7 @@ Every CLI tool onboarding governance packet must contain:
 - `bridgeAdvisoryType`: from LHW6-T1 (`advisory_allowed` | `hold_for_approval` | `blocked`)
 - `runtimeExecutionAuthorized`: always `false`
 - `onboardingClassification`: one of `safe_first_use` | `review_before_first_use` |
-  `blocked_first_use` | `install_blocked` | `network_review_required`
+  `blocked_first_use` | `install_review_required` | `network_review_required`
 - `onboardingGuidance`: plain-language guidance for operator or non-coder
 
 State explicitly: "These fields are documentation-only minimum requirements.

@@ -55,6 +55,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
             ["python", "governance/compat/check_markdown_structural_completeness.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
+            "work-order dispatch quality",
+            ["python", "governance/compat/check_work_order_dispatch_quality.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
             "governed pack contract compatibility",
             ["python", "governance/compat/check_governed_pack_contract.py", "--enforce"],
         ),
@@ -87,6 +91,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         (
             "markdown structural completeness",
             ["python", "governance/compat/check_markdown_structural_completeness.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "work-order dispatch quality",
+            ["python", "governance/compat/check_work_order_dispatch_quality.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
             "cpf public surface maintainability",

@@ -269,6 +269,52 @@ Open checkbox residue, stale continuity state, memory-based file-change claims,
 and roadmap requirements lost between dispatch and final artifact are closure
 defects. Operator silence is not a waiver.
 
+Hard enforcement:
+
+- `governance/compat/check_work_order_dispatch_quality.py` is mandatory in the
+  local hook chain and CI documentation workflow.
+- Any work order, connector roadmap, or Fast Lane audit that is marked
+  `DISPATCHED`, `FAST_LANE_READY`, `READY`, `CLOSED`, `CLOSED_PASS`, or an
+  equivalent execution/closure status must satisfy the machine gate before the
+  agent may proceed.
+- A future connector wave may not be marked ready/dispatch unless the matching
+  fresh GC-018 baseline exists.
+- A Source Verification `ACCEPT` row must cite an existing source file or a
+  canonical-contract marker, and value rows must include the source-declared
+  values they claim.
+- Roadmap-derived work orders must include the Roadmap-to-Work-Order Trace
+  Matrix before ready/dispatch.
+- Conditional prerequisites such as `CLOSED_PASS` must keep the artifact in a
+  `HOLD_*`, `DRAFT`, or `PROPOSED` status until the prerequisite evidence
+  exists and has been checked.
+
+## Mandatory Governed File Maintainability Planning - 2026-05-28
+
+Canonical guard:
+
+`governance/toolkit/05_OPERATION/CVF_GOVERNED_FILE_SIZE_GUARD.md`
+
+Any agent that touches a governed source, test, frontend, active markdown,
+front-door, or handoff file near its hard line-count threshold must rotate,
+archive, split, or meaningfully reduce that file in the same batch.
+
+Binding requirements:
+
+- do not compress prose merely to fit under the hard threshold;
+- front doors such as `CVF_SESSION_MEMORY.md` must remain compact pointer
+  records, with long history moved to versioned archives;
+- active handoffs must open a successor handoff when they approach threshold
+  instead of accumulating indefinite continuity text;
+- feature work touching near-threshold source/test/frontend files must extract
+  a same-domain module/component/test file or shrink the touched file
+  materially;
+- `governance/compat/check_governed_file_size.py --enforce` must pass before
+  claiming the work is ready, closed, or safe for tester review.
+
+The guard now hard-fails touched near-hard-threshold governed files without
+same-domain rotation/split evidence or meaningful shrink. Maintainability
+planning is part of the work, not cleanup left for testers.
+
 ## Mandatory Knowledge Absorption Blind-Spot Prevention - 2026-05-24
 
 Canonical standard:

@@ -31,12 +31,17 @@ Handoff context:
 
 ## Latest Work / Changes
 
-Latest mode marker: `work_order_dispatch_quality_gate_enforced`.
+Latest mode marker: `governed_file_size_maintainability_gate_enforced`.
 
 The latest update upgrades the mandatory Work Order Closure Quality Gate into
 machine enforcement through `governance/compat/check_work_order_dispatch_quality.py`.
 The guard is wired into the local hook chain and documentation CI workflow and
 was verified against the LHW6 dispatch range.
+
+The session front door was rotated for maintainability. The previous long
+front-door snapshot is archived at
+`CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_PRE_ROTATION_ARCHIVE_2026-05-28.md`.
+`CVF_SESSION_MEMORY.md` is now a compact pointer record.
 
 ## Claim Boundary
 
@@ -80,7 +85,7 @@ Current HEAD after LHW3-T2 implementation commit (parent of handoff sync): `34a4
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=work_order_dispatch_quality_gate_enforced; active handoff=AGENT_HANDOFF_V14_2026-05-27.md; next allowed move=future connector waves require fresh GC-018, roadmap, source-verified work orders, roadmap-to-work-order trace matrix, closure diff gate, claim integrity scan, fail-condition scan, checklist finalization, continuity sync, and passing `check_work_order_dispatch_quality.py`; parked checkpoint=hosted Netlify freshness and operator external-agent retest for VI5-T4/T5 remain pending.
+Startup acknowledged: current mode=governed_file_size_maintainability_gate_enforced; active handoff=AGENT_HANDOFF_V14_2026-05-27.md; next allowed move=LHW6 is CLOSED_PASS_BOUNDED in HEAD and any follow-on wave must pass dispatch-quality, closure-quality, and governed file-size maintainability gates; parked checkpoint=hosted Netlify freshness and operator external-agent retest for VI5-T4/T5 remain pending.
 
 ## Work Order Dispatch Quality Gate
 
@@ -103,6 +108,17 @@ Verification: running the guard against `68e3fa54..dc1feffb` catches the LHW6
 dispatch defects raised in review. The current implementation work does not
 repair LHW6; it makes the defect machine-detectable so future agent dispatches
 fail before execution.
+
+## Governed File Size Maintainability Gate
+
+`governance/compat/check_governed_file_size.py` now hard-fails touched
+near-hard-threshold governed files unless the batch includes a same-domain
+rotation/split artifact or a meaningful size reduction.
+
+Purpose: agents must plan maintainability and refactor/rotate files when they
+approach thresholds. Compressing prose just enough to satisfy the guard is not
+an acceptable primary remediation for active front doors, handoffs, or other
+governed files.
 
 Previous active handoff `AGENT_HANDOFF_V13_2026-05-25.md` was archived because it exceeded the governed active-markdown size guard. Do not append new status to V13.
 
@@ -856,6 +872,16 @@ Boundary: documentation-only connector specs. No W3/TA1/M1/AIF-C/WR1 runtime
 extension, CLI execution, memory reinjection, receipt envelope extension,
 provider behavior, hosted readiness, production readiness, or public release
 readiness claim.
+
+Current HEAD before LHW6 wave closure commit: `dc1feffb`
+
+LHW6 wave closure commit: `993b7bc3`
+
+Post-closure defect micro-fix commit (updated per GC-020): `b3dc0cad`
+(GC-018 untracked file added; T2 install mapping corrected to `pending_approval`
+/ `hold_for_approval`; T2 work order BLOCKED_SOURCE_NOT_FOUND row resolved to
+ACCEPT; T2 completion Fail Condition 4 added; `install_blocked` enum residue
+corrected to `install_review_required` in T2 spec S3, work order S2/S3.)
 
 ## Mandatory Standards
 

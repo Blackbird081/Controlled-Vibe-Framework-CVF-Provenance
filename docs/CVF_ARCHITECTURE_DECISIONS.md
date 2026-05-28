@@ -1245,3 +1245,42 @@ delegated work:
 - `docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md`
 - `docs/reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md`
 - `docs/reference/CVF_QUALITY_ASSESSMENT_STANDARD.md`
+
+## ADR-052: Governed File Maintainability Planning Becomes Mandatory
+
+### Status
+ACCEPTED — 2026-05-28
+
+### Context
+LHW6 rule hardening exposed a governance failure mode where agents tried to
+compress oversized session, handoff, review, or work-order files late in the
+workflow instead of planning maintainable file boundaries from the start. That
+behavior preserves line-count compliance on paper but makes future review,
+testing, and defect isolation harder.
+
+### Decision
+CVF adopts governed file maintainability planning as a mandatory rule. When an
+active governed Markdown or JSON file is touched near its hard line threshold,
+the agent must rotate, archive, split, or materially shrink the file in the
+same maintainability domain before closing the work. Minimal prose compression
+only to satisfy a numeric guard is not acceptable.
+
+### Consequences
+- Agents must plan maintainability boundaries during roadmap and work-order
+  design, not only during final guard cleanup.
+- Testers can rely on smaller, purpose-bounded files when isolating closure and
+  governance defects.
+- The governed file-size guard now fails touched near-threshold files without
+  a same-domain rotation/split artifact or meaningful line-count reduction.
+- The current session front door was rotated to a compact pointer record, with
+  the previous full snapshot archived under
+  `CVF_SESSION/handoffs/archive/`.
+
+### Related Files
+- `AGENTS.md`
+- `CLAUDE.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_PRE_ROTATION_ARCHIVE_2026-05-28.md`
+- `governance/toolkit/05_OPERATION/CVF_GOVERNED_FILE_SIZE_GUARD.md`
+- `governance/compat/check_governed_file_size.py`
+- `governance/compat/CVF_GOVERNED_FILE_SIZE_EXCEPTION_REGISTRY.json`

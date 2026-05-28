@@ -130,7 +130,11 @@ This standard is enforced by:
 - implementers before completion;
 - reviewers before PASS disposition;
 - active handoff/session-state sync;
-- local governance hooks where structural checks apply.
+- local governance hooks where structural checks apply;
+- `governance/compat/check_work_order_dispatch_quality.py`, which hard-fails
+  dispatch/ready work orders, connector-wave roadmaps, and fast-lane audits
+  when prerequisite GC-018 baselines, source files, source-verification truth,
+  roadmap trace matrices, or prerequisite completion evidence are missing.
 
 Future automation may add hard checks, but manual compliance is mandatory now.
 

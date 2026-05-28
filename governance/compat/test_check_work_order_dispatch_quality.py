@@ -1,0 +1,196 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+import importlib.util
+import sys
+import tempfile
+import unittest
+from pathlib import Path
+from unittest.mock import patch
+
+
+MODULE_PATH = Path(__file__).resolve().with_name("check_work_order_dispatch_quality.py")
+SPEC = importlib.util.spec_from_file_location("check_work_order_dispatch_quality", MODULE_PATH)
+if SPEC is None or SPEC.loader is None:
+    raise RuntimeError(f"Unable to load module from {MODULE_PATH}")
+MODULE = importlib.util.module_from_spec(SPEC)
+sys.modules[SPEC.name] = MODULE
+SPEC.loader.exec_module(MODULE)
+
+
+class WorkOrderDispatchQualityTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.temp_dir = tempfile.TemporaryDirectory()
+        self.repo_root = Path(self.temp_dir.name)
+        self._seed_required_markers()
+
+    def tearDown(self) -> None:
+        self.temp_dir.cleanup()
+
+    def _write(self, rel_path: str, text: str) -> None:
+        path = self.repo_root / rel_path
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(text, encoding="utf-8")
+
+    def _seed_required_markers(self) -> None:
+        self._write(
+            MODULE.STANDARD_PATH,
+            "\n".join(
+                [
+                    "Roadmap-To-Work-Order Trace Matrix",
+                    "Negative And Fail-Condition Scan",
+                    MODULE.THIS_SCRIPT_PATH,
+                ]
+            ),
+        )
+        self._write(
+            MODULE.WORK_ORDER_TEMPLATE_PATH,
+            "\n".join(
+                [
+                    "Source Verification Block",
+                    "Roadmap-To-Work-Order Trace Matrix",
+                    MODULE.THIS_SCRIPT_PATH,
+                ]
+            ),
+        )
+        self._write(MODULE.HOOK_CHAIN_PATH, MODULE.THIS_SCRIPT_PATH)
+
+    def test_lhw6_dispatch_without_gc018_and_trace_matrix_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_LHW6_T1_TEST_2026-05-28.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCHED",
+                    "Authority: docs/roadmaps/CVF_LHW6_TEST_ROADMAP_2026-05-28.md",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| Symbol | `governance/contracts/example.ts` | line 1 | `ExampleMode` | ExampleMode | ACCEPT |",
+                ]
+            ),
+        )
+        self._write("governance/contracts/example.ts", "export type ExampleMode = 'one';\n")
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        issues = report["violations"][0]["issues"]
+        self.assertIn("roadmap-derived work order is dispatch/ready without Roadmap-To-Work-Order Trace Matrix", issues)
+        self.assertIn("LHW6 connector work order is dispatch/ready without fresh GC-018 baseline", issues)
+
+    def test_fast_lane_ready_with_closed_pass_precondition_fails(self) -> None:
+        audit = "docs/reviews/CVF_LHW6_T2_FAST_LANE_AUDIT_2026-05-28.md"
+        self._write(
+            audit,
+            "\n".join(
+                [
+                    "# Audit",
+                    "Status: FAST_LANE_READY",
+                    "Decision: FAST_LANE_READY (pre-condition: T1 CLOSED_PASS)",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([audit])
+
+        self.assertFalse(report["compliant"])
+        issues = report["violations"][0]["issues"]
+        self.assertIn("FAST_LANE_READY audit has unmet/conditional CLOSED_PASS prerequisite; use HOLD_* until satisfied", issues)
+
+    def test_accept_row_with_missing_source_file_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_LHW6_T2_TEST_2026-05-28.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: HOLD_PENDING_T1",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| Future values | `docs/reference/CVF_LHW6_MISSING_SPEC.md` | S3 | `bridgeAdvisoryType` | BridgeSpec | ACCEPT |",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "Source Verification ACCEPT cites missing source file `docs/reference/CVF_LHW6_MISSING_SPEC.md`",
+            report["violations"][0]["issues"],
+        )
+
+    def test_accept_value_row_missing_declared_source_value_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_LHW6_T3_TEST_2026-05-28.md"
+        self._write(
+            "governance/contracts/workflow.ts",
+            "\n".join(
+                [
+                    "export type WorkflowRecoveryAction =",
+                    "  | 'resume_from_checkpoint'",
+                    "  | 'request_human_review';",
+                ]
+            ),
+        )
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: HOLD_PENDING_T1_T2",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| WorkflowRecoveryAction values `resume_from_checkpoint` | `governance/contracts/workflow.ts` | lines 1-3 | `WorkflowRecoveryAction` | WorkflowRecoveryAction | ACCEPT |",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "Source Verification ACCEPT row claims values for `WorkflowRecoveryAction` but omits source value(s): request_human_review",
+            report["violations"][0]["issues"],
+        )
+
+    def test_compliant_hold_packet_passes(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_LHW6_T1_TEST_2026-05-28.md"
+        self._write(
+            "governance/contracts/example.ts",
+            "export type ExampleMode = 'one' | 'two';\n",
+        )
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: HOLD_PENDING_GC018",
+                    "Authority: docs/roadmaps/CVF_LHW6_TEST_ROADMAP_2026-05-28.md",
+                    "## Roadmap-To-Work-Order Trace Matrix",
+                    "| Roadmap requirement | Work order section | Output artifact or field | Verification command or check | Status |",
+                    "|---|---|---|---|---|",
+                    "| R1 | S1 | field | check | BLOCKED |",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| ExampleMode values `one` `two` | `governance/contracts/example.ts` | line 1 | `ExampleMode` | ExampleMode | ACCEPT |",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertTrue(report["compliant"])
+
+
+if __name__ == "__main__":
+    unittest.main()

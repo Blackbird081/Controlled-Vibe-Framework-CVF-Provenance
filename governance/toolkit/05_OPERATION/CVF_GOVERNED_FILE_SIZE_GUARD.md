@@ -32,6 +32,11 @@ Default operating rule:
 - split before the file becomes a maintenance liability
 - do not keep adding new tranche logic into an already oversized file without an exception trail
 - preserve exceptions as tracked debt, never as silent drift
+- if a governed file is touched while it is within 25 lines of its hard
+  threshold, the same batch must rotate/split into a new file in the same
+  maintainability domain or shrink the touched file by at least 50 lines
+- active front doors and handoffs should open a new pointer/archive/successor
+  file instead of compressing prose to pass the line-count guard
 
 ### File Classes And Thresholds
 
@@ -113,6 +118,19 @@ If a file is already above threshold and is touched in a new batch:
 - prefer reducing or extracting from it in the same batch
 - do not append new tranche logic into the oversized file unless the exception still truthfully covers that usage
 
+If a file is near the hard threshold and is touched in a new batch:
+
+1. rotate, archive, or split the file before adding more continuity or feature
+   content;
+2. keep the active entrypoint as a pointer file when the artifact is a front
+   door or handoff;
+3. record the new archive/successor path in the active state or handoff when
+   applicable;
+4. run `python governance/compat/check_governed_file_size.py --enforce`.
+
+Shortening wording just enough to stay under the hard threshold is not an
+acceptable primary remediation for near-threshold active files.
+
 ### Exception Model
 
 Approved exceptions are allowed only for:
@@ -151,6 +169,8 @@ Violations include:
 - a file exceeding its exception maximum
 - an incomplete exception entry
 - growing an oversized file without maintaining the exception trail
+- touching a near-hard-threshold governed file without a same-domain
+  rotation/split artifact or meaningful size reduction
 
 ## Related Artifacts
 

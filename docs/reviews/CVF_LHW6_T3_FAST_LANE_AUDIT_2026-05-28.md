@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: FAST_LANE_READY
+Status: HOLD_PENDING_T1_T2
 
 docType: fast_lane_audit
 
@@ -20,6 +20,7 @@ Template: `docs/reference/CVF_FAST_LANE_AUDIT_TEMPLATE.md`
 ## Authority Chain
 
 - LHW6 roadmap: `docs/roadmaps/CVF_LHW6_WORKFLOW_CONNECTOR_WAVE6_ROADMAP_2026-05-28.md`
+- LHW6 GC-018: `docs/baselines/CVF_GC018_LHW6_WORKFLOW_CONNECTOR_WAVE6_2026-05-28.md`
 - LH1 ledger trigger: `Review CVF_1.md` PARTIALLY_ABSORBED — "Reopen for
   project memory readout or workflow recovery proof"
 - M1 completion: `docs/reviews/CVF_M1_DURABLE_CROSS_SESSION_MEMORY_COMPLETION_2026-05-24.md`
@@ -101,10 +102,10 @@ After T3 closes: LHW6 roadmap → `CLOSED_PASS_BOUNDED`.
 
 ## Decision
 
-**FAST_LANE_READY** (pre-conditions: T1 CLOSED_PASS + T2 CLOSED_PASS).
+**HOLD_PENDING_T1_T2** (Fast Lane eligible, but not ready until T1 + T2 CLOSED_PASS).
 
 LHW6-T3 may proceed under Fast Lane governance once both gates are confirmed.
-Work order dispatched at:
+Work order held at:
 `docs/work_orders/CVF_WO_LHW6_T3_PROJECT_MEMORY_READOUT_CONNECTOR_2026-05-28.md`
 
 ## Claim Boundary

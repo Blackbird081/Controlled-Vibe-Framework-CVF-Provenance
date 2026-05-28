@@ -1,0 +1,480 @@
+#!/usr/bin/env python3
+"""
+CVF Work Order Dispatch Quality Gate
+
+Hard-fails new or amended governed dispatch packets that try to move from
+planning into execution before the required source, roadmap, prerequisite, and
+GC-018 evidence exists.
+"""
+
+from __future__ import annotations
+
+import argparse
+import datetime as dt
+import json
+import os
+import re
+import subprocess
+import sys
+from pathlib import Path
+from typing import Any
+
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+DEFAULT_BASE_CANDIDATES = ("origin/main", "origin/master", "main", "master")
+
+STANDARD_PATH = "docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md"
+WORK_ORDER_TEMPLATE_PATH = "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md"
+HOOK_CHAIN_PATH = "governance/compat/run_local_governance_hook_chain.py"
+THIS_SCRIPT_PATH = "governance/compat/check_work_order_dispatch_quality.py"
+
+REQUIRED_SOURCE_COLUMNS = (
+    "Claimed item",
+    "Source file",
+    "Verified line/section",
+    "Verified path or symbol",
+    "Owning interface/function/schema",
+    "Disposition",
+)
+
+PATH_RE = re.compile(
+    r"`?((?:docs|governance|EXTENSIONS|CVF_SESSION|scripts|sdk|\.github)/[^`\s|)]+)`?"
+)
+LHW_RE = re.compile(r"LHW[-_]?(\d+)(?!\d)", re.IGNORECASE)
+
+
+def _run_git(args: list[str]) -> tuple[int, str, str]:
+    proc = subprocess.run(
+        ["git", *args],
+        cwd=REPO_ROOT,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
+    return proc.returncode, proc.stdout.strip(), proc.stderr.strip()
+
+
+def _ref_exists(ref: str) -> bool:
+    code, _, _ = _run_git(["rev-parse", "--verify", "--quiet", f"{ref}^{{commit}}"])
+    return code == 0
+
+
+def _discover_default_base(head: str) -> tuple[str, str]:
+    env_base = os.getenv("CVF_COMPAT_BASE")
+    if env_base:
+        return env_base, "env:CVF_COMPAT_BASE"
+    for ref in DEFAULT_BASE_CANDIDATES:
+        if not _ref_exists(ref):
+            continue
+        code, out, _ = _run_git(["merge-base", ref, head])
+        if code == 0 and out:
+            return out, f"merge-base({ref},{head})"
+    return "HEAD~1", "fallback:HEAD~1"
+
+
+def _resolve_range(base: str | None, head: str | None) -> tuple[str, str, str]:
+    resolved_head = head or "HEAD"
+    if base:
+        return base, resolved_head, "explicit:--base"
+    resolved_base, source = _discover_default_base(resolved_head)
+    return resolved_base, resolved_head, source
+
+
+def _parse_name_status(output: str) -> dict[str, set[str]]:
+    changed: dict[str, set[str]] = {}
+    for raw_line in output.splitlines():
+        parts = raw_line.split("\t")
+        if len(parts) < 2:
+            continue
+        status = parts[0].strip()
+        path = parts[2] if (status.startswith("R") or status.startswith("C")) and len(parts) > 2 else parts[1]
+        normalized = path.replace("\\", "/").strip()
+        changed.setdefault(normalized, set()).add(status)
+    return changed
+
+
+def _get_changed(base: str, head: str) -> dict[str, set[str]]:
+    changed: dict[str, set[str]] = {}
+    code, out, err = _run_git(["diff", "--name-status", f"{base}..{head}"])
+    if code != 0:
+        raise RuntimeError(f"git diff failed for range {base}..{head}: {err or out}")
+    for path, statuses in _parse_name_status(out).items():
+        changed.setdefault(path, set()).update(statuses)
+    for args in (["diff", "--name-status"], ["diff", "--name-status", "--cached"]):
+        code, out, _ = _run_git(args)
+        if code == 0 and out:
+            for path, statuses in _parse_name_status(out).items():
+                changed.setdefault(path, set()).update(statuses)
+    code, out, _ = _run_git(["ls-files", "--others", "--exclude-standard"])
+    if code == 0 and out:
+        for raw_line in out.splitlines():
+            normalized = raw_line.replace("\\", "/").strip()
+            if normalized:
+                changed.setdefault(normalized, set()).add("A")
+    return changed
+
+
+def _read_rel(path: str) -> str:
+    full = REPO_ROOT / path
+    if not full.exists() or full.is_dir():
+        return ""
+    return full.read_text(encoding="utf-8")
+
+
+def _exists_rel(path: str) -> bool:
+    normalized = path.strip().strip("`").replace("\\", "/").rstrip(".,;:")
+    return bool(normalized) and (REPO_ROOT / normalized).exists()
+
+
+def _extract_status(text: str) -> str:
+    match = re.search(r"^Status:\s*(.+?)\s*$", text, re.MULTILINE | re.IGNORECASE)
+    return match.group(1).strip() if match else ""
+
+
+def _is_dispatch_status(status: str) -> bool:
+    normalized = status.upper()
+    return "DISPATCHED" in normalized or "READY" in normalized or "CLOSED" in normalized
+
+
+def _is_hold_status(status: str) -> bool:
+    return "HOLD" in status.upper() or "PROPOSED" in status.upper() or "DRAFT" in status.upper()
+
+
+def _extract_wave_id(path: str, text: str) -> int | None:
+    match = LHW_RE.search(f"{path}\n{text}")
+    return int(match.group(1)) if match else None
+
+
+def _is_connector_wave(path: str, text: str) -> bool:
+    wave_id = _extract_wave_id(path, text)
+    return wave_id is not None and wave_id >= 6
+
+
+def _has_gc018_for_wave(wave_id: int) -> bool:
+    baseline_root = REPO_ROOT / "docs" / "baselines"
+    if not baseline_root.exists():
+        return False
+    wave = f"LHW{wave_id}".upper()
+    for path in baseline_root.rglob("*.md"):
+        name = path.name.upper()
+        if wave in name and re.search(r"GC[-_]?018", name):
+            return True
+    return False
+
+
+def _extract_paths(text: str) -> list[str]:
+    paths = []
+    for match in PATH_RE.finditer(text):
+        path = match.group(1).replace("\\", "/").rstrip(".,;:")
+        if "*" in path or "<" in path or ">" in path:
+            continue
+        paths.append(path)
+    return paths
+
+
+def _extract_section(text: str, heading_fragment: str) -> str:
+    pattern = re.compile(
+        rf"^##\s+.*{re.escape(heading_fragment)}.*$([\s\S]*?)(?=^##\s+|\Z)",
+        re.MULTILINE | re.IGNORECASE,
+    )
+    match = pattern.search(text)
+    return match.group(1) if match else ""
+
+
+def _has_trace_matrix(text: str) -> bool:
+    return re.search(r"Roadmap[- ]To[- ]Work[- ]Order Trace Matrix", text, re.IGNORECASE) is not None
+
+
+def _is_roadmap_derived(text: str) -> bool:
+    return "docs/roadmaps/" in text or "roadmap-derived" in text.lower() or "Roadmap requirement" in text
+
+
+def _parse_markdown_tables(text: str) -> list[dict[str, str]]:
+    rows: list[dict[str, str]] = []
+    lines = text.splitlines()
+    index = 0
+    while index < len(lines):
+        line = lines[index]
+        if "|" not in line or "Claimed item" not in line or "Source file" not in line:
+            index += 1
+            continue
+        headers = [cell.strip() for cell in line.strip().strip("|").split("|")]
+        index += 1
+        if index < len(lines) and re.match(r"^\s*\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)+\|?\s*$", lines[index]):
+            index += 1
+        while index < len(lines) and "|" in lines[index]:
+            raw_cells = [cell.strip() for cell in lines[index].strip().strip("|").split("|")]
+            if len(raw_cells) >= len(headers):
+                rows.append(dict(zip(headers, raw_cells)))
+            index += 1
+        continue
+    return rows
+
+
+def _source_table_has_required_columns(text: str) -> bool:
+    tables = _parse_markdown_tables(text)
+    if not tables:
+        return False
+    return all(column in tables[0] for column in REQUIRED_SOURCE_COLUMNS)
+
+
+def _extract_declared_string_values(source_text: str, symbol: str) -> set[str]:
+    symbol_name = re.sub(r"[^A-Za-z0-9_].*$", "", symbol.strip().strip("`"))
+    if not symbol_name:
+        return set()
+    type_match = re.search(
+        rf"(?:export\s+)?type\s+{re.escape(symbol_name)}\s*=\s*([\s\S]*?);",
+        source_text,
+    )
+    if not type_match:
+        return set()
+    return set(re.findall(r"['\"]([^'\"]+)['\"]", type_match.group(1)))
+
+
+def _row_literal_tokens(row: dict[str, str]) -> set[str]:
+    joined = " | ".join(row.values())
+    tokens = set(re.findall(r"`([^`]+)`", joined))
+    tokens.update(re.findall(r"['\"]([^'\"]+)['\"]", joined))
+    return {token for token in tokens if re.match(r"^[A-Za-z0-9_.:-]+$", token)}
+
+
+def _validate_accepted_source_rows(path: str, text: str) -> list[str]:
+    issues: list[str] = []
+    rows = _parse_markdown_tables(text)
+    for row in rows:
+        disposition = row.get("Disposition", "").upper()
+        if "ACCEPT" not in disposition:
+            continue
+        source_cell = row.get("Source file", "")
+        source_paths = _extract_paths(source_cell)
+        if not source_paths:
+            if "canonical" not in source_cell.lower() and "n/a" not in source_cell.lower():
+                issues.append("Source Verification ACCEPT row lacks a concrete source file or canonical-contract marker")
+            continue
+        for source_path in source_paths:
+            if not _exists_rel(source_path):
+                issues.append(f"Source Verification ACCEPT cites missing source file `{source_path}`")
+                continue
+            claimed = row.get("Claimed item", "")
+            verified_symbol = row.get("Verified path or symbol", "")
+            if "values" not in f"{claimed} {verified_symbol}".lower():
+                continue
+            source_text = _read_rel(source_path)
+            declared_values = _extract_declared_string_values(source_text, verified_symbol)
+            if not declared_values:
+                continue
+            row_tokens = _row_literal_tokens(row)
+            missing_values = sorted(value for value in declared_values if value not in row_tokens)
+            if missing_values:
+                issues.append(
+                    "Source Verification ACCEPT row claims values for "
+                    f"`{verified_symbol.strip().strip('`')}` but omits source value(s): {', '.join(missing_values)}"
+                )
+    return issues
+
+
+def _validate_required_first_reads(text: str) -> list[str]:
+    issues: list[str] = []
+    section = _extract_section(text, "Required First Reads")
+    for path in _extract_paths(section):
+        if not _exists_rel(path):
+            issues.append(f"Required First Reads cites missing path `{path}`")
+    return issues
+
+
+def _validate_work_order(path: str, text: str) -> list[str]:
+    issues: list[str] = []
+    status = _extract_status(text)
+    dispatching = "DISPATCHED" in status.upper() or "READY" in status.upper()
+
+    if dispatching and _is_roadmap_derived(text) and not _has_trace_matrix(text):
+        issues.append("roadmap-derived work order is dispatch/ready without Roadmap-To-Work-Order Trace Matrix")
+
+    if dispatching and _is_connector_wave(path, text):
+        wave_id = _extract_wave_id(path, text)
+        if wave_id is not None and not _has_gc018_for_wave(wave_id):
+            issues.append(f"LHW{wave_id} connector work order is dispatch/ready without fresh GC-018 baseline")
+        if "Source Verification" not in text or not _source_table_has_required_columns(text):
+            issues.append("dispatch/ready work order lacks a complete Source Verification table")
+
+    if dispatching:
+        issues.extend(_validate_required_first_reads(text))
+        blocking_precondition = re.search(
+            r"(pre-?condition|gate condition|dispatch only after|only after)[\s\S]{0,240}CLOSED_PASS",
+            text,
+            re.IGNORECASE,
+        )
+        if blocking_precondition:
+            issues.append("dispatch/ready status conflicts with unresolved CLOSED_PASS precondition language")
+
+    issues.extend(_validate_accepted_source_rows(path, text))
+
+    if re.search(r"install[\s\S]{0,120}always blocked|always blocked[\s\S]{0,120}install", text, re.IGNORECASE):
+        issues.append("work order asserts `install` is always blocked; cite a source policy or map it to approval/escalation")
+
+    return issues
+
+
+def _validate_roadmap(path: str, text: str) -> list[str]:
+    issues: list[str] = []
+    status = _extract_status(text)
+    if _is_connector_wave(path, text) and _is_dispatch_status(status) and not _is_hold_status(status):
+        wave_id = _extract_wave_id(path, text)
+        if wave_id is not None and not _has_gc018_for_wave(wave_id):
+            issues.append(f"LHW{wave_id} connector roadmap is dispatch/ready without fresh GC-018 baseline")
+    return issues
+
+
+def _validate_fast_lane_audit(path: str, text: str) -> list[str]:
+    issues: list[str] = []
+    status = _extract_status(text)
+    if "FAST_LANE_READY" in status.upper() and re.search(
+        r"(pre-?condition|conditional|only after)[\s\S]{0,240}CLOSED_PASS",
+        text,
+        re.IGNORECASE,
+    ):
+        issues.append("FAST_LANE_READY audit has unmet/conditional CLOSED_PASS prerequisite; use HOLD_* until satisfied")
+    if _is_connector_wave(path, text) and "FAST_LANE_READY" in status.upper():
+        wave_id = _extract_wave_id(path, text)
+        if wave_id is not None and not _has_gc018_for_wave(wave_id):
+            issues.append(f"LHW{wave_id} fast-lane audit is ready without fresh GC-018 baseline")
+    return issues
+
+
+def _is_target(path: str) -> bool:
+    normalized = path.replace("\\", "/")
+    return normalized.endswith(".md") and (
+        normalized.startswith("docs/work_orders/")
+        or normalized.startswith("docs/roadmaps/")
+        or normalized.startswith("docs/reviews/")
+    )
+
+
+def _validate_path(path: str) -> list[str]:
+    text = _read_rel(path)
+    if not text:
+        return ["changed governed dispatch artifact is missing from workspace"]
+    normalized = path.replace("\\", "/")
+    if normalized.startswith("docs/work_orders/"):
+        return _validate_work_order(normalized, text)
+    if normalized.startswith("docs/roadmaps/"):
+        return _validate_roadmap(normalized, text)
+    if normalized.startswith("docs/reviews/") and "FAST_LANE_AUDIT" in normalized.upper():
+        return _validate_fast_lane_audit(normalized, text)
+    return []
+
+
+def _classify(changed_files: list[str]) -> dict[str, Any]:
+    targets = sorted(path.replace("\\", "/") for path in changed_files if _is_target(path))
+    violations = []
+    for path in targets:
+        issues = _validate_path(path)
+        if issues:
+            violations.append({"path": path, "issues": issues})
+
+    required_markers = {
+        STANDARD_PATH: (
+            "Roadmap-To-Work-Order Trace Matrix",
+            "Negative And Fail-Condition Scan",
+            THIS_SCRIPT_PATH,
+        ),
+        WORK_ORDER_TEMPLATE_PATH: (
+            "Source Verification Block",
+            "Roadmap-To-Work-Order Trace Matrix",
+            THIS_SCRIPT_PATH,
+        ),
+        HOOK_CHAIN_PATH: (THIS_SCRIPT_PATH,),
+    }
+    marker_violations: dict[str, list[str]] = {}
+    for path, markers in required_markers.items():
+        text = _read_rel(path)
+        missing = [marker for marker in markers if marker not in text]
+        if missing:
+            marker_violations[path] = missing
+
+    return {
+        "timestamp": dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
+        "policy": STANDARD_PATH,
+        "script": THIS_SCRIPT_PATH,
+        "checkedFiles": targets,
+        "checkedFileCount": len(targets),
+        "violations": violations,
+        "violationCount": len(violations),
+        "markerViolations": marker_violations,
+        "markerViolationCount": len(marker_violations),
+        "compliant": not violations and not marker_violations,
+    }
+
+
+def _print_report(report: dict[str, Any], base: str, head: str, base_source: str) -> None:
+    print("=== CVF Work Order Dispatch Quality Gate ===")
+    print(f"Range: {base}..{head}")
+    print(f"Base source: {base_source}")
+    print(f"Policy: {report['policy']}")
+    print(f"Files checked: {report['checkedFileCount']}")
+    print(f"Violations: {report['violationCount']}")
+    print(f"Marker violations: {report['markerViolationCount']}")
+
+    if report["checkedFiles"]:
+        print("\nChecked dispatch artifacts:")
+        for path in report["checkedFiles"]:
+            print(f"  - {path}")
+    else:
+        print("\nNo changed work-order, roadmap, or fast-lane review artifacts required dispatch-quality validation.")
+
+    if report["violations"]:
+        print("\nDispatch-quality violations:")
+        for violation in report["violations"]:
+            print(f"  - {violation['path']}")
+            for issue in violation["issues"]:
+                print(f"    - {issue}")
+
+    if report["markerViolations"]:
+        print("\nGuard wiring marker violations:")
+        for path, markers in report["markerViolations"].items():
+            print(f"  - {path}")
+            for marker in markers:
+                print(f"    - missing marker `{marker}`")
+
+    if report["compliant"]:
+        print("\nCOMPLIANT - dispatch-quality gates are satisfied for checked artifacts.")
+    else:
+        print("\nVIOLATION - keep the artifact in HOLD/DRAFT or fix the missing dispatch evidence before execution.")
+
+
+def _run_check(base: str | None, head: str | None) -> tuple[dict[str, Any], str, str, str]:
+    resolved_base, resolved_head, base_source = _resolve_range(base, head)
+    changed = _get_changed(resolved_base, resolved_head)
+    report = _classify(sorted(changed))
+    return report, resolved_base, resolved_head, base_source
+
+
+def main() -> int:
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(errors="replace")
+    if hasattr(sys.stderr, "reconfigure"):
+        sys.stderr.reconfigure(errors="replace")
+
+    parser = argparse.ArgumentParser(description="Enforce CVF work-order dispatch quality gates")
+    parser.add_argument("--base", default=None)
+    parser.add_argument("--head", default=None)
+    parser.add_argument("--json", action="store_true")
+    parser.add_argument("--enforce", action="store_true")
+    args = parser.parse_args()
+
+    try:
+        report, base, head, base_source = _run_check(args.base, args.head)
+    except RuntimeError as exc:
+        print(str(exc), file=sys.stderr)
+        return 2
+
+    if args.json:
+        print(json.dumps(report, indent=2))
+    else:
+        _print_report(report, base, head, base_source)
+
+    return 1 if args.enforce and not report["compliant"] else 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

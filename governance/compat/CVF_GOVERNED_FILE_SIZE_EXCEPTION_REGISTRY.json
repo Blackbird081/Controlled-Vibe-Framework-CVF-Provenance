@@ -27,6 +27,8 @@
       "maxAllowedBumpPercent": 50
     }
   },
+  "nearHardRotationMarginLines": 25,
+  "nearHardMinShrinkLines": 50,
   "exceptions": [
     {
       "path": "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/index.test.ts",

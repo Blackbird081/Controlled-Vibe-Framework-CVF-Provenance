@@ -223,6 +223,7 @@ Commands to run before implementation:
 ```powershell
 <command 1>
 <command 2>
+python governance/compat/check_work_order_dispatch_quality.py --base HEAD --head HEAD --enforce
 ```
 
 Expected results:
@@ -236,6 +237,9 @@ If a pre-flight check fails, stop and record the failed command and result.
 
 Before marking this work order ready for execution, verify the source facts the
 work order depends on:
+
+Every ready/dispatch work order that names runtime/source facts must include a
+Source Verification Block with the required table columns.
 
 ```powershell
 Test-Path "<existing path named in first reads>"

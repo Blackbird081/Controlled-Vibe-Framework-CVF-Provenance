@@ -30,6 +30,8 @@ EXCLUDED_EXACT = {
 }
 CODE_EXTENSIONS = {".ts", ".tsx", ".js", ".jsx"}
 MARKDOWN_EXTENSIONS = {".md"}
+DEFAULT_NEAR_HARD_MARGIN_LINES = 25
+DEFAULT_MIN_SHRINK_LINES = 50
 
 
 def _rel(path: Path) -> str:
@@ -54,6 +56,67 @@ def _git_files(args: list[str]) -> list[str]:
         check=True,
     )
     return [line.strip() for line in proc.stdout.splitlines() if line.strip()]
+
+
+def _git_output(args: list[str]) -> str:
+    proc = subprocess.run(
+        ["git", *args],
+        cwd=REPO_ROOT,
+        capture_output=True,
+        text=True,
+        check=True,
+    )
+    return proc.stdout
+
+
+def _parse_name_status(output: str) -> dict[str, set[str]]:
+    changed: dict[str, set[str]] = {}
+    for raw_line in output.splitlines():
+        if not raw_line.strip():
+            continue
+        parts = raw_line.split("\t")
+        if len(parts) < 2:
+            continue
+        status = parts[0].strip()
+        path = parts[2] if (status.startswith("R") or status.startswith("C")) and len(parts) > 2 else parts[1]
+        normalized = path.replace("\\", "/").strip()
+        changed.setdefault(normalized, set()).add(status)
+    return changed
+
+
+def _worktree_changed_files() -> dict[str, set[str]]:
+    changed: dict[str, set[str]] = {}
+    for args in (["diff", "--name-status"], ["diff", "--name-status", "--cached"]):
+        try:
+            parsed = _parse_name_status(_git_output(args))
+        except subprocess.CalledProcessError:
+            parsed = {}
+        for path, statuses in parsed.items():
+            changed.setdefault(path, set()).update(statuses)
+
+    try:
+        untracked = _git_files(["ls-files", "--others", "--exclude-standard"])
+    except subprocess.CalledProcessError:
+        untracked = []
+    for path in untracked:
+        normalized = path.replace("\\", "/").strip()
+        if normalized:
+            changed.setdefault(normalized, set()).add("A")
+    return changed
+
+
+def _head_line_count(rel_path: str) -> int | None:
+    proc = subprocess.run(
+        ["git", "show", f"HEAD:{rel_path}"],
+        cwd=REPO_ROOT,
+        capture_output=True,
+        text=True,
+    )
+    if proc.returncode != 0:
+        return None
+    if proc.stdout == "":
+        return 0
+    return proc.stdout.count("\n") + (0 if proc.stdout.endswith("\n") else 1)
 
 
 def _iter_candidate_files() -> list[Path]:
@@ -99,6 +162,20 @@ def _classify(rel_path: str) -> str | None:
     return "general_source"
 
 
+def _same_maintainability_domain(path_a: str, path_b: str) -> bool:
+    if path_a == "CVF_SESSION_MEMORY.md":
+        return path_b.startswith("CVF_SESSION/handoffs/archive/")
+    if path_a.startswith("AGENT_HANDOFF") and path_b.startswith("AGENT_HANDOFF"):
+        return True
+    parent_a = str(Path(path_a).parent).replace("\\", "/")
+    parent_b = str(Path(path_b).parent).replace("\\", "/")
+    if parent_a == ".":
+        return parent_b == "."
+    if parent_a == parent_b:
+        return True
+    return False
+
+
 def build_report(registry_path: Path) -> dict[str, Any]:
     if not registry_path.exists():
         return {
@@ -127,6 +204,13 @@ def build_report(registry_path: Path) -> dict[str, Any]:
     violations: list[dict[str, Any]] = []
     advisories: list[dict[str, Any]] = []
     files_report: list[dict[str, Any]] = []
+    changed_files = _worktree_changed_files()
+    added_files = {
+        path for path, statuses in changed_files.items()
+        if any(status == "A" or status.startswith("R") or status.startswith("C") for status in statuses)
+    }
+    near_hard_margin = int(registry.get("nearHardRotationMarginLines", DEFAULT_NEAR_HARD_MARGIN_LINES))
+    min_shrink_lines = int(registry.get("nearHardMinShrinkLines", DEFAULT_MIN_SHRINK_LINES))
 
     for path in _iter_candidate_files():
         rel_path = _rel(path)
@@ -192,6 +276,35 @@ def build_report(registry_path: Path) -> dict[str, Any]:
                     }
                 )
                 status = "violation"
+            elif hard and rel_path in changed_files and lines >= max(1, hard - near_hard_margin):
+                previous_lines = _head_line_count(rel_path)
+                shrink = (previous_lines - lines) if previous_lines is not None else 0
+                has_rotation_file = any(_same_maintainability_domain(rel_path, added) for added in added_files)
+                if shrink < min_shrink_lines and not has_rotation_file:
+                    violations.append(
+                        {
+                            "type": "near_hard_threshold_touched_without_rotation",
+                            "path": rel_path,
+                            "message": (
+                                f"File has {lines} lines and is within {near_hard_margin} lines of hard threshold {hard}. "
+                                "Touched near-threshold governed files must be rotated/split into a new file in the same "
+                                f"maintainability domain or shrink by at least {min_shrink_lines} lines."
+                            ),
+                        }
+                    )
+                    status = "violation"
+                else:
+                    advisories.append(
+                        {
+                            "type": "near_hard_threshold_rotation_evidence",
+                            "path": rel_path,
+                            "message": (
+                                f"File has {lines} lines near hard threshold {hard}, but rotation/split evidence or "
+                                f"meaningful shrink ({shrink} lines) is present."
+                            ),
+                        }
+                    )
+                    status = "advisory"
             elif soft and lines > soft:
                 advisories.append(
                     {
@@ -224,6 +337,9 @@ def build_report(registry_path: Path) -> dict[str, Any]:
         "files": files_report,
         "violations": violations,
         "advisories": advisories,
+        "changedFileCount": len(changed_files),
+        "nearHardRotationMarginLines": near_hard_margin,
+        "nearHardMinShrinkLines": min_shrink_lines,
         "compliant": len(violations) == 0,
     }
 

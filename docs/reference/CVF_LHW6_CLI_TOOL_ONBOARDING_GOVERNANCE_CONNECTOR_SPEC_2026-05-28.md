@@ -81,7 +81,7 @@ existing receipt envelope type.
 - `approvalState`: from TA1 `ToolActionApprovalState`
 - `bridgeAdvisoryType`: from LHW6-T1 (`advisory_allowed` | `hold_for_approval` | `blocked`)
 - `runtimeExecutionAuthorized`: always `false`
-- `onboardingClassification`: one of `safe_first_use` | `review_before_first_use` | `blocked_first_use` | `install_blocked` | `network_review_required` (doc-only)
+- `onboardingClassification`: one of `safe_first_use` | `review_before_first_use` | `blocked_first_use` | `install_review_required` | `network_review_required` (doc-only)
 - `onboardingGuidance`: plain-language guidance for operator or non-coder (doc-only)
 
 State explicitly: "These fields are documentation-only minimum requirements.
