@@ -8,7 +8,7 @@ Contract version: `cvf.failureSimulationScenarioPacket.lhw5.t3.v1`
 
 Date: 2026-05-27
 
-Status: CLOSED_PASS_BOUNDED
+Status: CLOSED_PASS_BOUNDED_AFTER_QUALITY_FIX
 
 ---
 
@@ -61,6 +61,14 @@ is invariant."
 | (none) | `model_unavailable` | `resume_from_checkpoint` | (none) | `model_failure` | Checkpoint hold; resume after model availability restored. |
 
 All W4, V3, WR1, and LHW3-T1 field and token names used verbatim from source-verified values.
+`high` and `low` are planning threshold directions, not runtime numeric
+thresholds. A future simulation harness must bind them to explicit numeric
+criteria before execution. For this doc-only connector, the reproducible
+threshold criterion is:
+
+- `high`: metric rate or count is above the harness-defined failure threshold
+- `low`: metric rate is below the harness-defined success threshold
+- `none`: no metric threshold is required; the V3 class alone selects the scenario
 
 ---
 
@@ -75,11 +83,22 @@ changes.
 - `scenarioId`: unique token for this packet (doc-only)
 - `scenarioType`: one of `policy_block` | `provider_failure` | `output_drift` | `human_review` | `routing_block` | `model_failure` (doc-only)
 - `triggerMetric`: from W4 `OperationalBenchmarkMetrics` — `taskCompletionRate`, `policyViolationRate`, `retryCount`, `humanCorrectionCount`, or `none`
+- `thresholdDirection`: `high` | `low` | `none` (doc-only)
+- `thresholdCriterion`: `above harness-defined failure threshold` | `below harness-defined success threshold` | `not_applicable` (doc-only)
 - `v3DiagnosticClass`: from V3 `ExecutionDiagnosticClass`
 - `wr1RecoveryAction`: from WR1 `WorkflowRecoveryAction`
 - `lhw3TrendSignal`: from LHW3-T1 trend signal labels when applicable (doc-only)
+- `simulationSteps`: ordered planning steps for a future simulation harness (doc-only)
 - `expectedOutcome`: one-sentence expected result for Orchestrator planning (doc-only)
+- `boundaryStatement`: must state that the packet is planning-only and cannot execute simulations, trigger provider calls, change workflow state, or modify runtime behavior (doc-only)
 - `scenarioPlanningOnly`: always `true` (doc-only)
+
+Minimum `simulationSteps`:
+
+1. Select the W4 trigger metric and threshold direction for the scenario.
+2. Bind the V3 diagnostic class and WR1 recovery action from source-verified tokens.
+3. Record the applicable LHW3-T1 trend signal or `none`.
+4. State the expected outcome and boundary statement before any future execution design.
 
 ---
 

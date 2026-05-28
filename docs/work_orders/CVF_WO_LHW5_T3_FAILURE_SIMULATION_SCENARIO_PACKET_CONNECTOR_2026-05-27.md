@@ -109,7 +109,8 @@ If any required file is missing, stop and report to Orchestrator.
 
 New doc-only fields proposed by this work order: `scenarioId`, `scenarioType`,
 `triggerMetric`, `v3DiagnosticClass`, `wr1RecoveryAction`, `lhw3TrendSignal`,
-`simulationSteps`, `expectedOutcome`, and `scenarioPlanningOnly`.
+`thresholdDirection`, `thresholdCriterion`, `simulationSteps`,
+`expectedOutcome`, `boundaryStatement`, and `scenarioPlanningOnly`.
 These must be labeled documentation-only in the connector spec.
 
 ## Deliverable — Connector Spec
@@ -171,10 +172,14 @@ Every simulation scenario packet must contain:
   `human_review` | `routing_block` | `model_failure`
 - `triggerMetric`: the W4 metric that triggered this scenario (`taskCompletionRate`,
   `policyViolationRate`, `retryCount`, `humanCorrectionCount`, or `none`)
+- `thresholdDirection`: `high`, `low`, or `none`
+- `thresholdCriterion`: human-readable threshold rule for the future harness
 - `v3DiagnosticClass`: from V3 `ExecutionDiagnosticClass`
 - `wr1RecoveryAction`: from WR1 `WorkflowRecoveryAction`
 - `lhw3TrendSignal`: from LHW3-T1 trend signal labels when applicable
+- `simulationSteps`: ordered planning steps for a future simulation harness
 - `expectedOutcome`: one-sentence expected result for Orchestrator planning
+- `boundaryStatement`: explicit statement that the packet is planning-only
 - `scenarioPlanningOnly`: always `true`
 
 State explicitly: "These fields are documentation-only minimum requirements.
@@ -208,14 +213,14 @@ connector claims full current WR1 action coverage.
 
 ## Pre-Flight
 
-- [ ] T1 CLOSED_PASS confirmed
-- [ ] T2 CLOSED_PASS confirmed
-- [ ] Working tree clean
-- [ ] All required first reads done
-- [ ] W4 metric field names confirmed from source files
-- [ ] V3 `ExecutionDiagnosticClass` tokens confirmed from source files
-- [ ] WR1 `WorkflowRecoveryAction` tokens confirmed from source files
-- [ ] LHW3-T1 trend signal labels confirmed from spec
+- [x] T1 CLOSED_PASS confirmed
+- [x] T2 CLOSED_PASS confirmed
+- [x] Working tree clean at original implementation start
+- [x] All required first reads done
+- [x] W4 metric field names confirmed from source files
+- [x] V3 `ExecutionDiagnosticClass` tokens confirmed from source files
+- [x] WR1 `WorkflowRecoveryAction` tokens confirmed from source files
+- [x] LHW3-T1 trend signal labels confirmed from spec
 
 ## Write Ownership
 
@@ -250,14 +255,14 @@ Spec size guard: < 200 lines. Trim S3 prose if approaching 180 lines.
 
 ## Acceptance Criteria
 
-- [ ] Spec with all 5 sections created
-- [ ] S2 covers minimum 5 scenario combinations
-- [ ] `scenarioPlanningOnly=true` invariant explicit in S1 and S3
-- [ ] S4 boundary table honest; no doc-only row labeled Runtime
-- [ ] S5 Source Verification Table complete; no `BLOCKED_SOURCE_NOT_FOUND` rows
-- [ ] LHW5 roadmap updated to `CLOSED_PASS_BOUNDED`
-- [ ] No code file in diff
-- [ ] Session continuity updated
+- [x] Spec with all 5 sections created
+- [x] S2 covers minimum 5 scenario combinations
+- [x] `scenarioPlanningOnly=true` invariant explicit in S1 and S3
+- [x] S4 boundary table honest; no doc-only row labeled Runtime
+- [x] S5 Source Verification Table complete; no `BLOCKED_SOURCE_NOT_FOUND` rows
+- [x] LHW5 roadmap updated to `CLOSED_PASS_BOUNDED_AFTER_QUALITY_FIX`
+- [x] No runtime/code file in diff
+- [x] Session continuity updated
 
 ## Review Gate
 
@@ -268,17 +273,17 @@ S5 complete with no `BLOCKED_SOURCE_NOT_FOUND` rows; LHW5 roadmap updated to
 
 ## Closure Checklist
 
-- [ ] T1 gate confirmed documented
-- [ ] T2 gate confirmed documented
-- [ ] Spec created with all 5 sections
-- [ ] S2 scenario mapping uses W4+V3+WR1+LHW3-T1 vocabulary verbatim
-- [ ] `scenarioPlanningOnly=true` explicit
-- [ ] S5 Source Verification Table complete; no `BLOCKED_SOURCE_NOT_FOUND` rows
-- [ ] S4 boundary table honest; no doc-only row labeled Runtime
-- [ ] LHW5 roadmap updated to `CLOSED_PASS_BOUNDED`
-- [ ] No code file in diff
-- [ ] Session continuity updated
-- [ ] Completion review written
+- [x] T1 gate confirmed documented
+- [x] T2 gate confirmed documented
+- [x] Spec created with all 5 sections
+- [x] S2 scenario mapping uses W4+V3+WR1+LHW3-T1 vocabulary verbatim
+- [x] `scenarioPlanningOnly=true` explicit
+- [x] S5 Source Verification Table complete; no `BLOCKED_SOURCE_NOT_FOUND` rows
+- [x] S4 boundary table honest; no doc-only row labeled Runtime
+- [x] LHW5 roadmap updated to `CLOSED_PASS_BOUNDED_AFTER_QUALITY_FIX`
+- [x] No runtime/code file in diff
+- [x] Session continuity updated
+- [x] Completion review written
 
 ## Return-To-Orchestrator Conditions
 

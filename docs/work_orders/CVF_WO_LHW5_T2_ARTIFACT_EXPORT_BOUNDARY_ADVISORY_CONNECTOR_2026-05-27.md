@@ -187,12 +187,12 @@ label cited in S2 and S3.
 
 ## Pre-Flight
 
-- [ ] T1 CLOSED_PASS confirmed
-- [ ] Working tree clean
-- [ ] All required first reads done
-- [ ] W6 `PackArtifactVerificationStatus` tokens confirmed from source files
-- [ ] V3 `ExecutionDiagnosticClass` tokens confirmed from source files
-- [ ] LHW3-T1 trend signal labels confirmed from spec
+- [x] T1 CLOSED_PASS confirmed
+- [x] Working tree clean at original implementation start
+- [x] All required first reads done
+- [x] W6 `PackArtifactVerificationStatus` tokens confirmed from source files
+- [x] V3 `ExecutionDiagnosticClass` tokens confirmed from source files
+- [x] LHW3-T1 trend signal labels confirmed from spec
 
 ## Write Ownership
 
@@ -225,13 +225,13 @@ Spec size guard: < 200 lines. Trim S3 prose if approaching 180 lines.
 
 ## Acceptance Criteria
 
-- [ ] Spec with all 5 sections created
-- [ ] S2 covers minimum 5 signal-to-advisory combinations
-- [ ] `exportAdvisoryBlocking=false` invariant explicit in S1 and S3
-- [ ] S4 boundary table honest; no doc-only row labeled Runtime
-- [ ] S5 Source Verification Table complete; no `BLOCKED_SOURCE_NOT_FOUND` rows
-- [ ] No code file in diff
-- [ ] Session continuity updated
+- [x] Spec with all 5 sections created
+- [x] S2 covers minimum 5 signal-to-advisory combinations
+- [x] `exportAdvisoryBlocking=false` invariant explicit in S1 and S3
+- [x] S4 boundary table honest; no doc-only row labeled Runtime
+- [x] S5 Source Verification Table complete; no `BLOCKED_SOURCE_NOT_FOUND` rows
+- [x] No runtime/code file in diff
+- [x] Session continuity updated
 
 ## T3 Gate Output (required in completion review)
 
@@ -251,15 +251,15 @@ in diff.
 
 ## Closure Checklist
 
-- [ ] T1 gate confirmed documented
-- [ ] Spec created with all 5 sections
-- [ ] S2 advisory mapping uses W6+V3+LHW3-T1 vocabulary verbatim
-- [ ] `exportAdvisoryBlocking=false` explicit
-- [ ] S5 Source Verification Table complete; no `BLOCKED_SOURCE_NOT_FOUND` rows
-- [ ] S4 boundary table honest; no doc-only row labeled Runtime
-- [ ] No code file in diff
-- [ ] Session continuity updated
-- [ ] Completion review with T3 gate answer written
+- [x] T1 gate confirmed documented
+- [x] Spec created with all 5 sections
+- [x] S2 advisory mapping uses W6+V3+LHW3-T1 vocabulary verbatim
+- [x] `exportAdvisoryBlocking=false` explicit
+- [x] S5 Source Verification Table complete; no `BLOCKED_SOURCE_NOT_FOUND` rows
+- [x] S4 boundary table honest; no doc-only row labeled Runtime
+- [x] No runtime/code file in diff
+- [x] Session continuity updated
+- [x] Completion review with T3 gate answer written
 
 ## Return-To-Orchestrator Conditions
 

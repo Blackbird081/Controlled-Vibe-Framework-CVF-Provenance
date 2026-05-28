@@ -52,7 +52,7 @@ Sources:
 | `databaseMutationAuthorized=false` | Spec S1, S3 | Explicit in both sections; stated as invariant |
 | S4 boundary table | Spec S4 | 5 rows; no doc-only row labeled Runtime; W3/TA1 rows correctly labeled Runtime |
 | S5 Source Verification Table | Spec S5 | 8 rows; all ACCEPT; no `BLOCKED_SOURCE_NOT_FOUND` |
-| No code file modified | git diff scope | Only new `.md` files created |
+| No runtime/code file modified | git diff scope | No `.ts`/`.tsx`/`.js`/`.py` files changed; the T1 commit also carried archive/index/session metadata updates |
 
 ## Findings / Position
 

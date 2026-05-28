@@ -4,7 +4,7 @@ docType: completion_review
 
 Memory class: FULL_RECORD
 
-Status: CLOSED_PASS_BOUNDED
+Status: CLOSED_PASS_BOUNDED_AFTER_QUALITY_FIX
 
 Date: 2026-05-27
 
@@ -62,8 +62,9 @@ Sources:
 | Evidence item | Path | Result |
 | --- | --- | --- |
 | Connector spec created | `docs/reference/CVF_LHW5_FAILURE_SIMULATION_SCENARIO_PACKET_CONNECTOR_SPEC_2026-05-27.md` | `## Purpose`, `## Scope / Applies-To`, S1–S5 present; under 200 lines |
-| S2 scenario mapping | Spec S2 | 6 rows covering all 6 scenario types; W4/V3/WR1/LHW3-T1 labels verbatim |
+| S2 scenario mapping | Spec S2 | 6 rows covering all 6 scenario types; W4/V3/WR1/LHW3-T1 labels verbatim; threshold directions defined as planning criteria |
 | `scenarioPlanningOnly=true` | Spec S1, S3 | Explicit in both sections; stated as invariant |
+| Reproducibility fields | Spec S3 | `thresholdDirection`, `thresholdCriterion`, `simulationSteps`, and `boundaryStatement` added as doc-only minimum fields |
 | S4 boundary table | Spec S4 | 6 rows; no doc-only row labeled Runtime; W4, V3, WR1 rows correctly labeled Runtime |
 | S5 Source Verification Table | Spec S5 | 10 rows; all ACCEPT; no `BLOCKED_SOURCE_NOT_FOUND` |
 | `request_human_review` covered | Spec S2 row 4, S3, S5 | Verbatim from WR1 lines 50–54; full WR1 action coverage |
@@ -99,7 +100,14 @@ No code file in diff. LHW5 roadmap updated to `CLOSED_PASS_BOUNDED`.
 
 ## Decision / Recommendation
 
-Decision: `CLOSED_PASS_BOUNDED`.
+Decision: `CLOSED_PASS_BOUNDED_AFTER_QUALITY_FIX`.
+
+Quality review note: the first closure underspecified reproducibility because
+the roadmap required W4 threshold semantics plus `simulationSteps` and
+`boundaryStatement`, while the first spec used only informal `high`/`low`
+phrasing and omitted those minimum fields. This corrective update keeps the
+connector documentation-only but adds explicit planning threshold directions,
+threshold criteria, simulation steps, and the boundary statement field.
 
 ## GC-024 Public Catalog Update
 

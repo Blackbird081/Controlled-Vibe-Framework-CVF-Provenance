@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-27
 
-Current mode marker: `lhw2_work_order_cleanup_closed_pass_bounded`
+Current mode marker: `lhw5_quality_review_fix_complete`
 
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Previous handoff archive:
 
 ## Current State
 
-Current mode: `lhw2_work_order_cleanup_closed_pass_bounded`.
+Current mode: `lhw5_quality_review_fix_complete`.
 
 VI5 Multi-Role Orchestrated Convergence is accepted and VI5-T1 is closed PASS
 bounded:

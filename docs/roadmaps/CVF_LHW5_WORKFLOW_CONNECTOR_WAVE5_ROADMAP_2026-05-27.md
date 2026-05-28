@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: CLOSED_PASS_BOUNDED
+Status: CLOSED_PASS_BOUNDED_AFTER_QUALITY_FIX
 
 docType: roadmap
 
@@ -175,13 +175,14 @@ Deliverables:
 - A connector spec mapping W4 scorecard failure signals + V3 diagnostic
   classes + WR1 recovery actions + LHW3-T1 trend labels into reproducible
   simulation scenario packets:
-  - scenario mapping table: which W4 metric threshold + V3 class +
+  - scenario mapping table: which W4 metric threshold direction + V3 class +
     WR1 recovery action combination produces which scenario type
     (provider_failure, policy_block, overconstraint, recovery_gap,
     output_drift)
   - scenario packet minimum fields: `scenarioId`, `scenarioType`,
     `triggerMetric`, `v3DiagnosticClass`, `wr1RecoveryAction`,
-    `simulationSteps`, `expectedOutcome`, `boundaryStatement`
+    `thresholdDirection`, `thresholdCriterion`, `simulationSteps`,
+    `expectedOutcome`, `boundaryStatement`
   - explicit statement: "Scenario packets are planning records for Orchestrator
     pre-run validation. They do not execute simulations or change runtime state."
   - boundary table: doc-only versus runtime-proven rows
@@ -217,15 +218,15 @@ continuity update → commit.
 
 ## Acceptance Criteria
 
-- [ ] T1 spec created; W3/TA1/LHW4-T2 field names used verbatim;
+- [x] T1 spec created; W3/TA1/LHW4-T2 field names used verbatim;
   `databaseMutationAuthorized=false` explicit; Source Verification Table complete
-- [ ] T2 spec created; W6/V3/LHW3-T1 field names used verbatim; advisory-only
+- [x] T2 spec created; W6/V3/LHW3-T1 field names used verbatim; advisory-only
   (no blocking) explicit; boundary table honest
-- [ ] T3 spec created; W4/V3/WR1/LHW3-T1 field names used verbatim;
+- [x] T3 spec created; W4/V3/WR1/LHW3-T1 field names used verbatim;
   simulation-planning-only (no execution) explicit; LHW5 roadmap updated to
-  `CLOSED_PASS_BOUNDED`
-- [ ] No `.ts`/`.tsx`/`.js`/`.py` file in diff across all three tranches
-- [ ] Session continuity updated after each tranche
+  `CLOSED_PASS_BOUNDED_AFTER_QUALITY_FIX`
+- [x] No `.ts`/`.tsx`/`.js`/`.py` file in diff across all three tranches
+- [x] Session continuity updated after each tranche
 
 ## Verification
 

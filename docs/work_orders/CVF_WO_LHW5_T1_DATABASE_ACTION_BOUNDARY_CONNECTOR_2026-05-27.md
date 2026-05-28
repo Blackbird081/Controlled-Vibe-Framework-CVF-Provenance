@@ -182,12 +182,12 @@ are named in the connector.
 
 ## Pre-Flight
 
-- [ ] Working tree clean
-- [ ] All required first reads done
-- [ ] W3 database sideEffect tokens confirmed from source files
-- [ ] W3 `DatabaseActionFamily` values confirmed from source files
-- [ ] TA1 approval state tokens confirmed from source files
-- [ ] LHW4-T2 `dispatchDecision` values confirmed from spec
+- [x] Working tree clean at original implementation start
+- [x] All required first reads done
+- [x] W3 database sideEffect tokens confirmed from source files
+- [x] W3 `DatabaseActionFamily` values confirmed from source files
+- [x] TA1 approval state tokens confirmed from source files
+- [x] LHW4-T2 `dispatchDecision` values confirmed from spec
 
 ## Write Ownership
 
@@ -220,13 +220,13 @@ Spec size guard: < 200 lines. Trim S3 prose if approaching 180 lines.
 
 ## Acceptance Criteria
 
-- [ ] Spec with all 5 sections created
-- [ ] S2 covers minimum 5 database boundary combinations
-- [ ] `databaseMutationAuthorized=false` invariant explicit in S1 and S3
-- [ ] S4 boundary table honest; no doc-only row labeled Runtime
-- [ ] S5 Source Verification Table complete; no `BLOCKED_SOURCE_NOT_FOUND` rows
-- [ ] No code file in diff
-- [ ] Session continuity updated
+- [x] Spec with all 5 sections created
+- [x] S2 covers minimum 5 database boundary combinations
+- [x] `databaseMutationAuthorized=false` invariant explicit in S1 and S3
+- [x] S4 boundary table honest; no doc-only row labeled Runtime
+- [x] S5 Source Verification Table complete; no `BLOCKED_SOURCE_NOT_FOUND` rows
+- [x] No runtime/code file in diff
+- [x] Session continuity updated
 
 ## T2 Gate Output (required in completion review)
 
@@ -246,14 +246,14 @@ in diff.
 
 ## Closure Checklist
 
-- [ ] Spec created with all 5 sections
-- [ ] S2 database boundary mapping uses W3+TA1+LHW4-T2 vocabulary verbatim
-- [ ] `databaseMutationAuthorized=false` explicit
-- [ ] S5 Source Verification Table complete; no `BLOCKED_SOURCE_NOT_FOUND` rows
-- [ ] S4 boundary table honest; no doc-only row labeled Runtime
-- [ ] No code file in diff
-- [ ] Session continuity updated
-- [ ] Completion review with T2 gate answer written
+- [x] Spec created with all 5 sections
+- [x] S2 database boundary mapping uses W3+TA1+LHW4-T2 vocabulary verbatim
+- [x] `databaseMutationAuthorized=false` explicit
+- [x] S5 Source Verification Table complete; no `BLOCKED_SOURCE_NOT_FOUND` rows
+- [x] S4 boundary table honest; no doc-only row labeled Runtime
+- [x] No runtime/code file in diff
+- [x] Session continuity updated
+- [x] Completion review with T2 gate answer written
 
 ## Return-To-Orchestrator Conditions
 

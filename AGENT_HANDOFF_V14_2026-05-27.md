@@ -636,6 +636,37 @@ No code file modified. LHW5 roadmap updated to CLOSED_PASS_BOUNDED.
 
 **LHW5 wave CLOSED_PASS_BOUNDED — T1 + T2 + T3 all closed.**
 
+## LHW5 Quality Review Fix
+
+Mode marker: `lhw5_quality_review_fix_complete`
+
+Private provenance commit: `b8c7648d`
+
+Operator requested code-quality review fixes after LHW5 closure. Corrective
+scope remained documentation-only:
+
+- `CVF_SESSION_MEMORY.md` current mode was stale (`lhw2...`) while the registry
+  was already at LHW5; front door now names `lhw5_quality_review_fix_complete`.
+- LHW5-T3 now satisfies the roadmap's reproducibility requirement by adding
+  doc-only threshold direction/criterion fields plus `simulationSteps` and
+  `boundaryStatement` to the failure simulation scenario packet spec.
+- LHW5 roadmap and T1/T2/T3 work-order checklists now show checked closure
+  instead of open checkbox residue.
+- LHW5-T1 completion evidence now states "no runtime/code file modified" rather
+  than "only new markdown files," because the T1 commit also carried archive,
+  index, and session metadata updates.
+
+Responsibility assessment: mixed. The T3 work order under-specified
+reproducibility by listing `simulationSteps` in proposed doc-only fields without
+forcing the final spec to carry both `simulationSteps` and `boundaryStatement`;
+the worker then closed the spec without catching that acceptance mismatch. The
+stale front-door mode and inaccurate T1 evidence wording are worker closeout
+quality issues.
+
+Boundary remains unchanged: no runtime code, provider behavior, receipt
+envelope, hosted readiness, production readiness, or public release readiness
+claim.
+
 ## Mandatory Standards
 
 Live run diagnostics:
