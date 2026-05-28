@@ -58,7 +58,7 @@ Column definitions: `W3 sideEffect` | `TA1 approvalState` |
 | `read_only` | `not_required` | `advisory_allowed` | `safe_first_use` | This CLI command reads state only. No approval needed. Sandbox declaration still required. |
 | `local_write` | `pending_approval` | `hold_for_approval` | `review_before_first_use` | This CLI command modifies local state. Obtain review approval before first run. |
 | `workspace_mutation` | `blocked_by_policy` | `blocked` | `blocked_first_use` | This CLI command mutates the workspace. Blocked by current governance policy. |
-| `install` | `blocked_by_policy` | `blocked` | `install_blocked` | Install commands are blocked under CLI onboarding policy. Contact your administrator. |
+| `install` | `pending_approval` | `hold_for_approval` | `install_review_required` | Install commands require explicit review approval before first run. W3 `resolveApprovalLevel` returns `explicit` for `install`, yielding `pending_approval`. |
 | `network_egress` | `pending_approval` | `hold_for_approval` | `network_review_required` | This command reaches external networks. Explicit network review approval required before first run. |
 
 Use W3 sideEffect tokens, TA1 approval state tokens, and LHW6-T1 `bridgeAdvisoryType`

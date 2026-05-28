@@ -96,7 +96,7 @@ If any required file is missing, stop and report to Orchestrator.
 | W3 `sandboxRequired` for `command_runtime` | `governance/contracts/tool-action-taxonomy.ts` | lines 381-386 | `surface === 'command_runtime'` → sandbox required | `resolveSandboxRequired` | ACCEPT |
 | W3 `runtimeExecutionAuthorized=false` | `governance/contracts/tool-action-taxonomy.ts` | lines 106-120, 130-142 | `runtimeExecutionAuthorized` | `ToolActionTaxonomyEvaluation` / `ToolActionApprovalReadout` | ACCEPT |
 | TA1 approval state values: `not_required`, `pending_approval`, `satisfied_but_not_executable`, `blocked_before_approval`, `blocked_by_policy`, `incomplete_approval` | `governance/contracts/tool-action-taxonomy.ts` | lines 64-70, 130-142 | `ToolActionApprovalState` | `ToolActionApprovalState` / `ToolActionApprovalReadout` | ACCEPT |
-| LHW6-T1 `bridgeAdvisoryType` values | `docs/reference/CVF_LHW6_TOOL_RUNTIME_BRIDGE_ADVISORY_CONNECTOR_SPEC_2026-05-28.md` | S3 field list after T1 closure | `advisory_allowed`, `hold_for_approval`, `blocked` | LHW6-T1 bridge advisory packet | BLOCKED_SOURCE_NOT_FOUND until T1 spec exists and T1 is CLOSED_PASS |
+| LHW6-T1 `bridgeAdvisoryType` values | `docs/reference/CVF_LHW6_TOOL_RUNTIME_BRIDGE_ADVISORY_CONNECTOR_SPEC_2026-05-28.md` | S3 field list | `advisory_allowed`, `hold_for_approval`, `blocked` | LHW6-T1 bridge advisory packet | ACCEPT |
 
 New doc-only fields proposed by this work order: `onboardingPacketId`,
 `cliToolId`, `onboardingClassification`, `firstRunApprovalRequired`,

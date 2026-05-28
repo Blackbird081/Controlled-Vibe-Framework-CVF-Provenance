@@ -129,6 +129,12 @@ Fail condition 3: "Any claim that this connector executes CLI commands, creates 
 authorizes runtime execution, or extends receipt envelopes."
 Result: No such claim in any section. PASS.
 
+Fail condition 4: "`install` sideEffect mapped to `blocked_by_policy` / `blocked` without
+source-backed escalation policy instead of the correct `pending_approval` / `hold_for_approval`."
+Result: `install` maps to `pending_approval` / `hold_for_approval`, matching W3 source
+(`resolveApprovalLevel` returns `explicit` for `install`, yielding `pending_approval`).
+Not mapped as policy-blocked. PASS.
+
 ---
 
 ## Closure Checklist
