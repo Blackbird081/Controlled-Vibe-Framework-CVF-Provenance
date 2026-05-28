@@ -210,6 +210,8 @@ closure ranges must stay inside Allowed scope; closed LHW wave roadmaps must
 use full T1/T2/T3 wave ranges; connector spec line-count claims must match the
 current file.
 
+Current HEAD after scope/wave closure rule hardening commit: `88efb544`.
+
 
 ## Startup Acknowledgment
 
