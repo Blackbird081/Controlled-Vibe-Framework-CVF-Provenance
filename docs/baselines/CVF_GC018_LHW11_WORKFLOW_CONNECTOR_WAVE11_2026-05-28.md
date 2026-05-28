@@ -76,6 +76,28 @@ T2 is gated on T1 CLOSED_PASS. T3 is gated on T1 + T2 CLOSED_PASS.
 
 The blocked-work-class list in `ACTIVE_SESSION_STATE.json` remains in force.
 
+## LH1 Remaining Families — Post-LHW Queue (operator direction 2026-05-28)
+
+After LHW waves exhaust all doc-connector value, 4 LH1 families remain. These
+are NOT abandoned — they are explicitly parked with known unlock conditions.
+
+**Group A — Needs live route execution (eligible after LHW waves exhausted):**
+
+| Family | LH1 trigger | Unlock condition |
+| --- | --- | --- |
+| `abtop` | Runtime observability dashboard or live failure-class trend readout | Open a live-proof roadmap after LHW waves exhausted. API keys available. |
+| `gridex` | Read-only database action proof; mutation remains blocked | Same. Read-only boundary only. |
+
+**Group B — Needs operator demand or concrete file (eligible when specified):**
+
+| Family | LH1 trigger | Unlock condition |
+| --- | --- | --- |
+| `Review CVF.md` | Next pack only after usage evidence or operator demand | Operator names a specific new pack to add (e.g. `legal_brief_writer`). No ceremony required — explicit operator demand is sufficient. Alternatively: a live usage receipt from an existing pack. |
+| `Review CVF_5.md` | Reopen when a concrete enforcement owner file is selected | Partially consumed by LHW11 T1+T2 (session governance posture aggregator is the "concrete enforcement owner"). If further value remains, it will surface as a new LHW gap naturally. |
+
+Any agent encountering these families in a rejection log must cite this table
+rather than writing bare "rejected" labels.
+
 ## LHW Rejection Language Rule (operator direction 2026-05-28)
 
 When writing a rejection log entry: "rejected *from this LHW wave* (doc-only

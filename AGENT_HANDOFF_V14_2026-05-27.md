@@ -153,6 +153,17 @@ machine check, and late machine check to the earliest applicable autorun phase
 gate. Mixed-agent operation is expected; CVF trust belongs to the control
 chain, not to any one worker model.
 
+Current HEAD after LHW11 open (GC-018 + roadmap + 3 work orders): `5847ed12`.
+LHW11 wave OPEN: T1 READY_FOR_IMPLEMENTATION; T2/T3 HOLD until prior tranches pass.
+T1: cvf.sessionGovernancePostureAggregator.lhw11.t1.v1.
+T2: cvf.specChangeGovernanceDecision.lhw11.t2.v1.
+T3: cvf.memoryContextSeedDecayAdvisory.lhw11.t3.v1.
+LH1 remaining families recorded in GC-018 LHW11: Group A (abtop/gridex — live
+route post-LHW); Group B (Review CVF.md — operator demand; Review CVF_5.md —
+partially consumed by LHW11 T1+T2).
+
+Current HEAD (updated per GC-020): `5847ed12`.
+
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=agent_autorun_workflow_control_enforced; active handoff=AGENT_HANDOFF_V14_2026-05-27.md; next allowed move=continue LHW connector absorption first, with any follow-on wave passing autorun pre-dispatch, pre-implementation, pre-closure, and applicable pre-push gates before worker claims can be trusted; parked checkpoint=hosted Netlify freshness and operator external-agent retest for VI5-T4/T5 remain pending.
