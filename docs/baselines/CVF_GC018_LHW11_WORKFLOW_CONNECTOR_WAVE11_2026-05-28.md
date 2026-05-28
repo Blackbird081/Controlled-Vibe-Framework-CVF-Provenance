@@ -1,0 +1,117 @@
+# CVF GC-018 — LHW11 Workflow Connector Wave 11
+
+Memory class: FULL_RECORD
+
+Status: ACTIVE
+
+docType: gc018_baseline
+
+Date: 2026-05-28
+
+---
+
+## Purpose
+
+Authorize LHW11 Workflow Connector Wave 11: three documentation-only connector
+specs that perform second-order binding — connecting *outputs of prior LHW
+connector specs* into higher-level advisory aggregates. LHW1-LHW10 produced
+~15 named advisory types; LHW11 maps combinations of those advisory outputs
+into coherent session-level and workflow-level governance records.
+
+---
+
+## Scope
+
+Three documentation-only connector specs:
+
+- T1 — Session Governance Posture Aggregator Connector
+- T2 — Spec-Change Governance Decision Connector
+- T3 — Memory Context Seed Decay Advisory Connector
+
+No `.ts` / `.tsx` / `.js` / `.py` file change. No `EXTENSIONS/` source file
+change. No receipt envelope schema change. No public-sync repo change. No MCP
+transport, tool execution, CLI invocation, memory reinjection, new role
+taxonomy, or RBAC change.
+
+---
+
+## Source / Predecessor Evidence
+
+- LHW10 GC-018:
+  `docs/baselines/CVF_GC018_LHW10_WORKFLOW_CONNECTOR_WAVE10_2026-05-28.md`
+  — Status: ACTIVE; LHW10 CLOSED_PASS_BOUNDED
+- LHW10 roadmap:
+  `docs/roadmaps/CVF_LHW10_WORKFLOW_CONNECTOR_WAVE10_ROADMAP_2026-05-28.md`
+  — Status: CLOSED_PASS_BOUNDED
+- LH1 ledger:
+  `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+  — Remaining triggers for `Review CVF_5.md`, `CVF_EDIT_ANALYSIS.md`,
+    `tolaria`
+- Active session: `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+  — `nextAllowedMove` names LHW10 as latest CLOSED_PASS_BOUNDED
+
+Prior LHW connector outputs used as inputs (all CLOSED_PASS_BOUNDED at HEAD
+`d3e01013`):
+
+| Source surface | Contract version | Key output field used |
+| --- | --- | --- |
+| LHW10-T1 | `cvf.workflowTransitionEnforcementAdvisory.lhw10.t1.v1` | `transitionEnforcementAdvisoryType` |
+| LHW10-T3 | `cvf.providerHealthDegradationAdvisory.lhw10.t3.v1` | `providerHealthAdvisoryType` |
+| LHW9-T1 | `cvf.mcpToolApprovalAdvisory.lhw9.t1.v1` | `mcpApprovalAdvisoryType` |
+| LHW8-T2 | `cvf.executionIdentityAuthorityChainReadout.lhw8.t2.v1` | `authorityChainAdvisoryType` |
+| LHW7-T3 | `cvf.failureSimSpecChangeReIntake.lhw7.t3.v1` | `faultToRespecAdvisoryType` |
+| LHW7-T2 | `cvf.projectMemoryContextBudgetHandoff.lhw7.t2.v1` | `signalsStillMissing`, `contaminationRiskAfterSeed` |
+| LHW8-T1 | `cvf.memoryEventHookGovernanceSnapshot.lhw8.t1.v1` | `memorySnapshotAdvisoryType` |
+| AIF-C `MemoryGatewayDecision` | Runtime-proven | `decision`, `canReinject=false` |
+
+---
+
+## Decision / Baseline
+
+LHW11 is authorized. Each tranche is documentation-only, binds surfaces already
+CLOSED_PASS_BOUNDED in HEAD, adds no runtime authority, and extends no receipt
+envelope schema.
+
+T2 is gated on T1 CLOSED_PASS. T3 is gated on T1 + T2 CLOSED_PASS.
+
+The blocked-work-class list in `ACTIVE_SESSION_STATE.json` remains in force.
+
+## LHW Rejection Language Rule (operator direction 2026-05-28)
+
+When writing a rejection log entry: "rejected *from this LHW wave* (doc-only
+scope) — eligible for live-proof roadmap after LHW waves exhausted" — never
+bare "rejected: requires live route." `abtop` and `gridex` remain NOT
+permanently blocked. API keys available.
+
+---
+
+## Required Evidence
+
+Per tranche before CLOSED_PASS_BOUNDED: connector spec (5 sections S1–S5);
+Fast Lane audit; work order with Source Verification Table (full paths, no
+`same` shorthand, individual rows per enum value); completion review with all
+required sections; governance gates PASS; no code file in diff; spec < 250
+lines per GC-023; session continuity updated.
+
+---
+
+## Verification
+
+Pre-closure governance gate:
+
+```powershell
+python governance/compat/check_work_order_dispatch_quality.py --base d3e01013 --head <lhw11-commit> --enforce
+python governance/compat/check_markdown_structural_completeness.py --base d3e01013 --head <lhw11-commit> --enforce
+python governance/compat/check_docs_governance_compat.py --base d3e01013 --head <lhw11-commit> --enforce
+```
+
+---
+
+## Claim Boundary
+
+LHW11 is a second-order connector-normalization wave. It does not claim MCP
+transport, tool execution, CLI invocation, workflow re-execution, memory
+reinjection, raw memory release, new execution authority, new role taxonomy,
+RBAC changes, receipt envelope extensions, external skill ingestion, provider
+behavior changes, hosted readiness, production readiness, or public release
+readiness.
