@@ -101,7 +101,8 @@ Current HEAD after LHW8 implementation commit: `00008651`.
 
 Current HEAD after autorun range/source-invariant hardening commit: `a5c1d6d7`.
 Current HEAD after LHW8-T3 completion review commit: `16d68753`.
-Current HEAD (updated per GC-020): `de07eb09` (handoff sync after LHW8-T3 completion).
+Current HEAD after first handoff sync commit: `de07eb09`.
+Current HEAD (updated per GC-020): `503bd28f` (handoff sync after context transfer).
 Post-LHW8 rule hardening now blocks empty closure ranges and source invariant
 claims stronger than cited source proof.
 
