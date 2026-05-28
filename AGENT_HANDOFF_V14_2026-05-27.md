@@ -23,6 +23,12 @@ Use this handoff only with `CVF_SESSION_MEMORY.md` and
 handoffs. Public-facing work must still be performed from the public-sync
 clone after remote verification.
 
+Handoff context:
+
+- Remote tracking branch: `origin/main`
+- Exact remote SHA must be derived live from git when needed.
+- External agent memory files: non-canonical convenience only.
+
 ## Latest Work / Changes
 
 Latest mode marker: `work_order_closure_quality_gate_rule_added`.
