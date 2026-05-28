@@ -709,6 +709,8 @@ Mode marker: `work_order_closure_quality_gate_rule_added`
 
 Current HEAD before rule commit: `b3f0dfa3`
 
+Rule implementation commit: `ddef1c23`
+
 The operator asked to make the LHW5 review lessons mandatory for future
 agent-led work because CVF relies on agents to divide roles, implement, review,
 and close without continuous user intervention.
