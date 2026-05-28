@@ -290,8 +290,9 @@ Hard enforcement:
   canonical-contract marker, and value rows must include the source-declared
   values they claim.
 - Source Verification `Verified path or symbol` cells must contain only the
-  field/path/symbol being verified, not a value assignment. Use
-  `rawMemoryReleased`, not `rawMemoryReleased: false`.
+  field/path/symbol being verified, not a value assignment or type annotation.
+  Use `rawMemoryReleased`, not `rawMemoryReleased: false`; use `canReinject`,
+  not `canReinject: boolean`.
 - Source Verification must distinguish `EXISTS`, `VALUE_SET`,
   `LITERAL_INVARIANT`, `RUNTIME_BEHAVIOR`, and `DOC_ONLY_NEW`. A false
   invariant such as `canReinject=false` may be source-claimed only when the
@@ -306,6 +307,14 @@ Hard enforcement:
 - `HOLD_*`, `DRAFT`, or `PROPOSED` status labels must not contain the token
   `CLOSED`; use `PASS` or `SATISFIED` prerequisite wording such as
   `HOLD_UNTIL_T1_PASS`.
+- Single-work-order closure ranges must stay inside that work order's Allowed
+  scope. Archive cleanup, baseline movement, governance maintenance, or
+  unrelated refactors require explicit ownership or a separate governed batch.
+- A closed multi-tranche LHW connector roadmap must be validated with a full
+  wave range that includes T1, T2, and T3 artifacts; a final-tranche-only range
+  is not closure evidence for the whole wave.
+- Connector spec line-count and "actual line count" claims must match the
+  current file and be command-backed or machine-verifiable.
 
 ## Mandatory Governed File Maintainability Planning - 2026-05-28
 

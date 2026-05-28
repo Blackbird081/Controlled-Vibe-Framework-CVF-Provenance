@@ -249,13 +249,43 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
         issues = report["violations"][0]["issues"]
         self.assertIn(
             "Source Verification `Verified path or symbol` must contain only a field/path/symbol, "
-            "not a value assignment",
+            "not a value assignment or type annotation",
             issues,
         )
         self.assertNotIn(
             "Source Verification ACCEPT row claims a false invariant for `false` but "
             "`governance/contracts/memory.ts` does not declare or assign that field as literal false",
             issues,
+        )
+
+    def test_source_verification_symbol_type_annotation_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_LHW11_T3_TEST_2026-05-29.md"
+        self._write(
+            "governance/contracts/memory.ts",
+            "export interface MemoryReceipt { canReinject: boolean; }\n",
+        )
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: HOLD_PENDING_T3",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| EXISTS canReinject field | `governance/contracts/memory.ts` | line 1 | `canReinject: boolean` | MemoryReceipt | ACCEPT |",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "Source Verification `Verified path or symbol` must contain only a field/path/symbol, "
+            "not a value assignment or type annotation",
+            report["violations"][0]["issues"],
         )
 
     def test_closed_work_order_with_open_rows_and_unchecked_boxes_fails(self) -> None:
@@ -326,6 +356,100 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
         self.assertFalse(report["compliant"])
         self.assertIn(
             "fast-lane audit status is still ACTIVE/DRAFT/HOLD while disposition or decision is pass/approve",
+            report["violations"][0]["issues"],
+        )
+
+    def test_closed_work_order_changed_range_outside_allowed_scope_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_LHW12_T1_TEST_2026-05-29.md"
+        spec = "docs/reference/CVF_LHW12_T1_TEST_CONNECTOR_SPEC_2026-05-29.md"
+        archive = "docs/reviews/archive/CVF_OLD_REVIEW_2026-05-01.md"
+        self._write(spec, "# Spec\nStatus: DRAFT\n")
+        self._write(archive, "# Old Review\nStatus: archived\n")
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: CLOSED_PASS_BOUNDED",
+                    "## 4. Scope",
+                    "Allowed scope:",
+                    f"- Create `{spec}`.",
+                    "- Update this work order status only.",
+                    "- Update session continuity files.",
+                    "Forbidden scope:",
+                    "- Archive cleanup or unrelated maintenance.",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order, spec, archive])
+
+        self.assertFalse(report["compliant"])
+        scope_issues = [
+            issue
+            for violation in report["violations"]
+            if violation["path"] == work_order
+            for issue in violation["issues"]
+        ]
+        self.assertTrue(
+            any("outside its Allowed scope" in issue and archive in issue for issue in scope_issues)
+        )
+
+    def test_closed_lhw_roadmap_requires_full_wave_range_fails(self) -> None:
+        roadmap = "docs/roadmaps/CVF_LHW12_TEST_ROADMAP_2026-05-29.md"
+        t3_spec = "docs/reference/CVF_LHW12_T3_TEST_CONNECTOR_SPEC_2026-05-29.md"
+        self._write("docs/baselines/CVF_GC018_LHW12_TEST_2026-05-29.md", "# GC-018\n")
+        self._write(t3_spec, "# T3 Spec\nStatus: DRAFT\n")
+        self._write(
+            roadmap,
+            "\n".join(
+                [
+                    "# Roadmap",
+                    "Status: CLOSED_PASS_BOUNDED",
+                    "LHW12 connector wave closure.",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([roadmap, t3_spec])
+
+        self.assertFalse(report["compliant"])
+        roadmap_issues = [
+            issue
+            for violation in report["violations"]
+            if violation["path"] == roadmap
+            for issue in violation["issues"]
+        ]
+        self.assertIn(
+            "closed LHW12 connector roadmap changed without full wave-range evidence; "
+            "missing changed artifact(s) for T1, T2",
+            roadmap_issues,
+        )
+
+    def test_connector_spec_false_line_count_claim_fails(self) -> None:
+        spec = "docs/reference/CVF_LHW12_T1_TEST_CONNECTOR_SPEC_2026-05-29.md"
+        self._write(
+            spec,
+            "\n".join(
+                [
+                    "# Spec",
+                    "Status: DRAFT",
+                    "- Connector spec < 5 lines (actual: 4 lines).",
+                    "Line 4",
+                    "Line 5",
+                    "Line 6",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([spec])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "connector spec claims a line-count threshold under 5 lines but file has 6 lines",
             report["violations"][0]["issues"],
         )
 

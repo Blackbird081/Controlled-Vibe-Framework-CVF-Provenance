@@ -116,8 +116,15 @@ token appears only in the draft work order, dispatch is blocked unless it is
 explicitly listed as a new documentation-only field with no runtime claim.
 
 In Source Verification tables, `Verified path or symbol` must contain only the
-field/path/symbol being verified. Do not put value assignments in that column:
-use `rawMemoryReleased`, not `rawMemoryReleased: false`.
+field/path/symbol being verified. Do not put value assignments or type
+annotations in that column: use `rawMemoryReleased`, not
+`rawMemoryReleased: false`, and `canReinject`, not `canReinject: boolean`.
+
+Single-work-order closure ranges must stay inside the work order's Allowed
+scope. Unrelated archive cleanup, baseline movement, or governance maintenance
+requires a separate governed batch. Closing a multi-tranche LHW connector
+roadmap requires a full wave range containing T1/T2/T3 artifacts, not only the
+final tranche range. Line-count claims must be current and machine-verifiable.
 
 MA1 section references must match
 `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`

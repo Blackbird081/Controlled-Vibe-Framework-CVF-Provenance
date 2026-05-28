@@ -79,6 +79,17 @@ Use this ladder when reviewing a meaningful or repeated agent defect:
 The goal is not to find a perfect worker. The goal is to make the workflow
 resilient when workers vary in model, cost, capability, memory, and style.
 
+Concrete examples from connector-wave hardening:
+
+- if a worker bundles unrelated archive cleanup into a tranche, promote
+  "Allowed scope must match changed files" into a diff gate;
+- if a final-tranche reviewer closes a whole wave, promote "whole-wave closure
+  needs whole-wave range evidence" into the closure gate;
+- if an agent writes `rawMemoryReleased: false` or `canReinject: boolean` in a
+  Source Verification symbol cell, promote symbol hygiene from prose to parser;
+- if an agent reports stale "actual line count" evidence, promote line-count
+  claims to machine verification.
+
 ## Mixed-Agent Operating Rule
 
 CVF must assume operators may choose different agents for planning,

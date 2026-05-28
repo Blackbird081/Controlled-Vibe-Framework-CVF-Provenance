@@ -90,6 +90,11 @@ Verification requirements:
 - evidence must use command/result/path form where possible;
 - completion must record changed files, closure diff status, checklist
   finalization, and required governance updates.
+- closure diff evidence must prove the changed files stayed inside Allowed
+  scope; archive cleanup, governance maintenance, or unrelated refactors require
+  explicit ownership or a separate work order.
+- connector wave roadmap closure must use a full-wave changed range, not only
+  the final tranche range.
 
 The work order is invalid for execution if it does not name stop conditions.
 
@@ -305,8 +310,9 @@ Rules:
   schema: `EXISTS`, `VALUE_SET`, `LITERAL_INVARIANT`, `RUNTIME_BEHAVIOR`, or
   `DOC_ONLY_NEW`.
 - `Verified path or symbol` must contain only the field, path, or symbol being
-  verified. Do not put value assignments in that cell; use
-  `rawMemoryReleased`, not `rawMemoryReleased: false`.
+  verified. Do not put value assignments or type annotations in that cell; use
+  `rawMemoryReleased`, not `rawMemoryReleased: false`, and `canReinject`, not
+  `canReinject: boolean`.
 - `LITERAL_INVARIANT` requires the cited source to declare or assign the value
   literally, for example `field: false` or `field = false`.
 - If the source type is `boolean`, the worker must not claim "`field=false`
@@ -387,6 +393,9 @@ Write mode:
 - <append-only | create-only | modify-listed>
 
 Any file outside ownership requires an updated work order or operator approval.
+If the closure diff shows files outside Allowed scope or ownership, the worker
+must stop, split the cleanup into a separate governed batch, or return to the
+Orchestrator.
 
 ## 8. Execution Plan
 
@@ -458,6 +467,13 @@ waiver for this work order.
 - [ ] Autorun `pre-closure` gate passed:
   `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base <baseHead> --head HEAD`
 - [ ] Closure gate used a non-empty committed diff range; no `--base HEAD --head HEAD`
+- [ ] Changed-file set from `git diff --name-status` is inside this work
+  order's Allowed scope, or every extra path has explicit operator/work-order
+  authorization
+- [ ] If this closes a multi-tranche connector wave roadmap, the pre-closure
+  range includes all tranche artifacts, not only the final tranche
+- [ ] Any line-count threshold or "actual line count" claim is current and
+  command-backed
 - [ ] Roadmap-to-work-order trace matrix final statuses are PASS or N/A with reason
 - [ ] Closure Diff Gate completed: roadmap, work order, final artifact, and
   completion claims were compared

@@ -213,6 +213,15 @@ Closure is blocked when:
 - a completion review claims no runtime/code/public/live-proof impact without
   `git diff --name-status`, `git status --short`, committed diff output, or
   explicit `N/A with reason`.
+- a single-work-order closure changed files outside that work order's Allowed
+  scope, including unrelated archive cleanup or governance maintenance;
+- a closed LHW connector roadmap is checked with a final-tranche-only range
+  instead of the full wave range containing T1, T2, and T3 artifacts;
+- a connector spec records a line-count threshold or actual line count that no
+  longer matches the current file;
+- a Source Verification `Verified path or symbol` cell contains a value
+  assignment or type annotation such as `rawMemoryReleased: false` or
+  `canReinject: boolean`.
 
 The closure packet must say which autorun phase was run and include the command
 result, including the base/head range. If `pre-closure` fails, the artifact
@@ -292,6 +301,10 @@ This standard does not:
 | Closed artifact contains `| OPEN |` or unchecked `- [ ]` residue | Finalize the work-order/roadmap/review checklist or downgrade status to `HOLD_*`/`BLOCKED`. |
 | Closed roadmap still says `WORK_ORDER_READY` or `HOLD until` | Replace dispatch planning text with final per-tranche closure status. |
 | Fast Lane audit status conflicts with pass/approve disposition | Align the status with the final disposition before closure. |
+| Single-work-order diff includes files outside Allowed scope | Split unrelated cleanup into a separate governed batch or return to Orchestrator. |
+| LHW wave closure uses only the final tranche range | Re-run pre-closure from the pre-wave or first-tranche base so T1/T2/T3 are checked together. |
+| Source Verification symbol cell includes value or type syntax | Move the value/type evidence to the claimed item/source proof and leave only the bare field/path/symbol. |
+| Line-count claim is stale or handwritten | Recompute from the current file or remove the claim. |
 | `pre-dispatch` fails | Keep artifact in `DRAFT`, `HOLD_*`, or `BLOCKED`; return to Orchestrator. |
 | `pre-implementation` fails | Stop edits; return the blocker to Orchestrator or Reviewer. |
 | `pre-closure` fails | Do not mark closed; file a blocking finding or correction batch. |

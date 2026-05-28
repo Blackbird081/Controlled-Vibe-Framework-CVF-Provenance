@@ -95,7 +95,13 @@ roadmap dispatch/hold residue, or Fast Lane active/pass status conflicts.
 Status-token and Source Verification symbol hygiene are now machine-enforced:
 `HOLD_*`, `DRAFT`, or `PROPOSED` statuses must not contain `CLOSED`, and
 `Verified path or symbol` cells must contain symbols only, not value
-assignments such as `rawMemoryReleased: false`.
+assignments or type annotations such as `rawMemoryReleased: false` or
+`canReinject: boolean`.
+
+Allowed-scope and whole-wave range closure hygiene are now machine-enforced:
+single-work-order closure ranges must not include files outside Allowed scope,
+closed LHW wave roadmaps must be checked with a full T1/T2/T3 changed range,
+and connector spec line-count claims must match the current file.
 
 Agent-error learning philosophy is now canonical:
 

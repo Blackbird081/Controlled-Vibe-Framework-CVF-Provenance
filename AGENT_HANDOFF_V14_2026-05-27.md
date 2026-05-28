@@ -204,6 +204,12 @@ the token `CLOSED`, and Source Verification `Verified path or symbol` cells
 must contain only field/path/symbol names, not value assignments such as
 `rawMemoryReleased: false`.
 
+Additional rule hardening in progress: Source Verification symbol cells must
+also reject type annotations such as `canReinject: boolean`; single-work-order
+closure ranges must stay inside Allowed scope; closed LHW wave roadmaps must
+use full T1/T2/T3 wave ranges; connector spec line-count claims must match the
+current file.
+
 
 ## Startup Acknowledgment
 
@@ -223,6 +229,12 @@ The guard blocks:
   source-declared values;
 - Source Verification symbol cells that contain value assignments instead of
   bare field/path/symbol references;
+- Source Verification symbol cells that contain type annotations such as
+  `canReinject: boolean`;
+- single-work-order closure ranges that touch files outside Allowed scope;
+- closed LHW wave roadmaps checked without full T1/T2/T3 changed-range
+  evidence;
+- connector spec line-count threshold claims that exceed the current file;
 - HOLD/DRAFT/PROPOSED status labels that contain the token `CLOSED`;
 - ready/dispatch packets with unresolved `CLOSED_PASS` prerequisites;
 - Fast Lane audits marked `FAST_LANE_READY` while still conditional;

@@ -38,6 +38,9 @@ passes the following gates:
 5. Checklist finalization gate.
 6. Continuity sync gate.
 7. Agent autorun `pre-closure` gate.
+8. Allowed-scope diff gate.
+9. Whole-wave closure range gate when closing multi-tranche connector waves.
+10. Machine-verified line-count claim gate.
 
 If any gate is incomplete, the worker must return to Orchestrator or file a
 blocking defect. Operator silence is not a waiver.
@@ -79,6 +82,12 @@ Before closure, the worker must compare:
 The completion packet must state whether any requirement was lost, renamed, or
 weakened between roadmap, work order, implementation, and review.
 
+The changed-file set must also be compared against the work order's Allowed
+scope. A worker may not bundle unrelated archive cleanup, baseline movement,
+governance maintenance, or opportunistic refactors into a tranche unless those
+paths are explicitly owned by the current work order. Out-of-scope cleanup must
+use a separate work order or a separate operator-authorized batch.
+
 ### 3. Claim Integrity Scan
 
 Every claim about changed files, untouched files, public status, runtime/code
@@ -89,6 +98,10 @@ command, file path, receipt, or explicit `N/A with reason`.
 File-change claims must be based on `git diff --name-status`, `git status
 --short`, or committed diff output. Memory-based file-change claims are not
 valid closure evidence.
+
+Line-count claims must be command-backed or machine-verifiable. A connector
+spec, completion review, or audit must not claim "actual: N lines" or
+"spec < N lines" from memory when the current file exceeds that threshold.
 
 ### 4. Negative And Fail-Condition Scan
 
@@ -112,7 +125,8 @@ statuses must not contain the token `CLOSED`; use prerequisite wording such as
 Source Verification symbol ambiguity is a fail condition. The `Verified path or
 symbol` cell must contain only a field, path, or symbol name. Put values in the
 claimed item or value-set evidence, not in the symbol cell: use
-`rawMemoryReleased`, not `rawMemoryReleased: false`.
+`rawMemoryReleased`, not `rawMemoryReleased: false`. Do not put type
+annotations in that cell: use `canReinject`, not `canReinject: boolean`.
 
 ### 5. Checklist Finalization Gate
 
@@ -175,6 +189,12 @@ Pre-closure cannot be satisfied by handwritten `PASS` tables when the machine
 gate reports source-verification, structural-completeness, continuity,
 file-size, worktree, or dispatch-quality violations.
 
+For multi-tranche LHW connector waves, final roadmap closure must use a full
+wave changed range from the pre-wave or first-tranche base through final HEAD.
+A final-tranche-only range is not valid evidence for closing the whole wave,
+because it cannot prove T1/T2/T3 artifacts, scope boundaries, and continuity
+claims together.
+
 ## Exceptions
 
 There are no exceptions for delegated work-order closure.
@@ -199,7 +219,11 @@ This standard is enforced by:
   roadmap trace matrices, source-invariant proof, non-empty verification
   ranges, prerequisite completion evidence, closed-artifact checklist
   finality, status-token hygiene, symbol-cell hygiene, or roadmap/Fast Lane
-  status consistency are missing.
+  status consistency are missing. It also hard-fails single-work-order changed
+  ranges that touch files outside the work order's Allowed scope, LHW wave
+  roadmap closures that lack full T1/T2/T3 changed-range evidence, connector
+  specs with false line-count threshold claims, and Source Verification symbol
+  cells containing value assignments or type annotations.
 - `governance/compat/run_agent_autorun_workflow_gate.py`, which bundles the
   mandatory phase gates for pre-dispatch, pre-implementation, pre-closure, and
   pre-push agent workflows.

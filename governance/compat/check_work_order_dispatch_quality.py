@@ -204,7 +204,7 @@ def _validate_fast_lane_status_consistency(text: str) -> list[str]:
     issues: list[str] = []
     status = _extract_status(text).upper()
     if status in {"ACTIVE", "DRAFT", "HOLD"} and re.search(
-        r"(?im)^(?:\*\*)?(?:Disposition|Decision|Position)(?:\*\*)?\s*:\s*(?:\*\*)?(?:FAST_LANE_PASS|PASS|APPROVE|ACCEPT)",
+        r"(?im)^\s*(?:\*\*)?(?:Disposition|Decision|Position)\s*(?:\*\*)?\s*:\s*(?:\*\*)?(?:FAST_LANE_PASS|PASS|APPROVE|ACCEPT)",
         text,
     ):
         issues.append(
@@ -322,8 +322,7 @@ def _symbol_field_name(symbol: str) -> str:
 def _verified_symbol_contains_assignment(symbol: str) -> bool:
     cleaned = symbol.strip().strip("`")
     return re.search(
-        r"\b[A-Za-z_][A-Za-z0-9_.]*\s*(?:=|:)\s*"
-        r"(?:false|true|null|undefined|-?\d+(?:\.\d+)?|`[^`]+`|'[^']+'|\"[^\"]+\")",
+        r"\b[A-Za-z_][A-Za-z0-9_.]*\s*(?:=|:)\s*\S+",
         cleaned,
         re.IGNORECASE,
     ) is not None
@@ -451,7 +450,7 @@ def _validate_accepted_source_rows(path: str, text: str) -> list[str]:
         if _verified_symbol_contains_assignment(verified_symbol):
             issues.append(
                 "Source Verification `Verified path or symbol` must contain only a field/path/symbol, "
-                "not a value assignment"
+                "not a value assignment or type annotation"
             )
             continue
         source_cell = row.get("Source file", "")
@@ -581,7 +580,139 @@ def _validate_completion_or_spec(path: str, text: str) -> list[str]:
     issues.extend(_validate_closed_artifact_finality(text, "completion/spec artifact"))
     issues.extend(_validate_accepted_source_rows(path, text))
     issues.extend(_validate_no_empty_range_commands(text))
+    issues.extend(_validate_connector_spec_line_count_claim(path, text))
     return issues
+
+
+def _validate_connector_spec_line_count_claim(path: str, text: str) -> list[str]:
+    normalized = path.replace("\\", "/")
+    if not (
+        normalized.startswith("docs/reference/CVF_LHW")
+        and "CONNECTOR_SPEC" in normalized.upper()
+    ):
+        return []
+    actual = len(text.splitlines())
+    thresholds = {
+        int(match.group(1))
+        for match in re.finditer(
+            r"(?im)\b(?:connector\s+spec|spec|artifact|file)[^\n]{0,80}"
+            r"(?:<|under|below|no\s+more\s+than|max(?:imum)?)\s*(\d+)\s+lines?\b",
+            text,
+        )
+    }
+    for threshold in sorted(thresholds):
+        if actual > threshold:
+            return [
+                f"connector spec claims a line-count threshold under {threshold} lines but file has {actual} lines"
+            ]
+    return []
+
+
+def _extract_allowed_scope_text(text: str) -> str:
+    patterns = (
+        r"(?ims)^Allowed scope:\s*$([\s\S]*?)(?=^Forbidden scope:\s*$|^##\s+|\Z)",
+        r"(?ims)^\*\*Allowed scope:\*\*\s*$([\s\S]*?)(?=^\*\*Forbidden scope:\*\*\s*$|^##\s+|\Z)",
+        r"(?ims)^Allowed:\s*$([\s\S]*?)(?=^Forbidden:\s*$|^##\s+|\Z)",
+        r"(?ims)^\*\*Allowed:\*\*\s*$([\s\S]*?)(?=^\*\*Forbidden:\*\*\s*$|^##\s+|\Z)",
+    )
+    for pattern in patterns:
+        match = re.search(pattern, text)
+        if match:
+            return match.group(1)
+    return ""
+
+
+def _path_matches_allowed(path: str, allowed_path: str) -> bool:
+    normalized = path.replace("\\", "/").strip()
+    allowed = allowed_path.replace("\\", "/").strip().rstrip("/")
+    return normalized == allowed or normalized.startswith(f"{allowed}/")
+
+
+def _is_session_continuity_path(path: str) -> bool:
+    normalized = path.replace("\\", "/")
+    return normalized in {
+        "CVF_SESSION_MEMORY.md",
+        "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    } or normalized.startswith("CVF_SESSION/handoffs/") or normalized.startswith("AGENT_HANDOFF")
+
+
+def _validate_single_work_order_scope_range(changed_files: list[str]) -> list[dict[str, Any]]:
+    normalized_files = sorted(path.replace("\\", "/") for path in changed_files)
+    closed_work_orders: list[str] = []
+    for path in normalized_files:
+        if not path.startswith("docs/work_orders/") or "/archive/" in path:
+            continue
+        text = _read_rel(path)
+        if text and _is_closed_status(_extract_status(text)):
+            closed_work_orders.append(path)
+    if len(closed_work_orders) != 1:
+        return []
+
+    work_order_path = closed_work_orders[0]
+    text = _read_rel(work_order_path)
+    allowed_scope = _extract_allowed_scope_text(text)
+    if not allowed_scope:
+        return []
+
+    explicit_paths = _extract_paths(allowed_scope)
+    allowed_lower = allowed_scope.lower()
+    disallowed: list[str] = []
+    for path in normalized_files:
+        if path == work_order_path:
+            continue
+        if any(_path_matches_allowed(path, allowed_path) for allowed_path in explicit_paths):
+            continue
+        if "this work order" in allowed_lower and path == work_order_path:
+            continue
+        if "session continuity" in allowed_lower and _is_session_continuity_path(path):
+            continue
+        disallowed.append(path)
+
+    if not disallowed:
+        return []
+
+    sample = ", ".join(disallowed[:8])
+    suffix = "" if len(disallowed) <= 8 else f", ... (+{len(disallowed) - 8} more)"
+    return [
+        {
+            "path": work_order_path,
+            "issues": [
+                "closed work-order changed range includes files outside its Allowed scope: "
+                f"{sample}{suffix}"
+            ],
+        }
+    ]
+
+
+def _validate_lhw_wave_closure_range(changed_files: list[str]) -> list[dict[str, Any]]:
+    normalized_files = sorted(path.replace("\\", "/") for path in changed_files)
+    violations: list[dict[str, Any]] = []
+    for path in normalized_files:
+        if not path.startswith("docs/roadmaps/") or "/archive/" in path:
+            continue
+        text = _read_rel(path)
+        if not text or not _is_closed_status(_extract_status(text)) or not _is_connector_wave(path, text):
+            continue
+        wave_id = _extract_wave_id(path, text)
+        if wave_id is None:
+            continue
+        present_tranches = {
+            int(match.group(1))
+            for changed_path in normalized_files
+            for match in re.finditer(rf"LHW{wave_id}[-_]T([123])(?!\d)", changed_path, re.IGNORECASE)
+        }
+        missing = [f"T{index}" for index in (1, 2, 3) if index not in present_tranches]
+        if missing:
+            violations.append(
+                {
+                    "path": path,
+                    "issues": [
+                        f"closed LHW{wave_id} connector roadmap changed without full wave-range evidence; "
+                        f"missing changed artifact(s) for {', '.join(missing)}"
+                    ],
+                }
+            )
+    return violations
 
 
 def _is_target(path: str) -> bool:
@@ -622,6 +753,8 @@ def _classify(changed_files: list[str]) -> dict[str, Any]:
         issues = _validate_path(path)
         if issues:
             violations.append({"path": path, "issues": issues})
+    violations.extend(_validate_single_work_order_scope_range(changed_files))
+    violations.extend(_validate_lhw_wave_closure_range(changed_files))
 
     required_markers = {
         STANDARD_PATH: (
