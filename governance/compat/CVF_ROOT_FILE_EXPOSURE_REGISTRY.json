@@ -48,8 +48,16 @@
       "exposureClass": "INTERNAL_ONLY"
     },
     {
+      "path": ".aider.conf.yml",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
       "path": "AGENTS.md",
       "exposureClass": "PUBLIC_DOCS_ONLY"
+    },
+    {
+      "path": "AGENT_HANDOFF_V14_2026-05-27.md",
+      "exposureClass": "INTERNAL_ONLY"
     },
     {
       "path": "AGENT_HANDOFF_V9_2026-05-18.md",
@@ -76,8 +84,36 @@
       "exposureClass": "INTERNAL_ONLY"
     },
     {
+      "path": "CONVENTIONS.md",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
       "path": "CONTRIBUTORS.md",
       "exposureClass": "PUBLIC_DOCS_ONLY"
+    },
+    {
+      "path": "cvf-spec-app_builder_complete-full 2.md",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
+      "path": "cvf-spec-app_builder_complete-full new(1).md",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
+      "path": "cvf-spec-app_builder_complete-full new.md",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
+      "path": "cvf-spec-app_builder_complete-full.md",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
+      "path": "cvf-spec-app_builder_complete-full_ (1).md",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
+      "path": "cvf-spec-app_builder_complete-full_ (2).md",
+      "exposureClass": "INTERNAL_ONLY"
     },
     {
       "path": "CVF_SESSION_MEMORY.md",
@@ -94,6 +130,10 @@
     {
       "path": "DESIGN.md",
       "exposureClass": "PUBLIC_DOCS_ONLY"
+    },
+    {
+      "path": "GEMINI.md",
+      "exposureClass": "INTERNAL_ONLY"
     },
     {
       "path": "LICENSE",

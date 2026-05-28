@@ -60,6 +60,14 @@ classification and found `.cursor` unclassified. The root lifecycle registry was
 updated to classify `.cursor` as `ACTIVE_CANONICAL` / `INTERNAL_ONLY` because it
 contains agent-tool startup guidance, not public product content.
 
+Lifecycle-registry fix commit before root-file exposure repair: `bb39c985`.
+
+Additional P3 readiness repair: full pre-push then reached the final
+pre-public P3 readiness gate and found root files without explicit exposure
+classification. The root-file exposure registry was updated to classify current
+handoff, agent-tool configs, and generated `cvf-spec-*` samples as
+`INTERNAL_ONLY`.
+
 Responsibility split:
 
 - Orchestrator/work-order author: make requirements traceable, source-backed,

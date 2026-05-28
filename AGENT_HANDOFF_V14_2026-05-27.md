@@ -723,6 +723,8 @@ Session marker and completion review commit: `f539b0cb`
 
 Handoff sync commit before lifecycle-registry fix: `5ed7383e`
 
+Lifecycle-registry fix commit before root-file exposure repair: `bb39c985`
+
 The operator asked to make the LHW5 review lessons mandatory for future
 agent-led work because CVF relies on agents to divide roles, implement, review,
 and close without continuous user intervention.
@@ -738,6 +740,12 @@ full pre-push reached repository lifecycle classification and found `.cursor`
 unclassified; `governance/compat/CVF_ROOT_FOLDER_LIFECYCLE_REGISTRY.json` now
 classifies `.cursor` as `ACTIVE_CANONICAL` / `INTERNAL_ONLY` agent-tool startup
 guidance.
+
+Second verification repair:
+full pre-push reached final P3 readiness and found root files without explicit
+exposure classification; `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`
+now classifies current handoff, agent-tool configs, and generated `cvf-spec-*`
+samples as `INTERNAL_ONLY`.
 
 Binding surfaces updated:
 
