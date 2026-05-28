@@ -115,6 +115,10 @@ handoffs, or memory summaries. Search the repo for every named token. If a
 token appears only in the draft work order, dispatch is blocked unless it is
 explicitly listed as a new documentation-only field with no runtime claim.
 
+In Source Verification tables, `Verified path or symbol` must contain only the
+field/path/symbol being verified. Do not put value assignments in that column:
+use `rawMemoryReleased`, not `rawMemoryReleased: false`.
+
 MA1 section references must match
 `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
 exactly. Do not invent MA1 labels such as `Input Package`, `Purpose`, or
@@ -261,6 +265,8 @@ These files use inline React styles — when porting to the Next.js app, transla
 **Latest-Closure Continuity Gate:** Before claiming any connector wave closed, run the autorun `pre-closure` gate and ensure the highest closed LHW wave in `CVF_SESSION/ACTIVE_SESSION_STATE.json` is also named in `nextAllowedMove`, `CVF_SESSION_MEMORY.md` `Next Allowed Move`, and the active handoff. Stale lower-wave text such as LHW6/LHW8 after LHW9 closure blocks closure even when specs pass.
 
 **Closure Finality Gate:** A closed-equivalent work order, roadmap, Fast Lane audit, completion, or connector spec must not retain `| OPEN |` table rows, unchecked `- [ ]` checklist items, stale roadmap `WORK_ORDER_READY`/`HOLD until` residue, or `Status: ACTIVE` paired with pass/approve disposition.
+
+**Status Token Hygiene:** `HOLD_*`, `DRAFT`, or `PROPOSED` status labels must not contain the token `CLOSED`; use `PASS` or `SATISFIED` wording for prerequisites, such as `HOLD_UNTIL_T1_PASS`.
 
 **Risk Model:** R0 (Safe) → R3 (Dangerous). All changes are classified before execution.
 

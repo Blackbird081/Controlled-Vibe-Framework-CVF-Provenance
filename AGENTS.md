@@ -289,6 +289,9 @@ Hard enforcement:
 - A Source Verification `ACCEPT` row must cite an existing source file or a
   canonical-contract marker, and value rows must include the source-declared
   values they claim.
+- Source Verification `Verified path or symbol` cells must contain only the
+  field/path/symbol being verified, not a value assignment. Use
+  `rawMemoryReleased`, not `rawMemoryReleased: false`.
 - Source Verification must distinguish `EXISTS`, `VALUE_SET`,
   `LITERAL_INVARIANT`, `RUNTIME_BEHAVIOR`, and `DOC_ONLY_NEW`. A false
   invariant such as `canReinject=false` may be source-claimed only when the
@@ -300,6 +303,9 @@ Hard enforcement:
 - Conditional prerequisites such as `CLOSED_PASS` must keep the artifact in a
   `HOLD_*`, `DRAFT`, or `PROPOSED` status until the prerequisite evidence
   exists and has been checked.
+- `HOLD_*`, `DRAFT`, or `PROPOSED` status labels must not contain the token
+  `CLOSED`; use `PASS` or `SATISFIED` prerequisite wording such as
+  `HOLD_UNTIL_T1_PASS`.
 
 ## Mandatory Governed File Maintainability Planning - 2026-05-28
 

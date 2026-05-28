@@ -191,6 +191,73 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
 
         self.assertTrue(report["compliant"])
 
+    def test_hold_status_with_closed_token_fails_without_closed_finality(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_LHW11_T2_TEST_2026-05-29.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: HOLD_UNTIL_T1_CLOSED_PASS",
+                    "## Roadmap-To-Work-Order Trace Matrix",
+                    "| Roadmap requirement | Work order section | Output artifact or field | Verification command or check | Status |",
+                    "|---|---|---|---|---|",
+                    "| R1 | S1 | field | check | OPEN |",
+                    "## Closure Checklist",
+                    "- [ ] Keep blocked until T1 passes",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        issues = report["violations"][0]["issues"]
+        self.assertIn(
+            "work order hold/draft/proposed status must not contain `CLOSED`; "
+            "use PASS or SATISFIED wording for prerequisite status tokens",
+            issues,
+        )
+        self.assertNotIn("closed work order contains 1 table row(s) still marked OPEN", issues)
+        self.assertNotIn("closed work order contains 1 unchecked checklist item(s)", issues)
+
+    def test_source_verification_symbol_assignment_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_LHW11_T1_TEST_2026-05-29.md"
+        self._write(
+            "governance/contracts/memory.ts",
+            "export interface MemoryReceipt { rawMemoryReleased: boolean; }\n",
+        )
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: HOLD_PENDING_T1",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| LITERAL_INVARIANT rawMemoryReleased false | `governance/contracts/memory.ts` | line 1 | `rawMemoryReleased: false` | MemoryReceipt | ACCEPT |",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        issues = report["violations"][0]["issues"]
+        self.assertIn(
+            "Source Verification `Verified path or symbol` must contain only a field/path/symbol, "
+            "not a value assignment",
+            issues,
+        )
+        self.assertNotIn(
+            "Source Verification ACCEPT row claims a false invariant for `false` but "
+            "`governance/contracts/memory.ts` does not declare or assign that field as literal false",
+            issues,
+        )
+
     def test_closed_work_order_with_open_rows_and_unchecked_boxes_fails(self) -> None:
         work_order = "docs/work_orders/CVF_WO_LHW10_T1_TEST_2026-05-28.md"
         self._write(

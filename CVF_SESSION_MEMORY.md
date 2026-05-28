@@ -4,7 +4,7 @@ Memory class: POINTER_RECORD
 
 Status: ACTIVE SESSION FRONT DOOR
 
-Last updated: 2026-05-28
+Last updated: 2026-05-29
 
 Current mode marker: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
@@ -92,6 +92,11 @@ Closure finality is now machine-enforced. Closed-equivalent governed artifacts
 must not retain `| OPEN |` rows, unchecked `- [ ]` checklist items, stale
 roadmap dispatch/hold residue, or Fast Lane active/pass status conflicts.
 
+Status-token and Source Verification symbol hygiene are now machine-enforced:
+`HOLD_*`, `DRAFT`, or `PROPOSED` statuses must not contain `CLOSED`, and
+`Verified path or symbol` cells must contain symbols only, not value
+assignments such as `rawMemoryReleased: false`.
+
 Agent-error learning philosophy is now canonical:
 
 `docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md`
@@ -110,10 +115,12 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LHW10 is present in HEAD as `CLOSED_PASS_BOUNDED`; any follow-on wave must be
-reviewed through the autorun `pre-dispatch`, `pre-implementation`,
-`pre-closure`, and applicable `pre-push` gates before it can be trusted as
-closed.
+LHW10 remains the latest closed wave in state as `CLOSED_PASS_BOUNDED`. LHW11
+is open in HEAD after GC-018, roadmap, and three work orders. T1 may proceed
+first; T2/T3 remain on HOLD until prior tranche evidence passes. Any follow-on
+closure must be reviewed through the autorun `pre-dispatch`,
+`pre-implementation`, `pre-closure`, and applicable `pre-push` gates before it
+can be trusted as closed.
 
 LHW sequencing remains: continue connector absorption first. Do not move
 `abtop`, `gridex`, or other route-execution families into a live-proof roadmap

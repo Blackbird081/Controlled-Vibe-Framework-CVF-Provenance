@@ -105,6 +105,15 @@ not claim "`field=false` is preserved from source" unless a cited line declares
 or assigns the field as literal `false`, or a cited runtime branch proves that
 specific connector path.
 
+Status-token ambiguity is a fail condition. `HOLD_*`, `DRAFT`, or `PROPOSED`
+statuses must not contain the token `CLOSED`; use prerequisite wording such as
+`HOLD_UNTIL_T1_PASS` or `HOLD_UNTIL_T1_SATISFIED` instead.
+
+Source Verification symbol ambiguity is a fail condition. The `Verified path or
+symbol` cell must contain only a field, path, or symbol name. Put values in the
+claimed item or value-set evidence, not in the symbol cell: use
+`rawMemoryReleased`, not `rawMemoryReleased: false`.
+
 ### 5. Checklist Finalization Gate
 
 Closure checklists are evidence controls, not decoration. Any unchecked item in
@@ -189,7 +198,8 @@ This standard is enforced by:
   when prerequisite GC-018 baselines, source files, source-verification truth,
   roadmap trace matrices, source-invariant proof, non-empty verification
   ranges, prerequisite completion evidence, closed-artifact checklist
-  finality, or roadmap/Fast Lane status consistency are missing.
+  finality, status-token hygiene, symbol-cell hygiene, or roadmap/Fast Lane
+  status consistency are missing.
 - `governance/compat/run_agent_autorun_workflow_gate.py`, which bundles the
   mandatory phase gates for pre-dispatch, pre-implementation, pre-closure, and
   pre-push agent workflows.

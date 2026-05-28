@@ -141,7 +141,19 @@ def _is_hold_status(status: str) -> bool:
 
 
 def _is_closed_status(status: str) -> bool:
-    return "CLOSED" in status.upper()
+    normalized = status.strip().upper()
+    return re.match(r"^CLOSED(?:\b|_)", normalized) is not None
+
+
+def _validate_status_token_hygiene(text: str, artifact_label: str) -> list[str]:
+    status = _extract_status(text)
+    normalized = status.upper()
+    if _is_hold_status(status) and re.search(r"(?:^|_)CLOSED(?:\b|_)", normalized):
+        return [
+            f"{artifact_label} hold/draft/proposed status must not contain `CLOSED`; "
+            "use PASS or SATISFIED wording for prerequisite status tokens"
+        ]
+    return []
 
 
 def _validate_closed_artifact_finality(text: str, artifact_label: str) -> list[str]:
@@ -301,8 +313,20 @@ def _row_literal_tokens(row: dict[str, str]) -> set[str]:
 
 def _symbol_field_name(symbol: str) -> str:
     cleaned = symbol.strip().strip("`")
+    if _verified_symbol_contains_assignment(cleaned):
+        return ""
     parts = re.findall(r"[A-Za-z_][A-Za-z0-9_]*", cleaned)
     return parts[-1] if parts else ""
+
+
+def _verified_symbol_contains_assignment(symbol: str) -> bool:
+    cleaned = symbol.strip().strip("`")
+    return re.search(
+        r"\b[A-Za-z_][A-Za-z0-9_.]*\s*(?:=|:)\s*"
+        r"(?:false|true|null|undefined|-?\d+(?:\.\d+)?|`[^`]+`|'[^']+'|\"[^\"]+\")",
+        cleaned,
+        re.IGNORECASE,
+    ) is not None
 
 
 def _claims_false_invariant(*cells: str) -> bool:
@@ -348,6 +372,8 @@ def _source_rows_for_symbol(rows: list[dict[str, str]]) -> list[tuple[str, str, 
         if not source_paths:
             continue
         symbol = row.get("Verified path or symbol", "")
+        if _verified_symbol_contains_assignment(symbol):
+            continue
         owner = row.get("Owning interface/function/schema", "")
         field_name = _symbol_field_name(symbol or row.get("Claimed item", ""))
         if not field_name:
@@ -421,6 +447,13 @@ def _validate_accepted_source_rows(path: str, text: str) -> list[str]:
         disposition = row.get("Disposition", "").upper()
         if "ACCEPT" not in disposition:
             continue
+        verified_symbol = row.get("Verified path or symbol", "")
+        if _verified_symbol_contains_assignment(verified_symbol):
+            issues.append(
+                "Source Verification `Verified path or symbol` must contain only a field/path/symbol, "
+                "not a value assignment"
+            )
+            continue
         source_cell = row.get("Source file", "")
         source_paths = _extract_paths(source_cell)
         if not source_paths:
@@ -432,7 +465,6 @@ def _validate_accepted_source_rows(path: str, text: str) -> list[str]:
                 issues.append(f"Source Verification ACCEPT cites missing source file `{source_path}`")
                 continue
             claimed = row.get("Claimed item", "")
-            verified_symbol = row.get("Verified path or symbol", "")
             source_text = _read_rel(source_path)
             false_issue = _validate_false_invariant_against_source(source_path, source_text, row)
             if false_issue:
@@ -475,6 +507,7 @@ def _validate_work_order(path: str, text: str) -> list[str]:
     issues: list[str] = []
     status = _extract_status(text)
     dispatching = "DISPATCHED" in status.upper() or "READY" in status.upper()
+    issues.extend(_validate_status_token_hygiene(text, "work order"))
     issues.extend(_validate_closed_artifact_finality(text, "work order"))
 
     if dispatching and _is_roadmap_derived(text) and not _has_trace_matrix(text):
@@ -509,6 +542,7 @@ def _validate_work_order(path: str, text: str) -> list[str]:
 def _validate_roadmap(path: str, text: str) -> list[str]:
     issues: list[str] = []
     status = _extract_status(text)
+    issues.extend(_validate_status_token_hygiene(text, "roadmap"))
     issues.extend(_validate_closed_artifact_finality(text, "roadmap"))
     issues.extend(_validate_closed_roadmap_status_residue(text))
     if _is_connector_wave(path, text) and _is_dispatch_status(status) and not _is_hold_status(status):
@@ -523,6 +557,7 @@ def _validate_roadmap(path: str, text: str) -> list[str]:
 def _validate_fast_lane_audit(path: str, text: str) -> list[str]:
     issues: list[str] = []
     status = _extract_status(text)
+    issues.extend(_validate_status_token_hygiene(text, "fast-lane audit"))
     issues.extend(_validate_closed_artifact_finality(text, "fast-lane audit"))
     issues.extend(_validate_fast_lane_status_consistency(text))
     if "FAST_LANE_READY" in status.upper() and re.search(
@@ -542,6 +577,7 @@ def _validate_fast_lane_audit(path: str, text: str) -> list[str]:
 
 def _validate_completion_or_spec(path: str, text: str) -> list[str]:
     issues: list[str] = []
+    issues.extend(_validate_status_token_hygiene(text, "completion/spec artifact"))
     issues.extend(_validate_closed_artifact_finality(text, "completion/spec artifact"))
     issues.extend(_validate_accepted_source_rows(path, text))
     issues.extend(_validate_no_empty_range_commands(text))

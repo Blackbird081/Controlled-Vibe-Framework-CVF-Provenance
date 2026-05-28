@@ -169,6 +169,12 @@ Memory class: POINTER_RECORD
 
 Status: <DRAFT | READY_FOR_REVIEW | APPROVED_FOR_EXECUTION | CLOSED>
 
+Status token rule:
+
+- `HOLD_*`, `DRAFT`, or `PROPOSED` statuses must not include the token
+  `CLOSED`; use `PASS` or `SATISFIED` for prerequisite wording, for example
+  `HOLD_UNTIL_T1_PASS`.
+
 ## 1. Mission
 
 <One paragraph describing the exact mission. Include what success means.>
@@ -298,6 +304,9 @@ Rules:
 - Source Verification row type must be clear in the claimed item or owning
   schema: `EXISTS`, `VALUE_SET`, `LITERAL_INVARIANT`, `RUNTIME_BEHAVIOR`, or
   `DOC_ONLY_NEW`.
+- `Verified path or symbol` must contain only the field, path, or symbol being
+  verified. Do not put value assignments in that cell; use
+  `rawMemoryReleased`, not `rawMemoryReleased: false`.
 - `LITERAL_INVARIANT` requires the cited source to declare or assign the value
   literally, for example `field: false` or `field = false`.
 - If the source type is `boolean`, the worker must not claim "`field=false`

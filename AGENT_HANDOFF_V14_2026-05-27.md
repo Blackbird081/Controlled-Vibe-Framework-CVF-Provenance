@@ -164,6 +164,12 @@ partially consumed by LHW11 T1+T2).
 
 Current HEAD (updated per GC-020): `5847ed12`.
 
+Current HEAD before status-token/source-symbol hygiene hardening: `686febf8`.
+Rule hardening in progress: HOLD/DRAFT/PROPOSED status labels must not contain
+the token `CLOSED`, and Source Verification `Verified path or symbol` cells
+must contain only field/path/symbol names, not value assignments such as
+`rawMemoryReleased: false`.
+
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=agent_autorun_workflow_control_enforced; active handoff=AGENT_HANDOFF_V14_2026-05-27.md; next allowed move=continue LHW connector absorption first, with any follow-on wave passing autorun pre-dispatch, pre-implementation, pre-closure, and applicable pre-push gates before worker claims can be trusted; parked checkpoint=hosted Netlify freshness and operator external-agent retest for VI5-T4/T5 remain pending.
@@ -180,6 +186,9 @@ The guard blocks:
   Trace Matrix;
 - Source Verification `ACCEPT` rows that cite missing files or omit
   source-declared values;
+- Source Verification symbol cells that contain value assignments instead of
+  bare field/path/symbol references;
+- HOLD/DRAFT/PROPOSED status labels that contain the token `CLOSED`;
 - ready/dispatch packets with unresolved `CLOSED_PASS` prerequisites;
 - Fast Lane audits marked `FAST_LANE_READY` while still conditional;
 - unsupported `install always blocked` policy language unless reconciled with
