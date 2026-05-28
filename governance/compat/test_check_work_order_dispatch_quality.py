@@ -191,6 +191,77 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
 
         self.assertTrue(report["compliant"])
 
+    def test_closed_work_order_with_open_rows_and_unchecked_boxes_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_LHW10_T1_TEST_2026-05-28.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: CLOSED_PASS_BOUNDED",
+                    "## Roadmap-To-Work-Order Trace Matrix",
+                    "| Roadmap requirement | Work order section | Output artifact or field | Verification command or check | Status |",
+                    "|---|---|---|---|---|",
+                    "| R1 | S1 | field | check | OPEN |",
+                    "## Closure Checklist",
+                    "- [ ] Spec complete",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        issues = report["violations"][0]["issues"]
+        self.assertIn("closed work order contains 1 table row(s) still marked OPEN", issues)
+        self.assertIn("closed work order contains 1 unchecked checklist item(s)", issues)
+
+    def test_closed_roadmap_with_hold_residue_fails(self) -> None:
+        roadmap = "docs/roadmaps/CVF_LHW10_TEST_ROADMAP_2026-05-28.md"
+        self._write(
+            roadmap,
+            "\n".join(
+                [
+                    "# Roadmap",
+                    "Status: CLOSED_PASS_BOUNDED",
+                    "Dispatch status: T1 WORK_ORDER_READY. T2 HOLD until T1 CLOSED_PASS.",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([roadmap])
+
+        self.assertFalse(report["compliant"])
+        self.assertTrue(
+            any("closed roadmap contains stale dispatch/hold status residue" in issue
+                for issue in report["violations"][0]["issues"])
+        )
+
+    def test_active_fast_lane_with_pass_disposition_fails(self) -> None:
+        audit = "docs/reviews/CVF_LHW10_T3_FAST_LANE_AUDIT_2026-05-28.md"
+        self._write(
+            audit,
+            "\n".join(
+                [
+                    "# Audit",
+                    "Status: ACTIVE",
+                    "**Decision: ACCEPT**",
+                    "**Disposition: FAST_LANE_PASS**",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([audit])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "fast-lane audit status is still ACTIVE/DRAFT/HOLD while disposition or decision is pass/approve",
+            report["violations"][0]["issues"],
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

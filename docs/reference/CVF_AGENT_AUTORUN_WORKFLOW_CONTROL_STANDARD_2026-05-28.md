@@ -195,6 +195,13 @@ Closure is blocked when:
 - roadmap/work-order/completion statuses disagree;
 - roadmap or work-order acceptance checkboxes remain open without `N/A with
   reason` or `BLOCKED`;
+- any closed-equivalent work order, roadmap, Fast Lane audit, completion, or
+  connector spec still contains `| OPEN |` table rows or unchecked `- [ ]`
+  checklist items;
+- a closed roadmap still carries stale dispatch residue such as
+  `WORK_ORDER_READY`, `READY_FOR_IMPLEMENTATION`, or `HOLD until`;
+- a Fast Lane audit status remains `ACTIVE`, `DRAFT`, or `HOLD` while its
+  decision/disposition says pass, approve, or accept;
 - completion review claims `PASS` for evidence that was not produced by a
   command, path, receipt, or committed diff;
 - a completion review claims no runtime/code/public/live-proof impact without
@@ -276,6 +283,9 @@ This standard does not:
 | Empty closure range | Re-run with the captured base HEAD and do not claim closure from `HEAD..HEAD`. |
 | Source invariant claim exceeds source proof | Downgrade the claim to doc-only normalization or cite a literal source invariant. |
 | Latest LHW closure is missing from front door, `nextAllowedMove`, or active handoff | Sync continuity surfaces before claiming or accepting closure. |
+| Closed artifact contains `| OPEN |` or unchecked `- [ ]` residue | Finalize the work-order/roadmap/review checklist or downgrade status to `HOLD_*`/`BLOCKED`. |
+| Closed roadmap still says `WORK_ORDER_READY` or `HOLD until` | Replace dispatch planning text with final per-tranche closure status. |
+| Fast Lane audit status conflicts with pass/approve disposition | Align the status with the final disposition before closure. |
 | `pre-dispatch` fails | Keep artifact in `DRAFT`, `HOLD_*`, or `BLOCKED`; return to Orchestrator. |
 | `pre-implementation` fails | Stop edits; return the blocker to Orchestrator or Reviewer. |
 | `pre-closure` fails | Do not mark closed; file a blocking finding or correction batch. |

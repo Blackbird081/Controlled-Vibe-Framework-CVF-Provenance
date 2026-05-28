@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: ACTIVE
+Status: FAST_LANE_PASS
 
 docType: fast_lane_audit
 

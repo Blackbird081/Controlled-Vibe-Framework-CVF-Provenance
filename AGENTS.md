@@ -261,6 +261,9 @@ Binding requirements:
   claims;
 - resolve every closure checklist item as checked, `N/A with reason`, or
   `BLOCKED` with return-to-orchestrator action;
+- closed-equivalent artifacts must not retain `| OPEN |` rows, unchecked
+  `- [ ]` checklist items, stale roadmap `WORK_ORDER_READY`/`HOLD until`
+  residue, or Fast Lane `ACTIVE` status paired with pass/approve disposition;
 - update active session front door, machine-readable state, and active handoff
   when current mode, next allowed move, public-sync status, roadmap status, or
   handoff status changes.

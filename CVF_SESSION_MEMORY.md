@@ -88,6 +88,10 @@ closed, the active front door, state registry, and handoff must all reference
 the latest closed LHW wave; stale lower-wave `nextAllowedMove` text blocks the
 active-session gate.
 
+Closure finality is now machine-enforced. Closed-equivalent governed artifacts
+must not retain `| OPEN |` rows, unchecked `- [ ]` checklist items, stale
+roadmap dispatch/hold residue, or Fast Lane active/pass status conflicts.
+
 ## Next Allowed Move
 
 LHW10 is present in HEAD as `CLOSED_PASS_BOUNDED`; any follow-on wave must be

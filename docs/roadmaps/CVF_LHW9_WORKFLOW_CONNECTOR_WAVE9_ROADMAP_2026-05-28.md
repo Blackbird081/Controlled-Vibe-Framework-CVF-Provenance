@@ -188,9 +188,9 @@ Dispatch only after T1 + T2 are CLOSED_PASS.
 
 | Tranche | Deliverable | Gate |
 | --- | --- | --- |
-| T1 | MCP Tool Approval Advisory Connector spec (5 sections) | None — open after GC-018 + dispatch-quality gate |
-| T2 | Noncoder Friction Advisory Connector spec (5 sections) | HOLD until T1 CLOSED_PASS |
-| T3 | Integration Layer Packaging Connector spec (5 sections) | HOLD until T1 + T2 CLOSED_PASS |
+| T1 | MCP Tool Approval Advisory Connector spec (5 sections) | CLOSED_PASS_BOUNDED |
+| T2 | Noncoder Friction Advisory Connector spec (5 sections) | CLOSED_PASS_BOUNDED |
+| T3 | Integration Layer Packaging Connector spec (5 sections) | CLOSED_PASS_BOUNDED |
 
 ## Acceptance Criteria
 

@@ -99,12 +99,12 @@ report to Orchestrator.
 
 | Roadmap requirement | Work order section | Output artifact or field | Verification command or check | Status |
 | --- | --- | --- | --- | --- |
-| T2 spec; VI1/G1/LHW8-T2 field names verbatim | S1–S5 | spec at target path | Reviewer confirms source-verbatim field names | OPEN |
-| `runtimeExecutionAuthorized=false` explicit | S1, S3, Claim Boundary | invariant stated | `rg -n "runtimeExecutionAuthorized=false" <spec>` | OPEN |
-| S2 covers all 3 `VerticalIntegrationStatus` values | S2 | status rows in mapping | Reviewer checks S2 rows | OPEN |
-| S5 individual rows for all 4 `authorityChainAdvisoryType` values | S5 | 4 individual rows | Reviewer checks no aggregate rows | OPEN |
-| No code file modified | Evidence Requirements | git diff output | `git diff --name-only` | OPEN |
-| T1 CLOSED_PASS_BOUNDED gate | Authority Chain | T1 completion review exists | Read T1 completion review | OPEN |
+| T2 spec; VI1/G1/LHW8-T2 field names verbatim | S1–S5 | spec at target path | Reviewer confirms source-verbatim field names | PASS |
+| `runtimeExecutionAuthorized=false` explicit | S1, S3, Claim Boundary | invariant stated | `rg -n "runtimeExecutionAuthorized=false" <spec>` | PASS |
+| S2 covers all 3 `VerticalIntegrationStatus` values | S2 | status rows in mapping | Reviewer checks S2 rows | PASS |
+| S5 individual rows for all 4 `authorityChainAdvisoryType` values | S5 | 4 individual rows | Reviewer checks no aggregate rows | PASS |
+| No code file modified | Evidence Requirements | git diff output | `git diff --name-only` | PASS |
+| T1 CLOSED_PASS_BOUNDED gate | Authority Chain | T1 completion review exists | Read T1 completion review | PASS |
 
 ## Deliverable — Connector Spec
 
@@ -126,12 +126,12 @@ Key invariants:
 
 ## Pre-Flight
 
-- [ ] Working tree clean
-- [ ] All required first reads done
-- [ ] T1 CLOSED_PASS_BOUNDED confirmed
-- [ ] VI1 `integratedSurfaceCount` and `requiredSurfaceCount` confirmed from source
-- [ ] G1 `canExecute` confirmed from source
-- [ ] LHW8-T2 `authorityChainAdvisoryType` values confirmed from spec
+- [x] Working tree clean
+- [x] All required first reads done
+- [x] T1 CLOSED_PASS_BOUNDED confirmed
+- [x] VI1 `integratedSurfaceCount` and `requiredSurfaceCount` confirmed from source
+- [x] G1 `canExecute` confirmed from source
+- [x] LHW8-T2 `authorityChainAdvisoryType` values confirmed from spec
 
 ## Write Ownership
 
@@ -172,15 +172,15 @@ Spec size guard: < 250 lines.
 
 ## Acceptance Criteria
 
-- [ ] T1 CLOSED_PASS_BOUNDED confirmed before dispatch
-- [ ] Spec with all 5 sections created
-- [ ] S2 covers all 3 `VerticalIntegrationStatus` values in mapping
-- [ ] All 4 `authorityChainAdvisoryType` values individually row-verified in S5
-- [ ] `runtimeExecutionAuthorized=false` explicit
-- [ ] S4 boundary table honest; no doc-only row labeled Runtime
-- [ ] S5 Source Verification Table complete; no aggregate rows
-- [ ] No code file in diff
-- [ ] Session continuity updated
+- [x] T1 CLOSED_PASS_BOUNDED confirmed before dispatch
+- [x] Spec with all 5 sections created
+- [x] S2 covers all 3 `VerticalIntegrationStatus` values in mapping
+- [x] All 4 `authorityChainAdvisoryType` values individually row-verified in S5
+- [x] `runtimeExecutionAuthorized=false` explicit
+- [x] S4 boundary table honest; no doc-only row labeled Runtime
+- [x] S5 Source Verification Table complete; no aggregate rows
+- [x] No code file in diff
+- [x] Session continuity updated
 
 Fail conditions:
 
@@ -199,17 +199,17 @@ explicit; S5 complete; no code file in diff.
 
 ## Closure Checklist
 
-- [ ] T1 CLOSED_PASS_BOUNDED confirmed
-- [ ] Spec created with all 5 sections
-- [ ] S2 mapping uses VI1/G1/LHW8-T2 vocabulary verbatim
-- [ ] `runtimeExecutionAuthorized=false` explicit
-- [ ] S5 Source Verification Table complete; no aggregate rows; no
+- [x] T1 CLOSED_PASS_BOUNDED confirmed
+- [x] Spec created with all 5 sections
+- [x] S2 mapping uses VI1/G1/LHW8-T2 vocabulary verbatim
+- [x] `runtimeExecutionAuthorized=false` explicit
+- [x] S5 Source Verification Table complete; no aggregate rows; no
   `BLOCKED_SOURCE_NOT_FOUND` rows
-- [ ] S4 boundary table honest; no doc-only row labeled Runtime
-- [ ] No code file in diff
-- [ ] Fast Lane audit created
-- [ ] Session continuity updated
-- [ ] Completion review with T3 gate answer written
+- [x] S4 boundary table honest; no doc-only row labeled Runtime
+- [x] No code file in diff
+- [x] Fast Lane audit created
+- [x] Session continuity updated
+- [x] Completion review with T3 gate answer written
 
 ## Return-To-Orchestrator Conditions
 

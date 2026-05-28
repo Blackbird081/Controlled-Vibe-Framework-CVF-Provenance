@@ -117,6 +117,13 @@ of:
 
 Open checkbox residue is a closure defect.
 
+Machine enforcement must reject closed-equivalent artifacts that still contain
+open closure residue. A file with `Status: CLOSED*`, `CLOSED_PASS*`, or
+equivalent must not contain `| OPEN |` table rows or unchecked `- [ ]`
+checklist items. Work-order authors must either mark each item checked, replace
+it with `N/A with reason`, or leave the artifact in `HOLD_*`, `DRAFT`, or
+`BLOCKED`.
+
 ### 6. Continuity Sync Gate
 
 If the task changes current mode, handoff status, roadmap status, public-sync
@@ -181,7 +188,8 @@ This standard is enforced by:
   dispatch/ready work orders, connector-wave roadmaps, and fast-lane audits
   when prerequisite GC-018 baselines, source files, source-verification truth,
   roadmap trace matrices, source-invariant proof, non-empty verification
-  ranges, or prerequisite completion evidence are missing.
+  ranges, prerequisite completion evidence, closed-artifact checklist
+  finality, or roadmap/Fast Lane status consistency are missing.
 - `governance/compat/run_agent_autorun_workflow_gate.py`, which bundles the
   mandatory phase gates for pre-dispatch, pre-implementation, pre-closure, and
   pre-push agent workflows.

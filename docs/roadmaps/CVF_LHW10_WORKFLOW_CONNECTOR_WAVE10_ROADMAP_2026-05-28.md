@@ -19,8 +19,8 @@ CLOSED_PASS_BOUNDED at commit `c245bc5a`.
 Fresh GC-018:
 `docs/baselines/CVF_GC018_LHW10_WORKFLOW_CONNECTOR_WAVE10_2026-05-28.md`
 
-Dispatch status: T1 WORK_ORDER_READY. T2 HOLD until T1 CLOSED_PASS.
-T3 HOLD until T1 + T2 CLOSED_PASS.
+Dispatch status: T1 CLOSED_PASS_BOUNDED. T2 CLOSED_PASS_BOUNDED.
+T3 CLOSED_PASS_BOUNDED. LHW10 wave CLOSED_PASS_BOUNDED.
 
 ## Scope / Target / Owner Boundary
 
@@ -205,8 +205,8 @@ Dispatch only after T1 + T2 are CLOSED_PASS.
 | Tranche | Deliverable | Gate |
 | --- | --- | --- |
 | T1 | Workflow Transition Enforcement Advisory Connector spec (5 sections) | None — open after GC-018 + dispatch-quality gate |
-| T2 | Runtime Maturity Evidence Chain Connector spec (5 sections) | HOLD until T1 CLOSED_PASS |
-| T3 | Provider Health Degradation Advisory Connector spec (5 sections) | HOLD until T1 + T2 CLOSED_PASS |
+| T2 | Runtime Maturity Evidence Chain Connector spec (5 sections) | CLOSED_PASS_BOUNDED |
+| T3 | Provider Health Degradation Advisory Connector spec (5 sections) | CLOSED_PASS_BOUNDED |
 
 ## Acceptance Criteria
 

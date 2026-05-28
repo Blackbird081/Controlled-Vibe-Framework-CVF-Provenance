@@ -236,6 +236,8 @@ These files use inline React styles — when porting to the Next.js app, transla
 
 **Latest-Closure Continuity Gate:** Before claiming any connector wave closed, run the autorun `pre-closure` gate and ensure the highest closed LHW wave in `CVF_SESSION/ACTIVE_SESSION_STATE.json` is also named in `nextAllowedMove`, `CVF_SESSION_MEMORY.md` `Next Allowed Move`, and the active handoff. Stale lower-wave text such as LHW6/LHW8 after LHW9 closure blocks closure even when specs pass.
 
+**Closure Finality Gate:** A closed-equivalent work order, roadmap, Fast Lane audit, completion, or connector spec must not retain `| OPEN |` table rows, unchecked `- [ ]` checklist items, stale roadmap `WORK_ORDER_READY`/`HOLD until` residue, or `Status: ACTIVE` paired with pass/approve disposition.
+
 **Risk Model:** R0 (Safe) → R3 (Dangerous). All changes are classified before execution.
 
 ---

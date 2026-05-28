@@ -140,6 +140,67 @@ def _is_hold_status(status: str) -> bool:
     return "HOLD" in status.upper() or "PROPOSED" in status.upper() or "DRAFT" in status.upper()
 
 
+def _is_closed_status(status: str) -> bool:
+    return "CLOSED" in status.upper()
+
+
+def _validate_closed_artifact_finality(text: str, artifact_label: str) -> list[str]:
+    issues: list[str] = []
+    status = _extract_status(text)
+    if not _is_closed_status(status):
+        return issues
+    open_rows = re.findall(r"(?m)^\|.*\|\s*OPEN\s*\|\s*$", text)
+    if open_rows:
+        issues.append(
+            f"closed {artifact_label} contains {len(open_rows)} table row(s) still marked OPEN"
+        )
+    unchecked_items = re.findall(r"(?m)^\s*[-*]\s+\[\s\]\s+", text)
+    if unchecked_items:
+        issues.append(
+            f"closed {artifact_label} contains {len(unchecked_items)} unchecked checklist item(s)"
+        )
+    return issues
+
+
+def _validate_closed_roadmap_status_residue(text: str) -> list[str]:
+    issues: list[str] = []
+    status = _extract_status(text)
+    if not _is_closed_status(status):
+        return issues
+    residue_patterns = (
+        r"\bWORK_ORDER_READY\b",
+        r"\bREADY_FOR_IMPLEMENTATION\b",
+        r"\bHOLD_UNTIL_[A-Z0-9_]+\b",
+        r"\bHOLD\s+until\b",
+    )
+    residues = sorted(
+        {
+            match.group(0)
+            for pattern in residue_patterns
+            for match in re.finditer(pattern, text, re.IGNORECASE)
+        }
+    )
+    if residues:
+        issues.append(
+            "closed roadmap contains stale dispatch/hold status residue: "
+            + ", ".join(residues)
+        )
+    return issues
+
+
+def _validate_fast_lane_status_consistency(text: str) -> list[str]:
+    issues: list[str] = []
+    status = _extract_status(text).upper()
+    if status in {"ACTIVE", "DRAFT", "HOLD"} and re.search(
+        r"(?im)^(?:\*\*)?(?:Disposition|Decision|Position)(?:\*\*)?\s*:\s*(?:\*\*)?(?:FAST_LANE_PASS|PASS|APPROVE|ACCEPT)",
+        text,
+    ):
+        issues.append(
+            "fast-lane audit status is still ACTIVE/DRAFT/HOLD while disposition or decision is pass/approve"
+        )
+    return issues
+
+
 def _extract_wave_id(path: str, text: str) -> int | None:
     match = LHW_RE.search(f"{path}\n{text}")
     return int(match.group(1)) if match else None
@@ -414,6 +475,7 @@ def _validate_work_order(path: str, text: str) -> list[str]:
     issues: list[str] = []
     status = _extract_status(text)
     dispatching = "DISPATCHED" in status.upper() or "READY" in status.upper()
+    issues.extend(_validate_closed_artifact_finality(text, "work order"))
 
     if dispatching and _is_roadmap_derived(text) and not _has_trace_matrix(text):
         issues.append("roadmap-derived work order is dispatch/ready without Roadmap-To-Work-Order Trace Matrix")
@@ -447,6 +509,8 @@ def _validate_work_order(path: str, text: str) -> list[str]:
 def _validate_roadmap(path: str, text: str) -> list[str]:
     issues: list[str] = []
     status = _extract_status(text)
+    issues.extend(_validate_closed_artifact_finality(text, "roadmap"))
+    issues.extend(_validate_closed_roadmap_status_residue(text))
     if _is_connector_wave(path, text) and _is_dispatch_status(status) and not _is_hold_status(status):
         wave_id = _extract_wave_id(path, text)
         if wave_id is not None and not _has_gc018_for_wave(wave_id):
@@ -459,6 +523,8 @@ def _validate_roadmap(path: str, text: str) -> list[str]:
 def _validate_fast_lane_audit(path: str, text: str) -> list[str]:
     issues: list[str] = []
     status = _extract_status(text)
+    issues.extend(_validate_closed_artifact_finality(text, "fast-lane audit"))
+    issues.extend(_validate_fast_lane_status_consistency(text))
     if "FAST_LANE_READY" in status.upper() and re.search(
         r"(pre-?condition|conditional|only after)[\s\S]{0,240}CLOSED_PASS",
         text,
@@ -476,6 +542,7 @@ def _validate_fast_lane_audit(path: str, text: str) -> list[str]:
 
 def _validate_completion_or_spec(path: str, text: str) -> list[str]:
     issues: list[str] = []
+    issues.extend(_validate_closed_artifact_finality(text, "completion/spec artifact"))
     issues.extend(_validate_accepted_source_rows(path, text))
     issues.extend(_validate_no_empty_range_commands(text))
     return issues

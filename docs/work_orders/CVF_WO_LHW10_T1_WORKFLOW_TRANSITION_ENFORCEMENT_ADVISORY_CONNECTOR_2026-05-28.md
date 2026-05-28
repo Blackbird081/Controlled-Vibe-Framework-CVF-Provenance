@@ -108,12 +108,12 @@ If any required file is missing, stop and report to Orchestrator.
 
 | Roadmap requirement | Work order section | Output artifact or field | Verification command or check | Status |
 | --- | --- | --- | --- | --- |
-| T1 spec; W1/WR1/LHW7-T1 field names verbatim | S1–S5 | spec at target path | Reviewer confirms source-verbatim field names | OPEN |
-| Transition execution blocked explicit | S1, S3, Claim Boundary | `runtimeExecutionAuthorized=false`; explicit not-execute statement | `rg -n "runtimeExecutionAuthorized=false" <spec>` | OPEN |
-| S2 maps all 4 `WorkflowRecoveryAction` values | S2 | 4 recovery action rows mapped | Reviewer checks S2 rows | OPEN |
-| S2 maps all 4 `WorkflowRequestedTransitionDisposition` values | S2 | 4 disposition rows mapped | Reviewer checks S2 rows | OPEN |
-| S5 Source Verification Table: individual rows per enum value | S5 | all ACCEPT, no aggregates | Reviewer checks no `BLOCKED_SOURCE_NOT_FOUND` | OPEN |
-| No code file modified | Evidence Requirements | git diff output | `git diff --name-only` | OPEN |
+| T1 spec; W1/WR1/LHW7-T1 field names verbatim | S1–S5 | spec at target path | Reviewer confirms source-verbatim field names | PASS |
+| Transition execution blocked explicit | S1, S3, Claim Boundary | `runtimeExecutionAuthorized=false`; explicit not-execute statement | `rg -n "runtimeExecutionAuthorized=false" <spec>` | PASS |
+| S2 maps all 4 `WorkflowRecoveryAction` values | S2 | 4 recovery action rows mapped | Reviewer checks S2 rows | PASS |
+| S2 maps all 4 `WorkflowRequestedTransitionDisposition` values | S2 | 4 disposition rows mapped | Reviewer checks S2 rows | PASS |
+| S5 Source Verification Table: individual rows per enum value | S5 | all ACCEPT, no aggregates | Reviewer checks no `BLOCKED_SOURCE_NOT_FOUND` | PASS |
+| No code file modified | Evidence Requirements | git diff output | `git diff --name-only` | PASS |
 
 ## Deliverable — Connector Spec
 
@@ -133,11 +133,11 @@ Key invariants:
 
 ## Pre-Flight
 
-- [ ] Working tree clean
-- [ ] All required first reads done
-- [ ] `WorkflowRecoveryAction` and `WorkflowRequestedTransitionDisposition`
+- [x] Working tree clean
+- [x] All required first reads done
+- [x] `WorkflowRecoveryAction` and `WorkflowRequestedTransitionDisposition`
   values confirmed from source (lines 50–60 of `workflow-resolver.ts`)
-- [ ] LHW7-T1 `reEntryAdvisoryType` values confirmed from S3
+- [x] LHW7-T1 `reEntryAdvisoryType` values confirmed from S3
 
 ## Write Ownership
 
@@ -177,14 +177,14 @@ Spec size guard: < 250 lines.
 
 ## Acceptance Criteria
 
-- [ ] Spec with all 5 sections created
-- [ ] S2 maps all 4 `WorkflowRecoveryAction` values and all 4 `WorkflowRequestedTransitionDisposition` values
-- [ ] All 5 LHW7-T1 `reEntryAdvisoryType` values individually row-verified in S5
-- [ ] `runtimeExecutionAuthorized=false` explicit
-- [ ] S4 boundary table honest; no doc-only row labeled Runtime
-- [ ] S5 Source Verification Table complete; no aggregate rows
-- [ ] No code file in diff
-- [ ] Session continuity updated
+- [x] Spec with all 5 sections created
+- [x] S2 maps all 4 `WorkflowRecoveryAction` values and all 4 `WorkflowRequestedTransitionDisposition` values
+- [x] All 5 LHW7-T1 `reEntryAdvisoryType` values individually row-verified in S5
+- [x] `runtimeExecutionAuthorized=false` explicit
+- [x] S4 boundary table honest; no doc-only row labeled Runtime
+- [x] S5 Source Verification Table complete; no aggregate rows
+- [x] No code file in diff
+- [x] Session continuity updated
 
 Fail conditions:
 
@@ -202,16 +202,16 @@ complete with no aggregate rows; no code file in diff.
 
 ## Closure Checklist
 
-- [ ] Spec created with all 5 sections
-- [ ] S2 transition advisory mapping uses W1/WR1/LHW7-T1 vocabulary verbatim
-- [ ] `runtimeExecutionAuthorized=false` explicit
-- [ ] S5 Source Verification Table complete; no aggregate rows; no
+- [x] Spec created with all 5 sections
+- [x] S2 transition advisory mapping uses W1/WR1/LHW7-T1 vocabulary verbatim
+- [x] `runtimeExecutionAuthorized=false` explicit
+- [x] S5 Source Verification Table complete; no aggregate rows; no
   `BLOCKED_SOURCE_NOT_FOUND` rows
-- [ ] S4 boundary table honest; no doc-only row labeled Runtime
-- [ ] No code file in diff
-- [ ] Fast Lane audit created
-- [ ] Session continuity updated
-- [ ] Completion review with T2 gate answer written
+- [x] S4 boundary table honest; no doc-only row labeled Runtime
+- [x] No code file in diff
+- [x] Fast Lane audit created
+- [x] Session continuity updated
+- [x] Completion review with T2 gate answer written
 
 ## Return-To-Orchestrator Conditions
 
