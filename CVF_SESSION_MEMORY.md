@@ -90,7 +90,7 @@ active-session gate.
 
 ## Next Allowed Move
 
-LHW9 is present in HEAD as `CLOSED_PASS_BOUNDED`; any follow-on wave must be
+LHW10 is present in HEAD as `CLOSED_PASS_BOUNDED`; any follow-on wave must be
 reviewed through the autorun `pre-dispatch`, `pre-implementation`,
 `pre-closure`, and applicable `pre-push` gates before it can be trusted as
 closed.

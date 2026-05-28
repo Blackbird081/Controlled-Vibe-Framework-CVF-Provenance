@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: ACTIVE
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -210,27 +210,27 @@ Dispatch only after T1 + T2 are CLOSED_PASS.
 
 ## Acceptance Criteria
 
-- [ ] T1 spec created; W1/WR1/LHW7-T1 field names verbatim; transition-execution-blocked
+- [x] T1 spec created; W1/WR1/LHW7-T1 field names verbatim; transition-execution-blocked
   explicit; Source Verification Table complete with individual rows per enum value
-- [ ] T2 spec created; VI1/G1/LHW8-T2 field names verbatim;
+- [x] T2 spec created; VI1/G1/LHW8-T2 field names verbatim;
   `runtimeExecutionAuthorized=false` explicit; Source Verification Table complete
-- [ ] T3 spec created; W5/W4/LHW9-T1 field names verbatim;
+- [x] T3 spec created; W5/W4/LHW9-T1 field names verbatim;
   `runtimeExecutionAuthorized=false` explicit; Source Verification Table complete
-- [ ] No `.ts`/`.tsx`/`.js`/`.py` file in diff across all three tranches
-- [ ] No `EXTENSIONS/` source file in diff across all three tranches
-- [ ] Session continuity updated after each tranche
-- [ ] Each spec < 250 lines per GC-023
-- [ ] Dispatch-quality gate PASS for each work order
-- [ ] Closure-quality gate PASS for each completion review
+- [x] No `.ts`/`.tsx`/`.js`/`.py` file in diff across all three tranches
+- [x] No `EXTENSIONS/` source file in diff across all three tranches
+- [x] Session continuity updated after each tranche
+- [x] Each spec < 250 lines per GC-023
+- [x] Dispatch-quality gate PASS for each work order
+- [x] Closure-quality gate PASS for each completion review
 
 ## Verification
 
 Pre-dispatch verification (per work order):
 
 ```powershell
-python governance/compat/check_work_order_dispatch_quality.py --base 118b8d48 --head <lhw10-commit> --enforce
-python governance/compat/check_markdown_structural_completeness.py --base 118b8d48 --head <lhw10-commit> --enforce
-python governance/compat/check_docs_governance_compat.py --base 118b8d48 --head <lhw10-commit> --enforce
+python governance/compat/check_work_order_dispatch_quality.py --base 118b8d48 --head 09ad78ee --enforce
+python governance/compat/check_markdown_structural_completeness.py --base 118b8d48 --head 09ad78ee --enforce
+python governance/compat/check_docs_governance_compat.py --base 118b8d48 --head 09ad78ee --enforce
 ```
 
 ## Claim Boundary
