@@ -148,6 +148,27 @@ Every relevant source family must receive a disposition:
 
 The disposition must include a reason. A missing reason is a blind-spot defect.
 
+### LHW Scope-Rejection Semantics
+
+For Legacy Harvest Workflow (LHW) connector waves, `REJECT_DIRECT`,
+`OUT_OF_SCOPE`, or free-text `rejected` labels must not imply that a source
+family has no future value unless the evidence proves that.
+
+If a family is excluded only because the current LHW wave is documentation-only,
+the label must say:
+
+`rejected from this LHW wave (doc-only scope) - requires live route; eligible for separate live-proof roadmap post-LHW.`
+
+This distinction is mandatory for families such as `abtop` and `gridex`, where
+operator keys or API access may make live testing possible, but the current
+connector wave is the wrong work type. Do not blame a worker for failing to
+run live proof when the work order itself scoped a doc-only wave.
+
+LHW sequence rule: finish LHW connector waves for remaining
+`PARTIALLY_ABSORBED` LH1 families first. Only after the Orchestrator confirms no
+additional connector value remains should CVF open a separate live-proof
+roadmap for `abtop`, `gridex`, or other families that require route execution.
+
 ## Required Gate 6 - Adversarial Role Review
 
 Before implementation, the agent must run at least three explicit role lenses:

@@ -92,12 +92,24 @@ Closure finality is now machine-enforced. Closed-equivalent governed artifacts
 must not retain `| OPEN |` rows, unchecked `- [ ]` checklist items, stale
 roadmap dispatch/hold residue, or Fast Lane active/pass status conflicts.
 
+LHW scope rejection is not source rejection. For doc-only LHW connector waves,
+families such as `abtop` or `gridex` that require live route execution must be
+labeled `rejected from this LHW wave (doc-only scope) - requires live route;
+eligible for separate live-proof roadmap post-LHW`, not globally rejected.
+Finish absorption of remaining `PARTIALLY_ABSORBED` LH1 connector value before
+opening separate live-proof roadmaps.
+
 ## Next Allowed Move
 
 LHW10 is present in HEAD as `CLOSED_PASS_BOUNDED`; any follow-on wave must be
 reviewed through the autorun `pre-dispatch`, `pre-implementation`,
 `pre-closure`, and applicable `pre-push` gates before it can be trusted as
 closed.
+
+LHW sequencing remains: continue connector absorption first. Do not move
+`abtop`, `gridex`, or other route-execution families into a live-proof roadmap
+until the Orchestrator confirms there is no remaining connector value in LH1
+`PARTIALLY_ABSORBED` families.
 
 Future connector waves require fresh GC-018, roadmap, source-verified work
 orders, roadmap-to-work-order trace matrix, dispatch-quality gate, closure

@@ -139,9 +139,16 @@ closed-roadmap dispatch/hold residue, or Fast Lane active/pass status conflicts.
 LHW10 cleanup updates T1/T2/T3 work-order trace/checklist residue, roadmap
 dispatch residue, and T3 Fast Lane status consistency.
 
+Current HEAD before LHW scope-rejection sequencing rule update: `fcc7724b`.
+Continuity rule in progress: LHW doc-only exclusions must be labeled as
+`rejected from this LHW wave (doc-only scope) - requires live route; eligible
+for separate live-proof roadmap post-LHW`, especially for `abtop` and `gridex`.
+Continue LHW connector absorption of remaining `PARTIALLY_ABSORBED` LH1
+families before opening separate live-proof roadmaps.
+
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=agent_autorun_workflow_control_enforced; active handoff=AGENT_HANDOFF_V14_2026-05-27.md; next allowed move=any follow-on wave must pass autorun pre-dispatch, pre-implementation, pre-closure, and applicable pre-push gates before worker claims can be trusted; parked checkpoint=hosted Netlify freshness and operator external-agent retest for VI5-T4/T5 remain pending.
+Startup acknowledged: current mode=agent_autorun_workflow_control_enforced; active handoff=AGENT_HANDOFF_V14_2026-05-27.md; next allowed move=continue LHW connector absorption first, with any follow-on wave passing autorun pre-dispatch, pre-implementation, pre-closure, and applicable pre-push gates before worker claims can be trusted; parked checkpoint=hosted Netlify freshness and operator external-agent retest for VI5-T4/T5 remain pending.
 
 ## Work Order Dispatch Quality Gate
 

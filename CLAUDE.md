@@ -74,6 +74,17 @@ Do not bypass this standard by claiming "the folder was already audited," "the
 summary is enough," "another agent already reviewed it," or any of the other
 rationalizations in the standard's Do-Not-Bypass List.
 
+For LHW connector waves, do not use bare `rejected: requires live route`
+wording when a family is excluded only because the current wave is doc-only.
+Use:
+
+`rejected from this LHW wave (doc-only scope) - requires live route; eligible for separate live-proof roadmap post-LHW.`
+
+This is a scope label, not a value judgment on the worker or source family.
+`abtop` and `gridex` may be live-testable when API/key paths exist, but live
+route execution belongs in a separate live-proof roadmap after LHW connector
+absorption of remaining `PARTIALLY_ABSORBED` LH1 families is complete.
+
 ## Mandatory Work Order Source Verification
 
 Before authoring or dispatching a CVF work order, follow the canonical template:

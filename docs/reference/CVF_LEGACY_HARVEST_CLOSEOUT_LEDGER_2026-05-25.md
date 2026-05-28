@@ -73,6 +73,20 @@ Baseline:
 - `REJECT_DIRECT` means do not import directly; keep only as contrast/evidence.
 - `CITE_ONLY` means historical evidence only.
 
+LHW scope-rejection rule:
+
+- In LHW connector waves, do not use a bare `rejected: requires live route`
+  label for a family that is excluded only because the current wave is
+  documentation-only.
+- Use the explicit wording: `rejected from this LHW wave (doc-only scope) -
+  requires live route; eligible for separate live-proof roadmap post-LHW.`
+- This applies especially to `abtop` and `gridex`: API/key availability can make
+  them live-testable, but a doc-only LHW connector wave is the wrong scope.
+- Sequence: finish LHW connector absorption for remaining
+  `PARTIALLY_ABSORBED` families before opening live-proof roadmaps. Live proof
+  for `abtop`, `gridex`, or similar families starts only after the Orchestrator
+  confirms no additional connector value remains.
+
 ## Knowledge Absorption Blind-Spot Control Block
 
 - Standard read:

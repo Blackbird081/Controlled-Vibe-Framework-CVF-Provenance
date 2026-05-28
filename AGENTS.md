@@ -389,6 +389,20 @@ role review, and close with a blind-spot delta. If the block is `PARTIAL` or
 `BLOCKED`, the implementation must stop or explicitly record why the remaining
 blind spot is low-risk and out of scope.
 
+For LHW connector waves, scope rejection must not be misread as source
+rejection. A family that is excluded only because the current wave is
+documentation-only must be labeled:
+
+`rejected from this LHW wave (doc-only scope) - requires live route; eligible for separate live-proof roadmap post-LHW.`
+
+Do not blame a worker agent for not running live proof when the work order
+scoped a doc-only LHW wave. `abtop` and `gridex` may have API/key paths and may
+be eligible for later live testing; they are still the wrong scope for a
+doc-only connector wave. Finish LHW absorption of remaining
+`PARTIALLY_ABSORBED` LH1 families first. Only after the Orchestrator confirms no
+additional connector value remains may CVF open a separate live-proof roadmap
+for `abtop`, `gridex`, or other route-execution families.
+
 ## Latest Closed Continuation Roadmap
 
 The latest closed continuation roadmap is `docs/roadmaps/CVF_W132_T1_PROVIDER_RUNTIME_STABILITY_AND_BROWSER_SESSION_HARDENING_ROADMAP_2026-04-30.md`.
