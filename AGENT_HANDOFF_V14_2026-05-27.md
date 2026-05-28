@@ -1135,3 +1135,4 @@ LHW12 status: CLOSED_PASS_BOUNDED across all three tranches.
 
 Next allowed move: LHW sequencing remains: continue LHW connector absorption first. Any further connector wave (such as LHW13) or follow-on closure must be reviewed through the autorun phase gates. Do not move abtop, gridex, or other route-execution families into a live-proof roadmap until Orchestrator confirms there is no remaining connector value in LH1 partially absorbed families.
 
+Current HEAD (updated per GC-020): `2ed96761` (post-LHW13 wave closure; pre-EL/PM/PD roadmaps implementation).

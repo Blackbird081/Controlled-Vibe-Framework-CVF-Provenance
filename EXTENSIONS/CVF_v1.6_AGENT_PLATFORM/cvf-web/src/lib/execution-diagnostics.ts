@@ -35,6 +35,10 @@ export type ExecutionDiagnosticClass =
     | 'receipt_non_live'
     | 'benchmark_denominator_ambiguous'
     | 'network_error'
+    | 'worker_timeout'
+    | 'worker_timeout_recovered'
+    | 'review_deadlock'
+    | 'review_deadlock_decomposed'
     | 'unknown_error';
 
 export type ExecutionDiagnosticUserAction =
@@ -105,6 +109,10 @@ const DEFAULT_BY_CLASS: Record<ExecutionDiagnosticClass, {
     receipt_non_live: { retryable: false, userAction: 'inspect_receipt', safeMessage: 'The run did not emit a live governance receipt.' },
     benchmark_denominator_ambiguous: { retryable: false, userAction: 'inspect_receipt', safeMessage: 'Benchmark event denominators need call-level clarification.' },
     network_error: { retryable: true, userAction: 'wait_and_retry', safeMessage: 'A network error interrupted execution.' },
+    worker_timeout: { retryable: true, userAction: 'wait_and_retry', safeMessage: 'The worker execution step timed out and will be retried.' },
+    worker_timeout_recovered: { retryable: false, userAction: 'none', safeMessage: 'Worker timeout was recovered: sandbox cleared and task re-dispatched successfully.' },
+    review_deadlock: { retryable: false, userAction: 'contact_admin', safeMessage: 'Reviewer rejected the output more than 3 times — deadlock detected.' },
+    review_deadlock_decomposed: { retryable: false, userAction: 'none', safeMessage: 'Review deadlock was decomposed into micro-tasks and re-dispatched.' },
     unknown_error: { retryable: false, userAction: 'do_not_retry_without_new_evidence', safeMessage: 'The execution failed for an unclassified reason.' },
 };
 
