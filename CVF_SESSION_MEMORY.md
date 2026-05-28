@@ -115,12 +115,13 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LHW10 remains the latest closed wave in state as `CLOSED_PASS_BOUNDED`. LHW11
-is open in HEAD after GC-018, roadmap, and three work orders. T1 may proceed
-first; T2/T3 remain on HOLD until prior tranche evidence passes. Any follow-on
+LHW10 is the latest fully `CLOSED_PASS_BOUNDED` connector wave. LHW11 is
+in-progress: T1 `CLOSED_PASS` at commit `cc64e674`; T2 `WORK_ORDER_READY`
+(gate T1 satisfied); T3 `HOLD` until T2 passes. LHW11 moves to latest wave
+only after all three tranches reach `CLOSED_PASS_BOUNDED`. Any follow-on
 closure must be reviewed through the autorun `pre-dispatch`,
-`pre-implementation`, `pre-closure`, and applicable `pre-push` gates before it
-can be trusted as closed.
+`pre-implementation`, `pre-closure`, and applicable `pre-push` gates before
+it can be trusted as closed.
 
 LHW sequencing remains: continue connector absorption first. Do not move
 `abtop`, `gridex`, or other route-execution families into a live-proof roadmap

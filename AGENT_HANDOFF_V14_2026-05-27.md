@@ -162,7 +162,12 @@ LH1 remaining families recorded in GC-018 LHW11: Group A (abtop/gridex — live
 route post-LHW); Group B (Review CVF.md — operator demand; Review CVF_5.md —
 partially consumed by LHW11 T1+T2).
 
-Current HEAD (updated per GC-020): `5847ed12`.
+Current HEAD after LHW11-T1 implementation commit: `cc64e674`
+(`feat(LHW11-T1): session governance posture aggregator connector + archive cleanup`).
+LHW11-T1 CLOSED_PASS: cvf.sessionGovernancePostureAggregator.lhw11.t1.v1.
+LHW11-T2 gate satisfied; T2 WORK_ORDER_READY.
+
+Current HEAD (updated per GC-020): `cc64e674`.
 
 Current HEAD before status-token/source-symbol hygiene hardening: `686febf8`.
 Rule hardening in progress: HOLD/DRAFT/PROPOSED status labels must not contain
