@@ -224,6 +224,15 @@ Source: CVF 25.05 Gop_y.md Gaps 1, 4, 9.
 
 Current HEAD (updated per GC-020): `7de75901`.
 
+Current HEAD after 3 DEMAND_GATED roadmaps + GC-018s + PM/PD/EL work orders: `a8d2a0eb`.
+Roadmaps: CVF_EXECUTION_LAYER_ROADMAP, CVF_PROVIDER_METHOD_LIVE_PROOF_ROADMAP,
+CVF_PRODUCT_DEPTH_ROADMAP (all DEMAND_GATED at docs/roadmaps/).
+GC-018s: PROVIDER_METHOD_LIVE_PROOF, PRODUCT_DEPTH, EXECUTION_LAYER.
+Work orders dispatched: PM-1/PM-2/PM-3, PD-1/PD-2, EL-1/EL-2/EL-3.
+API keys available (Alibaba/DeepSeek/OpenAI); operator authorized 2026-05-29.
+
+Current HEAD (updated per GC-020): `a8d2a0eb`.
+
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=agent_autorun_workflow_control_enforced; active handoff=AGENT_HANDOFF_V14_2026-05-27.md; next allowed move=continue LHW connector absorption first, with any follow-on wave passing autorun pre-dispatch, pre-implementation, pre-closure, and applicable pre-push gates before worker claims can be trusted; parked checkpoint=hosted Netlify freshness and operator external-agent retest for VI5-T4/T5 remain pending.
