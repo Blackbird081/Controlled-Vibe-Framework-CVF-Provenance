@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: ACTIVE
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -18,8 +18,8 @@ connector wave pattern after LHW10 CLOSED_PASS_BOUNDED at commit `f2dc8559`.
 Fresh GC-018:
 `docs/baselines/CVF_GC018_LHW11_WORKFLOW_CONNECTOR_WAVE11_2026-05-28.md`
 
-Dispatch status: T1 WORK_ORDER_READY. T2 HOLD until T1 CLOSED_PASS.
-T3 HOLD until T1 + T2 CLOSED_PASS.
+Dispatch status: T1 CLOSED_PASS_BOUNDED. T2 CLOSED_PASS_BOUNDED.
+T3 CLOSED_PASS_BOUNDED. LHW11 wave CLOSED_PASS_BOUNDED.
 
 ## Scope / Target / Owner Boundary
 
@@ -180,27 +180,27 @@ Dispatch only after T1 + T2 are CLOSED_PASS.
 | Tranche | Deliverable | Gate |
 | --- | --- | --- |
 | T1 | Session Governance Posture Aggregator spec (5 sections) | None — open after GC-018 + dispatch-quality gate |
-| T2 | Spec-Change Governance Decision spec (5 sections) | HOLD until T1 CLOSED_PASS |
-| T3 | Memory Context Seed Decay Advisory spec (5 sections) | HOLD until T1 + T2 CLOSED_PASS |
+| T2 | Spec-Change Governance Decision spec (5 sections) | CLOSED_PASS_BOUNDED |
+| T3 | Memory Context Seed Decay Advisory spec (5 sections) | CLOSED_PASS_BOUNDED |
 
 ## Acceptance Criteria
 
-- [ ] T1 spec: all 4 input advisory types individually row-verified in S5; no
+- [x] T1 spec: all 4 input advisory types individually row-verified in S5; no
   aggregate rows; `runtimeExecutionAuthorized=false` explicit
-- [ ] T2 spec: LHW7-T3/LHW10-T1/LHW3-T3 field names verbatim; `rollbackRecommended` boolean explicit
-- [ ] T3 spec: `canReinject=false` preserved; LHW8-T1/LHW7-T2/AIF-C field names verbatim
-- [ ] No `.ts`/`.tsx`/`.js`/`.py` file in diff across all three tranches
-- [ ] No `EXTENSIONS/` source file in diff
-- [ ] Each spec < 250 lines per GC-023
-- [ ] Dispatch-quality gate PASS for each work order
-- [ ] Session continuity updated after each tranche
+- [x] T2 spec: LHW7-T3/LHW10-T1/LHW3-T3 field names verbatim; `rollbackRecommended` boolean explicit
+- [x] T3 spec: `canReinject=false` preserved; LHW8-T1/LHW7-T2/AIF-C field names verbatim
+- [x] No `.ts`/`.tsx`/`.js`/`.py` file in diff across all three tranches
+- [x] No `EXTENSIONS/` source file in diff
+- [x] Each spec < 250 lines per GC-023
+- [x] Dispatch-quality gate PASS for each work order
+- [x] Session continuity updated after each tranche
 
 ## Verification
 
 ```powershell
-python governance/compat/check_work_order_dispatch_quality.py --base d3e01013 --head <lhw11-commit> --enforce
-python governance/compat/check_markdown_structural_completeness.py --base d3e01013 --head <lhw11-commit> --enforce
-python governance/compat/check_docs_governance_compat.py --base d3e01013 --head <lhw11-commit> --enforce
+python governance/compat/check_work_order_dispatch_quality.py --base d3e01013 --head HEAD --enforce
+python governance/compat/check_markdown_structural_completeness.py --base d3e01013 --head HEAD --enforce
+python governance/compat/check_docs_governance_compat.py --base d3e01013 --head HEAD --enforce
 ```
 
 ## Claim Boundary

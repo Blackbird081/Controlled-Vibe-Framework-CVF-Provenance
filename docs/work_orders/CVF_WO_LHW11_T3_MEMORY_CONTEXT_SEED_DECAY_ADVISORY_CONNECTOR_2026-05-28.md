@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: HOLD_UNTIL_T1_AND_T2_PASS
+Status: CLOSED_PASS
 
 docType: work_order
 
@@ -117,12 +117,12 @@ file, receipt envelope schema, public-sync repo.
 
 | Roadmap requirement | Work order section | Output artifact or field | Verification | Status |
 | --- | --- | --- | --- | --- |
-| T3 spec; `canReinject=false` preserved | S1, S3, Claim Boundary | invariant stated | `rg "canReinject=false"` | OPEN |
-| All 6 `memorySnapshotAdvisoryType` values individually row-verified | S5 | 6 rows | No aggregate | OPEN |
-| All 3 `contaminationRiskAfterSeed` values individually row-verified | S5 | 3 rows | No aggregate | OPEN |
-| All 6 `MemoryGatewayPolicyDecision` values individually row-verified | S5 | 6 rows | No aggregate | OPEN |
-| LHW11 wave closure summary in completion review | Closure Checklist | T1+T2+T3 summary table | Reviewer checks | OPEN |
-| T1 AND T2 gates confirmed | Authority Chain | both completion reviews | Read both reviews | OPEN |
+| T3 spec; `canReinject=false` preserved | S1, S3, Claim Boundary | invariant stated | `rg "canReinject=false"` | CLOSED |
+| All 6 `memorySnapshotAdvisoryType` values individually row-verified | S5 | 6 rows | No aggregate | CLOSED |
+| All 3 `contaminationRiskAfterSeed` values individually row-verified | S5 | 3 rows | No aggregate | CLOSED |
+| All 6 `MemoryGatewayPolicyDecision` values individually row-verified | S5 | 6 rows | No aggregate | CLOSED |
+| LHW11 wave closure summary in completion review | Closure Checklist | T1+T2+T3 summary table | Reviewer checks | CLOSED |
+| T1 AND T2 gates confirmed | Authority Chain | both completion reviews | Read both reviews | CLOSED |
 
 ## Deliverable — Connector Spec
 
@@ -154,11 +154,11 @@ promotion authority.
 
 ## Pre-Flight
 
-- [ ] Working tree clean
-- [ ] T1 AND T2 CLOSED_PASS_BOUNDED confirmed
-- [ ] All 6 `memorySnapshotAdvisoryType` values confirmed from LHW8-T1 S2
-- [ ] All `MemoryGatewayPolicyDecision` values confirmed from AIF-C source lines 15–21
-- [ ] `contaminationRiskAfterSeed` values confirmed from LHW7-T2 S3
+- [x] Working tree clean
+- [x] T1 AND T2 CLOSED_PASS_BOUNDED confirmed
+- [x] All 6 `memorySnapshotAdvisoryType` values confirmed from LHW8-T1 S2
+- [x] All `MemoryGatewayPolicyDecision` values confirmed from AIF-C source lines 15–21
+- [x] `contaminationRiskAfterSeed` values confirmed from LHW7-T2 S3
 
 ## Write Ownership
 
@@ -191,17 +191,17 @@ Implementer owns all new files. No file outside Allowed list may be modified.
 
 ## Acceptance Criteria
 
-- [ ] T1 AND T2 CLOSED_PASS_BOUNDED confirmed before dispatch
-- [ ] Spec with all 5 sections; < 250 lines
-- [ ] All 6 `memorySnapshotAdvisoryType` values individually row-verified in S5
-- [ ] All 3 `contaminationRiskAfterSeed` values individually row-verified in S5
-- [ ] All 6 `MemoryGatewayPolicyDecision` values individually row-verified in S5
-- [ ] `canReinject=false` explicit; `promotionEligible=false` not overridden
-- [ ] `runtimeExecutionAuthorized=false` explicit
-- [ ] No code file in diff
-- [ ] Session continuity updated; LHW11 CLOSED_PASS_BOUNDED
-- [ ] LHW11 roadmap updated with actual commit SHA
-- [ ] Completion review with LHW11 wave closure summary
+- [x] T1 AND T2 CLOSED_PASS_BOUNDED confirmed before dispatch
+- [x] Spec with all 5 sections; < 250 lines
+- [x] All 6 `memorySnapshotAdvisoryType` values individually row-verified in S5
+- [x] All 3 `contaminationRiskAfterSeed` values individually row-verified in S5
+- [x] All 6 `MemoryGatewayPolicyDecision` values individually row-verified in S5
+- [x] `canReinject=false` explicit; `promotionEligible=false` not overridden
+- [x] `runtimeExecutionAuthorized=false` explicit
+- [x] No code file in diff
+- [x] Session continuity updated; LHW11 CLOSED_PASS_BOUNDED
+- [x] LHW11 roadmap updated with actual commit SHA
+- [x] Completion review with LHW11 wave closure summary
 
 Fail conditions:
 
@@ -218,17 +218,16 @@ spec < 250 lines; no code file.
 
 ## Closure Checklist
 
-- [ ] T1 AND T2 CLOSED_PASS_BOUNDED confirmed
-- [ ] Spec with all 5 sections
-- [ ] S2 maps `memorySnapshotAdvisoryType` × `contaminationRiskAfterSeed` ×
-  `MemoryGatewayDecision.decision` → decay advisory
-- [ ] `canReinject=false` and `promotionEligible=false` preserved
-- [ ] S5 Source Verification: no aggregate rows
-- [ ] No code file in diff
-- [ ] Fast Lane audit created
-- [ ] Session continuity updated; LHW11 CLOSED_PASS_BOUNDED
-- [ ] LHW11 roadmap Status → CLOSED_PASS_BOUNDED; Verification SHA updated
-- [ ] Completion review with LHW11 wave closure summary table written
+- [x] T1 AND T2 CLOSED_PASS_BOUNDED confirmed
+- [x] Spec with all 5 sections
+- [x] S2 maps `memorySnapshotAdvisoryType` × `contaminationRiskAfterSeed` × `MemoryGatewayDecision.decision` → decay advisory
+- [x] `canReinject=false` and `promotionEligible=false` preserved
+- [x] S5 Source Verification: no aggregate rows
+- [x] No code file in diff
+- [x] Fast Lane audit created
+- [x] Session continuity updated; LHW11 CLOSED_PASS_BOUNDED
+- [x] LHW11 roadmap Status → CLOSED_PASS_BOUNDED; Verification SHA updated
+- [x] Completion review with LHW11 wave closure summary table written
 
 ## Return-To-Orchestrator Conditions
 

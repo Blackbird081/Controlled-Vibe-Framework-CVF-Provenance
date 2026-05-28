@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-29
 
-Current mode marker: `agent_autorun_workflow_control_enforced`
+Current mode marker: `lhw11_wave_closed_pass_bounded`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
 ---
@@ -115,11 +115,9 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LHW10 is the latest fully `CLOSED_PASS_BOUNDED` connector wave. LHW11 is
-in-progress: T1 `CLOSED_PASS` at commit `cc64e674`; T2 `WORK_ORDER_READY`
-(gate T1 satisfied); T3 `HOLD` until T2 passes. LHW11 moves to latest wave
-only after all three tranches reach `CLOSED_PASS_BOUNDED`. Any follow-on
-closure must be reviewed through the autorun `pre-dispatch`,
+LHW11 is the latest fully `CLOSED_PASS_BOUNDED` connector wave. Any further
+connector wave requires a fresh roadmap, GC-018, and source-verified work orders.
+Any follow-on closure must be reviewed through the autorun `pre-dispatch`,
 `pre-implementation`, `pre-closure`, and applicable `pre-push` gates before
 it can be trusted as closed.
 

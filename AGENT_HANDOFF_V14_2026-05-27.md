@@ -167,13 +167,43 @@ Current HEAD after LHW11-T1 implementation commit: `cc64e674`
 LHW11-T1 CLOSED_PASS: cvf.sessionGovernancePostureAggregator.lhw11.t1.v1.
 LHW11-T2 gate satisfied; T2 WORK_ORDER_READY.
 
-Current HEAD (updated per GC-020): `cc64e674`.
+Current HEAD after LHW11-T2 implementation commit: `bc178798`
+(`feat(LHW11-T2): fix unchecked checkboxes in work order`).
+LHW11-T2 CLOSED_PASS: cvf.specChangeGovernanceDecision.lhw11.t2.v1.
+LHW11-T3 gate satisfied; T3 WORK_ORDER_READY.
+
+Current HEAD (updated per GC-020): `bc178798`.
+
+## LHW11 Wave Closure
+
+LHW11 Workflow Connector Wave 11 is now CLOSED_PASS_BOUNDED (T1 + T2 + T3). All three tranches are documentation-only connector specs. No runtime code file was modified.
+
+- T1 — Session Governance Posture Aggregator Connector
+  - Spec: `docs/reference/CVF_LHW11_T1_SESSION_GOVERNANCE_POSTURE_AGGREGATOR_CONNECTOR_SPEC_2026-05-28.md`
+  - Contract: `cvf.sessionGovernancePostureAggregator.lhw11.t1.v1`
+  - Completion: `docs/reviews/CVF_LHW11_T1_SESSION_GOVERNANCE_POSTURE_AGGREGATOR_CONNECTOR_COMPLETION_2026-05-28.md`
+  - Binds LHW10-T1/LHW10-T3/LHW9-T1/LHW8-T2 advisory outputs into sessionGovernancePostureType + highestRiskAdvisory.
+- T2 — Spec-Change Governance Decision Connector
+  - Spec: `docs/reference/CVF_LHW11_T2_SPEC_CHANGE_GOVERNANCE_DECISION_CONNECTOR_SPEC_2026-05-28.md`
+  - Contract: `cvf.specChangeGovernanceDecision.lhw11.t2.v1`
+  - Completion: `docs/reviews/CVF_LHW11_T2_SPEC_CHANGE_GOVERNANCE_DECISION_CONNECTOR_COMPLETION_2026-05-28.md`
+  - Binds LHW7-T3/LHW10-T1/LHW3-T3 surfaces into specChangeGovernanceDecision + rollbackRecommended.
+- T3 — Memory Context Seed Decay Advisory Connector
+  - Spec: `docs/reference/CVF_LHW11_T3_MEMORY_CONTEXT_SEED_DECAY_ADVISORY_CONNECTOR_SPEC_2026-05-28.md`
+  - Contract: `cvf.memoryContextSeedDecayAdvisory.lhw11.t3.v1`
+  - Completion: `docs/reviews/CVF_LHW11_T3_MEMORY_CONTEXT_SEED_DECAY_ADVISORY_CONNECTOR_COMPLETION_2026-05-28.md`
+  - Binds LHW8-T1/LHW7-T2/AIF-C surfaces into memoryContextSeedDecayAdvisoryType + promotionGateRecommendation. canReinject=false is preserved.
+
+LHW11 status: CLOSED_PASS_BOUNDED across all three tranches.
+
+Next allowed move: LHW sequencing remains: continue LHW connector absorption first. Any further connector wave requires a fresh roadmap, GC-018, and source-verified work orders. Do not move abtop, gridex, or other route-execution families into a live-proof roadmap until Orchestrator confirms there is no remaining connector value in LH1 partially absorbed families.
 
 Current HEAD before status-token/source-symbol hygiene hardening: `686febf8`.
 Rule hardening in progress: HOLD/DRAFT/PROPOSED status labels must not contain
 the token `CLOSED`, and Source Verification `Verified path or symbol` cells
 must contain only field/path/symbol names, not value assignments such as
 `rawMemoryReleased: false`.
+
 
 ## Startup Acknowledgment
 
