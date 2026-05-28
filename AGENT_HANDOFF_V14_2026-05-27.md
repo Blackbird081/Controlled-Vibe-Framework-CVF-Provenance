@@ -222,7 +222,7 @@ LHW13 OPEN parallel (T1 READY, T2/T3 HOLD): agent reading protocol governance,
 memory continuity level advisory (L0-L3), graph context resolver boundary.
 Source: CVF 25.05 Gop_y.md Gaps 1, 4, 9.
 
-Current HEAD (updated per GC-020): `a58c37af`.
+Current HEAD (updated per GC-020): `3fb1f548`.
 
 Current HEAD after 3 DEMAND_GATED roadmaps + GC-018s + PM/PD/EL work orders: `a8d2a0eb`.
 Roadmaps: CVF_EXECUTION_LAYER_ROADMAP, CVF_PROVIDER_METHOD_LIVE_PROOF_ROADMAP,
