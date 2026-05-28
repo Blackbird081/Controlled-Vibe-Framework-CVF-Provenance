@@ -98,26 +98,22 @@ LHW8 CLOSED_PASS_BOUNDED: T1 cvf.memoryEventHookGovernanceSnapshot.lhw8.t1.v1;
 T2 cvf.executionIdentityAuthorityChainReadout.lhw8.t2.v1;
 T3 cvf.operationalBenchmarkFailureClassReIntake.lhw8.t3.v1.
 
-LHW9 CLOSED_PASS_BOUNDED at commit `c245bc5a`: T1 cvf.mcpToolApprovalAdvisory.lhw9.t1.v1;
-T2 cvf.noncoderFrictionAdvisory.lhw9.t2.v1;
-T3 cvf.integrationLayerPackaging.lhw9.t3.v1.
-
-Current HEAD before latest-closure continuity gate commit: `41cc51ba`.
-Rule hardening in progress: active-session gate must fail stale lower-wave
-`nextAllowedMove`/front-door/handoff text when a newer LHW wave is closed in
-state.
-
 Current HEAD after LHW8 implementation commit: `00008651`.
 
 Current HEAD after autorun range/source-invariant hardening commit: `a5c1d6d7`.
 Current HEAD after LHW8-T3 completion review commit: `16d68753`.
 Current HEAD after first handoff sync commit: `de07eb09`.
-Current HEAD (updated per GC-020): `503bd28f` (handoff sync after context transfer).
-Post-LHW8 rule hardening now blocks empty closure ranges and source invariant
-claims stronger than cited source proof.
+Current HEAD after context transfer handoff sync: `503bd28f`.
+Current HEAD after final GC-020 handoff sync: `5cf3f2ff`.
 
-Current HEAD after LHW8-T3 completion review commit: `16d68753`
-(`docs(lhw8-t3): add operational benchmark failure class re-intake connector completion review`).
+Current HEAD after LHW9 implementation commit: `c245bc5a`
+(`docs(lhw9): close LHW9 Workflow Connector Wave 9 CLOSED_PASS_BOUNDED`).
+LHW9 CLOSED_PASS_BOUNDED: T1 cvf.mcpToolApprovalAdvisory.lhw9.t1.v1;
+T2 cvf.noncoderFrictionAdvisory.lhw9.t2.v1;
+T3 cvf.integrationLayerPackaging.lhw9.t3.v1.
+
+Current HEAD after LHW9 handoff sync: `41cc51ba`.
+Current HEAD (updated per GC-020): `6c6adbd2` (governance gate enforcement after LHW9).
 LHW8 wave fully closed with all three tranches CLOSED_PASS_BOUNDED.
 
 ## Startup Acknowledgment
