@@ -214,6 +214,15 @@ Current HEAD after scope/wave closure rule hardening commit: `88efb544`.
 
 Current HEAD after LHW11 post-closure correction commit: `418144a3`.
 
+Current HEAD before LHW12+LHW13 open: `7de75901`.
+LHW12 OPEN (T1 READY, T2/T3 HOLD): posture-to-model tier advisory, outcome pack
+taxonomy grouping, async worker lifecycle boundary. Source: CVF 28.05 Gap A +
+CVF 25.05 Gop_y.md Gaps 2, 7.
+LHW13 OPEN parallel (T1 READY, T2/T3 HOLD): agent reading protocol governance,
+memory continuity level advisory (L0-L3), graph context resolver boundary.
+Source: CVF 25.05 Gop_y.md Gaps 1, 4, 9.
+
+Current HEAD (updated per GC-020): `7de75901`.
 
 ## Startup Acknowledgment
 

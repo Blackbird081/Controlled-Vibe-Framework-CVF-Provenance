@@ -1,0 +1,208 @@
+# CVF Work Order — LHW13-T1 Agent Reading Protocol Governance Connector
+
+Memory class: FULL_RECORD
+
+Status: READY_FOR_IMPLEMENTATION
+
+docType: work_order
+
+Date: 2026-05-29
+
+---
+
+## Purpose
+
+Implement LHW13-T1: a connector spec mapping CVF claim-tier vocabulary
+(`roadmap`/`schema_defined`/`active`/`proven`) × canonical-file-type
+(`session_front_door`/`gc018_baseline`/`completion_review`/`runtime_source`) ×
+startup acknowledgment status →
+`agentReadingAdvisoryType` + `claimValidationAdvisory`.
+
+Source: CVF 25.05 Gop_y.md Gap 1 — CLAUDE.md and AGENTS.md cover reading rules
+piecemeal; no connector maps claim-tier × canonical-file-type → a named
+advisory that Orchestrators can use to validate agent claims before acting.
+An agent claiming "X is proven" should trigger a different reading advisory
+than an agent claiming "X is roadmap."
+
+This connector is advisory only. It does NOT enforce agent behavior at runtime.
+`runtimeExecutionAuthorized=false` invariant.
+
+## Authority Chain
+
+- LHW13 roadmap: `docs/roadmaps/CVF_LHW13_WORKFLOW_CONNECTOR_WAVE13_ROADMAP_2026-05-29.md`
+- LHW13 GC-018: `docs/baselines/CVF_GC018_LHW13_WORKFLOW_CONNECTOR_WAVE13_2026-05-29.md`
+- CLAUDE.md: `CLAUDE.md` — Mandatory Startup Acknowledgment + Required First Reads
+- Session state: `CVF_SESSION/ACTIVE_SESSION_STATE.json` — `requiredFirstReads` at line 80
+- CVF Release Readiness: `docs/reference/CVF_RELEASE_READINESS_STATUS_2026-03-20.md`
+  — claim-tier vocabulary (ALIGNED, SUBSTANTIALLY ALIGNED, roadmap)
+- CVF 25.05 review: `.private_reference/legacy/CVF 25.05/CLAUDE_REVIEW_OF_GOP_Y_2026-05-25.md`
+  — GAP 1 section
+
+## Agent Roles
+
+Implementer writes spec (S1–S5). Reviewer checks: all 4 claim-tier values
+individually row-verified in S5; all 4 canonical-file-type values individually
+row-verified; `runtimeExecutionAuthorized=false` explicit; no runtime agent
+enforcement claimed. Auditor confirms CVF 25.05 Gap 1 cited; advisory-only
+posture preserved. No self-review.
+
+## Scope
+
+**Allowed:**
+
+- `docs/reference/CVF_LHW13_T1_AGENT_READING_PROTOCOL_GOVERNANCE_CONNECTOR_SPEC_2026-05-29.md` (new)
+- `docs/reviews/CVF_LHW13_T1_FAST_LANE_AUDIT_2026-05-29.md` (new)
+- `docs/reviews/CVF_LHW13_T1_AGENT_READING_PROTOCOL_GOVERNANCE_CONNECTOR_COMPLETION_2026-05-29.md` (new)
+- this work order (status update only)
+- session continuity files
+
+**Forbidden:** `EXTENSIONS/`, `governance/contracts/`, `CLAUDE.md` (read-only
+reference), any `.ts`/`.tsx`/`.js`/`.py` file, receipt envelope schema,
+public-sync repo.
+
+## Required First Reads
+
+1. `CVF_SESSION_MEMORY.md`
+2. `CVF_SESSION/ACTIVE_SESSION_STATE.json` — note `requiredFirstReads` field at line 80
+3. `CLAUDE.md` — read Mandatory Startup Acknowledgment section; note canonical
+   file priority: CVF_SESSION_MEMORY.md then ACTIVE_SESSION_STATE.json
+4. `docs/reference/CVF_RELEASE_READINESS_STATUS_2026-03-20.md`
+   — note claim-tier vocabulary: `ALIGNED`, `SUBSTANTIALLY ALIGNED`, roadmap
+   (maps to: `proven`, `active`, `roadmap` tiers)
+5. `.private_reference/legacy/CVF 25.05/CLAUDE_REVIEW_OF_GOP_Y_2026-05-25.md`
+   — confirm GAP 1 section: no single agent reading protocol doc exists yet
+6. `docs/roadmaps/CVF_LHW13_WORKFLOW_CONNECTOR_WAVE13_ROADMAP_2026-05-29.md`
+   — confirm T1 deliverable and claim-tier mapping design
+
+## Pre-Dispatch Source Verification Block
+
+| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
+| --- | --- | --- | --- | --- | --- |
+| `requiredFirstReads` field | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | line 80 | `requiredFirstReads` | session state registry | ACCEPT |
+| `startupAcknowledgmentRequired` field | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | line 107 | `startupAcknowledgmentRequired` | session state registry | ACCEPT |
+| `activeSessionFrontDoor` field | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | line 3 | `activeSessionFrontDoor` | session state registry | ACCEPT |
+| `proven` claim tier | `docs/reference/CVF_RELEASE_READINESS_STATUS_2026-03-20.md` | `ALIGNED` status rows | proven/active claim tier | CVF release readiness | ACCEPT |
+| `active` claim tier | `docs/reference/CVF_RELEASE_READINESS_STATUS_2026-03-20.md` | `SUBSTANTIALLY ALIGNED` rows | active tier | CVF release readiness | ACCEPT |
+| `schema_defined` claim tier | `docs/reference/CVF_RELEASE_READINESS_STATUS_2026-03-20.md` | roadmap/partial rows | schema_defined tier | CVF release readiness | ACCEPT |
+| `roadmap` claim tier | `docs/reference/CVF_RELEASE_READINESS_STATUS_2026-03-20.md` | roadmap entries | roadmap tier | CVF release readiness | ACCEPT |
+| `session_front_door` canonical-file-type | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | `activeSessionFrontDoor` value | `CVF_SESSION_MEMORY.md` | session state registry | ACCEPT |
+| `gc018_baseline` canonical-file-type | `docs/baselines/CVF_GC018_LHW13_WORKFLOW_CONNECTOR_WAVE13_2026-05-29.md` | docType field | `gc018_baseline` | GC-018 doc type | ACCEPT |
+| `completion_review` canonical-file-type | `docs/reviews/CVF_LHW11_T1_SESSION_GOVERNANCE_POSTURE_AGGREGATOR_CONNECTOR_COMPLETION_2026-05-28.md` | docType field | `completion_review` | review doc type | ACCEPT |
+| `runtime_source` canonical-file-type | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts` | file root | runtime TypeScript source | runtime source class | ACCEPT |
+| `agentReadingAdvisoryType` (new) | N/A — canonical doc-only field | S3 new fields | doc-only | Agent reading protocol governance packet | ACCEPT |
+| `claimValidationAdvisory` (new) | N/A — canonical doc-only field | S3 new fields | doc-only | Agent reading protocol governance packet | ACCEPT |
+
+## Roadmap-To-Work-Order Trace Matrix
+
+| Roadmap requirement | Work order section | Output artifact | Verification | Status |
+| --- | --- | --- | --- | --- |
+| T1 spec; claim-tier vocabulary verbatim | S1–S5 | spec at target path | Reviewer confirms verbatim | OPEN |
+| All 4 claim-tier values individually row-verified | S5 | 4 rows | No aggregate | OPEN |
+| All 4 canonical-file-type values individually row-verified | S5 | 4 rows | No aggregate | OPEN |
+| `runtimeExecutionAuthorized=false` explicit | S1, S3 | invariant | grep check | OPEN |
+| CVF 25.05 Gap 1 cited | S1 | explicit in S1 Purpose | Auditor checks | OPEN |
+
+## Deliverable — Connector Spec
+
+File: `docs/reference/CVF_LHW13_T1_AGENT_READING_PROTOCOL_GOVERNANCE_CONNECTOR_SPEC_2026-05-29.md`
+
+S2 design: map claim-tier × canonical-file-type → `agentReadingAdvisoryType`:
+
+| `claimTier` | `canonicalFileType` | `agentReadingAdvisoryType` | `claimValidationAdvisory` |
+| --- | --- | --- | --- |
+| `proven` | `runtime_source` | `reading_claim_verified` | Claim backed by runtime source; advisory-clear |
+| `proven` | `completion_review` | `reading_claim_evidence_backed` | Claim backed by completion evidence; advisory-clear |
+| `active` | `gc018_baseline` | `reading_claim_authorized` | Claim authorized by GC-018; no live proof required |
+| `active` | `session_front_door` | `reading_claim_session_bounded` | Claim valid within this session scope |
+| `schema_defined` | any | `reading_claim_schema_only` | Claim is schema/contract only; no live execution proven |
+| `roadmap` | any | `reading_claim_future_only` | Claim is roadmap only; block if agent implies current capability |
+
+Key invariant: "This connector does not enforce agent behavior at runtime. The
+reading advisory is a governance planning record for Orchestrators.
+`runtimeExecutionAuthorized=false`."
+
+## Pre-Flight
+
+- [ ] Working tree clean
+- [ ] All required first reads done
+- [ ] Claim-tier vocabulary confirmed from CVF Release Readiness doc
+- [ ] Canonical-file-type classes confirmed from file docType fields
+
+## Write Ownership
+
+Implementer owns all new files. No file outside Allowed list may be modified.
+
+## Execution Plan
+
+1. Read all required first reads.
+2. Confirm claim-tier vocabulary and canonical-file-type values.
+3. Draft spec (S1–S5); verify < 250 lines.
+4. Run Fast Lane audit.
+5. Run governance gates with `--base 7de75901`.
+6. Reviewer perspective.
+7. Update session continuity.
+8. Commit.
+9. Write completion review with T2 gate answer.
+
+## Evidence Requirements
+
+- Spec < 250 lines
+- All 4 claim-tier values individually row-verified in S5
+- All 4 canonical-file-type values individually row-verified
+- `runtimeExecutionAuthorized=false` explicit
+- CVF 25.05 Gap 1 cited in S1
+- No code file in diff
+
+## Acceptance Criteria
+
+- [ ] Spec with all 5 sections; < 250 lines
+- [ ] All 4 claim-tier values individually row-verified in S5
+- [ ] All 4 canonical-file-type values individually row-verified in S5
+- [ ] `runtimeExecutionAuthorized=false` explicit; no runtime enforcement claimed
+- [ ] CVF 25.05 Gap 1 cited in S1
+- [ ] No code file in diff
+- [ ] Session continuity updated
+
+Fail conditions:
+- Runtime agent enforcement claimed
+- Claim-tier values aggregated in S5
+- Missing LHW13 GC-018
+
+## Review Gate
+
+All 4 claim-tier + 4 canonical-file-type individually verified; `runtimeExecutionAuthorized=false`; no enforcement; spec < 250 lines; no code file.
+
+## Closure Checklist
+
+- [ ] Spec with all 5 sections
+- [ ] S2 mapping verbatim from claim-tier vocabulary
+- [ ] `runtimeExecutionAuthorized=false` explicit
+- [ ] S5 complete; no aggregate rows
+- [ ] No code file in diff
+- [ ] Fast Lane audit created
+- [ ] Session continuity updated
+- [ ] Completion review with T2 gate answer written
+
+## Return-To-Orchestrator Conditions
+
+Stop if: claim-tier vocabulary cannot be confirmed; connector requires runtime
+enforcement; spec > 250 lines before S4.
+
+## T2 Gate Output
+
+Was a concrete memory continuity level advisory gap identified during T1?
+
+**Expected YES:** T1 reading protocol reveals that when an agent claims memory
+continuity, no connector maps `memorySnapshotAdvisoryType` × `canReinject` ×
+`memoryContextSeedDecayAdvisoryType` → a named `memoryContinuityLevelAdvisoryType`
+(L0/L1/L2/L3). T2 closes that gap.
+
+## Operator Checkpoint
+
+operator.checkpoint.waiver: Low-risk documentation-only tranche.
+
+## Claim Boundary
+
+LHW13-T1 produces a documentation artifact. It does not claim runtime agent
+enforcement, receipt envelope extension, memory reinjection, hosted readiness,
+production readiness, or public release readiness.
