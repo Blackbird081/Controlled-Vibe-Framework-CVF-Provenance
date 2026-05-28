@@ -26,6 +26,8 @@ Fresh GC-018:
 
 Dispatch status: T1 CLOSED_PASS_BOUNDED. T2 CLOSED_PASS_BOUNDED. T3 CLOSED_PASS_BOUNDED. LHW8 wave CLOSED_PASS_BOUNDED.
 
+Completion status: All three tranches (T1, T2, T3) are CLOSED_PASS_BOUNDED with completion reviews filed. LHW8 wave is CLOSED_PASS_BOUNDED.
+
 ## Scope / Target / Owner Boundary
 
 Target: three documentation connector specs binding existing proven runtime

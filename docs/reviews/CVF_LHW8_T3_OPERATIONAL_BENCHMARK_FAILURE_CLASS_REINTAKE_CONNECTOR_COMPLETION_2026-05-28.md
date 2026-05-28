@@ -43,10 +43,10 @@ modification, public sync.
 | --- | --- | --- | --- |
 | T3 spec; W4/V3/LHW3-T2 field names verbatim | S1–S5 | spec at target path; all field names verbatim | PASS |
 | `runtimeExecutionAuthorized=false` and `scenarioPlanningOnly=true` explicit | S1, S3, Claim Boundary | invariants stated in S1 and S3 | PASS |
-| Failure-to-reintake chain mapping covering W4 clarity statuses | S2 | 7 rows per `clarityStatus` × `ExecutionDiagnosticClass` groups | PASS |
-| Source Verification Table complete | S5 | 21 rows, all ACCEPT, no `BLOCKED_SOURCE_NOT_FOUND` | PASS |
+| S2 maps W4 clarity statuses × V3 failure classes | S2 | 7 rows covering all 3 `clarityStatus` values × key diagnostic groups | PASS |
+| Source Verification Table complete | S5 | 19 rows, all ACCEPT, no `BLOCKED_SOURCE_NOT_FOUND` | PASS |
 | No code file modified | evidence section | no `.ts`/`.tsx`/`.js`/`.py` file created or modified | PASS |
-| LHW8 wave closure summary | this completion review | T1 + T2 + T3 table all CLOSED_PASS_BOUNDED | PASS |
+| LHW8 wave closure summary | this completion review | T1 + T2 + T3 all CLOSED_PASS_BOUNDED | PASS |
 
 ---
 
@@ -54,35 +54,39 @@ modification, public sync.
 
 All 5 required sections (S1–S5) present and complete.
 
-**S1** — States purpose, claim boundary, `runtimeExecutionAuthorized=false`,
+**S1** — States purpose, claim boundary, explicit `runtimeExecutionAuthorized=false`
 and `scenarioPlanningOnly=true` invariants. Names LH1 `CVF AUDIT LOG_md` and
 `Failure Simulation cho CVF.md` triggers. Gap described: no standard maps W4
-clarity status + V3 failure class to named `benchmarkTriggerAdvisoryType` and
-`reIntakePacketTypeRecommended`. PASS.
+clarity status + V3 failure class to a named `benchmarkTriggerAdvisoryType`
+and `reIntakePacketTypeRecommended`. PASS.
 
-**S2** — Failure-to-reintake mapping covers all 3 `OperationalBenchmarkClarityStatus`
-values (`clear`, `needs_context`, `insufficient_evidence`) using W4/V3/LHW3-T2
-vocabulary verbatim. Each row maps to a named `benchmarkTriggerAdvisoryType`
-and one of the 4 LHW3-T2 clarification packet types or N/A. Key invariant:
-"The connector does not dispatch the re-intake, automate the clarification
-loop, or execute any workflow transition." PASS.
+**S2** — Benchmark clarity × failure class → re-intake advisory mapping covers
+all 3 W4 `OperationalBenchmarkClarityStatus` values (`clear`, `needs_context`,
+`insufficient_evidence`) using W4/V3/LHW3-T2 vocabulary verbatim. Each row
+maps to a named `benchmarkTriggerAdvisoryType` and one of 4 LHW3-T2
+clarification packet types. Key invariant stated: "`reIntakePacketTypeRecommended`
+field is advisory only. The connector does not dispatch the re-intake, automate
+the clarification loop, or execute any workflow transition." PASS.
 
-**S3** — All minimum fields listed: `clarityStatus`, `callPassRate`,
-`taskCompletionRate`, `diagnosticClass`, `userAction`, `benchmarkTriggerAdvisoryType`,
-`reIntakePacketTypeRecommended`, `runtimeExecutionAuthorized=false`,
-`scenarioPlanningOnly=true`. New doc-only fields labeled correctly. PASS.
+**S3** — All minimum failure-to-reintake advisory packet fields listed.
+Source-traced fields reference W4 `clarityStatus`, `callPassRate`,
+`taskCompletionRate`, V3 `diagnosticClass`, `userAction`. New doc-only fields
+`benchmarkTriggerAdvisoryType`, `reIntakePacketTypeRecommended`,
+`runtimeExecutionAuthorized=false`, `scenarioPlanningOnly=true` labeled
+correctly. PASS.
 
-**S4** — Boundary table present. W4 `OperationalBenchmarkClarityStatus` and
-scorecard fields correctly labeled Runtime-proven. V3 `ExecutionDiagnosticClass`
-and `ExecutionDiagnosticUserAction` correctly labeled Runtime-proven. LHW3-T2
-packet types correctly labeled Doc-proven. New doc-only fields labeled Doc-only.
-Benchmark re-execution, automated re-intake, and workflow transition rows
-labeled Not authorized. No doc-only row labeled Runtime. PASS.
+**S4** — Boundary table present. W4 fields correctly labeled Runtime-proven
+with source citations. V3 values correctly labeled Runtime-proven. LHW3-T2
+clarification packet types correctly labeled Doc-proven. New doc-only fields
+correctly labeled Doc-only. Benchmark re-execution, automated re-intake, and
+workflow transition rows correctly labeled Not authorized. No doc-only row
+labeled Runtime. PASS.
 
-**S5** — 21 rows, all ACCEPT. Covers all W4 `clarityStatus` values, scorecard
-fields, 5 representative `ExecutionDiagnosticClass` values, `ExecutionDiagnosticUserAction`
-type, all 4 LHW3-T2 clarification packet types, and 2 new doc-only fields. No
-`BLOCKED_SOURCE_NOT_FOUND` rows. PASS.
+**S5** — 19 rows, all ACCEPT. Covers all 3 W4 `OperationalBenchmarkClarityStatus`
+values, W4 `OperationalBenchmarkScorecard` fields cited, key V3
+`ExecutionDiagnosticClass` values cited, V3 `ExecutionDiagnosticUserAction`
+type, all 4 LHW3-T2 clarification packet types, and 2 new doc-only fields.
+No `BLOCKED_SOURCE_NOT_FOUND` rows. PASS.
 
 **Invariants** `runtimeExecutionAuthorized=false` and `scenarioPlanningOnly=true`
 explicit in S1 and S3. PASS.
@@ -94,9 +98,10 @@ explicit in S1 and S3. PASS.
 ## Auditor Perspective
 
 LH1 triggers (`CVF AUDIT LOG_md`, `Failure Simulation cho CVF.md`) recorded
-in S1. No benchmark re-execution, automated re-intake dispatch, or workflow
-transition claimed. Advisory packet is explicitly `scenarioPlanningOnly=true`.
-`runtimeExecutionAuthorized=false` preserved. PASS.
+in S1. No benchmark re-execution, automated re-intake, or workflow transition
+claimed anywhere in the spec. Advisory packet is explicitly planning-only
+(`scenarioPlanningOnly=true`). `runtimeExecutionAuthorized=false` preserved.
+PASS.
 
 ---
 
@@ -115,9 +120,10 @@ transition claimed. Advisory packet is explicitly `scenarioPlanningOnly=true`.
 
 - `runtimeExecutionAuthorized=false`: stated in S1 and S3. PASS.
 - `scenarioPlanningOnly=true`: stated in S1 and S3. PASS.
-- No benchmark re-execution or automated re-intake claimed. PASS.
+- No claim of benchmark re-execution or automated re-intake. PASS.
 - No receipt envelope extension. PASS.
 - No provider behavior claim. PASS.
+- "The failure-to-reintake advisory packet is a planning record only." PASS.
 
 ---
 
@@ -128,12 +134,14 @@ row, or Source Verification `ACCEPT` row citing a non-existent file."
 
 Result: GC-018 exists at
 `docs/baselines/CVF_GC018_LHW8_WORKFLOW_CONNECTOR_WAVE8_2026-05-28.md`. All
-S5 rows cite existing files or are labeled doc-only. PASS.
+S5 rows cite existing files or are explicitly labeled doc-only. No non-existent
+file cited. PASS.
 
 Fail condition 2: "Any claim that this connector executes benchmarks, automates
 re-intake actions, or lifts `runtimeExecutionAuthorized=false`."
 
-Result: No such claim. Both invariants are preserved throughout. PASS.
+Result: No such claim anywhere in the spec. `runtimeExecutionAuthorized=false`
+and `scenarioPlanningOnly=true` are invariant throughout. PASS.
 
 ---
 
@@ -157,11 +165,25 @@ All three LHW8 tranches are CLOSED_PASS_BOUNDED:
 
 | Tranche | Contract version | Status |
 | --- | --- | --- |
-| T1 — Memory Event Hook Governance Snapshot Connector | `cvf.memoryEventHookGovernanceSnapshot.lhw8.t1.v1` | CLOSED_PASS_BOUNDED |
-| T2 — Execution Identity Authority Chain Readout Connector | `cvf.executionIdentityAuthorityChainReadout.lhw8.t2.v1` | CLOSED_PASS_BOUNDED |
-| T3 — Operational Benchmark Failure Class Re-Intake Connector | `cvf.operationalBenchmarkFailureClassReIntake.lhw8.t3.v1` | CLOSED_PASS_BOUNDED |
+| T1 — Memory Event Hook → Governance Snapshot Connector | `cvf.memoryEventHookGovernanceSnapshot.lhw8.t1.v1` | CLOSED_PASS_BOUNDED |
+| T2 — Execution Identity → Authority Chain Readout Connector | `cvf.executionIdentityAuthorityChainReadout.lhw8.t2.v1` | CLOSED_PASS_BOUNDED |
+| T3 — Operational Benchmark → Failure Class Re-Intake Connector | `cvf.operationalBenchmarkFailureClassReIntake.lhw8.t3.v1` | CLOSED_PASS_BOUNDED |
 
 Any further connector wave requires a fresh roadmap and GC-018.
+
+---
+
+## Evidence Requirements
+
+- Spec at `docs/reference/CVF_LHW8_T3_OPERATIONAL_BENCHMARK_FAILURE_CLASS_REINTAKE_CONNECTOR_SPEC_2026-05-28.md`: EXISTS.
+- S2 chain mapping covers W4 clarity statuses × V3 failure classes: CONFIRMED.
+- `runtimeExecutionAuthorized=false` and `scenarioPlanningOnly=true` in S1 and S3: CONFIRMED.
+- S4 boundary table present; no doc-only row labeled Runtime: CONFIRMED.
+- S5 Source Verification Table complete; no `BLOCKED_SOURCE_NOT_FOUND`: CONFIRMED.
+- No `.ts`/`.tsx`/`.js`/`.py` file modified: CONFIRMED.
+- Session continuity updated: CONFIRMED.
+- LHW8 roadmap updated to `CLOSED_PASS_BOUNDED`: CONFIRMED.
+- Completion review with wave closure summary: THIS DOCUMENT.
 
 ---
 
@@ -173,8 +195,8 @@ and Closure Checklist sections above.
 
 ## Risk / Corrective Action
 
-No residual risk. All fail conditions scanned clear. No corrective action
-required.
+No residual risk. All fail conditions scanned clear; no `BLOCKED_SOURCE_NOT_FOUND`
+rows in S5 Source Verification Table. No corrective action required.
 
 ## Decision / Recommendation / Disposition
 
