@@ -97,6 +97,10 @@ Current HEAD before LHW8 implementation commit: `1ca009f6`.
 LHW8 CLOSED_PASS_BOUNDED: T1 cvf.memoryEventHookGovernanceSnapshot.lhw8.t1.v1;
 T2 cvf.executionIdentityAuthorityChainReadout.lhw8.t2.v1;
 T3 cvf.operationalBenchmarkFailureClassReIntake.lhw8.t3.v1.
+
+LHW9 CLOSED_PASS_BOUNDED (pending commit): T1 cvf.mcpToolApprovalAdvisory.lhw9.t1.v1;
+T2 cvf.noncoderFrictionAdvisory.lhw9.t2.v1;
+T3 cvf.integrationLayerPackaging.lhw9.t3.v1.
 Current HEAD after LHW8 implementation commit: `00008651`.
 
 Current HEAD after autorun range/source-invariant hardening commit: `a5c1d6d7`.
