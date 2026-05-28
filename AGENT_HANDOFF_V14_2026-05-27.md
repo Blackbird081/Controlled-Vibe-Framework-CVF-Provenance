@@ -721,6 +721,8 @@ Remote-marker fix commit: `35eb3070`
 
 Session marker and completion review commit: `f539b0cb`
 
+Handoff sync commit before lifecycle-registry fix: `5ed7383e`
+
 The operator asked to make the LHW5 review lessons mandatory for future
 agent-led work because CVF relies on agents to divide roles, implement, review,
 and close without continuous user intervention.
@@ -730,6 +732,12 @@ Canonical standard:
 
 Completion review:
 `docs/reviews/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_RULE_COMPLETION_2026-05-28.md`
+
+Verification repair:
+full pre-push reached repository lifecycle classification and found `.cursor`
+unclassified; `governance/compat/CVF_ROOT_FOLDER_LIFECYCLE_REGISTRY.json` now
+classifies `.cursor` as `ACTIVE_CANONICAL` / `INTERNAL_ONLY` agent-tool startup
+guidance.
 
 Binding surfaces updated:
 

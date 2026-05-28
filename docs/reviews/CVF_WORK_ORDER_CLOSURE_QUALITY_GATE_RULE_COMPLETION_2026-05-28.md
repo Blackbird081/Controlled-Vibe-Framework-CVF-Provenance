@@ -53,6 +53,13 @@ agent-led CVF work after 2026-05-28.
 
 Session marker and completion review commit: `f539b0cb`.
 
+Handoff sync commit before lifecycle-registry fix: `5ed7383e`.
+
+Additional verification repair: full pre-push reached repository lifecycle
+classification and found `.cursor` unclassified. The root lifecycle registry was
+updated to classify `.cursor` as `ACTIVE_CANONICAL` / `INTERNAL_ONLY` because it
+contains agent-tool startup guidance, not public product content.
+
 Responsibility split:
 
 - Orchestrator/work-order author: make requirements traceable, source-backed,

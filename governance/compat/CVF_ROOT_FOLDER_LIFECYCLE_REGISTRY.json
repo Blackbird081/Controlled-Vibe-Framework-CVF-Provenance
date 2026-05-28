@@ -49,6 +49,12 @@
       "rationale": "CVF ADD runtime state directory. Holds web-governance-jobs.jsonl and other ephemeral runtime artefacts produced by the governed web-execution path. Internal-only; not intended for public release."
     },
     { "path": ".claude", "lifecycleClass": "ACTIVE_CANONICAL", "exposureClass": "INTERNAL_ONLY" },
+    {
+      "path": ".cursor",
+      "lifecycleClass": "ACTIVE_CANONICAL",
+      "exposureClass": "INTERNAL_ONLY",
+      "rationale": "Agent-tool startup guidance root for Cursor rule files. Internal-only convenience config; not a public CVF product surface."
+    },
     { "path": ".githooks", "lifecycleClass": "ACTIVE_CANONICAL", "exposureClass": "INTERNAL_ONLY" },
     { "path": ".github", "lifecycleClass": "ACTIVE_CANONICAL", "exposureClass": "INTERNAL_ONLY" },
     { "path": ".vscode", "lifecycleClass": "ACTIVE_CANONICAL", "exposureClass": "INTERNAL_ONLY" },
