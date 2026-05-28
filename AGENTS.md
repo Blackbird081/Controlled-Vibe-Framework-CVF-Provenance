@@ -358,6 +358,11 @@ Pre-closure must not accept untracked, modified, or unresolved worktree changes
 as a clean closure claim. Closure must be backed by committed diff evidence,
 `git status --short`, receipts, command output, or explicit `N/A with reason`.
 
+Latest-closure continuity is mandatory. If the state registry contains a
+higher closed `lhwN...CLOSED_PASS_BOUNDED` record, then `nextAllowedMove`,
+`CVF_SESSION_MEMORY.md` `Next Allowed Move`, and the active handoff must
+reference that same latest `LHWN`; stale lower-wave text blocks closure.
+
 ## Mandatory Knowledge Absorption Blind-Spot Prevention - 2026-05-24
 
 Canonical standard:

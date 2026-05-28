@@ -83,11 +83,17 @@ Autorun gates are now range-aware. Governed closure must use a captured
 valid closure evidence for changed artifacts. Source Verification false
 invariants require literal source proof or runtime-path proof.
 
+Latest-closure continuity is now machine-enforced. When a connector wave is
+closed, the active front door, state registry, and handoff must all reference
+the latest closed LHW wave; stale lower-wave `nextAllowedMove` text blocks the
+active-session gate.
+
 ## Next Allowed Move
 
-LHW6 is present in HEAD as `CLOSED_PASS_BOUNDED` and any follow-on wave must be
-reviewed through the autorun `pre-dispatch`, `pre-implementation`, and
-`pre-closure` gates before it can be trusted as closed.
+LHW9 is present in HEAD as `CLOSED_PASS_BOUNDED`; any follow-on wave must be
+reviewed through the autorun `pre-dispatch`, `pre-implementation`,
+`pre-closure`, and applicable `pre-push` gates before it can be trusted as
+closed.
 
 Future connector waves require fresh GC-018, roadmap, source-verified work
 orders, roadmap-to-work-order trace matrix, dispatch-quality gate, closure

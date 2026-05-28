@@ -185,6 +185,8 @@ Closure is blocked when:
 
 - any dispatch, structural, docs governance, session-state, or file-size gate
   fails;
+- the state registry contains a newer closed LHW wave than the front door,
+  `nextAllowedMove`, or active handoff acknowledge;
 - the closure command uses an empty `--base HEAD --head HEAD` range for work
   that changed governed artifacts;
 - the committed diff range has no files for a closed-equivalent claim;
@@ -245,6 +247,12 @@ Minimum included guards:
 - `check_active_session_state.py --enforce`
 - `check_governed_file_size.py --enforce`
 
+The active-session guard must verify latest-closure continuity: when
+`ACTIVE_SESSION_STATE.json` contains `lhwN...CLOSED_PASS_BOUNDED`, the compact
+front door `Next Allowed Move`, the state `nextAllowedMove`, and the active
+handoff must reference the highest closed `LHWN`. A lower-wave stale pointer is
+a closure defect even when the roadmap and work-order artifacts themselves pass.
+
 `pre-push` must also run:
 
 - `run_local_governance_hook_chain.py --hook pre-push`
@@ -267,6 +275,7 @@ This standard does not:
 | Artifact base HEAD differs from actual current HEAD | Re-anchor the roadmap/work order before implementation. |
 | Empty closure range | Re-run with the captured base HEAD and do not claim closure from `HEAD..HEAD`. |
 | Source invariant claim exceeds source proof | Downgrade the claim to doc-only normalization or cite a literal source invariant. |
+| Latest LHW closure is missing from front door, `nextAllowedMove`, or active handoff | Sync continuity surfaces before claiming or accepting closure. |
 | `pre-dispatch` fails | Keep artifact in `DRAFT`, `HOLD_*`, or `BLOCKED`; return to Orchestrator. |
 | `pre-implementation` fails | Stop edits; return the blocker to Orchestrator or Reviewer. |
 | `pre-closure` fails | Do not mark closed; file a blocking finding or correction batch. |

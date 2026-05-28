@@ -126,6 +126,13 @@ front door, machine-readable state registry, and active handoff as applicable.
 The worker must not leave a newer registry and stale front-door or handoff
 claim in conflict.
 
+For connector waves, latest-closure continuity is mandatory. If
+`ACTIVE_SESSION_STATE.json` contains a higher closed `lhwN...` record, then the
+state `nextAllowedMove`, the `CVF_SESSION_MEMORY.md` `Next Allowed Move`
+section, and the active handoff must reference that latest closed `LHWN`.
+Leaving `LHW6` or `LHW8` text after closing `LHW9` is a closure defect even if
+the connector specs and completion reviews pass.
+
 ### 7. Agent Autorun Pre-Closure Gate
 
 Before any closed-equivalent status claim, run:
@@ -178,6 +185,9 @@ This standard is enforced by:
 - `governance/compat/run_agent_autorun_workflow_gate.py`, which bundles the
   mandatory phase gates for pre-dispatch, pre-implementation, pre-closure, and
   pre-push agent workflows.
+- `governance/compat/check_active_session_state.py`, which hard-fails stale
+  latest-closed-wave continuity across the front door, state registry, and
+  active handoff.
 
 Future automation may add hard checks, but manual compliance is mandatory now.
 

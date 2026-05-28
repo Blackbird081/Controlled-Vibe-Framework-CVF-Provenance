@@ -251,6 +251,59 @@ class ActiveSessionStateTests(unittest.TestCase):
         self.assertFalse(report["compliant"])
         self.assertEqual(report["handoffViolationCount"], 1)
 
+    def test_latest_lhw_closure_requires_synced_next_allowed_move(self) -> None:
+        state_path = self.repo_root / "CVF_SESSION/ACTIVE_SESSION_STATE.json"
+        state = json.loads(state_path.read_text(encoding="utf-8"))
+        state["nextAllowedMove"] = "LHW8 is present in HEAD as CLOSED_PASS_BOUNDED."
+        state["lhw9WorkflowConnectorWave9"] = "CLOSED_PASS_BOUNDED."
+        state_path.write_text(json.dumps(state), encoding="utf-8")
+        (self.repo_root / "CVF_SESSION_MEMORY.md").write_text(
+            "ACTIVE SESSION FRONT DOOR\nCVF_SESSION/ACTIVE_SESSION_STATE.json\n"
+            "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json\n"
+            "docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md\n"
+            "system_reconvergence_stop\ngovernance_kernel_freeze_recommended\n"
+            "AGENT_HANDOFF_V8_2026-05-17.md\n"
+            "## Next Allowed Move\nLHW8 is present in HEAD as CLOSED_PASS_BOUNDED.\n",
+            encoding="utf-8",
+        )
+        (self.repo_root / "AGENT_HANDOFF_V8_2026-05-17.md").write_text(
+            "Status: ACTIVE - current\nLHW9 CLOSED_PASS_BOUNDED.\n",
+            encoding="utf-8",
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify()
+
+        self.assertFalse(report["compliant"])
+        self.assertEqual(report["latestClosedLhwWave"], 9)
+        self.assertEqual(report["continuityViolationCount"], 2)
+
+    def test_latest_lhw_closure_passes_when_continuity_is_synced(self) -> None:
+        state_path = self.repo_root / "CVF_SESSION/ACTIVE_SESSION_STATE.json"
+        state = json.loads(state_path.read_text(encoding="utf-8"))
+        state["nextAllowedMove"] = "LHW9 is present in HEAD as CLOSED_PASS_BOUNDED."
+        state["lhw9WorkflowConnectorWave9"] = "CLOSED_PASS_BOUNDED."
+        state_path.write_text(json.dumps(state), encoding="utf-8")
+        (self.repo_root / "CVF_SESSION_MEMORY.md").write_text(
+            "ACTIVE SESSION FRONT DOOR\nCVF_SESSION/ACTIVE_SESSION_STATE.json\n"
+            "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json\n"
+            "docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md\n"
+            "system_reconvergence_stop\ngovernance_kernel_freeze_recommended\n"
+            "AGENT_HANDOFF_V8_2026-05-17.md\n"
+            "## Next Allowed Move\nLHW9 is present in HEAD as CLOSED_PASS_BOUNDED.\n",
+            encoding="utf-8",
+        )
+        (self.repo_root / "AGENT_HANDOFF_V8_2026-05-17.md").write_text(
+            "Status: ACTIVE - current\nLHW9 CLOSED_PASS_BOUNDED.\n",
+            encoding="utf-8",
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify()
+
+        self.assertTrue(report["compliant"])
+        self.assertEqual(report["latestClosedLhwWave"], 9)
+
 
 if __name__ == "__main__":
     unittest.main()

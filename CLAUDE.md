@@ -234,6 +234,8 @@ These files use inline React styles — when porting to the Next.js app, transla
 
 **File Size Guard (GC-023):** All governed source, test, frontend, and markdown files have hard line-count thresholds. Policy: `governance/toolkit/05_OPERATION/CVF_GOVERNED_FILE_SIZE_GUARD.md`. Exception registry: `governance/compat/CVF_GOVERNED_FILE_SIZE_EXCEPTION_REGISTRY.json`. **Before adding tests, code, or continuity text to any existing file:** (1) check the current line count, (2) check the exception registry for that file's `approvedMaxLines` and `requiredFollowup`, (3) if the file is near its hard threshold, rotate/archive/split it or materially shrink it in the same batch, (4) if adding would exceed the limit, create a dedicated file instead. Do not compress prose merely to fit under the guard. Front doors and handoffs must open a compact pointer/successor/archive when they approach threshold. The pre-commit hook (`.githooks/pre-commit` → `governance/compat/run_local_governance_hook_chain.py`) automatically enforces this at every `git commit` — no manual run needed.
 
+**Latest-Closure Continuity Gate:** Before claiming any connector wave closed, run the autorun `pre-closure` gate and ensure the highest closed LHW wave in `CVF_SESSION/ACTIVE_SESSION_STATE.json` is also named in `nextAllowedMove`, `CVF_SESSION_MEMORY.md` `Next Allowed Move`, and the active handoff. Stale lower-wave text such as LHW6/LHW8 after LHW9 closure blocks closure even when specs pass.
+
 **Risk Model:** R0 (Safe) → R3 (Dangerous). All changes are classified before execution.
 
 ---

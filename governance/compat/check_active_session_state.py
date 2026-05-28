@@ -16,6 +16,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -58,6 +59,37 @@ AGENT_ROUTER_MARKERS = (
     FRONT_DOOR_PATH,
     STATE_PATH,
 )
+
+LHW_KEY_PATTERN = re.compile(r"^lhw(?P<wave>\d+)", re.IGNORECASE)
+
+
+def _extract_markdown_section(text: str, heading: str) -> str:
+    lines = text.splitlines()
+    section: list[str] = []
+    capture = False
+    for line in lines:
+        if line.strip() == heading:
+            capture = True
+            section.append(line)
+            continue
+        if capture and line.startswith("## "):
+            break
+        if capture:
+            section.append(line)
+    return "\n".join(section)
+
+
+def _latest_closed_lhw_wave(state: dict[str, Any] | None) -> int | None:
+    if not state:
+        return None
+    waves: list[int] = []
+    for key, value in state.items():
+        match = LHW_KEY_PATTERN.match(key)
+        if not match or not isinstance(value, str):
+            continue
+        if "CLOSED_PASS_BOUNDED" in value:
+            waves.append(int(match.group("wave")))
+    return max(waves) if waves else None
 
 
 def _read_text(path: str) -> str:
@@ -174,6 +206,7 @@ def _classify() -> dict[str, Any]:
     review_queue, review_queue_error = _load_review_queue()
     state_violations: list[str] = []
     review_queue_violations: list[str] = []
+    continuity_violations: list[str] = []
     active_handoff = None
     active_review_queue = None
     pain_point_direction = None
@@ -388,10 +421,32 @@ def _classify() -> dict[str, Any]:
                     "(GC-020 In-Place Update Rule)"
                 )
 
+    latest_lhw_wave = _latest_closed_lhw_wave(state)
+    if latest_lhw_wave is not None:
+        latest_marker = f"LHW{latest_lhw_wave}"
+        next_allowed = state.get("nextAllowedMove") if state else None
+        if not isinstance(next_allowed, str) or latest_marker not in next_allowed:
+            continuity_violations.append(
+                f"nextAllowedMove must reference latest closed LHW wave {latest_marker}; "
+                "stale lower-wave continuity text is not valid closure evidence"
+            )
+        next_allowed_section = _extract_markdown_section(front_door_text, "## Next Allowed Move")
+        if latest_marker not in next_allowed_section:
+            continuity_violations.append(
+                f"{FRONT_DOOR_PATH} Next Allowed Move must reference latest closed LHW wave {latest_marker}"
+            )
+        if active_handoff:
+            handoff_text_for_lhw = _read_text(active_handoff)
+            if latest_marker not in handoff_text_for_lhw:
+                continuity_violations.append(
+                    f"active handoff must reference latest closed LHW wave {latest_marker}"
+                )
+
     compliant = (
         not missing_files
         and not state_violations
         and not review_queue_violations
+        and not continuity_violations
         and not marker_violations
         and not handoff_violations
     )
@@ -413,6 +468,9 @@ def _classify() -> dict[str, Any]:
         "stateViolationCount": len(state_violations),
         "reviewQueueViolations": review_queue_violations,
         "reviewQueueViolationCount": len(review_queue_violations),
+        "latestClosedLhwWave": latest_lhw_wave,
+        "continuityViolations": continuity_violations,
+        "continuityViolationCount": len(continuity_violations),
         "markerViolations": marker_violations,
         "markerViolationCount": len(marker_violations),
         "handoffViolations": handoff_violations,
@@ -440,8 +498,12 @@ def _print_report(report: dict[str, Any]) -> None:
     print(f"Missing files: {report['missingFileCount']}")
     print(f"State violations: {report['stateViolationCount']}")
     print(f"Review queue violations: {report['reviewQueueViolationCount']}")
+    print(f"Continuity violations: {report['continuityViolationCount']}")
     print(f"Marker violations: {report['markerViolationCount']}")
     print(f"Handoff violations: {report['handoffViolationCount']}")
+    latest_lhw_wave = report.get("latestClosedLhwWave")
+    if latest_lhw_wave is not None:
+        print(f"Latest closed LHW wave in state: LHW{latest_lhw_wave}")
     head_sha = report.get("headSha")
     head_in_handoff = report.get("headShaInHandoff")
     if head_sha:
@@ -474,6 +536,11 @@ def _print_report(report: dict[str, Any]) -> None:
     if report["reviewQueueViolations"]:
         print("\nReview queue violations:")
         for issue in report["reviewQueueViolations"]:
+            print(f"  - {issue}")
+
+    if report["continuityViolations"]:
+        print("\nContinuity violations:")
+        for issue in report["continuityViolations"]:
             print(f"  - {issue}")
 
     if report["markerViolations"]:

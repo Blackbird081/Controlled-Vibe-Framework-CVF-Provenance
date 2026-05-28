@@ -101,6 +101,12 @@ T3 cvf.operationalBenchmarkFailureClassReIntake.lhw8.t3.v1.
 LHW9 CLOSED_PASS_BOUNDED at commit `c245bc5a`: T1 cvf.mcpToolApprovalAdvisory.lhw9.t1.v1;
 T2 cvf.noncoderFrictionAdvisory.lhw9.t2.v1;
 T3 cvf.integrationLayerPackaging.lhw9.t3.v1.
+
+Current HEAD before latest-closure continuity gate commit: `41cc51ba`.
+Rule hardening in progress: active-session gate must fail stale lower-wave
+`nextAllowedMove`/front-door/handoff text when a newer LHW wave is closed in
+state.
+
 Current HEAD after LHW8 implementation commit: `00008651`.
 
 Current HEAD after autorun range/source-invariant hardening commit: `a5c1d6d7`.
