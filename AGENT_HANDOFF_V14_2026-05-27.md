@@ -586,6 +586,31 @@ T2 gate answer: YES — W6 artifact verification and V3 diagnostic classes
 classify export shapes and failures, but no connector defines the export-boundary
 advisory packet. T2 proceeds.
 
+## LHW5-T2 Artifact Export Boundary Advisory Connector Closure
+
+Current HEAD before T2 implementation: `f2a40702`
+
+Mode marker: `lhw5_t2_complete`
+
+Spec:
+`docs/reference/CVF_LHW5_ARTIFACT_EXPORT_BOUNDARY_ADVISORY_CONNECTOR_SPEC_2026-05-27.md`
+
+Completion:
+`docs/reviews/CVF_LHW5_T2_ARTIFACT_EXPORT_BOUNDARY_ADVISORY_CONNECTOR_COMPLETION_2026-05-27.md`
+
+Contract version: `cvf.artifactExportBoundaryAdvisory.lhw5.t2.v1`
+
+Delivered: documentation-only connector binding W6 `PackArtifactVerificationStatus`
++ 5 V3 `ExecutionDiagnosticClass` tokens + LHW3-T1 trend signals → 5 advisory
+types (`policy_block`, `provider_failure`, `quality_warning`, `routing_denied`,
+`output_validation`) + clean `none` row. `exportAdvisoryBlocking=false` is
+invariant. S5 has 6 rows, all ACCEPT. LH1 `md2html` + artifact renderer trigger
+absorbed. No code file modified.
+
+T3 gate answer: YES — W4 scorecard signals, V3 diagnostic classes, WR1 recovery
+actions, and LHW3-T1 trend labels are proven but no connector maps them into
+reproducible simulation scenario packets. T3 proceeds.
+
 ## Mandatory Standards
 
 Live run diagnostics:
