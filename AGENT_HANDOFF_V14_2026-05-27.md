@@ -640,7 +640,9 @@ No code file modified. LHW5 roadmap updated to CLOSED_PASS_BOUNDED.
 
 Mode marker: `lhw5_quality_review_fix_complete`
 
-Private provenance commit: `b8c7648d`
+Private provenance commit: this commit.
+
+Current HEAD before LHW5 quality-fix handoff sync: `ba361cf7`
 
 Operator requested code-quality review fixes after LHW5 closure. Corrective
 scope remained documentation-only:
