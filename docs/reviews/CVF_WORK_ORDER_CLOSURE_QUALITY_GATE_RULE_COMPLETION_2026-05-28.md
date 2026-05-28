@@ -51,6 +51,8 @@ front door.
 Disposition: ACCEPTED as a mandatory internal governance rule for future
 agent-led CVF work after 2026-05-28.
 
+Session marker and completion review commit: `f539b0cb`.
+
 Responsibility split:
 
 - Orchestrator/work-order author: make requirements traceable, source-backed,

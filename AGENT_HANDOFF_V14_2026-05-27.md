@@ -719,12 +719,17 @@ Rule implementation commit: `ddef1c23`
 
 Remote-marker fix commit: `35eb3070`
 
+Session marker and completion review commit: `f539b0cb`
+
 The operator asked to make the LHW5 review lessons mandatory for future
 agent-led work because CVF relies on agents to divide roles, implement, review,
 and close without continuous user intervention.
 
 Canonical standard:
 `docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md`
+
+Completion review:
+`docs/reviews/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_RULE_COMPLETION_2026-05-28.md`
 
 Binding surfaces updated:
 
