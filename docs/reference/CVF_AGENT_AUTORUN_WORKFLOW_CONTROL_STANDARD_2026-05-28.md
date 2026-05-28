@@ -1,0 +1,261 @@
+# CVF Agent Autorun Workflow Control Standard
+
+Memory class: POINTER_RECORD
+
+Status: canonical mandatory autorun workflow control standard for agent-led
+execution.
+
+## Purpose
+
+This standard converts CVF work-order rules into an autorun workflow that can
+control autonomous agents without non-coder intervention.
+
+It exists because a non-coder cannot safely inspect every roadmap, work order,
+source claim, diff, checklist, and closure packet. CVF must therefore stop an
+agent before work begins or before closure is claimed when the evidence chain is
+not machine-checkable.
+
+## Scope
+
+This standard applies to every new or resumed CVF agent that drafts,
+dispatches, implements, reviews, closes, commits, pushes, or public-syncs
+governed work after 2026-05-28.
+
+It applies to documentation-only waves, runtime/code implementation, public
+catalog work, live-proof work, connector waves, roadmaps, work orders,
+completion reviews, active handoffs, and delegated multi-agent execution.
+
+Trivial direct answers that do not create, modify, dispatch, close, commit, or
+push governed artifacts are out of scope.
+
+## Owner Surface / Source Lineage
+
+Owner surface: CVF orchestration, agent delegation, and governance gate layer.
+
+Canonical sources:
+
+- `AGENTS.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md`
+- `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
+- `docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md`
+- `docs/reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md`
+- `governance/compat/check_work_order_dispatch_quality.py`
+- `governance/compat/check_markdown_structural_completeness.py`
+- `governance/compat/check_docs_governance_compat.py`
+- `governance/compat/check_active_session_state.py`
+- `governance/compat/check_governed_file_size.py`
+
+## Protocol / Contract / Requirements
+
+The autorun workflow has four blocking gates:
+
+1. `pre-dispatch`: before a work order, roadmap, or Fast Lane audit may be
+   marked ready, dispatched, or equivalent.
+2. `pre-implementation`: after dispatch evidence exists and before file edits
+   outside the dispatch packet begin.
+3. `pre-closure`: before any artifact may claim `CLOSED`, `CLOSED_PASS`,
+   `CLOSED_PASS_BOUNDED`, or equivalent.
+4. `pre-push`: before any public or provenance repository push.
+
+An agent must not continue to the next phase when the current phase fails.
+Operator silence is not a waiver. A waiver must name the failed gate, reason,
+scope, and follow-up owner.
+
+## Inputs And Outputs
+
+Inputs:
+
+- operator instruction or active session decision;
+- roadmap or review finding;
+- GC-018 baseline when required;
+- work order;
+- source files and canonical contracts;
+- generated artifacts;
+- git diff/status evidence;
+- live proof receipts when claims require live governance proof.
+
+Outputs:
+
+- pass/fail autorun gate result;
+- blocker report when any gate fails;
+- corrected work order or returned orchestrator action;
+- completion packet only after closure gates pass;
+- commit and push evidence only after local gates pass.
+
+## Role Workflow
+
+### Orchestrator
+
+The Orchestrator authors or receives the roadmap/work order and must run
+`pre-dispatch` before assigning implementation.
+
+If `pre-dispatch` fails, the Orchestrator fixes the source verification,
+traceability, structure, prerequisite, or status defect before any worker acts.
+
+### Worker
+
+The Worker runs `pre-implementation` after accepting the work order and before
+material edits.
+
+If `pre-implementation` fails, the Worker stops and returns the defect to the
+Orchestrator. The Worker must not "fix while implementing" unless the fix is
+itself the assigned task.
+
+### Reviewer
+
+The Reviewer runs `pre-closure` before accepting any closed status.
+
+If `pre-closure` fails, the Reviewer must mark the work `BLOCKED` or return it
+for correction. The Reviewer must not rely on a completion review's handwritten
+`PASS` when machine gates disagree.
+
+### Release / Public-Sync Agent
+
+The release or public-sync agent runs `pre-push` after commit evidence exists
+and before pushing. Public-facing work must still switch to the public-sync
+clone after `git remote -v` proves the target repository.
+
+## Standard Workflow
+
+### Step 1 - Pre-Dispatch Gate
+
+Required command:
+
+```powershell
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch
+```
+
+The gate must include source verification schema, roadmap trace matrix,
+structural completeness, docs governance naming, active session state, and file
+size maintainability checks.
+
+Dispatch is blocked when:
+
+- the work order uses non-canonical Source Verification columns;
+- runtime/source facts are guessed, stale, wildcarded, or source-less;
+- roadmap-derived work lacks a trace matrix;
+- prerequisites are conditional or pending;
+- checkboxes needed for ready/dispatch remain open;
+- a connector wave lacks fresh GC-018 baseline evidence.
+
+### Step 2 - Pre-Implementation Gate
+
+Required command:
+
+```powershell
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation
+```
+
+The Worker confirms that dispatch artifacts pass the same checks immediately
+before editing. This prevents an agent from implementing from an obsolete or
+partially corrected work order.
+
+Implementation is blocked when:
+
+- the current work order would fail `pre-dispatch`;
+- required first reads or startup state are stale;
+- the worktree contains unresolved prior-governance blockers that would make
+  evidence ambiguous;
+- the intended edit would touch forbidden paths or exceed the risk ceiling.
+
+### Step 3 - Pre-Closure Gate
+
+Required command:
+
+```powershell
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure
+```
+
+Closure is blocked when:
+
+- any dispatch, structural, docs governance, session-state, or file-size gate
+  fails;
+- `git status --short` contains untracked or modified files without an explicit
+  committed-diff evidence path;
+- roadmap/work-order/completion statuses disagree;
+- roadmap or work-order acceptance checkboxes remain open without `N/A with
+  reason` or `BLOCKED`;
+- completion review claims `PASS` for evidence that was not produced by a
+  command, path, receipt, or committed diff;
+- a completion review claims no runtime/code/public/live-proof impact without
+  `git diff --name-status`, `git status --short`, committed diff output, or
+  explicit `N/A with reason`.
+
+The closure packet must say which autorun phase was run and include the command
+result. If `pre-closure` fails, the artifact status must be `BLOCKED`,
+`HOLD_*`, `DRAFT`, or equivalent, not `CLOSED_PASS_BOUNDED`.
+
+### Step 4 - Pre-Push Gate
+
+Required command:
+
+```powershell
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-push
+```
+
+The gate must run the local pre-push governance hook chain and require repository
+remote verification before any push. Public-facing changes must be pushed only
+from the public-sync clone.
+
+## Enforcement / Verification
+
+The canonical wrapper is:
+
+```powershell
+python governance/compat/run_agent_autorun_workflow_gate.py --phase <phase>
+```
+
+The wrapper intentionally reuses existing guards instead of replacing them.
+This keeps the gate explainable: every failure points to the underlying guard
+that rejected the artifact.
+
+Minimum included guards:
+
+- `check_docs_governance_compat.py --base HEAD --head HEAD --enforce`
+- `check_markdown_structural_completeness.py --base HEAD --head HEAD --enforce`
+- `check_work_order_dispatch_quality.py --base HEAD --head HEAD --enforce`
+- `check_active_session_state.py --enforce`
+- `check_governed_file_size.py --enforce`
+
+`pre-push` must also run:
+
+- `run_local_governance_hook_chain.py --hook pre-push`
+
+## Boundaries / Non-Goals
+
+This standard does not:
+
+- prove every external agent automatically loads these rules;
+- replace human or operator authority for waivers;
+- replace live governance proof when claims require live provider behavior;
+- authorize runtime behavior changes;
+- make documentation-only connector specs runtime-enforced;
+- remove the need for independent review when a gate reports a blocker.
+
+## Failure Modes / Escalation Conditions
+
+| Failure mode | Required action |
+|---|---|
+| `pre-dispatch` fails | Keep artifact in `DRAFT`, `HOLD_*`, or `BLOCKED`; return to Orchestrator. |
+| `pre-implementation` fails | Stop edits; return the blocker to Orchestrator or Reviewer. |
+| `pre-closure` fails | Do not mark closed; file a blocking finding or correction batch. |
+| `pre-push` fails | Do not push; classify the failing hook and fix or downgrade the claim. |
+| Agent cannot run the wrapper | Run the underlying guard commands individually and record why the wrapper was unavailable. |
+| Operator requests immediate continuation despite failure | Require an explicit waiver naming failed gate, risk, and follow-up owner. |
+
+## Related Artifacts
+
+- `AGENTS.md`
+- `docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md`
+- `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
+- `docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md`
+- `governance/compat/run_agent_autorun_workflow_gate.py`
+
+## Claim Boundary
+
+This standard defines the mandatory autorun control workflow. It is a control
+contract and local machine gate entrypoint, not proof that every external client
+enforces it automatically. A scope is trustworthy only when its phase gate
+outputs, artifacts, diffs, and continuity state agree.

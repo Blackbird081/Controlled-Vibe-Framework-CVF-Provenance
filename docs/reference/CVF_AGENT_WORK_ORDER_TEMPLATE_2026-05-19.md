@@ -76,6 +76,8 @@ Contract:
 Verification requirements:
 
 - pre-flight commands must be listed;
+- autorun phase gates must be listed and passed before dispatch,
+  implementation, closure, and push when applicable;
 - existing paths, symbols, role values, template IDs, and policy fields must be
   source-verified before the work order is marked ready;
 - work-order authors must verify source facts before dispatch, not delegate
@@ -223,6 +225,8 @@ Commands to run before implementation:
 ```powershell
 <command 1>
 <command 2>
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation
 python governance/compat/check_work_order_dispatch_quality.py --base HEAD --head HEAD --enforce
 ```
 
@@ -232,6 +236,7 @@ Expected results:
 - <expected result 2>
 
 If a pre-flight check fails, stop and record the failed command and result.
+The worker must not continue past a failed autorun phase gate.
 
 ## 6A. Source-Fidelity Pass
 
@@ -414,10 +419,13 @@ Closure is blocked if any fail condition is present.
 Implementation may proceed only after:
 
 - <GC-018 filed and reviewed | operator waiver recorded | other condition>
+- `pre-dispatch` autorun gate passed before dispatch
+- `pre-implementation` autorun gate passed before material edits
 
 Closure may proceed only after:
 
 - <reviewer no-blocking objection | operator waiver | gate result>
+- `pre-closure` autorun gate passed and result recorded
 
 Reviewer silence is not approval unless the operator explicitly records a
 waiver for this work order.
@@ -426,6 +434,8 @@ waiver for this work order.
 
 - [ ] All acceptance criteria satisfied or explicitly marked N/A with reason
 - [ ] Required tests or evidence commands run
+- [ ] Autorun `pre-closure` gate passed:
+  `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure`
 - [ ] Roadmap-to-work-order trace matrix final statuses are PASS or N/A with reason
 - [ ] Closure Diff Gate completed: roadmap, work order, final artifact, and
   completion claims were compared
@@ -442,12 +452,14 @@ waiver for this work order.
   allowed move, public-sync status, roadmap status, or handoff status changed
 - [ ] Completion packet filed if the roadmap requires one
 - [ ] Changed files listed for reviewer
+- [ ] No closed-equivalent claim remains if any autorun phase gate failed
 
 ## 13. Return-To-Orchestrator Conditions
 
 Return to orchestrator without continuing if:
 
 - pre-flight fails;
+- any autorun phase gate fails;
 - source-fidelity pass finds a missing path, invented symbol, or unverified
   role/template mapping;
 - scope conflict is discovered;
@@ -488,6 +500,7 @@ A work order is not ready for execution unless it answers:
 - `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/delegation.contract.ts`
 - `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/agent.handoff.contract.ts`
 - `docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md`
+- `docs/reference/CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28.md`
 - `docs/reference/CVF_GC018_CONTINUATION_CANDIDATE_TEMPLATE.md`
 - `governance/toolkit/05_OPERATION/CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD.md`
 - `governance/toolkit/05_OPERATION/CVF_DOCUMENT_STORAGE_GUARD.md`

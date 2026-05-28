@@ -31,12 +31,19 @@ Handoff context:
 
 ## Latest Work / Changes
 
-Latest mode marker: `governed_file_size_maintainability_gate_enforced`.
+Latest mode marker: `agent_autorun_workflow_control_enforced`.
 
 The latest update upgrades the mandatory Work Order Closure Quality Gate into
 machine enforcement through `governance/compat/check_work_order_dispatch_quality.py`.
 The guard is wired into the local hook chain and documentation CI workflow and
 was verified against the LHW6 dispatch range.
+
+Autorun workflow control is now mandatory for governed agent work phases. Use
+`governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch`,
+`--phase pre-implementation`, `--phase pre-closure`, and `--phase pre-push` as
+the phase stop points before trusting autonomous worker claims. Canonical
+standard:
+`docs/reference/CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28.md`.
 
 The session front door was rotated for maintainability. The previous long
 front-door snapshot is archived at
@@ -83,9 +90,12 @@ Current HEAD after LHW3-T1 implementation commit (parent of handoff sync): `7c97
 
 Current HEAD after LHW3-T2 implementation commit (parent of handoff sync): `34a42b70`.
 
+Current HEAD after LHW7 implementation commit: `1ca009f6`
+(`docs(lhw7): close LHW7 Workflow Connector Wave 7 CLOSED_PASS_BOUNDED`).
+
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=governed_file_size_maintainability_gate_enforced; active handoff=AGENT_HANDOFF_V14_2026-05-27.md; next allowed move=LHW6 is CLOSED_PASS_BOUNDED in HEAD and any follow-on wave must pass dispatch-quality, closure-quality, and governed file-size maintainability gates; parked checkpoint=hosted Netlify freshness and operator external-agent retest for VI5-T4/T5 remain pending.
+Startup acknowledged: current mode=agent_autorun_workflow_control_enforced; active handoff=AGENT_HANDOFF_V14_2026-05-27.md; next allowed move=any follow-on wave must pass autorun pre-dispatch, pre-implementation, pre-closure, and applicable pre-push gates before worker claims can be trusted; parked checkpoint=hosted Netlify freshness and operator external-agent retest for VI5-T4/T5 remain pending.
 
 ## Work Order Dispatch Quality Gate
 
@@ -121,6 +131,22 @@ an acceptable primary remediation for active front doors, handoffs, or other
 governed files.
 
 Previous active handoff `AGENT_HANDOFF_V13_2026-05-25.md` was archived because it exceeded the governed active-markdown size guard. Do not append new status to V13.
+
+## Agent Autorun Workflow Gate
+
+Hard-stop phase control is active through
+`governance/compat/run_agent_autorun_workflow_gate.py`.
+
+Required phase commands:
+
+- `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch`
+- `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation`
+- `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure`
+- `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-push`
+
+Failure means the agent must keep the artifact in `DRAFT`, `HOLD_*`,
+`BLOCKED`, or return it to Orchestrator. A handwritten completion PASS cannot
+override a failing autorun gate.
 
 ## Current Surface 1 Status
 

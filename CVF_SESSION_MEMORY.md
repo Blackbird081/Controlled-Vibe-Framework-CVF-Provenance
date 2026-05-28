@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-28
 
-Current mode marker: `governed_file_size_maintainability_gate_enforced`
+Current mode marker: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
 ---
@@ -33,7 +33,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `governed_file_size_maintainability_gate_enforced`.
+Current mode: `agent_autorun_workflow_control_enforced`.
 
 Active handoff:
 
@@ -69,10 +69,20 @@ Canonical size guard:
 
 `governance/toolkit/05_OPERATION/CVF_GOVERNED_FILE_SIZE_GUARD.md`
 
+Agent autorun workflow control is mandatory for governed work phases. Agents
+must pass the phase wrapper before dispatch, implementation, closure, or push:
+
+`governance/compat/run_agent_autorun_workflow_gate.py`
+
+Canonical autorun standard:
+
+`docs/reference/CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28.md`
+
 ## Next Allowed Move
 
-LHW6 is present in HEAD as `CLOSED_PASS_BOUNDED` and should be reviewed through
-the dispatch-quality and closure-quality gates before any follow-on wave.
+LHW6 is present in HEAD as `CLOSED_PASS_BOUNDED` and any follow-on wave must be
+reviewed through the autorun `pre-dispatch`, `pre-implementation`, and
+`pre-closure` gates before it can be trusted as closed.
 
 Future connector waves require fresh GC-018, roadmap, source-verified work
 orders, roadmap-to-work-order trace matrix, dispatch-quality gate, closure

@@ -315,6 +315,39 @@ The guard now hard-fails touched near-hard-threshold governed files without
 same-domain rotation/split evidence or meaningful shrink. Maintainability
 planning is part of the work, not cleanup left for testers.
 
+## Mandatory Agent Autorun Workflow Control - 2026-05-28
+
+Canonical standard:
+
+`docs/reference/CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28.md`
+
+Any agent-led CVF workflow that drafts, dispatches, implements, reviews, closes,
+commits, pushes, or public-syncs governed work must use the autorun workflow
+gates. The intent is to protect non-coder operators from having to manually
+inspect whether a worker agent followed the process.
+
+Required phase gates:
+
+- before ready/dispatch:
+  `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch`
+- before material implementation:
+  `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation`
+- before any `CLOSED`, `CLOSED_PASS`, `CLOSED_PASS_BOUNDED`, or equivalent
+  claim:
+  `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure`
+- before push:
+  `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-push`
+
+If a phase gate fails, the agent must stop at that phase and mark the artifact
+`DRAFT`, `HOLD_*`, `BLOCKED`, or return it to Orchestrator. A worker may not
+"fix while implementing" a failed dispatch packet unless that remediation is
+the explicitly assigned task. A reviewer may not accept handwritten PASS
+claims when the autorun gate fails. Operator silence is not a waiver.
+
+Pre-closure must not accept untracked, modified, or unresolved worktree changes
+as a clean closure claim. Closure must be backed by committed diff evidence,
+`git status --short`, receipts, command output, or explicit `N/A with reason`.
+
 ## Mandatory Knowledge Absorption Blind-Spot Prevention - 2026-05-24
 
 Canonical standard:

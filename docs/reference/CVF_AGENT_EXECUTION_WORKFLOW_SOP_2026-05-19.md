@@ -102,6 +102,12 @@ Closure requires roadmap-to-work-order traceability, closure diff review, claim
 integrity evidence, fail-condition review, checklist finalization, and
 continuity sync when state changes.
 
+Requirement 9: every autorun or delegated agent workflow must satisfy
+`docs/reference/CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28.md`.
+An agent must pass the relevant `pre-dispatch`, `pre-implementation`,
+`pre-closure`, or `pre-push` phase gate before moving to the next workflow
+state. A failed phase gate is a stop condition, not an advisory.
+
 ## Inputs And Outputs
 
 Input artifacts:
@@ -283,6 +289,14 @@ Roadmap-to-Work-Order Trace Matrix. Every roadmap acceptance item must map to a
 work-order section, output artifact or field, verification command or check,
 and status. Missing trace rows block dispatch or closure.
 
+Before ready/dispatch, run:
+
+```powershell
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch
+```
+
+If this command fails, keep the work order in `DRAFT`, `HOLD_*`, or `BLOCKED`.
+
 ### Step 4 - GC-018 Authorization
 
 Use before implementation when the lane opens new implementation scope,
@@ -295,6 +309,12 @@ Output:
 ### Step 5 - Implementation
 
 Implementation follows only the current work order and GC-018.
+
+Before material implementation begins, run:
+
+```powershell
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation
+```
 
 Output:
 
@@ -342,11 +362,23 @@ Closure records:
 - catalog update or N/A;
 - GC-020 handoff sync.
 
+Before closure may be claimed, run:
+
+```powershell
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure
+```
+
+If the gate fails, do not mark the task `CLOSED`, `CLOSED_PASS`,
+`CLOSED_PASS_BOUNDED`, or equivalent.
+
 ## Enforcement / Verification
 
 Mandatory local gates for workflow artifacts:
 
 ```powershell
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure
 python governance/compat/check_docs_governance_compat.py
 python governance/compat/check_markdown_structural_completeness.py
 python governance/compat/check_active_session_state.py --enforce
@@ -403,6 +435,7 @@ Minimum push evidence for a governed batch:
 ```powershell
 git remote -v
 git status --short
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-push
 python governance/compat/run_local_governance_hook_chain.py --hook pre-push
 ```
 
@@ -429,6 +462,7 @@ remains subject to future scoped implementation work.
 | Work order lacks authority chain | Stop and add authority chain. |
 | Work order cites a missing path or invented symbol | Stop and run the Source-Fidelity Pass; correct the work order before GC-018. |
 | Roadmap-derived work order lacks trace matrix | Stop and add the Roadmap-to-Work-Order Trace Matrix before dispatch. |
+| Autorun phase gate fails | Stop at the current phase; mark the artifact `DRAFT`, `HOLD_*`, or `BLOCKED` until fixed or explicitly waived. |
 | Completion claim is not backed by command/path/receipt evidence | Stop closure; run the required evidence command or downgrade the claim. |
 | Open checkbox residue remains in closure artifacts | Stop closure; mark each item checked, N/A with reason, or BLOCKED. |
 | Active front door, state registry, and handoff disagree after mode/status change | Stop closure; sync continuity surfaces before claiming closed. |
@@ -445,6 +479,7 @@ remains subject to future scoped implementation work.
 - `docs/CVF_ARCHITECTURE_DECISIONS.md#adr-047-agent-work-orders-become-the-mandatory-tactical-dispatch-layer`
 - `docs/reference/CVF_GC018_CONTINUATION_CANDIDATE_TEMPLATE.md`
 - `docs/reference/CVF_SESSION_GOVERNANCE_BOOTSTRAP.md`
+- `docs/reference/CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `AGENT_HANDOFF_V9_2026-05-18.md`
 

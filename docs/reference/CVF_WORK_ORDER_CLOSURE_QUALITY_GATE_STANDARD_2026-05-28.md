@@ -37,6 +37,7 @@ passes the following gates:
 4. Negative/fail-condition scan.
 5. Checklist finalization gate.
 6. Continuity sync gate.
+7. Agent autorun `pre-closure` gate.
 
 If any gate is incomplete, the worker must return to Orchestrator or file a
 blocking defect. Operator silence is not a waiver.
@@ -113,6 +114,22 @@ front door, machine-readable state registry, and active handoff as applicable.
 The worker must not leave a newer registry and stale front-door or handoff
 claim in conflict.
 
+### 7. Agent Autorun Pre-Closure Gate
+
+Before any closed-equivalent status claim, run:
+
+```powershell
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure
+```
+
+The completion packet must record the command and result. If the command fails,
+the artifact must remain `DRAFT`, `HOLD_*`, `BLOCKED`, or equivalent until the
+blocking gate is fixed or explicitly waived by the operator.
+
+Pre-closure cannot be satisfied by handwritten `PASS` tables when the machine
+gate reports source-verification, structural-completeness, continuity,
+file-size, worktree, or dispatch-quality violations.
+
 ## Exceptions
 
 There are no exceptions for delegated work-order closure.
@@ -135,6 +152,9 @@ This standard is enforced by:
   dispatch/ready work orders, connector-wave roadmaps, and fast-lane audits
   when prerequisite GC-018 baselines, source files, source-verification truth,
   roadmap trace matrices, or prerequisite completion evidence are missing.
+- `governance/compat/run_agent_autorun_workflow_gate.py`, which bundles the
+  mandatory phase gates for pre-dispatch, pre-implementation, pre-closure, and
+  pre-push agent workflows.
 
 Future automation may add hard checks, but manual compliance is mandatory now.
 
@@ -145,6 +165,7 @@ Future automation may add hard checks, but manual compliance is mandatory now.
 - `docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md`
 - `docs/reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md`
 - `docs/reference/CVF_QUALITY_ASSESSMENT_STANDARD.md`
+- `docs/reference/CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28.md`
 
 ## Final Clause
 

@@ -91,9 +91,10 @@ Scope sources resolved before this roadmap (each already closed):
 - `docs/reviews/CVF_LHW6_T3_PROJECT_MEMORY_READOUT_CONNECTOR_COMPLETION_2026-05-28.md`
 - `docs/reviews/CVF_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_COMPLETION_2026-05-25.md`
 - `docs/reviews/CVF_VI2_ROUTE_REQUEST_CONTEXT_PROFILE_READOUT_COMPLETION_2026-05-25.md`
-- `docs/reviews/CVF_LHW5_T3_*_COMPLETION_2026-05-27.md` (failure simulation scenario packet)
-- `docs/reviews/CVF_LHW3_*_SPEC_CHANGE_*_COMPLETION_2026-05-27.md`
-- `docs/reviews/CVF_LHW3_*_CLARIFICATION_RE_INTAKE_*_COMPLETION_2026-05-27.md`
+- `docs/reviews/CVF_LHW5_T3_FAILURE_SIMULATION_SCENARIO_PACKET_CONNECTOR_COMPLETION_2026-05-27.md`
+  (failure simulation scenario packet)
+- `docs/reviews/CVF_LHW3_T3_SPEC_CHANGE_WORKFLOW_PACKET_CONNECTOR_COMPLETION_2026-05-27.md`
+- `docs/reviews/CVF_LHW3_T2_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_COMPLETION_2026-05-27.md`
 
 Source families addressed per LH1 ledger triggers:
 
