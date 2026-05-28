@@ -6,7 +6,8 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-29
 
-Current mode marker: `lhw12_wave_closed_pass_bounded`
+Current mode marker: `lhw13_wave_closed_pass_bounded`
+Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
 ---
@@ -33,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `agent_autorun_workflow_control_enforced`.
+Current mode: `lhw13_wave_closed_pass_bounded`.
 
 Active handoff:
 
@@ -120,7 +121,7 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LHW12 is the latest fully `CLOSED_PASS_BOUNDED` connector wave. Any further connector wave (such as LHW13) or follow-on closure must be reviewed through the autorun `pre-dispatch`, `pre-implementation`, `pre-closure`, and applicable `pre-push` gates before it can be trusted.
+LHW13 is the latest fully `CLOSED_PASS_BOUNDED` connector wave completed by Claude (T1+T2+T3; CVF 25.05 Gaps 1/4/9 closed; LH1 `tolaria` doc-only trigger satisfied). LHW12 ran in parallel and is pending Gemini worker closure. Any further connector wave requires a fresh roadmap and GC-018.
 
 LHW sequencing remains: continue connector absorption first. Do not move
 `abtop`, `gridex`, or other route-execution families into a live-proof roadmap

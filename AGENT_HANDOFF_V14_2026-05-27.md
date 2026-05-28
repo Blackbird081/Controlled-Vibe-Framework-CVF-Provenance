@@ -233,6 +233,36 @@ API keys available (Alibaba/DeepSeek/OpenAI); operator authorized 2026-05-29.
 
 Current HEAD (updated per GC-020): `a8d2a0eb`.
 
+## LHW13 Wave Closure
+
+LHW13 Workflow Connector Wave 13 is now CLOSED_PASS_BOUNDED (T1+T2+T3).
+All three tranches are documentation-only connector specs. No runtime code file
+was modified. baseHead for this wave: `a58c37af`.
+
+- T1 — Agent Reading Protocol Governance Connector
+  - Spec: `docs/reference/CVF_LHW13_T1_AGENT_READING_PROTOCOL_GOVERNANCE_CONNECTOR_SPEC_2026-05-29.md`
+  - Advisory types: `agentReadingAdvisoryType` + `claimValidationAdvisory`
+  - Completion: `docs/reviews/CVF_LHW13_T1_AGENT_READING_PROTOCOL_GOVERNANCE_CONNECTOR_COMPLETION_2026-05-29.md`
+  - Closes CVF 25.05 Gap 1: no single connector maps claim-tier × canonical-file-type → named advisory.
+- T2 — Memory Continuity Level Advisory Connector
+  - Spec: `docs/reference/CVF_LHW13_T2_MEMORY_CONTINUITY_LEVEL_ADVISORY_CONNECTOR_SPEC_2026-05-29.md`
+  - Advisory types: `memoryContinuityLevelAdvisoryType` + `continuityLevelBoundaryNote`
+  - Completion: `docs/reviews/CVF_LHW13_T2_MEMORY_CONTINUITY_LEVEL_ADVISORY_CONNECTOR_COMPLETION_2026-05-29.md`
+  - Closes CVF 25.05 Gap 4: no connector maps snapshot/decay advisories into L0-L3 taxonomy.
+  - LH1 `tolaria` memory snapshot packaging value absorbed.
+- T3 — Graph Context Resolver Boundary Connector
+  - Spec: `docs/reference/CVF_LHW13_T3_GRAPH_CONTEXT_RESOLVER_BOUNDARY_CONNECTOR_SPEC_2026-05-29.md`
+  - Advisory types: `graphContextResolverBoundaryAdvisoryType` + `activeResolutionMode` + `phaseToNextMode`
+  - Completion: `docs/reviews/CVF_LHW13_T3_GRAPH_CONTEXT_RESOLVER_BOUNDARY_CONNECTOR_COMPLETION_2026-05-29.md`
+  - Closes CVF 25.05 Gap 9: no connector defines graph resolver boundary phases.
+  - LH1 `tolaria` graph context readout value absorbed (doc-only scope).
+
+LHW13 ran in parallel with LHW12 (no shared source dependencies). LHW12
+closure status pending Gemini worker completion. Latest fully closed wave is
+LHW13 as of this note.
+
+Current mode: `lhw13_wave_closed_pass_bounded`.
+
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=agent_autorun_workflow_control_enforced; active handoff=AGENT_HANDOFF_V14_2026-05-27.md; next allowed move=continue LHW connector absorption first, with any follow-on wave passing autorun pre-dispatch, pre-implementation, pre-closure, and applicable pre-push gates before worker claims can be trusted; parked checkpoint=hosted Netlify freshness and operator external-agent retest for VI5-T4/T5 remain pending.

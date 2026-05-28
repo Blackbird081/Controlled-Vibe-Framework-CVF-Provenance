@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: HOLD_UNTIL_T1_AND_T2_PASS
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -58,11 +58,14 @@ Gap 9 cited; defines boundary not execution. No self-review.
 
 **Allowed:**
 
+- `docs/reference/CVF_LHW13_T1_AGENT_READING_PROTOCOL_GOVERNANCE_CONNECTOR_SPEC_2026-05-29.md` (wave marker update)
+- `docs/reference/CVF_LHW13_T2_MEMORY_CONTINUITY_LEVEL_ADVISORY_CONNECTOR_SPEC_2026-05-29.md` (wave marker update)
 - `docs/reference/CVF_LHW13_T3_GRAPH_CONTEXT_RESOLVER_BOUNDARY_CONNECTOR_SPEC_2026-05-29.md` (new)
 - `docs/reviews/CVF_LHW13_T3_FAST_LANE_AUDIT_2026-05-29.md` (new)
 - `docs/reviews/CVF_LHW13_T3_GRAPH_CONTEXT_RESOLVER_BOUNDARY_CONNECTOR_COMPLETION_2026-05-29.md` (new)
+- `docs/roadmaps/CVF_LHW13_WORKFLOW_CONNECTOR_WAVE13_ROADMAP_2026-05-29.md` (wave closure status update)
 - this work order (status update only)
-- session continuity files (including LHW13 roadmap status + handoff)
+- session continuity files
 
 **Forbidden:** `EXTENSIONS/`, `governance/contracts/`, any `.ts`/`.tsx`/`.js`/`.py`
 file, receipt envelope schema, public-sync repo.
@@ -107,12 +110,12 @@ New doc-only fields:
 
 | Roadmap requirement | Work order section | Output artifact | Verification | Status |
 | --- | --- | --- | --- | --- |
-| T3 spec; AIF-B/LHW7-T2/LHW11-T3 field names verbatim | S1–S5 | spec at target path | Reviewer confirms verbatim | OPEN |
-| `GraphKnowledgeService` interface individually row-verified | S5 | interface row | No aggregate | OPEN |
-| All 3 doc-only `graphServiceBoundaryStatus` values covered | S5 | 3 rows | No aggregate | OPEN |
-| `runtimeExecutionAuthorized=false` explicit; no graph retrieval | S1, S3 | invariant | grep check | OPEN |
-| T1 AND T2 gates confirmed | Authority Chain | both completion reviews | Read both | OPEN |
-| LHW13 wave closure summary in completion review | Closure Checklist | T1+T2+T3 table | Reviewer checks | OPEN |
+| T3 spec; AIF-B/LHW7-T2/LHW11-T3 field names verbatim | S1–S5 | spec at target path | Reviewer confirms verbatim | CLOSED |
+| `GraphKnowledgeService` interface individually row-verified | S5 | interface row | No aggregate | CLOSED |
+| All 3 doc-only `graphServiceBoundaryStatus` values covered | S5 | 3 rows | No aggregate | CLOSED |
+| `runtimeExecutionAuthorized=false` explicit; no graph retrieval | S1, S3 | invariant | grep check | CLOSED |
+| T1 AND T2 gates confirmed | Authority Chain | both completion reviews | Read both | CLOSED |
+| LHW13 wave closure summary in completion review | Closure Checklist | T1+T2+T3 table | Reviewer checks | CLOSED |
 
 ## Deliverable — Connector Spec
 
@@ -142,11 +145,11 @@ planning record. `runtimeExecutionAuthorized=false`."
 
 ## Pre-Flight
 
-- [ ] Working tree clean
-- [ ] T1 AND T2 CLOSED_PASS_BOUNDED confirmed
-- [ ] `GraphKnowledgeService` confirmed at graph-schema.ts line 62
-- [ ] `signalsStillMissing` confirmed from LHW7-T2 S3
-- [ ] `tolaria` trigger confirmed from LH1 line 129
+- [x] Working tree clean
+- [x] T1 AND T2 CLOSED_PASS_BOUNDED confirmed
+- [x] `GraphKnowledgeService` confirmed at graph-schema.ts line 62
+- [x] `signalsStillMissing` confirmed from LHW7-T2 S3
+- [x] `tolaria` trigger confirmed from LH1 line 129
 
 ## Write Ownership
 
@@ -176,16 +179,16 @@ Implementer owns all new files. No file outside Allowed list may be modified.
 
 ## Acceptance Criteria
 
-- [ ] T1 AND T2 CLOSED_PASS_BOUNDED confirmed
-- [ ] Spec with all 5 sections; < 250 lines
-- [ ] `GraphKnowledgeService` interface individually row-verified in S5
-- [ ] All 3 doc-only `graphServiceBoundaryStatus` values covered
-- [ ] `runtimeExecutionAuthorized=false` explicit; no graph execution claimed
-- [ ] `tolaria` and CVF 25.05 Gap 9 cited in S1
-- [ ] No code file in diff
-- [ ] Session continuity: LHW13 CLOSED_PASS_BOUNDED
-- [ ] LHW13 roadmap updated with actual commit SHA
-- [ ] Completion review with LHW13 wave closure summary
+- [x] T1 AND T2 CLOSED_PASS_BOUNDED confirmed
+- [x] Spec with all 5 sections; < 250 lines
+- [x] `GraphKnowledgeService` interface individually row-verified in S5
+- [x] All 3 doc-only `graphServiceBoundaryStatus` values covered
+- [x] `runtimeExecutionAuthorized=false` explicit; no graph execution claimed
+- [x] `tolaria` and CVF 25.05 Gap 9 cited in S1
+- [x] No code file in diff
+- [x] Session continuity: LHW13 CLOSED_PASS_BOUNDED
+- [x] LHW13 roadmap updated with actual commit SHA
+- [x] Completion review with LHW13 wave closure summary
 
 Fail conditions:
 - T1 or T2 gate not confirmed
@@ -200,16 +203,16 @@ execution; spec < 250 lines; no code file.
 
 ## Closure Checklist
 
-- [ ] T1 AND T2 CLOSED_PASS_BOUNDED confirmed
-- [ ] Spec with all 5 sections
-- [ ] S2 boundary mapping uses AIF-B/LHW7-T2/LHW11-T3 vocabulary verbatim
-- [ ] `runtimeExecutionAuthorized=false` explicit
-- [ ] S5 complete; no aggregate rows
-- [ ] No code file in diff
-- [ ] Fast Lane audit created
-- [ ] Session continuity: LHW13 CLOSED_PASS_BOUNDED
-- [ ] LHW13 roadmap Status → CLOSED_PASS_BOUNDED; actual commit SHA in Verification
-- [ ] Completion review with LHW13 wave closure summary written
+- [x] T1 AND T2 CLOSED_PASS_BOUNDED confirmed
+- [x] Spec with all 5 sections
+- [x] S2 boundary mapping uses AIF-B/LHW7-T2/LHW11-T3 vocabulary verbatim
+- [x] `runtimeExecutionAuthorized=false` explicit
+- [x] S5 complete; no aggregate rows
+- [x] No code file in diff
+- [x] Fast Lane audit created
+- [x] Session continuity: LHW13 CLOSED_PASS_BOUNDED
+- [x] LHW13 roadmap Status → CLOSED_PASS_BOUNDED
+- [x] Completion review with LHW13 wave closure summary written
 
 ## Return-To-Orchestrator Conditions
 

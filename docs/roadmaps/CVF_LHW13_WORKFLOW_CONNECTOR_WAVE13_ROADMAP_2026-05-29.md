@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: ACTIVE
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -19,8 +19,8 @@ dependencies). Source: CVF 25.05 Gop_y.md GAPs 1, 4, 9.
 Fresh GC-018:
 `docs/baselines/CVF_GC018_LHW13_WORKFLOW_CONNECTOR_WAVE13_2026-05-29.md`
 
-Dispatch status: T1 WORK_ORDER_READY. T2 HOLD_UNTIL_T1_PASS.
-T3 HOLD_UNTIL_T1_AND_T2_PASS.
+Dispatch status: T1 CLOSED_PASS_BOUNDED. T2 CLOSED_PASS_BOUNDED.
+T3 CLOSED_PASS_BOUNDED. Wave: CLOSED_PASS_BOUNDED.
 
 ## Scope / Target / Owner Boundary
 
@@ -161,18 +161,18 @@ current text-retrieval posture →
 
 | Tranche | Deliverable | Gate |
 | --- | --- | --- |
-| T1 | Agent Reading Protocol Governance spec (5 sections) | None |
-| T2 | Memory Continuity Level Advisory spec (5 sections) | HOLD_UNTIL_T1_PASS |
-| T3 | Graph Context Resolver Boundary spec (5 sections) | HOLD_UNTIL_T1_AND_T2_PASS |
+| T1 | Agent Reading Protocol Governance spec (5 sections) | SATISFIED |
+| T2 | Memory Continuity Level Advisory spec (5 sections) | T1_PASS |
+| T3 | Graph Context Resolver Boundary spec (5 sections) | T1_AND_T2_PASS |
 
 ## Acceptance Criteria
 
-- [ ] T1: connector-normalized claim-tier vocabulary values (4), canonical-file-type values (4), and startup acknowledgment status axis individually covered; no runtime enforcement claimed
-- [ ] T2: `memorySnapshotAdvisoryType` (6 values) individually row-verified; connector-normalized `canReinject=false` boundary does not cite the source boolean as a false invariant
-- [ ] T3: `GraphKnowledgeService` interface and doc-only `graphServiceBoundaryStatus` values individually covered; no graph retrieval execution claimed
-- [ ] No `.ts`/`.tsx`/`.js`/`.py` file in diff across all three tranches
-- [ ] Each spec < 250 lines
-- [ ] Both governance gates PASS per tranche
+- [x] T1: connector-normalized claim-tier vocabulary values (4), canonical-file-type values (4), and startup acknowledgment status axis individually covered; no runtime enforcement claimed
+- [x] T2: `memorySnapshotAdvisoryType` (6 values) individually row-verified; connector-normalized `canReinject=false` boundary does not cite the source boolean as a false invariant
+- [x] T3: `GraphKnowledgeService` interface and doc-only `graphServiceBoundaryStatus` values individually covered; no graph retrieval execution claimed
+- [x] No `.ts`/`.tsx`/`.js`/`.py` file in diff across all three tranches
+- [x] Each spec < 250 lines (T1: 110, T2: 120, T3: 115)
+- [x] Both governance gates PASS per tranche
 
 ## Verification
 

@@ -4,6 +4,8 @@ Memory class: FULL_RECORD
 
 Status: CLOSED_PASS_BOUNDED
 
+Wave: LHW13 CLOSED_PASS_BOUNDED
+
 docType: connector_spec
 
 Date: 2026-05-29
