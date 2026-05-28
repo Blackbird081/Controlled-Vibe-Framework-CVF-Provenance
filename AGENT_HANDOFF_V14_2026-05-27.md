@@ -101,6 +101,10 @@ Current HEAD after LHW8 implementation commit: `00008651`.
 Post-LHW8 rule hardening now blocks empty closure ranges and source invariant
 claims stronger than cited source proof.
 
+Current HEAD after LHW8-T3 completion review commit: `16d68753`
+(`docs(lhw8-t3): add operational benchmark failure class re-intake connector completion review`).
+LHW8 wave fully closed with all three tranches CLOSED_PASS_BOUNDED.
+
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=agent_autorun_workflow_control_enforced; active handoff=AGENT_HANDOFF_V14_2026-05-27.md; next allowed move=any follow-on wave must pass autorun pre-dispatch, pre-implementation, pre-closure, and applicable pre-push gates before worker claims can be trusted; parked checkpoint=hosted Netlify freshness and operator external-agent retest for VI5-T4/T5 remain pending.
