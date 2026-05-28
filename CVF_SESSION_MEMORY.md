@@ -4,8 +4,8 @@ Status: ACTIVE SESSION FRONT DOOR
 Last updated: 2026-05-28
 
 Current mode marker: `work_order_closure_quality_gate_rule_added`
-
 Freeze posture marker: `governance_kernel_freeze_recommended`
+GC-043 markers: broad external knowledge absorption; blocked work classes.
 
 ---
 
