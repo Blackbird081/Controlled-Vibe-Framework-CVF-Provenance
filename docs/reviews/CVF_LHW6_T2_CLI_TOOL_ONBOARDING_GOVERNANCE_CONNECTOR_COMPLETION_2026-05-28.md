@@ -53,7 +53,7 @@ modification, public sync.
 | T2 dispatch only after T1 CLOSED_PASS | Gate Condition | T1 completion confirmed above | PASS |
 | T2 spec created; W3/TA1/LHW6-T1 field names verbatim | S1–S5 | spec at target path; all tokens verbatim | PASS |
 | CLI onboarding planning-only explicit | S1, S3, claim boundary | `runtimeExecutionAuthorized=false` in S1 and S3; `does not execute CLI commands` stated | PASS |
-| Source Verification Table complete | S5 | 7 rows, all ACCEPT, no `BLOCKED_SOURCE_NOT_FOUND` | PASS |
+| Source Verification Table complete | S5 | 7 rows, all ACCEPT, no blocking source-verification disposition | PASS |
 | No code file modified | evidence section | no `.ts`/`.tsx`/`.js`/`.py` file created or modified | PASS |
 | Session continuity updated | continuity section | mode updated to `lhw6_t2_complete` | PASS |
 
@@ -86,7 +86,7 @@ Document-only. No doc-only row labeled Runtime. PASS.
 sideEffect subset (L16–31), `sandboxRequired` for `command_runtime` (L381–386),
 `runtimeExecutionAuthorized=false` (L119, L141), TA1 approval states (L64–70),
 LHW6-T1 `bridgeAdvisoryType` from T1 spec, and doc-only new fields. No
-`BLOCKED_SOURCE_NOT_FOUND` rows. PASS.
+blocking source-verification disposition remains. PASS.
 
 ---
 
@@ -143,7 +143,8 @@ Not mapped as policy-blocked. PASS.
 - [x] Spec created with all 5 sections
 - [x] S2 onboarding mapping uses W3+TA1+LHW6-T1 vocabulary verbatim
 - [x] `runtimeExecutionAuthorized=false` explicit
-- [x] S5 Source Verification Table complete; no `BLOCKED_SOURCE_NOT_FOUND` rows
+- [x] S5 Source Verification Table complete; no blocking source-verification
+  disposition remains
 - [x] S4 boundary table honest; no doc-only row labeled Runtime
 - [x] No code file in diff
 - [x] Session continuity updated to `lhw6_t2_complete`
@@ -174,8 +175,8 @@ and Closure Checklist sections above.
 
 ## Risk / Corrective Action
 
-No residual risk. All fail conditions scanned clear; no `BLOCKED_SOURCE_NOT_FOUND`
-rows in S5 Source Verification Table. No corrective action required.
+No residual risk. All fail conditions scanned clear; no blocking
+source-verification disposition remains in S5. No corrective action required.
 
 ## Decision / Recommendation / Disposition
 

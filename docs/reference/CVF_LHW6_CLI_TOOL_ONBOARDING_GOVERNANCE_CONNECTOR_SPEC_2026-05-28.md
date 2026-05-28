@@ -1,6 +1,6 @@
 # CVF LHW6 CLI Tool Onboarding Governance Connector Spec
 
-Memory class: FULL_RECORD
+Memory class: POINTER_RECORD
 
 docType: reference
 
@@ -117,7 +117,8 @@ advisory documentation only.
 | LHW6-T1 `bridgeAdvisoryType` values `advisory_allowed`, `hold_for_approval`, `blocked` | `docs/reference/CVF_LHW6_TOOL_RUNTIME_BRIDGE_ADVISORY_CONNECTOR_SPEC_2026-05-28.md` | S3 field list | `bridgeAdvisoryType` | LHW6-T1 advisory packet | ACCEPT |
 | Doc-only fields `onboardingPacketId`, `cliToolId`, `onboardingClassification`, `onboardingGuidance` | N/A — new doc-only fields proposed by LHW6-T2 work order | work order S3 new doc-only fields block | doc-only; no runtime source | LHW6-T2 onboarding packet | ACCEPT |
 
-No `BLOCKED_SOURCE_NOT_FOUND` rows. All claimed runtime/source items are ACCEPT.
+All claimed runtime/source items are ACCEPT. No blocking source-verification
+disposition remains in this table.
 
 ---
 

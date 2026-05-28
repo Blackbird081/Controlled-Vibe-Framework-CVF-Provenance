@@ -866,7 +866,8 @@ L13, L35–49), AIF-C `MemoryGatewayDecision`
 (`EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts`
 L40–51), WR1 `WorkflowRecoveryReadout`/`WorkflowRecoveryAction`
 (`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts`
-L50–54, L85–96). All rows ACCEPT; no `BLOCKED_SOURCE_NOT_FOUND`.
+L50–54, L85–96). All rows ACCEPT; no blocking source-verification
+disposition remains.
 
 Boundary: documentation-only connector specs. No W3/TA1/M1/AIF-C/WR1 runtime
 extension, CLI execution, memory reinjection, receipt envelope extension,
@@ -879,9 +880,11 @@ LHW6 wave closure commit: `993b7bc3`
 
 Post-closure defect micro-fix commit (updated per GC-020): `b3dc0cad`
 (GC-018 untracked file added; T2 install mapping corrected to `pending_approval`
-/ `hold_for_approval`; T2 work order BLOCKED_SOURCE_NOT_FOUND row resolved to
-ACCEPT; T2 completion Fail Condition 4 added; `install_blocked` enum residue
-corrected to `install_review_required` in T2 spec S3, work order S2/S3.)
+/ `hold_for_approval`; T2 source-verification blocker resolved to ACCEPT; T2
+completion Fail Condition 4 added; T2 install classification normalized to
+`install_review_required` in spec S2/S3 and work order S2/S3.)
+
+Current HEAD before LHW6 text-clean cleanup: `26d9a1dd`
 
 ## Mandatory Standards
 

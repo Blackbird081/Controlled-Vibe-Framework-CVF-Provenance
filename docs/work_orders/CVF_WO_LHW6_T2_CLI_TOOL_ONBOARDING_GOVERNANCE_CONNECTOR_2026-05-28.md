@@ -224,7 +224,8 @@ Spec size guard: < 200 lines. Trim S3 prose if approaching 180 lines.
 - S2 maps minimum 5 CLI onboarding combinations
 - `runtimeExecutionAuthorized=false` explicit in S1 and S3
 - S4 boundary table present; no doc-only row labeled Runtime
-- S5 Source Verification Table complete; no `BLOCKED_SOURCE_NOT_FOUND` rows
+- S5 Source Verification Table complete; no blocking source-verification
+  disposition remains
 - No `.ts`/`.tsx`/`.js`/`.py` file in `git diff --name-only`
 - Session continuity updated to `lhw6_t2_complete`
 - Completion review written with T3 gate answer
@@ -235,7 +236,8 @@ Spec size guard: < 200 lines. Trim S3 prose if approaching 180 lines.
 - [ ] S2 covers minimum 5 CLI onboarding combinations
 - [ ] `runtimeExecutionAuthorized=false` invariant explicit in S1 and S3
 - [ ] S4 boundary table honest; no doc-only row labeled Runtime
-- [ ] S5 Source Verification Table complete; no `BLOCKED_SOURCE_NOT_FOUND` rows
+- [ ] S5 Source Verification Table complete; no blocking source-verification
+  disposition remains
 - [ ] No code file in diff
 - [ ] Session continuity updated
 
@@ -250,7 +252,7 @@ Fail conditions:
 
 Before committing: Reviewer perspective completed; all W3/TA1 field names
 verbatim; LHW6-T1 `bridgeAdvisoryType` values verbatim; `runtimeExecutionAuthorized=false`
-explicit; S5 complete with no `BLOCKED_SOURCE_NOT_FOUND` rows; no code file
+explicit; S5 complete with no blocking source-verification disposition; no code file
 in diff.
 
 ## Closure Checklist
@@ -259,7 +261,8 @@ in diff.
 - [x] Spec created with all 5 sections
 - [x] S2 onboarding mapping uses W3+TA1+LHW6-T1 vocabulary verbatim
 - [x] `runtimeExecutionAuthorized=false` explicit
-- [x] S5 Source Verification Table complete; no `BLOCKED_SOURCE_NOT_FOUND` rows
+- [x] S5 Source Verification Table complete; no blocking source-verification
+  disposition remains
 - [x] S4 boundary table honest; no doc-only row labeled Runtime
 - [x] No code file in diff
 - [x] Session continuity updated
