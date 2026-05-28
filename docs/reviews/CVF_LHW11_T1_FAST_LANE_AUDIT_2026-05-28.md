@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE
+Status: CLOSED_PASS
 
 docType: fast_lane_audit
 
@@ -21,15 +21,18 @@ Tranche: LHW11-T1
 Deliverable:
 `docs/reference/CVF_LHW11_T1_SESSION_GOVERNANCE_POSTURE_AGGREGATOR_CONNECTOR_SPEC_2026-05-28.md`
 
+Source verification appendix:
+`docs/reference/CVF_LHW11_T1_SESSION_GOVERNANCE_POSTURE_AGGREGATOR_SOURCE_VERIFICATION_2026-05-29.md`
+
 ## Fast Lane Checklist
 
 - [x] Spec has all 5 sections (S1–S5)
-- [x] Spec < 250 lines (actual: 216 lines)
+- [x] Primary spec < 250 lines (actual: 244 lines after S5 appendix split)
 - [x] S2 uses risk-tier grouping (CLEAR/HOLD/BLOCKED) instead of exhaustive
   combination rows
 - [x] All 4 input advisory types mapped to risk tiers in S2
-- [x] All 4 input advisory type field names individually verified in S5 (no
-  aggregate rows)
+- [x] All 4 input advisory type field names individually verified in S5
+  appendix (no aggregate rows)
 - [x] `runtimeExecutionAuthorized=false` explicit in S1 and S3
 - [x] S4 boundary honest: input advisory types labeled Doc-proven; new fields
   labeled Doc-only; no re-evaluation of source surfaces labeled Not authorized
@@ -90,10 +93,10 @@ review and T2 gate answer.
 **Findings:**
 
 - Spec structure complete: all 5 sections (S1–S5) present
-- Line count: 216 lines (under 250-line limit)
+- Line count: 244 lines (under 250-line limit after S5 appendix split)
 - Risk-tier grouping approach successfully reduces complexity while maintaining
   deterministic posture derivation logic
-- All 4 input advisory types individually verified in S5 (no aggregate rows)
+- All 4 input advisory types individually verified in S5 appendix (no aggregate rows)
 - `runtimeExecutionAuthorized=false` explicit in S1 and S3
 - S4 boundary honest: no runtime claims
 - No code file in diff

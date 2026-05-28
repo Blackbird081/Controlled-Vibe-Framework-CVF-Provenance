@@ -54,7 +54,7 @@ Deliverables:
 
 | Roadmap requirement | Work order section | Output artifact or field | Verification | Status |
 | --- | --- | --- | --- | --- |
-| T3 spec; `canReinject=false` preserved | S1, S3, Claim Boundary | invariant stated | Reviewer confirms verbatim | CLOSED |
+| T3 spec; `canReinject=false` connector-normalized | S1, S3, Claim Boundary | invariant stated | Reviewer confirms verbatim | CLOSED |
 | All 6 `memorySnapshotAdvisoryType` values individually row-verified | S5 | 6 rows | No aggregate | CLOSED |
 | All 3 `contaminationRiskAfterSeed` values individually row-verified | S5 | 3 rows | No aggregate | CLOSED |
 | All 6 `MemoryGatewayPolicyDecision` values individually row-verified | S5 | 6 rows | No aggregate | CLOSED |
@@ -95,11 +95,11 @@ No `.ts`/`.tsx`/`.js`/`.py` file modified. No `EXTENSIONS/` source file modified
 ## Acceptance Criteria Review
 
 - [x] T1 AND T2 CLOSED_PASS_BOUNDED confirmed before dispatch (confirmed via completion reviews)
-- [x] Spec with all 5 sections; < 250 lines (actual: 166 lines)
+- [x] Spec with all 5 sections; < 250 lines (actual: 158 lines after connector-normalized wording)
 - [x] All 6 `memorySnapshotAdvisoryType` values individually row-verified in S5 (no aggregate rows)
 - [x] All 3 `contaminationRiskAfterSeed` values individually row-verified in S5 (no aggregate rows)
 - [x] All 6 `MemoryGatewayPolicyDecision` values individually row-verified in S5 (no aggregate rows)
-- [x] `canReinject=false` preserved and explicit; `promotionEligible=false` preserved and explicit
+- [x] `canReinject=false` connector-normalized and explicit; `promotionEligible=false` preserved and explicit
 - [x] `runtimeExecutionAuthorized=false` explicit
 - [x] No code file in diff
 - [x] LHW11 wave closure summary table written
@@ -108,7 +108,7 @@ No `.ts`/`.tsx`/`.js`/`.py` file modified. No `EXTENSIONS/` source file modified
 
 ## Evidence Requirements Review
 
-- [x] Spec < 250 lines (actual: 166 lines)
+- [x] Spec < 250 lines (actual: 158 lines after connector-normalized wording)
 - [x] All 6 `memorySnapshotAdvisoryType` + all 3 `contaminationRiskAfterSeed` + all 6 `MemoryGatewayPolicyDecision` values individually row-verified in S5
 - [x] `canReinject=false` and `rawMemoryReleased=false` explicit
 - [x] `promotionEligible=false` preserved
@@ -126,7 +126,7 @@ All Fast Lane criteria satisfied:
 - Spec structure complete (S1–S5)
 - Line count under 250
 - Verbatim field names and values from source specs used
-- Invariants `canReinject=false` and `promotionEligible=false` explicit
+- Invariants `canReinject=false` connector-normalized and `promotionEligible=false` explicit
 - No code file in diff
 
 ---
@@ -149,7 +149,7 @@ Reviewed as Reviewer role:
 - Verified `memorySnapshotAdvisoryType` values verbatim from LHW8-T1 spec S2.
 - Verified `contaminationRiskAfterSeed` values verbatim from LHW7-T2 spec S3.
 - Verified `MemoryGatewayPolicyDecision` values verbatim from AIF-C controlled-memory-gateway.ts.
-- `canReinject=false` and `promotionEligible=false` are preserved invariants.
+- `canReinject=false` is connector-normalized; `promotionEligible=false` is a preserved invariant.
 - S5 is fully row-detailed; no aggregate rows used.
 
 **Reviewer disposition:** PASS

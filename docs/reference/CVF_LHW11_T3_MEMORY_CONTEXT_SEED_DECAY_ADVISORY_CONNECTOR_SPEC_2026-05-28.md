@@ -38,7 +38,8 @@ This connector is a documentation-only normalization artifact. It does not execu
 
 `runtimeExecutionAuthorized=false`
 
-`canReinject=false` (preserved from W2/AIF-C/LHW8-T1)
+`canReinject=false` (connector-normalized; AIF-C exposes a boolean field, and
+this doc-only connector forbids reinjection)
 
 `rawMemoryReleased=false` (preserved from W2/AIF-C/LHW8-T1)
 
@@ -74,7 +75,7 @@ A memory context seed decay advisory packet must include:
 - `signalsStillMissing`: from LHW7-T2
 - `memoryContextSeedDecayAdvisoryType`: derived from S2 mapping (new doc-only field)
 - `promotionGateRecommendation`: derived plain-language guidance (new doc-only field)
-- `canReinject`: `false` (literal invariant)
+- `canReinject`: `false` (connector-normalized invariant)
 - `rawMemoryReleased`: `false` (literal invariant)
 - `promotionEligible`: `false` (literal invariant)
 - `runtimeExecutionAuthorized`: `false` (literal invariant)
@@ -107,7 +108,7 @@ Example packet:
 
 | Boundary | Rationale | Enforcement |
 | --- | --- | --- |
-| No memory reinjection | `canReinject=false` preserved | `canReinject=false` explicit |
+| No memory reinjection | `canReinject=false` connector-normalized | `canReinject=false` explicit |
 | No raw memory release | `rawMemoryReleased=false` preserved | `rawMemoryReleased=false` explicit |
 | No promotion authority | `promotionEligible=false` preserved | `promotionEligible=false` explicit |
 | `runtimeExecutionAuthorized=false` | Literal invariant | S3 example packet |
@@ -150,7 +151,7 @@ This connector is a documentation-only normalization artifact. It does not perfo
 
 `runtimeExecutionAuthorized=false`
 
-`canReinject=false`
+`canReinject=false` (connector-normalized)
 
 `rawMemoryReleased=false`
 

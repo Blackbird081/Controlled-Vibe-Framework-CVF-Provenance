@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE
+Status: CLOSED_PASS
 
 docType: completion_review
 
@@ -24,6 +24,7 @@ Work order:
 Deliverables:
 
 - `docs/reference/CVF_LHW11_T1_SESSION_GOVERNANCE_POSTURE_AGGREGATOR_CONNECTOR_SPEC_2026-05-28.md`
+- `docs/reference/CVF_LHW11_T1_SESSION_GOVERNANCE_POSTURE_AGGREGATOR_SOURCE_VERIFICATION_2026-05-29.md`
 - `docs/reviews/CVF_LHW11_T1_FAST_LANE_AUDIT_2026-05-28.md`
 - This completion review
 
@@ -60,9 +61,9 @@ Deliverables:
 | Roadmap requirement | Work order section | Output artifact or field | Verification | Status |
 | --- | --- | --- | --- | --- |
 | T1 spec; all 4 input advisory types verbatim | S1–S5 | spec at target path | Reviewer confirms verbatim field names | CLOSED |
-| Risk-tier grouping in S2 to stay < 250 lines | S2 | tier table with CLEAR/HOLD/BLOCKED rows | Reviewer checks line count | CLOSED |
+| Risk-tier grouping in S2 to stay < 250 lines | S2 | tier table with CLEAR/HOLD/BLOCKED rows | Primary spec line count checked after S5 appendix split | CLOSED |
 | `runtimeExecutionAuthorized=false` explicit | S1, S3 | invariant stated | `rg "runtimeExecutionAuthorized=false"` | CLOSED |
-| All 4 advisory type names individually row-verified in S5 | S5 | 4 field-level rows | No aggregate rows | CLOSED |
+| All 4 advisory type names individually row-verified | S5 appendix | 4 field-level rows | No aggregate rows | CLOSED |
 | No code file modified | Evidence | git diff | `git diff --name-only` | CLOSED |
 
 
@@ -75,6 +76,7 @@ Changed files:
 
 ```
 docs/reference/CVF_LHW11_T1_SESSION_GOVERNANCE_POSTURE_AGGREGATOR_CONNECTOR_SPEC_2026-05-28.md [A]
+docs/reference/CVF_LHW11_T1_SESSION_GOVERNANCE_POSTURE_AGGREGATOR_SOURCE_VERIFICATION_2026-05-29.md [A]
 docs/reviews/CVF_LHW11_T1_FAST_LANE_AUDIT_2026-05-28.md [A]
 docs/reviews/CVF_LHW11_T1_SESSION_GOVERNANCE_POSTURE_AGGREGATOR_CONNECTOR_COMPLETION_2026-05-28.md [A]
 ```
@@ -82,12 +84,18 @@ docs/reviews/CVF_LHW11_T1_SESSION_GOVERNANCE_POSTURE_AGGREGATOR_CONNECTOR_COMPLE
 No `.ts`/`.tsx`/`.js`/`.py` file modified. No `EXTENSIONS/` source file
 modified. No receipt envelope schema modified. No public-sync repo modified.
 
+Corrective note: the original T1 implementation commit also bundled archive
+cleanup outside the T1 work order's Allowed scope. That was a governance defect,
+not connector value. It is now promoted to an Allowed-scope diff gate; the
+connector deliverables are the files listed above.
+
 ## Acceptance Criteria Review
 
-- [x] Spec with all 5 sections; < 250 lines (actual: 224 lines after structural
-  additions)
+- [x] Primary spec with all 5 sections; < 250 lines (actual: 244 lines after
+  S5 appendix split)
 - [x] S2 risk-tier approach; all 4 input advisory types mapped to tiers
 - [x] All 4 input advisory type field names individually verified in S5
+  appendix
 - [x] `runtimeExecutionAuthorized=false` explicit in S1 and S3
 - [x] S4 boundary honest; no doc-only row labeled Runtime
 - [x] No code file in diff
@@ -95,9 +103,9 @@ modified. No receipt envelope schema modified. No public-sync repo modified.
 
 ## Evidence Requirements Review
 
-- [x] Spec < 250 lines; S2 uses risk-tier grouping (actual: 224 lines)
-- [x] All 4 input advisory type names individually row-verified in S5 (58 rows
-  total: 4 field-level rows + 54 value-level rows)
+- [x] Primary spec < 250 lines; S2 uses risk-tier grouping (actual: 244 lines)
+- [x] All 4 input advisory type names individually row-verified in S5 appendix
+  (58 rows total: 4 field-level rows + 54 value-level rows)
 - [x] `runtimeExecutionAuthorized=false` explicit in S1 and S3
 - [x] S4 boundary table: input advisory types labeled Doc-proven; new fields
   labeled Doc-only; no re-evaluation of source surfaces labeled Not authorized
@@ -110,9 +118,9 @@ Fast Lane audit disposition: **PASS**
 All Fast Lane criteria satisfied:
 
 - Spec structure complete (S1–S5)
-- Line count under 250
+- Primary spec line count under 250 after S5 appendix split
 - Risk-tier grouping deterministic
-- All 4 input advisory types individually verified
+- All 4 input advisory types individually verified in the appendix
 - `runtimeExecutionAuthorized=false` explicit
 - S4 boundary honest
 - No code file in diff
@@ -138,7 +146,7 @@ Reviewed as Reviewer role:
   final posture
 - `highestRiskAdvisory` selection rule is clear: first encountered in evaluation
   order (LHW10-T1, LHW10-T3, LHW9-T1, LHW8-T2)
-- S5 Source Verification Table is complete: 4 field-level rows + 54 value-level
+- S5 appendix Source Verification Table is complete: 4 field-level rows + 54 value-level
   rows; no aggregate rows
 - S4 boundary honest: no runtime claims; aggregation is documentation-only
 - No re-evaluation of source surfaces claimed

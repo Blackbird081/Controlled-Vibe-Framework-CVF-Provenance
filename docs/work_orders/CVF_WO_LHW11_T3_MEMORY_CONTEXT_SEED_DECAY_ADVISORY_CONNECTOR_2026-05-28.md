@@ -47,7 +47,7 @@ and *what to do next* when decay is detected.
 Implementer writes spec (S1–S5). Reviewer checks: all 6 `memorySnapshotAdvisoryType`
 values individually row-verified in S5; all 3 `contaminationRiskAfterSeed`
 values individually row-verified; all 6 `MemoryGatewayPolicyDecision` values
-individually row-verified; `canReinject=false` preserved; `promotionEligible=false`
+individually row-verified; `canReinject=false` connector-normalized; `promotionEligible=false`
 not overridden. Auditor confirms `tolaria` LH1 trigger recorded; no memory
 reinjection claimed. No self-review.
 
@@ -78,7 +78,7 @@ file, receipt envelope schema, public-sync repo.
 5. `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts`
    — confirm `MemoryGatewayPolicyDecision` values at lines 15–21;
    confirm `MemoryGatewayDecision.decision` at line 44;
-   confirm `canReinject` and `rawMemoryReleased=false` at lines 49–50
+   confirm `canReinject` field existence and `rawMemoryReleased=false` at lines 49–50
 6. `docs/reviews/CVF_LHW11_T1_SESSION_GOVERNANCE_POSTURE_AGGREGATOR_CONNECTOR_COMPLETION_2026-05-28.md`
    — confirm T1 CLOSED_PASS_BOUNDED
 7. `docs/reviews/CVF_LHW11_T2_SPEC_CHANGE_GOVERNANCE_DECISION_CONNECTOR_COMPLETION_2026-05-28.md`
@@ -107,8 +107,8 @@ file, receipt envelope schema, public-sync repo.
 | `allow_summary_only` | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts` | line 19 | `MemoryGatewayPolicyDecision` value | `MemoryGatewayPolicyDecision` | ACCEPT |
 | `deny` | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts` | line 20 | `MemoryGatewayPolicyDecision` value | `MemoryGatewayPolicyDecision` | ACCEPT |
 | `require_human_approval` | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts` | line 21 | `MemoryGatewayPolicyDecision` value | `MemoryGatewayPolicyDecision` | ACCEPT |
-| `MemoryGatewayDecision.decision` | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts` | line 44 | `decision: MemoryGatewayPolicyDecision` | `MemoryGatewayDecision` | ACCEPT |
-| `MemoryGatewayDecision.canReinject` | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts` | line 49 | `canReinject: boolean` | `MemoryGatewayDecision` | ACCEPT |
+| `MemoryGatewayDecision.decision` | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts` | line 44 | `decision` | `MemoryGatewayDecision` | ACCEPT |
+| `MemoryGatewayDecision.canReinject` | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts` | line 49 | `canReinject` | `MemoryGatewayDecision` | ACCEPT |
 | `MemoryGatewayDecision.rawMemoryReleased` | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts` | line 50 | `rawMemoryReleased` | `MemoryGatewayDecision` | ACCEPT |
 | `memoryContextSeedDecayAdvisoryType` (new) | N/A — canonical doc-only field | S3 new fields | doc-only | Memory context seed decay advisory packet | ACCEPT |
 | `promotionGateRecommendation` (new) | N/A — canonical doc-only field | S3 new fields | doc-only | Memory context seed decay advisory packet | ACCEPT |
@@ -117,7 +117,7 @@ file, receipt envelope schema, public-sync repo.
 
 | Roadmap requirement | Work order section | Output artifact or field | Verification | Status |
 | --- | --- | --- | --- | --- |
-| T3 spec; `canReinject=false` preserved | S1, S3, Claim Boundary | invariant stated | `rg "canReinject=false"` | CLOSED |
+| T3 spec; `canReinject=false` connector-normalized | S1, S3, Claim Boundary | invariant stated | `rg "canReinject=false"` | CLOSED |
 | All 6 `memorySnapshotAdvisoryType` values individually row-verified | S5 | 6 rows | No aggregate | CLOSED |
 | All 3 `contaminationRiskAfterSeed` values individually row-verified | S5 | 3 rows | No aggregate | CLOSED |
 | All 6 `MemoryGatewayPolicyDecision` values individually row-verified | S5 | 6 rows | No aggregate | CLOSED |
@@ -148,7 +148,7 @@ Key rows:
   | "High contamination risk. Hold all promotion requests."
 - `signalsStillMissing` non-empty × any × any → add `missing_signals_present=true` to advisory
 
-Key invariants: `canReinject=false` preserved; `promotionEligible=false` from
+Key invariants: `canReinject=false` connector-normalized; `promotionEligible=false` from
 LHW8-T1 is not overridden — this connector adds advisory type only, not
 promotion authority.
 
@@ -183,7 +183,7 @@ Implementer owns all new files. No file outside Allowed list may be modified.
 - Spec < 250 lines
 - All 6 `memorySnapshotAdvisoryType` + all 3 `contaminationRiskAfterSeed` +
   all 6 `MemoryGatewayPolicyDecision` values individually row-verified in S5
-- `canReinject=false` preserved and explicit in S1 and S3
+- `canReinject=false` connector-normalized and explicit in S1 and S3
 - `promotionEligible=false` not overridden
 - T1 and T2 gates confirmed
 - No code file in diff
@@ -221,7 +221,7 @@ spec < 250 lines; no code file.
 - [x] T1 AND T2 CLOSED_PASS_BOUNDED confirmed
 - [x] Spec with all 5 sections
 - [x] S2 maps `memorySnapshotAdvisoryType` × `contaminationRiskAfterSeed` × `MemoryGatewayDecision.decision` → decay advisory
-- [x] `canReinject=false` and `promotionEligible=false` preserved
+- [x] `canReinject=false` connector-normalized and `promotionEligible=false` preserved
 - [x] S5 Source Verification: no aggregate rows
 - [x] No code file in diff
 - [x] Fast Lane audit created
