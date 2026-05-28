@@ -39,6 +39,7 @@ Canonical sources:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md`
 - `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
+- `docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md`
 - `docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md`
 - `docs/reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md`
 - `governance/compat/check_work_order_dispatch_quality.py`
@@ -62,6 +63,11 @@ The autorun workflow has four blocking gates:
 An agent must not continue to the next phase when the current phase fails.
 Operator silence is not a waiver. A waiver must name the failed gate, reason,
 scope, and follow-up owner.
+
+Agent defects discovered during autorun are governance learning inputs. A
+repeated defect must not close as worker blame alone. It must be evaluated for
+promotion from finding to rule, from rule to machine check, or from late machine
+check to earlier phase gate.
 
 Every governed batch must capture a base HEAD anchor before work starts:
 

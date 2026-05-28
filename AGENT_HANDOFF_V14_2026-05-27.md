@@ -146,6 +146,13 @@ for separate live-proof roadmap post-LHW`, especially for `abtop` and `gridex`.
 Continue LHW connector absorption of remaining `PARTIALLY_ABSORBED` LH1
 families before opening separate live-proof roadmaps.
 
+Current HEAD before agent-error governance learning philosophy update:
+`9f1ffe74`. Philosophy in progress: repeated agent mistakes are governance
+training samples. Recurrent defects must move from finding to rule, rule to
+machine check, and late machine check to the earliest applicable autorun phase
+gate. Mixed-agent operation is expected; CVF trust belongs to the control
+chain, not to any one worker model.
+
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=agent_autorun_workflow_control_enforced; active handoff=AGENT_HANDOFF_V14_2026-05-27.md; next allowed move=continue LHW connector absorption first, with any follow-on wave passing autorun pre-dispatch, pre-implementation, pre-closure, and applicable pre-push gates before worker claims can be trusted; parked checkpoint=hosted Netlify freshness and operator external-agent retest for VI5-T4/T5 remain pending.

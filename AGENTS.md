@@ -334,10 +334,21 @@ Canonical standard:
 
 `docs/reference/CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28.md`
 
+Agent-error learning philosophy:
+
+`docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md`
+
 Any agent-led CVF workflow that drafts, dispatches, implements, reviews, closes,
 commits, pushes, or public-syncs governed work must use the autorun workflow
 gates. The intent is to protect non-coder operators from having to manually
 inspect whether a worker agent followed the process.
+
+Repeated agent errors are governance training samples, not merely worker blame.
+If a defect pattern repeats, promote it from finding to written rule; if the
+rule remains interpretable, promote it to machine check; if the machine check
+only catches the issue at closure, move it into the earliest applicable autorun
+phase gate. CVF trust belongs to the governance control chain, not to any one
+agent model.
 
 Required phase gates:
 

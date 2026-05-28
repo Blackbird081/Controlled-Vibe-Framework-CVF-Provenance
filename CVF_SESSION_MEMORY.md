@@ -92,6 +92,15 @@ Closure finality is now machine-enforced. Closed-equivalent governed artifacts
 must not retain `| OPEN |` rows, unchecked `- [ ]` checklist items, stale
 roadmap dispatch/hold residue, or Fast Lane active/pass status conflicts.
 
+Agent-error learning philosophy is now canonical:
+
+`docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md`
+
+Repeated agent mistakes are governance training samples, not merely worker
+blame. Promote repeated defects from finding to written rule, from rule to
+machine check, and from late machine check to the earliest applicable autorun
+phase gate.
+
 LHW scope rejection is not source rejection. For doc-only LHW connector waves,
 families such as `abtop` or `gridex` that require live route execution must be
 labeled `rejected from this LHW wave (doc-only scope) - requires live route;

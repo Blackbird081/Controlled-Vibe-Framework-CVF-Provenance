@@ -73,6 +73,14 @@ Every tranche, roadmap wave, or delegated work-order quality assessment after
 2026-05-28 must check
 `docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md`.
 
+Quality reviews that identify agent mistakes must also apply:
+
+`docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md`.
+
+Do not stop at assigning blame to a worker. Classify whether the defect exposed
+a work-order gap, rule gap, machine-gate gap, phase-gate placement gap, or
+operator-scope clarity gap.
+
 Minimum review questions:
 
 - Does each roadmap-derived work order include a Roadmap-to-Work-Order Trace

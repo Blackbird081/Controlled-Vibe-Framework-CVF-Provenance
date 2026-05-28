@@ -31,6 +31,19 @@ memory transfer. Trivial direct answers may keep the confirmation internal, but
 roadmap, implementation, review, live run, commit, handoff, or public-sync work
 must satisfy it first.
 
+## Agent Error To Governance Learning Philosophy
+
+Canonical philosophy:
+
+`docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md`
+
+Repeated agent mistakes are governance training samples, not just worker blame.
+If a defect pattern repeats, promote it into a written rule. If the rule can
+still be interpreted loosely, promote it into a machine check. If the machine
+check only catches the issue at the end, move it into the earliest applicable
+autorun phase gate. CVF trust belongs to the governance control chain, not to
+Claude, Codex, Gemini, or any other single worker model.
+
 ## What This Repository Is
 
 **Controlled Vibe Framework (CVF)** is a governance-first control plane for AI-assisted software development. It is not a code library — it is a governance framework with executable controls, process standards, and multi-layer architecture (L0–L5). The core workflow is: `INTAKE → DESIGN → BUILD → REVIEW → FREEZE`.
