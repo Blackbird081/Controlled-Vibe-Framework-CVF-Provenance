@@ -206,9 +206,9 @@ Dispatch only after T1 + T2 are CLOSED_PASS.
 Pre-dispatch verification (per work order):
 
 ```powershell
-python governance/compat/check_work_order_dispatch_quality.py --base 00008651 --head <lhw9-commit-sha> --enforce
-python governance/compat/check_markdown_structural_completeness.py --base 00008651 --head <lhw9-commit-sha> --enforce
-python governance/compat/check_docs_governance_compat.py --base 00008651 --head <lhw9-commit-sha> --enforce
+python governance/compat/check_work_order_dispatch_quality.py --base 00008651 --head c245bc5a --enforce
+python governance/compat/check_markdown_structural_completeness.py --base 00008651 --head c245bc5a --enforce
+python governance/compat/check_docs_governance_compat.py --base 00008651 --head c245bc5a --enforce
 ```
 
 ## Claim Boundary
