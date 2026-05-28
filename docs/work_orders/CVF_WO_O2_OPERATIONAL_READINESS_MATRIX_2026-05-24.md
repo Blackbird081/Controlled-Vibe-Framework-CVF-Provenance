@@ -64,7 +64,7 @@ Sources:
 ## Required First Reads
 
 - `docs/roadmaps/CVF_POST_AIF_NEXT_VALUE_ROADMAP_2026-05-24.md`
-- `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`
+- `docs/reference/archive/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`
 - N4/N5/N6/N7/PBR-04 completion reviews.
 
 ---

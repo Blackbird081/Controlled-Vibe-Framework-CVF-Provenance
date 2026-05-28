@@ -73,7 +73,7 @@ Before filing GC-018 (mandatory):
 - `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/graph/index/symbol-index.ts` — current in-memory `SymbolIndex` implementation
 - `docs/reviews/CVF_N6_AIF_GRAPH_SEARCH_ACTIVATION_COMPLETION_2026-05-24.md` — N6 completion evidence (confirms interface stability)
 - `docs/reviews/CVF_AIF_B_GRAPH_KNOWLEDGE_PHASE1_COMPLETION_2026-05-24.md` — AIF-B delivery baseline
-- `docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md` — agentmemory and code-review-graph rows (Legacy Spec Scan Block required in GC-018)
+- `docs/reference/archive/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md` — agentmemory and code-review-graph rows (Legacy Spec Scan Block required in GC-018)
 
 ---
 

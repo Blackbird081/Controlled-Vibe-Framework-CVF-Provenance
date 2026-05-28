@@ -50,7 +50,7 @@ Disposition: CLOSED_PASS.
 | --- | --- | --- |
 | Memory and continuity | Updated with Memory Gateway Phase 2a in-memory lifecycle/retrieval/context-packager evidence; durable/live reinjection not claimed. | `docs/reviews/CVF_AIF_C_MEMORY_GATEWAY_PHASE2_COMPLETION_2026-05-24.md` PASS |
 | Graph/code-intelligence context (Phase 1) | Updated from roadmap to proven Phase 1 in-memory AST foundation; durable storage/scoring/live authority not claimed. | `docs/reviews/CVF_AIF_B_GRAPH_KNOWLEDGE_PHASE1_COMPLETION_2026-05-24.md` PASS |
-| Operational Reference Index | Added as proven discoverability lookup table. | `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md` PASS; `docs/reviews/CVF_AIF_A_OPERATIONAL_REFERENCE_INDEX_COMPLETION_2026-05-24.md` PASS |
+| Operational Reference Index | Added as proven discoverability lookup table. | `docs/reference/archive/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md` PASS; `docs/reviews/CVF_AIF_A_OPERATIONAL_REFERENCE_INDEX_COMPLETION_2026-05-24.md` PASS |
 
 ## Bounded Wording Verification
 

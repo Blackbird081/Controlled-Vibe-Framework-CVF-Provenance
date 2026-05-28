@@ -70,8 +70,8 @@ Before filing GC-018 (mandatory):
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts` — existing provider definitions
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/provider-router-adapter.ts` — router logic + `maxRiskLevel` per provider
 - `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-registry.ts` — `PROVIDER_CAPABILITY_REGISTRY` typed registry
-- `docs/reference/CVF_QWEN3_HOSTED_PROOF_PREREQUISITES_2026-05-23.md` — if new provider is Alibaba-family (Qwen variant)
-- `docs/reviews/CVF_D10_QWEN3_R1_COMPATIBLE_HOSTED_PROOF_COMPLETION_2026-05-23.md` — Alibaba R1 proof baseline
+- `docs/reference/archive/CVF_QWEN3_HOSTED_PROOF_PREREQUISITES_2026-05-23.md` — if new provider is Alibaba-family (Qwen variant)
+- `docs/reviews/archive/CVF_D10_QWEN3_R1_COMPATIBLE_HOSTED_PROOF_COMPLETION_2026-05-23.md` — Alibaba R1 proof baseline
 
 ---
 

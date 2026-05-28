@@ -2040,11 +2040,11 @@ Utility and guard:
 ## [2026-05-23] Batch: D4 Qwen3 Enable Thinking Adapter Blocker
 
 - Change reference: provenance working tree; GC-018 baseline
-  `docs/baselines/CVF_GC018_D4_QWEN3_ENABLE_THINKING_ADAPTER_2026-05-23.md`
+  `docs/baselines/archive/CVF_GC018_D4_QWEN3_ENABLE_THINKING_ADAPTER_2026-05-23.md`
 - Impacted scope:
   - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts`
   - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.test.ts`
-  - blocker review `docs/reviews/CVF_D4_QWEN3_ENABLE_THINKING_ADAPTER_BLOCKER_REVIEW_2026-05-23.md`
+  - blocker review `docs/reviews/archive/CVF_D4_QWEN3_ENABLE_THINKING_ADAPTER_BLOCKER_REVIEW_2026-05-23.md`
 - Tests executed:
   - `npm run test:run -- src/lib/ai/providers.test.ts` in
     `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` -> PASS, 1 file / 42 tests
@@ -2106,16 +2106,16 @@ Utility and guard:
 
 - Change reference:
   - D6 GC-018:
-    `docs/baselines/CVF_GC018_D6_QWEN3_THINKING_MODEL_ID_CORRECTION_2026-05-23.md`
+    `docs/baselines/archive/CVF_GC018_D6_QWEN3_THINKING_MODEL_ID_CORRECTION_2026-05-23.md`
   - D6 work order:
-    `docs/work_orders/CVF_WO_D6_QWEN3_THINKING_MODEL_ID_CORRECTION_2026-05-23.md`
+    `docs/work_orders/archive/CVF_WO_D6_QWEN3_THINKING_MODEL_ID_CORRECTION_2026-05-23.md`
 - Impacted scope:
   - `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-registry.ts`
   - `EXTENSIONS/CVF_MODEL_GATEWAY/src/providers/alibaba/capability.json`
   - `EXTENSIONS/CVF_MODEL_GATEWAY/tests/provider-capability-registry.test.ts`
   - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.test.ts`
   - blocker review
-    `docs/reviews/CVF_D6_QWEN3_THINKING_MODEL_ID_CORRECTION_BLOCKER_REVIEW_2026-05-23.md`
+    `docs/reviews/archive/CVF_D6_QWEN3_THINKING_MODEL_ID_CORRECTION_BLOCKER_REVIEW_2026-05-23.md`
 - Tests executed:
   - `npm test -- tests/provider-capability-registry.test.ts` in
     `EXTENSIONS/CVF_MODEL_GATEWAY` -> PASS, 1 file / 7 tests.
@@ -2179,12 +2179,12 @@ Utility and guard:
 
 - Change reference:
   - D9 blocker review:
-    `docs/reviews/CVF_D9_QWEN3_THINKING_ENABLE_TRUE_ADAPTER_BLOCKER_REVIEW_2026-05-23.md`
+    `docs/reviews/archive/CVF_D9_QWEN3_THINKING_ENABLE_TRUE_ADAPTER_BLOCKER_REVIEW_2026-05-23.md`
   - D10 GC-018/work order:
-    `docs/baselines/CVF_GC018_D10_QWEN3_R1_COMPATIBLE_HOSTED_PROOF_2026-05-23.md`
-    and `docs/work_orders/CVF_WO_D10_QWEN3_R1_COMPATIBLE_HOSTED_PROOF_2026-05-23.md`
+    `docs/baselines/archive/CVF_GC018_D10_QWEN3_R1_COMPATIBLE_HOSTED_PROOF_2026-05-23.md`
+    and `docs/work_orders/archive/CVF_WO_D10_QWEN3_R1_COMPATIBLE_HOSTED_PROOF_2026-05-23.md`
   - D10 completion review:
-    `docs/reviews/CVF_D10_QWEN3_R1_COMPATIBLE_HOSTED_PROOF_COMPLETION_2026-05-23.md`
+    `docs/reviews/archive/CVF_D10_QWEN3_R1_COMPATIBLE_HOSTED_PROOF_COMPLETION_2026-05-23.md`
 - Public-sync:
   - Verified public remote:
     `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`.

@@ -98,8 +98,8 @@ projection and prove it on the Product Brief selected flow.
   - active runtime files under `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/`
 - Prior absorption evidence resolved:
   - `docs/reference/CVF_LEGACY_HARVEST_SCAN_MAP_2026-05-24.md`
-  - `docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
-  - `docs/reviews/CVF_LEGACY_SPEC_ABSORPTION_BLINDSPOT_CODEX_REVIEW_2026-05-23.md`
+  - `docs/reference/archive/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
+  - `docs/reviews/archive/CVF_LEGACY_SPEC_ABSORPTION_BLINDSPOT_CODEX_REVIEW_2026-05-23.md`
   - `docs/reviews/archive/CVF_PHASE_E_E3_WORKFLOW_BINDING_COMPLETION_2026-05-18.md`
   - `docs/reviews/archive/CVF_PHASE_E_E4_WORKFLOW_EXECUTE_WIRE_COMPLETION_2026-05-18.md`
 - Detailed source files used:

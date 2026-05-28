@@ -15,7 +15,7 @@ Date: 2026-05-24
 - `docs/roadmaps/CVF_WC_WORKFLOW_CHAIN_AND_PAIN_POINT_ROADMAP_2026-05-24.md`
 - `docs/reference/CVF_LEGACY_HARVEST_SCAN_MAP_2026-05-24.md`
 - `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`
-- `docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
+- `docs/reference/archive/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
 - `docs/reviews/archive/CVF_D2_PROVIDER_CAPABILITY_MATRIX_COMPLETION_2026-05-22.md`
 - `docs/baselines/archive/CVF_GC018_D2_PROVIDER_CAPABILITY_MATRIX_2026-05-22.md`
 - `docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md`
@@ -61,7 +61,7 @@ summarizes fallback/retry posture, and returns a secret-safe user action.
   - `.private_reference/legacy/CVF 16.5/free Claude Code/` - 7 files
   - `.private_reference/legacy/CVF ADD/openrouter-cli.git/` - 23 files
 - Prior absorption evidence resolved:
-  - `docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
+  - `docs/reference/archive/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
   - `docs/reference/CVF_LEGACY_HARVEST_SCAN_MAP_2026-05-24.md`
   - `docs/reviews/archive/CVF_D2_PROVIDER_CAPABILITY_MATRIX_COMPLETION_2026-05-22.md`
   - `docs/baselines/archive/CVF_GC018_D2_PROVIDER_CAPABILITY_MATRIX_2026-05-22.md`

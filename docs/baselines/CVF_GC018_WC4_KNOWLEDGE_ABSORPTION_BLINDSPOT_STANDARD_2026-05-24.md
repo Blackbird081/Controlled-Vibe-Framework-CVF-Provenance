@@ -42,7 +42,7 @@ Out of scope:
 
 Predecessor evidence:
 
-- `docs/reviews/CVF_LEGACY_SPEC_ABSORPTION_BLINDSPOT_CODEX_REVIEW_2026-05-23.md`
+- `docs/reviews/archive/CVF_LEGACY_SPEC_ABSORPTION_BLINDSPOT_CODEX_REVIEW_2026-05-23.md`
 - `docs/reference/CVF_LEGACY_HARVEST_SCAN_MAP_2026-05-24.md`
 - `docs/reference/CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md`
 - `.private_reference/legacy/CVF ADD/REVIEW FOLDER/CVF_ADD_KNOWLEDGE_ABSORPTION_EXECUTIVE_ASSESSMENT_2026-05-06.md`
@@ -60,10 +60,10 @@ Predecessor evidence:
   - `.private_reference/legacy/CVF ADD/REVIEW FOLDER/` detailed synthesis files;
   - `.private_reference/legacy/CVF Edit/` detailed audit/failure files;
   - `docs/reference/CVF_LEGACY_HARVEST_SCAN_MAP_2026-05-24.md`;
-  - `docs/reviews/CVF_LEGACY_SPEC_ABSORPTION_BLINDSPOT_CODEX_REVIEW_2026-05-23.md`.
+  - `docs/reviews/archive/CVF_LEGACY_SPEC_ABSORPTION_BLINDSPOT_CODEX_REVIEW_2026-05-23.md`.
 - Prior absorption evidence resolved:
   - `docs/reference/CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md`;
-  - `docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`;
+  - `docs/reference/archive/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`;
   - `docs/reference/CVF_GC018_CONTINUATION_CANDIDATE_TEMPLATE.md`.
 - Detailed source files used:
   - `.private_reference/legacy/CVF ADD/REVIEW FOLDER/CVF_ADD_KNOWLEDGE_ABSORPTION_EXECUTIVE_ASSESSMENT_2026-05-06.md`;
@@ -111,7 +111,7 @@ Predecessor evidence:
   knowledge absorption.
 - Continuation class: STRUCTURAL
 - Active quality assessment:
-  `docs/reviews/CVF_LEGACY_SPEC_ABSORPTION_BLINDSPOT_CODEX_REVIEW_2026-05-23.md`
+  `docs/reviews/archive/CVF_LEGACY_SPEC_ABSORPTION_BLINDSPOT_CODEX_REVIEW_2026-05-23.md`
 - Assessment date: 2026-05-23
 - Weighted total: 9.0/10
 - Lowest dimension: machine enforcement (7.0/10)

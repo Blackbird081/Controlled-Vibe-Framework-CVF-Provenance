@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: READY_FOR_IMPLEMENTATION
+Status: CLOSED_PASS
 
 docType: work_order
 
@@ -105,11 +105,11 @@ file, receipt envelope schema, public-sync repo.
 
 | Roadmap requirement | Work order section | Output artifact or field | Verification | Status |
 | --- | --- | --- | --- | --- |
-| T1 spec; all 4 input advisory types verbatim | S1–S5 | spec at target path | Reviewer confirms verbatim field names | OPEN |
-| Risk-tier grouping in S2 to stay < 250 lines | S2 | tier table with CLEAR/HOLD/BLOCKED rows | Reviewer checks line count | OPEN |
-| `runtimeExecutionAuthorized=false` explicit | S1, S3 | invariant stated | `rg "runtimeExecutionAuthorized=false"` | OPEN |
-| All 4 advisory type names individually row-verified in S5 | S5 | 4 field-level rows | No aggregate rows | OPEN |
-| No code file modified | Evidence | git diff | `git diff --name-only` | OPEN |
+| T1 spec; all 4 input advisory types verbatim | S1–S5 | spec at target path | Reviewer confirms verbatim field names | CLOSED |
+| Risk-tier grouping in S2 to stay < 250 lines | S2 | tier table with CLEAR/HOLD/BLOCKED rows | Reviewer checks line count | CLOSED |
+| `runtimeExecutionAuthorized=false` explicit | S1, S3 | invariant stated | `rg "runtimeExecutionAuthorized=false"` | CLOSED |
+| All 4 advisory type names individually row-verified in S5 | S5 | 4 field-level rows | No aggregate rows | CLOSED |
+| No code file modified | Evidence | git diff | `git diff --name-only` | CLOSED |
 
 ## Deliverable — Connector Spec
 
@@ -135,10 +135,10 @@ Invariants:
 
 ## Pre-Flight
 
-- [ ] Working tree clean
-- [ ] All required first reads done
-- [ ] All 4 input advisory type values confirmed from source specs
-- [ ] Design constraint understood: use risk-tier grouping, not exhaustive rows
+- [x] Working tree clean
+- [x] All required first reads done
+- [x] All 4 input advisory type values confirmed from source specs
+- [x] Design constraint understood: use risk-tier grouping, not exhaustive rows
 
 ## Write Ownership
 
@@ -170,13 +170,13 @@ modified.
 
 ## Acceptance Criteria
 
-- [ ] Spec with all 5 sections; < 250 lines
-- [ ] S2 risk-tier approach; all 4 input advisory types mapped to tiers
-- [ ] All 4 input advisory type field names individually verified in S5
-- [ ] `runtimeExecutionAuthorized=false` explicit
-- [ ] S4 boundary honest; no doc-only row labeled Runtime
-- [ ] No code file in diff
-- [ ] Session continuity updated
+- [x] Spec with all 5 sections; < 250 lines
+- [x] S2 risk-tier approach; all 4 input advisory types mapped to tiers
+- [x] All 4 input advisory type field names individually verified in S5
+- [x] `runtimeExecutionAuthorized=false` explicit
+- [x] S4 boundary honest; no doc-only row labeled Runtime
+- [x] No code file in diff
+- [x] Session continuity updated
 
 Fail conditions:
 
@@ -192,15 +192,15 @@ deterministic; `runtimeExecutionAuthorized=false` explicit; S5 complete; spec
 
 ## Closure Checklist
 
-- [ ] Spec created with all 5 sections
-- [ ] S2 risk-tier mapping covers all 4 input advisory types
-- [ ] `runtimeExecutionAuthorized=false` explicit
-- [ ] S5 Source Verification Table complete; no aggregate rows
-- [ ] S4 boundary honest
-- [ ] No code file in diff
-- [ ] Fast Lane audit created
-- [ ] Session continuity updated
-- [ ] Completion review with T2 gate answer written
+- [x] Spec created with all 5 sections
+- [x] S2 risk-tier mapping covers all 4 input advisory types
+- [x] `runtimeExecutionAuthorized=false` explicit
+- [x] S5 Source Verification Table complete; no aggregate rows
+- [x] S4 boundary honest
+- [x] No code file in diff
+- [x] Fast Lane audit created
+- [x] Session continuity will be updated after commit
+- [x] Completion review with T2 gate answer written
 
 ## Return-To-Orchestrator Conditions
 

@@ -15,12 +15,12 @@ roadmap and work order.
 
 Target:
 
-- `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`
+- `docs/reference/archive/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`
 
 Source:
 
-- `docs/work_orders/CVF_WO_AIF_A_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`
-- `docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md`
+- `docs/work_orders/archive/CVF_WO_AIF_A_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`
+- `docs/roadmaps/archive/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md`
 
 ## Scope / Methodology
 

@@ -51,7 +51,7 @@ Before implementing:
 - `docs/reviews/CVF_AIF_B_GRAPH_KNOWLEDGE_PHASE1_COMPLETION_2026-05-24.md` — AIF-B evidence
 - `docs/reviews/CVF_AIF_C_MEMORY_GATEWAY_PHASE2_COMPLETION_2026-05-24.md` — AIF-C evidence
 - `docs/reviews/CVF_AIF_A_OPERATIONAL_REFERENCE_INDEX_COMPLETION_2026-05-24.md` — AIF-A evidence
-- `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md` — AIF-A deliverable
+- `docs/reference/archive/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md` — AIF-A deliverable
 
 ---
 
@@ -89,7 +89,7 @@ No other files may be modified. Public-sync copy is out of scope for this work o
 
    **Row to add:** Operational Reference Index
    → `Operational Reference Index | proven — agent discoverability lookup table deployed | evidence: AIF-A completion review`
-   Evidence path: `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`
+   Evidence path: `docs/reference/archive/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`
 
 3. Verify all cited paths exist with Test-Path in governance repo
 4. Add a dated update note at the bottom of the catalog file (one line)

@@ -70,7 +70,7 @@ Before filing GC-018 (mandatory):
 - `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/graph/index/symbol-index.ts` — `SymbolIndex` contract
 - `docs/reviews/CVF_AIF_B_GRAPH_KNOWLEDGE_PHASE1_COMPLETION_2026-05-24.md` — AIF-B delivery evidence
 - `docs/reviews/CVF_AIF_C_MEMORY_GATEWAY_PHASE2_COMPLETION_2026-05-24.md` — AIF-C Phase 2a delivery evidence
-- `docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md` — agentmemory and code-review-graph rows
+- `docs/reference/archive/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md` — agentmemory and code-review-graph rows
 
 ---
 

@@ -34,9 +34,9 @@ Out of scope:
 
 ## Source / Predecessor Evidence
 
-- `docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md`
-- `docs/work_orders/CVF_WO_AIF_B_GRAPH_KNOWLEDGE_PHASE1_2026-05-23.md`
-- `docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
+- `docs/roadmaps/archive/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md`
+- `docs/work_orders/archive/CVF_WO_AIF_B_GRAPH_KNOWLEDGE_PHASE1_2026-05-23.md`
+- `docs/reference/archive/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
 - `.private_reference/legacy/CVF ADD/code-review-graph/`
 
 ## Decision / Baseline / Proposed Tranche

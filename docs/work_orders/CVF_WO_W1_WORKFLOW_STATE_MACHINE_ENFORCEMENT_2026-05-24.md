@@ -118,7 +118,7 @@ Documentation ownership:
   - `.private_reference/legacy/CVF ADD/Agent Harnesses/` — 11 files
 - Prior absorption evidence resolved:
   - `docs/reference/CVF_LEGACY_HARVEST_SCAN_MAP_2026-05-24.md`
-  - `docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
+  - `docs/reference/archive/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
   - Phase E workflow-binding closure packets
 - Detailed source files used:
   - CVF Edit state-machine review files listed in Required First Reads

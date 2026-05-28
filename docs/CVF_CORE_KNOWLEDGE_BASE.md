@@ -934,6 +934,6 @@ Canonical references:
 - `governance/compat/CVF_GOVERNED_FILE_SIZE_EXCEPTION_REGISTRY.json`
 - `docs/reviews/CVF_GOVERNED_FILE_SIZE_MAINTAINABILITY_GATE_COMPLETION_2026-05-28.md`
 
-- 2026-05-24: AIF A/B/C all CLOSED_PASS (HEAD f9e2f82d). New surfaces: Learning Plane graph modules (graph-schema, ast-parser, symbol-index, task-query-mapper) + memory gateway phase 2a (controlled-memory-gateway, memory-lifecycle-policy, memory-retrieval-policy, memory-context-packager) + Operational Reference Index at `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`.
+- 2026-05-24: AIF A/B/C all CLOSED_PASS (HEAD f9e2f82d). New surfaces: Learning Plane graph modules (graph-schema, ast-parser, symbol-index, task-query-mapper) + memory gateway phase 2a (controlled-memory-gateway, memory-lifecycle-policy, memory-retrieval-policy, memory-context-packager) + Operational Reference Index at `docs/reference/archive/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`.
 
 - 2026-05-24: Active archive hygiene run — 61 stale docs moved to archive. AIF A/B/C all CLOSED_PASS (HEAD f9e2f82d). New surfaces: Learning Plane graph (graph-schema, ast-parser, symbol-index, task-query-mapper) + memory gateway phase 2a (controlled-memory-gateway, memory-lifecycle-policy, memory-retrieval-policy, memory-context-packager) + Operational Reference Index.

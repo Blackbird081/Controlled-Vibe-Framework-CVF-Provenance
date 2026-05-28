@@ -72,7 +72,7 @@ M2 was verified `CLOSED_PASS` before M1 implementation:
 
 The active legacy registry was read:
 
-- `docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
+- `docs/reference/archive/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
 
 The M1 design was checked against the legacy `agentmemory` folder:
 

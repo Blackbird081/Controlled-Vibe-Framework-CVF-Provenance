@@ -18,8 +18,8 @@ Source: Operator directive on 2026-05-24: "all. create work order for codex" —
 in response to question about the next roadmap after AIF A/B/C closure.
 
 Predecessor evidence:
-- `docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md` (CLOSED_PASS)
-- `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`
+- `docs/roadmaps/archive/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md` (CLOSED_PASS)
+- `docs/reference/archive/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`
 
 ---
 

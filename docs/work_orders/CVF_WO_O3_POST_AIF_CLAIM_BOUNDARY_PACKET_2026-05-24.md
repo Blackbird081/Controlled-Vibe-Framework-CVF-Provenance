@@ -87,7 +87,7 @@ In scope:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V12_2026-05-23.md`
-- `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`
+- `docs/reference/archive/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`
 
 Out of scope:
 

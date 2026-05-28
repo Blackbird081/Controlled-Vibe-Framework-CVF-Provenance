@@ -50,13 +50,13 @@ and writes under the AIF C2 summary-only reinjection gate.
 - Memory tier classifier (to be unfrozen by M2): `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-tier-classifier.contract.ts`
 - AIF C2 reinjection gate: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/aif-memory-reinjection.ts`
 - Runtime memory hierarchy: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/memory/runtime-memory-hierarchy.ts`
-- Legacy spec absorption registry: `docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
+- Legacy spec absorption registry: `docs/reference/archive/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
 
 ---
 
 ## Legacy Spec Scan Block
 
-Per corrective control from `docs/reviews/CVF_LEGACY_SPEC_ABSORPTION_BLINDSPOT_CODEX_REVIEW_2026-05-23.md`:
+Per corrective control from `docs/reviews/archive/CVF_LEGACY_SPEC_ABSORPTION_BLINDSPOT_CODEX_REVIEW_2026-05-23.md`:
 any memory tranche must read the legacy spec absorption registry before design.
 
 Legacy sources relevant to M1:

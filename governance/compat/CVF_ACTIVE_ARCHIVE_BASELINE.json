@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "generatedAt": "2026-05-28T09:04:48.813779",
-  "gitHead": "55fb2da346a2b89901337aade3eb6115cc291ff0",
-  "cutoffDate": "2026-05-23",
+  "generatedAt": "2026-05-29T00:24:41.858863",
+  "gitHead": "a0827cd0bd851c0f33d8e7ca7a4434d00bcb776a",
+  "cutoffDate": "2026-05-24",
   "ageThresholdDays": 5,
   "scopeMode": "incremental",
   "managedRoots": [
@@ -10,20 +10,15 @@
     "ECOSYSTEM/strategy"
   ],
   "files": {
-    "docs/audits/CVF_LEGACY_SPEC_ABSORPTION_BLINDSPOT_AUDIT_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "17661:1779933887140631900"
-    },
     "docs/baselines/CVF_GC018_AIF_B_GRAPH_KNOWLEDGE_PHASE1_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "4669:1779557660903761100"
+      "signature": "4804:1779989079819469100"
     },
     "docs/baselines/CVF_GC018_AIF_C_MEMORY_GATEWAY_PHASE2_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "5102:1779557660903761100"
+      "signature": "5237:1779989079819778500"
     },
     "docs/baselines/CVF_GC018_ALPHA_MANDATORY_STARTUP_ACKNOWLEDGMENT_2026-05-26.md": {
       "bucket": "active_dated",
@@ -75,46 +70,6 @@
       "date": "2026-05-25",
       "signature": "3456:1779676186897368700"
     },
-    "docs/baselines/CVF_GC018_D10_QWEN3_R1_COMPATIBLE_HOSTED_PROOF_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "2805:1779547959949177200"
-    },
-    "docs/baselines/CVF_GC018_D3_QWEN3_PROVIDER_EXPANSION_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "5180:1779933887155218200"
-    },
-    "docs/baselines/CVF_GC018_D4_QWEN3_ENABLE_THINKING_ADAPTER_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "5883:1779531770506630000"
-    },
-    "docs/baselines/CVF_GC018_D5_QWEN3_HOSTED_SAFE_PAYLOAD_RERUN_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "6353:1779542528936969300"
-    },
-    "docs/baselines/CVF_GC018_D6_QWEN3_THINKING_MODEL_ID_CORRECTION_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "5204:1779544742523368200"
-    },
-    "docs/baselines/CVF_GC018_D7_QWEN3_SKILL_PREFLIGHT_HOSTED_PROOF_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "3987:1779547331188546900"
-    },
-    "docs/baselines/CVF_GC018_D8_QWEN3_AI_COMMIT_HOSTED_PROOF_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "2919:1779547331190077700"
-    },
-    "docs/baselines/CVF_GC018_D9_QWEN3_THINKING_ENABLE_TRUE_ADAPTER_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "3147:1779547520849674300"
-    },
     "docs/baselines/CVF_GC018_D_PROVIDER_SCALE_LIVE_VI_PROOF_2026-05-25.md": {
       "bucket": "active_dated",
       "date": "2026-05-25",
@@ -143,12 +98,42 @@
     "docs/baselines/CVF_GC018_LH1_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md": {
       "bucket": "active_dated",
       "date": "2026-05-25",
-      "signature": "5118:1779644376660712300"
+      "signature": "5270:1779989079821597800"
+    },
+    "docs/baselines/CVF_GC018_LHW10_WORKFLOW_CONNECTOR_WAVE10_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "6899:1779975642346018600"
+    },
+    "docs/baselines/CVF_GC018_LHW11_WORKFLOW_CONNECTOR_WAVE11_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "5892:1779986140344926800"
+    },
+    "docs/baselines/CVF_GC018_LHW6_WORKFLOW_CONNECTOR_WAVE6_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "3285:1779941711100904600"
+    },
+    "docs/baselines/CVF_GC018_LHW7_WORKFLOW_CONNECTOR_WAVE7_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "4844:1779948591515495700"
+    },
+    "docs/baselines/CVF_GC018_LHW8_WORKFLOW_CONNECTOR_WAVE8_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "4479:1779958128394590700"
+    },
+    "docs/baselines/CVF_GC018_LHW9_WORKFLOW_CONNECTOR_WAVE9_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "4432:1779970816702936800"
     },
     "docs/baselines/CVF_GC018_M1_DURABLE_CROSS_SESSION_MEMORY_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "5713:1779598980621973100"
+      "signature": "5880:1779989079823566200"
     },
     "docs/baselines/CVF_GC018_M2_D06_MEMORY_TIER_FREEZE_RELEASE_2026-05-24.md": {
       "bucket": "active_dated",
@@ -168,32 +153,17 @@
     "docs/baselines/CVF_GC018_N7_THIRD_PROVIDER_EXPANSION_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "2897:1779568162337940900"
+      "signature": "2990:1779989079824487800"
     },
     "docs/baselines/CVF_GC018_O1_AIF_OPERATIONAL_CONTEXT_PREVIEW_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "2562:1779584930625316700"
+      "signature": "2648:1779989079824487800"
     },
     "docs/baselines/CVF_GC018_P1_PRODUCTION_READINESS_SMALL_TEAM_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
       "signature": "4054:1779598980627225400"
-    },
-    "docs/baselines/CVF_GC018_P2_P3_HN1_NEXT_VALUE_SCREENING_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "9950:1779933887158365600"
-    },
-    "docs/baselines/CVF_GC018_P3_HOSTED_PROTECTED_WORKFLOW_PROOF_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "4583:1779525949204456800"
-    },
-    "docs/baselines/CVF_GC018_P3_HOSTED_PROTECTED_WORKFLOW_PROOF_RERUN_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "3889:1779818717026716300"
     },
     "docs/baselines/CVF_GC018_PBR04_GRAPH_SQLITE_PERSIST_2026-05-24.md": {
       "bucket": "active_dated",
@@ -293,27 +263,27 @@
     "docs/baselines/CVF_GC018_W1_WORKFLOW_STATE_MACHINE_ENFORCEMENT_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "8949:1779635237326938500"
+      "signature": "9163:1779989079824487800"
     },
     "docs/baselines/CVF_GC018_W2_MEMORY_EVENT_HOOKS_CONTEXT_PACKAGER_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "8988:1779636547695673000"
+      "signature": "9205:1779989079827470300"
     },
     "docs/baselines/CVF_GC018_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "11425:1779933887159887800"
+      "signature": "11441:1779989079827470300"
     },
     "docs/baselines/CVF_GC018_W4_OPERATIONAL_BENCHMARK_SCORECARD_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "10768:1779933887159887800"
+      "signature": "10776:1779989079827470300"
     },
     "docs/baselines/CVF_GC018_W5_PROVIDER_METHOD_FALLBACK_NORMALIZATION_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "10638:1779933887159887800"
+      "signature": "10654:1779989079829018900"
     },
     "docs/baselines/CVF_GC018_W6_NONCODER_ARTIFACT_EXPORT_HARDENING_2026-05-24.md": {
       "bucket": "active_dated",
@@ -333,12 +303,12 @@
     "docs/baselines/CVF_GC018_WC3_LEGACY_HARVEST_SCAN_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "2144:1779933887164429100"
+      "signature": "2160:1779989079829018900"
     },
     "docs/baselines/CVF_GC018_WC4_KNOWLEDGE_ABSORPTION_BLINDSPOT_STANDARD_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "7361:1779632310375713700"
+      "signature": "7578:1779989079830744700"
     },
     "docs/baselines/CVF_GC018_WR1_WORKFLOW_RECOVERY_STATE_PROOF_2026-05-25.md": {
       "bucket": "active_dated",
@@ -375,6 +345,16 @@
       "date": "2026-05-24",
       "signature": "3280:1779602528209586600"
     },
+    "docs/reference/CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "12893:1779982750844992400"
+    },
+    "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "4582:1779982815661720300"
+    },
     "docs/reference/CVF_CANDIDATE7_EXTERNAL_SKILL_SOURCE_SCREENING_MATRIX_2026-05-25.md": {
       "bucket": "active_dated",
       "date": "2026-05-25",
@@ -393,22 +373,37 @@
     "docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "9712:1779631981243419000"
+      "signature": "11062:1779989079867251000"
     },
     "docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md": {
       "bucket": "active_dated",
       "date": "2026-05-25",
-      "signature": "16488:1779644480615926700"
+      "signature": "17523:1779989079867634900"
     },
     "docs/reference/CVF_LEGACY_HARVEST_SCAN_MAP_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "13454:1779933887205554700"
+      "signature": "13470:1779989079868814500"
     },
-    "docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md": {
+    "docs/reference/CVF_LHW10_T1_WORKFLOW_TRANSITION_ENFORCEMENT_ADVISORY_CONNECTOR_SPEC_2026-05-28.md": {
       "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "13528:1779567635384339600"
+      "date": "2026-05-28",
+      "signature": "18332:1779975340381068500"
+    },
+    "docs/reference/CVF_LHW10_T2_RUNTIME_MATURITY_EVIDENCE_CHAIN_CONNECTOR_SPEC_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "12861:1779976231804347000"
+    },
+    "docs/reference/CVF_LHW10_T3_PROVIDER_HEALTH_DEGRADATION_ADVISORY_CONNECTOR_SPEC_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "16282:1779976774847350400"
+    },
+    "docs/reference/CVF_LHW11_T1_SESSION_GOVERNANCE_POSTURE_AGGREGATOR_CONNECTOR_SPEC_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "25974:1779988474488911500"
     },
     "docs/reference/CVF_LHW1_CONTEXT_PROFILE_CONNECTOR_SPEC_2026-05-27.md": {
       "bucket": "active_dated",
@@ -475,10 +470,80 @@
       "date": "2026-05-27",
       "signature": "8017:1779871643050994600"
     },
+    "docs/reference/CVF_LHW5_ARTIFACT_EXPORT_BOUNDARY_ADVISORY_CONNECTOR_SPEC_2026-05-27.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-27",
+      "signature": "6950:1779934077475764900"
+    },
     "docs/reference/CVF_LHW5_DATABASE_ACTION_BOUNDARY_CONNECTOR_SPEC_2026-05-27.md": {
       "bucket": "active_dated",
       "date": "2026-05-27",
       "signature": "7385:1779933738883521000"
+    },
+    "docs/reference/CVF_LHW5_FAILURE_SIMULATION_SCENARIO_PACKET_CONNECTOR_SPEC_2026-05-27.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-27",
+      "signature": "9377:1779935521779771200"
+    },
+    "docs/reference/CVF_LHW6_CLI_TOOL_ONBOARDING_GOVERNANCE_CONNECTOR_SPEC_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "7476:1779947737316489900"
+    },
+    "docs/reference/CVF_LHW6_PROJECT_MEMORY_READOUT_CONNECTOR_SPEC_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "8468:1779942976348645900"
+    },
+    "docs/reference/CVF_LHW6_TOOL_RUNTIME_BRIDGE_ADVISORY_CONNECTOR_SPEC_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "7185:1779942972953709300"
+    },
+    "docs/reference/CVF_LHW7_T1_WORKFLOW_RECOVERY_TOOL_REENTRY_CONNECTOR_SPEC_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "10419:1779954674261316300"
+    },
+    "docs/reference/CVF_LHW7_T2_PROJECT_MEMORY_CONTEXT_BUDGET_HANDOFF_CONNECTOR_SPEC_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "9059:1779954693383701600"
+    },
+    "docs/reference/CVF_LHW7_T3_FAILURE_SIM_SPEC_CHANGE_REINTAKE_CONNECTOR_SPEC_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "10177:1779954703746969500"
+    },
+    "docs/reference/CVF_LHW8_T1_MEMORY_EVENT_HOOK_GOVERNANCE_SNAPSHOT_CONNECTOR_SPEC_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "10647:1779959477274853100"
+    },
+    "docs/reference/CVF_LHW8_T2_EXECUTION_IDENTITY_AUTHORITY_CHAIN_READOUT_CONNECTOR_SPEC_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "10235:1779958097869659600"
+    },
+    "docs/reference/CVF_LHW8_T3_OPERATIONAL_BENCHMARK_FAILURE_CLASS_REINTAKE_CONNECTOR_SPEC_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "10604:1779958099773345400"
+    },
+    "docs/reference/CVF_LHW9_T1_MCP_TOOL_APPROVAL_ADVISORY_CONNECTOR_SPEC_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "9079:1779971029803948600"
+    },
+    "docs/reference/CVF_LHW9_T2_NONCODER_FRICTION_ADVISORY_CONNECTOR_SPEC_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "8937:1779971196208122100"
+    },
+    "docs/reference/CVF_LHW9_T3_INTEGRATION_LAYER_PACKAGING_CONNECTOR_SPEC_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "9069:1779971382751716300"
     },
     "docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md": {
       "bucket": "active_dated",
@@ -495,30 +560,25 @@
       "date": "2026-05-25",
       "signature": "8933:1779692288016675200"
     },
-    "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "7485:1779933887212599400"
-    },
     "docs/reference/CVF_POST_AIF_OPERATIONAL_READINESS_MATRIX_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "4763:1779595556665081500"
-    },
-    "docs/reference/CVF_QWEN3_HOSTED_PROOF_PREREQUISITES_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "10636:1779548995099000500"
+      "signature": "4841:1779989079875193600"
     },
     "docs/reference/CVF_VIBE_TO_SPEC_CONVERSATION_CAPTURE_FORM_2026-05-25.md": {
       "bucket": "active_dated",
       "date": "2026-05-25",
       "signature": "10723:1779704753180470900"
     },
+    "docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "9166:1779988416344679600"
+    },
     "docs/reviews/CVF_AIF_A_OPERATIONAL_REFERENCE_INDEX_COMPLETION_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "2029:1779558032694080900"
+      "signature": "2122:1779989079891893300"
     },
     "docs/reviews/CVF_AIF_B_GRAPH_KNOWLEDGE_PHASE1_COMPLETION_2026-05-24.md": {
       "bucket": "active_dated",
@@ -529,11 +589,6 @@
       "bucket": "active_dated",
       "date": "2026-05-24",
       "signature": "2616:1779558032694080900"
-    },
-    "docs/reviews/CVF_AIF_ROADMAP_DISPATCH_FAST_LANE_AUDIT_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "6491:1779555276231922100"
     },
     "docs/reviews/CVF_ALPHA_MANDATORY_STARTUP_ACKNOWLEDGMENT_COMPLETION_2026-05-26.md": {
       "bucket": "active_dated",
@@ -590,51 +645,6 @@
       "date": "2026-05-25",
       "signature": "4586:1779677051957348500"
     },
-    "docs/reviews/CVF_D10_QWEN3_PREREQUISITES_REFERENCE_FAST_LANE_AUDIT_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "4708:1779549250370627800"
-    },
-    "docs/reviews/CVF_D10_QWEN3_R1_COMPATIBLE_HOSTED_PROOF_COMPLETION_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "5516:1779548292408606900"
-    },
-    "docs/reviews/CVF_D3_QWEN3_PROVIDER_EXPANSION_BLOCKER_REVIEW_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "6610:1779530152650998800"
-    },
-    "docs/reviews/CVF_D4_QWEN3_ENABLE_THINKING_ADAPTER_BLOCKER_REVIEW_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "6628:1779537938620136500"
-    },
-    "docs/reviews/CVF_D5_QWEN3_HOSTED_SAFE_PAYLOAD_RERUN_BLOCKER_REVIEW_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "8925:1779543360717928700"
-    },
-    "docs/reviews/CVF_D6_QWEN3_THINKING_MODEL_ID_CORRECTION_BLOCKER_REVIEW_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "9142:1779546188962002300"
-    },
-    "docs/reviews/CVF_D7_QWEN3_SKILL_PREFLIGHT_HOSTED_PROOF_BLOCKER_REVIEW_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "4906:1779547331191208700"
-    },
-    "docs/reviews/CVF_D8_QWEN3_AI_COMMIT_HOSTED_PROOF_BLOCKER_REVIEW_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "4984:1779547331194808800"
-    },
-    "docs/reviews/CVF_D9_QWEN3_THINKING_ENABLE_TRUE_ADAPTER_BLOCKER_REVIEW_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "4779:1779548226754741100"
-    },
     "docs/reviews/CVF_D_PROVIDER_SCALE_LIVE_VI_PROOF_COMPLETION_2026-05-25.md": {
       "bucket": "active_dated",
       "date": "2026-05-25",
@@ -663,7 +673,7 @@
     "docs/reviews/CVF_GC019_AIF_FOUNDATIONS_STRUCTURAL_REVIEW_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "2839:1779558167637119400"
+      "signature": "2923:1779989079897787400"
     },
     "docs/reviews/CVF_GC019_M2_D06_MEMORY_TIER_FREEZE_RELEASE_REBUTTAL_2026-05-24.md": {
       "bucket": "active_dated",
@@ -675,20 +685,60 @@
       "date": "2026-05-24",
       "signature": "2658:1779589285001231600"
     },
+    "docs/reviews/CVF_GOVERNED_FILE_SIZE_MAINTAINABILITY_GATE_COMPLETION_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "2636:1779943910700636300"
+    },
     "docs/reviews/CVF_L1_MULTILINGUAL_SPEC_FIRST_MEDIATION_T1_COMPLETION_2026-05-25.md": {
       "bucket": "active_dated",
       "date": "2026-05-25",
       "signature": "4999:1779698064813271200"
     },
-    "docs/reviews/CVF_LEGACY_SPEC_ABSORPTION_BLINDSPOT_CODEX_REVIEW_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "8175:1779933887248792400"
-    },
     "docs/reviews/CVF_LH1_LEGACY_HARVEST_CLOSEOUT_LEDGER_COMPLETION_2026-05-25.md": {
       "bucket": "active_dated",
       "date": "2026-05-25",
       "signature": "4504:1779644508164186300"
+    },
+    "docs/reviews/CVF_LHW10_T1_FAST_LANE_AUDIT_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "5102:1779975357693415800"
+    },
+    "docs/reviews/CVF_LHW10_T1_WORKFLOW_TRANSITION_ENFORCEMENT_ADVISORY_CONNECTOR_COMPLETION_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "7503:1779975659324724800"
+    },
+    "docs/reviews/CVF_LHW10_T2_FAST_LANE_AUDIT_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "4882:1779976264432989500"
+    },
+    "docs/reviews/CVF_LHW10_T2_RUNTIME_MATURITY_EVIDENCE_CHAIN_CONNECTOR_COMPLETION_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "4906:1779976312588006300"
+    },
+    "docs/reviews/CVF_LHW10_T3_FAST_LANE_AUDIT_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "4984:1779979776646133600"
+    },
+    "docs/reviews/CVF_LHW10_T3_PROVIDER_HEALTH_DEGRADATION_ADVISORY_CONNECTOR_COMPLETION_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "8936:1779976925133094400"
+    },
+    "docs/reviews/CVF_LHW11_T1_FAST_LANE_AUDIT_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "4571:1779988729159209300"
+    },
+    "docs/reviews/CVF_LHW11_T1_SESSION_GOVERNANCE_POSTURE_AGGREGATOR_CONNECTOR_COMPLETION_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "7104:1779988689160138200"
     },
     "docs/reviews/CVF_LHW1_T1_FAST_LANE_AUDIT_2026-05-27.md": {
       "bucket": "active_dated",
@@ -818,27 +868,157 @@
     "docs/reviews/CVF_LHW5_T1_DATABASE_ACTION_BOUNDARY_CONNECTOR_COMPLETION_2026-05-27.md": {
       "bucket": "active_dated",
       "date": "2026-05-27",
-      "signature": "4958:1779933783503840500"
+      "signature": "5046:1779935521782198000"
     },
     "docs/reviews/CVF_LHW5_T1_FAST_LANE_AUDIT_2026-05-27.md": {
       "bucket": "active_dated",
       "date": "2026-05-27",
       "signature": "3996:1779873330708243500"
     },
+    "docs/reviews/CVF_LHW5_T2_ARTIFACT_EXPORT_BOUNDARY_ADVISORY_CONNECTOR_COMPLETION_2026-05-27.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-27",
+      "signature": "5136:1779934114927782300"
+    },
     "docs/reviews/CVF_LHW5_T2_FAST_LANE_AUDIT_2026-05-27.md": {
       "bucket": "active_dated",
       "date": "2026-05-27",
       "signature": "4290:1779873351906786300"
+    },
+    "docs/reviews/CVF_LHW5_T3_FAILURE_SIMULATION_SCENARIO_PACKET_CONNECTOR_COMPLETION_2026-05-27.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-27",
+      "signature": "6443:1779935521784214100"
     },
     "docs/reviews/CVF_LHW5_T3_FAST_LANE_AUDIT_2026-05-27.md": {
       "bucket": "active_dated",
       "date": "2026-05-27",
       "signature": "4896:1779873373629714300"
     },
+    "docs/reviews/CVF_LHW6_T1_FAST_LANE_AUDIT_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "4136:1779941519420862700"
+    },
+    "docs/reviews/CVF_LHW6_T1_TOOL_RUNTIME_BRIDGE_ADVISORY_CONNECTOR_COMPLETION_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "7734:1779942981511065400"
+    },
+    "docs/reviews/CVF_LHW6_T2_CLI_TOOL_ONBOARDING_GOVERNANCE_CONNECTOR_COMPLETION_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "7259:1779947685843992800"
+    },
+    "docs/reviews/CVF_LHW6_T2_FAST_LANE_AUDIT_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "4402:1779941590266196200"
+    },
+    "docs/reviews/CVF_LHW6_T3_FAST_LANE_AUDIT_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "4784:1779941590266196200"
+    },
+    "docs/reviews/CVF_LHW6_T3_PROJECT_MEMORY_READOUT_CONNECTOR_COMPLETION_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "7061:1779942988528214300"
+    },
+    "docs/reviews/CVF_LHW7_T1_FAST_LANE_AUDIT_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "4374:1779954529995997800"
+    },
+    "docs/reviews/CVF_LHW7_T1_WORKFLOW_RECOVERY_TOOL_REENTRY_CONNECTOR_COMPLETION_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "7252:1779954643562729500"
+    },
+    "docs/reviews/CVF_LHW7_T2_FAST_LANE_AUDIT_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "4633:1779954552786702300"
+    },
+    "docs/reviews/CVF_LHW7_T2_PROJECT_MEMORY_CONTEXT_BUDGET_HANDOFF_CONNECTOR_COMPLETION_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "8318:1779954680584373400"
+    },
+    "docs/reviews/CVF_LHW7_T3_FAILURE_SIM_SPEC_CHANGE_REINTAKE_CONNECTOR_COMPLETION_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "8556:1779954832565737000"
+    },
+    "docs/reviews/CVF_LHW7_T3_FAST_LANE_AUDIT_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "5199:1779954763860050100"
+    },
+    "docs/reviews/CVF_LHW8_T1_FAST_LANE_AUDIT_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "3665:1779957275952612300"
+    },
+    "docs/reviews/CVF_LHW8_T1_MEMORY_EVENT_HOOK_GOVERNANCE_SNAPSHOT_CONNECTOR_COMPLETION_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "7805:1779957456683529900"
+    },
+    "docs/reviews/CVF_LHW8_T2_EXECUTION_IDENTITY_AUTHORITY_CHAIN_READOUT_CONNECTOR_COMPLETION_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "7206:1779957670804228700"
+    },
+    "docs/reviews/CVF_LHW8_T2_FAST_LANE_AUDIT_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "3679:1779957507877253500"
+    },
+    "docs/reviews/CVF_LHW8_T3_FAST_LANE_AUDIT_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "3692:1779957716626518400"
+    },
+    "docs/reviews/CVF_LHW8_T3_OPERATIONAL_BENCHMARK_FAILURE_CLASS_REINTAKE_CONNECTOR_COMPLETION_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "8741:1779960477956820400"
+    },
+    "docs/reviews/CVF_LHW9_T1_FAST_LANE_AUDIT_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "2931:1779970920345126600"
+    },
+    "docs/reviews/CVF_LHW9_T1_MCP_TOOL_APPROVAL_ADVISORY_CONNECTOR_COMPLETION_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "5655:1779971773356528400"
+    },
+    "docs/reviews/CVF_LHW9_T2_FAST_LANE_AUDIT_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "3016:1779971098912116500"
+    },
+    "docs/reviews/CVF_LHW9_T2_NONCODER_FRICTION_ADVISORY_CONNECTOR_COMPLETION_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "5602:1779971779011720000"
+    },
+    "docs/reviews/CVF_LHW9_T3_FAST_LANE_AUDIT_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "2968:1779971270844565700"
+    },
+    "docs/reviews/CVF_LHW9_T3_INTEGRATION_LAYER_PACKAGING_CONNECTOR_COMPLETION_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "5889:1779971681473144100"
+    },
     "docs/reviews/CVF_M1_DURABLE_CROSS_SESSION_MEMORY_COMPLETION_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "5251:1779599933201225000"
+      "signature": "5451:1779989079909170700"
     },
     "docs/reviews/CVF_M1_DURABLE_CROSS_SESSION_MEMORY_EVIDENCE_2026-05-24.json": {
       "bucket": "active_dated",
@@ -863,7 +1043,7 @@
     "docs/reviews/CVF_N5_CATALOG_AIF_UPDATE_COMPLETION_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "2473:1779568162346123000"
+      "signature": "2549:1779989079909170700"
     },
     "docs/reviews/CVF_N6_AIF_GRAPH_SEARCH_ACTIVATION_COMPLETION_2026-05-24.md": {
       "bucket": "active_dated",
@@ -888,7 +1068,7 @@
     "docs/reviews/CVF_O3_POST_AIF_CLAIM_BOUNDARY_COMPLETION_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "1692:1779584930640791200"
+      "signature": "1764:1779989079909170700"
     },
     "docs/reviews/CVF_O4_RELEASE_GATE_E2E_SELECTOR_HARDENING_COMPLETION_2026-05-24.md": {
       "bucket": "active_dated",
@@ -905,36 +1085,6 @@
       "date": "2026-05-24",
       "signature": "857:1779598934278655600"
     },
-    "docs/reviews/CVF_P2_HN1_TRANCHE_CLOSURE_REVIEW_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "7126:1779818717146792500"
-    },
-    "docs/reviews/CVF_P2_PROVIDER_SOAK_EVIDENCE_2026-05-23.json": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "6593:1779818717240450600"
-    },
-    "docs/reviews/CVF_P2_PROVIDER_SOAK_EVIDENCE_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "6513:1779818717146792500"
-    },
-    "docs/reviews/CVF_P3_HOSTED_PROTECTED_WORKFLOW_PROOF_BLOCKER_REVIEW_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "5506:1779526140737091600"
-    },
-    "docs/reviews/CVF_P3_HOSTED_PROTECTED_WORKFLOW_PROOF_RERUN_COMPLETION_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "5155:1779528414779409900"
-    },
-    "docs/reviews/CVF_P3_NEXT_ROADMAP_SELECTION_AUDIT_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "5020:1779818717148790800"
-    },
     "docs/reviews/CVF_PBR04_GRAPH_SQLITE_PERSIST_COMPLETION_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
@@ -948,7 +1098,7 @@
     "docs/reviews/CVF_POST_AIF_NEXT_VALUE_ROADMAP_FAST_LANE_AUDIT_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "4784:1779563500500262300"
+      "signature": "4950:1779989079909170700"
     },
     "docs/reviews/CVF_PUBLIC_CATALOG_SYNC_VI_WAVE_COMPLETION_2026-05-25.md": {
       "bucket": "active_dated",
@@ -1188,27 +1338,32 @@
     "docs/reviews/CVF_WC3_LEGACY_HARVEST_SCAN_COMPLETION_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "3972:1779933887277107600"
+      "signature": "3988:1779989079930528200"
     },
     "docs/reviews/CVF_WC4_KNOWLEDGE_ABSORPTION_BLINDSPOT_STANDARD_COMPLETION_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "9795:1779632352754571600"
+      "signature": "10048:1779989079930917000"
     },
     "docs/reviews/CVF_WC_WORKFLOW_CHAIN_AND_PAIN_POINT_ROADMAP_CLOSURE_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
       "signature": "6810:1779933887277107600"
     },
+    "docs/reviews/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_RULE_COMPLETION_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "3198:1779938528371256500"
+    },
+    "docs/reviews/CVF_WORK_ORDER_DISPATCH_QUALITY_GATE_COMPLETION_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "2551:1779941266123718800"
+    },
     "docs/reviews/CVF_WR1_WORKFLOW_RECOVERY_STATE_PROOF_COMPLETION_2026-05-25.md": {
       "bucket": "active_dated",
       "date": "2026-05-25",
       "signature": "5738:1779663438640570600"
-    },
-    "docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "14087:1779933887278987600"
     },
     "docs/roadmaps/CVF_ALPHA_MANDATORY_STARTUP_ACKNOWLEDGMENT_ROADMAP_2026-05-26.md": {
       "bucket": "active_dated",
@@ -1225,10 +1380,20 @@
       "date": "2026-05-25",
       "signature": "8286:1779692288017687500"
     },
+    "docs/roadmaps/CVF_LHW10_WORKFLOW_CONNECTOR_WAVE10_ROADMAP_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "13114:1779979770769422200"
+    },
+    "docs/roadmaps/CVF_LHW11_WORKFLOW_CONNECTOR_WAVE11_ROADMAP_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "10519:1779985047698607900"
+    },
     "docs/roadmaps/CVF_LHW1_LEGACY_WORKFLOW_CONNECTOR_ABSORPTION_ROADMAP_2026-05-27.md": {
       "bucket": "active_dated",
       "date": "2026-05-27",
-      "signature": "6780:1779838451187978800"
+      "signature": "8346:1779937837251367600"
     },
     "docs/roadmaps/CVF_LHW2_WORKFLOW_CONNECTOR_COMPLETION_ROADMAP_2026-05-27.md": {
       "bucket": "active_dated",
@@ -1248,7 +1413,27 @@
     "docs/roadmaps/CVF_LHW5_WORKFLOW_CONNECTOR_WAVE5_ROADMAP_2026-05-27.md": {
       "bucket": "active_dated",
       "date": "2026-05-27",
-      "signature": "12221:1779875261835004300"
+      "signature": "12324:1779935521770586100"
+    },
+    "docs/roadmaps/CVF_LHW6_WORKFLOW_CONNECTOR_WAVE6_ROADMAP_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "11986:1779942191911044400"
+    },
+    "docs/roadmaps/CVF_LHW7_WORKFLOW_CONNECTOR_WAVE7_ROADMAP_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "15415:1779956673851121100"
+    },
+    "docs/roadmaps/CVF_LHW8_WORKFLOW_CONNECTOR_WAVE8_ROADMAP_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "13675:1779960494126580400"
+    },
+    "docs/roadmaps/CVF_LHW9_WORKFLOW_CONNECTOR_WAVE9_ROADMAP_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "11344:1779979968050133100"
     },
     "docs/roadmaps/CVF_M1_M2_P1_NEXT_VALUE_ROADMAP_2026-05-24.md": {
       "bucket": "active_dated",
@@ -1260,11 +1445,6 @@
       "date": "2026-05-26",
       "signature": "4201:1779808723503109600"
     },
-    "docs/roadmaps/CVF_P3_HOSTED_TARGET_PREFLIGHT_DECISION_ROADMAP_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "5241:1779818717195370000"
-    },
     "docs/roadmaps/CVF_POST_AIF_CLAIM_GRADUATION_ROADMAP_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
@@ -1273,12 +1453,12 @@
     "docs/roadmaps/CVF_POST_AIF_NEXT_VALUE_ROADMAP_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "8820:1779568014799139600"
+      "signature": "9093:1779989079938387000"
     },
     "docs/roadmaps/CVF_POST_AIF_OPERATIONALIZATION_ROADMAP_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "7825:1779589141049973200"
+      "signature": "8043:1779989079938387000"
     },
     "docs/roadmaps/CVF_R1_R2_P2_POST_M1_GAP_CLOSURE_ROADMAP_2026-05-24.md": {
       "bucket": "active_dated",
@@ -1328,27 +1508,12 @@
     "docs/roadmaps/CVF_WC_WORKFLOW_CHAIN_AND_PAIN_POINT_ROADMAP_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "24190:1779641502832334200"
+      "signature": "24821:1779989079942087800"
     },
     "docs/work_orders/CVF_MA1_TRANSFER_SURFACE1_FORM_I18N_READINESS_RISK_GATE_FIX_2026-05-26.md": {
       "bucket": "active_dated",
       "date": "2026-05-26",
       "signature": "9551:1779809367444126400"
-    },
-    "docs/work_orders/CVF_WO_AIF_A_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "10992:1779557782671164000"
-    },
-    "docs/work_orders/CVF_WO_AIF_B_GRAPH_KNOWLEDGE_PHASE1_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "14868:1779562807437693100"
-    },
-    "docs/work_orders/CVF_WO_AIF_C_MEMORY_GATEWAY_PHASE2_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "14496:1779933887297634400"
     },
     "docs/work_orders/CVF_WO_ALPHA_MANDATORY_STARTUP_ACKNOWLEDGMENT_2026-05-26.md": {
       "bucket": "active_dated",
@@ -1400,46 +1565,6 @@
       "date": "2026-05-25",
       "signature": "4613:1779677005267973600"
     },
-    "docs/work_orders/CVF_WO_D10_QWEN3_R1_COMPATIBLE_HOSTED_PROOF_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "3163:1779548226760745800"
-    },
-    "docs/work_orders/CVF_WO_D3_QWEN3_PROVIDER_EXPANSION_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "9377:1779933887300862700"
-    },
-    "docs/work_orders/CVF_WO_D4_QWEN3_ENABLE_THINKING_ADAPTER_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "11135:1779530936228146500"
-    },
-    "docs/work_orders/CVF_WO_D5_QWEN3_HOSTED_SAFE_PAYLOAD_RERUN_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "7907:1779542704502640400"
-    },
-    "docs/work_orders/CVF_WO_D6_QWEN3_THINKING_MODEL_ID_CORRECTION_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "5202:1779544742524425400"
-    },
-    "docs/work_orders/CVF_WO_D7_QWEN3_SKILL_PREFLIGHT_HOSTED_PROOF_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "4170:1779547355743783200"
-    },
-    "docs/work_orders/CVF_WO_D8_QWEN3_AI_COMMIT_HOSTED_PROOF_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "2918:1779547355746825400"
-    },
-    "docs/work_orders/CVF_WO_D9_QWEN3_THINKING_ENABLE_TRUE_ADAPTER_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "3150:1779547355750136900"
-    },
     "docs/work_orders/CVF_WO_D_PROVIDER_SCALE_LIVE_VI_PROOF_2026-05-25.md": {
       "bucket": "active_dated",
       "date": "2026-05-25",
@@ -1469,6 +1594,36 @@
       "bucket": "active_dated",
       "date": "2026-05-25",
       "signature": "3768:1779644520701351200"
+    },
+    "docs/work_orders/CVF_WO_LHW10_T1_WORKFLOW_TRANSITION_ENFORCEMENT_ADVISORY_CONNECTOR_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "14311:1779979700905648100"
+    },
+    "docs/work_orders/CVF_WO_LHW10_T2_RUNTIME_MATURITY_EVIDENCE_CHAIN_CONNECTOR_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "12674:1779979725089466300"
+    },
+    "docs/work_orders/CVF_WO_LHW10_T3_PROVIDER_HEALTH_DEGRADATION_ADVISORY_CONNECTOR_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "16257:1779979758071221100"
+    },
+    "docs/work_orders/CVF_WO_LHW11_T1_SESSION_GOVERNANCE_POSTURE_AGGREGATOR_CONNECTOR_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "13096:1779988646366454400"
+    },
+    "docs/work_orders/CVF_WO_LHW11_T2_SPEC_CHANGE_GOVERNANCE_DECISION_CONNECTOR_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "11793:1779985515373475400"
+    },
+    "docs/work_orders/CVF_WO_LHW11_T3_MEMORY_CONTEXT_SEED_DECAY_ADVISORY_CONNECTOR_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "15721:1779985547478462000"
     },
     "docs/work_orders/CVF_WO_LHW1_T1_PRODUCT_SKILL_PACK_WORKFLOW_CONNECTOR_2026-05-27.md": {
       "bucket": "active_dated",
@@ -1533,22 +1688,82 @@
     "docs/work_orders/CVF_WO_LHW5_T1_DATABASE_ACTION_BOUNDARY_CONNECTOR_2026-05-27.md": {
       "bucket": "active_dated",
       "date": "2026-05-27",
-      "signature": "13816:1779933797021901500"
+      "signature": "13865:1779935664192573500"
     },
     "docs/work_orders/CVF_WO_LHW5_T2_ARTIFACT_EXPORT_BOUNDARY_ADVISORY_CONNECTOR_2026-05-27.md": {
       "bucket": "active_dated",
       "date": "2026-05-27",
-      "signature": "13451:1779873666600137900"
+      "signature": "13509:1779935664195372000"
     },
     "docs/work_orders/CVF_WO_LHW5_T3_FAILURE_SIMULATION_SCENARIO_PACKET_CONNECTOR_2026-05-27.md": {
       "bucket": "active_dated",
       "date": "2026-05-27",
-      "signature": "15262:1779875261839608100"
+      "signature": "15698:1779935664199764400"
+    },
+    "docs/work_orders/CVF_WO_LHW6_T1_TOOL_RUNTIME_BRIDGE_ADVISORY_CONNECTOR_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "14588:1779942202289001300"
+    },
+    "docs/work_orders/CVF_WO_LHW6_T2_CLI_TOOL_ONBOARDING_GOVERNANCE_CONNECTOR_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "14885:1779947685841119300"
+    },
+    "docs/work_orders/CVF_WO_LHW6_T3_PROJECT_MEMORY_READOUT_CONNECTOR_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "17320:1779942240164803500"
+    },
+    "docs/work_orders/CVF_WO_LHW7_T1_WORKFLOW_RECOVERY_TOOL_REENTRY_CONNECTOR_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "12507:1779955256277016500"
+    },
+    "docs/work_orders/CVF_WO_LHW7_T2_PROJECT_MEMORY_CONTEXT_BUDGET_HANDOFF_CONNECTOR_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "12375:1779956673842937400"
+    },
+    "docs/work_orders/CVF_WO_LHW7_T3_FAILURE_SIM_SPEC_CHANGE_REINTAKE_CONNECTOR_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "12544:1779956673848688400"
+    },
+    "docs/work_orders/CVF_WO_LHW8_T1_MEMORY_EVENT_HOOK_GOVERNANCE_SNAPSHOT_CONNECTOR_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "12568:1779959521326151000"
+    },
+    "docs/work_orders/CVF_WO_LHW8_T2_EXECUTION_IDENTITY_AUTHORITY_CHAIN_READOUT_CONNECTOR_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "13476:1779958196333501700"
+    },
+    "docs/work_orders/CVF_WO_LHW8_T3_OPERATIONAL_BENCHMARK_FAILURE_CLASS_REINTAKE_CONNECTOR_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "13108:1779957786907206500"
+    },
+    "docs/work_orders/CVF_WO_LHW9_T1_MCP_TOOL_APPROVAL_ADVISORY_CONNECTOR_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "11208:1779970982802751500"
+    },
+    "docs/work_orders/CVF_WO_LHW9_T2_NONCODER_FRICTION_ADVISORY_CONNECTOR_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "10104:1779971152509311100"
+    },
+    "docs/work_orders/CVF_WO_LHW9_T3_INTEGRATION_LAYER_PACKAGING_CONNECTOR_2026-05-28.md": {
+      "bucket": "active_dated",
+      "date": "2026-05-28",
+      "signature": "10733:1779971331267401500"
     },
     "docs/work_orders/CVF_WO_M1_DURABLE_CROSS_SESSION_MEMORY_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "9650:1779598980631560200"
+      "signature": "9932:1779989079958880100"
     },
     "docs/work_orders/CVF_WO_M2_D06_MEMORY_TIER_FREEZE_RELEASE_2026-05-24.md": {
       "bucket": "active_dated",
@@ -1568,17 +1783,17 @@
     "docs/work_orders/CVF_WO_N5_CATALOG_AIF_UPDATE_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "6570:1779567635375881200"
+      "signature": "6785:1779989079958880100"
     },
     "docs/work_orders/CVF_WO_N6_AIF_GRAPH_SEARCH_ACTIVATION_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "7517:1779567635377448200"
+      "signature": "7757:1779989079958880100"
     },
     "docs/work_orders/CVF_WO_N7_THIRD_PROVIDER_EXPANSION_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "8349:1779567635379519100"
+      "signature": "8609:1779989079958880100"
     },
     "docs/work_orders/CVF_WO_O1_AIF_OPERATIONAL_CONTEXT_PREVIEW_2026-05-24.md": {
       "bucket": "active_dated",
@@ -1588,12 +1803,12 @@
     "docs/work_orders/CVF_WO_O2_OPERATIONAL_READINESS_MATRIX_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "3528:1779589167849812200"
+      "signature": "3701:1779989079964701000"
     },
     "docs/work_orders/CVF_WO_O3_POST_AIF_CLAIM_BOUNDARY_PACKET_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "3588:1779589167849812200"
+      "signature": "3773:1779989079965246000"
     },
     "docs/work_orders/CVF_WO_O4_RELEASE_GATE_E2E_SELECTOR_HARDENING_2026-05-24.md": {
       "bucket": "active_dated",
@@ -1610,20 +1825,10 @@
       "date": "2026-05-24",
       "signature": "5014:1779603445130691500"
     },
-    "docs/work_orders/CVF_WO_P3_HOSTED_PROTECTED_WORKFLOW_PROOF_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "5492:1779525949206981400"
-    },
-    "docs/work_orders/CVF_WO_P3_HOSTED_PROTECTED_WORKFLOW_PROOF_RERUN_2026-05-23.md": {
-      "bucket": "active_dated",
-      "date": "2026-05-23",
-      "signature": "6030:1779528425650443900"
-    },
     "docs/work_orders/CVF_WO_PBR04_GRAPH_SQLITE_PERSIST_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "10362:1779567635382142000"
+      "signature": "10656:1779989079965752200"
     },
     "docs/work_orders/CVF_WO_R1_DURABLE_MEMORY_STORE_RESILIENCE_2026-05-24.md": {
       "bucket": "active_dated",
@@ -1733,7 +1938,7 @@
     "docs/work_orders/CVF_WO_W1_WORKFLOW_STATE_MACHINE_ENFORCEMENT_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "9551:1779635237331384500"
+      "signature": "9790:1779989079969200500"
     },
     "docs/work_orders/CVF_WO_W2_MEMORY_EVENT_HOOKS_CONTEXT_PACKAGER_2026-05-24.md": {
       "bucket": "active_dated",
@@ -1773,12 +1978,12 @@
     "docs/work_orders/CVF_WO_WC3_LEGACY_HARVEST_SCAN_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "4918:1779933887313649700"
+      "signature": "4934:1779989079970970800"
     },
     "docs/work_orders/CVF_WO_WC4_KNOWLEDGE_ABSORPTION_BLINDSPOT_STANDARD_2026-05-24.md": {
       "bucket": "active_dated",
       "date": "2026-05-24",
-      "signature": "6490:1779632337020700200"
+      "signature": "6691:1779989079970970800"
     },
     "docs/work_orders/CVF_WO_WR1_WORKFLOW_RECOVERY_STATE_PROOF_2026-05-25.md": {
       "bucket": "active_dated",
@@ -4111,7 +4316,7 @@
     "docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md": {
       "bucket": "archive_candidate",
       "date": "2026-05-19",
-      "signature": "14401:1779854198841144900",
+      "signature": "17981:1779959736876595000",
       "blocked": true,
       "reason": "protected_reference",
       "liveReferenceSources": [
@@ -4119,12 +4324,15 @@
         "docs/CVF_CORE_KNOWLEDGE_BASE.md",
         "docs/INDEX.md",
         "docs/baselines/CVF_GC018_MA1_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_2026-05-26.md",
+        "docs/reference/CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28.md",
         "docs/reference/CVF_AGENT_DELEGATION_AND_SUBAGENT_BOUNDARY_STANDARD_2026-05-19.md",
         "docs/reference/CVF_AGENT_ROLE_ASSIGNMENT_MATRIX_2026-05-19.md",
         "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md",
         "docs/reference/CVF_MULTI_ROLE_ORCHESTRATED_CONVERGENCE_CAPTURE_FORM_2026-05-25.md",
+        "docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md",
         "docs/reviews/CVF_VI5_MULTI_ROLE_CONVERGENCE_CLAUDE_ACCEPTANCE_2026-05-25.md",
         "docs/reviews/CVF_VI5_MULTI_ROLE_CONVERGENCE_CORRECTION_TO_CLAUDE_2026-05-25.md",
+        "docs/reviews/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_RULE_COMPLETION_2026-05-28.md",
         "docs/work_orders/CVF_AGENT_WORK_ORDER_LANE_BCH_2026-05-19.md"
       ],
       "markdownLinkSources": [],
@@ -4157,18 +4365,22 @@
     "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md": {
       "bucket": "archive_candidate",
       "date": "2026-05-19",
-      "signature": "13824:1779862224777059000",
+      "signature": "18289:1779988425433735300",
       "blocked": true,
       "reason": "protected_reference",
       "liveReferenceSources": [
         "docs/CVF_ARCHITECTURE_DECISIONS.md",
         "docs/CVF_CORE_KNOWLEDGE_BASE.md",
         "docs/INDEX.md",
+        "docs/baselines/CVF_GC018_LHW10_WORKFLOW_CONNECTOR_WAVE10_2026-05-28.md",
+        "docs/reference/CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28.md",
         "docs/reference/CVF_AGENT_DELEGATION_AND_SUBAGENT_BOUNDARY_STANDARD_2026-05-19.md",
         "docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md",
         "docs/reference/CVF_AGENT_ROLE_ASSIGNMENT_MATRIX_2026-05-19.md",
         "docs/reference/CVF_MULTI_ROLE_ORCHESTRATED_CONVERGENCE_CAPTURE_FORM_2026-05-25.md",
-        "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
+        "docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md",
+        "docs/reviews/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_RULE_COMPLETION_2026-05-28.md",
+        "docs/reviews/CVF_WORK_ORDER_DISPATCH_QUALITY_GATE_COMPLETION_2026-05-28.md",
         "docs/work_orders/CVF_AGENT_WORK_ORDER_AGENT_ROLE_ASSIGNMENT_2026-05-19.md",
         "docs/work_orders/CVF_AGENT_WORK_ORDER_LANE_BCH_2026-05-19.md"
       ],
@@ -4260,7 +4472,6 @@
         "docs/reference/CVF_CANDIDATE7_EXTERNAL_SKILL_SOURCE_SCREENING_MATRIX_2026-05-25.md",
         "docs/reference/CVF_EXTERNAL_SKILL_INTAKE_SCREENING_PACKET_2026-05-25.md",
         "docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md",
-        "docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md",
         "docs/reference/README.md",
         "docs/reviews/CVF_CLAUDE_TRANSFER_NOTE_2026-05-08.md",
         "docs/reviews/CVF_GC018_CVF_ADD_DOCTRINE_SYNTHESIS_ROADMAP_2026-05-07.md",
@@ -4737,7 +4948,7 @@
     "docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md": {
       "bucket": "archive_candidate",
       "date": "2026-05-18",
-      "signature": "18965:1779933887223913900",
+      "signature": "18973:1779989079886679800",
       "blocked": true,
       "reason": "protected_reference",
       "liveReferenceSources": [
@@ -6235,16 +6446,6 @@
       "signature": "2510:1775297211728402900",
       "blocked": true,
       "reason": "review_retain_evidence",
-      "liveReferenceSources": [],
-      "markdownLinkSources": [],
-      "protectedReferenceSources": []
-    },
-    "docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md": {
-      "bucket": "archive_candidate",
-      "date": "2026-05-20",
-      "signature": "12704:1779642317034363900",
-      "blocked": false,
-      "reason": null,
       "liveReferenceSources": [],
       "markdownLinkSources": [],
       "protectedReferenceSources": []

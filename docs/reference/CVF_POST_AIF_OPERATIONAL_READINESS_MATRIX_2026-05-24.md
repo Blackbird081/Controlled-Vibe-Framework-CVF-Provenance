@@ -21,7 +21,7 @@ Sources:
 - `docs/roadmaps/CVF_POST_AIF_NEXT_VALUE_ROADMAP_2026-05-24.md`
 - `docs/roadmaps/CVF_POST_AIF_OPERATIONALIZATION_ROADMAP_2026-05-24.md`
 - `docs/reviews/CVF_C2_C5_POST_AIF_CLAIM_GRADUATION_COMPLETION_2026-05-24.md`
-- `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`
+- `docs/reference/archive/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`
 
 ## Scope / Target / Owner Boundary
 

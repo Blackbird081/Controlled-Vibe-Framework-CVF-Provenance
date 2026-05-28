@@ -76,7 +76,7 @@ new, unabsorbed, already closed, or irrelevant.
 
 Minimum evidence:
 
-- `docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`;
+- `docs/reference/archive/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`;
 - prior review/baseline/roadmap packets relevant to the source;
 - archived absorption packets when the active registry points there;
 - corrected status using one of:
@@ -258,7 +258,7 @@ Any of these claims must be converted into evidence using the control block.
 Use this standard together with:
 
 - `docs/reference/CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md`
-- `docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
+- `docs/reference/archive/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
 - `docs/reference/CVF_GC018_CONTINUATION_CANDIDATE_TEMPLATE.md`
 - `docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md`
 - `docs/reference/CVF_GOVERNED_CAPABILITY_INTAKE_DOCTRINE_2026-05-07.md`

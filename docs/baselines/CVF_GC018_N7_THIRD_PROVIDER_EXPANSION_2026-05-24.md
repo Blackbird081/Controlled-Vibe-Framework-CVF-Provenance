@@ -15,7 +15,7 @@ model `gpt-4o` with `maxRiskLevel=R2`.
 
 - `docs/roadmaps/CVF_POST_AIF_NEXT_VALUE_ROADMAP_2026-05-24.md`
 - `docs/work_orders/CVF_WO_N7_THIRD_PROVIDER_EXPANSION_2026-05-24.md`
-- `docs/reviews/CVF_D10_QWEN3_R1_COMPATIBLE_HOSTED_PROOF_COMPLETION_2026-05-23.md`
+- `docs/reviews/archive/CVF_D10_QWEN3_R1_COMPATIBLE_HOSTED_PROOF_COMPLETION_2026-05-23.md`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/providers.ts`
 - `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-registry.ts`
 

@@ -61,7 +61,7 @@ scoping:
 
 ```text
 Legacy Spec Scan Block (required for legacy-adjacent scope)
-- Registry read: docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md
+- Registry read: docs/reference/archive/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md
 - Legacy folders scanned:
   - <path 1>
   - <path 2>
@@ -188,7 +188,7 @@ but the checklist is the authoritative closure gate.
 - if the proposed step changes active-path implementation, the resulting packet must remain reviewable by the repository continuation gate
 - low-yield continuation classes (`VALIDATION_TEST`, `PACKAGING_ONLY`, `TRUTH_CLAIM`) must record a lateral alternative and may continue only if they improve a real decision boundary in a reviewable way
 - legacy-adjacent packets must not scope from active reviews alone; they must
-  reconcile the active review with `docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
+  reconcile the active review with `docs/reference/archive/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
   and any relevant `.private_reference/legacy/` source folders before the
   candidate can be treated as complete
 - knowledge-absorption packets must follow
@@ -211,7 +211,7 @@ The same packet may be summarized in multiple places, but there should be one ob
 - `governance/toolkit/05_OPERATION/CVF_DEPTH_AUDIT_GUARD.md`
 - `governance/toolkit/05_OPERATION/CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD.md` (GC-046: Evidence Trace Block requirement for absorption review chains)
 - `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md#GC-018`
-- `docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
+- `docs/reference/archive/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
 - `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`
 - `governance/compat/check_depth_audit_continuation_compat.py`
 - `docs/roadmaps/CVF_SYSTEM_UNIFICATION_REMEDIATION_ROADMAP_2026-03-19.md`

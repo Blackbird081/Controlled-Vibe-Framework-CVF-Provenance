@@ -518,8 +518,8 @@ W-series next candidates          <- Candidate 7 demand-gated; fresh GC-018 requ
 | `docs/reviews/CVF_V1_NONCODER_FIRST_VALUE_JOURNEY_HARDENING_COMPLETION_2026-05-24.md` | V1 closure — source of WC-2 gap |
 | `docs/reviews/CVF_V3_EXECUTION_DIAGNOSTIC_CONTRACT_COMPLETION_2026-05-24.md` | V3 closure — diagnostic foundation for WC-1 |
 | `docs/reviews/CVF_S1_DURABLE_MEMORY_WRITE_ROUTE_COMPLETION_2026-05-24.md` | S1 closure — memory write surface for WC-1 |
-| `docs/audits/CVF_LEGACY_SPEC_ABSORPTION_BLINDSPOT_AUDIT_2026-05-23.md` | Original blindspot audit — context for WC-3 |
-| `docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md` | Full registry — WC-3 scan starting point |
+| `docs/audits/archive/CVF_LEGACY_SPEC_ABSORPTION_BLINDSPOT_AUDIT_2026-05-23.md` | Original blindspot audit — context for WC-3 |
+| `docs/reference/archive/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md` | Full registry — WC-3 scan starting point |
 | `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md` | Mandatory anti-blindspot law for future absorption |
 | Memory: `project_operator_absorption_philosophy_2026-05-24.md` | Operator philosophy — decision basis for this roadmap |
 

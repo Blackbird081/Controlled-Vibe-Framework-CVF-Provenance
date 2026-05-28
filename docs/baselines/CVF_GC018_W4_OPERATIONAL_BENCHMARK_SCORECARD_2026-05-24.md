@@ -108,7 +108,7 @@ Proposed tranche:
   - active Governance CLI benchmark files and S3 probe script
 - Prior absorption evidence resolved:
   - `docs/reference/CVF_LEGACY_HARVEST_SCAN_MAP_2026-05-24.md`
-  - `docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
+  - `docs/reference/archive/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
   - `docs/reviews/archive/CVF_E2_OPERATIONAL_BENCHMARK_SUITE_COMPLETION_2026-05-22.md`
   - `docs/work_orders/archive/CVF_WO_E2_OPERATIONAL_BENCHMARK_SUITE_2026-05-22.md`
   - `docs/reviews/CVF_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_COMPLETION_2026-05-24.md`

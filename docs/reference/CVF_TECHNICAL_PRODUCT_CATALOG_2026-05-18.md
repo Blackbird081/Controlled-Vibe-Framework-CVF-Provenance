@@ -125,7 +125,7 @@ INTAKE -> DESIGN -> BUILD -> REVIEW -> FREEZE
 | Tool/MCP/database action governance | roadmap | tool registry and guards exist; full canonical action taxonomy is still future work |
 | Async workers/subagents | roadmap | sandbox and worker concepts exist; canonical async work-ticket and delegation lifecycle remain future work |
 | Graph/code-intelligence context (Phase 1) | proven - Phase 1 in-memory AST foundation | local schema, AST parser, symbol index, task-query mapper, and advisory `GraphKnowledgeService` exist; `docs/reviews/CVF_AIF_B_GRAPH_KNOWLEDGE_PHASE1_COMPLETION_2026-05-24.md`; durable graph storage, scoring, and live authority are not claimed |
-| Operational Reference Index | proven - agent discoverability lookup table deployed | active routing reference for memory, graph, provider, public-sync, pain-point, and legacy-adjacent work; `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`; `docs/reviews/CVF_AIF_A_OPERATIONAL_REFERENCE_INDEX_COMPLETION_2026-05-24.md` |
+| Operational Reference Index | proven - agent discoverability lookup table deployed | active routing reference for memory, graph, provider, public-sync, pain-point, and legacy-adjacent work; `docs/reference/archive/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`; `docs/reviews/CVF_AIF_A_OPERATIONAL_REFERENCE_INDEX_COMPLETION_2026-05-24.md` |
 
 ## B/C Closure Note For Agents
 

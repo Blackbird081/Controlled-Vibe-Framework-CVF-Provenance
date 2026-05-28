@@ -26,7 +26,7 @@ Source:
 
 - `docs/baselines/CVF_GC018_AIF_C_MEMORY_GATEWAY_PHASE2_2026-05-24.md`
 - `docs/baselines/CVF_GC018_AIF_B_GRAPH_KNOWLEDGE_PHASE1_2026-05-24.md`
-- `docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md`
+- `docs/roadmaps/archive/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md`
 
 ## Scope / Methodology
 
