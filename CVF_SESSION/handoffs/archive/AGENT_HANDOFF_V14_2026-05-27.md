@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: SUPERSEDED_BY_V15
+Status: ACTIVE
 
 ## Purpose
 
@@ -271,7 +271,17 @@ LHW13 ran in parallel with LHW12 (no shared source dependencies). LHW12
 closure status pending Gemini worker completion. Latest fully closed wave is
 LHW13 as of this note.
 
-Current mode: `lhw13_wave_closed_pass_bounded`.
+Current mode: `lhw14_wave_closed_pass_bounded`.
+
+## LHW14 Wave Closure
+
+LHW14 Workflow Connector Wave 14 CLOSED_PASS_BOUNDED (T1+T2+T3, doc-only). baseHead: `173643cb`.
+
+- T1 Agent Memory Capture Packaging: `cvf.agentMemoryCapturePackagingAdvisory.lhw14.t1.v1` — closes `agentmemory` (line 133). Spec/audit/completion at `docs/reference/CVF_LHW14_T1_*`, `docs/reviews/CVF_LHW14_T1_*`.
+- T2 Spec-Change Workflow Advisory: `cvf.specChangeWorkflowAdvisory.lhw14.t2.v1` — closes `OpenSpec` (line 140). Spec/audit/completion at `docs/reference/CVF_LHW14_T2_*`, `docs/reviews/CVF_LHW14_T2_*`.
+- T3 Noncoder Clarification and Recovery: `cvf.noncoderClarificationRecoveryAdvisory.lhw14.t3.v1` — closes `Human System Harness` (line 160). Spec/audit/completion at `docs/reference/CVF_LHW14_T3_*`, `docs/reviews/CVF_LHW14_T3_*`.
+
+Invariants: `runtimeExecutionAuthorized=false` across all specs; `canReinject=false` connector-normalized; no code file; no EXTENSIONS/ change; no receipt envelope change; no public-sync.
 
 ## Startup Acknowledgment
 

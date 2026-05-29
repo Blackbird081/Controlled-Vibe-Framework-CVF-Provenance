@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: READY_FOR_IMPLEMENTATION
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -97,11 +97,11 @@ New doc-only fields:
 
 | Roadmap requirement | Work order section | Output artifact | Verification | Status |
 | --- | --- | --- | --- | --- |
-| T1 spec; LHW8-T1/AIF-C field names verbatim | S1–S5 | spec at target path | Reviewer confirms verbatim | OPEN |
-| All 6 `memorySnapshotAdvisoryType` values individually row-verified | S5 | 6 rows | No aggregate | OPEN |
-| connector-normalized `canReinject=false` stated and not source-claimed | S1, S3 | connector invariant | grep check | OPEN |
-| `agentmemory` LH1 trigger cited | S1 | explicit in S1 Purpose | Auditor checks | OPEN |
-| `runtimeExecutionAuthorized=false` explicit | S1, S3 | invariant | grep check | OPEN |
+| T1 spec; LHW8-T1/AIF-C field names verbatim | S1–S5 | spec at target path | Reviewer confirms verbatim | CLOSED_PASS |
+| All 6 `memorySnapshotAdvisoryType` values individually row-verified | S5 | 6 rows | No aggregate | CLOSED_PASS |
+| connector-normalized `canReinject=false` stated and not source-claimed | S1, S3 | connector invariant | grep check | CLOSED_PASS |
+| `agentmemory` LH1 trigger cited | S1 | explicit in S1 Purpose | Auditor checks | CLOSED_PASS |
+| `runtimeExecutionAuthorized=false` explicit | S1, S3 | invariant | grep check | CLOSED_PASS |
 
 ## Deliverable — Connector Spec
 
@@ -125,10 +125,10 @@ literal invariant preserved; `runtimeExecutionAuthorized=false`.
 
 ## Pre-Flight
 
-- [ ] Working tree clean
-- [ ] All 6 `memorySnapshotAdvisoryType` values confirmed from LHW8-T1 S2
-- [ ] `canReinject` field confirmed from AIF-C source line 49
-- [ ] `agentmemory` trigger confirmed from LH1 line 133
+- [x] Working tree clean
+- [x] All 6 `memorySnapshotAdvisoryType` values confirmed from LHW8-T1 S2
+- [x] `canReinject` field confirmed from AIF-C source line 49
+- [x] `agentmemory` trigger confirmed from LH1 line 133
 
 ## Write Ownership
 
@@ -157,13 +157,13 @@ Implementer owns all new files. No file outside Allowed list may be modified.
 
 ## Acceptance Criteria
 
-- [ ] Spec with all 5 sections; < 250 lines
-- [ ] All 6 `memorySnapshotAdvisoryType` values individually row-verified in S5
-- [ ] connector-normalized `canReinject=false` stated; not source-claimed
-- [ ] `runtimeExecutionAuthorized=false` explicit; no memory write or reinjection claimed
-- [ ] LH1 `agentmemory` trigger cited in S1
-- [ ] No code file in diff
-- [ ] Session continuity updated
+- [x] Spec with all 5 sections; < 250 lines
+- [x] All 6 `memorySnapshotAdvisoryType` values individually row-verified in S5
+- [x] connector-normalized `canReinject=false` stated; not source-claimed
+- [x] `runtimeExecutionAuthorized=false` explicit; no memory write or reinjection claimed
+- [x] LH1 `agentmemory` trigger cited in S1
+- [x] No code file in diff
+- [x] Session continuity updated
 
 Fail conditions:
 - Memory write or reinjection claimed
@@ -178,14 +178,14 @@ spec < 250 lines; no code file.
 
 ## Closure Checklist
 
-- [ ] Spec with all 5 sections
-- [ ] S2 mapping covers all 6 `memorySnapshotAdvisoryType` values individually
-- [ ] connector-normalized `canReinject=false` explicit
-- [ ] S5 complete; no aggregate rows
-- [ ] No code file in diff
-- [ ] Fast Lane audit created
-- [ ] Session continuity updated
-- [ ] Completion review with T2 gate answer written
+- [x] Spec with all 5 sections
+- [x] S2 mapping covers all 6 `memorySnapshotAdvisoryType` values individually
+- [x] connector-normalized `canReinject=false` explicit
+- [x] S5 complete; no aggregate rows
+- [x] No code file in diff
+- [x] Fast Lane audit created
+- [x] Session continuity updated
+- [x] Completion review with T2 gate answer written
 
 ## Return-To-Orchestrator Conditions
 

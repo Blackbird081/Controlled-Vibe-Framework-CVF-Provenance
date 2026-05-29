@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: ACTIVE
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -20,8 +20,8 @@ PARTIALLY_ABSORBED families with remaining doc-only triggers — `agentmemory`,
 Fresh GC-018:
 `docs/baselines/CVF_GC018_LHW14_WORKFLOW_CONNECTOR_WAVE14_2026-05-29.md`
 
-Dispatch status: T1 WORK_ORDER_READY. T2 HOLD_UNTIL_T1_PASS.
-T3 HOLD_UNTIL_T1_AND_T2_PASS.
+Dispatch status: T1 CLOSED_PASS_BOUNDED. T2 CLOSED_PASS_BOUNDED.
+T3 CLOSED_PASS_BOUNDED.
 
 ## Scope / Target / Owner Boundary
 
@@ -153,20 +153,20 @@ Dispatch only after T1 + T2 pass evidence exists.
 
 | Tranche | Deliverable | Gate |
 | --- | --- | --- |
-| T1 | Agent Memory Capture Packaging spec (5 sections) | None — open after GC-018 |
-| T2 | Spec-Change Workflow Advisory spec (5 sections) | HOLD_UNTIL_T1_PASS |
-| T3 | Noncoder Clarification and Recovery spec (5 sections) | HOLD_UNTIL_T1_AND_T2_PASS |
+| T1 | Agent Memory Capture Packaging spec (5 sections) | CLOSED_PASS_BOUNDED |
+| T2 | Spec-Change Workflow Advisory spec (5 sections) | CLOSED_PASS_BOUNDED |
+| T3 | Noncoder Clarification and Recovery spec (5 sections) | CLOSED_PASS_BOUNDED |
 
 ## Acceptance Criteria
 
-- [ ] T1: all 6 `memorySnapshotAdvisoryType` values individually row-verified; connector-normalized `canReinject=false`; no memory write claimed
-- [ ] T2: `specChangeGovernanceDecision` and `rollbackRecommended` individually row-verified; no spec enforcement claimed
-- [ ] T3: `ProductSkillPackSelectionStatus` values and `WorkflowRecoveryAction` values individually row-verified; no pack execution claimed
-- [ ] No `.ts`/`.tsx`/`.js`/`.py` file in diff across all three tranches
-- [ ] No `EXTENSIONS/` source file in diff
-- [ ] Each spec < 250 lines per GC-023
-- [ ] Both governance gates PASS per tranche
-- [ ] Session continuity updated after each tranche
+- [x] T1: all 6 `memorySnapshotAdvisoryType` values individually row-verified; connector-normalized `canReinject=false`; no memory write claimed
+- [x] T2: `specChangeGovernanceDecision` and `rollbackRecommended` individually row-verified; no spec enforcement claimed
+- [x] T3: `ProductSkillPackSelectionStatus` values and `WorkflowRecoveryAction` values individually row-verified; no pack execution claimed
+- [x] No `.ts`/`.tsx`/`.js`/`.py` file in diff across all three tranches
+- [x] No `EXTENSIONS/` source file in diff
+- [x] Each spec < 250 lines per GC-023
+- [x] Both governance gates PASS per tranche
+- [x] Session continuity updated after each tranche
 
 ## Verification
 

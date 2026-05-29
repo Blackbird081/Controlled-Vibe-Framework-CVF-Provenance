@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: HOLD_UNTIL_T1_PASS
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -91,12 +91,12 @@ New doc-only fields:
 
 | Roadmap requirement | Work order section | Output artifact | Verification | Status |
 | --- | --- | --- | --- | --- |
-| T2 spec; LHW11-T2/LHW7-T3 field names verbatim | S1–S5 | spec at target path | Reviewer confirms verbatim | OPEN |
-| `specChangeGovernanceDecision` values individually row-verified | S5 | rows | No aggregate | OPEN |
-| `rollbackRecommended` treated as boolean, not invariant | S1, S3 | invariant statement | grep check | OPEN |
-| `faultToRespecAdvisoryType` values covered | S2, S5 | rows | Reviewer checks | OPEN |
-| LH1 `OpenSpec` trigger cited | S1 | explicit in S1 | Auditor checks | OPEN |
-| T1 gate confirmed | Authority Chain | T1 completion review | Read T1 review | OPEN |
+| T2 spec; LHW11-T2/LHW7-T3 field names verbatim | S1–S5 | spec at target path | Reviewer confirms verbatim | CLOSED_PASS |
+| `specChangeGovernanceDecision` values individually row-verified | S5 | rows | No aggregate | CLOSED_PASS |
+| `rollbackRecommended` treated as boolean, not invariant | S1, S3 | invariant statement | grep check | CLOSED_PASS |
+| `faultToRespecAdvisoryType` values covered | S2, S5 | rows | Reviewer checks | CLOSED_PASS |
+| LH1 `OpenSpec` trigger cited | S1 | explicit in S1 | Auditor checks | CLOSED_PASS |
+| T1 gate confirmed | Authority Chain | T1 completion review | Read T1 review | CLOSED_PASS |
 
 ## Deliverable — Connector Spec
 
@@ -117,12 +117,12 @@ workflow advisory is a governance planning record. `runtimeExecutionAuthorized=f
 
 ## Pre-Flight
 
-- [ ] Working tree clean
-- [ ] T1 CLOSED_PASS_BOUNDED confirmed
-- [ ] `specChangeGovernanceDecision` values confirmed from LHW11-T2 S2
-- [ ] `rollbackRecommended` confirmed as doc-only boolean from LHW11-T2 S3
-- [ ] `faultToRespecAdvisoryType` confirmed from LHW7-T3 S3 line 112
-- [ ] `OpenSpec` trigger confirmed from LH1 line 140
+- [x] Working tree clean
+- [x] T1 CLOSED_PASS_BOUNDED confirmed
+- [x] `specChangeGovernanceDecision` values confirmed from LHW11-T2 S2
+- [x] `rollbackRecommended` confirmed as doc-only boolean from LHW11-T2 S3
+- [x] `faultToRespecAdvisoryType` confirmed from LHW7-T3 S3 line 112
+- [x] `OpenSpec` trigger confirmed from LH1 line 140
 
 ## Write Ownership
 
@@ -151,15 +151,15 @@ Implementer owns all new files. No file outside Allowed list may be modified.
 
 ## Acceptance Criteria
 
-- [ ] T1 CLOSED_PASS_BOUNDED confirmed
-- [ ] Spec with all 5 sections; < 250 lines
-- [ ] `specChangeGovernanceDecision` values individually row-verified in S5
-- [ ] `rollbackRecommended` treated as boolean field, not false invariant
-- [ ] `faultToRespecAdvisoryType` values covered in S2 and S5
-- [ ] `runtimeExecutionAuthorized=false` explicit; no spec enforcement claimed
-- [ ] LH1 `OpenSpec` trigger cited in S1
-- [ ] No code file in diff
-- [ ] Session continuity updated
+- [x] T1 CLOSED_PASS_BOUNDED confirmed
+- [x] Spec with all 5 sections; < 250 lines
+- [x] `specChangeGovernanceDecision` values individually row-verified in S5
+- [x] `rollbackRecommended` treated as boolean field, not false invariant
+- [x] `faultToRespecAdvisoryType` values covered in S2 and S5
+- [x] `runtimeExecutionAuthorized=false` explicit; no spec enforcement claimed
+- [x] LH1 `OpenSpec` trigger cited in S1
+- [x] No code file in diff
+- [x] Session continuity updated
 
 Fail conditions:
 - T1 gate not confirmed
@@ -174,15 +174,15 @@ no code file.
 
 ## Closure Checklist
 
-- [ ] T1 CLOSED_PASS_BOUNDED confirmed
-- [ ] Spec with all 5 sections
-- [ ] S2 mapping uses LHW11-T2/LHW7-T3 vocabulary verbatim
-- [ ] `runtimeExecutionAuthorized=false` explicit
-- [ ] S5 complete; no aggregate rows
-- [ ] No code file in diff
-- [ ] Fast Lane audit created
-- [ ] Session continuity updated
-- [ ] Completion review with T3 gate answer written
+- [x] T1 CLOSED_PASS_BOUNDED confirmed
+- [x] Spec with all 5 sections
+- [x] S2 mapping uses LHW11-T2/LHW7-T3 vocabulary verbatim
+- [x] `runtimeExecutionAuthorized=false` explicit
+- [x] S5 complete; no aggregate rows
+- [x] No code file in diff
+- [x] Fast Lane audit created
+- [x] Session continuity updated
+- [x] Completion review with T3 gate answer written
 
 ## Return-To-Orchestrator Conditions
 

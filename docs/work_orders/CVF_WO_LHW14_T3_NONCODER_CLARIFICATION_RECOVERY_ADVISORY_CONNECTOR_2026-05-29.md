@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: HOLD_UNTIL_T1_AND_T2_PASS
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -102,12 +102,12 @@ New doc-only fields:
 
 | Roadmap requirement | Work order section | Output artifact | Verification | Status |
 | --- | --- | --- | --- | --- |
-| T3 spec; WR1/C8/CB1 field names verbatim | S1–S5 | spec at target path | Reviewer confirms verbatim | OPEN |
-| All 4 `WorkflowRecoveryAction` values individually row-verified | S5 | 4 rows | No aggregate | OPEN |
-| `ProductSkillPackSelectionStatus` values covered | S2, S5 | rows | Reviewer checks | OPEN |
-| No pack execution or recovery dispatch claimed | S1, S3 | invariant | grep check | OPEN |
-| T1 AND T2 gates confirmed | Authority Chain | both completion reviews | Read both | OPEN |
-| LHW14 wave closure summary in completion review | Closure Checklist | T1+T2+T3 table | Reviewer checks | OPEN |
+| T3 spec; WR1/C8/CB1 field names verbatim | S1–S5 | spec at target path | Reviewer confirms verbatim | CLOSED_PASS |
+| All 4 `WorkflowRecoveryAction` values individually row-verified | S5 | 4 rows | No aggregate | CLOSED_PASS |
+| `ProductSkillPackSelectionStatus` values covered | S2, S5 | rows | Reviewer checks | CLOSED_PASS |
+| No pack execution or recovery dispatch claimed | S1, S3 | invariant | grep check | CLOSED_PASS |
+| T1 AND T2 gates confirmed | Authority Chain | both completion reviews | Read both | CLOSED_PASS |
+| LHW14 wave closure summary in completion review | Closure Checklist | T1+T2+T3 table | Reviewer checks | CLOSED_PASS |
 
 ## Deliverable — Connector Spec
 
@@ -130,11 +130,11 @@ recovery actions. The clarification advisory is a governance planning record.
 
 ## Pre-Flight
 
-- [ ] Working tree clean
-- [ ] T1 AND T2 CLOSED_PASS_BOUNDED confirmed
-- [ ] All 4 `WorkflowRecoveryAction` values confirmed from workflow-resolver.ts lines 50–54
-- [ ] `ProductSkillPackSelectionStatus` confirmed from LHW12-T2 S3
-- [ ] `Human System Harness` trigger confirmed from LH1 line 160
+- [x] Working tree clean
+- [x] T1 AND T2 CLOSED_PASS_BOUNDED confirmed
+- [x] All 4 `WorkflowRecoveryAction` values confirmed from workflow-resolver.ts lines 50–54
+- [x] `ProductSkillPackSelectionStatus` confirmed from LHW12-T2 S3
+- [x] `Human System Harness` trigger confirmed from LH1 line 160
 
 ## Write Ownership
 
@@ -164,16 +164,16 @@ Implementer owns all new files. No file outside Allowed list may be modified.
 
 ## Acceptance Criteria
 
-- [ ] T1 AND T2 CLOSED_PASS_BOUNDED confirmed
-- [ ] Spec with all 5 sections; < 250 lines
-- [ ] All 4 `WorkflowRecoveryAction` values individually row-verified in S5
-- [ ] `ProductSkillPackSelectionStatus` values covered in S2 and S5
-- [ ] `runtimeExecutionAuthorized=false` explicit; no pack execution or recovery dispatch claimed
-- [ ] LH1 `Human System Harness` trigger cited in S1
-- [ ] No code file in diff
-- [ ] Session continuity: LHW14 CLOSED_PASS_BOUNDED
-- [ ] LHW14 roadmap updated
-- [ ] Completion review with LHW14 wave closure summary
+- [x] T1 AND T2 CLOSED_PASS_BOUNDED confirmed
+- [x] Spec with all 5 sections; < 250 lines
+- [x] All 4 `WorkflowRecoveryAction` values individually row-verified in S5
+- [x] `ProductSkillPackSelectionStatus` values covered in S2 and S5
+- [x] `runtimeExecutionAuthorized=false` explicit; no pack execution or recovery dispatch claimed
+- [x] LH1 `Human System Harness` trigger cited in S1
+- [x] No code file in diff
+- [x] Session continuity: LHW14 CLOSED_PASS_BOUNDED
+- [x] LHW14 roadmap updated
+- [x] Completion review with LHW14 wave closure summary
 
 Fail conditions:
 - T1 or T2 gate not confirmed
@@ -188,16 +188,16 @@ spec < 250 lines; no code file.
 
 ## Closure Checklist
 
-- [ ] T1 AND T2 CLOSED_PASS_BOUNDED confirmed
-- [ ] Spec with all 5 sections
-- [ ] S2 mapping uses WR1/C8/CB1 vocabulary verbatim
-- [ ] `runtimeExecutionAuthorized=false` explicit
-- [ ] S5 complete; no aggregate rows; all 4 `WorkflowRecoveryAction` values individually verified
-- [ ] No code file in diff
-- [ ] Fast Lane audit created
-- [ ] Session continuity: LHW14 CLOSED_PASS_BOUNDED
-- [ ] LHW14 roadmap Status → CLOSED_PASS_BOUNDED
-- [ ] Completion review with LHW14 wave closure summary written
+- [x] T1 AND T2 CLOSED_PASS_BOUNDED confirmed
+- [x] Spec with all 5 sections
+- [x] S2 mapping uses WR1/C8/CB1 vocabulary verbatim
+- [x] `runtimeExecutionAuthorized=false` explicit
+- [x] S5 complete; no aggregate rows; all 4 `WorkflowRecoveryAction` values individually verified
+- [x] No code file in diff
+- [x] Fast Lane audit created
+- [x] Session continuity: LHW14 CLOSED_PASS_BOUNDED
+- [x] LHW14 roadmap Status → CLOSED_PASS_BOUNDED
+- [x] Completion review with LHW14 wave closure summary written
 
 ## Return-To-Orchestrator Conditions
 
