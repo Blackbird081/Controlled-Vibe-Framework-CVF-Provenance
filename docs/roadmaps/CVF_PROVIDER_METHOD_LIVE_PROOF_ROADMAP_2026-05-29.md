@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: DEMAND_GATED
+Status: CLOSED_PASS
 
 docType: roadmap
 
@@ -134,11 +134,11 @@ Gap 3 will be closed when PM-1 + PM-2 + PM-3 are all CLOSED_PASS with live
 receipts in `docs/evidence/provider-methods/`. PM-4/PM-5 remain demand-gated
 but do not block Gap 3 closure.
 
-- [ ] PM-1 json_mode: DeepSeek + OpenAI evidence packets
-- [ ] PM-2 streaming: at least 1 provider evidence packet
-- [ ] PM-3 tool_call: source-verified boundary record with no live-proof claim
-- [ ] PM-4 embedding: DEMAND_GATED
-- [ ] PM-5 reasoning-contract: DEMAND_GATED (D10 receipt already exists as partial proof)
+- [x] PM-1 json_mode: DeepSeek + OpenAI evidence packets
+- [x] PM-2 streaming: at least 1 provider evidence packet
+- [x] PM-3 tool_call: source-verified boundary record with no live-proof claim
+- [x] PM-4 embedding: DEMAND_GATED independently (does not block Gap 3 closure)
+- [x] PM-5 reasoning-contract: DEMAND_GATED independently (does not block Gap 3 closure)
 
 ## Sequencing
 
@@ -160,11 +160,9 @@ PM-4 / PM-5 demand-gated independently
 
 ## Authorization / Decision
 
-Status: DEMAND_GATED. Operator must authorize PM-1 and issue a fresh GC-018
-before any sub-tranche begins. PM-1/PM-2 additionally require source-verified
-method execution paths before implementation. LHW12/LHW13 completion is not a
-prerequisite — PM-1/PM-2/PM-3 can run in parallel with LHW waves after their
-own proof paths are verified.
+Status: CLOSED_PASS. PM-1/PM-2/PM-3 all delivered in commit `4ff94dcb`.
+CVF 25.05 Gap 3 closed at method-proof boundary. PM-4/PM-5 remain
+DEMAND_GATED independently and do not block Gap 3 closure.
 
 ## Non-Goals
 

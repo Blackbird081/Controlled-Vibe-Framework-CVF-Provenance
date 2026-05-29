@@ -234,6 +234,7 @@ API keys available (Alibaba/DeepSeek/OpenAI); operator authorized 2026-05-29.
 Current HEAD (updated per GC-020): `a8d2a0eb`.
 
 Current HEAD after multi-provider execution log enforcement commit: `9f586b6d`.
+Current HEAD after EL/PM code hardening 7 findings: `e70143c3`.
 
 ## LHW13 Wave Closure
 

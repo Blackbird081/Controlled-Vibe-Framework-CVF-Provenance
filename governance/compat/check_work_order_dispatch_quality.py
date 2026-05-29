@@ -214,7 +214,10 @@ def _validate_fast_lane_status_consistency(text: str) -> list[str]:
 
 
 def _extract_wave_id(path: str, text: str) -> int | None:
-    match = LHW_RE.search(f"{path}\n{text}")
+    # Wave ID must come from the filename, not the body — roadmaps that merely
+    # reference LHW waves in their prose must not be mis-classified as LHW connector
+    # waves. Only the file path is authoritative for wave identity.
+    match = LHW_RE.search(path)
     return int(match.group(1)) if match else None
 
 

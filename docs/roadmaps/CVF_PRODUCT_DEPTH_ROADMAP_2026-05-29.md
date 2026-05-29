@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: DEMAND_GATED
+Status: CLOSED_PASS
 
 docType: roadmap
 
@@ -121,22 +121,23 @@ beyond gap closure.
 
 | Gap | Closed by | Status |
 | --- | --- | --- |
-| Gap 1 — Agent Reading Protocol | LHW13-T1 | WORK_ORDER_READY |
-| Gap 2 — Outcome Pack Taxonomy | LHW12-T2 | WORK_ORDER_READY (after T1) |
-| Gap 3 — Provider Method Live Proof | `CVF_PROVIDER_METHOD_LIVE_PROOF_ROADMAP` PM-1/PM-2/PM-3 | DEMAND_GATED |
-| Gap 4 — Memory L0-L3 | LHW13-T2 | WORK_ORDER_READY (after T1) |
-| Gap 5 — Operations Cockpit | PD-1 Phase A | DEMAND_GATED |
-| Gap 6 — External Capability Admission | PD-2 Phase A | DEMAND_GATED |
-| Gap 7 — Async Worker Lifecycle | LHW12-T3 | WORK_ORDER_READY (after T1+T2) |
-| Gap 8 — Action taxonomy detail | W3/TA1/LHW waves partially; per-action rollback detail DEMAND_GATED | PARTIALLY_CLOSED |
-| Gap 9 — Graph context resolver | LHW13-T3 | WORK_ORDER_READY (after T1+T2) |
+| Gap 1 — Agent Reading Protocol | LHW13-T1 | CLOSED_PASS_BOUNDED |
+| Gap 2 — Outcome Pack Taxonomy | LHW12-T2 | CLOSED_PASS_BOUNDED |
+| Gap 3 — Provider Method Live Proof | PM-1/PM-2/PM-3 | CLOSED_PASS (method proof boundary) |
+| Gap 4 — Memory L0-L3 | LHW13-T2 | CLOSED_PASS_BOUNDED |
+| Gap 5 — Operations Cockpit | PD-1 Phase A | CLOSED_PASS (Phase A spec) |
+| Gap 6 — External Capability Admission | PD-2 Phase A | CLOSED_PASS (Phase A contract) |
+| Gap 7 — Async Worker Lifecycle | LHW12-T3 | CLOSED_PASS_BOUNDED |
+| Gap 8 — Action taxonomy per-action rollback | W3/TA1 partial; rollback detail pending | PARTIALLY_CLOSED — work order `docs/work_orders/CVF_WO_GAP8_ACTION_TAXONOMY_ROLLBACK_DETAIL_2026-05-29.md` DEMAND_GATED |
+| Gap 9 — Graph context resolver | LHW13-T3 | CLOSED_PASS_BOUNDED |
 
 CVF 25.05 (`Gop_y.md`) will be **fully absorbed** when:
-- [ ] LHW12 CLOSED_PASS_BOUNDED
-- [ ] LHW13 CLOSED_PASS_BOUNDED
-- [ ] Provider Method Live Proof PM-1/PM-2/PM-3 CLOSED_PASS
-- [ ] PD-1 Phase A CLOSED_PASS
-- [ ] PD-2 Phase A CLOSED_PASS
+- [x] LHW12 CLOSED_PASS_BOUNDED
+- [x] LHW13 CLOSED_PASS_BOUNDED
+- [x] Provider Method Live Proof PM-1/PM-2/PM-3 CLOSED_PASS
+- [x] PD-1 Phase A CLOSED_PASS
+- [x] PD-2 Phase A CLOSED_PASS
+- [x] Gap 8 per-action rollback detail — work order dispatched DEMAND_GATED; does not block 25.05 absorption
 
 ---
 
@@ -156,16 +157,16 @@ source dependencies.
 
 - Operator explicitly authorizes PD-1 or PD-2
 - LHW12/LHW13 are not global prerequisites for PD-1/PD-2 Phase A, but any
-  element that cites an LHW12/LHW13 connector must remain HOLD until that
-  connector exists and is source-verified.
+  element that cites an LHW12/LHW13 connector required source-verification
+  of that connector before dispatch (now satisfied — both waves CLOSED_PASS_BOUNDED).
 - Fresh GC-018 per sub-tranche
 
 ## Authorization / Decision
 
-Status: DEMAND_GATED. Operator must authorize PD-1 or PD-2 individually and
-issue a fresh GC-018 per sub-tranche. LHW12/LHW13 are not blanket
-prerequisites for Phase A, but PD-1 dispatch is blocked while any cockpit
-element depends on a future LHW connector or missing evidence path.
+Status: CLOSED_PASS. PD-1 and PD-2 Phase A delivered in commit `4ff94dcb`.
+CVF 25.05 Gaps 5 and 6 closed at Phase A spec/contract boundary. Gap 8
+per-action rollback detail remains PARTIALLY_CLOSED; work order dispatched
+separately as DEMAND_GATED.
 
 ## Non-Goals
 

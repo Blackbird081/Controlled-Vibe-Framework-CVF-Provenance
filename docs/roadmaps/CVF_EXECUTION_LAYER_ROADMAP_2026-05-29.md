@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: DEMAND_GATED
+Status: CLOSED_PASS
 
 docType: roadmap
 
@@ -116,10 +116,10 @@ Each sub-tranche requires its own GC-018 + work order + completion review.
 
 CVF 28.05 (`.private_reference/legacy/CVF 28.05/`) will be fully absorbed when:
 
-- [ ] LHW12-T1 CLOSED_PASS_BOUNDED (Gap A — posture tier)
-- [ ] EL-1 CLOSED_PASS (Gap D — pipeline chain)
-- [ ] EL-2 CLOSED_PASS (Gap B — WorkerTimeout)
-- [ ] EL-3 CLOSED_PASS (Gap C — ReviewDeadlock)
+- [x] LHW12-T1 CLOSED_PASS_BOUNDED (Gap A — posture tier)
+- [x] EL-1 CLOSED_PASS (Gap D — pipeline chain)
+- [x] EL-2 CLOSED_PASS (Gap B — WorkerTimeout)
+- [x] EL-3 CLOSED_PASS (Gap C — ReviewDeadlock)
 
 ## Unlock Conditions
 
@@ -129,9 +129,8 @@ CVF 28.05 (`.private_reference/legacy/CVF 28.05/`) will be fully absorbed when:
 
 ## Authorization / Decision
 
-Status: DEMAND_GATED. Not authorized for implementation. Operator must
-explicitly authorize at least EL-1 and issue a fresh GC-018 before any
-sub-tranche may begin. This roadmap is a planning record only.
+Status: CLOSED_PASS. All four EL tranches delivered and verified in commit
+`4ff94dcb`. CVF 28.05 Gaps A/B/C/D absorbed. No further EL work pending.
 
 ## Non-Goals
 
