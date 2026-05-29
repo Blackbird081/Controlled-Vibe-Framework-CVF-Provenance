@@ -176,6 +176,42 @@ class ActiveSessionStateTests(unittest.TestCase):
         self.assertFalse(report["compliant"])
         self.assertGreaterEqual(report["handoffViolationCount"], 1)
 
+    def test_stale_root_handoff_reference_in_front_door_fails(self) -> None:
+        (self.repo_root / "CVF_SESSION_MEMORY.md").write_text(
+            "ACTIVE SESSION FRONT DOOR\nCVF_SESSION/ACTIVE_SESSION_STATE.json\n"
+            "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json\n"
+            "docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md\n"
+            "system_reconvergence_stop\ngovernance_kernel_freeze_recommended\n"
+            "AGENT_HANDOFF_V8_2026-05-17.md\n"
+            "Resolve active handoff from registry: AGENT_HANDOFF_V7_2026-05-16.md\n",
+            encoding="utf-8",
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify()
+
+        self.assertFalse(report["compliant"])
+        self.assertTrue(
+            any("stale root handoff reference" in marker
+                for marker in report["markerViolations"]["CVF_SESSION_MEMORY.md"])
+        )
+
+    def test_archive_qualified_handoff_reference_is_allowed(self) -> None:
+        (self.repo_root / "CVF_SESSION_MEMORY.md").write_text(
+            "ACTIVE SESSION FRONT DOOR\nCVF_SESSION/ACTIVE_SESSION_STATE.json\n"
+            "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json\n"
+            "docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md\n"
+            "system_reconvergence_stop\ngovernance_kernel_freeze_recommended\n"
+            "AGENT_HANDOFF_V8_2026-05-17.md\n"
+            "Archive: CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V7_2026-05-16.md\n",
+            encoding="utf-8",
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify()
+
+        self.assertTrue(report["compliant"])
+
     def test_superseded_handoff_must_live_under_archive(self) -> None:
         state_path = self.repo_root / "CVF_SESSION/ACTIVE_SESSION_STATE.json"
         state = json.loads(state_path.read_text(encoding="utf-8"))

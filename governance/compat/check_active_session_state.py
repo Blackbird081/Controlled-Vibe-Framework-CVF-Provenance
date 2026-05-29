@@ -61,6 +61,9 @@ AGENT_ROUTER_MARKERS = (
 )
 
 LHW_KEY_PATTERN = re.compile(r"^lhw(?P<wave>\d+)", re.IGNORECASE)
+HANDOFF_FILENAME_PATTERN = re.compile(
+    r"AGENT_HANDOFF(?:_V\d+_\d{4}-\d{2}-\d{2})?\.md"
+)
 
 
 def _extract_markdown_section(text: str, heading: str) -> str:
@@ -191,6 +194,19 @@ def _active_handoffs() -> list[str]:
         if status and status.startswith("Status: ACTIVE"):
             active.append(path.name)
     return active
+
+
+def _stale_root_handoff_references(text: str, active_handoff: str) -> list[str]:
+    stale: list[str] = []
+    for match in HANDOFF_FILENAME_PATTERN.finditer(text):
+        handoff_name = match.group(0)
+        if handoff_name == active_handoff:
+            continue
+        prefix = text[max(0, match.start() - 96):match.start()].replace("\\", "/")
+        if "CVF_SESSION/handoffs/archive/" in prefix:
+            continue
+        stale.append(handoff_name)
+    return stale
 
 
 def _as_list(value: Any) -> list[str]:
@@ -364,6 +380,15 @@ def _classify() -> dict[str, Any]:
         ]
         if missing_markers:
             marker_violations[path] = missing_markers
+
+    if active_handoff:
+        for path in (FRONT_DOOR_PATH, AGENTS_PATH, READ_FIRST_PATH, STARTUP_GUARDS_PATH, CLAUDE_PATH):
+            stale_handoffs = _stale_root_handoff_references(_read_text(path), active_handoff)
+            if stale_handoffs:
+                marker_violations.setdefault(path, []).extend(
+                    f"stale root handoff reference `{handoff}`; use active handoff `{active_handoff}` or archive-qualified path"
+                    for handoff in sorted(set(stale_handoffs))
+                )
 
     hook_text = _read_text(HOOK_CHAIN_PATH)
     if THIS_SCRIPT_PATH not in hook_text:

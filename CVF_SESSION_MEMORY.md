@@ -29,7 +29,7 @@ Previous long front-door snapshot:
 3. Resolve review queue:
    `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
 4. Resolve active handoff from the state registry:
-   `AGENT_HANDOFF_V14_2026-05-27.md`
+   `AGENT_HANDOFF_V15_2026-05-29.md`
 5. Read mandatory startup guards listed in the state registry.
 
 ## Current State
@@ -185,7 +185,7 @@ gates, and governed file-size checks enforce this front-door contract.
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
-- `AGENT_HANDOFF_V14_2026-05-27.md`
+- `AGENT_HANDOFF_V15_2026-05-29.md`
 - `governance/compat/check_active_session_state.py`
 - `governance/compat/run_agent_autorun_workflow_gate.py`
 

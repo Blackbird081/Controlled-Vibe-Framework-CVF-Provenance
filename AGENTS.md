@@ -13,16 +13,19 @@ current:
 
 The current active handoff in that registry is:
 
-`AGENT_HANDOFF_V14_2026-05-27.md`
+`AGENT_HANDOFF_V15_2026-05-29.md`
 
 Historical handoffs are archived under:
 
 `CVF_SESSION/handoffs/archive/`
 
-This includes `AGENT_HANDOFF.md`, V2-V13, and side-channel handoff files. Do not
-append new status to archived handoffs; update the active handoff named by
-`CVF_SESSION/ACTIVE_SESSION_STATE.json` or open a later versioned handoff when
-the active handoff approaches the limit.
+This includes `CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md`, V2-V14, and
+side-channel handoff files. Do not append new status to archived handoffs;
+update the active handoff named by `CVF_SESSION/ACTIVE_SESSION_STATE.json` or
+open a later versioned handoff when the active handoff approaches the limit.
+After opening a successor handoff, startup front doors and routing docs must
+reference only the active handoff by bare filename. Superseded handoffs may
+appear only as archive-qualified paths under `CVF_SESSION/handoffs/archive/`.
 
 ## Mandatory Startup Acknowledgment - 2026-05-26
 
