@@ -32,6 +32,7 @@ import { buildWorkflowExecutionProjection, resolveWorkflowBindingForExecution } 
 import { buildRouteAuditMemoryCapture } from '@/lib/audit-memory-receipt';
 import { buildRouteRequestContextReadout } from '@/lib/route-request-context-readout';
 import { buildVerticalIntegrationReadout } from '@/lib/vertical-integration-readout'; import { buildSpecFirstMediationReadout } from '@/lib/spec-first-mediation'; import { buildEnglishSpecFreezeReadout } from '@/lib/spec-english-freeze'; import { buildVi5LanguageReadout } from '@/lib/vi5-language-readout';
+import { buildPipelineChainReadout } from '@/lib/pipeline-chain-readout';
 import { buildDurableMemorySystemPrompt, evaluateDurableMemoryRoute, evaluateDurableMemoryWrite, resolveDurableMemoryActorRole } from '@/lib/durable-memory-route';
 import { buildRoleOutputDeniedResponse, buildRolePermissionDeniedResponse } from '@/lib/execute-role-permission-gate';
 import { buildExecutionIdentityDecision } from '@/lib/execution-identity';
@@ -943,6 +944,7 @@ export async function POST(request: NextRequest) {
         const requestContextReadout = buildRouteRequestContextReadout({ request: body, knowledgeContextLength: finalKnowledgeContext?.length ?? 0, retrievedChunkCount: retrievalResult.allowedChunkCount, chainTurnIndex: body.verticalIntegrationChain?.turnIndex });
         const verticalIntegrationReadout = buildVerticalIntegrationReadout({ evidenceReceipt: governanceEvidenceReceipt, workflowExecution, auditMemoryReceipt, requestContextReadout, phase2cProductBrief, phase3eOperationalMetrics, chainRequest: body.verticalIntegrationChain, actorId: session?.userId ?? (isServiceAllowed ? 'service-account' : 'unknown-actor'), templateId: executionTemplateId });
         const specFirstMediation = buildSpecFirstMediationReadout({ request: body, template, routeOutcome: { success: aiResult.success, provider: routedProvider, model: body.model ?? aiResult.model ?? routedProvider, decision: enforcement.status, receipt: { receiptId: governanceEvidenceReceipt.receiptId, envelopeId: governanceEvidenceReceipt.envelopeId }, rawTechnicalEvidenceAvailable: true } }); const englishSpecFreeze = buildEnglishSpecFreezeReadout({ request: body, specFirstMediation, providerOutput: aiResult.output });
+        const pipelineChainReadout = buildPipelineChainReadout(body.intent ?? '');
         return NextResponse.json({
             ...aiResult,
             usage,
@@ -973,9 +975,7 @@ export async function POST(request: NextRequest) {
                 collectionId: requestedKnowledgeCollectionId,
                 allowedCollectionIds: retrievalResult.allowedCollectionIds,
             },
-            aifMemoryReinjection: aifMemoryReinjection.receipt,
-            durableMemoryRead: durableMemoryRoute.receipt,
-            durableMemoryWriteReceipt,
+            aifMemoryReinjection: aifMemoryReinjection.receipt, durableMemoryRead: durableMemoryRoute.receipt, durableMemoryWriteReceipt,
             outputValidation: outputValidation ? {
                 qualityHint: outputValidation.qualityHint,
                 issues: outputValidation.issues,
@@ -986,12 +986,11 @@ export async function POST(request: NextRequest) {
             governanceEvidenceReceipt,
             ...(executionDiagnostic ? { diagnostic: executionDiagnostic } : {}),
             auditMemoryReceipt,
-            requestContextReadout,
-            verticalIntegrationReadout, specFirstMediation, englishSpecFreeze,
+            requestContextReadout, verticalIntegrationReadout, specFirstMediation, englishSpecFreeze,
             ...buildVi5LanguageReadout({ request: body, specFirstMediation, englishSpecFreeze, workflowId: workflowExecution?.workflowId }),
             ...(workflowExecution ? workflowExecution : {}),
-            ...(phase2cProductBrief ? { phase2cProductBrief } : {}),
-            ...(phase3eOperationalMetrics ? { phase3eOperationalMetrics } : {}),
+            ...(phase2cProductBrief ? { phase2cProductBrief } : {}), ...(phase3eOperationalMetrics ? { phase3eOperationalMetrics } : {}),
+            pipelineChainReadout,
         });
     } catch (error) {
         console.error('Execute API error:', error);

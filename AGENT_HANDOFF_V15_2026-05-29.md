@@ -21,12 +21,17 @@ Current HEAD: `c7f278b2` (atomic handoff transition guard commit).
 
 ## Latest Work / Changes
 
-LHW14 Workflow Connector Wave 14 implemented and closed May 29. Three
-documentation-only connector specs: T1 Agent Memory Capture Packaging
-(`agentmemory`), T2 Spec-Change Workflow Advisory (`OpenSpec`), T3 Noncoder
-Clarification and Recovery (`Human System Harness`). Handoff rotated from V14
-to V15 due to near-threshold maintainability. V14 archived at
-`CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V14_2026-05-27.md`.
+**Delta D1** CLOSED_PASS_BOUNDED (2026-05-29). Pipeline chain readout
+(`cvf.pipelineChainReadout.delta.d1.v1`) wired into `/api/execute` ALLOW path
+response. New helper: `cvf-web/src/lib/pipeline-chain-readout.ts`. route.ts
+stays at 999 lines (hard limit 1000). 10/10 tests PASS. Live receipt:
+`rcpt-env-mpql0ujo-4gawwj` (alibaba/qwen-turbo). `runtimeExecutionAuthorized=false`.
+No MCP server change. D2 write-tool gap confirmed; D2 remains DEMAND_GATED.
+
+**LHW14** CLOSED_PASS_BOUNDED (earlier same day). Three documentation-only
+connector specs: T1 Agent Memory Capture Packaging (`agentmemory`), T2
+Spec-Change Workflow Advisory (`OpenSpec`), T3 Noncoder Clarification and
+Recovery (`Human System Harness`). Handoff rotated from V14 to V15.
 
 ## Active Boundary
 
@@ -96,8 +101,9 @@ Advisory types delivered:
 
 ## Next Allowed Move
 
-LHW14 is latest closed LHW wave. Any further connector wave requires fresh
-GC-018, roadmap, and source-verified work orders. Continue LHW connector
+Delta D1 CLOSED_PASS_BOUNDED. WCE W1+W3 WORK_ORDER_READY (parallel dispatch).
+Delta D2/D3 DEMAND_GATED. LHW14 is latest closed LHW wave — further connector
+waves require fresh GC-018. Continue LHW connector
 absorption for remaining PARTIALLY_ABSORBED LH1 families before opening
 separate live-proof roadmaps for `abtop`, `gridex`, or other route-execution
 families.

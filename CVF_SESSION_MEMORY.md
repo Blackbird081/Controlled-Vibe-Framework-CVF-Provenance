@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-29
 
-Current mode marker: `lhw14_wave_closed_pass_bounded`
+Current mode marker: `delta_d1_closed_pass_bounded_wce_w1_w3_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
