@@ -4,6 +4,12 @@ CVF PM-1 json_mode Live Proof Script
 Calls DeepSeek deepseek-chat and OpenAI gpt-4o with json_mode
 (response_format: {"type": "json_object"}) and captures evidence receipts.
 
+PROOF BOUNDARY: METHOD_PROOF_ONLY
+This script calls provider APIs directly, bypassing the governed /api/execute
+route. Evidence produced here proves provider method capability (json_mode
+support), not CVF governance behavior. Do not cite these results as governed
+route proof or release-gate evidence.
+
 Run:
   set DASHSCOPE_API_KEY=sk-... (for future Alibaba)
   python scripts/run_pm1_json_mode_live_proof.py
@@ -45,6 +51,22 @@ OPENAI_KEY = ENV.get("OPENAI_API_KEY", os.environ.get("OPENAI_API_KEY", ""))
 if not DEEPSEEK_KEY and not OPENAI_KEY:
     print("ERROR: Neither DEEPSEEK_API_KEY nor OPENAI_API_KEY found.")
     sys.exit(1)
+
+EXPECTED_JSON_KEYS = {"provider", "method", "status", "timestamp"}
+
+def _validate_json_response(result: dict) -> dict:
+    """Check that the model returned parseable JSON with the expected keys."""
+    if result.get("http_status") != 200:
+        return {**result, "json_valid": False, "json_keys_present": False}
+    try:
+        choices = result.get("response", {}).get("choices", [])
+        content = choices[0]["message"]["content"] if choices else ""
+        parsed = json.loads(content)
+        keys_present = EXPECTED_JSON_KEYS.issubset(parsed.keys())
+        return {**result, "json_valid": True, "json_keys_present": keys_present, "parsed_output": parsed}
+    except (json.JSONDecodeError, KeyError, IndexError, TypeError):
+        return {**result, "json_valid": False, "json_keys_present": False}
+
 
 def make_receipt_id(provider: str) -> str:
     ts = str(int(time.time()))
@@ -190,19 +212,19 @@ def main():
 
     if DEEPSEEK_KEY:
         print("[PM-1] Calling DeepSeek deepseek-chat json_mode...")
-        r = call_deepseek_json_mode(DEEPSEEK_KEY)
+        r = _validate_json_response(call_deepseek_json_mode(DEEPSEEK_KEY))
         results.append(r)
-        status = "PASS" if r.get("http_status") == 200 else "FAIL"
-        print(f"  => {status} (HTTP {r.get('http_status')}, receipt {r.get('receipt_id')})")
+        status = "PASS" if r.get("http_status") == 200 and r.get("json_valid") else "FAIL"
+        print(f"  => {status} (HTTP {r.get('http_status')}, json_valid={r.get('json_valid')}, keys_present={r.get('json_keys_present')}, receipt {r.get('receipt_id')})")
     else:
         print("[PM-1] DeepSeek key not available — skipping.")
 
     if OPENAI_KEY:
         print("[PM-1] Calling OpenAI gpt-4o json_mode...")
-        r = call_openai_json_mode(OPENAI_KEY)
+        r = _validate_json_response(call_openai_json_mode(OPENAI_KEY))
         results.append(r)
-        status = "PASS" if r.get("http_status") == 200 else "FAIL"
-        print(f"  => {status} (HTTP {r.get('http_status')}, receipt {r.get('receipt_id')})")
+        status = "PASS" if r.get("http_status") == 200 and r.get("json_valid") else "FAIL"
+        print(f"  => {status} (HTTP {r.get('http_status')}, json_valid={r.get('json_valid')}, keys_present={r.get('json_keys_present')}, receipt {r.get('receipt_id')})")
     else:
         print("[PM-1] OpenAI key not available — skipping.")
 
@@ -237,8 +259,14 @@ def main():
 
     print(f"Results written to: {out_path}")
 
-    # Return exit code
-    all_pass = all(r.get("http_status") == 200 for r in results if r.get("http_status") is not None)
+    # Return exit code — must have live results, all HTTP 200, all JSON valid with expected keys
+    live_results = [r for r in results if r.get("http_status") is not None]
+    all_pass = (
+        len(live_results) > 0
+        and all(r["http_status"] == 200 for r in live_results)
+        and all(r.get("json_valid") for r in live_results)
+        and all(r.get("json_keys_present") for r in live_results)
+    )
     if not all_pass:
         sys.exit(1)
 

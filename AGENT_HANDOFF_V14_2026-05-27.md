@@ -233,6 +233,8 @@ API keys available (Alibaba/DeepSeek/OpenAI); operator authorized 2026-05-29.
 
 Current HEAD (updated per GC-020): `a8d2a0eb`.
 
+Current HEAD after multi-provider execution log enforcement commit: `9f586b6d`.
+
 ## LHW13 Wave Closure
 
 LHW13 Workflow Connector Wave 13 is now CLOSED_PASS_BOUNDED (T1+T2+T3).

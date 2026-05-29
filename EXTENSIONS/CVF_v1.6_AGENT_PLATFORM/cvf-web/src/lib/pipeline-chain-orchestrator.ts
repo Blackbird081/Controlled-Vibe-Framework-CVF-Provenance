@@ -6,7 +6,7 @@
  *   Reviewer → Closure Gate
  *
  * This is the TypeScript interface implementing the EL-1 contract:
- *   docs/contracts/CVF_PIPELINE_CHAIN_ORCHESTRATOR_CONTRACT.md
+ *   docs/reference/CVF_EL1_PIPELINE_CHAIN_ORCHESTRATOR_CONTRACT_2026-05-29.md
  *
  * Contract version: cvf.pipelineChainOrchestrator.el1.v1
  *
@@ -258,6 +258,16 @@ export function advancePipelineStage(
   state: PipelineChainState,
   stageResult: PipelineStageResult,
 ): PipelineChainState {
+  if (
+    stageResult.nextStage !== 'complete' &&
+    stageResult.nextStage !== 'stop' &&
+    !isValidStageTransition(state.currentStage, stageResult.nextStage)
+  ) {
+    throw new Error(
+      `Invalid pipeline stage transition: ${state.currentStage} → ${stageResult.nextStage}`,
+    );
+  }
+
   const receipts = [...state.receipts, stageResult.receipt];
   const nextStage =
     stageResult.nextStage === 'complete' || stageResult.nextStage === 'stop'
@@ -326,6 +336,8 @@ export interface WorkerTimeoutResult {
   escalateToOrchestrator: boolean;
   /** Action to take */
   nextAction: 'retry' | 'escalate' | 'stop';
+  /** Updated pipeline state with workerRetryCount incremented — caller must apply this */
+  updatedState: PipelineChainState;
 }
 
 /**
@@ -339,6 +351,8 @@ export function handleWorkerTimeout(
 ): WorkerTimeoutResult {
   const retryCount = (state.workerRetryCount || 0) + 1;
   const canRetry = retryCount <= WORKER_TIMEOUT_MAX_RETRIES;
+
+  const updatedState: PipelineChainState = { ...state, workerRetryCount: retryCount };
 
   if (canRetry) {
     return {
@@ -354,6 +368,7 @@ export function handleWorkerTimeout(
       },
       escalateToOrchestrator: false,
       nextAction: 'retry',
+      updatedState,
     };
   }
 
@@ -371,6 +386,7 @@ export function handleWorkerTimeout(
     },
     escalateToOrchestrator: true,
     nextAction: 'escalate',
+    updatedState,
   };
 }
 
@@ -391,6 +407,8 @@ export interface ReviewDeadlockResult {
   diagnostic: ExecutionDiagnostic;
   /** Action to take */
   nextAction: 'continue_review' | 'decompose' | 'escalate';
+  /** Updated pipeline state with reviewerRetryCount incremented — caller must apply this */
+  updatedState: PipelineChainState;
 }
 
 /**
@@ -403,6 +421,7 @@ export function handleReviewDeadlock(
   currentWorkOrderId: string,
 ): ReviewDeadlockResult {
   const rejectionCount = (state.reviewerRetryCount || 0) + 1;
+  const updatedState: PipelineChainState = { ...state, reviewerRetryCount: rejectionCount };
 
   if (rejectionCount <= REVIEW_DEADLOCK_MAX_RETRIES) {
     // Still within retry window — reviewer can continue
@@ -419,6 +438,7 @@ export function handleReviewDeadlock(
         safeMessage: `Reviewer rejected output ${rejectionCount} time(s) — worker should revise and re-submit.`,
       },
       nextAction: 'continue_review',
+      updatedState,
     };
   }
 
@@ -443,5 +463,6 @@ export function handleReviewDeadlock(
       safeMessage: `Review deadlock detected after ${rejectionCount} rejections — work order decomposed into ${decomposedTasks.length} micro-tasks. If decomposition also fails, human intervention is required.`,
     },
     nextAction: 'decompose',
+    updatedState,
   };
 }

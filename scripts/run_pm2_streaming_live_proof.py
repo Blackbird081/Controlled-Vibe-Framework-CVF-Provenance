@@ -4,6 +4,12 @@ CVF PM-2 Streaming Live Proof Script
 Calls Alibaba qwen-turbo with streaming (stream=True) and captures
 SSE stream response with first-token latency.
 
+PROOF BOUNDARY: METHOD_PROOF_ONLY
+This script calls the Alibaba API directly, bypassing the governed /api/execute
+route. Evidence produced here proves provider method capability (streaming
+support), not CVF governance behavior. Do not cite these results as governed
+route proof or release-gate evidence.
+
 Run:
   python scripts/run_pm2_streaming_live_proof.py
 """
@@ -110,8 +116,9 @@ def call_alibaba_streaming(api_key: str) -> dict:
 
 def main():
     if not ALIBABA_KEY:
-        print("[PM-2] Alibaba key not available — skipping.")
-        sys.exit(0)
+        print("[PM-2] SKIP: Alibaba key not available — cannot produce live proof.")
+        print("[PM-2] Set DASHSCOPE_API_KEY to run this proof.")
+        sys.exit(1)
 
     print("[PM-2] Calling Alibaba qwen-turbo streaming...")
     r = call_alibaba_streaming(ALIBABA_KEY)
