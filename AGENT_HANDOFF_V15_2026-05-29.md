@@ -109,9 +109,15 @@ DEMAND_GATED roadmaps pending operator authorization:
 
 API keys available (Alibaba/DeepSeek/OpenAI); operator authorized 2026-05-29.
 
+Delta CLI/MCP Wire-In: OPEN — D1 WORK_ORDER_READY (pipeline chain readout in
+/api/execute); D2/D3 DEMAND_GATED. baseHead: `8b1f5992`. Verified gap: EL-1
+pipeline-chain-orchestrator.ts not imported anywhere; route.ts at 1000-line
+hard limit; MCP 14 tools all read-only. GC-018 + roadmap + 3 work orders at
+`docs/baselines/CVF_GC018_DELTA_*` and `docs/roadmaps/CVF_DELTA_*`.
+
 Parked checkpoints:
 - VI5-T4/T5 hosted Netlify freshness and operator external-agent retest
-- Delta production hardening for MCP/client memory direction
+- Delta D2/D3 pending operator authorization
 
 ## Startup Acknowledgment
 
