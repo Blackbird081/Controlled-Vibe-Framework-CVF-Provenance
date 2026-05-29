@@ -426,6 +426,50 @@ Autorun and local hook chains must run this guard. A missing provider/model,
 execution surface, evidence basis, commit range, quality finding disposition,
 cost boundary, or direct-provider-proof boundary blocks governed closure.
 
+## Mandatory Finding-To-Governance Learning Trigger Guard - 2026-05-29
+
+Canonical standard:
+
+`docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD_2026-05-29.md`
+
+Machine guard:
+
+`governance/compat/check_finding_to_governance_learning.py`
+
+Any changed CVF log, review, assessment, or audit that records findings, known
+issues, quality findings, defects, or post-run problems must include a
+`Finding-To-Governance Learning Disposition` section. The disposition must
+classify the defect, learning lane, escalation state, and next control action.
+
+Allowed learning lanes include governance/control-plane learning,
+runtime-behavior learning, provider-output learning, cost/economics learning,
+and documentation-only learning. A finding may close as `N/A with reason`, but
+it must not close as worker blame without saying whether CVF rule, guard, phase
+placement, runtime signal capture, or operator scope clarity also failed.
+
+Autorun and local hook chains must run this guard. A finding-bearing artifact
+without learning disposition blocks governed closure.
+
+## Mandatory Learning Signal Intake Bridge - 2026-05-29
+
+Canonical standard:
+
+`docs/reference/CVF_LEARNING_SIGNAL_INTAKE_BRIDGE_STANDARD_2026-05-29.md`
+
+Owner implementation:
+
+`EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/learning-signal-intake-bridge.ts`
+
+Runtime/provider/cost learning candidates, phase-gate placement gaps, design
+review candidates, and machine-check candidates must be normalized into a
+`LearningSignalIntakeRecord` before a follow-up roadmap claims Learning Plane
+routing. The bridge emits `LearningFeedbackInput` for the existing feedback
+ledger and keeps `autonomousMutationAuthorized=false`.
+
+This is a bounded intake bridge only. It does not authorize autonomous rule
+mutation, runtime behavior mutation, provider prompt changes, memory
+reinjection, model tuning, public readiness, or production readiness.
+
 ## Mandatory Knowledge Absorption Blind-Spot Prevention - 2026-05-24
 
 Canonical standard:

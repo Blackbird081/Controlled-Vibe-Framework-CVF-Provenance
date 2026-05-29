@@ -801,6 +801,20 @@ export type {
   FeedbackLedgerContractDependencies,
 } from "./feedback.ledger.contract";
 export {
+  LEARNING_SIGNAL_INTAKE_BRIDGE_VERSION,
+  LearningSignalIntakeBridge,
+  createLearningSignalIntakeBridge,
+} from "./learning-signal-intake-bridge";
+export type {
+  LearningSignalDefectClass,
+  LearningSignalDisposition,
+  LearningSignalIntakeBridgeDependencies,
+  LearningSignalIntakeInput,
+  LearningSignalIntakeRecord,
+  LearningSignalLane,
+  LearningSignalSeverity,
+} from "./learning-signal-intake-bridge";
+export {
   PatternDetectionContract,
   createPatternDetectionContract,
 } from "./pattern.detection.contract";

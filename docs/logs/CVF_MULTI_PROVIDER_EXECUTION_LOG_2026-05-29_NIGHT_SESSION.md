@@ -112,6 +112,15 @@ documentation-only connector waves. They narrow the claims: hooks PASS confirms
 process compliance, while code design quality, governed-route behavior, and
 cost optimization require additional review or machine checks.
 
+## Finding-To-Governance Learning Disposition
+
+| Finding group | Defect class | Learning lane | Disposition | Next control action |
+|---|---|---|---|---|
+| Multi-provider/provider-model attribution required operator reminder | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | Added `check_multi_provider_execution_log.py` and wired it into autorun/local hooks |
+| Finding-to-rule promotion itself required operator reminder | PHASE_GATE_PLACEMENT_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_CANDIDATE | Add finding-to-governance learning trigger guard so future finding-bearing artifacts must classify escalation |
+| PM1/PM2 proof-script weaknesses | MACHINE_GATE_GAP | RUNTIME_BEHAVIOR_LEARNING | MACHINE_CHECK_CANDIDATE | Future code-hardening batch should make proof-script failures non-vacuous and classify live diagnostics |
+| Provider output/cost quality not fully measured | RUNTIME_SIGNAL_GAP | COST_ECONOMICS_LEARNING | RUNTIME_LEARNING_CANDIDATE | Future provider economics ledger should capture token, wall-time, live-call, and rework data |
+
 ## Risk And Corrective Action
 
 Highest follow-up risk is false confidence from direct-provider proof scripts

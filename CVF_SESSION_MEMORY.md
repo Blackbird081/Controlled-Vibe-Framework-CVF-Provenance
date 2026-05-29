@@ -136,6 +136,30 @@ boundary, quality findings, and cost attribution when closing governed work or
 claiming provider effectiveness. Autorun and local hook chains now fail missing
 or overclaimed multi-provider execution logs.
 
+Finding-to-governance learning disposition is now machine-enforced:
+
+`docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD_2026-05-29.md`
+
+`governance/compat/check_finding_to_governance_learning.py`
+
+Changed logs, reviews, assessments, or audits that record findings or known
+issues must classify each material finding into governance/control-plane,
+runtime-behavior, provider-output, cost/economics, or documentation-only
+learning lanes, with next control action.
+
+Learning Signal Intake Bridge is now the typed Learning Plane intake route for
+those learning lanes:
+
+`docs/reference/CVF_LEARNING_SIGNAL_INTAKE_BRIDGE_STANDARD_2026-05-29.md`
+
+`EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/learning-signal-intake-bridge.ts`
+
+Runtime/provider/cost candidates, phase-gate placement gaps, design-review
+candidates, and machine-check candidates must normalize into
+`LearningSignalIntakeRecord` / `LearningFeedbackInput` before a follow-up
+roadmap claims Learning Plane routing. Autonomous mutation remains false unless
+a separate governed roadmap authorizes it.
+
 LHW scope rejection is not source rejection. For doc-only LHW connector waves,
 families such as `abtop` or `gridex` that require live route execution must be
 labeled `rejected from this LHW wave (doc-only scope) - requires live route;

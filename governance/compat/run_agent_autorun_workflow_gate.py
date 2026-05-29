@@ -73,6 +73,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             base,
             head,
         ),
+        _range_command(
+            "finding-to-governance learning quality",
+            "governance/compat/check_finding_to_governance_learning.py",
+            base,
+            head,
+        ),
     GateCommand(
         "active session state compatibility",
         ("python", "governance/compat/check_active_session_state.py", "--enforce"),
