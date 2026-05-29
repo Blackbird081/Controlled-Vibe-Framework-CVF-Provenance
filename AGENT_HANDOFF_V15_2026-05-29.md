@@ -17,7 +17,7 @@ Active private provenance continuity for the current CVF repository. Use only
 with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
-Current HEAD: `478e2de6` (Delta D1 pipeline chain readout — CLOSED_PASS_BOUNDED).
+Current HEAD: `311353bb` (WCE W1+W3 CLOSED_PASS_BOUNDED).
 
 ## Latest Work / Changes
 
@@ -110,11 +110,9 @@ Advisory types delivered:
 
 ## Next Allowed Move
 
-WCE W1+W3 CLOSED_PASS_BOUNDED. Delta D1 CLOSED_PASS_BOUNDED. W2 Phase B
-UNBLOCKED — HOLD_UNTIL_W1_AND_W3_PASS satisfied; operator authorization needed
-before W2 Phase B runtime implementation. Delta D2/D3 DEMAND_GATED. LHW14 is
-latest closed LHW wave — further connector waves require fresh GC-018. Continue
-LHW connector
+WCE wave ALL CLOSED_PASS_BOUNDED (W1+W2+W3). Delta D1 CLOSED_PASS_BOUNDED.
+Delta D2/D3 DEMAND_GATED. LHW14 is latest closed LHW wave — further connector
+waves require fresh GC-018. Continue LHW connector
 absorption for remaining PARTIALLY_ABSORBED LH1 families before opening
 separate live-proof roadmaps for `abtop`, `gridex`, or other route-execution
 families.
@@ -126,8 +124,7 @@ DEMAND_GATED roadmaps pending operator authorization:
 
 API keys available (Alibaba/DeepSeek/OpenAI); operator authorized 2026-05-29.
 
-Delta CLI/MCP Wire-In: OPEN — D1 WORK_ORDER_READY (pipeline chain readout in
-/api/execute); D2/D3 DEMAND_GATED. baseHead: `8b1f5992`. Verified gap: EL-1
+Delta CLI/MCP Wire-In: D1 CLOSED_PASS_BOUNDED; D2/D3 DEMAND_GATED. baseHead: `8b1f5992`. Verified gap: EL-1
 pipeline-chain-orchestrator.ts not imported anywhere; route.ts at 1000-line
 hard limit; MCP 14 tools all read-only. GC-018 + roadmap + 3 work orders at
 `docs/baselines/CVF_GC018_DELTA_*` and `docs/roadmaps/CVF_DELTA_*`.

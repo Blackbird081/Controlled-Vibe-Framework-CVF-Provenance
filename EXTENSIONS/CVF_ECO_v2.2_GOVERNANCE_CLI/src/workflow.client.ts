@@ -1,5 +1,6 @@
 import { CLIArgs, CLIOutput } from "./types";
 import { executeGovernedTemplateCommand, FetchLike, buildExecutePayload } from "./execute.client";
+import { buildMa1Packet, type Ma1CliPacket } from "./ma1-packet";
 
 export const WORKFLOW_CHAIN_CONTRACT =
   "cvf.workflowChainExecution.wce.w1.v1" as const;
@@ -20,6 +21,7 @@ export interface WorkflowStepResult {
   input: string;
   output: string;
   receipt?: unknown;
+  ma1Packet?: Ma1CliPacket;
   success: boolean;
   error?: string;
 }
@@ -134,13 +136,24 @@ export async function executeWorkflowChain(
     }
 
     const output = extractOutputFromResult(result);
+    const stepReceipt = result.success ? (result.data as Record<string, unknown>)?.governanceEvidenceReceipt : undefined;
+    const nextRole = roles[i + 1];
+    const ma1Packet = options.receipt && result.success && nextRole
+      ? buildMa1Packet(
+          { stepIndex: i, agentRole: role, templateId: templateKey, input: currentInput, output, receipt: stepReceipt, success: true },
+          nextRole,
+          templateKey,
+          options.providers ? { provider: options.providers[nextRole.toLowerCase()] ?? options.providers[nextRole] } : undefined,
+        )
+      : undefined;
     const step: WorkflowStepResult = {
       stepIndex: i,
       agentRole: role,
       templateId: templateKey,
       input: currentInput,
       output,
-      receipt: result.success ? (result.data as Record<string, unknown>)?.governanceEvidenceReceipt : undefined,
+      receipt: stepReceipt,
+      ma1Packet,
       success: result.success,
       error: result.success ? undefined : result.message,
     };

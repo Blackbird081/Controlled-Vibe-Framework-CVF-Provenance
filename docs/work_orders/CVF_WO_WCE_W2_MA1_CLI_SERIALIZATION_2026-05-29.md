@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: HOLD_UNTIL_W1_AND_W3_PASS
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -95,10 +95,10 @@ New contract fields:
 
 | Roadmap requirement | Work order section | Output artifact | Verification | Status |
 | --- | --- | --- | --- | --- |
-| Phase A: MA1 → CLI schema connector spec | Scope Phase A | `CVF_WCE_W2_MA1_CLI_SERIALIZATION_CONNECTOR_SPEC` | Doc review | OPEN |
-| Phase B: `buildMa1Packet()` in CLI | Scope Phase B | `ma1-packet.ts` | Unit tests | OPEN |
-| Phase B: `cvf workflow` emits MA1 at stage boundaries | workflow.client.ts update | MA1 JSON in step output | Integration test | OPEN |
-| W1+W3 gates confirmed (Phase B) | Authority Chain | completion reviews | Both CLOSED_PASS | OPEN |
+| Phase A: MA1 → CLI schema connector spec | Scope Phase A | `CVF_WCE_W2_MA1_CLI_SERIALIZATION_CONNECTOR_SPEC` | Doc review | PASS |
+| Phase B: `buildMa1Packet()` in CLI | Scope Phase B | `ma1-packet.ts` | 15/15 PASS | PASS |
+| Phase B: `cvf workflow` emits MA1 at stage boundaries | workflow.client.ts update | MA1 JSON in step output | ma1Packet field verified | PASS |
+| W1+W3 gates confirmed (Phase B) | Authority Chain | completion reviews | Both CLOSED_PASS `311353bb` | PASS |
 
 ## Implementation Design — Phase B
 
@@ -138,10 +138,10 @@ the next agent's `intent` field.
 
 ## Pre-Flight
 
-- [ ] W1 CLOSED_PASS confirmed (Phase B only)
-- [ ] W3 CLOSED_PASS confirmed (Phase B only)
-- [ ] MA1 standard 13 sections confirmed
-- [ ] MA1 contract version confirmed: `cvf.internalMultiAgentTransfer.ma1.v1`
+- [x] W1 CLOSED_PASS confirmed — commit `311353bb`
+- [x] W3 CLOSED_PASS confirmed — commit `311353bb`
+- [x] MA1 standard 13 sections confirmed
+- [x] MA1 contract version confirmed: `cvf.internalMultiAgentTransfer.ma1.v1`
 
 ## Write Ownership
 
@@ -174,13 +174,13 @@ Phase B: implementer owns `ma1-packet.ts`, test file, and `workflow.client.ts` u
 
 ## Acceptance Criteria
 
-- [ ] Phase A: connector spec with all 13 MA1 sections individually mapped
-- [ ] Phase B (requires W1+W3 first):
-  - [ ] `buildMa1Packet()` implemented
-  - [ ] `ma1-packet.test.ts` PASS
-  - [ ] `cvf workflow --receipt` emits MA1 packets at stage boundaries
-  - [ ] TypeScript PASS
-  - [ ] Session continuity: WCE CLOSED_PASS
+- [x] Phase A: connector spec with all 13 MA1 sections individually mapped
+- [x] Phase B (W1+W3 confirmed — commit `311353bb`):
+  - [x] `buildMa1Packet()` implemented
+  - [x] `ma1-packet.test.ts` PASS (15/15)
+  - [x] `cvf workflow --receipt` emits MA1 packets at stage boundaries
+  - [x] TypeScript PASS
+  - [x] Session continuity: WCE CLOSED_PASS
 
 Fail conditions:
 - W1 or W3 gate not confirmed before Phase B
@@ -193,14 +193,14 @@ W1+W3 confirmed; all 13 MA1 sections present in packet; tests PASS; TypeScript P
 
 ## Closure Checklist
 
-- [ ] W1 AND W3 CLOSED_PASS confirmed
-- [ ] Phase A connector spec complete
-- [ ] `ma1-packet.ts` with `buildMa1Packet()`
-- [ ] `ma1-packet.test.ts` PASS
-- [ ] `workflow.client.ts` emits MA1 packets
-- [ ] TypeScript PASS
-- [ ] Session continuity: WCE CLOSED_PASS
-- [ ] Completion review with WCE wave closure summary written
+- [x] W1 AND W3 CLOSED_PASS confirmed (commit `311353bb`)
+- [x] Phase A connector spec complete
+- [x] `ma1-packet.ts` with `buildMa1Packet()`
+- [x] `ma1-packet.test.ts` PASS (15/15)
+- [x] `workflow.client.ts` emits MA1 packets
+- [x] TypeScript PASS
+- [x] Session continuity: WCE CLOSED_PASS
+- [x] Completion review with WCE wave closure summary written
 
 ## Return-To-Orchestrator Conditions
 

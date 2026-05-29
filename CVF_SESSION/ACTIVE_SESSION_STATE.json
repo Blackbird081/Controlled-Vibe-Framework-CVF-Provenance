@@ -35,8 +35,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "wce_w1_w3_closed_pass_bounded_w2_unblocked",
-  "previousMode": "delta_d1_closed_pass_bounded_wce_w1_w3_ready",
+  "currentMode": "wce_wave_all_closed_pass_bounded",
+  "previousMode": "wce_w1_w3_closed_pass_bounded_w2_unblocked",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -115,7 +115,8 @@
     "blocked_work_classes",
     "next_allowed_move"
   ],
-  "nextAllowedMove": "LHW14 is the latest closed LHW wave. Delta D1 + WCE W1+W3 ALL CLOSED_PASS_BOUNDED. W2 Phase B UNBLOCKED — HOLD_UNTIL_W1_AND_W3_PASS now satisfied; operator authorization needed. Delta D2/D3 DEMAND_GATED. Any further LHW connector wave requires a fresh roadmap and GC-018.",
+  "nextAllowedMove": "LHW14 is the latest closed LHW wave. Delta D1 + WCE W1+W2+W3 ALL CLOSED_PASS_BOUNDED. WCE wave fully closed. Delta D2/D3 DEMAND_GATED. Any further LHW connector wave requires a fresh roadmap and GC-018.",
+  "wceWorkflowChainExecution": "CLOSED_PASS_BOUNDED. W1+W2+W3 all closed. W1 cvf.workflowChainExecution.wce.w1.v1 + W2 cvf.ma1CliSerialization.wce.w2.v1 + W3 cvf.perRoleProviderRouting.wce.w3.v1. WCE wave complete.",
   "wceW1WorkflowChainCommand": "CLOSED_PASS_BOUNDED. Contract cvf.workflowChainExecution.wce.w1.v1. New module EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/workflow.client.ts; workflow command registered in command.registry.ts; 7/7 tests PASS; TypeScript PASS; 2-turn live chain receipts rcpt-env-mpqlsyzl-c3m76f (AI_AGENT) + rcpt-env-mpqlt87n-vl8eny (REVIEWER chained). No governance bypass. No route.ts change. No MCP server change. W2 gate: YES — W1 transport exists; W2 Phase B UNBLOCKED pending operator authorization.",
   "wceW3PerRoleProviderRouting": "CLOSED_PASS_BOUNDED. Contract cvf.perRoleProviderRouting.wce.w3.v1. parseProviderMap() + resolveProviderForRole() in execute.client.ts; --providers flag on execute + workflow commands; all tests PASS; TypeScript PASS; live receipt rcpt-env-mpqlrk1z-xhs73v (deepseek via per-role routing, ALLOW, live). No route.ts change. No MCP server change.",
   "deltaD1PipelineChainReadout": "CLOSED_PASS_BOUNDED. Contract cvf.pipelineChainReadout.delta.d1.v1. New module EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/pipeline-chain-readout.ts; additive pipelineChainReadout field in route.ts response (ALLOW path only); route.ts 999 lines (hard limit 1000); 10/10 tests PASS; TypeScript PASS; live receipt rcpt-env-mpql0ujo-4gawwj (alibaba/qwen-turbo ALLOW live). runtimeExecutionAuthorized=false literal. No MCP server change. No pipeline enforcement. EL-1 contract cited. Fast Lane PASS. D2 gate: write-tool gap confirmed; cvf_submit_review_receipt and cvf_advance_pipeline_stage MCP tools missing; D2 DEMAND_GATED. Boundary: additive advisory readout on ALLOW path only; no hosted readiness, production readiness, or public release readiness.",
