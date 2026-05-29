@@ -115,6 +115,10 @@ pipeline-chain-orchestrator.ts not imported anywhere; route.ts at 1000-line
 hard limit; MCP 14 tools all read-only. GC-018 + roadmap + 3 work orders at
 `docs/baselines/CVF_GC018_DELTA_*` and `docs/roadmaps/CVF_DELTA_*`.
 
+WCE Workflow Chain Execution: OPEN — W1+W3 WORK_ORDER_READY (parallel dispatch);
+W2 Phase A parallel; W2 Phase B HOLD_UNTIL_W1_W3_PASS. baseHead: `60fc3b32`.
+GC-018+roadmap+3 WOs at docs/baselines/CVF_GC018_WCE_* + docs/roadmaps/CVF_WCE_*.
+
 Parked checkpoints:
 - VI5-T4/T5 hosted Netlify freshness and operator external-agent retest
 - Delta D2/D3 pending operator authorization
