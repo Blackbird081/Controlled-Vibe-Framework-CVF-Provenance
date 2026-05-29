@@ -128,7 +128,7 @@ beyond gap closure.
 | Gap 5 — Operations Cockpit | PD-1 Phase A | CLOSED_PASS (Phase A spec) |
 | Gap 6 — External Capability Admission | PD-2 Phase A | CLOSED_PASS (Phase A contract) |
 | Gap 7 — Async Worker Lifecycle | LHW12-T3 | CLOSED_PASS_BOUNDED |
-| Gap 8 — Action taxonomy per-action rollback | W3/TA1 partial; rollback detail pending | PARTIALLY_CLOSED — work order `docs/work_orders/CVF_WO_GAP8_ACTION_TAXONOMY_ROLLBACK_DETAIL_2026-05-29.md` DEMAND_GATED |
+| Gap 8 — Action taxonomy per-action rollback | Gap 8 Phase A spec; W3 boolean gate + per-action detail | CLOSED_PASS (Phase A doc connector) — Phase B runtime wiring DEMAND_GATED |
 | Gap 9 — Graph context resolver | LHW13-T3 | CLOSED_PASS_BOUNDED |
 
 CVF 25.05 (`Gop_y.md`) will be **fully absorbed** when:

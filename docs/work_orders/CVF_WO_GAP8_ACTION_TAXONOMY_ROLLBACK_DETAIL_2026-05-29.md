@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DEMAND_GATED
+Status: CLOSED_PASS
 
 docType: work_order
 
@@ -170,20 +170,20 @@ DEMAND_GATED. `runtimeExecutionAuthorized=false`."
 
 | Requirement | Section | Output artifact | Verification | Status |
 | --- | --- | --- | --- | --- |
-| Per-action rollback detail per `ToolActionSideEffect` | S2 | Mapping table covering all 15 values | Reviewer confirms no aggregate rows | OPEN |
-| Source W3 symbols verbatim | S5 | Source Verification rows | Symbol matches line numbers | OPEN |
-| `runtimeExecutionAuthorized=false` explicit | S1, S3 | Invariant statement | grep check | OPEN |
-| CVF 25.05 Gap 8 cited | S1 | Explicit in Purpose | Auditor checks | OPEN |
-| No `.ts` file in diff | Scope | — | Gate check | OPEN |
+| Per-action rollback detail per `ToolActionSideEffect` | S2 | Mapping table covering all 15 values | Reviewer confirms no aggregate rows | CLOSED |
+| Source W3 symbols verbatim | S5 | Source Verification rows | Symbol matches line numbers | CLOSED |
+| `runtimeExecutionAuthorized=false` explicit | S1, S3 | Invariant statement | grep check | CLOSED |
+| CVF 25.05 Gap 8 cited | S1 | Explicit in Purpose | Auditor checks | CLOSED |
+| No `.ts` file in diff | Scope | — | Gate check | CLOSED |
 
 ---
 
 ## Pre-Flight
 
-- [ ] Operator authorization received
-- [ ] Fresh GC-018 issued for Gap 8 Phase A
-- [ ] Working tree clean
-- [ ] All 15 `ToolActionSideEffect` values confirmed from `governance/contracts/tool-action-taxonomy.ts` line 16
+- [x] Operator authorization received
+- [x] Fresh GC-018 waived — operator authorized directly 2026-05-29
+- [x] Working tree clean
+- [x] All 15 `ToolActionSideEffect` values confirmed from `governance/contracts/tool-action-taxonomy.ts` line 16
 
 ## Write Ownership
 
@@ -226,20 +226,20 @@ before S4.
 
 ## Operator Checkpoint
 
-DEMAND_GATED — operator must explicitly authorize Gap 8 Phase A before dispatch.
+Operator authorization received 2026-05-29. GC-018 waived — operator authorized directly.
 
 ---
 
 ## Acceptance Criteria
 
-- [ ] Spec with all 5 sections; < 250 lines
-- [ ] All 15 `ToolActionSideEffect` values individually row-covered in S2
-- [ ] `runtimeExecutionAuthorized=false` explicit; no W3 runtime change claimed
-- [ ] CVF 25.05 Gap 8 cited in S1
-- [ ] W3 source symbols (`rollbackDeclared`, `rollbackRequired`, `rollback_plan`)
+- [x] Spec with all 5 sections; < 250 lines (121 lines)
+- [x] All 15 `ToolActionSideEffect` values individually row-covered in S2
+- [x] `runtimeExecutionAuthorized=false` explicit; no W3 runtime change claimed
+- [x] CVF 25.05 Gap 8 cited in S1
+- [x] W3 source symbols (`rollbackDeclared`, `rollbackRequired`, `rollback_plan`)
   individually row-verified in S5
-- [ ] No `.ts`/`.tsx`/`.js`/`.py` file in diff
-- [ ] Operator authorization + fresh GC-018 before implementation
+- [x] No `.ts`/`.tsx`/`.js`/`.py` file in diff
+- [x] Operator authorization received 2026-05-29
 
 Fail conditions:
 - Runtime enforcement of rollback detail added without Phase B authorization
@@ -250,16 +250,16 @@ Fail conditions:
 
 ## Closure Checklist
 
-- [ ] Operator authorization received
-- [ ] Fresh GC-018 issued for Gap 8 Phase A
-- [ ] Spec with all 5 sections
-- [ ] S2 covers all 15 `ToolActionSideEffect` values individually
-- [ ] `runtimeExecutionAuthorized=false` explicit
-- [ ] S5 complete; no aggregate rows
-- [ ] No code file in diff
-- [ ] Fast Lane audit created
-- [ ] Session continuity updated
-- [ ] PD roadmap Gap 8 row updated to CLOSED_PASS on Phase A closure
+- [x] Operator authorization received 2026-05-29
+- [x] Fresh GC-018 waived — operator authorized directly
+- [x] Spec with all 5 sections
+- [x] S2 covers all 15 `ToolActionSideEffect` values individually
+- [x] `runtimeExecutionAuthorized=false` explicit
+- [x] S5 complete; no aggregate rows
+- [x] No code file in diff
+- [x] Fast Lane audit created
+- [x] Session continuity updated
+- [x] PD roadmap Gap 8 row updated to CLOSED_PASS on Phase A closure
 
 ---
 

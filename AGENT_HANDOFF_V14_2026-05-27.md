@@ -235,6 +235,10 @@ Current HEAD (updated per GC-020): `a8d2a0eb`.
 
 Current HEAD after multi-provider execution log enforcement commit: `9f586b6d`.
 Current HEAD after EL/PM code hardening 7 findings: `e70143c3`.
+Current HEAD after roadmap status fix + Gap 8 WO dispatch: `20a80b50`.
+Gap 8 Phase A: CLOSED_PASS — all 15 ToolActionSideEffect rollback detail records delivered.
+CVF 25.05: 9/9 gaps CLOSED_PASS (Gap 8 Phase A doc-only; Phase B runtime wiring DEMAND_GATED).
+CVF 28.05: 4/4 gaps CLOSED_PASS.
 
 ## LHW13 Wave Closure
 
