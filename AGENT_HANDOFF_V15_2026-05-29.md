@@ -17,9 +17,18 @@ Active private provenance continuity for the current CVF repository. Use only
 with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
-Current HEAD: `c7f278b2` (atomic handoff transition guard commit).
+Current HEAD: `478e2de6` (Delta D1 pipeline chain readout — CLOSED_PASS_BOUNDED).
 
 ## Latest Work / Changes
+
+**WCE W1+W3** CLOSED_PASS_BOUNDED (2026-05-29). W1: `cvf workflow` chain command
+(`cvf.workflowChainExecution.wce.w1.v1`); `workflow.client.ts` + command registry;
+7/7 tests PASS; 2-turn live receipts `rcpt-env-mpqlsyzl-c3m76f` →
+`rcpt-env-mpqlt87n-vl8eny`. W3: `--providers` per-role routing
+(`cvf.perRoleProviderRouting.wce.w3.v1`); `parseProviderMap()` +
+`resolveProviderForRole()`; all tests PASS; live receipt
+`rcpt-env-mpqlrk1z-xhs73v` (deepseek via per-role). W2 Phase B UNBLOCKED —
+HOLD_UNTIL_W1_AND_W3_PASS satisfied; operator authorization needed.
 
 **Delta D1** CLOSED_PASS_BOUNDED (2026-05-29). Pipeline chain readout
 (`cvf.pipelineChainReadout.delta.d1.v1`) wired into `/api/execute` ALLOW path
@@ -101,9 +110,11 @@ Advisory types delivered:
 
 ## Next Allowed Move
 
-Delta D1 CLOSED_PASS_BOUNDED. WCE W1+W3 WORK_ORDER_READY (parallel dispatch).
-Delta D2/D3 DEMAND_GATED. LHW14 is latest closed LHW wave — further connector
-waves require fresh GC-018. Continue LHW connector
+WCE W1+W3 CLOSED_PASS_BOUNDED. Delta D1 CLOSED_PASS_BOUNDED. W2 Phase B
+UNBLOCKED — HOLD_UNTIL_W1_AND_W3_PASS satisfied; operator authorization needed
+before W2 Phase B runtime implementation. Delta D2/D3 DEMAND_GATED. LHW14 is
+latest closed LHW wave — further connector waves require fresh GC-018. Continue
+LHW connector
 absorption for remaining PARTIALLY_ABSORBED LH1 families before opening
 separate live-proof roadmaps for `abtop`, `gridex`, or other route-execution
 families.

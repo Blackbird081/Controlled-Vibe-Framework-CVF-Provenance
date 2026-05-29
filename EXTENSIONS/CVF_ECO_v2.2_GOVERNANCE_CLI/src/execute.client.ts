@@ -25,6 +25,47 @@ export interface ExecuteRequestPayload {
   stream?: boolean;
 }
 
+const KNOWN_ROLES = new Set([
+  "orchestrator", "builder", "reviewer", "ai_agent", "auditor", "designer",
+]);
+
+export function parseProviderMap(raw: string): Record<string, string> {
+  if (!raw || !raw.trim()) {
+    return {};
+  }
+  const result: Record<string, string> = {};
+  const segments = raw.split(",");
+  for (const segment of segments) {
+    const colonIdx = segment.indexOf(":");
+    if (colonIdx < 1) {
+      continue;
+    }
+    const role = segment.slice(0, colonIdx).trim().toLowerCase();
+    const provider = segment.slice(colonIdx + 1).trim();
+    if (!role || !provider) {
+      continue;
+    }
+    if (!KNOWN_ROLES.has(role)) {
+      // Warning only — forward-compatible
+      process.stderr.write(`[cvf] Warning: unknown role "${role}" in --providers map. Forwarding anyway.\n`);
+    }
+    result[role] = provider;
+  }
+  return result;
+}
+
+export function resolveProviderForRole(
+  requestedRole: string,
+  providerMap: Record<string, string>,
+  fallback: string | undefined,
+): string | undefined {
+  const normalizedRole = requestedRole.toLowerCase();
+  if (Object.prototype.hasOwnProperty.call(providerMap, normalizedRole)) {
+    return providerMap[normalizedRole];
+  }
+  return fallback;
+}
+
 export function buildExecuteUrl(endpoint: string): string {
   const trimmed = endpoint.replace(/\/+$/, "");
   if (trimmed.endsWith("/api/execute")) {
@@ -64,12 +105,17 @@ export function buildExecutePayload(args: CLIArgs): ExecuteRequestPayload {
   const intentFromInput = typeof parsedInput.intent === "string" ? parsedInput.intent : undefined;
   const intent = stringFlag(args, "intent") || intentFromInput || `Execute governed template ${templateId}.`;
 
+  const globalProvider = stringFlag(args, "provider");
+  const rawProvidersFlag = stringFlag(args, "providers");
+  const providerMap = rawProvidersFlag ? parseProviderMap(rawProvidersFlag) : {};
+  const resolvedProvider = resolveProviderForRole(requestedRole, providerMap, globalProvider);
+
   return {
     templateId,
     templateName: stringFlag(args, "templateName") || templateId,
     intent,
     inputs: routeInputs,
-    provider: stringFlag(args, "provider"),
+    provider: resolvedProvider,
     model: stringFlag(args, "model"),
     mode: stringFlag(args, "mode") || "simple",
     requestedRole,

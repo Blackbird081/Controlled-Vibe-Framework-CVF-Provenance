@@ -5,9 +5,9 @@ describe("CommandRegistry", () => {
   const registry = new CommandRegistry();
 
   describe("built-in commands", () => {
-    it("has 14 built-in commands", () => {
+    it("has 15 built-in commands", () => {
       const commands = registry.listCommands();
-      expect(commands.length).toBe(14);
+      expect(commands.length).toBe(15);
     });
 
     it("includes all expected commands", () => {
@@ -25,6 +25,7 @@ describe("CommandRegistry", () => {
       expect(names).toContain("evaluate");
       expect(names).toContain("session");
       expect(names).toContain("report");
+      expect(names).toContain("workflow");
       expect(names).toContain("audit");
     });
   });

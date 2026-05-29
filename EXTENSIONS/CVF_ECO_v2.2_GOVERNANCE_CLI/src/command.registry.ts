@@ -9,6 +9,7 @@ import {
   type BenchmarkGovernanceOptions,
 } from "./types";
 import { executeGovernedTemplateCommand } from "./execute.client";
+import { executeWorkflowChain, CLI_WORKFLOW_TEMPLATES, WORKFLOW_CHAIN_CONTRACT } from "./workflow.client";
 import {
   computeGovernanceReliabilityReport,
   parseAuditJsonl,
@@ -127,12 +128,12 @@ export class CommandRegistry {
     this.register({
       name: "execute",
       description: "Execute a governed CVF template through the web execute route",
-      usage: "cvf execute --template <id> --role <role> [--input <json>] [--endpoint <url>] [--dry-run] [--receipt] [--verbose]",
+      usage: "cvf execute --template <id> --role <role> [--input <json>] [--endpoint <url>] [--providers <role:provider,...>] [--provider <name>] [--dry-run] [--receipt] [--verbose]",
       execute: (args) => {
         if (args.flags.help === true || args.flags.h === true) {
           return {
             success: true,
-            message: "execute: Execute a governed CVF template through the web execute route\nUsage: cvf execute --template <id> --role <role> [--input <json>] [--endpoint <url>] [--dry-run] [--receipt] [--verbose]",
+            message: "execute: Execute a governed CVF template through the web execute route\nUsage: cvf execute --template <id> --role <role> [--input <json>] [--endpoint <url>] [--providers <role:provider,...>] [--provider <name>] [--dry-run] [--receipt] [--verbose]",
             exitCode: 0,
           };
         }
@@ -143,6 +144,54 @@ export class CommandRegistry {
         };
       },
       executeAsync: (args) => executeGovernedTemplateCommand(args),
+    });
+
+    this.register({
+      name: "workflow",
+      description: "Run a multi-agent workflow pipeline (sequential O->A->B->R with governance receipts per step)",
+      usage: "cvf workflow --template <key> --input <json> [--role <role>] [--providers <role:provider,...>] [--endpoint <url>] [--receipt] [--verbose]",
+      execute: (args) => {
+        if (args.flags.help === true || args.flags.h === true) {
+          const keys = Object.keys(CLI_WORKFLOW_TEMPLATES).join(", ");
+          return {
+            success: true,
+            message: `workflow: Run a multi-agent pipeline\nUsage: cvf workflow --template <key> --input <json> [--providers role:provider,...]\nTemplates: ${keys}\nContract: ${WORKFLOW_CHAIN_CONTRACT}`,
+            exitCode: 0,
+          };
+        }
+        return {
+          success: false,
+          message: "The workflow command performs HTTP I/O. Use GovernanceCLI.runAsync() or the async CLI entrypoint.",
+          exitCode: 1,
+        };
+      },
+      executeAsync: async (args) => {
+        const templateKey = typeof args.flags.template === "string" ? args.flags.template : args.positional[0];
+        if (!templateKey) {
+          return { success: false, message: "Missing required --template <key>.", exitCode: 1 };
+        }
+        const rawInput = typeof args.flags.input === "string" ? args.flags.input : "{}";
+        const endpoint = typeof args.flags.endpoint === "string" ? args.flags.endpoint : (process.env.CVF_EXECUTE_ENDPOINT ?? "http://localhost:3000");
+        const verbose = args.flags.verbose === true || args.flags.v === true;
+        const receipt = args.flags.receipt === true || typeof args.flags.receipt === "string";
+
+        // Parse --providers flag: "orchestrator:deepseek,builder:gemini"
+        let providers: Record<string, string> | undefined;
+        const rawProviders = typeof args.flags.providers === "string" ? args.flags.providers : undefined;
+        if (rawProviders) {
+          providers = {};
+          for (const segment of rawProviders.split(",")) {
+            const idx = segment.indexOf(":");
+            if (idx > 0) {
+              providers[segment.slice(0, idx).trim().toLowerCase()] = segment.slice(idx + 1).trim();
+            }
+          }
+        }
+
+        const result = await executeWorkflowChain(templateKey, rawInput, { endpoint, receipt, verbose, providers });
+        const message = JSON.stringify(result, null, verbose ? 2 : 0);
+        return { success: result.success, message, data: result, exitCode: result.success ? 0 : 1 };
+      },
     });
 
     this.register({

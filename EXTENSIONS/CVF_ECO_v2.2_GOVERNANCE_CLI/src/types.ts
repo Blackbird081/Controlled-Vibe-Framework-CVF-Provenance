@@ -2,6 +2,7 @@ export type CLICommand =
   | "evaluate"
   | "execute"
   | "run"
+  | "workflow"
   | "skill"
   | "receipt"
   | "trace"

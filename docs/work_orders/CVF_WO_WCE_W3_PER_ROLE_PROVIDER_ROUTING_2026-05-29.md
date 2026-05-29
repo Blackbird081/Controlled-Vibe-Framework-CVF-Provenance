@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: READY_FOR_IMPLEMENTATION
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -90,11 +90,11 @@ New functions:
 
 | Roadmap requirement | Work order section | Output artifact | Verification | Status |
 | --- | --- | --- | --- | --- |
-| `--providers` flag on `cvf execute` | Scope + implementation | `command.registry.ts` diff | grep `--providers` | OPEN |
-| `parseProviderMap()` function | execute.client.ts | `parseProviderMap` export | Tests verify parsing | OPEN |
-| Per-role provider used in payload | `buildExecutePayload` update | `provider` field in payload | Test verifies provider value | OPEN |
-| Tests PASS | Scope | `provider-map.test.ts` | `npm test` | OPEN |
-| Live proof | Evidence | receipt in completion review | receipt ID with correct provider | OPEN |
+| `--providers` flag on `cvf execute` | Scope + implementation | `command.registry.ts` diff | grep `--providers` | PASS |
+| `parseProviderMap()` function | execute.client.ts | `parseProviderMap` export | Tests verify parsing | PASS |
+| Per-role provider used in payload | `buildExecutePayload` update | `provider` field in payload | Test verifies provider value | PASS |
+| Tests PASS | Scope | `provider-map.test.ts` | All PASS | PASS |
+| Live proof | Evidence | receipt in completion review | `rcpt-env-mpqlrk1z-xhs73v` | PASS |
 
 ## Implementation Design
 
@@ -123,10 +123,10 @@ command usage strings. Parse via `stringFlag(args, 'providers')`.
 
 ## Pre-Flight
 
-- [ ] Working tree clean
-- [ ] `ExecuteRequestPayload.provider` field confirmed as optional at line 21
-- [ ] `buildExecutePayload()` confirmed at line 52 — understand where `provider` is currently set
-- [ ] `agentProviders` shape confirmed from Settings.tsx line 71
+- [x] Working tree clean (confirmed at baseHead `60fc3b32`)
+- [x] `ExecuteRequestPayload.provider` field confirmed as optional at line 21
+- [x] `buildExecutePayload()` confirmed at line 52 — understand where `provider` is currently set
+- [x] `agentProviders` shape confirmed from Settings.tsx line 71
 
 ## Write Ownership
 
@@ -160,13 +160,13 @@ touched.
 
 ## Acceptance Criteria
 
-- [ ] `--providers` flag on `cvf execute` and `cvf workflow`
-- [ ] `parseProviderMap()` implemented and tested
-- [ ] Per-role provider correctly resolved in `buildExecutePayload`
-- [ ] Tests PASS
-- [ ] TypeScript PASS
-- [ ] Live proof receipt with per-role provider
-- [ ] Session continuity updated
+- [x] `--providers` flag on `cvf execute` and `cvf workflow`
+- [x] `parseProviderMap()` implemented and tested
+- [x] Per-role provider correctly resolved in `buildExecutePayload`
+- [x] Tests PASS
+- [x] TypeScript PASS
+- [x] Live proof receipt: `rcpt-env-mpqlrk1z-xhs73v` (deepseek via per-role routing)
+- [x] Session continuity updated
 
 Fail conditions:
 - `--providers` flag silently ignored
@@ -180,15 +180,15 @@ fallback works; TypeScript PASS; live receipt shows correct provider.
 
 ## Closure Checklist
 
-- [ ] `parseProviderMap()` + `resolveProviderForRole()` in execute.client.ts
-- [ ] `--providers` flag registered in command.registry.ts
-- [ ] `buildExecutePayload` uses per-role provider
-- [ ] `provider-map.test.ts` PASS
-- [ ] TypeScript PASS
-- [ ] Live proof receipt
-- [ ] Fast Lane audit PASS
-- [ ] Session continuity updated
-- [ ] Completion review written
+- [x] `parseProviderMap()` + `resolveProviderForRole()` in execute.client.ts
+- [x] `--providers` flag registered in command.registry.ts
+- [x] `buildExecutePayload` uses per-role provider
+- [x] `provider-map.test.ts` PASS
+- [x] TypeScript PASS
+- [x] Live proof receipt: `rcpt-env-mpqlrk1z-xhs73v`
+- [x] Fast Lane audit PASS
+- [x] Session continuity updated
+- [x] Completion review written
 
 ## Return-To-Orchestrator Conditions
 
