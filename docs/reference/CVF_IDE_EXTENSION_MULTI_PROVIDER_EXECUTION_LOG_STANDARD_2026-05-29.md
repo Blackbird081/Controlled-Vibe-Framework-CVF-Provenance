@@ -55,6 +55,9 @@ A multi-provider execution log must include:
 - provenance workspace and public/provenance boundary;
 - base/head commit anchors and changed-file summary when available;
 - role-to-provider assignment table;
+- Execution Attribution Block separating roadmap/order authorship, worker
+  execution, review/closure ownership, provider/model, execution surface,
+  evidence basis, and attribution boundary;
 - invocation surface for each agent or provider lane;
 - source basis for each claim: `OPERATOR_REPORTED`, `GIT_VERIFIED`,
   `TEST_VERIFIED`, `RECEIPT_VERIFIED`, `DIFF_VERIFIED`,
@@ -67,6 +70,31 @@ A multi-provider execution log must include:
 - claim boundary separating provider-method proof, governed-route proof,
   documentation-only closure, runtime implementation, and public-readiness
   claims.
+
+## Execution Attribution Block
+
+Every mixed-agent or multi-provider session log must include this exact section
+header and a table with these columns:
+
+| Artifact or range | Roadmap/order author | Worker/executor | Reviewer/closer | Provider/model | Execution surface | Evidence basis | Attribution boundary |
+|---|---|---|---|---|---|---|---|
+
+The block answers the operational question before any quality claim is made:
+who authored the roadmap or work order, who executed it, who reviewed or closed
+it, which provider/model and surface were used, and what evidence supports that
+assignment.
+
+Rules:
+
+- do not infer hidden IDE, Antigravity, or extension-tab ownership from commit
+  author alone;
+- use `OPERATOR_REPORTED` when ownership comes from the operator rather than
+  from an artifact the repo can inspect;
+- use `UNKNOWN_OPERATOR_REPORTED` only with an explicit attribution boundary;
+- split roadmap/order authorship from worker execution when different agents or
+  providers participated;
+- label mixed or corrected commits as mixed attribution instead of assigning
+  the whole range to one model.
 
 ## PASS And Quality Boundary
 
@@ -139,6 +167,8 @@ A multi-provider batch is not ready for closure review when:
 - cost claims lack token, wall-time, pricing, or explicit `unknown` evidence;
 - mixed commits are attributed to one model without noting corrections or
   shared ownership.
+- the `Execution Attribution Block` is missing, lacks the required columns, or
+  fails to separate roadmap/order author from worker/executor.
 
 ## Machine Guard
 
@@ -151,7 +181,8 @@ python governance/compat/check_multi_provider_execution_log.py --base <baseHead>
 The guard runs in the agent autorun workflow and local governance hook chain.
 It fails changed multi-provider logs when provider/model, tool surface,
 evidence basis, commit evidence, quality findings, cost boundary, direct
-provider proof boundary, or claim boundary are missing.
+provider proof boundary, Execution Attribution Block, or claim boundary are
+missing.
 
 ## Related Artifacts
 

@@ -36,6 +36,16 @@ files, targeted test output, and Codex source review.
 | EL/PM/PD | DeepSeek pro/v4 high effort | `UNKNOWN_OPERATOR_REPORTED`; PM scripts use `DIRECT_PROVIDER_SCRIPT` | Runtime/code plus method proof roadmaps | `GIT_VERIFIED` commit `4ff94dcb`; targeted test verified by Codex | Runtime implementation plus direct-provider method proofs; provider method capability proof only, not full governed CVF route proof |
 | Review | Codex | `VS_CODE_EXTENSION_CODEX` | Post-session quality/cost/rule review | `GIT_VERIFIED`, `TEST_VERIFIED`, source review | Review only; no hidden provider reasoning claim |
 
+## Execution Attribution Block
+
+| Artifact or range | Roadmap/order author | Worker/executor | Reviewer/closer | Provider/model | Execution surface | Evidence basis | Attribution boundary |
+|---|---|---|---|---|---|---|---|
+| LHW13 closure commit `2ed96761` | Claude Sonnet 4.6 per operator report | Claude Sonnet 4.6 per operator report | Codex post-session review | Claude Sonnet 4.6 high effort | `VS_CODE_EXTENSION_CLAUDE_CODE` | `OPERATOR_REPORTED` + `GIT_VERIFIED` | Repo verifies commit/artifacts, not hidden extension reasoning |
+| LHW12 closure commit `bdacf724` | Gemini 3.5 Flash per operator report | Gemini 3.5 Flash per operator report | Codex post-session review | Gemini 3.5 Flash high effort | `ANTIGRAVITY` | `OPERATOR_REPORTED` + `GIT_VERIFIED` | Mixed attribution because repo-observed closure included governance cleanup/hardening and operator SHA correction |
+| EL/PM/PD closure commit `4ff94dcb` | DeepSeek pro/v4 per operator report | DeepSeek pro/v4 per operator report | Codex source/test review | DeepSeek pro/v4 high effort | `UNKNOWN_OPERATOR_REPORTED`; PM scripts use `DIRECT_PROVIDER_SCRIPT` | `OPERATOR_REPORTED` + `GIT_VERIFIED` + `TEST_VERIFIED` | Runtime/code value verified by repo artifacts; PM scripts are provider method capability proof only unless routed through governed CVF route |
+| LHW14 open commit `c979563d` | Claude Sonnet 4.6 per commit co-author and operator report | N/A for opening packet | Claude/governance gates per committed artifact | Claude Sonnet 4.6 | `VS_CODE_EXTENSION_CLAUDE_CODE` | `GIT_VERIFIED` + `OPERATOR_REPORTED` | Roadmap/order authorship is evidenced better than hidden reasoning; co-author exists only on open commit |
+| LHW14 closure commits `3f8dddc4` + `8b1f5992` | Roadmap/order inherited from `c979563d`; closure attribution operator-reported | DeepSeek pro/v4 per operator report | Claude re-check plus Codex follow-up guard review | DeepSeek pro/v4 / Claude Sonnet 4.6 / Codex | `UNKNOWN_OPERATOR_REPORTED` + `VS_CODE_EXTENSION_CLAUDE_CODE` + `VS_CODE_EXTENSION_CODEX` | `OPERATOR_REPORTED` + `GIT_VERIFIED` | Git commit alone does not identify worker model; handoff transition confusion was a control-plane attribution and active-pointer gap, now promoted to guard |
+
 ## Commit Evidence
 
 | Commit | Repo-observed title | Files changed | Primary value | Attribution note |

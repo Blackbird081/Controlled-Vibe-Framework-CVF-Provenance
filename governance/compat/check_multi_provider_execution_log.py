@@ -49,6 +49,17 @@ EVIDENCE_BASIS = (
     "UNVERIFIED_REPORTED",
 )
 
+ATTRIBUTION_BLOCK_HEADERS = (
+    "Artifact or range",
+    "Roadmap/order author",
+    "Worker/executor",
+    "Reviewer/closer",
+    "Provider/model",
+    "Execution surface",
+    "Evidence basis",
+    "Attribution boundary",
+)
+
 LOG_PATH_RE = re.compile(r"^docs/logs/CVF_MULTI_PROVIDER_EXECUTION_LOG_.+\.md$")
 PIPE_TABLE_RE = re.compile(r"^\|.+\|$", re.MULTILINE)
 
@@ -162,6 +173,7 @@ def _validate_standard(path: str, text: str) -> list[dict[str, str]]:
         "Status: canonical execution-log standard",
         "## Authorized Execution Surface Values",
         "## Required Session Log Fields",
+        "## Execution Attribution Block",
         "## PASS And Quality Boundary",
         "## Direct Provider Proof Rule",
         "## Cost And Quality Attribution Rule",
@@ -185,6 +197,7 @@ def _validate_session_log(path: str, text: str) -> list[dict[str, str]]:
     violations: list[dict[str, str]] = []
     required_sections = (
         "## Execution Surface Summary",
+        "## Execution Attribution Block",
         "## Commit Evidence",
         "## Quality Findings",
         "## Cost And ROI Boundary",
@@ -201,6 +214,16 @@ def _validate_session_log(path: str, text: str) -> list[dict[str, str]]:
     for marker in header_requirements:
         if marker not in text:
             _add(violations, path, "execution_surface_header_missing", f"missing table header `{marker}`")
+
+    for marker in ATTRIBUTION_BLOCK_HEADERS:
+        if marker not in text:
+            _add(
+                violations,
+                path,
+                "execution_attribution_header_missing",
+                f"missing Execution Attribution Block header `{marker}`",
+            )
+
     if "tool surface" not in text.lower():
         _add(violations, path, "tool_surface_missing", "missing tool surface / invocation surface field")
 

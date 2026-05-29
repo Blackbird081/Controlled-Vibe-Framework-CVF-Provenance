@@ -413,9 +413,12 @@ quality/cost claims.
 
 The log must identify provider/model, role, invocation surface, evidence basis,
 commit range, changed files, known findings, direct-provider-proof boundary,
-and cost/quality attribution. Operator-reported hidden IDE or Antigravity
-history must be labeled as operator-reported; CVF may trust only artifacts,
-diffs, receipts, tests, and explicit operator reports.
+and cost/quality attribution. It must include an `Execution Attribution Block`
+that separates roadmap/order author, worker/executor, reviewer/closer,
+provider/model, execution surface, evidence basis, and attribution boundary.
+Operator-reported hidden IDE or Antigravity history must be labeled as
+operator-reported; CVF may trust only artifacts, diffs, receipts, tests, and
+explicit operator reports.
 
 Governance hook PASS, `CLOSED_PASS`, or `CLOSED_PASS_BOUNDED` is not by itself
 proof of code design quality, provider output quality, governed-route behavior,
@@ -426,8 +429,9 @@ capability proof unless they also pass through the governed CVF route or the
 mandatory live governance proof release gate.
 
 Autorun and local hook chains must run this guard. A missing provider/model,
-execution surface, evidence basis, commit range, quality finding disposition,
-cost boundary, or direct-provider-proof boundary blocks governed closure.
+execution surface, evidence basis, commit range, Execution Attribution Block,
+quality finding disposition, cost boundary, or direct-provider-proof boundary
+blocks governed closure.
 
 ## Mandatory Finding-To-Governance Learning Trigger Guard - 2026-05-29
 

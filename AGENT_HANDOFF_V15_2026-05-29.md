@@ -17,7 +17,7 @@ Active private provenance continuity for the current CVF repository. Use only
 with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
-Current HEAD: `c56e682a` (Delta D1 roadmap open commit).
+Current HEAD: `c7f278b2` (atomic handoff transition guard commit).
 
 ## Latest Work / Changes
 
@@ -90,7 +90,7 @@ Advisory types delivered:
 | Work Order Source Verification | ENFORCED — source file + line + symbol for every runtime/source claim |
 | Governed File Size Maintainability | ENFORCED — proactive rotation/splitting at near-threshold |
 | Finding-To-Governance Learning | ENFORCED — defect class + learning lane + disposition required |
-| Multi-Provider Execution Log | ENFORCED — provider/model/surface/basis/diff attribution |
+| Multi-Provider Execution Log | ENFORCED — provider/model/surface/basis/diff attribution plus Execution Attribution Block |
 | Learning Signal Intake Bridge | BOUNDED_TYPED_INTAKE — `autonomousMutationAuthorized=false` |
 | IDE Extension Multi-Provider Log | ENFORCED — session logs for mixed-provider governed work |
 

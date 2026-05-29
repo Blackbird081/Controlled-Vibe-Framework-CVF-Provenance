@@ -132,9 +132,10 @@ IDE-extension multi-provider execution logging is now machine-enforced:
 Mixed-provider sessions using VS Code extension tabs, Antigravity, direct
 provider scripts, CLI, MCP, or browser agents must record provider/model,
 execution surface, role, evidence basis, commit range, direct-provider-proof
-boundary, quality findings, and cost attribution when closing governed work or
-claiming provider effectiveness. Autorun and local hook chains now fail missing
-or overclaimed multi-provider execution logs.
+boundary, quality findings, cost attribution, and an Execution Attribution
+Block that separates roadmap/order author, worker/executor, and reviewer/closer
+when closing governed work or claiming provider effectiveness. Autorun and
+local hook chains now fail missing or overclaimed multi-provider execution logs.
 
 Finding-to-governance learning disposition is now machine-enforced:
 

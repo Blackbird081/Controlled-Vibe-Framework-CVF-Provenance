@@ -35,6 +35,12 @@ Target and source.
 | A | Claude Sonnet | VS_CODE_EXTENSION_CLAUDE_CODE | reviewer | OPERATOR_REPORTED + GIT_VERIFIED | bounded |
 | B | DeepSeek | DIRECT_PROVIDER_SCRIPT | method proof | TEST_VERIFIED | provider method capability proof only; not governed CVF route proof |
 
+## Execution Attribution Block
+
+| Artifact or range | Roadmap/order author | Worker/executor | Reviewer/closer | Provider/model | Execution surface | Evidence basis | Attribution boundary |
+|---|---|---|---|---|---|---|---|
+| Test range | Claude lane | DeepSeek lane | Codex lane | Claude Sonnet / DeepSeek | VS_CODE_EXTENSION_CLAUDE_CODE / DIRECT_PROVIDER_SCRIPT | OPERATOR_REPORTED + GIT_VERIFIED | Mixed attribution; provider method capability proof only; not governed CVF route proof |
+
 ## Commit Evidence
 
 Commit evidence.
@@ -73,11 +79,24 @@ def test_direct_provider_without_method_boundary_fails() -> None:
     assert any("provider method capability proof" in message for message in _messages(issues))
 
 
+def test_missing_execution_attribution_block_fails() -> None:
+    invalid = VALID_LOG.replace("## Execution Attribution Block", "## Attribution")
+    issues = MODULE._validate_session_log("docs/logs/CVF_MULTI_PROVIDER_EXECUTION_LOG_TEST.md", invalid)
+    assert any("Execution Attribution Block" in message for message in _messages(issues))
+
+
+def test_missing_worker_attribution_header_fails() -> None:
+    invalid = VALID_LOG.replace("Worker/executor", "Executor")
+    issues = MODULE._validate_session_log("docs/logs/CVF_MULTI_PROVIDER_EXECUTION_LOG_TEST.md", invalid)
+    assert any("Worker/executor" in message for message in _messages(issues))
+
+
 def test_standard_requires_guard_binding() -> None:
     text = """
 Status: canonical execution-log standard
 ## Authorized Execution Surface Values
 ## Required Session Log Fields
+## Execution Attribution Block
 ## PASS And Quality Boundary
 ## Direct Provider Proof Rule
 ## Cost And Quality Attribution Rule
