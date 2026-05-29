@@ -38,7 +38,8 @@
   "ignoredRoots": [
     ".private_reference",
     ".git",
-    "node_modules"
+    "node_modules",
+    ".pytest_cache"
   ],
   "roots": [
     { "path": ".agents", "lifecycleClass": "ACTIVE_CANONICAL", "exposureClass": "INTERNAL_ONLY" },
