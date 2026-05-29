@@ -137,12 +137,20 @@ Parked checkpoints:
 - VI5-T4/T5 hosted Netlify freshness and operator external-agent retest
 - Delta D2/D3 pending operator authorization
 
+## Remote Tracking
+
+Remote tracking branch: origin/main
+
+Exact remote SHA must be derived live from git when needed — not hand-maintained as a moving target.
+
+External agent memory files: non-canonical convenience only.
+
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lhw14_wave_closed_pass_bounded`; active
-handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=continue LHW
-connector absorption with fresh GC-018/roadmap/work-orders; parked
-checkpoint=VI5-T4/T5 hosted retest, Delta hardening.
+Startup acknowledged: current mode=`wce_wave_all_closed_pass_bounded`; active
+handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=Delta D2/D3
+operator authorization or fresh LHW connector wave with GC-018/roadmap; parked
+checkpoint=VI5-T4/T5 hosted retest, Delta D2/D3.
 
 ## Claim Boundary
 
