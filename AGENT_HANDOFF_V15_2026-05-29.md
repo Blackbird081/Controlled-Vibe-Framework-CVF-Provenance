@@ -17,7 +17,7 @@ Active private provenance continuity for the current CVF repository. Use only
 with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
-Current HEAD: `311353bb` (WCE W1+W3 CLOSED_PASS_BOUNDED).
+Current HEAD: `4bc57cef` (fix: GC-020 remote tracking block).
 
 ## Latest Work / Changes
 
