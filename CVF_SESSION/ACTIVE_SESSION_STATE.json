@@ -35,8 +35,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "wce_wave_all_closed_pass_bounded",
-  "previousMode": "wce_w1_w3_closed_pass_bounded_w2_unblocked",
+  "currentMode": "delta_d2_d3_work_orders_ready",
+  "previousMode": "wce_wave_all_closed_pass_bounded",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -115,7 +115,9 @@
     "blocked_work_classes",
     "next_allowed_move"
   ],
-  "nextAllowedMove": "LHW14 is the latest closed LHW wave. Delta D1 + WCE W1+W2+W3 ALL CLOSED_PASS_BOUNDED. WCE wave fully closed. Delta D2/D3 DEMAND_GATED. Any further LHW connector wave requires a fresh roadmap and GC-018.",
+  "nextAllowedMove": "LHW14 is the latest closed LHW wave. Delta D1 + WCE W1+W2+W3 ALL CLOSED_PASS_BOUNDED. Delta D2 READY_FOR_IMPLEMENTATION (operator authorized; security boundary doc required before code). Delta D3 READY_FOR_IMPLEMENTATION (operator authorized; D2 CLOSED_PASS + sandbox spec required before code). Any further LHW connector wave requires a fresh roadmap and GC-018.",
+  "deltaD2McpWriteSubmitTools": "READY_FOR_IMPLEMENTATION. Operator authorized 2026-05-29. Work order docs/work_orders/CVF_WO_DELTA_D2_MCP_WRITE_SUBMIT_TOOLS_2026-05-29.md. Tools: cvf_submit_review_receipt + cvf_advance_pipeline_stage. Contract cvf.mcpWriteSubmitTools.delta.d2.v1. Security boundary doc docs/reference/CVF_DELTA_D2_MCP_WRITE_TOOLS_SECURITY_BOUNDARY_2026-05-29.md required before code. Cross-package import constraint: replicate stage-order logic standalone in MCP server (no cvf-web import). D1 gate: CLOSED_PASS confirmed.",
+  "deltaD3McpCliBridge": "READY_FOR_IMPLEMENTATION. Operator authorized 2026-05-29. Work order docs/work_orders/CVF_WO_DELTA_D3_MCP_CLI_BRIDGE_2026-05-29.md. Tool: cvf_invoke_cli_stage wiring runCli() (cli.ts line 290) via MCP. Contract cvf.mcpCliBridge.delta.d3.v1. D2 CLOSED_PASS + sandbox boundary spec docs/reference/CVF_DELTA_D3_SANDBOX_BOUNDARY_SPEC_2026-05-29.md required before code. Highest-risk tranche — process spawning requires full isolation design first.",
   "wceWorkflowChainExecution": "CLOSED_PASS_BOUNDED. W1+W2+W3 all closed. W1 cvf.workflowChainExecution.wce.w1.v1 + W2 cvf.ma1CliSerialization.wce.w2.v1 + W3 cvf.perRoleProviderRouting.wce.w3.v1. WCE wave complete.",
   "wceW1WorkflowChainCommand": "CLOSED_PASS_BOUNDED. Contract cvf.workflowChainExecution.wce.w1.v1. New module EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/workflow.client.ts; workflow command registered in command.registry.ts; 7/7 tests PASS; TypeScript PASS; 2-turn live chain receipts rcpt-env-mpqlsyzl-c3m76f (AI_AGENT) + rcpt-env-mpqlt87n-vl8eny (REVIEWER chained). No governance bypass. No route.ts change. No MCP server change. W2 gate: YES — W1 transport exists; W2 Phase B UNBLOCKED pending operator authorization.",
   "wceW3PerRoleProviderRouting": "CLOSED_PASS_BOUNDED. Contract cvf.perRoleProviderRouting.wce.w3.v1. parseProviderMap() + resolveProviderForRole() in execute.client.ts; --providers flag on execute + workflow commands; all tests PASS; TypeScript PASS; live receipt rcpt-env-mpqlrk1z-xhs73v (deepseek via per-role routing, ALLOW, live). No route.ts change. No MCP server change.",

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DEMAND_GATED
+Status: READY_FOR_IMPLEMENTATION
 
 docType: work_order
 
@@ -20,9 +20,9 @@ Wire MCP `cvf_invoke_cli_stage` tool to `runCli()` — completing the
 [Workers]      ──► MCP: cvf_invoke_cli_stage ──► runCli() ──► Sandboxed Terminal
 ```
 
-**DEMAND_GATED.** Operator must authorize D3 after D2 CLOSED_PASS **and** after
-a sandbox boundary specification is reviewed and approved. This is the highest-risk
-tranche — process spawning requires a full isolation design before any code is written.
+**Operator authorized D3 2026-05-29.** Gate requires: D2 CLOSED_PASS **and**
+sandbox boundary specification reviewed and approved before any code. This is the
+highest-risk tranche — process spawning requires a full isolation design first.
 
 ## Authority Chain
 
@@ -67,11 +67,9 @@ outside repo sandbox; network egress from sandbox; public-sync.
 4. `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/sdk.ts`
    — confirm `runCli` exported at line 69
 5. `docs/reviews/CVF_DELTA_D1_PIPELINE_CHAIN_READOUT_COMPLETION_2026-05-29.md`
-   — confirm D1 CLOSED_PASS
-6. `docs/reviews/CVF_DELTA_D2_MCP_WRITE_SUBMIT_TOOLS_COMPLETION_2026-05-29.md`
-   — confirm D2 CLOSED_PASS
-7. `docs/reference/CVF_DELTA_D3_SANDBOX_BOUNDARY_SPEC_2026-05-29.md`
-   — confirm sandbox spec approved before writing any code
+   — confirm D1 CLOSED_PASS (already verified: CLOSED_PASS_BOUNDED)
+6. D2 completion review — confirm D2 CLOSED_PASS (to be created when D2 closes; gate requirement before D3 code)
+7. Sandbox boundary spec — confirm spec approved before writing any code (to be authored as D3 Step 1)
 
 ## Pre-Dispatch Source Verification Block
 
@@ -86,6 +84,17 @@ New tool (process-spawning, highest risk):
 | New MCP tool | Process risk | Required constraints |
 | --- | --- | --- |
 | `cvf_invoke_cli_stage` | Spawns sandboxed process via `runCli()` | Command whitelist; timeout (5 min max); no network egress; log capture mandatory; per-invocation audit entry; no cross-invocation state |
+
+## Roadmap-To-Work-Order Trace Matrix
+
+| Roadmap requirement | Work order section | Output artifact | Verification | Status |
+| --- | --- | --- | --- | --- |
+| Sandbox boundary spec before code | Execution Plan Step 1 | `CVF_DELTA_D3_SANDBOX_BOUNDARY_SPEC_2026-05-29.md` | present and approved before implementation | OPEN |
+| `cvf_invoke_cli_stage` MCP tool | Implementation Design | `index.ts` + sandbox wrapper module | command whitelist enforced; timeout enforced | OPEN |
+| Log capture mandatory | Sandbox Boundary Specification | tool output | all stdout/stderr in structured output | OPEN |
+| Integration test E2E | Execution Plan Step 4 | `integration/` test | Operator → Closure full flow PASS | OPEN |
+| D1 CLOSED_PASS gate | Authority Chain | D1 completion review | Status = CLOSED_PASS_BOUNDED | PASS |
+| D2 CLOSED_PASS gate | Authority Chain | D2 completion review | to be confirmed when D2 closes | OPEN |
 
 ## Sandbox Boundary Specification (must precede implementation)
 
@@ -106,11 +115,12 @@ must define and get approval on:
 
 ## Pre-Flight
 
-- [ ] D1 AND D2 CLOSED_PASS confirmed
-- [ ] Sandbox boundary spec authored and approved before any code written
-- [ ] `runCli()` confirmed at cli.ts line 290
-- [ ] `runCli` SDK export confirmed at sdk.ts line 69
-- [ ] Command whitelist defined and reviewed
+- [x] D1 CLOSED_PASS confirmed — `docs/reviews/CVF_DELTA_D1_PIPELINE_CHAIN_READOUT_COMPLETION_2026-05-29.md`
+- [x] `runCli()` confirmed at `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/cli/cli.ts` line 290
+- [x] `runCli` SDK export confirmed at `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/sdk.ts` line 69
+- [ ] D2 CLOSED_PASS confirmed (gate — must complete before D3 code)
+- [ ] Sandbox boundary spec authored and reviewed (`docs/reference/CVF_DELTA_D3_SANDBOX_BOUNDARY_SPEC_2026-05-29.md`)
+- [ ] Command whitelist defined and approved
 
 ## Write Ownership
 
@@ -184,9 +194,9 @@ After D3 committed:
 
 ## Operator Checkpoint
 
-DEMAND_GATED — operator must authorize D3 explicitly after D2 closes AND after
-sandbox boundary spec is reviewed and approved. Process spawning is the highest
-risk in the CVF codebase to date.
+Operator authorized D3 2026-05-29. D2 CLOSED_PASS and sandbox boundary spec
+approval are still required as sequential gates before implementation begins.
+Process spawning is the highest risk in the CVF codebase to date.
 
 ## Claim Boundary
 

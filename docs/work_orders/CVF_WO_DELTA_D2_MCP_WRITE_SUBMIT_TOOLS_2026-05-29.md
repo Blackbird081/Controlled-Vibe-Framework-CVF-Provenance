@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DEMAND_GATED
+Status: READY_FOR_IMPLEMENTATION
 
 docType: work_order
 
@@ -21,8 +21,8 @@ Per `.private_reference/legacy/CVF 28.05/CLI & MCP.md` design intent:
 `cvf_submit_review_receipt()` qua MCP. MCP Server sẽ đứng sau kiểm tra xem
 báo cáo có đúng chuẩn Markdown luật không."
 
-**DEMAND_GATED.** Operator must explicitly authorize D2 after D1 CLOSED_PASS.
-D2 is a write-path implementation — security review required before dispatch.
+**Operator authorized D2 2026-05-29.** D1 CLOSED_PASS confirmed. D2 is a
+write-path implementation — security boundary document required before code.
 
 ## Authority Chain
 
@@ -43,17 +43,22 @@ No self-review.
 
 ## Scope
 
-**Allowed (after authorization):**
+**Allowed:**
 
 - `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/index.ts` (add 2 tools)
-- `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/` supporting modules if needed
-- MCP test files
+- `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/d2-submit-receipt.ts` (new)
+- `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/d2-advance-pipeline-stage.ts` (new)
+- `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/d2-submit-receipt.test.ts` (new)
+- `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/d2-advance-pipeline-stage.test.ts` (new)
+- `docs/reference/CVF_DELTA_D2_MCP_WRITE_TOOLS_SECURITY_BOUNDARY_2026-05-29.md` (new — must exist before code)
 - `docs/reviews/CVF_DELTA_D2_FAST_LANE_AUDIT_2026-05-29.md` (new)
 - `docs/reviews/CVF_DELTA_D2_MCP_WRITE_SUBMIT_TOOLS_COMPLETION_2026-05-29.md` (new)
 - this work order (status update only)
 - session continuity files
 
-**Forbidden:** `route.ts`, sandboxed execution, process spawning, public-sync.
+**Forbidden:** `route.ts`, `pipeline-chain-orchestrator.ts` (read reference only —
+do NOT import cross-package from cvf-web into MCP server), sandboxed execution,
+process spawning, public-sync repo, D3 CLI bridge (separate tranche).
 
 ## Required First Reads
 
@@ -64,7 +69,7 @@ No self-review.
 4. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/pipeline-chain-orchestrator.ts`
    — confirm `advancePipelineStage()` at line 257; confirm `PipelineStageResult` at line 133
 5. `docs/reviews/CVF_DELTA_D1_PIPELINE_CHAIN_READOUT_COMPLETION_2026-05-29.md`
-   — confirm D1 CLOSED_PASS
+   — confirm D1 CLOSED_PASS (Status: CLOSED_PASS_BOUNDED — already verified)
 
 ## Pre-Dispatch Source Verification Block
 
@@ -82,13 +87,25 @@ New tools (write-path, require security review):
 | `cvf_submit_review_receipt` | Writes to governance store | Receipt schema validation; caller role check | Per-submission audit entry |
 | `cvf_advance_pipeline_stage` | Updates pipeline state | `PipelineStageResult` schema; valid transition check | Per-advance audit entry |
 
+## Roadmap-To-Work-Order Trace Matrix
+
+| Roadmap requirement | Work order section | Output artifact | Verification | Status |
+| --- | --- | --- | --- | --- |
+| `cvf_submit_review_receipt` MCP tool | Implementation Design Step 3 | `d2-submit-receipt.ts` + `index.ts` | MCP tool callable; schema validation tested | OPEN |
+| `cvf_advance_pipeline_stage` MCP tool | Implementation Design Step 4 | `d2-advance-pipeline-stage.ts` + `index.ts` | calls stage-order logic; returns correct next stage | OPEN |
+| Security boundary document | Execution Plan Step 2 | `CVF_DELTA_D2_MCP_WRITE_TOOLS_SECURITY_BOUNDARY_2026-05-29.md` | present before code; covers 6 required sections | OPEN |
+| MCP tests PASS | Execution Plan Step 6 | `d2-*.test.ts` | `npm test` in MCP package | OPEN |
+| Audit trail per tool call | Implementation Design Step 5 | `withMcpToolAudit()` wrapper usage | audit record written on each call | OPEN |
+| D1 CLOSED_PASS gate | Authority Chain | D1 completion review | Status = CLOSED_PASS_BOUNDED | PASS |
+
 ## Pre-Flight
 
-- [ ] D1 CLOSED_PASS confirmed
-- [ ] Security review completed and documented
-- [ ] `advancePipelineStage()` confirmed at pipeline-chain-orchestrator.ts line 257
-- [ ] MCP server current line count confirmed
-- [ ] Write-path audit store location identified
+- [x] D1 CLOSED_PASS confirmed — `docs/reviews/CVF_DELTA_D1_PIPELINE_CHAIN_READOUT_COMPLETION_2026-05-29.md` Status: CLOSED_PASS_BOUNDED
+- [x] `advancePipelineStage()` confirmed at pipeline-chain-orchestrator.ts line 257
+- [x] MCP server line count: 551 lines; 14 existing tools (all read-only)
+- [x] `withMcpToolAudit()` wrapper confirmed at index.ts line 20 import
+- [x] Cross-package import constraint: pipeline-chain-orchestrator.ts is cvf-web — replicate stage-order logic standalone in MCP server (same pattern as CLI_WORKFLOW_TEMPLATES in workflow.client.ts)
+- [ ] Security boundary document written (`docs/reference/CVF_DELTA_D2_MCP_WRITE_TOOLS_SECURITY_BOUNDARY_2026-05-29.md`) — must be Step 1 before any code
 
 ## Write Ownership
 

@@ -20,7 +20,7 @@ layer — specifically the "MCP điều khiển CLI" architecture described in
 Fresh GC-018:
 `docs/baselines/CVF_GC018_DELTA_CLI_MCP_WIREIN_2026-05-29.md`
 
-Dispatch status: D1 WORK_ORDER_READY. D2 DEMAND_GATED. D3 DEMAND_GATED.
+Dispatch status: D1 CLOSED_PASS_BOUNDED (commit 478e2de6). D2 READY_FOR_IMPLEMENTATION (operator authorized 2026-05-29; security boundary doc required before code). D3 READY_FOR_IMPLEMENTATION (operator authorized 2026-05-29; D2 CLOSED_PASS + sandbox spec required before code).
 
 ## Verified Gap
 
