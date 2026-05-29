@@ -52,6 +52,17 @@ Pain-point closure direction:
 
 `docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
+## Owner Surface
+
+Owner surface: CVF active session startup, continuity routing, and front-door
+rule pointers for new or resumed agents.
+
+## Protocol
+
+Agents must treat this file as a compact pointer record, then resolve the
+machine-readable registry, active review queue, active handoff, and required
+startup guards before material governed work.
+
 ## Active Rule Additions
 
 Work-order dispatch quality is machine-enforced by:
@@ -112,6 +123,19 @@ blame. Promote repeated defects from finding to written rule, from rule to
 machine check, and from late machine check to the earliest applicable autorun
 phase gate.
 
+IDE-extension multi-provider execution logging is now machine-enforced:
+
+`docs/reference/CVF_IDE_EXTENSION_MULTI_PROVIDER_EXECUTION_LOG_STANDARD_2026-05-29.md`
+
+`governance/compat/check_multi_provider_execution_log.py`
+
+Mixed-provider sessions using VS Code extension tabs, Antigravity, direct
+provider scripts, CLI, MCP, or browser agents must record provider/model,
+execution surface, role, evidence basis, commit range, direct-provider-proof
+boundary, quality findings, and cost attribution when closing governed work or
+claiming provider effectiveness. Autorun and local hook chains now fail missing
+or overclaimed multi-provider execution logs.
+
 LHW scope rejection is not source rejection. For doc-only LHW connector waves,
 families such as `abtop` or `gridex` that require live route execution must be
 labeled `rejected from this LHW wave (doc-only scope) - requires live route;
@@ -121,7 +145,7 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LHW13 is the latest fully `CLOSED_PASS_BOUNDED` connector wave completed by Claude (T1+T2+T3; CVF 25.05 Gaps 1/4/9 closed; LH1 `tolaria` doc-only trigger satisfied). LHW12 ran in parallel and is pending Gemini worker closure. Any further connector wave requires a fresh roadmap and GC-018.
+LHW12 and LHW13 are both fully `CLOSED_PASS_BOUNDED` connector waves. LHW13 remains the latest closed LHW wave (T1+T2+T3; CVF 25.05 Gaps 1/4/9 closed; LH1 `tolaria` doc-only trigger satisfied). Any further connector wave requires a fresh roadmap and GC-018.
 
 LHW sequencing remains: continue connector absorption first. Do not move
 `abtop`, `gridex`, or other route-execution families into a live-proof roadmap
@@ -136,6 +160,19 @@ Parked checkpoints:
 
 - VI5-T4/T5 hosted Netlify freshness and operator external-agent retest
 - Delta production hardening for MCP/client memory direction
+
+## Enforcement
+
+Startup acknowledgment, active-session state compatibility, autorun workflow
+gates, and governed file-size checks enforce this front-door contract.
+
+## Related Artifacts
+
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
+- `AGENT_HANDOFF_V14_2026-05-27.md`
+- `governance/compat/check_active_session_state.py`
+- `governance/compat/run_agent_autorun_workflow_gate.py`
 
 ## Claim Boundary
 

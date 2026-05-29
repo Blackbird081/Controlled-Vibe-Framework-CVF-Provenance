@@ -1133,6 +1133,31 @@ LHW12 Workflow Connector Wave 12 is now fully closed across all three tranches. 
 
 LHW12 status: CLOSED_PASS_BOUNDED across all three tranches.
 
-Next allowed move: LHW sequencing remains: continue LHW connector absorption first. Any further connector wave (such as LHW13) or follow-on closure must be reviewed through the autorun phase gates. Do not move abtop, gridex, or other route-execution families into a live-proof roadmap until Orchestrator confirms there is no remaining connector value in LH1 partially absorbed families.
+Next allowed move: LHW sequencing remains: continue LHW connector absorption first. LHW12 and LHW13 are both fully CLOSED_PASS_BOUNDED, with LHW13 still the latest closed LHW wave. Any further connector wave or follow-on closure must be reviewed through the autorun phase gates. Do not move abtop, gridex, or other route-execution families into a live-proof roadmap until Orchestrator confirms there is no remaining connector value in LH1 partially absorbed families.
 
 Current HEAD (updated per GC-020): `2ed96761` (post-LHW13 wave closure; pre-EL/PM/PD roadmaps implementation).
+
+## IDE Extension Multi-Provider Execution Log Guard
+
+The 2026-05-29 night session used multiple operator-reported execution
+surfaces: VS Code extension tabs, Antigravity, and direct provider proof
+scripts. Future mixed-provider sessions must follow
+`docs/reference/CVF_IDE_EXTENSION_MULTI_PROVIDER_EXECUTION_LOG_STANDARD_2026-05-29.md`.
+
+Machine guard:
+
+`governance/compat/check_multi_provider_execution_log.py`
+
+The guard is wired into the autorun workflow and local governance hook chain.
+Missing provider/model, execution surface, evidence basis, commit evidence,
+quality findings, cost boundary, or direct-provider-proof boundary blocks
+future governed closure for applicable multi-provider logs.
+
+Session log:
+
+`docs/logs/CVF_MULTI_PROVIDER_EXECUTION_LOG_2026-05-29_NIGHT_SESSION.md`
+
+Boundary: the log records provider/model attribution, invocation surface,
+commit evidence, quality findings, and cost-attribution gaps. It does not prove
+hidden IDE-extension reasoning, exact provider cost, production readiness,
+public readiness, or governed-route behavior for direct provider scripts.

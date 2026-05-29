@@ -392,6 +392,40 @@ higher closed `lhwN...CLOSED_PASS_BOUNDED` record, then `nextAllowedMove`,
 `CVF_SESSION_MEMORY.md` `Next Allowed Move`, and the active handoff must
 reference that same latest `LHWN`; stale lower-wave text blocks closure.
 
+## Mandatory IDE Extension Multi-Provider Execution Log Guard - 2026-05-29
+
+Canonical standard:
+
+`docs/reference/CVF_IDE_EXTENSION_MULTI_PROVIDER_EXECUTION_LOG_STANDARD_2026-05-29.md`
+
+Machine guard:
+
+`governance/compat/check_multi_provider_execution_log.py`
+
+Any agent-led batch that uses more than one provider, VS Code extension tab,
+Antigravity session, browser agent, direct provider script, CLI, MCP client, or
+other external execution surface must produce or update a bounded session log
+when it closes governed work, compares provider effectiveness, or makes
+quality/cost claims.
+
+The log must identify provider/model, role, invocation surface, evidence basis,
+commit range, changed files, known findings, direct-provider-proof boundary,
+and cost/quality attribution. Operator-reported hidden IDE or Antigravity
+history must be labeled as operator-reported; CVF may trust only artifacts,
+diffs, receipts, tests, and explicit operator reports.
+
+Governance hook PASS, `CLOSED_PASS`, or `CLOSED_PASS_BOUNDED` is not by itself
+proof of code design quality, provider output quality, governed-route behavior,
+public readiness, production readiness, or cost optimization.
+
+Scripts that call provider APIs directly may be claimed only as provider-method
+capability proof unless they also pass through the governed CVF route or the
+mandatory live governance proof release gate.
+
+Autorun and local hook chains must run this guard. A missing provider/model,
+execution surface, evidence basis, commit range, quality finding disposition,
+cost boundary, or direct-provider-proof boundary blocks governed closure.
+
 ## Mandatory Knowledge Absorption Blind-Spot Prevention - 2026-05-24
 
 Canonical standard:
