@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: ACTIVE
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -19,8 +19,8 @@ Fresh GC-018:
 `docs/baselines/CVF_GC018_EL2_EL3_EXECUTION_LAYER_ENFORCEMENT_2026-05-30.md`
 
 Dispatch status:
-EL-2 WORK_ORDER_READY.
-EL-3 HOLD_UNTIL_EL2_PASS.
+EL-2 CLOSED_PASS_BOUNDED.
+EL-3 CLOSED_PASS_BOUNDED.
 
 ## Purpose
 
@@ -100,7 +100,7 @@ governance response.
 
 **Risk:** R2 — runtime enforcement wiring.
 
-**Status:** HOLD_UNTIL_EL2_PASS.
+**Status:** CLOSED_PASS_BOUNDED.
 
 **Gap:** `handleReviewDeadlock()` exists but is never called. After 3 reviewer
 rejections there is no CVF-governed decomposition or escalation.
@@ -132,14 +132,14 @@ rejections there is no CVF-governed decomposition or escalation.
 | Tranche | Deliverable | Risk | Gate |
 | --- | --- | --- | --- |
 | EL-2 | Worker Timeout Enforcement readout | R2 | None — open |
-| EL-3 | Reviewer Deadlock Escalation readout | R2 | HOLD_UNTIL_EL2_PASS |
+| EL-3 | Reviewer Deadlock Escalation readout | R2 | CLOSED_PASS_BOUNDED |
 
 ## Acceptance Criteria
 
-- [ ] EL-2: `workerTimeoutReadout` in response when elapsed ≥ 300s; tests PASS; TypeScript PASS; live proof receipt
-- [ ] EL-3: `reviewerDeadlockReadout` in response when `reviewerRetryCount > 3`; tests PASS; TypeScript PASS; live proof receipt
-- [ ] `route.ts` ≤ 1000 lines after each tranche
-- [ ] `runtimeExecutionAuthorized=false` in both readouts
+- [x] EL-2: `workerTimeoutReadout` in response when elapsed ≥ 300s; tests PASS; TypeScript PASS; live proof receipt
+- [x] EL-3: `reviewerDeadlockReadout` in response when `reviewerRetryCount > 3`; tests PASS; TypeScript PASS; live proof receipt
+- [x] `route.ts` ≤ 1000 lines after each tranche
+- [x] `runtimeExecutionAuthorized=false` in both readouts
 
 ## Claim Boundary
 

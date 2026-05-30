@@ -34,6 +34,7 @@ import { buildRouteRequestContextReadout } from '@/lib/route-request-context-rea
 import { buildVerticalIntegrationReadout } from '@/lib/vertical-integration-readout'; import { buildSpecFirstMediationReadout } from '@/lib/spec-first-mediation'; import { buildEnglishSpecFreezeReadout } from '@/lib/spec-english-freeze'; import { buildVi5LanguageReadout } from '@/lib/vi5-language-readout';
 import { buildPipelineChainReadout } from '@/lib/pipeline-chain-readout';
 import { buildWorkerTimeoutReadout } from '@/lib/worker-timeout-handler';
+import { buildReviewerDeadlockReadout } from '@/lib/reviewer-deadlock-handler';
 import { buildDurableMemorySystemPrompt, evaluateDurableMemoryRoute, evaluateDurableMemoryWrite, resolveDurableMemoryActorRole } from '@/lib/durable-memory-route';
 import { buildRoleOutputDeniedResponse, buildRolePermissionDeniedResponse } from '@/lib/execute-role-permission-gate';
 import { buildExecutionIdentityDecision } from '@/lib/execution-identity';
@@ -947,6 +948,7 @@ export async function POST(request: NextRequest) {
         const specFirstMediation = buildSpecFirstMediationReadout({ request: body, template, routeOutcome: { success: aiResult.success, provider: routedProvider, model: body.model ?? aiResult.model ?? routedProvider, decision: enforcement.status, receipt: { receiptId: governanceEvidenceReceipt.receiptId, envelopeId: governanceEvidenceReceipt.envelopeId }, rawTechnicalEvidenceAvailable: true } }); const englishSpecFreeze = buildEnglishSpecFreezeReadout({ request: body, specFirstMediation, providerOutput: aiResult.output });
         const pipelineChainReadout = buildPipelineChainReadout(body.intent ?? '');
         const workerTimeoutReadout = buildWorkerTimeoutReadout(Date.now() - routeStartedAtMs);
+        const reviewerDeadlockReadout = buildReviewerDeadlockReadout();
         return NextResponse.json({
             ...aiResult,
             usage,
@@ -987,6 +989,7 @@ export async function POST(request: NextRequest) {
             ...(phase2cProductBrief ? { phase2cProductBrief } : {}), ...(phase3eOperationalMetrics ? { phase3eOperationalMetrics } : {}),
             pipelineChainReadout,
             workerTimeoutReadout,
+            reviewerDeadlockReadout,
         });
     } catch (error) {
         console.error('Execute API error:', error);

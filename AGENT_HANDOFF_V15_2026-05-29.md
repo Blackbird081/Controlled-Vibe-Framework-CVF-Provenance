@@ -67,7 +67,7 @@ Recovery (`Human System Harness`). Handoff rotated from V14 to V15.
 
 ## Active Boundary
 
-Current mode: `lhw15_el2_pm1_all_closed_pass_bounded`.
+Current mode: `el3_reviewer_deadlock_closed_pass_bounded`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
