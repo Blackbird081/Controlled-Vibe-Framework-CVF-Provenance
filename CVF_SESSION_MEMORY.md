@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-30
 
-Current mode marker: `ofb1_orchestrator_feedback_bus_closed_pass_bounded`
+Current mode marker: `lhw20_cvf_important_deep_scan_all_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `ofb1_orchestrator_feedback_bus_closed_pass_bounded`.
+Current mode: `lhw20_cvf_important_deep_scan_all_closed_pass_bounded`.
 
 Active handoff:
 
@@ -181,7 +181,7 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LHW19 is the latest closed LHW wave (T1 Integration Architecture+Control Points/T2 Event Model/T3 Strategic Compass CLOSED_PASS_BOUNDED). Source: CVF_Restructure legacy absorption. LHW18 closed (CVF_Edit T1/T2/T3). LHW17 closed (CVF_Important T1/T2/T3). Delta+WCE+EL+PM waves all CLOSED. All dispatched work orders CLOSED_PASS_BOUNDED.
+LHW20 is the latest closed LHW wave (T1 Security Hardening Checklist Full/T2 Execution Strategy Model/T3 Adaptation Policy Engine CLOSED_PASS_BOUNDED). Source: CVF_Important full 97-file deep scan. LHW19 closed (CVF_Restructure T1/T2/T3). LHW18 closed (CVF_Edit T1/T2/T3). LHW17 closed (CVF_Important T1/T2/T3). Delta+WCE+EL+PM waves all CLOSED. All legacy scan folders absorbed. All dispatched work orders CLOSED_PASS_BOUNDED.
 
 Parked checkpoints:
 

@@ -74,13 +74,37 @@ connector specs: T1 Agent Memory Capture Packaging (`agentmemory`), T2
 Spec-Change Workflow Advisory (`OpenSpec`), T3 Noncoder Clarification and
 Recovery (`Human System Harness`). Handoff rotated from V14 to V15.
 
+## Latest Work / Changes (2026-05-31)
+
+**LHW20 CVF_Important Deep Scan Wave CLOSED_PASS_BOUNDED** (2026-05-31). Full 97-file scan of `CVF_Important/` — 13 subfolders, all files individually read. GC-018: `docs/baselines/CVF_GC018_LHW20_CVF_IMPORTANT_DEEP_SCAN_WAVE_2026-05-31.md`.
+
+- T1 Security Hardening Checklist Full: `cvf.securityHardeningChecklistFull.lhw20.t1.v1` — 6 additional items (H4-H9) from `CVF_SECURITY_HARDENING_CHECKLIST.md`; full 9-item checklist documented.
+- T2 Execution Strategy Model: `cvf.executionStrategyModelAdvisory.lhw20.t2.v1` — 5 execution patterns (SINGLE_SHOT/ITERATIVE/MULTI_STEP/PARALLEL/TREE) + 5 enhancement techniques + strategy selection rules.
+- T3 Adaptation Policy Engine: `cvf.adaptationPolicyAdvisory.lhw20.t3.v1` — 6 mandatory constraints (A1-A6) as prerequisite for LHW17 T3 Step 5 Learning Plane activation.
+
+Invariants: `runtimeExecutionAuthorized=false`. R0-R3 preserved.
+Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`.
+
 ## Active Boundary
 
-Current mode: `lhw19_cvf_restructure_absorption_all_closed_pass_bounded`.
+Current mode: `lhw20_cvf_important_deep_scan_all_closed_pass_bounded`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
-## LHW19 Wave Closure (Latest)
+## LHW20 Wave Closure (Latest)
+
+LHW20 CVF_Important Deep Scan Wave CLOSED_PASS_BOUNDED (T1+T2+T3, doc-only).
+Source: `.private_reference/legacy/CVF_Important/` (full 97-file scan, 13 subfolders).
+
+- T1 Security Hardening Full: `cvf.securityHardeningChecklistFull.lhw20.t1.v1` — H4 Capability Hierarchy, H5 Secret TTL, H6 Context Isolation, H7 Agent Comm Restriction, H8 Severity Classification, H9 Cross-Check Detection. Closes remaining 6 items; full 9-item checklist (H1-H9) now documented.
+- T2 Execution Strategy Model: `cvf.executionStrategyModelAdvisory.lhw20.t2.v1` — 5 patterns + 5 enhancement techniques + selection rules. CVF default = MULTI_STEP; PARALLEL/TREE require new orchestration tranche.
+- T3 Adaptation Policy Engine: `cvf.adaptationPolicyAdvisory.lhw20.t3.v1` — A1 Risk Budget, A2 Confidence Gating, A3 Multi-Signal, A4 Cooldown, A5 Tiered Authority (Tier 0-3), A6 Rollback. Prerequisite for LHW17 T3 Step 5.
+
+Invariants: `runtimeExecutionAuthorized=false`. R0-R3 preserved.
+GC-018: `docs/baselines/CVF_GC018_LHW20_CVF_IMPORTANT_DEEP_SCAN_WAVE_2026-05-31.md`.
+Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`.
+
+## LHW19 Wave Closure (Prior)
 
 LHW19 CVF_Restructure Legacy Absorption Wave CLOSED_PASS_BOUNDED (T1+T2+T3, doc-only).
 Source: `.private_reference/legacy/CVF_Restructure/`.
@@ -149,6 +173,10 @@ public-release readiness claim.
 | LHW14 | CLOSED_PASS_BOUNDED | Agent memory packaging, spec-change workflow, noncoder clarification |
 | LHW15 | CLOSED_PASS_BOUNDED | Runtime observability trend (abtop), workflow resume (Agent Harnesses), context packaging (Workflow GoClaw) |
 | LHW16 | CLOSED_PASS_BOUNDED | Database action proof (gridex), MCP approval proof (pancake-pos-mcp), code intelligence boundary (cortex-hub) |
+| LHW17 | CLOSED_PASS_BOUNDED | Trust & Isolation Hardening, Model Gateway Unification, Learning Plane Truth+Reputation (CVF_Important T1/T2/T3) |
+| LHW18 | CLOSED_PASS_BOUNDED | Failure Simulation gap-map, CVF Positioning, Context Management Strategy (CVF_Edit T1/T2/T3) |
+| LHW19 | CLOSED_PASS_BOUNDED | Integration Architecture+Control Points, Event Model governance, Strategic Compass (CVF_Restructure T1/T2/T3) |
+| LHW20 | CLOSED_PASS_BOUNDED | Security Hardening full (H4-H9), Execution Strategy Model, Adaptation Policy Engine (CVF_Important deep scan T1/T2/T3) |
 
 ## Other Closed Artifacts
 
@@ -178,11 +206,13 @@ public-release readiness claim.
 
 ## Next Allowed Move
 
-LHW16 is the latest closed LHW wave. Delta (D1+D2+D3), WCE (W1+W2+W3),
-EL (EL-2+EL-3), PM (PM-1/2/3), LHW15, and LHW16 are CLOSED_PASS_BOUNDED.
-All dispatched work orders from the 2026-05-30 batch are closed. Remaining
-options: new LHW wave with fresh GC-018, operator-initiated roadmap, or
-public-sync update.
+LHW20 is the latest closed LHW wave (T1/T2/T3 CVF_Important deep scan CLOSED_PASS_BOUNDED).
+LHW17-19 closed (CVF_Important/CVF_Edit/CVF_Restructure all absorbed). Delta, WCE, EL, PM,
+LHW15-16 all CLOSED_PASS_BOUNDED. All legacy scan folders absorbed. All work orders closed.
+Next options: (1) Adaptation Policy Engine implementation (A1-A6 from LHW20 T3, prerequisite
+for Learning Plane activation), (2) Context Budget Guard implementation (from LHW18 T3),
+(3) Integration SDK adapter tranche (from LHW19 T1), (4) operator-initiated roadmap,
+(5) public-sync update.
 
 Parked checkpoints:
 - VI5-T4/T5 hosted Netlify freshness and operator external-agent retest
@@ -198,10 +228,10 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lhw16_pm_wave_all_closed_pass_bounded`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=new LHW
-wave with fresh GC-018, operator-initiated roadmap, or public-sync update;
-parked checkpoint=VI5-T4/T5 hosted retest.
+Startup acknowledged: current mode=`lhw20_cvf_important_deep_scan_all_closed_pass_bounded`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=Adaptation Policy Engine
+tranche (A1-A6, LHW20 T3), Context Budget Guard tranche (LHW18 T3), Integration SDK adapter
+(LHW19 T1), operator roadmap, or public-sync update; parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary
 
