@@ -4,9 +4,9 @@ Memory class: POINTER_RECORD
 
 Status: ACTIVE SESSION FRONT DOOR
 
-Last updated: 2026-05-29
+Last updated: 2026-05-30
 
-Current mode marker: `delta_wave_all_closed_pass_bounded`
+Current mode marker: `lhw15_el2_pm1_all_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -170,7 +170,7 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LHW14 is the latest closed LHW wave (T1+T2+T3 CLOSED_PASS_BOUNDED; agentmemory/OpenSpec/Human System Harness LH1 triggers closed). Any further connector wave requires a fresh roadmap and GC-018. Continue LHW connector absorption for remaining PARTIALLY_ABSORBED LH1 families before opening separate live-proof roadmaps for abtop, gridex, or other route-execution families.
+LHW15 is the latest closed LHW wave (T1+T2+T3 CLOSED_PASS_BOUNDED; abtop/Agent Harnesses/Workflow GoClaw LH1 triggers closed). EL-2 CLOSED_PASS_BOUNDED; EL-3 UNBLOCKED (work order at docs/work_orders/CVF_WO_EL3_REVIEWER_DEADLOCK_ESCALATION_2026-05-30.md). PM-1 CLOSED_PASS_BOUNDED; PM-2/PM-3 DEMAND_GATED. Delta D2/D3 DEMAND_GATED. WCE W2 Phase B DEMAND_GATED.
 
 Parked checkpoints:
 

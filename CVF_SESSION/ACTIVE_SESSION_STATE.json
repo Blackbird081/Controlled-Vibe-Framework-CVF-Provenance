@@ -35,8 +35,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "delta_wave_all_closed_pass_bounded",
-  "previousMode": "delta_d2_d3_work_orders_ready",
+  "currentMode": "lhw15_el2_pm1_all_closed_pass_bounded",
+  "previousMode": "delta_wave_all_closed_pass_bounded",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -115,7 +115,10 @@
     "blocked_work_classes",
     "next_allowed_move"
   ],
-  "nextAllowedMove": "LHW14 is the latest closed LHW wave. Delta D1+D2+D3 + WCE W1+W2+W3 ALL CLOSED_PASS_BOUNDED. Delta wave complete. Any further LHW connector wave requires a fresh roadmap and GC-018.",
+  "nextAllowedMove": "LHW15 is the latest closed LHW wave (T1+T2+T3 CLOSED_PASS_BOUNDED). EL-2 CLOSED_PASS_BOUNDED; EL-3 UNBLOCKED (work order at docs/work_orders/CVF_WO_EL3_REVIEWER_DEADLOCK_ESCALATION_2026-05-30.md). PM-1 CLOSED_PASS_BOUNDED; PM-2/PM-3 DEMAND_GATED. Delta D2/D3 DEMAND_GATED. WCE W2 Phase B DEMAND_GATED.",
+  "lhw15WorkflowConnectorWave15": "CLOSED_PASS_BOUNDED. T1 cvf.runtimeObservabilityTrendAdvisory.lhw15.t1.v1 — closes abtop LH1/132; T2 cvf.workflowResumeRecoveryAdvisory.lhw15.t2.v1 — closes Agent Harnesses LH1/150; T3 cvf.contextProfilePackagingAdvisory.lhw15.t3.v1 — closes Workflow GoClaw LH1/163. All doc-only; runtimeExecutionAuthorized=false. Specs at docs/reference/CVF_LHW15_T*_*_CONNECTOR_SPEC_2026-05-30.md. Completions + Fast Lane at docs/reviews/CVF_LHW15_*_2026-05-30.md.",
+  "el2El3ExecutionLayerEnforcement": "EL-2 CLOSED_PASS_BOUNDED. cvf.workerTimeoutEnforcement.el2.v1. worker-timeout-handler.ts + buildWorkerTimeoutReadout(); additive workerTimeoutReadout in /api/execute ALLOW response; route.ts 995 lines; 9/9 unit tests + live receipt rcpt-env-mps9ui6z-xzlm2q (alibaba/qwen-turbo, triggered=false, runtimeExecutionAuthorized=false). EL-3 UNBLOCKED — work order at docs/work_orders/CVF_WO_EL3_REVIEWER_DEADLOCK_ESCALATION_2026-05-30.md ready for dispatch.",
+  "pmProviderMethodLiveProof": "PM-1 CLOSED_PASS_BOUNDED. cvf.providerMethodLiveProof.pm1.streaming.v1. Live receipt rcpt-env-mps9z6r8-14omcf (alibaba/qwen-turbo, evidenceMode=live, rawSecretPrinted=false). Stream method capability confirmed. PM-2 DeepSeek json_mode DEMAND_GATED; PM-3 Alibaba vision DEMAND_GATED.",
   "deltaCLIMCPWireIn": "CLOSED_PASS_BOUNDED. D1 cvf.pipelineChainReadout.delta.d1.v1 + D2 cvf.mcpWriteSubmitTools.delta.d2.v1 + D3 cvf.mcpCliBridge.delta.d3.v1. Delta wave complete. D2: cvf_submit_review_receipt + cvf_advance_pipeline_stage; 22/22 tests PASS. D3: cvf_invoke_cli_stage wiring runCli() whitelist [evaluate,status,help]; 18/18 tests PASS. Full MCP suite 526/526 PASS. TypeScript PASS. Security boundary doc + sandbox spec both approved before code. MCP-controls-CLI architecture from CVF 28.05 CLI&MCP.md now proven at local MCP server level.",
   "deltaD2McpWriteSubmitTools": "CLOSED_PASS_BOUNDED. Contract cvf.mcpWriteSubmitTools.delta.d2.v1. Tools: cvf_submit_review_receipt (REVIEWER/OPERATOR; schema validation; withMcpToolAudit) + cvf_advance_pipeline_stage (REVIEWER/OPERATOR/AI_AGENT; 5-stage order; failed/escalated → humanInterventionRequired). 22/22 tests PASS. Security boundary doc approved before code. No cross-package import. No process spawning.",
   "deltaD3McpCliBridge": "CLOSED_PASS_BOUNDED. Contract cvf.mcpCliBridge.delta.d3.v1. Tool: cvf_invoke_cli_stage (OPERATOR/ORCHESTRATOR/AI_AGENT; whitelist: evaluate/status/help; runCli() in-process; withMcpToolAudit). 18/18 tests PASS. Sandbox spec approved before code. Risk reclassified R3→R2 (in-process, not shell spawning). Full MCP suite 526/526 PASS.",

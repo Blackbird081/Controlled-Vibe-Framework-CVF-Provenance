@@ -17,9 +17,25 @@ Active private provenance continuity for the current CVF repository. Use only
 with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
-Current HEAD: `94f8814c` (chore: archive 129 stale docs — hygiene maintenance).
+Current HEAD: `0d1bdbef` → updated this session (see git log for new SHA).
 
-## Latest Work / Changes
+## Latest Work / Changes (2026-05-30)
+
+**EL-2 Worker Timeout Enforcement CLOSED_PASS_BOUNDED** (2026-05-30).
+`worker-timeout-handler.ts` + `buildWorkerTimeoutReadout()`; additive
+`workerTimeoutReadout` field in `/api/execute` ALLOW response; route.ts 995
+lines (was 999); 9/9 unit tests + live receipt `rcpt-env-mps9ui6z-xzlm2q`
+(alibaba/qwen-turbo, triggered=false, runtimeExecutionAuthorized=false).
+EL-3 gate: UNBLOCKED.
+
+**LHW15 T1+T2+T3 CLOSED_PASS_BOUNDED** (2026-05-30). T1: `runtimeObservabilityTrendAdvisoryType` closes `abtop` LH1/132.
+T2: `workflowResumeAdvisoryType` closes `Agent Harnesses` LH1/150.
+T3: `contextProfilePackagingAdvisoryType` closes `Workflow GoClaw` LH1/163.
+All doc-only; `runtimeExecutionAuthorized=false` across all.
+
+**PM-1 Alibaba Streaming Live Proof CLOSED_PASS_BOUNDED** (2026-05-30).
+Receipt `rcpt-env-mps9z6r8-14omcf`; alibaba/qwen-turbo; evidenceMode=live;
+stream method capability confirmed. PM-2/PM-3 DEMAND_GATED.
 
 **Delta D2+D3 CLOSED_PASS_BOUNDED** (2026-05-29). D2: `cvf_submit_review_receipt`
 + `cvf_advance_pipeline_stage` — 22/22 tests PASS; security boundary doc approved.
@@ -51,7 +67,7 @@ Recovery (`Human System Harness`). Handoff rotated from V14 to V15.
 
 ## Active Boundary
 
-Current mode: `lhw14_wave_closed_pass_bounded`.
+Current mode: `lhw15_el2_pm1_all_closed_pass_bounded`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
@@ -117,17 +133,18 @@ Advisory types delivered:
 
 ## Next Allowed Move
 
-WCE wave ALL CLOSED_PASS_BOUNDED (W1+W2+W3). Delta D1 CLOSED_PASS_BOUNDED.
-Delta D2/D3 DEMAND_GATED. LHW14 is latest closed LHW wave — further connector
-waves require fresh GC-018. Continue LHW connector
-absorption for remaining PARTIALLY_ABSORBED LH1 families before opening
-separate live-proof roadmaps for `abtop`, `gridex`, or other route-execution
-families.
+EL-2 CLOSED_PASS_BOUNDED. **EL-3 UNBLOCKED** — work order at
+`docs/work_orders/CVF_WO_EL3_REVIEWER_DEADLOCK_ESCALATION_2026-05-30.md`
+ready for dispatch. LHW15 T1+T2+T3 CLOSED_PASS_BOUNDED — LHW15 is latest
+closed LHW wave; further connector waves require fresh GC-018. PM-1
+CLOSED_PASS_BOUNDED.
 
-DEMAND_GATED roadmaps pending operator authorization:
-- `docs/roadmaps/CVF_EXECUTION_LAYER_ROADMAP` (EL-1/EL-2/EL-3)
-- `docs/roadmaps/CVF_PROVIDER_METHOD_LIVE_PROOF_ROADMAP` (PM-1/PM-2/PM-3)
-- `docs/roadmaps/CVF_PRODUCT_DEPTH_ROADMAP` (PD-1/PD-2)
+DEMAND_GATED pending operator authorization:
+- EL-3 Reviewer Deadlock Escalation (UNBLOCKED — EL-2 gate satisfied)
+- PM-2 DeepSeek json_mode
+- PM-3 Alibaba vision
+- Delta D2/D3 MCP write tools
+- WCE W2 Phase B
 
 API keys available (Alibaba/DeepSeek/OpenAI); operator authorized 2026-05-29.
 
