@@ -32,7 +32,7 @@ Documentation-only tranche. T3 completes the LHW9 wave.
   — CLOSED_PASS_BOUNDED
 - T2 gate: `docs/reviews/CVF_LHW9_T2_NONCODER_FRICTION_ADVISORY_CONNECTOR_COMPLETION_2026-05-28.md`
   — CLOSED_PASS_BOUNDED
-- LH1 ledger: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- LH1 ledger: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
   (triggers: `Review CVF_2.md`, `De_xuat.md`)
 - G1 completion: `docs/reviews/CVF_G1_EXECUTION_IDENTITY_RUNTIME_GATE_COMPLETION_2026-05-22.md`
 - LHW6-T2 spec: `docs/reference/CVF_LHW6_CLI_TOOL_ONBOARDING_GOVERNANCE_CONNECTOR_SPEC_2026-05-28.md`

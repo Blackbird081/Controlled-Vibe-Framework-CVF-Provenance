@@ -25,8 +25,8 @@ behavior is changed. `runtimeExecutionAuthorized=false` is preserved throughout.
 
 - LHW2 roadmap: `docs/roadmaps/CVF_LHW2_WORKFLOW_CONNECTOR_COMPLETION_ROADMAP_2026-05-27.md`
 - Fast Lane audit: `docs/reviews/CVF_LHW2_T3_FAST_LANE_AUDIT_2026-05-27.md` → FAST_LANE_READY
-- LH1 ledger (`pancake-pos-mcp` trigger): `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
-- TA1: `docs/reviews/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
+- LH1 ledger (`pancake-pos-mcp` trigger): `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- TA1: `docs/reviews/archive/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
 - W3: `docs/reviews/CVF_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_COMPLETION_2026-05-24.md`
 - MA1 standard: `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
   (read full sections 0–9)
@@ -51,7 +51,7 @@ If either gate fails, stop immediately. Do not implement T3.
 2. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 3. T1 completion (understand loop connector foundation)
 4. T2 completion (understand packet structure pattern T3 must follow)
-5. `docs/reviews/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
+5. `docs/reviews/archive/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
    — confirm the 6 TA1 approval states and `runtimeExecutionAuthorized=false` binding
 6. `docs/reviews/CVF_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_COMPLETION_2026-05-24.md`
    — confirm W3 action risk classes that feed TA1 input

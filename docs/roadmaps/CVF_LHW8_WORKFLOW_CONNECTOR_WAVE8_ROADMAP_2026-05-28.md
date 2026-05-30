@@ -67,7 +67,7 @@ already CLOSED_PASS_BOUNDED in HEAD.
   — Status: CLOSED_PASS_BOUNDED
 - LHW6 roadmap: `docs/roadmaps/CVF_LHW6_WORKFLOW_CONNECTOR_WAVE6_ROADMAP_2026-05-28.md`
   — Status: CLOSED_PASS_BOUNDED
-- LH1 ledger: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- LH1 ledger: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
   — Remaining triggers for `agentmemory`, `tolaria`, `Claude Kit`,
     `Review CVF_4.md`, `CVF AUDIT LOG_md`, `Failure Simulation cho CVF.md`
 - Active session: `CVF_SESSION/ACTIVE_SESSION_STATE.json`
@@ -84,7 +84,7 @@ Scope sources resolved before this roadmap (each already closed):
 
 - `docs/reviews/CVF_W2_MEMORY_EVENT_HOOKS_CONTEXT_PACKAGER_COMPLETION_2026-05-24.md`
 - `docs/reviews/CVF_AIF_C_MEMORY_GATEWAY_PHASE2_COMPLETION_2026-05-24.md`
-- `docs/reviews/CVF_VI3_AGENTMEMORY_CAPTURE_RECORD_READOUT_COMPLETION_2026-05-25.md`
+- `docs/reviews/archive/CVF_VI3_AGENTMEMORY_CAPTURE_RECORD_READOUT_COMPLETION_2026-05-25.md`
 - `docs/reviews/CVF_G1_EXECUTION_IDENTITY_RUNTIME_GATE_COMPLETION_2026-05-22.md`
 - `docs/reviews/CVF_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_COMPLETION_2026-05-24.md`
 - `docs/reviews/CVF_MA1_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_COMPLETION_2026-05-26.md`

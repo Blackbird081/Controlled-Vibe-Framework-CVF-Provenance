@@ -16,7 +16,7 @@ Completion review confirming LHW16-T3 Code Intelligence Adapter Boundary connect
 
 ## Target/Source
 
-LH1 source: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` line 155
+LH1 source: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` line 155
 
 ## Scope/Target/Owner Boundary
 

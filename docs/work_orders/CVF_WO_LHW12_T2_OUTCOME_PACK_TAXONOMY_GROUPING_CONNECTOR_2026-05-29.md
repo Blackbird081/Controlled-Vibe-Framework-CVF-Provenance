@@ -29,8 +29,8 @@ This connector is advisory only. It does NOT select or execute a pack.
 
 - LHW12 roadmap: `docs/roadmaps/CVF_LHW12_WORKFLOW_CONNECTOR_WAVE12_ROADMAP_2026-05-29.md`
 - LHW12 GC-018: `docs/baselines/CVF_GC018_LHW12_WORKFLOW_CONNECTOR_WAVE12_2026-05-29.md`
-- C8 completion: `docs/reviews/CVF_C8_PRODUCT_SKILL_PACK_SELECTION_READOUT_COMPLETION_2026-05-25.md`
-- CB1 completion: `docs/reviews/CVF_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_COMPLETION_2026-05-25.md`
+- C8 completion: `docs/reviews/archive/CVF_C8_PRODUCT_SKILL_PACK_SELECTION_READOUT_COMPLETION_2026-05-25.md`
+- CB1 completion: `docs/reviews/archive/CVF_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_COMPLETION_2026-05-25.md`
 - Skill pack registry: `governance/registries/cvf-certified-skill-pack-registry.json`
 - CVF 25.05 Gop_y.md: `.private_reference/legacy/CVF 25.05/Gop_y.md`
 - **T1 gate: `docs/reviews/CVF_LHW12_T1_POSTURE_TO_MODEL_TIER_ADVISORY_CONNECTOR_COMPLETION_2026-05-29.md`

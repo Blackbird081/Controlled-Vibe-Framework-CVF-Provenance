@@ -33,7 +33,7 @@ autonomous execution. `runtimeExecutionAuthorized=false` invariant.
 - WR1 completion: `docs/reviews/CVF_WR1_WORKFLOW_RECOVERY_READOUT_COMPLETION_2026-05-25.md`
 - MA1 completion: `docs/reviews/CVF_MA1_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_COMPLETION_2026-05-26.md`
 - LHW10-T1 spec: `docs/reference/CVF_LHW10_T1_WORKFLOW_TRANSITION_ENFORCEMENT_ADVISORY_CONNECTOR_SPEC_2026-05-28.md`
-- LH1 ledger: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- LH1 ledger: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
   (`deepagents` trigger at line 156)
 - CVF 25.05 review: `.private_reference/legacy/CVF 25.05/CLAUDE_REVIEW_OF_GOP_Y_2026-05-25.md`
   (GAP 7 section)
@@ -96,7 +96,7 @@ file, receipt envelope schema, public-sync repo.
 | `Auditor` role lane | `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | line 99 | `Auditor` | MA1 role lane | ACCEPT |
 | `transitionEnforcementAdvisoryType` field | `docs/reference/CVF_LHW10_T1_WORKFLOW_TRANSITION_ENFORCEMENT_ADVISORY_CONNECTOR_SPEC_2026-05-28.md` | S3 line 137 | `transitionEnforcementAdvisoryType` | LHW10-T1 doc-only field | ACCEPT |
 | `escalated_blocked` | `docs/reference/CVF_LHW10_T1_WORKFLOW_TRANSITION_ENFORCEMENT_ADVISORY_CONNECTOR_SPEC_2026-05-28.md` | S2 lines 88–102 | blocked-tier value | LHW10-T1 S2 mapping | ACCEPT |
-| LH1 `deepagents` trigger | `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | line 156 | `deepagents` | LH1 CVF ADD ledger | ACCEPT |
+| LH1 `deepagents` trigger | `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | line 156 | `deepagents` | LH1 CVF ADD ledger | ACCEPT |
 
 New doc-only fields:
 

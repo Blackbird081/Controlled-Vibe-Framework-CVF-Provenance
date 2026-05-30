@@ -66,7 +66,7 @@ readout, export advisory, or simulation packet.
   — Status: CLOSED_PASS_BOUNDED
 - LHW3 roadmap: `docs/roadmaps/CVF_LHW3_WORKFLOW_CONNECTOR_WAVE3_ROADMAP_2026-05-27.md`
   — Status: CLOSED_PASS_BOUNDED
-- LH1 ledger: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- LH1 ledger: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
   — Remaining triggers for `gridex`, `md2html` + artifact renderer,
     `Failure Simulation cho CVF.md`
 - Active session: `CVF_SESSION/ACTIVE_SESSION_STATE.json`
@@ -80,14 +80,14 @@ Control standard:
 
 Scope sources resolved before this roadmap:
 
-- `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
 - `docs/reviews/CVF_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_COMPLETION_2026-05-24.md`
-- `docs/reviews/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
+- `docs/reviews/archive/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
 - `docs/reviews/CVF_W6_NONCODER_ARTIFACT_EXPORT_HARDENING_COMPLETION_2026-05-24.md`
 - `docs/reviews/CVF_LHW4_T2_EXECUTION_AUTHORITY_CHAIN_READOUT_CONNECTOR_COMPLETION_2026-05-27.md`
 - `docs/reviews/CVF_LHW3_T1_OPERATIONAL_FAILURE_TREND_READOUT_CONNECTOR_COMPLETION_2026-05-27.md`
 - `docs/reviews/CVF_W4_OPERATIONAL_BENCHMARK_SCORECARD_COMPLETION_2026-05-24.md`
-- `docs/reviews/CVF_WR1_WORKFLOW_RECOVERY_STATE_PROOF_COMPLETION_2026-05-25.md`
+- `docs/reviews/archive/CVF_WR1_WORKFLOW_RECOVERY_STATE_PROOF_COMPLETION_2026-05-25.md`
 
 Source families addressed per LH1 ledger triggers:
 

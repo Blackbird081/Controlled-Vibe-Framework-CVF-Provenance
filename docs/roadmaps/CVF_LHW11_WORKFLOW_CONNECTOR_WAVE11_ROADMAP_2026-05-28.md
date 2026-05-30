@@ -57,7 +57,7 @@ Every cited advisory type is defined in a CLOSED_PASS_BOUNDED spec at HEAD
 
 - LHW10 roadmap: `docs/roadmaps/CVF_LHW10_WORKFLOW_CONNECTOR_WAVE10_ROADMAP_2026-05-28.md`
   — Status: CLOSED_PASS_BOUNDED
-- LH1 ledger: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- LH1 ledger: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
   — Triggers for `Review CVF_5.md`, `CVF_EDIT_ANALYSIS.md`, `tolaria`
 - Active session: `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 

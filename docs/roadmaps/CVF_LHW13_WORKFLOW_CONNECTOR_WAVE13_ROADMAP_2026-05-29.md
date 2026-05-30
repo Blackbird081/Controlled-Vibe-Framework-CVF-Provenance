@@ -64,7 +64,7 @@ maps AIF-B `GraphKnowledgeService` boundary × current text-retrieval posture
   — Status: ACTIVE (parallel wave; no dependency)
 - LHW11 roadmap: `docs/roadmaps/CVF_LHW11_WORKFLOW_CONNECTOR_WAVE11_ROADMAP_2026-05-28.md`
   — Status: CLOSED_PASS_BOUNDED
-- LH1 ledger: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- LH1 ledger: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
   — `tolaria` trigger at line 129
 - CVF 25.05 review: `.private_reference/legacy/CVF 25.05/CLAUDE_REVIEW_OF_GOP_Y_2026-05-25.md`
 - Active session: `CVF_SESSION/ACTIVE_SESSION_STATE.json`

@@ -27,7 +27,7 @@ behavior is changed. The advisory packet does not block artifact export.
 
 - LHW5 roadmap: `docs/roadmaps/CVF_LHW5_WORKFLOW_CONNECTOR_WAVE5_ROADMAP_2026-05-27.md`
 - Fast Lane audit: `docs/reviews/CVF_LHW5_T2_FAST_LANE_AUDIT_2026-05-27.md` → FAST_LANE_READY
-- LH1 ledger (`md2html` + artifact renderer trigger): `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- LH1 ledger (`md2html` + artifact renderer trigger): `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
 - W6 completion: `docs/reviews/CVF_W6_NONCODER_ARTIFACT_EXPORT_HARDENING_COMPLETION_2026-05-24.md`
 - V3 source: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts`
 - LHW3-T1 spec: `docs/reference/CVF_LHW3_OPERATIONAL_FAILURE_TREND_READOUT_CONNECTOR_SPEC_2026-05-27.md`

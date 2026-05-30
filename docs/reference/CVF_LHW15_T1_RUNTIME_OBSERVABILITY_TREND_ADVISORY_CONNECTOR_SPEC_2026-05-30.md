@@ -28,7 +28,7 @@ separation. The remaining gap is a trend-over-time advisory: how agents and
 governance surfaces can classify whether observed execution metrics indicate
 a stable, degrading, or recovering posture without requiring a live dashboard.
 
-LH1 source: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` line 132
+LH1 source: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` line 132
 W4 owner surface: `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/operational-benchmark-suite.ts`
 
 Rejection label for this wave:

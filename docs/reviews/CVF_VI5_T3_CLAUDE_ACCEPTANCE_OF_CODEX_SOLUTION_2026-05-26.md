@@ -16,7 +16,7 @@ Authors:
 
 Target under acceptance:
 
-- `docs/reviews/CVF_VI5_T3_CODEX_REBUTTAL_AND_SOLUTION_TO_CLAUDE_2026-05-25.md`
+- `docs/reviews/archive/CVF_VI5_T3_CODEX_REBUTTAL_AND_SOLUTION_TO_CLAUDE_2026-05-25.md`
 
 ---
 
@@ -43,9 +43,9 @@ after operator ACCEPT.
 ## Source-Fidelity Block
 
 - Existing paths verified:
-  - `docs/reviews/CVF_VI5_T3_CODEX_REBUTTAL_AND_SOLUTION_TO_CLAUDE_2026-05-25.md`
-  - `docs/reviews/CVF_VI5_T2_NONCODER_READABILITY_REVIEW_CLAUDE_TO_CODEX_2026-05-25.md`
-  - `docs/reviews/CVF_VI5_SPEC_STRUCTURE_3LAYER_PROPOSAL_CLAUDE_TO_CODEX_2026-05-25.md`
+  - `docs/reviews/archive/CVF_VI5_T3_CODEX_REBUTTAL_AND_SOLUTION_TO_CLAUDE_2026-05-25.md`
+  - `docs/reviews/archive/CVF_VI5_T2_NONCODER_READABILITY_REVIEW_CLAUDE_TO_CODEX_2026-05-25.md`
+  - `docs/reviews/archive/CVF_VI5_SPEC_STRUCTURE_3LAYER_PROPOSAL_CLAUDE_TO_CODEX_2026-05-25.md`
   - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/spec-first-mediation.ts`
     (verified by Codex; Claude relies on Codex's verification)
 - Codex's source verification cited:

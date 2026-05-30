@@ -29,9 +29,9 @@ behavior is changed. CLI command execution remains blocked.
 - LHW6 roadmap: `docs/roadmaps/CVF_LHW6_WORKFLOW_CONNECTOR_WAVE6_ROADMAP_2026-05-28.md`
 - LHW6 GC-018: `docs/baselines/CVF_GC018_LHW6_WORKFLOW_CONNECTOR_WAVE6_2026-05-28.md`
 - Fast Lane audit: `docs/reviews/CVF_LHW6_T2_FAST_LANE_AUDIT_2026-05-28.md` → HOLD_PENDING_T1
-- LH1 ledger (`CLI-Anything` trigger): `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- LH1 ledger (`CLI-Anything` trigger): `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
 - W3: `docs/reviews/CVF_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_COMPLETION_2026-05-24.md`
-- TA1: `docs/reviews/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
+- TA1: `docs/reviews/archive/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
 - LHW6-T1 spec: `docs/reference/CVF_LHW6_TOOL_RUNTIME_BRIDGE_ADVISORY_CONNECTOR_SPEC_2026-05-28.md`
 
 ## Gate Condition — CHECK FIRST
@@ -77,7 +77,7 @@ CLI command execution and command runtime bridging remain blocked.
    used by the spec;
    confirm `runtimeExecutionAuthorized=false`; confirm `sandboxRequired` logic
    for `command_runtime` surface
-5. `docs/reviews/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
+5. `docs/reviews/archive/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
    — confirm TA1 approval state tokens
 6. `docs/reference/CVF_LHW6_TOOL_RUNTIME_BRIDGE_ADVISORY_CONNECTOR_SPEC_2026-05-28.md`
    — confirm S3 `bridgeAdvisoryType` values: `advisory_allowed` |

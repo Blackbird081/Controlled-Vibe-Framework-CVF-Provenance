@@ -34,7 +34,7 @@ planning packet; `runtimeExecutionAuthorized=false`.
 - LHW8-T1 spec: `docs/reference/CVF_LHW8_T1_MEMORY_EVENT_HOOK_GOVERNANCE_SNAPSHOT_CONNECTOR_SPEC_2026-05-28.md`
 - LHW11-T3 spec: `docs/reference/CVF_LHW11_T3_MEMORY_CONTEXT_SEED_DECAY_ADVISORY_CONNECTOR_SPEC_2026-05-28.md`
 - AIF-C source: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts`
-- LH1 ledger: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- LH1 ledger: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
   (`tolaria` trigger at line 129)
 - CVF 25.05 review: `.private_reference/legacy/CVF 25.05/CLAUDE_REVIEW_OF_GOP_Y_2026-05-25.md`
   (GAP 4 section)
@@ -94,7 +94,7 @@ file, receipt envelope schema, public-sync repo.
 | `memoryContextSeedDecayAdvisoryType` field | `docs/reference/CVF_LHW11_T3_MEMORY_CONTEXT_SEED_DECAY_ADVISORY_CONNECTOR_SPEC_2026-05-28.md` | S3 field list | `memoryContextSeedDecayAdvisoryType` | LHW11-T3 doc-only field | ACCEPT |
 | EXISTS: `MemoryGatewayDecision.canReinject` boolean field | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts` | line 49 | `canReinject` | `MemoryGatewayDecision` | ACCEPT |
 | LITERAL_INVARIANT: `MemoryGatewayDecision.rawMemoryReleased=false` | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts` | line 50 | `rawMemoryReleased` | `MemoryGatewayDecision` | ACCEPT |
-| LH1 `tolaria` trigger | `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | line 129 | `tolaria` | LH1 CVF 16.5 ledger | ACCEPT |
+| LH1 `tolaria` trigger | `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | line 129 | `tolaria` | LH1 CVF 16.5 ledger | ACCEPT |
 
 New doc-only fields:
 

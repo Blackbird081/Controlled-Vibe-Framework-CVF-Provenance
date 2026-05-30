@@ -53,7 +53,7 @@ Direct sources from the 2026-05-26 conversation:
   still contains ~30 Vietnamese leak lines)
 - `vibcode.netlify.app/home` (live web UI, 3 export modes: Brief /
   Handoff / CVF Guided Agent)
-- `docs/reviews/CVF_REAL_NONCODER_USAGE_TEST_RESULT_2026-05-25.md`
+- `docs/reviews/archive/CVF_REAL_NONCODER_USAGE_TEST_RESULT_2026-05-25.md`
   (HOLD verdict by operator)
 - `docs/reviews/CVF_VI5_T3_CLAUDE_ACCEPTANCE_OF_CODEX_SOLUTION_2026-05-26.md`
   (convergence packet that targeted wrong surface)
@@ -62,7 +62,7 @@ Direct sources from the 2026-05-26 conversation:
 
 Predecessor concept document being extended:
 
-- `docs/concepts/CVF_LAYERED_PRODUCT_ARCHITECTURE_AND_VIBE_DIALOG_PATTERN_2026-05-25.md`
+- `docs/concepts/archive/CVF_LAYERED_PRODUCT_ARCHITECTURE_AND_VIBE_DIALOG_PATTERN_2026-05-25.md`
 
 ## Operator's Direct Statements (Verbatim)
 
@@ -356,7 +356,7 @@ audit metadata (separate from spec body), not in spec body itself.
 ## Part 4: Multi-Role Convergence Augmentations
 
 The Multi-Role Orchestrated Convergence Capture Form
-(`docs/reference/CVF_MULTI_ROLE_ORCHESTRATED_CONVERGENCE_CAPTURE_FORM_2026-05-25.md`)
+(`docs/reference/archive/CVF_MULTI_ROLE_ORCHESTRATED_CONVERGENCE_CAPTURE_FORM_2026-05-25.md`)
 must be amended to include Surface Fidelity Gate at the top.
 
 ### Required addition to convergence form
@@ -680,12 +680,12 @@ Source conversations and artifacts:
 - `cvf-spec-app_builder_complete-full.md` (web export, Vietnamese mode)
 - `cvf-spec-app_builder_complete-full 2.md` (web export, English mode,
   mixed-language leak evidence)
-- `docs/reviews/CVF_REAL_NONCODER_USAGE_TEST_RESULT_2026-05-25.md`
-- `docs/reviews/CVF_VI5_T2_NONCODER_READABILITY_REVIEW_CLAUDE_TO_CODEX_2026-05-25.md`
+- `docs/reviews/archive/CVF_REAL_NONCODER_USAGE_TEST_RESULT_2026-05-25.md`
+- `docs/reviews/archive/CVF_VI5_T2_NONCODER_READABILITY_REVIEW_CLAUDE_TO_CODEX_2026-05-25.md`
   (Claude's persona walkthrough — example of AP1)
-- `docs/reviews/CVF_VI5_SPEC_STRUCTURE_3LAYER_PROPOSAL_CLAUDE_TO_CODEX_2026-05-25.md`
+- `docs/reviews/archive/CVF_VI5_SPEC_STRUCTURE_3LAYER_PROPOSAL_CLAUDE_TO_CODEX_2026-05-25.md`
   (Claude's 3-layer envelope — example of AP4)
-- `docs/reviews/CVF_VI5_T3_CODEX_REBUTTAL_AND_SOLUTION_TO_CLAUDE_2026-05-25.md`
+- `docs/reviews/archive/CVF_VI5_T3_CODEX_REBUTTAL_AND_SOLUTION_TO_CLAUDE_2026-05-25.md`
   (Codex correction packet — partially correct, but still wrong-target
   per AP2)
 - `docs/reviews/CVF_VI5_T3_CLAUDE_ACCEPTANCE_OF_CODEX_SOLUTION_2026-05-26.md`
@@ -693,15 +693,15 @@ Source conversations and artifacts:
 
 Predecessor concept document:
 
-- `docs/concepts/CVF_LAYERED_PRODUCT_ARCHITECTURE_AND_VIBE_DIALOG_PATTERN_2026-05-25.md`
+- `docs/concepts/archive/CVF_LAYERED_PRODUCT_ARCHITECTURE_AND_VIBE_DIALOG_PATTERN_2026-05-25.md`
   (4-layer architecture; this document extends with authority + surface
   fidelity protocols)
 
 Companion templates:
 
-- `docs/reference/CVF_VIBE_TO_SPEC_CONVERSATION_CAPTURE_FORM_2026-05-25.md`
+- `docs/reference/archive/CVF_VIBE_TO_SPEC_CONVERSATION_CAPTURE_FORM_2026-05-25.md`
   (user-to-agent conversation form)
-- `docs/reference/CVF_MULTI_ROLE_ORCHESTRATED_CONVERGENCE_CAPTURE_FORM_2026-05-25.md`
+- `docs/reference/archive/CVF_MULTI_ROLE_ORCHESTRATED_CONVERGENCE_CAPTURE_FORM_2026-05-25.md`
   (agent-internal convergence form — needs Section 0 augmentation per
   Part 4)
 

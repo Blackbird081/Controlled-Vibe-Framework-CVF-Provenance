@@ -24,7 +24,7 @@ Template: `docs/reference/CVF_FAST_LANE_AUDIT_TEMPLATE.md`
 - LH1 ledger trigger: `CLI-Anything` PARTIALLY_ABSORBED — "Reopen for CLI
   tool onboarding only after action governance proof"
 - W3 completion: `docs/reviews/CVF_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_COMPLETION_2026-05-24.md`
-- TA1 completion: `docs/reviews/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
+- TA1 completion: `docs/reviews/archive/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
 - LHW6-T1 spec: `docs/reference/CVF_LHW6_TOOL_RUNTIME_BRIDGE_ADVISORY_CONNECTOR_SPEC_2026-05-28.md`
 
 ## Pre-Conditions

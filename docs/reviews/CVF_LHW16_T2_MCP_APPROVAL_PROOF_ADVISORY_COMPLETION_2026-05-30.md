@@ -16,7 +16,7 @@ Completion review confirming LHW16-T2 MCP Approval Proof Advisory connector spec
 
 ## Target/Source
 
-LH1 source: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` line 141
+LH1 source: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` line 141
 
 ## Scope/Target/Owner Boundary
 

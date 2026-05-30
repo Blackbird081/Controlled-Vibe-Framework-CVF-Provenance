@@ -24,9 +24,9 @@ Template: `docs/reference/CVF_FAST_LANE_AUDIT_TEMPLATE.md`
   noncoder request clarification or workflow recovery proof"
 - LH1 ledger trigger: `caveman` DEFER_DEMAND_GATED — "Reopen for request-context
   budget/readout quality when selector or memory context grows" (advisory)
-- CB1 completion: `docs/reviews/CVF_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_COMPLETION_2026-05-25.md`
-- VI2 completion: `docs/reviews/CVF_VI2_ROUTE_REQUEST_CONTEXT_PROFILE_READOUT_COMPLETION_2026-05-25.md`
-- C8 completion: `docs/reviews/CVF_C8_PRODUCT_SKILL_PACK_SELECTION_READOUT_COMPLETION_2026-05-25.md`
+- CB1 completion: `docs/reviews/archive/CVF_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_COMPLETION_2026-05-25.md`
+- VI2 completion: `docs/reviews/archive/CVF_VI2_ROUTE_REQUEST_CONTEXT_PROFILE_READOUT_COMPLETION_2026-05-25.md`
+- C8 completion: `docs/reviews/archive/CVF_C8_PRODUCT_SKILL_PACK_SELECTION_READOUT_COMPLETION_2026-05-25.md`
 
 ## Pre-Condition
 

@@ -56,7 +56,7 @@ Authority chain:
 - LHW14 GC-018: `docs/baselines/CVF_GC018_LHW14_WORKFLOW_CONNECTOR_WAVE14_2026-05-29.md`
 - WR1 source: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts` lines 50–54
 - LHW12-T2 spec: `docs/reference/CVF_LHW12_T2_OUTCOME_PACK_TAXONOMY_GROUPING_CONNECTOR_SPEC_2026-05-29.md`
-- LH1 ledger: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` — `Human System Harness` trigger at line 160
+- LH1 ledger: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` — `Human System Harness` trigger at line 160
 - T1 gate: `docs/reviews/CVF_LHW14_T1_AGENT_MEMORY_CAPTURE_PACKAGING_ADVISORY_CONNECTOR_COMPLETION_2026-05-29.md` CLOSED_PASS_BOUNDED
 - T2 gate: `docs/reviews/CVF_LHW14_T2_SPEC_CHANGE_WORKFLOW_ADVISORY_CONNECTOR_COMPLETION_2026-05-29.md` CLOSED_PASS_BOUNDED
 
@@ -123,7 +123,7 @@ All fields are documentation-only advisory fields.
 | `selected` | `docs/reference/CVF_LHW12_T2_OUTCOME_PACK_TAXONOMY_GROUPING_CONNECTOR_SPEC_2026-05-29.md` | S2 mapping table | `ProductSkillPackSelectionStatus` value | LHW12-T2 S2 | ACCEPT |
 | `no_certified_pack_match` | `docs/reference/CVF_LHW12_T2_OUTCOME_PACK_TAXONOMY_GROUPING_CONNECTOR_SPEC_2026-05-29.md` | S2 mapping table | `ProductSkillPackSelectionStatus` value | LHW12-T2 S2 | ACCEPT |
 | `missingSignals` field | `docs/reference/CVF_LHW12_T2_OUTCOME_PACK_TAXONOMY_GROUPING_CONNECTOR_SPEC_2026-05-29.md` | S3 `contextSignalsNeeded` reference | `missingSignals` | CB1/LHW12-T2 | ACCEPT |
-| LH1 `Human System Harness` trigger | `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | line 160 | `Human System Harness` | LH1 CVF ADD ledger | ACCEPT |
+| LH1 `Human System Harness` trigger | `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | line 160 | `Human System Harness` | LH1 CVF ADD ledger | ACCEPT |
 
 ---
 

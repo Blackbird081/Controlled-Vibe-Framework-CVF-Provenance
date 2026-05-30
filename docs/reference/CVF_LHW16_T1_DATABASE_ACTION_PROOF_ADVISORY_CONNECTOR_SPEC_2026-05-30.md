@@ -27,7 +27,7 @@ taxonomy with `runtimeExecutionAuthorized=false`. `gridex`'s remaining value is
 a proof-of-authorization advisory — how agents surface the evidence required
 before a read-only database action can proceed, without enabling mutation.
 
-LH1 source: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` line 157
+LH1 source: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` line 157
 W3 owner surface: `governance/contracts/tool-action-taxonomy.ts`
 
 Rejection label for this wave:

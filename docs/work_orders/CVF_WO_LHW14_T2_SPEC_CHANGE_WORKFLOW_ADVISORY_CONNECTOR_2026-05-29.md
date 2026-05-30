@@ -30,7 +30,7 @@ authorize governance override. `runtimeExecutionAuthorized=false`.
 - LHW14 GC-018: `docs/baselines/CVF_GC018_LHW14_WORKFLOW_CONNECTOR_WAVE14_2026-05-29.md`
 - LHW11-T2 spec: `docs/reference/CVF_LHW11_T2_SPEC_CHANGE_GOVERNANCE_DECISION_CONNECTOR_SPEC_2026-05-28.md`
 - LHW7-T3 spec: `docs/reference/CVF_LHW7_T3_FAILURE_SIM_SPEC_CHANGE_REINTAKE_CONNECTOR_SPEC_2026-05-28.md`
-- LH1 ledger: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- LH1 ledger: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
   (`OpenSpec` trigger at line 140)
 - **T1 gate: `docs/reviews/CVF_LHW14_T1_AGENT_MEMORY_CAPTURE_PACKAGING_ADVISORY_CONNECTOR_COMPLETION_2026-05-29.md`
   must be CLOSED_PASS_BOUNDED**
@@ -78,7 +78,7 @@ file, receipt envelope schema, public-sync repo.
 | `specChangeGovernanceDecision` field | `docs/reference/CVF_LHW11_T2_SPEC_CHANGE_GOVERNANCE_DECISION_CONNECTOR_SPEC_2026-05-28.md` | S3 line 78 | `specChangeGovernanceDecision` | LHW11-T2 doc-only field | ACCEPT |
 | `rollbackRecommended` boolean field | `docs/reference/CVF_LHW11_T2_SPEC_CHANGE_GOVERNANCE_DECISION_CONNECTOR_SPEC_2026-05-28.md` | S3 line 79 | `rollbackRecommended` | LHW11-T2 doc-only field | ACCEPT |
 | `faultToRespecAdvisoryType` field | `docs/reference/CVF_LHW7_T3_FAILURE_SIM_SPEC_CHANGE_REINTAKE_CONNECTOR_SPEC_2026-05-28.md` | S3 line 112 | `faultToRespecAdvisoryType` | LHW7-T3 doc-only field | ACCEPT |
-| LH1 `OpenSpec` trigger | `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | line 140 | `OpenSpec` | LH1 CVF 16.5 ledger | ACCEPT |
+| LH1 `OpenSpec` trigger | `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | line 140 | `OpenSpec` | LH1 CVF 16.5 ledger | ACCEPT |
 
 New doc-only fields:
 

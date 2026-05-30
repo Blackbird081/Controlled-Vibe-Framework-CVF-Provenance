@@ -30,11 +30,11 @@ behavior is changed. Memory injection and raw memory release remain blocked.
 - Fast Lane audit: `docs/reviews/CVF_LHW7_T2_FAST_LANE_AUDIT_2026-05-28.md` → FAST_LANE_READY
 - T1 gate: `docs/reviews/CVF_LHW7_T1_WORKFLOW_RECOVERY_TOOL_REENTRY_CONNECTOR_COMPLETION_2026-05-28.md`
   — CLOSED_PASS_BOUNDED
-- LH1 ledger: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- LH1 ledger: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
   (triggers: `caveman`, `Workflow GoClaw`, `Review CVF_1.md`)
 - LHW6-T3 spec: `docs/reference/CVF_LHW6_PROJECT_MEMORY_READOUT_CONNECTOR_SPEC_2026-05-28.md`
-- CB1 completion: `docs/reviews/CVF_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_COMPLETION_2026-05-25.md`
-- VI2 completion: `docs/reviews/CVF_VI2_ROUTE_REQUEST_CONTEXT_PROFILE_READOUT_COMPLETION_2026-05-25.md`
+- CB1 completion: `docs/reviews/archive/CVF_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_COMPLETION_2026-05-25.md`
+- VI2 completion: `docs/reviews/archive/CVF_VI2_ROUTE_REQUEST_CONTEXT_PROFILE_READOUT_COMPLETION_2026-05-25.md`
 
 ## Agent Roles
 

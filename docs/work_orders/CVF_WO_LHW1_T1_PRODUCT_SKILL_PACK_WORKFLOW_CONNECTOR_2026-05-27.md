@@ -56,11 +56,11 @@ Before writing a single line of the connector spec, read these files in order:
 
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-3. `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+3. `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
    — confirm C7A/C8 disposition and remaining trigger.
-4. `docs/reviews/CVF_C7A_PRODUCT_SKILL_PACK_TOP10_COMPLETION_2026-05-25.md`
+4. `docs/reviews/archive/CVF_C7A_PRODUCT_SKILL_PACK_TOP10_COMPLETION_2026-05-25.md`
    — understand the 10 certified packs and their metadata shape.
-5. `docs/reviews/CVF_C8_PRODUCT_SKILL_PACK_SELECTION_READOUT_COMPLETION_2026-05-25.md`
+5. `docs/reviews/archive/CVF_C8_PRODUCT_SKILL_PACK_SELECTION_READOUT_COMPLETION_2026-05-25.md`
    — understand the selection readout and CB1 context budget pattern.
 6. `docs/roadmaps/CVF_MA1_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_ROADMAP_2026-05-26.md`
    — understand role-transfer packet fields before writing T2-adjacent

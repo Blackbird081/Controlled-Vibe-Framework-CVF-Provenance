@@ -24,7 +24,7 @@ Template: `docs/reference/CVF_FAST_LANE_AUDIT_TEMPLATE.md`
   "Reopen for failure-simulation harness over existing evidence"
 - W4 completion: `docs/reviews/CVF_W4_OPERATIONAL_BENCHMARK_SCORECARD_COMPLETION_2026-05-24.md`
 - V3 completion: `docs/reviews/CVF_V3_EXECUTION_DIAGNOSTIC_CONTRACT_COMPLETION_2026-05-24.md`
-- WR1 completion: `docs/reviews/CVF_WR1_WORKFLOW_RECOVERY_STATE_PROOF_COMPLETION_2026-05-25.md`
+- WR1 completion: `docs/reviews/archive/CVF_WR1_WORKFLOW_RECOVERY_STATE_PROOF_COMPLETION_2026-05-25.md`
 - LHW3-T1 spec: `docs/reference/CVF_LHW3_OPERATIONAL_FAILURE_TREND_READOUT_CONNECTOR_SPEC_2026-05-27.md`
 
 ## Pre-Conditions

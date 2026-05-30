@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-30
 
-Current mode marker: `lhw19_cvf_restructure_absorption_all_closed_pass_bounded`
+Current mode marker: `cbp1_context_budget_policy_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lhw19_cvf_restructure_absorption_all_closed_pass_bounded`.
+Current mode: `cbp1_context_budget_policy_closed_pass_bounded`.
 
 Active handoff:
 

@@ -25,8 +25,8 @@ Template: `docs/reference/CVF_FAST_LANE_AUDIT_TEMPLATE.md`
   — CLOSED_PASS_BOUNDED
 - LH1 ledger triggers: `caveman`, `Workflow GoClaw`, `Review CVF_1.md`
 - LHW6-T3 completion: `docs/reviews/CVF_LHW6_T3_PROJECT_MEMORY_READOUT_CONNECTOR_COMPLETION_2026-05-28.md`
-- CB1 completion: `docs/reviews/CVF_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_COMPLETION_2026-05-25.md`
-- VI2 completion: `docs/reviews/CVF_VI2_ROUTE_REQUEST_CONTEXT_PROFILE_READOUT_COMPLETION_2026-05-25.md`
+- CB1 completion: `docs/reviews/archive/CVF_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_COMPLETION_2026-05-25.md`
+- VI2 completion: `docs/reviews/archive/CVF_VI2_ROUTE_REQUEST_CONTEXT_PROFILE_READOUT_COMPLETION_2026-05-25.md`
 
 ## Fast Lane Eligibility Checks
 

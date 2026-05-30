@@ -41,7 +41,7 @@ these four proven surfaces into scenario packets. The `Failure Simulation cho CV
 family is fully absorbed as a planning-record connector without adding a live
 simulation engine.
 
-Source: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+Source: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
 
 ## Target / Source
 

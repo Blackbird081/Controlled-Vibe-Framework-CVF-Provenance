@@ -882,3 +882,12 @@ export const LEARNING_PLANE_FOUNDATION_COORDINATION = {
   rationale:
     "Learning plane defines its own LearningFeedbackInput interface — compatible with ExecutionFeedbackSignal but owned independently to avoid runtime coupling.",
 } as const;
+export {
+  CONTEXT_BUDGET_POLICY_VERSION,
+  getContextBudget,
+  resolveTaskClass,
+} from "./context-budget-policy";
+export type {
+  ContextBudgetPolicy,
+  ContextTaskClass,
+} from "./context-budget-policy";

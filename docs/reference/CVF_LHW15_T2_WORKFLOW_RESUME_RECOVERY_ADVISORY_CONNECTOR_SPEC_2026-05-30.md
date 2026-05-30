@@ -29,7 +29,7 @@ classification). The remaining gap is a resumption proof advisory — how a paus
 or interrupted workflow surfaces its resumption path to the next agent so that
 the agent can decide whether to resume, restart, or escalate without guessing.
 
-LH1 source: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` line 150
+LH1 source: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` line 150
 W1 owner surface: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/`
 WR1 owner surface: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflow-recovery-readout.ts`
 

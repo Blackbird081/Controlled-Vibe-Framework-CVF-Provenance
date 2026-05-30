@@ -26,7 +26,7 @@ Template: `docs/reference/CVF_FAST_LANE_AUDIT_TEMPLATE.md`
 - LH1 ledger trigger: `CVF_AUDIT_LOG_md` PARTIALLY_ABSORBED — "Reopen for
   user-facing audit timeline/readout"
 - W4 completion: `docs/reviews/CVF_W4_OPERATIONAL_BENCHMARK_SCORECARD_COMPLETION_2026-05-24.md`
-- WR1 completion: `docs/reviews/CVF_WR1_WORKFLOW_RECOVERY_STATE_PROOF_COMPLETION_2026-05-25.md`
+- WR1 completion: `docs/reviews/archive/CVF_WR1_WORKFLOW_RECOVERY_STATE_PROOF_COMPLETION_2026-05-25.md`
 
 ## Pre-Condition
 

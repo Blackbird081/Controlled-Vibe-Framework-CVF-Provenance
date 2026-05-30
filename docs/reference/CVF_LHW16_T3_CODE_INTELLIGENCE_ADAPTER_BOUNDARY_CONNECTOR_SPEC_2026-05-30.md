@@ -28,7 +28,7 @@ value is a boundary advisory — how agents classify whether a code-intelligence
 request is within the governed read-only adapter boundary, and what evidence is
 required before dispatching.
 
-LH1 source: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` line 155
+LH1 source: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` line 155
 AIF-B owner surface: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/` (graph modules)
 
 Rejection label for this wave:

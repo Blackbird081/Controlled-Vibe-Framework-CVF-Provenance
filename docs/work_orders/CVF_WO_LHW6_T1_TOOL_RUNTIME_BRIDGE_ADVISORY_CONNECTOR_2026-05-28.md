@@ -28,9 +28,9 @@ behavior is changed. Tool execution remains blocked.
 - LHW6 roadmap: `docs/roadmaps/CVF_LHW6_WORKFLOW_CONNECTOR_WAVE6_ROADMAP_2026-05-28.md`
 - LHW6 GC-018: `docs/baselines/CVF_GC018_LHW6_WORKFLOW_CONNECTOR_WAVE6_2026-05-28.md`
 - Fast Lane audit: `docs/reviews/CVF_LHW6_T1_FAST_LANE_AUDIT_2026-05-28.md` → FAST_LANE_READY
-- LH1 ledger (`OpenAgentd` trigger): `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- LH1 ledger (`OpenAgentd` trigger): `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
 - W3: `docs/reviews/CVF_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_COMPLETION_2026-05-24.md`
-- TA1: `docs/reviews/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
+- TA1: `docs/reviews/archive/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
 - LHW4-T2 spec: `docs/reference/CVF_LHW4_EXECUTION_AUTHORITY_CHAIN_READOUT_CONNECTOR_SPEC_2026-05-27.md`
 
 ## Agent Roles
@@ -64,7 +64,7 @@ blocked.
    confirm `ToolActionSideEffect` values from source before selecting the
    local/command-relevant subset used by the spec; confirm `ToolTransport` values; confirm
    `runtimeExecutionAuthorized=false`; confirm `ToolActionApprovalReadout`
-4. `docs/reviews/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
+4. `docs/reviews/archive/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
    — confirm TA1 approval state tokens: `not_required`, `pending_approval`,
    `satisfied_but_not_executable`, `blocked_before_approval`,
    `blocked_by_policy`, `incomplete_approval`

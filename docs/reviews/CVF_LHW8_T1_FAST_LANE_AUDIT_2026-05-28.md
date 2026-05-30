@@ -21,7 +21,7 @@ under GC-021 without full multi-stage governance review.
 - GC-021 Fast Lane policy: `docs/reference/CVF_FAST_LANE_AUDIT_TEMPLATE.md`
 - LHW8 roadmap: `docs/roadmaps/CVF_LHW8_WORKFLOW_CONNECTOR_WAVE8_ROADMAP_2026-05-28.md`
 - LHW8 GC-018: `docs/baselines/CVF_GC018_LHW8_WORKFLOW_CONNECTOR_WAVE8_2026-05-28.md`
-- LH1 ledger: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- LH1 ledger: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
   (triggers: `agentmemory`, `tolaria`)
 
 ## Scope / Target / Owner Boundary
@@ -60,7 +60,7 @@ Prior closure evidence:
 
 - `docs/reviews/CVF_W2_MEMORY_EVENT_HOOKS_CONTEXT_PACKAGER_COMPLETION_2026-05-24.md`
 - `docs/reviews/CVF_AIF_C_MEMORY_GATEWAY_PHASE2_COMPLETION_2026-05-24.md`
-- `docs/reviews/CVF_VI3_AGENTMEMORY_CAPTURE_RECORD_READOUT_COMPLETION_2026-05-25.md`
+- `docs/reviews/archive/CVF_VI3_AGENTMEMORY_CAPTURE_RECORD_READOUT_COMPLETION_2026-05-25.md`
 
 ## Findings / Position
 

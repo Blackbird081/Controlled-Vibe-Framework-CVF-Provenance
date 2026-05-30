@@ -38,7 +38,7 @@ another role catalog." LHW4-T2 addresses this trigger by binding the existing
 G1 identity gate, W3 taxonomy, and TA1 approval readout into a readable chain
 without creating a new role catalog or RBAC change.
 
-Source: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+Source: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
 
 ## Target / Source
 

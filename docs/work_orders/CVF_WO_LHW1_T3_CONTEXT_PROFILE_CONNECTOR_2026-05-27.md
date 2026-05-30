@@ -67,11 +67,11 @@ Rejected original guesses:
 - T2 work order:
   `docs/work_orders/CVF_WO_LHW1_T2_WORKFLOW_CHAIN_STATE_CONNECTOR_2026-05-27.md`
 - VI2 authority:
-  `docs/reviews/CVF_VI2_ROUTE_REQUEST_CONTEXT_PROFILE_READOUT_COMPLETION_2026-05-25.md`
+  `docs/reviews/archive/CVF_VI2_ROUTE_REQUEST_CONTEXT_PROFILE_READOUT_COMPLETION_2026-05-25.md`
 - VI3 authority:
-  `docs/reviews/CVF_VI3_AGENTMEMORY_CAPTURE_RECORD_READOUT_COMPLETION_2026-05-25.md`
+  `docs/reviews/archive/CVF_VI3_AGENTMEMORY_CAPTURE_RECORD_READOUT_COMPLETION_2026-05-25.md`
 - LH1 ledger (caveman/GoClaw dispositions):
-  `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+  `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
 
 ## Gate Conditions — MUST CHECK ALL BEFORE STARTING
 
@@ -101,19 +101,19 @@ After confirming all three gates:
 4. `docs/reference/CVF_LHW1_WORKFLOW_CHAIN_STATE_CONNECTOR_SPEC_2026-05-27.md`
    — T2 deliverable; T3 connector must be compatible with T2 phase
    vocabulary and role assignment fields.
-5. `docs/reviews/CVF_VI2_ROUTE_REQUEST_CONTEXT_PROFILE_READOUT_COMPLETION_2026-05-25.md`
+5. `docs/reviews/archive/CVF_VI2_ROUTE_REQUEST_CONTEXT_PROFILE_READOUT_COMPLETION_2026-05-25.md`
    — understand the `cvf.routeRequestContextProfile.vi2.v1` readout
    field names. T3 must reuse these names; do not invent new ones.
    If the completion review does not expose exact field paths, read
    `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-request-context-readout.ts`
    before writing any field name.
-6. `docs/reviews/CVF_VI3_AGENTMEMORY_CAPTURE_RECORD_READOUT_COMPLETION_2026-05-25.md`
+6. `docs/reviews/archive/CVF_VI3_AGENTMEMORY_CAPTURE_RECORD_READOUT_COMPLETION_2026-05-25.md`
    — understand the `cvf.agentMemoryCaptureRecord.vi3.v1` fields,
    especially `canReinject=false` and `rawMemoryReleased=false` bindings.
    If the completion review does not expose exact field paths, read
    `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/audit-memory-receipt.ts`
    before writing any field name.
-7. `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+7. `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
    — sections: `caveman` (DEFER_DEMAND_GATED) and `Workflow GoClaw`
    (PARTIALLY_ABSORBED). Read the remaining trigger text for both.
    T3 may absorb the compaction/relevance concepts from these sources

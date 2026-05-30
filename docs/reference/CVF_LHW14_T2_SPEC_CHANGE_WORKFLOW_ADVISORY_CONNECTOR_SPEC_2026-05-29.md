@@ -57,7 +57,7 @@ Authority chain:
 - LHW14 GC-018: `docs/baselines/CVF_GC018_LHW14_WORKFLOW_CONNECTOR_WAVE14_2026-05-29.md`
 - LHW11-T2 spec: `docs/reference/CVF_LHW11_T2_SPEC_CHANGE_GOVERNANCE_DECISION_CONNECTOR_SPEC_2026-05-28.md`
 - LHW7-T3 spec: `docs/reference/CVF_LHW7_T3_FAILURE_SIM_SPEC_CHANGE_REINTAKE_CONNECTOR_SPEC_2026-05-28.md`
-- LH1 ledger: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` — `OpenSpec` trigger at line 140
+- LH1 ledger: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` — `OpenSpec` trigger at line 140
 - T1 gate: `docs/reviews/CVF_LHW14_T1_AGENT_MEMORY_CAPTURE_PACKAGING_ADVISORY_CONNECTOR_COMPLETION_2026-05-29.md` CLOSED_PASS_BOUNDED
 
 ## S2 — Governance Decision → Workflow Advisory Mapping
@@ -127,7 +127,7 @@ All fields are documentation-only advisory fields.
 | `spec_human_gate_insertion` | `docs/reference/CVF_LHW7_T3_FAILURE_SIM_SPEC_CHANGE_REINTAKE_CONNECTOR_SPEC_2026-05-28.md` | S2 line 79 | `faultToRespecAdvisoryType` value | LHW7-T3 S2 | ACCEPT |
 | `spec_route_constraint_update` | `docs/reference/CVF_LHW7_T3_FAILURE_SIM_SPEC_CHANGE_REINTAKE_CONNECTOR_SPEC_2026-05-28.md` | S2 line 80 | `faultToRespecAdvisoryType` value | LHW7-T3 S2 | ACCEPT |
 | `spec_fallback_model_update` | `docs/reference/CVF_LHW7_T3_FAILURE_SIM_SPEC_CHANGE_REINTAKE_CONNECTOR_SPEC_2026-05-28.md` | S2 line 81 | `faultToRespecAdvisoryType` value | LHW7-T3 S2 | ACCEPT |
-| LH1 `OpenSpec` trigger | `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | line 140 | `OpenSpec` | LH1 CVF ADD ledger | ACCEPT |
+| LH1 `OpenSpec` trigger | `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | line 140 | `OpenSpec` | LH1 CVF ADD ledger | ACCEPT |
 
 ---
 

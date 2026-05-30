@@ -25,10 +25,10 @@ behavior is changed. `runtimeExecutionAuthorized=false` is preserved throughout.
 
 - LHW4 roadmap: `docs/roadmaps/CVF_LHW4_WORKFLOW_CONNECTOR_WAVE4_ROADMAP_2026-05-27.md`
 - Fast Lane audit: `docs/reviews/CVF_LHW4_T2_FAST_LANE_AUDIT_2026-05-27.md` → FAST_LANE_READY
-- LH1 ledger (`Claude Kit` trigger): `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- LH1 ledger (`Claude Kit` trigger): `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
 - G1: `docs/reviews/archive/CVF_G1_EXECUTION_IDENTITY_RUNTIME_GATE_COMPLETION_2026-05-22.md`
 - W3: `docs/reviews/CVF_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_COMPLETION_2026-05-24.md`
-- TA1: `docs/reviews/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
+- TA1: `docs/reviews/archive/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
 - MA1 standard: `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
   (read sections ##0 through ##10)
 - LHW4-T1 spec: `docs/reference/CVF_LHW4_MEMORY_SNAPSHOT_GOVERNANCE_CONNECTOR_SPEC_2026-05-27.md`
@@ -78,7 +78,7 @@ New role taxonomy, RBAC changes, and execution authority remain blocked.
 6. `governance/contracts/tool-action-taxonomy.ts`
    — confirm W3 `surface`, `sideEffect`, `transport`, `databaseFamily`,
    `runtimeExecutionAuthorized=false`, and TA1 `approvalState` tokens
-7. `docs/reviews/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
+7. `docs/reviews/archive/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
    — confirm TA1 approval state tokens: `not_required`, `pending_approval`,
    `satisfied_but_not_executable`, `blocked_before_approval`,
    `blocked_by_policy`, `incomplete_approval`

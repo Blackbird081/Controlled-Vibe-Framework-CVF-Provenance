@@ -23,7 +23,7 @@ GC-018: `docs/baselines/CVF_GC018_LHW15_WORKFLOW_CONNECTOR_WAVE15_2026-05-30.md`
 
 - **Scope:** Documentation-only connector specs for three PARTIALLY_ABSORBED LH1 families.
 - **Target:** `docs/reference/CVF_LHW15_T*_*_CONNECTOR_SPEC_2026-05-30.md`
-- **Owner:** LH1 ledger `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- **Owner:** LH1 ledger `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
 
 ## Scope/Methodology
 

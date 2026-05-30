@@ -26,7 +26,7 @@ behavior is changed. Scenario packets are planning records only.
 
 - LHW5 roadmap: `docs/roadmaps/CVF_LHW5_WORKFLOW_CONNECTOR_WAVE5_ROADMAP_2026-05-27.md`
 - Fast Lane audit: `docs/reviews/CVF_LHW5_T3_FAST_LANE_AUDIT_2026-05-27.md` → FAST_LANE_READY
-- LH1 ledger (`Failure Simulation cho CVF.md` trigger): `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- LH1 ledger (`Failure Simulation cho CVF.md` trigger): `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
 - W4 source: `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/operational-benchmark-suite.ts`
 - V3 source: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts`
 - WR1 source: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts`

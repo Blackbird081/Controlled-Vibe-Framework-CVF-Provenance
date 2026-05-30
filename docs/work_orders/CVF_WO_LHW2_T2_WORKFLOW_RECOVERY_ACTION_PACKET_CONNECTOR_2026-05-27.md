@@ -25,8 +25,8 @@ behavior is changed.
 
 - LHW2 roadmap: `docs/roadmaps/CVF_LHW2_WORKFLOW_CONNECTOR_COMPLETION_ROADMAP_2026-05-27.md`
 - Fast Lane audit: `docs/reviews/CVF_LHW2_T2_FAST_LANE_AUDIT_2026-05-27.md` → FAST_LANE_READY
-- LH1 ledger (`Agent Harnesses` trigger): `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
-- WR1: `docs/reviews/CVF_WR1_WORKFLOW_RECOVERY_STATE_PROOF_COMPLETION_2026-05-25.md`
+- LH1 ledger (`Agent Harnesses` trigger): `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- WR1: `docs/reviews/archive/CVF_WR1_WORKFLOW_RECOVERY_STATE_PROOF_COMPLETION_2026-05-25.md`
 - W1: `docs/reviews/CVF_W1_WORKFLOW_STATE_MACHINE_ENFORCEMENT_COMPLETION_2026-05-24.md`
 - LHW1-T2 spec: `docs/reference/CVF_LHW1_WORKFLOW_CHAIN_STATE_CONNECTOR_SPEC_2026-05-27.md`
 - MA1 standard: `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
@@ -44,7 +44,7 @@ If T1 is not CLOSED_PASS, stop and report to Orchestrator.
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 3. T1 completion (understand shape T2 must extend)
-4. `docs/reviews/CVF_WR1_WORKFLOW_RECOVERY_STATE_PROOF_COMPLETION_2026-05-25.md`
+4. `docs/reviews/archive/CVF_WR1_WORKFLOW_RECOVERY_STATE_PROOF_COMPLETION_2026-05-25.md`
    — confirm the 4 WR1 transition classes, `lastRestorableCheckpoint` logic,
    and `escalate_to_governance` / `hold_for_reviewer_gate` mappings
 5. `docs/reference/CVF_LHW1_WORKFLOW_CHAIN_STATE_CONNECTOR_SPEC_2026-05-27.md`

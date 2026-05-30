@@ -43,7 +43,7 @@ technical governance signals (LHW3-T1 trend readout, CB1 missing-signal
 readout, C8 `no_certified_pack_match`) and operator-facing actionable
 guidance. No new role taxonomy or workflow blocking was introduced.
 
-Source: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+Source: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
 
 ## Target / Source
 

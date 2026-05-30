@@ -42,9 +42,9 @@ Deliverables:
 
 **Input source specs (all CLOSED_PASS_BOUNDED):**
 - C8 completion:
-  `docs/reviews/CVF_C8_PRODUCT_SKILL_PACK_SELECTION_READOUT_COMPLETION_2026-05-25.md`
+  `docs/reviews/archive/CVF_C8_PRODUCT_SKILL_PACK_SELECTION_READOUT_COMPLETION_2026-05-25.md`
 - CB1 completion:
-  `docs/reviews/CVF_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_COMPLETION_2026-05-25.md`
+  `docs/reviews/archive/CVF_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_COMPLETION_2026-05-25.md`
 - Skill pack registry:
   `governance/registries/cvf-certified-skill-pack-registry.json`
 

@@ -46,7 +46,7 @@ registry).
   — `json_mode` at lines 80, 93; `stream` at line 52; `tool_call` declared
     at line 10 but absent from all `supportedMethods` arrays
 - W5 completion: `docs/reviews/CVF_W5_PROVIDER_METHOD_FALLBACK_NORMALIZATION_COMPLETION_2026-05-24.md`
-- D-wave provider scale proof: `docs/reviews/CVF_D_PROVIDER_SCALE_LIVE_VI_PROOF_COMPLETION_2026-05-25.md`
+- D-wave provider scale proof: `docs/reviews/archive/CVF_D_PROVIDER_SCALE_LIVE_VI_PROOF_COMPLETION_2026-05-25.md`
   — proves `complete` method on DeepSeek + OpenAI; does NOT cover json_mode/stream
 - CVF 25.05 review: `.private_reference/legacy/CVF 25.05/CLAUDE_REVIEW_OF_GOP_Y_2026-05-25.md`
   — GAP 3 section

@@ -40,12 +40,12 @@ Invariants locked: `runtimeExecutionAuthorized=false`, `canReinject=false`,
 | --- | --- |
 | `docs/roadmaps/CVF_LHW8_WORKFLOW_CONNECTOR_WAVE8_ROADMAP_2026-05-28.md` | Roadmap authority |
 | `docs/roadmaps/CVF_LHW7_WORKFLOW_CONNECTOR_WAVE7_ROADMAP_2026-05-28.md` | Predecessor wave (CLOSED_PASS_BOUNDED) |
-| `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | Legacy trigger authority |
+| `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | Legacy trigger authority |
 | `docs/reviews/CVF_W2_MEMORY_EVENT_HOOKS_CONTEXT_PACKAGER_COMPLETION_2026-05-24.md` | W2 hook closure (T1) |
 | `docs/reviews/CVF_AIF_C_MEMORY_GATEWAY_PHASE2_COMPLETION_2026-05-24.md` | AIF-C gateway closure (T1) |
-| `docs/reviews/CVF_VI3_AGENTMEMORY_CAPTURE_RECORD_READOUT_COMPLETION_2026-05-25.md` | VI3 capture record closure (T1) |
+| `docs/reviews/archive/CVF_VI3_AGENTMEMORY_CAPTURE_RECORD_READOUT_COMPLETION_2026-05-25.md` | VI3 capture record closure (T1) |
 | `docs/reviews/CVF_G1_EXECUTION_IDENTITY_RUNTIME_GATE_COMPLETION_2026-05-22.md` | G1 execution identity closure (T2) |
-| `docs/reviews/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md` | TA1 approval readout closure (T2) |
+| `docs/reviews/archive/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md` | TA1 approval readout closure (T2) |
 | `docs/reviews/CVF_MA1_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_COMPLETION_2026-05-26.md` | MA1 role lane closure (T2) |
 | `docs/reviews/CVF_W4_OPERATIONAL_BENCHMARK_SCORECARD_COMPLETION_2026-05-24.md` | W4 benchmark scorecard closure (T3) |
 | `docs/reviews/CVF_V3_EXECUTION_DIAGNOSTIC_CONTRACT_COMPLETION_2026-05-24.md` | V3 diagnostic class closure (T3) |

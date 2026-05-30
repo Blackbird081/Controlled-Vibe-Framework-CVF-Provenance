@@ -19,8 +19,8 @@ Target surface: public CVF web-facing non-coder entry flow.
 Source inputs:
 
 - operator feedback on the real non-coder usage test;
-- `docs/reviews/CVF_REAL_NONCODER_USAGE_TEST_RESULT_2026-05-25.md`;
-- `docs/roadmaps/CVF_L1_MULTILINGUAL_SPEC_FIRST_MEDIATION_ROADMAP_2026-05-25.md`;
+- `docs/reviews/archive/CVF_REAL_NONCODER_USAGE_TEST_RESULT_2026-05-25.md`;
+- `docs/roadmaps/archive/CVF_L1_MULTILINGUAL_SPEC_FIRST_MEDIATION_ROADMAP_2026-05-25.md`;
 - operator-provided "Vibe-to-Spec" handoff packet sample reviewed locally on
   2026-05-25.
 
@@ -245,9 +245,9 @@ Non-goals:
 
 ## Related Artifacts
 
-- `docs/reviews/CVF_REAL_NONCODER_USAGE_TEST_RESULT_2026-05-25.md`
-- `docs/roadmaps/CVF_L1_MULTILINGUAL_SPEC_FIRST_MEDIATION_ROADMAP_2026-05-25.md`
-- `docs/reviews/CVF_REAL_NONCODER_USAGE_TEST_OPERATOR_SAMPLE_2026-05-25.md`
+- `docs/reviews/archive/CVF_REAL_NONCODER_USAGE_TEST_RESULT_2026-05-25.md`
+- `docs/roadmaps/archive/CVF_L1_MULTILINGUAL_SPEC_FIRST_MEDIATION_ROADMAP_2026-05-25.md`
+- `docs/reviews/archive/CVF_REAL_NONCODER_USAGE_TEST_OPERATOR_SAMPLE_2026-05-25.md`
 
 ## Findings / Position
 

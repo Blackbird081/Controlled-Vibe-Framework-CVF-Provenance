@@ -40,12 +40,12 @@ Invariants locked: `runtimeExecutionAuthorized=false`, `canReinject=false`,
 | --- | --- |
 | `docs/roadmaps/CVF_LHW9_WORKFLOW_CONNECTOR_WAVE9_ROADMAP_2026-05-28.md` | Roadmap authority |
 | `docs/roadmaps/CVF_LHW8_WORKFLOW_CONNECTOR_WAVE8_ROADMAP_2026-05-28.md` | Predecessor wave (CLOSED_PASS_BOUNDED) |
-| `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | Legacy trigger authority |
+| `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | Legacy trigger authority |
 | `docs/reviews/CVF_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_COMPLETION_2026-05-24.md` | W3 tool action taxonomy closure (T1) |
-| `docs/reviews/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md` | TA1 approval readout closure (T1) |
+| `docs/reviews/archive/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md` | TA1 approval readout closure (T1) |
 | `docs/reviews/CVF_LHW6_T1_TOOL_RUNTIME_BRIDGE_ADVISORY_CONNECTOR_COMPLETION_2026-05-28.md` | LHW6-T1 bridge advisory closure (T1) |
-| `docs/reviews/CVF_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_COMPLETION_2026-05-25.md` | CB1 context budget closure (T2) |
-| `docs/reviews/CVF_C8_PRODUCT_SKILL_PACK_SELECTION_READOUT_COMPLETION_2026-05-25.md` | C8 pack selection closure (T2) |
+| `docs/reviews/archive/CVF_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_COMPLETION_2026-05-25.md` | CB1 context budget closure (T2) |
+| `docs/reviews/archive/CVF_C8_PRODUCT_SKILL_PACK_SELECTION_READOUT_COMPLETION_2026-05-25.md` | C8 pack selection closure (T2) |
 | `docs/reviews/CVF_LHW3_T2_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_COMPLETION_2026-05-27.md` | LHW3-T2 re-intake closure (T2) |
 | `docs/reviews/CVF_G1_EXECUTION_IDENTITY_RUNTIME_GATE_COMPLETION_2026-05-22.md` | G1 execution identity closure (T3) |
 | `docs/reviews/CVF_LHW6_T2_CLI_TOOL_ONBOARDING_GOVERNANCE_CONNECTOR_COMPLETION_2026-05-28.md` | LHW6-T2 CLI onboarding closure (T3) |

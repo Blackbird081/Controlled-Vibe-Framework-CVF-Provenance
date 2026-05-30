@@ -44,7 +44,7 @@ No receipt envelope schema. No public-sync repo. No MCP execution.
   — GAP 5 (Operations Cockpit): "medium-large effort; real product surface"
   — GAP 6 (External Capability): "small if extends ES1/C7B/C7C"
 - Product Depth Roadmap: `docs/roadmaps/CVF_PRODUCT_DEPTH_ROADMAP_2026-05-29.md`
-- ES1 screening packet: `docs/reference/CVF_EXTERNAL_SKILL_INTAKE_SCREENING_PACKET_2026-05-25.md`
+- ES1 screening packet: `docs/reference/archive/CVF_EXTERNAL_SKILL_INTAKE_SCREENING_PACKET_2026-05-25.md`
 - LHW11-T1 posture aggregator: `docs/reference/CVF_LHW11_T1_SESSION_GOVERNANCE_POSTURE_AGGREGATOR_CONNECTOR_SPEC_2026-05-28.md`
 - LHW10-T3 provider health: `docs/reference/CVF_LHW10_T3_PROVIDER_HEALTH_DEGRADATION_ADVISORY_CONNECTOR_SPEC_2026-05-28.md`
 - W4 benchmark scorecard: `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/operational-benchmark-suite.ts`

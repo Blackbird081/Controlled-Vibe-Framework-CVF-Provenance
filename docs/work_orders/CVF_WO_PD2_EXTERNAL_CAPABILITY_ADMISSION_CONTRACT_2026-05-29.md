@@ -27,7 +27,7 @@ requires a separate GC-018.
 
 - PD GC-018: `docs/baselines/CVF_GC018_PRODUCT_DEPTH_2026-05-29.md`
 - PD Roadmap: `docs/roadmaps/CVF_PRODUCT_DEPTH_ROADMAP_2026-05-29.md`
-- ES1: `docs/reference/CVF_EXTERNAL_SKILL_INTAKE_SCREENING_PACKET_2026-05-25.md`
+- ES1: `docs/reference/archive/CVF_EXTERNAL_SKILL_INTAKE_SCREENING_PACKET_2026-05-25.md`
 - C7C validator: `governance/contracts/external-skill-candidate-screen.ts`
   — `ExternalSkillCandidateScreenRecord`; `ExternalSkillCandidateScreenReadout`
     literal false fields
@@ -58,7 +58,7 @@ file change, receipt envelope schema, MCP execution, public-sync repo.
 
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-3. `docs/reference/CVF_EXTERNAL_SKILL_INTAKE_SCREENING_PACKET_2026-05-25.md`
+3. `docs/reference/archive/CVF_EXTERNAL_SKILL_INTAKE_SCREENING_PACKET_2026-05-25.md`
    — ES1 template: intake metadata, source check, risk classification, capability
    boundary, allowed roles, sandbox requirement, evidence requirement
 4. `governance/contracts/external-skill-candidate-screen.ts`
@@ -75,7 +75,7 @@ file change, receipt envelope schema, MCP execution, public-sync repo.
 
 | Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 | --- | --- | --- | --- | --- | --- |
-| ES1 admission template | `docs/reference/CVF_EXTERNAL_SKILL_INTAKE_SCREENING_PACKET_2026-05-25.md` | full document | intake screening template | ES1 | ACCEPT |
+| ES1 admission template | `docs/reference/archive/CVF_EXTERNAL_SKILL_INTAKE_SCREENING_PACKET_2026-05-25.md` | full document | intake screening template | ES1 | ACCEPT |
 | `ExternalSkillCandidateScreenRecord` | `governance/contracts/external-skill-candidate-screen.ts` | interface definition | `ExternalSkillCandidateScreenRecord` | C7C contract | ACCEPT |
 | LITERAL_INVARIANT: `externalFetchAuthorized=false` | `governance/contracts/external-skill-candidate-screen.ts` | `ExternalSkillCandidateScreenReadout` field | `externalFetchAuthorized` | `ExternalSkillCandidateScreenReadout` | ACCEPT |
 | LITERAL_INVARIANT: `runtimeExecutionAuthorized=false` | `governance/contracts/external-skill-candidate-screen.ts` | `ExternalSkillCandidateScreenReadout` field | `runtimeExecutionAuthorized` | `ExternalSkillCandidateScreenReadout` | ACCEPT |

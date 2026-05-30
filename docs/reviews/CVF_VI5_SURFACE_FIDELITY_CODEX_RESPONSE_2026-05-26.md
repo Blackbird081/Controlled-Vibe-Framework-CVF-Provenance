@@ -25,7 +25,7 @@ actual HOLD verdict referred to Surface 1 web export spec, not Surface 2 T2
 `englishSpecFreeze`.
 
 This packet also records the docs-only amendment to
-`docs/reference/CVF_MULTI_ROLE_ORCHESTRATED_CONVERGENCE_CAPTURE_FORM_2026-05-25.md`
+`docs/reference/archive/CVF_MULTI_ROLE_ORCHESTRATED_CONVERGENCE_CAPTURE_FORM_2026-05-25.md`
 adding Section 0 Surface Fidelity Gate.
 
 ## Scope / Methodology
@@ -57,7 +57,7 @@ Existing paths verified:
 - `docs/concepts/CVF_CROSS_AGENT_MEMORY_AND_AUTO_LOAD_ASSESSMENT_2026-05-26.md`
 - `cvf-spec-app_builder_complete-full.md`
 - `cvf-spec-app_builder_complete-full 2.md`
-- `docs/reference/CVF_MULTI_ROLE_ORCHESTRATED_CONVERGENCE_CAPTURE_FORM_2026-05-25.md`
+- `docs/reference/archive/CVF_MULTI_ROLE_ORCHESTRATED_CONVERGENCE_CAPTURE_FORM_2026-05-25.md`
 - `docs/reviews/CVF_VI5_T3_CLAUDE_ACCEPTANCE_OF_CODEX_SOLUTION_2026-05-26.md`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/spec-english-freeze.ts`
 
@@ -107,7 +107,7 @@ Missing or ambiguous fact:
   i18n leakage.
 - Source read: target and purpose sections of that review packet.
 - Result: the packet targets
-  `docs/reviews/CVF_VI5_T3_CODEX_REBUTTAL_AND_SOLUTION_TO_CLAUDE_2026-05-25.md`,
+  `docs/reviews/archive/CVF_VI5_T3_CODEX_REBUTTAL_AND_SOLUTION_TO_CLAUDE_2026-05-25.md`,
   which is centered on `specHandoffReadiness`, `portableAgentPacket`, and
   `localizedHandoffGuide` for the T2/server-side handoff path.
 - Verdict: EXISTS.
@@ -117,7 +117,7 @@ Missing or ambiguous fact:
 - Claim: the existing multi-role convergence form started at `## 1. Trigger`
   and had no required Surface Fidelity Gate.
 - Source read:
-  `docs/reference/CVF_MULTI_ROLE_ORCHESTRATED_CONVERGENCE_CAPTURE_FORM_2026-05-25.md`.
+  `docs/reference/archive/CVF_MULTI_ROLE_ORCHESTRATED_CONVERGENCE_CAPTURE_FORM_2026-05-25.md`.
 - Result: Section 0 was absent before this packet's docs-only amendment.
 - Verdict: EXISTS.
 

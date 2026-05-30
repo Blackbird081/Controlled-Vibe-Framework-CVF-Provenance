@@ -39,7 +39,7 @@ change. No receipt envelope schema change. No public-sync repo change.
   — Status: CLOSED_PASS_BOUNDED
 - LHW12 roadmap: `docs/roadmaps/CVF_LHW12_WORKFLOW_CONNECTOR_WAVE12_ROADMAP_2026-05-29.md`
   — Status: CLOSED_PASS_BOUNDED
-- LH1 ledger: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- LH1 ledger: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
   — `agentmemory` trigger line 133, `OpenSpec` trigger line 140,
     `Human System Harness` trigger line 160
 - Active session: `CVF_SESSION/ACTIVE_SESSION_STATE.json`

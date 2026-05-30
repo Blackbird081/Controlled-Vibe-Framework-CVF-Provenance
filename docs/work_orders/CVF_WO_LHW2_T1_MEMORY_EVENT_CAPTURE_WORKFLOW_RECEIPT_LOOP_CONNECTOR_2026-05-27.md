@@ -24,9 +24,9 @@ behavior is changed.
 
 - LHW2 roadmap: `docs/roadmaps/CVF_LHW2_WORKFLOW_CONNECTOR_COMPLETION_ROADMAP_2026-05-27.md`
 - Fast Lane audit: `docs/reviews/CVF_LHW2_T1_FAST_LANE_AUDIT_2026-05-27.md` → FAST_LANE_READY
-- LH1 ledger (`agentmemory` trigger): `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- LH1 ledger (`agentmemory` trigger): `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
 - W2: `docs/reviews/CVF_W2_MEMORY_EVENT_HOOKS_CONTEXT_PACKAGER_COMPLETION_2026-05-24.md`
-- VI3: `docs/reviews/CVF_VI3_AGENTMEMORY_CAPTURE_RECORD_READOUT_COMPLETION_2026-05-25.md`
+- VI3: `docs/reviews/archive/CVF_VI3_AGENTMEMORY_CAPTURE_RECORD_READOUT_COMPLETION_2026-05-25.md`
 - M1: `docs/reviews/CVF_M1_DURABLE_CROSS_SESSION_MEMORY_COMPLETION_2026-05-24.md`
 - LHW1-T2 spec: `docs/reference/CVF_LHW1_WORKFLOW_CHAIN_STATE_CONNECTOR_SPEC_2026-05-27.md`
 
@@ -36,7 +36,7 @@ behavior is changed.
 2. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 3. `docs/reviews/CVF_W2_MEMORY_EVENT_HOOKS_CONTEXT_PACKAGER_COMPLETION_2026-05-24.md`
    — understand the 5 hook classes and `canReinject=false` / `rawMemoryReleased=false` bindings
-4. `docs/reviews/CVF_VI3_AGENTMEMORY_CAPTURE_RECORD_READOUT_COMPLETION_2026-05-25.md`
+4. `docs/reviews/archive/CVF_VI3_AGENTMEMORY_CAPTURE_RECORD_READOUT_COMPLETION_2026-05-25.md`
    — understand `cvf.agentMemoryCaptureRecord.vi3.v1` fields and source-verified paths
 5. `docs/reviews/CVF_LHW1_T2_WORKFLOW_CHAIN_STATE_CONNECTOR_COMPLETION_2026-05-27.md`
    — understand evidence binding boundaries from S6

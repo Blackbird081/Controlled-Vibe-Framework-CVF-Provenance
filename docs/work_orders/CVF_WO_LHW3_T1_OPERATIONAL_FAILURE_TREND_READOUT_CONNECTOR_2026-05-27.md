@@ -25,7 +25,7 @@ behavior is changed.
 
 - LHW3 roadmap: `docs/roadmaps/CVF_LHW3_WORKFLOW_CONNECTOR_WAVE3_ROADMAP_2026-05-27.md`
 - Fast Lane audit: `docs/reviews/CVF_LHW3_T1_FAST_LANE_AUDIT_2026-05-27.md` → FAST_LANE_READY
-- LH1 ledger (`abtop` trigger): `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- LH1 ledger (`abtop` trigger): `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
 - W4: `docs/reviews/CVF_W4_OPERATIONAL_BENCHMARK_SCORECARD_COMPLETION_2026-05-24.md`
 - V3: `docs/reviews/CVF_V3_EXECUTION_DIAGNOSTIC_CONTRACT_COMPLETION_2026-05-24.md`
 - V3 route source: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts`
@@ -65,7 +65,7 @@ runtime remain blocked.
    `retryCount`, `humanCorrectionCount`, `crossSessionContinuityRate`,
    `longHorizonStabilityRate`, `deterministicConsistencyRate`,
    `rollbackSuccessRate`; note `hallucinationRecovery` is deferred
-4. `docs/reviews/CVF_WR1_WORKFLOW_RECOVERY_STATE_PROOF_COMPLETION_2026-05-25.md`
+4. `docs/reviews/archive/CVF_WR1_WORKFLOW_RECOVERY_STATE_PROOF_COMPLETION_2026-05-25.md`
    — understand recovery readout structure only; WR1 is not the source
    authority for V3 diagnostic class tokens
 5. `docs/reviews/CVF_V3_EXECUTION_DIAGNOSTIC_CONTRACT_COMPLETION_2026-05-24.md`

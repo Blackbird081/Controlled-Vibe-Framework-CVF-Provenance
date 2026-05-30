@@ -36,7 +36,7 @@ This connector is advisory only. It does NOT execute graph retrieval.
 - AIF-B source: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/graph/schema/graph-schema.ts`
 - LHW7-T2 spec: `docs/reference/CVF_LHW7_T2_PROJECT_MEMORY_CONTEXT_BUDGET_HANDOFF_CONNECTOR_SPEC_2026-05-28.md`
 - LHW11-T3 spec: `docs/reference/CVF_LHW11_T3_MEMORY_CONTEXT_SEED_DECAY_ADVISORY_CONNECTOR_SPEC_2026-05-28.md`
-- LH1 ledger: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- LH1 ledger: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
   (`tolaria` trigger at line 129)
 - CVF 25.05 review: `.private_reference/legacy/CVF 25.05/CLAUDE_REVIEW_OF_GOP_Y_2026-05-25.md`
   (GAP 9 section)
@@ -95,7 +95,7 @@ file, receipt envelope schema, public-sync repo.
 | `queryImpact` method | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/graph/schema/graph-schema.ts` | line 64 | `queryImpact` | `GraphKnowledgeService` | ACCEPT |
 | `signalsStillMissing` field | `docs/reference/CVF_LHW7_T2_PROJECT_MEMORY_CONTEXT_BUDGET_HANDOFF_CONNECTOR_SPEC_2026-05-28.md` | S3 line 114 | `signalsStillMissing` | LHW7-T2 doc-only field | ACCEPT |
 | `memoryContextSeedDecayAdvisoryType` field | `docs/reference/CVF_LHW11_T3_MEMORY_CONTEXT_SEED_DECAY_ADVISORY_CONNECTOR_SPEC_2026-05-28.md` | S3 field list | `memoryContextSeedDecayAdvisoryType` | LHW11-T3 doc-only field | ACCEPT |
-| LH1 `tolaria` trigger | `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | line 129 | `tolaria` | LH1 CVF 16.5 ledger | ACCEPT |
+| LH1 `tolaria` trigger | `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | line 129 | `tolaria` | LH1 CVF 16.5 ledger | ACCEPT |
 
 New doc-only fields:
 

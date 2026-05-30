@@ -53,7 +53,7 @@ Predecessor documents:
 
 - `docs/concepts/CVF_OPERATOR_AGENT_AUTHORITY_AND_SURFACE_FIDELITY_2026-05-26.md`
   (canonical rules document committed earlier this session)
-- `docs/concepts/CVF_LAYERED_PRODUCT_ARCHITECTURE_AND_VIBE_DIALOG_PATTERN_2026-05-25.md`
+- `docs/concepts/archive/CVF_LAYERED_PRODUCT_ARCHITECTURE_AND_VIBE_DIALOG_PATTERN_2026-05-25.md`
   (4-layer architecture)
 - `CVF_SESSION_MEMORY.md` (existing cross-agent front door)
 - `CLAUDE.md` (Claude-specific front door)
@@ -620,7 +620,7 @@ Predecessor documents:
 
 - `docs/concepts/CVF_OPERATOR_AGENT_AUTHORITY_AND_SURFACE_FIDELITY_2026-05-26.md`
   (rules that must be cross-agent — already governed)
-- `docs/concepts/CVF_LAYERED_PRODUCT_ARCHITECTURE_AND_VIBE_DIALOG_PATTERN_2026-05-25.md`
+- `docs/concepts/archive/CVF_LAYERED_PRODUCT_ARCHITECTURE_AND_VIBE_DIALOG_PATTERN_2026-05-25.md`
   (4-layer architecture)
 
 Current cross-agent infrastructure:

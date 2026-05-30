@@ -116,7 +116,7 @@ Example packet:
 | `Auditor` role lane | `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | line 99 | `Auditor` | MA1 role lane | ACCEPT |
 | `transitionEnforcementAdvisoryType` field | `docs/reference/CVF_LHW10_T1_WORKFLOW_TRANSITION_ENFORCEMENT_ADVISORY_CONNECTOR_SPEC_2026-05-28.md` | S3 line 137 | `transitionEnforcementAdvisoryType` | LHW10-T1 doc-only field | ACCEPT |
 | `escalated_blocked` value | `docs/reference/CVF_LHW10_T1_WORKFLOW_TRANSITION_ENFORCEMENT_ADVISORY_CONNECTOR_SPEC_2026-05-28.md` | S2 lines 88–102 | `transitionEnforcementAdvisoryType` | LHW10-T1 S2 | ACCEPT |
-| LH1 `deepagents` trigger | `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | line 156 | `deepagents` | LH1 CVF ADD ledger | ACCEPT |
+| LH1 `deepagents` trigger | `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | line 156 | `deepagents` | LH1 CVF ADD ledger | ACCEPT |
 
 ## New Doc-Only Fields
 

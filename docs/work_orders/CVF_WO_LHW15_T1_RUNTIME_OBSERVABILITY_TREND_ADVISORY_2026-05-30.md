@@ -24,7 +24,7 @@ Closes LH1 `abtop` trigger (line 132).
 
 - LHW15 roadmap: `docs/roadmaps/CVF_LHW15_WORKFLOW_CONNECTOR_WAVE15_ROADMAP_2026-05-30.md`
 - LHW15 GC-018: `docs/baselines/CVF_GC018_LHW15_WORKFLOW_CONNECTOR_WAVE15_2026-05-30.md`
-- LH1 source: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` line 132
+- LH1 source: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` line 132
 - W4 owner surface: `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/operational-benchmark-suite.ts`
 
 ## Scope
@@ -42,7 +42,7 @@ Closes LH1 `abtop` trigger (line 132).
 
 | Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 | --- | --- | --- | --- | --- | --- |
-| `abtop` PARTIALLY_ABSORBED disposition | `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | line 132 | `abtop` | LH1 Closeout Ledger CVF 16.5 section | ACCEPT |
+| `abtop` PARTIALLY_ABSORBED disposition | `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | line 132 | `abtop` | LH1 Closeout Ledger CVF 16.5 section | ACCEPT |
 | W4 operational benchmark owner surface | `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/operational-benchmark-suite.ts` | file root | `operational-benchmark-suite.ts` | Governance CLI | ACCEPT |
 
 New advisory types (doc-only, no runtime claim):
@@ -70,7 +70,7 @@ Implementer: write connector spec. Reviewer: verify advisory types, source citat
 
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-3. `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` — confirm `abtop` at line 132
+3. `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` — confirm `abtop` at line 132
 
 ## Write Ownership
 

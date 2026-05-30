@@ -19,7 +19,7 @@ Fast Lane eligibility audit for LHW9-T1: MCP Tool Approval Advisory Connector.
 - GC-021 Fast Lane policy: `docs/reference/CVF_FAST_LANE_AUDIT_TEMPLATE.md`
 - LHW9 roadmap: `docs/roadmaps/CVF_LHW9_WORKFLOW_CONNECTOR_WAVE9_ROADMAP_2026-05-28.md`
 - LHW9 GC-018: `docs/baselines/CVF_GC018_LHW9_WORKFLOW_CONNECTOR_WAVE9_2026-05-28.md`
-- LH1 ledger: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- LH1 ledger: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
   (triggers: `pancake-pos-mcp`, `OpenAgentd`)
 
 ## Scope / Target / Owner Boundary
@@ -55,7 +55,7 @@ Primary sources:
 Prior closure evidence:
 
 - `docs/reviews/CVF_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_COMPLETION_2026-05-24.md`
-- `docs/reviews/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
+- `docs/reviews/archive/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
 - `docs/reviews/CVF_LHW6_T1_TOOL_RUNTIME_BRIDGE_ADVISORY_CONNECTOR_COMPLETION_2026-05-28.md`
 
 ## Findings / Position

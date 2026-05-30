@@ -21,7 +21,7 @@ advisory), and `cortex-hub` (code intelligence adapter boundary advisory).
 
 ## Source / Predecessor Evidence
 
-- LH1 Closeout Ledger: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- LH1 Closeout Ledger: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
 - LHW15 completion: `CVF_SESSION/ACTIVE_SESSION_STATE.json` `lhw15WorkflowConnectorWave15` CLOSED_PASS_BOUNDED
 - LHW scope-rejection rule enforced since LHW6
 - Operator authorization: "làm hết đi, sử dụng api keys có sẵn" 2026-05-30
@@ -48,7 +48,7 @@ Before closure of each tranche:
 
 ## Authorization Basis
 
-- LH1 Closeout Ledger: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- LH1 Closeout Ledger: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
   — `gridex` line 157 (PARTIALLY_ABSORBED, trigger: read-only database action proof)
   — `pancake-pos-mcp` line 141 (PARTIALLY_ABSORBED, trigger: MCP approval proof)
   — `cortex-hub` line 155 (PARTIALLY_ABSORBED, trigger: code-intelligence adapter boundary)

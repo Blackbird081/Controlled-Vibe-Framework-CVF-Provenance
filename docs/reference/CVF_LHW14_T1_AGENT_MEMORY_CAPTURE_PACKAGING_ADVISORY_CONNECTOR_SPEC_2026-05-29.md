@@ -62,7 +62,7 @@ Authority chain:
 - LHW14 GC-018: `docs/baselines/CVF_GC018_LHW14_WORKFLOW_CONNECTOR_WAVE14_2026-05-29.md`
 - LHW8-T1 spec: `docs/reference/CVF_LHW8_T1_MEMORY_EVENT_HOOK_GOVERNANCE_SNAPSHOT_CONNECTOR_SPEC_2026-05-28.md`
 - AIF-C source: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts`
-- LH1 ledger: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` — `agentmemory` trigger at line 133
+- LH1 ledger: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` — `agentmemory` trigger at line 133
 
 ## S2 — Snapshot Advisory → Packaging Advisory Mapping
 
@@ -133,7 +133,7 @@ All fields are documentation-only advisory fields.
 | EXISTS: `MemoryGatewayDecision.canReinject` boolean field | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts` | line 49 | `canReinject` | `MemoryGatewayDecision` | ACCEPT |
 | LITERAL_INVARIANT: `MemoryGatewayDecision.rawMemoryReleased=false` | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts` | line 50 | `rawMemoryReleased` | `MemoryGatewayDecision` | ACCEPT |
 | VI3 `AgentMemoryCaptureRecord.captureDecision` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/audit-memory-receipt.ts` | line 38 | `captureDecision` | `AgentMemoryCaptureRecord` | ACCEPT |
-| LH1 `agentmemory` trigger | `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | line 133 | `agentmemory` | LH1 CVF 16.5 ledger | ACCEPT |
+| LH1 `agentmemory` trigger | `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | line 133 | `agentmemory` | LH1 CVF 16.5 ledger | ACCEPT |
 
 ---
 

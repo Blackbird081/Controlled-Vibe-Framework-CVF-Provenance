@@ -21,7 +21,7 @@ and `Workflow GoClaw` (context profile packaging).
 
 ## Source / Predecessor Evidence
 
-- LH1 Closeout Ledger: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- LH1 Closeout Ledger: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
 - LHW14 completion: `CVF_SESSION/ACTIVE_SESSION_STATE.json` `lhw14WorkflowConnectorWave14` CLOSED_PASS_BOUNDED
 - LHW scope-rejection rule enforced since LHW6
 
@@ -45,7 +45,7 @@ Before closure of each tranche:
 
 ## Authorization Basis
 
-- LH1 Closeout Ledger: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- LH1 Closeout Ledger: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
   — `abtop` line 132 (PARTIALLY_ABSORBED, trigger: runtime observability dashboard)
   — `Agent Harnesses` line 150 (PARTIALLY_ABSORBED, trigger: workflow resume/recovery proof)
   — `Workflow GoClaw` line 163 (PARTIALLY_ABSORBED, trigger: context profile packaging)

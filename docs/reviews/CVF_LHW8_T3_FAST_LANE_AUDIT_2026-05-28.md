@@ -24,7 +24,7 @@ Class Re-Intake Connector.
   — CLOSED_PASS_BOUNDED
 - T2 gate: `docs/reviews/CVF_LHW8_T2_EXECUTION_IDENTITY_AUTHORITY_CHAIN_READOUT_CONNECTOR_COMPLETION_2026-05-28.md`
   — CLOSED_PASS_BOUNDED
-- LH1 ledger: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- LH1 ledger: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
   (triggers: `CVF AUDIT LOG_md`, `Failure Simulation cho CVF.md`)
 
 ## Scope / Target / Owner Boundary

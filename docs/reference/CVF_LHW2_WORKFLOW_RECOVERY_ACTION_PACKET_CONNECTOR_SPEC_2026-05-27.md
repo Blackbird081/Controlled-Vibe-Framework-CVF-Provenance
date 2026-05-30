@@ -28,7 +28,7 @@ T1 gate: CLOSED_PASS (`cvf.memoryEventCaptureWorkflowReceiptLoopConnector.lhw2.t
 
 Source authority:
 
-- WR1: `docs/reviews/CVF_WR1_WORKFLOW_RECOVERY_STATE_PROOF_COMPLETION_2026-05-25.md`
+- WR1: `docs/reviews/archive/CVF_WR1_WORKFLOW_RECOVERY_STATE_PROOF_COMPLETION_2026-05-25.md`
 - W1: `docs/reviews/CVF_W1_WORKFLOW_STATE_MACHINE_ENFORCEMENT_COMPLETION_2026-05-24.md`
 - MA1: `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
 - LHW1-T2: `docs/reference/CVF_LHW1_WORKFLOW_CHAIN_STATE_CONNECTOR_SPEC_2026-05-27.md`
@@ -53,7 +53,7 @@ packet shape usable by Orchestrator and role agents."
 ## S2 — WR1 Transition Class to Recovery Packet Mapping
 
 WR1 transition class vocabulary is verbatim from
-`docs/reviews/CVF_WR1_WORKFLOW_RECOVERY_STATE_PROOF_COMPLETION_2026-05-25.md`.
+`docs/reviews/archive/CVF_WR1_WORKFLOW_RECOVERY_STATE_PROOF_COMPLETION_2026-05-25.md`.
 MA1 section numbers (##0-##10) are from
 `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`.
 

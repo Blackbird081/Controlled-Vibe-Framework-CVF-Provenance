@@ -24,7 +24,7 @@ Template: `docs/reference/CVF_FAST_LANE_AUDIT_TEMPLATE.md`
 - LH1 ledger trigger: `agentmemory` PARTIALLY_ABSORBED — "Reopen for capture/read
   packaging improvements"
 - W2 completion: `docs/reviews/CVF_W2_MEMORY_EVENT_HOOKS_CONTEXT_PACKAGER_COMPLETION_2026-05-24.md`
-- VI3 completion: `docs/reviews/CVF_VI3_AGENTMEMORY_CAPTURE_RECORD_READOUT_COMPLETION_2026-05-25.md`
+- VI3 completion: `docs/reviews/archive/CVF_VI3_AGENTMEMORY_CAPTURE_RECORD_READOUT_COMPLETION_2026-05-25.md`
 - LHW1-T2 spec: `docs/reference/CVF_LHW1_WORKFLOW_CHAIN_STATE_CONNECTOR_SPEC_2026-05-27.md`
 
 ## Fast Lane Eligibility Checks

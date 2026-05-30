@@ -26,9 +26,9 @@ behavior is changed. `databaseMutationAuthorized=false` is invariant throughout.
 
 - LHW5 roadmap: `docs/roadmaps/CVF_LHW5_WORKFLOW_CONNECTOR_WAVE5_ROADMAP_2026-05-27.md`
 - Fast Lane audit: `docs/reviews/CVF_LHW5_T1_FAST_LANE_AUDIT_2026-05-27.md` → FAST_LANE_READY
-- LH1 ledger (`gridex` trigger): `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- LH1 ledger (`gridex` trigger): `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
 - W3: `docs/reviews/CVF_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_COMPLETION_2026-05-24.md`
-- TA1: `docs/reviews/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
+- TA1: `docs/reviews/archive/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
 - LHW4-T2 spec: `docs/reference/CVF_LHW4_EXECUTION_AUTHORITY_CHAIN_READOUT_CONNECTOR_SPEC_2026-05-27.md`
 
 ## Agent Roles
@@ -63,7 +63,7 @@ blocked.
    `ToolTransport`, `ToolActionTaxonomyRequest`, `ToolActionTaxonomyEvaluation`,
    `ToolActionApprovalReadout`, `runtimeExecutionAuthorized=false`;
    confirm database sideEffect values and their approval levels
-4. `docs/reviews/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
+4. `docs/reviews/archive/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
    — confirm TA1 approval state tokens: `not_required`, `pending_approval`,
    `satisfied_but_not_executable`, `blocked_before_approval`,
    `blocked_by_policy`, `incomplete_approval`

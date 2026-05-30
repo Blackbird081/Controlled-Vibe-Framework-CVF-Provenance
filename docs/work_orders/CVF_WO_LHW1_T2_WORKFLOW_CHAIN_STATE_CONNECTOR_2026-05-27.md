@@ -48,7 +48,7 @@ placeholder source paths, and "confirm later" language are not allowed.
 - Fast Lane audit: `docs/reviews/CVF_LHW1_T2_FAST_LANE_AUDIT_2026-05-27.md` → FAST_LANE_READY
 - T1 work order: `docs/work_orders/CVF_WO_LHW1_T1_PRODUCT_SKILL_PACK_WORKFLOW_CONNECTOR_2026-05-27.md`
 - W1: `docs/reviews/CVF_W1_WORKFLOW_STATE_MACHINE_ENFORCEMENT_COMPLETION_2026-05-24.md`
-- WR1: `docs/reviews/CVF_WR1_WORKFLOW_RECOVERY_STATE_PROOF_COMPLETION_2026-05-25.md`
+- WR1: `docs/reviews/archive/CVF_WR1_WORKFLOW_RECOVERY_STATE_PROOF_COMPLETION_2026-05-25.md`
 - MA1: `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
 
 ## Gate Condition — CHECK FIRST
@@ -64,10 +64,10 @@ If T1 is not CLOSED_PASS, stop and report to Orchestrator.
 2. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 3. T1 completion + T1 connector spec (understand shape T2 must extend)
 4. `docs/reviews/CVF_W1_WORKFLOW_STATE_MACHINE_ENFORCEMENT_COMPLETION_2026-05-24.md`
-5. `docs/reviews/CVF_WR1_WORKFLOW_RECOVERY_STATE_PROOF_COMPLETION_2026-05-25.md`
+5. `docs/reviews/archive/CVF_WR1_WORKFLOW_RECOVERY_STATE_PROOF_COMPLETION_2026-05-25.md`
 6. `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
    (read full sections 0–9)
-7. `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+7. `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
    (CVF Edit / Human System Harness / Agent Harnesses dispositions)
 
 ## Scope

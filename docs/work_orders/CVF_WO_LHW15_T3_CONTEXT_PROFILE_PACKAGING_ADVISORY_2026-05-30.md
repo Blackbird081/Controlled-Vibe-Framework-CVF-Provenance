@@ -25,7 +25,7 @@ Closes LH1 `Workflow GoClaw` trigger (line 163).
 
 - LHW15 roadmap: `docs/roadmaps/CVF_LHW15_WORKFLOW_CONNECTOR_WAVE15_ROADMAP_2026-05-30.md`
 - LHW15 GC-018: `docs/baselines/CVF_GC018_LHW15_WORKFLOW_CONNECTOR_WAVE15_2026-05-30.md`
-- LH1 source: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` line 163
+- LH1 source: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` line 163
 - VI2 owner surface: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-request-context-readout.ts`
 
 ## Scope
@@ -43,7 +43,7 @@ Closes LH1 `Workflow GoClaw` trigger (line 163).
 
 | Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 | --- | --- | --- | --- | --- | --- |
-| `Workflow GoClaw` PARTIALLY_ABSORBED | `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | line 163 | `Workflow GoClaw` | LH1 Closeout Ledger CVF ADD section | ACCEPT |
+| `Workflow GoClaw` PARTIALLY_ABSORBED | `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | line 163 | `Workflow GoClaw` | LH1 Closeout Ledger CVF ADD section | ACCEPT |
 | VI2 `requestContextReadout` surface | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-request-context-readout.ts` | file root | `requestContextReadout` | VI2 route context readout | ACCEPT |
 
 New advisory types (doc-only):
@@ -72,7 +72,7 @@ Implementer: write connector spec. Reviewer: verify advisory types, VI2 mapping,
 
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-3. `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` — confirm `Workflow GoClaw` at line 163
+3. `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` — confirm `Workflow GoClaw` at line 163
 
 ## Write Ownership
 

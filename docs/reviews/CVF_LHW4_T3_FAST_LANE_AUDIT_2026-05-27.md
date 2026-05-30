@@ -23,8 +23,8 @@ Template: `docs/reference/CVF_FAST_LANE_AUDIT_TEMPLATE.md`
 - LH1 ledger trigger: `AI-first vs Human-first` PARTIALLY_ABSORBED — "Reopen
   for noncoder friction scoring or anti-overconstraint UX"
 - LHW3-T1 spec: `docs/reference/CVF_LHW3_OPERATIONAL_FAILURE_TREND_READOUT_CONNECTOR_SPEC_2026-05-27.md`
-- CB1 completion: `docs/reviews/CVF_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_COMPLETION_2026-05-25.md`
-- C8 completion: `docs/reviews/CVF_C8_PRODUCT_SKILL_PACK_SELECTION_READOUT_COMPLETION_2026-05-25.md`
+- CB1 completion: `docs/reviews/archive/CVF_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_COMPLETION_2026-05-25.md`
+- C8 completion: `docs/reviews/archive/CVF_C8_PRODUCT_SKILL_PACK_SELECTION_READOUT_COMPLETION_2026-05-25.md`
 
 ## Pre-Conditions
 

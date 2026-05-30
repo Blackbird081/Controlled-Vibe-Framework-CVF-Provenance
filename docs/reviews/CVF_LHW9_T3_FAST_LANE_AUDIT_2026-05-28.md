@@ -23,7 +23,7 @@ Fast Lane eligibility audit for LHW9-T3: Integration Layer Packaging Connector.
   — CLOSED_PASS_BOUNDED
 - T2 gate: `docs/reviews/CVF_LHW9_T2_NONCODER_FRICTION_ADVISORY_CONNECTOR_COMPLETION_2026-05-28.md`
   — CLOSED_PASS_BOUNDED
-- LH1 ledger: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- LH1 ledger: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
   (triggers: `Review CVF_2.md`, `De_xuat.md`)
 
 ## Scope / Target / Owner Boundary

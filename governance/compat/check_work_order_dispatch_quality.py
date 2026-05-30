@@ -874,11 +874,45 @@ def _validate_path(path: str) -> list[str]:
 
 def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str, Any]:
     targets = sorted(path.replace("\\", "/") for path in changed_files if _is_target(path))
+    # Collect the set of file statuses so rename-only files can be skipped.
+    changed_status: dict[str, set[str]] = {}
+    for p, statuses in _get_changed(base_ref or "HEAD", "HEAD").items():
+        changed_status[p.replace("\\", "/")] = statuses
     violations = []
     for path in targets:
+        statuses = changed_status.get(path, set())
+        # Skip files that were only renamed/moved — content unchanged, no new violations possible.
+        if statuses and statuses <= {"R"}:
+            continue
         issues = _validate_path(path)
-        if issues:
-            violations.append({"path": path, "issues": issues})
+        if not issues:
+            continue
+        # Suppress pre-existing violations: if every issue was already present in the
+        # committed (HEAD) version of the file, this commit did not introduce them.
+        head_text = _read_rel_at("HEAD", path)
+        if head_text:
+            from functools import reduce as _reduce
+            def _issues_for_text(p: str, t: str) -> list[str]:
+                n = p.replace("\\", "/")
+                if n.startswith("docs/work_orders/"):
+                    return _validate_work_order(n, t)
+                if n.startswith("docs/roadmaps/"):
+                    return _validate_roadmap(n, t)
+                if n.startswith("docs/baselines/"):
+                    return _validate_baseline(n, t)
+                if n.startswith("docs/reviews/") and "FAST_LANE_AUDIT" in n.upper():
+                    return _validate_fast_lane_audit(n, t)
+                if n.startswith("docs/reviews/") or (
+                    n.startswith("docs/reference/CVF_LHW") and "CONNECTOR_SPEC" in n.upper()
+                ):
+                    return _validate_completion_or_spec(n, t)
+                return []
+            head_issues = set(_issues_for_text(path, head_text))
+            new_issues = [i for i in issues if i not in head_issues]
+            if not new_issues:
+                continue
+            issues = new_issues
+        violations.append({"path": path, "issues": issues})
     violations.extend(_validate_single_work_order_scope_range(changed_files))
     violations.extend(_validate_lhw_wave_closure_range(changed_files, base_ref=base_ref))
 

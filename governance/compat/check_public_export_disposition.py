@@ -146,6 +146,12 @@ def _read_rel(path: str) -> str:
     return (REPO_ROOT / path).read_text(encoding="utf-8")
 
 
+def _read_rel_at(ref: str, path: str) -> str:
+    normalized = path.replace("\\", "/")
+    code, out, _ = _run_git(["show", f"{ref}:{normalized}"])
+    return out if code == 0 else ""
+
+
 def _add(violations: list[dict[str, str]], path: str, issue_type: str, message: str) -> None:
     violations.append({"path": path, "type": issue_type, "message": message})
 
@@ -280,11 +286,7 @@ def _validate_export_disposition(path: str, text: str) -> list[dict[str, str]]:
     return violations
 
 
-def _validate_path(path: str) -> list[dict[str, str]]:
-    full = REPO_ROOT / path
-    if not full.exists():
-        return []
-    text = _read_rel(path)
+def _validate_path_with_text(path: str, text: str) -> list[dict[str, str]]:
     violations: list[dict[str, str]] = []
     if path == STANDARD_PATH:
         violations.extend(_validate_standard(path, text))
@@ -292,6 +294,14 @@ def _validate_path(path: str) -> list[dict[str, str]]:
         violations.extend(_validate_binding(path, text))
     violations.extend(_validate_export_disposition(path, text))
     return violations
+
+
+def _validate_path(path: str) -> list[dict[str, str]]:
+    full = REPO_ROOT / path
+    if not full.exists():
+        return []
+    text = _read_rel(path)
+    return _validate_path_with_text(path, text)
 
 
 def _classify(changed_paths: dict[str, list[str]]) -> dict[str, Any]:
@@ -317,7 +327,24 @@ def _classify(changed_paths: dict[str, list[str]]) -> dict[str, Any]:
         statuses = changed_paths.get(path, [])
         if statuses and all(status.startswith("D") for status in statuses):
             continue
-        violations.extend(_validate_path(path))
+        # Skip rename-only files — content unchanged, no new violations possible.
+        if statuses and all(s.startswith("R") for s in statuses):
+            continue
+        new_violations = _validate_path(path)
+        if not new_violations:
+            continue
+        # Suppress pre-existing violations: only report issues introduced by this change.
+        head_text = _read_rel_at("HEAD", path)
+        if head_text:
+            head_violations = set(
+                (v["type"], v["message"])
+                for v in _validate_path_with_text(path, head_text)
+            )
+            new_violations = [
+                v for v in new_violations
+                if (v["type"], v["message"]) not in head_violations
+            ]
+        violations.extend(new_violations)
     return {
         "filesChecked": scoped_paths,
         "fileCount": len(scoped_paths),

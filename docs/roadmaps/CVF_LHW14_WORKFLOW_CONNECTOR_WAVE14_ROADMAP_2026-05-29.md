@@ -69,7 +69,7 @@ request is ambiguous or a workflow needs recovery.
 
 - LHW13 roadmap: `docs/roadmaps/CVF_LHW13_WORKFLOW_CONNECTOR_WAVE13_ROADMAP_2026-05-29.md`
   — Status: CLOSED_PASS_BOUNDED
-- LH1 ledger: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- LH1 ledger: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
   — `agentmemory` line 133, `OpenSpec` line 140, `Human System Harness` line 160
 - Active session: `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 

@@ -24,7 +24,7 @@ GC-018.
 - CVF 25.05 review: `.private_reference/legacy/CVF 25.05/CLAUDE_REVIEW_OF_GOP_Y_2026-05-25.md`
   — GAP 5: "medium-large effort; real product surface, not just docs"
   — GAP 6: "small if extends ES1/C7B/C7C; larger if covers MCP/tool/repo"
-- ES1: `docs/reference/CVF_EXTERNAL_SKILL_INTAKE_SCREENING_PACKET_2026-05-25.md`
+- ES1: `docs/reference/archive/CVF_EXTERNAL_SKILL_INTAKE_SCREENING_PACKET_2026-05-25.md`
 - C7B/C7C completion: `docs/reviews/CVF_C7B_*/CVF_C7C_*`
 
 ## Scope / Target / Owner Boundary

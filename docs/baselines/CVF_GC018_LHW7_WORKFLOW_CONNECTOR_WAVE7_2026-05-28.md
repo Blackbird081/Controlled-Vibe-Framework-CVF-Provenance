@@ -36,13 +36,13 @@ production-readiness claim is authorized by this baseline.
 |---|---|
 | `docs/roadmaps/CVF_LHW7_WORKFLOW_CONNECTOR_WAVE7_ROADMAP_2026-05-28.md` | Roadmap authority |
 | `docs/roadmaps/CVF_LHW6_WORKFLOW_CONNECTOR_WAVE6_ROADMAP_2026-05-28.md` | Predecessor wave (CLOSED_PASS_BOUNDED) |
-| `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | Legacy trigger authority |
-| `docs/reviews/CVF_WR1_WORKFLOW_RECOVERY_STATE_PROOF_COMPLETION_2026-05-25.md` | WR1 recovery readout closure (T1) |
+| `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | Legacy trigger authority |
+| `docs/reviews/archive/CVF_WR1_WORKFLOW_RECOVERY_STATE_PROOF_COMPLETION_2026-05-25.md` | WR1 recovery readout closure (T1) |
 | `docs/reviews/CVF_LHW6_T1_TOOL_RUNTIME_BRIDGE_ADVISORY_CONNECTOR_COMPLETION_2026-05-28.md` | Tool bridge advisory connector closure (T1) |
-| `docs/reviews/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md` | TA1 approval readout closure (T1) |
+| `docs/reviews/archive/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md` | TA1 approval readout closure (T1) |
 | `docs/reviews/CVF_LHW6_T3_PROJECT_MEMORY_READOUT_CONNECTOR_COMPLETION_2026-05-28.md` | Project memory readout connector closure (T2) |
-| `docs/reviews/CVF_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_COMPLETION_2026-05-25.md` | Context budget readout closure (T2) |
-| `docs/reviews/CVF_VI2_ROUTE_REQUEST_CONTEXT_PROFILE_READOUT_COMPLETION_2026-05-25.md` | Route request context readout closure (T2) |
+| `docs/reviews/archive/CVF_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_COMPLETION_2026-05-25.md` | Context budget readout closure (T2) |
+| `docs/reviews/archive/CVF_VI2_ROUTE_REQUEST_CONTEXT_PROFILE_READOUT_COMPLETION_2026-05-25.md` | Route request context readout closure (T2) |
 | LHW5-T3 failure simulation scenario packet completion review | Failure simulation closure (T3) |
 | LHW3 spec-change packet completion review | Spec-change packet closure (T3) |
 | LHW3 clarification re-intake packet completion review | Re-intake packet closure (T3) |

@@ -63,8 +63,8 @@ Control standard:
 Scope sources to resolve before implementation:
 
 - `docs/reference/CVF_LEGACY_HARVEST_SCAN_MAP_2026-05-24.md`
-- `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
-- `docs/reviews/CVF_LH1_LEGACY_HARVEST_CLOSEOUT_LEDGER_COMPLETION_2026-05-25.md`
+- `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- `docs/reviews/archive/CVF_LH1_LEGACY_HARVEST_CLOSEOUT_LEDGER_COMPLETION_2026-05-25.md`
 - `.private_reference/legacy/CVF 17.05/Review CVF.md`
 - prior W-series work orders for WC-3 Candidates 1-4 where already closed or partially wired
 - `docs/roadmaps/CVF_MA1_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_ROADMAP_2026-05-26.md`

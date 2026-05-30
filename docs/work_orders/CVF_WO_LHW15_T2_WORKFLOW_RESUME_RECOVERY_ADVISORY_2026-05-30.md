@@ -25,7 +25,7 @@ Closes LH1 `Agent Harnesses` trigger (line 150).
 
 - LHW15 roadmap: `docs/roadmaps/CVF_LHW15_WORKFLOW_CONNECTOR_WAVE15_ROADMAP_2026-05-30.md`
 - LHW15 GC-018: `docs/baselines/CVF_GC018_LHW15_WORKFLOW_CONNECTOR_WAVE15_2026-05-30.md`
-- LH1 source: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` line 150
+- LH1 source: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` line 150
 - WR1 owner surface: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts`
 
 ## Scope
@@ -43,7 +43,7 @@ Closes LH1 `Agent Harnesses` trigger (line 150).
 
 | Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 | --- | --- | --- | --- | --- | --- |
-| `Agent Harnesses` PARTIALLY_ABSORBED | `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | line 150 | `Agent Harnesses` | LH1 Closeout Ledger CVF ADD section | ACCEPT |
+| `Agent Harnesses` PARTIALLY_ABSORBED | `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | line 150 | `Agent Harnesses` | LH1 Closeout Ledger CVF ADD section | ACCEPT |
 | `lastRestorableCheckpoint` WR1 field | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts` | WR1 surface | `lastRestorableCheckpoint` | workflow recovery readout | ACCEPT |
 
 New advisory types (doc-only):
@@ -71,7 +71,7 @@ Implementer: write connector spec. Reviewer: verify advisory types, WR1 mapping,
 
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-3. `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` — confirm `Agent Harnesses` at line 150
+3. `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` — confirm `Agent Harnesses` at line 150
 
 ## Write Ownership
 

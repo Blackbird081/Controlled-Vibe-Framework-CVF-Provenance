@@ -33,7 +33,7 @@ recovery actions. `runtimeExecutionAuthorized=false`.
   — `WorkflowRecoveryAction` type at lines 50–54
 - LHW12-T2 spec: `docs/reference/CVF_LHW12_T2_OUTCOME_PACK_TAXONOMY_GROUPING_CONNECTOR_SPEC_2026-05-29.md`
   — `ProductSkillPackSelectionStatus` and `outcomeGroupAdvisoryType` S3 fields
-- LH1 ledger: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+- LH1 ledger: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
   (`Human System Harness` trigger at line 160)
 - **T1 gate: `docs/reviews/CVF_LHW14_T1_AGENT_MEMORY_CAPTURE_PACKAGING_ADVISORY_CONNECTOR_COMPLETION_2026-05-29.md`
   must be CLOSED_PASS_BOUNDED**
@@ -89,7 +89,7 @@ file, receipt envelope schema, public-sync repo.
 | `request_human_review` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts` | line 54 | `WorkflowRecoveryAction` value | `workflow-resolver.ts` | ACCEPT |
 | `ProductSkillPackSelectionStatus` field | `docs/reference/CVF_LHW12_T2_OUTCOME_PACK_TAXONOMY_GROUPING_CONNECTOR_SPEC_2026-05-29.md` | S3 fields | `ProductSkillPackSelectionStatus` | LHW12-T2 doc-only field | ACCEPT |
 | `missingSignals` field | `docs/reference/CVF_LHW12_T2_OUTCOME_PACK_TAXONOMY_GROUPING_CONNECTOR_SPEC_2026-05-29.md` | S3 `contextSignalsNeeded` reference | `missingSignals` | CB1/LHW12-T2 | ACCEPT |
-| LH1 `Human System Harness` trigger | `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | line 160 | `Human System Harness` | LH1 CVF ADD ledger | ACCEPT |
+| LH1 `Human System Harness` trigger | `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | line 160 | `Human System Harness` | LH1 CVF ADD ledger | ACCEPT |
 
 New doc-only fields:
 

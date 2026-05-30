@@ -34,7 +34,7 @@ connector defined the export-boundary advisory packet. The `md2html` + artifact
 renderer family was partially absorbed; T2 delivers the advisory readout layer
 without creating a new renderer or export pipeline.
 
-Source: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+Source: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
 
 ## Target / Source
 

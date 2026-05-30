@@ -16,7 +16,7 @@ Completion review confirming LHW16-T1 Database Action Proof Advisory connector s
 
 ## Target/Source
 
-LH1 source: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` line 157
+LH1 source: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` line 157
 
 ## Scope/Target/Owner Boundary
 

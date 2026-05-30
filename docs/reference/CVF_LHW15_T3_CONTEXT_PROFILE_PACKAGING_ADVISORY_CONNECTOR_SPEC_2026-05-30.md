@@ -29,7 +29,7 @@ for agent handoff — how an agent should trim, augment, or block context transf
 to the next role based on observed signal density and contamination posture,
 so that the receiving agent begins from a clean, governance-compliant context.
 
-LH1 source: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` line 163
+LH1 source: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` line 163
 VI2 owner surface: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-request-context-readout.ts`
 
 Rejection label for this wave:

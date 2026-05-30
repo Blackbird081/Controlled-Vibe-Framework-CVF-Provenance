@@ -27,7 +27,7 @@ with approval states. `pancake-pos-mcp`'s remaining value is an MCP-specific
 approval proof advisory — how agents surface the minimum evidence required for a
 governed MCP tool call to proceed, mapping to the W3 `ToolApprovalState` values.
 
-LH1 source: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` line 141
+LH1 source: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` line 141
 W3 owner surface: `governance/contracts/tool-action-taxonomy.ts`
 
 Rejection label for this wave:

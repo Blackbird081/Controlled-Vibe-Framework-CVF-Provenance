@@ -29,7 +29,7 @@ defined the boundary packet. The `gridex` family was partially absorbed; T1
 delivers the read-only database action proof and makes all mutation/schema/admin
 paths explicitly blocked via `databaseMutationAuthorized=false`.
 
-Source: `docs/reference/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
+Source: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
 
 ## Target / Source
 
