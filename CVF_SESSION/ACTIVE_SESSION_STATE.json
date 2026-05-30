@@ -35,7 +35,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "lhw16_pm_wave_all_closed_pass_bounded",
+  "currentMode": "lhw17_cvf_important_absorption_all_closed_pass_bounded",
   "previousMode": "delta_wave_all_closed_pass_bounded",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
@@ -115,7 +115,8 @@
     "blocked_work_classes",
     "next_allowed_move"
   ],
-  "nextAllowedMove": "LHW16 is the latest closed LHW wave (T1 gridex/T2 pancake-pos-mcp/T3 cortex-hub CLOSED_PASS_BOUNDED). PM wave CLOSED (PM-1 stream + PM-2 json_mode + PM-3 vision). EL wave CLOSED (EL-2+EL-3). WCE wave CLOSED. All dispatched work orders from 2026-05-30 batch CLOSED. Remaining options: new LHW wave with fresh GC-018, operator-initiated new roadmap, or public-sync update.",
+  "nextAllowedMove": "LHW17 is the latest closed LHW wave (T1 Trust & Isolation Hardening/T2 Model Gateway Unification/T3 Learning Plane Truth+Reputation CLOSED_PASS_BOUNDED). LHW17 source: CVF_Important legacy absorption. All doc-only; runtimeExecutionAuthorized=false. GC-018 at docs/baselines/CVF_GC018_LHW17_CVF_IMPORTANT_ABSORPTION_WAVE_2026-05-30.md. Next options: continue CVF_Important remaining families (CVF Edit scan next per operator-confirmed order), new operator roadmap, or public-sync update.",
+  "lhw17CvfImportantAbsorptionWave": "CLOSED_PASS_BOUNDED. T1 cvf.trustIsolationHardeningAdvisory.lhw17.t1.v1 — closes Trust & Isolation EA CONDITIONAL finding (3 hardening items: Path Normalization, No Direct Execution, Capability Request Governance); T2 cvf.modelGatewayUnificationAdvisory.lhw17.t2.v1 — closes Model Gateway duplicate-module EA finding (Reviews 7+8+9 unified: Routing Layer + Strategy Layer); T3 cvf.learningPlaneTruthReputationAdvisory.lhw17.t3.v1 — establishes Truth Model + Reputation advisory boundary with 8-step activation order. All doc-only; runtimeExecutionAuthorized=false. Source: .private_reference/legacy/CVF_Important/. GC-018 docs/baselines/CVF_GC018_LHW17_CVF_IMPORTANT_ABSORPTION_WAVE_2026-05-30.md.",
   "lhw16WorkflowConnectorWave16": "CLOSED_PASS_BOUNDED. T1 cvf.databaseActionProofAdvisory.lhw16.t1.v1 — closes gridex LH1/157; T2 cvf.mcpApprovalProofAdvisory.lhw16.t2.v1 — closes pancake-pos-mcp LH1/141; T3 cvf.codeIntelligenceAdapterBoundary.lhw16.t3.v1 — closes cortex-hub LH1/155. All doc-only; runtimeExecutionAuthorized=false. Specs at docs/reference/CVF_LHW16_T*_*_CONNECTOR_SPEC_2026-05-30.md. GC-018 docs/baselines/CVF_GC018_LHW16_WORKFLOW_CONNECTOR_WAVE16_2026-05-30.md.",
   "lhw15WorkflowConnectorWave15": "CLOSED_PASS_BOUNDED. T1 cvf.runtimeObservabilityTrendAdvisory.lhw15.t1.v1 — closes abtop LH1/132; T2 cvf.workflowResumeRecoveryAdvisory.lhw15.t2.v1 — closes Agent Harnesses LH1/150; T3 cvf.contextProfilePackagingAdvisory.lhw15.t3.v1 — closes Workflow GoClaw LH1/163. All doc-only; runtimeExecutionAuthorized=false. Specs at docs/reference/CVF_LHW15_T*_*_CONNECTOR_SPEC_2026-05-30.md. Completions + Fast Lane at docs/reviews/CVF_LHW15_*_2026-05-30.md.",
   "el2El3ExecutionLayerEnforcement": "EL-2 + EL-3 CLOSED_PASS_BOUNDED. EL-2 cvf.workerTimeoutEnforcement.el2.v1 — live receipt rcpt-env-mps9ui6z-xzlm2q. EL-3 cvf.reviewerDeadlockEscalation.el3.v1 — reviewer-deadlock-handler.ts + buildReviewerDeadlockReadout(); additive reviewerDeadlockReadout in /api/execute; route.ts 998 lines; 9/9 unit tests + live receipt rcpt-env-mpsb8yzz-h6xwrf (alibaba/qwen-turbo, triggered=false, runtimeExecutionAuthorized=false). EL wave complete.",

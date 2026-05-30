@@ -76,11 +76,23 @@ Recovery (`Human System Harness`). Handoff rotated from V14 to V15.
 
 ## Active Boundary
 
-Current mode: `lhw16_pm_wave_all_closed_pass_bounded`.
+Current mode: `lhw17_cvf_important_absorption_all_closed_pass_bounded`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
-## LHW16 Wave Closure (Latest)
+## LHW17 Wave Closure (Latest)
+
+LHW17 CVF_Important Legacy Absorption Wave CLOSED_PASS_BOUNDED (T1+T2+T3, doc-only).
+Source: `.private_reference/legacy/CVF_Important/`.
+
+- T1 Trust & Isolation Hardening Advisory: `cvf.trustIsolationHardeningAdvisory.lhw17.t1.v1` — closes EA CONDITIONAL finding on Review 12. Documents 3 hardening items: Path Normalization, No Direct Execution Guarantee, Capability Request Governance.
+- T2 Model Gateway Unification Advisory: `cvf.modelGatewayUnificationAdvisory.lhw17.t2.v1` — resolves EA duplicate-module finding (Reviews 7+8+9). Unified gateway = Routing Layer + Strategy Layer.
+- T3 Learning Plane Truth & Reputation Advisory: `cvf.learningPlaneTruthReputationAdvisory.lhw17.t3.v1` — advisory boundary for Truth Model + Reputation Model with 8-step activation order.
+
+Invariants: `runtimeExecutionAuthorized=false` across all specs. R0-R3 risk model preserved.
+GC-018: `docs/baselines/CVF_GC018_LHW17_CVF_IMPORTANT_ABSORPTION_WAVE_2026-05-30.md`.
+
+## LHW16 Wave Closure (Prior)
 
 LHW16 Workflow Connector Wave 16 CLOSED_PASS_BOUNDED (T1+T2+T3, doc-only).
 
