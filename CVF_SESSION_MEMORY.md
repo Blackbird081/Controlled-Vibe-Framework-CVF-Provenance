@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-30
 
-Current mode marker: `cbg1_context_budget_guard_closed_pass_bounded`
+Current mode marker: `ape1_adaptation_policy_engine_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `cbg1_context_budget_guard_closed_pass_bounded`.
+Current mode: `ape1_adaptation_policy_engine_closed_pass_bounded`.
 
 Active handoff:
 
@@ -181,7 +181,7 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-CBG-1 is the latest closed tranche (Context Budget Guard CLOSED_PASS_BOUNDED). LHW20 closed (CVF_Important deep scan T1/T2/T3). LHW19/18/17 closed. Delta+WCE+EL+PM waves all CLOSED. All legacy scan folders absorbed. All dispatched work orders CLOSED_PASS_BOUNDED.
+LHW20 is the latest closed LHW wave (T1/T2/T3 CLOSED_PASS_BOUNDED). APE-1 (Adaptation Policy Engine A1-A6) and CBG-1 (Context Budget Guard) implementation tranches also CLOSED. LHW19/18/17 closed. All legacy scan folders absorbed. All dispatched work orders CLOSED_PASS_BOUNDED.
 
 Parked checkpoints:
 
