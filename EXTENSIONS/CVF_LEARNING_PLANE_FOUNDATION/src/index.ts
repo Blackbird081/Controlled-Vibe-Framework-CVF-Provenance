@@ -891,3 +891,13 @@ export type {
   ContextBudgetPolicy,
   ContextTaskClass,
 } from "./context-budget-policy";
+// CBG-1 Context Budget Guard
+export {
+  CONTEXT_BUDGET_GUARD_VERSION,
+  checkContextBudgetGuard,
+  checkContextBudgetGuardForTaskClass,
+} from "./context-budget-guard";
+export type {
+  ContextBudgetGuardDisposition,
+  ContextBudgetGuardResult,
+} from "./context-budget-guard";
