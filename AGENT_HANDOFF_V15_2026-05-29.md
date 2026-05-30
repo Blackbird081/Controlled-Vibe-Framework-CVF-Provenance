@@ -17,7 +17,7 @@ Active private provenance continuity for the current CVF repository. Use only
 with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
-Current closure anchor: `b4be3895` (feat(cbp1): Context Budget Policy + governance pre-existing violation fix). Parent governed closure anchor: `228fd9ec` (feat(lhw19): LHW19 CVF_Restructure T1/T2/T3 ALL CLOSED_PASS_BOUNDED). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
+Current closure anchor: `03f5f3ce` (feat(int1): Generic MCP Adapter). Parent governed closure anchor: `b4be3895` (feat(cbp1): Context Budget Policy + governance pre-existing violation fix). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
 
 ## Latest Work / Changes (2026-05-30)
 

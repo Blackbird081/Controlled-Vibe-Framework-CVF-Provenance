@@ -849,6 +849,55 @@ server.tool(
   })
 );
 
+// ─── OFB-1: Orchestrator Feedback Bus ────────────────────────────────
+// Contract: cvf.orchestratorFeedbackBus.ofb1.v1
+// GC-018: docs/baselines/CVF_GC018_OFB1_ORCHESTRATOR_FEEDBACK_BUS_2026-05-31.md
+// runtimeExecutionAuthorized: false — advisory aggregation only
+
+const OFB1_CONTRACT = 'cvf.orchestratorFeedbackBus.ofb1.v1' as const;
+
+server.tool(
+  'cvf_get_feedback_summary',
+  'Retrieve aggregated subagent feedback signals for the Orchestrator. Aggregates worker timeout, reviewer rejection count, context budget, and human intervention flag into a single structured summary. Advisory only — the Orchestrator reads this to decide next action (decompose/escalate/proceed). runtimeExecutionAuthorized=false.',
+  {
+    workerRetryCount: z.number().min(0).default(0).describe('Number of worker retries so far'),
+    reviewerRejectionCount: z.number().min(0).default(0).describe('Number of reviewer rejections so far'),
+    contextBudgetExceeded: z.boolean().default(false).describe('Whether the context budget was exceeded'),
+    taskClass: z.string().default('general').describe('Task class: intake, orchestration, implementation, review, closure, or general'),
+    humanInterventionRequired: z.boolean().default(false).describe('Whether human intervention has been flagged'),
+  },
+  async (args) => withMcpToolAudit('cvf_get_feedback_summary', args as Record<string, unknown>, async () => {
+    const workerEscalate = args.workerRetryCount >= 2;
+    const reviewerEscalate = args.reviewerRejectionCount > 3;
+    const escalate = args.humanInterventionRequired || workerEscalate || reviewerEscalate;
+    const caution = args.workerRetryCount > 0 || args.reviewerRejectionCount > 0 || args.contextBudgetExceeded;
+    const overallSignal = escalate ? 'ESCALATE' : caution ? 'CAUTION' : 'NOMINAL';
+    const recommendedAction = args.humanInterventionRequired
+      ? 'HUMAN_INTERVENTION_REQUIRED: Operator must intervene.'
+      : reviewerEscalate
+        ? `DECOMPOSE_TASK: ${args.reviewerRejectionCount} rejections — decompose task into smaller units.`
+        : workerEscalate
+          ? 'ESCALATE_WORKER: Worker timed out repeatedly — consider more capable model.'
+          : args.contextBudgetExceeded
+            ? `REDUCE_CONTEXT: ${args.taskClass} task exceeded budget — narrow scope.`
+            : 'NOMINAL: Proceed normally.';
+    return {
+      content: [{ type: 'text' as const, text: JSON.stringify({
+        contractVersion: OFB1_CONTRACT,
+        tool: 'cvf_get_feedback_summary',
+        overallSignal,
+        recommendedAction,
+        workerTimeoutSignal: { triggered: args.workerRetryCount > 0, retryCount: args.workerRetryCount, escalateToOrchestrator: workerEscalate },
+        reviewerRejectionSignal: { triggered: args.reviewerRejectionCount > 0, rejectionCount: args.reviewerRejectionCount, escalateToOrchestrator: reviewerEscalate },
+        contextBudgetSignal: { withinBudget: !args.contextBudgetExceeded, taskClass: args.taskClass },
+        humanInterventionRequired: args.humanInterventionRequired,
+        runtimeExecutionAuthorized: false,
+        summarizedAt: new Date().toISOString(),
+      }, null, 2) }],
+    };
+  })
+);
+
 // ─── Start Server ─────────────────────────────────────────────────────
 
 async function main() {

@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-30
 
-Current mode marker: `int1_generic_mcp_adapter_closed_pass_bounded`
+Current mode marker: `ofb1_orchestrator_feedback_bus_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `int1_generic_mcp_adapter_closed_pass_bounded`.
+Current mode: `ofb1_orchestrator_feedback_bus_closed_pass_bounded`.
 
 Active handoff:
 

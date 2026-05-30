@@ -35,7 +35,7 @@ import { buildVerticalIntegrationReadout } from '@/lib/vertical-integration-read
 import { buildPipelineChainReadout } from '@/lib/pipeline-chain-readout';
 import { buildWorkerTimeoutReadout } from '@/lib/worker-timeout-handler';
 import { buildReviewerDeadlockReadout } from '@/lib/reviewer-deadlock-handler';
-import { buildContextBudgetReadout } from '@/lib/context-budget-readout';
+import { buildContextBudgetReadout } from '@/lib/context-budget-readout'; import { buildOrchestratorFeedbackSummary } from '@/lib/orchestrator-feedback-bus';
 import { buildDurableMemorySystemPrompt, evaluateDurableMemoryRoute, evaluateDurableMemoryWrite, resolveDurableMemoryActorRole } from '@/lib/durable-memory-route';
 import { buildRoleOutputDeniedResponse, buildRolePermissionDeniedResponse } from '@/lib/execute-role-permission-gate';
 import { buildExecutionIdentityDecision } from '@/lib/execution-identity';
@@ -949,7 +949,7 @@ export async function POST(request: NextRequest) {
         const specFirstMediation = buildSpecFirstMediationReadout({ request: body, template, routeOutcome: { success: aiResult.success, provider: routedProvider, model: body.model ?? aiResult.model ?? routedProvider, decision: enforcement.status, receipt: { receiptId: governanceEvidenceReceipt.receiptId, envelopeId: governanceEvidenceReceipt.envelopeId }, rawTechnicalEvidenceAvailable: true } }); const englishSpecFreeze = buildEnglishSpecFreezeReadout({ request: body, specFirstMediation, providerOutput: aiResult.output });
         const pipelineChainReadout = buildPipelineChainReadout(body.intent ?? '');
         const workerTimeoutReadout = buildWorkerTimeoutReadout(Date.now() - routeStartedAtMs);
-        const reviewerDeadlockReadout = buildReviewerDeadlockReadout(); const contextBudgetReadout = buildContextBudgetReadout(resolvedExecutionRole.permissionRole ?? 'OPERATOR');
+        const reviewerDeadlockReadout = buildReviewerDeadlockReadout(); const contextBudgetReadout = buildContextBudgetReadout(resolvedExecutionRole.permissionRole ?? 'OPERATOR'); const orchestratorFeedback = buildOrchestratorFeedbackSummary(workerTimeoutReadout, reviewerDeadlockReadout, contextBudgetReadout);
         return NextResponse.json({
             ...aiResult,
             usage,
@@ -991,7 +991,7 @@ export async function POST(request: NextRequest) {
             pipelineChainReadout,
             workerTimeoutReadout,
             reviewerDeadlockReadout,
-            contextBudgetReadout,
+            contextBudgetReadout, orchestratorFeedback,
         });
     } catch (error) {
         console.error('Execute API error:', error);
