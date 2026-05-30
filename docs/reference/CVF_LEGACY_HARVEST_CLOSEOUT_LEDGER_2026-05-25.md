@@ -41,17 +41,17 @@ posture, or production posture.
 
 ## Source / Predecessor Evidence
 
-- `docs/reference/CVF_LEGACY_HARVEST_SCAN_MAP_2026-05-24.md`
-- `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`
+- `docs/reference/archive/CVF_LEGACY_HARVEST_SCAN_MAP_2026-05-24.md`
+- `docs/reference/archive/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`
 - `docs/reference/archive/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
 - `docs/audits/archive/CVF_LEGACY_SPEC_ABSORPTION_BLINDSPOT_AUDIT_2026-05-23.md`
-- `docs/reviews/CVF_WC_WORKFLOW_CHAIN_AND_PAIN_POINT_ROADMAP_CLOSURE_2026-05-24.md`
-- `docs/reviews/CVF_W1_WORKFLOW_STATE_MACHINE_ENFORCEMENT_COMPLETION_2026-05-24.md`
-- `docs/reviews/CVF_W2_MEMORY_EVENT_HOOKS_CONTEXT_PACKAGER_COMPLETION_2026-05-24.md`
-- `docs/reviews/CVF_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_COMPLETION_2026-05-24.md`
-- `docs/reviews/CVF_W4_OPERATIONAL_BENCHMARK_SCORECARD_COMPLETION_2026-05-24.md`
-- `docs/reviews/CVF_W5_PROVIDER_METHOD_FALLBACK_NORMALIZATION_COMPLETION_2026-05-24.md`
-- `docs/reviews/CVF_W6_NONCODER_ARTIFACT_EXPORT_HARDENING_COMPLETION_2026-05-24.md`
+- `docs/reviews/archive/CVF_WC_WORKFLOW_CHAIN_AND_PAIN_POINT_ROADMAP_CLOSURE_2026-05-24.md`
+- `docs/reviews/archive/CVF_W1_WORKFLOW_STATE_MACHINE_ENFORCEMENT_COMPLETION_2026-05-24.md`
+- `docs/reviews/archive/CVF_W2_MEMORY_EVENT_HOOKS_CONTEXT_PACKAGER_COMPLETION_2026-05-24.md`
+- `docs/reviews/archive/CVF_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_COMPLETION_2026-05-24.md`
+- `docs/reviews/archive/CVF_W4_OPERATIONAL_BENCHMARK_SCORECARD_COMPLETION_2026-05-24.md`
+- `docs/reviews/archive/CVF_W5_PROVIDER_METHOD_FALLBACK_NORMALIZATION_COMPLETION_2026-05-24.md`
+- `docs/reviews/archive/CVF_W6_NONCODER_ARTIFACT_EXPORT_HARDENING_COMPLETION_2026-05-24.md`
 - `docs/reviews/CVF_C7A_PRODUCT_SKILL_PACK_TOP10_COMPLETION_2026-05-25.md`
 - `docs/reviews/CVF_C8_PRODUCT_SKILL_PACK_SELECTION_READOUT_COMPLETION_2026-05-25.md`
 
@@ -90,7 +90,7 @@ LHW scope-rejection rule:
 ## Knowledge Absorption Blind-Spot Control Block
 
 - Standard read:
-  `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`
+  `docs/reference/archive/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`
 - Source inventory:
   - CVF 16.5 family inventory from WC-3
   - CVF ADD family inventory from WC-3
@@ -181,15 +181,15 @@ LHW scope-rejection rule:
 
 | Absorbed slice | Primary legacy roots | CVF owner surface | Evidence |
 | --- | --- | --- | --- |
-| Workflow state-machine projection | CVF Edit, Human System Harness, Agent Harnesses | `cvf-web` Product Brief workflow projection | `docs/reviews/CVF_W1_WORKFLOW_STATE_MACHINE_ENFORCEMENT_COMPLETION_2026-05-24.md` |
-| Memory event hooks/context package metadata | `agentmemory`, `tolaria`, Workflow GoClaw | LPF memory event hooks | `docs/reviews/CVF_W2_MEMORY_EVENT_HOOKS_CONTEXT_PACKAGER_COMPLETION_2026-05-24.md` |
-| Tool/MCP/database planned-action taxonomy | CLI-Anything, OpenAgentd, pancake-pos-mcp, gridex | governance/contracts | `docs/reviews/CVF_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_COMPLETION_2026-05-24.md` |
-| Operational benchmark scorecard | `abtop`, CVF Edit audit/failure simulation, AI-first vs Human-first | Governance CLI | `docs/reviews/CVF_W4_OPERATIONAL_BENCHMARK_SCORECARD_COMPLETION_2026-05-24.md` |
-| Provider method/fallback normalization | freellmapi, free Claude Code, openrouter-cli | Model Gateway | `docs/reviews/CVF_W5_PROVIDER_METHOD_FALLBACK_NORMALIZATION_COMPLETION_2026-05-24.md` |
-| Artifact verification/export hardening | md2html, CVF Edit, Human System Harness | cvf-web DeliverablePack | `docs/reviews/CVF_W6_NONCODER_ARTIFACT_EXPORT_HARDENING_COMPLETION_2026-05-24.md` |
+| Workflow state-machine projection | CVF Edit, Human System Harness, Agent Harnesses | `cvf-web` Product Brief workflow projection | `docs/reviews/archive/CVF_W1_WORKFLOW_STATE_MACHINE_ENFORCEMENT_COMPLETION_2026-05-24.md` |
+| Memory event hooks/context package metadata | `agentmemory`, `tolaria`, Workflow GoClaw | LPF memory event hooks | `docs/reviews/archive/CVF_W2_MEMORY_EVENT_HOOKS_CONTEXT_PACKAGER_COMPLETION_2026-05-24.md` |
+| Tool/MCP/database planned-action taxonomy | CLI-Anything, OpenAgentd, pancake-pos-mcp, gridex | governance/contracts | `docs/reviews/archive/CVF_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_COMPLETION_2026-05-24.md` |
+| Operational benchmark scorecard | `abtop`, CVF Edit audit/failure simulation, AI-first vs Human-first | Governance CLI | `docs/reviews/archive/CVF_W4_OPERATIONAL_BENCHMARK_SCORECARD_COMPLETION_2026-05-24.md` |
+| Provider method/fallback normalization | freellmapi, free Claude Code, openrouter-cli | Model Gateway | `docs/reviews/archive/CVF_W5_PROVIDER_METHOD_FALLBACK_NORMALIZATION_COMPLETION_2026-05-24.md` |
+| Artifact verification/export hardening | md2html, CVF Edit, Human System Harness | cvf-web DeliverablePack | `docs/reviews/archive/CVF_W6_NONCODER_ARTIFACT_EXPORT_HARDENING_COMPLETION_2026-05-24.md` |
 | Product skill pack top-10 inventory | Review CVF, Human System Harness, existing governed skill packs | certified skill pack registry | `docs/reviews/CVF_C7A_PRODUCT_SKILL_PACK_TOP10_COMPLETION_2026-05-25.md` |
 | Product skill pack selection readout | Review CVF, C7A inventory, Governance CLI runtime plans | Governance CLI `cvf skill select` | `docs/reviews/CVF_C8_PRODUCT_SKILL_PACK_SELECTION_READOUT_COMPLETION_2026-05-25.md` |
-| Graph knowledge baseline | code-review-graph, tolaria, cortex-hub | AIF Graph Knowledge / PBR-04 SQLite | `docs/reviews/CVF_AIF_B_GRAPH_KNOWLEDGE_PHASE1_COMPLETION_2026-05-24.md`, `docs/reviews/CVF_PBR04_GRAPH_SQLITE_PERSIST_COMPLETION_2026-05-24.md` |
+| Graph knowledge baseline | code-review-graph, tolaria, cortex-hub | AIF Graph Knowledge / PBR-04 SQLite | `docs/reviews/archive/CVF_AIF_B_GRAPH_KNOWLEDGE_PHASE1_COMPLETION_2026-05-24.md`, `docs/reviews/archive/CVF_PBR04_GRAPH_SQLITE_PERSIST_COMPLETION_2026-05-24.md` |
 
 ## Remaining High-Value Absorption Queue
 

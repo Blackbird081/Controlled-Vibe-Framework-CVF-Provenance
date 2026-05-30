@@ -86,7 +86,7 @@ this block before implementation:
 
 ```text
 Knowledge Absorption Blind-Spot Control Block
-- Standard read: docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md
+- Standard read: docs/reference/archive/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md
 - Source inventory:
   - <root/family + file count>
 - Prior absorption evidence resolved:
@@ -192,7 +192,7 @@ but the checklist is the authoritative closure gate.
   and any relevant `.private_reference/legacy/` source folders before the
   candidate can be treated as complete
 - knowledge-absorption packets must follow
-  `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`
+  `docs/reference/archive/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`
   and must include the Knowledge Absorption Blind-Spot Control Block before any
   implementation begins
 
@@ -212,6 +212,6 @@ The same packet may be summarized in multiple places, but there should be one ob
 - `governance/toolkit/05_OPERATION/CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD.md` (GC-046: Evidence Trace Block requirement for absorption review chains)
 - `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md#GC-018`
 - `docs/reference/archive/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
-- `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`
+- `docs/reference/archive/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`
 - `governance/compat/check_depth_audit_continuation_compat.py`
 - `docs/roadmaps/CVF_SYSTEM_UNIFICATION_REMEDIATION_ROADMAP_2026-03-19.md`

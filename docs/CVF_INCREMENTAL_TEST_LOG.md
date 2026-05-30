@@ -75,11 +75,11 @@ Template:
 ## [2026-05-24] Batch: R2/R3 Durable Memory Route And Step 0 Setup
 - Change reference:
   - Roadmap:
-    `docs/roadmaps/CVF_R1_R2_P2_POST_M1_GAP_CLOSURE_ROADMAP_2026-05-24.md`
+    `docs/roadmaps/archive/CVF_R1_R2_P2_POST_M1_GAP_CLOSURE_ROADMAP_2026-05-24.md`
   - R2 completion:
-    `docs/reviews/CVF_R2_EXECUTE_ROUTE_DURABLE_MEMORY_WIRING_COMPLETION_2026-05-24.md`
+    `docs/reviews/archive/CVF_R2_EXECUTE_ROUTE_DURABLE_MEMORY_WIRING_COMPLETION_2026-05-24.md`
   - R3 completion:
-    `docs/reviews/CVF_R3_NONCODER_STEP0_API_KEY_SETUP_COMPLETION_2026-05-24.md`
+    `docs/reviews/archive/CVF_R3_NONCODER_STEP0_API_KEY_SETUP_COMPLETION_2026-05-24.md`
 - Impacted scope:
   - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts`
     durable-memory read path.
@@ -113,7 +113,7 @@ Template:
 
 ## [2026-05-24] Batch: Post-AIF Operationalization And Release Gate Selector Hardening
 - Change reference:
-  - Working tree for `docs/roadmaps/CVF_POST_AIF_OPERATIONALIZATION_ROADMAP_2026-05-24.md`.
+  - Working tree for `docs/roadmaps/archive/CVF_POST_AIF_OPERATIONALIZATION_ROADMAP_2026-05-24.md`.
 - Impacted scope:
   - `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION` AIF operational context preview.
   - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/admin-rbac.spec.ts`.
@@ -135,13 +135,13 @@ Template:
 ## [2026-05-24] Batch: M1/M2/P1 Next-Value Roadmap Closure
 - Change reference:
   - Roadmap:
-    `docs/roadmaps/CVF_M1_M2_P1_NEXT_VALUE_ROADMAP_2026-05-24.md`
+    `docs/roadmaps/archive/CVF_M1_M2_P1_NEXT_VALUE_ROADMAP_2026-05-24.md`
   - M2 completion:
-    `docs/reviews/CVF_M2_D06_MEMORY_TIER_FREEZE_RELEASE_COMPLETION_2026-05-24.md`
+    `docs/reviews/archive/CVF_M2_D06_MEMORY_TIER_FREEZE_RELEASE_COMPLETION_2026-05-24.md`
   - M1 completion:
-    `docs/reviews/CVF_M1_DURABLE_CROSS_SESSION_MEMORY_COMPLETION_2026-05-24.md`
+    `docs/reviews/archive/CVF_M1_DURABLE_CROSS_SESSION_MEMORY_COMPLETION_2026-05-24.md`
   - P1 completion:
-    `docs/reviews/CVF_P1_PRODUCTION_READINESS_SMALL_TEAM_COMPLETION_2026-05-24.md`
+    `docs/reviews/archive/CVF_P1_PRODUCTION_READINESS_SMALL_TEAM_COMPLETION_2026-05-24.md`
 - Impacted scope:
   - `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION` durable memory store and runtime
     memory hierarchy.
@@ -2224,13 +2224,13 @@ Utility and guard:
 
 - Change reference:
   - C1 GC-018:
-    `docs/baselines/CVF_GC018_C1_PUBLIC_AIF_PREVIEW_RUNTIME_AVAILABILITY_2026-05-24.md`
+    `docs/baselines/archive/CVF_GC018_C1_PUBLIC_AIF_PREVIEW_RUNTIME_AVAILABILITY_2026-05-24.md`
   - C1 work order:
-    `docs/work_orders/CVF_WO_C1_PUBLIC_AIF_PREVIEW_RUNTIME_AVAILABILITY_2026-05-24.md`
+    `docs/work_orders/archive/CVF_WO_C1_PUBLIC_AIF_PREVIEW_RUNTIME_AVAILABILITY_2026-05-24.md`
   - C1 completion review:
-    `docs/reviews/CVF_C1_PUBLIC_AIF_PREVIEW_RUNTIME_AVAILABILITY_COMPLETION_2026-05-24.md`
+    `docs/reviews/archive/CVF_C1_PUBLIC_AIF_PREVIEW_RUNTIME_AVAILABILITY_COMPLETION_2026-05-24.md`
   - Claim-graduation roadmap:
-    `docs/roadmaps/CVF_POST_AIF_CLAIM_GRADUATION_ROADMAP_2026-05-24.md`
+    `docs/roadmaps/archive/CVF_POST_AIF_CLAIM_GRADUATION_ROADMAP_2026-05-24.md`
 - Public-sync:
   - Verified public remote:
     `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`.
@@ -2257,13 +2257,13 @@ Utility and guard:
 
 - Change reference:
   - C2-C5 GC-018:
-    `docs/baselines/CVF_GC018_C2_C5_POST_AIF_CLAIM_GRADUATION_2026-05-24.md`
+    `docs/baselines/archive/CVF_GC018_C2_C5_POST_AIF_CLAIM_GRADUATION_2026-05-24.md`
   - C2-C5 work order:
-    `docs/work_orders/CVF_WO_C2_C5_POST_AIF_CLAIM_GRADUATION_2026-05-24.md`
+    `docs/work_orders/archive/CVF_WO_C2_C5_POST_AIF_CLAIM_GRADUATION_2026-05-24.md`
   - C2-C5 completion review:
-    `docs/reviews/CVF_C2_C5_POST_AIF_CLAIM_GRADUATION_COMPLETION_2026-05-24.md`
+    `docs/reviews/archive/CVF_C2_C5_POST_AIF_CLAIM_GRADUATION_COMPLETION_2026-05-24.md`
   - Evidence JSON:
-    `docs/reviews/CVF_C2_C5_POST_AIF_CLAIM_GRADUATION_EVIDENCE_2026-05-24.json`
+    `docs/reviews/archive/CVF_C2_C5_POST_AIF_CLAIM_GRADUATION_EVIDENCE_2026-05-24.json`
 - Tests/proofs executed:
   - `npm run test:run -- src/lib/aif-memory-reinjection.test.ts src/app/api/execute/route.knowledge.test.ts`
     in `cvf-web` -> PASS, 2 files / 12 tests.
