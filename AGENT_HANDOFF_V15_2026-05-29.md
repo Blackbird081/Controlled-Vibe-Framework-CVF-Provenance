@@ -17,16 +17,16 @@ Active private provenance continuity for the current CVF repository. Use only
 with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
-Current HEAD: `0a84a524` (governance repo push — post WCE wave closure).
+Current HEAD: `94f8814c` (chore: archive 129 stale docs — hygiene maintenance).
 
 ## Latest Work / Changes
 
-**Delta D2+D3 work orders READY** (2026-05-29). D2: `cvf_submit_review_receipt` +
-`cvf_advance_pipeline_stage` MCP write tools — security boundary doc required
-before code (`docs/reference/CVF_DELTA_D2_MCP_WRITE_TOOLS_SECURITY_BOUNDARY_2026-05-29.md`).
-D3: `cvf_invoke_cli_stage` MCP→CLI bridge — D2 CLOSED_PASS + sandbox spec
-(`docs/reference/CVF_DELTA_D3_SANDBOX_BOUNDARY_SPEC_2026-05-29.md`) required.
-Contracts: `cvf.mcpWriteSubmitTools.delta.d2.v1` / `cvf.mcpCliBridge.delta.d3.v1`.
+**Delta D2+D3 CLOSED_PASS_BOUNDED** (2026-05-29). D2: `cvf_submit_review_receipt`
++ `cvf_advance_pipeline_stage` — 22/22 tests PASS; security boundary doc approved.
+D3: `cvf_invoke_cli_stage` wiring `runCli()` (whitelist: evaluate/status/help)
+— 18/18 tests PASS; sandbox spec approved; risk R3→R2 (in-process, not shell).
+Full MCP suite 526/526 PASS. Delta wave D1+D2+D3: ALL CLOSED_PASS_BOUNDED.
+MCP-controls-CLI architecture from CVF 28.05 now proven locally.
 
 **WCE W1+W3** CLOSED_PASS_BOUNDED (2026-05-29). W1: `cvf workflow` chain command
 (`cvf.workflowChainExecution.wce.w1.v1`); `workflow.client.ts` + command registry;

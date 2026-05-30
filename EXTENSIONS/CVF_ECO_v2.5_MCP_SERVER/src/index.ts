@@ -34,6 +34,7 @@ import {
   getSessionMemory,
   getSessionState,
 } from './startup/startup-state.js';
+import { runCli } from './cli/cli.js';
 
 // ─── Singleton Guard Engine ───────────────────────────────────────────
 
@@ -528,6 +529,235 @@ server.tool(
     const response = getMcpToolAuditSnapshot(args.limit);
     return {
       content: [{ type: 'text' as const, text: JSON.stringify(response, null, 2) }],
+    };
+  })
+);
+
+// ─── D2: Write-Path Tools ─────────────────────────────────────────────
+// Contract: cvf.mcpWriteSubmitTools.delta.d2.v1
+// Security boundary: docs/reference/CVF_DELTA_D2_MCP_WRITE_TOOLS_SECURITY_BOUNDARY_2026-05-29.md
+
+const D2_CONTRACT = 'cvf.mcpWriteSubmitTools.delta.d2.v1' as const;
+
+const D2_ALLOWED_SUBMIT_ROLES = new Set(['REVIEWER', 'OPERATOR']);
+const D2_ALLOWED_ADVANCE_ROLES = new Set(['REVIEWER', 'OPERATOR', 'AI_AGENT']);
+const D2_VALID_STAGES = new Set(['intake_gate', 'orchestrator', 'worker', 'reviewer', 'closure_gate']);
+const D2_STAGE_ORDER: Record<string, string> = {
+  intake_gate: 'orchestrator',
+  orchestrator: 'worker',
+  worker: 'reviewer',
+  reviewer: 'closure_gate',
+  closure_gate: 'closure_gate',
+};
+
+// ─── Tool D2-A: cvf_submit_review_receipt ─────────────────────────────
+
+server.tool(
+  'cvf_submit_review_receipt',
+  'Submit a structured CVF review receipt through the governance control plane. Validates schema, writes audit record, and returns confirmation. Allowed roles: REVIEWER, OPERATOR.',
+  {
+    receiptId: z.string().min(1).max(128).describe('Caller-generated receipt ID'),
+    agentRole: z.string().describe('Caller role: REVIEWER or OPERATOR'),
+    templateId: z.string().min(1).max(128).describe('Governed template this receipt covers'),
+    decision: z.enum(['APPROVE', 'REJECT', 'NEEDS_REVISION']).describe('Review decision'),
+    findings: z.array(z.string().max(1000)).describe('List of findings (may be empty)'),
+    evidenceRefs: z.array(z.string().max(256)).describe('Referenced receipt IDs or artifact paths'),
+    claimBoundary: z.string().min(10).describe('What this review covers (min 10 chars)'),
+    qualityScore: z.number().min(0).max(1).optional().describe('Quality score 0.0–1.0'),
+  },
+  async (args) => withMcpToolAudit('cvf_submit_review_receipt', args as Record<string, unknown>, async () => {
+    const role = (args.agentRole || '').toUpperCase();
+
+    if (!D2_ALLOWED_SUBMIT_ROLES.has(role)) {
+      return {
+        content: [{ type: 'text' as const, text: JSON.stringify({
+          contractVersion: D2_CONTRACT,
+          tool: 'cvf_submit_review_receipt',
+          accepted: false,
+          receiptId: args.receiptId,
+          auditRecordId: `d2-reject-${Date.now()}`,
+          decision: args.decision,
+          rejectionReason: `role_not_authorized: role "${args.agentRole}" is not in allowed roles [REVIEWER, OPERATOR]`,
+          writtenAt: new Date().toISOString(),
+        }, null, 2) }],
+      };
+    }
+
+    const auditRecordId = `d2-rcpt-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
+    return {
+      content: [{ type: 'text' as const, text: JSON.stringify({
+        contractVersion: D2_CONTRACT,
+        tool: 'cvf_submit_review_receipt',
+        accepted: true,
+        receiptId: args.receiptId,
+        auditRecordId,
+        decision: args.decision,
+        writtenAt: new Date().toISOString(),
+      }, null, 2) }],
+    };
+  })
+);
+
+// ─── Tool D2-B: cvf_advance_pipeline_stage ────────────────────────────
+
+server.tool(
+  'cvf_advance_pipeline_stage',
+  'Advance the CVF pipeline to the next stage. Validates stage transition rules, writes audit record, and returns updated state. Allowed roles: REVIEWER, OPERATOR, AI_AGENT.',
+  {
+    currentStage: z.string().describe('Current pipeline stage: intake_gate, orchestrator, worker, reviewer, or closure_gate'),
+    stageResult: z.enum(['completed', 'failed', 'needs_review', 'escalated']).describe('Result of the current stage'),
+    agentRole: z.string().describe('Caller role: REVIEWER, OPERATOR, or AI_AGENT'),
+    receiptRef: z.string().max(256).optional().describe('Receipt ID proving prior step completed'),
+    notes: z.string().max(2000).optional().describe('Optional notes for the audit record'),
+  },
+  async (args) => withMcpToolAudit('cvf_advance_pipeline_stage', args as Record<string, unknown>, async () => {
+    const role = (args.agentRole || '').toUpperCase();
+    const stage = args.currentStage;
+
+    if (!D2_ALLOWED_ADVANCE_ROLES.has(role)) {
+      return {
+        content: [{ type: 'text' as const, text: JSON.stringify({
+          contractVersion: D2_CONTRACT,
+          tool: 'cvf_advance_pipeline_stage',
+          previousStage: stage,
+          nextStage: stage,
+          advanced: false,
+          humanInterventionRequired: false,
+          rejectionReason: `role_not_authorized: role "${args.agentRole}" is not in allowed roles [REVIEWER, OPERATOR, AI_AGENT]`,
+          auditRecordId: `d2-reject-${Date.now()}`,
+          advancedAt: new Date().toISOString(),
+        }, null, 2) }],
+      };
+    }
+
+    if (!D2_VALID_STAGES.has(stage)) {
+      return {
+        content: [{ type: 'text' as const, text: JSON.stringify({
+          contractVersion: D2_CONTRACT,
+          tool: 'cvf_advance_pipeline_stage',
+          previousStage: stage,
+          nextStage: stage,
+          advanced: false,
+          humanInterventionRequired: false,
+          rejectionReason: `validation_error: "${stage}" is not a valid stage`,
+          auditRecordId: `d2-reject-${Date.now()}`,
+          advancedAt: new Date().toISOString(),
+        }, null, 2) }],
+      };
+    }
+
+    const auditRecordId = `d2-adv-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
+    const failed = args.stageResult === 'failed' || args.stageResult === 'escalated';
+    const humanRequired = failed;
+    const nextStage = failed ? stage : (D2_STAGE_ORDER[stage] ?? stage);
+    const advanced = !failed && nextStage !== stage;
+
+    return {
+      content: [{ type: 'text' as const, text: JSON.stringify({
+        contractVersion: D2_CONTRACT,
+        tool: 'cvf_advance_pipeline_stage',
+        previousStage: stage,
+        nextStage,
+        advanced,
+        humanInterventionRequired: humanRequired,
+        auditRecordId,
+        advancedAt: new Date().toISOString(),
+      }, null, 2) }],
+    };
+  })
+);
+
+// ─── D3: MCP → CLI Bridge ─────────────────────────────────────────────
+// Contract: cvf.mcpCliBridge.delta.d3.v1
+// Sandbox boundary: docs/reference/CVF_DELTA_D3_SANDBOX_BOUNDARY_SPEC_2026-05-29.md
+
+const D3_CONTRACT = 'cvf.mcpCliBridge.delta.d3.v1' as const;
+const D3_ALLOWED_ROLES = new Set(['OPERATOR', 'ORCHESTRATOR', 'AI_AGENT']);
+const D3_COMMAND_WHITELIST = new Set(['evaluate', 'status', 'help']);
+
+// ─── Tool D3: cvf_invoke_cli_stage ────────────────────────────────────
+
+server.tool(
+  'cvf_invoke_cli_stage',
+  'Invoke a governed CVF CLI stage through the MCP surface. Executes runCli() with whitelisted commands only. Allowed commands: evaluate, status, help. Allowed roles: OPERATOR, ORCHESTRATOR, AI_AGENT.',
+  {
+    command: z.string().describe('CLI command to invoke: evaluate, status, or help'),
+    agentRole: z.string().describe('Caller role: OPERATOR, ORCHESTRATOR, or AI_AGENT'),
+    flags: z.record(z.string(), z.string()).optional().describe('Optional CLI flags as key-value pairs'),
+    receiptRef: z.string().max(256).optional().describe('Receipt ID from prior D2 stage submission'),
+  },
+  async (args) => withMcpToolAudit('cvf_invoke_cli_stage', args as Record<string, unknown>, async () => {
+    const role = (args.agentRole || '').toUpperCase();
+    const command = (args.command || '').toLowerCase().trim();
+
+    if (!D3_ALLOWED_ROLES.has(role)) {
+      return {
+        content: [{ type: 'text' as const, text: JSON.stringify({
+          contractVersion: D3_CONTRACT,
+          tool: 'cvf_invoke_cli_stage',
+          accepted: false,
+          command,
+          auditRecordId: `d3-reject-${Date.now()}`,
+          rejectionReason: `role_not_authorized: role "${args.agentRole}" is not in allowed roles [OPERATOR, ORCHESTRATOR, AI_AGENT]`,
+          invokedAt: new Date().toISOString(),
+        }, null, 2) }],
+      };
+    }
+
+    if (!D3_COMMAND_WHITELIST.has(command)) {
+      return {
+        content: [{ type: 'text' as const, text: JSON.stringify({
+          contractVersion: D3_CONTRACT,
+          tool: 'cvf_invoke_cli_stage',
+          accepted: false,
+          command,
+          auditRecordId: `d3-reject-${Date.now()}`,
+          rejectionReason: `command_not_whitelisted: "${command}" is not in allowed commands [evaluate, status, help]`,
+          invokedAt: new Date().toISOString(),
+        }, null, 2) }],
+      };
+    }
+
+    const auditRecordId = `d3-cli-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
+
+    // Build argv for runCli() from command + flags
+    const argv: string[] = [command];
+    if (args.flags) {
+      for (const [key, value] of Object.entries(args.flags)) {
+        argv.push(`--${key}`, String(value));
+      }
+    }
+
+    let cliResult: { success: boolean; command: string; output: Record<string, unknown>; exitCode: number };
+    try {
+      cliResult = runCli(argv);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      return {
+        content: [{ type: 'text' as const, text: JSON.stringify({
+          contractVersion: D3_CONTRACT,
+          tool: 'cvf_invoke_cli_stage',
+          accepted: false,
+          command,
+          auditRecordId,
+          rejectionReason: `cli_execution_error: ${message}`,
+          invokedAt: new Date().toISOString(),
+        }, null, 2) }],
+      };
+    }
+
+    return {
+      content: [{ type: 'text' as const, text: JSON.stringify({
+        contractVersion: D3_CONTRACT,
+        tool: 'cvf_invoke_cli_stage',
+        accepted: true,
+        command,
+        auditRecordId,
+        cliSuccess: cliResult.success,
+        exitCode: cliResult.exitCode,
+        output: cliResult.output,
+        invokedAt: new Date().toISOString(),
+      }, null, 2) }],
     };
   })
 );
