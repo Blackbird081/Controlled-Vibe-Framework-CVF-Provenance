@@ -927,3 +927,15 @@ export type {
   A6RollbackInput,
   AdaptationPolicyInput,
 } from "./adaptation-policy-engine";
+// TM1 Truth Model Calibration (LHW17 T3 Step 6)
+export {
+  TRUTH_MODEL_CALIBRATION_VERSION,
+  runCalibrationSession,
+} from "./truth-model-calibration";
+export type {
+  CalibrationDisposition,
+  CalibrationPhase,
+  CalibrationSessionInput,
+  CalibrationSessionResult,
+  TruthModelCalibrationDependencies,
+} from "./truth-model-calibration";
