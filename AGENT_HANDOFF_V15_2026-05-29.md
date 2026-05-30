@@ -17,7 +17,7 @@ Active private provenance continuity for the current CVF repository. Use only
 with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
-Current closure anchor: `676544ee` (feat(lhw17): LHW17 CVF_Important T1/T2/T3 ALL CLOSED_PASS_BOUNDED). Parent governed closure anchor: `3ba5797b` (fix(governance): require public export disposition). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
+Current closure anchor: `8d1df89e` (@ feat(lhw18): LHW18 CVF_Edit T1/T2/T3 ALL CLOSED_PASS_BOUNDED). Parent governed closure anchor: `676544ee` (feat(lhw17): LHW17 CVF_Important T1/T2/T3 ALL CLOSED_PASS_BOUNDED). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -76,11 +76,23 @@ Recovery (`Human System Harness`). Handoff rotated from V14 to V15.
 
 ## Active Boundary
 
-Current mode: `lhw18_cvf_edit_absorption_all_closed_pass_bounded`.
+Current mode: `lhw19_cvf_restructure_absorption_all_closed_pass_bounded`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
-## LHW18 Wave Closure (Latest)
+## LHW19 Wave Closure (Latest)
+
+LHW19 CVF_Restructure Legacy Absorption Wave CLOSED_PASS_BOUNDED (T1+T2+T3, doc-only).
+Source: `.private_reference/legacy/CVF_Restructure/`.
+
+- T1 Integration Architecture: `cvf.integrationArchitectureControlPointsAdvisory.lhw19.t1.v1` — 4 integration points + 5 control points (CP1-CP5) mapped; adapter layer advisory; CP2 partial.
+- T2 Event Model: `cvf.eventModelGovernanceAdvisory.lhw19.t2.v1` — 5 events mapped to CVF receipt lifecycle; event bus rejected from wave.
+- T3 Strategic Compass: `cvf.strategicCompassAdvisory.lhw19.t3.v1` — canonical mission + 3 focuses + anti-focus + Phase 1-4 timeline; Phase 2/3 locked as FUTURE.
+
+Invariants: `runtimeExecutionAuthorized=false`. R0-R3 preserved.
+GC-018: `docs/baselines/CVF_GC018_LHW19_CVF_RESTRUCTURE_ABSORPTION_WAVE_2026-05-30.md`.
+
+## LHW18 Wave Closure (Prior)
 
 LHW18 CVF_Edit Legacy Absorption Wave CLOSED_PASS_BOUNDED (T1+T2+T3, doc-only).
 Source: `.private_reference/legacy/CVF Edit/`.
