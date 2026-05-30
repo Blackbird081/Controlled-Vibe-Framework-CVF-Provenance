@@ -137,6 +137,17 @@ For each PM tranche before closure:
 - [x] PM-2: live json_mode receipt from DeepSeek; structured JSON output confirmed
 - [x] PM-3: live vision receipt from Alibaba qwen-vl-plus; image description confirmed
 
+## Public Export Disposition
+
+Disposition: `DEFERRED_PRIVATE_ONLY`
+Reason: public-sync currently lacks the matching PM wave proof artifacts and
+bounded provider-method evidence records. No public catalog claim is made in
+this provenance closure.
+Public-sync verification: not exported in this batch; public-sync update
+requires a separate public-safe export work order.
+Next action: open a public-sync batch before adding PM-1/PM-2/PM-3 provider
+method proof claims to the public README or technical catalog.
+
 ## Claim Boundary
 
 PM proves individual provider method capabilities. Does not claim production

@@ -121,6 +121,12 @@ def _read_rel(path: str) -> str:
     return full.read_text(encoding="utf-8")
 
 
+def _read_rel_at(ref: str, path: str) -> str:
+    normalized = path.replace("\\", "/")
+    code, out, _ = _run_git(["show", f"{ref}:{normalized}"])
+    return out if code == 0 else ""
+
+
 def _exists_rel(path: str) -> bool:
     normalized = path.strip().strip("`").replace("\\", "/").rstrip(".,;:")
     return bool(normalized) and (REPO_ROOT / normalized).exists()
@@ -790,15 +796,24 @@ def _validate_single_work_order_scope_range(changed_files: list[str]) -> list[di
     ]
 
 
-def _validate_lhw_wave_closure_range(changed_files: list[str]) -> list[dict[str, Any]]:
+def _validate_lhw_wave_closure_range(
+    changed_files: list[str],
+    base_ref: str | None = None,
+) -> list[dict[str, Any]]:
     normalized_files = sorted(path.replace("\\", "/") for path in changed_files)
     violations: list[dict[str, Any]] = []
     for path in normalized_files:
         if not path.startswith("docs/roadmaps/") or "/archive/" in path:
             continue
         text = _read_rel(path)
-        if not text or not _is_closed_status(_extract_status(text)) or not _is_connector_wave(path, text):
+        current_status = _extract_status(text)
+        if not text or not _is_closed_status(current_status) or not _is_connector_wave(path, text):
             continue
+        if base_ref:
+            prior_text = _read_rel_at(base_ref, path)
+            prior_status = _extract_status(prior_text) if prior_text else ""
+            if prior_text and _is_closed_status(prior_status):
+                continue
         wave_id = _extract_wave_id(path, text)
         if wave_id is None:
             continue
@@ -857,7 +872,7 @@ def _validate_path(path: str) -> list[str]:
     return []
 
 
-def _classify(changed_files: list[str]) -> dict[str, Any]:
+def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str, Any]:
     targets = sorted(path.replace("\\", "/") for path in changed_files if _is_target(path))
     violations = []
     for path in targets:
@@ -865,7 +880,7 @@ def _classify(changed_files: list[str]) -> dict[str, Any]:
         if issues:
             violations.append({"path": path, "issues": issues})
     violations.extend(_validate_single_work_order_scope_range(changed_files))
-    violations.extend(_validate_lhw_wave_closure_range(changed_files))
+    violations.extend(_validate_lhw_wave_closure_range(changed_files, base_ref=base_ref))
 
     required_markers = {
         STANDARD_PATH: (
@@ -940,7 +955,7 @@ def _print_report(report: dict[str, Any], base: str, head: str, base_source: str
 def _run_check(base: str | None, head: str | None) -> tuple[dict[str, Any], str, str, str]:
     resolved_base, resolved_head, base_source = _resolve_range(base, head)
     changed = _get_changed(resolved_base, resolved_head)
-    report = _classify(sorted(changed))
+    report = _classify(sorted(changed), base_ref=resolved_base)
     return report, resolved_base, resolved_head, base_source
 
 

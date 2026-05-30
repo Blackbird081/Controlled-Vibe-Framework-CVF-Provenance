@@ -87,6 +87,16 @@ D3 tests: 18/18 PASS
 Full MCP suite: 526/526 PASS (19 test files, 0 regressions)
 ```
 
+### Test Depth Classification
+
+| Tier | Disposition |
+| --- | --- |
+| T1 | Unit/contract tests cover command whitelist, role whitelist, normalization, output structure, and secret non-exposure. |
+| T2 | Integration-style in-process `runCli()` coverage verifies MCP-to-CLI bridge behavior without shell spawning. |
+| T3 | Full MCP suite regression confirms no broader MCP server regression. |
+| T4 | N/A with reason: no live provider, hosted endpoint, or browser journey in D3 scope. |
+| Meaningful | Meaningful for bounded local MCP/CLI bridge closure because the test set exercises the security boundary and integration path claimed by D3. |
+
 ### Sandbox Constraints Verified
 
 - Command whitelist: `evaluate`, `status`, `help` only ✓
@@ -144,6 +154,17 @@ Risk classification updated for in-process vs shell-spawning bridge.
 ## Decision / Recommendation / Disposition
 
 CLOSED_PASS_BOUNDED. Delta D3 MCP→CLI bridge is complete. Delta wave fully closed.
+
+## Public Export Disposition
+
+Disposition: `DEFERRED_PRIVATE_ONLY`
+Reason: public-sync currently lacks the matching Delta D2/D3 MCP source,
+tests, security boundary, sandbox spec, and completion evidence. No public
+catalog claim is made in this provenance closure.
+Public-sync verification: not exported in this batch; public-sync update
+requires a separate public-safe export work order.
+Next action: open a public-sync batch before adding Delta CLI/MCP wire-in
+claims to the public README or technical catalog.
 
 ## Claim Boundary
 

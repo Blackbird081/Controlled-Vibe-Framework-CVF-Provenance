@@ -47,6 +47,7 @@ passes the following gates:
 8. Allowed-scope diff gate.
 9. Whole-wave closure range gate when closing multi-tranche connector waves.
 10. Machine-verified line-count claim gate.
+11. Public export disposition gate.
 
 If any gate is incomplete, the worker must return to Orchestrator or file a
 blocking defect. Operator silence is not a waiver.
@@ -100,6 +101,13 @@ Every claim about changed files, untouched files, public status, runtime/code
 impact, live proof, provider behavior, receipt envelope behavior, hosted
 readiness, production readiness, or operator acceptance must be backed by a
 command, file path, receipt, or explicit `N/A with reason`.
+
+Closed roadmaps, final wave completion packets, and public catalog claims must
+include `## Public Export Disposition` with exactly one of `EXPORTED`,
+`DEFERRED_PRIVATE_ONLY`, or `BLOCKED_MISSING_PUBLIC_ARTIFACTS`. `EXPORTED`
+requires public-sync remote, commit, and artifact path evidence. A private
+provenance closure is not a public catalog update unless the public-sync clone
+contains the matching artifacts and catalog change.
 
 File-change claims must be based on `git diff --name-status`, `git status
 --short`, or committed diff output. Memory-based file-change claims are not
@@ -201,6 +209,11 @@ A final-tranche-only range is not valid evidence for closing the whole wave,
 because it cannot prove T1/T2/T3 artifacts, scope boundaries, and continuity
 claims together.
 
+This full-wave range requirement applies when the checked range newly closes a
+connector roadmap. Post-closure governance-maintenance edits to an already
+closed connector roadmap may be validated as ordinary changed governed
+artifacts when the base ref already contains the closed status.
+
 ## Exceptions
 
 There are no exceptions for delegated work-order closure.
@@ -230,6 +243,10 @@ This standard is enforced by:
   roadmap closures that lack full T1/T2/T3 changed-range evidence, connector
   specs with false line-count threshold claims, and Source Verification symbol
   cells containing value assignments or type annotations.
+- `governance/compat/check_public_export_disposition.py`, which hard-fails
+  changed active roadmap closures, final wave completion packets, and public
+  catalog claims that lack a public export disposition or that claim public
+  export without public-sync evidence.
 - `governance/compat/run_agent_autorun_workflow_gate.py`, which bundles the
   mandatory phase gates for pre-dispatch, pre-implementation, pre-closure, and
   pre-push agent workflows.

@@ -144,6 +144,17 @@ python governance/compat/check_markdown_structural_completeness.py --base 0d1bdb
 
 Each connector spec must pass the dispatch quality gate before closure. No code file may appear in the diff.
 
+## Public Export Disposition
+
+Disposition: `DEFERRED_PRIVATE_ONLY`
+Reason: public-sync currently lacks the matching LHW15 private connector specs,
+completion reviews, and provenance source artifacts. No public catalog claim is
+made in this provenance closure.
+Public-sync verification: not exported in this batch; public-sync update
+requires a separate public-safe export work order.
+Next action: open a public-sync batch before adding LHW15 to the public README
+or technical catalog.
+
 ## Claim Boundary
 
 LHW15 proves documentation-only connector specs for three PARTIALLY_ABSORBED

@@ -138,6 +138,7 @@ public-release readiness claim.
 | Multi-Provider Execution Log | ENFORCED — provider/model/surface/basis/diff attribution plus Execution Attribution Block |
 | Learning Signal Intake Bridge | BOUNDED_TYPED_INTAKE — `autonomousMutationAuthorized=false` |
 | IDE Extension Multi-Provider Log | ENFORCED — session logs for mixed-provider governed work |
+| Public Export Disposition | ENFORCED — closed roadmaps/final wave packets must state `EXPORTED`, `DEFERRED_PRIVATE_ONLY`, or `BLOCKED_MISSING_PUBLIC_ARTIFACTS` |
 
 ## Next Allowed Move
 

@@ -97,6 +97,17 @@ Each connector spec must pass the dispatch quality gate before closure. No code 
 - [x] LH1 triggers closed: `gridex`, `pancake-pos-mcp`, `cortex-hub`
 - [x] Session continuity updated
 
+## Public Export Disposition
+
+Disposition: `DEFERRED_PRIVATE_ONLY`
+Reason: public-sync currently lacks the matching LHW16 private connector specs,
+completion reviews, and provenance source artifacts. No public catalog claim is
+made in this provenance closure.
+Public-sync verification: not exported in this batch; public-sync update
+requires a separate public-safe export work order.
+Next action: open a public-sync batch before adding LHW16 to the public README
+or technical catalog.
+
 ## Claim Boundary
 
 LHW16 proves documentation-only connector specs for three PARTIALLY_ABSORBED

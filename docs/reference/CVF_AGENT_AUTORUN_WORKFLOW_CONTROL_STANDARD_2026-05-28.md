@@ -41,8 +41,10 @@ Canonical sources:
 - `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
 - `docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md`
 - `docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md`
+- `docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md`
 - `docs/reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md`
 - `governance/compat/check_work_order_dispatch_quality.py`
+- `governance/compat/check_public_export_disposition.py`
 - `governance/compat/check_markdown_structural_completeness.py`
 - `governance/compat/check_docs_governance_compat.py`
 - `governance/compat/check_active_session_state.py`
@@ -222,6 +224,11 @@ Closure is blocked when:
 - a Source Verification `Verified path or symbol` cell contains a value
   assignment or type annotation such as `rawMemoryReleased: false` or
   `canReinject: boolean`.
+- a closed roadmap, final wave completion packet, or public catalog claim lacks
+  a `Public Export Disposition` of `EXPORTED`, `DEFERRED_PRIVATE_ONLY`, or
+  `BLOCKED_MISSING_PUBLIC_ARTIFACTS`;
+- an artifact claims public export without public-sync remote, commit, and
+  artifact path evidence.
 
 The closure packet must say which autorun phase was run and include the command
 result, including the base/head range. If `pre-closure` fails, the artifact
@@ -266,6 +273,7 @@ Minimum included guards:
 - `check_docs_governance_compat.py --base <baseHead> --head HEAD --enforce`
 - `check_markdown_structural_completeness.py --base <baseHead> --head HEAD --enforce`
 - `check_work_order_dispatch_quality.py --base <baseHead> --head HEAD --enforce`
+- `check_public_export_disposition.py --base <baseHead> --head HEAD --enforce`
 - `check_active_session_state.py --enforce`
 - `check_governed_file_size.py --enforce`
 
@@ -305,6 +313,7 @@ This standard does not:
 | LHW wave closure uses only the final tranche range | Re-run pre-closure from the pre-wave or first-tranche base so T1/T2/T3 are checked together. |
 | Source Verification symbol cell includes value or type syntax | Move the value/type evidence to the claimed item/source proof and leave only the bare field/path/symbol. |
 | Line-count claim is stale or handwritten | Recompute from the current file or remove the claim. |
+| Public export disposition is missing or overclaims public-sync export | Add the disposition, cite public-sync evidence, or downgrade to `DEFERRED_PRIVATE_ONLY` / `BLOCKED_MISSING_PUBLIC_ARTIFACTS`. |
 | `pre-dispatch` fails | Keep artifact in `DRAFT`, `HOLD_*`, or `BLOCKED`; return to Orchestrator. |
 | `pre-implementation` fails | Stop edits; return the blocker to Orchestrator or Reviewer. |
 | `pre-closure` fails | Do not mark closed; file a blocking finding or correction batch. |
@@ -318,6 +327,7 @@ This standard does not:
 - `docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md`
 - `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
 - `docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md`
+- `docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md`
 - `governance/compat/run_agent_autorun_workflow_gate.py`
 
 ## Claim Boundary

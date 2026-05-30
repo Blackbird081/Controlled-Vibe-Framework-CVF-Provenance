@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: ACTIVE
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -20,7 +20,7 @@ layer — specifically the "MCP điều khiển CLI" architecture described in
 Fresh GC-018:
 `docs/baselines/CVF_GC018_DELTA_CLI_MCP_WIREIN_2026-05-29.md`
 
-Dispatch status: D1 CLOSED_PASS_BOUNDED (commit 478e2de6). D2 READY_FOR_IMPLEMENTATION (operator authorized 2026-05-29; security boundary doc required before code). D3 READY_FOR_IMPLEMENTATION (operator authorized 2026-05-29; D2 CLOSED_PASS + sandbox spec required before code).
+Dispatch status: D1 CLOSED_PASS_BOUNDED (commit 478e2de6). D2 CLOSED_PASS_BOUNDED. D3 CLOSED_PASS_BOUNDED. Delta wave D1+D2+D3 is closed.
 
 ## Verified Gap
 
@@ -193,15 +193,15 @@ Gate: DEMAND_GATED (D2 must close first).
 
 | Tranche | Deliverable | Risk | Gate |
 | --- | --- | --- | --- |
-| D1 | Pipeline chain readout in `/api/execute` | R1 | None — open |
-| D2 | MCP write/submit tools | R2 | DEMAND_GATED (D1 closed + operator auth) |
-| D3 | MCP → CLI bridge + sandbox | R2/R3 | DEMAND_GATED (D2 closed + sandbox spec + operator auth) |
+| D1 | Pipeline chain readout in `/api/execute` | R1 | CLOSED_PASS_BOUNDED |
+| D2 | MCP write/submit tools | R2 | CLOSED_PASS_BOUNDED |
+| D3 | MCP -> CLI bridge + sandbox | R2 | CLOSED_PASS_BOUNDED |
 
 ## Acceptance Criteria
 
-- [ ] D1: `pipelineChainReadout` in `/api/execute` response; `route.ts` net-zero lines; tests PASS; live proof receipt
-- [ ] D2: `cvf_submit_review_receipt` + `cvf_advance_pipeline_stage` MCP tools; security review PASS; MCP tests PASS
-- [ ] D3: sandbox boundary spec approved; `cvf_invoke_cli_stage` implemented; integration flow E2E test PASS
+- [x] D1: `pipelineChainReadout` in `/api/execute` response; `route.ts` net-zero lines; tests PASS; live proof receipt
+- [x] D2: `cvf_submit_review_receipt` + `cvf_advance_pipeline_stage` MCP tools; security review PASS; MCP tests PASS
+- [x] D3: sandbox boundary spec approved; `cvf_invoke_cli_stage` implemented; integration flow E2E test PASS
 
 ## Verification
 
@@ -211,9 +211,19 @@ python governance/compat/check_markdown_structural_completeness.py --base 8b1f59
 python governance/compat/check_docs_governance_compat.py --base 8b1f5992 --head <delta-commit> --enforce
 ```
 
+## Public Export Disposition
+
+Disposition: `DEFERRED_PRIVATE_ONLY`
+Reason: public-sync currently lacks the matching Delta D2/D3 MCP source,
+tests, security boundary, sandbox spec, and completion evidence. No public
+catalog claim is made in this provenance closure.
+Public-sync verification: not exported in this batch; public-sync update
+requires a separate public-safe export work order.
+Next action: open a public-sync batch before adding Delta CLI/MCP wire-in
+claims to the public README or technical catalog.
+
 ## Claim Boundary
 
-This roadmap does not claim that sandboxed terminal execution is designed or
-safe, that MCP write tools are security-reviewed, that the CLI/MCP architecture
-is production-ready, or that any hosted/public readiness is achieved.
-D1 closure claim is bounded to additive readout only.
+This roadmap proves local MCP/CLI wire-in behavior only inside this provenance
+workspace. It does not claim hosted readiness, production readiness, public
+readiness, remote MCP transport, or arbitrary shell execution.

@@ -161,6 +161,17 @@ candidates, and machine-check candidates must normalize into
 roadmap claims Learning Plane routing. Autonomous mutation remains false unless
 a separate governed roadmap authorizes it.
 
+Public export disposition is now machine-enforced:
+
+`docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md`
+
+`governance/compat/check_public_export_disposition.py`
+
+Changed closed roadmaps, final wave completion packets, and public catalog
+claims must state whether the work is `EXPORTED`, `DEFERRED_PRIVATE_ONLY`, or
+`BLOCKED_MISSING_PUBLIC_ARTIFACTS`. Private provenance closure does not imply
+public-sync catalog export.
+
 LHW scope rejection is not source rejection. For doc-only LHW connector waves,
 families such as `abtop` or `gridex` that require live route execution must be
 labeled `rejected from this LHW wave (doc-only scope) - requires live route;

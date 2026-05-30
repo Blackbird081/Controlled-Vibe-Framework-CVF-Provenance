@@ -100,6 +100,30 @@ Any later attempt to reopen broad F-1 tuning requires fresh explicit human
 authorization and a new review/roadmap packet explaining why the stop rule no
 longer applies.
 
+## Mandatory Public Export Disposition Guard - 2026-05-30
+
+Canonical standard:
+
+`docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md`
+
+Machine guard:
+
+`governance/compat/check_public_export_disposition.py`
+
+Any changed closed roadmap, final wave completion packet, public-sync batch, or
+public catalog claim must include a `Public Export Disposition` section with
+exactly one of:
+
+- `EXPORTED`
+- `DEFERRED_PRIVATE_ONLY`
+- `BLOCKED_MISSING_PUBLIC_ARTIFACTS`
+
+`EXPORTED` requires public-sync remote, commit, and artifact path evidence.
+Private provenance closure is not public catalog export. If public-sync lacks
+matching artifacts/source, the artifact must say `DEFERRED_PRIVATE_ONLY` or
+`BLOCKED_MISSING_PUBLIC_ARTIFACTS` and name the next action before any public
+README/catalog claim is made.
+
 ## Critical Repository Boundary - 2026-05-09
 
 This workspace is the private provenance/archive repository:

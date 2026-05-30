@@ -131,7 +131,7 @@ rejections there is no CVF-governed decomposition or escalation.
 
 | Tranche | Deliverable | Risk | Gate |
 | --- | --- | --- | --- |
-| EL-2 | Worker Timeout Enforcement readout | R2 | None — open |
+| EL-2 | Worker Timeout Enforcement readout | R2 | CLOSED_PASS_BOUNDED |
 | EL-3 | Reviewer Deadlock Escalation readout | R2 | CLOSED_PASS_BOUNDED |
 
 ## Acceptance Criteria
@@ -140,6 +140,17 @@ rejections there is no CVF-governed decomposition or escalation.
 - [x] EL-3: `reviewerDeadlockReadout` in response when `reviewerRetryCount > 3`; tests PASS; TypeScript PASS; live proof receipt
 - [x] `route.ts` ≤ 1000 lines after each tranche
 - [x] `runtimeExecutionAuthorized=false` in both readouts
+
+## Public Export Disposition
+
+Disposition: `DEFERRED_PRIVATE_ONLY`
+Reason: public-sync currently lacks the matching EL-2/EL-3 runtime source,
+tests, completion reviews, and live-proof evidence from this provenance batch.
+No public catalog claim is made in this provenance closure.
+Public-sync verification: not exported in this batch; public-sync update
+requires a separate public-safe export work order.
+Next action: open a public-sync batch before adding EL-2/EL-3 execution-layer
+claims to the public README or technical catalog.
 
 ## Claim Boundary
 

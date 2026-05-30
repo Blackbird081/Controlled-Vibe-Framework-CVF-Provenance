@@ -166,6 +166,17 @@ python governance/compat/check_markdown_structural_completeness.py --base 60fc3b
 python governance/compat/check_docs_governance_compat.py --base 60fc3b32 --head <wce-commit> --enforce
 ```
 
+## Public Export Disposition
+
+Disposition: `DEFERRED_PRIVATE_ONLY`
+Reason: public-sync currently lacks the matching WCE CLI source, tests,
+completion evidence, and public catalog update for W1/W2/W3. No public catalog
+claim is made in this provenance closure.
+Public-sync verification: not exported in this batch; public-sync update
+requires a separate public-safe export work order.
+Next action: open a public-sync batch before adding WCE workflow-chain claims
+to the public README or technical catalog.
+
 ## Claim Boundary
 
 WCE proves local single-operator pipeline execution. It does not claim

@@ -84,6 +84,16 @@ CLOSED_PASS_BOUNDED — all acceptance criteria satisfied; EL-2 gate confirmed; 
 | TypeScript check (tsc --noEmit, EL-3 files) | PASS |
 | Live proof (route.el3-reviewer-deadlock.alibaba.live.test.ts) | PASS |
 
+## Test Depth Classification
+
+| Tier | Disposition |
+| --- | --- |
+| T1 | Unit tests cover trigger threshold, continue/decompose decisions, empty/default counts, subtask shape, contract version, and runtime-authorization invariant. |
+| T2 | Route integration is covered by the additive `/api/execute` response field wiring and TypeScript check. |
+| T3 | Targeted live route proof confirms the ALLOW response includes `reviewerDeadlockReadout` with expected bounded fields. |
+| T4 | N/A with reason: no production, hosted rollout, multi-user, or browser journey proof in EL-3 scope. |
+| Meaningful | Meaningful for advisory EL-3 closure because tests cover the handler contract, route exposure, live receipt, and non-execution safety invariant. |
+
 ## Live Proof Receipt
 
 - Receipt ID: `rcpt-env-mpsb8yzz-h6xwrf`
@@ -111,6 +121,17 @@ CLOSED_PASS_BOUNDED — all acceptance criteria satisfied; EL-2 gate confirmed; 
 ## EL Wave Completion Note
 
 EL-2 + EL-3 are both CLOSED_PASS_BOUNDED. The EL execution layer advisory wave is complete. route.ts is at 998 lines (2 lines of headroom remaining before hard limit 1000).
+
+## Public Export Disposition
+
+Disposition: `DEFERRED_PRIVATE_ONLY`
+Reason: public-sync currently lacks the matching EL-2/EL-3 runtime source,
+tests, completion reviews, and live-proof evidence from this provenance batch.
+No public catalog claim is made in this provenance closure.
+Public-sync verification: not exported in this batch; public-sync update
+requires a separate public-safe export work order.
+Next action: open a public-sync batch before adding EL-2/EL-3 execution-layer
+claims to the public README or technical catalog.
 
 ## Claim Boundary
 

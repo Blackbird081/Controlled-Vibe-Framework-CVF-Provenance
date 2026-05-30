@@ -67,6 +67,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
             ["python", "governance/compat/check_finding_to_governance_learning.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
+            "public export disposition quality",
+            ["python", "governance/compat/check_public_export_disposition.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
             "governed pack contract compatibility",
             ["python", "governance/compat/check_governed_pack_contract.py", "--enforce"],
         ),
@@ -111,6 +115,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         (
             "finding-to-governance learning quality",
             ["python", "governance/compat/check_finding_to_governance_learning.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "public export disposition quality",
+            ["python", "governance/compat/check_public_export_disposition.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
             "cpf public surface maintainability",

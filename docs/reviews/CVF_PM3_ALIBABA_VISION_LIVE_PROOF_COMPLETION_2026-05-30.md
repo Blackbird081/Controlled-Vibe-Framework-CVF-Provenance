@@ -59,6 +59,17 @@ CLOSED_PASS_BOUNDED
 
 PM-1 (Alibaba stream) + PM-2 (DeepSeek json_mode) + PM-3 (Alibaba vision) — all three provider method live proofs CLOSED_PASS_BOUNDED. The PM wave is complete.
 
+## Public Export Disposition
+
+Disposition: `DEFERRED_PRIVATE_ONLY`
+Reason: public-sync currently lacks the matching PM wave proof artifacts and
+bounded provider-method evidence records. No public catalog claim is made in
+this provenance closure.
+Public-sync verification: not exported in this batch; public-sync update
+requires a separate public-safe export work order.
+Next action: open a public-sync batch before adding PM-1/PM-2/PM-3 provider
+method proof claims to the public README or technical catalog.
+
 ## Claim Boundary
 
 PM-3 proves the Alibaba vision provider path is live and vision capability is accessible per W5/D2 registry. Does not claim child-data vision authorization, production vision stability, or hosted readiness.

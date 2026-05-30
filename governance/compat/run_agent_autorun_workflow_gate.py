@@ -79,6 +79,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             base,
             head,
         ),
+        _range_command(
+            "public export disposition quality",
+            "governance/compat/check_public_export_disposition.py",
+            base,
+            head,
+        ),
     GateCommand(
         "active session state compatibility",
         ("python", "governance/compat/check_active_session_state.py", "--enforce"),
