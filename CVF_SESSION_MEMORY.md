@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-30
 
-Current mode marker: `lhw17_cvf_important_absorption_all_closed_pass_bounded`
+Current mode marker: `lhw18_cvf_edit_absorption_all_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lhw17_cvf_important_absorption_all_closed_pass_bounded`.
+Current mode: `lhw18_cvf_edit_absorption_all_closed_pass_bounded`.
 
 Active handoff:
 
@@ -181,7 +181,7 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LHW17 is the latest closed LHW wave (T1 Trust & Isolation Hardening/T2 Model Gateway Unification/T3 Learning Plane Truth+Reputation CLOSED_PASS_BOUNDED). Source: CVF_Important legacy absorption. LHW16 also closed (T1 gridex/T2 pancake-pos-mcp/T3 cortex-hub). LHW15 closed (T1 abtop/T2 Agent Harnesses/T3 Workflow GoClaw). Delta+WCE+EL+PM waves all CLOSED. All dispatched work orders CLOSED_PASS_BOUNDED.
+LHW18 is the latest closed LHW wave (T1 Failure Simulation gap-map/T2 CVF Positioning governance-layer/T3 Context Management strategy CLOSED_PASS_BOUNDED). Source: CVF_Edit legacy absorption. LHW17 closed (CVF_Important T1/T2/T3). LHW16 closed (gridex/pancake-pos-mcp/cortex-hub). Delta+WCE+EL+PM waves all CLOSED. All dispatched work orders CLOSED_PASS_BOUNDED.
 
 Parked checkpoints:
 

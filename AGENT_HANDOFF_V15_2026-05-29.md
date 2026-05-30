@@ -76,11 +76,23 @@ Recovery (`Human System Harness`). Handoff rotated from V14 to V15.
 
 ## Active Boundary
 
-Current mode: `lhw17_cvf_important_absorption_all_closed_pass_bounded`.
+Current mode: `lhw18_cvf_edit_absorption_all_closed_pass_bounded`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
-## LHW17 Wave Closure (Latest)
+## LHW18 Wave Closure (Latest)
+
+LHW18 CVF_Edit Legacy Absorption Wave CLOSED_PASS_BOUNDED (T1+T2+T3, doc-only).
+Source: `.private_reference/legacy/CVF Edit/`.
+
+- T1 Failure Simulation Gap-Map: `cvf.failureSimulationGapMapAdvisory.lhw18.t1.v1` — 5 scenarios mapped to CVF owner surfaces; Scenario 4 Multi-Agent Conflict included; Scenario 2 labeled `NATURAL_LIMIT`.
+- T2 CVF Positioning: `cvf.cvfPositioningGovernanceLayerAdvisory.lhw18.t2.v1` — CVF = Governance & Safety Layer (not Agent OS); framework neutrality; Integration SDK rejected from wave (doc-only scope).
+- T3 Context Management: `cvf.contextManagementStrategyAdvisory.lhw18.t3.v1` — 3 principles (task scope minimization, context budget boundary, progressive disclosure); Progressive Disclosure confirmed as existing behavior.
+
+Invariants: `runtimeExecutionAuthorized=false` across all specs. R0-R3 preserved.
+GC-018: `docs/baselines/CVF_GC018_LHW18_CVF_EDIT_ABSORPTION_WAVE_2026-05-30.md`.
+
+## LHW17 Wave Closure (Prior)
 
 LHW17 CVF_Important Legacy Absorption Wave CLOSED_PASS_BOUNDED (T1+T2+T3, doc-only).
 Source: `.private_reference/legacy/CVF_Important/`.
