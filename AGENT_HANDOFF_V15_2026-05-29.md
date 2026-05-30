@@ -17,7 +17,7 @@ Active private provenance continuity for the current CVF repository. Use only
 with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
-Current closure anchor: `fc2452a9` (feat(lhw20): LHW20 CVF_Important Deep Scan Wave T1/T2/T3 ALL CLOSED_PASS_BOUNDED). Parent governed closure anchor: `03f5f3ce` (feat(int1): Generic MCP Adapter). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
+Current closure anchor: `306b63c6` (feat(cbg1): Context Budget Guard CLOSED_PASS_BOUNDED). Parent governed closure anchor: `fc2452a9` (feat(lhw20): LHW20 CVF_Important Deep Scan Wave T1/T2/T3). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -76,6 +76,8 @@ Recovery (`Human System Harness`). Handoff rotated from V14 to V15.
 
 ## Latest Work / Changes (2026-05-31)
 
+**CBG-1 Context Budget Guard CLOSED_PASS_BOUNDED** (2026-05-31). `cvf.contextBudgetGuard.cbg1.v1` — `checkContextBudgetGuard(role, estimatedTokens)` + `checkContextBudgetGuardForTaskClass()`. Disposition PASS/ESCALATE; `runtimeExecutionAuthorized=false`; ESCALATE advisory only. Closes LHW18 T3 P2 MACHINE_CHECK_CANDIDATE. 65 test files, 1595/1595 PASS. TypeScript PASS. Source: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/context-budget-guard.ts`.
+
 **LHW20 CVF_Important Deep Scan Wave CLOSED_PASS_BOUNDED** (2026-05-31). Full 97-file scan of `CVF_Important/` — 13 subfolders, all files individually read. GC-018: `docs/baselines/CVF_GC018_LHW20_CVF_IMPORTANT_DEEP_SCAN_WAVE_2026-05-31.md`.
 
 - T1 Security Hardening Checklist Full: `cvf.securityHardeningChecklistFull.lhw20.t1.v1` — 6 additional items (H4-H9) from `CVF_SECURITY_HARDENING_CHECKLIST.md`; full 9-item checklist documented.
@@ -87,7 +89,7 @@ Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
 
 ## Active Boundary
 
-Current mode: `lhw20_cvf_important_deep_scan_all_closed_pass_bounded`.
+Current mode: `cbg1_context_budget_guard_closed_pass_bounded`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
@@ -228,10 +230,10 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lhw20_cvf_important_deep_scan_all_closed_pass_bounded`;
+Startup acknowledged: current mode=`cbg1_context_budget_guard_closed_pass_bounded`;
 active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=Adaptation Policy Engine
-tranche (A1-A6, LHW20 T3), Context Budget Guard tranche (LHW18 T3), Integration SDK adapter
-(LHW19 T1), operator roadmap, or public-sync update; parked checkpoint=VI5-T4/T5 hosted retest.
+tranche (A1-A6, LHW20 T3), Integration SDK adapter (LHW19 T1), operator roadmap, or public-sync;
+parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary
 
