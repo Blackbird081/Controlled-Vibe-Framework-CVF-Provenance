@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-30
 
-Current mode marker: `ape1_adaptation_policy_engine_closed_pass_bounded`
+Current mode marker: `tm1_truth_model_calibration_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `ape1_adaptation_policy_engine_closed_pass_bounded`.
+Current mode: `tm1_truth_model_calibration_closed_pass_bounded`.
 
 Active handoff:
 

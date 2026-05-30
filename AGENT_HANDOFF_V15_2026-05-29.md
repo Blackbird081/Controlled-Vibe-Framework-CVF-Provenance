@@ -17,7 +17,7 @@ Active private provenance continuity for the current CVF repository. Use only
 with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
-Current closure anchor: `161ea531` (feat(ape1): Adaptation Policy Engine A1-A6 CLOSED_PASS_BOUNDED). Parent governed closure anchor: `306b63c6` (feat(cbg1): Context Budget Guard). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
+Current closure anchor: `5155bc45` (feat(tm1): Truth Model Calibration Step 6 CLOSED_PASS_BOUNDED). Parent governed closure anchor: `161ea531` (feat(ape1): Adaptation Policy Engine A1-A6). Derive the current HEAD live with `git rev-parse --short HEAD` when needed. Parent governed closure anchor: `306b63c6` (feat(cbg1): Context Budget Guard). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -76,6 +76,8 @@ Recovery (`Human System Harness`). Handoff rotated from V14 to V15.
 
 ## Latest Work / Changes (2026-05-31)
 
+**TM1 Truth Model Calibration CLOSED_PASS_BOUNDED** (2026-05-31). `cvf.truthModelCalibration.tm1.v1` — `runCalibrationSession()` with APE-1 A1-A6 preflight gate + TruthModelContract.build() + TruthScoreContract.score(). Closes LHW17 T3 Step 6. isProvisional=true. 67 files, 1644/1644 PASS. TypeScript PASS.
+
 **APE-1 Adaptation Policy Engine CLOSED_PASS_BOUNDED** (2026-05-31). `cvf.adaptationPolicyEngine.ape1.v1` — `checkA1RiskBudget` + `checkA2ConfidenceGating` + `checkA3MultiSignal` + `checkA4Cooldown` + `checkA5TieredAuthority` + `checkA6Rollback` + `checkAdaptationPolicy()`. Satisfies LHW17 T3 Step 5; gates Step 6 (Truth Model). 66 test files, 1631/1631 PASS. TypeScript PASS. Source: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/adaptation-policy-engine.ts`.
 
 **CBG-1 Context Budget Guard CLOSED_PASS_BOUNDED** (2026-05-31). `cvf.contextBudgetGuard.cbg1.v1` — `checkContextBudgetGuard(role, estimatedTokens)` + `checkContextBudgetGuardForTaskClass()`. Disposition PASS/ESCALATE; `runtimeExecutionAuthorized=false`; ESCALATE advisory only. Closes LHW18 T3 P2 MACHINE_CHECK_CANDIDATE. 65 test files, 1595/1595 PASS. TypeScript PASS. Source: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/context-budget-guard.ts`.
@@ -91,7 +93,7 @@ Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
 
 ## Active Boundary
 
-Current mode: `ape1_adaptation_policy_engine_closed_pass_bounded`.
+Current mode: `tm1_truth_model_calibration_closed_pass_bounded`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
@@ -232,9 +234,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ape1_adaptation_policy_engine_closed_pass_bounded`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=LHW17 T3 Step 6 Truth Model
-tranche (requires separate GC-018), Integration SDK adapter (LHW19 T1), or operator roadmap;
+Startup acknowledged: current mode=`tm1_truth_model_calibration_closed_pass_bounded`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=LHW17 T3 Step 7 Reputation Model tranche (separate GC-018), Integration SDK adapter (LHW19 T1), or operator roadmap;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary
