@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: ACTIVE
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -19,9 +19,9 @@ Fresh GC-018:
 `docs/baselines/CVF_GC018_PM_PROVIDER_METHOD_LIVE_PROOF_2026-05-30.md`
 
 Dispatch status:
-PM-1 WORK_ORDER_READY.
-PM-2 DEMAND_GATED (PM-1 must close first).
-PM-3 DEMAND_GATED (PM-2 must close first).
+PM-1 CLOSED_PASS_BOUNDED.
+PM-2 CLOSED_PASS_BOUNDED (PM-1 must close first).
+PM-3 CLOSED_PASS_BOUNDED (PM-2 must close first).
 
 ## Current Certified Baseline
 
@@ -67,7 +67,7 @@ not public-sync.
 
 **Risk:** R1/R2 — structured output constraint.
 
-**Status:** DEMAND_GATED (PM-1 CLOSED_PASS required).
+**Status:** CLOSED_PASS_BOUNDED (PM-1 CLOSED_PASS required).
 
 **Gap:** `provider-method-fallback-normalization.ts` has `json_mode()` adapter
 for DeepSeek. No live `json_mode` receipt exists.
@@ -85,7 +85,7 @@ for DeepSeek. No live `json_mode` receipt exists.
 
 **Risk:** R2 — multi-modal input.
 
-**Status:** DEMAND_GATED (PM-2 CLOSED_PASS required).
+**Status:** CLOSED_PASS_BOUNDED (PM-2 CLOSED_PASS required).
 
 **Gap:** `provider-capability-registry.ts` lists `qwen-vl-plus` with `vision`
 method. No live vision receipt exists.
@@ -128,14 +128,14 @@ For each PM tranche before closure:
 | Tranche | Method | Provider | Gate |
 | --- | --- | --- | --- |
 | PM-1 | stream | Alibaba/qwen-turbo | None — open |
-| PM-2 | json_mode | DeepSeek/deepseek-chat | DEMAND_GATED (PM-1 closed) |
-| PM-3 | vision | Alibaba/qwen-vl-plus | DEMAND_GATED (PM-2 closed) |
+| PM-2 | json_mode | DeepSeek/deepseek-chat | CLOSED_PASS_BOUNDED (PM-1 closed) |
+| PM-3 | vision | Alibaba/qwen-vl-plus | CLOSED_PASS_BOUNDED (PM-2 closed) |
 
 ## Acceptance Criteria
 
-- [ ] PM-1: live stream receipt from Alibaba qwen-turbo; `evidenceMode: live`; `rawSecretPrinted: false`
-- [ ] PM-2: live json_mode receipt from DeepSeek; structured JSON output confirmed
-- [ ] PM-3: live vision receipt from Alibaba qwen-vl-plus; image description confirmed
+- [x] PM-1: live stream receipt from Alibaba qwen-turbo; `evidenceMode: live`; `rawSecretPrinted: false`
+- [x] PM-2: live json_mode receipt from DeepSeek; structured JSON output confirmed
+- [x] PM-3: live vision receipt from Alibaba qwen-vl-plus; image description confirmed
 
 ## Claim Boundary
 

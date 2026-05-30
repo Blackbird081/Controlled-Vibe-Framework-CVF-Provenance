@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-30
 
-Current mode marker: `el3_reviewer_deadlock_closed_pass_bounded`
+Current mode marker: `lhw16_pm_wave_all_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -170,7 +170,7 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LHW15 is the latest closed LHW wave (T1+T2+T3 CLOSED_PASS_BOUNDED; abtop/Agent Harnesses/Workflow GoClaw LH1 triggers closed). EL-2 + EL-3 CLOSED_PASS_BOUNDED — EL wave complete. LHW15 is latest closed LHW wave. PM-1 CLOSED_PASS_BOUNDED; PM-2/PM-3 DEMAND_GATED. Delta D2/D3 DEMAND_GATED. WCE W2 Phase B DEMAND_GATED. route.ts at 998 lines (2 lines headroom before limit 1000).
+LHW15 is the latest closed LHW wave (T1+T2+T3 CLOSED_PASS_BOUNDED; abtop/Agent Harnesses/Workflow GoClaw LH1 triggers closed). LHW16 CLOSED (T1 gridex/T2 pancake-pos-mcp/T3 cortex-hub). PM wave CLOSED (PM-1 stream + PM-2 DeepSeek json_mode + PM-3 Alibaba vision). EL wave CLOSED (EL-2+EL-3). WCE wave CLOSED. All dispatched work orders from 2026-05-30 are now CLOSED_PASS_BOUNDED. No pending DEMAND_GATED items remain from the current batch.
 
 Parked checkpoints:
 

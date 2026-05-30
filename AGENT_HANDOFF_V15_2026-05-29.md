@@ -17,7 +17,7 @@ Active private provenance continuity for the current CVF repository. Use only
 with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
-Current HEAD: `0d1bdbef` → updated this session (see git log for new SHA).
+Current HEAD: `d99627b2` (feat: EL-3 reviewer deadlock escalation).
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -67,7 +67,7 @@ Recovery (`Human System Harness`). Handoff rotated from V14 to V15.
 
 ## Active Boundary
 
-Current mode: `el3_reviewer_deadlock_closed_pass_bounded`.
+Current mode: `lhw16_pm_wave_all_closed_pass_bounded`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
@@ -105,6 +105,8 @@ Advisory types delivered:
 | LHW12 | CLOSED_PASS_BOUNDED | Posture-to-model tier, outcome pack taxonomy, async worker |
 | LHW13 | CLOSED_PASS_BOUNDED | Agent reading protocol (Gap 1), memory continuity (Gap 4), graph resolver (Gap 9) |
 | LHW14 | CLOSED_PASS_BOUNDED | Agent memory packaging, spec-change workflow, noncoder clarification |
+| LHW15 | CLOSED_PASS_BOUNDED | Runtime observability trend (abtop), workflow resume (Agent Harnesses), context packaging (Workflow GoClaw) |
+| LHW16 | CLOSED_PASS_BOUNDED | Database action proof (gridex), MCP approval proof (pancake-pos-mcp), code intelligence boundary (cortex-hub) |
 
 ## Other Closed Artifacts
 
