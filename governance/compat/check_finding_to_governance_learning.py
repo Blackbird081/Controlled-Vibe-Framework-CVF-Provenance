@@ -27,6 +27,7 @@ HOOK_CHAIN_PATH = "governance/compat/run_local_governance_hook_chain.py"
 DEFAULT_BASE_CANDIDATES = ("origin/main", "origin/master", "main", "master")
 
 APPLICABLE_PREFIXES = ("docs/logs/", "docs/reviews/", "docs/assessments/", "docs/audits/")
+ARCHIVE_PATH_MARKER = "/archive/"
 FINDING_MARKERS = ("## Quality Findings", "## Findings", "## Known Issues", "Known Issues", "| Finding |", "finding |")
 REQUIRED_SECTION = "## Finding-To-Governance Learning Disposition"
 DEFECT_CLASSES = (
@@ -158,7 +159,11 @@ def _has_any(text: str, markers: tuple[str, ...]) -> bool:
 
 
 def _is_applicable_path(path: str) -> bool:
-    return path.endswith(".md") and any(path.startswith(prefix) for prefix in APPLICABLE_PREFIXES)
+    return (
+        path.endswith(".md")
+        and ARCHIVE_PATH_MARKER not in path
+        and any(path.startswith(prefix) for prefix in APPLICABLE_PREFIXES)
+    )
 
 
 def _validate_standard(path: str, text: str) -> list[dict[str, str]]:

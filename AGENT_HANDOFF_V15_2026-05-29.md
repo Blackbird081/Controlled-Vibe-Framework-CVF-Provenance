@@ -17,25 +17,34 @@ Active private provenance continuity for the current CVF repository. Use only
 with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
-Current HEAD: `d99627b2` (feat: EL-3 reviewer deadlock escalation).
+Current closure anchor: `93bc44cb` (feat(lhw16+pm2+pm3): LHW16 T1/T2/T3 + PM-2 DeepSeek json_mode + PM-3 Alibaba vision ALL CLOSED_PASS_BOUNDED). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
 
 ## Latest Work / Changes (2026-05-30)
 
-**EL-2 Worker Timeout Enforcement CLOSED_PASS_BOUNDED** (2026-05-30).
-`worker-timeout-handler.ts` + `buildWorkerTimeoutReadout()`; additive
-`workerTimeoutReadout` field in `/api/execute` ALLOW response; route.ts 995
-lines (was 999); 9/9 unit tests + live receipt `rcpt-env-mps9ui6z-xzlm2q`
-(alibaba/qwen-turbo, triggered=false, runtimeExecutionAuthorized=false).
-EL-3 gate: UNBLOCKED.
+**LHW16 + PM wave final closure** (2026-05-30). LHW16 T1/T2/T3
+CLOSED_PASS_BOUNDED: gridex database-action proof advisory,
+pancake-pos-mcp MCP-approval proof advisory, and cortex-hub code-intelligence
+adapter boundary. PM-2 DeepSeek json_mode and PM-3 Alibaba vision both
+CLOSED_PASS_BOUNDED; PM wave is now complete with PM-1 stream + PM-2 json_mode
++ PM-3 vision.
+
+**EL-2 + EL-3 Execution Layer wave CLOSED_PASS_BOUNDED** (2026-05-30).
+EL-2: `worker-timeout-handler.ts` + `buildWorkerTimeoutReadout()`, additive
+`workerTimeoutReadout` field in `/api/execute`, 9/9 unit tests + live receipt
+`rcpt-env-mps9ui6z-xzlm2q`. EL-3: `reviewer-deadlock-handler.ts` +
+`buildReviewerDeadlockReadout()`, additive `reviewerDeadlockReadout`, 9/9 unit
+tests + live receipt `rcpt-env-mpsb8yzz-h6xwrf`. EL wave complete.
 
 **LHW15 T1+T2+T3 CLOSED_PASS_BOUNDED** (2026-05-30). T1: `runtimeObservabilityTrendAdvisoryType` closes `abtop` LH1/132.
 T2: `workflowResumeAdvisoryType` closes `Agent Harnesses` LH1/150.
 T3: `contextProfilePackagingAdvisoryType` closes `Workflow GoClaw` LH1/163.
 All doc-only; `runtimeExecutionAuthorized=false` across all.
 
-**PM-1 Alibaba Streaming Live Proof CLOSED_PASS_BOUNDED** (2026-05-30).
-Receipt `rcpt-env-mps9z6r8-14omcf`; alibaba/qwen-turbo; evidenceMode=live;
-stream method capability confirmed. PM-2/PM-3 DEMAND_GATED.
+**PM Provider Method wave CLOSED_PASS_BOUNDED** (2026-05-30). PM-1 Alibaba
+stream receipt `rcpt-env-mps9z6r8-14omcf`; PM-2 DeepSeek json_mode receipt
+`rcpt-env-mpsbluio-aaa7mc`; PM-3 Alibaba qwen-vl-plus vision receipt
+`rcpt-env-mpsbnm4m-g4l2ss`. Boundary: provider-method capability proof only,
+not production stability, hosted readiness, or universal parity.
 
 **Delta D2+D3 CLOSED_PASS_BOUNDED** (2026-05-29). D2: `cvf_submit_review_receipt`
 + `cvf_advance_pipeline_stage` — 22/22 tests PASS; security boundary doc approved.
@@ -50,15 +59,15 @@ MCP-controls-CLI architecture from CVF 28.05 now proven locally.
 `rcpt-env-mpqlt87n-vl8eny`. W3: `--providers` per-role routing
 (`cvf.perRoleProviderRouting.wce.w3.v1`); `parseProviderMap()` +
 `resolveProviderForRole()`; all tests PASS; live receipt
-`rcpt-env-mpqlrk1z-xhs73v` (deepseek via per-role). W2 Phase B UNBLOCKED —
-HOLD_UNTIL_W1_AND_W3_PASS satisfied; operator authorization needed.
+`rcpt-env-mpqlrk1z-xhs73v` (deepseek via per-role). W2 MA1 CLI serialization
+also CLOSED_PASS_BOUNDED; WCE wave complete.
 
 **Delta D1** CLOSED_PASS_BOUNDED (2026-05-29). Pipeline chain readout
 (`cvf.pipelineChainReadout.delta.d1.v1`) wired into `/api/execute` ALLOW path
 response. New helper: `cvf-web/src/lib/pipeline-chain-readout.ts`. route.ts
 stays at 999 lines (hard limit 1000). 10/10 tests PASS. Live receipt:
 `rcpt-env-mpql0ujo-4gawwj` (alibaba/qwen-turbo). `runtimeExecutionAuthorized=false`.
-No MCP server change. D2 write-tool gap confirmed; D2 remains DEMAND_GATED.
+No MCP server change in D1. D2 and D3 are now CLOSED_PASS_BOUNDED; Delta wave complete.
 
 **LHW14** CLOSED_PASS_BOUNDED (earlier same day). Three documentation-only
 connector specs: T1 Agent Memory Capture Packaging (`agentmemory`), T2
@@ -71,21 +80,18 @@ Current mode: `lhw16_pm_wave_all_closed_pass_bounded`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
-## LHW14 Wave Closure (Latest)
+## LHW16 Wave Closure (Latest)
 
-LHW14 Workflow Connector Wave 14 CLOSED_PASS_BOUNDED (T1+T2+T3, doc-only).
-baseHead: `173643cb`.
+LHW16 Workflow Connector Wave 16 CLOSED_PASS_BOUNDED (T1+T2+T3, doc-only).
 
-- T1 Agent Memory Capture Packaging: `cvf.agentMemoryCapturePackagingAdvisory.lhw14.t1.v1` — closes `agentmemory` (LH1 line 133). Spec/audit/completion at `docs/reference/CVF_LHW14_T1_*`, `docs/reviews/CVF_LHW14_T1_*`.
-- T2 Spec-Change Workflow Advisory: `cvf.specChangeWorkflowAdvisory.lhw14.t2.v1` — closes `OpenSpec` (LH1 line 140). Spec/audit/completion at `docs/reference/CVF_LHW14_T2_*`, `docs/reviews/CVF_LHW14_T2_*`.
-- T3 Noncoder Clarification and Recovery: `cvf.noncoderClarificationRecoveryAdvisory.lhw14.t3.v1` — closes `Human System Harness` (LH1 line 160). Spec/audit/completion at `docs/reference/CVF_LHW14_T3_*`, `docs/reviews/CVF_LHW14_T3_*`.
+- T1 Database Action Proof Advisory: `cvf.databaseActionProofAdvisory.lhw16.t1.v1` closes `gridex` (LH1 line 157).
+- T2 MCP Approval Proof Advisory: `cvf.mcpApprovalProofAdvisory.lhw16.t2.v1` closes `pancake-pos-mcp` (LH1 line 141).
+- T3 Code Intelligence Adapter Boundary: `cvf.codeIntelligenceAdapterBoundary.lhw16.t3.v1` closes `cortex-hub` (LH1 line 155).
 
-Invariants: `runtimeExecutionAuthorized=false` across all specs; `canReinject=false` connector-normalized (T1); `rawMemoryReleased=false` literal invariant (T1); no code file in diff; no EXTENSIONS/ change; no receipt envelope change; no public-sync.
-
-Advisory types delivered:
-- T1: `agentMemoryCapturePackagingAdvisoryType` (6 values) + `capturePackagingGuidance`
-- T2: `specChangeWorkflowAdvisoryType` (6 values) + `workflowPauseAdvisory`
-- T3: `noncoderClarificationAdvisoryType` (5 values) + `clarificationNextStep`
+Invariants: `runtimeExecutionAuthorized=false` across all specs; no runtime
+database execution, MCP approval execution, code-intelligence adapter runtime,
+receipt-envelope extension, hosted readiness, production readiness, or
+public-release readiness claim.
 
 ## Prior Wave Status (Quick Reference)
 
@@ -135,33 +141,15 @@ Advisory types delivered:
 
 ## Next Allowed Move
 
-EL-2 CLOSED_PASS_BOUNDED. **EL-3 UNBLOCKED** — work order at
-`docs/work_orders/CVF_WO_EL3_REVIEWER_DEADLOCK_ESCALATION_2026-05-30.md`
-ready for dispatch. LHW15 T1+T2+T3 CLOSED_PASS_BOUNDED — LHW15 is latest
-closed LHW wave; further connector waves require fresh GC-018. PM-1
-CLOSED_PASS_BOUNDED.
-
-DEMAND_GATED pending operator authorization:
-- EL-3 Reviewer Deadlock Escalation (UNBLOCKED — EL-2 gate satisfied)
-- PM-2 DeepSeek json_mode
-- PM-3 Alibaba vision
-- Delta D2/D3 MCP write tools
-- WCE W2 Phase B
-
-API keys available (Alibaba/DeepSeek/OpenAI); operator authorized 2026-05-29.
-
-Delta CLI/MCP Wire-In: D1 CLOSED_PASS_BOUNDED; D2/D3 DEMAND_GATED. baseHead: `8b1f5992`. Verified gap: EL-1
-pipeline-chain-orchestrator.ts not imported anywhere; route.ts at 1000-line
-hard limit; MCP 14 tools all read-only. GC-018 + roadmap + 3 work orders at
-`docs/baselines/CVF_GC018_DELTA_*` and `docs/roadmaps/CVF_DELTA_*`.
-
-WCE Workflow Chain Execution: OPEN — W1+W3 WORK_ORDER_READY (parallel dispatch);
-W2 Phase A parallel; W2 Phase B HOLD_UNTIL_W1_W3_PASS. baseHead: `60fc3b32`.
-GC-018+roadmap+3 WOs at docs/baselines/CVF_GC018_WCE_* + docs/roadmaps/CVF_WCE_*.
+LHW16 is the latest closed LHW wave. Delta (D1+D2+D3), WCE (W1+W2+W3),
+EL (EL-2+EL-3), PM (PM-1/2/3), LHW15, and LHW16 are CLOSED_PASS_BOUNDED.
+All dispatched work orders from the 2026-05-30 batch are closed. Remaining
+options: new LHW wave with fresh GC-018, operator-initiated roadmap, or
+public-sync update.
 
 Parked checkpoints:
 - VI5-T4/T5 hosted Netlify freshness and operator external-agent retest
-- Delta D2/D3 pending operator authorization
+- Public-sync update for newly closed private/provenance capability summaries
 
 ## Remote Tracking
 
@@ -173,10 +161,10 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`wce_wave_all_closed_pass_bounded`; active
-handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=Delta D2/D3
-operator authorization or fresh LHW connector wave with GC-018/roadmap; parked
-checkpoint=VI5-T4/T5 hosted retest, Delta D2/D3.
+Startup acknowledged: current mode=`lhw16_pm_wave_all_closed_pass_bounded`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=new LHW
+wave with fresh GC-018, operator-initiated roadmap, or public-sync update;
+parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary
 

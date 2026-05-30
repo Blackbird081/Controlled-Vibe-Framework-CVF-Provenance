@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lhw14_wave_closed_pass_bounded`.
+Current mode: `lhw16_pm_wave_all_closed_pass_bounded`.
 
 Active handoff:
 
@@ -170,7 +170,7 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LHW15 is the latest closed LHW wave (T1+T2+T3 CLOSED_PASS_BOUNDED; abtop/Agent Harnesses/Workflow GoClaw LH1 triggers closed). LHW16 CLOSED (T1 gridex/T2 pancake-pos-mcp/T3 cortex-hub). PM wave CLOSED (PM-1 stream + PM-2 DeepSeek json_mode + PM-3 Alibaba vision). EL wave CLOSED (EL-2+EL-3). WCE wave CLOSED. All dispatched work orders from 2026-05-30 are now CLOSED_PASS_BOUNDED. No pending DEMAND_GATED items remain from the current batch.
+LHW16 is the latest closed LHW wave (T1 gridex/T2 pancake-pos-mcp/T3 cortex-hub CLOSED_PASS_BOUNDED). LHW15 is also closed (T1 abtop/T2 Agent Harnesses/T3 Workflow GoClaw). Delta wave CLOSED (D1+D2+D3). WCE wave CLOSED (W1+W2+W3). EL wave CLOSED (EL-2+EL-3). PM wave CLOSED (PM-1 stream + PM-2 DeepSeek json_mode + PM-3 Alibaba vision). All dispatched work orders from the 2026-05-30 batch are now CLOSED_PASS_BOUNDED. No pending DEMAND_GATED items remain from the current batch.
 
 Parked checkpoints:
 

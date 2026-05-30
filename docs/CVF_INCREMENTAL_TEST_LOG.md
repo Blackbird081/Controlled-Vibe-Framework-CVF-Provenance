@@ -1,6 +1,27 @@
 # CVF Incremental Test Log
 
 Memory class: SUMMARY_RECORD
+
+Status: ACTIVE TEST WINDOW
+
+## Purpose
+
+This file is the canonical entrypoint and active window for incremental testing
+decisions.
+
+## Owner / Source
+
+Owner: CVF test documentation surface.
+
+Source: committed local test commands, compatibility gate output, and bounded
+operator/agent verification records.
+
+## Scope / Target / Owner Boundary
+
+Target: incremental test selection and test-result continuity for governed CVF
+work. This file is an active-window log, not a product evidence packet or a
+substitute for live governance proof.
+
 ## 1) Purpose
 
 This file is the canonical entrypoint and active window for incremental testing decisions.
@@ -16,6 +37,34 @@ Governance policy:
 - [`CVF_TEST_DOCUMENTATION_GUARD.md`](../governance/toolkit/05_OPERATION/CVF_TEST_DOCUMENTATION_GUARD.md)
 - [`CVF_INCREMENTAL_TEST_LOG_ROTATION_GUARD.md`](../governance/toolkit/05_OPERATION/CVF_INCREMENTAL_TEST_LOG_ROTATION_GUARD.md)
 - Compat check: `python governance/compat/check_test_doc_compat.py --enforce`
+
+## Protocol / Contract / Requirements
+
+Every new entry must record the changed scope, commands run, result, skipped
+scope, and residual risk. Full regression is required only when the trigger
+conditions below are met.
+
+## Enforcement / Verification
+
+Compatibility is enforced by the test documentation guard and incremental log
+rotation guard. Markdown structural checks apply when this file is changed.
+
+## Boundaries / Non-Goals
+
+This log does not prove public readiness, hosted readiness, production
+readiness, provider quality, or governed-route behavior unless the cited test
+entry includes the required live proof evidence.
+
+## Related Artifacts
+
+- `governance/toolkit/05_OPERATION/CVF_TEST_DOCUMENTATION_GUARD.md`
+- `governance/toolkit/05_OPERATION/CVF_INCREMENTAL_TEST_LOG_ROTATION_GUARD.md`
+- `docs/logs/`
+
+## Claim Boundary
+
+Entries in this log are bounded to the commands and scope they cite. A PASS
+entry is not broader than its listed command output and skip rationale.
 
 ---
 

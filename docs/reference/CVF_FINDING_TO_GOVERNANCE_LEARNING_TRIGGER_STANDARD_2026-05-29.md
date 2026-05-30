@@ -84,6 +84,11 @@ The guard runs in the autorun workflow and local governance hook chain. It
 fails applicable changed logs/reviews/assessments/audits when findings are
 present without learning disposition.
 
+Archive-qualified artifacts under `archive/` are excluded from this guard.
+Moving historical files into archive is preservation, not a new finding-bearing
+closure claim. If archived evidence is promoted back to active status or used
+as current closure evidence, the active artifact must satisfy this standard.
+
 ## Boundaries
 
 This standard forces routing and disposition. It does not decide that every

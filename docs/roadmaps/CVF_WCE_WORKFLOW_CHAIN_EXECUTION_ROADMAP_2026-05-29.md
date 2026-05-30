@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: ACTIVE
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -20,9 +20,9 @@ Fresh GC-018:
 `docs/baselines/CVF_GC018_WCE_WORKFLOW_CHAIN_EXECUTION_2026-05-29.md`
 
 Dispatch status:
-W1 WORK_ORDER_READY (parallel with W3).
-W3 WORK_ORDER_READY (parallel with W1).
-W2 HOLD_UNTIL_W1_AND_W3_PASS.
+W1 CLOSED_PASS_BOUNDED.
+W2 CLOSED_PASS_BOUNDED.
+W3 CLOSED_PASS_BOUNDED.
 
 ## Scope / Target / Owner Boundary
 
@@ -67,9 +67,8 @@ W1 and W3 are fully independent:
 **Both can be dispatched simultaneously.** Recommended: one agent (Claude/me)
 takes W1, second agent (Gemini/Codex) takes W3.
 
-W2 requires W1 to exist (transport) and W3 to be aware of (provider slot in
-packet). W2 can write doc connector spec in parallel but runtime serialization
-implementation waits for W1+W3 CLOSED_PASS.
+W2 required W1 transport and W3 provider-slot awareness. That gate is now
+satisfied; Phase B runtime serialization is CLOSED_PASS_BOUNDED.
 
 ---
 
@@ -110,7 +109,8 @@ a `cvf.internalMultiAgentTransfer.ma1.v1` JSON payload.
 
 **Contract version:** `cvf.ma1CliSerialization.wce.w2.v1`
 
-Gate: HOLD_UNTIL_W1_AND_W3_PASS for Phase B.
+Gate: CLOSED_PASS_BOUNDED — W1 and W3 were closed before Phase B runtime
+serialization.
 
 ---
 
@@ -145,18 +145,18 @@ need to assign different providers per role.
 
 | Tranche | Deliverable | Gate | Parallel? |
 | --- | --- | --- | --- |
-| W1 | `cvf workflow` command + chain execution | None | Yes — with W3 |
-| W3 | `--providers` flag + per-role routing | None | Yes — with W1 |
-| W2 | MA1 serialization (Phase A doc + Phase B runtime) | W1+W3 CLOSED_PASS | No |
+| W1 | `cvf workflow` command + chain execution | CLOSED_PASS_BOUNDED | Yes — with W3 |
+| W3 | `--providers` flag + per-role routing | CLOSED_PASS_BOUNDED | Yes — with W1 |
+| W2 | MA1 serialization (Phase A doc + Phase B runtime) | CLOSED_PASS_BOUNDED | No |
 
 ## Acceptance Criteria
 
-- [ ] W1: `cvf workflow` runs sequential pipeline; each step has governance receipt; tests PASS; live proof receipt
-- [ ] W3: `--providers` flag parsed correctly; per-role provider used in payload; tests PASS; live proof receipt
-- [ ] W2: MA1 packet emitted at stage boundaries with correct schema; tests PASS
-- [ ] No new governance semantics in any tranche
-- [ ] TypeScript PASS across all changes
-- [ ] Session continuity updated
+- [x] W1: `cvf workflow` runs sequential pipeline; each step has governance receipt; tests PASS; live proof receipt
+- [x] W3: `--providers` flag parsed correctly; per-role provider used in payload; tests PASS; live proof receipt
+- [x] W2: MA1 packet emitted at stage boundaries with correct schema; tests PASS
+- [x] No new governance semantics in any tranche
+- [x] TypeScript PASS across all changes
+- [x] Session continuity updated
 
 ## Verification
 

@@ -1,10 +1,51 @@
 # CVF Real Non-Coder Usage Test - Operator Sample
 
+Memory class: FULL_RECORD
+
 Date: 2026-05-25
 
 Status: `READY_FOR_OPERATOR_REVIEW`
 
-Purpose: provide one fresh live Strategy workflow response for a human non-coder usability check. Codex does not self-pass this gate.
+## Purpose
+
+Provide one fresh live Strategy workflow response for a human non-coder
+usability check. Codex does not self-pass this gate.
+
+## Target / Source
+
+Target: one operator-facing Strategy workflow sample and VI4 evidence quick
+read.
+
+Source: one live Alibaba/qwen-turbo governed Strategy workflow response with
+receipt `rcpt-env-mpsa1gvt-m9in2r`.
+
+## Scope / Methodology
+
+Scope is limited to human review of whether the sample is understandable and
+actionable for a non-coder. Method: inspect the live output, answer the
+operator questions, and decide PASS/HOLD/BLOCKED.
+
+## Findings / Position
+
+Pending operator review. This file preserves the sample and questions; it does
+not record a final usability decision.
+
+## Risk / Corrective Action
+
+Risk: the output may be too technical, too noisy, or not actionable for a
+non-coder. Corrective action, if needed, is a separate governed UX/content
+follow-up after operator disposition.
+
+## Decision / Recommendation / Disposition
+
+Disposition: READY_FOR_OPERATOR_REVIEW. Recommendation: treat this as evidence
+for review input only, not as a completed non-coder acceptance gate.
+
+## Finding-To-Governance Learning Disposition
+
+| Finding | Defect class | Learning lane | Disposition | Next action | Handled in batch? |
+| --- | --- | --- | --- | --- | --- |
+| Operator sample remains pending review and must not be treated as UX acceptance evidence | OPERATOR_SCOPE_CLARITY_GAP | DOCUMENTATION_ONLY_LEARNING | N/A_WITH_REASON — sample explicitly remains READY_FOR_OPERATOR_REVIEW | Await operator disposition before claiming non-coder UX PASS | Yes |
 
 ## Live Run
 

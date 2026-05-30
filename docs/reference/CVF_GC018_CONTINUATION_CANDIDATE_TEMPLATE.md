@@ -10,6 +10,24 @@ Status: reusable template for any future attempt to reopen a materially delivere
 - make `GC-018` scoring comparable across waves
 - reduce ambiguity about when a new batch is authorized versus merely proposed
 
+## Scope / Applies-To
+
+Applies to future continuation candidates that propose reopening a materially
+delivered roadmap or wave under GC-018. It is a reusable authoring template,
+not an authorization record by itself.
+
+## Scope / Target / Owner Boundary
+
+Target: GC-018 continuation candidate packets. Owner: CVF governance
+documentation surface. This template must be copied into a concrete
+candidate/review artifact before it can govern implementation.
+
+## Claim Boundary
+
+Using this template does not close, reopen, or authorize any roadmap. Closure,
+reopening, and implementation authority require a filled candidate packet,
+source verification where applicable, and the relevant autorun gates.
+
 ## When To Use
 
 Use this template only when all of the following are true:

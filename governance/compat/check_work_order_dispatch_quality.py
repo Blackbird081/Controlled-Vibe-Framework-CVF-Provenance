@@ -823,6 +823,8 @@ def _validate_lhw_wave_closure_range(changed_files: list[str]) -> list[dict[str,
 
 def _is_target(path: str) -> bool:
     normalized = path.replace("\\", "/")
+    if "/archive/" in normalized:
+        return False
     return normalized.endswith(".md") and (
         normalized.startswith("docs/work_orders/")
         or normalized.startswith("docs/roadmaps/")

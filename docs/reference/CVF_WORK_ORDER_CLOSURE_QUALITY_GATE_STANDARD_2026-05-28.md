@@ -25,6 +25,12 @@ It is mandatory for documentation-only work, runtime/code work, public-facing
 work, live-proof work, and multi-agent transfer work. Higher-risk work may add
 stricter gates, but it may not omit this standard.
 
+Archive-qualified artifacts under `archive/` are excluded from active
+dispatch/closure validation. Archiving preserves historical evidence; it is not
+a new active ready/dispatch/closure claim. If archived evidence is promoted
+back to an active path or cited as current closure evidence, the active artifact
+must satisfy this gate.
+
 ## Rule
 
 No agent may mark a work order or roadmap task `CLOSED`, `CLOSED_PASS`,

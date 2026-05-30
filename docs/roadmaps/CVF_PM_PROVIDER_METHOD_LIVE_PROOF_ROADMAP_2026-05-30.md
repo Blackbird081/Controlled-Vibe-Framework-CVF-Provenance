@@ -127,7 +127,7 @@ For each PM tranche before closure:
 
 | Tranche | Method | Provider | Gate |
 | --- | --- | --- | --- |
-| PM-1 | stream | Alibaba/qwen-turbo | None — open |
+| PM-1 | stream | Alibaba/qwen-turbo | CLOSED_PASS_BOUNDED |
 | PM-2 | json_mode | DeepSeek/deepseek-chat | CLOSED_PASS_BOUNDED (PM-1 closed) |
 | PM-3 | vision | Alibaba/qwen-vl-plus | CLOSED_PASS_BOUNDED (PM-2 closed) |
 
