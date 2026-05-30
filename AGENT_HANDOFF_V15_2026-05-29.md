@@ -17,7 +17,7 @@ Active private provenance continuity for the current CVF repository. Use only
 with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
-Current closure anchor: `3ba5797b` (fix(governance): require public export disposition). Parent governed closure anchor: `bfeea1dc` (fix(governance): sync wave closure continuity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
+Current closure anchor: `676544ee` (feat(lhw17): LHW17 CVF_Important T1/T2/T3 ALL CLOSED_PASS_BOUNDED). Parent governed closure anchor: `3ba5797b` (fix(governance): require public export disposition). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
 
 ## Latest Work / Changes (2026-05-30)
 
