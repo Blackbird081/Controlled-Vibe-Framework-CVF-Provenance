@@ -901,3 +901,29 @@ export type {
   ContextBudgetGuardDisposition,
   ContextBudgetGuardResult,
 } from "./context-budget-guard";
+// APE-1 Adaptation Policy Engine
+export {
+  ADAPTATION_POLICY_ENGINE_VERSION,
+  checkA1RiskBudget,
+  checkA2ConfidenceGating,
+  checkA3MultiSignal,
+  checkA4Cooldown,
+  checkA5TieredAuthority,
+  checkA6Rollback,
+  checkAdaptationPolicy,
+} from "./adaptation-policy-engine";
+export type {
+  AdaptationConstraintId,
+  AdaptationCheckDisposition,
+  AgentAuthorityTier,
+  AdaptationTrigger,
+  AdaptationConstraintResult,
+  AdaptationPolicyCheckResult,
+  A1RiskBudgetInput,
+  A2ConfidenceGatingInput,
+  A3MultiSignalInput,
+  A4CooldownInput,
+  A5TieredAuthorityInput,
+  A6RollbackInput,
+  AdaptationPolicyInput,
+} from "./adaptation-policy-engine";
