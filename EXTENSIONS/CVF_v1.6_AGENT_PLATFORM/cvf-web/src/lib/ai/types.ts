@@ -79,6 +79,23 @@ export interface ExecutionRequest {
     };
 }
 
+export type GovernanceTraceStage =
+    | 'enforcement'
+    | 'routing'
+    | 'knowledge'
+    | 'approval'
+    | 'memory'
+    | 'validation';
+
+export interface GovernanceTraceEntry {
+    stage: GovernanceTraceStage;
+    policyId: string;
+    decision: string;
+    summary: string;
+    parametersChecked: string[];
+    constraintsApplied: string[];
+}
+
 export interface GovernanceEvidenceReceipt {
     receiptId: string;
     evidenceMode: 'live' | 'mock' | 'static';
@@ -101,6 +118,7 @@ export interface GovernanceEvidenceReceipt {
     durableMemoryRead?: DurableMemoryReceipt;
     durableMemoryWriteReceipt?: DurableMemoryReceipt;
     workflowComposition?: WorkflowCompositionSummary;
+    governanceTrace?: GovernanceTraceEntry[];
     generatedAt: string;
 }
 

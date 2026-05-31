@@ -1,5 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import {
+    buildEvidenceReceipt,
+    buildGovernanceTrace,
     buildGovernanceEnvelope,
     generatePolicySnapshotId,
     appendAuditEventToEnvelope,
@@ -158,6 +160,125 @@ describe('web-governance-envelope', () => {
             const before = env.auditEventIds;
             appendAuditEventToEnvelope(env, 'evt-X');
             expect(env.auditEventIds).toBe(before);
+        });
+    });
+
+    describe('buildGovernanceTrace', () => {
+        it('builds bounded default trace entries from receipt metadata', () => {
+            const env = buildGovernanceEnvelope({
+                routeId: '/api/execute',
+                surfaceClass: 'governance-execution',
+                evidenceMode: 'live',
+                riskLevel: 'R2',
+            });
+
+            const trace = buildGovernanceTrace({
+                envelope: env,
+                decision: 'ALLOW',
+                provider: 'alibaba',
+                model: 'qwen-turbo',
+                routingDecision: 'alibaba',
+                knowledgeSource: 'project',
+                knowledgeInjected: true,
+                knowledgeCollectionId: 'collection-1',
+                knowledgeChunkCount: 2,
+                approvalId: 'approval-1',
+                validationHint: 'ok',
+                aifMemoryReinjection: { status: 'SKIPPED' } as never,
+            });
+
+            expect(trace?.map((entry) => entry.stage)).toEqual([
+                'enforcement',
+                'routing',
+                'knowledge',
+                'approval',
+                'memory',
+                'validation',
+            ]);
+            expect(trace?.[0]).toMatchObject({
+                stage: 'enforcement',
+                policyId: env.policySnapshotId,
+                decision: 'ALLOW',
+            });
+            expect(trace?.every((entry) => Array.isArray(entry.parametersChecked))).toBe(true);
+            expect(trace?.every((entry) => Array.isArray(entry.constraintsApplied))).toBe(true);
+        });
+
+        it('sanitizes explicit trace entries and drops unsupported fields', () => {
+            const env = buildGovernanceEnvelope({
+                routeId: '/api/execute',
+                surfaceClass: 'governance-execution',
+                evidenceMode: 'live',
+            });
+
+            const receipt = buildEvidenceReceipt({
+                envelope: env,
+                governanceTrace: [
+                    {
+                        stage: 'routing',
+                        policyId: 'policy-1',
+                        decision: 'chosen',
+                        summary: 'Provider lane selected.',
+                        parametersChecked: ['provider'],
+                        constraintsApplied: ['bounded summary'],
+                        rawPrompt: 'please leak this',
+                        providerKey: 'sk-test-secret',
+                        privateMemory: 'internal memory',
+                    },
+                    {
+                        stage: 'unknown',
+                        policyId: 'policy-2',
+                        decision: 'ignored',
+                        summary: 'ignored',
+                        parametersChecked: ['ignored'],
+                        constraintsApplied: ['ignored'],
+                    },
+                ] as never,
+            });
+
+            expect(receipt.governanceTrace).toEqual([
+                {
+                    stage: 'routing',
+                    policyId: 'policy-1',
+                    decision: 'chosen',
+                    summary: 'Provider lane selected.',
+                    parametersChecked: ['provider'],
+                    constraintsApplied: ['bounded summary'],
+                },
+            ]);
+            const serialized = JSON.stringify(receipt.governanceTrace);
+            expect(serialized).not.toContain('sk-test-secret');
+            expect(serialized).not.toContain('please leak this');
+            expect(serialized).not.toContain('internal memory');
+        });
+
+        it('redacts unsafe explicit trace values instead of replaying them', () => {
+            const env = buildGovernanceEnvelope({
+                routeId: '/api/execute',
+                surfaceClass: 'governance-execution',
+                evidenceMode: 'live',
+            });
+
+            const trace = buildGovernanceTrace({
+                envelope: env,
+                governanceTrace: [{
+                    stage: 'validation',
+                    policyId: 'sk-unsafe-policy',
+                    decision: 'secret value',
+                    summary: 'raw prompt should not be repeated',
+                    parametersChecked: ['system prompt'],
+                    constraintsApplied: ['private memory'],
+                }] as never,
+            });
+
+            expect(trace).toEqual([{
+                stage: 'validation',
+                policyId: env.policySnapshotId,
+                decision: 'recorded',
+                summary: 'validation checkpoint recorded',
+                parametersChecked: ['bounded checkpoint metadata'],
+                constraintsApplied: ['summary-only receipt trace'],
+            }]);
         });
     });
 });
