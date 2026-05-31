@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-31
 
-Current mode marker: `allowed_scope_gate_remediation_protocol_enforced_cpg2_next`
+Current mode marker: `cpg2_implemented_pending_release_proof_cpg3_hold`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `allowed_scope_gate_remediation_protocol_enforced_cpg2_next`.
+Current mode: `cpg2_implemented_pending_release_proof_cpg3_hold`.
 
 Active handoff:
 
@@ -194,15 +194,16 @@ is CLOSED_PASS_BOUNDED at the documentation-only advisory boundary:
 
 `docs/roadmaps/CVF_LHW22_LHW23_LHW24_AGENT_INTELLIGENCE_ROADMAP_2026-05-31.md`
 
-Next allowed move: either open fresh CPG-2 GC-018 for the staged CP2 hard-gate
-packet after operator checkpoint, or prepare the next explicitly authorized
-roadmap. The CPG-2 worker run must use the allowed-scope mandatory remediation
-protocol. CPG-2 is parked, not canceled; a staged CPG-2 roadmap/work-order
-packet exists but remains held until fresh CPG-2 GC-018 and operator checkpoint:
+Next allowed move: isolate/rerun release-quality governance proof for CPG-2
+before any CPG-2 closure or CPG-3 governanceTrace work, or prepare a separate
+explicitly authorized roadmap that does not depend on CPG-2 closure. CPG-2 is
+implemented pending release proof, not closed:
 
 `docs/roadmaps/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_ROADMAP_2026-05-31.md`
 
 `docs/work_orders/CVF_WO_CPG2_CP2_HARD_GATE_ENFORCEMENT_2026-05-31.md`
+
+`docs/reviews/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_COMPLETION_2026-05-31.md`
 
 Public-safe subset sync remains available only from the public-sync clone after
 remote verification.

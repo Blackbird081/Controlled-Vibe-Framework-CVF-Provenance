@@ -17,8 +17,8 @@ Active private provenance continuity for the current CVF repository. Use only
 with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
-Current implementation anchor: `ab120d16` (feat(cpg2): add connection point enforce mode and gc018). Previous guard-hardening anchor: `765f16fb` (fix(governance): harden lhw closure quality gates). Previous LHW24 closure anchor: `de58adaf` (docs: add lhw24 advisory completions with runtime N/A lanes). Previous LHW23 closure anchor: `62c9db4f` (docs(lhw23): close routing and registry intelligence wave). Previous LHW22 closure anchor: `f9d87f23` (docs(lhw22): close agent intelligence foundations wave). Previous CPG2 staging anchor: `4f509fe4` (docs(cpg2): stage hard gate enforcement packet). Previous CPG-1 implementation anchor: `1ff0354c` (feat(cpg1): extract inbound event contract policy). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `ab120d16b81d212dff799d8d997a048a43fefb48` (short: `ab120d16`); parent: `7b94befe2a7c6cdbf62cdf4e3c083b9df6d69212`.
+Current implementation anchor: `5e1c6e9d` (fix(cpg2): harden gate enforcement review). Previous CPG2 worker anchor: `ab120d16` (feat(cpg2): add connection point enforce mode and gc018). Previous guard-hardening anchor: `765f16fb` (fix(governance): harden lhw closure quality gates). Previous LHW24 closure anchor: `de58adaf` (docs: add lhw24 advisory completions with runtime N/A lanes). Previous LHW23 closure anchor: `62c9db4f` (docs(lhw23): close routing and registry intelligence wave). Previous LHW22 closure anchor: `f9d87f23` (docs(lhw22): close agent intelligence foundations wave). Previous CPG2 staging anchor: `4f509fe4` (docs(cpg2): stage hard gate enforcement packet). Previous CPG-1 implementation anchor: `1ff0354c` (feat(cpg1): extract inbound event contract policy). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
+Current HEAD recorded for this handoff: `5e1c6e9d1fd04e59f16c70809d570f34347d9a5e` (short: `5e1c6e9d`); parent: `ab120d16b81d212dff799d8d997a048a43fefb48`.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -77,6 +77,19 @@ Recovery (`Human System Harness`). Handoff rotated from V14 to V15.
 
 ## Latest Work / Changes (2026-05-31)
 
+**CPG-2 CP2 Hard Gate IMPLEMENTED_PENDING_RELEASE_PROOF** (2026-05-31).
+Worker implementation was reviewed and corrected in `5e1c6e9d`. Advisory mode
+now remains non-blocking (`blocked=false`) even when advisory decision is
+reject; enforce review mode deterministically returns `REVIEW_HOLD`; MCP tool
+description states bounded enforce semantics without provider execution
+authorization. Guard hardening added two controls: runtime/source edits cannot
+pass while the cited work order remains `HOLD_*`/`DRAFT`/`PROPOSED`, and
+active-session parent-SHA exceptions are allowed only for dedicated
+session-sync-only commits. Verification: INT1 focused tests 12/12 PASS, MCP
+TypeScript build PASS, dispatch/public-export/markdown/finding/file-size guards
+PASS. Release-quality bundle timed out with no output, so CPG-2 is not closed
+and CPG-3 remains held.
+
 **Allowed-Scope Gate Remediation Protocol ENFORCED** (2026-05-31).
 `fix(governance): require allowed-scope gate remediation` adds the mandatory
 remediation rule to `AGENTS.md`, the autorun workflow standard, the work-order
@@ -100,8 +113,8 @@ dotted event values remain unchanged; `runtimeExecutionAuthorized=false`
 remains literal. MCP index reduced from 917 to 873 physical lines. Verification:
 INT1 `8/8`, MCP suite `554/554`, file-size guard PASS, release-quality
 governed-route bundle PASS `7/7` after classified timeout isolation.
-Implementation commit: `1ff0354c`. CPG-2 requires fresh GC-018 before any
-advisory/enforce semantic change.
+Implementation commit: `1ff0354c`. Later CPG-2 work has fresh GC-018 and is
+implemented pending release-quality proof.
 
 **Public Sync Quality Hardening CLOSED_PASS_BOUNDED** (2026-05-31).
 Operator-triggered pre-public quality pass after local/private work diverged
@@ -146,7 +159,7 @@ Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
 
 ## Active Boundary
 
-Current mode: `allowed_scope_gate_remediation_protocol_enforced_cpg2_next`.
+Current mode: `cpg2_implemented_pending_release_proof_cpg3_hold`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
@@ -292,15 +305,16 @@ public-release readiness claim.
 LHW24 is the latest closed LHW wave. LHW22-LHW24 agent-intelligence absorption
 is CLOSED_PASS_BOUNDED at the documentation-only advisory boundary:
 `docs/roadmaps/CVF_LHW22_LHW23_LHW24_AGENT_INTELLIGENCE_ROADMAP_2026-05-31.md`.
-Next allowed move: either open fresh CPG-2 GC-018 for the staged CP2 hard-gate
-packet after operator checkpoint, or prepare the next explicitly authorized
-roadmap. The next CPG-2 worker run must use the allowed-scope mandatory
-remediation protocol. CPG-2 is parked, not canceled; staged packet:
+Next allowed move: isolate/rerun release-quality governance proof for CPG-2
+before any CPG-2 closure or CPG-3 governanceTrace work, or prepare a separate
+explicitly authorized roadmap that does not depend on CPG-2 closure. CPG-2 is
+implemented pending release proof; staged packet:
 `docs/roadmaps/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_ROADMAP_2026-05-31.md`
 and
 `docs/work_orders/CVF_WO_CPG2_CP2_HARD_GATE_ENFORCEMENT_2026-05-31.md`.
-Resume it only after a fresh CPG-2 GC-018 and operator checkpoint. CPG-3
-remains held.
+Completion review:
+`docs/reviews/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_COMPLETION_2026-05-31.md`.
+CPG-3 remains held.
 
 Parked checkpoints:
 - VI5-T4/T5 hosted Netlify freshness and operator external-agent retest
@@ -316,8 +330,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`allowed_scope_gate_remediation_protocol_enforced_cpg2_next`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=open fresh CPG-2 GC-018 after operator checkpoint or prepare the next explicitly authorized roadmap with allowed-scope remediation enforced;
+Startup acknowledged: current mode=`cpg2_implemented_pending_release_proof_cpg3_hold`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=isolate/rerun CPG-2 release-quality governance proof before CPG-2 closure or CPG-3 work;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary
