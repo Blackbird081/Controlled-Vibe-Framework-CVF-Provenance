@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `72d9ebd409ff63579a54cc89f28174ed1ee26fc1` (short: `72d9ebd4`); parent: `eefd69345d6b19078a57e9d9760cb777a5b2ad64`.
+Current HEAD recorded for this handoff: `705b10cb525113f24544a1bf8f69bc649e0d089e` (short: `705b10cb`); parent: `72d9ebd409ff63579a54cc89f28174ed1ee26fc1`.
 
 ## Latest Work / Changes (2026-05-30)
 
