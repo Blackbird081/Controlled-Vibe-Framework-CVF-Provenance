@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lhw_rescan_a_cvf_important_reconciled_closed_pass_bounded`.
+Current mode: `lhw_rescan_b_legacy_small_roots_reconciled_closed_pass_bounded`.
 
 Active handoff:
 
@@ -268,10 +268,19 @@ visible files: `229` parser-backed authority assets, one visible generated
 `.pyc` exclusion, and zero unresolved ledger rows. Broad semantic-region
 routing is rebuildable; deep interpretation remains explicitly open.
 
-Next allowed move: open fresh GC-018 for `LHW-RESCAN-B`, apply `GC-047` and
-`GC-048` to the unscanned `CVF 17.05`, `CVF 25.05`, and `CVF 28.05` source
-trees, and preserve `LHW-RESCAN-C` for cross-corpus synthesis and deep-review
-routing. Do not claim complete Legacy absorption from LHW-RESCAN-A.
+`LHW-RESCAN-B` is `CLOSED_PASS_BOUNDED`:
+
+`docs/reviews/CVF_LHW_RESCAN_B_LEGACY_SMALL_ROOTS_CORPUS_RECONCILIATION_COMPLETION_2026-06-01.md`
+
+The current bounded small-root truth is `38` visible files: `CVF 17.05=31`,
+`CVF 25.05=2`, and `CVF 28.05=5`. All `38` text-like authority assets have
+terminal `READ` status and broad semantic-region routing; exclusions and
+unresolved rows are both zero. Deep interpretation remains explicitly open.
+
+Next allowed move: open fresh GC-018 for `LHW-RESCAN-C`, apply `GC-047` and
+`GC-048` to the partial `CVF ADD`, `CVF 16.5`, and `CVF_Restructure` source
+trees, then perform cross-corpus synthesis and route bounded deep-review
+packets. Do not claim complete Legacy absorption from broad semantic routing.
 CPG-2 is CLOSED_PASS_BOUNDED with
 release-quality proof:
 

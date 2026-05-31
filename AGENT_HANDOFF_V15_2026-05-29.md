@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `ba93585f8b664441a2352c2d14d10e9875852aa4` (short: `ba93585f`); parent: `5080786bfc4fe5a7415282d8719b76ebb412ee82`.
+Current HEAD recorded for this handoff: `92fe91739f1482926a5de195b5fdb122ee37962d` (short: `92fe9173`); parent: `ba93585f8b664441a2352c2d14d10e9875852aa4`.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -171,7 +171,7 @@ Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
 
 ## Active Boundary
 
-Current mode: `lhw_rescan_a_cvf_important_reconciled_closed_pass_bounded`.
+Current mode: `lhw_rescan_b_legacy_small_roots_reconciled_closed_pass_bounded`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
@@ -330,9 +330,15 @@ Current `CVF_Important/` source truth: `24` top-level folders, `230` visible
 files, `229` parser-backed authority assets, one visible generated `.pyc`
 exclusion, and zero unresolved ledger rows. Broad semantic routing is
 rebuildable; deep interpretation remains open.
-Next allowed move: open fresh GC-018 for `LHW-RESCAN-B`, apply `GC-047` and
-`GC-048` to `CVF 17.05`, `CVF 25.05`, and `CVF 28.05`, then preserve
-`LHW-RESCAN-C` for cross-corpus synthesis and routed deep review.
+`LHW-RESCAN-B` is `CLOSED_PASS_BOUNDED`:
+`docs/reviews/CVF_LHW_RESCAN_B_LEGACY_SMALL_ROOTS_CORPUS_RECONCILIATION_COMPLETION_2026-06-01.md`.
+Current bounded small-root truth: `38` visible files across `CVF 17.05`,
+`CVF 25.05`, and `CVF 28.05`; all `38` text-like authority assets have
+terminal `READ` status and broad routing; exclusions and unresolved rows are
+both zero. Deep interpretation remains open.
+Next allowed move: open fresh GC-018 for `LHW-RESCAN-C`, apply `GC-047` and
+`GC-048` to partial `CVF ADD`, `CVF 16.5`, and `CVF_Restructure`, then
+perform cross-corpus synthesis and route bounded deep-review packets.
 CPG-2 is CLOSED_PASS_BOUNDED with release-quality proof;
 closure packet:
 `docs/roadmaps/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_ROADMAP_2026-05-31.md`
@@ -363,8 +369,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lhw_rescan_a_cvf_important_reconciled_closed_pass_bounded`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=open fresh GC-018 for LHW-RESCAN-B under GC-047 and GC-048, then preserve LHW-RESCAN-C;
+Startup acknowledged: current mode=`lhw_rescan_b_legacy_small_roots_reconciled_closed_pass_bounded`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=open fresh GC-018 for LHW-RESCAN-C under GC-047 and GC-048, then perform cross-corpus synthesis and routed deep review;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary

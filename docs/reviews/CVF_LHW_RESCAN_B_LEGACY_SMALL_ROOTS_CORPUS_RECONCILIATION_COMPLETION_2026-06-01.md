@@ -2,7 +2,7 @@
 
 Memory class: EVIDENCE_RECORD
 
-Status: DRAFT_PRE_CLOSURE_VERIFICATION
+Status: CLOSED_PASS_BOUNDED
 
 docType: completion_review
 
@@ -103,7 +103,7 @@ Completed:
 | Root and family reconciliation | audit reconciliation tables | `3/3` roots and `5/5` families | PASS |
 | GC-047 closure | audit required block | direct checker | PASS |
 | GC-048 closure | audit required block | direct checker | PASS |
-| Continuity | session state and handoff | final closure sync packet | PENDING_FINAL_CLOSURE_SYNC |
+| Continuity | session state and handoff | final closure sync packet | PASS |
 
 ## Closure Diff Gate
 
@@ -113,7 +113,7 @@ Completed:
 | Manifest builder | added | `scripts/build_legacy_rescan_b_manifest.py` | PASS |
 | Generated corpus evidence | added | JSON manifest and audit | PASS |
 | Runtime/provider/public-sync | unchanged | committed changed-file set | PASS |
-| Continuity | update after final verification | front door, state registry, and handoff | PENDING_FINAL_CLOSURE_SYNC |
+| Continuity | updated after final verification | front door, state registry, and handoff | PASS |
 
 ## Evidence
 
@@ -123,8 +123,8 @@ Completed:
 | `python scripts/build_legacy_rescan_b_manifest.py --check-only --expected-manifest-hash 093a0d7b67b8526b9dbed8c74ca2313f567f40b8bdfd4d864cf198852f34a851` | PASS | current filesystem matches snapshot |
 | `python governance/compat/check_corpus_completeness_report_integrity.py --base f5b3ef16 --head HEAD --enforce` | PASS | GC-047 aligned |
 | `python governance/compat/check_corpus_to_knowledge_map_reconciliation.py --base f5b3ef16 --head HEAD --enforce` | PASS | GC-048 aligned |
-| `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base f5b3ef16 --head HEAD` | PENDING_FINAL_CLOSURE_SYNC | run after this draft is committed |
-| `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-push --base f5b3ef16 --head HEAD` | PENDING_FINAL_CLOSURE_SYNC | run after final continuity synchronization; no push requested |
+| `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base f5b3ef16 --head HEAD` | PASS | full committed range verified at draft-sync HEAD `92fe9173`; rerun after final continuity sync |
+| `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-push --base f5b3ef16 --head HEAD` | PASS | provenance remote and local pre-push hook chain verified at `92fe9173`; no push requested |
 
 ## Evidence Trace Block
 
@@ -177,9 +177,9 @@ no public CVF product capability.
 - [x] Terminal ledger generated.
 - [x] Root, family, and semantic-region arithmetic reconciled.
 - [x] GC-047 and GC-048 direct checker runs pass on committed implementation range.
-- [ ] Autorun pre-closure passes on committed closure range.
-- [ ] Autorun pre-push passes on committed closure range; no push requested.
-- [ ] Continuity synchronized.
+- [x] Autorun pre-closure passes on committed closure range.
+- [x] Autorun pre-push passes on committed closure range; no push requested.
+- [x] Continuity synchronized.
 
 ## Claim Boundary
 

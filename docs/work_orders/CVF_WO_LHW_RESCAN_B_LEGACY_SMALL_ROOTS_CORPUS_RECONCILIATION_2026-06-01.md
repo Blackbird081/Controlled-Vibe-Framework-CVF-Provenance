@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -111,13 +111,13 @@ python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implemen
 
 | Roadmap requirement | Work-order instruction | Output artifact or field | Verification command or check | Status |
 | --- | --- | --- | --- | --- |
-| Filesystem inventory | Build deterministic multi-root generator | JSON `manifest` | regenerate and compare hash | DISPATCHED |
-| File-level ledger | Parse or visibly disposition every file | JSON `processingLedger` | count terminal rows | DISPATCHED |
-| Semantic routing | Assign broad region to every authority row | JSON `counts.semanticRegions` | region arithmetic | DISPATCHED |
-| Family reconciliation | Cross-check all roots and families | audit family table | family count recompute | DISPATCHED |
-| GC-047 closure | Add required block | audit corpus verdict | GC-047 checker | DISPATCHED |
-| GC-048 closure | Add required block | audit knowledge-map verdict | GC-048 checker | DISPATCHED |
-| Continuity | Route next move after closure | session state and handoff | active-session checker | DISPATCHED |
+| Filesystem inventory | Build deterministic multi-root generator | JSON `manifest` | regenerate and compare hash | PASS |
+| File-level ledger | Parse or visibly disposition every file | JSON `processingLedger` | count terminal rows | PASS |
+| Semantic routing | Assign broad region to every authority row | JSON `counts.semanticRegions` | region arithmetic | PASS |
+| Family reconciliation | Cross-check all roots and families | audit family table | family count recompute | PASS |
+| GC-047 closure | Add required block | audit corpus verdict | GC-047 checker | PASS |
+| GC-048 closure | Add required block | audit knowledge-map verdict | GC-048 checker | PASS |
+| Continuity | Route next move after closure | session state and handoff | active-session checker | PASS |
 
 ## Knowledge Absorption Blind-Spot Control Block
 
@@ -242,15 +242,15 @@ runtime, provider, public-sync, or autonomous-mutation change enters the batch.
 
 | Item | Required closure resolution |
 | --- | --- |
-| GC-018 packet committed | Commit authorization packet before implementation |
-| Pre-dispatch gate | PASS required |
-| Pre-implementation gate | PASS required |
-| Generated manifest and ledger | PASS required |
-| GC-047 and GC-048 machine checks | PASS required |
-| Completion review | PASS required |
+| GC-018 packet committed | PASS: authorization packet commit `193f218a` |
+| Pre-dispatch gate | PASS against captured base `f5b3ef16` |
+| Pre-implementation gate | PASS after allowed-scope continuity remediation commit `b1adb607` |
+| Generated manifest and ledger | PASS: implementation commit `563c61b7`; `38/38` terminal rows |
+| GC-047 and GC-048 machine checks | PASS on committed range `f5b3ef16..92fe9173` |
+| Completion review | PASS: `docs/reviews/CVF_LHW_RESCAN_B_LEGACY_SMALL_ROOTS_CORPUS_RECONCILIATION_COMPLETION_2026-06-01.md` |
 | Public export | N/A with reason: private provenance scan only |
 | Runtime/provider/live-proof lane | N/A with reason: source-analysis tranche |
-| Continuity synchronization | PASS required before closure |
+| Continuity synchronization | PASS: final front-door, state-registry, and handoff sync included in closure batch |
 
 ## Operator Checkpoint
 

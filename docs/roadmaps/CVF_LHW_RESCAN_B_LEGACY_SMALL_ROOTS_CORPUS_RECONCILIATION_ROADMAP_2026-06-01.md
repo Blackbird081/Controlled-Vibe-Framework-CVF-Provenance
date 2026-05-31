@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: AUTHORIZED
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -62,12 +62,12 @@ Out of scope:
 
 | Step | Requirement | Output | Status |
 | --- | --- | --- | --- |
-| B1 | Enumerate filesystem source truth | JSON manifest with 38 visible files | AUTHORIZED |
-| B2 | Parse or visibly disposition every file | Terminal processing ledger | AUTHORIZED |
-| B3 | Route broad semantic regions | Rebuildable semantic-region summary | AUTHORIZED |
-| B4 | Reconcile three roots and top-level families | LHW-RESCAN-B audit | AUTHORIZED |
-| B5 | Run adversarial recount and drift check | Audit evidence section | AUTHORIZED |
-| B6 | Close with bounded claim | Completion review and continuity sync | AUTHORIZED |
+| B1 | Enumerate filesystem source truth | JSON manifest with 38 visible files | PASS |
+| B2 | Parse or visibly disposition every file | Terminal processing ledger | PASS |
+| B3 | Route broad semantic regions | Rebuildable semantic-region summary | PASS |
+| B4 | Reconcile three roots and top-level families | LHW-RESCAN-B audit | PASS |
+| B5 | Run adversarial recount and drift check | Audit evidence section | PASS |
+| B6 | Close with bounded claim | Completion review and continuity sync | PASS |
 
 ## Verification / Evidence
 
@@ -116,6 +116,14 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance Legacy reconciliation only. The public-sync clone
 remains untouched and no public catalog artifact is claimed.
+
+## Closure Result
+
+LHW-RESCAN-B closes `CLOSED_PASS_BOUNDED`: all `38` visible files across the
+three target roots are represented by the filesystem-backed manifest and
+terminal ledger; all `38` authority assets route into rebuildable broad
+semantic regions; exclusions and unresolved files are both zero. Routed deep
+interpretation remains explicitly outside this tranche.
 
 ## Claim Boundary
 
