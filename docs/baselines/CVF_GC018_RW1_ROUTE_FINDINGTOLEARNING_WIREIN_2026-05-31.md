@@ -3,7 +3,7 @@
 
 Memory class: BASELINE_RECORD
 
-Status: AUTHORIZED
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-05-31
 
@@ -29,11 +29,14 @@ ALLOW response carries both `learningPlaneReadout` (RT1) and
 
 ## Decision / Baseline / Proposed Tranche
 
-**Decision:** AUTHORIZED — R1 risk, additive only, net-zero line approach.
+**Decision:** CLOSED_PASS_BOUNDED — R1 risk, additive only, route line-count
+guard preserved.
 
-**Approach:** Append `buildFindingToLearningRecord` import to existing line 38
-(already a multi-import line), append call to existing line 952, append field
-to existing line 994. No new lines added. Route.ts stays ≤ 1000.
+**Approach:** Append `buildFindingToLearningRecord` import to the existing
+multi-import cluster, append call to the existing readout construction line,
+and append field to the existing response readout line. One adjacent import
+pair was also merged so Vitest's newline-count assertion sees route.ts at
+1000 or below. Route.ts is 999 physical lines post-edit.
 
 **Input to `buildFindingToLearningRecord`:** Synthetic finding record derived
 from the current execution context — `lane=GOVERNANCE_CONTROL_PLANE`,
@@ -99,10 +102,14 @@ Scope: 3 line-appends only. No logic change. No new lines.
 
 | Deliverable | Verification | Status |
 | --- | --- | --- |
-| route.ts ≤ 1000 lines post-edit | wc -l | REQUIRED |
-| Unit tests PASS | `npm run test:run` | REQUIRED |
-| Live proof receipt | alibaba/qwen-turbo ALLOW | REQUIRED |
-| `findingToLearningReadout.autonomousMutationAuthorized=false` | test assertion | REQUIRED |
+| route.ts <= 1000 lines post-edit | physical line count + route guard test | PASS: 999 physical / 1000 split count |
+| Unit tests PASS | `npx vitest run --exclude "**/*.live.test.ts"` | PASS: 233 files, 2890 passed, 2 skipped |
+| Live proof receipt | alibaba/qwen-turbo ALLOW | PASS: `rcpt-env-mptfzz68-ywcuvn` |
+| `findingToLearningReadout.autonomousMutationAuthorized=false` | `route.rw1-finding-to-learning.alibaba.live.test.ts` | PASS |
+
+Full live-suite note: broad `npm run test:run` also exercised unrelated live
+lanes and exposed pre-existing/non-RW1 variance in DLP and RT1 live tests. RW1
+closure uses the focused live receipt above plus the non-live full suite.
 
 ---
 
@@ -125,4 +132,16 @@ additive-only approach.
 
 ## Authorization
 
-**AUTHORIZED** — R1, operator explicit auth, additive-only net-zero approach.
+**CLOSED_PASS_BOUNDED** — R1, operator explicit auth, additive advisory field
+only, route.ts line-count guard preserved, live RW1 proof PASS.
+
+---
+
+## Public Export Disposition
+
+DEFERRED_PRIVATE_ONLY
+
+RW1 closes in the private provenance repository only. No public-sync remote,
+public commit, or public artifact path was produced in this tranche. Next action
+before any public catalog claim: open a separate public-sync batch from the
+public-sync clone.

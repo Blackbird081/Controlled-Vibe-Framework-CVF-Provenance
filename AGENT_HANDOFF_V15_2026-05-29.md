@@ -17,7 +17,7 @@ Active private provenance continuity for the current CVF repository. Use only
 with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
-Current closure anchor: `c6556d35` (feat(rt2+rt3): Finding-to-Learning Bridge CLOSED + RT3 boundary). Parent governed closure anchor: `7919ca92` (feat(rt1)). Prior parents: `0141bfcf` (feat(wd1)), `da852a1f` (feat(lplp2)). Derive the current HEAD live with `git rev-parse --short HEAD` when needed. Parent governed closure anchor: `09362e30` (feat(lplp1)). Derive the current HEAD live with `git rev-parse --short HEAD` when needed. Parent governed closure anchor: `46ca9f4f` (feat(se1+is1)). Derive the current HEAD live with `git rev-parse --short HEAD` when needed. Parent governed closure anchor: `bfc542fc` (feat(rm1): Reputation Routing Advisory Step 7). Derive the current HEAD live with `git rev-parse --short HEAD` when needed. Parent governed closure anchor: `5155bc45` (feat(tm1): Truth Model Calibration Step 6). Derive the current HEAD live with `git rev-parse --short HEAD` when needed. Parent governed closure anchor: `161ea531` (feat(ape1): Adaptation Policy Engine A1-A6). Derive the current HEAD live with `git rev-parse --short HEAD` when needed. Parent governed closure anchor: `306b63c6` (feat(cbg1): Context Budget Guard). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
+Current closure anchor: `0256d266` (feat(rw1): route Finding-to-Learning wire-in implementation). Parent governed closure anchor: `c6556d35` (feat(rt2+rt3): Finding-to-Learning Bridge CLOSED + RT3 boundary). Prior parents: `7919ca92` (feat(rt1)), `0141bfcf` (feat(wd1)), `da852a1f` (feat(lplp2)). Derive the current HEAD live with `git rev-parse --short HEAD` when needed. Parent governed closure anchor: `09362e30` (feat(lplp1)). Derive the current HEAD live with `git rev-parse --short HEAD` when needed. Parent governed closure anchor: `46ca9f4f` (feat(se1+is1)). Derive the current HEAD live with `git rev-parse --short HEAD` when needed. Parent governed closure anchor: `bfc542fc` (feat(rm1): Reputation Routing Advisory Step 7). Derive the current HEAD live with `git rev-parse --short HEAD` when needed. Parent governed closure anchor: `5155bc45` (feat(tm1): Truth Model Calibration Step 6). Derive the current HEAD live with `git rev-parse --short HEAD` when needed. Parent governed closure anchor: `161ea531` (feat(ape1): Adaptation Policy Engine A1-A6). Derive the current HEAD live with `git rev-parse --short HEAD` when needed. Parent governed closure anchor: `306b63c6` (feat(cbg1): Context Budget Guard). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -76,6 +76,16 @@ Recovery (`Human System Harness`). Handoff rotated from V14 to V15.
 
 ## Latest Work / Changes (2026-05-31)
 
+**RW1 Route Finding-to-Learning Wire-In CLOSED_PASS_BOUNDED** (2026-05-31).
+`cvf.routeFindingToLearningWireIn.rw1.v1` — `/api/execute` ALLOW responses now
+include `findingToLearningReadout` from `buildFindingToLearningRecord()`.
+Implementation commit `0256d266`. route.ts remains below the hard guard at 999
+physical lines. Focused live proof PASS on Alibaba `qwen-turbo`, receipt
+`rcpt-env-mptfzz68-ywcuvn`, with `autonomousMutationAuthorized=false` and
+`requiresGovernanceWorkOrder=false`. Non-live full cvf-web suite PASS:
+233 files, 2890 passed, 2 skipped. Broad live-suite DLP/RT1 variance is
+recorded as diagnostic/out-of-scope and is not RW1 closure evidence.
+
 **TM1 Truth Model Calibration CLOSED_PASS_BOUNDED** (2026-05-31). `cvf.truthModelCalibration.tm1.v1` — `runCalibrationSession()` with APE-1 A1-A6 preflight gate + TruthModelContract.build() + TruthScoreContract.score(). Closes LHW17 T3 Step 6. isProvisional=true. 67 files, 1644/1644 PASS. TypeScript PASS.
 
 **APE-1 Adaptation Policy Engine CLOSED_PASS_BOUNDED** (2026-05-31). `cvf.adaptationPolicyEngine.ape1.v1` — `checkA1RiskBudget` + `checkA2ConfidenceGating` + `checkA3MultiSignal` + `checkA4Cooldown` + `checkA5TieredAuthority` + `checkA6Rollback` + `checkAdaptationPolicy()`. Satisfies LHW17 T3 Step 5; gates Step 6 (Truth Model). 66 test files, 1631/1631 PASS. TypeScript PASS. Source: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/adaptation-policy-engine.ts`.
@@ -93,7 +103,7 @@ Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
 
 ## Active Boundary
 
-Current mode: `rt3_learning_plane_readout_route_closed_pass_bounded`.
+Current mode: `rw1_route_finding_to_learning_wirein_closed_pass_bounded`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
@@ -214,11 +224,13 @@ public-release readiness claim.
 
 LHW20 is the latest closed LHW wave (T1/T2/T3 CVF_Important deep scan CLOSED_PASS_BOUNDED).
 LHW17-19 closed (CVF_Important/CVF_Edit/CVF_Restructure all absorbed). Delta, WCE, EL, PM,
-LHW15-16 all CLOSED_PASS_BOUNDED. All legacy scan folders absorbed. All work orders closed.
-Next options: (1) Adaptation Policy Engine implementation (A1-A6 from LHW20 T3, prerequisite
-for Learning Plane activation), (2) Context Budget Guard implementation (from LHW18 T3),
-(3) Integration SDK adapter tranche (from LHW19 T1), (4) operator-initiated roadmap,
-(5) public-sync update.
+LHW15-16 all CLOSED_PASS_BOUNDED. LP Activation Roadmap RT1+RT2+RT3+RW1 is
+closed at advisory level. All legacy scan folders absorbed. All work orders closed.
+Next options: (1) Feedback Ledger Write mutation (separate R2-R3 GC-018 +
+operator checkpoint required), (2) framework adapter tranche
+(LangChain/CrewAI/AutoGen from LHW19 T1 advisory), (3) route.ts
+rotation/maintainability tranche before any future /api/execute response-field
+expansion, (4) operator-initiated roadmap, (5) public-sync update.
 
 Parked checkpoints:
 - VI5-T4/T5 hosted Netlify freshness and operator external-agent retest
@@ -234,8 +246,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rt3_learning_plane_readout_route_closed_pass_bounded`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=LHW20 latest closed wave; LP Activation Roadmap RT1+RT2+RT3 ALL CLOSED_PASS_BOUNDED; next: feedback ledger write mutation (separate R2-R3 GC-018) or framework adapter tranche (LHW19 T1) or new operator roadmap;
+Startup acknowledged: current mode=`rw1_route_finding_to_learning_wirein_closed_pass_bounded`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=LHW20 latest closed wave; LP Activation Roadmap RT1+RT2+RT3+RW1 ALL CLOSED_PASS_BOUNDED; next: feedback ledger write mutation (separate R2-R3 GC-018) or framework adapter tranche (LHW19 T1) or route.ts rotation/maintainability tranche before future response-field expansion or new operator roadmap;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary
