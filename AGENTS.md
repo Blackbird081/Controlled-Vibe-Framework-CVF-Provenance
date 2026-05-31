@@ -581,6 +581,37 @@ Machine checks prove evidence discipline, not semantic understanding of every
 file; high-impact reports still require adversarial sampling or independent
 recomputation.
 
+## Mandatory Corpus-To-Knowledge-Map Reconciliation - 2026-06-01
+
+Canonical standards:
+
+- `docs/reference/CVF_KNOWLEDGE_SYSTEM_METHOD_STANDARD_2026-06-01.md`
+- `docs/reference/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_STANDARD_2026-06-01.md`
+
+Machine guard:
+
+`governance/compat/check_corpus_to_knowledge_map_reconciliation.py`
+
+Any AI/agent that creates, refreshes, or relies on a corpus-derived knowledge
+map, semantic-region ledger, architecture reconciliation, Memory synthesis,
+graphification plan, or retrieval-readiness claim must include a `Knowledge
+System Reconciliation` block.
+
+The block must distinguish source authority from rebuildable derived views,
+use filesystem-backed or structured-complete enumeration, account for all
+authority assets through mapped/deferred/unmapped totals, expose cross-region
+links, check drift and rebuildability, bound retrieval claims, and record
+adversarial verification.
+
+Bare `rg --files` is not completeness evidence. Ripgrep inventory must use
+`rg --files --hidden --no-ignore`. `RECONCILED_VERIFIED` requires zero deferred
+and zero unmapped assets plus `Drift check: PASS`.
+
+Graph, semantic-region, Palace, summary, cache, snapshot, and retrieval views
+are derived views. They may improve navigation but must remain rebuildable from
+governed source authority. Machine checks prove reconciliation discipline, not
+deep semantic correctness or runtime integration.
+
 ## Latest Closed Continuation Roadmap
 
 The latest closed continuation roadmap is `docs/roadmaps/CVF_W132_T1_PROVIDER_RUNTIME_STABILITY_AND_BROWSER_SESSION_HARDENING_ROADMAP_2026-04-30.md`.

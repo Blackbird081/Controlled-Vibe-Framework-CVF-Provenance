@@ -91,6 +91,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             base,
             head,
         ),
+        _range_command(
+            "corpus-to-knowledge-map reconciliation",
+            "governance/compat/check_corpus_to_knowledge_map_reconciliation.py",
+            base,
+            head,
+        ),
     GateCommand(
         "active session state compatibility",
         ("python", "governance/compat/check_active_session_state.py", "--enforce"),

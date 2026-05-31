@@ -49,6 +49,7 @@ Out of scope:
 | `governance/toolkit/05_OPERATION/CVF_MEMORY_GOVERNANCE_GUARD.md` | GC-022 durable memory, evidence, and continuity boundary. |
 | `governance/toolkit/05_OPERATION/CVF_GOVERNED_ARTIFACT_AUTHORING_GUARD.md` | GC-032 governed artifact authoring and source-truth rules. |
 | `governance/toolkit/05_OPERATION/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_GUARD.md` | GC-047 manifest, terminal-ledger, reconciliation, and honest-verdict rules for bounded corpus tasks. |
+| `governance/toolkit/05_OPERATION/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_GUARD.md` | GC-048 authority/derived-view, semantic-region, orphan, drift, rebuildability, and retrieval-boundary rules for corpus-derived knowledge maps. |
 
 ## Protocol Requirements
 
@@ -72,10 +73,11 @@ Before material governed work, state or internally confirm:
 ## Current Stop Boundary
 
 The current mode is
-`ccg1_corpus_completeness_report_integrity_guard_closed_pass_bounded`.
+`gc048_knowledge_system_foundation_implementation_active`.
 
-CCG-1 governance hardening is closed. `LHW-RESCAN-A` may open only with a fresh
-GC-018 packet and `GC-047` corpus evidence. New runtime contracts and public
+GC-048 Knowledge System foundation implementation is active. `LHW-RESCAN-A`
+may open only after GC-048 closure with a fresh GC-018 packet, GC-047 corpus
+evidence, and GC-048 reconciliation evidence. New runtime contracts and public
 claims of coherent governed capability runtime remain blocked unless
 separately authorized.
 

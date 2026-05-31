@@ -182,6 +182,10 @@ The gate must include source verification schema, roadmap trace matrix,
 structural completeness, docs governance naming, active session state, and file
 size maintainability checks.
 
+For bounded corpus and corpus-derived knowledge-map work, the gate must also
+run GC-047 corpus completeness and GC-048 corpus-to-knowledge-map
+reconciliation checks before dispatch, implementation, closure, and push.
+
 Dispatch is blocked when:
 
 - the work order uses non-canonical Source Verification columns;
@@ -193,6 +197,8 @@ Dispatch is blocked when:
 - a connector wave lacks fresh GC-018 baseline evidence.
 - a bounded corpus task lacks its corpus manifest, terminal processing ledger,
   reconciliation evidence, or an honest non-complete verdict.
+- a corpus-derived knowledge map lacks source-authority separation,
+  semantic-region reconciliation, drift truth, or an honest bounded verdict.
 
 ### Step 2 - Pre-Implementation Gate
 

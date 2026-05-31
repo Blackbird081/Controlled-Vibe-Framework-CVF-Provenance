@@ -80,6 +80,10 @@ For a folder tree, raw enumeration evidence must come from the filesystem or a
 structured API that lists the complete source set. A summary file, prior report,
 or model assertion is not inventory evidence.
 
+A bare `rg --files` command is ignore-sensitive and is not completeness
+evidence. When ripgrep is used for inventory, it must include both `--hidden`
+and `--no-ignore`, or the task must retain a bounded non-complete verdict.
+
 ## Processing Ledger
 
 Every manifest file must appear in a processing ledger with one allowed
@@ -206,6 +210,8 @@ The following are blocking defects:
 
 - claiming `all files read`, `full scan`, `complete inventory`, or equivalent
   without filesystem-backed enumeration;
+- using ignore-sensitive default listing such as bare `rg --files` as
+  completeness evidence;
 - omitting unsupported or unreadable formats;
 - using folder totals without file-level processing coverage;
 - claiming `COMPLETE_VERIFIED` with unresolved files;
@@ -230,4 +236,3 @@ prove that an agent semantically understood every nuance, that every extracted
 fact is correct, or that every downstream recommendation is optimal.
 Traceability and adversarial verification remain required where impact
 justifies them.
-

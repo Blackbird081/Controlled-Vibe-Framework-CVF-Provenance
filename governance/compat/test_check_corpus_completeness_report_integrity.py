@@ -74,7 +74,17 @@ def test_partial_verdict_allows_unresolved_files() -> None:
     assert MODULE._validate_output("docs/audits/CVF_TEST.md", partial) == []
 
 
+def test_bare_rg_files_enumeration_fails() -> None:
+    invalid = VALID_COMPLETE.replace("Get-ChildItem docs/source -Recurse -File", "rg --files docs/source")
+    issues = MODULE._validate_output("docs/audits/CVF_TEST.md", invalid)
+    assert any("rg --files --hidden --no-ignore" in message for message in _messages(issues))
+
+
+def test_ignore_safe_rg_files_enumeration_passes() -> None:
+    safe = VALID_COMPLETE.replace("Get-ChildItem docs/source -Recurse -File", "rg --files --hidden --no-ignore docs/source")
+    assert MODULE._validate_output("docs/audits/CVF_TEST.md", safe) == []
+
+
 def test_binding_requires_checker_reference() -> None:
     issues = MODULE._validate_binding(MODULE.AUTORUN_PATH, "no checker binding")
     assert any(MODULE.THIS_SCRIPT_PATH in message for message in _messages(issues))
-

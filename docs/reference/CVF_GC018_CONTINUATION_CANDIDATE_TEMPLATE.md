@@ -166,6 +166,36 @@ decision, add this block before claiming corpus completeness:
   PARTIAL | BLOCKED | STALE_SNAPSHOT
 ```
 
+For any corpus-derived knowledge map, semantic-region ledger, architecture
+reconciliation, Memory synthesis, graphification plan, or retrieval-readiness
+claim, add:
+
+Machine check:
+`governance/compat/check_corpus_to_knowledge_map_reconciliation.py`
+
+```text
+## Knowledge System Reconciliation
+
+- Knowledge task class: ARCHITECTURE_MAP | SEMANTIC_REGION_MAP | MEMORY_SYNTHESIS |
+  GRAPHIFICATION | RETRIEVAL_READINESS | CORPUS_ABSORPTION | OTHER
+- Source manifest: <path or inline manifest>
+- Source manifest hash: <hash or N/A with reason>
+- Enumeration safety: <filesystem-backed command or structured complete API evidence>
+- Intake registry or ledger: <path or inline ledger>
+- Authority assets: <source-backed assets or ledger evidence>
+- Derived views: <graph, regions, Palace, summary, cache, snapshot, or N/A with reason>
+- Semantic region ledger: <path or inline ledger>
+- Region reconciliation: assets=<N>; mapped=<N>; deferred=<N>; unmapped=<N>
+- Orphan or unmapped assets: <none or explicit paths>
+- Cross-region links: <evidence or N/A with reason>
+- Drift check: <PASS, STALE_MAP, or N/A with reason>
+- Rebuildability check: <PASS or bounded reason>
+- Retrieval boundary: <bounded capability and deeper-review lane>
+- Adversarial verification: <recomputed totals and challenged risks>
+- Knowledge-map verdict: RECONCILED_VERIFIED | RECONCILED_WITH_DECLARED_GAPS |
+  PARTIAL | BLOCKED | STALE_MAP
+```
+
 ```text
 GC-018 Continuation Candidate
 - Candidate ID: <stable id>
@@ -228,6 +258,8 @@ Tranche Closure Checklist
 - [ ] Knowledge Absorption Blind-Spot Control Block present OR explicitly N/A:
       <reason>
 - [ ] Corpus Completeness And Report Integrity block present OR explicitly N/A:
+      <reason>
+- [ ] Knowledge System Reconciliation block present OR explicitly N/A:
       <reason>
 ```
 

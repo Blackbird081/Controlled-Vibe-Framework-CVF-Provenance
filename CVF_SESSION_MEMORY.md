@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-01
 
-Current mode marker: `memory_method_legacy_rescan_partial_gc048_hold`
+Current mode marker: `gc048_knowledge_system_foundation_implementation_active`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `memory_method_legacy_rescan_partial_gc048_hold`.
+Current mode: `gc048_knowledge_system_foundation_implementation_active`.
 
 Active handoff:
 
@@ -101,6 +101,25 @@ unreadable formats, aggregation check, drift check, traceability, adversarial
 verification, and an allowed corpus verdict. `COMPLETE_VERIFIED` requires zero
 unresolved files. The guard proves evidence discipline, not perfect semantic
 understanding.
+
+Corpus-To-Knowledge-Map Reconciliation is now the follow-on control for
+corpus-derived knowledge maps, semantic-region ledgers, architecture
+reconciliations, Memory syntheses, graphification plans, and
+retrieval-readiness claims:
+
+- Method:
+  `docs/reference/CVF_KNOWLEDGE_SYSTEM_METHOD_STANDARD_2026-06-01.md`
+- Standard:
+  `docs/reference/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_STANDARD_2026-06-01.md`
+- Guard:
+  `governance/toolkit/05_OPERATION/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_GUARD.md`
+- Checker:
+  `governance/compat/check_corpus_to_knowledge_map_reconciliation.py`
+
+GC-048 distinguishes source authority from rebuildable graph, semantic-region,
+Palace, summary, cache, snapshot, and retrieval views. It requires
+mapped/deferred/unmapped reconciliation, drift and rebuildability checks,
+retrieval boundaries, and adversarial verification.
 
 Work-order dispatch quality is machine-enforced by:
 
@@ -232,16 +251,19 @@ is CLOSED_PASS_BOUNDED at the documentation-only advisory boundary:
 `docs/roadmaps/CVF_LHW22_LHW23_LHW24_AGENT_INTELLIGENCE_ROADMAP_2026-05-31.md`
 
 Next allowed move: CPG-1, CPG-2, CPG-3, and CCG-1 are CLOSED_PASS_BOUNDED.
-Memory-method Legacy rescan audit is `PARTIAL`:
+GC-048 Knowledge System foundation implementation is active under:
+
+`docs/work_orders/CVF_WO_GC048_CVF_KNOWLEDGE_SYSTEM_FOUNDATION_2026-06-01.md`
+
+Memory-method Legacy rescan audit remains `PARTIAL`:
 
 `docs/audits/CVF_MEMORY_METHOD_LEGACY_RESCAN_AUDIT_2026-06-01.md`
 
-Before GC-048 implementation, open a fresh GC-018 synthesis packet defining
-the canonical CVF Memory Method and a `Corpus-To-Memory-Map Reconciliation And
-Semantic Region Guard`. Preserve `LHW-RESCAN-A/B/C`: apply `GC-047`, enumerate
-from filesystem or an explicit ignore-safe equivalent, reconcile all 24
-`CVF_Important/` subfolders, and create file-level terminal coverage before
-any complete Legacy absorption claim.
+Complete GC-048 governance verification and closure continuity sync. Then
+preserve `LHW-RESCAN-A/B/C`: open fresh GC-018, apply `GC-047` filesystem-backed
+inventory and `GC-048` map reconciliation, reconcile all 24 `CVF_Important/`
+subfolders, and create file-level terminal coverage before any complete Legacy
+absorption claim.
 CPG-2 is CLOSED_PASS_BOUNDED with
 release-quality proof:
 

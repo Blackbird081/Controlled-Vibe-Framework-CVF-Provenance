@@ -252,6 +252,25 @@ Primary references:
 - `docs/reference/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_STANDARD_2026-06-01.md`
 - `governance/compat/check_corpus_completeness_report_integrity.py`
 
+### `GC-048` — Corpus-To-Knowledge-Map Reconciliation
+
+Use when:
+
+- an agent creates or relies on a corpus-derived knowledge map,
+  semantic-region ledger, architecture reconciliation, Memory synthesis,
+  graphification plan, or retrieval-readiness claim;
+- source assets must remain distinguishable from graph, Palace, cache,
+  snapshot, summary, and retrieval views;
+- a non-coder operator needs machine evidence that orphan or stale map state
+  cannot hide behind coherent-looking synthesis.
+
+Primary references:
+
+- `governance/toolkit/05_OPERATION/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_GUARD.md`
+- `docs/reference/CVF_KNOWLEDGE_SYSTEM_METHOD_STANDARD_2026-06-01.md`
+- `docs/reference/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_STANDARD_2026-06-01.md`
+- `governance/compat/check_corpus_to_knowledge_map_reconciliation.py`
+
 ### `GC-044` — Template Skill Standard
 
 Use when:
@@ -297,6 +316,7 @@ Use this routing table after reading the always-on bootstrap:
 | product-value validation, comparative value proof, or Docker-trigger justification | `GC-042` + frozen corpus/rubric/run-manifest/assessment chain |
 | future knowledge absorption, repo-derived skill intake, or post-closure synthesis-first uplift planning | `CVF_SESSION/ACTIVE_SESSION_STATE.json` + `GC-043` + knowledge-absorption priority standard + active handoff |
 | reading, inventorying, extracting, comparing, summarizing, auditing, migrating, or absorbing a bounded file/folder corpus | `GC-047` + corpus completeness and report-integrity standard |
+| corpus-derived knowledge map, semantic-region ledger, architecture reconciliation, Memory synthesis, graphification, or retrieval-readiness claim | `GC-047` + `GC-048` + Knowledge System Method + map reconciliation standard |
 | template/skill corpus rescreen, future front-door template intake, or trusted-subset admission | `CVF_SESSION/ACTIVE_SESSION_STATE.json` + `GC-044` + corpus rescreen standard + active handoff |
 | touching governed public barrels, barrel smoke tests, shared batch helpers, or canonical summary surfaces | `GC-033` + `GC-034` + `GC-035` + `GC-036` + `docs/reference/CVF_MAINTAINABILITY_STANDARD.md` |
 | large file touched or split candidate | `GC-023` |
@@ -324,7 +344,8 @@ If routing is uncertain:
 5. if value-proof or Docker-justification ambiguity exists, default to `GC-042`
 6. if repo-derived knowledge or skill uplift ambiguity exists, default to `GC-043`
 7. if a bounded file/folder corpus informs a report or decision, default to `GC-047`
-8. if template/skill front-door quality or trusted-subset ambiguity exists, default to `GC-044`
+8. if corpus-derived knowledge mapping, graphification, or Memory synthesis ambiguity exists, default to `GC-047` + `GC-048`
+9. if template/skill front-door quality or trusted-subset ambiguity exists, default to `GC-044`
 
 ## Related Controls
 

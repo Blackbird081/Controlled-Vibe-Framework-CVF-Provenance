@@ -32,6 +32,9 @@ verification, and one allowed corpus verdict.
 `COMPLETE_VERIFIED` is forbidden while any manifest file lacks an allowed
 terminal processing-ledger status.
 
+Bare `rg --files` is ignore-sensitive and is not completeness evidence.
+Ripgrep inventory must use `rg --files --hidden --no-ignore`.
+
 ## Enforcement Surface
 
 - local pre-commit and pre-push hook chains run
@@ -54,4 +57,3 @@ terminal processing-ledger status.
 
 An agent may bound a report honestly. It may not silently shrink the corpus and
 then publish a complete-sounding conclusion.
-

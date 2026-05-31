@@ -61,7 +61,7 @@ Protocol:
 
 - cite the authority chain before instructions;
 - file required GC-018 baselines before implementation;
-- inherit GC-020, GC-023, GC-024, GC-046, GC-047, public/provenance, and live-proof
+- inherit GC-020, GC-023, GC-024, GC-046, GC-047, GC-048, public/provenance, and live-proof
   rules from the repository;
 - make reviewer gate and waiver rules explicit.
 
@@ -100,6 +100,11 @@ Verification requirements:
 - bounded corpus tasks must include GC-047 manifest, terminal processing
   ledger, reconciliation evidence, exclusions/unreadable accounting, and an
   honest machine-checked completeness verdict.
+- corpus-derived knowledge maps must include GC-048 source-authority,
+  semantic-region, mapped/deferred/unmapped, drift, rebuildability, and
+  retrieval-boundary evidence with an honest machine-checked verdict.
+- GC-048 machine check:
+  `governance/compat/check_corpus_to_knowledge_map_reconciliation.py`.
 
 The work order is invalid for execution if it does not name stop conditions.
 

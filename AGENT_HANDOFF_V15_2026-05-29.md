@@ -17,8 +17,8 @@ Active private provenance continuity for the current CVF repository. Use only
 with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
-Current implementation anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Previous implementation anchor: `7e75ec72` (docs(cpg3): close governance trace receipts). Previous CPG3 implementation anchor: `55dc22c9` (feat(cpg3): add governance trace receipts). Previous CPG3 packet anchor: `eef3cf5d` (docs(cpg3): stage governance trace receipt packet). Previous CPG2 close anchor: `9fe32058` (docs(cpg2): close hard gate enforcement). Previous CPG2 proof-fix anchor: `5e1c6e9d` (fix(cpg2): harden gate enforcement review). Previous CPG2 worker anchor: `ab120d16` (feat(cpg2): add connection point enforce mode and gc018). Previous guard-hardening anchor: `765f16fb` (fix(governance): harden lhw closure quality gates). Previous LHW24 closure anchor: `de58adaf` (docs: add lhw24 advisory completions with runtime N/A lanes). Previous LHW23 closure anchor: `62c9db4f` (docs(lhw23): close routing and registry intelligence wave). Previous LHW22 closure anchor: `f9d87f23` (docs(lhw22): close agent intelligence foundations wave). Previous CPG2 staging anchor: `4f509fe4` (docs(cpg2): stage hard gate enforcement packet). Previous CPG-1 implementation anchor: `1ff0354c` (feat(cpg1): extract inbound event contract policy). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `92d6506cc7d3c1f8de88b002b436d93846f6f0b4` (short: `92d6506c`); parent: `0b1c98dd4ac2f5be55a7f1207427d2e8bc87ca7d`.
+Current implementation anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous implementation anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Previous CPG3 closure anchor: `7e75ec72` (docs(cpg3): close governance trace receipts). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
+Current HEAD recorded for this handoff: `098fe279cb8d85c7c7fb13bd6f4cbef19a581931` (short: `098fe279`); parent: `15a458320947573855fabfa03d3d851d727448a4`.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -171,7 +171,7 @@ Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
 
 ## Active Boundary
 
-Current mode: `memory_method_legacy_rescan_partial_gc048_hold`.
+Current mode: `gc048_knowledge_system_foundation_implementation_active`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
@@ -308,6 +308,7 @@ public-release readiness claim.
 | Governed File Size Maintainability | ENFORCED — proactive rotation/splitting at near-threshold |
 | Finding-To-Governance Learning | ENFORCED — defect class + learning lane + disposition required |
 | Corpus Completeness And Report Integrity | ENFORCED — filesystem-backed manifest, terminal ledger, reconciliation, drift, traceability, and honest verdict for bounded corpus tasks |
+| Corpus-To-Knowledge-Map Reconciliation | ENFORCED — source authority, derived-view separation, semantic-region reconciliation, drift, rebuildability, and retrieval boundary for corpus-derived maps |
 | Multi-Provider Execution Log | ENFORCED — provider/model/surface/basis/diff attribution plus Execution Attribution Block |
 | Learning Signal Intake Bridge | BOUNDED_TYPED_INTAKE — `autonomousMutationAuthorized=false` |
 | IDE Extension Multi-Provider Log | ENFORCED — session logs for mixed-provider governed work |
@@ -319,14 +320,15 @@ LHW24 is the latest closed LHW wave. LHW22-LHW24 agent-intelligence absorption
 is CLOSED_PASS_BOUNDED at the documentation-only advisory boundary:
 `docs/roadmaps/CVF_LHW22_LHW23_LHW24_AGENT_INTELLIGENCE_ROADMAP_2026-05-31.md`.
 Next allowed move: CPG-1, CPG-2, CPG-3, and CCG-1 are CLOSED_PASS_BOUNDED.
-Memory-method Legacy rescan audit is `PARTIAL`:
+GC-048 Knowledge System foundation implementation is active under:
+`docs/work_orders/CVF_WO_GC048_CVF_KNOWLEDGE_SYSTEM_FOUNDATION_2026-06-01.md`.
+Memory-method Legacy rescan audit remains `PARTIAL`:
 `docs/audits/CVF_MEMORY_METHOD_LEGACY_RESCAN_AUDIT_2026-06-01.md`.
-Before GC-048 implementation, open a fresh GC-018 synthesis packet defining
-the canonical CVF Memory Method and a `Corpus-To-Memory-Map Reconciliation And
-Semantic Region Guard`. Preserve `LHW-RESCAN-A/B/C`: apply `GC-047`, enumerate
-from filesystem or an explicit ignore-safe equivalent, reconcile all 24
-`CVF_Important/` subfolders, and create file-level terminal coverage before
-any complete Legacy absorption claim.
+Complete GC-048 governance verification and closure continuity sync. Then
+preserve `LHW-RESCAN-A/B/C`: open fresh GC-018, apply `GC-047` filesystem-backed
+inventory and `GC-048` map reconciliation, reconcile all 24 `CVF_Important/`
+subfolders, and create file-level terminal coverage before any complete Legacy
+absorption claim.
 CPG-2 is CLOSED_PASS_BOUNDED with release-quality proof;
 closure packet:
 `docs/roadmaps/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_ROADMAP_2026-05-31.md`
@@ -357,8 +359,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`memory_method_legacy_rescan_partial_gc048_hold`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=open fresh GC-018 for canonical CVF Memory Method synthesis before GC-048 and preserve LHW-RESCAN-A/B/C under GC-047;
+Startup acknowledged: current mode=`gc048_knowledge_system_foundation_implementation_active`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=complete GC-048 governance verification and closure continuity sync, then preserve LHW-RESCAN-A/B/C under GC-047 and GC-048;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary

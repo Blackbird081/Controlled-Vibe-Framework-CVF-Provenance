@@ -473,6 +473,7 @@ Important current continuity controls:
 - `GC-032` requires governed artifact writing to stay source-truth-first, keep typed evidence explicit, and move continuity surfaces together when tranche posture changes
 - `GC-045` requires new governed Markdown files to include the structural sections required by their artifact type, enforced by `CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_GUARD.md`
 - `GC-047` requires bounded-corpus reports, comparisons, audits, and extractions to prove manifest, processing-ledger, reconciliation, drift, and traceability evidence before claiming completeness
+- `GC-048` requires corpus-derived knowledge maps to preserve source authority, reconcile semantic regions, expose gaps and drift, and keep graph/Palace/cache/snapshot views rebuildable
 
 Foundational governance surfaces that used to depend mainly on reviewer discipline are now also blocked by `governance/compat/check_foundational_guard_surfaces.py`, covering ADR updates, architecture-baseline refresh, extension naming, structural audit packets, test-depth reporting, and workspace isolation.
 
@@ -493,6 +494,7 @@ Mandatory guard index:
 - `CVF_CONFORMANCE_TRACE_ROTATION_GUARD.md`
 - `CVF_CONTINUATION_CHAIN_GUARD.md`
 - `CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_GUARD.md`
+- `CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_GUARD.md`
 - `CVF_DEPTH_AUDIT_GUARD.md`
 - `CVF_DIAGRAM_VALIDATION_GUARD.md`
 - `CVF_DOCUMENT_NAMING_GUARD.md`

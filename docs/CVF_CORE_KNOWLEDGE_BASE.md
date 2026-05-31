@@ -352,6 +352,7 @@ Output (Allow / Strip & Allow / Block)
 | CVF_MULTI_AGENT_REVIEW_DOC_GUARD.md | Multi-agent intake/rebuttal/decision docs | Canonical review doc chain must be standardized |
 | CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD.md | Multi-agent absorption reviews, rebuttal cycles, and cross-agent knowledge intake convergence | Evidence Trace Block required per claim; Adversarial Role Assignment; Convergence Algorithm without operator arbitration |
 | CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_GUARD.md | Folder/file-based inventory, report, extraction, comparison, audit, migration, or knowledge absorption | Manifest + processing ledger + reconciliation + drift + traceability required before completeness claims |
+| CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_GUARD.md | Corpus-derived knowledge map, semantic-region ledger, architecture reconciliation, Memory synthesis, or retrieval-readiness claim | Source authority separated from rebuildable views; semantic-region totals, orphan state, drift, rebuildability, and retrieval boundary required |
 | CVF_PRODUCT_VALUE_VALIDATION_GUARD.md | Product-value proof, comparative validation, or Docker-sandbox justification claims | Frozen corpus + rubric + run manifest + no-spin assessment required |
 | CVF_PROGRESS_TRACKER_SYNC_GUARD.md | Tranche posture change | Canonical tracker and sync note must stay aligned |
 | CVF_SURFACE_SCAN_CONTINUITY_GUARD.md | Fresh tranche selection or scan-state change | Canonical scan registry must preserve what was already scanned |

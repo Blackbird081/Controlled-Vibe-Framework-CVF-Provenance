@@ -281,6 +281,15 @@ Personal AI usage unrelated to company work is excluded.
      - canonical standard: `docs/reference/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_STANDARD_2026-06-01.md`
      - canonical operational rule: `governance/toolkit/05_OPERATION/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_GUARD.md`
      - automated enforcement reference: `governance/compat/check_corpus_completeness_report_integrity.py`
+42. `GC-048` corpus-derived knowledge maps, semantic-region ledgers, architecture reconciliations, Memory syntheses, graphification plans, and retrieval-readiness claims must preserve source authority and prove map reconciliation:
+     - distinguish authority assets from rebuildable graph, region, Palace, summary, cache, snapshot, and retrieval views
+     - reconcile `assets = mapped + deferred + unmapped`
+     - reject bare ignore-sensitive `rg --files` evidence, orphan-hidden maps, and reconciled claims with stale drift state
+     - keep retrieval claims bounded and require adversarial verification
+     - canonical method: `docs/reference/CVF_KNOWLEDGE_SYSTEM_METHOD_STANDARD_2026-06-01.md`
+     - canonical standard: `docs/reference/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_STANDARD_2026-06-01.md`
+     - canonical operational rule: `governance/toolkit/05_OPERATION/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_GUARD.md`
+     - automated enforcement reference: `governance/compat/check_corpus_to_knowledge_map_reconciliation.py`
 
 ---
 

@@ -131,6 +131,12 @@ machine-checked verdict from
 An agent may not claim `COMPLETE_VERIFIED` while any item remains unresolved or
 excluded.
 
+Any corpus-derived knowledge map, semantic-region ledger, architecture
+reconciliation, Memory synthesis, graphification plan, or retrieval-readiness
+claim must include `## Knowledge System Reconciliation`. Closure must reject
+unsafe enumeration, authority/derived-view confusion, arithmetic mismatch,
+hidden orphan state, stale drift state, and overbroad retrieval claims.
+
 Line-count claims must be command-backed or machine-verifiable. A connector
 spec, completion review, or audit must not claim "actual: N lines" or
 "spec < N lines" from memory when the current file exceeds that threshold.

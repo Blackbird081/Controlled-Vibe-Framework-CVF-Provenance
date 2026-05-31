@@ -133,7 +133,7 @@ Risk ceiling: R1 repository-governance foundation.
 - Knowledge task class: `FOUNDATION_DESIGN`
 - Source manifest: `.private_reference/legacy/` filesystem snapshot from Memory-method audit
 - Source manifest hash: `N/A with reason: GC-048 foundation designs the required future manifest-hash binding`
-- Enumeration safety: `PASS: filesystem Get-ChildItem enumeration used; default rg --files explicitly rejected as incomplete`
+- Enumeration safety: `Get-ChildItem ".private_reference/legacy" -Recurse -File`
 - Intake registry or ledger: `PARTIAL: method-family routing ledger exists; file-level intake ledger deferred to LHW-RESCAN-A/B/C`
 - Authority assets: `source assets + governed registry + provenance receipts`
 - Derived views: `graph, semantic regions, Palace placement, compiled context, cache, and snapshots`
@@ -202,4 +202,3 @@ This baseline authorizes repository governance enforcement and canonical
 knowledge-method documentation only. It does not authorize runtime ingestion,
 retrieval behavior, autonomous mutation, public publication, or claims of
 complete Legacy semantic absorption.
-

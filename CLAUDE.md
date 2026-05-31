@@ -106,6 +106,25 @@ unreadable/unsupported files, aggregation check, drift check, traceability,
 adversarial verification, and one allowed corpus verdict. Self-reported counts
 are not evidence. `COMPLETE_VERIFIED` requires zero unresolved files.
 
+## Mandatory Corpus-To-Knowledge-Map Reconciliation
+
+For corpus-derived knowledge maps, semantic-region ledgers, architecture
+reconciliations, Memory syntheses, graphification plans, or retrieval-readiness
+claims, follow:
+
+- `docs/reference/CVF_KNOWLEDGE_SYSTEM_METHOD_STANDARD_2026-06-01.md`
+- `docs/reference/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_STANDARD_2026-06-01.md`
+
+Machine guard:
+
+`governance/compat/check_corpus_to_knowledge_map_reconciliation.py`
+
+Include `## Knowledge System Reconciliation`. Distinguish authority assets
+from rebuildable derived views, reconcile mapped/deferred/unmapped totals,
+check drift, and bound retrieval claims. Bare `rg --files` is not completeness
+evidence; ripgrep inventory must use `rg --files --hidden --no-ignore`.
+`RECONCILED_VERIFIED` requires zero deferred and zero unmapped assets.
+
 For LHW connector waves, do not use bare `rejected: requires live route`
 wording when a family is excluded only because the current wave is doc-only.
 Use:

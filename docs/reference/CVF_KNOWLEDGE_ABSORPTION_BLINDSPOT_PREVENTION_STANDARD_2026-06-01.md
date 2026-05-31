@@ -116,6 +116,11 @@ The Gate 1 evidence block must contain:
 - the raw output (subfolder names listed, not paraphrased);
 - the actual total file count from the command output.
 
+Bare `rg --files` is not valid completeness evidence because ignored or hidden
+files may disappear. If ripgrep is used for inventory, use
+`rg --files --hidden --no-ignore`; otherwise use filesystem enumeration or a
+structured complete API.
+
 **Self-reported counts ("I read 13 subfolders / 97 files") without the
 corresponding shell output are not valid Gate 1 evidence and render the
 blind-spot verdict BLOCKED.**

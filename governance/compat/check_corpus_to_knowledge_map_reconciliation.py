@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """
-CVF Corpus Completeness And Report Integrity Gate
+CVF Corpus-To-Knowledge-Map Reconciliation Gate
 
-Requires changed bounded-corpus outputs to carry filesystem-backed inventory,
-processing-ledger, reconciliation, drift, traceability, and adversarial-review
-evidence before they claim a complete result.
+Requires corpus-derived knowledge maps to preserve source authority, safe
+enumeration, semantic-region accounting, drift truth, and rebuildability.
 """
 
 from __future__ import annotations
@@ -23,58 +22,49 @@ from typing import Any
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_BASE_CANDIDATES = ("origin/main", "origin/master", "main", "master")
 
-STANDARD_PATH = "docs/reference/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_STANDARD_2026-06-01.md"
-GUARD_PATH = "governance/toolkit/05_OPERATION/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_GUARD.md"
-THIS_SCRIPT_PATH = "governance/compat/check_corpus_completeness_report_integrity.py"
+METHOD_PATH = "docs/reference/CVF_KNOWLEDGE_SYSTEM_METHOD_STANDARD_2026-06-01.md"
+STANDARD_PATH = "docs/reference/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_STANDARD_2026-06-01.md"
+GUARD_PATH = "governance/toolkit/05_OPERATION/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_GUARD.md"
+THIS_SCRIPT_PATH = "governance/compat/check_corpus_to_knowledge_map_reconciliation.py"
 AUTORUN_PATH = "governance/compat/run_agent_autorun_workflow_gate.py"
 HOOK_CHAIN_PATH = "governance/compat/run_local_governance_hook_chain.py"
 WORKFLOW_PATH = ".github/workflows/documentation-testing.yml"
 AGENTS_PATH = "AGENTS.md"
 CLAUDE_PATH = "CLAUDE.md"
 GC018_TEMPLATE_PATH = "docs/reference/CVF_GC018_CONTINUATION_CANDIDATE_TEMPLATE.md"
+WORK_ORDER_TEMPLATE_PATH = "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md"
 ARCHIVE_MARKER = "/archive/"
 
-REQUIRED_SECTION = "## Corpus Completeness And Report Integrity"
+REQUIRED_SECTION = "## Knowledge System Reconciliation"
 ALLOWED_VERDICTS = (
-    "COMPLETE_VERIFIED",
-    "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+    "RECONCILED_VERIFIED",
+    "RECONCILED_WITH_DECLARED_GAPS",
     "PARTIAL",
     "BLOCKED",
-    "STALE_SNAPSHOT",
-)
-ALLOWED_TERMINAL_STATUSES = (
-    "READ",
-    "SKIPPED_WITH_REASON",
-    "DEFERRED",
-    "BLOCKED_UNREADABLE",
+    "STALE_MAP",
 )
 REQUIRED_SECTION_FIELDS = (
-    "Corpus task class:",
-    "Corpus root:",
-    "Snapshot time:",
-    "Enumeration command:",
-    "Manifest artifact or inline manifest:",
-    "Manifest hash:",
-    "Processing ledger artifact or inline ledger:",
-    "Allowed terminal statuses:",
-    "Reconciliation:",
-    "Unresolved files:",
-    "Declared exclusions:",
-    "Unreadable or unsupported files:",
-    "Aggregation check:",
+    "Knowledge task class:",
+    "Source manifest:",
+    "Source manifest hash:",
+    "Enumeration safety:",
+    "Intake registry or ledger:",
+    "Authority assets:",
+    "Derived views:",
+    "Semantic region ledger:",
+    "Region reconciliation:",
+    "Orphan or unmapped assets:",
+    "Cross-region links:",
     "Drift check:",
-    "Output traceability:",
+    "Rebuildability check:",
+    "Retrieval boundary:",
     "Adversarial verification:",
-    "Corpus verdict:",
+    "Knowledge-map verdict:",
 )
-COMPLETE_CLAIM_PATTERNS = (
-    r"\ball files (?:were )?(?:read|processed|reviewed|scanned)\b",
-    r"\bno files? (?:were )?skipped\b",
-    r"\bnone skipped\b",
-    r"\bfull(?:y)? file(?:-level)? (?:read|scan|inventory|coverage)\b",
-    r"\bcomplete(?:d)? (?:corpus|inventory|scan|coverage)\b",
-    r"\bblind-spot verdict:\s*clear\b",
-    r"\bblindspot risk verdict:\s*clear\b",
+MAP_CLAIM_PATTERNS = (
+    r"\bknowledge[- ]map (?:is )?(?:complete|current|reconciled|verified)\b",
+    r"\bsemantic[- ]region map (?:is )?(?:complete|current|reconciled|verified)\b",
+    r"\bretrieval[- ]readiness (?:is )?(?:complete|verified|proven)\b",
 )
 APPLICABLE_PREFIXES = (
     "docs/audits/",
@@ -193,41 +183,7 @@ def _extract_section(text: str, header: str) -> str:
         return ""
     section_start = start + len(marker)
     next_header = text.find("\n## ", section_start)
-    if next_header == -1:
-        return text[section_start:]
-    return text[section_start:next_header]
-
-
-def _is_active_markdown(path: str) -> bool:
-    normalized = path.replace("\\", "/")
-    return normalized.endswith(".md") and ARCHIVE_MARKER not in normalized
-
-
-def _is_applicable_output(path: str, text: str) -> bool:
-    normalized = path.replace("\\", "/")
-    if not _is_active_markdown(normalized):
-        return False
-    if normalized in {STANDARD_PATH, GUARD_PATH, GC018_TEMPLATE_PATH}:
-        return False
-    if not any(normalized.startswith(prefix) for prefix in APPLICABLE_PREFIXES):
-        return False
-    if REQUIRED_SECTION in text:
-        return True
-    lowered = text.lower()
-    return any(re.search(pattern, lowered, re.I) for pattern in COMPLETE_CLAIM_PATTERNS)
-
-
-def _extract_unresolved_count(section: str) -> int | None:
-    match = re.search(r"\bunresolved\s*=\s*(\d+)\b", section, re.I)
-    if match:
-        return int(match.group(1))
-    match = re.search(r"^\s*-\s*Unresolved files:\s*(\d+)\s*$", section, re.I | re.M)
-    return int(match.group(1)) if match else None
-
-
-def _extract_verdict(section: str) -> str | None:
-    match = re.search(r"^\s*-\s*Corpus verdict:\s*([A-Z_]+)\s*$", section, re.M)
-    return match.group(1) if match else None
+    return text[section_start:] if next_header == -1 else text[section_start:next_header]
 
 
 def _field_value(section: str, label: str) -> str:
@@ -236,7 +192,7 @@ def _field_value(section: str, label: str) -> str:
 
 
 def _is_none_like(value: str) -> bool:
-    return value.strip().lower() in {"none", "n/a", "0", "none.", "n/a."}
+    return value.strip().lower() in {"none", "none.", "n/a", "n/a.", "0"}
 
 
 def _is_safe_enumeration(value: str) -> bool:
@@ -246,30 +202,52 @@ def _is_safe_enumeration(value: str) -> bool:
     return any(marker in lowered for marker in ("get-childitem", "filesystem", "structured complete api", "find "))
 
 
+def _extract_counts(section: str) -> tuple[int, int, int, int] | None:
+    match = re.search(
+        r"assets=(\d+);\s*mapped=(\d+);\s*deferred=(\d+);\s*unmapped=(\d+)",
+        section,
+        re.I,
+    )
+    return tuple(int(value) for value in match.groups()) if match else None
+
+
+def _extract_verdict(section: str) -> str | None:
+    match = re.search(r"^\s*-\s*Knowledge-map verdict:\s*([A-Z_]+)\s*$", section, re.M)
+    return match.group(1) if match else None
+
+
+def _is_applicable_output(path: str, text: str) -> bool:
+    normalized = path.replace("\\", "/")
+    if not normalized.endswith(".md") or ARCHIVE_MARKER in normalized:
+        return False
+    if normalized in {METHOD_PATH, STANDARD_PATH, GUARD_PATH, GC018_TEMPLATE_PATH, WORK_ORDER_TEMPLATE_PATH}:
+        return False
+    if not any(normalized.startswith(prefix) for prefix in APPLICABLE_PREFIXES):
+        return False
+    return REQUIRED_SECTION in text or any(re.search(pattern, text, re.I) for pattern in MAP_CLAIM_PATTERNS)
+
+
 def _validate_standard(path: str, text: str) -> list[dict[str, str]]:
     violations: list[dict[str, str]] = []
-    required = (
-        "Status: canonical and machine-enforced corpus evidence standard",
-        "## Corpus Manifest",
-        "## Processing Ledger",
+    for marker in (
+        "Status: canonical and machine-enforced knowledge-map reconciliation standard",
+        "## Enumeration Safety",
         "## Required Gates",
         "## Required Evidence Block",
-        "COMPLETE_VERIFIED",
-        "COMPLETE_WITH_DECLARED_EXCLUSIONS",
-        "STALE_SNAPSHOT",
+        "RECONCILED_VERIFIED",
+        "RECONCILED_WITH_DECLARED_GAPS",
+        "STALE_MAP",
         THIS_SCRIPT_PATH,
-    )
-    for marker in required:
+    ):
         if marker not in text:
             _add(violations, path, "standard_marker_missing", f"missing marker `{marker}`")
     return violations
 
 
 def _validate_binding(path: str, text: str) -> list[dict[str, str]]:
-    violations: list[dict[str, str]] = []
-    if THIS_SCRIPT_PATH not in text:
-        _add(violations, path, "binding_missing", f"must cite `{THIS_SCRIPT_PATH}`")
-    return violations
+    if THIS_SCRIPT_PATH in text:
+        return []
+    return [{"path": path, "type": "binding_missing", "message": f"must cite `{THIS_SCRIPT_PATH}`"}]
 
 
 def _validate_output(path: str, text: str) -> list[dict[str, str]]:
@@ -277,60 +255,50 @@ def _validate_output(path: str, text: str) -> list[dict[str, str]]:
     if not _is_applicable_output(path, text):
         return violations
     if REQUIRED_SECTION not in text:
-        _add(
-            violations,
-            path,
-            "corpus_integrity_section_missing",
-            f"bounded-corpus completeness claim must include `{REQUIRED_SECTION}`",
-        )
+        _add(violations, path, "knowledge_reconciliation_section_missing", f"knowledge-map claim must include `{REQUIRED_SECTION}`")
         return violations
 
     section = _extract_section(text, REQUIRED_SECTION)
     for field in REQUIRED_SECTION_FIELDS:
         if field not in section:
-            _add(violations, path, "corpus_integrity_field_missing", f"missing field `{field}`")
-
-    for status in ALLOWED_TERMINAL_STATUSES:
-        if status not in section:
-            _add(violations, path, "terminal_status_vocabulary_missing", f"missing terminal status `{status}`")
+            _add(violations, path, "knowledge_reconciliation_field_missing", f"missing field `{field}`")
 
     verdict = _extract_verdict(section)
     if verdict not in ALLOWED_VERDICTS:
-        _add(violations, path, "corpus_verdict_invalid", "missing or invalid corpus verdict")
+        _add(violations, path, "knowledge_map_verdict_invalid", "missing or invalid knowledge-map verdict")
         return violations
 
-    unresolved = _extract_unresolved_count(section)
-    if unresolved is None:
-        _add(violations, path, "unresolved_count_missing", "reconciliation must state numeric unresolved count")
-    elif verdict in {"COMPLETE_VERIFIED", "COMPLETE_WITH_DECLARED_EXCLUSIONS"} and unresolved != 0:
-        _add(violations, path, "complete_verdict_has_unresolved_files", f"{verdict} requires unresolved=0")
-
-    exclusions = _field_value(section, "Declared exclusions:")
-    unreadable = _field_value(section, "Unreadable or unsupported files:")
-    enumeration = _field_value(section, "Enumeration command:")
+    enumeration = _field_value(section, "Enumeration safety:")
     if not _is_safe_enumeration(enumeration):
-        _add(
-            violations,
-            path,
-            "unsafe_enumeration",
-            "enumeration must use filesystem-backed evidence or `rg --files --hidden --no-ignore`",
-        )
-    if verdict == "COMPLETE_VERIFIED":
-        if exclusions and not _is_none_like(exclusions):
-            _add(violations, path, "complete_verified_has_exclusions", "COMPLETE_VERIFIED cannot retain declared exclusions")
-        if unreadable and not _is_none_like(unreadable):
-            _add(violations, path, "complete_verified_has_unreadable_files", "COMPLETE_VERIFIED cannot retain unreadable or unsupported files")
-    if verdict == "COMPLETE_WITH_DECLARED_EXCLUSIONS" and (not exclusions or _is_none_like(exclusions)):
-        _add(violations, path, "declared_exclusions_missing", "COMPLETE_WITH_DECLARED_EXCLUSIONS requires visible exclusions")
+        _add(violations, path, "unsafe_enumeration", "enumeration must use filesystem-backed evidence or `rg --files --hidden --no-ignore`")
 
-    reconciliation = _field_value(section, "Reconciliation:")
-    for marker in ("manifest=", "ledger_terminal=", "exclusions=", "unresolved="):
-        if marker not in reconciliation:
-            _add(violations, path, "reconciliation_field_missing", f"reconciliation must include `{marker}`")
+    counts = _extract_counts(section)
+    if counts is None:
+        _add(violations, path, "region_reconciliation_missing", "region reconciliation must state numeric assets, mapped, deferred, and unmapped counts")
+    else:
+        assets, mapped, deferred, unmapped = counts
+        if assets != mapped + deferred + unmapped:
+            _add(violations, path, "region_reconciliation_mismatch", "assets must equal mapped + deferred + unmapped")
+        if verdict == "RECONCILED_VERIFIED" and (deferred != 0 or unmapped != 0):
+            _add(violations, path, "verified_map_has_gaps", "RECONCILED_VERIFIED requires deferred=0 and unmapped=0")
+        if verdict == "RECONCILED_WITH_DECLARED_GAPS" and unmapped != 0:
+            _add(violations, path, "bounded_map_has_unmapped_assets", "RECONCILED_WITH_DECLARED_GAPS requires unmapped=0")
+
+    drift = _field_value(section, "Drift check:")
+    if verdict in {"RECONCILED_VERIFIED", "RECONCILED_WITH_DECLARED_GAPS"} and drift.upper() != "PASS":
+        _add(violations, path, "reconciled_map_without_current_drift_check", f"{verdict} requires drift check PASS")
+
+    orphans = _field_value(section, "Orphan or unmapped assets:")
+    if verdict in {"RECONCILED_VERIFIED", "RECONCILED_WITH_DECLARED_GAPS"} and orphans and not _is_none_like(orphans):
+        _add(violations, path, "reconciled_map_has_orphans", f"{verdict} cannot retain orphan or unmapped assets")
+
+    for label in ("Authority assets:", "Derived views:", "Semantic region ledger:", "Rebuildability check:", "Retrieval boundary:"):
+        if not _field_value(section, label):
+            _add(violations, path, "knowledge_reconciliation_value_missing", f"`{label}` requires a visible value")
 
     lowered = section.lower()
-    if any(token in lowered for token in ("<path", "<timestamp", "<exact", "<hash", "<n>", "todo", "tbd")):
-        _add(violations, path, "placeholder_residue", "corpus integrity block contains placeholder residue")
+    if any(token in lowered for token in ("<path", "<hash", "<n>", "<source", "todo", "tbd")):
+        _add(violations, path, "placeholder_residue", "knowledge reconciliation block contains placeholder residue")
     return violations
 
 
@@ -342,7 +310,7 @@ def _validate_path(path: str) -> list[dict[str, str]]:
     violations: list[dict[str, str]] = []
     if path == STANDARD_PATH:
         violations.extend(_validate_standard(path, text))
-    if path in {AUTORUN_PATH, HOOK_CHAIN_PATH, WORKFLOW_PATH, AGENTS_PATH, CLAUDE_PATH, GC018_TEMPLATE_PATH}:
+    if path in {AUTORUN_PATH, HOOK_CHAIN_PATH, WORKFLOW_PATH, AGENTS_PATH, CLAUDE_PATH, GC018_TEMPLATE_PATH, WORK_ORDER_TEMPLATE_PATH}:
         violations.extend(_validate_binding(path, text))
     violations.extend(_validate_output(path, text))
     return violations
@@ -350,26 +318,18 @@ def _validate_path(path: str) -> list[dict[str, str]]:
 
 def _classify(changed_paths: dict[str, list[str]]) -> dict[str, Any]:
     required_paths = (
-        STANDARD_PATH,
-        GUARD_PATH,
-        AUTORUN_PATH,
-        HOOK_CHAIN_PATH,
-        WORKFLOW_PATH,
-        AGENTS_PATH,
-        CLAUDE_PATH,
-        GC018_TEMPLATE_PATH,
+        METHOD_PATH, STANDARD_PATH, GUARD_PATH, AUTORUN_PATH, HOOK_CHAIN_PATH,
+        WORKFLOW_PATH, AGENTS_PATH, CLAUDE_PATH, GC018_TEMPLATE_PATH, WORK_ORDER_TEMPLATE_PATH,
     )
     missing_files = [path for path in required_paths if not (REPO_ROOT / path).exists()]
     scoped_paths = set(changed_paths)
     scoped_paths.update(path for path in required_paths if (REPO_ROOT / path).exists())
-
     violations: list[dict[str, str]] = []
     for path in sorted(scoped_paths):
         statuses = changed_paths.get(path, [])
         if statuses and all(status.startswith("D") for status in statuses):
             continue
         violations.extend(_validate_path(path))
-
     return {
         "checkedPaths": sorted(scoped_paths),
         "changedPaths": changed_paths,
@@ -381,7 +341,7 @@ def _classify(changed_paths: dict[str, list[str]]) -> dict[str, Any]:
 
 
 def _print_report(report: dict[str, Any], base: str, head: str, range_source: str) -> None:
-    print("=== CVF Corpus Completeness And Report Integrity Gate ===")
+    print("=== CVF Corpus-To-Knowledge-Map Reconciliation Gate ===")
     print(f"Range: {base}..{head} ({range_source})")
     print(f"Standard: {STANDARD_PATH}")
     print(f"Changed paths: {len(report['changedPaths'])}")
@@ -396,40 +356,26 @@ def _print_report(report: dict[str, Any], base: str, head: str, range_source: st
         print("\nViolations:")
         for item in report["violations"]:
             print(f"  - {item['path']}: {item['type']} - {item['message']}")
-    if report["compliant"]:
-        print("\nCOMPLIANT - corpus completeness and report integrity evidence is aligned.")
-    else:
-        print("\nVIOLATION - bounded-corpus evidence is incomplete or misaligned.")
+    print("\nCOMPLIANT - knowledge-map evidence is aligned." if report["compliant"] else "\nVIOLATION - knowledge-map evidence is incomplete or misaligned.")
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Validate bounded-corpus evidence and report integrity")
+    parser = argparse.ArgumentParser(description="Validate corpus-to-knowledge-map reconciliation evidence")
     parser.add_argument("--base", default=None, help="Optional git base ref")
     parser.add_argument("--head", default=None, help="Optional git head ref")
     parser.add_argument("--enforce", action="store_true", help="Return non-zero when violations exist")
     parser.add_argument("--json", action="store_true", help="Print JSON report")
     args = parser.parse_args()
-
     try:
         base, head, range_source = _resolve_range(args.base, args.head)
-        changed_paths = _merge_changed_maps(
-            _get_changed_name_status(base, head),
-            _get_worktree_name_status(),
-        )
-        report = _classify(changed_paths)
+        report = _classify(_merge_changed_maps(_get_changed_name_status(base, head), _get_worktree_name_status()))
     except RuntimeError as exc:
         print(str(exc), file=sys.stderr)
         return 1
-
     report["timestamp"] = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
     report["range"] = {"base": base, "head": head, "source": range_source}
-    if args.json:
-        print(json.dumps(report, indent=2, ensure_ascii=False))
-    else:
-        _print_report(report, base, head, range_source)
-    if args.enforce and not report["compliant"]:
-        return 2
-    return 0
+    print(json.dumps(report, indent=2, ensure_ascii=False)) if args.json else _print_report(report, base, head, range_source)
+    return 2 if args.enforce and not report["compliant"] else 0
 
 
 if __name__ == "__main__":
