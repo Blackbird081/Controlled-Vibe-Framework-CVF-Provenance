@@ -35,6 +35,7 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   distDir: process.env.NEXT_DIST_DIR || '.next',
   outputFileTracingRoot: path.resolve(__dirname, '../../..'),
+  serverExternalPackages: ['better-sqlite3', 'typescript'],
   transpilePackages: [
     'cvf-guard-contract',
     'cvf-control-plane-foundation',
