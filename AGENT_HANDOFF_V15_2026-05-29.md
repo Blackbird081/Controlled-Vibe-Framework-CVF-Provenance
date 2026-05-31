@@ -17,8 +17,8 @@ Active private provenance continuity for the current CVF repository. Use only
 with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
-Current implementation anchor: `d1566604` (docs(lhw23): close routing and registry intelligence wave). Previous LHW22 wave anchor: `5cac5c85` (docs(session): promote latest closed wave to LHW22). Previous LHW22 closure anchor: `f9d87f23` (docs(lhw22): close agent intelligence foundations wave). Previous CPG2 staging anchor: `4f509fe4` (docs(cpg2): stage hard gate enforcement packet). Previous LHW22 guard-packet anchor: `e1be0663` (docs(lhw22): harden dispatch guard packet). Previous CPG-1 implementation anchor: `1ff0354c` (feat(cpg1): extract inbound event contract policy). Dispatch anchor: `6b213327` (docs(cpg1): authorize inbound event contract guard). Parent roadmap anchor: `f032109b` (docs(roadmap): propose connection point guard enforcement). Prior closure anchor: `4759c640` (docs(lhw21): close connection point advisory wave). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `de58adaf1061e2903a12a67877193dfd9a33f228` (short: `de58adaf`); parent: `cbeef372555874537c5723332f1c6d0988009722`.
+Current implementation anchor: `765f16fb` (fix(governance): harden lhw closure quality gates). Previous LHW24 closure anchor: `de58adaf` (docs: add lhw24 advisory completions with runtime N/A lanes). Previous LHW23 closure anchor: `62c9db4f` (docs(lhw23): close routing and registry intelligence wave). Previous LHW22 closure anchor: `f9d87f23` (docs(lhw22): close agent intelligence foundations wave). Previous CPG2 staging anchor: `4f509fe4` (docs(cpg2): stage hard gate enforcement packet). Previous CPG-1 implementation anchor: `1ff0354c` (feat(cpg1): extract inbound event contract policy). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
+Current HEAD recorded for this handoff: `765f16fb306831389fb6782837231f591426c33d` (short: `765f16fb`); parent: `ad5a84357bc5444b5418a7895225ea4f90609c2b`.
 
 ## Latest Work / Changes (2026-05-30)
 
