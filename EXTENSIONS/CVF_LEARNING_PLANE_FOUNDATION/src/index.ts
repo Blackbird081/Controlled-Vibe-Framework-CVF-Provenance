@@ -949,6 +949,18 @@ export type {
   RoutingDisposition,
   RoutingAdvisoryResult,
 } from "./reputation-routing-advisory";
+// WD1 TruthScore Weighting Doctrine
+export {
+  WEIGHTING_DOCTRINE_VERSION,
+  WEIGHTING_DOCTRINE_CONFIDENCE_GATE,
+  WEIGHTING_DOCTRINE_WEIGHTS,
+  applyWeightingDoctrine,
+} from "./truthscore-weighting-doctrine";
+export type {
+  WeightingDoctrineOutcome,
+  WeightingDoctrineResult,
+  WeightingDoctrineDependencies,
+} from "./truthscore-weighting-doctrine";
 // TM1 Truth Model Calibration (LHW17 T3 Step 6)
 export {
   TRUTH_MODEL_CALIBRATION_VERSION,
