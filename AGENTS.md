@@ -511,11 +511,11 @@ This is a bounded intake bridge only. It does not authorize autonomous rule
 mutation, runtime behavior mutation, provider prompt changes, memory
 reinjection, model tuning, public readiness, or production readiness.
 
-## Mandatory Knowledge Absorption Blind-Spot Prevention - 2026-05-24
+## Mandatory Knowledge Absorption Blind-Spot Prevention - 2026-06-01
 
 Canonical standard:
 
-`docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`
+`docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-06-01.md`
 
 Any AI/agent that absorbs, reopens, scopes, or implements knowledge from
 `.private_reference/legacy/`, archived absorption packets, external capability
@@ -547,6 +547,39 @@ doc-only connector wave. Finish LHW absorption of remaining
 `PARTIALLY_ABSORBED` LH1 families first. Only after the Orchestrator confirms no
 additional connector value remains may CVF open a separate live-proof roadmap
 for `abtop`, `gridex`, or other route-execution families.
+
+## Mandatory Corpus Completeness And Report Integrity - 2026-06-01
+
+Canonical standard:
+
+`docs/reference/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_STANDARD_2026-06-01.md`
+
+Machine guard:
+
+`governance/compat/check_corpus_completeness_report_integrity.py`
+
+Any AI/agent that reads an existing folder, subfolder tree, archive, file list,
+or project source set to produce an inventory, report, comparison, extraction,
+audit, migration, roadmap, work order, or knowledge-absorption decision must
+prove the bounded source corpus before claiming completeness.
+
+The output must include a `Corpus Completeness And Report Integrity` block with
+filesystem-backed enumeration, a file-level processing ledger, reconciliation,
+explicit unresolved files, exclusions, unreadable/unsupported formats,
+aggregation check, drift check, output traceability, adversarial verification,
+and one allowed verdict:
+
+- `COMPLETE_VERIFIED`
+- `COMPLETE_WITH_DECLARED_EXCLUSIONS`
+- `PARTIAL`
+- `BLOCKED`
+- `STALE_SNAPSHOT`
+
+Self-reported counts, folder-level summaries, prior reports, and model claims
+are not corpus evidence. `COMPLETE_VERIFIED` requires zero unresolved files.
+Machine checks prove evidence discipline, not semantic understanding of every
+file; high-impact reports still require adversarial sampling or independent
+recomputation.
 
 ## Latest Closed Continuation Roadmap
 

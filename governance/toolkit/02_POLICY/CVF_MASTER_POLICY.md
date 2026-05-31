@@ -273,6 +273,14 @@ Personal AI usage unrelated to company work is excluded.
      - Phase 0.A (doctrine + template): authorized. Phase 0.B (manual checker + CI advisory): pending GC-018. Phase 0.C (hard enforcement): deferred.
      - canonical operational rule: `governance/toolkit/05_OPERATION/CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD.md`
      - GC-018 template update: `docs/reference/CVF_GC018_CONTINUATION_CANDIDATE_TEMPLATE.md`
+41. `GC-047` bounded-corpus reports, comparisons, audits, extractions, migrations, inventories, and knowledge-absorption decisions must prove corpus completeness before claiming a complete result:
+     - enumerate the actual source corpus from filesystem or structured source truth
+     - record a file-level processing ledger with visible exclusions and unreadable or unsupported formats
+     - reconcile manifest items against terminal ledger statuses before using `COMPLETE_VERIFIED`
+     - record aggregation, drift, output-traceability, and adversarial-verification evidence
+     - canonical standard: `docs/reference/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_STANDARD_2026-06-01.md`
+     - canonical operational rule: `governance/toolkit/05_OPERATION/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_GUARD.md`
+     - automated enforcement reference: `governance/compat/check_corpus_completeness_report_integrity.py`
 
 ---
 

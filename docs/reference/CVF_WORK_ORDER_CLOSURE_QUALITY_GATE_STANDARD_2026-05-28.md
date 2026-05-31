@@ -49,6 +49,9 @@ passes the following gates:
 10. Machine-verified line-count claim gate.
 11. Public export disposition gate.
 12. Mandatory Gate-Failure Remediation Protocol.
+13. Corpus completeness and report integrity gate when the task reads,
+    inventories, extracts, compares, summarizes, audits, migrates, or absorbs a
+    bounded set of files or folders.
 
 If any gate is incomplete, the worker must return to Orchestrator or file a
 blocking defect. Operator silence is not a waiver.
@@ -119,6 +122,14 @@ contains the matching artifacts and catalog change.
 File-change claims must be based on `git diff --name-status`, `git status
 --short`, or committed diff output. Memory-based file-change claims are not
 valid closure evidence.
+
+Any bounded corpus output must include `## Corpus Completeness And Report
+Integrity`, an enumerated manifest count, a terminal processing-ledger count,
+explicit exclusions and unreadable counts, reconciliation evidence, and one
+machine-checked verdict from
+`docs/reference/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_STANDARD_2026-06-01.md`.
+An agent may not claim `COMPLETE_VERIFIED` while any item remains unresolved or
+excluded.
 
 Line-count claims must be command-backed or machine-verifiable. A connector
 spec, completion review, or audit must not claim "actual: N lines" or

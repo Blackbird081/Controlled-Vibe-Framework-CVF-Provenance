@@ -87,6 +87,25 @@ Do not bypass this standard by claiming "the folder was already audited," "the
 summary is enough," "another agent already reviewed it," or any of the other
 rationalizations in the standard's Do-Not-Bypass List.
 
+## Mandatory Corpus Completeness And Report Integrity
+
+For any task that reads an existing folder, subfolder tree, archive, file list,
+or project source set to produce an inventory, report, comparison, extraction,
+audit, migration, roadmap, work order, or knowledge-absorption decision, follow:
+
+`docs/reference/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_STANDARD_2026-06-01.md`
+
+Machine guard:
+
+`governance/compat/check_corpus_completeness_report_integrity.py`
+
+Before claiming a complete scan, complete inventory, all files read, or
+equivalent result, include the `Corpus Completeness And Report Integrity`
+block with manifest, processing ledger, reconciliation, exclusions,
+unreadable/unsupported files, aggregation check, drift check, traceability,
+adversarial verification, and one allowed corpus verdict. Self-reported counts
+are not evidence. `COMPLETE_VERIFIED` requires zero unresolved files.
+
 For LHW connector waves, do not use bare `rejected: requires live route`
 wording when a family is excluded only because the current wave is doc-only.
 Use:

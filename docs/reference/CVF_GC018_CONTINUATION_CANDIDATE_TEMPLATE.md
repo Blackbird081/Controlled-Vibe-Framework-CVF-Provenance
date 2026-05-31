@@ -104,9 +104,12 @@ this block before implementation:
 
 ```text
 Knowledge Absorption Blind-Spot Control Block
-- Standard read: docs/reference/archive/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md
+- Standard read: docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-06-01.md
 - Source inventory:
-  - <root/family + file count>
+  - <root/family + file count - from shell output, not self-reported>
+  - Shell command run: <command>
+  - Shell output (subfolder list): <raw output>
+  - Total file count (from shell): <N>
 - Prior absorption evidence resolved:
   - <registry/review/baseline/roadmap paths>
 - Detailed source files used:
@@ -126,7 +129,41 @@ Knowledge Absorption Blind-Spot Control Block
   - Safety/Boundary Owner: <finding or N/A>
 - Thin proof target:
   - <bounded proof>
+- Gate 7 completeness cross-check:
+  | Subfolder | In Gate 3? | Disposition if absent | Reason |
+  | ... | ... | ... | ... |
 - Blind-spot verdict: CLEAR | PARTIAL | BLOCKED
+```
+
+For any task that reads an existing folder, subfolder tree, archive, file
+list, or project source set to produce an inventory, report, comparison,
+extraction, audit, migration, roadmap, work order, or knowledge-absorption
+decision, add this block before claiming corpus completeness:
+
+```text
+## Corpus Completeness And Report Integrity
+
+- Corpus task class: INVENTORY | REPORT | EXTRACTION | COMPARISON | AUDIT |
+  MIGRATION | KNOWLEDGE_ABSORPTION | OTHER
+- Corpus root: <path or explicit bounded list>
+- Snapshot time: <timestamp>
+- Enumeration command: <exact command>
+- Manifest artifact or inline manifest: <path or inline table>
+- Manifest hash: <hash or N/A with reason>
+- Processing ledger artifact or inline ledger: <path or inline table>
+- Allowed terminal statuses: READ | SKIPPED_WITH_REASON | DEFERRED |
+  BLOCKED_UNREADABLE
+- Reconciliation: manifest=<N>; ledger_terminal=<N>; exclusions=<N>;
+  unresolved=<N>
+- Unresolved files: <0 or explicit paths>
+- Declared exclusions: <none or paths + reasons>
+- Unreadable or unsupported files: <none or paths + reasons>
+- Aggregation check: <PASS or bounded reason>
+- Drift check: <PASS, STALE_SNAPSHOT, or N/A with reason>
+- Output traceability: <source locator evidence>
+- Adversarial verification: <sample/recompute evidence>
+- Corpus verdict: COMPLETE_VERIFIED | COMPLETE_WITH_DECLARED_EXCLUSIONS |
+  PARTIAL | BLOCKED | STALE_SNAPSHOT
 ```
 
 ```text
@@ -190,6 +227,8 @@ Tranche Closure Checklist
 - [ ] Legacy Spec Scan Block present OR explicitly N/A: <reason>
 - [ ] Knowledge Absorption Blind-Spot Control Block present OR explicitly N/A:
       <reason>
+- [ ] Corpus Completeness And Report Integrity block present OR explicitly N/A:
+      <reason>
 ```
 
 Omitting the catalog item without an explicit N/A is a closure defect.
@@ -210,9 +249,13 @@ but the checklist is the authoritative closure gate.
   and any relevant `.private_reference/legacy/` source folders before the
   candidate can be treated as complete
 - knowledge-absorption packets must follow
-  `docs/reference/archive/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`
+  `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-06-01.md`
   and must include the Knowledge Absorption Blind-Spot Control Block before any
   implementation begins
+- bounded-corpus tasks must follow
+  `docs/reference/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_STANDARD_2026-06-01.md`
+  and must reconcile manifest files against processing-ledger terminal statuses
+  before claiming completeness
 
 ## Preferred Placement
 
@@ -230,6 +273,8 @@ The same packet may be summarized in multiple places, but there should be one ob
 - `governance/toolkit/05_OPERATION/CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD.md` (GC-046: Evidence Trace Block requirement for absorption review chains)
 - `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md#GC-018`
 - `docs/reference/archive/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
-- `docs/reference/archive/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`
+- `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-06-01.md`
+- `docs/reference/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_STANDARD_2026-06-01.md`
+- `governance/compat/check_corpus_completeness_report_integrity.py`
 - `governance/compat/check_depth_audit_continuation_compat.py`
 - `docs/roadmaps/CVF_SYSTEM_UNIFICATION_REMEDIATION_ROADMAP_2026-03-19.md`

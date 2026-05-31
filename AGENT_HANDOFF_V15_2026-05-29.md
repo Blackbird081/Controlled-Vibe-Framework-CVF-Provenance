@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `7e75ec72` (docs(cpg3): close governance trace receipts). Previous CPG3 implementation anchor: `55dc22c9` (feat(cpg3): add governance trace receipts). Previous CPG3 packet anchor: `eef3cf5d` (docs(cpg3): stage governance trace receipt packet). Previous CPG2 close anchor: `9fe32058` (docs(cpg2): close hard gate enforcement). Previous CPG2 proof-fix anchor: `5e1c6e9d` (fix(cpg2): harden gate enforcement review). Previous CPG2 worker anchor: `ab120d16` (feat(cpg2): add connection point enforce mode and gc018). Previous guard-hardening anchor: `765f16fb` (fix(governance): harden lhw closure quality gates). Previous LHW24 closure anchor: `de58adaf` (docs: add lhw24 advisory completions with runtime N/A lanes). Previous LHW23 closure anchor: `62c9db4f` (docs(lhw23): close routing and registry intelligence wave). Previous LHW22 closure anchor: `f9d87f23` (docs(lhw22): close agent intelligence foundations wave). Previous CPG2 staging anchor: `4f509fe4` (docs(cpg2): stage hard gate enforcement packet). Previous CPG-1 implementation anchor: `1ff0354c` (feat(cpg1): extract inbound event contract policy). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `2353f3393e8f044436e3ac637fc93d79efea2518` (short: `2353f339`); parent: `b7deea813ecf4e03be2abb59b2b44d5a093d6e50`.
+Current HEAD recorded for this handoff: `fe29b4d60172db6704fe58df26637023ef0ed76d` (short: `fe29b4d6`); parent: `2353f3393e8f044436e3ac637fc93d79efea2518`.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -171,7 +171,7 @@ Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
 
 ## Active Boundary
 
-Current mode: `cpg3_governance_trace_closed_pass_bounded`.
+Current mode: `ccg1_corpus_completeness_report_integrity_guard_active_implementation`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
@@ -307,6 +307,7 @@ public-release readiness claim.
 | Work Order Source Verification | ENFORCED — source file + line + symbol for every runtime/source claim |
 | Governed File Size Maintainability | ENFORCED — proactive rotation/splitting at near-threshold |
 | Finding-To-Governance Learning | ENFORCED — defect class + learning lane + disposition required |
+| Corpus Completeness And Report Integrity | ACTIVE_IMPLEMENTATION — filesystem-backed manifest, terminal ledger, reconciliation, drift, traceability, and honest verdict for bounded corpus tasks |
 | Multi-Provider Execution Log | ENFORCED — provider/model/surface/basis/diff attribution plus Execution Attribution Block |
 | Learning Signal Intake Bridge | BOUNDED_TYPED_INTAKE — `autonomousMutationAuthorized=false` |
 | IDE Extension Multi-Provider Log | ENFORCED — session logs for mixed-provider governed work |
@@ -317,9 +318,11 @@ public-release readiness claim.
 LHW24 is the latest closed LHW wave. LHW22-LHW24 agent-intelligence absorption
 is CLOSED_PASS_BOUNDED at the documentation-only advisory boundary:
 `docs/roadmaps/CVF_LHW22_LHW23_LHW24_AGENT_INTELLIGENCE_ROADMAP_2026-05-31.md`.
-Next allowed move: CPG-1, CPG-2, and CPG-3 are CLOSED_PASS_BOUNDED. Prepare a
-fresh explicitly authorized roadmap or public-safe subset sync from the
-public-sync clone after remote verification. CPG-2 is CLOSED_PASS_BOUNDED with release-quality proof;
+Next allowed move: CPG-1, CPG-2, and CPG-3 are CLOSED_PASS_BOUNDED. CCG-1
+Corpus Completeness And Report Integrity Guard is ACTIVE_IMPLEMENTATION under
+explicit operator authorization. Finish checker wiring, audit correction,
+continuity sync, and governance verification before opening LHW-RESCAN-A.
+CPG-2 is CLOSED_PASS_BOUNDED with release-quality proof;
 closure packet:
 `docs/roadmaps/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_ROADMAP_2026-05-31.md`
 and
@@ -349,8 +352,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cpg3_governance_trace_closed_pass_bounded`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=prepare a fresh explicitly authorized roadmap or public-safe subset sync from the public-sync clone after remote verification;
+Startup acknowledged: current mode=`ccg1_corpus_completeness_report_integrity_guard_active_implementation`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=finish CCG-1 checker wiring, audit correction, continuity sync, and governance verification before opening LHW-RESCAN-A;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary

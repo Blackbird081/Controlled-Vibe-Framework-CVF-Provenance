@@ -48,12 +48,13 @@ Out of scope:
 | `governance/toolkit/05_OPERATION/CVF_AGENT_HANDOFF_GUARD.md` | GC-020 handoff content and continuity requirements. |
 | `governance/toolkit/05_OPERATION/CVF_MEMORY_GOVERNANCE_GUARD.md` | GC-022 durable memory, evidence, and continuity boundary. |
 | `governance/toolkit/05_OPERATION/CVF_GOVERNED_ARTIFACT_AUTHORING_GUARD.md` | GC-032 governed artifact authoring and source-truth rules. |
+| `governance/toolkit/05_OPERATION/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_GUARD.md` | GC-047 manifest, terminal-ledger, reconciliation, and honest-verdict rules for bounded corpus tasks. |
 
 ## Protocol Requirements
 
 1. Resolve the active state registry before choosing guard depth.
 2. Load the guards listed here only as triggered by task class and current mode.
-3. Preserve the `system_reconvergence_stop` boundary until superseded.
+3. Preserve the active state registry boundary until superseded.
 4. Record or internally confirm the required acknowledgment before material
    governed work.
 
@@ -70,11 +71,14 @@ Before material governed work, state or internally confirm:
 
 ## Current Stop Boundary
 
-The current mode is `system_reconvergence_stop`.
+The current mode is
+`ccg1_corpus_completeness_report_integrity_guard_active_implementation`.
 
-Broad absorption, new governance semantics, new runtime contracts, and public
-claims of coherent governed capability runtime are blocked until a later
-accepted roadmap supersedes this state.
+CCG-1 governance hardening is the only active implementation tranche. Legacy
+rescan waves remain blocked until the corpus-completeness checker, wiring,
+audit correction, continuity sync, and verification close. New runtime
+contracts and public claims of coherent governed capability runtime remain
+blocked unless separately authorized.
 
 ## Enforcement And Verification
 

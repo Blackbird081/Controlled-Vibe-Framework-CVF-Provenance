@@ -40,8 +40,8 @@ allowed blind spots to survive multiple "full scan" claims.**
 | | Prior scan claim (LHW20 audit record) | Actual (shell verified 2026-06-01) |
 |---|---|---|
 | Subfolders | 13 | **24** |
-| Files | 97 | **230** |
-| "Files skipped" claim | NONE | **~133 files in 11 folders never read** |
+| Files | 97 `.md` files | **230 files across all extensions (`218 .md` + `12` non-Markdown)** |
+| "Files skipped" claim | NONE | **95 files in 11 folders had no Gate 3 coverage; the prior 13 folders also require recount reconciliation** |
 | Blind-spot verdict claimed | CLEAR | **Would be BLOCKED under v2 standard** |
 
 Shell command run to verify:
@@ -52,6 +52,9 @@ Get-ChildItem ".private_reference\legacy\CVF_Important\" -Directory | Select-Obj
 
 Get-ChildItem ".private_reference\legacy\CVF_Important\" -Recurse -File | Measure-Object | Select-Object Count
 # → 230 files
+
+Get-ChildItem ".private_reference\legacy\CVF_Important\" -Recurse -File -Filter "*.md" | Measure-Object | Select-Object Count
+# → 218 .md files
 ```
 
 ### All nine legacy folders — Gate 1 shell output (2026-06-01)
@@ -93,7 +96,7 @@ Subfolders covered in prior Gate 3 (LHW17 + LHW20): 13
 | `HowtoClaude/` | 6 | CVF_SKILL_NORMALIZATION_SCHEMA.md, CVF_EVALUATION_SIGNAL_REGISTRY.md, CVF_SEMANTIC_POLICY_GUARD_VOCABULARY.md, CVF_PLANNER_TRIGGER_PATTERN_SPEC.md | **HIGH — Skill normalization schema, evaluation signals** |
 | `Knowledge Base_LLM-Powered/` | 6 | CVF_COMPILED_CONTEXT_POLICY.md, CVF_KNOWLEDGE_COMPILATION_POLICY.md, CVF_KNOWLEDGE_LINT_ENGINE_SPEC.md, CVF_KNOWLEDGE_SCHEMA_TEMPLATE.md | **HIGH — context optimization and knowledge compilation** |
 | `Knowledge Base_Graphify/` | 5 | CVF_GRAPH_MEMORY_LAYER_SPEC.md, CVF_GRAPH_MEMORY_GUARD_SPEC.md, CVF_GRAPHIFY_CLI_COMMAND_SPEC.md | HIGH — graph memory layer and guard |
-| `Knowledge Base_Palace/` | 10 | cvf_mem_context_mapper.py, cvf_memory_evaluator.py, cvf_mempalace_adapter.py, CVF_MEMPALACE_ABSORPTION_SPEC.md, test_memory_schema.py | **HIGH — actual Python code: memory mapper, evaluator, adapter** |
+| `Knowledge Base_Palace/` | 11 | cvf_mem_context_mapper.py, cvf_memory_evaluator.py, cvf_mempalace_adapter.py, CVF_MEMPALACE_ABSORPTION_SPEC.md, test_memory_schema.py | **HIGH — actual Python code: memory mapper, evaluator, adapter** |
 
 **Skill-related folders missed: 4** (ADDING_CVF_Skill Formation Layer, ADDING_Skill Creator, ADK SkillToolset, Windows_Skill_Normalization + HowtoClaude contains CVF_SKILL_NORMALIZATION_SCHEMA.md).
 
@@ -256,7 +259,7 @@ implementation tranche claims to have absorbed legacy knowledge.
 
 | Target | Files | Why priority |
 |---|---|---|
-| `CVF_Important/` — 11 missing subfolders | ~133 files | Skill Model, Skill Registry, Context Optimization, Master Architecture, Multi-Agent Planner — all absent from current CVF governance |
+| `CVF_Important/` — 11 missing subfolders | 95 files (`86 .md` + `9` non-Markdown) | Skill Model, Skill Registry, Context Optimization, Master Architecture, Multi-Agent Planner — all absent from current CVF governance |
 | `CVF 17.05/CVF_EXTERNAL_CAPABILITY_INTAKE/` | 11 files | Capability Manifest Schema, Authority Binding, Risk Profile — directly relevant to Skill guard enforcement |
 
 ### Priority 2 — BLOCKED, smaller scope
@@ -293,9 +296,10 @@ implementation tranche claims to have absorbed legacy knowledge.
 
 4. Suggested wave structure for rescan:
 
-   **LHW-RESCAN-A** — `CVF_Important/` 11 missing subfolders (high file count;
-   split into T1 Skill surface, T2 Context/Knowledge surface, T3 Architecture/
-   Multi-Agent surface)
+   **LHW-RESCAN-A** — enumerate all 24 `CVF_Important/` subfolders, reconcile
+   the prior 13-folder coverage, and extract the 11 missing subfolders (95
+   files; split into T1 Skill surface, T2 Context/Knowledge surface, T3
+   Architecture/Multi-Agent surface)
 
    **LHW-RESCAN-B** — `CVF 17.05/CVF_EXTERNAL_CAPABILITY_INTAKE/` + `CVF 25.05/`
    + `CVF 28.05/` (smaller, can be one wave)
@@ -345,11 +349,45 @@ Any future rescan wave operating on `.private_reference/legacy/` must:
 5. Follow the suggested wave structure (LHW-RESCAN-A/B/C) in the
    "Instructions for Codex" section above.
 
+## Corpus Completeness And Report Integrity
+
+- Corpus task class: AUDIT
+- Corpus root: `.private_reference/legacy/`
+- Snapshot time: `2026-06-01T00:34:35+07:00`
+- Enumeration command: `Get-ChildItem ".private_reference\legacy\<folder>" -Directory`; `Get-ChildItem ".private_reference\legacy\<folder>" -Recurse -File | Measure-Object | Select-Object Count`
+- Manifest artifact or inline manifest: nine-folder Gate 1 shell-output table in this audit; `CVF_Important/` count independently rechecked by Codex on 2026-06-01
+- Manifest hash: N/A with reason - this failure audit records filesystem counts and rescan routing; the rescan waves must generate file-level manifests and hashes
+- Processing ledger artifact or inline ledger: PARTIAL - per-folder Gate 7 status sections in this audit; file-level processing ledgers remain required in LHW-RESCAN-A/B/C
+- Allowed terminal statuses: READ | SKIPPED_WITH_REASON | DEFERRED | BLOCKED_UNREADABLE
+- Reconciliation: manifest=629; ledger_terminal=not-established; exclusions=0; unresolved=95-minimum
+- Unresolved files: 95 minimum in the 11 omitted `CVF_Important/` subfolders, plus PARTIAL recount/reconciliation work named in Required Rescan Scope
+- Declared exclusions: none
+- Unreadable or unsupported files: not yet reconciled - rescan manifests must list non-Markdown and unsupported formats explicitly
+- Aggregation check: PASS for top-level filesystem count (`629`); PARTIAL for file-level processing coverage
+- Drift check: PASS - Codex reran top-level and `CVF_Important/` filesystem counts on 2026-06-01
+- Output traceability: Gate 7 per-folder sections and Required Rescan Scope trace each blocker to a source folder
+- Adversarial verification: Codex independently recounted all nine roots and all 24 `CVF_Important/` subfolders; corrected `Knowledge Base_Palace/` from `10` to `11`
+- Corpus verdict: PARTIAL
+
+## Finding-To-Governance Learning Disposition
+
+| Finding | Defect class | Learning lane | Disposition | Next control action |
+| --- | --- | --- | --- | --- |
+| Legacy scans self-reported counts and silently omitted folders | `MACHINE_GATE_GAP` | `GOVERNANCE_CONTROL_PLANE` | `MACHINE_CHECK_ADDED` | Enforce general `GC-047` corpus manifest, ledger, reconciliation, drift, and traceability gate |
+| Legacy-specific blind-spot wording did not protect future project-folder reporting tasks | `RULE_GAP` | `GOVERNANCE_CONTROL_PLANE` | `RULE_ADDED` | Apply corpus protocol to reports, comparisons, extractions, audits, migrations, and knowledge absorption |
+| File-class mixing (`97 .md` versus `230` all-extension files) inflated the first omission estimate | `ORCHESTRATOR_PACKET_GAP` | `DOCUMENTATION_ONLY_LEARNING` | `RULE_ADDED` | Require extension totals and file-level ledger reconciliation before complete claims |
+| Runtime/provider/cost behavior | `DOCUMENTATION_GAP` | `DOCUMENTATION_ONLY_LEARNING` | `N/A_WITH_REASON` - this audit corrects filesystem evidence discipline only; it does not evaluate runtime, provider, or cost behavior | No runtime/provider/cost control mutation in this batch |
+
 ## Enforcement / Verification
 
-Gate 1 and Gate 7 rules are now enforced by standard v2 (commit `2353f339`).
-Any GC-018 that claims `CLEAR` without shell output and cross-check table
-will fail the Blind-Spot Prevention Standard check during governance review.
+Gate 1 and Gate 7 are written in the specialized standard v2 (commit
+`2353f339`). The general machine guard added after this audit is:
+
+`governance/compat/check_corpus_completeness_report_integrity.py`
+
+Any future bounded-corpus artifact that claims completeness without manifest,
+processing-ledger, reconciliation, drift, and traceability evidence must fail
+the `GC-047` corpus-completeness check.
 
 This audit file itself is the verification baseline — the shell outputs recorded
 here are the authoritative counts for the 2026-06-01 state of each legacy folder.

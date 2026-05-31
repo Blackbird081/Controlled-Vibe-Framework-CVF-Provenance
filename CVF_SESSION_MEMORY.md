@@ -4,9 +4,9 @@ Memory class: POINTER_RECORD
 
 Status: ACTIVE SESSION FRONT DOOR
 
-Last updated: 2026-05-31
+Last updated: 2026-06-01
 
-Current mode marker: `cpg3_governance_trace_closed_pass_bounded`
+Current mode marker: `ccg1_corpus_completeness_report_integrity_guard_active_implementation`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `cpg3_governance_trace_closed_pass_bounded`.
+Current mode: `ccg1_corpus_completeness_report_integrity_guard_active_implementation`.
 
 Active handoff:
 
@@ -83,6 +83,24 @@ Active standard: `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_S
 Fast Lane authorization: `docs/baselines/CVF_GC021_BLINDSPOT_STANDARD_UPGRADE_2026-06-01.md`
 
 All future LHW absorption scans must reference the 2026-06-01 version.
+
+Corpus Completeness And Report Integrity is now the general control for any
+folder/file-based inventory, report, extraction, comparison, audit, migration,
+or knowledge-absorption task:
+
+- Standard:
+  `docs/reference/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_STANDARD_2026-06-01.md`
+- Guard:
+  `governance/toolkit/05_OPERATION/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_GUARD.md`
+- Checker:
+  `governance/compat/check_corpus_completeness_report_integrity.py`
+
+Before claiming completeness, agents must provide filesystem-backed manifest,
+file-level processing ledger, reconciliation, explicit exclusions and
+unreadable formats, aggregation check, drift check, traceability, adversarial
+verification, and an allowed corpus verdict. `COMPLETE_VERIFIED` requires zero
+unresolved files. The guard proves evidence discipline, not perfect semantic
+understanding.
 
 Work-order dispatch quality is machine-enforced by:
 
@@ -213,9 +231,11 @@ is CLOSED_PASS_BOUNDED at the documentation-only advisory boundary:
 
 `docs/roadmaps/CVF_LHW22_LHW23_LHW24_AGENT_INTELLIGENCE_ROADMAP_2026-05-31.md`
 
-Next allowed move: CPG-1, CPG-2, and CPG-3 are CLOSED_PASS_BOUNDED. Prepare a
-fresh explicitly authorized roadmap or public-safe subset sync from the
-public-sync clone after remote verification. CPG-2 is CLOSED_PASS_BOUNDED with
+Next allowed move: CPG-1, CPG-2, and CPG-3 are CLOSED_PASS_BOUNDED. CCG-1
+Corpus Completeness And Report Integrity Guard is ACTIVE_IMPLEMENTATION under
+explicit operator authorization. Finish checker wiring, audit correction,
+continuity sync, and governance verification before opening LHW-RESCAN-A.
+CPG-2 is CLOSED_PASS_BOUNDED with
 release-quality proof:
 
 `docs/roadmaps/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_ROADMAP_2026-05-31.md`

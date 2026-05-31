@@ -388,6 +388,7 @@ Any of these claims must be converted into evidence using the control block.
 
 Use this standard together with:
 
+- `docs/reference/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_STANDARD_2026-06-01.md`
 - `docs/reference/CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md`
 - `docs/reference/archive/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
 - `docs/reference/CVF_GC018_CONTINUATION_CANDIDATE_TEMPLATE.md`
@@ -397,8 +398,10 @@ Use this standard together with:
 - `docs/reference/CVF_AGENT_CONTINUITY_AND_DELEGATION_DOCTRINE_2026-05-07.md`
 - `docs/reference/CVF_SCOPED_KNOWLEDGE_PROVIDER_BOUNDARY_DOCTRINE_2026-05-07.md`
 
-Priority standard controls sequencing. This standard controls blind-spot
-prevention and evidence shape.
+The corpus-completeness standard supplies the reusable manifest, processing
+ledger, reconciliation, and report-integrity invariant for any bounded source
+set. Priority standard controls sequencing. This standard adds the
+knowledge-absorption-specific blind-spot controls and evidence shape.
 
 ---
 

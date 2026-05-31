@@ -49,6 +49,7 @@ Canonical sources:
 - `governance/compat/check_docs_governance_compat.py`
 - `governance/compat/check_active_session_state.py`
 - `governance/compat/check_governed_file_size.py`
+- `governance/compat/check_corpus_completeness_report_integrity.py`
 
 ## Protocol / Contract / Requirements
 
@@ -190,6 +191,8 @@ Dispatch is blocked when:
 - prerequisites are conditional or pending;
 - checkboxes needed for ready/dispatch remain open;
 - a connector wave lacks fresh GC-018 baseline evidence.
+- a bounded corpus task lacks its corpus manifest, terminal processing ledger,
+  reconciliation evidence, or an honest non-complete verdict.
 
 ### Step 2 - Pre-Implementation Gate
 
@@ -273,6 +276,9 @@ Closure is blocked when:
   `BLOCKED_MISSING_PUBLIC_ARTIFACTS`;
 - an artifact claims public export without public-sync remote, commit, and
   artifact path evidence.
+- a bounded corpus output claims completeness while any source item remains
+  unresolved, excluded without reason, unreadable without disposition, or
+  unreconciled against the enumerated corpus.
 
 The closure packet must say which autorun phase was run and include the command
 result, including the base/head range. If `pre-closure` fails, the artifact
