@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-31
 
-Current mode marker: `connection_point_guard_cpg1_authorized_pending_implementation`
+Current mode marker: `connection_point_guard_cpg1_closed_pass_bounded_cpg2_pending_fresh_gc018`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `connection_point_guard_cpg1_authorized_pending_implementation`.
+Current mode: `connection_point_guard_cpg1_closed_pass_bounded_cpg2_pending_fresh_gc018`.
 
 Active handoff:
 
@@ -181,14 +181,17 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LHW21 is the latest closed LHW wave. `CPG-1` is authorized by
+LHW21 is the latest closed LHW wave. `CPG-1` is `CLOSED_PASS_BOUNDED` under
 `docs/baselines/CVF_GC018_CPG1_INBOUND_EVENT_CONTRACT_GUARD_2026-05-31.md`
-and dispatched by
-`docs/work_orders/CVF_WO_CPG1_INBOUND_EVENT_CONTRACT_GUARD_2026-05-31.md`.
-Next allowed move: rerun autorun pre-dispatch and pre-implementation after
-GC-020 continuity sync, then implement only the semantic-preserving INT1 policy
-extraction. CPG-2 and CPG-3 remain held. Public-safe subset sync remains
-available only from the public-sync clone after remote verification.
+with work order
+`docs/work_orders/CVF_WO_CPG1_INBOUND_EVENT_CONTRACT_GUARD_2026-05-31.md`
+and completion review
+`docs/reviews/CVF_CPG1_INBOUND_EVENT_CONTRACT_GUARD_COMPLETION_2026-05-31.md`.
+Next allowed move: draft and review a fresh CPG-2 GC-018 plus source-verified
+work order defining bounded CP2 advisory/enforce semantics. Do not implement
+CPG-2 until its operator checkpoint and autorun pre-dispatch/pre-implementation
+gates pass. CPG-3 remains held. Public-safe subset sync remains available only
+from the public-sync clone after remote verification.
 
 Parked checkpoints:
 

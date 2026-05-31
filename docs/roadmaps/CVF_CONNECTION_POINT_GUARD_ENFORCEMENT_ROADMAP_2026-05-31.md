@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: ACTIVE_CPG1_AUTHORIZED
+Status: CPG1_CLOSED_PASS_BOUNDED_CPG2_PENDING_FRESH_GC018
 
 docType: roadmap
 
@@ -40,19 +40,20 @@ Boundary:
 
 - CVF accepts inbound framework events at a CVF-owned connection point.
 - CVF does not build outbound framework-specific adapters.
-- No runtime implementation is authorized by this roadmap.
+- No further runtime implementation is authorized without a fresh tranche
+  GC-018, source-fidelity pass, work order, and autorun gates.
 - No public-sync change, provider prompt change, model tuning, autonomous
   mutation, hosted-readiness claim, production-readiness claim, or universal
   bypass-prevention claim is authorized.
 
 ## Authorization / Decision
 
-Decision: `ACTIVE_CPG1_AUTHORIZED`.
+Decision: `CPG1_CLOSED_PASS_BOUNDED_CPG2_PENDING_FRESH_GC018`.
 
-Operator direction on 2026-05-31 authorizes CPG-1 implementation after a fresh
-runtime GC-018, source-fidelity pass, work order, and autorun `pre-dispatch`
-and `pre-implementation` gates. CPG-2 and CPG-3 remain held behind their
-separate prerequisites.
+Operator direction on 2026-05-31 authorized CPG-1 implementation after a fresh
+runtime GC-018, source-fidelity pass, work order, and autorun gates. CPG-1 is
+now `CLOSED_PASS_BOUNDED`. CPG-2 and CPG-3 remain held behind their separate
+prerequisites.
 
 Parked operator checkpoint:
 
@@ -79,14 +80,15 @@ sync, or claim expansion.
 | Canonical IS1 control-point values exist | `VALUE_SET` | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/generic-agent-adapter.ts` | line 25 | `ControlPoint` | IS1 generic agent adapter | ACCEPT: `CP1_INTENT`, `CP2_PLAN`, `CP3_TOOL`, `CP4_RUNTIME`, `CP5_RESULT` |
 | IS1 mapping function exists | `EXISTS` | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/generic-agent-adapter.ts` | line 101 | `mapAgentEventToCvf` | IS1 generic agent adapter | ACCEPT |
 | IS1 adapter literal false invariant exists | `LITERAL_INVARIANT` | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/generic-agent-adapter.ts` | lines 57 and 116 | `runtimeAdapterAuthorized` | `AdapterMappingResult` | ACCEPT: literal `false` |
-| INT1 transport event set exists | `VALUE_SET` | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/index.ts` | lines 771-774 | `INT1_ALLOWED_EVENT_TYPES` | INT1 MCP adapter | ACCEPT: `intent.received`, `plan.created`, `tool.requested`, `execution.state`, `result.produced` |
-| INT1 plan validator is currently advisory | `RUNTIME_BEHAVIOR` | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/index.ts` | lines 776-804 | `cvf_validate_plan` | INT1 MCP tool | ACCEPT: source says it does not block execution |
-| INT1 plan decision values exist | `VALUE_SET` | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/index.ts` | line 794 | `advisoryDecision` | `cvf_validate_plan` | ACCEPT: `ALLOW_ADVISORY`, `REVIEW_RECOMMENDED`, `REJECT_ADVISORY` |
-| INT1 event emitter exists | `EXISTS` | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/index.ts` | lines 811-845 | `cvf_emit_agent_event` | INT1 MCP tool | ACCEPT |
+| INT1 transport event set exists | `VALUE_SET` | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/int1-connection-point-policy.ts` | lines 3-9 | `INT1_ALLOWED_EVENT_TYPES` | INT1 policy module | ACCEPT: `intent.received`, `plan.created`, `tool.requested`, `execution.state`, `result.produced` |
+| INT1 plan validator is currently advisory | `RUNTIME_BEHAVIOR` | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/int1-connection-point-policy.ts` | lines 31-58 | `validateInt1Plan` | INT1 policy module | ACCEPT: source says it does not block execution |
+| INT1 plan decision values exist | `VALUE_SET` | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/int1-connection-point-policy.ts` | lines 41-46 | `advisoryDecision` | `validateInt1Plan` | ACCEPT: `ALLOW_ADVISORY`, `REVIEW_RECOMMENDED`, `REJECT_ADVISORY` |
+| INT1 event emitter exists | `EXISTS` | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/int1-connection-point-policy.ts` | lines 60-81 | `emitInt1AgentEvent` | INT1 policy module | ACCEPT |
+| INT1 MCP registrations delegate to the policy module | `RUNTIME_BEHAVIOR` | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/index.ts` | lines 771-805 | `cvf_validate_plan`, `cvf_emit_agent_event` | INT1 MCP tools | ACCEPT |
 | Receipt interface exists | `EXISTS` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/types.ts` | lines 82-105 | `GovernanceEvidenceReceipt` | web AI types | ACCEPT |
 | Receipt builder exists | `EXISTS` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/web-governance-envelope.ts` | lines 65-132 | `buildEvidenceReceipt` | web governance envelope | ACCEPT |
 | Execute route is near hard threshold | `RUNTIME_BEHAVIOR` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts` | command-backed physical line count | `route.ts` | web execute route | ACCEPT: `999` lines |
-| MCP index exceeds soft threshold | `RUNTIME_BEHAVIOR` | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/index.ts` | command-backed physical line count | `index.ts` | MCP server | ACCEPT: `917` lines |
+| MCP index exceeds soft threshold | `RUNTIME_BEHAVIOR` | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/index.ts` | command-backed physical line count | `index.ts` | MCP server | ACCEPT: `873` lines after CPG-1 extraction |
 
 ## New Proposed Fields And Symbols
 
@@ -182,7 +184,7 @@ raw-memory capture, autonomous learning mutation, or public export.
 
 | Surface | Current size | Constraint | Required action before implementation |
 | --- | --- | --- | --- |
-| MCP `src/index.ts` | 917 lines | Above 700-line soft threshold | CPG-1 must extract a same-domain connection-point policy module and materially shrink or avoid growth in `index.ts` |
+| MCP `src/index.ts` | 873 lines after CPG-1 extraction | Above 700-line soft threshold | CPG-1 extracted a same-domain policy module and reduced the file from 917 lines; later edits must avoid regrowth |
 | Web `/api/execute/route.ts` | 999 lines | Near 1000-line hard threshold | CPG-3 must not add inline route logic; extend receipt ownership through `web-governance-envelope.ts` |
 
 `python governance/compat/check_governed_file_size.py --enforce` must pass for
@@ -240,8 +242,8 @@ call through the governed CVF route.
 
 | Tranche | Contract candidate | Prerequisite | Risk | Current status |
 | --- | --- | --- | --- | --- |
-| CPG-1 | `cvf.connectionPointEventContractGuard.cpg1.v1` | Fresh GC-018 + operator checkpoint | R2 | ACTIVE_AUTHORIZED |
-| CPG-2 | `cvf.connectionPointHardGateEnforcement.cpg2.v1` | CPG-1 `CLOSED_PASS_BOUNDED` + fresh GC-018 | R2-R3 | HOLD_FOR_CPG1_PASS |
+| CPG-1 | `cvf.connectionPointEventContractGuard.cpg1.v1` | Fresh GC-018 + operator checkpoint | R2 | CLOSED_PASS_BOUNDED |
+| CPG-2 | `cvf.connectionPointHardGateEnforcement.cpg2.v1` | CPG-1 `CLOSED_PASS_BOUNDED` + fresh GC-018 | R2-R3 | HOLD_FOR_FRESH_GC018 |
 | CPG-3 | `cvf.governanceTraceReceiptEnrichment.cpg3.v1` | CPG-2 `CLOSED_PASS_BOUNDED` + fresh GC-018 | R2 | HOLD_FOR_CPG2_PASS |
 
 ## Verification / Evidence
@@ -255,6 +257,7 @@ Roadmap-creation evidence:
 | Execute route physical size | PowerShell `Get-Content` line count | `999` lines |
 | Current source anchors | Source Verification Block above | ACCEPT |
 | Runtime edit in roadmap batch | `git diff --name-status` | N/A with reason: roadmap documentation only |
+| CPG-1 implementation | `1ff0354c`; `docs/reviews/CVF_CPG1_INBOUND_EVENT_CONTRACT_GUARD_COMPLETION_2026-05-31.md` | CLOSED_PASS_BOUNDED; MCP suite `554/554`, release bundle `7/7` |
 
 ## Acceptance Criteria For Roadmap Readiness
 
@@ -303,7 +306,7 @@ separate closure evidence and a public-sync work order.
 
 ## Claim Boundary
 
-This roadmap is a proposed runtime plan only. It does not authorize code
-changes, prove hard-gate enforcement, add receipt fields, deliver framework
-adapters, prove universal bypass prevention, perform live provider calls,
-export public artifacts, or claim hosted or production readiness.
+This roadmap now records bounded CPG-1 extraction closure. It does not
+authorize CPG-2 or CPG-3 code changes, prove hard-gate enforcement, add receipt
+fields, deliver framework adapters, prove universal bypass prevention, export
+public artifacts, or claim hosted or production readiness.

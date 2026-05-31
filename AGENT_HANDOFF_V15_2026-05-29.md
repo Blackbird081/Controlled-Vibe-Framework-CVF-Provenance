@@ -17,7 +17,7 @@ Active private provenance continuity for the current CVF repository. Use only
 with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
-Current dispatch anchor: `6b213327` (docs(cpg1): authorize inbound event contract guard). Parent roadmap anchor: `f032109b` (docs(roadmap): propose connection point guard enforcement). Prior closure anchor: `4759c640` (docs(lhw21): close connection point advisory wave). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
+Current implementation anchor: `1ff0354c` (feat(cpg1): extract inbound event contract policy). Dispatch anchor: `6b213327` (docs(cpg1): authorize inbound event contract guard). Parent roadmap anchor: `f032109b` (docs(roadmap): propose connection point guard enforcement). Prior closure anchor: `4759c640` (docs(lhw21): close connection point advisory wave). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -76,6 +76,18 @@ Recovery (`Human System Harness`). Handoff rotated from V14 to V15.
 
 ## Latest Work / Changes (2026-05-31)
 
+**CPG-1 Inbound Event Contract Guard CLOSED_PASS_BOUNDED** (2026-05-31).
+`cvf.connectionPointEventContractGuard.cpg1.v1` extracts INT1 policy ownership
+to `src/tools/int1-connection-point-policy.ts`, delegates
+`cvf_validate_plan` and `cvf_emit_agent_event` through that owner module, and
+tests the owner functions directly. Existing advisory behavior and five
+dotted event values remain unchanged; `runtimeExecutionAuthorized=false`
+remains literal. MCP index reduced from 917 to 873 physical lines. Verification:
+INT1 `8/8`, MCP suite `554/554`, file-size guard PASS, release-quality
+governed-route bundle PASS `7/7` after classified timeout isolation.
+Implementation commit: `1ff0354c`. CPG-2 requires fresh GC-018 before any
+advisory/enforce semantic change.
+
 **Public Sync Quality Hardening CLOSED_PASS_BOUNDED** (2026-05-31).
 Operator-triggered pre-public quality pass after local/private work diverged
 from public GitHub. Fixed cvf-web typecheck blockers in EL/PM live tests,
@@ -119,7 +131,7 @@ Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
 
 ## Active Boundary
 
-Current mode: `connection_point_guard_cpg1_authorized_pending_implementation`.
+Current mode: `connection_point_guard_cpg1_closed_pass_bounded_cpg2_pending_fresh_gc018`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
@@ -246,13 +258,16 @@ LHW15-16 all CLOSED_PASS_BOUNDED. LP Activation Roadmap RT1+RT2+RT3+RW1 and
 public-sync quality hardening are closed at advisory/readiness level. All
 legacy scan folders absorbed.
 `docs/roadmaps/CVF_CONNECTION_POINT_GUARD_ENFORCEMENT_ROADMAP_2026-05-31.md`
-is `ACTIVE_CPG1_AUTHORIZED`. GC-018:
+records CPG-1 `CLOSED_PASS_BOUNDED`. GC-018:
 `docs/baselines/CVF_GC018_CPG1_INBOUND_EVENT_CONTRACT_GUARD_2026-05-31.md`.
 Work order:
 `docs/work_orders/CVF_WO_CPG1_INBOUND_EVENT_CONTRACT_GUARD_2026-05-31.md`.
-Next allowed move: rerun autorun pre-dispatch and pre-implementation after
-this continuity sync, then implement only CPG-1 semantic-preserving INT1 policy
-extraction. CPG-2 and CPG-3 remain held.
+Completion:
+`docs/reviews/CVF_CPG1_INBOUND_EVENT_CONTRACT_GUARD_COMPLETION_2026-05-31.md`.
+Next allowed move: draft and review a fresh CPG-2 GC-018 plus source-verified
+work order defining bounded CP2 advisory/enforce semantics. Do not implement
+CPG-2 until its operator checkpoint and autorun pre-dispatch/pre-implementation
+gates pass. CPG-3 remains held.
 
 Parked checkpoints:
 - VI5-T4/T5 hosted Netlify freshness and operator external-agent retest
@@ -268,8 +283,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`connection_point_guard_cpg1_authorized_pending_implementation`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=rerun autorun pre-dispatch and pre-implementation after GC-020 continuity sync, then implement only CPG-1 semantic-preserving INT1 policy extraction;
+Startup acknowledged: current mode=`connection_point_guard_cpg1_closed_pass_bounded_cpg2_pending_fresh_gc018`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=draft and review fresh CPG-2 GC-018 plus source-verified work order; do not implement until operator checkpoint and autorun gates pass;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary

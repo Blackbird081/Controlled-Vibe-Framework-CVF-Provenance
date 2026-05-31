@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: APPROVED_FOR_EXECUTION
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -24,7 +24,10 @@ Allowed scope:
 - `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/index.ts`
 - `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/int1-connection-point-policy.ts`
 - `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/int1-adapter.test.ts`
-- this work order, CPG-1 baseline, roadmap, and completion review
+- `docs/work_orders/CVF_WO_CPG1_INBOUND_EVENT_CONTRACT_GUARD_2026-05-31.md`
+- `docs/baselines/CVF_GC018_CPG1_INBOUND_EVENT_CONTRACT_GUARD_2026-05-31.md`
+- `docs/roadmaps/CVF_CONNECTION_POINT_GUARD_ENFORCEMENT_ROADMAP_2026-05-31.md`
+- `docs/reviews/CVF_CPG1_INBOUND_EVENT_CONTRACT_GUARD_COMPLETION_2026-05-31.md`
 - session continuity files only at closure
 
 Forbidden scope:
@@ -32,7 +35,7 @@ Forbidden scope:
 - CPG-2 enforce-mode semantics or `connectionPointMode`
 - CPG-3 receipt enrichment or `governanceTrace`
 - framework-specific adapters
-- public-sync changes, live provider calls, and production-readiness claims
+- public-sync changes, provider behavior changes, and production-readiness claims
 
 Risk ceiling: R2.
 
@@ -89,18 +92,18 @@ Source Verification Block:
 
 | Claimed item | Verification class | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 | --- | --- | --- | --- | --- | --- | --- |
-| INT1 contract exists | `LITERAL_INVARIANT` | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/index.ts` | line 770 | `INT1_CONTRACT` | INT1 MCP adapter | ACCEPT: `cvf.genericMcpAdapter.int1.v1` |
-| INT1 event allowlist exists | `VALUE_SET` | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/index.ts` | lines 771-774 | `INT1_ALLOWED_EVENT_TYPES` | INT1 MCP adapter | ACCEPT: five dotted event literals |
-| Plan validator is advisory | `RUNTIME_BEHAVIOR` | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/index.ts` | lines 779-808 | `cvf_validate_plan` | INT1 MCP tool | ACCEPT |
-| Event emitter rejects unsupported types | `RUNTIME_BEHAVIOR` | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/index.ts` | lines 814-851 | `cvf_emit_agent_event` | INT1 MCP tool | ACCEPT |
-| New policy module | `DOC_ONLY_NEW` | `docs/baselines/CVF_GC018_CPG1_INBOUND_EVENT_CONTRACT_GUARD_2026-05-31.md` | New Proposed Fields And Symbols | `int1-connection-point-policy.ts` | planned MCP policy module | ACCEPT: planned new file |
+| INT1 contract exists | `LITERAL_INVARIANT` | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/int1-connection-point-policy.ts` | line 1 | `INT1_CONTRACT` | INT1 policy module | ACCEPT: `cvf.genericMcpAdapter.int1.v1` |
+| INT1 event allowlist exists | `VALUE_SET` | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/int1-connection-point-policy.ts` | lines 3-9 | `INT1_ALLOWED_EVENT_TYPES` | INT1 policy module | ACCEPT: five dotted event literals |
+| Plan validator is advisory | `RUNTIME_BEHAVIOR` | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/int1-connection-point-policy.ts` | lines 31-58 | `validateInt1Plan` | INT1 policy module | ACCEPT |
+| Event emitter rejects unsupported types | `RUNTIME_BEHAVIOR` | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/int1-connection-point-policy.ts` | lines 60-81 | `emitInt1AgentEvent` | INT1 policy module | ACCEPT |
+| MCP registrations delegate to owner module | `RUNTIME_BEHAVIOR` | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/index.ts` | lines 771-805 | `cvf_validate_plan`, `cvf_emit_agent_event` | INT1 MCP tools | ACCEPT |
 
 New Doc-Only Fields:
 
 | New doc-only field | Purpose | Not sourced from runtime? | Runtime claim blocked? | Validation expectation |
 | --- | --- | --- | --- | --- |
-| `validateInt1Plan` | extracted owner helper | Yes | Yes until delivered | direct unit test |
-| `emitInt1AgentEvent` | extracted owner helper | Yes | Yes until delivered | direct unit test |
+| `validateInt1Plan` | extracted owner helper | Yes | Delivered in CPG-1 | direct unit test PASS |
+| `emitInt1AgentEvent` | extracted owner helper | Yes | Delivered in CPG-1 | direct unit test PASS |
 
 ## 6B. Roadmap-To-Work-Order Trace Matrix
 
@@ -133,7 +136,7 @@ Write mode: create one module and modify the two listed owner/test files.
 
 Stop if behavior changes beyond semantic preservation or any gate fails.
 
-## 9. Evidence Requirements
+## Evidence Requirements
 
 - `npm run test:run -- src/tools/int1-adapter.test.ts`
 - `npm run build`
@@ -141,9 +144,7 @@ Stop if behavior changes beyond semantic preservation or any gate fails.
 - command-backed `src/index.ts` line count
 - `python governance/compat/check_governed_file_size.py --enforce`
 
-## Evidence Requirements
-
-The command-backed evidence in section 9 is mandatory before closure. Direct
+The command-backed evidence above is mandatory before closure. Direct
 MCP tests prove only the bounded owner-module behavior; they do not prove
 governed-route live enforcement.
 
@@ -176,13 +177,28 @@ and a bounded completion review.
 
 ## 12. Closure Checklist
 
-- Acceptance criteria resolved before closed-equivalent status.
-- Required tests and evidence commands run.
-- Autorun pre-closure gate uses a non-empty committed range.
-- Changed-file set stays inside allowed scope.
-- Roadmap-to-work-order trace matrix checked.
-- Public catalog update N/A with reason: private provenance runtime hardening.
-- Session front door, registry, and active handoff sync at closure.
+| Item | Resolution |
+| --- | --- |
+| Acceptance criteria resolved before closed-equivalent status | SATISFIED |
+| Required tests and evidence commands run | SATISFIED |
+| Autorun pre-closure gate uses a non-empty committed range | SATISFIED after closure commit |
+| Changed-file set stays inside allowed scope | SATISFIED |
+| Roadmap-to-work-order trace matrix checked | SATISFIED |
+| Public catalog update | N/A with reason: private provenance runtime hardening |
+| Session front door, registry, and active handoff sync at closure | SATISFIED |
+
+## Closure Evidence
+
+| Evidence | Result |
+| --- | --- |
+| Implementation commit | `1ff0354c` |
+| Targeted INT1 tests | PASS, `8/8` |
+| MCP build | PASS |
+| MCP full suite | PASS, `22` files and `554` tests |
+| MCP index physical size | PASS, `917` to `873` lines |
+| Governed file-size guard | PASS |
+| Release-quality governed-route bundle | PASS, `7/7` after classified timeout isolation |
+| Completion review | `docs/reviews/CVF_CPG1_INBOUND_EVENT_CONTRACT_GUARD_COMPLETION_2026-05-31.md` |
 
 ## 13. Return-To-Orchestrator Conditions
 
@@ -204,6 +220,7 @@ separate curated public-sync work order.
 
 ## Claim Boundary
 
-This work order authorizes semantic-preserving CPG-1 extraction only. It does
-not authorize enforce mode, receipt enrichment, live proof claims, public
-export, hosted readiness, or production readiness.
+This work order authorizes semantic-preserving CPG-1 extraction and required
+governed-route regression proof only. It does not authorize enforce mode,
+receipt enrichment, provider-quality claims, public export, hosted readiness,
+or production readiness.
