@@ -17,7 +17,7 @@ Active private provenance continuity for the current CVF repository. Use only
 with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
-Current closure anchor: `4759c640` (docs(lhw21): close connection point advisory wave). Parent governed closure anchor: `86797138` (docs(lhw21): add closure-prep work order). Prior parents: `ed23b65e` (fix(governance)), `e7015b9c` (fix(build)), `ed2161ff` (docs(quality)), `eb34b27f` (chore(quality)), `07aa9bd7` (docs(rw1)), `0256d266` (feat(rw1)), `c6556d35` (feat(rt2+rt3)), `7919ca92` (feat(rt1)). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
+Current dispatch anchor: `6b213327` (docs(cpg1): authorize inbound event contract guard). Parent roadmap anchor: `f032109b` (docs(roadmap): propose connection point guard enforcement). Prior closure anchor: `4759c640` (docs(lhw21): close connection point advisory wave). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -119,7 +119,7 @@ Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
 
 ## Active Boundary
 
-Current mode: `public_sync_quality_hardening_closed_pass_bounded`.
+Current mode: `connection_point_guard_cpg1_authorized_pending_implementation`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
@@ -244,11 +244,15 @@ Mode, T3 Receipt Enrichment advisory connectors CLOSED_PASS_BOUNDED).
 LHW17-19 closed (CVF_Important/CVF_Edit/CVF_Restructure all absorbed). Delta, WCE, EL, PM,
 LHW15-16 all CLOSED_PASS_BOUNDED. LP Activation Roadmap RT1+RT2+RT3+RW1 and
 public-sync quality hardening are closed at advisory/readiness level. All
-legacy scan folders absorbed. All work orders closed.
+legacy scan folders absorbed.
 `docs/roadmaps/CVF_CONNECTION_POINT_GUARD_ENFORCEMENT_ROADMAP_2026-05-31.md`
-exists as `PROPOSED_HOLD_FOR_FRESH_GC018`. Next allowed move: draft and review
-a fresh R2-R3 GC-018 for CPG-1 only, then request operator checkpoint approval
-before any work order or runtime edit.
+is `ACTIVE_CPG1_AUTHORIZED`. GC-018:
+`docs/baselines/CVF_GC018_CPG1_INBOUND_EVENT_CONTRACT_GUARD_2026-05-31.md`.
+Work order:
+`docs/work_orders/CVF_WO_CPG1_INBOUND_EVENT_CONTRACT_GUARD_2026-05-31.md`.
+Next allowed move: rerun autorun pre-dispatch and pre-implementation after
+this continuity sync, then implement only CPG-1 semantic-preserving INT1 policy
+extraction. CPG-2 and CPG-3 remain held.
 
 Parked checkpoints:
 - VI5-T4/T5 hosted Netlify freshness and operator external-agent retest
@@ -264,8 +268,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`public_sync_quality_hardening_closed_pass_bounded`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=LHW21 latest closed wave; connection-point guard enforcement roadmap exists as PROPOSED_HOLD_FOR_FRESH_GC018; draft and review fresh R2-R3 GC-018 for CPG-1 only, then request operator checkpoint approval before any work order or runtime edit;
+Startup acknowledged: current mode=`connection_point_guard_cpg1_authorized_pending_implementation`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=rerun autorun pre-dispatch and pre-implementation after GC-020 continuity sync, then implement only CPG-1 semantic-preserving INT1 policy extraction;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary
