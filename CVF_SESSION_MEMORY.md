@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-31
 
-Current mode marker: `rw1_route_finding_to_learning_wirein_closed_pass_bounded`
+Current mode marker: `public_sync_quality_hardening_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `rw1_route_finding_to_learning_wirein_closed_pass_bounded`.
+Current mode: `public_sync_quality_hardening_closed_pass_bounded`.
 
 Active handoff:
 
@@ -181,7 +181,7 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LHW20 is the latest closed LHW wave. LP Activation Roadmap RT1+RT2+RT3+RW1 ALL CLOSED_PASS_BOUNDED. RT1: `learningPlaneReadout` live in `/api/execute` (receipt rcpt-env-mptbpftd-1yfw15). RT2: `buildFindingToLearningRecord()` advisory module, 1/1 live proof PASS. RT3: new `/api/learning-plane/readout` HTTP route, 1/1 live proof PASS. RW1: `findingToLearningReadout` live in `/api/execute` (receipt rcpt-env-mptfzz68-ywcuvn), `autonomousMutationAuthorized=false`, route.ts 999 lines. All legacy scan folders absorbed.
+LHW20 is the latest closed LHW wave. LP Activation Roadmap RT1+RT2+RT3+RW1 and public-sync quality hardening are CLOSED_PASS_BOUNDED. RT1: `learningPlaneReadout` live in `/api/execute` (receipt rcpt-env-mptbpftd-1yfw15). RT2: `buildFindingToLearningRecord()` advisory module, 1/1 live proof PASS. RT3: `/api/learning-plane/readout` HTTP route, live proof PASS and enum validation hardened. RW1: `findingToLearningReadout` live in `/api/execute` (latest receipt rcpt-env-mpthwt8t-iqlgcr), `autonomousMutationAuthorized=false`, route.ts 999 lines with source helper rotation. Public-sync quality hardening commit `eb34b27f` fixed typecheck/lint/build blockers and tightened the near-hard file-size guard. Next move: public-safe subset sync from the public-sync clone only after remote verification.
 
 Parked checkpoints:
 

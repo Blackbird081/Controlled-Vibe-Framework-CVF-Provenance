@@ -17,7 +17,7 @@ Active private provenance continuity for the current CVF repository. Use only
 with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
-Current closure anchor: `0256d266` (feat(rw1): route Finding-to-Learning wire-in implementation). Parent governed closure anchor: `c6556d35` (feat(rt2+rt3): Finding-to-Learning Bridge CLOSED + RT3 boundary). Prior parents: `7919ca92` (feat(rt1)), `0141bfcf` (feat(wd1)), `da852a1f` (feat(lplp2)). Derive the current HEAD live with `git rev-parse --short HEAD` when needed. Parent governed closure anchor: `09362e30` (feat(lplp1)). Derive the current HEAD live with `git rev-parse --short HEAD` when needed. Parent governed closure anchor: `46ca9f4f` (feat(se1+is1)). Derive the current HEAD live with `git rev-parse --short HEAD` when needed. Parent governed closure anchor: `bfc542fc` (feat(rm1): Reputation Routing Advisory Step 7). Derive the current HEAD live with `git rev-parse --short HEAD` when needed. Parent governed closure anchor: `5155bc45` (feat(tm1): Truth Model Calibration Step 6). Derive the current HEAD live with `git rev-parse --short HEAD` when needed. Parent governed closure anchor: `161ea531` (feat(ape1): Adaptation Policy Engine A1-A6). Derive the current HEAD live with `git rev-parse --short HEAD` when needed. Parent governed closure anchor: `306b63c6` (feat(cbg1): Context Budget Guard). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
+Current closure anchor: `eb34b27f` (chore(quality): harden public sync readiness gates). Parent governed closure anchor: `07aa9bd7` (docs(rw1): close route finding-to-learning wire-in). Prior parents: `0256d266` (feat(rw1)), `c6556d35` (feat(rt2+rt3)), `7919ca92` (feat(rt1)), `0141bfcf` (feat(wd1)), `da852a1f` (feat(lplp2)). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -76,6 +76,22 @@ Recovery (`Human System Harness`). Handoff rotated from V14 to V15.
 
 ## Latest Work / Changes (2026-05-31)
 
+**Public Sync Quality Hardening CLOSED_PASS_BOUNDED** (2026-05-31).
+Operator-triggered pre-public quality pass after local/private work diverged
+from public GitHub. Fixed cvf-web typecheck blockers in EL/PM live tests,
+lint errors in audit memory tests, RT3 taxonomy validation, and a Next build
+failure caused by exporting a non-route constant from a route module.
+Extracted `/api/execute` advisory response readout assembly to
+`route-response-readouts.ts`; `route.ts` remains 999 lines with same-class
+source rotation evidence. Guard hardening: governed file-size check now rejects
+near-hard multi-statement compression and test-file pseudo-rotation as source
+rotation evidence. Verification: `npm run check` PASS, `npm run lint -- --quiet`
+PASS with 0 errors, `npm run build` PASS with pre-existing
+`source-map-support` warning, non-live suite PASS 233 files / 2891 passed /
+2 skipped, RW1 live receipt `rcpt-env-mpthwt8t-iqlgcr`, RT3 route proof PASS.
+Completion:
+`docs/reviews/CVF_PUBLIC_SYNC_QUALITY_HARDENING_COMPLETION_2026-05-31.md`.
+
 **RW1 Route Finding-to-Learning Wire-In CLOSED_PASS_BOUNDED** (2026-05-31).
 `cvf.routeFindingToLearningWireIn.rw1.v1` — `/api/execute` ALLOW responses now
 include `findingToLearningReadout` from `buildFindingToLearningRecord()`.
@@ -103,7 +119,7 @@ Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
 
 ## Active Boundary
 
-Current mode: `rw1_route_finding_to_learning_wirein_closed_pass_bounded`.
+Current mode: `public_sync_quality_hardening_closed_pass_bounded`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
@@ -224,13 +240,14 @@ public-release readiness claim.
 
 LHW20 is the latest closed LHW wave (T1/T2/T3 CVF_Important deep scan CLOSED_PASS_BOUNDED).
 LHW17-19 closed (CVF_Important/CVF_Edit/CVF_Restructure all absorbed). Delta, WCE, EL, PM,
-LHW15-16 all CLOSED_PASS_BOUNDED. LP Activation Roadmap RT1+RT2+RT3+RW1 is
-closed at advisory level. All legacy scan folders absorbed. All work orders closed.
-Next options: (1) Feedback Ledger Write mutation (separate R2-R3 GC-018 +
-operator checkpoint required), (2) framework adapter tranche
-(LangChain/CrewAI/AutoGen from LHW19 T1 advisory), (3) route.ts
-rotation/maintainability tranche before any future /api/execute response-field
-expansion, (4) operator-initiated roadmap, (5) public-sync update.
+LHW15-16 all CLOSED_PASS_BOUNDED. LP Activation Roadmap RT1+RT2+RT3+RW1 and
+public-sync quality hardening are closed at advisory/readiness level. All
+legacy scan folders absorbed. All work orders closed. Next options: (1) prepare
+and push the public-safe subset from the public-sync clone only after remote
+verification, (2) Feedback Ledger Write mutation (separate R2-R3 GC-018 +
+operator checkpoint required), (3) framework adapter tranche
+(LangChain/CrewAI/AutoGen from LHW19 T1 advisory), (4) operator-initiated
+roadmap.
 
 Parked checkpoints:
 - VI5-T4/T5 hosted Netlify freshness and operator external-agent retest
@@ -246,8 +263,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rw1_route_finding_to_learning_wirein_closed_pass_bounded`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=LHW20 latest closed wave; LP Activation Roadmap RT1+RT2+RT3+RW1 ALL CLOSED_PASS_BOUNDED; next: feedback ledger write mutation (separate R2-R3 GC-018) or framework adapter tranche (LHW19 T1) or route.ts rotation/maintainability tranche before future response-field expansion or new operator roadmap;
+Startup acknowledged: current mode=`public_sync_quality_hardening_closed_pass_bounded`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=LHW20 latest closed wave; LP Activation Roadmap RT1+RT2+RT3+RW1 plus public-sync quality hardening CLOSED_PASS_BOUNDED; next: public-safe subset sync from public-sync clone after remote verification, feedback ledger write mutation (separate R2-R3 GC-018), framework adapter tranche (LHW19 T1), or new operator roadmap;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary

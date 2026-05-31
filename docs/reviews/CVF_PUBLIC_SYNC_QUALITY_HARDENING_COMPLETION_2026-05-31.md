@@ -109,6 +109,10 @@ apply the public-safe subset from the public-sync clone, verify remote
 `Controlled-Vibe-Framework-CVF.git`, run public-sync checks, then commit/push
 from that clone only.
 
+Public catalog update: N/A with reason. This private batch hardens readiness
+guards and route quality before public-sync; it does not add a new public
+catalog capability claim.
+
 ## Claim Boundary
 
 - Quality gates are clean for this local provenance batch.
