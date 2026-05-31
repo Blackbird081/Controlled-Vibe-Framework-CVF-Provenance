@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: READY_FOR_DISPATCH
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -30,7 +30,7 @@ Allowed scope:
 - Create `docs/reviews/CVF_LHW22_T1_UCO_CAPABILITY_CONSTRAINT_ADVISORY_CONNECTOR_COMPLETION_2026-05-31.md`.
 - Create `docs/reviews/CVF_LHW22_T2_AGENT_SELF_REPORT_PROTOCOL_ADVISORY_CONNECTOR_COMPLETION_2026-05-31.md`.
 - Create `docs/reviews/CVF_LHW22_T3_CAPABILITY_REGISTRY_ADVISORY_CONNECTOR_COMPLETION_2026-05-31.md`.
-- Update this work order, the LHW22 GC-018 baseline, the parent roadmap, and
+- Update this work order, `docs/baselines/CVF_GC018_LHW22_AGENT_INTELLIGENCE_FOUNDATIONS_2026-05-31.md`, `docs/roadmaps/CVF_LHW22_LHW23_LHW24_AGENT_INTELLIGENCE_ROADMAP_2026-05-31.md`, and
   session continuity only when closure evidence exists.
 
 Forbidden scope:
