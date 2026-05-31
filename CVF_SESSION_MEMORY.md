@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-31
 
-Current mode marker: `cpg2_implemented_pending_release_proof_cpg3_hold`
+Current mode marker: `cpg2_closed_pass_bounded_cpg3_pending_fresh_gc018`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `cpg2_implemented_pending_release_proof_cpg3_hold`.
+Current mode: `cpg2_closed_pass_bounded_cpg3_pending_fresh_gc018`.
 
 Active handoff:
 
@@ -194,10 +194,9 @@ is CLOSED_PASS_BOUNDED at the documentation-only advisory boundary:
 
 `docs/roadmaps/CVF_LHW22_LHW23_LHW24_AGENT_INTELLIGENCE_ROADMAP_2026-05-31.md`
 
-Next allowed move: isolate/rerun release-quality governance proof for CPG-2
-before any CPG-2 closure or CPG-3 governanceTrace work, or prepare a separate
-explicitly authorized roadmap that does not depend on CPG-2 closure. CPG-2 is
-implemented pending release proof, not closed:
+Next allowed move: prepare CPG-3 governanceTrace work only after a fresh GC-018,
+roadmap/work order, and operator checkpoint, or prepare a separate explicitly
+authorized roadmap. CPG-2 is CLOSED_PASS_BOUNDED with release-quality proof:
 
 `docs/roadmaps/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_ROADMAP_2026-05-31.md`
 
