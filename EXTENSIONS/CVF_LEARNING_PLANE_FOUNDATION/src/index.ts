@@ -927,6 +927,15 @@ export type {
   A6RollbackInput,
   AdaptationPolicyInput,
 } from "./adaptation-policy-engine";
+// RM1 Reputation Routing Advisory (LHW17 T3 Step 7)
+export {
+  REPUTATION_ROUTING_ADVISORY_VERSION,
+  computeRoutingAdvisory,
+} from "./reputation-routing-advisory";
+export type {
+  RoutingDisposition,
+  RoutingAdvisoryResult,
+} from "./reputation-routing-advisory";
 // TM1 Truth Model Calibration (LHW17 T3 Step 6)
 export {
   TRUTH_MODEL_CALIBRATION_VERSION,
