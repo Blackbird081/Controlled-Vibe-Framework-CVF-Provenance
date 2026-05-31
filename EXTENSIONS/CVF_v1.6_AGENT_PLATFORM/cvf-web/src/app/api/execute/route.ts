@@ -32,10 +32,9 @@ import { buildWorkflowExecutionProjection, resolveWorkflowBindingForExecution } 
 import { buildRouteAuditMemoryCapture } from '@/lib/audit-memory-receipt';
 import { buildRouteRequestContextReadout } from '@/lib/route-request-context-readout';
 import { buildVerticalIntegrationReadout } from '@/lib/vertical-integration-readout'; import { buildSpecFirstMediationReadout } from '@/lib/spec-first-mediation'; import { buildEnglishSpecFreezeReadout } from '@/lib/spec-english-freeze'; import { buildVi5LanguageReadout } from '@/lib/vi5-language-readout';
-import { buildPipelineChainReadout } from '@/lib/pipeline-chain-readout';
-import { buildWorkerTimeoutReadout } from '@/lib/worker-timeout-handler';
+import { buildPipelineChainReadout } from '@/lib/pipeline-chain-readout'; import { buildWorkerTimeoutReadout } from '@/lib/worker-timeout-handler';
 import { buildReviewerDeadlockReadout } from '@/lib/reviewer-deadlock-handler';
-import { buildContextBudgetReadout } from '@/lib/context-budget-readout'; import { buildOrchestratorFeedbackSummary } from '@/lib/orchestrator-feedback-bus'; import { buildLearningPlaneReadout } from '@/lib/learning-plane-readout';
+import { buildContextBudgetReadout } from '@/lib/context-budget-readout'; import { buildOrchestratorFeedbackSummary } from '@/lib/orchestrator-feedback-bus'; import { buildLearningPlaneReadout } from '@/lib/learning-plane-readout'; import { buildFindingToLearningRecord } from '@/lib/finding-to-learning-bridge';
 import { buildDurableMemorySystemPrompt, evaluateDurableMemoryRoute, evaluateDurableMemoryWrite, resolveDurableMemoryActorRole } from '@/lib/durable-memory-route';
 import { buildRoleOutputDeniedResponse, buildRolePermissionDeniedResponse } from '@/lib/execute-role-permission-gate';
 import { buildExecutionIdentityDecision } from '@/lib/execution-identity';
@@ -949,7 +948,7 @@ export async function POST(request: NextRequest) {
         const specFirstMediation = buildSpecFirstMediationReadout({ request: body, template, routeOutcome: { success: aiResult.success, provider: routedProvider, model: body.model ?? aiResult.model ?? routedProvider, decision: enforcement.status, receipt: { receiptId: governanceEvidenceReceipt.receiptId, envelopeId: governanceEvidenceReceipt.envelopeId }, rawTechnicalEvidenceAvailable: true } }); const englishSpecFreeze = buildEnglishSpecFreezeReadout({ request: body, specFirstMediation, providerOutput: aiResult.output });
         const pipelineChainReadout = buildPipelineChainReadout(body.intent ?? '');
         const workerTimeoutReadout = buildWorkerTimeoutReadout(Date.now() - routeStartedAtMs);
-        const reviewerDeadlockReadout = buildReviewerDeadlockReadout(); const contextBudgetReadout = buildContextBudgetReadout(resolvedExecutionRole.permissionRole ?? 'OPERATOR'); const orchestratorFeedback = buildOrchestratorFeedbackSummary(workerTimeoutReadout, reviewerDeadlockReadout, contextBudgetReadout); const learningPlaneReadout = buildLearningPlaneReadout(resolvedExecutionRole.permissionRole ?? 'OPERATOR');
+        const reviewerDeadlockReadout = buildReviewerDeadlockReadout(); const contextBudgetReadout = buildContextBudgetReadout(resolvedExecutionRole.permissionRole ?? 'OPERATOR'); const orchestratorFeedback = buildOrchestratorFeedbackSummary(workerTimeoutReadout, reviewerDeadlockReadout, contextBudgetReadout); const learningPlaneReadout = buildLearningPlaneReadout(resolvedExecutionRole.permissionRole ?? 'OPERATOR'); const findingToLearningReadout = buildFindingToLearningRecord({ sourceId: `exec-${governanceEvidenceReceipt.envelopeId}`, sourceArtifact: 'api/execute', sourceSummary: `Governed execution ALLOW. Role: ${resolvedExecutionRole.permissionRole ?? 'OPERATOR'}.`, lane: 'GOVERNANCE_CONTROL_PLANE', defectClass: 'RULE_GAP', severity: 'low', disposition: 'N/A_WITH_REASON', nextControlAction: 'Advisory only — no action required.', evidenceBasis: `receipt:${governanceEvidenceReceipt.receiptId}` });
         return NextResponse.json({
             ...aiResult,
             usage,
@@ -991,7 +990,7 @@ export async function POST(request: NextRequest) {
             pipelineChainReadout,
             workerTimeoutReadout,
             reviewerDeadlockReadout,
-            contextBudgetReadout, orchestratorFeedback, learningPlaneReadout,
+            contextBudgetReadout, orchestratorFeedback, learningPlaneReadout, findingToLearningReadout,
         });
     } catch (error) {
         console.error('Execute API error:', error);
