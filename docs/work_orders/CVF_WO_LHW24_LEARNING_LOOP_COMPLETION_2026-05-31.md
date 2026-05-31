@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: HOLD_UNTIL_LHW23_PASS
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -10,18 +10,18 @@ Date: 2026-05-31
 
 ## Purpose
 
-Prepare, but do not dispatch, the LHW24 documentation-only advisory connector
-wave for feedback-to-strategy registry, memory sync protocol, and relevance
-ranking in context packaging.
+Close the LHW24 documentation-only advisory connector wave for
+feedback-to-strategy registry, memory sync protocol, and relevance ranking in
+context packaging.
 
-This order remains on HOLD until LHW23 has machine-backed PASS closure evidence
-and Orchestrator refreshes or re-authorizes the LHW24 source baseline.
+LHW23 predecessor evidence and the fresh LHW24 GC-018 baseline are present; the
+order is closed at the private documentation-only boundary.
 
 ## Scope / Target / Owner Boundary
 
 Target wave: LHW24 documentation-only advisory connectors.
 
-Allowed scope after hold is released:
+Allowed scope:
 
 - Create `docs/baselines/CVF_GC018_LHW24_LEARNING_LOOP_COMPLETION_2026-05-31.md`.
 - Create `docs/reference/CVF_LHW24_T1_FEEDBACK_LOOP_STRATEGY_REGISTRY_ADVISORY_CONNECTOR_SPEC_2026-05-31.md`.
@@ -33,7 +33,7 @@ Allowed scope after hold is released:
 
 Forbidden scope:
 
-- Do not dispatch this order while LHW23 is unresolved.
+- Do not reopen this order unless a new governed batch is authorized.
 - Do not edit `EXTENSIONS/`, learning-plane source, memory gateway source,
   context packager source, route files, or runtime receipt types.
 - Do not run live provider calls or claim governance behavior.
@@ -46,7 +46,7 @@ Forbidden scope:
 | Authority | Path / basis | Disposition |
 |---|---|---|
 | Parent roadmap | `docs/roadmaps/CVF_LHW22_LHW23_LHW24_AGENT_INTELLIGENCE_ROADMAP_2026-05-31.md` | ACCEPT |
-| Required predecessor | LHW23 wave closure evidence | HOLD |
+| Required predecessor | LHW23 wave closure evidence | PASS |
 | Full-scan audit | `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md` | ACCEPT |
 | Learning signal bridge standard | `docs/reference/CVF_LEARNING_SIGNAL_INTAKE_BRIDGE_STANDARD_2026-05-29.md` | ACCEPT |
 | Work-order template | `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md` | ACCEPT |
@@ -77,8 +77,7 @@ Forbidden scope:
 
 ## Pre-Flight Checks
 
-Do not run implementation checks until the HOLD is released. When released,
-capture a non-empty base and run:
+The implementer must capture a non-empty base and run:
 
 ```bash
 python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base <baseHead> --head HEAD
@@ -94,9 +93,10 @@ python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implemen
 | EXISTS context packager source concept | `.private_reference/legacy/CVF_Important/ADDING_CONTEXT ENGINE/CONTEXT PACKAGER.md` | Context engine source file | `CONTEXT PACKAGER` | Future advisory map to memory-context packager | ACCEPT |
 | EXISTS feedback ledger runtime surface | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/feedback.ledger.contract.ts` | Runtime source file | `FeedbackLedgerContract` | `FeedbackLedgerContract` | ACCEPT |
 | EXISTS learning signal intake runtime surface | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/learning-signal-intake-bridge.ts` | Runtime source file | `LearningSignalIntakeRecord` | `buildLearningSignalIntakeRecord` | ACCEPT |
-| EXISTS controlled memory gateway runtime surface | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts` | Runtime source file | `createControlledMemoryGatewayContract` | controlled memory gateway contract | ACCEPT |
-| EXISTS memory lifecycle policy runtime surface | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-lifecycle-policy.ts` | Runtime source file | `MemoryLifecyclePolicy` | memory lifecycle policy module | ACCEPT |
-| EXISTS memory context packager runtime surface | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-context-packager.ts` | Runtime source file | `buildMemoryContextPackage` | memory context packager module | ACCEPT |
+| EXISTS controlled memory gateway runtime surface | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts` | Runtime source file | `MemoryGatewayDecision` | controlled memory gateway module | ACCEPT |
+| EXISTS controlled memory gateway contract factory | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled.memory.gateway.contract.ts` | Runtime source file | `createControlledMemoryGatewayContract` | controlled memory gateway contract | ACCEPT |
+| EXISTS memory lifecycle policy runtime surface | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-lifecycle-policy.ts` | Runtime source file | `evaluateLifecycleTransition` | memory lifecycle policy module | ACCEPT |
+| EXISTS memory context packager runtime surface | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-context-packager.ts` | Runtime source file | `packageMemoryContext` | memory context packager module | ACCEPT |
 | EXISTS web finding-to-learning bridge | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/finding-to-learning-bridge.ts` | Runtime source file | `FindingToLearningInput` | finding-to-learning bridge | ACCEPT |
 
 ## Current Runtime Freshness Verification
@@ -120,7 +120,7 @@ document relevance ranking requirements for current context packaging.
 
 | Roadmap requirement | Work-order instruction | Release / closure evidence required |
 |---|---|---|
-| LHW24 waits for LHW23 | Keep status `HOLD_UNTIL_LHW23_PASS` | LHW23 PASS evidence before dispatch |
+| LHW24 waits for LHW23 | Close only after LHW23 PASS evidence | LHW23 PASS evidence before dispatch |
 | T1 feedback loop to strategy registry advisory | Author T1 after fresh LHW24 GC-018 | Spec/review paths and learning-surface mapping |
 | T2 memory sync protocol advisory | Author T2 after runtime freshness check | Spec/review paths and memory-surface mapping |
 | T3 relevance ranking advisory | Author T3 after runtime freshness check | Spec/review paths and context-packager mapping |
@@ -128,19 +128,19 @@ document relevance ranking requirements for current context packaging.
 
 ## Write Ownership
 
-While on HOLD, this file is planning material only. After hold release, write
-ownership is limited to the LHW24 GC-018 baseline, the LHW24 spec/review files
-listed above, this work order, the parent roadmap, and closure continuity files.
+Write ownership for this closed order was limited to the LHW24 GC-018 baseline,
+the LHW24 spec/review files listed above, this work order, the parent roadmap,
+and closure continuity files.
 
 ## Execution Plan
 
-1. Stop if LHW23 PASS evidence is not present.
-2. Create a fresh LHW24 GC-018 baseline with current learning/memory/context
+1. LHW23 PASS evidence was verified.
+2. Fresh LHW24 GC-018 baseline was created with current learning/memory/context
    owner paths.
-3. Author T1/T2/T3 specs as documentation-only advisory connectors.
-4. Author completion reviews with closure diff and machine evidence.
-5. Keep runtime source, autonomous mutation, live proof, and public-sync out of
-   scope.
+3. T1/T2/T3 specs were authored as documentation-only advisory connectors.
+4. Completion reviews were authored with closure diff and machine evidence.
+5. Runtime source, autonomous mutation, live proof, and public-sync remained out
+   of scope.
 
 ## Evidence Requirements
 
@@ -173,11 +173,11 @@ files cited above.
 
 | Item | Resolution |
 |---|---|
-| LHW23 PASS prerequisite verified | HOLD |
-| Fresh LHW24 GC-018 created | HOLD |
-| Source Verification Block refreshed | HOLD |
-| Runtime freshness table refreshed | HOLD |
-| Closure Diff Gate completed | HOLD |
+| LHW23 PASS prerequisite verified | PASS |
+| Fresh LHW24 GC-018 created | PASS |
+| Source Verification Block refreshed | PASS |
+| Runtime freshness table refreshed | PASS |
+| Closure Diff Gate completed | PASS |
 
 ## Return-To-Orchestrator Conditions
 
@@ -187,8 +187,8 @@ needed, or implementation requires code/public/live changes.
 
 ## Operator Checkpoint
 
-PENDING_AFTER_LHW23_PASS. This order is not ready for worker execution until
-Orchestrator releases the hold.
+SATISFIED_AFTER_LHW23_PASS. LHW24 has been executed and closed as a
+documentation-only advisory wave.
 
 ## Public Export Disposition
 
@@ -199,6 +199,7 @@ authorized.
 
 ## Claim Boundary
 
-This work order is a held documentation plan. It does not authorize runtime
-learning changes, memory lifecycle mutation, context packager changes,
-autonomous rule mutation, live proof, public release, or roadmap closure.
+This work order is closed for LHW24 documentation-only advisory connector work.
+It does not authorize runtime learning changes, memory lifecycle mutation,
+context packager changes, autonomous rule mutation, live proof, public release,
+or runtime roadmap expansion.

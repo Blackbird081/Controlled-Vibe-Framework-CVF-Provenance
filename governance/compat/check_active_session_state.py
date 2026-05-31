@@ -61,6 +61,7 @@ AGENT_ROUTER_MARKERS = (
 )
 
 LHW_KEY_PATTERN = re.compile(r"^lhw(?P<wave>\d+)", re.IGNORECASE)
+LHW_FILENAME_PATTERN = re.compile(r"LHW(?P<wave>\d+)", re.IGNORECASE)
 HANDOFF_FILENAME_PATTERN = re.compile(
     r"AGENT_HANDOFF(?:_V\d+_\d{4}-\d{2}-\d{2})?\.md"
 )
@@ -83,15 +84,23 @@ def _extract_markdown_section(text: str, heading: str) -> str:
 
 
 def _latest_closed_lhw_wave(state: dict[str, Any] | None) -> int | None:
-    if not state:
-        return None
     waves: list[int] = []
-    for key, value in state.items():
-        match = LHW_KEY_PATTERN.match(key)
-        if not match or not isinstance(value, str):
-            continue
-        if "CLOSED_PASS_BOUNDED" in value:
-            waves.append(int(match.group("wave")))
+    if state:
+        for key, value in state.items():
+            match = LHW_KEY_PATTERN.match(key)
+            if not match or not isinstance(value, str):
+                continue
+            if "CLOSED_PASS_BOUNDED" in value:
+                waves.append(int(match.group("wave")))
+    baseline_root = REPO_ROOT / "docs" / "baselines"
+    if baseline_root.exists():
+        for path in baseline_root.glob("CVF_GC018_LHW*.md"):
+            match = LHW_FILENAME_PATTERN.search(path.name)
+            if not match:
+                continue
+            text = path.read_text(encoding="utf-8", errors="replace")
+            if re.search(r"(?im)^Status:\s*CLOSED_PASS_BOUNDED\b", text):
+                waves.append(int(match.group("wave")))
     return max(waves) if waves else None
 
 

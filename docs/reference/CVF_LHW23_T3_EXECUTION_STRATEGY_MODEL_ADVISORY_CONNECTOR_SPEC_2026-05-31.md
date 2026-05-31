@@ -69,9 +69,9 @@ These publication fields are not integrated into runtime facade inputs or schema
 
 ## S4. Integration Guidance
 
-- When a governed task is resolved via `executeGovernedTask`, map its execution strategy parameters to the facade request.
+- When a governed task is resolved through the execution facade, map its execution strategy parameters to `ModelRoutingRequest` and `ExecutionFacade.routeModel`.
 - Align strategy selections with `EXTENSIONS/CVF_PLANE_FACADES/src/execution.facade.ts` where strategy literal fields exist in `ModelRoutingRequest.strategy`.
-- For multi-step sequences, leverage the orchestrator structure found in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/pipeline-chain-orchestrator.ts` `runPipelineChain`.
+- For multi-step sequences, leverage the orchestrator structure found in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/pipeline-chain-orchestrator.ts` `PipelineChainOrchestrator`.
 
 ## S5. Verification Matrix
 
@@ -79,8 +79,8 @@ These publication fields are not integrated into runtime facade inputs or schema
 | --- | --- | --- |
 | Legacy Execution Strategy Spec exists | `CVF_EXECUTION_STRATEGY_MODEL.md` Section 1 | PASS |
 | Five taxonomy execution patterns verified | `CVF_EXECUTION_STRATEGY_MODEL.md` Section 5.1 | PASS |
-| Current execution facade exists | `execution.facade.ts` `executeGovernedTask` | PASS |
-| Current web orchestrator exists | `pipeline-chain-orchestrator.ts` `runPipelineChain` | PASS |
+| Current execution facade exists | `execution.facade.ts` `ModelRoutingRequest` / `ExecutionFacade.routeModel` | PASS |
+| Current web orchestrator exists | `pipeline-chain-orchestrator.ts` `PipelineChainOrchestrator` | PASS |
 | This tranche modifies execution facade or web orchestrator | Git diff name status | N/A with reason: documentation-only wave |
 
 ## Public Export Disposition

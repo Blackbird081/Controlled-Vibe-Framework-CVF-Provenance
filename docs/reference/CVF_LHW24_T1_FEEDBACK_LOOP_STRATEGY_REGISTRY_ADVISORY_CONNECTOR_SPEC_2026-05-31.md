@@ -4,7 +4,7 @@ Contract ID: `cvf.feedbackLoopStrategyRegistryAdvisory.lhw24.t1.v1`
 
 Memory class: POINTER_RECORD
 
-Status: HOLD_READY_FOR_DOC_ONLY authoring
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-05-31
 

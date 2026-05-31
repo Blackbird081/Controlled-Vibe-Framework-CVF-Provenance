@@ -167,9 +167,16 @@ Open checkbox residue is a closure defect.
 Machine enforcement must reject closed-equivalent artifacts that still contain
 open closure residue. A file with `Status: CLOSED*`, `CLOSED_PASS*`, or
 equivalent must not contain `| OPEN |` table rows or unchecked `- [ ]`
-checklist items. Work-order authors must either mark each item checked, replace
-it with `N/A with reason`, or leave the artifact in `HOLD_*`, `DRAFT`, or
-`BLOCKED`.
+checklist items, and must not retain closure checklist rows marked `HOLD`,
+`PENDING`, or `READY_FOR_DISPATCH`. Work-order authors must either mark each
+item checked, replace it with `N/A with reason`, or leave the artifact in
+`HOLD_*`, `DRAFT`, or `BLOCKED`.
+
+A closed work order must not retain stale dispatch-blocking prose such as
+"remains on HOLD", "while on HOLD", "not ready for worker execution", or "not
+dispatchable". Closed baselines, roadmaps, completion reviews, and connector
+specs that cite a work order must cite a closed work order whose own closure
+checklist has no unresolved residue.
 
 ### 6. Continuity Sync Gate
 
@@ -186,6 +193,10 @@ state `nextAllowedMove`, the `CVF_SESSION_MEMORY.md` `Next Allowed Move`
 section, and the active handoff must reference that latest closed `LHWN`.
 Leaving `LHW6` or `LHW8` text after closing `LHW9` is a closure defect even if
 the connector specs and completion reviews pass.
+
+Latest-closure detection must also consider closed GC-018 LHW baselines on disk;
+omitting the latest closed wave from `ACTIVE_SESSION_STATE.json` is not a valid
+way to bypass continuity sync.
 
 ### 7. Agent Autorun Pre-Closure Gate
 

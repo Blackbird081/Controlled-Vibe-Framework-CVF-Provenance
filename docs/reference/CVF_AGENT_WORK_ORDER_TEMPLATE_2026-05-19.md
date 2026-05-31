@@ -324,6 +324,10 @@ Rules:
   verified. Do not put value assignments or type annotations in that cell; use
   `rawMemoryReleased`, not `rawMemoryReleased: false`, and `canReinject`, not
   `canReinject: boolean`.
+- For code sources, an `ACCEPT` row must cite a symbol that exists in the cited
+  file. Dotted symbols must exist under the cited owner/interface/class; if the
+  owner does not contain that field or method, correct the symbol or use
+  `REJECT` / `BLOCKED_SOURCE_NOT_FOUND`.
 - `LITERAL_INVARIANT` requires the cited source to declare or assign the value
   literally, for example `field: false` or `field = false`.
 - If the source type is `boolean`, the worker must not claim "`field=false`
@@ -494,6 +498,8 @@ waiver for this work order.
 - [ ] Fail conditions checked and absent, or work returned BLOCKED
 - [ ] No open checkbox residue remains in roadmap, work order, completion
   packet, or public-sync checklist
+- [ ] No closed work order contains unresolved `HOLD`, `PENDING`, or
+  `READY_FOR_DISPATCH` checklist rows or stale dispatch-blocking prose
 - [ ] Public catalog updated or explicitly N/A with reason
 - [ ] Public/provenance repository boundary checked if public files changed
 - [ ] GC-020 handoff updated with current HEAD after commit

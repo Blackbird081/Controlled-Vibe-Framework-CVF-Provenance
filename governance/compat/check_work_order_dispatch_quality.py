@@ -179,6 +179,33 @@ def _validate_closed_artifact_finality(text: str, artifact_label: str) -> list[s
         issues.append(
             f"closed {artifact_label} contains {len(unchecked_items)} unchecked checklist item(s)"
         )
+    stale_resolution_rows = re.findall(
+        r"(?im)^\|.*\|\s*(?:HOLD(?:_[A-Z0-9_]+)?|PENDING(?:_[A-Z0-9_]+)?|READY_FOR_DISPATCH)\s*\|\s*$",
+        text,
+    )
+    if stale_resolution_rows:
+        issues.append(
+            f"closed {artifact_label} contains {len(stale_resolution_rows)} table row(s) "
+            "still marked HOLD/PENDING/READY_FOR_DISPATCH"
+        )
+    if artifact_label == "work order":
+        stale_work_order_phrases = sorted(
+            {
+                match.group(0)
+                for pattern in (
+                    r"\bremains\s+on\s+HOLD\b",
+                    r"\bwhile\s+on\s+HOLD\b",
+                    r"\bnot\s+ready\s+for\s+worker\s+execution\b",
+                    r"\bnot\s+dispatch(?:ed|able)?\b",
+                )
+                for match in re.finditer(pattern, text, re.IGNORECASE)
+            }
+        )
+        if stale_work_order_phrases:
+            issues.append(
+                "closed work order contains stale hold/dispatch-blocking prose: "
+                + ", ".join(stale_work_order_phrases)
+            )
     return issues
 
 
@@ -227,6 +254,10 @@ def _extract_wave_id(path: str, text: str) -> int | None:
     # waves. Only the file path is authoritative for wave identity.
     match = LHW_RE.search(path)
     return int(match.group(1)) if match else None
+
+
+def _extract_wave_ids_from_path(path: str) -> set[int]:
+    return {int(match.group(1)) for match in LHW_RE.finditer(path)}
 
 
 def _is_connector_wave(path: str, text: str) -> bool:
@@ -353,6 +384,60 @@ def _source_has_literal_false(source_text: str, field_name: str) -> bool:
     ) is not None
 
 
+def _is_code_source(path: str) -> bool:
+    return Path(path).suffix.lower() in {".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs", ".py"}
+
+
+def _symbol_identifier_parts(symbol: str) -> list[str]:
+    cleaned = symbol.strip().strip("`")
+    if not cleaned or _verified_symbol_contains_assignment(cleaned):
+        return []
+    if re.search(r"[^A-Za-z0-9_.]", cleaned):
+        return []
+    return [part for part in cleaned.split(".") if re.match(r"^[A-Za-z_][A-Za-z0-9_]*$", part)]
+
+
+def _extract_ts_decl_block(source_text: str, owner: str) -> str | None:
+    match = re.search(
+        rf"(?m)^\s*(?:export\s+)?(?:interface|class|type)\s+{re.escape(owner)}\b[^\n]*",
+        source_text,
+    )
+    if not match:
+        return None
+    start = match.start()
+    brace_start = source_text.find("{", match.end())
+    if brace_start == -1:
+        next_decl = re.search(
+            r"(?m)^\s*(?:export\s+)?(?:interface|class|type|function|const)\s+",
+            source_text[match.end():],
+        )
+        end = match.end() + next_decl.start() if next_decl else len(source_text)
+        return source_text[start:end]
+    depth = 0
+    for index in range(brace_start, len(source_text)):
+        char = source_text[index]
+        if char == "{":
+            depth += 1
+        elif char == "}":
+            depth -= 1
+            if depth == 0:
+                return source_text[start:index + 1]
+    return source_text[start:]
+
+
+def _source_has_verified_symbol(source_text: str, symbol: str) -> bool:
+    parts = _symbol_identifier_parts(symbol)
+    if not parts:
+        return True
+    if len(parts) >= 2:
+        owner, leaf = parts[-2], parts[-1]
+        owner_block = _extract_ts_decl_block(source_text, owner)
+        if owner_block is not None:
+            return re.search(rf"\b{re.escape(leaf)}\b", owner_block) is not None
+        return False
+    return re.search(rf"\b{re.escape(parts[0])}\b", source_text) is not None
+
+
 def _validate_false_invariant_against_source(
     source_path: str,
     source_text: str,
@@ -471,6 +556,34 @@ def _validate_known_false_invariant_claims(text: str) -> list[str]:
     return issues
 
 
+def _validate_referenced_work_order_closure(text: str, artifact_label: str) -> list[str]:
+    if not _is_closed_status(_extract_status(text)):
+        return []
+    issues: list[str] = []
+    for work_order_path in sorted(
+        {
+            path
+            for path in _extract_paths(text)
+            if path.replace("\\", "/").startswith("docs/work_orders/")
+        }
+    ):
+        work_order_text = _read_rel(work_order_path)
+        if not work_order_text:
+            issues.append(f"closed {artifact_label} cites missing work order `{work_order_path}`")
+            continue
+        if not _is_closed_status(_extract_status(work_order_text)):
+            issues.append(
+                f"closed {artifact_label} cites work order `{work_order_path}` whose status is not CLOSED"
+            )
+            continue
+        work_order_finality = _validate_closed_artifact_finality(work_order_text, "work order")
+        if work_order_finality:
+            issues.append(
+                f"closed {artifact_label} cites work order `{work_order_path}` with unresolved closure residue"
+            )
+    return issues
+
+
 def _row_has_blocking_disposition(row: dict[str, str]) -> bool:
     disposition = row.get("Disposition", "").upper()
     return "BLOCKED_SOURCE_NOT_FOUND" in disposition or disposition == "BLOCKED"
@@ -553,6 +666,12 @@ def _validate_accepted_source_rows(path: str, text: str) -> list[str]:
                 continue
             claimed = row.get("Claimed item", "")
             source_text = _read_rel(source_path)
+            if _is_code_source(source_path) and not _source_has_verified_symbol(source_text, verified_symbol):
+                issues.append(
+                    "Source Verification ACCEPT row cites symbol "
+                    f"`{verified_symbol.strip().strip('`')}` but `{source_path}` does not contain that symbol "
+                    "under the verified owner/path"
+                )
             false_issue = _validate_false_invariant_against_source(source_path, source_text, row)
             if false_issue:
                 issues.append(false_issue)
@@ -783,6 +902,7 @@ def _validate_roadmap(path: str, text: str) -> list[str]:
     issues.extend(_validate_status_token_hygiene(text, "roadmap"))
     issues.extend(_validate_closed_artifact_finality(text, "roadmap"))
     issues.extend(_validate_closed_roadmap_status_residue(text))
+    issues.extend(_validate_referenced_work_order_closure(text, "roadmap"))
     if _is_connector_wave(path, text) and _is_dispatch_status(status) and not _is_hold_status(status):
         wave_id = _extract_wave_id(path, text)
         if wave_id is not None and not _has_gc018_for_wave(wave_id):
@@ -798,6 +918,7 @@ def _validate_baseline(path: str, text: str) -> list[str]:
     issues: list[str] = []
     issues.extend(_validate_status_token_hygiene(text, "baseline"))
     issues.extend(_validate_closed_artifact_finality(text, "baseline"))
+    issues.extend(_validate_referenced_work_order_closure(text, "baseline"))
     issues.extend(_validate_accepted_source_rows(path, text))
     issues.extend(_validate_no_empty_range_commands(text))
     issues.extend(_validate_accept_owner_map_coverage(text))
@@ -830,6 +951,7 @@ def _validate_completion_or_spec(path: str, text: str) -> list[str]:
     issues: list[str] = []
     issues.extend(_validate_status_token_hygiene(text, "completion/spec artifact"))
     issues.extend(_validate_closed_artifact_finality(text, "completion/spec artifact"))
+    issues.extend(_validate_referenced_work_order_closure(text, "completion/spec artifact"))
     issues.extend(_validate_accepted_source_rows(path, text))
     issues.extend(_validate_no_empty_range_commands(text))
     issues.extend(_validate_connector_spec_line_count_claim(path, text))
@@ -944,6 +1066,8 @@ def _validate_lhw_wave_closure_range(
     violations: list[dict[str, Any]] = []
     for path in normalized_files:
         if not path.startswith("docs/roadmaps/") or "/archive/" in path:
+            continue
+        if len(_extract_wave_ids_from_path(path)) != 1:
             continue
         text = _read_rel(path)
         current_status = _extract_status(text)

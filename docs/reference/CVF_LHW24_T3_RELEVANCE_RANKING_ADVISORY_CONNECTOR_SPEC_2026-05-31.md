@@ -4,7 +4,7 @@ Contract ID: `cvf.relevanceRankingAdvisory.lhw24.t3.v1`
 
 Memory class: POINTER_RECORD
 
-Status: HOLD_READY_FOR_DOC_ONLY authoring
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-05-31
 
@@ -35,7 +35,7 @@ Applies to private-provenance documentation for CVF learning/memory packaging. N
 Source: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-context-packager.ts`
 Source: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/learning-signal-intake-bridge.ts`
 
-- `buildMemoryContextPackage` already assembles context packages with token budgeting.
+- `packageMemoryContext` already assembles context packages with token budgeting.
 - LearningSignalIntakeBridge enforces `autonomousMutationAuthorized=false`.
 
 ### Advisory Ranking Mapping
@@ -67,7 +67,7 @@ relevanceRankingSpec: {
 }
 ```
 
-These fields are not wired to `buildMemoryContextPackage` or any runtime reinjection in LHW24.
+These fields are not wired to `packageMemoryContext` or any runtime reinjection in LHW24.
 
 ## S4. Integration Guidance
 

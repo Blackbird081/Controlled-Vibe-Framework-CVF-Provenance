@@ -108,7 +108,7 @@ These publication fields represent future design targets and are not added to th
 ## S4. Integration Guidance
 
 - Future execution environments should fetch the UCO by `execution_id` before permitting tool resolution.
-- Enforce capability boundaries strictly through the `EXTENSIONS/CVF_GUARD_CONTRACT/` context payload where capability slots already exist under `GuardRequestContext.capabilities`.
+- Enforce capability boundaries strictly through future governed runtime contracts; current `EXTENSIONS/CVF_GUARD_CONTRACT/` source exposes agent capability slots under `AgentRegistration.capabilities`, not a UCO runtime gate.
 - Do not rely on LLM prompts to enforce file path scopes or request timeouts; use the UCO constraints as hard boundaries.
 
 ## S5. Verification Matrix
@@ -118,7 +118,7 @@ These publication fields represent future design targets and are not added to th
 | Legacy UCO architecture exists | `CVF_TRUST_AND_ISOLATION_LAYER.md` Section 1 | PASS |
 | Legacy UCO schema and rules exist | `CVF_CAPABILITY_INTEGRATION_SPEC.md` Section 2 | PASS |
 | Current governed capability contract exists | `governed-capability.contract.ts` lines 43-61 | PASS |
-| Current guard request context has capabilities | `types.ts` property `capabilities` | PASS |
+| Current agent registration has capabilities | `types.ts` `AgentRegistration.capabilities` | PASS |
 | This tranche modifies any code files | Git diff name status | N/A with reason: documentation-only wave |
 
 ## Public Export Disposition

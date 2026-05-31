@@ -50,9 +50,10 @@ Source anchors:
 | Context packager concept | `.private_reference/legacy/CVF_Important/ADDING_CONTEXT ENGINE/CONTEXT PACKAGER.md` | Sections 1-3 | `CONTEXT PACKAGER` | relevance packaging concept | ACCEPT |
 | Feedback ledger runtime surface | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/feedback.ledger.contract.ts` | Runtime source file | `FeedbackLedgerContract` | feedback ledger contract | ACCEPT |
 | Learning signal intake runtime surface | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/learning-signal-intake-bridge.ts` | Runtime source file | `LearningSignalIntakeRecord` | learning-signal intake bridge | ACCEPT |
-| Controlled memory gateway runtime surface | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts` | Runtime source file | `createControlledMemoryGatewayContract` | controlled memory gateway | ACCEPT |
-| Memory lifecycle policy runtime surface | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-lifecycle-policy.ts` | Runtime source file | `MemoryLifecyclePolicy` | lifecycle policy | ACCEPT |
-| Memory context packager runtime surface | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-context-packager.ts` | Runtime source file | `buildMemoryContextPackage` | context packager | ACCEPT |
+| Controlled memory gateway runtime surface | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts` | Runtime source file | `MemoryGatewayDecision` | controlled memory gateway | ACCEPT |
+| Controlled memory gateway contract factory | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled.memory.gateway.contract.ts` | Runtime source file | `createControlledMemoryGatewayContract` | controlled memory gateway contract | ACCEPT |
+| Memory lifecycle policy runtime surface | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-lifecycle-policy.ts` | Runtime source file | `evaluateLifecycleTransition` | lifecycle policy | ACCEPT |
+| Memory context packager runtime surface | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-context-packager.ts` | Runtime source file | `packageMemoryContext` | context packager | ACCEPT |
 
 ## Knowledge Absorption Blind-Spot Control Block
 

@@ -3,7 +3,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: LHW22_READY_FOR_DISPATCH_LHW23_HOLD_UNTIL_LHW22_PASS_LHW24_HOLD_UNTIL_LHW23_PASS
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -30,9 +30,9 @@ Allowed scope:
 
 - LHW22: UCO, Agent Self-Report, Capability Registry advisory specs.
 - LHW23: Model Registry, multi-factor routing, Execution Strategy advisory
-  specs, held until LHW22 closure.
+  specs.
 - LHW24: Feedback Loop to Strategy Registry, Memory Sync Protocol, Relevance
-  Ranking advisory specs, held until LHW23 closure.
+  Ranking advisory specs.
 - Fresh GC-018 is required per wave.
 - Completion reviews and session continuity updates are required only when a
   wave closes.
@@ -47,11 +47,9 @@ Forbidden scope:
 
 ## Authorization / Decision
 
-Decision: authorize LHW22 for dispatch after fresh GC-018
-`docs/baselines/CVF_GC018_LHW22_AGENT_INTELLIGENCE_FOUNDATIONS_2026-05-31.md`.
-
-LHW23 and LHW24 remain hold packets. They are planning records only until their
-own prerequisites and fresh GC-018 packets exist.
+Decision: LHW22, LHW23, and LHW24 are closed at the documentation-only advisory
+boundary after predecessor evidence and fresh GC-018 packets were filed for
+each wave.
 
 Operator direction on 2026-05-31: review and repair Claude-created roadmap and
 work orders, tighten guards first, then use the guards to clean the packet.
@@ -106,43 +104,45 @@ Source audit:
 
 | Wave | Status | Work order | Prerequisite |
 |---|---|---|---|
-| LHW22 | READY_FOR_DISPATCH | `docs/work_orders/CVF_WO_LHW22_AGENT_INTELLIGENCE_FOUNDATIONS_2026-05-31.md` | LHW20 closed; fresh GC-018 filed |
-| LHW23 | HOLD_UNTIL_LHW22_PASS | `docs/work_orders/CVF_WO_LHW23_ROUTING_REGISTRY_INTELLIGENCE_2026-05-31.md` | LHW22 closure plus fresh GC-018 |
-| LHW24 | HOLD_UNTIL_LHW23_PASS | `docs/work_orders/CVF_WO_LHW24_LEARNING_LOOP_COMPLETION_2026-05-31.md` | LHW23 closure plus fresh GC-018 |
+| LHW22 | CLOSED_PASS_BOUNDED | `docs/work_orders/CVF_WO_LHW22_AGENT_INTELLIGENCE_FOUNDATIONS_2026-05-31.md` | LHW20 closed; fresh GC-018 filed |
+| LHW23 | CLOSED_PASS_BOUNDED | `docs/work_orders/CVF_WO_LHW23_ROUTING_REGISTRY_INTELLIGENCE_2026-05-31.md` | LHW22 closure plus fresh GC-018 |
+| LHW24 | CLOSED_PASS_BOUNDED | `docs/work_orders/CVF_WO_LHW24_LEARNING_LOOP_COMPLETION_2026-05-31.md` | LHW23 closure plus fresh GC-018 |
 
 ## Acceptance Criteria
 
-- LHW22 work order passes pre-dispatch guard before Claude or any implementer
-  authors specs.
-- LHW23 and LHW24 remain hold packets until prerequisites are met.
+- LHW22 work order passed the required governed authoring and closure gates.
+- LHW23 and LHW24 were released only after predecessor closure evidence and
+  fresh GC-018 packets were present.
 - Every accepted concept from the LHW20 audit has an explicit disposition.
 - All source facts cite current source paths, not audit memory alone.
 - Each wave remains documentation-only with `runtimeExecutionAuthorized=false`.
 
 ## Verification / Evidence
 
-Required before LHW22 dispatch:
+Closure evidence:
 
 ```powershell
-python governance/compat/check_work_order_dispatch_quality.py --base 21e0bb8c --head HEAD --enforce
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base 21e0bb8c --head HEAD
+python governance/compat/check_work_order_dispatch_quality.py --base 670cac38 --head HEAD --enforce
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base 670cac38 --head HEAD
 ```
 
-Required before later waves:
+Additional repair gate after stale-state cleanup:
 
-- LHW23: LHW22 closed plus fresh LHW23 GC-018.
-- LHW24: LHW23 closed plus fresh LHW24 GC-018.
+```powershell
+python governance/compat/check_active_session_state.py --enforce
+```
 
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: private provenance planning and work-order packet. No public artifact
-or public catalog claim is made.
+Reason: private provenance planning and work-order packet. No public-sync
+artifact was prepared from the sibling public-sync clone, and no public catalog
+claim is made.
 
 ## Claim Boundary
 
-Planning and dispatch-control artifact only. This roadmap authorizes LHW22
-documentation-only advisory spec authoring after guard pass. It does not
-authorize LHW23, LHW24, runtime implementation, public-sync export, live
-provider proof, autonomous mutation, production readiness, or public readiness.
+This roadmap closes LHW22, LHW23, and LHW24 as documentation-only advisory
+connector waves. It does not authorize runtime implementation, public-sync
+export, live provider proof, autonomous mutation, production readiness, or
+public readiness.

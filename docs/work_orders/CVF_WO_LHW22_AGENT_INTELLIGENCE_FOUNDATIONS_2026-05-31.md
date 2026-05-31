@@ -172,12 +172,12 @@ accepted if any machine guard fails.
 
 | Item | Resolution |
 |---|---|
-| Source Verification Block remains complete | PENDING |
-| Roadmap-To-Work-Order Trace Matrix remains complete | PENDING |
-| Closure Diff Gate completed | PENDING |
-| Public Export Disposition present in changed governed artifacts | PENDING |
-| Session continuity updated after closure only | PENDING |
-| No untracked or unrelated worktree residue remains | PENDING |
+| Source Verification Block remains complete | PASS |
+| Roadmap-To-Work-Order Trace Matrix remains complete | PASS |
+| Closure Diff Gate completed | PASS |
+| Public Export Disposition present in changed governed artifacts | PASS |
+| Session continuity updated after closure only | PASS |
+| No untracked or unrelated worktree residue remains | PASS |
 
 ## Return-To-Orchestrator Conditions
 

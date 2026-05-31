@@ -4,7 +4,7 @@ Contract ID: `cvf.memorySyncProtocolAdvisory.lhw24.t2.v1`
 
 Memory class: POINTER_RECORD
 
-Status: HOLD_READY_FOR_DOC_ONLY authoring
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-05-31
 
@@ -37,7 +37,7 @@ Source: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-lifecycle-policy.ts
 Source: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/learning-signal-intake-bridge.ts`
 
 - ControlledMemoryGateway defines governed access to memory tiers.
-- MemoryLifecyclePolicy handles promotion/expiry decisions.
+- `evaluateLifecycleTransition` handles promotion/expiry decisions in the current memory lifecycle policy module.
 - LearningSignalIntakeBridge already normalizes signals with `autonomousMutationAuthorized=false`.
 
 ### Advisory Sync Mapping

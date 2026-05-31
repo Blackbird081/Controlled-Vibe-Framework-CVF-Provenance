@@ -10,12 +10,11 @@ Date: 2026-05-31
 
 ## Purpose
 
-Prepare, but do not dispatch, the LHW23 documentation-only advisory connector
-wave for model registry service, multi-factor routing policy, and execution
-strategy model.
+Close the LHW23 documentation-only advisory connector wave for model registry
+service, multi-factor routing policy, and execution strategy model.
 
-This order remains on HOLD until LHW22 has machine-backed PASS closure evidence
-and Orchestrator refreshes or re-authorizes the LHW23 source baseline.
+LHW22 predecessor evidence and the fresh LHW23 GC-018 baseline are present; the
+order is closed at the private documentation-only boundary.
 
 ## Scope / Target / Owner Boundary
 
@@ -33,7 +32,7 @@ Allowed scope after hold is released:
 
 Forbidden scope:
 
-- Do not dispatch this order while LHW22 is unresolved.
+- Do not reopen this order unless a new governed batch is authorized.
 - Do not edit `EXTENSIONS/`, route files, `resolveProviderForRole`, provider
   registry source, routing policy source, execution facade source, or runtime
   receipt types.
@@ -46,7 +45,7 @@ Forbidden scope:
 | Authority | Path / basis | Disposition |
 |---|---|---|
 | Parent roadmap | `docs/roadmaps/CVF_LHW22_LHW23_LHW24_AGENT_INTELLIGENCE_ROADMAP_2026-05-31.md` | ACCEPT |
-| Required predecessor | LHW22 wave closure evidence | HOLD |
+| Required predecessor | LHW22 wave closure evidence | PASS |
 | Full-scan audit | `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md` | ACCEPT |
 | Work-order template | `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md` | ACCEPT |
 
@@ -75,8 +74,7 @@ Forbidden scope:
 
 ## Pre-Flight Checks
 
-Do not run implementation checks until the HOLD is released. When released,
-capture a non-empty base and run:
+The implementer must capture a non-empty base and run:
 
 ```bash
 python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base <baseHead> --head HEAD
@@ -94,8 +92,8 @@ python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implemen
 | EXISTS current provider capability registry surface | `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-registry.ts` | Runtime source file | `PROVIDER_CAPABILITY_REGISTRY` | provider capability registry module | ACCEPT |
 | EXISTS current routing policy surface | `EXTENSIONS/CVF_MODEL_GATEWAY/src/routing-policy.ts` | Runtime source file | `RoutingPolicyEngine` | `RoutingPolicyEngine` | ACCEPT |
 | EXISTS current role provider resolver | `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/execute.client.ts` | Runtime source file | `resolveProviderForRole` | `resolveProviderForRole` | ACCEPT |
-| EXISTS current execution facade surface | `EXTENSIONS/CVF_PLANE_FACADES/src/execution.facade.ts` | Runtime source file | `executeGovernedTask` | execution facade | ACCEPT |
-| EXISTS current web orchestrator surface | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/pipeline-chain-orchestrator.ts` | Runtime source file | `runPipelineChain` | pipeline-chain orchestrator | ACCEPT |
+| EXISTS current execution facade surface | `EXTENSIONS/CVF_PLANE_FACADES/src/execution.facade.ts` | Runtime source file | `ModelRoutingRequest` | execution facade | ACCEPT |
+| EXISTS current web orchestrator surface | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/pipeline-chain-orchestrator.ts` | Runtime source file | `PipelineChainOrchestrator` | pipeline-chain orchestrator | ACCEPT |
 
 ## Current Runtime Freshness Verification
 
@@ -118,7 +116,7 @@ execution facade, and web orchestration surfaces.
 
 | Roadmap requirement | Work-order instruction | Release / closure evidence required |
 |---|---|---|
-| LHW23 waits for LHW22 | Keep status `HOLD_UNTIL_LHW22_PASS` | LHW22 PASS evidence before dispatch |
+| LHW23 waits for LHW22 | Close only after LHW22 PASS evidence | LHW22 PASS evidence before dispatch |
 | T1 model registry service advisory | Author T1 only after fresh LHW23 GC-018 | Spec/review paths and current registry mapping |
 | T2 multi-factor routing policy advisory | Author T2 only after runtime freshness check | Spec/review paths and route owner mapping |
 | T3 execution strategy model advisory | Author T3 only after runtime freshness check | Spec/review paths and facade/orchestrator mapping |
@@ -126,17 +124,17 @@ execution facade, and web orchestration surfaces.
 
 ## Write Ownership
 
-While on HOLD, this file is planning material only. After hold release, write
-ownership is limited to the LHW23 GC-018 baseline, the LHW23 spec/review files
-listed above, this work order, the parent roadmap, and closure continuity files.
+Write ownership for this closed order was limited to the LHW23 GC-018 baseline,
+the LHW23 spec/review files listed above, this work order, the parent roadmap,
+and closure continuity files.
 
 ## Execution Plan
 
-1. Stop if LHW22 PASS evidence is not present.
-2. Create a fresh LHW23 GC-018 baseline with current runtime source paths.
-3. Author T1/T2/T3 specs as documentation-only advisory connectors.
-4. Author completion reviews with closure diff and machine evidence.
-5. Keep all runtime changes out of scope.
+1. LHW22 PASS evidence was verified.
+2. Fresh LHW23 GC-018 baseline was created with current runtime source paths.
+3. T1/T2/T3 specs were authored as documentation-only advisory connectors.
+4. Completion reviews were authored with closure diff and machine evidence.
+5. All runtime changes remained out of scope.
 
 ## Evidence Requirements
 
@@ -168,11 +166,11 @@ path, or converts advisory routing concepts into runtime claims.
 
 | Item | Resolution |
 |---|---|
-| LHW22 PASS prerequisite verified | HOLD |
-| Fresh LHW23 GC-018 created | HOLD |
-| Source Verification Block refreshed | HOLD |
-| Runtime freshness table refreshed | HOLD |
-| Closure Diff Gate completed | HOLD |
+| LHW22 PASS prerequisite verified | PASS |
+| Fresh LHW23 GC-018 created | PASS |
+| Source Verification Block refreshed | PASS |
+| Runtime freshness table refreshed | PASS |
+| Closure Diff Gate completed | PASS |
 
 ## Return-To-Orchestrator Conditions
 
@@ -182,8 +180,8 @@ become stale, or implementation requires code/public/live changes.
 
 ## Operator Checkpoint
 
-PENDING_AFTER_LHW22_PASS. This order is not ready for worker execution until
-Orchestrator releases the hold.
+SATISFIED_AFTER_LHW22_PASS. LHW23 has been executed and closed as a
+documentation-only advisory wave.
 
 ## Public Export Disposition
 
@@ -194,6 +192,6 @@ authorized.
 
 ## Claim Boundary
 
-This work order is a held documentation plan. It does not authorize runtime
-routing changes, provider selection changes, model registry mutation, live
-proof, public release, or LHW24 execution.
+This work order is closed for LHW23 documentation-only advisory connector work.
+It does not authorize runtime routing changes, provider selection changes,
+model registry mutation, live proof, public release, or LHW24 runtime execution.

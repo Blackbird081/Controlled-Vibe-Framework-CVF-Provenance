@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-31
 
-Current mode marker: `lhw23_routing_registry_intelligence_dispatch_ready_cpg2_packet_staged`
+Current mode marker: `lhw24_agent_intelligence_absorption_closed_cpg2_packet_staged`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lhw22_agent_intelligence_dispatch_ready_cpg2_packet_staged`.
+Current mode: `lhw24_agent_intelligence_absorption_closed_cpg2_packet_staged`.
 
 Active handoff:
 
@@ -181,11 +181,15 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LHW22 is the latest closed LHW wave (UCO, Agent Self-Report, and Capability Registry advisory connectors CLOSED_PASS_BOUNDED). LHW23 routing and model registry intelligence is ready for dispatch:
+LHW24 is the latest closed LHW wave. LHW22-LHW24 agent-intelligence absorption
+is CLOSED_PASS_BOUNDED at the documentation-only advisory boundary:
 
-`docs/work_orders/CVF_WO_LHW23_ROUTING_REGISTRY_INTELLIGENCE_2026-05-31.md`
+`docs/roadmaps/CVF_LHW22_LHW23_LHW24_AGENT_INTELLIGENCE_ROADMAP_2026-05-31.md`
 
-Next allowed move: execute LHW23 documentation-only advisory connector work after autorun pre-dispatch and pre-implementation gates pass on a captured non-empty range. LHW24 remains held until predecessor PASS evidence. CPG-2 is parked, not canceled; a staged CPG-2 roadmap/work-order packet exists but remains held until fresh CPG-2 GC-018 and operator checkpoint:
+Next allowed move: either open fresh CPG-2 GC-018 for the staged CP2 hard-gate
+packet after operator checkpoint, or prepare the next explicitly authorized
+roadmap. CPG-2 is parked, not canceled; a staged CPG-2 roadmap/work-order
+packet exists but remains held until fresh CPG-2 GC-018 and operator checkpoint:
 
 `docs/roadmaps/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_ROADMAP_2026-05-31.md`
 

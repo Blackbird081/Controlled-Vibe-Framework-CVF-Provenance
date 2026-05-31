@@ -206,6 +206,11 @@ Closure is blocked when:
 - any closed-equivalent work order, roadmap, Fast Lane audit, completion, or
   connector spec still contains `| OPEN |` table rows or unchecked `- [ ]`
   checklist items;
+- any closed-equivalent work order still contains checklist rows marked
+  `HOLD`, `PENDING`, or `READY_FOR_DISPATCH`, or stale prose saying the order is
+  still on hold or not ready for worker execution;
+- any closed baseline, roadmap, completion review, or connector spec cites a
+  work order that is not closed or still contains unresolved closure residue;
 - a closed roadmap still carries stale dispatch residue such as
   `WORK_ORDER_READY`, `READY_FOR_IMPLEMENTATION`, or `HOLD until`;
 - a Fast Lane audit status remains `ACTIVE`, `DRAFT`, or `HOLD` while its
@@ -224,6 +229,9 @@ Closure is blocked when:
 - a Source Verification `Verified path or symbol` cell contains a value
   assignment or type annotation such as `rawMemoryReleased: false` or
   `canReinject: boolean`.
+- a Source Verification `ACCEPT` row cites a code symbol that does not exist in
+  the cited code source or, for dotted symbols, does not exist under the cited
+  owner/interface/class;
 - a roadmap or work order makes absent/not-implemented/hardcoded runtime claims
   without Current Runtime Freshness Verification against current source;
 - an artifact claims complete ACCEPT_AS_OWNER_MAP coverage without a disposition
@@ -311,11 +319,13 @@ This standard does not:
 | Source invariant claim exceeds source proof | Downgrade the claim to doc-only normalization or cite a literal source invariant. |
 | Latest LHW closure is missing from front door, `nextAllowedMove`, or active handoff | Sync continuity surfaces before claiming or accepting closure. |
 | Closed artifact contains `| OPEN |` or unchecked `- [ ]` residue | Finalize the work-order/roadmap/review checklist or downgrade status to `HOLD_*`/`BLOCKED`. |
+| Closed work order contains `HOLD`, `PENDING`, or dispatch-blocking prose | Convert the item to `PASS`, `N/A with reason`, or downgrade the work order out of closed status. |
 | Closed roadmap still says `WORK_ORDER_READY` or `HOLD until` | Replace dispatch planning text with final per-tranche closure status. |
 | Fast Lane audit status conflicts with pass/approve disposition | Align the status with the final disposition before closure. |
 | Single-work-order diff includes files outside Allowed scope | Split unrelated cleanup into a separate governed batch or return to Orchestrator. |
 | LHW wave closure uses only the final tranche range | Re-run pre-closure from the pre-wave or first-tranche base so T1/T2/T3 are checked together. |
 | Source Verification symbol cell includes value or type syntax | Move the value/type evidence to the claimed item/source proof and leave only the bare field/path/symbol. |
+| Source Verification `ACCEPT` cites a missing code symbol | Correct the source path/symbol or change the disposition to `REJECT` / `BLOCKED_SOURCE_NOT_FOUND`. |
 | Line-count claim is stale or handwritten | Recompute from the current file or remove the claim. |
 | Public export disposition is missing or overclaims public-sync export | Add the disposition, cite public-sync evidence, or downgrade to `DEFERRED_PRIVATE_ONLY` / `BLOCKED_MISSING_PUBLIC_ARTIFACTS`. |
 | `pre-dispatch` fails | Keep artifact in `DRAFT`, `HOLD_*`, or `BLOCKED`; return to Orchestrator. |

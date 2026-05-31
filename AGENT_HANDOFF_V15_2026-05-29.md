@@ -132,11 +132,11 @@ Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
 
 ## Active Boundary
 
-Current mode: `lhw22_agent_intelligence_dispatch_ready_cpg2_packet_staged`.
+Current mode: `lhw24_agent_intelligence_absorption_closed_cpg2_packet_staged`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
-## LHW20 Wave Closure (Latest)
+## LHW20 Wave Closure (Prior)
 
 LHW20 CVF_Important Deep Scan Wave CLOSED_PASS_BOUNDED (T1+T2+T3, doc-only).
 Source: `.private_reference/legacy/CVF_Important/` (full 97-file scan, 13 subfolders).
@@ -148,6 +148,25 @@ Source: `.private_reference/legacy/CVF_Important/` (full 97-file scan, 13 subfol
 Invariants: `runtimeExecutionAuthorized=false`. R0-R3 preserved.
 GC-018: `docs/baselines/CVF_GC018_LHW20_CVF_IMPORTANT_DEEP_SCAN_WAVE_2026-05-31.md`.
 Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`.
+
+## LHW22-LHW24 Agent Intelligence Absorption Closure (Latest)
+
+LHW22, LHW23, and LHW24 are CLOSED_PASS_BOUNDED at the documentation-only
+advisory boundary. Runtime execution remains unauthorized across all nine
+tranche specs.
+
+- LHW22: UCO Capability Constraint, Agent Self-Report Protocol, and Capability
+  Registry advisory connector specs.
+- LHW23: Model Registry Service, Multi-Factor Routing Policy, and Execution
+  Strategy Model advisory connector specs.
+- LHW24: Feedback Loop to Strategy Registry, Memory Sync Protocol, and
+  Relevance Ranking advisory connector specs.
+
+Roadmap:
+`docs/roadmaps/CVF_LHW22_LHW23_LHW24_AGENT_INTELLIGENCE_ROADMAP_2026-05-31.md`.
+GC-018 packets: `docs/baselines/CVF_GC018_LHW22_AGENT_INTELLIGENCE_FOUNDATIONS_2026-05-31.md`,
+`docs/baselines/CVF_GC018_LHW23_ROUTING_REGISTRY_INTELLIGENCE_2026-05-31.md`,
+and `docs/baselines/CVF_GC018_LHW24_LEARNING_LOOP_COMPLETION_2026-05-31.md`.
 
 ## LHW19 Wave Closure (Prior)
 
@@ -223,6 +242,9 @@ public-release readiness claim.
 | LHW19 | CLOSED_PASS_BOUNDED | Integration Architecture+Control Points, Event Model governance, Strategic Compass (CVF_Restructure T1/T2/T3) |
 | LHW20 | CLOSED_PASS_BOUNDED | Security Hardening full (H4-H9), Execution Strategy Model, Adaptation Policy Engine (CVF_Important deep scan T1/T2/T3) |
 | LHW21 | CLOSED_PASS_BOUNDED | Event Taxonomy Schema, Hard Gate Mode, Receipt Enrichment advisory connectors |
+| LHW22 | CLOSED_PASS_BOUNDED | UCO Capability Constraint, Agent Self-Report Protocol, Capability Registry |
+| LHW23 | CLOSED_PASS_BOUNDED | Model Registry Service, Multi-Factor Routing Policy, Execution Strategy Model |
+| LHW24 | CLOSED_PASS_BOUNDED | Feedback Loop to Strategy Registry, Memory Sync Protocol, Relevance Ranking |
 
 ## Other Closed Artifacts
 
@@ -252,18 +274,12 @@ public-release readiness claim.
 
 ## Next Allowed Move
 
-LHW21 is the latest closed LHW wave (T1 Event Taxonomy Schema, T2 Hard Gate
-Mode, T3 Receipt Enrichment advisory connectors CLOSED_PASS_BOUNDED).
-LHW22 agent-intelligence foundations is READY_FOR_DISPATCH with fresh GC-018:
-`docs/baselines/CVF_GC018_LHW22_AGENT_INTELLIGENCE_FOUNDATIONS_2026-05-31.md`,
-parent roadmap:
-`docs/roadmaps/CVF_LHW22_LHW23_LHW24_AGENT_INTELLIGENCE_ROADMAP_2026-05-31.md`,
-and work order:
-`docs/work_orders/CVF_WO_LHW22_AGENT_INTELLIGENCE_FOUNDATIONS_2026-05-31.md`.
-Next allowed move: execute LHW22 documentation-only advisory connector work
-after autorun pre-dispatch and pre-implementation gates pass on a captured
-non-empty range. LHW23 and LHW24 remain held until predecessor PASS evidence.
-CPG-2 is parked, not canceled; staged packet:
+LHW24 is the latest closed LHW wave. LHW22-LHW24 agent-intelligence absorption
+is CLOSED_PASS_BOUNDED at the documentation-only advisory boundary:
+`docs/roadmaps/CVF_LHW22_LHW23_LHW24_AGENT_INTELLIGENCE_ROADMAP_2026-05-31.md`.
+Next allowed move: either open fresh CPG-2 GC-018 for the staged CP2 hard-gate
+packet after operator checkpoint, or prepare the next explicitly authorized
+roadmap. CPG-2 is parked, not canceled; staged packet:
 `docs/roadmaps/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_ROADMAP_2026-05-31.md`
 and
 `docs/work_orders/CVF_WO_CPG2_CP2_HARD_GATE_ENFORCEMENT_2026-05-31.md`.
@@ -284,8 +300,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lhw22_agent_intelligence_dispatch_ready_cpg2_packet_staged`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=execute LHW22 documentation-only advisory connector work after autorun gates pass; LHW23/LHW24 held and CPG-2 staged but still held;
+Startup acknowledged: current mode=`lhw24_agent_intelligence_absorption_closed_cpg2_packet_staged`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=open fresh CPG-2 GC-018 after operator checkpoint or prepare the next explicitly authorized roadmap;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary

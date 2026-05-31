@@ -51,8 +51,8 @@ Source anchors:
 | Current provider capability registry | `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-registry.ts` | Runtime source file | `PROVIDER_CAPABILITY_REGISTRY` | provider capability registry module | ACCEPT |
 | Current routing policy | `EXTENSIONS/CVF_MODEL_GATEWAY/src/routing-policy.ts` | Runtime source file | `RoutingPolicyEngine` | `RoutingPolicyEngine` | ACCEPT |
 | Current role provider resolver | `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/execute.client.ts` | Runtime source file | `resolveProviderForRole` | `resolveProviderForRole` | ACCEPT |
-| Current execution facade | `EXTENSIONS/CVF_PLANE_FACADES/src/execution.facade.ts` | Runtime source file | `executeGovernedTask` | execution facade | ACCEPT |
-| Current web orchestrator | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/pipeline-chain-orchestrator.ts` | Runtime source file | `runPipelineChain` | pipeline-chain orchestrator | ACCEPT |
+| Current execution facade | `EXTENSIONS/CVF_PLANE_FACADES/src/execution.facade.ts` | Runtime source file | `ModelRoutingRequest` | execution facade | ACCEPT |
+| Current web orchestrator | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/pipeline-chain-orchestrator.ts` | Runtime source file | `PipelineChainOrchestrator` | pipeline-chain orchestrator | ACCEPT |
 
 ## Knowledge Absorption Blind-Spot Control Block
 
