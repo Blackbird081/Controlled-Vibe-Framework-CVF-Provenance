@@ -38,9 +38,11 @@ REQUIRED_SOURCE_COLUMNS = (
 )
 
 PATH_RE = re.compile(
-    r"`?((?:docs|governance|EXTENSIONS|CVF_SESSION|scripts|sdk|\.github)/[^`\s|)]+)`?"
+    r"`((?:docs|governance|EXTENSIONS|CVF_SESSION|scripts|sdk|\.github|\.private_reference)/[^`|)]+)`"
+    r"|((?:docs|governance|EXTENSIONS|CVF_SESSION|scripts|sdk|\.github|\.private_reference)/[^`\s|)]+)"
 )
 LHW_RE = re.compile(r"LHW[-_]?(\d+)(?!\d)", re.IGNORECASE)
+IMPORTANT_FULL_SCAN_AUDIT_PATH = "docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md"
 
 
 def _run_git(args: list[str]) -> tuple[int, str, str]:
@@ -247,7 +249,7 @@ def _has_gc018_for_wave(wave_id: int) -> bool:
 def _extract_paths(text: str) -> list[str]:
     paths = []
     for match in PATH_RE.finditer(text):
-        path = match.group(1).replace("\\", "/").rstrip(".,;:")
+        path = (match.group(1) or match.group(2)).replace("\\", "/").rstrip(".,;:")
         if "*" in path or "<" in path or ">" in path:
             continue
         paths.append(path)
@@ -594,6 +596,138 @@ def _validate_no_empty_range_commands(text: str) -> list[str]:
     return []
 
 
+def _extract_accept_owner_map_concepts(source_text: str) -> list[str]:
+    concepts: list[str] = []
+    for raw_line in source_text.splitlines():
+        stripped = raw_line.strip()
+        if not (stripped.startswith("|") and "ACCEPT_AS_OWNER_MAP" in stripped):
+            continue
+        cells = [cell.strip().strip("`") for cell in stripped.strip("|").split("|")]
+        if len(cells) < 2:
+            continue
+        concept = re.sub(r"\s+", " ", cells[0]).strip()
+        if concept and concept.lower() != "concept":
+            concepts.append(concept)
+    return concepts
+
+
+def _normalize_concept_text(value: str) -> str:
+    value = re.sub(r"`([^`]+)`", r"\1", value)
+    value = re.sub(r"[^A-Za-z0-9]+", " ", value).lower()
+    return re.sub(r"\s+", " ", value).strip()
+
+
+def _concept_mentioned(text: str, concept: str) -> bool:
+    normalized_text = _normalize_concept_text(text)
+    normalized_concept = _normalize_concept_text(concept)
+    if normalized_concept and normalized_concept in normalized_text:
+        return True
+    tokens = [
+        token
+        for token in normalized_concept.split()
+        if token not in {"the", "and", "for", "with", "remaining", "items", "item"}
+    ]
+    if not tokens:
+        return False
+    # Long concept names may include explanatory parentheticals. Requiring every
+    # token would make disposition tables brittle, so require the leading core.
+    core_tokens = tokens[: min(4, len(tokens))]
+    return all(re.search(rf"\b{re.escape(token)}\b", normalized_text) for token in core_tokens)
+
+
+def _claims_all_accept_owner_map_coverage(text: str) -> bool:
+    return re.search(
+        r"(?:covers|cover|absorb|absorbs|covering)[\s\S]{0,180}"
+        r"ACCEPT_AS_OWNER_MAP|ACCEPT_AS_OWNER_MAP[\s\S]{0,180}(?:all|remaining)",
+        text,
+        re.IGNORECASE,
+    ) is not None
+
+
+def _validate_accept_owner_map_coverage(text: str) -> list[str]:
+    if not _claims_all_accept_owner_map_coverage(text):
+        return []
+    audit_text = _read_rel(IMPORTANT_FULL_SCAN_AUDIT_PATH)
+    if not audit_text:
+        return [
+            f"artifact claims complete ACCEPT_AS_OWNER_MAP coverage but `{IMPORTANT_FULL_SCAN_AUDIT_PATH}` is missing"
+        ]
+    missing = [
+        concept
+        for concept in _extract_accept_owner_map_concepts(audit_text)
+        if not _concept_mentioned(text, concept)
+    ]
+    if not missing:
+        return []
+    return [
+        "artifact claims complete ACCEPT_AS_OWNER_MAP coverage but lacks disposition for: "
+        + "; ".join(missing)
+    ]
+
+
+def _has_runtime_freshness_section(text: str) -> bool:
+    return re.search(
+        r"^##\s+(?:Current Runtime Freshness Verification|Runtime Freshness Verification|Repo Freshness Verification)\b",
+        text,
+        re.MULTILINE | re.IGNORECASE,
+    ) is not None
+
+
+def _has_absence_or_staleness_claim(text: str) -> bool:
+    return re.search(
+        r"\b(?:NOT in CVF|not implemented|completely absent|absent from CVF|"
+        r"no registry|no learning orchestrator|hardcoded strings?|per-role only|"
+        r"no typed execution strategy|no relevance scoring)\b",
+        text,
+        re.IGNORECASE,
+    ) is not None
+
+
+def _validate_runtime_freshness_claims(text: str) -> list[str]:
+    issues: list[str] = []
+    if _has_absence_or_staleness_claim(text) and not _has_runtime_freshness_section(text):
+        issues.append(
+            "artifact makes absent/not-implemented/hardcoded runtime claims without a "
+            "`Current Runtime Freshness Verification` section"
+        )
+
+    if "resolveProviderForRole" in text and "EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/execute.client.ts" not in text:
+        issues.append(
+            "`resolveProviderForRole()` claim must cite current source "
+            "`EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/execute.client.ts`"
+        )
+
+    if re.search(r"provider list is hardcoded|no registry|no model registry", text, re.IGNORECASE):
+        if (
+            "EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts" not in text
+            and "PROVIDER_CAPABILITY_REGISTRY" not in text
+        ):
+            issues.append(
+                "provider registry absence/hardcoded claim must account for current "
+                "`EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts` and "
+                "`PROVIDER_CAPABILITY_REGISTRY` surfaces"
+            )
+
+    if re.search(r"consolidation and decay[\s\S]{0,120}(?:NOT implemented|not implemented|absent)", text, re.IGNORECASE):
+        if "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-lifecycle-policy.ts" not in text:
+            issues.append(
+                "memory consolidation/decay absence claim must account for current "
+                "`EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-lifecycle-policy.ts`"
+            )
+
+    if re.search(r"No learning orchestrator in CVF|learning orchestrator[\s\S]{0,80}NOT in CVF", text, re.IGNORECASE):
+        if (
+            "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/learning-signal-intake-bridge.ts" not in text
+            and "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/feedback.ledger.contract.ts" not in text
+        ):
+            issues.append(
+                "learning-orchestrator absence claim must account for current learning-signal "
+                "and feedback ledger surfaces"
+            )
+
+    return issues
+
+
 def _validate_required_first_reads(text: str) -> list[str]:
     issues: list[str] = []
     section = _extract_section(text, "Required First Reads")
@@ -634,6 +768,8 @@ def _validate_work_order(path: str, text: str) -> list[str]:
 
     issues.extend(_validate_accepted_source_rows(path, text))
     issues.extend(_validate_no_empty_range_commands(text))
+    issues.extend(_validate_accept_owner_map_coverage(text))
+    issues.extend(_validate_runtime_freshness_claims(text))
 
     if re.search(r"install[\s\S]{0,120}always blocked|always blocked[\s\S]{0,120}install", text, re.IGNORECASE):
         issues.append("work order asserts `install` is always blocked; cite a source policy or map it to approval/escalation")
@@ -653,6 +789,8 @@ def _validate_roadmap(path: str, text: str) -> list[str]:
             issues.append(f"LHW{wave_id} connector roadmap is dispatch/ready without fresh GC-018 baseline")
     issues.extend(_validate_accepted_source_rows(path, text))
     issues.extend(_validate_no_empty_range_commands(text))
+    issues.extend(_validate_accept_owner_map_coverage(text))
+    issues.extend(_validate_runtime_freshness_claims(text))
     return issues
 
 
@@ -662,6 +800,8 @@ def _validate_baseline(path: str, text: str) -> list[str]:
     issues.extend(_validate_closed_artifact_finality(text, "baseline"))
     issues.extend(_validate_accepted_source_rows(path, text))
     issues.extend(_validate_no_empty_range_commands(text))
+    issues.extend(_validate_accept_owner_map_coverage(text))
+    issues.extend(_validate_runtime_freshness_claims(text))
     return issues
 
 
@@ -876,8 +1016,14 @@ def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str
     targets = sorted(path.replace("\\", "/") for path in changed_files if _is_target(path))
     # Collect the set of file statuses so rename-only files can be skipped.
     changed_status: dict[str, set[str]] = {}
-    for p, statuses in _get_changed(base_ref or "HEAD", "HEAD").items():
-        changed_status[p.replace("\\", "/")] = statuses
+    try:
+        for p, statuses in _get_changed(base_ref or "HEAD", "HEAD").items():
+            changed_status[p.replace("\\", "/")] = statuses
+    except RuntimeError:
+        # Unit tests patch REPO_ROOT to a temporary non-git directory and pass
+        # explicit changed files. In that mode, content validation should still
+        # run even though rename/pre-existing-status optimization is unavailable.
+        changed_status = {}
     violations = []
     for path in targets:
         statuses = changed_status.get(path, set())
@@ -920,11 +1066,15 @@ def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str
         STANDARD_PATH: (
             "Roadmap-To-Work-Order Trace Matrix",
             "Negative And Fail-Condition Scan",
+            "Current Runtime Freshness Verification",
+            "ACCEPT_AS_OWNER_MAP coverage",
             THIS_SCRIPT_PATH,
         ),
         WORK_ORDER_TEMPLATE_PATH: (
             "Source Verification Block",
             "Roadmap-To-Work-Order Trace Matrix",
+            "Current Runtime Freshness Verification",
+            "ACCEPT_AS_OWNER_MAP coverage",
             THIS_SCRIPT_PATH,
         ),
         HOOK_CHAIN_PATH: (THIS_SCRIPT_PATH,),

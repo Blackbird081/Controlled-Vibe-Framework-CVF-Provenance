@@ -289,6 +289,17 @@ Source priority:
 If a current runtime/source file exists, a completion review alone is not enough
 to verify a field, enum, diagnostic class, route state, tool name, or schema key.
 
+If the work order claims a runtime/source capability is absent, not implemented,
+hardcoded, per-role only, stale, or missing, include a
+Current Runtime Freshness Verification section before dispatch. That section must show the repo searches
+or source files that were checked and must cite current owner paths for any
+partial implementation surface found.
+
+If a roadmap-derived work order claims complete ACCEPT_AS_OWNER_MAP coverage
+from a source audit, include an ACCEPT_AS_OWNER_MAP coverage disposition that
+names each accepted concept from the cited audit and marks it as in-scope,
+already completed, deferred, rejected, or out-of-scope with reason.
+
 If the work order names, maps, modifies, consumes, or instructs an agent to use
 any runtime field, interface, function, type, schema key, receipt field,
 diagnostic class, role value, route state, template ID, pack ID, policy enum,

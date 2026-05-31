@@ -39,6 +39,8 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
                 [
                     "Roadmap-To-Work-Order Trace Matrix",
                     "Negative And Fail-Condition Scan",
+                    "Current Runtime Freshness Verification",
+                    "ACCEPT_AS_OWNER_MAP coverage",
                     MODULE.THIS_SCRIPT_PATH,
                 ]
             ),
@@ -49,6 +51,8 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
                 [
                     "Source Verification Block",
                     "Roadmap-To-Work-Order Trace Matrix",
+                    "Current Runtime Freshness Verification",
+                    "ACCEPT_AS_OWNER_MAP coverage",
                     MODULE.THIS_SCRIPT_PATH,
                 ]
             ),
@@ -333,6 +337,94 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
             report = MODULE._classify([work_order])
 
         self.assertTrue(report["compliant"])
+
+    def test_accept_owner_map_complete_coverage_claim_requires_each_concept(self) -> None:
+        roadmap = "docs/roadmaps/CVF_LHW22_TEST_ROADMAP_2026-05-31.md"
+        self._write(
+            MODULE.IMPORTANT_FULL_SCAN_AUDIT_PATH,
+            "\n".join(
+                [
+                    "| Concept | Disposition | Reason |",
+                    "|---|---|---|",
+                    "| UCO — Capability-based constraint binding | `ACCEPT_AS_OWNER_MAP` | maps to guard |",
+                    "| Artifact Store abstraction | `ACCEPT_AS_OWNER_MAP` | maps to git |",
+                ]
+            ),
+        )
+        self._write(
+            roadmap,
+            "\n".join(
+                [
+                    "# Roadmap",
+                    "Status: HOLD_FOR_FRESH_GC018",
+                    "This roadmap covers all `ACCEPT_AS_OWNER_MAP` items.",
+                    "UCO — Capability-based constraint binding is in LHW22.",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([roadmap])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "artifact claims complete ACCEPT_AS_OWNER_MAP coverage but lacks disposition for: Artifact Store abstraction",
+            report["violations"][0]["issues"],
+        )
+
+    def test_absent_runtime_claim_requires_current_freshness_section(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_LHW23_TEST_2026-05-31.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Work Order",
+                    "Status: HOLD_FOR_FRESH_GC018",
+                    "Gap: provider list is hardcoded strings and no registry is present.",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        issues = report["violations"][0]["issues"]
+        self.assertIn(
+            "artifact makes absent/not-implemented/hardcoded runtime claims without a "
+            "`Current Runtime Freshness Verification` section",
+            issues,
+        )
+        self.assertIn(
+            "provider registry absence/hardcoded claim must account for current "
+            "`EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts` and "
+            "`PROVIDER_CAPABILITY_REGISTRY` surfaces",
+            issues,
+        )
+
+    def test_resolve_provider_claim_requires_current_owner_path(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_LHW23_TEST_2026-05-31.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Work Order",
+                    "Status: HOLD_FOR_FRESH_GC018",
+                    "## Current Runtime Freshness Verification",
+                    "`resolveProviderForRole()` is mapped to an old MCP source.",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "`resolveProviderForRole()` claim must cite current source "
+            "`EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/execute.client.ts`",
+            report["violations"][0]["issues"],
+        )
 
     def test_hold_status_with_closed_token_fails_without_closed_finality(self) -> None:
         work_order = "docs/work_orders/CVF_WO_LHW11_T2_TEST_2026-05-29.md"

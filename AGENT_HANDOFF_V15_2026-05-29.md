@@ -131,7 +131,7 @@ Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
 
 ## Active Boundary
 
-Current mode: `connection_point_guard_cpg1_closed_pass_bounded_cpg2_pending_fresh_gc018`.
+Current mode: `lhw22_agent_intelligence_dispatch_ready_cpg2_parked`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
@@ -253,21 +253,17 @@ public-release readiness claim.
 
 LHW21 is the latest closed LHW wave (T1 Event Taxonomy Schema, T2 Hard Gate
 Mode, T3 Receipt Enrichment advisory connectors CLOSED_PASS_BOUNDED).
-LHW17-19 closed (CVF_Important/CVF_Edit/CVF_Restructure all absorbed). Delta, WCE, EL, PM,
-LHW15-16 all CLOSED_PASS_BOUNDED. LP Activation Roadmap RT1+RT2+RT3+RW1 and
-public-sync quality hardening are closed at advisory/readiness level. All
-legacy scan folders absorbed.
-`docs/roadmaps/CVF_CONNECTION_POINT_GUARD_ENFORCEMENT_ROADMAP_2026-05-31.md`
-records CPG-1 `CLOSED_PASS_BOUNDED`. GC-018:
-`docs/baselines/CVF_GC018_CPG1_INBOUND_EVENT_CONTRACT_GUARD_2026-05-31.md`.
-Work order:
-`docs/work_orders/CVF_WO_CPG1_INBOUND_EVENT_CONTRACT_GUARD_2026-05-31.md`.
-Completion:
-`docs/reviews/CVF_CPG1_INBOUND_EVENT_CONTRACT_GUARD_COMPLETION_2026-05-31.md`.
-Next allowed move: draft and review a fresh CPG-2 GC-018 plus source-verified
-work order defining bounded CP2 advisory/enforce semantics. Do not implement
-CPG-2 until its operator checkpoint and autorun pre-dispatch/pre-implementation
-gates pass. CPG-3 remains held.
+LHW22 agent-intelligence foundations is READY_FOR_DISPATCH with fresh GC-018:
+`docs/baselines/CVF_GC018_LHW22_AGENT_INTELLIGENCE_FOUNDATIONS_2026-05-31.md`,
+parent roadmap:
+`docs/roadmaps/CVF_LHW22_LHW23_LHW24_AGENT_INTELLIGENCE_ROADMAP_2026-05-31.md`,
+and work order:
+`docs/work_orders/CVF_WO_LHW22_AGENT_INTELLIGENCE_FOUNDATIONS_2026-05-31.md`.
+Next allowed move: execute LHW22 documentation-only advisory connector work
+after autorun pre-dispatch and pre-implementation gates pass on a captured
+non-empty range. LHW23 and LHW24 remain held until predecessor PASS evidence.
+CPG-2 is parked, not canceled; resume it only after a fresh CPG-2 GC-018 and
+source-verified work order. CPG-3 remains held.
 
 Parked checkpoints:
 - VI5-T4/T5 hosted Netlify freshness and operator external-agent retest
@@ -283,8 +279,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`connection_point_guard_cpg1_closed_pass_bounded_cpg2_pending_fresh_gc018`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=draft and review fresh CPG-2 GC-018 plus source-verified work order; do not implement until operator checkpoint and autorun gates pass;
+Startup acknowledged: current mode=`lhw22_agent_intelligence_dispatch_ready_cpg2_parked`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=execute LHW22 documentation-only advisory connector work after autorun gates pass; LHW23/LHW24 held and CPG-2 parked;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary

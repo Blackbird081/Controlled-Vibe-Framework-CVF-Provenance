@@ -142,6 +142,16 @@ claimed item or value-set evidence, not in the symbol cell: use
 `rawMemoryReleased`, not `rawMemoryReleased: false`. Do not put type
 annotations in that cell: use `canReinject`, not `canReinject: boolean`.
 
+Current Runtime Freshness Verification is required when a roadmap or work order
+claims a runtime/source capability is absent, not implemented, hardcoded,
+per-role only, or otherwise stale. The author must search current source and
+record the relevant current owner paths before marking the packet ready.
+
+ACCEPT_AS_OWNER_MAP coverage claims are fail conditions unless every accepted
+concept from the cited absorption audit is represented in a wave/tranche, or is
+explicitly listed with a completed, deferred, rejected, or out-of-scope
+disposition.
+
 ### 5. Checklist Finalization Gate
 
 Closure checklists are evidence controls, not decoration. Any unchecked item in

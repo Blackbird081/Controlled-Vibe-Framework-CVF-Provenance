@@ -224,6 +224,10 @@ Closure is blocked when:
 - a Source Verification `Verified path or symbol` cell contains a value
   assignment or type annotation such as `rawMemoryReleased: false` or
   `canReinject: boolean`.
+- a roadmap or work order makes absent/not-implemented/hardcoded runtime claims
+  without Current Runtime Freshness Verification against current source;
+- an artifact claims complete ACCEPT_AS_OWNER_MAP coverage without a disposition
+  for every accepted concept in the cited source audit;
 - a closed roadmap, final wave completion packet, or public catalog claim lacks
   a `Public Export Disposition` of `EXPORTED`, `DEFERRED_PRIVATE_ONLY`, or
   `BLOCKED_MISSING_PUBLIC_ARTIFACTS`;

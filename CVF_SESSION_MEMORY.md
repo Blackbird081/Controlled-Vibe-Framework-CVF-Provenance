@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-31
 
-Current mode marker: `connection_point_guard_cpg1_closed_pass_bounded_cpg2_pending_fresh_gc018`
+Current mode marker: `lhw22_agent_intelligence_dispatch_ready_cpg2_parked`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `connection_point_guard_cpg1_closed_pass_bounded_cpg2_pending_fresh_gc018`.
+Current mode: `lhw22_agent_intelligence_dispatch_ready_cpg2_parked`.
 
 Active handoff:
 
@@ -181,17 +181,20 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LHW21 is the latest closed LHW wave. `CPG-1` is `CLOSED_PASS_BOUNDED` under
-`docs/baselines/CVF_GC018_CPG1_INBOUND_EVENT_CONTRACT_GUARD_2026-05-31.md`
-with work order
-`docs/work_orders/CVF_WO_CPG1_INBOUND_EVENT_CONTRACT_GUARD_2026-05-31.md`
-and completion review
-`docs/reviews/CVF_CPG1_INBOUND_EVENT_CONTRACT_GUARD_COMPLETION_2026-05-31.md`.
-Next allowed move: draft and review a fresh CPG-2 GC-018 plus source-verified
-work order defining bounded CP2 advisory/enforce semantics. Do not implement
-CPG-2 until its operator checkpoint and autorun pre-dispatch/pre-implementation
-gates pass. CPG-3 remains held. Public-safe subset sync remains available only
-from the public-sync clone after remote verification.
+LHW21 is the latest closed LHW wave. LHW22 agent-intelligence foundations now
+has a fresh GC-018 baseline, source-verified roadmap, and work order ready for
+dispatch:
+
+`docs/baselines/CVF_GC018_LHW22_AGENT_INTELLIGENCE_FOUNDATIONS_2026-05-31.md`
+
+`docs/work_orders/CVF_WO_LHW22_AGENT_INTELLIGENCE_FOUNDATIONS_2026-05-31.md`
+
+Next allowed move: execute LHW22 documentation-only advisory connector work
+after autorun pre-dispatch and pre-implementation gates pass on a captured
+non-empty range. LHW23 and LHW24 remain held until predecessor PASS evidence.
+CPG-2 is parked, not canceled; resume it only after a fresh CPG-2 GC-018 and
+source-verified work order. Public-safe subset sync remains available only from
+the public-sync clone after remote verification.
 
 Parked checkpoints:
 
