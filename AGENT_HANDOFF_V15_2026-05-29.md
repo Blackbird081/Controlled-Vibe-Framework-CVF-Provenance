@@ -17,7 +17,7 @@ Active private provenance continuity for the current CVF repository. Use only
 with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
-Current closure anchor: `e7015b9c` (fix(build): mark better-sqlite3 and typescript as server-external packages). Parent governed closure anchor: `ed2161ff` (docs(quality): sync public readiness hardening state). Prior parents: `eb34b27f` (chore(quality)), `07aa9bd7` (docs(rw1)), `0256d266` (feat(rw1)), `c6556d35` (feat(rt2+rt3)), `7919ca92` (feat(rt1)). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
+Current closure anchor: `ed23b65e` (fix(governance): correct GC-022 memory class markers on LHW21 artifacts). Parent governed closure anchor: `e7015b9c` (fix(build): mark better-sqlite3 and typescript as server-external packages). Prior parents: `ed2161ff` (docs(quality)), `eb34b27f` (chore(quality)), `07aa9bd7` (docs(rw1)), `0256d266` (feat(rw1)), `c6556d35` (feat(rt2+rt3)), `7919ca92` (feat(rt1)). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
 
 ## Latest Work / Changes (2026-05-30)
 
