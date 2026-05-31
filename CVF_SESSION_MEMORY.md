@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-01
 
-Current mode marker: `ccg1_corpus_completeness_report_integrity_guard_closed_pass_bounded`
+Current mode marker: `memory_method_legacy_rescan_partial_gc048_hold`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `ccg1_corpus_completeness_report_integrity_guard_closed_pass_bounded`.
+Current mode: `memory_method_legacy_rescan_partial_gc048_hold`.
 
 Active handoff:
 
@@ -232,10 +232,16 @@ is CLOSED_PASS_BOUNDED at the documentation-only advisory boundary:
 `docs/roadmaps/CVF_LHW22_LHW23_LHW24_AGENT_INTELLIGENCE_ROADMAP_2026-05-31.md`
 
 Next allowed move: CPG-1, CPG-2, CPG-3, and CCG-1 are CLOSED_PASS_BOUNDED.
-Open `LHW-RESCAN-A` with a fresh GC-018 packet and apply `GC-047` before any
-new Legacy absorption claim. Enumerate all 24 `CVF_Important/` subfolders,
-reconcile the prior 13-folder record, and extract the 11 omitted subfolders
-with file-level manifest, terminal ledger, and honest completeness verdict.
+Memory-method Legacy rescan audit is `PARTIAL`:
+
+`docs/audits/CVF_MEMORY_METHOD_LEGACY_RESCAN_AUDIT_2026-06-01.md`
+
+Before GC-048 implementation, open a fresh GC-018 synthesis packet defining
+the canonical CVF Memory Method and a `Corpus-To-Memory-Map Reconciliation And
+Semantic Region Guard`. Preserve `LHW-RESCAN-A/B/C`: apply `GC-047`, enumerate
+from filesystem or an explicit ignore-safe equivalent, reconcile all 24
+`CVF_Important/` subfolders, and create file-level terminal coverage before
+any complete Legacy absorption claim.
 CPG-2 is CLOSED_PASS_BOUNDED with
 release-quality proof:
 

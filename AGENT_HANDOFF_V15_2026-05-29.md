@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Previous implementation anchor: `7e75ec72` (docs(cpg3): close governance trace receipts). Previous CPG3 implementation anchor: `55dc22c9` (feat(cpg3): add governance trace receipts). Previous CPG3 packet anchor: `eef3cf5d` (docs(cpg3): stage governance trace receipt packet). Previous CPG2 close anchor: `9fe32058` (docs(cpg2): close hard gate enforcement). Previous CPG2 proof-fix anchor: `5e1c6e9d` (fix(cpg2): harden gate enforcement review). Previous CPG2 worker anchor: `ab120d16` (feat(cpg2): add connection point enforce mode and gc018). Previous guard-hardening anchor: `765f16fb` (fix(governance): harden lhw closure quality gates). Previous LHW24 closure anchor: `de58adaf` (docs: add lhw24 advisory completions with runtime N/A lanes). Previous LHW23 closure anchor: `62c9db4f` (docs(lhw23): close routing and registry intelligence wave). Previous LHW22 closure anchor: `f9d87f23` (docs(lhw22): close agent intelligence foundations wave). Previous CPG2 staging anchor: `4f509fe4` (docs(cpg2): stage hard gate enforcement packet). Previous CPG-1 implementation anchor: `1ff0354c` (feat(cpg1): extract inbound event contract policy). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `e5dbcccf4ffed38c961a2714488b03d0425f4bb8` (short: `e5dbcccf`); parent: `f078fe917952a51066b1facd490082b41ac90581`.
+Current HEAD recorded for this handoff: `92d6506cc7d3c1f8de88b002b436d93846f6f0b4` (short: `92d6506c`); parent: `0b1c98dd4ac2f5be55a7f1207427d2e8bc87ca7d`.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -171,7 +171,7 @@ Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
 
 ## Active Boundary
 
-Current mode: `ccg1_corpus_completeness_report_integrity_guard_closed_pass_bounded`.
+Current mode: `memory_method_legacy_rescan_partial_gc048_hold`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
@@ -319,10 +319,14 @@ LHW24 is the latest closed LHW wave. LHW22-LHW24 agent-intelligence absorption
 is CLOSED_PASS_BOUNDED at the documentation-only advisory boundary:
 `docs/roadmaps/CVF_LHW22_LHW23_LHW24_AGENT_INTELLIGENCE_ROADMAP_2026-05-31.md`.
 Next allowed move: CPG-1, CPG-2, CPG-3, and CCG-1 are CLOSED_PASS_BOUNDED.
-Open `LHW-RESCAN-A` with a fresh GC-018 packet and apply `GC-047` before any
-new Legacy absorption claim. Enumerate all 24 `CVF_Important/` subfolders,
-reconcile the prior 13-folder record, and extract the 11 omitted subfolders
-with file-level manifest, terminal ledger, and honest completeness verdict.
+Memory-method Legacy rescan audit is `PARTIAL`:
+`docs/audits/CVF_MEMORY_METHOD_LEGACY_RESCAN_AUDIT_2026-06-01.md`.
+Before GC-048 implementation, open a fresh GC-018 synthesis packet defining
+the canonical CVF Memory Method and a `Corpus-To-Memory-Map Reconciliation And
+Semantic Region Guard`. Preserve `LHW-RESCAN-A/B/C`: apply `GC-047`, enumerate
+from filesystem or an explicit ignore-safe equivalent, reconcile all 24
+`CVF_Important/` subfolders, and create file-level terminal coverage before
+any complete Legacy absorption claim.
 CPG-2 is CLOSED_PASS_BOUNDED with release-quality proof;
 closure packet:
 `docs/roadmaps/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_ROADMAP_2026-05-31.md`
@@ -353,8 +357,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ccg1_corpus_completeness_report_integrity_guard_closed_pass_bounded`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=open LHW-RESCAN-A with fresh GC-018 and apply GC-047 before any new Legacy absorption claim;
+Startup acknowledged: current mode=`memory_method_legacy_rescan_partial_gc048_hold`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=open fresh GC-018 for canonical CVF Memory Method synthesis before GC-048 and preserve LHW-RESCAN-A/B/C under GC-047;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary
