@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-31
 
-Current mode marker: `cpg2_closed_pass_bounded_cpg3_pending_fresh_gc018`
+Current mode marker: `cpg3_governance_trace_packet_ready_preimplementation`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `cpg2_closed_pass_bounded_cpg3_pending_fresh_gc018`.
+Current mode: `cpg3_governance_trace_packet_ready_preimplementation`.
 
 Active handoff:
 
@@ -194,15 +194,28 @@ is CLOSED_PASS_BOUNDED at the documentation-only advisory boundary:
 
 `docs/roadmaps/CVF_LHW22_LHW23_LHW24_AGENT_INTELLIGENCE_ROADMAP_2026-05-31.md`
 
-Next allowed move: prepare CPG-3 governanceTrace work only after a fresh GC-018,
-roadmap/work order, and operator checkpoint, or prepare a separate explicitly
-authorized roadmap. CPG-2 is CLOSED_PASS_BOUNDED with release-quality proof:
+Next allowed move: rerun CPG-3 pre-dispatch and pre-implementation gates after
+session sync, then implement bounded `governanceTrace` receipt enrichment
+under the approved CPG-3 work order. CPG-2 is CLOSED_PASS_BOUNDED with
+release-quality proof:
 
 `docs/roadmaps/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_ROADMAP_2026-05-31.md`
 
 `docs/work_orders/CVF_WO_CPG2_CP2_HARD_GATE_ENFORCEMENT_2026-05-31.md`
 
 `docs/reviews/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_COMPLETION_2026-05-31.md`
+
+CPG-3 packet is staged and approved for implementation:
+
+`docs/baselines/CVF_GC018_CPG3_GOVERNANCE_TRACE_RECEIPT_ENRICHMENT_2026-05-31.md`
+
+`docs/roadmaps/CVF_CPG3_GOVERNANCE_TRACE_RECEIPT_ENRICHMENT_ROADMAP_2026-05-31.md`
+
+`docs/work_orders/CVF_WO_CPG3_GOVERNANCE_TRACE_RECEIPT_ENRICHMENT_2026-05-31.md`
+
+Boundary: do not edit `/api/execute/route.ts`; do not add public-sync,
+provider-routing, raw prompt/output, secret, or framework-private memory
+capture.
 
 Public-safe subset sync remains available only from the public-sync clone after
 remote verification.
