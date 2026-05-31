@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: READY_FOR_IMPLEMENTATION
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -39,7 +39,7 @@ Boundary:
 
 ## Authorization / Decision
 
-Decision: `READY_FOR_IMPLEMENTATION`.
+Decision: `CLOSED_PASS_BOUNDED`.
 
 Authority chain:
 
@@ -58,10 +58,10 @@ Authority chain:
 | --- | --- | --- | --- | --- | --- | --- |
 | CPG-2 prerequisite is closed | `EXISTS` | `docs/reviews/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_COMPLETION_2026-05-31.md` | completion packet | `CLOSED_PASS_BOUNDED` | CPG-2 completion review | ACCEPT |
 | LHW21 T3 proposed trace concept exists | `EXISTS` | `docs/reference/CVF_LHW21_T3_RECEIPT_ENRICHMENT_ADVISORY_CONNECTOR_SPEC_2026-05-31.md` | Purpose and S3 contract | `governanceTrace` | LHW21 T3 advisory spec | ACCEPT |
-| Current receipt type exists | `EXISTS` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/types.ts` | lines 82-105 | `GovernanceEvidenceReceipt` | web AI types | ACCEPT |
-| Current receipt builder input exists | `EXISTS` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/web-governance-envelope.ts` | lines 65-81 | `BuildGovernanceEvidenceReceiptInput` | web governance envelope | ACCEPT |
-| Current receipt builder exists | `EXISTS` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/web-governance-envelope.ts` | lines 107-132 | `buildEvidenceReceipt` | web governance envelope | ACCEPT |
-| Execute route uses receipt builder on success path | `RUNTIME_BEHAVIOR` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts` | lines 847-863 | `buildEvidenceReceipt` | execute route | ACCEPT |
+| Current receipt type exists | `EXISTS` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/types.ts` | line 99 | `GovernanceEvidenceReceipt` | web AI types | ACCEPT |
+| Current receipt builder input exists | `EXISTS` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/web-governance-envelope.ts` | line 65 | `BuildGovernanceEvidenceReceiptInput` | web governance envelope | ACCEPT |
+| Current receipt builder exists | `EXISTS` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/web-governance-envelope.ts` | line 245 | `buildEvidenceReceipt` | web governance envelope | ACCEPT |
+| Execute route uses receipt builder on success path | `RUNTIME_BEHAVIOR` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts` | line 848 | `buildEvidenceReceipt` | execute route | ACCEPT |
 | Execute route must not grow | `RUNTIME_BEHAVIOR` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts` | command-backed line count | `POST` | execute route | ACCEPT: 999 physical lines |
 | Builder test suite exists | `EXISTS` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/web-governance-envelope.test.ts` | file source | `web-governance-envelope` | vitest suite | ACCEPT |
 
@@ -69,9 +69,9 @@ Authority chain:
 
 | Proposed item | Intended owner | Purpose | Runtime status now |
 | --- | --- | --- | --- |
-| `GovernanceTraceEntry` | `ai/types.ts` | Bounded receipt trace entry schema | DOC_ONLY_NEW |
-| `governanceTrace` | `GovernanceEvidenceReceipt` | Optional ordered policy summary trace | DOC_ONLY_NEW |
-| `buildGovernanceTrace` | `web-governance-envelope.ts` | Builder-owned summary trace construction | DOC_ONLY_NEW |
+| `GovernanceTraceEntry` | `ai/types.ts` | Bounded receipt trace entry schema | IMPLEMENTED |
+| `governanceTrace` | `GovernanceEvidenceReceipt` | Optional ordered policy summary trace | IMPLEMENTED |
+| `buildGovernanceTrace` | `web-governance-envelope.ts` | Builder-owned summary trace construction | IMPLEMENTED |
 
 ## Work Plan
 
@@ -92,8 +92,8 @@ Authority chain:
 
 | Criterion | Required disposition |
 | --- | --- |
-| Fresh CPG-3 GC-018 exists | PASS before implementation |
-| Human authorization exists | PASS before implementation |
+| Fresh CPG-3 GC-018 exists | PASS |
+| Human authorization exists | PASS |
 | `GovernanceTraceEntry` exists in `ai/types.ts` | PASS |
 | `GovernanceEvidenceReceipt.governanceTrace` is optional | PASS |
 | `buildEvidenceReceipt()` emits bounded summary trace entries | PASS |
@@ -101,7 +101,28 @@ Authority chain:
 | Route response includes `governanceTrace` through builder ownership | PASS |
 | `route.ts` line count remains 999 and unchanged | PASS |
 | Trace excludes raw prompt, raw output, system prompt, provider key, secret, and private memory | PASS |
-| Release-quality governance bundle passes | PASS before closure |
+| Release-quality governance bundle passes | PASS |
+
+## Completion Evidence
+
+Implementation commit: `55dc22c9`.
+
+Completion review:
+
+`docs/reviews/CVF_CPG3_GOVERNANCE_TRACE_RECEIPT_ENRICHMENT_COMPLETION_2026-05-31.md`
+
+Evidence:
+
+| Command | Result |
+| --- | --- |
+| `npm run test:run -- src/lib/web-governance-envelope.test.ts src/app/api/execute/route.governance-trace.test.ts` | PASS: 2 files, 19 tests |
+| `npm run check` | PASS |
+| `npm run lint -- --quiet` | PASS: 0 errors, 5 pre-existing warnings outside CPG-3 files |
+| `npm run build` | PASS with pre-existing `source-map-support` warning |
+| route line count | PASS: `route.ts` remains 999 lines and unchanged |
+| `python governance/compat/check_governed_file_size.py --enforce` | PASS |
+| `python governance/compat/check_execute_route_step_sequence.py --enforce` | PASS |
+| `python scripts/run_cvf_release_gate_bundle.py --json` | PASS: 7/7 including live governance E2E |
 
 ## Fail Conditions
 

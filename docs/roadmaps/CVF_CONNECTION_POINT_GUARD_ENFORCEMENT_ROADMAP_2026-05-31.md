@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: CPG2_PASS_BOUNDED_CPG3_PENDING_FRESH_GC018
+Status: CPG1_CPG2_CPG3_CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -21,8 +21,7 @@ Framework -> CVF Connection Point -> Governance Engine
 ```
 
 The first runtime priorities, CPG-1 event-contract extraction and CPG-2 bounded
-hard-gate mode, are closed. Receipt enrichment follows only after a fresh CPG-3
-GC-018, work order, and proof plan.
+hard-gate mode, and CPG-3 receipt enrichment are closed with bounded proof.
 
 ## Scope / Target / Owner Boundary
 
@@ -48,18 +47,19 @@ Boundary:
 
 ## Authorization / Decision
 
-Decision: `CPG2_PASS_BOUNDED_CPG3_PENDING_FRESH_GC018`.
+Decision: `CPG1_CPG2_CPG3_CLOSED_PASS_BOUNDED`.
 
 Operator direction on 2026-05-31 authorized CPG-1 implementation after a fresh
 runtime GC-018, source-fidelity pass, work order, and autorun gates. CPG-1 is
 now `CLOSED_PASS_BOUNDED`. CPG-2 is also `CLOSED_PASS_BOUNDED` with bounded
-INT1 enforce-mode proof. CPG-3 remains held behind fresh CPG-3 prerequisites.
+INT1 enforce-mode proof. CPG-3 is `CLOSED_PASS_BOUNDED` with bounded web
+receipt trace proof.
 
 Parked operator checkpoint:
 
-`SATISFIED_FOR_CPG1_CPG2`: operator instructed Codex to proceed with roadmap
-code on 2026-05-31 and later to finish CPG-2. No waiver is granted for CPG-3,
-public sync, or claim expansion.
+`SATISFIED_FOR_CPG1_CPG2_CPG3`: operator instructed Codex to proceed with
+roadmap code on 2026-05-31, later to finish CPG-2, and then "CPG-3 tiep tuc".
+No waiver is granted for public sync or claim expansion.
 
 ## Predecessor Evidence
 
@@ -92,15 +92,14 @@ public sync, or claim expansion.
 
 ## New Proposed Fields And Symbols
 
-CPG-1 and CPG-2 names are implemented where noted. CPG-3 names remain
-proposals, not current runtime facts:
+CPG-1, CPG-2, and CPG-3 names are implemented where noted:
 
 | Proposed item | Intended tranche | Purpose | Runtime status now |
 | --- | --- | --- | --- |
 | `connectionPointMode` | CPG-2 | Bounded mode vocabulary: `advisory` or `enforce` | IMPLEMENTED |
 | `ConnectionPointGuardDecision` | CPG-1 | Structured event-contract validation result | IMPLEMENTED |
-| `governanceTrace` | CPG-3 | Bounded policy-evaluation summaries for receipt replay | DOC_ONLY_NEW |
-| `GovernanceTraceEntry` | CPG-3 | Trace-entry schema excluding raw prompts and secrets | DOC_ONLY_NEW |
+| `governanceTrace` | CPG-3 | Bounded policy-evaluation summaries for receipt replay | IMPLEMENTED |
+| `GovernanceTraceEntry` | CPG-3 | Trace-entry schema excluding raw prompts and secrets | IMPLEMENTED |
 
 ## Tranche Plan
 
@@ -245,7 +244,7 @@ call through the governed CVF route.
 | --- | --- | --- | --- | --- |
 | CPG-1 | `cvf.connectionPointEventContractGuard.cpg1.v1` | Fresh GC-018 + operator checkpoint | R2 | CLOSED_PASS_BOUNDED |
 | CPG-2 | `cvf.connectionPointHardGateEnforcement.cpg2.v1` | CPG-1 `CLOSED_PASS_BOUNDED` + fresh GC-018 | R2-R3 | CLOSED_PASS_BOUNDED |
-| CPG-3 | `cvf.governanceTraceReceiptEnrichment.cpg3.v1` | CPG-2 `CLOSED_PASS_BOUNDED` + fresh GC-018 | R2 | PENDING_FRESH_GC018 |
+| CPG-3 | `cvf.governanceTraceReceiptEnrichment.cpg3.v1` | CPG-2 `CLOSED_PASS_BOUNDED` + fresh GC-018 | R2 | CLOSED_PASS_BOUNDED |
 
 CPG-2 closure packet:
 
@@ -253,7 +252,12 @@ CPG-2 closure packet:
 - `docs/work_orders/CVF_WO_CPG2_CP2_HARD_GATE_ENFORCEMENT_2026-05-31.md`
 - `docs/reviews/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_COMPLETION_2026-05-31.md`
 
-CPG-3 requires a fresh GC-018 and operator checkpoint before implementation.
+CPG-3 closure packet:
+
+- `docs/baselines/CVF_GC018_CPG3_GOVERNANCE_TRACE_RECEIPT_ENRICHMENT_2026-05-31.md`
+- `docs/roadmaps/CVF_CPG3_GOVERNANCE_TRACE_RECEIPT_ENRICHMENT_ROADMAP_2026-05-31.md`
+- `docs/work_orders/CVF_WO_CPG3_GOVERNANCE_TRACE_RECEIPT_ENRICHMENT_2026-05-31.md`
+- `docs/reviews/CVF_CPG3_GOVERNANCE_TRACE_RECEIPT_ENRICHMENT_COMPLETION_2026-05-31.md`
 
 ## Verification / Evidence
 
@@ -268,6 +272,7 @@ Roadmap-creation evidence:
 | Runtime edit in roadmap batch | `git diff --name-status` | N/A with reason: roadmap documentation only |
 | CPG-1 implementation | `1ff0354c`; `docs/reviews/CVF_CPG1_INBOUND_EVENT_CONTRACT_GUARD_COMPLETION_2026-05-31.md` | CLOSED_PASS_BOUNDED; MCP suite `554/554`, release bundle `7/7` |
 | CPG-2 implementation | `docs/reviews/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_COMPLETION_2026-05-31.md` | CLOSED_PASS_BOUNDED; focused INT1 `12/12`, MCP build PASS, release bundle PASS `7/7` |
+| CPG-3 implementation | `55dc22c9`; `docs/reviews/CVF_CPG3_GOVERNANCE_TRACE_RECEIPT_ENRICHMENT_COMPLETION_2026-05-31.md` | CLOSED_PASS_BOUNDED; focused web tests `19/19`, typecheck/build PASS, release bundle PASS `7/7` |
 
 ## Acceptance Criteria For Roadmap Readiness
 
@@ -301,7 +306,7 @@ Return to orchestrator if:
 | --- | --- | --- | --- | --- |
 | Advisory-only INT1 boundary did not refuse blocked progression | `MACHINE_GATE_GAP` | `GOVERNANCE_CONTROL_PLANE` | `RESOLVED_BY_CPG2` | CPG-2 defines bounded enforce semantics |
 | Event validation logic sits in an MCP index file above soft threshold | `MAINTAINABILITY_GAP` | `GOVERNANCE_CONTROL_PLANE` | `PHASE_GATE_PLACEMENT_GAP` | CPG-1 must extract a same-domain policy module before adding logic |
-| Receipt trace proposal is not a runtime field | `RUNTIME_SIGNAL_GAP` | `RUNTIME_BEHAVIOR_LEARNING` | `DESIGN_REVIEW_REQUIRED` | CPG-3 follows only after CPG-2 proof |
+| Receipt trace proposal was not a runtime field | `RUNTIME_SIGNAL_GAP` | `RUNTIME_BEHAVIOR_LEARNING` | `RESOLVED_BY_CPG3` | CPG-3 adds bounded summary-only receipt trace via the owner builder |
 | Runtime/provider/cost findings | `RUNTIME_SIGNAL_GAP` | `RUNTIME_BEHAVIOR_LEARNING` | `N/A_WITH_REASON` | Roadmap creation performs no runtime execution, provider call, or cost analysis |
 
 ## Public Export Disposition
@@ -316,7 +321,6 @@ order; private CPG-2 closure is not a public catalog claim.
 
 ## Claim Boundary
 
-This roadmap records bounded CPG-1 and CPG-2 closure. It does not authorize
-CPG-3 code changes, add receipt fields, deliver framework adapters, prove
-universal bypass prevention, export public artifacts, or claim hosted or
-production readiness.
+This roadmap records bounded CPG-1, CPG-2, and CPG-3 closure. It does not
+deliver framework adapters, prove universal bypass prevention, export public
+artifacts, or claim hosted or production readiness.

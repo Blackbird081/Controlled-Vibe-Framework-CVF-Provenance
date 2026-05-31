@@ -17,8 +17,8 @@ Active private provenance continuity for the current CVF repository. Use only
 with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
-Current implementation anchor: `eef3cf5d` (docs(cpg3): stage governance trace receipt packet). Previous CPG2 close anchor: `9fe32058` (docs(cpg2): close hard gate enforcement). Previous CPG2 proof-fix anchor: `5e1c6e9d` (fix(cpg2): harden gate enforcement review). Previous CPG2 worker anchor: `ab120d16` (feat(cpg2): add connection point enforce mode and gc018). Previous guard-hardening anchor: `765f16fb` (fix(governance): harden lhw closure quality gates). Previous LHW24 closure anchor: `de58adaf` (docs: add lhw24 advisory completions with runtime N/A lanes). Previous LHW23 closure anchor: `62c9db4f` (docs(lhw23): close routing and registry intelligence wave). Previous LHW22 closure anchor: `f9d87f23` (docs(lhw22): close agent intelligence foundations wave). Previous CPG2 staging anchor: `4f509fe4` (docs(cpg2): stage hard gate enforcement packet). Previous CPG-1 implementation anchor: `1ff0354c` (feat(cpg1): extract inbound event contract policy). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `eef3cf5d90deba081e324e287951a026ca4ae480` (short: `eef3cf5d`); parent: `186040d8bbba51f9aa77b1ad471ed7384a7549fa`.
+Current implementation anchor: `55dc22c9` (feat(cpg3): add governance trace receipts). Previous CPG3 packet anchor: `eef3cf5d` (docs(cpg3): stage governance trace receipt packet). Previous CPG2 close anchor: `9fe32058` (docs(cpg2): close hard gate enforcement). Previous CPG2 proof-fix anchor: `5e1c6e9d` (fix(cpg2): harden gate enforcement review). Previous CPG2 worker anchor: `ab120d16` (feat(cpg2): add connection point enforce mode and gc018). Previous guard-hardening anchor: `765f16fb` (fix(governance): harden lhw closure quality gates). Previous LHW24 closure anchor: `de58adaf` (docs: add lhw24 advisory completions with runtime N/A lanes). Previous LHW23 closure anchor: `62c9db4f` (docs(lhw23): close routing and registry intelligence wave). Previous LHW22 closure anchor: `f9d87f23` (docs(lhw22): close agent intelligence foundations wave). Previous CPG2 staging anchor: `4f509fe4` (docs(cpg2): stage hard gate enforcement packet). Previous CPG-1 implementation anchor: `1ff0354c` (feat(cpg1): extract inbound event contract policy). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
+Current HEAD recorded for this handoff: `55dc22c93f366566796eec63eef217682633bc74` (short: `55dc22c9`); parent: `e80231df6cc530c06d0a58767a4bd22e01a00946`.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -91,16 +91,16 @@ dispatch/public-export/markdown/finding/file-size guards PASS, and
 release-quality governance bundle PASS 7/7. CPG-3 remains pending a fresh
 GC-018/work order/operator checkpoint.
 
-**CPG-3 Governance Trace Receipt Packet READY_FOR_IMPLEMENTATION** (2026-05-31).
-Fresh GC-018, roadmap, and work order are staged in `eef3cf5d` for
-`cvf.governanceTraceReceiptEnrichment.cpg3.v1`. The approved scope is bounded
-to web receipt schema/builder and focused tests; `/api/execute/route.ts` is a
-forbidden surface and must remain unchanged. Initial pre-dispatch and
-pre-implementation gates were blocked only by active-session GC-020 continuity
-sync. Next move: rerun those gates after this session sync, then implement the
-bounded optional `governanceTrace` receipt summary field without raw prompt,
-raw output, system prompt, provider key, secret, or framework-private memory
-capture.
+**CPG-3 Governance Trace Receipt Enrichment CLOSED_PASS_BOUNDED** (2026-05-31).
+Implementation commit `55dc22c9` adds `GovernanceTraceEntry`, optional
+`GovernanceEvidenceReceipt.governanceTrace`, and builder-owned
+`buildGovernanceTrace()` in the web receipt owner. `/api/execute/route.ts`
+remains unchanged at 999 lines; route-consumer proof is in a new focused test.
+Verification: focused web tests 19/19 PASS, `npm run check` PASS, `npm run
+build` PASS with the pre-existing `source-map-support` warning, lint 0 errors,
+file-size guard PASS, route sequence guard PASS, and release-quality governance
+bundle PASS 7/7 including live governance E2E. Completion packet:
+`docs/reviews/CVF_CPG3_GOVERNANCE_TRACE_RECEIPT_ENRICHMENT_COMPLETION_2026-05-31.md`.
 
 **Allowed-Scope Gate Remediation Protocol ENFORCED** (2026-05-31).
 `fix(governance): require allowed-scope gate remediation` adds the mandatory
@@ -171,7 +171,7 @@ Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
 
 ## Active Boundary
 
-Current mode: `cpg3_governance_trace_packet_ready_preimplementation`.
+Current mode: `cpg3_governance_trace_closed_pass_bounded`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
@@ -317,9 +317,9 @@ public-release readiness claim.
 LHW24 is the latest closed LHW wave. LHW22-LHW24 agent-intelligence absorption
 is CLOSED_PASS_BOUNDED at the documentation-only advisory boundary:
 `docs/roadmaps/CVF_LHW22_LHW23_LHW24_AGENT_INTELLIGENCE_ROADMAP_2026-05-31.md`.
-Next allowed move: rerun CPG-3 pre-dispatch and pre-implementation gates after
-session sync, then implement bounded `governanceTrace` receipt enrichment under
-the approved CPG-3 work order. CPG-2 is CLOSED_PASS_BOUNDED with release-quality proof;
+Next allowed move: CPG-1, CPG-2, and CPG-3 are CLOSED_PASS_BOUNDED. Prepare a
+fresh explicitly authorized roadmap or public-safe subset sync from the
+public-sync clone after remote verification. CPG-2 is CLOSED_PASS_BOUNDED with release-quality proof;
 closure packet:
 `docs/roadmaps/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_ROADMAP_2026-05-31.md`
 and
@@ -330,6 +330,8 @@ CPG-3 packet:
 `docs/baselines/CVF_GC018_CPG3_GOVERNANCE_TRACE_RECEIPT_ENRICHMENT_2026-05-31.md`,
 `docs/roadmaps/CVF_CPG3_GOVERNANCE_TRACE_RECEIPT_ENRICHMENT_ROADMAP_2026-05-31.md`,
 and `docs/work_orders/CVF_WO_CPG3_GOVERNANCE_TRACE_RECEIPT_ENRICHMENT_2026-05-31.md`.
+Completion:
+`docs/reviews/CVF_CPG3_GOVERNANCE_TRACE_RECEIPT_ENRICHMENT_COMPLETION_2026-05-31.md`.
 Forbidden during implementation: `/api/execute/route.ts`, public-sync,
 provider-routing changes, and raw prompt/output/secret/private-memory capture.
 
@@ -347,8 +349,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cpg3_governance_trace_packet_ready_preimplementation`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=rerun CPG-3 pre-dispatch and pre-implementation gates, then implement bounded governanceTrace receipt enrichment under the approved work order;
+Startup acknowledged: current mode=`cpg3_governance_trace_closed_pass_bounded`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=prepare a fresh explicitly authorized roadmap or public-safe subset sync from the public-sync clone after remote verification;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary

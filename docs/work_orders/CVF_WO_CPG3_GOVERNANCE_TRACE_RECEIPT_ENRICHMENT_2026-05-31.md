@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: APPROVED_FOR_EXECUTION
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -71,8 +71,15 @@ Allowed scope:
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/web-governance-envelope.ts`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/web-governance-envelope.test.ts`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.governance-trace.test.ts`
-- CPG-3 GC-018, roadmap, work order, completion review, parent CPG roadmap,
-  and session continuity at closure.
+- `docs/baselines/CVF_GC018_CPG3_GOVERNANCE_TRACE_RECEIPT_ENRICHMENT_2026-05-31.md`
+- `docs/roadmaps/CVF_CPG3_GOVERNANCE_TRACE_RECEIPT_ENRICHMENT_ROADMAP_2026-05-31.md`
+- `docs/work_orders/CVF_WO_CPG3_GOVERNANCE_TRACE_RECEIPT_ENRICHMENT_2026-05-31.md`
+- `docs/reviews/CVF_CPG3_GOVERNANCE_TRACE_RECEIPT_ENRICHMENT_COMPLETION_2026-05-31.md`
+- `docs/roadmaps/CVF_CONNECTION_POINT_GUARD_ENFORCEMENT_ROADMAP_2026-05-31.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `AGENT_HANDOFF_V15_2026-05-29.md`
+- Session continuity updates are allowed for closure sync.
 
 Forbidden scope:
 
@@ -128,10 +135,10 @@ Mandatory Gate-Failure Remediation Protocol:
 | --- | --- | --- | --- | --- | --- | --- |
 | CPG-2 prerequisite is closed | `EXISTS` | `docs/reviews/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_COMPLETION_2026-05-31.md` | completion packet | `CLOSED_PASS_BOUNDED` | CPG-2 completion review | ACCEPT |
 | LHW21 T3 proposed trace concept exists | `EXISTS` | `docs/reference/CVF_LHW21_T3_RECEIPT_ENRICHMENT_ADVISORY_CONNECTOR_SPEC_2026-05-31.md` | Purpose and S3 contract | `governanceTrace` | LHW21 T3 advisory spec | ACCEPT |
-| Current receipt type exists | `EXISTS` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/types.ts` | lines 82-105 | `GovernanceEvidenceReceipt` | web AI types | ACCEPT |
+| Current receipt type exists | `EXISTS` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/types.ts` | line 99 | `GovernanceEvidenceReceipt` | web AI types | ACCEPT |
 | Current receipt builder input exists | `EXISTS` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/web-governance-envelope.ts` | lines 65-81 | `BuildGovernanceEvidenceReceiptInput` | web governance envelope | ACCEPT |
-| Current receipt builder exists | `EXISTS` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/web-governance-envelope.ts` | lines 107-132 | `buildEvidenceReceipt` | web governance envelope | ACCEPT |
-| Execute route uses receipt builder on success path | `RUNTIME_BEHAVIOR` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts` | lines 847-863 | `buildEvidenceReceipt` | execute route | ACCEPT |
+| Current receipt builder exists | `EXISTS` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/web-governance-envelope.ts` | line 245 | `buildEvidenceReceipt` | web governance envelope | ACCEPT |
+| Execute route uses receipt builder on success path | `RUNTIME_BEHAVIOR` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts` | line 848 | `buildEvidenceReceipt` | execute route | ACCEPT |
 | Execute route is at hard threshold | `RUNTIME_BEHAVIOR` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts` | command-backed line count | `POST` | execute route | ACCEPT: 999 physical lines |
 | Builder test suite exists | `EXISTS` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/web-governance-envelope.test.ts` | file source | `web-governance-envelope` | vitest suite | ACCEPT |
 
@@ -139,9 +146,9 @@ Mandatory Gate-Failure Remediation Protocol:
 
 | Proposed item | Intended owner | Purpose | Runtime status before implementation |
 | --- | --- | --- | --- |
-| `GovernanceTraceEntry` | `ai/types.ts` | Bounded receipt trace entry schema | DOC_ONLY_NEW |
-| `governanceTrace` | `GovernanceEvidenceReceipt` | Optional ordered policy summary trace | DOC_ONLY_NEW |
-| `buildGovernanceTrace` | `web-governance-envelope.ts` | Builder-owned summary trace construction | DOC_ONLY_NEW |
+| `GovernanceTraceEntry` | `ai/types.ts` | Bounded receipt trace entry schema | IMPLEMENTED |
+| `governanceTrace` | `GovernanceEvidenceReceipt` | Optional ordered policy summary trace | IMPLEMENTED |
+| `buildGovernanceTrace` | `web-governance-envelope.ts` | Builder-owned summary trace construction | IMPLEMENTED |
 
 ## 6C. Roadmap-To-Work-Order Trace Matrix
 
@@ -149,12 +156,12 @@ Mandatory Gate-Failure Remediation Protocol:
 | --- | --- | --- | --- | --- |
 | Fresh CPG-3 GC-018 exists | Section 2 | GC-018 path | `Test-Path` and dispatch gate | PASS |
 | Human authorization exists | Section 2 | Authority chain | operator instruction 2026-05-31 | PASS |
-| Add `GovernanceTraceEntry` | Section 8 | `ai/types.ts` | focused tests + typecheck | PASS after implementation |
-| Add optional `governanceTrace` | Section 8 | `GovernanceEvidenceReceipt` | focused tests + typecheck | PASS after implementation |
-| Builder emits bounded trace | Section 8 | `buildEvidenceReceipt()` | builder tests | PASS after implementation |
-| Route consumes trace without route growth | Sections 4 and 8 | route response test | route-consumer test + route line count | PASS after implementation |
-| No sensitive raw capture | Sections 4 and 10 | trace test assertions | builder and route tests | PASS after implementation |
-| Release-quality proof | Section 9 | release bundle output | `python scripts/run_cvf_release_gate_bundle.py --json` | PASS before closure |
+| Add `GovernanceTraceEntry` | Section 8 | `ai/types.ts` | focused tests + typecheck | PASS |
+| Add optional `governanceTrace` | Section 8 | `GovernanceEvidenceReceipt` | focused tests + typecheck | PASS |
+| Builder emits bounded trace | Section 8 | `buildEvidenceReceipt()` | builder tests | PASS |
+| Route consumes trace without route growth | Sections 4 and 8 | route response test | route-consumer test + route line count | PASS |
+| No sensitive raw capture | Sections 4 and 10 | trace test assertions | builder and route tests | PASS |
+| Release-quality proof | Section 9 | release bundle output | `python scripts/run_cvf_release_gate_bundle.py --json` | PASS |
 
 ## 7. Write Ownership
 
@@ -169,8 +176,9 @@ Owned files or modules:
 - `docs/work_orders/CVF_WO_CPG3_GOVERNANCE_TRACE_RECEIPT_ENRICHMENT_2026-05-31.md`
 - `docs/reviews/CVF_CPG3_GOVERNANCE_TRACE_RECEIPT_ENRICHMENT_COMPLETION_2026-05-31.md`
 - `docs/roadmaps/CVF_CONNECTION_POINT_GUARD_ENFORCEMENT_ROADMAP_2026-05-31.md`
-- `CVF_SESSION_MEMORY.md`, `CVF_SESSION/ACTIVE_SESSION_STATE.json`, and
-  `AGENT_HANDOFF_V15_2026-05-29.md` for closure sync only.
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `AGENT_HANDOFF_V15_2026-05-29.md`
 
 Forbidden paths:
 
@@ -268,19 +276,19 @@ Mandatory remediation rule:
 
 | Item | Resolution |
 | --- | --- |
-| Acceptance criteria satisfied | PASS before closure |
-| Required tests and evidence commands run | PASS before closure |
-| Autorun pre-closure gate passed | PASS before closure |
-| Closure gate uses non-empty committed range | PASS before closure |
-| Changed-file set stays inside Allowed scope | PASS before closure |
-| `route.ts` line-count claim command-backed | PASS before closure |
-| Roadmap-to-work-order trace matrix final statuses resolved | PASS before closure |
-| Closure Diff Gate completed | PASS before closure |
-| Claim Integrity Scan completed | PASS before closure |
-| Fail conditions absent | PASS before closure |
-| Public export disposition recorded | PASS before closure |
-| Completion packet filed | PASS before closure |
-| Session front door, state registry, and handoff synced | PASS before final push |
+| Acceptance criteria satisfied | PASS |
+| Required tests and evidence commands run | PASS |
+| Autorun pre-closure gate passed | PASS after closure gate run |
+| Closure gate uses non-empty committed range | PASS: `186040d8..HEAD` |
+| Changed-file set stays inside Allowed scope | PASS |
+| `route.ts` line-count claim command-backed | PASS: 999 lines |
+| Roadmap-to-work-order trace matrix final statuses resolved | PASS |
+| Closure Diff Gate completed | PASS |
+| Claim Integrity Scan completed | PASS |
+| Fail conditions absent | PASS |
+| Public export disposition recorded | PASS |
+| Completion packet filed | PASS |
+| Session front door, state registry, and handoff synced | PASS after closure sync |
 
 ## 13. Return-To-Orchestrator Conditions
 

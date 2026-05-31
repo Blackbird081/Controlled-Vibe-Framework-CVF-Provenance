@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-31
 
-Current mode marker: `cpg3_governance_trace_packet_ready_preimplementation`
+Current mode marker: `cpg3_governance_trace_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `cpg3_governance_trace_packet_ready_preimplementation`.
+Current mode: `cpg3_governance_trace_closed_pass_bounded`.
 
 Active handoff:
 
@@ -194,9 +194,9 @@ is CLOSED_PASS_BOUNDED at the documentation-only advisory boundary:
 
 `docs/roadmaps/CVF_LHW22_LHW23_LHW24_AGENT_INTELLIGENCE_ROADMAP_2026-05-31.md`
 
-Next allowed move: rerun CPG-3 pre-dispatch and pre-implementation gates after
-session sync, then implement bounded `governanceTrace` receipt enrichment
-under the approved CPG-3 work order. CPG-2 is CLOSED_PASS_BOUNDED with
+Next allowed move: CPG-1, CPG-2, and CPG-3 are CLOSED_PASS_BOUNDED. Prepare a
+fresh explicitly authorized roadmap or public-safe subset sync from the
+public-sync clone after remote verification. CPG-2 is CLOSED_PASS_BOUNDED with
 release-quality proof:
 
 `docs/roadmaps/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_ROADMAP_2026-05-31.md`
@@ -205,7 +205,7 @@ release-quality proof:
 
 `docs/reviews/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_COMPLETION_2026-05-31.md`
 
-CPG-3 packet is staged and approved for implementation:
+CPG-3 is CLOSED_PASS_BOUNDED with bounded receipt trace proof:
 
 `docs/baselines/CVF_GC018_CPG3_GOVERNANCE_TRACE_RECEIPT_ENRICHMENT_2026-05-31.md`
 
@@ -216,6 +216,10 @@ CPG-3 packet is staged and approved for implementation:
 Boundary: do not edit `/api/execute/route.ts`; do not add public-sync,
 provider-routing, raw prompt/output, secret, or framework-private memory
 capture.
+
+Completion:
+
+`docs/reviews/CVF_CPG3_GOVERNANCE_TRACE_RECEIPT_ENRICHMENT_COMPLETION_2026-05-31.md`
 
 Public-safe subset sync remains available only from the public-sync clone after
 remote verification.
