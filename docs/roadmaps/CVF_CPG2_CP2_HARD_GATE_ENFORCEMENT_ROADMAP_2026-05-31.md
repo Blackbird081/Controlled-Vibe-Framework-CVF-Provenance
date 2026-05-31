@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: IMPLEMENTED_PENDING_RELEASE_PROOF
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -10,13 +10,13 @@ Date: 2026-05-31
 
 ## Purpose
 
-Track CPG-2 after operator implementation authorization. CPG-2 is the bounded
-runtime follow-up to CPG-1: define and implement a
+Close CPG-2 after operator implementation authorization. CPG-2 is the bounded
+runtime follow-up to CPG-1: it defines and implements a
 reversible `connectionPointMode` for CP2 plan validation at the CVF-owned INT1
 connection point.
 
-Fresh GC-018 and operator checkpoint are satisfied. Runtime implementation is
-present but closure remains pending release-quality governance proof.
+Fresh GC-018, operator checkpoint, runtime implementation, focused tests, and
+release-quality governance proof are satisfied.
 
 ## Scope / Target / Owner Boundary
 
@@ -31,7 +31,7 @@ Owner surface:
 - `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/index.ts` only if MCP tool schema or
   registration text must expose the new mode.
 
-Allowed future implementation scope:
+Delivered implementation scope:
 
 - Add a typed `connectionPointMode` vocabulary with `advisory` and `enforce`.
 - Preserve current advisory behavior by default.
@@ -53,12 +53,11 @@ Forbidden scope:
 
 ## Authorization / Decision
 
-Decision: `IMPLEMENTED_PENDING_RELEASE_PROOF`.
+Decision: `CLOSED_PASS_BOUNDED`.
 
 CPG-1 is closed. CPG-2 implementation proceeded after fresh CPG-2 GC-018 and
-operator checkpoint. The roadmap must not be marked `CLOSED_PASS_BOUNDED` until
-the release-quality governance proof completes and a completion review records
-the final closure evidence.
+operator checkpoint. Release-quality governance proof completed and the
+completion review records final bounded closure evidence.
 
 ## Predecessor Evidence
 
@@ -85,21 +84,19 @@ the final closure evidence.
 
 ## New Proposed Fields And Symbols
 
-These are proposed CPG-2 implementation names, not current runtime facts.
+These CPG-2 names are now implemented in the owned INT1 MCP surface.
 
-| Proposed item | Purpose | Runtime status now |
+| Implemented item | Purpose | Runtime status now |
 |---|---|---|
-| `ConnectionPointMode` | Typed mode vocabulary: `advisory` or `enforce` | DOC_ONLY_NEW |
-| `connectionPointMode` | Optional input/config field for CP2 validation mode | DOC_ONLY_NEW |
-| `ConnectionPointProgressionDecision` | Structured output for allow/review-hold/block progression | DOC_ONLY_NEW |
-| `acceptedForProgression` | Boolean indicating whether owned connection-point progression may continue | DOC_ONLY_NEW |
+| `ConnectionPointMode` | Typed mode vocabulary: `advisory` or `enforce` | IMPLEMENTED |
+| `connectionPointMode` | Optional input/config field for CP2 validation mode | IMPLEMENTED |
+| `ConnectionPointProgressionDecision` | Structured output for allow/review-hold/block progression | IMPLEMENTED |
+| `acceptedForProgression` | Boolean indicating whether owned connection-point progression may continue | IMPLEMENTED |
 
 ## Current Runtime Freshness Verification
 
-CPG-2 must not start from the stale claim that there is no INT1 owner module.
-CPG-1 already extracted the policy owner. The current gap is narrower:
-`validateInt1Plan()` classifies advisory outcomes but does not yet expose a
-mode-controlled progression decision.
+CPG-2 built on the CPG-1 INT1 owner module and added a mode-controlled
+progression decision without moving policy logic back into the MCP registry.
 
 | Runtime fact | Current source checked | Freshness disposition |
 |---|---|---|
@@ -129,11 +126,11 @@ separate future roadmap changes that invariant.
 | CPG-2.A | PASS | Fresh GC-018, source verification, operator checkpoint |
 | CPG-2.B | PASS | Typed mode and progression decision in INT1 owner module |
 | CPG-2.C | PASS | MCP registration compatibility and focused tests |
-| CPG-2.D | BLOCKED_TIMEOUT | Release-quality live governance proof and completion review |
+| CPG-2.D | PASS | Release-quality live governance proof and completion review |
 
 ## Non-Goals
 
-- No CPG-2 closure until release-quality governance proof completes.
+- No public-sync export.
 - No web `/api/execute/route.ts` edit.
 - No CPG-3 receipt enrichment.
 - No provider routing, prompt, model, memory, or Learning Plane mutation.
@@ -150,7 +147,7 @@ separate future roadmap changes that invariant.
 | 2. File fresh CPG-2 GC-018 | PASS | New GC-018 with current source verification |
 | 3. Release operator checkpoint | PASS | Explicit operator approval for runtime implementation |
 | 4. Implement bounded mode semantics | PASS | INT1 owner module and focused tests |
-| 5. Close with live proof | BLOCKED_TIMEOUT | Completion review plus release-quality governance bundle |
+| 5. Close with live proof | PASS | Completion review plus release-quality governance bundle |
 
 ## Acceptance Criteria
 
@@ -167,7 +164,7 @@ separate future roadmap changes that invariant.
 
 ## Verification / Evidence
 
-Future implementation must run, at minimum:
+Implementation evidence:
 
 ```powershell
 python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base <baseHead> --head HEAD
@@ -178,6 +175,8 @@ python governance/compat/check_governed_file_size.py --enforce
 python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base <baseHead> --head HEAD
 python scripts/run_cvf_release_gate_bundle.py --json
 ```
+
+Final release bundle result: PASS, 7/7 checks passed.
 
 ## Fail Conditions
 
@@ -202,10 +201,10 @@ python scripts/run_cvf_release_gate_bundle.py --json
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: Private staging packet only. Public-sync is not authorized.
+Reason: Private provenance closure only. Public-sync is not authorized.
 
 ## Claim Boundary
 
-This roadmap tracks implemented CPG-2 code pending release-quality proof. It
-does not close CPG-2, prove universal framework bypass prevention, modify
-receipts, change providers, authorize CPG-3, or publish public artifacts.
+This roadmap closes bounded CPG-2 code and proof only. It does not prove
+universal framework bypass prevention, modify receipts, change providers,
+implement CPG-3, or publish public artifacts.

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: IMPLEMENTED_PENDING_RELEASE_PROOF
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -10,13 +10,13 @@ Date: 2026-05-31
 
 ## Purpose
 
-Track the CPG-2 implementation packet after hold release. CPG-2 adds a bounded
+Close the CPG-2 implementation packet after hold release. CPG-2 adds a bounded
 `connectionPointMode` to CP2 plan
 validation so the owned INT1 connection point can remain advisory by default
 and optionally hold/block progression in enforce mode.
 
-Fresh CPG-2 GC-018 and explicit operator checkpoint are satisfied. Closure is
-still blocked until release-quality governance proof completes.
+Fresh CPG-2 GC-018, explicit operator checkpoint, implementation, focused
+tests, and release-quality governance proof are satisfied.
 
 ## Scope / Target / Owner Boundary
 
@@ -76,8 +76,8 @@ requires a new work order.
 
 ## Pre-Flight Checks
 
-Initial hold has been released for CPG-2 implementation. Do not claim closure
-while release-quality governance proof is unavailable.
+Initial hold was released for CPG-2 implementation. Closure is now backed by
+release-quality governance proof.
 
 After a fresh CPG-2 GC-018 and operator checkpoint exist, capture a non-empty
 base and run:
@@ -103,18 +103,17 @@ python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implemen
 
 ## New Doc-Only Fields
 
-| New doc-only field | Purpose | Not sourced from runtime? | Runtime claim blocked? | Validation expectation |
+| Implemented field | Purpose | Source status | Runtime claim boundary | Validation evidence |
 |---|---|---|---|---|
-| `ConnectionPointMode` | `advisory` or `enforce` vocabulary | Yes | Yes until implemented | Type and tests in CPG-2 |
-| `connectionPointMode` | Input/config field for CP2 behavior | Yes | Yes until implemented | Default compatibility test |
-| `acceptedForProgression` | Output decision for owned connection-point progression | Yes | Yes until implemented | Enforce-mode allow/review/reject tests |
+| `ConnectionPointMode` | `advisory` or `enforce` vocabulary | Implemented in CPG-2 owner module | Owned MCP connection point only | Focused INT1 tests |
+| `connectionPointMode` | Input/config field for CP2 behavior | Implemented in CPG-2 owner module and MCP schema | Owned MCP connection point only | Default compatibility test |
+| `acceptedForProgression` | Output decision for owned connection-point progression | Implemented in CPG-2 owner module | Not provider execution authorization | Enforce-mode allow/review/reject tests |
 
 ## Current Runtime Freshness Verification
 
-Current CPG-1 source already has an INT1 owner module and advisory CP2
-validator. CPG-2 must extend that owner instead of reintroducing inline MCP
-logic. The current gap is not missing validation; it is missing a bounded
-mode-controlled progression decision.
+Current CPG-2 source extends the INT1 owner module instead of reintroducing
+inline MCP policy logic. The prior gap, a missing bounded mode-controlled
+progression decision, is closed.
 
 | Runtime surface | Current source checked | Freshness disposition |
 |---|---|---|
@@ -127,7 +126,7 @@ mode-controlled progression decision.
 
 | Roadmap requirement | Work-order instruction | Evidence required |
 |---|---|---|
-| Fresh GC-018 before implementation | Keep this order on HOLD | GC-018 path and operator checkpoint |
+| Fresh GC-018 before implementation | Require GC-018 before implementation | GC-018 path and operator checkpoint |
 | Default advisory compatibility | Add tests preserving CPG-1 outputs | Focused test PASS |
 | Enforce-mode deterministic mapping | Add mode/progression decision in owner module | Tests for allow/review/reject |
 | No CPG-3 receipt enrichment | Forbid receipt field changes | `git diff --name-status` |
@@ -196,12 +195,12 @@ universal framework bypass prevention.
 | Source Verification Block refreshed | PASS |
 | Runtime freshness table refreshed | PASS |
 | Closure Diff Gate completed | PASS |
-| Release-quality live governance proof completed | BLOCKED_TIMEOUT |
+| Release-quality live governance proof completed | PASS |
 
 ## Return-To-Orchestrator Conditions
 
-Return this order if any source path differs, enforce semantics are ambiguous,
-release-quality proof remains unavailable, or implementation requires web route, receipt, provider,
+Return any follow-up work if a source path differs, enforce semantics become
+ambiguous, or implementation requires web route, receipt, provider,
 public-sync, or framework-adapter changes.
 
 ## Operator Checkpoint
@@ -213,12 +212,11 @@ and work order on 2026-05-31.
 
 DEFERRED_PRIVATE_ONLY
 
-Private staging packet only. No public-sync artifact or public catalog claim is
-authorized.
+Reason: Private provenance closure only. No public-sync artifact or public
+catalog claim is authorized.
 
 ## Claim Boundary
 
-This work order tracks CPG-2 implementation pending release-quality proof. It
-does not close CPG-2, add receipt trace fields, change provider behavior,
-authorize public-sync, prove hosted/production readiness, or prove universal
-bypass-prevention claims.
+This work order closes bounded CPG-2 implementation only. It does not add
+receipt trace fields, change provider behavior, authorize public-sync, prove
+hosted/production readiness, or prove universal bypass-prevention claims.
