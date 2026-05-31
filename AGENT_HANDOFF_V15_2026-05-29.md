@@ -18,6 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `d1566604` (docs(lhw23): close routing and registry intelligence wave). Previous LHW22 wave anchor: `5cac5c85` (docs(session): promote latest closed wave to LHW22). Previous LHW22 closure anchor: `f9d87f23` (docs(lhw22): close agent intelligence foundations wave). Previous CPG2 staging anchor: `4f509fe4` (docs(cpg2): stage hard gate enforcement packet). Previous LHW22 guard-packet anchor: `e1be0663` (docs(lhw22): harden dispatch guard packet). Previous CPG-1 implementation anchor: `1ff0354c` (feat(cpg1): extract inbound event contract policy). Dispatch anchor: `6b213327` (docs(cpg1): authorize inbound event contract guard). Parent roadmap anchor: `f032109b` (docs(roadmap): propose connection point guard enforcement). Prior closure anchor: `4759c640` (docs(lhw21): close connection point advisory wave). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
+Current HEAD recorded for this handoff: `62c9db4fee7fc1106e135837f3e6257946922587` (short: `62c9db4f`); parent: `cad3249ff3791a47152179ea28f67f12525733ad`.
 
 ## Latest Work / Changes (2026-05-30)
 
