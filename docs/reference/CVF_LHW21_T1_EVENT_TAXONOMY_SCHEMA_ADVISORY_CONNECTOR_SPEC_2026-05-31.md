@@ -4,7 +4,7 @@ Contract ID: `cvf.eventTaxonomySchemaAdvisory.lhw21.t1.v1`
 
 Memory class: POINTER_RECORD
 
-Status: DEFINED_DOC_ONLY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-05-31
 

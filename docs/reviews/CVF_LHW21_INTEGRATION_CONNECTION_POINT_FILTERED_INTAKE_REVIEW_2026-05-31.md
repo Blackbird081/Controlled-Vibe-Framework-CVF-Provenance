@@ -207,3 +207,11 @@ This review preserves cleaned intake value only. It does not authorize LHW21,
 does not modify runtime code, does not add a receipt field, does not implement a
 hard gate, does not create framework adapters, does not update public-sync, and
 does not prove live governance behavior.
+
+## Evidence Trace Block
+
+| Claim | Command / source | Result | Key path | Verdict |
+| --- | --- | --- | --- | --- |
+| Current IS1 event and control-point anchors exist | Source read and `rg` over `generic-agent-adapter.ts` | Five event values, five control points, mapping function, and literal advisory invariant found | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/generic-agent-adapter.ts` | PASS |
+| Current INT1 advisory tools exist | Source read and `rg` over MCP `index.ts` | `cvf_validate_plan` and `cvf_emit_agent_event` found with advisory-only boundary | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/index.ts` | PASS |
+| Current receipt baseline excludes proposed trace field | Source read and `rg` over `ai/types.ts` | `GovernanceEvidenceReceipt` found; `governanceTrace` not present in runtime type | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/ai/types.ts` | PASS |

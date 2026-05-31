@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: READY_FOR_CLOSURE_GATE
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -39,9 +39,13 @@ Allowed scope:
 - Create `docs/reviews/CVF_LHW21_T3_RECEIPT_ENRICHMENT_ADVISORY_CONNECTOR_COMPLETION_2026-05-31.md`.
 - Update this work order from READY to CLOSED only after all acceptance and
   closure gates pass.
-- Update `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION_MEMORY.md`, and
-  `AGENT_HANDOFF_V15_2026-05-29.md` only at wave closure if LHW21 is actually
+- Update session continuity files only at final closure:
+- Update `CVF_SESSION/ACTIVE_SESSION_STATE.json` only at wave closure if LHW21
+  is actually closed.
+- Update `CVF_SESSION_MEMORY.md` only at wave closure if LHW21 is actually
   closed.
+- Update `AGENT_HANDOFF_V15_2026-05-29.md` only at wave closure if LHW21 is
+  actually closed.
 
 Forbidden scope:
 
@@ -166,11 +170,11 @@ New Doc-Only Fields:
 
 | Roadmap requirement | Work order section | Output artifact or field | Verification command or check | Status |
 |---|---|---|---|---|
-| T1 Event Taxonomy Schema advisory | Execution Plan steps 1-3 | `docs/reference/CVF_LHW21_T1_EVENT_TAXONOMY_SCHEMA_ADVISORY_CONNECTOR_SPEC_2026-05-31.md` | `Test-Path`; line count; reviewer check | PENDING |
-| T2 Hard Gate Mode advisory | Execution Plan steps 4-6 | `docs/reference/CVF_LHW21_T2_HARD_GATE_MODE_ADVISORY_CONNECTOR_SPEC_2026-05-31.md` | `Test-Path`; line count; reviewer check | PENDING |
-| T3 Receipt Enrichment advisory | Execution Plan steps 7-9 | `docs/reference/CVF_LHW21_T3_RECEIPT_ENRICHMENT_ADVISORY_CONNECTOR_SPEC_2026-05-31.md` | `Test-Path`; line count; reviewer check | PENDING |
-| Documentation-only boundary | Acceptance Criteria | `runtimeExecutionAuthorized=false`; no code files | `rg`; `git diff --name-status` | PENDING |
-| Draft-defect cleanup retained | Completion reviews | no stale source path, no ready/authorized drift | reviewer check | PENDING |
+| T1 Event Taxonomy Schema advisory | Execution Plan steps 1-3 | `docs/reference/CVF_LHW21_T1_EVENT_TAXONOMY_SCHEMA_ADVISORY_CONNECTOR_SPEC_2026-05-31.md` | `Test-Path`; line count; reviewer check | PASS |
+| T2 Hard Gate Mode advisory | Execution Plan steps 4-6 | `docs/reference/CVF_LHW21_T2_HARD_GATE_MODE_ADVISORY_CONNECTOR_SPEC_2026-05-31.md` | `Test-Path`; line count; reviewer check | PASS |
+| T3 Receipt Enrichment advisory | Execution Plan steps 7-9 | `docs/reference/CVF_LHW21_T3_RECEIPT_ENRICHMENT_ADVISORY_CONNECTOR_SPEC_2026-05-31.md` | `Test-Path`; line count; reviewer check | PASS |
+| Documentation-only boundary | Acceptance Criteria | `runtimeExecutionAuthorized=false`; no code files | `rg`; `git diff --name-status` | PASS |
+| Draft-defect cleanup retained | Completion reviews | no stale source path, no ready/authorized drift | reviewer check | PASS |
 
 ## 7. Write Ownership
 
@@ -185,7 +189,9 @@ Owned files:
 - `docs/reviews/CVF_LHW21_T2_HARD_GATE_MODE_ADVISORY_CONNECTOR_COMPLETION_2026-05-31.md`
 - `docs/reviews/CVF_LHW21_T3_RECEIPT_ENRICHMENT_ADVISORY_CONNECTOR_COMPLETION_2026-05-31.md`
 - `docs/work_orders/CVF_WO_LHW21_INTEGRATION_CONNECTION_POINT_ADVISORY_WAVE_2026-05-31.md`
-- session continuity files only at final closure
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json` only at final closure
+- `CVF_SESSION_MEMORY.md` only at final closure
+- `AGENT_HANDOFF_V15_2026-05-29.md` only at final closure
 
 Write mode:
 
@@ -324,6 +330,23 @@ Because that separate batch sits between the original captured base and the
 LHW21 artifact commit, LHW21 closure uses the clean full-wave range
 `c460a8ef..HEAD`. This range contains all LHW21 T1/T2/T3 artifacts and excludes
 the unrelated build-fix commit.
+
+## Closure Diff Gate
+
+Closure range: `c460a8ef..86797138`
+
+Result: PASS. The committed range contains the full LHW21 T1/T2/T3 wave,
+filtered intake review, GC-018, work order, and handoff anchor sync. It excludes
+the separate build-fix batch `e7015b9c`.
+
+Evidence:
+
+- `pre-dispatch` autorun gate: PASS.
+- `pre-implementation` autorun gate: PASS.
+- `pre-closure` autorun gate: PASS.
+- T1/T2/T3 spec line counts: `124`, `102`, `108`.
+- Runtime/code/public-sync change in LHW21 range: N/A with reason:
+  documentation-only wave.
 
 ## Public Export Disposition
 

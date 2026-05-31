@@ -181,7 +181,7 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LHW20 is the latest closed LHW wave. LP Activation Roadmap RT1+RT2+RT3+RW1 and public-sync quality hardening are CLOSED_PASS_BOUNDED. RT1: `learningPlaneReadout` live in `/api/execute` (receipt rcpt-env-mptbpftd-1yfw15). RT2: `buildFindingToLearningRecord()` advisory module, 1/1 live proof PASS. RT3: `/api/learning-plane/readout` HTTP route, live proof PASS and enum validation hardened. RW1: `findingToLearningReadout` live in `/api/execute` (latest receipt rcpt-env-mpthwt8t-iqlgcr), `autonomousMutationAuthorized=false`, route.ts 999 lines with source helper rotation. Public-sync quality hardening commit `eb34b27f` fixed typecheck/lint/build blockers and tightened the near-hard file-size guard. Next move: public-safe subset sync from the public-sync clone only after remote verification.
+LHW21 is the latest closed LHW wave. T1 publishes the source-verified inbound event/control-point taxonomy, T2 distinguishes current advisory behavior from a future proposed enforce mode, and T3 proposes `governanceTrace` as a doc-only future receipt enrichment. All three remain documentation-only with `runtimeExecutionAuthorized=false`. Next allowed move: draft `docs/roadmaps/CVF_CONNECTION_POINT_GUARD_ENFORCEMENT_ROADMAP_2026-05-31.md` as a proposed runtime roadmap only. Runtime implementation remains blocked until a fresh R2-R3 GC-018, source-fidelity pass, operator checkpoint, work order, autorun pre-dispatch and pre-implementation gates, and live governance proof plan exist. Public-safe subset sync remains available only from the public-sync clone after remote verification.
 
 Parked checkpoints:
 

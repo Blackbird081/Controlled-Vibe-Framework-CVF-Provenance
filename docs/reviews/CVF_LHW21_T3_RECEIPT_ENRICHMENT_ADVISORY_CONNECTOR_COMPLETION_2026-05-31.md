@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DRAFT_PENDING_CLOSURE_GATE
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-05-31
 
@@ -42,15 +42,15 @@ provider route, or public-sync change.
 | Raw prompt, secret, and private-memory capture prohibited | PASS |
 | `runtimeExecutionAuthorized=false` retained | PASS |
 
-Draft verdict: **PASS_PENDING_CLOSURE_GATE**
+Verdict: **CLOSED_PASS_BOUNDED**
 
 ### Wave Summary
 
 | Tranche | Contract | Result |
 | --- | --- | --- |
-| T1 | `cvf.eventTaxonomySchemaAdvisory.lhw21.t1.v1` | PASS_PENDING_CLOSURE_GATE |
-| T2 | `cvf.hardGateModeAdvisory.lhw21.t2.v1` | PASS_PENDING_CLOSURE_GATE |
-| T3 | `cvf.receiptEnrichmentAdvisory.lhw21.t3.v1` | PASS_PENDING_CLOSURE_GATE |
+| T1 | `cvf.eventTaxonomySchemaAdvisory.lhw21.t1.v1` | CLOSED_PASS_BOUNDED |
+| T2 | `cvf.hardGateModeAdvisory.lhw21.t2.v1` | CLOSED_PASS_BOUNDED |
+| T3 | `cvf.receiptEnrichmentAdvisory.lhw21.t3.v1` | CLOSED_PASS_BOUNDED |
 
 ## Risk / Corrective Action
 
