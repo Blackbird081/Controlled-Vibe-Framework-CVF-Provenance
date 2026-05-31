@@ -48,9 +48,16 @@ passes the following gates:
 9. Whole-wave closure range gate when closing multi-tranche connector waves.
 10. Machine-verified line-count claim gate.
 11. Public export disposition gate.
+12. Mandatory Gate-Failure Remediation Protocol.
 
 If any gate is incomplete, the worker must return to Orchestrator or file a
 blocking defect. Operator silence is not a waiver.
+
+If the incomplete gate is caused by a defect inside the current work order's
+Allowed scope, the worker must repair it and rerun the gate. Missing
+disposition rows, stale `HOLD`/`PENDING` residue, source-symbol corrections,
+continuity sync owned by the task, and required `N/A with reason` entries are
+mandatory cleanup, not operator preference decisions.
 
 Before implementation, the worker must capture a batch base anchor with
 `git rev-parse --short HEAD`. Closure gates must use that `baseHead` so the
@@ -151,6 +158,28 @@ ACCEPT_AS_OWNER_MAP coverage claims are fail conditions unless every accepted
 concept from the cited absorption audit is represented in a wave/tranche, or is
 explicitly listed with a completed, deferred, rejected, or out-of-scope
 disposition.
+
+### 4A. Mandatory Gate-Failure Remediation Protocol
+
+Work-order authority includes routine remediation of failed machine gates inside
+the allowed changed files. A worker must not turn an allowed-scope gate failure
+into a question for the operator. The correct behavior is:
+
+1. identify the failed guard and owned file;
+2. repair the missing field, stale status, source mismatch, checklist residue,
+   or `N/A with reason` entry;
+3. rerun the failed guard or autorun phase;
+4. record the command and result in the closure evidence.
+
+Escalate to the operator only when the repair would exceed Allowed scope,
+change the claim boundary, release a `HOLD_*` prerequisite, alter risk level,
+start public-sync, run live/provider proof, consume secrets or paid quota,
+touch forbidden paths, or perform destructive/irreversible actions.
+
+Any artifact that records "should I fix", "operator checkpoint pending", or
+equivalent preference language for an allowed-scope guard failure is not closed.
+It is a governance/control-plane learning signal, not a valid blocker placed on
+the non-coder operator.
 
 ### 5. Checklist Finalization Gate
 
@@ -263,7 +292,9 @@ This standard is enforced by:
   ranges that touch files outside the work order's Allowed scope, LHW wave
   roadmap closures that lack full T1/T2/T3 changed-range evidence, connector
   specs with false line-count threshold claims, and Source Verification symbol
-  cells containing value assignments or type annotations.
+  cells containing value assignments or type annotations. It also hard-fails
+  governed artifacts that record allowed-scope machine-gate remediation as an
+  operator preference checkpoint.
 - `governance/compat/check_public_export_disposition.py`, which hard-fails
   changed active roadmap closures, final wave completion packets, and public
   catalog claims that lack a public export disposition or that claim public

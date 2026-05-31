@@ -66,6 +66,27 @@ An agent must not continue to the next phase when the current phase fails.
 Operator silence is not a waiver. A waiver must name the failed gate, reason,
 scope, and follow-up owner.
 
+### Mandatory Gate-Failure Remediation Protocol
+
+A dispatched work order is execution authority inside its Allowed scope. When a
+machine gate fails on an allowed file, allowed artifact, closure checklist,
+source-verification row, disposition row, stale status token, missing
+`N/A with reason`, or continuity field owned by the work order, remediation is
+mandatory. The agent must repair the defect, rerun the failed gate, and record
+the result. It must not ask the operator whether to fix the failure as a matter
+of preference.
+
+Operator escalation is allowed only when remediation would exceed Allowed
+scope, change the claim boundary, release a `HOLD_*` prerequisite, alter the
+risk ceiling, open public-sync, run live/provider proof, consume operator
+secrets or paid quota, touch forbidden paths, or require a destructive or
+irreversible operation.
+
+If an agent asks the operator whether to repair an allowed-scope machine-gate
+failure, that is a governance/control-plane defect. It must be treated as a
+finding-to-governance learning signal: the rule, guard, phase placement, or
+work-order wording failed to protect the non-coder operator.
+
 Agent defects discovered during autorun are governance learning inputs. A
 repeated defect must not close as worker blame alone. It must be evaluated for
 promotion from finding to rule, from rule to machine check, or from late machine
@@ -113,6 +134,8 @@ The Orchestrator authors or receives the roadmap/work order and must run
 
 If `pre-dispatch` fails, the Orchestrator fixes the source verification,
 traceability, structure, prerequisite, or status defect before any worker acts.
+For defects inside the dispatch packet's owned files, this is mandatory
+remediation, not an operator preference checkpoint.
 
 ### Worker
 
@@ -122,6 +145,9 @@ material edits.
 If `pre-implementation` fails, the Worker stops and returns the defect to the
 Orchestrator. The Worker must not "fix while implementing" unless the fix is
 itself the assigned task.
+If the assigned task is to remediate the work order or gate failure, the Worker
+must repair allowed-scope failures and rerun the gate instead of asking whether
+the operator wants the routine repair.
 
 ### Reviewer
 
@@ -130,6 +156,10 @@ The Reviewer runs `pre-closure` before accepting any closed status.
 If `pre-closure` fails, the Reviewer must mark the work `BLOCKED` or return it
 for correction. The Reviewer must not rely on a completion review's handwritten
 `PASS` when machine gates disagree.
+When the failed item is an allowed-scope cleanup such as a missing disposition,
+stale closure residue, source-symbol correction, or explicit `N/A with reason`,
+the reviewer/closer must correct it and rerun the gate; asking the operator
+whether to perform that repair is a closure-quality defect.
 
 ### Release / Public-Sync Agent
 
@@ -328,6 +358,8 @@ This standard does not:
 | Source Verification `ACCEPT` cites a missing code symbol | Correct the source path/symbol or change the disposition to `REJECT` / `BLOCKED_SOURCE_NOT_FOUND`. |
 | Line-count claim is stale or handwritten | Recompute from the current file or remove the claim. |
 | Public export disposition is missing or overclaims public-sync export | Add the disposition, cite public-sync evidence, or downgrade to `DEFERRED_PRIVATE_ONLY` / `BLOCKED_MISSING_PUBLIC_ARTIFACTS`. |
+| Machine gate fails inside Allowed scope | Repair the allowed-scope defect and rerun the gate; do not ask the operator whether routine remediation should happen. |
+| Agent asks operator whether to fix an allowed-scope gate failure | Record a governance/control-plane learning signal and tighten the relevant work-order wording or guard. |
 | `pre-dispatch` fails | Keep artifact in `DRAFT`, `HOLD_*`, or `BLOCKED`; return to Orchestrator. |
 | `pre-implementation` fails | Stop edits; return the blocker to Orchestrator or Reviewer. |
 | `pre-closure` fails | Do not mark closed; file a blocking finding or correction batch. |

@@ -235,6 +235,39 @@ def _validate_closed_roadmap_status_residue(text: str) -> list[str]:
     return issues
 
 
+def _validate_mandatory_remediation_escalation(text: str, artifact_label: str) -> list[str]:
+    issues: list[str] = []
+    context = (
+        r"guard|gate|autorun|pre-dispatch|pre-implementation|pre-closure|pre-push|"
+        r"check_work_order_dispatch_quality|check_active_session_state|"
+        r"Source Verification|closure residue|allowed scope|Finding-To-Governance|"
+        r"N/A with reason|runtime/provider/cost"
+    )
+    preference = (
+        r"do you want|would you like|should I|may I|operator checkpoint|"
+        r"operator approval|ask(?:ed)? operator|waiting for operator|pending operator|"
+        r"bạn muốn|ban muon|có muốn|co muon|tôi có nên|toi co nen|"
+        r"chờ operator|cho operator"
+    )
+    repair = (
+        r"fix|repair|correct|resolve|rerun|re-run|add|update|adjust|clean|"
+        r"sửa|sua|chỉnh|chinh|thêm|them|chạy lại|chay lai"
+    )
+    patterns = (
+        rf"(?is)\b(?:{preference})\b[\s\S]{{0,220}}\b(?:{repair})\b[\s\S]{{0,220}}\b(?:{context})\b",
+        rf"(?is)\b(?:{context})\b[\s\S]{{0,220}}\b(?:{preference})\b[\s\S]{{0,220}}\b(?:{repair})\b",
+        rf"(?is)\b(?:{repair})\b[\s\S]{{0,220}}\b(?:{context})\b[\s\S]{{0,220}}\b(?:{preference})\b",
+    )
+    for pattern in patterns:
+        if re.search(pattern, text):
+            issues.append(
+                f"{artifact_label} treats mandatory allowed-scope gate remediation as an operator preference; "
+                "repair machine-gate failures inside Allowed scope instead of asking the operator"
+            )
+            break
+    return issues
+
+
 def _validate_fast_lane_status_consistency(text: str) -> list[str]:
     issues: list[str] = []
     status = _extract_status(text).upper()
@@ -862,6 +895,7 @@ def _validate_work_order(path: str, text: str) -> list[str]:
     dispatching = "DISPATCHED" in status.upper() or "READY" in status.upper()
     issues.extend(_validate_status_token_hygiene(text, "work order"))
     issues.extend(_validate_closed_artifact_finality(text, "work order"))
+    issues.extend(_validate_mandatory_remediation_escalation(text, "work order"))
 
     if dispatching and _is_roadmap_derived(text) and not _has_trace_matrix(text):
         issues.append("roadmap-derived work order is dispatch/ready without Roadmap-To-Work-Order Trace Matrix")
@@ -901,6 +935,7 @@ def _validate_roadmap(path: str, text: str) -> list[str]:
     status = _extract_status(text)
     issues.extend(_validate_status_token_hygiene(text, "roadmap"))
     issues.extend(_validate_closed_artifact_finality(text, "roadmap"))
+    issues.extend(_validate_mandatory_remediation_escalation(text, "roadmap"))
     issues.extend(_validate_closed_roadmap_status_residue(text))
     issues.extend(_validate_referenced_work_order_closure(text, "roadmap"))
     if _is_connector_wave(path, text) and _is_dispatch_status(status) and not _is_hold_status(status):
@@ -918,6 +953,7 @@ def _validate_baseline(path: str, text: str) -> list[str]:
     issues: list[str] = []
     issues.extend(_validate_status_token_hygiene(text, "baseline"))
     issues.extend(_validate_closed_artifact_finality(text, "baseline"))
+    issues.extend(_validate_mandatory_remediation_escalation(text, "baseline"))
     issues.extend(_validate_referenced_work_order_closure(text, "baseline"))
     issues.extend(_validate_accepted_source_rows(path, text))
     issues.extend(_validate_no_empty_range_commands(text))
@@ -931,6 +967,7 @@ def _validate_fast_lane_audit(path: str, text: str) -> list[str]:
     status = _extract_status(text)
     issues.extend(_validate_status_token_hygiene(text, "fast-lane audit"))
     issues.extend(_validate_closed_artifact_finality(text, "fast-lane audit"))
+    issues.extend(_validate_mandatory_remediation_escalation(text, "fast-lane audit"))
     issues.extend(_validate_fast_lane_status_consistency(text))
     if "FAST_LANE_READY" in status.upper() and re.search(
         r"(pre-?condition|conditional|only after)[\s\S]{0,240}CLOSED_PASS",
@@ -951,6 +988,7 @@ def _validate_completion_or_spec(path: str, text: str) -> list[str]:
     issues: list[str] = []
     issues.extend(_validate_status_token_hygiene(text, "completion/spec artifact"))
     issues.extend(_validate_closed_artifact_finality(text, "completion/spec artifact"))
+    issues.extend(_validate_mandatory_remediation_escalation(text, "completion/spec artifact"))
     issues.extend(_validate_referenced_work_order_closure(text, "completion/spec artifact"))
     issues.extend(_validate_accepted_source_rows(path, text))
     issues.extend(_validate_no_empty_range_commands(text))
@@ -1190,6 +1228,7 @@ def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str
         STANDARD_PATH: (
             "Roadmap-To-Work-Order Trace Matrix",
             "Negative And Fail-Condition Scan",
+            "Mandatory Gate-Failure Remediation Protocol",
             "Current Runtime Freshness Verification",
             "ACCEPT_AS_OWNER_MAP coverage",
             THIS_SCRIPT_PATH,
@@ -1197,6 +1236,7 @@ def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str
         WORK_ORDER_TEMPLATE_PATH: (
             "Source Verification Block",
             "Roadmap-To-Work-Order Trace Matrix",
+            "Mandatory Gate-Failure Remediation Protocol",
             "Current Runtime Freshness Verification",
             "ACCEPT_AS_OWNER_MAP coverage",
             THIS_SCRIPT_PATH,

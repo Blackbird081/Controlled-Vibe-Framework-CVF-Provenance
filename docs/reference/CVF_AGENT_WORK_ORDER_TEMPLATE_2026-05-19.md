@@ -95,6 +95,8 @@ Verification requirements:
   explicit ownership or a separate work order.
 - connector wave roadmap closure must use a full-wave changed range, not only
   the final tranche range.
+- allowed-scope machine-gate failures must be repaired and rerun by the assigned
+  agent; they must not be escalated to the operator as preference questions.
 
 The work order is invalid for execution if it does not name stop conditions.
 
@@ -249,6 +251,19 @@ Expected results:
 
 If a pre-flight check fails, stop and record the failed command and result.
 The worker must not continue past a failed autorun phase gate.
+
+Mandatory Gate-Failure Remediation Protocol:
+
+- If the failure is inside Allowed scope, repair it and rerun the failed gate.
+- Do not ask the operator whether to fix missing `N/A with reason`, stale
+  closure residue, source-verification corrections, allowed continuity sync, or
+  other routine guard failures.
+- Ask the operator only if remediation would exceed Allowed scope, change the
+  claim boundary, release a `HOLD_*` prerequisite, change risk level, open
+  public-sync, run live/provider proof, consume secrets/quota, touch forbidden
+  paths, or perform destructive/irreversible actions.
+- Treat any attempted "do you want me to fix this gate failure?" handoff as a
+  governance/control-plane learning signal.
 
 ## 6A. Source-Fidelity Pass
 
@@ -472,6 +487,14 @@ Closure may proceed only after:
 - <reviewer no-blocking objection | operator waiver | gate result>
 - `pre-closure` autorun gate passed and result recorded
 
+Mandatory remediation rule:
+
+- A gate failure inside this work order's Allowed scope is authorization to
+  repair and rerun, not a reason to ask the operator for preference.
+- Operator approval is required only for scope expansion, claim-boundary
+  changes, `HOLD_*` release, live/provider proof, public-sync, secrets/quota,
+  forbidden paths, destructive actions, or higher risk.
+
 Reviewer silence is not approval unless the operator explicitly records a
 waiver for this work order.
 
@@ -510,13 +533,16 @@ waiver for this work order.
 - [ ] Completion packet filed if the roadmap requires one
 - [ ] Changed files listed for reviewer
 - [ ] No closed-equivalent claim remains if any autorun phase gate failed
+- [ ] Any allowed-scope autorun/guard failure was repaired and rerun, not left
+  as an operator preference checkpoint
 
 ## 13. Return-To-Orchestrator Conditions
 
 Return to orchestrator without continuing if:
 
 - pre-flight fails;
-- any autorun phase gate fails;
+- any autorun phase gate fails outside Allowed scope or cannot be repaired
+  inside this work order;
 - source-fidelity pass finds a missing path, invented symbol, or unverified
   role/template mapping;
 - scope conflict is discovered;

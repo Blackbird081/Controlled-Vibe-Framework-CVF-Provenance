@@ -410,6 +410,16 @@ If a phase gate fails, the agent must stop at that phase and mark the artifact
 the explicitly assigned task. A reviewer may not accept handwritten PASS
 claims when the autorun gate fails. Operator silence is not a waiver.
 
+Allowed-scope gate remediation is mandatory, not optional. Once a work order is
+dispatched, any machine-gate failure inside its Allowed scope must be repaired
+and rerun by the assigned agent instead of escalated as "do you want me to fix
+this?" to the operator. Ask the operator only when the repair would exceed
+Allowed scope, change the claim boundary, release a `HOLD_*` prerequisite,
+alter risk level, open public-sync, run live/provider proof, consume
+secrets/quota, touch forbidden paths, or perform destructive/irreversible
+actions. Treat an agent asking whether to fix an allowed-scope guard failure as
+a governance/control-plane learning signal.
+
 Pre-closure must not accept untracked, modified, or unresolved worktree changes
 as a clean closure claim. Closure must be backed by committed diff evidence,
 `git status --short`, receipts, command output, or explicit `N/A with reason`.
