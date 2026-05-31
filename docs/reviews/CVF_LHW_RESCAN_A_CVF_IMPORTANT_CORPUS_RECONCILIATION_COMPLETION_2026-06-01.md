@@ -2,7 +2,7 @@
 
 Memory class: EVIDENCE_RECORD
 
-Status: HOLD_UNTIL_PRE_CLOSURE_PASS
+Status: CLOSED_PASS_BOUNDED
 
 docType: completion_review
 
@@ -25,6 +25,12 @@ Authorization packet:
 
 ```text
 d89743d0 docs(lhw-rescan-a): authorize cvf important reconciliation
+```
+
+Implementation commit:
+
+```text
+eefd6934 feat(lhw-rescan-a): reconcile cvf important corpus
 ```
 
 ## Target / Source
@@ -93,19 +99,19 @@ Completed:
 | File-level ledger | generated JSON processing ledger | `230` terminal rows | PASS |
 | Semantic routing | generated ledger and audit | `229` authority assets mapped | PASS |
 | Folder reconciliation | audit folder table | `24/24` folders | PASS |
-| GC-047 closure | audit required block | direct checker pending committed range | HOLD |
-| GC-048 closure | audit required block | direct checker pending committed range | HOLD |
-| Continuity | session state and handoff | pending closure sync | HOLD |
+| GC-047 closure | audit required block | direct checker and autorun `pre-closure` | PASS |
+| GC-048 closure | audit required block | direct checker and autorun `pre-closure` | PASS |
+| Continuity | session state and handoff | closure sync packet | PASS |
 
 ## Closure Diff Gate
 
 | Surface | Expected disposition | Evidence | Result |
 | --- | --- | --- | --- |
-| Legacy source tree | unchanged | pending committed diff | HOLD |
+| Legacy source tree | unchanged | `git diff --name-status e074082c HEAD` | PASS |
 | Manifest builder | added | `scripts/build_cvf_important_rescan_manifest.py` | PASS |
 | Generated corpus evidence | added | JSON manifest and audit | PASS |
-| Runtime/provider/public-sync | unchanged | pending committed diff | HOLD |
-| Continuity | update after closure | pending | HOLD |
+| Runtime/provider/public-sync | unchanged | committed changed-file set | PASS |
+| Continuity | update after closure | front door, state registry, and handoff | PASS |
 
 ## Evidence
 
@@ -114,6 +120,9 @@ Completed:
 | `python scripts/build_cvf_important_rescan_manifest.py --snapshot-time 2026-06-01T06:18:43+07:00` | PASS | `230` visible files; `229` authority assets; `1` declared exclusion |
 | `python -m py_compile scripts/build_cvf_important_rescan_manifest.py` | PASS | generator syntax valid |
 | `python scripts/build_cvf_important_rescan_manifest.py --check-only --expected-manifest-hash 815c9144e51dd0e72e8543410d976ef165bba505f08e5d92d0e632fb43115e8f` | PASS | current filesystem matches snapshot |
+| `python governance/compat/check_corpus_completeness_report_integrity.py --base e074082c --head HEAD --enforce` | PASS | GC-047 aligned |
+| `python governance/compat/check_corpus_to_knowledge_map_reconciliation.py --base e074082c --head HEAD --enforce` | PASS | GC-048 aligned |
+| `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base e074082c --head HEAD` | PASS | full range verified at closure-preview sync HEAD `72d9ebd4`; clean worktree |
 
 ## Evidence Trace Block
 
@@ -153,7 +162,8 @@ source truth, and open later deep-review work through fresh GC-018 packets.
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: private provenance Legacy reconciliation only.
+Reason: private provenance Legacy reconciliation only. The public-sync clone
+remains untouched and no public catalog artifact is claimed.
 
 ## Closure Checklist
 
@@ -161,14 +171,14 @@ Reason: private provenance Legacy reconciliation only.
 - [x] Filesystem-backed manifest generated.
 - [x] Terminal ledger generated.
 - [x] Folder and semantic-region arithmetic reconciled.
-- [ ] GC-047 and GC-048 direct checker runs pass on committed range.
-- [ ] Autorun pre-closure and pre-push pass on committed range.
-- [ ] Continuity synchronized.
+- [x] GC-047 and GC-048 direct checker runs pass on committed range.
+- [x] Autorun pre-closure passes on committed range.
+- [x] Pre-push remains required only before a later push.
+- [x] Continuity synchronized.
 
 ## Claim Boundary
 
-This draft records the implementation result but remains on hold until
-committed-range closure gates pass. LHW-RESCAN-A proves corpus visibility and
-broad routing only; it does not prove deep semantic absorption, runtime
+LHW-RESCAN-A proves corpus visibility and broad routing only. It does not
+prove deep semantic absorption, runtime
 readiness, public readiness, hosted readiness, production readiness, or
 autonomous mutation authority.

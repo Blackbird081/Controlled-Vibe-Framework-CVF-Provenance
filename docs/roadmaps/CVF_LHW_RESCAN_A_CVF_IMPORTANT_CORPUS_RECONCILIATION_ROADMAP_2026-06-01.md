@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -64,12 +64,12 @@ Out of scope:
 
 | Step | Requirement | Output | Status |
 | --- | --- | --- | --- |
-| A1 | Enumerate filesystem source truth | JSON manifest with 230 visible files | READY |
-| A2 | Parse or visibly disposition every file | Terminal processing ledger | READY |
-| A3 | Route broad semantic regions | Rebuildable semantic-region summary | READY |
-| A4 | Reconcile all 24 subfolders | LHW-RESCAN-A audit | READY |
-| A5 | Run adversarial recount and drift check | Audit evidence section | READY |
-| A6 | Close with bounded claim | Completion review and continuity sync | READY |
+| A1 | Enumerate filesystem source truth | JSON manifest with 230 visible files | PASS |
+| A2 | Parse or visibly disposition every file | Terminal processing ledger | PASS |
+| A3 | Route broad semantic regions | Rebuildable semantic-region summary | PASS |
+| A4 | Reconcile all 24 subfolders | LHW-RESCAN-A audit | PASS |
+| A5 | Run adversarial recount and drift check | Audit evidence section | PASS |
+| A6 | Close with bounded claim | Completion review and continuity sync | PASS |
 
 ## Verification / Evidence
 
@@ -116,7 +116,16 @@ Execution order:
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: private provenance Legacy reconciliation only.
+Reason: private provenance Legacy reconciliation only. The public-sync clone
+remains untouched and no public catalog artifact is claimed.
+
+## Closure Result
+
+LHW-RESCAN-A closes `CLOSED_PASS_BOUNDED`: `230` visible files are represented
+in the filesystem-backed manifest, `230` terminal ledger rows reconcile, one
+generated `.pyc` remains visible as a declared exclusion, and `229` authority
+assets route into rebuildable broad semantic regions. Deep source
+interpretation remains outside this tranche.
 
 ## Claim Boundary
 

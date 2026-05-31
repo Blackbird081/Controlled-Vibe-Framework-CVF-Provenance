@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: READY_FOR_IMPLEMENTATION
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -107,13 +107,13 @@ python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implemen
 
 | Roadmap requirement | Work-order instruction | Output artifact or field | Verification command or check | Status |
 | --- | --- | --- | --- | --- |
-| Filesystem inventory | Build deterministic generator | JSON `manifest` | regenerate and compare hash | PENDING |
-| File-level ledger | Parse or visibly disposition every file | JSON `ledger` | count terminal rows | PENDING |
-| Semantic routing | Assign broad region to every row | JSON `semanticRegions` | region arithmetic | PENDING |
-| Folder reconciliation | Cross-check 24 folders | audit Gate 7 table | folder count recompute | PENDING |
-| GC-047 closure | Add required block | audit corpus verdict | GC-047 checker | PENDING |
-| GC-048 closure | Add required block | audit knowledge-map verdict | GC-048 checker | PENDING |
-| Continuity | Route next move after closure | session state and handoff | active-session checker | PENDING |
+| Filesystem inventory | Build deterministic generator | JSON `manifest` | regenerate and compare hash | PASS |
+| File-level ledger | Parse or visibly disposition every file | JSON `processingLedger` | count terminal rows | PASS |
+| Semantic routing | Assign broad region to every authority row | JSON `counts.semanticRegions` | region arithmetic | PASS |
+| Folder reconciliation | Cross-check 24 folders | audit folder table | folder count recompute | PASS |
+| GC-047 closure | Add required block | audit corpus verdict | GC-047 checker | PASS |
+| GC-048 closure | Add required block | audit knowledge-map verdict | GC-048 checker | PASS |
+| Continuity | Route next move after closure | session state and handoff | active-session checker | PASS |
 
 ## Execution Plan
 
@@ -179,15 +179,15 @@ runtime, provider, public-sync, or autonomous-mutation change enters the batch.
 
 | Item | Required closure resolution |
 | --- | --- |
-| GC-018 packet committed | PENDING |
-| Pre-dispatch gate | PENDING |
-| Pre-implementation gate | PENDING |
-| Generated manifest and ledger | PENDING |
-| GC-047 and GC-048 machine checks | PENDING |
-| Completion review | PENDING |
+| GC-018 packet committed | PASS: `d89743d0` |
+| Pre-dispatch gate | PASS |
+| Pre-implementation gate | PASS |
+| Generated manifest and ledger | PASS: implementation commit `eefd6934` |
+| GC-047 and GC-048 machine checks | PASS: direct and autorun `pre-closure` at `72d9ebd4` |
+| Completion review | PASS: `docs/reviews/CVF_LHW_RESCAN_A_CVF_IMPORTANT_CORPUS_RECONCILIATION_COMPLETION_2026-06-01.md` |
 | Public export | N/A with reason: private provenance scan only |
 | Runtime/provider/live-proof lane | N/A with reason: source-analysis tranche |
-| Continuity synchronization | PENDING |
+| Continuity synchronization | PASS: closure sync included in final packet batch |
 
 ## Operator Checkpoint
 
@@ -197,7 +197,8 @@ SATISFIED. Operator accepted the routed `LHW-RESCAN-A` next move on 2026-06-01.
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: private provenance Legacy reconciliation only.
+Reason: private provenance Legacy reconciliation only. The public-sync clone
+remains untouched and no public catalog artifact is claimed.
 
 ## Claim Boundary
 

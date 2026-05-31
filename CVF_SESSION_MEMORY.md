@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-01
 
-Current mode marker: `gc048_knowledge_system_foundation_closed_pass_bounded`
+Current mode marker: `lhw_rescan_a_cvf_important_reconciled_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `gc048_knowledge_system_foundation_closed_pass_bounded`.
+Current mode: `lhw_rescan_a_cvf_important_reconciled_closed_pass_bounded`.
 
 Active handoff:
 
@@ -259,10 +259,19 @@ Memory-method Legacy rescan audit remains `PARTIAL`:
 
 `docs/audits/CVF_MEMORY_METHOD_LEGACY_RESCAN_AUDIT_2026-06-01.md`
 
-Open fresh GC-018 for `LHW-RESCAN-A`, apply `GC-047` filesystem-backed
-inventory and `GC-048` map reconciliation, reconcile all 24 `CVF_Important/`
-subfolders, and create file-level terminal coverage before any complete Legacy
-absorption claim. Preserve `LHW-RESCAN-B/C` after A.
+`LHW-RESCAN-A` is `CLOSED_PASS_BOUNDED`:
+
+`docs/reviews/CVF_LHW_RESCAN_A_CVF_IMPORTANT_CORPUS_RECONCILIATION_COMPLETION_2026-06-01.md`
+
+The current `CVF_Important/` source truth is `24` top-level folders and `230`
+visible files: `229` parser-backed authority assets, one visible generated
+`.pyc` exclusion, and zero unresolved ledger rows. Broad semantic-region
+routing is rebuildable; deep interpretation remains explicitly open.
+
+Next allowed move: open fresh GC-018 for `LHW-RESCAN-B`, apply `GC-047` and
+`GC-048` to the unscanned `CVF 17.05`, `CVF 25.05`, and `CVF 28.05` source
+trees, and preserve `LHW-RESCAN-C` for cross-corpus synthesis and deep-review
+routing. Do not claim complete Legacy absorption from LHW-RESCAN-A.
 CPG-2 is CLOSED_PASS_BOUNDED with
 release-quality proof:
 
