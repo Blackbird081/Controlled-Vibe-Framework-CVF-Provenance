@@ -67,7 +67,7 @@ Scope sources to resolve before implementation:
 - `docs/reviews/archive/CVF_LH1_LEGACY_HARVEST_CLOSEOUT_LEDGER_COMPLETION_2026-05-25.md`
 - `.private_reference/legacy/CVF 17.05/Review CVF.md`
 - prior W-series work orders for WC-3 Candidates 1-4 where already closed or partially wired
-- `docs/roadmaps/CVF_MA1_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_ROADMAP_2026-05-26.md`
+- `docs/roadmaps/archive/CVF_MA1_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_ROADMAP_2026-05-26.md`
 
 Accepted-source rule:
 

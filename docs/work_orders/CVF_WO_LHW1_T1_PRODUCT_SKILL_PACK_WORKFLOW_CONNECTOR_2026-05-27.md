@@ -62,7 +62,7 @@ Before writing a single line of the connector spec, read these files in order:
    — understand the 10 certified packs and their metadata shape.
 5. `docs/reviews/archive/CVF_C8_PRODUCT_SKILL_PACK_SELECTION_READOUT_COMPLETION_2026-05-25.md`
    — understand the selection readout and CB1 context budget pattern.
-6. `docs/roadmaps/CVF_MA1_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_ROADMAP_2026-05-26.md`
+6. `docs/roadmaps/archive/CVF_MA1_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_ROADMAP_2026-05-26.md`
    — understand role-transfer packet fields before writing T2-adjacent
    state connector fields (needed in T1 schema definition as forward-compat
    stubs only, not implementation).

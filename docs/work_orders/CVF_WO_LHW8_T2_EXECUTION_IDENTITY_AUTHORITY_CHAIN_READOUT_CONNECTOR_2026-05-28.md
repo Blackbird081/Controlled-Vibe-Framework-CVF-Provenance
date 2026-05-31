@@ -36,7 +36,7 @@ provider behavior is changed. Execution authority extension remains blocked.
   (triggers: `Claude Kit`, `Review CVF_4.md`)
 - G1 completion: `docs/reviews/CVF_G1_EXECUTION_IDENTITY_RUNTIME_GATE_COMPLETION_2026-05-22.md`
 - TA1 completion: `docs/reviews/archive/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
-- MA1 completion: `docs/reviews/CVF_MA1_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_COMPLETION_2026-05-26.md`
+- MA1 completion: `docs/reviews/archive/CVF_MA1_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_COMPLETION_2026-05-26.md`
 
 ## Agent Roles
 

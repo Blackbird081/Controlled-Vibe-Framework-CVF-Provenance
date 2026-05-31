@@ -76,7 +76,7 @@ provider, benchmark, context, or non-coder outcome surfaces.
 Before implementation, the agent must produce a Blind-Spot Control Block per
 the binding standard:
 
-`docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`
+`docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-06-01.md`
 
 The control block must be included in the GC-018 packet or work order, with
 all seven gates executed and a verdict of `CLEAR`, `PARTIAL`, or `BLOCKED`.

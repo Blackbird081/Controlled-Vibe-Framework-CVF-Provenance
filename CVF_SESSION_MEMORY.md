@@ -65,6 +65,25 @@ startup guards before material governed work.
 
 ## Active Rule Additions
 
+Blind-Spot Prevention Standard upgraded to v2 (2026-06-01). Two new
+machine-verifiable rules added based on the LHW20 regression (24 subfolders /
+230 files vs claimed 13 / 97):
+
+- **Gate 1 — FILESYSTEM_LISTING_REQUIRED:** Agent MUST run
+  `Get-ChildItem -Directory` (or equivalent) on the root folder and include
+  raw shell output in Gate 1. Self-reported subfolder counts without shell
+  output are not valid evidence; verdict is BLOCKED.
+- **Gate 7 — COMPLETENESS_CROSS_CHECK:** Before claiming `CLEAR`, agent MUST
+  produce a cross-check table: Gate 1 subfolder list MINUS Gate 3 subfolder
+  list = UNREAD set. Each unread subfolder must have an explicit disposition.
+  CLEAR without this table is a governance defect.
+
+Active standard: `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-06-01.md`
+
+Fast Lane authorization: `docs/baselines/CVF_GC021_BLINDSPOT_STANDARD_UPGRADE_2026-06-01.md`
+
+All future LHW absorption scans must reference the 2026-06-01 version.
+
 Work-order dispatch quality is machine-enforced by:
 
 `governance/compat/check_work_order_dispatch_quality.py`
