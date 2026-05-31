@@ -131,7 +131,7 @@ Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
 
 ## Active Boundary
 
-Current mode: `lhw22_agent_intelligence_dispatch_ready_cpg2_parked`.
+Current mode: `lhw22_agent_intelligence_dispatch_ready_cpg2_packet_staged`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
@@ -262,8 +262,12 @@ and work order:
 Next allowed move: execute LHW22 documentation-only advisory connector work
 after autorun pre-dispatch and pre-implementation gates pass on a captured
 non-empty range. LHW23 and LHW24 remain held until predecessor PASS evidence.
-CPG-2 is parked, not canceled; resume it only after a fresh CPG-2 GC-018 and
-source-verified work order. CPG-3 remains held.
+CPG-2 is parked, not canceled; staged packet:
+`docs/roadmaps/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_ROADMAP_2026-05-31.md`
+and
+`docs/work_orders/CVF_WO_CPG2_CP2_HARD_GATE_ENFORCEMENT_2026-05-31.md`.
+Resume it only after a fresh CPG-2 GC-018 and operator checkpoint. CPG-3
+remains held.
 
 Parked checkpoints:
 - VI5-T4/T5 hosted Netlify freshness and operator external-agent retest
@@ -279,8 +283,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lhw22_agent_intelligence_dispatch_ready_cpg2_parked`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=execute LHW22 documentation-only advisory connector work after autorun gates pass; LHW23/LHW24 held and CPG-2 parked;
+Startup acknowledged: current mode=`lhw22_agent_intelligence_dispatch_ready_cpg2_packet_staged`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=execute LHW22 documentation-only advisory connector work after autorun gates pass; LHW23/LHW24 held and CPG-2 staged but still held;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary

@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-31
 
-Current mode marker: `lhw22_agent_intelligence_dispatch_ready_cpg2_parked`
+Current mode marker: `lhw22_agent_intelligence_dispatch_ready_cpg2_packet_staged`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lhw22_agent_intelligence_dispatch_ready_cpg2_parked`.
+Current mode: `lhw22_agent_intelligence_dispatch_ready_cpg2_packet_staged`.
 
 Active handoff:
 
@@ -192,9 +192,15 @@ dispatch:
 Next allowed move: execute LHW22 documentation-only advisory connector work
 after autorun pre-dispatch and pre-implementation gates pass on a captured
 non-empty range. LHW23 and LHW24 remain held until predecessor PASS evidence.
-CPG-2 is parked, not canceled; resume it only after a fresh CPG-2 GC-018 and
-source-verified work order. Public-safe subset sync remains available only from
-the public-sync clone after remote verification.
+CPG-2 is parked, not canceled; a staged CPG-2 roadmap/work-order packet exists
+but remains held until fresh CPG-2 GC-018 and operator checkpoint:
+
+`docs/roadmaps/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_ROADMAP_2026-05-31.md`
+
+`docs/work_orders/CVF_WO_CPG2_CP2_HARD_GATE_ENFORCEMENT_2026-05-31.md`
+
+Public-safe subset sync remains available only from the public-sync clone after
+remote verification.
 
 Parked checkpoints:
 

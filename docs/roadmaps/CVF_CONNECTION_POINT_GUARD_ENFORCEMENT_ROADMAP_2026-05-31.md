@@ -243,8 +243,16 @@ call through the governed CVF route.
 | Tranche | Contract candidate | Prerequisite | Risk | Current status |
 | --- | --- | --- | --- | --- |
 | CPG-1 | `cvf.connectionPointEventContractGuard.cpg1.v1` | Fresh GC-018 + operator checkpoint | R2 | CLOSED_PASS_BOUNDED |
-| CPG-2 | `cvf.connectionPointHardGateEnforcement.cpg2.v1` | CPG-1 `CLOSED_PASS_BOUNDED` + fresh GC-018 | R2-R3 | HOLD_FOR_FRESH_GC018 |
+| CPG-2 | `cvf.connectionPointHardGateEnforcement.cpg2.v1` | CPG-1 `CLOSED_PASS_BOUNDED` + fresh GC-018 | R2-R3 | HOLD_FOR_FRESH_GC018_PACKET_STAGED |
 | CPG-3 | `cvf.governanceTraceReceiptEnrichment.cpg3.v1` | CPG-2 `CLOSED_PASS_BOUNDED` + fresh GC-018 | R2 | HOLD_FOR_CPG2_PASS |
+
+CPG-2 staging packet:
+
+- `docs/roadmaps/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_ROADMAP_2026-05-31.md`
+- `docs/work_orders/CVF_WO_CPG2_CP2_HARD_GATE_ENFORCEMENT_2026-05-31.md`
+
+The packet is intentionally held pending fresh CPG-2 GC-018 and operator
+checkpoint.
 
 ## Verification / Evidence
 
