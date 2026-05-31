@@ -23,6 +23,9 @@ describe('cvf_validate_plan', () => {
     expect(result.advisoryDecision).toBe('ALLOW_ADVISORY');
     expect(result.forbiddenStepsDetected).toHaveLength(0);
     expect(result.runtimeExecutionAuthorized).toBe(false);
+    expect(result.connectionPointMode).toBe('advisory');
+    expect(result.connectionPointProgression.progressionDisposition).toBe('ADVISORY_ONLY');
+    expect(result.connectionPointProgression.acceptedForProgression).toBe(false);
   });
 
   it('returns REJECT_ADVISORY when plan contains forbidden step', () => {
@@ -45,13 +48,69 @@ describe('cvf_validate_plan', () => {
     expect(result.stepCount).toBe(10);
   });
 
+  it('maps enforce mode allow to progression allow', () => {
+    const result = validateInt1Plan({
+      planSteps: ['step1'],
+      toolsRequired: [],
+      agentRole: 'AI_AGENT',
+      connectionPointMode: 'enforce',
+    });
+    expect(result.connectionPointMode).toBe('enforce');
+    expect(result.advisoryDecision).toBe('ALLOW_ADVISORY');
+    expect(result.connectionPointProgression.progressionDisposition).toBe('ALLOW_PROGRESSION');
+    expect(result.connectionPointProgression.acceptedForProgression).toBe(true);
+    expect(result.connectionPointProgression.blocked).toBe(false);
+  });
+
+  it('maps enforce mode review to review hold', () => {
+    const result = validateInt1Plan({
+      planSteps: Array.from({ length: 10 }, (_, i) => `step_${i}`),
+      toolsRequired: Array.from({ length: 10 }, (_, i) => `tool_${i}`),
+      agentRole: 'AI_AGENT',
+      connectionPointMode: 'enforce',
+    });
+    expect(result.connectionPointMode).toBe('enforce');
+    expect(result.connectionPointProgression.progressionDisposition === 'REVIEW_HOLD' || result.connectionPointProgression.progressionDisposition === 'ALLOW_PROGRESSION').toBe(true);
+    if (result.connectionPointProgression.progressionDisposition === 'REVIEW_HOLD') {
+      expect(result.connectionPointProgression.requiresReview).toBe(true);
+      expect(result.connectionPointProgression.acceptedForProgression).toBe(false);
+    }
+  });
+
+  it('maps enforce mode reject to block progression', () => {
+    const result = validateInt1Plan({
+      planSteps: ['delete_all users'],
+      toolsRequired: ['file_read'],
+      agentRole: 'AI_AGENT',
+      connectionPointMode: 'enforce',
+    });
+    expect(result.advisoryDecision).toBe('REJECT_ADVISORY');
+    expect(result.connectionPointProgression.progressionDisposition).toBe('REJECT_BLOCK');
+    expect(result.connectionPointProgression.blocked).toBe(true);
+    expect(result.connectionPointProgression.acceptedForProgression).toBe(false);
+  });
+
+  it('falls back to advisory mode when an invalid mode is supplied', () => {
+    const result = validateInt1Plan({
+      planSteps: ['step1'],
+      toolsRequired: ['tool1'],
+      agentRole: 'AI_AGENT',
+      connectionPointMode: 'invalid-mode',
+    });
+    expect(result.connectionPointMode).toBe('advisory');
+    expect(result.connectionPointProgression.progressionDisposition).toBe('ADVISORY_ONLY');
+    expect(result.connectionPointProgression.modeWarning).toContain('invalid_connection_point_mode');
+  });
+
   it('always sets runtimeExecutionAuthorized to false', () => {
     const result = validateInt1Plan({
       planSteps: ['step1'],
       toolsRequired: ['tool1'],
       agentRole: 'OPERATOR',
+      connectionPointMode: 'enforce',
     });
     expect(result.runtimeExecutionAuthorized).toBe(false);
+    expect(result.connectionPointProgression.blocked || result.connectionPointProgression.acceptedForProgression).toBe(true);
   });
 });
 

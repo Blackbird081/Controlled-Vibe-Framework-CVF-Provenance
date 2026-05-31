@@ -778,6 +778,7 @@ server.tool(
     planSteps: z.array(z.string()).describe('List of planned execution steps'),
     toolsRequired: z.array(z.string()).describe('Tools the plan intends to call'),
     agentRole: z.string().describe('Caller role, e.g. AI_AGENT, ORCHESTRATOR, OPERATOR'),
+    connectionPointMode: z.enum(['advisory', 'enforce']).optional().describe('Optional connection point mode: advisory (default) or enforce'),
     planContext: z.string().max(1000).optional().describe('Optional context about the plan purpose'),
   },
   async (args) => withMcpToolAudit('cvf_validate_plan', args as Record<string, unknown>, async () => {
