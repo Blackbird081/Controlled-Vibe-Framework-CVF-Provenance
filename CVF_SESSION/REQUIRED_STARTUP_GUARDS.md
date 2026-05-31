@@ -73,13 +73,12 @@ Before material governed work, state or internally confirm:
 ## Current Stop Boundary
 
 The current mode is
-`gc048_knowledge_system_foundation_implementation_active`.
+`gc048_knowledge_system_foundation_closed_pass_bounded`.
 
-GC-048 Knowledge System foundation implementation is active. `LHW-RESCAN-A`
-may open only after GC-048 closure with a fresh GC-018 packet, GC-047 corpus
-evidence, and GC-048 reconciliation evidence. New runtime contracts and public
-claims of coherent governed capability runtime remain blocked unless
-separately authorized.
+GC-048 Knowledge System foundation is closed. `LHW-RESCAN-A` may open only
+with a fresh GC-018 packet, GC-047 corpus evidence, and GC-048 reconciliation
+evidence. New runtime contracts and public claims of coherent governed
+capability runtime remain blocked unless separately authorized.
 
 ## Enforcement And Verification
 

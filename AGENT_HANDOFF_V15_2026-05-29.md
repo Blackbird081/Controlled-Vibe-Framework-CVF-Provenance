@@ -17,8 +17,8 @@ Active private provenance continuity for the current CVF repository. Use only
 with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
-Current implementation anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous implementation anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Previous CPG3 closure anchor: `7e75ec72` (docs(cpg3): close governance trace receipts). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `098fe279cb8d85c7c7fb13bd6f4cbef19a581931` (short: `098fe279`); parent: `15a458320947573855fabfa03d3d851d727448a4`.
+Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
+Current HEAD recorded for this handoff: `57f030f0a8d1f259a09ade7ca6ce77742123228a` (short: `57f030f0`); parent: `098fe279cb8d85c7c7fb13bd6f4cbef19a581931`.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -171,7 +171,7 @@ Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
 
 ## Active Boundary
 
-Current mode: `gc048_knowledge_system_foundation_implementation_active`.
+Current mode: `gc048_knowledge_system_foundation_closed_pass_bounded`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
@@ -320,15 +320,14 @@ LHW24 is the latest closed LHW wave. LHW22-LHW24 agent-intelligence absorption
 is CLOSED_PASS_BOUNDED at the documentation-only advisory boundary:
 `docs/roadmaps/CVF_LHW22_LHW23_LHW24_AGENT_INTELLIGENCE_ROADMAP_2026-05-31.md`.
 Next allowed move: CPG-1, CPG-2, CPG-3, and CCG-1 are CLOSED_PASS_BOUNDED.
-GC-048 Knowledge System foundation implementation is active under:
-`docs/work_orders/CVF_WO_GC048_CVF_KNOWLEDGE_SYSTEM_FOUNDATION_2026-06-01.md`.
+GC-048 Knowledge System foundation is CLOSED_PASS_BOUNDED:
+`docs/reviews/CVF_GC048_CVF_KNOWLEDGE_SYSTEM_FOUNDATION_COMPLETION_2026-06-01.md`.
 Memory-method Legacy rescan audit remains `PARTIAL`:
 `docs/audits/CVF_MEMORY_METHOD_LEGACY_RESCAN_AUDIT_2026-06-01.md`.
-Complete GC-048 governance verification and closure continuity sync. Then
-preserve `LHW-RESCAN-A/B/C`: open fresh GC-018, apply `GC-047` filesystem-backed
+Open fresh GC-018 for `LHW-RESCAN-A`, apply `GC-047` filesystem-backed
 inventory and `GC-048` map reconciliation, reconcile all 24 `CVF_Important/`
 subfolders, and create file-level terminal coverage before any complete Legacy
-absorption claim.
+absorption claim. Preserve `LHW-RESCAN-B/C` after A.
 CPG-2 is CLOSED_PASS_BOUNDED with release-quality proof;
 closure packet:
 `docs/roadmaps/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_ROADMAP_2026-05-31.md`
@@ -359,8 +358,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc048_knowledge_system_foundation_implementation_active`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=complete GC-048 governance verification and closure continuity sync, then preserve LHW-RESCAN-A/B/C under GC-047 and GC-048;
+Startup acknowledged: current mode=`gc048_knowledge_system_foundation_closed_pass_bounded`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=open fresh GC-018 for LHW-RESCAN-A under GC-047 and GC-048, then preserve LHW-RESCAN-B/C;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary

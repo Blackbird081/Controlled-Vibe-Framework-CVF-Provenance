@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-01
 
-Current mode marker: `gc048_knowledge_system_foundation_implementation_active`
+Current mode marker: `gc048_knowledge_system_foundation_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `gc048_knowledge_system_foundation_implementation_active`.
+Current mode: `gc048_knowledge_system_foundation_closed_pass_bounded`.
 
 Active handoff:
 
@@ -251,19 +251,18 @@ is CLOSED_PASS_BOUNDED at the documentation-only advisory boundary:
 `docs/roadmaps/CVF_LHW22_LHW23_LHW24_AGENT_INTELLIGENCE_ROADMAP_2026-05-31.md`
 
 Next allowed move: CPG-1, CPG-2, CPG-3, and CCG-1 are CLOSED_PASS_BOUNDED.
-GC-048 Knowledge System foundation implementation is active under:
+GC-048 Knowledge System foundation is `CLOSED_PASS_BOUNDED`:
 
-`docs/work_orders/CVF_WO_GC048_CVF_KNOWLEDGE_SYSTEM_FOUNDATION_2026-06-01.md`
+`docs/reviews/CVF_GC048_CVF_KNOWLEDGE_SYSTEM_FOUNDATION_COMPLETION_2026-06-01.md`
 
 Memory-method Legacy rescan audit remains `PARTIAL`:
 
 `docs/audits/CVF_MEMORY_METHOD_LEGACY_RESCAN_AUDIT_2026-06-01.md`
 
-Complete GC-048 governance verification and closure continuity sync. Then
-preserve `LHW-RESCAN-A/B/C`: open fresh GC-018, apply `GC-047` filesystem-backed
+Open fresh GC-018 for `LHW-RESCAN-A`, apply `GC-047` filesystem-backed
 inventory and `GC-048` map reconciliation, reconcile all 24 `CVF_Important/`
 subfolders, and create file-level terminal coverage before any complete Legacy
-absorption claim.
+absorption claim. Preserve `LHW-RESCAN-B/C` after A.
 CPG-2 is CLOSED_PASS_BOUNDED with
 release-quality proof:
 

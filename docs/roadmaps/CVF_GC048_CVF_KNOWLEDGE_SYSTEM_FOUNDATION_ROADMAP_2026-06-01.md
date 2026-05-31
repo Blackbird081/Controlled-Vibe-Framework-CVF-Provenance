@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: AUTHORIZED_FOR_IMPLEMENTATION
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -37,7 +37,7 @@ Forbidden scope:
 
 ## Authorization / Decision
 
-Decision: AUTHORIZED_FOR_IMPLEMENTATION.
+Decision: CLOSED_PASS_BOUNDED.
 
 Operator explicitly authorized GC-048 completion on 2026-06-01 after the
 Memory-method rescan exposed a broader system-level knowledge gap.
@@ -53,13 +53,13 @@ Memory-method rescan exposed a broader system-level knowledge gap.
 
 | Step | Status | Output |
 | --- | --- | --- |
-| Stage authority packet | READY | GC-018, roadmap, work order |
-| Define CVF Knowledge System method | READY | canonical method standard |
-| Define reconciliation contract | READY | standard + `GC-048` guard |
-| Harden GC-047 enumeration safety | READY | corpus checker + regression test |
-| Implement checker and focused tests | READY | compat script + pytest |
-| Wire earliest applicable gates | READY | autorun + hooks + CI + routing docs |
-| Verify and close | READY | governance checks + completion review |
+| Stage authority packet | PASS | GC-018, roadmap, work order |
+| Define CVF Knowledge System method | PASS | canonical method standard |
+| Define reconciliation contract | PASS | standard + `GC-048` guard |
+| Harden GC-047 enumeration safety | PASS | corpus checker + regression test |
+| Implement checker and focused tests | PASS | compat script + pytest |
+| Wire earliest applicable gates | PASS | autorun + hooks + CI + routing docs |
+| Verify and close | PASS | governance checks + completion review |
 
 ## Acceptance Criteria
 
