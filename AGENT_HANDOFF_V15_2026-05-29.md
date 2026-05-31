@@ -17,8 +17,8 @@ Active private provenance continuity for the current CVF repository. Use only
 with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
-Current implementation anchor: `765f16fb` (fix(governance): harden lhw closure quality gates). Previous LHW24 closure anchor: `de58adaf` (docs: add lhw24 advisory completions with runtime N/A lanes). Previous LHW23 closure anchor: `62c9db4f` (docs(lhw23): close routing and registry intelligence wave). Previous LHW22 closure anchor: `f9d87f23` (docs(lhw22): close agent intelligence foundations wave). Previous CPG2 staging anchor: `4f509fe4` (docs(cpg2): stage hard gate enforcement packet). Previous CPG-1 implementation anchor: `1ff0354c` (feat(cpg1): extract inbound event contract policy). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `765f16fb306831389fb6782837231f591426c33d` (short: `765f16fb`); parent: `ad5a84357bc5444b5418a7895225ea4f90609c2b`.
+Current implementation anchor: `343b43bd` (fix(governance): require allowed-scope gate remediation). Previous guard-hardening anchor: `765f16fb` (fix(governance): harden lhw closure quality gates). Previous LHW24 closure anchor: `de58adaf` (docs: add lhw24 advisory completions with runtime N/A lanes). Previous LHW23 closure anchor: `62c9db4f` (docs(lhw23): close routing and registry intelligence wave). Previous LHW22 closure anchor: `f9d87f23` (docs(lhw22): close agent intelligence foundations wave). Previous CPG2 staging anchor: `4f509fe4` (docs(cpg2): stage hard gate enforcement packet). Previous CPG-1 implementation anchor: `1ff0354c` (feat(cpg1): extract inbound event contract policy). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
+Current HEAD recorded for this handoff: `343b43bdc8965ef66749fbc3ea57963b81e3837f` (short: `343b43bd`); parent: `38d2ff971abf5d57d7ab7b9023893e1c15358f3f`.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -77,6 +77,20 @@ Recovery (`Human System Harness`). Handoff rotated from V14 to V15.
 
 ## Latest Work / Changes (2026-05-31)
 
+**Allowed-Scope Gate Remediation Protocol ENFORCED** (2026-05-31).
+`fix(governance): require allowed-scope gate remediation` adds the mandatory
+remediation rule to `AGENTS.md`, the autorun workflow standard, the work-order
+template, the closure-quality standard, and
+`governance/compat/check_work_order_dispatch_quality.py`. A dispatched work
+order now means machine-gate failures inside Allowed scope must be repaired and
+rerun, not escalated as operator preference questions. Escalation remains
+reserved for scope expansion, claim-boundary changes, `HOLD_*` release, risk
+changes, public-sync, live/provider proof, secrets/quota, forbidden paths, or
+destructive/irreversible operations. Verification: pre-implementation autorun
+gate PASS; dispatch-quality/public-export/markdown/active-session/file-size
+guards PASS; sample detector catches "do you want me to add N/A to fix
+pre-closure guard failure".
+
 **CPG-1 Inbound Event Contract Guard CLOSED_PASS_BOUNDED** (2026-05-31).
 `cvf.connectionPointEventContractGuard.cpg1.v1` extracts INT1 policy ownership
 to `src/tools/int1-connection-point-policy.ts`, delegates
@@ -132,7 +146,7 @@ Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
 
 ## Active Boundary
 
-Current mode: `lhw24_agent_intelligence_absorption_closed_cpg2_packet_staged`.
+Current mode: `allowed_scope_gate_remediation_protocol_enforced_cpg2_next`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
@@ -264,6 +278,7 @@ public-release readiness claim.
 | --- | --- |
 | Agent Autorun Workflow Control | ENFORCED — pre-dispatch, pre-implementation, pre-closure, pre-push gates |
 | Work Order Closure Quality Gate | ENFORCED — trace matrix, diff gate, closure checklist, machine checks |
+| Allowed-Scope Gate Remediation | ENFORCED — failed machine gates inside Allowed scope must be repaired/rerun, not escalated as operator preference |
 | Work Order Source Verification | ENFORCED — source file + line + symbol for every runtime/source claim |
 | Governed File Size Maintainability | ENFORCED — proactive rotation/splitting at near-threshold |
 | Finding-To-Governance Learning | ENFORCED — defect class + learning lane + disposition required |
@@ -279,7 +294,8 @@ is CLOSED_PASS_BOUNDED at the documentation-only advisory boundary:
 `docs/roadmaps/CVF_LHW22_LHW23_LHW24_AGENT_INTELLIGENCE_ROADMAP_2026-05-31.md`.
 Next allowed move: either open fresh CPG-2 GC-018 for the staged CP2 hard-gate
 packet after operator checkpoint, or prepare the next explicitly authorized
-roadmap. CPG-2 is parked, not canceled; staged packet:
+roadmap. The next CPG-2 worker run must use the allowed-scope mandatory
+remediation protocol. CPG-2 is parked, not canceled; staged packet:
 `docs/roadmaps/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_ROADMAP_2026-05-31.md`
 and
 `docs/work_orders/CVF_WO_CPG2_CP2_HARD_GATE_ENFORCEMENT_2026-05-31.md`.
@@ -300,8 +316,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lhw24_agent_intelligence_absorption_closed_cpg2_packet_staged`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=open fresh CPG-2 GC-018 after operator checkpoint or prepare the next explicitly authorized roadmap;
+Startup acknowledged: current mode=`allowed_scope_gate_remediation_protocol_enforced_cpg2_next`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=open fresh CPG-2 GC-018 after operator checkpoint or prepare the next explicitly authorized roadmap with allowed-scope remediation enforced;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary

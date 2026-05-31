@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-31
 
-Current mode marker: `lhw24_agent_intelligence_absorption_closed_cpg2_packet_staged`
+Current mode marker: `allowed_scope_gate_remediation_protocol_enforced_cpg2_next`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lhw24_agent_intelligence_absorption_closed_cpg2_packet_staged`.
+Current mode: `allowed_scope_gate_remediation_protocol_enforced_cpg2_next`.
 
 Active handoff:
 
@@ -123,6 +123,14 @@ blame. Promote repeated defects from finding to written rule, from rule to
 machine check, and from late machine check to the earliest applicable autorun
 phase gate.
 
+Allowed-scope gate remediation is now mandatory. If an autorun or machine guard
+fails on files/artifacts inside the dispatched work order's Allowed scope, the
+assigned agent must repair and rerun the gate instead of asking the non-coder
+operator whether to perform routine cleanup. Operator escalation is reserved for
+scope expansion, claim-boundary changes, `HOLD_*` release, risk changes,
+public-sync, live/provider proof, secrets/quota, forbidden paths, or destructive
+operations.
+
 IDE-extension multi-provider execution logging is now machine-enforced:
 
 `docs/reference/CVF_IDE_EXTENSION_MULTI_PROVIDER_EXECUTION_LOG_STANDARD_2026-05-29.md`
@@ -188,7 +196,8 @@ is CLOSED_PASS_BOUNDED at the documentation-only advisory boundary:
 
 Next allowed move: either open fresh CPG-2 GC-018 for the staged CP2 hard-gate
 packet after operator checkpoint, or prepare the next explicitly authorized
-roadmap. CPG-2 is parked, not canceled; a staged CPG-2 roadmap/work-order
+roadmap. The CPG-2 worker run must use the allowed-scope mandatory remediation
+protocol. CPG-2 is parked, not canceled; a staged CPG-2 roadmap/work-order
 packet exists but remains held until fresh CPG-2 GC-018 and operator checkpoint:
 
 `docs/roadmaps/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_ROADMAP_2026-05-31.md`
