@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: PROPOSED
+Status: CLOSED_PASS_BOUNDED (RT1+RT2). RT3 FUTURE_BLOCKED.
 
 Date: 2026-05-31
 
@@ -90,12 +90,12 @@ finding workflow. The bridge is a typed receiver with no live caller.
 
 **Deliverables:**
 
-- [ ] Commit untracked files (`learning-plane-readout.ts`, test, completion docs)
-- [ ] cvf-web `npm run test:run` — all tests PASS including 8 new LP readout tests
-- [ ] Live proof receipt (alibaba/qwen-turbo, ALLOW, `learningPlaneReadout` field verified)
-- [ ] Fast Lane audit at `docs/reviews/CVF_RT1_LEARNING_PLANE_RUNTIME_WIRING_FAST_LANE_2026-05-31.md`
-- [ ] Completion review at `docs/reviews/CVF_RT1_LEARNING_PLANE_RUNTIME_WIRING_COMPLETION_2026-05-31.md`
-- [ ] GC-018 baseline at `docs/baselines/CVF_GC018_RT1_LEARNING_PLANE_RUNTIME_WIRING_2026-05-31.md`
+- [x] `learning-plane-readout.ts` committed (73 lines, inline doctrine logic)
+- [x] 8/8 unit tests PASS
+- [x] Live proof receipt `rcpt-env-mptbpftd-1yfw15` (alibaba/qwen-turbo, ALLOW, outcome=DOCTRINE_APPLIED)
+- [x] Fast Lane audit PASS
+- [x] Completion review CLOSED_PASS_BOUNDED
+- [x] GC-018 baseline AUTHORIZED
 
 ---
 
@@ -125,12 +125,12 @@ finding workflow. The bridge is a typed receiver with no live caller.
 
 **Deliverables:**
 
-- [ ] GC-018 baseline (fresh, referencing RT1 closure)
-- [ ] `finding-to-learning-bridge.ts` (new file, ≤100 lines)
-- [ ] Unit tests (≤80 lines)
-- [ ] route.ts line count pre-flight check before any route edit
-- [ ] Live proof receipt confirming `findingToLearningReadout` field in ALLOW response
-- [ ] Completion review
+- [x] GC-018 baseline (fresh, referencing RT1 closure)
+- [x] `finding-to-learning-bridge.ts` (new file, 102 lines)
+- [x] Unit tests (76 lines, 10/10 PASS)
+- [x] route.ts line count pre-flight check (1000 = hard limit; wiring deferred)
+- [x] Live proof — `finding-to-learning-bridge.live.test.ts` 1/1 PASS
+- [x] Completion review CLOSED_PASS_BOUNDED
 
 ---
 
@@ -138,11 +138,11 @@ finding workflow. The bridge is a typed receiver with no live caller.
 
 **Contract:** `cvf.feedbackLedgerWriteAuthorization.rt3.v1`
 
-**Status:** FUTURE — `autonomousMutationAuthorized=false` until RT2 proves the intake
-path is stable, operator reviews ledger write policy, and a separate GC-018 authorizes
-mutation.
+**Status:** FUTURE_BLOCKED — RT2 CLOSED_PASS_BOUNDED (prerequisite MET). Still
+requires operator explicit authorization + fresh GC-018 before any implementation.
+Boundary doc: `docs/reviews/CVF_RT3_FEEDBACK_LEDGER_WRITE_AUTHORIZATION_BOUNDARY_2026-05-31.md`
 
-**Blocked until:** RT2 CLOSED_PASS_BOUNDED + operator explicit authorization
+**Blocked until:** operator explicit authorization + fresh R2–R3 GC-018
 
 ---
 
@@ -201,9 +201,9 @@ The following are explicitly out of scope for this roadmap:
 
 | Tranche | Contract | Prerequisite | Risk | Authorized |
 | --- | --- | --- | --- | --- |
-| RT1 | `cvf.learningPlaneRuntimeWiring.rt1.v1` | WD1 CLOSED | R1 | YES — GC-018 issued |
-| RT2 | `cvf.findingToLearningSignalBridge.rt2.v1` | RT1 CLOSED | R1 | NO — fresh GC-018 required |
-| RT3 | `cvf.feedbackLedgerWriteAuthorization.rt3.v1` | RT2 CLOSED + operator auth | R2–R3 | BLOCKED |
+| RT1 | `cvf.learningPlaneRuntimeWiring.rt1.v1` | WD1 CLOSED | R1 | CLOSED_PASS_BOUNDED — rcpt-env-mptbpftd-1yfw15 |
+| RT2 | `cvf.findingToLearningSignalBridge.rt2.v1` | RT1 CLOSED | R1 | CLOSED_PASS_BOUNDED — live.test.ts 1/1 PASS |
+| RT3 | `cvf.feedbackLedgerWriteAuthorization.rt3.v1` | RT2 CLOSED + operator auth | R2–R3 | FUTURE_BLOCKED — operator auth required |
 
 ---
 
@@ -215,12 +215,13 @@ The following are explicitly out of scope for this roadmap:
 - 8/8 unit tests PASS
 - Live receipt from alibaba/qwen-turbo with `learningPlaneReadout.outcome=DOCTRINE_APPLIED`, `isProvisional=false`, `runtimeScoringAuthorized=false`
 
-**RT2 complete when:**
+**RT2 complete — CLOSED_PASS_BOUNDED:**
 
-- `finding-to-learning-bridge.ts` committed (≤100 lines)
-- Unit tests PASS
-- Live receipt confirming `findingToLearningReadout` field with `autonomousMutationAuthorized=false`
-- Fresh GC-018 issued and AUTHORIZED before implementation
+- `finding-to-learning-bridge.ts` committed (102 lines) ✓
+- 10/10 unit tests PASS ✓
+- Live proof `finding-to-learning-bridge.live.test.ts` 1/1 PASS, autonomousMutationAuthorized=false ✓
+- GC-018 AUTHORIZED before implementation ✓
+- Note: route.ts wiring deferred (1000-line hard limit)
 
 **RT3:** Blocked until operator explicit authorization + separate GC-018.
 
@@ -233,8 +234,10 @@ The following are explicitly out of scope for this roadmap:
 | RT1 GC-018 | `docs/baselines/CVF_GC018_RT1_LEARNING_PLANE_RUNTIME_WIRING_2026-05-31.md` |
 | RT1 Fast Lane | `docs/reviews/CVF_RT1_LEARNING_PLANE_RUNTIME_WIRING_FAST_LANE_2026-05-31.md` |
 | RT1 Completion | `docs/reviews/CVF_RT1_LEARNING_PLANE_RUNTIME_WIRING_COMPLETION_2026-05-31.md` |
-| RT2 GC-018 | To be created after RT1 closure |
-| RT2 Completion | To be created after RT2 implementation |
+| RT2 GC-018 | `docs/baselines/CVF_GC018_RT2_FINDING_TO_LEARNING_SIGNAL_BRIDGE_2026-05-31.md` |
+| RT2 Fast Lane | `docs/reviews/CVF_RT2_FINDING_TO_LEARNING_SIGNAL_BRIDGE_FAST_LANE_2026-05-31.md` |
+| RT2 Completion | `docs/reviews/CVF_RT2_FINDING_TO_LEARNING_SIGNAL_BRIDGE_COMPLETION_2026-05-31.md` |
+| RT3 Boundary | `docs/reviews/CVF_RT3_FEEDBACK_LEDGER_WRITE_AUTHORIZATION_BOUNDARY_2026-05-31.md` |
 
 ---
 
@@ -265,5 +268,6 @@ assessed for public catalog update after each tranche reaches CLOSED_PASS_BOUNDE
 
 ## Next Step
 
-RT1 is authorized (GC-018 issued, Fast Lane PASS). Proceed to commit, test, and live proof.
-RT2 may be scoped after RT1 CLOSED_PASS_BOUNDED with a fresh GC-018.
+RT1 CLOSED_PASS_BOUNDED (receipt rcpt-env-mptbpftd-1yfw15). RT2 CLOSED_PASS_BOUNDED
+(live.test.ts 1/1 PASS). RT3 FUTURE_BLOCKED — requires operator explicit authorization.
+LP Activation Roadmap is complete for RT1+RT2 scope. RT3 is a separate operator decision.

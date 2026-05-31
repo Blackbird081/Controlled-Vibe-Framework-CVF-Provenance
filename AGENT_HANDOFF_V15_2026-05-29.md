@@ -93,7 +93,7 @@ Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
 
 ## Active Boundary
 
-Current mode: `rt1_learning_plane_runtime_wiring_closed_pass_bounded`.
+Current mode: `rt2_finding_to_learning_signal_bridge_closed_pass_bounded`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
@@ -234,8 +234,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rt1_learning_plane_runtime_wiring_closed_pass_bounded`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=LHW20 latest closed wave; RT2 Finding-to-Learning Signal Bridge (fresh GC-018, prereq RT1 CLOSED), or framework adapter tranche (LHW19 T1), or new operator roadmap;
+Startup acknowledged: current mode=`rt2_finding_to_learning_signal_bridge_closed_pass_bounded`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=LHW20 latest closed wave; LP Activation Roadmap RT1+RT2 CLOSED_PASS_BOUNDED; RT3 FUTURE_BLOCKED (operator auth required); framework adapter tranche (LHW19 T1) or new operator roadmap;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary
