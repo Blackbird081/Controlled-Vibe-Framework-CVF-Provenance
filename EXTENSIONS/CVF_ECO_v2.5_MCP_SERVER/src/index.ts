@@ -18,6 +18,7 @@ import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { z } from 'zod';
 import { getMcpToolAuditSnapshot, withMcpToolAudit } from './audit/mcp-tool-audit.js';
+import { emitInt1AgentEvent, validateInt1Plan } from './tools/int1-connection-point-policy.js';
 import {
   createGuardEngine,
   GuardRuntimeEngine,
@@ -767,12 +768,6 @@ server.tool(
 // GC-018: docs/baselines/CVF_GC018_INT1_GENERIC_MCP_ADAPTER_2026-05-31.md
 // runtimeExecutionAuthorized: false — advisory readout only
 
-const INT1_CONTRACT = 'cvf.genericMcpAdapter.int1.v1' as const;
-const INT1_ALLOWED_EVENT_TYPES = new Set([
-  'intent.received', 'plan.created', 'tool.requested',
-  'execution.state', 'result.produced',
-]);
-
 // ─── Tool INT-1-A: cvf_validate_plan ──────────────────────────────────
 // Closes CP2 Plan Validator gap from LHW19 T1.
 
@@ -786,24 +781,8 @@ server.tool(
     planContext: z.string().max(1000).optional().describe('Optional context about the plan purpose'),
   },
   async (args) => withMcpToolAudit('cvf_validate_plan', args as Record<string, unknown>, async () => {
-    const forbiddenPatterns = ['delete_all', 'drop_database', 'rm -rf', 'format_disk'];
-    const forbidden = args.planSteps.filter(step =>
-      forbiddenPatterns.some(p => step.toLowerCase().includes(p))
-    );
-    const riskScore = Math.min(args.planSteps.length * 0.1 + args.toolsRequired.length * 0.2, 3.0);
-    const advisoryDecision = forbidden.length > 0 ? 'REJECT_ADVISORY' : riskScore > 2.0 ? 'REVIEW_RECOMMENDED' : 'ALLOW_ADVISORY';
     return {
-      content: [{ type: 'text' as const, text: JSON.stringify({
-        contractVersion: INT1_CONTRACT,
-        tool: 'cvf_validate_plan',
-        advisoryDecision,
-        planRisk: riskScore.toFixed(2),
-        forbiddenStepsDetected: forbidden,
-        stepCount: args.planSteps.length,
-        toolCount: args.toolsRequired.length,
-        runtimeExecutionAuthorized: false,
-        evaluatedAt: new Date().toISOString(),
-      }, null, 2) }],
+      content: [{ type: 'text' as const, text: JSON.stringify(validateInt1Plan(args), null, 2) }],
     };
   })
 );
@@ -820,31 +799,8 @@ server.tool(
     payload: z.record(z.string(), z.unknown()).describe('Event payload — structure varies by eventType'),
   },
   async (args) => withMcpToolAudit('cvf_emit_agent_event', args as Record<string, unknown>, async () => {
-    const eventType = args.eventType;
-    if (!INT1_ALLOWED_EVENT_TYPES.has(eventType)) {
-      return {
-        content: [{ type: 'text' as const, text: JSON.stringify({
-          contractVersion: INT1_CONTRACT,
-          tool: 'cvf_emit_agent_event',
-          accepted: false,
-          eventType,
-          rejectionReason: `unsupported_event_type: "${eventType}" not in [${[...INT1_ALLOWED_EVENT_TYPES].join(', ')}]`,
-          emittedAt: new Date().toISOString(),
-        }, null, 2) }],
-      };
-    }
-    const eventId = `int1-evt-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`;
     return {
-      content: [{ type: 'text' as const, text: JSON.stringify({
-        contractVersion: INT1_CONTRACT,
-        tool: 'cvf_emit_agent_event',
-        accepted: true,
-        eventType,
-        eventId,
-        agentId: args.agentId,
-        runtimeExecutionAuthorized: false,
-        emittedAt: new Date().toISOString(),
-      }, null, 2) }],
+      content: [{ type: 'text' as const, text: JSON.stringify(emitInt1AgentEvent(args), null, 2) }],
     };
   })
 );

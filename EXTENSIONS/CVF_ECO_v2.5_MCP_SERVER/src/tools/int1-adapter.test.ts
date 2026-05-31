@@ -4,74 +4,17 @@
  */
 
 import { describe, it, expect } from 'vitest';
-
-const INT1_CONTRACT = 'cvf.genericMcpAdapter.int1.v1';
-const ALLOWED_EVENT_TYPES = new Set([
-  'intent.received', 'plan.created', 'tool.requested',
-  'execution.state', 'result.produced',
-]);
-const FORBIDDEN_PATTERNS = ['delete_all', 'drop_database', 'rm -rf', 'format_disk'];
-
-function validatePlan(args: {
-  planSteps: string[];
-  toolsRequired: string[];
-  agentRole: string;
-  planContext?: string;
-}) {
-  const forbidden = args.planSteps.filter(step =>
-    FORBIDDEN_PATTERNS.some(p => step.toLowerCase().includes(p))
-  );
-  const riskScore = Math.min(args.planSteps.length * 0.1 + args.toolsRequired.length * 0.2, 3.0);
-  const advisoryDecision = forbidden.length > 0
-    ? 'REJECT_ADVISORY'
-    : riskScore > 2.0
-      ? 'REVIEW_RECOMMENDED'
-      : 'ALLOW_ADVISORY';
-  return {
-    contractVersion: INT1_CONTRACT,
-    tool: 'cvf_validate_plan',
-    advisoryDecision,
-    planRisk: riskScore.toFixed(2),
-    forbiddenStepsDetected: forbidden,
-    stepCount: args.planSteps.length,
-    toolCount: args.toolsRequired.length,
-    runtimeExecutionAuthorized: false,
-    evaluatedAt: new Date().toISOString(),
-  };
-}
-
-function emitAgentEvent(args: {
-  eventType: string;
-  agentId: string;
-  payload: Record<string, unknown>;
-}) {
-  if (!ALLOWED_EVENT_TYPES.has(args.eventType)) {
-    return {
-      contractVersion: INT1_CONTRACT,
-      tool: 'cvf_emit_agent_event',
-      accepted: false,
-      eventType: args.eventType,
-      rejectionReason: `unsupported_event_type: "${args.eventType}"`,
-      emittedAt: new Date().toISOString(),
-    };
-  }
-  return {
-    contractVersion: INT1_CONTRACT,
-    tool: 'cvf_emit_agent_event',
-    accepted: true,
-    eventType: args.eventType,
-    eventId: `int1-evt-test`,
-    agentId: args.agentId,
-    runtimeExecutionAuthorized: false,
-    emittedAt: new Date().toISOString(),
-  };
-}
+import {
+  emitInt1AgentEvent,
+  INT1_CONTRACT,
+  validateInt1Plan,
+} from './int1-connection-point-policy';
 
 // ─── cvf_validate_plan ────────────────────────────────────────────────
 
 describe('cvf_validate_plan', () => {
   it('returns ALLOW_ADVISORY for safe plan', () => {
-    const result = validatePlan({
+    const result = validateInt1Plan({
       planSteps: ['read spec', 'write module'],
       toolsRequired: ['file_read', 'file_write'],
       agentRole: 'AI_AGENT',
@@ -83,7 +26,7 @@ describe('cvf_validate_plan', () => {
   });
 
   it('returns REJECT_ADVISORY when plan contains forbidden step', () => {
-    const result = validatePlan({
+    const result = validateInt1Plan({
       planSteps: ['read spec', 'delete_all user data'],
       toolsRequired: ['file_read'],
       agentRole: 'AI_AGENT',
@@ -93,7 +36,7 @@ describe('cvf_validate_plan', () => {
   });
 
   it('returns REVIEW_RECOMMENDED for high-risk plan', () => {
-    const result = validatePlan({
+    const result = validateInt1Plan({
       planSteps: Array.from({ length: 10 }, (_, i) => `step_${i}`),
       toolsRequired: Array.from({ length: 10 }, (_, i) => `tool_${i}`),
       agentRole: 'ORCHESTRATOR',
@@ -103,7 +46,7 @@ describe('cvf_validate_plan', () => {
   });
 
   it('always sets runtimeExecutionAuthorized to false', () => {
-    const result = validatePlan({
+    const result = validateInt1Plan({
       planSteps: ['step1'],
       toolsRequired: ['tool1'],
       agentRole: 'OPERATOR',
@@ -116,7 +59,7 @@ describe('cvf_validate_plan', () => {
 
 describe('cvf_emit_agent_event', () => {
   it('accepts valid event type intent.received', () => {
-    const result = emitAgentEvent({
+    const result = emitInt1AgentEvent({
       eventType: 'intent.received',
       agentId: 'agent-01',
       payload: { intent: 'build feature' },
@@ -129,13 +72,13 @@ describe('cvf_emit_agent_event', () => {
   it('accepts all 5 valid event types', () => {
     const events = ['intent.received', 'plan.created', 'tool.requested', 'execution.state', 'result.produced'];
     for (const eventType of events) {
-      const result = emitAgentEvent({ eventType, agentId: 'agent-01', payload: {} });
+      const result = emitInt1AgentEvent({ eventType, agentId: 'agent-01', payload: {} });
       expect(result.accepted).toBe(true);
     }
   });
 
   it('rejects unknown event type', () => {
-    const result = emitAgentEvent({
+    const result = emitInt1AgentEvent({
       eventType: 'unknown.event',
       agentId: 'agent-01',
       payload: {},
@@ -145,7 +88,7 @@ describe('cvf_emit_agent_event', () => {
   });
 
   it('always sets runtimeExecutionAuthorized to false', () => {
-    const result = emitAgentEvent({
+    const result = emitInt1AgentEvent({
       eventType: 'tool.requested',
       agentId: 'agent-01',
       payload: { tool: 'file_read' },
