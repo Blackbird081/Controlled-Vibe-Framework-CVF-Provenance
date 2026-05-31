@@ -122,7 +122,8 @@ Completed:
 | `python scripts/build_cvf_important_rescan_manifest.py --check-only --expected-manifest-hash 815c9144e51dd0e72e8543410d976ef165bba505f08e5d92d0e632fb43115e8f` | PASS | current filesystem matches snapshot |
 | `python governance/compat/check_corpus_completeness_report_integrity.py --base e074082c --head HEAD --enforce` | PASS | GC-047 aligned |
 | `python governance/compat/check_corpus_to_knowledge_map_reconciliation.py --base e074082c --head HEAD --enforce` | PASS | GC-048 aligned |
-| `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base e074082c --head HEAD` | PASS | full range verified at closure-preview sync HEAD `72d9ebd4`; clean worktree |
+| `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base e074082c --head HEAD` | PASS | full range verified at closure-sync HEAD `28d85533`; clean worktree |
+| `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-push --base e074082c --head HEAD` | PASS | provenance remote verified; local pre-push hook `49/49` PASS at `28d85533`; no push performed |
 
 ## Evidence Trace Block
 
@@ -165,6 +166,9 @@ DEFERRED_PRIVATE_ONLY
 Reason: private provenance Legacy reconciliation only. The public-sync clone
 remains untouched and no public catalog artifact is claimed.
 
+Public catalog update: `N/A with reason`: this private-only reconciliation adds
+no public CVF product capability.
+
 ## Closure Checklist
 
 - [x] GC-018 packet exists.
@@ -173,7 +177,7 @@ remains untouched and no public catalog artifact is claimed.
 - [x] Folder and semantic-region arithmetic reconciled.
 - [x] GC-047 and GC-048 direct checker runs pass on committed range.
 - [x] Autorun pre-closure passes on committed range.
-- [x] Pre-push remains required only before a later push.
+- [x] Autorun pre-push passes on committed range; no push performed.
 - [x] Continuity synchronized.
 
 ## Claim Boundary
