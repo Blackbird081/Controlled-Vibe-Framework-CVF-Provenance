@@ -227,8 +227,8 @@ describe('audit-memory-receipt', () => {
             createControlledMemoryGatewayContract: () => ({ capture }),
         }));
 
-        const module = await import('./audit-memory-receipt');
-        module.buildAuditMemoryReceipt({
+        const auditMemoryModule = await import('./audit-memory-receipt');
+        auditMemoryModule.buildAuditMemoryReceipt({
             governanceReceiptId: 'gr-004',
             actorId: 'actor-004',
             actorRole: 'BUILDER',
@@ -268,8 +268,8 @@ describe('audit-memory-receipt', () => {
             },
         }));
 
-        const module = await import('./audit-memory-receipt');
-        const result = module.buildRouteAuditMemoryCapture({
+        const auditMemoryModule = await import('./audit-memory-receipt');
+        const result = auditMemoryModule.buildRouteAuditMemoryCapture({
             governanceReceiptId: 'gr-005',
             actorId: 'actor-005',
             actorRole: 'SERVICE_AGENT',

@@ -1,6 +1,6 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
 import { FINDING_TO_LEARNING_BRIDGE_VERSION } from '@/lib/finding-to-learning-bridge';
-import { LEARNING_PLANE_READOUT_ROUTE_VERSION } from './route';
+import { LEARNING_PLANE_READOUT_ROUTE_VERSION } from './route-constants';
 
 const verifySessionCookieMock = vi.hoisted(() => vi.fn());
 vi.mock('@/lib/middleware-auth', () => ({
@@ -22,7 +22,7 @@ const validInput = {
   evidenceBasis: 'check_finding_to_governance_learning.py',
 };
 
-function makeReq(body: unknown, authed = true) {
+function makeReq(body: unknown) {
   return new Request('http://localhost/api/learning-plane/readout', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -67,6 +67,11 @@ describe('/api/learning-plane/readout', () => {
 
   it('returns 400 on missing required fields', async () => {
     const res = await POST(makeReq({ sourceId: 'only-this' }) as never);
+    expect(res.status).toBe(400);
+  });
+
+  it('returns 400 on invalid taxonomy values', async () => {
+    const res = await POST(makeReq({ ...validInput, lane: 'MADE_UP_LANE' }) as never);
     expect(res.status).toBe(400);
   });
 

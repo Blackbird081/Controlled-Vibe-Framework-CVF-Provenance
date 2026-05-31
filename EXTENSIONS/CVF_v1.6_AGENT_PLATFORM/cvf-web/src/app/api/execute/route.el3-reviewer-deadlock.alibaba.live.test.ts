@@ -109,7 +109,7 @@ describe.skipIf(!ALIBABA_API_KEY)(
               skillPreflightDeclaration: 'SKILL PREFLIGHT PASS: EL-3 advisory readout proof only. No implementation.',
             }),
             headers: { 'Content-Type': 'application/json' },
-          }),
+          }) as never,
         );
 
         const body = await response.json();

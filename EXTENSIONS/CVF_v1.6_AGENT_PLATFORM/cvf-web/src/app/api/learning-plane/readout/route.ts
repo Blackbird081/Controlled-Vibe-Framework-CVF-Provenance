@@ -6,9 +6,42 @@ import {
 } from '@/lib/finding-to-learning-bridge';
 import { verifyServiceTokenRequest } from '@/lib/service-token-auth';
 import { verifySessionCookie } from '@/lib/middleware-auth';
+import { LEARNING_PLANE_READOUT_ROUTE_VERSION } from './route-constants';
 
-export const LEARNING_PLANE_READOUT_ROUTE_VERSION =
-  "cvf.learningPlaneReadoutRoute.rt3.v1";
+const LEARNING_SIGNAL_LANES = [
+  'GOVERNANCE_CONTROL_PLANE',
+  'RUNTIME_BEHAVIOR_LEARNING',
+  'PROVIDER_OUTPUT_LEARNING',
+  'COST_ECONOMICS_LEARNING',
+  'DOCUMENTATION_ONLY_LEARNING',
+] as const;
+
+const LEARNING_SIGNAL_DEFECT_CLASSES = [
+  'WORKER_EXECUTION_ERROR',
+  'ORCHESTRATOR_PACKET_GAP',
+  'RULE_GAP',
+  'MACHINE_GATE_GAP',
+  'PHASE_GATE_PLACEMENT_GAP',
+  'OPERATOR_SCOPE_CLARITY_GAP',
+  'RUNTIME_SIGNAL_GAP',
+] as const;
+
+const LEARNING_SIGNAL_SEVERITIES = ['critical', 'high', 'medium', 'low'] as const;
+
+const LEARNING_SIGNAL_DISPOSITIONS = [
+  'RULE_EXISTS',
+  'RULE_ADDED',
+  'MACHINE_CHECK_ADDED',
+  'MACHINE_CHECK_CANDIDATE',
+  'PHASE_GATE_PLACEMENT_GAP',
+  'DESIGN_REVIEW_REQUIRED',
+  'RUNTIME_LEARNING_CANDIDATE',
+  'N/A_WITH_REASON',
+] as const;
+
+function isOneOf<T extends string>(value: unknown, allowed: readonly T[]): value is T {
+  return typeof value === 'string' && (allowed as readonly string[]).includes(value);
+}
 
 function extractBody(raw: unknown): FindingToLearningInput | null {
   if (!raw || typeof raw !== 'object') return null;
@@ -17,14 +50,24 @@ function extractBody(raw: unknown): FindingToLearningInput | null {
     typeof b.sourceId !== 'string' ||
     typeof b.sourceArtifact !== 'string' ||
     typeof b.sourceSummary !== 'string' ||
-    typeof b.lane !== 'string' ||
-    typeof b.defectClass !== 'string' ||
-    typeof b.severity !== 'string' ||
-    typeof b.disposition !== 'string' ||
+    !isOneOf(b.lane, LEARNING_SIGNAL_LANES) ||
+    !isOneOf(b.defectClass, LEARNING_SIGNAL_DEFECT_CLASSES) ||
+    !isOneOf(b.severity, LEARNING_SIGNAL_SEVERITIES) ||
+    !isOneOf(b.disposition, LEARNING_SIGNAL_DISPOSITIONS) ||
     typeof b.nextControlAction !== 'string' ||
     typeof b.evidenceBasis !== 'string'
   ) return null;
-  return b as unknown as FindingToLearningInput;
+  return {
+    sourceId: b.sourceId,
+    sourceArtifact: b.sourceArtifact,
+    sourceSummary: b.sourceSummary,
+    lane: b.lane,
+    defectClass: b.defectClass,
+    severity: b.severity,
+    disposition: b.disposition,
+    nextControlAction: b.nextControlAction,
+    evidenceBasis: b.evidenceBasis,
+  };
 }
 
 export async function POST(request: NextRequest) {
@@ -70,7 +113,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       {
         success: false,
-        error: 'Missing required fields: sourceId, sourceArtifact, sourceSummary, lane, defectClass, severity, disposition, nextControlAction, evidenceBasis.',
+        error: 'Missing or invalid fields: sourceId, sourceArtifact, sourceSummary, lane, defectClass, severity, disposition, nextControlAction, evidenceBasis.',
       },
       { status: 400 },
     );

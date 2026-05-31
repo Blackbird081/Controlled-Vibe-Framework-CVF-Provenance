@@ -2,7 +2,7 @@
 // Confirms findingToLearningReadout field with autonomousMutationAuthorized=false.
 import { describe, expect, it, vi, beforeEach } from 'vitest';
 import { FINDING_TO_LEARNING_BRIDGE_VERSION } from '@/lib/finding-to-learning-bridge';
-import { LEARNING_PLANE_READOUT_ROUTE_VERSION } from './route';
+import { LEARNING_PLANE_READOUT_ROUTE_VERSION } from './route-constants';
 
 const verifySessionCookieMock = vi.hoisted(() => vi.fn());
 vi.mock('@/lib/middleware-auth', () => ({

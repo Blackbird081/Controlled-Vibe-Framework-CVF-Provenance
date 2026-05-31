@@ -38,6 +38,42 @@ Governance policy:
 - [`CVF_INCREMENTAL_TEST_LOG_ROTATION_GUARD.md`](../governance/toolkit/05_OPERATION/CVF_INCREMENTAL_TEST_LOG_ROTATION_GUARD.md)
 - Compat check: `python governance/compat/check_test_doc_compat.py --enforce`
 
+---
+## [2026-05-31] Batch: Public Sync Quality Hardening
+
+- Change reference:
+  - Completion review:
+    `docs/reviews/CVF_PUBLIC_SYNC_QUALITY_HARDENING_COMPLETION_2026-05-31.md`
+  - Guard changed:
+    `governance/compat/check_governed_file_size.py`
+  - Route helper added:
+    `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route-response-readouts.ts`
+- Tests/proofs executed:
+  - `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 07aa9bd7 --head HEAD`
+    -> PASS.
+  - `python governance/compat/test_check_governed_file_size.py` -> PASS,
+    6 tests.
+  - `python governance/compat/check_governed_file_size.py --enforce` ->
+    PASS; route.ts 999 lines with source rotation evidence.
+  - `npm run check` in `cvf-web` -> PASS.
+  - `npm run lint -- --quiet` in `cvf-web` -> PASS, 0 errors and
+    5 pre-existing warnings.
+  - `npx vitest run src/app/api/learning-plane/readout/route.test.ts src/lib/finding-to-learning-bridge.test.ts src/app/api/execute/route.rw1-finding-to-learning.alibaba.live.test.ts --reporter=dot`
+    -> PASS, 3 files / 18 tests; live receipt `rcpt-env-mpthwt8t-iqlgcr`.
+  - `npx vitest run src/app/api/learning-plane/readout/route.test.ts src/app/api/learning-plane/readout/route.rt3.live.test.ts --reporter=dot`
+    -> PASS, 2 files / 8 tests.
+  - `npx vitest run --exclude "**/*.live.test.ts" --reporter=dot` ->
+    PASS, 233 files / 2891 passed / 2 skipped.
+  - `npm run build` in `cvf-web` -> PASS after moving the RT3 route version
+    constant out of the Next route module; pre-existing `source-map-support`
+    warning remains.
+- Depth classification:
+  - T1/T2 local quality hardening plus live route-shape regression proof.
+- Notes/Risks:
+  - This prepares the private code subset for public-sync selection.
+  - No public push, hosted readiness, production readiness, public catalog
+    export, or autonomous learning mutation is claimed by this batch.
+
 ## Protocol / Contract / Requirements
 
 Every new entry must record the changed scope, commands run, result, skipped

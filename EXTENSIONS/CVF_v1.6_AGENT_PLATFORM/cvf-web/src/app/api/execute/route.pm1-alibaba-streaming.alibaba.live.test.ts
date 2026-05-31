@@ -110,7 +110,7 @@ describe.skipIf(!ALIBABA_API_KEY)(
               skillPreflightDeclaration: 'SKILL PREFLIGHT PASS: PM-1 stream capability proof only. No implementation.',
             }),
             headers: { 'Content-Type': 'application/json' },
-          }),
+          }) as never,
         );
 
         const body = await response.json();

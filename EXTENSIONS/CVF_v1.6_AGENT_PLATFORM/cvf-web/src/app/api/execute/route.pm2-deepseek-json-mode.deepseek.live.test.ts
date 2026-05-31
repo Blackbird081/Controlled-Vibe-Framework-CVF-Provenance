@@ -105,7 +105,7 @@ describe.skipIf(!DEEPSEEK_API_KEY)(
               skillPreflightDeclaration: 'SKILL PREFLIGHT PASS: PM-2 json_mode capability proof only. No implementation.',
             }),
             headers: { 'Content-Type': 'application/json' },
-          }),
+          }) as never,
         );
 
         const body = await response.json();
