@@ -17,8 +17,8 @@ Active private provenance continuity for the current CVF repository. Use only
 with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
-Current implementation anchor: `1aa89f1f` (feat(cpg2): add connection point enforce mode and gc018). Previous guard-hardening anchor: `765f16fb` (fix(governance): harden lhw closure quality gates). Previous LHW24 closure anchor: `de58adaf` (docs: add lhw24 advisory completions with runtime N/A lanes). Previous LHW23 closure anchor: `62c9db4f` (docs(lhw23): close routing and registry intelligence wave). Previous LHW22 closure anchor: `f9d87f23` (docs(lhw22): close agent intelligence foundations wave). Previous CPG2 staging anchor: `4f509fe4` (docs(cpg2): stage hard gate enforcement packet). Previous CPG-1 implementation anchor: `1ff0354c` (feat(cpg1): extract inbound event contract policy). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `1aa89f1fc1860c2426a8e80272d1e4be5a6d72b4` (short: `1aa89f1f`); parent: `7b94befe2a7c6cdbf62cdf4e3c083b9df6d69212`.
+Current implementation anchor: `ab120d16` (feat(cpg2): add connection point enforce mode and gc018). Previous guard-hardening anchor: `765f16fb` (fix(governance): harden lhw closure quality gates). Previous LHW24 closure anchor: `de58adaf` (docs: add lhw24 advisory completions with runtime N/A lanes). Previous LHW23 closure anchor: `62c9db4f` (docs(lhw23): close routing and registry intelligence wave). Previous LHW22 closure anchor: `f9d87f23` (docs(lhw22): close agent intelligence foundations wave). Previous CPG2 staging anchor: `4f509fe4` (docs(cpg2): stage hard gate enforcement packet). Previous CPG-1 implementation anchor: `1ff0354c` (feat(cpg1): extract inbound event contract policy). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
+Current HEAD recorded for this handoff: `ab120d16b81d212dff799d8d997a048a43fefb48` (short: `ab120d16`); parent: `7b94befe2a7c6cdbf62cdf4e3c083b9df6d69212`.
 
 ## Latest Work / Changes (2026-05-30)
 

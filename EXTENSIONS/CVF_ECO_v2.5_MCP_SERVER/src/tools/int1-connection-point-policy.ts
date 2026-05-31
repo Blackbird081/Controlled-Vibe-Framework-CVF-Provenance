@@ -77,7 +77,7 @@ function buildConnectionPointProgressionDecision(
       progressionDisposition: 'ADVISORY_ONLY',
       acceptedForProgression: false,
       requiresReview: advisoryDecision === 'REVIEW_RECOMMENDED',
-      blocked: advisoryDecision === 'REJECT_ADVISORY',
+      blocked: false,
       reason: 'advisory_mode',
       modeWarning,
     };

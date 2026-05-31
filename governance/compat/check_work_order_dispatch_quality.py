@@ -1096,6 +1096,61 @@ def _validate_single_work_order_scope_range(changed_files: list[str]) -> list[di
     ]
 
 
+def _is_runtime_or_source_change(path: str) -> bool:
+    normalized = path.replace("\\", "/")
+    if normalized.endswith(".md") or normalized.endswith(".json"):
+        return False
+    return normalized.startswith(("EXTENSIONS/", "scripts/", "sdk/", "governance/compat/"))
+
+
+def _validate_runtime_changes_against_referenced_work_orders(changed_files: list[str]) -> list[dict[str, Any]]:
+    normalized_files = sorted(path.replace("\\", "/") for path in changed_files)
+    runtime_changed = [path for path in normalized_files if _is_runtime_or_source_change(path)]
+    if not runtime_changed:
+        return []
+
+    referenced_work_orders: set[str] = set()
+    referring_artifacts: dict[str, set[str]] = {}
+    for path in normalized_files:
+        if not _is_target(path):
+            continue
+        text = _read_rel(path)
+        for work_order_path in _extract_paths(text):
+            normalized_work_order = work_order_path.replace("\\", "/")
+            if normalized_work_order.startswith("docs/work_orders/"):
+                referenced_work_orders.add(normalized_work_order)
+                referring_artifacts.setdefault(normalized_work_order, set()).add(path)
+
+    for path in normalized_files:
+        if path.startswith("docs/work_orders/") and "/archive/" not in path:
+            referenced_work_orders.add(path)
+            referring_artifacts.setdefault(path, set()).add(path)
+
+    violations: list[dict[str, Any]] = []
+    for work_order_path in sorted(referenced_work_orders):
+        work_order_text = _read_rel(work_order_path)
+        if not work_order_text:
+            continue
+        status = _extract_status(work_order_text)
+        if not _is_hold_status(status):
+            continue
+        sample_runtime = ", ".join(runtime_changed[:6])
+        suffix = "" if len(runtime_changed) <= 6 else f", ... (+{len(runtime_changed) - 6} more)"
+        referrers = ", ".join(sorted(referring_artifacts.get(work_order_path, set()))[:4])
+        violations.append(
+            {
+                "path": work_order_path,
+                "issues": [
+                    "changed range includes runtime/source files while referenced work order "
+                    f"`{work_order_path}` is still `{status}`; release/downgrade the work order "
+                    "before implementation. Runtime/source sample: "
+                    f"{sample_runtime}{suffix}. Referring artifact(s): {referrers or 'unknown'}"
+                ],
+            }
+        )
+    return violations
+
+
 def _validate_lhw_wave_closure_range(
     changed_files: list[str],
     base_ref: str | None = None,
@@ -1223,6 +1278,7 @@ def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str
         violations.append({"path": path, "issues": issues})
     violations.extend(_validate_single_work_order_scope_range(changed_files))
     violations.extend(_validate_lhw_wave_closure_range(changed_files, base_ref=base_ref))
+    violations.extend(_validate_runtime_changes_against_referenced_work_orders(changed_files))
 
     required_markers = {
         STANDARD_PATH: (

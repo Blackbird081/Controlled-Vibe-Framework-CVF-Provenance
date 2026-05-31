@@ -207,6 +207,12 @@ dispatchable". Closed baselines, roadmaps, completion reviews, and connector
 specs that cite a work order must cite a closed work order whose own closure
 checklist has no unresolved residue.
 
+Runtime/source edits require a released work order. If the changed range
+contains implementation files and a cited or governing work order remains
+`HOLD_*`, `DRAFT`, or `PROPOSED`, the range is not dispatchable or closable.
+The agent must release/update the work order through the authority chain before
+implementation, or split/revert the runtime change.
+
 ### 6. Continuity Sync Gate
 
 If the task changes current mode, handoff status, roadmap status, public-sync
@@ -294,7 +300,8 @@ This standard is enforced by:
   specs with false line-count threshold claims, and Source Verification symbol
   cells containing value assignments or type annotations. It also hard-fails
   governed artifacts that record allowed-scope machine-gate remediation as an
-  operator preference checkpoint.
+  operator preference checkpoint, and ranges that pair runtime/source edits
+  with a still-held governing work order.
 - `governance/compat/check_public_export_disposition.py`, which hard-fails
   changed active roadmap closures, final wave completion packets, and public
   catalog claims that lack a public export disposition or that claim public

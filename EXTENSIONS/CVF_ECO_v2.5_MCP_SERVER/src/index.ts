@@ -773,7 +773,7 @@ server.tool(
 
 server.tool(
   'cvf_validate_plan',
-  'Advisory plan validation gate (CP2). Evaluates plan steps and required tools against CVF risk and forbidden-action policy. Returns advisory decision — does NOT block execution. runtimeExecutionAuthorized=false.',
+  'CP2 plan validation gate. Defaults to advisory readout; optional enforce mode returns a bounded owned-connection-point progression decision. Does not authorize provider execution. runtimeExecutionAuthorized=false.',
   {
     planSteps: z.array(z.string()).describe('List of planned execution steps'),
     toolsRequired: z.array(z.string()).describe('Tools the plan intends to call'),

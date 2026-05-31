@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: HOLD_PENDING_FRESH_GC018_OPERATOR_CHECKPOINT
+Status: IMPLEMENTED_PENDING_RELEASE_PROOF
 
 docType: roadmap
 
@@ -10,13 +10,13 @@ Date: 2026-05-31
 
 ## Purpose
 
-Stage CPG-2 while LHW22-LHW24 agent-intelligence work proceeds separately.
-CPG-2 will be the bounded runtime follow-up to CPG-1: define and implement a
+Track CPG-2 after operator implementation authorization. CPG-2 is the bounded
+runtime follow-up to CPG-1: define and implement a
 reversible `connectionPointMode` for CP2 plan validation at the CVF-owned INT1
 connection point.
 
-This roadmap is not dispatch authority. It is a source-verified staging packet
-for later GC-018 authorization and operator checkpoint.
+Fresh GC-018 and operator checkpoint are satisfied. Runtime implementation is
+present but closure remains pending release-quality governance proof.
 
 ## Scope / Target / Owner Boundary
 
@@ -53,11 +53,12 @@ Forbidden scope:
 
 ## Authorization / Decision
 
-Decision: `HOLD_PENDING_FRESH_GC018_OPERATOR_CHECKPOINT`.
+Decision: `IMPLEMENTED_PENDING_RELEASE_PROOF`.
 
-CPG-1 is closed. CPG-2 may be planned but not implemented until a fresh CPG-2
-GC-018 baseline, source-fidelity review, work order, operator checkpoint, and
-autorun pre-dispatch/pre-implementation gates all pass.
+CPG-1 is closed. CPG-2 implementation proceeded after fresh CPG-2 GC-018 and
+operator checkpoint. The roadmap must not be marked `CLOSED_PASS_BOUNDED` until
+the release-quality governance proof completes and a completion review records
+the final closure evidence.
 
 ## Predecessor Evidence
 
@@ -125,14 +126,14 @@ separate future roadmap changes that invariant.
 
 | Tranche | Status | Scope |
 |---|---|---|
-| CPG-2.A | HOLD | Fresh GC-018, source verification, operator checkpoint |
-| CPG-2.B | HOLD | Typed mode and progression decision in INT1 owner module |
-| CPG-2.C | HOLD | MCP registration compatibility and focused tests |
-| CPG-2.D | HOLD | Release-quality live governance proof and completion review |
+| CPG-2.A | PASS | Fresh GC-018, source verification, operator checkpoint |
+| CPG-2.B | PASS | Typed mode and progression decision in INT1 owner module |
+| CPG-2.C | PASS | MCP registration compatibility and focused tests |
+| CPG-2.D | BLOCKED_TIMEOUT | Release-quality live governance proof and completion review |
 
 ## Non-Goals
 
-- No implementation in this staging batch.
+- No CPG-2 closure until release-quality governance proof completes.
 - No web `/api/execute/route.ts` edit.
 - No CPG-3 receipt enrichment.
 - No provider routing, prompt, model, memory, or Learning Plane mutation.
@@ -145,11 +146,11 @@ separate future roadmap changes that invariant.
 
 | Step | Status | Output |
 |---|---|---|
-| 1. Stage roadmap and work order | IN_PROGRESS | This roadmap and the paired CPG-2 work order |
-| 2. File fresh CPG-2 GC-018 | HOLD | New GC-018 with current source verification |
-| 3. Release operator checkpoint | HOLD | Explicit operator approval for runtime implementation |
-| 4. Implement bounded mode semantics | HOLD | INT1 owner module and focused tests |
-| 5. Close with live proof | HOLD | Completion review plus release-quality governance bundle |
+| 1. Stage roadmap and work order | PASS | This roadmap and the paired CPG-2 work order |
+| 2. File fresh CPG-2 GC-018 | PASS | New GC-018 with current source verification |
+| 3. Release operator checkpoint | PASS | Explicit operator approval for runtime implementation |
+| 4. Implement bounded mode semantics | PASS | INT1 owner module and focused tests |
+| 5. Close with live proof | BLOCKED_TIMEOUT | Completion review plus release-quality governance bundle |
 
 ## Acceptance Criteria
 
@@ -201,10 +202,10 @@ python scripts/run_cvf_release_gate_bundle.py --json
 
 DEFERRED_PRIVATE_ONLY
 
-Private staging packet only. Public-sync is not authorized.
+Reason: Private staging packet only. Public-sync is not authorized.
 
 ## Claim Boundary
 
-This roadmap stages CPG-2. It does not authorize implementation, close CPG-2,
-prove enforce-mode behavior, prove universal framework bypass prevention,
-modify receipts, change providers, or publish public artifacts.
+This roadmap tracks implemented CPG-2 code pending release-quality proof. It
+does not close CPG-2, prove universal framework bypass prevention, modify
+receipts, change providers, authorize CPG-3, or publish public artifacts.

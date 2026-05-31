@@ -169,6 +169,31 @@ def _head_changed_path(rel_path: str) -> bool:
     return rel_path.replace("\\", "/") in changed
 
 
+def _head_changed_paths() -> set[str]:
+    try:
+        result = subprocess.run(
+            ["git", "diff-tree", "--no-commit-id", "--name-only", "-r", "HEAD"],
+            cwd=REPO_ROOT,
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return set()
+    return {line.strip().replace("\\", "/") for line in result.stdout.splitlines() if line.strip()}
+
+
+def _is_session_sync_path(path: str) -> bool:
+    normalized = path.replace("\\", "/")
+    return (
+        normalized == "CVF_SESSION_MEMORY.md"
+        or normalized == "CVF_SESSION/ACTIVE_SESSION_STATE.json"
+        or normalized == "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json"
+        or normalized.startswith("AGENT_HANDOFF")
+        or normalized.startswith("CVF_SESSION/handoffs/")
+    )
+
+
 def _root_handoff_paths() -> list[Path]:
     return sorted(REPO_ROOT.glob("AGENT_HANDOFF*.md"))
 
@@ -433,6 +458,7 @@ def _classify() -> dict[str, Any]:
     head_sha_in_handoff: bool | None = None  # None = check skipped (git unavailable)
     parent_sha_in_handoff = False
     active_handoff_changed_in_head = False
+    handoff_sync_commit_only = False
     if head_sha and active_handoff:
         handoff_path = REPO_ROOT / active_handoff
         if handoff_path.exists():
@@ -442,16 +468,20 @@ def _classify() -> dict[str, Any]:
                 head_sha in handoff_text or head_sha[:8] in handoff_text
             )
             active_handoff_changed_in_head = _head_changed_path(active_handoff)
+            head_changed_paths = _head_changed_paths()
+            handoff_sync_commit_only = bool(head_changed_paths) and all(
+                _is_session_sync_path(path) for path in head_changed_paths
+            )
             if parent_sha:
                 parent_sha_in_handoff = parent_sha in handoff_text or parent_sha[:8] in handoff_text
             if (
                 not head_sha_in_handoff
-                and not (active_handoff_changed_in_head and parent_sha_in_handoff)
+                and not (active_handoff_changed_in_head and parent_sha_in_handoff and handoff_sync_commit_only)
             ):
                 handoff_violations.append(
                     f"active handoff does not contain current HEAD SHA {head_sha[:8]} "
                     f"({head_sha}) or, for a handoff-sync commit, parent SHA "
-                    f"{parent_sha[:8] if parent_sha else 'unknown'} — update the handoff HEAD block after every commit "
+                    f"{parent_sha[:8] if parent_sha else 'unknown'} in a dedicated session-sync-only commit — update the handoff HEAD block after every commit "
                     "(GC-020 In-Place Update Rule)"
                 )
 
@@ -514,6 +544,7 @@ def _classify() -> dict[str, Any]:
         "headShaInHandoff": head_sha_in_handoff,
         "parentShaInHandoff": parent_sha_in_handoff,
         "activeHandoffChangedInHead": active_handoff_changed_in_head,
+        "handoffSyncCommitOnly": handoff_sync_commit_only,
         "compliant": compliant,
     }
 
@@ -544,17 +575,20 @@ def _print_report(report: dict[str, Any]) -> None:
         parent_sha = report.get("parentSha")
         parent_in_handoff = report.get("parentShaInHandoff")
         handoff_changed = report.get("activeHandoffChangedInHead")
+        sync_only = report.get("handoffSyncCommitOnly")
         sync_status = (
             "present"
             if head_in_handoff
             else (
                 "parent-present-for-sync-commit"
+                if handoff_changed and parent_in_handoff and sync_only
+                else "parent-present-but-not-dedicated-sync-commit"
                 if handoff_changed and parent_in_handoff
                 else ("MISSING" if head_in_handoff is False else "skipped")
             )
         )
         print(f"HEAD SHA in handoff: {head_sha[:8]} — {sync_status}")
-        if parent_sha and handoff_changed and parent_in_handoff and not head_in_handoff:
+        if parent_sha and handoff_changed and parent_in_handoff and sync_only and not head_in_handoff:
             print(f"Parent SHA in handoff: {parent_sha[:8]} — present (handoff sync commit)")
 
     if report["missingFiles"]:

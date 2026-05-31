@@ -36,6 +36,9 @@ describe('cvf_validate_plan', () => {
     });
     expect(result.advisoryDecision).toBe('REJECT_ADVISORY');
     expect(result.forbiddenStepsDetected).toContain('delete_all user data');
+    expect(result.connectionPointMode).toBe('advisory');
+    expect(result.connectionPointProgression.progressionDisposition).toBe('ADVISORY_ONLY');
+    expect(result.connectionPointProgression.blocked).toBe(false);
   });
 
   it('returns REVIEW_RECOMMENDED for high-risk plan', () => {
@@ -70,11 +73,10 @@ describe('cvf_validate_plan', () => {
       connectionPointMode: 'enforce',
     });
     expect(result.connectionPointMode).toBe('enforce');
-    expect(result.connectionPointProgression.progressionDisposition === 'REVIEW_HOLD' || result.connectionPointProgression.progressionDisposition === 'ALLOW_PROGRESSION').toBe(true);
-    if (result.connectionPointProgression.progressionDisposition === 'REVIEW_HOLD') {
-      expect(result.connectionPointProgression.requiresReview).toBe(true);
-      expect(result.connectionPointProgression.acceptedForProgression).toBe(false);
-    }
+    expect(result.advisoryDecision).toBe('REVIEW_RECOMMENDED');
+    expect(result.connectionPointProgression.progressionDisposition).toBe('REVIEW_HOLD');
+    expect(result.connectionPointProgression.requiresReview).toBe(true);
+    expect(result.connectionPointProgression.acceptedForProgression).toBe(false);
   });
 
   it('maps enforce mode reject to block progression', () => {

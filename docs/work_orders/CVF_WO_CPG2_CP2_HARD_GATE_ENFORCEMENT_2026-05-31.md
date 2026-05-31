@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: HOLD_PENDING_FRESH_GC018_OPERATOR_CHECKPOINT
+Status: IMPLEMENTED_PENDING_RELEASE_PROOF
 
 docType: work_order
 
@@ -10,13 +10,13 @@ Date: 2026-05-31
 
 ## Purpose
 
-Stage the future CPG-2 implementation packet while LHW22-LHW24 work proceeds
-in parallel. CPG-2 will add a bounded `connectionPointMode` to CP2 plan
+Track the CPG-2 implementation packet after hold release. CPG-2 adds a bounded
+`connectionPointMode` to CP2 plan
 validation so the owned INT1 connection point can remain advisory by default
 and optionally hold/block progression in enforce mode.
 
-This work order is not dispatchable until a fresh CPG-2 GC-018 and explicit
-operator checkpoint exist.
+Fresh CPG-2 GC-018 and explicit operator checkpoint are satisfied. Closure is
+still blocked until release-quality governance proof completes.
 
 ## Scope / Target / Owner Boundary
 
@@ -53,7 +53,8 @@ requires a new work order.
 | CPG-2 roadmap | `docs/roadmaps/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_ROADMAP_2026-05-31.md` | ACCEPT |
 | Parent CPG roadmap | `docs/roadmaps/CVF_CONNECTION_POINT_GUARD_ENFORCEMENT_ROADMAP_2026-05-31.md` | ACCEPT |
 | CPG-1 completion | `docs/reviews/CVF_CPG1_INBOUND_EVENT_CONTRACT_GUARD_COMPLETION_2026-05-31.md` | ACCEPT |
-| Fresh CPG-2 GC-018 | Not created in this staging batch | HOLD |
+| Fresh CPG-2 GC-018 | `docs/baselines/CVF_GC018_CPG2_CP2_HARD_GATE_ENFORCEMENT_2026-05-31.md` | ACCEPT |
+| Operator checkpoint | 2026-05-31 operator authorized CPG-2 implementation from the staged packet | ACCEPT |
 
 ## Agent Roles
 
@@ -75,7 +76,8 @@ requires a new work order.
 
 ## Pre-Flight Checks
 
-Do not implement while this order is on HOLD.
+Initial hold has been released for CPG-2 implementation. Do not claim closure
+while release-quality governance proof is unavailable.
 
 After a fresh CPG-2 GC-018 and operator checkpoint exist, capture a non-empty
 base and run:
@@ -189,24 +191,23 @@ universal framework bypass prevention.
 
 | Item | Resolution |
 |---|---|
-| Fresh GC-018 verified | HOLD |
-| Operator checkpoint verified | HOLD |
-| Source Verification Block refreshed | HOLD |
-| Runtime freshness table refreshed | HOLD |
-| Closure Diff Gate completed | HOLD |
-| Release-quality live governance proof completed | HOLD |
+| Fresh GC-018 verified | PASS |
+| Operator checkpoint verified | PASS |
+| Source Verification Block refreshed | PASS |
+| Runtime freshness table refreshed | PASS |
+| Closure Diff Gate completed | PASS |
+| Release-quality live governance proof completed | BLOCKED_TIMEOUT |
 
 ## Return-To-Orchestrator Conditions
 
-Return this order if the fresh GC-018 is missing, the operator checkpoint is
-missing, any source path differs, enforce semantics are ambiguous, live proof is
-unavailable, or implementation requires web route, receipt, provider,
+Return this order if any source path differs, enforce semantics are ambiguous,
+release-quality proof remains unavailable, or implementation requires web route, receipt, provider,
 public-sync, or framework-adapter changes.
 
 ## Operator Checkpoint
 
-PENDING. The operator has authorized staging the roadmap and work order, not
-runtime implementation.
+SATISFIED. The operator authorized CPG-2 implementation from the staged roadmap
+and work order on 2026-05-31.
 
 ## Public Export Disposition
 
@@ -217,6 +218,7 @@ authorized.
 
 ## Claim Boundary
 
-This work order stages CPG-2 only. It does not authorize implementation, prove
-hard-gate enforcement, change runtime behavior, add receipt trace fields,
-publish public artifacts, or claim universal bypass prevention.
+This work order tracks CPG-2 implementation pending release-quality proof. It
+does not close CPG-2, add receipt trace fields, change provider behavior,
+authorize public-sync, prove hosted/production readiness, or prove universal
+bypass-prevention claims.

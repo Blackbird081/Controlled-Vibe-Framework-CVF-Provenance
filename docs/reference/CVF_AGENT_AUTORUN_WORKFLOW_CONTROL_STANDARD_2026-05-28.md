@@ -239,6 +239,8 @@ Closure is blocked when:
 - any closed-equivalent work order still contains checklist rows marked
   `HOLD`, `PENDING`, or `READY_FOR_DISPATCH`, or stale prose saying the order is
   still on hold or not ready for worker execution;
+- the changed range contains runtime/source files while the governing or cited
+  work order is still `HOLD_*`, `DRAFT`, or `PROPOSED`;
 - any closed baseline, roadmap, completion review, or connector spec cites a
   work order that is not closed or still contains unresolved closure residue;
 - a closed roadmap still carries stale dispatch residue such as
@@ -350,6 +352,7 @@ This standard does not:
 | Latest LHW closure is missing from front door, `nextAllowedMove`, or active handoff | Sync continuity surfaces before claiming or accepting closure. |
 | Closed artifact contains `| OPEN |` or unchecked `- [ ]` residue | Finalize the work-order/roadmap/review checklist or downgrade status to `HOLD_*`/`BLOCKED`. |
 | Closed work order contains `HOLD`, `PENDING`, or dispatch-blocking prose | Convert the item to `PASS`, `N/A with reason`, or downgrade the work order out of closed status. |
+| Runtime/source files changed while cited work order is still `HOLD_*` | Release/update the work order through the required authority chain before implementation, or revert/split the runtime change. |
 | Closed roadmap still says `WORK_ORDER_READY` or `HOLD until` | Replace dispatch planning text with final per-tranche closure status. |
 | Fast Lane audit status conflicts with pass/approve disposition | Align the status with the final disposition before closure. |
 | Single-work-order diff includes files outside Allowed scope | Split unrelated cleanup into a separate governed batch or return to Orchestrator. |
