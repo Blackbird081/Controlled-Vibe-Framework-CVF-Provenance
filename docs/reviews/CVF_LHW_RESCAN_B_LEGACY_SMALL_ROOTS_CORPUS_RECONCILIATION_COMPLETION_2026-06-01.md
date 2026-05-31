@@ -123,8 +123,8 @@ Completed:
 | `python scripts/build_legacy_rescan_b_manifest.py --check-only --expected-manifest-hash 093a0d7b67b8526b9dbed8c74ca2313f567f40b8bdfd4d864cf198852f34a851` | PASS | current filesystem matches snapshot |
 | `python governance/compat/check_corpus_completeness_report_integrity.py --base f5b3ef16 --head HEAD --enforce` | PASS | GC-047 aligned |
 | `python governance/compat/check_corpus_to_knowledge_map_reconciliation.py --base f5b3ef16 --head HEAD --enforce` | PASS | GC-048 aligned |
-| `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base f5b3ef16 --head HEAD` | PASS | full committed range verified at draft-sync HEAD `92fe9173`; rerun after final continuity sync |
-| `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-push --base f5b3ef16 --head HEAD` | PASS | provenance remote and local pre-push hook chain verified at `92fe9173`; no push requested |
+| `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base f5b3ef16 --head HEAD` | PASS | full committed range verified at final closure-sync HEAD `fcb7cb31`; clean worktree |
+| `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-push --base f5b3ef16 --head HEAD` | PASS | provenance remote verified; local pre-push hook chain `49/49` PASS at `fcb7cb31`; no push requested |
 
 ## Evidence Trace Block
 
