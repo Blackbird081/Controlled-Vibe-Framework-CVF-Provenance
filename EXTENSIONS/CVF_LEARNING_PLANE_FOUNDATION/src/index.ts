@@ -927,6 +927,19 @@ export type {
   A6RollbackInput,
   AdaptationPolicyInput,
 } from "./adaptation-policy-engine";
+// SE1 Simulation Environment (LHW17 T3 Step 8)
+export {
+  SIMULATION_ENVIRONMENT_VERSION,
+  runSimulation,
+  SIMULATION_SCENARIO_HEALTHY,
+} from "./simulation-environment";
+export type {
+  SimulationVerdict,
+  SimulationScenario,
+  SimulationStepResult,
+  SimulationValidationResult,
+  SimulationEnvironmentDependencies,
+} from "./simulation-environment";
 // RM1 Reputation Routing Advisory (LHW17 T3 Step 7)
 export {
   REPUTATION_ROUTING_ADVISORY_VERSION,
