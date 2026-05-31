@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-30
 
-Current mode marker: `lplp2_learning_plane_live_proof_confidence_07_closed_pass_bounded`
+Current mode marker: `wd1_truthscore_weighting_doctrine_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lplp2_learning_plane_live_proof_confidence_07_closed_pass_bounded`.
+Current mode: `wd1_truthscore_weighting_doctrine_closed_pass_bounded`.
 
 Active handoff:
 

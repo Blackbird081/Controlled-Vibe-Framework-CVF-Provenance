@@ -17,7 +17,7 @@ Active private provenance continuity for the current CVF repository. Use only
 with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
-Current closure anchor: `da852a1f` (feat(lplp2): Learning Plane Live Proof Sessions 2-7 CLOSED_PASS_BOUNDED). Parent governed closure anchor: `09362e30` (feat(lplp1)). Derive the current HEAD live with `git rev-parse --short HEAD` when needed. Parent governed closure anchor: `46ca9f4f` (feat(se1+is1)). Derive the current HEAD live with `git rev-parse --short HEAD` when needed. Parent governed closure anchor: `bfc542fc` (feat(rm1): Reputation Routing Advisory Step 7). Derive the current HEAD live with `git rev-parse --short HEAD` when needed. Parent governed closure anchor: `5155bc45` (feat(tm1): Truth Model Calibration Step 6). Derive the current HEAD live with `git rev-parse --short HEAD` when needed. Parent governed closure anchor: `161ea531` (feat(ape1): Adaptation Policy Engine A1-A6). Derive the current HEAD live with `git rev-parse --short HEAD` when needed. Parent governed closure anchor: `306b63c6` (feat(cbg1): Context Budget Guard). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
+Current closure anchor: `0141bfcf` (feat(wd1): TruthScore Weighting Doctrine CLOSED_PASS_BOUNDED). Parent governed closure anchor: `da852a1f` (feat(lplp2)). Derive the current HEAD live with `git rev-parse --short HEAD` when needed. Parent governed closure anchor: `09362e30` (feat(lplp1)). Derive the current HEAD live with `git rev-parse --short HEAD` when needed. Parent governed closure anchor: `46ca9f4f` (feat(se1+is1)). Derive the current HEAD live with `git rev-parse --short HEAD` when needed. Parent governed closure anchor: `bfc542fc` (feat(rm1): Reputation Routing Advisory Step 7). Derive the current HEAD live with `git rev-parse --short HEAD` when needed. Parent governed closure anchor: `5155bc45` (feat(tm1): Truth Model Calibration Step 6). Derive the current HEAD live with `git rev-parse --short HEAD` when needed. Parent governed closure anchor: `161ea531` (feat(ape1): Adaptation Policy Engine A1-A6). Derive the current HEAD live with `git rev-parse --short HEAD` when needed. Parent governed closure anchor: `306b63c6` (feat(cbg1): Context Budget Guard). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -93,7 +93,7 @@ Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
 
 ## Active Boundary
 
-Current mode: `lplp2_learning_plane_live_proof_confidence_07_closed_pass_bounded`.
+Current mode: `wd1_truthscore_weighting_doctrine_closed_pass_bounded`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
@@ -234,7 +234,7 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lplp2_learning_plane_live_proof_confidence_07_closed_pass_bounded`;
+Startup acknowledged: current mode=`wd1_truthscore_weighting_doctrine_closed_pass_bounded`;
 active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=LHW17 T3 Step 7 Reputation Model tranche (separate GC-018), Integration SDK adapter (LHW19 T1), or operator roadmap;
 parked checkpoint=VI5-T4/T5 hosted retest.
 

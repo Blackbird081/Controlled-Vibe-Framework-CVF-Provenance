@@ -35,8 +35,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "lplp2_learning_plane_live_proof_confidence_07_closed_pass_bounded",
-  "previousMode": "lplp1_learning_plane_live_proof_closed_pass_bounded",
+  "currentMode": "wd1_truthscore_weighting_doctrine_closed_pass_bounded",
+  "previousMode": "lplp2_learning_plane_live_proof_confidence_07_closed_pass_bounded",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -117,6 +117,7 @@
   ],
   "lhw19CvfRestructureAbsorptionWave": "CLOSED_PASS_BOUNDED. T1 cvf.integrationArchitectureControlPointsAdvisory.lhw19.t1.v1 — 4 integration points + 5 control points (CP1-CP5) mapped to CVF owner surfaces; adapter layer rejected from wave (doc-only scope). T2 cvf.eventModelGovernanceAdvisory.lhw19.t2.v1 — 5 events (intent/plan/tool/execution/result) mapped to CVF receipt lifecycle; event bus rejected from wave. T3 cvf.strategicCompassAdvisory.lhw19.t3.v1 — canonical mission + 3 focuses + anti-focus + phase timeline advisory; Phase 2/3 locked as FUTURE. All doc-only; runtimeExecutionAuthorized=false. Source: .private_reference/legacy/CVF_Restructure/. GC-018 docs/baselines/CVF_GC018_LHW19_CVF_RESTRUCTURE_ABSORPTION_WAVE_2026-05-30.md.",
   "lhw18CvfEditAbsorptionWave": "CLOSED_PASS_BOUNDED. T1 cvf.failureSimulationGapMapAdvisory.lhw18.t1.v1 — 5-scenario gap-map (Architecture/Spec/Hallucination/Multi-Agent/Scale); T2 cvf.cvfPositioningGovernanceLayerAdvisory.lhw18.t2.v1 — CVF=Governance Layer not Agent OS, framework neutrality, Integration SDK rejected from wave; T3 cvf.contextManagementStrategyAdvisory.lhw18.t3.v1 — task scope minimization + Context Budget Guard (MACHINE_CHECK_CANDIDATE) + Progressive Disclosure confirmed as existing behavior. All doc-only; runtimeExecutionAuthorized=false. Source: .private_reference/legacy/CVF Edit/. GC-018 docs/baselines/CVF_GC018_LHW18_CVF_EDIT_ABSORPTION_WAVE_2026-05-30.md.",
+  "wd1TruthScoreWeightingDoctrine": "CLOSED_PASS_BOUNDED. cvf.truthScoreWeightingDoctrine.wd1.v1 — applyWeightingDoctrine(). DOCTRINE_APPLIED when confidence>=0.7 -> isProvisional=false. Weights: 25/25/25/25. Gate derived from LP-LP2 (7 sessions). 70 files, 1677/1677 PASS. GC-018 docs/baselines/CVF_GC018_WD1_TRUTHSCORE_WEIGHTING_DOCTRINE_2026-05-31.md.",
   "lplp2LearningPlaneLiveProof": "CLOSED_PASS_BOUNDED. cvf.learningPlaneLiveProof.lplp2.v1 — 6 sessions S2-S7 (all ALLOW alibaba/qwen-turbo/R1). 7 total insights, confidence=0.7, TruthScore 86/100 STRONG (PROVISIONAL). Weighting doctrine DEFERRED. GC-018 parent: CVF_GC018_LPLP1.",
   "lplp1LearningPlaneLiveProof": "CLOSED_PASS_BOUNDED. cvf.learningPlaneLiveProof.lplp1.v1 — rcpt-env-mpt1w4ya-r45xzf (alibaba/qwen-turbo/ALLOW/R1). PatternInsight(ACCEPT,HEALTHY)->TruthScore~55/100(ADEQUATE,PROVISIONAL)->RoutingAdvisory(PROCEED). liveProofProven=true. LHW17 T3 live-proof prerequisite SATISFIED. GC-018 docs/baselines/CVF_GC018_LPLP1_LEARNING_PLANE_LIVE_PROOF_2026-05-31.md.",
   "se1SimulationEnvironment": "CLOSED_PASS_BOUNDED. cvf.simulationEnvironment.se1.v1 — runSimulation() APE-1->TM1->RM1 dry-run pipeline. Verdict VALIDATED/DEGRADED/BLOCKED. LHW17 T3 Step 8 FINAL. 69 LPF files, 1665/1665 PASS. TypeScript PASS. GC-018 docs/baselines/CVF_GC018_SE1_SIMULATION_ENVIRONMENT_2026-05-31.md.",
