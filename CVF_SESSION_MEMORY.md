@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-01
 
-Current mode marker: `ccg1_corpus_completeness_report_integrity_guard_active_implementation`
+Current mode marker: `ccg1_corpus_completeness_report_integrity_guard_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `ccg1_corpus_completeness_report_integrity_guard_active_implementation`.
+Current mode: `ccg1_corpus_completeness_report_integrity_guard_closed_pass_bounded`.
 
 Active handoff:
 
@@ -231,10 +231,11 @@ is CLOSED_PASS_BOUNDED at the documentation-only advisory boundary:
 
 `docs/roadmaps/CVF_LHW22_LHW23_LHW24_AGENT_INTELLIGENCE_ROADMAP_2026-05-31.md`
 
-Next allowed move: CPG-1, CPG-2, and CPG-3 are CLOSED_PASS_BOUNDED. CCG-1
-Corpus Completeness And Report Integrity Guard is ACTIVE_IMPLEMENTATION under
-explicit operator authorization. Finish checker wiring, audit correction,
-continuity sync, and governance verification before opening LHW-RESCAN-A.
+Next allowed move: CPG-1, CPG-2, CPG-3, and CCG-1 are CLOSED_PASS_BOUNDED.
+Open `LHW-RESCAN-A` with a fresh GC-018 packet and apply `GC-047` before any
+new Legacy absorption claim. Enumerate all 24 `CVF_Important/` subfolders,
+reconcile the prior 13-folder record, and extract the 11 omitted subfolders
+with file-level manifest, terminal ledger, and honest completeness verdict.
 CPG-2 is CLOSED_PASS_BOUNDED with
 release-quality proof:
 

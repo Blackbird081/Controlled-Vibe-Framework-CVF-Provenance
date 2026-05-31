@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: ACTIVE_IMPLEMENTATION
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -35,7 +35,7 @@ Forbidden scope:
 
 ## Authorization / Decision
 
-Decision: ACTIVE_IMPLEMENTATION.
+Decision: CLOSED_PASS_BOUNDED.
 
 Operator authorized implementation on 2026-06-01 after confirming that the
 control must cover future folder/file-based reporting, extraction, comparison,
@@ -53,11 +53,11 @@ and execution tasks, not only CVF legacy absorption.
 | Step | Status | Output |
 | --- | --- | --- |
 | Stage authority packet | PASS | GC-018, roadmap, work order |
-| Add standard and operational guard | IN_PROGRESS | reference standard + `GC-047` |
-| Implement checker and focused tests | PENDING | compat script + tests |
-| Wire earliest applicable gates | PENDING | autorun + hooks + CI + front doors |
-| Repair legacy audit and continuity drift | PENDING | corrected counts + current state |
-| Verify and close | PENDING | focused tests, governance gates, completion review |
+| Add standard and operational guard | PASS | reference standard + `GC-047` |
+| Implement checker and focused tests | PASS | compat script + tests |
+| Wire earliest applicable gates | PASS | autorun + hooks + CI + front doors |
+| Repair legacy audit and continuity drift | PASS | corrected counts + current state |
+| Verify and close | PASS | focused tests, governance gates, completion review |
 
 ## Acceptance Criteria
 
@@ -85,6 +85,7 @@ python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure 
 | --- | --- | --- | --- | --- |
 | Agent may report from a silently incomplete bounded corpus | `MACHINE_GATE_GAP` | `GOVERNANCE_CONTROL_PLANE` | `MACHINE_CHECK_ADDED` | Add `GC-047`, checker, and earliest gate wiring |
 | Legacy-specific wording is too narrow for user project work | `RULE_GAP` | `GOVERNANCE_CONTROL_PLANE` | `RULE_ADDED` | Generalize to folder/file-based corpus tasks |
+| Runtime/provider/cost behavior | `DOCUMENTATION_GAP` | `DOCUMENTATION_ONLY_LEARNING` | `N/A_WITH_REASON` - roadmap is repository-governance-only | No runtime/provider/cost control mutation |
 
 ## Public Export Disposition
 
@@ -98,3 +99,10 @@ this roadmap.
 This roadmap delivers report-integrity evidence controls. It does not prove
 semantic correctness for every source file and does not absorb Legacy content.
 
+## Closure Decision
+
+Decision: `CLOSED_PASS_BOUNDED`.
+
+Completion review:
+
+`docs/reviews/CVF_CCG1_CORPUS_COMPLETENESS_REPORT_INTEGRITY_GUARD_COMPLETION_2026-06-01.md`

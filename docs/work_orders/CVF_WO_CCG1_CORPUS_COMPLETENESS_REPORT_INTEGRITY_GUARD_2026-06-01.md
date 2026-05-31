@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: APPROVED_FOR_EXECUTION
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -21,11 +21,35 @@ Allowed scope:
 - `governance/toolkit/05_OPERATION/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_GUARD.md`
 - `governance/compat/check_corpus_completeness_report_integrity.py`
 - `governance/compat/test_check_corpus_completeness_report_integrity.py`
+- `governance/compat/check_work_order_dispatch_quality.py`
+- `governance/compat/test_check_work_order_dispatch_quality.py`
 - `governance/compat/check_finding_to_governance_learning.py`
-- autorun, local hook, documentation workflow, GC-018 template, policy,
-  control-matrix, README, KB, AGENTS, CLAUDE, session memory/state, active
-  handoff, CCG-1 governance artifacts, completion review, and legacy audit
-  accuracy corrections required by this guard batch.
+- `governance/compat/run_agent_autorun_workflow_gate.py`
+- `governance/compat/run_local_governance_hook_chain.py`
+- `.github/workflows/documentation-testing.yml`
+- `AGENTS.md`
+- `AGENT_HANDOFF_V15_2026-05-29.md`
+- `CLAUDE.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/REQUIRED_STARTUP_GUARDS.md`
+- `CVF_SESSION_MEMORY.md`
+- `README.md`
+- `docs/CVF_CORE_KNOWLEDGE_BASE.md`
+- `docs/INDEX.md`
+- `docs/audits/CVF_LEGACY_SCAN_COMPLETENESS_FAILURE_AUDIT_2026-06-01.md`
+- `docs/baselines/CVF_GC018_CCG1_CORPUS_COMPLETENESS_REPORT_INTEGRITY_GUARD_2026-06-01.md`
+- `docs/reference/CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28.md`
+- `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
+- `docs/reference/CVF_GC018_CONTINUATION_CANDIDATE_TEMPLATE.md`
+- `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md`
+- `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-06-01.md`
+- `docs/reference/CVF_SESSION_GOVERNANCE_BOOTSTRAP.md`
+- `docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md`
+- `docs/reference/README.md`
+- `docs/roadmaps/CVF_CCG1_CORPUS_COMPLETENESS_REPORT_INTEGRITY_GUARD_ROADMAP_2026-06-01.md`
+- `docs/work_orders/CVF_WO_CCG1_CORPUS_COMPLETENESS_REPORT_INTEGRITY_GUARD_2026-06-01.md`
+- `docs/reviews/CVF_CCG1_CORPUS_COMPLETENESS_REPORT_INTEGRITY_GUARD_COMPLETION_2026-06-01.md`
+- `governance/toolkit/02_POLICY/CVF_MASTER_POLICY.md`
 
 Forbidden scope:
 
@@ -164,10 +188,10 @@ semantic understanding rather than evidence discipline.
 | Fresh GC-018 filed | PASS |
 | Operator authorization captured | PASS |
 | Source Verification Block completed | PASS |
-| Checker and tests implemented | PENDING |
-| Hook, CI, autorun bindings verified | PENDING |
-| Audit and continuity remediation verified | PENDING |
-| Completion review filed | PENDING |
+| Checker and tests implemented | PASS |
+| Hook, CI, autorun bindings verified | PASS |
+| Audit and continuity remediation verified | PASS |
+| Completion review filed | PASS |
 
 ## Return-To-Orchestrator Conditions
 
@@ -190,3 +214,21 @@ this work order.
 This work order authorizes corpus-evidence governance hardening only. It does
 not authorize Legacy concept implementation or prove perfect semantic
 understanding.
+
+## Closure Diff Gate
+
+| Surface | Evidence | Resolution |
+| --- | --- | --- |
+| Allowed changed-file scope | `git diff --name-status fe29b4d6 f078fe91` | PASS |
+| Standard, guard, checker, tests | committed implementation diff | PASS |
+| Hook, CI, autorun bindings | corpus checker binding scan | PASS |
+| Audit correction | filesystem recount evidence in Legacy audit | PASS |
+| Continuity sync | active-session compatibility gate | PASS |
+
+## Closure Decision
+
+Decision: `CLOSED_PASS_BOUNDED`.
+
+Completion review:
+
+`docs/reviews/CVF_CCG1_CORPUS_COMPLETENESS_REPORT_INTEGRITY_GUARD_COMPLETION_2026-06-01.md`

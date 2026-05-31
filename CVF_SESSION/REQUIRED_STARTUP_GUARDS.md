@@ -72,13 +72,12 @@ Before material governed work, state or internally confirm:
 ## Current Stop Boundary
 
 The current mode is
-`ccg1_corpus_completeness_report_integrity_guard_active_implementation`.
+`ccg1_corpus_completeness_report_integrity_guard_closed_pass_bounded`.
 
-CCG-1 governance hardening is the only active implementation tranche. Legacy
-rescan waves remain blocked until the corpus-completeness checker, wiring,
-audit correction, continuity sync, and verification close. New runtime
-contracts and public claims of coherent governed capability runtime remain
-blocked unless separately authorized.
+CCG-1 governance hardening is closed. `LHW-RESCAN-A` may open only with a fresh
+GC-018 packet and `GC-047` corpus evidence. New runtime contracts and public
+claims of coherent governed capability runtime remain blocked unless
+separately authorized.
 
 ## Enforcement And Verification
 

@@ -41,6 +41,7 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
                     "Negative And Fail-Condition Scan",
                     "Current Runtime Freshness Verification",
                     "ACCEPT_AS_OWNER_MAP coverage",
+                    "Mandatory Gate-Failure Remediation Protocol",
                     MODULE.THIS_SCRIPT_PATH,
                 ]
             ),
@@ -53,6 +54,7 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
                     "Roadmap-To-Work-Order Trace Matrix",
                     "Current Runtime Freshness Verification",
                     "ACCEPT_AS_OWNER_MAP coverage",
+                    "Mandatory Gate-Failure Remediation Protocol",
                     MODULE.THIS_SCRIPT_PATH,
                 ]
             ),
@@ -630,6 +632,30 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
         self.assertTrue(
             any("outside its Allowed scope" in issue and archive in issue for issue in scope_issues)
         )
+
+    def test_closed_work_order_allows_explicit_root_governance_path(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_ROOT_GOVERNANCE_TEST_2026-06-01.md"
+        root_governance_path = "AGENTS.md"
+        self._write(root_governance_path, "# Agent instructions\n")
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: CLOSED_PASS_BOUNDED",
+                    "## Scope",
+                    "Allowed scope:",
+                    f"- Update `{root_governance_path}`.",
+                    "Forbidden scope:",
+                    "- Other root files.",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order, root_governance_path])
+
+        self.assertTrue(report["compliant"])
 
     def test_closed_lhw_roadmap_requires_full_wave_range_fails(self) -> None:
         roadmap = "docs/roadmaps/CVF_LHW12_TEST_ROADMAP_2026-05-29.md"
