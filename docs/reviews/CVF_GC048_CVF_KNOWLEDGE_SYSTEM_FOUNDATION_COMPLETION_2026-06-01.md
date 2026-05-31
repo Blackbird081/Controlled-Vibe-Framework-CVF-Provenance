@@ -92,6 +92,8 @@ Completed:
 | `python governance/compat/check_guard_authoring_standard.py --base 15a45832 --head HEAD --enforce` | PASS | revised GC-047 and new GC-048 guard compliant |
 | `python governance/compat/check_governed_file_size.py --enforce` | PASS | no violations |
 | `python governance/compat/check_active_session_state.py --enforce` | PASS | nine startup guards aligned before closure sync |
+| `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base 15a45832 --head HEAD` | PASS | full GC-048 range verified at closure-sync HEAD `0ebf30d8`; clean worktree |
+| `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-push --base 15a45832 --head HEAD` | PASS | provenance remote verified; local pre-push hook `49/49` PASS; no push performed |
 
 ## Evidence Trace Block
 
