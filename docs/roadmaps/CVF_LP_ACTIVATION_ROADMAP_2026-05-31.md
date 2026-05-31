@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: CLOSED_PASS_BOUNDED (RT1+RT2). RT3 FUTURE_BLOCKED.
+Status: CLOSED_PASS_BOUNDED (RT1+RT2+RT3).
 
 Date: 2026-05-31
 
@@ -138,11 +138,14 @@ finding workflow. The bridge is a typed receiver with no live caller.
 
 **Contract:** `cvf.feedbackLedgerWriteAuthorization.rt3.v1`
 
-**Status:** FUTURE_BLOCKED — RT2 CLOSED_PASS_BOUNDED (prerequisite MET). Still
-requires operator explicit authorization + fresh GC-018 before any implementation.
+**Status:** CLOSED_PASS_BOUNDED — Operator authorized 2026-05-31. New route
+`/api/learning-plane/readout` POST endpoint implemented, 6/6 unit tests PASS,
+1/1 live proof PASS, `autonomousMutationAuthorized=false` always.
 Boundary doc: `docs/reviews/CVF_RT3_FEEDBACK_LEDGER_WRITE_AUTHORIZATION_BOUNDARY_2026-05-31.md`
+GC-018: `docs/baselines/CVF_GC018_RT3_FEEDBACK_LEDGER_WRITE_AUTHORIZATION_2026-05-31.md`
 
-**Blocked until:** operator explicit authorization + fresh R2–R3 GC-018
+Note: RT3 implements the advisory readout surface only. Full feedback ledger
+mutation requires a separate future R2–R3 GC-018 + operator checkpoint.
 
 ---
 
@@ -203,7 +206,7 @@ The following are explicitly out of scope for this roadmap:
 | --- | --- | --- | --- | --- |
 | RT1 | `cvf.learningPlaneRuntimeWiring.rt1.v1` | WD1 CLOSED | R1 | CLOSED_PASS_BOUNDED — rcpt-env-mptbpftd-1yfw15 |
 | RT2 | `cvf.findingToLearningSignalBridge.rt2.v1` | RT1 CLOSED | R1 | CLOSED_PASS_BOUNDED — live.test.ts 1/1 PASS |
-| RT3 | `cvf.feedbackLedgerWriteAuthorization.rt3.v1` | RT2 CLOSED + operator auth | R2–R3 | FUTURE_BLOCKED — operator auth required |
+| RT3 | `cvf.learningPlaneReadoutRoute.rt3.v1` | RT2 CLOSED + operator auth | R1 | CLOSED_PASS_BOUNDED — new /api/learning-plane/readout route |
 
 ---
 
@@ -223,7 +226,12 @@ The following are explicitly out of scope for this roadmap:
 - GC-018 AUTHORIZED before implementation ✓
 - Note: route.ts wiring deferred (1000-line hard limit)
 
-**RT3:** Blocked until operator explicit authorization + separate GC-018.
+**RT3 complete — CLOSED_PASS_BOUNDED:**
+
+- New `/api/learning-plane/readout` POST route (87 lines) ✓
+- 6/6 unit tests PASS ✓
+- 1/1 live proof PASS, `autonomousMutationAuthorized=false` ✓
+- Operator explicit auth 2026-05-31 ✓
 
 ---
 
@@ -238,6 +246,9 @@ The following are explicitly out of scope for this roadmap:
 | RT2 Fast Lane | `docs/reviews/CVF_RT2_FINDING_TO_LEARNING_SIGNAL_BRIDGE_FAST_LANE_2026-05-31.md` |
 | RT2 Completion | `docs/reviews/CVF_RT2_FINDING_TO_LEARNING_SIGNAL_BRIDGE_COMPLETION_2026-05-31.md` |
 | RT3 Boundary | `docs/reviews/CVF_RT3_FEEDBACK_LEDGER_WRITE_AUTHORIZATION_BOUNDARY_2026-05-31.md` |
+| RT3 GC-018 | `docs/baselines/CVF_GC018_RT3_FEEDBACK_LEDGER_WRITE_AUTHORIZATION_2026-05-31.md` |
+| RT3 Fast Lane | `docs/reviews/CVF_RT3_LEARNING_PLANE_READOUT_ROUTE_FAST_LANE_2026-05-31.md` |
+| RT3 Completion | `docs/reviews/CVF_RT3_LEARNING_PLANE_READOUT_ROUTE_COMPLETION_2026-05-31.md` |
 
 ---
 
@@ -269,5 +280,6 @@ assessed for public catalog update after each tranche reaches CLOSED_PASS_BOUNDE
 ## Next Step
 
 RT1 CLOSED_PASS_BOUNDED (receipt rcpt-env-mptbpftd-1yfw15). RT2 CLOSED_PASS_BOUNDED
-(live.test.ts 1/1 PASS). RT3 FUTURE_BLOCKED — requires operator explicit authorization.
-LP Activation Roadmap is complete for RT1+RT2 scope. RT3 is a separate operator decision.
+(1/1 live proof PASS). RT3 CLOSED_PASS_BOUNDED (1/1 live proof PASS, operator explicit auth
+2026-05-31). LP Activation Roadmap fully complete — RT1+RT2+RT3 all closed.
+Future: feedback ledger write mutation requires separate R2–R3 GC-018 + operator checkpoint.

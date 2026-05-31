@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-05-31
 
-Current mode marker: `rt2_finding_to_learning_signal_bridge_closed_pass_bounded`
+Current mode marker: `rt3_learning_plane_readout_route_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `rt2_finding_to_learning_signal_bridge_closed_pass_bounded`.
+Current mode: `rt3_learning_plane_readout_route_closed_pass_bounded`.
 
 Active handoff:
 
@@ -181,7 +181,7 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LHW20 is the latest closed LHW wave (T1/T2/T3 CLOSED_PASS_BOUNDED). LP Activation Roadmap RT1+RT2 CLOSED_PASS_BOUNDED. RT1: `learningPlaneReadout` live in `/api/execute`, receipt `rcpt-env-mptbpftd-1yfw15`. RT2: `buildFindingToLearningRecord()` closes finding-guard→intake-bridge gap, live.test.ts 1/1 PASS, autonomousMutationAuthorized=false. RT3 FUTURE_BLOCKED (operator auth required). All legacy scan folders absorbed.
+LHW20 is the latest closed LHW wave. LP Activation Roadmap RT1+RT2+RT3 ALL CLOSED_PASS_BOUNDED. RT1: `learningPlaneReadout` live in `/api/execute` (receipt rcpt-env-mptbpftd-1yfw15). RT2: `buildFindingToLearningRecord()` advisory module, 1/1 live proof PASS. RT3: new `/api/learning-plane/readout` HTTP route, 1/1 live proof PASS, autonomousMutationAuthorized=false. All legacy scan folders absorbed.
 
 Parked checkpoints:
 
