@@ -17,7 +17,7 @@ Active private provenance continuity for the current CVF repository. Use only
 with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
-Current closure anchor: `86797138` (docs(lhw21): add closure-prep work order). Parent governed closure anchor: `ed23b65e` (fix(governance): correct GC-022 memory class markers on LHW21 artifacts). Prior parents: `e7015b9c` (fix(build)), `ed2161ff` (docs(quality)), `eb34b27f` (chore(quality)), `07aa9bd7` (docs(rw1)), `0256d266` (feat(rw1)), `c6556d35` (feat(rt2+rt3)), `7919ca92` (feat(rt1)). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
+Current closure anchor: `4759c640` (docs(lhw21): close connection point advisory wave). Parent governed closure anchor: `86797138` (docs(lhw21): add closure-prep work order). Prior parents: `ed23b65e` (fix(governance)), `e7015b9c` (fix(build)), `ed2161ff` (docs(quality)), `eb34b27f` (chore(quality)), `07aa9bd7` (docs(rw1)), `0256d266` (feat(rw1)), `c6556d35` (feat(rt2+rt3)), `7919ca92` (feat(rt1)). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -244,11 +244,11 @@ Mode, T3 Receipt Enrichment advisory connectors CLOSED_PASS_BOUNDED).
 LHW17-19 closed (CVF_Important/CVF_Edit/CVF_Restructure all absorbed). Delta, WCE, EL, PM,
 LHW15-16 all CLOSED_PASS_BOUNDED. LP Activation Roadmap RT1+RT2+RT3+RW1 and
 public-sync quality hardening are closed at advisory/readiness level. All
-legacy scan folders absorbed. All work orders closed. Next allowed move: draft
+legacy scan folders absorbed. All work orders closed.
 `docs/roadmaps/CVF_CONNECTION_POINT_GUARD_ENFORCEMENT_ROADMAP_2026-05-31.md`
-as a proposed runtime roadmap only. Runtime implementation remains blocked
-until a fresh R2-R3 GC-018, source-fidelity pass, operator checkpoint, work
-order, autorun gates, and live governance proof plan exist.
+exists as `PROPOSED_HOLD_FOR_FRESH_GC018`. Next allowed move: draft and review
+a fresh R2-R3 GC-018 for CPG-1 only, then request operator checkpoint approval
+before any work order or runtime edit.
 
 Parked checkpoints:
 - VI5-T4/T5 hosted Netlify freshness and operator external-agent retest
@@ -265,7 +265,7 @@ External agent memory files: non-canonical convenience only.
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=`public_sync_quality_hardening_closed_pass_bounded`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=LHW21 latest closed wave; draft the connection-point guard enforcement roadmap as a proposed runtime roadmap only; implementation remains blocked pending fresh R2-R3 GC-018, source-fidelity pass, operator checkpoint, work order, autorun gates, and live governance proof plan;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=LHW21 latest closed wave; connection-point guard enforcement roadmap exists as PROPOSED_HOLD_FOR_FRESH_GC018; draft and review fresh R2-R3 GC-018 for CPG-1 only, then request operator checkpoint approval before any work order or runtime edit;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary

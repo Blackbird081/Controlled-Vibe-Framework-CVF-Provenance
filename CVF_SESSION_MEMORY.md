@@ -181,7 +181,7 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LHW21 is the latest closed LHW wave. T1 publishes the source-verified inbound event/control-point taxonomy, T2 distinguishes current advisory behavior from a future proposed enforce mode, and T3 proposes `governanceTrace` as a doc-only future receipt enrichment. All three remain documentation-only with `runtimeExecutionAuthorized=false`. Next allowed move: draft `docs/roadmaps/CVF_CONNECTION_POINT_GUARD_ENFORCEMENT_ROADMAP_2026-05-31.md` as a proposed runtime roadmap only. Runtime implementation remains blocked until a fresh R2-R3 GC-018, source-fidelity pass, operator checkpoint, work order, autorun pre-dispatch and pre-implementation gates, and live governance proof plan exist. Public-safe subset sync remains available only from the public-sync clone after remote verification.
+LHW21 is the latest closed LHW wave. `docs/roadmaps/CVF_CONNECTION_POINT_GUARD_ENFORCEMENT_ROADMAP_2026-05-31.md` now exists as `PROPOSED_HOLD_FOR_FRESH_GC018`. It proposes CPG-1 inbound event-contract guard extraction, CPG-2 bounded CP2 advisory/enforce mode, and CPG-3 optional bounded `governanceTrace` receipt enrichment. Next allowed move: draft and review a fresh R2-R3 GC-018 for CPG-1 only, then request operator checkpoint approval before any work order or runtime edit. Public-safe subset sync remains available only from the public-sync clone after remote verification.
 
 Parked checkpoints:
 
