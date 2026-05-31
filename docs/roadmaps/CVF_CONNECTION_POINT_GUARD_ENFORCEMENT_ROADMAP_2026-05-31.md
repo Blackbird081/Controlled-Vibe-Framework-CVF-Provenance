@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: PROPOSED_HOLD_FOR_FRESH_GC018
+Status: ACTIVE_CPG1_AUTHORIZED
 
 docType: roadmap
 
@@ -47,16 +47,18 @@ Boundary:
 
 ## Authorization / Decision
 
-Decision: `PROPOSED_HOLD_FOR_FRESH_GC018`.
+Decision: `ACTIVE_CPG1_AUTHORIZED`.
 
-Operator direction on 2026-05-31 authorizes creation of this roadmap only.
-Before any code change, the orchestrator must file a fresh R2-R3 GC-018,
-complete a source-fidelity pass, capture an operator checkpoint, issue a work
-order, and pass autorun `pre-dispatch` and `pre-implementation` gates.
+Operator direction on 2026-05-31 authorizes CPG-1 implementation after a fresh
+runtime GC-018, source-fidelity pass, work order, and autorun `pre-dispatch`
+and `pre-implementation` gates. CPG-2 and CPG-3 remain held behind their
+separate prerequisites.
 
 Parked operator checkpoint:
 
-`Approve or reject the fresh runtime GC-018 after source verification and before implementation.`
+`SATISFIED_FOR_CPG1`: operator instructed Codex to proceed with roadmap code on
+2026-05-31. No waiver is granted for CPG-2, CPG-3, live-proof closure, public
+sync, or claim expansion.
 
 ## Predecessor Evidence
 
@@ -238,7 +240,7 @@ call through the governed CVF route.
 
 | Tranche | Contract candidate | Prerequisite | Risk | Current status |
 | --- | --- | --- | --- | --- |
-| CPG-1 | `cvf.connectionPointEventContractGuard.cpg1.v1` | Fresh GC-018 + operator checkpoint | R2 | HOLD_FOR_FRESH_GC018 |
+| CPG-1 | `cvf.connectionPointEventContractGuard.cpg1.v1` | Fresh GC-018 + operator checkpoint | R2 | ACTIVE_AUTHORIZED |
 | CPG-2 | `cvf.connectionPointHardGateEnforcement.cpg2.v1` | CPG-1 `CLOSED_PASS_BOUNDED` + fresh GC-018 | R2-R3 | HOLD_FOR_CPG1_PASS |
 | CPG-3 | `cvf.governanceTraceReceiptEnrichment.cpg3.v1` | CPG-2 `CLOSED_PASS_BOUNDED` + fresh GC-018 | R2 | HOLD_FOR_CPG2_PASS |
 
