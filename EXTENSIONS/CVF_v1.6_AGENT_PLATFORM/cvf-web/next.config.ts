@@ -40,6 +40,18 @@ const nextConfig: NextConfig = {
     'cvf-control-plane-foundation',
     'cvf-learning-plane-foundation',
   ],
+  turbopack: {
+    // TypeScript ESM packages use explicit .js extensions in their internal
+    // imports. Turbopack must try .ts/.tsx before .js when transpiling LPF.
+    resolveExtensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+  },
+  webpack(config) {
+    config.resolve.extensionAlias = {
+      ...config.resolve.extensionAlias,
+      '.js': ['.ts', '.tsx', '.js'],
+    };
+    return config;
+  },
   async headers() {
     return [
       {

@@ -2,7 +2,7 @@
 
 Memory class: REVIEW_RECORD
 
-Status: HOLD_PENDING_LIVE_PROOF
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-05-31
 
@@ -52,7 +52,7 @@ None required. R1 risk classification maintained throughout.
 - [x] `cvf-web/src/lib/learning-plane-readout.test.ts` committed (49 lines)
 - [x] Fast Lane audit PASS
 - [x] 8/8 unit tests PASS — `npm run test:run -- src/lib/learning-plane-readout.test.ts`
-- [ ] Live proof receipt (alibaba/qwen-turbo, ALLOW, `learningPlaneReadout` field) — PENDING
+- [x] Live proof receipt (alibaba/qwen-turbo, ALLOW, `learningPlaneReadout` field) — `rcpt-env-mptbpftd-1yfw15`
 - [x] GC-018 baseline AUTHORIZED
 
 ---
@@ -87,20 +87,35 @@ Test Files  1 passed (1)
 
 ## Live Proof
 
-Status: PENDING — live call to be executed in this session to complete RT1.
+Status: PASS
 
-Expected response fields:
+Receipt: `rcpt-env-mptbpftd-1yfw15`
+Envelope: `env-mptbpftd-1yfw15`
+Provider: alibaba / qwen-turbo
+Decision: ALLOW
+Test file: `src/app/api/execute/route.rt1-learning-plane.alibaba.live.test.ts`
+
+Verified response fields:
 
 ```json
 {
   "learningPlaneReadout": {
     "contractVersion": "cvf.learningPlaneReadout.wd1.v1",
+    "doctrineVersion": "cvf.truthScoreWeightingDoctrine.wd1.v1",
     "outcome": "DOCTRINE_APPLIED",
+    "compositeScore": 93,
+    "scoreClass": "STRONG",
     "isProvisional": false,
-    "runtimeScoringAuthorized": false
+    "runtimeScoringAuthorized": false,
+    "advisoryNote": "WD1 doctrine applied. Confidence 0.70 >= 0.7. TruthScore 93/100 (STRONG) canonical. Role: OPERATOR."
   }
 }
 ```
+
+Also: `learning-plane-readout.ts` rewritten to use inline doctrine logic (avoids Turbopack
+`.js`-extension resolution issue with LPF internal imports). Equivalent output to original
+LPF chain; 8/8 unit tests PASS. `next.config.ts` updated with `turbopack.resolveExtensions`
+and `webpack.extensionAlias` for future webpack builds.
 
 ---
 
