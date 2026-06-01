@@ -122,6 +122,37 @@ export type {
   GraphAuthorityReceipt,
   GraphAuthorityThresholds,
 } from "./knowledge/graph/authority/graph-authority-gate";
+export {
+  KGR_DETERMINISTIC_TIMESTAMP,
+  KGR_GUARD_POLICIES,
+  KGR_STORE_CONTRACT_VERSION,
+  buildKgrStore,
+  createKgrEdge,
+  createKgrEdgeId,
+  createKgrNode,
+  createKgrNodeId,
+  getKgrGuardPolicy,
+} from "./knowledge-graph-store";
+export type {
+  KgrEdge,
+  KgrEdgeKind,
+  KgrEdgeKindAll,
+  KgrGuardPolicy,
+  KgrGuardPolicyId,
+  KgrNode,
+  KgrNodeKind,
+  KgrNodeKindAll,
+  KgrStore,
+} from "./knowledge-graph-store";
+export {
+  KGR_BUILDER_CONTRACT_VERSION,
+  buildKnowledgeGraph,
+  buildKnowledgeGraphFromPaths,
+} from "./knowledge-graph-builder";
+export type {
+  KgrBuildResult,
+  KgrSourceFile,
+} from "./knowledge-graph-builder";
 
 // W4-T8 — Evaluation Engine Consumer Pipeline Bridge (CP1)
 export {

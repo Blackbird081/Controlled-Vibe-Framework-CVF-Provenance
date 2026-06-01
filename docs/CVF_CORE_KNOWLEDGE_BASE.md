@@ -334,6 +334,7 @@ Output (Allow / Strip & Allow / Block)
 | CVF_PREPUBLIC_P3_READINESS_GUARD.md | Pre-public `P3` relocation readiness review | `P3` stays blocked until phase-gates, root-file exposure, docs-root curation, export-readiness, and memo freshness are explicit |
 | CVF_GUARD_AUTHORING_STANDARD_GUARD.md | New or materially revised governance guard | Guard must satisfy the mandatory authoring contract before commit |
 | CVF_GUARD_REGISTRY_GUARD.md | New guard created | Register in README.md + KB |
+| CVF_CORE_GUARD_SELF_PROTECTION_GUARD.md | Core guard/control file changes or large agent batches | Protected guard files require explicit authorization; runaway batch size is blocked |
 | CVF_CAPABILITY_INTAKE_PIPELINE_GUARD.md | CVF-certified end-user skill pack intake | Eight required artifacts + deterministic validator certification |
 | CVF_ACTIVE_ARCHIVE_GUARD.md | Active archive maintenance | Keep active/archive split truthful, append-only, baseline-backed, and hook-safe |
 | CVF_ACTIVE_WINDOW_REGISTRY_GUARD.md | New or revised active trace/log window with dedicated rotation guard | Register canonical active window + class + archive protection |
@@ -353,6 +354,7 @@ Output (Allow / Strip & Allow / Block)
 | CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD.md | Multi-agent absorption reviews, rebuttal cycles, and cross-agent knowledge intake convergence | Evidence Trace Block required per claim; Adversarial Role Assignment; Convergence Algorithm without operator arbitration |
 | CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_GUARD.md | Folder/file-based inventory, report, extraction, comparison, audit, migration, or knowledge absorption | Manifest + processing ledger + reconciliation + drift + traceability required before completeness claims |
 | CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_GUARD.md | Corpus-derived knowledge map, semantic-region ledger, architecture reconciliation, Memory synthesis, or retrieval-readiness claim | Source authority separated from rebuildable views; semantic-region totals, orphan state, drift, rebuildability, and retrieval boundary required |
+| CVF_CORPUS_INTELLIGENCE_CLASSIFICATION_GUARD.md | Corpus-derived classification for chatbot, retrieval, legal/policy, internal-decision, or answer surfaces | `governance/compat/check_corpus_intelligence_classification.py` enforces classification ledger + evidence pointer + owner surface + disposition + response boundary; semantic correctness remains review work |
 | CVF_PRODUCT_VALUE_VALIDATION_GUARD.md | Product-value proof, comparative validation, or Docker-sandbox justification claims | Frozen corpus + rubric + run manifest + no-spin assessment required |
 | CVF_PROGRESS_TRACKER_SYNC_GUARD.md | Tranche posture change | Canonical tracker and sync note must stay aligned |
 | CVF_SURFACE_SCAN_CONTINUITY_GUARD.md | Fresh tranche selection or scan-state change | Canonical scan registry must preserve what was already scanned |

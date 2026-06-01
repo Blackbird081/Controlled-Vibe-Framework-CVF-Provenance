@@ -612,6 +612,58 @@ are derived views. They may improve navigation but must remain rebuildable from
 governed source authority. Machine checks prove reconciliation discipline, not
 deep semantic correctness or runtime integration.
 
+## Mandatory Corpus Intelligence Classification - 2026-06-01
+
+Canonical standard:
+
+`docs/reference/CVF_CORPUS_INTELLIGENCE_CLASSIFICATION_STANDARD_2026-06-01.md`
+
+Machine guard:
+
+`governance/compat/check_corpus_intelligence_classification.py`
+
+Any AI/agent that classifies corpus-derived intelligence for chatbot,
+retrieval, legal/policy, internal-decision, or answer surfaces must include a
+`Corpus Intelligence Classification` block before claiming response readiness.
+
+The block must include a classification ledger with `sourcePath`,
+`processingStatus`, `knowledgeRegion`, `ownerSurface`, `disposition`, and
+`evidencePointer`, plus response-boundary classes:
+
+- `DIRECT_CITED_ANSWER`
+- `SUMMARY_WITH_SOURCE`
+- `PROCEDURAL_GUIDANCE`
+- `ESCALATE_OR_ABSTAIN`
+
+Accepted dispositions require evidence pointers. `READ_SHALLOW` cannot support
+direct cited answers. Legal/policy corpus classification must include domain
+fields such as jurisdiction, authority level, effective date, source authority,
+and answer boundary.
+
+GC-050 is a structural guard. It proves classification discipline, not semantic
+correctness, legal advice quality, runtime integration, or chatbot answer
+truth. Semantic correctness remains review and adversarial sampling work.
+
+## Mandatory Corpus Search And Filter Readiness - 2026-06-02
+
+Canonical standard:
+
+`docs/reference/CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md`
+
+Any AI/agent that scans a corpus for retrieval, chatbot use, knowledge
+absorption, migration, project intelligence, owner-surface routing, or "not
+found" claims must preserve search/filter evidence before claiming readiness.
+
+The required discipline is broader than legal/policy chatbot work and applies
+to legacy folders, user project folders, public docs, internal company corpora,
+source-code documentation, SOPs, policies, and knowledge bases.
+
+Required evidence includes corpus discovery index, facet schema, processing
+ledger, negative search evidence, derived-view trace, query receipt model, and
+adversarial sampling plan. Search/filter readiness proves traceability and
+reviewability; it does not prove semantic correctness, answer truth, legal
+correctness, or runtime behavior.
+
 ## Latest Closed Continuation Roadmap
 
 The latest closed continuation roadmap is `docs/roadmaps/CVF_W132_T1_PROVIDER_RUNTIME_STABILITY_AND_BROWSER_SESSION_HARDENING_ROADMAP_2026-04-30.md`.

@@ -290,6 +290,21 @@ Personal AI usage unrelated to company work is excluded.
      - canonical standard: `docs/reference/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_STANDARD_2026-06-01.md`
      - canonical operational rule: `governance/toolkit/05_OPERATION/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_GUARD.md`
      - automated enforcement reference: `governance/compat/check_corpus_to_knowledge_map_reconciliation.py`
+43. `GC-049` core guard/control files are frozen by default and large agent change sets must be explicitly authorized:
+     - protected guard scripts, hook chains, guard docs, master policy, control matrix, and session startup files require a same-batch `Core Guard Self-Protection Authorization` block
+     - agents may not delete or rename protected guard/control files
+     - large change sets require a `Large-Scope Change Authorization` block before commit or closure
+     - canonical operational rule: `governance/toolkit/05_OPERATION/CVF_CORE_GUARD_SELF_PROTECTION_GUARD.md`
+     - automated enforcement reference: `governance/compat/check_core_guard_self_protection.py`
+44. `GC-050` corpus-derived intelligence classification must use structural ledger discipline before chatbot, retrieval, legal/policy, internal-decision, or answer-surface claims:
+     - include a `Corpus Intelligence Classification` block and a `Corpus Intelligence Classification Ledger`
+     - each ledger row must carry source path, processing status, knowledge region, owner surface, disposition, and evidence pointer
+     - accepted dispositions require evidence pointers
+     - legal/policy corpora require jurisdiction, authority level, effective date, source authority, and answer boundary fields
+     - response boundaries must expose the four allowed answer classes
+     - canonical standard: `docs/reference/CVF_CORPUS_INTELLIGENCE_CLASSIFICATION_STANDARD_2026-06-01.md`
+     - canonical operational rule: `governance/toolkit/05_OPERATION/CVF_CORPUS_INTELLIGENCE_CLASSIFICATION_GUARD.md`
+     - automated enforcement reference: `governance/compat/check_corpus_intelligence_classification.py`
 
 ---
 

@@ -49,6 +49,10 @@ def _range_command(name: str, script: str, base: str, head: str) -> GateCommand:
 
 def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
     return (
+        GateCommand(
+            "core guard self-protection",
+            ("python", "governance/compat/check_core_guard_self_protection.py", "--base", base, "--head", head, "--enforce"),
+        ),
         _range_command(
             "docs governance compatibility",
             "governance/compat/check_docs_governance_compat.py",
@@ -94,6 +98,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
         _range_command(
             "corpus-to-knowledge-map reconciliation",
             "governance/compat/check_corpus_to_knowledge_map_reconciliation.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "corpus intelligence classification",
+            "governance/compat/check_corpus_intelligence_classification.py",
             base,
             head,
         ),

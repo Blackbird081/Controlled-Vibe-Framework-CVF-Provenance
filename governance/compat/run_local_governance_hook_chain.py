@@ -27,6 +27,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
     # --base <baseHead> --head HEAD over a real committed range.
     "pre-commit": [
         (
+            "core guard self-protection",
+            ["python", "governance/compat/check_core_guard_self_protection.py", "--enforce"],
+        ),
+        (
             "governed file size compatibility",
             ["python", "governance/compat/check_governed_file_size.py", "--enforce"],
         ),
@@ -82,6 +86,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
             ["python", "governance/compat/check_corpus_to_knowledge_map_reconciliation.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
+            "corpus intelligence classification",
+            ["python", "governance/compat/check_corpus_intelligence_classification.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
             "governed pack contract compatibility",
             ["python", "governance/compat/check_governed_pack_contract.py", "--enforce"],
         ),
@@ -103,6 +111,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         ),
     ],
     "pre-push": [
+        (
+            "core guard self-protection",
+            ["python", "governance/compat/check_core_guard_self_protection.py", "--enforce"],
+        ),
         (
             "docs governance compatibility",
             ["python", "governance/compat/check_docs_governance_compat.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
@@ -138,6 +150,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         (
             "corpus-to-knowledge-map reconciliation",
             ["python", "governance/compat/check_corpus_to_knowledge_map_reconciliation.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "corpus intelligence classification",
+            ["python", "governance/compat/check_corpus_intelligence_classification.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
             "cpf public surface maintainability",
