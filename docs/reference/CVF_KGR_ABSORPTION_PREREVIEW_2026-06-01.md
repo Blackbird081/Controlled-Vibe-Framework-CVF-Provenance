@@ -24,7 +24,7 @@ Knowledge Base_Graphify/` — before a formal LHW absorption tranche is opened.
 This file exists so any future agent or operator can pick up the absorption
 without losing the analysis already done.
 
-## Source Corpus (Unabsorbed)
+## Source Corpus (Pending Deep Re-Absorption)
 
 Location: `.private_reference/legacy/CVF_Important/Knowledge Base_Graphify/`
 
@@ -49,7 +49,7 @@ layers. The distinction is critical to avoid mis-scoping:
 | Source of records | Runtime execution, durable store writes | Pre-computed build artifact (AST parse + concept extract) |
 | Access pattern | Actor-scoped, authorization-gated readout | Query-based navigation, graph traversal |
 | Timing | Runtime (per request) | Build-time (pre-computed) |
-| Current CVF status | **OPERATIONAL** (MKG7 complete, MKE1 proposed) | **NOT YET ABSORBED** |
+| Current CVF status | **OPERATIONAL** (MKG7 complete, MKE1 proposed) | **SHALLOW_INVENTORY_ONLY** under 2026-06-01 GC-047/048 standards — prior Graphify/W72/Palace synthesis artifacts exist; current corpus has not been deeply re-absorbed under current standards |
 | Token impact | Advisory readout in response envelope | 71.5x token reduction per query (Graphify claim) |
 | Enforcement | MKE1 will wire REVOKED → BLOCK | No enforcement yet; no runtime exists |
 
@@ -76,7 +76,11 @@ Where KGR concepts would land in the current CVF architecture:
 ## Guard Analysis: Why GC-047 and GC-048 Cannot Catch This Blind Spot
 
 This section records the architectural reason these guards passed even though
-the Knowledge Base_Graphify corpus was never deeply absorbed.
+the current `CVF_Important/Knowledge Base_Graphify/` corpus was not deeply
+re-absorbed under the 2026-06-01 GC-047/GC-048 standards.
+
+Root cause: GC-047 and GC-048 are **report-quality gates**, not **corpus
+discovery or absorption-coverage tools**.
 
 ### What the guards DO
 
@@ -92,6 +96,18 @@ the Knowledge Base_Graphify corpus was never deeply absorbed.
 
 Neither guard performs **discovery of unabsorbed knowledge**. They are
 *report-quality gates*, not *coverage-completeness detectors*.
+
+They do not:
+
+- scan the entire `.private_reference/legacy/` tree to discover unabsorbed
+  folders;
+- compare "what exists on disk" against "what has terminal absorption
+  disposition";
+- warn that a folder has no deep absorption packet, no explicit deferral, or
+  only a shallow inventory mention.
+
+In short: the guards validate reports after an agent writes them. They do not
+create reports for knowledge the agent never selected.
 
 ### Three specific gaps
 
@@ -119,58 +135,106 @@ the RESCAN-A report as structurally complete. But the report recorded
 `deep interpretation remains explicitly open` — a **valid declared gap**,
 not a violation. The guards read that declaration and passed.
 
+### Guard coverage summary
+
+| Guard | Checks | Does not check |
+| --- | --- | --- |
+| GC-047 | Report has manifest, hash, file ledger, reconciliation, exclusions, adversarial verification, and allowed verdict | Folder has a deep absorption report |
+| GC-048 | Knowledge map report has source authority, semantic-region reconciliation, mapped/deferred/unmapped totals, drift, and rebuildability evidence | Every knowledge domain on disk has been mapped deeply |
+| Both | Report quality for changed governed artifacts | Corpus coverage completeness across ignored legacy folders |
+
 ### Root cause summary
 
 ```
 Guards verify:   report quality (format, sections, hash, verdict)
-Guards do not:   compare "what exists on disk" vs "what has been cited
-                 in any review, work order, or absorption tranche"
+Guards do not:   compare "what exists on disk" vs "what has terminal
+                 absorption disposition"
 
 Missing machine check:
   "For each folder in .private_reference/legacy/, verify at least one
-   review or work order in docs/ cites it as absorbed or explicitly deferred."
+   review, work order, or prereview in docs/ records a terminal disposition:
+   absorbed deeply, absorbed doc-only, explicitly deferred, shallow inventory
+   only, or unabsorbed/untracked."
 ```
 
 ### Recommended future guard (not yet built)
 
 `check_legacy_absorption_coverage.py` — scans all subfolders under
-`.private_reference/legacy/`, then checks that each has been cited in at least
-one absorption review (`docs/reviews/CVF_LHW*.md` or equivalent). Reports
-uncited folders as `UNABSORBED_UNTRACKED`. This would have caught
-`Knowledge Base_Graphify` immediately after RESCAN-A.
+`.private_reference/legacy/`, then checks that each folder has a terminal
+absorption disposition in an appropriate governed artifact.
+
+Allowed dispositions:
+
+- `ABSORBED_DEEP`;
+- `ABSORBED_DOC_ONLY`;
+- `DEFERRED_WITH_REASON`;
+- `SHALLOW_INVENTORY_ONLY`;
+- `UNABSORBED_UNTRACKED`;
+- `BLOCKED_UNREADABLE`.
+
+The guard must not treat a bare citation, manifest row, or semantic-region
+label as deep absorption. RESCAN-A would count as `SHALLOW_INVENTORY_ONLY` for
+`Knowledge Base_Graphify/`, not `ABSORBED_DEEP`. That would have made the
+remaining KGR work visible immediately after RESCAN-A without turning a valid
+shallow report into a GC-047/GC-048 violation.
+
+## Prior Absorption History
+
+KGR-related knowledge has been partially absorbed in earlier CVF iterations.
+Known prior artifacts:
+
+- `CVF_GRAPHIFY_LLM_POWERED_PALACE_SYNTHESIS_ONLY_ROADMAP_2026-04-13.md` —
+  earlier roadmap for Palace synthesis using Graphify
+- Promotion/rejection maps from prior LHW waves covering graph/knowledge domain
+
+These artifacts confirm Graphify was known and partially evaluated before 2026.
+The claim in this document is precise: the **current
+`CVF_Important/Knowledge Base_Graphify/` 5-file corpus has not been deeply
+re-absorbed under the 2026-06-01 GC-047/048 standards** (manifest-backed,
+terminal disposition per file, semantic-region reconciliation). Prior work
+counts as `ABSORBED_DOC_ONLY` at best for those specific artifacts, not as a
+complete re-absorption of this corpus under current standards.
 
 ## Absorption Readiness Assessment
 
 | Criterion | Assessment |
 | --- | --- |
 | Corpus size | Small — 5 files, well-structured |
-| Conceptual clarity | High — operator analysis already done in `Thong_tin.md` |
+| Conceptual clarity | High — operator analysis already done in `Thong_tin.md`; prior absorption artifacts also exist |
 | CVF integration path | Clear — new LPF module + CLI extension |
 | External dependency risk | Medium — Graphify uses NetworkX, tree-sitter, Leiden; CVF would define its own bounded contract, not import external libs |
-| Prerequisite tranches | MKE1-E1 should complete first (Memory Enforcement gate) — KGR feeds into MemoryRetrievalCandidate, which feeds into the advisory readout |
-| Live proof required? | Yes — graph query reducing token usage requires a live-proof benchmark |
+| Prerequisite for T4/T5 | MKE1-E1 non-live gates PASS or `MemoryRetrievalCandidate` contract stable — required before KGR wires into retrieval |
+| Prerequisite for T1/T2/T3 | None — can proceed independently |
+| Live proof required? | Yes for T5 — graph query reducing token usage requires a live-proof benchmark |
 | Suggested tranche label | `KGR1` — Knowledge Graph Retrieval, Wave 1 |
 
-## Suggested Absorption Sequence (When Ready)
+## Suggested Absorption Sequence
 
-1. **KGR1-T1** (doc-only): absorb 5 files → map to CVF owner surfaces, produce
-   acceptance/deferral disposition per file. No runtime code.
-2. **KGR1-T2** (schema): define `KnowledgeGraphNode`, `KnowledgeGraphEdge`,
-   `KnowledgeGraphStore` interfaces in LPF. No persistence yet.
-3. **KGR1-T3** (builder stub): bounded `buildKnowledgeGraph(files)` that
-   produces a deterministic in-process graph from a file list. No AST lib yet.
-4. **KGR1-T4** (retrieval integration): wire graph query into
-   `MemoryRetrievalCandidate` candidates — graph nodes become candidates for
-   `evaluateRetrievalRequest`.
-5. **KGR1-T5** (live proof): benchmark token reduction with real provider call.
+| Tranche | Scope | MKE1 dependency | Can start now? |
+| --- | --- | --- | --- |
+| KGR1-T1 | Doc-only: absorb 5 files, map to CVF owner surfaces, terminal disposition per file | None | Yes |
+| KGR1-T2 | Schema: `KnowledgeGraphNode`, `KnowledgeGraphEdge`, `KnowledgeGraphStore` interfaces in LPF. No persistence, not wired into Memory runtime | None | Yes |
+| KGR1-T3 | Builder stub: `buildKnowledgeGraph(files)` — deterministic in-process graph from file list. No external AST lib | None | Yes |
+| KGR1-T4 | Retrieval integration: wire graph nodes as `MemoryRetrievalCandidate` candidates into `evaluateRetrievalRequest` | `MemoryRetrievalCandidate` contract stable (after MKE1-E1 non-live gates or earlier if contract frozen) | HOLD |
+| KGR1-T5 | Live proof: benchmark token reduction with real provider call | T4 complete + MKE1-E3 | HOLD |
 
-## Blocked Work (Do Not Start Until Prerequisites Met)
+**Dependency rationale for T4/T5:** `MemoryRetrievalCandidate` is the
+integration surface between KGR and Memory Plane. MKE1-E1 moves eligibility
+evaluation earlier in the execution flow and may modify how candidates are
+consumed. Wiring KGR into retrieval before that contract is stable risks a
+breaking re-wire. T1/T2/T3 have no such dependency — they build internal KGR
+schema and builder without touching Memory runtime.
 
-- Do not start KGR1-T2 before MKE1-E1 is complete — the enforcement gate
-  stabilizes `MemoryRetrievalCandidate` as a contract surface.
-- Do not import external graph libraries (NetworkX, tree-sitter) without a
-  separate GC-018 evaluating dependency risk.
+## Blocked Work
+
+- Do not wire KGR into `MemoryRetrievalCandidate` (T4) before MKE1-E1
+  non-live gates PASS or the `MemoryRetrievalCandidate` interface is explicitly
+  frozen by operator.
+- Do not import external graph libraries (NetworkX, tree-sitter, Leiden) without
+  a separate GC-018 evaluating dependency risk.
 - Do not add `cvf graph build` CLI without a separate operator instruction.
+- Do not treat prior Palace/Graphify absorption artifacts as satisfying the
+  2026-06-01 GC-047/048 deep re-absorption requirement for this 5-file corpus.
 
 ## Claim Boundary
 
