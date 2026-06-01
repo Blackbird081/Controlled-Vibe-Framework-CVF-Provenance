@@ -171,7 +171,7 @@ Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
 
 ## Active Boundary
 
-Current mode: `lhw_rescan_b_legacy_small_roots_reconciled_closed_pass_bounded`.
+Current mode: `lhw_rescan_c_cross_corpus_deep_review_closed_pass_bounded`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
@@ -336,9 +336,20 @@ Current bounded small-root truth: `38` visible files across `CVF 17.05`,
 `CVF 25.05`, and `CVF 28.05`; all `38` text-like authority assets have
 terminal `READ` status and broad routing; exclusions and unresolved rows are
 both zero. Deep interpretation remains open.
-Next allowed move: open fresh GC-018 for `LHW-RESCAN-C`, apply `GC-047` and
-`GC-048` to partial `CVF ADD`, `CVF 16.5`, and `CVF_Restructure`, then
-perform cross-corpus synthesis and route bounded deep-review packets.
+`LHW-RESCAN-C` is `CLOSED_PASS_BOUNDED`:
+`docs/reviews/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_RECONCILIATION_COMPLETION_2026-06-01.md`.
+Manifest:
+`docs/audits/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_MANIFEST_2026-06-01.json`.
+Current partial-root truth: `CVF ADD=167`, `CVF 16.5=100`, and
+`CVF_Restructure=74`; total `341` visible files across `31` source families.
+All `341` authority assets have terminal `READ` status, zero exclusions, zero
+unresolved rows, and broad semantic-region routing across eight regions.
+Manifest hash:
+`ae7fe05e016b7079a81002de60de1e1209112de59c8bee793e15e11557cae0ff`.
+Next allowed move: open a fresh GC-018 for Memory/Knowledge/Graph
+Owner-Surface Review if the operator chooses to promote RESCAN-C findings.
+Do not treat RESCAN-C routing as runtime implementation authority, complete
+Legacy semantic absorption, public readiness, or Memory reinjection approval.
 CPG-2 is CLOSED_PASS_BOUNDED with release-quality proof;
 closure packet:
 `docs/roadmaps/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_ROADMAP_2026-05-31.md`
@@ -369,8 +380,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lhw_rescan_b_legacy_small_roots_reconciled_closed_pass_bounded`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=open fresh GC-018 for LHW-RESCAN-C under GC-047 and GC-048, then perform cross-corpus synthesis and routed deep review;
+Startup acknowledged: current mode=`lhw_rescan_c_cross_corpus_deep_review_closed_pass_bounded`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=open fresh GC-018 for Memory/Knowledge/Graph Owner-Surface Review if the operator chooses to promote RESCAN-C findings;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary

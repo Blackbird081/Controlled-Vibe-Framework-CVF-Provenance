@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-01
 
-Current mode marker: `lhw_rescan_a_cvf_important_reconciled_closed_pass_bounded`
+Current mode marker: `lhw_rescan_c_cross_corpus_deep_review_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lhw_rescan_b_legacy_small_roots_reconciled_closed_pass_bounded`.
+Current mode: `lhw_rescan_c_cross_corpus_deep_review_closed_pass_bounded`.
 
 Active handoff:
 
@@ -277,10 +277,20 @@ The current bounded small-root truth is `38` visible files: `CVF 17.05=31`,
 terminal `READ` status and broad semantic-region routing; exclusions and
 unresolved rows are both zero. Deep interpretation remains explicitly open.
 
-Next allowed move: open fresh GC-018 for `LHW-RESCAN-C`, apply `GC-047` and
-`GC-048` to the partial `CVF ADD`, `CVF 16.5`, and `CVF_Restructure` source
-trees, then perform cross-corpus synthesis and route bounded deep-review
-packets. Do not claim complete Legacy absorption from broad semantic routing.
+`LHW-RESCAN-C` is `CLOSED_PASS_BOUNDED`:
+
+`docs/reviews/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_RECONCILIATION_COMPLETION_2026-06-01.md`
+
+The current partial-root truth is `341` visible files: `CVF ADD=167`,
+`CVF 16.5=100`, and `CVF_Restructure=74`. All `341` authority assets have
+terminal `READ` status, zero exclusions, zero unresolved rows, and broad
+semantic-region routing across eight regions. Manifest hash:
+`ae7fe05e016b7079a81002de60de1e1209112de59c8bee793e15e11557cae0ff`.
+
+Next allowed move: open a fresh GC-018 for Memory/Knowledge/Graph
+Owner-Surface Review if the operator chooses to promote RESCAN-C findings.
+Do not treat RESCAN-C routing as runtime implementation authority, complete
+Legacy semantic absorption, public readiness, or Memory reinjection approval.
 CPG-2 is CLOSED_PASS_BOUNDED with
 release-quality proof:
 
