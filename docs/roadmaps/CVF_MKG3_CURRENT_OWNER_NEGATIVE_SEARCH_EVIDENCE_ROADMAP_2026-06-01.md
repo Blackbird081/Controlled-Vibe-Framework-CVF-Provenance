@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: REVIEW_READY_UNCOMMITTED
 
 docType: roadmap
 
@@ -62,11 +62,11 @@ Out of scope:
 
 | Step | Requirement | Output | Status |
 | --- | --- | --- | --- |
-| M3.1 | Re-read MKG2 and MKG1 evidence | authority summary | DISPATCHED |
-| M3.2 | Search current non-Legacy repo for cortex owner candidates | search evidence | DISPATCHED |
-| M3.3 | Search current non-Legacy repo for governed-skill owner candidates | search evidence | DISPATCHED |
-| M3.4 | Search current non-Legacy repo for graph runtime owner candidates | search evidence | DISPATCHED |
-| M3.5 | File pending MKG3 review with finality-safe gate evidence | pending review artifact | DISPATCHED |
+| M3.1 | Re-read MKG2 and MKG1 evidence | authority summary | REVIEW_READY |
+| M3.2 | Search current non-Legacy repo for cortex owner candidates | search evidence | REVIEW_READY |
+| M3.3 | Search current non-Legacy repo for governed-skill owner candidates | search evidence | REVIEW_READY |
+| M3.4 | Search current non-Legacy repo for graph runtime owner candidates | search evidence | REVIEW_READY |
+| M3.5 | File pending MKG3 review with finality-safe gate evidence | pending review artifact | REVIEW_READY |
 
 ## Acceptance Criteria
 
@@ -111,7 +111,7 @@ repository commit, or public artifact path is included.
 
 ## Claim Boundary
 
-MKG3 is a dispatched evidence-hardening roadmap. It does not authorize
+MKG3 is a review-ready evidence-hardening roadmap. It does not authorize
 implementation, live proof, public-sync, provider use, runtime behavior, graph
 retrieval, Memory reinjection, skill mutation, hosted readiness, production
 readiness, or public readiness.

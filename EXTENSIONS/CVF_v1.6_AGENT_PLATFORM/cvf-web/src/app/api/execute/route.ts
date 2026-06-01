@@ -15,7 +15,6 @@ import { buildKnowledgeSystemPrompt, hasKnowledgeContext } from '@/lib/knowledge
 import { buildAifMemoryReinjectionSystemPrompt, evaluateAifMemoryReinjection } from '@/lib/aif-memory-reinjection';
 import { appendAifMemoryReinjectionAudit, buildAifMemoryReinjectionDeniedResponse } from '@/lib/aif-memory-reinjection-route';
 import { buildExecutionPrompt } from '@/lib/execute-prompt-contract';
-import { emitExecutionTelemetry, resolveTokenUsage } from '@/lib/execute-telemetry';
 import { checkTeamQuota } from '@/lib/quota-guard';
 import { appendAuditEvent } from '@/lib/control-plane-events';
 import { applyDLPFilter } from '@/lib/dlp-filter';
@@ -26,13 +25,8 @@ import { buildEvidenceReceipt, buildGovernanceEnvelope } from '@/lib/web-governa
 import { deriveServiceTokenIdentity, verifyServiceTokenRequest } from '@/lib/service-token-auth';
 import { hasValidationRetryBudget, resolveExecutionMaxTokens } from '@/lib/execute-route-budget';
 import { recordReportableDecisionObserved } from '@/lib/false-positive-report';
-import { buildPhase2CProductBriefSliceForRoute } from '@/lib/phase2c-product-brief-slice';
-import { buildPhase3EOperationalMetricsForRoute } from '@/lib/phase3e-operational-emission';
-import { buildWorkflowExecutionProjection, resolveWorkflowBindingForExecution } from '@/lib/workflows/workflow-resolver';
-import { buildRouteAuditMemoryCapture } from '@/lib/audit-memory-receipt';
-import { buildRouteRequestContextReadout } from '@/lib/route-request-context-readout';
-import { buildVerticalIntegrationReadout } from '@/lib/vertical-integration-readout';
-import { buildDurableMemorySystemPrompt, evaluateDurableMemoryRoute, evaluateDurableMemoryWrite, resolveDurableMemoryActorRole } from '@/lib/durable-memory-route';
+import { resolveWorkflowBindingForExecution } from '@/lib/workflows/workflow-resolver';
+import { buildDurableMemorySystemPrompt, evaluateDurableMemoryRoute, resolveDurableMemoryActorRole } from '@/lib/durable-memory-route';
 import { buildRoleOutputDeniedResponse, buildRolePermissionDeniedResponse } from '@/lib/execute-role-permission-gate';
 import { buildExecutionIdentityDecision } from '@/lib/execution-identity';
 import { evaluateExecutionActorRoleGate, resolveExecutionCVFRole, resolveExecutionOutputClass } from '@/lib/execute-role-resolver';
@@ -41,7 +35,7 @@ import { attachReceiptToDiagnostic, buildExecutionDiagnostic } from '@/lib/execu
 import { getApprovalStore, type ApprovalRequestRecord } from '../approvals/store';
 import { approvalRecordMatchesActor, buildApprovalActorBinding, buildApprovalRequestSnapshot, computeApprovalRequestHash } from '../approvals/approval-binding';
 import { executeVisionRouteRequest, prepareVisionRouteRequest } from './vision-route-helper';
-import { buildExecuteResponseReadouts } from './route-response-readouts';
+import { buildExecuteFinalResponse } from './route-final-response';
 export async function POST(request: NextRequest) {
     const routeStartedAtMs = Date.now();
     try {
@@ -824,173 +818,38 @@ export async function POST(request: NextRequest) {
             }
         }
 
-        if (aiResult.success && aiResult.output) {
-            try {
-                await emitExecutionTelemetry({
-                    session,
-                    request: body,
-                    prompt: filteredPrompt,
-                    output: aiResult.output,
-                    provider: routedProvider,
-                    model: body.model ?? aiResult.model ?? routedProvider,
-                    response: aiResult,
-                });
-            } catch (telemetryError) {
-                console.warn('Execution telemetry degraded:', telemetryError);
-            }
-        }
-
-        const usage = aiResult.success && aiResult.output ? resolveTokenUsage(filteredPrompt, aiResult.output, aiResult) : undefined;
-        const durableMemoryWriteReceipt = aiResult.success && aiResult.output
-            ? evaluateDurableMemoryWrite({ request: body, actorId: executionActorId, actorRole: resolveDurableMemoryActorRole(resolvedExecutionRole.role), output: aiResult.output })
-            : undefined;
-
-        const governanceEvidenceReceipt = buildEvidenceReceipt({
-            envelope: govEnvelope,
-            decision: enforcement.status,
-            riskLevel: enforcement.riskGate?.riskLevel,
-            provider: routedProvider,
-            model: body.model ?? aiResult.model ?? routedProvider,
-            routingDecision: routingResult.decision,
-            knowledgeSource,
-            knowledgeInjected,
-            knowledgeCollectionId: requestedKnowledgeCollectionId,
-            knowledgeChunkCount: retrievalResult.allowedChunkCount,
-            approvalId: approvedRequestRecord?.id,
-            validationHint: outputValidation?.qualityHint,
-            aifMemoryReinjection: aifMemoryReinjection.receipt,
-            durableMemoryRead: durableMemoryRoute.receipt,
-            durableMemoryWriteReceipt,
-        });
-        if (isVisionExecution) governanceEvidenceReceipt.vision = true;
-        const executionDiagnostic = !aiResult.success ? attachReceiptToDiagnostic(aiResult.diagnostic, buildExecutionDiagnostic({ stage: 'provider', class: 'unknown_error', provider: routedProvider, model: body.model ?? aiResult.model ?? routedProvider, latencyMs: aiResult.executionTime }), governanceEvidenceReceipt.receiptId, governanceEvidenceReceipt.envelopeId) : aiResult.success && !aiResult.output ? buildExecutionDiagnostic({ stage: 'provider', class: 'provider_empty_output', provider: routedProvider, model: body.model ?? aiResult.model ?? routedProvider, latencyMs: aiResult.executionTime, receiptId: governanceEvidenceReceipt.receiptId, traceId: governanceEvidenceReceipt.envelopeId }) : undefined;
-        const workflowExecution = aiResult.success && workflowBinding ? buildWorkflowExecutionProjection(workflowBinding, governanceEvidenceReceipt.receiptId) : undefined;
-        if (workflowExecution) {
-            await appendAuditEvent({
-                eventType: 'WORKFLOW_BINDING_EXECUTED',
-                actorId: session?.userId ?? 'service-account',
-                actorRole: session?.role ?? (isServiceAllowed ? 'service' : 'unknown'),
-                targetResource: body.templateName || body.templateId || workflowExecution.templateId,
-                action: 'EMIT_WORKFLOW_STEP_TRACES',
-                riskLevel: body.cvfRiskLevel ?? enforcement.riskGate?.riskLevel ?? 'R1',
-                phase: body.cvfPhase ?? 'PHASE E',
-                outcome: 'COMPLETED',
-                payload: withSessionAuditPayload(session, {
-                    workflowId: workflowExecution.workflowId,
-                    workflowVersion: workflowExecution.workflowVersion,
-                    capabilityId: workflowExecution.capabilityId,
-                    templateId: workflowExecution.templateId,
-                    stepTraces: workflowExecution.stepTraces,
-                    receipts: workflowExecution.receipts,
-                    receiptObligations: workflowExecution.receiptObligations,
-                    receiptBinding: workflowExecution.receiptBinding,
-                    deferredStepIds: workflowExecution.deferredStepIds,
-                    stateMachine: workflowExecution.stateMachine,
-                    governanceReceiptId: governanceEvidenceReceipt.receiptId,
-                    rolePermission: {
-                        role: resolvedExecutionRole.role,
-                        permissionRole: rolePermission.role,
-                        outputClass: rolePermission.outputClass,
-                        allowed: rolePermission.allowed,
-                        source: resolvedExecutionRole.source,
-                    },
-                    executionIdentity,
-                }),
-            });
-        }
-        const phase2cProductBrief = aiResult.success && aiResult.output
-            ? buildPhase2CProductBriefSliceForRoute({
-                responseSuccess: aiResult.success,
-                templateId: executionTemplateId,
-                templateName: template?.name ?? body.templateName,
-                category: template?.category,
-                inputs: body.inputs || {},
-                intent: body.intent || '',
-                output: aiResult.output,
-                evidenceReceipt: governanceEvidenceReceipt,
-                validation: outputValidation ? {
-                    qualityHint: outputValidation.qualityHint,
-                    issues: outputValidation.issues,
-                } : undefined,
-            })
-            : undefined;
-        const phase3eOperationalMetrics = buildPhase3EOperationalMetricsForRoute({
-            phase2cProductBrief,
-            evidenceReceipt: governanceEvidenceReceipt,
-            responseSuccess: aiResult.success,
-        });
-        const { auditMemoryReceipt, auditEventPayload } = buildRouteAuditMemoryCapture({
-            governanceReceiptId: governanceEvidenceReceipt.receiptId,
-            actorId: session?.userId ?? (isServiceAllowed ? 'service-account' : 'unknown-actor'),
-            actorRole: resolvedExecutionRole.role ?? (isServiceAllowed ? 'service' : 'unknown'),
-            sessionId: session?.userId ?? (isServiceAllowed ? serviceIdentity ?? undefined : undefined),
-            sessionRole: session?.role ?? (isServiceAllowed ? 'service' : undefined),
-            templateId: executionTemplateId,
-            templateName: body.templateName || body.templateId,
-            workflowId: workflowExecution?.workflowId,
-            provider: routedProvider,
-            model: body.model ?? aiResult.model ?? routedProvider,
-            decision: enforcement.status,
-            stepTraceIds: workflowExecution?.stepTraces.map((trace) => trace.stepId) ?? [],
-            rolePermission: { role: resolvedExecutionRole.role, permissionRole: rolePermission.role, outputClass: rolePermission.outputClass, allowed: rolePermission.allowed },
-            riskLevel: body.cvfRiskLevel ?? enforcement.riskGate?.riskLevel,
-            phase: body.cvfPhase,
-        });
-        await appendAuditEvent({ ...auditEventPayload, payload: withSessionAuditPayload(session, { ...auditEventPayload.payload, actor_role_gate_result: actorRoleGate.result, executionIdentity }) });
-        const requestContextReadout = buildRouteRequestContextReadout({ request: body, knowledgeContextLength: finalKnowledgeContext?.length ?? 0, retrievedChunkCount: retrievalResult.allowedChunkCount, chainTurnIndex: body.verticalIntegrationChain?.turnIndex });
-        const verticalIntegrationReadout = buildVerticalIntegrationReadout({ evidenceReceipt: governanceEvidenceReceipt, workflowExecution, auditMemoryReceipt, requestContextReadout, phase2cProductBrief, phase3eOperationalMetrics, chainRequest: body.verticalIntegrationChain, actorId: session?.userId ?? (isServiceAllowed ? 'service-account' : 'unknown-actor'), templateId: executionTemplateId });
-        const responseReadouts = buildExecuteResponseReadouts({
-            request: body,
+        return buildExecuteFinalResponse({
+            aiResult,
+            outputValidation,
+            retryState,
+            request: body as ExecutionRequest,
             template,
             routeStartedAtMs,
-            success: aiResult.success,
-            output: aiResult.output,
-            provider: routedProvider,
-            model: body.model ?? aiResult.model ?? routedProvider,
-            decision: enforcement.status,
-            receipt: { receiptId: governanceEvidenceReceipt.receiptId, envelopeId: governanceEvidenceReceipt.envelopeId },
-            workflowId: workflowExecution?.workflowId,
-            permissionRole: resolvedExecutionRole.permissionRole,
-        });
-        return NextResponse.json({
-            ...aiResult,
-            usage,
+            session,
+            serviceIdentity: serviceIdentity ?? null,
+            isServiceAllowed,
+            resolvedExecutionRole,
+            rolePermission,
             enforcement,
             guardResult,
-            rolePermission: {
-                role: resolvedExecutionRole.role,
-                permissionRole: rolePermission.role,
-                outputClass: rolePermission.outputClass,
-                allowed: rolePermission.allowed,
-                source: resolvedExecutionRole.source,
-            },
+            routingResult,
+            govEnvelope,
+            knowledgeSource,
+            knowledgeInjected,
+            knowledgeContextLength: finalKnowledgeContext?.length ?? 0,
+            requestedKnowledgeCollectionId,
+            retrievalResult,
+            approvedRequestRecord,
+            aifMemoryReinjection,
+            durableMemoryRoute,
+            workflowBinding,
+            executionTemplateId,
             executionIdentity,
-            providerRouting: {
-                decision: routingResult.decision,
-                selectedProvider: routingResult.selectedProvider,
-                rationale: routingResult.rationale,
-                deniedReason: routingResult.deniedReason,
-                fallbackChain: routingResult.fallbackChain,
-                requestedProvider: provider,
-                routerOverrode: routingResult.selectedProvider !== null && routingResult.selectedProvider !== provider,
-            },
-            knowledgeInjection: { injected: knowledgeInjected, contextLength: finalKnowledgeContext?.length ?? 0, source: knowledgeSource, chunkCount: retrievalResult.allowedChunkCount, collectionId: requestedKnowledgeCollectionId, allowedCollectionIds: retrievalResult.allowedCollectionIds },
-            aifMemoryReinjection: aifMemoryReinjection.receipt, durableMemoryRead: durableMemoryRoute.receipt, durableMemoryWriteReceipt,
-            outputValidation: outputValidation ? {
-                qualityHint: outputValidation.qualityHint,
-                issues: outputValidation.issues,
-                retryAttempts: retryState.attempt,
-            } : undefined,
-            governanceEnvelope: govEnvelope,
-            policySnapshotId: govEnvelope.policySnapshotId,
-            governanceEvidenceReceipt,
-            ...(executionDiagnostic ? { diagnostic: executionDiagnostic } : {}),
-            auditMemoryReceipt,
-            requestContextReadout,
-            verticalIntegrationReadout,
-            ...responseReadouts,
-            ...(workflowExecution ? workflowExecution : {}),
-            ...(phase2cProductBrief ? { phase2cProductBrief } : {}), ...(phase3eOperationalMetrics ? { phase3eOperationalMetrics } : {}),
+            routedProvider,
+            isVisionExecution,
+            requestedProvider: provider,
+            filteredPrompt,
+            actorRoleGate,
         });
     } catch (error) {
         console.error('Execute API error:', error);

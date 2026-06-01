@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: IN_PROGRESS_DISPATCHED
+Status: REVIEW_READY
 
 docType: review
 

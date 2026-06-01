@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: REVIEW_READY
 
 docType: roadmap
 
@@ -55,11 +55,11 @@ Out of scope:
 
 | Step | Requirement | Output | Status |
 | --- | --- | --- | --- |
-| M2.1 | Re-enumerate the 21 MKG1 deferred rows | deferred-candidate ledger | DISPATCHED |
-| M2.2 | Source-verify current runtime/graph/skill owners | Source Verification Block | DISPATCHED |
-| M2.3 | Split candidates into future roadmaps | candidate routing matrix | DISPATCHED |
-| M2.4 | Apply Worker Autonomy prompt standard | dispatch prompt block | DISPATCHED |
-| M2.5 | Run dispatch-quality and corpus guards | gate receipts | DISPATCHED |
+| M2.1 | Re-enumerate the 21 MKG1 deferred rows | deferred-candidate ledger | REVIEW_READY |
+| M2.2 | Source-verify current runtime/graph/skill owners | Source Verification Block | REVIEW_READY |
+| M2.3 | Split candidates into future roadmaps | candidate routing matrix | REVIEW_READY |
+| M2.4 | Apply Worker Autonomy prompt standard | dispatch prompt block | REVIEW_READY |
+| M2.5 | Run dispatch-quality and corpus guards | gate receipts | REVIEW_READY |
 
 ## Acceptance Criteria
 
@@ -98,7 +98,7 @@ commit, or public artifact path is included.
 
 ## Claim Boundary
 
-MKG2 is a dispatched planning roadmap. It does not authorize implementation,
+MKG2 is a review-ready planning roadmap. It does not authorize implementation,
 live proof, public-sync, provider use, runtime behavior, graph retrieval,
 Memory reinjection, skill mutation, hosted readiness, production readiness, or
 public readiness.

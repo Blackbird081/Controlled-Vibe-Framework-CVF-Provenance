@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-01
 
-Current mode marker: `mkg3_current_owner_negative_search_evidence_dispatched_to_worker`
+Current mode marker: `mkg_memory_system_tranche_review_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `mkg3_current_owner_negative_search_evidence_dispatched_to_worker`.
+Current mode: `mkg_memory_system_tranche_review_ready`.
 
 Active handoff:
 
@@ -308,8 +308,7 @@ implementation candidates deferred; zero unmapped assets. Manifest JSON:
 Manifest hash:
 `ae7fe05e016b7079a81002de60de1e1209112de59c8bee793e15e11557cae0ff`.
 
-`MKG2` Deferred Runtime Candidate Triage is
-`DISPATCHED_TO_WORKER`:
+`MKG2` Deferred Runtime Candidate Triage is `REVIEW_READY`:
 
 - GC-018:
   `docs/baselines/CVF_GC018_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_2026-06-01.md`
@@ -318,13 +317,9 @@ Manifest hash:
 - dispatched work order:
   `docs/work_orders/CVF_WO_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_2026-06-01.md`
 
-Next allowed move: external worker may execute MKG2 inside the dispatched
-Allowed scope. Attach the Worker Dispatch Prompt from the work order and enforce
-the Worker Autonomy / No-Question Rule. Routine allowed-scope guard failures
-must be repaired and rerun by the worker, not escalated as preference questions.
 MKG2 worker review filed for audit:
 `docs/reviews/CVF_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_REVIEW_2026-06-01.md`.
-MKG3 Current Owner Negative Search Evidence is `DISPATCHED_TO_WORKER`:
+MKG3 Current Owner Negative Search Evidence is `REVIEW_READY_UNCOMMITTED`:
 
 - GC-018:
   `docs/baselines/CVF_GC018_MKG3_CURRENT_OWNER_NEGATIVE_SEARCH_EVIDENCE_2026-06-01.md`
@@ -333,10 +328,53 @@ MKG3 Current Owner Negative Search Evidence is `DISPATCHED_TO_WORKER`:
 - work order:
   `docs/work_orders/CVF_WO_MKG3_CURRENT_OWNER_NEGATIVE_SEARCH_EVIDENCE_2026-06-01.md`
 
-Next allowed move: external worker may execute MKG3 inside Allowed scope and
-must leave the MKG3 review pending/uncommitted for operator review. The worker
-must not claim clean git status while the artifact is pending, and must not use
-`HEAD~1..HEAD` as proof for the pending artifact.
+Review:
+  `docs/reviews/CVF_MKG3_CURRENT_OWNER_NEGATIVE_SEARCH_EVIDENCE_REVIEW_2026-06-01.md`
+
+MKG6 Memory Runtime Readout Route is `IMPLEMENTATION_REVIEW_READY`:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_MKG6_MEMORY_RUNTIME_READOUT_ROUTE_2026-06-01.md`
+- roadmap:
+  `docs/roadmaps/CVF_MKG6_MEMORY_RUNTIME_READOUT_ROUTE_ROADMAP_2026-06-01.md`
+- work order:
+  `docs/work_orders/CVF_WO_MKG6_MEMORY_RUNTIME_READOUT_ROUTE_2026-06-01.md`
+
+Completion:
+  `docs/reviews/CVF_MKG6_MEMORY_RUNTIME_READOUT_ROUTE_COMPLETION_2026-06-01.md`
+
+Result: bounded authenticated `POST /api/memory/readout` route, sanitized
+summary-only Memory projection, LPF `./memory-runtime` export, focused route
+and projection tests, and guard-backed Work-Order Fulfillment Manifest. Local
+verification passed LPF focused tests 3/3, cvf-web focused tests 9/9, both
+TypeScript checks, dispatch-quality, markdown structural, public-export,
+finding-learning, execute-route sequence, governed file-size, and
+pre-implementation autorun. Boundary remains private, uncommitted, no
+live/provider proof, no prompt injection, no reinjection, no persistence/graph
+mutation, no public-sync, no push.
+
+Memory system tranche completion is `TRANCHE_REVIEW_READY`:
+
+`docs/reviews/CVF_MKG_MEMORY_SYSTEM_TRANCHE_COMPLETION_2026-06-01.md`
+
+WSR1 Workspace Public-Core Reconciliation is
+`PUBLICATION_READY_PENDING_OPERATOR_COMMIT`:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_WSR1_WORKSPACE_PUBLIC_CORE_RECONCILIATION_2026-06-01.md`
+- roadmap:
+  `docs/roadmaps/CVF_WSR1_WORKSPACE_PUBLIC_CORE_RECONCILIATION_ROADMAP_2026-06-01.md`
+- completion:
+  `docs/reviews/CVF_WSR1_WORKSPACE_PUBLIC_CORE_RECONCILIATION_COMPLETION_2026-06-01.md`
+
+Local `CVF-Workspace` hidden core was migrated from unrelated `dc841d33`
+history to fresh public `eb87479`; backup is preserved; `qt-saigon-works`
+doctor is `PASS WITH NOTE (16 passed, 1 warning)`. The remaining warning is the
+reviewed public workspace-kit overlay. Public-sync static CI gate is PASS after
+README workspace onboarding, concise guard registry links, and public-surface
+cleanup. Next allowed WSR1 move is operator review of the bounded public-sync
+delta before commit or push.
+
 CPG-2 is CLOSED_PASS_BOUNDED with
 release-quality proof:
 
