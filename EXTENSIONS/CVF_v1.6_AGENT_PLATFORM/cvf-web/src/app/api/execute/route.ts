@@ -340,6 +340,7 @@ export async function POST(request: NextRequest) {
             intent: body.intent,
             templateId: template?.id ?? body.templateId,
         });
+        const memoryAdvisoryReadout = buildMemoryAdvisoryReadout({ request: body as ExecutionRequest, actorRole: resolvedExecutionRole.role ?? 'unknown', actorId: session?.userId ?? (isServiceAllowed ? 'service-account' : 'unknown-actor'), sessionId: session?.userId ?? serviceIdentity ?? null });
         const enforcement = evaluateEnforcement({
             mode,
             content: filteredPrompt,
@@ -348,6 +349,7 @@ export async function POST(request: NextRequest) {
             specValues: body.inputs,
             cvfPhase: body.cvfPhase,
             cvfRiskLevel: body.cvfRiskLevel,
+            memoryEligibility: memoryAdvisoryReadout.eligibility,
             requiresSkillPreflight,
             skillPreflight: {
                 passed: body.skillPreflightPassed,
@@ -819,7 +821,6 @@ export async function POST(request: NextRequest) {
             }
         }
 
-        const memoryAdvisoryReadout = buildMemoryAdvisoryReadout({ request: body as ExecutionRequest, actorRole: resolvedExecutionRole.role ?? 'unknown', actorId: session?.userId ?? (isServiceAllowed ? 'service-account' : 'unknown-actor'), sessionId: session?.userId ?? serviceIdentity ?? null });
         return buildExecuteFinalResponse({
             aiResult: { ...aiResult, memoryAdvisoryReadout } as ExecutionResponse,
             outputValidation,

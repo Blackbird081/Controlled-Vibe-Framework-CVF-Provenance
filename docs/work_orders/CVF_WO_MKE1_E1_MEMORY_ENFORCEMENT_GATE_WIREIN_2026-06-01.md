@@ -141,10 +141,10 @@ Active owner entrypoint: `route.ts`, current physical count 861 lines. Keep belo
 
 | Proof | Path | Required literal | Required at handoff |
 | --- | --- | --- | --- |
-| REVOKED blocks | `enforcement.test.ts` | `memory_access_revoked` | Yes |
-| READOUT_DENIED blocks | `enforcement.test.ts` | `memory_readout_denied` | Yes |
-| Advisory-only state allowed | `enforcement.test.ts` | `NO_AUTHORITY_SOURCE` | Yes |
-| ALLOW response advisory preserved | route/advisory test | `memoryAdvisoryReadout` | Yes |
+| REVOKED blocks | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/enforcement.test.ts` | `memory_access_revoked` | Yes |
+| READOUT_DENIED blocks | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/enforcement.test.ts` | `memory_readout_denied` | Yes |
+| Advisory-only state allowed | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/enforcement.test.ts` | `NO_AUTHORITY_SOURCE` | Yes |
+| ALLOW response advisory preserved | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route-memory-advisory.test.ts` | `memoryAdvisoryReadout` | Yes |
 
 ## 7. Write Ownership
 
