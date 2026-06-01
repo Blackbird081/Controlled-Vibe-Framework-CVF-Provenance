@@ -37,8 +37,10 @@ Authority:
   — Non-Goal: "do not convert advisory Memory output into execution-policy
   enforcement in this roadmap unless a later GC-018 explicitly authorizes it."
 
-This roadmap is that later GC-018 authority path. Each tranche must open its
-own GC-018 before implementation.
+This roadmap defines the authority path that enables tranche GC-018s to be
+opened. The roadmap itself is not a GC-018 and does not authorize
+implementation. Each tranche is blocked until its own GC-018 exists and is
+marked AUTHORIZED_FOR_IMPLEMENTATION.
 
 ## Current State (Source-Verified at `7564f57b`)
 
@@ -101,7 +103,7 @@ Out of scope:
 | Tranche | Name | Goal | Primary outputs | Status | Dependency |
 | --- | --- | --- | --- | --- | --- |
 | MKE1-E1 | Enforcement Gate Wire-In | Move eligibility evaluation before enforcement; add REVOKED/DENIED block signal to EnforcementInput | `enforcement.ts` delta, `route.ts` delta, helper extraction, focused tests | PROPOSED | none |
-| MKE1-E2 | Durable Write Route | Add governed `POST /api/memory/write` route with actor authorization, provenance gate, and receipt | new route file, tests | PROPOSED | E1 live proof PASS |
+| MKE1-E2 | Durable Write Route | Add governed `POST /api/memory/write` route with actor authorization, provenance gate, and receipt | new route file, tests | PROPOSED | E1 non-live gates and tests PASS |
 | MKE1-E3 | Live Governance Proof | Prove enforcement gate blocks REVOKED execution with live provider call | live proof receipt, completion review | PROPOSED | E1 + E2 complete |
 
 ## Work Plan
@@ -189,18 +191,18 @@ request. Standard: `docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.m
 
 ## Source Verification Block (Roadmap-Level)
 
-| Claimed item | Verification class | Source file | Verified line/section | Verified path or symbol | Disposition |
-| --- | --- | --- | --- | --- | --- |
-| `evaluateEnforcement` call position | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts` | line 343 | `evaluateEnforcement` | ACCEPT |
-| `EnforcementInput` extensible | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/enforcement.ts` | lines 34–62 | `EnforcementInput` | ACCEPT |
-| No memory field in EnforcementInput | VALUE_SET | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/enforcement.ts` | lines 34–62 | (absent) `memoryEligibility` | ACCEPT |
-| `memoryAdvisoryReadout` runs post-execution | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts` | line 822 | `buildMemoryAdvisoryReadout` | ACCEPT |
-| REVOKED state in eligibility policy | VALUE_SET | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-readout-eligibility-policy.ts` | line 11 | `REVOKED` | ACCEPT |
-| READOUT_DENIED state | VALUE_SET | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-readout-eligibility-policy.ts` | line 9 | `READOUT_DENIED` | ACCEPT |
-| Durable write not wired | VALUE_SET | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts` | grep: absent | (absent) `DurableMemoryStore.write` | ACCEPT |
-| Existing BLOCK pattern | RUNTIME_BEHAVIOR | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts` | lines 360–388 | `enforcement` | ACCEPT |
-| route.ts line count | VALUE_SET | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts` | physical count | 860 lines | ACCEPT |
-| Live proof script | EXISTS | `scripts/run_cvf_release_gate_bundle.py` | top-level file | `run_cvf_release_gate_bundle` | ACCEPT |
+| Claimed item | Verification class | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
+| --- | --- | --- | --- | --- | --- | --- |
+| `evaluateEnforcement` call position | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts` | line 343 | `evaluateEnforcement` | execute route | ACCEPT |
+| `EnforcementInput` extensible | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/enforcement.ts` | lines 34–62 | `EnforcementInput` | `evaluateEnforcement` | ACCEPT |
+| No memory field in EnforcementInput (field absent — new) | DOC_ONLY_NEW | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/enforcement.ts` | lines 34–62 | `EnforcementInput` | `EnforcementInput` | ACCEPT |
+| `memoryAdvisoryReadout` runs post-execution | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts` | line 822 | `buildMemoryAdvisoryReadout` | execute route | ACCEPT |
+| REVOKED state in eligibility policy | VALUE_SET | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-readout-eligibility-policy.ts` | line 11 | `REVOKED` | `MemoryReadoutEligibilityState` | ACCEPT |
+| READOUT_DENIED state | VALUE_SET | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-readout-eligibility-policy.ts` | line 9 | `READOUT_DENIED` | `MemoryReadoutEligibilityState` | ACCEPT |
+| Durable write not wired into execute route | VALUE_SET | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/durable-memory-store.ts` | line 89 | `DurableMemoryStore` | durable store | ACCEPT |
+| Existing BLOCK pattern | RUNTIME_BEHAVIOR | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts` | lines 360–388 | `enforcement` | `EnforcementResult` | ACCEPT |
+| route.ts line count | VALUE_SET | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts` | physical count | 860 lines | execute route | ACCEPT |
+| Live proof script | EXISTS | `scripts/run_cvf_release_gate_bundle.py` | top-level file | `run_cvf_release_gate_bundle` | release gate scripts | ACCEPT |
 
 ## Risk Register
 
