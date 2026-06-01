@@ -16,6 +16,17 @@ export type {
   MemoryRetrievalResult,
 } from "./memory-retrieval-policy";
 
+export {
+  buildRetrievalAttribution,
+  DEFAULT_STALE_THRESHOLD_MS,
+} from "./memory-retrieval-attribution";
+
+export type {
+  MemoryRetrievalAttribution,
+  MemoryRetrievalRankReason,
+  BuildRetrievalAttributionOptions,
+} from "./memory-retrieval-attribution";
+
 export type {
   MemoryGatewayDecision,
   MemoryGatewayPolicyDecision,
@@ -24,3 +35,14 @@ export type {
 
 export type { MemoryEventHookEvaluation } from "./memory-event-hooks";
 export type { RuntimeMemoryActorRole } from "./runtime-memory-hierarchy";
+
+export {
+  evaluateReadoutEligibility,
+  MEMORY_READOUT_ELIGIBILITY_POLICY_VERSION,
+} from "./memory-readout-eligibility-policy";
+
+export type {
+  MemoryReadoutEligibilityState,
+  MemoryReadoutEligibilityInput,
+  MemoryReadoutEligibilityResult,
+} from "./memory-readout-eligibility-policy";

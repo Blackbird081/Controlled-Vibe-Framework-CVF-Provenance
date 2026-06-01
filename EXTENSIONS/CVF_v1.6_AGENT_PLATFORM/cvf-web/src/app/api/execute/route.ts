@@ -31,11 +31,12 @@ import { buildRoleOutputDeniedResponse, buildRolePermissionDeniedResponse } from
 import { buildExecutionIdentityDecision } from '@/lib/execution-identity';
 import { evaluateExecutionActorRoleGate, resolveExecutionCVFRole, resolveExecutionOutputClass } from '@/lib/execute-role-resolver';
 import { buildOutputBypassGuardResult, checkRoleOutputPermission, detectBypassInOutput, resolveGuardAction, shouldRequireSkillPreflight } from '@/lib/execute-route-guards';
-import { attachReceiptToDiagnostic, buildExecutionDiagnostic } from '@/lib/execution-diagnostics';
+import { buildExecutionDiagnostic } from '@/lib/execution-diagnostics';
 import { getApprovalStore, type ApprovalRequestRecord } from '../approvals/store';
 import { approvalRecordMatchesActor, buildApprovalActorBinding, buildApprovalRequestSnapshot, computeApprovalRequestHash } from '../approvals/approval-binding';
 import { executeVisionRouteRequest, prepareVisionRouteRequest } from './vision-route-helper';
 import { buildExecuteFinalResponse } from './route-final-response';
+import { buildMemoryAdvisoryReadout } from './route-memory-advisory';
 export async function POST(request: NextRequest) {
     const routeStartedAtMs = Date.now();
     try {
@@ -818,8 +819,9 @@ export async function POST(request: NextRequest) {
             }
         }
 
+        const memoryAdvisoryReadout = buildMemoryAdvisoryReadout({ request: body as ExecutionRequest, actorRole: resolvedExecutionRole.role ?? 'unknown', actorId: session?.userId ?? (isServiceAllowed ? 'service-account' : 'unknown-actor'), sessionId: session?.userId ?? serviceIdentity ?? null });
         return buildExecuteFinalResponse({
-            aiResult,
+            aiResult: { ...aiResult, memoryAdvisoryReadout } as ExecutionResponse,
             outputValidation,
             retryState,
             request: body as ExecutionRequest,
