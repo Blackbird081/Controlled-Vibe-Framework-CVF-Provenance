@@ -123,9 +123,9 @@ Example packet:
 | `spec_fallback_model_update` value | `docs/reference/CVF_LHW7_T3_FAILURE_SIM_SPEC_CHANGE_REINTAKE_CONNECTOR_SPEC_2026-05-28.md` | S2 line 81 | `faultToRespecAdvisoryType` | LHW7-T3 S2 mapping | ACCEPT |
 | `transitionEnforcementAdvisoryType` field | `docs/reference/CVF_LHW10_T1_WORKFLOW_TRANSITION_ENFORCEMENT_ADVISORY_CONNECTOR_SPEC_2026-05-28.md` | S3 line 137 | `transitionEnforcementAdvisoryType` | LHW10-T1 doc-only field | ACCEPT |
 | `escalated_blocked` value | `docs/reference/CVF_LHW10_T1_WORKFLOW_TRANSITION_ENFORCEMENT_ADVISORY_CONNECTOR_SPEC_2026-05-28.md` | S2 lines 88, 90, 94, 98, 102 | `transitionEnforcementAdvisoryType` | LHW10-T1 S2 mapping | ACCEPT |
-| `pending_approval` value | `docs/reference/CVF_LHW3_SPEC_CHANGE_WORKFLOW_PACKET_CONNECTOR_SPEC_2026-05-27.md` | S3 line 67 | `changePacketStatus` | LHW3-T3 doc-only field | ACCEPT |
-| `approved` value | `docs/reference/CVF_LHW3_SPEC_CHANGE_WORKFLOW_PACKET_CONNECTOR_SPEC_2026-05-27.md` | S3 line 67 | `changePacketStatus` | LHW3-T3 doc-only field | ACCEPT |
-| `rejected` value | `docs/reference/CVF_LHW3_SPEC_CHANGE_WORKFLOW_PACKET_CONNECTOR_SPEC_2026-05-27.md` | S3 line 67 | `changePacketStatus` | LHW3-T3 doc-only field | ACCEPT |
+| `pending_approval` value | `docs/reference/archive/CVF_LHW3_SPEC_CHANGE_WORKFLOW_PACKET_CONNECTOR_SPEC_2026-05-27.md` | S3 line 67 | `changePacketStatus` | LHW3-T3 doc-only field | ACCEPT |
+| `approved` value | `docs/reference/archive/CVF_LHW3_SPEC_CHANGE_WORKFLOW_PACKET_CONNECTOR_SPEC_2026-05-27.md` | S3 line 67 | `changePacketStatus` | LHW3-T3 doc-only field | ACCEPT |
+| `rejected` value | `docs/reference/archive/CVF_LHW3_SPEC_CHANGE_WORKFLOW_PACKET_CONNECTOR_SPEC_2026-05-27.md` | S3 line 67 | `changePacketStatus` | LHW3-T3 doc-only field | ACCEPT |
 | `specChangeGovernanceDecision` field | N/A — new doc-only field | S3 new fields | `specChangeGovernanceDecision` | new doc-only field | ACCEPT |
 | `rollbackRecommended` field | N/A — new doc-only field | S3 new fields | `rollbackRecommended` | new doc-only field | ACCEPT |
 

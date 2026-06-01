@@ -33,7 +33,7 @@ behavior is changed.
 - M1 source: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/durable-memory-store.ts`
 - AIF-C source: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/controlled-memory-gateway.ts`
 - WR1 source: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts`
-- LHW4-T1 spec: `docs/reference/CVF_LHW4_MEMORY_SNAPSHOT_GOVERNANCE_CONNECTOR_SPEC_2026-05-27.md`
+- LHW4-T1 spec: `docs/reference/archive/CVF_LHW4_MEMORY_SNAPSHOT_GOVERNANCE_CONNECTOR_SPEC_2026-05-27.md`
 - LHW6-T1 spec: `docs/reference/CVF_LHW6_TOOL_RUNTIME_BRIDGE_ADVISORY_CONNECTOR_SPEC_2026-05-28.md`
 - LHW6-T2 spec: `docs/reference/CVF_LHW6_CLI_TOOL_ONBOARDING_GOVERNANCE_CONNECTOR_SPEC_2026-05-28.md`
 
@@ -97,7 +97,7 @@ Memory reinjection, new memory tiers, and raw memory release remain blocked.
    confirm `WorkflowRecoveryAction` values: `resume_from_checkpoint`,
    `hold_for_reviewer_gate`, `escalate_to_governance`,
    `request_human_review`
-7. `docs/reference/CVF_LHW4_MEMORY_SNAPSHOT_GOVERNANCE_CONNECTOR_SPEC_2026-05-27.md`
+7. `docs/reference/archive/CVF_LHW4_MEMORY_SNAPSHOT_GOVERNANCE_CONNECTOR_SPEC_2026-05-27.md`
    — confirm S3 `snapshotBoundary` values and `canReinject=false` invariant;
    use LHW4-T1 snapshot receipt as evidence anchor for T3
 8. `docs/roadmaps/CVF_LHW6_WORKFLOW_CONNECTOR_WAVE6_ROADMAP_2026-05-28.md`

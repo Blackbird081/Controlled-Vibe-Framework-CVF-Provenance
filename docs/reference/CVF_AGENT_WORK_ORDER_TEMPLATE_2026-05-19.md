@@ -387,7 +387,7 @@ this separate table:
 | <field name> | <why it exists> | Yes | Yes | <doc/schema/checklist validation only> |
 
 MA1 section references are locked to the canonical standard at
-`docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`.
+`docs/reference/archive/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`.
 Do not invent or rename MA1 sections. Use only:
 
 - `## 0. Surface Fidelity Gate`

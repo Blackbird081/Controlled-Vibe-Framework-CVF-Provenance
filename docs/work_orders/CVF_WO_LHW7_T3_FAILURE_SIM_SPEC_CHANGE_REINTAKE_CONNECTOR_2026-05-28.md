@@ -35,9 +35,9 @@ blocked. T3 completes the LHW7 Workflow Connector Wave 7.
   — CLOSED_PASS_BOUNDED
 - LH1 ledger: `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
   (triggers: `CVF Edit`, `Review CVF_3.md`)
-- LHW5-T3 spec: `docs/reference/CVF_LHW5_FAILURE_SIMULATION_SCENARIO_PACKET_CONNECTOR_SPEC_2026-05-27.md`
-- LHW3-T3 spec: `docs/reference/CVF_LHW3_SPEC_CHANGE_WORKFLOW_PACKET_CONNECTOR_SPEC_2026-05-27.md`
-- LHW3-T2 spec: `docs/reference/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md`
+- LHW5-T3 spec: `docs/reference/archive/CVF_LHW5_FAILURE_SIMULATION_SCENARIO_PACKET_CONNECTOR_SPEC_2026-05-27.md`
+- LHW3-T3 spec: `docs/reference/archive/CVF_LHW3_SPEC_CHANGE_WORKFLOW_PACKET_CONNECTOR_SPEC_2026-05-27.md`
+- LHW3-T2 spec: `docs/reference/archive/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md`
 - WR1 source: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts`
 
 ## Agent Roles
@@ -68,13 +68,13 @@ blocked.
 
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-3. `docs/reference/CVF_LHW5_FAILURE_SIMULATION_SCENARIO_PACKET_CONNECTOR_SPEC_2026-05-27.md`
+3. `docs/reference/archive/CVF_LHW5_FAILURE_SIMULATION_SCENARIO_PACKET_CONNECTOR_SPEC_2026-05-27.md`
    — confirm S3 fields: `scenarioType` values, `wr1RecoveryAction`,
    `lhw3TrendSignal`, `scenarioId`, `boundaryStatement`, `scenarioPlanningOnly=true`
-4. `docs/reference/CVF_LHW3_SPEC_CHANGE_WORKFLOW_PACKET_CONNECTOR_SPEC_2026-05-27.md`
+4. `docs/reference/archive/CVF_LHW3_SPEC_CHANGE_WORKFLOW_PACKET_CONNECTOR_SPEC_2026-05-27.md`
    — confirm S3 fields at lines 60–67: `changeId`, `deltaDescription`,
    `affectedPhaseRange`, `changePacketStatus` values
-5. `docs/reference/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md`
+5. `docs/reference/archive/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md`
    — confirm S2 clarification packet types at lines 47–50 (all 4 values)
 6. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts`
    — confirm `WorkflowRecoveryAction` values at lines 50–54
@@ -87,14 +87,14 @@ If any required file is missing, stop and report to Orchestrator.
 
 | Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 | --- | --- | --- | --- | --- | --- |
-| LHW5-T3 `scenarioType` values | `docs/reference/CVF_LHW5_FAILURE_SIMULATION_SCENARIO_PACKET_CONNECTOR_SPEC_2026-05-27.md` | S3 `scenarioType` | `scenarioType` | LHW5-T3 packet field | ACCEPT |
-| LHW5-T3 `wr1RecoveryAction` | `docs/reference/CVF_LHW5_FAILURE_SIMULATION_SCENARIO_PACKET_CONNECTOR_SPEC_2026-05-27.md` | S3 `wr1RecoveryAction` | `wr1RecoveryAction` | LHW5-T3 packet field | ACCEPT |
-| LHW5-T3 `lhw3TrendSignal` | `docs/reference/CVF_LHW5_FAILURE_SIMULATION_SCENARIO_PACKET_CONNECTOR_SPEC_2026-05-27.md` | S3 `lhw3TrendSignal` | `lhw3TrendSignal` | LHW5-T3 packet field | ACCEPT |
-| LHW5-T3 `scenarioId` | `docs/reference/CVF_LHW5_FAILURE_SIMULATION_SCENARIO_PACKET_CONNECTOR_SPEC_2026-05-27.md` | S3 `scenarioId` | `scenarioId` | LHW5-T3 packet field | ACCEPT |
-| LHW5-T3 `boundaryStatement` | `docs/reference/CVF_LHW5_FAILURE_SIMULATION_SCENARIO_PACKET_CONNECTOR_SPEC_2026-05-27.md` | S3 `boundaryStatement` | `boundaryStatement` | LHW5-T3 packet field | ACCEPT |
-| LHW5-T3 `scenarioPlanningOnly=true` | `docs/reference/CVF_LHW5_FAILURE_SIMULATION_SCENARIO_PACKET_CONNECTOR_SPEC_2026-05-27.md` | S3 `scenarioPlanningOnly` | `scenarioPlanningOnly` | LHW5-T3 invariant | ACCEPT |
-| LHW3-T3 `changeId`, `deltaDescription`, `affectedPhaseRange`, `changePacketStatus` | `docs/reference/CVF_LHW3_SPEC_CHANGE_WORKFLOW_PACKET_CONNECTOR_SPEC_2026-05-27.md` | S3 lines 60–67 | LHW3-T3 packet fields | LHW3-T3 packet | ACCEPT |
-| LHW3-T2 clarification packet types (all 4) | `docs/reference/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md` | S2 lines 47–50 | clarification packet type enum | LHW3-T2 packet | ACCEPT |
+| LHW5-T3 `scenarioType` values | `docs/reference/archive/CVF_LHW5_FAILURE_SIMULATION_SCENARIO_PACKET_CONNECTOR_SPEC_2026-05-27.md` | S3 `scenarioType` | `scenarioType` | LHW5-T3 packet field | ACCEPT |
+| LHW5-T3 `wr1RecoveryAction` | `docs/reference/archive/CVF_LHW5_FAILURE_SIMULATION_SCENARIO_PACKET_CONNECTOR_SPEC_2026-05-27.md` | S3 `wr1RecoveryAction` | `wr1RecoveryAction` | LHW5-T3 packet field | ACCEPT |
+| LHW5-T3 `lhw3TrendSignal` | `docs/reference/archive/CVF_LHW5_FAILURE_SIMULATION_SCENARIO_PACKET_CONNECTOR_SPEC_2026-05-27.md` | S3 `lhw3TrendSignal` | `lhw3TrendSignal` | LHW5-T3 packet field | ACCEPT |
+| LHW5-T3 `scenarioId` | `docs/reference/archive/CVF_LHW5_FAILURE_SIMULATION_SCENARIO_PACKET_CONNECTOR_SPEC_2026-05-27.md` | S3 `scenarioId` | `scenarioId` | LHW5-T3 packet field | ACCEPT |
+| LHW5-T3 `boundaryStatement` | `docs/reference/archive/CVF_LHW5_FAILURE_SIMULATION_SCENARIO_PACKET_CONNECTOR_SPEC_2026-05-27.md` | S3 `boundaryStatement` | `boundaryStatement` | LHW5-T3 packet field | ACCEPT |
+| LHW5-T3 `scenarioPlanningOnly=true` | `docs/reference/archive/CVF_LHW5_FAILURE_SIMULATION_SCENARIO_PACKET_CONNECTOR_SPEC_2026-05-27.md` | S3 `scenarioPlanningOnly` | `scenarioPlanningOnly` | LHW5-T3 invariant | ACCEPT |
+| LHW3-T3 `changeId`, `deltaDescription`, `affectedPhaseRange`, `changePacketStatus` | `docs/reference/archive/CVF_LHW3_SPEC_CHANGE_WORKFLOW_PACKET_CONNECTOR_SPEC_2026-05-27.md` | S3 lines 60–67 | LHW3-T3 packet fields | LHW3-T3 packet | ACCEPT |
+| LHW3-T2 clarification packet types (all 4) | `docs/reference/archive/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md` | S2 lines 47–50 | clarification packet type enum | LHW3-T2 packet | ACCEPT |
 | WR1 `resume_from_checkpoint` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts` | line 51 | `WorkflowRecoveryAction` value | `WorkflowRecoveryAction` | ACCEPT |
 | WR1 `hold_for_reviewer_gate` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts` | line 52 | `WorkflowRecoveryAction` value | `WorkflowRecoveryAction` | ACCEPT |
 | WR1 `escalate_to_governance` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts` | line 53 | `WorkflowRecoveryAction` value | `WorkflowRecoveryAction` | ACCEPT |

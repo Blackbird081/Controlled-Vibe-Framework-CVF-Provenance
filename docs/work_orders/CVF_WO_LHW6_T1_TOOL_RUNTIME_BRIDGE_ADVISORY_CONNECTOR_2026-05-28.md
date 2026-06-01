@@ -31,7 +31,7 @@ behavior is changed. Tool execution remains blocked.
 - LH1 ledger (`OpenAgentd` trigger): `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md`
 - W3: `docs/reviews/CVF_W3_TOOL_MCP_DATABASE_ACTION_TAXONOMY_COMPLETION_2026-05-24.md`
 - TA1: `docs/reviews/archive/CVF_TA1_TOOL_ACTION_APPROVAL_READOUT_COMPLETION_2026-05-25.md`
-- LHW4-T2 spec: `docs/reference/CVF_LHW4_EXECUTION_AUTHORITY_CHAIN_READOUT_CONNECTOR_SPEC_2026-05-27.md`
+- LHW4-T2 spec: `docs/reference/archive/CVF_LHW4_EXECUTION_AUTHORITY_CHAIN_READOUT_CONNECTOR_SPEC_2026-05-27.md`
 
 ## Agent Roles
 
@@ -68,7 +68,7 @@ blocked.
    — confirm TA1 approval state tokens: `not_required`, `pending_approval`,
    `satisfied_but_not_executable`, `blocked_before_approval`,
    `blocked_by_policy`, `incomplete_approval`
-5. `docs/reference/CVF_LHW4_EXECUTION_AUTHORITY_CHAIN_READOUT_CONNECTOR_SPEC_2026-05-27.md`
+5. `docs/reference/archive/CVF_LHW4_EXECUTION_AUTHORITY_CHAIN_READOUT_CONNECTOR_SPEC_2026-05-27.md`
    — confirm S3 `dispatchDecision` values: `allowed` | `hold_for_approval` | `blocked`;
    confirm `authorityChainSignal` vocabulary
 6. `docs/roadmaps/CVF_LHW6_WORKFLOW_CONNECTOR_WAVE6_ROADMAP_2026-05-28.md`
@@ -85,7 +85,7 @@ If any required file is missing, stop and report to Orchestrator.
 | W3 `ToolTransport` values: `local`, `stdio_mcp`, `remote_mcp`, `http`, `browser`, `database_connection` | `governance/contracts/tool-action-taxonomy.ts` | line 43 | `ToolTransport` | `ToolTransport` | ACCEPT |
 | W3 `runtimeExecutionAuthorized=false` | `governance/contracts/tool-action-taxonomy.ts` | lines 106-120, 130-142 | `runtimeExecutionAuthorized` | `ToolActionTaxonomyEvaluation` / `ToolActionApprovalReadout` | ACCEPT |
 | TA1 approval state values: `not_required`, `pending_approval`, `satisfied_but_not_executable`, `blocked_before_approval`, `blocked_by_policy`, `incomplete_approval` | `governance/contracts/tool-action-taxonomy.ts` | lines 64-70, 130-142 | `ToolActionApprovalState` | `ToolActionApprovalState` / `ToolActionApprovalReadout` | ACCEPT |
-| LHW4-T2 `dispatchDecision` values | `docs/reference/CVF_LHW4_EXECUTION_AUTHORITY_CHAIN_READOUT_CONNECTOR_SPEC_2026-05-27.md` | S3 field list | `allowed`, `hold_for_approval`, `blocked` | LHW4-T2 authority chain packet | ACCEPT |
+| LHW4-T2 `dispatchDecision` values | `docs/reference/archive/CVF_LHW4_EXECUTION_AUTHORITY_CHAIN_READOUT_CONNECTOR_SPEC_2026-05-27.md` | S3 field list | `allowed`, `hold_for_approval`, `blocked` | LHW4-T2 authority chain packet | ACCEPT |
 
 New doc-only fields proposed by this work order: `bridgeAdvisoryId`,
 `bridgeSurface`, `bridgeAdvisoryType`, `toolBridgeSignal`, and

@@ -107,7 +107,7 @@ documentation only.
 | W3 `ToolTransport` values `local`, `stdio_mcp`, `remote_mcp`, `http`, `browser`, `database_connection` | `governance/contracts/tool-action-taxonomy.ts` | line 43 | `ToolTransport` | `ToolTransport` | ACCEPT |
 | W3 `runtimeExecutionAuthorized=false` | `governance/contracts/tool-action-taxonomy.ts` | lines 119, 141 | `ToolActionTaxonomyEvaluation.runtimeExecutionAuthorized`, `ToolActionApprovalReadout.runtimeExecutionAuthorized` | `ToolActionTaxonomyEvaluation` / `ToolActionApprovalReadout` | ACCEPT |
 | TA1 `approvalState` tokens `not_required`, `pending_approval`, `satisfied_but_not_executable`, `blocked_before_approval`, `blocked_by_policy`, `incomplete_approval` | `governance/contracts/tool-action-taxonomy.ts` | lines 64–70 | `ToolActionApprovalState` | `ToolActionApprovalState` | ACCEPT |
-| LHW4-T2 `dispatchDecision` values `allowed`, `hold_for_approval`, `blocked` | `docs/reference/CVF_LHW4_EXECUTION_AUTHORITY_CHAIN_READOUT_CONNECTOR_SPEC_2026-05-27.md` | S3 field list | `dispatchDecision` | LHW4-T2 authority chain packet | ACCEPT |
+| LHW4-T2 `dispatchDecision` values `allowed`, `hold_for_approval`, `blocked` | `docs/reference/archive/CVF_LHW4_EXECUTION_AUTHORITY_CHAIN_READOUT_CONNECTOR_SPEC_2026-05-27.md` | S3 field list | `dispatchDecision` | LHW4-T2 authority chain packet | ACCEPT |
 | Doc-only fields `bridgeAdvisoryId`, `bridgeSurface`, `bridgeAdvisoryType`, `toolBridgeSignal`, `toolBridgeBlocking` | N/A — new doc-only fields proposed by LHW6-T1 work order | work order S3 new doc-only fields block | doc-only; no runtime source | LHW6-T1 advisory packet | ACCEPT |
 
 No `BLOCKED_SOURCE_NOT_FOUND` rows. All claimed runtime/source items are ACCEPT.

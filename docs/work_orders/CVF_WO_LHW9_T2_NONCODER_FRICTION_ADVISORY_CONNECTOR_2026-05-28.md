@@ -35,7 +35,7 @@ preserved.
   (triggers: `AI-first vs Human-first`, `Human System Harness`)
 - CB1 completion: `docs/reviews/archive/CVF_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_COMPLETION_2026-05-25.md`
 - C8 completion: `docs/reviews/archive/CVF_C8_PRODUCT_SKILL_PACK_SELECTION_READOUT_COMPLETION_2026-05-25.md`
-- LHW3-T2 spec: `docs/reference/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md`
+- LHW3-T2 spec: `docs/reference/archive/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md`
 
 ## Agent Roles
 
@@ -67,7 +67,7 @@ any `.ts`/`.tsx`/`.js`/`.py` file, receipt envelope schema, public-sync repo.
    confirm `ProductSkillPackRequestContextReadiness` at lines 48–52;
    confirm `missingSignals` at line 88;
    confirm `contaminationFlags` at line 89
-4. `docs/reference/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md`
+4. `docs/reference/archive/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md`
    — confirm S2 clarification packet types at lines 47–50 (all 4 values)
 5. `docs/roadmaps/CVF_LHW9_WORKFLOW_CONNECTOR_WAVE9_ROADMAP_2026-05-28.md`
    — confirm T2 deliverable shape
@@ -86,10 +86,10 @@ any `.ts`/`.tsx`/`.js`/`.py` file, receipt envelope schema, public-sync repo.
 | `blocked_contaminated_brief` | `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/product-outcome.runtime.ts` | line 52 | `ProductSkillPackRequestContextReadiness` value | `ProductSkillPackRequestContextReadiness` | ACCEPT |
 | `ProductSkillPackRequestContextReadout.missingSignals` | `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/product-outcome.runtime.ts` | line 88 | `missingSignals` | `ProductSkillPackRequestContextReadout` | ACCEPT |
 | `ProductSkillPackRequestContextReadout.contaminationFlags` | `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/product-outcome.runtime.ts` | line 89 | `contaminationFlags` | `ProductSkillPackRequestContextReadout` | ACCEPT |
-| `missing_context_clarification_packet` | `docs/reference/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md` | S2 line 47 | clarification packet type | LHW3-T2 packet | ACCEPT |
-| `noisy_context_clarification_packet` | `docs/reference/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md` | S2 line 48 | clarification packet type | LHW3-T2 packet | ACCEPT |
-| `ambiguous_outcome_clarification_packet` | `docs/reference/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md` | S2 line 49 | clarification packet type | LHW3-T2 packet | ACCEPT |
-| `unmatched_request_clarification_packet` | `docs/reference/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md` | S2 line 50 | clarification packet type | LHW3-T2 packet | ACCEPT |
+| `missing_context_clarification_packet` | `docs/reference/archive/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md` | S2 line 47 | clarification packet type | LHW3-T2 packet | ACCEPT |
+| `noisy_context_clarification_packet` | `docs/reference/archive/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md` | S2 line 48 | clarification packet type | LHW3-T2 packet | ACCEPT |
+| `ambiguous_outcome_clarification_packet` | `docs/reference/archive/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md` | S2 line 49 | clarification packet type | LHW3-T2 packet | ACCEPT |
+| `unmatched_request_clarification_packet` | `docs/reference/archive/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md` | S2 line 50 | clarification packet type | LHW3-T2 packet | ACCEPT |
 | New doc-only fields `frictionAdvisoryType`, `antiOverconstraintRecommendation` | N/A — doc-only | S3 new fields | doc-only | Noncoder friction advisory packet | ACCEPT |
 
 ## Roadmap-To-Work-Order Trace Matrix

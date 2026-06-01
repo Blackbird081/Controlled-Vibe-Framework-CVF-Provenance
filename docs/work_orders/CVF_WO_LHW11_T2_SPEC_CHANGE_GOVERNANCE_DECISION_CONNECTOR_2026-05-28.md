@@ -34,7 +34,7 @@ must infer this manually.
   (triggers: `Review CVF_5.md`, `CVF_EDIT_ANALYSIS.md`)
 - LHW7-T3 spec: `docs/reference/CVF_LHW7_T3_FAILURE_SIM_SPEC_CHANGE_REINTAKE_CONNECTOR_SPEC_2026-05-28.md`
 - LHW10-T1 spec: `docs/reference/CVF_LHW10_T1_WORKFLOW_TRANSITION_ENFORCEMENT_ADVISORY_CONNECTOR_SPEC_2026-05-28.md`
-- LHW3-T3 spec: `docs/reference/CVF_LHW3_SPEC_CHANGE_WORKFLOW_PACKET_CONNECTOR_SPEC_2026-05-27.md`
+- LHW3-T3 spec: `docs/reference/archive/CVF_LHW3_SPEC_CHANGE_WORKFLOW_PACKET_CONNECTOR_SPEC_2026-05-27.md`
 - **T1 gate: `docs/reviews/CVF_LHW11_T1_SESSION_GOVERNANCE_POSTURE_AGGREGATOR_CONNECTOR_COMPLETION_2026-05-28.md`
   must be CLOSED_PASS_BOUNDED before dispatch**
 
@@ -69,7 +69,7 @@ file, receipt envelope schema, public-sync repo.
    — confirm `faultToRespecAdvisoryType` values at S2 lines 75–81
 4. `docs/reference/CVF_LHW10_T1_WORKFLOW_TRANSITION_ENFORCEMENT_ADVISORY_CONNECTOR_SPEC_2026-05-28.md`
    — confirm `transitionEnforcementAdvisoryType` S2 mapping for posture-blocked values
-5. `docs/reference/CVF_LHW3_SPEC_CHANGE_WORKFLOW_PACKET_CONNECTOR_SPEC_2026-05-27.md`
+5. `docs/reference/archive/CVF_LHW3_SPEC_CHANGE_WORKFLOW_PACKET_CONNECTOR_SPEC_2026-05-27.md`
    — confirm `changePacketStatus` values at S3 line 67: `pending_approval`, `approved`, `rejected`
 6. `docs/reviews/CVF_LHW11_T1_SESSION_GOVERNANCE_POSTURE_AGGREGATOR_CONNECTOR_COMPLETION_2026-05-28.md`
    — confirm T1 CLOSED_PASS_BOUNDED (gate check)
@@ -87,9 +87,9 @@ file, receipt envelope schema, public-sync repo.
 | `spec_fallback_model_update` | `docs/reference/CVF_LHW7_T3_FAILURE_SIM_SPEC_CHANGE_REINTAKE_CONNECTOR_SPEC_2026-05-28.md` | S2 line 81 | `faultToRespecAdvisoryType` value | LHW7-T3 S2 mapping | ACCEPT |
 | `transitionEnforcementAdvisoryType` field | `docs/reference/CVF_LHW10_T1_WORKFLOW_TRANSITION_ENFORCEMENT_ADVISORY_CONNECTOR_SPEC_2026-05-28.md` | S3 line 137 | `transitionEnforcementAdvisoryType` | LHW10-T1 doc-only field | ACCEPT |
 | `escalated_blocked` | `docs/reference/CVF_LHW10_T1_WORKFLOW_TRANSITION_ENFORCEMENT_ADVISORY_CONNECTOR_SPEC_2026-05-28.md` | S2 lines 88, 90, 94, 98, 102 | `transitionEnforcementAdvisoryType` blocked-tier value | LHW10-T1 S2 mapping | ACCEPT |
-| `pending_approval` | `docs/reference/CVF_LHW3_SPEC_CHANGE_WORKFLOW_PACKET_CONNECTOR_SPEC_2026-05-27.md` | S3 line 67 | `changePacketStatus` value | LHW3-T3 doc-only field | ACCEPT |
-| `approved` | `docs/reference/CVF_LHW3_SPEC_CHANGE_WORKFLOW_PACKET_CONNECTOR_SPEC_2026-05-27.md` | S3 line 67 | `changePacketStatus` value | LHW3-T3 doc-only field | ACCEPT |
-| `rejected` | `docs/reference/CVF_LHW3_SPEC_CHANGE_WORKFLOW_PACKET_CONNECTOR_SPEC_2026-05-27.md` | S3 line 67 | `changePacketStatus` value | LHW3-T3 doc-only field | ACCEPT |
+| `pending_approval` | `docs/reference/archive/CVF_LHW3_SPEC_CHANGE_WORKFLOW_PACKET_CONNECTOR_SPEC_2026-05-27.md` | S3 line 67 | `changePacketStatus` value | LHW3-T3 doc-only field | ACCEPT |
+| `approved` | `docs/reference/archive/CVF_LHW3_SPEC_CHANGE_WORKFLOW_PACKET_CONNECTOR_SPEC_2026-05-27.md` | S3 line 67 | `changePacketStatus` value | LHW3-T3 doc-only field | ACCEPT |
+| `rejected` | `docs/reference/archive/CVF_LHW3_SPEC_CHANGE_WORKFLOW_PACKET_CONNECTOR_SPEC_2026-05-27.md` | S3 line 67 | `changePacketStatus` value | LHW3-T3 doc-only field | ACCEPT |
 | `specChangeGovernanceDecision` (new) | N/A — canonical doc-only field | S3 new fields | doc-only | Spec-change governance decision packet | ACCEPT |
 | `rollbackRecommended` (new) | N/A — canonical doc-only field | S3 new fields | doc-only boolean | Spec-change governance decision packet | ACCEPT |
 

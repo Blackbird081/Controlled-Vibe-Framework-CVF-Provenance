@@ -39,7 +39,7 @@ provider behavior is changed. T3 completes the LHW8 wave.
   (triggers: `CVF AUDIT LOG_md`, `Failure Simulation cho CVF.md`)
 - W4 completion: `docs/reviews/CVF_W4_OPERATIONAL_BENCHMARK_SCORECARD_COMPLETION_2026-05-24.md`
 - V3 completion: `docs/reviews/CVF_V3_EXECUTION_DIAGNOSTIC_CONTRACT_COMPLETION_2026-05-24.md`
-- LHW3-T2 spec: `docs/reference/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md`
+- LHW3-T2 spec: `docs/reference/archive/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md`
 
 ## Agent Roles
 
@@ -79,7 +79,7 @@ blocked.
 4. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts`
    — confirm `ExecutionDiagnosticClass` values at lines 16–38;
    confirm `ExecutionDiagnosticUserAction` values at lines 40–51
-5. `docs/reference/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md`
+5. `docs/reference/archive/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md`
    — confirm S2 clarification packet types at lines 47–50 (all 4 values)
 6. `docs/roadmaps/CVF_LHW8_WORKFLOW_CONNECTOR_WAVE8_ROADMAP_2026-05-28.md`
    — confirm T3 deliverable shape
@@ -103,10 +103,10 @@ If any required file is missing, stop and report to Orchestrator.
 | `model_unavailable` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts` | line 25 | `ExecutionDiagnosticClass` value | `ExecutionDiagnosticClass` | ACCEPT |
 | `routing_denied` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts` | line 30 | `ExecutionDiagnosticClass` value | `ExecutionDiagnosticClass` | ACCEPT |
 | `ExecutionDiagnosticUserAction` type | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts` | lines 40–51 | `ExecutionDiagnosticUserAction` | `ExecutionDiagnosticUserAction` | ACCEPT |
-| `missing_context_clarification_packet` | `docs/reference/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md` | S2 line 47 | clarification packet type | LHW3-T2 packet | ACCEPT |
-| `noisy_context_clarification_packet` | `docs/reference/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md` | S2 line 48 | clarification packet type | LHW3-T2 packet | ACCEPT |
-| `ambiguous_outcome_clarification_packet` | `docs/reference/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md` | S2 line 49 | clarification packet type | LHW3-T2 packet | ACCEPT |
-| `unmatched_request_clarification_packet` | `docs/reference/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md` | S2 line 50 | clarification packet type | LHW3-T2 packet | ACCEPT |
+| `missing_context_clarification_packet` | `docs/reference/archive/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md` | S2 line 47 | clarification packet type | LHW3-T2 packet | ACCEPT |
+| `noisy_context_clarification_packet` | `docs/reference/archive/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md` | S2 line 48 | clarification packet type | LHW3-T2 packet | ACCEPT |
+| `ambiguous_outcome_clarification_packet` | `docs/reference/archive/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md` | S2 line 49 | clarification packet type | LHW3-T2 packet | ACCEPT |
+| `unmatched_request_clarification_packet` | `docs/reference/archive/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md` | S2 line 50 | clarification packet type | LHW3-T2 packet | ACCEPT |
 | New doc-only fields `benchmarkTriggerAdvisoryType`, `reIntakePacketTypeRecommended` | N/A — doc-only | S3 new fields | doc-only | Failure-to-reintake advisory packet | ACCEPT |
 
 ## Roadmap-To-Work-Order Trace Matrix

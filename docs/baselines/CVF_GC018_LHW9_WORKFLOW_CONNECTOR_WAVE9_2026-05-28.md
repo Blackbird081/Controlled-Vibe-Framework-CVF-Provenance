@@ -46,7 +46,7 @@ Invariants locked: `runtimeExecutionAuthorized=false`, `canReinject=false`,
 | `docs/reviews/CVF_LHW6_T1_TOOL_RUNTIME_BRIDGE_ADVISORY_CONNECTOR_COMPLETION_2026-05-28.md` | LHW6-T1 bridge advisory closure (T1) |
 | `docs/reviews/archive/CVF_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_COMPLETION_2026-05-25.md` | CB1 context budget closure (T2) |
 | `docs/reviews/archive/CVF_C8_PRODUCT_SKILL_PACK_SELECTION_READOUT_COMPLETION_2026-05-25.md` | C8 pack selection closure (T2) |
-| `docs/reviews/CVF_LHW3_T2_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_COMPLETION_2026-05-27.md` | LHW3-T2 re-intake closure (T2) |
+| `docs/reviews/archive/CVF_LHW3_T2_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_COMPLETION_2026-05-27.md` | LHW3-T2 re-intake closure (T2) |
 | `docs/reviews/CVF_G1_EXECUTION_IDENTITY_RUNTIME_GATE_COMPLETION_2026-05-22.md` | G1 execution identity closure (T3) |
 | `docs/reviews/CVF_LHW6_T2_CLI_TOOL_ONBOARDING_GOVERNANCE_CONNECTOR_COMPLETION_2026-05-28.md` | LHW6-T2 CLI onboarding closure (T3) |
 | `docs/reviews/CVF_LHW7_T1_WORKFLOW_RECOVERY_TOOL_REENTRY_CONNECTOR_COMPLETION_2026-05-28.md` | LHW7-T1 re-entry connector closure (T3) |

@@ -29,7 +29,7 @@ MA1 packets.
 
 - WCE roadmap: `docs/roadmaps/CVF_WCE_WORKFLOW_CHAIN_EXECUTION_ROADMAP_2026-05-29.md`
 - WCE GC-018: `docs/baselines/CVF_GC018_WCE_WORKFLOW_CHAIN_EXECUTION_2026-05-29.md`
-- MA1 standard: `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
+- MA1 standard: `docs/reference/archive/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
   — contract version `cvf.internalMultiAgentTransfer.ma1.v1`
 - W1 transport: `docs/reviews/CVF_WCE_W1_CVF_WORKFLOW_CLI_COMMAND_COMPLETION_2026-05-29.md`
   — must be CLOSED_PASS
@@ -66,7 +66,7 @@ satisfied before Phase B.
 
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-3. `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
+3. `docs/reference/archive/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
    — confirm required packet structure: Contract version, Date, Topic, Surface Fidelity Gate,
      Authority Chain, Source Packet, Role Assignment, Execution Instructions, Role Output Schema,
      Dissent Ledger, Integration Decision, Completion Evidence, Claim Boundary
@@ -79,8 +79,8 @@ satisfied before Phase B.
 
 | Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 | --- | --- | --- | --- | --- | --- |
-| MA1 contract version | `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | Contract version field | `cvf.internalMultiAgentTransfer.ma1.v1` | MA1 standard | ACCEPT |
-| MA1 required sections | `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | Required Packet Structure | 13 named sections | MA1 standard | ACCEPT |
+| MA1 contract version | `docs/reference/archive/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | Contract version field | `cvf.internalMultiAgentTransfer.ma1.v1` | MA1 standard | ACCEPT |
+| MA1 required sections | `docs/reference/archive/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | Required Packet Structure | 13 named sections | MA1 standard | ACCEPT |
 | `ExecuteRequestPayload` interface | `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/execute.client.ts` | line 16 | `ExecuteRequestPayload` | execute client | ACCEPT |
 
 New contract fields:

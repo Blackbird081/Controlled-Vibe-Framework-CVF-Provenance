@@ -49,7 +49,7 @@ Invariants locked: `runtimeExecutionAuthorized=false`, `canReinject=false`,
 | `docs/reviews/archive/CVF_MA1_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_COMPLETION_2026-05-26.md` | MA1 role lane closure (T2) |
 | `docs/reviews/CVF_W4_OPERATIONAL_BENCHMARK_SCORECARD_COMPLETION_2026-05-24.md` | W4 benchmark scorecard closure (T3) |
 | `docs/reviews/CVF_V3_EXECUTION_DIAGNOSTIC_CONTRACT_COMPLETION_2026-05-24.md` | V3 diagnostic class closure (T3) |
-| `docs/reviews/CVF_LHW3_T2_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_COMPLETION_2026-05-27.md` | LHW3-T2 re-intake packet closure (T3) |
+| `docs/reviews/archive/CVF_LHW3_T2_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_COMPLETION_2026-05-27.md` | LHW3-T2 re-intake packet closure (T3) |
 
 ## Decision / Baseline
 

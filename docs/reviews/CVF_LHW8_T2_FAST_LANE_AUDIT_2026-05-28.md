@@ -55,7 +55,7 @@ Primary sources:
     `authority.canExecute`, `executionBoundary.boundary`)
 - `governance/contracts/tool-action-taxonomy.ts`
   — `ToolActionApprovalState` (6 values: lines 64–70)
-- `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
+- `docs/reference/archive/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
   — MA1 role lanes: `Orchestrator`, `Implementer`, `Reviewer`, `Auditor`,
     `Integrator`
 

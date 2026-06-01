@@ -116,10 +116,10 @@ loop, or execute any workflow transition.
 | `routing_denied` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts` | line 30 | `ExecutionDiagnosticClass` value | `ExecutionDiagnosticClass` | ACCEPT |
 | `mock_fallback` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts` | line 33 | `ExecutionDiagnosticClass` value | `ExecutionDiagnosticClass` | ACCEPT |
 | `ExecutionDiagnosticUserAction` type | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts` | lines 40–51 | `ExecutionDiagnosticUserAction` | `ExecutionDiagnosticUserAction` | ACCEPT |
-| `missing_context_clarification_packet` | `docs/reference/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md` | S2 line 47 | clarification packet type | LHW3-T2 packet | ACCEPT |
-| `noisy_context_clarification_packet` | `docs/reference/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md` | S2 line 48 | clarification packet type | LHW3-T2 packet | ACCEPT |
-| `ambiguous_outcome_clarification_packet` | `docs/reference/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md` | S2 line 49 | clarification packet type | LHW3-T2 packet | ACCEPT |
-| `unmatched_request_clarification_packet` | `docs/reference/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md` | S2 line 50 | clarification packet type | LHW3-T2 packet | ACCEPT |
+| `missing_context_clarification_packet` | `docs/reference/archive/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md` | S2 line 47 | clarification packet type | LHW3-T2 packet | ACCEPT |
+| `noisy_context_clarification_packet` | `docs/reference/archive/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md` | S2 line 48 | clarification packet type | LHW3-T2 packet | ACCEPT |
+| `ambiguous_outcome_clarification_packet` | `docs/reference/archive/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md` | S2 line 49 | clarification packet type | LHW3-T2 packet | ACCEPT |
+| `unmatched_request_clarification_packet` | `docs/reference/archive/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md` | S2 line 50 | clarification packet type | LHW3-T2 packet | ACCEPT |
 | New doc-only `benchmarkTriggerAdvisoryType` | N/A — doc-only | S3 new fields | doc-only | Failure-to-reintake advisory packet | ACCEPT |
 | New doc-only `reIntakePacketTypeRecommended` | N/A — doc-only | S3 new fields | doc-only | Failure-to-reintake advisory packet | ACCEPT |
 

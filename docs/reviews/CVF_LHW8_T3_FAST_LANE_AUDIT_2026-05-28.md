@@ -56,14 +56,14 @@ Primary sources:
     (`clarityStatus`, `callLevel.callPassRate`, `eventModel.taskCompletionRate`)
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts`
   — `ExecutionDiagnosticClass` (22 values), `ExecutionDiagnosticUserAction` (11 values)
-- `docs/reference/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md`
+- `docs/reference/archive/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md`
   — S2 clarification packet types (4 values at lines 47–50)
 
 Prior closure evidence:
 
 - `docs/reviews/CVF_W4_OPERATIONAL_BENCHMARK_SCORECARD_COMPLETION_2026-05-24.md`
 - `docs/reviews/CVF_V3_EXECUTION_DIAGNOSTIC_CONTRACT_COMPLETION_2026-05-24.md`
-- `docs/reviews/CVF_LHW3_T2_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_COMPLETION_2026-05-27.md`
+- `docs/reviews/archive/CVF_LHW3_T2_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_COMPLETION_2026-05-27.md`
 
 T1 gate confirmed: T1 CLOSED_PASS_BOUNDED ✓.
 T2 gate confirmed: T2 CLOSED_PASS_BOUNDED ✓.

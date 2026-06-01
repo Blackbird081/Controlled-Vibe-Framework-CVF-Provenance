@@ -144,17 +144,17 @@ and `scenarioPlanningOnly=true` are invariant. The packet does not extend
 
 | Token | Source file | Line/section | Interface/type | Connector location | Decision |
 | --- | --- | --- | --- | --- | --- |
-| LHW5-T3 `scenarioType` values | `docs/reference/CVF_LHW5_FAILURE_SIMULATION_SCENARIO_PACKET_CONNECTOR_SPEC_2026-05-27.md` | S3 `scenarioType` | LHW5-T3 packet | S2/S3 | ACCEPT |
+| LHW5-T3 `scenarioType` values | `docs/reference/archive/CVF_LHW5_FAILURE_SIMULATION_SCENARIO_PACKET_CONNECTOR_SPEC_2026-05-27.md` | S3 `scenarioType` | LHW5-T3 packet | S2/S3 | ACCEPT |
 | LHW5-T3 `wr1RecoveryAction` | same | S3 `wr1RecoveryAction` | LHW5-T3 packet | S3 `simulationWr1RecoveryAction` | ACCEPT |
 | LHW5-T3 `lhw3TrendSignal` | same | S3 `lhw3TrendSignal` | LHW5-T3 packet | S3 | ACCEPT |
 | LHW5-T3 `scenarioId` | same | S3 `scenarioId` | LHW5-T3 packet | S3 `sourceScenarioId` | ACCEPT |
 | LHW5-T3 `boundaryStatement` | same | S3 `boundaryStatement` | LHW5-T3 packet | S3 invariant ref | ACCEPT |
 | LHW5-T3 `scenarioPlanningOnly=true` | same | S3 `scenarioPlanningOnly` | LHW5-T3 invariant | S3 invariant | ACCEPT |
-| LHW3-T3 `changeId` | `docs/reference/CVF_LHW3_SPEC_CHANGE_WORKFLOW_PACKET_CONNECTOR_SPEC_2026-05-27.md` | S3 line 60 | LHW3-T3 packet | S3 `specChangePacketFields` | ACCEPT |
+| LHW3-T3 `changeId` | `docs/reference/archive/CVF_LHW3_SPEC_CHANGE_WORKFLOW_PACKET_CONNECTOR_SPEC_2026-05-27.md` | S3 line 60 | LHW3-T3 packet | S3 `specChangePacketFields` | ACCEPT |
 | LHW3-T3 `deltaDescription` | same | S3 line 63 | LHW3-T3 packet | S3 `specChangePacketFields` | ACCEPT |
 | LHW3-T3 `affectedPhaseRange` | same | S3 line 64 | LHW3-T3 packet | S3 `specChangePacketFields` | ACCEPT |
 | LHW3-T3 `changePacketStatus` values | same | S3 line 67 | LHW3-T3 packet | S3 `specChangePacketFields` | ACCEPT |
-| LHW3-T2 `missing_context_clarification_packet` | `docs/reference/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md` | S2 table line 47 | LHW3-T2 clarification type | S3 `reIntakePacketTypeRecommended` | ACCEPT |
+| LHW3-T2 `missing_context_clarification_packet` | `docs/reference/archive/CVF_LHW3_REQUEST_CLARIFICATION_RE_INTAKE_LOOP_CONNECTOR_SPEC_2026-05-27.md` | S2 table line 47 | LHW3-T2 clarification type | S3 `reIntakePacketTypeRecommended` | ACCEPT |
 | LHW3-T2 `noisy_context_clarification_packet` | same | S2 table line 48 | LHW3-T2 clarification type | S3 `reIntakePacketTypeRecommended` | ACCEPT |
 | LHW3-T2 `ambiguous_outcome_clarification_packet` | same | S2 table line 49 | LHW3-T2 clarification type | S3 `reIntakePacketTypeRecommended` | ACCEPT |
 | LHW3-T2 `unmatched_request_clarification_packet` | same | S2 table line 50 | LHW3-T2 clarification type | S3 `reIntakePacketTypeRecommended` | ACCEPT |

@@ -116,10 +116,10 @@ regardless of `ToolActionApprovalState`.
 | `blocked_before_approval` | `governance/contracts/tool-action-taxonomy.ts` | line 68 | `ToolActionApprovalState` value | `ToolActionApprovalState` | ACCEPT |
 | `blocked_by_policy` | `governance/contracts/tool-action-taxonomy.ts` | line 69 | `ToolActionApprovalState` value | `ToolActionApprovalState` | ACCEPT |
 | `incomplete_approval` | `governance/contracts/tool-action-taxonomy.ts` | line 70 | `ToolActionApprovalState` value | `ToolActionApprovalState` | ACCEPT |
-| MA1 `Orchestrator` role lane | `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | section `## 4. Role Assignment` | `Orchestrator` | MA1 role lane | ACCEPT |
-| MA1 `Implementer` role lane | `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | section `## 4. Role Assignment` | `Implementer` | MA1 role lane | ACCEPT |
-| MA1 `Reviewer` role lane | `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | section `## 4. Role Assignment` | `Reviewer` | MA1 role lane | ACCEPT |
-| MA1 `Auditor` role lane | `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | section `## 4. Role Assignment` | `Auditor` | MA1 role lane | ACCEPT |
+| MA1 `Orchestrator` role lane | `docs/reference/archive/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | section `## 4. Role Assignment` | `Orchestrator` | MA1 role lane | ACCEPT |
+| MA1 `Implementer` role lane | `docs/reference/archive/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | section `## 4. Role Assignment` | `Implementer` | MA1 role lane | ACCEPT |
+| MA1 `Reviewer` role lane | `docs/reference/archive/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | section `## 4. Role Assignment` | `Reviewer` | MA1 role lane | ACCEPT |
+| MA1 `Auditor` role lane | `docs/reference/archive/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | section `## 4. Role Assignment` | `Auditor` | MA1 role lane | ACCEPT |
 | New doc-only `authorityChainAdvisoryType` | N/A — doc-only | S3 new fields | doc-only | Authority chain readout packet | ACCEPT |
 | New doc-only `handoffRoleRecommendation` | N/A — doc-only | S3 new fields | doc-only | Authority chain readout packet | ACCEPT |
 

@@ -64,7 +64,7 @@ Source surfaces confirmed at HEAD `7de75901`:
 | Skill pack registry (10 entries) | `governance/registries/cvf-certified-skill-pack-registry.json` | fields: `id`, `domain`, `riskLevel`, `outcomeKey` |
 | LH1 `deepagents` trigger | `docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md` | line 156: "bounded worker delegation proof" |
 | WR1 `WorkflowRecoveryAction` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/workflows/workflow-resolver.ts` | line 50–54 |
-| MA1 role lanes | `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | section `## 4. Role Assignment` |
+| MA1 role lanes | `docs/reference/archive/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | section `## 4. Role Assignment` |
 
 ---
 

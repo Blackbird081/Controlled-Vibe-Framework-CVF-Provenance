@@ -25,7 +25,7 @@ HOLD_UNTIL_W1_AND_W3_PASS.
 
 ## S1 — Purpose and Gap Citation
 
-Source gap: MA1 standard (`docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`,
+Source gap: MA1 standard (`docs/reference/archive/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`,
 contract `cvf.internalMultiAgentTransfer.ma1.v1`) defines 13 required packet
 sections as Markdown prose. No CLI JSON schema exists. `cvf workflow` (WCE-W1)
 can emit structured output, but the format is not yet MA1-conformant.
@@ -41,7 +41,7 @@ Key invariants:
 Authority chain:
 - WCE roadmap: `docs/roadmaps/CVF_WCE_WORKFLOW_CHAIN_EXECUTION_ROADMAP_2026-05-29.md`
 - WCE GC-018: `docs/baselines/CVF_GC018_WCE_WORKFLOW_CHAIN_EXECUTION_2026-05-29.md`
-- MA1 standard: `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
+- MA1 standard: `docs/reference/archive/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
 
 ---
 
@@ -107,8 +107,8 @@ Additional CLI-specific fields (not in MA1 standard):
 
 | Verified symbol | Source file | Line/section | Disposition |
 | --- | --- | --- | --- |
-| `cvf.internalMultiAgentTransfer.ma1.v1` | `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | Contract version field | ACCEPT |
-| MA1 required 13 sections | `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | Required Packet Structure section | ACCEPT |
+| `cvf.internalMultiAgentTransfer.ma1.v1` | `docs/reference/archive/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | Contract version field | ACCEPT |
+| MA1 required 13 sections | `docs/reference/archive/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | Required Packet Structure section | ACCEPT |
 | `WORKFLOW_CHAIN_CONTRACT` | `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/workflow.client.ts` | `cvf.workflowChainExecution.wce.w1.v1` | ACCEPT |
 | `WorkflowStepResult` interface | `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/workflow.client.ts` | `WorkflowStepResult` | ACCEPT |
 

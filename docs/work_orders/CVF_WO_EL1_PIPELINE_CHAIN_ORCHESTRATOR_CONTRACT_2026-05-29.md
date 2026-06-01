@@ -34,7 +34,7 @@ is included as a bounded implementation within this tranche.
   `docs/reference/CVF_LHW12_T1_POSTURE_TO_MODEL_TIER_ADVISORY_CONNECTOR_SPEC_2026-05-29.md`
 - LHW12-T3 worker lifecycle: planned spec
   `docs/reference/CVF_LHW12_T3_ASYNC_WORKER_LIFECYCLE_BOUNDARY_CONNECTOR_SPEC_2026-05-29.md`
-- MA1 transfer standard: `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
+- MA1 transfer standard: `docs/reference/archive/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
 - **Gate: LHW12 AND LHW13 must both be CLOSED_PASS_BOUNDED before dispatch**
 
 ## Agent Roles
@@ -67,7 +67,7 @@ without gate, public-sync repo.
 2. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 3. `.private_reference/legacy/CVF 28.05/cvf_cli.py` — pipeline structure
    lines 56–166; exception classes lines 15–25; config pattern lines 31–38
-4. `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
+4. `docs/reference/archive/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
    — MA1 role lanes (Orchestrator/Implementer/Reviewer/Auditor)
 5. `docs/reference/CVF_LHW12_T1_POSTURE_TO_MODEL_TIER_ADVISORY_CONNECTOR_SPEC_2026-05-29.md`
    — required after LHW12-T1 closure; `modelTierAdvisoryType`
@@ -83,9 +83,9 @@ without gate, public-sync repo.
 | --- | --- | --- | --- | --- | --- |
 | CVF 28.05 pipeline structure | canonical-contract: `.private_reference/legacy/CVF 28.05/cvf_cli.py` | lines 56–166 | `run_workflow` | `CVFOrchestratorCLI` | ACCEPT |
 | CVF 28.05 exception classes | canonical-contract: `.private_reference/legacy/CVF 28.05/cvf_cli.py` | lines 15–25 | exception classes | `CVFOrchestratorCLI` | ACCEPT |
-| MA1 `Orchestrator` role | `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | line 96 | `Orchestrator` | MA1 role lane | ACCEPT |
-| MA1 `Implementer` role | `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | line 97 | `Implementer` | MA1 role lane | ACCEPT |
-| MA1 `Reviewer` role | `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | line 98 | `Reviewer` | MA1 role lane | ACCEPT |
+| MA1 `Orchestrator` role | `docs/reference/archive/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | line 96 | `Orchestrator` | MA1 role lane | ACCEPT |
+| MA1 `Implementer` role | `docs/reference/archive/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | line 97 | `Implementer` | MA1 role lane | ACCEPT |
+| MA1 `Reviewer` role | `docs/reference/archive/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` | line 98 | `Reviewer` | MA1 role lane | ACCEPT |
 | `modelTierAdvisoryType` field | `docs/reference/CVF_LHW12_T1_POSTURE_TO_MODEL_TIER_ADVISORY_CONNECTOR_SPEC_2026-05-29.md` | pending LHW12-T1 closure | `modelTierAdvisoryType` | LHW12-T1 doc-only field | BLOCKED_SOURCE_NOT_FOUND |
 | `workerLifecycleAdvisoryType` field | `docs/reference/CVF_LHW12_T3_ASYNC_WORKER_LIFECYCLE_BOUNDARY_CONNECTOR_SPEC_2026-05-29.md` | pending LHW12-T3 closure | `workerLifecycleAdvisoryType` | LHW12-T3 doc-only field | BLOCKED_SOURCE_NOT_FOUND |
 | EL GC-018 authorization | `docs/baselines/CVF_GC018_EXECUTION_LAYER_2026-05-29.md` | full document | EL-1 authorization | EL GC-018 | ACCEPT |
