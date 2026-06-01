@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-01
 
-Current mode marker: `mkg_memory_system_tranche_review_ready`
+Current mode marker: `mkg7_memory_plane_operationalization_t1_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `mkg_memory_system_tranche_review_ready`.
+Current mode: `mkg7_memory_plane_operationalization_t1_dispatched`.
 
 Active handoff:
 
@@ -402,6 +402,25 @@ Completion:
 
 Public-safe subset sync remains available only from the public-sync clone after
 remote verification.
+
+MKG1-MKG6 Memory system tranche is `CLOSED_COMMITTED` (`2ebc0b92` +
+`6f825820`). The final closing roadmap is `PROPOSED` and committed at
+`ad9c2b75`:
+
+`docs/roadmaps/CVF_MKG7_MEMORY_PLANE_OPERATIONALIZATION_ROADMAP_2026-06-01.md`
+
+It was rewritten from the Codex draft after source verification: the durable
+write path is present and already fails closed
+(`durable-memory-store.ts:201`), `canReinject=false` is scoped to the
+readout/advisory surface, `/api/execute/route.ts` is `858` lines, and T2/T4/T5
+are reframed delta-over-existing. MKG7-T1 (documentation-only Memory Plane
+Operational Contract) is `DISPATCHED`:
+
+`docs/work_orders/CVF_WO_MKG7_T1_MEMORY_PLANE_OPERATIONAL_CONTRACT_2026-06-01.md`
+
+Next allowed move: assign a worker to execute MKG7-T1, then dispatch T2-T7 each
+with its own GC-018 + work order. No live proof, public-sync, prompt injection,
+reinjection, or new durable-mutating route without separate GC-018.
 
 Parked checkpoints:
 
