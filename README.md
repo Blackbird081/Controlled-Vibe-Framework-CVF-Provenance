@@ -62,6 +62,37 @@ If you need the current canonical continuation posture after `W54-T1`, use:
 - [Master Architecture Closure Roadmap](docs/roadmaps/CVF_MASTER_ARCHITECTURE_CLOSURE_ROADMAP_2026-04-05.md)
 - [New Machine Setup Checklist](docs/reference/CVF_NEW_MACHINE_SETUP_CHECKLIST.md)
 
+## Workspace Bootstrap
+
+For day-to-day user/dev work, do not clone application projects inside the CVF
+repository. Use a parent workspace with the public CVF core as a hidden
+governance sibling:
+
+```text
+CVF-Workspace/
+  .Controlled-Vibe-Framework-CVF/
+  WORKSPACE_RULES.md
+  your-app/
+```
+
+Fresh setup:
+
+```powershell
+git clone https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git .Controlled-Vibe-Framework-CVF
+pwsh .Controlled-Vibe-Framework-CVF/scripts/new-cvf-workspace.ps1 -WorkspaceRoot .
+pwsh .Controlled-Vibe-Framework-CVF/scripts/check_cvf_workspace_agent_enforcement.ps1 -WorkspaceRoot .
+```
+
+Refresh an older local workspace core:
+
+```powershell
+pwsh .Controlled-Vibe-Framework-CVF/scripts/update_cvf_workspace_public_core.ps1 -WorkspaceRoot .
+```
+
+See [Getting Started](docs/GET_STARTED.md),
+[Workspace Rules](docs/reference/CVF_WORKSPACE_RULES.md), and
+[New Machine Setup Checklist](docs/reference/CVF_NEW_MACHINE_SETUP_CHECKLIST.md).
+
 ## Mandatory Live Governance Proof
 
 Release-quality CVF governance proof — evidence that CVF classified, routed, allowed or blocked, and recorded a real AI/provider call — must use real provider API calls. Mock mode is valid only for UI structure checks such as navigation, routing, static badge rendering, and RBAC pages.
@@ -477,64 +508,10 @@ Important current continuity controls:
 
 Foundational governance surfaces that used to depend mainly on reviewer discipline are now also blocked by `governance/compat/check_foundational_guard_surfaces.py`, covering ADR updates, architecture-baseline refresh, extension naming, structural audit packets, test-depth reporting, and workspace isolation.
 
-Mandatory guard index:
+Mandatory guard registry:
 
-- `CVF_ACTIVE_ARCHIVE_GUARD.md`
-- `CVF_ACTIVE_WINDOW_REGISTRY_GUARD.md`
-- `CVF_ADR_GUARD.md`
-- `CVF_AGENT_HANDOFF_GUARD.md`
-- `CVF_AGENT_HANDOFF_TRANSITION_GUARD.md`
-- `CVF_ARCHITECTURE_CHECK_GUARD.md`
-- `CVF_BATCH_CONTRACT_DETERMINISM_GUARD.md`
-- `CVF_BASELINE_UPDATE_GUARD.md`
-- `CVF_BOARDROOM_RUNTIME_GUARD.md`
-- `CVF_BUG_DOCUMENTATION_GUARD.md`
-- `CVF_CAPABILITY_INTAKE_PIPELINE_GUARD.md`
-- `CVF_CONFORMANCE_EXECUTION_PERFORMANCE_GUARD.md`
-- `CVF_CONFORMANCE_TRACE_ROTATION_GUARD.md`
-- `CVF_CONTINUATION_CHAIN_GUARD.md`
-- `CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_GUARD.md`
-- `CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_GUARD.md`
-- `CVF_DEPTH_AUDIT_GUARD.md`
-- `CVF_DIAGRAM_VALIDATION_GUARD.md`
-- `CVF_DOCUMENT_NAMING_GUARD.md`
-- `CVF_DOCUMENT_STORAGE_GUARD.md`
-- `CVF_EXECUTE_ROUTE_STEP_SEQUENCE_GUARD.md`
-- `CVF_EXTENSION_PACKAGE_CHECK_GUARD.md`
-- `CVF_EXTENSION_VERSIONING_GUARD.md`
-- `CVF_FAST_LANE_GOVERNANCE_GUARD.md`
-- `CVF_GOVERNED_FILE_SIZE_GUARD.md`
-- `CVF_GOVERNED_ARTIFACT_AUTHORING_GUARD.md`
-- `CVF_GOVERNED_PACK_CONTRACT_GUARD.md`
-- `CVF_GUARD_AUTHORING_STANDARD_GUARD.md`
-- `CVF_GUARD_REGISTRY_GUARD.md`
-- `CVF_INCREMENTAL_TEST_LOG_ROTATION_GUARD.md`
-- `CVF_MEMORY_GOVERNANCE_GUARD.md`
-- `CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_GUARD.md`
-- `CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD.md`
-- `CVF_KNOWLEDGE_ABSORPTION_PRIORITY_GUARD.md`
-- `CVF_TEMPLATE_SKILL_STANDARD_GUARD.md`
-- `CVF_MULTI_AGENT_REVIEW_DOC_GUARD.md`
-- `CVF_PUBLIC_SURFACE_MAINTAINABILITY_GUARD.md`
-- `CVF_PRODUCT_VALUE_VALIDATION_GUARD.md`
-- `CVF_PROGRESS_TRACKER_SYNC_GUARD.md`
-- `CVF_PYTHON_AUTOMATION_SIZE_GUARD.md`
-- `CVF_SHARED_BATCH_HELPER_ADOPTION_GUARD.md`
-- `CVF_SESSION_GOVERNANCE_BOOTSTRAP_GUARD.md`
-- `CVF_SURFACE_SCAN_CONTINUITY_GUARD.md`
-- `CVF_STRUCTURAL_CHANGE_AUDIT_GUARD.md`
-- `CVF_CANON_SUMMARY_EVIDENCE_SEPARATION_GUARD.md`
-- `CVF_REPOSITORY_LIFECYCLE_CLASSIFICATION_GUARD.md`
-- `CVF_REPOSITORY_EXPOSURE_CLASSIFICATION_GUARD.md`
-- `CVF_PREPUBLIC_P3_READINESS_GUARD.md`
-- `CVF_BARREL_SMOKE_OWNERSHIP_GUARD.md`
-- `CVF_TEST_DEPTH_CLASSIFICATION_GUARD.md`
-- `CVF_TEST_DOCUMENTATION_GUARD.md`
-- `CVF_TEST_PARTITION_OWNERSHIP_GUARD.md`
-- `CVF_WORKSPACE_ISOLATION_GUARD.md`
-
-Grouped management map:
-
+- [Core Knowledge Base](docs/CVF_CORE_KNOWLEDGE_BASE.md)
+- [Operation Guard Toolkit](governance/toolkit/05_OPERATION/)
 - [CVF Guard Surface Classification](docs/reference/CVF_GUARD_SURFACE_CLASSIFICATION.md)
 
 For future roadmap deepening:

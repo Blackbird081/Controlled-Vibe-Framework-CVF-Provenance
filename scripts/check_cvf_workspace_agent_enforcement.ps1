@@ -2,10 +2,24 @@ param(
     [Parameter(Mandatory = $true)]
     [string]$ProjectPath,
 
-    [switch]$CheckLiveReadiness
+    [switch]$CheckLiveReadiness,
+
+    [switch]$AllowOfflinePinnedCore
 )
 
 $ErrorActionPreference = "SilentlyContinue"
+$expectedPublicRemote = "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git"
+$requiredPublicCoreFiles = @(
+    "AGENTS.md",
+    "AGENT_HANDOFF.md",
+    "docs\reference\CVF_WORKSPACE_RULES.md",
+    "governance\toolkit\05_OPERATION\CVF_DOWNSTREAM_AGENTS_TEMPLATE.md",
+    "scripts\check_cvf_workspace_agent_enforcement.ps1",
+    "scripts\ingest_cvf_downstream_knowledge.ps1",
+    "scripts\new-cvf-workspace.ps1",
+    "scripts\update_cvf_workspace_public_core.ps1",
+    "scripts\write_cvf_workspace_web_evidence_bridge.ps1"
+)
 
 $projectResolved = [System.IO.Path]::GetFullPath($ProjectPath)
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
@@ -13,6 +27,7 @@ $cvfCoreCandidate = Split-Path -Parent $scriptDir
 
 $results = [System.Collections.ArrayList]::new()
 $failCount = 0
+$warnCount = 0
 
 function Add-Check {
     param([string]$Name, [bool]$Passed, [string]$Detail = "")
@@ -21,6 +36,16 @@ function Add-Check {
     $null = $script:results.Add([PSCustomObject]@{
         Check  = $Name
         Status = $status
+        Detail = $Detail
+    })
+}
+
+function Add-Warn {
+    param([string]$Name, [string]$Detail = "")
+    $script:warnCount++
+    $null = $script:results.Add([PSCustomObject]@{
+        Check  = $Name
+        Status = "WARN"
         Detail = $Detail
     })
 }
@@ -252,7 +277,58 @@ else {
     Add-Check "Workspace rules file exists" $false "workspaceRoot/workspaceRulesPath not found in manifest"
 }
 
-# Check 11: CVF core commit matches manifest
+# Check 11: CVF core remote is the public CVF repository
+if ($coreReachable) {
+    $actualRemote = (git -C $cvfCorePath remote get-url origin 2>$null | Out-String).Trim()
+    $remoteMatches = ($actualRemote -eq $expectedPublicRemote)
+    $remoteDetail = if ($remoteMatches) { $actualRemote } else { "Expected: $expectedPublicRemote / Actual: $actualRemote" }
+    Add-Check "CVF core origin is public remote" $remoteMatches $remoteDetail
+}
+
+# Check 12: Public workspace kit is present in the hidden core
+if ($coreReachable) {
+    $missingCoreFiles = @($requiredPublicCoreFiles | Where-Object {
+        -not (Test-Path -LiteralPath (Join-Path $cvfCorePath $_) -PathType Leaf)
+    })
+    $kitPresent = ($missingCoreFiles.Count -eq 0)
+    $kitDetail = if ($kitPresent) { "All $($requiredPublicCoreFiles.Count) public workspace-kit files present" } else { "Missing: $($missingCoreFiles -join ', ')" }
+    Add-Check "Public workspace kit is complete" $kitPresent $kitDetail
+}
+
+# Check 13: Hidden public core is synchronized with origin/main
+if ($coreReachable) {
+    git -C $cvfCorePath fetch origin main --quiet 2>$null
+    $fetchPassed = ($LASTEXITCODE -eq 0)
+    if ($fetchPassed) {
+        $localHead = (git -C $cvfCorePath rev-parse HEAD 2>$null | Out-String).Trim()
+        $remoteHead = (git -C $cvfCorePath rev-parse origin/main 2>$null | Out-String).Trim()
+        $fresh = (-not [string]::IsNullOrWhiteSpace($localHead)) -and ($localHead -eq $remoteHead)
+        if ($fresh) {
+            Add-Check "CVF public core matches origin/main" $true "Commit: $($localHead.Substring(0, 8))"
+        }
+        else {
+            git -C $cvfCorePath merge-base --is-ancestor $localHead $remoteHead 2>$null
+            $freshnessClass = if ($LASTEXITCODE -eq 0) { "BEHIND_PUBLIC_REMOTE" } else { "DIVERGED_OR_UNRELATED_HISTORY" }
+            Add-Check "CVF public core matches origin/main" $false "$freshnessClass. Local: $localHead / origin/main: $remoteHead. Run scripts/update_cvf_workspace_public_core.ps1."
+        }
+    }
+    elseif ($AllowOfflinePinnedCore) {
+        Add-Warn "CVF public core matches origin/main" "REMOTE_FRESHNESS_UNVERIFIED: origin/main fetch failed; offline pinned-core override used."
+    }
+    else {
+        Add-Check "CVF public core matches origin/main" $false "REMOTE_FRESHNESS_UNVERIFIED: origin/main fetch failed. Re-run with network access or use -AllowOfflinePinnedCore for an explicit bounded offline override."
+    }
+
+    $corePending = (git -C $cvfCorePath status --porcelain 2>$null | Out-String).Trim()
+    if ([string]::IsNullOrWhiteSpace($corePending)) {
+        Add-Check "CVF public core worktree clean" $true "No pending core overlay"
+    }
+    else {
+        Add-Warn "CVF public core worktree clean" "Pending public-core overlay exists. Review and publish or remove it before claiming a clean public-core state."
+    }
+}
+
+# Check 14: CVF core commit matches manifest
 if ($coreReachable -and $manifestObj.cvfCoreCommit) {
     $ErrorActionPreference = "SilentlyContinue"
     $actualCommit = git -C $cvfCorePath rev-parse --short HEAD 2>$null
@@ -266,7 +342,7 @@ if ($coreReachable -and $manifestObj.cvfCoreCommit) {
     }
 }
 
-# Check 12: Required docs in manifest exist
+# Check 15: Required docs in manifest exist
 if ($null -ne $manifestObj -and $manifestObj.requiredDocs) {
     $allDocsPresent = $true
     $missingDocs = @()
@@ -281,7 +357,7 @@ if ($null -ne $manifestObj -and $manifestObj.requiredDocs) {
     Add-Check "Required docs referenced by manifest exist" $allDocsPresent $docsDetail
 }
 
-# Check 13 (optional/warn): if knowledgePath is declared in manifest, folder should exist
+# Check 16 (optional/warn): if knowledgePath is declared in manifest, folder should exist
 if ($null -ne $manifestObj -and $manifestObj.knowledgePath) {
     $knowledgeFolderPath = Join-Path $projectResolved $manifestObj.knowledgePath.TrimEnd('/')
     $knowledgeFolderExists = Test-Path $knowledgeFolderPath -PathType Container
@@ -334,11 +410,17 @@ if ($CheckLiveReadiness) {
 }
 
 $totalChecks = $results.Count
-$passCount = $totalChecks - $failCount
+$passCount = $totalChecks - $failCount - $warnCount
 
 if ($failCount -eq 0) {
-    Write-Host "  RESULT: PASS ($passCount/$totalChecks checks passed)" -ForegroundColor Green
-    Write-Host "  This workspace is agent-enforcement-ready." -ForegroundColor Green
+    if ($warnCount -eq 0) {
+        Write-Host "  RESULT: PASS ($passCount/$totalChecks checks passed)" -ForegroundColor Green
+        Write-Host "  This workspace is agent-enforcement-ready." -ForegroundColor Green
+    }
+    else {
+        Write-Host "  RESULT: PASS WITH NOTE ($passCount passed, $warnCount warning(s))" -ForegroundColor Yellow
+        Write-Host "  This workspace is agent-enforcement-ready with the bounded note above." -ForegroundColor Yellow
+    }
     exit 0
 }
 else {

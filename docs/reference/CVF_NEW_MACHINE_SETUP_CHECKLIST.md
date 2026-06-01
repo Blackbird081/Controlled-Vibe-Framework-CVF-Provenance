@@ -57,6 +57,26 @@ Use this rule instead:
 
 This keeps setup lighter, faster, and less fragile.
 
+### Optional Downstream Workspace Bootstrap
+
+For agent/LLM-assisted downstream application work, keep the public CVF core in
+a hidden sibling folder and bootstrap the project outside the core:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\new-cvf-workspace.ps1 `
+  -WorkspaceRoot "<workspace-root>" `
+  -ProjectName "<project-name>"
+```
+
+If the workspace already has an old hidden core clone, reconcile it without
+merging unrelated histories:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\update_cvf_workspace_public_core.ps1 `
+  -WorkspaceRoot "<workspace-root>" `
+  -UpdateProjectManifests
+```
+
 Install decision rule:
 
 - `npm ci` is preferred when the package already has a committed `package-lock.json`

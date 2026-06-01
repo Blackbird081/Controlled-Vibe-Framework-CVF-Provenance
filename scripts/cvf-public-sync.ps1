@@ -11,14 +11,20 @@
         powershell -ExecutionPolicy Bypass -File scripts\cvf-public-sync.ps1
         powershell -ExecutionPolicy Bypass -File scripts\cvf-public-sync.ps1 -DryRun
         powershell -ExecutionPolicy Bypass -File scripts\cvf-public-sync.ps1 -NoPush
+        powershell -ExecutionPolicy Bypass -File scripts\cvf-public-sync.ps1 -NoCommit
+        powershell -ExecutionPolicy Bypass -File scripts\cvf-public-sync.ps1 -WorkspaceKitOnly -NoCommit
 
     -DryRun : Show what would be copied/pushed without making changes
     -NoPush : Copy files and commit but do not push to GitHub
+    -NoCommit : Copy files only; leave the public-sync worktree pending for review
+    -WorkspaceKitOnly : Sync only the bounded public workspace reconciliation kit
 #>
 
 param(
     [switch]$DryRun,
-    [switch]$NoPush
+    [switch]$NoPush,
+    [switch]$NoCommit,
+    [switch]$WorkspaceKitOnly
 )
 
 $ErrorActionPreference = 'Stop'
@@ -57,6 +63,44 @@ $ALLOWED_ROOT_FILES = @(
     'package.json',
     'package-lock.json'
 )
+
+# Allowlist: public-safe scripts only. Do not export the provenance operation
+# scripts directory wholesale.
+$ALLOWED_SCRIPT_FILES = @(
+    'scripts\bootstrap_foundations.ps1',
+    'scripts\bootstrap_foundations.sh',
+    'scripts\check_cvf_workspace_agent_enforcement.ps1',
+    'scripts\ingest_cvf_downstream_knowledge.ps1',
+    'scripts\install_cvf_hooks.ps1',
+    'scripts\new-cvf-workspace.ps1',
+    'scripts\update_cvf_workspace_public_core.ps1',
+    'scripts\w114_cp7_multi_sample_downstream_proof.ps1',
+    'scripts\write_cvf_workspace_web_evidence_bridge.ps1'
+)
+
+# Mapped exports keep private provenance root files private while still
+# publishing a public-safe root front door.
+$MAPPED_FILES = @(
+    @{
+        Source      = 'governance\toolkit\05_OPERATION\CVF_PUBLIC_CORE_AGENTS.md'
+        Destination = 'AGENTS.md'
+    },
+    @{
+        Source      = 'governance\toolkit\05_OPERATION\CVF_PUBLIC_CORE_CONTINUATION.md'
+        Destination = 'AGENT_HANDOFF.md'
+    }
+)
+
+$WORKSPACE_KIT_FILES = @(
+    'docs\GET_STARTED.md',
+    'docs\reference\CVF_NEW_MACHINE_SETUP_CHECKLIST.md',
+    'docs\reference\CVF_W114_PUBLIC_EVIDENCE_PACKET_2026-04-23.md',
+    'docs\reference\CVF_WORKSPACE_RULES.md',
+    'governance\toolkit\05_OPERATION\CVF_DOWNSTREAM_AGENTS_TEMPLATE.md',
+    'governance\toolkit\05_OPERATION\CVF_PUBLIC_CORE_AGENTS.md',
+    'governance\toolkit\05_OPERATION\CVF_PUBLIC_CORE_CONTINUATION.md',
+    'governance\toolkit\05_OPERATION\CVF_WORKSPACE_ISOLATION_GUARD.md'
+) + $ALLOWED_SCRIPT_FILES
 
 # Allowlist: docs/ sub-paths that may be synced
 # baselines/, reviews/, roadmaps/ are intentionally absent
@@ -115,6 +159,12 @@ function Get-AllowedFiles {
     foreach ($f in $ALLOWED_ROOT_FILES) {
         $full = Join-Path $GOVERNANCE_ROOT $f
         if (Test-Path $full -PathType Leaf) { $files.Add($f) }
+    }
+
+    # Public-safe scripts
+    foreach ($scriptPath in $ALLOWED_SCRIPT_FILES) {
+        $full = Join-Path $GOVERNANCE_ROOT $scriptPath
+        if (Test-Path $full -PathType Leaf) { $files.Add($scriptPath) }
     }
 
     # Allowed directory trees
@@ -180,6 +230,9 @@ Write-Host ''
 
 Write-Host 'Collecting allowed files...' -ForegroundColor Yellow
 $allowedFiles = Get-AllowedFiles
+if ($WorkspaceKitOnly) {
+    $allowedFiles = @($allowedFiles | Where-Object { $_ -in $WORKSPACE_KIT_FILES })
+}
 Write-Host "  $($allowedFiles.Count) files in allowlist."
 Write-Host ''
 
@@ -188,6 +241,11 @@ if ($DryRun) {
     $allowedFiles | Select-Object -First 50 | ForEach-Object { Write-Host "  + $_" }
     if ($allowedFiles.Count -gt 50) {
         Write-Host "  ... and $($allowedFiles.Count - 50) more"
+    }
+    Write-Host ''
+    Write-Host 'Mapped exports:' -ForegroundColor Yellow
+    foreach ($mapping in $MAPPED_FILES) {
+        Write-Host "  + $($mapping.Source) -> $($mapping.Destination)"
     }
     Write-Host ''
     Write-Host 'DRY RUN complete. No changes made.' -ForegroundColor Cyan
@@ -217,6 +275,20 @@ foreach ($rel in $allowedFiles) {
     $copied++
 }
 
+foreach ($mapping in $MAPPED_FILES) {
+    $src = Join-Path $GOVERNANCE_ROOT $mapping.Source
+    $dst = Join-Path $PUBLIC_SYNC_ROOT $mapping.Destination
+    if (-not (Test-Path $src -PathType Leaf)) {
+        throw "Mapped public export source not found: $src"
+    }
+    $dstDir = Split-Path $dst -Parent
+    if (-not (Test-Path $dstDir)) {
+        New-Item -ItemType Directory -Force $dstDir | Out-Null
+    }
+    Copy-Item -Force $src $dst
+    $copied++
+}
+
 Write-Host "  Copied : $copied"
 Write-Host "  Denied : $denied"
 Write-Host ''
@@ -230,11 +302,20 @@ if (-not $gitStatus) {
     exit 0
 }
 
+if ($NoCommit) {
+    Write-Host 'Public-sync worktree updated. Skipping commit and push (-NoCommit).' -ForegroundColor Yellow
+    Write-Host "Review pending changes in: $PUBLIC_SYNC_ROOT" -ForegroundColor Yellow
+    exit 0
+}
+
 $govHead = git -C $GOVERNANCE_ROOT rev-parse --short HEAD
 $govMsg  = git -C $GOVERNANCE_ROOT log -1 --pretty=%s
 
 Write-Host 'Staging changes...' -ForegroundColor Yellow
 git add -A
+foreach ($mapping in $MAPPED_FILES) {
+    git add -f -- $mapping.Destination
+}
 
 $commitMsg = @"
 sync: public surface update from governance@$govHead

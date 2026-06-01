@@ -38,6 +38,16 @@ $cvfCorePath = Join-Path $workspaceRootResolved ".Controlled-Vibe-Framework-CVF"
 $projectPath = Join-Path $workspaceRootResolved $ProjectName
 $workspaceFilePath = Join-Path $workspaceRootResolved "$ProjectName.code-workspace"
 $workspaceRulesPath = Join-Path $workspaceRootResolved "WORKSPACE_RULES.md"
+$requiredPublicCoreFiles = @(
+    "AGENTS.md",
+    "AGENT_HANDOFF.md",
+    "docs\reference\CVF_WORKSPACE_RULES.md",
+    "governance\toolkit\05_OPERATION\CVF_DOWNSTREAM_AGENTS_TEMPLATE.md",
+    "scripts\check_cvf_workspace_agent_enforcement.ps1",
+    "scripts\ingest_cvf_downstream_knowledge.ps1",
+    "scripts\update_cvf_workspace_public_core.ps1",
+    "scripts\write_cvf_workspace_web_evidence_bridge.ps1"
+)
 
 Write-Info "Workspace root: $workspaceRootResolved"
 Ensure-Directory $workspaceRootResolved
@@ -49,6 +59,13 @@ if (-not (Test-Path $cvfCorePath)) {
 }
 else {
     Write-Info "CVF core already exists: $cvfCorePath"
+}
+
+$missingCoreFiles = @($requiredPublicCoreFiles | Where-Object {
+    -not (Test-Path -LiteralPath (Join-Path $cvfCorePath $_) -PathType Leaf)
+})
+if ($missingCoreFiles.Count -gt 0) {
+    throw "CVF public core workspace kit is incomplete. Missing: $($missingCoreFiles -join ', '). Reconcile the hidden core with scripts/update_cvf_workspace_public_core.ps1 before bootstrapping a project."
 }
 
 if (-not (Test-Path $workspaceRulesPath -PathType Leaf)) {
@@ -73,6 +90,7 @@ CVF-Workspace/
 - Application projects must be sibling folders, not children of the CVF governance repository.
 - Do not add downstream application code inside `.Controlled-Vibe-Framework-CVF/`.
 - Run CVF core update commands from `.Controlled-Vibe-Framework-CVF/`.
+- Reconcile stale or diverged hidden cores with `scripts/update_cvf_workspace_public_core.ps1`.
 - Run application work from the application project root.
 - Keep provider keys and secrets out of this file, `.cvf/`, generated `AGENTS.md`, and bootstrap logs.
 

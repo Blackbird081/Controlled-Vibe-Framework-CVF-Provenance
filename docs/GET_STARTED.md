@@ -51,6 +51,20 @@ powershell -ExecutionPolicy Bypass -File .\scripts\check_cvf_workspace_agent_enf
   -ProjectPath "D:\CVF-Workspace\Trading-Tools"
 ```
 
+Nếu `.Controlled-Vibe-Framework-CVF` đã tồn tại từ lịch sử cũ hoặc lệch với
+public `origin/main`, không merge hai history. Reconcile bằng backup + fresh
+public clone:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\update_cvf_workspace_public_core.ps1 `
+  -WorkspaceRoot "D:\CVF-Workspace" `
+  -UpdateProjectManifests
+```
+
+Doctor kiểm tra enforcement artifacts, public bootstrap kit, đúng public
+remote và freshness so với `origin/main`. Live governance proof vẫn là gate
+riêng.
+
 Mốc W113 đã chứng minh luồng project downstream thật đầu tiên với live API-backed governance evidence: [W113-T1 First Downstream Project Proof](roadmaps/CVF_W113_T1_FIRST_DOWNSTREAM_PROJECT_PROOF_ROADMAP_2026-04-22.md).
 
 ---

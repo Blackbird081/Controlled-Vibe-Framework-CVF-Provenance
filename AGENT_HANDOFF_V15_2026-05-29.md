@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `8e955766ecf3bd815c5f059fc1f1db469f42434c` (short: `8e955766`); parent: `674b9822f85e0a2417ff94d94e65fb7ed41e23d2`.
+Current HEAD recorded for this handoff: `49d4e6525db0b6e9779b0976a2a92affea767710` (short: `49d4e652`); parent: `8e78a2548029cfab7a3fab3c3f12429f1b0b7a6e`.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -171,7 +171,7 @@ Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
 
 ## Active Boundary
 
-Current mode: `mkg3_current_owner_negative_search_evidence_dispatched_to_worker`.
+Current mode: `mkg_memory_system_tranche_review_ready`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
@@ -355,29 +355,80 @@ implementation candidates deferred; zero unmapped assets. Manifest JSON:
 `docs/audits/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_MANIFEST_2026-06-01.json`.
 Manifest hash:
 `ae7fe05e016b7079a81002de60de1e1209112de59c8bee793e15e11557cae0ff`.
-`MKG2` Deferred Runtime Candidate Triage is
-`DISPATCHED_TO_WORKER`: GC-018
+`MKG2` Deferred Runtime Candidate Triage is `REVIEW_READY`: GC-018
 `docs/baselines/CVF_GC018_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_2026-06-01.md`,
 roadmap
 `docs/roadmaps/CVF_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_ROADMAP_2026-06-01.md`,
 dispatched work order
 `docs/work_orders/CVF_WO_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_2026-06-01.md`.
-Next allowed move: external worker may execute MKG2 inside the dispatched
-Allowed scope. Attach the Worker Dispatch Prompt from the work order and enforce
-the Worker Autonomy / No-Question Rule. Routine allowed-scope guard failures
-must be repaired and rerun by the worker, not escalated as preference questions.
 MKG2 worker review filed for audit:
 `docs/reviews/CVF_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_REVIEW_2026-06-01.md`.
-MKG3 Current Owner Negative Search Evidence is `DISPATCHED_TO_WORKER`: GC-018
+MKG3 Current Owner Negative Search Evidence is `REVIEW_READY_UNCOMMITTED`: GC-018
 `docs/baselines/CVF_GC018_MKG3_CURRENT_OWNER_NEGATIVE_SEARCH_EVIDENCE_2026-06-01.md`,
 roadmap
 `docs/roadmaps/CVF_MKG3_CURRENT_OWNER_NEGATIVE_SEARCH_EVIDENCE_ROADMAP_2026-06-01.md`,
 work order
 `docs/work_orders/CVF_WO_MKG3_CURRENT_OWNER_NEGATIVE_SEARCH_EVIDENCE_2026-06-01.md`.
-Next allowed move: external worker may execute MKG3 inside Allowed scope and
-must leave the MKG3 review pending/uncommitted for operator review. The worker
-must not claim clean git status while the artifact is pending, and must not use
-`HEAD~1..HEAD` as proof for the pending artifact.
+Review:
+`docs/reviews/CVF_MKG3_CURRENT_OWNER_NEGATIVE_SEARCH_EVIDENCE_REVIEW_2026-06-01.md`.
+MKG4 Gate Evidence Consistency Probe is `REVIEW_READY_UNCOMMITTED`: GC-018
+`docs/baselines/CVF_GC018_MKG4_GATE_EVIDENCE_CONSISTENCY_PROBE_2026-06-01.md`,
+roadmap
+`docs/roadmaps/CVF_MKG4_GATE_EVIDENCE_CONSISTENCY_PROBE_ROADMAP_2026-06-01.md`,
+work order
+`docs/work_orders/CVF_WO_MKG4_GATE_EVIDENCE_CONSISTENCY_PROBE_2026-06-01.md`.
+Review:
+`docs/reviews/CVF_MKG4_GATE_EVIDENCE_CONSISTENCY_PROBE_REVIEW_2026-06-01.md`.
+MKG5 Memory Runtime Workflow Chain is `IMPLEMENTATION_REVIEW_READY`: GC-018
+`docs/baselines/CVF_GC018_MKG5_MEMORY_RUNTIME_WORKFLOW_CHAIN_2026-06-01.md`,
+roadmap
+`docs/roadmaps/CVF_MKG5_MEMORY_RUNTIME_WORKFLOW_CHAIN_ROADMAP_2026-06-01.md`,
+work order
+`docs/work_orders/CVF_WO_MKG5_MEMORY_RUNTIME_WORKFLOW_CHAIN_2026-06-01.md`,
+implementation review
+`docs/reviews/CVF_MKG5_MEMORY_RUNTIME_WORKFLOW_CHAIN_IMPLEMENTATION_REVIEW_2026-06-01.md`.
+Runtime source:
+`EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-runtime-workflow-chain.ts`;
+test:
+`EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/memory-runtime-workflow-chain.test.ts`.
+MKG6 Memory Runtime Readout Route is `IMPLEMENTATION_REVIEW_READY`: GC-018
+`docs/baselines/CVF_GC018_MKG6_MEMORY_RUNTIME_READOUT_ROUTE_2026-06-01.md`,
+roadmap
+`docs/roadmaps/CVF_MKG6_MEMORY_RUNTIME_READOUT_ROUTE_ROADMAP_2026-06-01.md`,
+work order
+`docs/work_orders/CVF_WO_MKG6_MEMORY_RUNTIME_READOUT_ROUTE_2026-06-01.md`.
+Completion review
+`docs/reviews/CVF_MKG6_MEMORY_RUNTIME_READOUT_ROUTE_COMPLETION_2026-06-01.md`.
+Result: bounded authenticated `POST /api/memory/readout` route, sanitized
+summary-only Memory projection, LPF `./memory-runtime` export, focused tests,
+and guard-backed Work-Order Fulfillment Manifest. Verification passed LPF
+focused tests 3/3, cvf-web focused tests 9/9, both TypeScript checks,
+dispatch-quality, markdown structural, public-export, finding-learning,
+execute-route sequence, governed file-size, and pre-implementation autorun.
+Boundary: private uncommitted implementation review only; no live/provider
+proof, prompt injection, reinjection, persistence/graph mutation, public-sync,
+push, or local commit.
+Memory system tranche completion is `TRANCHE_REVIEW_READY`:
+`docs/reviews/CVF_MKG_MEMORY_SYSTEM_TRANCHE_COMPLETION_2026-06-01.md`.
+
+WSR1 Workspace Public-Core Reconciliation is
+`PUBLICATION_READY_PENDING_OPERATOR_COMMIT`: GC-018
+`docs/baselines/CVF_GC018_WSR1_WORKSPACE_PUBLIC_CORE_RECONCILIATION_2026-06-01.md`,
+roadmap
+`docs/roadmaps/CVF_WSR1_WORKSPACE_PUBLIC_CORE_RECONCILIATION_ROADMAP_2026-06-01.md`,
+work order
+`docs/work_orders/CVF_WO_WSR1_WORKSPACE_PUBLIC_CORE_RECONCILIATION_2026-06-01.md`,
+completion
+`docs/reviews/CVF_WSR1_WORKSPACE_PUBLIC_CORE_RECONCILIATION_COMPLETION_2026-06-01.md`.
+Local `CVF-Workspace` hidden core was migrated from stale unrelated
+`dc841d33` history to public `eb87479`; old core and one failed replacement
+clone are preserved under `_cvf-core-backups/`; `qt-saigon-works` manifest was
+repinned and doctor returns `PASS WITH NOTE (16 passed, 1 warning)`. The
+remaining warning is the pending public workspace-kit overlay. Public-sync
+static CI gate is PASS after README workspace onboarding, concise guard
+registry links, and public-surface cleanup. Next WSR1 move: operator review of
+the bounded public-sync delta before commit or push.
+
 CPG-2 is CLOSED_PASS_BOUNDED with release-quality proof;
 closure packet:
 `docs/roadmaps/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_ROADMAP_2026-05-31.md`
@@ -397,6 +448,7 @@ provider-routing changes, and raw prompt/output/secret/private-memory capture.
 Parked checkpoints:
 - VI5-T4/T5 hosted Netlify freshness and operator external-agent retest
 - Public-sync update for newly closed private/provenance capability summaries
+- WSR1 bounded public workspace-kit commit/push after operator diff review
 
 ## Remote Tracking
 
@@ -408,8 +460,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mkg3_current_owner_negative_search_evidence_dispatched_to_worker`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=MKG3 is DISPATCHED_TO_WORKER inside bounded Allowed scope;
+Startup acknowledged: current mode=`mkg_memory_system_tranche_review_ready`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=operator review of the uncommitted Memory tranche before commit or next-plane transition;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary
