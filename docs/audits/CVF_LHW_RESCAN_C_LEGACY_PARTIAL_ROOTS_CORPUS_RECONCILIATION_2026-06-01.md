@@ -183,4 +183,3 @@ LHW-RESCAN-C proves current corpus visibility, terminal processing, and
 rebuildable semantic-region reconciliation for the three target roots. It does
 not prove deep semantic correctness, runtime readiness, public readiness,
 hosted readiness, production readiness, or autonomous mutation authority.
-
