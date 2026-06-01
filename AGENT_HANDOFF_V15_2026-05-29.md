@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `0df44bc50242d6f7ef59090f7eab1b7cb0dfe263` (short: `0df44bc5`); parent: `fd22dcad0b194af1c0eda40701b2816a6244ec71`.
+Current HEAD recorded for this handoff: `7564f57bcfab27b4adc84f1727661b5f9098abf2` (short: `7564f57b`); parent: `0df44bc50242d6f7ef59090f7eab1b7cb0dfe263`.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -171,7 +171,7 @@ Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
 
 ## Active Boundary
 
-Current mode: `mkg7_memory_plane_operationalization_t1_dispatched`.
+Current mode: `mke1_memory_enforcement_roadmap_proposed`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 

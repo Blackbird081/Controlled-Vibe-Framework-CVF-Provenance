@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-01
 
-Current mode marker: `mkg7_memory_plane_operationalization_t1_dispatched`
+Current mode marker: `mke1_memory_enforcement_roadmap_proposed`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `mkg7_memory_plane_operationalization_t1_dispatched`.
+Current mode: `mke1_memory_enforcement_roadmap_proposed`.
 
 Active handoff:
 
