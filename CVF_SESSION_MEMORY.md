@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-01
 
-Current mode marker: `mkg2_deferred_runtime_candidate_triage_planning_open_not_dispatched`
+Current mode marker: `mkg2_deferred_runtime_candidate_triage_dispatched_to_worker`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `mkg2_deferred_runtime_candidate_triage_planning_open_not_dispatched`.
+Current mode: `mkg2_deferred_runtime_candidate_triage_dispatched_to_worker`.
 
 Active handoff:
 
@@ -309,18 +309,19 @@ Manifest hash:
 `ae7fe05e016b7079a81002de60de1e1209112de59c8bee793e15e11557cae0ff`.
 
 `MKG2` Deferred Runtime Candidate Triage is
-`PLANNING_OPEN_NOT_DISPATCHED`:
+`DISPATCHED_TO_WORKER`:
 
 - GC-018:
   `docs/baselines/CVF_GC018_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_2026-06-01.md`
 - roadmap:
   `docs/roadmaps/CVF_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_ROADMAP_2026-06-01.md`
-- held work order:
+- dispatched work order:
   `docs/work_orders/CVF_WO_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_2026-06-01.md`
 
-Next allowed move: do not execute MKG2 until the operator explicitly dispatches
-it. For any new worker dispatch, attach the Worker Autonomy prompt standard and
-ensure the work order includes the No-Question Rule.
+Next allowed move: external worker may execute MKG2 inside the dispatched
+Allowed scope. Attach the Worker Dispatch Prompt from the work order and enforce
+the Worker Autonomy / No-Question Rule. Routine allowed-scope guard failures
+must be repaired and rerun by the worker, not escalated as preference questions.
 CPG-2 is CLOSED_PASS_BOUNDED with
 release-quality proof:
 

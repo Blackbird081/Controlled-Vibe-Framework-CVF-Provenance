@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: PLANNING_OPEN_NOT_DISPATCHED
+Status: DISPATCHED_TO_WORKER
 
 docType: roadmap
 
@@ -15,7 +15,8 @@ without reopening MKG1 or letting a worker improvise runtime scope.
 
 ## Authorization / Decision
 
-Decision: proposed successor tranche, held before dispatch.
+Decision: operator dispatched the successor tranche on 2026-06-01 for bounded
+documentation-only triage.
 
 Authority:
 
@@ -54,11 +55,11 @@ Out of scope:
 
 | Step | Requirement | Output | Status |
 | --- | --- | --- | --- |
-| M2.1 | Re-enumerate the 21 MKG1 deferred rows | deferred-candidate ledger | HOLD |
-| M2.2 | Source-verify current runtime/graph/skill owners | Source Verification Block | HOLD |
-| M2.3 | Split candidates into future roadmaps | candidate routing matrix | HOLD |
-| M2.4 | Apply Worker Autonomy prompt standard | dispatch prompt block | HOLD |
-| M2.5 | Run dispatch-quality and corpus guards | gate receipts | HOLD |
+| M2.1 | Re-enumerate the 21 MKG1 deferred rows | deferred-candidate ledger | DISPATCHED |
+| M2.2 | Source-verify current runtime/graph/skill owners | Source Verification Block | DISPATCHED |
+| M2.3 | Split candidates into future roadmaps | candidate routing matrix | DISPATCHED |
+| M2.4 | Apply Worker Autonomy prompt standard | dispatch prompt block | DISPATCHED |
+| M2.5 | Run dispatch-quality and corpus guards | gate receipts | DISPATCHED |
 
 ## Acceptance Criteria
 
@@ -86,18 +87,18 @@ Draft work order:
 
 `docs/work_orders/CVF_WO_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_2026-06-01.md`
 
-Dispatch remains inactive until an operator explicitly starts MKG2.
+Dispatch is active under the bounded MKG2 work order.
 
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: private planning roadmap only. No public-sync remote, public repository
+Reason: private dispatched roadmap only. No public-sync remote, public repository
 commit, or public artifact path is included.
 
 ## Claim Boundary
 
-MKG2 is a held planning roadmap. It does not authorize implementation, live
-proof, public-sync, provider use, runtime behavior, graph retrieval, Memory
-reinjection, skill mutation, hosted readiness, production readiness, or public
-readiness.
+MKG2 is a dispatched planning roadmap. It does not authorize implementation,
+live proof, public-sync, provider use, runtime behavior, graph retrieval,
+Memory reinjection, skill mutation, hosted readiness, production readiness, or
+public readiness.
