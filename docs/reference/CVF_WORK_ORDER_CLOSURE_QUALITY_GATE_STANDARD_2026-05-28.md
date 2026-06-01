@@ -218,6 +218,26 @@ Escalation remains mandatory for scope expansion, claim-boundary changes,
 paths, destructive action, risk changes, or runtime/source edits outside
 ownership.
 
+### 4C. Pending Artifact Evidence Finality
+
+A changed, staged, or untracked governed artifact must not claim the worktree is
+clean while that same artifact is still pending. If the artifact records
+`git status --short`, the recorded output must match the pending state or the
+artifact must state that clean-status evidence is post-commit and command-backed.
+
+A pending artifact must not cite `--base HEAD~1 --head HEAD` or another
+committed-only range as proof for the pending artifact itself. The worker must
+either:
+
+- run working-tree-aware guard checks that include uncommitted/staged files and
+  label them as pending-artifact validation; or
+- commit the artifact, then rerun the real changed range and record that
+  committed evidence.
+
+Machine enforcement rejects pending artifacts that self-report
+`git status --short` as clean or cite a committed range that cannot include the
+pending artifact.
+
 ### 5. Checklist Finalization Gate
 
 Closure checklists are evidence controls, not decoration. Any unchecked item in

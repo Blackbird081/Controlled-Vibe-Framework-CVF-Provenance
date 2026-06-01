@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-01
 
-Current mode marker: `mkg2_deferred_runtime_candidate_triage_dispatched_to_worker`
+Current mode marker: `mkg3_current_owner_negative_search_evidence_dispatched_to_worker`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `mkg2_deferred_runtime_candidate_triage_dispatched_to_worker`.
+Current mode: `mkg3_current_owner_negative_search_evidence_dispatched_to_worker`.
 
 Active handoff:
 
@@ -322,6 +322,21 @@ Next allowed move: external worker may execute MKG2 inside the dispatched
 Allowed scope. Attach the Worker Dispatch Prompt from the work order and enforce
 the Worker Autonomy / No-Question Rule. Routine allowed-scope guard failures
 must be repaired and rerun by the worker, not escalated as preference questions.
+MKG2 worker review filed for audit:
+`docs/reviews/CVF_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_REVIEW_2026-06-01.md`.
+MKG3 Current Owner Negative Search Evidence is `DISPATCHED_TO_WORKER`:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_MKG3_CURRENT_OWNER_NEGATIVE_SEARCH_EVIDENCE_2026-06-01.md`
+- roadmap:
+  `docs/roadmaps/CVF_MKG3_CURRENT_OWNER_NEGATIVE_SEARCH_EVIDENCE_ROADMAP_2026-06-01.md`
+- work order:
+  `docs/work_orders/CVF_WO_MKG3_CURRENT_OWNER_NEGATIVE_SEARCH_EVIDENCE_2026-06-01.md`
+
+Next allowed move: external worker may execute MKG3 inside Allowed scope and
+must leave the MKG3 review pending/uncommitted for operator review. The worker
+must not claim clean git status while the artifact is pending, and must not use
+`HEAD~1..HEAD` as proof for the pending artifact.
 CPG-2 is CLOSED_PASS_BOUNDED with
 release-quality proof:
 

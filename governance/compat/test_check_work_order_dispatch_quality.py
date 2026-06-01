@@ -43,6 +43,7 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
                     "ACCEPT_AS_OWNER_MAP coverage",
                     "Mandatory Gate-Failure Remediation Protocol",
                     "Worker Autonomy / No-Question Rule",
+                    "Pending Artifact Evidence Finality",
                     MODULE.THIS_SCRIPT_PATH,
                 ]
             ),
@@ -57,6 +58,7 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
                     "ACCEPT_AS_OWNER_MAP coverage",
                     "Mandatory Gate-Failure Remediation Protocol",
                     "Worker Autonomy / No-Question Rule",
+                    "Pending Artifact Evidence Finality",
                     MODULE.THIS_SCRIPT_PATH,
                 ]
             ),
@@ -228,6 +230,62 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
         self.assertFalse(report["compliant"])
         self.assertIn(
             "dispatch/ready work order lacks Worker Autonomy / No-Question Rule",
+            report["violations"][0]["issues"],
+        )
+
+    def test_pending_review_claiming_clean_git_status_fails(self) -> None:
+        review = "docs/reviews/CVF_PENDING_REVIEW_2026-06-01.md"
+        self._write(
+            review,
+            "\n".join(
+                [
+                    "# Pending Review",
+                    "Status: IN_PROGRESS_DISPATCHED",
+                    "## Governance Gates Run",
+                    "- `git status --short` -> clean",
+                ]
+            ),
+        )
+
+        with (
+            patch.object(MODULE, "REPO_ROOT", self.repo_root),
+            patch.object(MODULE, "_get_changed", return_value={review: {"A"}}),
+        ):
+            report = MODULE._classify([review], base_ref="HEAD")
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "pending changed artifact records `git status --short` as clean even though the artifact "
+            "itself is not committed; record the actual pending status or commit first",
+            report["violations"][0]["issues"],
+        )
+
+    def test_pending_review_with_head_prev_range_evidence_fails(self) -> None:
+        review = "docs/reviews/CVF_PENDING_RANGE_REVIEW_2026-06-01.md"
+        self._write(
+            review,
+            "\n".join(
+                [
+                    "# Pending Range Review",
+                    "Status: IN_PROGRESS_DISPATCHED",
+                    "## Governance Gates Run",
+                    "- `python governance/compat/check_work_order_dispatch_quality.py --base HEAD~1 --head HEAD --enforce` -> PASS",
+                    "- `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base HEAD~1 --head HEAD` -> PASS",
+                ]
+            ),
+        )
+
+        with (
+            patch.object(MODULE, "REPO_ROOT", self.repo_root),
+            patch.object(MODULE, "_get_changed", return_value={review: {"A"}}),
+        ):
+            report = MODULE._classify([review], base_ref="HEAD")
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "pending changed artifact cites `--base HEAD~1 --head HEAD` gate evidence that does not "
+            "prove the pending artifact; use a working-tree-aware validation or commit the artifact "
+            "and rerun the real changed range",
             report["violations"][0]["issues"],
         )
 

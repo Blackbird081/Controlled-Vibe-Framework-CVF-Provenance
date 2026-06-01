@@ -758,6 +758,41 @@ def _validate_no_empty_range_commands(text: str) -> list[str]:
     return []
 
 
+def _has_pending_content_status(statuses: set[str]) -> bool:
+    return bool(statuses) and not statuses <= {"R"}
+
+
+def _validate_pending_artifact_evidence_finality(text: str, statuses: set[str]) -> list[str]:
+    if not _has_pending_content_status(statuses):
+        return []
+    issues: list[str] = []
+    if re.search(
+        r"git\s+status\s+--short[^\n\r]{0,120}(?:→|->|:)\s*(?:`?clean`?|clean\b|worktree\s+clean)",
+        text,
+        re.IGNORECASE,
+    ):
+        issues.append(
+            "pending changed artifact records `git status --short` as clean even though the artifact "
+            "itself is not committed; record the actual pending status or commit first"
+        )
+    if re.search(
+        r"(?:run_agent_autorun_workflow_gate|check_work_order_dispatch_quality|check_[A-Za-z0-9_]+)"
+        r"[^\n\r]{0,180}--base\s+HEAD~1\s+--head\s+HEAD",
+        text,
+        re.IGNORECASE,
+    ):
+        issues.append(
+            "pending changed artifact cites `--base HEAD~1 --head HEAD` gate evidence that does not "
+            "prove the pending artifact; use a working-tree-aware validation or commit the artifact "
+            "and rerun the real changed range"
+        )
+    if re.search(r"\bstaged\s+for\s+review\b", text, re.IGNORECASE) and "A" not in statuses and "M" not in statuses:
+        issues.append(
+            "artifact claims it is staged for review, but git status does not show staged content for this path"
+        )
+    return issues
+
+
 def _extract_accept_owner_map_concepts(source_text: str) -> list[str]:
     concepts: list[str] = []
     for raw_line in source_text.splitlines():
@@ -1261,6 +1296,7 @@ def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str
         if statuses and statuses <= {"R"}:
             continue
         issues = _validate_path(path)
+        issues.extend(_validate_pending_artifact_evidence_finality(_read_rel(path), statuses))
         if not issues:
             continue
         # Suppress pre-existing violations: if every issue was already present in the
@@ -1299,6 +1335,7 @@ def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str
             "Negative And Fail-Condition Scan",
             "Mandatory Gate-Failure Remediation Protocol",
             "Worker Autonomy / No-Question Rule",
+            "Pending Artifact Evidence Finality",
             "Current Runtime Freshness Verification",
             "ACCEPT_AS_OWNER_MAP coverage",
             THIS_SCRIPT_PATH,
@@ -1308,6 +1345,7 @@ def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str
             "Roadmap-To-Work-Order Trace Matrix",
             "Mandatory Gate-Failure Remediation Protocol",
             "Worker Autonomy / No-Question Rule",
+            "Pending Artifact Evidence Finality",
             "Current Runtime Freshness Verification",
             "ACCEPT_AS_OWNER_MAP coverage",
             THIS_SCRIPT_PATH,

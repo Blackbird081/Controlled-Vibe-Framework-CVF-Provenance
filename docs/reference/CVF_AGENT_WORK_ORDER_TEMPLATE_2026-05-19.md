@@ -441,6 +441,18 @@ destructive/irreversible action.
 If a machine gate fails inside Allowed scope, repair it and rerun. Do not ask
 whether to fix routine gate failures.
 
+## 6D. Pending Artifact Evidence Finality
+
+If the worker leaves a changed, staged, or untracked governed artifact for
+review, the artifact must not claim `git status --short` is clean. It must
+record the actual pending status or state that clean-status evidence is
+post-commit and command-backed.
+
+Pending artifacts must not cite `--base HEAD~1 --head HEAD` or another
+committed-only range as proof for the pending artifact itself. Use
+working-tree-aware validation for pending artifacts, or commit first and rerun
+the real changed range.
+
 ## 7. Write Ownership
 
 Owned files or modules:
