@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import fnmatch
 import json
 import os
 import re
@@ -28,6 +29,9 @@ WORK_ORDER_TEMPLATE_PATH = "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05
 WORKER_AUTONOMY_STANDARD_PATH = "docs/reference/CVF_WORKER_AUTONOMY_DISPATCH_PROMPT_STANDARD_2026-06-01.md"
 HOOK_CHAIN_PATH = "governance/compat/run_local_governance_hook_chain.py"
 THIS_SCRIPT_PATH = "governance/compat/check_work_order_dispatch_quality.py"
+FILE_SIZE_REGISTRY_PATH = "governance/compat/CVF_GOVERNED_FILE_SIZE_EXCEPTION_REGISTRY.json"
+NEAR_THRESHOLD_PLAN_MARKER = "Near-Threshold Owner Maintainability Plan"
+FULFILLMENT_MANIFEST_MARKER = "Work-Order Fulfillment Manifest"
 
 REQUIRED_SOURCE_COLUMNS = (
     "Claimed item",
@@ -367,6 +371,70 @@ def _parse_markdown_tables(text: str) -> list[dict[str, str]]:
             index += 1
         continue
     return rows
+
+
+def _parse_any_markdown_tables(text: str) -> list[list[dict[str, str]]]:
+    tables: list[list[dict[str, str]]] = []
+    lines = text.splitlines()
+    index = 0
+    while index + 1 < len(lines):
+        header_line = lines[index].strip()
+        separator_line = lines[index + 1].strip()
+        if not header_line.startswith("|") or "|" not in header_line:
+            index += 1
+            continue
+        if not re.match(r"^\|?\s*:?-{3,}:?\s*(?:\|\s*:?-{3,}:?\s*)+\|?$", separator_line):
+            index += 1
+            continue
+        headers = [cell.strip() for cell in header_line.strip("|").split("|")]
+        table_rows: list[dict[str, str]] = []
+        index += 2
+        while index < len(lines) and lines[index].strip().startswith("|"):
+            cells = [cell.strip() for cell in lines[index].strip().strip("|").split("|")]
+            if len(cells) < len(headers):
+                cells.extend([""] * (len(headers) - len(cells)))
+            table_rows.append(dict(zip(headers, cells[: len(headers)])))
+            index += 1
+        if table_rows:
+            tables.append(table_rows)
+    return tables
+
+
+def _normalize_table_key(value: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "", value.lower())
+
+
+def _row_value(row: dict[str, str], *names: str) -> str:
+    normalized = {_normalize_table_key(key): value for key, value in row.items()}
+    for name in names:
+        value = normalized.get(_normalize_table_key(name))
+        if value is not None:
+            return value.strip()
+    return ""
+
+
+def _section_tables(text: str, heading_fragment: str) -> list[list[dict[str, str]]]:
+    section = _extract_section(text, heading_fragment)
+    return _parse_any_markdown_tables(section)
+
+
+def _truthy_cell(value: str) -> bool:
+    normalized = value.strip().strip("`").lower()
+    return normalized in {"yes", "y", "true", "required", "must", "handoff"}
+
+
+def _clean_manifest_path(value: str) -> str:
+    return value.strip().strip("`").replace("\\", "/").rstrip(".,;:")
+
+
+def _path_matches_pattern(path: str, pattern: str) -> bool:
+    normalized = path.replace("\\", "/").strip()
+    clean_pattern = _clean_manifest_path(pattern).rstrip("/")
+    if not clean_pattern:
+        return False
+    if any(marker in clean_pattern for marker in ("*", "?", "[")):
+        return fnmatch.fnmatch(normalized, clean_pattern)
+    return normalized == clean_pattern or normalized.startswith(f"{clean_pattern}/")
 
 
 def _source_table_has_required_columns(text: str) -> bool:
@@ -762,7 +830,11 @@ def _has_pending_content_status(statuses: set[str]) -> bool:
     return bool(statuses) and not statuses <= {"R"}
 
 
-def _validate_pending_artifact_evidence_finality(text: str, statuses: set[str]) -> list[str]:
+FINDING_MARKERS = ("## Quality Findings", "## Findings", "## Known Issues", "Known Issues", "| Finding |", "finding |")
+FINDING_LEARNING_SECTION = "## Finding-To-Governance Learning Disposition"
+
+
+def _validate_pending_artifact_evidence_finality(path: str, text: str, statuses: set[str]) -> list[str]:
     if not _has_pending_content_status(statuses):
         return []
     issues: list[str] = []
@@ -789,6 +861,45 @@ def _validate_pending_artifact_evidence_finality(text: str, statuses: set[str]) 
     if re.search(r"\bstaged\s+for\s+review\b", text, re.IGNORECASE) and "A" not in statuses and "M" not in statuses:
         issues.append(
             "artifact claims it is staged for review, but git status does not show staged content for this path"
+        )
+    if re.search(r"(?im)^\s*[-*]\s+`?git\s+status\s+--short`?\s*(?:->|→|:)", text) and path not in text:
+        issues.append(
+            "pending changed artifact records `git status --short` but omits its own pending path; "
+            "record the actual pending status line for this artifact"
+        )
+    return issues
+
+
+def _is_finding_bearing(text: str) -> bool:
+    return any(marker in text for marker in FINDING_MARKERS)
+
+
+def _validate_self_reported_gate_evidence_consistency(text: str) -> list[str]:
+    issues: list[str] = []
+    status = _extract_status(text).upper()
+    blocking_status = any(token in status for token in ("BLOCKED", "HOLD"))
+    gate_failures = re.findall(
+        r"(?im)^\s*[-*]\s+`[^`\n]*(?:check_work_order_dispatch_quality|run_agent_autorun_workflow_gate|"
+        r"check_corpus_completeness_report_integrity|check_corpus_to_knowledge_map_reconciliation)"
+        r"[^`\n]*`\s*(?:->|→|:)\s*(?:`?FAIL`?|FAILED\b)",
+        text,
+    )
+    if gate_failures and not blocking_status:
+        issues.append(
+            "artifact records a failed self-reported governance gate while status is not BLOCKED/HOLD; "
+            "repair allowed-scope failures and rerun, or mark the artifact BLOCKED with return action"
+        )
+    if (
+        _is_finding_bearing(text)
+        and FINDING_LEARNING_SECTION not in text
+        and re.search(
+            r"(?im)^\s*[-*]\s+`[^`\n]*run_agent_autorun_workflow_gate[^`\n]*`\s*(?:->|→|:)\s*(?:`?PASS`?|PASSED\b)",
+            text,
+        )
+    ):
+        issues.append(
+            "artifact records autorun gate PASS but is finding-bearing without "
+            "`## Finding-To-Governance Learning Disposition`; rerun after adding the required section"
         )
     return issues
 
@@ -934,6 +1045,100 @@ def _validate_required_first_reads(text: str) -> list[str]:
     return issues
 
 
+def _classify_size_guard_path(path: str) -> str:
+    suffix = Path(path).suffix.lower()
+    lower = path.lower()
+    if suffix == ".md":
+        return "active_markdown"
+    if ".test." in lower or "/tests/" in lower:
+        return "test_code"
+    if suffix in {".tsx", ".jsx"}:
+        return "frontend_component"
+    return "general_source"
+
+
+def _validate_near_threshold_owner_maintainability_plan(text: str) -> list[str]:
+    issues: list[str] = []
+    registry_path = REPO_ROOT / FILE_SIZE_REGISTRY_PATH
+    if not registry_path.exists():
+        return issues
+    try:
+        registry = json.loads(registry_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return [f"`{FILE_SIZE_REGISTRY_PATH}` is invalid JSON"]
+
+    thresholds = registry.get("thresholds", {})
+    margin = int(registry.get("nearHardRotationMarginLines", 25))
+    min_shrink = int(registry.get("nearHardMinShrinkLines", 50))
+    ownership_text = "\n".join(
+        [
+            _extract_allowed_scope_text(text),
+            _extract_section(text, "Write Ownership"),
+        ]
+    )
+    ownership_paths = set(_extract_paths(ownership_text))
+    forbidden_paths = set(_extract_paths(_extract_forbidden_scope_text(text)))
+    plan_text = _extract_section(text, NEAR_THRESHOLD_PLAN_MARKER)
+
+    for owner in registry.get("proactiveOwnerSurfaces", []):
+        if not isinstance(owner, dict) or owner.get("status") != "ACTIVE":
+            continue
+        owner_path = str(owner.get("path", "")).replace("\\", "/").strip()
+        prefixes = [
+            str(prefix).replace("\\", "/").strip()
+            for prefix in owner.get("domainPrefixes", [])
+            if str(prefix).strip()
+        ]
+        full_owner_path = REPO_ROOT / owner_path
+        if not owner_path or not prefixes or not full_owner_path.exists():
+            continue
+        file_class = _classify_size_guard_path(owner_path)
+        hard = int(thresholds.get(file_class, {}).get("hardThresholdLines", 0) or 0)
+        lines = len(full_owner_path.read_text(encoding="utf-8", errors="replace").splitlines())
+        if not hard or lines < max(1, hard - margin):
+            continue
+        adjacent_owned = sorted(
+            path
+            for path in ownership_paths
+            if path != owner_path and any(path.startswith(prefix) for prefix in prefixes)
+        )
+        if not adjacent_owned:
+            continue
+        if not plan_text:
+            issues.append(
+                f"dispatch/ready work order enters registered near-threshold owner domain for `{owner_path}` "
+                f"({lines}/{hard} lines) without `## {NEAR_THRESHOLD_PLAN_MARKER}`"
+            )
+            continue
+        if owner_path not in ownership_paths:
+            issues.append(
+                f"dispatch/ready work order enters registered near-threshold owner domain for `{owner_path}` "
+                "but does not include the owner entrypoint in Allowed scope or Write Ownership"
+            )
+        if owner_path in forbidden_paths:
+            issues.append(
+                f"dispatch/ready work order treats near-threshold owner entrypoint `{owner_path}` as forbidden-touch; "
+                "split/shrink ownership is required instead of bypassing maintainability debt"
+            )
+        if owner_path not in plan_text:
+            issues.append(
+                f"`## {NEAR_THRESHOLD_PLAN_MARKER}` must cite near-threshold owner entrypoint `{owner_path}`"
+            )
+        if not re.search(r"\b(?:split|extract|rotate|archive)\b", plan_text, re.IGNORECASE):
+            issues.append(
+                f"`## {NEAR_THRESHOLD_PLAN_MARKER}` must name a split/extract/rotate/archive action for `{owner_path}`"
+            )
+        if not re.search(
+            rf"Minimum shrink target:\s*{min_shrink}\s+lines\b",
+            plan_text,
+            re.IGNORECASE,
+        ):
+            issues.append(
+                f"`## {NEAR_THRESHOLD_PLAN_MARKER}` must include `Minimum shrink target: {min_shrink} lines`"
+            )
+    return issues
+
+
 def _validate_work_order(path: str, text: str) -> list[str]:
     issues: list[str] = []
     status = _extract_status(text)
@@ -957,6 +1162,15 @@ def _validate_work_order(path: str, text: str) -> list[str]:
 
     if dispatching:
         issues.extend(_validate_required_first_reads(text))
+        issues.extend(_validate_near_threshold_owner_maintainability_plan(text))
+        if (
+            ("Required Artifact Manifest" in text or "Required Proof Manifest" in text)
+            and FULFILLMENT_MANIFEST_MARKER not in text
+        ):
+            issues.append(
+                "work order has required artifact/proof manifests but lacks "
+                f"`{FULFILLMENT_MANIFEST_MARKER}` marker"
+            )
         blocking_precondition = re.search(
             r"(pre-?condition|gate condition|dispatch only after|only after)[\s\S]{0,240}CLOSED_PASS",
             text,
@@ -1082,6 +1296,20 @@ def _extract_allowed_scope_text(text: str) -> str:
     return ""
 
 
+def _extract_forbidden_scope_text(text: str) -> str:
+    patterns = (
+        r"(?ims)^Forbidden scope:\s*$([\s\S]*?)(?=^##\s+|\Z)",
+        r"(?ims)^\*\*Forbidden scope:\*\*\s*$([\s\S]*?)(?=^##\s+|\Z)",
+        r"(?ims)^Forbidden:\s*$([\s\S]*?)(?=^##\s+|\Z)",
+        r"(?ims)^\*\*Forbidden:\*\*\s*$([\s\S]*?)(?=^##\s+|\Z)",
+    )
+    for pattern in patterns:
+        match = re.search(pattern, text)
+        if match:
+            return match.group(1)
+    return ""
+
+
 def _path_matches_allowed(path: str, allowed_path: str) -> bool:
     normalized = path.replace("\\", "/").strip()
     allowed = allowed_path.replace("\\", "/").strip().rstrip("/")
@@ -1149,6 +1377,83 @@ def _is_runtime_or_source_change(path: str) -> bool:
     if normalized.endswith(".md") or normalized.endswith(".json"):
         return False
     return normalized.startswith(("EXTENSIONS/", "scripts/", "sdk/", "governance/compat/"))
+
+
+def _work_order_runtime_activity(text: str, changed_files: list[str]) -> bool:
+    normalized_files = [path.replace("\\", "/") for path in changed_files]
+    if any(_is_runtime_or_source_change(path) for path in normalized_files):
+        return True
+    owned_section = _extract_section(text, "Write Ownership")
+    required_section = _extract_section(text, "Required Artifact Manifest")
+    declared_paths = _extract_paths(owned_section + "\n" + required_section)
+    return any(
+        any(_path_matches_pattern(changed_path, declared_path) for declared_path in declared_paths)
+        for changed_path in normalized_files
+    )
+
+
+def _validate_work_order_fulfillment_manifests(changed_files: list[str]) -> list[dict[str, Any]]:
+    normalized_files = sorted(path.replace("\\", "/") for path in changed_files)
+    violations: list[dict[str, Any]] = []
+
+    for work_order_path in normalized_files:
+        if not work_order_path.startswith("docs/work_orders/") or "/archive/" in work_order_path:
+            continue
+        text = _read_rel(work_order_path)
+        if FULFILLMENT_MANIFEST_MARKER not in text:
+            continue
+        status = _extract_status(text)
+        if not _is_dispatch_status(status) or _is_hold_status(status):
+            continue
+        if not _work_order_runtime_activity(text, normalized_files):
+            continue
+
+        issues: list[str] = []
+        required_tables = _section_tables(text, "Required Artifact Manifest")
+        if not required_tables:
+            issues.append("work order declares fulfillment manifest but lacks `## Required Artifact Manifest` table")
+        for table in required_tables:
+            for row in table:
+                path = _clean_manifest_path(_row_value(row, "Path", "Artifact", "Required artifact"))
+                required_at_handoff = _truthy_cell(_row_value(row, "Required at handoff", "Required", "Must exist"))
+                if path and required_at_handoff and not _exists_rel(path):
+                    issues.append(f"required handoff artifact is missing: `{path}`")
+
+        pre_existing_tables = _section_tables(text, "Pre-Existing Dirty Path Exemptions")
+        exempt_patterns = [
+            _clean_manifest_path(_row_value(row, "Path", "Pattern"))
+            for table in pre_existing_tables
+            for row in table
+            if _clean_manifest_path(_row_value(row, "Path", "Pattern"))
+        ]
+        for table in _section_tables(text, "Forbidden Path Manifest"):
+            for row in table:
+                pattern = _clean_manifest_path(_row_value(row, "Path", "Pattern", "Forbidden path"))
+                if not pattern:
+                    continue
+                for changed_path in normalized_files:
+                    if any(_path_matches_pattern(changed_path, exempt) for exempt in exempt_patterns):
+                        continue
+                    if _path_matches_pattern(changed_path, pattern):
+                        issues.append(f"changed file violates forbidden path manifest: `{changed_path}` matches `{pattern}`")
+
+        for table in _section_tables(text, "Required Proof Manifest"):
+            for row in table:
+                required = _truthy_cell(_row_value(row, "Required at handoff", "Required", "Must exist"))
+                if not required:
+                    continue
+                path = _clean_manifest_path(_row_value(row, "Path", "Proof path"))
+                literal = _row_value(row, "Required literal", "Literal", "Required token").strip().strip("`")
+                if path and not _exists_rel(path):
+                    issues.append(f"required proof file is missing: `{path}`")
+                    continue
+                if path and literal and literal not in _read_rel(path):
+                    issues.append(f"required proof literal `{literal}` is missing from `{path}`")
+
+        if issues:
+            violations.append({"path": work_order_path, "issues": issues})
+
+    return violations
 
 
 def _validate_runtime_changes_against_referenced_work_orders(changed_files: list[str]) -> list[dict[str, Any]]:
@@ -1295,8 +1600,10 @@ def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str
         # Skip files that were only renamed/moved — content unchanged, no new violations possible.
         if statuses and statuses <= {"R"}:
             continue
+        text = _read_rel(path)
         issues = _validate_path(path)
-        issues.extend(_validate_pending_artifact_evidence_finality(_read_rel(path), statuses))
+        issues.extend(_validate_pending_artifact_evidence_finality(path, text, statuses))
+        issues.extend(_validate_self_reported_gate_evidence_consistency(text))
         if not issues:
             continue
         # Suppress pre-existing violations: if every issue was already present in the
@@ -1328,6 +1635,7 @@ def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str
     violations.extend(_validate_single_work_order_scope_range(changed_files))
     violations.extend(_validate_lhw_wave_closure_range(changed_files, base_ref=base_ref))
     violations.extend(_validate_runtime_changes_against_referenced_work_orders(changed_files))
+    violations.extend(_validate_work_order_fulfillment_manifests(changed_files))
 
     required_markers = {
         STANDARD_PATH: (
@@ -1336,6 +1644,9 @@ def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str
             "Mandatory Gate-Failure Remediation Protocol",
             "Worker Autonomy / No-Question Rule",
             "Pending Artifact Evidence Finality",
+            "Self-Reported Gate Evidence Consistency",
+            NEAR_THRESHOLD_PLAN_MARKER,
+            FULFILLMENT_MANIFEST_MARKER,
             "Current Runtime Freshness Verification",
             "ACCEPT_AS_OWNER_MAP coverage",
             THIS_SCRIPT_PATH,
@@ -1346,6 +1657,9 @@ def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str
             "Mandatory Gate-Failure Remediation Protocol",
             "Worker Autonomy / No-Question Rule",
             "Pending Artifact Evidence Finality",
+            "Self-Reported Gate Evidence Consistency",
+            NEAR_THRESHOLD_PLAN_MARKER,
+            FULFILLMENT_MANIFEST_MARKER,
             "Current Runtime Freshness Verification",
             "ACCEPT_AS_OWNER_MAP coverage",
             THIS_SCRIPT_PATH,

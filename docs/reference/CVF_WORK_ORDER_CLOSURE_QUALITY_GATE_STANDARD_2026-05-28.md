@@ -53,6 +53,9 @@ passes the following gates:
     inventories, extracts, compares, summarizes, audits, migrates, or absorbs a
     bounded set of files or folders.
 14. Worker Autonomy / No-Question Rule for delegated worker packets.
+15. Self-Reported Gate Evidence Consistency for any artifact that records
+    governance gate results.
+16. Work-Order Fulfillment Manifest for delegated runtime/source work.
 
 If any gate is incomplete, the worker must return to Orchestrator or file a
 blocking defect. Operator silence is not a waiver.
@@ -218,7 +221,29 @@ Escalation remains mandatory for scope expansion, claim-boundary changes,
 paths, destructive action, risk changes, or runtime/source edits outside
 ownership.
 
-### 4C. Pending Artifact Evidence Finality
+### 4C. Work-Order Fulfillment Manifest
+
+Any delegated work order that creates or modifies runtime/source files must
+include machine-readable handoff manifests before dispatch:
+
+- `## Required Artifact Manifest` names every source, test, review, or package
+  artifact that must exist before worker handoff.
+- `## Forbidden Path Manifest` names forbidden files, directories, or glob
+  patterns that must not appear in the changed implementation range unless
+  explicitly listed in `## Pre-Existing Dirty Path Exemptions`.
+- `## Required Proof Manifest` names required proof files and literals, such
+  as raw-leak sentinel tests or invariant assertions.
+
+The compatibility gate must fail an implementation handoff when runtime/source
+activity exists and a required handoff artifact is missing, a forbidden path is
+touched outside a declared pre-existing dirty-path exemption, or a required
+proof literal is absent from the named proof file.
+
+Pre-existing dirty-path exemptions are narrow provenance hygiene exceptions,
+not ownership transfer. The worker must not edit, stage, claim, or close those
+paths unless a separate work order owns them.
+
+### 4D. Pending Artifact Evidence Finality
 
 A changed, staged, or untracked governed artifact must not claim the worktree is
 clean while that same artifact is still pending. If the artifact records
@@ -237,6 +262,58 @@ either:
 Machine enforcement rejects pending artifacts that self-report
 `git status --short` as clean or cite a committed range that cannot include the
 pending artifact.
+
+### 4E. Self-Reported Gate Evidence Consistency
+
+If an artifact records a governance gate, autorun phase, corpus check, or
+dispatch-quality result, the recorded result must be current for the artifact
+state being handed off.
+
+A non-blocked artifact must not record a failed required gate and then ask the
+reviewer or operator to decide, rerun, or pick it up. The worker must either:
+
+- repair the allowed-scope failure and rerun the gate before handoff; or
+- mark the artifact `BLOCKED` or `HOLD_*` with a return action when the repair
+  exceeds Allowed scope.
+
+Stale gate evidence is a closure/dispatch defect. If a worker reruns a gate and
+the result changes, the artifact must update the Governance Gates Run section
+before returning it for review.
+
+Self-reported `PASS` evidence is also stale if the artifact is missing a
+section that the recorded autorun phase requires. For example, a finding-bearing
+review must include `## Finding-To-Governance Learning Disposition` before it
+may record autorun `pre-dispatch` as `PASS`.
+
+If a pending artifact records `git status --short`, it must include its own
+pending path in that status evidence. Omitting the artifact itself while
+claiming pending validation is a finality defect.
+
+### 4F. Near-Threshold Owner Maintainability Plan
+
+Avoiding a near-threshold active owner file is not maintainability remediation.
+When a ready or dispatched work order adds or modifies source inside a
+registered owner domain while the active owner entrypoint is within the GC-023
+near-hard margin, the work order must:
+
+- include `## Near-Threshold Owner Maintainability Plan`;
+- include the active owner entrypoint in Allowed scope and Write Ownership;
+- name the split, extract, rotate, or archive action;
+- record `Minimum shrink target: 50 lines`;
+- prove the owner entrypoint was meaningfully reduced or split before closure.
+
+A work order must not classify the near-threshold owner entrypoint as
+forbidden-touch merely to place adjacent logic in new files. Adjacent modules
+are healthy only when the active owner surface is also reduced to a reviewable
+role.
+
+Machine enforcement uses:
+
+`governance/compat/CVF_GOVERNED_FILE_SIZE_EXCEPTION_REGISTRY.json`
+
+`governance/compat/check_governed_file_size.py`
+
+`governance/compat/check_work_order_dispatch_quality.py`
 
 ### 5. Checklist Finalization Gate
 

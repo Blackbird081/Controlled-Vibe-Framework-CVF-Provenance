@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import importlib.util
+import json
 import sys
 import tempfile
 import unittest
@@ -44,6 +45,9 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
                     "Mandatory Gate-Failure Remediation Protocol",
                     "Worker Autonomy / No-Question Rule",
                     "Pending Artifact Evidence Finality",
+                    "Self-Reported Gate Evidence Consistency",
+                    "Near-Threshold Owner Maintainability Plan",
+                    "Work-Order Fulfillment Manifest",
                     MODULE.THIS_SCRIPT_PATH,
                 ]
             ),
@@ -59,6 +63,9 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
                     "Mandatory Gate-Failure Remediation Protocol",
                     "Worker Autonomy / No-Question Rule",
                     "Pending Artifact Evidence Finality",
+                    "Self-Reported Gate Evidence Consistency",
+                    "Near-Threshold Owner Maintainability Plan",
+                    "Work-Order Fulfillment Manifest",
                     MODULE.THIS_SCRIPT_PATH,
                 ]
             ),
@@ -233,6 +240,59 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
             report["violations"][0]["issues"],
         )
 
+    def test_ready_work_order_cannot_forbid_near_threshold_owner_surface(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_OWNER_ROTATION_TEST_2026-06-01.md"
+        owner_path = "EXTENSIONS/CVF_WEB/src/app/api/execute/route.ts"
+        adjacent_path = "EXTENSIONS/CVF_WEB/src/app/api/memory/readout/route.ts"
+        self._write(owner_path, "\n".join(f"line {index}" for index in range(118)) + "\n")
+        self._write(
+            MODULE.FILE_SIZE_REGISTRY_PATH,
+            json.dumps(
+                {
+                    "thresholds": {
+                        "general_source": {
+                            "softThresholdLines": 90,
+                            "hardThresholdLines": 120,
+                        }
+                    },
+                    "nearHardRotationMarginLines": 5,
+                    "nearHardMinShrinkLines": 10,
+                    "proactiveOwnerSurfaces": [
+                        {
+                            "path": owner_path,
+                            "status": "ACTIVE",
+                            "domainPrefixes": ["EXTENSIONS/CVF_WEB/src/app/api/"],
+                        }
+                    ],
+                }
+            ),
+        )
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCHED_TO_WORKER",
+                    "Allowed scope:",
+                    f"- add `{adjacent_path}`",
+                    "Forbidden scope:",
+                    f"- `{owner_path}`",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Proceed inside scope.",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "dispatch/ready work order enters registered near-threshold owner domain for "
+            f"`{owner_path}` (118/120 lines) without `## Near-Threshold Owner Maintainability Plan`",
+            report["violations"][0]["issues"],
+        )
+
     def test_pending_review_claiming_clean_git_status_fails(self) -> None:
         review = "docs/reviews/CVF_PENDING_REVIEW_2026-06-01.md"
         self._write(
@@ -287,6 +347,219 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
             "prove the pending artifact; use a working-tree-aware validation or commit the artifact "
             "and rerun the real changed range",
             report["violations"][0]["issues"],
+        )
+
+    def test_pending_review_status_output_must_include_self_path(self) -> None:
+        review = "docs/reviews/CVF_PENDING_STATUS_REVIEW_2026-06-01.md"
+        self._write(
+            review,
+            "\n".join(
+                [
+                    "# Pending Status Review",
+                    "Status: IN_PROGRESS_DISPATCHED",
+                    "## Governance Gates Run",
+                    "- `git status --short` ->",
+                    "  - `?? docs/reviews/OTHER_REVIEW_2026-06-01.md`",
+                ]
+            ),
+        )
+
+        with (
+            patch.object(MODULE, "REPO_ROOT", self.repo_root),
+            patch.object(MODULE, "_get_changed", return_value={review: {"A"}}),
+        ):
+            report = MODULE._classify([review], base_ref="HEAD")
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "pending changed artifact records `git status --short` but omits its own pending path; "
+            "record the actual pending status line for this artifact",
+            report["violations"][0]["issues"],
+        )
+
+    def test_nonblocked_artifact_with_self_reported_gate_fail_fails(self) -> None:
+        review = "docs/reviews/CVF_PENDING_GATE_FAIL_REVIEW_2026-06-01.md"
+        self._write(
+            review,
+            "\n".join(
+                [
+                    "# Pending Gate Fail Review",
+                    "Status: IN_PROGRESS_DISPATCHED",
+                    "## Governance Gates Run",
+                    "- `python governance/compat/check_work_order_dispatch_quality.py --base abc1234 --head HEAD --enforce` -> FAIL",
+                ]
+            ),
+        )
+
+        with (
+            patch.object(MODULE, "REPO_ROOT", self.repo_root),
+            patch.object(MODULE, "_get_changed", return_value={review: {"A"}}),
+        ):
+            report = MODULE._classify([review], base_ref="HEAD")
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "artifact records a failed self-reported governance gate while status is not BLOCKED/HOLD; "
+            "repair allowed-scope failures and rerun, or mark the artifact BLOCKED with return action",
+            report["violations"][0]["issues"],
+        )
+
+    def test_finding_bearing_artifact_with_autorun_pass_missing_learning_disposition_fails(self) -> None:
+        review = "docs/reviews/CVF_PENDING_STALE_PASS_REVIEW_2026-06-01.md"
+        self._write(
+            review,
+            "\n".join(
+                [
+                    "# Pending Stale Pass Review",
+                    "Status: IN_PROGRESS_DISPATCHED",
+                    "## Findings / Position",
+                    "- Finding: gate evidence is current.",
+                    "## Governance Gates Run",
+                    "- `git status --short` ->",
+                    f"  - `?? {review}`",
+                    "- `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base abc1234 --head HEAD` -> PASS",
+                ]
+            ),
+        )
+
+        with (
+            patch.object(MODULE, "REPO_ROOT", self.repo_root),
+            patch.object(MODULE, "_get_changed", return_value={review: {"A"}}),
+        ):
+            report = MODULE._classify([review], base_ref="HEAD")
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "artifact records autorun gate PASS but is finding-bearing without "
+            "`## Finding-To-Governance Learning Disposition`; rerun after adding the required section",
+            report["violations"][0]["issues"],
+        )
+
+    def test_blocked_artifact_may_record_gate_fail_with_return_action(self) -> None:
+        review = "docs/reviews/CVF_BLOCKED_GATE_FAIL_REVIEW_2026-06-01.md"
+        self._write(
+            review,
+            "\n".join(
+                [
+                    "# Blocked Gate Fail Review",
+                    "Status: BLOCKED",
+                    "Return action: orchestrator must expand scope.",
+                    "## Governance Gates Run",
+                    "- `python governance/compat/check_work_order_dispatch_quality.py --base abc1234 --head HEAD --enforce` -> FAIL",
+                ]
+            ),
+        )
+
+        with (
+            patch.object(MODULE, "REPO_ROOT", self.repo_root),
+            patch.object(MODULE, "_get_changed", return_value={review: {"A"}}),
+        ):
+            report = MODULE._classify([review], base_ref="HEAD")
+
+        self.assertTrue(report["compliant"])
+
+    def test_runtime_work_order_fulfillment_manifest_catches_missing_artifacts_and_forbidden_paths(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_MKG6_TEST_2026-06-01.md"
+        changed_forbidden = "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/index.ts"
+        changed_runtime = "EXTENSIONS/CVF_WEB/src/app/api/execute/route.ts"
+        proof_path = "EXTENSIONS/CVF_WEB/src/app/api/memory/readout/route.test.ts"
+        self._write(changed_forbidden, "export const touched = true;\n")
+        self._write(changed_runtime, "export const route = true;\n")
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCHED_TO_WORKER",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Proceed inside scope.",
+                    "## Work-Order Fulfillment Manifest",
+                    "Manifest applies.",
+                    "## Required Artifact Manifest",
+                    "| Path | Required at handoff | Purpose |",
+                    "|---|---|---|",
+                    "| `EXTENSIONS/CVF_WEB/src/app/api/memory/readout/route.ts` | Yes | route |",
+                    "| `docs/reviews/CVF_MKG6_COMPLETION.md` | Yes | completion |",
+                    "## Forbidden Path Manifest",
+                    "| Path | Reason |",
+                    "|---|---|",
+                    f"| `{changed_forbidden}` | forbidden by work order |",
+                    "## Required Proof Manifest",
+                    "| Proof | Path | Required literal | Required at handoff |",
+                    "|---|---|---|---|",
+                    f"| raw leak sentinel | `{proof_path}` | `RAW_MEMORY_CONTENT_MUST_NOT_LEAK` | Yes |",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order, changed_runtime, changed_forbidden])
+
+        self.assertFalse(report["compliant"])
+        issues = [
+            issue
+            for violation in report["violations"]
+            if violation["path"] == work_order
+            for issue in violation["issues"]
+        ]
+        self.assertIn(
+            "required handoff artifact is missing: `EXTENSIONS/CVF_WEB/src/app/api/memory/readout/route.ts`",
+            issues,
+        )
+        self.assertIn(
+            "required handoff artifact is missing: `docs/reviews/CVF_MKG6_COMPLETION.md`",
+            issues,
+        )
+        self.assertIn(
+            f"changed file violates forbidden path manifest: `{changed_forbidden}` matches `{changed_forbidden}`",
+            issues,
+        )
+        self.assertIn(
+            f"required proof file is missing: `{proof_path}`",
+            issues,
+        )
+
+    def test_required_proof_literal_must_exist_in_named_file(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_SENTINEL_TEST_2026-06-01.md"
+        route_path = "EXTENSIONS/CVF_WEB/src/app/api/memory/readout/route.ts"
+        proof_path = "EXTENSIONS/CVF_WEB/src/app/api/memory/readout/route.test.ts"
+        self._write(route_path, "export const route = true;\n")
+        self._write(proof_path, "it('checks response', () => {});\n")
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCHED_TO_WORKER",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Proceed inside scope.",
+                    "## Work-Order Fulfillment Manifest",
+                    "Manifest applies.",
+                    "## Required Artifact Manifest",
+                    "| Path | Required at handoff | Purpose |",
+                    "|---|---|---|",
+                    f"| `{route_path}` | Yes | route |",
+                    "## Required Proof Manifest",
+                    "| Proof | Path | Required literal | Required at handoff |",
+                    "|---|---|---|---|",
+                    f"| raw leak sentinel | `{proof_path}` | `RAW_MEMORY_CONTENT_MUST_NOT_LEAK` | Yes |",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order, route_path, proof_path])
+
+        self.assertFalse(report["compliant"])
+        issues = [
+            issue
+            for violation in report["violations"]
+            if violation["path"] == work_order
+            for issue in violation["issues"]
+        ]
+        self.assertIn(
+            f"required proof literal `RAW_MEMORY_CONTENT_MUST_NOT_LEAK` is missing from `{proof_path}`",
+            issues,
         )
 
     def test_new_doc_only_field_in_source_verification_fails(self) -> None:

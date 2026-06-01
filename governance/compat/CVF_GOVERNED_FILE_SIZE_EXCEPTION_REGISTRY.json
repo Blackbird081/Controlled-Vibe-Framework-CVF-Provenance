@@ -29,6 +29,24 @@
   },
   "nearHardRotationMarginLines": 25,
   "nearHardMinShrinkLines": 50,
+  "proactiveOwnerSurfaces": [
+    {
+      "path": "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/index.ts",
+      "status": "ACTIVE",
+      "domainPrefixes": [
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/"
+      ],
+      "rationale": "LPF root barrel is an active owner entrypoint. Adjacent LPF source growth must not bypass barrel rotation while the owner remains near the hard threshold."
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts",
+      "status": "ACTIVE",
+      "domainPrefixes": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/"
+      ],
+      "rationale": "The execute route is an active cvf-web API owner entrypoint. New API route work must carry execute-route shrink or split evidence while this owner remains near the hard threshold."
+    }
+  ],
   "exceptions": [
     {
       "path": "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/index.test.ts",

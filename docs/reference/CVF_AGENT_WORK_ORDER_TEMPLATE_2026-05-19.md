@@ -99,6 +99,11 @@ Verification requirements:
   Rule so routine allowed-scope remediation is not escalated to the operator.
 - allowed-scope machine-gate failures must be repaired and rerun by the assigned
   agent; they must not be escalated to the operator as preference questions.
+- self-reported gate evidence must be current before handoff; non-blocked
+  artifacts must not record failed required gates and leave rerun/disposition
+  to the reviewer or operator.
+- delegated runtime/source work must include a Work-Order Fulfillment Manifest
+  with required artifacts, forbidden paths, and required proof literals.
 - bounded corpus tasks must include GC-047 manifest, terminal processing
   ledger, reconciliation evidence, exclusions/unreadable accounting, and an
   honest machine-checked completeness verdict.
@@ -452,6 +457,79 @@ Pending artifacts must not cite `--base HEAD~1 --head HEAD` or another
 committed-only range as proof for the pending artifact itself. Use
 working-tree-aware validation for pending artifacts, or commit first and rerun
 the real changed range.
+
+## 6E. Self-Reported Gate Evidence Consistency
+
+If the artifact records governance gate results, those results must match the
+current handoff state.
+
+Rules:
+
+- if a required gate fails inside Allowed scope, repair and rerun before
+  handoff;
+- if the failure cannot be repaired inside Allowed scope, set status to
+  `BLOCKED` or `HOLD_*` and name the return action;
+- do not leave a non-blocked artifact saying a required gate failed while asking
+  the reviewer/operator to rerun, decide, or pick it up;
+- do not record autorun `PASS` when a required section for that phase is still
+  missing, such as `## Finding-To-Governance Learning Disposition` on a
+  finding-bearing review;
+- if recording `git status --short` for a pending artifact, include the pending
+  status line for the artifact itself;
+- after rerunning a gate, update the recorded Governance Gates Run result before
+  returning the artifact.
+
+## 6F. Near-Threshold Owner Maintainability Plan
+
+If Allowed scope adds or modifies source inside a registered owner domain whose
+active entrypoint is within the GC-023 near-hard margin, include this section
+before dispatch.
+
+Required content:
+
+- active owner entrypoint path;
+- current line count and hard threshold;
+- split, extract, rotate, or archive action;
+- new helper/barrel/archive path;
+- `Minimum shrink target: 50 lines`;
+- command-backed post-change line count;
+- explicit statement that the owner entrypoint is in Allowed scope and Write
+  Ownership.
+
+Do not classify the near-threshold owner entrypoint as forbidden-touch while
+adding adjacent source. That is a maintainability bypass, not a split.
+
+## 6G. Work-Order Fulfillment Manifest
+
+For runtime/source implementation work, include these machine-readable tables
+before dispatch.
+
+## Required Artifact Manifest
+
+| Path | Required at handoff | Purpose |
+|---|---|---|
+| <source/test/review path> | Yes | <why this file must exist> |
+
+## Forbidden Path Manifest
+
+| Path | Reason |
+|---|---|
+| <forbidden path or glob> | <why this path is out of scope> |
+
+## Pre-Existing Dirty Path Exemptions
+
+Use only when the repository is already dirty before dispatch and the worker
+must ignore, not edit, the path.
+
+| Path | Status at dispatch | Exemption boundary |
+|---|---|---|
+| <pre-existing dirty path> | <M/A/?? from git status> | <do not edit/stage/claim> |
+
+## Required Proof Manifest
+
+| Proof | Path | Required literal | Required at handoff |
+|---|---|---|---|
+| <sentinel/invariant/test proof> | <test or source path> | <literal token> | Yes |
 
 ## 7. Write Ownership
 

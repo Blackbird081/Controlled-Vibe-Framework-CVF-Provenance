@@ -44,6 +44,7 @@ class GovernedFileSizeTests(unittest.TestCase):
                     "nearHardRotationMarginLines": 5,
                     "nearHardMinShrinkLines": 10,
                     "nearHardMaxCompressedStatementLines": 0,
+                    "proactiveOwnerSurfaces": [],
                     "exceptions": [],
                 }
             ),
@@ -140,6 +141,28 @@ class GovernedFileSizeTests(unittest.TestCase):
         )
 
         self.assertTrue(report["compliant"])
+
+    def test_adjacent_domain_source_change_requires_near_hard_owner_rotation(self) -> None:
+        registry = json.loads(self.registry.read_text(encoding="utf-8"))
+        registry["proactiveOwnerSurfaces"] = [
+            {
+                "path": "src/index.ts",
+                "status": "ACTIVE",
+                "domainPrefixes": ["src/"],
+                "rationale": "test owner",
+            }
+        ]
+        self.registry.write_text(json.dumps(registry), encoding="utf-8")
+        self._write_lines("src/index.ts", 118)
+        self._write_lines("src/new-feature.ts", 10)
+
+        report = self._report_for({"src/new-feature.ts": {"A"}}, previous_lines=119)
+
+        self.assertFalse(report["compliant"])
+        self.assertEqual(
+            report["violations"][0]["type"],
+            "near_hard_owner_surface_adjacent_change_without_rotation",
+        )
 
 
 if __name__ == "__main__":
