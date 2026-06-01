@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-01
 
-Current mode marker: `lhw_rescan_c_cross_corpus_deep_review_closed_pass_bounded`
+Current mode marker: `mkg1_memory_knowledge_graph_owner_surface_review_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lhw_rescan_c_cross_corpus_deep_review_closed_pass_bounded`.
+Current mode: `mkg1_memory_knowledge_graph_owner_surface_review_dispatched`.
 
 Active handoff:
 
@@ -287,10 +287,19 @@ terminal `READ` status, zero exclusions, zero unresolved rows, and broad
 semantic-region routing across eight regions. Manifest hash:
 `ae7fe05e016b7079a81002de60de1e1209112de59c8bee793e15e11557cae0ff`.
 
-Next allowed move: open a fresh GC-018 for Memory/Knowledge/Graph
-Owner-Surface Review if the operator chooses to promote RESCAN-C findings.
-Do not treat RESCAN-C routing as runtime implementation authority, complete
-Legacy semantic absorption, public readiness, or Memory reinjection approval.
+`MKG1` Memory/Knowledge/Graph Owner-Surface Review is `DISPATCHED`:
+
+`docs/work_orders/CVF_WO_MKG1_MEMORY_KNOWLEDGE_GRAPH_OWNER_SURFACE_REVIEW_2026-06-01.md`
+
+Fresh GC-018:
+
+`docs/baselines/CVF_GC018_MKG1_MEMORY_KNOWLEDGE_GRAPH_OWNER_SURFACE_REVIEW_2026-06-01.md`
+
+Next allowed move: execute the MKG1 documentation-only owner-surface review.
+Read and disposition all `47` RESCAN-C `memory_knowledge_graph` authority
+assets, map accepted value to current CVF owner surfaces, reject source-native
+parallel owners, and preserve no-runtime/no-reinjection/no-graph-execution
+boundaries.
 CPG-2 is CLOSED_PASS_BOUNDED with
 release-quality proof:
 
