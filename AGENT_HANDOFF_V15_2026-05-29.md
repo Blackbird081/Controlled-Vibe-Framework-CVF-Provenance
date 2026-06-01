@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `50b1e3b248fbf89e8c380b08538db756533e8c7d` (short: `50b1e3b2`); parent: `ec03e762ad2bff74126434eca55359d380081a00`.
+Current HEAD recorded for this handoff: `ee750a6dba81d479e4913bd6f000f24215d1838b` (short: `ee750a6d`); parent: `c936d901760f1b810aa2f75dce00e0ef60382e9b`.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -171,7 +171,7 @@ Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
 
 ## Active Boundary
 
-Current mode: `mkg1_memory_knowledge_graph_owner_surface_review_dispatched`.
+Current mode: `mkg2_deferred_runtime_candidate_triage_planning_open_not_dispatched`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
@@ -309,6 +309,7 @@ public-release readiness claim.
 | Finding-To-Governance Learning | ENFORCED — defect class + learning lane + disposition required |
 | Corpus Completeness And Report Integrity | ENFORCED — filesystem-backed manifest, terminal ledger, reconciliation, drift, traceability, and honest verdict for bounded corpus tasks |
 | Corpus-To-Knowledge-Map Reconciliation | ENFORCED — source authority, derived-view separation, semantic-region reconciliation, drift, rebuildability, and retrieval boundary for corpus-derived maps |
+| Worker Autonomy Dispatch Prompt | ENFORCED — READY/DISPATCHED work orders must carry Worker Autonomy / No-Question Rule |
 | Multi-Provider Execution Log | ENFORCED — provider/model/surface/basis/diff attribution plus Execution Attribution Block |
 | Learning Signal Intake Bridge | BOUNDED_TYPED_INTAKE — `autonomousMutationAuthorized=false` |
 | IDE Extension Multi-Provider Log | ENFORCED — session logs for mixed-provider governed work |
@@ -346,17 +347,24 @@ All `341` authority assets have terminal `READ` status, zero exclusions, zero
 unresolved rows, and broad semantic-region routing across eight regions.
 Manifest hash:
 `ae7fe05e016b7079a81002de60de1e1209112de59c8bee793e15e11557cae0ff`.
-`MKG1` Memory/Knowledge/Graph Owner-Surface Review is `DISPATCHED`:
-`docs/work_orders/CVF_WO_MKG1_MEMORY_KNOWLEDGE_GRAPH_OWNER_SURFACE_REVIEW_2026-06-01.md`.
-Fresh GC-018:
-`docs/baselines/CVF_GC018_MKG1_MEMORY_KNOWLEDGE_GRAPH_OWNER_SURFACE_REVIEW_2026-06-01.md`.
-Dispatch scope: `47` RESCAN-C `memory_knowledge_graph` authority assets
-across `CVF ADD/code-review-graph`, `CVF ADD/cortex-hub`,
-`CVF 16.5/agentmemory`, `CVF 16.5/Memento-Skills`, and
-`CVF 16.5/tolaria`. Next allowed move: execute the MKG1 documentation-only
-owner-surface review, map accepted value to current CVF owner surfaces, reject
-source-native parallel owners, and preserve no-runtime/no-reinjection/no-graph-
-execution boundaries.
+`MKG1` Memory/Knowledge/Graph Owner-Surface Review is `CLOSED_PASS_BOUNDED`:
+`docs/reviews/CVF_MKG1_MEMORY_KNOWLEDGE_GRAPH_OWNER_SURFACE_REVIEW_COMPLETION_2026-06-01.md`.
+Result: `47/47` RESCAN-C `memory_knowledge_graph` authority assets reconciled;
+`26` doc-only owner-surface mappings accepted; `21` runtime/bridge/skill/
+implementation candidates deferred; zero unmapped assets. Manifest JSON:
+`docs/audits/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_MANIFEST_2026-06-01.json`.
+Manifest hash:
+`ae7fe05e016b7079a81002de60de1e1209112de59c8bee793e15e11557cae0ff`.
+`MKG2` Deferred Runtime Candidate Triage is
+`PLANNING_OPEN_NOT_DISPATCHED`: GC-018
+`docs/baselines/CVF_GC018_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_2026-06-01.md`,
+roadmap
+`docs/roadmaps/CVF_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_ROADMAP_2026-06-01.md`,
+held work order
+`docs/work_orders/CVF_WO_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_2026-06-01.md`.
+Next allowed move: do not execute MKG2 until the operator explicitly dispatches
+it; for any worker dispatch, attach the Worker Autonomy prompt standard and
+ensure the work order includes the No-Question Rule.
 CPG-2 is CLOSED_PASS_BOUNDED with release-quality proof;
 closure packet:
 `docs/roadmaps/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_ROADMAP_2026-05-31.md`
@@ -387,8 +395,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mkg1_memory_knowledge_graph_owner_surface_review_dispatched`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=execute MKG1 documentation-only Memory/Knowledge/Graph owner-surface review for the 47 RESCAN-C authority assets;
+Startup acknowledged: current mode=`mkg2_deferred_runtime_candidate_triage_planning_open_not_dispatched`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=MKG2 is PLANNING_OPEN_NOT_DISPATCHED; do not execute until operator dispatches it;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary

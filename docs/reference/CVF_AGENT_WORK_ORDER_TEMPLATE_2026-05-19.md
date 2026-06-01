@@ -95,6 +95,8 @@ Verification requirements:
   explicit ownership or a separate work order.
 - connector wave roadmap closure must use a full-wave changed range, not only
   the final tranche range.
+- ready or dispatched work orders must include a Worker Autonomy / No-Question
+  Rule so routine allowed-scope remediation is not escalated to the operator.
 - allowed-scope machine-gate failures must be repaired and rerun by the assigned
   agent; they must not be escalated to the operator as preference questions.
 - bounded corpus tasks must include GC-047 manifest, terminal processing
@@ -415,6 +417,29 @@ Rules:
   New Doc-Only Fields table;
 - `PASS` is allowed only after the final artifact exists and has been checked;
 - missing rows block dispatch or closure.
+
+## 6C. Worker Autonomy / No-Question Rule
+
+The worker must not ask the operator before performing non-destructive actions
+inside this work order's Allowed scope.
+
+Proceed autonomously with:
+
+- reading files named by this work order;
+- running `git status`, `git diff`, `git rev-parse`, manifest/hash checks, and
+  listed governance gates;
+- fixing documentation format defects inside Allowed scope;
+- adding missing required evidence blocks;
+- rerunning failed guards or autorun gates after allowed-scope remediation.
+
+Ask the operator only if the next action would exceed Allowed scope, edit
+legacy source, edit runtime/source code outside ownership, run live/provider
+proof, use secrets/quota, public-sync, push/publish, change risk or claim
+boundary, release a `HOLD_*` prerequisite, touch forbidden paths, or perform
+destructive/irreversible action.
+
+If a machine gate fails inside Allowed scope, repair it and rerun. Do not ask
+whether to fix routine gate failures.
 
 ## 7. Write Ownership
 

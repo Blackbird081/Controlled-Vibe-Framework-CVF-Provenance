@@ -125,6 +125,10 @@ check drift, and bound retrieval claims. Bare `rg --files` is not completeness
 evidence; ripgrep inventory must use `rg --files --hidden --no-ignore`.
 `RECONCILED_VERIFIED` requires zero deferred and zero unmapped assets.
 
+Local hook-chain note: hook checks that run with `--base HEAD --head HEAD` are
+worktree/index validation only. Closure evidence must come from autorun gates
+using `--base <baseHead> --head HEAD` over a real changed range.
+
 For LHW connector waves, do not use bare `rejected: requires live route`
 wording when a family is excluded only because the current wave is doc-only.
 Use:

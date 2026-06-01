@@ -42,6 +42,7 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
                     "Current Runtime Freshness Verification",
                     "ACCEPT_AS_OWNER_MAP coverage",
                     "Mandatory Gate-Failure Remediation Protocol",
+                    "Worker Autonomy / No-Question Rule",
                     MODULE.THIS_SCRIPT_PATH,
                 ]
             ),
@@ -55,6 +56,17 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
                     "Current Runtime Freshness Verification",
                     "ACCEPT_AS_OWNER_MAP coverage",
                     "Mandatory Gate-Failure Remediation Protocol",
+                    "Worker Autonomy / No-Question Rule",
+                    MODULE.THIS_SCRIPT_PATH,
+                ]
+            ),
+        )
+        self._write(
+            MODULE.WORKER_AUTONOMY_STANDARD_PATH,
+            "\n".join(
+                [
+                    "Worker Autonomy Prompt",
+                    "Worker Autonomy / No-Question Rule",
                     MODULE.THIS_SCRIPT_PATH,
                 ]
             ),
@@ -190,6 +202,32 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
         self.assertIn(
             "dispatch/ready work order contains blocking Source Verification disposition; "
             "use HOLD/DRAFT until source facts are resolved",
+            report["violations"][0]["issues"],
+        )
+
+    def test_ready_work_order_without_worker_autonomy_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_AUTONOMY_TEST_2026-06-01.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: READY_FOR_IMPLEMENTATION",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| Symbol | `governance/contracts/example.ts` | line 1 | `ExampleMode` | ExampleMode | ACCEPT |",
+                ]
+            ),
+        )
+        self._write("governance/contracts/example.ts", "export type ExampleMode = 'one';\n")
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "dispatch/ready work order lacks Worker Autonomy / No-Question Rule",
             report["violations"][0]["issues"],
         )
 

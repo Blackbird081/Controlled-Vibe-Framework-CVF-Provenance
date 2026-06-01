@@ -2,7 +2,7 @@
 
 **Memory class:** FULL_RECORD
 
-**Status:** REVIEW — Findings awaiting Codex/Reviewer response
+**Status:** CLOSED_PASS_BOUNDED — Codex/Claude/operator consensus recorded
 
 **Date:** 2026-06-01
 
@@ -26,7 +26,8 @@ Review scope: code quality, evidence discipline, test coverage, and design limit
 
 Both guards are **well-structured evidence-discipline checkers that enforce form-level compliance** with corpus and knowledge-map reconciliation standards. They successfully wire into the governance hook chain and autorun gates, carry comprehensive unit tests (20/20 PASS), and embody the CVF philosophy of promoting agent mistakes into written machine checks.
 
-**Verdict: ADEQUATE for current scope; IDENTIFIED GAPS require fresh GC-018 follow-up.**
+**Verdict: ADEQUATE for current scope; IDENTIFIED GAPS are routed to bounded
+follow-up controls.**
 
 ---
 
@@ -555,6 +556,21 @@ not public-sync, and does not change MKG1 execution scope.
 - Completion blocks must cite manifest JSON file path, hash, and subset reconciliation
 - 47/47 asset-level ledger required
 - Both GC-047 and GC-048 blocks must include manifest backing
+
+## Operator Consensus Closure (2026-06-01)
+
+Final operator disposition: `ACCEPT_WITH_RESERVATIONS`.
+
+| Gap | Final disposition | Binding condition |
+| --- | --- | --- |
+| Gap 1 - manifest-backed fact verification | ACCEPT | MKG1 and future corpus work must cite manifest JSON backing, manifest hash, and bounded subset reconciliation before closure; current GC-047/GC-048 remain evidence-discipline guards until a separate manifest-verification tranche exists. |
+| Gap 2 - loose `find ` regex | ACCEPT | Fast Lane patch must tighten command detection and add regression tests. |
+| Gap 3 - hook-chain range semantics | ACCEPT | Clarify `HEAD..HEAD` as hook-chain worktree/index validation; closure evidence requires autorun gates with a real changed range. |
+| Gap 4 - git-range integration tests | CONDITIONAL_ACCEPT | Integration tests are required before deploying the next stronger manifest-backed guard enhancement; they do not block current GC-047/GC-048 production use or MKG1 closure when manifest-backed evidence is present. |
+
+Current consensus: GC-047 and GC-048 are the canonical corpus evidence
+discipline guards going forward. They must not be represented as manifest fact
+verifiers until a later GC-018 explicitly adds and tests that stronger mode.
 
 ## Reviewer Sign-Off
 

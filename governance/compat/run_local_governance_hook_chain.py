@@ -22,6 +22,9 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
 HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
+    # Local hooks use HEAD..HEAD intentionally as worktree/index validation.
+    # Closure evidence must still come from autorun gates with
+    # --base <baseHead> --head HEAD over a real committed range.
     "pre-commit": [
         (
             "governed file size compatibility",

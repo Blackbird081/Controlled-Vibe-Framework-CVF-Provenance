@@ -52,6 +52,7 @@ passes the following gates:
 13. Corpus completeness and report integrity gate when the task reads,
     inventories, extracts, compares, summarizes, audits, migrates, or absorbs a
     bounded set of files or folders.
+14. Worker Autonomy / No-Question Rule for delegated worker packets.
 
 If any gate is incomplete, the worker must return to Orchestrator or file a
 blocking defect. Operator silence is not a waiver.
@@ -198,6 +199,25 @@ equivalent preference language for an allowed-scope guard failure is not closed.
 It is a governance/control-plane learning signal, not a valid blocker placed on
 the non-coder operator.
 
+### 4B. Worker Autonomy / No-Question Rule
+
+Ready or dispatched work orders must tell the worker not to ask for operator
+confirmation before non-destructive work inside Allowed scope.
+
+The work order must authorize autonomous execution of:
+
+- source reads named by the work order;
+- `git status`, `git diff`, `git rev-parse`, manifest/hash checks, and
+  documented governance gates;
+- documentation-format remediation inside Allowed scope;
+- missing required evidence blocks inside Allowed scope;
+- rerunning failed gates after allowed-scope remediation.
+
+Escalation remains mandatory for scope expansion, claim-boundary changes,
+`HOLD_*` release, live/provider proof, public-sync, secrets/quota, forbidden
+paths, destructive action, risk changes, or runtime/source edits outside
+ownership.
+
 ### 5. Checklist Finalization Gate
 
 Closure checklists are evidence controls, not decoration. Any unchecked item in
@@ -318,7 +338,8 @@ This standard is enforced by:
   cells containing value assignments or type annotations. It also hard-fails
   governed artifacts that record allowed-scope machine-gate remediation as an
   operator preference checkpoint, and ranges that pair runtime/source edits
-  with a still-held governing work order.
+  with a still-held governing work order. Ready or dispatched work orders must
+  include a Worker Autonomy / No-Question Rule.
 - `governance/compat/check_public_export_disposition.py`, which hard-fails
   changed active roadmap closures, final wave completion packets, and public
   catalog claims that lack a public export disposition or that claim public
@@ -340,6 +361,7 @@ Future automation may add hard checks, but manual compliance is mandatory now.
 - `docs/reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md`
 - `docs/reference/CVF_QUALITY_ASSESSMENT_STANDARD.md`
 - `docs/reference/CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28.md`
+- `docs/reference/CVF_WORKER_AUTONOMY_DISPATCH_PROMPT_STANDARD_2026-06-01.md`
 
 ## Final Clause
 

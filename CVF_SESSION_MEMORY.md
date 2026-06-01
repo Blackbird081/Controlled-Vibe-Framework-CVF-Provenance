@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-01
 
-Current mode marker: `mkg1_memory_knowledge_graph_owner_surface_review_dispatched`
+Current mode marker: `mkg2_deferred_runtime_candidate_triage_planning_open_not_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `mkg1_memory_knowledge_graph_owner_surface_review_dispatched`.
+Current mode: `mkg2_deferred_runtime_candidate_triage_planning_open_not_dispatched`.
 
 Active handoff:
 
@@ -124,6 +124,14 @@ retrieval boundaries, and adversarial verification.
 Work-order dispatch quality is machine-enforced by:
 
 `governance/compat/check_work_order_dispatch_quality.py`
+
+Worker autonomy dispatch prompting is now standardized:
+
+`docs/reference/CVF_WORKER_AUTONOMY_DISPATCH_PROMPT_STANDARD_2026-06-01.md`
+
+READY/DISPATCHED work orders must include a Worker Autonomy / No-Question Rule
+so routine allowed-scope remediation is not escalated to the operator as a
+preference question.
 
 Governed file-size maintainability now requires proactive rotation/splitting
 instead of last-minute text compression when active governed files approach
@@ -287,19 +295,32 @@ terminal `READ` status, zero exclusions, zero unresolved rows, and broad
 semantic-region routing across eight regions. Manifest hash:
 `ae7fe05e016b7079a81002de60de1e1209112de59c8bee793e15e11557cae0ff`.
 
-`MKG1` Memory/Knowledge/Graph Owner-Surface Review is `DISPATCHED`:
+`MKG1` Memory/Knowledge/Graph Owner-Surface Review is `CLOSED_PASS_BOUNDED`:
 
-`docs/work_orders/CVF_WO_MKG1_MEMORY_KNOWLEDGE_GRAPH_OWNER_SURFACE_REVIEW_2026-06-01.md`
+`docs/reviews/CVF_MKG1_MEMORY_KNOWLEDGE_GRAPH_OWNER_SURFACE_REVIEW_COMPLETION_2026-06-01.md`
 
-Fresh GC-018:
+Result: `47/47` RESCAN-C `memory_knowledge_graph` assets reconciled; `26`
+doc-only owner-surface mappings accepted; `21` runtime/bridge/skill/
+implementation candidates deferred; zero unmapped assets. Manifest JSON:
 
-`docs/baselines/CVF_GC018_MKG1_MEMORY_KNOWLEDGE_GRAPH_OWNER_SURFACE_REVIEW_2026-06-01.md`
+`docs/audits/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_MANIFEST_2026-06-01.json`
 
-Next allowed move: execute the MKG1 documentation-only owner-surface review.
-Read and disposition all `47` RESCAN-C `memory_knowledge_graph` authority
-assets, map accepted value to current CVF owner surfaces, reject source-native
-parallel owners, and preserve no-runtime/no-reinjection/no-graph-execution
-boundaries.
+Manifest hash:
+`ae7fe05e016b7079a81002de60de1e1209112de59c8bee793e15e11557cae0ff`.
+
+`MKG2` Deferred Runtime Candidate Triage is
+`PLANNING_OPEN_NOT_DISPATCHED`:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_2026-06-01.md`
+- roadmap:
+  `docs/roadmaps/CVF_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_ROADMAP_2026-06-01.md`
+- held work order:
+  `docs/work_orders/CVF_WO_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_2026-06-01.md`
+
+Next allowed move: do not execute MKG2 until the operator explicitly dispatches
+it. For any new worker dispatch, attach the Worker Autonomy prompt standard and
+ensure the work order includes the No-Question Rule.
 CPG-2 is CLOSED_PASS_BOUNDED with
 release-quality proof:
 

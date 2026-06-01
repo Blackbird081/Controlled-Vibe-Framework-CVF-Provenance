@@ -25,6 +25,7 @@ DEFAULT_BASE_CANDIDATES = ("origin/main", "origin/master", "main", "master")
 
 STANDARD_PATH = "docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md"
 WORK_ORDER_TEMPLATE_PATH = "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md"
+WORKER_AUTONOMY_STANDARD_PATH = "docs/reference/CVF_WORKER_AUTONOMY_DISPATCH_PROMPT_STANDARD_2026-06-01.md"
 HOOK_CHAIN_PATH = "governance/compat/run_local_governance_hook_chain.py"
 THIS_SCRIPT_PATH = "governance/compat/check_work_order_dispatch_quality.py"
 
@@ -336,6 +337,10 @@ def _extract_section(text: str, heading_fragment: str) -> str:
 
 def _has_trace_matrix(text: str) -> bool:
     return re.search(r"Roadmap[- ]To[- ]Work[- ]Order Trace Matrix", text, re.IGNORECASE) is not None
+
+
+def _has_worker_autonomy_clause(text: str) -> bool:
+    return re.search(r"Worker Autonomy\s*/\s*No-Question Rule", text, re.IGNORECASE) is not None
 
 
 def _is_roadmap_derived(text: str) -> bool:
@@ -905,6 +910,9 @@ def _validate_work_order(path: str, text: str) -> list[str]:
     if dispatching and _is_roadmap_derived(text) and not _has_trace_matrix(text):
         issues.append("roadmap-derived work order is dispatch/ready without Roadmap-To-Work-Order Trace Matrix")
 
+    if dispatching and not _has_worker_autonomy_clause(text):
+        issues.append("dispatch/ready work order lacks Worker Autonomy / No-Question Rule")
+
     if dispatching and _is_connector_wave(path, text):
         wave_id = _extract_wave_id(path, text)
         if wave_id is not None and not _has_gc018_for_wave(wave_id):
@@ -1290,6 +1298,7 @@ def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str
             "Roadmap-To-Work-Order Trace Matrix",
             "Negative And Fail-Condition Scan",
             "Mandatory Gate-Failure Remediation Protocol",
+            "Worker Autonomy / No-Question Rule",
             "Current Runtime Freshness Verification",
             "ACCEPT_AS_OWNER_MAP coverage",
             THIS_SCRIPT_PATH,
@@ -1298,8 +1307,14 @@ def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str
             "Source Verification Block",
             "Roadmap-To-Work-Order Trace Matrix",
             "Mandatory Gate-Failure Remediation Protocol",
+            "Worker Autonomy / No-Question Rule",
             "Current Runtime Freshness Verification",
             "ACCEPT_AS_OWNER_MAP coverage",
+            THIS_SCRIPT_PATH,
+        ),
+        WORKER_AUTONOMY_STANDARD_PATH: (
+            "Worker Autonomy Prompt",
+            "Worker Autonomy / No-Question Rule",
             THIS_SCRIPT_PATH,
         ),
         HOOK_CHAIN_PATH: (THIS_SCRIPT_PATH,),

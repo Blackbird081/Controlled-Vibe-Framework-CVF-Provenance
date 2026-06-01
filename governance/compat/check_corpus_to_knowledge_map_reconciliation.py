@@ -199,7 +199,9 @@ def _is_safe_enumeration(value: str) -> bool:
     lowered = value.lower()
     if "rg --files" in lowered:
         return "--hidden" in lowered and "--no-ignore" in lowered
-    return any(marker in lowered for marker in ("get-childitem", "filesystem", "structured complete api", "find "))
+    if any(marker in lowered for marker in ("get-childitem", "filesystem", "structured complete api")):
+        return True
+    return bool(re.search(r"(?:^|[;&|]\s*)find\s+(?:[/.\-~]|[A-Za-z]:\\)", value, re.I))
 
 
 def _extract_counts(section: str) -> tuple[int, int, int, int] | None:

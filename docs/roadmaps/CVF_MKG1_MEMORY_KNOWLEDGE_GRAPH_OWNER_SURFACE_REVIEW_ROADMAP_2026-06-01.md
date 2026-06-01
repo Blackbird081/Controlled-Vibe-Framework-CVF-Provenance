@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: READY_FOR_DISPATCH
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -128,6 +128,14 @@ Return to Orchestrator if:
 Execution packet:
 
 `docs/work_orders/CVF_WO_MKG1_MEMORY_KNOWLEDGE_GRAPH_OWNER_SURFACE_REVIEW_2026-06-01.md`
+
+Completion packet:
+
+`docs/reviews/CVF_MKG1_MEMORY_KNOWLEDGE_GRAPH_OWNER_SURFACE_REVIEW_COMPLETION_2026-06-01.md`
+
+Closure result: `CLOSED_PASS_BOUNDED` with `47/47` file-level corpus ledger,
+`26` doc-only owner-surface mappings, and `21` deferred runtime or
+implementation candidates routed to MKG2.
 
 ## Public Export Disposition
 

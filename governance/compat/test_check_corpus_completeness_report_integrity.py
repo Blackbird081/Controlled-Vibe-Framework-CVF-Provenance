@@ -85,6 +85,20 @@ def test_ignore_safe_rg_files_enumeration_passes() -> None:
     assert MODULE._validate_output("docs/audits/CVF_TEST.md", safe) == []
 
 
+def test_find_in_prose_enumeration_fails() -> None:
+    invalid = VALID_COMPLETE.replace(
+        "Get-ChildItem docs/source -Recurse -File",
+        "Unable to find files in docs/source",
+    )
+    issues = MODULE._validate_output("docs/audits/CVF_TEST.md", invalid)
+    assert any("rg --files --hidden --no-ignore" in message for message in _messages(issues))
+
+
+def test_find_command_enumeration_passes() -> None:
+    safe = VALID_COMPLETE.replace("Get-ChildItem docs/source -Recurse -File", "find ./docs/source -type f")
+    assert MODULE._validate_output("docs/audits/CVF_TEST.md", safe) == []
+
+
 def test_binding_requires_checker_reference() -> None:
     issues = MODULE._validate_binding(MODULE.AUTORUN_PATH, "no checker binding")
     assert any(MODULE.THIS_SCRIPT_PATH in message for message in _messages(issues))

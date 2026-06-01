@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -58,11 +58,28 @@ Allowed scope:
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `AGENT_HANDOFF_V15_2026-05-29.md`
+- operator-expanded same-batch governance cleanup:
+  - `CLAUDE.md`
+  - `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
+  - `docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md`
+  - `docs/reference/CVF_WORKER_AUTONOMY_DISPATCH_PROMPT_STANDARD_2026-06-01.md`
+  - `docs/reviews/CVF_GC047_GC048_CORPUS_GUARD_QUALITY_ASSESSMENT_2026-06-01.md`
+  - `docs/baselines/CVF_GC018_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_2026-06-01.md`
+  - `docs/roadmaps/CVF_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_ROADMAP_2026-06-01.md`
+  - `docs/work_orders/CVF_WO_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_2026-06-01.md`
+  - `governance/compat/check_corpus_completeness_report_integrity.py`
+  - `governance/compat/check_corpus_to_knowledge_map_reconciliation.py`
+  - `governance/compat/check_work_order_dispatch_quality.py`
+  - `governance/compat/run_local_governance_hook_chain.py`
+  - `governance/compat/test_check_corpus_completeness_report_integrity.py`
+  - `governance/compat/test_check_corpus_to_knowledge_map_reconciliation.py`
+  - `governance/compat/test_check_work_order_dispatch_quality.py`
 
 Forbidden scope:
 
 - `.private_reference/legacy/**` edits;
-- runtime source edits;
+- runtime source edits except the explicitly listed governance compat guard/test
+  files in the operator-expanded same-batch governance cleanup;
 - Memory reinjection, graph retrieval, skill mutation, provider, route,
   database, or Learning Plane mutation edits;
 - public-sync;
@@ -149,6 +166,19 @@ These fields are documentation-only. They do not extend runtime schemas.
 | Disposition every asset | ACCEPT, DEFER, REJECT with rationale | disposition matrix | `47/47` arithmetic | READY |
 | Future candidate routing | Separate runtime and doc-only follow-ups | gap ledger | claim-boundary review | READY |
 | Closure | Complete GC-047/GC-048 and continuity sync | completion review | autorun pre-closure | READY |
+
+## Worker Autonomy / No-Question Rule
+
+The assigned worker was authorized to repair non-destructive documentation and
+gate failures inside Allowed scope without asking the operator. Questions were
+required only for scope expansion, runtime/source edits outside ownership,
+legacy edits, live/provider proof, secrets/quota, public-sync, push/publish,
+claim-boundary changes, `HOLD_*` release, forbidden paths, or destructive
+actions.
+
+MKG1 closure records this rule as satisfied by the completion packet:
+
+`docs/reviews/CVF_MKG1_MEMORY_KNOWLEDGE_GRAPH_OWNER_SURFACE_REVIEW_COMPLETION_2026-06-01.md`
 
 ## Write Ownership
 
