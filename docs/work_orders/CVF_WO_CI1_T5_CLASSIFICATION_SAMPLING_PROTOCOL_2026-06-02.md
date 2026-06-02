@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -111,10 +111,10 @@ python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implemen
 
 | Roadmap requirement | Work order section | Output artifact | Verification | Status |
 | --- | --- | --- | --- | --- |
-| Sample T4 model classifications | Execution Plan | sampling JSON + protocol | reviewer evidence-pointer check | READY |
-| Include accepted/deferred/rejected/zero-result rows | Sampling Rules | category totals + records | JSON parser and reviewer check | READY |
-| Preserve T6 machine-readable input | System Loop Interlock Requirement | JSON + GC-052 row | GC-052 checker | READY |
-| Avoid broad rescans and runtime work | Forbidden scope | bounded read-only diff | git status/diff | READY |
+| Sample T4 model classifications | Execution Plan | sampling JSON + protocol | reviewer evidence-pointer check | CLOSED_PASS_BOUNDED |
+| Include accepted/deferred/rejected/zero-result rows | Sampling Rules | category totals + records | JSON parser and reviewer check | CLOSED_PASS_BOUNDED |
+| Preserve T6 machine-readable input | System Loop Interlock Requirement | JSON + GC-052 row | GC-052 checker | CLOSED_PASS_BOUNDED |
+| Avoid broad rescans and runtime work | Forbidden scope | bounded read-only diff | git status/diff | CLOSED_PASS_BOUNDED |
 
 ## Worker Autonomy / No-Question Rule
 
@@ -277,20 +277,32 @@ GC-052 connection, and completion review exist; working-tree-aware component
 gates pass; allowed-scope defects are repaired; category totals reconcile; and
 pending file status is recorded.
 
+## Closure Evidence
+
+Reviewer closure artifact:
+
+`docs/reviews/CVF_CI1_T5_CLASSIFICATION_SAMPLING_PROTOCOL_COMPLETION_2026-06-02.md`
+
+Reviewer accepted the worker handoff after validating JSON parse, category
+totals, sample records, T6 input counts, GC-052 routing, and the closure
+boundary. Reviewer made one bounded JSON correction: `categorySummary` now
+separates PASS from PASS_WITH_GAP for DEFERRED and HIGH_RISK samples while
+preserving 15 total samples, 13 PASS, 2 PASS_WITH_GAP, and 0 FAIL.
+
 ## Closure Checklist
 
-- [ ] GC-051 registry consulted
-- [ ] T4 model read
-- [ ] deterministic category selection recorded
-- [ ] results JSON created and valid
-- [ ] protocol created
-- [ ] GC-052 sampling route added
-- [ ] completion review created with Evidence Trace Block
-- [ ] NR-04 through NR-07 routed to T6 inputs
-- [ ] component gates PASS
-- [ ] pending paths recorded
-- [ ] no forbidden path touched
-- [ ] no worker commit or push
+- [x] GC-051 registry consulted
+- [x] T4 model read
+- [x] deterministic category selection recorded
+- [x] results JSON created and valid
+- [x] protocol created
+- [x] GC-052 sampling route added
+- [x] completion review created with Evidence Trace Block
+- [x] NR-04 through NR-07 routed to T6 inputs
+- [x] component gates PASS
+- [x] pending paths recorded
+- [x] no forbidden path touched
+- [x] no worker commit or push
 
 ## Public Export Disposition
 

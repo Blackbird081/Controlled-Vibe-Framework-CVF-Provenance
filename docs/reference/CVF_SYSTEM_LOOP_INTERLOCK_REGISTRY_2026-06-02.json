@@ -48,6 +48,29 @@
       ],
       "automationLevel": "MACHINE_CHECKED",
       "claimBoundary": "This connection proves scan-finding traceability into F2G-compatible learning disposition; it does not prove semantic correctness, automatic roadmap creation, autonomous mutation, or runtime behavior change."
+    },
+    {
+      "id": "cross-corpus-index-to-classification-sampling",
+      "status": "ACTIVE",
+      "upstreamLoop": "CROSS_CORPUS_INDEX_MODEL_LOOP_CI1_T4",
+      "upstreamPlane": "CORPUS_INTELLIGENCE",
+      "outputArtifact": "docs/corpus-intelligence/CVF_CROSS_CORPUS_INDEX_MODEL.json",
+      "outputSignal": "commonFacets, normalizationRules, sourceMappings, downstreamRoutes from committed T4 cross-corpus index model with T4 CLOSED_PASS_BOUNDED status",
+      "signalContract": "docs/baselines/CVF_GC018_CI1_T5_CLASSIFICATION_SAMPLING_PROTOCOL_2026-06-02.md",
+      "downstreamLoop": "CLASSIFICATION_SAMPLING_LOOP_CI1_T5",
+      "downstreamPlane": "CORPUS_INTELLIGENCE",
+      "inputArtifact": "docs/corpus-intelligence/CVF_CI1_T5_CLASSIFICATION_SAMPLING_RESULTS.json",
+      "routingRule": "When CI1-T4 is CLOSED_PASS_BOUNDED and the cross-corpus index model JSON is committed, the CI1-T5 worker may adversarially sample the model against classification ledgers and bounded source cross-checks inside the two registered pilot roots only. Output is a machine-readable sampling result for CI1-T6 checker decision. The routing does not authorize new legacy root scans, runtime indexing, retrieval implementation, LPCI implementation, provider calls, autonomous mutation, or public claims.",
+      "evidenceRefs": [
+        "docs/corpus-intelligence/CVF_CROSS_CORPUS_INDEX_MODEL.json",
+        "docs/audits/CVF_CI1_T2_GRAPHIFY_READINESS_PACKET_2026-06-02.md",
+        "docs/audits/CVF_CI1_T3_GRAPH_GOVERNANCE_CORPUS_READINESS_PACKET_2026-06-02.md",
+        "docs/corpus-intelligence/CVF_CI1_T5_CLASSIFICATION_SAMPLING_RESULTS.json",
+        "docs/reference/CVF_CI1_T5_CLASSIFICATION_SAMPLING_PROTOCOL_2026-06-02.md",
+        "docs/baselines/CVF_GC018_CI1_T5_CLASSIFICATION_SAMPLING_PROTOCOL_2026-06-02.md"
+      ],
+      "automationLevel": "STRUCTURAL_GUARDED",
+      "claimBoundary": "This connection proves typed artifact routing from the cross-corpus index model to the adversarial classification sampling result. It does not prove semantic correctness of classifications, runtime retrieval behavior, automatic roadmap creation, autonomous mutation, LPCI implementation, or public claims. Sampling verdict PASSED_SAMPLING_WITH_GAPS does not certify semantic correctness."
     }
   ]
 }

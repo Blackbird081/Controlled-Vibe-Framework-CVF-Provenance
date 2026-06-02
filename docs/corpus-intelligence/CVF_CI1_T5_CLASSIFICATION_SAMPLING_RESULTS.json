@@ -1,0 +1,439 @@
+{
+  "schemaVersion": "1.0.0",
+  "resultId": "cvf-ci1-t5-classification-sampling-2026-06-02",
+  "generatedAt": "2026-06-02",
+  "generatedBy": "CI1-T5 Classification Sampling Protocol",
+  "baselineRef": "docs/baselines/CVF_GC018_CI1_T5_CLASSIFICATION_SAMPLING_PROTOCOL_2026-06-02.md",
+  "workOrderRef": "docs/work_orders/CVF_WO_CI1_T5_CLASSIFICATION_SAMPLING_PROTOCOL_2026-06-02.md",
+  "sourceModelPath": "docs/corpus-intelligence/CVF_CROSS_CORPUS_INDEX_MODEL.json",
+  "executionBaseHead": "4674c86d",
+  "gcRegistryConsultation": {
+    "registryPath": "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json",
+    "consulted": true,
+    "registeredPilotRoots": [
+      {
+        "corpusId": "legacy-cvf-important-graphify",
+        "corpusRoot": ".private_reference/legacy/CVF_Important/Knowledge Base_Graphify/",
+        "fileCount": 5,
+        "manifestHash": "a88e3412a2cfca13dc5ff08da16abbc28a08462fd6112ea03cd7992a802c4e43",
+        "status": "SCANNED_WITH_FINDINGS",
+        "packetPath": "docs/audits/CVF_CI1_T2_GRAPHIFY_READINESS_PACKET_2026-06-02.md"
+      },
+      {
+        "corpusId": "legacy-cvf-add-code-review-graph",
+        "corpusRoot": ".private_reference/legacy/CVF ADD/code-review-graph/",
+        "fileCount": 7,
+        "manifestHash": "d921f708e3b321343fae43060a7fb447a166a7eba6584f23de151422e663f51a",
+        "status": "DEEP_CLASSIFIED",
+        "packetPath": "docs/audits/CVF_CI1_T3_GRAPH_GOVERNANCE_CORPUS_READINESS_PACKET_2026-06-02.md"
+      }
+    ],
+    "newLegacyRootsScanned": false,
+    "siblingFoldersEnumerated": false
+  },
+  "sourceEvidence": {
+    "T2Packet": {
+      "path": "docs/audits/CVF_CI1_T2_GRAPHIFY_READINESS_PACKET_2026-06-02.md",
+      "status": "REVIEW_READY",
+      "gcVerdict": "COMPLETE_VERIFIED / RECONCILED_VERIFIED / CLASSIFIED_STRUCTURAL_PASS",
+      "classificationRows": 5,
+      "adversarialRows": 7,
+      "dispositions": ["ACCEPT", "ACCEPT", "ACCEPT", "DEFER", "DEFER_ZERO_RESULT"],
+      "answerClasses": ["DIRECT_CITED_ANSWER", "SUMMARY_WITH_SOURCE", "PROCEDURAL_GUIDANCE"]
+    },
+    "T3Packet": {
+      "path": "docs/audits/CVF_CI1_T3_GRAPH_GOVERNANCE_CORPUS_READINESS_PACKET_2026-06-02.md",
+      "status": "COMPLETE_PENDING_REVIEW",
+      "gcVerdict": "COMPLETE_VERIFIED / RECONCILED_VERIFIED / CLASSIFIED_STRUCTURAL_PASS",
+      "classificationRows": 7,
+      "adversarialRows": 10,
+      "dispositions": ["ACCEPT", "ACCEPT", "ACCEPT", "ACCEPT_SUMMARY_ONLY", "ACCEPT_SUMMARY_ONLY", "ACCEPT", "ACCEPT_SUMMARY_ONLY"],
+      "answerClasses": ["SUMMARY_WITH_SOURCE", "PROCEDURAL_GUIDANCE"]
+    }
+  },
+  "selectionMethod": {
+    "description": "Deterministic category selection: rows drawn from T2 and T3 classification/adversarial ledgers by category. Bounded source cross-check reads performed only inside the two registered pilot roots. No new legacy root scanned. Categories sampled against T4 model normalization rules and downstream routing claims.",
+    "categories": ["ACCEPTED", "DEFERRED", "REJECTED", "ZERO_RESULT", "HIGH_RISK"],
+    "sourcePacketsUsed": ["CI1-T2", "CI1-T3"],
+    "boundedSourceCrossCheckAllowed": true,
+    "crossCheckRoots": [
+      ".private_reference/legacy/CVF_Important/Knowledge Base_Graphify/",
+      ".private_reference/legacy/CVF ADD/code-review-graph/"
+    ]
+  },
+  "categorySummary": {
+    "ACCEPTED": {
+      "required": 3,
+      "available": 8,
+      "sampled": 4,
+      "pass": 4,
+      "fail": 0,
+      "unavailable": 0
+    },
+    "DEFERRED": {
+      "required": 2,
+      "available": 4,
+      "sampled": 3,
+      "pass": 2,
+      "passWithGap": 1,
+      "fail": 0,
+      "unavailable": 0
+    },
+    "REJECTED": {
+      "required": 2,
+      "available": 3,
+      "sampled": 2,
+      "pass": 2,
+      "fail": 0,
+      "unavailable": 0
+    },
+    "ZERO_RESULT": {
+      "required": 2,
+      "available": 4,
+      "sampled": 3,
+      "pass": 3,
+      "fail": 0,
+      "unavailable": 0
+    },
+    "HIGH_RISK": {
+      "required": 2,
+      "available": 3,
+      "sampled": 3,
+      "pass": 2,
+      "passWithGap": 1,
+      "fail": 0,
+      "unavailable": 0
+    }
+  },
+  "sampleRecords": [
+    {
+      "sampleId": "T5-A1",
+      "category": "ACCEPTED",
+      "sourcePacket": "CI1-T2",
+      "sourcePath": ".private_reference/legacy/CVF_Important/Knowledge Base_Graphify/CVF_GRAPH_MEMORY_DATA_MODEL.md",
+      "query": "What node types does the Graphify data model define?",
+      "expectedBehavior": "T4 maps documentType=spec, disposition=ACCEPT, answerClass=DIRECT_CITED_ANSWER; T2 ledger row returns 12 node types with cited source",
+      "actualBehavior": "T2 classification ledger row 2: sourcePath=CVF_GRAPH_MEMORY_DATA_MODEL.md, processingStatus=READ_DEEP, disposition=ACCEPT, answerClass=DIRECT_CITED_ANSWER, evidencePointer=§2 ledger row 2; §3 region ledger; §8 sample 1. T4 facetAlignmentRow for T2: sourcePath DIRECT_MAP, documentType ALIAS (Document type→spec), disposition DIRECT_MAP. Cross-check: file exists at registered pilot root; contains 12 node types in §III.1.",
+      "evidencePointer": "T2 packet §9 classification ledger row 2; T4 model sourceMappings.CI1-T2 facetAlignmentRows[0,1]",
+      "verdict": "PASS",
+      "normalizationRulesExercised": ["NR-01 documentType alias", "NR-02 topicTags alias"],
+      "notes": "DIRECT_MAP and ALIAS rules function correctly. answerClass correctly distinguishes schema definition (DIRECT_CITED_ANSWER) from broader architecture (SUMMARY_WITH_SOURCE)."
+    },
+    {
+      "sampleId": "T5-A2",
+      "category": "ACCEPTED",
+      "sourcePacket": "CI1-T3",
+      "sourcePath": ".private_reference/legacy/CVF ADD/code-review-graph/CVF_GRAPH_GOVERNANCE_EXTENSION_SPEC.md",
+      "query": "Which legacy file defines graph governance signals for CVF?",
+      "expectedBehavior": "T4 maps documentType=spec, disposition=ACCEPT, answerClass=SUMMARY_WITH_SOURCE, knowledgeRegion=GRAPH_GOVERNANCE_SIGNALS; all fields DIRECT_MAP in T3",
+      "actualBehavior": "T3 classification ledger: processingStatus=READ_DEEP, knowledgeRegion=GRAPH_GOVERNANCE_SIGNALS, ownerSurface=GOVERNANCE_LAYER, disposition=ACCEPT, evidencePointer=sections 1-11, answerClass=SUMMARY_WITH_SOURCE. T4 facetAlignmentRows for T3: all relevant fields DIRECT_MAP — no alias resolution needed. Cross-check: file exists at registered pilot root. T3 S3 adversarial sample confirms governance evidence boundary maintained.",
+      "evidencePointer": "T3 packet Classification Ledger row C3; T4 model sourceMappings.CI1-T3 facetAlignmentRows[6,7,8]",
+      "verdict": "PASS",
+      "normalizationRulesExercised": ["NR-03 ownerSurface enum (T3 DIRECT_MAP)"],
+      "notes": "T3 superior normalization confirmed: all canonical fields use DIRECT_MAP. T4 NR-03 note validated — T3 enum-style ownerSurface values are the preferred pattern for future packets."
+    },
+    {
+      "sampleId": "T5-A3",
+      "category": "ACCEPTED",
+      "sourcePacket": "CI1-T2",
+      "sourcePath": ".private_reference/legacy/CVF_Important/Knowledge Base_Graphify/CVF_GRAPH_MEMORY_LAYER_SPEC.md",
+      "query": "How does Graphify map to CVF planes?",
+      "expectedBehavior": "T4 maps disposition=ACCEPT, answerClass=SUMMARY_WITH_SOURCE, ownerSurface=knowledge-graph-builder.ts (KGR1) via CVF plane mapping alias",
+      "actualBehavior": "T2 classification ledger row 4: processingStatus=READ_DEEP, disposition=ACCEPT, answerClass=SUMMARY_WITH_SOURCE, ownerSurface=knowledge-graph-builder.ts/KGR1/LPF. T4 NR-03: T2 uses runtime owner file references; T3 uses enum values — NR-03 alias ACCEPTED. T2 adversarial sample 5 confirms full CVF plane mapping table returned. Cross-check: file exists; §IV contains full mapping table.",
+      "evidencePointer": "T2 packet §9 ledger row 4; §8 sample 5; T4 model normalizationRules[2] NR-03",
+      "verdict": "PASS",
+      "normalizationRulesExercised": ["NR-03 ownerSurface T2 alias", "NR-08 Version alias to evidencePointer"],
+      "notes": "NR-03 alias valid for T2. Future packets should use enum values per T3 pattern. answerClass SUMMARY_WITH_SOURCE correct — plane mapping is advisory, not a single direct-cited rule."
+    },
+    {
+      "sampleId": "T5-A4",
+      "category": "ACCEPTED",
+      "sourcePacket": "CI1-T3",
+      "sourcePath": ".private_reference/legacy/CVF ADD/code-review-graph/README.md",
+      "query": "What are the absorption boundary constraints for the code-review-graph pack?",
+      "expectedBehavior": "T4 maps disposition=ACCEPT, answerClass=SUMMARY_WITH_SOURCE, knowledgeRegion=GRAPH_PACK_BOUNDARY, ownerSurface=PRIVATE_PROVENANCE",
+      "actualBehavior": "T3 classification ledger row C6: processingStatus=READ_DEEP, knowledgeRegion=GRAPH_PACK_BOUNDARY, ownerSurface=PRIVATE_PROVENANCE, disposition=ACCEPT, evidencePointer=purpose and explicit non-goals, answerClass=SUMMARY_WITH_SOURCE. T3 S6 adversarial sample confirms external repo as replacement REJECTED. All T4 facet fields DIRECT_MAP. Cross-check: file exists; non-goals section present.",
+      "evidencePointer": "T3 packet Classification Ledger row C6; Adversarial Sample S6; T4 sourceMappings.CI1-T3",
+      "verdict": "PASS",
+      "normalizationRulesExercised": ["NR-10 sourceFamily DIRECT_MAP for T3"],
+      "notes": "ACCEPT disposition correctly applied to boundary document. GRAPH_PACK_BOUNDARY region correctly separates from GRAPH_KNOWLEDGE_MODEL."
+    },
+    {
+      "sampleId": "T5-D1",
+      "category": "DEFERRED",
+      "sourcePacket": "CI1-T2",
+      "sourcePath": ".private_reference/legacy/CVF_Important/Knowledge Base_Graphify/CVF_GRAPH_MEMORY_GUARD_SPEC.md",
+      "query": "Are G-GM-01 through G-GM-08 guard policies enforced in CVF TypeScript source?",
+      "expectedBehavior": "T4 maps disposition=DEFER, answerClass=SUMMARY_WITH_SOURCE, knowledgeRegion=GRAPH_GOVERNANCE; T2 negative search confirms NOT FOUND in runtime",
+      "actualBehavior": "T2 classification ledger row 3: processingStatus=READ_DEEP, disposition=DEFER, answerClass=SUMMARY_WITH_SOURCE, evidencePointer=§2 ledger row 3; §5 negative search. T2 §5 negative search: rg 'G-GM-0' --include='*.ts' → NOT FOUND. T2 adversarial sample 2 confirms DEFERRED with negative search evidence. Cross-check: file exists; guard spec present; CVF runtime TS source not scanned in T5 (out of scope). T4 model: knowledgeRegion=GRAPH_GOVERNANCE, ownerSurface alias=guard surface (not yet implemented).",
+      "evidencePointer": "T2 packet §9 ledger row 3; §5 negative search row 2; §8 sample 2; T4 model sourceMappings.CI1-T2 row ownerSurface",
+      "verdict": "PASS",
+      "normalizationRulesExercised": ["NR-03 ownerSurface — T2 names guard surface informally"],
+      "notes": "DEFER disposition correctly applied. Negative search evidence in T2 §5 is the authoritative basis. T4 NR-03 gap: T2 ownerSurface for guard spec reads 'Guard owner surface (not yet implemented)' — this is valid but not an enum value. T5 routes NR-03 gap to CI1-T6 for structural checker decision."
+    },
+    {
+      "sampleId": "T5-D2",
+      "category": "DEFERRED",
+      "sourcePacket": "CI1-T3",
+      "sourcePath": ".private_reference/legacy/CVF ADD/code-review-graph/CVF_GRAPH_INTEGRATION_SURFACE_SPEC.md",
+      "query": "Is CLI/MCP mediation surface implemented in current CVF?",
+      "expectedBehavior": "T4 maps disposition=ACCEPT_SUMMARY_ONLY (not DEFER but bounded accept); T3 adversarial sample S4 routes implementation to ESCALATE_OR_ABSTAIN; deferred to Graph CLI/guard roadmap",
+      "actualBehavior": "T3 classification ledger row C4: disposition=ACCEPT_SUMMARY_ONLY, answerClass=SUMMARY_WITH_SOURCE. T3 adversarial S4 DEFERRED: CLI/MCP mediation deferred to Graph CLI backlog roadmap. T4 facet alignment: disposition DIRECT_MAP to T3 value ACCEPT_SUMMARY_ONLY. Observation: T2 uses DEFER, T3 uses ACCEPT_SUMMARY_ONLY for semantically equivalent 'implementation not in runtime' state. This is a normalization gap not captured in T4.",
+      "evidencePointer": "T3 packet Classification Ledger row C4; Adversarial Sample S4; T4 sourceMappings.CI1-T3 disposition DIRECT_MAP",
+      "verdict": "PASS_WITH_GAP",
+      "gap": "T2 disposition vocabulary 'DEFER' and T3 disposition vocabulary 'ACCEPT_SUMMARY_ONLY' both represent bounded acceptance with deferred implementation, but they map to different canonical disposition values. T4 normalizationRules do not define a canonical merge rule for these two values. Route to CI1-T6 as NR-11 gap candidate.",
+      "normalizationRulesExercised": ["NR-01 through NR-10 — NR-11 gap identified"],
+      "notes": "New gap NR-11 identified: DEFER (T2) vs ACCEPT_SUMMARY_ONLY (T3) for same semantic state. T5 routes to CI1-T6 checker decision."
+    },
+    {
+      "sampleId": "T5-D3",
+      "category": "DEFERRED",
+      "sourcePacket": "CI1-T2",
+      "sourcePath": "T4 model normalizationRules NR-04 and NR-05",
+      "query": "Do T2 and T3 packets provide per-file sourceHash and normalizedPath values?",
+      "expectedBehavior": "T4 NR-04 and NR-05 declare these as unresolved gaps with DEFER_CI1-T6 routing; sampling confirms both gaps are real and consistent across both packets",
+      "actualBehavior": "T2 §2 manifest: manifest-level hash a88e3412 only; no per-file hash computed. T3 common facet schema: 'sourceHash — packet uses manifest-level hash; per-file hashes deferred'. T2 facet schema: no normalizedPath column. T3 facet schema: normalizedPath present as field name but 'per-file normalization deferred'. T4 NR-04 gap confirmed: both packets use manifest-level hash only. T4 NR-05 gap confirmed: T3 declares field but defers application; T2 does not declare field at all.",
+      "evidencePointer": "T2 §2 processing ledger; T3 common facet schema table; T4 normalizationRules NR-04, NR-05",
+      "verdict": "PASS",
+      "normalizationRulesExercised": ["NR-04 sourceHash gap", "NR-05 normalizedPath gap"],
+      "notes": "Both NR-04 and NR-05 confirmed as real cross-packet gaps. NR-05 has partial T3 coverage (field declared, not applied) vs zero T2 coverage. CI1-T6 must decide: (a) require per-file hash for future packets (structural checker candidate), (b) accept manifest-level proxy, or (c) require normalization algorithm specification."
+    },
+    {
+      "sampleId": "T5-R1",
+      "category": "REJECTED",
+      "sourcePacket": "CI1-T2",
+      "sourcePath": ".private_reference/legacy/CVF_Important/Knowledge Base_Graphify/CVF_GRAPH_MEMORY_LAYER_SPEC.md §XII",
+      "query": "Has the 7-phase Graphify deployment roadmap been executed in CVF?",
+      "expectedBehavior": "T2 adversarial sample 6 REJECTED this as a claim; T4 model must not present roadmap phases as CVF delivery evidence",
+      "actualBehavior": "T2 §8 adversarial sample 6 category REJECTED: 'Phase 1–7 roadmap defined; no CVF evidence of structured execution → REJECT as claim. Roadmap is legacy aspiration; KGR1 represents bounded actual delivery.' T4 claimBoundary explicitly states: 'CI1-T4 does NOT claim… production readiness…'. T4 sourceMappings for T2 layer spec row: disposition=ACCEPT (for the file) but the 7-phase roadmap content is advisor-only per T2 §10 disposition matrix. Cross-check: file exists; §XII contains 7-phase roadmap; no corresponding CVF work order chain found in T4 model.",
+      "evidencePointer": "T2 §8 sample 6; T2 §10 disposition matrix row 4; T4 claimBoundary",
+      "verdict": "PASS",
+      "normalizationRulesExercised": ["NR-09 Status → disposition+freshnessStatus split"],
+      "notes": "REJECT disposition for the roadmap content (not the file) correctly handled by T2 annotation. T4 model correctly separates file-level ACCEPT from content-level boundary. Pattern: file disposition ACCEPT + content boundary annotation is valid and must be preserved in future normalization."
+    },
+    {
+      "sampleId": "T5-R2",
+      "category": "REJECTED",
+      "sourcePacket": "CI1-T3",
+      "sourcePath": ".private_reference/legacy/CVF ADD/code-review-graph/CVF_GRAPH_INTEGRATION_SURFACE_SPEC.md",
+      "query": "Does the code-review-graph pack authorize direct MCP bypass to graph internals?",
+      "expectedBehavior": "T3 adversarial sample S7 REJECTED raw MCP bypass; T4 model must reflect no-bypass claim boundary",
+      "actualBehavior": "T3 §8 adversarial S7 category REJECTED: 'raw MCP bypass → rejected as forbidden pattern; maps to no-bypass future guard'. T3 classification ledger row C4: disposition=ACCEPT_SUMMARY_ONLY (the file is accepted; the bypass claim is rejected within). T4 claimBoundary: no runtime mutation authorized. T4 downstreamRoutes.CI1-T5 samplingTargets includes 'high-risk rows (ownerSurface alias resolution)'. The integration surface spec is a correctly identified high-overlap file: ACCEPT for the boundary definition, REJECTED for any bypass interpretation.",
+      "evidencePointer": "T3 §8 adversarial S7; T3 Classification Ledger row C4; T4 claimBoundary; T4 downstreamRoutes.CI1-T5.samplingTargets",
+      "verdict": "PASS",
+      "normalizationRulesExercised": ["NR-03 ownerSurface DIRECT_MAP for T3 CONTROL_PLANE_ADAPTERS"],
+      "notes": "CONTROL_PLANE_ADAPTERS is a valid T3 enum-style ownerSurface value; not present in T4 NR-03 valueVocabulary list which only covers PRIVATE_PROVENANCE, CONTROL_PLANE_CONTEXT_BUILDER, GOVERNANCE_LAYER, LEARNING_PLANE, ROADMAP_BACKLOG, and knowledge-graph-builder.ts. Route as NR-03 vocabulary gap to CI1-T6."
+    },
+    {
+      "sampleId": "T5-Z1",
+      "category": "ZERO_RESULT",
+      "sourcePacket": "CI1-T2",
+      "sourcePath": "negative search evidence",
+      "query": "cvf graph build — is this CLI command available in current CVF runtime?",
+      "expectedBehavior": "T2 §5 negative search confirmed NOT FOUND; T4 model samplingTargets includes zero-result rows; claim boundary must not assert CLI availability",
+      "actualBehavior": "T2 §5: rg 'cvf graph' --include='*.ts' in EXTENSIONS/ → NOT FOUND. T2 §5: rg 'graph.json' / 'GRAPH_REPORT' → NOT FOUND in runtime. T4 downstreamRoutes.CI1-T5.samplingTargets: 'zero-result rows from T2/T3 negative search evidence'. T4 claimBoundary does not claim CLI graph commands. T5 boundary: no runtime TypeScript source scan authorized; cross-check limited to T2 negative search evidence record.",
+      "evidencePointer": "T2 §5 negative search table rows 1, 5; T4 downstreamRoutes.CI1-T5 samplingTargets",
+      "verdict": "PASS",
+      "normalizationRulesExercised": [],
+      "notes": "Zero-result evidence is sound: T2 used actual rg commands against EXTENSIONS/ source. T5 sampling cross-checks the record without re-running the commands (runtime source scan out of T5 scope). The negative search evidence record is the authoritative input — its existence and format are what T5 validates, not the search re-run."
+    },
+    {
+      "sampleId": "T5-Z2",
+      "category": "ZERO_RESULT",
+      "sourcePacket": "CI1-T3",
+      "sourcePath": "negative search evidence",
+      "query": "G-GM runtime guard — is there current CVF runtime implementation?",
+      "expectedBehavior": "T3 negative search: ZERO_RESULT_FOR_CURRENT_RUNTIME_CLAIM; T4 model must not claim guard enforcement",
+      "actualBehavior": "T3 negative search table: query 'G-GM-01' roots=CI1-T2 finding packet + CI1-T3 corpus read result=ZERO_RESULT_FOR_CURRENT_RUNTIME_CLAIM. T3 notes: 'graph governance prose is advisory evidence, not runtime guard proof'. T4 model does not claim guard enforcement; claimBoundary excludes runtime claims. T2 NR-03 gap for guard surface ownerSurface ('not yet implemented') is consistent with this zero-result finding.",
+      "evidencePointer": "T3 negative search table row 2; T4 claimBoundary; T2-T3 cross-check on guard ownerSurface",
+      "verdict": "PASS",
+      "normalizationRulesExercised": ["NR-03 ownerSurface gap — guard surface has no enum value"],
+      "notes": "T2 and T3 are consistent: G-GM guard enforcement is ZERO_RESULT across both packets. T4 model correctly reflects deferred state via NR-03 gap note. CI1-T6 should consider whether guard surface requires a formal ownerSurface enum value before future packets can express this cleanly."
+    },
+    {
+      "sampleId": "T5-Z3",
+      "category": "ZERO_RESULT",
+      "sourcePacket": "CI1-T2",
+      "sourcePath": "negative search evidence",
+      "query": "GraphMemoryRecord / CVFGraphMemoryRecord — are these TypeScript types in current CVF source?",
+      "expectedBehavior": "T2 §5 confirmed NOT FOUND; T4 facet mapping for CVF_GRAPH_MEMORY_DATA_MODEL.md: disposition=ACCEPT but runtime types absent",
+      "actualBehavior": "T2 §5: rg 'GraphMemoryRecord' → NOT FOUND. T2 classification for DATA_MODEL: disposition=ACCEPT — the spec is accepted as provenance. T4 sourceMappings.CI1-T2 for CVF_GRAPH_MEMORY_DATA_MODEL.md: disposition DIRECT_MAP=ACCEPT. The ACCEPT disposition applies to the legacy spec content, not to a runtime claim. Zero-result confirms: T4 model ACCEPT at file level is consistent with absent runtime implementation; these are not contradictory.",
+      "evidencePointer": "T2 §5 negative search row 3; T2 §9 classification ledger row 2; T4 sourceMappings.CI1-T2 disposition DIRECT_MAP",
+      "verdict": "PASS",
+      "normalizationRulesExercised": ["NR-01 documentType alias: spec"],
+      "notes": "ACCEPT at file level + zero-result for runtime types is a valid and expected pattern for legacy absorption. T4 model correctly does not conflate file-level ACCEPT with runtime availability claim. This pattern should be documented explicitly in the protocol spec as an expected normalization state."
+    },
+    {
+      "sampleId": "T5-H1",
+      "category": "HIGH_RISK",
+      "sourcePacket": "CI1-T2",
+      "sourcePath": ".private_reference/legacy/CVF_Important/Knowledge Base_Graphify/Thong_tin.md",
+      "query": "Does the 71.5x token reduction claim in Thong_tin.md constitute CVF-verified performance evidence?",
+      "expectedBehavior": "T2 adversarial sample 3 accepted with boundary: 'CVF does not verify or adopt this claim; operator analysis only'; T4 model must not propagate unverified performance claim",
+      "actualBehavior": "T2 §8 sample 3: disposition=ACCEPT, boundary='CVF does not verify or adopt this claim; operator analysis only'. T2 §10 disposition matrix: 'performance claim is author-reported and unverified → No runtime action; provenance note recorded'. T2 §14 finding: UNVERIFIED_CLAIM learning lane, 'Do not repeat in CVF documentation without live proof'. T4 model sourceMappings.CI1-T2 for Thong_tin.md: disposition DIRECT_MAP=ACCEPT; no performance claim in the T4 model itself. Cross-check: file exists; §II contains 71.5x claim with author attribution.",
+      "evidencePointer": "T2 §8 sample 3; T2 §10 disposition matrix row 5; T2 §14 finding UNVERIFIED_CLAIM; T4 sourceMappings.CI1-T2",
+      "verdict": "PASS",
+      "normalizationRulesExercised": ["NR-07 Language field — file is Vietnamese primary"],
+      "notes": "HIGH_RISK correctly identified: unverified performance claim in operator analysis document. T4 model correctly does not propagate the claim. ACCEPT disposition for the file is valid; the boundary annotation in T2 §10/§14 is the enforcement mechanism. Risk remains: future retrieval queries against this file could surface the 71.5x claim without the boundary note. CI1-T6 to consider whether boundary-annotated ACCEPT rows require a freshnessStatus=stale flag on the claim-containing section."
+    },
+    {
+      "sampleId": "T5-H2",
+      "category": "HIGH_RISK",
+      "sourcePacket": "CI1-T3",
+      "sourcePath": ".private_reference/legacy/CVF ADD/code-review-graph/Thong_tin.md",
+      "query": "Do performance examples in T3 Thong_tin.md constitute CVF-verified benchmark evidence?",
+      "expectedBehavior": "T3 adversarial sample S10 accepted with boundary: 'accepted with boundary only; no benchmark claim repeated as CVF evidence'; T4 model must not propagate",
+      "actualBehavior": "T3 §8 adversarial S10 category HIGH_RISK: 'token reduction/performance claim → accepted with boundary only'. T3 classification row C7: disposition=ACCEPT_SUMMARY_ONLY, ownerSurface=PRIVATE_PROVENANCE. T3 finding F4: UNVERIFIED_CLAIM, 'Do not repeat token-reduction claims as CVF proof without a benchmark tranche'. T4 sourceMappings.CI1-T3 for Thong_tin.md: all fields DIRECT_MAP. Cross-check: file exists; mapping section and value analysis present.",
+      "evidencePointer": "T3 §8 adversarial S10; T3 Findings F4; T3 Classification Ledger row C7; T4 sourceMappings.CI1-T3",
+      "verdict": "PASS",
+      "normalizationRulesExercised": ["NR-06 sensitivity DIRECT_MAP for T3"],
+      "notes": "Both T2 and T3 have Thong_tin.md operator analysis files with unverified performance claims. Both correctly bounded as HIGH_RISK. Pattern confirmed: operator analysis files in both corpora require ACCEPT_WITH_BOUNDARY or ACCEPT_SUMMARY_ONLY plus explicit finding in §14/F2G. T4 model inherits this via DIRECT_MAP without propagating the claim."
+    },
+    {
+      "sampleId": "T5-H3",
+      "category": "HIGH_RISK",
+      "sourcePacket": "CI1-T2 / CI1-T3 cross-packet",
+      "sourcePath": "T4 model normalizationRules NR-03 ownerSurface",
+      "query": "Is the T4 ownerSurface normalization rule complete and unambiguous for both packets?",
+      "expectedBehavior": "NR-03 documents T2 alias (runtime file path references) and T3 direct enum values; sampling should reveal whether any T3 ownerSurface values fall outside the NR-03 vocabulary list",
+      "actualBehavior": "T4 NR-03 vocabulary list: PRIVATE_PROVENANCE, CONTROL_PLANE_CONTEXT_BUILDER, GOVERNANCE_LAYER, LEARNING_PLANE, ROADMAP_BACKLOG, knowledge-graph-builder.ts (KGR1). T3 classification ledger actual ownerSurface values: PRIVATE_PROVENANCE (rows C1/C6/C7), CONTROL_PLANE_CONTEXT_BUILDER (row C2), GOVERNANCE_LAYER (row C3), CONTROL_PLANE_ADAPTERS (row C4), ROADMAP_BACKLOG (row C5). CONTROL_PLANE_ADAPTERS is NOT in NR-03 vocabulary list. Gap confirmed: T4 NR-03 vocabulary list is incomplete — it omits CONTROL_PLANE_ADAPTERS which appears in T3.",
+      "evidencePointer": "T4 model normalizationRules[2] NR-03 valueVocabulary; T3 Classification Ledger rows C1-C7",
+      "verdict": "PASS_WITH_GAP",
+      "gap": "NR-03 valueVocabulary missing CONTROL_PLANE_ADAPTERS. T4 model states T3 ownerSurface is DIRECT_MAP but the vocabulary list is incomplete. Future packets using CONTROL_PLANE_ADAPTERS would not have a canonical definition to validate against. Route as NR-03 vocabulary gap to CI1-T6.",
+      "normalizationRulesExercised": ["NR-03 ownerSurface"],
+      "notes": "NR-03 gap has two dimensions: (1) T2 uses runtime file paths as ownerSurface values (alias); (2) T4 vocabulary list does not include all T3 enum values. CI1-T6 must extend NR-03 vocabulary or confirm CONTROL_PLANE_ADAPTERS is an acceptable extension value."
+    }
+  ],
+  "normalizationGaps": [
+    {
+      "gapId": "NR-04",
+      "canonicalField": "sourceHash",
+      "description": "Both T2 and T3 provide only manifest-level hash. Per-file hash not computed in either packet.",
+      "impact": "Future structural checker cannot validate per-file drift without per-file hash. Manifest-level hash is a weaker guarantee.",
+      "t6Input": "structural-check candidate: require per-file sourceHash in future packets, or define acceptable manifest-level proxy with explicit documented trade-off",
+      "t6Category": "STRUCTURAL_CHECK_CANDIDATE"
+    },
+    {
+      "gapId": "NR-05",
+      "canonicalField": "normalizedPath",
+      "description": "T2 does not declare normalizedPath field; T3 declares field but defers per-file application.",
+      "impact": "Path normalization algorithm is undefined. Cross-packet path matching would require ad-hoc normalization without a canonical rule.",
+      "t6Input": "structural-check candidate: define normalization algorithm (e.g. forward-slash, lowercase, trailing separator strip) and require application in future packets",
+      "t6Category": "STRUCTURAL_CHECK_CANDIDATE"
+    },
+    {
+      "gapId": "NR-06",
+      "canonicalField": "sensitivity",
+      "description": "T2 states sensitivity at corpus level only; T3 states 'restricted' explicitly per-file.",
+      "impact": "Per-file sensitivity not guaranteed across packets. Mixed-sensitivity corpora would have undeclared per-file exposure.",
+      "t6Input": "documentation-only gap: both packets are uniformly restricted; per-file sensitivity required for future mixed-sensitivity corpora",
+      "t6Category": "DOCUMENTATION_ONLY_GAP"
+    },
+    {
+      "gapId": "NR-07",
+      "canonicalField": null,
+      "description": "T2 Language field (Vietnamese/English) has no canonical equivalent in T4 commonFacets.",
+      "impact": "Bilingual corpus content cannot be filtered by language using the common facet schema.",
+      "t6Input": "non-candidate: add primaryLanguage or extend topicTags with language value as noted in NR-07 recommendation",
+      "t6Category": "DOCUMENTATION_ONLY_GAP"
+    },
+    {
+      "gapId": "NR-11",
+      "canonicalField": "disposition",
+      "description": "T2 uses DEFER for bounded acceptance with deferred implementation; T3 uses ACCEPT_SUMMARY_ONLY for semantically equivalent state. T4 maps both as DIRECT_MAP without a canonical merge rule.",
+      "impact": "Cross-packet disposition queries could return inconsistent results for the same semantic state (deferred implementation).",
+      "t6Input": "structural-check candidate: define canonical disposition vocabulary merge rule for DEFER vs ACCEPT_SUMMARY_ONLY when both mean bounded acceptance with deferred implementation",
+      "t6Category": "STRUCTURAL_CHECK_CANDIDATE",
+      "newGap": true
+    },
+    {
+      "gapId": "NR-03-vocab",
+      "canonicalField": "ownerSurface",
+      "description": "T4 NR-03 vocabulary list omits CONTROL_PLANE_ADAPTERS which appears in T3 classification ledger row C4.",
+      "impact": "NR-03 vocabulary is incomplete. Future packets using CONTROL_PLANE_ADAPTERS lack a canonical definition reference.",
+      "t6Input": "structural-check candidate: extend NR-03 vocabulary to include CONTROL_PLANE_ADAPTERS and any other T3 values not currently listed",
+      "t6Category": "STRUCTURAL_CHECK_CANDIDATE",
+      "newGap": true
+    }
+  ],
+  "t6Inputs": {
+    "structuralCheckCandidates": [
+      {
+        "candidate": "per-file sourceHash requirement",
+        "gapRef": "NR-04",
+        "rationale": "Both pilot packets lack per-file hash. A structural checker could enforce this for all future packets."
+      },
+      {
+        "candidate": "normalizedPath algorithm definition and enforcement",
+        "gapRef": "NR-05",
+        "rationale": "T3 declares the field but defers application. A checker needs a defined algorithm to validate."
+      },
+      {
+        "candidate": "disposition vocabulary merge rule DEFER vs ACCEPT_SUMMARY_ONLY",
+        "gapRef": "NR-11",
+        "rationale": "New gap found in T5. Cross-packet queries require a canonical merge rule."
+      },
+      {
+        "candidate": "ownerSurface vocabulary completeness check",
+        "gapRef": "NR-03-vocab",
+        "rationale": "CONTROL_PLANE_ADAPTERS missing from NR-03 list. A checker could validate ownerSurface values against the canonical vocabulary."
+      }
+    ],
+    "documentationOnlyGaps": [
+      {
+        "gap": "sensitivity per-file vs corpus-level",
+        "gapRef": "NR-06",
+        "rationale": "Both pilot corpora are uniformly restricted. Per-file requirement is documentation guidance, not a structural gate, for uniform corpora."
+      },
+      {
+        "gap": "Language field — no canonical facet equivalent",
+        "gapRef": "NR-07",
+        "rationale": "Extend topicTags with language value or add primaryLanguage extension. Not a structural gap — a vocabulary addition."
+      }
+    ],
+    "nonCandidates": [
+      {
+        "item": "NR-01 documentType alias (T2 Document type → canonical documentType)",
+        "rationale": "Alias rule is clear and functioning. No structural checker needed — human authoring convention is sufficient."
+      },
+      {
+        "item": "NR-02 topicTags alias (T2 Domain → canonical topicTags)",
+        "rationale": "Alias rule is clear and functioning. Vocabulary is open enough that a checker would create false positives."
+      },
+      {
+        "item": "NR-08 Version alias to evidencePointer",
+        "rationale": "Rare field; mapping rule is sufficient documentation guidance."
+      },
+      {
+        "item": "NR-09 Status split to disposition + freshnessStatus",
+        "rationale": "T2-specific split. Functions correctly as documented. No structural checker needed."
+      },
+      {
+        "item": "NR-10 sourceFamily implicit vs explicit",
+        "rationale": "T3 pattern (explicit label) is clearly preferred. Documentation guidance sufficient; checker would add noise."
+      }
+    ],
+    "t6Summary": "4 structural-check candidates, 2 documentation-only gaps, 5 non-candidates. CI1-T6 should decide which structural-check candidates warrant a machine checker gate versus stronger documentation requirements. NR-11 and NR-03-vocab are new gaps identified in T5 sampling that were not present in the T4 model."
+  },
+  "sampleTotals": {
+    "ACCEPTED": 4,
+    "DEFERRED": 3,
+    "REJECTED": 2,
+    "ZERO_RESULT": 3,
+    "HIGH_RISK": 3,
+    "totalSamples": 15,
+    "passVerdict": 13,
+    "passWithGapVerdict": 2,
+    "failVerdict": 0
+  },
+  "overallVerdict": "PASSED_SAMPLING_WITH_GAPS",
+  "overallVerdictNotes": "All 15 sample records returned PASS or PASS_WITH_GAP. No FAIL verdicts. Two new normalization gaps identified (NR-11, NR-03-vocab) and routed to CI1-T6. All T4 claim boundaries verified intact. Semantic correctness remains human review work — this sampling verifies classification discipline and claim boundaries only.",
+  "claimBoundary": "CI1-T5 adversarially samples the committed CI1-T4 cross-corpus index model over two pilot packets. It does not authorize broad legacy rescans, runtime indexing, graph execution, LPCI implementation, legal advice, provider use, production readiness, hosted readiness, or public readiness. Sampling does not prove semantic correctness of all classifications. All source cross-checks are bounded to the two registered pilot roots only.",
+  "pendingArtifacts": [
+    "docs/corpus-intelligence/CVF_CI1_T5_CLASSIFICATION_SAMPLING_RESULTS.json",
+    "docs/reference/CVF_CI1_T5_CLASSIFICATION_SAMPLING_PROTOCOL_2026-06-02.md",
+    "docs/reviews/CVF_CI1_T5_CLASSIFICATION_SAMPLING_PROTOCOL_COMPLETION_2026-06-02.md"
+  ],
+  "commitMode": "WORKER_MUST_NOT_COMMIT",
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
+}
