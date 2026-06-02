@@ -1,0 +1,336 @@
+{
+  "schemaVersion": "1.0.0",
+  "standard": "docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md",
+  "guard": "governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md",
+  "checker": "governance/compat/check_corpus_scan_registry.py",
+  "lastUpdated": "2026-06-02",
+  "updatedBy": "CI1-T2 Graphify scan + registry initialization",
+
+  "allowedCorpusTypes": [
+    "LEGACY_FOLDER",
+    "PROJECT_SOURCE",
+    "POLICY_DOCUMENT",
+    "COMPANY_DOCS",
+    "EXTERNAL_SOURCE",
+    "CVF_EXTENSION",
+    "TEST_CORPUS"
+  ],
+
+  "allowedStatuses": [
+    "NOT_STARTED",
+    "PARTIALLY_SCANNED",
+    "SCANNED",
+    "SCANNED_WITH_FINDINGS",
+    "DEEP_CLASSIFIED",
+    "DEFERRED",
+    "OUT_OF_SCOPE"
+  ],
+
+  "allowedFindingDispositions": [
+    "ACCEPT",
+    "ACCEPT_NO_ACTION",
+    "ACCEPT_WITH_BOUNDARY",
+    "DEFER_WITH_ROADMAP",
+    "DEFER_PHASED",
+    "DEFER_DEMAND_GATED",
+    "REJECT",
+    "BLOCKED_PENDING_DECISION"
+  ],
+
+  "corpora": [
+
+    {
+      "id": "legacy-cvf-important-graphify",
+      "corpusType": "LEGACY_FOLDER",
+      "displayName": "CVF_Important / Knowledge Base_Graphify",
+      "scopePaths": [
+        ".private_reference/legacy/CVF_Important/Knowledge Base_Graphify/"
+      ],
+      "fileCount": 5,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "CI1-T2",
+      "scanDate": "2026-06-02",
+      "manifestHash": "a88e3412a2cfca13dc5ff08da16abbc28a08462fd6112ea03cd7992a802c4e43",
+      "manifestPath": "docs/audits/CVF_LHW_RESCAN_A_CVF_IMPORTANT_CORPUS_MANIFEST_2026-06-01.json",
+      "packetPath": "docs/audits/CVF_CI1_T2_GRAPHIFY_READINESS_PACKET_2026-06-02.md",
+      "completionReviewPath": "docs/reviews/CVF_CI1_T2_GRAPHIFY_LEGACY_RESCAN_PILOT_COMPLETION_2026-06-02.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_CI1_T2_GRAPHIFY_LEGACY_RESCAN_PILOT_2026-06-02.md",
+      "verdicts": {
+        "gc047": "COMPLETE_VERIFIED",
+        "gc048": "RECONCILED_VERIFIED",
+        "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+      },
+      "semanticRegions": [
+        "GRAPH_CLI_INTERFACE",
+        "GRAPH_DATA_MODEL",
+        "GRAPH_GOVERNANCE",
+        "GRAPH_LAYER_ARCHITECTURE",
+        "GRAPH_OPERATOR_ANALYSIS"
+      ],
+      "priorAbsorption": "KGR1 — knowledge-graph-builder.ts + knowledge-graph-store.ts (partial absorption of data model and builder patterns)",
+      "findings": [
+        {
+          "id": "F1-kgr1-partial",
+          "summary": "KGR1 partial absorption confirmed — data model and builder patterns absorbed; full spec not implemented",
+          "disposition": "ACCEPT_NO_ACTION",
+          "nextAction": "None — KGR1 delivery is correct bounded scope"
+        },
+        {
+          "id": "F2-guard-spec-absent",
+          "summary": "Guard spec G-GM-01 through G-GM-08 defined in CVF_GRAPH_MEMORY_GUARD_SPEC.md but absent from CVF TypeScript source",
+          "disposition": "DEFER_WITH_ROADMAP",
+          "nextAction": "Open separate governed tranche for graph guard enforcement if operator requests"
+        },
+        {
+          "id": "F3-cli-commands-absent",
+          "summary": "CLI commands cvf graph build/query/visualize/export/validate/status/purge absent from command.registry.ts",
+          "disposition": "DEFER_PHASED",
+          "nextAction": "cvf graph query (routes into KGR1 evaluateRetrievalRequest) is highest value; separate work order required"
+        },
+        {
+          "id": "F4-performance-claim-unverified",
+          "summary": "71.5x token reduction claim is author-reported by external Graphify project; not verified by CVF",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Do not repeat in CVF documentation without live proof"
+        }
+      ],
+      "negativeSearchTerms": [
+        "cvf graph (CLI command — absent from command.registry.ts)",
+        "G-GM-0 (guard IDs — absent from *.ts source)",
+        "GraphMemoryRecord (record type — absent from CVF TS)",
+        "PreToolUse hook (not a CVF-owned hook)",
+        "GRAPH_REPORT.md (output artifact — not produced by CVF)",
+        "NetworkX / leiden (Python graph libs — not in CVF)"
+      ],
+      "nextScanRecommendation": "CVF ADD/code-review-graph/ — 5 files, directly related to graph governance (Finding F2)"
+    },
+
+    {
+      "id": "legacy-cvf-important-broad",
+      "corpusType": "LEGACY_FOLDER",
+      "displayName": "CVF_Important (full 24-folder inventory)",
+      "scopePaths": [
+        ".private_reference/legacy/CVF_Important/"
+      ],
+      "fileCount": 230,
+      "status": "PARTIALLY_SCANNED",
+      "scanWave": "LHW-RESCAN-A",
+      "scanDate": "2026-06-01",
+      "manifestHash": "see docs/audits/CVF_LHW_RESCAN_A_CVF_IMPORTANT_CORPUS_MANIFEST_2026-06-01.json",
+      "manifestPath": "docs/audits/CVF_LHW_RESCAN_A_CVF_IMPORTANT_CORPUS_MANIFEST_2026-06-01.json",
+      "packetPath": "docs/audits/CVF_LHW_RESCAN_A_CVF_IMPORTANT_CORPUS_RECONCILIATION_2026-06-01.md",
+      "completionReviewPath": "docs/reviews/CVF_LHW_RESCAN_A_CVF_IMPORTANT_CORPUS_RECONCILIATION_COMPLETION_2026-06-01.md",
+      "gcBaselineRef": null,
+      "verdicts": {
+        "gc047": "COMPLETE_VERIFIED",
+        "gc048": "PARTIAL",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "24 top-level folders inventoried — broad routing only"
+      ],
+      "priorAbsorption": "LHW17 + LHW20 T1/T2/T3 — trust isolation, model gateway, adaptation policy, security hardening, execution strategy, UCO",
+      "findings": [
+        {
+          "id": "RESCAN-A-scope",
+          "summary": "230 visible files, 229 authority assets READ at broad level — semantic detail deferred to per-family CI1 scans",
+          "disposition": "ACCEPT_NO_ACTION",
+          "nextAction": "Each subfamily requires its own CI1 tranche for deep classification"
+        }
+      ],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "Knowledge Base_Graphify already done (CI1-T2). Next: Knowledge Base_Graphify/code-review-graph or another operator-selected subfamily"
+    },
+
+    {
+      "id": "legacy-cvf-add",
+      "corpusType": "LEGACY_FOLDER",
+      "displayName": "CVF ADD (partial root — LHW-RESCAN-C)",
+      "scopePaths": [
+        ".private_reference/legacy/CVF ADD/"
+      ],
+      "fileCount": 167,
+      "status": "PARTIALLY_SCANNED",
+      "scanWave": "LHW-RESCAN-C",
+      "scanDate": "2026-06-01",
+      "manifestHash": "ae7fe05e016b7079a81002de60de1e1209112de59c8bee793e15e11557cae0ff",
+      "manifestPath": "docs/audits/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_MANIFEST_2026-06-01.json",
+      "packetPath": "docs/audits/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_RECONCILIATION_2026-06-01.md",
+      "completionReviewPath": "docs/reviews/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_RECONCILIATION_COMPLETION_2026-06-01.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_LHW_RESCAN_C_CROSS_CORPUS_DEEP_REVIEW_2026-06-01.md",
+      "verdicts": {
+        "gc047": "COMPLETE_VERIFIED",
+        "gc048": "PARTIAL",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "31 source families across CVF ADD + CVF 16.5 + CVF_Restructure — broad routing"
+      ],
+      "priorAbsorption": "LHW13-16 connector specs — various workflow, memory, graph, context families",
+      "findings": [
+        {
+          "id": "RESCAN-C-code-review-graph",
+          "summary": "CVF ADD/code-review-graph/ contains 5 graph spec files not yet deep-classified",
+          "disposition": "DEFER_WITH_ROADMAP",
+          "nextAction": "CI1-T3 candidate — directly relevant to Graphify F2 guard spec gap"
+        }
+      ],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "CVF ADD/code-review-graph/ — 5 files, directly related to Finding F2 from Graphify scan"
+    },
+
+    {
+      "id": "legacy-cvf-16-5",
+      "corpusType": "LEGACY_FOLDER",
+      "displayName": "CVF 16.5 (partial root — LHW-RESCAN-C)",
+      "scopePaths": [
+        ".private_reference/legacy/CVF 16.5/"
+      ],
+      "fileCount": 100,
+      "status": "PARTIALLY_SCANNED",
+      "scanWave": "LHW-RESCAN-C",
+      "scanDate": "2026-06-01",
+      "manifestHash": "ae7fe05e016b7079a81002de60de1e1209112de59c8bee793e15e11557cae0ff",
+      "manifestPath": "docs/audits/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_MANIFEST_2026-06-01.json",
+      "packetPath": "docs/audits/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_RECONCILIATION_2026-06-01.md",
+      "completionReviewPath": "docs/reviews/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_RECONCILIATION_COMPLETION_2026-06-01.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_LHW_RESCAN_C_CROSS_CORPUS_DEEP_REVIEW_2026-06-01.md",
+      "verdicts": {
+        "gc047": "COMPLETE_VERIFIED",
+        "gc048": "PARTIAL",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": ["broad routing — deep classification deferred"],
+      "priorAbsorption": "LHW13-16 connector specs",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "Defer until CI1 legacy scan wave reaches this folder"
+    },
+
+    {
+      "id": "legacy-cvf-restructure",
+      "corpusType": "LEGACY_FOLDER",
+      "displayName": "CVF_Restructure (partial root — LHW-RESCAN-C)",
+      "scopePaths": [
+        ".private_reference/legacy/CVF_Restructure/"
+      ],
+      "fileCount": 74,
+      "status": "PARTIALLY_SCANNED",
+      "scanWave": "LHW-RESCAN-C",
+      "scanDate": "2026-06-01",
+      "manifestHash": "ae7fe05e016b7079a81002de60de1e1209112de59c8bee793e15e11557cae0ff",
+      "manifestPath": "docs/audits/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_MANIFEST_2026-06-01.json",
+      "packetPath": "docs/audits/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_RECONCILIATION_2026-06-01.md",
+      "completionReviewPath": "docs/reviews/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_RECONCILIATION_COMPLETION_2026-06-01.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_LHW_RESCAN_C_CROSS_CORPUS_DEEP_REVIEW_2026-06-01.md",
+      "verdicts": {
+        "gc047": "COMPLETE_VERIFIED",
+        "gc048": "PARTIAL",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": ["broad routing — deep classification deferred"],
+      "priorAbsorption": "LHW19 T1/T2/T3 — integration architecture, event model, strategic compass",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "Defer until CI1 legacy scan wave reaches this folder; Independent Review subfolder also deferred"
+    },
+
+    {
+      "id": "legacy-small-roots",
+      "corpusType": "LEGACY_FOLDER",
+      "displayName": "CVF 17.05 + CVF 25.05 + CVF 28.05 (small roots — LHW-RESCAN-B)",
+      "scopePaths": [
+        ".private_reference/legacy/CVF 17.05/",
+        ".private_reference/legacy/CVF 25.05/",
+        ".private_reference/legacy/CVF 28.05/"
+      ],
+      "fileCount": 38,
+      "status": "SCANNED",
+      "scanWave": "LHW-RESCAN-B",
+      "scanDate": "2026-06-01",
+      "manifestHash": "see docs/audits/CVF_LHW_RESCAN_B_LEGACY_SMALL_ROOTS_CORPUS_MANIFEST_2026-06-01.json",
+      "manifestPath": "docs/audits/CVF_LHW_RESCAN_B_LEGACY_SMALL_ROOTS_CORPUS_MANIFEST_2026-06-01.json",
+      "packetPath": "docs/audits/CVF_LHW_RESCAN_B_LEGACY_SMALL_ROOTS_CORPUS_RECONCILIATION_2026-06-01.md",
+      "completionReviewPath": "docs/reviews/CVF_LHW_RESCAN_B_LEGACY_SMALL_ROOTS_CORPUS_RECONCILIATION_COMPLETION_2026-06-01.md",
+      "gcBaselineRef": null,
+      "verdicts": {
+        "gc047": "COMPLETE_VERIFIED",
+        "gc048": "PARTIAL",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": ["broad routing across 3 roots"],
+      "priorAbsorption": "CVF 17.05 stop decision, kernel freeze recommendation, agent handoff gap audit",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "Low priority for CI1 deep scan — small roots, primarily governance decision artifacts"
+    },
+
+    {
+      "id": "legacy-cvf-edit",
+      "corpusType": "LEGACY_FOLDER",
+      "displayName": "CVF Edit",
+      "scopePaths": [
+        ".private_reference/legacy/CVF Edit/"
+      ],
+      "fileCount": 10,
+      "status": "PARTIALLY_SCANNED",
+      "scanWave": "LHW18",
+      "scanDate": "2026-05-30",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": null,
+      "completionReviewPath": null,
+      "gcBaselineRef": "docs/baselines/CVF_GC018_LHW18_CVF_EDIT_ABSORPTION_WAVE_2026-05-30.md",
+      "verdicts": {
+        "gc047": "NOT_RUN",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "failure simulation gap map",
+        "CVF positioning as governance layer",
+        "context management strategy"
+      ],
+      "priorAbsorption": "LHW18 T1/T2/T3 — doc-only absorption; Integration SDK adapters deferred",
+      "findings": [
+        {
+          "id": "LHW18-integration-sdk",
+          "summary": "Integration SDK adapters from CVF Edit not absorbed — doc-only wave; CVF does not build framework-specific adapters",
+          "disposition": "DEFER_DEMAND_GATED",
+          "nextAction": "Frameworks connect INTO CVF; adapters are framework responsibility"
+        }
+      ],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "GC-047/048/050 full scan not yet run; CI1 wave should cover this when prioritized"
+    },
+
+    {
+      "id": "legacy-cvf-app-onboarding",
+      "corpusType": "LEGACY_FOLDER",
+      "displayName": "App onboarding (UI design reference)",
+      "scopePaths": [
+        ".private_reference/legacy/App onboarding/"
+      ],
+      "fileCount": null,
+      "status": "NOT_STARTED",
+      "scanWave": null,
+      "scanDate": null,
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": null,
+      "completionReviewPath": null,
+      "gcBaselineRef": null,
+      "verdicts": {
+        "gc047": "NOT_RUN",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [],
+      "priorAbsorption": "None — UI design mockups, referenced in CLAUDE.md App onboarding/ section",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "Low priority — UI design reference, not knowledge absorption target"
+    }
+
+  ]
+}

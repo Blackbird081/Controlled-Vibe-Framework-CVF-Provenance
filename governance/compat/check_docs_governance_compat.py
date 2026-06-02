@@ -36,6 +36,7 @@ POLICIES = [
 ]
 DEFAULT_BASE_CANDIDATES = ("origin/main", "origin/master", "main", "master")
 ALLOWED_DOCS_FOLDERS = {
+    "corpus-intelligence",  # GC-051 Corpus Scan Registry folder
     "reference",
     "assessments",
     "audits",

@@ -303,6 +303,8 @@ These files use inline React styles — when porting to the Next.js app, transla
 
 ## Governance Controls to Know
 
+**Corpus Scan Registry (GC-051):** Before scanning ANY corpus (legacy folders, project source trees, policy docs, company docs, external sources), read `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` first. Inherit prior scan state and findings instead of re-scanning. Update the registry after every scan. Human companion: `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`. Finding packets: `docs/corpus-intelligence/findings/`. Standard: `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md`. Checker: `governance/compat/check_corpus_scan_registry.py`.
+
 **Fast Lane (GC-021):** Low-risk work can bypass full governance with a Fast Lane audit. Check `docs/reference/CVF_FAST_LANE_AUDIT_TEMPLATE.md`.
 
 **Continuation Governance (GC-018):** Agent handoff and stopping rules. See `docs/reference/CVF_GC018_CONTINUATION_CANDIDATE_TEMPLATE.md`.

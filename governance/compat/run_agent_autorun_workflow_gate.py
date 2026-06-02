@@ -107,6 +107,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             base,
             head,
         ),
+        _range_command(
+            "corpus scan registry",
+            "governance/compat/check_corpus_scan_registry.py",
+            base,
+            head,
+        ),
     GateCommand(
         "active session state compatibility",
         ("python", "governance/compat/check_active_session_state.py", "--enforce"),

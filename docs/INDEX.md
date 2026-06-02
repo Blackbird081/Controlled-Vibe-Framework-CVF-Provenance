@@ -42,6 +42,16 @@ Trạng thái: Chỉ mục lưu trữ chính thức cho `docs/`.
 - `logs/` — archive cho các append-only log chain đã rollover khỏi active window
   Default memory role: `SUMMARY_RECORD`
 
+### Corpus Intelligence (GC-051)
+
+- `corpus-intelligence/` — Corpus Scan Registry: machine-readable index of all
+  scanned corpora (legacy folders, project source trees, policy docs, company
+  docs, external sources). Contains `CVF_CORPUS_SCAN_REGISTRY.json`,
+  `CVF_CORPUS_SCAN_REGISTRY.md`, `findings/`, and `manifests/` subfolders.
+  **Any agent must read `CVF_CORPUS_SCAN_REGISTRY.json` before opening a corpus
+  scan.** Standard: `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md`
+  Default memory role: `FULL_RECORD`
+
 ## Placement Rule For New Files
 
 Từ nay về sau:
