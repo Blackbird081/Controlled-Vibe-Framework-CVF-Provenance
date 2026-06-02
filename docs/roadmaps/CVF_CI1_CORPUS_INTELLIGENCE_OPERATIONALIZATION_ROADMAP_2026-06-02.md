@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: T1_COMPLETE_T2_REVIEWED_T3_CLOSED_PASS_BOUNDED_T4_CLOSED_PASS_BOUNDED_T5_CLOSED_PASS_BOUNDED_T6_CLOSED_PASS_BOUNDED_T7_READY
+Status: ALL_TRANCHES_CLOSED_PASS_BOUNDED_LPCI_ROADMAP_READY
 
 docType: roadmap
 
@@ -92,7 +92,7 @@ Out of scope:
 | CI1-T4 | Cross-Corpus Index Model | normalize search/filter facets across at least two real CI1 scan packets | CLOSED_PASS_BOUNDED |
 | CI1-T5 | Classification Sampling Protocol | adversarial sampling protocol over the T4 model with accepted/deferred/rejected/zero-result rows | CLOSED_PASS_BOUNDED |
 | CI1-T6 | Checker Decision | decide whether T5 findings justify a structural machine checker | CLOSED_PASS_BOUNDED |
-| CI1-T7 | LPCI Intake Bridge | map the T4/T5/T6 corpus-intelligence chain into LPCI-T1 product intake | READY |
+| CI1-T7 | LPCI Intake Bridge | map the T4/T5/T6 corpus-intelligence chain into LPCI-T1 product intake | CLOSED_PASS_BOUNDED |
 
 ## Work Plan
 
@@ -117,7 +117,9 @@ Out of scope:
 | C1.16 | Review and close CI1-T5 sampling artifacts | `docs/reviews/CVF_CI1_T5_CLASSIFICATION_SAMPLING_PROTOCOL_COMPLETION_2026-06-02.md` | DONE |
 | C1.17 | Open or dispatch CI1-T6 checker decision | GC-018/work order pending | DONE |
 | C1.18 | Worker executes CI1-T6 - decision table, checker stubs, GC-052 route, vocabulary extension | decision artifact + completion review | CLOSED_PASS_BOUNDED |
-| C1.19 | Open CI1-T7 LPCI Intake Bridge | GC-018/work order required | READY |
+| C1.19 | Open CI1-T7 LPCI Intake Bridge | GC-018/work order required | DONE |
+| C1.20 | Worker executes CI1-T7 — intake bridge spec, GC-052 route, completion review | intake bridge + completion review | CLOSED_PASS_BOUNDED |
+| C1.21 | Operator may propose LPCI product roadmap | separate GC-018 required | READY_FOR_OPERATOR |
 
 ## CI1-T1 Expected Packet Shape
 

@@ -93,6 +93,29 @@
       ],
       "automationLevel": "STRUCTURAL_GUARDED",
       "claimBoundary": "This connection proves typed artifact routing from the T5 classification sampling result to the T6 checker decision table. It does not prove checker implementation, runtime guard enforcement, semantic correctness of gap decisions, automatic roadmap creation, autonomous mutation, LPCI implementation, or public claims. T7_READY verdict unlocks CI1-T7 dispatch only after CI1-T6 artifacts are committed and the session front door is updated."
+    },
+    {
+      "id": "checker-decision-to-lpci-intake",
+      "status": "ACTIVE",
+      "upstreamLoop": "CHECKER_DECISION_LOOP_CI1_T6",
+      "upstreamPlane": "CORPUS_INTELLIGENCE",
+      "outputArtifact": "docs/reference/CVF_CI1_T6_CHECKER_DECISION_2026-06-02.md",
+      "outputSignal": "per-gap decision table (6 rows), checker spec stubs, T7_READY gate verdict from CI1-T6 CLOSED_PASS_BOUNDED",
+      "signalContract": "docs/baselines/CVF_GC018_CI1_T7_LPCI_INTAKE_BRIDGE_2026-06-02.md",
+      "downstreamLoop": "LPCI_INTAKE_LOOP_CI1_T7",
+      "downstreamPlane": "CORPUS_INTELLIGENCE",
+      "inputArtifact": "docs/reference/CVF_CI1_T7_LPCI_INTAKE_BRIDGE_2026-06-02.md",
+      "routingRule": "When CI1-T6 is CLOSED_PASS_BOUNDED and the T7_READY gate is confirmed, the CI1-T7 worker may synthesize the CI1 chain (T2–T6) into a typed LPCI intake bridge specification. The bridge defines the corpus input contract, claim boundary inheritance, deferred gap obligations, governance gate requirements, and blocked scope for LPCI-T1. The routing does not authorize LPCI chatbot implementation, runtime route authoring, provider integration, embedding pipeline, vector database, UI components, live proof, autonomous mutation, or public claims. LPCI implementation requires a separate governed product roadmap after CI1-T7 closes.",
+      "evidenceRefs": [
+        "docs/reference/CVF_CI1_T6_CHECKER_DECISION_2026-06-02.md",
+        "docs/corpus-intelligence/CVF_CROSS_CORPUS_INDEX_MODEL.json",
+        "docs/corpus-intelligence/CVF_CI1_T5_CLASSIFICATION_SAMPLING_RESULTS.json",
+        "docs/reference/CVF_CI1_T7_LPCI_INTAKE_BRIDGE_2026-06-02.md",
+        "docs/baselines/CVF_GC018_CI1_T7_LPCI_INTAKE_BRIDGE_2026-06-02.md",
+        "docs/reviews/CVF_CI1_T7_LPCI_INTAKE_BRIDGE_COMPLETION_2026-06-02.md"
+      ],
+      "automationLevel": "STRUCTURAL_GUARDED",
+      "claimBoundary": "This connection proves typed artifact routing from the CI1-T6 checker decision to the CI1-T7 LPCI intake bridge specification. It does not prove LPCI implementation, runtime retrieval behavior, chatbot capability, automatic roadmap creation, autonomous mutation, or public claims. CI1-T7 CLOSED_PASS_BOUNDED status unlocks LPCI product roadmap proposal only after the intake bridge is committed and the session front door is updated."
     }
   ]
 }
