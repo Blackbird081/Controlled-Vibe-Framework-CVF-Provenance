@@ -87,7 +87,7 @@ Out of scope:
 | Tranche | Goal | Primary outputs | Status |
 | --- | --- | --- | --- |
 | CI1-T1 | Readiness Packet Template | canonical packet template, dispatch checklist, work order | CLOSED_PASS_BOUNDED |
-| CI1-T2 | Legacy Rescan Pilot — Graphify | apply CI1-T1 packet to `.private_reference/legacy/CVF_Important/Knowledge Base_Graphify/` (5 files) | DISPATCHED |
+| CI1-T2 | Legacy Rescan Pilot — Graphify | apply CI1-T1 packet to `.private_reference/legacy/CVF_Important/Knowledge Base_Graphify/` (5 files) | COMPLETE_PENDING_REVIEW |
 | CI1-T3 | Cross-Corpus Index Model | normalize search/filter facets across legacy, project docs, policy docs, and source docs | PROPOSED |
 | CI1-T4 | Classification Sampling Protocol | adversarial sampling protocol for accepted/deferred/rejected/zero-result rows | PROPOSED |
 | CI1-T5 | Checker Decision | decide whether search/filter readiness needs a structural machine checker | PROPOSED |
@@ -102,7 +102,7 @@ Out of scope:
 | C1.2 | Create packet template | `docs/reference/CVF_CORPUS_INTELLIGENCE_READINESS_PACKET_TEMPLATE_2026-06-02.md` | DONE — committed `662b673b` |
 | C1.3 | Open CI1-T2 GC-018 for Graphify pilot | `docs/baselines/CVF_GC018_CI1_T2_GRAPHIFY_LEGACY_RESCAN_PILOT_2026-06-02.md` | DONE |
 | C1.4 | Dispatch CI1-T2 work order | `docs/work_orders/CVF_WO_CI1_T2_GRAPHIFY_LEGACY_RESCAN_PILOT_2026-06-02.md` | DISPATCHED |
-| C1.5 | Worker executes CI1-T2 — fills packet + completion review | readiness packet + review | PENDING_WORKER |
+| C1.5 | Worker executes CI1-T2 — fills packet + completion review | readiness packet + review | COMPLETE_PENDING_REVIEW |
 | C1.6 | Review CI1-T2 output and select CI1-T3 scope | operator review | PROPOSED |
 
 ## CI1-T1 Expected Packet Shape
