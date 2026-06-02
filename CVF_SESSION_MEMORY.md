@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-02
 
-Current mode marker: `ci1_t7_lpci_intake_bridge_ready`
+Current mode marker: `ci1_chain_closed_lpci_roadmap_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `ci1_t7_lpci_intake_bridge_ready`.
+Current mode: `ci1_chain_closed_lpci_roadmap_ready`.
 
 Active handoff:
 
@@ -429,10 +429,24 @@ CI1-T6 Checker Decision is `CLOSED_PASS_BOUNDED`:
 
 `docs/reviews/CVF_CI1_T6_CHECKER_DECISION_COMPLETION_2026-06-02.md`
 
-Next allowed move: open or dispatch CI1-T7 LPCI Intake Bridge using
-`docs/reference/CVF_CI1_T6_CHECKER_DECISION_2026-06-02.md` and
-`docs/corpus-intelligence/CVF_CROSS_CORPUS_INDEX_MODEL.json` as inputs.
-LPCI chatbot runtime implementation remains blocked until CI1-T7 closes.
+CI1-T7 LPCI Intake Bridge is `CLOSED_PASS_BOUNDED`:
+
+`docs/reviews/CVF_CI1_T7_LPCI_INTAKE_BRIDGE_COMPLETION_2026-06-02.md`
+
+`docs/reference/CVF_CI1_T7_LPCI_INTAKE_BRIDGE_2026-06-02.md`
+
+The CI1 corpus-intelligence chain is fully closed: T1-T7 all
+`CLOSED_PASS_BOUNDED`. CI1 roadmap final status
+`ALL_TRANCHES_CLOSED_PASS_BOUNDED_LPCI_ROADMAP_READY`.
+
+Next allowed move: operator may propose an LPCI product roadmap with its own
+GC-018 baseline per the intake bridge contract
+(`docs/reference/CVF_CI1_T7_LPCI_INTAKE_BRIDGE_2026-06-02.md`). LPCI-T1 GC-018
+must acknowledge the NR-04/NR-05/NR-11 deferred gap obligations and satisfy the
+blocked-scope catalog. LPCI chatbot/runtime implementation remains blocked
+until that separate governed roadmap is authorized. Alternative operator
+options: WSR1 operator commit (`PUBLICATION_READY_PENDING_OPERATOR_COMMIT`),
+NR-04/NR-05/NR-11 standard authoring, or new corpus scans.
 
 Parked checkpoints:
 
