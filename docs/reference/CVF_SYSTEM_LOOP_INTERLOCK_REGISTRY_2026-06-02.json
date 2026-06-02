@@ -5,6 +5,28 @@
   "lastUpdated": "2026-06-02",
   "connections": [
     {
+      "id": "scan-packets-to-cross-corpus-index",
+      "status": "ACTIVE",
+      "upstreamLoop": "CI1_SCAN_PACKET_LOOP",
+      "upstreamPlane": "CORPUS_INTELLIGENCE",
+      "outputArtifact": "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json",
+      "outputSignal": "corpora[].packetPath with verified GC-047/GC-048/GC-050 verdicts and common facet schema from CI1 readiness packets",
+      "signalContract": "docs/reference/CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md",
+      "downstreamLoop": "CROSS_CORPUS_INDEX_MODEL_LOOP_CI1_T4",
+      "downstreamPlane": "CORPUS_INTELLIGENCE",
+      "inputArtifact": "docs/corpus-intelligence/CVF_CROSS_CORPUS_INDEX_MODEL.json",
+      "routingRule": "When two or more CI1 scan packets with COMPLETE_VERIFIED or CLOSED_PASS_BOUNDED status exist in the GC-051 registry, the CI1-T4 worker may normalize their common facet schemas into the cross-corpus index model JSON. The routing does not authorize autonomous mutation, runtime indexing, retrieval behavior, automatic roadmap creation, LPCI implementation, or public claims.",
+      "evidenceRefs": [
+        "docs/audits/CVF_CI1_T2_GRAPHIFY_READINESS_PACKET_2026-06-02.md",
+        "docs/audits/CVF_CI1_T3_GRAPH_GOVERNANCE_CORPUS_READINESS_PACKET_2026-06-02.md",
+        "docs/corpus-intelligence/CVF_CROSS_CORPUS_INDEX_MODEL.json",
+        "docs/reference/CVF_CI1_T4_CROSS_CORPUS_INDEX_MODEL_2026-06-02.md",
+        "docs/baselines/CVF_GC018_CI1_T4_CROSS_CORPUS_INDEX_MODEL_2026-06-02.md"
+      ],
+      "automationLevel": "STRUCTURAL_GUARDED",
+      "claimBoundary": "This connection proves typed artifact routing from CI1 scan packets to the cross-corpus index model. It does not prove semantic correctness, runtime retrieval behavior, automatic roadmap creation, autonomous mutation, LPCI implementation, or public claims."
+    },
+    {
       "id": "scan-loop-to-learning-loop",
       "status": "ACTIVE",
       "upstreamLoop": "SCAN_LOOP_GC051",

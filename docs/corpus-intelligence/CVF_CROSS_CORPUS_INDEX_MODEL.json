@@ -1,0 +1,489 @@
+{
+  "schemaVersion": "1.0.0",
+  "modelId": "cvf-cross-corpus-index-model-ci1-t4",
+  "generatedAt": "2026-06-02",
+  "generatedBy": "CI1-T4 Cross-Corpus Index Model",
+  "baselineRef": "docs/baselines/CVF_GC018_CI1_T4_CROSS_CORPUS_INDEX_MODEL_2026-06-02.md",
+  "standard": "docs/reference/CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md",
+  "sourcePackets": [
+    {
+      "packetId": "CI1-T2",
+      "packetPath": "docs/audits/CVF_CI1_T2_GRAPHIFY_READINESS_PACKET_2026-06-02.md",
+      "corpusId": "legacy-cvf-important-graphify",
+      "corpusRoot": ".private_reference/legacy/CVF_Important/Knowledge Base_Graphify/",
+      "fileCount": 5,
+      "manifestHash": "a88e3412a2cfca13dc5ff08da16abbc28a08462fd6112ea03cd7992a802c4e43",
+      "hashAlgorithm": "sha256",
+      "hashInput": "sorted-paths-newline-joined-with-trailing-newline",
+      "packetStatus": "COMPLETE_PENDING_REVIEW",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_CI1_T2_GRAPHIFY_LEGACY_RESCAN_PILOT_2026-06-02.md",
+      "verdicts": {
+        "gc047": "COMPLETE_VERIFIED",
+        "gc048": "RECONCILED_VERIFIED",
+        "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+      }
+    },
+    {
+      "packetId": "CI1-T3",
+      "packetPath": "docs/audits/CVF_CI1_T3_GRAPH_GOVERNANCE_CORPUS_READINESS_PACKET_2026-06-02.md",
+      "corpusId": "legacy-cvf-add-code-review-graph",
+      "corpusRoot": ".private_reference/legacy/CVF ADD/code-review-graph/",
+      "fileCount": 7,
+      "manifestHash": "d921f708e3b321343fae43060a7fb447a166a7eba6584f23de151422e663f51a",
+      "hashAlgorithm": "sha256",
+      "hashInput": "sorted-paths-newline-joined-with-trailing-newline",
+      "packetStatus": "CLOSED_PASS_BOUNDED",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_CI1_T3_GRAPH_GOVERNANCE_CORPUS_DEEP_SCAN_2026-06-02.md",
+      "verdicts": {
+        "gc047": "COMPLETE_VERIFIED",
+        "gc048": "RECONCILED_VERIFIED",
+        "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+      }
+    }
+  ],
+  "commonFacets": [
+    {
+      "field": "sourcePath",
+      "type": "string",
+      "required": true,
+      "description": "Original source file or canonical imported path",
+      "canonicalSource": "CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md#common-facet-schema",
+      "presentInT2": "YES",
+      "presentInT3": "YES"
+    },
+    {
+      "field": "normalizedPath",
+      "type": "string",
+      "required": true,
+      "description": "Path normalized for stable matching",
+      "canonicalSource": "CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md#common-facet-schema",
+      "presentInT2": "PARTIAL - full manifest paths present; per-file normalization not explicitly applied",
+      "presentInT3": "PARTIAL - full filesystem discovery paths present; per-file normalization not explicitly applied"
+    },
+    {
+      "field": "sourceHash",
+      "type": "string",
+      "required": true,
+      "description": "Drift detection hash",
+      "canonicalSource": "CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md#common-facet-schema",
+      "presentInT2": "PARTIAL - manifest-level hash a88e3412 only; per-file hash not computed",
+      "presentInT3": "PARTIAL - manifest-level hash d921f708 only; per-file hash deferred"
+    },
+    {
+      "field": "sourceRoot",
+      "type": "string",
+      "required": true,
+      "description": "Corpus root or import root",
+      "canonicalSource": "CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md#common-facet-schema",
+      "presentInT2": "YES - corpus root named in corpus boundary section",
+      "presentInT3": "YES - explicit in facet schema table"
+    },
+    {
+      "field": "sourceFamily",
+      "type": "string",
+      "required": true,
+      "description": "Folder family, import batch, document collection, or project module",
+      "canonicalSource": "CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md#common-facet-schema",
+      "presentInT2": "IMPLICIT - Graphify family named informally; not labeled as sourceFamily",
+      "presentInT3": "YES - explicit field label; value: code-review-graph"
+    },
+    {
+      "field": "documentType",
+      "type": "enum",
+      "required": true,
+      "description": "doc, source, policy, notice, roadmap, review, spec, SOP, contract, other",
+      "canonicalSource": "CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md#common-facet-schema",
+      "presentInT2": "YES via alias 'Document type' (values: spec, operator-analysis)",
+      "presentInT3": "YES - explicit field; values: spec, readme, operator-analysis"
+    },
+    {
+      "field": "topicTags",
+      "type": "list",
+      "required": true,
+      "description": "Controlled or reviewer-approved tags",
+      "canonicalSource": "CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md#common-facet-schema",
+      "presentInT2": "YES via alias 'Domain' (values: knowledge graph, graph memory, CLI tooling, governance)",
+      "presentInT3": "YES - explicit field; values: graph, context-builder, governance, integration, implementation, metrics"
+    },
+    {
+      "field": "knowledgeRegion",
+      "type": "enum",
+      "required": true,
+      "description": "GC-050 or project-specific knowledge region",
+      "canonicalSource": "CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md#common-facet-schema",
+      "presentInT2": "YES - per semantic region ledger (GRAPH_CLI_INTERFACE, GRAPH_DATA_MODEL, GRAPH_GOVERNANCE, GRAPH_LAYER_ARCHITECTURE, GRAPH_OPERATOR_ANALYSIS)",
+      "presentInT3": "YES - per semantic region ledger (GRAPH_KNOWLEDGE_MODEL, GRAPH_CONTEXT_RESOLUTION, GRAPH_GOVERNANCE_SIGNALS, GRAPH_INTEGRATION_SURFACE, GRAPH_IMPLEMENTATION_PLAN, GRAPH_PACK_BOUNDARY, GRAPH_OPERATOR_ANALYSIS)"
+    },
+    {
+      "field": "ownerSurface",
+      "type": "enum",
+      "required": true,
+      "description": "Owner surface or consuming plane",
+      "canonicalSource": "CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md#common-facet-schema",
+      "presentInT2": "YES via alias 'CVF plane mapping' using runtime owner file references (knowledge-graph-builder.ts, guard surface, etc.)",
+      "presentInT3": "YES - enum-style values: PRIVATE_PROVENANCE, CONTROL_PLANE_CONTEXT_BUILDER, GOVERNANCE_LAYER, ROADMAP_BACKLOG"
+    },
+    {
+      "field": "processingStatus",
+      "type": "enum",
+      "required": true,
+      "description": "READ_DEEP, READ_SHALLOW, SKIPPED_WITH_REASON, DEFERRED, BLOCKED_UNREADABLE",
+      "canonicalSource": "CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md#common-facet-schema",
+      "presentInT2": "YES - per processing ledger; all 5 files READ_DEEP",
+      "presentInT3": "YES - per processing ledger; all 7 files READ_DEEP"
+    },
+    {
+      "field": "disposition",
+      "type": "enum",
+      "required": true,
+      "description": "accept, summary-only, defer, reject, blocked",
+      "canonicalSource": "CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md#common-facet-schema",
+      "presentInT2": "YES - per classification ledger (ACCEPT, DEFER)",
+      "presentInT3": "YES - per classification ledger (ACCEPT, ACCEPT_SUMMARY_ONLY, ACCEPT_WITH_BOUNDARY)"
+    },
+    {
+      "field": "evidencePointer",
+      "type": "string",
+      "required": true,
+      "description": "Section, line, paragraph, article, hash, or receipt",
+      "canonicalSource": "CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md#common-facet-schema",
+      "presentInT2": "YES - section references in classification ledger (e.g., §2 ledger row, §8 sample)",
+      "presentInT3": "YES - section name references (e.g., sections 1-10, sections 1-12)"
+    },
+    {
+      "field": "sensitivity",
+      "type": "enum",
+      "required": true,
+      "description": "public, internal, confidential, restricted, unknown",
+      "canonicalSource": "CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md#common-facet-schema",
+      "presentInT2": "IMPLICIT - value 'restricted' implied by private legacy corpus boundary; not stated per-file",
+      "presentInT3": "YES - explicit value: restricted"
+    },
+    {
+      "field": "freshnessStatus",
+      "type": "enum",
+      "required": true,
+      "description": "current, stale, superseded, obsolete, unknown",
+      "canonicalSource": "CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md#common-facet-schema",
+      "presentInT2": "YES via freshness model section (all 2026-04-12 dated; Thong_tin undated)",
+      "presentInT3": "YES - explicit field; value: legacy-current-for-absorption"
+    },
+    {
+      "field": "freshnessCheckedAt",
+      "type": "timestamp",
+      "required": false,
+      "description": "Date/time of freshness check when applicable",
+      "canonicalSource": "CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md#common-facet-schema",
+      "presentInT2": "IMPLICIT - scan date 2026-06-02 implies check date",
+      "presentInT3": "YES - explicit value: 2026-06-02"
+    },
+    {
+      "field": "answerClass",
+      "type": "enum",
+      "required": true,
+      "description": "direct answer, summary, procedural guidance, abstain/escalate",
+      "canonicalSource": "CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md#common-facet-schema",
+      "presentInT2": "YES - per classification ledger (DIRECT_CITED_ANSWER, SUMMARY_WITH_SOURCE)",
+      "presentInT3": "YES - per classification ledger (SUMMARY_WITH_SOURCE, PROCEDURAL_GUIDANCE)"
+    }
+  ],
+  "domainExtensionGroups": {
+    "technicalProject": {
+      "groupLabel": "Technical / Project Corpus Extensions",
+      "fields": [
+        "module",
+        "runtimeSurface",
+        "interfaceName",
+        "symbol",
+        "testCoverage",
+        "migrationStatus"
+      ],
+      "presentInT2": "IMPLICIT - runtime surfaces named per semantic region (knowledge-graph-builder.ts, guard surface); no explicit field labels",
+      "presentInT3": "YES - explicit extension table with values",
+      "downstreamUse": "CI1-T5 classification sampling; CI1-T6 checker decision"
+    },
+    "legacyAbsorption": {
+      "groupLabel": "Legacy Absorption Corpus Extensions",
+      "fields": [
+        "legacyFamily",
+        "absorbedBy",
+        "absorptionStatus",
+        "remainingValue",
+        "blindSpotRisk"
+      ],
+      "presentInT2": "PARTIAL - absorptionStatus and remainingValue described informally; no explicit field labels",
+      "presentInT3": "YES - explicit extension table; values: legacyFamily=CVF ADD/code-review-graph; absorbedBy=CI1-T3 scan packet; absorptionStatus=PARTIALLY_ABSORBED; remainingValue=HIGH/LOW; blindSpotRisk=LOW/MEDIUM",
+      "downstreamUse": "CI1-T5 adversarial sampling; LPCI intake routing"
+    },
+    "legalPolicy": {
+      "groupLabel": "Legal / Policy Corpus Extensions (LPCI Vocabulary - Not Populated in CI1-T4)",
+      "fields": [
+        "jurisdiction",
+        "authorityLevel",
+        "issuingBody",
+        "effectiveDate",
+        "amendmentStatus",
+        "sourceAuthority"
+      ],
+      "presentInT2": "NOT_APPLICABLE - Graphify corpus is not a legal/policy corpus",
+      "presentInT3": "NOT_APPLICABLE - code-review-graph corpus is not a legal/policy corpus",
+      "downstreamUse": "CI1-T7 LPCI intake bridge only; vocabulary declared for future LPCI-T1 work",
+      "note": "Legal/policy fields remain declared extension vocabulary for LPCI. No populated legal facts authorized in CI1-T4. LPCI-T1 will populate these fields after CI1-T7 authorized intake bridge."
+    },
+    "internalCompany": {
+      "groupLabel": "Internal Company Corpus Extensions (Vocabulary - Not Populated in CI1-T4)",
+      "fields": [
+        "businessUnit",
+        "policyOwner",
+        "approvalBody",
+        "effectiveAudience",
+        "confidentialityLevel"
+      ],
+      "presentInT2": "NOT_APPLICABLE",
+      "presentInT3": "NOT_APPLICABLE",
+      "downstreamUse": "CI1-T7 LPCI intake bridge or future company-docs corpus wave; vocabulary only"
+    }
+  },
+  "normalizationRules": [
+    {
+      "ruleId": "NR-01",
+      "canonicalField": "documentType",
+      "t2Alias": "Document type",
+      "t3Alias": null,
+      "valueVocabulary": ["spec", "operator-analysis", "readme"],
+      "requiredStatus": "required",
+      "normalizationNote": "T2 uses informal label 'Document type'; T3 uses canonical field name. Alias ACCEPTED."
+    },
+    {
+      "ruleId": "NR-02",
+      "canonicalField": "topicTags",
+      "t2Alias": "Domain",
+      "t3Alias": null,
+      "valueVocabulary": [
+        "knowledge graph",
+        "graph memory",
+        "CLI tooling",
+        "governance",
+        "context-builder",
+        "integration",
+        "implementation",
+        "metrics"
+      ],
+      "requiredStatus": "required",
+      "normalizationNote": "T2 uses 'Domain' label; T3 uses canonical field name with explicit list. Alias ACCEPTED."
+    },
+    {
+      "ruleId": "NR-03",
+      "canonicalField": "ownerSurface",
+      "t2Alias": "CVF plane mapping",
+      "t3Alias": null,
+      "valueVocabulary": [
+        "PRIVATE_PROVENANCE",
+        "CONTROL_PLANE_CONTEXT_BUILDER",
+        "GOVERNANCE_LAYER",
+        "LEARNING_PLANE",
+        "ROADMAP_BACKLOG",
+        "knowledge-graph-builder.ts (KGR1)"
+      ],
+      "requiredStatus": "required",
+      "normalizationNote": "T2 uses runtime owner file references (knowledge-graph-builder.ts); T3 uses enum-style values. Future packets should prefer enum values over runtime file paths."
+    },
+    {
+      "ruleId": "NR-04",
+      "canonicalField": "sourceHash",
+      "t2Alias": null,
+      "t3Alias": null,
+      "valueVocabulary": null,
+      "requiredStatus": "required",
+      "normalizationNote": "Both T2 and T3 provide only manifest-level hash. Per-file hash is an unresolved gap.",
+      "unresolvedGap": "DEFER_CI1-T6 - per-file sourceHash not computed in either packet; manifest-level hash used as proxy; CI1-T6 checker decision to determine if per-file hash is required for structural gate"
+    },
+    {
+      "ruleId": "NR-05",
+      "canonicalField": "normalizedPath",
+      "t2Alias": null,
+      "t3Alias": null,
+      "valueVocabulary": null,
+      "requiredStatus": "required",
+      "normalizationNote": "Neither T2 nor T3 applies explicit per-file path normalization. Full filesystem paths used as proxy.",
+      "unresolvedGap": "DEFER_CI1-T6 - per-file path normalization not applied in either packet; CI1-T6 checker decision to determine normalization algorithm and required application"
+    },
+    {
+      "ruleId": "NR-06",
+      "canonicalField": "sensitivity",
+      "t2Alias": "implied by corpus boundary",
+      "t3Alias": null,
+      "valueVocabulary": ["restricted"],
+      "requiredStatus": "required",
+      "normalizationNote": "T2 states sensitivity only at corpus level; T3 states 'restricted' explicitly per-file. Future packets should state sensitivity per-file."
+    },
+    {
+      "ruleId": "NR-07",
+      "t2SpecificField": "Language",
+      "canonicalField": null,
+      "disposition": "NO_CANONICAL_EQUIVALENT",
+      "recommendation": "Map to topicTags extension entry (e.g., topicTags: ['vietnamese', 'bilingual']) or introduce a 'primaryLanguage' extension field in future normalization. Not blocked."
+    },
+    {
+      "ruleId": "NR-08",
+      "t2SpecificField": "Version",
+      "canonicalField": "evidencePointer",
+      "disposition": "ALIAS_TO_EVIDENCE_POINTER",
+      "recommendation": "Version string (v1.0) maps to an evidencePointer note or freshnessStatus note. Does not become a standalone canonical facet field."
+    },
+    {
+      "ruleId": "NR-09",
+      "t2SpecificField": "Status (Approved / Approved for Integration)",
+      "canonicalField": "disposition + freshnessStatus",
+      "disposition": "SPLIT_CANONICAL_MAPPING",
+      "recommendation": "Approval state maps to disposition=ACCEPT; publication state maps to freshnessStatus=current or legacy-current-for-absorption."
+    },
+    {
+      "ruleId": "NR-10",
+      "canonicalField": "sourceFamily",
+      "t2Alias": "Graphify family (informal)",
+      "t3Alias": null,
+      "valueVocabulary": ["graphify", "code-review-graph"],
+      "requiredStatus": "required",
+      "normalizationNote": "T2 names the family informally in prose; T3 uses explicit field label. Future packets should use explicit field label with kebab-case value matching GC-051 corpusId."
+    }
+  ],
+  "queryReceiptFields": [
+    "queryId",
+    "sourcePath",
+    "queryText",
+    "normalizedQuery",
+    "filtersApplied",
+    "candidateCountBeforeFilters",
+    "candidateCountAfterFilters",
+    "excludedCandidateCount",
+    "excludedCandidateReasonClasses",
+    "selectedCandidateIdsOrPaths",
+    "rankReasons",
+    "evidencePointers",
+    "answerBoundary",
+    "abstentionReason",
+    "timestamp",
+    "corpusSnapshotHash"
+  ],
+  "freshnessConflictStatuses": [
+    {
+      "status": "effective",
+      "meaning": "Accepted as primary private provenance input; no known superseding version"
+    },
+    {
+      "status": "draft",
+      "meaning": "Legacy proposed modules, commands, or module trees not yet implemented in CVF"
+    },
+    {
+      "status": "amended",
+      "meaning": "Use when a prior version of a spec has been updated; cite amendment evidence"
+    },
+    {
+      "status": "superseded",
+      "meaning": "Use when current CVF source or a later spec directly contradicts a legacy assumption"
+    },
+    {
+      "status": "repealed",
+      "meaning": "Use when a spec concept is explicitly removed from CVF scope"
+    },
+    {
+      "status": "obsolete",
+      "meaning": "Use when a spec concept has been replaced without an explicit removal notice"
+    },
+    {
+      "status": "stale",
+      "meaning": "Applies to performance or runtime claims without current CVF proof"
+    },
+    {
+      "status": "unknown",
+      "meaning": "Applies to external repo benchmark claims not re-run by CVF"
+    }
+  ],
+  "sourceMappings": {
+    "CI1-T2": {
+      "packetPath": "docs/audits/CVF_CI1_T2_GRAPHIFY_READINESS_PACKET_2026-06-02.md",
+      "corpusRoot": ".private_reference/legacy/CVF_Important/Knowledge Base_Graphify/",
+      "facetAlignmentRows": [
+        {"sourceField": "sourcePath", "canonicalField": "sourcePath", "alignmentStatus": "DIRECT_MAP", "gap": null},
+        {"sourceField": "Document type", "canonicalField": "documentType", "alignmentStatus": "ALIAS", "gap": null},
+        {"sourceField": "Domain", "canonicalField": "topicTags", "alignmentStatus": "ALIAS", "gap": null},
+        {"sourceField": "CVF plane mapping", "canonicalField": "ownerSurface", "alignmentStatus": "ALIAS", "gap": "T2 uses runtime owner file references; T3 uses enum values; normalization preferred for future packets"},
+        {"sourceField": "processingStatus (processing ledger)", "canonicalField": "processingStatus", "alignmentStatus": "DIRECT_MAP", "gap": null},
+        {"sourceField": "disposition (classification ledger)", "canonicalField": "disposition", "alignmentStatus": "DIRECT_MAP", "gap": null},
+        {"sourceField": "answerClass (classification ledger)", "canonicalField": "answerClass", "alignmentStatus": "DIRECT_MAP", "gap": null},
+        {"sourceField": "evidencePointer (classification ledger)", "canonicalField": "evidencePointer", "alignmentStatus": "DIRECT_MAP", "gap": null},
+        {"sourceField": "knowledgeRegion (semantic region ledger)", "canonicalField": "knowledgeRegion", "alignmentStatus": "DIRECT_MAP", "gap": null},
+        {"sourceField": "corpus root (corpus boundary section)", "canonicalField": "sourceRoot", "alignmentStatus": "PRESENT_IMPLICIT", "gap": "not labeled as sourceRoot field; named in corpus boundary prose"},
+        {"sourceField": "Graphify family (prose)", "canonicalField": "sourceFamily", "alignmentStatus": "PRESENT_IMPLICIT", "gap": "not labeled as sourceFamily; informal name only"},
+        {"sourceField": "manifest hash a88e3412 (manifest-level)", "canonicalField": "sourceHash", "alignmentStatus": "MANIFEST_LEVEL_ONLY", "gap": "per-file hash not computed; CI1-T6 to decide requirement"},
+        {"sourceField": null, "canonicalField": "normalizedPath", "alignmentStatus": "MISSING_EXPLICIT", "gap": "full manifest paths used; normalization not applied per-file; CI1-T6 to decide requirement"},
+        {"sourceField": "restricted (corpus boundary implied)", "canonicalField": "sensitivity", "alignmentStatus": "IMPLICIT", "gap": "stated at corpus level only; not per-file"},
+        {"sourceField": "freshness model (all 2026-04-12)", "canonicalField": "freshnessStatus", "alignmentStatus": "PRESENT_AS_FRESHNESS_MODEL", "gap": "inferred from file dates; not per-file enum value"},
+        {"sourceField": "scan date 2026-06-02 (implicit)", "canonicalField": "freshnessCheckedAt", "alignmentStatus": "IMPLICIT_SCAN_DATE", "gap": null},
+        {"sourceField": "Language (facet schema row)", "canonicalField": null, "alignmentStatus": "NO_CANONICAL_EQUIVALENT", "gap": "map to topicTags extension or primaryLanguage extension per NR-07"},
+        {"sourceField": "Version (facet schema row)", "canonicalField": "evidencePointer", "alignmentStatus": "ALIAS_PARTIAL", "gap": "version string is note, not standalone facet value per NR-08"},
+        {"sourceField": "Status (facet schema row)", "canonicalField": "disposition + freshnessStatus", "alignmentStatus": "SPLIT_MAP", "gap": "approval state maps to disposition; publication state maps to freshnessStatus per NR-09"}
+      ]
+    },
+    "CI1-T3": {
+      "packetPath": "docs/audits/CVF_CI1_T3_GRAPH_GOVERNANCE_CORPUS_READINESS_PACKET_2026-06-02.md",
+      "corpusRoot": ".private_reference/legacy/CVF ADD/code-review-graph/",
+      "facetAlignmentRows": [
+        {"sourceField": "sourcePath", "canonicalField": "sourcePath", "alignmentStatus": "DIRECT_MAP", "gap": null},
+        {"sourceField": "normalizedPath", "canonicalField": "normalizedPath", "alignmentStatus": "DIRECT_MAP", "gap": "per-file normalization deferred; CI1-T6 to decide requirement"},
+        {"sourceField": "sourceHash (manifest-level d921f708)", "canonicalField": "sourceHash", "alignmentStatus": "MANIFEST_LEVEL_ONLY", "gap": "per-file hash deferred; CI1-T6 to decide requirement"},
+        {"sourceField": "sourceRoot", "canonicalField": "sourceRoot", "alignmentStatus": "DIRECT_MAP", "gap": null},
+        {"sourceField": "sourceFamily", "canonicalField": "sourceFamily", "alignmentStatus": "DIRECT_MAP", "gap": null},
+        {"sourceField": "documentType", "canonicalField": "documentType", "alignmentStatus": "DIRECT_MAP", "gap": null},
+        {"sourceField": "topicTags", "canonicalField": "topicTags", "alignmentStatus": "DIRECT_MAP", "gap": null},
+        {"sourceField": "knowledgeRegion", "canonicalField": "knowledgeRegion", "alignmentStatus": "DIRECT_MAP", "gap": null},
+        {"sourceField": "ownerSurface", "canonicalField": "ownerSurface", "alignmentStatus": "DIRECT_MAP", "gap": null},
+        {"sourceField": "processingStatus", "canonicalField": "processingStatus", "alignmentStatus": "DIRECT_MAP", "gap": null},
+        {"sourceField": "disposition", "canonicalField": "disposition", "alignmentStatus": "DIRECT_MAP", "gap": null},
+        {"sourceField": "evidencePointer", "canonicalField": "evidencePointer", "alignmentStatus": "DIRECT_MAP", "gap": null},
+        {"sourceField": "sensitivity", "canonicalField": "sensitivity", "alignmentStatus": "DIRECT_MAP", "gap": null},
+        {"sourceField": "freshnessStatus", "canonicalField": "freshnessStatus", "alignmentStatus": "DIRECT_MAP", "gap": null},
+        {"sourceField": "freshnessCheckedAt", "canonicalField": "freshnessCheckedAt", "alignmentStatus": "DIRECT_MAP", "gap": null},
+        {"sourceField": "answerClass", "canonicalField": "answerClass", "alignmentStatus": "DIRECT_MAP", "gap": null}
+      ]
+    }
+  },
+  "downstreamRoutes": {
+    "CI1-T5": {
+      "name": "Classification Sampling Protocol",
+      "purpose": "Adversarial sampling across accepted, deferred, rejected, and zero-result rows from this model",
+      "inputFromModel": ["commonFacets", "sourceMappings", "normalizationRules", "freshnessConflictStatuses"],
+      "samplingTargets": [
+        "accepted rows from both T2 and T3 facet alignment",
+        "deferred rows (NR-04 per-file sourceHash, NR-05 normalizedPath)",
+        "zero-result rows from T2/T3 negative search evidence",
+        "high-risk rows (ownerSurface alias resolution)"
+      ],
+      "status": "HOLD_UNTIL_T4_CLOSED",
+      "prerequisite": "CI1-T4 closure plus reviewer approval"
+    },
+    "CI1-T6": {
+      "name": "Checker Decision",
+      "purpose": "Decide whether search/filter readiness requires a structural machine checker based on unresolved gaps identified in CI1-T4",
+      "inputFromModel": ["normalizationRules", "sourceMappings"],
+      "unresolvedGapsForDecision": [
+        "NR-04: per-file sourceHash not computed in either packet",
+        "NR-05: per-file normalizedPath not applied in either packet",
+        "NR-06: sensitivity stated only at corpus level in T2",
+        "NR-07: Language field has no canonical equivalent"
+      ],
+      "status": "HOLD_UNTIL_T5_CLOSED",
+      "prerequisite": "CI1-T4 closure plus CI1-T5 sampling results"
+    },
+    "CI1-T7": {
+      "name": "LPCI Intake Bridge",
+      "purpose": "Map generic CI workflow into LPCI-T1 product intake using the common facet model",
+      "inputFromModel": ["commonFacets", "domainExtensionGroups.legalPolicy", "domainExtensionGroups.internalCompany", "downstreamRoutes"],
+      "legalPolicyVocabularyNote": "domainExtensionGroups.legalPolicy and domainExtensionGroups.internalCompany contain declared vocabulary only. No populated legal facts. LPCI-T1 will populate these fields.",
+      "status": "HOLD_UNTIL_T6_DECIDED",
+      "prerequisite": "CI1-T4 closure plus CI1-T5 and CI1-T6 completion"
+    }
+  },
+  "claimBoundary": "CI1-T4 creates a bounded cross-corpus facet/index contract over two pilot packets (CI1-T2 Graphify and CI1-T3 code-review-graph). This model is rebuildable from the cited source packets plus the common search/filter readiness standard. CI1-T4 does NOT claim: a runtime search index, embedding pipeline, vector database, graph execution route, LPCI chatbot, legal advice capability, provider proof, production readiness, hosted readiness, public readiness, or semantic correctness. Semantic correctness remains human review and adversarial sampling work (CI1-T5)."
+}
