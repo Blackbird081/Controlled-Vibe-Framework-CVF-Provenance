@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-02
 
-Current mode marker: `csa1_corpus_standard_authoring_closed`
+Current mode marker: `ci2_corpus_intelligence_enforcement_dispatch_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `csa1_corpus_standard_authoring_closed`.
+Current mode: `ci2_corpus_intelligence_enforcement_dispatch_ready`.
 
 Active handoff:
 
@@ -450,15 +450,20 @@ disposition merge rule (`ACCEPT_DEFERRED` + `rawDisposition`, section in
 `docs/reference/CVF_CORPUS_INTELLIGENCE_CLASSIFICATION_STANDARD_2026-06-01.md`)
 are authored; both cite their CI1-T6 checker stub. Closure commit `03579832`.
 
-Next allowed move (operator choice): (a) propose an LPCI product roadmap with
-its own GC-018 per the CI1-T7 intake bridge
-(`docs/reference/CVF_CI1_T7_LPCI_INTAKE_BRIDGE_2026-06-02.md`); (b) author the
-remaining NR-04 per-file `sourceHash` standard; (c) open a separate
-checker-implementation roadmap for the deferred NR-04/NR-05/NR-11 checker stubs
-now that the NR-05/NR-11 standards exist; (d) run a new corpus scan via the CI1
-workflow; or (e) commit WSR1 (`PUBLICATION_READY_PENDING_OPERATOR_COMMIT`).
-LPCI chatbot/runtime implementation remains blocked until a separate governed
-product roadmap is authorized.
+CI2 Corpus Intelligence Enforcement And Product Readiness is `DISPATCH_READY`
+at commit `89d27bcf`:
+
+`docs/baselines/CVF_GC018_CI2_CORPUS_INTELLIGENCE_ENFORCEMENT_PRODUCT_READINESS_2026-06-02.md`
+
+`docs/roadmaps/CVF_CI2_CORPUS_INTELLIGENCE_ENFORCEMENT_PRODUCT_READINESS_ROADMAP_2026-06-02.md`
+
+Next allowed move: dispatch CI2-T1 only:
+
+`docs/work_orders/CVF_WO_CI2_T1_SOURCE_HASH_STANDARD_2026-06-02.md`
+
+CI2-T2/T3/T4/T5 are ordered HOLD work orders and must not begin until the prior
+tranche closes. LPCI chatbot/runtime implementation remains blocked until
+CI2-T5 produces a separate governed LPCI product roadmap packet.
 
 Parked checkpoints:
 

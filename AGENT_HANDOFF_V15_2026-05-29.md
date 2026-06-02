@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `effea120` (parent: `4cd402f5`). Session updated 2026-06-02: CI1 chain fully closed (T1-T7); CSA1 NR-05/NR-11 Corpus Standard Authoring CLOSED_PASS_BOUNDED (closure commit `03579832`; closure-residue cleanup commit `effea120`).
+Current HEAD recorded for this handoff: `89d27bcf` (parent: `65a0620f`). Session updated 2026-06-02: CI2 Corpus Intelligence Enforcement And Product Readiness dispatch packet is committed; next allowed move is CI2-T1 only.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -411,16 +411,18 @@ precursors are now satisfied; the matching checker implementations and the
 NR-04 hash standard remain deferred to a separate checker-implementation
 roadmap.
 
-Next allowed move (operator choice): (a) propose an LPCI product roadmap with
-its own GC-018 baseline per the intake bridge contract
-(`docs/reference/CVF_CI1_T7_LPCI_INTAKE_BRIDGE_2026-06-02.md`); (b) author the
-remaining NR-04 per-file `sourceHash` standard; (c) open a separate
-checker-implementation roadmap for the deferred NR-04/NR-05/NR-11 checker stubs;
-(d) run a new corpus scan via the CI1 workflow; or (e) commit WSR1
-(`PUBLICATION_READY_PENDING_OPERATOR_COMMIT`). LPCI chatbot/runtime
-implementation remains blocked until that separate governed roadmap is
-authorized, and LPCI-T1 GC-018 must acknowledge the NR-04/NR-05/NR-11 gap
-obligations and satisfy the blocked-scope catalog.
+CI2 Corpus Intelligence Enforcement And Product Readiness is `DISPATCH_READY`
+at commit `89d27bcf`:
+
+`docs/roadmaps/CVF_CI2_CORPUS_INTELLIGENCE_ENFORCEMENT_PRODUCT_READINESS_ROADMAP_2026-06-02.md`
+
+Next allowed move: dispatch CI2-T1 only:
+
+`docs/work_orders/CVF_WO_CI2_T1_SOURCE_HASH_STANDARD_2026-06-02.md`
+
+CI2-T2/T3/T4/T5 are ordered HOLD work orders and must not begin until the prior
+tranche closes. LPCI chatbot/runtime implementation remains blocked until
+CI2-T5 produces a separate governed LPCI product roadmap packet.
 `MKG2` Deferred Runtime Candidate Triage is `REVIEW_READY`: GC-018
 `docs/baselines/CVF_GC018_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_2026-06-01.md`,
 roadmap
@@ -526,8 +528,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`csa1_corpus_standard_authoring_closed`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=operator choice — propose LPCI product roadmap (separate GC-018) per the CI1-T7 intake bridge, author the remaining NR-04 sourceHash standard, open a separate checker-implementation roadmap for the deferred NR-04/NR-05/NR-11 checker stubs, run a new corpus scan, or commit WSR1; LPCI runtime stays blocked until a separate governed product roadmap is authorized;
+Startup acknowledged: current mode=`ci2_corpus_intelligence_enforcement_dispatch_ready`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=dispatch CI2-T1 only (`docs/work_orders/CVF_WO_CI2_T1_SOURCE_HASH_STANDARD_2026-06-02.md`); CI2-T2/T3/T4/T5 remain ordered HOLD work orders; LPCI runtime stays blocked until CI2-T5 produces a separate governed product roadmap packet;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary
