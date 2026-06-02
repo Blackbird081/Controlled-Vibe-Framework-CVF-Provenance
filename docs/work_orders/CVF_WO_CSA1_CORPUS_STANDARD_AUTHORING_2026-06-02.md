@@ -56,7 +56,12 @@ Allowed scope:
 - create `docs/work_orders/CVF_WO_CSA1_CORPUS_STANDARD_AUTHORING_2026-06-02.md` (this file);
 - create `docs/reviews/CVF_CSA1_CORPUS_STANDARD_AUTHORING_COMPLETION_2026-06-02.md`;
 - repair allowed-scope Markdown defects;
-- dedicated session-sync continuity updates after closure.
+- dedicated session-sync continuity updates after dispatch and closure, limited to
+  `CVF_SESSION_MEMORY.md`,
+  `CVF_SESSION/ACTIVE_SESSION_STATE.json`,
+  `AGENT_HANDOFF_V15_2026-05-29.md`,
+  `docs/reviews/CVF_CSA1_DISPATCH_SESSION_SYNC_AUTHORIZATION_2026-06-02.md`, and
+  `docs/reviews/CVF_CSA1_CLOSURE_SESSION_SYNC_AUTHORIZATION_2026-06-02.md`.
 
 Forbidden scope:
 

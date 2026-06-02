@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `7e53e9c1` (parent: `879dbd7b`). Session updated 2026-06-02: CI1 chain fully closed (T1-T7 all CLOSED_PASS_BOUNDED); CSA1 NR-05/NR-11 Corpus Standard Authoring dispatched (DISPATCH_READY, WORKER_MAY_COMMIT).
+Current HEAD recorded for this handoff: `03579832` (parent: `a9f75a83`). Session updated 2026-06-02: CI1 chain fully closed (T1-T7); CSA1 NR-05/NR-11 Corpus Standard Authoring CLOSED_PASS_BOUNDED (closure commit 03579832).
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -395,14 +395,31 @@ Artifact commit: `0ad3db1f`. The CI1 corpus-intelligence chain is fully closed:
 T1-T7 all `CLOSED_PASS_BOUNDED`. CI1 roadmap final status
 `ALL_TRANCHES_CLOSED_PASS_BOUNDED_LPCI_ROADMAP_READY`.
 
-Next allowed move: operator may propose an LPCI product roadmap with its own
-GC-018 baseline per the intake bridge contract
-(`docs/reference/CVF_CI1_T7_LPCI_INTAKE_BRIDGE_2026-06-02.md`). LPCI
-chatbot/runtime implementation remains blocked until that separate governed
-roadmap is authorized. LPCI-T1 GC-018 must acknowledge the NR-04/NR-05/NR-11
-deferred gap obligations and satisfy the blocked-scope catalog. Other open
-options: WSR1 operator commit (`PUBLICATION_READY_PENDING_OPERATOR_COMMIT`),
-NR-04/NR-05/NR-11 standard authoring, or new corpus scans.
+`CSA1` Corpus Standard Authoring (NR-05/NR-11) is `CLOSED_PASS_BOUNDED`:
+
+`docs/reviews/CVF_CSA1_CORPUS_STANDARD_AUTHORING_COMPLETION_2026-06-02.md`
+
+`docs/reference/CVF_CORPUS_PATH_NORMALIZATION_ALGORITHM_STANDARD_2026-06-02.md`
+
+Dispatch commit `879dbd7b`; closure commit `03579832`. NR-05 path
+normalization algorithm standard (new file) and the NR-11 canonical disposition
+merge rule (`ACCEPT_DEFERRED` + `rawDisposition`, section in
+`docs/reference/CVF_CORPUS_INTELLIGENCE_CLASSIFICATION_STANDARD_2026-06-01.md`)
+are authored; both cite their CI1-T6 checker stub. The NR-05 and NR-11 standard
+precursors are now satisfied; the matching checker implementations and the
+NR-04 hash standard remain deferred to a separate checker-implementation
+roadmap.
+
+Next allowed move (operator choice): (a) propose an LPCI product roadmap with
+its own GC-018 baseline per the intake bridge contract
+(`docs/reference/CVF_CI1_T7_LPCI_INTAKE_BRIDGE_2026-06-02.md`); (b) author the
+remaining NR-04 per-file `sourceHash` standard; (c) open a separate
+checker-implementation roadmap for the deferred NR-04/NR-05/NR-11 checker stubs;
+(d) run a new corpus scan via the CI1 workflow; or (e) commit WSR1
+(`PUBLICATION_READY_PENDING_OPERATOR_COMMIT`). LPCI chatbot/runtime
+implementation remains blocked until that separate governed roadmap is
+authorized, and LPCI-T1 GC-018 must acknowledge the NR-04/NR-05/NR-11 gap
+obligations and satisfy the blocked-scope catalog.
 `MKG2` Deferred Runtime Candidate Triage is `REVIEW_READY`: GC-018
 `docs/baselines/CVF_GC018_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_2026-06-01.md`,
 roadmap
@@ -508,8 +525,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`csa1_corpus_standard_authoring_dispatch_ready`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=author the NR-05 CVF Corpus Path Normalization Algorithm standard and the NR-11 canonical disposition merge rule (ACCEPT_DEFERRED + rawDisposition) per the CSA1 work order (WORKER_MAY_COMMIT), then close CSA1; LPCI runtime stays blocked until a separate governed product roadmap is authorized;
+Startup acknowledged: current mode=`csa1_corpus_standard_authoring_closed`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=operator choice — propose LPCI product roadmap (separate GC-018) per the CI1-T7 intake bridge, author the remaining NR-04 sourceHash standard, open a separate checker-implementation roadmap for the deferred NR-04/NR-05/NR-11 checker stubs, run a new corpus scan, or commit WSR1; LPCI runtime stays blocked until a separate governed product roadmap is authorized;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary
