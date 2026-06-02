@@ -67,6 +67,23 @@ worker handoff):
 - update `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
 - update `AGENT_HANDOFF_V15_2026-05-29.md`.
 
+The bounded closure commit also carries the coordinated GC-053 lifecycle
+hardening artifacts reviewed in
+`docs/reviews/CVF_GC053_WORK_ORDER_COMMIT_MODE_ANCHOR_LIFECYCLE_HARDENING_2026-06-02.md`:
+
+- update `README.md`;
+- update `docs/CVF_CORE_KNOWLEDGE_BASE.md`;
+- update `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`;
+- update
+  `docs/reference/CVF_CORPUS_INTELLIGENCE_READINESS_PACKET_TEMPLATE_2026-06-02.md`;
+- update
+  `docs/reference/CVF_WORKER_AUTONOMY_DISPATCH_PROMPT_STANDARD_2026-06-01.md`;
+- update
+  `docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md`;
+- update `governance/compat/CVF_ROOT_FOLDER_LIFECYCLE_REGISTRY.json`;
+- update `governance/compat/check_work_order_dispatch_quality.py`;
+- update `governance/compat/test_check_work_order_dispatch_quality.py`.
+
 This closure-only reviewer scope does not expand worker implementation scope,
 legacy reads/writes, runtime behavior, public-sync, or provider use.
 
