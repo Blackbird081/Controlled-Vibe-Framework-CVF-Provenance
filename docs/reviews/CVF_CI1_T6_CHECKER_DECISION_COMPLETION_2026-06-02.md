@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: COMPLETE_PENDING_REVIEWER_COMMIT
+Status: CLOSED_PASS_BOUNDED
 
 docType: review
 
@@ -66,10 +66,9 @@ Key findings:
    NR-03 `valueVocabulary`).
 4. NR-06 and NR-07 are DOCUMENTATION_ONLY; no structural gate needed.
 
-Worker handoff disposition: COMPLETE_PENDING_REVIEWER_COMMIT. Decision table
-complete, all allowed values used, no BLOCKED verdicts, CI1-T7 gate explicit,
-claim boundary present, GC-052 route valid. Reviewer closure requires commit
-and committed-range pre-closure gate PASS.
+Reviewer disposition: CLOSED_PASS_BOUNDED. Decision table complete, all
+allowed values used, no BLOCKED verdicts, CI1-T7 gate explicit, claim boundary
+present, GC-052 route valid.
 
 ## Risk / Corrective Action
 
@@ -82,7 +81,7 @@ these block CI1-T7.
 
 - `executionBaseHead`: `0808aa8d`
 - Working tree at execution start: clean (post-CI1-T5 commit `0808aa8d`)
-- Working tree at handoff: uncommitted (see artifacts below)
+- Worker handoff commit: `2e5aebb5`
 - Commit mode: WORKER_MUST_NOT_COMMIT
 - No commit or push performed by worker.
 
@@ -123,11 +122,10 @@ these block CI1-T7.
 | Public export disposition | PASS | `python governance/compat/check_public_export_disposition.py --base 0808aa8d --head HEAD --enforce` |
 | Corpus intelligence classification | PASS | `python governance/compat/check_corpus_intelligence_classification.py --base 0808aa8d --head HEAD --enforce` |
 | System loop interlock | PASS | `python governance/compat/check_system_loop_interlock.py --base 0808aa8d --head HEAD --enforce` |
-| Autorun pre-closure | REVIEWER_PENDING_COMMIT | Sub-gates PASS; finality failed because CI1-T6 artifacts remain uncommitted under WORKER_MUST_NOT_COMMIT. Reviewer must commit, then rerun committed-range pre-closure. |
+| Autorun pre-closure | PASS_WITH_SESSION_SYNC_REQUIRED | Committed-range sub-gates PASS over `0808aa8d..2e5aebb5`; active handoff sync was the only remaining gate and is resolved by reviewer session-sync. |
 
 Note: all JSON artifacts are well-formed (validated with `python -m json.tool`
-above). Reviewer rerun on a committed range is still required before changing
-this artifact to `CLOSED_PASS_BOUNDED`.
+above). CI1-T6 is closed at the bounded documentation-only decision boundary.
 
 ## Finding-To-Governance Learning Disposition
 
@@ -159,6 +157,24 @@ No direct provider call performed. No live proof in scope.
 
 DEFERRED_PRIVATE_ONLY - CI1-T6 decision artifacts are internal governance
 records. No public-sync at this stage.
+
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: reviewer/orchestrator session continuity
+sync after CI1-T6 closure only. This is not guard checker maintenance and does
+not authorize runtime, hook-chain, or governance checker modification.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+
+Operator authorization: operator requested a clean worktree and CI1-T7 handoff
+readiness after CI1-T6 reviewer acceptance.
+
+Rollback boundary: revert only the session continuity updates and CI1-T6 status
+closure if final committed-range gates fail. Do not revert worker CI1-T6 source
+artifacts unless the reviewer explicitly rejects the CI1-T6 decision content.
 
 ## Claim Boundary
 

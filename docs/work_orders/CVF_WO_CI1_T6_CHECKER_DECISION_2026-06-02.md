@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: COMPLETE_PENDING_REVIEW
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -55,12 +55,15 @@ Allowed scope:
 - update `docs/roadmaps/CVF_CI1_CORPUS_INTELLIGENCE_OPERATIONALIZATION_ROADMAP_2026-06-02.md`
   CI1-T6 row status only;
 - repair allowed-scope Markdown, JSON, interlock, and dispatch-quality defects.
+- reviewer/orchestrator session continuity updates after reviewer closure
+  (`CVF_SESSION_MEMORY.md`, `CVF_SESSION/ACTIVE_SESSION_STATE.json`, and
+  `AGENT_HANDOFF_V15_2026-05-29.md`) only to route CI1-T7.
 
 Forbidden scope:
 
 - implementing any Python checker, TypeScript guard, or test file;
-- editing `governance/compat/`, `governance/toolkit/`, hook chains, guard docs,
-  session front doors, active handoff, or state registry;
+- worker editing `governance/compat/`, `governance/toolkit/`, hook chains,
+  guard docs, session front doors, active handoff, or state registry;
 - enumerating or scanning any new legacy root or sibling folder;
 - modifying runtime source, LPCI UI/API, provider calls, live proof,
   public-sync, commit, or push;

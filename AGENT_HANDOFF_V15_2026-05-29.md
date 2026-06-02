@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `e89af4d7` (parent: `16e612bf`). Session updated 2026-06-02 for bounded CI1-T5 Classification Sampling Protocol closure routing.
+Current HEAD recorded for this handoff: `2e5aebb5` (parent: `0808aa8d`). Session updated 2026-06-02 for bounded CI1-T6 Checker Decision handoff routing.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -379,9 +379,15 @@ Artifact commit: `3725f962`; handoff-sync: `ae0bf9ae`.
 
 `docs/corpus-intelligence/CVF_CI1_T5_CLASSIFICATION_SAMPLING_RESULTS.json`
 
-Next allowed move: open or dispatch CI1-T6 Checker Decision using the T5
-sampling-result JSON as machine-readable input. LPCI runtime remains blocked
-until CI1-T6 checker decision and CI1-T7 intake bridge close in sequence.
+`CI1-T6` Checker Decision is `CLOSED_PASS_BOUNDED`:
+
+`docs/reviews/CVF_CI1_T6_CHECKER_DECISION_COMPLETION_2026-06-02.md`
+
+Artifact commit: `2e5aebb5`.
+
+Next allowed move: open or dispatch CI1-T7 LPCI Intake Bridge using the CI1-T6
+decision artifact and cross-corpus index model as machine-readable inputs.
+LPCI runtime remains blocked until CI1-T7 intake bridge closes.
 `MKG2` Deferred Runtime Candidate Triage is `REVIEW_READY`: GC-018
 `docs/baselines/CVF_GC018_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_2026-06-01.md`,
 roadmap
@@ -487,8 +493,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ci1_t6_checker_decision_ready`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=open or dispatch CI1-T6 Checker Decision using the T5 sampling-result JSON;
+Startup acknowledged: current mode=`ci1_t7_lpci_intake_bridge_ready`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=open or dispatch CI1-T7 LPCI Intake Bridge using the CI1-T6 decision artifact and cross-corpus index model;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary
