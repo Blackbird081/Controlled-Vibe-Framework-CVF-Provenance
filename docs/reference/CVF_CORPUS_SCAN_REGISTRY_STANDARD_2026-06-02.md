@@ -241,6 +241,25 @@ project source trees). When CVF is applied to a new project:
 2. Record project-specific findings in the same schema.
 3. Cross-reference CVF framework findings that apply to the project.
 
+### Rule 6 — Work orders must authorize registry routing
+
+Any work order that dispatches a corpus scan, classification, absorption,
+search/filter readiness task, negative-search review, or "not found" claim must
+name the registry update surface before the worker starts.
+
+The work order must state whether the worker may:
+
+- add a new `corpora[]` entry;
+- update an existing `corpora[]` entry;
+- create or update a finding packet under
+  `docs/corpus-intelligence/findings/`;
+- update the human companion registry.
+
+If findings exist, the work order must require `defectClass`, `learningLane`,
+`nextAction`, and action evidence (`f2gRef`, `roadmapRef`, or `workOrderRef`)
+for every deferred or blocked finding. A scan report with findings only in
+markdown prose is incomplete because future agents cannot reliably consume it.
+
 ---
 
 ## Negative Search Evidence Rule

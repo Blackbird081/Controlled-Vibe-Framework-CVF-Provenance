@@ -95,6 +95,25 @@ An interloop connection is valid only when:
    without proving semantic correctness, runtime behavior, production readiness,
    or autonomous mutation.
 
+## Work Order Dispatch Requirement
+
+When a work order produces output that another loop must consume, the work order
+must include a `System Loop Interlock Requirement` section or an equivalent
+literal heading.
+
+For corpus scan work, that section must name:
+
+- GC-051 registry path;
+- finding packet path or creation rule;
+- downstream F2G/Learning Loop input;
+- required finding fields (`defectClass`, `learningLane`, `nextAction`, and
+  action evidence);
+- the boundary that the routing does not authorize autonomous mutation,
+  runtime implementation, guard changes, or public claims.
+
+This makes the orchestrator responsible for handing the worker a real loop
+connection, not just a report-writing assignment.
+
 ---
 
 ## Initial Mandatory Connection
@@ -148,4 +167,3 @@ DEFERRED_PRIVATE_ONLY
 Reason: this standard references private provenance governance loops and
 internal artifact paths. Public export requires a separate public-readiness
 review.
-

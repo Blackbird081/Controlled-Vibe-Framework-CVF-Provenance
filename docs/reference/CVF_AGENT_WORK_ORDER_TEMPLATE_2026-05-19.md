@@ -269,16 +269,17 @@ The worker must not continue past a failed autorun phase gate.
 
 Mandatory Gate-Failure Remediation Protocol:
 
-- If the failure is inside Allowed scope, repair it and rerun the failed gate.
-- Do not ask the operator whether to fix missing `N/A with reason`, stale
-  closure residue, source-verification corrections, allowed continuity sync, or
-  other routine guard failures.
-- Ask the operator only if remediation would exceed Allowed scope, change the
-  claim boundary, release a `HOLD_*` prerequisite, change risk level, open
-  public-sync, run live/provider proof, consume secrets/quota, touch forbidden
-  paths, or perform destructive/irreversible actions.
-- Treat any attempted "do you want me to fix this gate failure?" handoff as a
-  governance/control-plane learning signal.
+- Allowed-scope failures are mandatory remediation. Complete the remediation
+  and execute the failed gate again.
+- Missing `N/A with reason`, stale closure residue, source-verification
+  corrections, allowed continuity sync, and routine guard failures are not
+  operator-preference questions.
+- Escalation is reserved for remediation that would exceed Allowed scope,
+  change the claim boundary, release a `HOLD_*` prerequisite, change risk
+  level, open public-sync, run live/provider proof, consume secrets/quota,
+  touch forbidden paths, or perform destructive/irreversible actions.
+- Any attempted handoff that turns an allowed-scope gate failure into an
+  operator preference is a governance/control-plane learning signal.
 
 ## 6A. Source-Fidelity Pass
 
@@ -425,7 +426,7 @@ Rules:
 
 ## 6C. Worker Autonomy / No-Question Rule
 
-The worker must not ask the operator before performing non-destructive actions
+The worker proceeds without operator confirmation for non-destructive actions
 inside this work order's Allowed scope.
 
 Proceed autonomously with:
@@ -433,18 +434,47 @@ Proceed autonomously with:
 - reading files named by this work order;
 - running `git status`, `git diff`, `git rev-parse`, manifest/hash checks, and
   listed governance gates;
-- fixing documentation format defects inside Allowed scope;
-- adding missing required evidence blocks;
-- rerunning failed guards or autorun gates after allowed-scope remediation.
+- documentation format remediation inside Allowed scope;
+- required evidence block completion inside Allowed scope;
+- repeated guard or autorun execution after allowed-scope remediation.
 
-Ask the operator only if the next action would exceed Allowed scope, edit
-legacy source, edit runtime/source code outside ownership, run live/provider
-proof, use secrets/quota, public-sync, push/publish, change risk or claim
-boundary, release a `HOLD_*` prerequisite, touch forbidden paths, or perform
-destructive/irreversible action.
+Escalation is reserved for actions that would exceed Allowed scope, edit legacy
+source, edit runtime/source code outside ownership, run live/provider proof, use
+secrets/quota, public-sync, push/publish, change risk or claim boundary, release
+a `HOLD_*` prerequisite, touch forbidden paths, or perform destructive or
+irreversible action.
 
-If a machine gate fails inside Allowed scope, repair it and rerun. Do not ask
-whether to fix routine gate failures.
+If a machine gate fails inside Allowed scope, complete the remediation and
+execute the gate again. Routine gate remediation is not an operator-preference
+checkpoint.
+
+Orchestrator wording hygiene:
+
+- keep any `Operator Checkpoint` section factual and separate from
+  gate-remediation instructions;
+- do not place operator-preference terms near allowed-scope remediation text;
+- prefer `Escalation is reserved for...` over `Ask the operator if...`.
+
+## 6C.1 System Loop Interlock Routing
+
+Include this section when the work order scans, classifies, absorbs, or maps a
+corpus, or when it records findings, "not found" claims, negative search
+evidence, search/filter readiness, or downstream roadmap candidates.
+
+Required content:
+
+- upstream loop and output artifact;
+- downstream loop and input artifact;
+- machine-readable registry, finding packet, or intake path;
+- routing rule for deferred or blocked findings;
+- claim boundary that blocks autonomous mutation.
+
+Minimum scan-routing rule:
+
+- findings must be recorded in the corpus scan registry and a finding packet;
+- deferred or blocked findings must include `defectClass`, `learningLane`,
+  `nextAction`, and `f2gRef`, `roadmapRef`, or `workOrderRef`;
+- a scan report with findings only in prose is not final.
 
 ## 6D. Pending Artifact Evidence Finality
 

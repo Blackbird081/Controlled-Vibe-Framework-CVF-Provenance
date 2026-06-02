@@ -80,6 +80,49 @@ The section must state:
   public-sync, secrets/quota, destructive action, risk changes, or claim
   boundary changes.
 
+## Orchestrator Authoring Hygiene
+
+Work-order authors must write autonomy clauses so machine gates can distinguish
+mandatory allowed-scope remediation from operator-preference questions.
+
+Use this pattern in work orders:
+
+```text
+Allowed-scope markdown, registry, classification, reconciliation, and
+dispatch-quality failures are mandatory remediation. Escalation is reserved
+only for scope expansion, forbidden paths, live/provider proof, secrets/quota,
+public-sync, commit/push, destructive action, risk changes, or claim-boundary
+changes.
+```
+
+Avoid preference phrasing near gate/remediation language in dispatched work
+orders. In particular, do not place terms such as `operator checkpoint`,
+`operator approval`, `ask operator`, `should I`, or `may I` within the same
+paragraph as allowed-scope gate remediation instructions.
+
+If an `Operator Checkpoint` section is required by a structural template, keep
+it factual: who selected the scope, what source count or boundary was chosen,
+and what task is next. Do not include allowed-scope remediation wording in that
+section.
+
+## Corpus Scan Dispatch Requirement
+
+When a work order dispatches corpus scanning, classification, absorption,
+search/filter readiness, or "not found" evidence, the worker prompt must say
+where the scan output becomes machine-readable downstream input.
+
+Minimum required routing language:
+
+```text
+If findings exist, record them in the corpus scan registry and finding packet.
+Deferred or blocked findings must include F2G-compatible defectClass,
+learningLane, nextAction, and f2gRef, roadmapRef, or workOrderRef evidence.
+The scan report is not final if findings exist only as prose.
+```
+
+This keeps scan output available to the Learning Loop, roadmap backlog, and
+future work-order source verification.
+
 ## Enforcement / Verification
 
 Machine enforcement:
