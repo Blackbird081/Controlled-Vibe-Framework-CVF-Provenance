@@ -77,7 +77,9 @@ Every corpus entry in `CVF_CORPUS_SCAN_REGISTRY.json` must declare:
 | `status` | enum | Scan status (see below) |
 | `scanWave` | string or null | Tranche ID that performed the scan (e.g. `CI1-T2`) |
 | `scanDate` | date or null | Date of last scan (ISO 8601) |
-| `manifestHash` | string or null | SHA-256 of sorted file list; null if not yet scanned |
+| `manifestHash` | string or null | SHA-256 hex digest (64 lowercase chars); null if not yet scanned. Must be a real 64-char hex string, not a path or description. |
+| `hashAlgorithm` | string or null | Must be `"sha256"` when `manifestHash` is non-null |
+| `hashInput` | string or null | Must be `"sorted-paths-newline-joined-with-trailing-newline"` — paths from `rg --files --hidden --no-ignore`, sorted, joined with `\n`, trailing `\n` appended, then SHA-256 |
 | `manifestPath` | string or null | Path to manifest JSON; null if not yet created |
 | `packetPath` | string or null | Path to CI1-style readiness packet or equivalent |
 | `completionReviewPath` | string or null | Path to completion review |

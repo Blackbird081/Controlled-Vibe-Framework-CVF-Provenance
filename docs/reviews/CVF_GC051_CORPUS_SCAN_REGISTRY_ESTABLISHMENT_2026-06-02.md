@@ -58,12 +58,24 @@ backfills all 8 known legacy corpus entries and the CI1-T2 Graphify findings.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: establish GC-051 Corpus Scan Registry as a
-new CVF governance control. This batch adds a new checker, a new guard file,
-new standard, and wires both into the autorun gate and local hook chain.
-CLAUDE.md is updated to add GC-051 to Governance Controls to Know.
+new CVF governance control (initial batch), and apply 5 post-review findings
+(F1–F5) to the checker, AGENTS.md, registry, and standard.
+
+Batch 1 (initial establishment):
+- new checker, new guard file, new standard, autorun/hook wiring
+- CLAUDE.md GC-051 pointer
+- check_docs_governance_compat.py taxonomy extension
+
+Batch 2 (F1–F5 fix):
+- AGENTS.md: add Mandatory Corpus Scan Registry Consultation section
+- governance/compat/check_corpus_scan_registry.py: hash format enforcement (F3) + docs/reviews coverage (F4)
+- docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json: hash standardization (F5)
+- docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md: hashAlgorithm + hashInput docs (F5)
+- AGENT_HANDOFF_V15_2026-05-29.md: HEAD → c57d9f6b (F1)
 
 Protected paths:
 
+- `AGENTS.md`
 - `CLAUDE.md`
 - `governance/compat/check_corpus_scan_registry.py`
 - `governance/compat/check_docs_governance_compat.py`

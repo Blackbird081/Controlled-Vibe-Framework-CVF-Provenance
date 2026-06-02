@@ -664,6 +664,51 @@ adversarial sampling plan. Search/filter readiness proves traceability and
 reviewability; it does not prove semantic correctness, answer truth, legal
 correctness, or runtime behavior.
 
+## Mandatory Corpus Scan Registry Consultation - 2026-06-02
+
+Canonical standard:
+
+`docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md`
+
+Registry front door:
+
+`docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
+
+Guard (GC-051):
+
+`governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md`
+
+Any AI/agent that intends to scan, classify, or absorb knowledge from any
+corpus — legacy folders, project source trees, policy documents, company
+documentation, or external sources — must first read
+`docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`.
+
+If the target corpus path is already registered:
+
+- `SCANNED` / `DEEP_CLASSIFIED` → inherit prior state; do NOT re-scan without
+  explicit operator authorization.
+- `PARTIALLY_SCANNED` → continue from where the prior scan left off.
+- `SCANNED_WITH_FINDINGS` → read all `findings[]` entries for that corpus
+  before starting related implementation work.
+- `NOT_STARTED` / absent → proceed with new scan; add a registry entry first.
+
+After completing a scan, the agent MUST update the registry entry
+(status, scanDate, manifestHash, findings, negativeSearchTerms,
+nextScanRecommendation) and commit the update in the same governed batch as
+the scan evidence.
+
+Manifest hash standard: SHA-256 of sorted filesystem paths joined with `\n`
+(newline-separated, with trailing newline). Record `hashAlgorithm: sha256`
+and `hashInput: sorted-paths-newline-joined-with-trailing-newline` in the
+registry entry.
+
+Finding discovery: before implementing a feature in a domain that has been
+scanned, search `findings[]` in the registry. Cite any matching prior finding
+in the work order — do not rediscover it as a new gap.
+
+Checker: `governance/compat/check_corpus_scan_registry.py` — wired into
+autorun gate and pre-commit hook chain.
+
 ## Latest Closed Continuation Roadmap
 
 The latest closed continuation roadmap is `docs/roadmaps/CVF_W132_T1_PROVIDER_RUNTIME_STABILITY_AND_BROWSER_SESSION_HARDENING_ROADMAP_2026-04-30.md`.

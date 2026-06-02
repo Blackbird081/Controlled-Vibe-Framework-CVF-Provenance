@@ -4,8 +4,7 @@
   "guard": "governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md",
   "checker": "governance/compat/check_corpus_scan_registry.py",
   "lastUpdated": "2026-06-02",
-  "updatedBy": "CI1-T2 Graphify scan + registry initialization",
-
+  "updatedBy": "GC-051 F3/F5 fix — hash validation + algorithm standardization",
   "allowedCorpusTypes": [
     "LEGACY_FOLDER",
     "PROJECT_SOURCE",
@@ -15,7 +14,6 @@
     "CVF_EXTENSION",
     "TEST_CORPUS"
   ],
-
   "allowedStatuses": [
     "NOT_STARTED",
     "PARTIALLY_SCANNED",
@@ -25,7 +23,6 @@
     "DEFERRED",
     "OUT_OF_SCOPE"
   ],
-
   "allowedFindingDispositions": [
     "ACCEPT",
     "ACCEPT_NO_ACTION",
@@ -36,9 +33,7 @@
     "REJECT",
     "BLOCKED_PENDING_DECISION"
   ],
-
   "corpora": [
-
     {
       "id": "legacy-cvf-important-graphify",
       "corpusType": "LEGACY_FOLDER",
@@ -102,9 +97,10 @@
         "GRAPH_REPORT.md (output artifact — not produced by CVF)",
         "NetworkX / leiden (Python graph libs — not in CVF)"
       ],
-      "nextScanRecommendation": "CVF ADD/code-review-graph/ — 5 files, directly related to graph governance (Finding F2)"
+      "nextScanRecommendation": "CVF ADD/code-review-graph/ — 5 files, directly related to graph governance (Finding F2)",
+      "hashAlgorithm": "sha256",
+      "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
     },
-
     {
       "id": "legacy-cvf-important-broad",
       "corpusType": "LEGACY_FOLDER",
@@ -116,7 +112,7 @@
       "status": "PARTIALLY_SCANNED",
       "scanWave": "LHW-RESCAN-A",
       "scanDate": "2026-06-01",
-      "manifestHash": "see docs/audits/CVF_LHW_RESCAN_A_CVF_IMPORTANT_CORPUS_MANIFEST_2026-06-01.json",
+      "manifestHash": "815c9144e51dd0e72e8543410d976ef165bba505f08e5d92d0e632fb43115e8f",
       "manifestPath": "docs/audits/CVF_LHW_RESCAN_A_CVF_IMPORTANT_CORPUS_MANIFEST_2026-06-01.json",
       "packetPath": "docs/audits/CVF_LHW_RESCAN_A_CVF_IMPORTANT_CORPUS_RECONCILIATION_2026-06-01.md",
       "completionReviewPath": "docs/reviews/CVF_LHW_RESCAN_A_CVF_IMPORTANT_CORPUS_RECONCILIATION_COMPLETION_2026-06-01.md",
@@ -139,9 +135,10 @@
         }
       ],
       "negativeSearchTerms": [],
-      "nextScanRecommendation": "Knowledge Base_Graphify already done (CI1-T2). Next: Knowledge Base_Graphify/code-review-graph or another operator-selected subfamily"
+      "nextScanRecommendation": "Knowledge Base_Graphify already done (CI1-T2). Next: Knowledge Base_Graphify/code-review-graph or another operator-selected subfamily",
+      "hashAlgorithm": "sha256",
+      "hashInput": "manifest-internal-hash-from-script-output"
     },
-
     {
       "id": "legacy-cvf-add",
       "corpusType": "LEGACY_FOLDER",
@@ -176,9 +173,10 @@
         }
       ],
       "negativeSearchTerms": [],
-      "nextScanRecommendation": "CVF ADD/code-review-graph/ — 5 files, directly related to Finding F2 from Graphify scan"
+      "nextScanRecommendation": "CVF ADD/code-review-graph/ — 5 files, directly related to Finding F2 from Graphify scan",
+      "hashAlgorithm": "sha256",
+      "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
     },
-
     {
       "id": "legacy-cvf-16-5",
       "corpusType": "LEGACY_FOLDER",
@@ -200,13 +198,16 @@
         "gc048": "PARTIAL",
         "gc050": "NOT_RUN"
       },
-      "semanticRegions": ["broad routing — deep classification deferred"],
+      "semanticRegions": [
+        "broad routing — deep classification deferred"
+      ],
       "priorAbsorption": "LHW13-16 connector specs",
       "findings": [],
       "negativeSearchTerms": [],
-      "nextScanRecommendation": "Defer until CI1 legacy scan wave reaches this folder"
+      "nextScanRecommendation": "Defer until CI1 legacy scan wave reaches this folder",
+      "hashAlgorithm": "sha256",
+      "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
     },
-
     {
       "id": "legacy-cvf-restructure",
       "corpusType": "LEGACY_FOLDER",
@@ -228,13 +229,16 @@
         "gc048": "PARTIAL",
         "gc050": "NOT_RUN"
       },
-      "semanticRegions": ["broad routing — deep classification deferred"],
+      "semanticRegions": [
+        "broad routing — deep classification deferred"
+      ],
       "priorAbsorption": "LHW19 T1/T2/T3 — integration architecture, event model, strategic compass",
       "findings": [],
       "negativeSearchTerms": [],
-      "nextScanRecommendation": "Defer until CI1 legacy scan wave reaches this folder; Independent Review subfolder also deferred"
+      "nextScanRecommendation": "Defer until CI1 legacy scan wave reaches this folder; Independent Review subfolder also deferred",
+      "hashAlgorithm": "sha256",
+      "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
     },
-
     {
       "id": "legacy-small-roots",
       "corpusType": "LEGACY_FOLDER",
@@ -248,7 +252,7 @@
       "status": "SCANNED",
       "scanWave": "LHW-RESCAN-B",
       "scanDate": "2026-06-01",
-      "manifestHash": "see docs/audits/CVF_LHW_RESCAN_B_LEGACY_SMALL_ROOTS_CORPUS_MANIFEST_2026-06-01.json",
+      "manifestHash": "093a0d7b67b8526b9dbed8c74ca2313f567f40b8bdfd4d864cf198852f34a851",
       "manifestPath": "docs/audits/CVF_LHW_RESCAN_B_LEGACY_SMALL_ROOTS_CORPUS_MANIFEST_2026-06-01.json",
       "packetPath": "docs/audits/CVF_LHW_RESCAN_B_LEGACY_SMALL_ROOTS_CORPUS_RECONCILIATION_2026-06-01.md",
       "completionReviewPath": "docs/reviews/CVF_LHW_RESCAN_B_LEGACY_SMALL_ROOTS_CORPUS_RECONCILIATION_COMPLETION_2026-06-01.md",
@@ -258,13 +262,16 @@
         "gc048": "PARTIAL",
         "gc050": "NOT_RUN"
       },
-      "semanticRegions": ["broad routing across 3 roots"],
+      "semanticRegions": [
+        "broad routing across 3 roots"
+      ],
       "priorAbsorption": "CVF 17.05 stop decision, kernel freeze recommendation, agent handoff gap audit",
       "findings": [],
       "negativeSearchTerms": [],
-      "nextScanRecommendation": "Low priority for CI1 deep scan — small roots, primarily governance decision artifacts"
+      "nextScanRecommendation": "Low priority for CI1 deep scan — small roots, primarily governance decision artifacts",
+      "hashAlgorithm": "sha256",
+      "hashInput": "manifest-internal-hash-from-script-output"
     },
-
     {
       "id": "legacy-cvf-edit",
       "corpusType": "LEGACY_FOLDER",
@@ -303,7 +310,6 @@
       "negativeSearchTerms": [],
       "nextScanRecommendation": "GC-047/048/050 full scan not yet run; CI1 wave should cover this when prioritized"
     },
-
     {
       "id": "legacy-cvf-app-onboarding",
       "corpusType": "LEGACY_FOLDER",
@@ -331,6 +337,5 @@
       "negativeSearchTerms": [],
       "nextScanRecommendation": "Low priority — UI design reference, not knowledge absorption target"
     }
-
   ]
 }

@@ -5,12 +5,15 @@ CVF GC-051 Corpus Scan Registry Checker
 Validates docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json for:
   1. Required fields on every entry
   2. Finding disposition completeness on SCANNED_WITH_FINDINGS entries
-  3. Manifest hash presence on COMPLETE_VERIFIED GC-047 entries
-  4. Changed audit file coverage (any changed docs/audits/*.md has a registry entry)
+  3. Manifest hash format (must be 64-char hex SHA-256, not a path or description)
+  4. Changed docs/audits/*.md AND docs/reviews/*.md coverage (corpus paths need registry entries)
   5. Status and disposition vocabulary (allowed enums only)
 
 Standard: docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md
 Guard:    governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md
+
+Hash standard: SHA-256 of sorted filesystem paths joined with newline + trailing newline.
+hashAlgorithm: sha256 | hashInput: sorted-paths-newline-joined-with-trailing-newline
 """
 
 from __future__ import annotations
@@ -78,6 +81,7 @@ ALLOWED_FINDING_DISPOSITIONS = {
 
 FINDINGS_REQUIRED_STATUSES = {"SCANNED_WITH_FINDINGS"}
 MANIFEST_HASH_REQUIRED_VERDICT = "COMPLETE_VERIFIED"
+MANIFEST_HASH_RE = re.compile(r"^[0-9a-f]{64}$")  # SHA-256 hex digest, lowercase
 
 
 def _run_git(args: list[str]) -> tuple[int, str, str]:
@@ -93,8 +97,8 @@ def _run_git(args: list[str]) -> tuple[int, str, str]:
     return proc.returncode, proc.stdout.strip(), proc.stderr.strip()
 
 
-def _get_changed_audit_files(base: str | None, head: str | None) -> list[str]:
-    """Return changed docs/audits/*.md file paths."""
+def _get_changed_corpus_scan_files(base: str | None, head: str | None) -> list[str]:
+    """Return changed docs/audits/*.md and docs/reviews/*.md file paths."""
     paths: list[str] = []
     if base and head and base != head:
         code, out, _ = _run_git(["diff", "--name-only", f"{base}..{head}"])
@@ -109,7 +113,9 @@ def _get_changed_audit_files(base: str | None, head: str | None) -> list[str]:
     return [
         p.strip().replace("\\", "/")
         for p in paths
-        if p.strip().startswith("docs/audits/") and p.strip().endswith(".md")
+        if (
+            p.strip().startswith("docs/audits/") or p.strip().startswith("docs/reviews/")
+        ) and p.strip().endswith(".md")
     ]
 
 
@@ -180,12 +186,18 @@ def _validate_entry(entry: dict, idx: int) -> list[str]:
         if not finding.get("nextAction", "").strip():
             violations.append(f"{fid}: `nextAction` must not be empty")
 
-    # COMPLETE_VERIFIED gc047 must have manifestHash
+    # COMPLETE_VERIFIED gc047 must have a valid 64-hex SHA-256 manifestHash
     verdicts = entry.get("verdicts", {})
     if verdicts.get("gc047") == MANIFEST_HASH_REQUIRED_VERDICT:
-        if not entry.get("manifestHash"):
+        manifest_hash = entry.get("manifestHash") or ""
+        if not manifest_hash:
             violations.append(
                 f"{entry_id}: verdicts.gc047=COMPLETE_VERIFIED requires non-null `manifestHash`"
+            )
+        elif not MANIFEST_HASH_RE.match(manifest_hash.strip()):
+            violations.append(
+                f"{entry_id}: `manifestHash` must be a 64-character lowercase SHA-256 hex digest, "
+                f"not a path or description (got: `{manifest_hash[:40]}{'...' if len(manifest_hash) > 40 else ''}`)"
             )
 
     return violations
@@ -248,10 +260,10 @@ def main(enforce: bool = False, base: str | None = None, head: str | None = None
             seen_ids.add(entry_id)
             violations.extend(_validate_entry(entry, idx))
 
-    # Check audit file coverage
-    changed_audits = _get_changed_audit_files(base, head)
+    # Check audit + review file coverage (F4: expand beyond docs/audits/ only)
+    changed_audits = _get_changed_corpus_scan_files(base, head)
     if changed_audits:
-        print(f"Changed audit files checked: {len(changed_audits)}")
+        print(f"Changed audit/review files checked: {len(changed_audits)}")
         violations.extend(_check_audit_coverage(registry, changed_audits))
 
     total = len(corpora) if isinstance(corpora, list) else 0
