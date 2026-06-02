@@ -71,6 +71,28 @@
       ],
       "automationLevel": "STRUCTURAL_GUARDED",
       "claimBoundary": "This connection proves typed artifact routing from the cross-corpus index model to the adversarial classification sampling result. It does not prove semantic correctness of classifications, runtime retrieval behavior, automatic roadmap creation, autonomous mutation, LPCI implementation, or public claims. Sampling verdict PASSED_SAMPLING_WITH_GAPS does not certify semantic correctness."
+    },
+    {
+      "id": "classification-sampling-to-checker-decision",
+      "status": "ACTIVE",
+      "upstreamLoop": "CLASSIFICATION_SAMPLING_LOOP_CI1_T5",
+      "upstreamPlane": "CORPUS_INTELLIGENCE",
+      "outputArtifact": "docs/corpus-intelligence/CVF_CI1_T5_CLASSIFICATION_SAMPLING_RESULTS.json",
+      "outputSignal": "normalizationGaps[], t6Inputs.structuralCheckCandidates[], t6Inputs.documentationOnlyGaps[] from CI1-T5 sampling with PASSED_SAMPLING_WITH_GAPS status",
+      "signalContract": "docs/baselines/CVF_GC018_CI1_T6_CHECKER_DECISION_2026-06-02.md",
+      "downstreamLoop": "CHECKER_DECISION_LOOP_CI1_T6",
+      "downstreamPlane": "CORPUS_INTELLIGENCE",
+      "inputArtifact": "docs/reference/CVF_CI1_T6_CHECKER_DECISION_2026-06-02.md",
+      "routingRule": "When CI1-T5 is CLOSED_PASS_BOUNDED and the sampling results JSON is committed, the CI1-T6 worker evaluates each normalization gap from T5 and assigns a governance decision (STRUCTURAL_CHECK_REQUIRED, STANDARD_REQUIRED_FIRST, VOCABULARY_EXTENSION_REQUIRED, DOCUMENTATION_ONLY, ACCEPT_NO_ACTION, or BLOCKED). Output is a structured per-gap decision table and a T7_READY or T7_HOLD gate verdict. The routing does not authorize checker code implementation, runtime source modification, LPCI implementation, provider calls, autonomous mutation, or public claims.",
+      "evidenceRefs": [
+        "docs/corpus-intelligence/CVF_CI1_T5_CLASSIFICATION_SAMPLING_RESULTS.json",
+        "docs/reference/CVF_CI1_T6_CHECKER_DECISION_2026-06-02.md",
+        "docs/baselines/CVF_GC018_CI1_T6_CHECKER_DECISION_2026-06-02.md",
+        "docs/work_orders/CVF_WO_CI1_T6_CHECKER_DECISION_2026-06-02.md",
+        "docs/reviews/CVF_CI1_T6_CHECKER_DECISION_COMPLETION_2026-06-02.md"
+      ],
+      "automationLevel": "STRUCTURAL_GUARDED",
+      "claimBoundary": "This connection proves typed artifact routing from the T5 classification sampling result to the T6 checker decision table. It does not prove checker implementation, runtime guard enforcement, semantic correctness of gap decisions, automatic roadmap creation, autonomous mutation, LPCI implementation, or public claims. T7_READY verdict unlocks CI1-T7 dispatch only after CI1-T6 artifacts are committed and the session front door is updated."
     }
   ]
 }

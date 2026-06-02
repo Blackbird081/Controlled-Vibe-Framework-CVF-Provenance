@@ -283,10 +283,11 @@
         "GOVERNANCE_LAYER",
         "LEARNING_PLANE",
         "ROADMAP_BACKLOG",
-        "knowledge-graph-builder.ts (KGR1)"
+        "knowledge-graph-builder.ts (KGR1)",
+        "CONTROL_PLANE_ADAPTERS"
       ],
       "requiredStatus": "required",
-      "normalizationNote": "T2 uses runtime owner file references (knowledge-graph-builder.ts); T3 uses enum-style values. Future packets should prefer enum values over runtime file paths."
+      "normalizationNote": "T2 uses runtime owner file references (knowledge-graph-builder.ts); T3 uses enum-style values. Future packets should prefer enum values over runtime file paths. CONTROL_PLANE_ADAPTERS added in CI1-T6 (NR-03-vocab correction): surface for CVF control-plane adapter layer (IS1-class generic agent adapters; mediation between external agents and CVF governance). Source: T3 classification ledger row C4 (DIRECT_MAP)."
     },
     {
       "ruleId": "NR-04",

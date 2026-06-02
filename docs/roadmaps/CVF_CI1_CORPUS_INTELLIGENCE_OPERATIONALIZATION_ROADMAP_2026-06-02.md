@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: T1_COMPLETE_T2_REVIEWED_T3_CLOSED_PASS_BOUNDED_T4_CLOSED_PASS_BOUNDED_T5_CLOSED_PASS_BOUNDED_T6_READY
+Status: T1_COMPLETE_T2_REVIEWED_T3_CLOSED_PASS_BOUNDED_T4_CLOSED_PASS_BOUNDED_T5_CLOSED_PASS_BOUNDED_T6_COMPLETE_PENDING_REVIEW_T7_PENDING_T6_REVIEWER_COMMIT
 
 docType: roadmap
 
@@ -91,8 +91,8 @@ Out of scope:
 | CI1-T3 | Legacy Rescan Pilot 2 - Graph Governance | apply CI1 workflow to `.private_reference/legacy/CVF ADD/code-review-graph/` (7 files) and route findings through GC-051/GC-052 | CLOSED_PASS_BOUNDED |
 | CI1-T4 | Cross-Corpus Index Model | normalize search/filter facets across at least two real CI1 scan packets | CLOSED_PASS_BOUNDED |
 | CI1-T5 | Classification Sampling Protocol | adversarial sampling protocol over the T4 model with accepted/deferred/rejected/zero-result rows | CLOSED_PASS_BOUNDED |
-| CI1-T6 | Checker Decision | decide whether T5 findings justify a structural machine checker | READY |
-| CI1-T7 | LPCI Intake Bridge | map the T4/T5/T6 corpus-intelligence chain into LPCI-T1 product intake | HOLD_UNTIL_T6_DECIDED |
+| CI1-T6 | Checker Decision | decide whether T5 findings justify a structural machine checker | COMPLETE_PENDING_REVIEW |
+| CI1-T7 | LPCI Intake Bridge | map the T4/T5/T6 corpus-intelligence chain into LPCI-T1 product intake | PENDING_T6_REVIEWER_COMMIT |
 
 ## Work Plan
 
@@ -115,7 +115,9 @@ Out of scope:
 | C1.14 | Open CI1-T5 GC-018 | `docs/baselines/CVF_GC018_CI1_T5_CLASSIFICATION_SAMPLING_PROTOCOL_2026-06-02.md` | DONE |
 | C1.15 | Dispatch CI1-T5 work order | `docs/work_orders/CVF_WO_CI1_T5_CLASSIFICATION_SAMPLING_PROTOCOL_2026-06-02.md` | DONE |
 | C1.16 | Review and close CI1-T5 sampling artifacts | `docs/reviews/CVF_CI1_T5_CLASSIFICATION_SAMPLING_PROTOCOL_COMPLETION_2026-06-02.md` | DONE |
-| C1.17 | Open or dispatch CI1-T6 checker decision | GC-018/work order pending | READY |
+| C1.17 | Open or dispatch CI1-T6 checker decision | GC-018/work order pending | DONE |
+| C1.18 | Worker executes CI1-T6 - decision table, checker stubs, GC-052 route, vocabulary extension | decision artifact + completion review | COMPLETE_PENDING_REVIEW |
+| C1.19 | Open CI1-T7 LPCI Intake Bridge | GC-018/work order required | PENDING_T6_REVIEWER_COMMIT |
 
 ## CI1-T1 Expected Packet Shape
 
