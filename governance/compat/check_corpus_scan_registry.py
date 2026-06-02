@@ -46,7 +46,40 @@ REQUIRED_FINDING_FIELDS = (
     "summary",
     "disposition",
     "nextAction",
+    "defectClass",
+    "learningLane",
 )
+
+# Dispositions that require action evidence: a roadmap ref, work order ref, or f2gRef.
+# Without at least one of these, the finding has no traceable follow-through path.
+DISPOSITIONS_REQUIRING_ACTION_EVIDENCE = {
+    "DEFER_WITH_ROADMAP",
+    "DEFER_PHASED",
+    "BLOCKED_PENDING_DECISION",
+}
+
+# Allowed values — aligned with Finding-To-Governance Learning Trigger Standard.
+ALLOWED_DEFECT_CLASSES = {
+    "WORKER_EXECUTION_ERROR",
+    "ORCHESTRATOR_PACKET_GAP",
+    "RULE_GAP",
+    "MACHINE_GATE_GAP",
+    "PHASE_GATE_PLACEMENT_GAP",
+    "OPERATOR_SCOPE_CLARITY_GAP",
+    "RUNTIME_SIGNAL_GAP",
+    "UNVERIFIED_CLAIM",
+    "DOCUMENTATION_GAP",
+    "N/A",
+}
+
+ALLOWED_LEARNING_LANES = {
+    "GOVERNANCE_CONTROL_PLANE",
+    "RUNTIME_BEHAVIOR_LEARNING",
+    "PROVIDER_OUTPUT_LEARNING",
+    "COST_ECONOMICS_LEARNING",
+    "DOCUMENTATION_ONLY_LEARNING",
+    "N/A",
+}
 
 ALLOWED_CORPUS_TYPES = {
     "LEGACY_FOLDER",
@@ -82,6 +115,11 @@ ALLOWED_FINDING_DISPOSITIONS = {
 FINDINGS_REQUIRED_STATUSES = {"SCANNED_WITH_FINDINGS"}
 MANIFEST_HASH_REQUIRED_VERDICT = "COMPLETE_VERIFIED"
 MANIFEST_HASH_RE = re.compile(r"^[0-9a-f]{64}$")  # SHA-256 hex digest, lowercase
+REQUIRED_HASH_ALGORITHM = "sha256"
+ALLOWED_HASH_INPUTS = {
+    "sorted-paths-newline-joined-with-trailing-newline",
+    "manifest-internal-hash-from-script-output",
+}
 
 
 def _run_git(args: list[str]) -> tuple[int, str, str]:
@@ -186,6 +224,32 @@ def _validate_entry(entry: dict, idx: int) -> list[str]:
         if not finding.get("nextAction", "").strip():
             violations.append(f"{fid}: `nextAction` must not be empty")
 
+        # defectClass and learningLane enum validation
+        dc = finding.get("defectClass", "")
+        if dc and dc not in ALLOWED_DEFECT_CLASSES:
+            violations.append(
+                f"{fid}: invalid defectClass `{dc}` — must be one of {sorted(ALLOWED_DEFECT_CLASSES)}"
+            )
+        ll = finding.get("learningLane", "")
+        if ll and ll not in ALLOWED_LEARNING_LANES:
+            violations.append(
+                f"{fid}: invalid learningLane `{ll}` — must be one of {sorted(ALLOWED_LEARNING_LANES)}"
+            )
+
+        # DEFER_WITH_ROADMAP / DEFER_PHASED / BLOCKED_PENDING_DECISION require action evidence:
+        # at least one of roadmapRef, workOrderRef, or f2gRef must be non-empty.
+        if disp in DISPOSITIONS_REQUIRING_ACTION_EVIDENCE:
+            has_evidence = any(
+                finding.get(k, "").strip()
+                for k in ("roadmapRef", "workOrderRef", "f2gRef")
+            )
+            if not has_evidence:
+                violations.append(
+                    f"{fid}: disposition `{disp}` requires at least one of "
+                    f"`roadmapRef`, `workOrderRef`, or `f2gRef` — "
+                    f"findings with DEFER/BLOCKED dispositions must link to their follow-through artifact"
+                )
+
     # COMPLETE_VERIFIED gc047 must have a valid 64-hex SHA-256 manifestHash
     verdicts = entry.get("verdicts", {})
     if verdicts.get("gc047") == MANIFEST_HASH_REQUIRED_VERDICT:
@@ -198,6 +262,21 @@ def _validate_entry(entry: dict, idx: int) -> list[str]:
             violations.append(
                 f"{entry_id}: `manifestHash` must be a 64-character lowercase SHA-256 hex digest, "
                 f"not a path or description (got: `{manifest_hash[:40]}{'...' if len(manifest_hash) > 40 else ''}`)"
+            )
+
+    # Any non-null manifest hash must declare reproducibility metadata.
+    manifest_hash_value = entry.get("manifestHash")
+    if manifest_hash_value:
+        if entry.get("hashAlgorithm") != REQUIRED_HASH_ALGORITHM:
+            violations.append(
+                f"{entry_id}: non-null `manifestHash` requires "
+                f"`hashAlgorithm={REQUIRED_HASH_ALGORITHM}`"
+            )
+        hash_input = entry.get("hashInput")
+        if hash_input not in ALLOWED_HASH_INPUTS:
+            violations.append(
+                f"{entry_id}: non-null `manifestHash` requires `hashInput` "
+                f"to be one of {sorted(ALLOWED_HASH_INPUTS)}"
             )
 
     return violations

@@ -4,7 +4,7 @@
   "guard": "governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md",
   "checker": "governance/compat/check_corpus_scan_registry.py",
   "lastUpdated": "2026-06-02",
-  "updatedBy": "GC-051 F3/F5 fix — hash validation + algorithm standardization",
+  "updatedBy": "scan-learning bridge — defectClass + learningLane + f2gRef backfill",
   "allowedCorpusTypes": [
     "LEGACY_FOLDER",
     "PROJECT_SOURCE",
@@ -68,25 +68,37 @@
           "id": "F1-kgr1-partial",
           "summary": "KGR1 partial absorption confirmed — data model and builder patterns absorbed; full spec not implemented",
           "disposition": "ACCEPT_NO_ACTION",
-          "nextAction": "None — KGR1 delivery is correct bounded scope"
+          "nextAction": "None — KGR1 delivery is correct bounded scope",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE"
         },
         {
           "id": "F2-guard-spec-absent",
           "summary": "Guard spec G-GM-01 through G-GM-08 defined in CVF_GRAPH_MEMORY_GUARD_SPEC.md but absent from CVF TypeScript source",
           "disposition": "DEFER_WITH_ROADMAP",
-          "nextAction": "Open separate governed tranche for graph guard enforcement if operator requests"
+          "nextAction": "Open separate governed tranche for graph guard enforcement if operator requests",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_CI1_T2_GRAPHIFY_LEGACY_RESCAN_PILOT_COMPLETION_2026-06-02.md#finding-to-governance-learning-disposition",
+          "roadmapRef": "PENDING — graph guard enforcement roadmap not yet opened"
         },
         {
           "id": "F3-cli-commands-absent",
           "summary": "CLI commands cvf graph build/query/visualize/export/validate/status/purge absent from command.registry.ts",
           "disposition": "DEFER_PHASED",
-          "nextAction": "cvf graph query (routes into KGR1 evaluateRetrievalRequest) is highest value; separate work order required"
+          "nextAction": "cvf graph query (routes into KGR1 evaluateRetrievalRequest) is highest value; separate work order required",
+          "defectClass": "MACHINE_GATE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_CI1_T2_GRAPHIFY_LEGACY_RESCAN_PILOT_COMPLETION_2026-06-02.md#finding-to-governance-learning-disposition",
+          "workOrderRef": "PENDING — cvf graph query CLI work order not yet dispatched"
         },
         {
           "id": "F4-performance-claim-unverified",
           "summary": "71.5x token reduction claim is author-reported by external Graphify project; not verified by CVF",
           "disposition": "ACCEPT_WITH_BOUNDARY",
-          "nextAction": "Do not repeat in CVF documentation without live proof"
+          "nextAction": "Do not repeat in CVF documentation without live proof",
+          "defectClass": "UNVERIFIED_CLAIM",
+          "learningLane": "DOCUMENTATION_ONLY_LEARNING"
         }
       ],
       "negativeSearchTerms": [
@@ -131,7 +143,9 @@
           "id": "RESCAN-A-scope",
           "summary": "230 visible files, 229 authority assets READ at broad level — semantic detail deferred to per-family CI1 scans",
           "disposition": "ACCEPT_NO_ACTION",
-          "nextAction": "Each subfamily requires its own CI1 tranche for deep classification"
+          "nextAction": "Each subfamily requires its own CI1 tranche for deep classification",
+          "defectClass": "DOCUMENTATION_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE"
         }
       ],
       "negativeSearchTerms": [],
@@ -169,7 +183,10 @@
           "id": "RESCAN-C-code-review-graph",
           "summary": "CVF ADD/code-review-graph/ contains 5 graph spec files not yet deep-classified",
           "disposition": "DEFER_WITH_ROADMAP",
-          "nextAction": "CI1-T3 candidate — directly relevant to Graphify F2 guard spec gap"
+          "nextAction": "CI1-T3 candidate — directly relevant to Graphify F2 guard spec gap",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "roadmapRef": "CI1-T3 — CVF ADD/code-review-graph/ scan (not yet opened)"
         }
       ],
       "negativeSearchTerms": [],
@@ -304,7 +321,9 @@
           "id": "LHW18-integration-sdk",
           "summary": "Integration SDK adapters from CVF Edit not absorbed — doc-only wave; CVF does not build framework-specific adapters",
           "disposition": "DEFER_DEMAND_GATED",
-          "nextAction": "Frameworks connect INTO CVF; adapters are framework responsibility"
+          "nextAction": "Frameworks connect INTO CVF; adapters are framework responsibility",
+          "defectClass": "OPERATOR_SCOPE_CLARITY_GAP",
+          "learningLane": "DOCUMENTATION_ONLY_LEARNING"
         }
       ],
       "negativeSearchTerms": [],

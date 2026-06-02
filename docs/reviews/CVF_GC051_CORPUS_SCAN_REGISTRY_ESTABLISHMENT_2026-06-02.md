@@ -71,7 +71,7 @@ Batch 2 (F1–F5 fix):
 - governance/compat/check_corpus_scan_registry.py: hash format enforcement (F3) + docs/reviews coverage (F4)
 - docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json: hash standardization (F5)
 - docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md: hashAlgorithm + hashInput docs (F5)
-- AGENT_HANDOFF_V15_2026-05-29.md: HEAD → c57d9f6b (F1)
+- AGENT_HANDOFF_V15_2026-05-29.md: HEAD → 1add199b (F1 follow-up)
 
 Protected paths:
 

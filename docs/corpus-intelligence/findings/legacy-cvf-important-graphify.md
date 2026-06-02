@@ -44,9 +44,24 @@ Full evidence: `docs/audits/CVF_CI1_T2_GRAPHIFY_READINESS_PACKET_2026-06-02.md`
 
 ---
 
+## Learning Classification Summary
+
+| Finding | Scan disposition | defectClass | learningLane | Action evidence |
+| --- | --- | --- | --- | --- |
+| F1 — KGR1 partial | ACCEPT_NO_ACTION | RULE_GAP | GOVERNANCE_CONTROL_PLANE | None — correct bounded scope |
+| F2 — Guard spec absent | DEFER_WITH_ROADMAP | RULE_GAP | GOVERNANCE_CONTROL_PLANE | `f2gRef` → completion review; `roadmapRef` → graph guard tranche (pending) |
+| F3 — CLI commands absent | DEFER_PHASED | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | `f2gRef` → completion review; `workOrderRef` → cvf graph query WO (pending) |
+| F4 — Performance claim | ACCEPT_WITH_BOUNDARY | UNVERIFIED_CLAIM | DOCUMENTATION_ONLY_LEARNING | Boundary note in completion review; no roadmap |
+
+F2G classification source: `docs/reviews/CVF_CI1_T2_GRAPHIFY_LEGACY_RESCAN_PILOT_COMPLETION_2026-06-02.md#finding-to-governance-learning-disposition`
+
+Registry machine record: `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` → `legacy-cvf-important-graphify` → `findings[]`
+
+---
+
 ## F1 — KGR1 Partial Absorption Confirmed
 
-**Disposition:** ACCEPT_NO_ACTION
+**Disposition:** ACCEPT_NO_ACTION | **defectClass:** RULE_GAP | **learningLane:** GOVERNANCE_CONTROL_PLANE
 
 **What was found:** The Graphify data model (12 node types, 10 edge types,
 4 CVF record types) was partially absorbed by KGR1 into `knowledge-graph-builder.ts`
@@ -66,7 +81,7 @@ owner surface. Do not restart absorption from Graphify spec; extend KGR1.
 
 ## F2 — Guard Spec G-GM-01 through G-GM-08 Absent from CVF Runtime
 
-**Disposition:** DEFER_WITH_ROADMAP
+**Disposition:** DEFER_WITH_ROADMAP | **defectClass:** RULE_GAP | **learningLane:** GOVERNANCE_CONTROL_PLANE
 
 **What was found:** `CVF_GRAPH_MEMORY_GUARD_SPEC.md` defines 8 guard policies:
 
@@ -101,7 +116,7 @@ graph guards would extend.
 
 ## F3 — CLI `cvf graph` Commands Absent from Runtime
 
-**Disposition:** DEFER_PHASED
+**Disposition:** DEFER_PHASED | **defectClass:** MACHINE_GATE_GAP | **learningLane:** GOVERNANCE_CONTROL_PLANE
 
 **What was found:** `CVF_GRAPHIFY_CLI_COMMAND_SPEC.md` defines 8 CLI commands
 (`cvf graph build`, `update`, `query`, `visualize`, `export`, `validate`,
@@ -127,7 +142,7 @@ this finding. Backend (KGR1) is ready. Frontend (CLI command) is missing.
 
 ## F4 — 71.5x Token Reduction Claim Unverified
 
-**Disposition:** ACCEPT_WITH_BOUNDARY
+**Disposition:** ACCEPT_WITH_BOUNDARY | **defectClass:** UNVERIFIED_CLAIM | **learningLane:** DOCUMENTATION_ONLY_LEARNING
 
 **What was found:** `Thong_tin.md` (operator analysis file) cites 71.5x token
 reduction per query compared to raw file scanning. This is the Graphify author's

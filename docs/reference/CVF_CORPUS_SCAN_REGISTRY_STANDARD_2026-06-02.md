@@ -79,7 +79,7 @@ Every corpus entry in `CVF_CORPUS_SCAN_REGISTRY.json` must declare:
 | `scanDate` | date or null | Date of last scan (ISO 8601) |
 | `manifestHash` | string or null | SHA-256 hex digest (64 lowercase chars); null if not yet scanned. Must be a real 64-char hex string, not a path or description. |
 | `hashAlgorithm` | string or null | Must be `"sha256"` when `manifestHash` is non-null |
-| `hashInput` | string or null | Must be `"sorted-paths-newline-joined-with-trailing-newline"` — paths from `rg --files --hidden --no-ignore`, sorted, joined with `\n`, trailing `\n` appended, then SHA-256 |
+| `hashInput` | string or null | Must be one of: `"sorted-paths-newline-joined-with-trailing-newline"` for CI1-style folder manifests, or `"manifest-internal-hash-from-script-output"` for legacy aggregate manifests whose hash was emitted by the manifest builder script. |
 | `manifestPath` | string or null | Path to manifest JSON; null if not yet created |
 | `packetPath` | string or null | Path to CI1-style readiness packet or equivalent |
 | `completionReviewPath` | string or null | Path to completion review |
@@ -95,12 +95,65 @@ Every corpus entry in `CVF_CORPUS_SCAN_REGISTRY.json` must declare:
 
 Each `findings[]` entry must declare:
 
-| Field | Type | Description |
-| --- | --- | --- |
-| `id` | string | Unique finding ID within this corpus entry |
-| `summary` | string | One-sentence finding |
-| `disposition` | enum | One of the allowed finding dispositions |
-| `nextAction` | string | Concrete next step or "None" |
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | string | always | Unique finding ID within this corpus entry |
+| `summary` | string | always | One-sentence finding |
+| `disposition` | enum | always | One of the allowed finding dispositions |
+| `nextAction` | string | always | Concrete next step or "None" |
+| `defectClass` | enum | always | Finding-To-Governance defect class (see mapping table below) |
+| `learningLane` | enum | always | Learning lane for routing follow-up (see mapping table below) |
+| `f2gRef` | string or null | when disposition is DEFER_WITH_ROADMAP / DEFER_PHASED / BLOCKED_PENDING_DECISION | Path to the completion review's `## Finding-To-Governance Learning Disposition` section where this finding is classified |
+| `roadmapRef` | string or null | when DEFER_WITH_ROADMAP | Path or description of the roadmap that will address this finding |
+| `workOrderRef` | string or null | when DEFER_PHASED | Path or description of the work order that will address this finding |
+
+### Scan-To-Learning Disposition Mapping Table
+
+This table defines the canonical relationship between scan finding dispositions,
+Finding-To-Governance defect classes, and the resulting CVF action. Use this
+table to fill `defectClass`, `learningLane`, and the resulting action type.
+
+| Scan disposition | Typical defectClass | learningLane | Resulting CVF action |
+| --- | --- | --- | --- |
+| `ACCEPT_NO_ACTION` | `RULE_GAP` or `N/A` | `GOVERNANCE_CONTROL_PLANE` or `N/A` | Close finding; no follow-up |
+| `ACCEPT_WITH_BOUNDARY` | `UNVERIFIED_CLAIM` or `OPERATOR_SCOPE_CLARITY_GAP` | `DOCUMENTATION_ONLY_LEARNING` | Add boundary note to documentation; no roadmap |
+| `DEFER_WITH_ROADMAP` | `RULE_GAP` | `GOVERNANCE_CONTROL_PLANE` | Open GC-018 + roadmap; cite `roadmapRef` |
+| `DEFER_PHASED` | `MACHINE_GATE_GAP` or `RULE_GAP` | `GOVERNANCE_CONTROL_PLANE` | Open scoped work order when authorized; cite `workOrderRef` |
+| `DEFER_DEMAND_GATED` | `OPERATOR_SCOPE_CLARITY_GAP` | `DOCUMENTATION_ONLY_LEARNING` | Park as future demand; no roadmap until operator requests |
+| `REJECT` | `DOCUMENTATION_GAP` | `DOCUMENTATION_ONLY_LEARNING` | Record rejection reason; no follow-up |
+| `BLOCKED_PENDING_DECISION` | `OPERATOR_SCOPE_CLARITY_GAP` | `GOVERNANCE_CONTROL_PLANE` | Escalate to operator; cite `f2gRef` or `roadmapRef` |
+
+### Action Evidence Rule
+
+Findings with `DEFER_WITH_ROADMAP`, `DEFER_PHASED`, or `BLOCKED_PENDING_DECISION`
+dispositions **must** include at least one of:
+
+- `roadmapRef` — path or description of the roadmap that will address this finding
+- `workOrderRef` — path or description of the work order
+- `f2gRef` — path to the completion review's `## Finding-To-Governance Learning Disposition` section
+
+This ensures every deferred or blocked finding has a traceable follow-through path
+that another agent can discover and cite when opening related work.
+
+### f2gRef Format
+
+`f2gRef` links the registry finding back to its formal Finding-To-Governance
+classification in the scan's completion review:
+
+```text
+docs/reviews/<completion-review-filename>.md#finding-to-governance-learning-disposition
+```
+
+Example:
+
+```text
+docs/reviews/CVF_CI1_T2_GRAPHIFY_LEGACY_RESCAN_PILOT_COMPLETION_2026-06-02.md#finding-to-governance-learning-disposition
+```
+
+The completion review is the canonical location where `defectClass`, `learningLane`,
+and `disposition` are formally recorded per the Finding-To-Governance standard.
+The registry entry carries compact versions of these fields for machine-readable
+cross-referencing; the completion review is the authoritative source.
 
 ---
 
@@ -236,8 +289,11 @@ The checker verifies:
    registry entry.
 2. Any registry entry with `status: SCANNED_WITH_FINDINGS` has at least one
    `findings[]` entry with a non-empty `disposition`.
-3. Any `verdicts.gc047: COMPLETE_VERIFIED` entry has a non-null `manifestHash`.
-4. Required fields are present for all entries.
+3. Any `verdicts.gc047: COMPLETE_VERIFIED` entry has a non-null 64-character
+   lowercase SHA-256 `manifestHash`.
+4. Any non-null `manifestHash` entry declares `hashAlgorithm: sha256` and an
+   allowed `hashInput`.
+5. Required fields are present for all entries.
 
 ---
 
