@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `39769d96` (parent: `ae0bf9ae`). Session updated 2026-06-02 after bounded CI1-T4 reviewer closure and CI1-T5 GC-018 routing.
+Current HEAD recorded for this handoff: `e9f3983d` (parent: `39769d96`). Session updated 2026-06-02 for bounded CI1-T5 Classification Sampling Protocol dispatch.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -373,10 +373,16 @@ GC-047, GC-048, GC-050, GC-051, and GC-052.
 
 Artifact commit: `3725f962`; handoff-sync: `ae0bf9ae`.
 
-Next allowed move: open a fresh CI1-T5 GC-018 for the adversarial
-classification sampling protocol over the committed T4 model. LPCI runtime
-remains blocked until CI1-T5 sampling, CI1-T6 checker decision, and CI1-T7
-intake bridge close in sequence.
+`CI1-T5` Classification Sampling Protocol is `DISPATCH_READY`:
+
+`docs/baselines/CVF_GC018_CI1_T5_CLASSIFICATION_SAMPLING_PROTOCOL_2026-06-02.md`
+
+`docs/work_orders/CVF_WO_CI1_T5_CLASSIFICATION_SAMPLING_PROTOCOL_2026-06-02.md`
+
+Next allowed move: worker executes CI1-T5 and returns pending sampling JSON,
+protocol, GC-052 interlock update, and completion review artifacts without
+commit or push. LPCI runtime remains blocked until CI1-T5 sampling, CI1-T6
+checker decision, and CI1-T7 intake bridge close in sequence.
 `MKG2` Deferred Runtime Candidate Triage is `REVIEW_READY`: GC-018
 `docs/baselines/CVF_GC018_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_2026-06-01.md`,
 roadmap
@@ -482,8 +488,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ci1_t4_closed_pass_bounded_t5_ready_for_gc018`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=open a fresh CI1-T5 GC-018 for the Classification Sampling Protocol over the committed T4 model;
+Startup acknowledged: current mode=`ci1_t5_classification_sampling_protocol_dispatch_ready`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=execute CI1-T5 Classification Sampling Protocol and return pending artifacts without commit or push;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary
