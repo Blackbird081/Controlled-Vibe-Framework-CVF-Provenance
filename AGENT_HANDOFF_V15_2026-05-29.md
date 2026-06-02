@@ -365,10 +365,18 @@ Manifest hash:
 `docs/reviews/CVF_CI1_T3_GRAPH_GOVERNANCE_CORPUS_DEEP_SCAN_COMPLETION_2026-06-02.md`
 
 Result: seven `CVF ADD/code-review-graph/` files deep-read and routed through
-GC-047, GC-048, GC-050, GC-051, and GC-052. Next allowed move: open CI1-T4
-GC-018 for the Cross-Corpus Index Model across the CI1-T2 Graphify packet and
-CI1-T3 code-review-graph packet. LPCI runtime remains blocked until CI1-T4,
-CI1-T5 sampling, CI1-T6 checker decision, and CI1-T7 intake bridge.
+GC-047, GC-048, GC-050, GC-051, and GC-052.
+
+`CI1-T4` Cross-Corpus Index Model is `DISPATCH_READY`:
+
+`docs/baselines/CVF_GC018_CI1_T4_CROSS_CORPUS_INDEX_MODEL_2026-06-02.md`
+
+`docs/work_orders/CVF_WO_CI1_T4_CROSS_CORPUS_INDEX_MODEL_2026-06-02.md`
+
+Next allowed move: worker executes CI1-T4 and returns pending JSON, reference
+spec, GC-052 interlock update, and completion review artifacts without commit
+or push. LPCI runtime remains blocked until CI1-T4 closure, CI1-T5 sampling,
+CI1-T6 checker decision, and CI1-T7 intake bridge.
 `MKG2` Deferred Runtime Candidate Triage is `REVIEW_READY`: GC-018
 `docs/baselines/CVF_GC018_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_2026-06-01.md`,
 roadmap
@@ -474,8 +482,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ci1_t3_closed_pass_bounded_t4_ready`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=open CI1-T4 GC-018 for the Cross-Corpus Index Model before LPCI runtime work;
+Startup acknowledged: current mode=`ci1_t4_cross_corpus_index_model_dispatch_ready`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=execute CI1-T4 Cross-Corpus Index Model work order and return pending artifacts without commit or push;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary

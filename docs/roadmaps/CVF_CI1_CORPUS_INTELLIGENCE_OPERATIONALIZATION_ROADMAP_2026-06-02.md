@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: T1_COMPLETE_T2_REVIEWED_T3_CLOSED_PASS_BOUNDED_T4_READY
+Status: T1_COMPLETE_T2_REVIEWED_T3_CLOSED_PASS_BOUNDED_T4_DISPATCH_READY
 
 docType: roadmap
 
@@ -89,7 +89,7 @@ Out of scope:
 | CI1-T1 | Readiness Packet Template | canonical packet template, dispatch checklist, work order | CLOSED_PASS_BOUNDED |
 | CI1-T2 | Legacy Rescan Pilot — Graphify | apply CI1-T1 packet to `.private_reference/legacy/CVF_Important/Knowledge Base_Graphify/` (5 files) | COMPLETE_PENDING_REVIEW |
 | CI1-T3 | Legacy Rescan Pilot 2 - Graph Governance | apply CI1 workflow to `.private_reference/legacy/CVF ADD/code-review-graph/` (7 files) and route findings through GC-051/GC-052 | CLOSED_PASS_BOUNDED |
-| CI1-T4 | Cross-Corpus Index Model | normalize search/filter facets across at least two real CI1 scan packets | READY_FOR_GC018 |
+| CI1-T4 | Cross-Corpus Index Model | normalize search/filter facets across at least two real CI1 scan packets | DISPATCH_READY |
 | CI1-T5 | Classification Sampling Protocol | adversarial sampling protocol for accepted/deferred/rejected/zero-result rows | PROPOSED |
 | CI1-T6 | Checker Decision | decide whether search/filter readiness needs a structural machine checker | PROPOSED |
 | CI1-T7 | LPCI Intake Bridge | map generic CI workflow into LPCI-T1 product intake | PROPOSED_AFTER_T4 |
@@ -109,6 +109,8 @@ Out of scope:
 | C1.8 | Dispatch CI1-T3 work order | `docs/work_orders/CVF_WO_CI1_T3_GRAPH_GOVERNANCE_CORPUS_DEEP_SCAN_2026-06-02.md` | DONE |
 | C1.9 | Worker executes CI1-T3 — fills packet, finding packet, registry, completion review | readiness packet + review + GC-051 entry | CLOSED_PASS_BOUNDED |
 | C1.10 | Reviewer commits CI1-T3 and runs committed-range closure | `7c068eeb` + handoff-sync `b0d0249c` | DONE |
+| C1.11 | Open CI1-T4 GC-018 | `docs/baselines/CVF_GC018_CI1_T4_CROSS_CORPUS_INDEX_MODEL_2026-06-02.md` | DONE |
+| C1.12 | Dispatch CI1-T4 work order | `docs/work_orders/CVF_WO_CI1_T4_CROSS_CORPUS_INDEX_MODEL_2026-06-02.md` | DISPATCH_READY |
 
 ## CI1-T1 Expected Packet Shape
 
