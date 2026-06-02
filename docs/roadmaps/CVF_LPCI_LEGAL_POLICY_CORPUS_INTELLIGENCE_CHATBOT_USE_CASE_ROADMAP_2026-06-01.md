@@ -54,9 +54,13 @@ knowledge can be traced, searched, and bounded:
 | GC-049 Core Guard Self-Protection | prevent agents from modifying guard/core surfaces outside explicit scope | ACTIVE |
 | GC-050 Corpus Intelligence Classification | require ledger/evidence/disposition/answer-boundary discipline before chatbot or retrieval claims | ACTIVE |
 | Corpus Search/Filter Readiness | provide generic CVF search/filter evidence before retrieval, chatbot, legacy scan, or project-intelligence claims | ACTIVE STANDARD |
-| Memory Plane | retain bounded advisory/readout context without raw reinjection | IN_PROGRESS |
-| MKE | enforce live memory governance behavior before stronger claims | IN_PROGRESS |
-| KGR | retrieve knowledge graph signals with cited source boundaries | IN_PROGRESS |
+| Memory Plane | retain bounded advisory/readout context without raw reinjection | CLOSED_PASS_BOUNDED |
+| MKE | enforce live memory governance behavior before stronger claims | CLOSED_PASS_BOUNDED |
+| KGR | retrieve knowledge graph signals with cited source boundaries | CLOSED_PASS_BOUNDED |
+| CI1-T4 Cross-Corpus Index Model | normalize corpus facets into a typed downstream input | DISPATCH_READY |
+| CI1-T5 Classification Sampling | sample accepted/deferred/rejected/zero-result rows on the T4 model | HOLD_UNTIL_T4_CLOSED |
+| CI1-T6 Checker Decision | decide whether sampling findings require a structural checker | HOLD_UNTIL_T5_CLOSED |
+| CI1-T7 LPCI Intake Bridge | map the CI1 chain into LPCI-T1 product intake | HOLD_UNTIL_T6_DECIDED |
 
 ## Scope / Target / Owner Boundary
 
@@ -113,7 +117,7 @@ company corpora, source-code documentation, knowledge bases, and product
 corpora. LPCI is one downstream product that consumes it.
 
 Before CVF scans legacy again, and before LPCI answers user questions, the
-generic search/filter layer should make blind spots visible before a worker
+generic search/filter layer must make blind spots visible before a worker
 writes a polished report.
 
 | Layer | Needed improvement | Why it matters |
@@ -204,10 +208,21 @@ authority. The acceptable answer modes are:
 ## Future Work Orders
 
 The first implementation work order should be LPCI-T1 only. It should build the
-corpus discovery and manifest layer without chatbot UI. The second work order
-should add classification. Search, retrieval, and chatbot behavior should not be
-implemented until the source and classification layers can prove what they
-covered and what they left unresolved.
+corpus discovery and manifest layer without chatbot UI.
+
+LPCI dispatch lock:
+
+- LPCI-T1 may dispatch only after CI1-T7 closes.
+- LPCI-T2 may dispatch only after LPCI-T1 closes.
+- LPCI-T3 may dispatch only after LPCI-T2 closes.
+- LPCI-T4 may dispatch only after LPCI-T3 closes.
+- LPCI-T5 may dispatch only after LPCI-T4 closes.
+- LPCI-T6 may dispatch only after LPCI-T5 closes.
+- LPCI-T7 may dispatch only after LPCI-T6 closes.
+
+Search, retrieval, and chatbot behavior should not be implemented until the
+source and classification layers can prove what they covered and what they left
+unresolved.
 
 ## Acceptance Criteria
 
@@ -239,6 +254,14 @@ Future LPCI implementation must provide:
 - adversarial sampling review;
 - live/provider proof only if the implementation claims LLM-governed behavior
   rather than static/local retrieval structure.
+
+## Public Export Disposition
+
+DEFERRED_PRIVATE_ONLY
+
+Reason: this roadmap records a private product direction and dependency chain.
+No public-sync remote, public repository commit, public artifact path, hosted
+proof, or public README claim is included.
 
 ## Claim Boundary
 
