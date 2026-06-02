@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `1ba8a421` (parent: `0ad3db1f`). Session updated 2026-06-02 for bounded CI1-T7 LPCI Intake Bridge closure; CI1 chain fully closed (T1-T7 all CLOSED_PASS_BOUNDED); LPCI product roadmap proposal now READY for operator.
+Current HEAD recorded for this handoff: `879dbd7b` (parent: `8e7d1770`). Session updated 2026-06-02: CI1 chain fully closed (T1-T7 all CLOSED_PASS_BOUNDED); CSA1 NR-05/NR-11 Corpus Standard Authoring dispatched (DISPATCH_READY, WORKER_MAY_COMMIT).
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -508,8 +508,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ci1_chain_closed_lpci_roadmap_ready`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=operator may propose LPCI product roadmap (separate GC-018) per the CI1-T7 intake bridge contract, or pick WSR1 commit / NR-04/NR-05/NR-11 standard authoring / new corpus scan; LPCI runtime stays blocked until a separate governed roadmap is authorized;
+Startup acknowledged: current mode=`csa1_corpus_standard_authoring_dispatch_ready`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=author the NR-05 CVF Corpus Path Normalization Algorithm standard and the NR-11 canonical disposition merge rule (ACCEPT_DEFERRED + rawDisposition) per the CSA1 work order (WORKER_MAY_COMMIT), then close CSA1; LPCI runtime stays blocked until a separate governed product roadmap is authorized;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary

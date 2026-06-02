@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-02
 
-Current mode marker: `ci1_chain_closed_lpci_roadmap_ready`
+Current mode marker: `csa1_corpus_standard_authoring_dispatch_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `ci1_chain_closed_lpci_roadmap_ready`.
+Current mode: `csa1_corpus_standard_authoring_dispatch_ready`.
 
 Active handoff:
 
@@ -439,14 +439,23 @@ The CI1 corpus-intelligence chain is fully closed: T1-T7 all
 `CLOSED_PASS_BOUNDED`. CI1 roadmap final status
 `ALL_TRANCHES_CLOSED_PASS_BOUNDED_LPCI_ROADMAP_READY`.
 
-Next allowed move: operator may propose an LPCI product roadmap with its own
-GC-018 baseline per the intake bridge contract
-(`docs/reference/CVF_CI1_T7_LPCI_INTAKE_BRIDGE_2026-06-02.md`). LPCI-T1 GC-018
-must acknowledge the NR-04/NR-05/NR-11 deferred gap obligations and satisfy the
-blocked-scope catalog. LPCI chatbot/runtime implementation remains blocked
-until that separate governed roadmap is authorized. Alternative operator
-options: WSR1 operator commit (`PUBLICATION_READY_PENDING_OPERATOR_COMMIT`),
-NR-04/NR-05/NR-11 standard authoring, or new corpus scans.
+CSA1 Corpus Standard Authoring (NR-05/NR-11) is `DISPATCH_READY`:
+
+`docs/baselines/CVF_GC018_CSA1_CORPUS_STANDARD_AUTHORING_2026-06-02.md`
+
+`docs/work_orders/CVF_WO_CSA1_CORPUS_STANDARD_AUTHORING_2026-06-02.md`
+
+Next allowed move: author the NR-05 CVF Corpus Path Normalization Algorithm
+standard (new file) and the NR-11 canonical disposition merge rule
+(`ACCEPT_DEFERRED` + `rawDisposition`) as a section in the existing
+classification standard, per the CSA1 work order (`WORKER_MAY_COMMIT`), then
+close CSA1. Doc-only R1; NR-05/NR-11 checker stubs remain deferred to a
+separate checker-implementation roadmap. After CSA1: operator may propose an
+LPCI product roadmap (separate GC-018) per the CI1-T7 intake bridge, author the
+NR-04 hash standard, implement deferred checkers, run new corpus scans, or
+commit WSR1 (`PUBLICATION_READY_PENDING_OPERATOR_COMMIT`). LPCI chatbot/runtime
+implementation remains blocked until a separate governed product roadmap is
+authorized.
 
 Parked checkpoints:
 
