@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -135,11 +135,11 @@ Reviewer must verify before final closure:
 
 ## Closure Checklist
 
-- [ ] NR-05 path normalization standard created
-- [ ] NR-11 disposition merge rule section added
-- [ ] Both standards cite CI1-T6 checker stubs
-- [ ] Completion review created
-- [ ] Pre-closure gates PASS over committed range
+- [x] NR-05 path normalization standard created
+- [x] NR-11 disposition merge rule section added
+- [x] Both standards cite CI1-T6 checker stubs
+- [x] Completion review created
+- [x] Pre-closure gates PASS over committed range
 
 ## Return-To-Orchestrator Conditions
 

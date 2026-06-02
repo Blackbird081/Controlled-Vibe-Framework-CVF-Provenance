@@ -171,6 +171,60 @@ answer claim. Any row classified from shallow reading must use
 `SUMMARY_WITH_SOURCE`, `PROCEDURAL_GUIDANCE`, or `ESCALATE_OR_ABSTAIN`, not
 `DIRECT_CITED_ANSWER`.
 
+## Canonical Disposition Merge Rule (NR-11)
+
+Added under CSA1 (`docs/baselines/CVF_GC018_CSA1_CORPUS_STANDARD_AUTHORING_2026-06-02.md`)
+as the written precursor that CI1-T6 marked `STANDARD_REQUIRED_FIRST` for the
+deferred NR-11 checker spec stub.
+
+Gap origin: T2-style packets use `DEFER` and T3-style packets use
+`ACCEPT_SUMMARY_ONLY` for the same semantic state — bounded acceptance of a
+source with deferred implementation. Cross-packet disposition queries (e.g.
+LPCI classification routing across two or more corpora) would return
+inconsistent results because the two values do not compare equal.
+
+Canonical merge value:
+
+- `DEFER` (T2 style) and `ACCEPT_SUMMARY_ONLY` (T3 style), when both mean
+  *bounded acceptance with deferred implementation*, both resolve to the
+  canonical cross-packet value `ACCEPT_DEFERRED`.
+- `ACCEPT_DEFERRED` is a derived cross-packet query value only. It is not a new
+  per-row authoring disposition; packet authors continue to record one of the
+  existing `Dispositions` vocabulary values in the row.
+
+Raw preservation:
+
+- The original per-row value is preserved as `rawDisposition`. A query layer
+  that needs the canonical comparison reads `ACCEPT_DEFERRED`; an audit that
+  needs the source-of-truth packet value reads `rawDisposition`.
+
+Application rule:
+
+- When a packet row uses `DEFER` or `ACCEPT_SUMMARY_ONLY` to express bounded
+  acceptance with deferred implementation, the author may add a
+  `dispositionAlias: ACCEPT_DEFERRED` annotation so cross-packet consumers do
+  not have to re-derive the merge.
+- `REJECT`, `BLOCKED_SOURCE_NOT_FOUND`, and `BLOCKED_UNREADABLE` never merge to
+  `ACCEPT_DEFERRED`; they are not bounded-acceptance states.
+- A plain `ACCEPT` (full acceptance, no deferral) is distinct from
+  `ACCEPT_DEFERRED` and is not merged.
+
+Checker readiness note:
+
+- This rule is the precondition for the deferred NR-11 checker spec stub
+  `check_corpus_packet_disposition_canonical` recorded in
+  `docs/reference/CVF_CI1_T6_CHECKER_DECISION_2026-06-02.md` (Stub 3). A future
+  checker — authorized only by a separate checker-implementation roadmap — can
+  validate that any row using `DEFER` for a deferred-implementation state
+  carries a `dispositionAlias` pointing to `ACCEPT_DEFERRED`.
+- This standard does not implement that checker and does not authorize its
+  implementation.
+
+Sibling precursor: NR-05 path normalization
+(`docs/reference/CVF_CORPUS_PATH_NORMALIZATION_ALGORITHM_STANDARD_2026-06-02.md`)
+makes the cross-packet file-identity key deterministic; this NR-11 rule makes
+the disposition value comparable. The two are authored together under CSA1.
+
 ## Enforcement / Verification
 
 ```powershell
