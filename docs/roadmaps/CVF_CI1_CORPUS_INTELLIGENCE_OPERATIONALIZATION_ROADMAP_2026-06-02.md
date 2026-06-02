@@ -1,0 +1,167 @@
+# CVF CI1 Corpus Intelligence Operationalization Roadmap
+
+Memory class: FULL_RECORD
+
+Status: PROPOSED_T1_READY
+
+docType: roadmap
+
+Date: 2026-06-02
+
+GC-018: `docs/baselines/CVF_GC018_CI1_CORPUS_INTELLIGENCE_OPERATIONALIZATION_2026-06-02.md`
+
+## Purpose
+
+Turn CVF corpus intelligence from a set of standards and guards into an
+operational workflow that future agents can execute across arbitrary corpora.
+
+CI1 is the bridge between the now-closed Memory plane and the next practical
+corpus work: legacy deep rescans, user project corpora, source-doc search,
+company policy corpora, and the LPCI legal/policy chatbot product.
+
+## Authorization / Decision
+
+Authority:
+
+- operator direction on 2026-06-02 to continue Corpus Intelligence after Memory
+  plane closure;
+- `docs/baselines/CVF_GC018_CI1_CORPUS_INTELLIGENCE_OPERATIONALIZATION_2026-06-02.md`;
+- `docs/reference/CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md`;
+- `docs/reference/CVF_CORPUS_INTELLIGENCE_CLASSIFICATION_STANDARD_2026-06-01.md`;
+- active GC-047, GC-048, GC-049, and GC-050 guard chain.
+
+Decision: begin with CI1-T1, a readiness packet template and dispatch workflow.
+Do not start another broad legacy scan until this operating packet exists.
+
+## Scope / Target / Owner Boundary
+
+Target:
+
+- a repeatable CVF workflow for corpus discovery, search/filter readiness,
+  knowledge-map reconciliation, intelligence classification, and adversarial
+  sampling.
+
+CVF owns:
+
+- standards, packet templates, dispatch rules, guard wiring, evidence blocks,
+  and closure criteria.
+
+Corpus owners own:
+
+- source corpus truth, domain judgment, semantic correctness review, and
+  authority/currentness decisions.
+
+Out of scope:
+
+- broad legacy rescan execution;
+- vector database or retrieval runtime implementation;
+- LPCI product implementation;
+- public-sync;
+- production readiness or legal advice claims.
+
+## Non-Goals
+
+- do not reopen Memory plane implementation;
+- do not scan `.private_reference/legacy/` in CI1-T1;
+- do not create a vector database, embedding pipeline, or runtime retrieval
+  route;
+- do not implement the LPCI legal/policy chatbot product in this roadmap;
+- do not claim semantic correctness from machine gates;
+- do not change public-sync or public README surfaces;
+- do not claim production, hosted, or public readiness.
+
+## Current State
+
+| Layer | Artifact | Status |
+| --- | --- | --- |
+| Source corpus completeness | GC-047 standard and checker | ACTIVE |
+| Knowledge-map reconciliation | GC-048 standard and checker | ACTIVE |
+| Core guard self-protection | GC-049 guard and checker | ACTIVE |
+| Intelligence classification | GC-050 standard, guard, and checker | ACTIVE |
+| Search/filter readiness | `CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md` | ACTIVE STANDARD |
+| Memory/KGR/MKE substrate | MKG7, KGR1, MKE1 | CLOSED_PASS_BOUNDED |
+| LPCI product target | LPCI roadmap | PROPOSED PRODUCT ROADMAP |
+
+## Tranche Plan
+
+| Tranche | Goal | Primary outputs | Status |
+| --- | --- | --- | --- |
+| CI1-T1 | Readiness Packet Template | canonical packet template, dispatch checklist, work order | READY_FOR_DISPATCH |
+| CI1-T2 | Legacy Rescan Pilot | apply packet to one bounded legacy family, preferably Graphify or another operator-selected folder | PROPOSED_AFTER_T1 |
+| CI1-T3 | Cross-Corpus Index Model | normalize search/filter facets across legacy, project docs, policy docs, and source docs | PROPOSED |
+| CI1-T4 | Classification Sampling Protocol | adversarial sampling protocol for accepted/deferred/rejected/zero-result rows | PROPOSED |
+| CI1-T5 | Checker Decision | decide whether search/filter readiness needs a structural machine checker | PROPOSED |
+| CI1-T6 | LPCI Intake Bridge | map generic CI workflow into LPCI-T1 product intake | PROPOSED_AFTER_T2 |
+
+## Work Plan
+
+| Step | Requirement | Output | Status |
+| --- | --- | --- | --- |
+| C1.0 | Open CI1 GC-018 | baseline | DONE |
+| C1.1 | Dispatch CI1-T1 | work order | READY |
+| C1.2 | Create packet template | reference template | PROPOSED |
+| C1.3 | Define legacy rescan pilot acceptance | T2 candidate note | PROPOSED |
+| C1.4 | Run governance gates | gate evidence | PROPOSED |
+| C1.5 | Review T1 and select T2 pilot corpus | completion review | PROPOSED |
+
+## CI1-T1 Expected Packet Shape
+
+CI1-T1 must create a reusable packet template containing:
+
+- source corpus boundary;
+- filesystem discovery index;
+- GC-047 corpus completeness block;
+- GC-048 knowledge-map reconciliation block;
+- corpus search/filter readiness block;
+- GC-050 corpus intelligence classification block;
+- negative search evidence table;
+- derived trace table;
+- query receipt model;
+- adversarial sampling plan;
+- acceptance/defer/reject disposition matrix;
+- claim/final/verification boundary.
+
+## Acceptance Criteria
+
+- CI1-T1 produces a template that future workers can fill without inventing
+  section names.
+- The template names required commands and evidence for GC-047, GC-048, and
+  GC-050.
+- The template requires negative search evidence before any "not found" claim.
+- The template separates generic search/filter fields from domain extensions.
+- The template states that semantic correctness remains review/adversarial
+  sampling, not machine-gate proof.
+- No CI1 artifact claims legacy scan completion, LPCI implementation,
+  production readiness, or public readiness.
+
+## Verification / Evidence
+
+CI1-T1 must run:
+
+```powershell
+python governance/compat/check_markdown_structural_completeness.py --base <baseHead> --head HEAD --enforce
+python governance/compat/check_work_order_dispatch_quality.py --base <baseHead> --head HEAD --enforce
+python governance/compat/check_corpus_intelligence_classification.py --base <baseHead> --head HEAD --enforce
+python governance/compat/check_core_guard_self_protection.py --enforce
+```
+
+If a future T2 pilot reads an actual corpus, it must also run:
+
+```powershell
+python governance/compat/check_corpus_completeness_report_integrity.py --base <baseHead> --head HEAD --enforce
+python governance/compat/check_corpus_to_knowledge_map_reconciliation.py --base <baseHead> --head HEAD --enforce
+```
+
+## Public Export Disposition
+
+DEFERRED_PRIVATE_ONLY
+
+Reason: CI1 is private governance and corpus-intelligence operating workflow
+work. No public-sync remote, public repository commit, public artifact path,
+hosted proof, or public README claim is included.
+
+## Claim Boundary
+
+CI1 creates the operating discipline for future corpus intelligence work. It
+does not perform a new legacy rescan, certify semantic correctness, build a
+runtime retrieval index, implement LPCI, or claim production/public readiness.
