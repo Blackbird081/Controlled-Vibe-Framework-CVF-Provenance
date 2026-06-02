@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "1.0.0",
+  "standard": "docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_STANDARD_2026-06-02.md",
+  "checker": "governance/compat/check_system_loop_interlock.py",
+  "lastUpdated": "2026-06-02",
+  "connections": [
+    {
+      "id": "scan-loop-to-learning-loop",
+      "status": "ACTIVE",
+      "upstreamLoop": "SCAN_LOOP_GC051",
+      "upstreamPlane": "CORPUS_INTELLIGENCE",
+      "outputArtifact": "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json",
+      "outputSignal": "corpora[].findings[] with disposition, defectClass, learningLane, f2gRef/roadmapRef/workOrderRef action evidence",
+      "signalContract": "docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md",
+      "downstreamLoop": "LEARNING_LOOP_F2G",
+      "downstreamPlane": "LEARNING_PLANE",
+      "inputArtifact": "docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD_2026-05-29.md",
+      "routingRule": "Every scan finding must carry F2G-compatible defectClass and learningLane; deferred or blocked scan findings must cite a real f2gRef, roadmapRef, or workOrderRef artifact.",
+      "evidenceRefs": [
+        "governance/compat/check_corpus_scan_registry.py",
+        "governance/compat/check_finding_to_governance_learning.py",
+        "docs/corpus-intelligence/findings/legacy-cvf-important-graphify.md",
+        "docs/reviews/CVF_CI1_T2_GRAPHIFY_LEGACY_RESCAN_PILOT_COMPLETION_2026-06-02.md",
+        "docs/roadmaps/CVF_GRAPHIFY_GUARD_ENFORCEMENT_ROADMAP_2026-06-02.md",
+        "docs/roadmaps/CVF_GRAPH_CLI_PHASED_BACKLOG_ROADMAP_2026-06-02.md"
+      ],
+      "automationLevel": "MACHINE_CHECKED",
+      "claimBoundary": "This connection proves scan-finding traceability into F2G-compatible learning disposition; it does not prove semantic correctness, automatic roadmap creation, autonomous mutation, or runtime behavior change."
+    }
+  ]
+}
+

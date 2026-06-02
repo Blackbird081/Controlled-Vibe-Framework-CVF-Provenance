@@ -709,6 +709,39 @@ in the work order — do not rediscover it as a new gap.
 Checker: `governance/compat/check_corpus_scan_registry.py` — wired into
 autorun gate and pre-commit hook chain.
 
+## Mandatory System Loop Interlock - 2026-06-02
+
+Canonical standard:
+
+`docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_STANDARD_2026-06-02.md`
+
+Canonical registry:
+
+`docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json`
+
+Machine guard:
+
+`governance/compat/check_system_loop_interlock.py`
+
+CVF planes and loops must not close as system-connected merely because their
+artifacts exist. A governed loop output must become a declared downstream loop
+input through the interlock registry.
+
+Any future work that claims one loop feeds another loop, one plane consumes
+another plane's output, or a scan/finding/runtime/public-sync signal has been
+routed into another CVF surface must ensure the registry contains a connection
+with upstream loop, output artifact, signal contract, downstream loop, input
+artifact, routing rule, evidence refs, automation level, and claim boundary.
+
+The first active interlock is `scan-loop-to-learning-loop`: GC-051 scan findings
+feed Finding-To-Governance / Learning Signal Intake through F2G-compatible
+`defectClass`, `learningLane`, and real action evidence. This proves
+traceability, not semantic correctness, autonomous roadmap creation, runtime
+mutation, or production readiness.
+
+Autorun and local hook chains must run the interlock checker. A missing or
+broken active interlock blocks system-connected closure claims.
+
 ## Latest Closed Continuation Roadmap
 
 The latest closed continuation roadmap is `docs/roadmaps/CVF_W132_T1_PROVIDER_RUNTIME_STABILITY_AND_BROWSER_SESSION_HARDENING_ROADMAP_2026-04-30.md`.

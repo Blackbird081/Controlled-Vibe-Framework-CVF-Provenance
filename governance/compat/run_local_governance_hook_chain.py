@@ -94,6 +94,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
             ["python", "governance/compat/check_corpus_scan_registry.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
+            "system loop interlock",
+            ["python", "governance/compat/check_system_loop_interlock.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
             "governed pack contract compatibility",
             ["python", "governance/compat/check_governed_pack_contract.py", "--enforce"],
         ),
@@ -158,6 +162,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         (
             "corpus intelligence classification",
             ["python", "governance/compat/check_corpus_intelligence_classification.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "system loop interlock",
+            ["python", "governance/compat/check_system_loop_interlock.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
             "cpf public surface maintainability",

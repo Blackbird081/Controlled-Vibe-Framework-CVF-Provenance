@@ -113,6 +113,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             base,
             head,
         ),
+        _range_command(
+            "system loop interlock",
+            "governance/compat/check_system_loop_interlock.py",
+            base,
+            head,
+        ),
     GateCommand(
         "active session state compatibility",
         ("python", "governance/compat/check_active_session_state.py", "--enforce"),
