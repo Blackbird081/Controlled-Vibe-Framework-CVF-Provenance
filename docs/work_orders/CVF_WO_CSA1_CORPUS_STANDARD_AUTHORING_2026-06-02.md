@@ -12,7 +12,7 @@ dispatchBaseHead: `8e7d1770`
 
 executionBaseHead: `8e7d1770`
 
-closureBaseHead: TBD — set by the committing session after gate PASS.
+closureBaseHead: `03579832`
 
 ## Purpose
 
@@ -190,10 +190,10 @@ Worker must escalate to the operator for:
 
 Commit mode: WORKER_MAY_COMMIT
 
-The dispatching session may author the two standards and commit them as a
+The dispatching session authored the two standards and committed them as a
 single governed batch (R1 documentation-only, no protected/checker/runtime
-scope), then perform a dedicated session-sync commit. closureBaseHead is set
-after the committed-range pre-closure gate PASS.
+scope) at `03579832`, then performed dedicated session-sync commits
+`c314d8ae` and `4cd402f5` after committed-range pre-closure gate PASS.
 
 ## Claim Boundary
 

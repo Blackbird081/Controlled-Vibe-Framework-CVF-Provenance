@@ -66,7 +66,7 @@ implementations remain deferred to separate roadmaps; none block CSA1 closure.
 ## Execution Summary
 
 - `executionBaseHead`: `8e7d1770`
-- Worker handoff commit: TBD (set in closure commit)
+- Closure commit: `03579832`; session-sync commits: `c314d8ae`, `4cd402f5`
 - Commit mode: WORKER_MAY_COMMIT
 - The dispatching session authored and committed the standards as a single
   governed batch, then ran a dedicated session-continuity sync.
