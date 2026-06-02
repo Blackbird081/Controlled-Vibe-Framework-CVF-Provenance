@@ -4,7 +4,7 @@
   "guard": "governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md",
   "checker": "governance/compat/check_corpus_scan_registry.py",
   "lastUpdated": "2026-06-02",
-  "updatedBy": "scan-learning bridge — defectClass + learningLane + f2gRef backfill",
+  "updatedBy": "scan-learning bridge — Graphify F1-F4 closure normalization + parking roadmaps",
   "allowedCorpusTypes": [
     "LEGACY_FOLDER",
     "PROJECT_SOURCE",
@@ -69,28 +69,28 @@
           "summary": "KGR1 partial absorption confirmed — data model and builder patterns absorbed; full spec not implemented",
           "disposition": "ACCEPT_NO_ACTION",
           "nextAction": "None — KGR1 delivery is correct bounded scope",
-          "defectClass": "RULE_GAP",
-          "learningLane": "GOVERNANCE_CONTROL_PLANE"
+          "defectClass": "N/A",
+          "learningLane": "N/A"
         },
         {
           "id": "F2-guard-spec-absent",
           "summary": "Guard spec G-GM-01 through G-GM-08 defined in CVF_GRAPH_MEMORY_GUARD_SPEC.md but absent from CVF TypeScript source",
           "disposition": "DEFER_WITH_ROADMAP",
-          "nextAction": "Open separate governed tranche for graph guard enforcement if operator requests",
+          "nextAction": "Use the post-CI1 graph guard enforcement parking roadmap before opening any implementation GC/work order",
           "defectClass": "RULE_GAP",
           "learningLane": "GOVERNANCE_CONTROL_PLANE",
           "f2gRef": "docs/reviews/CVF_CI1_T2_GRAPHIFY_LEGACY_RESCAN_PILOT_COMPLETION_2026-06-02.md#finding-to-governance-learning-disposition",
-          "roadmapRef": "PENDING — graph guard enforcement roadmap not yet opened"
+          "roadmapRef": "docs/roadmaps/CVF_GRAPHIFY_GUARD_ENFORCEMENT_ROADMAP_2026-06-02.md"
         },
         {
           "id": "F3-cli-commands-absent",
           "summary": "CLI commands cvf graph build/query/visualize/export/validate/status/purge absent from command.registry.ts",
           "disposition": "DEFER_PHASED",
-          "nextAction": "cvf graph query (routes into KGR1 evaluateRetrievalRequest) is highest value; separate work order required",
+          "nextAction": "Use the post-CI1 Graph CLI phased backlog before opening any cvf graph query work order",
           "defectClass": "MACHINE_GATE_GAP",
           "learningLane": "GOVERNANCE_CONTROL_PLANE",
           "f2gRef": "docs/reviews/CVF_CI1_T2_GRAPHIFY_LEGACY_RESCAN_PILOT_COMPLETION_2026-06-02.md#finding-to-governance-learning-disposition",
-          "workOrderRef": "PENDING — cvf graph query CLI work order not yet dispatched"
+          "workOrderRef": "docs/roadmaps/CVF_GRAPH_CLI_PHASED_BACKLOG_ROADMAP_2026-06-02.md#phase-1-cvf-graph-query"
         },
         {
           "id": "F4-performance-claim-unverified",
@@ -186,7 +186,7 @@
           "nextAction": "CI1-T3 candidate — directly relevant to Graphify F2 guard spec gap",
           "defectClass": "RULE_GAP",
           "learningLane": "GOVERNANCE_CONTROL_PLANE",
-          "roadmapRef": "CI1-T3 — CVF ADD/code-review-graph/ scan (not yet opened)"
+          "roadmapRef": "docs/roadmaps/CVF_CI1_CORPUS_INTELLIGENCE_OPERATIONALIZATION_ROADMAP_2026-06-02.md#ci1-t3"
         }
       ],
       "negativeSearchTerms": [],

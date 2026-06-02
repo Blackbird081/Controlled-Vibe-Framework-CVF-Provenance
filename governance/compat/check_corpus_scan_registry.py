@@ -120,6 +120,10 @@ ALLOWED_HASH_INPUTS = {
     "sorted-paths-newline-joined-with-trailing-newline",
     "manifest-internal-hash-from-script-output",
 }
+PENDING_REF_RE = re.compile(
+    r"\b(PENDING|not yet opened|not yet dispatched|not yet created)\b",
+    re.IGNORECASE,
+)
 
 
 def _run_git(args: list[str]) -> tuple[int, str, str]:
@@ -176,6 +180,34 @@ def _registry_covers_path(registry: dict, path: str) -> bool:
             if path.startswith(scope.rstrip("/")) or scope.rstrip("/").startswith(path.rstrip("/")):
                 return True
     return False
+
+
+def _artifact_ref_exists(ref: str) -> bool:
+    """Return true when a registry reference points to an existing repo file.
+
+    References may include a markdown anchor after '#'. Only the path portion is
+    checked here; semantic anchor validation remains reviewer work.
+    """
+    path_part = ref.split("#", 1)[0].strip().strip("`")
+    if not path_part:
+        return False
+    return (REPO_ROOT / path_part).exists()
+
+
+def _is_action_evidence_ref(ref: str) -> bool:
+    """Reject parking placeholders as action evidence.
+
+    A deferred finding can keep a pending roadmap/work-order note, but that note
+    is not by itself traceable follow-through. Existing artifact refs are
+    evidence; non-placeholder descriptions are allowed for demand-gated operator
+    records.
+    """
+    value = (ref or "").strip()
+    if not value or PENDING_REF_RE.search(value):
+        return False
+    if value.startswith("docs/") or value.startswith("governance/") or "#" in value:
+        return _artifact_ref_exists(value)
+    return True
 
 
 def _validate_entry(entry: dict, idx: int) -> list[str]:
@@ -237,17 +269,19 @@ def _validate_entry(entry: dict, idx: int) -> list[str]:
             )
 
         # DEFER_WITH_ROADMAP / DEFER_PHASED / BLOCKED_PENDING_DECISION require action evidence:
-        # at least one of roadmapRef, workOrderRef, or f2gRef must be non-empty.
+        # at least one of roadmapRef, workOrderRef, or f2gRef must be a real,
+        # non-placeholder artifact reference or non-pending action description.
         if disp in DISPOSITIONS_REQUIRING_ACTION_EVIDENCE:
             has_evidence = any(
-                finding.get(k, "").strip()
+                _is_action_evidence_ref(finding.get(k, ""))
                 for k in ("roadmapRef", "workOrderRef", "f2gRef")
             )
             if not has_evidence:
                 violations.append(
                     f"{fid}: disposition `{disp}` requires at least one of "
-                    f"`roadmapRef`, `workOrderRef`, or `f2gRef` — "
-                    f"findings with DEFER/BLOCKED dispositions must link to their follow-through artifact"
+                    f"`roadmapRef`, `workOrderRef`, or `f2gRef` to point to "
+                    f"real follow-through evidence; PENDING/not-yet placeholders "
+                    f"do not count as action evidence"
                 )
 
     # COMPLETE_VERIFIED gc047 must have a valid 64-hex SHA-256 manifestHash

@@ -135,6 +135,11 @@ dispositions **must** include at least one of:
 This ensures every deferred or blocked finding has a traceable follow-through path
 that another agent can discover and cite when opening related work.
 
+`PENDING`, `not yet opened`, `not yet dispatched`, and similar placeholders may
+remain as parking notes, but they do not count as action evidence unless the
+same finding also has an existing `f2gRef`, `roadmapRef`, or `workOrderRef`
+artifact reference.
+
 ### f2gRef Format
 
 `f2gRef` links the registry finding back to its formal Finding-To-Governance

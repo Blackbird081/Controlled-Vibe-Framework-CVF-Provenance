@@ -158,17 +158,19 @@ Key findings:
 
 | Finding | Defect class | Learning lane | Escalation state | Next control action |
 | --- | --- | --- | --- | --- |
-| G-GM-01–08 guard policies in spec but not in CVF TS | RULE_GAP | GOVERNANCE_CONTROL_PLANE | NOT_ESCALATED | Separate governed tranche if guard enforcement desired |
+| KGR1 partial Graphify absorption confirmed | N/A | N/A | NOT_ESCALATED | No follow-up; correct bounded KGR1 scope |
+| G-GM-01–08 guard policies in spec but not in CVF TS | RULE_GAP | GOVERNANCE_CONTROL_PLANE | NOT_ESCALATED | Parking roadmap: `docs/roadmaps/CVF_GRAPHIFY_GUARD_ENFORCEMENT_ROADMAP_2026-06-02.md` |
+| `cvf graph` CLI commands in spec but absent from runtime | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | NOT_ESCALATED | Phased backlog: `docs/roadmaps/CVF_GRAPH_CLI_PHASED_BACKLOG_ROADMAP_2026-06-02.md` |
 | 7-phase deployment roadmap has no CVF GC-018 | DOCUMENTATION_GAP | DOCUMENTATION_ONLY_LEARNING | NOT_ESCALATED | Advisory only; KGR1 represents bounded actual delivery |
-| 71.5x token claim is author-reported | UNVERIFIED_CLAIM | GOVERNANCE_CONTROL_PLANE | NOT_ESCALATED | Do not repeat without CVF live proof |
+| 71.5x token claim is author-reported | UNVERIFIED_CLAIM | DOCUMENTATION_ONLY_LEARNING | NOT_ESCALATED | Do not repeat without CVF live proof |
 
-Defect class: `RULE_GAP`
+Defect class summary: `RULE_GAP`, `MACHINE_GATE_GAP`, `DOCUMENTATION_GAP`, `UNVERIFIED_CLAIM`, `N/A`
 
-Learning lane: `GOVERNANCE_CONTROL_PLANE`
+Learning lane summary: `GOVERNANCE_CONTROL_PLANE`, `DOCUMENTATION_ONLY_LEARNING`, `N/A`
 
 Disposition: `ACCEPT` — findings documented with deferred actions
 
-Next control action: guard enforcement and CLI implementation require separate operator-authorized GC-018 + work order before any CVF runtime change.
+Next control action: guard enforcement and CLI implementation are parked in post-CI1 roadmaps and require separate operator-authorized GC-018 + work order before any CVF runtime change.
 
 Runtime/provider/cost learning: `N/A_WITH_REASON`
 

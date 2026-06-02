@@ -73,6 +73,25 @@ Batch 2 (F1–F5 fix):
 - docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md: hashAlgorithm + hashInput docs (F5)
 - AGENT_HANDOFF_V15_2026-05-29.md: HEAD → 1add199b (F1 follow-up)
 
+Batch 3 (action-evidence hardening):
+- governance/compat/check_corpus_scan_registry.py: `PENDING` / `not yet`
+  placeholders no longer count as action evidence for deferred or blocked
+  findings unless another real artifact ref exists.
+- docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json:
+  `RESCAN-C-code-review-graph` now cites the existing CI1 roadmap instead of a
+  not-yet-opened placeholder as its roadmap evidence.
+- AGENT_HANDOFF_V15_2026-05-29.md: HEAD → 05bdc544.
+
+Batch 4 (Graphify F1-F4 closure normalization):
+- CI1-T2 F1 KGR1 partial absorption is normalized to `ACCEPT_NO_ACTION` with
+  `defectClass=N/A` and `learningLane=N/A`.
+- CI1-T2 F2 G-GM-01 through G-GM-08 now cites
+  `docs/roadmaps/CVF_GRAPHIFY_GUARD_ENFORCEMENT_ROADMAP_2026-06-02.md`.
+- CI1-T2 F3 `cvf graph` CLI absence now cites
+  `docs/roadmaps/CVF_GRAPH_CLI_PHASED_BACKLOG_ROADMAP_2026-06-02.md`.
+- CI1-T2 F4 71.5x token reduction remains `ACCEPT_WITH_BOUNDARY` and is routed
+  as documentation-only learning unless a later live-proof benchmark is opened.
+
 Protected paths:
 
 - `AGENTS.md`

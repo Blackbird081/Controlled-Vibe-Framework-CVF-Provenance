@@ -307,9 +307,9 @@ Total: 5 files, all READ.
 
 | sourcePath | disposition | reason | CVF next action |
 | --- | --- | --- | --- |
-| `CVF_GRAPHIFY_CLI_COMMAND_SPEC.md` | ACCEPT — doc-only | CLI spec absorbed as advisory; commands not yet in CVF runtime | If `cvf graph` CLI wanted, open separate work order; KGR1 builder is partial foundation |
+| `CVF_GRAPHIFY_CLI_COMMAND_SPEC.md` | ACCEPT — doc-only | CLI spec absorbed as advisory; commands not yet in CVF runtime | Follow `docs/roadmaps/CVF_GRAPH_CLI_PHASED_BACKLOG_ROADMAP_2026-06-02.md` before opening any `cvf graph` work order |
 | `CVF_GRAPH_MEMORY_DATA_MODEL.md` | ACCEPT — partially absorbed | Node/edge schema partially implemented in KGR1 `KgrStore` type; full schema not yet runtime | KGR1 T6 or later could extend schema if needed |
-| `CVF_GRAPH_MEMORY_GUARD_SPEC.md` | DEFER — not implemented | G-GM-01–08 guard IDs absent from CVF TS source; PreToolUse hook is a Claude settings concept, not CVF-owned | Open separate governed tranche if guard enforcement wanted |
+| `CVF_GRAPH_MEMORY_GUARD_SPEC.md` | DEFER — not implemented | G-GM-01–08 guard IDs absent from CVF TS source; PreToolUse hook is a Claude settings concept, not CVF-owned | Follow `docs/roadmaps/CVF_GRAPHIFY_GUARD_ENFORCEMENT_ROADMAP_2026-06-02.md` before opening any graph guard enforcement tranche |
 | `CVF_GRAPH_MEMORY_LAYER_SPEC.md` | ACCEPT — advisory mapping | CVF plane mapping accepted as reference; KGR1 implements bounded subset | Authoritative architecture reference for future graph work |
 | `Thong_tin.md` | ACCEPT | Operator analysis accepted as provenance context; 71.5x performance claim is author-reported and unverified | No runtime action; provenance note recorded |
 
@@ -402,17 +402,19 @@ See section below.
 
 | Finding | Defect class | Learning lane | Disposition | Next control action |
 | --- | --- | --- | --- | --- |
-| G-GM-01–08 guard policies defined in spec but not implemented in CVF TS source | RULE_GAP — legacy spec outpaced runtime implementation | GOVERNANCE_CONTROL_PLANE | DEFER — guard implementation is a separate governed tranche | Open separate tranche if guard enforcement is desired; do not auto-implement |
+| KGR1 partial Graphify absorption confirmed | N/A — expected bounded delivery | N/A | ACCEPT_NO_ACTION — KGR1 is the current graph retrieval owner surface | No follow-up; do not over-implement full Graphify spec in CI1 |
+| G-GM-01–08 guard policies defined in spec but not implemented in CVF TS source | RULE_GAP — legacy spec outpaced runtime implementation | GOVERNANCE_CONTROL_PLANE | DEFER — guard implementation is a separate governed tranche | Parking roadmap: `docs/roadmaps/CVF_GRAPHIFY_GUARD_ENFORCEMENT_ROADMAP_2026-06-02.md` |
+| `cvf graph` CLI commands defined in spec but absent from CVF runtime | MACHINE_GATE_GAP — useful command surface absent | GOVERNANCE_CONTROL_PLANE | DEFER_PHASED — CLI implementation is a later bounded tranche | Phased backlog: `docs/roadmaps/CVF_GRAPH_CLI_PHASED_BACKLOG_ROADMAP_2026-06-02.md` |
 | 7-phase Graphify deployment roadmap in LAYER_SPEC has no corresponding CVF work order or GC-018 | DOCUMENTATION_GAP — legacy aspiration not tracked in CVF governance | DOCUMENTATION_ONLY_LEARNING | ACCEPT — roadmap is advisory; KGR1 represents bounded actual delivery | Record as advisory; no follow-up unless operator requests |
-| Performance claim (71.5x token reduction) in Thong_tin.md is author-reported and unverified | UNVERIFIED_CLAIM — external benchmark without CVF proof | GOVERNANCE_CONTROL_PLANE | ACCEPT with boundary — claim noted as unverified in disposition matrix | Do not repeat in CVF documentation without live proof |
+| Performance claim (71.5x token reduction) in Thong_tin.md is author-reported and unverified | UNVERIFIED_CLAIM — external benchmark without CVF proof | DOCUMENTATION_ONLY_LEARNING | ACCEPT_WITH_BOUNDARY — claim noted as unverified in disposition matrix | Do not repeat in CVF documentation without live proof |
 
-Defect class summary: RULE_GAP (1), DOCUMENTATION_GAP (1), UNVERIFIED_CLAIM (1)
+Defect class summary: RULE_GAP (1), MACHINE_GATE_GAP (1), DOCUMENTATION_GAP (1), UNVERIFIED_CLAIM (1), N/A (1)
 
-Learning lane: `GOVERNANCE_CONTROL_PLANE` (primary), `DOCUMENTATION_ONLY_LEARNING` (secondary)
+Learning lane: `GOVERNANCE_CONTROL_PLANE` (primary), `DOCUMENTATION_ONLY_LEARNING` (secondary), `N/A` (bounded confirmation)
 
 Disposition: `ACCEPT` — findings documented; deferred items require separate GC-018
 
-Next control action: findings recorded; guard enforcement and CLI implementation require separate operator-authorized tranches
+Next control action: findings recorded; guard enforcement and CLI implementation are parked in post-CI1 roadmaps and require separate operator-authorized tranches before runtime work
 
 Runtime/provider/cost learning: `N/A_WITH_REASON`
 

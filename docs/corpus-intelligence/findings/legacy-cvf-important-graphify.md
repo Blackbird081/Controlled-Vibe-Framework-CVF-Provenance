@@ -48,9 +48,9 @@ Full evidence: `docs/audits/CVF_CI1_T2_GRAPHIFY_READINESS_PACKET_2026-06-02.md`
 
 | Finding | Scan disposition | defectClass | learningLane | Action evidence |
 | --- | --- | --- | --- | --- |
-| F1 — KGR1 partial | ACCEPT_NO_ACTION | RULE_GAP | GOVERNANCE_CONTROL_PLANE | None — correct bounded scope |
-| F2 — Guard spec absent | DEFER_WITH_ROADMAP | RULE_GAP | GOVERNANCE_CONTROL_PLANE | `f2gRef` → completion review; `roadmapRef` → graph guard tranche (pending) |
-| F3 — CLI commands absent | DEFER_PHASED | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | `f2gRef` → completion review; `workOrderRef` → cvf graph query WO (pending) |
+| F1 — KGR1 partial | ACCEPT_NO_ACTION | N/A | N/A | None — correct bounded scope |
+| F2 — Guard spec absent | DEFER_WITH_ROADMAP | RULE_GAP | GOVERNANCE_CONTROL_PLANE | `roadmapRef` → `docs/roadmaps/CVF_GRAPHIFY_GUARD_ENFORCEMENT_ROADMAP_2026-06-02.md` |
+| F3 — CLI commands absent | DEFER_PHASED | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | `workOrderRef` → `docs/roadmaps/CVF_GRAPH_CLI_PHASED_BACKLOG_ROADMAP_2026-06-02.md#phase-1-cvf-graph-query` |
 | F4 — Performance claim | ACCEPT_WITH_BOUNDARY | UNVERIFIED_CLAIM | DOCUMENTATION_ONLY_LEARNING | Boundary note in completion review; no roadmap |
 
 F2G classification source: `docs/reviews/CVF_CI1_T2_GRAPHIFY_LEGACY_RESCAN_PILOT_COMPLETION_2026-06-02.md#finding-to-governance-learning-disposition`
@@ -61,7 +61,7 @@ Registry machine record: `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json
 
 ## F1 — KGR1 Partial Absorption Confirmed
 
-**Disposition:** ACCEPT_NO_ACTION | **defectClass:** RULE_GAP | **learningLane:** GOVERNANCE_CONTROL_PLANE
+**Disposition:** ACCEPT_NO_ACTION | **defectClass:** N/A | **learningLane:** N/A
 
 **What was found:** The Graphify data model (12 node types, 10 edge types,
 4 CVF record types) was partially absorbed by KGR1 into `knowledge-graph-builder.ts`
@@ -103,9 +103,11 @@ PreToolUse hook pattern (G-GM-01/02) requires changes to agent settings behavior
 not CVF TypeScript. G-GM-03 through G-GM-08 map to existing CVF guard surfaces
 but have not been wired to graph-specific inputs.
 
-**Next action when operator authorizes:** Open separate governed tranche for
-graph guard enforcement. G-GM-01 (graph priority before grep) is highest value
-and maps to existing CPG-1 INT1 policy pattern.
+**Next action when operator authorizes:** Use
+`docs/roadmaps/CVF_GRAPHIFY_GUARD_ENFORCEMENT_ROADMAP_2026-06-02.md` as the
+parking roadmap before opening a separate governed tranche for graph guard
+enforcement. G-GM-01 (graph priority before grep) is highest value and maps to
+existing CPG-1 INT1 policy pattern.
 
 **Cross-reference for future agents:** If assigned "implement graph guard" or
 "enforce graph priority" — cite this finding. Do not rediscover as new gap.
@@ -131,9 +133,11 @@ graph guards would extend.
 2. `cvf graph status` — reads `KgrStore` state; low-risk
 3. `cvf graph build` — requires full graph builder pipeline; more complex
 
-**Next action when authorized:** Separate work order for `cvf graph query` CLI
-command. Follows WCE W1 pattern: new module + register in `command.registry.ts`.
-KGR1 runtime is already the backend.
+**Next action when authorized:** Use
+`docs/roadmaps/CVF_GRAPH_CLI_PHASED_BACKLOG_ROADMAP_2026-06-02.md#phase-1-cvf-graph-query`
+before opening a separate work order for `cvf graph query`. Follows WCE W1
+pattern: new module + register in `command.registry.ts`. KGR1 runtime is already
+the likely backend, pending source verification.
 
 **Cross-reference for future agents:** If assigned "add cvf graph CLI" — cite
 this finding. Backend (KGR1) is ready. Frontend (CLI command) is missing.
@@ -162,8 +166,8 @@ is desired, open a separate benchmarking tranche with explicit live proof setup.
 | Finding | CI1 tranche that addresses it |
 | --- | --- |
 | F1 — KGR1 partial | CI1-T2 ✓ CLOSED — no further action |
-| F2 — Guard spec absent | Post-CI1 — Graph Guard Enforcement Roadmap (separate) |
-| F3 — CLI commands absent | Post-CI1 — Graph CLI Tranche (separate, after scan wave) |
+| F2 — Guard spec absent | Post-CI1 — `docs/roadmaps/CVF_GRAPHIFY_GUARD_ENFORCEMENT_ROADMAP_2026-06-02.md` |
+| F3 — CLI commands absent | Post-CI1 — `docs/roadmaps/CVF_GRAPH_CLI_PHASED_BACKLOG_ROADMAP_2026-06-02.md` |
 | F4 — Token claim | Post-CI1 — Benchmarking tranche only if operator requests |
 
 CI1-T3 next candidate: `CVF ADD/code-review-graph/` — 5 files directly related
