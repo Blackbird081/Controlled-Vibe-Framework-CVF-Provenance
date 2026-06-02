@@ -1450,6 +1450,32 @@ def _validate_work_order_fulfillment_manifests(changed_files: list[str]) -> list
                 if path and literal and literal not in _read_rel(path):
                     issues.append(f"required proof literal `{literal}` is missing from `{path}`")
 
+        # Fix (C): validate Forbidden Filesystem State At Dispatch block.
+        # If the work order has a Forbidden Path Manifest but no
+        # Forbidden Filesystem State At Dispatch section, flag it so orchestrators
+        # are reminded to record disk state before dispatch.
+        # If the section exists, check that no row records PRESENT without a
+        # documented exemption or governance resolution.
+        has_forbidden_manifest = bool(list(_section_tables(text, "Forbidden Path Manifest")))
+        if has_forbidden_manifest:
+            ffs_tables = list(_section_tables(text, "Forbidden Filesystem State At Dispatch"))
+            if not ffs_tables:
+                issues.append(
+                    "work order has a Forbidden Path Manifest but is missing "
+                    "`## Forbidden Filesystem State At Dispatch` block; "
+                    "orchestrator must record disk state of forbidden paths before dispatch"
+                )
+            else:
+                for table in ffs_tables:
+                    for row in table:
+                        actual = _row_value(row, "Actual state at dispatch", "Actual state", "Actual").strip().upper()
+                        fp = _clean_manifest_path(_row_value(row, "Forbidden path", "Path", "Forbidden"))
+                        if actual == "PRESENT" and fp:
+                            issues.append(
+                                f"Forbidden Filesystem State records PRESENT for `{fp}` without "
+                                "exemption; resolve (remove or govern) before dispatch"
+                            )
+
         if issues:
             violations.append({"path": work_order_path, "issues": issues})
 

@@ -30,19 +30,24 @@ are explicitly listed in the scope firewall below.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: add a new self-protection checker and wire
-it into local hooks and autorun gates.
+it into local hooks and autorun gates; extend Fix A/B/C forbidden-path
+enforcement across scope firewall, pre-implementation gate, and dispatch-quality
+checker.
 
 Protected paths:
 
 - `AGENTS.md`
 - `governance/compat/check_core_guard_self_protection.py`
 - `governance/compat/check_corpus_intelligence_classification.py`
+- `governance/compat/check_forbidden_filesystem_state.py`
+- `governance/compat/check_work_order_dispatch_quality.py`
 - `governance/toolkit/05_OPERATION/CVF_CORE_GUARD_SELF_PROTECTION_GUARD.md`
 - `governance/toolkit/05_OPERATION/CVF_CORPUS_INTELLIGENCE_CLASSIFICATION_GUARD.md`
 - `governance/compat/run_local_governance_hook_chain.py`
 - `governance/compat/run_agent_autorun_workflow_gate.py`
 - `docs/CVF_CORE_KNOWLEDGE_BASE.md`
 - `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md`
+- `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
 - `governance/toolkit/02_POLICY/CVF_MASTER_POLICY.md`
 
 Operator authorization: user requested immediate guard upgrade and a hard
@@ -78,8 +83,11 @@ Allowed paths:
 - `docs/roadmaps/CVF_KGR1_KNOWLEDGE_GRAPH_RETRIEVAL_ROADMAP_2026-06-01.md`
 - `governance/compat/check_core_guard_self_protection.py`
 - `governance/compat/check_corpus_intelligence_classification.py`
+- `governance/compat/check_forbidden_filesystem_state.py`
+- `governance/compat/check_work_order_dispatch_quality.py`
 - `governance/compat/run_agent_autorun_workflow_gate.py`
 - `governance/compat/run_local_governance_hook_chain.py`
+- `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
 - `governance/toolkit/02_POLICY/CVF_MASTER_POLICY.md`
 - `governance/toolkit/05_OPERATION/CVF_CORPUS_INTELLIGENCE_CLASSIFICATION_GUARD.md`
 - `governance/toolkit/05_OPERATION/CVF_CORE_GUARD_SELF_PROTECTION_GUARD.md`

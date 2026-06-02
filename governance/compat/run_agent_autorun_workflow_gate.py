@@ -209,6 +209,17 @@ def _run_phase(phase: str, base: str | None, head: str) -> int:
     if phase == "pre-push":
         commands.extend(PRE_PUSH_COMMANDS)
 
+    # Fix (B): at pre-implementation, check that no forbidden-path files
+    # already exist on disk before a worker begins. This catches the pattern
+    # where a prior tranche left untracked files in paths the current work
+    # order explicitly forbids.
+    if phase == "pre-implementation":
+        commands.insert(0, GateCommand(
+            "forbidden filesystem state",
+            ("python", "governance/compat/check_forbidden_filesystem_state.py",
+             "--base", resolved_base, "--head", head, "--enforce"),
+        ))
+
     if phase in {"pre-closure", "pre-push"} and base_sha == head_sha:
         print(
             "FAIL: closure/push autorun gates require a non-empty committed "

@@ -516,6 +516,29 @@ before dispatch.
 |---|---|
 | <forbidden path or glob> | <why this path is out of scope> |
 
+## Forbidden Filesystem State At Dispatch
+
+Record the filesystem state of every forbidden path at the moment this work
+order is dispatched. The orchestrator must verify each path before dispatch.
+A path that exists on disk at dispatch must be explained or cleaned up; the
+worker must not be sent into an environment where forbidden files already exist.
+
+This block is verified by `check_forbidden_filesystem_state.py` at the
+`pre-implementation` autorun gate phase.
+
+| Forbidden path | Expected state | Actual state at dispatch | Action if PRESENT |
+|---|---|---|---|
+| <forbidden path> | ABSENT | ABSENT ✓ | N/A |
+
+Rules:
+
+- `ABSENT` — path does not exist on disk (file or directory). Dispatch is safe.
+- `PRESENT` — path already exists. Dispatch is blocked until the orchestrator
+  either removes the files, opens a governance packet for them, or records an
+  explicit operator exemption with reason.
+- `PRESENT_EXEMPTED` — path exists; orchestrator has explicitly authorized
+  worker to ignore it; worker must not edit, stage, or claim the path.
+
 ## Pre-Existing Dirty Path Exemptions
 
 Use only when the repository is already dirty before dispatch and the worker

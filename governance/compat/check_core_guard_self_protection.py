@@ -416,12 +416,28 @@ def _run_check(
 
             forbidden_touched = [path for path in scope_firewall_files if _path_matches(path, forbidden)]
             not_allowed = [path for path in scope_firewall_files if not _path_matches(path, allowed)]
-            if forbidden_touched or not_allowed:
+
+            # Fix (A): also check untracked files against forbidden paths.
+            # Untracked files are in changed_files but not in scope_firewall_files
+            # (which only covers the committed diff range). A worker who creates
+            # forbidden-path files without staging them evades the scope firewall.
+            untracked_forbidden = [
+                path for path, statuses in changed.items()
+                if statuses == {"A"} and path not in scope_firewall_files
+                and _path_matches(path, forbidden)
+            ]
+
+            if forbidden_touched or not_allowed or untracked_forbidden:
                 issues: list[str] = []
                 if forbidden_touched:
                     issues.append("Forbidden paths touched: " + ", ".join(forbidden_touched))
                 if not_allowed:
                     issues.append("Staged/range paths outside declared Allowed paths: " + ", ".join(not_allowed))
+                if untracked_forbidden:
+                    issues.append(
+                        "Forbidden paths present as untracked files (worker scope violation): "
+                        + ", ".join(untracked_forbidden)
+                    )
                 violations.append({"path": "pre-commit-scope-firewall", "issues": issues})
 
     artifact_issues: list[str] = []
