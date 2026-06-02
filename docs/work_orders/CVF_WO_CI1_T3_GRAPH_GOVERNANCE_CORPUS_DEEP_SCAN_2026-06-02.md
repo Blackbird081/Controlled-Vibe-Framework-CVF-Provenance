@@ -132,6 +132,20 @@ change the claim boundary.
 Do not commit. Record `git status --short` in the completion review.
 Do not cite committed-only or empty ranges as proof for pending files.
 
+## Commit Mode And Base-Anchor Lifecycle
+
+- Commit mode: WORKER_MUST_NOT_COMMIT
+- `dispatchBaseHead`: `13c91de8` - orchestrator audit anchor captured when the
+  CI1-T3 packet was dispatched
+- `executionBaseHead`: `8d533581` - worker anchor captured immediately before
+  material CI1-T3 execution after intervening governance commits
+- `closureBaseHead`: N/A - reviewer / committer must select the approved
+  tranche base, commit reviewed artifacts, and run non-empty committed-range
+  `pre-closure`
+
+Worker handoff boundary: return `COMPLETE_PENDING_REVIEW` with actual pending
+paths and component-gate evidence. Do not claim autorun `pre-closure` PASS.
+
 ## Work-Order Fulfillment Manifest
 
 ## Required Artifact Manifest

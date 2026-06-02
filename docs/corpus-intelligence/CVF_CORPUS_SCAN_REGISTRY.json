@@ -4,7 +4,7 @@
   "guard": "governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md",
   "checker": "governance/compat/check_corpus_scan_registry.py",
   "lastUpdated": "2026-06-02",
-  "updatedBy": "scan-learning bridge — Graphify F1-F4 closure normalization + parking roadmaps",
+  "updatedBy": "CI1-T3 graph governance corpus deep scan",
   "allowedCorpusTypes": [
     "LEGACY_FOLDER",
     "PROJECT_SOURCE",
@@ -110,6 +110,86 @@
         "NetworkX / leiden (Python graph libs — not in CVF)"
       ],
       "nextScanRecommendation": "CVF ADD/code-review-graph/ — 7 files, directly related to graph governance (Finding F2)",
+      "hashAlgorithm": "sha256",
+      "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
+    },
+    {
+      "id": "legacy-cvf-add-code-review-graph",
+      "corpusType": "LEGACY_FOLDER",
+      "displayName": "CVF ADD / code-review-graph",
+      "scopePaths": [
+        ".private_reference/legacy/CVF ADD/code-review-graph/"
+      ],
+      "fileCount": 7,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "CI1-T3",
+      "scanDate": "2026-06-02",
+      "manifestHash": "d921f708e3b321343fae43060a7fb447a166a7eba6584f23de151422e663f51a",
+      "manifestPath": null,
+      "packetPath": "docs/audits/CVF_CI1_T3_GRAPH_GOVERNANCE_CORPUS_READINESS_PACKET_2026-06-02.md",
+      "completionReviewPath": "docs/reviews/CVF_CI1_T3_GRAPH_GOVERNANCE_CORPUS_DEEP_SCAN_COMPLETION_2026-06-02.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_CI1_T3_GRAPH_GOVERNANCE_CORPUS_DEEP_SCAN_2026-06-02.md",
+      "verdicts": {
+        "gc047": "COMPLETE_VERIFIED",
+        "gc048": "RECONCILED_VERIFIED",
+        "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+      },
+      "semanticRegions": [
+        "GRAPH_KNOWLEDGE_MODEL",
+        "GRAPH_CONTEXT_RESOLUTION",
+        "GRAPH_GOVERNANCE_SIGNALS",
+        "GRAPH_INTEGRATION_SURFACE",
+        "GRAPH_IMPLEMENTATION_PLAN",
+        "GRAPH_PACK_BOUNDARY",
+        "GRAPH_OPERATOR_ANALYSIS"
+      ],
+      "priorAbsorption": "CI1-T2 Graphify scan confirmed KGR1 partial graph foundation and deferred graph guard/CLI follow-ups; CI1-T3 adds code-review-graph context/governance surface detail",
+      "findings": [
+        {
+          "id": "F1-code-graph-value-confirmed",
+          "summary": "code-review-graph confirms graph-backed static code intelligence belongs in CVF Knowledge Layer and Context Builder as evidence, not runtime authority",
+          "disposition": "ACCEPT_NO_ACTION",
+          "nextAction": "Treat as baseline context for future graph roadmaps; no immediate action",
+          "defectClass": "N/A",
+          "learningLane": "N/A"
+        },
+        {
+          "id": "F2-governance-signal-enforcement-deferred",
+          "summary": "graph-derived impact, criticality, confidence, and context-inflation signals are valuable but not yet enforced as graph guard runtime behavior",
+          "disposition": "DEFER_WITH_ROADMAP",
+          "nextAction": "Use the graph guard enforcement roadmap before any implementation tranche",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_CI1_T3_GRAPH_GOVERNANCE_CORPUS_DEEP_SCAN_COMPLETION_2026-06-02.md#finding-to-governance-learning-disposition",
+          "roadmapRef": "docs/roadmaps/CVF_GRAPHIFY_GUARD_ENFORCEMENT_ROADMAP_2026-06-02.md"
+        },
+        {
+          "id": "F3-command-mcp-surface-deferred",
+          "summary": "legacy graph integration surface proposes command, CLI, MCP, audit, learning, and repo-registry adapters, but current implementation remains deferred",
+          "disposition": "DEFER_PHASED",
+          "nextAction": "Use the graph CLI phased backlog before opening cvf graph or MCP-mediated graph command work",
+          "defectClass": "MACHINE_GATE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_CI1_T3_GRAPH_GOVERNANCE_CORPUS_DEEP_SCAN_COMPLETION_2026-06-02.md#finding-to-governance-learning-disposition",
+          "workOrderRef": "docs/roadmaps/CVF_GRAPH_CLI_PHASED_BACKLOG_ROADMAP_2026-06-02.md#phase-1-cvf-graph-query"
+        },
+        {
+          "id": "F4-performance-claim-boundary",
+          "summary": "operator/external token-reduction and context-narrowing claims are useful rationale but not CVF-verified benchmark proof",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Do not repeat as CVF performance proof without a separate benchmark tranche",
+          "defectClass": "UNVERIFIED_CLAIM",
+          "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+        }
+      ],
+      "negativeSearchTerms": [
+        "cvf graph query (current runtime implementation — not claimed by CI1-T3; prior CI1-T2 source search found absent)",
+        "G-GM-01 (current runtime guard implementation — not claimed by CI1-T3; prior CI1-T2 source search found absent)",
+        "direct external MCP access (forbidden pattern in legacy integration surface)",
+        "graph service directly invoking LLMs (forbidden pattern in legacy integration surface)",
+        "full CVF ADD sibling scan (out of CI1-T3 scope)"
+      ],
+      "nextScanRecommendation": "After CI1-T3 review, proceed to CI1-T4 Cross-Corpus Index Model using CI1-T2 Graphify and CI1-T3 code-review-graph as the first two real packets",
       "hashAlgorithm": "sha256",
       "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
     },

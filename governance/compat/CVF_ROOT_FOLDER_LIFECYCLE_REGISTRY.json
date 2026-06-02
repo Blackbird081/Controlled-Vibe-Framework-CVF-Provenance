@@ -39,6 +39,7 @@
     ".private_reference",
     ".git",
     "node_modules",
+    ".cache",
     ".pytest_cache"
   ],
   "roots": [

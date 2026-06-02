@@ -263,6 +263,43 @@ Machine enforcement rejects pending artifacts that self-report
 `git status --short` as clean or cite a committed range that cannot include the
 pending artifact.
 
+#### Commit Mode And Base-Anchor Lifecycle
+
+Dispatch provenance, worker validation, and committed closure use distinct
+anchors:
+
+| Anchor | Purpose |
+| --- | --- |
+| `dispatchBaseHead` | audit anchor captured by orchestrator before dispatch |
+| `executionBaseHead` | worker anchor captured before material edits and used for pending-artifact component gates |
+| `closureBaseHead` | reviewer / committer anchor used for the non-empty committed closure range |
+
+A later worker must not blindly reuse an earlier hardcoded dispatch hash after
+intervening commits. The worker records the current `executionBaseHead`.
+Committed closure then proves the approved tranche with
+`closureBaseHead..HEAD`.
+
+#### Two-Stage No-Commit Worker Handoff
+
+Every delegated work order must state one commit mode:
+
+- `WORKER_MAY_COMMIT`
+- `WORKER_MUST_NOT_COMMIT`
+
+For `WORKER_MUST_NOT_COMMIT`, the worker is required to:
+
+1. run and repair working-tree-aware component gates;
+2. record actual pending paths from `git status --short`;
+3. return a non-closed status such as `COMPLETE_PENDING_REVIEW`;
+4. leave committed-range `pre-closure` to the reviewer / committer.
+
+The worker may record `PRE_CLOSURE_NOT_RUN_PENDING_COMMIT` or
+`FAIL_EXPECTED_PENDING_FINALITY`. Neither value is a PASS and neither authorizes
+a closed-equivalent status.
+
+After review disposition, the reviewer / committer must commit the approved
+owned diff and run autorun `pre-closure` against a non-empty committed range.
+
 ### 4E. Self-Reported Gate Evidence Consistency
 
 If an artifact records a governance gate, autorun phase, corpus check, or

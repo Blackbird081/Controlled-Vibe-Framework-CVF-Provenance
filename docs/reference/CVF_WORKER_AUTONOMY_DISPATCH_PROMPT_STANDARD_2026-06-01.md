@@ -123,6 +123,39 @@ The scan report is not final if findings exist only as prose.
 This keeps scan output available to the Learning Loop, roadmap backlog, and
 future work-order source verification.
 
+## Commit Mode And Base-Anchor Requirement
+
+Orchestrators must state the commit mode in every delegated worker prompt:
+
+```text
+Commit mode: WORKER_MAY_COMMIT | WORKER_MUST_NOT_COMMIT
+
+Capture executionBaseHead with git rev-parse --short HEAD immediately before
+material edits. Do not reuse a stale dispatchBaseHead as current worker proof.
+
+If commit mode is WORKER_MUST_NOT_COMMIT:
+- run working-tree-aware component gates;
+- repair allowed-scope defects and rerun those component gates;
+- record actual git status --short;
+- return COMPLETE_PENDING_REVIEW;
+- do not claim autorun pre-closure PASS.
+
+Reviewer / committer owns the later commit and non-empty committed-range
+pre-closure gate.
+```
+
+Anchor vocabulary:
+
+| Anchor | Meaning |
+| --- | --- |
+| `dispatchBaseHead` | orchestrator audit anchor before dispatch |
+| `executionBaseHead` | worker anchor captured immediately before edits |
+| `closureBaseHead` | reviewer / committer anchor for committed-range closure |
+
+This prevents a no-commit worker from being trapped between two contradictory
+instructions: leave pending artifacts for review, but prove committed closure
+before handoff.
+
 ## Enforcement / Verification
 
 Machine enforcement:

@@ -45,6 +45,7 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
                     "Mandatory Gate-Failure Remediation Protocol",
                     "Worker Autonomy / No-Question Rule",
                     "Pending Artifact Evidence Finality",
+                    "Commit Mode And Base-Anchor Lifecycle",
                     "Self-Reported Gate Evidence Consistency",
                     "Near-Threshold Owner Maintainability Plan",
                     "Work-Order Fulfillment Manifest",
@@ -63,6 +64,7 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
                     "Mandatory Gate-Failure Remediation Protocol",
                     "Worker Autonomy / No-Question Rule",
                     "Pending Artifact Evidence Finality",
+                    "Commit Mode And Base-Anchor Lifecycle",
                     "Self-Reported Gate Evidence Consistency",
                     "Near-Threshold Owner Maintainability Plan",
                     "Work-Order Fulfillment Manifest",
@@ -76,6 +78,7 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
                 [
                     "Worker Autonomy Prompt",
                     "Worker Autonomy / No-Question Rule",
+                    "Commit Mode And Base-Anchor Requirement",
                     MODULE.THIS_SCRIPT_PATH,
                 ]
             ),
@@ -239,6 +242,109 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
             "dispatch/ready work order lacks Worker Autonomy / No-Question Rule",
             report["violations"][0]["issues"],
         )
+
+    def test_ready_work_order_without_commit_mode_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_COMMIT_MODE_TEST_2026-06-02.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: READY_FOR_IMPLEMENTATION",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Proceed inside allowed scope.",
+                    "dispatchBaseHead: abc1234",
+                    "executionBaseHead: capture before edits",
+                    "closureBaseHead: reviewer stage",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "dispatch/ready work order lacks explicit `Commit mode: "
+            "WORKER_MAY_COMMIT | WORKER_MUST_NOT_COMMIT`",
+            report["violations"][0]["issues"],
+        )
+
+    def test_ready_work_order_without_anchor_lifecycle_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_ANCHOR_LIFECYCLE_TEST_2026-06-02.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCHED_TO_WORKER",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Proceed inside allowed scope.",
+                    "Commit mode: WORKER_MUST_NOT_COMMIT",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "dispatch/ready work order lacks base-anchor lifecycle marker(s): "
+            "dispatchBaseHead, executionBaseHead, closureBaseHead",
+            report["violations"][0]["issues"],
+        )
+
+    def test_ready_work_order_with_invalid_commit_mode_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_INVALID_COMMIT_MODE_TEST_2026-06-02.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCHED_TO_WORKER",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Proceed inside allowed scope.",
+                    "Commit mode: ASK_OPERATOR_LATER",
+                    "dispatchBaseHead: abc1234",
+                    "executionBaseHead: capture before edits",
+                    "closureBaseHead: reviewer stage",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "dispatch/ready work order has invalid commit mode "
+            "`ASK_OPERATOR_LATER`; use WORKER_MAY_COMMIT or WORKER_MUST_NOT_COMMIT",
+            report["violations"][0]["issues"],
+        )
+
+    def test_ready_no_commit_work_order_with_anchor_lifecycle_passes(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_VALID_NO_COMMIT_TEST_2026-06-02.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCHED_TO_WORKER",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Proceed inside allowed scope.",
+                    "Commit mode: WORKER_MUST_NOT_COMMIT",
+                    "dispatchBaseHead: abc1234",
+                    "executionBaseHead: capture before edits",
+                    "closureBaseHead: reviewer stage",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertTrue(report["compliant"])
 
     def test_ready_work_order_cannot_forbid_near_threshold_owner_surface(self) -> None:
         work_order = "docs/work_orders/CVF_WO_OWNER_ROTATION_TEST_2026-06-01.md"

@@ -488,6 +488,54 @@ committed-only range as proof for the pending artifact itself. Use
 working-tree-aware validation for pending artifacts, or commit first and rerun
 the real changed range.
 
+### Commit Mode And Base-Anchor Lifecycle
+
+Do not freeze one base hash into every phase as if dispatch, implementation,
+pending review, and committed closure were the same transition.
+
+Record these anchors separately:
+
+| Anchor | Captured by | When | Used for |
+|---|---|---|---|
+| `dispatchBaseHead` | Orchestrator | immediately before dispatch | audit history and dispatch packet provenance |
+| `executionBaseHead` | Worker | immediately before material implementation | working-tree-aware pending-artifact validation |
+| `closureBaseHead` | Reviewer / committer | before the closure commit or from the approved tranche base | non-empty committed-range `pre-closure` validation |
+
+Rules:
+
+- the worker must capture `executionBaseHead` with
+  `git rev-parse --short HEAD` before edits;
+- a stale `dispatchBaseHead` remains useful audit evidence but must not be
+  copied into worker gate commands when later commits changed HEAD;
+- pending-artifact checks use `executionBaseHead` and working-tree-aware
+  component gates;
+- committed closure checks use `closureBaseHead..HEAD` after commit and must
+  include the reviewed artifact changes;
+- `--base HEAD --head HEAD` is never valid closure evidence.
+
+### Two-Stage Handoff Finality
+
+Choose one explicit commit mode before dispatch:
+
+| Commit mode | Worker boundary | Reviewer / committer boundary |
+|---|---|---|
+| `WORKER_MAY_COMMIT` | worker may commit only after owned diff, tests, and gates are clean | reviewer verifies committed range |
+| `WORKER_MUST_NOT_COMMIT` | worker returns pending artifacts after working-tree-aware component gates | reviewer / committer approves disposition, commits, then runs committed-range `pre-closure` |
+
+For `WORKER_MUST_NOT_COMMIT` work orders:
+
+- the worker handoff status must remain `COMPLETE_PENDING_REVIEW`,
+  `IMPLEMENTATION_COMPLETE_PENDING_REVIEW`, `DRAFT`, or `HOLD_*`;
+- the worker must not claim `pre-closure` PASS;
+- the worker may record `PRE_CLOSURE_NOT_RUN_PENDING_COMMIT` or
+  `FAIL_EXPECTED_PENDING_FINALITY` only with the explicit statement that
+  committed closure remains reviewer / committer work;
+- component gates must still be run and repaired inside Allowed scope;
+- the completion review must list actual pending files from
+  `git status --short`;
+- the reviewer / committer must run `pre-closure` after the commit with a
+  non-empty committed range before any closed-equivalent claim.
+
 ## 6E. Self-Reported Gate Evidence Consistency
 
 If the artifact records governance gate results, those results must match the
@@ -508,6 +556,10 @@ Rules:
   status line for the artifact itself;
 - after rerunning a gate, update the recorded Governance Gates Run result before
   returning the artifact.
+- do not treat `FAIL_EXPECTED_PENDING_FINALITY` as a closed-equivalent PASS;
+  it is valid only for `WORKER_MUST_NOT_COMMIT` pending review handoff;
+- record component-gate PASS separately from committed-range `pre-closure`
+  PASS so a reviewer can see exactly which transition remains.
 
 ## 6F. Near-Threshold Owner Maintainability Plan
 
@@ -634,6 +686,15 @@ Evidence Trace Block requirements:
 - Key path:
 - Verdict:
 
+Base-anchor evidence:
+
+- `dispatchBaseHead`:
+- `executionBaseHead`:
+- `closureBaseHead`: `<post-review commit stage or N/A - pending review>`
+- Commit mode: `<WORKER_MAY_COMMIT | WORKER_MUST_NOT_COMMIT>`
+- Pending-artifact component gates:
+- Committed-range `pre-closure`: `<PASS after commit | N/A - pending review>`
+
 ## 10. Acceptance Criteria
 
 - [ ] <criterion 1>
@@ -663,6 +724,11 @@ Closure may proceed only after:
 - <reviewer no-blocking objection | operator waiver | gate result>
 - `pre-closure` autorun gate passed and result recorded
 
+For `WORKER_MUST_NOT_COMMIT` mode, worker handoff is not closure. The reviewer
+or committer must approve disposition, commit the reviewed owned diff, and run
+the committed-range `pre-closure` gate before changing status to a
+closed-equivalent value.
+
 Mandatory remediation rule:
 
 - A gate failure inside this work order's Allowed scope is authorization to
@@ -680,6 +746,12 @@ waiver for this work order.
 - [ ] Required tests or evidence commands run
 - [ ] Autorun `pre-closure` gate passed:
   `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base <baseHead> --head HEAD`
+- [ ] Commit mode recorded as `WORKER_MAY_COMMIT` or `WORKER_MUST_NOT_COMMIT`
+- [ ] `dispatchBaseHead`, `executionBaseHead`, and closure-stage base evidence
+  recorded without treating a stale dispatch anchor as current worker proof
+- [ ] For `WORKER_MUST_NOT_COMMIT`, pending handoff used a non-closed status,
+  recorded actual `git status --short`, and left committed-range
+  `pre-closure` to reviewer / committer
 - [ ] Closure gate used a non-empty committed diff range; no `--base HEAD --head HEAD`
 - [ ] Changed-file set from `git diff --name-status` is inside this work
   order's Allowed scope, or every extra path has explicit operator/work-order

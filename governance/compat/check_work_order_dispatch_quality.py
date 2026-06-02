@@ -32,6 +32,11 @@ THIS_SCRIPT_PATH = "governance/compat/check_work_order_dispatch_quality.py"
 FILE_SIZE_REGISTRY_PATH = "governance/compat/CVF_GOVERNED_FILE_SIZE_EXCEPTION_REGISTRY.json"
 NEAR_THRESHOLD_PLAN_MARKER = "Near-Threshold Owner Maintainability Plan"
 FULFILLMENT_MANIFEST_MARKER = "Work-Order Fulfillment Manifest"
+COMMIT_MODE_ANCHOR_MARKER = "Commit Mode And Base-Anchor Lifecycle"
+ALLOWED_COMMIT_MODES = {
+    "WORKER_MAY_COMMIT",
+    "WORKER_MUST_NOT_COMMIT",
+}
 
 REQUIRED_SOURCE_COLUMNS = (
     "Claimed item",
@@ -345,6 +350,36 @@ def _has_trace_matrix(text: str) -> bool:
 
 def _has_worker_autonomy_clause(text: str) -> bool:
     return re.search(r"Worker Autonomy\s*/\s*No-Question Rule", text, re.IGNORECASE) is not None
+
+
+def _validate_commit_mode_and_anchor_lifecycle(text: str) -> list[str]:
+    issues: list[str] = []
+    mode_match = re.search(
+        r"(?im)^\s*(?:[-*]\s*)?Commit mode:\s*`?([A-Z_]+)`?\s*$",
+        text,
+    )
+    if not mode_match:
+        issues.append(
+            "dispatch/ready work order lacks explicit `Commit mode: "
+            "WORKER_MAY_COMMIT | WORKER_MUST_NOT_COMMIT`"
+        )
+    elif mode_match.group(1) not in ALLOWED_COMMIT_MODES:
+        issues.append(
+            "dispatch/ready work order has invalid commit mode "
+            f"`{mode_match.group(1)}`; use WORKER_MAY_COMMIT or WORKER_MUST_NOT_COMMIT"
+        )
+
+    missing_anchors = [
+        anchor
+        for anchor in ("dispatchBaseHead", "executionBaseHead", "closureBaseHead")
+        if anchor not in text
+    ]
+    if missing_anchors:
+        issues.append(
+            "dispatch/ready work order lacks base-anchor lifecycle marker(s): "
+            + ", ".join(missing_anchors)
+        )
+    return issues
 
 
 def _is_roadmap_derived(text: str) -> bool:
@@ -1153,6 +1188,9 @@ def _validate_work_order(path: str, text: str) -> list[str]:
     if dispatching and not _has_worker_autonomy_clause(text):
         issues.append("dispatch/ready work order lacks Worker Autonomy / No-Question Rule")
 
+    if dispatching:
+        issues.extend(_validate_commit_mode_and_anchor_lifecycle(text))
+
     if dispatching and _is_connector_wave(path, text):
         wave_id = _extract_wave_id(path, text)
         if wave_id is not None and not _has_gc018_for_wave(wave_id):
@@ -1670,6 +1708,7 @@ def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str
             "Mandatory Gate-Failure Remediation Protocol",
             "Worker Autonomy / No-Question Rule",
             "Pending Artifact Evidence Finality",
+            COMMIT_MODE_ANCHOR_MARKER,
             "Self-Reported Gate Evidence Consistency",
             NEAR_THRESHOLD_PLAN_MARKER,
             FULFILLMENT_MANIFEST_MARKER,
@@ -1683,6 +1722,7 @@ def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str
             "Mandatory Gate-Failure Remediation Protocol",
             "Worker Autonomy / No-Question Rule",
             "Pending Artifact Evidence Finality",
+            COMMIT_MODE_ANCHOR_MARKER,
             "Self-Reported Gate Evidence Consistency",
             NEAR_THRESHOLD_PLAN_MARKER,
             FULFILLMENT_MANIFEST_MARKER,
@@ -1693,6 +1733,7 @@ def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str
         WORKER_AUTONOMY_STANDARD_PATH: (
             "Worker Autonomy Prompt",
             "Worker Autonomy / No-Question Rule",
+            "Commit Mode And Base-Anchor Requirement",
             THIS_SCRIPT_PATH,
         ),
         HOOK_CHAIN_PATH: (THIS_SCRIPT_PATH,),

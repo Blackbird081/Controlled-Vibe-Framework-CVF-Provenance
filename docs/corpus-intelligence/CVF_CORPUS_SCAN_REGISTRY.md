@@ -71,6 +71,7 @@ prior scan here before starting new work.
 | Corpus | Type | Status | Wave | Files | Key findings |
 | --- | --- | --- | --- | --- | --- |
 | `CVF_Important/Knowledge Base_Graphify/` | LEGACY | SCANNED_WITH_FINDINGS | CI1-T2 | 5 | G-GM-* guard absent; CLI absent; KGR1 partial |
+| `CVF ADD/code-review-graph/` | LEGACY | SCANNED_WITH_FINDINGS | CI1-T3 | 7 | graph governance signals deferred; command/MCP surface deferred; performance claims bounded |
 | `CVF_Important/` (broad) | LEGACY | PARTIALLY_SCANNED | LHW-RESCAN-A | 230 | Inventory only; Graphify subfamily done |
 | `CVF ADD/` | LEGACY | PARTIALLY_SCANNED | LHW-RESCAN-C | 167 | `code-review-graph/` is CI1-T3 candidate |
 | `CVF 16.5/` | LEGACY | PARTIALLY_SCANNED | LHW-RESCAN-C | 100 | Broad routing only |
@@ -93,12 +94,16 @@ Use this index to find prior findings by domain keyword.
 | F2-guard-spec-absent | `Graphify/` | G-GM-01 through G-GM-08 guard IDs absent from CVF TS source | DEFER_WITH_ROADMAP |
 | F3-cli-commands-absent | `Graphify/` | `cvf graph build/query/visualize/export/validate/status/purge` absent from CLI | DEFER_PHASED |
 | RESCAN-C-code-review-graph | `CVF ADD/` | `code-review-graph/` subfolder (7 files) not yet deep-classified | DEFER_WITH_ROADMAP |
+| F1-code-graph-value-confirmed | `code-review-graph/` | graph-backed static code intelligence confirmed as Knowledge Layer / Context Builder input | ACCEPT_NO_ACTION |
+| F2-governance-signal-enforcement-deferred | `code-review-graph/` | impact, criticality, confidence, and context-inflation signals need future graph guard enforcement | DEFER_WITH_ROADMAP |
+| F3-command-mcp-surface-deferred | `code-review-graph/` | command, CLI, MCP, audit, learning, and repo-registry adapters remain phased backlog | DEFER_PHASED |
 
 ### Performance Claims
 
 | Finding ID | Corpus | Summary | Disposition |
 | --- | --- | --- | --- |
 | F4-performance-claim-unverified | `Graphify/` | 71.5x token reduction — author-reported, not CVF-verified | ACCEPT_WITH_BOUNDARY |
+| F4-performance-claim-boundary | `code-review-graph/` | token-reduction/context-narrowing value accepted as rationale only, not CVF benchmark proof | ACCEPT_WITH_BOUNDARY |
 
 ### Integration / Adapters
 
@@ -120,6 +125,9 @@ Searches that confirmed absence — prevents re-doing the same negative search.
 | `PreToolUse` hook | `rg "PreToolUse" --include="*.ts"` | Graphify | NOT FOUND in CVF TS source |
 | `GRAPH_REPORT` | `rg "GRAPH_REPORT"` | Graphify | NOT FOUND in runtime |
 | `NetworkX` / `leiden` | `rg "NetworkX\|leiden"` | Graphify | NOT FOUND |
+| `direct external MCP access` | manual read of 7-file code-review-graph corpus | code-review-graph | FOUND as forbidden pattern, not allowed implementation |
+| `graph service directly invoking LLMs` | manual read of 7-file code-review-graph corpus | code-review-graph | FOUND as forbidden pattern, not allowed implementation |
+| full `CVF ADD/` sibling scan | CI1-T3 work-order boundary | code-review-graph | NOT SEARCHED — out of scope |
 
 ---
 
@@ -127,7 +135,7 @@ Searches that confirmed absence — prevents re-doing the same negative search.
 
 | Priority | Target | Reason |
 | --- | --- | --- |
-| HIGH | `CVF ADD/code-review-graph/` (7 files) | Directly relates to Finding F2 (graph guard spec); CI1-T3 candidate |
+| HIGH | CI1-T4 Cross-Corpus Index Model | CI1 now has two real graph-adjacent packets: Graphify and code-review-graph |
 | MEDIUM | `CVF Edit/` — full GC-047/050 scan | Only LHW18 doc-only absorption done; no manifest or classification yet |
 | MEDIUM | `CVF_Important/` remaining subfamilies | 230 files inventoried; deep classification pending per-family |
 | LOW | `CVF 16.5/` + `CVF_Restructure/` deep scan | Broad routing done; deep classification when operator prioritizes |

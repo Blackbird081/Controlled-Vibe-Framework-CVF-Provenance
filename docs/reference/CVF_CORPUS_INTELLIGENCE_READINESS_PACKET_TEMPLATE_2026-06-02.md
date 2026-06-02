@@ -1,6 +1,6 @@
 # CVF Corpus Intelligence Readiness Packet Template
 
-Memory class: FULL_RECORD
+Memory class: POINTER_RECORD
 
 Status: ACTIVE_TEMPLATE
 
@@ -473,6 +473,19 @@ Fill using the canonical evidence block from
 Workers must run these commands before claiming any readiness verdict.
 Record exact output in the completion review.
 
+Record execution state before running gates:
+
+- Commit mode: `<WORKER_MAY_COMMIT | WORKER_MUST_NOT_COMMIT>`
+- `dispatchBaseHead`: `<orchestrator audit anchor>`
+- `executionBaseHead`: `<git rev-parse --short HEAD immediately before edits>`
+- `closureBaseHead`: `<reviewer / committer stage or N/A - pending review>`
+
+For `WORKER_MUST_NOT_COMMIT`, run the working-tree-aware component gates below,
+repair allowed-scope defects, record actual `git status --short`, and return
+`COMPLETE_PENDING_REVIEW`. Do not claim autorun `pre-closure` PASS. Reviewer /
+committer runs committed-range `pre-closure` after review disposition and
+commit.
+
 ```powershell
 # Step 1: Capture base HEAD before any file changes
 git rev-parse --short HEAD
@@ -497,24 +510,59 @@ python governance/compat/check_corpus_completeness_report_integrity.py --base <b
 
 # [REQUIRED IF APPLICABLE] Step 8: Knowledge-map reconciliation (for tasks producing knowledge maps)
 python governance/compat/check_corpus_to_knowledge_map_reconciliation.py --base <baseHead> --head HEAD --enforce
+
+# [REQUIRED IF APPLICABLE] Step 9: Corpus registry routing (for scan/classification tasks)
+python governance/compat/check_corpus_scan_registry.py --base <baseHead> --head HEAD --enforce
+
+# [REQUIRED IF APPLICABLE] Step 10: Scan-loop to learning-loop interlock
+python governance/compat/check_system_loop_interlock.py --base <baseHead> --head HEAD --enforce
+
+# [REQUIRED IF APPLICABLE] Step 11: Finding-to-governance routing
+python governance/compat/check_finding_to_governance_learning.py --base <baseHead> --head HEAD --enforce
+
+# Reviewer / committer stage after approved commit:
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base <closureBaseHead> --head HEAD
 ```
 
 ---
 
-## [REQUIRED] 12. Final Readiness Summary
+## [REQUIRED] 12. System Loop Interlock Routing
 
-### 12.1 Gate Evidence
+`[REQUIRED IF APPLICABLE]` - required when findings, negative-search evidence,
+deferred items, blocked items, or downstream roadmap candidates exist.
+
+- Upstream loop: `SCAN_LOOP_GC051`
+- Output artifact: `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
+- Finding packet: `<docs/corpus-intelligence/findings/<corpus-id>.md>`
+- Downstream loop: `LEARNING_LOOP_F2G`
+- Input artifact:
+  `docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD_2026-05-29.md`
+- Routing rule: findings must carry `defectClass`, `learningLane`,
+  `nextAction`, and action evidence through `f2gRef`, `roadmapRef`, or
+  `workOrderRef` when deferred or blocked
+- Autonomous mutation boundary: routing records learning candidates only; it
+  does not authorize automatic rule, runtime, provider, or public changes
+
+---
+
+## [REQUIRED] 13. Final Readiness Summary
+
+### 13.1 Gate Evidence
 
 | Gate | Command | Result | Notes |
 | --- | --- | --- | --- |
 | GC-047 corpus completeness | `check_corpus_completeness_report_integrity.py` | `<PASS / FAIL / N/A with reason>` | |
 | GC-048 knowledge-map reconciliation | `check_corpus_to_knowledge_map_reconciliation.py` | `<PASS / FAIL / N/A with reason>` | |
 | GC-050 classification structural | `check_corpus_intelligence_classification.py` | `<PASS / FAIL / N/A with reason>` | |
+| GC-051 corpus registry | `check_corpus_scan_registry.py` | `<PASS / FAIL / N/A with reason>` | |
+| GC-052 system loop interlock | `check_system_loop_interlock.py` | `<PASS / FAIL / N/A with reason>` | |
+| Finding-to-governance learning | `check_finding_to_governance_learning.py` | `<PASS / FAIL / N/A with reason>` | |
 | Markdown structural | `check_markdown_structural_completeness.py` | `<PASS / FAIL>` | |
 | Dispatch quality | `check_work_order_dispatch_quality.py` | `<PASS / FAIL>` | |
 | Core guard self-protection | `check_core_guard_self_protection.py` | `<PASS / FAIL>` | |
+| Autorun pre-closure | `run_agent_autorun_workflow_gate.py --phase pre-closure` | `<PASS after approved commit / N/A - pending review>` | never claim PASS from an empty committed range |
 
-### 12.2 Corpus Readiness Verdicts
+### 13.2 Corpus Readiness Verdicts
 
 | Layer | Verdict |
 | --- | --- |
@@ -524,13 +572,13 @@ python governance/compat/check_corpus_to_knowledge_map_reconciliation.py --base 
 | GC-050 classification | `CLASSIFIED_STRUCTURAL_PASS / CLASSIFIED_WITH_DECLARED_GAPS / PARTIAL / BLOCKED` |
 | Adversarial sampling | `PASSED_SAMPLING / FAILED_SAMPLING / PARTIAL_SAMPLING_N_OF_M / NOT_YET_RUN` |
 
-### 12.3 Open Items
+### 13.3 Open Items
 
 | Item | Owner lane | Status |
 | --- | --- | --- |
 | `<e.g., deep semantic interpretation of family X>` | `<documentation-only / runtime-behavior / domain-review>` | `OPEN / DEFERRED / CLOSED` |
 
-### 12.4 Semantic Correctness Notice
+### 13.4 Semantic Correctness Notice
 
 **Semantic correctness remains review work.** Machine gates verify structural
 discipline, required sections, ledger columns, and evidence shapes. They do not
@@ -540,7 +588,7 @@ review and adversarial sampling remain required for high-stakes uses.
 
 ---
 
-## [REQUIRED] 13. Public Export Disposition
+## [REQUIRED] 14. Public Export Disposition
 
 `DEFERRED_PRIVATE_ONLY | EXPORTED | BLOCKED_MISSING_PUBLIC_ARTIFACTS`
 
@@ -549,7 +597,7 @@ documents, or restricted corpora that cannot be public-synced>`
 
 ---
 
-## [REQUIRED] 14. Finding-To-Governance Learning Disposition
+## [REQUIRED] 15. Finding-To-Governance Learning Disposition
 
 `[REQUIRED IF APPLICABLE]` — required if this packet records findings, known
 issues, quality findings, defects, or post-run problems.
@@ -560,7 +608,7 @@ issues, quality findings, defects, or post-run problems.
 
 ---
 
-## [REQUIRED] 15. Claim / Final / Verification Boundary
+## [REQUIRED] 16. Claim / Final / Verification Boundary
 
 This packet claims:
 
