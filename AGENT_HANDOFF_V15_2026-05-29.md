@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `cf472834` (parent: `2e5aebb5`). Session updated 2026-06-02 for bounded CI1-T6 Checker Decision closure and CI1-T7 routing.
+Current HEAD recorded for this handoff: `1ba8a421` (parent: `0ad3db1f`). Session updated 2026-06-02 for bounded CI1-T7 LPCI Intake Bridge closure; CI1 chain fully closed (T1-T7 all CLOSED_PASS_BOUNDED); LPCI product roadmap proposal now READY for operator.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -385,9 +385,24 @@ Artifact commit: `3725f962`; handoff-sync: `ae0bf9ae`.
 
 Artifact commit: `cf472834` (worker handoff commit `2e5aebb5`).
 
-Next allowed move: open or dispatch CI1-T7 LPCI Intake Bridge using the CI1-T6
-decision artifact and cross-corpus index model as machine-readable inputs.
-LPCI runtime remains blocked until CI1-T7 intake bridge closes.
+`CI1-T7` LPCI Intake Bridge is `CLOSED_PASS_BOUNDED`:
+
+`docs/reviews/CVF_CI1_T7_LPCI_INTAKE_BRIDGE_COMPLETION_2026-06-02.md`
+
+`docs/reference/CVF_CI1_T7_LPCI_INTAKE_BRIDGE_2026-06-02.md`
+
+Artifact commit: `0ad3db1f`. The CI1 corpus-intelligence chain is fully closed:
+T1-T7 all `CLOSED_PASS_BOUNDED`. CI1 roadmap final status
+`ALL_TRANCHES_CLOSED_PASS_BOUNDED_LPCI_ROADMAP_READY`.
+
+Next allowed move: operator may propose an LPCI product roadmap with its own
+GC-018 baseline per the intake bridge contract
+(`docs/reference/CVF_CI1_T7_LPCI_INTAKE_BRIDGE_2026-06-02.md`). LPCI
+chatbot/runtime implementation remains blocked until that separate governed
+roadmap is authorized. LPCI-T1 GC-018 must acknowledge the NR-04/NR-05/NR-11
+deferred gap obligations and satisfy the blocked-scope catalog. Other open
+options: WSR1 operator commit (`PUBLICATION_READY_PENDING_OPERATOR_COMMIT`),
+NR-04/NR-05/NR-11 standard authoring, or new corpus scans.
 `MKG2` Deferred Runtime Candidate Triage is `REVIEW_READY`: GC-018
 `docs/baselines/CVF_GC018_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_2026-06-01.md`,
 roadmap
@@ -493,8 +508,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ci1_t7_lpci_intake_bridge_ready`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=open or dispatch CI1-T7 LPCI Intake Bridge using the CI1-T6 decision artifact and cross-corpus index model;
+Startup acknowledged: current mode=`ci1_chain_closed_lpci_roadmap_ready`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=operator may propose LPCI product roadmap (separate GC-018) per the CI1-T7 intake bridge contract, or pick WSR1 commit / NR-04/NR-05/NR-11 standard authoring / new corpus scan; LPCI runtime stays blocked until a separate governed roadmap is authorized;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary
