@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: T1_COMPLETE_T2_DISPATCHED
+Status: T1_COMPLETE_T2_REVIEWED_T3_DISPATCH_READY
 
 docType: roadmap
 
@@ -88,10 +88,11 @@ Out of scope:
 | --- | --- | --- | --- |
 | CI1-T1 | Readiness Packet Template | canonical packet template, dispatch checklist, work order | CLOSED_PASS_BOUNDED |
 | CI1-T2 | Legacy Rescan Pilot — Graphify | apply CI1-T1 packet to `.private_reference/legacy/CVF_Important/Knowledge Base_Graphify/` (5 files) | COMPLETE_PENDING_REVIEW |
-| CI1-T3 | Cross-Corpus Index Model | normalize search/filter facets across legacy, project docs, policy docs, and source docs | PROPOSED |
-| CI1-T4 | Classification Sampling Protocol | adversarial sampling protocol for accepted/deferred/rejected/zero-result rows | PROPOSED |
-| CI1-T5 | Checker Decision | decide whether search/filter readiness needs a structural machine checker | PROPOSED |
-| CI1-T6 | LPCI Intake Bridge | map generic CI workflow into LPCI-T1 product intake | PROPOSED_AFTER_T2 |
+| CI1-T3 | Legacy Rescan Pilot 2 - Graph Governance | apply CI1 workflow to `.private_reference/legacy/CVF ADD/code-review-graph/` (7 files) and route findings through GC-051/GC-052 | DISPATCH_READY |
+| CI1-T4 | Cross-Corpus Index Model | normalize search/filter facets across at least two real CI1 scan packets | PROPOSED_AFTER_T3 |
+| CI1-T5 | Classification Sampling Protocol | adversarial sampling protocol for accepted/deferred/rejected/zero-result rows | PROPOSED |
+| CI1-T6 | Checker Decision | decide whether search/filter readiness needs a structural machine checker | PROPOSED |
+| CI1-T7 | LPCI Intake Bridge | map generic CI workflow into LPCI-T1 product intake | PROPOSED_AFTER_T4 |
 
 ## Work Plan
 
@@ -103,7 +104,9 @@ Out of scope:
 | C1.3 | Open CI1-T2 GC-018 for Graphify pilot | `docs/baselines/CVF_GC018_CI1_T2_GRAPHIFY_LEGACY_RESCAN_PILOT_2026-06-02.md` | DONE |
 | C1.4 | Dispatch CI1-T2 work order | `docs/work_orders/CVF_WO_CI1_T2_GRAPHIFY_LEGACY_RESCAN_PILOT_2026-06-02.md` | DISPATCHED |
 | C1.5 | Worker executes CI1-T2 — fills packet + completion review | readiness packet + review | COMPLETE_PENDING_REVIEW |
-| C1.6 | Review CI1-T2 output and select CI1-T3 scope | operator review | PROPOSED |
+| C1.6 | Review CI1-T2 output and select CI1-T3 scope | selected `CVF ADD/code-review-graph/` after count correction to 7 files | DONE |
+| C1.7 | Open CI1-T3 GC-018 | `docs/baselines/CVF_GC018_CI1_T3_GRAPH_GOVERNANCE_CORPUS_DEEP_SCAN_2026-06-02.md` | DONE |
+| C1.8 | Dispatch CI1-T3 work order | `docs/work_orders/CVF_WO_CI1_T3_GRAPH_GOVERNANCE_CORPUS_DEEP_SCAN_2026-06-02.md` | DISPATCH_READY |
 
 ## CI1-T1 Expected Packet Shape
 
