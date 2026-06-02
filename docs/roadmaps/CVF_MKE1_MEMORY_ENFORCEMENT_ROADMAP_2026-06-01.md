@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: PROPOSED
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -102,21 +102,21 @@ Out of scope:
 
 | Tranche | Name | Goal | Primary outputs | Status | Dependency |
 | --- | --- | --- | --- | --- | --- |
-| MKE1-E1 | Enforcement Gate Wire-In | Move eligibility evaluation before enforcement; add REVOKED/DENIED block signal to EnforcementInput | `enforcement.ts` delta, `route.ts` delta, helper extraction, focused tests | PROPOSED | none |
-| MKE1-E2 | Durable Write Route | Add governed `POST /api/memory/write` route with actor authorization, provenance gate, and receipt | new route file, tests | PROPOSED | E1 non-live gates and tests PASS |
-| MKE1-E3 | Live Governance Proof | Prove enforcement gate blocks REVOKED execution with live provider call | live proof receipt, completion review | PROPOSED | E1 + E2 complete |
+| MKE1-E1 | Enforcement Gate Wire-In | Move eligibility evaluation before enforcement; add REVOKED/DENIED block signal to EnforcementInput | `enforcement.ts` delta, `route.ts` delta, helper extraction, focused tests | CLOSED_PASS_BOUNDED | none |
+| MKE1-E2 | Durable Write Route | Add governed `POST /api/memory/write` route with actor authorization, provenance gate, and receipt | new route file, tests | CLOSED_PASS_BOUNDED | E1 non-live gates and tests PASS |
+| MKE1-E3 | Live Governance Proof | Prove enforcement gate blocks REVOKED execution with live provider call | live proof receipt, completion review | CLOSED_PASS_BOUNDED | E1 + E2 complete |
 
 ## Work Plan
 
 | Step | Requirement | Output | Status |
 | --- | --- | --- | --- |
-| M1.0 | Open GC-018 for MKE1-E1 | E1 baseline | PROPOSED |
-| M1.1 | Extract route helper if route.ts growth needed | helper module, route shrinks | PROPOSED |
-| M1.2 | Add `memoryEligibility` to `EnforcementInput`; move eligibility before enforcement gate | `enforcement.ts` + `route.ts` delta | PROPOSED |
-| M1.3 | Add REVOKED/DENIED block path in enforcement | enforcement block reasons | PROPOSED |
-| M1.4 | Focused tests: REVOKED blocks execution, ALLOWED proceeds, advisory preserved | test file | PROPOSED |
-| M1.5 | Open GC-018 for MKE1-E2; add durable write route | `POST /api/memory/write` route + tests | PROPOSED |
-| M1.6 | Open GC-018 for MKE1-E3; run live governance proof | live receipt, completion review | PROPOSED |
+| M1.0 | Open GC-018 for MKE1-E1 | E1 baseline | CLOSED_PASS_BOUNDED |
+| M1.1 | Extract route helper if route.ts growth needed | helper module, route shrinks | CLOSED_PASS_BOUNDED |
+| M1.2 | Add `memoryEligibility` to `EnforcementInput`; move eligibility before enforcement gate | `enforcement.ts` + `route.ts` delta | CLOSED_PASS_BOUNDED |
+| M1.3 | Add REVOKED/DENIED block path in enforcement | enforcement block reasons | CLOSED_PASS_BOUNDED |
+| M1.4 | Focused tests: REVOKED blocks execution, ALLOWED proceeds, advisory preserved | test file | CLOSED_PASS_BOUNDED |
+| M1.5 | Open GC-018 for MKE1-E2; add durable write route | `POST /api/memory/write` route + tests | CLOSED_PASS_BOUNDED |
+| M1.6 | Open GC-018 for MKE1-E3; run live governance proof | live receipt, completion review | CLOSED_PASS_BOUNDED |
 
 ## Workstream Details
 

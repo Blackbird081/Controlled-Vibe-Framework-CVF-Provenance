@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: PROPOSED
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -144,26 +144,26 @@ Out of scope:
 
 | Tranche | Name | Goal | Primary outputs | Status |
 | --- | --- | --- | --- | --- |
-| MKG7-T1 | Operational Contract | Formalize the runtime contract from current source; name inputs, auth, surfaces, readout shape, forbidden fields, lifecycle states, advisory boundary | GC-018, work order, Memory Plane Operational Contract | PROPOSED |
-| MKG7-T2 | Readout-Eligibility Lifecycle | Add deterministic readout-eligibility decisions distinct from the existing tier-state machine | new policy helper, focused tests | PROPOSED |
-| MKG7-T3 | Execution Advisory Wire-In | Add bounded advisory Memory readout to `/api/execute` response, helper-first, guard-gated | helper, route tests | PROPOSED |
-| MKG7-T4 | Retrieval Attribution | Extend the existing retrieval result with source/freshness/rank/exclusion attribution, no raw content | schema/helper delta, tests | PROPOSED |
-| MKG7-T5 | Durable Write Readiness | Wire the already-fail-closed durable store into a bounded read-only/authorized surface; prove existing fail-closed behavior; no new mutation authority | adapter/wiring over existing store, fail-closed tests | PROPOSED |
-| MKG7-T6 | Derived Graph Boundary | Document rebuildable graph/semantic-region boundary and drift checks | reference standard or review packet | PROPOSED |
-| MKG7-T7 | Live Proof Decision | Decide whether a live/provider proof tranche is required; draft separately if yes | decision review, no live run by default | PROPOSED |
+| MKG7-T1 | Operational Contract | Formalize the runtime contract from current source; name inputs, auth, surfaces, readout shape, forbidden fields, lifecycle states, advisory boundary | GC-018, work order, Memory Plane Operational Contract | CLOSED_PASS_BOUNDED |
+| MKG7-T2 | Readout-Eligibility Lifecycle | Add deterministic readout-eligibility decisions distinct from the existing tier-state machine | new policy helper, focused tests | CLOSED_PASS_BOUNDED |
+| MKG7-T3 | Execution Advisory Wire-In | Add bounded advisory Memory readout to `/api/execute` response, helper-first, guard-gated | helper, route tests | CLOSED_PASS_BOUNDED |
+| MKG7-T4 | Retrieval Attribution | Extend the existing retrieval result with source/freshness/rank/exclusion attribution, no raw content | schema/helper delta, tests | CLOSED_PASS_BOUNDED |
+| MKG7-T5 | Durable Write Readiness | Wire the already-fail-closed durable store into a bounded read-only/authorized surface; prove existing fail-closed behavior; no new mutation authority | adapter/wiring over existing store, fail-closed tests | CLOSED_PASS_BOUNDED |
+| MKG7-T6 | Derived Graph Boundary | Document rebuildable graph/semantic-region boundary and drift checks | reference standard or review packet | CLOSED_PASS_BOUNDED |
+| MKG7-T7 | Live Proof Decision | Decide whether a live/provider proof tranche is required; draft separately if yes | decision review, no live run by default | CLOSED_PASS_BOUNDED |
 
 ## Work Plan
 
 | Step | Requirement | Output | Status |
 | --- | --- | --- | --- |
-| M7.0 | Open fresh GC-018 with source-verified Memory plane scope | MKG7 GC-018 baseline | PROPOSED |
-| M7.1 | Dispatch T1 operational-contract work order against current source | source-verified contract and boundaries | PROPOSED |
-| M7.2 | Implement deterministic readout-eligibility lifecycle decisions | policy helper and focused tests | PROPOSED |
-| M7.3 | Decide and implement advisory route wire-in only if guards allow | route helper changes and tests | PROPOSED |
-| M7.4 | Extend retrieval attribution without raw content | attribution helper/schema delta and tests | PROPOSED |
-| M7.5 | Add readiness/wiring surface over already-fail-closed durable store | bounded read/authorized surface and deny-branch regression tests | PROPOSED |
-| M7.6 | File derived-graph boundary packet | source-authority / rebuildability packet | PROPOSED |
-| M7.7 | File live-proof decision and next roadmap if needed | decision packet | PROPOSED |
+| M7.0 | Open fresh GC-018 with source-verified Memory plane scope | MKG7 GC-018 baseline | CLOSED_PASS_BOUNDED |
+| M7.1 | Dispatch T1 operational-contract work order against current source | source-verified contract and boundaries | CLOSED_PASS_BOUNDED |
+| M7.2 | Implement deterministic readout-eligibility lifecycle decisions | policy helper and focused tests | CLOSED_PASS_BOUNDED |
+| M7.3 | Decide and implement advisory route wire-in only if guards allow | route helper changes and tests | CLOSED_PASS_BOUNDED |
+| M7.4 | Extend retrieval attribution without raw content | attribution helper/schema delta and tests | CLOSED_PASS_BOUNDED |
+| M7.5 | Add readiness/wiring surface over already-fail-closed durable store | bounded read/authorized surface and deny-branch regression tests | CLOSED_PASS_BOUNDED |
+| M7.6 | File derived-graph boundary packet | source-authority / rebuildability packet | CLOSED_PASS_BOUNDED |
+| M7.7 | File live-proof decision and next roadmap if needed | decision packet | CLOSED_PASS_BOUNDED |
 
 ## Workstream Details
 

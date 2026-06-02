@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -137,6 +137,13 @@ Active owner entrypoint: `route.ts`, current physical count 861 lines. Keep belo
 | `scripts/run_cvf_release_gate_bundle.py` execution | E3 live proof only |
 | public-sync clone | out of E1 scope |
 
+## Forbidden Filesystem State At Dispatch
+
+| Forbidden path | State at dispatch (baseHead `6ca730da`) | Outcome |
+| --- | --- | --- |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/memory/write/` | directory did not exist | COMPLIANT — E2 route files not present at E1 dispatch |
+| public-sync clone changes | no pending public-sync export | COMPLIANT |
+
 ## Required Proof Manifest
 
 | Proof | Path | Required literal | Required at handoff |
@@ -181,28 +188,28 @@ Write mode: bounded additive implementation and tests.
 
 ## 10. Acceptance Criteria
 
-- [ ] `EnforcementInput` includes optional `memoryEligibility`
-- [ ] `REVOKED` causes `status === 'BLOCK'` and includes `memory_access_revoked`
-- [ ] `READOUT_DENIED` causes `status === 'BLOCK'` and includes `memory_readout_denied`
-- [ ] `NO_AUTHORITY_SOURCE` remains non-blocking
-- [ ] `OUT_OF_SCOPE_FOR_ACTOR` remains non-blocking
-- [ ] `STALE_NEEDS_REFRESH` remains non-blocking
-- [ ] route computes Memory advisory/eligibility before `evaluateEnforcement`
-- [ ] ALLOW response still includes `memoryAdvisoryReadout`
-- [ ] `rawMemoryReleased:false` and `canReinject:false` preserved
-- [ ] cvf-web TypeScript check PASS
-- [ ] focused tests PASS
-- [ ] execute-route step-sequence guard PASS
-- [ ] governed file-size guard PASS
+- [x] `EnforcementInput` includes optional `memoryEligibility`
+- [x] `REVOKED` causes `status === 'BLOCK'` and includes `memory_access_revoked`
+- [x] `READOUT_DENIED` causes `status === 'BLOCK'` and includes `memory_readout_denied`
+- [x] `NO_AUTHORITY_SOURCE` remains non-blocking
+- [x] `OUT_OF_SCOPE_FOR_ACTOR` remains non-blocking
+- [x] `STALE_NEEDS_REFRESH` remains non-blocking
+- [x] route computes Memory advisory/eligibility before `evaluateEnforcement`
+- [x] ALLOW response still includes `memoryAdvisoryReadout`
+- [x] `rawMemoryReleased:false` and `canReinject:false` preserved
+- [x] cvf-web TypeScript check PASS
+- [x] focused tests PASS
+- [x] execute-route step-sequence guard PASS
+- [x] governed file-size guard PASS
 
 Fail conditions:
 
-- [ ] Any live provider call executed in E1
-- [ ] Durable write route implemented in E1
-- [ ] Raw Memory content released
-- [ ] Prompt reinjection or Memory reinjection added
-- [ ] Advisory-only states blocked without new authorization
-- [ ] Worker commits or pushes
+- [x] Any live provider call executed in E1
+- [x] Durable write route implemented in E1
+- [x] Raw Memory content released
+- [x] Prompt reinjection or Memory reinjection added
+- [x] Advisory-only states blocked without new authorization
+- [x] Worker commits or pushes
 
 ## 11. Review Gate
 

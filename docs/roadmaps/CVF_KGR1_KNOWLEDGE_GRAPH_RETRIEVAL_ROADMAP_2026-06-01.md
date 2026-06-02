@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: REVIEW_READY_LIVE_PROVEN_BOUNDED
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-01
 
@@ -103,6 +103,10 @@ public-sync, web-route graph integration, or push proof is claimed.
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
+
+Public-sync boundary: no KGR1 artifacts are to be copied to the public-sync
+remote (`Controlled-Vibe-Framework-CVF-public-sync`) until a separate governed
+public readiness review authorizes it.
 
 Reason: KGR1 remains private provenance work pending later public readiness
 review.

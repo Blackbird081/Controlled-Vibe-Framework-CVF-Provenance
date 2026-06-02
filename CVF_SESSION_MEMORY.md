@@ -4,9 +4,9 @@ Memory class: POINTER_RECORD
 
 Status: ACTIVE SESSION FRONT DOOR
 
-Last updated: 2026-06-01
+Last updated: 2026-06-02
 
-Current mode marker: `mke1_memory_enforcement_roadmap_proposed`
+Current mode marker: `mke1_kgr1_memory_enforcement_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `mke1_memory_enforcement_roadmap_proposed`.
+Current mode: `mke1_kgr1_memory_enforcement_closed_pass_bounded`.
 
 Active handoff:
 

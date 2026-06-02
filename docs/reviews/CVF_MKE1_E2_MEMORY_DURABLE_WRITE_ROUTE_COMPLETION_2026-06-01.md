@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: IMPLEMENTATION_REVIEW_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: review
 
