@@ -86,7 +86,7 @@ Out of scope:
 
 | Tranche | Goal | Primary outputs | Status |
 | --- | --- | --- | --- |
-| CI1-T1 | Readiness Packet Template | canonical packet template, dispatch checklist, work order | READY_FOR_DISPATCH |
+| CI1-T1 | Readiness Packet Template | canonical packet template, dispatch checklist, work order | COMPLETE_PENDING_REVIEW |
 | CI1-T2 | Legacy Rescan Pilot | apply packet to one bounded legacy family, preferably Graphify or another operator-selected folder | PROPOSED_AFTER_T1 |
 | CI1-T3 | Cross-Corpus Index Model | normalize search/filter facets across legacy, project docs, policy docs, and source docs | PROPOSED |
 | CI1-T4 | Classification Sampling Protocol | adversarial sampling protocol for accepted/deferred/rejected/zero-result rows | PROPOSED |

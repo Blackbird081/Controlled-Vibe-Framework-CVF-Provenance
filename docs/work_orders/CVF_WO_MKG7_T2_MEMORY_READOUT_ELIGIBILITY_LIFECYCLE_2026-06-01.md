@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -171,18 +171,18 @@ Write mode: create-only for new files; additive export-only for `memory-runtime.
 
 ## 10. Acceptance Criteria
 
-- [ ] `memory-readout-eligibility-policy.ts` exists with all 6 states
-- [ ] Tests cover all 6 states and assert `rawMemoryReleased=false` + `canReinject=false`
-- [ ] `memory-lifecycle-policy.ts` is unmodified (verify with `git diff`)
-- [ ] LPF `npm run check` PASS
-- [ ] File-size guard PASS
-- [ ] Both new files left pending and uncommitted
+- [x] `memory-readout-eligibility-policy.ts` exists with all 6 states
+- [x] Tests cover all 6 states and assert `rawMemoryReleased=false` + `canReinject=false`
+- [x] `memory-lifecycle-policy.ts` is unmodified (verify with `git diff`)
+- [x] LPF `npm run check` PASS
+- [x] File-size guard PASS
+- [x] Both new files left pending and uncommitted
 
 Fail conditions:
 
-- [ ] Any edit to `memory-lifecycle-policy.ts` or `index.ts`
-- [ ] Missing eligibility state in implementation or tests
-- [ ] Worker commits or asks whether to fix an allowed-scope gate failure
+- [x] Any edit to `memory-lifecycle-policy.ts` or `index.ts`
+- [x] Missing eligibility state in implementation or tests
+- [x] Worker commits or asks whether to fix an allowed-scope gate failure
 
 ## 11. Review Gate
 

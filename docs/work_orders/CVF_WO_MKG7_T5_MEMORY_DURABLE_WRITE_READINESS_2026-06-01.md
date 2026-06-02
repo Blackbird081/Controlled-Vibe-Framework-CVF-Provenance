@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -160,18 +160,18 @@ Forbidden: `durable-memory-store.ts`, `index.ts`.
 
 ## 10. Acceptance Criteria
 
-- [ ] `memory-durable-readiness.ts` exists with summary-only `readMemory()` helper
-- [ ] Tests cover all 3 write-deny scenarios and read-deny + read-allow
-- [ ] Receipt invariants asserted: `summaryOnly:true`, `canReinject:false`, `rawMemoryReleased:false`
-- [ ] `durable-memory-store.ts` zero edits (verified with `git diff`)
-- [ ] LPF `npm run check` PASS
-- [ ] File-size guard PASS
+- [x] `memory-durable-readiness.ts` exists with summary-only `readMemory()` helper
+- [x] Tests cover all 3 write-deny scenarios and read-deny + read-allow
+- [x] Receipt invariants asserted: `summaryOnly:true`, `canReinject:false`, `rawMemoryReleased:false`
+- [x] `durable-memory-store.ts` zero edits (verified with `git diff`)
+- [x] LPF `npm run check` PASS
+- [x] File-size guard PASS
 
 Fail conditions:
 
-- [ ] Any edit to `durable-memory-store.ts`
-- [ ] New write path added that bypasses the existing deny-branch
-- [ ] Worker commits or asks whether to fix an allowed-scope failure
+- [x] Any edit to `durable-memory-store.ts`
+- [x] New write path added that bypasses the existing deny-branch
+- [x] Worker commits or asks whether to fix an allowed-scope failure
 
 ## 11. Review Gate
 

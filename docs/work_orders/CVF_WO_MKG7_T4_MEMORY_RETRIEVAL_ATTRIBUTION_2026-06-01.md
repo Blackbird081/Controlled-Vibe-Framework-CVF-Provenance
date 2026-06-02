@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -156,18 +156,18 @@ Forbidden: `memory-retrieval-policy.ts`, `index.ts`.
 
 ## 10. Acceptance Criteria
 
-- [ ] `memory-retrieval-attribution.ts` exists with attribution type and builder
-- [ ] Attribution output contains `sourceId`, `freshness`, `rankReason`, `exclusionReason`, `rawMemoryReleased:false`
-- [ ] Raw candidate `content` absent from attribution output
-- [ ] `memory-retrieval-policy.ts` unmodified
-- [ ] LPF `npm run check` PASS
-- [ ] File-size guard PASS
+- [x] `memory-retrieval-attribution.ts` exists with attribution type and builder
+- [x] Attribution output contains `sourceId`, `freshness`, `rankReason`, `exclusionReason`, `rawMemoryReleased:false`
+- [x] Raw candidate `content` absent from attribution output
+- [x] `memory-retrieval-policy.ts` unmodified
+- [x] LPF `npm run check` PASS
+- [x] File-size guard PASS
 
 Fail conditions:
 
-- [ ] Raw candidate `content` present in attribution output
-- [ ] Any edit to `memory-retrieval-policy.ts`
-- [ ] Worker commits or asks whether to fix an allowed-scope failure
+- [x] Raw candidate `content` present in attribution output
+- [x] Any edit to `memory-retrieval-policy.ts`
+- [x] Worker commits or asks whether to fix an allowed-scope failure
 
 ## 11. Review Gate
 

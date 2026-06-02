@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -267,22 +267,22 @@ Evidence Trace Block:
 
 ## 10. Acceptance Criteria
 
-- [ ] Contract document exists with all sections in Execution Plan step 3
-- [ ] Every contract claim cites a source file with line/symbol evidence
-- [ ] `canReinject=false` is explicitly scoped to the readout/advisory surface
-- [ ] Tier policy `canReinject:true` for semantic/procedural is acknowledged as a separate signal
-- [ ] Durable write described as present and fail-closed, not disabled or exposed
-- [ ] Source Verification table present with no `UNVERIFIED`/`TBD`/`TODO` dispositions
-- [ ] Markdown-structural and public-export gates PASS
-- [ ] Both documents left pending and uncommitted with actual git status recorded
+- [x] Contract document exists with all sections in Execution Plan step 3
+- [x] Every contract claim cites a source file with line/symbol evidence
+- [x] `canReinject=false` is explicitly scoped to the readout/advisory surface
+- [x] Tier policy `canReinject:true` for semantic/procedural is acknowledged as a separate signal
+- [x] Durable write described as present and fail-closed, not disabled or exposed
+- [x] Source Verification table present with no `UNVERIFIED`/`TBD`/`TODO` dispositions
+- [x] Markdown-structural and public-export gates PASS
+- [x] Both documents left pending and uncommitted with actual git status recorded
 
 Fail conditions:
 
-- [ ] Any runtime/source `.ts` file edited
-- [ ] Any contract claim sourced only from memory/roadmap prose where runtime source exists
-- [ ] Blanket `canReinject=false` claim that contradicts the tier policy
-- [ ] Durable write described as disabled or as an ungoverned exposure
-- [ ] Worker commits, pushes, or asks whether to fix an allowed-scope gate failure
+- [x] Any runtime/source `.ts` file edited
+- [x] Any contract claim sourced only from memory/roadmap prose where runtime source exists
+- [x] Blanket `canReinject=false` claim that contradicts the tier policy
+- [x] Durable write described as disabled or as an ungoverned exposure
+- [x] Worker commits, pushes, or asks whether to fix an allowed-scope gate failure
 
 Closure is blocked if any fail condition is present.
 

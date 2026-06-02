@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: IMPLEMENTATION_COMPLETE_PENDING_REVIEW
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -146,14 +146,14 @@ Implementation already complete. Orchestrator:
 
 ## 10. Acceptance Criteria
 
-- [ ] `POST /api/memory/write` exists and authenticated
-- [ ] Raw content fields (`content`, `rawContent`, `value`) rejected with 400
-- [ ] Unauthorized request returns 401
-- [ ] `actorAuthorized: false` → denied receipt, not a write
-- [ ] `policyDecision !== 'allow'` → denied receipt
-- [ ] Valid authorized write → receipt with `summaryOnly:true`, `canReinject:false`, `rawMemoryReleased:false`
-- [ ] Store path not configured → denied receipt (not 500)
-- [ ] TypeScript check PASS, file-size PASS
+- [x] `POST /api/memory/write` exists and authenticated
+- [x] Raw content fields (`content`, `rawContent`, `value`) rejected with 400
+- [x] Unauthorized request returns 401
+- [x] `actorAuthorized: false` → denied receipt, not a write
+- [x] `policyDecision !== 'allow'` → denied receipt
+- [x] Valid authorized write → receipt with `summaryOnly:true`, `canReinject:false`, `rawMemoryReleased:false`
+- [x] Store path not configured → denied receipt (not 500)
+- [x] TypeScript check PASS, file-size PASS
 
 ## 11. Review Gate
 
@@ -161,10 +161,10 @@ GC-018 filed. Implementation complete. Closure after orchestrator review and gat
 
 ## 12. Closure Checklist
 
-- [ ] All acceptance criteria satisfied
-- [ ] Tests PASS
-- [ ] TypeScript check PASS
-- [ ] Commit scoped only to E2 files + governance docs
+- [x] All acceptance criteria satisfied
+- [x] Tests PASS
+- [x] TypeScript check PASS
+- [x] Commit scoped only to E2 files + governance docs
 
 ## 13. Return-To-Orchestrator Conditions
 
