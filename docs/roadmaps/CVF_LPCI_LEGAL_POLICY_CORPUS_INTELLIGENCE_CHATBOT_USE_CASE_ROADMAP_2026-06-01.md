@@ -57,8 +57,8 @@ knowledge can be traced, searched, and bounded:
 | Memory Plane | retain bounded advisory/readout context without raw reinjection | CLOSED_PASS_BOUNDED |
 | MKE | enforce live memory governance behavior before stronger claims | CLOSED_PASS_BOUNDED |
 | KGR | retrieve knowledge graph signals with cited source boundaries | CLOSED_PASS_BOUNDED |
-| CI1-T4 Cross-Corpus Index Model | normalize corpus facets into a typed downstream input | DISPATCH_READY |
-| CI1-T5 Classification Sampling | sample accepted/deferred/rejected/zero-result rows on the T4 model | HOLD_UNTIL_T4_CLOSED |
+| CI1-T4 Cross-Corpus Index Model | normalize corpus facets into a typed downstream input | CLOSED_PASS_BOUNDED |
+| CI1-T5 Classification Sampling | sample accepted/deferred/rejected/zero-result rows on the T4 model | READY_FOR_GC018 |
 | CI1-T6 Checker Decision | decide whether sampling findings require a structural checker | HOLD_UNTIL_T5_CLOSED |
 | CI1-T7 LPCI Intake Bridge | map the CI1 chain into LPCI-T1 product intake | HOLD_UNTIL_T6_DECIDED |
 

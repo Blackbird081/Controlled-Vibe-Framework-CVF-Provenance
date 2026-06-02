@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -56,8 +56,24 @@ Allowed scope:
   `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json`;
 - create
   `docs/reviews/CVF_CI1_T4_CROSS_CORPUS_INDEX_MODEL_COMPLETION_2026-06-02.md`;
-- update the CI1 roadmap CI1-T4 row/status only;
+- update
+  `docs/roadmaps/CVF_CI1_CORPUS_INTELLIGENCE_OPERATIONALIZATION_ROADMAP_2026-06-02.md`
+  CI1-T4 row/status only during worker execution;
 - repair allowed-scope Markdown, JSON, interlock, and dispatch-quality defects.
+
+Reviewer-only closure coordination after worker handoff:
+
+- update session continuity paths `CVF_SESSION_MEMORY.md`,
+  `CVF_SESSION/ACTIVE_SESSION_STATE.json`, and
+  `AGENT_HANDOFF_V15_2026-05-29.md`;
+- update
+  `docs/roadmaps/CVF_LPCI_LEGAL_POLICY_CORPUS_INTELLIGENCE_CHATBOT_USE_CASE_ROADMAP_2026-06-01.md`
+  dependency status only;
+- close this work order, its completion review, and the CI1 roadmap after
+  committed-range reviewer gates pass.
+
+These reviewer-only paths are not worker write ownership and do not relax the
+worker forbidden scope.
 
 Forbidden scope:
 
@@ -142,7 +158,7 @@ Do not cite committed-only or empty ranges as proof for pending files.
 - `dispatchBaseHead`: `15d8cec5`
 - `executionBaseHead`: capture with `git rev-parse --short HEAD` immediately
   before material edits
-- `closureBaseHead`: N/A - reviewer / committer selects after review
+- `closureBaseHead`: `4c06491e`
 
 Worker handoff boundary: return `COMPLETE_PENDING_REVIEW` with actual pending
 paths and working-tree-aware component-gate evidence. Do not claim autorun
@@ -361,16 +377,16 @@ T4 closure plus CI1-T5, CI1-T6, and CI1-T7.
 
 ## Closure Checklist
 
-- [ ] JSON model created and valid
-- [ ] reference spec created
-- [ ] GC-052 interlock row added
-- [ ] completion review created
-- [ ] both source packets cited
-- [ ] downstream routes T5/T6/T7 recorded
-- [ ] component gates PASS
-- [ ] pending worktree paths recorded
-- [ ] no forbidden path touched
-- [ ] no commit or push performed
+- [x] JSON model created and valid
+- [x] reference spec created
+- [x] GC-052 interlock row added
+- [x] completion review created
+- [x] both source packets cited
+- [x] downstream routes T5/T6/T7 recorded
+- [x] component gates PASS
+- [x] pending worktree paths recorded
+- [x] no forbidden path touched
+- [x] no commit or push performed by worker
 
 ## Public Export Disposition
 

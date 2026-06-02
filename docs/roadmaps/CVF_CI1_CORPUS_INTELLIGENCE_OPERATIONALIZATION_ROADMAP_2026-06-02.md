@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: T1_COMPLETE_T2_REVIEWED_T3_CLOSED_PASS_BOUNDED_T4_COMPLETE_PENDING_REVIEW
+Status: T1_COMPLETE_T2_REVIEWED_T3_CLOSED_PASS_BOUNDED_T4_CLOSED_PASS_BOUNDED_T5_READY_FOR_GC018
 
 docType: roadmap
 
@@ -89,8 +89,8 @@ Out of scope:
 | CI1-T1 | Readiness Packet Template | canonical packet template, dispatch checklist, work order | CLOSED_PASS_BOUNDED |
 | CI1-T2 | Legacy Rescan Pilot — Graphify | apply CI1-T1 packet to `.private_reference/legacy/CVF_Important/Knowledge Base_Graphify/` (5 files) | COMPLETE_PENDING_REVIEW |
 | CI1-T3 | Legacy Rescan Pilot 2 - Graph Governance | apply CI1 workflow to `.private_reference/legacy/CVF ADD/code-review-graph/` (7 files) and route findings through GC-051/GC-052 | CLOSED_PASS_BOUNDED |
-| CI1-T4 | Cross-Corpus Index Model | normalize search/filter facets across at least two real CI1 scan packets | COMPLETE_PENDING_REVIEW |
-| CI1-T5 | Classification Sampling Protocol | adversarial sampling protocol over the T4 model with accepted/deferred/rejected/zero-result rows | HOLD_UNTIL_T4_CLOSED |
+| CI1-T4 | Cross-Corpus Index Model | normalize search/filter facets across at least two real CI1 scan packets | CLOSED_PASS_BOUNDED |
+| CI1-T5 | Classification Sampling Protocol | adversarial sampling protocol over the T4 model with accepted/deferred/rejected/zero-result rows | READY_FOR_GC018 |
 | CI1-T6 | Checker Decision | decide whether T5 findings justify a structural machine checker | HOLD_UNTIL_T5_CLOSED |
 | CI1-T7 | LPCI Intake Bridge | map the T4/T5/T6 corpus-intelligence chain into LPCI-T1 product intake | HOLD_UNTIL_T6_DECIDED |
 
@@ -111,6 +111,8 @@ Out of scope:
 | C1.10 | Reviewer commits CI1-T3 and runs committed-range closure | `7c068eeb` + handoff-sync `b0d0249c` | DONE |
 | C1.11 | Open CI1-T4 GC-018 | `docs/baselines/CVF_GC018_CI1_T4_CROSS_CORPUS_INDEX_MODEL_2026-06-02.md` | DONE |
 | C1.12 | Dispatch CI1-T4 work order | `docs/work_orders/CVF_WO_CI1_T4_CROSS_CORPUS_INDEX_MODEL_2026-06-02.md` | DONE |
+| C1.13 | Reviewer commits CI1-T4 artifacts and runs committed-range closure | `3725f962` + handoff-sync `ae0bf9ae` | DONE |
+| C1.14 | Open CI1-T5 GC-018 | classification sampling protocol baseline | READY_FOR_GC018 |
 
 ## CI1-T1 Expected Packet Shape
 

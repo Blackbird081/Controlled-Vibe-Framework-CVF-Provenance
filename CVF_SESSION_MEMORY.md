@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-02
 
-Current mode marker: `ci1_t4_cross_corpus_index_model_dispatch_ready`
+Current mode marker: `ci1_t4_closed_pass_bounded_t5_ready_for_gc018`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `ci1_t4_cross_corpus_index_model_dispatch_ready`.
+Current mode: `ci1_t4_closed_pass_bounded_t5_ready_for_gc018`.
 
 Active handoff:
 
@@ -417,14 +417,14 @@ GC-053 Work Order Commit Mode And Anchor Lifecycle Hardening is
 `docs/reviews/CVF_GC053_WORK_ORDER_COMMIT_MODE_ANCHOR_LIFECYCLE_HARDENING_2026-06-02.md`
 
 LHW24 remains the latest closed numbered LHW wave. CI1-T4 Cross-Corpus Index
-Model is `DISPATCH_READY`:
+Model is `CLOSED_PASS_BOUNDED`:
 
-`docs/work_orders/CVF_WO_CI1_T4_CROSS_CORPUS_INDEX_MODEL_2026-06-02.md`
+`docs/reviews/CVF_CI1_T4_CROSS_CORPUS_INDEX_MODEL_COMPLETION_2026-06-02.md`
 
-Next allowed move: worker executes CI1-T4 and returns pending JSON, reference
-spec, GC-052 interlock update, and completion review artifacts without commit
-or push. CI1-T5 adversarial sampling, CI1-T6 checker decision, and CI1-T7 LPCI
-intake bridge remain required before LPCI chatbot runtime implementation.
+Next allowed move: open a fresh CI1-T5 GC-018 for the adversarial
+classification sampling protocol over the T4 model. CI1-T6 checker decision
+and CI1-T7 LPCI intake bridge remain locked until their direct prerequisites
+close. LPCI chatbot runtime implementation remains blocked.
 
 Parked checkpoints:
 

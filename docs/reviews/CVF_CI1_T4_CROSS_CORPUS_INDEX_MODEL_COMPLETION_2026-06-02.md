@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: COMPLETE_PENDING_REVIEW
+Status: CLOSED_PASS_BOUNDED
 
 docType: review
 
@@ -46,19 +46,20 @@ and was not modified by the CI1-T4 worker; reviewer should assess independently.
 | --- | --- |
 | `dispatchBaseHead` | `15d8cec5` |
 | `executionBaseHead` | `bff74ead` |
-| `closureBaseHead` | N/A - reviewer / committer stage after approved review |
+| `closureBaseHead` | `4c06491e` |
 
 ## Artifact Inventory
 
 | Path | Status | Purpose |
 | --- | --- | --- |
-| `docs/corpus-intelligence/CVF_CROSS_CORPUS_INDEX_MODEL.json` | CREATED (pending) | Machine-readable cross-corpus index model |
-| `docs/reference/CVF_CI1_T4_CROSS_CORPUS_INDEX_MODEL_2026-06-02.md` | CREATED (pending) | Human-readable contract and boundary |
-| `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json` | UPDATED (pending) | Added `scan-packets-to-cross-corpus-index` GC-052 row |
-| `docs/reviews/CVF_CI1_T4_CROSS_CORPUS_INDEX_MODEL_COMPLETION_2026-06-02.md` | CREATED (pending, this file) | Worker completion evidence |
-| `docs/roadmaps/CVF_CI1_CORPUS_INTELLIGENCE_OPERATIONALIZATION_ROADMAP_2026-06-02.md` | UPDATED (pending) | CI1-T4 row status set to COMPLETE_PENDING_REVIEW |
+| `docs/corpus-intelligence/CVF_CROSS_CORPUS_INDEX_MODEL.json` | COMMITTED (`3725f962`) | Machine-readable cross-corpus index model |
+| `docs/reference/CVF_CI1_T4_CROSS_CORPUS_INDEX_MODEL_2026-06-02.md` | COMMITTED (`3725f962`) | Human-readable contract and boundary |
+| `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json` | COMMITTED (`3725f962`) | Added `scan-packets-to-cross-corpus-index` GC-052 row |
+| `docs/reviews/CVF_CI1_T4_CROSS_CORPUS_INDEX_MODEL_COMPLETION_2026-06-02.md` | COMMITTED (`3725f962`, then reviewer closure update) | Worker completion evidence and reviewer closure |
+| `docs/roadmaps/CVF_CI1_CORPUS_INTELLIGENCE_OPERATIONALIZATION_ROADMAP_2026-06-02.md` | COMMITTED (`3725f962`, then reviewer closure update) | CI1-T4 closure and CI1-T5 routing |
 
-All files are working-tree pending. No commit or push was performed.
+The worker performed no commit or push. The reviewer committed the bounded T4
+artifacts at `3725f962` and synchronized the handoff at `ae0bf9ae`.
 
 ## Source Packets Consumed
 
@@ -284,6 +285,42 @@ reference spec downstream route statuses with the tightened dependency lock:
 These corrections do not expand the T4 claim boundary. Reviewer reruns the
 applicable gates before committed-range closure.
 
+## Reviewer Closure Evidence
+
+| Evidence | Value |
+| --- | --- |
+| Artifact commit | `3725f962` |
+| Handoff-sync commit | `ae0bf9ae` |
+| Committed closure range | `4c06491e..ae0bf9ae` |
+| Pre-closure autorun | PASS |
+| Worktree finality during pre-closure | PASS - clean |
+| Public catalog update | N/A with reason - private contract normalization only; no new public proven capability |
+
+Command:
+
+```powershell
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base 4c06491e --head HEAD
+```
+
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: synchronize protected session front-door
+state for bounded CI1-T4 reviewer closure and CI1-T5 GC-018 routing only. No
+guard checker, hook-chain, guard document, runtime, or public-sync edit is
+authorized.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+
+Operator authorization: operator requested CI1 continuation and authorized the
+reviewer to finish the tranche on 2026-06-02.
+
+Rollback boundary: revert only the bounded CI1-T4 closure routing metadata if
+the closure is withdrawn. Do not revert the accepted T4 model artifacts or any
+prior CI1-T3, GC-052, or GC-053 evidence.
+
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
@@ -303,5 +340,6 @@ listing, rebuildability statement, and working-tree-aware status.
 claimed), semantic correctness, runtime index creation, LPCI runtime, production
 readiness, hosted readiness, or public readiness.
 
-**Final boundary:** `COMPLETE_PENDING_REVIEW`. No commit or push was performed by
-the worker. Reviewer/committer stage follows after operator or reviewer acceptance.
+**Final boundary:** `CLOSED_PASS_BOUNDED`. No commit or push was performed by
+the worker. Reviewer closure records a private, rebuildable cross-corpus index
+contract only.

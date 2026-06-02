@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `3725f962` (parent: `4c06491e`). Session updated 2026-06-02 after the bounded CI1-T4 artifact commit while reviewer closure remains pending.
+Current HEAD recorded for this handoff: `ae0bf9ae` (parent: `3725f962`). Session updated 2026-06-02 for bounded CI1-T4 reviewer closure and CI1-T5 GC-018 routing.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -367,16 +367,16 @@ Manifest hash:
 Result: seven `CVF ADD/code-review-graph/` files deep-read and routed through
 GC-047, GC-048, GC-050, GC-051, and GC-052.
 
-`CI1-T4` Cross-Corpus Index Model is `DISPATCH_READY`:
+`CI1-T4` Cross-Corpus Index Model is `CLOSED_PASS_BOUNDED`:
 
-`docs/baselines/CVF_GC018_CI1_T4_CROSS_CORPUS_INDEX_MODEL_2026-06-02.md`
+`docs/reviews/CVF_CI1_T4_CROSS_CORPUS_INDEX_MODEL_COMPLETION_2026-06-02.md`
 
-`docs/work_orders/CVF_WO_CI1_T4_CROSS_CORPUS_INDEX_MODEL_2026-06-02.md`
+Artifact commit: `3725f962`; handoff-sync: `ae0bf9ae`.
 
-Next allowed move: worker executes CI1-T4 and returns pending JSON, reference
-spec, GC-052 interlock update, and completion review artifacts without commit
-or push. LPCI runtime remains blocked until CI1-T4 closure, CI1-T5 sampling,
-CI1-T6 checker decision, and CI1-T7 intake bridge.
+Next allowed move: open a fresh CI1-T5 GC-018 for the adversarial
+classification sampling protocol over the committed T4 model. LPCI runtime
+remains blocked until CI1-T5 sampling, CI1-T6 checker decision, and CI1-T7
+intake bridge close in sequence.
 `MKG2` Deferred Runtime Candidate Triage is `REVIEW_READY`: GC-018
 `docs/baselines/CVF_GC018_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_2026-06-01.md`,
 roadmap
@@ -482,8 +482,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ci1_t4_cross_corpus_index_model_dispatch_ready`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=execute CI1-T4 Cross-Corpus Index Model work order and return pending artifacts without commit or push;
+Startup acknowledged: current mode=`ci1_t4_closed_pass_bounded_t5_ready_for_gc018`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=open a fresh CI1-T5 GC-018 for the Classification Sampling Protocol over the committed T4 model;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary
