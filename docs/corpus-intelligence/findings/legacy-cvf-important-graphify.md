@@ -170,5 +170,5 @@ is desired, open a separate benchmarking tranche with explicit live proof setup.
 | F3 — CLI commands absent | Post-CI1 — `docs/roadmaps/CVF_GRAPH_CLI_PHASED_BACKLOG_ROADMAP_2026-06-02.md` |
 | F4 — Token claim | Post-CI1 — Benchmarking tranche only if operator requests |
 
-CI1-T3 next candidate: `CVF ADD/code-review-graph/` — 5 files directly related
+CI1-T3 next candidate: `CVF ADD/code-review-graph/` — 7 files directly related
 to F2 (graph guard governance patterns).

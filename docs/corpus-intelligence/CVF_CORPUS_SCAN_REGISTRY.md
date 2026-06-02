@@ -92,7 +92,7 @@ Use this index to find prior findings by domain keyword.
 | F1-kgr1-partial | `Graphify/` | KGR1 partially absorbed data model + builder; full spec not implemented | ACCEPT_NO_ACTION |
 | F2-guard-spec-absent | `Graphify/` | G-GM-01 through G-GM-08 guard IDs absent from CVF TS source | DEFER_WITH_ROADMAP |
 | F3-cli-commands-absent | `Graphify/` | `cvf graph build/query/visualize/export/validate/status/purge` absent from CLI | DEFER_PHASED |
-| RESCAN-C-code-review-graph | `CVF ADD/` | `code-review-graph/` subfolder (5 files) not yet deep-classified | DEFER_WITH_ROADMAP |
+| RESCAN-C-code-review-graph | `CVF ADD/` | `code-review-graph/` subfolder (7 files) not yet deep-classified | DEFER_WITH_ROADMAP |
 
 ### Performance Claims
 
@@ -127,7 +127,7 @@ Searches that confirmed absence — prevents re-doing the same negative search.
 
 | Priority | Target | Reason |
 | --- | --- | --- |
-| HIGH | `CVF ADD/code-review-graph/` (5 files) | Directly relates to Finding F2 (graph guard spec); CI1-T3 candidate |
+| HIGH | `CVF ADD/code-review-graph/` (7 files) | Directly relates to Finding F2 (graph guard spec); CI1-T3 candidate |
 | MEDIUM | `CVF Edit/` — full GC-047/050 scan | Only LHW18 doc-only absorption done; no manifest or classification yet |
 | MEDIUM | `CVF_Important/` remaining subfamilies | 230 files inventoried; deep classification pending per-family |
 | LOW | `CVF 16.5/` + `CVF_Restructure/` deep scan | Broad routing done; deep classification when operator prioritizes |

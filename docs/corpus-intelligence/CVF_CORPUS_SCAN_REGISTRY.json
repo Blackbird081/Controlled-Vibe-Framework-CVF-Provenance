@@ -109,7 +109,7 @@
         "GRAPH_REPORT.md (output artifact — not produced by CVF)",
         "NetworkX / leiden (Python graph libs — not in CVF)"
       ],
-      "nextScanRecommendation": "CVF ADD/code-review-graph/ — 5 files, directly related to graph governance (Finding F2)",
+      "nextScanRecommendation": "CVF ADD/code-review-graph/ — 7 files, directly related to graph governance (Finding F2)",
       "hashAlgorithm": "sha256",
       "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
     },
@@ -181,7 +181,7 @@
       "findings": [
         {
           "id": "RESCAN-C-code-review-graph",
-          "summary": "CVF ADD/code-review-graph/ contains 5 graph spec files not yet deep-classified",
+          "summary": "CVF ADD/code-review-graph/ contains 7 files not yet deep-classified",
           "disposition": "DEFER_WITH_ROADMAP",
           "nextAction": "CI1-T3 candidate — directly relevant to Graphify F2 guard spec gap",
           "defectClass": "RULE_GAP",
@@ -190,7 +190,7 @@
         }
       ],
       "negativeSearchTerms": [],
-      "nextScanRecommendation": "CVF ADD/code-review-graph/ — 5 files, directly related to Finding F2 from Graphify scan",
+      "nextScanRecommendation": "CVF ADD/code-review-graph/ — 7 files, directly related to Finding F2 from Graphify scan",
       "hashAlgorithm": "sha256",
       "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
     },
