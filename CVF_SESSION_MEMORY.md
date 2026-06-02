@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-02
 
-Current mode marker: `mke1_kgr1_memory_enforcement_closed_pass_bounded`
+Current mode marker: `ci1_t3_closed_pass_bounded_t4_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `mke1_kgr1_memory_enforcement_closed_pass_bounded`.
+Current mode: `ci1_t3_closed_pass_bounded_t4_ready`.
 
 Active handoff:
 
@@ -403,24 +403,25 @@ Completion:
 Public-safe subset sync remains available only from the public-sync clone after
 remote verification.
 
-MKG1-MKG6 Memory system tranche is `CLOSED_COMMITTED` (`2ebc0b92` +
-`6f825820`). The final closing roadmap is `PROPOSED` and committed at
-`ad9c2b75`:
+Memory plane is `CLOSED_PASS_BOUNDED` as a governed enforcement substrate:
+MKG7, MKE1, and KGR1 are complete within their recorded boundaries.
 
-`docs/roadmaps/CVF_MKG7_MEMORY_PLANE_OPERATIONALIZATION_ROADMAP_2026-06-01.md`
+CI1-T3 Graph Governance Corpus Deep Scan is `CLOSED_PASS_BOUNDED`
+(`7c068eeb` + handoff-sync `b0d0249c`):
 
-It was rewritten from the Codex draft after source verification: the durable
-write path is present and already fails closed
-(`durable-memory-store.ts:201`), `canReinject=false` is scoped to the
-readout/advisory surface, `/api/execute/route.ts` is `858` lines, and T2/T4/T5
-are reframed delta-over-existing. MKG7-T1 (documentation-only Memory Plane
-Operational Contract) is `DISPATCHED`:
+`docs/reviews/CVF_CI1_T3_GRAPH_GOVERNANCE_CORPUS_DEEP_SCAN_COMPLETION_2026-06-02.md`
 
-`docs/work_orders/CVF_WO_MKG7_T1_MEMORY_PLANE_OPERATIONAL_CONTRACT_2026-06-01.md`
+GC-053 Work Order Commit Mode And Anchor Lifecycle Hardening is
+`CLOSED_PASS_BOUNDED`:
 
-Next allowed move: assign a worker to execute MKG7-T1, then dispatch T2-T7 each
-with its own GC-018 + work order. No live proof, public-sync, prompt injection,
-reinjection, or new durable-mutating route without separate GC-018.
+`docs/reviews/CVF_GC053_WORK_ORDER_COMMIT_MODE_ANCHOR_LIFECYCLE_HARDENING_2026-06-02.md`
+
+LHW24 remains the latest closed numbered LHW wave. Next allowed move: open
+CI1-T4 GC-018 for the Cross-Corpus Index Model. It must normalize search/filter
+facets across the CI1-T2 Graphify packet and CI1-T3 code-review-graph packet
+before LPCI chatbot runtime implementation begins. CI1-T5 adversarial
+sampling, CI1-T6 checker decision, and CI1-T7 LPCI intake bridge remain
+required product-readiness steps.
 
 Parked checkpoints:
 

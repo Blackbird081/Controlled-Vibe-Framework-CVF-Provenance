@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: PASS_PENDING_COMMIT
+Status: CLOSED_PASS_BOUNDED
 
 docType: review
 
@@ -71,7 +71,7 @@ base-anchor lifecycle are explicit.
 
 Decision: implement the bounded GC-053 checker and test patch.
 
-Disposition: PASS_PENDING_COMMIT.
+Disposition: CLOSED_PASS_BOUNDED.
 
 ## Evidence / Verification
 
@@ -83,6 +83,7 @@ Disposition: PASS_PENDING_COMMIT.
 | autorun pre-dispatch | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base 8d533581 --head HEAD` | PASS |
 | markdown structural | `python governance/compat/check_markdown_structural_completeness.py --base 8d533581 --head HEAD --enforce` | PASS |
 | local pre-push hook chain | `python governance/compat/run_local_governance_hook_chain.py --parallel --max-workers 8` | PASS - 52 checks |
+| autorun pre-closure | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base 8d533581 --head HEAD` | PASS - committed range through `b0d0249c` |
 | whitespace check | `git diff --check` | PASS |
 
 GC-053 test coverage added:
@@ -120,7 +121,8 @@ is included.
 Authorized guard-maintenance scope: add dispatch-quality machine enforcement
 and integration tests for work-order commit mode and base-anchor lifecycle;
 repair the compact README guard-registry marker exposed by local hook
-validation.
+validation; synchronize protected session front-door state after the bounded
+closure commit.
 
 Protected paths:
 
@@ -128,6 +130,8 @@ Protected paths:
 - `governance/compat/test_check_work_order_dispatch_quality.py`
 - `docs/CVF_CORE_KNOWLEDGE_BASE.md`
 - `README.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 
 Operator authorization: operator direction on 2026-06-02 to process the
 finding completely and implement the checker hardening immediately.
@@ -140,6 +144,6 @@ hardening is unwound. Do not alter CI1-T3 corpus findings or runtime source.
 
 ## Claim Boundary
 
-GC-053 authorizes and records a narrow dispatch-quality guard patch. It does
-not claim committed closure, runtime behavior change, live proof, public
-readiness, or autonomous mutation.
+GC-053 authorizes and records a narrow committed dispatch-quality guard patch.
+It does not claim runtime behavior change, live proof, public readiness, or
+autonomous mutation.

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -52,6 +52,23 @@ Allowed scope:
 - update `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`;
 - update the CI1 roadmap CI1-T3 row/status only;
 - repair allowed-scope markdown, corpus, registry, interlock, and dispatch-gate defects.
+
+Reviewer / committer closure scope (operator-authorized on 2026-06-02 after
+worker handoff):
+
+- update this work order status, closure anchor, and checked closure evidence;
+- update
+  `docs/reviews/CVF_CI1_T3_GRAPH_GOVERNANCE_CORPUS_DEEP_SCAN_COMPLETION_2026-06-02.md`;
+- update
+  `docs/roadmaps/CVF_CI1_CORPUS_INTELLIGENCE_OPERATIONALIZATION_ROADMAP_2026-06-02.md`;
+- update
+  `docs/reviews/CVF_GC053_WORK_ORDER_COMMIT_MODE_ANCHOR_LIFECYCLE_HARDENING_2026-06-02.md`;
+- update `CVF_SESSION_MEMORY.md`;
+- update `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- update `AGENT_HANDOFF_V15_2026-05-29.md`.
+
+This closure-only reviewer scope does not expand worker implementation scope,
+legacy reads/writes, runtime behavior, public-sync, or provider use.
 
 Forbidden scope:
 
@@ -139,9 +156,9 @@ Do not cite committed-only or empty ranges as proof for pending files.
   CI1-T3 packet was dispatched
 - `executionBaseHead`: `8d533581` - worker anchor captured immediately before
   material CI1-T3 execution after intervening governance commits
-- `closureBaseHead`: N/A - reviewer / committer must select the approved
-  tranche base, commit reviewed artifacts, and run non-empty committed-range
-  `pre-closure`
+- `closureBaseHead`: `8d533581` - reviewer / committer selected the approved
+  tranche base, committed reviewed artifacts, and ran non-empty committed-range
+  `pre-closure` through handoff-sync commit `b0d0249c`
 
 Worker handoff boundary: return `COMPLETE_PENDING_REVIEW` with actual pending
 paths and component-gate evidence. Do not claim autorun `pre-closure` PASS.
@@ -286,16 +303,16 @@ without claiming clean closure.
 
 ## Acceptance Criteria
 
-- [ ] All 7 target files read and recorded with terminal processing status
-- [ ] GC-047 block uses `manifest=7; ledger_terminal=7; exclusions=0; unresolved=0`
-- [ ] GC-048 block uses `assets=7; mapped=N; deferred=N; unmapped=0`
-- [ ] GC-050 classification ledger has 7 rows with valid enum values
-- [ ] Search/filter readiness includes facet schema and graph-governance domain fields
-- [ ] Adversarial sampling includes accepted, deferred, rejected, and zero-result cases
-- [ ] Findings, if any, appear in GC-051 registry and finding packet
-- [ ] Deferred or blocked findings include F2G-compatible routing evidence
-- [ ] Worker did not commit, push, write legacy files, or touch forbidden paths
-- [ ] No runtime graph guard, CLI, retrieval, product, public, or production claim
+- [x] All 7 target files read and recorded with terminal processing status
+- [x] GC-047 block uses `manifest=7; ledger_terminal=7; exclusions=0; unresolved=0`
+- [x] GC-048 block uses `assets=7; mapped=N; deferred=N; unmapped=0`
+- [x] GC-050 classification ledger has 7 rows with valid enum values
+- [x] Search/filter readiness includes facet schema and graph-governance domain fields
+- [x] Adversarial sampling includes accepted, deferred, rejected, and zero-result cases
+- [x] Findings, if any, appear in GC-051 registry and finding packet
+- [x] Deferred or blocked findings include F2G-compatible routing evidence
+- [x] Worker did not commit, push, write legacy files, or touch forbidden paths
+- [x] No runtime graph guard, CLI, retrieval, product, public, or production claim
 
 ## Review Gate
 
@@ -305,15 +322,15 @@ repaired, and the completion review records pending working-tree status.
 
 ## Closure Checklist
 
-- [ ] Readiness packet produced with all CI1-T1 sections filled
-- [ ] Completion review produced
-- [ ] All 7 files recorded with terminal processing status
-- [ ] GC-051 registry updated for `legacy-cvf-add-code-review-graph`
-- [ ] Finding packet created when findings exist
-- [ ] F2G/GC-052 routing evidence recorded for deferred or blocked findings
-- [ ] Required gates run and results recorded
-- [ ] Working tree status recorded in completion review
-- [ ] Worker did not commit or push
+- [x] Readiness packet produced with all CI1-T1 sections filled
+- [x] Completion review produced
+- [x] All 7 files recorded with terminal processing status
+- [x] GC-051 registry updated for `legacy-cvf-add-code-review-graph`
+- [x] Finding packet created when findings exist
+- [x] F2G/GC-052 routing evidence recorded for deferred or blocked findings
+- [x] Required gates run and results recorded
+- [x] Working tree status recorded in completion review
+- [x] Worker did not commit or push
 
 ## Return-To-Orchestrator Conditions
 

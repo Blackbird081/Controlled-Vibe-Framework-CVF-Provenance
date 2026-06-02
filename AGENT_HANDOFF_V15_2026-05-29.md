@@ -309,6 +309,9 @@ public-release readiness claim.
 | Finding-To-Governance Learning | ENFORCED — defect class + learning lane + disposition required |
 | Corpus Completeness And Report Integrity | ENFORCED — filesystem-backed manifest, terminal ledger, reconciliation, drift, traceability, and honest verdict for bounded corpus tasks |
 | Corpus-To-Knowledge-Map Reconciliation | ENFORCED — source authority, derived-view separation, semantic-region reconciliation, drift, rebuildability, and retrieval boundary for corpus-derived maps |
+| Corpus Search And Filter Readiness | ENFORCED STANDARD — discovery index, facets, ledger, negative search evidence, derived trace, receipt model, and sampling plan |
+| Corpus Scan Registry | ENFORCED — GC-051 registry must be consulted and updated before corpus rescan or absorption |
+| System Loop Interlock | ENFORCED — GC-052 routes scan output into learning and roadmap inputs |
 | Worker Autonomy Dispatch Prompt | ENFORCED — READY/DISPATCHED work orders must carry Worker Autonomy / No-Question Rule |
 | Multi-Provider Execution Log | ENFORCED — provider/model/surface/basis/diff attribution plus Execution Attribution Block |
 | Learning Signal Intake Bridge | BOUNDED_TYPED_INTAKE — `autonomousMutationAuthorized=false` |
@@ -355,6 +358,17 @@ implementation candidates deferred; zero unmapped assets. Manifest JSON:
 `docs/audits/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_MANIFEST_2026-06-01.json`.
 Manifest hash:
 `ae7fe05e016b7079a81002de60de1e1209112de59c8bee793e15e11557cae0ff`.
+
+`CI1-T3` Graph Governance Corpus Deep Scan is `CLOSED_PASS_BOUNDED`
+(`7c068eeb` + handoff-sync `b0d0249c`):
+
+`docs/reviews/CVF_CI1_T3_GRAPH_GOVERNANCE_CORPUS_DEEP_SCAN_COMPLETION_2026-06-02.md`
+
+Result: seven `CVF ADD/code-review-graph/` files deep-read and routed through
+GC-047, GC-048, GC-050, GC-051, and GC-052. Next allowed move: open CI1-T4
+GC-018 for the Cross-Corpus Index Model across the CI1-T2 Graphify packet and
+CI1-T3 code-review-graph packet. LPCI runtime remains blocked until CI1-T4,
+CI1-T5 sampling, CI1-T6 checker decision, and CI1-T7 intake bridge.
 `MKG2` Deferred Runtime Candidate Triage is `REVIEW_READY`: GC-018
 `docs/baselines/CVF_GC018_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_2026-06-01.md`,
 roadmap
@@ -460,8 +474,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mkg_memory_system_tranche_review_ready`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=operator review of the uncommitted Memory tranche before commit or next-plane transition;
+Startup acknowledged: current mode=`ci1_t3_closed_pass_bounded_t4_ready`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=open CI1-T4 GC-018 for the Cross-Corpus Index Model before LPCI runtime work;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary

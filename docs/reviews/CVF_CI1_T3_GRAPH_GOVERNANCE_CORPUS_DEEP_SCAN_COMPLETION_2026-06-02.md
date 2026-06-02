@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: COMPLETE_PENDING_REVIEW
+Status: CLOSED_PASS_BOUNDED
 
 docType: review
 
@@ -36,7 +36,8 @@ Base-anchor lifecycle:
 
 - `dispatchBaseHead`: `13c91de8` - historical dispatch anchor
 - `executionBaseHead`: `8d533581` - pending-artifact component-gate anchor
-- `closureBaseHead`: N/A - reviewer / committer stage after approved commit
+- `closureBaseHead`: `8d533581` - reviewer / committer committed-range closure
+  anchor
 
 ## Scope / Methodology
 
@@ -76,10 +77,11 @@ Findings:
 
 ## Decision / Recommendation
 
-Recommendation: accept CI1-T3 as COMPLETE_PENDING_REVIEW, then let reviewer
-decide whether to commit the allowed artifacts. Do not open graph guard or graph
-CLI implementation from this scan alone; use the existing parking roadmaps and
-open fresh GC/work orders when authorized.
+Decision: accept CI1-T3 as `CLOSED_PASS_BOUNDED` after operator-authorized
+commit `7c068eeb`, handoff-sync commit `b0d0249c`, and committed-range
+`pre-closure` PASS. Do not open graph guard or graph CLI implementation from
+this scan alone; use the existing parking roadmaps and open fresh GC/work
+orders when authorized.
 
 ## Corpus Completeness And Report Integrity
 
@@ -171,19 +173,17 @@ open fresh GC/work orders when authorized.
 | Core guard self-protection | `python governance/compat/check_core_guard_self_protection.py --enforce` | PASS | 0 violations |
 | Forbidden filesystem state | `python governance/compat/check_forbidden_filesystem_state.py --enforce` | PASS | 0 violations |
 | Finding-to-governance learning | `python governance/compat/check_finding_to_governance_learning.py --base 8d533581 --head HEAD --enforce` | PASS | 0 violations |
-| Autorun pre-closure | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base 8d533581 --head HEAD` | FAIL_EXPECTED_PENDING_FINALITY | sub-gates pass; finality fails because work order forbids worker commit and leaves pending artifacts |
+| Autorun pre-closure | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base 8d533581 --head HEAD` | PASS | committed-range closure verified through handoff-sync commit `b0d0249c` |
 
 ## Working Tree Status
 
-Actual pending files before reviewer disposition:
+Reviewer / committer closure:
 
 ```text
- M docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json
- M docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md
- M docs/roadmaps/CVF_CI1_CORPUS_INTELLIGENCE_OPERATIONALIZATION_ROADMAP_2026-06-02.md
-?? docs/audits/CVF_CI1_T3_GRAPH_GOVERNANCE_CORPUS_READINESS_PACKET_2026-06-02.md
-?? docs/corpus-intelligence/findings/legacy-cvf-add-code-review-graph.md
-?? docs/reviews/CVF_CI1_T3_GRAPH_GOVERNANCE_CORPUS_DEEP_SCAN_COMPLETION_2026-06-02.md
+7c068eeb feat(corpus-intelligence): close ci1 t3 scan and harden work-order lifecycle
+b0d0249c docs(session): sync handoff after ci1 t3 lifecycle hardening
+git status --short
+<clean>
 ```
 
 ## Public Export Disposition
@@ -199,8 +199,8 @@ Claim boundary: CI1-T3 claims bounded corpus completeness, structural knowledge
 map reconciliation, classification discipline, finding disposition, and
 scan-to-learning routing for the seven-file `code-review-graph` corpus.
 
-Final boundary: this is not committed final closure; worker scope forbids
-commit/push and returns pending artifacts for reviewer/operator disposition.
+Final boundary: reviewer/operator disposition committed the bounded private
+scan artifacts and verified committed-range closure. No push was performed.
 
 Verification boundary: local filesystem evidence, manual corpus read, registry
 traceability, and structural gates only. No runtime, provider, benchmark,
