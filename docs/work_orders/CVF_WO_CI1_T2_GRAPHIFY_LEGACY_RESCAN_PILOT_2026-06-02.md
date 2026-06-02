@@ -332,26 +332,26 @@ FAIL reason in the completion review.
 
 ## Acceptance Criteria
 
-- [x] All 5 Graphify files read and recorded with READ status in ledger
-- [x] Corpus manifest hash present and derived from `rg --files --hidden --no-ignore`
-- [x] GC-047 block in packet: `manifest=5 ledger_terminal=5 exclusions=0 unresolved=0`, `Corpus verdict: COMPLETE_VERIFIED`
-- [x] GC-048 block in packet: `assets=5; mapped=N; deferred=D; unmapped=0`, valid `Knowledge-map verdict:`
-- [x] GC-050 classification ledger: 5 rows with valid enum values
-- [x] Adversarial sampling: ≥5 rows across accepted/deferred/rejected/zero-result categories
-- [x] Negative search evidence: zero-result terms table present
-- [x] Completion review exists with all required sections
-- [x] GC-047/048/050 gates PASS on completion review
-- [x] Worker did not commit, push, or touch forbidden paths
-- [x] No semantic correctness, production readiness, or public readiness claim
+- [ ] All 5 Graphify files read and recorded with READ status in ledger
+- [ ] Corpus manifest hash present and derived from `rg --files --hidden --no-ignore`
+- [ ] GC-047 block in packet: `manifest=5 ledger_terminal=5 exclusions=0 unresolved=0`, `Corpus verdict: COMPLETE_VERIFIED`
+- [ ] GC-048 block in packet: `assets=5; mapped=N; deferred=D; unmapped=0`, valid `Knowledge-map verdict:`
+- [ ] GC-050 classification ledger: 5 rows with valid enum values
+- [ ] Adversarial sampling: ≥5 rows across accepted/deferred/rejected/zero-result categories
+- [ ] Negative search evidence: zero-result terms table present
+- [ ] Completion review exists with all required sections
+- [ ] GC-047/048/050 gates PASS on completion review
+- [ ] Worker did not commit, push, or touch forbidden paths
+- [ ] No semantic correctness, production readiness, or public readiness claim
 
 ## Closure Checklist
 
-- [x] Readiness packet produced with all 15 CI1-T1 template sections filled
-- [x] Completion review produced
-- [x] All gates run and results recorded
-- [x] CI1 roadmap CI1-T2 row updated to `COMPLETE_PENDING_REVIEW`
-- [x] Working tree status recorded in completion review
-- [x] Worker did not commit
+- [ ] Readiness packet produced with all 15 CI1-T1 template sections filled
+- [ ] Completion review produced
+- [ ] All gates run and results recorded
+- [ ] CI1 roadmap CI1-T2 row updated to `COMPLETE_PENDING_REVIEW`
+- [ ] Working tree status recorded in completion review
+- [ ] Worker did not commit
 
 Return pending implementation and review packet for orchestrator/reviewer.
 
