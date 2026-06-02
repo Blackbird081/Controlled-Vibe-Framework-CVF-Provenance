@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-02
 
-Current mode marker: `ci1_t5_classification_sampling_protocol_dispatch_ready`
+Current mode marker: `ci1_t6_checker_decision_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `ci1_t5_classification_sampling_protocol_dispatch_ready`.
+Current mode: `ci1_t6_checker_decision_ready`.
 
 Active handoff:
 
@@ -421,14 +421,15 @@ Model is `CLOSED_PASS_BOUNDED`:
 
 `docs/reviews/CVF_CI1_T4_CROSS_CORPUS_INDEX_MODEL_COMPLETION_2026-06-02.md`
 
-CI1-T5 Classification Sampling Protocol is `DISPATCH_READY`:
+CI1-T5 Classification Sampling Protocol is `CLOSED_PASS_BOUNDED`:
 
-`docs/work_orders/CVF_WO_CI1_T5_CLASSIFICATION_SAMPLING_PROTOCOL_2026-06-02.md`
+`docs/reviews/CVF_CI1_T5_CLASSIFICATION_SAMPLING_PROTOCOL_COMPLETION_2026-06-02.md`
 
-Next allowed move: worker executes CI1-T5 and returns pending sampling JSON,
-protocol, GC-052 interlock update, and completion review artifacts without
-commit or push. CI1-T6 checker decision and CI1-T7 LPCI intake bridge remain
-locked. LPCI chatbot runtime implementation remains blocked.
+Next allowed move: open or dispatch CI1-T6 Checker Decision using
+`docs/corpus-intelligence/CVF_CI1_T5_CLASSIFICATION_SAMPLING_RESULTS.json` as
+machine-readable input. CI1-T7 LPCI intake bridge remains locked until CI1-T6
+returns an explicit checker decision. LPCI chatbot runtime implementation
+remains blocked.
 
 Parked checkpoints:
 

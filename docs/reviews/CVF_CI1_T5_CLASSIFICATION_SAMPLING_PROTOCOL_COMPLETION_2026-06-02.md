@@ -232,3 +232,23 @@ Next allowed move: open or dispatch CI1-T6 Checker Decision using
 `docs/corpus-intelligence/CVF_CI1_T5_CLASSIFICATION_SAMPLING_RESULTS.json`
 as the machine-readable input. CI1-T7 and LPCI-T1 remain blocked until CI1-T6
 returns an explicit checker decision.
+
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: synchronize protected session front-door
+state after CI1-T5 reviewer closure only. No guard checker, hook-chain, guard
+document, runtime, public-sync, provider, LPCI implementation, or autonomous
+mutation edit is authorized.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+
+Operator authorization: operator asked reviewer to process the CI1-T5 worker
+handoff; CI1-T5 closure changes the next allowed move from T5 execution to
+CI1-T6 checker decision routing.
+
+Rollback boundary: revert only the bounded CI1-T5 closure routing metadata if
+CI1-T5 closure is withdrawn. Do not revert prior CI1-T4 closure, T5 sampling
+artifacts, or unrelated session history.

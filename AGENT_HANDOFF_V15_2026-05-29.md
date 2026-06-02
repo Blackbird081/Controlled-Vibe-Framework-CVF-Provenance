@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `be147b54` (parent: `e9f3983d`). Session updated 2026-06-02 for bounded CI1-T5 Classification Sampling Protocol dispatch.
+Current HEAD recorded for this handoff: `16e612bf` (parent: `4674c86d`). Session updated 2026-06-02 for bounded CI1-T5 Classification Sampling Protocol closure routing.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -373,16 +373,15 @@ GC-047, GC-048, GC-050, GC-051, and GC-052.
 
 Artifact commit: `3725f962`; handoff-sync: `ae0bf9ae`.
 
-`CI1-T5` Classification Sampling Protocol is `DISPATCH_READY`:
+`CI1-T5` Classification Sampling Protocol is `CLOSED_PASS_BOUNDED`:
 
-`docs/baselines/CVF_GC018_CI1_T5_CLASSIFICATION_SAMPLING_PROTOCOL_2026-06-02.md`
+`docs/reviews/CVF_CI1_T5_CLASSIFICATION_SAMPLING_PROTOCOL_COMPLETION_2026-06-02.md`
 
-`docs/work_orders/CVF_WO_CI1_T5_CLASSIFICATION_SAMPLING_PROTOCOL_2026-06-02.md`
+`docs/corpus-intelligence/CVF_CI1_T5_CLASSIFICATION_SAMPLING_RESULTS.json`
 
-Next allowed move: worker executes CI1-T5 and returns pending sampling JSON,
-protocol, GC-052 interlock update, and completion review artifacts without
-commit or push. LPCI runtime remains blocked until CI1-T5 sampling, CI1-T6
-checker decision, and CI1-T7 intake bridge close in sequence.
+Next allowed move: open or dispatch CI1-T6 Checker Decision using the T5
+sampling-result JSON as machine-readable input. LPCI runtime remains blocked
+until CI1-T6 checker decision and CI1-T7 intake bridge close in sequence.
 `MKG2` Deferred Runtime Candidate Triage is `REVIEW_READY`: GC-018
 `docs/baselines/CVF_GC018_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_2026-06-01.md`,
 roadmap
@@ -488,8 +487,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ci1_t5_classification_sampling_protocol_dispatch_ready`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=execute CI1-T5 Classification Sampling Protocol and return pending artifacts without commit or push;
+Startup acknowledged: current mode=`ci1_t6_checker_decision_ready`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=open or dispatch CI1-T6 Checker Decision using the T5 sampling-result JSON;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary
