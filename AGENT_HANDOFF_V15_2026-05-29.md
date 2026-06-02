@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `2e5aebb5` (parent: `0808aa8d`). Session updated 2026-06-02 for bounded CI1-T6 Checker Decision handoff routing.
+Current HEAD recorded for this handoff: `cf472834` (parent: `2e5aebb5`). Session updated 2026-06-02 for bounded CI1-T6 Checker Decision closure and CI1-T7 routing.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -383,7 +383,7 @@ Artifact commit: `3725f962`; handoff-sync: `ae0bf9ae`.
 
 `docs/reviews/CVF_CI1_T6_CHECKER_DECISION_COMPLETION_2026-06-02.md`
 
-Artifact commit: `2e5aebb5`.
+Artifact commit: `cf472834` (worker handoff commit `2e5aebb5`).
 
 Next allowed move: open or dispatch CI1-T7 LPCI Intake Bridge using the CI1-T6
 decision artifact and cross-corpus index model as machine-readable inputs.
