@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `c314d8ae` (parent: `03579832`). Session updated 2026-06-02: CI1 chain fully closed (T1-T7); CSA1 NR-05/NR-11 Corpus Standard Authoring CLOSED_PASS_BOUNDED (closure commit 03579832).
+Current HEAD recorded for this handoff: `effea120` (parent: `4cd402f5`). Session updated 2026-06-02: CI1 chain fully closed (T1-T7); CSA1 NR-05/NR-11 Corpus Standard Authoring CLOSED_PASS_BOUNDED (closure commit `03579832`; closure-residue cleanup commit `effea120`).
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -401,8 +401,9 @@ T1-T7 all `CLOSED_PASS_BOUNDED`. CI1 roadmap final status
 
 `docs/reference/CVF_CORPUS_PATH_NORMALIZATION_ALGORITHM_STANDARD_2026-06-02.md`
 
-Dispatch commit `879dbd7b`; closure commit `03579832`. NR-05 path
-normalization algorithm standard (new file) and the NR-11 canonical disposition
+Dispatch commit `879dbd7b`; closure commit `03579832`; closure-residue cleanup
+commit `effea120`. NR-05 path normalization algorithm standard (new file) and
+the NR-11 canonical disposition
 merge rule (`ACCEPT_DEFERRED` + `rawDisposition`, section in
 `docs/reference/CVF_CORPUS_INTELLIGENCE_CLASSIFICATION_STANDARD_2026-06-01.md`)
 are authored; both cite their CI1-T6 checker stub. The NR-05 and NR-11 standard
