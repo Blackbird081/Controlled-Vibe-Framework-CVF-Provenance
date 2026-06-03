@@ -90,11 +90,10 @@ search, and sampling gates required before real chat runtime. LPCI2-T4S renamed
 the local-first corpus folder to `data_input` and proved two DOCX files can be
 enumerated, normalized, and hashed, while keeping text extraction and answer
 runtime blocked. LPCI2-T4 is CLOSED_PASS_BOUNDED at commit `212d6adf`. LPCI2-T5 is CLOSED_PASS_BOUNDED
-(executionBaseHead=408cbfcf; pending operator commit): effectiveDate=2026-07-01 confirmed
+(commit `53b2bac4`; executionBaseHead=408cbfcf): effectiveDate=2026-07-01 confirmed
 for both DOCX files via P1_effective_clause (Article 44 / Article 47); GC-048
 RECONCILED_VERIFIED; adversarial sampling 4/4 PASS. Search/chat/runtime
-remains blocked until a separate readiness gate work order opens and closes after
-the T5 operator commit.
+remains blocked until a separate readiness gate work order opens and closes.
 
 ## Acceptance Criteria
 
@@ -168,7 +167,7 @@ and LPCI2-T4S smoke-tested two local DOCX files through hash-only intake.
 
 LPCI2-T4 claims DOCX text extraction (READ_SHALLOW), conservative legal/policy
 classification (answerClass=SUMMARY_WITH_SOURCE), and GC-051 registry update.
-LPCI2-T5 is CLOSED_PASS_BOUNDED (pending operator commit): effectiveDate=2026-07-01
+LPCI2-T5 is CLOSED_PASS_BOUNDED at commit `53b2bac4`: effectiveDate=2026-07-01
 confirmed for both files, GC-048 RECONCILED_VERIFIED, adversarial sampling 4/4 PASS.
 
 It does not claim runtime implementation, chatbot product readiness, production
@@ -186,8 +185,7 @@ Disposition: `TEMPLATE_UPDATED` - LPCI2-T2A adds a local prototype validator and
 records that future PolicyLocal scaffold work must include schema fixture
 validation before chat runtime is accepted.
 
-Next control action: `OPERATOR_COMMIT_PENDING` for T5. After operator commit,
-open bounded search/chat readiness gate as a separate work order. Do not start
+Next control action: open bounded search/chat readiness gate as a separate work order. Do not start
 search, chat runtime, or product implementation until that readiness gate closes.
 
 Runtime/provider/cost learning: `N/A_WITH_REASON`

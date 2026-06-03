@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `408cbfcf` (pre-T5-execution HEAD; operator commit pending). Updated 2026-06-04 after LPCI2-T5 worker execution; mode is `lpci2_t5_policylocal_deep_classification_closed_pass_bounded`; LPCI2-T5 CLOSED_PASS_BOUNDED (pending operator commit); effectiveDate=2026-07-01 confirmed both DOCX files (P1_effective_clause); GC-048 RECONCILED_VERIFIED; adversarial sampling 4/4 PASS; executionBaseHead=408cbfcf; WORKER_MUST_NOT_COMMIT; search/chat/runtime/provider work remains blocked until readiness gate work order opens and closes after operator commit.
+Current HEAD recorded for this handoff: `53b2bac4` (docs(lpci): close policylocal deep classification). Updated 2026-06-04 after operator-side LPCI2-T5 closure commit; mode is `lpci2_t5_policylocal_deep_classification_closed_pass_bounded`; LPCI2-T5 CLOSED_PASS_BOUNDED; effectiveDate=2026-07-01 confirmed both DOCX files (P1_effective_clause); GC-048 RECONCILED_VERIFIED; adversarial sampling 4/4 PASS; executionBaseHead=408cbfcf; closureBaseHead=53b2bac4; search/chat/runtime/provider work remains blocked until a separate readiness gate work order opens and closes.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -586,7 +586,7 @@ External agent memory files: non-canonical convenience only.
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=`lpci2_t5_policylocal_deep_classification_closed_pass_bounded`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=operator commits T5 artifacts then opens bounded search/chat readiness gate work order; WORKER_MUST_NOT_COMMIT; search/chat/runtime blocked until readiness gate closes after operator commit;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=open bounded search/chat readiness gate work order; search/chat/runtime blocked until readiness gate closes;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary

@@ -10,7 +10,7 @@ executionBaseHead: `408cbfcf`
 
 dispatchBaseHead: `80a9662c`
 
-closureBaseHead: PENDING_OPERATOR_COMMIT
+closureBaseHead: `53b2bac4`
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
@@ -87,7 +87,7 @@ Corpus Intelligence Classification Ledger
 - Cross-region links: none — this is a single-region VN_NATIONAL law corpus; no cross-regional linking required or applicable in T5 scope
 - Drift check: PASS
 - Rebuildability check: PASS — script `policylocal-docx-deep-scan.py` (lpci2.t5.deep_scan.v1) is deterministic; re-running against the same DOCX files at the same hashes produces identical corpus records and evidence JSON
-- Retrieval boundary: READ_DEEP; SUMMARY_WITH_SOURCE (T5 upgraded for both files); effectiveDate=2026-07-01 confirmed for both files; no search/chat/runtime retrieval; no vector retrieval; search/chat readiness gate NOT opened in T5 scope; readiness gate requires a separate bounded work order after T5 operator commit
+- Retrieval boundary: READ_DEEP; SUMMARY_WITH_SOURCE (T5 upgraded for both files); effectiveDate=2026-07-01 confirmed for both files; no search/chat/runtime retrieval; no vector retrieval; search/chat readiness gate NOT opened in T5 scope; readiness gate requires a separate bounded work order after T5 closure
 - Adversarial verification: T5 adversarial sampling 4/4 PASS (S1-S4); see Adversarial Sampling section; no DIRECT_CITED_ANSWER violations; ESCALATE_OR_ABSTAIN enforced for S4 legal-advice query; no boundary violations detected
 - Knowledge-map verdict: RECONCILED_VERIFIED
 
@@ -178,8 +178,8 @@ All query classes are analytical against the T5 corpus evidence only.
 | Knowledge-map reconciliation | `python governance/compat/check_corpus_to_knowledge_map_reconciliation.py --base 80a9662c --head HEAD --enforce` | PASS |
 | Markdown structural completeness | `python governance/compat/check_markdown_structural_completeness.py --base 80a9662c --head HEAD --enforce` | PASS |
 | Finding-to-governance learning | `python governance/compat/check_finding_to_governance_learning.py --base 80a9662c --head HEAD --enforce` | PASS |
-| Direct governance gates | GC-048, GC-050, markdown structural completeness, finding-to-governance, active-session state | PASS — worker-reported and reviewer-rerun before operator commit |
-| Full pre-closure autorun gate | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base 80a9662c --head HEAD` | PENDING_OPERATOR_COMMIT — rerun after operator-side commit to satisfy clean worktree finality |
+| Direct governance gates | GC-048, GC-050, markdown structural completeness, finding-to-governance, active-session state | PASS — worker-reported and reviewer-rerun during operator closure |
+| Full pre-closure autorun gate | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base 80a9662c --head HEAD` | PASS after operator-side closure commit and session sync |
 | Session state COMPLIANT | `python governance/compat/check_active_session_state.py --enforce` | PASS |
 
 ## Finding-To-Governance Learning Disposition
@@ -190,7 +190,7 @@ Learning lane: GOVERNANCE_CONTROL_PLANE (T4-F3 GC-048 reconciliation now require
 
 Disposition: MACHINE_CHECK_CANDIDATE — T5 full-body scan and GC-048 reconciliation are evidence-backed patterns for corpus intelligence classification. RUNTIME_LEARNING_CANDIDATE — T4-F2 adversarial sampling resolved; structural query boundary established for Vietnamese legal corpus. RULE_ADDED — future local corpus scripts should configure Windows-safe UTF-8 console output. N/A_WITH_REASON — T5-NOTE-1 is an observation, not a governance gap; no new rule required.
 
-Next control action: After operator commits T5 artifacts, open bounded search/chat readiness gate as a separate work order. Do not start search/chat runtime until that readiness gate closes.
+Next control action: Open bounded search/chat readiness gate as a separate work order. Do not start search/chat runtime until that readiness gate closes.
 
 | Finding ID | Summary | Defect class | Learning lane | Disposition | Action taken |
 | --- | --- | --- | --- | --- | --- |

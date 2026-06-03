@@ -12,7 +12,7 @@ dispatchBaseHead: `80a9662c`
 
 executionBaseHead: `408cbfcf`
 
-closureBaseHead: NOT_EXECUTED_YET
+closureBaseHead: `53b2bac4`
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
@@ -94,11 +94,11 @@ T5 artifacts.
 
 | Roadmap requirement | Work order section | Output artifact or field | Verification command | Status |
 | --- | --- | --- | --- | --- |
-| T4-F1: verify effectiveDate from document body | §Execution Plan step 1–2 | corpus records `effectiveDate` field upgraded or formally deferred | `python governance/compat/check_corpus_intelligence_classification.py --base 7325b549 --head HEAD --enforce` | PENDING — T5 execution |
-| T4-F3: run GC-048 knowledge-map reconciliation | §Execution Plan step 3 | T5 completion Knowledge System Reconciliation section | `python governance/compat/check_corpus_to_knowledge_map_reconciliation.py --base 7325b549 --head HEAD --enforce` | PENDING — T5 execution |
-| T4-F2 partial: adversarial sampling evidence | §Execution Plan step 4 | T5 completion §Adversarial Sampling | `python governance/compat/check_corpus_intelligence_classification.py --base 7325b549 --head HEAD --enforce` | PENDING — T5 execution |
-| Completion review satisfies GC-048 checker | §Execution Plan step 5 | T5 completion review | `python governance/compat/check_corpus_to_knowledge_map_reconciliation.py --base 7325b549 --head HEAD --enforce` | PENDING — T5 execution |
-| Session state sync | §Execution Plan step 6 | CVF_SESSION_MEMORY.md, ACTIVE_SESSION_STATE.json, AGENT_HANDOFF_V15 | `python governance/compat/check_active_session_state.py --enforce` | PENDING — T5 execution |
+| T4-F1: verify effectiveDate from document body | §Execution Plan step 1–2 | corpus records `effectiveDate` field upgraded to 2026-07-01 for both DOCX files | `python governance/compat/check_corpus_intelligence_classification.py --base 80a9662c --head HEAD --enforce` | PASS |
+| T4-F3: run GC-048 knowledge-map reconciliation | §Execution Plan step 3 | T5 completion Knowledge System Reconciliation section | `python governance/compat/check_corpus_to_knowledge_map_reconciliation.py --base 80a9662c --head HEAD --enforce` | PASS |
+| T4-F2 partial: adversarial sampling evidence | §Execution Plan step 4 | T5 completion §Adversarial Sampling | `python governance/compat/check_corpus_intelligence_classification.py --base 80a9662c --head HEAD --enforce` | PASS |
+| Completion review satisfies GC-048 checker | §Execution Plan step 5 | T5 completion review | `python governance/compat/check_corpus_to_knowledge_map_reconciliation.py --base 80a9662c --head HEAD --enforce` | PASS |
+| Session state sync | §Execution Plan step 6 | CVF_SESSION_MEMORY.md, ACTIVE_SESSION_STATE.json, AGENT_HANDOFF_V15 | `python governance/compat/check_active_session_state.py --enforce` | PASS |
 
 ## Agent Roles
 
@@ -175,12 +175,12 @@ Test-Path "D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated
 Test-Path "D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data_input\116_2025_QH15_666020.docx"
 Test-Path "D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data_input\148_2025_QH15_675262.docx"
 python governance/compat/check_active_session_state.py --enforce
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 7325b549 --head HEAD
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 80a9662c --head HEAD
 ```
 
 Expected results:
 
-- HEAD at or ahead of `7325b549`
+- HEAD at or ahead of `80a9662c`
 - Worktree clean or only T5 working files
 - Both DOCX files present
 - Corpus records present
@@ -318,13 +318,13 @@ Forbidden paths (do not touch):
 ```powershell
 git add docs/reviews/CVF_LPCI2_T5_POLICYLOCAL_DEEP_CLASSIFICATION_COMPLETION_2026-06-04.md docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json
 
-python governance/compat/check_corpus_to_knowledge_map_reconciliation.py --base 7325b549 --head HEAD --enforce
-python governance/compat/check_corpus_intelligence_classification.py --base 7325b549 --head HEAD --enforce
-python governance/compat/check_corpus_scan_registry.py --base 7325b549 --head HEAD --enforce
-python governance/compat/check_markdown_structural_completeness.py --base 7325b549 --head HEAD --enforce
-python governance/compat/check_finding_to_governance_learning.py --base 7325b549 --head HEAD --enforce
-python governance/compat/check_work_order_dispatch_quality.py --base 7325b549 --head HEAD --enforce
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 7325b549 --head HEAD
+python governance/compat/check_corpus_to_knowledge_map_reconciliation.py --base 80a9662c --head HEAD --enforce
+python governance/compat/check_corpus_intelligence_classification.py --base 80a9662c --head HEAD --enforce
+python governance/compat/check_corpus_scan_registry.py --base 80a9662c --head HEAD --enforce
+python governance/compat/check_markdown_structural_completeness.py --base 80a9662c --head HEAD --enforce
+python governance/compat/check_finding_to_governance_learning.py --base 80a9662c --head HEAD --enforce
+python governance/compat/check_work_order_dispatch_quality.py --base 80a9662c --head HEAD --enforce
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 80a9662c --head HEAD
 ```
 
 All gates must PASS before handoff to reviewer.
@@ -351,9 +351,9 @@ All gates must PASS before handoff to reviewer.
 
 Base-anchor evidence:
 
-- `dispatchBaseHead`: `7325b549`
-- `executionBaseHead`: WORKER_MUST_CAPTURE_AT_START
-- `closureBaseHead`: NOT_EXECUTED_YET
+- `dispatchBaseHead`: `80a9662c`
+- `executionBaseHead`: `408cbfcf`
+- `closureBaseHead`: `53b2bac4`
 - Commit mode: WORKER_MUST_NOT_COMMIT
 - Pending-artifact component gates: worker runs and repairs; records PASS before handoff
 - Committed-range `pre-closure`: PASS after operator commit
@@ -432,21 +432,21 @@ Return to orchestrator without implementation closure if:
 ## Corpus Intelligence Classification
 
 - Classification task class: DEEP_CLASSIFICATION
-- Source corpus evidence: 2 DOCX files — 116_2025_QH15_666020.docx (textLength 86570) and 148_2025_QH15_675262.docx (textLength 56764) — extracted READ_SHALLOW in T4; T5 will re-scan full body
-- Knowledge map evidence: PENDING_T5_EXECUTION — GC-048 reconciliation to be run in T5 execution; T4 did not run GC-048 (T4-F3)
-- Classification ledger: T4 corpus records at `Policy_Local/data/generated/policylocal-corpus-records.json`; T5 will upgrade effectiveDate and produce GC-048 knowledge-map reconciliation
+- Source corpus evidence: 2 DOCX files — 116_2025_QH15_666020.docx (textLength 86570) and 148_2025_QH15_675262.docx (textLength 56764) — extracted READ_DEEP in T5 full-body scan
+- Knowledge map evidence: RECONCILED_VERIFIED — GC-048 reconciliation run in T5; assets=2, mapped=2, deferred=0, unmapped=0
+- Classification ledger: T5 corpus records at `Policy_Local/data/generated/policylocal-corpus-records.json`; effectiveDate=2026-07-01 confirmed for both files
 - Legal/policy corpus: VN_NATIONAL — 2 Vietnamese national law DOCX files (jurisdiction=VN_NATIONAL; documentType=law; status=amended)
-- Domain fields: jurisdiction=VN_NATIONAL; documentType=law; status=amended; effectiveDate=unknown (T4-F1 deferred; T5 to verify via full-body scan)
-- Response Boundary: DIRECT_CITED_ANSWER (blocked — insufficient citation depth); SUMMARY_WITH_SOURCE (active for T4 READ_SHALLOW evidence); PROCEDURAL_GUIDANCE (active for amendment procedure sections with source backing); ESCALATE_OR_ABSTAIN (required for effectiveDate queries until T5 resolves T4-F1 and for all legal-advice requests)
-- Adversarial sampling plan: S1 direct law-number lookup; S2 effectiveDate query; S3 amendment scope query; S4 legal-advice extraction — minimum 4 structural query classes defined in §Execution Plan
-- Classification verdict: PENDING_T5_EXECUTION — T5 will upgrade to DEEP_CLASSIFIED upon successful full-body scan, GC-048 pass, and adversarial sampling pass
+- Domain fields: jurisdiction=VN_NATIONAL; documentType=law; status=amended; effectiveDate=2026-07-01 (confirmed via P1_effective_clause in both files)
+- Response Boundary: DIRECT_CITED_ANSWER (blocked — insufficient citation depth); SUMMARY_WITH_SOURCE (active for T5 READ_DEEP evidence); PROCEDURAL_GUIDANCE (active for amendment procedure sections with source backing); ESCALATE_OR_ABSTAIN (required for current-applicability and legal-advice requests)
+- Adversarial sampling plan: S1 direct law-number lookup; S2 effectiveDate query; S3 amendment scope query; S4 legal-advice extraction — 4/4 PASS in T5 completion review
+- Classification verdict: DEEP_CLASSIFIED — T5 full-body scan PASS; GC-048 RECONCILED_VERIFIED; adversarial sampling 4/4 PASS
 
 Corpus Intelligence Classification Ledger
 
 | sourcePath | processingStatus | knowledgeRegion | ownerSurface | disposition | evidencePointer |
 | --- | --- | --- | --- | --- | --- |
-| Policy_Local/data_input/116_2025_QH15_666020.docx | READ_SHALLOW | LEGAL_POLICY_CORPUS | PolicyLocal | DEFER | T4 corpus records policylocal-corpus-records.json; T5 to upgrade via deep scan + GC-048 |
-| Policy_Local/data_input/148_2025_QH15_675262.docx | READ_SHALLOW | LEGAL_POLICY_CORPUS | PolicyLocal | DEFER | T4 corpus records policylocal-corpus-records.json; T5 to upgrade via deep scan + GC-048 |
+| Policy_Local/data_input/116_2025_QH15_666020.docx | READ_DEEP | LEGAL_POLICY_CORPUS | PolicyLocal | ACCEPT_SUMMARY_ONLY | T5 corpus records; effectiveDate=2026-07-01; P1_effective_clause charPos=84776; GC-048 RECONCILED_VERIFIED |
+| Policy_Local/data_input/148_2025_QH15_675262.docx | READ_DEEP | LEGAL_POLICY_CORPUS | PolicyLocal | ACCEPT_SUMMARY_ONLY | T5 corpus records; effectiveDate=2026-07-01; P1_effective_clause charPos=54874; GC-048 RECONCILED_VERIFIED |
 
 ## Core Guard Self-Protection Authorization
 

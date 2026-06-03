@@ -654,11 +654,11 @@ documentType=law; status=amended; answerClass=SUMMARY_WITH_SOURCE per T2 matrix;
 effectiveDate=unknown (T4-F1, deferred to T5+). All 18 pre-implementation gates PASS.
 Operator-side closure committed the worker artifacts and registry update.
 
-LPCI2-T5 CLOSED_PASS_BOUNDED (pending operator commit; executionBaseHead=408cbfcf):
+LPCI2-T5 CLOSED_PASS_BOUNDED (closureBaseHead=53b2bac4; executionBaseHead=408cbfcf):
 effectiveDate=2026-07-01 confirmed for both DOCX files, GC-048 RECONCILED_VERIFIED,
-adversarial sampling 4/4 PASS. WORKER_MUST_NOT_COMMIT.
-Next allowed move: operator commits T5 artifacts, then opens bounded search/chat
-readiness gate work order. Do NOT open search/chat runtime until that readiness gate closes.
+adversarial sampling 4/4 PASS.
+Next allowed move: open bounded search/chat readiness gate work order.
+Do NOT open search/chat runtime until that readiness gate closes.
 
 Parked checkpoints:
 
