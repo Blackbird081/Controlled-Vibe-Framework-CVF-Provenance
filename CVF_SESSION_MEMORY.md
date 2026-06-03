@@ -4,9 +4,9 @@ Memory class: POINTER_RECORD
 
 Status: ACTIVE SESSION FRONT DOOR
 
-Last updated: 2026-06-02
+Last updated: 2026-06-03
 
-Current mode marker: `ci2_t2_packet_normalization_checkers_dispatch_ready`
+Current mode marker: `ci2_t3_enforced_cross_corpus_index_model_dispatch_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `ci2_t2_packet_normalization_checkers_dispatch_ready`.
+Current mode: `ci2_t3_enforced_cross_corpus_index_model_dispatch_ready`.
 
 Active handoff:
 
@@ -450,8 +450,9 @@ disposition merge rule (`ACCEPT_DEFERRED` + `rawDisposition`, section in
 `docs/reference/CVF_CORPUS_INTELLIGENCE_CLASSIFICATION_STANDARD_2026-06-01.md`)
 are authored; both cite their CI1-T6 checker stub. Closure commit `03579832`.
 
-CI2 Corpus Intelligence Enforcement And Product Readiness is `DISPATCH_READY`
-at commit `89d27bcf`:
+CI2 Corpus Intelligence Enforcement And Product Readiness is
+`T1_T2_CLOSED_T3_DISPATCH_READY`. Latest readiness-hardening commit:
+`2ffb93ae`.
 
 `docs/baselines/CVF_GC018_CI2_CORPUS_INTELLIGENCE_ENFORCEMENT_PRODUCT_READINESS_2026-06-02.md`
 
@@ -461,11 +462,15 @@ CI2-T1 is `CLOSED_PASS_BOUNDED` at commit `0fb6adc0`. NR-04 source hash
 standard authored; readiness template updated (sections 4.4, 4.5, NR-07 rows).
 Completion review: `docs/reviews/CVF_CI2_T1_SOURCE_HASH_STANDARD_COMPLETION_2026-06-02.md`.
 
-Next allowed move: dispatch CI2-T2 only:
+CI2-T2 is `CLOSED_PASS_BOUNDED` at commit `9ea5c98f` plus handoff sync
+`73079521`. NR-04 sourceHash, NR-05 normalizedPath, and NR-11
+disposition-canonical checkers are implemented and wired.
 
-`docs/work_orders/CVF_WO_CI2_T2_PACKET_NORMALIZATION_CHECKERS_2026-06-02.md`
+Next allowed move: dispatch CI2-T3 only:
 
-CI2-T2/T3/T4/T5 are ordered HOLD work orders and must not begin until the prior
+`docs/work_orders/CVF_WO_CI2_T3_ENFORCED_CROSS_CORPUS_INDEX_MODEL_2026-06-02.md`
+
+CI2-T4/T5 are ordered HOLD work orders and must not begin until the prior
 tranche closes. LPCI chatbot/runtime implementation remains blocked until
 CI2-T5 produces a separate governed LPCI product roadmap packet.
 
