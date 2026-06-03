@@ -1,0 +1,507 @@
+{
+  "schemaVersion": "1.0.0",
+  "packId": "cvf-ci2-t4-product-readiness-pilot",
+  "packType": "GOVERNANCE_PILOT_NO_LEGAL_CORPUS",
+  "generatedAt": "2026-06-03",
+  "generatedBy": "CI2-T4 Product Readiness Pilot Corpus Pack",
+  "executionBaseHead": "99f6a13b",
+  "enforcedModelRef": "docs/corpus-intelligence/CVF_CI2_ENFORCED_CROSS_CORPUS_INDEX_MODEL.json",
+  "workOrderRef": "docs/work_orders/CVF_WO_CI2_T4_PRODUCT_READINESS_PILOT_CORPUS_PACK_2026-06-02.md",
+  "note": "No operator-supplied corpus path was included in the dispatch message. Pilot uses existing CI1 T2/T3 packets as the governance pilot input per Execution Instruction 1.",
+  "manifestHashProxy": true,
+  "manifestProxyException": "Per-file SHA-256 hashes were not computed during the CI1-T2 and CI1-T3 scan tranches. Manifest-level hashes are used as proxies per the manifestHashProxy exception in docs/reference/CVF_CORPUS_SOURCE_HASH_STANDARD_2026-06-02.md. Per-file hash computation is a CI2-T5 or later obligation.",
+  "inputSources": [
+    {
+      "sourceId": "CI1-T2",
+      "packetPath": "docs/audits/CVF_CI1_T2_GRAPHIFY_READINESS_PACKET_2026-06-02.md",
+      "corpusId": "legacy-cvf-important-graphify",
+      "corpusRoot": ".private_reference/legacy/CVF_Important/Knowledge Base_Graphify/",
+      "fileCount": 5,
+      "manifestHash": "a88e3412a2cfca13dc5ff08da16abbc28a08462fd6112ea03cd7992a802c4e43",
+      "manifestHashAlgorithm": "sha256",
+      "packetStatus": "REVIEW_READY",
+      "completionReviewStatus": "ACCEPT_READY_FOR_ORCHESTRATOR_REVIEW",
+      "gcVerdicts": {
+        "gc047": "COMPLETE_VERIFIED",
+        "gc048": "RECONCILED_VERIFIED",
+        "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+      }
+    },
+    {
+      "sourceId": "CI1-T3",
+      "packetPath": "docs/audits/CVF_CI1_T3_GRAPH_GOVERNANCE_CORPUS_READINESS_PACKET_2026-06-02.md",
+      "corpusId": "legacy-cvf-add-code-review-graph",
+      "corpusRoot": ".private_reference/legacy/CVF ADD/code-review-graph/",
+      "fileCount": 7,
+      "manifestHash": "d921f708e3b321343fae43060a7fb447a166a7eba6584f23de151422e663f51a",
+      "manifestHashAlgorithm": "sha256",
+      "packetStatus": "CLOSED_PASS_BOUNDED",
+      "gcVerdicts": {
+        "gc047": "COMPLETE_VERIFIED",
+        "gc048": "RECONCILED_VERIFIED",
+        "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+      }
+    }
+  ],
+  "classificationEntries": [
+    {
+      "_comment": "--- CI1-T2 Graphify rows (5 entries) ---",
+      "entryId": "t2-r1",
+      "sourcePacket": "CI1-T2",
+      "sourcePath": ".private_reference/legacy/CVF_Important/Knowledge Base_Graphify/CVF_GRAPHIFY_CLI_COMMAND_SPEC.md",
+      "normalizedPath": ".private_reference/legacy/cvf_important/knowledge base_graphify/cvf_graphify_cli_command_spec.md",
+      "normalizedPathNote": "Applied CVF Corpus Path Normalization Algorithm to T2 manifest path; original T2 packet did not carry per-file normalizedPath field (CI1-T4 gap MISSING_EXPLICIT).",
+      "sourceHash": null,
+      "sourceHashNote": "Per-file hash not computed in CI1-T2 scan; manifestHashProxy declared at pack level.",
+      "sourceRoot": ".private_reference/legacy/CVF_Important/Knowledge Base_Graphify/",
+      "sourceFamily": "graphify",
+      "documentType": "spec",
+      "topicTags": ["CLI tooling", "knowledge graph", "governance"],
+      "knowledgeRegion": "GRAPH_CLI_INTERFACE",
+      "ownerSurface": "knowledge-graph-builder.ts (KGR1)",
+      "ownerSurfaceNote": "NR-03 alias: T2 uses runtime file reference; preferred enum form is CONTROL_PLANE_CONTEXT_BUILDER but KGR1 surface is the authoritative T2 mapping.",
+      "processingStatus": "READ_DEEP",
+      "disposition": "ACCEPT",
+      "evidencePointer": "CI1-T2 §2 ledger row 1; §4 CLI commands; §5 negative search (not in runtime)",
+      "answerClass": "SUMMARY_WITH_SOURCE",
+      "sensitivity": "restricted",
+      "freshnessStatus": "legacy-current-for-absorption",
+      "freshnessCheckedAt": "2026-06-02"
+    },
+    {
+      "entryId": "t2-r2",
+      "sourcePacket": "CI1-T2",
+      "sourcePath": ".private_reference/legacy/CVF_Important/Knowledge Base_Graphify/CVF_GRAPH_MEMORY_DATA_MODEL.md",
+      "normalizedPath": ".private_reference/legacy/cvf_important/knowledge base_graphify/cvf_graph_memory_data_model.md",
+      "normalizedPathNote": "Applied CVF Corpus Path Normalization Algorithm; T2 CI1-T4 gap MISSING_EXPLICIT now resolved for pilot.",
+      "sourceHash": null,
+      "sourceHashNote": "Per-file hash not computed; manifestHashProxy at pack level.",
+      "sourceRoot": ".private_reference/legacy/CVF_Important/Knowledge Base_Graphify/",
+      "sourceFamily": "graphify",
+      "documentType": "spec",
+      "topicTags": ["knowledge graph", "graph memory"],
+      "knowledgeRegion": "GRAPH_DATA_MODEL",
+      "ownerSurface": "knowledge-graph-builder.ts, knowledge-graph-store.ts (KGR1)",
+      "ownerSurfaceNote": "NR-03 alias: T2 runtime file reference; partial KGR1 absorption confirmed.",
+      "processingStatus": "READ_DEEP",
+      "disposition": "ACCEPT",
+      "evidencePointer": "CI1-T2 §2 ledger row 2; §3 region ledger; §8 sample 1 (node types verified)",
+      "answerClass": "DIRECT_CITED_ANSWER",
+      "sensitivity": "restricted",
+      "freshnessStatus": "legacy-current-for-absorption",
+      "freshnessCheckedAt": "2026-06-02"
+    },
+    {
+      "entryId": "t2-r3",
+      "sourcePacket": "CI1-T2",
+      "sourcePath": ".private_reference/legacy/CVF_Important/Knowledge Base_Graphify/CVF_GRAPH_MEMORY_GUARD_SPEC.md",
+      "normalizedPath": ".private_reference/legacy/cvf_important/knowledge base_graphify/cvf_graph_memory_guard_spec.md",
+      "normalizedPathNote": "Applied CVF Corpus Path Normalization Algorithm; T2 CI1-T4 gap MISSING_EXPLICIT now resolved for pilot.",
+      "sourceHash": null,
+      "sourceHashNote": "Per-file hash not computed; manifestHashProxy at pack level.",
+      "sourceRoot": ".private_reference/legacy/CVF_Important/Knowledge Base_Graphify/",
+      "sourceFamily": "graphify",
+      "documentType": "spec",
+      "topicTags": ["governance", "knowledge graph"],
+      "knowledgeRegion": "GRAPH_GOVERNANCE",
+      "ownerSurface": "GOVERNANCE_LAYER",
+      "ownerSurfaceNote": "Guard owner surface not yet implemented; mapped to GOVERNANCE_LAYER as canonical form.",
+      "processingStatus": "READ_DEEP",
+      "disposition": "DEFER",
+      "dispositionAlias": "ACCEPT_DEFERRED",
+      "rawDisposition": "DEFER",
+      "evidencePointer": "CI1-T2 §2 ledger row 3; §5 negative search (G-GM-* not in TS source); §8 sample 2",
+      "answerClass": "SUMMARY_WITH_SOURCE",
+      "sensitivity": "restricted",
+      "freshnessStatus": "legacy-current-for-absorption",
+      "freshnessCheckedAt": "2026-06-02"
+    },
+    {
+      "entryId": "t2-r4",
+      "sourcePacket": "CI1-T2",
+      "sourcePath": ".private_reference/legacy/CVF_Important/Knowledge Base_Graphify/CVF_GRAPH_MEMORY_LAYER_SPEC.md",
+      "normalizedPath": ".private_reference/legacy/cvf_important/knowledge base_graphify/cvf_graph_memory_layer_spec.md",
+      "normalizedPathNote": "Applied CVF Corpus Path Normalization Algorithm; T2 CI1-T4 gap MISSING_EXPLICIT now resolved for pilot.",
+      "sourceHash": null,
+      "sourceHashNote": "Per-file hash not computed; manifestHashProxy at pack level.",
+      "sourceRoot": ".private_reference/legacy/CVF_Important/Knowledge Base_Graphify/",
+      "sourceFamily": "graphify",
+      "documentType": "spec",
+      "topicTags": ["knowledge graph", "graph memory", "governance"],
+      "knowledgeRegion": "GRAPH_LAYER_ARCHITECTURE",
+      "ownerSurface": "knowledge-graph-builder.ts, knowledge-graph-store.ts (KGR1); LEARNING_PLANE",
+      "ownerSurfaceNote": "NR-03 alias: T2 runtime file reference; advisory plane mapping accepted.",
+      "processingStatus": "READ_DEEP",
+      "disposition": "ACCEPT",
+      "evidencePointer": "CI1-T2 §2 ledger row 4; §3 region ledger; §8 sample 5 (CVF plane mapping)",
+      "answerClass": "SUMMARY_WITH_SOURCE",
+      "sensitivity": "restricted",
+      "freshnessStatus": "legacy-current-for-absorption",
+      "freshnessCheckedAt": "2026-06-02"
+    },
+    {
+      "entryId": "t2-r5",
+      "sourcePacket": "CI1-T2",
+      "sourcePath": ".private_reference/legacy/CVF_Important/Knowledge Base_Graphify/Thong_tin.md",
+      "normalizedPath": ".private_reference/legacy/cvf_important/knowledge base_graphify/thong_tin.md",
+      "normalizedPathNote": "Applied CVF Corpus Path Normalization Algorithm; T2 CI1-T4 gap MISSING_EXPLICIT now resolved for pilot.",
+      "sourceHash": null,
+      "sourceHashNote": "Per-file hash not computed; manifestHashProxy at pack level.",
+      "sourceRoot": ".private_reference/legacy/CVF_Important/Knowledge Base_Graphify/",
+      "sourceFamily": "graphify",
+      "documentType": "operator-analysis",
+      "topicTags": ["knowledge graph", "graph memory"],
+      "knowledgeRegion": "GRAPH_OPERATOR_ANALYSIS",
+      "ownerSurface": "PRIVATE_PROVENANCE",
+      "processingStatus": "READ_DEEP",
+      "disposition": "ACCEPT",
+      "evidencePointer": "CI1-T2 §2 ledger row 5; §8 samples 3 and 7 (71.5x claim bounded)",
+      "answerClass": "SUMMARY_WITH_SOURCE",
+      "sensitivity": "restricted",
+      "freshnessStatus": "legacy-current-for-absorption",
+      "freshnessCheckedAt": "2026-06-02"
+    },
+    {
+      "_comment": "--- CI1-T3 code-review-graph rows (7 entries) ---",
+      "entryId": "t3-r1",
+      "sourcePacket": "CI1-T3",
+      "sourcePath": ".private_reference/legacy/CVF ADD/code-review-graph/CVF_GRAPH_KNOWLEDGE_SPEC.md",
+      "normalizedPath": ".private_reference/legacy/cvf add/code-review-graph/cvf_graph_knowledge_spec.md",
+      "sourceHash": null,
+      "sourceHashNote": "Per-file hash not computed; manifestHashProxy at pack level.",
+      "sourceRoot": ".private_reference/legacy/CVF ADD/code-review-graph/",
+      "sourceFamily": "code-review-graph",
+      "documentType": "spec",
+      "topicTags": ["graph", "context-builder"],
+      "knowledgeRegion": "GRAPH_KNOWLEDGE_MODEL",
+      "ownerSurface": "PRIVATE_PROVENANCE",
+      "processingStatus": "READ_DEEP",
+      "disposition": "ACCEPT",
+      "evidencePointer": "CI1-T3 classification ledger; sections 1-10",
+      "answerClass": "SUMMARY_WITH_SOURCE",
+      "sensitivity": "restricted",
+      "freshnessStatus": "legacy-current-for-absorption",
+      "freshnessCheckedAt": "2026-06-02"
+    },
+    {
+      "entryId": "t3-r2",
+      "sourcePacket": "CI1-T3",
+      "sourcePath": ".private_reference/legacy/CVF ADD/code-review-graph/CVF_GRAPH_CONTEXT_RESOLUTION_SPEC.md",
+      "normalizedPath": ".private_reference/legacy/cvf add/code-review-graph/cvf_graph_context_resolution_spec.md",
+      "sourceHash": null,
+      "sourceHashNote": "Per-file hash not computed; manifestHashProxy at pack level.",
+      "sourceRoot": ".private_reference/legacy/CVF ADD/code-review-graph/",
+      "sourceFamily": "code-review-graph",
+      "documentType": "spec",
+      "topicTags": ["graph", "context-builder", "governance"],
+      "knowledgeRegion": "GRAPH_CONTEXT_RESOLUTION",
+      "ownerSurface": "CONTROL_PLANE_CONTEXT_BUILDER",
+      "processingStatus": "READ_DEEP",
+      "disposition": "ACCEPT",
+      "evidencePointer": "CI1-T3 classification ledger; sections 1-12",
+      "answerClass": "SUMMARY_WITH_SOURCE",
+      "sensitivity": "restricted",
+      "freshnessStatus": "legacy-current-for-absorption",
+      "freshnessCheckedAt": "2026-06-02"
+    },
+    {
+      "entryId": "t3-r3",
+      "sourcePacket": "CI1-T3",
+      "sourcePath": ".private_reference/legacy/CVF ADD/code-review-graph/CVF_GRAPH_GOVERNANCE_EXTENSION_SPEC.md",
+      "normalizedPath": ".private_reference/legacy/cvf add/code-review-graph/cvf_graph_governance_extension_spec.md",
+      "sourceHash": null,
+      "sourceHashNote": "Per-file hash not computed; manifestHashProxy at pack level.",
+      "sourceRoot": ".private_reference/legacy/CVF ADD/code-review-graph/",
+      "sourceFamily": "code-review-graph",
+      "documentType": "spec",
+      "topicTags": ["graph", "governance"],
+      "knowledgeRegion": "GRAPH_GOVERNANCE_SIGNALS",
+      "ownerSurface": "GOVERNANCE_LAYER",
+      "processingStatus": "READ_DEEP",
+      "disposition": "ACCEPT",
+      "evidencePointer": "CI1-T3 classification ledger; sections 1-11",
+      "answerClass": "SUMMARY_WITH_SOURCE",
+      "sensitivity": "restricted",
+      "freshnessStatus": "legacy-current-for-absorption",
+      "freshnessCheckedAt": "2026-06-02"
+    },
+    {
+      "entryId": "t3-r4",
+      "sourcePacket": "CI1-T3",
+      "sourcePath": ".private_reference/legacy/CVF ADD/code-review-graph/CVF_GRAPH_INTEGRATION_SURFACE_SPEC.md",
+      "normalizedPath": ".private_reference/legacy/cvf add/code-review-graph/cvf_graph_integration_surface_spec.md",
+      "sourceHash": null,
+      "sourceHashNote": "Per-file hash not computed; manifestHashProxy at pack level.",
+      "sourceRoot": ".private_reference/legacy/CVF ADD/code-review-graph/",
+      "sourceFamily": "code-review-graph",
+      "documentType": "spec",
+      "topicTags": ["graph", "integration"],
+      "knowledgeRegion": "GRAPH_INTEGRATION_SURFACE",
+      "ownerSurface": "CONTROL_PLANE_ADAPTERS",
+      "processingStatus": "READ_DEEP",
+      "disposition": "ACCEPT_SUMMARY_ONLY",
+      "dispositionAlias": "ACCEPT_DEFERRED",
+      "rawDisposition": "ACCEPT_SUMMARY_ONLY",
+      "evidencePointer": "CI1-T3 classification ledger; sections 1-10",
+      "answerClass": "SUMMARY_WITH_SOURCE",
+      "sensitivity": "restricted",
+      "freshnessStatus": "legacy-current-for-absorption",
+      "freshnessCheckedAt": "2026-06-02"
+    },
+    {
+      "entryId": "t3-r5",
+      "sourcePacket": "CI1-T3",
+      "sourcePath": ".private_reference/legacy/CVF ADD/code-review-graph/CVF_GRAPH_IMPLEMENTATION_PLAN.md",
+      "normalizedPath": ".private_reference/legacy/cvf add/code-review-graph/cvf_graph_implementation_plan.md",
+      "sourceHash": null,
+      "sourceHashNote": "Per-file hash not computed; manifestHashProxy at pack level.",
+      "sourceRoot": ".private_reference/legacy/CVF ADD/code-review-graph/",
+      "sourceFamily": "code-review-graph",
+      "documentType": "roadmap",
+      "topicTags": ["graph", "implementation"],
+      "knowledgeRegion": "GRAPH_IMPLEMENTATION_PLAN",
+      "ownerSurface": "ROADMAP_BACKLOG",
+      "processingStatus": "READ_DEEP",
+      "disposition": "ACCEPT_SUMMARY_ONLY",
+      "dispositionAlias": "ACCEPT_DEFERRED",
+      "rawDisposition": "ACCEPT_SUMMARY_ONLY",
+      "evidencePointer": "CI1-T3 classification ledger; sections 1-12",
+      "answerClass": "PROCEDURAL_GUIDANCE",
+      "sensitivity": "restricted",
+      "freshnessStatus": "legacy-current-for-absorption",
+      "freshnessCheckedAt": "2026-06-02"
+    },
+    {
+      "entryId": "t3-r6",
+      "sourcePacket": "CI1-T3",
+      "sourcePath": ".private_reference/legacy/CVF ADD/code-review-graph/README.md",
+      "normalizedPath": ".private_reference/legacy/cvf add/code-review-graph/readme.md",
+      "sourceHash": null,
+      "sourceHashNote": "Per-file hash not computed; manifestHashProxy at pack level.",
+      "sourceRoot": ".private_reference/legacy/CVF ADD/code-review-graph/",
+      "sourceFamily": "code-review-graph",
+      "documentType": "doc",
+      "topicTags": ["graph", "governance"],
+      "knowledgeRegion": "GRAPH_PACK_BOUNDARY",
+      "ownerSurface": "PRIVATE_PROVENANCE",
+      "processingStatus": "READ_DEEP",
+      "disposition": "ACCEPT",
+      "evidencePointer": "CI1-T3 classification ledger; purpose and explicit non-goals",
+      "answerClass": "SUMMARY_WITH_SOURCE",
+      "sensitivity": "restricted",
+      "freshnessStatus": "legacy-current-for-absorption",
+      "freshnessCheckedAt": "2026-06-02"
+    },
+    {
+      "entryId": "t3-r7",
+      "sourcePacket": "CI1-T3",
+      "sourcePath": ".private_reference/legacy/CVF ADD/code-review-graph/Thong_tin.md",
+      "normalizedPath": ".private_reference/legacy/cvf add/code-review-graph/thong_tin.md",
+      "sourceHash": null,
+      "sourceHashNote": "Per-file hash not computed; manifestHashProxy at pack level.",
+      "sourceRoot": ".private_reference/legacy/CVF ADD/code-review-graph/",
+      "sourceFamily": "code-review-graph",
+      "documentType": "operator-analysis",
+      "topicTags": ["graph", "metrics"],
+      "knowledgeRegion": "GRAPH_OPERATOR_ANALYSIS",
+      "ownerSurface": "PRIVATE_PROVENANCE",
+      "processingStatus": "READ_DEEP",
+      "disposition": "ACCEPT_SUMMARY_ONLY",
+      "dispositionAlias": "ACCEPT_DEFERRED",
+      "rawDisposition": "ACCEPT_SUMMARY_ONLY",
+      "evidencePointer": "CI1-T3 classification ledger; mapping and value analysis sections",
+      "answerClass": "SUMMARY_WITH_SOURCE",
+      "sensitivity": "restricted",
+      "freshnessStatus": "legacy-current-for-absorption",
+      "freshnessCheckedAt": "2026-06-02"
+    }
+  ],
+  "fieldPopulationReport": {
+    "totalRows": 12,
+    "sourceT2Rows": 5,
+    "sourceT3Rows": 7,
+    "nrAliasTriggerRows": 4,
+    "fieldSummary": [
+      {
+        "field": "sourcePath",
+        "populationStatus": "FULLY_POPULATED",
+        "populatedCount": 12,
+        "gapCount": 0
+      },
+      {
+        "field": "normalizedPath",
+        "populationStatus": "FULLY_POPULATED_VIA_ALGORITHM",
+        "populatedCount": 12,
+        "gapCount": 0,
+        "note": "T2 rows had CI1-T4 gap MISSING_EXPLICIT; normalized paths were constructed by applying the CVF Corpus Path Normalization Algorithm to manifest sourcePaths. T3 rows follow the same algorithm. All 12 normalizedPath values are structurally valid per NR-05 checker requirements."
+      },
+      {
+        "field": "sourceHash",
+        "populationStatus": "DEFERRED_VIA_PROXY",
+        "populatedCount": 0,
+        "gapCount": 12,
+        "note": "Per-file SHA-256 not computed in CI1-T2 or CI1-T3 scan tranches. manifestHashProxy: true declared at pack level with bounded exception. Per-file hash computation is a future obligation."
+      },
+      {
+        "field": "disposition",
+        "populationStatus": "FULLY_POPULATED",
+        "populatedCount": 12,
+        "gapCount": 0
+      },
+      {
+        "field": "dispositionAlias",
+        "populationStatus": "FULLY_POPULATED_WHERE_REQUIRED",
+        "populatedCount": 4,
+        "gapCount": 0,
+        "note": "4 rows carry NR-11 alias: t2-r3 (DEFER), t3-r4 (ACCEPT_SUMMARY_ONLY), t3-r5 (ACCEPT_SUMMARY_ONLY), t3-r7 (ACCEPT_SUMMARY_ONLY). All 4 carry dispositionAlias: ACCEPT_DEFERRED and rawDisposition matching the original disposition."
+      },
+      {
+        "field": "rawDisposition",
+        "populationStatus": "FULLY_POPULATED_WHERE_REQUIRED",
+        "populatedCount": 4,
+        "gapCount": 0
+      },
+      {
+        "field": "answerClass",
+        "populationStatus": "FULLY_POPULATED",
+        "populatedCount": 12,
+        "gapCount": 0
+      },
+      {
+        "field": "evidencePointer",
+        "populationStatus": "FULLY_POPULATED",
+        "populatedCount": 12,
+        "gapCount": 0
+      },
+      {
+        "field": "processingStatus",
+        "populationStatus": "FULLY_POPULATED",
+        "populatedCount": 12,
+        "gapCount": 0
+      },
+      {
+        "field": "knowledgeRegion",
+        "populationStatus": "FULLY_POPULATED",
+        "populatedCount": 12,
+        "gapCount": 0
+      },
+      {
+        "field": "ownerSurface",
+        "populationStatus": "FULLY_POPULATED_WITH_ALIAS",
+        "populatedCount": 12,
+        "gapCount": 0,
+        "note": "T2 rows carry legacy runtime-file-reference alias (NR-03 ALIAS disposition from CI1-T4). T3 rows use canonical enum values. Alias is accepted per NR-03 normalization note."
+      },
+      {
+        "field": "sourceRoot",
+        "populationStatus": "FULLY_POPULATED",
+        "populatedCount": 12,
+        "gapCount": 0
+      },
+      {
+        "field": "sourceFamily",
+        "populationStatus": "FULLY_POPULATED",
+        "populatedCount": 12,
+        "gapCount": 0
+      },
+      {
+        "field": "documentType",
+        "populationStatus": "FULLY_POPULATED",
+        "populatedCount": 12,
+        "gapCount": 0
+      },
+      {
+        "field": "topicTags",
+        "populationStatus": "FULLY_POPULATED",
+        "populatedCount": 12,
+        "gapCount": 0
+      },
+      {
+        "field": "sensitivity",
+        "populationStatus": "FULLY_POPULATED",
+        "populatedCount": 12,
+        "gapCount": 0
+      },
+      {
+        "field": "freshnessStatus",
+        "populationStatus": "FULLY_POPULATED",
+        "populatedCount": 12,
+        "gapCount": 0
+      },
+      {
+        "field": "freshnessCheckedAt",
+        "populationStatus": "FULLY_POPULATED",
+        "populatedCount": 12,
+        "gapCount": 0
+      }
+    ]
+  },
+  "productReadinessAssessment": {
+    "ingestion": {
+      "verdict": "GOVERNANCE_PILOT_READY",
+      "note": "All 12 rows carry the required structural-required fields. manifestHashProxy declared with bounded exception. NR-11 alias rows fully populated. NR-05 normalizedPath applied to all rows. Corpus is private-reference-only; ingestion is restricted.",
+      "ingestAuthority": "CI1-T7 LPCI Intake Bridge + CI2-T3 Enforced Index Model",
+      "gapsThatBlockIngestion": ["sourceHash per-file not computed — manifestHashProxy exception accepted"],
+      "gapsThatDoNotBlockIngestion": ["T2 ownerSurface uses runtime-file alias (NR-03 ALIAS; accepted)"]
+    },
+    "searchFilter": {
+      "verdict": "SEARCH_FILTER_READY_WITH_DECLARED_GAPS",
+      "filterableFields": ["knowledgeRegion", "ownerSurface", "sourceFamily", "disposition", "dispositionAlias", "answerClass", "sensitivity", "documentType", "topicTags"],
+      "note": "Cross-packet queries on disposition can use dispositionAlias=ACCEPT_DEFERRED to find all DEFER and ACCEPT_SUMMARY_ONLY rows without enum scatter. knowledgeRegion supports scoped retrieval per semantic domain.",
+      "gaps": ["sourceHash per-file absent — drift detection limited to manifest-level proxy"]
+    },
+    "answerBoundary": {
+      "authorizedAnswerTypes": ["DIRECT_CITED_ANSWER (1 row)", "SUMMARY_WITH_SOURCE (10 rows)", "PROCEDURAL_GUIDANCE (1 row)"],
+      "prohibitedClaims": [
+        "runtime graph implementation (guard spec G-GM-01-08 not implemented)",
+        "71.5x token-reduction performance (author-reported, unverified)",
+        "phase roadmap execution (advisory only)",
+        "legal/policy answers (no legal corpus in this pack)"
+      ],
+      "answerBoundaryInheritedFrom": "docs/reference/CVF_CI1_T7_LPCI_INTAKE_BRIDGE_2026-06-02.md Claim Boundary Inheritance"
+    },
+    "evidenceTrace": {
+      "t2Source": "docs/audits/CVF_CI1_T2_GRAPHIFY_READINESS_PACKET_2026-06-02.md (manifest hash a88e3412, 5 files READ_DEEP)",
+      "t3Source": "docs/audits/CVF_CI1_T3_GRAPH_GOVERNANCE_CORPUS_READINESS_PACKET_2026-06-02.md (manifest hash d921f708, 7 files READ_DEEP)",
+      "t5SamplingResults": "docs/corpus-intelligence/CVF_CI1_T5_CLASSIFICATION_SAMPLING_RESULTS.json (PASSED_SAMPLING_WITH_GAPS)",
+      "ci2EnforcedModel": "docs/corpus-intelligence/CVF_CI2_ENFORCED_CROSS_CORPUS_INDEX_MODEL.json (schemaVersion 2.0.0)",
+      "gcRegistry": "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json (both corpora registered)"
+    },
+    "knownGaps": [
+      {
+        "gapId": "G1",
+        "field": "sourceHash",
+        "gapReason": "Per-file SHA-256 not computed during CI1-T2/T3 scan tranches. Manifest-level hashes used as proxy.",
+        "mitigationStatus": "MITIGATED_VIA_MANIFEST_PROXY",
+        "nextAction": "Future corpus wave or CI2-T5 may compute per-file hashes if operator authorizes a bounded re-scan."
+      },
+      {
+        "gapId": "G2",
+        "field": "ownerSurface (T2 rows)",
+        "gapReason": "T2 uses runtime file references as ownerSurface (NR-03 ALIAS). Canonical enum values not applied retroactively.",
+        "mitigationStatus": "ACCEPTED_PER_NR03",
+        "nextAction": "Future T2 packet revision could apply canonical enum values; not required before LPCI roadmap authoring."
+      },
+      {
+        "gapId": "G3",
+        "field": "legalPolicy domain extensions",
+        "gapReason": "Pack is GOVERNANCE_PILOT_NO_LEGAL_CORPUS. Legal/policy vocabulary declared in CI2-T3 model but not populated here.",
+        "mitigationStatus": "EXPECTED_BY_PACK_TYPE",
+        "nextAction": "Operator must supply a legal/policy corpus path for LPCI-T1 population; requires GC-051 registration."
+      }
+    ]
+  },
+  "lpciReadinessVerdict": {
+    "verdict": "SUFFICIENT_FOR_LPCI_ROADMAP_AUTHORING",
+    "note": "This pilot pack proves that CI2 enforced common row-level index fields (NR-04 via proxy, NR-05 fully, NR-11 fully) can be populated from existing CI1 data. The field population report shows 17 row-level field-summary entries fully or conditionally populated, sourceHash mitigated via proxy, and ownerSurface accepted with NR-03 alias boundary on T2 rows. Legal/policy domain extensions are intentionally not populated by this governance-pilot pack type. LPCI-T1 may consume this pilot pack as schema proof for product roadmap authoring.",
+    "insufficientFor": [
+      "LPCI runtime implementation",
+      "legal/policy answer serving (no legal corpus populated)",
+      "vector database loading",
+      "embedding computation",
+      "production readiness"
+    ],
+    "lpciBlockingCondition": "LPCI implementation requires a separate governed LPCI product roadmap opened after CI2-T5 closes."
+  },
+  "claimBoundary": "CI2-T4 proves product-readiness packet shape using existing CI1 T2/T3 governance pilot data. It does NOT prove legal answer correctness, runtime retrieval behavior, chatbot capability, embedding pipeline, vector database population, production readiness, public readiness, or hosted readiness. No new corpus was scanned. No per-file hash was computed. No live provider call was made."
+}

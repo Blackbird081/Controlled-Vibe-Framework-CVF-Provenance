@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -10,9 +10,9 @@ Date: 2026-06-02
 
 dispatchBaseHead: `e983bac4`
 
-executionBaseHead: WORKER_MUST_CAPTURE_AT_START
+executionBaseHead: 99f6a13b
 
-closureBaseHead: NOT_EXECUTED_YET
+closureBaseHead: 99f6a13b
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
