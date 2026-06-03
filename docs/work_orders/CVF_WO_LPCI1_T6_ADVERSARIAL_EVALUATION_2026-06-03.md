@@ -115,7 +115,7 @@ Worker is authorized to:
 
 Worker must NOT:
 
-- write any new source code, routes, components, or tests;
+- write any new runtime/product source code, routes, components, or tests;
 - expand the pilot corpus or add new corpus entries;
 - use a corpus other than `GOVERNANCE_PILOT_NO_LEGAL_CORPUS`;
 - make claims about legal answer accuracy or production readiness;
@@ -182,6 +182,8 @@ A boundary violation is recorded when any of the following is observed:
 | --- | --- | --- |
 | Evaluation report | `docs/reviews/CVF_LPCI1_T6_ADVERSARIAL_EVALUATION_2026-06-03.md` | Worker |
 | Completion review | `docs/reviews/CVF_LPCI1_T6_ADVERSARIAL_EVALUATION_COMPLETION_2026-06-03.md` | Reviewer |
+| Raw evaluation results | `docs/reviews/CVF_LPCI1_T6_ADVERSARIAL_EVAL_RAW_RESULTS.json` | Worker or Reviewer evidence artifact if a script is used |
+| Evaluation helper script | `scripts/run_lpci1_t6_adversarial_eval.py` | Worker or Reviewer evidence artifact if a script is used |
 
 The evaluation report must be present before reviewer pickup. The completion
 review is authored by the reviewer as part of closure.
@@ -246,7 +248,7 @@ Reviewer must verify:
 | Boundary violations | all documented; NONE for ALL_PASS verdict |
 | Evaluation report | present at required path |
 | Completion review | present at required path |
-| No new code created | confirmed |
+| No runtime/product code created | confirmed; evaluator helper artifacts must be evidence-scoped |
 | No corpus expansion | confirmed |
 
 ---
@@ -258,8 +260,9 @@ Return to orchestrator when:
 - all 18+ checks are recorded and the evaluation report is authored; OR
 - a boundary violation requiring a code fix is found (out of T6 scope — escalate immediately).
 
-Stop on: any attempt to write source code, modify corpus index, perform public-sync,
-access secrets beyond `LPCI_LLM_API_KEY`, or claim legal advice accuracy.
+Stop on: any attempt to write runtime/product source code, modify corpus index,
+perform public-sync, access secrets beyond `LPCI_LLM_API_KEY`, or claim legal
+advice accuracy.
 
 ---
 
@@ -305,8 +308,11 @@ Before beginning evaluation, the worker must read (in order):
 | --- | --- | --- |
 | `docs/reviews/CVF_LPCI1_T6_ADVERSARIAL_EVALUATION_2026-06-03.md` | CREATE | Worker |
 | `docs/reviews/CVF_LPCI1_T6_ADVERSARIAL_EVALUATION_COMPLETION_2026-06-03.md` | CREATE | Reviewer |
+| `docs/reviews/CVF_LPCI1_T6_ADVERSARIAL_EVAL_RAW_RESULTS.json` | CREATE if script-generated evidence is used | Worker or Reviewer evidence artifact |
+| `scripts/run_lpci1_t6_adversarial_eval.py` | CREATE if script-generated evidence is used | Worker or Reviewer evidence artifact |
 
-No source code, test files, corpus index files, or governance checker files may be created or modified.
+No runtime/product source code, test files, corpus index files, or governance
+checker files may be created or modified.
 
 ---
 
@@ -339,9 +345,11 @@ Per `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md`:
 
 ## Worker Autonomy / No-Question Rule
 
-Worker must complete all 18+ checks and both output documents without escalating
-to the operator for scope, query design, or formatting questions. The evaluation
-protocol above is the complete specification. The only escalation triggers are:
+Worker must complete all 18+ checks and the worker-owned evaluation report
+without escalating to the operator for scope, query design, or formatting
+questions. The completion review is reviewer-owned and must not be created by
+the worker. The evaluation protocol above is the complete specification. The
+only escalation triggers are:
 
 - the dev server cannot be started (infrastructure failure);
 - `LPCI_LLM_API_KEY` is absent and operator did not supply it;

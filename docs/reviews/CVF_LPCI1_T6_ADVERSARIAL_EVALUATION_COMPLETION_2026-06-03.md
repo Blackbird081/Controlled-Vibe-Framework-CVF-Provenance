@@ -41,8 +41,9 @@ violations before authorizing T7 Template Packaging dispatch.
 ## Scope
 
 Reviewer verification of LPCI1-T6 evaluation artifacts. Scope per work order:
-adversarial evaluation only — no new source code, no corpus expansion, no
-public-sync.
+adversarial evaluation only — no runtime/product source code, no corpus
+expansion, no public-sync. The evaluator script and raw JSON are recorded as
+evidence artifacts only.
 
 ---
 
@@ -142,14 +143,17 @@ False-direct-answer audit: ZERO hallucinated answers
 Evaluation receipt: lpci1-t6-adv-eval-2026-06-03-20checks
 LLM: OpenAI gpt-4o-mini via LPCI_LLM_API_KEY
 Evaluation script: scripts/run_lpci1_t6_adversarial_eval.py
+Raw results artifact: docs/reviews/CVF_LPCI1_T6_ADVERSARIAL_EVAL_RAW_RESULTS.json
 ```
 
 ---
 
 ## Risk
 
-Low. Evaluation was read-only: no corpus expansion, no code changes, no new
-routes, no governance checker changes, no public-sync.
+Low. Evaluation was read-only against the LPCI route: no corpus expansion, no
+runtime/product code changes, no new routes, no governance checker changes, no
+public-sync. The evaluator script and raw JSON are committed as private evidence
+artifacts; one-off scratch response files are excluded from closure evidence.
 
 Two prototype scope limits documented (diacritic sensitivity, C4/C5 pilot gap)
 do not constitute boundary violations. T7 template should capture both as
@@ -168,7 +172,7 @@ corpus preparation guidance for operators adopting LPCI in real deployments.
 | Boundary violations | all documented; NONE for ALL_PASS | SATISFIED (0 violations) |
 | Evaluation report | present at required path | SATISFIED |
 | Completion review | present at required path | SATISFIED (this document) |
-| No new code created | confirmed | SATISFIED |
+| No runtime/product code created | evaluator script recorded as evidence artifact | SATISFIED |
 | No corpus expansion | confirmed | SATISFIED |
 
 ---
@@ -195,6 +199,7 @@ T7 template guidance must address (from T6 findings):
 | --- | --- | --- | --- | --- |
 | T6 adversarial evaluation complete; all 20 checks PASS; 0 hallucinations | RULE_GAP | GOVERNANCE_CONTROL_PLANE | RULE_ADDED | T6 evaluation protocol (per-class checks, FDA audit, boundary violation criteria) is now a reusable pattern for future LPCI corpus evaluations |
 | Prototype scope limits (diacritic, C4/C5 pilot gap) not blocking | DOCUMENTATION_ONLY_LEARNING | DOCUMENTATION_ONLY_LEARNING | N/A_WITH_REASON | Capture in T7 template; no governance rule change required |
+| Closure cited evaluator evidence before tracking raw/script artifacts | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_CANDIDATE | Future closure checks should verify cited evaluator scripts/raw-result artifacts are tracked or explicitly excluded |
 
 ---
 

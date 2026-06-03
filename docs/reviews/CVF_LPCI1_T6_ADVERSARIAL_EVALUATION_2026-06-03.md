@@ -30,8 +30,9 @@ and false-direct-answer audit results per the protocol in:
 Adversarial evaluation of LPCI1-T5 chatbot prototype against
 `GOVERNANCE_PILOT_NO_LEGAL_CORPUS` (4 records). Covers ≥5 checks per
 answerClass corpus class, ≥3 superseded/ESCALATE_OR_ABSTAIN checks, and ≥5
-false-direct-answer audit checks. No source code changes, corpus expansion, or
-governance checker changes in this tranche.
+false-direct-answer audit checks. No runtime/product source code changes, corpus
+expansion, or governance checker changes in this tranche. The evaluator helper
+script and raw JSON are evidence artifacts only.
 
 ---
 
@@ -67,6 +68,7 @@ recorded and boundary verdicts assessed against T4 C1–C9 obligations.
 | Timestamp | 2026-06-03T15:18:39.493042Z |
 | Total checks | 20 |
 | Evaluation script | `scripts/run_lpci1_t6_adversarial_eval.py` |
+| Raw results artifact | `docs/reviews/CVF_LPCI1_T6_ADVERSARIAL_EVAL_RAW_RESULTS.json` |
 
 ---
 
