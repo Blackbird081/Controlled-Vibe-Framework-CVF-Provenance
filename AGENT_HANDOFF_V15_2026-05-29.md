@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `0850b43b` (parent: `10e9eae2`). Updated 2026-06-04 after opening LPCI2-T4 dispatch packet; mode is lpci2_t4_corpus_intelligence_import_classification_dispatch_ready; LPCI1-T7 and LPCI2-T1 through LPCI2-T4S are CLOSED_PASS_BOUNDED; LPCI2-T4 is DISPATCH_READY as Corpus Intelligence evidence only; the local workspace is `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local`; T4 may extract DOCX text locally from `data_input/116_2025_QH15_666020.docx` and `data_input/148_2025_QH15_675262.docx`, populate conservative domain/classification evidence, and run GC-047/GC-050; PolicyLocal remains a test use case for CVF Corpus Intelligence foundation, not a production chatbot build lane; search/chat/runtime/provider/product work remains blocked pending T4 evidence plus Memory/Knowledge legacy absorption readiness checkpoint.
+Current HEAD recorded for this handoff: `6a4eba4e` (WORKER_MUST_NOT_COMMIT; T4 worktree changes pending operator commit). Updated 2026-06-04 after LPCI2-T4 extraction and classification completion; mode is `lpci2_t4_corpus_intelligence_import_classification_closed_pass_bounded`; LPCI2-T4 CLOSED_PASS_BOUNDED; corpus records written to Policy_Local/data/generated/policylocal-corpus-records.json; both DOCX HASH_OK; VN_NATIONAL law corpus, status=amended, answerClass=SUMMARY_WITH_SOURCE; effectiveDate=unknown (T4-F1); GC-051 registry DEEP_CLASSIFIED; all 18 pre-implementation gates PASS; pre-closure blocked on uncommitted worktree by design; search/chat/runtime/provider work remains blocked.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -585,8 +585,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_t1_product_intake_architecture_closed`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=author and dispatch LPCI1-T2 domain classification work order only; LPCI runtime stays blocked until a later implementation tranche is explicitly authorized;
+Startup acknowledged: current mode=`lpci2_t4_corpus_intelligence_import_classification_closed_pass_bounded`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=operator commit of T4 worktree, then open LPCI2-T5+ deep classification work order (effectiveDate verification, GC-048, adversarial sampling); search/chat/runtime blocked until T5+ closes;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary

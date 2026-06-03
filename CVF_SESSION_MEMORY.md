@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-04
 
-Current mode marker: `lpci2_t4_corpus_intelligence_import_classification_dispatch_ready`
+Current mode marker: `lpci2_t4_corpus_intelligence_import_classification_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lpci2_t4_corpus_intelligence_import_classification_dispatch_ready`.
+Current mode: `lpci2_t4_corpus_intelligence_import_classification_closed_pass_bounded`.
 
 Active handoff:
 
@@ -639,18 +639,25 @@ Boundary: hash-only. DOCX text extraction, legal/policy classification, search,
 retrieval, provider call, and chat runtime remain blocked.
 
 LPCI2-T4 Corpus Intelligence Import Classification Evidence is
-`DISPATCH_READY`.
+`CLOSED_PASS_BOUNDED` (WORKER_MUST_NOT_COMMIT — awaiting operator commit).
 
-Work order:
+Completion review:
 
-`docs/work_orders/CVF_WO_LPCI2_T4_CORPUS_INTELLIGENCE_IMPORT_CLASSIFICATION_EVIDENCE_2026-06-04.md`
+`docs/reviews/CVF_LPCI2_T4_CORPUS_INTELLIGENCE_IMPORT_CLASSIFICATION_EVIDENCE_COMPLETION_2026-06-04.md`
 
-Strategic boundary: PolicyLocal is currently a test use case for proving CVF
-Corpus Intelligence as a foundation capability. It is not a production chatbot
-build lane. T4 may extract DOCX text locally and populate conservative
-classification evidence, but search/chat/runtime/provider work remains blocked.
-Any later product decision must wait for T4 evidence and a Memory/Knowledge
-legacy absorption readiness checkpoint.
+Corpus records (Policy_Local local workspace):
+
+`D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-corpus-records.json`
+
+T4 evidence: both DOCX files extracted (READ_SHALLOW); jurisdiction=VN_NATIONAL;
+documentType=law; status=amended; answerClass=SUMMARY_WITH_SOURCE per T2 matrix;
+effectiveDate=unknown (T4-F1, deferred to T5+). All 18 pre-implementation gates PASS.
+Pre-closure gate blocked on uncommitted worktree — by design.
+
+Next allowed move: operator commit of T4 worktree changes, then open a bounded
+LPCI2-T5+ deep classification work order. Do NOT open search/chat runtime until
+T5+ closes. PolicyLocal remains a test use case for CVF Corpus Intelligence
+foundation, not a production chatbot build lane.
 
 Parked checkpoints:
 
