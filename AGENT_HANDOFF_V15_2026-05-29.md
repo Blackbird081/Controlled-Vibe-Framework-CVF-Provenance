@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `bb875474` (parent: `2402aea0`). Session-sync follow-up updated 2026-06-03 after LPCI1-T2 work-order dispatch; LPCI1-T2 is DISPATCH_READY and the next allowed move is dispatch LPCI1-T2 domain classification worker only.
+Current HEAD recorded for this handoff: `ad98acae` (parent: `bb875474`). Session-sync follow-up updated 2026-06-03 after LPCI1-T2 dispatch-readiness continuity sync; LPCI1-T2 is DISPATCH_READY and the next allowed move is dispatch LPCI1-T2 domain classification worker only.
 
 ## Latest Work / Changes (2026-05-30)
 
