@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-03
 
-Current mode marker: `lpci2_t1_policylocal_build_control_packet_closed_pass_bounded`
+Current mode marker: `lpci2_t2_policylocal_frontend_prototype_readiness_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lpci2_t1_policylocal_build_control_packet_closed_pass_bounded`.
+Current mode: `lpci2_t2_policylocal_frontend_prototype_readiness_closed_pass_bounded`.
 
 Active handoff:
 
@@ -557,6 +557,23 @@ LPCI2-T3 production-corpus pilot planning. Do not jump directly to broad chat
 runtime; future app work must preserve the PolicyLocal build gate order
 G1 scaffold -> G2 import -> G3 search -> G4 receipt -> G5 chat -> G6
 adversarial.
+
+LPCI2-T2 PolicyLocal Frontend Prototype Readiness is `CLOSED_PASS_BOUNDED`.
+Codex reviewed the new local PolicyLocal prototype files created from Claude's
+handoff. Verdict: accept as visual/product reference, but block direct runtime
+scaffold reuse until canonical answer classes, sourceHash/normalizedPath/source
+path citation fields, receipt evidence, negative-evidence handling, and local
+dependency boundaries are normalized. Review:
+
+`docs/reviews/CVF_LPCI2_T2_POLICYLOCAL_FRONTEND_PROTOTYPE_READINESS_REVIEW_2026-06-03.md`
+
+Workspace copy:
+
+`D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\PolicyLocal\CODEX_POLICYLOCAL_FRONTEND_PROTOTYPE_READINESS_REVIEW_2026-06-03.md`
+
+Next allowed move: open a bounded prototype schema-cleanup/scaffold-readiness
+correction or proceed to LPCI2-T3 production-corpus pilot planning. Broad chat
+runtime remains blocked until import, search, citation, and receipt gates pass.
 
 Parked checkpoints:
 

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: T1_CLOSED_PASS_BOUNDED
+Status: T2_CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -46,7 +46,7 @@ workspace.
 | Tranche | Goal | Output | Status |
 | --- | --- | --- | --- |
 | LPCI2-T1 | PolicyLocal build control packet | repo reference packet plus workspace copy tying Claude spec to LPCI1 rules | CLOSED_PASS_BOUNDED |
-| LPCI2-T2 | Product scaffold readiness decision | decide whether to scaffold Next.js app now, defer, or require production-corpus pilot first | PROPOSED |
+| LPCI2-T2 | Product scaffold readiness decision | review Claude-built local prototype and decide scaffold readiness | CLOSED_PASS_BOUNDED |
 | LPCI2-T3 | Production-corpus pilot planning | define first real corpus, GC-051 registration, legal/policy domain fields, and sampling plan | PROPOSED |
 | LPCI2-T4 | Local runtime implementation | implement bounded local app only after T2/T3 decision | HOLD_UNTIL_T2_T3_PASS |
 
@@ -55,15 +55,17 @@ workspace.
 | Step | Action | Output | Status |
 | --- | --- | --- | --- |
 | W1 | Create PolicyLocal build-control packet | repo reference plus external workspace copy | CLOSED_PASS_BOUNDED |
-| W2 | Decide scaffold readiness | future T2 readiness decision | PROPOSED |
+| W2 | Decide scaffold readiness | prototype accepted as visual reference with schema blockers before runtime scaffold | CLOSED_PASS_BOUNDED |
 | W3 | Plan production-corpus pilot | future T3 pilot plan | PROPOSED |
 | W4 | Implement bounded local runtime | future T4 app implementation | HOLD_UNTIL_T2_T3_PASS |
 
 ## Decision
 
-Proceed with LPCI2-T1 only in this batch. The immediate risk is not lack of UI
-ideas. The risk is that a polished app could be built while CVF/LPCI controls
-remain implied. T1 closes that gap by creating an explicit build control packet.
+LPCI2-T1 created the build-control packet. LPCI2-T2 reviewed the new local
+PolicyLocal prototype files and accepts them as visual/product reference only.
+The prototype must not become the runtime contract until answer classes,
+citation evidence, receipt fields, and local dependency boundaries are
+normalized.
 
 ## Acceptance Criteria
 
@@ -74,6 +76,7 @@ remain implied. T1 closes that gap by creating an explicit build control packet.
 | External workspace copy present | packet saved under `CVF-Workspace\PolicyLocal` |
 | Runtime boundary preserved | no app code, API route, DB file, provider call, corpus ingestion, or public-sync |
 | Next move clear | T2/T3/T4 dependency order recorded |
+| Prototype readiness classified | T2 review separates visual acceptance from runtime blockers |
 
 ## Verification Evidence
 
@@ -84,6 +87,10 @@ remain implied. T1 closes that gap by creating an explicit build control packet.
 | Completion review | `docs/reviews/CVF_LPCI2_T1_POLICYLOCAL_BUILD_CONTROL_PACKET_COMPLETION_2026-06-03.md` |
 | Session sync authorization | `docs/reviews/CVF_LPCI2_T1_SESSION_SYNC_AUTH_2026-06-03.md` |
 | Workspace copy | `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\PolicyLocal\CVF_POLICYLOCAL_BUILD_CONTROL_PACKET_2026-06-03.md` |
+| T2 work order | `docs/work_orders/CVF_WO_LPCI2_T2_POLICYLOCAL_FRONTEND_PROTOTYPE_READINESS_2026-06-03.md` |
+| T2 readiness review | `docs/reviews/CVF_LPCI2_T2_POLICYLOCAL_FRONTEND_PROTOTYPE_READINESS_REVIEW_2026-06-03.md` |
+| T2 session sync authorization | `docs/reviews/CVF_LPCI2_T2_SESSION_SYNC_AUTH_2026-06-03.md` |
+| T2 workspace review copy | `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\PolicyLocal\CODEX_POLICYLOCAL_FRONTEND_PROTOTYPE_READINESS_REVIEW_2026-06-03.md` |
 
 ## Non-Goals
 
@@ -96,8 +103,9 @@ remain implied. T1 closes that gap by creating an explicit build control packet.
 
 ## Claim Boundary
 
-This roadmap claims only that LPCI2-T1 created a reusable build control packet
-and copied it to the local PolicyLocal workspace.
+This roadmap claims that LPCI2-T1 created a reusable build control packet and
+that LPCI2-T2 reviewed the local frontend prototype as visual/product reference
+with blocking runtime-schema gaps.
 
 It does not claim runtime implementation, production corpus readiness, legal
 answer correctness, hosted readiness, or public export.
@@ -110,11 +118,12 @@ rules mandatory for implementation.
 
 Learning lane: `GOVERNANCE_CONTROL_PLANE`
 
-Disposition: `RULE_ADDED` - LPCI2-T1 creates the productization packet and
-records the no-external-worker self-execution boundary.
+Disposition: `MACHINE_CHECK_CANDIDATE` - LPCI2-T2 identifies that future
+PolicyLocal scaffold work should machine-check canonical answer-class storage
+and citation evidence before runtime chat is accepted.
 
-Next control action: `CLOSED` for T1; T2/T3/T4 remain proposed and must not be
-treated as implemented.
+Next control action: `CLOSED` for T1-T2; T3 production-corpus pilot planning
+remains proposed and T4 runtime implementation remains held until T2/T3 pass.
 
 Runtime/provider/cost learning: `N/A_WITH_REASON`
 
