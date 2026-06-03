@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `7325b549` (docs(session): sync lpci2 t4 handoff head). Updated 2026-06-04 after LPCI2-T5 dispatch preparation; mode is `lpci2_t5_policylocal_deep_classification_dispatch_ready`; LPCI2-T5 is DISPATCH_READY; T5 scope is full-body effectiveDate scan, GC-048 knowledge-map reconciliation, and adversarial sampling; WORKER_MUST_NOT_COMMIT; search/chat/runtime/provider work remains blocked until T5 closes and a separate readiness gate passes.
+Current HEAD recorded for this handoff: `80a9662c` (docs(lpci): dispatch policylocal deep classification). Updated 2026-06-04 after LPCI2-T5 dispatch commit; mode is `lpci2_t5_policylocal_deep_classification_dispatch_ready`; LPCI2-T5 is DISPATCH_READY; T5 scope is full-body effectiveDate scan, GC-048 knowledge-map reconciliation, and adversarial sampling; WORKER_MUST_NOT_COMMIT; search/chat/runtime/provider work remains blocked until T5 closes and a separate readiness gate passes.
 
 ## Latest Work / Changes (2026-05-30)
 
