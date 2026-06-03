@@ -2,13 +2,13 @@
 
 Memory class: FULL_RECORD
 
-Status: HOLD
+Status: DISPATCH_READY
 
 docType: work_order
 
 Date: 2026-06-03
 
-dispatchBaseHead: `c0ebfd9c`
+dispatchBaseHead: `0dbce418`
 
 executionBaseHead: WORKER_MUST_CAPTURE_AT_START
 
@@ -36,20 +36,20 @@ corpus intake spec, and T1 GC-018 supplement. It does not implement any code.
 
 | Role | Responsibility | Boundary |
 | --- | --- | --- |
-| Orchestrator | dispatch after CI2-T5 closure | no implementation |
+| Orchestrator | dispatch; CI2-T5 closed at commit `6324fd76` | no implementation |
 | Worker | produce architecture document, corpus intake spec, T1 GC-018 supplement | no runtime code |
 | Reviewer | verify architecture-only scope; reject any runtime artifact | reject UI/API/vector/provider work |
 
 ## Dependency Gate
 
-LPCI1-T1 is on HOLD pending operator commit of CI2-T5 closure artifacts.
-Release condition: operator commits CI2-T5 batch and updates this work order
-status to DISPATCH_READY, citing the CI2-T5 closure commit hash.
+Dependency satisfied. CI2-T5 closure committed at `6324fd76`.
 
-Prerequisite evidence (must exist at DISPATCH_READY commit):
+Release evidence:
 
-- `docs/reviews/CVF_CI2_T5_LPCI_PRODUCT_ROADMAP_PACKET_COMPLETION_2026-06-02.md` — Status: CLOSED_PASS_BOUNDED
-- `docs/baselines/CVF_GC018_LPCI1_LEGAL_POLICY_CORPUS_INTELLIGENCE_PRODUCT_MVP_2026-06-02.md` — Status: ACTIVE
+- CI2-T5 closure review: `docs/reviews/CVF_CI2_T5_LPCI_PRODUCT_ROADMAP_PACKET_COMPLETION_2026-06-02.md` — Status: CLOSED_PASS_BOUNDED at commit `6324fd76`
+- CI2-T5 work order: `docs/work_orders/CVF_WO_CI2_T5_LPCI_PRODUCT_ROADMAP_PACKET_2026-06-02.md` — closureBaseHead: `1ab83302`
+- LPCI1 GC-018: `docs/baselines/CVF_GC018_LPCI1_LEGAL_POLICY_CORPUS_INTELLIGENCE_PRODUCT_MVP_2026-06-02.md` — Status: ACTIVE
+- LPCI1 MVP roadmap: `docs/roadmaps/CVF_LPCI1_LEGAL_POLICY_CORPUS_INTELLIGENCE_PRODUCT_MVP_ROADMAP_2026-06-02.md` — Status: ACTIVE
 
 ## Roadmap-To-Work-Order Trace Matrix
 

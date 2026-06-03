@@ -150,6 +150,14 @@ def _exists_rel(path: str) -> bool:
     return bool(normalized) and (REPO_ROOT / normalized).exists()
 
 
+def _commit_contains_path(ref: str, path: str) -> bool:
+    normalized = path.strip().strip("`").replace("\\", "/").rstrip(".,;:")
+    if not normalized:
+        return False
+    code, _, _ = _run_git(["cat-file", "-e", f"{ref}:{normalized}"])
+    return code == 0
+
+
 def _extract_status(text: str) -> str:
     match = re.search(r"^Status:\s*(.+?)\s*$", text, re.MULTILINE | re.IGNORECASE)
     return match.group(1).strip() if match else ""
@@ -797,6 +805,21 @@ def _validate_ready_dependency_release(text: str) -> list[str]:
                 "docs/reference/CVF_WORK_ORDER_DEPENDENCY_RELEASE_EVIDENCE_STANDARD_2026-06-03.md"
             )
             break
+    for match in re.finditer(
+        r"`(?P<path>(?:docs|governance|EXTENSIONS|CVF_SESSION|scripts|sdk|\.github|\.private_reference)/[^`]+)`"
+        r"[^\n`]*\bat commit\s+`(?P<commit>[0-9a-f]{7,40})`",
+        text,
+        re.IGNORECASE,
+    ):
+        path = match.group("path")
+        commit = match.group("commit")
+        if not _commit_contains_path(commit, path):
+            issues.append(
+                "dispatch/ready work order cites dependency artifact "
+                f"`{path}` at commit `{commit}`, but that commit does not contain the path; "
+                "cite the closure commit that contains the prerequisite artifact per "
+                "docs/reference/CVF_WORK_ORDER_DEPENDENCY_RELEASE_EVIDENCE_STANDARD_2026-06-03.md"
+            )
     return issues
 
 

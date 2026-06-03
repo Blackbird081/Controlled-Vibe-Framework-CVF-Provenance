@@ -256,6 +256,51 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
             issues,
         )
 
+    def test_ready_work_order_dependency_artifact_commit_must_contain_path(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_DEPENDENCY_COMMIT_TEST_2026-06-03.md"
+        prerequisite = "docs/reviews/CVF_PRIOR_COMPLETION_2026-06-03.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCH_READY",
+                    "dispatchBaseHead: abc1234",
+                    "executionBaseHead: WORKER_MUST_CAPTURE_AT_START",
+                    "closureBaseHead: NOT_EXECUTED_YET",
+                    "Commit mode: WORKER_MUST_NOT_COMMIT",
+                    "## Authority Chain",
+                    "| Authority | Path / basis | Disposition |",
+                    "| --- | --- | --- |",
+                    f"| Prior tranche | `{prerequisite}` at commit `deadbee` | ACCEPT |",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| Existing use-case roadmap | `docs/roadmaps/CVF_LPCI_TEST.md` | title | `LPCI` | use-case roadmap | ACCEPT |",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Proceed inside allowed scope.",
+                ]
+            ),
+        )
+        self._write("docs/roadmaps/CVF_LPCI_TEST.md", "# LPCI\n")
+
+        def fake_run_git(args: list[str]) -> tuple[int, str, str]:
+            if args[:2] == ["cat-file", "-e"]:
+                return 1, "", "missing"
+            return 0, "", ""
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root), patch.object(MODULE, "_run_git", fake_run_git):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "dispatch/ready work order cites dependency artifact "
+            f"`{prerequisite}` at commit `deadbee`, but that commit does not contain the path; "
+            "cite the closure commit that contains the prerequisite artifact per "
+            "docs/reference/CVF_WORK_ORDER_DEPENDENCY_RELEASE_EVIDENCE_STANDARD_2026-06-03.md",
+            report["violations"][0]["issues"],
+        )
+
     def test_ready_work_order_without_worker_autonomy_fails(self) -> None:
         work_order = "docs/work_orders/CVF_WO_AUTONOMY_TEST_2026-06-01.md"
         self._write(
