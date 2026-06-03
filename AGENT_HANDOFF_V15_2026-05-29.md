@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `b90061b7` (parent: `2bef0c56`). Session-sync follow-up updated 2026-06-03 after LPCI1-T2 closure continuity sync; LPCI1-T2 is CLOSED_PASS_BOUNDED and the next allowed move is author/dispatch LPCI1-T3 search/filter index work order only.
+Current HEAD recorded for this handoff: `1bc3c68e` (parent: `1cedefd8`). Session-sync follow-up updated 2026-06-03 after LPCI1-T3 closure artifact commit; LPCI1-T3 is CLOSED_PASS_BOUNDED and the next allowed move is author/dispatch LPCI1-T4 retrieval boundary work order only.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -171,7 +171,7 @@ Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
 
 ## Active Boundary
 
-Current mode: `lpci1_t2_domain_classification_closed`.
+Current mode: `lpci1_t3_search_filter_index_closed`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
@@ -459,7 +459,14 @@ claim:
 
 `docs/reviews/CVF_LPCI1_T2_DOMAIN_CLASSIFICATION_COMPLETION_2026-06-03.md`
 
-Next allowed move: author and dispatch LPCI1-T3 search/filter index work order
+LPCI1-T3 is `CLOSED_PASS_BOUNDED` at commit `1bc3c68e` after reviewer
+correction normalized the work-order Source Verification table to the canonical
+six-column schema. It created the search/filter index spec and completion
+review:
+
+`docs/reviews/CVF_LPCI1_T3_SEARCH_FILTER_INDEX_COMPLETION_2026-06-03.md`
+
+Next allowed move: author and dispatch LPCI1-T4 retrieval boundary work order
 only.
 
 LPCI chatbot/runtime implementation remains blocked until a later

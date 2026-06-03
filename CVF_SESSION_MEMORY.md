@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-03
 
-Current mode marker: `lpci1_t2_domain_classification_closed`
+Current mode marker: `lpci1_t3_search_filter_index_closed`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lpci1_t2_domain_classification_closed`.
+Current mode: `lpci1_t3_search_filter_index_closed`.
 
 Active handoff:
 
@@ -503,7 +503,14 @@ claim:
 
 `docs/reviews/CVF_LPCI1_T2_DOMAIN_CLASSIFICATION_COMPLETION_2026-06-03.md`
 
-Next allowed move: author and dispatch LPCI1-T3 search/filter index work order
+LPCI1-T3 is `CLOSED_PASS_BOUNDED` at commit `1bc3c68e` after reviewer
+correction normalized the work-order Source Verification table to the canonical
+six-column schema. It created the search/filter index spec and completion
+review:
+
+`docs/reviews/CVF_LPCI1_T3_SEARCH_FILTER_INDEX_COMPLETION_2026-06-03.md`
+
+Next allowed move: author and dispatch LPCI1-T4 retrieval boundary work order
 only.
 
 LPCI chatbot/runtime implementation remains blocked until a later
