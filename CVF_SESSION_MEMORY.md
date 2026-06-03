@@ -639,7 +639,7 @@ Boundary: hash-only. DOCX text extraction, legal/policy classification, search,
 retrieval, provider call, and chat runtime remain blocked.
 
 LPCI2-T4 Corpus Intelligence Import Classification Evidence is
-`CLOSED_PASS_BOUNDED` (WORKER_MUST_NOT_COMMIT — awaiting operator commit).
+`CLOSED_PASS_BOUNDED` at commit `212d6adf`.
 
 Completion review:
 
@@ -652,12 +652,12 @@ Corpus records (Policy_Local local workspace):
 T4 evidence: both DOCX files extracted (READ_SHALLOW); jurisdiction=VN_NATIONAL;
 documentType=law; status=amended; answerClass=SUMMARY_WITH_SOURCE per T2 matrix;
 effectiveDate=unknown (T4-F1, deferred to T5+). All 18 pre-implementation gates PASS.
-Pre-closure gate blocked on uncommitted worktree — by design.
+Operator-side closure committed the worker artifacts and registry update.
 
-Next allowed move: operator commit of T4 worktree changes, then open a bounded
-LPCI2-T5+ deep classification work order. Do NOT open search/chat runtime until
-T5+ closes. PolicyLocal remains a test use case for CVF Corpus Intelligence
-foundation, not a production chatbot build lane.
+Next allowed move: open a bounded LPCI2-T5+ deep classification work order.
+Do NOT open search/chat runtime until T5+ closes. PolicyLocal remains a test
+use case for CVF Corpus Intelligence foundation, not a production chatbot
+build lane.
 
 Parked checkpoints:
 
