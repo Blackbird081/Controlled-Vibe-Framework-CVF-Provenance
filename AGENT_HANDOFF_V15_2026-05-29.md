@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `02a201bf` (parent: `99f6a13b`). Session updated 2026-06-03: CI2-T4 closure is committed and CI2-T5 is dispatch-ready.
+Current HEAD recorded for this handoff: `6a097dbd` (parent: `02a201bf`). Session updated 2026-06-03: CI2-T4 closure is synced and CI2-T5 is dispatch-ready.
 
 ## Latest Work / Changes (2026-05-30)
 
