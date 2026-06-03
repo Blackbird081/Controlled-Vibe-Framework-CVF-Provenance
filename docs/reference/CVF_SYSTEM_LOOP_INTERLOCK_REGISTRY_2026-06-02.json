@@ -95,6 +95,29 @@
       "claimBoundary": "This connection proves typed artifact routing from the T5 classification sampling result to the T6 checker decision table. It does not prove checker implementation, runtime guard enforcement, semantic correctness of gap decisions, automatic roadmap creation, autonomous mutation, LPCI implementation, or public claims. T7_READY verdict unlocks CI1-T7 dispatch only after CI1-T6 artifacts are committed and the session front door is updated."
     },
     {
+      "id": "packet-normalization-checkers-to-enforced-index-model",
+      "status": "ACTIVE",
+      "upstreamLoop": "CI2_PACKET_NORMALIZATION_CHECK_LOOP",
+      "upstreamPlane": "CORPUS_INTELLIGENCE",
+      "outputArtifact": "governance/compat/check_corpus_packet_source_hash.py",
+      "outputSignal": "NR-04/NR-05/NR-11 structural gate results from CI2-T2 checker trio (check_corpus_packet_source_hash.py, check_corpus_packet_normalized_path.py, check_corpus_packet_disposition_canonical.py)",
+      "signalContract": "docs/reviews/CVF_CI2_T2_PACKET_NORMALIZATION_CHECKERS_COMPLETION_2026-06-02.md",
+      "downstreamLoop": "CI2_ENFORCED_INDEX_MODEL_LOOP",
+      "downstreamPlane": "CORPUS_INTELLIGENCE",
+      "inputArtifact": "docs/corpus-intelligence/CVF_CI2_ENFORCED_CROSS_CORPUS_INDEX_MODEL.json",
+      "routingRule": "When CI2-T2 NR-04/NR-05/NR-11 checkers are CLOSED_PASS_BOUNDED and wired into autorun, the CI2-T3 worker may create the enforced cross-corpus index model JSON that records field classification, checker bindings, and NR-11 alias vocabulary. The routing does not authorize LPCI runtime, vector database, embedding, live proof, public-sync, new corpus scan, or autonomous mutation.",
+      "evidenceRefs": [
+        "governance/compat/check_corpus_packet_source_hash.py",
+        "governance/compat/check_corpus_packet_normalized_path.py",
+        "governance/compat/check_corpus_packet_disposition_canonical.py",
+        "docs/reviews/CVF_CI2_T2_PACKET_NORMALIZATION_CHECKERS_COMPLETION_2026-06-02.md",
+        "docs/corpus-intelligence/CVF_CI2_ENFORCED_CROSS_CORPUS_INDEX_MODEL.json",
+        "docs/reference/CVF_CI2_ENFORCED_CROSS_CORPUS_INDEX_MODEL_SCHEMA_2026-06-02.md"
+      ],
+      "automationLevel": "STRUCTURAL_GUARDED",
+      "claimBoundary": "This connection proves typed artifact routing from CI2-T2 packet normalization checkers to the CI2-T3 enforced index model. It does not prove LPCI implementation, runtime retrieval behavior, semantic correctness of field classifications, automatic roadmap creation, autonomous mutation, or public claims."
+    },
+    {
       "id": "checker-decision-to-lpci-intake",
       "status": "ACTIVE",
       "upstreamLoop": "CHECKER_DECISION_LOOP_CI1_T6",
