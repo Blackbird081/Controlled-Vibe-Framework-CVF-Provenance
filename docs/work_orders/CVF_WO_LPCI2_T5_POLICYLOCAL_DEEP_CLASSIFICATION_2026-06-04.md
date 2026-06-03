@@ -2,15 +2,15 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
 Date: 2026-06-04
 
-dispatchBaseHead: `7325b549`
+dispatchBaseHead: `80a9662c`
 
-executionBaseHead: WORKER_MUST_CAPTURE_AT_START
+executionBaseHead: `408cbfcf`
 
 closureBaseHead: NOT_EXECUTED_YET
 
@@ -368,25 +368,25 @@ Required evidence trace at handoff:
 
 ## Acceptance Criteria
 
-- [ ] Both DOCX files hash-verified before deep scan
-- [ ] effectiveDate field upgraded with body evidence OR formally set to `CONFIRMED_NOT_FOUND_FULL_BODY`
-- [ ] `Knowledge System Reconciliation` section present and GC-048 checker PASS
-- [ ] Adversarial sampling plan executed (minimum 4 query classes; all verdicts recorded)
-- [ ] `check_corpus_to_knowledge_map_reconciliation.py` PASS
-- [ ] `check_corpus_intelligence_classification.py` PASS
-- [ ] `check_markdown_structural_completeness.py` PASS
-- [ ] `check_finding_to_governance_learning.py` PASS
-- [ ] No search/chat/runtime/provider/product work added
-- [ ] Session state synced and `check_active_session_state.py` COMPLIANT
+- [x] Both DOCX files hash-verified before deep scan
+- [x] effectiveDate field upgraded with body evidence OR formally set to `CONFIRMED_NOT_FOUND_FULL_BODY`
+- [x] `Knowledge System Reconciliation` section present and GC-048 checker PASS
+- [x] Adversarial sampling plan executed (minimum 4 query classes; all verdicts recorded)
+- [x] `check_corpus_to_knowledge_map_reconciliation.py` PASS
+- [x] `check_corpus_intelligence_classification.py` PASS
+- [x] `check_markdown_structural_completeness.py` PASS
+- [x] `check_finding_to_governance_learning.py` PASS
+- [x] No search/chat/runtime/provider/product work added
+- [x] Session state synced and `check_active_session_state.py` COMPLIANT
 
-Fail conditions:
+Fail conditions (none triggered):
 
-- [ ] effectiveDate guessed or inferred without body text evidence
-- [ ] GC-048 `Knowledge System Reconciliation` section absent from completion review
-- [ ] Knowledge-map verdict missing or outside ALLOWED_VERDICTS
-- [ ] Adversarial sampling absent or produces `DIRECT_CITED_ANSWER` without citation evidence
-- [ ] Any search/chat/runtime/provider/product claim present
-- [ ] Gate run on a placeholder or stale staged file
+- effectiveDate guessed or inferred without body text evidence
+- GC-048 `Knowledge System Reconciliation` section absent from completion review
+- Knowledge-map verdict missing or outside ALLOWED_VERDICTS
+- Adversarial sampling absent or produces `DIRECT_CITED_ANSWER` without citation evidence
+- Any search/chat/runtime/provider/product claim present
+- Gate run on a placeholder or stale staged file
 
 ## Review Gate
 

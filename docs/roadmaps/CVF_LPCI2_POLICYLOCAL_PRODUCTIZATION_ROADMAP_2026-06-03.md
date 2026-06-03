@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: T5_DISPATCH_READY
+Status: T5_CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -65,7 +65,7 @@ retrieval without overclaiming.
 | LPCI2-T3 | Production-corpus pilot planning | define first real corpus, GC-051 registration, legal/policy domain fields, and sampling plan | CLOSED_PASS_BOUNDED |
 | LPCI2-T4S | Data input smoke test | rename local folder to `data_input`, hash two DOCX files, and record hash-only boundary | CLOSED_PASS_BOUNDED |
 | LPCI2-T4 | Corpus Intelligence import/classification evidence | extract DOCX text locally, populate legal/policy fields, and run GC-047/GC-050 without search/chat | CLOSED_PASS_BOUNDED |
-| LPCI2-T5 | Deep classification evidence | full-body effectiveDate scan, GC-048 knowledge-map reconciliation, adversarial sampling | DISPATCH_READY |
+| LPCI2-T5 | Deep classification evidence | full-body effectiveDate scan, GC-048 knowledge-map reconciliation, adversarial sampling | CLOSED_PASS_BOUNDED |
 
 ## Work Plan
 
@@ -77,7 +77,7 @@ retrieval without overclaiming.
 | W3 | Plan production-corpus pilot | GC-051 drop-zone registration plus T3 pilot plan | CLOSED_PASS_BOUNDED |
 | W4S | Smoke-test data input | two DOCX files hashed with no text extraction claim | CLOSED_PASS_BOUNDED |
 | W4 | Import and classify local corpus | DOCX extraction and legal/policy classification evidence | CLOSED_PASS_BOUNDED |
-| W5 | Deep classification and knowledge-map reconciliation | full-body effectiveDate scan, GC-048, adversarial sampling | DISPATCH_READY |
+| W5 | Deep classification and knowledge-map reconciliation | full-body effectiveDate scan, GC-048, adversarial sampling | CLOSED_PASS_BOUNDED |
 
 ## Decision
 
@@ -89,10 +89,12 @@ registered the pilot corpus drop-zone and defined the import, domain,
 search, and sampling gates required before real chat runtime. LPCI2-T4S renamed
 the local-first corpus folder to `data_input` and proved two DOCX files can be
 enumerated, normalized, and hashed, while keeping text extraction and answer
-runtime blocked. LPCI2-T4 is CLOSED_PASS_BOUNDED at commit `212d6adf`. LPCI2-T5 is DISPATCH_READY
-as deep-classification evidence: full-body effectiveDate scan, GC-048
-knowledge-map reconciliation, and adversarial sampling. Search/chat/runtime
-remains blocked until T5 closes and a separate readiness gate work order passes.
+runtime blocked. LPCI2-T4 is CLOSED_PASS_BOUNDED at commit `212d6adf`. LPCI2-T5 is CLOSED_PASS_BOUNDED
+(executionBaseHead=408cbfcf; pending operator commit): effectiveDate=2026-07-01 confirmed
+for both DOCX files via P1_effective_clause (Article 44 / Article 47); GC-048
+RECONCILED_VERIFIED; adversarial sampling 4/4 PASS. Search/chat/runtime
+remains blocked until a separate readiness gate work order opens and closes after
+the T5 operator commit.
 
 ## Acceptance Criteria
 
@@ -139,6 +141,11 @@ remains blocked until T5 closes and a separate readiness gate work order passes.
 | T4 work order | `docs/work_orders/CVF_WO_LPCI2_T4_CORPUS_INTELLIGENCE_IMPORT_CLASSIFICATION_EVIDENCE_2026-06-04.md` |
 | T4 completion review | `docs/reviews/CVF_LPCI2_T4_CORPUS_INTELLIGENCE_IMPORT_CLASSIFICATION_EVIDENCE_COMPLETION_2026-06-04.md` |
 | T5 work order | `docs/work_orders/CVF_WO_LPCI2_T5_POLICYLOCAL_DEEP_CLASSIFICATION_2026-06-04.md` |
+| T5 deep scan script | `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\scripts\policylocal-docx-deep-scan.py` |
+| T5 deep scan evidence | `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-t5-deep-scan-evidence.json` |
+| T5 corpus records (upgraded) | `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-corpus-records.json` |
+| T5 completion review | `docs/reviews/CVF_LPCI2_T5_POLICYLOCAL_DEEP_CLASSIFICATION_COMPLETION_2026-06-04.md` |
+| T5 local completion note | `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\CODEX_POLICYLOCAL_DEEP_CLASSIFICATION_COMPLETION_2026-06-04.md` |
 
 ## Non-Goals
 
@@ -161,8 +168,8 @@ and LPCI2-T4S smoke-tested two local DOCX files through hash-only intake.
 
 LPCI2-T4 claims DOCX text extraction (READ_SHALLOW), conservative legal/policy
 classification (answerClass=SUMMARY_WITH_SOURCE), and GC-051 registry update.
-LPCI2-T5 is dispatch-authorized for deep classification, GC-048, and adversarial
-sampling evidence.
+LPCI2-T5 is CLOSED_PASS_BOUNDED (pending operator commit): effectiveDate=2026-07-01
+confirmed for both files, GC-048 RECONCILED_VERIFIED, adversarial sampling 4/4 PASS.
 
 It does not claim runtime implementation, chatbot product readiness, production
 corpus readiness, legal answer correctness, hosted readiness, or public export.
@@ -179,9 +186,9 @@ Disposition: `TEMPLATE_UPDATED` - LPCI2-T2A adds a local prototype validator and
 records that future PolicyLocal scaffold work must include schema fixture
 validation before chat runtime is accepted.
 
-Next control action: `DISPATCH_READY` for T5 deep classification. T5 must not
-start search, chat runtime, or product implementation. Readiness gate is a
-separate work order after T5 closes.
+Next control action: `OPERATOR_COMMIT_PENDING` for T5. After operator commit,
+open bounded search/chat readiness gate as a separate work order. Do not start
+search, chat runtime, or product implementation until that readiness gate closes.
 
 Runtime/provider/cost learning: `N/A_WITH_REASON`
 

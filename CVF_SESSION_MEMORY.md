@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-04
 
-Current mode marker: `lpci2_t5_policylocal_deep_classification_dispatch_ready`
+Current mode marker: `lpci2_t5_policylocal_deep_classification_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lpci2_t5_policylocal_deep_classification_dispatch_ready`.
+Current mode: `lpci2_t5_policylocal_deep_classification_closed_pass_bounded`.
 
 Active handoff:
 
@@ -654,11 +654,11 @@ documentType=law; status=amended; answerClass=SUMMARY_WITH_SOURCE per T2 matrix;
 effectiveDate=unknown (T4-F1, deferred to T5+). All 18 pre-implementation gates PASS.
 Operator-side closure committed the worker artifacts and registry update.
 
-Next allowed move: execute LPCI2-T5 deep classification work order
-`docs/work_orders/CVF_WO_LPCI2_T5_POLICYLOCAL_DEEP_CLASSIFICATION_2026-06-04.md`.
-Scope: full-body effectiveDate scan, GC-048 knowledge-map reconciliation,
-adversarial sampling. WORKER_MUST_NOT_COMMIT. Do NOT open search/chat runtime
-until T5 closes and a separate readiness gate work order passes.
+LPCI2-T5 CLOSED_PASS_BOUNDED (pending operator commit; executionBaseHead=408cbfcf):
+effectiveDate=2026-07-01 confirmed for both DOCX files, GC-048 RECONCILED_VERIFIED,
+adversarial sampling 4/4 PASS. WORKER_MUST_NOT_COMMIT.
+Next allowed move: operator commits T5 artifacts, then opens bounded search/chat
+readiness gate work order. Do NOT open search/chat runtime until that readiness gate closes.
 
 Parked checkpoints:
 
