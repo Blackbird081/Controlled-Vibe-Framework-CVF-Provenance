@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `10c1e37b` (parent: `6324fd76`). Session-sync follow-up updated 2026-06-03 after CI2-T5 closure continuity commit; CI2-T5 is CLOSED_PASS_BOUNDED, and LPCI1-T1 remains a HOLD-status dependency-gated work order requiring a separate release commit before worker dispatch.
+Current HEAD recorded for this handoff: `fb8bcddc` (parent: `0dbce418`). Session updated 2026-06-03 after dependency-release guard hardening; LPCI1-T1 is DISPATCH_READY and is the only next dispatch move.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -171,7 +171,7 @@ Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
 
 ## Active Boundary
 
-Current mode: `ci2_t5_lpci_product_roadmap_packet_closed`.
+Current mode: `lpci1_t1_product_intake_architecture_dispatch_ready`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
@@ -434,12 +434,16 @@ pilot corpus pack, reference packet, and completion review are closed:
 `docs/work_orders/CVF_WO_CI2_T4_PRODUCT_READINESS_PILOT_CORPUS_PACK_2026-06-02.md`
 
 CI2-T5 is `CLOSED_PASS_BOUNDED` at commit `6324fd76`. The LPCI1 product
-GC-018 baseline, MVP roadmap, and HOLD-status LPCI1-T1 work order are closed:
+GC-018 baseline, MVP roadmap, and LPCI1-T1 work order are closed:
 
 `docs/work_orders/CVF_WO_CI2_T5_LPCI_PRODUCT_ROADMAP_PACKET_2026-06-02.md`
 
-Next allowed move: release LPCI1-T1 from HOLD to DISPATCH_READY in a small
-dependency-release commit that cites CI2-T5 closure commit `6324fd76`.
+LPCI1-T1 is `DISPATCH_READY` at commit `fb8bcddc` after dependency-release
+evidence repair and guard hardening:
+
+`docs/work_orders/CVF_WO_LPCI1_T1_PRODUCT_INTAKE_AND_ARCHITECTURE_2026-06-02.md`
+
+Next allowed move: dispatch LPCI1-T1 only.
 
 LPCI chatbot/runtime implementation remains blocked until LPCI1-T1 architecture
 closes and a later implementation tranche is explicitly authorized.
@@ -548,8 +552,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ci2_t5_lpci_product_roadmap_packet_closed`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=release LPCI1-T1 from HOLD to DISPATCH_READY with dependency evidence citing CI2-T5 closure commit `6324fd76`; LPCI runtime stays blocked until LPCI1-T1 architecture closes and a later implementation tranche is explicitly authorized;
+Startup acknowledged: current mode=`lpci1_t1_product_intake_architecture_dispatch_ready`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=dispatch LPCI1-T1 only (`docs/work_orders/CVF_WO_LPCI1_T1_PRODUCT_INTAKE_AND_ARCHITECTURE_2026-06-02.md`); LPCI runtime stays blocked until LPCI1-T1 architecture closes and a later implementation tranche is explicitly authorized;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary

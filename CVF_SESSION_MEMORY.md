@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-03
 
-Current mode marker: `ci2_t5_lpci_product_roadmap_packet_closed`
+Current mode marker: `lpci1_t1_product_intake_architecture_dispatch_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `ci2_t5_lpci_product_roadmap_packet_closed`.
+Current mode: `lpci1_t1_product_intake_architecture_dispatch_ready`.
 
 Active handoff:
 
@@ -478,12 +478,16 @@ pilot corpus pack, reference packet, and completion review are closed:
 `docs/work_orders/CVF_WO_CI2_T4_PRODUCT_READINESS_PILOT_CORPUS_PACK_2026-06-02.md`
 
 CI2-T5 is `CLOSED_PASS_BOUNDED` at commit `6324fd76`. The LPCI1 product
-GC-018 baseline, MVP roadmap, and HOLD-status LPCI1-T1 work order are closed:
+GC-018 baseline, MVP roadmap, and LPCI1-T1 work order are closed:
 
 `docs/work_orders/CVF_WO_CI2_T5_LPCI_PRODUCT_ROADMAP_PACKET_2026-06-02.md`
 
-Next allowed move: release LPCI1-T1 from HOLD to DISPATCH_READY in a small
-dependency-release commit that cites CI2-T5 closure commit `6324fd76`.
+LPCI1-T1 is `DISPATCH_READY` at commit `fb8bcddc` after dependency-release
+evidence repair and guard hardening:
+
+`docs/work_orders/CVF_WO_LPCI1_T1_PRODUCT_INTAKE_AND_ARCHITECTURE_2026-06-02.md`
+
+Next allowed move: dispatch LPCI1-T1 only.
 
 LPCI chatbot/runtime implementation remains blocked until LPCI1-T1 architecture
 closes and a later implementation tranche is explicitly authorized.
