@@ -1666,6 +1666,10 @@ def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str
         # Skip files that were only renamed/moved — content unchanged, no new violations possible.
         if statuses and statuses <= {"R"}:
             continue
+        # Skip deleted files — they are no longer present in the workspace and
+        # cannot be validated; the archive move is governed by a separate authority doc.
+        if statuses and "D" in statuses:
+            continue
         text = _read_rel(path)
         issues = _validate_path(path)
         issues.extend(_validate_pending_artifact_evidence_finality(path, text, statuses))
@@ -1742,6 +1746,9 @@ def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str
     }
     marker_violations: dict[str, list[str]] = {}
     for path, markers in required_markers.items():
+        # Skip marker check for files that no longer exist on disk (e.g., archived files).
+        if not (REPO_ROOT / path).exists():
+            continue
         text = _read_rel(path)
         missing = [marker for marker in markers if marker not in text]
         if missing:

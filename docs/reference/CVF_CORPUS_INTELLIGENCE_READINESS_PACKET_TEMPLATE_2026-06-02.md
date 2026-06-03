@@ -245,6 +245,8 @@ in section 4.2.
 | `freshnessStatus` | enum | current / stale / superseded / obsolete / unknown |
 | `freshnessCheckedAt` | timestamp | when checked |
 | `answerClass` | enum | DIRECT_CITED_ANSWER / SUMMARY_WITH_SOURCE / PROCEDURAL_GUIDANCE / ESCALATE_OR_ABSTAIN |
+| `primaryLanguage` | string | ISO 639-1 code, e.g. `vi`, `en` (optional) |
+| `secondaryLanguages` | list | ISO 639-1 codes for non-primary languages (optional) |
 
 ### 4.2 Domain Extensions
 
@@ -304,6 +306,44 @@ in section 4.2.
 | `obsolete` | Outdated but not formally repealed |
 | `stale` | Corpus snapshot is older than a meaningful change period |
 | `unknown` | Freshness not yet verified |
+
+### 4.4 NR-04 Source Hash Rule
+
+Every row in the classification ledger MUST include a non-empty `sourceHash`
+field (SHA-256 of source file byte content, hex-encoded lowercase), OR the
+packet MUST declare `manifestHashProxy: true` at packet level with a non-empty
+`manifestProxyException` string.
+
+**`sourceHash`** — SHA-256 of the raw byte content of the source file, hex-
+encoded, lowercase. Proves per-file drift resistance between scan time and
+retrieval or ingestion time.
+
+**`sourceHashAlgorithm`** — companion field recording the hash algorithm used.
+Default value: `"sha256"`. Include this field when using a non-default
+algorithm. When omitted, reviewers assume SHA-256 for packets produced under
+this standard.
+
+**`manifestProxyException`** — required when `manifestHashProxy: true`. Must be
+a human-readable string naming both the reason per-file hashes are unavailable
+AND the coverage limitation (manifest hash covers the manifest file only, not
+individual file content). A bare reason without the coverage limitation does not
+satisfy this rule.
+
+Canonical rule: `docs/reference/CVF_CORPUS_SOURCE_HASH_STANDARD_2026-06-02.md`
+
+### 4.5 NR-06 Sensitivity Rule
+
+Corpora with uniform sensitivity classification across all files may declare
+sensitivity at corpus level by setting `uniformSensitivity: true` in the packet
+header. In this case, per-row `sensitivity` field in the classification ledger
+may be omitted.
+
+Corpora with mixed sensitivity (different files have different sensitivity
+levels) MUST provide a per-row `sensitivity` field in the classification ledger.
+Omitting per-row sensitivity on a mixed-sensitivity corpus is not permitted.
+
+When in doubt about whether sensitivity is uniform, treat the corpus as
+mixed-sensitivity and record per-row values.
 
 ---
 
