@@ -603,6 +603,43 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
 
         self.assertTrue(report["compliant"])
 
+    def test_closed_review_may_cite_future_hold_work_order_output(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_NEXT_2026-06-01.md"
+        self._write(work_order, "# Next\n\nStatus: HOLD\n")
+        review_text = "\n".join(
+            [
+                "# Completion",
+                "Status: CLOSED_PASS_BOUNDED",
+                "## Evidence Trace Block",
+                f"| Future work order output | `{work_order}` authored as HOLD pending dependency-release refresh |",
+            ]
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            issues = MODULE._validate_referenced_work_order_closure(review_text, "completion/spec artifact")
+
+        self.assertEqual(issues, [])
+
+    def test_closed_review_still_fails_open_work_order_dependency(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_OPEN_2026-06-01.md"
+        self._write(work_order, "# Open\n\nStatus: DISPATCH_READY\n")
+        review_text = "\n".join(
+            [
+                "# Completion",
+                "Status: CLOSED_PASS_BOUNDED",
+                "## Authority Chain",
+                f"| Required work order | `{work_order}` |",
+            ]
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            issues = MODULE._validate_referenced_work_order_closure(review_text, "completion/spec artifact")
+
+        self.assertIn(
+            f"closed completion/spec artifact cites work order `{work_order}` whose status is not CLOSED",
+            issues,
+        )
+
     def test_runtime_work_order_fulfillment_manifest_catches_missing_artifacts_and_forbidden_paths(self) -> None:
         work_order = "docs/work_orders/CVF_WO_MKG6_TEST_2026-06-01.md"
         changed_forbidden = "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/index.ts"

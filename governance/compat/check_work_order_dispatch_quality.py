@@ -704,6 +704,32 @@ def _validate_known_false_invariant_claims(text: str) -> list[str]:
     return issues
 
 
+def _is_future_work_order_output_reference(text: str, work_order_path: str) -> bool:
+    for line in text.splitlines():
+        if work_order_path not in line:
+            continue
+        lowered = line.lower()
+        has_future_context = any(
+            marker in lowered
+            for marker in (
+                "future",
+                "hold",
+                "dependency-gated",
+                "dependency gated",
+                "pending dependency-release",
+                "pending dependency release",
+                "next dispatch candidate",
+            )
+        )
+        has_output_context = any(
+            marker in lowered
+            for marker in ("output", "authored", "created", "dispatch packet", "work order exists")
+        )
+        if has_future_context and has_output_context:
+            return True
+    return False
+
+
 def _validate_referenced_work_order_closure(text: str, artifact_label: str) -> list[str]:
     if not _is_closed_status(_extract_status(text)):
         return []
@@ -720,6 +746,8 @@ def _validate_referenced_work_order_closure(text: str, artifact_label: str) -> l
             issues.append(f"closed {artifact_label} cites missing work order `{work_order_path}`")
             continue
         if not _is_closed_status(_extract_status(work_order_text)):
+            if _is_future_work_order_output_reference(text, work_order_path):
+                continue
             issues.append(
                 f"closed {artifact_label} cites work order `{work_order_path}` whose status is not CLOSED"
             )
