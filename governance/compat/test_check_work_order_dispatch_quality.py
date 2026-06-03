@@ -251,7 +251,8 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
         issues = report["violations"][0]["issues"]
         self.assertIn(
             "dispatch/ready work order contains unresolved prerequisite disposition `REQUIRED`; "
-            "release HOLD only after replacing it with source-backed ACCEPT evidence",
+            "release HOLD only after replacing it with source-backed ACCEPT evidence per "
+            "docs/reference/CVF_WORK_ORDER_DEPENDENCY_RELEASE_EVIDENCE_STANDARD_2026-06-03.md",
             issues,
         )
 

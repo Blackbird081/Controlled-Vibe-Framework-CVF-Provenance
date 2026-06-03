@@ -21,6 +21,10 @@ handoff sync do not collide in one oversized or ambiguous commit range.
 This standard converts the CI2-T1 closure friction into a reusable workflow
 rule before CI2-T2 checker work begins.
 
+Dependency-release evidence is governed by:
+
+`docs/reference/CVF_WORK_ORDER_DEPENDENCY_RELEASE_EVIDENCE_STANDARD_2026-06-03.md`
+
 ---
 
 ## Scope
@@ -109,6 +113,10 @@ If protected session or governance files are changed, the authorization review
 for those protected changes must be staged in the same commit.
 
 ### Step 2A - Dependency Release Refresh
+
+Canonical dependency-release standard:
+
+`docs/reference/CVF_WORK_ORDER_DEPENDENCY_RELEASE_EVIDENCE_STANDARD_2026-06-03.md`
 
 If the next ordered work order was drafted earlier in `HOLD_*` status, do not
 release it by changing only the status line. In the same release batch:

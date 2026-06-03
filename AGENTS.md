@@ -299,6 +299,31 @@ Open checkbox residue, stale continuity state, memory-based file-change claims,
 and roadmap requirements lost between dispatch and final artifact are closure
 defects. Operator silence is not a waiver.
 
+## Mandatory Work Order Dependency Release Evidence - 2026-06-03
+
+Canonical standard:
+
+`docs/reference/CVF_WORK_ORDER_DEPENDENCY_RELEASE_EVIDENCE_STANDARD_2026-06-03.md`
+
+Any future work order, roadmap task, dispatch packet, or tranche sequence that
+is blocked by a prior tranche, closure review, registry update, artifact, live
+proof, or operator checkpoint must not move from `HOLD_*`, `DRAFT`,
+`PROPOSED`, or prerequisite-bound status into `READY`, `DISPATCH_READY`,
+`DISPATCHED`, or equivalent execution status until dependency-release evidence
+is refreshed.
+
+Before dispatch, replace placeholder dependency rows such as
+`Disposition: REQUIRED`, `after closure`, `after Tn closure`, or
+`pending prior tranche` with artifact path, closure commit, final disposition,
+and refreshed base anchors. Rerun dispatch-quality and pre-dispatch autorun
+gates on the release range. A worker agent must not be asked to infer which
+prior artifact satisfied a HOLD dependency from chat history or stale prose.
+
+`governance/compat/check_work_order_dispatch_quality.py` enforces this for
+ready/dispatch-equivalent work orders. If the dependency cannot be source-backed,
+keep the packet in `HOLD_*`, `DRAFT`, or `BLOCKED` and return it to the
+orchestrator.
+
 Hard enforcement:
 
 - `governance/compat/check_work_order_dispatch_quality.py` is mandatory in the

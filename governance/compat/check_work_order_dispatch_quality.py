@@ -756,7 +756,8 @@ def _validate_ready_dependency_release(text: str) -> list[str]:
         if disposition == "REQUIRED":
             issues.append(
                 "dispatch/ready work order contains unresolved prerequisite disposition `REQUIRED`; "
-                "release HOLD only after replacing it with source-backed ACCEPT evidence"
+                "release HOLD only after replacing it with source-backed ACCEPT evidence per "
+                "docs/reference/CVF_WORK_ORDER_DEPENDENCY_RELEASE_EVIDENCE_STANDARD_2026-06-03.md"
             )
             break
         if disposition == "ACCEPT":
@@ -764,7 +765,8 @@ def _validate_ready_dependency_release(text: str) -> list[str]:
         if re.search(r"\bafter\s+(?:closure|T\d+\s+closure|[A-Z0-9_-]+\s+closure)\b", joined, re.IGNORECASE):
             issues.append(
                 "dispatch/ready work order contains stale dependency placeholder prose such as `after closure`; "
-                "cite the closed artifact path and commit before dispatch"
+                "cite the closed artifact path and commit before dispatch per "
+                "docs/reference/CVF_WORK_ORDER_DEPENDENCY_RELEASE_EVIDENCE_STANDARD_2026-06-03.md"
             )
             break
     return issues

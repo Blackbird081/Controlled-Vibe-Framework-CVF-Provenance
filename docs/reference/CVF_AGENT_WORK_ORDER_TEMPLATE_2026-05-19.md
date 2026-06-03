@@ -517,6 +517,10 @@ Rules:
 
 ### Dependency Release And Next-Work-Order Refresh
 
+Canonical standard:
+
+`docs/reference/CVF_WORK_ORDER_DEPENDENCY_RELEASE_EVIDENCE_STANDARD_2026-06-03.md`
+
 If a later work order is drafted before its prerequisite tranche closes, keep it
 in `HOLD_*` status until the prerequisite closure evidence exists.
 
