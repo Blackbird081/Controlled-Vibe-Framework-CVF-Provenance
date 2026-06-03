@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `dcd7a43f` (parent: `2ffb93ae`). Session updated 2026-06-03: CI2-T2 packet normalization checkers are closed, pre-T3 readiness hardening is committed, CI2-T3 dispatch session state is synced, and next allowed move is dispatch CI2-T3 only.
+Current HEAD recorded for this handoff: `3c22611d` (parent: `a0d5ef2b`). Session updated 2026-06-03: active archive age window increased from 5 days to 10 days; CI2-T3 remains the next allowed move.
 
 ## Latest Work / Changes (2026-05-30)
 
