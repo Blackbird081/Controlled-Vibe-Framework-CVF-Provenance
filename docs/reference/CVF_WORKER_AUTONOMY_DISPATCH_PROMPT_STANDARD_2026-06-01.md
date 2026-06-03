@@ -138,10 +138,12 @@ If commit mode is WORKER_MUST_NOT_COMMIT:
 - repair allowed-scope defects and rerun those component gates;
 - record actual git status --short;
 - return COMPLETE_PENDING_REVIEW;
+- return a worker handoff/evaluation artifact, not a reviewer completion review;
 - do not claim autorun pre-closure PASS.
 
 Reviewer / committer owns the later commit and non-empty committed-range
-pre-closure gate.
+pre-closure gate. Reviewer / committer also owns the completion review unless
+the orchestrator explicitly changes role and commit mode before dispatch.
 ```
 
 Anchor vocabulary:

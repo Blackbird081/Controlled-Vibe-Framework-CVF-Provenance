@@ -64,6 +64,7 @@ vulnerable to range bleed from archive or session commits.
 | `REQUIRED` is human-readable but dispatch-blocking in ready packets | Use `ACCEPT` for satisfied Authority Chain, Dependency Gate, and Source Verification rows; keep `REQUIRED` only in non-ready draft/HOLD text or artifact/proof manifest columns where the checker treats it as a boolean. |
 | Session sync is a three-surface continuity update | Mode and next-move changes must update `ACTIVE_SESSION_STATE.json`, `CVF_SESSION_MEMORY.md`, and active handoff context together; then a dedicated handoff-sync commit records the final HEAD or accepted parent marker. |
 | Hook chain fail-fast hides later defects | Treat each failure as a cascade layer: fix the first failing gate, rerun the same gate locally, then rerun the full autorun/hook chain before claiming readiness. |
+| `WORKER_MUST_NOT_COMMIT` packets let workers author completion reviews | Workers may return pending handoff/evaluation artifacts; completion review is reviewer / committer owned unless the packet explicitly changes role and commit mode before dispatch. |
 
 ---
 
@@ -96,6 +97,11 @@ git rev-parse --short HEAD
 For `WORKER_MUST_NOT_COMMIT`, the worker must leave artifacts pending and must
 not claim closure. The worker may claim only component test/gate results that
 are valid against the pending working tree.
+
+The worker must not create or own the completion review in
+`WORKER_MUST_NOT_COMMIT` mode. Use a worker handoff/evaluation artifact for
+pending evidence. Reviewer / committer owns the completion review after
+disposition and committed-range closure evidence.
 
 For `WORKER_MAY_COMMIT`, the worker may commit only owned artifact changes
 after tests and gates pass.
@@ -206,6 +212,7 @@ section in the same guard-maintenance batch.
 | Markdown structural headings | plain `## Purpose`, `## Scope` or `## Applies To`, `## Claim Boundary`, and other checker-required headings | Avoid numbered headings such as `## 1. Purpose` in new governed reference/review/work-order artifacts unless the checker explicitly allows that type. |
 | Source Verification disposition | `ACCEPT`, `REJECT`, `BLOCKED_SOURCE_NOT_FOUND` | `REQUIRED` is not a ready/dispatch disposition. |
 | Source Verification `Verified path or symbol` cell | field/path/symbol only, for example `rawMemoryReleased` | Do not include assignments or type annotations such as `rawMemoryReleased: false` or `canReinject: boolean`. |
+| `WORKER_MUST_NOT_COMMIT` completion boundary | worker handoff/evaluation artifact only; completion review owner must be Reviewer/committer | `check_work_order_dispatch_quality.py` blocks dispatch packets that assign completion review to Worker under `WORKER_MUST_NOT_COMMIT`. |
 
 ---
 
@@ -274,6 +281,7 @@ folding it into the checker implementation.
 | CI2-T1 closure consumed excessive time due to mixed archive, closure, session, and handoff commits | PHASE_GATE_PLACEMENT_GAP | GOVERNANCE_CONTROL_PLANE | RULE_ADDED | Apply this standard to CI2-T2 and future work orders before implementation |
 | Stale dispatch base expanded closure ranges into unrelated commits | PHASE_GATE_PLACEMENT_GAP | GOVERNANCE_CONTROL_PLANE | TEMPLATE_UPDATED | Work orders must distinguish dispatch, execution, closure, and handoff-sync bases |
 | Repeated worker/orchestrator friction came from unstaged hook checks, hidden token requirements, `REQUIRED` placeholder misuse, session-sync coupling, and fail-fast cascades | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | STANDARD_UPDATED | Add gate cascade discipline and machine-token quick reference to this standard and the work-order template |
+| Worker role was allowed to author completion review in `WORKER_MUST_NOT_COMMIT` packets | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | Dispatch-quality gate now blocks worker-owned completion reviews unless role/commit mode changes before dispatch |
 
 ---
 

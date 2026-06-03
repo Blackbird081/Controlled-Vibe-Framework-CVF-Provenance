@@ -131,6 +131,88 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
         issues = report["violations"][0]["issues"]
         self.assertIn("FAST_LANE_READY audit has unmet/conditional CLOSED_PASS prerequisite; use HOLD_* until satisfied", issues)
 
+    def test_worker_must_not_commit_completion_review_owned_by_worker_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_TEST_WORKER_BOUNDARY_2026-06-03.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCH_READY",
+                    "Commit mode: WORKER_MUST_NOT_COMMIT",
+                    "dispatchBaseHead: abc123",
+                    "executionBaseHead: WORKER_MUST_CAPTURE_AT_START",
+                    "closureBaseHead: NOT_EXECUTED_YET",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Allowed-scope remediation is mandatory.",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| Template | `docs/reference/source.md` | Scope | `source.md` | doc | ACCEPT |",
+                    "## Agent Roles",
+                    "| Role | Responsibility | Boundary |",
+                    "|---|---|---|",
+                    "| Worker | produce packet and completion review | no commit |",
+                ]
+            ),
+        )
+        self._write("docs/reference/source.md", "## Scope\nsource\n")
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        issues = report["violations"][0]["issues"]
+        self.assertIn(
+            "WORKER_MUST_NOT_COMMIT dispatch assigns completion review to Worker; "
+            "use a worker handoff/evaluation artifact and reviewer-owned completion review, "
+            "or explicitly change role/commit mode before dispatch",
+            issues,
+        )
+
+    def test_worker_must_not_commit_reviewer_completion_review_allowed(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_TEST_REVIEWER_BOUNDARY_2026-06-03.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCH_READY",
+                    "Commit mode: WORKER_MUST_NOT_COMMIT",
+                    "dispatchBaseHead: abc123",
+                    "executionBaseHead: WORKER_MUST_CAPTURE_AT_START",
+                    "closureBaseHead: NOT_EXECUTED_YET",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Allowed-scope remediation is mandatory.",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| Template | `docs/reference/source.md` | Scope | `source.md` | doc | ACCEPT |",
+                    "## Agent Roles",
+                    "| Role | Responsibility | Boundary |",
+                    "|---|---|---|",
+                    "| Worker | produce packet and handoff artifact | no commit |",
+                    "| Reviewer | create completion review | owns closure |",
+                    "## Required Artifacts",
+                    "| Artifact | Path | Owner |",
+                    "|---|---|---|",
+                    "| Completion review | `docs/reviews/CVF_TEST_COMPLETION_2026-06-03.md` | Reviewer |",
+                ]
+            ),
+        )
+        self._write("docs/reference/source.md", "## Scope\nsource\n")
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        issues = report["violations"][0]["issues"] if report["violations"] else []
+        self.assertNotIn(
+            "WORKER_MUST_NOT_COMMIT dispatch assigns completion review to Worker; "
+            "use a worker handoff/evaluation artifact and reviewer-owned completion review, "
+            "or explicitly change role/commit mode before dispatch",
+            issues,
+        )
+
     def test_accept_row_with_missing_source_file_fails(self) -> None:
         work_order = "docs/work_orders/CVF_WO_LHW6_T2_TEST_2026-05-28.md"
         self._write(

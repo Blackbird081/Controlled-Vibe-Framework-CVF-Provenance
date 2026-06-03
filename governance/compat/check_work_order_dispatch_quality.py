@@ -392,6 +392,45 @@ def _validate_commit_mode_and_anchor_lifecycle(text: str) -> list[str]:
     return issues
 
 
+def _is_worker_must_not_commit(text: str) -> bool:
+    return (
+        re.search(
+            r"(?im)^\s*(?:[-*]\s*)?Commit mode:\s*`?WORKER_MUST_NOT_COMMIT`?\s*$",
+            text,
+        )
+        is not None
+    )
+
+
+def _completion_review_assigned_to_worker(text: str) -> bool:
+    for line in text.splitlines():
+        if "completion review" not in line.lower():
+            continue
+        if re.search(r"\|\s*(?:Worker|Executor)\s*\|[^|\n]*completion review", line, re.IGNORECASE):
+            return True
+        if re.search(r"completion review[^|\n]*\|\s*(?:Worker|Executor)\s*\|", line, re.IGNORECASE):
+            return True
+        if re.search(
+            r"\b(?:worker|executor)\b[^.\n|]*(?:create|author|produce|write|file)[^.\n|]*completion review",
+            line,
+            re.IGNORECASE,
+        ):
+            return True
+    return False
+
+
+def _validate_worker_completion_review_boundary(text: str) -> list[str]:
+    if not _is_worker_must_not_commit(text):
+        return []
+    if not _completion_review_assigned_to_worker(text):
+        return []
+    return [
+        "WORKER_MUST_NOT_COMMIT dispatch assigns completion review to Worker; "
+        "use a worker handoff/evaluation artifact and reviewer-owned completion review, "
+        "or explicitly change role/commit mode before dispatch"
+    ]
+
+
 def _is_roadmap_derived(text: str) -> bool:
     return "docs/roadmaps/" in text or "roadmap-derived" in text.lower() or "Roadmap requirement" in text
 
@@ -1267,6 +1306,7 @@ def _validate_work_order(path: str, text: str) -> list[str]:
 
     if dispatching:
         issues.extend(_validate_commit_mode_and_anchor_lifecycle(text))
+        issues.extend(_validate_worker_completion_review_boundary(text))
 
     if dispatching and _is_connector_wave(path, text):
         wave_id = _extract_wave_id(path, text)

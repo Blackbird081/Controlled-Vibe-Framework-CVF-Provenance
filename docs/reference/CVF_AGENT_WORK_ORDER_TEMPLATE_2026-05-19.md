@@ -580,8 +580,10 @@ For `WORKER_MUST_NOT_COMMIT` work orders:
   `FAIL_EXPECTED_PENDING_FINALITY` only with the explicit statement that
   committed closure remains reviewer / committer work;
 - component gates must still be run and repaired inside Allowed scope;
-- the completion review must list actual pending files from
-  `git status --short`;
+- the worker must return a handoff/evaluation artifact that lists actual
+  pending files from `git status --short`;
+- the completion review is reviewer / committer owned unless the work order
+  explicitly changes role and commit mode before dispatch;
 - the reviewer / committer must run `pre-closure` after the commit with a
   non-empty committed range before any closed-equivalent claim.
 
