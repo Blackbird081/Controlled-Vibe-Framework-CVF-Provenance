@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `802ec7f3` (LPCI2-T6 dispatch session sync). Updated 2026-06-04 after LPCI2-T6 readiness gate work order authored; mode is `lpci2_t6_search_chat_readiness_gate_dispatch_ready`; LPCI2-T5 CLOSED_PASS_BOUNDED (closureBaseHead=53b2bac4); LPCI2-T6 DISPATCH_READY (dispatchBaseHead=802ec7f3); work order `docs/work_orders/CVF_WO_LPCI2_T6_SEARCH_CHAT_READINESS_GATE_2026-06-04.md`; five-gate readiness evaluation; no runtime implementation; operator checkpoint required before search/chat implementation after T6 closes.
+Current HEAD recorded for this handoff: `ca7fdc26` (docs(lpci): dispatch t6 readiness gate and commit helper). Updated 2026-06-04 after LPCI2-T6 dispatch and governed commit helper standardization; mode is `lpci2_t6_search_chat_readiness_gate_dispatch_ready`; T6 work order is `docs/work_orders/CVF_WO_LPCI2_T6_SEARCH_CHAT_READINESS_GATE_2026-06-04.md`; `scripts/cvf_commit_tranche.py` is available as a conservative staged-commit helper; search/chat/runtime/provider work remains blocked until T6 closes and operator authorizes implementation.
 
 ## Latest Work / Changes (2026-05-30)
 
