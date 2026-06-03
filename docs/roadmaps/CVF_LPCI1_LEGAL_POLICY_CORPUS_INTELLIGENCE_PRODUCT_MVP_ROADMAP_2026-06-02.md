@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE
+Status: T4_CLOSED_T5_DISPATCH_READY
 
 docType: roadmap
 
@@ -69,11 +69,11 @@ Inherited gaps from CI2-T4 that LPCI must carry forward:
 
 | Tranche | Goal | Primary outputs | Status | Dependency |
 | --- | --- | --- | --- | --- |
-| LPCI1-T1 | Product Intake and Architecture | architecture document, corpus intake spec, LPCI GC-018 T1 supplement | HOLD_PENDING_CI2_T5_COMMIT — work order exists | LPCI1 GC-018 plus CI2-T5 closure commit |
-| LPCI1-T2 | Domain Classification | legal/policy classification ledger aligned with GC-050, NR-11 alias enforcement | PROPOSED | T1 architecture reviewed |
-| LPCI1-T3 | Search and Filter Index | faceted index schema, query filter contract, negative search evidence format | PROPOSED | T2 classification closed |
-| LPCI1-T4 | Retrieval Boundary | citation-first retrieval receipt, freshness/conflict warning, abstention rules | PROPOSED | T3 index closed |
-| LPCI1-T5 | Chatbot Prototype | local UI/API with operator-provided LLM API key, citations, answer class, audit receipt | PROPOSED | T4 retrieval reviewed |
+| LPCI1-T1 | Product Intake and Architecture | architecture document, corpus intake spec, LPCI GC-018 T1 supplement | CLOSED_PASS_BOUNDED | LPCI1 GC-018 plus CI2-T5 closure commit |
+| LPCI1-T2 | Domain Classification | legal/policy classification ledger aligned with GC-050, NR-11 alias enforcement | CLOSED_PASS_BOUNDED | T1 architecture reviewed |
+| LPCI1-T3 | Search and Filter Index | faceted index schema, query filter contract, negative search evidence format | CLOSED_PASS_BOUNDED | T2 classification closed |
+| LPCI1-T4 | Retrieval Boundary | citation-first retrieval receipt, freshness/conflict warning, abstention rules | CLOSED_PASS_BOUNDED | T3 index closed |
+| LPCI1-T5 | Chatbot Prototype | local UI/API with operator-provided LLM API key, citations, answer class, audit receipt | DISPATCH_READY | T4 retrieval reviewed |
 | LPCI1-T6 | Adversarial Evaluation | 5-10 source-sampled checks per corpus class, false-direct-answer audit | PROPOSED | T5 prototype |
 | LPCI1-T7 | Template Packaging | downstream workspace guide, corpus intake template, readiness checklist | PROPOSED | T6 evaluation reviewed |
 
@@ -104,11 +104,11 @@ vector DB, provider calls) remain blocked until T1 architecture review passes.
 
 | Step | Tranche | Primary action | Dependency | Output status |
 | --- | --- | --- | --- | --- |
-| W1 | LPCI1-T1 | Product intake and architecture | CI2-T5 closure + operator commit | HOLD until dependency-release refresh after CI2-T5 commit |
-| W2 | LPCI1-T2 | Domain classification | T1 architecture review closed | PROPOSED |
-| W3 | LPCI1-T3 | Search and filter index | T2 classification closed | PROPOSED |
-| W4 | LPCI1-T4 | Retrieval boundary | T3 index closed | PROPOSED |
-| W5 | LPCI1-T5 | Chatbot prototype | T4 retrieval reviewed | PROPOSED |
+| W1 | LPCI1-T1 | Product intake and architecture | CI2-T5 closure + operator commit | CLOSED_PASS_BOUNDED |
+| W2 | LPCI1-T2 | Domain classification | T1 architecture review closed | CLOSED_PASS_BOUNDED |
+| W3 | LPCI1-T3 | Search and filter index | T2 classification closed | CLOSED_PASS_BOUNDED |
+| W4 | LPCI1-T4 | Retrieval boundary | T3 index closed | CLOSED_PASS_BOUNDED |
+| W5 | LPCI1-T5 | Chatbot prototype | T4 retrieval reviewed | DISPATCH_READY |
 | W6 | LPCI1-T6 | Adversarial evaluation | T5 prototype | PROPOSED |
 | W7 | LPCI1-T7 | Template packaging | T6 evaluation reviewed | PROPOSED |
 
