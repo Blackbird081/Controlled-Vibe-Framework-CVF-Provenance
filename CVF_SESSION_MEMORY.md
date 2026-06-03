@@ -4,9 +4,9 @@ Memory class: POINTER_RECORD
 
 Status: ACTIVE SESSION FRONT DOOR
 
-Last updated: 2026-06-03
+Last updated: 2026-06-04
 
-Current mode marker: `lpci2_t4s_policylocal_data_input_smoke_test_closed_pass_bounded`
+Current mode marker: `lpci2_t4_corpus_intelligence_import_classification_dispatch_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lpci2_t4s_policylocal_data_input_smoke_test_closed_pass_bounded`.
+Current mode: `lpci2_t4_corpus_intelligence_import_classification_dispatch_ready`.
 
 Active handoff:
 
@@ -637,6 +637,20 @@ Result: PASS, two files hashed. Manifest:
 
 Boundary: hash-only. DOCX text extraction, legal/policy classification, search,
 retrieval, provider call, and chat runtime remain blocked.
+
+LPCI2-T4 Corpus Intelligence Import Classification Evidence is
+`DISPATCH_READY`.
+
+Work order:
+
+`docs/work_orders/CVF_WO_LPCI2_T4_CORPUS_INTELLIGENCE_IMPORT_CLASSIFICATION_EVIDENCE_2026-06-04.md`
+
+Strategic boundary: PolicyLocal is currently a test use case for proving CVF
+Corpus Intelligence as a foundation capability. It is not a production chatbot
+build lane. T4 may extract DOCX text locally and populate conservative
+classification evidence, but search/chat/runtime/provider work remains blocked.
+Any later product decision must wait for T4 evidence and a Memory/Knowledge
+legacy absorption readiness checkpoint.
 
 Parked checkpoints:
 
