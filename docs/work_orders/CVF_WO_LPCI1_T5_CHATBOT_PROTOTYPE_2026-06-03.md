@@ -47,7 +47,7 @@ deployment, no legal advice claims.
 
 ## Roadmap-To-Work-Order Trace Matrix
 
-| LPCI1 MVP roadmap requirement | CI2-T5 instruction |
+| LPCI1 MVP roadmap requirement | LPCI1-T5 instruction |
 | --- | --- |
 | T5 — Chatbot Prototype: local UI/API with operator-provided LLM API key | implement `POST /api/lpci/query` with `LPCI_LLM_API_KEY` env var; `NO_PROVIDER_CONFIGURED` receipt when key absent |
 | T5 — citations, answer class, audit receipt | satisfy T4 response boundary contract C1–C9; emit AuditReceipt per query |
@@ -69,12 +69,13 @@ deployment, no legal advice claims.
 
 ## Dependency Gate
 
-Dependency satisfied. LPCI1-T4 closed at `d012a14a`.
+Dependency satisfied. LPCI1-T4 closed through final handoff commit `24f28870`.
 
 Release evidence:
 
 - T4 completion review: `docs/reviews/CVF_LPCI1_T4_RETRIEVAL_BOUNDARY_COMPLETION_2026-06-03.md` — Status: CLOSED_PASS_BOUNDED at commit `5143267f`
 - T4 work order: `docs/work_orders/CVF_WO_LPCI1_T4_RETRIEVAL_BOUNDARY_2026-06-03.md` — Status: CLOSED_PASS_BOUNDED
+- T4 final session/handoff sync: `24f28870`
 
 ---
 
@@ -90,8 +91,8 @@ Release evidence:
 | AuditReceipt schema fields | EXISTS | `docs/reference/CVF_LPCI1_T4_RETRIEVAL_BOUNDARY_SPEC_2026-06-03.md` | `## AuditReceipt Schema` | `auditId` | T4 AuditReceipt Schema | ACCEPT |
 | Response boundary contract C1–C9 | EXISTS | `docs/reference/CVF_LPCI1_T4_RETRIEVAL_BOUNDARY_SPEC_2026-06-03.md` | `## Response Boundary Contract` | `C1` | T4 Response Boundary Contract | ACCEPT |
 | answerClass precedence rule | EXISTS | `docs/reference/CVF_LPCI1_T4_RETRIEVAL_BOUNDARY_SPEC_2026-06-03.md` | `### answerClass Precedence Rule` | `answerClass` | T4 Retrieval Boundary Spec | ACCEPT |
-| Five-stage filter pipeline | EXISTS | `docs/reference/CVF_LPCI1_T3_SEARCH_FILTER_INDEX_Spec_2026-06-03.md` | `Stage 1` through `Stage 5` | `Stage 4` | T3 Search Filter Index Spec | ACCEPT |
-| Negative receipt types | EXISTS | `docs/reference/CVF_LPCI1_T3_SEARCH_FILTER_INDEX_Spec_2026-06-03.md` | Negative Receipt section | `NO_RESULTS` | T3 Search Filter Index Spec | ACCEPT |
+| Five-stage filter pipeline | EXISTS | `docs/reference/CVF_LPCI1_T3_SEARCH_FILTER_INDEX_SPEC_2026-06-03.md` | `Stage 1` through `Stage 5` | `Stage 4` | T3 Search Filter Index Spec | ACCEPT |
+| Negative receipt types | EXISTS | `docs/reference/CVF_LPCI1_T3_SEARCH_FILTER_INDEX_SPEC_2026-06-03.md` | Negative Receipt section | `NO_RESULTS` | T3 Search Filter Index Spec | ACCEPT |
 | Commit choreography standard | EXISTS | `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md` | `## CI2-T2 Binding` | `CI2-T2 Binding` | Tranche Commit Choreography Standard | ACCEPT |
 | Next.js app directory | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/` | directory exists | `src/app` | CVF Web App | ACCEPT |
 | Existing API route pattern | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts` | line 40 | `POST` | execute API route | ACCEPT |
@@ -150,7 +151,7 @@ must return a `NO_PROVIDER_CONFIGURED` receipt, not an error stack trace.
 ## Required First Reads
 
 1. `docs/reference/CVF_LPCI1_T4_RETRIEVAL_BOUNDARY_SPEC_2026-06-03.md` — response boundary contract C1–C9, AuditReceipt schema, RetrievalReceipt schema.
-2. `docs/reference/CVF_LPCI1_T3_SEARCH_FILTER_INDEX_Spec_2026-06-03.md` — five-stage filter pipeline; negative receipt types.
+2. `docs/reference/CVF_LPCI1_T3_SEARCH_FILTER_INDEX_SPEC_2026-06-03.md` — five-stage filter pipeline; negative receipt types.
 3. `docs/reference/CVF_LPCI1_T1_ARCHITECTURE_2026-06-02.md` — API/UI surface sketch; retrieval flow pseudocode.
 4. `docs/reference/CVF_LPCI1_T2_DOMAIN_CLASSIFICATION_SPEC_2026-06-03.md` — answerClass criteria; dispositionAlias decision matrix.
 5. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts` — existing API route pattern (auth, response shape).
@@ -207,7 +208,7 @@ Steps:
 4. If `answer_class = ESCALATE_OR_ABSTAIN`, return abstention message; do not invoke LLM (C6).
 5. If `LPCI_LLM_API_KEY` is absent, return `NO_PROVIDER_CONFIGURED` receipt; do not error.
 6. Invoke LLM with explicit answer boundary instruction encoding Rules A1–A4.
-7. Build and emit `AuditReceipt`; populate `model_response_hash` with SHA-256 of LLM response (C8).
+7. Build and emit `AuditReceipt`; populate `model_response_hash` with SHA-256 of the emitted LLM response, abstention response, or negative receipt payload (C8).
 
 **`POST /api/lpci/intake`**
 
@@ -242,7 +243,7 @@ Reads GC-051 registry only. Does not perform new scan.
 - Set `freshness_flag` and `conflict_flag` per T4 freshness and conflict protocol.
 - Conflict resolution is by `authorityLevel` and `effectiveDate` fields only — no LLM content reasoning.
 
-**`audit-receipt.ts`** — `buildAuditReceipt()` must populate all required fields; `model_response_hash` must be SHA-256 hex of the LLM response string (or negative receipt payload); `auditId` must be a UUIDv4; `response_boundary_class` must be one of `ANSWER_EMITTED`, `ABSTAINED`, `ESCALATED`, `NEGATIVE_RECEIPT`.
+**`audit-receipt.ts`** — `buildAuditReceipt()` must populate all required fields; `model_response_hash` must be SHA-256 hex of the emitted LLM response, abstention response, or negative receipt payload; `auditId` must be a UUIDv4; `response_boundary_class` must be one of `ANSWER_EMITTED`, `ABSTAINED`, `ESCALATED`, `NEGATIVE_RECEIPT`.
 
 ### UI Page (`/lpci`)
 
