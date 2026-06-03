@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-03
 
-Current mode marker: `lpci2_t2_policylocal_frontend_prototype_readiness_closed_pass_bounded`
+Current mode marker: `lpci2_t2a_policylocal_prototype_schema_cleanup_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lpci2_t2_policylocal_frontend_prototype_readiness_closed_pass_bounded`.
+Current mode: `lpci2_t2a_policylocal_prototype_schema_cleanup_closed_pass_bounded`.
 
 Active handoff:
 
@@ -574,6 +574,27 @@ Workspace copy:
 Next allowed move: open a bounded prototype schema-cleanup/scaffold-readiness
 correction or proceed to LPCI2-T3 production-corpus pilot planning. Broad chat
 runtime remains blocked until import, search, citation, and receipt gates pass.
+
+LPCI2-T2A PolicyLocal Prototype Schema Cleanup is `CLOSED_PASS_BOUNDED`.
+Codex repaired the concrete T2 blockers in the renamed local workspace:
+
+`D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local`
+
+The prototype now has `data/cvf-schema.js`, canonical answer-class values in
+mock query/report/search/chat paths, citation-minimum fields in mock corpus and
+receipt examples, selected/rejected context in the sample receipt, provider and
+answer boundary fields, and a local validator:
+
+`node scripts/validate-cvf-prototype-schema.mjs`
+
+Validation result: PASS. Boundary: prototype placeholder hashes are not real
+file SHA-256 proof; no real chatbot, production corpus import, provider call,
+legal advice quality, latest-law status, hosted readiness, or public export is
+claimed.
+
+Next allowed move: LPCI2-T3 production-corpus pilot planning or a bounded
+scaffold-readiness packet. Broad chat runtime remains blocked until import,
+search, citation, and receipt gates pass with real corpus evidence.
 
 Parked checkpoints:
 
