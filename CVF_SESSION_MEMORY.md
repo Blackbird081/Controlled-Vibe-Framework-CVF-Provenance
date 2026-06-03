@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-03
 
-Current mode marker: `lpci1_t1_product_intake_architecture_closed`
+Current mode marker: `lpci1_t2_domain_classification_dispatch_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lpci1_t1_product_intake_architecture_closed`.
+Current mode: `lpci1_t2_domain_classification_dispatch_ready`.
 
 Active handoff:
 
@@ -492,8 +492,14 @@ values before operator commit:
 `DIRECT_CITED_ANSWER`, `SUMMARY_WITH_SOURCE`, `PROCEDURAL_GUIDANCE`, and
 `ESCALATE_OR_ABSTAIN`.
 
-Next allowed move: author and dispatch LPCI1-T2 domain classification work
-order only.
+LPCI1-T2 domain classification work order is `DISPATCH_READY` at commit
+`bb875474`:
+
+`docs/work_orders/CVF_WO_LPCI1_T2_DOMAIN_CLASSIFICATION_2026-06-03.md`
+
+Next allowed move: dispatch LPCI1-T2 domain classification worker only. Worker
+must capture `executionBaseHead` at start, stay inside documentation/spec scope,
+and must not commit.
 
 LPCI chatbot/runtime implementation remains blocked until a later
 implementation tranche is explicitly authorized.

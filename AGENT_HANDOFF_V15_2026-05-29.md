@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `9010f715` (parent: `62976163`). Session-sync follow-up updated 2026-06-03 after LPCI1-T1 closure continuity sync; LPCI1-T1 remains CLOSED_PASS_BOUNDED and the next allowed move is author/dispatch LPCI1-T2 domain classification work order only.
+Current HEAD recorded for this handoff: `bb875474` (parent: `2402aea0`). Session-sync follow-up updated 2026-06-03 after LPCI1-T2 work-order dispatch; LPCI1-T2 is DISPATCH_READY and the next allowed move is dispatch LPCI1-T2 domain classification worker only.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -171,7 +171,7 @@ Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
 
 ## Active Boundary
 
-Current mode: `lpci1_t1_product_intake_architecture_closed`.
+Current mode: `lpci1_t2_domain_classification_dispatch_ready`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
@@ -448,8 +448,14 @@ values before operator commit:
 `DIRECT_CITED_ANSWER`, `SUMMARY_WITH_SOURCE`, `PROCEDURAL_GUIDANCE`, and
 `ESCALATE_OR_ABSTAIN`.
 
-Next allowed move: author and dispatch LPCI1-T2 domain classification work
-order only.
+LPCI1-T2 domain classification work order is `DISPATCH_READY` at commit
+`bb875474`:
+
+`docs/work_orders/CVF_WO_LPCI1_T2_DOMAIN_CLASSIFICATION_2026-06-03.md`
+
+Next allowed move: dispatch LPCI1-T2 domain classification worker only. Worker
+must capture `executionBaseHead` at start, stay inside documentation/spec scope,
+and must not commit.
 
 LPCI chatbot/runtime implementation remains blocked until a later
 implementation tranche is explicitly authorized.
