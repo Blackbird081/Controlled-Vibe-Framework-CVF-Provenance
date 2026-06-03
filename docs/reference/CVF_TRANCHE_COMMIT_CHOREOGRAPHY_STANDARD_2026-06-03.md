@@ -194,7 +194,7 @@ folding it into the checker implementation.
 
 | Finding | Defect class | Learning lane | Disposition | Next control action |
 | --- | --- | --- | --- | --- |
-| CI2-T1 closure consumed excessive time due to mixed archive, closure, session, and handoff commits | PROCESS_CONTROL_GAP | GOVERNANCE_CONTROL_PLANE | RULE_ADDED | Apply this standard to CI2-T2 and future work orders before implementation |
+| CI2-T1 closure consumed excessive time due to mixed archive, closure, session, and handoff commits | PHASE_GATE_PLACEMENT_GAP | GOVERNANCE_CONTROL_PLANE | RULE_ADDED | Apply this standard to CI2-T2 and future work orders before implementation |
 | Stale dispatch base expanded closure ranges into unrelated commits | PHASE_GATE_PLACEMENT_GAP | GOVERNANCE_CONTROL_PLANE | TEMPLATE_UPDATED | Work orders must distinguish dispatch, execution, closure, and handoff-sync bases |
 
 ---
