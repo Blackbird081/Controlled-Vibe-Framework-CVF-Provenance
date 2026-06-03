@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-03
 
-Current mode marker: `lpci1_t1_product_intake_architecture_dispatch_ready`
+Current mode marker: `lpci1_t1_product_intake_architecture_closed`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lpci1_t1_product_intake_architecture_dispatch_ready`.
+Current mode: `lpci1_t1_product_intake_architecture_closed`.
 
 Active handoff:
 
@@ -482,15 +482,21 @@ GC-018 baseline, MVP roadmap, and LPCI1-T1 work order are closed:
 
 `docs/work_orders/CVF_WO_CI2_T5_LPCI_PRODUCT_ROADMAP_PACKET_2026-06-02.md`
 
-LPCI1-T1 is `DISPATCH_READY` at commit `fb8bcddc` after dependency-release
-evidence repair and guard hardening:
+LPCI1-T1 is `CLOSED_PASS_BOUNDED` at commit `62976163` after architecture
+review, corpus intake spec, and T1 GC-018 supplement closure:
 
 `docs/work_orders/CVF_WO_LPCI1_T1_PRODUCT_INTAKE_AND_ARCHITECTURE_2026-06-02.md`
 
-Next allowed move: dispatch LPCI1-T1 only.
+T1 reviewer correction canonicalized LPCI answer-class vocabulary to GC-050
+values before operator commit:
+`DIRECT_CITED_ANSWER`, `SUMMARY_WITH_SOURCE`, `PROCEDURAL_GUIDANCE`, and
+`ESCALATE_OR_ABSTAIN`.
 
-LPCI chatbot/runtime implementation remains blocked until LPCI1-T1 architecture
-closes and a later implementation tranche is explicitly authorized.
+Next allowed move: author and dispatch LPCI1-T2 domain classification work
+order only.
+
+LPCI chatbot/runtime implementation remains blocked until a later
+implementation tranche is explicitly authorized.
 
 Parked checkpoints:
 

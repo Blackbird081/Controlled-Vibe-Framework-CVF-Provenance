@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `5867d8a3` (parent: `fb8bcddc`). Session-sync follow-up updated 2026-06-03 after LPCI1-T1 dispatch-ready session sync; LPCI1-T1 remains DISPATCH_READY and is the only next dispatch move.
+Current HEAD recorded for this handoff: `62976163` (parent: `a155f505`). Session updated 2026-06-03 after LPCI1-T1 product intake and architecture closure; LPCI1-T1 is CLOSED_PASS_BOUNDED and the next allowed move is author/dispatch LPCI1-T2 domain classification work order only.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -171,7 +171,7 @@ Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
 
 ## Active Boundary
 
-Current mode: `lpci1_t1_product_intake_architecture_dispatch_ready`.
+Current mode: `lpci1_t1_product_intake_architecture_closed`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
@@ -438,15 +438,21 @@ GC-018 baseline, MVP roadmap, and LPCI1-T1 work order are closed:
 
 `docs/work_orders/CVF_WO_CI2_T5_LPCI_PRODUCT_ROADMAP_PACKET_2026-06-02.md`
 
-LPCI1-T1 is `DISPATCH_READY` at commit `fb8bcddc` after dependency-release
-evidence repair and guard hardening:
+LPCI1-T1 is `CLOSED_PASS_BOUNDED` at commit `62976163` after architecture
+review, corpus intake spec, and T1 GC-018 supplement closure:
 
 `docs/work_orders/CVF_WO_LPCI1_T1_PRODUCT_INTAKE_AND_ARCHITECTURE_2026-06-02.md`
 
-Next allowed move: dispatch LPCI1-T1 only.
+T1 reviewer correction canonicalized LPCI answer-class vocabulary to GC-050
+values before operator commit:
+`DIRECT_CITED_ANSWER`, `SUMMARY_WITH_SOURCE`, `PROCEDURAL_GUIDANCE`, and
+`ESCALATE_OR_ABSTAIN`.
 
-LPCI chatbot/runtime implementation remains blocked until LPCI1-T1 architecture
-closes and a later implementation tranche is explicitly authorized.
+Next allowed move: author and dispatch LPCI1-T2 domain classification work
+order only.
+
+LPCI chatbot/runtime implementation remains blocked until a later
+implementation tranche is explicitly authorized.
 `MKG2` Deferred Runtime Candidate Triage is `REVIEW_READY`: GC-018
 `docs/baselines/CVF_GC018_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_2026-06-01.md`,
 roadmap
@@ -552,8 +558,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_t1_product_intake_architecture_dispatch_ready`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=dispatch LPCI1-T1 only (`docs/work_orders/CVF_WO_LPCI1_T1_PRODUCT_INTAKE_AND_ARCHITECTURE_2026-06-02.md`); LPCI runtime stays blocked until LPCI1-T1 architecture closes and a later implementation tranche is explicitly authorized;
+Startup acknowledged: current mode=`lpci1_t1_product_intake_architecture_closed`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=author and dispatch LPCI1-T2 domain classification work order only; LPCI runtime stays blocked until a later implementation tranche is explicitly authorized;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary
