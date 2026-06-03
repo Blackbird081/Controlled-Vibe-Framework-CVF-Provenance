@@ -196,7 +196,10 @@ Stub 1 (lines 111–119):
 
 ```text
 checker-id: check_corpus_packet_source_hash
-trigger: any new corpus intelligence readiness packet file added to docs/audits/
+trigger: any changed corpus intelligence readiness packet under docs/audits/
+         or docs/reviews/ that is either docType: audit or has a
+         READINESS_PACKET filename marker; docType: review artifacts are
+         explicitly excluded.
 rule: each classification-ledger row must include a sourceHash field, OR
       the packet-level manifest must declare manifestHashProxy: true with
       an explicit documented trade-off.
@@ -206,24 +209,22 @@ prerequisite: NR-04 standard entry in readiness packet template
 implementation-tranche: separate governed roadmap; not authorized in CI1-T6.
 ```
 
-**The checker (`check_corpus_packet_source_hash`) is NOT implemented in
-CI2-T1.** Implementation is deferred to CI2-T2 (Packet Normalization
-Checkers), which requires CI2-T1 to be closed first. This standard document
-is the `STANDARD_REQUIRED_FIRST` prerequisite that unlocks CI2-T2.
+**Implementation status:** CI2-T1 authored this standard only. CI2-T2 later
+implemented `governance/compat/check_corpus_packet_source_hash.py`, its focused
+tests, and hook/autorun wiring. This standard remains the canonical authoring
+and review authority for the checker.
 
 ---
 
 ## T2 Unblock Statement
 
-This standard satisfies the `STANDARD_REQUIRED_FIRST` prerequisite for
+This standard satisfied the `STANDARD_REQUIRED_FIRST` prerequisite for
 Stub 1 (`check_corpus_packet_source_hash`) as stated in
 `docs/reference/CVF_CI1_T6_CHECKER_DECISION_2026-06-02.md` lines 111–119.
 
-CI2-T2 (Packet Normalization Checkers) may proceed to implement the
-`check_corpus_packet_source_hash` checker once CI2-T1 is closed and
-committed. The checker author must read this standard before implementing the
-checker and must validate both the per-file hash path and the manifest proxy
-exception path.
+CI2-T2 implemented the checker after CI2-T1 closure. Future packet authors and
+reviewers must still read this standard before claiming NR-04 compliance and
+must validate both the per-file hash path and the manifest proxy exception path.
 
 ---
 
@@ -239,9 +240,9 @@ This standard is documentation-only. It:
 - does NOT claim semantic correctness, retrieval quality, or production
   readiness for any corpus.
 
-The only governed outputs of CI2-T1 are this standard document, the readiness
+The governed outputs of CI2-T1 were this standard document, the readiness
 packet template update (sections 4.4, 4.5, and two new rows in 4.1), and the
-CI2-T1 completion review.
+CI2-T1 completion review. CI2-T2 separately implemented the structural checker.
 
 ---
 

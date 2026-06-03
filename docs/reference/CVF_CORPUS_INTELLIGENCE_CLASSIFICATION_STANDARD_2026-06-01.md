@@ -201,9 +201,10 @@ Raw preservation:
 Application rule:
 
 - When a packet row uses `DEFER` or `ACCEPT_SUMMARY_ONLY` to express bounded
-  acceptance with deferred implementation, the author may add a
-  `dispositionAlias: ACCEPT_DEFERRED` annotation so cross-packet consumers do
-  not have to re-derive the merge.
+  acceptance with deferred implementation, the author must add a
+  `dispositionAlias: ACCEPT_DEFERRED` annotation and preserve the original
+  value in `rawDisposition` so cross-packet consumers do not have to re-derive
+  the merge.
 - `REJECT`, `BLOCKED_SOURCE_NOT_FOUND`, and `BLOCKED_UNREADABLE` never merge to
   `ACCEPT_DEFERRED`; they are not bounded-acceptance states.
 - A plain `ACCEPT` (full acceptance, no deferral) is distinct from
@@ -211,14 +212,15 @@ Application rule:
 
 Checker readiness note:
 
-- This rule is the precondition for the deferred NR-11 checker spec stub
+- This rule was the precondition for the deferred NR-11 checker spec stub
   `check_corpus_packet_disposition_canonical` recorded in
-  `docs/reference/CVF_CI1_T6_CHECKER_DECISION_2026-06-02.md` (Stub 3). A future
-  checker — authorized only by a separate checker-implementation roadmap — can
-  validate that any row using `DEFER` for a deferred-implementation state
-  carries a `dispositionAlias` pointing to `ACCEPT_DEFERRED`.
-- This standard does not implement that checker and does not authorize its
-  implementation.
+  `docs/reference/CVF_CI1_T6_CHECKER_DECISION_2026-06-02.md` (Stub 3). CI2-T2
+  implemented `governance/compat/check_corpus_packet_disposition_canonical.py`,
+  focused tests, and hook/autorun wiring. The checker validates that deferred
+  and summary-only rows carry `dispositionAlias: ACCEPT_DEFERRED` and preserve
+  the original value in `rawDisposition`.
+- This standard remains the authoring authority for the merge rule; the CI2-T2
+  checker is the structural enforcement layer.
 
 Sibling precursor: NR-05 path normalization
 (`docs/reference/CVF_CORPUS_PATH_NORMALIZATION_ALGORITHM_STANDARD_2026-06-02.md`)

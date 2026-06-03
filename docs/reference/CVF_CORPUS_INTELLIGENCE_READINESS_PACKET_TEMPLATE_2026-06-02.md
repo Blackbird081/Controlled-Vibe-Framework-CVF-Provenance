@@ -62,9 +62,10 @@ sets, source-code documentation, and any other bounded corpus.
 
 ## How To Use This Template
 
-1. Copy this file to a task-specific path under `docs/audits/` or `docs/reviews/`
-   named for the corpus (e.g.,
-   `CVF_RESCAN_D_GRAPHIFY_CORPUS_READINESS_PACKET_<date>.md`).
+1. Copy this file to a task-specific path under `docs/audits/` named for the
+   corpus (e.g., `CVF_RESCAN_D_GRAPHIFY_CORPUS_READINESS_PACKET_<date>.md`).
+   Completion reviews belong under `docs/reviews/`; filled readiness packets do
+   not.
 2. Replace every `<placeholder>` with actual values.
 3. Fill required evidence blocks in order: GC-047 → GC-048 → Search/Filter
    Readiness → GC-050.
@@ -75,6 +76,23 @@ Section headings marked `[REQUIRED]` must be present in the filled packet.
 Section headings marked `[REQUIRED IF APPLICABLE]` must be present when the
 stated condition applies. Do not delete required sections; fill them with
 `N/A with reason` if they genuinely do not apply.
+
+### Packet Identity Rule
+
+Every new filled corpus intelligence readiness packet MUST use:
+
+- path prefix: `docs/audits/`
+- filename marker: `READINESS_PACKET`
+- `docType: audit`
+
+`docType: baseline` is allowed only for historical packet artifacts created
+before this rule was clarified. New workers must not use `docType: baseline`
+for readiness packets. Completion reviews, reviewer notes, and closure packets
+must use `docType: review` and must not be named as readiness packets.
+
+The packet-normalization guards are backward-compatible with historical
+`READINESS_PACKET` files, but new packet authoring is governed by this stricter
+identity rule.
 
 ## Claim Boundary For This Template
 
@@ -89,6 +107,8 @@ adversarial sampling, and, where runtime behavior is claimed, live proof.
 
 ### 1.1 Corpus Identity
 
+- Packet path: `<docs/audits/...READINESS_PACKET_<date>.md>`
+- Packet `docType`: `audit`
 - Corpus name: `<short human-readable name>`
 - Corpus root path(s): `<absolute or repo-relative path(s)>`
 - Corpus description: `<one paragraph: what documents are in scope>`
@@ -345,6 +365,21 @@ Omitting per-row sensitivity on a mixed-sensitivity corpus is not permitted.
 When in doubt about whether sensitivity is uniform, treat the corpus as
 mixed-sensitivity and record per-row values.
 
+### 4.6 NR-11 Disposition Alias Rule
+
+When a classification ledger row uses `DEFER` or `ACCEPT_SUMMARY_ONLY` to mean
+bounded acceptance with deferred implementation, the row MUST include:
+
+- `rawDisposition` — the original row value (`DEFER` or `ACCEPT_SUMMARY_ONLY`);
+- `dispositionAlias` — the canonical cross-packet value `ACCEPT_DEFERRED`.
+
+Rows with `ACCEPT`, `REJECT`, `BLOCKED_SOURCE_NOT_FOUND`, or
+`BLOCKED_UNREADABLE` do not need `dispositionAlias` unless a future standard
+explicitly defines one.
+
+Canonical rule:
+`docs/reference/CVF_CORPUS_INTELLIGENCE_CLASSIFICATION_STANDARD_2026-06-01.md`
+
 ---
 
 ## [REQUIRED] 5. Negative Search Evidence
@@ -491,9 +526,10 @@ Fill using the canonical evidence block from
 
 ### Corpus Intelligence Classification Ledger
 
-| sourcePath | processingStatus | knowledgeRegion | ownerSurface | disposition | evidencePointer | answerClass | domainFields |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| fill-source-path | READ_DEEP | GOVERNANCE | PRIVATE_PROVENANCE | ACCEPT | section/line | SUMMARY_WITH_SOURCE | N/A — not a legal/policy corpus |
+| sourcePath | normalizedPath | sourceHash | sourceHashAlgorithm | processingStatus | knowledgeRegion | ownerSurface | disposition | rawDisposition | dispositionAlias | evidencePointer | answerClass | domainFields |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| fill-source-path | fill-normalized-path | fill-sha256 | sha256 | READ_DEEP | GOVERNANCE | PRIVATE_PROVENANCE | ACCEPT | ACCEPT | N/A | section/line | SUMMARY_WITH_SOURCE | N/A — not a legal/policy corpus |
+| fill-deferred-source-path | fill-normalized-path | fill-sha256 | sha256 | READ_DEEP | GOVERNANCE | ROADMAP_BACKLOG | ACCEPT_SUMMARY_ONLY | ACCEPT_SUMMARY_ONLY | ACCEPT_DEFERRED | section/line | SUMMARY_WITH_SOURCE | N/A — not a legal/policy corpus |
 
 ---
 

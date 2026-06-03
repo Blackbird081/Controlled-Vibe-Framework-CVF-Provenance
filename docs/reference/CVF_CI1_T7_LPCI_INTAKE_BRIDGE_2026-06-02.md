@@ -140,22 +140,37 @@ The T6 `T7_READY` verdict unlocks CI1-T7 dispatch only. It does **not** prove:
 - runtime enforcement of gap decisions;
 - LPCI implementation authorization beyond intake bridge design.
 
-**LPCI must treat T6 checker stubs as deferred obligations, not completed
-controls.**
+At CI1-T7 closure time, LPCI had to treat T6 checker stubs as deferred
+obligations, not completed controls. The post-CI2 update below supersedes that
+downstream interpretation for current work.
+
+### Post-CI2 Update (2026-06-03)
+
+The T6 boundary above remains true for CI1-T7 closure history. For current
+downstream consumption, CI2 has since closed the deferred controls:
+
+- CI2-T1 authored the NR-04 source-hash standard.
+- CSA1 authored the NR-05 path-normalization standard and NR-11 disposition
+  merge rule.
+- CI2-T2 implemented structural checkers for NR-04, NR-05, and NR-11 and wired
+  them into hook/autorun governance.
+
+Current LPCI and CI2 successors must cite the CI2 standards and checker closure
+instead of treating NR-04/NR-05/NR-11 as unresolved T6-only stubs.
 
 ---
 
 ## Gap Acknowledgment
 
-LPCI-T1 must explicitly acknowledge the following three deferred T6 gaps in
-its GC-018 baseline before implementation begins. These are governance
-obligations that LPCI inherits from CI1.
+LPCI-T1 must explicitly acknowledge the following three T6 gaps and their
+post-CI2 dispositions in its GC-018 baseline before implementation begins.
+These are governance obligations that LPCI inherits from CI1 and CI2.
 
 | gapId | T6 decision | LPCI impact | Required acknowledgment |
 | --- | --- | --- | --- |
-| NR-04 | STRUCTURAL_CHECK_REQUIRED (checker deferred) | LPCI ingestion integrity — without per-file hash, drift between corpus scan and LPCI index cannot be detected at ingest time. | LPCI-T1 GC-018 must state whether it will require per-file hash at ingest or accept manifest-proxy with documented exception. |
-| NR-05 | STANDARD_REQUIRED_FIRST (algorithm deferred) | LPCI query routing — cross-packet path matching without canonical normalizedPath algorithm produces ad-hoc normalization. | LPCI-T1 GC-018 must state which path normalization approach it adopts and whether the T5 algorithm standard has been authored first. |
-| NR-11 | STANDARD_REQUIRED_FIRST (merge rule deferred) | LPCI classification routing — DEFER and ACCEPT_SUMMARY_ONLY rows would produce inconsistent query results without a canonical merge rule. | LPCI-T1 GC-018 must state whether the disposition merge rule standard has been authored or whether LPCI will treat DEFER and ACCEPT_SUMMARY_ONLY as equivalent pending the standard. |
+| NR-04 | STRUCTURAL_CHECK_REQUIRED — satisfied by CI2-T1/T2 | LPCI ingestion integrity — per-file hash or explicit manifest proxy is now structurally enforced for changed readiness packets. | LPCI-T1 GC-018 must cite `docs/reference/CVF_CORPUS_SOURCE_HASH_STANDARD_2026-06-02.md` and state whether runtime ingest requires per-file hash or accepts documented manifest proxy. |
+| NR-05 | STANDARD_REQUIRED_FIRST — satisfied by CSA1/CI2-T2 | LPCI query routing — canonical `normalizedPath` is now defined and structurally checked for changed readiness packets. | LPCI-T1 GC-018 must cite `docs/reference/CVF_CORPUS_PATH_NORMALIZATION_ALGORITHM_STANDARD_2026-06-02.md` and adopt the same normalizedPath algorithm. |
+| NR-11 | STANDARD_REQUIRED_FIRST — satisfied by CSA1/CI2-T2 | LPCI classification routing — `DEFER` and `ACCEPT_SUMMARY_ONLY` now merge through `dispositionAlias: ACCEPT_DEFERRED` while preserving `rawDisposition`. | LPCI-T1 GC-018 must cite `docs/reference/CVF_CORPUS_INTELLIGENCE_CLASSIFICATION_STANDARD_2026-06-01.md` and consume `rawDisposition` plus `dispositionAlias`. |
 
 Non-blocking gaps (LPCI may proceed without pre-authoring these standards):
 
@@ -180,9 +195,9 @@ be satisfied:
 | GC-050 intelligence classification | Any classified corpus must pass GC-050 classification standard | Active standard |
 | GC-051 scan registry | New corpora must be registered in `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` before scanning | Active registry |
 | GC-052 interlock | LPCI pipeline stages must be wired as GC-052 connections before claiming cross-stage governance | Active registry |
-| NR-04 standard entry | Before LPCI ingest implementation, standard entry for per-file sourceHash must be added to readiness packet template | DEFERRED — T6 checker stub only |
-| NR-05 algorithm standard | Before LPCI path-matching implementation, CVF Corpus Path Normalization Algorithm must be authored | DEFERRED |
-| NR-11 merge rule standard | Before LPCI disposition-based routing, canonical DEFER/ACCEPT_SUMMARY_ONLY merge rule must be authored | DEFERRED |
+| NR-04 standard/checker | Before LPCI ingest implementation, per-file sourceHash or manifest proxy must be structurally enforced | SATISFIED_BY_CI2_T1_T2 |
+| NR-05 algorithm/checker | Before LPCI path-matching implementation, CVF Corpus Path Normalization Algorithm must be authored and structurally enforced | SATISFIED_BY_CSA1_CI2_T2 |
+| NR-11 merge rule/checker | Before LPCI disposition-based routing, canonical DEFER/ACCEPT_SUMMARY_ONLY merge rule must be authored and structurally enforced | SATISFIED_BY_CSA1_CI2_T2 |
 
 ---
 
@@ -196,9 +211,7 @@ condition is satisfied:
 | LPCI chatbot runtime (any UI, API route, or conversation flow) | Separate governed LPCI roadmap with GC-018 baseline required |
 | LPCI vector database or embedding pipeline | Separate governed LPCI roadmap with GC-018 baseline required |
 | LPCI query execution against any corpus | Separate governed LPCI roadmap; corpus must be GC-051 registered and GC-047/GC-050 verified |
-| NR-04 per-file hash checker implementation | CVF standard entry in readiness packet template + separate checker roadmap |
-| NR-05 path normalization checker implementation | CVF Corpus Path Normalization Algorithm standard authored first |
-| NR-11 disposition merge checker implementation | Disposition merge rule standard authored first |
+| Future NR-04/NR-05/NR-11 checker modification | Separate guard-maintenance or checker roadmap; CI2-T2 implementation already exists |
 | Broad legacy rescan beyond the two registered pilot roots | New GC-051 scan registration + GC-018 per new corpus |
 | Public-sync of any CI1 artifact | Separate public-sync authorization per CVF public-sync rule |
 
@@ -211,7 +224,7 @@ After CI1-T7 closes, the following routes are open:
 | Route | Description | Precondition |
 | --- | --- | --- |
 | LPCI product roadmap proposal | Operator may propose an LPCI-T1 GC-018 baseline for chatbot product implementation | CI1-T7 CLOSED_PASS_BOUNDED (satisfied by this document) |
-| NR-04/NR-05/NR-11 standard authoring | Governance standards for deferred gap controls | No additional precondition; lower priority than LPCI roadmap |
+| NR-04/NR-05/NR-11 maintenance | Future governance maintenance for packet-normalization controls | Separate guard-maintenance or checker roadmap |
 | Additional corpus scans | Apply CI1 workflow to new corpora (company policy docs, user project files, etc.) | New GC-051 registration + GC-047/GC-048/GC-050 per new corpus |
 | Public catalog update | Add CI1 corpus intelligence chain to public technical catalog | Separate public-sync authorization |
 
@@ -226,7 +239,7 @@ and no runtime behavior changes.
 | Finding | Defect class | Learning lane | Disposition | Next action |
 | --- | --- | --- | --- | --- |
 | CI1 chain complete — LPCI intake bridge closes the loop | RULE_GAP | GOVERNANCE_CONTROL_PLANE | RULE_ADDED | CI1-T7 bridge spec is the governance gate before LPCI implementation; operator may now propose LPCI roadmap |
-| NR-04/NR-05/NR-11 deferred obligations inherited by LPCI | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_CANDIDATE | T6 spec stubs recorded; standards must be authored before checker implementation; LPCI-T1 GC-018 must acknowledge each gap |
+| NR-04/NR-05/NR-11 obligations inherited by LPCI | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | CI2 standards and checkers now exist; LPCI-T1 GC-018 must cite and consume them instead of treating T6 stubs as unresolved |
 | Blocked scope catalog established | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | RULE_ADDED | Blocked scope table in this document is the authoritative list; LPCI roadmap author must cite and satisfy it |
 
 ---

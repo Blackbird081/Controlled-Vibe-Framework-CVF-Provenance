@@ -2,15 +2,15 @@
 
 Memory class: FULL_RECORD
 
-Status: HOLD_UNTIL_T2_PASS
+Status: DISPATCH_READY
 
 docType: work_order
 
 Date: 2026-06-02
 
-dispatchBaseHead: `65a0620f`
+dispatchBaseHead: `73079521`
 
-executionBaseHead: `65a0620f`
+executionBaseHead: WORKER_MUST_CAPTURE_AT_START
 
 closureBaseHead: NOT_EXECUTED_YET
 
@@ -28,7 +28,7 @@ packets and future LPCI ingestion design.
 | --- | --- | --- |
 | CI2 GC-018 | `docs/baselines/CVF_GC018_CI2_CORPUS_INTELLIGENCE_ENFORCEMENT_PRODUCT_READINESS_2026-06-02.md` | ACCEPT |
 | CI2 roadmap | `docs/roadmaps/CVF_CI2_CORPUS_INTELLIGENCE_ENFORCEMENT_PRODUCT_READINESS_ROADMAP_2026-06-02.md` | ACCEPT |
-| CI2-T2 checker closure | T2 completion review after execution | REQUIRED |
+| CI2-T2 checker closure | `docs/reviews/CVF_CI2_T2_PACKET_NORMALIZATION_CHECKERS_COMPLETION_2026-06-02.md` | ACCEPT |
 | CI1-T7 | `docs/reference/CVF_CI1_T7_LPCI_INTAKE_BRIDGE_2026-06-02.md` | ACCEPT |
 
 ## Agent Roles
@@ -59,7 +59,9 @@ integration evidence.
 | CI1-T4 already created a cross-corpus index model | EXISTS | `docs/roadmaps/CVF_CI1_CORPUS_INTELLIGENCE_OPERATIONALIZATION_ROADMAP_2026-06-02.md` | lines 92 and 113 | `CI1-T4` | CI1 tranche plan | ACCEPT |
 | LPCI-T1 must consume T4 model fields | EXISTS | `docs/reference/CVF_CI1_T7_LPCI_INTAKE_BRIDGE_2026-06-02.md` | lines 69-80 | `CVF_CROSS_CORPUS_INDEX_MODEL.json` | Corpus Input Contract | ACCEPT |
 | LPCI inherits T4/T5/T6 boundaries | EXISTS | `docs/reference/CVF_CI1_T7_LPCI_INTAKE_BRIDGE_2026-06-02.md` | lines 106-143 | `Claim Boundary Inheritance` | CI1-T7 intake bridge | ACCEPT |
-| Required common fields include normalizedPath and sourceHash | EXISTS | `docs/reference/CVF_CORPUS_INTELLIGENCE_READINESS_PACKET_TEMPLATE_2026-06-02.md` | lines 229-247 | `Common Facet Schema` | readiness packet template | ACCEPT |
+| Required common fields include normalizedPath and sourceHash | EXISTS | `docs/reference/CVF_CORPUS_INTELLIGENCE_READINESS_PACKET_TEMPLATE_2026-06-02.md` | Common Facet Schema | `normalizedPath`, `sourceHash` | readiness packet template | ACCEPT |
+| Readiness packet identity rule requires docs/audits path, READINESS_PACKET filename marker, and docType audit for new packets | EXISTS | `docs/reference/CVF_CORPUS_INTELLIGENCE_READINESS_PACKET_TEMPLATE_2026-06-02.md` | Packet Identity Rule | `docType` | readiness packet template | ACCEPT |
+| CI2-T2 implemented packet normalization checkers | EXISTS | `docs/reviews/CVF_CI2_T2_PACKET_NORMALIZATION_CHECKERS_COMPLETION_2026-06-02.md` | Methodology and Findings | `check_corpus_packet_source_hash.py`, `check_corpus_packet_normalized_path.py`, `check_corpus_packet_disposition_canonical.py` | CI2-T2 completion review | ACCEPT |
 
 ## Write Ownership
 
@@ -88,15 +90,18 @@ Forbidden scope:
 
 ## Required First Reads
 
-1. CI2-T2 completion review.
+1. CI2-T2 completion review:
+   `docs/reviews/CVF_CI2_T2_PACKET_NORMALIZATION_CHECKERS_COMPLETION_2026-06-02.md`
 2. `docs/corpus-intelligence/CVF_CROSS_CORPUS_INDEX_MODEL.json`
 3. `docs/reference/CVF_CI1_T7_LPCI_INTAKE_BRIDGE_2026-06-02.md`
 4. `docs/reference/CVF_CORPUS_INTELLIGENCE_READINESS_PACKET_TEMPLATE_2026-06-02.md`
+5. `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md`
 
 ## Pre-Flight Checks
 
 | Check | Command | Requirement |
 | --- | --- | --- |
+| Capture fresh execution base | `git rev-parse --short HEAD` | record as `executionBaseHead`; do not reuse dispatchBaseHead |
 | T2 completion exists | `Test-Path docs/reviews/CVF_CI2_T2_PACKET_NORMALIZATION_CHECKERS_COMPLETION_2026-06-02.md` | true |
 | CI1 model valid | `python -m json.tool docs/corpus-intelligence/CVF_CROSS_CORPUS_INDEX_MODEL.json` | exit 0 |
 
@@ -120,6 +125,9 @@ Forbidden scope:
    without changing historical CI1 artifacts.
 5. Record product-readiness boundary: model is not a runtime index or vector
    database.
+6. Do not create a filled readiness packet in CI2-T3. If a future packet is
+   needed, it must follow the template identity rule: `docs/audits/`,
+   `READINESS_PACKET` filename marker, and `docType: audit`.
 
 ## Acceptance Criteria
 
@@ -164,9 +172,11 @@ No additional operator checkpoint is required for schema/model authoring.
 
 ```powershell
 python -m json.tool docs/corpus-intelligence/CVF_CI2_ENFORCED_CROSS_CORPUS_INDEX_MODEL.json
-python governance/compat/check_system_loop_interlock.py --base <baseHead> --head HEAD --enforce
-python governance/compat/check_work_order_dispatch_quality.py --base <baseHead> --head HEAD --enforce
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base <baseHead> --head HEAD
+python governance/compat/check_system_loop_interlock.py --base <executionBaseHead> --head HEAD --enforce
+python governance/compat/check_work_order_dispatch_quality.py --base <executionBaseHead> --head HEAD --enforce
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <executionBaseHead> --head HEAD
+# Reviewer/committer only, after approved commit:
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base <closureBaseHead> --head HEAD
 git diff --check
 git status --short
 ```
@@ -175,6 +185,8 @@ git status --short
 
 Worker must fix JSON/schema/Markdown defects inside allowed scope. Worker must
 stop for runtime, vector DB, LPCI UI/API, new scan, or public-sync requests.
+Worker must not ask whether to fix allowed-scope JSON/schema/Markdown/gate
+defects; repair them and rerun the gate. Worker must not commit or push.
 
 ## Claim Boundary
 

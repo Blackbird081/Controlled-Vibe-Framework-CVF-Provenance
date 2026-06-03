@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: T1_CLOSED_T2_DISPATCH_READY
+Status: T1_T2_CLOSED_T3_DISPATCH_READY
 
 docType: roadmap
 
@@ -10,7 +10,7 @@ Date: 2026-06-02
 
 GC-018: `docs/baselines/CVF_GC018_CI2_CORPUS_INTELLIGENCE_ENFORCEMENT_PRODUCT_READINESS_2026-06-02.md`
 
-dispatchBaseHead: `65a0620f`
+dispatchBaseHead: `73079521`
 
 ## Purpose
 
@@ -67,7 +67,7 @@ separate product roadmap authorizes implementation.
 | NR-05 path standard | `docs/reference/CVF_CORPUS_PATH_NORMALIZATION_ALGORITHM_STANDARD_2026-06-02.md` | authored |
 | NR-11 disposition merge rule | `docs/reference/CVF_CORPUS_INTELLIGENCE_CLASSIFICATION_STANDARD_2026-06-01.md` | authored |
 | NR-04 source hash standard | `docs/reference/CVF_CORPUS_SOURCE_HASH_STANDARD_2026-06-02.md` | authored — CI2-T1 CLOSED_PASS_BOUNDED |
-| NR-04/NR-05/NR-11 checkers | CI1-T6 stubs only | not implemented |
+| NR-04/NR-05/NR-11 checkers | `docs/reviews/CVF_CI2_T2_PACKET_NORMALIZATION_CHECKERS_COMPLETION_2026-06-02.md` | implemented — CI2-T2 CLOSED_PASS_BOUNDED |
 | LPCI product runtime | blocked by CI1-T7 | not authorized |
 
 ## Tranche Plan
@@ -75,8 +75,8 @@ separate product roadmap authorizes implementation.
 | Tranche | Goal | Primary output | Status |
 | --- | --- | --- | --- |
 | CI2-T1 | NR-04 Source Hash Standard | `docs/reference/CVF_CORPUS_SOURCE_HASH_STANDARD_2026-06-02.md` + readiness-template update | CLOSED_PASS_BOUNDED |
-| CI2-T2 | Packet Normalization Checkers | checker scripts/tests for NR-04, NR-05, NR-11 + hook/autorun integration | DISPATCH_READY |
-| CI2-T3 | Enforced Cross-Corpus Index Model | versioned enforced index schema/model | HOLD_UNTIL_T2_PASS |
+| CI2-T2 | Packet Normalization Checkers | checker scripts/tests for NR-04, NR-05, NR-11 + hook/autorun integration | CLOSED_PASS_BOUNDED |
+| CI2-T3 | Enforced Cross-Corpus Index Model | versioned enforced index schema/model | DISPATCH_READY |
 | CI2-T4 | Product Readiness Pilot Corpus Pack | pilot pack proving enforced fields can be consumed | HOLD_UNTIL_T3_PASS |
 | CI2-T5 | LPCI Product Roadmap Packet | LPCI GC-018 + MVP roadmap proposal, no implementation | HOLD_UNTIL_T4_PASS |
 
@@ -112,8 +112,8 @@ work order.
 | Step | Requirement | Output | Status |
 | --- | --- | --- | --- |
 | C2.1 | Author NR-04 source hash standard | reference doc + template update | CLOSED_PASS_BOUNDED |
-| C2.2 | Implement packet normalization checkers | scripts/tests/hook integration | DISPATCH_READY |
-| C2.3 | Publish enforced index model | JSON model + schema reference | HOLD_UNTIL_T2_PASS |
+| C2.2 | Implement packet normalization checkers | scripts/tests/hook integration | CLOSED_PASS_BOUNDED |
+| C2.3 | Publish enforced index model | JSON model + schema reference | DISPATCH_READY |
 | C2.4 | Build pilot product-readiness pack | pilot JSON + reference explanation | HOLD_UNTIL_T3_PASS |
 | C2.5 | Draft LPCI product roadmap packet | GC-018 + roadmap + future T1 WO | HOLD_UNTIL_T4_PASS |
 
@@ -135,6 +135,13 @@ python governance/compat/check_work_order_dispatch_quality.py --base 65a0620f --
 python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base 65a0620f --head HEAD
 ```
 
+CI2-T3 dispatch refresh verification uses the post-T2 head:
+
+```powershell
+python governance/compat/check_work_order_dispatch_quality.py --base 73079521 --head HEAD --enforce
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base 73079521 --head HEAD
+```
+
 ## Gates
 
 Every CI2 tranche must run:
@@ -146,8 +153,9 @@ git diff --check
 git status --short
 ```
 
-CI2-T2 must additionally run relevant unit tests and the local hook chain
-because it edits governance checkers.
+CI2-T2 additionally ran relevant unit tests and the local hook chain because it
+edited governance checkers. CI2-T3 is doc/JSON model work and must not edit
+checker code.
 
 ## Claim Boundary
 

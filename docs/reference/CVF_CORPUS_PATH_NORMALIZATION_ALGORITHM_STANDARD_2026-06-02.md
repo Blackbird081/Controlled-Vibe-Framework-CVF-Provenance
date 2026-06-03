@@ -91,20 +91,19 @@ Worked example:
 
 ## Checker Readiness Note
 
-This standard is the precondition for the deferred NR-05 checker spec stub
+This standard was the precondition for the deferred NR-05 checker spec stub
 `check_corpus_packet_normalized_path` recorded in
-`docs/reference/CVF_CI1_T6_CHECKER_DECISION_2026-06-02.md` (Stub 2). With the
-canonical form now defined, a future checker — authorized only by a separate
-checker-implementation roadmap — can validate that each ledger row's
-`normalizedPath` matches the canonical form computed from its `sourcePath`.
+`docs/reference/CVF_CI1_T6_CHECKER_DECISION_2026-06-02.md` (Stub 2). CI2-T2
+implemented `governance/compat/check_corpus_packet_normalized_path.py`, focused
+tests, and hook/autorun wiring after this standard defined the canonical form.
 
-This standard does not implement that checker and does not authorize its
-implementation.
+This standard remains the authoring authority for `normalizedPath`; the checker
+is the structural enforcement layer.
 
 ## Enforcement / Verification
 
-Until the NR-05 checker is implemented under a separate roadmap, conformance is
-verified by reviewer inspection during packet review: the reviewer confirms
+Conformance is verified by the CI2-T2 structural checker for changed readiness
+packets and by reviewer inspection during packet review: the reviewer confirms
 that `normalizedPath` values follow the canonical form and that cross-packet
 rows for the same file share an identical `normalizedPath`.
 
@@ -120,9 +119,8 @@ makes the disposition value comparable across packets.
 
 This standard is authoring guidance for a deterministic string transformation.
 It does not perform runtime path resolution, filesystem access, symlink
-resolution, or existence checks. It does not implement or authorize any
-checker, retrieval runtime, or LPCI component, and it makes no production,
-hosted, or public-readiness claim.
+resolution, or existence checks. It does not implement retrieval runtime or any
+LPCI component, and it makes no production, hosted, or public-readiness claim.
 
 ## Public Export Disposition
 
