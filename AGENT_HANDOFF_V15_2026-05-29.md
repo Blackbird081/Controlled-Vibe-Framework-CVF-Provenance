@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `3c22611d` (parent: `a0d5ef2b`). Session updated 2026-06-03: active archive age window increased from 5 days to 10 days; CI2-T3 remains the next allowed move.
+Current HEAD recorded for this handoff: `e983bac4` (parent: `7c5b8564`). Session updated 2026-06-03: CI2-T3 enforced cross-corpus index model closed; CI2-T4 is the next allowed move.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -171,7 +171,7 @@ Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
 
 ## Active Boundary
 
-Current mode: `ci2_t3_enforced_cross_corpus_index_model_dispatch_ready`.
+Current mode: `ci2_t4_product_readiness_pilot_corpus_pack_dispatch_ready`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
@@ -412,8 +412,8 @@ NR-04 hash standard remain deferred to a separate checker-implementation
 roadmap.
 
 CI2 Corpus Intelligence Enforcement And Product Readiness is
-`T1_T2_CLOSED_T3_DISPATCH_READY`. Latest readiness-hardening commit:
-`2ffb93ae`.
+`T1_T2_T3_CLOSED_T4_DISPATCH_READY`. Latest CI2-T3 closure commit:
+`e983bac4`.
 
 `docs/roadmaps/CVF_CI2_CORPUS_INTELLIGENCE_ENFORCEMENT_PRODUCT_READINESS_ROADMAP_2026-06-02.md`
 
@@ -422,13 +422,19 @@ normalization checkers are `CLOSED_PASS_BOUNDED` at commit `9ea5c98f` plus
 handoff sync `73079521`. NR-04 sourceHash, NR-05 normalizedPath, and NR-11
 disposition-canonical gates are implemented and wired.
 
-Next allowed move: dispatch CI2-T3 only:
+CI2-T3 is `CLOSED_PASS_BOUNDED` at commit `e983bac4`. The enforced
+cross-corpus index model, schema reference, and GC-052 interlock connection are
+closed:
 
 `docs/work_orders/CVF_WO_CI2_T3_ENFORCED_CROSS_CORPUS_INDEX_MODEL_2026-06-02.md`
 
-CI2-T4/T5 are ordered HOLD work orders and must not begin until the prior
-tranche closes. LPCI chatbot/runtime implementation remains blocked until
-CI2-T5 produces a separate governed LPCI product roadmap packet.
+Next allowed move: dispatch CI2-T4 only:
+
+`docs/work_orders/CVF_WO_CI2_T4_PRODUCT_READINESS_PILOT_CORPUS_PACK_2026-06-02.md`
+
+CI2-T5 remains ordered HOLD and must not begin until CI2-T4 closes. LPCI
+chatbot/runtime implementation remains blocked until CI2-T5 produces a
+separate governed LPCI product roadmap packet.
 `MKG2` Deferred Runtime Candidate Triage is `REVIEW_READY`: GC-018
 `docs/baselines/CVF_GC018_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_2026-06-01.md`,
 roadmap
@@ -534,8 +540,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ci2_t3_enforced_cross_corpus_index_model_dispatch_ready`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=dispatch CI2-T3 only (`docs/work_orders/CVF_WO_CI2_T3_ENFORCED_CROSS_CORPUS_INDEX_MODEL_2026-06-02.md`); CI2-T4/T5 remain ordered HOLD work orders; LPCI runtime stays blocked until CI2-T5 produces a separate governed product roadmap packet;
+Startup acknowledged: current mode=`ci2_t4_product_readiness_pilot_corpus_pack_dispatch_ready`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=dispatch CI2-T4 only (`docs/work_orders/CVF_WO_CI2_T4_PRODUCT_READINESS_PILOT_CORPUS_PACK_2026-06-02.md`); CI2-T5 remains ordered HOLD; LPCI runtime stays blocked until CI2-T5 produces a separate governed product roadmap packet;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary

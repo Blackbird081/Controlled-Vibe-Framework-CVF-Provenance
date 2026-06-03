@@ -2,15 +2,15 @@
 
 Memory class: FULL_RECORD
 
-Status: HOLD_UNTIL_T3_PASS
+Status: DISPATCH_READY
 
 docType: work_order
 
 Date: 2026-06-02
 
-dispatchBaseHead: `65a0620f`
+dispatchBaseHead: `e983bac4`
 
-executionBaseHead: `65a0620f`
+executionBaseHead: WORKER_MUST_CAPTURE_AT_START
 
 closureBaseHead: NOT_EXECUTED_YET
 
@@ -40,8 +40,14 @@ be populated and reviewed before LPCI product roadmap authoring.
 
 ## Dependency Gate
 
-CI2-T4 must not begin until CI2-T3 closes with a valid enforced index model and
-schema document.
+CI2-T4 may begin because CI2-T3 closed with a valid enforced index model and
+schema document at commit `e983bac4`.
+
+Prerequisite evidence:
+
+- `docs/reviews/CVF_CI2_T3_ENFORCED_CROSS_CORPUS_INDEX_MODEL_COMPLETION_2026-06-02.md`
+- `docs/corpus-intelligence/CVF_CI2_ENFORCED_CROSS_CORPUS_INDEX_MODEL.json`
+- `docs/reference/CVF_CI2_ENFORCED_CROSS_CORPUS_INDEX_MODEL_SCHEMA_2026-06-02.md`
 
 ## Roadmap-To-Work-Order Trace Matrix
 
