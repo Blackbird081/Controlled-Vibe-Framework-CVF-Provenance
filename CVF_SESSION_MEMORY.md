@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-03
 
-Current mode marker: `lpci1_t6_adversarial_evaluation_dispatch_ready`
+Current mode marker: `lpci1_t6_adversarial_evaluation_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lpci1_t6_adversarial_evaluation_dispatch_ready`.
+Current mode: `lpci1_t6_adversarial_evaluation_closed_pass_bounded`.
 
 Active handoff:
 
@@ -526,19 +526,17 @@ Tests: 37/37 PASS. Build: PASS. Live proof 6/6 PASS (receipt
 
 `docs/reviews/CVF_LPCI1_T5_CHATBOT_PROTOTYPE_COMPLETION_2026-06-03.md`
 
-LPCI1-T6 Adversarial Evaluation work order is `DISPATCH_READY` at commit
-`a5f70327`. Evaluation protocol: ≥5 DIRECT_CITED_ANSWER checks, ≥5
-PROCEDURAL_GUIDANCE checks, ≥3 ESCALATE_OR_ABSTAIN/superseded checks, ≥5
-false-direct-answer audit checks (total ≥18). Pilot corpus:
-`GOVERNANCE_PILOT_NO_LEGAL_CORPUS` (4 records). T7 remains HOLD until T6
-review closes.
+LPCI1-T6 Adversarial Evaluation is `CLOSED_PASS_BOUNDED` at commit `8f332a35`.
+20/20 checks PASS (6 DCA, 5 PG, 3 ESC, 6 FDA). 0 hallucinations. 0 boundary
+violations. Receipt: `lpci1-t6-adv-eval-2026-06-03-20checks`. C1–C9: 7/7
+verified (C4/C5 N/A for pilot corpus). T7 Template Packaging now unblocked.
 
-`docs/work_orders/CVF_WO_LPCI1_T6_ADVERSARIAL_EVALUATION_2026-06-03.md`
+`docs/reviews/CVF_LPCI1_T6_ADVERSARIAL_EVALUATION_COMPLETION_2026-06-03.md`
 
-Next allowed move: execute LPCI1-T6 adversarial evaluation. Run ≥18 structured
-queries against `GOVERNANCE_PILOT_NO_LEGAL_CORPUS`, record per-check
-AuditReceipts and boundary verdicts, author evaluation report and completion
-review. No new source code. Commit mode: WORKER_MUST_NOT_COMMIT.
+Next allowed move: author and dispatch LPCI1-T7 Template Packaging work order.
+T7 must provide: workspace guide, corpus intake template, readiness checklist.
+T7 template guidance: (1) diacritic normalization for Vietnamese corpus Stage 3
+recall, (2) C4/C5 test corpus design (amended + conflicting records required).
 
 Parked checkpoints:
 

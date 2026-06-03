@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `8f20c51a` (parent: `e2d3ff93`). Updated 2026-06-03 after worker completion-review role-boundary guard hardening and handoff sync; mode is lpci1_t6_adversarial_evaluation_dispatch_ready; T5 CLOSED_PASS_BOUNDED with reviewer hardening; T6 DISPATCH_READY with >=18 check evaluation protocol against GOVERNANCE_PILOT_NO_LEGAL_CORPUS, canonical Source Verification, reviewer-owned completion review, and dispatch-quality enforcement blocking worker-owned completion review under WORKER_MUST_NOT_COMMIT; T7 HOLD until T6 review closes.
+Current HEAD recorded for this handoff: `8f332a35` (parent: `e4378e11`). Updated 2026-06-03 after LPCI1-T6 adversarial evaluation closure; mode is lpci1_t6_adversarial_evaluation_closed_pass_bounded; T6 CLOSED_PASS_BOUNDED (20/20 checks PASS, 0 hallucinations, receipt lpci1-t6-adv-eval-2026-06-03-20checks); T7 Template Packaging now unblocked; next allowed move is author and dispatch LPCI1-T7 work order.
 
 ## Latest Work / Changes (2026-05-30)
 
