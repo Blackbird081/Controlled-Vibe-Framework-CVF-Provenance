@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-03
 
-Current mode marker: `lpci1_t6_adversarial_evaluation_closed_pass_bounded`
+Current mode marker: `lpci1_t7_template_packaging_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lpci1_t6_adversarial_evaluation_closed_pass_bounded`.
+Current mode: `lpci1_t7_template_packaging_closed_pass_bounded`.
 
 Active handoff:
 
@@ -526,17 +526,23 @@ Tests: 37/37 PASS. Build: PASS. Live proof 6/6 PASS (receipt
 
 `docs/reviews/CVF_LPCI1_T5_CHATBOT_PROTOTYPE_COMPLETION_2026-06-03.md`
 
-LPCI1-T6 Adversarial Evaluation is `CLOSED_PASS_BOUNDED` at commit `8f332a35`.
+LPCI1-T6 Adversarial Evaluation is `CLOSED_PASS_BOUNDED` at commit `8f332a35`
+with evidence reconciliation at commit `9d0deaf4`.
 20/20 checks PASS (6 DCA, 5 PG, 3 ESC, 6 FDA). 0 hallucinations. 0 boundary
 violations. Receipt: `lpci1-t6-adv-eval-2026-06-03-20checks`. C1–C9: 7/7
-verified (C4/C5 N/A for pilot corpus). T7 Template Packaging now unblocked.
+verified (C4/C5 N/A for pilot corpus). T7 Template Packaging is now closed.
 
 `docs/reviews/CVF_LPCI1_T6_ADVERSARIAL_EVALUATION_COMPLETION_2026-06-03.md`
 
-Next allowed move: author and dispatch LPCI1-T7 Template Packaging work order.
-T7 must provide: workspace guide, corpus intake template, readiness checklist.
-T7 template guidance: (1) diacritic normalization for Vietnamese corpus Stage 3
-recall, (2) C4/C5 test corpus design (amended + conflicting records required).
+LPCI1-T7 Template Packaging is `CLOSED_PASS_BOUNDED`. It provides the
+downstream workspace guide, corpus intake template, readiness checklist,
+Vietnamese Stage 3 diacritic normalization, and C4/C5 test corpus design.
+
+`docs/reviews/CVF_LPCI1_T7_TEMPLATE_PACKAGING_COMPLETION_2026-06-03.md`
+
+Next allowed move: choose a fresh post-LPCI1 roadmap: sanitized public-facing
+LPCI workspace guide, production-corpus pilot planning, or another operator
+priority with a new work order.
 
 Parked checkpoints:
 

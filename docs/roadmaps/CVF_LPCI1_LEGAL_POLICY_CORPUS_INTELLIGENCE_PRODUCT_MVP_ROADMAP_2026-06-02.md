@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: T1_T5_ALL_PASS_BOUNDED_T6_PROPOSED
+Status: ALL_TRANCHES_CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -74,8 +74,8 @@ Inherited gaps from CI2-T4 that LPCI must carry forward:
 | LPCI1-T3 | Search and Filter Index | faceted index schema, query filter contract, negative search evidence format | CLOSED_PASS_BOUNDED | T2 classification closed |
 | LPCI1-T4 | Retrieval Boundary | citation-first retrieval receipt, freshness/conflict warning, abstention rules | CLOSED_PASS_BOUNDED | T3 index closed |
 | LPCI1-T5 | Chatbot Prototype | local UI/API with operator-provided LLM API key, citations, answer class, audit receipt | CLOSED_PASS_BOUNDED | T4 retrieval reviewed |
-| LPCI1-T6 | Adversarial Evaluation | 5-10 source-sampled checks per corpus class, false-direct-answer audit | PROPOSED | T5 prototype |
-| LPCI1-T7 | Template Packaging | downstream workspace guide, corpus intake template, readiness checklist | PROPOSED | T6 evaluation reviewed |
+| LPCI1-T6 | Adversarial Evaluation | 5-10 source-sampled checks per corpus class, false-direct-answer audit | CLOSED_PASS_BOUNDED | T5 prototype |
+| LPCI1-T7 | Template Packaging | downstream workspace guide, corpus intake template, readiness checklist | CLOSED_PASS_BOUNDED | T6 evaluation reviewed |
 
 ---
 
@@ -109,8 +109,8 @@ vector DB, provider calls) remain blocked until T1 architecture review passes.
 | W3 | LPCI1-T3 | Search and filter index | T2 classification closed | CLOSED_PASS_BOUNDED |
 | W4 | LPCI1-T4 | Retrieval boundary | T3 index closed | CLOSED_PASS_BOUNDED |
 | W5 | LPCI1-T5 | Chatbot prototype | T4 retrieval reviewed | CLOSED_PASS_BOUNDED |
-| W6 | LPCI1-T6 | Adversarial evaluation | T5 prototype | PROPOSED |
-| W7 | LPCI1-T7 | Template packaging | T6 evaluation reviewed | PROPOSED |
+| W6 | LPCI1-T6 | Adversarial evaluation | T5 prototype | CLOSED_PASS_BOUNDED |
+| W7 | LPCI1-T7 | Template packaging | T6 evaluation reviewed | CLOSED_PASS_BOUNDED |
 
 ---
 
@@ -161,12 +161,11 @@ defined in `docs/corpus-intelligence/CVF_CI2_ENFORCED_CROSS_CORPUS_INDEX_MODEL.j
 
 ## Decision
 
-Authorize LPCI1 tranches T1–T7 in sequence per this roadmap. Each tranche
-requires a separate work order. No tranche may begin before the prior tranche's
-completion review is closed.
+LPCI1 tranches T1–T7 are closed at the bounded MVP/template level. Each tranche
+used a separate work order and preserved its claim boundary.
 
-First dependency-gated dispatch candidate: LPCI1-T1 via
-`docs/work_orders/CVF_WO_LPCI1_T1_PRODUCT_INTAKE_AND_ARCHITECTURE_2026-06-02.md`.
+Next dependency-gated candidate: sanitized public-facing LPCI workspace guide
+or production-corpus pilot planning, each requiring a fresh work order.
 
 ---
 
@@ -184,8 +183,8 @@ First dependency-gated dispatch candidate: LPCI1-T1 via
 
 | Consequence | Effect |
 | --- | --- |
-| LPCI1-T1 work order exists but remains dependency-gated | Architecture intake may begin only after CI2-T5 closure is committed and the T1 work order is released with closure-commit evidence |
-| T2–T7 are blocked until prior tranche reviews close | Staged gate prevents premature implementation claims |
+| LPCI1-T1 through LPCI1-T7 are closed | MVP governance, prototype, adversarial evaluation, and template packaging are bounded and evidence-backed |
+| Future LPCI production-corpus work requires a fresh roadmap/work order | Staged gate prevents template closure from becoming production readiness |
 | Legal corpus intake requires GC-051 registration | No ad-hoc corpus expansion |
 | CI2 checkers enforce all LPCI corpus packets | NR-04/NR-05/NR-11 violations will block autorun workflow gates |
 
@@ -213,7 +212,8 @@ Disposition: `RULE_ADDED` — LPCI1 MVP roadmap establishes 7-tranche
 implementation plan with dependencies, blocked scope, domain extension
 fields, and T1 dispatch authorization
 
-Next control action: `OPEN` — LPCI1-T1 dependency-release refresh is the immediate next move
+Next control action: `CLOSED` — T1 through T7 are CLOSED_PASS_BOUNDED; future
+public guide or production-corpus pilot work requires a fresh work order
 
 Runtime/provider/cost learning: `N/A_WITH_REASON`
 
