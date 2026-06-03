@@ -5,7 +5,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
-import { buildAuditReceipt, sha256Hex } from '@/lib/lpci/audit-receipt';
+import { buildAuditReceipt } from '@/lib/lpci/audit-receipt';
 import { runRetrievalPipeline } from '@/lib/lpci/retrieval';
 import type { AuditReceipt, FilterParams, LpciIndexRecord } from '@/lib/lpci/types';
 
@@ -111,13 +111,19 @@ export async function POST(request: NextRequest) {
 
   // Verify corpus is GC-051 registered
   if (!isCorpusRegistered(corpusId)) {
-    const hashInput = JSON.stringify({ receiptType: 'NOT_REGISTERED', query });
-    const auditId = crypto.randomUUID();
+    const notRegisteredPayload = JSON.stringify({ receiptType: 'NOT_REGISTERED', query, corpusId });
+    const auditReceipt = buildAuditReceipt({
+      query,
+      query_timestamp,
+      responseText: notRegisteredPayload,
+      response_boundary_class: 'NEGATIVE_RECEIPT',
+      applied_filters: appliedFilters,
+      sensitivity_pre_filter_applied: false,
+    });
     return NextResponse.json({
       receiptType: 'NOT_REGISTERED',
       query,
-      auditId,
-      model_response_hash: sha256Hex(hashInput),
+      auditReceipt,
     }, { status: 403 });
   }
 

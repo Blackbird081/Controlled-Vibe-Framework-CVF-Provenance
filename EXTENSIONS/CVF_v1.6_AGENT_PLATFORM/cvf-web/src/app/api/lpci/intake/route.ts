@@ -1,31 +1,50 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createHash } from 'node:crypto';
 import { existsSync, readFileSync } from 'node:fs';
-import { join, normalize } from 'node:path';
+import { dirname, join, resolve } from 'node:path';
+import { isPathInside, normalizePath, resolveCorpusInputPath } from '@/lib/lpci/intake-boundary';
 import type { CorpusManifest, IntakeReport } from '@/lib/lpci/types';
 
-const REGISTRY_PATH = join(process.cwd(), '..', '..', '..', 'docs', 'corpus-intelligence', 'CVF_CORPUS_SCAN_REGISTRY.json');
+const REPO_ROOT = resolve(process.cwd(), '..', '..', '..');
+const REGISTRY_PATH = join(REPO_ROOT, 'docs', 'corpus-intelligence', 'CVF_CORPUS_SCAN_REGISTRY.json');
 
 const ALLOWED_DOCTYPE_ENUM = new Set([
   'law', 'decree', 'circular', 'policy', 'notice', 'decision', 'sop', 'contract', 'other',
 ]);
 
-// NR-05: normalize path — root-relative, forward-slash, lowercase, no trailing/leading separator
-function normalizePath(relativePath: string): string {
-  return relativePath
-    .replace(/\\/g, '/')
-    .replace(/^\/+|\/+$/g, '')
-    .toLowerCase();
+interface RegistryCorpus {
+  id: string;
+  scopePaths?: string[];
 }
 
-function isCorpusRegistered(corpusId: string): boolean {
+function normalizeForCompare(pathValue: string): string {
+  return normalizePath(pathValue);
+}
+
+function loadRegistry(): { corpora: RegistryCorpus[] } | null {
   try {
     const raw = readFileSync(REGISTRY_PATH, 'utf-8');
-    const registry = JSON.parse(raw) as { corpora: Array<{ id: string }> };
-    return registry.corpora.some((c) => c.id === corpusId);
+    return JSON.parse(raw) as { corpora: RegistryCorpus[] };
   } catch {
-    return false;
+    return null;
   }
+}
+
+function scopeRoot(scopePath: string): string {
+  return scopePath.endsWith('/') || scopePath.endsWith('\\') ? scopePath : dirname(scopePath);
+}
+
+function isCorpusRootRegistered(corpusId: string, corpusRootAbs: string): boolean {
+  const registry = loadRegistry();
+  const corpus = registry?.corpora.find((c) => c.id === corpusId);
+  if (!corpus?.scopePaths?.length) return false;
+
+  const normalizedRootAbs = normalizeForCompare(corpusRootAbs);
+  return corpus.scopePaths.some((scopePath) => {
+    const root = scopeRoot(scopePath);
+    const scopeRootAbs = resolveCorpusInputPath(root, REPO_ROOT);
+    return normalizedRootAbs === normalizeForCompare(scopeRootAbs);
+  });
 }
 
 export async function POST(request: NextRequest) {
@@ -43,7 +62,16 @@ export async function POST(request: NextRequest) {
   }
 
   // GC-051: verify corpus is registered
-  const manifestAbs = normalize(manifestPath);
+  const rootAbs = resolveCorpusInputPath(corpusRoot, REPO_ROOT);
+  const manifestAbs = resolveCorpusInputPath(manifestPath, REPO_ROOT);
+
+  if (!isPathInside(rootAbs, manifestAbs)) {
+    return NextResponse.json({
+      error: 'manifestPath must be inside corpusRoot',
+      receiptType: 'MANIFEST_OUTSIDE_CORPUS_ROOT',
+    }, { status: 400 });
+  }
+
   if (!existsSync(manifestAbs)) {
     return NextResponse.json({ error: 'manifestPath not found', receiptType: 'MANIFEST_NOT_FOUND' }, { status: 400 });
   }
@@ -55,9 +83,9 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Failed to parse manifest JSON' }, { status: 400 });
   }
 
-  if (!isCorpusRegistered(manifest.corpusId)) {
+  if (!isCorpusRootRegistered(manifest.corpusId, rootAbs)) {
     return NextResponse.json({
-      error: 'Corpus not registered in GC-051 registry',
+      error: 'corpusRoot is not registered for this corpus in GC-051 registry',
       receiptType: 'NOT_REGISTERED',
       corpusId: manifest.corpusId,
     }, { status: 403 });
@@ -77,10 +105,21 @@ export async function POST(request: NextRequest) {
 
   for (const entry of manifest.files ?? []) {
     const normalizedPath = normalizePath(entry.relativePath);
-    const absPath = join(corpusRoot, entry.relativePath);
+    const absPath = resolve(rootAbs, entry.relativePath);
+    let sourceHash: string;
+
+    if (!isPathInside(rootAbs, absPath)) {
+      sourceHash = 'PATH_ESCAPE_BLOCKED';
+      gaps.push(`NR-05: path escapes corpusRoot at ${entry.relativePath}`);
+      const docType = (entry.documentType ?? '').toLowerCase();
+      if (!ALLOWED_DOCTYPE_ENUM.has(docType)) {
+        gaps.push(`documentType '${entry.documentType}' not in allowed enum for ${normalizedPath}`);
+      }
+      intakeRows.push({ normalizedPath, sourceHash, documentType: entry.documentType, gap: 'PATH_ESCAPE_BLOCKED' });
+      continue;
+    }
 
     // NR-04: compute hash or accept proxy
-    let sourceHash: string;
     if (manifest.manifestHashProxy && manifest.manifestProxyException) {
       sourceHash = entry.hash ?? 'PROXY';
     } else {

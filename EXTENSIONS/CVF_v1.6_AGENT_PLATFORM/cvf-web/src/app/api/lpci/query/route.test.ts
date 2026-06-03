@@ -3,7 +3,7 @@
 // without importing the route (which pulls in node:fs at module load time).
 
 import { describe, it, expect } from 'vitest';
-import { buildAuditReceipt, sha256Hex } from '@/lib/lpci/audit-receipt';
+import { buildAuditReceipt } from '@/lib/lpci/audit-receipt';
 import { runRetrievalPipeline } from '@/lib/lpci/retrieval';
 import type { LpciIndexRecord } from '@/lib/lpci/types';
 
@@ -18,8 +18,16 @@ function simulateQueryRoute(opts: {
   const query_timestamp = new Date().toISOString();
 
   if (!corpusRegistered) {
-    const hash = sha256Hex(JSON.stringify({ receiptType: 'NOT_REGISTERED', query }));
-    return { status: 403, body: { receiptType: 'NOT_REGISTERED', query, model_response_hash: hash } };
+    const payload = JSON.stringify({ receiptType: 'NOT_REGISTERED', query, corpusId: 'test-corpus' });
+    const auditReceipt = buildAuditReceipt({
+      query,
+      query_timestamp,
+      responseText: payload,
+      response_boundary_class: 'NEGATIVE_RECEIPT',
+      applied_filters: {},
+      sensitivity_pre_filter_applied: false,
+    });
+    return { status: 403, body: { receiptType: 'NOT_REGISTERED', query, auditReceipt } };
   }
 
   const pipeline = runRetrievalPipeline(corpus, query, {});
@@ -96,9 +104,11 @@ describe('LPCI query route logic (C1–C9 contract)', () => {
     expect(result.body.receiptType).toBe('NOT_REGISTERED');
   });
 
-  it('C8: model_response_hash populated for NOT_REGISTERED response', () => {
+  it('C7/C8: full AuditReceipt is emitted for NOT_REGISTERED response', () => {
     const result = simulateQueryRoute({ query: 'test', corpus: [], corpusRegistered: false, llmKeyPresent: false });
-    expect((result.body as { model_response_hash?: string }).model_response_hash).toHaveLength(64);
+    const auditReceipt = (result.body as { auditReceipt?: { model_response_hash?: string } }).auditReceipt;
+    expect(auditReceipt).toBeTruthy();
+    expect(auditReceipt?.model_response_hash).toHaveLength(64);
   });
 
   it('C9: returns Phase 1 negative receipt unchanged when no records match', () => {
@@ -155,4 +165,3 @@ describe('LPCI query route logic (C1–C9 contract)', () => {
     expect('auditReceipt' in body && body.auditReceipt).toBeTruthy();
   });
 });
-
