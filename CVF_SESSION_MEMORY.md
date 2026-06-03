@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-02
 
-Current mode marker: `ci2_corpus_intelligence_enforcement_dispatch_ready`
+Current mode marker: `ci2_t2_packet_normalization_checkers_dispatch_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `ci2_corpus_intelligence_enforcement_dispatch_ready`.
+Current mode: `ci2_t2_packet_normalization_checkers_dispatch_ready`.
 
 Active handoff:
 
@@ -457,9 +457,13 @@ at commit `89d27bcf`:
 
 `docs/roadmaps/CVF_CI2_CORPUS_INTELLIGENCE_ENFORCEMENT_PRODUCT_READINESS_ROADMAP_2026-06-02.md`
 
-Next allowed move: dispatch CI2-T1 only:
+CI2-T1 is `CLOSED_PASS_BOUNDED` at commit `0fb6adc0`. NR-04 source hash
+standard authored; readiness template updated (sections 4.4, 4.5, NR-07 rows).
+Completion review: `docs/reviews/CVF_CI2_T1_SOURCE_HASH_STANDARD_COMPLETION_2026-06-02.md`.
 
-`docs/work_orders/CVF_WO_CI2_T1_SOURCE_HASH_STANDARD_2026-06-02.md`
+Next allowed move: dispatch CI2-T2 only:
+
+`docs/work_orders/CVF_WO_CI2_T2_PACKET_NORMALIZATION_CHECKERS_2026-06-02.md`
 
 CI2-T2/T3/T4/T5 are ordered HOLD work orders and must not begin until the prior
 tranche closes. LPCI chatbot/runtime implementation remains blocked until
