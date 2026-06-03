@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: T1_CLOSED_T2_DISPATCH_READY
 
 docType: roadmap
 
@@ -66,7 +66,7 @@ separate product roadmap authorizes implementation.
 | CI1 operational chain | `docs/roadmaps/CVF_CI1_CORPUS_INTELLIGENCE_OPERATIONALIZATION_ROADMAP_2026-06-02.md` | T1-T7 closed |
 | NR-05 path standard | `docs/reference/CVF_CORPUS_PATH_NORMALIZATION_ALGORITHM_STANDARD_2026-06-02.md` | authored |
 | NR-11 disposition merge rule | `docs/reference/CVF_CORPUS_INTELLIGENCE_CLASSIFICATION_STANDARD_2026-06-01.md` | authored |
-| NR-04 source hash standard | CI1-T6 decision only | not authored |
+| NR-04 source hash standard | `docs/reference/CVF_CORPUS_SOURCE_HASH_STANDARD_2026-06-02.md` | authored — CI2-T1 CLOSED_PASS_BOUNDED |
 | NR-04/NR-05/NR-11 checkers | CI1-T6 stubs only | not implemented |
 | LPCI product runtime | blocked by CI1-T7 | not authorized |
 
@@ -74,8 +74,8 @@ separate product roadmap authorizes implementation.
 
 | Tranche | Goal | Primary output | Status |
 | --- | --- | --- | --- |
-| CI2-T1 | NR-04 Source Hash Standard | `docs/reference/CVF_CORPUS_SOURCE_HASH_STANDARD_2026-06-02.md` + readiness-template update | DISPATCH_READY |
-| CI2-T2 | Packet Normalization Checkers | checker scripts/tests for NR-04, NR-05, NR-11 + hook/autorun integration | HOLD_UNTIL_T1_PASS |
+| CI2-T1 | NR-04 Source Hash Standard | `docs/reference/CVF_CORPUS_SOURCE_HASH_STANDARD_2026-06-02.md` + readiness-template update | CLOSED_PASS_BOUNDED |
+| CI2-T2 | Packet Normalization Checkers | checker scripts/tests for NR-04, NR-05, NR-11 + hook/autorun integration | DISPATCH_READY |
 | CI2-T3 | Enforced Cross-Corpus Index Model | versioned enforced index schema/model | HOLD_UNTIL_T2_PASS |
 | CI2-T4 | Product Readiness Pilot Corpus Pack | pilot pack proving enforced fields can be consumed | HOLD_UNTIL_T3_PASS |
 | CI2-T5 | LPCI Product Roadmap Packet | LPCI GC-018 + MVP roadmap proposal, no implementation | HOLD_UNTIL_T4_PASS |
@@ -111,8 +111,8 @@ work order.
 
 | Step | Requirement | Output | Status |
 | --- | --- | --- | --- |
-| C2.1 | Author NR-04 source hash standard | reference doc + template update | DISPATCH_READY |
-| C2.2 | Implement packet normalization checkers | scripts/tests/hook integration | HOLD_UNTIL_T1_PASS |
+| C2.1 | Author NR-04 source hash standard | reference doc + template update | CLOSED_PASS_BOUNDED |
+| C2.2 | Implement packet normalization checkers | scripts/tests/hook integration | DISPATCH_READY |
 | C2.3 | Publish enforced index model | JSON model + schema reference | HOLD_UNTIL_T2_PASS |
 | C2.4 | Build pilot product-readiness pack | pilot JSON + reference explanation | HOLD_UNTIL_T3_PASS |
 | C2.5 | Draft LPCI product roadmap packet | GC-018 + roadmap + future T1 WO | HOLD_UNTIL_T4_PASS |
@@ -159,3 +159,9 @@ readiness.
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
+
+Reason: CI2 roadmap references internal GC-018 baselines, work order paths,
+and CI1 corpus intelligence chain artifacts that are not public-sync exported.
+Public-sync boundary: no CI2 artifact may be copied to the public-sync repo
+until a separate public-sync authorization is obtained per the CVF public-sync
+rule.

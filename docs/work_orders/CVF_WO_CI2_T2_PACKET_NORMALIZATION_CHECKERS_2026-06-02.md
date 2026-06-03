@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: HOLD_UNTIL_T1_PASS
+Status: DISPATCH_READY
 
 docType: work_order
 
