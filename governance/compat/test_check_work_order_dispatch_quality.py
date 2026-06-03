@@ -217,6 +217,44 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
             report["violations"][0]["issues"],
         )
 
+    def test_ready_work_order_with_required_dependency_placeholder_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_CI2_T5_TEST_2026-06-03.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCH_READY",
+                    "dispatchBaseHead: abc1234",
+                    "executionBaseHead: WORKER_MUST_CAPTURE_AT_START",
+                    "closureBaseHead: NOT_EXECUTED_YET",
+                    "Commit mode: WORKER_MUST_NOT_COMMIT",
+                    "## Authority Chain",
+                    "| Authority | Path / basis | Disposition |",
+                    "| --- | --- | --- |",
+                    "| Prior tranche | T4 pilot pack after closure | REQUIRED |",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| Existing use-case roadmap | `docs/roadmaps/CVF_LPCI_TEST.md` | title | `LPCI` | use-case roadmap | ACCEPT |",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Proceed inside allowed scope.",
+                ]
+            ),
+        )
+        self._write("docs/roadmaps/CVF_LPCI_TEST.md", "# LPCI\n")
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        issues = report["violations"][0]["issues"]
+        self.assertIn(
+            "dispatch/ready work order contains unresolved prerequisite disposition `REQUIRED`; "
+            "release HOLD only after replacing it with source-backed ACCEPT evidence",
+            issues,
+        )
+
     def test_ready_work_order_without_worker_autonomy_fails(self) -> None:
         work_order = "docs/work_orders/CVF_WO_AUTONOMY_TEST_2026-06-01.md"
         self._write(

@@ -515,6 +515,29 @@ Rules:
   include the reviewed artifact changes;
 - `--base HEAD --head HEAD` is never valid closure evidence.
 
+### Dependency Release And Next-Work-Order Refresh
+
+If a later work order is drafted before its prerequisite tranche closes, keep it
+in `HOLD_*` status until the prerequisite closure evidence exists.
+
+Before changing that later work order to `READY`, `DISPATCH_READY`, or
+`DISPATCHED`, the orchestrator/reviewer must refresh the packet in the same
+release batch:
+
+- replace placeholder prerequisite rows such as `after closure` or
+  `Disposition: REQUIRED` with source-backed `ACCEPT` rows;
+- cite the closed artifact path and closure commit, not only the tranche name;
+- set `dispatchBaseHead` to the actual prerequisite closure commit or current
+  dispatch anchor;
+- set `executionBaseHead` to `WORKER_MUST_CAPTURE_AT_START` unless the worker
+  already captured a fresh execution anchor;
+- keep `closureBaseHead` as `NOT_EXECUTED_YET` until reviewer closure;
+- rerun `check_work_order_dispatch_quality.py` and pre-dispatch autorun gate on
+  the release range.
+
+A ready/dispatch work order with unresolved prerequisite language is invalid.
+The worker must not be asked to infer which prior artifact satisfied the HOLD.
+
 ### Two-Stage Handoff Finality
 
 Choose one explicit commit mode before dispatch:

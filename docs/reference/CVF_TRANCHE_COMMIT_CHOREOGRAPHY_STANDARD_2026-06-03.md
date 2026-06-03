@@ -54,6 +54,7 @@ vulnerable to range bleed from archive or session commits.
 | Stale dispatch base expands closure range | Use the worker-captured `executionBaseHead` for worker validation and reviewer-captured `closureBaseHead` for closure, not an old dispatch base after unrelated commits. |
 | Session mode must exist in JSON and front door | Any mode/next-move change must update both `CVF_SESSION/ACTIVE_SESSION_STATE.json` and `CVF_SESSION_MEMORY.md` in the same authorized session commit. |
 | Handoff HEAD cannot be known before commit | Expect a dedicated handoff-sync-only commit after material/session commits. |
+| Next work order released from HOLD with stale prerequisite placeholders | Before marking the next work order READY/DISPATCH_READY, replace `REQUIRED` or `after closure` dependency rows with artifact path plus closure commit evidence, and refresh base anchors. |
 
 ---
 
@@ -107,6 +108,25 @@ Closure transition may include:
 If protected session or governance files are changed, the authorization review
 for those protected changes must be staged in the same commit.
 
+### Step 2A - Dependency Release Refresh
+
+If the next ordered work order was drafted earlier in `HOLD_*` status, do not
+release it by changing only the status line. In the same release batch:
+
+1. replace placeholder dependency evidence such as `after closure`,
+   `after Tn closure`, or `Disposition: REQUIRED` with the actual closed
+   artifact path and closure commit;
+2. set `dispatchBaseHead` to the closure commit or current dispatch anchor;
+3. set `executionBaseHead` to `WORKER_MUST_CAPTURE_AT_START` unless the worker
+   already captured it after dispatch;
+4. keep `closureBaseHead` as `NOT_EXECUTED_YET`;
+5. rerun dispatch-quality and pre-dispatch autorun gates before handing the
+   packet to a worker.
+
+This is the CI2-T4 to CI2-T5 lesson: a downstream work order must receive the
+machine-readable output of the closed tranche, not a prose memory that the
+worker is expected to reinterpret.
+
 ### Step 3 - Session State Sync Batch
 
 When mode, next allowed move, closed status, or active front-door text changes,
@@ -151,6 +171,9 @@ Rules:
 - Do not cite `HEAD~1` for a pending artifact.
 - Do not claim clean worktree while untracked or modified artifacts remain.
 - Do not claim `pre-closure` PASS for `WORKER_MUST_NOT_COMMIT` pending output.
+- Do not mark a dependency-gated work order `DISPATCH_READY` while its
+  Authority Chain or Source Verification rows still say `REQUIRED` or
+  `<prior tranche> after closure`.
 
 ---
 

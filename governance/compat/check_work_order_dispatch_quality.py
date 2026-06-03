@@ -748,6 +748,28 @@ def _validate_ready_source_blockers(text: str) -> list[str]:
     ]
 
 
+def _validate_ready_dependency_release(text: str) -> list[str]:
+    issues: list[str] = []
+    for row in (row for table in _parse_any_markdown_tables(text) for row in table):
+        disposition = _row_value(row, "Disposition").strip().strip("`").upper()
+        joined = " ".join(row.values())
+        if disposition == "REQUIRED":
+            issues.append(
+                "dispatch/ready work order contains unresolved prerequisite disposition `REQUIRED`; "
+                "release HOLD only after replacing it with source-backed ACCEPT evidence"
+            )
+            break
+        if disposition == "ACCEPT":
+            continue
+        if re.search(r"\bafter\s+(?:closure|T\d+\s+closure|[A-Z0-9_-]+\s+closure)\b", joined, re.IGNORECASE):
+            issues.append(
+                "dispatch/ready work order contains stale dependency placeholder prose such as `after closure`; "
+                "cite the closed artifact path and commit before dispatch"
+            )
+            break
+    return issues
+
+
 def _looks_like_live_method_proof(text: str) -> bool:
     lowered = text.lower()
     return (
@@ -1219,6 +1241,7 @@ def _validate_work_order(path: str, text: str) -> list[str]:
         if blocking_precondition:
             issues.append("dispatch/ready status conflicts with unresolved CLOSED_PASS precondition language")
         issues.extend(_validate_ready_source_blockers(text))
+        issues.extend(_validate_ready_dependency_release(text))
         issues.extend(_validate_ready_live_method_proof_path(text))
 
     issues.extend(_validate_accepted_source_rows(path, text))
