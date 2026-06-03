@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `fa6a866e` (parent: `1bc3c68e`). Session-sync follow-up updated 2026-06-03 after LPCI1-T3 closure continuity sync; LPCI1-T3 is CLOSED_PASS_BOUNDED and the next allowed move is author/dispatch LPCI1-T4 retrieval boundary work order only.
+Current HEAD recorded for this handoff: `5143267f` (parent: `818fe435`). Session-sync follow-up updated 2026-06-03 after LPCI1-T4 closure artifact commit; LPCI1-T4 is CLOSED_PASS_BOUNDED and the next allowed move is author/dispatch LPCI1-T5 chatbot prototype work order only.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -171,7 +171,7 @@ Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
 
 ## Active Boundary
 
-Current mode: `lpci1_t3_search_filter_index_closed`.
+Current mode: `lpci1_t4_retrieval_boundary_closed`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
@@ -466,8 +466,17 @@ review:
 
 `docs/reviews/CVF_LPCI1_T3_SEARCH_FILTER_INDEX_COMPLETION_2026-06-03.md`
 
-Next allowed move: author and dispatch LPCI1-T4 retrieval boundary work order
-only.
+LPCI1-T4 is `CLOSED_PASS_BOUNDED` at commit `5143267f` after reviewer
+correction clarified AuditReceipt timing for Phase 1 negative receipts,
+model_response_hash hashing boundary, the RetrievalReceipt field count, and
+Stage 4 post-filter wording. It created the retrieval boundary spec and
+completion review:
+
+`docs/reviews/CVF_LPCI1_T4_RETRIEVAL_BOUNDARY_COMPLETION_2026-06-03.md`
+
+Next allowed move: author and dispatch LPCI1-T5 chatbot prototype work order
+only. T5 is the first runtime tranche and requires a separate GC-018/work
+order before any runtime/UI/API/vector/provider implementation.
 
 LPCI chatbot/runtime implementation remains blocked until a later
 implementation tranche is explicitly authorized.

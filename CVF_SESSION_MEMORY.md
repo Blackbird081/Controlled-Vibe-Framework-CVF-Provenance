@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-03
 
-Current mode marker: `lpci1_t3_search_filter_index_closed`
+Current mode marker: `lpci1_t4_retrieval_boundary_closed`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lpci1_t3_search_filter_index_closed`.
+Current mode: `lpci1_t4_retrieval_boundary_closed`.
 
 Active handoff:
 
@@ -510,8 +510,17 @@ review:
 
 `docs/reviews/CVF_LPCI1_T3_SEARCH_FILTER_INDEX_COMPLETION_2026-06-03.md`
 
-Next allowed move: author and dispatch LPCI1-T4 retrieval boundary work order
-only.
+LPCI1-T4 is `CLOSED_PASS_BOUNDED` at commit `5143267f` after reviewer
+correction clarified AuditReceipt timing for Phase 1 negative receipts,
+model_response_hash hashing boundary, the RetrievalReceipt field count, and
+Stage 4 post-filter wording. It created the retrieval boundary spec and
+completion review:
+
+`docs/reviews/CVF_LPCI1_T4_RETRIEVAL_BOUNDARY_COMPLETION_2026-06-03.md`
+
+Next allowed move: author and dispatch LPCI1-T5 chatbot prototype work order
+only. T5 is the first runtime tranche and requires a separate GC-018/work
+order before any runtime/UI/API/vector/provider implementation.
 
 LPCI chatbot/runtime implementation remains blocked until a later
 implementation tranche is explicitly authorized.
