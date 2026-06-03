@@ -49,27 +49,27 @@ fresh work order.
 | --- | --- |
 | T6 — Adversarial Evaluation: 5-10 source-sampled checks per corpus class | run 5-10 queries per answerClass present in pilot corpus (DIRECT_CITED_ANSWER, PROCEDURAL_GUIDANCE, ESCALATE_OR_ABSTAIN-triggering) |
 | T6 — false-direct-answer audit | attempt queries designed to elicit answers beyond corpus scope; verify abstention or correct boundary |
-| T6 dependency: T5 prototype | verified — T5 CLOSED_PASS_BOUNDED at commit `47519c15` |
+| T6 dependency: T5 prototype | verified — T5 CLOSED_PASS_BOUNDED with reviewer hardening at commit `a9bbbcd3`; final handoff sync `f5f111fd` |
 | T7 Template Packaging HOLD until T6 review closes | T7 remains HOLD; this work order gates T7 |
 
 ---
 
 ## Source Verification Block
 
-| Token | Source path | Verified section |
-| --- | --- | --- |
-| `answerClass` enum | `src/lib/lpci/types.ts` | lines 1–10 — `AnswerClass` type |
-| `DIRECT_CITED_ANSWER` | `src/lib/lpci/types.ts` | `AnswerClass` union |
-| `PROCEDURAL_GUIDANCE` | `src/lib/lpci/types.ts` | `AnswerClass` union |
-| `ESCALATE_OR_ABSTAIN` | `src/lib/lpci/types.ts` | `AnswerClass` union |
-| `GOVERNANCE_PILOT_NO_LEGAL_CORPUS` | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | corpus registry entry |
-| corpus index (4 records) | `docs/corpus-intelligence/GOVERNANCE_PILOT_NO_LEGAL_CORPUS-index.json` | all 4 records |
-| `buildAnswerBoundaryPrompt` | `src/app/api/lpci/query/route.ts` | function defined in file |
-| `runFilterPipeline` | `src/lib/lpci/filter-pipeline.ts` | exported function |
-| `runRetrievalPipeline` | `src/lib/lpci/retrieval.ts` | exported function |
-| `buildAuditReceipt` | `src/lib/lpci/audit-receipt.ts` | exported function |
-| `POST /api/lpci/query` | `src/app/api/lpci/query/route.ts` | Next.js route handler |
-| C1–C9 response boundary contract | `docs/reference/CVF_LPCI1_T4_RETRIEVAL_BOUNDARY_SPEC_2026-06-03.md` | `## Response Boundary Contract` |
+| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
+| --- | --- | --- | --- | --- | --- |
+| `answerClass` enum | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/lpci/types.ts` | `AnswerClass` type | `AnswerClass` | LPCI T5 type module | ACCEPT |
+| `DIRECT_CITED_ANSWER` value | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/lpci/types.ts` | `AnswerClass` union | `DIRECT_CITED_ANSWER` | LPCI T5 type module | ACCEPT |
+| `PROCEDURAL_GUIDANCE` value | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/lpci/types.ts` | `AnswerClass` union | `PROCEDURAL_GUIDANCE` | LPCI T5 type module | ACCEPT |
+| `ESCALATE_OR_ABSTAIN` value | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/lpci/types.ts` | `AnswerClass` union | `ESCALATE_OR_ABSTAIN` | LPCI T5 type module | ACCEPT |
+| Pilot corpus id | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | `corpora` entry | `GOVERNANCE_PILOT_NO_LEGAL_CORPUS` | GC-051 corpus scan registry | ACCEPT |
+| Pilot corpus index | `docs/corpus-intelligence/GOVERNANCE_PILOT_NO_LEGAL_CORPUS-index.json` | all records | `GOVERNANCE_PILOT_NO_LEGAL_CORPUS-index.json` | LPCI pilot index | ACCEPT |
+| Answer boundary prompt builder | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/lpci/query/route.ts` | function definition | `buildAnswerBoundaryPrompt` | LPCI query route | ACCEPT |
+| Filter pipeline function | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/lpci/filter-pipeline.ts` | exported function | `runFilterPipeline` | LPCI filter pipeline | ACCEPT |
+| Retrieval pipeline function | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/lpci/retrieval.ts` | exported function | `runRetrievalPipeline` | LPCI retrieval pipeline | ACCEPT |
+| Audit receipt builder | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/lpci/audit-receipt.ts` | exported function | `buildAuditReceipt` | LPCI audit receipt module | ACCEPT |
+| Query route handler | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/lpci/query/route.ts` | exported route handler | `POST` | Next.js LPCI query route | ACCEPT |
+| C1-C9 response boundary contract | `docs/reference/CVF_LPCI1_T4_RETRIEVAL_BOUNDARY_SPEC_2026-06-03.md` | `## Response Boundary Contract` | `C1-C9` | LPCI T4 retrieval boundary spec | ACCEPT |
 
 ---
 
@@ -90,6 +90,7 @@ Dependency satisfied. LPCI1-T5 closed.
 Release evidence:
 
 - T5 completion review: `docs/reviews/CVF_LPCI1_T5_CHATBOT_PROTOTYPE_COMPLETION_2026-06-03.md` — Status: CLOSED_PASS_BOUNDED at commit `47519c15`
+- T5 reviewer hardening: `a9bbbcd3` — hardened NOT_REGISTERED AuditReceipt emission, intake corpusRoot/path boundary, and removed repo-level scratch artifact ignores
 - T5 work order: `docs/work_orders/CVF_WO_LPCI1_T5_CHATBOT_PROTOTYPE_2026-06-03.md` — Status: CLOSED_PASS_BOUNDED
 - T5 final session/handoff sync: `f5f111fd`
 
@@ -108,7 +109,8 @@ Worker is authorized to:
 4. Record raw query text, AuditReceipt JSON, and response text for each check.
 5. Author one evaluation report:
    `docs/reviews/CVF_LPCI1_T6_ADVERSARIAL_EVALUATION_2026-06-03.md`
-6. Author one completion review:
+6. Return the pending evaluation report to the reviewer. The reviewer authors
+   the completion review during closure:
    `docs/reviews/CVF_LPCI1_T6_ADVERSARIAL_EVALUATION_COMPLETION_2026-06-03.md`
 
 Worker must NOT:
@@ -179,9 +181,10 @@ A boundary violation is recorded when any of the following is observed:
 | Artifact | Path | Required by |
 | --- | --- | --- |
 | Evaluation report | `docs/reviews/CVF_LPCI1_T6_ADVERSARIAL_EVALUATION_2026-06-03.md` | Worker |
-| Completion review | `docs/reviews/CVF_LPCI1_T6_ADVERSARIAL_EVALUATION_COMPLETION_2026-06-03.md` | Reviewer (Claude Code) |
+| Completion review | `docs/reviews/CVF_LPCI1_T6_ADVERSARIAL_EVALUATION_COMPLETION_2026-06-03.md` | Reviewer |
 
-Both files must be present before the reviewer closes the work order.
+The evaluation report must be present before reviewer pickup. The completion
+review is authored by the reviewer as part of closure.
 
 ---
 
@@ -279,6 +282,7 @@ Before beginning evaluation, the worker must read (in order):
 2. `docs/reference/CVF_LPCI1_T2_DOMAIN_CLASSIFICATION_SPEC_2026-06-03.md` — answerClass criteria
 3. `docs/corpus-intelligence/GOVERNANCE_PILOT_NO_LEGAL_CORPUS-index.json` — all 4 corpus records
 4. `docs/reviews/CVF_LPCI1_T5_CHATBOT_PROTOTYPE_COMPLETION_2026-06-03.md` — T5 live proof baseline
+5. Commit `a9bbbcd3` — reviewer hardening for T5 query receipt and intake boundary
 
 ---
 
@@ -300,7 +304,7 @@ Before beginning evaluation, the worker must read (in order):
 | Path | Action | Owner |
 | --- | --- | --- |
 | `docs/reviews/CVF_LPCI1_T6_ADVERSARIAL_EVALUATION_2026-06-03.md` | CREATE | Worker |
-| `docs/reviews/CVF_LPCI1_T6_ADVERSARIAL_EVALUATION_COMPLETION_2026-06-03.md` | CREATE | Reviewer (Claude Code) |
+| `docs/reviews/CVF_LPCI1_T6_ADVERSARIAL_EVALUATION_COMPLETION_2026-06-03.md` | CREATE | Reviewer |
 
 No source code, test files, corpus index files, or governance checker files may be created or modified.
 
@@ -308,7 +312,7 @@ No source code, test files, corpus index files, or governance checker files may 
 
 ## Execution Plan
 
-1. Read all four required-first-read documents.
+1. Read all required-first-read documents.
 2. Verify pre-flight checks; record `executionBaseHead`.
 3. Start dev server in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/`; verify `LPCI_LLM_API_KEY` is set.
 4. Run DIRECT_CITED_ANSWER checks (≥5): queries that match `nghi-phep-nam-2024.pdf` or `hop-dong-lao-dong-2023.pdf`; record raw response, AuditReceipt, boundary verdict.
@@ -317,7 +321,7 @@ No source code, test files, corpus index files, or governance checker files may 
 7. Run false-direct-answer audit (≥5): queries outside corpus scope (e.g., tax law, property law, unrelated topics); verify NO_RESULTS or NEGATIVE_RECEIPT; zero hallucinated answers.
 8. Record all per-check evidence in structured format; compute boundary verdict for each check.
 9. Author evaluation report at `docs/reviews/CVF_LPCI1_T6_ADVERSARIAL_EVALUATION_2026-06-03.md`.
-10. Do not commit (WORKER_MUST_NOT_COMMIT); signal ready for reviewer closure.
+10. Do not create the completion review. Do not commit (WORKER_MUST_NOT_COMMIT); signal ready for reviewer closure.
 
 ---
 
@@ -326,7 +330,7 @@ No source code, test files, corpus index files, or governance checker files may 
 Per `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md`:
 
 - **Step 0** — archive preflight: no archive hygiene backlog
-- **Step 1** — worker artifacts: evaluation report + completion review authored (no worker commit)
+- **Step 1** — worker artifact: evaluation report authored and returned pending reviewer closure (no worker commit)
 - **Step 2** — reviewer closure commit: update this work order Status to CLOSED_PASS_BOUNDED; set closureBaseHead; stage both review docs + work order; run pre-commit hook chain; commit
 - **Step 3** — session sync commit: advance ACTIVE_SESSION_STATE.json + CVF_SESSION_MEMORY.md with Core Guard auth doc
 - **Step 4** — handoff sync commit: update AGENT_HANDOFF_V15_2026-05-29.md HEAD
