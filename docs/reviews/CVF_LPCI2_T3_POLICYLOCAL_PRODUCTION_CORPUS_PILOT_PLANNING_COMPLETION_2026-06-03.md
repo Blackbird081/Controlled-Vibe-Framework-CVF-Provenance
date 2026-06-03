@@ -23,7 +23,7 @@ and T4 runtime release conditions.
 
 | Evidence | Result |
 | --- | --- |
-| PolicyLocal upload folder | exists at `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\uploads\` |
+| PolicyLocal data input folder | T3 originally registered an empty drop-zone; T4S renamed the local-first path to `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data_input\` |
 | Production files present during T3 | zero files observed |
 | GC-051 entry | `policylocal-production-corpus-dropzone` added with `status=NOT_STARTED` |
 | Pilot plan | `docs/reference/CVF_LPCI2_T3_POLICYLOCAL_PRODUCTION_CORPUS_PILOT_PLAN_2026-06-03.md` |
@@ -43,7 +43,8 @@ LPCI2-T3 registered the PolicyLocal production drop-zone in GC-051 and created
 a pilot plan that defines the exact fields, import gates, search/filter
 readiness sequence, sampling protocol, and T4 release conditions.
 
-Because the upload folder is empty, T3 correctly leaves the corpus status as
+Because the data input folder was empty at T3 planning time, T3 correctly left
+the corpus status as
 `NOT_STARTED` and does not claim source hashes, normalized paths, classification,
 search results, or legal answer readiness.
 

@@ -16,7 +16,7 @@ Define the first production-corpus pilot for PolicyLocal without pretending
 that a real legal/policy corpus has already been imported.
 
 The plan turns the local folder
-`D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\uploads\` into a
+`D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data_input\` into a
 registered drop-zone with strict import, classification, search, retrieval, and
 sampling gates.
 
@@ -36,7 +36,7 @@ local workspace.
 | GC-051 id | `policylocal-production-corpus-dropzone` |
 | corpusType | `POLICY_DOCUMENT` |
 | displayName | `PolicyLocal Production Corpus Drop-Zone` |
-| scopePath | `D:/UNG DUNG AI/TOOL AI 2026/CVF-Workspace/Policy_Local/uploads/` |
+| scopePath | `D:/UNG DUNG AI/TOOL AI 2026/CVF-Workspace/Policy_Local/data_input/` |
 | productionUse | `true` |
 | language | `vi` by default; override per document when source differs |
 | jurisdiction | operator-selected per document |
@@ -45,6 +45,10 @@ local workspace.
 
 The drop-zone currently contains no production corpus files. This is a planning
 registration, not a scan result.
+
+T4S update: the operator renamed the local-first folder to `data_input` and
+added the first DOCX file. This plan remains the release contract; the active
+GC-051 path is now `Policy_Local/data_input/`.
 
 ## Source Verification Block
 

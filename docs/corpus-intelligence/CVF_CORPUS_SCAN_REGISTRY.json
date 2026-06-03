@@ -3,8 +3,8 @@
   "standard": "docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md",
   "guard": "governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md",
   "checker": "governance/compat/check_corpus_scan_registry.py",
-  "lastUpdated": "2026-06-03",
-  "updatedBy": "LPCI2-T3 production-corpus pilot planning",
+  "lastUpdated": "2026-06-04",
+  "updatedBy": "LPCI2-T4S data_input smoke test",
   "allowedCorpusTypes": [
     "LEGACY_FOLDER",
     "PROJECT_SOURCE",
@@ -470,35 +470,48 @@
       "corpusType": "POLICY_DOCUMENT",
       "displayName": "PolicyLocal Production Corpus Drop-Zone",
       "scopePaths": [
-        "D:/UNG DUNG AI/TOOL AI 2026/CVF-Workspace/Policy_Local/uploads/"
+        "D:/UNG DUNG AI/TOOL AI 2026/CVF-Workspace/Policy_Local/data_input/"
       ],
-      "fileCount": 0,
-      "status": "NOT_STARTED",
-      "scanWave": "LPCI2-T3",
-      "scanDate": null,
+      "fileCount": 2,
+      "status": "PARTIALLY_SCANNED",
+      "scanWave": "LPCI2-T4S",
+      "scanDate": "2026-06-04",
       "manifestHash": null,
       "manifestPath": null,
-      "packetPath": "docs/reference/CVF_LPCI2_T3_POLICYLOCAL_PRODUCTION_CORPUS_PILOT_PLAN_2026-06-03.md",
-      "completionReviewPath": "docs/reviews/CVF_LPCI2_T3_POLICYLOCAL_PRODUCTION_CORPUS_PILOT_PLANNING_COMPLETION_2026-06-03.md",
+      "packetPath": "docs/reviews/CVF_LPCI2_T4S_POLICYLOCAL_DATA_INPUT_SMOKE_TEST_COMPLETION_2026-06-04.md",
+      "completionReviewPath": "docs/reviews/CVF_LPCI2_T4S_POLICYLOCAL_DATA_INPUT_SMOKE_TEST_COMPLETION_2026-06-04.md",
       "gcBaselineRef": null,
       "productionUse": true,
       "language": "vi",
       "jurisdiction": "operator-selected",
       "verdicts": {
-        "gc047": "NOT_RUN",
+        "gc047": "PARTIAL",
         "gc048": "NOT_RUN",
         "gc050": "NOT_RUN"
       },
       "semanticRegions": [
         "LEGAL_POLICY_CORPUS",
-        "POLICYLOCAL_RUNTIME_INPUT"
+        "POLICYLOCAL_RUNTIME_INPUT",
+        "HASH_ONLY_IMPORT_SMOKE"
       ],
-      "priorAbsorption": "None — drop-zone registered before real corpus import; LPCI2-T3 is planning only.",
-      "findings": [],
+      "priorAbsorption": "LPCI2-T4S hash-only smoke test: two DOCX files in data_input hashed and normalized; no text extraction or legal classification yet.",
+      "findings": [
+        {
+          "id": "T4S-F1-docx-text-extraction-deferred",
+          "summary": "PolicyLocal data_input smoke test hashed two DOCX files, but text extraction and legal/policy domain classification are deferred.",
+          "disposition": "DEFER_PHASED",
+          "nextAction": "Open bounded T4 import/classification tranche to extract DOCX text, populate domain fields, run GC-047/GC-050, and only then enable search/chat runtime.",
+          "defectClass": "RUNTIME_SIGNAL_GAP",
+          "learningLane": "RUNTIME_BEHAVIOR_LEARNING",
+          "f2gRef": "docs/reviews/CVF_LPCI2_T4S_POLICYLOCAL_DATA_INPUT_SMOKE_TEST_COMPLETION_2026-06-04.md#finding-to-governance-learning-disposition",
+          "workOrderRef": "future LPCI2-T4 import/classification work order"
+        }
+      ],
       "negativeSearchTerms": [
-        "production legal/policy files under Policy_Local/uploads (none present at T3 planning time)"
+        "data_input text extraction output (not produced in T4S smoke test)",
+        "DIRECT_CITED_ANSWER from 116_2025_QH15_666020.docx or 148_2025_QH15_675262.docx (blocked; hash-only records use ESCALATE_OR_ABSTAIN)"
       ],
-      "nextScanRecommendation": "After operator places real legal/policy files in the drop-zone, open LPCI2-T4/G2 import tranche to enumerate files, compute per-file SHA-256 sourceHash, apply NR-05 normalizedPath, run GC-047/GC-050, and sample before chat runtime.",
+      "nextScanRecommendation": "Proceed to bounded LPCI2-T4 import/classification: extract DOCX text locally, compute/verify sourceHash, apply NR-05 normalizedPath, fill legal/policy domain fields, run GC-047/GC-050, then sample before search/chat runtime.",
       "hashAlgorithm": null,
       "hashInput": null
     }

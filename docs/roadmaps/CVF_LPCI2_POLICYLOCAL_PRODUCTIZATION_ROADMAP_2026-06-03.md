@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: T3_CLOSED_PASS_BOUNDED
+Status: T4S_CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -49,7 +49,9 @@ workspace.
 | LPCI2-T2 | Product scaffold readiness decision | review Claude-built local prototype and decide scaffold readiness | CLOSED_PASS_BOUNDED |
 | LPCI2-T2A | Prototype schema cleanup | fix T2 answer-class, citation, receipt, and local validation blockers in the Policy_Local prototype | CLOSED_PASS_BOUNDED |
 | LPCI2-T3 | Production-corpus pilot planning | define first real corpus, GC-051 registration, legal/policy domain fields, and sampling plan | CLOSED_PASS_BOUNDED |
-| LPCI2-T4 | Local runtime implementation | implement bounded local app only after T2A/T3 decision | PROPOSED_IMPORT_FIRST_OR_SCAFFOLD_ONLY |
+| LPCI2-T4S | Data input smoke test | rename local folder to `data_input`, hash two DOCX files, and record hash-only boundary | CLOSED_PASS_BOUNDED |
+| LPCI2-T4 | Local import/classification | extract DOCX text, populate legal/policy fields, and run GC-047/GC-050 before search/chat | HOLD_UNTIL_T4_IMPORT_CLASSIFICATION_WORK_ORDER |
+| LPCI2-T5 | Local runtime implementation | implement bounded local app only after import/classification evidence exists | HOLD_UNTIL_T4_PASS |
 
 ## Work Plan
 
@@ -59,7 +61,9 @@ workspace.
 | W2 | Decide scaffold readiness | prototype accepted as visual reference with schema blockers before runtime scaffold | CLOSED_PASS_BOUNDED |
 | W2A | Clean prototype schema blockers | canonical answer classes, citation minimum, receipt boundary, and validator added | CLOSED_PASS_BOUNDED |
 | W3 | Plan production-corpus pilot | GC-051 drop-zone registration plus T3 pilot plan | CLOSED_PASS_BOUNDED |
-| W4 | Implement bounded local runtime | future T4 app implementation | PROPOSED_IMPORT_FIRST_OR_SCAFFOLD_ONLY |
+| W4S | Smoke-test data input | two DOCX files hashed with no text extraction claim | CLOSED_PASS_BOUNDED |
+| W4 | Import and classify local corpus | future DOCX extraction and legal/policy classification | HOLD_UNTIL_T4_IMPORT_CLASSIFICATION_WORK_ORDER |
+| W5 | Implement bounded local runtime | future app implementation after import/classification | HOLD_UNTIL_T4_PASS |
 
 ## Decision
 
@@ -68,7 +72,10 @@ PolicyLocal prototype files and accepted them as visual/product reference only.
 LPCI2-T2A repaired the concrete schema blockers in the local `Policy_Local`
 prototype while preserving the no-runtime/no-chatbot boundary. LPCI2-T3
 registered the production-corpus drop-zone and defined the import, domain,
-search, and sampling gates required before real chat runtime.
+search, and sampling gates required before real chat runtime. LPCI2-T4S renamed
+the local-first corpus folder to `data_input` and proved two DOCX files can be
+enumerated, normalized, and hashed, while keeping text extraction and answer
+runtime blocked.
 
 ## Acceptance Criteria
 
@@ -82,6 +89,7 @@ search, and sampling gates required before real chat runtime.
 | Prototype readiness classified | T2 review separates visual acceptance from runtime blockers |
 | Prototype schema cleaned | T2A adds canonical answer-class constants, citation fields, receipt boundary fields, and validator |
 | Production corpus pilot planned | T3 registers a GC-051 drop-zone and defines import/sampling release gates |
+| Data input smoke-tested | T4S proves hash-only local file detection and records DOCX extraction as deferred |
 
 ## Verification Evidence
 
@@ -105,6 +113,11 @@ search, and sampling gates required before real chat runtime.
 | T3 completion review | `docs/reviews/CVF_LPCI2_T3_POLICYLOCAL_PRODUCTION_CORPUS_PILOT_PLANNING_COMPLETION_2026-06-03.md` |
 | T3 session sync authorization | `docs/reviews/CVF_LPCI2_T3_SESSION_SYNC_AUTH_2026-06-03.md` |
 | T3 GC-051 registry entry | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` entry `policylocal-production-corpus-dropzone` |
+| T4S work order | `docs/work_orders/CVF_WO_LPCI2_T4S_POLICYLOCAL_DATA_INPUT_SMOKE_TEST_2026-06-04.md` |
+| T4S completion review | `docs/reviews/CVF_LPCI2_T4S_POLICYLOCAL_DATA_INPUT_SMOKE_TEST_COMPLETION_2026-06-04.md` |
+| T4S session sync authorization | `docs/reviews/CVF_LPCI2_T4S_SESSION_SYNC_AUTH_2026-06-04.md` |
+| T4S workspace completion note | `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\CODEX_POLICYLOCAL_DATA_INPUT_SMOKE_TEST_COMPLETION_2026-06-04.md` |
+| T4S local manifest | `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-data-input-manifest.json` |
 
 ## Non-Goals
 
@@ -120,11 +133,12 @@ search, and sampling gates required before real chat runtime.
 This roadmap claims that LPCI2-T1 created a reusable build control packet,
 LPCI2-T2 reviewed the local frontend prototype as visual/product reference,
 LPCI2-T2A cleaned the concrete prototype schema blockers with local validation,
-and LPCI2-T3 registered the production-corpus drop-zone plus pilot release
-gates.
+LPCI2-T3 registered the production-corpus drop-zone plus pilot release gates,
+and LPCI2-T4S smoke-tested one local DOCX through hash-only intake.
 
-It does not claim runtime implementation, production corpus readiness, legal
-answer correctness, hosted readiness, or public export.
+It does not claim DOCX text extraction, legal/policy classification, runtime
+implementation, production corpus readiness, legal answer correctness, hosted
+readiness, or public export.
 
 ## Finding-To-Governance Learning Disposition
 
@@ -138,9 +152,8 @@ Disposition: `TEMPLATE_UPDATED` - LPCI2-T2A adds a local prototype validator and
 records that future PolicyLocal scaffold work must include schema fixture
 validation before chat runtime is accepted.
 
-Next control action: `CLOSED` for T1-T3; T4 runtime implementation may be
-opened only as import-first with real corpus files or scaffold-only with no
-corpus/chat answer claims.
+Next control action: `CLOSED` for T1-T4S; T4 import/classification is the next
+bounded tranche and must not start chat runtime.
 
 Runtime/provider/cost learning: `N/A_WITH_REASON`
 

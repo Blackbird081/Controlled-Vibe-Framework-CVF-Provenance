@@ -23,7 +23,7 @@ legal/policy corpus proof.
 ## Scope / Target / Owner Boundary
 
 Target: PolicyLocal production corpus planning for
-`D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\uploads\`.
+`D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data_input\`.
 
 Owner boundary: Codex holds orchestrator, worker, reviewer, and closer roles
 for this bounded planning tranche. This is planning and registry preparation
@@ -102,7 +102,7 @@ documents.
 | --- | --- |
 | `git rev-parse --short HEAD` | `6f1f6a95` |
 | `git status --short --branch` | clean before T3 edits |
-| PolicyLocal upload folder | exists but contains zero production files |
+| PolicyLocal data input folder | existed as empty drop-zone during T3 planning; renamed from `uploads` to `data_input` in T4S |
 | T2A validator | PASS before T3 planning |
 
 ## Write Ownership
@@ -146,7 +146,7 @@ Evidence must show:
 | --- | --- |
 | GC-051 production drop-zone entry added | PASS |
 | Pilot plan created | PASS |
-| Upload folder emptiness honestly recorded | PASS |
+| Data input folder boundary honestly recorded | PASS |
 | T4 release conditions tightened | PASS |
 | No runtime/provider/legal-answer claim made | PASS |
 

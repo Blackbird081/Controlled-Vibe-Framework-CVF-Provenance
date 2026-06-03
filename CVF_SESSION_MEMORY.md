@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-03
 
-Current mode marker: `lpci2_t3_policylocal_production_corpus_pilot_planning_closed_pass_bounded`
+Current mode marker: `lpci2_t4s_policylocal_data_input_smoke_test_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lpci2_t3_policylocal_production_corpus_pilot_planning_closed_pass_bounded`.
+Current mode: `lpci2_t4s_policylocal_data_input_smoke_test_closed_pass_bounded`.
 
 Active handoff:
 
@@ -607,7 +607,7 @@ Completion review:
 
 `docs/reviews/CVF_LPCI2_T3_POLICYLOCAL_PRODUCTION_CORPUS_PILOT_PLANNING_COMPLETION_2026-06-03.md`
 
-Boundary: `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\uploads\`
+Boundary: `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data_input\`
 exists but contained zero production files at planning time. T3 does not claim
 corpus import, per-file sourceHash proof, classification, index, provider call,
 chat runtime, legal answer correctness, latest-law status, hosted readiness,
@@ -616,6 +616,27 @@ production readiness, or public export.
 Next allowed move: LPCI2-T4 may open only as import-first if real corpus files
 are supplied under the registered drop-zone, or scaffold-only if no corpus/chat
 answer claims are made. Broad chat runtime remains blocked.
+
+LPCI2-T4S PolicyLocal Data Input Smoke Test is `CLOSED_PASS_BOUNDED`.
+The operator supplied local DOCX files and Codex renamed the local corpus folder
+from `uploads` to `data_input` for a clearer local-first privacy posture.
+
+Files:
+
+`D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data_input\116_2025_QH15_666020.docx`
+
+`D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data_input\148_2025_QH15_675262.docx`
+
+Smoke test:
+
+`node scripts/policylocal-import-smoke.mjs`
+
+Result: PASS, two files hashed. Manifest:
+
+`D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-data-input-manifest.json`
+
+Boundary: hash-only. DOCX text extraction, legal/policy classification, search,
+retrieval, provider call, and chat runtime remain blocked.
 
 Parked checkpoints:
 
