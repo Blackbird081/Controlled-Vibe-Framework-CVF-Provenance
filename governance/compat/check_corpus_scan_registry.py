@@ -158,6 +158,7 @@ def _get_changed_corpus_scan_files(base: str | None, head: str | None) -> list[s
         if (
             p.strip().startswith("docs/audits/") or p.strip().startswith("docs/reviews/")
         ) and p.strip().endswith(".md")
+        and "/archive/" not in p.strip().replace("\\", "/")
     ]
 
 

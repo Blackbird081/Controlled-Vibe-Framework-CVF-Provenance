@@ -96,6 +96,14 @@ Authorized guard-maintenance scope:
    includes files with Vietnamese characters (byte 0x9d) that cause a
    `UnicodeDecodeError` under the Windows cp1252 default encoding. This is a
    one-line encoding safety fix; no check logic is changed.
+3. Add skip-deleted-files guard and skip-archived-standard-file guard to
+   `governance/compat/check_work_order_dispatch_quality.py` so that staged
+   file deletions and archived governance standard files do not produce
+   false-positive dispatch quality violations.
+4. Add `/archive/` exclusion to `_get_changed_corpus_scan_files` in
+   `governance/compat/check_corpus_scan_registry.py` so that new archive
+   review files do not trigger corpus-scan-registry violations for historical
+   path references they contain.
 
 Protected paths:
 
@@ -104,6 +112,7 @@ Protected paths:
 - `docs/CVF_CORE_KNOWLEDGE_BASE.md`
 - `governance/compat/check_active_session_state.py`
 - `governance/compat/check_work_order_dispatch_quality.py`
+- `governance/compat/check_corpus_scan_registry.py`
 
 Operator authorization: This pointer correction is required to keep the
 active-session state checker COMPLIANT after the archive hygiene script
