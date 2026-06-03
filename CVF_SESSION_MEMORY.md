@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-03
 
-Current mode marker: `lpci1_t5_chatbot_prototype_dispatch_ready`
+Current mode marker: `lpci1_t5_chatbot_prototype_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lpci1_t5_chatbot_prototype_dispatch_ready`.
+Current mode: `lpci1_t5_chatbot_prototype_closed_pass_bounded`.
 
 Active handoff:
 
@@ -534,7 +534,7 @@ public-sync.
 
 `docs/work_orders/CVF_WO_LPCI1_T5_CHATBOT_PROTOTYPE_2026-06-03.md`
 
-Next allowed move: dispatch LPCI1-T5 work order to a worker for implementation.
+Next allowed move: author and dispatch LPCI1-T6 Adversarial Evaluation work order.
 Worker must read `docs/reference/CVF_LPCI1_T4_RETRIEVAL_BOUNDARY_SPEC_2026-06-03.md`
 first. T6/T7 remain HOLD until T5 implementation is reviewed and closed.
 
