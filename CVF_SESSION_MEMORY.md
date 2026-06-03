@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-04
 
-Current mode marker: `lpci2_t4_corpus_intelligence_import_classification_closed_pass_bounded`
+Current mode marker: `lpci2_t5_policylocal_deep_classification_dispatch_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lpci2_t4_corpus_intelligence_import_classification_closed_pass_bounded`.
+Current mode: `lpci2_t5_policylocal_deep_classification_dispatch_ready`.
 
 Active handoff:
 
@@ -654,10 +654,11 @@ documentType=law; status=amended; answerClass=SUMMARY_WITH_SOURCE per T2 matrix;
 effectiveDate=unknown (T4-F1, deferred to T5+). All 18 pre-implementation gates PASS.
 Operator-side closure committed the worker artifacts and registry update.
 
-Next allowed move: open a bounded LPCI2-T5+ deep classification work order.
-Do NOT open search/chat runtime until T5+ closes. PolicyLocal remains a test
-use case for CVF Corpus Intelligence foundation, not a production chatbot
-build lane.
+Next allowed move: execute LPCI2-T5 deep classification work order
+`docs/work_orders/CVF_WO_LPCI2_T5_POLICYLOCAL_DEEP_CLASSIFICATION_2026-06-04.md`.
+Scope: full-body effectiveDate scan, GC-048 knowledge-map reconciliation,
+adversarial sampling. WORKER_MUST_NOT_COMMIT. Do NOT open search/chat runtime
+until T5 closes and a separate readiness gate work order passes.
 
 Parked checkpoints:
 

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: T4S_CLOSED_PASS_BOUNDED
+Status: T5_DISPATCH_READY
 
 docType: roadmap
 
@@ -64,8 +64,8 @@ retrieval without overclaiming.
 | LPCI2-T2A | Prototype schema cleanup | fix T2 answer-class, citation, receipt, and local validation blockers in the Policy_Local prototype | CLOSED_PASS_BOUNDED |
 | LPCI2-T3 | Production-corpus pilot planning | define first real corpus, GC-051 registration, legal/policy domain fields, and sampling plan | CLOSED_PASS_BOUNDED |
 | LPCI2-T4S | Data input smoke test | rename local folder to `data_input`, hash two DOCX files, and record hash-only boundary | CLOSED_PASS_BOUNDED |
-| LPCI2-T4 | Corpus Intelligence import/classification evidence | extract DOCX text locally, populate legal/policy fields, and run GC-047/GC-050 without search/chat | DISPATCH_READY |
-| LPCI2-T5 | Runtime/product checkpoint | decide whether PolicyLocal should become an app only after T4 evidence plus legacy/memory absorption checkpoint | HOLD_UNTIL_T4_AND_MEMORY_CHECKPOINT |
+| LPCI2-T4 | Corpus Intelligence import/classification evidence | extract DOCX text locally, populate legal/policy fields, and run GC-047/GC-050 without search/chat | CLOSED_PASS_BOUNDED |
+| LPCI2-T5 | Deep classification evidence | full-body effectiveDate scan, GC-048 knowledge-map reconciliation, adversarial sampling | DISPATCH_READY |
 
 ## Work Plan
 
@@ -76,8 +76,8 @@ retrieval without overclaiming.
 | W2A | Clean prototype schema blockers | canonical answer classes, citation minimum, receipt boundary, and validator added | CLOSED_PASS_BOUNDED |
 | W3 | Plan production-corpus pilot | GC-051 drop-zone registration plus T3 pilot plan | CLOSED_PASS_BOUNDED |
 | W4S | Smoke-test data input | two DOCX files hashed with no text extraction claim | CLOSED_PASS_BOUNDED |
-| W4 | Import and classify local corpus | DOCX extraction and legal/policy classification evidence | DISPATCH_READY |
-| W5 | Runtime/product checkpoint | future app decision after import/classification and memory/legacy readiness checkpoint | HOLD_UNTIL_T4_AND_MEMORY_CHECKPOINT |
+| W4 | Import and classify local corpus | DOCX extraction and legal/policy classification evidence | CLOSED_PASS_BOUNDED |
+| W5 | Deep classification and knowledge-map reconciliation | full-body effectiveDate scan, GC-048, adversarial sampling | DISPATCH_READY |
 
 ## Decision
 
@@ -89,8 +89,10 @@ registered the pilot corpus drop-zone and defined the import, domain,
 search, and sampling gates required before real chat runtime. LPCI2-T4S renamed
 the local-first corpus folder to `data_input` and proved two DOCX files can be
 enumerated, normalized, and hashed, while keeping text extraction and answer
-runtime blocked. LPCI2-T4 is now ready only as Corpus Intelligence evidence
-work, not as product chatbot implementation.
+runtime blocked. LPCI2-T4 is CLOSED_PASS_BOUNDED at commit `212d6adf`. LPCI2-T5 is DISPATCH_READY
+as deep-classification evidence: full-body effectiveDate scan, GC-048
+knowledge-map reconciliation, and adversarial sampling. Search/chat/runtime
+remains blocked until T5 closes and a separate readiness gate work order passes.
 
 ## Acceptance Criteria
 
@@ -135,6 +137,8 @@ work, not as product chatbot implementation.
 | T4S workspace completion note | `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\CODEX_POLICYLOCAL_DATA_INPUT_SMOKE_TEST_COMPLETION_2026-06-04.md` |
 | T4S local manifest | `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-data-input-manifest.json` |
 | T4 work order | `docs/work_orders/CVF_WO_LPCI2_T4_CORPUS_INTELLIGENCE_IMPORT_CLASSIFICATION_EVIDENCE_2026-06-04.md` |
+| T4 completion review | `docs/reviews/CVF_LPCI2_T4_CORPUS_INTELLIGENCE_IMPORT_CLASSIFICATION_EVIDENCE_COMPLETION_2026-06-04.md` |
+| T5 work order | `docs/work_orders/CVF_WO_LPCI2_T5_POLICYLOCAL_DEEP_CLASSIFICATION_2026-06-04.md` |
 
 ## Non-Goals
 
@@ -155,9 +159,13 @@ LPCI2-T2A cleaned the concrete prototype schema blockers with local validation,
 LPCI2-T3 registered the production-corpus drop-zone plus pilot release gates,
 and LPCI2-T4S smoke-tested two local DOCX files through hash-only intake.
 
-It does not claim DOCX text extraction, legal/policy classification, runtime
-implementation, chatbot product readiness, production corpus readiness, legal
-answer correctness, hosted readiness, or public export.
+LPCI2-T4 claims DOCX text extraction (READ_SHALLOW), conservative legal/policy
+classification (answerClass=SUMMARY_WITH_SOURCE), and GC-051 registry update.
+LPCI2-T5 is dispatch-authorized for deep classification, GC-048, and adversarial
+sampling evidence.
+
+It does not claim runtime implementation, chatbot product readiness, production
+corpus readiness, legal answer correctness, hosted readiness, or public export.
 
 ## Finding-To-Governance Learning Disposition
 
@@ -171,9 +179,9 @@ Disposition: `TEMPLATE_UPDATED` - LPCI2-T2A adds a local prototype validator and
 records that future PolicyLocal scaffold work must include schema fixture
 validation before chat runtime is accepted.
 
-Next control action: `DISPATCH_READY` for T4 Corpus Intelligence
-import/classification evidence. T4 must not start search, chat runtime, or
-product implementation.
+Next control action: `DISPATCH_READY` for T5 deep classification. T5 must not
+start search, chat runtime, or product implementation. Readiness gate is a
+separate work order after T5 closes.
 
 Runtime/provider/cost learning: `N/A_WITH_REASON`
 
