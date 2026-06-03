@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-03
 
-Current mode marker: `lpci1_t7_template_packaging_closed_pass_bounded`
+Current mode marker: `lpci2_t1_policylocal_build_control_packet_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lpci1_t7_template_packaging_closed_pass_bounded`.
+Current mode: `lpci2_t1_policylocal_build_control_packet_closed_pass_bounded`.
 
 Active handoff:
 
@@ -540,9 +540,23 @@ Vietnamese Stage 3 diacritic normalization, and C4/C5 test corpus design.
 
 `docs/reviews/CVF_LPCI1_T7_TEMPLATE_PACKAGING_COMPLETION_2026-06-03.md`
 
-Next allowed move: choose a fresh post-LPCI1 roadmap: sanitized public-facing
-LPCI workspace guide, production-corpus pilot planning, or another operator
-priority with a new work order.
+LPCI2-T1 PolicyLocal Build Control Packet is `CLOSED_PASS_BOUNDED`. Codex held
+orchestrator, worker, and reviewer roles per operator instruction; no external
+worker handoff was dispatched. It created the post-LPCI1 productization roadmap,
+self-execution work order, repo build-control packet, completion review, and
+workspace copy:
+
+`docs/reference/CVF_LPCI2_POLICYLOCAL_BUILD_CONTROL_PACKET_2026-06-03.md`
+
+Workspace copy:
+
+`D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\PolicyLocal\CVF_POLICYLOCAL_BUILD_CONTROL_PACKET_2026-06-03.md`
+
+Next allowed move: choose LPCI2-T2 product scaffold readiness decision or
+LPCI2-T3 production-corpus pilot planning. Do not jump directly to broad chat
+runtime; future app work must preserve the PolicyLocal build gate order
+G1 scaffold -> G2 import -> G3 search -> G4 receipt -> G5 chat -> G6
+adversarial.
 
 Parked checkpoints:
 

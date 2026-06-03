@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `15baeaa3` (parent: `0c16db92`). Updated 2026-06-03 after LPCI1-T7 closure commit; mode is lpci1_t7_template_packaging_closed_pass_bounded; T6 CLOSED_PASS_BOUNDED and T7 Template Packaging CLOSED_PASS_BOUNDED; T7 provides downstream workspace guide, corpus intake template, readiness checklist, Vietnamese Stage 3 diacritic normalization, and C4/C5 test corpus design; next allowed move is choose a fresh post-LPCI1 roadmap with a new work order.
+Current HEAD recorded for this handoff: `3ff90651` (parent: `15baeaa3`). Updated 2026-06-03 before LPCI2-T1 self-execution commit; mode is lpci2_t1_policylocal_build_control_packet_closed_pass_bounded; LPCI1-T7 is CLOSED_PASS_BOUNDED; LPCI2-T1 creates the PolicyLocal build control packet in the repo and local PolicyLocal workspace; next allowed move is choose LPCI2-T2 product scaffold readiness decision or LPCI2-T3 production-corpus pilot planning without external worker delegation unless the operator reopens it.
 
 ## Latest Work / Changes (2026-05-30)
 
