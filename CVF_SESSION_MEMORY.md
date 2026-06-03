@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-03
 
-Current mode marker: `lpci1_t5_chatbot_prototype_closed_pass_bounded`
+Current mode marker: `lpci1_t6_adversarial_evaluation_dispatch_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lpci1_t5_chatbot_prototype_closed_pass_bounded`.
+Current mode: `lpci1_t6_adversarial_evaluation_dispatch_ready`.
 
 Active handoff:
 
@@ -518,27 +518,27 @@ completion review:
 
 `docs/reviews/CVF_LPCI1_T4_RETRIEVAL_BOUNDARY_COMPLETION_2026-06-03.md`
 
-LPCI1-T5 Chatbot Prototype work order is `DISPATCH_READY` at commit `2b104059`.
-This is the first runtime tranche for LPCI1. It implements:
+LPCI1-T5 Chatbot Prototype is `CLOSED_PASS_BOUNDED` at commit `47519c15`.
+Implements POST /api/lpci/query, POST /api/lpci/intake,
+GET /api/lpci/corpus/:id/status, /lpci dashboard, src/lib/lpci/ modules.
+Tests: 37/37 PASS. Build: PASS. Live proof 6/6 PASS (receipt
+`lpci1-t5-live-2026-06-03-6tests`, OpenAI gpt-4o-mini). C1–C9 satisfied.
 
-- `POST /api/lpci/query` — five-stage T3 filter + Phase 2 answer assembly + AuditReceipt;
-- `POST /api/lpci/intake` — manifest-driven corpus intake with NR-04/NR-05 enforcement;
-- `GET /api/lpci/corpus/:corpusId/status` — GC-051 registry status;
-- `/lpci` dashboard page — corpus selector, query, response panel with boundary badge;
-- `src/lib/lpci/` library modules — types, filter-pipeline, retrieval, audit-receipt.
+`docs/reviews/CVF_LPCI1_T5_CHATBOT_PROTOTYPE_COMPLETION_2026-06-03.md`
 
-T4 response boundary contract C1–C9 must be satisfied. AuditReceipt emitted per
-query. LLM key from `LPCI_LLM_API_KEY`; `NO_PROVIDER_CONFIGURED` receipt when
-absent. No production corpus, vector DB, embeddings, legal advice claims, or
-public-sync.
+LPCI1-T6 Adversarial Evaluation work order is `DISPATCH_READY` at commit
+`a5f70327`. Evaluation protocol: ≥5 DIRECT_CITED_ANSWER checks, ≥5
+PROCEDURAL_GUIDANCE checks, ≥3 ESCALATE_OR_ABSTAIN/superseded checks, ≥5
+false-direct-answer audit checks (total ≥18). Pilot corpus:
+`GOVERNANCE_PILOT_NO_LEGAL_CORPUS` (4 records). T7 remains HOLD until T6
+review closes.
 
-`docs/work_orders/CVF_WO_LPCI1_T5_CHATBOT_PROTOTYPE_2026-06-03.md`
+`docs/work_orders/CVF_WO_LPCI1_T6_ADVERSARIAL_EVALUATION_2026-06-03.md`
 
-Next allowed move: author and dispatch LPCI1-T6 Adversarial Evaluation work order.
-Worker must read `docs/reference/CVF_LPCI1_T4_RETRIEVAL_BOUNDARY_SPEC_2026-06-03.md`
-first. T6/T7 remain HOLD until T5 implementation is reviewed and closed.
-
-LPCI chatbot/runtime implementation is explicitly authorized for T5 scope only.
+Next allowed move: execute LPCI1-T6 adversarial evaluation. Run ≥18 structured
+queries against `GOVERNANCE_PILOT_NO_LEGAL_CORPUS`, record per-check
+AuditReceipts and boundary verdicts, author evaluation report and completion
+review. No new source code. Commit mode: WORKER_MUST_NOT_COMMIT.
 
 Parked checkpoints:
 

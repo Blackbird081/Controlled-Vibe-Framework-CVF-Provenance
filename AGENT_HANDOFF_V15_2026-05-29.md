@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `a9bbbcd3` (parent: `54d4867c`). Updated 2026-06-03 after LPCI1-T5 reviewer hardening; mode is lpci1_t5_chatbot_prototype_closed_pass_bounded; live proof 6/6 PASS; reviewer fix hardened NOT_REGISTERED AuditReceipt emission, intake corpusRoot/path boundary, and removed repo-level scratch artifact ignores; next allowed move is author and dispatch LPCI1-T6 Adversarial Evaluation work order.
+Current HEAD recorded for this handoff: `a5f70327` (parent: `f5f111fd`). Updated 2026-06-03 after LPCI1-T6 work order dispatch; mode is lpci1_t6_adversarial_evaluation_dispatch_ready; T5 CLOSED_PASS_BOUNDED (live proof 6/6 PASS, receipt lpci1-t5-live-2026-06-03-6tests); T6 DISPATCH_READY with >=18 check evaluation protocol against GOVERNANCE_PILOT_NO_LEGAL_CORPUS; T7 HOLD until T6 review closes.
 
 ## Latest Work / Changes (2026-05-30)
 
