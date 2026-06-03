@@ -4,7 +4,7 @@
   "guard": "governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md",
   "checker": "governance/compat/check_corpus_scan_registry.py",
   "lastUpdated": "2026-06-03",
-  "updatedBy": "LPCI1-T5 live test setup",
+  "updatedBy": "LPCI2-T3 production-corpus pilot planning",
   "allowedCorpusTypes": [
     "LEGACY_FOLDER",
     "PROJECT_SOURCE",
@@ -464,6 +464,43 @@
         "real jurisdiction documents (not present — synthetic records only)",
         "vector embeddings (not produced — keyword search prototype only)"
       ]
+    },
+    {
+      "id": "policylocal-production-corpus-dropzone",
+      "corpusType": "POLICY_DOCUMENT",
+      "displayName": "PolicyLocal Production Corpus Drop-Zone",
+      "scopePaths": [
+        "D:/UNG DUNG AI/TOOL AI 2026/CVF-Workspace/Policy_Local/uploads/"
+      ],
+      "fileCount": 0,
+      "status": "NOT_STARTED",
+      "scanWave": "LPCI2-T3",
+      "scanDate": null,
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reference/CVF_LPCI2_T3_POLICYLOCAL_PRODUCTION_CORPUS_PILOT_PLAN_2026-06-03.md",
+      "completionReviewPath": "docs/reviews/CVF_LPCI2_T3_POLICYLOCAL_PRODUCTION_CORPUS_PILOT_PLANNING_COMPLETION_2026-06-03.md",
+      "gcBaselineRef": null,
+      "productionUse": true,
+      "language": "vi",
+      "jurisdiction": "operator-selected",
+      "verdicts": {
+        "gc047": "NOT_RUN",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "LEGAL_POLICY_CORPUS",
+        "POLICYLOCAL_RUNTIME_INPUT"
+      ],
+      "priorAbsorption": "None — drop-zone registered before real corpus import; LPCI2-T3 is planning only.",
+      "findings": [],
+      "negativeSearchTerms": [
+        "production legal/policy files under Policy_Local/uploads (none present at T3 planning time)"
+      ],
+      "nextScanRecommendation": "After operator places real legal/policy files in the drop-zone, open LPCI2-T4/G2 import tranche to enumerate files, compute per-file SHA-256 sourceHash, apply NR-05 normalizedPath, run GC-047/GC-050, and sample before chat runtime.",
+      "hashAlgorithm": null,
+      "hashInput": null
     }
   ]
 }

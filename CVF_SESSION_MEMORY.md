@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-03
 
-Current mode marker: `lpci2_t2a_policylocal_prototype_schema_cleanup_closed_pass_bounded`
+Current mode marker: `lpci2_t3_policylocal_production_corpus_pilot_planning_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lpci2_t2a_policylocal_prototype_schema_cleanup_closed_pass_bounded`.
+Current mode: `lpci2_t3_policylocal_production_corpus_pilot_planning_closed_pass_bounded`.
 
 Active handoff:
 
@@ -595,6 +595,27 @@ claimed.
 Next allowed move: LPCI2-T3 production-corpus pilot planning or a bounded
 scaffold-readiness packet. Broad chat runtime remains blocked until import,
 search, citation, and receipt gates pass with real corpus evidence.
+
+LPCI2-T3 PolicyLocal Production Corpus Pilot Planning is
+`CLOSED_PASS_BOUNDED`. Codex registered the PolicyLocal upload drop-zone in
+GC-051 as `policylocal-production-corpus-dropzone` with `status=NOT_STARTED`
+and created the pilot plan:
+
+`docs/reference/CVF_LPCI2_T3_POLICYLOCAL_PRODUCTION_CORPUS_PILOT_PLAN_2026-06-03.md`
+
+Completion review:
+
+`docs/reviews/CVF_LPCI2_T3_POLICYLOCAL_PRODUCTION_CORPUS_PILOT_PLANNING_COMPLETION_2026-06-03.md`
+
+Boundary: `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\uploads\`
+exists but contained zero production files at planning time. T3 does not claim
+corpus import, per-file sourceHash proof, classification, index, provider call,
+chat runtime, legal answer correctness, latest-law status, hosted readiness,
+production readiness, or public export.
+
+Next allowed move: LPCI2-T4 may open only as import-first if real corpus files
+are supplied under the registered drop-zone, or scaffold-only if no corpus/chat
+answer claims are made. Broad chat runtime remains blocked.
 
 Parked checkpoints:
 
