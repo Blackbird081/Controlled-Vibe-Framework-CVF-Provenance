@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-04
 
-Current mode marker: `lpci2_t5_policylocal_deep_classification_closed_pass_bounded`
+Current mode marker: `lpci2_t6_search_chat_readiness_gate_dispatch_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lpci2_t5_policylocal_deep_classification_closed_pass_bounded`.
+Current mode: `lpci2_t6_search_chat_readiness_gate_dispatch_ready`.
 
 Active handoff:
 
@@ -252,6 +252,16 @@ Finish absorption of remaining `PARTIALLY_ABSORBED` LH1 connector value before
 opening separate live-proof roadmaps.
 
 ## Next Allowed Move
+
+LPCI2-T6 Search/Chat Readiness Gate is `DISPATCH_READY`:
+
+`docs/work_orders/CVF_WO_LPCI2_T6_SEARCH_CHAT_READINESS_GATE_2026-06-04.md`
+
+T6 is a bounded five-gate readiness review against T4+T5 PolicyLocal corpus
+evidence. It must produce a readiness verdict and gap register only. Search,
+chat, vector store, embedding, provider, runtime, hosted, product, and
+public-sync work remain blocked until T6 closes and the operator explicitly
+authorizes the next implementation work order.
 
 LHW24 is the latest closed LHW wave. LHW22-LHW24 agent-intelligence absorption
 is CLOSED_PASS_BOUNDED at the documentation-only advisory boundary:
@@ -657,8 +667,22 @@ Operator-side closure committed the worker artifacts and registry update.
 LPCI2-T5 CLOSED_PASS_BOUNDED (closureBaseHead=53b2bac4; executionBaseHead=408cbfcf):
 effectiveDate=2026-07-01 confirmed for both DOCX files, GC-048 RECONCILED_VERIFIED,
 adversarial sampling 4/4 PASS.
-Next allowed move: open bounded search/chat readiness gate work order.
-Do NOT open search/chat runtime until that readiness gate closes.
+
+LPCI2-T6 Search/Chat Readiness Gate is DISPATCH_READY (dispatchBaseHead=802ec7f3).
+Work order:
+
+`docs/work_orders/CVF_WO_LPCI2_T6_SEARCH_CHAT_READINESS_GATE_2026-06-04.md`
+
+T6 executes a five-gate readiness evaluation against T4+T5 corpus evidence and
+produces a readiness verdict (READY/NOT_READY/READY_WITH_CONDITIONS) plus a
+missing-capability gap register. Expected verdict: NOT_READY or
+READY_WITH_CONDITIONS given absent query receipt model, faceted index schema,
+and derived view trace to any retrieval layer. No runtime implementation in T6.
+Operator checkpoint required before any search/chat implementation opens after
+T6 closes.
+
+Do NOT open search/chat runtime or any implementation work until T6 closes and
+operator authorizes.
 
 Parked checkpoints:
 

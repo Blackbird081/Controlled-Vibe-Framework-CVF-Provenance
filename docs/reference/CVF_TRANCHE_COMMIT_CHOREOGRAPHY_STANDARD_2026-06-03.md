@@ -65,6 +65,7 @@ vulnerable to range bleed from archive or session commits.
 | Session sync is a three-surface continuity update | Mode and next-move changes must update `ACTIVE_SESSION_STATE.json`, `CVF_SESSION_MEMORY.md`, and active handoff context together; then a dedicated handoff-sync commit records the final HEAD or accepted parent marker. |
 | Hook chain fail-fast hides later defects | Treat each failure as a cascade layer: fix the first failing gate, rerun the same gate locally, then rerun the full autorun/hook chain before claiming readiness. |
 | `WORKER_MUST_NOT_COMMIT` packets let workers author completion reviews | Workers may return pending handoff/evaluation artifacts; completion review is reviewer / committer owned unless the packet explicitly changes role and commit mode before dispatch. |
+| Strict manual commit choreography creates reviewer friction | Use the conservative helper `scripts/cvf_commit_tranche.py` when possible; it commits only the staged artifact batch, writes the active handoff parent marker, creates a handoff-only sync commit, and reruns pre-closure. |
 
 ---
 
@@ -172,6 +173,33 @@ a dedicated handoff-sync-only commit. That commit must modify only the active
 handoff file unless a new handoff version is being opened under its own
 handoff-transition rules.
 
+### Step 4A - Optional Commit Helper
+
+Reviewer / committer may use the conservative helper:
+
+```powershell
+python scripts/cvf_commit_tranche.py --base <closureBaseHead> --message "<artifact commit message>" --handoff-summary "<bounded summary>" --execute
+```
+
+Helper contract:
+
+- dry-run is the default; `--execute` is required before any commit is made;
+- the helper commits only files already staged before invocation;
+- it does not run `git add .`, does not push, and does not bypass hooks;
+- by default, unstaged or untracked files stop the helper before commit;
+- `--allow-unstaged` is permitted only when the reviewer intentionally leaves
+  inspection-only residual files outside the staged artifact batch;
+- after the artifact commit, the helper updates only the active handoff HEAD
+  marker and refuses the handoff-sync commit if any other file is staged;
+- the helper runs the `pre-closure` autorun gate against `--base
+  <closureBaseHead>` unless `--skip-preclosure` is explicitly supplied for a
+  separately documented gate run.
+
+Use the helper to reduce operator friction, not to widen commit scope. If the
+artifact batch needs session-state updates, protected-path authorization, or
+large-scope authorization, those files must be staged intentionally before the
+helper runs and must still satisfy the same hook chain.
+
 ### Step 5 - Gate Cascade Discipline
 
 Governance checks may read different sources during a pending batch:
@@ -210,6 +238,7 @@ section in the same guard-maintenance batch.
 | Finding-To-Governance lanes | `GOVERNANCE_CONTROL_PLANE`, `RUNTIME_BEHAVIOR_LEARNING`, `PROVIDER_OUTPUT_LEARNING`, `COST_ECONOMICS_LEARNING`, `DOCUMENTATION_ONLY_LEARNING` | One lane is required for finding-bearing artifacts unless an explicit checker-accepted exception applies. |
 | Finding-To-Governance dispositions | `RULE_EXISTS`, `RULE_ADDED`, `MACHINE_CHECK_ADDED`, `MACHINE_CHECK_CANDIDATE`, `PHASE_GATE_PLACEMENT_GAP`, `DESIGN_REVIEW_REQUIRED`, `RUNTIME_LEARNING_CANDIDATE`, `N/A_WITH_REASON`, `TEMPLATE_UPDATED`, `STANDARD_UPDATED`, `STANDARD_ADDED` | Repeated/systemic findings should prefer reusable-control dispositions. |
 | Markdown structural headings | plain `## Purpose`, `## Scope` or `## Applies To`, `## Claim Boundary`, and other checker-required headings | Avoid numbered headings such as `## 1. Purpose` in new governed reference/review/work-order artifacts unless the checker explicitly allows that type. |
+| Commit choreography helper | `scripts/cvf_commit_tranche.py` | Optional reviewer helper; commits staged artifact batch, writes active handoff parent marker, creates handoff-only sync commit, and reruns pre-closure. |
 | Source Verification disposition | `ACCEPT`, `REJECT`, `BLOCKED_SOURCE_NOT_FOUND` | `REQUIRED` is not a ready/dispatch disposition. |
 | Source Verification `Verified path or symbol` cell | field/path/symbol only, for example `rawMemoryReleased` | Do not include assignments or type annotations such as `rawMemoryReleased: false` or `canReinject: boolean`. |
 | `WORKER_MUST_NOT_COMMIT` completion boundary | worker handoff/evaluation artifact only; completion review owner must be Reviewer/committer | `check_work_order_dispatch_quality.py` blocks dispatch packets that assign completion review to Worker under `WORKER_MUST_NOT_COMMIT`. |
@@ -282,14 +311,17 @@ folding it into the checker implementation.
 | Stale dispatch base expanded closure ranges into unrelated commits | PHASE_GATE_PLACEMENT_GAP | GOVERNANCE_CONTROL_PLANE | TEMPLATE_UPDATED | Work orders must distinguish dispatch, execution, closure, and handoff-sync bases |
 | Repeated worker/orchestrator friction came from unstaged hook checks, hidden token requirements, `REQUIRED` placeholder misuse, session-sync coupling, and fail-fast cascades | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | STANDARD_UPDATED | Add gate cascade discipline and machine-token quick reference to this standard and the work-order template |
 | Worker role was allowed to author completion review in `WORKER_MUST_NOT_COMMIT` packets | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | Dispatch-quality gate now blocks worker-owned completion reviews unless role/commit mode changes before dispatch |
+| Commit closure remained too operator-heavy after rules were tightened | OPERATOR_SCOPE_CLARITY_GAP | GOVERNANCE_CONTROL_PLANE | STANDARD_UPDATED | Add optional staged-commit helper contract and `scripts/cvf_commit_tranche.py` |
 
 ---
 
 ## Claim Boundary
 
-This standard is an operational commit-sequencing rule. It does not implement a
-new machine checker, change runtime behavior, authorize public-sync, authorize
-LPCI runtime work, or guarantee semantic correctness of any worker output.
+This standard is an operational commit-sequencing rule. The helper script is a
+reviewer convenience for already-staged governed commits; it is not a worker
+commit waiver. This standard does not change runtime behavior, authorize
+public-sync, authorize LPCI runtime work, or guarantee semantic correctness of
+any worker output.
 
 ---
 

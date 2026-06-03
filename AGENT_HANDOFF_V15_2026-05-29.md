@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `90376aca` (docs(session): sync lpci2 t5 closure state). Updated 2026-06-04 after LPCI2-T5 closure/session sync; mode is `lpci2_t5_policylocal_deep_classification_closed_pass_bounded`; LPCI2-T5 CLOSED_PASS_BOUNDED; effectiveDate=2026-07-01 confirmed both DOCX files (P1_effective_clause); GC-048 RECONCILED_VERIFIED; adversarial sampling 4/4 PASS; executionBaseHead=408cbfcf; closureBaseHead=53b2bac4; search/chat/runtime/provider work remains blocked until a separate readiness gate work order opens and closes.
+Current HEAD recorded for this handoff: `802ec7f3` (LPCI2-T6 dispatch session sync). Updated 2026-06-04 after LPCI2-T6 readiness gate work order authored; mode is `lpci2_t6_search_chat_readiness_gate_dispatch_ready`; LPCI2-T5 CLOSED_PASS_BOUNDED (closureBaseHead=53b2bac4); LPCI2-T6 DISPATCH_READY (dispatchBaseHead=802ec7f3); work order `docs/work_orders/CVF_WO_LPCI2_T6_SEARCH_CHAT_READINESS_GATE_2026-06-04.md`; five-gate readiness evaluation; no runtime implementation; operator checkpoint required before search/chat implementation after T6 closes.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -585,8 +585,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci2_t5_policylocal_deep_classification_closed_pass_bounded`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=open bounded search/chat readiness gate work order; search/chat/runtime blocked until readiness gate closes;
+Startup acknowledged: current mode=`lpci2_t6_search_chat_readiness_gate_dispatch_ready`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=execute bounded LPCI2-T6 Search/Chat Readiness Gate work order; search/chat/runtime blocked until T6 closes and operator authorizes implementation;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: T5_CLOSED_PASS_BOUNDED
+Status: T6_DISPATCH_READY
 
 docType: roadmap
 
@@ -66,6 +66,7 @@ retrieval without overclaiming.
 | LPCI2-T4S | Data input smoke test | rename local folder to `data_input`, hash two DOCX files, and record hash-only boundary | CLOSED_PASS_BOUNDED |
 | LPCI2-T4 | Corpus Intelligence import/classification evidence | extract DOCX text locally, populate legal/policy fields, and run GC-047/GC-050 without search/chat | CLOSED_PASS_BOUNDED |
 | LPCI2-T5 | Deep classification evidence | full-body effectiveDate scan, GC-048 knowledge-map reconciliation, adversarial sampling | CLOSED_PASS_BOUNDED |
+| LPCI2-T6 | Search/chat readiness gate | five-gate readiness evaluation against T4+T5 evidence; produces readiness verdict and gap register; no runtime implementation | DISPATCH_READY |
 
 ## Work Plan
 
@@ -78,6 +79,7 @@ retrieval without overclaiming.
 | W4S | Smoke-test data input | two DOCX files hashed with no text extraction claim | CLOSED_PASS_BOUNDED |
 | W4 | Import and classify local corpus | DOCX extraction and legal/policy classification evidence | CLOSED_PASS_BOUNDED |
 | W5 | Deep classification and knowledge-map reconciliation | full-body effectiveDate scan, GC-048, adversarial sampling | CLOSED_PASS_BOUNDED |
+| W6 | Search/chat readiness gate | five-gate evaluation; readiness verdict and gap register | DISPATCH_READY |
 
 ## Decision
 
@@ -93,7 +95,10 @@ runtime blocked. LPCI2-T4 is CLOSED_PASS_BOUNDED at commit `212d6adf`. LPCI2-T5 
 (commit `53b2bac4`; executionBaseHead=408cbfcf): effectiveDate=2026-07-01 confirmed
 for both DOCX files via P1_effective_clause (Article 44 / Article 47); GC-048
 RECONCILED_VERIFIED; adversarial sampling 4/4 PASS. Search/chat/runtime
-remains blocked until a separate readiness gate work order opens and closes.
+remains blocked until the T6 readiness gate work order opens and closes.
+LPCI2-T6 Search/Chat Readiness Gate is DISPATCH_READY
+(commit `802ec7f3`; work order
+`docs/work_orders/CVF_WO_LPCI2_T6_SEARCH_CHAT_READINESS_GATE_2026-06-04.md`).
 
 ## Acceptance Criteria
 
@@ -145,6 +150,7 @@ remains blocked until a separate readiness gate work order opens and closes.
 | T5 corpus records (upgraded) | `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-corpus-records.json` |
 | T5 completion review | `docs/reviews/CVF_LPCI2_T5_POLICYLOCAL_DEEP_CLASSIFICATION_COMPLETION_2026-06-04.md` |
 | T5 local completion note | `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\CODEX_POLICYLOCAL_DEEP_CLASSIFICATION_COMPLETION_2026-06-04.md` |
+| T6 work order | `docs/work_orders/CVF_WO_LPCI2_T6_SEARCH_CHAT_READINESS_GATE_2026-06-04.md` |
 
 ## Non-Goals
 
@@ -169,6 +175,9 @@ LPCI2-T4 claims DOCX text extraction (READ_SHALLOW), conservative legal/policy
 classification (answerClass=SUMMARY_WITH_SOURCE), and GC-051 registry update.
 LPCI2-T5 is CLOSED_PASS_BOUNDED at commit `53b2bac4`: effectiveDate=2026-07-01
 confirmed for both files, GC-048 RECONCILED_VERIFIED, adversarial sampling 4/4 PASS.
+LPCI2-T6 is DISPATCH_READY at commit `802ec7f3`: five-gate search/chat readiness
+evaluation dispatched; work order
+`docs/work_orders/CVF_WO_LPCI2_T6_SEARCH_CHAT_READINESS_GATE_2026-06-04.md`.
 
 It does not claim runtime implementation, chatbot product readiness, production
 corpus readiness, legal answer correctness, hosted readiness, or public export.
