@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `7291f7af` (parent: `dd15ba39`). Session updated 2026-06-03: CI2-T1 CLOSED_PASS_BOUNDED; CI2-T2 now DISPATCH_READY; archive hygiene complete (LHW6-LHW11 archived); next allowed move is CI2-T2 packet normalization checkers dispatch.
+Current HEAD recorded for this handoff: `4840c1a2` (parent: `0fb6adc0`). Session updated 2026-06-03: CI2-T1 CLOSED_PASS_BOUNDED metadata and session state aligned; CI2-T2 remains DISPATCH_READY; next allowed move is CI2-T2 packet normalization checkers dispatch.
 
 ## Latest Work / Changes (2026-05-30)
 
