@@ -513,6 +513,15 @@ and documentation-only learning. A finding may close as `N/A with reason`, but
 it must not close as worker blame without saying whether CVF rule, guard, phase
 placement, runtime signal capture, or operator scope clarity also failed.
 
+Any repeated, future-agent, reusable, systemic, rule/template, guard,
+phase-gate, orchestration, or machine-check finding must be promoted into a
+reusable CVF control when feasible: `RULE_ADDED`, `TEMPLATE_UPDATED`,
+`STANDARD_ADDED`, `STANDARD_UPDATED`, `MACHINE_CHECK_ADDED`, or
+`MACHINE_CHECK_CANDIDATE`. This is the default CVF learning rule: fix once,
+reuse many times. Documentation-only closure is valid only with explicit
+`N/A_WITH_REASON` explaining why promotion is unsafe, impossible, or out of
+scope.
+
 Autorun and local hook chains must run this guard. A finding-bearing artifact
 without learning disposition blocks governed closure.
 
