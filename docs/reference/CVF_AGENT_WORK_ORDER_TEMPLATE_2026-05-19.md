@@ -112,6 +112,8 @@ Verification requirements:
   retrieval-boundary evidence with an honest machine-checked verdict.
 - GC-048 machine check:
   `governance/compat/check_corpus_to_knowledge_map_reconciliation.py`.
+- governed tranches must follow the commit choreography standard:
+  `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md`.
 
 The work order is invalid for execution if it does not name stop conditions.
 
@@ -558,6 +560,24 @@ Rules:
   returning the artifact.
 - do not treat `FAIL_EXPECTED_PENDING_FINALITY` as a closed-equivalent PASS;
   it is valid only for `WORKER_MUST_NOT_COMMIT` pending review handoff;
+
+## 6F. Commit Choreography
+
+Governed work orders must follow:
+
+`docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md`
+
+Required rules:
+
+- check archive hygiene before material tranche edits;
+- keep archive cleanup, artifact implementation, closure transition, session
+  state sync, and handoff sync in separate commits unless the work order
+  explicitly owns the combined scope;
+- stage large-scope authorization in the same commit as the large-scope diff;
+- capture `executionBaseHead` immediately before worker edits;
+- capture `closureBaseHead` immediately before reviewer closure commit;
+- expect a dedicated handoff-sync-only commit after material/session commits;
+- never use a stale dispatch base as closure proof after intervening commits.
 - record component-gate PASS separately from committed-range `pre-closure`
   PASS so a reviewer can see exactly which transition remains.
 
