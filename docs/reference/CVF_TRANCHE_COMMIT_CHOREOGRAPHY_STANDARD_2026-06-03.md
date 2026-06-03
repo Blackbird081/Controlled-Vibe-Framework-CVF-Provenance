@@ -59,6 +59,11 @@ vulnerable to range bleed from archive or session commits.
 | Session mode must exist in JSON and front door | Any mode/next-move change must update both `CVF_SESSION/ACTIVE_SESSION_STATE.json` and `CVF_SESSION_MEMORY.md` in the same authorized session commit. |
 | Handoff HEAD cannot be known before commit | Expect a dedicated handoff-sync-only commit after material/session commits. |
 | Next work order released from HOLD with stale prerequisite placeholders | Before marking the next work order READY/DISPATCH_READY, replace `REQUIRED` or `after closure` dependency rows with artifact path plus closure commit evidence, and refresh base anchors. |
+| Hook-chain checks read staged index while some component checkers read disk | Before running the local hook chain or simulating pre-commit, stage the intended files with `git add`; when testing pending worker artifacts, use working-tree-aware component gates and record pending status honestly. |
+| Checker token requirements are hidden in source code | Work orders and standards must expose exact machine tokens for common gates instead of requiring workers to reverse-engineer Python checkers. |
+| `REQUIRED` is human-readable but dispatch-blocking in ready packets | Use `ACCEPT` for satisfied Authority Chain, Dependency Gate, and Source Verification rows; keep `REQUIRED` only in non-ready draft/HOLD text or artifact/proof manifest columns where the checker treats it as a boolean. |
+| Session sync is a three-surface continuity update | Mode and next-move changes must update `ACTIVE_SESSION_STATE.json`, `CVF_SESSION_MEMORY.md`, and active handoff context together; then a dedicated handoff-sync commit records the final HEAD or accepted parent marker. |
+| Hook chain fail-fast hides later defects | Treat each failure as a cascade layer: fix the first failing gate, rerun the same gate locally, then rerun the full autorun/hook chain before claiming readiness. |
 
 ---
 
@@ -161,6 +166,47 @@ a dedicated handoff-sync-only commit. That commit must modify only the active
 handoff file unless a new handoff version is being opened under its own
 handoff-transition rules.
 
+### Step 5 - Gate Cascade Discipline
+
+Governance checks may read different sources during a pending batch:
+
+- the pre-commit hook chain validates the staged index;
+- `git diff --cached`-based checks see only staged files;
+- working-tree-aware autorun and component checks may see unstaged edits;
+- selected authorization helpers read files directly from disk.
+
+Before running a hook-chain simulation or committing, stage exactly the intended
+files. Do not interpret a hook failure against the staged index as proof that
+the working tree file is still wrong; first confirm whether the changed file
+was staged.
+
+Because the hook chain fails early, a PASS/fail cycle can expose defects in
+layers. Required sequence after a failure:
+
+1. fix the first failing gate inside the allowed scope;
+2. stage the intended file set if testing hook behavior;
+3. rerun the failed gate directly;
+4. rerun the full applicable autorun or hook chain;
+5. update recorded evidence only after the full rerun passes.
+
+### Machine Token Quick Reference
+
+The following exact tokens are operational requirements for common governance
+artifacts as of 2026-06-03. If checker source later changes, update this
+section in the same guard-maintenance batch.
+
+| Surface | Required exact tokens / values | Boundary |
+| --- | --- | --- |
+| Core guard-maintenance authorization | `Authorized guard-maintenance scope`, `Protected paths`, `Operator authorization`, `Rollback boundary` | Required when protected guard/session paths or guard-maintenance scope are touched. |
+| Scope firewall authorization | `Allowed paths`, `Forbidden paths`, `Operator authorization`, `Rollback boundary` | Required for scope firewall authorization docs. |
+| Commit prompt rule | `Diff scope: PASS`, `Tests: PASS`, `Gates: PASS`, `Untracked unrelated: NONE`, `Forbidden touched paths: NONE` | Required before an agent asks whether to commit. |
+| Finding-To-Governance defect classes | `WORKER_EXECUTION_ERROR`, `ORCHESTRATOR_PACKET_GAP`, `RULE_GAP`, `MACHINE_GATE_GAP`, `PHASE_GATE_PLACEMENT_GAP`, `OPERATOR_SCOPE_CLARITY_GAP`, `RUNTIME_SIGNAL_GAP` | `N/A_WITH_REASON` is a disposition, not a defect class. |
+| Finding-To-Governance lanes | `GOVERNANCE_CONTROL_PLANE`, `RUNTIME_BEHAVIOR_LEARNING`, `PROVIDER_OUTPUT_LEARNING`, `COST_ECONOMICS_LEARNING`, `DOCUMENTATION_ONLY_LEARNING` | One lane is required for finding-bearing artifacts unless an explicit checker-accepted exception applies. |
+| Finding-To-Governance dispositions | `RULE_EXISTS`, `RULE_ADDED`, `MACHINE_CHECK_ADDED`, `MACHINE_CHECK_CANDIDATE`, `PHASE_GATE_PLACEMENT_GAP`, `DESIGN_REVIEW_REQUIRED`, `RUNTIME_LEARNING_CANDIDATE`, `N/A_WITH_REASON`, `TEMPLATE_UPDATED`, `STANDARD_UPDATED`, `STANDARD_ADDED` | Repeated/systemic findings should prefer reusable-control dispositions. |
+| Markdown structural headings | plain `## Purpose`, `## Scope` or `## Applies To`, `## Claim Boundary`, and other checker-required headings | Avoid numbered headings such as `## 1. Purpose` in new governed reference/review/work-order artifacts unless the checker explicitly allows that type. |
+| Source Verification disposition | `ACCEPT`, `REJECT`, `BLOCKED_SOURCE_NOT_FOUND` | `REQUIRED` is not a ready/dispatch disposition. |
+| Source Verification `Verified path or symbol` cell | field/path/symbol only, for example `rawMemoryReleased` | Do not include assignments or type annotations such as `rawMemoryReleased: false` or `canReinject: boolean`. |
+
 ---
 
 ## Base Anchor Rules
@@ -227,6 +273,7 @@ folding it into the checker implementation.
 | --- | --- | --- | --- | --- |
 | CI2-T1 closure consumed excessive time due to mixed archive, closure, session, and handoff commits | PHASE_GATE_PLACEMENT_GAP | GOVERNANCE_CONTROL_PLANE | RULE_ADDED | Apply this standard to CI2-T2 and future work orders before implementation |
 | Stale dispatch base expanded closure ranges into unrelated commits | PHASE_GATE_PLACEMENT_GAP | GOVERNANCE_CONTROL_PLANE | TEMPLATE_UPDATED | Work orders must distinguish dispatch, execution, closure, and handoff-sync bases |
+| Repeated worker/orchestrator friction came from unstaged hook checks, hidden token requirements, `REQUIRED` placeholder misuse, session-sync coupling, and fail-fast cascades | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | STANDARD_UPDATED | Add gate cascade discipline and machine-token quick reference to this standard and the work-order template |
 
 ---
 

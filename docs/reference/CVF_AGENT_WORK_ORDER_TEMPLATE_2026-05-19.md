@@ -283,6 +283,20 @@ Mandatory Gate-Failure Remediation Protocol:
 - Any attempted handoff that turns an allowed-scope gate failure into an
   operator preference is a governance/control-plane learning signal.
 
+Staging and checker-source rule:
+
+- Before running `run_local_governance_hook_chain.py`, simulating pre-commit,
+  or committing, stage the intended file set with `git add <paths>` so
+  staged-index checkers read the current artifact.
+- Before staging, working-tree-aware component gates may be used for pending
+  worker artifacts; record that status as pending, not clean closure.
+- If a checker appears to reject a file that is correct on disk, first verify
+  whether the corrected file was staged. Some helpers read the working tree,
+  while hook-chain checks may read the staged index.
+- Hook-chain failures are cascade layers. Fix the first failing gate, rerun
+  that gate directly, then rerun the full applicable autorun or hook chain
+  before recording PASS.
+
 ## 6A. Source-Fidelity Pass
 
 Before marking this work order ready for execution, verify the source facts the
@@ -357,6 +371,12 @@ Rules:
   verified. Do not put value assignments or type annotations in that cell; use
   `rawMemoryReleased`, not `rawMemoryReleased: false`, and `canReinject`, not
   `canReinject: boolean`.
+- Ready/dispatch Authority Chain, Dependency Gate, and Source Verification
+  rows must use final checker-accepted dispositions such as `ACCEPT`, `REJECT`,
+  or `BLOCKED_SOURCE_NOT_FOUND`. Do not use `REQUIRED` as a disposition in a
+  ready/dispatch packet; `REQUIRED` is allowed only in draft/HOLD dependency
+  prose or in artifact/proof manifest columns where it is a boolean
+  requirement.
 - For code sources, an `ACCEPT` row must cite a symbol that exists in the cited
   file. Dotted symbols must exist under the cited owner/interface/class; if the
   owner does not contain that field or method, correct the symbol or use
@@ -594,6 +614,25 @@ Governed work orders must follow:
 
 `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md`
 
+Machine-token quick reference:
+
+| Surface | Required exact tokens / values |
+|---|---|
+| Core guard-maintenance authorization | `Authorized guard-maintenance scope`, `Protected paths`, `Operator authorization`, `Rollback boundary` |
+| Scope firewall authorization | `Allowed paths`, `Forbidden paths`, `Operator authorization`, `Rollback boundary` |
+| Commit prompt rule | `Diff scope: PASS`, `Tests: PASS`, `Gates: PASS`, `Untracked unrelated: NONE`, `Forbidden touched paths: NONE` |
+| Finding-To-Governance defect classes | `WORKER_EXECUTION_ERROR`, `ORCHESTRATOR_PACKET_GAP`, `RULE_GAP`, `MACHINE_GATE_GAP`, `PHASE_GATE_PLACEMENT_GAP`, `OPERATOR_SCOPE_CLARITY_GAP`, `RUNTIME_SIGNAL_GAP` |
+| Finding-To-Governance lanes | `GOVERNANCE_CONTROL_PLANE`, `RUNTIME_BEHAVIOR_LEARNING`, `PROVIDER_OUTPUT_LEARNING`, `COST_ECONOMICS_LEARNING`, `DOCUMENTATION_ONLY_LEARNING` |
+| Finding-To-Governance dispositions | `RULE_EXISTS`, `RULE_ADDED`, `MACHINE_CHECK_ADDED`, `MACHINE_CHECK_CANDIDATE`, `PHASE_GATE_PLACEMENT_GAP`, `DESIGN_REVIEW_REQUIRED`, `RUNTIME_LEARNING_CANDIDATE`, `N/A_WITH_REASON`, `TEMPLATE_UPDATED`, `STANDARD_UPDATED`, `STANDARD_ADDED` |
+| Source Verification dispositions | `ACCEPT`, `REJECT`, `BLOCKED_SOURCE_NOT_FOUND` |
+
+Notes:
+
+- `N/A_WITH_REASON` is a disposition, not a defect class.
+- New governed markdown should use plain checker-matched headings such as
+  `## Purpose`; avoid numbered variants like `## 1. Purpose` unless the
+  artifact type is already known to allow them.
+
 Required rules:
 
 - check archive hygiene before material tranche edits;
@@ -607,6 +646,9 @@ Required rules:
 - never use a stale dispatch base as closure proof after intervening commits.
 - record component-gate PASS separately from committed-range `pre-closure`
   PASS so a reviewer can see exactly which transition remains.
+- for mode/next-move changes, update `CVF_SESSION/ACTIVE_SESSION_STATE.json`,
+  `CVF_SESSION_MEMORY.md`, and active handoff context together, then expect a
+  dedicated handoff-sync commit for the final HEAD.
 
 ## 6F. Near-Threshold Owner Maintainability Plan
 
