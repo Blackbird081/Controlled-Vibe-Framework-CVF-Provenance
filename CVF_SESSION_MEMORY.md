@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-03
 
-Current mode marker: `lpci1_t4_retrieval_boundary_closed`
+Current mode marker: `lpci1_t5_chatbot_prototype_dispatch_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lpci1_t4_retrieval_boundary_closed`.
+Current mode: `lpci1_t5_chatbot_prototype_dispatch_ready`.
 
 Active handoff:
 
@@ -518,12 +518,27 @@ completion review:
 
 `docs/reviews/CVF_LPCI1_T4_RETRIEVAL_BOUNDARY_COMPLETION_2026-06-03.md`
 
-Next allowed move: author and dispatch LPCI1-T5 chatbot prototype work order
-only. T5 is the first runtime tranche and requires a separate GC-018/work
-order before any runtime/UI/API/vector/provider implementation.
+LPCI1-T5 Chatbot Prototype work order is `DISPATCH_READY` at commit `2b104059`.
+This is the first runtime tranche for LPCI1. It implements:
 
-LPCI chatbot/runtime implementation remains blocked until a later
-implementation tranche is explicitly authorized.
+- `POST /api/lpci/query` — five-stage T3 filter + Phase 2 answer assembly + AuditReceipt;
+- `POST /api/lpci/intake` — manifest-driven corpus intake with NR-04/NR-05 enforcement;
+- `GET /api/lpci/corpus/:corpusId/status` — GC-051 registry status;
+- `/lpci` dashboard page — corpus selector, query, response panel with boundary badge;
+- `src/lib/lpci/` library modules — types, filter-pipeline, retrieval, audit-receipt.
+
+T4 response boundary contract C1–C9 must be satisfied. AuditReceipt emitted per
+query. LLM key from `LPCI_LLM_API_KEY`; `NO_PROVIDER_CONFIGURED` receipt when
+absent. No production corpus, vector DB, embeddings, legal advice claims, or
+public-sync.
+
+`docs/work_orders/CVF_WO_LPCI1_T5_CHATBOT_PROTOTYPE_2026-06-03.md`
+
+Next allowed move: dispatch LPCI1-T5 work order to a worker for implementation.
+Worker must read `docs/reference/CVF_LPCI1_T4_RETRIEVAL_BOUNDARY_SPEC_2026-06-03.md`
+first. T6/T7 remain HOLD until T5 implementation is reviewed and closed.
+
+LPCI chatbot/runtime implementation is explicitly authorized for T5 scope only.
 
 Parked checkpoints:
 
