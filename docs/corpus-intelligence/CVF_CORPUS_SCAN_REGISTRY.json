@@ -3,8 +3,8 @@
   "standard": "docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md",
   "guard": "governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md",
   "checker": "governance/compat/check_corpus_scan_registry.py",
-  "lastUpdated": "2026-06-02",
-  "updatedBy": "CI1-T3 graph governance corpus deep scan",
+  "lastUpdated": "2026-06-03",
+  "updatedBy": "LPCI1-T5 live test setup",
   "allowedCorpusTypes": [
     "LEGACY_FOLDER",
     "PROJECT_SOURCE",
@@ -435,6 +435,35 @@
       "findings": [],
       "negativeSearchTerms": [],
       "nextScanRecommendation": "Low priority — UI design reference, not knowledge absorption target"
+    },
+    {
+      "id": "GOVERNANCE_PILOT_NO_LEGAL_CORPUS",
+      "corpusType": "TEST_CORPUS",
+      "displayName": "Governance Pilot Corpus (CI2-T4 schema proof)",
+      "scopePaths": [
+        "docs/corpus-intelligence/CVF_CI2_T4_PRODUCT_READINESS_PILOT_CORPUS_PACK.json"
+      ],
+      "fileCount": 4,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "CI2-T4",
+      "scanDate": "2026-06-02",
+      "notes": "Schema-proof pilot corpus for LPCI1-T5 prototype testing. Not a production legal corpus.",
+      "nextScanRecommendation": "N/A — schema-proof pilot corpus; not a live corpus requiring re-scan",
+      "findings": [
+        {
+          "id": "PILOT-F1",
+          "summary": "Schema proof only — 4 synthetic records for LPCI1-T5 prototype live testing; not a production legal corpus",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "defectClass": "OPERATOR_SCOPE_CLARITY_GAP",
+          "learningLane": "DOCUMENTATION_ONLY_LEARNING",
+          "nextAction": "No action required; prototype scope explicitly bounded in LPCI1-T5 completion review"
+        }
+      ],
+      "negativeSearchTerms": [
+        "production legal corpus (not present — this is a synthetic schema-proof pilot)",
+        "real jurisdiction documents (not present — synthetic records only)",
+        "vector embeddings (not produced — keyword search prototype only)"
+      ]
     }
   ]
 }
