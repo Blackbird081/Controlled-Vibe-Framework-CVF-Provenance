@@ -64,6 +64,8 @@ def _run_git(args: list[str]) -> tuple[int, str, str]:
         ["git", *args],
         cwd=REPO_ROOT,
         text=True,
+        encoding="utf-8",
+        errors="replace",
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
     )

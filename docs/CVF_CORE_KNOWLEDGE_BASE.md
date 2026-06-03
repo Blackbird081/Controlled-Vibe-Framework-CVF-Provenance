@@ -937,7 +937,7 @@ Canonical references:
 - `governance/toolkit/05_OPERATION/CVF_GOVERNED_FILE_SIZE_GUARD.md`
 - `governance/compat/check_governed_file_size.py`
 - `governance/compat/CVF_GOVERNED_FILE_SIZE_EXCEPTION_REGISTRY.json`
-- `docs/reviews/CVF_GOVERNED_FILE_SIZE_MAINTAINABILITY_GATE_COMPLETION_2026-05-28.md`
+- `docs/reviews/archive/CVF_GOVERNED_FILE_SIZE_MAINTAINABILITY_GATE_COMPLETION_2026-05-28.md`
 
 - 2026-05-24: AIF A/B/C all CLOSED_PASS (HEAD f9e2f82d). New surfaces: Learning Plane graph modules (graph-schema, ast-parser, symbol-index, task-query-mapper) + memory gateway phase 2a (controlled-memory-gateway, memory-lifecycle-policy, memory-retrieval-policy, memory-context-packager) + Operational Reference Index at `docs/reference/archive/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`.
 
