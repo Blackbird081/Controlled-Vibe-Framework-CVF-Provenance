@@ -108,6 +108,24 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             head,
         ),
         _range_command(
+            "corpus packet source hash (NR-04)",
+            "governance/compat/check_corpus_packet_source_hash.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "corpus packet normalized path (NR-05)",
+            "governance/compat/check_corpus_packet_normalized_path.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "corpus packet disposition canonical (NR-11)",
+            "governance/compat/check_corpus_packet_disposition_canonical.py",
+            base,
+            head,
+        ),
+        _range_command(
             "corpus scan registry",
             "governance/compat/check_corpus_scan_registry.py",
             base,

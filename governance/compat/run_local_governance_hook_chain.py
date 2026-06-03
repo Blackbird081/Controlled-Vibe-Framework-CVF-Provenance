@@ -90,6 +90,18 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
             ["python", "governance/compat/check_corpus_intelligence_classification.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
+            "corpus packet source hash (NR-04)",
+            ["python", "governance/compat/check_corpus_packet_source_hash.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "corpus packet normalized path (NR-05)",
+            ["python", "governance/compat/check_corpus_packet_normalized_path.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "corpus packet disposition canonical (NR-11)",
+            ["python", "governance/compat/check_corpus_packet_disposition_canonical.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
             "corpus scan registry",
             ["python", "governance/compat/check_corpus_scan_registry.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
@@ -162,6 +174,18 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         (
             "corpus intelligence classification",
             ["python", "governance/compat/check_corpus_intelligence_classification.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "corpus packet source hash (NR-04)",
+            ["python", "governance/compat/check_corpus_packet_source_hash.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "corpus packet normalized path (NR-05)",
+            ["python", "governance/compat/check_corpus_packet_normalized_path.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "corpus packet disposition canonical (NR-11)",
+            ["python", "governance/compat/check_corpus_packet_disposition_canonical.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
             "system loop interlock",
