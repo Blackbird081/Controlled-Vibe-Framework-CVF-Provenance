@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `53b2bac4` (docs(lpci): close policylocal deep classification). Updated 2026-06-04 after operator-side LPCI2-T5 closure commit; mode is `lpci2_t5_policylocal_deep_classification_closed_pass_bounded`; LPCI2-T5 CLOSED_PASS_BOUNDED; effectiveDate=2026-07-01 confirmed both DOCX files (P1_effective_clause); GC-048 RECONCILED_VERIFIED; adversarial sampling 4/4 PASS; executionBaseHead=408cbfcf; closureBaseHead=53b2bac4; search/chat/runtime/provider work remains blocked until a separate readiness gate work order opens and closes.
+Current HEAD recorded for this handoff: `90376aca` (docs(session): sync lpci2 t5 closure state). Updated 2026-06-04 after LPCI2-T5 closure/session sync; mode is `lpci2_t5_policylocal_deep_classification_closed_pass_bounded`; LPCI2-T5 CLOSED_PASS_BOUNDED; effectiveDate=2026-07-01 confirmed both DOCX files (P1_effective_clause); GC-048 RECONCILED_VERIFIED; adversarial sampling 4/4 PASS; executionBaseHead=408cbfcf; closureBaseHead=53b2bac4; search/chat/runtime/provider work remains blocked until a separate readiness gate work order opens and closes.
 
 ## Latest Work / Changes (2026-05-30)
 
