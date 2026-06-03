@@ -2,15 +2,15 @@
 
 Memory class: FULL_RECORD
 
-Status: HOLD_UNTIL_T4_PASS
+Status: DISPATCH_READY
 
 docType: work_order
 
 Date: 2026-06-02
 
-dispatchBaseHead: `65a0620f`
+dispatchBaseHead: `02a201bf`
 
-executionBaseHead: `65a0620f`
+executionBaseHead: WORKER_MUST_CAPTURE_AT_START
 
 closureBaseHead: NOT_EXECUTED_YET
 
@@ -28,7 +28,7 @@ does not implement the chatbot.
 | --- | --- | --- |
 | CI2 GC-018 | `docs/baselines/CVF_GC018_CI2_CORPUS_INTELLIGENCE_ENFORCEMENT_PRODUCT_READINESS_2026-06-02.md` | ACCEPT |
 | CI2 roadmap | `docs/roadmaps/CVF_CI2_CORPUS_INTELLIGENCE_ENFORCEMENT_PRODUCT_READINESS_ROADMAP_2026-06-02.md` | ACCEPT |
-| CI2-T4 pilot pack | T4 pilot pack after closure | REQUIRED |
+| CI2-T4 pilot pack | `docs/corpus-intelligence/CVF_CI2_T4_PRODUCT_READINESS_PILOT_CORPUS_PACK.json` at commit `02a201bf` | ACCEPT |
 | CI1-T7 | `docs/reference/CVF_CI1_T7_LPCI_INTAKE_BRIDGE_2026-06-02.md` | ACCEPT |
 
 ## Agent Roles
@@ -41,7 +41,8 @@ does not implement the chatbot.
 
 ## Dependency Gate
 
-CI2-T5 must not begin until CI2-T4 closes with a product-readiness pilot pack.
+CI2-T5 may begin only after CI2-T4 closes with a product-readiness pilot pack.
+This prerequisite is satisfied by commit `02a201bf`.
 
 ## Roadmap-To-Work-Order Trace Matrix
 
@@ -59,6 +60,8 @@ CI2-T5 must not begin until CI2-T4 closes with a product-readiness pilot pack.
 | LPCI runtime remains blocked until separate roadmap | EXISTS | `docs/reference/CVF_CI1_T7_LPCI_INTAKE_BRIDGE_2026-06-02.md` | lines 191-201 | `Blocked Scope` | CI1-T7 intake bridge | ACCEPT |
 | LPCI must inherit CI1 claim boundaries | EXISTS | `docs/reference/CVF_CI1_T7_LPCI_INTAKE_BRIDGE_2026-06-02.md` | lines 106-143 | `Claim Boundary Inheritance` | CI1-T7 intake bridge | ACCEPT |
 | Existing use-case roadmap is product target context | EXISTS | `docs/roadmaps/CVF_LPCI_LEGAL_POLICY_CORPUS_INTELLIGENCE_CHATBOT_USE_CASE_ROADMAP_2026-06-01.md` | title and purpose sections | `LPCI` | use-case roadmap | ACCEPT |
+| CI2-T4 pilot pack exists and is the required input | EXISTS | `docs/corpus-intelligence/CVF_CI2_T4_PRODUCT_READINESS_PILOT_CORPUS_PACK.json` | root packet metadata | `packId` | CI2-T4 product readiness pilot corpus pack | ACCEPT |
+| CI2-T4 closure exists | EXISTS | `docs/reviews/CVF_CI2_T4_PRODUCT_READINESS_PILOT_CORPUS_PACK_COMPLETION_2026-06-02.md` | title and verdict sections | `CLOSED_PASS_BOUNDED` | CI2-T4 completion review | ACCEPT |
 
 ## Write Ownership
 
