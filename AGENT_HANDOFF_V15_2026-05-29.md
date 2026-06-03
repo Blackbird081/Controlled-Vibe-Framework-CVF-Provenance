@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `ad98acae` (parent: `bb875474`). Session-sync follow-up updated 2026-06-03 after LPCI1-T2 dispatch-readiness continuity sync; LPCI1-T2 is DISPATCH_READY and the next allowed move is dispatch LPCI1-T2 domain classification worker only.
+Current HEAD recorded for this handoff: `2bef0c56` (parent: `89d5940f`). Session-sync follow-up updated 2026-06-03 after LPCI1-T2 closure artifact commit; LPCI1-T2 is CLOSED_PASS_BOUNDED and the next allowed move is author/dispatch LPCI1-T3 search/filter index work order only.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -171,7 +171,7 @@ Audit: `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
 
 ## Active Boundary
 
-Current mode: `lpci1_t2_domain_classification_dispatch_ready`.
+Current mode: `lpci1_t2_domain_classification_closed`.
 Enforcement posture: `agent_autorun_workflow_control_enforced`.
 Freeze posture: `governance_kernel_freeze_recommended`.
 
@@ -453,9 +453,14 @@ LPCI1-T2 domain classification work order is `DISPATCH_READY` at commit
 
 `docs/work_orders/CVF_WO_LPCI1_T2_DOMAIN_CLASSIFICATION_2026-06-03.md`
 
-Next allowed move: dispatch LPCI1-T2 domain classification worker only. Worker
-must capture `executionBaseHead` at start, stay inside documentation/spec scope,
-and must not commit.
+LPCI1-T2 is `CLOSED_PASS_BOUNDED` at commit `2bef0c56` after reviewer boundary
+correction tightened spec-only wording and preserved the no-runtime/no-corpus
+claim:
+
+`docs/reviews/CVF_LPCI1_T2_DOMAIN_CLASSIFICATION_COMPLETION_2026-06-03.md`
+
+Next allowed move: author and dispatch LPCI1-T3 search/filter index work order
+only.
 
 LPCI chatbot/runtime implementation remains blocked until a later
 implementation tranche is explicitly authorized.
