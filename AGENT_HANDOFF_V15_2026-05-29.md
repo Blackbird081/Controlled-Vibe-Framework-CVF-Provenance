@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `3cb3a439` (parent: `18946b5b`). Session-sync follow-up updated 2026-06-03 after LPCI1-T5 dispatch packet tightening; mode is lpci1_t5_chatbot_prototype_dispatch_ready and the next allowed move is dispatch LPCI1-T5 chatbot prototype work order to a worker for implementation.
+Current HEAD recorded for this handoff: `063ced06` (parent: `1272a78d`). Session-sync follow-up updated 2026-06-03 after governance gate cascade control documentation; mode is lpci1_t5_chatbot_prototype_dispatch_ready and the next allowed move is dispatch LPCI1-T5 chatbot prototype work order to a worker for implementation.
 
 ## Latest Work / Changes (2026-05-30)
 
