@@ -27,6 +27,7 @@ Sources:
 - `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
 - `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md`
 - `docs/reference/CVF_WORKER_AUTONOMY_DISPATCH_PROMPT_STANDARD_2026-06-01.md`
+- `AGENT_HANDOFF_V15_2026-05-29.md`
 
 ## Core Guard Self-Protection Authorization
 
@@ -35,19 +36,21 @@ Authorized guard-maintenance scope: update
 `governance/compat/test_check_work_order_dispatch_quality.py`,
 `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`,
 `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md`, and
-`docs/reference/CVF_WORKER_AUTONOMY_DISPATCH_PROMPT_STANDARD_2026-06-01.md`.
+`docs/reference/CVF_WORKER_AUTONOMY_DISPATCH_PROMPT_STANDARD_2026-06-01.md`,
+plus a dedicated active-handoff HEAD sync after the guard-maintenance commit.
 
 Protected paths: `governance/compat/check_work_order_dispatch_quality.py`,
-`governance/compat/test_check_work_order_dispatch_quality.py`, and active
-governance reference docs named above.
+`governance/compat/test_check_work_order_dispatch_quality.py`,
+`AGENT_HANDOFF_V15_2026-05-29.md`, and active governance reference docs named
+above.
 
 Operator authorization: operator identified that Claude acting as worker must
 not author completion review unless the agent role changes to orchestrator or
 reviewer.
 
-Rollback boundary: revert this authorization, the checker/test edits, and the
-three reference-doc boundary edits as one batch if the rule blocks a valid
-explicit role-change work order.
+Rollback boundary: revert this authorization, the checker/test edits, the
+three reference-doc boundary edits, and the dedicated active-handoff sync as
+one batch if the rule blocks a valid explicit role-change work order.
 
 ## Evidence Trace Block
 
