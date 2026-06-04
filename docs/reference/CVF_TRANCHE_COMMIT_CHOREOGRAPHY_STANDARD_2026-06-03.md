@@ -66,6 +66,8 @@ vulnerable to range bleed from archive or session commits.
 | Hook chain fail-fast hides later defects | Treat each failure as a cascade layer: fix the first failing gate, rerun the same gate locally, then rerun the full autorun/hook chain before claiming readiness. |
 | `WORKER_MUST_NOT_COMMIT` packets let workers author completion reviews | Workers may return pending handoff/evaluation artifacts; completion review is reviewer / committer owned unless the packet explicitly changes role and commit mode before dispatch. |
 | Strict manual commit choreography creates reviewer friction | Use the conservative helper `scripts/cvf_commit_tranche.py` when possible; it commits only the staged artifact batch, writes the active handoff parent marker, creates a handoff-only sync commit, and reruns pre-closure. |
+| Worker closure prose does not become downstream machine input | Require a Machine Closure Package that updates work order, completion/review, roadmap, registry JSON/MD, external evidence digest, loop interlock, and session continuity surfaces as applicable. |
+| External workspace evidence is confused with source authority | Keep external/local workspace paths out of Source Verification source-file cells; record external hashes and record counts in a repo-local evidence digest first. |
 
 ---
 
@@ -223,6 +225,40 @@ layers. Required sequence after a failure:
 4. rerun the full applicable autorun or hook chain;
 5. update recorded evidence only after the full rerun passes.
 
+### Step 6 - Machine Closure Package
+
+Before a reviewer or committer claims a tranche closed, the changed artifacts
+must expose the machine-readable closure state that downstream loops consume.
+
+Required package surfaces:
+
+| Surface | Required state |
+| --- | --- |
+| Work order | closed-equivalent status when closed; no stale `DISPATCH_READY`, unchecked required checklist residue, or placeholder dependency text. |
+| Completion/reviewer artifact | reviewer-owned final disposition for `WORKER_MUST_NOT_COMMIT`; changed-file evidence; claim boundary; committed-range gate evidence. |
+| Roadmap | tranche row updated to the final state and next tranche dependency state refreshed. |
+| Registry JSON | machine-readable scan/readiness/gap fields updated when corpus, classification, search/filter, or learning-loop state changes. |
+| Registry Markdown | human quick lookup updated alongside JSON when GC-051 state changes. |
+| External evidence digest | external path, schema/version, record count, hash, generated time, and privacy boundary recorded in a repo-local section or artifact. |
+| System loop interlock | upstream output, downstream input, learning/finding route, and mutation boundary recorded when one loop feeds another. |
+| Session continuity | active state, front door, and handoff updated when mode or next allowed move changes. |
+
+Rules:
+
+- A scan, classification, or readiness report that stays only in prose is not a
+  complete loop handoff when a registry or learning input exists.
+- Source Verification cites repo-local source authority or canonical contracts.
+  External paths such as local `Policy_Local` inputs are evidence inputs and
+  must first be normalized into a repo-local digest before later packets cite
+  them.
+- Closed-equivalent artifacts must not leave `NOT_EXECUTED_YET`,
+  `PRE_CLOSURE_NOT_RUN`, stale `READY_WITH_CONDITIONS`, or stale dependency
+  placeholders unless the artifact is explicitly still pending review.
+- Finding-bearing artifacts must use checker-accepted defect classes. Use
+  `RULE_GAP`, `MACHINE_GATE_GAP`, `ORCHESTRATOR_PACKET_GAP`, or
+  `PHASE_GATE_PLACEMENT_GAP` for reusable control defects; do not invent
+  `EVIDENCE_GAP`.
+
 ### Machine Token Quick Reference
 
 The following exact tokens are operational requirements for common governance
@@ -242,6 +278,7 @@ section in the same guard-maintenance batch.
 | Source Verification disposition | `ACCEPT`, `REJECT`, `BLOCKED_SOURCE_NOT_FOUND` | `REQUIRED` is not a ready/dispatch disposition. |
 | Source Verification `Verified path or symbol` cell | field/path/symbol only, for example `rawMemoryReleased` | Do not include assignments or type annotations such as `rawMemoryReleased: false` or `canReinject: boolean`. |
 | `WORKER_MUST_NOT_COMMIT` completion boundary | worker handoff/evaluation artifact only; completion review owner must be Reviewer/committer | `check_work_order_dispatch_quality.py` blocks dispatch packets that assign completion review to Worker under `WORKER_MUST_NOT_COMMIT`. |
+| Machine Closure Package | work order, completion/reviewer artifact, roadmap, registry JSON/MD, external digest, loop interlock, session continuity | Required when those surfaces are applicable; use `N/A with reason` instead of omission. |
 
 ---
 
@@ -312,6 +349,7 @@ folding it into the checker implementation.
 | Repeated worker/orchestrator friction came from unstaged hook checks, hidden token requirements, `REQUIRED` placeholder misuse, session-sync coupling, and fail-fast cascades | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | STANDARD_UPDATED | Add gate cascade discipline and machine-token quick reference to this standard and the work-order template |
 | Worker role was allowed to author completion review in `WORKER_MUST_NOT_COMMIT` packets | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | Dispatch-quality gate now blocks worker-owned completion reviews unless role/commit mode changes before dispatch |
 | Commit closure remained too operator-heavy after rules were tightened | OPERATOR_SCOPE_CLARITY_GAP | GOVERNANCE_CONTROL_PLANE | STANDARD_UPDATED | Add optional staged-commit helper contract and `scripts/cvf_commit_tranche.py` |
+| LPCI/CI closure findings kept recurring because worker prose did not update all downstream machine inputs | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | STANDARD_UPDATED | Add Machine Closure Package and external evidence digest rules to the choreography standard and work-order template |
 
 ---
 

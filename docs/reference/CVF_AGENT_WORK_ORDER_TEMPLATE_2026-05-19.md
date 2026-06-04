@@ -610,6 +610,49 @@ Rules:
 - do not treat `FAIL_EXPECTED_PENDING_FINALITY` as a closed-equivalent PASS;
   it is valid only for `WORKER_MUST_NOT_COMMIT` pending review handoff;
 
+## 6E.1 Machine Closure Package
+
+Any work order that scans, classifies, imports, maps, routes, closes, or
+hands off governed work must define the machine-readable outputs that turn the
+worker result into the next loop's input.
+
+Required closure package table:
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/<work-order>.md` | closed-equivalent status, no stale `DISPATCH_READY`, no unchecked required checklist residue, closure anchor policy recorded | `<PASS/BLOCKED/N/A with reason>` |
+| Completion or reviewer artifact | `docs/reviews/<completion>.md` or `N/A with reason` | final disposition, changed-file evidence, claim boundary, gate evidence, reviewer-owned closure when `WORKER_MUST_NOT_COMMIT` | `<PASS/BLOCKED/N/A with reason>` |
+| Roadmap state | `docs/roadmaps/<roadmap>.md` or `N/A with reason` | tranche row final status, next tranche dependency release state, no stale `READY_WITH_CONDITIONS` residue | `<PASS/BLOCKED/N/A with reason>` |
+| Corpus scan registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` or `N/A with reason` | entry id, normalized paths, hashes, verdicts, gap ids, next action | `<PASS/BLOCKED/N/A with reason>` |
+| Corpus scan registry MD | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` or `N/A with reason` | human quick lookup, negative-search note, next recommendation | `<PASS/BLOCKED/N/A with reason>` |
+| External evidence digest | repo-local completion section or digest artifact | external path, schema/version, record count, hash, generated time, privacy boundary | `<PASS/BLOCKED/N/A with reason>` |
+| System loop interlock | `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_*.json` or `N/A with reason` | upstream output, downstream input, learning/finding route, mutation boundary | `<PASS/BLOCKED/N/A with reason>` |
+| Session continuity | `CVF_SESSION_MEMORY.md`, `CVF_SESSION/ACTIVE_SESSION_STATE.json`, active handoff | mode, next allowed move, handoff HEAD or accepted parent marker | `<PASS/BLOCKED/N/A with reason>` |
+
+Rules:
+
+- External workspace paths are evidence inputs, not source-authority rows. Do
+  not put `D:\...`, local upload paths, or other non-repo paths in Source
+  Verification as if they were canonical source files. Record them in the
+  External Evidence Digest with a hash, schema/version, record count, and
+  privacy boundary, then cite the repo-local digest or completion section in
+  Source Verification if a later work order needs it.
+- Corpus work that changes scan, classification, readiness, or gap state must
+  update both GC-051 registry surfaces when applicable: the JSON is the
+  machine input and the Markdown file is the operator/reviewer lookup. A
+  report-only closure is not enough when the registry is the downstream input.
+- Closed-equivalent artifacts must not retain stale `DISPATCH_READY`,
+  `READY_WITH_CONDITIONS`, `NOT_EXECUTED_YET`, `PRE_CLOSURE_NOT_RUN`, or
+  placeholder dependency language unless the artifact is explicitly still a
+  pending-review worker handoff.
+- If findings are recorded, use checker-accepted Finding-To-Governance defect
+  classes only. `EVIDENCE_GAP` is not a defect class; use `RULE_GAP`,
+  `MACHINE_GATE_GAP`, `ORCHESTRATOR_PACKET_GAP`, or
+  `PHASE_GATE_PLACEMENT_GAP` as appropriate. `N/A_WITH_REASON` is a
+  disposition, not a defect class.
+- The closure package must be updated after final gate reruns, not copied from
+  pre-implementation or pending-worker evidence.
+
 ## 6F. Commit Choreography
 
 Governed work orders must follow:
