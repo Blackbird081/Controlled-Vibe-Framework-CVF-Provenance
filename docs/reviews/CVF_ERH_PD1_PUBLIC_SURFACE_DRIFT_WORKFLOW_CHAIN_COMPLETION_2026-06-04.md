@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: IMPLEMENTATION_COMPLETE_PENDING_REVIEW
+Status: CLOSED_PASS_BOUNDED
 
 docType: completion_review
 
@@ -68,7 +68,7 @@ Source authority:
 
 ## Findings / Position
 
-Position: IMPLEMENTATION_COMPLETE_PENDING_REVIEW.
+Position: CLOSED_PASS_BOUNDED.
 
 Findings:
 
@@ -88,7 +88,7 @@ Findings:
 | Chain check | `python governance/compat/check_erh_public_surface_drift_workflow.py --enforce` | PASS, `DRIFT_BOUNDED_WITH_UPDATE_CANDIDATES` |
 | System-loop check | `python governance/compat/check_system_loop_interlock.py --base bc6ce0fa --head HEAD --enforce` | PASS |
 | Local pre-commit hook chain | `python governance/compat/run_local_governance_hook_chain.py --hook pre-commit` | PASS, 27 checks |
-| Worktree finality | `git status --short` | pending commit |
+| Worktree finality | `git status --short` | clean after private closure commit |
 
 ## Roadmap-To-Work-Order Trace Matrix
 
@@ -115,6 +115,21 @@ Findings:
 | Hook depends on external public-sync clone | checker is snapshot-backed, not sibling-clone dependent | PASS |
 | Public-sync drift is ignored | T2C/CI1 listed as update candidates | PASS |
 | Live proof overclaim | claim boundary says PD1 does not prove live behavior | PASS |
+
+## Public Export Disposition
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_PD1_PUBLIC_SURFACE_DRIFT_WORKFLOW_CHAIN_2026-06-04.md` | ERH-PD1 `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ERH_PD1_PUBLIC_SURFACE_DRIFT_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md` | completion review `CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ERH_EXTERNAL_REVIEW_HARDENING_ROADMAP_2026-06-04.md` | ERH-PD1 and E9 closed bounded | PASS |
+| Registry JSON | `N/A with reason` | no GC-051 corpus registry state changed by ERH-PD1 public-surface drift closure | BLOCKED with reason |
+| Registry Markdown | `N/A with reason` | no GC-051 corpus registry markdown state changed by ERH-PD1 public-surface drift closure | BLOCKED with reason |
+| External evidence digest | `N/A with reason` | no external corpus/source digest consumed by ERH-PD1 closure | N/A with reason |
+| System loop interlock | `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json` | GC-052 connection `erh-public-surface-drift-workflow-chain` | PASS |
+| Session continuity | `AGENT_HANDOFF_V15_2026-05-29.md` | follow-up handoff sync commit records ERH-PD1 closure | PASS |
 
 ## Public Export Disposition
 

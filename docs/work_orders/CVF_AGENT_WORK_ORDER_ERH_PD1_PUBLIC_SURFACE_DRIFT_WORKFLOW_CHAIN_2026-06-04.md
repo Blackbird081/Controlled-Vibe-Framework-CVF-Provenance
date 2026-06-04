@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: IMPLEMENTATION_COMPLETE_PENDING_REVIEW
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -11,6 +11,8 @@ Date: 2026-06-04
 GC-018: `docs/baselines/CVF_GC018_ERH_PD1_PUBLIC_SURFACE_DRIFT_WORKFLOW_CHAIN_2026-06-04.md`
 
 dispatchBaseHead: `bc6ce0fa`
+
+closureBaseHead: `71fa1723`
 
 ## Purpose
 
@@ -65,7 +67,7 @@ Forbidden scope:
 | --- | --- | --- |
 | Orchestrator | Codex | select PD1 after operator approval |
 | Worker | Codex | implement checker/docs/interlock only |
-| Reviewer | Codex self-review pending operator review | bounded private closure |
+| Reviewer / committer | Codex closure review | bounded private closure |
 | Operator approval required for | public-sync edit/push, live proof, dependency migration | not included |
 
 ## Required First Reads
@@ -190,12 +192,25 @@ claim boundary.
 
 | Item | Disposition |
 | --- | --- |
-| Roadmap-to-work-order trace exists | checked |
-| Source Verification Block has no guessed runtime fields | checked |
-| Public Export Disposition exists | checked |
-| Finding-To-Governance Learning Disposition exists | checked |
-| Live proof is N/A with reason | checked |
-| Public-sync edit is N/A with reason | checked |
+| Roadmap-to-work-order trace exists | PASS |
+| Source Verification Block has no guessed runtime fields | PASS |
+| Public Export Disposition exists | PASS |
+| Finding-To-Governance Learning Disposition exists | PASS |
+| Live proof is N/A with reason | PASS |
+| Public-sync edit is N/A with reason | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_PD1_PUBLIC_SURFACE_DRIFT_WORKFLOW_CHAIN_2026-06-04.md` | ERH-PD1 `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ERH_PD1_PUBLIC_SURFACE_DRIFT_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md` | completion review `CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ERH_EXTERNAL_REVIEW_HARDENING_ROADMAP_2026-06-04.md` | ERH-PD1 and E9 closed bounded | PASS |
+| Registry JSON | `N/A with reason` | no GC-051 corpus registry state changed by ERH-PD1 public-surface drift closure | BLOCKED with reason |
+| Registry Markdown | `N/A with reason` | no GC-051 corpus registry markdown state changed by ERH-PD1 public-surface drift closure | BLOCKED with reason |
+| External evidence digest | `N/A with reason` | no external corpus/source digest consumed by ERH-PD1 closure | N/A with reason |
+| System loop interlock | `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json` | GC-052 connection `erh-public-surface-drift-workflow-chain` | PASS |
+| Session continuity | `AGENT_HANDOFF_V15_2026-05-29.md` | follow-up handoff sync commit records ERH-PD1 closure | PASS |
 
 ## Operator Checkpoint
 
@@ -207,7 +222,7 @@ runtime change, or dependency migration.
 
 | Finding | Defect class | Learning lane | Escalation state | Next control action |
 | --- | --- | --- | --- | --- |
-| Public-surface drift can accumulate after private ERH workflow chains | PUBLIC_SURFACE_DRIFT_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | PD1 checker and ledger |
+| Public-surface drift can accumulate after private ERH workflow chains | OPERATOR_SCOPE_CLARITY_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | PD1 checker and ledger |
 
 ## Public Export Disposition
 

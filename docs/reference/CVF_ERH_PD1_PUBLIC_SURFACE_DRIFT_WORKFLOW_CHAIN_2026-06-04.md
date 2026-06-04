@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: IMPLEMENTATION_COMPLETE_PENDING_REVIEW
+Status: CLOSED_PASS_BOUNDED
 
 docType: reference
 
@@ -87,7 +87,7 @@ automatic public-sync publication.
 
 | Finding | Defect class | Learning lane | Escalation state | Next control action |
 | --- | --- | --- | --- | --- |
-| Private ERH evidence can outrun public GitHub summaries | PUBLIC_SURFACE_DRIFT_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | PD1 drift ledger and checker |
+| Private ERH evidence can outrun public GitHub summaries | OPERATOR_SCOPE_CLARITY_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | PD1 drift ledger and checker |
 
 ## Public Export Disposition
 

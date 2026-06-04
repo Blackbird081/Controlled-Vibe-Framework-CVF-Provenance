@@ -66,8 +66,8 @@ Public artifact paths recorded from ERH-T1C export:
 
 | Finding | Defect class | Learning lane | Escalation state | Next control action |
 | --- | --- | --- | --- | --- |
-| Public GitHub can lag private ERH evidence after new private workflow chains | PUBLIC_SURFACE_DRIFT_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | PD1 drift workflow checker |
-| Public update candidates can be mistaken for already-exported public claims | CLAIM_BOUNDARY_GAP | DOCUMENTATION_ONLY_LEARNING | RULE_CLARIFIED | use explicit public status vocabulary |
+| Public GitHub can lag private ERH evidence after new private workflow chains | OPERATOR_SCOPE_CLARITY_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | PD1 drift workflow checker |
+| Public update candidates can be mistaken for already-exported public claims | OPERATOR_SCOPE_CLARITY_GAP | DOCUMENTATION_ONLY_LEARNING | RULE_CLARIFIED | use explicit public status vocabulary |
 
 ## Public Export Disposition
 
