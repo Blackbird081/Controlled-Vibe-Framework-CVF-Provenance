@@ -59,6 +59,9 @@ Allowed scope:
   `docs/assessments/CVF_ERH_RS1_EXTERNAL_REVIEW_FULL_COVERAGE_RESCAN_2026-06-04.md`;
 - create or update
   `docs/reviews/CVF_ERH_RS1_EXTERNAL_REVIEW_FULL_COVERAGE_RESCAN_COMPLETION_2026-06-04.md`;
+- Codex reviewer may update session-continuity files after closure:
+  `AGENT_HANDOFF_V15_2026-05-29.md`,
+  `CVF_SESSION/ACTIVE_SESSION_STATE.json`, and `CVF_SESSION_MEMORY.md`;
 - optionally create a docs-only follow-up candidate section inside the RS1
   assessment for ERH-SAF1 and other runtime-adjacent gaps;
 - run local non-provider checks needed to support the rescan artifact.
@@ -123,9 +126,13 @@ Risk ceiling: R0 docs-only rescan.
 | `docs/assessments/CVF_ERH_RS1_EXTERNAL_REVIEW_FULL_COVERAGE_RESCAN_2026-06-04.md` | create/update |
 | `docs/reviews/CVF_ERH_RS1_EXTERNAL_REVIEW_FULL_COVERAGE_RESCAN_COMPLETION_2026-06-04.md` | create/update |
 | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_RS1_EXTERNAL_REVIEW_FULL_COVERAGE_RESCAN_FOR_CLAUDE_2026-06-04.md` | update only for Claude execution notes if needed |
+| `AGENT_HANDOFF_V15_2026-05-29.md` | Codex reviewer continuity sync only |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Codex reviewer continuity sync only |
+| `CVF_SESSION_MEMORY.md` | Codex reviewer continuity sync only |
 
 Forbidden paths: runtime/source files, tests, package manifests, lockfiles,
-public-sync clone, workflow files, environment files.
+public-sync clone, workflow files, environment files, and session-continuity
+edits unrelated to ERH-RS1 closure.
 
 ## 6. Execution Plan
 
