@@ -479,21 +479,22 @@ completion review:
 
 `docs/reviews/CVF_LPCI1_T4_RETRIEVAL_BOUNDARY_COMPLETION_2026-06-03.md`
 
-Next allowed move: Claude may execute ERH-DEP1 dependency risk workflow chain
-from
-`docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_DEP1_DEPENDENCY_RISK_WORKFLOW_CHAIN_FOR_CLAUDE_2026-06-04.md`
+Next allowed move: Claude may execute ERH-AUD1 `cvf-web`
+dependency-audit remediation workflow from
+`docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_AUD1_CVF_WEB_DEPENDENCY_AUDIT_REMEDIATION_FOR_CLAUDE_2026-06-04.md`
 under `WORKER_MUST_NOT_COMMIT`.
 
-`ERH-DEP1` Dependency Risk Workflow Chain is `DISPATCH_READY_FOR_CLAUDE`:
-GC-018
-`docs/baselines/CVF_GC018_ERH_DEP1_DEPENDENCY_RISK_WORKFLOW_CHAIN_2026-06-04.md`;
+`ERH-AUD1` CVF Web Dependency Audit Remediation is
+`DISPATCH_READY_FOR_CLAUDE`: GC-018
+`docs/baselines/CVF_GC018_ERH_AUD1_CVF_WEB_DEPENDENCY_AUDIT_REMEDIATION_2026-06-04.md`;
 work order
-`docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_DEP1_DEPENDENCY_RISK_WORKFLOW_CHAIN_FOR_CLAUDE_2026-06-04.md`.
-Boundary: Claude may create dependency risk ledger/reference/checker/tests and
-wire hook/autorun/GC-052, but must not edit package manifests, lockfiles, auth
-runtime, public-sync, or live/provider proof. If migration is needed, Claude
-must return with a DEP2 migration work-order proposal instead of changing
-`next-auth`.
+`docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_AUD1_CVF_WEB_DEPENDENCY_AUDIT_REMEDIATION_FOR_CLAUDE_2026-06-04.md`.
+Boundary: Claude may update `cvf-web` package manifests/lockfile for bounded
+audit remediation and create ledger/reference/checker/tests with hook/autorun
+and GC-052 wiring, but must not edit auth runtime, migrate `next-auth`, public-
+sync, run live/provider proof, or claim production/public security readiness.
+If semver-major migration or auth behavior change is required, Claude must
+return a follow-up work-order proposal instead of proceeding.
 
 `ERH-PD1` Public Surface Drift Workflow Chain is
 `IMPLEMENTATION_COMPLETE_PENDING_REVIEW` at commit `7d23df05`: GC-018

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: PRIVATE_TRANCHES_COMPLETE_PUBLIC_SYNC_EXPORTED_T2C_CI1_PD1_IMPLEMENTATION_PENDING_REVIEW_DEP1_ACCEPTED_BOUNDED
+Status: PRIVATE_TRANCHES_COMPLETE_PUBLIC_SYNC_EXPORTED_T2C_CI1_PD1_IMPLEMENTATION_PENDING_REVIEW_DEP1_ACCEPTED_BOUNDED_AUD1_DISPATCH_READY
 
 docType: roadmap
 
@@ -85,7 +85,7 @@ Out of scope:
 | Planning review | `docs/assessments/CVF_ERH_PLANNING_REVIEW_FOR_CODEX_2026-06-04.md` | reviewed |
 | Codex response | `docs/reviews/CVF_ERH_PLANNING_REVIEW_CODEX_RESPONSE_2026-06-04.md` | recorded |
 | Fresh GC-018 | `docs/baselines/CVF_GC018_ERH_EXTERNAL_REVIEW_HARDENING_2026-06-04.md` | authorized |
-| Work orders | ERH-T1A/T2A/T3/T2B/T4/T1B/T1C authored; ERH-T2C, ERH-CI1, and ERH-PD1 implemented pending review; ERH-DEP1 closed bounded | private tranche outputs prepared; public-sync delta exported; runtime route workflow, CI public-evaluation workflow, and public-surface drift workflow pending review; dependency-risk workflow closed as `ACCEPT_WITH_CAVEAT` |
+| Work orders | ERH-T1A/T2A/T3/T2B/T4/T1B/T1C authored; ERH-T2C, ERH-CI1, and ERH-PD1 implemented pending review; ERH-DEP1 closed bounded; ERH-AUD1 dispatched for Claude | private tranche outputs prepared; public-sync delta exported; runtime route workflow, CI public-evaluation workflow, and public-surface drift workflow pending review; dependency-risk workflow closed as `ACCEPT_WITH_CAVEAT`; dependency-audit remediation ready for Claude |
 
 ## Tranche Plan
 
@@ -102,6 +102,7 @@ Out of scope:
 | ERH-CI1 | CI public-evaluation workflow chain | `docs/reviews/CVF_ERH_CI1_PUBLIC_EVALUATION_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md` | IMPLEMENTATION_COMPLETE_PENDING_REVIEW |
 | ERH-PD1 | PUBLIC_SURFACE_DRIFT_WORKFLOW | `docs/reviews/CVF_ERH_PD1_PUBLIC_SURFACE_DRIFT_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md` | IMPLEMENTATION_COMPLETE_PENDING_REVIEW |
 | ERH-DEP1 | Dependency risk workflow chain for `next-auth` beta posture | `docs/reviews/CVF_ERH_DEP1_DEPENDENCY_RISK_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md` | ACCEPTED_BOUNDED |
+| ERH-AUD1 | `cvf-web` dependency-audit remediation workflow | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_AUD1_CVF_WEB_DEPENDENCY_AUDIT_REMEDIATION_FOR_CLAUDE_2026-06-04.md` | DISPATCH_READY_FOR_CLAUDE |
 
 ## Roadmap-To-Work-Order Trace Matrix
 
@@ -118,6 +119,7 @@ Out of scope:
 | ERH-CI1 CI public-evaluation workflow chain | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_CI1_PUBLIC_EVALUATION_WORKFLOW_CHAIN_2026-06-04.md` |
 | ERH-PD1 public-surface drift workflow chain | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_PD1_PUBLIC_SURFACE_DRIFT_WORKFLOW_CHAIN_2026-06-04.md` |
 | ERH-DEP1 dependency risk workflow chain | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_DEP1_DEPENDENCY_RISK_WORKFLOW_CHAIN_FOR_CLAUDE_2026-06-04.md` |
+| ERH-AUD1 dependency-audit remediation workflow | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_AUD1_CVF_WEB_DEPENDENCY_AUDIT_REMEDIATION_FOR_CLAUDE_2026-06-04.md` |
 
 ## Work Plan
 
@@ -133,6 +135,7 @@ Out of scope:
 | E8 | Convert CI hardening plan into bounded public-evaluation workflow chain | checker, tests, hook/autorun wiring, GC-052 connection, completion packet | IMPLEMENTATION_COMPLETE_PENDING_REVIEW |
 | E9 | Convert public/private ERH claim drift into bounded workflow chain | drift ledger, checker, tests, hook/autorun wiring, GC-052 connection, completion packet | IMPLEMENTATION_COMPLETE_PENDING_REVIEW |
 | E10 | Implement dependency risk workflow chain for `next-auth` beta posture | reference, ledger, checker, tests, hook/autorun wiring, GC-052 connection, completion packet | ACCEPTED_BOUNDED |
+| E11 | Dispatch `cvf-web` dependency-audit remediation workflow to Claude | GC-018 + work order with source verification and bounded package-update boundary | DISPATCH_READY_FOR_CLAUDE |
 
 ## Acceptance Criteria
 
@@ -160,6 +163,10 @@ Out of scope:
   API-stability beta risk, not a `next-auth` CVE. It does not authorize
   `next-auth` migration, auth runtime edits, public-sync, production auth
   stability, or public readiness.
+- ERH-AUD1 is dispatched to Claude for `cvf-web` dependency-audit remediation.
+  It may update package manifests/lockfiles for bounded audit fixes, but it
+  does not authorize `next-auth` migration, auth runtime edits, public-sync,
+  production security readiness, or public readiness.
 
 ## Verification / Evidence
 
@@ -219,16 +226,18 @@ Public artifact paths:
 - `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`
 - `governance/public-surface-manifest.json`
 
-Next action: open a separate `next` framework/toolchain upgrade work order if
-the audit findings are prioritized, or open DEP2 only when stable v5 ships or a
-hosted/production auth claim is required. Public-sync summary work remains
-separate.
+Next action: Claude implements ERH-AUD1 from
+`docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_AUD1_CVF_WEB_DEPENDENCY_AUDIT_REMEDIATION_FOR_CLAUDE_2026-06-04.md`
+under `WORKER_MUST_NOT_COMMIT`. DEP2 remains separate and opens only when
+stable v5 ships or a hosted/production auth claim is required. Public-sync
+summary work remains separate.
 
 ## Claim Boundary
 
 This roadmap authorizes ERH planning, private tranche records, public-sync
 documentation export, bounded ERH-T2C route-hardening worker result, ERH-CI1
-CI workflow chain, ERH-PD1 public-surface drift workflow chain, and ERH-DEP1
-dependency-risk workflow closure. It does not prove live governance behavior,
-hosted behavior, production readiness, full CI hardening, dependency-audit
-hardening, auth migration completion, or public readiness.
+CI workflow chain, ERH-PD1 public-surface drift workflow chain, ERH-DEP1
+dependency-risk workflow closure, and ERH-AUD1 dependency-audit remediation
+dispatch. It does not prove live governance behavior, hosted behavior,
+production readiness, full CI hardening, dependency-audit hardening, auth
+migration completion, or public readiness.
