@@ -19,6 +19,7 @@ Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
 Current HEAD recorded for this handoff: `c90a5088` (Machine Closure Package checker enforcement commit). Updated 2026-06-04 after `check_machine_closure_package.py` was added, tested, and wired into autorun/local hook chains; mode remains `lpci2_t8_search_layer_scaffolding_closed_pass_bounded_ready`; LPCI2 lane remains complete; operator may authorize search implementation work order with fresh instruction; EC-02 rescan required on or after 2026-07-01.
+Current HEAD recorded for this handoff: `3052c287` (docs(erh): add external review hardening roadmap packets). Updated 2026-06-04 after ERH private tranche packets, route ledger, durability boundary, CI plan, dependency decision, and public-sync handoff were committed. Public-sync execution remains held; no runtime, CI workflow, live proof, or public repository update was performed.
 
 ## Latest Work / Changes (2026-05-30)
 
