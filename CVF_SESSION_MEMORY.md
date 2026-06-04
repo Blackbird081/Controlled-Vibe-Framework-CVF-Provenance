@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-04
 
-Current mode marker: `lpci2_t7_corpus_facet_schema_authoring_closed_pass_bounded`
+Current mode marker: `lpci2_t8_search_layer_scaffolding_closed_pass_bounded_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lpci2_t7_corpus_facet_schema_authoring_closed_pass_bounded`.
+Current mode: `lpci2_t8_search_layer_scaffolding_closed_pass_bounded_ready`.
 
 Active handoff:
 
@@ -668,27 +668,23 @@ LPCI2-T5 CLOSED_PASS_BOUNDED (closureBaseHead=53b2bac4; executionBaseHead=408cbf
 effectiveDate=2026-07-01 confirmed for both DOCX files, GC-048 RECONCILED_VERIFIED,
 adversarial sampling 4/4 PASS.
 
-LPCI2-T6 CLOSED_PASS_BOUNDED (dispatchBaseHead=802ec7f3): verdict NOT_READY;
-10 gaps registered (7 MUST_CLOSE_BEFORE_SEARCH).
+LPCI2-T6 CLOSED_PASS_BOUNDED (dispatchBaseHead=802ec7f3): NOT_READY; 10 gaps.
+LPCI2-T7 CLOSED_PASS_BOUNDED (dispatchBaseHead=45b86df3): 7 gaps CLOSED;
+READY_WITH_CONDITIONS.
+LPCI2-T8 Search Layer Scaffolding CLOSED_PASS_BOUNDED
+(dispatchBaseHead=95de732c). Final 3 T6 gaps CLOSED. Artifacts:
 
-LPCI2-T7 Corpus Facet Schema Authoring CLOSED_PASS_BOUNDED
-(dispatchBaseHead=45b86df3). 7 T6 gaps CLOSED. Artifacts:
+- `docs/reference/CVF_LPCI_QUERY_RECEIPT_MODEL_2026-06-04.md`
+- `docs/reference/CVF_LPCI_RETRIEVAL_TRACE_DESIGN_2026-06-04.md`
+- Corpus records → `policylocal.corpusRecords.t8.v1` (negativeSearchEvidence,
+  queryReceiptModelRef, retrievalTraceDesignRef)
+- Processing ledger T8 stage added
 
-- `docs/reference/CVF_LPCI_FACETED_RETRIEVAL_SCHEMA_2026-06-04.md`
-- `docs/reference/CVF_LPCI_RESPONSE_BOUNDARY_ENFORCEMENT_CONTRACT_2026-06-04.md`
-- Corpus records → `policylocal.corpusRecords.t7.v1` (topicTags,
-  freshnessStatus=not_yet_in_force, sourceFamily=VN_NATIONAL_ASSEMBLY_2025)
-- `Policy_Local/data/generated/policylocal-t7-processing-ledger.json`
+**Final readiness verdict: READY.** All 5 T6 gates PASS.
 
-Revised readiness verdict: READY_WITH_CONDITIONS. Remaining open (T8 scope):
-
-- T6-GAP-06 MUST_CLOSE — derived retrieval trace (no index/chunk layer yet)
-- T6-GAP-08 MUST_CLOSE — query receipt model not defined
-- T6-GAP-05 REMEDIATION_RECOMMENDED — zero-result query log
-
-Next move: operator authorizes T8 Search Layer Scaffolding
-(`CVF_WO_LPCI2_T8_SEARCH_LAYER_SCAFFOLDING`). Do NOT open search/chat runtime
-without operator authorization after T8 closes.
+LPCI2 Corpus Intelligence lane is complete. Operator may authorize a search
+implementation work order with a fresh instruction. EC-02 expiry: rescan
+required on or after 2026-07-01 before any production runtime opens.
 
 Parked checkpoints:
 

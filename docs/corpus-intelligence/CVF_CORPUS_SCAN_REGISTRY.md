@@ -79,7 +79,7 @@ prior scan here before starting new work.
 | `CVF 17.05 + 25.05 + 28.05` | LEGACY | SCANNED | LHW-RESCAN-B | 38 | Governance decision artifacts; low priority |
 | `CVF Edit/` | LEGACY | PARTIALLY_SCANNED | LHW18 | 10 | Integration SDK deferred; GC-047/050 not yet run |
 | `App onboarding/` | LEGACY | NOT_STARTED | — | ? | UI design reference; low priority |
-| `Policy_Local/data_input/` | POLICY_DOCUMENT | DEEP_CLASSIFIED | LPCI2-T7 | 2 | t7 facet schema + boundary contract; READY_WITH_CONDITIONS; T8 query receipt/retrieval trace still required |
+| `Policy_Local/data_input/` | POLICY_DOCUMENT | DEEP_CLASSIFIED | LPCI2-T8 | 2 | t8 query receipt + retrieval trace + negative search evidence; final readiness READY; runtime still requires fresh work order |
 
 ---
 
@@ -129,7 +129,8 @@ Searches that confirmed absence — prevents re-doing the same negative search.
 | `direct external MCP access` | manual read of 7-file code-review-graph corpus | code-review-graph | FOUND as forbidden pattern, not allowed implementation |
 | `graph service directly invoking LLMs` | manual read of 7-file code-review-graph corpus | code-review-graph | FOUND as forbidden pattern, not allowed implementation |
 | full `CVF ADD/` sibling scan | CI1-T3 work-order boundary | code-review-graph | NOT SEARCHED — out of scope |
-| `PolicyLocal search/chat runtime readiness` | LPCI2-T6/T7 readiness gates | PolicyLocal | NOT READY for runtime; T7 revised to READY_WITH_CONDITIONS; T8 must close query receipt and retrieval trace first |
+| `PolicyLocal search/chat runtime readiness` | LPCI2-T6/T7/T8 readiness gates | PolicyLocal | Governance scaffold READY after T8; search/chat runtime implementation still blocked pending fresh operator-authorized work order |
+| `PolicyLocal live query negative evidence` | LPCI2-T8 completion review | PolicyLocal | NOT PRODUCED — T8 negativeSearchEvidence is structural; implementation tranche must produce live query receipts |
 
 ---
 
@@ -142,7 +143,7 @@ Searches that confirmed absence — prevents re-doing the same negative search.
 | MEDIUM | `CVF_Important/` remaining subfamilies | 230 files inventoried; deep classification pending per-family |
 | LOW | `CVF 16.5/` + `CVF_Restructure/` deep scan | Broad routing done; deep classification when operator prioritizes |
 | LOW | `App onboarding/` | UI design reference; not a knowledge absorption target |
-| GATED | LPCI2-T8 Search Layer Scaffolding | PolicyLocal T7 is READY_WITH_CONDITIONS; query receipt model and derived retrieval trace remain before runtime |
+| READY_FOR_OPERATOR_AUTH | PolicyLocal search implementation work order | PolicyLocal T8 governance scaffold is READY; EC-02 rescan required on or after 2026-07-01 before production runtime |
 
 ---
 

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: T7_CLOSED_PASS_BOUNDED
+Status: T8_CLOSED_PASS_BOUNDED_READY
 
 docType: roadmap
 
@@ -68,6 +68,7 @@ retrieval without overclaiming.
 | LPCI2-T5 | Deep classification evidence | full-body effectiveDate scan, GC-048 knowledge-map reconciliation, adversarial sampling | CLOSED_PASS_BOUNDED |
 | LPCI2-T6 | Search/chat readiness gate | five-gate readiness evaluation against T4+T5 evidence; produces readiness verdict and gap register; no runtime implementation | CLOSED_PASS_BOUNDED |
 | LPCI2-T7 | Corpus facet schema authoring | faceted retrieval schema, boundary enforcement contract, topicTags/freshnessStatus, corpus records t7.v1, processing ledger | CLOSED_PASS_BOUNDED |
+| LPCI2-T8 | Search layer scaffolding | query receipt model, retrieval trace design, corpus records t8.v1, negative search evidence; final readiness verdict READY | CLOSED_PASS_BOUNDED |
 
 ## Work Plan
 
@@ -82,6 +83,7 @@ retrieval without overclaiming.
 | W5 | Deep classification and knowledge-map reconciliation | full-body effectiveDate scan, GC-048, adversarial sampling | CLOSED_PASS_BOUNDED |
 | W6 | Search/chat readiness gate | five-gate evaluation; readiness verdict and gap register | CLOSED_PASS_BOUNDED |
 | W7 | Corpus facet schema authoring | faceted retrieval schema, boundary enforcement contract, corpus records t7.v1 | CLOSED_PASS_BOUNDED |
+| W8 | Search layer scaffolding | query receipt model, retrieval trace design, corpus records t8.v1, negative search evidence; READY verdict | CLOSED_PASS_BOUNDED |
 
 ## Decision
 
@@ -169,6 +171,10 @@ Operator checkpoint required before T8 is authorized.
 | T7 faceted retrieval schema | `docs/reference/CVF_LPCI_FACETED_RETRIEVAL_SCHEMA_2026-06-04.md` |
 | T7 boundary enforcement contract | `docs/reference/CVF_LPCI_RESPONSE_BOUNDARY_ENFORCEMENT_CONTRACT_2026-06-04.md` |
 | T7 completion review | `docs/reviews/CVF_LPCI2_T7_CORPUS_FACET_SCHEMA_AUTHORING_COMPLETION_2026-06-04.md` |
+| T8 work order | `docs/work_orders/CVF_WO_LPCI2_T8_SEARCH_LAYER_SCAFFOLDING_2026-06-04.md` |
+| T8 query receipt model | `docs/reference/CVF_LPCI_QUERY_RECEIPT_MODEL_2026-06-04.md` |
+| T8 retrieval trace design | `docs/reference/CVF_LPCI_RETRIEVAL_TRACE_DESIGN_2026-06-04.md` |
+| T8 completion review | `docs/reviews/CVF_LPCI2_T8_SEARCH_LAYER_SCAFFOLDING_COMPLETION_2026-06-04.md` |
 
 ## Non-Goals
 
@@ -195,9 +201,12 @@ LPCI2-T5 is CLOSED_PASS_BOUNDED at commit `53b2bac4`: effectiveDate=2026-07-01
 confirmed for both files, GC-048 RECONCILED_VERIFIED, adversarial sampling 4/4 PASS.
 LPCI2-T6 is CLOSED_PASS_BOUNDED: verdict NOT_READY; 10 gaps registered.
 LPCI2-T7 is CLOSED_PASS_BOUNDED (dispatchBaseHead=`45b86df3`): 7 T6 gaps
-CLOSED; revised verdict READY_WITH_CONDITIONS; 3 gaps remain for T8
-(T6-GAP-05/06/08 — zero-result log, retrieval trace, query receipt model).
-Operator checkpoint required before T8 is authorized.
+CLOSED; revised verdict READY_WITH_CONDITIONS.
+LPCI2-T8 is CLOSED_PASS_BOUNDED (dispatchBaseHead=`95de732c`): 3 remaining
+T6 gaps CLOSED (T6-GAP-05/06/08); all 5 T6 gates PASS; final readiness
+verdict READY. Query receipt model, retrieval trace design, and negative
+search evidence are now governed and defined. Operator may authorize a
+search implementation work order with a fresh instruction.
 
 It does not claim runtime implementation, chatbot product readiness, production
 corpus readiness, legal answer correctness, hosted readiness, or public export.
