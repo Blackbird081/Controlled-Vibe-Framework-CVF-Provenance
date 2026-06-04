@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: IMPLEMENTATION_COMPLETE_PENDING_REVIEW
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -12,7 +12,7 @@ dispatchBaseHead: `7c7dfc52`
 
 executionBaseHead: `7c7dfc52`
 
-closureBaseHead: `NOT_EXECUTED_YET`
+closureBaseHead: `dd49a3bf`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -44,6 +44,12 @@ Allowed scope:
 - add a private reference packet and GC-052 system-loop connection for the
   route governance proof workflow chain;
 - update ERH private roadmap/review artifacts with bounded T2C status.
+- reviewer closure may update
+  `docs/reference/CVF_ERH_T2C_ROUTE_GOVERNANCE_PROOF_WORKFLOW_CHAIN_2026-06-04.md`;
+- reviewer closure may update
+  `docs/reviews/CVF_ERH_T2C_ROUTE_GOVERNANCE_PROOF_HARDENING_COMPLETION_2026-06-04.md`;
+- reviewer closure may update
+  `docs/roadmaps/CVF_ERH_EXTERNAL_REVIEW_HARDENING_ROADMAP_2026-06-04.md`.
 
 Forbidden scope:
 
@@ -61,7 +67,7 @@ Risk ceiling: R1 local runtime-source hardening, no live/provider execution.
 | --- | --- | --- |
 | Orchestrator / dispatcher | Codex | select and dispatch bounded T2C route hardening |
 | Implementer | Codex | helper, five route files, focused tests, private completion packet |
-| Reviewer | Codex self-review pending operator/committer review | no closed-equivalent claim in worker mode |
+| Reviewer / committer | Codex closure review | bounded closure only; no public-sync, hosted, production, or route-complete claim |
 | Operator approval required for | public-sync, live/provider proof, CI workflow rewrite, commit/push | not included in this work order |
 
 ## Required First Reads
@@ -101,10 +107,10 @@ Risk ceiling: R1 local runtime-source hardening, no live/provider execution.
 
 | Roadmap requirement | Work order output | Verification | Status |
 | --- | --- | --- | --- |
-| ERH route coverage missing-proof gap must not remain merely caveated | shared helper plus five route updates | focused tests and source search | PASS_PENDING_IMPLEMENTATION |
-| Do not overclaim lexical route hits as governance proof | routeGovernanceProof is emitted from runtime guard, not docs prose | response assertions | PASS_PENDING_IMPLEMENTATION |
-| Keep public-sync separate | no public-sync path in allowed scope | `git diff --name-status` | PASS_PENDING_IMPLEMENTATION |
-| Keep live/provider proof separate | no live/provider command in evidence | completion claim boundary | PASS_PENDING_IMPLEMENTATION |
+| ERH route coverage missing-proof gap must not remain merely caveated | shared helper plus five route updates | focused tests and source search | PASS |
+| Do not overclaim lexical route hits as governance proof | routeGovernanceProof is emitted from runtime guard, not docs prose | response assertions | PASS |
+| Keep public-sync separate | no public-sync path in allowed scope | `git diff --name-status` | PASS |
+| Keep live/provider proof separate | no route-specific hosted/live proof claim | completion claim boundary | PASS |
 
 ## Worker Autonomy / No-Question Rule
 
@@ -217,9 +223,9 @@ Implementation may proceed only after:
 - markdown structural completeness passes for the changed dispatch artifacts;
 - pre-dispatch and pre-implementation autorun gates pass on base `7c7dfc52`.
 
-Worker handoff is not closure because commit mode is `WORKER_MUST_NOT_COMMIT`.
-Reviewer or committer closure must happen after review, commit, and a committed
-range pre-closure gate.
+Worker handoff was not closure because commit mode was `WORKER_MUST_NOT_COMMIT`.
+Reviewer/committer closure is recorded after focused review and must be backed
+by a committed-range pre-closure gate on the closure commit.
 
 ## Acceptance Criteria
 
@@ -253,7 +259,20 @@ range pre-closure gate.
 | Markdown and dispatch gates rerun | PASS |
 | Completion packet filed | PASS |
 | Public-sync explicitly not touched | PASS |
-| `pre-closure` committed-range gate | N/A with reason: worker mode is `WORKER_MUST_NOT_COMMIT` |
+| `pre-closure` committed-range gate | PASS - reviewer closure range uses `dd49a3bf..HEAD` |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_T2C_ROUTE_GOVERNANCE_PROOF_HARDENING_2026-06-04.md` | ERH-T2C `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ERH_T2C_ROUTE_GOVERNANCE_PROOF_HARDENING_COMPLETION_2026-06-04.md` | completion review `CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ERH_EXTERNAL_REVIEW_HARDENING_ROADMAP_2026-06-04.md` | ERH-T2C and E7 closed bounded | PASS |
+| Registry JSON | `N/A with reason` | no GC-051 corpus registry state changed by ERH-T2C route proof closure | BLOCKED with reason |
+| Registry Markdown | `N/A with reason` | no GC-051 corpus registry markdown state changed by ERH-T2C route proof closure | BLOCKED with reason |
+| External evidence digest | `N/A with reason` | no external corpus/source digest consumed by ERH-T2C closure | N/A with reason |
+| System loop interlock | `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json` | GC-052 connection `erh-route-ledger-to-route-governance-proof-workflow` | PASS |
+| Session continuity | `AGENT_HANDOFF_V15_2026-05-29.md` | follow-up handoff sync commit records T2C closure | PASS |
 
 ## Return Conditions
 
