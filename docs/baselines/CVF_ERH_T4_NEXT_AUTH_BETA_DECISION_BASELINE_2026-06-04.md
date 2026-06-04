@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: COMPLETE_PENDING_REVIEW
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 

@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: COMPLETE_AS_HANDOFF_PUBLIC_SYNC_EXPORTED
+Status: CLOSED_PASS_BOUNDED_HANDOFF_PUBLIC_SYNC_EXPORTED
 
 docType: work_order
 
@@ -136,7 +136,7 @@ Forbidden paths: public-sync clone files, runtime source, workflows.
 | Target public paths named | PASS |
 | Public-sync handoff complete | PASS |
 | Public-sync local prep routed to T1C | PASS |
-| Public export deferred | PASS |
+| Public export recorded through T1C | PASS |
 
 ## Return Conditions
 
@@ -187,7 +187,7 @@ python governance/compat/check_finding_to_governance_learning.py --base b5cf8882
 | --- | --- | --- |
 | Public-sync target paths are named | T1B handoff target table | PASS |
 | Public-sync edit is bounded | follow-on T1C docs/manifest-only export | PASS |
-| Export remains deferred | Public Export Disposition | PASS |
+| Export recorded with public commit evidence | Public Export Disposition | PASS |
 
 ## Fail Conditions
 
@@ -196,6 +196,19 @@ python governance/compat/check_finding_to_governance_learning.py --base b5cf8882
 | Public-sync files edited by this provenance work order | BLOCKS_CLOSURE |
 | Public export claimed without public commit evidence | BLOCKS_CLOSURE |
 | Private-only evidence copied wholesale into public docs | BLOCKS_CLOSURE |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_T1B_PUBLIC_SYNC_HANDOFF_2026-06-04.md` | `CLOSED_PASS_BOUNDED_HANDOFF_PUBLIC_SYNC_EXPORTED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ERH_INITIAL_PRIVATE_TRANCHES_COMPLETION_2026-06-04.md` and `docs/reviews/CVF_ERH_T1C_PUBLIC_SYNC_LOCAL_CLAIM_BOUNDARY_PREP_COMPLETION_2026-06-04.md` | T1B private closure plus T1C public-sync successor | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ERH_EXTERNAL_REVIEW_HARDENING_ROADMAP_2026-06-04.md` | ERH-T1B row `CLOSED_PASS_BOUNDED_HANDOFF_PUBLIC_SYNC_EXPORTED` | PASS |
+| Registry JSON | `N/A with reason` | no corpus registry state changed by T1B handoff closure | BLOCKED with reason |
+| Registry Markdown | `N/A with reason` | no corpus registry markdown state changed by T1B handoff closure | BLOCKED with reason |
+| External evidence digest | `N/A with reason` | no external digest consumed by T1B closure | N/A with reason |
+| System loop interlock | `N/A with reason` | T1B is handoff-only; public-surface drift successor owns checker evidence | N/A with reason |
+| Session continuity | `AGENT_HANDOFF_V15_2026-05-29.md` | follow-up handoff sync commit required after closure commit | PASS |
 
 ## Finding-To-Governance Learning Disposition
 

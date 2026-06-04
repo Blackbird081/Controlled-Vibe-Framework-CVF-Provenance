@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: COMPLETE_PENDING_REVIEW
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -141,7 +141,7 @@ N/A with reason: docs-only boundary remains inside autonomous private scope.
 | Roadmap requirement | Work order output | Verification | Status |
 | --- | --- | --- | --- |
 | ERH-T3 evidence durability claim boundary | `docs/reference/CVF_ERH_T3_EVIDENCE_DURABILITY_BOUNDARY_2026-06-04.md` | path exists after implementation | PASS |
-| No runtime fix in this tranche | forbidden scope and diff review | PASS_PENDING_FINAL_GATE |
+| No runtime fix in this tranche | forbidden scope and diff review | PASS |
 | Inform T4 dependency decision | production posture boundary table | PASS |
 
 ## Worker Autonomy / No-Question Rule
@@ -176,6 +176,19 @@ python governance/compat/check_public_export_disposition.py --base b5cf8882 --he
 | T3 claims durable signed web evidence by default | BLOCKS_CLOSURE |
 | T3 changes runtime/source files | BLOCKS_CLOSURE |
 | T3 claims live benchmark emission while source says false | BLOCKS_CLOSURE |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_T3_EVIDENCE_DURABILITY_BOUNDARY_2026-06-04.md` | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ERH_INITIAL_PRIVATE_TRANCHES_COMPLETION_2026-06-04.md` | initial private tranche closure | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ERH_EXTERNAL_REVIEW_HARDENING_ROADMAP_2026-06-04.md` | ERH-T3 row `CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `N/A with reason` | no corpus registry state changed by T3 durability-boundary closure | BLOCKED with reason |
+| Registry Markdown | `N/A with reason` | no corpus registry markdown state changed by T3 durability-boundary closure | BLOCKED with reason |
+| External evidence digest | `N/A with reason` | no external digest consumed by T3 closure | N/A with reason |
+| System loop interlock | `N/A with reason` | T3 is docs-only boundary; no new workflow-chain connection | N/A with reason |
+| Session continuity | `AGENT_HANDOFF_V15_2026-05-29.md` | follow-up handoff sync commit required after closure commit | PASS |
 
 ## Finding-To-Governance Learning Disposition
 

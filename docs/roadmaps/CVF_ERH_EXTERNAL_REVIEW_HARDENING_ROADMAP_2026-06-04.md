@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: PRIVATE_TRANCHES_COMPLETE_PUBLIC_SYNC_EXPORTED_T2C_CI1_PD1_CLOSED_PASS_BOUNDED_DEP1_ACCEPTED_BOUNDED_AUD1_CLOSED_PASS_BOUNDED
+Status: INITIAL_PRIVATE_TRANCHES_CLOSED_PASS_BOUNDED_PUBLIC_SYNC_EXPORTED_T2C_CI1_PD1_CLOSED_PASS_BOUNDED_DEP1_ACCEPTED_BOUNDED_AUD1_CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -85,18 +85,18 @@ Out of scope:
 | Planning review | `docs/assessments/CVF_ERH_PLANNING_REVIEW_FOR_CODEX_2026-06-04.md` | reviewed |
 | Codex response | `docs/reviews/CVF_ERH_PLANNING_REVIEW_CODEX_RESPONSE_2026-06-04.md` | recorded |
 | Fresh GC-018 | `docs/baselines/CVF_GC018_ERH_EXTERNAL_REVIEW_HARDENING_2026-06-04.md` | authorized |
-| Work orders | ERH-T1A/T2A/T3/T2B/T4/T1B/T1C authored; ERH-T2C, ERH-CI1, and ERH-PD1 closed bounded; ERH-DEP1 closed bounded; ERH-AUD1 closed bounded | private tranche outputs prepared; public-sync delta exported; runtime route workflow, CI public-evaluation workflow, and public-surface drift workflow closed bounded; dependency-risk workflow closed as `ACCEPT_WITH_CAVEAT`; dependency-audit remediation closed as `AUDIT_REDUCED_WITH_RESIDUALS` |
+| Work orders | ERH-T1A/T2A/T3/T2B/T4/T1B initial private tranches closed bounded; ERH-T1C exported; ERH-T2C, ERH-CI1, and ERH-PD1 closed bounded; ERH-DEP1 closed bounded; ERH-AUD1 closed bounded | private tranche outputs reviewed and closed; public-sync delta exported; runtime route workflow, CI public-evaluation workflow, and public-surface drift workflow closed bounded; dependency-risk workflow closed as `ACCEPT_WITH_CAVEAT`; dependency-audit remediation closed as `AUDIT_REDUCED_WITH_RESIDUALS` |
 
 ## Tranche Plan
 
 | Tranche | Goal | Primary output | Status |
 | --- | --- | --- | --- |
-| ERH-T1A | Private public-claim calibration | `docs/reference/CVF_ERH_T1A_PUBLIC_CLAIM_CALIBRATION_2026-06-04.md` | COMPLETE_PENDING_REVIEW |
-| ERH-T2A | Route governance coverage ledger | `docs/reference/CVF_ERH_T2A_ROUTE_GOVERNANCE_COVERAGE_LEDGER_2026-06-04.md` | COMPLETE_PENDING_REVIEW |
-| ERH-T3 | Evidence durability docs-only boundary | `docs/reference/CVF_ERH_T3_EVIDENCE_DURABILITY_BOUNDARY_2026-06-04.md` | COMPLETE_PENDING_REVIEW |
-| ERH-T2B | CI hardening plan | `docs/reference/CVF_ERH_T2B_CI_HARDENING_PLAN_2026-06-04.md` | COMPLETE_PENDING_REVIEW |
-| ERH-T4 | Dependency decision | `docs/baselines/CVF_ERH_T4_NEXT_AUTH_BETA_DECISION_BASELINE_2026-06-04.md` | COMPLETE_PENDING_REVIEW |
-| ERH-T1B | Public-sync README/catalog handoff | `docs/reference/CVF_ERH_T1B_PUBLIC_SYNC_HANDOFF_2026-06-04.md` | COMPLETE_AS_HANDOFF |
+| ERH-T1A | Private public-claim calibration | `docs/reference/CVF_ERH_T1A_PUBLIC_CLAIM_CALIBRATION_2026-06-04.md` | CLOSED_PASS_BOUNDED |
+| ERH-T2A | Route governance coverage ledger | `docs/reference/CVF_ERH_T2A_ROUTE_GOVERNANCE_COVERAGE_LEDGER_2026-06-04.md` | CLOSED_PASS_BOUNDED |
+| ERH-T3 | Evidence durability docs-only boundary | `docs/reference/CVF_ERH_T3_EVIDENCE_DURABILITY_BOUNDARY_2026-06-04.md` | CLOSED_PASS_BOUNDED |
+| ERH-T2B | CI hardening plan | `docs/reference/CVF_ERH_T2B_CI_HARDENING_PLAN_2026-06-04.md` | CLOSED_PASS_BOUNDED_SUPERSEDED_BY_ERH_CI1 |
+| ERH-T4 | Dependency decision | `docs/baselines/CVF_ERH_T4_NEXT_AUTH_BETA_DECISION_BASELINE_2026-06-04.md` | CLOSED_PASS_BOUNDED |
+| ERH-T1B | Public-sync README/catalog handoff | `docs/reference/CVF_ERH_T1B_PUBLIC_SYNC_HANDOFF_2026-06-04.md` | CLOSED_PASS_BOUNDED_HANDOFF_PUBLIC_SYNC_EXPORTED |
 | ERH-T1C | Public-sync claim-boundary export | `docs/reviews/CVF_ERH_T1C_PUBLIC_SYNC_LOCAL_CLAIM_BOUNDARY_PREP_COMPLETION_2026-06-04.md` | PUBLIC_SYNC_EXPORTED |
 | ERH-T2C | Route governance proof workflow chain hardening | `docs/reviews/CVF_ERH_T2C_ROUTE_GOVERNANCE_PROOF_HARDENING_COMPLETION_2026-06-04.md` | CLOSED_PASS_BOUNDED |
 | ERH-CI1 | CI public-evaluation workflow chain | `docs/reviews/CVF_ERH_CI1_PUBLIC_EVALUATION_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md` | CLOSED_PASS_BOUNDED |
@@ -126,10 +126,10 @@ Out of scope:
 | Step | Requirement | Output | Status |
 | --- | --- | --- | --- |
 | E1 | Author fresh GC-018 and roadmap | baseline + roadmap | COMPLETE |
-| E2 | Author ERH-T1A work order | T1A work order + claim packet | COMPLETE |
-| E3 | Author ERH-T2A work order | T2A work order + route ledger | COMPLETE |
-| E4 | Author ERH-T3 work order | T3 work order + durability packet | COMPLETE |
-| E5 | Sequence T2B/T4/T1B after dependencies | T2B plan, T4 baseline, T1B handoff | COMPLETE |
+| E2 | Author ERH-T1A work order | T1A work order + claim packet | CLOSED_PASS_BOUNDED |
+| E3 | Author ERH-T2A work order | T2A work order + route ledger | CLOSED_PASS_BOUNDED |
+| E4 | Author ERH-T3 work order | T3 work order + durability packet | CLOSED_PASS_BOUNDED |
+| E5 | Sequence T2B/T4/T1B after dependencies | T2B plan, T4 baseline, T1B handoff | CLOSED_PASS_BOUNDED |
 | E6 | Prepare and export immediate public-sync claim-boundary delta | T1C work order and completion packet | PUBLIC_SYNC_EXPORTED |
 | E7 | Implement bounded route governance proof workflow chain for five T2A missing-proof routes | registry-backed helper, five route updates, GC-052 connection, focused tests, release gate, completion packet | CLOSED_PASS_BOUNDED |
 | E8 | Convert CI hardening plan into bounded public-evaluation workflow chain | checker, tests, hook/autorun wiring, GC-052 connection, completion packet | CLOSED_PASS_BOUNDED |
@@ -170,6 +170,11 @@ Out of scope:
   classified the remaining moderate residuals as major-version gated. It does
   not authorize `next-auth` migration, auth runtime edits, public-sync, full
   CVE clearance, production security readiness, or public readiness.
+- ERH initial private docs-only tranches are closed bounded in
+  `docs/reviews/CVF_ERH_INITIAL_PRIVATE_TRANCHES_COMPLETION_2026-06-04.md`.
+  T1A/T2A/T3/T2B/T4/T1B no longer carry review-pending status. T2B is
+  superseded by ERH-CI1 for workflow-chain evidence, and T1B was consumed by
+  T1C/public summary export.
 
 ## Verification / Evidence
 
@@ -239,9 +244,9 @@ commit `73f1da98e1a5fcc55c3124ff7c5a633193df5322`.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_AUD1_CVF_WEB_DEPENDENCY_AUDIT_REMEDIATION_FOR_CLAUDE_2026-06-04.md` | ERH-AUD1 `CLOSED_PASS_BOUNDED` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_ERH_AUD1_CVF_WEB_DEPENDENCY_AUDIT_REMEDIATION_COMPLETION_2026-06-04.md` | decision `AUDIT_REDUCED_WITH_RESIDUALS` | PASS |
-| Roadmap state | `docs/roadmaps/CVF_ERH_EXTERNAL_REVIEW_HARDENING_ROADMAP_2026-06-04.md` | roadmap status includes `T2C_CI1_PD1_CLOSED_PASS_BOUNDED` and `AUD1_CLOSED_PASS_BOUNDED`; E7, E8, E9, and E11 closed bounded | PASS |
+| Work order status | six ERH initial private work orders plus ERH-AUD1 work order | initial private work orders and ERH-AUD1 no longer carry review-pending status | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ERH_INITIAL_PRIVATE_TRANCHES_COMPLETION_2026-06-04.md` and `docs/reviews/CVF_ERH_AUD1_CVF_WEB_DEPENDENCY_AUDIT_REMEDIATION_COMPLETION_2026-06-04.md` | initial private closure `CLOSED_PASS_BOUNDED`; AUD1 decision `AUDIT_REDUCED_WITH_RESIDUALS` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ERH_EXTERNAL_REVIEW_HARDENING_ROADMAP_2026-06-04.md` | roadmap status includes `INITIAL_PRIVATE_TRANCHES_CLOSED_PASS_BOUNDED`, `T2C_CI1_PD1_CLOSED_PASS_BOUNDED`, and `AUD1_CLOSED_PASS_BOUNDED`; E2-E5 and E7-E11 closed bounded or accepted bounded | PASS |
 | Registry JSON | `N/A with reason` | no corpus registry state changed; AUD1 is dependency-audit closure, not corpus/search/classification closure | BLOCKED with reason |
 | Registry Markdown | `N/A with reason` | no corpus registry state changed; AUD1 is dependency-audit closure, not corpus/search/classification closure | BLOCKED with reason |
 | External evidence digest | `N/A with reason` | no external corpus/source digest consumed by AUD1 | N/A with reason |
@@ -274,10 +279,11 @@ Validation:
 
 ## Claim Boundary
 
-This roadmap authorizes ERH planning, private tranche records, public-sync
-documentation export, bounded ERH-T2C route-governance proof workflow closure,
-bounded ERH-CI1 CI public-evaluation workflow closure, bounded ERH-PD1 public-
-surface drift workflow closure, ERH-DEP1 dependency-risk workflow closure, and
-ERH-AUD1 dependency-audit remediation closure. It does not prove live governance
-behavior for every route, hosted behavior, production readiness, production-
-grade CI, full CVE clearance, auth migration completion, or public readiness.
+This roadmap authorizes ERH planning, closed bounded initial private tranche
+records, public-sync documentation export, bounded ERH-T2C route-governance
+proof workflow closure, bounded ERH-CI1 CI public-evaluation workflow closure,
+bounded ERH-PD1 public-surface drift workflow closure, ERH-DEP1 dependency-risk
+workflow closure, and ERH-AUD1 dependency-audit remediation closure. It does
+not prove live governance behavior for every route, hosted behavior, production
+readiness, production-grade CI, full CVE clearance, auth migration completion,
+or public readiness.

@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: COMPLETE_PENDING_REVIEW
+Status: CLOSED_PASS_BOUNDED_SUPERSEDED_BY_ERH_CI1
 
 docType: work_order
 
@@ -138,7 +138,7 @@ N/A with reason: docs-only CI plan remains inside autonomous private scope.
 | --- | --- | --- | --- |
 | ERH-T2B CI hardening plan | `docs/reference/CVF_ERH_T2B_CI_HARDENING_PLAN_2026-06-04.md` | path exists after implementation | PASS |
 | Depend on T2A | dependency release row | T2A path exists | PASS |
-| No workflow edit in this tranche | forbidden scope and diff review | PASS_PENDING_FINAL_GATE |
+| No workflow edit in this tranche | forbidden scope and diff review | PASS |
 
 ## Worker Autonomy / No-Question Rule
 
@@ -163,7 +163,7 @@ python governance/compat/check_finding_to_governance_learning.py --base b5cf8882
 | --- | --- | --- |
 | CI gaps are prioritized | T2B plan table | PASS |
 | Protected live gate boundary is preserved | T2B plan | PASS |
-| No workflow source is edited | `git diff --name-status` at review | PASS_PENDING_FINAL_GATE |
+| No workflow source is edited | `git diff --name-status` at review | PASS |
 
 ## Fail Conditions
 
@@ -172,6 +172,19 @@ python governance/compat/check_finding_to_governance_learning.py --base b5cf8882
 | T2B modifies `.github/workflows/**` | BLOCKS_CLOSURE |
 | T2B implies production-grade CI without missing gates | BLOCKS_CLOSURE |
 | T2B treats live gate as ordinary unprotected CI | BLOCKS_CLOSURE |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_T2B_CI_HARDENING_PLAN_2026-06-04.md` | `CLOSED_PASS_BOUNDED_SUPERSEDED_BY_ERH_CI1` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ERH_INITIAL_PRIVATE_TRANCHES_COMPLETION_2026-06-04.md` and `docs/reviews/CVF_ERH_CI1_PUBLIC_EVALUATION_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md` | T2B docs closure plus ERH-CI1 successor | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ERH_EXTERNAL_REVIEW_HARDENING_ROADMAP_2026-06-04.md` | ERH-T2B row `CLOSED_PASS_BOUNDED_SUPERSEDED_BY_ERH_CI1` | PASS |
+| Registry JSON | `N/A with reason` | no corpus registry state changed by T2B CI-plan closure | BLOCKED with reason |
+| Registry Markdown | `N/A with reason` | no corpus registry markdown state changed by T2B CI-plan closure | BLOCKED with reason |
+| External evidence digest | `N/A with reason` | no external digest consumed by T2B closure | N/A with reason |
+| System loop interlock | `N/A with reason` | T2B is plan-only; successor ERH-CI1 owns GC-052 CI connection | N/A with reason |
+| Session continuity | `AGENT_HANDOFF_V15_2026-05-29.md` | follow-up handoff sync commit required after closure commit | PASS |
 
 ## Finding-To-Governance Learning Disposition
 

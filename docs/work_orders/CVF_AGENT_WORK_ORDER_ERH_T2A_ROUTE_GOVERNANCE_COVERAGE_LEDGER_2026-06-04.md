@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: COMPLETE_PENDING_REVIEW
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -165,7 +165,7 @@ python governance/compat/check_corpus_intelligence_classification.py --base b5cf
 | --- | --- | --- |
 | All 68 route files are listed | route ledger table | PASS |
 | Missing-proof routes are not hidden | gap summary | PASS |
-| No runtime edit is made | `git diff --name-status` at review | PASS_PENDING_FINAL_GATE |
+| No runtime edit is made | `git diff --name-status` at review | PASS |
 
 ## Fail Conditions
 
@@ -174,6 +174,19 @@ python governance/compat/check_corpus_intelligence_classification.py --base b5cf
 | Route count self-reported without filesystem command | BLOCKS_CLOSURE |
 | Lexical hit converted into semantic route governance proof | BLOCKS_CLOSURE |
 | Runtime route files edited in T2A | BLOCKS_CLOSURE |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_T2A_ROUTE_GOVERNANCE_COVERAGE_LEDGER_2026-06-04.md` | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ERH_INITIAL_PRIVATE_TRANCHES_COMPLETION_2026-06-04.md` | initial private tranche closure | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ERH_EXTERNAL_REVIEW_HARDENING_ROADMAP_2026-06-04.md` | ERH-T2A row `CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `N/A with reason` | no corpus registry state changed by T2A route-ledger closure | BLOCKED with reason |
+| Registry Markdown | `N/A with reason` | no corpus registry markdown state changed by T2A route-ledger closure | BLOCKED with reason |
+| External evidence digest | `N/A with reason` | route corpus is local source inventory, not external corpus digest | N/A with reason |
+| System loop interlock | `N/A with reason` | T2A is source inventory; successor ERH-T2C owns GC-052 route proof | N/A with reason |
+| Session continuity | `AGENT_HANDOFF_V15_2026-05-29.md` | follow-up handoff sync commit required after closure commit | PASS |
 
 ## Finding-To-Governance Learning Disposition
 

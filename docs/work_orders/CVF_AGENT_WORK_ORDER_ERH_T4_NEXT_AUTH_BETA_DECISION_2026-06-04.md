@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: COMPLETE_PENDING_REVIEW
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -134,7 +134,7 @@ N/A with reason: decision baseline remains inside autonomous private scope.
 | --- | --- | --- | --- |
 | ERH-T4 dependency decision | `docs/baselines/CVF_ERH_T4_NEXT_AUTH_BETA_DECISION_BASELINE_2026-06-04.md` | path exists after implementation | PASS |
 | Hold until T3 | dependency release row | T3 path exists | PASS |
-| No migration in T4 | forbidden scope and diff review | PASS_PENDING_FINAL_GATE |
+| No migration in T4 | forbidden scope and diff review | PASS |
 
 ## Worker Autonomy / No-Question Rule
 
@@ -167,6 +167,19 @@ python governance/compat/check_finding_to_governance_learning.py --base b5cf8882
 | T4 edits `package.json` or lockfiles | BLOCKS_CLOSURE |
 | T4 claims production auth stability | BLOCKS_CLOSURE |
 | T4 hides beta caveat from public-sync | BLOCKS_CLOSURE |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_T4_NEXT_AUTH_BETA_DECISION_2026-06-04.md` | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ERH_INITIAL_PRIVATE_TRANCHES_COMPLETION_2026-06-04.md` and `docs/reviews/CVF_ERH_DEP1_DEPENDENCY_RISK_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md` | T4 docs closure plus DEP1 successor decision | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ERH_EXTERNAL_REVIEW_HARDENING_ROADMAP_2026-06-04.md` | ERH-T4 row `CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `N/A with reason` | no corpus registry state changed by T4 dependency decision closure | BLOCKED with reason |
+| Registry Markdown | `N/A with reason` | no corpus registry markdown state changed by T4 dependency decision closure | BLOCKED with reason |
+| External evidence digest | `N/A with reason` | no external digest consumed by T4 closure | N/A with reason |
+| System loop interlock | `N/A with reason` | T4 is decision-only; successor DEP/AUD workflow chains own dependency checks | N/A with reason |
+| Session continuity | `AGENT_HANDOFF_V15_2026-05-29.md` | follow-up handoff sync commit required after closure commit | PASS |
 
 ## Finding-To-Governance Learning Disposition
 

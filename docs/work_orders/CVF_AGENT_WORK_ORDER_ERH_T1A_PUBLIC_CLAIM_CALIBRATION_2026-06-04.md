@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: COMPLETE_PENDING_REVIEW
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -168,7 +168,7 @@ python governance/compat/check_finding_to_governance_learning.py --base b5cf8882
 | --- | --- | --- |
 | Claim calibration packet exists | `docs/reference/CVF_ERH_T1A_PUBLIC_CLAIM_CALIBRATION_2026-06-04.md` | PASS |
 | Public README/catalog work remains future public-sync | output claim boundary | PASS |
-| No runtime or public README change is claimed | `git diff --name-status` at review | PASS_PENDING_FINAL_GATE |
+| No runtime or public README change is claimed | `git diff --name-status` at review | PASS |
 
 ## Fail Conditions
 
@@ -177,6 +177,19 @@ python governance/compat/check_finding_to_governance_learning.py --base b5cf8882
 | Public-sync performed from provenance workspace | BLOCKS_CLOSURE |
 | Mock landing-page examples treated as governance evidence | BLOCKS_CLOSURE |
 | Output-quality parity reopened | BLOCKS_CLOSURE |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_T1A_PUBLIC_CLAIM_CALIBRATION_2026-06-04.md` | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ERH_INITIAL_PRIVATE_TRANCHES_COMPLETION_2026-06-04.md` | initial private tranche closure | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ERH_EXTERNAL_REVIEW_HARDENING_ROADMAP_2026-06-04.md` | ERH-T1A row `CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `N/A with reason` | no corpus registry state changed by T1A docs-only closure | BLOCKED with reason |
+| Registry Markdown | `N/A with reason` | no corpus registry markdown state changed by T1A docs-only closure | BLOCKED with reason |
+| External evidence digest | `N/A with reason` | no new external digest consumed by T1A closure | N/A with reason |
+| System loop interlock | `N/A with reason` | T1A is docs-only claim calibration | N/A with reason |
+| Session continuity | `AGENT_HANDOFF_V15_2026-05-29.md` | follow-up handoff sync commit required after closure commit | PASS |
 
 ## Finding-To-Governance Learning Disposition
 
