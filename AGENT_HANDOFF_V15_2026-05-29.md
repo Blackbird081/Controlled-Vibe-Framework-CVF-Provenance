@@ -27,6 +27,7 @@ Current HEAD recorded for this handoff: `77004a90` (Close ERH DEP1 dependency ri
 Current HEAD recorded for this handoff: `358611bb` (Dispatch ERH AUD1 dependency audit remediation for Claude). Updated 2026-06-04 after ERH-AUD1 GC-018 baseline and Claude work order were committed. Claude may execute bounded `cvf-web` dependency-audit remediation under `WORKER_MUST_NOT_COMMIT`; auth runtime edits, `next-auth` migration, public-sync, live proof, and production/public security-readiness claims remain out of scope.
 Current HEAD recorded for this handoff: `35d6fbb3` (Close ERH AUD1 dependency audit remediation). Updated 2026-06-04 after ERH-AUD1 closed `AUDIT_REDUCED_WITH_RESIDUALS`: `cvf-web` audit findings reduced 14 to 3, critical/high findings reduced to 0, residual moderate findings are major-version gated. DEP2/next-major migration, auth runtime edits, `next-auth` migration, public-sync, live proof, hosted freshness, full CVE clearance, production security readiness, and public readiness remain separate.
 Current HEAD recorded for this handoff: `07f0f6bb` (Close ERH T2C route governance proof workflow). Updated 2026-06-04 after ERH-T2C moved from worker pending review to `CLOSED_PASS_BOUNDED`: five ERH-T2A missing-proof routes have local source/focused-test evidence for the shared `routeGovernanceProof` workflow chain, GC-052 interlock remains valid, and public-sync/hosted/public route claims remain separate. Next ERH cleanup move: close ERH-CI1 review, then ERH-PD1 review, before deciding on any public-sync summary.
+Current HEAD recorded for this handoff: `3754cc28` (Close ERH CI1 public evaluation workflow). Updated 2026-06-04 after ERH-CI1 moved from worker pending review to `CLOSED_PASS_BOUNDED`: the CI public-evaluation workflow-chain checker reports `READY_WITH_BOUNDARIES`, focused checker tests pass, and production-grade CI/public-readiness claims remain blocked. Next ERH cleanup move: close ERH-PD1 review, then decide whether a separate public-sync summary is warranted.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -482,10 +483,10 @@ completion review:
 
 `docs/reviews/CVF_LPCI1_T4_RETRIEVAL_BOUNDARY_COMPLETION_2026-06-03.md`
 
-Next ERH cleanup move: close ERH-CI1 review, then ERH-PD1 review, before any
-public-sync summary decision. Public-sync, hosted/public readiness, ordinary
-live-provider CI, auth runtime edits, and next-major dependency migration remain
-separate.
+Next ERH cleanup move: close ERH-PD1 review, then decide whether a separate
+public-sync summary is warranted. Public-sync, hosted/public readiness,
+ordinary live-provider CI, auth runtime edits, and next-major dependency
+migration remain separate.
 
 `ERH-AUD1` CVF Web Dependency Audit Remediation is `CLOSED_PASS_BOUNDED` at
 commit `35d6fbb3`: audit findings reduced from 14 to 3; critical/high findings
@@ -504,6 +505,18 @@ workflow reference
 Boundary: local source/focused-test route proof only; no hosted freshness,
 public readiness, production readiness, complete API-route coverage, or
 automatic public-sync export.
+
+`ERH-CI1` Public Evaluation Workflow Chain is `CLOSED_PASS_BOUNDED` at commit
+`3754cc28`: work order
+`docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_CI1_PUBLIC_EVALUATION_WORKFLOW_CHAIN_2026-06-04.md`;
+completion review
+`docs/reviews/CVF_ERH_CI1_PUBLIC_EVALUATION_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md`;
+workflow reference
+`docs/reference/CVF_ERH_CI_PUBLIC_EVALUATION_WORKFLOW_CHAIN_2026-06-04.md`.
+Checker verdict: `READY_WITH_BOUNDARIES`; focused tests 3/3 PASS. Boundary:
+source-visible public-evaluation CI posture only; no production-grade CI,
+public readiness, hosted freshness, dependency-audit hardening, public-doc
+drift hardening, or ordinary live-provider CI execution claim.
 
 `ERH-PD1` Public Surface Drift Workflow Chain is
 `IMPLEMENTATION_COMPLETE_PENDING_REVIEW` at commit `7d23df05`: GC-018
