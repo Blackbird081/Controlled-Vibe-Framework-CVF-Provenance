@@ -151,12 +151,14 @@ Out of scope:
 - Public-sync documentation preparation is recorded in ERH-T1C and exported to
   the public repository after explicit operator push authorization.
 - ERH-T2C local runtime proof hardening is recorded as focused-test evidence
-  only, not live governance proof or public export.
+  only and exported publicly as a bounded summary, not live governance proof or
+  complete route coverage.
 - ERH-CI1 public-evaluation CI posture is machine-checked as
   `READY_WITH_BOUNDARIES`, not production-grade CI or public readiness.
 - ERH-PD1 public-surface drift posture is machine-checked as
-  `DRIFT_BOUNDED_WITH_UPDATE_CANDIDATES`, not public-sync export or public
-  readiness.
+  `PUBLIC_SUMMARY_EXPORTED_BOUNDED`: ERH-T2C and ERH-CI1 have a bounded public
+  summary at public commit `73f1da98e1a5fcc55c3124ff7c5a633193df5322`. This
+  is not public readiness.
 - ERH-DEP1 dependency-risk workflow-chain implementation is
   `ACCEPTED_BOUNDED` with decision `ACCEPT_WITH_CAVEAT`. It records that no
   stable v5 migration target exists and classifies the current risk as
@@ -214,7 +216,7 @@ Public-sync remote:
 
 Public-sync commit:
 
-`4730278fe269aec45482f9cad08f4d1e2721f53d`
+`73f1da98e1a5fcc55c3124ff7c5a633193df5322`
 
 Public artifact paths:
 
@@ -223,13 +225,15 @@ Public artifact paths:
 - `ARCHITECTURE.md`
 - `docs/INDEX.md`
 - `docs/reference/CVF_PUBLIC_EVALUATION_CLAIM_BOUNDARY_2026-06-04.md`
+- `docs/reference/CVF_ERH_PUBLIC_SYNC_SUMMARY_2026-06-04.md`
 - `docs/reference/CVF_KNOWN_LIMITATIONS_REGISTER_2026-04-21.md`
 - `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`
 - `governance/public-surface-manifest.json`
 
 Next action: keep DEP2 / next-major remediation separate. Open it only when the
 operator authorizes auth/runtime or major-version dependency migration.
-Public-sync summary work remains separate.
+Public-sync summary for ERH-T2C and ERH-CI1 is exported bounded at public
+commit `73f1da98e1a5fcc55c3124ff7c5a633193df5322`.
 
 ## Machine Closure Package
 
@@ -243,6 +247,30 @@ Public-sync summary work remains separate.
 | External evidence digest | `N/A with reason` | no external corpus/source digest consumed by AUD1 | N/A with reason |
 | System loop interlock | `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json` | ERH-T2C route proof, ERH-CI1 public-evaluation, ERH-PD1 public-surface drift, and ERH-AUD1 checker connections added | PASS |
 | Session continuity | `AGENT_HANDOFF_V15_2026-05-29.md` | follow-up handoff sync commit required after closure commit | PASS |
+
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: update the ERH-PD1 public-surface drift
+checker snapshot and focused checker test after the bounded public-sync summary
+was pushed.
+
+Protected paths:
+
+- `governance/compat/check_erh_public_surface_drift_workflow.py`
+- `governance/compat/test_check_erh_public_surface_drift_workflow.py`
+
+Operator authorization: operator requested the separate public-sync summary for
+public GitHub, and this checker update records the resulting public commit
+`73f1da98e1a5fcc55c3124ff7c5a633193df5322`.
+
+Rollback boundary: revert this provenance status update and the public commit
+`73f1da98e1a5fcc55c3124ff7c5a633193df5322` if the summary must be withdrawn.
+
+Validation:
+
+- `python governance/compat/check_erh_public_surface_drift_workflow.py --enforce`
+- `python -m pytest governance/compat/test_check_erh_public_surface_drift_workflow.py -q`
+- `python governance/compat/run_local_governance_hook_chain.py --hook pre-commit`
 
 ## Claim Boundary
 

@@ -39,6 +39,7 @@ class ErhPublicSurfaceDriftWorkflowTests(unittest.TestCase):
             "\n".join(
                 [
                     MODULE.CHAIN_VERSION,
+                    "PUBLIC_SUMMARY_EXPORTED_BOUNDED",
                     "DRIFT_BOUNDED_WITH_UPDATE_CANDIDATES",
                     "PUBLIC_SUMMARY_UPDATE_CANDIDATE",
                     "private evidence -> public artifact -> status",
@@ -72,11 +73,11 @@ class ErhPublicSurfaceDriftWorkflowTests(unittest.TestCase):
         )
         self._write(MODULE.ROADMAP_PATH, "ERH-PD1\nPUBLIC_SURFACE_DRIFT_WORKFLOW\n")
 
-    def test_ready_with_update_candidates_when_all_markers_exist(self) -> None:
+    def test_public_summary_exported_when_all_markers_exist(self) -> None:
         report = MODULE.evaluate(self.repo_root)
-        self.assertEqual(report["verdict"], "DRIFT_BOUNDED_WITH_UPDATE_CANDIDATES")
+        self.assertEqual(report["verdict"], "PUBLIC_SUMMARY_EXPORTED_BOUNDED")
         self.assertTrue(all(stage["status"] == "PASS" for stage in report["stages"]))
-        self.assertEqual(report["updateCandidates"], ["ERH-T2C", "ERH-CI1"])
+        self.assertEqual(report["updateCandidates"], ["ERH-DEP"])
 
     def test_missing_private_evidence_blocks_chain(self) -> None:
         missing_path = self.repo_root / MODULE.PRIVATE_EVIDENCE_PATHS["ERH-CI1"]

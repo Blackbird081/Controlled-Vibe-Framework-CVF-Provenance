@@ -24,7 +24,7 @@ ROADMAP_PATH = "docs/roadmaps/CVF_ERH_EXTERNAL_REVIEW_HARDENING_ROADMAP_2026-06-
 SYSTEM_LOOP_REGISTRY_PATH = "docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json"
 
 PUBLIC_REMOTE = "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git"
-PUBLIC_COMMIT = "4730278fe269aec45482f9cad08f4d1e2721f53d"
+PUBLIC_COMMIT = "73f1da98e1a5fcc55c3124ff7c5a633193df5322"
 
 PRIVATE_EVIDENCE_PATHS = {
     "ERH-T1C": "docs/reviews/CVF_ERH_T1C_PUBLIC_SYNC_LOCAL_CLAIM_BOUNDARY_PREP_COMPLETION_2026-06-04.md",
@@ -38,6 +38,7 @@ PUBLIC_ARTIFACT_PATHS = (
     "ARCHITECTURE.md",
     "docs/INDEX.md",
     "docs/reference/CVF_PUBLIC_EVALUATION_CLAIM_BOUNDARY_2026-06-04.md",
+    "docs/reference/CVF_ERH_PUBLIC_SYNC_SUMMARY_2026-06-04.md",
     "docs/reference/CVF_KNOWN_LIMITATIONS_REGISTER_2026-04-21.md",
     "docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md",
     "governance/public-surface-manifest.json",
@@ -45,6 +46,7 @@ PUBLIC_ARTIFACT_PATHS = (
 
 ALLOWED_DRIFT_STATUSES = (
     "EXPORTED_IN_PUBLIC_SYNC",
+    "EXPORTED_IN_PUBLIC_SYNC_SUMMARY",
     "PRIVATE_ONLY_DEFERRED",
     "PUBLIC_SUMMARY_UPDATE_CANDIDATE",
     "NO_PUBLIC_CLAIM",
@@ -64,17 +66,18 @@ LEDGER_REQUIRED_MARKERS = (
 CHAIN_REQUIRED_MARKERS = (
     CHAIN_VERSION,
     "DRIFT_BOUNDED_WITH_UPDATE_CANDIDATES",
+    "PUBLIC_SUMMARY_EXPORTED_BOUNDED",
     "PUBLIC_SUMMARY_UPDATE_CANDIDATE",
     "private evidence -> public artifact -> status",
 )
 
 CLAIM_BOUNDARY = (
-    "DRIFT_BOUNDED_WITH_UPDATE_CANDIDATES: ERH private evidence has a "
-    "source-backed public-surface drift ledger. Public T1C claim-boundary "
-    "export is recorded, while ERH-T2C and ERH-CI1 remain bounded private "
-    "evidence with public-summary update candidates. Not claimed: live "
-    "governance behavior, hosted freshness, production readiness, public "
-    "readiness, dependency-audit hardening, or automatic public-sync export."
+    "PUBLIC_SUMMARY_EXPORTED_BOUNDED: ERH private evidence has a "
+    "source-backed public-surface drift ledger and a bounded public-sync "
+    "summary for ERH-T2C and ERH-CI1 at public commit 73f1da98e. Not "
+    "claimed: live governance behavior, hosted freshness, production "
+    "readiness, public readiness, dependency-audit hardening, auth migration, "
+    "or complete route coverage."
 )
 
 
@@ -173,14 +176,14 @@ def evaluate(repo_root: Path = REPO_ROOT) -> dict[str, Any]:
     failures = [stage for stage in stages if stage["status"] != "PASS"]
     return {
         "chainVersion": CHAIN_VERSION,
-        "verdict": "DRIFT_BOUNDED_WITH_UPDATE_CANDIDATES" if not failures else "BLOCKED",
+        "verdict": "PUBLIC_SUMMARY_EXPORTED_BOUNDED" if not failures else "BLOCKED",
         "stages": stages,
         "publicSyncSnapshot": {
             "remote": PUBLIC_REMOTE,
             "commit": PUBLIC_COMMIT,
             "artifactCount": len(PUBLIC_ARTIFACT_PATHS),
         },
-        "updateCandidates": ["ERH-T2C", "ERH-CI1"],
+        "updateCandidates": ["ERH-DEP"],
         "claimBoundary": CLAIM_BOUNDARY,
     }
 

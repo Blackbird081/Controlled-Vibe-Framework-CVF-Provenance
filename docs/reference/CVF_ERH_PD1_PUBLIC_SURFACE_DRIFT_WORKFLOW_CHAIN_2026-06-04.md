@@ -59,8 +59,15 @@ python governance/compat/check_erh_public_surface_drift_workflow.py --enforce
 
 Allowed verdicts:
 
+- `PUBLIC_SUMMARY_EXPORTED_BOUNDED`
 - `DRIFT_BOUNDED_WITH_UPDATE_CANDIDATES`
 - `BLOCKED`
+
+`PUBLIC_SUMMARY_EXPORTED_BOUNDED` means ERH private evidence has a
+source-backed public-surface drift ledger and a bounded public-sync summary was
+exported for ERH-T2C and ERH-CI1. It does not mean live governance proof
+passed, public readiness is established, dependency/auth posture changed, or
+private evidence can be quoted in public documentation.
 
 `DRIFT_BOUNDED_WITH_UPDATE_CANDIDATES` means ERH private evidence has a
 source-backed public-surface drift ledger. It does not mean public-sync was
@@ -71,6 +78,7 @@ updated, public claims are complete, or public readiness is proven.
 | Status | Meaning |
 | --- | --- |
 | `EXPORTED_IN_PUBLIC_SYNC` | Public-safe summary was exported to the recorded public commit. |
+| `EXPORTED_IN_PUBLIC_SYNC_SUMMARY` | Public-safe bounded summary was exported without raw private provenance packets. |
 | `PRIVATE_ONLY_DEFERRED` | Private evidence stays private and must not become a public claim yet. |
 | `PUBLIC_SUMMARY_UPDATE_CANDIDATE` | A future public-sync tranche may add a bounded summary or caveat. |
 | `NO_PUBLIC_CLAIM` | No public-facing claim should be added for this evidence. |
@@ -81,7 +89,7 @@ This workflow chain proves only private-to-public drift discipline:
 `private evidence -> public artifact -> status`. It does not prove live
 governance behavior, provider behavior, hosted freshness, production readiness,
 public readiness, dependency-audit hardening, route coverage completeness, or
-automatic public-sync publication.
+automatic public readiness.
 
 ## Finding-To-Governance Learning Disposition
 
