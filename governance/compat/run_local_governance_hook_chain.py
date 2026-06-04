@@ -118,6 +118,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
             ["python", "governance/compat/check_erh_ci_public_evaluation_workflow.py", "--enforce"],
         ),
         (
+            "ERH public-surface drift workflow chain",
+            ["python", "governance/compat/check_erh_public_surface_drift_workflow.py", "--enforce"],
+        ),
+        (
             "governed pack contract compatibility",
             ["python", "governance/compat/check_governed_pack_contract.py", "--enforce"],
         ),
@@ -206,6 +210,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         (
             "ERH CI public-evaluation workflow chain",
             ["python", "governance/compat/check_erh_ci_public_evaluation_workflow.py", "--enforce"],
+        ),
+        (
+            "ERH public-surface drift workflow chain",
+            ["python", "governance/compat/check_erh_public_surface_drift_workflow.py", "--enforce"],
         ),
         (
             "cpf public surface maintainability",

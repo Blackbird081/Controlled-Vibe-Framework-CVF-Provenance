@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: PRIVATE_TRANCHES_COMPLETE_PUBLIC_SYNC_EXPORTED_T2C_AND_CI1_IMPLEMENTATION_PENDING_REVIEW
+Status: PRIVATE_TRANCHES_COMPLETE_PUBLIC_SYNC_EXPORTED_T2C_CI1_AND_PD1_IMPLEMENTATION_PENDING_REVIEW
 
 docType: roadmap
 
@@ -85,7 +85,7 @@ Out of scope:
 | Planning review | `docs/assessments/CVF_ERH_PLANNING_REVIEW_FOR_CODEX_2026-06-04.md` | reviewed |
 | Codex response | `docs/reviews/CVF_ERH_PLANNING_REVIEW_CODEX_RESPONSE_2026-06-04.md` | recorded |
 | Fresh GC-018 | `docs/baselines/CVF_GC018_ERH_EXTERNAL_REVIEW_HARDENING_2026-06-04.md` | authorized |
-| Work orders | ERH-T1A/T2A/T3/T2B/T4/T1B/T1C authored; ERH-T2C and ERH-CI1 implemented pending review | private tranche outputs prepared; public-sync delta exported; runtime route workflow and CI public-evaluation workflow pending review |
+| Work orders | ERH-T1A/T2A/T3/T2B/T4/T1B/T1C authored; ERH-T2C, ERH-CI1, and ERH-PD1 implemented pending review | private tranche outputs prepared; public-sync delta exported; runtime route workflow, CI public-evaluation workflow, and public-surface drift workflow pending review |
 
 ## Tranche Plan
 
@@ -100,6 +100,7 @@ Out of scope:
 | ERH-T1C | Public-sync claim-boundary export | `docs/reviews/CVF_ERH_T1C_PUBLIC_SYNC_LOCAL_CLAIM_BOUNDARY_PREP_COMPLETION_2026-06-04.md` | PUBLIC_SYNC_EXPORTED |
 | ERH-T2C | Route governance proof workflow chain hardening | `docs/reviews/CVF_ERH_T2C_ROUTE_GOVERNANCE_PROOF_HARDENING_COMPLETION_2026-06-04.md` | IMPLEMENTATION_COMPLETE_PENDING_REVIEW |
 | ERH-CI1 | CI public-evaluation workflow chain | `docs/reviews/CVF_ERH_CI1_PUBLIC_EVALUATION_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md` | IMPLEMENTATION_COMPLETE_PENDING_REVIEW |
+| ERH-PD1 | PUBLIC_SURFACE_DRIFT_WORKFLOW | `docs/reviews/CVF_ERH_PD1_PUBLIC_SURFACE_DRIFT_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md` | IMPLEMENTATION_COMPLETE_PENDING_REVIEW |
 
 ## Roadmap-To-Work-Order Trace Matrix
 
@@ -114,6 +115,7 @@ Out of scope:
 | ERH-T1C public-sync local claim-boundary prep | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_T1C_PUBLIC_SYNC_LOCAL_CLAIM_BOUNDARY_PREP_2026-06-04.md` |
 | ERH-T2C route governance proof hardening | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_T2C_ROUTE_GOVERNANCE_PROOF_HARDENING_2026-06-04.md` |
 | ERH-CI1 CI public-evaluation workflow chain | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_CI1_PUBLIC_EVALUATION_WORKFLOW_CHAIN_2026-06-04.md` |
+| ERH-PD1 public-surface drift workflow chain | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_PD1_PUBLIC_SURFACE_DRIFT_WORKFLOW_CHAIN_2026-06-04.md` |
 
 ## Work Plan
 
@@ -127,6 +129,7 @@ Out of scope:
 | E6 | Prepare and export immediate public-sync claim-boundary delta | T1C work order and completion packet | PUBLIC_SYNC_EXPORTED |
 | E7 | Implement bounded route governance proof workflow chain for five T2A missing-proof routes | registry-backed helper, five route updates, GC-052 connection, focused tests, release gate, completion packet | IMPLEMENTATION_COMPLETE_PENDING_REVIEW |
 | E8 | Convert CI hardening plan into bounded public-evaluation workflow chain | checker, tests, hook/autorun wiring, GC-052 connection, completion packet | IMPLEMENTATION_COMPLETE_PENDING_REVIEW |
+| E9 | Convert public/private ERH claim drift into bounded workflow chain | drift ledger, checker, tests, hook/autorun wiring, GC-052 connection, completion packet | IMPLEMENTATION_COMPLETE_PENDING_REVIEW |
 
 ## Acceptance Criteria
 
@@ -145,6 +148,9 @@ Out of scope:
   only, not live governance proof or public export.
 - ERH-CI1 public-evaluation CI posture is machine-checked as
   `READY_WITH_BOUNDARIES`, not production-grade CI or public readiness.
+- ERH-PD1 public-surface drift posture is machine-checked as
+  `DRIFT_BOUNDED_WITH_UPDATE_CANDIDATES`, not public-sync export or public
+  readiness.
 
 ## Verification / Evidence
 
@@ -204,13 +210,14 @@ Public artifact paths:
 - `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`
 - `governance/public-surface-manifest.json`
 
-Next action: review the public GitHub diff and decide whether to open separate
-CI workflow hardening work orders. ERH-T2C route-hardening implementation is
-pending private review and commit before any public-summary upgrade.
+Next action: review the public GitHub diff and PD1 drift ledger, then decide
+whether to open a separate public-sync summary update for ERH-T2C/ERH-CI1.
+Dependency risk workflow-chain work remains a separate ERH-DEP follow-up.
 
 ## Claim Boundary
 
 This roadmap authorizes ERH planning, private tranche records, public-sync
-documentation export, and the bounded ERH-T2C route-hardening worker result.
-It does not prove live governance behavior, hosted behavior, production
-readiness, or full CI hardening.
+documentation export, bounded ERH-T2C route-hardening worker result, ERH-CI1
+CI workflow chain, and ERH-PD1 public-surface drift workflow chain. It does
+not prove live governance behavior, hosted behavior, production readiness, full
+CI hardening, dependency-audit hardening, or public readiness.
