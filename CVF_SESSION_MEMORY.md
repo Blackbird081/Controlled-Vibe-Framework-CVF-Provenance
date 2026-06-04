@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-04
 
-Current mode marker: `erh_rs1_external_review_rescan_closed_pass_bounded_ready_for_saf1`
+Current mode marker: `erh_saf1_safety_workflow_chain_dispatch_ready_for_claude`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lpci2_t8_search_layer_scaffolding_closed_pass_bounded_ready`.
+Current mode: `erh_saf1_safety_workflow_chain_dispatch_ready_for_claude`.
 
 Active handoff:
 

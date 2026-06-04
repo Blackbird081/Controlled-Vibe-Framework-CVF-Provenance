@@ -340,10 +340,15 @@ public-release readiness claim.
 ERH-RS1 External Review Full Coverage Rescan is `CLOSED_PASS_BOUNDED`:
 `docs/reviews/CVF_ERH_RS1_EXTERNAL_REVIEW_FULL_COVERAGE_RESCAN_COMPLETION_2026-06-04.md`.
 Verdict: `COMPLETE_VERIFIED` with `162/162` paragraphs, `22/22` sections, and
-`17/17` findings disposed. Safety recommendation: `ERH-SAF1_READY`. Next ERH
-move may be a fresh ERH-SAF1 GC-018/work order for deterministic
-severity-classified safety workflow-chain hardening in `/api/execute`, with
-audit/readout evidence and no ML DLP claim.
+`17/17` findings disposed. Safety recommendation: `ERH-SAF1_READY`.
+
+ERH-SAF1 Safety Workflow Chain is `DISPATCH_READY` for Claude under
+`WORKER_MUST_NOT_COMMIT`:
+`docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_SAF1_SAFETY_WORKFLOW_CHAIN_FOR_CLAUDE_2026-06-04.md`.
+Scope: deterministic severity-classified safety workflow-chain hardening in
+`/api/execute` after DLP and before provider execution, with audit/readout
+evidence, checker/tests, live-proof boundary, and SAF2 decision checkpoint.
+SAF2 implementation remains forbidden until a separate work order opens.
 
 LHW24 is the latest closed LHW wave. LHW22-LHW24 agent-intelligence absorption
 is CLOSED_PASS_BOUNDED at the documentation-only advisory boundary:
@@ -676,8 +681,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`erh_rs1_external_review_rescan_closed_pass_bounded_ready_for_saf1`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=ERH-RS1 is closed and operator may authorize fresh ERH-SAF1 safety workflow-chain hardening, DEP2/next-major, live-provider route proof, hosted-readiness, or PolicyLocal search implementation work order;
+Startup acknowledged: current mode=`erh_saf1_safety_workflow_chain_dispatch_ready_for_claude`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=Claude may execute ERH-SAF1 safety workflow-chain hardening under WORKER_MUST_NOT_COMMIT; after SAF1 completion, reviewer must decide SAF2_READY, SAF2_HOLD, or SAF2_NOT_NEEDED before any SAF2 work order;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary
