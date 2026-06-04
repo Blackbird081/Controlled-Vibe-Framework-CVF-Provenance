@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "standard": "docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_STANDARD_2026-06-02.md",
   "checker": "governance/compat/check_system_loop_interlock.py",
-  "lastUpdated": "2026-06-02",
+  "lastUpdated": "2026-06-04",
   "connections": [
     {
       "id": "scan-packets-to-cross-corpus-index",
@@ -209,6 +209,28 @@
       ],
       "automationLevel": "MACHINE_CHECKED",
       "claimBoundary": "This connection proves ERH public-surface drift is routed into a bounded ledger and machine gate. It does not prove public-sync export, live governance behavior, provider behavior, hosted freshness, production readiness, dependency-audit hardening, public readiness, or complete public claim coverage."
+    },
+    {
+      "id": "erh-dependency-risk-workflow-chain",
+      "status": "ACTIVE",
+      "upstreamLoop": "ERH_T4_DEPENDENCY_DECISION",
+      "upstreamPlane": "GOVERNANCE_CONTROL_PLANE",
+      "outputArtifact": "docs/baselines/CVF_ERH_T4_NEXT_AUTH_BETA_DECISION_BASELINE_2026-06-04.md",
+      "outputSignal": "ACCEPT_WITH_CAVEAT decision for next-auth beta dependency with public caveat requirement",
+      "signalContract": "docs/reference/CVF_ERH_DEP1_DEPENDENCY_RISK_WORKFLOW_CHAIN_2026-06-04.md",
+      "downstreamLoop": "ERH_DEP1_DEPENDENCY_RISK_WORKFLOW",
+      "downstreamPlane": "GOVERNANCE_CONTROL_PLANE",
+      "inputArtifact": "governance/compat/check_erh_dependency_risk_workflow.py",
+      "routingRule": "When ERH-T4 records a bounded dependency decision and ERH-DEP1 is authorized, the worker may create a dependency risk workflow chain reference, evidence ledger, and machine checker that tracks declared version, upstream metadata, audit surface, and auth touchpoints. The checker gates that the workflow chain exists with a valid decision marker, the ledger has a machine marker, and the next-auth beta marker has not been silently removed without a separate migration work order. The routing does not authorize dependency migration, package manifest edits, auth runtime changes, public-sync export, live provider proof, production readiness, hosted freshness, or autonomous mutation.",
+      "evidenceRefs": [
+        "docs/baselines/CVF_ERH_T4_NEXT_AUTH_BETA_DECISION_BASELINE_2026-06-04.md",
+        "docs/reference/CVF_ERH_DEP1_DEPENDENCY_RISK_WORKFLOW_CHAIN_2026-06-04.md",
+        "docs/reference/CVF_ERH_DEP1_DEPENDENCY_RISK_LEDGER_2026-06-04.md",
+        "governance/compat/check_erh_dependency_risk_workflow.py",
+        "governance/compat/test_check_erh_dependency_risk_workflow.py"
+      ],
+      "automationLevel": "MACHINE_CHECKED",
+      "claimBoundary": "This connection proves the next-auth beta dependency decision is routed into a repeatable risk workflow-chain gate. It does not prove auth security, hosted freshness, production readiness, dependency migration completion, stable dependency posture, or live governance proof."
     }
   ]
 }

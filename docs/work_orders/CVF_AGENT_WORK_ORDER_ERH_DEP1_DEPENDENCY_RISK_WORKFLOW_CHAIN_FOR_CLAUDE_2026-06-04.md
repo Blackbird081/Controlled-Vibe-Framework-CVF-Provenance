@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY_FOR_CLAUDE
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -51,6 +51,9 @@ Allowed scope:
 - update `governance/compat/run_local_governance_hook_chain.py`;
 - update `governance/compat/run_agent_autorun_workflow_gate.py`;
 - update `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json`;
+- update `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` only if
+  closure gates require registry coverage for source paths cited in the DEP1
+  completion review;
 - update `docs/roadmaps/CVF_ERH_EXTERNAL_REVIEW_HARDENING_ROADMAP_2026-06-04.md`;
 - update this work order status/evidence only inside Claude's implementation.
 
@@ -152,6 +155,7 @@ Do not assume this snapshot is still current.
 | `governance/compat/run_local_governance_hook_chain.py` | update |
 | `governance/compat/run_agent_autorun_workflow_gate.py` | update |
 | `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json` | update |
+| `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | bounded closure-gate remediation for DEP1 source-path coverage |
 | `docs/roadmaps/CVF_ERH_EXTERNAL_REVIEW_HARDENING_ROADMAP_2026-06-04.md` | update |
 | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_DEP1_DEPENDENCY_RISK_WORKFLOW_CHAIN_FOR_CLAUDE_2026-06-04.md` | update status/evidence |
 
@@ -202,6 +206,19 @@ Reviewer must verify:
 - dependency risk checker is wired into both hook and autorun;
 - `npm audit` non-zero output, if any, is classified rather than hidden;
 - completion packet does not claim production auth stability.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_DEP1_DEPENDENCY_RISK_WORKFLOW_CHAIN_FOR_CLAUDE_2026-06-04.md` | `Status: CLOSED_PASS_BOUNDED` | PASS - work order closed after reviewer acceptance |
+| Completion or reviewer artifact | `docs/reviews/CVF_ERH_DEP1_DEPENDENCY_RISK_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md` | `Reviewer disposition: ACCEPT_WITH_CAVEAT` | PASS - completion review accepted |
+| Roadmap state | `docs/roadmaps/CVF_ERH_EXTERNAL_REVIEW_HARDENING_ROADMAP_2026-06-04.md` | ERH-DEP1 row `ACCEPTED_BOUNDED` | PASS - roadmap updated without closing whole roadmap |
+| Registry JSON | `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json` | connection id `erh-dependency-risk-workflow-chain` | PASS - GC-052 connection registered |
+| Registry Markdown | `docs/reference/CVF_ERH_DEP1_DEPENDENCY_RISK_WORKFLOW_CHAIN_2026-06-04.md` | decision `ACCEPT_WITH_CAVEAT` | PASS - reference created |
+| External evidence digest | `docs/reference/CVF_ERH_DEP1_DEPENDENCY_RISK_LEDGER_2026-06-04.md` | npm metadata and audit snapshot recorded | PASS - dependency evidence summarized |
+| System loop interlock | `governance/compat/check_system_loop_interlock.py --base 6d10b379 --head HEAD --enforce` | 0 violations | PASS - interlock gate passed |
+| Session continuity | `AGENT_HANDOFF_V15_2026-05-29.md` | handoff sync will be updated after commit if required | N/A with reason - session continuity is handled by post-commit sync gate |
 
 ## Closure Checklist
 
