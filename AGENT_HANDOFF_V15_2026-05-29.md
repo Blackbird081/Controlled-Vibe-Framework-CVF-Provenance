@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `95de732c` (LPCI2-T8 dispatch base). Updated 2026-06-04 after LPCI2-T8 Search Layer Scaffolding completed and all governance gates PASS; mode is `lpci2_t8_search_layer_scaffolding_closed_pass_bounded_ready`; LPCI2-T8 CLOSED_PASS_BOUNDED (dispatchBaseHead=95de732c); 3 remaining T6 gaps CLOSED (T6-GAP-05/06/08); all 5 T6 gates PASS; finalReadinessVerdict=READY; LPCI2 lane complete; operator may authorize search implementation work order with fresh instruction; EC-02 rescan required on or after 2026-07-01.
+Current HEAD recorded for this handoff: `86e1c7b7` (LPCI2-T8 closure commit). Updated 2026-06-04 after LPCI2-T8 Search Layer Scaffolding committed and all governance gates PASS; mode is `lpci2_t8_search_layer_scaffolding_closed_pass_bounded_ready`; LPCI2-T8 CLOSED_PASS_BOUNDED (dispatchBaseHead=95de732c; closureCommit=86e1c7b7); 3 remaining T6 gaps CLOSED (T6-GAP-05/06/08); all 5 T6 gates PASS; finalReadinessVerdict=READY; LPCI2 lane complete; operator may authorize search implementation work order with fresh instruction; EC-02 rescan required on or after 2026-07-01.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -585,8 +585,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci2_t6_search_chat_readiness_gate_dispatch_ready`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=open bounded LPCI2-T7 Corpus Facet Schema Authoring remediation work order; search/chat/runtime blocked pending later operator authorization;
+Startup acknowledged: current mode=`lpci2_t8_search_layer_scaffolding_closed_pass_bounded_ready`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=operator may authorize a fresh PolicyLocal search implementation work order; search/chat/runtime implementation remains blocked until that fresh work order exists;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary

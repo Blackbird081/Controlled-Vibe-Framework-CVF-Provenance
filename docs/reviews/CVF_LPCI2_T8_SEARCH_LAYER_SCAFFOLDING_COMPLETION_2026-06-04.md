@@ -10,7 +10,7 @@ dispatchBaseHead: `95de732c`
 
 executionBaseHead: `95de732c`
 
-closureBaseHead: `95de732c`
+closureBaseHead: `86e1c7b7`
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 

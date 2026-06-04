@@ -12,7 +12,7 @@ dispatchBaseHead: `95de732c`
 
 executionBaseHead: `95de732c`
 
-closureBaseHead: `95de732c`
+closureBaseHead: `86e1c7b7`
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
@@ -332,8 +332,7 @@ Base-anchor evidence:
 
 - `dispatchBaseHead`: `95de732c`
 - `executionBaseHead`: `95de732c`
-- `closureBaseHead`: `95de732c` — pre-commit closure anchor; final committed
-  range is verified after operator-side commit
+- `closureBaseHead`: `86e1c7b7` — operator-side closure commit
 - Commit mode: WORKER_MUST_NOT_COMMIT
 - Pending-artifact component gates: worker runs and repairs; records PASS before handoff
 - Committed-range `pre-closure`: PASS after operator commit
