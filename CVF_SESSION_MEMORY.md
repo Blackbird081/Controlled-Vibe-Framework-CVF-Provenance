@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-04
 
-Current mode marker: `lpci2_t6_search_chat_readiness_gate_closed_pass_bounded`
+Current mode marker: `lpci2_t7_corpus_facet_schema_authoring_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lpci2_t6_search_chat_readiness_gate_closed_pass_bounded`.
+Current mode: `lpci2_t7_corpus_facet_schema_authoring_closed_pass_bounded`.
 
 Active handoff:
 
@@ -668,29 +668,27 @@ LPCI2-T5 CLOSED_PASS_BOUNDED (closureBaseHead=53b2bac4; executionBaseHead=408cbf
 effectiveDate=2026-07-01 confirmed for both DOCX files, GC-048 RECONCILED_VERIFIED,
 adversarial sampling 4/4 PASS.
 
-LPCI2-T6 Search/Chat Readiness Gate is CLOSED_PASS_BOUNDED
-(dispatchBaseHead=802ec7f3; executionBaseHead=03429c15).
+LPCI2-T6 CLOSED_PASS_BOUNDED (dispatchBaseHead=802ec7f3): verdict NOT_READY;
+10 gaps registered (7 MUST_CLOSE_BEFORE_SEARCH).
 
-Completion review:
+LPCI2-T7 Corpus Facet Schema Authoring CLOSED_PASS_BOUNDED
+(dispatchBaseHead=45b86df3). 7 T6 gaps CLOSED. Artifacts:
 
-`docs/reviews/CVF_LPCI2_T6_SEARCH_CHAT_READINESS_GATE_COMPLETION_2026-06-04.md`
+- `docs/reference/CVF_LPCI_FACETED_RETRIEVAL_SCHEMA_2026-06-04.md`
+- `docs/reference/CVF_LPCI_RESPONSE_BOUNDARY_ENFORCEMENT_CONTRACT_2026-06-04.md`
+- Corpus records → `policylocal.corpusRecords.t7.v1` (topicTags,
+  freshnessStatus=not_yet_in_force, sourceFamily=VN_NATIONAL_ASSEMBLY_2025)
+- `Policy_Local/data/generated/policylocal-t7-processing-ledger.json`
 
-Readiness verdict: NOT_READY. Five-gate evaluation: Gate 1 PASS (corpus
-completeness); Gate 2 PARTIAL (topicTags, freshnessStatus absent from schema);
-Gate 3 BLOCKED (faceted retrieval schema and query receipt model absent);
-Gate 4 PARTIAL (boundary enforcement contract absent); Gate 5 BLOCKED (7
-MUST_CLOSE_BEFORE_SEARCH gaps registered).
+Revised readiness verdict: READY_WITH_CONDITIONS. Remaining open (T8 scope):
 
-10 gaps total. Two remediation stubs:
+- T6-GAP-06 MUST_CLOSE — derived retrieval trace (no index/chunk layer yet)
+- T6-GAP-08 MUST_CLOSE — query receipt model not defined
+- T6-GAP-05 REMEDIATION_RECOMMENDED — zero-result query log
 
-- `CVF_WO_LPCI2_T7_CORPUS_FACET_SCHEMA_AUTHORING` — topicTags, freshnessStatus,
-  faceted retrieval schema, boundary enforcement contract
-  (gaps T6-GAP-01/02/03/04/07/09/10)
-- `CVF_WO_LPCI2_T8_SEARCH_LAYER_SCAFFOLDING` — query receipt model, derived
-  retrieval trace, negative search evidence log (gaps T6-GAP-05/06/08)
-
-Next governed remediation should start with T7 Corpus Facet Schema Authoring.
-Do NOT open search/chat runtime without later operator authorization.
+Next move: operator authorizes T8 Search Layer Scaffolding
+(`CVF_WO_LPCI2_T8_SEARCH_LAYER_SCAFFOLDING`). Do NOT open search/chat runtime
+without operator authorization after T8 closes.
 
 Parked checkpoints:
 
