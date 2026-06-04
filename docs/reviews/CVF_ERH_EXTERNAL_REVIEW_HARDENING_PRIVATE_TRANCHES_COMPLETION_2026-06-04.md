@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: COMPLETE_PENDING_REVIEW
+Status: COMPLETE_WITH_PUBLIC_SYNC_EXPORTED_RUNTIME_GAPS_OPEN
 
 docType: review
 
@@ -16,9 +16,10 @@ Commit mode: `WORKER_MUST_NOT_COMMIT`
 
 ## Purpose
 
-Record the autonomous ERH private tranche execution performed after operator
-authorization on 2026-06-04. This packet lets a returning operator or reviewer
-see exactly what was produced, what remains held, and what claims are not made.
+Record the autonomous ERH private tranche execution and follow-on public-sync
+claim-boundary export performed after operator authorization on 2026-06-04.
+This packet lets a returning operator or reviewer see exactly what was
+produced, what was exported, and what claims are not made.
 
 ## Scope / Target / Owner Boundary
 
@@ -31,10 +32,11 @@ Scope completed in this provenance workspace:
 - ERH-T2B CI hardening plan;
 - ERH-T4 `next-auth` beta decision baseline;
 - ERH-T1B public-sync handoff only.
+- ERH-T1C public-sync claim-boundary export completed after the operator
+  requested the immediately available cleanup first and later authorized push.
 
 Not performed:
 
-- public-sync edits or push;
 - runtime/source implementation;
 - CI workflow edits;
 - provider/live proof;
@@ -57,12 +59,13 @@ Not performed:
 | Evidence durability gaps must be bounded before runtime work | addressed by ERH-T3 docs-only boundary |
 | CI posture needs hardening plan | addressed by ERH-T2B plan |
 | `next-auth` beta needs explicit decision | addressed by ERH-T4 baseline |
+| Public-facing claim boundary needs first-click calibration | addressed and exported by ERH-T1C public-sync delta |
 
 ## Risk / Corrective Action
 
 | Risk | Corrective action |
 | --- | --- |
-| Public export overclaim | keep all private packets `DEFERRED_PRIVATE_ONLY`; execute T1B separately |
+| Public export overclaim | record public commit evidence and keep runtime/CI/live claims bounded |
 | Runtime overclaim | T3 marks runtime changes as future fresh work-order candidates |
 | Route semantic overclaim | T2A marks lexical evidence as shallow, not live proof |
 | Workflow overclaim | T2B plans CI hardening but edits no workflow |
@@ -75,7 +78,7 @@ Not performed:
 | Author | wrote tranche work orders | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_T*.md` family | COMPLETE_PENDING_REVIEW |
 | Worker | produced private reference/baseline outputs | T1A/T2A/T3/T2B/T4/T1B output paths below | COMPLETE_PENDING_REVIEW |
 | Reviewer | checked claim boundary before final gates | this completion packet | COMPLETE_PENDING_FINAL_GATES |
-| Public-sync worker | not executed in provenance workspace | `docs/reference/CVF_ERH_T1B_PUBLIC_SYNC_HANDOFF_2026-06-04.md` | HOLD_PUBLIC_SYNC_EXECUTION |
+| Public-sync worker | docs prepared and pushed from public-sync clone | `docs/reviews/CVF_ERH_T1C_PUBLIC_SYNC_LOCAL_CLAIM_BOUNDARY_PREP_COMPLETION_2026-06-04.md` | PUBLIC_SYNC_EXPORTED |
 
 ## Roadmap-To-Work-Order Trace Matrix
 
@@ -86,7 +89,8 @@ Not performed:
 | ERH-T3 | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_T3_EVIDENCE_DURABILITY_BOUNDARY_2026-06-04.md` | `docs/reference/CVF_ERH_T3_EVIDENCE_DURABILITY_BOUNDARY_2026-06-04.md` | COMPLETE_PENDING_REVIEW |
 | ERH-T2B | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_T2B_CI_HARDENING_PLAN_2026-06-04.md` | `docs/reference/CVF_ERH_T2B_CI_HARDENING_PLAN_2026-06-04.md` | COMPLETE_PENDING_REVIEW |
 | ERH-T4 | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_T4_NEXT_AUTH_BETA_DECISION_2026-06-04.md` | `docs/baselines/CVF_ERH_T4_NEXT_AUTH_BETA_DECISION_BASELINE_2026-06-04.md` | COMPLETE_PENDING_REVIEW |
-| ERH-T1B | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_T1B_PUBLIC_SYNC_HANDOFF_2026-06-04.md` | `docs/reference/CVF_ERH_T1B_PUBLIC_SYNC_HANDOFF_2026-06-04.md` | HOLD_PUBLIC_SYNC_EXECUTION |
+| ERH-T1B | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_T1B_PUBLIC_SYNC_HANDOFF_2026-06-04.md` | `docs/reference/CVF_ERH_T1B_PUBLIC_SYNC_HANDOFF_2026-06-04.md` | COMPLETE_AS_HANDOFF |
+| ERH-T1C | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_T1C_PUBLIC_SYNC_LOCAL_CLAIM_BOUNDARY_PREP_2026-06-04.md` | `docs/reviews/CVF_ERH_T1C_PUBLIC_SYNC_LOCAL_CLAIM_BOUNDARY_PREP_COMPLETION_2026-06-04.md` | PUBLIC_SYNC_EXPORTED |
 
 ## Closure Diff Gate
 
@@ -98,14 +102,14 @@ Not performed:
 | CI hardening separated from route ledger | T2B plan only; no workflow edits | PASS |
 | Public claim calibration before public-sync | T1A packet plus T1B handoff | PASS |
 | `next-auth` beta decision after T3 | T4 baseline cites T3 boundary | PASS |
-| Public-sync execution isolated | T1B remains hold; public-sync clone not edited | PASS |
+| Public-sync execution isolated | T1C public-sync docs exported with bounded public commit evidence | PASS |
 
 ## Claim Integrity Scan
 
 | Claim | Evidence | Disposition |
 | --- | --- | --- |
 | No runtime/source implementation claimed | changed-file review to be run in final gates | PASS_PENDING_FINAL_GATE |
-| No public-sync export claimed | T1B Public Export Disposition says `DEFERRED_PRIVATE_ONLY` | PASS |
+| Public-sync export claim bounded | T1C Public Export Disposition says `EXPORTED` with commit evidence | PASS |
 | No live governance proof claimed | every output records live proof N/A or no live claim | PASS |
 | Route ledger is shallow source evidence only | T2A Claim Boundary | PASS |
 | Mock examples are not governance evidence | T1A calibration and T1B handoff | PASS |
@@ -126,6 +130,17 @@ git diff --check
 git status --short
 ```
 
+ERH-T1C additional public-sync gates:
+
+```powershell
+git remote -v
+git diff --check
+python scripts/check_public_surface.py
+python governance/compat/check_markdown_structural_completeness.py --all-changed --enforce
+python governance/compat/check_docs_governance_compat.py
+git push origin main
+```
+
 ## Finding-To-Governance Learning Disposition
 
 | Finding | Defect class | Learning lane | Escalation state | Next control action |
@@ -134,18 +149,37 @@ git status --short
 | Route coverage proof needed durable inventory | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_CANDIDATE | T2A ledger and future drift checker |
 | Runtime-adjacent durability gaps needed docs-first routing | RUNTIME_SIGNAL_GAP | RUNTIME_BEHAVIOR_LEARNING | RUNTIME_LEARNING_CANDIDATE | T3 boundary and future runtime work |
 | CI posture needs hardening before production implication | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_CANDIDATE | T2B plan |
+| Public front door needed external-agent claim calibration | OPERATOR_SCOPE_CLARITY_GAP | DOCUMENTATION_ONLY_LEARNING | TEMPLATE_UPDATED | T1C public-sync boundary export |
 
 ## Public Export Disposition
 
-DEFERRED_PRIVATE_ONLY
+EXPORTED
 
-Reason: this completion packet is private provenance evidence. No public-sync
-commit or public artifact path evidence is included.
+Public-sync remote:
 
-Next action: execute ERH-T1B from the public-sync clone after review.
+`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+
+Public commit:
+
+`4730278fe269aec45482f9cad08f4d1e2721f53d`
+
+Public artifact paths:
+
+- `README.md`
+- `GOVERNANCE.md`
+- `ARCHITECTURE.md`
+- `docs/INDEX.md`
+- `docs/reference/CVF_PUBLIC_EVALUATION_CLAIM_BOUNDARY_2026-06-04.md`
+- `docs/reference/CVF_KNOWN_LIMITATIONS_REGISTER_2026-04-21.md`
+- `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`
+- `governance/public-surface-manifest.json`
+
+Next action: review the public GitHub diff; open separate runtime/CI hardening
+work only if stronger behavior claims are desired.
 
 ## Claim Boundary
 
-This completion packet records private ERH tranche outputs only. It does not
-claim public export, production readiness, live governance proof, runtime
-hardening, CI workflow hardening, or a committed closure range.
+This completion packet records private ERH tranche outputs and public-sync
+documentation export. It does not claim production readiness, live governance
+proof, runtime hardening, CI workflow hardening, or full ERH runtime gap
+closure.

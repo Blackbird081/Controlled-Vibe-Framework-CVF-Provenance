@@ -8,6 +8,7 @@ import { join } from 'node:path';
 import { buildAuditReceipt } from '@/lib/lpci/audit-receipt';
 import { runRetrievalPipeline } from '@/lib/lpci/retrieval';
 import type { AuditReceipt, FilterParams, LpciIndexRecord } from '@/lib/lpci/types';
+import { authorizeRouteGovernanceProof, getRouteGovernanceProofConfig } from '@/lib/route-governance-proof';
 
 const REGISTRY_PATH = join(process.cwd(), '..', '..', '..', 'docs', 'corpus-intelligence', 'CVF_CORPUS_SCAN_REGISTRY.json');
 
@@ -89,11 +90,19 @@ function buildAnswerBoundaryPrompt(receipt: {
 }
 
 export async function POST(request: NextRequest) {
+  const bodyText = await request.text();
+  const routeAuth = await authorizeRouteGovernanceProof(
+    request,
+    bodyText,
+    getRouteGovernanceProofConfig('/api/lpci/query'),
+  );
+  if (!routeAuth.allowed && routeAuth.response) return routeAuth.response;
+
   let body: unknown;
   try {
-    body = await request.json();
+    body = JSON.parse(bodyText);
   } catch {
-    return NextResponse.json({ error: 'Invalid JSON body' }, { status: 400 });
+    return NextResponse.json({ error: 'Invalid JSON body', routeGovernanceProof: routeAuth.proof }, { status: 400 });
   }
 
   const { query, corpusId, filters } = body as {
@@ -103,7 +112,7 @@ export async function POST(request: NextRequest) {
   };
 
   if (!query || !corpusId) {
-    return NextResponse.json({ error: 'query and corpusId are required' }, { status: 400 });
+    return NextResponse.json({ error: 'query and corpusId are required', routeGovernanceProof: routeAuth.proof }, { status: 400 });
   }
 
   const query_timestamp = new Date().toISOString();
@@ -124,6 +133,7 @@ export async function POST(request: NextRequest) {
       receiptType: 'NOT_REGISTERED',
       query,
       auditReceipt,
+      routeGovernanceProof: routeAuth.proof,
     }, { status: 403 });
   }
 
@@ -147,7 +157,11 @@ export async function POST(request: NextRequest) {
       sensitivity_pre_filter_applied: sensitivityApplied,
     });
     // C7 — AuditReceipt emitted for every query
-    return NextResponse.json({ ...negative, auditReceipt } satisfies { auditReceipt: AuditReceipt } & typeof negative);
+    return NextResponse.json({
+      ...negative,
+      auditReceipt,
+      routeGovernanceProof: routeAuth.proof,
+    } satisfies { auditReceipt: AuditReceipt; routeGovernanceProof: unknown } & typeof negative);
   }
 
   const { receipt } = pipelineResult;
@@ -164,7 +178,12 @@ export async function POST(request: NextRequest) {
       applied_filters: appliedFilters,
       sensitivity_pre_filter_applied: false,
     });
-    return NextResponse.json({ response: abstentionText, answerClass: 'ESCALATE_OR_ABSTAIN', auditReceipt });
+    return NextResponse.json({
+      response: abstentionText,
+      answerClass: 'ESCALATE_OR_ABSTAIN',
+      auditReceipt,
+      routeGovernanceProof: routeAuth.proof,
+    });
   }
 
   // Check for operator-supplied LLM API key
@@ -188,7 +207,13 @@ export async function POST(request: NextRequest) {
         .map((r) => ({ normalizedPath: r.normalizedPath, authorityLevel: r.authorityLevel, effectiveDate: r.effectiveDate }))
         : undefined,
     });
-    return NextResponse.json({ receiptType: 'NO_PROVIDER_CONFIGURED', query, retrievalReceipt: receipt, auditReceipt });
+    return NextResponse.json({
+      receiptType: 'NO_PROVIDER_CONFIGURED',
+      query,
+      retrievalReceipt: receipt,
+      auditReceipt,
+      routeGovernanceProof: routeAuth.proof,
+    });
   }
 
   // Build answer boundary prompt (C1-C5)
@@ -235,7 +260,12 @@ export async function POST(request: NextRequest) {
       applied_filters: appliedFilters,
       sensitivity_pre_filter_applied: false,
     });
-    return NextResponse.json({ receiptType: 'PROVIDER_ERROR', error: errMsg, auditReceipt }, { status: 502 });
+    return NextResponse.json({
+      receiptType: 'PROVIDER_ERROR',
+      error: errMsg,
+      auditReceipt,
+      routeGovernanceProof: routeAuth.proof,
+    }, { status: 502 });
   }
 
   // C8 — model_response_hash = SHA-256 of LLM response text
@@ -272,5 +302,6 @@ export async function POST(request: NextRequest) {
     freshnessFlag: receipt.freshness_flag,
     conflictFlag: receipt.conflict_flag,
     auditReceipt,
+    routeGovernanceProof: routeAuth.proof,
   });
 }

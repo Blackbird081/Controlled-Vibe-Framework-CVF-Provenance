@@ -4,6 +4,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { isPathInside, normalizePath, resolveCorpusInputPath } from '@/lib/lpci/intake-boundary';
 import type { CorpusManifest, IntakeReport } from '@/lib/lpci/types';
+import { authorizeRouteGovernanceProof, getRouteGovernanceProofConfig } from '@/lib/route-governance-proof';
 
 const REPO_ROOT = resolve(process.cwd(), '..', '..', '..');
 const REGISTRY_PATH = join(REPO_ROOT, 'docs', 'corpus-intelligence', 'CVF_CORPUS_SCAN_REGISTRY.json');
@@ -48,17 +49,25 @@ function isCorpusRootRegistered(corpusId: string, corpusRootAbs: string): boolea
 }
 
 export async function POST(request: NextRequest) {
+  const bodyText = await request.text();
+  const routeAuth = await authorizeRouteGovernanceProof(
+    request,
+    bodyText,
+    getRouteGovernanceProofConfig('/api/lpci/intake'),
+  );
+  if (!routeAuth.allowed && routeAuth.response) return routeAuth.response;
+
   let body: unknown;
   try {
-    body = await request.json();
+    body = JSON.parse(bodyText);
   } catch {
-    return NextResponse.json({ error: 'Invalid JSON body' }, { status: 400 });
+    return NextResponse.json({ error: 'Invalid JSON body', routeGovernanceProof: routeAuth.proof }, { status: 400 });
   }
 
   const { corpusRoot, manifestPath } = body as { corpusRoot?: string; manifestPath?: string };
 
   if (!corpusRoot || !manifestPath) {
-    return NextResponse.json({ error: 'corpusRoot and manifestPath are required' }, { status: 400 });
+    return NextResponse.json({ error: 'corpusRoot and manifestPath are required', routeGovernanceProof: routeAuth.proof }, { status: 400 });
   }
 
   // GC-051: verify corpus is registered
@@ -69,18 +78,19 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       error: 'manifestPath must be inside corpusRoot',
       receiptType: 'MANIFEST_OUTSIDE_CORPUS_ROOT',
+      routeGovernanceProof: routeAuth.proof,
     }, { status: 400 });
   }
 
   if (!existsSync(manifestAbs)) {
-    return NextResponse.json({ error: 'manifestPath not found', receiptType: 'MANIFEST_NOT_FOUND' }, { status: 400 });
+    return NextResponse.json({ error: 'manifestPath not found', receiptType: 'MANIFEST_NOT_FOUND', routeGovernanceProof: routeAuth.proof }, { status: 400 });
   }
 
   let manifest: CorpusManifest;
   try {
     manifest = JSON.parse(readFileSync(manifestAbs, 'utf-8')) as CorpusManifest;
   } catch {
-    return NextResponse.json({ error: 'Failed to parse manifest JSON' }, { status: 400 });
+    return NextResponse.json({ error: 'Failed to parse manifest JSON', routeGovernanceProof: routeAuth.proof }, { status: 400 });
   }
 
   if (!isCorpusRootRegistered(manifest.corpusId, rootAbs)) {
@@ -88,6 +98,7 @@ export async function POST(request: NextRequest) {
       error: 'corpusRoot is not registered for this corpus in GC-051 registry',
       receiptType: 'NOT_REGISTERED',
       corpusId: manifest.corpusId,
+      routeGovernanceProof: routeAuth.proof,
     }, { status: 403 });
   }
 
@@ -147,5 +158,5 @@ export async function POST(request: NextRequest) {
     sourceHashSummary: hashMode,
   };
 
-  return NextResponse.json(report);
+  return NextResponse.json({ ...report, routeGovernanceProof: routeAuth.proof });
 }

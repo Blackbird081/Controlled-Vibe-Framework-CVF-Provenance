@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: HOLD_PUBLIC_SYNC_EXECUTION
+Status: COMPLETE_AS_HANDOFF_PUBLIC_SYNC_EXPORTED
 
 docType: reference
 
@@ -15,6 +15,22 @@ Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_T1B_PUBLIC_SYNC_HANDOFF_2
 Give the future public-sync worker exact, bounded instructions for updating the
 public README/catalog so external agents evaluate CVF against the right claim
 boundary.
+
+## Follow-On Execution Note
+
+This handoff was consumed by ERH-T1C after the operator instructed Codex to
+handle the immediately available cleanup first.
+
+Follow-on record:
+
+`docs/reviews/CVF_ERH_T1C_PUBLIC_SYNC_LOCAL_CLAIM_BOUNDARY_PREP_COMPLETION_2026-06-04.md`
+
+T1C prepared and exported the public-sync documentation delta after explicit
+operator push authorization.
+
+Public commit:
+
+`4730278fe269aec45482f9cad08f4d1e2721f53d`
 
 ## Scope / Target / Owner Boundary
 
@@ -85,12 +101,29 @@ Use these as wording constraints, not copy-only text:
 
 ## Public Export Disposition
 
-DEFERRED_PRIVATE_ONLY
+EXPORTED
 
-Reason: this handoff is private provenance only. The public repo has not been
-modified in this batch.
+Public-sync remote:
 
-Next action: execute a separate public-sync batch from the public-sync clone.
+`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+
+Public commit:
+
+`4730278fe269aec45482f9cad08f4d1e2721f53d`
+
+Public artifact paths:
+
+- `README.md`
+- `GOVERNANCE.md`
+- `ARCHITECTURE.md`
+- `docs/INDEX.md`
+- `docs/reference/CVF_PUBLIC_EVALUATION_CLAIM_BOUNDARY_2026-06-04.md`
+- `docs/reference/CVF_KNOWN_LIMITATIONS_REGISTER_2026-04-21.md`
+- `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`
+- `governance/public-surface-manifest.json`
+
+Next action: review the public GitHub diff and open separate runtime/CI
+hardening only if stronger behavior claims are desired.
 
 ## Claim Boundary
 

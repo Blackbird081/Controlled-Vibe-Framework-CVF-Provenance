@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: PRIVATE_TRANCHES_COMPLETE_PUBLIC_SYNC_HOLD
+Status: PRIVATE_TRANCHES_COMPLETE_PUBLIC_SYNC_EXPORTED_T2C_IMPLEMENTATION_PENDING_REVIEW
 
 docType: roadmap
 
@@ -85,7 +85,7 @@ Out of scope:
 | Planning review | `docs/assessments/CVF_ERH_PLANNING_REVIEW_FOR_CODEX_2026-06-04.md` | reviewed |
 | Codex response | `docs/reviews/CVF_ERH_PLANNING_REVIEW_CODEX_RESPONSE_2026-06-04.md` | recorded |
 | Fresh GC-018 | `docs/baselines/CVF_GC018_ERH_EXTERNAL_REVIEW_HARDENING_2026-06-04.md` | authorized |
-| Work orders | ERH-T1A/T2A/T3/T2B/T4/T1B authored | private tranche outputs prepared; public-sync execution held |
+| Work orders | ERH-T1A/T2A/T3/T2B/T4/T1B/T1C authored; ERH-T2C implemented pending review | private tranche outputs prepared; public-sync delta exported; first runtime route-hardening follow-up pending review |
 
 ## Tranche Plan
 
@@ -96,7 +96,9 @@ Out of scope:
 | ERH-T3 | Evidence durability docs-only boundary | `docs/reference/CVF_ERH_T3_EVIDENCE_DURABILITY_BOUNDARY_2026-06-04.md` | COMPLETE_PENDING_REVIEW |
 | ERH-T2B | CI hardening plan | `docs/reference/CVF_ERH_T2B_CI_HARDENING_PLAN_2026-06-04.md` | COMPLETE_PENDING_REVIEW |
 | ERH-T4 | Dependency decision | `docs/baselines/CVF_ERH_T4_NEXT_AUTH_BETA_DECISION_BASELINE_2026-06-04.md` | COMPLETE_PENDING_REVIEW |
-| ERH-T1B | Public-sync README/catalog update | `docs/reference/CVF_ERH_T1B_PUBLIC_SYNC_HANDOFF_2026-06-04.md` | HOLD_PUBLIC_SYNC_EXECUTION |
+| ERH-T1B | Public-sync README/catalog handoff | `docs/reference/CVF_ERH_T1B_PUBLIC_SYNC_HANDOFF_2026-06-04.md` | COMPLETE_AS_HANDOFF |
+| ERH-T1C | Public-sync claim-boundary export | `docs/reviews/CVF_ERH_T1C_PUBLIC_SYNC_LOCAL_CLAIM_BOUNDARY_PREP_COMPLETION_2026-06-04.md` | PUBLIC_SYNC_EXPORTED |
+| ERH-T2C | Route governance proof workflow chain hardening | `docs/reviews/CVF_ERH_T2C_ROUTE_GOVERNANCE_PROOF_HARDENING_COMPLETION_2026-06-04.md` | IMPLEMENTATION_COMPLETE_PENDING_REVIEW |
 
 ## Roadmap-To-Work-Order Trace Matrix
 
@@ -107,7 +109,9 @@ Out of scope:
 | ERH-T3 evidence durability claim boundary | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_T3_EVIDENCE_DURABILITY_BOUNDARY_2026-06-04.md` |
 | ERH-T2B CI hardening plan | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_T2B_CI_HARDENING_PLAN_2026-06-04.md` |
 | ERH-T4 dependency decision | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_T4_NEXT_AUTH_BETA_DECISION_2026-06-04.md` |
-| ERH-T1B public-sync execution | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_T1B_PUBLIC_SYNC_HANDOFF_2026-06-04.md` |
+| ERH-T1B public-sync handoff | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_T1B_PUBLIC_SYNC_HANDOFF_2026-06-04.md` |
+| ERH-T1C public-sync local claim-boundary prep | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_T1C_PUBLIC_SYNC_LOCAL_CLAIM_BOUNDARY_PREP_2026-06-04.md` |
+| ERH-T2C route governance proof hardening | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_T2C_ROUTE_GOVERNANCE_PROOF_HARDENING_2026-06-04.md` |
 
 ## Work Plan
 
@@ -117,7 +121,9 @@ Out of scope:
 | E2 | Author ERH-T1A work order | T1A work order + claim packet | COMPLETE |
 | E3 | Author ERH-T2A work order | T2A work order + route ledger | COMPLETE |
 | E4 | Author ERH-T3 work order | T3 work order + durability packet | COMPLETE |
-| E5 | Sequence T2B/T4/T1B after dependencies | T2B plan, T4 baseline, T1B handoff | COMPLETE_WITH_PUBLIC_SYNC_HOLD |
+| E5 | Sequence T2B/T4/T1B after dependencies | T2B plan, T4 baseline, T1B handoff | COMPLETE |
+| E6 | Prepare and export immediate public-sync claim-boundary delta | T1C work order and completion packet | PUBLIC_SYNC_EXPORTED |
+| E7 | Implement bounded route governance proof workflow chain for five T2A missing-proof routes | registry-backed helper, five route updates, GC-052 connection, focused tests, release gate, completion packet | IMPLEMENTATION_COMPLETE_PENDING_REVIEW |
 
 ## Acceptance Criteria
 
@@ -130,8 +136,10 @@ Out of scope:
 - F-1 output-quality parity remains closed-not-met.
 - Runtime-adjacent issues remain docs-only unless a later fresh runtime work
   order authorizes implementation.
-- Public-sync execution remains held in a separate public-sync work order and
-  has not been performed from this provenance workspace.
+- Public-sync documentation preparation is recorded in ERH-T1C and exported to
+  the public repository after explicit operator push authorization.
+- ERH-T2C local runtime proof hardening is recorded as focused-test evidence
+  only, not live governance proof or public export.
 
 ## Verification / Evidence
 
@@ -170,17 +178,34 @@ Return to orchestrator if:
 
 ## Public Export Disposition
 
-DEFERRED_PRIVATE_ONLY
+EXPORTED
 
-Reason: private provenance roadmap only. No public-sync remote, public commit,
-or public artifact path evidence is included.
+Public-sync remote:
 
-Next action: ERH-T1B must open from the public-sync clone after private claim
-calibration is source-backed.
+`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+
+Public commit:
+
+`4730278fe269aec45482f9cad08f4d1e2721f53d`
+
+Public artifact paths:
+
+- `README.md`
+- `GOVERNANCE.md`
+- `ARCHITECTURE.md`
+- `docs/INDEX.md`
+- `docs/reference/CVF_PUBLIC_EVALUATION_CLAIM_BOUNDARY_2026-06-04.md`
+- `docs/reference/CVF_KNOWN_LIMITATIONS_REGISTER_2026-04-21.md`
+- `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`
+- `governance/public-surface-manifest.json`
+
+Next action: review the public GitHub diff and decide whether to open separate
+CI workflow hardening work orders. ERH-T2C route-hardening implementation is
+pending private review and commit before any public-summary upgrade.
 
 ## Claim Boundary
 
-This roadmap authorizes ERH planning and future work-order authoring. It does
-not close ERH findings, implement runtime changes, prove live governance
-behavior, publish public README/catalog updates, or claim production/public
-readiness.
+This roadmap authorizes ERH planning, private tranche records, public-sync
+documentation export, and the bounded ERH-T2C route-hardening worker result.
+It does not prove live governance behavior, hosted behavior, production
+readiness, or full CI hardening.

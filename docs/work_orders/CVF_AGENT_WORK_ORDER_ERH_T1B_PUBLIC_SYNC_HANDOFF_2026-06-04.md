@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: HOLD_PUBLIC_SYNC_EXECUTION
+Status: COMPLETE_AS_HANDOFF_PUBLIC_SYNC_EXPORTED
 
 docType: work_order
 
@@ -27,6 +27,19 @@ Dependency release:
 Prepare the public-sync handoff for README/catalog updates that help external
 agents evaluate CVF accurately. This work order deliberately stops before
 editing or pushing the public-sync clone.
+
+## Follow-On Execution Note
+
+This T1B handoff was completed as a private handoff. A later bounded T1C work
+order prepared the immediate local public-sync documentation delta:
+
+`docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_T1C_PUBLIC_SYNC_LOCAL_CLAIM_BOUNDARY_PREP_2026-06-04.md`
+
+T1C was exported after explicit operator push authorization.
+
+Public commit:
+
+`4730278fe269aec45482f9cad08f4d1e2721f53d`
 
 ## Authority Chain
 
@@ -105,14 +118,14 @@ Forbidden paths: public-sync clone files, runtime source, workflows.
 | --- | --- | --- |
 | Handoff packet | `docs/reference/CVF_ERH_T1B_PUBLIC_SYNC_HANDOFF_2026-06-04.md` | Yes |
 | Public-sync remote check | `git remote -v` output | Yes |
-| No public edit | public-sync not modified in this batch | Yes |
+| Public edit | follow-on T1C public-sync docs export | Yes |
 
 ## Review Gate
 
 | Gate | Requirement |
 | --- | --- |
 | Public boundary | no public-sync edit from provenance work order |
-| Export status | `DEFERRED_PRIVATE_ONLY` |
+| Export status | `EXPORTED` through follow-on T1C |
 | Pre-closure | N/A with reason: public execution held |
 
 ## Closure Checklist
@@ -121,19 +134,19 @@ Forbidden paths: public-sync clone files, runtime source, workflows.
 | --- | --- |
 | Handoff created | PASS |
 | Target public paths named | PASS |
-| Public-sync execution held | PASS |
+| Public-sync handoff complete | PASS |
+| Public-sync local prep routed to T1C | PASS |
 | Public export deferred | PASS |
 
 ## Return Conditions
 
-Return to orchestrator if public-sync edit/push, live proof, or public export
-claim is requested.
+Return to orchestrator if public-sync push, live proof, runtime change, or
+stronger public export claim is requested.
 
 ## Operator Checkpoint
 
-Public-sync execution remains a real checkpoint. This private handoff is
-complete, but public repository edits require separate execution from the
-public-sync clone.
+Public-sync push was authorized by the operator on 2026-06-04 and completed by
+T1C from the public-sync clone.
 
 ## Source Verification Block
 
@@ -173,7 +186,7 @@ python governance/compat/check_finding_to_governance_learning.py --base b5cf8882
 | Criterion | Evidence | Status |
 | --- | --- | --- |
 | Public-sync target paths are named | T1B handoff target table | PASS |
-| No public-sync edit is made | provenance diff/status and public-sync boundary | PASS |
+| Public-sync edit is bounded | follow-on T1C docs/manifest-only export | PASS |
 | Export remains deferred | Public Export Disposition | PASS |
 
 ## Fail Conditions
@@ -192,14 +205,31 @@ python governance/compat/check_finding_to_governance_learning.py --base b5cf8882
 
 ## Public Export Disposition
 
-DEFERRED_PRIVATE_ONLY
+EXPORTED
 
-Reason: this is a private handoff. No public-sync commit is included.
+Public-sync remote:
 
-Next action: run a separate public-sync implementation from
-`Controlled-Vibe-Framework-CVF-public-sync`.
+`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+
+Public commit:
+
+`4730278fe269aec45482f9cad08f4d1e2721f53d`
+
+Public artifact paths:
+
+- `README.md`
+- `GOVERNANCE.md`
+- `ARCHITECTURE.md`
+- `docs/INDEX.md`
+- `docs/reference/CVF_PUBLIC_EVALUATION_CLAIM_BOUNDARY_2026-06-04.md`
+- `docs/reference/CVF_KNOWN_LIMITATIONS_REGISTER_2026-04-21.md`
+- `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`
+- `governance/public-surface-manifest.json`
+
+Next action: review the public GitHub diff and open separate runtime/CI
+hardening only if stronger behavior claims are desired.
 
 ## Claim Boundary
 
-This work order prepares public-sync execution only. It does not update the
-public repository or close public export.
+This work order prepares public-sync handoff execution only. It does not claim
+public remote export, public push, live governance proof, or runtime hardening.

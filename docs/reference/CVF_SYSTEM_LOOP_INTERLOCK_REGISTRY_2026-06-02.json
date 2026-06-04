@@ -139,7 +139,29 @@
       ],
       "automationLevel": "STRUCTURAL_GUARDED",
       "claimBoundary": "This connection proves typed artifact routing from the CI1-T6 checker decision to the CI1-T7 LPCI intake bridge specification. It does not prove LPCI implementation, runtime retrieval behavior, chatbot capability, automatic roadmap creation, autonomous mutation, or public claims. CI1-T7 CLOSED_PASS_BOUNDED status unlocks LPCI product roadmap proposal only after the intake bridge is committed and the session front door is updated."
+    },
+    {
+      "id": "erh-route-ledger-to-route-governance-proof-workflow",
+      "status": "ACTIVE",
+      "upstreamLoop": "ERH_T2A_ROUTE_GOVERNANCE_COVERAGE_LEDGER",
+      "upstreamPlane": "GOVERNANCE_CONTROL_PLANE",
+      "outputArtifact": "docs/reference/CVF_ERH_T2A_ROUTE_GOVERNANCE_COVERAGE_LEDGER_2026-06-04.md",
+      "outputSignal": "five route rows marked MISSING_ROUTE_GOVERNANCE_PROOF from complete route inventory",
+      "signalContract": "docs/reference/CVF_ERH_T2C_ROUTE_GOVERNANCE_PROOF_WORKFLOW_CHAIN_2026-06-04.md",
+      "downstreamLoop": "ERH_T2C_ROUTE_GOVERNANCE_PROOF_WORKFLOW",
+      "downstreamPlane": "RUNTIME_ROUTE_GOVERNANCE",
+      "inputArtifact": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-governance-proof.ts",
+      "routingRule": "When ERH-T2A identifies routes with MISSING_ROUTE_GOVERNANCE_PROOF and ERH-T2C is authorized, the bounded worker may register those routes in ROUTE_GOVERNANCE_PROOF_REGISTRY and wire them through authorizeRouteGovernanceProof(). The routing does not authorize live provider proof, public-sync export, production readiness, hosted freshness, autonomous mutation, or claims that every CVF API route is covered.",
+      "evidenceRefs": [
+        "docs/reference/CVF_ERH_T2A_ROUTE_GOVERNANCE_COVERAGE_LEDGER_2026-06-04.md",
+        "docs/reference/CVF_ERH_T2C_ROUTE_GOVERNANCE_PROOF_WORKFLOW_CHAIN_2026-06-04.md",
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_T2C_ROUTE_GOVERNANCE_PROOF_HARDENING_2026-06-04.md",
+        "docs/reviews/CVF_ERH_T2C_ROUTE_GOVERNANCE_PROOF_HARDENING_COMPLETION_2026-06-04.md",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-governance-proof.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-governance-proof.test.ts"
+      ],
+      "automationLevel": "STRUCTURAL_GUARDED",
+      "claimBoundary": "This connection proves route-ledger findings are routed into a bounded route governance proof workflow chain. It does not prove live governance behavior, provider behavior, hosted freshness, production readiness, public readiness, autonomous mutation, or complete API-route coverage."
     }
   ]
 }
-
