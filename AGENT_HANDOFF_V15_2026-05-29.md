@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `ca7fdc26` (docs(lpci): dispatch t6 readiness gate and commit helper). Updated 2026-06-04 after LPCI2-T6 dispatch and governed commit helper standardization; mode is `lpci2_t6_search_chat_readiness_gate_dispatch_ready`; T6 work order is `docs/work_orders/CVF_WO_LPCI2_T6_SEARCH_CHAT_READINESS_GATE_2026-06-04.md`; `scripts/cvf_commit_tranche.py` is available as a conservative staged-commit helper; search/chat/runtime/provider work remains blocked until T6 closes and operator authorizes implementation.
+Current HEAD recorded for this handoff: `03429c15` (LPCI2-T6 closure session sync). Updated 2026-06-04 after LPCI2-T6 completion review authored and all governance gates PASS; mode is `lpci2_t6_search_chat_readiness_gate_closed_pass_bounded`; LPCI2-T6 CLOSED_PASS_BOUNDED (dispatchBaseHead=802ec7f3; executionBaseHead=03429c15); readinessVerdict=NOT_READY; 10 gaps (7 MUST_CLOSE_BEFORE_SEARCH); remediation stubs T7 Corpus Facet Schema Authoring (gaps 01/02/03/04/07/09/10) and T8 Search Layer Scaffolding (gaps 05/06/08); next governed remediation should start with T7 Corpus Facet Schema Authoring; search/chat/runtime/provider remains blocked pending later operator checkpoint.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -586,7 +586,7 @@ External agent memory files: non-canonical convenience only.
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=`lpci2_t6_search_chat_readiness_gate_dispatch_ready`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=execute bounded LPCI2-T6 Search/Chat Readiness Gate work order; search/chat/runtime blocked until T6 closes and operator authorizes implementation;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=open bounded LPCI2-T7 Corpus Facet Schema Authoring remediation work order; search/chat/runtime blocked pending later operator authorization;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary

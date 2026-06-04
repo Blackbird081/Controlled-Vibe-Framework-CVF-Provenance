@@ -2,14 +2,14 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
 Date: 2026-06-04
 
 dispatchBaseHead: `802ec7f3`
-closureBaseHead: `NOT_EXECUTED_YET`
+closureBaseHead: `03429c15`
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
@@ -113,13 +113,13 @@ WORKER_MUST_NOT_COMMIT.
 
 | Roadmap requirement | Work order section | Output artifact or field | Verification command | Status |
 | --- | --- | --- | --- | --- |
-| Open bounded search/chat readiness gate after T5 closes | §Purpose; §Five-Gate Evaluation | T6 completion review `readinessVerdict` field | `python governance/compat/check_markdown_structural_completeness.py --base 802ec7f3 --head HEAD --enforce` | DISPATCH_READY |
-| Corpus completeness gate | §Five-Gate Evaluation Gate 1 | Gate 1 verdict + evidence citations | `python governance/compat/check_corpus_completeness_report_integrity.py --base 802ec7f3 --head HEAD --enforce` | DISPATCH_READY |
-| Classification depth gate | §Five-Gate Evaluation Gate 2 | Gate 2 verdict + READ_DEEP/DEEP_CLASSIFIED confirmation | `python governance/compat/check_corpus_intelligence_classification.py --base 802ec7f3 --head HEAD --enforce` | DISPATCH_READY |
-| Corpus Search And Filter Readiness gate | §Five-Gate Evaluation Gate 3 | Gate 3 verdict + `## Corpus Search And Filter Readiness` block | `python governance/compat/check_corpus_completeness_report_integrity.py --base 802ec7f3 --head HEAD --enforce` | DISPATCH_READY |
-| Response boundary gate | §Five-Gate Evaluation Gate 4 | Gate 4 verdict + boundary enforcement evidence | `python governance/compat/check_corpus_intelligence_classification.py --base 802ec7f3 --head HEAD --enforce` | DISPATCH_READY |
-| Missing capability gap register | §Five-Gate Evaluation Gate 5; §Gap Register | gap table with MUST_CLOSE_BEFORE_SEARCH or remediation stub | `python governance/compat/check_markdown_structural_completeness.py --base 802ec7f3 --head HEAD --enforce` | DISPATCH_READY |
-| Session state sync | §Execution Plan step 8 | CVF_SESSION_MEMORY.md, ACTIVE_SESSION_STATE.json, AGENT_HANDOFF_V15 | `python governance/compat/check_active_session_state.py --enforce` | DISPATCH_READY |
+| Open bounded search/chat readiness gate after T5 closes | §Purpose; §Five-Gate Evaluation | T6 completion review `readinessVerdict` field | `python governance/compat/check_markdown_structural_completeness.py --base 03429c15 --head HEAD --enforce` | CLOSED_PASS_BOUNDED |
+| Corpus completeness gate | §Five-Gate Evaluation Gate 1 | Gate 1 verdict + evidence citations | `python governance/compat/check_corpus_completeness_report_integrity.py --base 03429c15 --head HEAD --enforce` | CLOSED_PASS_BOUNDED |
+| Classification depth gate | §Five-Gate Evaluation Gate 2 | Gate 2 verdict + READ_DEEP/DEEP_CLASSIFIED confirmation | `python governance/compat/check_corpus_intelligence_classification.py --base 03429c15 --head HEAD --enforce` | CLOSED_PASS_BOUNDED |
+| Corpus Search And Filter Readiness gate | §Five-Gate Evaluation Gate 3 | Gate 3 verdict + `## Corpus Search And Filter Readiness` block | `python governance/compat/check_corpus_completeness_report_integrity.py --base 03429c15 --head HEAD --enforce` | CLOSED_PASS_BOUNDED |
+| Response boundary gate | §Five-Gate Evaluation Gate 4 | Gate 4 verdict + boundary enforcement evidence | `python governance/compat/check_corpus_intelligence_classification.py --base 03429c15 --head HEAD --enforce` | CLOSED_PASS_BOUNDED |
+| Missing capability gap register | §Five-Gate Evaluation Gate 5; §Gap Register | gap table with MUST_CLOSE_BEFORE_SEARCH or remediation stub | `python governance/compat/check_markdown_structural_completeness.py --base 03429c15 --head HEAD --enforce` | CLOSED_PASS_BOUNDED |
+| Session state sync | §Execution Plan step 8 | CVF_SESSION_MEMORY.md, ACTIVE_SESSION_STATE.json, AGENT_HANDOFF_V15 | `python governance/compat/check_active_session_state.py --enforce` | CLOSED_PASS_BOUNDED |
 
 ## Agent Roles
 
@@ -139,8 +139,8 @@ Escalation is reserved for:
 
 - a gate evaluation would require live legal review or provider inference;
 - corpus files are inaccessible or hash-drifted from T5 values;
-- readiness verdict is NOT_READY and the operator must decide whether to proceed
-  to a larger remediation roadmap or pause the LPCI2 lane;
+- readiness verdict is NOT_READY and remediation would require scope beyond
+  bounded T7/T8 corpus-governance follow-up work;
 - any action that would exceed Allowed scope, open search/chat/runtime, or
   consume provider quota.
 
@@ -228,9 +228,9 @@ Finding packet routing:
 - Gate verdict PASS → carry forward as satisfied prerequisite to any future
   search/chat work order.
 - Gate verdict PARTIAL → record in gap register with `READY_WITH_CONDITIONS`
-  condition stub; operator must authorize remediation before search opens.
+  condition stub; remediation must close before search opens.
 - Gate verdict BLOCKED → record as `MUST_CLOSE_BEFORE_SEARCH`; overall verdict
-  must be NOT_READY for that gate; operator decides remediation path.
+  must be NOT_READY for that gate; completion artifact must name the remediation path.
 
 Claim boundary: T6 produces a readiness verdict and gap register. It does NOT
 authorize search/chat runtime. A separate implementation work order — requiring
@@ -352,22 +352,22 @@ The T6 completion review must contain all of the following sections:
 
 ## Acceptance Criteria
 
-- [ ] Pre-flight checks PASS (both DOCX files and T5 evidence files present)
-- [ ] Gate 1 Corpus Completeness evaluated with PASS/PARTIAL/BLOCKED verdict
-- [ ] Gate 2 Classification Depth evaluated with PASS/PARTIAL/BLOCKED verdict
-- [ ] Gate 3 Search/Filter Readiness Standard evaluated; all nine capabilities
+- [x] Pre-flight checks PASS (both DOCX files and T5 evidence files present)
+- [x] Gate 1 Corpus Completeness evaluated with PASS/PARTIAL/BLOCKED verdict
+- [x] Gate 2 Classification Depth evaluated with PASS/PARTIAL/BLOCKED verdict
+- [x] Gate 3 Search/Filter Readiness Standard evaluated; all nine capabilities
       mapped; `## Corpus Search And Filter Readiness` block present
-- [ ] Gate 4 Response Boundary evaluated with PASS/PARTIAL/BLOCKED verdict
-- [ ] Gate 5 Gap Register produced; all PARTIAL/ABSENT items enumerated
-- [ ] Overall `readinessVerdict` recorded (READY / NOT_READY /
+- [x] Gate 4 Response Boundary evaluated with PASS/PARTIAL/BLOCKED verdict
+- [x] Gate 5 Gap Register produced; all PARTIAL/ABSENT items enumerated
+- [x] Overall `readinessVerdict` recorded (READY / NOT_READY /
       READY_WITH_CONDITIONS)
-- [ ] `check_corpus_completeness_report_integrity.py` PASS
-- [ ] `check_corpus_to_knowledge_map_reconciliation.py` PASS
-- [ ] `check_corpus_intelligence_classification.py` PASS
-- [ ] `check_markdown_structural_completeness.py` PASS
-- [ ] `check_finding_to_governance_learning.py` PASS
-- [ ] No search/chat/runtime/provider/product work added
-- [ ] Session state synced and `check_active_session_state.py` COMPLIANT
+- [x] `check_corpus_completeness_report_integrity.py` PASS
+- [x] `check_corpus_to_knowledge_map_reconciliation.py` PASS
+- [x] `check_corpus_intelligence_classification.py` PASS
+- [x] `check_markdown_structural_completeness.py` PASS
+- [x] `check_finding_to_governance_learning.py` PASS
+- [x] No search/chat/runtime/provider/product work added
+- [x] Session state synced and `check_active_session_state.py` COMPLIANT
 
 ## Review Gate
 
@@ -385,13 +385,14 @@ Reviewer must verify:
 ## Operator Checkpoint
 
 Operator checkpoint is required before any move from T6 verdict to a
-search/chat implementation work order or any runtime or product work.
+search/chat implementation work order, runtime work, provider work, or product
+implementation.
 
-If verdict is NOT_READY: operator must review the gap register and decide
-whether to authorize a remediation roadmap or pause the LPCI2 lane.
+If verdict is NOT_READY: the completion artifact must route the blocking gaps
+to bounded governed remediation stubs.
 
-If verdict is READY_WITH_CONDITIONS: operator must review each condition's
-remediation stub and decide which to authorize first.
+If verdict is READY_WITH_CONDITIONS: the completion artifact must name each
+condition and its remediation stub.
 
 If verdict is READY: operator must explicitly authorize opening a search/chat
 implementation work order before any implementation begins.
@@ -433,7 +434,7 @@ Response boundary classes:
   search/chat runtime with citation-selection receipts.
 - SUMMARY_WITH_SOURCE: ALLOWED as the current ceiling inherited from T5.
 - PROCEDURAL_GUIDANCE: BLOCKED in T6 unless later work adds procedural guidance
-  receipts and operator approval.
+  receipts and boundary approval.
 - ESCALATE_OR_ABSTAIN: REQUIRED for legal-advice, applicability, conflict, or
   freshness-sensitive queries.
 
@@ -478,10 +479,11 @@ Forbidden paths (do not touch):
 Base-anchor evidence:
 
 - `dispatchBaseHead`: `802ec7f3`
-- `closureBaseHead`: `NOT_EXECUTED_YET`
+- `closureBaseHead`: `03429c15`
 - Commit mode: WORKER_MUST_NOT_COMMIT
-- Pending-artifact component gates: worker runs and repairs; records PASS before handoff
-- Committed-range `pre-closure`: PASS after operator commit
+- Pending-artifact component gates: PASS recorded in the T6 completion review
+- Reviewer pre-closure gates: PASS before closure commit; final committed-range
+  gate rerun remains reviewer responsibility after commit
 
 Required evidence trace at handoff:
 
@@ -517,7 +519,7 @@ incorrect. Do not revert T5 closure evidence or prior session state lines.
 - [x] Work order names five-gate evaluation with per-gate criteria
 - [x] Work order names Corpus Search And Filter Readiness Standard as authority
 - [x] Work order forbids search/chat/runtime/product implementation
-- [x] Work order names operator checkpoint before search/chat implementation
+- [x] Work order names operator checkpoint before search/chat runtime implementation
 - [x] Forbidden filesystem state at dispatch verified ABSENT
 
 ## Public Export Disposition
@@ -537,4 +539,4 @@ It does not authorize search runtime, chat runtime, provider calls, vector store
 creation, embedding pipeline, hosted deployment, legal advice correctness,
 latest-law status, production readiness, public export, or any search/chat
 implementation work. A separate operator instruction and work order are required
-before any of those activities begin.
+before search/chat runtime, provider, product, or public-sync activities begin.

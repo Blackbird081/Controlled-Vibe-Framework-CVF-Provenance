@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: T6_DISPATCH_READY
+Status: T6_CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -66,7 +66,7 @@ retrieval without overclaiming.
 | LPCI2-T4S | Data input smoke test | rename local folder to `data_input`, hash two DOCX files, and record hash-only boundary | CLOSED_PASS_BOUNDED |
 | LPCI2-T4 | Corpus Intelligence import/classification evidence | extract DOCX text locally, populate legal/policy fields, and run GC-047/GC-050 without search/chat | CLOSED_PASS_BOUNDED |
 | LPCI2-T5 | Deep classification evidence | full-body effectiveDate scan, GC-048 knowledge-map reconciliation, adversarial sampling | CLOSED_PASS_BOUNDED |
-| LPCI2-T6 | Search/chat readiness gate | five-gate readiness evaluation against T4+T5 evidence; produces readiness verdict and gap register; no runtime implementation | DISPATCH_READY |
+| LPCI2-T6 | Search/chat readiness gate | five-gate readiness evaluation against T4+T5 evidence; produces readiness verdict and gap register; no runtime implementation | CLOSED_PASS_BOUNDED |
 
 ## Work Plan
 
@@ -79,7 +79,7 @@ retrieval without overclaiming.
 | W4S | Smoke-test data input | two DOCX files hashed with no text extraction claim | CLOSED_PASS_BOUNDED |
 | W4 | Import and classify local corpus | DOCX extraction and legal/policy classification evidence | CLOSED_PASS_BOUNDED |
 | W5 | Deep classification and knowledge-map reconciliation | full-body effectiveDate scan, GC-048, adversarial sampling | CLOSED_PASS_BOUNDED |
-| W6 | Search/chat readiness gate | five-gate evaluation; readiness verdict and gap register | DISPATCH_READY |
+| W6 | Search/chat readiness gate | five-gate evaluation; readiness verdict and gap register | CLOSED_PASS_BOUNDED |
 
 ## Decision
 
@@ -96,9 +96,15 @@ runtime blocked. LPCI2-T4 is CLOSED_PASS_BOUNDED at commit `212d6adf`. LPCI2-T5 
 for both DOCX files via P1_effective_clause (Article 44 / Article 47); GC-048
 RECONCILED_VERIFIED; adversarial sampling 4/4 PASS. Search/chat/runtime
 remains blocked until the T6 readiness gate work order opens and closes.
-LPCI2-T6 Search/Chat Readiness Gate is DISPATCH_READY
-(commit `802ec7f3`; work order
+LPCI2-T6 Search/Chat Readiness Gate is CLOSED_PASS_BOUNDED
+(dispatchBaseHead=`802ec7f3`; executionBaseHead=`03429c15`; work order
 `docs/work_orders/CVF_WO_LPCI2_T6_SEARCH_CHAT_READINESS_GATE_2026-06-04.md`).
+Readiness verdict: NOT_READY. Gate 1 PASS; Gates 2 and 4 PARTIAL; Gates 3 and 5
+BLOCKED. 10 gaps enumerated (7 MUST_CLOSE_BEFORE_SEARCH, 3 REMEDIATION_RECOMMENDED).
+Two remediation stubs identified: T7 Corpus Facet Schema Authoring and T8
+Search Layer Scaffolding. Next governed remediation should start with T7.
+Operator checkpoint remains required before any search/chat runtime or product
+implementation opens.
 
 ## Acceptance Criteria
 
@@ -151,6 +157,7 @@ LPCI2-T6 Search/Chat Readiness Gate is DISPATCH_READY
 | T5 completion review | `docs/reviews/CVF_LPCI2_T5_POLICYLOCAL_DEEP_CLASSIFICATION_COMPLETION_2026-06-04.md` |
 | T5 local completion note | `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\CODEX_POLICYLOCAL_DEEP_CLASSIFICATION_COMPLETION_2026-06-04.md` |
 | T6 work order | `docs/work_orders/CVF_WO_LPCI2_T6_SEARCH_CHAT_READINESS_GATE_2026-06-04.md` |
+| T6 completion review | `docs/reviews/CVF_LPCI2_T6_SEARCH_CHAT_READINESS_GATE_COMPLETION_2026-06-04.md` |
 
 ## Non-Goals
 
@@ -175,9 +182,11 @@ LPCI2-T4 claims DOCX text extraction (READ_SHALLOW), conservative legal/policy
 classification (answerClass=SUMMARY_WITH_SOURCE), and GC-051 registry update.
 LPCI2-T5 is CLOSED_PASS_BOUNDED at commit `53b2bac4`: effectiveDate=2026-07-01
 confirmed for both files, GC-048 RECONCILED_VERIFIED, adversarial sampling 4/4 PASS.
-LPCI2-T6 is DISPATCH_READY at commit `802ec7f3`: five-gate search/chat readiness
-evaluation dispatched; work order
-`docs/work_orders/CVF_WO_LPCI2_T6_SEARCH_CHAT_READINESS_GATE_2026-06-04.md`.
+LPCI2-T6 is CLOSED_PASS_BOUNDED: five-gate search/chat readiness gate evaluation
+complete; verdict NOT_READY; 10 gaps registered (7 MUST_CLOSE_BEFORE_SEARCH);
+two remediation stubs (T7 Corpus Facet Schema Authoring, T8 Search Layer
+Scaffolding). Next governed remediation should start with T7; search/chat
+runtime remains blocked pending later operator checkpoint.
 
 It does not claim runtime implementation, chatbot product readiness, production
 corpus readiness, legal answer correctness, hosted readiness, or public export.

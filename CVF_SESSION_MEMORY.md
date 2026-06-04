@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-04
 
-Current mode marker: `lpci2_t6_search_chat_readiness_gate_dispatch_ready`
+Current mode marker: `lpci2_t6_search_chat_readiness_gate_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lpci2_t6_search_chat_readiness_gate_dispatch_ready`.
+Current mode: `lpci2_t6_search_chat_readiness_gate_closed_pass_bounded`.
 
 Active handoff:
 
@@ -253,15 +253,15 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LPCI2-T6 Search/Chat Readiness Gate is `DISPATCH_READY`:
+LPCI2-T6 Search/Chat Readiness Gate is `CLOSED_PASS_BOUNDED`:
 
-`docs/work_orders/CVF_WO_LPCI2_T6_SEARCH_CHAT_READINESS_GATE_2026-06-04.md`
+`docs/reviews/CVF_LPCI2_T6_SEARCH_CHAT_READINESS_GATE_COMPLETION_2026-06-04.md`
 
-T6 is a bounded five-gate readiness review against T4+T5 PolicyLocal corpus
-evidence. It must produce a readiness verdict and gap register only. Search,
-chat, vector store, embedding, provider, runtime, hosted, product, and
-public-sync work remain blocked until T6 closes and the operator explicitly
-authorizes the next implementation work order.
+Readiness verdict: `NOT_READY`. T6 produced a 10-item gap register with 7
+`MUST_CLOSE_BEFORE_SEARCH` gaps. Next governed remediation should start with
+T7 Corpus Facet Schema Authoring. Search, chat, vector store, embedding,
+provider, runtime, hosted, product, and public-sync work remain blocked until
+later explicit operator authorization.
 
 LHW24 is the latest closed LHW wave. LHW22-LHW24 agent-intelligence absorption
 is CLOSED_PASS_BOUNDED at the documentation-only advisory boundary:
@@ -668,21 +668,29 @@ LPCI2-T5 CLOSED_PASS_BOUNDED (closureBaseHead=53b2bac4; executionBaseHead=408cbf
 effectiveDate=2026-07-01 confirmed for both DOCX files, GC-048 RECONCILED_VERIFIED,
 adversarial sampling 4/4 PASS.
 
-LPCI2-T6 Search/Chat Readiness Gate is DISPATCH_READY (dispatchBaseHead=802ec7f3).
-Work order:
+LPCI2-T6 Search/Chat Readiness Gate is CLOSED_PASS_BOUNDED
+(dispatchBaseHead=802ec7f3; executionBaseHead=03429c15).
 
-`docs/work_orders/CVF_WO_LPCI2_T6_SEARCH_CHAT_READINESS_GATE_2026-06-04.md`
+Completion review:
 
-T6 executes a five-gate readiness evaluation against T4+T5 corpus evidence and
-produces a readiness verdict (READY/NOT_READY/READY_WITH_CONDITIONS) plus a
-missing-capability gap register. Expected verdict: NOT_READY or
-READY_WITH_CONDITIONS given absent query receipt model, faceted index schema,
-and derived view trace to any retrieval layer. No runtime implementation in T6.
-Operator checkpoint required before any search/chat implementation opens after
-T6 closes.
+`docs/reviews/CVF_LPCI2_T6_SEARCH_CHAT_READINESS_GATE_COMPLETION_2026-06-04.md`
 
-Do NOT open search/chat runtime or any implementation work until T6 closes and
-operator authorizes.
+Readiness verdict: NOT_READY. Five-gate evaluation: Gate 1 PASS (corpus
+completeness); Gate 2 PARTIAL (topicTags, freshnessStatus absent from schema);
+Gate 3 BLOCKED (faceted retrieval schema and query receipt model absent);
+Gate 4 PARTIAL (boundary enforcement contract absent); Gate 5 BLOCKED (7
+MUST_CLOSE_BEFORE_SEARCH gaps registered).
+
+10 gaps total. Two remediation stubs:
+
+- `CVF_WO_LPCI2_T7_CORPUS_FACET_SCHEMA_AUTHORING` — topicTags, freshnessStatus,
+  faceted retrieval schema, boundary enforcement contract
+  (gaps T6-GAP-01/02/03/04/07/09/10)
+- `CVF_WO_LPCI2_T8_SEARCH_LAYER_SCAFFOLDING` — query receipt model, derived
+  retrieval trace, negative search evidence log (gaps T6-GAP-05/06/08)
+
+Next governed remediation should start with T7 Corpus Facet Schema Authoring.
+Do NOT open search/chat runtime without later operator authorization.
 
 Parked checkpoints:
 
