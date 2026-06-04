@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -14,7 +14,7 @@ dispatchBaseHead: `7c082836`
 
 executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
 
-closureBaseHead: `NOT_EXECUTED_YET`
+closureBaseHead: `10b20490`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -65,6 +65,8 @@ Allowed scope:
 - evaluate the fresh export using the VI5 operator/external-agent review gate;
 - create or update only the review artifact:
   `docs/reviews/CVF_VI5_HR1_HOSTED_EXPORT_ACCEPTANCE_RETEST_CLAUDE_REVIEW_2026-06-04.md`;
+- after worker handoff, reviewer may create the closure artifact:
+  `docs/reviews/CVF_VI5_HR1_HOSTED_EXPORT_ACCEPTANCE_RETEST_COMPLETION_2026-06-04.md`;
 - record safe diagnostics for hosted/browser failure.
 
 Forbidden scope:
@@ -94,6 +96,7 @@ Risk ceiling: R1 hosted/browser evidence review only.
 Owned path:
 
 - `docs/reviews/CVF_VI5_HR1_HOSTED_EXPORT_ACCEPTANCE_RETEST_CLAUDE_REVIEW_2026-06-04.md`
+- `docs/reviews/CVF_VI5_HR1_HOSTED_EXPORT_ACCEPTANCE_RETEST_COMPLETION_2026-06-04.md` after worker handoff and reviewer acceptance
 
 Read-only evidence inputs:
 
@@ -308,11 +311,11 @@ Operator checkpoint after Claude handoff:
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_VI5_HR1_HOSTED_EXPORT_ACCEPTANCE_RETEST_FOR_CLAUDE_2026-06-04.md` | `DISPATCH_READY`; worker returns pending review, not closed-equivalent | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_VI5_HR1_HOSTED_EXPORT_ACCEPTANCE_RETEST_CLAUDE_REVIEW_2026-06-04.md` | final worker verdict and evidence; reviewer closure later | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_VI5_HR1_HOSTED_EXPORT_ACCEPTANCE_RETEST_FOR_CLAUDE_2026-06-04.md` | `CLOSED_PASS_BOUNDED`; reviewer accepted Claude artifact with bounded source-verified caveat | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_VI5_HR1_HOSTED_EXPORT_ACCEPTANCE_RETEST_COMPLETION_2026-06-04.md` | reviewer closure `CLOSED_PASS_BOUNDED`; Claude artifact accepted as evidence input | PASS |
 | Roadmap state | `N/A with reason` | HR1 uses fresh GC-018 plus predecessor VI5 roadmap; no active roadmap state changed by dispatch | N/A with reason |
-| Corpus scan registry JSON | `N/A with reason` | not corpus/search/classification work | N/A with reason |
-| Corpus scan registry MD | `N/A with reason` | not corpus/search/classification work | N/A with reason |
+| Registry JSON | `N/A with reason` | not corpus/search/classification work; no GC-051 registry update owned by HR1 | BLOCKED with reason |
+| Registry Markdown | `N/A with reason` | not corpus/search/classification work; no corpus registry markdown update owned by HR1 | BLOCKED with reason |
 | External evidence digest | review artifact `Evidence Trace Block` and `Hosted Retest Result` | hosted target, timestamp, verdict, safe excerpt, no secrets | PASS |
 | System loop interlock | `N/A with reason` | no new runtime workflow chain or registry connection in HR1 dispatch | N/A with reason |
 | Session continuity | `AGENT_HANDOFF_V15_2026-05-29.md` | reviewer-owned continuity sync after accepted worker artifact commit | PASS |
