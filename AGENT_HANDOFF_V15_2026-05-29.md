@@ -39,6 +39,7 @@ Current HEAD recorded for this handoff: `9c9f86d0` (Align ERH RS1 closure scope 
 Current HEAD recorded for this handoff: `286d27bd` (Dispatch ERH SAF1 safety workflow chain). Updated 2026-06-04 after fresh ERH-SAF1 GC-018 and Claude work order were committed. Claude may execute deterministic safety workflow-chain hardening under `WORKER_MUST_NOT_COMMIT`; SAF2 remains a post-SAF1 decision checkpoint only; no ML DLP, provider behavior change, public-sync, hosted readiness, production security readiness, or public readiness is claimed.
 Current HEAD recorded for this handoff: `baba6522` (Close ERH SAF1 safety workflow chain). Updated 2026-06-04 after Claude's SAF1 worker output was reviewed, checker/evidence residues were remediated, and SAF1 closed `CLOSED_PASS_BOUNDED` with decision `ACCEPT_WITH_CAVEAT_LIVE_ROUTE_PROOF_RESIDUAL`: deterministic severity-classified safety screening now runs in cvf-web `/api/execute` after DLP and before legacy safety/provider execution; the SAF1 checker enforces DLP -> SAF1 -> legacy safety -> provider order. SAF2 decision is `SAF2_READY` for a separate fresh GC-018/work order. Boundary: no ML DLP, comprehensive jailbreak-protection claim, provider behavior change, public-sync, hosted readiness, production security readiness, public readiness, or release-quality/live-proven governance behavior.
 Current HEAD recorded for this handoff: `bf7276c2` (Align SAF1 work order closure scope). Updated 2026-06-04 after the SAF1 work order Allowed scope was aligned with the reviewer session-continuity files present in the closure range. This is closure-scope alignment only; SAF1 status remains `CLOSED_PASS_BOUNDED`, SAF2 remains `SAF2_READY`, and live route proof remains a documented residual.
+Current HEAD recorded for this handoff: `214c9c66` (Dispatch ERH SAF2 output safety workflow). Updated 2026-06-05 after fresh SAF2 GC-018 and Claude work order were committed. Claude may execute bounded output-safety audit event, governance-specific output pattern, and SAF1 adversarial regression corpus work under `WORKER_MUST_NOT_COMMIT`; SAF3 remains a post-SAF2 decision checkpoint only; no ML DLP, comprehensive output-safety claim, provider behavior change, package/lockfile edit, auth/rate-limit/durable-audit edit, public-sync, hosted readiness, production security readiness, public readiness, or SAF3 implementation is authorized.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -340,18 +341,15 @@ public-release readiness claim.
 
 ## Next Allowed Move
 
-ERH-SAF1 Safety Workflow Chain is `CLOSED_PASS_BOUNDED`:
-`docs/reviews/CVF_ERH_SAF1_SAFETY_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md`.
-Commit `baba6522` adds deterministic severity-classified safety screening in
-cvf-web `/api/execute` after DLP and before legacy safety/provider execution.
-The SAF1 checker enforces DLP -> SAF1 -> legacy safety -> provider order.
-Decision: `ACCEPT_WITH_CAVEAT_LIVE_ROUTE_PROOF_RESIDUAL`. SAF2 decision:
-`SAF2_READY`.
+ERH-SAF2 Output Safety And Regression Corpus is `DISPATCH_READY`:
+`docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_SAF2_OUTPUT_SAFETY_AND_REGRESSION_CORPUS_FOR_CLAUDE_2026-06-05.md`.
+Commit `214c9c66` adds fresh GC-018 and work order. Claude may execute under
+`WORKER_MUST_NOT_COMMIT`. Scope: `OUTPUT_SAFETY_TRIGGERED` output-safety audit
+event on first `UNSAFE_CONTENT`, governance-specific output patterns, SAF1
+adversarial regression corpus, checker/tests, GC-052 interlock, completion
+review, and SAF3 decision checkpoint.
 
-Next allowed ERH move: author a fresh ERH-SAF2 GC-018/work order if continuing
-the safety lane. SAF2 implementation remains forbidden until that separate work
-order opens. Recommended SAF2 candidates are output safety/readout, bounded
-adversarial safety regression corpus, and safety coverage drift checker.
+SAF3 implementation remains forbidden until a separate work order opens.
 
 LHW24 is the latest closed LHW wave. LHW22-LHW24 agent-intelligence absorption
 is CLOSED_PASS_BOUNDED at the documentation-only advisory boundary:
@@ -684,8 +682,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`erh_saf1_closed_pass_bounded_saf2_ready`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=author a fresh ERH-SAF2 GC-018/work order if continuing the safety lane; SAF2 implementation remains forbidden until that separate work order opens;
+Startup acknowledged: current mode=`erh_saf2_output_safety_dispatch_ready_for_claude`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=Claude may execute ERH-SAF2 under WORKER_MUST_NOT_COMMIT; after SAF2 completion, reviewer must decide SAF3_READY, SAF3_HOLD, or SAF3_NOT_NEEDED before any SAF3 work order;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Core Guard Self-Protection Authorization

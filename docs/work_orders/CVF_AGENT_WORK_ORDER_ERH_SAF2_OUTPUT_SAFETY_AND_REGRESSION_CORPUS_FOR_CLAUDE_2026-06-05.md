@@ -79,6 +79,9 @@ Allowed scope:
 - create `docs/reference/CVF_ERH_SAF2_OUTPUT_SAFETY_AND_REGRESSION_CORPUS_LEDGER_2026-06-05.md`;
 - create `docs/reviews/CVF_ERH_SAF2_OUTPUT_SAFETY_AND_REGRESSION_CORPUS_COMPLETION_2026-06-05.md`;
 - update `docs/roadmaps/CVF_ERH_EXTERNAL_REVIEW_HARDENING_ROADMAP_2026-06-04.md`.
+- Codex reviewer may update `CVF_SESSION/ACTIVE_SESSION_STATE.json`,
+  `CVF_SESSION_MEMORY.md`, and `AGENT_HANDOFF_V15_2026-05-29.md` only to
+  record ERH-SAF2 dispatch or closure status and the SAF3 decision checkpoint.
 
 Forbidden scope:
 
@@ -352,11 +355,24 @@ Authorized guard-maintenance scope: SAF2 may update
 `governance/compat/run_local_governance_hook_chain.py`,
 `governance/compat/run_agent_autorun_workflow_gate.py`, and
 `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json` only to
-add the ERH-SAF2 output safety workflow-chain checker.
+add the ERH-SAF2 output safety workflow-chain checker. Codex may update active
+session-continuity files only to record SAF2 dispatch/closure status and SAF3
+decision state.
 
-Rollback boundary: revert the SAF2 closure commit only. No unrelated guard
-semantics, session-continuity, protected-path rename/delete, public-sync, auth
-runtime, or package changes are authorized.
+Protected paths:
+
+- `governance/compat/run_local_governance_hook_chain.py`
+- `governance/compat/run_agent_autorun_workflow_gate.py`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION_MEMORY.md`
+- `AGENT_HANDOFF_V15_2026-05-29.md`
+
+Operator authorization: 2026-06-05 operator authorized SAF2 dispatch packet
+after SAF1 completion and pre-dispatch PASS.
+
+Rollback boundary: if a protected continuity edit is wrong, restore only the
+SAF2/SAF3 continuity text or active-state keys. Runtime/source, guard semantics,
+public-sync, auth runtime, and package changes are outside this dispatch sync.
 
 ## Machine Closure Package
 

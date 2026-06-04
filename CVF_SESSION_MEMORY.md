@@ -4,9 +4,9 @@ Memory class: POINTER_RECORD
 
 Status: ACTIVE SESSION FRONT DOOR
 
-Last updated: 2026-06-04
+Last updated: 2026-06-05
 
-Current mode marker: `erh_saf1_closed_pass_bounded_saf2_ready`
+Current mode marker: `erh_saf2_output_safety_dispatch_ready_for_claude`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `erh_saf1_closed_pass_bounded_saf2_ready`.
+Current mode: `erh_saf2_output_safety_dispatch_ready_for_claude`.
 
 Active handoff:
 
@@ -253,17 +253,15 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-ERH-SAF1 Safety Workflow Chain is `CLOSED_PASS_BOUNDED`:
+ERH-SAF2 Output Safety And Regression Corpus is `DISPATCH_READY`:
 
-`docs/reviews/CVF_ERH_SAF1_SAFETY_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md`
+`docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_SAF2_OUTPUT_SAFETY_AND_REGRESSION_CORPUS_FOR_CLAUDE_2026-06-05.md`
 
-Commit `baba6522` adds deterministic severity-classified safety screening to
-the cvf-web `/api/execute` route after DLP and before legacy safety/provider
-execution. The SAF1 checker enforces DLP -> SAF1 -> legacy safety -> provider
-order. SAF2 decision is `SAF2_READY` for a separate fresh GC-018/work order.
-Live route proof remains a documented residual because Playwright live E2E was
-blocked by port 3001; do not claim release-quality/live-proven governance
-behavior from SAF1 alone.
+Commit `214c9c66` adds fresh GC-018 and Claude work order for bounded SAF2:
+output safety audit event, governance-specific output patterns, and SAF1
+adversarial regression corpus. Claude may execute under
+`WORKER_MUST_NOT_COMMIT`. SAF3 is only a post-SAF2 decision checkpoint; SAF3
+implementation remains forbidden until a separate work order opens.
 
 LPCI2-T6 Search/Chat Readiness Gate is `CLOSED_PASS_BOUNDED`:
 
