@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY_FOR_CLAUDE
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -12,9 +12,9 @@ GC-018: `docs/baselines/CVF_GC018_ERH_AUD1_CVF_WEB_DEPENDENCY_AUDIT_REMEDIATION_
 
 dispatchBaseHead: `28f76620`
 
-executionBaseHead: `28f76620`
+executionBaseHead: `af0f0220`
 
-closureBaseHead: `28f76620`
+closureBaseHead: `af0f0220`
 
 Assigned worker: Claude
 
@@ -298,13 +298,38 @@ python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure 
 
 | Criterion | Evidence | Status |
 | --- | --- | --- |
-| Audit before/after recorded | ledger | REQUIRED |
-| Bounded dependency diff produced or blocker classified | package diff / review | REQUIRED |
-| `next-auth` unchanged | diff/status | REQUIRED |
-| Auth runtime unchanged | diff/status | REQUIRED |
-| Checker exists and passes | checker command | REQUIRED |
-| Focused tests pass | pytest command | REQUIRED |
-| Public claim remains bounded | completion review | REQUIRED |
+| Audit before/after recorded | ledger | PASS |
+| Bounded dependency diff produced or blocker classified | package diff / review | PASS |
+| `next-auth` unchanged | diff/status | PASS |
+| Auth runtime unchanged | diff/status | PASS |
+| Checker exists and passes | checker command | PASS |
+| Focused tests pass | pytest command | PASS |
+| Public claim remains bounded | completion review | PASS |
+
+## Closure Evidence
+
+Completion review:
+`docs/reviews/CVF_ERH_AUD1_CVF_WEB_DEPENDENCY_AUDIT_REMEDIATION_COMPLETION_2026-06-04.md`
+
+Decision: `AUDIT_REDUCED_WITH_RESIDUALS`.
+
+Boundary: 3 residual moderate audit findings remain classified and gated by a
+separate major-version/auth decision; AUD1 does not claim full CVE clearance,
+production security readiness, hosted freshness, public readiness, public-sync,
+auth runtime migration, or `next-auth` migration.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_AUD1_CVF_WEB_DEPENDENCY_AUDIT_REMEDIATION_FOR_CLAUDE_2026-06-04.md` | `CLOSED_PASS_BOUNDED`; acceptance rows PASS | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ERH_AUD1_CVF_WEB_DEPENDENCY_AUDIT_REMEDIATION_COMPLETION_2026-06-04.md` | decision `AUDIT_REDUCED_WITH_RESIDUALS` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ERH_EXTERNAL_REVIEW_HARDENING_ROADMAP_2026-06-04.md` | ERH-AUD1 row closed bounded | PASS |
+| Registry JSON | `N/A with reason` | no corpus registry state changed; AUD1 is dependency-audit closure, not corpus/search/classification closure | BLOCKED with reason |
+| Registry Markdown | `N/A with reason` | no corpus registry state changed; AUD1 is dependency-audit closure, not corpus/search/classification closure | BLOCKED with reason |
+| External evidence digest | `N/A with reason` | npm audit evidence is summarized in repo-local ledger | N/A with reason |
+| System loop interlock | `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json` | ERH-AUD1 checker connection added | PASS |
+| Session continuity | `AGENT_HANDOFF_V15_2026-05-29.md` | follow-up handoff sync commit required after closure commit | PASS |
 
 ## Fail Conditions
 

@@ -231,6 +231,28 @@
       ],
       "automationLevel": "MACHINE_CHECKED",
       "claimBoundary": "This connection proves the next-auth beta dependency decision is routed into a repeatable risk workflow-chain gate. It does not prove auth security, hosted freshness, production readiness, dependency migration completion, stable dependency posture, or live governance proof."
+    },
+    {
+      "id": "erh-cvf-web-dependency-audit-workflow",
+      "status": "ACTIVE",
+      "upstreamLoop": "ERH_DEP1_DEPENDENCY_RISK_WORKFLOW",
+      "upstreamPlane": "GOVERNANCE_CONTROL_PLANE",
+      "outputArtifact": "docs/reference/CVF_ERH_DEP1_DEPENDENCY_RISK_LEDGER_2026-06-04.md",
+      "outputSignal": "14 audit vulnerabilities classified; ACCEPT_WITH_CAVEAT decision; 3 critical/7 high remediation candidates identified",
+      "signalContract": "docs/reference/CVF_ERH_AUD1_CVF_WEB_DEPENDENCY_AUDIT_WORKFLOW_CHAIN_2026-06-04.md",
+      "downstreamLoop": "ERH_AUD1_AUDIT_REMEDIATION_WORKFLOW",
+      "downstreamPlane": "GOVERNANCE_CONTROL_PLANE",
+      "inputArtifact": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json",
+      "routingRule": "When ERH-DEP1 identifies audit vulnerabilities outside next-auth beta scope and ERH-AUD1 is authorized, the worker may apply bounded non-semver-major dependency updates, record before/after audit snapshots, classify residuals, and wire a machine checker. The routing does not authorize semver-major framework migrations, next-auth migration, auth runtime changes, public-sync export, live provider proof, production security claims, or autonomous mutation.",
+      "evidenceRefs": [
+        "docs/reference/CVF_ERH_DEP1_DEPENDENCY_RISK_LEDGER_2026-06-04.md",
+        "docs/reference/CVF_ERH_AUD1_CVF_WEB_DEPENDENCY_AUDIT_WORKFLOW_CHAIN_2026-06-04.md",
+        "docs/reference/CVF_ERH_AUD1_CVF_WEB_DEPENDENCY_AUDIT_REMEDIATION_LEDGER_2026-06-04.md",
+        "governance/compat/check_erh_cvf_web_dependency_audit_workflow.py",
+        "governance/compat/test_check_erh_cvf_web_dependency_audit_workflow.py"
+      ],
+      "automationLevel": "MACHINE_CHECKED",
+      "claimBoundary": "This connection proves bounded npm audit remediation is routed into a repeatable workflow-chain gate. It does not prove production security hardening, full CVE clearance, hosted freshness, public security readiness, or complete dependency audit coverage."
     }
   ]
 }
