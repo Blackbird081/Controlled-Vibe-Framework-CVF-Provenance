@@ -30,6 +30,7 @@ Current HEAD recorded for this handoff: `07f0f6bb` (Close ERH T2C route governan
 Current HEAD recorded for this handoff: `3754cc28` (Close ERH CI1 public evaluation workflow). Updated 2026-06-04 after ERH-CI1 moved from worker pending review to `CLOSED_PASS_BOUNDED`: the CI public-evaluation workflow-chain checker reports `READY_WITH_BOUNDARIES`, focused checker tests pass, and production-grade CI/public-readiness claims remain blocked. Next ERH cleanup move: close ERH-PD1 review, then decide whether a separate public-sync summary is warranted.
 Current HEAD recorded for this handoff: `75a04b14` (Close ERH PD1 public surface drift workflow). Updated 2026-06-04 after ERH-PD1 moved from worker pending review to `CLOSED_PASS_BOUNDED`: the public-surface drift checker reports `DRIFT_BOUNDED_WITH_UPDATE_CANDIDATES`, ERH-T2C and ERH-CI1 remain public-summary update candidates, and public-sync/public push/live proof/hosted or public-readiness claims remain separate. Next ERH cleanup move: decide whether a separate public-sync summary is warranted; DEP2/next-major migration remains separate.
 Current HEAD recorded for this handoff: `f8313eb1` (Record ERH public summary export). Updated 2026-06-04 after the public-sync clone pushed bounded ERH-T2C/ERH-CI1 summary commit `73f1da98e1a5fcc55c3124ff7c5a633193df5322` to `Controlled-Vibe-Framework-CVF.git`: PD1 checker now reports `PUBLIC_SUMMARY_EXPORTED_BOUNDED`; DEP/auth/next-major migration, live proof, hosted readiness, production readiness, and public readiness remain separate.
+Current HEAD recorded for this handoff: `16e54913` (Close ERH initial private tranches). Updated 2026-06-04 after ERH-T1A, ERH-T2A, ERH-T3, ERH-T2B, ERH-T4, and ERH-T1B moved from review-pending/handoff-only residue to `CLOSED_PASS_BOUNDED` or closed bounded successor status. New completion packet: `docs/reviews/CVF_ERH_INITIAL_PRIVATE_TRANCHES_COMPLETION_2026-06-04.md`. Remaining ERH work is authority-gated: DEP2/next-major migration, full live/provider route proof, hosted retest, production-grade CI/security posture, and public readiness.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -485,10 +486,21 @@ completion review:
 
 `docs/reviews/CVF_LPCI1_T4_RETRIEVAL_BOUNDARY_COMPLETION_2026-06-03.md`
 
-Next ERH cleanup move: public-sync summary for ERH-T2C and ERH-CI1 is exported
-bounded at public commit `73f1da98e1a5fcc55c3124ff7c5a633193df5322`. DEP/auth
-runtime edits, ordinary live-provider CI, hosted/public readiness, production
-readiness, and next-major dependency migration remain separate.
+Next ERH cleanup move: the immediately handleable ERH cleanup is closed. The
+public-sync summary for ERH-T2C and ERH-CI1 is exported bounded at public commit
+`73f1da98e1a5fcc55c3124ff7c5a633193df5322`, and the initial private tranches
+are closed bounded at commit `16e54913`. DEP/auth runtime edits, ordinary
+live-provider CI, hosted/public readiness, production readiness, and next-major
+dependency migration remain separate.
+
+`ERH-INIT` Initial Private Tranches Closure is `CLOSED_PASS_BOUNDED` at commit
+`16e54913`: ERH-T1A claim calibration, ERH-T2A route ledger, ERH-T3 evidence
+durability boundary, ERH-T2B CI plan, ERH-T4 `next-auth` beta decision, and
+ERH-T1B public-sync handoff no longer carry review-pending residue. Completion:
+`docs/reviews/CVF_ERH_INITIAL_PRIVATE_TRANCHES_COMPLETION_2026-06-04.md`.
+Boundary: docs-only closure; no runtime changes, public-sync edit, live proof,
+hosted readiness, production readiness, auth migration, next-major migration,
+full route coverage, or public-readiness claim.
 
 `ERH-AUD1` CVF Web Dependency Audit Remediation is `CLOSED_PASS_BOUNDED` at
 commit `35d6fbb3`: audit findings reduced from 14 to 3; critical/high findings
@@ -638,7 +650,7 @@ provider-routing changes, and raw prompt/output/secret/private-memory capture.
 
 Parked checkpoints:
 - VI5-T4/T5 hosted Netlify freshness and operator external-agent retest
-- Public-sync update for newly closed private/provenance capability summaries
+- DEP2/next-major migration or auth/runtime dependency work only after fresh operator authorization
 - WSR1 bounded public workspace-kit commit/push after operator diff review
 
 ## Remote Tracking
@@ -652,7 +664,7 @@ External agent memory files: non-canonical convenience only.
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=`lpci2_t8_search_layer_scaffolding_closed_pass_bounded_ready`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=operator may authorize a fresh PolicyLocal search implementation work order; search/chat/runtime implementation remains blocked until that fresh work order exists;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=ERH immediate cleanup is closed; operator may authorize a fresh DEP2/next-major, live-provider route proof, hosted-readiness, or PolicyLocal search implementation work order;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary
