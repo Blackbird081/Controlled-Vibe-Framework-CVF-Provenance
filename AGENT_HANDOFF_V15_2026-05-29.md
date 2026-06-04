@@ -29,6 +29,7 @@ Current HEAD recorded for this handoff: `35d6fbb3` (Close ERH AUD1 dependency au
 Current HEAD recorded for this handoff: `07f0f6bb` (Close ERH T2C route governance proof workflow). Updated 2026-06-04 after ERH-T2C moved from worker pending review to `CLOSED_PASS_BOUNDED`: five ERH-T2A missing-proof routes have local source/focused-test evidence for the shared `routeGovernanceProof` workflow chain, GC-052 interlock remains valid, and public-sync/hosted/public route claims remain separate. Next ERH cleanup move: close ERH-CI1 review, then ERH-PD1 review, before deciding on any public-sync summary.
 Current HEAD recorded for this handoff: `3754cc28` (Close ERH CI1 public evaluation workflow). Updated 2026-06-04 after ERH-CI1 moved from worker pending review to `CLOSED_PASS_BOUNDED`: the CI public-evaluation workflow-chain checker reports `READY_WITH_BOUNDARIES`, focused checker tests pass, and production-grade CI/public-readiness claims remain blocked. Next ERH cleanup move: close ERH-PD1 review, then decide whether a separate public-sync summary is warranted.
 Current HEAD recorded for this handoff: `75a04b14` (Close ERH PD1 public surface drift workflow). Updated 2026-06-04 after ERH-PD1 moved from worker pending review to `CLOSED_PASS_BOUNDED`: the public-surface drift checker reports `DRIFT_BOUNDED_WITH_UPDATE_CANDIDATES`, ERH-T2C and ERH-CI1 remain public-summary update candidates, and public-sync/public push/live proof/hosted or public-readiness claims remain separate. Next ERH cleanup move: decide whether a separate public-sync summary is warranted; DEP2/next-major migration remains separate.
+Current HEAD recorded for this handoff: `f8313eb1` (Record ERH public summary export). Updated 2026-06-04 after the public-sync clone pushed bounded ERH-T2C/ERH-CI1 summary commit `73f1da98e1a5fcc55c3124ff7c5a633193df5322` to `Controlled-Vibe-Framework-CVF.git`: PD1 checker now reports `PUBLIC_SUMMARY_EXPORTED_BOUNDED`; DEP/auth/next-major migration, live proof, hosted readiness, production readiness, and public readiness remain separate.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -484,9 +485,10 @@ completion review:
 
 `docs/reviews/CVF_LPCI1_T4_RETRIEVAL_BOUNDARY_COMPLETION_2026-06-03.md`
 
-Next ERH cleanup move: decide whether a separate public-sync summary is
-warranted. Public-sync, hosted/public readiness, ordinary live-provider CI,
-auth runtime edits, and next-major dependency migration remain separate.
+Next ERH cleanup move: public-sync summary for ERH-T2C and ERH-CI1 is exported
+bounded at public commit `73f1da98e1a5fcc55c3124ff7c5a633193df5322`. DEP/auth
+runtime edits, ordinary live-provider CI, hosted/public readiness, production
+readiness, and next-major dependency migration remain separate.
 
 `ERH-AUD1` CVF Web Dependency Audit Remediation is `CLOSED_PASS_BOUNDED` at
 commit `35d6fbb3`: audit findings reduced from 14 to 3; critical/high findings
@@ -530,10 +532,12 @@ workflow reference
 checker `governance/compat/check_erh_public_surface_drift_workflow.py`,
 and completion review
 `docs/reviews/CVF_ERH_PD1_PUBLIC_SURFACE_DRIFT_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md`.
-Checker verdict: `DRIFT_BOUNDED_WITH_UPDATE_CANDIDATES`; update candidates:
-ERH-T2C and ERH-CI1. Boundary: no public-sync edit/push, no live proof, no
-runtime change, no dependency migration, no public/production/hosted readiness
-claim.
+Checker verdict after public-summary export: `PUBLIC_SUMMARY_EXPORTED_BOUNDED`;
+public commit `73f1da98e1a5fcc55c3124ff7c5a633193df5322` adds
+`docs/reference/CVF_ERH_PUBLIC_SYNC_SUMMARY_2026-06-04.md` and linked public
+claim-boundary/catalog/index updates. Boundary: no live proof, no runtime
+change, no dependency migration, no auth migration, no public/production/hosted
+readiness claim.
 
 LPCI chatbot/runtime implementation remains blocked until a later
 implementation tranche is explicitly authorized.
