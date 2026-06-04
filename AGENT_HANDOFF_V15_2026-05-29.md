@@ -41,6 +41,7 @@ Current HEAD recorded for this handoff: `baba6522` (Close ERH SAF1 safety workfl
 Current HEAD recorded for this handoff: `bf7276c2` (Align SAF1 work order closure scope). Updated 2026-06-04 after the SAF1 work order Allowed scope was aligned with the reviewer session-continuity files present in the closure range. This is closure-scope alignment only; SAF1 status remains `CLOSED_PASS_BOUNDED`, SAF2 remains `SAF2_READY`, and live route proof remains a documented residual.
 Current HEAD recorded for this handoff: `214c9c66` (Dispatch ERH SAF2 output safety workflow). Updated 2026-06-05 after fresh SAF2 GC-018 and Claude work order were committed. Claude may execute bounded output-safety audit event, governance-specific output pattern, and SAF1 adversarial regression corpus work under `WORKER_MUST_NOT_COMMIT`; SAF3 remains a post-SAF2 decision checkpoint only; no ML DLP, comprehensive output-safety claim, provider behavior change, package/lockfile edit, auth/rate-limit/durable-audit edit, public-sync, hosted readiness, production security readiness, public readiness, or SAF3 implementation is authorized.
 Current HEAD recorded for this handoff: `bb4cbaa9` (Sync handoff after ERH SAF2 dispatch). Updated 2026-06-05 after SAF2 dispatch continuity and authorization scope were synchronized across active state, session memory, handoff, and the SAF2 work order. This is session-continuity/dispatch-authorization sync only; Claude may execute SAF2 under `WORKER_MUST_NOT_COMMIT`; SAF3 remains a separate post-SAF2 decision checkpoint.
+Current HEAD recorded for this handoff: `cf88f9cb` (Close ERH SAF2 output safety workflow). Updated 2026-06-05 after Claude's SAF2 worker output was reviewed, first-detection audit coverage was corrected to include retry-loop output, and SAF2 closed `CLOSED_PASS_BOUNDED`: bounded regex-only governance output patterns, `OUTPUT_SAFETY_TRIGGERED` first-detection audit wiring before retry exhaustion, SAF1 adversarial regression corpus, checker/hook wiring, GC-052 interlock, and completion review. SAF3 decision is `SAF3_NOT_NEEDED`. Boundary: no ML DLP, comprehensive output safety claim, provider behavior change, package/lockfile edit, auth/rate-limit/durable-audit edits, public-sync, hosted readiness, production security readiness, public readiness, or live/release-quality governance behavior claim.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -342,15 +343,16 @@ public-release readiness claim.
 
 ## Next Allowed Move
 
-ERH-SAF2 Output Safety And Regression Corpus is `DISPATCH_READY`:
+ERH-SAF2 Output Safety And Regression Corpus is `CLOSED_PASS_BOUNDED`:
 `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_SAF2_OUTPUT_SAFETY_AND_REGRESSION_CORPUS_FOR_CLAUDE_2026-06-05.md`.
-Commit `214c9c66` adds fresh GC-018 and work order. Claude may execute under
-`WORKER_MUST_NOT_COMMIT`. Scope: `OUTPUT_SAFETY_TRIGGERED` output-safety audit
-event on first `UNSAFE_CONTENT`, governance-specific output patterns, SAF1
-adversarial regression corpus, checker/tests, GC-052 interlock, completion
-review, and SAF3 decision checkpoint.
+Commit `cf88f9cb` closes bounded SAF2 with `OUTPUT_SAFETY_TRIGGERED`
+first-detection audit wiring before retry exhaustion, governance-specific output
+patterns, SAF1 adversarial regression corpus, checker/tests, GC-052 interlock,
+and completion review.
 
-SAF3 implementation remains forbidden until a separate work order opens.
+SAF3 decision is `SAF3_NOT_NEEDED`; SAF3 implementation is not opened unless a
+future concrete source-visible gap is identified and a fresh work order is
+authorized.
 
 LHW24 is the latest closed LHW wave. LHW22-LHW24 agent-intelligence absorption
 is CLOSED_PASS_BOUNDED at the documentation-only advisory boundary:
@@ -683,27 +685,29 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`erh_saf2_output_safety_dispatch_ready_for_claude`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=Claude may execute ERH-SAF2 under WORKER_MUST_NOT_COMMIT; after SAF2 completion, reviewer must decide SAF3_READY, SAF3_HOLD, or SAF3_NOT_NEEDED before any SAF3 work order;
+Startup acknowledged: current mode=`erh_saf2_output_safety_closed_pass_bounded_saf3_not_needed`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=ERH-SAF2 is CLOSED_PASS_BOUNDED at commit cf88f9cb with SAF3_NOT_NEEDED; do not open SAF3 without a future concrete source-visible gap and fresh work order;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized session-continuity sync scope: record ERH-SAF1 closure commit
-`baba6522`, current mode `erh_saf1_closed_pass_bounded_saf2_ready`, and the
-SAF2-ready next allowed move after the SAF1 closure commit.
+Authorized session-continuity sync scope: record ERH-SAF2 closure commit
+`cf88f9cb`, current mode
+`erh_saf2_output_safety_closed_pass_bounded_saf3_not_needed`, SAF2
+`CLOSED_PASS_BOUNDED`, and SAF3 verdict `SAF3_NOT_NEEDED`.
 
 Protected paths:
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: 2026-06-04 operator authorized ERH-SAF1 and SAF2
-assessment after SAF1. This sync records the reviewed closure state only.
+Operator authorization: 2026-06-05 operator reported ERH-SAF2 implementation
+complete and requested Codex review/closure flow under the active SAF2 work
+order. This sync records the reviewed closure state only.
 
-Rollback boundary: if this sync is wrong, restore only the ERH-SAF1/SAF2
-continuity text or active-state keys. Do not revert SAF1 runtime/source,
-governance checker, roadmap, work-order, review, or historical handoff content.
+Rollback boundary: if this sync is wrong, restore only the ERH-SAF2 continuity
+text or active-state keys. Do not revert SAF2 runtime/source, governance
+checker, roadmap, work-order, review, or historical handoff content.
 
 ## Claim Boundary
 

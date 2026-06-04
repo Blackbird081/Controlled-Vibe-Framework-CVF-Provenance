@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-05
 
-Current mode marker: `erh_saf2_output_safety_dispatch_ready_for_claude`
+Current mode marker: `erh_saf2_output_safety_closed_pass_bounded_saf3_not_needed`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `erh_saf2_output_safety_dispatch_ready_for_claude`.
+Current mode: `erh_saf2_output_safety_closed_pass_bounded_saf3_not_needed`.
 
 Active handoff:
 
@@ -253,15 +253,15 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-ERH-SAF2 Output Safety And Regression Corpus is `DISPATCH_READY`:
+ERH-SAF2 Output Safety And Regression Corpus is `CLOSED_PASS_BOUNDED`:
 
 `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_SAF2_OUTPUT_SAFETY_AND_REGRESSION_CORPUS_FOR_CLAUDE_2026-06-05.md`
 
-Commit `214c9c66` adds fresh GC-018 and Claude work order for bounded SAF2:
-output safety audit event, governance-specific output patterns, and SAF1
-adversarial regression corpus. Claude may execute under
-`WORKER_MUST_NOT_COMMIT`. SAF3 is only a post-SAF2 decision checkpoint; SAF3
-implementation remains forbidden until a separate work order opens.
+Commit `cf88f9cb` closes bounded SAF2: governance-specific output patterns,
+`OUTPUT_SAFETY_TRIGGERED` first-detection audit wiring before retry exhaustion,
+SAF1 adversarial regression corpus, SAF2 checker/hook wiring, GC-052 interlock,
+and completion review. SAF3 decision is `SAF3_NOT_NEEDED`; SAF3 implementation
+is not opened.
 
 LPCI2-T6 Search/Chat Readiness Gate is `CLOSED_PASS_BOUNDED`:
 

@@ -357,7 +357,7 @@ Authorized guard-maintenance scope: SAF2 may update
 `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json` only to
 add the ERH-SAF2 output safety workflow-chain checker. Codex may update active
 session-continuity files only to record SAF2 dispatch/closure status and SAF3
-decision state.
+decision state, including the post-commit sync for closure commit `cf88f9cb`.
 
 Protected paths:
 
