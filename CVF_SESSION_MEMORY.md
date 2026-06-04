@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-05
 
-Current mode marker: `erh_saf2_output_safety_closed_pass_bounded_saf3_not_needed`
+Current mode marker: `erh_dur1_durable_evidence_policy_snapshot_dispatch_ready_for_claude`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `erh_saf2_output_safety_closed_pass_bounded_saf3_not_needed`.
+Current mode: `erh_dur1_durable_evidence_policy_snapshot_dispatch_ready_for_claude`.
 
 Active handoff:
 
@@ -262,6 +262,17 @@ Commit `cf88f9cb` closes bounded SAF2: governance-specific output patterns,
 SAF1 adversarial regression corpus, SAF2 checker/hook wiring, GC-052 interlock,
 and completion review. SAF3 decision is `SAF3_NOT_NEEDED`; SAF3 implementation
 is not opened.
+
+ERH-DUR1 Durable Evidence And Policy Snapshot is `DISPATCH_READY`:
+
+`docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_DUR1_DURABLE_EVIDENCE_AND_POLICY_SNAPSHOT_FOR_CLAUDE_2026-06-05.md`
+
+Commit `b3c4ce3a` opens bounded local durable evidence and reconstructable
+policy snapshot workflow hardening for Claude under `WORKER_MUST_NOT_COMMIT`.
+Pre-dispatch autorun gate passed with base `1beda1b2`. Boundary: no external
+DB/Redis, rate limiter, provider-risk config, package/lockfile edit,
+public-sync, live proof, hosted readiness, production readiness, public
+readiness, or production-grade durability claim.
 
 LPCI2-T6 Search/Chat Readiness Gate is `CLOSED_PASS_BOUNDED`:
 

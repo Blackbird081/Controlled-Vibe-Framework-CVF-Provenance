@@ -12,6 +12,8 @@ GC-018: `docs/baselines/CVF_GC018_ERH_DUR1_DURABLE_EVIDENCE_AND_POLICY_SNAPSHOT_
 
 dispatchBaseHead: `1beda1b2`
 
+dispatchCommit: `b3c4ce3a`
+
 executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
 
 closureBaseHead: `WORKER_MUST_REPORT`
@@ -385,10 +387,10 @@ Return to Orchestrator if:
 
 ## Core Guard Self-Protection Authorization
 
-Authorized protected-path scope for Codex reviewer only: after Claude returns
-implementation, Codex may update `CVF_SESSION/ACTIVE_SESSION_STATE.json`,
-`CVF_SESSION_MEMORY.md`, and `AGENT_HANDOFF_V15_2026-05-29.md` to record DUR1
-dispatch or reviewed closure status.
+Authorized guard-maintenance scope: Codex reviewer may update
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION_MEMORY.md`, and
+`AGENT_HANDOFF_V15_2026-05-29.md` to record DUR1 dispatch or reviewed closure
+status.
 
 Protected paths:
 

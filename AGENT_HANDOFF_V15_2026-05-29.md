@@ -43,6 +43,7 @@ Current HEAD recorded for this handoff: `214c9c66` (Dispatch ERH SAF2 output saf
 Current HEAD recorded for this handoff: `bb4cbaa9` (Sync handoff after ERH SAF2 dispatch). Updated 2026-06-05 after SAF2 dispatch continuity and authorization scope were synchronized across active state, session memory, handoff, and the SAF2 work order. This is session-continuity/dispatch-authorization sync only; Claude may execute SAF2 under `WORKER_MUST_NOT_COMMIT`; SAF3 remains a separate post-SAF2 decision checkpoint.
 Current HEAD recorded for this handoff: `cf88f9cb` (Close ERH SAF2 output safety workflow). Updated 2026-06-05 after Claude's SAF2 worker output was reviewed, first-detection audit coverage was corrected to include retry-loop output, and SAF2 closed `CLOSED_PASS_BOUNDED`: bounded regex-only governance output patterns, `OUTPUT_SAFETY_TRIGGERED` first-detection audit wiring before retry exhaustion, SAF1 adversarial regression corpus, checker/hook wiring, GC-052 interlock, and completion review. SAF3 decision is `SAF3_NOT_NEEDED`. Boundary: no ML DLP, comprehensive output safety claim, provider behavior change, package/lockfile edit, auth/rate-limit/durable-audit edits, public-sync, hosted readiness, production security readiness, public readiness, or live/release-quality governance behavior claim.
 Current HEAD recorded for this handoff: `1c752211` (Sync session after ERH SAF2 closure). Updated 2026-06-05 after SAF2 closure state was synchronized across active state, session memory, handoff, and the SAF2 work order authorization block. This is session-continuity sync only; SAF2 remains `CLOSED_PASS_BOUNDED`, SAF3 remains `SAF3_NOT_NEEDED`, and no public-sync, live proof, hosted readiness, production readiness, or public readiness claim is added.
+Current HEAD recorded for this handoff: `b3c4ce3a` (Dispatch ERH DUR1 durable evidence workflow). Updated 2026-06-05 after fresh ERH-DUR1 GC-018 and Claude work order were committed. Claude may execute bounded local durable evidence store and reconstructable policy snapshot registry work under `WORKER_MUST_NOT_COMMIT`; external DB/Redis, rate limiter, provider-risk config, package/lockfile edits, public-sync, live proof, hosted readiness, production readiness, public readiness, and production-grade durability claims remain out of scope.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -354,6 +355,15 @@ and completion review.
 SAF3 decision is `SAF3_NOT_NEEDED`; SAF3 implementation is not opened unless a
 future concrete source-visible gap is identified and a fresh work order is
 authorized.
+
+ERH-DUR1 Durable Evidence And Policy Snapshot is `DISPATCH_READY`:
+`docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_DUR1_DURABLE_EVIDENCE_AND_POLICY_SNAPSHOT_FOR_CLAUDE_2026-06-05.md`.
+Commit `b3c4ce3a` opens bounded local durable evidence and reconstructable
+policy snapshot workflow hardening for Claude under `WORKER_MUST_NOT_COMMIT`.
+Pre-dispatch autorun gate passed with base `1beda1b2`. Boundary: no external
+DB/Redis, rate limiter, provider-risk config, package/lockfile edit,
+public-sync, live proof, hosted readiness, production readiness, public
+readiness, or production-grade durability claim.
 
 LHW24 is the latest closed LHW wave. LHW22-LHW24 agent-intelligence absorption
 is CLOSED_PASS_BOUNDED at the documentation-only advisory boundary:
@@ -686,29 +696,29 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`erh_saf2_output_safety_closed_pass_bounded_saf3_not_needed`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=ERH-SAF2 is CLOSED_PASS_BOUNDED at commit cf88f9cb with SAF3_NOT_NEEDED; do not open SAF3 without a future concrete source-visible gap and fresh work order;
+Startup acknowledged: current mode=`erh_dur1_durable_evidence_policy_snapshot_dispatch_ready_for_claude`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=ERH-DUR1 is DISPATCH_READY at commit b3c4ce3a for Claude under WORKER_MUST_NOT_COMMIT; SAF3 remains NOT_NEEDED without a future concrete source-visible gap and fresh work order;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized session-continuity sync scope: record ERH-SAF2 closure commit
-`cf88f9cb`, current mode
-`erh_saf2_output_safety_closed_pass_bounded_saf3_not_needed`, SAF2
-`CLOSED_PASS_BOUNDED`, and SAF3 verdict `SAF3_NOT_NEEDED`.
+Authorized session-continuity sync scope: record ERH-DUR1 dispatch commit
+`b3c4ce3a`, current mode
+`erh_dur1_durable_evidence_policy_snapshot_dispatch_ready_for_claude`, DUR1
+`DISPATCH_READY`, and SAF3 verdict `SAF3_NOT_NEEDED`.
 
 Protected paths:
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: 2026-06-05 operator reported ERH-SAF2 implementation
-complete and requested Codex review/closure flow under the active SAF2 work
-order. This sync records the reviewed closure state only.
+Operator authorization: 2026-06-05 operator agreed not to open SAF3 now and
+requested a Claude work order for the next handleable ERH architecture gap.
+This sync records the DUR1 dispatch state only.
 
-Rollback boundary: if this sync is wrong, restore only the ERH-SAF2 continuity
-text or active-state keys. Do not revert SAF2 runtime/source, governance
-checker, roadmap, work-order, review, or historical handoff content.
+Rollback boundary: if this sync is wrong, restore only the ERH-DUR1 continuity
+text or active-state keys. Do not revert DUR1 baseline, roadmap, work-order, or
+historical handoff content.
 
 ## Claim Boundary
 
