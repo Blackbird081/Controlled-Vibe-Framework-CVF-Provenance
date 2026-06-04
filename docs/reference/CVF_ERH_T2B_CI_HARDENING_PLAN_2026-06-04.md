@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: COMPLETE_PENDING_REVIEW
+Status: SUPERSEDED_BY_ERH_CI1_WORKFLOW_CHAIN_PENDING_REVIEW
 
 docType: reference
 
@@ -13,7 +13,12 @@ Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_T2B_CI_HARDENING_PLAN_202
 ## Purpose
 
 Record the CI hardening plan created after ERH-T2A route coverage ledger. This
-is a plan, not a workflow implementation.
+plan is now the upstream input for the ERH-CI1 public-evaluation workflow
+chain.
+
+Workflow-chain successor:
+
+`docs/reference/CVF_ERH_CI_PUBLIC_EVALUATION_WORKFLOW_CHAIN_2026-06-04.md`
 
 ## Scope / Target / Owner Boundary
 
@@ -30,7 +35,8 @@ installation, and public-sync changes.
 | Workflow | Source evidence | Current claim allowed |
 | --- | --- | --- |
 | `cvf-ci.yml` | type check, build, and test jobs across guard, MCP, CPF, EPF, GEF, LPF, and web UI | CI verifies core type/build/test lanes |
-| `cvf-ci.yml` | no direct `lint`, `coverage`, `npm audit`, or public-doc drift hits in workflow scan | do not claim hardened lint/coverage/audit/doc-drift CI |
+| `cvf-web-ci.yml` | lint and coverage markers exist for web CI | web lint/coverage visibility may be claimed with boundary |
+| `cvf-ci.yml` plus broader workflow scan | no ordinary dependency-audit hardening or public-doc drift hardening is proven | do not claim dependency-audit/doc-drift-hardened CI |
 | `cvf-protected-live-release-gate.yml` | manual `workflow_dispatch` plus `RUN_LIVE_GATE` confirmation and `run_cvf_release_gate_bundle.py --json` | live proof is protected/manual, not ordinary CI |
 
 ## Hardening Plan
@@ -67,6 +73,7 @@ hardened until follow-up workflow evidence exists.
 | --- | --- | --- | --- | --- |
 | Public CI claim can overstate current workflow | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_CANDIDATE | open ERH-CI follow-up after public-sync scope is known |
 | Route ledger can drift after route changes | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_CANDIDATE | route-ledger drift checker candidate |
+| Plan-only CI hardening could remain advisory prose | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | ERH-CI1 workflow-chain checker |
 
 ## Public Export Disposition
 
@@ -80,5 +87,6 @@ plan unless explicitly curated.
 
 ## Claim Boundary
 
-This plan does not edit CI, run CI, or prove production readiness. It is a
-source-backed queue for future workflow hardening.
+This plan is now upstream evidence for ERH-CI1. It does not edit CI, run CI, or
+prove production readiness. The successor workflow chain proves only bounded
+source-visible public-evaluation posture.

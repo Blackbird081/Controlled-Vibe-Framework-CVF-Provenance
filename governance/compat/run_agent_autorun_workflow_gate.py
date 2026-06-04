@@ -143,6 +143,10 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             base,
             head,
         ),
+        GateCommand(
+            "ERH CI public-evaluation workflow chain",
+            ("python", "governance/compat/check_erh_ci_public_evaluation_workflow.py", "--enforce"),
+        ),
     GateCommand(
         "active session state compatibility",
         ("python", "governance/compat/check_active_session_state.py", "--enforce"),

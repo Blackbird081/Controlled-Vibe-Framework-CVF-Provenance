@@ -114,6 +114,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
             ["python", "governance/compat/check_system_loop_interlock.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
+            "ERH CI public-evaluation workflow chain",
+            ["python", "governance/compat/check_erh_ci_public_evaluation_workflow.py", "--enforce"],
+        ),
+        (
             "governed pack contract compatibility",
             ["python", "governance/compat/check_governed_pack_contract.py", "--enforce"],
         ),
@@ -198,6 +202,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         (
             "system loop interlock",
             ["python", "governance/compat/check_system_loop_interlock.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "ERH CI public-evaluation workflow chain",
+            ["python", "governance/compat/check_erh_ci_public_evaluation_workflow.py", "--enforce"],
         ),
         (
             "cpf public surface maintainability",

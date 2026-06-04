@@ -162,6 +162,28 @@
       ],
       "automationLevel": "STRUCTURAL_GUARDED",
       "claimBoundary": "This connection proves route-ledger findings are routed into a bounded route governance proof workflow chain. It does not prove live governance behavior, provider behavior, hosted freshness, production readiness, public readiness, autonomous mutation, or complete API-route coverage."
+    },
+    {
+      "id": "erh-ci-plan-to-public-evaluation-workflow-chain",
+      "status": "ACTIVE",
+      "upstreamLoop": "ERH_T2B_CI_HARDENING_PLAN",
+      "upstreamPlane": "GOVERNANCE_CONTROL_PLANE",
+      "outputArtifact": "docs/reference/CVF_ERH_T2B_CI_HARDENING_PLAN_2026-06-04.md",
+      "outputSignal": "CI posture hardening plan with public claim boundary and follow-up gate candidates",
+      "signalContract": "docs/reference/CVF_ERH_CI_PUBLIC_EVALUATION_WORKFLOW_CHAIN_2026-06-04.md",
+      "downstreamLoop": "ERH_CI_PUBLIC_EVALUATION_WORKFLOW_CHAIN",
+      "downstreamPlane": "PUBLIC_EVALUATION_GOVERNANCE",
+      "inputArtifact": "governance/compat/check_erh_ci_public_evaluation_workflow.py",
+      "routingRule": "When ERH-T2B records CI hardening gaps and ERH-T2C route-governance workflow evidence exists, the ERH-CI1 worker may convert the plan into a source-marker workflow-chain checker. The checker may verify type/build/test, web lint/coverage visibility, static governance gate, docs governance lane, protected manual live gate, and route-governance workflow traceability. The routing does not authorize workflow rewrites, public-sync changes, dependency-audit hardening claims, production readiness, hosted freshness, ordinary live-provider CI execution, or autonomous mutation.",
+      "evidenceRefs": [
+        "docs/reference/CVF_ERH_T2B_CI_HARDENING_PLAN_2026-06-04.md",
+        "docs/reference/CVF_ERH_CI_PUBLIC_EVALUATION_WORKFLOW_CHAIN_2026-06-04.md",
+        "governance/compat/check_erh_ci_public_evaluation_workflow.py",
+        "governance/compat/test_check_erh_ci_public_evaluation_workflow.py",
+        "docs/reviews/CVF_ERH_CI1_PUBLIC_EVALUATION_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md"
+      ],
+      "automationLevel": "MACHINE_CHECKED",
+      "claimBoundary": "This connection proves ERH-T2B CI planning is routed into a repeatable public-evaluation workflow-chain gate. It does not prove GitHub Actions syntax validity, production-grade CI, dependency-audit hardening, public-doc drift hardening, hosted freshness, public readiness, or ordinary live-provider CI execution."
     }
   ]
 }
