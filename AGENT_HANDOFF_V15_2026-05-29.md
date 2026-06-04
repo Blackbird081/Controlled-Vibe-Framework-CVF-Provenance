@@ -477,12 +477,34 @@ completion review:
 
 `docs/reviews/CVF_LPCI1_T4_RETRIEVAL_BOUNDARY_COMPLETION_2026-06-03.md`
 
-Next allowed move: author and dispatch LPCI1-T5 chatbot prototype work order
-only. T5 is the first runtime tranche and requires a separate GC-018/work
-order before any runtime/UI/API/vector/provider implementation.
+Next allowed move: review ERH-PD1 public-surface drift workflow chain and
+decide whether to open a separate public-sync summary update for ERH-T2C/ERH-CI1
+or proceed to ERH-DEP1 dependency risk workflow chain.
+
+`ERH-PD1` Public Surface Drift Workflow Chain is
+`IMPLEMENTATION_COMPLETE_PENDING_REVIEW` at commit `7d23df05`: GC-018
+`docs/baselines/CVF_GC018_ERH_PD1_PUBLIC_SURFACE_DRIFT_WORKFLOW_CHAIN_2026-06-04.md`,
+work order
+`docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_PD1_PUBLIC_SURFACE_DRIFT_WORKFLOW_CHAIN_2026-06-04.md`,
+ledger
+`docs/reference/CVF_ERH_PD1_PUBLIC_SURFACE_DRIFT_LEDGER_2026-06-04.md`,
+workflow reference
+`docs/reference/CVF_ERH_PD1_PUBLIC_SURFACE_DRIFT_WORKFLOW_CHAIN_2026-06-04.md`,
+checker `governance/compat/check_erh_public_surface_drift_workflow.py`,
+and completion review
+`docs/reviews/CVF_ERH_PD1_PUBLIC_SURFACE_DRIFT_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md`.
+Checker verdict: `DRIFT_BOUNDED_WITH_UPDATE_CANDIDATES`; update candidates:
+ERH-T2C and ERH-CI1. Boundary: no public-sync edit/push, no live proof, no
+runtime change, no dependency migration, no public/production/hosted readiness
+claim.
 
 LPCI chatbot/runtime implementation remains blocked until a later
 implementation tranche is explicitly authorized.
+
+Previous LPCI next move before ERH operator override: author and dispatch
+LPCI1-T5 chatbot prototype work order only. T5 is the first runtime tranche and
+requires a separate GC-018/work order before any runtime/UI/API/vector/provider
+implementation.
 `MKG2` Deferred Runtime Candidate Triage is `REVIEW_READY`: GC-018
 `docs/baselines/CVF_GC018_MKG2_DEFERRED_RUNTIME_CANDIDATE_TRIAGE_2026-06-01.md`,
 roadmap
