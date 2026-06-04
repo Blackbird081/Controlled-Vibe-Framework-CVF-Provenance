@@ -83,6 +83,9 @@ Allowed scope:
 - update `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json`;
 - update `docs/roadmaps/CVF_ERH_EXTERNAL_REVIEW_HARDENING_ROADMAP_2026-06-04.md`;
 - update this work order status/evidence during Claude execution.
+- Codex reviewer may update `CVF_SESSION/ACTIVE_SESSION_STATE.json`,
+  `CVF_SESSION_MEMORY.md`, and `AGENT_HANDOFF_V15_2026-05-29.md` only to
+  record ERH-SAF1 closure status and the SAF2 decision checkpoint.
 
 Forbidden scope:
 
