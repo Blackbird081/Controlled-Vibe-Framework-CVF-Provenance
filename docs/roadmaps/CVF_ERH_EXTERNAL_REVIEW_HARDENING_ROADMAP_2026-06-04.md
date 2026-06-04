@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: INITIAL_PRIVATE_TRANCHES_CLOSED_PASS_BOUNDED_PUBLIC_SYNC_EXPORTED_T2C_CI1_PD1_CLOSED_PASS_BOUNDED_DEP1_ACCEPTED_BOUNDED_AUD1_CLOSED_PASS_BOUNDED_SAF1_CLOSED_PASS_BOUNDED_SAF2_READY
+Status: INITIAL_PRIVATE_TRANCHES_CLOSED_PASS_BOUNDED_PUBLIC_SYNC_EXPORTED_T2C_CI1_PD1_CLOSED_PASS_BOUNDED_DEP1_ACCEPTED_BOUNDED_AUD1_CLOSED_PASS_BOUNDED_SAF1_CLOSED_PASS_BOUNDED_SAF2_CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -105,7 +105,7 @@ Out of scope:
 | ERH-AUD1 | `cvf-web` dependency-audit remediation workflow | `docs/reviews/CVF_ERH_AUD1_CVF_WEB_DEPENDENCY_AUDIT_REMEDIATION_COMPLETION_2026-06-04.md` | CLOSED_PASS_BOUNDED |
 | ERH-RS1 | External review full-coverage rescan | `docs/reviews/CVF_ERH_RS1_EXTERNAL_REVIEW_FULL_COVERAGE_RESCAN_COMPLETION_2026-06-04.md` | CLOSED_PASS_BOUNDED |
 | ERH-SAF1 | Safety workflow-chain hardening | `docs/reviews/CVF_ERH_SAF1_SAFETY_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md` | CLOSED_PASS_BOUNDED |
-| ERH-SAF2 | Post-SAF1 safety follow-up decision | SAF1 completion records `SAF2_READY`; work order not yet authored | READY_FOR_WORK_ORDER |
+| ERH-SAF2 | Output safety audit event + governance output patterns + regression corpus | `docs/reviews/CVF_ERH_SAF2_OUTPUT_SAFETY_AND_REGRESSION_CORPUS_COMPLETION_2026-06-05.md` | CLOSED_PASS_BOUNDED |
 
 ## Roadmap-To-Work-Order Trace Matrix
 
@@ -125,7 +125,7 @@ Out of scope:
 | ERH-AUD1 dependency-audit remediation workflow | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_AUD1_CVF_WEB_DEPENDENCY_AUDIT_REMEDIATION_FOR_CLAUDE_2026-06-04.md` |
 | ERH-RS1 external review full-coverage rescan | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_RS1_EXTERNAL_REVIEW_FULL_COVERAGE_RESCAN_FOR_CLAUDE_2026-06-04.md` |
 | ERH-SAF1 safety workflow-chain hardening | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_SAF1_SAFETY_WORKFLOW_CHAIN_FOR_CLAUDE_2026-06-04.md` |
-| ERH-SAF2 post-SAF1 safety follow-up decision | N/A with reason: SAF2 decision is ready, but a fresh SAF2 GC-018/work order has not been authored yet |
+| ERH-SAF2 output safety and regression corpus | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_SAF2_OUTPUT_SAFETY_AND_REGRESSION_CORPUS_FOR_CLAUDE_2026-06-05.md` |
 
 ## Work Plan
 
@@ -143,7 +143,7 @@ Out of scope:
 | E10 | Implement dependency risk workflow chain for `next-auth` beta posture | reference, ledger, checker, tests, hook/autorun wiring, GC-052 connection, completion packet | ACCEPTED_BOUNDED |
 | E11 | Close `cvf-web` dependency-audit remediation workflow | ledger, workflow chain, checker, tests, bounded package-update diff, completion packet | CLOSED_PASS_BOUNDED |
 | E12 | Close ERH-SAF1 deterministic safety workflow-chain hardening | helper, route wiring, ledger, checker, hook wiring, completion packet with SAF2 decision | CLOSED_PASS_BOUNDED |
-| E13 | Author ERH-SAF2 safety follow-up work order | fresh GC-018 and bounded work order, if operator continues SAF2 | READY_FOR_WORK_ORDER |
+| E13 | Implement ERH-SAF2 output safety audit event, governance output patterns, regression corpus | output-validator.ts patterns, route.ts audit event, regression test file, checker, reference docs | CLOSED_PASS_BOUNDED |
 
 ## Acceptance Criteria
 

@@ -738,6 +738,27 @@ export async function POST(request: NextRequest) {
         }
         let outputValidation: ValidationResult | undefined;
         const retryState: RetryState = { attempt: 0, previousIssues: [] };
+        let outputSafetyAuditEmitted = false;
+        const emitOutputSafetyTriggered = async (validation: ValidationResult, result: ExecutionResponse) => {
+            if (outputSafetyAuditEmitted || !validation.issues.includes('UNSAFE_CONTENT')) return;
+            outputSafetyAuditEmitted = true;
+            await appendAuditEvent({
+                eventType: 'OUTPUT_SAFETY_TRIGGERED',
+                actorId: session?.userId ?? 'service-account',
+                actorRole: session?.role ?? 'service',
+                targetResource: body.templateName || body.templateId || 'unknown-template',
+                action: 'DETECT_UNSAFE_OUTPUT',
+                riskLevel: body.cvfRiskLevel ?? enforcement.riskGate?.riskLevel ?? 'R1',
+                phase: body.cvfPhase ?? 'PHASE D',
+                outcome: 'DETECTED',
+                payload: withSessionAuditPayload(session, {
+                    issues: validation.issues,
+                    issueCount: validation.issues.length,
+                    provider: routedProvider,
+                    model: body.model ?? result.model ?? routedProvider,
+                }),
+            });
+        };
 
         if (aiResult.success && !isVisionExecution) {
             outputValidation = validateOutput({
@@ -746,6 +767,9 @@ export async function POST(request: NextRequest) {
                 templateName: body.templateName,
                 templateCategory: template?.category,
             });
+
+            // ── OUTPUT_SAFETY_TRIGGERED: fire on first UNSAFE_CONTENT detection ──
+            await emitOutputSafetyTriggered(outputValidation, aiResult);
 
             // Auto-retry loop (max 2 retries, invisible to user)
             while (outputValidation.decision === 'RETRY') {
@@ -773,6 +797,7 @@ export async function POST(request: NextRequest) {
                     templateName: body.templateName,
                     templateCategory: template?.category,
                 });
+                await emitOutputSafetyTriggered(outputValidation, aiResult);
             }
         }
 

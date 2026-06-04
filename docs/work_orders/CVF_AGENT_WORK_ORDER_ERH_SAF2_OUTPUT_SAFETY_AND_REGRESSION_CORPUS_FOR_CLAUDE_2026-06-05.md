@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -12,9 +12,9 @@ GC-018: `docs/baselines/CVF_GC018_ERH_SAF2_OUTPUT_SAFETY_AND_REGRESSION_CORPUS_2
 
 dispatchBaseHead: `faa96dbf`
 
-executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
+executionBaseHead: `9f3f0882`
 
-closureBaseHead: `NOT_EXECUTED_YET`
+closureBaseHead: `9f3f0882`
 
 Assigned worker: Claude
 
@@ -164,10 +164,10 @@ behavior change, broad security claim, or output-quality tuning.
 
 | Roadmap or predecessor requirement | SAF2 output | Evidence | Status |
 | --- | --- | --- | --- |
-| SAF1 completion recorded `SAF2_READY` with output safety audit, regression corpus, drift checker as candidates | SAF2 implements candidates 1+2: output audit event + regression corpus | SAF1 completion review SAF2 decision section | REQUIRED |
-| ERH-RS1 §4.4 safety weakness — thin safety layer | SAF2 output safety audit closes the output-side gap; regression corpus documents coverage boundary | RS1 finding RS-03 | REQUIRED |
-| Avoid overclaiming ML/advanced detection | Explicit claim boundary in completion review and checker markers | completion review `Claim Boundary` section | REQUIRED |
-| SAF3 (drift checker) deferred until SAF2 evidence exists | SAF3 decision checkpoint only | completion review SAF3 verdict | REQUIRED |
+| SAF1 completion recorded `SAF2_READY` with output safety audit, regression corpus, drift checker as candidates | SAF2 implements candidates 1+2: output audit event + regression corpus | SAF1 completion review SAF2 decision section | PASS |
+| ERH-RS1 §4.4 safety weakness — thin safety layer | SAF2 output safety audit closes the output-side gap; regression corpus documents coverage boundary | RS1 finding RS-03 | PASS |
+| Avoid overclaiming ML/advanced detection | Explicit claim boundary in completion review and checker markers | completion review `Claim Boundary` section | PASS |
+| SAF3 (drift checker) deferred until SAF2 evidence exists | SAF3 decision checkpoint only | completion review SAF3 verdict | PASS |
 
 ## Write Ownership
 
@@ -378,11 +378,14 @@ public-sync, auth runtime, and package changes are outside this dispatch sync.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | this file | `DISPATCH_READY` until Codex closes after review | REQUIRED |
-| SAF2 completion review | `docs/reviews/CVF_ERH_SAF2_OUTPUT_SAFETY_AND_REGRESSION_CORPUS_COMPLETION_2026-06-05.md` | path exists | REQUIRED |
-| Runtime no-edit proof | `git diff --name-status <baseHead> HEAD` | only Allowed paths changed | REQUIRED |
-| Public export | completion `Public Export Disposition` | `DEFERRED_PRIVATE_ONLY` | REQUIRED |
-| Session continuity | active handoff update by Codex after review | `N/A for Claude` | N/A with reason |
+| Work order status | this file | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ERH_SAF2_OUTPUT_SAFETY_AND_REGRESSION_CORPUS_COMPLETION_2026-06-05.md` | `CLOSED_PASS_BOUNDED`; SAF3 verdict `SAF3_NOT_NEEDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ERH_EXTERNAL_REVIEW_HARDENING_ROADMAP_2026-06-04.md` | SAF2 row moved to `CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json` | `erh-saf2-output-safety-workflow-chain` connection added; GC-051 corpus registry not applicable to SAF2 regression-test corpus | BLOCKED with reason |
+| Registry Markdown | `docs/reference/CVF_ERH_SAF2_OUTPUT_SAFETY_AND_REGRESSION_CORPUS_2026-06-05.md` | SAF2 workflow-chain reference and regression-corpus boundary recorded; no GC-051 markdown registry change required | BLOCKED with reason |
+| External evidence digest | `N/A with reason` | no external corpus/source digest consumed; SAF2 uses repo-local source and tests only | N/A with reason |
+| System loop interlock | `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json` | `erh-saf2-output-safety-workflow-chain` route added and checker-backed | PASS |
+| Session continuity | `AGENT_HANDOFF_V15_2026-05-29.md` | follow-up session sync commit required after reviewer commit | PASS |
 
 ## Corpus Completeness And Report Integrity
 
@@ -411,9 +414,9 @@ corpus enumeration or completeness claim is made.
 
 | Finding | Defect class | Learning lane | Escalation state | Next control action |
 | --- | --- | --- | --- | --- |
-| UNSAFE_CONTENT output detection fires no dedicated audit event | RUNTIME_SIGNAL_GAP | RUNTIME_BEHAVIOR_LEARNING | WORKFLOW_CHAIN_REQUIRED | implement SAF2 output safety audit |
-| Governance-bypass patterns absent from output safety screen | ROUTE_COVERAGE_GAP | RUNTIME_BEHAVIOR_LEARNING | MACHINE_CHECK_CANDIDATE | implement SAF2 governance output patterns |
-| No adversarial regression corpus for SAF1 input chain | CORPUS_COMPLETENESS_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_CANDIDATE | implement SAF2 regression corpus |
+| UNSAFE_CONTENT output detection fires no dedicated audit event | RUNTIME_SIGNAL_GAP | RUNTIME_BEHAVIOR_LEARNING | MACHINE_CHECK_ADDED | SAF2 checker enforces `OUTPUT_SAFETY_TRIGGERED` first-detection wiring |
+| Governance-bypass patterns absent from output safety screen | ROUTE_COVERAGE_GAP | RUNTIME_BEHAVIOR_LEARNING | MACHINE_CHECK_ADDED | SAF2 checker enforces governance output pattern markers |
+| No adversarial regression corpus for SAF1 input chain | CORPUS_COMPLETENESS_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | SAF2 checker enforces regression corpus artifact presence |
 
 ## Public Export Disposition
 

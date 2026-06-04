@@ -275,6 +275,28 @@
       ],
       "automationLevel": "MACHINE_CHECKED",
       "claimBoundary": "This connection proves deterministic severity-classified safety screening is wired into the execute route with audit evidence. It does not prove ML DLP, comprehensive jailbreak coverage, production security readiness, or complete remediation of the external review safety weakness."
+    },
+    {
+      "id": "erh-saf2-output-safety-workflow-chain",
+      "status": "ACTIVE",
+      "upstreamLoop": "ERH_SAF1_SAFETY_CHAIN_WORKFLOW",
+      "upstreamPlane": "GOVERNANCE_CONTROL_PLANE",
+      "outputArtifact": "docs/reviews/CVF_ERH_SAF1_SAFETY_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md",
+      "outputSignal": "SAF2_READY verdict confirmed; output safety audit event absent and no adversarial regression corpus identified as source-verified gaps",
+      "signalContract": "docs/reference/CVF_ERH_SAF2_OUTPUT_SAFETY_AND_REGRESSION_CORPUS_2026-06-05.md",
+      "downstreamLoop": "ERH_SAF2_OUTPUT_SAFETY_WORKFLOW",
+      "downstreamPlane": "GOVERNANCE_CONTROL_PLANE",
+      "inputArtifact": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/output-validator.ts",
+      "routingRule": "When SAF1 concludes SAF2_READY and a fresh GC-018 is authorized, the worker may add governance-specific output patterns to output-validator.ts, wire OUTPUT_SAFETY_TRIGGERED audit event into /api/execute before retry exhaustion, and create an adversarial regression corpus test file. The routing does not authorize ML classifiers, provider routing changes, auth edits, package manifest changes, public-sync export, production security claims, or SAF3 implementation.",
+      "evidenceRefs": [
+        "docs/reviews/CVF_ERH_SAF1_SAFETY_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md",
+        "docs/reference/CVF_ERH_SAF2_OUTPUT_SAFETY_AND_REGRESSION_CORPUS_2026-06-05.md",
+        "docs/reference/CVF_ERH_SAF2_OUTPUT_SAFETY_AND_REGRESSION_CORPUS_LEDGER_2026-06-05.md",
+        "governance/compat/check_erh_output_safety_workflow_chain.py",
+        "governance/compat/test_check_erh_output_safety_workflow_chain.py"
+      ],
+      "automationLevel": "MACHINE_CHECKED",
+      "claimBoundary": "This connection proves bounded governance-specific output pattern detection and OUTPUT_SAFETY_TRIGGERED audit event wiring with adversarial regression corpus evidence. It does not prove ML DLP, comprehensive output safety coverage, production security readiness, complete jailbreak protection, or complete external-review remediation."
     }
   ]
 }

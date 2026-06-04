@@ -134,6 +134,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
             ["python", "governance/compat/check_erh_safety_workflow_chain.py", "--enforce"],
         ),
         (
+            "ERH SAF2 output safety workflow chain",
+            ["python", "governance/compat/check_erh_output_safety_workflow_chain.py", "--enforce"],
+        ),
+        (
             "governed pack contract compatibility",
             ["python", "governance/compat/check_governed_pack_contract.py", "--enforce"],
         ),
