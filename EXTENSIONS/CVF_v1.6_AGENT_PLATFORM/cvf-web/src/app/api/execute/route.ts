@@ -4,6 +4,7 @@ import { evaluateEnforcement } from '@/lib/enforcement';
 import { getTemplateById } from '@/lib/templates';
 import { verifySessionCookie } from '@/lib/middleware-auth';
 import { applySafetyFilters } from '@/lib/safety';
+import { runSafetyWorkflowChain } from '@/lib/safety-workflow-chain';
 import { getRateLimiter } from '@/lib/rate-limit';
 import { checkBudget } from '@/lib/budget';
 import { buildWebGuardContext, type GuardPipelineResult } from '@/lib/guard-runtime-adapter';
@@ -256,8 +257,36 @@ export async function POST(request: NextRequest) {
                 }),
             });
         }
-        // Safety filters
-        const safety = applySafetyFilters(filteredPrompt);
+        // SAF1: severity-classified safety workflow chain (ERH-SAF1)
+        const saf1Result = runSafetyWorkflowChain(filteredPrompt);
+        if (saf1Result.threats.length > 0) {
+            await appendAuditEvent({
+                eventType: 'SAFETY_WORKFLOW_CHAIN_TRIGGERED',
+                actorId: session?.userId ?? 'service-account',
+                actorRole: session?.role ?? 'service',
+                targetResource: body.templateName || body.templateId || 'unknown-template',
+                action: saf1Result.blocked ? 'BLOCK_EXECUTION_SAFETY' : 'SAFETY_STRIP_OR_LOG',
+                riskLevel: saf1Result.highestSeverity === 'CRITICAL' ? 'R3'
+                    : saf1Result.highestSeverity === 'HIGH' ? 'R2' : 'R1',
+                phase: 'PHASE D',
+                outcome: saf1Result.blocked ? 'BLOCKED' : 'SANITIZED',
+                payload: withSessionAuditPayload(session, saf1Result.auditPayload),
+            });
+        }
+        if (saf1Result.blocked) {
+            return NextResponse.json(
+                {
+                    success: false,
+                    error: 'Safety workflow chain blocked this request.',
+                    details: saf1Result.threats.map(t => `${t.severity}: ${t.pattern}`),
+                    provider,
+                    model: 'blocked',
+                },
+                { status: 400 }
+            );
+        }
+        // Legacy safety filters (preserved for backward compatibility)
+        const safety = applySafetyFilters(saf1Result.sanitized);
         if (safety.blocked) {
             return NextResponse.json(
                 {

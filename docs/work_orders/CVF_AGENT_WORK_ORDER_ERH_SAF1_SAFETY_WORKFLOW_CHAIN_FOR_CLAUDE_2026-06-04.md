@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -12,13 +12,19 @@ GC-018: `docs/baselines/CVF_GC018_ERH_SAF1_SAFETY_WORKFLOW_CHAIN_2026-06-04.md`
 
 dispatchBaseHead: `16c1fb68`
 
-executionBaseHead: `16c1fb68`
+executionBaseHead: `f7a75d59`
 
-closureBaseHead: `16c1fb68`
+closureBaseHead: `f7a75d59`
 
 Assigned worker: Claude
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
+
+Closure review: `docs/reviews/CVF_ERH_SAF1_SAFETY_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md`
+
+Closure decision: `ACCEPT_WITH_CAVEAT_LIVE_ROUTE_PROOF_RESIDUAL`
+
+SAF2 decision: `SAF2_READY` for separate GC-018/work order authoring.
 
 ## Purpose
 
@@ -239,7 +245,7 @@ Allowed verdicts:
 
 | Verdict | Use when |
 | --- | --- |
-| `SAF2_READY` | SAF1 passes focused tests and live/release boundary; remaining safety gaps are source-visible and can be bounded into a next workflow, such as output safety/readout, adversarial safety regression corpus, or safety coverage drift checker |
+| `SAF2_READY` | SAF1 passes focused tests and source/review boundary; remaining safety gaps are source-visible and can be bounded into a next workflow, such as output safety/readout, adversarial safety regression corpus, or safety coverage drift checker. If live/release proof remains blocked, the completion must carry an explicit live-proof residual and must not claim release-quality governance behavior |
 | `SAF2_HOLD` | SAF1 evidence is incomplete, live proof is blocked, route size is near hard limit, or next scope requires human design choice |
 | `SAF2_NOT_NEEDED` | SAF1 closes the currently actionable safety gap and no separate safety workflow candidate remains within current ERH scope |
 
@@ -339,6 +345,31 @@ python scripts/run_cvf_release_gate_bundle.py --json
 | Public export remains private-only | completion review | PASS |
 | SAF2 decision recorded but not implemented | completion review | PASS |
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_SAF1_SAFETY_WORKFLOW_CHAIN_FOR_CLAUDE_2026-06-04.md` | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ERH_SAF1_SAFETY_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md` | decision `ACCEPT_WITH_CAVEAT_LIVE_ROUTE_PROOF_RESIDUAL` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ERH_EXTERNAL_REVIEW_HARDENING_ROADMAP_2026-06-04.md` | SAF1 closed bounded; SAF2 ready for separate work-order authoring | PASS |
+| Registry JSON | `N/A with reason` | no corpus scan registry state changed; SAF1 is runtime safety wiring, not corpus/search/classification closure | BLOCKED with reason |
+| Registry Markdown | `N/A with reason` | no corpus registry markdown state changed; SAF1 is runtime safety wiring, not corpus/search/classification closure | BLOCKED with reason |
+| External evidence digest | `N/A with reason` | no new external source corpus was consumed by SAF1 implementation | N/A with reason |
+| System loop interlock | `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json` | `erh-saf1-safety-workflow-chain` connection added | PASS |
+| Session continuity | `AGENT_HANDOFF_V15_2026-05-29.md` | follow-up handoff sync commit required after closure commit | PASS |
+
+## Closure Evidence
+
+| Closure item | Evidence | Disposition |
+| --- | --- | --- |
+| Worker return | Claude reported `IMPLEMENTATION_COMPLETE_PENDING_REVIEW` and `SAF2_READY` | ACCEPT |
+| Reviewer decision | `docs/reviews/CVF_ERH_SAF1_SAFETY_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md` | ACCEPT_WITH_CAVEAT_LIVE_ROUTE_PROOF_RESIDUAL |
+| Route order | `governance/compat/check_erh_safety_workflow_chain.py` enforces DLP -> SAF1 -> legacy safety -> provider | PASS |
+| Focused checker tests | `python -m pytest governance/compat/test_check_erh_safety_workflow_chain.py -q` | 13/13 PASS |
+| Route size | `route.ts` physical line count | 890/1000 PASS |
+| Live governance proof | release gate Playwright live proof blocked by port 3001 conflict in worker run | RESIDUAL_DOCUMENTED |
+| SAF2 | output safety/readout, safety regression corpus, and safety coverage drift checker are source-visible candidates | READY_FOR_SEPARATE_WORK_ORDER |
+
 ## Review Gate
 
 Reviewer must verify:
@@ -409,8 +440,14 @@ the ERH-SAF1 safety workflow-chain checker to the existing governance chain.
 
 Protected paths:
 
+- `governance/compat/check_erh_safety_workflow_chain.py`
+- `governance/compat/test_check_erh_safety_workflow_chain.py`
+- `governance/compat/run_local_governance_hook_chain.py`
+- `governance/compat/run_agent_autorun_workflow_gate.py`
+- `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION_MEMORY.md`
+- `AGENT_HANDOFF_V15_2026-05-29.md`
 
 Operator authorization: 2026-06-04 operator instruction authorized opening
 ERH-SAF1 and assessing SAF2 after SAF1. Codex may update protected

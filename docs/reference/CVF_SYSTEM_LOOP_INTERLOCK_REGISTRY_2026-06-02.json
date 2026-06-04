@@ -253,6 +253,28 @@
       ],
       "automationLevel": "MACHINE_CHECKED",
       "claimBoundary": "This connection proves bounded npm audit remediation is routed into a repeatable workflow-chain gate. It does not prove production security hardening, full CVE clearance, hosted freshness, public security readiness, or complete dependency audit coverage."
+    },
+    {
+      "id": "erh-saf1-safety-workflow-chain",
+      "status": "ACTIVE",
+      "upstreamLoop": "ERH_RS1_RESCAN_WORKFLOW",
+      "upstreamPlane": "GOVERNANCE_CONTROL_PLANE",
+      "outputArtifact": "docs/assessments/CVF_ERH_RS1_EXTERNAL_REVIEW_FULL_COVERAGE_RESCAN_2026-06-04.md",
+      "outputSignal": "ERH_SAF1_READY verdict confirmed; safety-status.ts richer patterns not wired to execute route identified as source-verified gap",
+      "signalContract": "docs/reference/CVF_ERH_SAF1_SAFETY_WORKFLOW_CHAIN_2026-06-04.md",
+      "downstreamLoop": "ERH_SAF1_SAFETY_CHAIN_WORKFLOW",
+      "downstreamPlane": "GOVERNANCE_CONTROL_PLANE",
+      "inputArtifact": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/safety-workflow-chain.ts",
+      "routingRule": "When ERH-RS1 concludes ERH_SAF1_READY and a fresh GC-018 is authorized, the worker may create a server-safe safety workflow helper, wire it into /api/execute after DLP, emit a bounded audit event on safety block/escalation, and add a machine checker. The routing does not authorize ML classifiers, provider routing changes, auth edits, package manifest changes, public-sync export, production security claims, or output-quality tuning.",
+      "evidenceRefs": [
+        "docs/assessments/CVF_ERH_RS1_EXTERNAL_REVIEW_FULL_COVERAGE_RESCAN_2026-06-04.md",
+        "docs/reference/CVF_ERH_SAF1_SAFETY_WORKFLOW_CHAIN_2026-06-04.md",
+        "docs/reference/CVF_ERH_SAF1_SAFETY_WORKFLOW_LEDGER_2026-06-04.md",
+        "governance/compat/check_erh_safety_workflow_chain.py",
+        "governance/compat/test_check_erh_safety_workflow_chain.py"
+      ],
+      "automationLevel": "MACHINE_CHECKED",
+      "claimBoundary": "This connection proves deterministic severity-classified safety screening is wired into the execute route with audit evidence. It does not prove ML DLP, comprehensive jailbreak coverage, production security readiness, or complete remediation of the external review safety weakness."
     }
   ]
 }

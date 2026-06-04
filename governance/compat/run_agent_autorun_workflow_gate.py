@@ -159,14 +159,18 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             "ERH cvf-web dependency audit workflow chain",
             ("python", "governance/compat/check_erh_cvf_web_dependency_audit_workflow.py", "--enforce"),
         ),
-    GateCommand(
-        "active session state compatibility",
-        ("python", "governance/compat/check_active_session_state.py", "--enforce"),
-    ),
-    GateCommand(
-        "governed file size compatibility",
-        ("python", "governance/compat/check_governed_file_size.py", "--enforce"),
-    ),
+        GateCommand(
+            "ERH SAF1 safety workflow chain",
+            ("python", "governance/compat/check_erh_safety_workflow_chain.py", "--enforce"),
+        ),
+        GateCommand(
+            "active session state compatibility",
+            ("python", "governance/compat/check_active_session_state.py", "--enforce"),
+        ),
+        GateCommand(
+            "governed file size compatibility",
+            ("python", "governance/compat/check_governed_file_size.py", "--enforce"),
+        ),
     )
 
 PRE_PUSH_COMMANDS: tuple[GateCommand, ...] = (

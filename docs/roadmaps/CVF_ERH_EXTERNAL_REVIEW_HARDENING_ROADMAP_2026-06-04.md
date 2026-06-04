@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: INITIAL_PRIVATE_TRANCHES_CLOSED_PASS_BOUNDED_PUBLIC_SYNC_EXPORTED_T2C_CI1_PD1_CLOSED_PASS_BOUNDED_DEP1_ACCEPTED_BOUNDED_AUD1_CLOSED_PASS_BOUNDED_SAF1_DISPATCH_READY
+Status: INITIAL_PRIVATE_TRANCHES_CLOSED_PASS_BOUNDED_PUBLIC_SYNC_EXPORTED_T2C_CI1_PD1_CLOSED_PASS_BOUNDED_DEP1_ACCEPTED_BOUNDED_AUD1_CLOSED_PASS_BOUNDED_SAF1_CLOSED_PASS_BOUNDED_SAF2_READY
 
 docType: roadmap
 
@@ -85,7 +85,7 @@ Out of scope:
 | Planning review | `docs/assessments/CVF_ERH_PLANNING_REVIEW_FOR_CODEX_2026-06-04.md` | reviewed |
 | Codex response | `docs/reviews/CVF_ERH_PLANNING_REVIEW_CODEX_RESPONSE_2026-06-04.md` | recorded |
 | Fresh GC-018 | `docs/baselines/CVF_GC018_ERH_EXTERNAL_REVIEW_HARDENING_2026-06-04.md` | authorized |
-| Work orders | ERH-T1A/T2A/T3/T2B/T4/T1B initial private tranches closed bounded; ERH-T1C exported; ERH-T2C, ERH-CI1, and ERH-PD1 closed bounded; ERH-DEP1 closed bounded; ERH-AUD1 closed bounded; ERH-SAF1 dispatch ready | private tranche outputs reviewed and closed; public-sync delta exported; runtime route workflow, CI public-evaluation workflow, and public-surface drift workflow closed bounded; dependency-risk workflow closed as `ACCEPT_WITH_CAVEAT`; dependency-audit remediation closed as `AUDIT_REDUCED_WITH_RESIDUALS`; ERH-RS1 recommended `ERH-SAF1_READY` and SAF1 is dispatched as deterministic safety workflow-chain hardening |
+| Work orders | ERH-T1A/T2A/T3/T2B/T4/T1B initial private tranches closed bounded; ERH-T1C exported; ERH-T2C, ERH-CI1, and ERH-PD1 closed bounded; ERH-DEP1 closed bounded; ERH-AUD1 closed bounded; ERH-SAF1 closed bounded; ERH-SAF2 ready for separate work-order authoring | private tranche outputs reviewed and closed; public-sync delta exported; runtime route workflow, CI public-evaluation workflow, and public-surface drift workflow closed bounded; dependency-risk workflow closed as `ACCEPT_WITH_CAVEAT`; dependency-audit remediation closed as `AUDIT_REDUCED_WITH_RESIDUALS`; ERH-RS1 recommended `ERH-SAF1_READY`; SAF1 deterministic safety workflow-chain hardening is accepted bounded with live route proof residual |
 
 ## Tranche Plan
 
@@ -104,8 +104,8 @@ Out of scope:
 | ERH-DEP1 | Dependency risk workflow chain for `next-auth` beta posture | `docs/reviews/CVF_ERH_DEP1_DEPENDENCY_RISK_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md` | ACCEPTED_BOUNDED |
 | ERH-AUD1 | `cvf-web` dependency-audit remediation workflow | `docs/reviews/CVF_ERH_AUD1_CVF_WEB_DEPENDENCY_AUDIT_REMEDIATION_COMPLETION_2026-06-04.md` | CLOSED_PASS_BOUNDED |
 | ERH-RS1 | External review full-coverage rescan | `docs/reviews/CVF_ERH_RS1_EXTERNAL_REVIEW_FULL_COVERAGE_RESCAN_COMPLETION_2026-06-04.md` | CLOSED_PASS_BOUNDED |
-| ERH-SAF1 | Safety workflow-chain hardening | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_SAF1_SAFETY_WORKFLOW_CHAIN_FOR_CLAUDE_2026-06-04.md` | DISPATCH_READY |
-| ERH-SAF2 | Post-SAF1 safety follow-up decision | N/A until SAF1 completion review | HOLD_UNTIL_SAF1_PASS |
+| ERH-SAF1 | Safety workflow-chain hardening | `docs/reviews/CVF_ERH_SAF1_SAFETY_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md` | CLOSED_PASS_BOUNDED |
+| ERH-SAF2 | Post-SAF1 safety follow-up decision | SAF1 completion records `SAF2_READY`; work order not yet authored | READY_FOR_WORK_ORDER |
 
 ## Roadmap-To-Work-Order Trace Matrix
 
@@ -125,7 +125,7 @@ Out of scope:
 | ERH-AUD1 dependency-audit remediation workflow | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_AUD1_CVF_WEB_DEPENDENCY_AUDIT_REMEDIATION_FOR_CLAUDE_2026-06-04.md` |
 | ERH-RS1 external review full-coverage rescan | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_RS1_EXTERNAL_REVIEW_FULL_COVERAGE_RESCAN_FOR_CLAUDE_2026-06-04.md` |
 | ERH-SAF1 safety workflow-chain hardening | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_SAF1_SAFETY_WORKFLOW_CHAIN_FOR_CLAUDE_2026-06-04.md` |
-| ERH-SAF2 post-SAF1 safety follow-up decision | N/A with reason: SAF2 cannot be opened until SAF1 completion review records exactly one SAF2 verdict |
+| ERH-SAF2 post-SAF1 safety follow-up decision | N/A with reason: SAF2 decision is ready, but a fresh SAF2 GC-018/work order has not been authored yet |
 
 ## Work Plan
 
@@ -142,7 +142,8 @@ Out of scope:
 | E9 | Convert public/private ERH claim drift into bounded workflow chain | drift ledger, checker, tests, hook/autorun wiring, GC-052 connection, completion packet | CLOSED_PASS_BOUNDED |
 | E10 | Implement dependency risk workflow chain for `next-auth` beta posture | reference, ledger, checker, tests, hook/autorun wiring, GC-052 connection, completion packet | ACCEPTED_BOUNDED |
 | E11 | Close `cvf-web` dependency-audit remediation workflow | ledger, workflow chain, checker, tests, bounded package-update diff, completion packet | CLOSED_PASS_BOUNDED |
-| E12 | Dispatch ERH-SAF1 deterministic safety workflow-chain hardening | fresh GC-018 and Claude work order with SAF2 decision checkpoint | DISPATCH_READY |
+| E12 | Close ERH-SAF1 deterministic safety workflow-chain hardening | helper, route wiring, ledger, checker, hook wiring, completion packet with SAF2 decision | CLOSED_PASS_BOUNDED |
+| E13 | Author ERH-SAF2 safety follow-up work order | fresh GC-018 and bounded work order, if operator continues SAF2 | READY_FOR_WORK_ORDER |
 
 ## Acceptance Criteria
 
@@ -181,13 +182,14 @@ Out of scope:
   review source: 162/162 paragraphs, 22/22 sections, 17/17 findings, and all
   five section 4.4 architectural weaknesses disposed. It recommends
   `ERH-SAF1_READY`.
-- ERH-SAF1 is dispatch ready for deterministic severity-classified safety
-  workflow-chain hardening. It does not authorize ML DLP, comprehensive
+- ERH-SAF1 is closed bounded for deterministic severity-classified safety
+  workflow-chain hardening. It enforces DLP -> SAF1 -> legacy safety -> provider
+  order through a machine checker. It does not authorize ML DLP, comprehensive
   jailbreak-protection claims, provider behavior changes, public-sync, hosted
-  readiness, production security readiness, or public readiness.
-- ERH-SAF2 remains `HOLD_UNTIL_SAF1_PASS`. It may be opened only after SAF1
-  completion records exactly one SAF2 verdict: `SAF2_READY`, `SAF2_HOLD`, or
-  `SAF2_NOT_NEEDED`.
+  readiness, production security readiness, public readiness, or release-quality
+  live governance proof.
+- ERH-SAF2 is `READY_FOR_WORK_ORDER` after SAF1 recorded `SAF2_READY`. SAF2
+  still requires fresh GC-018 and a separate work order before implementation.
 - ERH initial private docs-only tranches are closed bounded in
   `docs/reviews/CVF_ERH_INITIAL_PRIVATE_TRANCHES_COMPLETION_2026-06-04.md`.
   T1A/T2A/T3/T2B/T4/T1B no longer carry review-pending status. T2B is
