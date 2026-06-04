@@ -18,7 +18,7 @@ with `CVF_SESSION_MEMORY.md` and `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 Public-facing work must still be performed from the public-sync clone.
 
 Current implementation anchor: `57f030f0` (feat(governance): enforce gc048 knowledge map reconciliation). Previous GC048 packet anchor: `098fe279` (docs(gc048): authorize knowledge system foundation). Previous corpus-integrity anchor: `f078fe91` (governance: enforce bounded corpus report integrity). Derive the current HEAD live with `git rev-parse --short HEAD` when needed.
-Current HEAD recorded for this handoff: `86e1c7b7` (LPCI2-T8 closure commit). Updated 2026-06-04 after LPCI2-T8 Search Layer Scaffolding committed and all governance gates PASS; mode is `lpci2_t8_search_layer_scaffolding_closed_pass_bounded_ready`; LPCI2-T8 CLOSED_PASS_BOUNDED (dispatchBaseHead=95de732c; closureCommit=86e1c7b7); 3 remaining T6 gaps CLOSED (T6-GAP-05/06/08); all 5 T6 gates PASS; finalReadinessVerdict=READY; LPCI2 lane complete; operator may authorize search implementation work order with fresh instruction; EC-02 rescan required on or after 2026-07-01.
+Current HEAD recorded for this handoff: `b2ff776b` (LPCI2-T8 closure-anchor sync commit). Updated 2026-06-04 after LPCI2-T8 Search Layer Scaffolding committed and all governance gates PASS; mode is `lpci2_t8_search_layer_scaffolding_closed_pass_bounded_ready`; LPCI2-T8 CLOSED_PASS_BOUNDED (dispatchBaseHead=95de732c; closureCommit=86e1c7b7; handoffSyncCommit=b2ff776b); 3 remaining T6 gaps CLOSED (T6-GAP-05/06/08); all 5 T6 gates PASS; finalReadinessVerdict=READY; LPCI2 lane complete; operator may authorize search implementation work order with fresh instruction; EC-02 rescan required on or after 2026-07-01.
 
 ## Latest Work / Changes (2026-05-30)
 
