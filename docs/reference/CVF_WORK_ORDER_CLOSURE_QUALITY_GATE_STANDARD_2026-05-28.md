@@ -201,6 +201,7 @@ committers, local governance hooks, and autorun gates. Relevant machine checks
 include:
 
 - `governance/compat/check_work_order_dispatch_quality.py`
+- `governance/compat/check_machine_closure_package.py`
 - `governance/compat/check_markdown_structural_completeness.py`
 - `governance/compat/check_active_session_state.py`
 - `governance/compat/check_finding_to_governance_learning.py`

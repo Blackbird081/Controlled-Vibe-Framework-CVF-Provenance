@@ -66,6 +66,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
             ["python", "governance/compat/check_work_order_dispatch_quality.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
+            "machine closure package",
+            ["python", "governance/compat/check_machine_closure_package.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
             "multi-provider execution log quality",
             ["python", "governance/compat/check_multi_provider_execution_log.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
@@ -150,6 +154,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         (
             "work-order dispatch quality",
             ["python", "governance/compat/check_work_order_dispatch_quality.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "machine closure package",
+            ["python", "governance/compat/check_machine_closure_package.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
             "multi-provider execution log quality",

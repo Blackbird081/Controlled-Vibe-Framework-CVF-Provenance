@@ -616,6 +616,12 @@ Any work order that scans, classifies, imports, maps, routes, closes, or
 hands off governed work must define the machine-readable outputs that turn the
 worker result into the next loop's input.
 
+Machine check:
+
+```powershell
+python governance/compat/check_machine_closure_package.py --base <baseHead> --head HEAD --enforce
+```
+
 Required closure package table:
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
