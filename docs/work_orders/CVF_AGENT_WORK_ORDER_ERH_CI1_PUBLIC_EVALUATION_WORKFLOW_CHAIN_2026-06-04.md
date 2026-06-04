@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: IMPLEMENTATION_COMPLETE_PENDING_REVIEW
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -12,7 +12,7 @@ dispatchBaseHead: `40c3c10d`
 
 executionBaseHead: `40c3c10d`
 
-closureBaseHead: `NOT_EXECUTED_YET`
+closureBaseHead: `030d5b0d`
 
 Commit mode: `CODEX_MAY_COMMIT_AFTER_GATES`
 
@@ -43,6 +43,12 @@ Allowed scope:
 - wire checker into local hook and autorun common gates;
 - add a GC-052 connection;
 - add/update ERH private governance docs.
+- reviewer closure may update
+  `docs/reference/CVF_ERH_CI_PUBLIC_EVALUATION_WORKFLOW_CHAIN_2026-06-04.md`;
+- reviewer closure may update
+  `docs/reviews/CVF_ERH_CI1_PUBLIC_EVALUATION_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md`;
+- reviewer closure may update
+  `docs/roadmaps/CVF_ERH_EXTERNAL_REVIEW_HARDENING_ROADMAP_2026-06-04.md`.
 
 Forbidden scope:
 
@@ -58,7 +64,7 @@ Forbidden scope:
 | --- | --- | --- |
 | Orchestrator | Codex | select ERH-CI1 as workflow-chain successor to T2B |
 | Implementer | Codex | checker, tests, hook/autorun wiring, docs |
-| Reviewer | Codex self-review pending operator review | bounded private completion only |
+| Reviewer / committer | Codex closure review | bounded private completion only |
 | Operator approval required for | public-sync, workflow rewrites, live proof, dependency migration | not included |
 
 ## Required First Reads
@@ -154,10 +160,10 @@ public/production-readiness claim expansion.
 
 | Criterion | Evidence | Status |
 | --- | --- | --- |
-| Checker reports `READY_WITH_BOUNDARIES` on current repo | checker command | PASS_PENDING_FINAL_GATE |
-| Checker blocks missing lint/coverage/claim-boundary markers in tests | unit tests | PASS_PENDING_FINAL_GATE |
-| Checker wired into hook/autorun chains | source diff | PASS_PENDING_FINAL_GATE |
-| GC-052 connection registered | system-loop checker | PASS_PENDING_FINAL_GATE |
+| Checker reports `READY_WITH_BOUNDARIES` on current repo | checker command | PASS |
+| Checker blocks missing lint/coverage/claim-boundary markers in tests | unit tests | PASS |
+| Checker wired into hook/autorun chains | source diff | PASS |
+| GC-052 connection registered | system-loop checker | PASS |
 
 ## Fail Conditions
 
@@ -177,7 +183,20 @@ public/production-readiness claim expansion.
 | Hook/autorun wiring added | PASS |
 | GC-052 connection added | PASS |
 | Public export deferred | PASS |
-| Commit/push finality | PENDING |
+| Commit/push finality | PASS - closure committed privately; push not requested |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_CI1_PUBLIC_EVALUATION_WORKFLOW_CHAIN_2026-06-04.md` | ERH-CI1 `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ERH_CI1_PUBLIC_EVALUATION_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md` | completion review `CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ERH_EXTERNAL_REVIEW_HARDENING_ROADMAP_2026-06-04.md` | ERH-CI1 and E8 closed bounded | PASS |
+| Registry JSON | `N/A with reason` | no GC-051 corpus registry state changed by ERH-CI1 CI workflow closure | BLOCKED with reason |
+| Registry Markdown | `N/A with reason` | no GC-051 corpus registry markdown state changed by ERH-CI1 CI workflow closure | BLOCKED with reason |
+| External evidence digest | `N/A with reason` | no external corpus/source digest consumed by ERH-CI1 closure | N/A with reason |
+| System loop interlock | `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json` | GC-052 connection `erh-ci-plan-to-public-evaluation-workflow-chain` | PASS |
+| Session continuity | `AGENT_HANDOFF_V15_2026-05-29.md` | follow-up handoff sync commit records ERH-CI1 closure | PASS |
 
 ## Return Conditions
 
@@ -204,8 +223,8 @@ DEFERRED_PRIVATE_ONLY
 Reason: private provenance workflow-chain implementation. Public export requires
 a separate public-sync summary decision after review.
 
-Next action: run checker, focused tests, structural gates, and commit when
-clean.
+Next action: keep the result private until a separate public-sync summary is
+authorized.
 
 ## Claim Boundary
 

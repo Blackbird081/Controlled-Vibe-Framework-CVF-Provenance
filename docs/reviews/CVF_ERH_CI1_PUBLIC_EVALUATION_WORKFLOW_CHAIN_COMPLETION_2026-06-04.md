@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: IMPLEMENTATION_COMPLETE_PENDING_REVIEW
+Status: CLOSED_PASS_BOUNDED
 
 docType: completion_review
 
@@ -67,7 +67,7 @@ Source authority:
 
 ## Findings / Position
 
-Position: IMPLEMENTATION_COMPLETE_PENDING_REVIEW.
+Position: CLOSED_PASS_BOUNDED.
 
 Findings:
 
@@ -86,7 +86,7 @@ Findings:
 | Focused tests | `python -m pytest governance/compat/test_check_erh_ci_public_evaluation_workflow.py -q` | PASS, 3 tests |
 | Chain check | `python governance/compat/check_erh_ci_public_evaluation_workflow.py --enforce` | PASS, `READY_WITH_BOUNDARIES` |
 | System-loop check | `python governance/compat/check_system_loop_interlock.py --base 40c3c10d --head HEAD --enforce` | PASS |
-| Worktree finality | `git status --short` | pending commit |
+| Worktree finality | `git status --short` | clean after private closure commit |
 
 ## Roadmap-To-Work-Order Trace Matrix
 
@@ -103,7 +103,20 @@ Findings:
 | --- | --- | --- | --- | --- |
 | ERH-T2B CI hardening plan could remain advisory prose | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | ERH-CI1 checker and hook/autorun wiring |
 | T2B plan initially looked mostly at `cvf-ci.yml` and missed broader CI surfaces | DOCUMENTATION_GAP | GOVERNANCE_CONTROL_PLANE | RULE_CLARIFIED | checker evaluates multiple CI workflow surfaces |
-| ERH-CI1 does not run provider/live proof or change runtime behavior | N/A | RUNTIME_BEHAVIOR_LEARNING | N/A_WITH_REASON | no runtime/provider/cost learning action; protected live gate boundary only |
+| ERH-CI1 does not run provider/live proof or change runtime behavior | RULE_GAP | RUNTIME_BEHAVIOR_LEARNING | N/A_WITH_REASON | no runtime/provider/cost learning action; protected live gate boundary only |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_CI1_PUBLIC_EVALUATION_WORKFLOW_CHAIN_2026-06-04.md` | ERH-CI1 `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ERH_CI1_PUBLIC_EVALUATION_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md` | completion review `CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ERH_EXTERNAL_REVIEW_HARDENING_ROADMAP_2026-06-04.md` | ERH-CI1 and E8 closed bounded | PASS |
+| Registry JSON | `N/A with reason` | no GC-051 corpus registry state changed by ERH-CI1 CI workflow closure | BLOCKED with reason |
+| Registry Markdown | `N/A with reason` | no GC-051 corpus registry markdown state changed by ERH-CI1 CI workflow closure | BLOCKED with reason |
+| External evidence digest | `N/A with reason` | no external corpus/source digest consumed by ERH-CI1 closure | N/A with reason |
+| System loop interlock | `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json` | GC-052 connection `erh-ci-plan-to-public-evaluation-workflow-chain` | PASS |
+| Session continuity | `AGENT_HANDOFF_V15_2026-05-29.md` | follow-up handoff sync commit records ERH-CI1 closure | PASS |
 
 ## Risk / Corrective Action
 
@@ -121,8 +134,8 @@ DEFERRED_PRIVATE_ONLY
 Reason: private provenance workflow-chain implementation has not been exported
 to the public-sync repository.
 
-Next action: after review/commit, decide whether a separate public-sync summary
-should narrow the public CI caveat.
+Next action: decide later whether a separate public-sync summary should narrow
+the public CI caveat.
 
 ## Claim Boundary
 
