@@ -477,9 +477,21 @@ completion review:
 
 `docs/reviews/CVF_LPCI1_T4_RETRIEVAL_BOUNDARY_COMPLETION_2026-06-03.md`
 
-Next allowed move: review ERH-PD1 public-surface drift workflow chain and
-decide whether to open a separate public-sync summary update for ERH-T2C/ERH-CI1
-or proceed to ERH-DEP1 dependency risk workflow chain.
+Next allowed move: Claude may execute ERH-DEP1 dependency risk workflow chain
+from
+`docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_DEP1_DEPENDENCY_RISK_WORKFLOW_CHAIN_FOR_CLAUDE_2026-06-04.md`
+under `WORKER_MUST_NOT_COMMIT`.
+
+`ERH-DEP1` Dependency Risk Workflow Chain is `DISPATCH_READY_FOR_CLAUDE`:
+GC-018
+`docs/baselines/CVF_GC018_ERH_DEP1_DEPENDENCY_RISK_WORKFLOW_CHAIN_2026-06-04.md`;
+work order
+`docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_DEP1_DEPENDENCY_RISK_WORKFLOW_CHAIN_FOR_CLAUDE_2026-06-04.md`.
+Boundary: Claude may create dependency risk ledger/reference/checker/tests and
+wire hook/autorun/GC-052, but must not edit package manifests, lockfiles, auth
+runtime, public-sync, or live/provider proof. If migration is needed, Claude
+must return with a DEP2 migration work-order proposal instead of changing
+`next-auth`.
 
 `ERH-PD1` Public Surface Drift Workflow Chain is
 `IMPLEMENTATION_COMPLETE_PENDING_REVIEW` at commit `7d23df05`: GC-018
