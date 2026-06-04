@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-04
 
-Current mode marker: `lpci2_t8_search_layer_scaffolding_closed_pass_bounded_ready`
+Current mode marker: `erh_rs1_external_review_rescan_closed_pass_bounded_ready_for_saf1`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -252,6 +252,16 @@ Finish absorption of remaining `PARTIALLY_ABSORBED` LH1 connector value before
 opening separate live-proof roadmaps.
 
 ## Next Allowed Move
+
+ERH-RS1 External Review Full Coverage Rescan is `CLOSED_PASS_BOUNDED`:
+
+`docs/reviews/CVF_ERH_RS1_EXTERNAL_REVIEW_FULL_COVERAGE_RESCAN_COMPLETION_2026-06-04.md`
+
+Verdict: `COMPLETE_VERIFIED` with `162/162` paragraphs, `22/22` sections, and
+`17/17` findings disposed. Safety recommendation: `ERH-SAF1_READY`. Next ERH
+move may be a fresh ERH-SAF1 GC-018/work order for deterministic
+severity-classified safety workflow-chain hardening in `/api/execute`, with
+audit/readout evidence and no ML DLP claim.
 
 LPCI2-T6 Search/Chat Readiness Gate is `CLOSED_PASS_BOUNDED`:
 

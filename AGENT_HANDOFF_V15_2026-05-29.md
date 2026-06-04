@@ -33,6 +33,7 @@ Current HEAD recorded for this handoff: `f8313eb1` (Record ERH public summary ex
 Current HEAD recorded for this handoff: `16e54913` (Close ERH initial private tranches). Updated 2026-06-04 after ERH-T1A, ERH-T2A, ERH-T3, ERH-T2B, ERH-T4, and ERH-T1B moved from review-pending/handoff-only residue to `CLOSED_PASS_BOUNDED` or closed bounded successor status. New completion packet: `docs/reviews/CVF_ERH_INITIAL_PRIVATE_TRANCHES_COMPLETION_2026-06-04.md`. Remaining ERH work is authority-gated: DEP2/next-major migration, full live/provider route proof, hosted retest, production-grade CI/security posture, and public readiness.
 Current HEAD recorded for this handoff: `b122d635` (Dispatch VI5 HR1 hosted export retest for Claude). Updated 2026-06-04 after fresh GC-018 baseline and Claude work order were committed for hosted Surface 1 export freshness and external-agent review. Claude may execute `VI5-HR1` under `WORKER_MUST_NOT_COMMIT`; source edits, public-sync, push, provider/API proof, hosted `/api/execute` proof, hosted SaaS readiness, production readiness, and public readiness remain out of scope.
 Current HEAD recorded for this handoff: `fa3442aa` (Close VI5 HR1 hosted export retest). Updated 2026-06-04 after Claude's VI5-HR1 worker review and Codex completion review closed the hosted/export acceptance checkpoint as `CLOSED_PASS_BOUNDED` with `ACCEPT_WITH_CAVEAT`: `HOSTED_FRESH_PASS` is accepted by source-verified deterministic path and external-agent verdict is `PASS`; live authenticated hosted export screenshot, operator final acceptance, provider/API proof, hosted SaaS readiness, production readiness, and public readiness remain unclaimed.
+Current HEAD recorded for this handoff: `75d2fa89` (Close ERH RS1 external review rescan). Updated 2026-06-04 after Claude's ERH-RS1 full-coverage rescan was reviewed and committed by Codex as `CLOSED_PASS_BOUNDED`: verdict `COMPLETE_VERIFIED` with `162/162` paragraphs, `22/22` sections, and `17/17` findings disposed; section 4.4 architectural weaknesses all covered; safety recommendation `ERH-SAF1_READY`. Boundary: private source-backed rescan only; no runtime safety implementation, ML DLP, provider-risk config, durable audit, policy snapshot persistence, distributed rate limiting, public-sync, hosted/production/public readiness, or live proof. Next ERH move may be fresh ERH-SAF1 GC-018/work order.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -333,6 +334,14 @@ public-release readiness claim.
 | Public Export Disposition | ENFORCED — closed roadmaps/final wave packets must state `EXPORTED`, `DEFERRED_PRIVATE_ONLY`, or `BLOCKED_MISSING_PUBLIC_ARTIFACTS` |
 
 ## Next Allowed Move
+
+ERH-RS1 External Review Full Coverage Rescan is `CLOSED_PASS_BOUNDED`:
+`docs/reviews/CVF_ERH_RS1_EXTERNAL_REVIEW_FULL_COVERAGE_RESCAN_COMPLETION_2026-06-04.md`.
+Verdict: `COMPLETE_VERIFIED` with `162/162` paragraphs, `22/22` sections, and
+`17/17` findings disposed. Safety recommendation: `ERH-SAF1_READY`. Next ERH
+move may be a fresh ERH-SAF1 GC-018/work order for deterministic
+severity-classified safety workflow-chain hardening in `/api/execute`, with
+audit/readout evidence and no ML DLP claim.
 
 LHW24 is the latest closed LHW wave. LHW22-LHW24 agent-intelligence absorption
 is CLOSED_PASS_BOUNDED at the documentation-only advisory boundary:
@@ -665,8 +674,8 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci2_t8_search_layer_scaffolding_closed_pass_bounded_ready`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=ERH immediate cleanup is closed; operator may authorize a fresh DEP2/next-major, live-provider route proof, hosted-readiness, or PolicyLocal search implementation work order;
+Startup acknowledged: current mode=`erh_rs1_external_review_rescan_closed_pass_bounded_ready_for_saf1`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=ERH-RS1 is closed and operator may authorize fresh ERH-SAF1 safety workflow-chain hardening, DEP2/next-major, live-provider route proof, hosted-readiness, or PolicyLocal search implementation work order;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 ## Claim Boundary

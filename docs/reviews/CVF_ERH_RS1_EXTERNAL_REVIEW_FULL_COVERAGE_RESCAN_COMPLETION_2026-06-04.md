@@ -141,6 +141,27 @@ reviewer commit.
 | Full external-review coverage was not proven by the initial intake | CORPUS_COMPLETENESS_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_CANDIDATE | use RS1 coverage ledger pattern for future external review intake |
 | Safety was only claim-calibrated, while deterministic runtime foundations exist | RUNTIME_SIGNAL_GAP | RUNTIME_BEHAVIOR_LEARNING | ROADMAP_REQUIRED | open ERH-SAF1 workflow-chain hardening work order |
 
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: session-continuity sync after ERH-RS1
+closure commit `75d2fa89`.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION_MEMORY.md`
+
+Related non-protected continuity path:
+
+- `AGENT_HANDOFF_V15_2026-05-29.md`
+
+Operator authorization: implied by the mandatory GC-020 session-continuity rule
+for governed closure; no runtime, public-sync, provider, or destructive action
+is authorized by this block.
+
+Rollback boundary: revert only the session-continuity sync lines if the ERH-RS1
+closure commit is reverted. Do not alter unrelated session state.
+
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
