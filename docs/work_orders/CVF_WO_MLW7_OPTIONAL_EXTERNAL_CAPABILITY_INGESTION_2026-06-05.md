@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: READY_FOR_OPERATOR_REVIEW
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -27,9 +27,9 @@ executing, registering authority, or publishing a marketplace claim.
 
 | Role | Assignment |
 | --- | --- |
-| Orchestrator | Codex authoring packet |
-| Future worker | Not dispatched; operator decision required |
-| Reviewer | Future reviewer after dispatch |
+| Orchestrator | Codex authoring packet and operator-dispatched executor |
+| Worker | Codex self-execution under 2026-06-05 operator instruction |
+| Reviewer / committer | Codex closure review and commit after focused gates |
 
 ## Authority Chain
 
@@ -49,7 +49,7 @@ actions, or claim-boundary expansion.
 
 ## Scope
 
-Allowed implementation scope if later dispatched:
+Allowed implementation scope after 2026-06-05 operator dispatch:
 
 - Add an intake-only external capability classification/admission mapping.
 - Reuse existing external-asset governance source before adding any new surface.
@@ -90,14 +90,14 @@ Risk ceiling: R2 intake/proposal only.
 
 | Role | Owned paths |
 | --- | --- |
-| Future worker | implementation files only after operator dispatch |
-| Future reviewer | completion review and closure evidence |
-| Forbidden now | all runtime/source edits; this packet is authoring only |
+| Worker | `src/lib/mlw7-external-capability-ingestion.ts` and focused test |
+| Reviewer / committer | completion review and closure evidence |
+| Forbidden | route wiring, dependency files, public-sync, live proof, package install, external execution |
 
 ## Execution Plan
 
 1. Re-verify external-asset governance source.
-2. Build intake-only classification/admission mapping if dispatched.
+2. Build intake-only classification/admission mapping.
 3. Add deterministic no-install/no-execute/no-delegation tests.
 4. Close with public-boundary and finding-learning disposition.
 
@@ -129,7 +129,7 @@ Risk ceiling: R2 intake/proposal only.
 | Reuse existing external-asset governance surface | `prepareExternalAssetGovernance` owner | READY_FOR_REVIEW |
 | Prevent marketplace/runtime execution overclaim | forbidden scope and no-execution invariant | READY_FOR_REVIEW |
 
-## Execution Instructions For Future Worker
+## Execution Instructions
 
 1. Re-read this work order and MLW7 GC-018.
 2. Re-run source verification before edits.
@@ -150,7 +150,7 @@ Risk ceiling: R2 intake/proposal only.
 
 ## Evidence Requirements
 
-Evidence required at future closure:
+Closure evidence:
 
 - source verification refreshed from current source;
 - deterministic no-install/no-execute/no-delegation tests;
@@ -168,21 +168,44 @@ or bypasses server-side external-asset governance.
 | Item | Status |
 | --- | --- |
 | Work order source-verified | PASS |
-| Worker not dispatched | PASS |
+| Operator dispatch recorded | PASS |
 | No runtime execution authorized | PASS |
+| Focused tests passed | PASS |
 | Public boundary present | PASS |
 
 ## Return Conditions
 
-Return to Orchestrator if implementation requires dependencies, external repo
+Return to Orchestrator if any follow-up implementation requires dependencies, external repo
 content, provider calls, public-sync, runtime execution, new route authority, or
 policy/delegation changes.
 
 ## Operator Checkpoint
 
-Operator checkpoint is required before MLW7 dispatch, dependency installation,
-external repo ingestion, external capability execution, live proof, public-sync,
-or public marketplace/catalog claims.
+Operator checkpoint is still required before dependency installation, external
+repo ingestion, external capability execution, live proof, public-sync, route
+wiring, or public marketplace/catalog claims.
+
+## Closure Diff Gate
+
+| Requirement | Final artifact | Disposition |
+| --- | --- | --- |
+| Candidate ledger classifies external capability signals | `mlw7-external-capability-ingestion.ts` | SATISFIED |
+| Existing external-asset governance owner reused | helper imports `prepareExternalAssetGovernance` | SATISFIED |
+| Tests prove no install/execute/delegation approval | `mlw7-external-capability-ingestion.test.ts` | SATISFIED |
+| No dependency, route, public-sync, or live proof scope | changed-file evidence | SATISFIED |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this file | status `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MLW7_OPTIONAL_EXTERNAL_CAPABILITY_INGESTION_COMPLETION_2026-06-05.md` | reviewer artifact created | PASS |
+| Roadmap state | `docs/roadmaps/CVF_CI1_T11_MEMORY_LEARNING_ABSORPTION_CONSOLIDATED_ROADMAP_2026-06-05.md` | MLW7 roadmap row remains source authority; no roadmap edit required | PASS |
+| Registry JSON | N/A | no corpus/search registry update in MLW7 allowed scope | BLOCKED with reason |
+| Registry Markdown | N/A | no corpus/search registry markdown update in MLW7 allowed scope | BLOCKED with reason |
+| External evidence digest | N/A | no external evidence, external repo, package, or live provider consumed | N/A with reason |
+| System loop interlock | N/A | no checker, route, or autonomous loop added | N/A with reason |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION_MEMORY.md`, `AGENT_HANDOFF_V15_2026-05-29.md` | updated after closure | PASS |
 
 ## Corpus Completeness And Report Integrity
 
@@ -243,7 +266,7 @@ No public-sync or public marketplace claim is authorized.
 
 ## Claim Boundary
 
-This artifact is work-order authoring only. It does not dispatch or prove
-external capability ingestion, package safety, execution safety, marketplace
+This artifact is a closed bounded work order for intake-only helper
+implementation. It proves no package safety, execution safety, marketplace
 readiness, live provider behavior, hosted readiness, production readiness,
 public readiness, public-sync, or autonomous mutation.

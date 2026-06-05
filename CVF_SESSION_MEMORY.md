@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-05
 
-Current mode marker: `lo2_closed_mlw7_mlw8_work_orders_ready_for_review`
+Current mode marker: `mlw7_mlw8_runtime_helpers_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lo2_closed_mlw7_mlw8_work_orders_ready_for_review`.
+Current mode: `mlw7_mlw8_runtime_helpers_closed_pass_bounded`.
 
 Active handoff:
 
@@ -66,19 +66,36 @@ Completion:
 LO2 closes the high-risk promotion lane as a review-only decision boundary:
 MLW5 audit validation, MLW6 simulation/failure evidence, and adaptation policy
 evidence are prerequisites; `automaticPromotionAuthorized=false` and
-`autonomousMutationAuthorized=false` remain binding. MLW7 and MLW8 work orders
-are now authored and ready for operator review:
+`autonomousMutationAuthorized=false` remain binding.
+
+MLW7 Optional External Capability Ingestion is `CLOSED_PASS_BOUNDED`:
 
 `docs/work_orders/CVF_WO_MLW7_OPTIONAL_EXTERNAL_CAPABILITY_INGESTION_2026-06-05.md`
 
+Completion:
+`docs/reviews/CVF_MLW7_OPTIONAL_EXTERNAL_CAPABILITY_INGESTION_COMPLETION_2026-06-05.md`
+
+Runtime helper:
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw7-external-capability-ingestion.ts`
+
+MLW8 Efficiency And Overconstraint Feedback is `CLOSED_PASS_BOUNDED`:
+
 `docs/work_orders/CVF_WO_MLW8_EFFICIENCY_OVERCONSTRAINT_FEEDBACK_2026-06-05.md`
 
-Next allowed move: operator may review/dispatch MLW7 or MLW8, request a
-separate LO2 runtime implementation GC-018/work order, open public-safe
-memory/learning summary/public-sync, or stop for review. Boundary: no Learning
-Orchestrator runtime implementation, high-risk promotion lane implementation,
-automatic promotion, autonomous mutation, runtime route change, external
-capability install/execute, efficiency optimization, policy relaxation, memory
+Completion:
+`docs/reviews/CVF_MLW8_EFFICIENCY_OVERCONSTRAINT_FEEDBACK_COMPLETION_2026-06-05.md`
+
+Runtime helper:
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw8-efficiency-overconstraint-feedback.ts`
+
+Next allowed move: operator may request a public-safe memory/learning
+summary/public-sync, a separate LO2 runtime implementation GC-018/work order, a
+separate MLW7 external execution/marketplace/runtime-adapter tranche, a separate
+MLW8 route optimization/benchmark/cost-proof tranche, broader release-quality
+live governance proof, or stop for review. Boundary: no Learning Orchestrator
+runtime implementation, high-risk promotion lane implementation, automatic
+promotion, autonomous mutation, route behavior change, external capability
+install/execute, automatic efficiency optimization, policy relaxation, memory
 reinjection, live provider proof, public-sync, hosted readiness, production
 readiness, or public readiness.
 
@@ -297,20 +314,36 @@ Reference:
 Completion:
 `docs/reviews/CVF_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_COMPLETION_2026-06-05.md`
 
-MLW7 and MLW8 work orders are authored and ready for operator review:
+MLW7 Optional External Capability Ingestion is `CLOSED_PASS_BOUNDED`:
 
 `docs/work_orders/CVF_WO_MLW7_OPTIONAL_EXTERNAL_CAPABILITY_INGESTION_2026-06-05.md`
 
+Completion:
+`docs/reviews/CVF_MLW7_OPTIONAL_EXTERNAL_CAPABILITY_INGESTION_COMPLETION_2026-06-05.md`
+
+Runtime helper:
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw7-external-capability-ingestion.ts`
+
+MLW8 Efficiency And Overconstraint Feedback is `CLOSED_PASS_BOUNDED`:
+
 `docs/work_orders/CVF_WO_MLW8_EFFICIENCY_OVERCONSTRAINT_FEEDBACK_2026-06-05.md`
 
-Next allowed move: operator may review/dispatch MLW7 or MLW8, request a
-separate LO2 runtime implementation GC-018/work order, open public-safe
-memory/learning summary/public-sync, or stop for review. This does not
-authorize Learning Orchestrator runtime implementation, high-risk promotion
-implementation, automatic promotion, autonomous mutation, external capability
-install/execute, efficiency optimization, policy relaxation, runtime route
-changes, memory reinjection, live provider proof, public-sync, hosted
-readiness, production readiness, or public readiness.
+Completion:
+`docs/reviews/CVF_MLW8_EFFICIENCY_OVERCONSTRAINT_FEEDBACK_COMPLETION_2026-06-05.md`
+
+Runtime helper:
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw8-efficiency-overconstraint-feedback.ts`
+
+Next allowed move: operator may request a public-safe memory/learning
+summary/public-sync, a separate LO2 runtime implementation GC-018/work order, a
+separate MLW7 external execution/marketplace/runtime-adapter tranche, a separate
+MLW8 route optimization/benchmark/cost-proof tranche, broader release-quality
+live governance proof, or stop for review. This does not authorize Learning
+Orchestrator runtime implementation, high-risk promotion implementation,
+automatic promotion, autonomous mutation, external capability install/execute,
+automatic efficiency optimization, policy relaxation, runtime route behavior
+changes, memory reinjection, live provider proof, public-sync, hosted readiness,
+production readiness, or public readiness.
 
 MLW-RT1 Durable Memory Runtime Proof is `CLOSED_PASS_BOUNDED` for existing
 file-backed `/api/execute` durable-memory write/read continuity.
@@ -325,9 +358,9 @@ Completion review:
 `docs/reviews/CVF_MLW_RT1_DURABLE_MEMORY_RUNTIME_PROOF_COMPLETION_2026-06-05.md`
 
 Next allowed move requires fresh GC-018 for one of: backend migration/durable
-storage hardening, public-safe memory/learning summary and public-sync, MLW7
-external capability ingestion, MLW8 efficiency/overconstraint feedback, or
-broader release-quality live governance proof. RT1 closure alone does not claim
+storage hardening, public-safe memory/learning summary and public-sync,
+MLW7/MLW8 runtime expansion beyond the closed helper boundaries, or broader
+release-quality live governance proof. RT1 closure alone does not claim
 backend migration, hosted readiness, production readiness, public readiness, or
 autonomous memory/learning mutation.
 

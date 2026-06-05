@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: READY_FOR_OPERATOR_REVIEW
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -26,9 +26,9 @@ without automatic optimization, evidence trimming, or policy relaxation.
 
 | Role | Assignment |
 | --- | --- |
-| Orchestrator | Codex authoring packet |
-| Future worker | Not dispatched; operator decision required |
-| Reviewer | Future reviewer after dispatch |
+| Orchestrator | Codex authoring packet and operator-dispatched executor |
+| Worker | Codex self-execution under 2026-06-05 operator instruction |
+| Reviewer / committer | Codex closure review and commit after focused gates |
 
 ## Authority Chain
 
@@ -48,7 +48,7 @@ use, destructive actions, or claim-boundary expansion.
 
 ## Scope
 
-Allowed implementation scope if later dispatched:
+Allowed implementation scope after 2026-06-05 operator dispatch:
 
 - Define an efficiency/overconstraint feedback taxonomy.
 - Normalize context pressure, verbosity, cost pressure, no-match, evidence
@@ -90,14 +90,14 @@ Risk ceiling: R2 feedback/proposal only.
 
 | Role | Owned paths |
 | --- | --- |
-| Future worker | implementation files only after explicit dispatch |
-| Future reviewer | completion review and closure evidence |
-| Forbidden now | all runtime/source edits; this packet is authoring only |
+| Worker | `src/lib/mlw8-efficiency-overconstraint-feedback.ts` and focused test |
+| Reviewer / committer | completion review and closure evidence |
+| Forbidden | route optimization, prompt/context mutation, policy relaxation, public-sync, live proof |
 
 ## Execution Plan
 
 1. Re-verify context budget, learning-plane, and route evidence source.
-2. Define advisory feedback taxonomy if dispatched.
+2. Define advisory feedback taxonomy.
 3. Add preservation-guard tests for evidence, audit, safety, DLP, approval, and receipt fields.
 4. Close with cost/economics and governance learning dispositions.
 
@@ -132,7 +132,7 @@ Risk ceiling: R2 feedback/proposal only.
 | Reuse context budget and learning readouts | source owner rows | READY_FOR_REVIEW |
 | Avoid public cost/performance claim | claim boundary | READY_FOR_REVIEW |
 
-## Execution Instructions For Future Worker
+## Execution Instructions
 
 1. Re-read this work order and MLW8 GC-018.
 2. Re-run source verification before edits.
@@ -154,7 +154,7 @@ Risk ceiling: R2 feedback/proposal only.
 
 ## Evidence Requirements
 
-Evidence required at future closure:
+Closure evidence:
 
 - source verification refreshed from current source;
 - deterministic preservation-guard tests;
@@ -172,21 +172,44 @@ improvement without authorized proof, or relaxes hard policy.
 | Item | Status |
 | --- | --- |
 | Work order source-verified | PASS |
-| Worker not dispatched | PASS |
+| Operator dispatch recorded | PASS |
 | No runtime optimization authorized | PASS |
+| Focused tests passed | PASS |
 | Public boundary present | PASS |
 
 ## Return Conditions
 
-Return to Orchestrator if implementation requires route optimization, provider
+Return to Orchestrator if any follow-up implementation requires route optimization, provider
 benchmarking, prompt changes, policy relaxation, cost/performance public claims,
 live proof, or public-sync.
 
 ## Operator Checkpoint
 
-Operator checkpoint is required before MLW8 dispatch, runtime optimization,
-prompt or context mutation, benchmark execution, live proof, public-sync, or public
+Operator checkpoint is still required before runtime optimization, prompt or
+context mutation, benchmark execution, live proof, public-sync, or public
 cost/performance claims.
+
+## Closure Diff Gate
+
+| Requirement | Final artifact | Disposition |
+| --- | --- | --- |
+| Feedback taxonomy separates efficiency from policy relaxation | `mlw8-efficiency-overconstraint-feedback.ts` | SATISFIED |
+| Preservation guards cover evidence, audit, safety, DLP, approval, and receipt | helper and focused test | SATISFIED |
+| Autonomous mutation remains false | helper and focused test | SATISFIED |
+| No route optimization, policy relaxation, public-sync, or live proof scope | changed-file evidence | SATISFIED |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this file | status `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MLW8_EFFICIENCY_OVERCONSTRAINT_FEEDBACK_COMPLETION_2026-06-05.md` | reviewer artifact created | PASS |
+| Roadmap state | `docs/roadmaps/CVF_CI1_T11_MEMORY_LEARNING_ABSORPTION_CONSOLIDATED_ROADMAP_2026-06-05.md` | MLW8 roadmap row remains source authority; no roadmap edit required | PASS |
+| Registry JSON | N/A | no corpus/search registry update in MLW8 allowed scope | BLOCKED with reason |
+| Registry Markdown | N/A | no corpus/search registry markdown update in MLW8 allowed scope | BLOCKED with reason |
+| External evidence digest | N/A | no external evidence, benchmark, live provider, or cost artifact consumed | N/A with reason |
+| System loop interlock | N/A | no checker, route, or autonomous loop added | N/A with reason |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION_MEMORY.md`, `AGENT_HANDOFF_V15_2026-05-29.md` | updated after closure | PASS |
 
 ## Corpus Completeness And Report Integrity
 
@@ -249,7 +272,7 @@ No public-sync, public cost claim, or public performance claim is authorized.
 
 ## Claim Boundary
 
-This artifact is work-order authoring only. It does not dispatch or prove
-runtime optimization, cost reduction, quality improvement, policy relaxation,
-live provider behavior, hosted readiness, production readiness, public
-readiness, public-sync, or autonomous mutation.
+This artifact is a closed bounded work order for advisory feedback helper
+implementation. It proves no runtime optimization, cost reduction, quality
+improvement, policy relaxation, live provider behavior, hosted readiness,
+production readiness, public readiness, public-sync, or autonomous mutation.

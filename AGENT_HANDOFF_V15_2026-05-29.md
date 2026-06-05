@@ -734,6 +734,26 @@ Current HEAD recorded for this handoff: `32979589` (Sync LO1 closure session sta
 Current HEAD recorded for this handoff: `38ba8d97` (Harden session sync commit protocol). Updated 2026-06-05 after work order `docs/work_orders/CVF_WO_SESSION_SYNC_COMMIT_PROTOCOL_HARDENING_2026-06-05.md` and completion `docs/reviews/CVF_SESSION_SYNC_COMMIT_PROTOCOL_HARDENING_COMPLETION_2026-06-05.md` closed `CLOSED_PASS_BOUNDED`: work-order template Section 6F.1 now states that protected-session authorization must live under checker-recognized `docs/baselines/`, `docs/roadmaps/`, `docs/reviews/`, or `docs/work_orders/`, not only in the root handoff; the core guard self-protection guard doc now states the same. This was documentation/control-plane hardening only; no checker code, runtime source, public-sync, live proof, hosted readiness, production readiness, or public readiness claim was added.
 Current HEAD recorded for this handoff: `2b1250c1` (Pre-LO2 material base; LO2 and MLW7/MLW8 authoring pending material commit). Updated 2026-06-05 after operator directed the next allowed move: complete a separate LO2/high-risk promotion GC-018/work order, then return to MLW7/MLW8 work-order authoring. Material artifacts in this batch: `docs/baselines/CVF_GC018_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_2026-06-05.md`, `docs/work_orders/CVF_WO_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_2026-06-05.md`, `docs/reference/CVF_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_2026-06-05.md`, `docs/reviews/CVF_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_COMPLETION_2026-06-05.md`, `docs/work_orders/CVF_WO_MLW7_OPTIONAL_EXTERNAL_CAPABILITY_INGESTION_2026-06-05.md`, and `docs/work_orders/CVF_WO_MLW8_EFFICIENCY_OVERCONSTRAINT_FEEDBACK_2026-06-05.md`. Boundary: no Learning Orchestrator runtime implementation, high-risk promotion implementation, automatic promotion, autonomous mutation, external capability install/execute, efficiency optimization, policy relaxation, public-sync, live proof, hosted readiness, production readiness, or public readiness.
 Current HEAD recorded for this handoff: `9216acec` (Close LO2 boundary and author MLW7/MLW8 work orders). Updated 2026-06-05 after material commit `docs(lo2): close promotion boundary and author mlw work orders`. LO2 is `CLOSED_PASS_BOUNDED` as a review-only high-risk promotion decision boundary; MLW7 and MLW8 are `READY_FOR_OPERATOR_REVIEW` work orders only. This handoff sync records commit evidence only. Boundary remains no Learning Orchestrator runtime implementation, high-risk promotion implementation, automatic promotion, autonomous mutation, external capability install/execute, efficiency optimization, policy relaxation, public-sync, live proof, hosted readiness, production readiness, or public readiness.
+Current HEAD recorded for this handoff: `a4394e81` (Pre-MLW7/MLW8 runtime-helper closure base; material commit pending). Updated 2026-06-05 after operator instructed Codex to continue construction from MLW7/MLW8 review-ready state. Material artifacts in this batch: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw7-external-capability-ingestion.ts`, `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw7-external-capability-ingestion.test.ts`, `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw8-efficiency-overconstraint-feedback.ts`, `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw8-efficiency-overconstraint-feedback.test.ts`, `docs/work_orders/CVF_WO_MLW7_OPTIONAL_EXTERNAL_CAPABILITY_INGESTION_2026-06-05.md`, `docs/work_orders/CVF_WO_MLW8_EFFICIENCY_OVERCONSTRAINT_FEEDBACK_2026-06-05.md`, `docs/reviews/CVF_MLW7_OPTIONAL_EXTERNAL_CAPABILITY_INGESTION_COMPLETION_2026-06-05.md`, and `docs/reviews/CVF_MLW8_EFFICIENCY_OVERCONSTRAINT_FEEDBACK_COMPLETION_2026-06-05.md`. Boundary: no external capability install/execute, runtime adapter authority, marketplace/public catalog claim, runtime optimization, prompt/context mutation, policy relaxation, evidence/audit/safety/DLP/approval/receipt weakening, benchmark/cost claim, live proof, public-sync, hosted readiness, production readiness, public readiness, Learning Orchestrator implementation, high-risk promotion implementation, or autonomous mutation.
+
+## Core Guard Self-Protection Authorization - MLW7/MLW8 Closure Session Sync
+
+Authorized guard-maintenance scope: record MLW7 and MLW8 bounded helper
+closures in the active front door, machine-readable state, and active handoff.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION_MEMORY.md`
+- `AGENT_HANDOFF_V15_2026-05-29.md`
+
+Operator authorization: 2026-06-05 operator instructed Codex to continue
+construction after MLW7/MLW8 work-order authoring became ready for review.
+
+Rollback boundary: if this sync is wrong, restore only the MLW7/MLW8 closure
+continuity text in the protected session files. Do not revert MLW7/MLW8 helper
+source or completion artifacts unless their implementation batch is separately
+unwound.
 
 ## Core Guard Self-Protection Authorization - LO1 Work Order Session Sync
 
