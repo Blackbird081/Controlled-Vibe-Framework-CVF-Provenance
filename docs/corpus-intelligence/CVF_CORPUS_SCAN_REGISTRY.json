@@ -348,6 +348,116 @@
       "hashInput": "manifest-internal-hash-from-script-output"
     },
     {
+      "id": "legacy-memory-learning-related-ci1-t11",
+      "corpusType": "LEGACY_FOLDER",
+      "displayName": "Memory/Learning related legacy scan wave (CI1-T11)",
+      "scopePaths": [
+        ".private_reference/legacy/CVF_Important/ADDING_LEARNING PLANE/",
+        ".private_reference/legacy/CVF 16.5/agentmemory/",
+        ".private_reference/legacy/CVF 16.5/tolaria/",
+        ".private_reference/legacy/CVF_Important/Knowledge Base_Palace/",
+        ".private_reference/legacy/CVF_Important/Knowledge Base_LLM-Powered/",
+        ".private_reference/legacy/CVF_Important/ADDING_RAG ARCHITECTURE/",
+        ".private_reference/legacy/CVF_Important/ADDING_CONTEXT ENGINE/",
+        ".private_reference/legacy/CVF_Important/ADDING_CONTEXT CONTROL/",
+        ".private_reference/legacy/CVF ADD/Workflow GoClaw/",
+        ".private_reference/legacy/CVF ADD/Agent Harnesses/",
+        ".private_reference/legacy/CVF_Important/ADDING_Multi_Agent/",
+        ".private_reference/legacy/CVF_Important/ADDING_AGENT DEFINITION/",
+        ".private_reference/legacy/CVF_Important/ADDING_AUDIT AGENT LAYER/",
+        ".private_reference/legacy/CVF ADD/Hermes Agent/",
+        ".private_reference/legacy/CVF ADD/deepagents/",
+        ".private_reference/legacy/CVF ADD/Human System Harness/",
+        ".private_reference/legacy/CVF ADD/Hugging Face/",
+        ".private_reference/legacy/CVF ADD/caveman/",
+        ".private_reference/legacy/CVF ADD/AGENT ENGINEER/",
+        ".private_reference/legacy/CVF ADD/AI-first vs Human-first/"
+      ],
+      "fileCount": 191,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "CI1-T11",
+      "scanDate": "2026-06-05",
+      "manifestHash": "98e0ba8bd575297832e35055aba638a2045973c4bcb92b102c2382619ee5ef10",
+      "manifestPath": "docs/audits/CVF_CI1_T11_MEMORY_LEARNING_RELATED_SCAN_WAVE_PACKET_2026-06-05.md",
+      "packetPath": "docs/audits/CVF_CI1_T11_MEMORY_LEARNING_RELATED_SCAN_WAVE_PACKET_2026-06-05.md",
+      "completionReviewPath": null,
+      "roadmapPath": "docs/roadmaps/CVF_CI1_T11_MEMORY_LEARNING_ABSORPTION_CONSOLIDATED_ROADMAP_2026-06-05.md",
+      "lanePackets": [
+        "docs/audits/CVF_CI1_T11A_LEARNING_PLANE_DEEP_SCAN_PACKET_2026-06-05.md",
+        "docs/audits/CVF_CI1_T11B_MEMORY_KNOWLEDGE_STORE_DEEP_SCAN_PACKET_2026-06-05.md",
+        "docs/audits/CVF_CI1_T11C_RAG_CONTEXT_CONTROL_DEEP_SCAN_PACKET_2026-06-05.md",
+        "docs/audits/CVF_CI1_T11D_EXECUTION_AUDIT_LEARNING_DEEP_SCAN_PACKET_2026-06-05.md",
+        "docs/audits/CVF_CI1_T11E_SECONDARY_RELATED_STRUCTURAL_SCAN_PACKET_2026-06-05.md"
+      ],
+      "gcBaselineRef": null,
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "RECONCILED_VERIFIED",
+        "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+      },
+      "semanticRegions": [
+        "LEARNING_TRUTH_EVALUATION_ADAPTATION",
+        "GOVERNED_MEMORY_GATEWAY",
+        "KNOWLEDGE_VAULT_REINJECTION",
+        "ROUTER_FUSION_RAG_GUARDRAIL",
+        "DETERMINISTIC_CONTEXT_PACKAGER",
+        "SESSION_CONTINUITY_HANDOFF_CHECKPOINT",
+        "PLANNER_TRACE_ARTIFACT_CAPABILITY_LOOP",
+        "AUDIT_COUNCIL_GATE_TRUST_MEMORY_LOOP",
+        "SECONDARY_EXTERNAL_SKILL_PROVIDER_ASYNC_EFFICIENCY"
+      ],
+      "priorAbsorption": "CI1-T11 absorbs CI1-T10 cortex-hub plus T11A-D primary memory/learning-related legacy scans and T11E secondary structural scan into one consolidated roadmap. CI1-T2 Graphify, CI1-T3 code-review-graph, and CI1-T8 CVF Edit are prior synthesis inputs.",
+      "findings": [
+        {
+          "id": "T11-F1-consolidated-workflow-chain-needed",
+          "summary": "Memory/learning value spans Learning Plane, governed memory, context routing/fusion, execution continuity, and audit feedback; folder-level work orders would miss cross-plane dependencies.",
+          "disposition": "DEFER_WITH_ROADMAP",
+          "nextAction": "Use MLW0 current source verification before runtime implementation.",
+          "defectClass": "ORCHESTRATOR_PACKET_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "roadmapRef": "docs/roadmaps/CVF_CI1_T11_MEMORY_LEARNING_ABSORPTION_CONSOLIDATED_ROADMAP_2026-06-05.md#tranche-plan"
+        },
+        {
+          "id": "T11-F2-no-autonomous-memory-learning-authority",
+          "summary": "Legacy sources repeatedly reject raw memory, direct reinjection, direct policy mutation, parallel runtime, and autonomous learning authority.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Carry no-direct-memory and no-autonomous-mutation boundaries into all MLW work orders.",
+          "defectClass": "N/A",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "roadmapRef": "docs/roadmaps/CVF_CI1_T11_MEMORY_LEARNING_ABSORPTION_CONSOLIDATED_ROADMAP_2026-06-05.md#tranche-plan"
+        },
+        {
+          "id": "T11-F3-current-symbol-verification-required",
+          "summary": "Legacy W7 record names and runtime symbols require current-source reconciliation before implementation.",
+          "disposition": "DEFER_WITH_ROADMAP",
+          "nextAction": "Open MLW0 source verification map first.",
+          "defectClass": "RUNTIME_SIGNAL_GAP",
+          "learningLane": "RUNTIME_BEHAVIOR_LEARNING",
+          "roadmapRef": "docs/roadmaps/CVF_CI1_T11_MEMORY_LEARNING_ABSORPTION_CONSOLIDATED_ROADMAP_2026-06-05.md#recommended-first-work-order"
+        },
+        {
+          "id": "T11-F4-secondary-related-scope-bounded",
+          "summary": "Hermes, Hugging Face, deepagents, caveman, Human System Harness, Agent Engineer, and AI-first/Human-first contain useful adjacent signals but should remain optional after the core chain.",
+          "disposition": "DEFER_PHASED",
+          "nextAction": "Keep MLW7 and MLW8 optional until core MLW1-MLW6 stabilize or operator explicitly pulls them forward.",
+          "defectClass": "OPERATOR_SCOPE_CLARITY_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "roadmapRef": "docs/roadmaps/CVF_CI1_T11_MEMORY_LEARNING_ABSORPTION_CONSOLIDATED_ROADMAP_2026-06-05.md#tranche-plan"
+        }
+      ],
+      "negativeSearchTerms": [
+        "public readiness from CI1-T11 private scans",
+        "runtime implementation from legacy scan packets alone",
+        "direct memory reinjection",
+        "agent-owned memory authority",
+        "parallel external runtime import",
+        "autonomous policy mutation"
+      ],
+      "nextScanRecommendation": "No additional memory/learning-related legacy scan is required before opening MLW0. Start with source verification map, then derive runtime/doc/checker work orders from the consolidated roadmap.",
+      "hashAlgorithm": "sha256",
+      "hashInput": "manifest-internal-hash-from-script-output"
+    },
+    {
       "id": "legacy-cvf-add",
       "corpusType": "LEGACY_FOLDER",
       "displayName": "CVF ADD (partial root — LHW-RESCAN-C)",
