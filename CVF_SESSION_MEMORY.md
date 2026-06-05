@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-05
 
-Current mode marker: `closure_packaging_preflight_hardening_closed_pass_bounded`
+Current mode marker: `public_safe_memory_learning_summary_work_order_ready_for_operator_review`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `closure_packaging_preflight_hardening_closed_pass_bounded`.
+Current mode: `public_safe_memory_learning_summary_work_order_ready_for_operator_review`.
 
 Active handoff:
 
@@ -49,6 +49,20 @@ Active review queue:
 `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
 
 Latest continuity note:
+
+Public-Safe Memory/Learning Summary work order is `READY_FOR_OPERATOR_REVIEW`:
+
+GC-018:
+`docs/baselines/CVF_GC018_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md`
+
+Work order:
+`docs/work_orders/CVF_WO_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md`
+
+This authorizes only future private public-safe summary preparation from closed
+LO1, LO2, MLW7, MLW8, and closure-packaging preflight evidence. It does not
+authorize public-sync, public push, runtime implementation, live/provider
+proof, hosted readiness, production readiness, public readiness, automatic
+promotion, memory reinjection, or autonomous mutation.
 
 LO2 High-Risk Promotion Decision Boundary is `CLOSED_PASS_BOUNDED`:
 
@@ -103,16 +117,17 @@ git-derived or bare `rg --files` corpus enumeration, closure diff path
 overclaims, and missing checker-recognized core-guard authorization before the
 full pre-closure bundle emits a longer finding list.
 
-Next allowed move: operator may request a public-safe memory/learning
-summary/public-sync, a separate LO2 runtime implementation GC-018/work order, a
-separate MLW7 external execution/marketplace/runtime-adapter tranche, a separate
-MLW8 route optimization/benchmark/cost-proof tranche, broader release-quality
-live governance proof, or stop for review. Boundary: no Learning Orchestrator
-runtime implementation, high-risk promotion lane implementation, automatic
-promotion, autonomous mutation, route behavior change, external capability
+Next allowed move: operator may dispatch the public-safe memory/learning
+summary work order, open a separate LO2 runtime implementation GC-018/work
+order, open a separate MLW7 external execution/marketplace/runtime-adapter
+tranche, open a separate MLW8 route optimization/benchmark/cost-proof tranche,
+run broader release-quality live governance proof, or stop for review.
+Boundary: no public-sync, public push, Learning Orchestrator runtime
+implementation, high-risk promotion lane implementation, automatic promotion,
+autonomous mutation, route behavior change, external capability
 install/execute, automatic efficiency optimization, policy relaxation, memory
-reinjection, live provider proof, public-sync, hosted readiness, production
-readiness, or public readiness.
+reinjection, live provider proof, hosted readiness, production readiness, or
+public readiness.
 
 Pain-point closure direction:
 
@@ -319,6 +334,19 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
+Public-Safe Memory/Learning Summary work order is `READY_FOR_OPERATOR_REVIEW`:
+
+GC-018:
+`docs/baselines/CVF_GC018_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md`
+
+Work order:
+`docs/work_orders/CVF_WO_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md`
+
+This authorizes only future private public-safe summary preparation. It does
+not authorize public-sync, public push, runtime implementation, live/provider
+proof, hosted readiness, production readiness, public readiness, automatic
+promotion, memory reinjection, or autonomous mutation.
+
 LO2 High-Risk Promotion Decision Boundary is `CLOSED_PASS_BOUNDED`.
 
 `docs/work_orders/CVF_WO_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_2026-06-05.md`
@@ -359,16 +387,17 @@ Completion:
 Checker:
 `governance/compat/check_closure_packaging_preflight.py`
 
-Next allowed move: operator may request a public-safe memory/learning
-summary/public-sync, a separate LO2 runtime implementation GC-018/work order, a
-separate MLW7 external execution/marketplace/runtime-adapter tranche, a separate
-MLW8 route optimization/benchmark/cost-proof tranche, broader release-quality
-live governance proof, or stop for review. This does not authorize Learning
-Orchestrator runtime implementation, high-risk promotion implementation,
-automatic promotion, autonomous mutation, external capability install/execute,
-automatic efficiency optimization, policy relaxation, runtime route behavior
-changes, memory reinjection, live provider proof, public-sync, hosted readiness,
-production readiness, or public readiness.
+Next allowed move: operator may dispatch the public-safe memory/learning
+summary work order, open a separate LO2 runtime implementation GC-018/work
+order, open a separate MLW7 external execution/marketplace/runtime-adapter
+tranche, open a separate MLW8 route optimization/benchmark/cost-proof tranche,
+run broader release-quality live governance proof, or stop for review. This
+does not authorize public-sync, public push, Learning Orchestrator runtime
+implementation, high-risk promotion implementation, automatic promotion,
+autonomous mutation, external capability install/execute, automatic efficiency
+optimization, policy relaxation, runtime route behavior changes, memory
+reinjection, live provider proof, hosted readiness, production readiness, or
+public readiness.
 
 MLW-RT1 Durable Memory Runtime Proof is `CLOSED_PASS_BOUNDED` for existing
 file-backed `/api/execute` durable-memory write/read continuity.
