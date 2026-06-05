@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-05
 
-Current mode marker: `ci1_t10_cortex_hub_memory_learning_deep_scan_pending_commit`
+Current mode marker: `ci1_t11_memory_learning_related_scan_wave_roadmap_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `ci1_t10_cortex_hub_memory_learning_deep_scan_pending_commit`.
+Current mode: `ci1_t11_memory_learning_related_scan_wave_roadmap_ready`.
 
 Active handoff:
 
@@ -50,14 +50,14 @@ Active review queue:
 
 Latest continuity note:
 
-CI1-T9 legacy partial-root triage is committed at `649b9808`. CI1-T10
-cortex-hub deep scan artifacts are staged for commit: GC-018, deep scan
-packet, finding packet, and corpus scan registry update. After T10 commit and
-gates, the next recommended private legacy deep scan is
-`.private_reference/legacy/CVF_Important/ADDING_LEARNING PLANE/` as CI1-T11
-unless the operator redirects. Boundary: private source-analysis only; no
-runtime, public-sync, hosted readiness, production readiness, public readiness,
-or live proof claim.
+CI1-T11 memory/learning related legacy scan wave is committed at `c7e5eb19`.
+Artifacts: T11 wave packet, T11A-D deep scans, T11E secondary structural scan,
+consolidated roadmap, and GC-051 registry update. The roadmap decision is to
+build the memory/learning value as a workflow chain only after MLW0 Current
+Source Verification Map. LHW24 remains the latest closed numbered LHW wave.
+Boundary: private source-analysis and planning only; no runtime, public-sync,
+hosted readiness, production readiness, public readiness, live proof, or
+autonomous mutation claim.
 
 Pain-point closure direction:
 

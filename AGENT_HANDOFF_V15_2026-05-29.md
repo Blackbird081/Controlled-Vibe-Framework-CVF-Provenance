@@ -49,6 +49,7 @@ Current HEAD recorded for this handoff: `49e6725a` (Add RS2 rescan intelligence 
 Current HEAD recorded for this handoff: `d6dfae03` (Close ERH DUR1 durable evidence workflow). Updated 2026-06-05 after Claude's DUR1 worker output was reviewed and accepted bounded: control-plane events default to `.cvf/runtime`, policySnapshotId delegates to a bounded persisted local policy snapshot registry, focused tests and DUR1 checker pass, GC-052 interlock is wired, and DUR2 decision is `DUR2_NOT_NEEDED_NOW`. Boundary: no external DB/Redis, distributed durability, rate limiter, provider-risk config, package/lockfile edit, public-sync, live proof, hosted readiness, production readiness, public readiness, or production-grade durability claim.
 Current HEAD recorded for this handoff: `649b9808` (docs(corpus): triage legacy partial scan roots). Updated 2026-06-05 after CI1-T9 committed the legacy partial-root triage packet and GC-051 registry refresh. CI1-T10 cortex-hub deep scan artifacts are staged for commit; `.private_reference/legacy/CVF_Important/ADDING_LEARNING PLANE/` remains the next memory/learning-priority scan candidate after T10. Boundary: private source-analysis only; no runtime, public-sync, live proof, hosted readiness, production readiness, or public readiness claim.
 Current HEAD recorded for this handoff: `cef48698` (docs(corpus): deep scan cortex hub legacy source). Updated 2026-06-05 after CI1-T10 committed the cortex-hub GC-018 baseline, full deep scan packet, finding packet, corpus scan registry update, and protected session continuity sync. Verdict: `ACCEPT_WITH_BOUNDARIES_AND_RUNTIME_DEFERRED`; next recommended private legacy scan is `.private_reference/legacy/CVF_Important/ADDING_LEARNING PLANE/` as CI1-T11 unless the operator redirects. Boundary: private source-analysis only; no runtime implementation, public-sync, live proof, hosted readiness, production readiness, or public readiness claim.
+Current HEAD recorded for this handoff: `c7e5eb19` (docs(corpus): consolidate memory learning legacy scan). Updated 2026-06-05 after CI1-T11 scanned all related memory/learning legacy lanes before roadmap synthesis: T11 wave packet, T11A-D deep scans, T11E secondary structural scan, consolidated roadmap, and GC-051 registry update are committed. Decision: build as workflow chain after MLW0 current-source verification. Boundary: private source-analysis and planning only; no runtime implementation, public-sync, live proof, hosted readiness, production readiness, public readiness, or autonomous memory/learning mutation claim.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -712,10 +713,10 @@ Current HEAD recorded for this handoff: `f4e2405f` (Sync session after CI1-T8 re
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: record CI1-T9 commit `649b9808`, current
-mode `ci1_t10_cortex_hub_memory_learning_deep_scan_pending_commit`, staged
-CI1-T10 cortex-hub deep scan artifacts, and the next recommended CI1-T11 scan
-candidate `.private_reference/legacy/CVF_Important/ADDING_LEARNING PLANE/`.
+Authorized guard-maintenance scope: record CI1-T11 commit `c7e5eb19`, current
+mode `ci1_t11_memory_learning_related_scan_wave_roadmap_ready`, the
+consolidated memory/learning roadmap-ready state, and the next recommended
+MLW0 Current Source Verification Map move.
 
 Protected paths:
 
@@ -723,14 +724,14 @@ Protected paths:
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V15_2026-05-29.md`
 
-Operator authorization: 2026-06-05 operator explicitly authorized the next
-deep scan, "ok, deep scan ke tiep I1-T10". This sync records T10 continuity
-only so the staged scan artifacts can be committed under the active session
-guard.
+Operator authorization: 2026-06-05 operator explicitly authorized scanning all
+related memory/learning material before one roadmap. This sync records T11
+continuity only so the committed scan/roadmap artifacts satisfy the active
+session guard.
 
-Rollback boundary: if this sync is wrong, restore only the CI1-T10 continuity
-text in the protected session files. Do not revert CI1-T9 commit `649b9808`,
-the T10 corpus scan artifacts, registry findings, source corpus files, public
+Rollback boundary: if this sync is wrong, restore only the CI1-T11 continuity
+text in the protected session files. Do not revert CI1-T11 commit `c7e5eb19`,
+the T11 scan/roadmap artifacts, registry findings, source corpus files, public
 sync history, or historical handoff content.
 
 ## Claim Boundary
