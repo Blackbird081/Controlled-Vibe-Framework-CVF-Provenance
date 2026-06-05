@@ -4,7 +4,7 @@
   "guard": "governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md",
   "checker": "governance/compat/check_corpus_scan_registry.py",
   "lastUpdated": "2026-06-05",
-  "updatedBy": "CI1-T8 CVF Edit full reconciliation",
+  "updatedBy": "CI1-T9 legacy partial scan triage",
   "allowedCorpusTypes": [
     "LEGACY_FOLDER",
     "PROJECT_SOURCE",
@@ -208,6 +208,7 @@
       "manifestPath": "docs/audits/CVF_LHW_RESCAN_A_CVF_IMPORTANT_CORPUS_MANIFEST_2026-06-01.json",
       "packetPath": "docs/audits/CVF_LHW_RESCAN_A_CVF_IMPORTANT_CORPUS_RECONCILIATION_2026-06-01.md",
       "completionReviewPath": "docs/reviews/CVF_LHW_RESCAN_A_CVF_IMPORTANT_CORPUS_RECONCILIATION_COMPLETION_2026-06-01.md",
+      "latestTriagePacketPath": "docs/audits/CVF_CI1_T9_LEGACY_PARTIAL_SCAN_TRIAGE_PACKET_2026-06-05.md",
       "gcBaselineRef": null,
       "verdicts": {
         "gc047": "COMPLETE_VERIFIED",
@@ -226,10 +227,20 @@
           "nextAction": "Each subfamily requires its own CI1 tranche for deep classification",
           "defectClass": "DOCUMENTATION_GAP",
           "learningLane": "GOVERNANCE_CONTROL_PLANE"
+        },
+        {
+          "id": "CI1-T9-learning-plane-priority",
+          "summary": "CI1-T9 triage confirmed ADDING_LEARNING PLANE, Knowledge Base_Palace, Knowledge Base_LLM-Powered, RAG Architecture, and memory-loop folders remain high-value memory/learning candidates",
+          "disposition": "DEFER_WITH_ROADMAP",
+          "nextAction": "Queue ADDING_LEARNING PLANE as the next CVF_Important deep scan after CI1-T10 cortex-hub unless CI1-T10 proves the same value is already absorbed",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/audits/CVF_CI1_T9_LEGACY_PARTIAL_SCAN_TRIAGE_PACKET_2026-06-05.md#finding-to-governance-learning-disposition",
+          "packetRef": "docs/audits/CVF_CI1_T9_LEGACY_PARTIAL_SCAN_TRIAGE_PACKET_2026-06-05.md"
         }
       ],
       "negativeSearchTerms": [],
-      "nextScanRecommendation": "Knowledge Base_Graphify already done (CI1-T2). Next: Knowledge Base_Graphify/code-review-graph or another operator-selected subfamily",
+      "nextScanRecommendation": "CI1-T9 refresh: after CI1-T10 cortex-hub, deep scan CVF_Important/ADDING_LEARNING PLANE/ as the highest-value CVF_Important memory/learning tranche; then consider Knowledge Base_Palace and Knowledge Base_LLM-Powered",
       "hashAlgorithm": "sha256",
       "hashInput": "manifest-internal-hash-from-script-output"
     },
@@ -248,6 +259,7 @@
       "manifestPath": "docs/audits/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_MANIFEST_2026-06-01.json",
       "packetPath": "docs/audits/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_RECONCILIATION_2026-06-01.md",
       "completionReviewPath": "docs/reviews/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_RECONCILIATION_COMPLETION_2026-06-01.md",
+      "latestTriagePacketPath": "docs/audits/CVF_CI1_T9_LEGACY_PARTIAL_SCAN_TRIAGE_PACKET_2026-06-05.md",
       "gcBaselineRef": "docs/baselines/CVF_GC018_LHW_RESCAN_C_CROSS_CORPUS_DEEP_REVIEW_2026-06-01.md",
       "verdicts": {
         "gc047": "COMPLETE_VERIFIED",
@@ -267,10 +279,29 @@
           "defectClass": "RULE_GAP",
           "learningLane": "GOVERNANCE_CONTROL_PLANE",
           "roadmapRef": "docs/roadmaps/CVF_CI1_CORPUS_INTELLIGENCE_OPERATIONALIZATION_ROADMAP_2026-06-02.md#ci1-t3"
+        },
+        {
+          "id": "CI1-T9-stale-code-review-graph-next-scan",
+          "summary": "CI1-T9 triage found the prior CVF ADD next-scan recommendation still pointed to code-review-graph even though CI1-T3 already deep-scanned that family",
+          "disposition": "ACCEPT",
+          "nextAction": "Replace next recommendation with CVF ADD/cortex-hub/ memory-learning deep scan",
+          "defectClass": "ORCHESTRATOR_PACKET_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "packetRef": "docs/audits/CVF_CI1_T9_LEGACY_PARTIAL_SCAN_TRIAGE_PACKET_2026-06-05.md"
+        },
+        {
+          "id": "CI1-T9-cortex-hub-selected",
+          "summary": "CI1-T9 triage selected CVF ADD/cortex-hub/ as the highest-value immediate deep scan candidate because it bridges persistent memory, shared knowledge, MCP, code graph, context packaging, and Learning Plane boundaries",
+          "disposition": "DEFER_WITH_ROADMAP",
+          "nextAction": "Open CI1-T10 with fresh GC-018, full file-level corpus ledger, delta ledger, routing matrix, and adversarial sampling",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/audits/CVF_CI1_T9_LEGACY_PARTIAL_SCAN_TRIAGE_PACKET_2026-06-05.md#finding-to-governance-learning-disposition",
+          "packetRef": "docs/audits/CVF_CI1_T9_LEGACY_PARTIAL_SCAN_TRIAGE_PACKET_2026-06-05.md"
         }
       ],
       "negativeSearchTerms": [],
-      "nextScanRecommendation": "CVF ADD/code-review-graph/ — 7 files, directly related to Finding F2 from Graphify scan",
+      "nextScanRecommendation": "CI1-T9 refresh: CVF ADD/cortex-hub/ is the next selected deep scan candidate; code-review-graph was already completed in CI1-T3 and should remain prior absorption evidence only",
       "hashAlgorithm": "sha256",
       "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
     },
