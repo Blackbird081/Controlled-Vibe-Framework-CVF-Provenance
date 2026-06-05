@@ -46,6 +46,8 @@ Allowed scope:
 
 - create `docs/reference/CVF_MEMORY_DERIVED_GRAPH_BOUNDARY_2026-06-01.md`;
 - create `docs/reviews/CVF_MKG7_T6_MEMORY_DERIVED_GRAPH_BOUNDARY_COMPLETION_2026-06-01.md`;
+- update `AGENT_HANDOFF_V15_2026-05-29.md` only to record the material T6
+  residue-reconciliation commit for GC-020 session continuity;
 - run listed gates.
 
 Forbidden scope:
