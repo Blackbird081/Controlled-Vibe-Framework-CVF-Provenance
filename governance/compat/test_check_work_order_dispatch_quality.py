@@ -1335,6 +1335,30 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
 
         self.assertTrue(report["compliant"])
 
+    def test_closed_work_order_allows_explicit_gitignore_path(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_ROOT_GITIGNORE_TEST_2026-06-05.md"
+        root_path = ".gitignore"
+        self._write(root_path, ".cvf/runtime/\n")
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: CLOSED_PASS_BOUNDED",
+                    "## Scope",
+                    "Allowed scope:",
+                    f"- Update `{root_path}`.",
+                    "Forbidden scope:",
+                    "- Other root files.",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order, root_path])
+
+        self.assertTrue(report["compliant"])
+
     def test_closed_lhw_roadmap_requires_full_wave_range_fails(self) -> None:
         roadmap = "docs/roadmaps/CVF_LHW12_TEST_ROADMAP_2026-05-29.md"
         t3_spec = "docs/reference/CVF_LHW12_T3_TEST_CONNECTOR_SPEC_2026-05-29.md"

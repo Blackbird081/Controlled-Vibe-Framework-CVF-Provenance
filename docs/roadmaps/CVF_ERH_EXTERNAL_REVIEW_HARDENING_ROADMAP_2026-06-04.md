@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: INITIAL_PRIVATE_TRANCHES_CLOSED_PASS_BOUNDED_PUBLIC_SYNC_EXPORTED_T2C_CI1_PD1_CLOSED_PASS_BOUNDED_DEP1_ACCEPTED_BOUNDED_AUD1_CLOSED_PASS_BOUNDED_SAF1_CLOSED_PASS_BOUNDED_SAF2_CLOSED_PASS_BOUNDED_DUR1_DISPATCH_READY
+Status: INITIAL_PRIVATE_TRANCHES_CLOSED_PASS_BOUNDED_PUBLIC_SYNC_EXPORTED_T2C_CI1_PD1_CLOSED_PASS_BOUNDED_DEP1_ACCEPTED_BOUNDED_AUD1_CLOSED_PASS_BOUNDED_SAF1_CLOSED_PASS_BOUNDED_SAF2_CLOSED_PASS_BOUNDED_DUR1_CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -85,7 +85,7 @@ Out of scope:
 | Planning review | `docs/assessments/CVF_ERH_PLANNING_REVIEW_FOR_CODEX_2026-06-04.md` | reviewed |
 | Codex response | `docs/reviews/CVF_ERH_PLANNING_REVIEW_CODEX_RESPONSE_2026-06-04.md` | recorded |
 | Fresh GC-018 | `docs/baselines/CVF_GC018_ERH_EXTERNAL_REVIEW_HARDENING_2026-06-04.md` | authorized |
-| Work orders | ERH-T1A/T2A/T3/T2B/T4/T1B initial private tranches closed bounded; ERH-T1C exported; ERH-T2C, ERH-CI1, and ERH-PD1 closed bounded; ERH-DEP1 closed bounded; ERH-AUD1 closed bounded; ERH-SAF1 closed bounded; ERH-SAF2 closed bounded; ERH-DUR1 dispatch ready | private tranche outputs reviewed and closed; public-sync delta exported; runtime route workflow, CI public-evaluation workflow, and public-surface drift workflow closed bounded; dependency-risk workflow closed as `ACCEPT_WITH_CAVEAT`; dependency-audit remediation closed as `AUDIT_REDUCED_WITH_RESIDUALS`; ERH-RS1 recommended `ERH-SAF1_READY`; SAF1 deterministic safety workflow-chain hardening is accepted bounded with live route proof residual; SAF2 closed output safety workflow; DUR1 opens local durable evidence and policy snapshot workflow chain |
+| Work orders | ERH-T1A/T2A/T3/T2B/T4/T1B initial private tranches closed bounded; ERH-T1C exported; ERH-T2C, ERH-CI1, and ERH-PD1 closed bounded; ERH-DEP1 closed bounded; ERH-AUD1 closed bounded; ERH-SAF1 closed bounded; ERH-SAF2 closed bounded; ERH-DUR1 closed bounded | private tranche outputs reviewed and closed; public-sync delta exported; runtime route workflow, CI public-evaluation workflow, and public-surface drift workflow closed bounded; dependency-risk workflow closed as `ACCEPT_WITH_CAVEAT`; dependency-audit remediation closed as `AUDIT_REDUCED_WITH_RESIDUALS`; ERH-RS1 recommended `ERH-SAF1_READY`; SAF1 deterministic safety workflow-chain hardening is accepted bounded with live route proof residual; SAF2 closed output safety workflow; DUR1 closes bounded local durable evidence and policy snapshot workflow chain with `DUR2_NOT_NEEDED_NOW` |
 
 ## Tranche Plan
 
@@ -106,7 +106,7 @@ Out of scope:
 | ERH-RS1 | External review full-coverage rescan | `docs/reviews/CVF_ERH_RS1_EXTERNAL_REVIEW_FULL_COVERAGE_RESCAN_COMPLETION_2026-06-04.md` | CLOSED_PASS_BOUNDED |
 | ERH-SAF1 | Safety workflow-chain hardening | `docs/reviews/CVF_ERH_SAF1_SAFETY_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md` | CLOSED_PASS_BOUNDED |
 | ERH-SAF2 | Output safety audit event + governance output patterns + regression corpus | `docs/reviews/CVF_ERH_SAF2_OUTPUT_SAFETY_AND_REGRESSION_CORPUS_COMPLETION_2026-06-05.md` | CLOSED_PASS_BOUNDED |
-| ERH-DUR1 | Durable local evidence store + reconstructable policy snapshot registry | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_DUR1_DURABLE_EVIDENCE_AND_POLICY_SNAPSHOT_FOR_CLAUDE_2026-06-05.md` | DISPATCH_READY |
+| ERH-DUR1 | Durable local evidence store + reconstructable policy snapshot registry | `docs/reviews/CVF_ERH_DUR1_DURABLE_EVIDENCE_AND_POLICY_SNAPSHOT_COMPLETION_2026-06-05.md` | CLOSED_PASS_BOUNDED |
 
 ## Roadmap-To-Work-Order Trace Matrix
 
@@ -146,7 +146,7 @@ Out of scope:
 | E11 | Close `cvf-web` dependency-audit remediation workflow | ledger, workflow chain, checker, tests, bounded package-update diff, completion packet | CLOSED_PASS_BOUNDED |
 | E12 | Close ERH-SAF1 deterministic safety workflow-chain hardening | helper, route wiring, ledger, checker, hook wiring, completion packet with SAF2 decision | CLOSED_PASS_BOUNDED |
 | E13 | Implement ERH-SAF2 output safety audit event, governance output patterns, regression corpus | output-validator.ts patterns, route.ts audit event, regression test file, checker, reference docs | CLOSED_PASS_BOUNDED |
-| E14 | Dispatch ERH-DUR1 durable evidence and policy snapshot workflow | GC-018 baseline and Claude work order | DISPATCH_READY |
+| E14 | Close ERH-DUR1 durable evidence and policy snapshot workflow | policy-snapshot-registry.ts, control-plane-events.ts durable default, focused tests, DUR1 checker, completion review with DUR2 decision | CLOSED_PASS_BOUNDED |
 
 ## Acceptance Criteria
 
@@ -193,10 +193,11 @@ Out of scope:
   live governance proof.
 - ERH-SAF2 is closed bounded after SAF1 recorded `SAF2_READY`. SAF3 is not
   opened without a future concrete source-visible gap.
-- ERH-DUR1 is `DISPATCH_READY` after SAF2 closure. DUR1 targets the handleable
-  local runtime subset of the external-review durability and policy snapshot
-  findings; external database, Redis, distributed rate limiting, and
-  production-grade durability remain separate.
+- ERH-DUR1 is `CLOSED_PASS_BOUNDED` after SAF2 closure. DUR1 closes the
+  handleable local runtime subset of the external-review durability and policy
+  snapshot findings; external database, Redis, distributed rate limiting, and
+  production-grade durability remain separate. DUR2 decision:
+  `DUR2_NOT_NEEDED_NOW`.
 - ERH initial private docs-only tranches are closed bounded in
   `docs/reviews/CVF_ERH_INITIAL_PRIVATE_TRANCHES_COMPLETION_2026-06-04.md`.
   T1A/T2A/T3/T2B/T4/T1B no longer carry review-pending status. T2B is

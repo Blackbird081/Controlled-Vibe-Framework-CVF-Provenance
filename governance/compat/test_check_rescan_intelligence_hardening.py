@@ -64,6 +64,19 @@ def test_non_rescan_doc_is_not_applicable():
     assert check_text("docs/assessments/CVF_PLAIN_NOTE.md", "# Plain Note\n\nNo bounded corpus claim.\n") == []
 
 
+def test_runtime_work_order_reference_to_external_review_is_not_applicable():
+    text = """
+# Runtime Work Order
+
+Status: CLOSED_PASS_BOUNDED
+
+## Purpose
+
+Convert one external-review architecture finding into runtime hardening.
+"""
+    assert check_text("docs/work_orders/CVF_WO_RUNTIME_DURABILITY_2026-06-05.md", text) == []
+
+
 def test_complete_claim_cannot_use_not_applicable():
     text = VALID_BLOCK.replace("COMPLETE_WITH_DELTA_ROUTING_SAMPLE", "NOT_APPLICABLE_WITH_REASON")
     violations = check_text("docs/assessments/CVF_RESCAN_SAMPLE.md", text)

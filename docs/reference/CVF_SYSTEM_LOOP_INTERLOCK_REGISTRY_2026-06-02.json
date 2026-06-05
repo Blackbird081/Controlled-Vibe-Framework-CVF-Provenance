@@ -297,6 +297,25 @@
       ],
       "automationLevel": "MACHINE_CHECKED",
       "claimBoundary": "This connection proves bounded governance-specific output pattern detection and OUTPUT_SAFETY_TRIGGERED audit event wiring with adversarial regression corpus evidence. It does not prove ML DLP, comprehensive output safety coverage, production security readiness, complete jailbreak protection, or complete external-review remediation."
+    },
+    {
+      "id": "erh-dur1-durable-evidence-policy-snapshot-workflow-chain",
+      "status": "ACTIVE",
+      "upstreamLoop": "ERH_SAF2_OUTPUT_SAFETY_WORKFLOW_CHAIN",
+      "upstreamPlane": "GOVERNANCE_CONTROL_PLANE",
+      "outputArtifact": "docs/reviews/CVF_ERH_SAF2_OUTPUT_SAFETY_AND_REGRESSION_CORPUS_COMPLETION_2026-06-05.md",
+      "outputSignal": "DUR1_READY verdict confirmed; control-plane event store uses os.tmpdir() and policySnapshotId is not reconstructable identified as source-verified architecture gaps",
+      "signalContract": "docs/reference/CVF_ERH_DUR1_DURABLE_EVIDENCE_AND_POLICY_SNAPSHOT_WORKFLOW_CHAIN_2026-06-05.md",
+      "downstreamLoop": "ERH_DUR2_OR_RESIDUAL",
+      "downstreamPlane": "GOVERNANCE_CONTROL_PLANE",
+      "inputArtifact": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/control-plane-events.ts",
+      "routingRule": "DUR1 must verify ERH_DUR1_MARKER in control-plane-events.ts and CVF_POLICY_SNAPSHOT_REGISTRY_VERSION in policy-snapshot-registry.ts before any downstream DUR2 or external storage work is dispatched.",
+      "evidenceRefs": [
+        "governance/compat/check_erh_durable_evidence_policy_snapshot.py",
+        "governance/compat/test_check_erh_durable_evidence_policy_snapshot.py"
+      ],
+      "automationLevel": "MACHINE_CHECKED",
+      "claimBoundary": "This connection proves bounded local durable event store default and reconstructable policy snapshot registry wiring. It does not prove production database, Redis, distributed retention, external policy service, tamper-proof audit, hosted readiness, public readiness, or production-grade durability."
     }
   ]
 }

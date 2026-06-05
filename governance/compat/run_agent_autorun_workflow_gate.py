@@ -174,6 +174,10 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             ("python", "governance/compat/check_erh_output_safety_workflow_chain.py", "--enforce"),
         ),
         GateCommand(
+            "ERH DUR1 durable evidence policy snapshot workflow chain",
+            ("python", "governance/compat/check_erh_durable_evidence_policy_snapshot.py", "--enforce"),
+        ),
+        GateCommand(
             "active session state compatibility",
             ("python", "governance/compat/check_active_session_state.py", "--enforce"),
         ),

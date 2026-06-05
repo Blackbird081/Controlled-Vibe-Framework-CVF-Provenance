@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-05
 
-Current mode marker: `erh_dur1_durable_evidence_policy_snapshot_dispatch_ready_for_claude`
+Current mode marker: `erh_dur1_durable_evidence_policy_snapshot_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `erh_dur1_durable_evidence_policy_snapshot_dispatch_ready_for_claude`.
+Current mode: `erh_dur1_durable_evidence_policy_snapshot_closed_pass_bounded`.
 
 Active handoff:
 
@@ -263,16 +263,18 @@ SAF1 adversarial regression corpus, SAF2 checker/hook wiring, GC-052 interlock,
 and completion review. SAF3 decision is `SAF3_NOT_NEEDED`; SAF3 implementation
 is not opened.
 
-ERH-DUR1 Durable Evidence And Policy Snapshot is `DISPATCH_READY`:
+ERH-DUR1 Durable Evidence And Policy Snapshot is `CLOSED_PASS_BOUNDED`:
 
-`docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_DUR1_DURABLE_EVIDENCE_AND_POLICY_SNAPSHOT_FOR_CLAUDE_2026-06-05.md`
+`docs/reviews/CVF_ERH_DUR1_DURABLE_EVIDENCE_AND_POLICY_SNAPSHOT_COMPLETION_2026-06-05.md`
 
-Commit `b3c4ce3a` opens bounded local durable evidence and reconstructable
-policy snapshot workflow hardening for Claude under `WORKER_MUST_NOT_COMMIT`.
-Pre-dispatch autorun gate passed with base `1beda1b2`. Boundary: no external
-DB/Redis, rate limiter, provider-risk config, package/lockfile edit,
-public-sync, live proof, hosted readiness, production readiness, public
-readiness, or production-grade durability claim.
+DUR1 closes bounded local durable evidence and reconstructable policy snapshot
+workflow hardening: control-plane events now default to `.cvf/runtime`, policy
+snapshot ids delegate to a persisted bounded local registry, focused tests and
+DUR1 checker pass, and GC-052 interlock is wired. DUR2 decision:
+`DUR2_NOT_NEEDED_NOW`. External DB/Redis/distributed durability, rate limiter,
+provider-risk config, public-sync, live proof, hosted readiness, production
+readiness, public readiness, and production-grade durability remain separate
+operator-authorized work.
 
 LPCI2-T6 Search/Chat Readiness Gate is `CLOSED_PASS_BOUNDED`:
 

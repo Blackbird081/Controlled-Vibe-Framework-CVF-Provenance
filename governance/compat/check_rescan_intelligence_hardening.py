@@ -217,6 +217,9 @@ def _is_applicable_output(path: str, text: str) -> bool:
         return True
     if path.startswith("docs/roadmaps/"):
         return False
+    if path.startswith("docs/work_orders/"):
+        path_haystack = path.lower().replace("_", " ").replace("-", " ")
+        return any(re.search(pattern, path_haystack, re.I) for pattern in APPLICABILITY_PATTERNS)
     lowered = re.sub(r"rescan[- ]intelligence(?:[- ]hardening)?", "", text.lower())
     return any(re.search(pattern, lowered, re.I) for pattern in APPLICABILITY_PATTERNS)
 

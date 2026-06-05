@@ -1,5 +1,11 @@
+/**
+ * Control-Plane Event Store
+ *
+ * ERH_DUR1_MARKER: DURABLE_EVIDENCE_STORE_ACTIVE
+ * CVF_DURABLE_EVIDENCE_VERSION: 2026-06-05
+ */
+
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
-import os from 'node:os';
 import path from 'node:path';
 import { createHmac, randomUUID } from 'node:crypto';
 
@@ -86,7 +92,7 @@ export function computeAuditCsvSignature(body: string, signingKey: string): stri
 function getStorePath() {
   return process.env.CVF_CONTROL_PLANE_EVENTS_PATH
     ? path.resolve(process.env.CVF_CONTROL_PLANE_EVENTS_PATH)
-    : path.join(os.tmpdir(), '.cvf-data', 'control-plane-events.json');
+    : path.join(process.cwd(), '.cvf', 'runtime', 'control-plane-events.json');
 }
 
 async function ensureStore(): Promise<void> {
