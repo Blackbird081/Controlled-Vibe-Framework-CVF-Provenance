@@ -231,6 +231,15 @@ Evidence:
   live-pass, cost-reduction, performance-improvement, and provider-quality
   claims.
 
+## Public Catalog Update Disposition
+
+N/A with reason - MLW8-PEL1 produced bounded diagnostic proof/export evidence,
+not a new public proven capability. The public-safe evidence artifact was
+exported, but the technical product catalog is not updated because this tranche
+does not authorize public readiness, production readiness, live governance pass,
+cost reduction, performance improvement, provider superiority, or automatic
+optimization claims.
+
 ## Machine Closure Package
 
 | Required closure field | Evidence | Disposition |
