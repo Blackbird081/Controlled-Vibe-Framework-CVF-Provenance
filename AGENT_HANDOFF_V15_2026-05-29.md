@@ -727,6 +727,32 @@ Current HEAD recorded for this handoff: `04956ef0` (Sync MLW7/MLW8 GC-018 sessio
 Current HEAD recorded for this handoff: `b355f538` (Tighten GC-018 guard authoring checks). Updated 2026-06-05 after Codex added guard-clean authoring guidance to the GC-018 continuation template and Post-W7 GC-018 drafting checklist. Boundary: documentation guard hygiene only; no GC-018 LO0 baseline, no MLW7/MLW8 implementation, no runtime execution, no live proof, no public-sync, no hosted readiness, no production readiness, no public readiness, no Learning Orchestrator implementation, no high-risk promotion lane implementation, and no autonomous mutation.
 Current HEAD recorded for this handoff: `1f5a02c1` (Authorize LO0 GC-018 source verification). Updated 2026-06-05 after Codex created `docs/baselines/CVF_GC018_LO0_LEARNING_ORCHESTRATOR_HIGH_RISK_PROMOTION_SOURCE_VERIFICATION_2026-06-05.md` and the pre-dispatch autorun gate passed. Source verdict: `LearningOrchestrator` has no exact current runtime/source symbol; current owner pieces are advisory/proposal only. Boundary: no Learning Orchestrator implementation, no high-risk promotion lane implementation, no autonomous mutation, no automatic promotion, no runtime route change, no memory reinjection, no live proof, no public-sync, no hosted readiness, no production readiness, and no public readiness.
 Current HEAD recorded for this handoff: `6f6e9301` (Sync LO0 GC-018 session state). Updated 2026-06-05 after active state, session memory, handoff, and session-sync authorization review were synchronized to `lo0_gc018_authorized_hold_for_work_order`. This is a session-continuity sync only; LO0 remains held for source-verified LO1 work-order authoring, and no Learning Orchestrator implementation, high-risk promotion lane implementation, autonomous mutation, automatic promotion, runtime route change, memory reinjection, live proof, public-sync, hosted readiness, production readiness, or public readiness claim is added.
+Current HEAD recorded for this handoff: `10f0286c` (Author LO1 advisory work order for operator review). Updated 2026-06-05 after Codex authored `docs/work_orders/CVF_WO_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md` as `READY_FOR_OPERATOR_REVIEW` and pre-dispatch autorun passed. Current mode is `lo1_learning_orchestrator_advisory_work_order_ready_for_operator_review`. Next allowed move is operator review and explicit LO1 dispatch, or return to MLW7/MLW8 work-order authoring. Boundary: no Learning Orchestrator implementation, high-risk promotion lane implementation, autonomous mutation, automatic promotion, runtime route change, memory reinjection, live proof, public-sync, hosted readiness, production readiness, or public readiness.
+Current HEAD recorded for this handoff: `10f0286c` (Close LO1 advisory proposal boundary). Updated 2026-06-05 after Codex multi-role closeout created `docs/reference/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md`, created `docs/reviews/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_COMPLETION_2026-06-05.md`, and moved `docs/work_orders/CVF_WO_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md` to `CLOSED_PASS_BOUNDED`. Current mode is `lo1_learning_orchestrator_advisory_boundary_closed_pass_bounded`. Next allowed move: operator may authorize a separate LO2/high-risk promotion GC-018/work order, return to MLW7/MLW8 work-order authoring, open public-safe memory/learning summary/public-sync, or stop for review. Boundary: no Learning Orchestrator runtime implementation, high-risk promotion lane implementation, autonomous mutation, automatic promotion, runtime route change, memory reinjection, live proof, public-sync, hosted readiness, production readiness, or public readiness.
+
+## Core Guard Self-Protection Authorization - LO1 Work Order Session Sync
+
+Authorized guard-maintenance scope: record LO1 work-order authoring at
+`docs/work_orders/CVF_WO_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md`,
+current mode
+`lo1_learning_orchestrator_advisory_work_order_ready_for_operator_review`, and
+next allowed move after source-verified work-order authoring.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION_MEMORY.md`
+- `AGENT_HANDOFF_V15_2026-05-29.md`
+
+Operator authorization: 2026-06-05 operator stated the technical LO0 verdict:
+there is no exact current `LearningOrchestrator` runtime/source symbol and the
+correct next move is a source-verified LO1 work order, not implementation.
+This sync records session continuity only; it does not authorize LO1
+implementation.
+
+Rollback boundary: if this sync is wrong, restore only the LO1 continuity text
+in the protected session files and this handoff section. Do not delete the LO1
+work order unless that authoring batch itself is being unwound.
 
 ## Core Guard Self-Protection Authorization - LO0 GC-018 Session Sync
 

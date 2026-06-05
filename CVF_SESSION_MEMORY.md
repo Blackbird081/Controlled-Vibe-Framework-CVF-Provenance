@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-05
 
-Current mode marker: `lo0_gc018_authorized_hold_for_work_order`
+Current mode marker: `lo1_learning_orchestrator_advisory_boundary_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lo0_gc018_authorized_hold_for_work_order`.
+Current mode: `lo1_learning_orchestrator_advisory_boundary_closed_pass_bounded`.
 
 Active handoff:
 
@@ -50,18 +50,29 @@ Active review queue:
 
 Latest continuity note:
 
-LO0 GC-018 source-verification baseline is authorized and held for a
-source-verified LO1 work order. Baseline:
+LO1 Learning Orchestrator advisory/proposal boundary is
+`CLOSED_PASS_BOUNDED`:
+
+`docs/work_orders/CVF_WO_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md`
+
+Reference:
+`docs/reference/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md`
+
+Completion:
+`docs/reviews/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_COMPLETION_2026-06-05.md`
+
+LO0 GC-018 source-verification baseline remains the authority source. Baseline:
 `docs/baselines/CVF_GC018_LO0_LEARNING_ORCHESTRATOR_HIGH_RISK_PROMOTION_SOURCE_VERIFICATION_2026-06-05.md`.
 Baseline commit: `1f5a02c1`. LO0 source-verifies that `LearningOrchestrator`
 has no exact current runtime/source symbol; current owner pieces are advisory or
 proposal surfaces: `LearningSignalIntakeBridge`, finding-to-learning bridge,
 `orchestratorFeedback`, MLW5 audit feedback validation readout, MLW6 simulation
 failure gate readout, adaptation policy Tier 0 evidence gate, and simulation
-dry-run surface. Next allowed move: author a source-verified LO1 work order that
-defines an advisory/proposal-only Learning Orchestrator boundary, or return to
-MLW7/MLW8 work-order authoring if the operator chooses. Boundary: no Learning
-Orchestrator implementation, high-risk promotion lane implementation,
+dry-run surface. Next allowed move: operator may authorize a separate
+LO2/high-risk promotion GC-018/work order, return to MLW7/MLW8 work-order
+authoring, open public-safe memory/learning summary/public-sync, or stop for
+review. Boundary: no Learning Orchestrator runtime implementation, high-risk
+promotion lane implementation,
 autonomous mutation, automatic promotion, runtime route change, memory
 reinjection, live provider proof, public-sync, hosted readiness, production
 readiness, or public readiness.
@@ -270,6 +281,24 @@ Finish absorption of remaining `PARTIALLY_ABSORBED` LH1 connector value before
 opening separate live-proof roadmaps.
 
 ## Next Allowed Move
+
+LO1 Learning Orchestrator Advisory Proposal Boundary is `CLOSED_PASS_BOUNDED`:
+
+`docs/work_orders/CVF_WO_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md`
+
+Reference:
+`docs/reference/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md`
+
+Completion:
+`docs/reviews/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_COMPLETION_2026-06-05.md`
+
+Next allowed move: operator may authorize a separate LO2/high-risk promotion
+GC-018/work order, return to MLW7/MLW8 work-order authoring, open public-safe
+memory/learning summary/public-sync, or stop for review. This does not
+authorize Learning Orchestrator runtime implementation, high-risk promotion
+implementation, autonomous mutation, automatic promotion, runtime route
+changes, memory reinjection, live provider proof, public-sync, hosted
+readiness, production readiness, or public readiness.
 
 MLW-RT1 Durable Memory Runtime Proof is `CLOSED_PASS_BOUNDED` for existing
 file-backed `/api/execute` durable-memory write/read continuity.
