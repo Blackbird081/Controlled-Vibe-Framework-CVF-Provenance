@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`mlw8_pel1_proof_export_live_closed_pass_boun
 
 `mlw8_pel1_proof_export_live_closed_pass_bounded_diagnostic`
 
-Current HEAD recorded for this handoff: `2c04b7bf6697d05fabfa869c12d4449870c1d811`
-(MLW8-PEL1 session-sync commit; material commit `5918584c`).
+Current HEAD recorded for this handoff: `7da248a07cc01d178c300ae0ebb8ab3d1b1f234c`
+(MLW8-PEL1 registry classification sync; material commit `5918584c`).
 
 ## Active Boundary
 
@@ -62,6 +62,8 @@ Only V16 should be treated as the active root handoff.
 - Opened V16 compact handoff.
 - Rotated V15 into the handoff archive.
 - Recorded MLW8-PEL1 bounded diagnostic closure and public-safe export evidence.
+- Classified V16 as an `INTERNAL_ONLY` visible root file for P3/public exposure
+  guard compatibility.
 - Preserved next allowed move as separate live-E2E diagnostic work order or stop
   for review.
 
@@ -89,6 +91,7 @@ Public-safe export:
 Verification summary:
 
 - Private material commit: `5918584c`.
+- Root-file exposure registry sync commit: `7da248a0`.
 - Pre-dispatch autorun gate: PASS.
 - Pre-implementation autorun gate: PASS.
 - Focused tests: PASS, 3 files / 13 tests.
