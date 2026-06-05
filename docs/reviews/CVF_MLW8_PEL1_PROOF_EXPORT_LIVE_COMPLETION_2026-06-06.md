@@ -64,6 +64,8 @@ Bounded pass means:
 | LITERAL_INVARIANT - cost reduction claim remains unauthorized | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw8-proof-export-live-readout.ts` | Lines 158-166 | `costReductionClaimAuthorized` | PEL1 helper | ACCEPT |
 | LITERAL_INVARIANT - performance improvement claim remains unauthorized | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw8-proof-export-live-readout.ts` | Lines 158-166 | `performanceImprovementClaimAuthorized` | PEL1 helper | ACCEPT |
 | EXISTS - focused PEL1 tests exist | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw8-proof-export-live-readout.test.ts` | Lines 26-123 | `buildMlw8ProofExportLiveReadout` | PEL1 tests | ACCEPT |
+| RUNTIME_BEHAVIOR - visible root files must be exposure-classified | `governance/compat/check_prepublic_p3_readiness.py` | Lines 275-280 | `unclassified_root_file` | P3 readiness checker | ACCEPT |
+| VALUE_SET - V16 root handoff is internal-only | `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json` | Lines 67-68 | `AGENT_HANDOFF_V16_2026-06-06.md` | Root file exposure registry | ACCEPT |
 
 ## Roadmap-To-Work-Order Trace Matrix
 
@@ -73,7 +75,7 @@ Bounded pass means:
 | Public-safe export order | Sections 8-12 | Public-sync `docs/evidence/mlw8-proof-export-live-boundary-2026-06-06.md` | Public remote, commit `d97f38c08`, push output | PASS |
 | Live/provider proof order | Sections 8 and 11 | `docs/evidence/CVF_MLW8_PEL1_RELEASE_GATE_RESULT_2026-06-06.json` and diagnostic JSON | `python scripts/run_cvf_release_gate_bundle.py --json` | PASS_BOUNDED_DIAGNOSTIC |
 | Preserve MLW8 advisory-only boundary | Sections 7 and 10 | False authority fields and boundaries | Unit tests and source lines 158-176 | PASS |
-| Close tranche without more operator questions | Section 6C | Completion review and session sync | Autorun gates and git status | PASS_BOUNDED |
+| Close tranche without more operator questions | Section 6C | Completion review, session sync, and V16 root-file exposure classification | Autorun gates and git status | PASS_BOUNDED |
 
 ## Closure Diff Gate
 
@@ -90,7 +92,9 @@ Roadmap/operator request versus outputs:
 Allowed scope check:
 
 - Private changed files are the GC-018 baseline, work order, PEL1 helper, PEL1
-  test, release gate evidence, diagnostic evidence, and this completion review.
+  test, release gate evidence, diagnostic evidence, this completion review,
+  session-routing files, the V15-to-V16 handoff rotation, and the root-file
+  exposure registry entry required for V16 public/P3 guard compatibility.
 - Public changed file is one public-safe evidence artifact.
 - No `.env.local`, provider routing, policy relaxation, public-private repo
   boundary, or production deployment file was changed.
@@ -240,6 +244,7 @@ Evidence:
 | Public export disposition | `EXPORTED`, public commit `d97f38c08` | PASS |
 | Finding-to-learning disposition | Finding-To-Governance Learning Disposition | PASS |
 | Session sync | Active state, session memory, and handoff successor update | PASS |
+| Root-file exposure sync | V16 classified `INTERNAL_ONLY` in `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json` | PASS |
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
@@ -251,6 +256,7 @@ Evidence:
 | Live diagnostic | `docs/evidence/CVF_MLW8_PEL1_RELEASE_GATE_DIAGNOSTIC_2026-06-06.json` | `live_playwright_locator_timeout` | PASS |
 | Public export | public-sync `docs/evidence/mlw8-proof-export-live-boundary-2026-06-06.md` | public commit `d97f38c08` | PASS |
 | Session sync | `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION_MEMORY.md`, `AGENT_HANDOFF_V16_2026-06-06.md` | active mode and active handoff updated | PASS |
+| Root-file exposure registry | `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json` | V16 root handoff classified `INTERNAL_ONLY` | PASS |
 | Work order status | `docs/work_orders/CVF_WO_MLW8_PEL1_PROOF_EXPORT_LIVE_2026-06-06.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Completion or reviewer artifact | `docs/reviews/CVF_MLW8_PEL1_PROOF_EXPORT_LIVE_COMPLETION_2026-06-06.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Roadmap state | `docs/baselines/CVF_GC018_MLW8_PROOF_EXPORT_LIVE_2026-06-06.md` | operator-derived GC-018 baseline; no separate roadmap | PASS |

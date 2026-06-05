@@ -100,6 +100,7 @@ Allowed scope:
 - `AGENT_HANDOFF_V16_2026-06-06.md`
 - `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V15_2026-05-29.md`
 - `AGENTS.md`
+- `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`
 
 Forbidden scope:
 
@@ -124,10 +125,15 @@ Allowed private paths:
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw8-proof-export-live-readout.ts`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw8-proof-export-live-readout.test.ts`
 - `docs/evidence/CVF_MLW8_PEL1_RELEASE_GATE_RESULT_2026-06-06.json`
+- `docs/evidence/CVF_MLW8_PEL1_RELEASE_GATE_DIAGNOSTIC_2026-06-06.json`
 - `docs/reviews/CVF_MLW8_PEL1_PROOF_EXPORT_LIVE_COMPLETION_2026-06-06.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `AGENT_HANDOFF_V15_2026-05-29.md`
+- `AGENT_HANDOFF_V16_2026-06-06.md`
+- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V15_2026-05-29.md`
+- `AGENTS.md`
+- `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`
 
 Allowed public-sync path:
 
@@ -249,6 +255,7 @@ Planned new paths clearly marked as new:
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw8-proof-export-live-readout.test.ts`
 - `docs/reviews/CVF_MLW8_PEL1_PROOF_EXPORT_LIVE_COMPLETION_2026-06-06.md`
 - `docs/evidence/CVF_MLW8_PEL1_RELEASE_GATE_RESULT_2026-06-06.json`
+- `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`
 - Public-sync: `docs/evidence/mlw8-proof-export-live-boundary-2026-06-06.md`
 
 Runtime/source facts verified from current source or canonical contract:
@@ -276,6 +283,8 @@ Runtime/source facts verified from current source or canonical contract:
 | RUNTIME_BEHAVIOR - public export requires remote, commit, and path evidence | `docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | Lines 53-63 | `EXPORTED` | Public export standard | ACCEPT |
 | EXISTS - public-sync repository boundary exists | `AGENTS.md` | Lines 127-150 | `Controlled-Vibe-Framework-CVF-public-sync` | Repository boundary instructions | ACCEPT |
 | EXISTS - public-safe MLW8 claim boundary exists | `docs/reference/CVF_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md` | Lines 34-39, 92-122 | `Blocked public wording` | Public-safe summary | ACCEPT |
+| RUNTIME_BEHAVIOR - visible root files must be exposure-classified | `governance/compat/check_prepublic_p3_readiness.py` | Lines 275-280 | `unclassified_root_file` | P3 readiness checker | ACCEPT |
+| VALUE_SET - V16 root handoff is internal-only | `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json` | Lines 67-68 | `AGENT_HANDOFF_V16_2026-06-06.md` | Root file exposure registry | ACCEPT |
 
 Completion review facts used only when no runtime/source contract exists:
 
@@ -309,7 +318,7 @@ a separate long-form roadmap.
 | Public-safe export order | Sections 4, 8, 11 | Public-sync evidence artifact and private Public Export Disposition | Public-sync commit `d97f38c08` | PASS |
 | Live/provider proof order | Sections 7, 8, 11 | Secret-safe live release gate result and diagnostic JSON | `python scripts/run_cvf_release_gate_bundle.py --json` | PASS_BOUNDED_DIAGNOSTIC |
 | Preserve MLW8 advisory-only boundary | Sections 4, 8, 10 | False authority flags and tests | Unit tests and source review | PASS |
-| Close tranche without more operator questions | Sections 3, 6C | Worker autonomy rule and allowed-scope remediation | Autorun gates | PASS |
+| Close tranche without more operator questions | Sections 3, 6C | Worker autonomy rule, allowed-scope remediation, and V16 root-file exposure classification | Autorun gates | PASS |
 
 ## 6C. Worker Autonomy / No-Question Rule
 
