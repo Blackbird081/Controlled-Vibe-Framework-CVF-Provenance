@@ -2,13 +2,21 @@
 
 Memory class: FULL_RECORD
 
-Status: READY_FOR_OPERATOR_REVIEW
+Status: DISPATCHED
 
 docType: work_order
 
 Date: 2026-06-05
 
 dispatchBaseHead: `036a9458`
+
+dispatchTransitionBaseHead: `061c3791`
+
+executionBaseHead: `N/A with reason - worker must capture fresh execution base
+before implementation edits`
+
+closureBaseHead: `N/A with reason - dispatch transition only; future closure
+review must capture a fresh closure base`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -32,6 +40,7 @@ implementation, Learning Orchestrator runtime behavior, or autonomous mutation.
 | Authority | Evidence | Disposition |
 | --- | --- | --- |
 | Operator direction | 2026-06-05: "tiến hành thi công" after MLW7 runtime adapter boundary GC-018 was authorized | ACCEPT |
+| Operator dispatch | 2026-06-06: "tiếp tục dispatch" | ACCEPT |
 | MLW7 runtime adapter boundary GC-018 | `docs/baselines/CVF_GC018_MLW7_RUNTIME_ADAPTER_BOUNDARY_2026-06-05.md` at commit `7d7d6eda` | ACCEPT |
 | Active session state | `CVF_SESSION/ACTIVE_SESSION_STATE.json` at commit `036a9458` | ACCEPT |
 | MLW-NRD1 closure | `docs/reviews/CVF_MLW_NRD1_NEXT_RUNTIME_DECISION_READOUT_COMPLETION_2026-06-05.md` | ACCEPT |
@@ -53,8 +62,9 @@ secrets/quota use, destructive action, or claim-boundary expansion.
 | Anchor | Current value | Required handling |
 | --- | --- | --- |
 | `dispatchBaseHead` | `036a9458` | Work-order authoring base captured before this packet |
-| `executionBaseHead` | TO_CAPTURE_AT_DISPATCH | Must be captured immediately before implementation |
-| `closureBaseHead` | TO_CAPTURE_AT_CLOSURE_REVIEW | Must be captured before closure review |
+| `dispatchTransitionBaseHead` | `061c3791` | Dispatch transition base captured before changing status to `DISPATCHED` |
+| `executionBaseHead` | N/A with reason - worker must capture fresh execution base before implementation edits | Must be captured immediately before implementation |
+| `closureBaseHead` | N/A with reason - dispatch transition only; future closure review must capture fresh closure base | Must be captured before closure review |
 | Commit mode | `WORKER_MUST_NOT_COMMIT` | Worker returns evidence; reviewer/committer handles closure and commits |
 
 ## Agent Roles
@@ -64,7 +74,7 @@ secrets/quota use, destructive action, or claim-boundary expansion.
 | Orchestrator | Codex authoring packet and future dispatch coordinator |
 | Worker | Future explicitly dispatched implementation agent |
 | Reviewer / committer | Independent closure review, session sync, and commit |
-| Operator checkpoint | Required before install, execute, live proof, public-sync, registry authority, delegation authority, marketplace publication, or runtime adapter implementation beyond boundary/readout |
+| Operator checkpoint | Dispatch approved on 2026-06-06; still required before install, execute, live proof, public-sync, registry authority, delegation authority, marketplace publication, or runtime adapter implementation beyond boundary/readout |
 
 ## Scope
 
@@ -303,7 +313,6 @@ if any of these conditions occur:
 
 Explicit operator approval is required before:
 
-- dispatching implementation from this `READY_FOR_OPERATOR_REVIEW` work order;
 - expanding from boundary/admission/readout behavior into executable runtime
   adapter implementation;
 - package install, external command/tool execution, external repo ingestion,

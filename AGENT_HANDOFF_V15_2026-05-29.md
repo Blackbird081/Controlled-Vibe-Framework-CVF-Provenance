@@ -1065,6 +1065,50 @@ Rollback boundary: if this sync is wrong, restore only the MLW7-RTAD1
 continuity text in the protected session files and this handoff section. Do
 not revert unrelated operator or workspace changes.
 
+Current HEAD recorded for this handoff: `061c3791` (Pre-MLW7-RTAD1 dispatch
+transition base; material commit pending). Updated 2026-06-06 after operator
+instructed `tiếp tục dispatch` from the MLW7-RTAD1 work-order review state.
+Material artifact in this batch:
+`docs/work_orders/CVF_WO_MLW7_RTAD1_RUNTIME_ADAPTER_BOUNDARY_ADMISSION_2026-06-05.md`.
+Current mode is
+`mlw7_rtad1_runtime_adapter_boundary_work_order_dispatched`. Next allowed
+move: execute the dispatched `MLW7-RTAD1` work order by capturing a fresh
+`executionBaseHead`, running pre-implementation, refreshing source
+verification, and implementing only deterministic boundary/admission/readout
+helper behavior plus focused tests; or stop for review. Boundary remains no
+runtime adapter implementation beyond boundary/readout, package install,
+external execution, external repo ingestion, delegation approval, registry
+authority, marketplace/public claim, public-sync, live/provider proof, hosted
+readiness, production readiness, public readiness, memory reinjection,
+automatic promotion, high-risk promotion implementation, Learning Orchestrator
+runtime behavior, or autonomous mutation.
+
+## Core Guard Self-Protection Authorization - MLW7-RTAD1 Dispatch Session Sync
+
+Authorized guard-maintenance scope: record MLW7-RTAD1 dispatch state, current
+mode
+`mlw7_rtad1_runtime_adapter_boundary_work_order_dispatched`, and the next
+allowed worker-execution move.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION_MEMORY.md`
+- `AGENT_HANDOFF_V15_2026-05-29.md`
+
+Operator authorization: 2026-06-06 operator instructed `tiếp tục dispatch`.
+This sync records dispatch authorization only. It does not authorize runtime
+adapter implementation beyond boundary/readout, package install, external
+execution, external repo ingestion, delegation approval, registry authority,
+marketplace/public claim, public-sync, live/provider proof, hosted readiness,
+production readiness, public readiness, memory reinjection, automatic
+promotion, high-risk promotion implementation, Learning Orchestrator runtime
+behavior, or autonomous mutation.
+
+Rollback boundary: if this sync is wrong, restore only the MLW7-RTAD1 dispatch
+continuity text in the protected session files and this handoff section. Do
+not revert unrelated operator or workspace changes.
+
 ## Claim Boundary
 
 This handoff is a continuity and routing artifact. It does not prove runtime
