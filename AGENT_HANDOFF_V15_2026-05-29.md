@@ -748,6 +748,29 @@ Current HEAD recorded for this handoff: `1bc5c599` (Reconcile MKG7-T6 derived gr
 Current HEAD recorded for this handoff: `9c1e7590` (Align MKG7-T6 closure session-sync scope). Updated 2026-06-05 after the T6 work order Allowed scope was aligned with the handoff-only session-continuity file present in the closure range. Boundary: closure-scope alignment only; no runtime/source edits, graph persistence, retrieval authority expansion, public-sync, live proof, hosted readiness, production readiness, public readiness, or autonomous mutation.
 Current HEAD recorded for this handoff: `2c3f889e` (Pre-MLW next-runtime decision GC-018 base; material commit pending). Updated 2026-06-05 after operator requested `MLW next-runtime decision GC-018`. Material artifact in this batch: `docs/baselines/CVF_GC018_MLW_NEXT_RUNTIME_DECISION_2026-06-05.md`; session continuity paths are updated under that baseline's core-guard authorization. Next allowed move: author source-verified `MLW-NRD1` work order, or stop for review. Boundary: no route wiring implementation, external capability execution, runtime adapter authority, automatic optimization, benchmark/cost proof, high-risk promotion implementation, public-sync, live proof, hosted readiness, production readiness, public readiness, memory reinjection, automatic promotion, or autonomous mutation.
 Current HEAD recorded for this handoff: `28b86f92` (Authorize MLW next-runtime decision GC-018). Updated 2026-06-05 after material commit `docs(mlw): authorize next runtime decision baseline`. Baseline: `docs/baselines/CVF_GC018_MLW_NEXT_RUNTIME_DECISION_2026-06-05.md`; current mode is `mlw_next_runtime_decision_gc018_authorized_hold_for_work_order`. Next allowed move: author source-verified `MLW-NRD1` work order, or stop for review. Boundary remains no route wiring implementation, external capability execution, runtime adapter authority, automatic optimization, benchmark/cost proof, high-risk promotion implementation, public-sync, live proof, hosted readiness, production readiness, public readiness, memory reinjection, automatic promotion, or autonomous mutation.
+Current HEAD recorded for this handoff: `7352799f` (Author MLW-NRD1 next-runtime decision work order). Updated 2026-06-05 after material commit `docs(mlw): author nrd1 work order`. Work order: `docs/work_orders/CVF_WO_MLW_NRD1_NEXT_RUNTIME_DECISION_READOUT_2026-06-05.md`; status is `READY_FOR_OPERATOR_REVIEW`. Next allowed move: operator review and explicit dispatch of MLW-NRD1 advisory decision/readout implementation, or stop for review. Boundary remains no external capability execution, runtime adapter authority, automatic optimization, benchmark/cost proof, high-risk promotion implementation, public-sync, live/provider proof, hosted readiness, production readiness, public readiness, memory reinjection, automatic promotion, or autonomous mutation.
+
+## Core Guard Self-Protection Authorization - MLW-NRD1 Work Order Session Sync
+
+Authorized guard-maintenance scope: record MLW-NRD1 work-order material commit
+`7352799f`, current mode
+`mlw_nrd1_next_runtime_decision_work_order_ready_for_operator_review`, and next
+allowed move after source-verified work-order authoring.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION_MEMORY.md`
+- `AGENT_HANDOFF_V15_2026-05-29.md`
+
+Operator authorization: 2026-06-05 operator explicitly requested authoring the
+source-verified `MLW-NRD1` work order. This sync records session continuity
+only; it does not authorize runtime implementation.
+
+Rollback boundary: if this sync is wrong, restore only the MLW-NRD1 continuity
+text in the protected session files and this handoff section. Do not revert
+material commit `7352799f` unless the work-order packet itself is being
+unwound.
 
 ## Core Guard Self-Protection Authorization - Public-Safe Summary Closure Session Sync
 

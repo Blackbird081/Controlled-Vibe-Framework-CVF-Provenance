@@ -477,6 +477,10 @@ Operator authorization: 2026-06-05 operator explicitly requested authoring the
 source-verified `MLW-NRD1` work order. This authorization is continuity-only
 and does not authorize runtime implementation.
 
+Session-sync applicability: this same authorization covers the protected-file
+continuity sync that records material commit `7352799f` after work-order
+authoring.
+
 Rollback boundary: if this sync is wrong, restore only this work-order packet
 and the `MLW-NRD1` continuity text in protected session files. Do not revert
 prior GC-018, MLW7, MLW8, LO2, public-safe summary, or MKG7-T6 closure work.

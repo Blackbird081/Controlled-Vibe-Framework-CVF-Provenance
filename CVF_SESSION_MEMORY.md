@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-05
 
-Current mode marker: `mlw_next_runtime_decision_gc018_authorized_hold_for_work_order`
+Current mode marker: `mlw_nrd1_next_runtime_decision_work_order_ready_for_operator_review`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `mlw_next_runtime_decision_gc018_authorized_hold_for_work_order`.
+Current mode: `mlw_nrd1_next_runtime_decision_work_order_ready_for_operator_review`.
 
 Active handoff:
 
@@ -50,6 +50,23 @@ Active review queue:
 
 Latest continuity note:
 
+MLW-NRD1 Next Runtime Decision Readout work order is
+`READY_FOR_OPERATOR_REVIEW`:
+
+`docs/work_orders/CVF_WO_MLW_NRD1_NEXT_RUNTIME_DECISION_READOUT_2026-06-05.md`
+
+Material commit: `7352799f`.
+
+Next allowed move: operator review and explicit dispatch of MLW-NRD1 advisory
+next-runtime decision/readout implementation, or stop for review. MLW7 external
+execution/runtime adapter, MLW8 optimization/benchmark/cost proof, LO2
+high-risk promotion implementation, public-sync, live/provider proof, hosted
+readiness, production readiness, public readiness, memory reinjection,
+automatic promotion, and autonomous mutation remain separate
+operator-authorized lanes.
+
+Previous continuity note:
+
 MLW Next Runtime Decision GC-018 is `GC018_AUTHORIZED_HOLD_FOR_WORK_ORDER`:
 
 `docs/baselines/CVF_GC018_MLW_NEXT_RUNTIME_DECISION_2026-06-05.md`
@@ -62,12 +79,10 @@ optimization, benchmark/cost proof, high-risk promotion implementation,
 public-sync, live proof, hosted readiness, production readiness, public
 readiness, memory reinjection, automatic promotion, or autonomous mutation.
 
-Next allowed move: author a source-verified `MLW-NRD1` work order, or stop for
-review. MLW7 external execution/runtime adapter, MLW8 optimization/benchmark,
-LO2 high-risk promotion implementation, public-sync, and live/provider proof
-remain separate operator-authorized lanes.
+Superseded next-move note: MLW-NRD1 work-order authoring is complete at
+material commit `7352799f`.
 
-Previous continuity note:
+Earlier continuity note:
 
 Public-Safe Memory/Learning Summary packet is `CLOSED_PASS_BOUNDED`:
 
@@ -146,8 +161,9 @@ overclaims, and missing checker-recognized core-guard authorization before the
 full pre-closure bundle emits a longer finding list.
 
 Superseded next-move note: public-safe memory/learning summary execution is
-complete. Current next allowed move is the MLW-NRD1 source-verified work order
-authorized by `docs/baselines/CVF_GC018_MLW_NEXT_RUNTIME_DECISION_2026-06-05.md`.
+complete. The MLW-NRD1 source-verified work order authorized by
+`docs/baselines/CVF_GC018_MLW_NEXT_RUNTIME_DECISION_2026-06-05.md` is now
+ready for operator review.
 
 Pain-point closure direction:
 
@@ -416,8 +432,9 @@ Checker:
 `governance/compat/check_closure_packaging_preflight.py`
 
 Superseded next-move note: public-safe memory/learning summary execution is
-complete. Current next allowed move is the MLW-NRD1 source-verified work order
-authorized by `docs/baselines/CVF_GC018_MLW_NEXT_RUNTIME_DECISION_2026-06-05.md`.
+complete. The MLW-NRD1 source-verified work order authorized by
+`docs/baselines/CVF_GC018_MLW_NEXT_RUNTIME_DECISION_2026-06-05.md` is now
+ready for operator review.
 This does not authorize public-sync, public push, Learning Orchestrator
 runtime implementation, high-risk promotion implementation, automatic
 promotion, autonomous mutation, external capability install/execute,
