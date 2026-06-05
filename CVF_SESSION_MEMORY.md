@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-06
 
-Current mode marker: `le1_live_e2e_selector_flow_diagnostic_closed_pass_bounded`
+Current mode marker: `external_review_get_started_claude_handoff`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `le1_live_e2e_selector_flow_diagnostic_closed_pass_bounded`.
+Current mode: `external_review_get_started_claude_handoff`.
 
 Active handoff:
 
@@ -49,6 +49,34 @@ Active review queue:
 `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
 
 Latest continuity note:
+
+External review gap-analysis intake has been repaired and made trackable:
+
+`docs/audits/CVF_EXTERNAL_REVIEW_GAP_ANALYSIS_AND_PROPOSED_SOLUTIONS_2026-06-05.md`
+
+Claude handoff work order:
+
+`docs/work_orders/CVF_AGENT_WORK_ORDER_EXTERNAL_REVIEW_GET_STARTED_FRESHNESS_FOR_CLAUDE_2026-06-06.md`
+
+Evidence:
+
+- Material commit: `b0debdaf`.
+- The audit packet was previously hidden by local `.git/info/exclude`; that
+  local ignore entry was removed before commit so the packet could be tracked.
+- Pre-dispatch autorun gate passed on range `c55697ac..HEAD`.
+- Public Export Disposition: `DEFERRED_PRIVATE_ONLY`.
+
+Next allowed move: hand off the Claude work order above for documentation-only
+GET_STARTED freshness, public glossary, and release-readiness freshness-check
+repair. Claude must not commit. Blocked without separate authorization and
+passing phase gates: runtime/source code changes, dependency changes,
+public-sync or public push, live/provider proof, durable persistence work,
+governance-rule removal, public/hosted/production readiness claims,
+cost/performance/provider-quality claims, memory reinjection, high-risk
+promotion implementation, Learning Orchestrator runtime behavior, and
+autonomous mutation.
+
+Earlier continuity note:
 
 LE1 Live E2E Selector Flow Diagnostic is `CLOSED_PASS_BOUNDED`:
 
@@ -69,23 +97,6 @@ Evidence:
   `docs/evidence/CVF_LE1_RELEASE_GATE_RESULT_2026-06-06.json`
 - Diagnostic:
   `docs/evidence/CVF_LE1_RELEASE_GATE_DIAGNOSTIC_2026-06-06.json`
-
-LE1 closes the live-E2E selector/test-flow diagnostic opened after MLW8-PEL1.
-The shared Playwright helper now uses request-level NextAuth sign-in before UI
-fallback and signed service-token headers for direct `/api/execute` live route
-proofs when `CVF_SERVICE_TOKEN` is available. Focused live Playwright passed
-with 8 expected, 1 skipped, 0 unexpected. The full release gate passed with
-live credentials: build, guard-contract typecheck, provider readiness, secrets
-scan, docs governance, mock E2E, and live Playwright governance all PASS.
-
-Next allowed move: stop for review or open a fresh, separately authorized
-GC-018/work order for the next product/governance tranche. Blocked without
-separate authorization and passing phase gates: automatic optimization,
-prompt/context mutation, policy relaxation, evidence reduction, provider
-routing change, public/hosted/production readiness claim,
-cost/performance/provider-quality claim, memory reinjection, high-risk
-promotion implementation, Learning Orchestrator runtime behavior, and
-autonomous mutation.
 
 Previous continuity note:
 

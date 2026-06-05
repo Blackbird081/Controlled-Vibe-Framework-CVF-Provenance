@@ -19,6 +19,7 @@ Target:
 
 - active startup routing;
 - latest mode and next allowed move;
+- external review gap-analysis repair and Claude handoff packet;
 - bounded closure state for LE1 after MLW8-PEL1;
 - handoff rotation evidence.
 
@@ -32,15 +33,15 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`le1_live_e2e_selector_flow_diagnostic_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=stop for review or open a fresh separately authorized GC-018/work order for the next product/governance tranche; parked checkpoint=none.
+Startup acknowledged: current mode=`external_review_get_started_claude_handoff`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=hand off the source-verified GET_STARTED freshness work order to Claude under documentation-only/no-commit constraints; parked checkpoint=none.
 
 ## Current Mode
 
-`le1_live_e2e_selector_flow_diagnostic_closed_pass_bounded`
+`external_review_get_started_claude_handoff`
 
-Current HEAD recorded for this handoff: `d63eeb258fb902a7dea91490fe59f742aaad2ef8`
-(LE1 closure/session sync parent commit; this dedicated handoff sync records
-closure continuity).
+Current HEAD recorded for this handoff: `b0debdaf86f7222fda78868c80f3162cb67711a2`
+(external-review audit repair and Claude work-order parent commit; this
+dedicated handoff sync records next-move continuity).
 
 ## Active Boundary
 
@@ -65,12 +66,44 @@ Only V16 should be treated as the active root handoff.
 - Recorded MLW8-PEL1 bounded diagnostic closure and public-safe export evidence.
 - Closed LE1 live E2E selector/test-flow diagnostic with focused live
   Playwright PASS and full release gate PASS.
+- Repaired and tracked the external review gap-analysis audit packet:
+  `docs/audits/CVF_EXTERNAL_REVIEW_GAP_ANALYSIS_AND_PROPOSED_SOLUTIONS_2026-06-05.md`.
+- Created the source-verified Claude handoff work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_EXTERNAL_REVIEW_GET_STARTED_FRESHNESS_FOR_CLAUDE_2026-06-06.md`.
 - Classified V16 as an `INTERNAL_ONLY` visible root file for P3/public exposure
   guard compatibility.
-- Preserved next allowed move as stop for review or a fresh separately
-  authorized GC-018/work order.
+- Updated next allowed move to documentation-only Claude handoff execution.
 
 ## Latest Continuity Note
+
+External review gap-analysis intake is repaired and ready for Claude handoff.
+
+Private artifacts:
+
+- Audit:
+  `docs/audits/CVF_EXTERNAL_REVIEW_GAP_ANALYSIS_AND_PROPOSED_SOLUTIONS_2026-06-05.md`
+- Claude work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_EXTERNAL_REVIEW_GET_STARTED_FRESHNESS_FOR_CLAUDE_2026-06-06.md`
+
+Verification summary:
+
+- Material commit: `b0debdaf`.
+- Local `.git/info/exclude` no longer hides the audit packet.
+- Pre-dispatch autorun gate: PASS on `c55697ac..HEAD`.
+- Public Export Disposition: `DEFERRED_PRIVATE_ONLY`.
+
+Boundary:
+
+- Claude work is documentation-only and must not commit.
+- Allowed scope is limited to `docs/GET_STARTED.md`,
+  `docs/reference/CVF_RELEASE_READINESS_STATUS_2026-03-20.md`, and one
+  completion review under `docs/reviews/`.
+- Runtime/source code, dependencies, public-sync/public push, live/provider
+  proof, durable persistence work, governance-rule removal, hosted readiness,
+  production readiness, public readiness, and autonomous mutation remain
+  blocked.
+
+Previous continuity:
 
 LE1 Live E2E Selector Flow Diagnostic is `CLOSED_PASS_BOUNDED`.
 
@@ -126,8 +159,14 @@ Diagnostic boundary:
 
 ## Next Allowed Move
 
-Stop for review or open a fresh, separately authorized GC-018/work order for
-the next product/governance tranche.
+Hand off
+`docs/work_orders/CVF_AGENT_WORK_ORDER_EXTERNAL_REVIEW_GET_STARTED_FRESHNESS_FOR_CLAUDE_2026-06-06.md`
+to Claude for documentation-only GET_STARTED freshness, public glossary, and
+release-readiness freshness-check repair.
+
+Claude must not commit. Codex or the orchestrator must review Claude's diff,
+run the required phase gates on a real base/head range, and perform any commit
+separately.
 
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`; this MLW8-PEL1 tranche does not alter
@@ -136,6 +175,11 @@ the LHW sequence.
 Blocked without separate authorization and passing phase gates:
 
 - automatic optimization;
+- runtime/source code changes;
+- dependency changes;
+- durable persistence work;
+- public-sync or public push;
+- live/provider proof;
 - prompt/context mutation;
 - policy relaxation or evidence reduction;
 - provider routing change;
