@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-05
 
-Current mode marker: `mlw3_rt1_evidence_to_learning_runtime_proof_closed_pass_bounded`
+Current mode marker: `mlw4_mlw6_rt1_continuity_audit_simulation_runtime_chain_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `mlw3_rt1_evidence_to_learning_runtime_proof_closed_pass_bounded`.
+Current mode: `mlw4_mlw6_rt1_continuity_audit_simulation_runtime_chain_closed_pass_bounded`.
 
 Active handoff:
 
@@ -50,23 +50,25 @@ Active review queue:
 
 Latest continuity note:
 
-MLW3-RT1 Evidence-To-Learning Runtime Proof is CLOSED_PASS_BOUNDED for
-route-visible metadata-only `/api/execute` evidence-to-learning proposal
-evidence. Completion review:
-`docs/reviews/CVF_MLW3_RT1_EVIDENCE_TO_LEARNING_RUNTIME_PROOF_COMPLETION_2026-06-05.md`.
+MLW4-MLW6 RT1 Continuity Audit Simulation Runtime Chain is
+CLOSED_PASS_BOUNDED for route-visible metadata-only `/api/execute`
+`executionContinuityHandoffReadout`, `auditFeedbackValidationReadout`, and
+`simulationFailureGateReadout`. Completion review:
+`docs/reviews/CVF_MLW4_MLW6_RT1_CONTINUITY_AUDIT_SIMULATION_RUNTIME_CHAIN_COMPLETION_2026-06-05.md`.
 GC-018:
-`docs/baselines/CVF_GC018_MLW3_RT1_EVIDENCE_TO_LEARNING_RUNTIME_PROOF_2026-06-05.md`.
+`docs/baselines/CVF_GC018_MLW4_MLW6_RT1_CONTINUITY_AUDIT_SIMULATION_RUNTIME_CHAIN_2026-06-05.md`.
 Work order:
-`docs/work_orders/CVF_WO_MLW3_RT1_EVIDENCE_TO_LEARNING_RUNTIME_PROOF_2026-06-05.md`.
-Implementation commit: `463b54bd`. Deterministic regressions, TypeScript, and
-Alibaba live proof passed after one classified output-bypass-guard failure.
-MLW2-RT1 remains closed for route-visible context bundle evidence; MLW-RT1
-remains closed for existing file-backed durable-memory write/read continuity.
-LHW24 remains the latest closed numbered LHW wave. Boundary: proposal metadata
-proof only; no truth-model mutation, Learning Orchestrator implementation,
-model tuning, prompt mutation, provider routing change, public-sync, hosted
-readiness, production readiness, public readiness, MLW7/MLW8, or autonomous
-mutation claim.
+`docs/work_orders/CVF_WO_MLW4_MLW6_RT1_CONTINUITY_AUDIT_SIMULATION_RUNTIME_CHAIN_2026-06-05.md`.
+Implementation commit: `35ccfba7`. Deterministic regressions, TypeScript, and
+Alibaba live proof passed. MLW3-RT1 remains closed for route-visible
+evidence-to-learning proposal evidence; MLW2-RT1 remains closed for
+route-visible context bundle evidence; MLW-RT1 remains closed for existing
+file-backed durable-memory write/read continuity. LHW24 remains the latest
+closed numbered LHW wave. Boundary: metadata readout proof only; no
+truth-model mutation, trust/policy mutation, Learning Orchestrator
+implementation, model tuning, prompt mutation, provider routing change,
+public-sync, hosted readiness, production readiness, public readiness,
+MLW7/MLW8, or autonomous mutation claim.
 
 Pain-point closure direction:
 
