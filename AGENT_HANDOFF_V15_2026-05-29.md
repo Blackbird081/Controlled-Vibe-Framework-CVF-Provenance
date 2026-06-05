@@ -47,6 +47,7 @@ Current HEAD recorded for this handoff: `b3c4ce3a` (Dispatch ERH DUR1 durable ev
 Current HEAD recorded for this handoff: `8d37b861` (Sync ERH DUR1 dispatch state). Updated 2026-06-05 after DUR1 dispatch continuity was synchronized across active state, session memory, handoff, and the DUR1 work order authorization block. This is session-continuity sync only; Claude may execute DUR1 under `WORKER_MUST_NOT_COMMIT`; external DB/Redis, rate limiter, provider-risk config, package/lockfile edits, public-sync, live proof, hosted readiness, production readiness, public readiness, and production-grade durability claims remain out of scope.
 Current HEAD recorded for this handoff: `49e6725a` (Add RS2 rescan intelligence hardening foundation). Updated 2026-06-05 after RS2 introduced a reusable rescan delta/routing/adversarial-sampling standard and checker. This is control-plane scan-layer hardening only; no runtime, public-sync, live proof, hosted readiness, production readiness, or public readiness claim is added.
 Current HEAD recorded for this handoff: `d6dfae03` (Close ERH DUR1 durable evidence workflow). Updated 2026-06-05 after Claude's DUR1 worker output was reviewed and accepted bounded: control-plane events default to `.cvf/runtime`, policySnapshotId delegates to a bounded persisted local policy snapshot registry, focused tests and DUR1 checker pass, GC-052 interlock is wired, and DUR2 decision is `DUR2_NOT_NEEDED_NOW`. Boundary: no external DB/Redis, distributed durability, rate limiter, provider-risk config, package/lockfile edit, public-sync, live proof, hosted readiness, production readiness, public readiness, or production-grade durability claim.
+Current HEAD recorded for this handoff: `649b9808` (docs(corpus): triage legacy partial scan roots). Updated 2026-06-05 after CI1-T9 committed the legacy partial-root triage packet and GC-051 registry refresh. CI1-T10 cortex-hub deep scan artifacts are staged for commit; `.private_reference/legacy/CVF_Important/ADDING_LEARNING PLANE/` remains the next memory/learning-priority scan candidate after T10. Boundary: private source-analysis only; no runtime, public-sync, live proof, hosted readiness, production readiness, or public readiness claim.
 
 ## Latest Work / Changes (2026-05-30)
 
@@ -710,10 +711,10 @@ Current HEAD recorded for this handoff: `f4e2405f` (Sync session after CI1-T8 re
 
 ## Core Guard Self-Protection Authorization
 
-Authorized session-continuity sync scope: record ERH-DUR2 closure, current mode
-`erh_dur2_external_storage_distributed_durability_closed_pass_bounded`, DUR1
-`CLOSED_PASS_BOUNDED` (closureBaseHead=49e6725a), DUR2 `CLOSED_PASS_BOUNDED`,
-DUR3 `DUR3_NOT_NEEDED_NOW`, and SAF3 `SAF3_NOT_NEEDED`.
+Authorized guard-maintenance scope: record CI1-T9 commit `649b9808`, current
+mode `ci1_t10_cortex_hub_memory_learning_deep_scan_pending_commit`, staged
+CI1-T10 cortex-hub deep scan artifacts, and the next recommended CI1-T11 scan
+candidate `.private_reference/legacy/CVF_Important/ADDING_LEARNING PLANE/`.
 
 Protected paths:
 
@@ -721,13 +722,15 @@ Protected paths:
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V15_2026-05-29.md`
 
-Operator authorization: 2026-06-05 operator reported ERH-DUR2 complete and
-requested Codex review/closure. This sync records the DUR2 reviewed closure
-state only.
+Operator authorization: 2026-06-05 operator explicitly authorized the next
+deep scan, "ok, deep scan ke tiep I1-T10". This sync records T10 continuity
+only so the staged scan artifacts can be committed under the active session
+guard.
 
-Rollback boundary: if this sync is wrong, restore only the ERH-DUR2 continuity
-text. Do not revert DUR2 source, checker, roadmap, work order, review, GC-018,
-or historical handoff content.
+Rollback boundary: if this sync is wrong, restore only the CI1-T10 continuity
+text in the protected session files. Do not revert CI1-T9 commit `649b9808`,
+the T10 corpus scan artifacts, registry findings, source corpus files, public
+sync history, or historical handoff content.
 
 ## Claim Boundary
 

@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-05
 
-Current mode marker: `ci1_t8_cvf_edit_full_reconciliation_closed_pass_bounded`
+Current mode marker: `ci1_t10_cortex_hub_memory_learning_deep_scan_pending_commit`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `ci1_t8_cvf_edit_full_reconciliation_closed_pass_bounded`.
+Current mode: `ci1_t10_cortex_hub_memory_learning_deep_scan_pending_commit`.
 
 Active handoff:
 
@@ -47,6 +47,17 @@ Active state registry:
 Active review queue:
 
 `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
+
+Latest continuity note:
+
+CI1-T9 legacy partial-root triage is committed at `649b9808`. CI1-T10
+cortex-hub deep scan artifacts are staged for commit: GC-018, deep scan
+packet, finding packet, and corpus scan registry update. After T10 commit and
+gates, the next recommended private legacy deep scan is
+`.private_reference/legacy/CVF_Important/ADDING_LEARNING PLANE/` as CI1-T11
+unless the operator redirects. Boundary: private source-analysis only; no
+runtime, public-sync, hosted readiness, production readiness, public readiness,
+or live proof claim.
 
 Pain-point closure direction:
 
@@ -253,15 +264,11 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-ERH-SAF2 Output Safety And Regression Corpus is `CLOSED_PASS_BOUNDED`:
-
-`docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_SAF2_OUTPUT_SAFETY_AND_REGRESSION_CORPUS_FOR_CLAUDE_2026-06-05.md`
-
-Commit `cf88f9cb` closes bounded SAF2: governance-specific output patterns,
-`OUTPUT_SAFETY_TRIGGERED` first-detection audit wiring before retry exhaustion,
-SAF1 adversarial regression corpus, SAF2 checker/hook wiring, GC-052 interlock,
-and completion review. SAF3 decision is `SAF3_NOT_NEEDED`; SAF3 implementation
-is not opened.
+CI1-T10 cortex-hub memory/learning deep scan is prepared for commit after T9
+commit `649b9808`. Commit the staged T10 GC-018, audit packet, finding packet,
+and registry update after continuity gates pass. Then proceed to CI1-T11
+`.private_reference/legacy/CVF_Important/ADDING_LEARNING PLANE/` for the next
+memory/learning-priority deep scan unless the operator redirects.
 
 ERH-DUR1 Durable Evidence And Policy Snapshot is `CLOSED_PASS_BOUNDED`:
 

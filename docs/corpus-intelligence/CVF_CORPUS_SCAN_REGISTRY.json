@@ -245,6 +245,109 @@
       "hashInput": "manifest-internal-hash-from-script-output"
     },
     {
+      "id": "legacy-cvf-add-cortex-hub",
+      "corpusType": "LEGACY_FOLDER",
+      "displayName": "CVF ADD / cortex-hub",
+      "scopePaths": [
+        ".private_reference/legacy/CVF ADD/cortex-hub/"
+      ],
+      "fileCount": 11,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "CI1-T10",
+      "scanDate": "2026-06-05",
+      "manifestHash": "4283027364513ba3b82c83ce32ac1b09db02ba0c8fd5500108e56b3b8555e908",
+      "manifestPath": null,
+      "packetPath": "docs/audits/CVF_CI1_T10_CORTEX_HUB_MEMORY_LEARNING_DEEP_SCAN_PACKET_2026-06-05.md",
+      "completionReviewPath": null,
+      "findingPacketPath": "docs/corpus-intelligence/findings/legacy-cvf-add-cortex-hub.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_CI1_T10_CORTEX_HUB_MEMORY_LEARNING_DEEP_SCAN_2026-06-05.md",
+      "verdicts": {
+        "gc047": "COMPLETE_VERIFIED",
+        "gc048": "RECONCILED_VERIFIED",
+        "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+      },
+      "semanticRegions": [
+        "CORTEX_INTEGRATION_BOUNDARY",
+        "MEMORY_KNOWLEDGE_ADAPTER",
+        "CODE_INTELLIGENCE_CONTEXT",
+        "SHARED_KNOWLEDGE_LEARNING",
+        "MCP_BRIDGE_BOUNDARY",
+        "CORTEX_GUARD_POLICY",
+        "TRACE_AUDIT_MODEL",
+        "RECORD_CHAIN_BINDING"
+      ],
+      "priorAbsorption": "CI1-T9 selected cortex-hub as the highest-value memory/learning deep scan candidate; current-source negative search found no direct cortex-hub absorption in active owner surfaces",
+      "findings": [
+        {
+          "id": "T10-F1-cortex-provider-contract-value",
+          "summary": "cortex-hub is accepted as a CVF-first capability-provider contract seed for memory, shared knowledge, code intelligence, MCP bridge, guard/policy, trace/audit, and record-chain planning",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Use as source-backed reference; do not claim runtime integration",
+          "defectClass": "N/A",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "packetRef": "docs/audits/CVF_CI1_T10_CORTEX_HUB_MEMORY_LEARNING_DEEP_SCAN_PACKET_2026-06-05.md",
+          "findingPacketRef": "docs/corpus-intelligence/findings/legacy-cvf-add-cortex-hub.md"
+        },
+        {
+          "id": "T10-F2-memory-shared-knowledge-workflow-chain-deferred",
+          "summary": "memory and shared-knowledge adapter/sync policy value is strong but not current runtime; implementation requires separate workflow-chain design and source verification",
+          "disposition": "DEFER_WITH_ROADMAP",
+          "nextAction": "Open future fresh GC-018/work order for memory-governance workflow chain if authorized",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/audits/CVF_CI1_T10_CORTEX_HUB_MEMORY_LEARNING_DEEP_SCAN_PACKET_2026-06-05.md#finding-to-governance-learning-disposition",
+          "findingPacketRef": "docs/corpus-intelligence/findings/legacy-cvf-add-cortex-hub.md#t10-f2---memory-and-shared-knowledge-workflow-chain-absent"
+        },
+        {
+          "id": "T10-F3-code-intelligence-mcp-runtime-deferred",
+          "summary": "code intelligence and MCP bridge contracts are useful but runtime-touching and require separate source-verified implementation",
+          "disposition": "DEFER_PHASED",
+          "nextAction": "Consider after memory-governance workflow-chain design; no MCP/runtime edit is authorized by CI1-T10",
+          "defectClass": "OPERATOR_SCOPE_CLARITY_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/audits/CVF_CI1_T10_CORTEX_HUB_MEMORY_LEARNING_DEEP_SCAN_PACKET_2026-06-05.md#finding-to-governance-learning-disposition",
+          "findingPacketRef": "docs/corpus-intelligence/findings/legacy-cvf-add-cortex-hub.md#t10-f3---code-intelligence-and-mcp-runtime-value-deferred"
+        },
+        {
+          "id": "T10-F4-trace-record-binding-current-symbol-reconciliation",
+          "summary": "trace/W7 record-chain binding is valuable for preventing fake-learning paths, but legacy W7 symbol names require current-source reconciliation before implementation",
+          "disposition": "DEFER_WITH_ROADMAP",
+          "nextAction": "Future implementation packet must source-verify current record schemas and field names",
+          "defectClass": "RUNTIME_SIGNAL_GAP",
+          "learningLane": "RUNTIME_BEHAVIOR_LEARNING",
+          "f2gRef": "docs/audits/CVF_CI1_T10_CORTEX_HUB_MEMORY_LEARNING_DEEP_SCAN_PACKET_2026-06-05.md#finding-to-governance-learning-disposition",
+          "findingPacketRef": "docs/corpus-intelligence/findings/legacy-cvf-add-cortex-hub.md#t10-f4---tracew7-binding-needs-current-symbol-reconciliation"
+        },
+        {
+          "id": "T10-F5-parallel-authority-rejected",
+          "summary": "conductor, runtime ownership, governance ownership, truth authority, and autonomous-learning authority are rejected for cortex-hub integration",
+          "disposition": "REJECT",
+          "nextAction": "Carry no-parallel-authority boundary into future work orders",
+          "defectClass": "N/A",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "findingPacketRef": "docs/corpus-intelligence/findings/legacy-cvf-add-cortex-hub.md#t10-f5---parallel-authority-rejected"
+        },
+        {
+          "id": "T10-F6-ci1-t11-still-needed",
+          "summary": "cortex-hub is integration/provider focused and does not replace the need to deep-scan CVF_Important/ADDING_LEARNING PLANE/",
+          "disposition": "DEFER_PHASED",
+          "nextAction": "Queue CI1-T11 for CVF_Important/ADDING_LEARNING PLANE/ unless operator redirects",
+          "defectClass": "ORCHESTRATOR_PACKET_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/audits/CVF_CI1_T10_CORTEX_HUB_MEMORY_LEARNING_DEEP_SCAN_PACKET_2026-06-05.md#finding-to-governance-learning-disposition",
+          "findingPacketRef": "docs/corpus-intelligence/findings/legacy-cvf-add-cortex-hub.md#t10-f6---ci1-t11-still-needed"
+        }
+      ],
+      "negativeSearchTerms": [
+        "cortex-hub",
+        "W7MemoryRecord",
+        "W7TraceRecord"
+      ],
+      "nextScanRecommendation": "CI1-T11 candidate: CVF_Important/ADDING_LEARNING PLANE/ remains the direct Learning Plane corpus; cortex-hub does not replace that deep scan",
+      "hashAlgorithm": "sha256",
+      "hashInput": "manifest-internal-hash-from-script-output"
+    },
+    {
       "id": "legacy-cvf-add",
       "corpusType": "LEGACY_FOLDER",
       "displayName": "CVF ADD (partial root — LHW-RESCAN-C)",
@@ -298,10 +401,20 @@
           "learningLane": "GOVERNANCE_CONTROL_PLANE",
           "f2gRef": "docs/audits/CVF_CI1_T9_LEGACY_PARTIAL_SCAN_TRIAGE_PACKET_2026-06-05.md#finding-to-governance-learning-disposition",
           "packetRef": "docs/audits/CVF_CI1_T9_LEGACY_PARTIAL_SCAN_TRIAGE_PACKET_2026-06-05.md"
+        },
+        {
+          "id": "CI1-T10-cortex-hub-deep-scan-complete",
+          "summary": "CI1-T10 deep-scanned the 11-file CVF ADD/cortex-hub/ corpus and accepted it as a bounded capability-provider contract seed with runtime implementation deferred",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Use legacy-cvf-add-cortex-hub entry and finding packet for future cortex-hub work; next root scan should move to CVF_Important/ADDING_LEARNING PLANE/",
+          "defectClass": "N/A",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "packetRef": "docs/audits/CVF_CI1_T10_CORTEX_HUB_MEMORY_LEARNING_DEEP_SCAN_PACKET_2026-06-05.md",
+          "findingPacketRef": "docs/corpus-intelligence/findings/legacy-cvf-add-cortex-hub.md"
         }
       ],
       "negativeSearchTerms": [],
-      "nextScanRecommendation": "CI1-T9 refresh: CVF ADD/cortex-hub/ is the next selected deep scan candidate; code-review-graph was already completed in CI1-T3 and should remain prior absorption evidence only",
+      "nextScanRecommendation": "CI1-T10 complete: CVF ADD/cortex-hub/ is now deep-scanned; next memory/learning scan should move to CVF_Important/ADDING_LEARNING PLANE/ unless operator redirects",
       "hashAlgorithm": "sha256",
       "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
     },
