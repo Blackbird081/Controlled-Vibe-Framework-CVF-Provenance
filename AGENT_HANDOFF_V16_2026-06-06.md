@@ -38,8 +38,9 @@ Startup acknowledged: current mode=`le1_live_e2e_selector_flow_diagnostic_closed
 
 `le1_live_e2e_selector_flow_diagnostic_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `8a6cb0565c223c14a1794ba2c92c132d861f654a`
-(LE1 material commit; this handoff sync records closure continuity).
+Current HEAD recorded for this handoff: `d63eeb258fb902a7dea91490fe59f742aaad2ef8`
+(LE1 closure/session sync parent commit; this dedicated handoff sync records
+closure continuity).
 
 ## Active Boundary
 
