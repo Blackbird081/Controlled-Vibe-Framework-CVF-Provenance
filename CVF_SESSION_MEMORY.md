@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-05
 
-Current mode marker: `mlw_nrd1_next_runtime_decision_readout_closed_pass_bounded`
+Current mode marker: `mlw7_runtime_adapter_boundary_gc018_authorized_hold_for_work_order`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `mlw_nrd1_next_runtime_decision_readout_closed_pass_bounded`.
+Current mode: `mlw7_runtime_adapter_boundary_gc018_authorized_hold_for_work_order`.
 
 Active handoff:
 
@@ -49,6 +49,30 @@ Active review queue:
 `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
 
 Latest continuity note:
+
+MLW7 Runtime Adapter Boundary GC-018 is
+`GC018_AUTHORIZED_HOLD_FOR_WORK_ORDER`:
+
+`docs/baselines/CVF_GC018_MLW7_RUNTIME_ADAPTER_BOUNDARY_2026-06-05.md`
+
+The baseline selects `MLW7-RTAD1` as the next source-verified work-order
+candidate: runtime adapter boundary/admission authoring only. It does not
+authorize runtime adapter implementation, package install, external execution,
+external repo ingestion, delegation approval, registry authority, marketplace
+publication, public-sync, live/provider proof, hosted readiness, production
+readiness, public readiness, memory reinjection, automatic promotion,
+high-risk promotion implementation, Learning Orchestrator runtime behavior, or
+autonomous mutation.
+
+Next allowed move: author the source-verified `MLW7-RTAD1` runtime adapter
+boundary/admission work order, or stop for review. Any actual runtime adapter
+implementation, install/execute path, delegation/registry authority,
+marketplace/public claim, public-sync, live proof, hosted readiness,
+production readiness, public readiness, memory reinjection, automatic
+promotion, high-risk promotion implementation, or autonomous mutation requires
+separate explicit authorization.
+
+Previous continuity note:
 
 MLW-NRD1 Next Runtime Decision Readout is `CLOSED_PASS_BOUNDED`:
 

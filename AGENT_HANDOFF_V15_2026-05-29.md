@@ -961,6 +961,43 @@ text in the protected session files. Do not revert CI1-T11 commit `c7e5eb19`,
 the T11 scan/roadmap artifacts, registry findings, source corpus files, public
 sync history, or historical handoff content.
 
+Current HEAD recorded for this handoff: `79b7e978` (Pre-MLW7 runtime adapter
+boundary GC-018 base; material commit pending). Updated 2026-06-05 after the
+operator agreed that the next high-value move is MLW7 runtime adapter boundary
+GC-018. Material artifact in this batch:
+`docs/baselines/CVF_GC018_MLW7_RUNTIME_ADAPTER_BOUNDARY_2026-06-05.md`.
+Current mode is
+`mlw7_runtime_adapter_boundary_gc018_authorized_hold_for_work_order`. Next
+allowed move: author the source-verified `MLW7-RTAD1` runtime adapter
+boundary/admission work order, or stop for review. Boundary remains no runtime
+adapter implementation, package install, external execution, external repo
+ingestion, delegation approval, registry authority, marketplace/public claim,
+public-sync, live/provider proof, hosted readiness, production readiness,
+public readiness, memory reinjection, automatic promotion, high-risk promotion
+implementation, Learning Orchestrator runtime behavior, or autonomous mutation.
+
+## Core Guard Self-Protection Authorization - MLW7 Runtime Adapter Boundary GC-018 Session Sync
+
+Authorized guard-maintenance scope: record MLW7 runtime adapter boundary GC-018
+authorization, current mode
+`mlw7_runtime_adapter_boundary_gc018_authorized_hold_for_work_order`, and the
+next allowed `MLW7-RTAD1` work-order authoring move.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION_MEMORY.md`
+- `AGENT_HANDOFF_V15_2026-05-29.md`
+
+Operator authorization: 2026-06-05 operator answered `Đồng ý` after the next
+move was presented as the high-value MLW7 runtime adapter boundary GC-018 lane.
+This sync records session continuity and does not authorize runtime adapter
+implementation or external execution.
+
+Rollback boundary: if this sync is wrong, restore only the MLW7 runtime adapter
+boundary continuity text in the protected session files and this handoff
+section. Do not revert unrelated operator or workspace changes.
+
 ## Claim Boundary
 
 This handoff is a continuity and routing artifact. It does not prove runtime
