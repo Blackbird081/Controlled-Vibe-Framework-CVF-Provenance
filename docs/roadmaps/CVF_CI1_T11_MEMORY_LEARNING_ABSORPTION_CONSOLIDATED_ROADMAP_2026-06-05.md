@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -27,7 +27,7 @@ single folder. It absorbs the full memory/learning value from:
 Authorization: operator approved scanning all related memory/learning legacy
 material first, then producing one consolidated roadmap.
 
-Decision: ROADMAP_READY_FOR_MLW0_SOURCE_VERIFICATION
+Decision: MLW1_MLW6_CORE_CHAIN_CONTRACTS_CLOSED_BOUNDED
 
 ## Scope
 
@@ -181,9 +181,60 @@ scan packet, prior T10/T8/T3/T2 packets, corpus registry update, and governance
 guards run for corpus completeness, knowledge reconciliation, classification,
 finding learning, public export disposition, and governed file size.
 
-Roadmap verification remains planning-level only. Runtime verification is
-blocked until MLW0 maps legacy concepts to current source paths, symbols,
-schemas, commands, and tests.
+Roadmap verification is now contract-level for MLW1-MLW6. Runtime verification
+remains blocked until a later operator-authorized runtime/backend work order
+selects implementation scope, durable backend, tests, and live-proof boundary.
+
+## MLW1-MLW6 Closure Update
+
+Closure date: 2026-06-05.
+
+Closure disposition: CLOSED_PASS_BOUNDED.
+
+Closure artifacts:
+
+- GC-018: `docs/baselines/CVF_GC018_MLW1_MLW6_MEMORY_LEARNING_CORE_WORKFLOW_CHAIN_2026-06-05.md`
+- Work order: `docs/work_orders/CVF_WO_MLW1_MLW6_MEMORY_LEARNING_CORE_WORKFLOW_CHAIN_2026-06-05.md`
+- Completion review: `docs/reviews/CVF_MLW1_MLW6_MEMORY_LEARNING_CORE_WORKFLOW_CHAIN_COMPLETION_2026-06-05.md`
+- MLW1: `docs/reference/CVF_MLW1_GOVERNED_MEMORY_OPERATION_RECEIPT_MODEL_2026-06-05.md`
+- MLW2: `docs/reference/CVF_MLW2_DETERMINISTIC_CONTEXT_BUNDLE_WORKFLOW_2026-06-05.md`
+- MLW3: `docs/reference/CVF_MLW3_EVIDENCE_TO_TRUTH_LEARNING_SIGNAL_PIPELINE_2026-06-05.md`
+- MLW4: `docs/reference/CVF_MLW4_EXECUTION_CONTINUITY_HANDOFF_GATE_2026-06-05.md`
+- MLW5: `docs/reference/CVF_MLW5_AUDIT_FEEDBACK_VALIDATION_LANE_2026-06-05.md`
+- MLW6: `docs/reference/CVF_MLW6_SIMULATION_FAILURE_GATE_2026-06-05.md`
+
+Closed scope:
+
+- MLW1 memory operation receipt contract.
+- MLW2 deterministic context bundle contract.
+- MLW3 evidence-to-truth learning signal contract.
+- MLW4 execution continuity and handoff gate contract.
+- MLW5 audit feedback validation lane contract.
+- MLW6 simulation and failure gate contract.
+
+Deferred scope:
+
+- runtime implementation;
+- durable backend choice and implementation;
+- route/test/checker/package changes;
+- public-sync and public claim calibration;
+- live governance proof;
+- MLW7 external capability ingestion;
+- MLW8 efficiency/overconstraint feedback;
+- autonomous memory, learning, policy, provider, or prompt mutation.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_WO_MLW1_MLW6_MEMORY_LEARNING_CORE_WORKFLOW_CHAIN_2026-06-05.md` | status `CLOSED_PASS_BOUNDED`; checklist resolved | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MLW1_MLW6_MEMORY_LEARNING_CORE_WORKFLOW_CHAIN_COMPLETION_2026-06-05.md` | completion review exists | PASS |
+| Roadmap state | this file | status `CLOSED_PASS_BOUNDED`; MLW1-MLW6 closure note present | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | `mlw1-mlw6-core-workflow-chain` entry added | PASS |
+| Registry Markdown | `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md` | GC-051 registry standard remains governing registry markdown | PASS |
+| External evidence digest | N/A | N/A with reason - private contract wave only | N/A with reason |
+| System loop interlock | N/A | N/A with reason - no runtime checker or route interlock added | N/A with reason |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION_MEMORY.md`, `AGENT_HANDOFF_V15_2026-05-29.md` | MLW1-MLW6 closure continuity updated | PASS |
 
 ## Finding-To-Governance Learning Disposition
 

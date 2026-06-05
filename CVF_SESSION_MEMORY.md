@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-05
 
-Current mode marker: `mlw0_current_source_verification_map_closed_pass_bounded`
+Current mode marker: `mlw1_mlw6_memory_learning_core_workflow_chain_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `mlw0_current_source_verification_map_closed_pass_bounded`.
+Current mode: `mlw1_mlw6_memory_learning_core_workflow_chain_closed_pass_bounded`.
 
 Active handoff:
 
@@ -50,13 +50,16 @@ Active review queue:
 
 Latest continuity note:
 
-MLW0 Current Source Verification Map is CLOSED_PASS_BOUNDED. Source map:
-`docs/reference/CVF_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_2026-06-05.md`.
-Completion review:
-`docs/reviews/CVF_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_COMPLETION_2026-06-05.md`.
-CI1-T11 wave committed at `c7e5eb19`. LHW24 remains the latest closed numbered
-LHW wave. Boundary: private source-analysis only; no runtime, public-sync,
-hosted readiness, production readiness, public readiness, live proof, or
+MLW1-MLW6 Memory Learning Core Workflow Chain is CLOSED_PASS_BOUNDED as
+contract-only artifacts. Completion review:
+`docs/reviews/CVF_MLW1_MLW6_MEMORY_LEARNING_CORE_WORKFLOW_CHAIN_COMPLETION_2026-06-05.md`.
+GC-018:
+`docs/baselines/CVF_GC018_MLW1_MLW6_MEMORY_LEARNING_CORE_WORKFLOW_CHAIN_2026-06-05.md`.
+Work order:
+`docs/work_orders/CVF_WO_MLW1_MLW6_MEMORY_LEARNING_CORE_WORKFLOW_CHAIN_2026-06-05.md`.
+LHW24 remains the latest closed numbered LHW wave. Boundary: private
+source-analysis/planning/contract closure only; no runtime, public-sync, hosted
+readiness, production readiness, public readiness, live proof, MLW7/MLW8, or
 autonomous mutation claim.
 
 Pain-point closure direction:
@@ -264,20 +267,23 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-MLW0 Current Source Verification Map is `CLOSED_PASS_BOUNDED`.
+MLW1-MLW6 Memory Learning Core Workflow Chain is `CLOSED_PASS_BOUNDED` as
+contract-only artifacts.
 
-GC-018: `docs/baselines/CVF_GC018_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_2026-06-05.md`
+GC-018:
+`docs/baselines/CVF_GC018_MLW1_MLW6_MEMORY_LEARNING_CORE_WORKFLOW_CHAIN_2026-06-05.md`
 
-Work order: `docs/work_orders/CVF_WO_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_2026-06-05.md`
+Work order:
+`docs/work_orders/CVF_WO_MLW1_MLW6_MEMORY_LEARNING_CORE_WORKFLOW_CHAIN_2026-06-05.md`
 
-Source map: `docs/reference/CVF_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_2026-06-05.md`
+Completion review:
+`docs/reviews/CVF_MLW1_MLW6_MEMORY_LEARNING_CORE_WORKFLOW_CHAIN_COMPLETION_2026-06-05.md`
 
-Completion review: `docs/reviews/CVF_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_COMPLETION_2026-06-05.md`
-
-Next allowed move: operator reviews MLW0 blocked/renamed rows, then authorizes
-a fresh GC-018/work order for either MLW1 Governed Memory Operation Receipt
-Model or MLW2 Deterministic Context Bundle Workflow. No runtime/source-changing
-MLW tranche is authorized from the roadmap alone.
+Next allowed move requires fresh operator authorization and GC-018 for one of:
+runtime/backend implementation, public-safe memory/learning summary and
+public-sync, MLW7 external capability ingestion, MLW8 efficiency/overconstraint
+feedback, or live governance proof. No runtime/source-changing MLW work is
+authorized by the contract closure alone.
 
 ERH-DUR1 Durable Evidence And Policy Snapshot is `CLOSED_PASS_BOUNDED`:
 

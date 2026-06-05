@@ -4,7 +4,7 @@
   "guard": "governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md",
   "checker": "governance/compat/check_corpus_scan_registry.py",
   "lastUpdated": "2026-06-05",
-  "updatedBy": "MLW0 current source verification map",
+  "updatedBy": "MLW1-MLW6 memory learning core workflow chain",
   "allowedCorpusTypes": [
     "LEGACY_FOLDER",
     "PROJECT_SOURCE",
@@ -963,6 +963,81 @@
         "TrustCalibrationRecord current source symbol (not present)"
       ],
       "nextScanRecommendation": "No additional MLW0 scan needed. Operator should review blocked and renamed rows, then authorize a fresh GC-018/work order for MLW1 or MLW2.",
+      "hashAlgorithm": "sha256",
+      "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
+    },
+    {
+      "id": "mlw1-mlw6-core-workflow-chain",
+      "corpusType": "PROJECT_SOURCE",
+      "displayName": "MLW1-MLW6 Memory Learning Core Workflow Chain",
+      "scopePaths": [
+        "docs/reference/CVF_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_2026-06-05.md",
+        "docs/reference/CVF_MLW1_GOVERNED_MEMORY_OPERATION_RECEIPT_MODEL_2026-06-05.md",
+        "docs/reference/CVF_MLW2_DETERMINISTIC_CONTEXT_BUNDLE_WORKFLOW_2026-06-05.md",
+        "docs/reference/CVF_MLW3_EVIDENCE_TO_TRUTH_LEARNING_SIGNAL_PIPELINE_2026-06-05.md",
+        "docs/reference/CVF_MLW4_EXECUTION_CONTINUITY_HANDOFF_GATE_2026-06-05.md",
+        "docs/reference/CVF_MLW5_AUDIT_FEEDBACK_VALIDATION_LANE_2026-06-05.md",
+        "docs/reference/CVF_MLW6_SIMULATION_FAILURE_GATE_2026-06-05.md"
+      ],
+      "fileCount": 7,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "MLW1-MLW6",
+      "scanDate": "2026-06-05",
+      "manifestHash": "5305c7a18f61607d211b02c324c31f1140051e320073f12e5ef701977d125b4a",
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MLW1_MLW6_MEMORY_LEARNING_CORE_WORKFLOW_CHAIN_COMPLETION_2026-06-05.md",
+      "completionReviewPath": "docs/reviews/CVF_MLW1_MLW6_MEMORY_LEARNING_CORE_WORKFLOW_CHAIN_COMPLETION_2026-06-05.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_MLW1_MLW6_MEMORY_LEARNING_CORE_WORKFLOW_CHAIN_2026-06-05.md",
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "RECONCILED_WITH_DECLARED_DEFERRED_SCOPE",
+        "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+      },
+      "semanticRegions": [
+        "MEMORY_OPERATION_RECEIPT",
+        "CONTEXT_BUNDLE_WORKFLOW",
+        "LEARNING_SIGNAL_PIPELINE",
+        "CONTINUITY_HANDOFF_GATE",
+        "AUDIT_FEEDBACK_VALIDATION",
+        "SIMULATION_FAILURE_GATE"
+      ],
+      "priorAbsorption": "MLW0 closed the source-verification prerequisite. MLW1-MLW6 convert the CI1-T11 memory/learning roadmap into bounded contract artifacts without runtime implementation.",
+      "findings": [
+        {
+          "id": "MLW1-6-F1-doc-only-fields-separated",
+          "summary": "Several legacy concepts are not current runtime symbols, so MLW1-MLW6 define new doc-only contract fields instead of presenting them as source facts.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Future runtime work orders must source-verify any field before implementation.",
+          "defectClass": "RUNTIME_SIGNAL_GAP",
+          "learningLane": "RUNTIME_BEHAVIOR_LEARNING",
+          "f2gRef": "docs/reviews/CVF_MLW1_MLW6_MEMORY_LEARNING_CORE_WORKFLOW_CHAIN_COMPLETION_2026-06-05.md#finding-to-governance-learning-disposition"
+        },
+        {
+          "id": "MLW1-6-F2-proposal-only-learning",
+          "summary": "Learning, trust, audit feedback, and simulation outputs remain proposal-only and do not authorize autonomous mutation.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Future runtime implementation should add machine checks for mutation denial and simulation-before-promotion.",
+          "defectClass": "MACHINE_GATE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_MLW1_MLW6_MEMORY_LEARNING_CORE_WORKFLOW_CHAIN_COMPLETION_2026-06-05.md#finding-to-governance-learning-disposition"
+        },
+        {
+          "id": "MLW1-6-F3-runtime-backend-deferred",
+          "summary": "Durable backend selection and runtime implementation remain deferred outside the contract wave.",
+          "disposition": "DEFER_WITH_ROADMAP",
+          "nextAction": "Open a fresh operator-authorized runtime/backend work order if durable runtime implementation is needed.",
+          "defectClass": "OPERATOR_SCOPE_CLARITY_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_MLW1_MLW6_MEMORY_LEARNING_CORE_WORKFLOW_CHAIN_COMPLETION_2026-06-05.md#finding-to-governance-learning-disposition"
+        }
+      ],
+      "negativeSearchTerms": [
+        "runtime implementation claim for MLW1-MLW6 (not made)",
+        "public memory/learning shipped feature claim (not made)",
+        "autonomous mutation authorization (not made)",
+        "durable backend implementation (not made)"
+      ],
+      "nextScanRecommendation": "No additional MLW1-MLW6 contract scan is required. Next work requires a fresh operator-authorized runtime/backend, public-sync, or MLW7/MLW8 work order.",
       "hashAlgorithm": "sha256",
       "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
     },
