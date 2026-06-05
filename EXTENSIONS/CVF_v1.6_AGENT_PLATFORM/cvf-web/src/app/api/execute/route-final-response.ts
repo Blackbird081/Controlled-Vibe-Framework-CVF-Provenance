@@ -8,6 +8,11 @@ import { buildPhase3EOperationalMetricsForRoute } from '@/lib/phase3e-operationa
 import { buildRouteAuditMemoryCapture } from '@/lib/audit-memory-receipt';
 import { buildContextBundleReadout } from '@/lib/context-bundle-readout';
 import { buildEvidenceToLearningReadout } from '@/lib/evidence-to-learning-readout';
+import {
+    buildAuditFeedbackValidationReadout,
+    buildExecutionContinuityHandoffReadout,
+    buildSimulationFailureGateReadout,
+} from '@/lib/mlw-runtime-chain-readouts';
 import { buildRouteRequestContextReadout } from '@/lib/route-request-context-readout';
 import { buildVerticalIntegrationReadout } from '@/lib/vertical-integration-readout';
 import { buildEvidenceReceipt } from '@/lib/web-governance-envelope';
@@ -300,6 +305,25 @@ export async function buildExecuteFinalResponse(params: BuildExecuteFinalRespons
         learningPlaneReadout: responseReadouts.learningPlaneReadout,
         auditMemoryReceipt,
     });
+    const executionContinuityHandoffReadout = buildExecutionContinuityHandoffReadout({
+        receipt: governanceEvidenceReceipt,
+        contextBundleReadout,
+        evidenceToLearningReadout,
+    });
+    const auditFeedbackValidationReadout = buildAuditFeedbackValidationReadout({
+        receipt: governanceEvidenceReceipt,
+        contextBundleReadout,
+        evidenceToLearningReadout,
+        executionContinuityHandoffReadout,
+        auditMemoryReceipt,
+    });
+    const simulationFailureGateReadout = buildSimulationFailureGateReadout({
+        receipt: governanceEvidenceReceipt,
+        contextBundleReadout,
+        evidenceToLearningReadout,
+        executionContinuityHandoffReadout,
+        auditFeedbackValidationReadout,
+    });
 
     return NextResponse.json({
         ...aiResult,
@@ -349,6 +373,9 @@ export async function buildExecuteFinalResponse(params: BuildExecuteFinalRespons
         requestContextReadout,
         contextBundleReadout,
         evidenceToLearningReadout,
+        executionContinuityHandoffReadout,
+        auditFeedbackValidationReadout,
+        simulationFailureGateReadout,
         verticalIntegrationReadout,
         ...responseReadouts,
         ...(workflowExecution ? workflowExecution : {}),

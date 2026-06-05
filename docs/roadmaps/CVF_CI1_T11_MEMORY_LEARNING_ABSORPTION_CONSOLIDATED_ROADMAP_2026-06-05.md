@@ -325,6 +325,45 @@ Deferred scope remains:
 - MLW7/MLW8;
 - autonomous memory, learning, policy, provider, prompt, or context mutation.
 
+## MLW4-MLW6 RT1 Continuity Audit Simulation Runtime Chain Update
+
+Closure date: 2026-06-05.
+
+Closure disposition: CLOSED_PASS_BOUNDED.
+
+Closure artifacts:
+
+- GC-018: `docs/baselines/CVF_GC018_MLW4_MLW6_RT1_CONTINUITY_AUDIT_SIMULATION_RUNTIME_CHAIN_2026-06-05.md`
+- Work order: `docs/work_orders/CVF_WO_MLW4_MLW6_RT1_CONTINUITY_AUDIT_SIMULATION_RUNTIME_CHAIN_2026-06-05.md`
+- Completion review: `docs/reviews/CVF_MLW4_MLW6_RT1_CONTINUITY_AUDIT_SIMULATION_RUNTIME_CHAIN_COMPLETION_2026-06-05.md`
+- Runtime helper: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw-runtime-chain-readouts.ts`
+- Deterministic regressions: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw-runtime-chain-readouts.test.ts` and `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.mlw4-mlw6-runtime-chain.test.ts`
+- Live proof: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.mlw4-mlw6-runtime-chain.alibaba.live.test.ts`
+
+Closed scope:
+
+- route-visible `executionContinuityHandoffReadout`;
+- route-visible `auditFeedbackValidationReadout`;
+- route-visible `simulationFailureGateReadout`;
+- linkage from governance receipt, MLW2 `contextBundleHash`, MLW3 signal id,
+  MLW4 continuity gate id, MLW5 audit feedback id, and MLW6 simulation gate id;
+- legacy W7 runtime record names rejected as current source facts;
+- `autonomousMutationAuthorized=false`, runtime mutation flags false, and
+  `automaticPromotionAuthorized=false` invariant preservation;
+- one live Alibaba route proof.
+
+Deferred scope remains:
+
+- Learning Orchestrator implementation;
+- high-risk promotion lane implementation;
+- truth-model, evaluation, reputation, trust, policy, prompt, provider, or
+  memory mutation;
+- LPF simulation execution as authoritative promotion;
+- durable backend migration;
+- public-sync/public claim;
+- MLW7/MLW8;
+- hosted, public, or production readiness.
+
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
