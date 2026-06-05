@@ -701,6 +701,30 @@ Required rules:
   `CVF_SESSION_MEMORY.md`, and active handoff context together, then expect a
   dedicated handoff-sync commit for the final HEAD.
 
+### 6F.1 Session / Handoff Commit Protocol
+
+Use this protocol when a closure touches session continuity or active handoff
+state:
+
+1. Put `Core Guard Self-Protection Authorization` in the changed governed
+   authorization artifact under one of the checker-recognized prefixes:
+   `docs/baselines/`, `docs/roadmaps/`, `docs/reviews/`, or
+   `docs/work_orders/`.
+2. Do not rely on `AGENT_HANDOFF*.md` alone as the authorization artifact for
+   protected session/front-door edits. The core-guard checker does not count
+   root handoffs as authorization docs.
+3. Preferred two-commit closure:
+   - material/session commit: close the artifact, update session state/front
+     door if needed, and include the same-range authorization doc;
+   - handoff-only sync commit: update only the active handoff with the material
+     commit SHA so `check_active_session_state.py` can accept the parent SHA as
+     `parent-present-for-sync-commit`.
+4. If the front door or state registry must record the material commit SHA
+   itself, expect a protected session-sync commit with a same-range
+   authorization doc before the final handoff-only sync commit.
+5. Run committed-range `pre-closure` only after the material/session commit and
+   required handoff sync are complete.
+
 ## 6F. Near-Threshold Owner Maintainability Plan
 
 If Allowed scope adds or modifies source inside a registered owner domain whose

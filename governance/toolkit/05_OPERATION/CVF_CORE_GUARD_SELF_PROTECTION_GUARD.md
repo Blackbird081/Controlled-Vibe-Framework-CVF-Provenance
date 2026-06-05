@@ -27,6 +27,19 @@ protected files must include a governed authorization artifact with:
 - `Operator authorization`
 - `Rollback boundary`
 
+The authorization artifact must be a changed governed Markdown file under one
+of the checker-recognized prefixes:
+
+- `docs/baselines/`
+- `docs/roadmaps/`
+- `docs/reviews/`
+- `docs/work_orders/`
+
+Root handoff files such as `AGENT_HANDOFF*.md` may record continuity, but they
+are not authorization artifacts for this guard. If protected session/front-door
+files are changed, place the authorization block in the work order, review,
+roadmap, or baseline that owns the same commit range.
+
 Agents may not delete or rename protected guard/control files.
 
 Large change sets are also blocked unless a governed artifact includes:
