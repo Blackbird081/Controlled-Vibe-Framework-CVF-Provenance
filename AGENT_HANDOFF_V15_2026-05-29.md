@@ -976,6 +976,20 @@ public-sync, live/provider proof, hosted readiness, production readiness,
 public readiness, memory reinjection, automatic promotion, high-risk promotion
 implementation, Learning Orchestrator runtime behavior, or autonomous mutation.
 
+Current HEAD recorded for this handoff: `7d7d6eda` (Authorize MLW7 runtime
+adapter boundary GC-018). Updated 2026-06-05 after material commit
+`docs(mlw7): authorize runtime adapter boundary baseline` created
+`docs/baselines/CVF_GC018_MLW7_RUNTIME_ADAPTER_BOUNDARY_2026-06-05.md`.
+Current mode remains
+`mlw7_runtime_adapter_boundary_gc018_authorized_hold_for_work_order`. Next
+allowed move remains author the source-verified `MLW7-RTAD1` runtime adapter
+boundary/admission work order, or stop for review. Boundary remains no runtime
+adapter implementation, package install, external execution, external repo
+ingestion, delegation approval, registry authority, marketplace/public claim,
+public-sync, live/provider proof, hosted readiness, production readiness,
+public readiness, memory reinjection, automatic promotion, high-risk promotion
+implementation, Learning Orchestrator runtime behavior, or autonomous mutation.
+
 ## Core Guard Self-Protection Authorization - MLW7 Runtime Adapter Boundary GC-018 Session Sync
 
 Authorized guard-maintenance scope: record MLW7 runtime adapter boundary GC-018

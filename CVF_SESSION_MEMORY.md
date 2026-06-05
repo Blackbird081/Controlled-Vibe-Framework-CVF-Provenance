@@ -55,6 +55,8 @@ MLW7 Runtime Adapter Boundary GC-018 is
 
 `docs/baselines/CVF_GC018_MLW7_RUNTIME_ADAPTER_BOUNDARY_2026-06-05.md`
 
+Material commit: `7d7d6eda`.
+
 The baseline selects `MLW7-RTAD1` as the next source-verified work-order
 candidate: runtime adapter boundary/admission authoring only. It does not
 authorize runtime adapter implementation, package install, external execution,
