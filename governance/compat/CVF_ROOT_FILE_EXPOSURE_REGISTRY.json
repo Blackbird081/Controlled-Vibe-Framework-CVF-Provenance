@@ -64,6 +64,10 @@
       "exposureClass": "INTERNAL_ONLY"
     },
     {
+      "path": "AGENT_HANDOFF_V16_2026-06-06.md",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
       "path": "AGENT_HANDOFF_V9_2026-05-18.md",
       "exposureClass": "INTERNAL_ONLY"
     },
