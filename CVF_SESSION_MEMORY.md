@@ -51,7 +51,7 @@ Active review queue:
 Latest continuity note:
 
 LO1 Learning Orchestrator advisory/proposal boundary is
-`CLOSED_PASS_BOUNDED`:
+`CLOSED_PASS_BOUNDED` at commit `bec18eba`:
 
 `docs/work_orders/CVF_WO_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md`
 
@@ -282,7 +282,8 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LO1 Learning Orchestrator Advisory Proposal Boundary is `CLOSED_PASS_BOUNDED`:
+LO1 Learning Orchestrator Advisory Proposal Boundary is `CLOSED_PASS_BOUNDED`
+at commit `bec18eba`:
 
 `docs/work_orders/CVF_WO_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md`
 

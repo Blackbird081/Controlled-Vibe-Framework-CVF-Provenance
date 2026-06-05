@@ -306,6 +306,26 @@ continuity text in the protected files and active handoff. Do not delete LO1
 work-order/reference/review artifacts unless the LO1 documentation closeout is
 being unwound.
 
+## Core Guard Self-Protection Authorization - LO1 Closure Commit Sync
+
+Authorized guard-maintenance scope: update session continuity after LO1 closure
+commit `bec18eba`, including closure commit reference, current mode, and next
+allowed move.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION_MEMORY.md`
+- `AGENT_HANDOFF_V15_2026-05-29.md`
+
+Operator authorization: 2026-06-05 instruction to close multiple roles, audit,
+and proceed after LO1 work-order review.
+
+Rollback boundary: if this sync is wrong, restore only the LO1 closure commit
+reference and next-move text in the protected files and active handoff. Do not
+delete LO1 work-order/reference/review artifacts unless a separate LO1 closure
+correction work order authorizes that rollback.
+
 ## Finding-To-Governance Learning Disposition
 
 | Finding | Defect class | Learning lane | Escalation state | Next control action |

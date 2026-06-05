@@ -729,6 +729,7 @@ Current HEAD recorded for this handoff: `1f5a02c1` (Authorize LO0 GC-018 source 
 Current HEAD recorded for this handoff: `6f6e9301` (Sync LO0 GC-018 session state). Updated 2026-06-05 after active state, session memory, handoff, and session-sync authorization review were synchronized to `lo0_gc018_authorized_hold_for_work_order`. This is a session-continuity sync only; LO0 remains held for source-verified LO1 work-order authoring, and no Learning Orchestrator implementation, high-risk promotion lane implementation, autonomous mutation, automatic promotion, runtime route change, memory reinjection, live proof, public-sync, hosted readiness, production readiness, or public readiness claim is added.
 Current HEAD recorded for this handoff: `10f0286c` (Author LO1 advisory work order for operator review). Updated 2026-06-05 after Codex authored `docs/work_orders/CVF_WO_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md` as `READY_FOR_OPERATOR_REVIEW` and pre-dispatch autorun passed. Current mode is `lo1_learning_orchestrator_advisory_work_order_ready_for_operator_review`. Next allowed move is operator review and explicit LO1 dispatch, or return to MLW7/MLW8 work-order authoring. Boundary: no Learning Orchestrator implementation, high-risk promotion lane implementation, autonomous mutation, automatic promotion, runtime route change, memory reinjection, live proof, public-sync, hosted readiness, production readiness, or public readiness.
 Current HEAD recorded for this handoff: `10f0286c` (Close LO1 advisory proposal boundary). Updated 2026-06-05 after Codex multi-role closeout created `docs/reference/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md`, created `docs/reviews/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_COMPLETION_2026-06-05.md`, and moved `docs/work_orders/CVF_WO_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md` to `CLOSED_PASS_BOUNDED`. Current mode is `lo1_learning_orchestrator_advisory_boundary_closed_pass_bounded`. Next allowed move: operator may authorize a separate LO2/high-risk promotion GC-018/work order, return to MLW7/MLW8 work-order authoring, open public-safe memory/learning summary/public-sync, or stop for review. Boundary: no Learning Orchestrator runtime implementation, high-risk promotion lane implementation, autonomous mutation, automatic promotion, runtime route change, memory reinjection, live proof, public-sync, hosted readiness, production readiness, or public readiness.
+Current HEAD recorded for this handoff: `bec18eba` (Commit LO1 advisory proposal boundary). Updated 2026-06-05 after commit `docs(lo1): close advisory orchestrator boundary` closed LO1 as source-verified advisory/proposal-only documentation. Work order: `docs/work_orders/CVF_WO_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md`; reference: `docs/reference/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md`; completion: `docs/reviews/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_COMPLETION_2026-06-05.md`. Current mode remains `lo1_learning_orchestrator_advisory_boundary_closed_pass_bounded`. Next allowed move: operator may authorize a separate LO2/high-risk promotion GC-018/work order, return to MLW7/MLW8 work-order authoring, open public-safe memory/learning summary/public-sync, or stop for review. Boundary: no Learning Orchestrator runtime implementation, high-risk promotion lane implementation, autonomous mutation, automatic promotion, runtime route change, memory reinjection, live proof, public-sync, hosted readiness, production readiness, or public readiness.
 
 ## Core Guard Self-Protection Authorization - LO1 Work Order Session Sync
 
@@ -753,6 +754,26 @@ implementation.
 Rollback boundary: if this sync is wrong, restore only the LO1 continuity text
 in the protected session files and this handoff section. Do not delete the LO1
 work order unless that authoring batch itself is being unwound.
+
+## Core Guard Self-Protection Authorization - LO1 Closure Commit Sync
+
+Authorized guard-maintenance scope: update CVF active session continuity after
+LO1 closure commit `bec18eba`, including closure commit reference, current mode,
+and next allowed move.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION_MEMORY.md`
+- `AGENT_HANDOFF_V15_2026-05-29.md`
+
+Operator authorization: 2026-06-05 instruction to close multiple roles, audit,
+and proceed after LO1 work-order review.
+
+Rollback boundary: if this sync is wrong, restore only the LO1 closure commit
+reference and next-move text in the protected files and this handoff section.
+Do not delete LO1 work-order/reference/review artifacts unless a separate LO1
+closure correction work order authorizes that rollback.
 
 ## Core Guard Self-Protection Authorization - LO0 GC-018 Session Sync
 
