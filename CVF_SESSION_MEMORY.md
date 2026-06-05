@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-05
 
-Current mode marker: `mlw_nrd1_next_runtime_decision_work_order_ready_for_operator_review`
+Current mode marker: `mlw_nrd1_next_runtime_decision_readout_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `mlw_nrd1_next_runtime_decision_work_order_ready_for_operator_review`.
+Current mode: `mlw_nrd1_next_runtime_decision_readout_closed_pass_bounded`.
 
 Active handoff:
 
@@ -50,20 +50,23 @@ Active review queue:
 
 Latest continuity note:
 
-MLW-NRD1 Next Runtime Decision Readout work order is
-`READY_FOR_OPERATOR_REVIEW`:
+MLW-NRD1 Next Runtime Decision Readout is `CLOSED_PASS_BOUNDED`:
 
 `docs/work_orders/CVF_WO_MLW_NRD1_NEXT_RUNTIME_DECISION_READOUT_2026-06-05.md`
 
-Material commit: `7352799f`.
+Completion review:
 
-Next allowed move: operator review and explicit dispatch of MLW-NRD1 advisory
-next-runtime decision/readout implementation, or stop for review. MLW7 external
-execution/runtime adapter, MLW8 optimization/benchmark/cost proof, LO2
-high-risk promotion implementation, public-sync, live/provider proof, hosted
-readiness, production readiness, public readiness, memory reinjection,
-automatic promotion, and autonomous mutation remain separate
-operator-authorized lanes.
+`docs/reviews/CVF_MLW_NRD1_NEXT_RUNTIME_DECISION_READOUT_COMPLETION_2026-06-05.md`
+
+Material commit: pending.
+
+Next allowed move: choose a separate operator-authorized lane: MLW7 external
+execution/runtime adapter GC-018, MLW8 optimization/benchmark/cost proof
+GC-018, LO2 high-risk promotion implementation GC-018, public-sync/export
+order, live/provider proof order, or stop for review. Hosted readiness,
+production readiness, public readiness, memory reinjection, automatic
+promotion, and autonomous mutation remain blocked without separate
+authorization.
 
 Previous continuity note:
 

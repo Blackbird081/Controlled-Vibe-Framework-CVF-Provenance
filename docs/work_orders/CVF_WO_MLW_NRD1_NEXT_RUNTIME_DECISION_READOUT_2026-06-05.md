@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: READY_FOR_OPERATOR_REVIEW
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -10,11 +10,11 @@ Date: 2026-06-05
 
 dispatchBaseHead: `727591ea`
 
-executionBaseHead: `SET_BY_DISPATCHING_AGENT`
+executionBaseHead: `d0aa2d5b`
 
-closureBaseHead: `SET_BY_CLOSING_AGENT`
+closureBaseHead: `d0aa2d5b`
 
-Commit mode: `WORKER_MUST_NOT_COMMIT`
+Commit mode: `REVIEWER_COMMIT_PREPARED`
 
 ## Purpose
 
@@ -51,9 +51,9 @@ proof, secrets/quota use, destructive action, or claim-boundary expansion.
 | Anchor | Current value | Required handling |
 | --- | --- | --- |
 | `dispatchBaseHead` | `727591ea` | Work-order authoring base captured before this packet |
-| `executionBaseHead` | `SET_BY_DISPATCHING_AGENT` | Replace with a real commit before implementation |
-| `closureBaseHead` | `SET_BY_CLOSING_AGENT` | Replace with the implementation base before closure |
-| Commit mode | `WORKER_MUST_NOT_COMMIT` | Worker returns evidence; reviewer/committer owns closure review and commit |
+| `executionBaseHead` | `d0aa2d5b` | Captured before implementation |
+| `closureBaseHead` | `d0aa2d5b` | Captured before closure |
+| Commit mode | `REVIEWER_COMMIT_PREPARED` | Reviewer/committer owns closure review and commit |
 
 ## Agent Roles
 
@@ -156,31 +156,28 @@ Risk ceiling: R2 advisory readout and deterministic test only.
 | --- | --- | --- | --- |
 | Current execute route MLW7/MLW8 wiring | `rg -n "mlw7-external|mlw8-efficiency|buildExternalCapability|buildEfficiencyOverconstraint" EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route-response-readouts.ts EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route-final-response.ts` | no matches | ACCEPT - MLW-NRD1 worker must not claim existing route wiring |
 
-## New Doc-Only Fields
+## Implemented New Advisory Fields
 
-| New doc-only field or marker | Purpose | Runtime claim blocked? |
+| New field or marker | Purpose | Runtime claim boundary |
 | --- | --- | --- |
-| `MLW_NRD1_NEXT_RUNTIME_DECISION_READOUT_VERSION` | proposed helper contract marker | Yes |
-| `NextRuntimeDecisionReadout` | proposed advisory readout type | Yes |
-| `candidateLane` | proposed lane label for the decision matrix | Yes |
-| `decisionDisposition` | proposed advisory disposition | Yes |
-| `selectedReason` | proposed source-backed reason list | Yes |
-| `heldReasons` | proposed source-backed hold reasons | Yes |
-| `SELECT_FOR_WORK_ORDER` | proposed selected disposition | Yes |
-| `HOLD_SEPARATE_GC018` | proposed hold disposition | Yes |
-| `BLOCKED_BOUNDARY` | proposed blocked disposition | Yes |
+| `MLW_NEXT_RUNTIME_DECISION_READOUT_VERSION` | helper contract marker | advisory readout only |
+| `MlwNextRuntimeDecisionReadout` | route-visible advisory readout type | no execution, optimization, promotion, public-sync, live proof, memory reinjection, or autonomous mutation |
+| `candidateLanes` | lane classification list | selected/held/blocked status only |
+| `selectedLane` | selected advisory lane | route-visible readout only |
+| `DEFERRED_TO_SEPARATE_GC018` | deferred disposition | separate operator authorization required |
+| `BLOCKED_BY_BOUNDARY` | blocked disposition | not authorized by MLW-NRD1 |
 
 ## Decision Matrix
 
 | Candidate lane | Decision disposition | Release condition |
 | --- | --- | --- |
-| Route-visible advisory next-runtime decision/readout | SELECT_FOR_WORK_ORDER | This work order may be dispatched for deterministic advisory implementation |
-| MLW7 external capability execution/runtime adapter | HOLD_SEPARATE_GC018 | Requires separate runtime execution safety packet and proof plan |
-| MLW8 automatic optimization/benchmark/cost proof | HOLD_SEPARATE_GC018 | Requires separate optimization/cost evidence packet and preservation review |
-| LO2 high-risk promotion implementation | HOLD_SEPARATE_GC018 | Requires separate runtime owner design and no-automatic-promotion review |
-| Public-safe memory/learning public-sync | HOLD_SEPARATE_GC018 | Requires public-sync order, remote evidence, and public export proof |
-| Release-quality live governance proof | HOLD_SEPARATE_GC018 | Requires separate authorization, live diagnostics, and provider-key handling |
-| Memory reinjection or autonomous mutation | BLOCKED_BOUNDARY | Not authorized by MLW-NRD1 |
+| Route-visible advisory next-runtime decision/readout | SELECTED_FOR_CURRENT_WORK_ORDER | Implemented as deterministic advisory readout |
+| MLW7 external capability execution/runtime adapter | DEFERRED_TO_SEPARATE_GC018 | Requires separate runtime execution safety packet and proof plan |
+| MLW8 automatic optimization/benchmark/cost proof | DEFERRED_TO_SEPARATE_GC018 | Requires separate optimization/cost evidence packet and preservation review |
+| LO2 high-risk promotion implementation | BLOCKED_BY_BOUNDARY | Requires separate runtime owner design and no-automatic-promotion review |
+| Public-safe memory/learning public-sync | BLOCKED_BY_BOUNDARY | Requires public-sync order, remote evidence, and public export proof |
+| Release-quality live governance proof | BLOCKED_BY_BOUNDARY | Requires separate authorization, live diagnostics, and provider-key handling |
+| Memory reinjection or autonomous mutation | BLOCKED_BY_BOUNDARY | Not authorized by MLW-NRD1 |
 
 ## Roadmap-To-Work-Order Trace Matrix
 
@@ -202,6 +199,17 @@ Risk ceiling: R2 advisory readout and deterministic test only.
 | Worker handoff/evaluation artifact | Worker | Yes | No |
 | Completion review | Reviewer / committer | Yes | N/A |
 | Session continuity update | Reviewer / committer | Yes | N/A |
+
+## Required Artifact Manifest
+
+| Artifact | Path or owner | Status |
+| --- | --- | --- |
+| Advisory helper | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw-next-runtime-decision-readout.ts` | DELIVERED |
+| Helper test | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw-next-runtime-decision-readout.test.ts` | DELIVERED |
+| Route response wiring | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route-response-readouts.ts` | DELIVERED |
+| Route visibility test | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.mlw-nrd1-next-runtime-decision.test.ts` | DELIVERED |
+| Completion review | `docs/reviews/CVF_MLW_NRD1_NEXT_RUNTIME_DECISION_READOUT_COMPLETION_2026-06-05.md` | DELIVERED |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V15_2026-05-29.md` | DELIVERED |
 
 ## Execution Instructions
 
@@ -264,13 +272,26 @@ Reviewer must reject closure if the worker:
 
 ## Closure Checklist
 
-| Item | Required disposition |
-| --- | --- |
-| Work order source verification refreshed | checked or BLOCKED with return action |
-| Deterministic tests run | checked or BLOCKED with return action |
-| No forbidden runtime/live/public/dependency path touched | checked or BLOCKED with return action |
-| Autorun pre-implementation and pre-closure gates recorded | checked or BLOCKED with return action |
-| Public Export Disposition included | checked or BLOCKED with return action |
+| Item | Final disposition | Evidence |
+| --- | --- | --- |
+| Work order source verification refreshed | PASS | implementation helper and route owner symbols re-read before wiring |
+| Deterministic tests run | PASS | `npm run test:run -- src/lib/mlw-next-runtime-decision-readout.test.ts src/app/api/execute/route.mlw-nrd1-next-runtime-decision.test.ts` |
+| No forbidden runtime/live/public/dependency path touched | PASS | changed-file set limited to helper, route readout aggregator, tests, and closure docs/session sync |
+| Autorun pre-implementation and pre-closure gates recorded | PASS | pre-implementation PASS at `d0aa2d5b`; pre-closure recorded in completion review |
+| Public Export Disposition included | PASS | `DEFERRED_PRIVATE_ONLY` |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this file | status `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MLW_NRD1_NEXT_RUNTIME_DECISION_READOUT_COMPLETION_2026-06-05.md` | status `CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | N/A | MLW-NRD1 derives from GC-018 baseline, not a separate roadmap edit | N/A with reason |
+| Registry JSON | N/A | no corpus/search registry update in allowed scope | BLOCKED with reason - not a corpus scan registry change |
+| Registry Markdown | N/A | no corpus/search registry markdown update in allowed scope | BLOCKED with reason - not a corpus scan registry change |
+| External evidence digest | N/A | no external evidence, benchmark, live provider, or cost artifact consumed | N/A with reason |
+| System loop interlock | N/A | no checker, autonomous loop, or policy mutation added | N/A with reason |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V15_2026-05-29.md` | closure state recorded | PASS |
 
 ## Return Conditions
 
@@ -428,10 +449,10 @@ or autonomous mutation.
 | Routing lane | Item | Disposition |
 | --- | --- | --- |
 | DO_NOW | `MLW-NRD1` source-verified work order | SATISFIED_FOR_AUTHORING |
-| SEPARATE_RUNTIME_TRANCHE | MLW7 external execution/runtime adapter | HOLD_SEPARATE_GC018 |
-| SEPARATE_RUNTIME_TRANCHE | MLW8 automatic optimization/benchmark/cost proof | HOLD_SEPARATE_GC018 |
-| SEPARATE_RUNTIME_TRANCHE | LO2 high-risk promotion implementation | HOLD_SEPARATE_GC018 |
-| STRATEGIC_OPERATOR_DECISION | public-sync or live/provider proof | HOLD_SEPARATE_GC018 |
+| SEPARATE_RUNTIME_TRANCHE | MLW7 external execution/runtime adapter | DEFERRED_TO_SEPARATE_GC018 |
+| SEPARATE_RUNTIME_TRANCHE | MLW8 automatic optimization/benchmark/cost proof | DEFERRED_TO_SEPARATE_GC018 |
+| SEPARATE_RUNTIME_TRANCHE | LO2 high-risk promotion implementation | DEFERRED_TO_SEPARATE_GC018 |
+| STRATEGIC_OPERATOR_DECISION | public-sync or live/provider proof | DEFERRED_TO_SEPARATE_GC018 |
 | OUT_OF_SCOPE | memory reinjection and autonomous mutation | BLOCKED_BOUNDARY |
 | RESOLVED_BY_DESIGN | route-visible advisory decision/readout authoring | SELECT_FOR_WORK_ORDER |
 
@@ -439,9 +460,9 @@ or autonomous mutation.
 
 | sampleId | source section | source claim | disposition checked | adversarial challenge | verdict |
 | --- | --- | --- | --- | --- | --- |
-| NRD1-S1 | MLW7 helper lines 63-64, 86-98 | runtime-scope operations defer to separate tranche | HOLD_SEPARATE_GC018 | Could advisory decision authorize execution anyway? | PASS |
-| NRD1-S2 | MLW8 helper lines 60-64, 139-142 | optimization and policy-relaxation authority fields remain literal invariants | HOLD_SEPARATE_GC018 | Could efficiency signal trim evidence automatically? | PASS |
-| NRD1-S3 | LO2 lines 39-50, 61-72 | high-risk promotion requires separate GC-018/work order | HOLD_SEPARATE_GC018 | Could next-runtime wording bypass LO2? | PASS |
+| NRD1-S1 | MLW7 helper lines 63-64, 86-98 | runtime-scope operations defer to separate tranche | DEFERRED_TO_SEPARATE_GC018 | Could advisory decision authorize execution anyway? | PASS |
+| NRD1-S2 | MLW8 helper lines 60-64, 139-142 | optimization and policy-relaxation authority fields remain literal invariants | DEFERRED_TO_SEPARATE_GC018 | Could efficiency signal trim evidence automatically? | PASS |
+| NRD1-S3 | LO2 lines 39-50, 61-72 | high-risk promotion requires separate GC-018/work order | DEFERRED_TO_SEPARATE_GC018 | Could next-runtime wording bypass LO2? | PASS |
 | NRD1-S4 | execute route negative search | MLW7/MLW8 route wiring is not currently present | SELECT_FOR_WORK_ORDER | Could worker claim route-visible behavior without wiring proof? | PASS |
 
 ## Finding-To-Governance Learning Disposition
