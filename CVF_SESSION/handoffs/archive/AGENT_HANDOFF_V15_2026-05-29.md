@@ -1158,6 +1158,64 @@ Rollback boundary: if this sync is wrong, restore only the MLW7-RTAD1 closure
 continuity text in the protected session files and this handoff section. Do
 not revert unrelated operator or workspace changes.
 
+Current HEAD recorded for this handoff: `10ffb3a8` (Pre-MLW8-PEL1 proof/export/live
+closure base; material commit pending). Updated 2026-06-06 after operator
+authorized MLW8 optimization/benchmark/cost proof, public-safe export order,
+live/provider proof order, API-key live run, and multi-role execution without
+additional questions for this tranche.
+
+Material artifacts in this batch:
+
+- `docs/baselines/CVF_GC018_MLW8_PROOF_EXPORT_LIVE_2026-06-06.md`
+- `docs/work_orders/CVF_WO_MLW8_PEL1_PROOF_EXPORT_LIVE_2026-06-06.md`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw8-proof-export-live-readout.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw8-proof-export-live-readout.test.ts`
+- `docs/evidence/CVF_MLW8_PEL1_RELEASE_GATE_RESULT_2026-06-06.json`
+- `docs/evidence/CVF_MLW8_PEL1_RELEASE_GATE_DIAGNOSTIC_2026-06-06.json`
+- `docs/reviews/CVF_MLW8_PEL1_PROOF_EXPORT_LIVE_COMPLETION_2026-06-06.md`
+
+Public-sync artifact exported at public commit `d97f38c08`:
+
+- `docs/evidence/mlw8-proof-export-live-boundary-2026-06-06.md`
+
+Current mode is
+`mlw8_pel1_proof_export_live_closed_pass_bounded_diagnostic`. Next allowed
+move: open a separate live-E2E selector/test-flow diagnostic GC-018/work order
+if a future live governance pass claim is desired; or stop for review. Boundary
+remains no live governance pass claim, public readiness, hosted readiness,
+production readiness, cost reduction, performance improvement, provider
+superiority, automatic optimization, prompt/context mutation, policy
+relaxation, evidence reduction, provider routing change, memory reinjection,
+high-risk promotion implementation, Learning Orchestrator runtime behavior, or
+autonomous mutation.
+
+## Core Guard Self-Protection Authorization - MLW8-PEL1 Closure Session Sync
+
+Authorized guard-maintenance scope: record MLW8-PEL1 bounded diagnostic closure
+state, public export evidence, current mode
+`mlw8_pel1_proof_export_live_closed_pass_bounded_diagnostic`, and the next
+allowed live-E2E diagnostic or stop-for-review move.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION_MEMORY.md`
+- `AGENT_HANDOFF_V15_2026-05-29.md`
+
+Operator authorization: 2026-06-06 operator instructed Codex to handle the MLW8
+optimization/benchmark/cost proof, public-safe export order, and live/provider
+proof tranche without asking further questions, and allowed API-key live run.
+This sync records bounded closure and diagnostic evidence only. It does not
+authorize automatic optimization, prompt/context mutation, policy relaxation,
+evidence reduction, provider routing changes, live governance pass claims,
+public readiness, hosted readiness, production readiness, cost/performance or
+provider-quality claims, memory reinjection, high-risk promotion
+implementation, Learning Orchestrator runtime behavior, or autonomous mutation.
+
+Rollback boundary: if this sync is wrong, restore only the MLW8-PEL1 continuity
+text in the protected session files and this handoff section. Do not revert
+unrelated operator or workspace changes.
+
 ## Claim Boundary
 
 This handoff is a continuity and routing artifact. It does not prove runtime

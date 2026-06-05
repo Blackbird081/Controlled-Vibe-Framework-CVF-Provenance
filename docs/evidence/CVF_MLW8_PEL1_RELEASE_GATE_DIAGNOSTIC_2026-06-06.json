@@ -1,0 +1,37 @@
+{
+  "artifact": "CVF_MLW8_PEL1_RELEASE_GATE_DIAGNOSTIC_2026-06-06",
+  "date": "2026-06-06",
+  "relatedResult": "docs/evidence/CVF_MLW8_PEL1_RELEASE_GATE_RESULT_2026-06-06.json",
+  "liveRunDiagnostic": {
+    "stage": "release_gate_bundle_live_governance_e2e",
+    "class": "live_playwright_locator_timeout",
+    "retryability": "RETRYABLE_AFTER_UI_SELECTOR_OR_TEST_FLOW_DIAGNOSTIC",
+    "userAction": "none_required_for_allowed_scope",
+    "provider": "DashScope-compatible Alibaba lane was available; provider readiness check passed",
+    "model": "unknown_from_release_gate_summary",
+    "httpStatus": "unknown",
+    "latencyMs": 1263300,
+    "receiptOrTrace": "docs/evidence/CVF_MLW8_PEL1_RELEASE_GATE_RESULT_2026-06-06.json",
+    "safeMessage": "The full release gate completed with exit code 1. Web build, guard-contract typecheck, provider readiness, secrets scan, docs governance, and mock E2E passed. The live Playwright governance suite failed on locator.click timeouts in multiple live tests. This is recorded as live UI/test-flow failure evidence, not a live governance pass."
+  },
+  "resultSummary": {
+    "webBuild": "PASS",
+    "guardContractTypecheck": "PASS",
+    "providerReadiness": "PASS",
+    "secretsScan": "PASS",
+    "docsGovernance": "PASS",
+    "mockE2e": "PASS",
+    "liveGovernanceE2e": "FAIL"
+  },
+  "claimBoundary": {
+    "liveGovernanceProofPassed": false,
+    "publicReadinessClaimAllowed": false,
+    "costReductionClaimAllowed": false,
+    "performanceImprovementClaimAllowed": false,
+    "providerQualityClaimAllowed": false
+  },
+  "secretHandling": {
+    "rawSecretsPrinted": false,
+    "rawSecretsCommitted": false
+  }
+}

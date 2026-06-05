@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-06
 
-Current mode marker: `mlw7_rtad1_runtime_adapter_boundary_closed_pass_bounded`
+Current mode marker: `mlw8_pel1_proof_export_live_closed_pass_bounded_diagnostic`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -29,16 +29,16 @@ Previous long front-door snapshot:
 3. Resolve review queue:
    `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
 4. Resolve active handoff from the state registry:
-   `AGENT_HANDOFF_V15_2026-05-29.md`
+   `AGENT_HANDOFF_V16_2026-06-06.md`
 5. Read mandatory startup guards listed in the state registry.
 
 ## Current State
 
-Current mode: `mlw7_rtad1_runtime_adapter_boundary_closed_pass_bounded`.
+Current mode: `mlw8_pel1_proof_export_live_closed_pass_bounded_diagnostic`.
 
 Active handoff:
 
-`AGENT_HANDOFF_V15_2026-05-29.md`
+`AGENT_HANDOFF_V16_2026-06-06.md`
 
 Active state registry:
 
@@ -50,37 +50,40 @@ Active review queue:
 
 Latest continuity note:
 
-MLW7-RTAD1 Runtime Adapter Boundary Admission is
-`CLOSED_PASS_BOUNDED`:
+MLW8-PEL1 Proof Export Live is `CLOSED_PASS_BOUNDED_DIAGNOSTIC`:
 
-`docs/work_orders/CVF_WO_MLW7_RTAD1_RUNTIME_ADAPTER_BOUNDARY_ADMISSION_2026-06-05.md`
+`docs/work_orders/CVF_WO_MLW8_PEL1_PROOF_EXPORT_LIVE_2026-06-06.md`
 
 Completion review:
 
-`docs/reviews/CVF_MLW7_RTAD1_RUNTIME_ADAPTER_BOUNDARY_ADMISSION_COMPLETION_2026-06-06.md`
+`docs/reviews/CVF_MLW8_PEL1_PROOF_EXPORT_LIVE_COMPLETION_2026-06-06.md`
 
-Authoring commit: `8cb264b1`.
-Dispatch commit: `c746966a`.
-Dispatch transition base: `061c3791`.
-Execution base: `20d45fdd`.
-Closure base: `20d45fdd`.
-Material commit: `7c0fa28c`.
+Evidence:
 
-The tranche closes a deterministic runtime adapter boundary/admission helper
-and focused tests under the existing MLW7 ingestion owner surface. It does not
-authorize runtime adapter implementation beyond that boundary/readout, package
-install, external execution, external repo ingestion, delegation approval,
-registry authority, marketplace publication, public-sync, live/provider proof,
-hosted readiness, production readiness, public readiness, memory reinjection,
-automatic promotion, high-risk promotion implementation, Learning Orchestrator
-runtime behavior, or autonomous mutation.
+- Helper:
+  `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw8-proof-export-live-readout.ts`
+- Release gate result:
+  `docs/evidence/CVF_MLW8_PEL1_RELEASE_GATE_RESULT_2026-06-06.json`
+- Diagnostic:
+  `docs/evidence/CVF_MLW8_PEL1_RELEASE_GATE_DIAGNOSTIC_2026-06-06.json`
+- Public export: public-sync commit `d97f38c08`,
+  `docs/evidence/mlw8-proof-export-live-boundary-2026-06-06.md`
 
-Next allowed move: audit and select a separate operator-authorized lane with
-fresh GC-018/work order, such as MLW8 optimization/benchmark/cost proof, a
-public-safe export order, a live/provider proof order, or another explicitly
-bounded roadmap tranche; or stop for review. Runtime adapter implementation
-beyond the closed boundary/readout remains blocked without separate explicit
-authorization and phase gates.
+The tranche closes bounded proof/export/live evidence handling and public-safe
+boundary export. Focused tests and typecheck passed. Full release gate was run
+with live credentials; build, guard-contract typecheck, provider readiness,
+secrets scan, docs governance, and mock E2E passed, but live Playwright
+governance E2E failed on locator-click timeouts. This is diagnostic evidence,
+not a live governance pass.
+
+Next allowed move: open a separate live-E2E selector/test-flow diagnostic
+GC-018/work order if a future live governance pass claim is desired; or stop
+for review. Blocked without separate authorization and passing phase gates:
+automatic optimization, prompt/context mutation, policy relaxation, evidence
+reduction, provider routing change, public/hosted/production readiness claim,
+cost/performance/provider-quality claim, memory reinjection, high-risk
+promotion implementation, Learning Orchestrator runtime behavior, and
+autonomous mutation.
 
 Previous continuity note:
 
@@ -997,7 +1000,7 @@ gates, and governed file-size checks enforce this front-door contract.
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
-- `AGENT_HANDOFF_V15_2026-05-29.md`
+- `AGENT_HANDOFF_V16_2026-06-06.md`
 - `governance/compat/check_active_session_state.py`
 - `governance/compat/run_agent_autorun_workflow_gate.py`
 

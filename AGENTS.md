@@ -13,13 +13,13 @@ current:
 
 The current active handoff in that registry is:
 
-`AGENT_HANDOFF_V15_2026-05-29.md`
+`AGENT_HANDOFF_V16_2026-06-06.md`
 
 Historical handoffs are archived under:
 
 `CVF_SESSION/handoffs/archive/`
 
-This includes `CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md`, V2-V14, and
+This includes `CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md`, V2-V15, and
 side-channel handoff files. Do not append new status to archived handoffs;
 update the active handoff named by `CVF_SESSION/ACTIVE_SESSION_STATE.json` or
 open a later versioned handoff when the active handoff approaches the limit.
