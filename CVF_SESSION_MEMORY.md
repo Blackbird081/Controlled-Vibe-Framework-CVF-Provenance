@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-05
 
-Current mode marker: `erh_dur2_external_storage_distributed_durability_dispatch_ready`
+Current mode marker: `erh_dur2_external_storage_distributed_durability_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `erh_dur1_durable_evidence_policy_snapshot_closed_pass_bounded`.
+Current mode: `erh_dur2_external_storage_distributed_durability_closed_pass_bounded`.
 
 Active handoff:
 

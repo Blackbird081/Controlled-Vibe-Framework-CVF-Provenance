@@ -146,6 +146,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
             ["python", "governance/compat/check_erh_durable_evidence_policy_snapshot.py", "--enforce"],
         ),
         (
+            "ERH DUR2 external storage adapter workflow chain",
+            ["python", "governance/compat/check_erh_external_storage_adapter.py", "--enforce"],
+        ),
+        (
             "governed pack contract compatibility",
             ["python", "governance/compat/check_governed_pack_contract.py", "--enforce"],
         ),

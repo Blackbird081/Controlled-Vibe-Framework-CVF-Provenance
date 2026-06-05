@@ -698,33 +698,34 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`erh_dur2_external_storage_distributed_durability_dispatch_ready`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=ERH-DUR2 is DISPATCH_READY; author DUR2 work order then dispatch Claude under WORKER_MUST_NOT_COMMIT; DUR2 GC-018 at docs/baselines/CVF_GC018_ERH_DUR2_EXTERNAL_STORAGE_DISTRIBUTED_DURABILITY_2026-06-05.md; dispatchBaseHead=2ed85d65;
+Startup acknowledged: current mode=`erh_dur2_external_storage_distributed_durability_closed_pass_bounded`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=ERH-DUR2 is CLOSED_PASS_BOUNDED with DUR3_NOT_NEEDED_NOW; do not open DUR3 unless operator explicitly authorizes fresh GC-018 for live Redis/DB, external storage service, multi-instance consensus, or distributed audit stream;
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 Current HEAD recorded for this handoff: `2ed85d65` (DUR2 GC-018 authorization). Updated 2026-06-05 after operator explicitly authorized ERH-DUR2, overriding DUR1 `DUR2_NOT_NEEDED_NOW` verdict. GC-018 at docs/baselines/CVF_GC018_ERH_DUR2_EXTERNAL_STORAGE_DISTRIBUTED_DURABILITY_2026-06-05.md.
 Current HEAD recorded for this handoff: `5f12b755` (Dispatch ERH DUR2 external storage workflow). Updated 2026-06-05 after DUR2 GC-018, Claude work order, ERH roadmap, and session continuity were committed. Claude may execute DUR2 under `WORKER_MUST_NOT_COMMIT`; no implementation, live Redis/DB, package/lockfile edit, public-sync, live proof, hosted readiness, production readiness, or public readiness claim is added by the dispatch commit.
+Current HEAD recorded for this handoff: `pending` (Close ERH DUR2 external storage workflow). Updated 2026-06-05 after Claude's DUR2 worker output was reviewed and accepted bounded: `storage-adapter.ts` defines split event-list/key-value adapter interfaces, file adapters preserve DUR1 behavior, Redis adapters throw `CVF_NOT_IMPLEMENTED`, factories route with `CVF_STORAGE_ADAPTER_TYPE`, focused tests/checker/build pass, GC-052 interlock is wired, and DUR3 decision is `DUR3_NOT_NEEDED_NOW`. Boundary: no live Redis/DB, package/lockfile edit, auth/rate-limit/provider change, public-sync, live proof, hosted readiness, production readiness, public readiness, distributed durability, or tamper-proof audit claim.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized session-continuity sync scope: record ERH-DUR2 opening, current mode
-`erh_dur2_external_storage_distributed_durability_dispatch_ready`, DUR1
-`CLOSED_PASS_BOUNDED` (closureBaseHead=49e6725a), DUR2 `DISPATCH_READY`
-(dispatchBaseHead=2ed85d65), SAF3 `SAF3_NOT_NEEDED`.
+Authorized session-continuity sync scope: record ERH-DUR2 closure, current mode
+`erh_dur2_external_storage_distributed_durability_closed_pass_bounded`, DUR1
+`CLOSED_PASS_BOUNDED` (closureBaseHead=49e6725a), DUR2 `CLOSED_PASS_BOUNDED`,
+DUR3 `DUR3_NOT_NEEDED_NOW`, and SAF3 `SAF3_NOT_NEEDED`.
 
 Protected paths:
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION_MEMORY.md`
-- `docs/baselines/CVF_GC018_ERH_DUR2_EXTERNAL_STORAGE_DISTRIBUTED_DURABILITY_2026-06-05.md`
+- `AGENT_HANDOFF_V15_2026-05-29.md`
 
-Operator authorization: 2026-06-05 operator explicitly opened DUR2 with fresh
-GC-018 instruction, superseding DUR1 `DUR2_NOT_NEEDED_NOW`. This sync records
-the DUR2 dispatch state and GC-018 baseline only.
+Operator authorization: 2026-06-05 operator reported ERH-DUR2 complete and
+requested Codex review/closure. This sync records the DUR2 reviewed closure
+state only.
 
 Rollback boundary: if this sync is wrong, restore only the ERH-DUR2 continuity
-text and GC-018 baseline. Do not revert DUR1 closure artifacts, roadmap, or
-historical handoff content.
+text. Do not revert DUR2 source, checker, roadmap, work order, review, GC-018,
+or historical handoff content.
 
 ## Claim Boundary
 

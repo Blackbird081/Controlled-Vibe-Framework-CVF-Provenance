@@ -8,6 +8,7 @@
  *
  * CVF_POLICY_SNAPSHOT_REGISTRY_VERSION: 2026-06-05
  * ERH_DUR1_MARKER: DURABLE_EVIDENCE_STORE_ACTIVE
+ * ERH_DUR2_MARKER: EXTERNAL_STORAGE_ADAPTER_ACTIVE
  *
  * Claim boundary: bounded local persistence only. Not a production database,
  * Redis store, distributed registry, external policy service, or tamper-proof audit.
@@ -17,8 +18,9 @@
  * Env override: CVF_POLICY_SNAPSHOT_DIR
  */
 
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
+
+import { buildKeyValueAdapter, type KeyValueAdapter } from '@/lib/storage-adapter';
 
 export interface PolicySnapshotRecord {
     id: string;
@@ -32,6 +34,8 @@ export interface BuildPolicySnapshotInput {
     id: string;
     createdAt?: string;
 }
+
+const _snapshotAdapter: KeyValueAdapter<PolicySnapshotRecord> = buildKeyValueAdapter<PolicySnapshotRecord>();
 
 export function getSnapshotDir(): string {
     return process.env.CVF_POLICY_SNAPSHOT_DIR
@@ -51,29 +55,11 @@ export function buildPolicySnapshot(input: BuildPolicySnapshotInput): PolicySnap
 }
 
 export async function persistPolicySnapshot(record: PolicySnapshotRecord): Promise<void> {
-    const dir = getSnapshotDir();
-    try {
-        await mkdir(dir, { recursive: true });
-    } catch {
-        // directory already exists or filesystem is read-only
-    }
-    try {
-        const filePath = path.join(dir, `${record.id}.json`);
-        await writeFile(filePath, JSON.stringify(record, null, 2), 'utf8');
-    } catch {
-        // read-only filesystem — snapshot operates in ephemeral mode
-    }
+    await _snapshotAdapter.write(getSnapshotDir(), record.id, record);
 }
 
 export async function readPolicySnapshot(id: string): Promise<PolicySnapshotRecord | null> {
-    const dir = getSnapshotDir();
-    const filePath = path.join(dir, `${id}.json`);
-    try {
-        const raw = await readFile(filePath, 'utf8');
-        return JSON.parse(raw) as PolicySnapshotRecord;
-    } catch {
-        return null;
-    }
+    return _snapshotAdapter.read(getSnapshotDir(), id);
 }
 
 let _policySnapshotCounter = 0;

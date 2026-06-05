@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -206,13 +206,13 @@ to be created by this work order. It is absence-verified above.
 
 | Roadmap or predecessor requirement | DUR2 output | Evidence | Status |
 | --- | --- | --- | --- |
-| ERH-RS1 section 4.4 external storage gap — no pluggable adapter after DUR1 | `StorageAdapter<T>` interface contract + `FileStorageAdapter` + `RedisStorageAdapter` stub | `storage-adapter.ts` source facts | NOT_EXECUTED |
-| GC-018 requirement: `CVF_STORAGE_ADAPTER_TYPE` env factory switch | `buildStorageAdapter()` factory reads `CVF_STORAGE_ADAPTER_TYPE`; defaults to `file` | `storage-adapter.ts` source facts | NOT_EXECUTED |
-| DUR1 backward compatibility requirement | existing `appendAuditEvent`, `readAuditEvents`, `persistPolicySnapshot`, `readPolicySnapshot`, `generatePolicySnapshotId` behavior unchanged with default `file` adapter | focused tests PASS | NOT_EXECUTED |
-| Avoid overclaiming production/distributed durability | Completion review must record DUR3 residual decision; no live Redis/DB claim | DUR2 claim boundary | NOT_EXECUTED |
+| ERH-RS1 section 4.4 external storage gap — no pluggable adapter after DUR1 | Split adapter contract: `EventListAdapter<T>` plus `KeyValueAdapter<T>`; `FileEventListAdapter`, `FileKeyValueAdapter`, `RedisEventListAdapter`, and `RedisKeyValueAdapter` | `storage-adapter.ts`; `check_erh_external_storage_adapter.py --enforce` PASS | PASS |
+| GC-018 requirement: `CVF_STORAGE_ADAPTER_TYPE` env factory switch | `buildEventListAdapter()` and `buildKeyValueAdapter()` read `CVF_STORAGE_ADAPTER_TYPE`; default to `file`; `redis` returns throwing stub | `storage-adapter.test.ts`; focused Vitest PASS | PASS |
+| DUR1 backward compatibility requirement | existing `appendAuditEvent`, `readAuditEvents`, `persistPolicySnapshot`, `readPolicySnapshot`, `generatePolicySnapshotId` behavior unchanged with default `file` adapter | DUR1 regression focused Vitest PASS: `control-plane-events.durable.test.ts`, `policy-snapshot-registry.test.ts`, `web-governance-envelope.test.ts` | PASS |
+| Avoid overclaiming production/distributed durability | Completion review records `ERH_DUR2_DECISION: DUR3_NOT_NEEDED_NOW`; no live Redis/DB claim | `docs/reviews/CVF_ERH_DUR2_EXTERNAL_STORAGE_AND_DISTRIBUTED_DURABILITY_COMPLETION_2026-06-05.md` | PASS |
 
-The worker must replace every `NOT_EXECUTED` row with concrete evidence in the
-completion review.
+Reviewer verified every trace row against source and focused test evidence in
+the DUR2 closure batch.
 
 ## Write Ownership
 
@@ -342,12 +342,14 @@ Reviewer must verify:
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | this work order | status `CLOSED_PASS_BOUNDED` | NOT_EXECUTED |
-| Completion review | `docs/reviews/CVF_ERH_DUR2_EXTERNAL_STORAGE_AND_DISTRIBUTED_DURABILITY_COMPLETION_2026-06-05.md` | status `CLOSED_PASS_BOUNDED`; DUR3 decision recorded | NOT_EXECUTED |
-| Roadmap state | `docs/roadmaps/CVF_ERH_EXTERNAL_REVIEW_HARDENING_ROADMAP_2026-06-04.md` | DUR2 row `CLOSED_PASS_BOUNDED` | NOT_EXECUTED |
-| Registry JSON | `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json` | GC-052 connection `erh-dur2-external-storage-adapter-workflow-chain` added | NOT_EXECUTED |
-| Workflow chain reference | `docs/reference/CVF_ERH_DUR2_EXTERNAL_STORAGE_AND_DISTRIBUTED_DURABILITY_WORKFLOW_CHAIN_2026-06-05.md` | created with DUR3 decision marker | NOT_EXECUTED |
-| Session continuity | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `AGENT_HANDOFF_V15_2026-05-29.md` | continuity updated to DUR2 closed and DUR3 decision | NOT_EXECUTED |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_DUR2_EXTERNAL_STORAGE_AND_DISTRIBUTED_DURABILITY_FOR_CLAUDE_2026-06-05.md` | Status: `CLOSED_PASS_BOUNDED` after worker output reviewed | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ERH_DUR2_EXTERNAL_STORAGE_AND_DISTRIBUTED_DURABILITY_COMPLETION_2026-06-05.md` | completion review records DUR3_NOT_NEEDED_NOW and all verification gates | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ERH_EXTERNAL_REVIEW_HARDENING_ROADMAP_2026-06-04.md` | DUR2 row updated to CLOSED_PASS_BOUNDED | PASS |
+| Registry JSON | `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json` | erh-dur2-external-storage-adapter-workflow-chain connection added | PASS |
+| Registry Markdown | `docs/reference/CVF_ERH_DUR2_EXTERNAL_STORAGE_AND_DISTRIBUTED_DURABILITY_WORKFLOW_CHAIN_2026-06-05.md` | workflow-chain reference created with ERH_DUR2_DECISION | PASS |
+| External evidence digest | N/A with reason | no external source corpus consumed; DUR2 uses repo-local source and tests | N/A with reason |
+| System loop interlock | `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json` | GC-052 checker reports 0 violations | PASS |
+| Session continuity | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `AGENT_HANDOFF_V15_2026-05-29.md` | updated in reviewer closure batch to record DUR2 closed and DUR3 decision | PASS |
 
 ## Closure Checklist
 
@@ -451,8 +453,9 @@ planning. Public-facing external storage or distributed durability claims requir
 a later public-sync work order after DUR2 is reviewed and claim boundaries are
 accepted.
 
-Next action: implement DUR2, then Codex reviewer closes and the operator may
-authorize a public-sync summary if claim boundaries are acceptable.
+Next action: keep DUR3 external backend/distributed durability separate unless
+the operator explicitly authorizes a fresh GC-018. The operator may authorize a
+bounded public-sync summary later if claim boundaries are acceptable.
 
 ## Claim Boundary
 
