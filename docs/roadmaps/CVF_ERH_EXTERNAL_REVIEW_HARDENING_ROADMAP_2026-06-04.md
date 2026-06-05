@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: INITIAL_PRIVATE_TRANCHES_CLOSED_PASS_BOUNDED_PUBLIC_SYNC_EXPORTED_T2C_CI1_PD1_CLOSED_PASS_BOUNDED_DEP1_ACCEPTED_BOUNDED_AUD1_CLOSED_PASS_BOUNDED_SAF1_CLOSED_PASS_BOUNDED_SAF2_CLOSED_PASS_BOUNDED_DUR1_CLOSED_PASS_BOUNDED
+Status: INITIAL_PRIVATE_TRANCHES_CLOSED_PASS_BOUNDED_PUBLIC_SYNC_EXPORTED_T2C_CI1_PD1_CLOSED_PASS_BOUNDED_DEP1_ACCEPTED_BOUNDED_AUD1_CLOSED_PASS_BOUNDED_SAF1_CLOSED_PASS_BOUNDED_SAF2_CLOSED_PASS_BOUNDED_DUR1_CLOSED_PASS_BOUNDED_DUR2_DISPATCH_READY
 
 docType: roadmap
 
@@ -107,6 +107,7 @@ Out of scope:
 | ERH-SAF1 | Safety workflow-chain hardening | `docs/reviews/CVF_ERH_SAF1_SAFETY_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md` | CLOSED_PASS_BOUNDED |
 | ERH-SAF2 | Output safety audit event + governance output patterns + regression corpus | `docs/reviews/CVF_ERH_SAF2_OUTPUT_SAFETY_AND_REGRESSION_CORPUS_COMPLETION_2026-06-05.md` | CLOSED_PASS_BOUNDED |
 | ERH-DUR1 | Durable local evidence store + reconstructable policy snapshot registry | `docs/reviews/CVF_ERH_DUR1_DURABLE_EVIDENCE_AND_POLICY_SNAPSHOT_COMPLETION_2026-06-05.md` | CLOSED_PASS_BOUNDED |
+| ERH-DUR2 | Pluggable `StorageAdapter<T>` interface contract + `FileStorageAdapter` + `RedisStorageAdapter` stub + `CVF_STORAGE_ADAPTER_TYPE` env switch | `docs/baselines/CVF_GC018_ERH_DUR2_EXTERNAL_STORAGE_DISTRIBUTED_DURABILITY_2026-06-05.md` | DISPATCH_READY |
 
 ## Roadmap-To-Work-Order Trace Matrix
 
@@ -128,6 +129,7 @@ Out of scope:
 | ERH-SAF1 safety workflow-chain hardening | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_SAF1_SAFETY_WORKFLOW_CHAIN_FOR_CLAUDE_2026-06-04.md` |
 | ERH-SAF2 output safety and regression corpus | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_SAF2_OUTPUT_SAFETY_AND_REGRESSION_CORPUS_FOR_CLAUDE_2026-06-05.md` |
 | ERH-DUR1 durable evidence and policy snapshot workflow | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_DUR1_DURABLE_EVIDENCE_AND_POLICY_SNAPSHOT_FOR_CLAUDE_2026-06-05.md` |
+| ERH-DUR2 external storage adapter architecture | `docs/work_orders/CVF_AGENT_WORK_ORDER_ERH_DUR2_EXTERNAL_STORAGE_AND_DISTRIBUTED_DURABILITY_FOR_CLAUDE_2026-06-05.md` |
 
 ## Work Plan
 
@@ -147,6 +149,7 @@ Out of scope:
 | E12 | Close ERH-SAF1 deterministic safety workflow-chain hardening | helper, route wiring, ledger, checker, hook wiring, completion packet with SAF2 decision | CLOSED_PASS_BOUNDED |
 | E13 | Implement ERH-SAF2 output safety audit event, governance output patterns, regression corpus | output-validator.ts patterns, route.ts audit event, regression test file, checker, reference docs | CLOSED_PASS_BOUNDED |
 | E14 | Close ERH-DUR1 durable evidence and policy snapshot workflow | policy-snapshot-registry.ts, control-plane-events.ts durable default, focused tests, DUR1 checker, completion review with DUR2 decision | CLOSED_PASS_BOUNDED |
+| E15 | Open ERH-DUR2 external storage adapter architecture | GC-018 baseline, StorageAdapter<T> interface, FileStorageAdapter, RedisStorageAdapter stub, CVF_STORAGE_ADAPTER_TYPE env, checker, tests, docs | DISPATCH_READY |
 
 ## Acceptance Criteria
 
@@ -196,8 +199,13 @@ Out of scope:
 - ERH-DUR1 is `CLOSED_PASS_BOUNDED` after SAF2 closure. DUR1 closes the
   handleable local runtime subset of the external-review durability and policy
   snapshot findings; external database, Redis, distributed rate limiting, and
-  production-grade durability remain separate. DUR2 decision:
-  `DUR2_NOT_NEEDED_NOW`.
+  production-grade durability remain separate.
+- ERH-DUR2 is `DISPATCH_READY` after operator explicitly authorized DUR2
+  2026-06-05, superseding the DUR1 `DUR2_NOT_NEEDED_NOW` verdict. DUR2 targets
+  a pluggable `StorageAdapter<T>` interface contract to allow future Redis/DB
+  backends to be slotted in without bolted-on refactor. No live Redis instance
+  required for DUR2 proof. GC-018:
+  `docs/baselines/CVF_GC018_ERH_DUR2_EXTERNAL_STORAGE_DISTRIBUTED_DURABILITY_2026-06-05.md`.
 - ERH initial private docs-only tranches are closed bounded in
   `docs/reviews/CVF_ERH_INITIAL_PRIVATE_TRANCHES_COMPLETION_2026-06-04.md`.
   T1A/T2A/T3/T2B/T4/T1B no longer carry review-pending status. T2B is

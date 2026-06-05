@@ -698,28 +698,31 @@ External agent memory files: non-canonical convenience only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`erh_dur1_durable_evidence_policy_snapshot_closed_pass_bounded`;
-active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=ERH-DUR1 is CLOSED_PASS_BOUNDED with DUR2_NOT_NEEDED_NOW; external DB/Redis/distributed durability and provider-risk config require separate operator authorization and fresh GC-018; SAF3 remains NOT_NEEDED without a future concrete source-visible gap and fresh work order;
+Startup acknowledged: current mode=`erh_dur2_external_storage_distributed_durability_dispatch_ready`;
+active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=ERH-DUR2 is DISPATCH_READY; author DUR2 work order then dispatch Claude under WORKER_MUST_NOT_COMMIT; DUR2 GC-018 at docs/baselines/CVF_GC018_ERH_DUR2_EXTERNAL_STORAGE_DISTRIBUTED_DURABILITY_2026-06-05.md; dispatchBaseHead=2ed85d65;
 parked checkpoint=VI5-T4/T5 hosted retest.
+
+Current HEAD recorded for this handoff: `2ed85d65` (DUR2 GC-018 authorization). Updated 2026-06-05 after operator explicitly authorized ERH-DUR2, overriding DUR1 `DUR2_NOT_NEEDED_NOW` verdict. GC-018 at docs/baselines/CVF_GC018_ERH_DUR2_EXTERNAL_STORAGE_DISTRIBUTED_DURABILITY_2026-06-05.md.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized session-continuity sync scope: record ERH-DUR1 closure, current mode
-`erh_dur1_durable_evidence_policy_snapshot_closed_pass_bounded`, DUR1
-`CLOSED_PASS_BOUNDED`, DUR2 verdict `DUR2_NOT_NEEDED_NOW`, and SAF3 verdict
-`SAF3_NOT_NEEDED`.
+Authorized session-continuity sync scope: record ERH-DUR2 opening, current mode
+`erh_dur2_external_storage_distributed_durability_dispatch_ready`, DUR1
+`CLOSED_PASS_BOUNDED` (closureBaseHead=49e6725a), DUR2 `DISPATCH_READY`
+(dispatchBaseHead=2ed85d65), SAF3 `SAF3_NOT_NEEDED`.
 
 Protected paths:
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION_MEMORY.md`
+- `docs/baselines/CVF_GC018_ERH_DUR2_EXTERNAL_STORAGE_DISTRIBUTED_DURABILITY_2026-06-05.md`
 
-Operator authorization: 2026-06-05 operator agreed not to open SAF3 now and
-requested a Claude work order for the next handleable ERH architecture gap.
-This sync records the DUR1 dispatch state only.
+Operator authorization: 2026-06-05 operator explicitly opened DUR2 with fresh
+GC-018 instruction, superseding DUR1 `DUR2_NOT_NEEDED_NOW`. This sync records
+the DUR2 dispatch state and GC-018 baseline only.
 
-Rollback boundary: if this sync is wrong, restore only the ERH-DUR1 continuity
-text or active-state keys. Do not revert DUR1 baseline, roadmap, work-order, or
+Rollback boundary: if this sync is wrong, restore only the ERH-DUR2 continuity
+text and GC-018 baseline. Do not revert DUR1 closure artifacts, roadmap, or
 historical handoff content.
 
 ## Claim Boundary
