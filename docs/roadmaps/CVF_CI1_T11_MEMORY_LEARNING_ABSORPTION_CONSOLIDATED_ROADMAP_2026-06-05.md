@@ -288,6 +288,43 @@ Deferred scope remains:
 - MLW7/MLW8;
 - autonomous memory, learning, policy, provider, prompt, or context mutation.
 
+## MLW3-RT1 Evidence-To-Learning Runtime Proof Update
+
+Closure date: 2026-06-05.
+
+Closure disposition: CLOSED_PASS_BOUNDED.
+
+Closure artifacts:
+
+- GC-018: `docs/baselines/CVF_GC018_MLW3_RT1_EVIDENCE_TO_LEARNING_RUNTIME_PROOF_2026-06-05.md`
+- Work order: `docs/work_orders/CVF_WO_MLW3_RT1_EVIDENCE_TO_LEARNING_RUNTIME_PROOF_2026-06-05.md`
+- Completion review: `docs/reviews/CVF_MLW3_RT1_EVIDENCE_TO_LEARNING_RUNTIME_PROOF_COMPLETION_2026-06-05.md`
+- Runtime helper: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/evidence-to-learning-readout.ts`
+- Deterministic regressions: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/evidence-to-learning-readout.test.ts` and `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.mlw3-evidence-to-learning.test.ts`
+- Live proof: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.mlw3-evidence-to-learning.alibaba.live.test.ts`
+
+Closed scope:
+
+- route-visible `evidenceToLearningReadout`;
+- deterministic proposal-only learning signal id;
+- governance receipt refs plus MLW2 `contextBundleHash` and `contextBundleId`;
+- truth/evaluation/reputation candidate metadata;
+- finding-to-learning bridge record;
+- `autonomousMutationAuthorized=false`, `runtimeTruthMutationAuthorized=false`,
+  `runtimeModelTuningAuthorized=false`, `rawOutputIncluded=false`, and
+  `rawContextIncluded=false` invariant preservation;
+- one live Alibaba route proof after a classified output-bypass-guard failure.
+
+Deferred scope remains:
+
+- Learning Orchestrator implementation;
+- high-risk promotion lane and MLW5/MLW6 validation;
+- truth-model, evaluation, or reputation mutation;
+- model tuning, prompt mutation, or provider routing changes;
+- public-sync/public claim;
+- MLW7/MLW8;
+- autonomous memory, learning, policy, provider, prompt, or context mutation.
+
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |

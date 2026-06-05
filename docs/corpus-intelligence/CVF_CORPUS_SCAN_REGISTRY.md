@@ -82,6 +82,7 @@ prior scan here before starting new work.
 | `App onboarding/` | LEGACY | NOT_STARTED | — | ? | UI design reference; low priority |
 | `Policy_Local/data_input/` | POLICY_DOCUMENT | DEEP_CLASSIFIED | LPCI2-T8 | 2 | t8 query receipt + retrieval trace + negative search evidence; final readiness READY; runtime still requires fresh work order |
 | `MLW2-RT1 Context Bundle Runtime Proof` | PROJECT_SOURCE | SCANNED_WITH_FINDINGS | MLW2-RT1 | 8 | route-visible metadata-only contextBundleReadout; deterministic + Alibaba live proof; no full RAG/vector/public claim |
+| `MLW3-RT1 Evidence-To-Learning Runtime Proof` | PROJECT_SOURCE | SCANNED_WITH_FINDINGS | MLW3-RT1 | 8 | route-visible metadata-only evidenceToLearningReadout; deterministic + Alibaba live proof; no truth mutation/orchestrator/public claim |
 
 ---
 

@@ -7,6 +7,7 @@ import { buildPhase2CProductBriefSliceForRoute } from '@/lib/phase2c-product-bri
 import { buildPhase3EOperationalMetricsForRoute } from '@/lib/phase3e-operational-emission';
 import { buildRouteAuditMemoryCapture } from '@/lib/audit-memory-receipt';
 import { buildContextBundleReadout } from '@/lib/context-bundle-readout';
+import { buildEvidenceToLearningReadout } from '@/lib/evidence-to-learning-readout';
 import { buildRouteRequestContextReadout } from '@/lib/route-request-context-readout';
 import { buildVerticalIntegrationReadout } from '@/lib/vertical-integration-readout';
 import { buildEvidenceReceipt } from '@/lib/web-governance-envelope';
@@ -293,6 +294,12 @@ export async function buildExecuteFinalResponse(params: BuildExecuteFinalRespons
         workflowId: workflowExecution?.workflowId,
         permissionRole: resolvedExecutionRole.permissionRole,
     });
+    const evidenceToLearningReadout = buildEvidenceToLearningReadout({
+        receipt: governanceEvidenceReceipt,
+        contextBundleReadout,
+        learningPlaneReadout: responseReadouts.learningPlaneReadout,
+        auditMemoryReceipt,
+    });
 
     return NextResponse.json({
         ...aiResult,
@@ -341,6 +348,7 @@ export async function buildExecuteFinalResponse(params: BuildExecuteFinalRespons
         auditMemoryReceipt,
         requestContextReadout,
         contextBundleReadout,
+        evidenceToLearningReadout,
         verticalIntegrationReadout,
         ...responseReadouts,
         ...(workflowExecution ? workflowExecution : {}),

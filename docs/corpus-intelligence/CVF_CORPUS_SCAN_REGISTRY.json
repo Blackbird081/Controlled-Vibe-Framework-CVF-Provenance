@@ -1173,6 +1173,72 @@
       "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
     },
     {
+      "id": "mlw3-rt1-evidence-to-learning-runtime-proof",
+      "corpusType": "PROJECT_SOURCE",
+      "displayName": "MLW3-RT1 Evidence-To-Learning Runtime Proof",
+      "scopePaths": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/evidence-to-learning-readout.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/evidence-to-learning-readout.test.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route-final-response.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.mlw3-evidence-to-learning.test.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.mlw3-evidence-to-learning.alibaba.live.test.ts",
+        "docs/baselines/CVF_GC018_MLW3_RT1_EVIDENCE_TO_LEARNING_RUNTIME_PROOF_2026-06-05.md",
+        "docs/reviews/CVF_MLW3_RT1_EVIDENCE_TO_LEARNING_RUNTIME_PROOF_COMPLETION_2026-06-05.md",
+        "docs/work_orders/CVF_WO_MLW3_RT1_EVIDENCE_TO_LEARNING_RUNTIME_PROOF_2026-06-05.md"
+      ],
+      "fileCount": 8,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "MLW3-RT1",
+      "scanDate": "2026-06-05",
+      "manifestHash": "33edad370843cdf9ae1774151198e0b641e5490eddfb7ee3b732d1536c592aad",
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MLW3_RT1_EVIDENCE_TO_LEARNING_RUNTIME_PROOF_COMPLETION_2026-06-05.md",
+      "completionReviewPath": "docs/reviews/CVF_MLW3_RT1_EVIDENCE_TO_LEARNING_RUNTIME_PROOF_COMPLETION_2026-06-05.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_MLW3_RT1_EVIDENCE_TO_LEARNING_RUNTIME_PROOF_2026-06-05.md",
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "RECONCILED_WITH_DECLARED_GAPS",
+        "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+      },
+      "semanticRegions": [
+        "LEARNING_SIGNAL_RUNTIME",
+        "CONTEXT_RUNTIME",
+        "EXECUTE_ROUTE_GOVERNANCE",
+        "LIVE_PROVIDER_PROOF"
+      ],
+      "priorAbsorption": "MLW3 contract defined evidence-to-truth/evaluation/reputation proposal pipeline; MLW3-RT1 proves route-visible metadata-only evidenceToLearningReadout with deterministic and Alibaba live tests.",
+      "findings": [
+        {
+          "id": "MLW3-RT1-F1-learning-signal-runtime-proof-added",
+          "summary": "MLW3 advanced from contract-only evidence pipeline to route-visible metadata runtime evidence.",
+          "disposition": "ACCEPT",
+          "nextAction": "Retain focused evidence-to-learning regression before MLW5/MLW6 promotion work.",
+          "defectClass": "RUNTIME_SIGNAL_GAP",
+          "learningLane": "RUNTIME_BEHAVIOR_LEARNING",
+          "f2gRef": "docs/reviews/CVF_MLW3_RT1_EVIDENCE_TO_LEARNING_RUNTIME_PROOF_COMPLETION_2026-06-05.md#finding-to-governance-learning-disposition"
+        },
+        {
+          "id": "MLW3-RT1-F2-live-output-bypass-guard-retained",
+          "summary": "First live attempt was blocked by the existing output bypass guard; prompt boundary was corrected and guard was not weakened.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Use neutral live-proof prompts for route evidence tests.",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_MLW3_RT1_EVIDENCE_TO_LEARNING_RUNTIME_PROOF_COMPLETION_2026-06-05.md#finding-to-governance-learning-disposition"
+        }
+      ],
+      "negativeSearchTerms": [
+        "truth model mutation claim (not made)",
+        "Learning Orchestrator implementation claim (not made)",
+        "model tuning claim (not made)",
+        "autonomous learning mutation claim (not made)",
+        "public learning feature claim (not made)"
+      ],
+      "nextScanRecommendation": "MLW5/MLW6 can consume evidenceToLearningReadout as proposal evidence; promotion/orchestration requires separate fresh GC-018.",
+      "hashAlgorithm": "sha256",
+      "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
+    },
+    {
       "id": "cvf-web-dependency-manifest-erh-dep1",
       "corpusType": "PROJECT_SOURCE",
       "displayName": "CVF web dependency manifest and lockfile for ERH-DEP1",
