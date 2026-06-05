@@ -280,6 +280,27 @@ DEFERRED_PRIVATE_ONLY
 Reason: this completion review is private provenance evidence and not a public
 catalog export. Public claims require separate public-sync artifacts.
 
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: record MLW3-RT1 implementation commit
+`463b54bd`, current mode
+`mlw3_rt1_evidence_to_learning_runtime_proof_closed_pass_bounded`, and the
+next allowed move after bounded MLW3 runtime closure.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization: 2026-06-05 operator explicitly authorized MLW3-RT1.
+This sync records closure continuity only so the committed runtime-proof
+artifacts satisfy the active session guard.
+
+Rollback boundary: if this sync is wrong, restore only the MLW3 continuity text
+in the protected session files. Do not revert MLW3 implementation commit
+`463b54bd`, MLW3 runtime artifacts, registry entries, source files, tests,
+public sync history, or historical handoff content.
+
 ## Claim Boundary
 
 This completion proves bounded MLW3 route metadata only. It does not prove

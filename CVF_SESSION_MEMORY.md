@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-05
 
-Current mode marker: `mlw2_rt1_context_bundle_runtime_proof_closed_pass_bounded`
+Current mode marker: `mlw3_rt1_evidence_to_learning_runtime_proof_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `mlw2_rt1_context_bundle_runtime_proof_closed_pass_bounded`.
+Current mode: `mlw3_rt1_evidence_to_learning_runtime_proof_closed_pass_bounded`.
 
 Active handoff:
 
@@ -50,19 +50,23 @@ Active review queue:
 
 Latest continuity note:
 
-MLW2-RT1 Context Bundle Runtime Proof is CLOSED_PASS_BOUNDED for route-visible
-metadata-only `/api/execute` context bundle evidence. Completion review:
-`docs/reviews/CVF_MLW2_RT1_CONTEXT_BUNDLE_RUNTIME_PROOF_COMPLETION_2026-06-05.md`.
+MLW3-RT1 Evidence-To-Learning Runtime Proof is CLOSED_PASS_BOUNDED for
+route-visible metadata-only `/api/execute` evidence-to-learning proposal
+evidence. Completion review:
+`docs/reviews/CVF_MLW3_RT1_EVIDENCE_TO_LEARNING_RUNTIME_PROOF_COMPLETION_2026-06-05.md`.
 GC-018:
-`docs/baselines/CVF_GC018_MLW2_RT1_CONTEXT_BUNDLE_RUNTIME_PROOF_2026-06-05.md`.
+`docs/baselines/CVF_GC018_MLW3_RT1_EVIDENCE_TO_LEARNING_RUNTIME_PROOF_2026-06-05.md`.
 Work order:
-`docs/work_orders/CVF_WO_MLW2_RT1_CONTEXT_BUNDLE_RUNTIME_PROOF_2026-06-05.md`.
-Deterministic regressions, TypeScript, and Alibaba live proof passed. MLW-RT1
+`docs/work_orders/CVF_WO_MLW3_RT1_EVIDENCE_TO_LEARNING_RUNTIME_PROOF_2026-06-05.md`.
+Implementation commit: `463b54bd`. Deterministic regressions, TypeScript, and
+Alibaba live proof passed after one classified output-bypass-guard failure.
+MLW2-RT1 remains closed for route-visible context bundle evidence; MLW-RT1
 remains closed for existing file-backed durable-memory write/read continuity.
-LHW24 remains the latest closed numbered LHW wave. Boundary: context metadata
-proof only; no full RAG/fusion runtime, retrieval quality, backend migration,
-public-sync, hosted readiness, production readiness, public readiness, MLW7/MLW8,
-or autonomous mutation claim.
+LHW24 remains the latest closed numbered LHW wave. Boundary: proposal metadata
+proof only; no truth-model mutation, Learning Orchestrator implementation,
+model tuning, prompt mutation, provider routing change, public-sync, hosted
+readiness, production readiness, public readiness, MLW7/MLW8, or autonomous
+mutation claim.
 
 Pain-point closure direction:
 
