@@ -724,6 +724,24 @@ Current HEAD recorded for this handoff: `35ccfba7` (Close MLW4-MLW6 RT1 continui
 Current HEAD recorded for this handoff: `a4293789` (Sync MLW4-MLW6 RT1 closure session state). Updated 2026-06-05 after MLW4-MLW6 RT1 closure continuity was synchronized across active state, session memory, handoff, and session-sync authorization review. This is session-continuity sync only; MLW4-MLW6 RT1 remains `CLOSED_PASS_BOUNDED`, and no truth-model mutation, trust/policy mutation, Learning Orchestrator implementation, model tuning, prompt mutation, provider routing change, backend migration, public-sync, hosted readiness, production readiness, public readiness, MLW7/MLW8, automatic promotion, or autonomous mutation claim is added.
 Current HEAD recorded for this handoff: `7caf0cea` (Authorize MLW7 and MLW8 GC-018 baselines). Updated 2026-06-05 after operator requested `GC-018 cho MLW7 và MLW8`. Baselines: `docs/baselines/CVF_GC018_MLW7_OPTIONAL_EXTERNAL_CAPABILITY_INGESTION_2026-06-05.md` and `docs/baselines/CVF_GC018_MLW8_EFFICIENCY_OVERCONSTRAINT_FEEDBACK_2026-06-05.md`. Both are `GC018_AUTHORIZED_HOLD_FOR_WORK_ORDER`, source-verified, include rescan hardening blocks, and passed pre-dispatch autorun gate. Boundary: no MLW7/MLW8 implementation, external capability install/execute, automatic optimization, policy relaxation, live proof, public-sync, hosted readiness, production readiness, public readiness, Learning Orchestrator implementation, truth-model mutation, trust/policy mutation, or autonomous mutation.
 Current HEAD recorded for this handoff: `04956ef0` (Sync MLW7/MLW8 GC-018 session state). Updated 2026-06-05 after active state, session memory, handoff, and session-sync authorization review were synchronized to `mlw7_mlw8_gc018_authorized_hold_for_work_order`. This is session-continuity sync only; MLW7/MLW8 remain held for source-verified work orders, and no runtime execution, external capability install/execute, automatic optimization, policy relaxation, live proof, public-sync, hosted readiness, production readiness, public readiness, Learning Orchestrator implementation, truth-model mutation, trust/policy mutation, or autonomous mutation claim is added.
+Current HEAD recorded for this handoff: `b355f538` (Tighten GC-018 guard authoring checks). Updated 2026-06-05 after Codex added guard-clean authoring guidance to the GC-018 continuation template and Post-W7 GC-018 drafting checklist. Boundary: documentation guard hygiene only; no GC-018 LO0 baseline, no MLW7/MLW8 implementation, no runtime execution, no live proof, no public-sync, no hosted readiness, no production readiness, no public readiness, no Learning Orchestrator implementation, no high-risk promotion lane implementation, and no autonomous mutation.
+
+## Core Guard Self-Protection Authorization - Guard Hygiene Handoff Sync
+
+Authorized guard-maintenance scope: record guard-hygiene commit `b355f538` in
+the active handoff so the active-session gate has current HEAD evidence.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V15_2026-05-29.md`
+
+Operator authorization: 2026-06-05 operator requested cleaning the
+guard-related issues before opening GC-018 LO0. This sync records handoff
+continuity only; it does not change current mode or next allowed move.
+
+Rollback boundary: if this sync is wrong, restore only this handoff HEAD line
+and authorization block. Do not revert guard-hygiene commit `b355f538` unless
+the template/checklist update itself is being unwound.
 
 ## Core Guard Self-Protection Authorization - MLW7/MLW8 GC-018 Session Sync
 
