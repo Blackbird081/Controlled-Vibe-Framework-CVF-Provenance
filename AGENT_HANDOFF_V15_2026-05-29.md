@@ -703,6 +703,7 @@ active handoff=`AGENT_HANDOFF_V15_2026-05-29.md`; next allowed move=ERH-DUR2 is 
 parked checkpoint=VI5-T4/T5 hosted retest.
 
 Current HEAD recorded for this handoff: `2ed85d65` (DUR2 GC-018 authorization). Updated 2026-06-05 after operator explicitly authorized ERH-DUR2, overriding DUR1 `DUR2_NOT_NEEDED_NOW` verdict. GC-018 at docs/baselines/CVF_GC018_ERH_DUR2_EXTERNAL_STORAGE_DISTRIBUTED_DURABILITY_2026-06-05.md.
+Current HEAD recorded for this handoff: `5f12b755` (Dispatch ERH DUR2 external storage workflow). Updated 2026-06-05 after DUR2 GC-018, Claude work order, ERH roadmap, and session continuity were committed. Claude may execute DUR2 under `WORKER_MUST_NOT_COMMIT`; no implementation, live Redis/DB, package/lockfile edit, public-sync, live proof, hosted readiness, production readiness, or public readiness claim is added by the dispatch commit.
 
 ## Core Guard Self-Protection Authorization
 
