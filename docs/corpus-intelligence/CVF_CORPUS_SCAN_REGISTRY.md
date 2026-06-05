@@ -70,6 +70,7 @@ prior scan here before starting new work.
 
 | Corpus | Type | Status | Wave | Files | Key findings |
 | --- | --- | --- | --- | --- | --- |
+| `MLW-RT1 durable memory runtime proof` | RUNTIME_PROOF | SCANNED_WITH_FINDINGS | MLW-RT1 | 9 | Existing file-backed `/api/execute` durable-memory write/read continuity proved; backend migration/public readiness deferred |
 | `CVF_Important/Knowledge Base_Graphify/` | LEGACY | SCANNED_WITH_FINDINGS | CI1-T2 | 5 | G-GM-* guard absent; CLI absent; KGR1 partial |
 | `CVF ADD/code-review-graph/` | LEGACY | SCANNED_WITH_FINDINGS | CI1-T3 | 7 | graph governance signals deferred; command/MCP surface deferred; performance claims bounded |
 | `CVF_Important/` (broad) | LEGACY | PARTIALLY_SCANNED | LHW-RESCAN-A | 230 | Inventory only; Graphify subfamily done |

@@ -223,6 +223,37 @@ Deferred scope:
 - MLW8 efficiency/overconstraint feedback;
 - autonomous memory, learning, policy, provider, or prompt mutation.
 
+## MLW-RT1 Runtime Proof Update
+
+Closure date: 2026-06-05.
+
+Closure disposition: CLOSED_PASS_BOUNDED.
+
+Closure artifacts:
+
+- GC-018: `docs/baselines/CVF_GC018_MLW_RT1_DURABLE_MEMORY_RUNTIME_PROOF_2026-06-05.md`
+- Work order: `docs/work_orders/CVF_WO_MLW_RT1_DURABLE_MEMORY_RUNTIME_PROOF_2026-06-05.md`
+- Completion review: `docs/reviews/CVF_MLW_RT1_DURABLE_MEMORY_RUNTIME_PROOF_COMPLETION_2026-06-05.md`
+- Deterministic regression: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.durable-memory.test.ts`
+- Live proof: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.mlw-rt1-durable-memory.alibaba.live.test.ts`
+
+Closed scope:
+
+- existing file-backed durable memory write/read continuity through governed
+  `/api/execute`;
+- summary-only durable write receipt;
+- later durable read receipt using the same stored memory ID;
+- `canReinject=false` and `rawMemoryReleased=false` invariant preservation;
+- one live Alibaba route proof.
+
+Deferred scope remains:
+
+- backend migration beyond the existing file-backed store;
+- production-grade durability;
+- public-sync/public claim;
+- MLW7/MLW8;
+- autonomous memory, learning, policy, provider, or prompt mutation.
+
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |

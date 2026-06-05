@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-05
 
-Current mode marker: `mlw1_mlw6_memory_learning_core_workflow_chain_closed_pass_bounded`
+Current mode marker: `mlw_rt1_durable_memory_runtime_proof_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `mlw1_mlw6_memory_learning_core_workflow_chain_closed_pass_bounded`.
+Current mode: `mlw_rt1_durable_memory_runtime_proof_closed_pass_bounded`.
 
 Active handoff:
 
@@ -50,17 +50,18 @@ Active review queue:
 
 Latest continuity note:
 
-MLW1-MLW6 Memory Learning Core Workflow Chain is CLOSED_PASS_BOUNDED as
-contract-only artifacts. Completion review:
-`docs/reviews/CVF_MLW1_MLW6_MEMORY_LEARNING_CORE_WORKFLOW_CHAIN_COMPLETION_2026-06-05.md`.
+MLW-RT1 Durable Memory Runtime Proof is CLOSED_PASS_BOUNDED for existing
+file-backed `/api/execute` durable-memory write/read continuity. Completion
+review:
+`docs/reviews/CVF_MLW_RT1_DURABLE_MEMORY_RUNTIME_PROOF_COMPLETION_2026-06-05.md`.
 GC-018:
-`docs/baselines/CVF_GC018_MLW1_MLW6_MEMORY_LEARNING_CORE_WORKFLOW_CHAIN_2026-06-05.md`.
+`docs/baselines/CVF_GC018_MLW_RT1_DURABLE_MEMORY_RUNTIME_PROOF_2026-06-05.md`.
 Work order:
-`docs/work_orders/CVF_WO_MLW1_MLW6_MEMORY_LEARNING_CORE_WORKFLOW_CHAIN_2026-06-05.md`.
-LHW24 remains the latest closed numbered LHW wave. Boundary: private
-source-analysis/planning/contract closure only; no runtime, public-sync, hosted
-readiness, production readiness, public readiness, live proof, MLW7/MLW8, or
-autonomous mutation claim.
+`docs/work_orders/CVF_WO_MLW_RT1_DURABLE_MEMORY_RUNTIME_PROOF_2026-06-05.md`.
+Deterministic regression and Alibaba live proof passed. LHW24 remains the
+latest closed numbered LHW wave. Boundary: existing file-backed store proof
+only; no backend migration, public-sync, hosted readiness, production readiness,
+public readiness, MLW7/MLW8, or autonomous mutation claim.
 
 Pain-point closure direction:
 
@@ -267,23 +268,24 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-MLW1-MLW6 Memory Learning Core Workflow Chain is `CLOSED_PASS_BOUNDED` as
-contract-only artifacts.
+MLW-RT1 Durable Memory Runtime Proof is `CLOSED_PASS_BOUNDED` for existing
+file-backed `/api/execute` durable-memory write/read continuity.
 
 GC-018:
-`docs/baselines/CVF_GC018_MLW1_MLW6_MEMORY_LEARNING_CORE_WORKFLOW_CHAIN_2026-06-05.md`
+`docs/baselines/CVF_GC018_MLW_RT1_DURABLE_MEMORY_RUNTIME_PROOF_2026-06-05.md`
 
 Work order:
-`docs/work_orders/CVF_WO_MLW1_MLW6_MEMORY_LEARNING_CORE_WORKFLOW_CHAIN_2026-06-05.md`
+`docs/work_orders/CVF_WO_MLW_RT1_DURABLE_MEMORY_RUNTIME_PROOF_2026-06-05.md`
 
 Completion review:
-`docs/reviews/CVF_MLW1_MLW6_MEMORY_LEARNING_CORE_WORKFLOW_CHAIN_COMPLETION_2026-06-05.md`
+`docs/reviews/CVF_MLW_RT1_DURABLE_MEMORY_RUNTIME_PROOF_COMPLETION_2026-06-05.md`
 
-Next allowed move requires fresh operator authorization and GC-018 for one of:
-runtime/backend implementation, public-safe memory/learning summary and
-public-sync, MLW7 external capability ingestion, MLW8 efficiency/overconstraint
-feedback, or live governance proof. No runtime/source-changing MLW work is
-authorized by the contract closure alone.
+Next allowed move requires fresh GC-018 for one of: backend migration/durable
+storage hardening, public-safe memory/learning summary and public-sync, MLW7
+external capability ingestion, MLW8 efficiency/overconstraint feedback, or
+broader release-quality live governance proof. RT1 closure alone does not claim
+backend migration, hosted readiness, production readiness, public readiness, or
+autonomous memory/learning mutation.
 
 ERH-DUR1 Durable Evidence And Policy Snapshot is `CLOSED_PASS_BOUNDED`:
 
