@@ -60,6 +60,7 @@ Completion review:
 
 Evidence:
 
+- Private material commit: `5918584c`.
 - Helper:
   `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw8-proof-export-live-readout.ts`
 - Release gate result:

@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`mlw8_pel1_proof_export_live_closed_pass_boun
 
 `mlw8_pel1_proof_export_live_closed_pass_bounded_diagnostic`
 
-Current HEAD recorded for this handoff: `10ffb3a8423f9e39d2b87ea4ce49893458f3ed9a`
-(Pre-MLW8-PEL1 private material commit base; material commit pending).
+Current HEAD recorded for this handoff: `5918584caedd235e3aa722ebb1e5b42c1245a7cd`
+(MLW8-PEL1 private material commit).
 
 ## Active Boundary
 
@@ -81,6 +81,7 @@ Public-safe export:
 
 Verification summary:
 
+- Private material commit: `5918584c`.
 - Pre-dispatch autorun gate: PASS.
 - Pre-implementation autorun gate: PASS.
 - Focused tests: PASS, 3 files / 13 tests.
