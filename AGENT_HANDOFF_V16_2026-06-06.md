@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`mlw8_pel1_proof_export_live_closed_pass_boun
 
 `mlw8_pel1_proof_export_live_closed_pass_bounded_diagnostic`
 
-Current HEAD recorded for this handoff: `3c19148c2c35be12b2c10451934da3f391f2709d`
-(MLW8-PEL1 scope-evidence alignment; material commit `5918584c`).
+Current HEAD recorded for this handoff: `ca0693922e90b02917c2cff9c14f0a0d96942d70`
+(MLW8-PEL1 public catalog boundary note; material commit `5918584c`).
 
 ## Active Boundary
 
@@ -93,6 +93,7 @@ Verification summary:
 - Private material commit: `5918584c`.
 - Root-file exposure registry sync commit: `7da248a0`.
 - Closure scope-evidence alignment commit: `3c19148c`.
+- Public catalog boundary note commit: `ca069392`.
 - Pre-dispatch autorun gate: PASS.
 - Pre-implementation autorun gate: PASS.
 - Focused tests: PASS, 3 files / 13 tests.
