@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-05
 
-Current mode marker: `mlw4_mlw6_rt1_continuity_audit_simulation_runtime_chain_closed_pass_bounded`
+Current mode marker: `mlw7_mlw8_gc018_authorized_hold_for_work_order`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `mlw4_mlw6_rt1_continuity_audit_simulation_runtime_chain_closed_pass_bounded`.
+Current mode: `mlw7_mlw8_gc018_authorized_hold_for_work_order`.
 
 Active handoff:
 
@@ -50,25 +50,20 @@ Active review queue:
 
 Latest continuity note:
 
-MLW4-MLW6 RT1 Continuity Audit Simulation Runtime Chain is
-CLOSED_PASS_BOUNDED for route-visible metadata-only `/api/execute`
-`executionContinuityHandoffReadout`, `auditFeedbackValidationReadout`, and
-`simulationFailureGateReadout`. Completion review:
-`docs/reviews/CVF_MLW4_MLW6_RT1_CONTINUITY_AUDIT_SIMULATION_RUNTIME_CHAIN_COMPLETION_2026-06-05.md`.
-GC-018:
-`docs/baselines/CVF_GC018_MLW4_MLW6_RT1_CONTINUITY_AUDIT_SIMULATION_RUNTIME_CHAIN_2026-06-05.md`.
-Work order:
-`docs/work_orders/CVF_WO_MLW4_MLW6_RT1_CONTINUITY_AUDIT_SIMULATION_RUNTIME_CHAIN_2026-06-05.md`.
-Implementation commit: `35ccfba7`. Deterministic regressions, TypeScript, and
-Alibaba live proof passed. MLW3-RT1 remains closed for route-visible
-evidence-to-learning proposal evidence; MLW2-RT1 remains closed for
-route-visible context bundle evidence; MLW-RT1 remains closed for existing
-file-backed durable-memory write/read continuity. LHW24 remains the latest
-closed numbered LHW wave. Boundary: metadata readout proof only; no
-truth-model mutation, trust/policy mutation, Learning Orchestrator
-implementation, model tuning, prompt mutation, provider routing change,
-public-sync, hosted readiness, production readiness, public readiness,
-MLW7/MLW8, or autonomous mutation claim.
+MLW7 and MLW8 GC-018 baselines are authorized and held for source-verified work
+orders. Baselines:
+`docs/baselines/CVF_GC018_MLW7_OPTIONAL_EXTERNAL_CAPABILITY_INGESTION_2026-06-05.md`
+and
+`docs/baselines/CVF_GC018_MLW8_EFFICIENCY_OVERCONSTRAINT_FEEDBACK_2026-06-05.md`.
+Baseline commit: `7caf0cea`. MLW4-MLW6 RT1 remains
+CLOSED_PASS_BOUNDED for route-visible metadata-only continuity/audit/simulation
+readouts. Next allowed move: author a source-verified work order for MLW7 or
+MLW8 and run the required autorun gates before implementation. Boundary: the
+GC-018 baselines do not authorize runtime execution, external capability
+install/execute, automatic optimization, policy relaxation, live provider proof,
+public-sync, hosted readiness, production readiness, public readiness, Learning
+Orchestrator implementation, truth-model mutation, trust/policy mutation, or
+autonomous mutation.
 
 Pain-point closure direction:
 

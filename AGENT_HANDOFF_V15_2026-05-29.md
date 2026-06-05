@@ -722,6 +722,28 @@ Current HEAD recorded for this handoff: `463b54bd` (Close MLW3-RT1 evidence-to-l
 Current HEAD recorded for this handoff: `2311bf95` (Sync MLW3-RT1 closure session state). Updated 2026-06-05 after MLW3-RT1 closure continuity was synchronized across active state, session memory, handoff, and the MLW3 completion review authorization block. This is session-continuity sync only; MLW3-RT1 remains `CLOSED_PASS_BOUNDED`, and no truth-model mutation, Learning Orchestrator implementation, model tuning, prompt mutation, provider routing change, public-sync, hosted readiness, production readiness, public readiness, MLW7/MLW8, or autonomous mutation claim is added.
 Current HEAD recorded for this handoff: `35ccfba7` (Close MLW4-MLW6 RT1 continuity audit simulation runtime chain). Updated 2026-06-05 after Codex closed MLW4-MLW6 RT1 as `CLOSED_PASS_BOUNDED`: GC-018 `docs/baselines/CVF_GC018_MLW4_MLW6_RT1_CONTINUITY_AUDIT_SIMULATION_RUNTIME_CHAIN_2026-06-05.md`, work order `docs/work_orders/CVF_WO_MLW4_MLW6_RT1_CONTINUITY_AUDIT_SIMULATION_RUNTIME_CHAIN_2026-06-05.md`, completion `docs/reviews/CVF_MLW4_MLW6_RT1_CONTINUITY_AUDIT_SIMULATION_RUNTIME_CHAIN_COMPLETION_2026-06-05.md`, runtime helper `mlw-runtime-chain-readouts.ts`, deterministic tests `mlw-runtime-chain-readouts.test.ts` and `route.mlw4-mlw6-runtime-chain.test.ts`, TypeScript PASS, and Alibaba live proof `route.mlw4-mlw6-runtime-chain.alibaba.live.test.ts`. Boundary: route-visible metadata-only continuity/audit/simulation readouts; no truth-model mutation, trust/policy mutation, Learning Orchestrator implementation, model tuning, prompt mutation, provider routing change, backend migration, public-sync, hosted readiness, production readiness, public readiness, MLW7/MLW8, automatic promotion, or autonomous mutation.
 Current HEAD recorded for this handoff: `a4293789` (Sync MLW4-MLW6 RT1 closure session state). Updated 2026-06-05 after MLW4-MLW6 RT1 closure continuity was synchronized across active state, session memory, handoff, and session-sync authorization review. This is session-continuity sync only; MLW4-MLW6 RT1 remains `CLOSED_PASS_BOUNDED`, and no truth-model mutation, trust/policy mutation, Learning Orchestrator implementation, model tuning, prompt mutation, provider routing change, backend migration, public-sync, hosted readiness, production readiness, public readiness, MLW7/MLW8, automatic promotion, or autonomous mutation claim is added.
+Current HEAD recorded for this handoff: `7caf0cea` (Authorize MLW7 and MLW8 GC-018 baselines). Updated 2026-06-05 after operator requested `GC-018 cho MLW7 và MLW8`. Baselines: `docs/baselines/CVF_GC018_MLW7_OPTIONAL_EXTERNAL_CAPABILITY_INGESTION_2026-06-05.md` and `docs/baselines/CVF_GC018_MLW8_EFFICIENCY_OVERCONSTRAINT_FEEDBACK_2026-06-05.md`. Both are `GC018_AUTHORIZED_HOLD_FOR_WORK_ORDER`, source-verified, include rescan hardening blocks, and passed pre-dispatch autorun gate. Boundary: no MLW7/MLW8 implementation, external capability install/execute, automatic optimization, policy relaxation, live proof, public-sync, hosted readiness, production readiness, public readiness, Learning Orchestrator implementation, truth-model mutation, trust/policy mutation, or autonomous mutation.
+
+## Core Guard Self-Protection Authorization - MLW7/MLW8 GC-018 Session Sync
+
+Authorized guard-maintenance scope: record MLW7 and MLW8 GC-018 baseline commit
+`7caf0cea`, current mode
+`mlw7_mlw8_gc018_authorized_hold_for_work_order`, and next allowed move after
+baseline authorization.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION_MEMORY.md`
+- `AGENT_HANDOFF_V15_2026-05-29.md`
+
+Operator authorization: 2026-06-05 operator explicitly requested `GC-018 cho
+MLW7 và MLW8`. This sync records session continuity only; it does not authorize
+MLW7/MLW8 implementation.
+
+Rollback boundary: if this sync is wrong, restore only the MLW7/MLW8 continuity
+text in the protected session files and this handoff section. Do not revert
+baseline commit `7caf0cea` unless the GC-018 baseline itself is being unwound.
 
 ## Core Guard Self-Protection Authorization - MLW4-MLW6 RT1 Session Sync
 
