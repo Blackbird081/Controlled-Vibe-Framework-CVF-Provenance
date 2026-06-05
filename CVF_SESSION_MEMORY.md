@@ -64,6 +64,7 @@ Dispatch commit: `c746966a`.
 Dispatch transition base: `061c3791`.
 Execution base: `20d45fdd`.
 Closure base: `20d45fdd`.
+Material commit: `7c0fa28c`.
 
 The tranche closes a deterministic runtime adapter boundary/admission helper
 and focused tests under the existing MLW7 ingestion owner surface. It does not

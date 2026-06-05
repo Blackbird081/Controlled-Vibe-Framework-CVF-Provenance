@@ -1109,9 +1109,10 @@ Rollback boundary: if this sync is wrong, restore only the MLW7-RTAD1 dispatch
 continuity text in the protected session files and this handoff section. Do
 not revert unrelated operator or workspace changes.
 
-Current HEAD recorded for this handoff: `20d45fdd` (Close MLW7-RTAD1 runtime
-adapter boundary admission; material commit pending). Updated 2026-06-06 after
-operator instructed Codex to close the tranche with multi-role execution.
+Current HEAD recorded for this handoff: `7c0fa28c` (Close MLW7-RTAD1 runtime
+adapter boundary admission). Updated 2026-06-06 after material commit
+`feat(mlw7): close rtad1 boundary admission` closed the tranche with
+operator-authorized multi-role execution.
 Material artifacts in this batch:
 `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw7-runtime-adapter-boundary-admission.ts`,
 `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw7-runtime-adapter-boundary-admission.test.ts`,
