@@ -1065,9 +1065,9 @@ Rollback boundary: if this sync is wrong, restore only the MLW7-RTAD1
 continuity text in the protected session files and this handoff section. Do
 not revert unrelated operator or workspace changes.
 
-Current HEAD recorded for this handoff: `061c3791` (Pre-MLW7-RTAD1 dispatch
-transition base; material commit pending). Updated 2026-06-06 after operator
-instructed `tiếp tục dispatch` from the MLW7-RTAD1 work-order review state.
+Current HEAD recorded for this handoff: `c746966a` (Dispatch MLW7-RTAD1 runtime
+adapter boundary work order). Updated 2026-06-06 after operator instructed
+`tiếp tục dispatch` from the MLW7-RTAD1 work-order review state.
 Material artifact in this batch:
 `docs/work_orders/CVF_WO_MLW7_RTAD1_RUNTIME_ADAPTER_BOUNDARY_ADMISSION_2026-06-05.md`.
 Current mode is
