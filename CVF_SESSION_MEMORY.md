@@ -58,7 +58,7 @@ Completion review:
 
 `docs/reviews/CVF_MLW_NRD1_NEXT_RUNTIME_DECISION_READOUT_COMPLETION_2026-06-05.md`
 
-Material commit: pending.
+Material commit: `efd4dc85`.
 
 Next allowed move: choose a separate operator-authorized lane: MLW7 external
 execution/runtime adapter GC-018, MLW8 optimization/benchmark/cost proof

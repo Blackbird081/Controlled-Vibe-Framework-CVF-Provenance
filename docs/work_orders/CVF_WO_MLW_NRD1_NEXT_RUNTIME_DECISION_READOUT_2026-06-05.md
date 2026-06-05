@@ -14,7 +14,7 @@ executionBaseHead: `d0aa2d5b`
 
 closureBaseHead: `d0aa2d5b`
 
-Commit mode: `REVIEWER_COMMIT_PREPARED`
+Commit mode: `REVIEWER_COMMITTED`
 
 ## Purpose
 
@@ -53,7 +53,7 @@ proof, secrets/quota use, destructive action, or claim-boundary expansion.
 | `dispatchBaseHead` | `727591ea` | Work-order authoring base captured before this packet |
 | `executionBaseHead` | `d0aa2d5b` | Captured before implementation |
 | `closureBaseHead` | `d0aa2d5b` | Captured before closure |
-| Commit mode | `REVIEWER_COMMIT_PREPARED` | Reviewer/committer owns closure review and commit |
+| Commit mode | `REVIEWER_COMMITTED` | Reviewer/committer closed and committed material implementation |
 
 ## Agent Roles
 
