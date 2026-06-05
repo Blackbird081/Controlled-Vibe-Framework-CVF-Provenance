@@ -1,0 +1,52 @@
+{
+  "date": "2026-06-06",
+  "gate_result": "PASS",
+  "checks": [
+    {
+      "name": "Web build (npm run build)",
+      "status": "PASS",
+      "message": "Build succeeded",
+      "detail": []
+    },
+    {
+      "name": "TypeScript check (guard contract)",
+      "status": "PASS",
+      "message": "TypeScript check clean",
+      "detail": []
+    },
+    {
+      "name": "Provider readiness",
+      "status": "PASS",
+      "message": "CERTIFIED lanes: 3 \u2014 status: CERTIFIED",
+      "detail": []
+    },
+    {
+      "name": "Secrets scan",
+      "status": "PASS",
+      "message": "No secret patterns detected",
+      "detail": []
+    },
+    {
+      "name": "Docs governance (RC docs present)",
+      "status": "PASS",
+      "message": "All 3 required RC docs present",
+      "detail": []
+    },
+    {
+      "name": "E2E Playwright UI (mock)",
+      "status": "PASS",
+      "message": "Playwright UI mock suite passed",
+      "detail": [
+        "\u001b[1A\u001b[2K  6 passed (32.4s)"
+      ]
+    },
+    {
+      "name": "E2E Playwright Governance (live)",
+      "status": "PASS",
+      "message": "Playwright live governance suite passed",
+      "detail": [
+        "\u001b[2m[WebServer] \u001b[22mRead more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins"
+      ]
+    }
+  ]
+}
