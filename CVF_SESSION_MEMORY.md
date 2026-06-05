@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-06
 
-Current mode marker: `mlw8_pel1_proof_export_live_closed_pass_bounded_diagnostic`
+Current mode marker: `le1_live_e2e_selector_flow_diagnostic_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `mlw8_pel1_proof_export_live_closed_pass_bounded_diagnostic`.
+Current mode: `le1_live_e2e_selector_flow_diagnostic_closed_pass_bounded`.
 
 Active handoff:
 
@@ -50,38 +50,39 @@ Active review queue:
 
 Latest continuity note:
 
-MLW8-PEL1 Proof Export Live is `CLOSED_PASS_BOUNDED_DIAGNOSTIC`:
+LE1 Live E2E Selector Flow Diagnostic is `CLOSED_PASS_BOUNDED`:
 
-`docs/work_orders/CVF_WO_MLW8_PEL1_PROOF_EXPORT_LIVE_2026-06-06.md`
+`docs/work_orders/CVF_WO_LE1_LIVE_E2E_SELECTOR_FLOW_DIAGNOSTIC_2026-06-06.md`
 
 Completion review:
 
-`docs/reviews/CVF_MLW8_PEL1_PROOF_EXPORT_LIVE_COMPLETION_2026-06-06.md`
+`docs/reviews/CVF_LE1_LIVE_E2E_SELECTOR_FLOW_DIAGNOSTIC_COMPLETION_2026-06-06.md`
 
 Evidence:
 
-- Private material commit: `5918584c`.
+- Material commit: `8a6cb056`.
 - Helper:
-  `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw8-proof-export-live-readout.ts`
+  `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts`
+- Focused live Playwright result:
+  `docs/evidence/CVF_LE1_LIVE_E2E_SELECTOR_FLOW_DIAGNOSTIC_RESULT_2026-06-06.json`
 - Release gate result:
-  `docs/evidence/CVF_MLW8_PEL1_RELEASE_GATE_RESULT_2026-06-06.json`
+  `docs/evidence/CVF_LE1_RELEASE_GATE_RESULT_2026-06-06.json`
 - Diagnostic:
-  `docs/evidence/CVF_MLW8_PEL1_RELEASE_GATE_DIAGNOSTIC_2026-06-06.json`
-- Public export: public-sync commit `d97f38c08`,
-  `docs/evidence/mlw8-proof-export-live-boundary-2026-06-06.md`
+  `docs/evidence/CVF_LE1_RELEASE_GATE_DIAGNOSTIC_2026-06-06.json`
 
-The tranche closes bounded proof/export/live evidence handling and public-safe
-boundary export. Focused tests and typecheck passed. Full release gate was run
-with live credentials; build, guard-contract typecheck, provider readiness,
-secrets scan, docs governance, and mock E2E passed, but live Playwright
-governance E2E failed on locator-click timeouts. This is diagnostic evidence,
-not a live governance pass.
+LE1 closes the live-E2E selector/test-flow diagnostic opened after MLW8-PEL1.
+The shared Playwright helper now uses request-level NextAuth sign-in before UI
+fallback and signed service-token headers for direct `/api/execute` live route
+proofs when `CVF_SERVICE_TOKEN` is available. Focused live Playwright passed
+with 8 expected, 1 skipped, 0 unexpected. The full release gate passed with
+live credentials: build, guard-contract typecheck, provider readiness, secrets
+scan, docs governance, mock E2E, and live Playwright governance all PASS.
 
-Next allowed move: open a separate live-E2E selector/test-flow diagnostic
-GC-018/work order if a future live governance pass claim is desired; or stop
-for review. Blocked without separate authorization and passing phase gates:
-automatic optimization, prompt/context mutation, policy relaxation, evidence
-reduction, provider routing change, public/hosted/production readiness claim,
+Next allowed move: stop for review or open a fresh, separately authorized
+GC-018/work order for the next product/governance tranche. Blocked without
+separate authorization and passing phase gates: automatic optimization,
+prompt/context mutation, policy relaxation, evidence reduction, provider
+routing change, public/hosted/production readiness claim,
 cost/performance/provider-quality claim, memory reinjection, high-risk
 promotion implementation, Learning Orchestrator runtime behavior, and
 autonomous mutation.

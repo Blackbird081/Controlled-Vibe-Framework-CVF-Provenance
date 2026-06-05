@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 Commit mode: WORKER_MAY_COMMIT
 
@@ -306,6 +306,19 @@ LE1 may claim only selector/test-flow diagnostic outcome and bounded live E2E
 evidence. It may not claim production readiness, hosted readiness, public
 readiness, provider superiority, cost reduction, performance improvement,
 policy relaxation, or runtime governance mutation.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_WO_LE1_LIVE_E2E_SELECTOR_FLOW_DIAGNOSTIC_2026-06-06.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LE1_LIVE_E2E_SELECTOR_FLOW_DIAGNOSTIC_COMPLETION_2026-06-06.md` | Final disposition, changed files, claim boundary, gate evidence | PASS |
+| Roadmap state | `N/A with reason` | LE1 derives from active next allowed move after MLW8-PEL1, not a standalone roadmap row | N/A with reason |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | LE1 closure state and nextAllowedMove updated | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md` | LE1 current mode and next allowed move updated | PASS |
+| External evidence digest | `N/A with reason` | No external corpus or public-sync evidence was created by LE1 | N/A with reason |
+| System loop interlock | `N/A with reason` | LE1 changes Playwright test-flow helper only; no system loop interlock registry route changed | N/A with reason |
+| Session continuity | `CVF_SESSION_MEMORY.md`, `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `AGENT_HANDOFF_V16_2026-06-06.md` | current mode and next allowed move synced after material commit `8a6cb056` | PASS |
 
 ## Public Export Disposition
 

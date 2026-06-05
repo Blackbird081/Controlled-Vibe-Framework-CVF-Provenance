@@ -19,7 +19,7 @@ Target:
 
 - active startup routing;
 - latest mode and next allowed move;
-- bounded closure state for MLW8-PEL1;
+- bounded closure state for LE1 after MLW8-PEL1;
 - handoff rotation evidence.
 
 Owner boundary:
@@ -32,14 +32,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mlw8_pel1_proof_export_live_closed_pass_bounded_diagnostic`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=open a separate live-E2E selector/test-flow diagnostic GC-018/work order if a future live governance pass claim is desired, or stop for review; parked checkpoint=none.
+Startup acknowledged: current mode=`le1_live_e2e_selector_flow_diagnostic_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=stop for review or open a fresh separately authorized GC-018/work order for the next product/governance tranche; parked checkpoint=none.
 
 ## Current Mode
 
-`mlw8_pel1_proof_export_live_closed_pass_bounded_diagnostic`
+`le1_live_e2e_selector_flow_diagnostic_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `ca0693922e90b02917c2cff9c14f0a0d96942d70`
-(MLW8-PEL1 public catalog boundary note; material commit `5918584c`).
+Current HEAD recorded for this handoff: `8a6cb0565c223c14a1794ba2c92c132d861f654a`
+(LE1 material commit; this handoff sync records closure continuity).
 
 ## Active Boundary
 
@@ -62,59 +62,71 @@ Only V16 should be treated as the active root handoff.
 - Opened V16 compact handoff.
 - Rotated V15 into the handoff archive.
 - Recorded MLW8-PEL1 bounded diagnostic closure and public-safe export evidence.
+- Closed LE1 live E2E selector/test-flow diagnostic with focused live
+  Playwright PASS and full release gate PASS.
 - Classified V16 as an `INTERNAL_ONLY` visible root file for P3/public exposure
   guard compatibility.
-- Preserved next allowed move as separate live-E2E diagnostic work order or stop
-  for review.
+- Preserved next allowed move as stop for review or a fresh separately
+  authorized GC-018/work order.
 
 ## Latest Continuity Note
 
-MLW8-PEL1 Proof Export Live is `CLOSED_PASS_BOUNDED_DIAGNOSTIC`.
+LE1 Live E2E Selector Flow Diagnostic is `CLOSED_PASS_BOUNDED`.
 
 Private artifacts:
 
-- GC-018: `docs/baselines/CVF_GC018_MLW8_PROOF_EXPORT_LIVE_2026-06-06.md`
-- Work order: `docs/work_orders/CVF_WO_MLW8_PEL1_PROOF_EXPORT_LIVE_2026-06-06.md`
-- Helper: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw8-proof-export-live-readout.ts`
-- Test: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw8-proof-export-live-readout.test.ts`
-- Completion: `docs/reviews/CVF_MLW8_PEL1_PROOF_EXPORT_LIVE_COMPLETION_2026-06-06.md`
-- Release gate result: `docs/evidence/CVF_MLW8_PEL1_RELEASE_GATE_RESULT_2026-06-06.json`
-- Release gate diagnostic: `docs/evidence/CVF_MLW8_PEL1_RELEASE_GATE_DIAGNOSTIC_2026-06-06.json`
+- GC-018: `docs/baselines/CVF_GC018_LE1_LIVE_E2E_SELECTOR_FLOW_DIAGNOSTIC_2026-06-06.md`
+- Work order: `docs/work_orders/CVF_WO_LE1_LIVE_E2E_SELECTOR_FLOW_DIAGNOSTIC_2026-06-06.md`
+- Helper: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts`
+- Completion: `docs/reviews/CVF_LE1_LIVE_E2E_SELECTOR_FLOW_DIAGNOSTIC_COMPLETION_2026-06-06.md`
+- Focused live Playwright result: `docs/evidence/CVF_LE1_LIVE_E2E_SELECTOR_FLOW_DIAGNOSTIC_RESULT_2026-06-06.json`
+- Release gate result: `docs/evidence/CVF_LE1_RELEASE_GATE_RESULT_2026-06-06.json`
+- Diagnostic: `docs/evidence/CVF_LE1_RELEASE_GATE_DIAGNOSTIC_2026-06-06.json`
 
 Public-safe export:
 
-- Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
-- Public-sync commit: `d97f38c08`
-- Public artifact: `docs/evidence/mlw8-proof-export-live-boundary-2026-06-06.md`
-- Public Export Disposition: `EXPORTED`
+- Public-sync for LE1: not authorized.
+- Public Export Disposition: `DEFERRED_PRIVATE_ONLY`
+- Prior MLW8-PEL1 public-safe export remains at public-sync commit `d97f38c08`.
 
 Verification summary:
 
-- Private material commit: `5918584c`.
+- LE1 material commit: `8a6cb056`.
 - Root-file exposure registry sync commit: `7da248a0`.
 - Closure scope-evidence alignment commit: `3c19148c`.
 - Public catalog boundary note commit: `ca069392`.
 - Pre-dispatch autorun gate: PASS.
 - Pre-implementation autorun gate: PASS.
-- Focused tests: PASS, 3 files / 13 tests.
 - Web TypeScript check: PASS.
+- Focused live Playwright final run: PASS, 8 expected, 1 skipped,
+  0 unexpected, 0 flaky.
+- Secret-value evidence check: PASS; raw Alibaba/DashScope/service token values
+  were not found in LE1 evidence files.
 - Full release gate command was run with live credentials.
-- Release gate result: build, guard-contract typecheck, provider readiness,
-  secrets scan, docs governance, and mock E2E PASS; live Playwright governance
-  E2E FAIL on `locator.click` timeouts.
+- Release gate result: PASS for build, guard-contract typecheck, provider
+  readiness, secrets scan, docs governance, mock E2E, and live Playwright
+  governance.
+
+Predecessor MLW8-PEL1 remains historically:
+
+- MLW8-PEL1 helper focused tests: PASS, 3 files / 13 tests.
+- Web TypeScript check: PASS.
+- MLW8-PEL1 release gate result: build, guard-contract typecheck, provider
+  readiness, secrets scan, docs governance, and mock E2E PASS; live Playwright
+  governance E2E FAIL on `locator.click` timeouts.
 
 Diagnostic boundary:
 
-- The live release gate result is diagnostic evidence, not a live governance
-  pass.
+- LE1 may claim local private release-gate live governance E2E pass after
+  bounded test-flow repair.
 - Do not claim public readiness, hosted readiness, production readiness,
   cost reduction, performance improvement, provider superiority, or MLW8
-  automatic optimization from PEL1.
+  automatic optimization from LE1.
 
 ## Next Allowed Move
 
-Open a separate live-E2E selector/test-flow diagnostic GC-018/work order if a
-future live governance pass claim is desired, or stop for review.
+Stop for review or open a fresh, separately authorized GC-018/work order for
+the next product/governance tranche.
 
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`; this MLW8-PEL1 tranche does not alter
