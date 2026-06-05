@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-05
 
-Current mode marker: `erh_dur2_external_storage_distributed_durability_closed_pass_bounded`
+Current mode marker: `ci1_t8_cvf_edit_full_reconciliation_closed_pass_bounded_pending_commit`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `erh_dur2_external_storage_distributed_durability_closed_pass_bounded`.
+Current mode: `ci1_t8_cvf_edit_full_reconciliation_closed_pass_bounded_pending_commit`.
 
 Active handoff:
 
@@ -471,6 +471,19 @@ CI1-T7 LPCI Intake Bridge is `CLOSED_PASS_BOUNDED`:
 The CI1 corpus-intelligence chain is fully closed: T1-T7 all
 `CLOSED_PASS_BOUNDED`. CI1 roadmap final status
 `ALL_TRANCHES_CLOSED_PASS_BOUNDED_LPCI_ROADMAP_READY`.
+
+CI1-T8 CVF Edit Full Reconciliation is `CLOSED_PASS_BOUNDED_PENDING_COMMIT`:
+
+`docs/audits/CVF_CI1_T8_CVF_EDIT_FULL_RECONCILIATION_PACKET_2026-06-05.md`
+
+It upgrades `legacy-cvf-edit` in
+`docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` to
+`SCANNED_WITH_FINDINGS`: 10/10 files read and reconciled; manifestHash
+`48b3639af259da5dbf303ffd500eeaf2765ae33d0c06a194a7123af2a7a30c88`;
+GC-047 `COMPLETE_VERIFIED`, GC-048 `RECONCILED_VERIFIED`, GC-050
+`CLASSIFIED_STRUCTURAL_PASS`. Boundary: private source-analysis only; no
+runtime enforcement proof, failure-simulation harness, adapter SDK, provider
+proof, public-sync, hosted readiness, production readiness, or public readiness.
 
 CSA1 Corpus Standard Authoring (NR-05/NR-11) is `CLOSED_PASS_BOUNDED`:
 
