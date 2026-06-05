@@ -173,6 +173,50 @@ claim, add:
 Machine check:
 `governance/compat/check_corpus_to_knowledge_map_reconciliation.py`
 
+For any GC-018 packet derived from an external review, legacy/intake scan,
+corpus-finding replay, or rescan, add:
+
+Machine check:
+`governance/compat/check_rescan_intelligence_hardening.py`
+
+```text
+## Rescan Intelligence Hardening
+
+- Original source artifact: <path or N/A with reason>
+- Predecessor intake artifact: <path or N/A with reason>
+- Delta ledger status: present | N/A with reason
+- Routing matrix status: present | N/A with reason
+- Semantic sampling status: present | N/A with reason
+- Rescan intelligence verdict: COMPLETE_WITH_DELTA_ROUTING_SAMPLE |
+  COMPLETE_WITH_DECLARED_LIMITS | PARTIAL | BLOCKED |
+  NOT_APPLICABLE_WITH_REASON
+
+### Original-Intake Delta Ledger
+
+| Category | Item | Disposition | Reason |
+| --- | --- | --- | --- |
+| UNCHANGED_FROM_INTAKE | <item> | <disposition> | <reason> |
+| CHANGED_DISPOSITION | <item> | <disposition> | <reason> |
+| NEW_FINDING | <item> | <disposition> | <reason> |
+| REMOVED_OR_REJECTED | <item> | <disposition> | <reason> |
+
+### Follow-Up Routing Matrix
+
+| Routing lane | Item | Routed action |
+| --- | --- | --- |
+| DO_NOW | <item> | <action> |
+| SEPARATE_RUNTIME_TRANCHE | <item> | <action> |
+| STRATEGIC_OPERATOR_DECISION | <item> | <action> |
+| OUT_OF_SCOPE | <item> | <action> |
+| RESOLVED_BY_DESIGN | <item> | <action> |
+
+### Semantic Sampling / Adversarial Review
+
+| sampleId | source section | source claim | disposition checked | adversarial challenge | verdict |
+| --- | --- | --- | --- | --- | --- |
+| <sample-id> | <section> | <claim> | <disposition> | <challenge> | <PASS/FAIL/N/A with reason> |
+```
+
 ```text
 ## Knowledge System Reconciliation
 
@@ -239,6 +283,34 @@ Authorization Boundary
 - If NO, reopen trigger: <fresh reassessment or new candidate condition>
 ```
 
+## Guard-Clean Authoring Addendum
+
+Before marking a GC-018, dispatch packet, session-sync review, or closure packet
+ready, verify these authoring constraints:
+
+- Corpus/intake/rescan-derived `docs/baselines/` artifacts include the
+  `Corpus Completeness And Report Integrity` block with exact GC-047 fields
+  and filesystem-backed enumeration evidence, even when a fresh corpus scan is
+  out of scope.
+- Corpus/intake/rescan-derived artifacts include `## Rescan Intelligence
+  Hardening` with delta ledger, follow-up routing matrix, and semantic
+  sampling/adversarial review.
+- Changes to `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION_MEMORY.md`,
+  `AGENTS.md`, `CLAUDE.md`, or guard/control files are backed by a changed
+  artifact containing `## Core Guard Self-Protection Authorization` and exact
+  protected-path rows.
+- New `docs/reviews/` authorization or sync reviews include these structural
+  sections: `## Scope / Target / Owner Boundary`, `## Target / Source`,
+  `## Scope / Methodology`, `## Findings / Position`, and
+  `## Risk / Corrective Action`.
+- Finding-bearing artifacts use canonical learning vocabulary from GC-049 for
+  defect class, learning lane, escalation state, and next control action.
+- Active session updates keep `nextAllowedMove` aligned with the latest closed
+  LHW wave and record the current handoff HEAD after each commit that affects
+  governed continuity.
+- Autorun gates use real ranges. Do not use `--base HEAD --head HEAD` as
+  dispatch, closure, or push evidence for changed governed artifacts.
+
 ## Tranche Closure Checklist (mandatory before filing closure packet)
 
 Every tranche closure packet must include this checklist. Each item must
@@ -259,8 +331,15 @@ Tranche Closure Checklist
       <reason>
 - [ ] Corpus Completeness And Report Integrity block present OR explicitly N/A:
       <reason>
+- [ ] Rescan Intelligence Hardening block present OR explicitly N/A:
+      <reason>
 - [ ] Knowledge System Reconciliation block present OR explicitly N/A:
       <reason>
+- [ ] Protected file changes, if any, have Core Guard Self-Protection Authorization
+- [ ] New review/sync review artifacts include required structural review sections
+- [ ] Finding-bearing artifacts include canonical Finding-To-Governance Learning Disposition
+- [ ] Active session nextAllowedMove and latest closed LHW continuity remain aligned
+- [ ] Pre-push autorun gate run on a committed non-empty range
 ```
 
 Omitting the catalog item without an explicit N/A is a closure defect.
