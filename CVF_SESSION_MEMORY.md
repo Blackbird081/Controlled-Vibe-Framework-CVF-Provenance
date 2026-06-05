@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-05
 
-Current mode marker: `mlw7_mlw8_runtime_helpers_closed_pass_bounded`
+Current mode marker: `closure_packaging_preflight_hardening_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `mlw7_mlw8_runtime_helpers_closed_pass_bounded`.
+Current mode: `closure_packaging_preflight_hardening_closed_pass_bounded`.
 
 Active handoff:
 
@@ -87,6 +87,21 @@ Completion:
 
 Runtime helper:
 `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw8-efficiency-overconstraint-feedback.ts`
+
+Closure Packaging Preflight Hardening is `CLOSED_PASS_BOUNDED`:
+
+`docs/work_orders/CVF_WO_CLOSURE_PACKAGING_PREFLIGHT_HARDENING_2026-06-05.md`
+
+Completion:
+`docs/reviews/CVF_CLOSURE_PACKAGING_PREFLIGHT_HARDENING_COMPLETION_2026-06-05.md`
+
+Checker:
+`governance/compat/check_closure_packaging_preflight.py`
+
+It adds an early structural preflight to catch stale closed-artifact wording,
+git-derived or bare `rg --files` corpus enumeration, closure diff path
+overclaims, and missing checker-recognized core-guard authorization before the
+full pre-closure bundle emits a longer finding list.
 
 Next allowed move: operator may request a public-safe memory/learning
 summary/public-sync, a separate LO2 runtime implementation GC-018/work order, a
@@ -333,6 +348,16 @@ Completion:
 
 Runtime helper:
 `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw8-efficiency-overconstraint-feedback.ts`
+
+Closure Packaging Preflight Hardening is `CLOSED_PASS_BOUNDED`:
+
+`docs/work_orders/CVF_WO_CLOSURE_PACKAGING_PREFLIGHT_HARDENING_2026-06-05.md`
+
+Completion:
+`docs/reviews/CVF_CLOSURE_PACKAGING_PREFLIGHT_HARDENING_COMPLETION_2026-06-05.md`
+
+Checker:
+`governance/compat/check_closure_packaging_preflight.py`
 
 Next allowed move: operator may request a public-safe memory/learning
 summary/public-sync, a separate LO2 runtime implementation GC-018/work order, a

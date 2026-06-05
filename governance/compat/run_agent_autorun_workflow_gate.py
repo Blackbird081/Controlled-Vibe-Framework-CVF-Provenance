@@ -50,6 +50,10 @@ def _range_command(name: str, script: str, base: str, head: str) -> GateCommand:
 def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
     return (
         GateCommand(
+            "closure packaging preflight",
+            ("python", "governance/compat/check_closure_packaging_preflight.py", "--base", base, "--head", head, "--enforce"),
+        ),
+        GateCommand(
             "core guard self-protection",
             ("python", "governance/compat/check_core_guard_self_protection.py", "--base", base, "--head", head, "--enforce"),
         ),

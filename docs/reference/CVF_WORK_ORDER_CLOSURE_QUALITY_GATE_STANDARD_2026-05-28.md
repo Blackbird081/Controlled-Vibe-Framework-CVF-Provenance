@@ -59,7 +59,8 @@ equivalent final state unless the applicable closure gates below are satisfied:
 10. worker autonomy and no-question rule for delegated packets;
 11. self-reported gate evidence consistency;
 12. work-order fulfillment manifest for runtime/source work;
-13. machine closure package for downstream loop inputs.
+13. machine closure package for downstream loop inputs;
+14. closure packaging preflight before full pre-closure claim.
 
 Allowed-scope machine-gate failures are mandatory remediation, not operator
 preference questions. Escalate only when remediation would exceed Allowed
@@ -123,6 +124,22 @@ rotation, archive, or shrink evidence in the same governed batch.
 
 Runtime/source work must declare required artifacts, forbidden paths, and
 forbidden filesystem state before implementation.
+
+### Closure Packaging Preflight
+
+Before claiming full `pre-closure`, run the early closure-packaging preflight
+or rely on the autorun wrapper that runs it first. The preflight catches
+recurring packaging defects while the fix is still small:
+
+- closed-equivalent artifacts retaining stale dispatch, hold, or pending
+  pre-closure language;
+- corpus completeness blocks using git-derived or bare `rg --files`
+  enumeration instead of filesystem-backed enumeration such as
+  `rg --files --hidden --no-ignore ...`;
+- closure diff / changed-file sections citing paths that are not present in
+  the changed range;
+- protected guard/session files changed without a checker-recognized
+  `Core Guard Self-Protection Authorization` artifact.
 
 ### Current Runtime Freshness Verification
 
@@ -201,6 +218,7 @@ committers, local governance hooks, and autorun gates. Relevant machine checks
 include:
 
 - `governance/compat/check_work_order_dispatch_quality.py`
+- `governance/compat/check_closure_packaging_preflight.py`
 - `governance/compat/check_machine_closure_package.py`
 - `governance/compat/check_markdown_structural_completeness.py`
 - `governance/compat/check_active_session_state.py`

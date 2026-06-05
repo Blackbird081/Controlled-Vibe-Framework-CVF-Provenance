@@ -27,6 +27,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
     # --base <baseHead> --head HEAD over a real committed range.
     "pre-commit": [
         (
+            "closure packaging preflight",
+            ["python", "governance/compat/check_closure_packaging_preflight.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
             "core guard self-protection",
             ["python", "governance/compat/check_core_guard_self_protection.py", "--enforce"],
         ),
@@ -171,6 +175,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         ),
     ],
     "pre-push": [
+        (
+            "closure packaging preflight",
+            ["python", "governance/compat/check_closure_packaging_preflight.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
         (
             "core guard self-protection",
             ["python", "governance/compat/check_core_guard_self_protection.py", "--enforce"],
