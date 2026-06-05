@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-05
 
-Current mode marker: `public_safe_memory_learning_summary_closed_pass_bounded`
+Current mode marker: `mlw_next_runtime_decision_gc018_authorized_hold_for_work_order`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `public_safe_memory_learning_summary_closed_pass_bounded`.
+Current mode: `mlw_next_runtime_decision_gc018_authorized_hold_for_work_order`.
 
 Active handoff:
 
@@ -49,6 +49,25 @@ Active review queue:
 `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
 
 Latest continuity note:
+
+MLW Next Runtime Decision GC-018 is `GC018_AUTHORIZED_HOLD_FOR_WORK_ORDER`:
+
+`docs/baselines/CVF_GC018_MLW_NEXT_RUNTIME_DECISION_2026-06-05.md`
+
+The baseline selects `MLW-NRD1` as the next source-verified work-order
+candidate: a route-visible advisory decision/readout surface that classifies
+which MLW runtime lane is eligible next. It does not authorize route wiring,
+external capability execution, runtime adapter authority, automatic
+optimization, benchmark/cost proof, high-risk promotion implementation,
+public-sync, live proof, hosted readiness, production readiness, public
+readiness, memory reinjection, automatic promotion, or autonomous mutation.
+
+Next allowed move: author a source-verified `MLW-NRD1` work order, or stop for
+review. MLW7 external execution/runtime adapter, MLW8 optimization/benchmark,
+LO2 high-risk promotion implementation, public-sync, and live/provider proof
+remain separate operator-authorized lanes.
+
+Previous continuity note:
 
 Public-Safe Memory/Learning Summary packet is `CLOSED_PASS_BOUNDED`:
 
@@ -126,18 +145,9 @@ git-derived or bare `rg --files` corpus enumeration, closure diff path
 overclaims, and missing checker-recognized core-guard authorization before the
 full pre-closure bundle emits a longer finding list.
 
-Next allowed move: execute the dispatched public-safe memory/learning summary
-work order by capturing a fresh `executionBaseHead`, running
-pre-implementation, and creating the private summary artifact; or stop for
-review. Separate LO2 runtime, MLW7 external execution/marketplace/runtime
-adapter, MLW8 optimization/benchmark/cost-proof, public-sync, and
-release-quality live governance proof remain separate operator-authorized
-lanes. Boundary: no public-sync, public push, Learning Orchestrator runtime
-implementation, high-risk promotion lane implementation, automatic promotion,
-autonomous mutation, route behavior change, external capability
-install/execute, automatic efficiency optimization, policy relaxation, memory
-reinjection, live provider proof, hosted readiness, production readiness, or
-public readiness.
+Superseded next-move note: public-safe memory/learning summary execution is
+complete. Current next allowed move is the MLW-NRD1 source-verified work order
+authorized by `docs/baselines/CVF_GC018_MLW_NEXT_RUNTIME_DECISION_2026-06-05.md`.
 
 Pain-point closure direction:
 
@@ -358,10 +368,12 @@ Summary:
 Review:
 `docs/reviews/CVF_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_REVIEW_2026-06-05.md`
 
-Material commit: `c42bc8d4`. Next allowed move is open a fresh GC-018/work
-order for the next tranche. Public-sync export of this summary, runtime
-Learning Orchestrator/high-risk promotion work, MLW expansion, live proof, or
-hosted/public readiness each require separate operator-authorized lanes.
+Material commit: `c42bc8d4`. Superseded next-move note: the fresh GC-018 for
+MLW next-runtime decision now exists at
+`docs/baselines/CVF_GC018_MLW_NEXT_RUNTIME_DECISION_2026-06-05.md`.
+Public-sync export of this summary, runtime Learning Orchestrator/high-risk
+promotion work, MLW expansion, live proof, or hosted/public readiness each
+require separate operator-authorized lanes.
 
 LO2 High-Risk Promotion Decision Boundary is `CLOSED_PASS_BOUNDED`.
 
@@ -403,13 +415,10 @@ Completion:
 Checker:
 `governance/compat/check_closure_packaging_preflight.py`
 
-Next allowed move: execute the dispatched public-safe memory/learning summary
-work order by capturing a fresh `executionBaseHead`, running
-pre-implementation, and creating the private summary artifact; or stop for
-review. Separate LO2 runtime, MLW7 external execution/marketplace/runtime
-adapter, MLW8 optimization/benchmark/cost-proof, public-sync, and
-release-quality live governance proof remain separate operator-authorized
-lanes. This does not authorize public-sync, public push, Learning Orchestrator
+Superseded next-move note: public-safe memory/learning summary execution is
+complete. Current next allowed move is the MLW-NRD1 source-verified work order
+authorized by `docs/baselines/CVF_GC018_MLW_NEXT_RUNTIME_DECISION_2026-06-05.md`.
+This does not authorize public-sync, public push, Learning Orchestrator
 runtime implementation, high-risk promotion implementation, automatic
 promotion, autonomous mutation, external capability install/execute,
 automatic efficiency optimization, policy relaxation, runtime route behavior
