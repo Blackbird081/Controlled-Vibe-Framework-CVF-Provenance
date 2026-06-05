@@ -254,6 +254,40 @@ Deferred scope remains:
 - MLW7/MLW8;
 - autonomous memory, learning, policy, provider, or prompt mutation.
 
+## MLW2-RT1 Context Bundle Runtime Proof Update
+
+Closure date: 2026-06-05.
+
+Closure disposition: CLOSED_PASS_BOUNDED.
+
+Closure artifacts:
+
+- GC-018: `docs/baselines/CVF_GC018_MLW2_RT1_CONTEXT_BUNDLE_RUNTIME_PROOF_2026-06-05.md`
+- Work order: `docs/work_orders/CVF_WO_MLW2_RT1_CONTEXT_BUNDLE_RUNTIME_PROOF_2026-06-05.md`
+- Completion review: `docs/reviews/CVF_MLW2_RT1_CONTEXT_BUNDLE_RUNTIME_PROOF_COMPLETION_2026-06-05.md`
+- Runtime helper: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/context-bundle-readout.ts`
+- Deterministic regressions: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/context-bundle-readout.test.ts` and `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.mlw2-context-bundle.test.ts`
+- Live proof: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.mlw2-context-bundle.alibaba.live.test.ts`
+
+Closed scope:
+
+- route-visible `contextBundleReadout`;
+- deterministic metadata-only source map and retrieval trace;
+- token-budget/cache-boundary metadata;
+- deterministic `bundleHash`;
+- `rawContextReleased=false`, `canReinject=false`, and
+  `runtimeContextMutationAuthorized=false` invariant preservation;
+- one live Alibaba route proof.
+
+Deferred scope remains:
+
+- full RAG router/fusion implementation;
+- vector search or retrieval quality scoring;
+- backend migration beyond existing sources;
+- public-sync/public claim;
+- MLW7/MLW8;
+- autonomous memory, learning, policy, provider, prompt, or context mutation.
+
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |

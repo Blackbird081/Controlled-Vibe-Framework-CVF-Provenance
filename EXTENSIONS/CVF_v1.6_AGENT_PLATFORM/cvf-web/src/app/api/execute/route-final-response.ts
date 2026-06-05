@@ -6,6 +6,7 @@ import { attachReceiptToDiagnostic, buildExecutionDiagnostic } from '@/lib/execu
 import { buildPhase2CProductBriefSliceForRoute } from '@/lib/phase2c-product-brief-slice';
 import { buildPhase3EOperationalMetricsForRoute } from '@/lib/phase3e-operational-emission';
 import { buildRouteAuditMemoryCapture } from '@/lib/audit-memory-receipt';
+import { buildContextBundleReadout } from '@/lib/context-bundle-readout';
 import { buildRouteRequestContextReadout } from '@/lib/route-request-context-readout';
 import { buildVerticalIntegrationReadout } from '@/lib/vertical-integration-readout';
 import { buildEvidenceReceipt } from '@/lib/web-governance-envelope';
@@ -256,6 +257,16 @@ export async function buildExecuteFinalResponse(params: BuildExecuteFinalRespons
         retrievedChunkCount: retrievalResult.allowedChunkCount,
         chainTurnIndex: request.verticalIntegrationChain?.turnIndex,
     });
+    const contextBundleReadout = buildContextBundleReadout({
+        receipt: governanceEvidenceReceipt,
+        requestContextReadout,
+        retrievalResult,
+        requestedKnowledgeCollectionId,
+        knowledgeSource,
+        knowledgeInjected,
+        durableMemoryRead: durableMemoryRoute.receipt,
+        aifMemoryReinjection: aifMemoryReinjection.receipt,
+    });
 
     const verticalIntegrationReadout = buildVerticalIntegrationReadout({
         evidenceReceipt: governanceEvidenceReceipt,
@@ -329,6 +340,7 @@ export async function buildExecuteFinalResponse(params: BuildExecuteFinalRespons
         ...(executionDiagnostic ? { diagnostic: executionDiagnostic } : {}),
         auditMemoryReceipt,
         requestContextReadout,
+        contextBundleReadout,
         verticalIntegrationReadout,
         ...responseReadouts,
         ...(workflowExecution ? workflowExecution : {}),
