@@ -47,6 +47,7 @@ AUTH_DOC_PREFIXES = (
     "docs/reviews/",
     "docs/work_orders/",
 )
+ACTIVE_HANDOFF_AUTH_RE = re.compile(r"^AGENT_HANDOFF[^/]*\.md$")
 
 
 def _run_git(args: list[str]) -> tuple[int, str, str]:
@@ -136,10 +137,29 @@ def _read(path: str) -> str:
     return full.read_text(encoding="utf-8", errors="replace")
 
 
+def _is_standard_auth_doc_path(path: str) -> bool:
+    normalized = path.replace("\\", "/")
+    return (
+        normalized.endswith(".md")
+        and "/archive/" not in normalized
+        and normalized.startswith(AUTH_DOC_PREFIXES)
+    )
+
+
+def _is_active_handoff_auth_doc_path(path: str) -> bool:
+    normalized = path.replace("\\", "/")
+    return (
+        normalized.endswith(".md")
+        and "/archive/" not in normalized
+        and bool(ACTIVE_HANDOFF_AUTH_RE.match(normalized))
+    )
+
+
 def _authorization_docs(changed: dict[str, set[str]]) -> list[str]:
     docs: list[str] = []
     for path in sorted(changed):
-        if path.endswith(".md") and path.startswith(AUTH_DOC_PREFIXES) and "/archive/" not in path:
+        text = ""
+        if _is_standard_auth_doc_path(path):
             text = _read(path)
             if (
                 AUTH_MARKER in text
@@ -149,6 +169,10 @@ def _authorization_docs(changed: dict[str, set[str]]) -> list[str]:
                 or COMMIT_PROMPT_MARKER in text
             ):
                 docs.append(path)
+        elif _is_active_handoff_auth_doc_path(path):
+            text = _read(path)
+            if AUTH_MARKER in text:
+                docs.append(path)
     return docs
 
 
@@ -156,7 +180,7 @@ def _changed_docs(changed: dict[str, set[str]]) -> list[str]:
     return [
         path
         for path in sorted(changed)
-        if path.endswith(".md") and path.startswith(AUTH_DOC_PREFIXES) and "/archive/" not in path
+        if _is_standard_auth_doc_path(path)
     ]
 
 

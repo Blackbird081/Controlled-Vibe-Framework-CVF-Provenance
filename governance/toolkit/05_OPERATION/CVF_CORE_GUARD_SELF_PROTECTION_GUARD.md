@@ -27,18 +27,22 @@ protected files must include a governed authorization artifact with:
 - `Operator authorization`
 - `Rollback boundary`
 
-The authorization artifact must be a changed governed Markdown file under one
-of the checker-recognized prefixes:
+The authorization artifact must be either a changed governed Markdown file
+under one of the checker-recognized prefixes:
 
 - `docs/baselines/`
 - `docs/roadmaps/`
 - `docs/reviews/`
 - `docs/work_orders/`
 
-Root handoff files such as `AGENT_HANDOFF*.md` may record continuity, but they
-are not authorization artifacts for this guard. If protected session/front-door
-files are changed, place the authorization block in the work order, review,
-roadmap, or baseline that owns the same commit range.
+or the changed root active handoff file matching `AGENT_HANDOFF*.md`.
+
+Root active handoff authorization is intentionally narrow: it may satisfy only
+`Core Guard Self-Protection Authorization` for session/front-door sync commits
+when the same changed handoff lists every protected path in the changed range.
+Archive handoffs under `CVF_SESSION/handoffs/archive/` are not authorization
+artifacts. Large-scope, scope-firewall, expected-artifact, and commit-prompt
+authorization markers remain limited to docs-prefixed governed artifacts.
 
 Agents may not delete or rename protected guard/control files.
 

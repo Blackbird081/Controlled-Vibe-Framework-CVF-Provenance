@@ -85,3 +85,71 @@ Status: CLOSED_PASS_BOUNDED
 """
     issues = MODULE.validate_doc("docs/reviews/CVF_EXAMPLE.md", text, {"docs/reviews/CVF_EXAMPLE.md"})
     assert issues == []
+
+
+def test_active_handoff_can_authorize_session_sync_protected_paths(monkeypatch) -> None:
+    handoff = "AGENT_HANDOFF_V15_2026-05-29.md"
+    changed = {
+        "CVF_SESSION_MEMORY.md": {"M"},
+        "CVF_SESSION/ACTIVE_SESSION_STATE.json": {"M"},
+        handoff: {"M"},
+    }
+    texts = {
+        handoff: """
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: session sync only.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+
+Operator authorization: operator requested session-sync guard hardening.
+
+Rollback boundary: revert only the session-sync update.
+""",
+        "CVF_SESSION_MEMORY.md": "",
+        "CVF_SESSION/ACTIVE_SESSION_STATE.json": "{}",
+    }
+
+    monkeypatch.setattr(MODULE, "_get_changed", lambda base, head: changed)
+    monkeypatch.setattr(MODULE, "_read_rel", lambda path: texts.get(path, ""))
+
+    report = MODULE._run_check("base", "head")
+
+    assert report["compliant"]
+    assert report["authorizationDocs"] == [handoff]
+
+
+def test_archive_handoff_cannot_authorize_session_sync_protected_paths(monkeypatch) -> None:
+    handoff = "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md"
+    changed = {
+        "CVF_SESSION_MEMORY.md": {"M"},
+        "CVF_SESSION/ACTIVE_SESSION_STATE.json": {"M"},
+        handoff: {"M"},
+    }
+    texts = {
+        handoff: """
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: session sync only.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+
+Operator authorization: operator requested session-sync guard hardening.
+
+Rollback boundary: revert only the session-sync update.
+""",
+    }
+
+    monkeypatch.setattr(MODULE, "_get_changed", lambda base, head: changed)
+    monkeypatch.setattr(MODULE, "_read_rel", lambda path: texts.get(path, ""))
+
+    report = MODULE._run_check("base", "head")
+
+    assert not report["compliant"]
+    assert report["authorizationDocs"] == []

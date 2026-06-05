@@ -35,6 +35,7 @@ AUTH_DOC_PREFIXES = (
     "docs/reviews/",
     "docs/work_orders/",
 )
+ACTIVE_HANDOFF_AUTH_RE = re.compile(r"^AGENT_HANDOFF[^/]*\.md$")
 PROTECTED_EXACT = {
     "AGENTS.md",
     "CLAUDE.md",
@@ -158,6 +159,15 @@ def _is_protected(path: str) -> bool:
     return False
 
 
+def _is_auth_doc_path(path: str) -> bool:
+    normalized = path.replace("\\", "/")
+    if not normalized.endswith(".md") or "/archive/" in normalized:
+        return False
+    if normalized.startswith(AUTH_DOC_PREFIXES):
+        return True
+    return bool(ACTIVE_HANDOFF_AUTH_RE.match(normalized))
+
+
 def _extract_heading_section(text: str, heading_fragment: str) -> str:
     lines = text.splitlines()
     start: int | None = None
@@ -189,7 +199,7 @@ def _extract_backtick_paths(text: str) -> set[str]:
 def _auth_docs(changed: dict[str, set[str]]) -> list[str]:
     docs: list[str] = []
     for path in sorted(changed):
-        if path.endswith(".md") and path.startswith(AUTH_DOC_PREFIXES) and "/archive/" not in path:
+        if _is_auth_doc_path(path):
             text = _read_rel(path)
             if AUTH_MARKER in text:
                 docs.append(path)

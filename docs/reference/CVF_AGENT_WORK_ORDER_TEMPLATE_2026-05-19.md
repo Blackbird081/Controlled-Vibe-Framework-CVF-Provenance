@@ -710,9 +710,10 @@ state:
    authorization artifact under one of the checker-recognized prefixes:
    `docs/baselines/`, `docs/roadmaps/`, `docs/reviews/`, or
    `docs/work_orders/`.
-2. Do not rely on `AGENT_HANDOFF*.md` alone as the authorization artifact for
-   protected session/front-door edits. The core-guard checker does not count
-   root handoffs as authorization docs.
+2. For a protected session/front-door sync commit, the changed root active
+   handoff matching `AGENT_HANDOFF*.md` may carry the same authorization block
+   if it lists every protected path in the changed range. Archived handoffs do
+   not count.
 3. Preferred two-commit closure:
    - material/session commit: close the artifact, update session state/front
      door if needed, and include the same-range authorization doc;
@@ -720,8 +721,8 @@ state:
      commit SHA so `check_active_session_state.py` can accept the parent SHA as
      `parent-present-for-sync-commit`.
 4. If the front door or state registry must record the material commit SHA
-   itself, expect a protected session-sync commit with a same-range
-   authorization doc before the final handoff-only sync commit.
+   itself, use a protected session-sync commit whose changed active handoff or
+   docs-prefixed artifact carries same-range authorization.
 5. Run committed-range `pre-closure` only after the material/session commit and
    required handoff sync are complete.
 
