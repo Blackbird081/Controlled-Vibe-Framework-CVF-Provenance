@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-05
 
-Current mode marker: `lo1_learning_orchestrator_advisory_boundary_closed_pass_bounded`
+Current mode marker: `lo2_closed_mlw7_mlw8_work_orders_ready_for_review`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lo1_learning_orchestrator_advisory_boundary_closed_pass_bounded`.
+Current mode: `lo2_closed_mlw7_mlw8_work_orders_ready_for_review`.
 
 Active handoff:
 
@@ -50,30 +50,35 @@ Active review queue:
 
 Latest continuity note:
 
-LO1 Learning Orchestrator advisory/proposal boundary is
-`CLOSED_PASS_BOUNDED` at commit `bec18eba`:
+LO2 High-Risk Promotion Decision Boundary is `CLOSED_PASS_BOUNDED`:
 
-`docs/work_orders/CVF_WO_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md`
+`docs/work_orders/CVF_WO_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_2026-06-05.md`
+
+Baseline:
+`docs/baselines/CVF_GC018_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_2026-06-05.md`
 
 Reference:
-`docs/reference/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md`
+`docs/reference/CVF_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_2026-06-05.md`
 
 Completion:
-`docs/reviews/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_COMPLETION_2026-06-05.md`
+`docs/reviews/CVF_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_COMPLETION_2026-06-05.md`
 
-LO0 GC-018 source-verification baseline remains the authority source. Baseline:
-`docs/baselines/CVF_GC018_LO0_LEARNING_ORCHESTRATOR_HIGH_RISK_PROMOTION_SOURCE_VERIFICATION_2026-06-05.md`.
-Baseline commit: `1f5a02c1`. LO0 source-verifies that `LearningOrchestrator`
-has no exact current runtime/source symbol; current owner pieces are advisory or
-proposal surfaces: `LearningSignalIntakeBridge`, finding-to-learning bridge,
-`orchestratorFeedback`, MLW5 audit feedback validation readout, MLW6 simulation
-failure gate readout, adaptation policy Tier 0 evidence gate, and simulation
-dry-run surface. Next allowed move: operator may authorize a separate
-LO2/high-risk promotion GC-018/work order, return to MLW7/MLW8 work-order
-authoring, open public-safe memory/learning summary/public-sync, or stop for
-review. Boundary: no Learning Orchestrator runtime implementation, high-risk
-promotion lane implementation,
-autonomous mutation, automatic promotion, runtime route change, memory
+LO2 closes the high-risk promotion lane as a review-only decision boundary:
+MLW5 audit validation, MLW6 simulation/failure evidence, and adaptation policy
+evidence are prerequisites; `automaticPromotionAuthorized=false` and
+`autonomousMutationAuthorized=false` remain binding. MLW7 and MLW8 work orders
+are now authored and ready for operator review:
+
+`docs/work_orders/CVF_WO_MLW7_OPTIONAL_EXTERNAL_CAPABILITY_INGESTION_2026-06-05.md`
+
+`docs/work_orders/CVF_WO_MLW8_EFFICIENCY_OVERCONSTRAINT_FEEDBACK_2026-06-05.md`
+
+Next allowed move: operator may review/dispatch MLW7 or MLW8, request a
+separate LO2 runtime implementation GC-018/work order, open public-safe
+memory/learning summary/public-sync, or stop for review. Boundary: no Learning
+Orchestrator runtime implementation, high-risk promotion lane implementation,
+automatic promotion, autonomous mutation, runtime route change, external
+capability install/execute, efficiency optimization, policy relaxation, memory
 reinjection, live provider proof, public-sync, hosted readiness, production
 readiness, or public readiness.
 
@@ -282,22 +287,28 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LO1 Learning Orchestrator Advisory Proposal Boundary is `CLOSED_PASS_BOUNDED`
-at commit `bec18eba`:
+LO2 High-Risk Promotion Decision Boundary is `CLOSED_PASS_BOUNDED`.
 
-`docs/work_orders/CVF_WO_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md`
+`docs/work_orders/CVF_WO_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_2026-06-05.md`
 
 Reference:
-`docs/reference/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md`
+`docs/reference/CVF_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_2026-06-05.md`
 
 Completion:
-`docs/reviews/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_COMPLETION_2026-06-05.md`
+`docs/reviews/CVF_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_COMPLETION_2026-06-05.md`
 
-Next allowed move: operator may authorize a separate LO2/high-risk promotion
-GC-018/work order, return to MLW7/MLW8 work-order authoring, open public-safe
+MLW7 and MLW8 work orders are authored and ready for operator review:
+
+`docs/work_orders/CVF_WO_MLW7_OPTIONAL_EXTERNAL_CAPABILITY_INGESTION_2026-06-05.md`
+
+`docs/work_orders/CVF_WO_MLW8_EFFICIENCY_OVERCONSTRAINT_FEEDBACK_2026-06-05.md`
+
+Next allowed move: operator may review/dispatch MLW7 or MLW8, request a
+separate LO2 runtime implementation GC-018/work order, open public-safe
 memory/learning summary/public-sync, or stop for review. This does not
 authorize Learning Orchestrator runtime implementation, high-risk promotion
-implementation, autonomous mutation, automatic promotion, runtime route
+implementation, automatic promotion, autonomous mutation, external capability
+install/execute, efficiency optimization, policy relaxation, runtime route
 changes, memory reinjection, live provider proof, public-sync, hosted
 readiness, production readiness, or public readiness.
 
