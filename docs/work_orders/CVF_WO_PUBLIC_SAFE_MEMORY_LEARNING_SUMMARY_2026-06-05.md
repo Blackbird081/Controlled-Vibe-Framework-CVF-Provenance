@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: READY_FOR_OPERATOR_REVIEW
+Status: DISPATCHED
 
 docType: work_order
 
@@ -10,7 +10,10 @@ Date: 2026-06-05
 
 dispatchBaseHead: `a3f8bc85`
 
-executionBaseHead: `a3f8bc85`
+dispatchTransitionBaseHead: `152944f5`
+
+executionBaseHead: `N/A with reason - worker must capture fresh execution base
+before summary edits`
 
 closureBaseHead: `N/A with reason - work order authoring only; future summary
 execution must capture a fresh closure base`
@@ -37,6 +40,7 @@ runtime implementation, public-sync, live proof, or public-readiness claims.
 | Authority | Evidence | Disposition |
 | --- | --- | --- |
 | Operator instruction | 2026-06-05: "lam di" after lane audit | ACCEPT |
+| Operator dispatch | 2026-06-05: "dispatch" | ACCEPT |
 | GC-018 baseline | `docs/baselines/CVF_GC018_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md` | ACCEPT |
 | Active session state | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | ACCEPT |
 | Active handoff | `AGENT_HANDOFF_V15_2026-05-29.md` | ACCEPT |
@@ -120,6 +124,15 @@ Expected results:
 - `git status --short` does not include unrelated dirty files in owned paths.
 - pre-dispatch passes for this authoring range before operator dispatch.
 - pre-implementation passes on a fresh execution base before summary edits.
+
+Dispatch transition evidence:
+
+| Check | Evidence | Status |
+| --- | --- | --- |
+| Operator dispatch received | 2026-06-05 chat instruction `dispatch` | PASS |
+| Dispatch transition base captured | `152944f5` | PASS |
+| No summary implementation in dispatch transition | changed-file scope | PASS |
+| Public-sync remains excluded | Forbidden scope and Public Export Disposition | PASS |
 
 Mandatory Gate-Failure Remediation Protocol:
 
@@ -316,6 +329,7 @@ Evidence Trace Block requirements:
 Base-anchor evidence:
 
 - `dispatchBaseHead`: `a3f8bc85`
+- `dispatchTransitionBaseHead`: `152944f5`
 - `executionBaseHead`: future worker captures fresh base before editing
 - `closureBaseHead`: reviewer captures fresh base before committed closure
 - Commit mode: `WORKER_MUST_NOT_COMMIT`
@@ -359,6 +373,25 @@ For `WORKER_MUST_NOT_COMMIT` mode, worker handoff is not closure. The reviewer
 or committer must approve disposition, commit the reviewed owned diff, and run
 the committed-range pre-closure gate before changing status to a
 closed-equivalent value.
+
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: record operator dispatch of the
+public-safe memory/learning summary work order in the active front door,
+machine-readable state registry, and active handoff.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION_MEMORY.md`
+- `AGENT_HANDOFF_V15_2026-05-29.md`
+
+Operator authorization: 2026-06-05 operator instructed `dispatch`.
+
+Rollback boundary: if this dispatch sync is wrong, restore only the dispatch
+status and continuity text in this work order and protected session files. Do
+not revert the prior GC-018/work-order authoring commits unless that authoring
+batch is separately unwound.
 
 ## Closure Checklist
 

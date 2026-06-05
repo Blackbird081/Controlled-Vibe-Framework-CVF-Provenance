@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: GC018_AUTHORIZED_HOLD_FOR_WORK_ORDER
+Status: GC018_AUTHORIZED_DISPATCHED
 
 Date: 2026-06-05
 
@@ -26,7 +26,7 @@ public readiness claim.
 | Baseline | `a3f8bc85` |
 | Proposed tranche | Public-Safe Memory/Learning Summary Work Order |
 | Output | `docs/work_orders/CVF_WO_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md` |
-| Execution state | HOLD for operator review and dispatch |
+| Execution state | DISPATCHED by operator instruction on 2026-06-05 |
 
 ## Authority Chain
 
@@ -99,6 +99,15 @@ public-sync, or live-proof alternatives.
 - If YES, next batch name: Public-Safe Memory/Learning Summary Work Order.
 - If NO, reopen trigger: N/A with reason - this packet authorizes work-order
   authoring only.
+
+Dispatch update:
+
+- Operator dispatch: 2026-06-05 chat instruction `dispatch`.
+- Dispatch transition base: `152944f5`.
+- Dispatched work order:
+  `docs/work_orders/CVF_WO_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md`.
+- Execution rule: future worker must capture a fresh `executionBaseHead` before
+  summary artifact edits and run pre-implementation gate.
 
 Authorized scope:
 
