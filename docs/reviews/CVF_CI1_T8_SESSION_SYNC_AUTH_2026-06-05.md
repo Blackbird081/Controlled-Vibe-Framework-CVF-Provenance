@@ -29,13 +29,14 @@ private legacy scan batch.
 | Protected paths changed | `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION_MEMORY.md` |
 | Scope | continuity sync only |
 | Base anchor | `fd3694b8` |
+| Closure commit | `2d0c84e4` |
 
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
 | Work order status | N/A | operator authorized bounded legacy scan continuation directly in chat; no delegated worker work order | N/A with reason - Codex executed bounded private scan directly after public-sync |
-| Completion or reviewer artifact | `docs/audits/CVF_CI1_T8_CVF_EDIT_FULL_RECONCILIATION_PACKET_2026-06-05.md` | packet status `COMPLETE_VERIFIED` | PASS |
+| Completion or reviewer artifact | `docs/audits/CVF_CI1_T8_CVF_EDIT_FULL_RECONCILIATION_PACKET_2026-06-05.md` | packet status `COMPLETE_VERIFIED`; closure commit `2d0c84e4` | PASS |
 | Roadmap state | N/A | CI1-T8 is a follow-up legacy scan tranche, not a roadmap-wide status change | N/A with reason - no roadmap file owns this small scan closure |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | `legacy-cvf-edit` upgraded to `SCANNED_WITH_FINDINGS` | PASS |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | registry standard remains applicable; no per-corpus Markdown registry update required | PASS |
