@@ -74,6 +74,9 @@ Allowed scope:
 - Include a claim boundary that blocks runtime, public, hosted, production,
   marketplace, benchmark, live-provider, and autonomous-mutation claims.
 - Return a worker handoff or review artifact with changed-file evidence.
+- Reviewer/committer may update session continuity for this closure only:
+  `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION_MEMORY.md`, and
+  `AGENT_HANDOFF_V15_2026-05-29.md`.
 
 Forbidden scope:
 

@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-05
 
-Current mode marker: `public_safe_memory_learning_summary_work_order_dispatched`
+Current mode marker: `public_safe_memory_learning_summary_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `public_safe_memory_learning_summary_work_order_dispatched`.
+Current mode: `public_safe_memory_learning_summary_closed_pass_bounded`.
 
 Active handoff:
 
@@ -50,7 +50,7 @@ Active review queue:
 
 Latest continuity note:
 
-Public-Safe Memory/Learning Summary work order is `DISPATCHED`:
+Public-Safe Memory/Learning Summary packet is `CLOSED_PASS_BOUNDED`:
 
 GC-018:
 `docs/baselines/CVF_GC018_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md`
@@ -58,10 +58,17 @@ GC-018:
 Work order:
 `docs/work_orders/CVF_WO_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md`
 
-This authorizes only private public-safe summary preparation from closed LO1,
-LO2, MLW7, MLW8, and closure-packaging preflight evidence. Next execution must
-capture a fresh `executionBaseHead`, run pre-implementation, and create the
-private summary artifact. It does not authorize public-sync, public push,
+Summary:
+`docs/reference/CVF_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md`
+
+Review:
+`docs/reviews/CVF_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_REVIEW_2026-06-05.md`
+
+Material commit: `c42bc8d4`.
+
+The packet closes only a private, public-safe synthesis of LO1, LO2, MLW7,
+MLW8, and closure-packaging preflight evidence. Public Export Disposition is
+`DEFERRED_PRIVATE_ONLY`. It does not authorize public-sync, public push,
 runtime implementation, live/provider proof, hosted readiness, production
 readiness, public readiness, automatic promotion, memory reinjection, or
 autonomous mutation.
@@ -337,7 +344,7 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-Public-Safe Memory/Learning Summary work order is `DISPATCHED`:
+Public-Safe Memory/Learning Summary packet is `CLOSED_PASS_BOUNDED`:
 
 GC-018:
 `docs/baselines/CVF_GC018_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md`
@@ -345,12 +352,16 @@ GC-018:
 Work order:
 `docs/work_orders/CVF_WO_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md`
 
-This authorizes only private public-safe summary preparation. Next execution
-must capture a fresh `executionBaseHead`, run pre-implementation, and create
-the private summary artifact. It does not authorize public-sync, public push,
-runtime implementation, live/provider proof, hosted readiness, production
-readiness, public readiness, automatic promotion, memory reinjection, or
-autonomous mutation.
+Summary:
+`docs/reference/CVF_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md`
+
+Review:
+`docs/reviews/CVF_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_REVIEW_2026-06-05.md`
+
+Material commit: `c42bc8d4`. Next allowed move is open a fresh GC-018/work
+order for the next tranche. Public-sync export of this summary, runtime
+Learning Orchestrator/high-risk promotion work, MLW expansion, live proof, or
+hosted/public readiness each require separate operator-authorized lanes.
 
 LO2 High-Risk Promotion Decision Boundary is `CLOSED_PASS_BOUNDED`.
 

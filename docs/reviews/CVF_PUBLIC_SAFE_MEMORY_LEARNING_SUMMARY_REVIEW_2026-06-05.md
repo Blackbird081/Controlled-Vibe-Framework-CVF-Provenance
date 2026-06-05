@@ -235,6 +235,25 @@ Next action: public export requires a separate public-sync work order from the
 sibling public-sync clone with `git remote -v`, public commit, and artifact
 path evidence.
 
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: synchronize public-safe memory/learning
+summary closure status after material commit `c42bc8d4`.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION_MEMORY.md`
+- `AGENT_HANDOFF_V15_2026-05-29.md`
+
+Operator authorization: 2026-06-05 operator instructed Codex to complete this
+closure before moving to a new tranche.
+
+Rollback boundary: restore only public-safe summary closure continuity in the
+protected session files and this authorization block. Do not revert summary,
+review, or work-order material artifacts unless material commit `c42bc8d4` is
+separately unwound.
+
 ## Closure Checklist
 
 | Item | Status |

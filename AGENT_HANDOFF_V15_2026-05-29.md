@@ -742,6 +742,27 @@ Current HEAD recorded for this handoff: `a3f8bc85` (Pre-public-safe memory/learn
 Current HEAD recorded for this handoff: `52275fa4` (Author public-safe memory/learning summary work order). Updated 2026-06-05 after material commit `docs(memory): author public-safe summary work order`. GC-018 baseline: `docs/baselines/CVF_GC018_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md`; work order: `docs/work_orders/CVF_WO_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md`; status: `READY_FOR_OPERATOR_REVIEW`. Boundary remains private summary-prep authoring only; no public-sync, public push, runtime implementation, live proof, hosted readiness, production readiness, public readiness, automatic promotion, memory reinjection, or autonomous mutation.
 Current HEAD recorded for this handoff: `152944f5` (Pre-public-safe memory/learning summary dispatch transition base; material commit pending). Updated 2026-06-05 after operator instructed `dispatch`. Material artifacts in this batch: `docs/baselines/CVF_GC018_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md`, `docs/work_orders/CVF_WO_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md`, `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION_MEMORY.md`, and this handoff. Boundary: dispatch transition only; summary artifact execution must capture a fresh base and run pre-implementation; no public-sync, public push, runtime implementation, live proof, hosted readiness, production readiness, public readiness, automatic promotion, memory reinjection, or autonomous mutation.
 Current HEAD recorded for this handoff: `f85fc517` (Dispatch public-safe memory/learning summary work order). Updated 2026-06-05 after material commit `docs(memory): dispatch public-safe summary work order`. The work order is now `DISPATCHED`; next execution must capture a fresh `executionBaseHead`, run pre-implementation, and create the private summary artifact. Boundary remains no public-sync, public push, runtime implementation, live proof, hosted readiness, production readiness, public readiness, automatic promotion, memory reinjection, or autonomous mutation.
+Current HEAD recorded for this handoff: `c42bc8d4` (Close public-safe memory/learning summary packet). Updated 2026-06-05 after material commit `docs(memory): close public-safe summary packet`. Work order `docs/work_orders/CVF_WO_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md`, summary `docs/reference/CVF_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md`, and review `docs/reviews/CVF_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_REVIEW_2026-06-05.md` are `CLOSED_PASS_BOUNDED` / `DEFERRED_PRIVATE_ONLY`. Next allowed move is a fresh GC-018/work order for the next tranche; public-sync export, runtime Learning Orchestrator/high-risk promotion work, MLW expansion, live proof, hosted readiness, production readiness, and public readiness remain separate operator-authorized lanes.
+
+## Core Guard Self-Protection Authorization - Public-Safe Summary Closure Session Sync
+
+Authorized guard-maintenance scope: record the public-safe memory/learning
+summary closure in the active front door, machine-readable state, active
+handoff, and matching reviewer artifact.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION_MEMORY.md`
+- `AGENT_HANDOFF_V15_2026-05-29.md`
+
+Operator authorization: 2026-06-05 operator instructed Codex to complete the
+work so the project can move to a new tranche.
+
+Rollback boundary: if this sync is wrong, restore only the public-safe
+summary closure continuity text in the protected session files and reviewer
+authorization. Do not revert the material summary closure artifacts unless
+their material commit is separately unwound.
 
 ## Core Guard Self-Protection Authorization - MLW7/MLW8 Closure Session Sync
 

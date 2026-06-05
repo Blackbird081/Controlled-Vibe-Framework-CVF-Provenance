@@ -150,6 +150,12 @@ Reviewer closure result:
 - Final committed-range pre-closure is recorded in the companion completion
   review after commit.
 
+Session continuity sync: material summary closure committed at `c42bc8d4`;
+follow-up session sync may update active state, session memory, handoff, work
+order scope evidence, and reviewer authorization only. This does not change the
+public export, runtime, live-proof, hosted, production, or public-readiness
+boundary.
+
 ## Corpus Completeness And Report Integrity
 
 - Corpus task class: DOCUMENTATION_SUMMARY_FROM_BOUNDED_AUTHORITY_SET.
