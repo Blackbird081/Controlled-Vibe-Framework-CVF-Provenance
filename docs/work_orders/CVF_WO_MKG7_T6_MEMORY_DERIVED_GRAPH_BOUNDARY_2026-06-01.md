@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -20,7 +20,7 @@ T6 is documentation-only. No runtime/source code changes of any kind.
 
 Success: reference document exists with explicit source-vs-derived boundary and
 drift-detectability statement, markdown-structural gate PASS, public-export gate
-PASS, both files pending and uncommitted.
+PASS, and reviewer closeout reconciles stale dispatch residue.
 
 ## Authority Chain
 
@@ -88,10 +88,10 @@ python governance/compat/check_public_export_disposition.py --base 5e55714d --he
 
 | Roadmap requirement | Work order section | Output artifact | Verification | Status |
 | --- | --- | --- | --- | --- |
-| Source authority stays primary | Execution Plan step 2 | boundary doc section | reviewer check | DISPATCHED |
-| Derived-view drift detectable | Execution Plan step 2 | drift-detectability statement | reviewer check | DISPATCHED |
-| Graph lookup cannot overrule source authority | Execution Plan step 2 | explicit prohibition | reviewer check | DISPATCHED |
-| Public/runtime claims require separate proof | Execution Plan step 2 | explicit statement | reviewer check | DISPATCHED |
+| Source authority stays primary | Execution Plan step 2 | boundary doc section | reviewer check | CLOSED_PASS_BOUNDED |
+| Derived-view drift detectable | Execution Plan step 2 | drift-detectability statement | reviewer check | CLOSED_PASS_BOUNDED |
+| Graph lookup cannot overrule source authority | Execution Plan step 2 | explicit prohibition | reviewer check | CLOSED_PASS_BOUNDED |
+| Public/runtime claims require separate proof | Execution Plan step 2 | explicit statement | reviewer check | CLOSED_PASS_BOUNDED |
 
 ## 6C. Worker Autonomy / No-Question Rule
 
@@ -101,8 +101,10 @@ live proof, secrets, push, commit, or destructive actions.
 
 ## 6D. Pending Artifact Evidence Finality
 
-Do not commit. Record actual `git status --short`. Do not cite committed-only
-or empty range as proof.
+Worker did not commit during original execution. Reviewer/committer closeout on
+2026-06-05 may update this work order, the reference packet, and completion
+review to reconcile stale dispatched/pending status with already-closed MKG7
+roadmap and active-state records.
 
 ## 6G. Work-Order Fulfillment Manifest
 
@@ -144,40 +146,67 @@ Forbidden: all `.ts` files.
    - Claim Boundary.
 3. Run markdown-structural and public-export gates.
 4. Create pending completion review.
-5. Leave all files pending and uncommitted.
+5. Original worker left files pending and uncommitted.
+6. Reviewer/committer reconciles stale status to closed bounded without opening
+   runtime, graph persistence, public-sync, or live-proof scope.
 
 ## Evidence Requirements
 
 - `python governance/compat/check_markdown_structural_completeness.py --base 5e55714d --head HEAD --enforce` — PASS;
 - `python governance/compat/check_public_export_disposition.py --base 5e55714d --head HEAD --enforce` — PASS;
 - actual `git status --short`.
+- reviewer closeout base: `327813b0`.
 
 ## 10. Acceptance Criteria
 
-- [ ] Boundary doc exists with explicit source-vs-derived boundary
-- [ ] Drift-detectability explicitly stated
-- [ ] Statement that graph lookup cannot overrule source authority
-- [ ] Statement that public/runtime claims from derived views require separate proof
-- [ ] Markdown-structural gate PASS
-- [ ] Public-export gate PASS
-- [ ] Both files pending and uncommitted
+| Criterion | Status |
+| --- | --- |
+| Boundary doc exists with explicit source-vs-derived boundary | PASS |
+| Drift-detectability explicitly stated | PASS |
+| Statement that graph lookup cannot overrule source authority | PASS |
+| Statement that public/runtime claims from derived views require separate proof | PASS |
+| Markdown-structural gate PASS | PASS |
+| Public-export gate PASS | PASS |
+| Original worker left files pending and uncommitted | PASS |
+| Reviewer/committer reconciled stale status residue | PASS |
 
 Fail conditions:
 
-- [ ] Any `.ts` file edited
-- [ ] Boundary vague enough to authorize graph-as-source-authority
-- [ ] Worker commits or asks about routine gate failures
+| Fail condition | Result |
+| --- | --- |
+| Any `.ts` file edited for T6 closeout | PASS - not observed |
+| Boundary vague enough to authorize graph-as-source-authority | PASS - not observed |
+| Worker commits or asks about routine gate failures | PASS - original worker did not commit |
 
 ## 11. Review Gate
 
-Pre-implementation gate must pass before edits. Closure (by orchestrator)
+Pre-implementation gate must pass before edits. Closure by reviewer/committer
 requires reviewer no-blocking objection and markdown-structural + public-export
 gates re-verified. A gate failure inside Allowed scope is authorization to
 repair and rerun.
 
 ## 12. Closure Checklist
 
-N/A: worker must not close or commit T6. Return pending files for orchestrator.
+| Item | Status |
+| --- | --- |
+| Worker did not close or commit T6 | PASS |
+| Boundary reference packet closed | PASS |
+| Completion review closed | PASS |
+| Runtime/public/live boundary preserved | PASS |
+| Stale dispatch residue reconciled | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_WO_MKG7_T6_MEMORY_DERIVED_GRAPH_BOUNDARY_2026-06-01.md` | status `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MKG7_T6_MEMORY_DERIVED_GRAPH_BOUNDARY_COMPLETION_2026-06-01.md` | status `CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_MKG7_MEMORY_PLANE_OPERATIONALIZATION_ROADMAP_2026-06-01.md` | MKG7-T6 row `CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | `mkg7MemoryPlaneOperationalizationRoadmap` says all T1-T7 complete | PASS |
+| Registry Markdown | N/A | active handoff already records MKG7 closure history; no new session state change required for T6 residue cleanup | BLOCKED with reason - no GC-051 markdown registry surface is changed by this documentation-only residue cleanup |
+| External evidence digest | N/A | no external evidence consumed | N/A with reason |
+| System loop interlock | N/A | documentation-only boundary; no runtime/checker/system-loop connection changed | N/A with reason |
+| Session continuity | N/A | active state already records MKG7 closed; no next-allowed-move change | N/A with reason |
 
 ## 13. Return-To-Orchestrator Conditions
 
