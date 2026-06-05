@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-05
 
-Current mode marker: `mlw7_runtime_adapter_boundary_gc018_authorized_hold_for_work_order`
+Current mode marker: `mlw7_rtad1_runtime_adapter_boundary_work_order_ready_for_operator_review`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `mlw7_runtime_adapter_boundary_gc018_authorized_hold_for_work_order`.
+Current mode: `mlw7_rtad1_runtime_adapter_boundary_work_order_ready_for_operator_review`.
 
 Active handoff:
 
@@ -49,6 +49,30 @@ Active review queue:
 `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
 
 Latest continuity note:
+
+MLW7-RTAD1 Runtime Adapter Boundary Admission work order is
+`READY_FOR_OPERATOR_REVIEW`:
+
+`docs/work_orders/CVF_WO_MLW7_RTAD1_RUNTIME_ADAPTER_BOUNDARY_ADMISSION_2026-06-05.md`
+
+The work order translates the MLW7 runtime adapter boundary GC-018 into a
+source-verified boundary/admission implementation packet. It remains
+review-only until explicit dispatch. It does not authorize runtime adapter
+implementation, package install, external execution, external repo ingestion,
+delegation approval, registry authority, marketplace publication, public-sync,
+live/provider proof, hosted readiness, production readiness, public readiness,
+memory reinjection, automatic promotion, high-risk promotion implementation,
+Learning Orchestrator runtime behavior, or autonomous mutation.
+
+Next allowed move: operator review and explicit dispatch of `MLW7-RTAD1`, or
+stop for review. Actual runtime adapter implementation beyond boundary/readout,
+install/execute path, delegation/registry authority, marketplace/public claim,
+public-sync, live proof, hosted readiness, production readiness, public
+readiness, memory reinjection, automatic promotion, high-risk promotion
+implementation, or autonomous mutation requires separate explicit
+authorization and phase gates.
+
+Previous continuity note:
 
 MLW7 Runtime Adapter Boundary GC-018 is
 `GC018_AUTHORIZED_HOLD_FOR_WORK_ORDER`:
