@@ -55,6 +55,8 @@ MLW7-RTAD1 Runtime Adapter Boundary Admission work order is
 
 `docs/work_orders/CVF_WO_MLW7_RTAD1_RUNTIME_ADAPTER_BOUNDARY_ADMISSION_2026-06-05.md`
 
+Material commit: `8cb264b1`.
+
 The work order translates the MLW7 runtime adapter boundary GC-018 into a
 source-verified boundary/admission implementation packet. It remains
 review-only until explicit dispatch. It does not authorize runtime adapter
