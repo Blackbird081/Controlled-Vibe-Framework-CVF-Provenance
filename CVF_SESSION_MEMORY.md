@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-05
 
-Current mode marker: `mlw7_mlw8_gc018_authorized_hold_for_work_order`
+Current mode marker: `lo0_gc018_authorized_hold_for_work_order`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `mlw7_mlw8_gc018_authorized_hold_for_work_order`.
+Current mode: `lo0_gc018_authorized_hold_for_work_order`.
 
 Active handoff:
 
@@ -50,20 +50,21 @@ Active review queue:
 
 Latest continuity note:
 
-MLW7 and MLW8 GC-018 baselines are authorized and held for source-verified work
-orders. Baselines:
-`docs/baselines/CVF_GC018_MLW7_OPTIONAL_EXTERNAL_CAPABILITY_INGESTION_2026-06-05.md`
-and
-`docs/baselines/CVF_GC018_MLW8_EFFICIENCY_OVERCONSTRAINT_FEEDBACK_2026-06-05.md`.
-Baseline commit: `7caf0cea`. MLW4-MLW6 RT1 remains
-CLOSED_PASS_BOUNDED for route-visible metadata-only continuity/audit/simulation
-readouts. Next allowed move: author a source-verified work order for MLW7 or
-MLW8 and run the required autorun gates before implementation. Boundary: the
-GC-018 baselines do not authorize runtime execution, external capability
-install/execute, automatic optimization, policy relaxation, live provider proof,
-public-sync, hosted readiness, production readiness, public readiness, Learning
-Orchestrator implementation, truth-model mutation, trust/policy mutation, or
-autonomous mutation.
+LO0 GC-018 source-verification baseline is authorized and held for a
+source-verified LO1 work order. Baseline:
+`docs/baselines/CVF_GC018_LO0_LEARNING_ORCHESTRATOR_HIGH_RISK_PROMOTION_SOURCE_VERIFICATION_2026-06-05.md`.
+Baseline commit: `1f5a02c1`. LO0 source-verifies that `LearningOrchestrator`
+has no exact current runtime/source symbol; current owner pieces are advisory or
+proposal surfaces: `LearningSignalIntakeBridge`, finding-to-learning bridge,
+`orchestratorFeedback`, MLW5 audit feedback validation readout, MLW6 simulation
+failure gate readout, adaptation policy Tier 0 evidence gate, and simulation
+dry-run surface. Next allowed move: author a source-verified LO1 work order that
+defines an advisory/proposal-only Learning Orchestrator boundary, or return to
+MLW7/MLW8 work-order authoring if the operator chooses. Boundary: no Learning
+Orchestrator implementation, high-risk promotion lane implementation,
+autonomous mutation, automatic promotion, runtime route change, memory
+reinjection, live provider proof, public-sync, hosted readiness, production
+readiness, or public readiness.
 
 Pain-point closure direction:
 

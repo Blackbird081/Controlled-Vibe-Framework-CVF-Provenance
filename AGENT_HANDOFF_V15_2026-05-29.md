@@ -725,6 +725,28 @@ Current HEAD recorded for this handoff: `a4293789` (Sync MLW4-MLW6 RT1 closure s
 Current HEAD recorded for this handoff: `7caf0cea` (Authorize MLW7 and MLW8 GC-018 baselines). Updated 2026-06-05 after operator requested `GC-018 cho MLW7 và MLW8`. Baselines: `docs/baselines/CVF_GC018_MLW7_OPTIONAL_EXTERNAL_CAPABILITY_INGESTION_2026-06-05.md` and `docs/baselines/CVF_GC018_MLW8_EFFICIENCY_OVERCONSTRAINT_FEEDBACK_2026-06-05.md`. Both are `GC018_AUTHORIZED_HOLD_FOR_WORK_ORDER`, source-verified, include rescan hardening blocks, and passed pre-dispatch autorun gate. Boundary: no MLW7/MLW8 implementation, external capability install/execute, automatic optimization, policy relaxation, live proof, public-sync, hosted readiness, production readiness, public readiness, Learning Orchestrator implementation, truth-model mutation, trust/policy mutation, or autonomous mutation.
 Current HEAD recorded for this handoff: `04956ef0` (Sync MLW7/MLW8 GC-018 session state). Updated 2026-06-05 after active state, session memory, handoff, and session-sync authorization review were synchronized to `mlw7_mlw8_gc018_authorized_hold_for_work_order`. This is session-continuity sync only; MLW7/MLW8 remain held for source-verified work orders, and no runtime execution, external capability install/execute, automatic optimization, policy relaxation, live proof, public-sync, hosted readiness, production readiness, public readiness, Learning Orchestrator implementation, truth-model mutation, trust/policy mutation, or autonomous mutation claim is added.
 Current HEAD recorded for this handoff: `b355f538` (Tighten GC-018 guard authoring checks). Updated 2026-06-05 after Codex added guard-clean authoring guidance to the GC-018 continuation template and Post-W7 GC-018 drafting checklist. Boundary: documentation guard hygiene only; no GC-018 LO0 baseline, no MLW7/MLW8 implementation, no runtime execution, no live proof, no public-sync, no hosted readiness, no production readiness, no public readiness, no Learning Orchestrator implementation, no high-risk promotion lane implementation, and no autonomous mutation.
+Current HEAD recorded for this handoff: `1f5a02c1` (Authorize LO0 GC-018 source verification). Updated 2026-06-05 after Codex created `docs/baselines/CVF_GC018_LO0_LEARNING_ORCHESTRATOR_HIGH_RISK_PROMOTION_SOURCE_VERIFICATION_2026-06-05.md` and the pre-dispatch autorun gate passed. Source verdict: `LearningOrchestrator` has no exact current runtime/source symbol; current owner pieces are advisory/proposal only. Boundary: no Learning Orchestrator implementation, no high-risk promotion lane implementation, no autonomous mutation, no automatic promotion, no runtime route change, no memory reinjection, no live proof, no public-sync, no hosted readiness, no production readiness, and no public readiness.
+
+## Core Guard Self-Protection Authorization - LO0 GC-018 Session Sync
+
+Authorized guard-maintenance scope: record LO0 GC-018 baseline commit
+`1f5a02c1`, current mode `lo0_gc018_authorized_hold_for_work_order`, and next
+allowed move after source-verification baseline authorization.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION_MEMORY.md`
+- `AGENT_HANDOFF_V15_2026-05-29.md`
+
+Operator authorization: 2026-06-05 operator requested `next` after the
+guard-cleaning pass and prior direction to source-verify Learning
+Orchestrator/high-risk promotion before implementation. This sync records
+session continuity only; it does not authorize LO1 implementation.
+
+Rollback boundary: if this sync is wrong, restore only the LO0 continuity text
+in the protected session files and this handoff section. Do not revert baseline
+commit `1f5a02c1` unless the LO0 baseline itself is being unwound.
 
 ## Core Guard Self-Protection Authorization - Guard Hygiene Handoff Sync
 
