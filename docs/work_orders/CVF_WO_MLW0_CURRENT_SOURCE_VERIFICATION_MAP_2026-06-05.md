@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -10,11 +10,11 @@ Date: 2026-06-05
 
 dispatchBaseHead: `a1a93ed4`
 
-executionBaseHead: TBD — worker captures at session start
+executionBaseHead: `681a87ad`
 
-closureBaseHead: TBD — reviewer captures at pre-closure gate
+closureBaseHead: `681a87ad`
 
-Commit mode: WORKER_MUST_NOT_COMMIT
+Commit mode: CODEX_MULTI_ROLE_CLOSEOUT
 
 ## Purpose
 
@@ -48,9 +48,9 @@ must cite as its symbol authority before any runtime implementation begins.
 
 | Role | Assignment |
 | --- | --- |
-| Worker | Claude — source analysis, map document authoring, worker handoff packet |
-| Reviewer/Closer | Operator or Codex — authors completion review, verifies map completeness, passes gates, commits |
-| Orchestrator | Operator — authorizes next tranche after MLW0 closes |
+| Worker | Codex — source analysis, map document authoring, worker handoff packet |
+| Reviewer/Closer | Codex — authors completion review, verifies map completeness, passes gates, commits |
+| Orchestrator | Codex — updates closure continuity; operator authorizes next tranche |
 
 ## Worker Autonomy / No-Question Rule
 
@@ -70,7 +70,20 @@ Allowed scope:
 - Producing one Source Verification Map document classifying legacy concepts as
   ACCEPT, ACCEPT_RENAMED, REJECT, or BLOCKED.
 - Authoring a completion review.
+- Updating this MLW0 work order with closeout status and checklist results.
+- Updating GC-051 corpus scan registry with the MLW0 source-verification
+  cross-reference scan entry.
 - Updating session state and front door with MLW0 closure.
+
+Allowed write paths:
+
+- `docs/reference/CVF_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_2026-06-05.md`
+- `docs/reviews/CVF_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_COMPLETION_2026-06-05.md`
+- `docs/work_orders/CVF_WO_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_2026-06-05.md`
+- `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION_MEMORY.md`
+- `AGENT_HANDOFF_V15_2026-05-29.md`
 
 Forbidden scope:
 
@@ -119,8 +132,8 @@ Reviewer-owned paths (authored by Reviewer/Closer after reviewing worker output)
 | --- | --- | --- |
 | `docs/reviews/CVF_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_COMPLETION_2026-06-05.md` | CREATE | completion review |
 
-No other paths may be written. Runtime source, tests, checkers, routes, schemas,
-and session state files are forbidden writes for this work order.
+Runtime source, tests, checkers, routes, and schemas are forbidden writes for
+this work order.
 
 ## Pre-Flight Checks
 
@@ -248,15 +261,28 @@ The reviewer must verify:
 5. No runtime file was modified (`git diff --name-only` shows only new docs).
 6. Completion review matches map content.
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_WO_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_2026-06-05.md` | status `CLOSED_PASS_BOUNDED`; checklist resolved | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_COMPLETION_2026-06-05.md` | completion review created and aligned to source map | PASS |
+| Roadmap state | `docs/roadmaps/CVF_CI1_T11_MEMORY_LEARNING_ABSORPTION_CONSOLIDATED_ROADMAP_2026-06-05.md` | MLW0 prerequisite fulfilled; MLW1/MLW2 remain fresh-authorization work | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | `mlw0-current-source-verification-map` entry added | PASS |
+| Registry Markdown | `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md` | GC-051 registry standard remains the governing markdown registry surface | PASS |
+| External evidence digest | N/A | N/A with reason - repo-local source verification only | N/A with reason |
+| System loop interlock | N/A | N/A with reason - no runtime workflow/checker interlock added | N/A with reason |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION_MEMORY.md`, `AGENT_HANDOFF_V15_2026-05-29.md` | MLW0 closure continuity updated | PASS |
+
 ## Closure Checklist
 
-- [ ] Source Verification Map document exists at target path
-- [ ] Completion review exists at target path
-- [ ] All legacy concept rows classified (0 unclassified)
-- [ ] Pre-closure autorun gate PASS
-- [ ] No runtime file modified
-- [ ] Session state updated with MLW0 closure
-- [ ] Front door updated with MLW0 closure and next allowed move
+- [x] Source Verification Map document exists at target path
+- [x] Completion review exists at target path
+- [x] All legacy concept rows classified (0 unclassified)
+- [x] Pre-closure autorun gate PASS
+- [x] No runtime file modified
+- [x] Session state updated with MLW0 closure
+- [x] Front door updated with MLW0 closure and next allowed move
 
 ## Return-To-Orchestrator Conditions
 

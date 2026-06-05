@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-05
 
-Current mode marker: `mlw0_current_source_verification_map_dispatch_ready`
+Current mode marker: `mlw0_current_source_verification_map_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `mlw0_current_source_verification_map_dispatch_ready`.
+Current mode: `mlw0_current_source_verification_map_closed_pass_bounded`.
 
 Active handoff:
 
@@ -50,13 +50,14 @@ Active review queue:
 
 Latest continuity note:
 
-MLW0 Current Source Verification Map is DISPATCH_READY at `b9c4a114`.
-GC-018 and work order committed; pre-dispatch gate PASS. Worker must not
-commit. Reviewer/Closer commits after map review. CI1-T11 wave committed at
-`c7e5eb19`. LHW24 remains the latest closed numbered LHW wave. Boundary:
-private source-analysis only; no runtime, public-sync, hosted readiness,
-production readiness, public readiness, live proof, or autonomous mutation
-claim.
+MLW0 Current Source Verification Map is CLOSED_PASS_BOUNDED. Source map:
+`docs/reference/CVF_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_2026-06-05.md`.
+Completion review:
+`docs/reviews/CVF_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_COMPLETION_2026-06-05.md`.
+CI1-T11 wave committed at `c7e5eb19`. LHW24 remains the latest closed numbered
+LHW wave. Boundary: private source-analysis only; no runtime, public-sync,
+hosted readiness, production readiness, public readiness, live proof, or
+autonomous mutation claim.
 
 Pain-point closure direction:
 
@@ -263,16 +264,20 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-MLW0 Current Source Verification Map is `DISPATCH_READY` at commit `b9c4a114`.
+MLW0 Current Source Verification Map is `CLOSED_PASS_BOUNDED`.
 
 GC-018: `docs/baselines/CVF_GC018_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_2026-06-05.md`
 
 Work order: `docs/work_orders/CVF_WO_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_2026-06-05.md`
 
-Commit mode: WORKER_MUST_NOT_COMMIT. Worker (Claude) executes source
-analysis per the work order and produces
-`docs/reference/CVF_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_2026-06-05.md`.
-Reviewer/Closer authors completion review and commits.
+Source map: `docs/reference/CVF_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_2026-06-05.md`
+
+Completion review: `docs/reviews/CVF_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_COMPLETION_2026-06-05.md`
+
+Next allowed move: operator reviews MLW0 blocked/renamed rows, then authorizes
+a fresh GC-018/work order for either MLW1 Governed Memory Operation Receipt
+Model or MLW2 Deterministic Context Bundle Workflow. No runtime/source-changing
+MLW tranche is authorized from the roadmap alone.
 
 ERH-DUR1 Durable Evidence And Policy Snapshot is `CLOSED_PASS_BOUNDED`:
 

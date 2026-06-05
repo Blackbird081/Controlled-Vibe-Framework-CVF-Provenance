@@ -4,7 +4,7 @@
   "guard": "governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md",
   "checker": "governance/compat/check_corpus_scan_registry.py",
   "lastUpdated": "2026-06-05",
-  "updatedBy": "CI1-T9 legacy partial scan triage",
+  "updatedBy": "MLW0 current source verification map",
   "allowedCorpusTypes": [
     "LEGACY_FOLDER",
     "PROJECT_SOURCE",
@@ -885,6 +885,84 @@
         "both laws currently in force (effectiveDate=2026-07-01; not yet in force as of 2026-06-04)"
       ],
       "nextScanRecommendation": "T8 governance scaffold complete. PolicyLocal is READY for a fresh operator-authorized search implementation work order; do not begin runtime work from this registry entry alone. EC-02 rescan required on or after 2026-07-01 before any production runtime opens.",
+      "hashAlgorithm": "sha256",
+      "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
+    },
+    {
+      "id": "mlw0-current-source-verification-map",
+      "corpusType": "PROJECT_SOURCE",
+      "displayName": "MLW0 Current Source Verification Map",
+      "scopePaths": [
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/memory/",
+        "docs/audits/CVF_CI1_T11A_LEARNING_PLANE_DEEP_SCAN_PACKET_2026-06-05.md",
+        "docs/audits/CVF_CI1_T11B_MEMORY_KNOWLEDGE_STORE_DEEP_SCAN_PACKET_2026-06-05.md",
+        "docs/audits/CVF_CI1_T11C_RAG_CONTEXT_CONTROL_DEEP_SCAN_PACKET_2026-06-05.md",
+        "docs/audits/CVF_CI1_T11D_EXECUTION_AUDIT_LEARNING_DEEP_SCAN_PACKET_2026-06-05.md"
+      ],
+      "fileCount": null,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "MLW0",
+      "scanDate": "2026-06-05",
+      "manifestHash": "89cacbf76705a729468ea01a103f05fb8da7f42b1716b072533e41f29b8f1a94",
+      "manifestPath": null,
+      "packetPath": "docs/reference/CVF_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_2026-06-05.md",
+      "completionReviewPath": "docs/reviews/CVF_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_COMPLETION_2026-06-05.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_2026-06-05.md",
+      "verdicts": {
+        "gc047": "COMPLETE_VERIFIED",
+        "gc048": "PARTIAL",
+        "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+      },
+      "semanticRegions": [
+        "MEMORY_LEARNING_SOURCE_VERIFICATION",
+        "LEGACY_TO_CURRENT_SYMBOL_MAP",
+        "MLW_TRANCHE_DEPENDENCY_AUTHORITY"
+      ],
+      "priorAbsorption": "CI1-T11 consolidated roadmap required MLW0 before MLW1-MLW8 implementation. MLW0 maps legacy memory, learning, RAG/context, execution continuity, and audit feedback vocabulary to current LPF/cvf-web source authority.",
+      "findings": [
+        {
+          "id": "MLW0-F1-legacy-runtime-vocabulary",
+          "summary": "Legacy W7 runtime record names are not current runtime source symbols and must not be reused as source facts.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Future MLW work orders must cite the MLW0 map and use current names or author new schemas.",
+          "defectClass": "RUNTIME_SIGNAL_GAP",
+          "learningLane": "RUNTIME_BEHAVIOR_LEARNING",
+          "f2gRef": "docs/reviews/CVF_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_COMPLETION_2026-06-05.md#finding-to-governance-learning-disposition"
+        },
+        {
+          "id": "MLW0-F2-context-workflow-gap",
+          "summary": "Current source has context budget, memory packager, and knowledge retrieval pieces but not a named RAGRouter, ContextFusionPipeline, ContextBundleSchema, CachePolicy, or WorkflowContextWindow.",
+          "disposition": "DEFER_WITH_ROADMAP",
+          "nextAction": "Use MLW2 to author a deterministic context bundle/router/fusion contract before runtime implementation.",
+          "defectClass": "MACHINE_GATE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_COMPLETION_2026-06-05.md#finding-to-governance-learning-disposition"
+        },
+        {
+          "id": "MLW0-F3-audit-trust-feedback-gap",
+          "summary": "Audit and trust feedback exists as audit-memory receipt and finding-to-learning bridge pieces, not as legacy AuditCouncilFeedback or TrustCalibrationRecord types.",
+          "disposition": "DEFER_WITH_ROADMAP",
+          "nextAction": "Use MLW5 to gate audit feedback as proposal-only learning with no direct policy mutation.",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_COMPLETION_2026-06-05.md#finding-to-governance-learning-disposition"
+        }
+      ],
+      "negativeSearchTerms": [
+        "W7ArtifactRecord runtime source symbol (not present in current TS source)",
+        "W7TraceRecord runtime source symbol (not present in current TS source)",
+        "W7PlannerRecord runtime source symbol (not present in current TS source)",
+        "W7DecisionRecord runtime source symbol (not present in current TS source)",
+        "W7MemoryRecord runtime source symbol (not present in current TS source)",
+        "RAGRouter current source symbol (not present)",
+        "ContextFusionPipeline current source symbol (not present)",
+        "ContextBundleSchema current source symbol (not present)",
+        "AuditCouncilFeedback current source symbol (not present)",
+        "TrustCalibrationRecord current source symbol (not present)"
+      ],
+      "nextScanRecommendation": "No additional MLW0 scan needed. Operator should review blocked and renamed rows, then authorize a fresh GC-018/work order for MLW1 or MLW2.",
       "hashAlgorithm": "sha256",
       "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
     },
