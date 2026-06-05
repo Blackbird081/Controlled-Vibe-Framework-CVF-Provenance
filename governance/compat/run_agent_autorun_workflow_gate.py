@@ -102,6 +102,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             head,
         ),
         _range_command(
+            "rescan intelligence hardening",
+            "governance/compat/check_rescan_intelligence_hardening.py",
+            base,
+            head,
+        ),
+        _range_command(
             "corpus-to-knowledge-map reconciliation",
             "governance/compat/check_corpus_to_knowledge_map_reconciliation.py",
             base,
