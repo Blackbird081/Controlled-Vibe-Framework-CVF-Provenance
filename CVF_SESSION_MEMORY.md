@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-06
 
-Current mode marker: `mlw7_rtad1_runtime_adapter_boundary_work_order_dispatched`
+Current mode marker: `mlw7_rtad1_runtime_adapter_boundary_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `mlw7_rtad1_runtime_adapter_boundary_work_order_dispatched`.
+Current mode: `mlw7_rtad1_runtime_adapter_boundary_closed_pass_bounded`.
 
 Active handoff:
 
@@ -50,34 +50,35 @@ Active review queue:
 
 Latest continuity note:
 
-MLW7-RTAD1 Runtime Adapter Boundary Admission work order is
-`DISPATCHED`:
+MLW7-RTAD1 Runtime Adapter Boundary Admission is
+`CLOSED_PASS_BOUNDED`:
 
 `docs/work_orders/CVF_WO_MLW7_RTAD1_RUNTIME_ADAPTER_BOUNDARY_ADMISSION_2026-06-05.md`
+
+Completion review:
+
+`docs/reviews/CVF_MLW7_RTAD1_RUNTIME_ADAPTER_BOUNDARY_ADMISSION_COMPLETION_2026-06-06.md`
 
 Authoring commit: `8cb264b1`.
 Dispatch commit: `c746966a`.
 Dispatch transition base: `061c3791`.
+Execution base: `20d45fdd`.
+Closure base: `20d45fdd`.
 
-The work order translates the MLW7 runtime adapter boundary GC-018 into a
-source-verified boundary/admission implementation packet. The worker must
-capture a fresh `executionBaseHead`, run pre-implementation, refresh source
-verification, and implement only deterministic boundary/admission/readout
-behavior. It does not authorize runtime adapter implementation beyond that
-boundary/readout, package install, external execution, external repo ingestion,
-delegation approval, registry authority, marketplace publication, public-sync,
-live/provider proof, hosted readiness, production readiness, public readiness,
-memory reinjection, automatic promotion, high-risk promotion implementation,
-Learning Orchestrator runtime behavior, or autonomous mutation.
+The tranche closes a deterministic runtime adapter boundary/admission helper
+and focused tests under the existing MLW7 ingestion owner surface. It does not
+authorize runtime adapter implementation beyond that boundary/readout, package
+install, external execution, external repo ingestion, delegation approval,
+registry authority, marketplace publication, public-sync, live/provider proof,
+hosted readiness, production readiness, public readiness, memory reinjection,
+automatic promotion, high-risk promotion implementation, Learning Orchestrator
+runtime behavior, or autonomous mutation.
 
-Next allowed move: execute the dispatched `MLW7-RTAD1` work order by capturing
-a fresh `executionBaseHead`, running pre-implementation, and implementing only
-the bounded runtime adapter boundary/admission/readout helper and deterministic
-tests; or stop for review. Install/execute path, delegation/registry authority,
-marketplace/public claim, public-sync, live proof, hosted readiness,
-production readiness, public readiness, memory reinjection, automatic
-promotion, high-risk promotion implementation, runtime adapter implementation
-beyond boundary/readout, or autonomous mutation requires separate explicit
+Next allowed move: audit and select a separate operator-authorized lane with
+fresh GC-018/work order, such as MLW8 optimization/benchmark/cost proof, a
+public-safe export order, a live/provider proof order, or another explicitly
+bounded roadmap tranche; or stop for review. Runtime adapter implementation
+beyond the closed boundary/readout remains blocked without separate explicit
 authorization and phase gates.
 
 Previous continuity note:

@@ -1109,6 +1109,54 @@ Rollback boundary: if this sync is wrong, restore only the MLW7-RTAD1 dispatch
 continuity text in the protected session files and this handoff section. Do
 not revert unrelated operator or workspace changes.
 
+Current HEAD recorded for this handoff: `20d45fdd` (Close MLW7-RTAD1 runtime
+adapter boundary admission; material commit pending). Updated 2026-06-06 after
+operator instructed Codex to close the tranche with multi-role execution.
+Material artifacts in this batch:
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw7-runtime-adapter-boundary-admission.ts`,
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw7-runtime-adapter-boundary-admission.test.ts`,
+and
+`docs/reviews/CVF_MLW7_RTAD1_RUNTIME_ADAPTER_BOUNDARY_ADMISSION_COMPLETION_2026-06-06.md`.
+Work order
+`docs/work_orders/CVF_WO_MLW7_RTAD1_RUNTIME_ADAPTER_BOUNDARY_ADMISSION_2026-06-05.md`
+is `CLOSED_PASS_BOUNDED`. Current mode is
+`mlw7_rtad1_runtime_adapter_boundary_closed_pass_bounded`. Next allowed move:
+audit and select a separate operator-authorized lane with fresh GC-018/work
+order, such as MLW8 optimization/benchmark/cost proof, a public-safe export
+order, a live/provider proof order, or another explicitly bounded roadmap
+tranche; or stop for review. Boundary remains no runtime adapter
+implementation beyond closed boundary/readout, package install, external
+execution, external repo ingestion, delegation approval, registry authority,
+marketplace/public claim, public-sync, live/provider proof, hosted readiness,
+production readiness, public readiness, memory reinjection, automatic
+promotion, high-risk promotion implementation, Learning Orchestrator runtime
+behavior, or autonomous mutation.
+
+## Core Guard Self-Protection Authorization - MLW7-RTAD1 Closure Session Sync
+
+Authorized guard-maintenance scope: record MLW7-RTAD1 closure state, current
+mode `mlw7_rtad1_runtime_adapter_boundary_closed_pass_bounded`, and the next
+allowed separate-lane selection move.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION_MEMORY.md`
+- `AGENT_HANDOFF_V15_2026-05-29.md`
+
+Operator authorization: 2026-06-06 operator instructed Codex to close this
+tranche with multi-role execution. This sync records bounded closure only. It
+does not authorize runtime adapter implementation beyond boundary/readout,
+package install, external execution, external repo ingestion, delegation
+approval, registry authority, marketplace/public claim, public-sync,
+live/provider proof, hosted readiness, production readiness, public readiness,
+memory reinjection, automatic promotion, high-risk promotion implementation,
+Learning Orchestrator runtime behavior, or autonomous mutation.
+
+Rollback boundary: if this sync is wrong, restore only the MLW7-RTAD1 closure
+continuity text in the protected session files and this handoff section. Do
+not revert unrelated operator or workspace changes.
+
 ## Claim Boundary
 
 This handoff is a continuity and routing artifact. It does not prove runtime

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -12,13 +12,11 @@ dispatchBaseHead: `036a9458`
 
 dispatchTransitionBaseHead: `061c3791`
 
-executionBaseHead: `N/A with reason - worker must capture fresh execution base
-before implementation edits`
+executionBaseHead: `20d45fdd`
 
-closureBaseHead: `N/A with reason - dispatch transition only; future closure
-review must capture a fresh closure base`
+closureBaseHead: `20d45fdd`
 
-Commit mode: `WORKER_MUST_NOT_COMMIT`
+Commit mode: `REVIEWER_COMMIT_AFTER_CLOSURE`
 
 ## Purpose
 
@@ -63,17 +61,17 @@ secrets/quota use, destructive action, or claim-boundary expansion.
 | --- | --- | --- |
 | `dispatchBaseHead` | `036a9458` | Work-order authoring base captured before this packet |
 | `dispatchTransitionBaseHead` | `061c3791` | Dispatch transition base captured before changing status to `DISPATCHED` |
-| `executionBaseHead` | N/A with reason - worker must capture fresh execution base before implementation edits | Must be captured immediately before implementation |
-| `closureBaseHead` | N/A with reason - dispatch transition only; future closure review must capture fresh closure base | Must be captured before closure review |
-| Commit mode | `WORKER_MUST_NOT_COMMIT` | Worker returns evidence; reviewer/committer handles closure and commits |
+| `executionBaseHead` | `20d45fdd` | Captured immediately before implementation |
+| `closureBaseHead` | `20d45fdd` | Captured before closure review; same as execution base because no intervening commit occurred |
+| Commit mode | `REVIEWER_COMMIT_AFTER_CLOSURE` | Operator authorized Codex multi-role closeout for this tranche |
 
 ## Agent Roles
 
 | Role | Assignment |
 | --- | --- |
 | Orchestrator | Codex authoring packet and future dispatch coordinator |
-| Worker | Future explicitly dispatched implementation agent |
-| Reviewer / committer | Independent closure review, session sync, and commit |
+| Worker | Codex, operator-authorized multi-role closeout on 2026-06-06 |
+| Reviewer / committer | Codex reviewer/committer after bounded implementation evidence |
 | Operator checkpoint | Dispatch approved on 2026-06-06; still required before install, execute, live proof, public-sync, registry authority, delegation authority, marketplace publication, or runtime adapter implementation beyond boundary/readout |
 
 ## Scope
@@ -205,23 +203,23 @@ Risk ceiling: R2 boundary/readout and deterministic tests only.
 
 | Required output | Owner | Required before closure | Commit by worker? |
 | --- | --- | --- | --- |
-| Source-verification refresh against current source | Worker | Yes | No |
-| Boundary/admission helper or source-backed rejection | Worker | Yes | No |
-| Deterministic tests for blocked runtime operations and registry-readiness boundary | Worker | Yes | No |
-| Optional route-visible advisory readout only if exact route owner symbols are re-verified | Worker | Conditional | No |
-| Worker handoff/evaluation artifact | Worker | Yes | No |
-| Completion review | Reviewer / committer | Yes | N/A |
-| Session continuity update | Reviewer / committer | Yes | N/A |
+| Source-verification refresh against current source | Worker | PASS - refreshed before implementation | No |
+| Boundary/admission helper or source-backed rejection | Worker | PASS - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw7-runtime-adapter-boundary-admission.ts` | No |
+| Deterministic tests for blocked runtime operations and registry-readiness boundary | Worker | PASS - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw7-runtime-adapter-boundary-admission.test.ts` | No |
+| Optional route-visible advisory readout only if exact route owner symbols are re-verified | Worker | N/A with reason - not implemented; route wiring was optional and unnecessary for bounded closure | No |
+| Worker handoff/evaluation artifact | Worker | PASS - completion evidence below | No |
+| Completion review | Reviewer / committer | PASS - `docs/reviews/CVF_MLW7_RTAD1_RUNTIME_ADAPTER_BOUNDARY_ADMISSION_COMPLETION_2026-06-06.md` | N/A |
+| Session continuity update | Reviewer / committer | PASS - active state, front door, and active handoff synced during closure | N/A |
 
 ## Required Artifact Manifest
 
 | Artifact | Path or owner | Status |
 | --- | --- | --- |
-| Boundary/admission helper | Future `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/` path chosen by worker after source refresh | REQUIRED_AFTER_DISPATCH |
-| Focused deterministic tests | Future focused test path chosen by worker after helper naming | REQUIRED_AFTER_DISPATCH |
-| Optional route readout wiring | Execute route owner only if dispatch scope preserves advisory-only boundary | CONDITIONAL_AFTER_DISPATCH |
-| Completion review | Future `docs/reviews/` completion artifact | REQUIRED_AFTER_DISPATCH |
-| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V15_2026-05-29.md` | REVIEWER_OWNED_AFTER_CLOSURE |
+| Boundary/admission helper | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw7-runtime-adapter-boundary-admission.ts` | CLOSED_PASS_BOUNDED |
+| Focused deterministic tests | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw7-runtime-adapter-boundary-admission.test.ts` | CLOSED_PASS_BOUNDED |
+| Optional route readout wiring | Execute route owner only if dispatch scope preserves advisory-only boundary | N/A with reason - not needed for this bounded source helper closure |
+| Completion review | `docs/reviews/CVF_MLW7_RTAD1_RUNTIME_ADAPTER_BOUNDARY_ADMISSION_COMPLETION_2026-06-06.md` | CLOSED_PASS_BOUNDED |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V15_2026-05-29.md` | CLOSED_PASS_BOUNDED |
 
 ## Execution Instructions
 
@@ -325,11 +323,11 @@ Explicit operator approval is required before:
 
 | Item | Required final disposition | Evidence |
 | --- | --- | --- |
-| Source Verification refreshed | PASS or BLOCKED | current source line/symbol anchors |
-| Deterministic tests run | PASS or BLOCKED | command output |
-| Forbidden runtime/live/public/dependency scope avoided | PASS or BLOCKED | changed-file set and review evidence |
-| Autorun gates recorded | PASS or BLOCKED | pre-implementation and pre-closure outputs |
-| Session continuity updated | PASS or N/A with reason | active state, front door, handoff |
+| Source Verification refreshed | PASS | current source line/symbol anchors in Source Verification Block and completion review |
+| Deterministic tests run | PASS | `npm run test:run -- src/lib/mlw7-runtime-adapter-boundary-admission.test.ts src/lib/mlw7-external-capability-ingestion.test.ts` |
+| Forbidden runtime/live/public/dependency scope avoided | PASS | changed-file set limited to helper, test, review, and session continuity |
+| Autorun gates recorded | PASS | pre-implementation PASS; pre-closure PASS before closure claim |
+| Session continuity updated | PASS | active state, front door, handoff |
 
 ## Knowledge Absorption Blind-Spot Control Block
 
@@ -454,7 +452,7 @@ Explicit operator approval is required before:
 | Category | Item | Disposition | Reason |
 | --- | --- | --- | --- |
 | UNCHANGED_FROM_INTAKE | MLW7 runtime operations remain deferred | ACCEPT | MLW7 helper source and GC-018 source verification preserve this |
-| CHANGED_DISPOSITION | GC-018 work-order candidate becomes concrete `READY_FOR_OPERATOR_REVIEW` packet | ACCEPT | operator instructed construction |
+| CHANGED_DISPOSITION | GC-018 work-order candidate became a concrete operator-review packet before dispatch and closure | ACCEPT | operator instructed construction |
 | NEW_FINDING | worker must distinguish `runtime_adapter` class mapping from executable adapter approval | ACCEPT | this is now explicit in Adapter Admission Matrix and Review Gate |
 | REMOVED_OR_REJECTED | direct implementation from GC-018 without work order | REJECT | this work order preserves the staged governance path |
 
@@ -491,6 +489,43 @@ tests before any adapter expansion.
 Provider-output and cost/economics learning lanes: N/A_WITH_REASON because this
 work order makes no provider-output, benchmark, cost, or quality claim.
 
+## Completion Evidence
+
+| Evidence item | Result | Artifact or command |
+| --- | --- | --- |
+| Execution base captured | PASS | `20d45fdd` |
+| Pre-implementation autorun gate | PASS | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 20d45fdd --head HEAD` |
+| Boundary/admission helper implemented | PASS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw7-runtime-adapter-boundary-admission.ts` |
+| Focused deterministic tests added | PASS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw7-runtime-adapter-boundary-admission.test.ts` |
+| Focused deterministic tests run | PASS | `npm run test:run -- src/lib/mlw7-runtime-adapter-boundary-admission.test.ts src/lib/mlw7-external-capability-ingestion.test.ts` |
+| TypeScript check | PASS | `npm run check` |
+| Pre-closure autorun gate | PASS | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base 20d45fdd --head HEAD` |
+| Completion review | PASS | `docs/reviews/CVF_MLW7_RTAD1_RUNTIME_ADAPTER_BOUNDARY_ADMISSION_COMPLETION_2026-06-06.md` |
+| Forbidden runtime/live/public/dependency scope | PASS | no package/lockfile, provider, live proof, public-sync, execution runner, registry authority, or delegation files changed |
+
+## Current Runtime Freshness Verification
+
+| Runtime/source claim | Fresh evidence | Disposition |
+| --- | --- | --- |
+| RTAD1 helper is deterministic boundary/admission only | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw7-runtime-adapter-boundary-admission.ts` added in this closure range | ACCEPT |
+| RTAD1 does not execute runtime adapters | helper exposes false authority flags and no command runner/provider/import path | ACCEPT |
+| MLW7 source owner remains current dependency | helper imports and wraps `buildExternalCapabilityIngestionReadout` | ACCEPT |
+| RTAD1 makes no provider registry claim | `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts` and `PROVIDER_CAPABILITY_REGISTRY` are not changed or consumed by this boundary helper | ACCEPT |
+| Optional route readout remains omitted | no route file changed in this closure range | ACCEPT |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MLW7_RTAD1_RUNTIME_ADAPTER_BOUNDARY_ADMISSION_COMPLETION_2026-06-06.md` | completion review path exists in changed set | PASS |
+| Roadmap state | N/A with reason - GC-018/work-order tranche, no separate roadmap file | work-order trace matrix and completion review trace matrix | N/A with reason |
+| Registry JSON | N/A with reason - no GC-051 or runtime registry mutation in this tranche | corpus registry guard PASS; no registry path changed | PASS |
+| Registry Markdown | N/A with reason - no registry markdown mutation in this tranche | no registry markdown path changed | PASS |
+| External evidence digest | N/A with reason - no external evidence, provider call, public-sync, or live proof used | Public Export Disposition `DEFERRED_PRIVATE_ONLY` | N/A with reason |
+| System loop interlock | existing interlock registry | system loop interlock guard PASS | PASS |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V15_2026-05-29.md` | active session state compatibility PASS | PASS |
+
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
@@ -510,9 +545,9 @@ Authorized guard-maintenance scope: record this work-order authoring state in
 `CVF_SESSION_MEMORY.md`, `CVF_SESSION/ACTIVE_SESSION_STATE.json`, and
 `AGENT_HANDOFF_V15_2026-05-29.md`.
 
-Reason: active front-door continuity must move from GC-018 authorization to
-`MLW7-RTAD1` work-order review readiness and keep implementation/public/live
-lanes blocked.
+Reason: active front-door continuity must move from dispatched
+`MLW7-RTAD1` work-order execution to bounded closure and keep
+implementation/public/live lanes blocked.
 
 Risk if omitted: future agents may re-author the same work order or treat
 runtime adapter implementation as the next allowed move.
