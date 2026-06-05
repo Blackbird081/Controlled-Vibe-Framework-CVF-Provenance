@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-05
 
-Current mode marker: `ci1_t11_memory_learning_related_scan_wave_roadmap_ready`
+Current mode marker: `mlw0_current_source_verification_map_dispatch_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `ci1_t11_memory_learning_related_scan_wave_roadmap_ready`.
+Current mode: `mlw0_current_source_verification_map_dispatch_ready`.
 
 Active handoff:
 
@@ -50,14 +50,13 @@ Active review queue:
 
 Latest continuity note:
 
-CI1-T11 memory/learning related legacy scan wave is committed at `c7e5eb19`.
-Artifacts: T11 wave packet, T11A-D deep scans, T11E secondary structural scan,
-consolidated roadmap, and GC-051 registry update. The roadmap decision is to
-build the memory/learning value as a workflow chain only after MLW0 Current
-Source Verification Map. LHW24 remains the latest closed numbered LHW wave.
-Boundary: private source-analysis and planning only; no runtime, public-sync,
-hosted readiness, production readiness, public readiness, live proof, or
-autonomous mutation claim.
+MLW0 Current Source Verification Map is DISPATCH_READY at `b9c4a114`.
+GC-018 and work order committed; pre-dispatch gate PASS. Worker must not
+commit. Reviewer/Closer commits after map review. CI1-T11 wave committed at
+`c7e5eb19`. LHW24 remains the latest closed numbered LHW wave. Boundary:
+private source-analysis only; no runtime, public-sync, hosted readiness,
+production readiness, public readiness, live proof, or autonomous mutation
+claim.
 
 Pain-point closure direction:
 
@@ -264,11 +263,16 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-CI1-T10 cortex-hub memory/learning deep scan is prepared for commit after T9
-commit `649b9808`. Commit the staged T10 GC-018, audit packet, finding packet,
-and registry update after continuity gates pass. Then proceed to CI1-T11
-`.private_reference/legacy/CVF_Important/ADDING_LEARNING PLANE/` for the next
-memory/learning-priority deep scan unless the operator redirects.
+MLW0 Current Source Verification Map is `DISPATCH_READY` at commit `b9c4a114`.
+
+GC-018: `docs/baselines/CVF_GC018_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_2026-06-05.md`
+
+Work order: `docs/work_orders/CVF_WO_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_2026-06-05.md`
+
+Commit mode: WORKER_MUST_NOT_COMMIT. Worker (Claude) executes source
+analysis per the work order and produces
+`docs/reference/CVF_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_2026-06-05.md`.
+Reviewer/Closer authors completion review and commits.
 
 ERH-DUR1 Durable Evidence And Policy Snapshot is `CLOSED_PASS_BOUNDED`:
 
