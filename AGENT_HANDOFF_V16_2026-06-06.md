@@ -40,9 +40,9 @@ Startup acknowledged: current mode=`external_review_quick_orientation_skill_coun
 
 `external_review_quick_orientation_skill_count_freshness_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `918d2c3d`
-(External Review GAP1 Core KB overlap-map session sync; the current batch
-records the Quick Orientation skill-count side repair on top of that state).
+Current HEAD recorded for this handoff: `e42f2e1b`
+(External Review Quick Orientation skill-count side repair material commit;
+this dedicated handoff sync records continuity for the latest closure state).
 
 ## Active Boundary
 
