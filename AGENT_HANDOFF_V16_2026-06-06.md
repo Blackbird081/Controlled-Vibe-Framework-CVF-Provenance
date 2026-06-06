@@ -40,10 +40,10 @@ Startup acknowledged: current mode=`external_review_gap4_gap5_runtime_durability
 
 ## Current Mode
 
-`external_review_gap4_gap5_runtime_durability_closed_pass_bounded`
+`gap6_provider_risk_cap_env_override_closed_pass_bounded`
 
-Current HEAD recorded for this handoff sync parent: `f37df607`
-(External Review GAP4/GAP5 runtime durability material closure commit; this
+Current HEAD recorded for this handoff sync parent: `7c6b4578`
+(GAP 6 provider risk cap ENV override + GAP 7/8 closure batch commit; this
 dedicated session-sync-only commit records continuity for the closure batch).
 
 ## Active Boundary
