@@ -61,7 +61,7 @@ Completion:
 Evidence:
 
 - Material closure commit: `fb9e81c5`.
-- `docs/CVF_CORE_KNOWLEDGE_BASE.md` was reduced from 769 lines to 399 lines.
+- `docs/CVF_CORE_KNOWLEDGE_BASE.md` was reduced from 769 lines to 400 lines.
 - Stale `131 active skills` references were removed from Core KB.
 - Section XI and Section XII were verified unchanged from base.
 - Rule 4 now points version/folder/status ownership to Section II plus
