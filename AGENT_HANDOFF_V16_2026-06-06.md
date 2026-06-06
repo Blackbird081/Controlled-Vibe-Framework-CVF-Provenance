@@ -42,9 +42,9 @@ Startup acknowledged: current mode=`erh_rl1b_distributed_rate_limit_backend_clos
 
 `erh_rl1b_distributed_rate_limit_backend_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `d243b349`
-(material commit for ERH-RL1B distributed rate-limit backend; the next
-session-sync commit records the parent material SHA per GC-020).
+Current HEAD recorded for this handoff: `d823c098`
+(closure/session-sync commit for ERH-RL1B distributed rate-limit backend; the
+next dedicated session-sync-only commit records this parent SHA per GC-020).
 
 ## Active Boundary
 
