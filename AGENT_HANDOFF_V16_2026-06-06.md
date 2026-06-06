@@ -42,8 +42,9 @@ Startup acknowledged: current mode=`p1_p5_small_debt_remediation_ready_for_exter
 
 `p1_p5_small_debt_remediation_ready_for_external_review`
 
-Current baseHead recorded for this handoff sync batch: `2b39dc47`
-(operator-authorized P1-P5 small-debt remediation before private/public push).
+Current HEAD recorded for this handoff sync parent: `eb058300`
+(P1-P5 small-debt remediation material commit; this sync commit updates
+continuity only).
 
 ## Active Boundary
 

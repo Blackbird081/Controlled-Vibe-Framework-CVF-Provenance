@@ -540,11 +540,11 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-P1-P5 small debt remediation is ready for external review. Private provenance
-and public-sync changes still need commit/push from this working batch.
+P1-P5 small debt remediation material commit is `eb058300`. Public-sync changes
+still need commit/push from this working batch.
 
-Next allowed move: commit/push the P1-P5 remediation branches, then stop for
-external review.
+Next allowed move: commit/push the public-sync remediation branch and push the
+private provenance branch, then stop for external review.
 
 LHW24 remains the latest closed numbered LHW wave in the state registry.
 
