@@ -42,9 +42,9 @@ Startup acknowledged: current mode=`public_doc_drift_external_review_guide_harde
 
 `public_doc_drift_external_review_guide_hardening_ready_for_review`
 
-Current HEAD recorded for this handoff: `9113f2a0`
-(public-doc drift guard and external-agent review guide hardening material
-commit; next sync commit updates continuity only).
+Current HEAD recorded for this handoff: `85e814c5`
+(handoff HEAD sync parent after public-doc drift guard and external-agent review
+guide hardening; next sync commit updates continuity only).
 
 ## Active Boundary
 
@@ -53,7 +53,7 @@ Active handoff: `AGENT_HANDOFF_V16_2026-06-06.md`.
 Archived predecessor:
 `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V15_2026-05-29.md`.
 
-Remote tracking branch: origin/main
+Remote tracking branch: origin/codex/p1-p5-small-debt-remediation
 
 Exact remote SHA must be derived live from git when needed — not
 hand-maintained as a moving target.
