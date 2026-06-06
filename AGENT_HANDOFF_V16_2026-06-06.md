@@ -39,9 +39,10 @@ Startup acknowledged: current mode=`external_review_get_started_freshness_closed
 
 `external_review_get_started_freshness_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `2805d9748a1819c26f0807694736b17762e50047`
-(GET_STARTED freshness material closure parent commit; this dedicated handoff
-sync records next-move continuity).
+Current HEAD recorded for this handoff: `f8426ce8e7b1b6de759f2079d6ea4bb6fd693f1f`
+(GET_STARTED freshness closure plus allowed-scope clarification parent commit;
+this dedicated handoff sync records continuity for the latest closure hygiene
+commit).
 
 ## Active Boundary
 
@@ -72,6 +73,8 @@ Only V16 should be treated as the active root handoff.
   `docs/work_orders/CVF_AGENT_WORK_ORDER_EXTERNAL_REVIEW_GET_STARTED_FRESHNESS_FOR_CLAUDE_2026-06-06.md`.
 - Closed the Claude GET_STARTED freshness work order as bounded documentation
   repair at material commit `2805d974`.
+- Clarified the closed work order's Allowed scope for reviewer-owned session
+  continuity sync at commit `f8426ce8`.
 - Classified V16 as an `INTERNAL_ONLY` visible root file for P3/public exposure
   guard compatibility.
 - Updated next allowed move to review or a separate source-verified
@@ -94,6 +97,7 @@ Verification summary:
 
 - Audit/work-order commit: `b0debdaf`.
 - Material closure commit: `2805d974`.
+- Scope clarification commit: `f8426ce8`.
 - Stale GET_STARTED footer `March 20, 2026 · Version: 1.6.0` was replaced
   with `June 2026 · Version: 4.0.0 GA`.
 - Conflicting skill counts `141 reusable skills` and `124 skills` were
