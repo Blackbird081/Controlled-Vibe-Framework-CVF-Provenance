@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-06
 
-Current mode marker: `external_review_get_started_claude_handoff`
+Current mode marker: `external_review_get_started_freshness_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `external_review_get_started_claude_handoff`.
+Current mode: `external_review_get_started_freshness_closed_pass_bounded`.
 
 Active handoff:
 
@@ -50,33 +50,44 @@ Active review queue:
 
 Latest continuity note:
 
-External review gap-analysis intake has been repaired and made trackable:
-
-`docs/audits/CVF_EXTERNAL_REVIEW_GAP_ANALYSIS_AND_PROPOSED_SOLUTIONS_2026-06-05.md`
-
-Claude handoff work order:
+External Review GET_STARTED Freshness repair is `CLOSED_PASS_BOUNDED`:
 
 `docs/work_orders/CVF_AGENT_WORK_ORDER_EXTERNAL_REVIEW_GET_STARTED_FRESHNESS_FOR_CLAUDE_2026-06-06.md`
 
+Completion review:
+
+`docs/reviews/CVF_EXTERNAL_REVIEW_GET_STARTED_FRESHNESS_COMPLETION_2026-06-06.md`
+
 Evidence:
 
-- Material commit: `b0debdaf`.
+- Audit repair/work-order commit: `b0debdaf`.
+- Material closure commit: `2805d974`.
+- GET_STARTED stale footer `March 20, 2026 · Version: 1.6.0` was replaced
+  with `June 2026 · Version: 4.0.0 GA`.
+- Conflicting skill-library counts `141 reusable skills` and `124 skills` were
+  replaced with `62 active skills` wording.
+- Added a concise public-facing glossary and release-readiness freshness check.
 - The audit packet was previously hidden by local `.git/info/exclude`; that
   local ignore entry was removed before commit so the packet could be tracked.
-- Pre-dispatch autorun gate passed on range `c55697ac..HEAD`.
 - Public Export Disposition: `DEFERRED_PRIVATE_ONLY`.
 
-Next allowed move: hand off the Claude work order above for documentation-only
-GET_STARTED freshness, public glossary, and release-readiness freshness-check
-repair. Claude must not commit. Blocked without separate authorization and
-passing phase gates: runtime/source code changes, dependency changes,
-public-sync or public push, live/provider proof, durable persistence work,
-governance-rule removal, public/hosted/production readiness claims,
-cost/performance/provider-quality claims, memory reinjection, high-risk
-promotion implementation, Learning Orchestrator runtime behavior, and
-autonomous mutation.
+Next allowed move: stop for review or open a separate source-verified work
+order for the next external-review gap, such as Core Knowledge Base
+pointer-ification or a dedicated public-sync/public-catalog freshness batch.
+Blocked without separate authorization and passing phase gates: runtime/source
+code changes, dependency changes, public-sync or public push, live/provider
+proof, durable persistence work, governance-rule removal, public/hosted/
+production readiness claims, cost/performance/provider-quality claims, memory
+reinjection, high-risk promotion implementation, Learning Orchestrator runtime
+behavior, and autonomous mutation.
 
-Earlier continuity note:
+Prior external-review continuity note:
+
+External review gap-analysis intake was repaired and made trackable:
+
+`docs/audits/CVF_EXTERNAL_REVIEW_GAP_ANALYSIS_AND_PROPOSED_SOLUTIONS_2026-06-05.md`
+
+Earlier closure continuity note:
 
 LE1 Live E2E Selector Flow Diagnostic is `CLOSED_PASS_BOUNDED`:
 
