@@ -796,7 +796,7 @@ export default function HomePage() {
                         <div className="grid gap-3 sm:grid-cols-2">
                             {[
                                 { href: '/knowledge/intake', icon: BookOpenCheck, tone: 'emerald', label: language === 'vi' ? 'Nạp kiến thức' : 'Knowledge Intake', desc: language === 'vi' ? 'Thêm tài liệu mới vào kho có quản trị' : 'Add new knowledge to the governed vault' },
-                                { href: '/artifacts', icon: FileOutput, tone: 'indigo', label: language === 'vi' ? 'Xuất artifact' : 'Artifact Export', desc: language === 'vi' ? 'Xuất gói review HTML có governance receipt' : 'Export an HTML review packet with governance receipt' },
+                                { href: '/artifacts', icon: FileOutput, tone: 'indigo', label: language === 'vi' ? 'Xuất artifact' : 'Artifact Export', desc: language === 'vi' ? 'Xuất gói review HTML có xác nhận kiểm soát' : 'Export an HTML review packet with an audit record' },
                             ].map(({ href, icon: Icon, tone, label, desc }) => (
                                 <Link key={href} href={href} className={`flex items-start gap-4 rounded-[22px] border p-5 transition hover:shadow-md ${tone === 'emerald' ? 'border-emerald-200 bg-emerald-50/70 dark:border-emerald-500/20 dark:bg-emerald-500/8' : 'border-indigo-200 bg-indigo-50/70 dark:border-indigo-500/20 dark:bg-indigo-500/8'}`}>
                                     <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${tone === 'emerald' ? 'bg-emerald-100 text-emerald-600 dark:bg-emerald-500/15 dark:text-emerald-300' : 'bg-indigo-100 text-indigo-600 dark:bg-indigo-500/15 dark:text-indigo-300'}`}>
