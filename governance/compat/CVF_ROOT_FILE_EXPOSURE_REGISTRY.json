@@ -164,6 +164,10 @@
       "exposureClass": "PUBLIC_DOCS_ONLY"
     },
     {
+      "path": "SECURITY.md",
+      "exposureClass": "PUBLIC_DOCS_ONLY"
+    },
+    {
       "path": "START_HERE.md",
       "exposureClass": "PUBLIC_DOCS_ONLY"
     },

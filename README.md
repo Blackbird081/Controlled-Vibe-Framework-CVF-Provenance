@@ -57,7 +57,8 @@ If you want the deeper private-core chain after that, use [Docs Index](docs/INDE
 If you need the current canonical continuation posture after `W54-T1`, use:
 
 - [Agent Instructions](AGENTS.md)
-- [Agent Handoff](AGENT_HANDOFF.md)
+- [Session Memory Front Door](CVF_SESSION_MEMORY.md)
+- [Active Session State Registry](CVF_SESSION/ACTIVE_SESSION_STATE.json)
 - [Whitepaper Progress Tracker](docs/reference/CVF_WHITEPAPER_PROGRESS_TRACKER.md)
 - [Master Architecture Closure Roadmap](docs/roadmaps/CVF_MASTER_ARCHITECTURE_CLOSURE_ROADMAP_2026-04-05.md)
 - [New Machine Setup Checklist](docs/reference/CVF_NEW_MACHINE_SETUP_CHECKLIST.md)
@@ -405,7 +406,8 @@ CVF has entered release candidate state. All core proof milestones are closed.
 
 Primary status anchors:
 
-- [Agent Handoff](AGENT_HANDOFF.md)
+- [Session Memory Front Door](CVF_SESSION_MEMORY.md)
+- [Active Session State Registry](CVF_SESSION/ACTIVE_SESSION_STATE.json)
 - [W114 Non-Coder Value Maximization Roadmap](docs/roadmaps/CVF_W114_T1_NONCODER_VALUE_MAXIMIZATION_AND_EVIDENCE_ROADMAP_2026-04-22.md)
 - [W114 Non-Coder Outcome Evidence Pack](docs/assessments/CVF_W114_T1_NONCODER_OUTCOME_EVIDENCE_PACK_2026-04-23.md)
 - [W114 Web Benefit Visibility Assessment](docs/assessments/CVF_W114_T1_WEB_BENEFIT_VISIBILITY_ASSESSMENT_2026-04-23.md)

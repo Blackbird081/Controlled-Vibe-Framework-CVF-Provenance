@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-06
 
-Current mode marker: `gap2b_web_ui_jargon_reduction_closed_pass_bounded`
+Current mode marker: `p1_p5_small_debt_remediation_ready_for_external_review`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `gap2b_web_ui_jargon_reduction_closed_pass_bounded`.
+Current mode: `p1_p5_small_debt_remediation_ready_for_external_review`.
 
 Active handoff:
 
@@ -49,6 +49,34 @@ Active review queue:
 `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
 
 Latest continuity note:
+
+P1-P5 small debt remediation is ready for external review:
+
+Audit:
+
+`docs/audits/CVF_P1_P5_SMALL_DEBT_REMEDIATION_AUDIT_2026-06-06.md`
+
+Delivered:
+
+- `SECURITY.md` concrete public-safe disclosure path.
+- Stale skill-count/version/handoff-link cleanup in private and public-sync docs.
+- Scheduled live-governance smoke workflow.
+- Secret-safe live evidence manifest script and standard.
+- Source-verified backlog work orders for DEP2 `next-auth` migration, ERH-RL1
+  distributed rate limiter, and QBS method reliability.
+
+Verification:
+
+- `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 2b39dc47 --head HEAD`: PASS.
+- `python scripts/run_cvf_release_gate_bundle.py --e2e-live --json`: PASS.
+
+Boundary: no stable Auth.js migration, Redis implementation, PostgreSQL/SSO
+readiness, independent immutable anchor, benchmark quality parity, family-level
+benchmark power, public/hosted/production readiness, cost/performance/provider
+quality claim, memory reinjection, high-risk promotion implementation,
+Learning Orchestrator runtime behavior, or autonomous mutation.
+
+Prior continuity note:
 
 External Review GAP 2B Web UI jargon reduction is `CLOSED_PASS_BOUNDED`:
 
@@ -512,13 +540,21 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-External Review GAP 2B Web UI jargon reduction is `CLOSED_PASS_BOUNDED` at material commit `31df9194`. All 9 external review GAPs are now `CLOSED_PASS_BOUNDED`. External review remediation series is complete.
+P1-P5 small debt remediation is ready for external review. Private provenance
+and public-sync changes still need commit/push from this working batch.
 
-Next allowed move: stop for review.
+Next allowed move: commit/push the P1-P5 remediation branches, then stop for
+external review.
 
 LHW24 remains the latest closed numbered LHW wave in the state registry.
 
-Blocked without separate authorization and passing phase gates: runtime/source code, dependency changes, public-sync or public push, live/provider proof, durable persistence work, governance-rule removal, public/hosted/production readiness claims, cost/performance/provider-quality claims, memory reinjection, high-risk promotion implementation, Learning Orchestrator runtime behavior, and autonomous mutation.
+Blocked after this authorized push without separate authorization and passing
+phase gates: stable Auth.js migration, Redis implementation, PostgreSQL/SSO
+implementation, independent anchor claim, benchmark live rerun or quality
+parity claim, governance-rule removal, public/hosted/production readiness
+claims, cost/performance/provider-quality claims, memory reinjection,
+high-risk promotion implementation, Learning Orchestrator runtime behavior, and
+autonomous mutation.
 
 ## Enforcement
 

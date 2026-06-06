@@ -36,15 +36,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`external_review_gap4_gap5_runtime_durability_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=stop for review or open the next separate source-verified external-review gap/public-sync work order; parked checkpoint=none.
+Startup acknowledged: current mode=`p1_p5_small_debt_remediation_ready_for_external_review`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=commit/push P1-P5 remediation branches, then stop for external review; parked checkpoint=none.
 
 ## Current Mode
 
-`gap6_provider_risk_cap_env_override_closed_pass_bounded`
+`p1_p5_small_debt_remediation_ready_for_external_review`
 
-Current HEAD recorded for this handoff sync parent: `31df9194`
-(GAP 2B Web UI jargon reduction material commit; all 9 external review GAPs
-are now CLOSED_PASS_BOUNDED — none remain DEFERRED).
+Current baseHead recorded for this handoff sync batch: `2b39dc47`
+(operator-authorized P1-P5 small-debt remediation before private/public push).
 
 ## Active Boundary
 
@@ -64,6 +63,17 @@ Only V16 should be treated as the active root handoff.
 
 ## Latest Work / Changes
 
+- Prepared P1-P5 small debt remediation audit:
+  `docs/audits/CVF_P1_P5_SMALL_DEBT_REMEDIATION_AUDIT_2026-06-06.md`.
+- Added scheduled live-governance smoke workflow and secret-safe live evidence
+  manifest script/standard.
+- Added source-verified backlog work orders for DEP2 `next-auth` stable
+  migration, ERH-RL1 distributed rate limiter, and QBS method reliability.
+- Repaired public-facing small docs debt in private/public-sync scope:
+  `SECURITY.md`, stale skill counts, stale GET_STARTED version, and root
+  handoff-link wording.
+- Verification before commit: pre-implementation autorun PASS; live
+  `python scripts/run_cvf_release_gate_bundle.py --e2e-live --json` PASS.
 - Opened V16 compact handoff.
 - Rotated V15 into the handoff archive.
 - Recorded MLW8-PEL1 bounded diagnostic closure and public-safe export evidence.
@@ -296,8 +306,7 @@ Diagnostic boundary:
 
 ## Next Allowed Move
 
-Stop for review or open the next separate source-verified external-review gap
-or public-sync work order.
+Commit/push the P1-P5 remediation branches, then stop for external review.
 
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`; this MLW8-PEL1 tranche does not alter
@@ -312,7 +321,7 @@ Blocked without separate authorization and passing phase gates:
 - dependency changes;
 - distributed or production durability claim;
 - Redis implementation;
-- public-sync or public push;
+- additional public-sync or public push beyond this authorized batch;
 - live/provider proof;
 - prompt/context mutation;
 - policy relaxation or evidence reduction;
