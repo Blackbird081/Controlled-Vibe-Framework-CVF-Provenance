@@ -2,6 +2,7 @@ import type { GovernanceEvidenceReceipt, GovernanceTraceEntry, GovernanceTraceSt
 import { generatePolicySnapshotId } from '@/lib/policy-snapshot-registry';
 import type { AifMemoryReinjectionReceipt } from '@/lib/aif-memory-reinjection';
 import type { DurableMemoryReceipt } from 'cvf-learning-plane-foundation';
+import { buildReceiptIntegrityAnchor } from '@/lib/receipt-integrity-anchor';
 
 /**
  * Web Governance Envelope — CVF W112-T1 (CP7)
@@ -69,6 +70,11 @@ export interface BuildGovernanceEvidenceReceiptInput {
     durableMemoryWriteReceipt?: DurableMemoryReceipt;
     governanceTrace?: GovernanceTraceEntry[];
     runtimeTelemetry?: Omit<RuntimeTelemetryReceipt, 'governanceTraceEntryCount'>;
+    receiptIntegrity?: {
+        signingSecret?: string | null;
+        externalAnchorId?: string | null;
+        externalAnchorUrl?: string | null;
+    };
 }
 
 /**
@@ -243,7 +249,7 @@ export function buildEvidenceReceipt(
         }
         : undefined;
 
-    return {
+    const baseReceipt: Omit<GovernanceEvidenceReceipt, 'receiptIntegrity'> = {
         receiptId: `rcpt-${input.envelope.envelopeId}`,
         evidenceMode: 'live',
         routeId: input.envelope.routeId,
@@ -267,6 +273,11 @@ export function buildEvidenceReceipt(
         runtimeTelemetry,
         generatedAt: input.envelope.requestTimestamp,
     };
+    const receiptIntegrity = input.receiptIntegrity
+        ? buildReceiptIntegrityAnchor({ receipt: baseReceipt, ...input.receiptIntegrity })
+        : undefined;
+
+    return receiptIntegrity ? { ...baseReceipt, receiptIntegrity } : baseReceipt;
 }
 
 /**

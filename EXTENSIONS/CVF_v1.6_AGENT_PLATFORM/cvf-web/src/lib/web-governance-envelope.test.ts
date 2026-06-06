@@ -326,5 +326,43 @@ describe('web-governance-envelope', () => {
             });
             expect(JSON.stringify(receipt.runtimeTelemetry)).not.toMatch(/sk-|BASE_SYSTEM_PROMPT|private memory/i);
         });
+
+        it('adds receipt integrity metadata without leaking the signing secret', () => {
+            const envelope = buildGovernanceEnvelope({
+                routeId: '/api/execute',
+                surfaceClass: 'governance-execution',
+                evidenceMode: 'live',
+                riskLevel: 'R1',
+                providerLane: 'alibaba',
+            });
+
+            const receipt = buildEvidenceReceipt({
+                envelope,
+                decision: 'ALLOW',
+                riskLevel: 'R1',
+                provider: 'alibaba',
+                model: 'qwen-turbo',
+                routingDecision: 'ALLOW',
+                receiptIntegrity: {
+                    signingSecret: 'builder-test-secret',
+                    externalAnchorId: 'anchor-builder-test',
+                },
+            });
+
+            expect(receipt.receiptIntegrity).toMatchObject({
+                schemaVersion: 'cvf.receiptIntegrity.v1',
+                canonicalization: 'stable-json-v1',
+                digestAlgorithm: 'sha256',
+                hmacAlgorithm: 'hmac-sha256',
+                signatureStatus: 'SIGNED',
+                externalAnchorStatus: 'PROVIDED',
+                externalAnchorId: 'anchor-builder-test',
+                redactionApplied: true,
+                claimBoundary: 'local_receipt_integrity_only_no_third_party_immutability_without_external_anchor',
+            });
+            expect(receipt.receiptIntegrity?.receiptHash).toMatch(/^[a-f0-9]{64}$/);
+            expect(receipt.receiptIntegrity?.signatureDigest).toMatch(/^[a-f0-9]{64}$/);
+            expect(JSON.stringify(receipt)).not.toContain('builder-test-secret');
+        });
     });
 });

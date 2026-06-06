@@ -161,6 +161,11 @@ export async function buildExecuteFinalResponse(params: BuildExecuteFinalRespons
         durableMemoryRead: durableMemoryRoute.receipt,
         durableMemoryWriteReceipt,
         runtimeTelemetry,
+        receiptIntegrity: {
+            signingSecret: process.env.CVF_RECEIPT_HMAC_SECRET ?? process.env.CVF_AUDIT_SIGNING_KEY,
+            externalAnchorId: process.env.CVF_RECEIPT_EXTERNAL_ANCHOR_ID,
+            externalAnchorUrl: process.env.CVF_RECEIPT_EXTERNAL_ANCHOR_URL,
+        },
     });
 
     if (isVisionExecution) governanceEvidenceReceipt.vision = true;

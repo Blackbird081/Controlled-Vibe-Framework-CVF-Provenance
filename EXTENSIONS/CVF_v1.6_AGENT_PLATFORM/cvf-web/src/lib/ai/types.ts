@@ -112,6 +112,21 @@ export interface RuntimeTelemetryReceipt {
     claimBoundary: 'summary_only_no_raw_prompt_output_key_or_provider_payload';
 }
 
+export interface ReceiptIntegrityAnchor {
+    schemaVersion: 'cvf.receiptIntegrity.v1';
+    canonicalization: 'stable-json-v1';
+    digestAlgorithm: 'sha256';
+    receiptHash: string;
+    hmacAlgorithm: 'hmac-sha256';
+    signatureStatus: 'SIGNED' | 'UNSIGNED';
+    signatureDigest?: string;
+    externalAnchorStatus: 'PROVIDED' | 'NOT_PROVIDED';
+    externalAnchorId?: string;
+    externalAnchorUrl?: string;
+    redactionApplied: true;
+    claimBoundary: 'local_receipt_integrity_only_no_third_party_immutability_without_external_anchor';
+}
+
 export interface GovernanceEvidenceReceipt {
     receiptId: string;
     evidenceMode: 'live' | 'mock' | 'static';
@@ -136,6 +151,7 @@ export interface GovernanceEvidenceReceipt {
     workflowComposition?: WorkflowCompositionSummary;
     governanceTrace?: GovernanceTraceEntry[];
     runtimeTelemetry?: RuntimeTelemetryReceipt;
+    receiptIntegrity?: ReceiptIntegrityAnchor;
     generatedAt: string;
 }
 
