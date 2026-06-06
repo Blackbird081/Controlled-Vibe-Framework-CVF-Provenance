@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-06
 
-Current mode marker: `external_review_get_started_freshness_closed_pass_bounded`
+Current mode marker: `external_review_gap1_core_kb_overlap_map_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `external_review_get_started_freshness_closed_pass_bounded`.
+Current mode: `external_review_gap1_core_kb_overlap_map_closed_pass_bounded`.
 
 Active handoff:
 
@@ -50,30 +50,32 @@ Active review queue:
 
 Latest continuity note:
 
-External Review GET_STARTED Freshness repair is `CLOSED_PASS_BOUNDED`:
+External Review GAP1 Core KB overlap map is `CLOSED_PASS_BOUNDED`:
 
-`docs/work_orders/CVF_AGENT_WORK_ORDER_EXTERNAL_REVIEW_GET_STARTED_FRESHNESS_FOR_CLAUDE_2026-06-06.md`
+`docs/work_orders/CVF_WO_EXTERNAL_REVIEW_GAP1_CORE_KB_OVERLAP_MAP_2026-06-06.md`
 
-Completion review:
+Audit and completion:
 
-`docs/reviews/CVF_EXTERNAL_REVIEW_GET_STARTED_FRESHNESS_COMPLETION_2026-06-06.md`
+`docs/audits/CVF_EXTERNAL_REVIEW_GAP1_CORE_KB_OVERLAP_MAP_2026-06-06.md`
+
+`docs/reviews/CVF_EXTERNAL_REVIEW_GAP1_CORE_KB_OVERLAP_MAP_COMPLETION_2026-06-06.md`
 
 Evidence:
 
-- Audit repair/work-order commit: `b0debdaf`.
-- Material closure commit: `2805d974`.
-- GET_STARTED stale footer `March 20, 2026 · Version: 1.6.0` was replaced
-  with `June 2026 · Version: 4.0.0 GA`.
-- Conflicting skill-library counts `141 reusable skills` and `124 skills` were
-  replaced with `62 active skills` wording.
-- Added a concise public-facing glossary and release-readiness freshness check.
-- The audit packet was previously hidden by local `.git/info/exclude`; that
-  local ignore entry was removed before commit so the packet could be tracked.
+- Material closure commit: `d9ded170`.
+- Core KB overlap was mapped source-first; the Core KB was not rewritten.
+- False root owner paths `MODULE_INVENTORY.md` and `ARCHITECTURE_DIAGRAMS.md`
+  were rejected and corrected to `docs/reference/CVF_MODULE_INVENTORY.md` and
+  `docs/reference/CVF_ARCHITECTURE_DIAGRAMS.md`.
+- GC-051 registry now covers the two extension README owner surfaces used by
+  the map.
+- Quick Orientation stale `131 active skills` wording is deferred to a separate
+  freshness repair candidate.
 - Public Export Disposition: `DEFERRED_PRIVATE_ONLY`.
 
-Next allowed move: stop for review or open a separate source-verified work
-order for the next external-review gap, such as Core Knowledge Base
-pointer-ification or a dedicated public-sync/public-catalog freshness batch.
+Next allowed move: stop for review or open a separate source-verified Core KB
+pointer-ification work order using the GAP1 overlap map. Side candidate:
+separate Quick Orientation skill-count freshness repair.
 Blocked without separate authorization and passing phase gates: runtime/source
 code changes, dependency changes, public-sync or public push, live/provider
 proof, durable persistence work, governance-rule removal, public/hosted/

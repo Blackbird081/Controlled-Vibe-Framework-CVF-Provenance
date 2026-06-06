@@ -19,6 +19,7 @@ Target:
 
 - active startup routing;
 - latest mode and next allowed move;
+- external review GAP1 Core KB overlap-map closure;
 - external review GET_STARTED freshness closure;
 - bounded closure state for LE1 after MLW8-PEL1;
 - handoff rotation evidence.
@@ -33,16 +34,15 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`external_review_get_started_freshness_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=stop for review or open a separate source-verified work order for the next external-review gap; parked checkpoint=none.
+Startup acknowledged: current mode=`external_review_gap1_core_kb_overlap_map_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=stop for review or open a separate source-verified Core KB pointer-ification work order using the GAP1 overlap map; parked checkpoint=none.
 
 ## Current Mode
 
-`external_review_get_started_freshness_closed_pass_bounded`
+`external_review_gap1_core_kb_overlap_map_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `f8426ce8e7b1b6de759f2079d6ea4bb6fd693f1f`
-(GET_STARTED freshness closure plus allowed-scope clarification parent commit;
-this dedicated handoff sync records continuity for the latest closure hygiene
-commit).
+Current HEAD recorded for this handoff: `d9ded170`
+(External Review GAP1 Core KB overlap-map material commit; this dedicated
+handoff sync records continuity for the latest closure state).
 
 ## Active Boundary
 
@@ -75,12 +75,52 @@ Only V16 should be treated as the active root handoff.
   repair at material commit `2805d974`.
 - Clarified the closed work order's Allowed scope for reviewer-owned session
   continuity sync at commit `f8426ce8`.
+- Closed External Review GAP1 Core KB overlap map at material commit
+  `d9ded170`; GC-051 registry now covers the extension README owner surfaces
+  used by the map.
 - Classified V16 as an `INTERNAL_ONLY` visible root file for P3/public exposure
   guard compatibility.
-- Updated next allowed move to review or a separate source-verified
-  external-review gap work order.
+- Updated next allowed move to review or a separate source-verified Core KB
+  pointer-ification work order.
 
 ## Latest Continuity Note
+
+External Review GAP1 Core KB overlap map is `CLOSED_PASS_BOUNDED`.
+
+Private artifacts:
+
+- Work order:
+  `docs/work_orders/CVF_WO_EXTERNAL_REVIEW_GAP1_CORE_KB_OVERLAP_MAP_2026-06-06.md`
+- Audit:
+  `docs/audits/CVF_EXTERNAL_REVIEW_GAP1_CORE_KB_OVERLAP_MAP_2026-06-06.md`
+- Completion:
+  `docs/reviews/CVF_EXTERNAL_REVIEW_GAP1_CORE_KB_OVERLAP_MAP_COMPLETION_2026-06-06.md`
+- Registry:
+  `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
+  and `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`
+
+Verification summary:
+
+- Material closure commit: `d9ded170`.
+- Pre-dispatch autorun gate: PASS on `ae6b64b6..HEAD`.
+- Pre-implementation autorun gate: PASS on `ae6b64b6..HEAD`.
+- Commit hook local governance chain: PASS.
+- Core KB overlap was mapped source-first; the Core KB was not rewritten.
+- Root `MODULE_INVENTORY.md` and `ARCHITECTURE_DIAGRAMS.md` owner path claims
+  were rejected and corrected to `docs/reference/CVF_MODULE_INVENTORY.md` and
+  `docs/reference/CVF_ARCHITECTURE_DIAGRAMS.md`.
+- Quick Orientation stale `131 active skills` wording is recorded as a
+  deferred side candidate.
+- Public Export Disposition: `DEFERRED_PRIVATE_ONLY`.
+
+Boundary:
+
+- Documentation-only overlap map and registry coverage. No Core KB rewrite,
+  runtime/source code, dependencies, public-sync/public push, live/provider
+  proof, hosted readiness, production readiness, public readiness, or
+  autonomous mutation was authorized or claimed.
+
+Previous continuity:
 
 External Review GET_STARTED Freshness repair is `CLOSED_PASS_BOUNDED`.
 
@@ -172,9 +212,11 @@ Diagnostic boundary:
 
 ## Next Allowed Move
 
-Stop for review or open a separate source-verified work order for the next
-external-review gap, such as Core Knowledge Base pointer-ification or a
-dedicated public-sync/public-catalog freshness batch.
+Stop for review or open a separate source-verified Core KB pointer-ification
+work order using
+`docs/audits/CVF_EXTERNAL_REVIEW_GAP1_CORE_KB_OVERLAP_MAP_2026-06-06.md`.
+Side candidate: separate Quick Orientation skill-count freshness repair for
+stale `131 active skills` wording.
 
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`; this MLW8-PEL1 tranche does not alter
