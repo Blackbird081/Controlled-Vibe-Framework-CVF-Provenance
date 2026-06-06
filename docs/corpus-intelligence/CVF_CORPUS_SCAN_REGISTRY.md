@@ -84,6 +84,7 @@ prior scan here before starting new work.
 | `MLW2-RT1 Context Bundle Runtime Proof` | PROJECT_SOURCE | SCANNED_WITH_FINDINGS | MLW2-RT1 | 8 | route-visible metadata-only contextBundleReadout; deterministic + Alibaba live proof; no full RAG/vector/public claim |
 | `MLW3-RT1 Evidence-To-Learning Runtime Proof` | PROJECT_SOURCE | SCANNED_WITH_FINDINGS | MLW3-RT1 | 8 | route-visible metadata-only evidenceToLearningReadout; deterministic + Alibaba live proof; no truth mutation/orchestrator/public claim |
 | `MLW4-MLW6 RT1 Continuity Audit Simulation Runtime Chain` | PROJECT_SOURCE | SCANNED_WITH_FINDINGS | MLW4-MLW6-RT1 | 8 | route-visible metadata-only continuity/audit/simulation readouts; deterministic + Alibaba live proof; no mutation/promotion/orchestrator/public claim |
+| `External Review GAP1 extension README owner surfaces` | CVF_EXTENSION | SCANNED | ER-GAP1 | 2 | Skill Library and MCP README owner surfaces accepted only for Core KB overlap mapping; no runtime/public readiness claim |
 
 ---
 
@@ -122,6 +123,7 @@ Use this index to find prior findings by domain keyword.
 | --- | --- | --- | --- |
 | MLW4-MLW6-RT1-F1-runtime-chain-proof-added | `MLW4-MLW6 RT1` | continuity, audit-feedback, and simulation/failure gates advanced from contract-only to route-visible metadata evidence | ACCEPT |
 | MLW4-MLW6-RT1-F2-mutation-promotion-boundary | `MLW4-MLW6 RT1` | audit and simulation readouts remain proposal/review only; no mutation or auto-promotion authorized | ACCEPT_WITH_BOUNDARY |
+| ER-GAP1-F1-extension-owner-surface | `External Review GAP1 extension README owner surfaces` | extension README files are owner surfaces for Core KB overlap mapping only; no runtime or public readiness claim | ACCEPT_WITH_BOUNDARY |
 
 ---
 
@@ -151,6 +153,7 @@ Searches that confirmed absence — prevents re-doing the same negative search.
 | --- | --- | --- |
 | HIGH | CI1-T4 Cross-Corpus Index Model | CI1 now has two real graph-adjacent packets: Graphify and code-review-graph |
 | HIGH | MLW7/MLW8 or Learning Orchestrator fresh roadmap | MLW4-MLW6 RT1 now provides route-visible gate evidence, but no autonomous promotion/mutation |
+| MEDIUM | Core KB pointer-ification after GAP1 overlap map | Use verified owner surfaces and split high-authority sections before editing the target document |
 | MEDIUM | `CVF Edit/` — full GC-047/050 scan | Only LHW18 doc-only absorption done; no manifest or classification yet |
 | MEDIUM | `CVF_Important/` remaining subfamilies | 230 files inventoried; deep classification pending per-family |
 | LOW | `CVF 16.5/` + `CVF_Restructure/` deep scan | Broad routing done; deep classification when operator prioritizes |
