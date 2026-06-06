@@ -102,11 +102,10 @@ Finding 2: The audit's root-level owner examples `MODULE_INVENTORY.md` and
 paths are `docs/reference/CVF_MODULE_INVENTORY.md` and
 `docs/reference/CVF_ARCHITECTURE_DIAGRAMS.md`.
 
-Finding 3: `docs/guides/CVF_QUICK_ORIENTATION.md` still contains stale "131
-active skills" wording while the current source of truth used by the prior
-GET_STARTED freshness repair is 62 active skills. This audit records it as a
-deferred documentation freshness candidate, not as part of this Core KB overlap
-scope.
+Finding 3: `docs/guides/CVF_QUICK_ORIENTATION.md` contained stale "131 active
+skills" wording while the current source of truth used by the prior GET_STARTED
+freshness repair is 62 active skills. The same-batch side freshness repair
+replaced both Quick Orientation occurrences with `62 active skills`.
 
 Finding 4: Five Core KB sections need explicit owner decisions before rewrite:
 quality metrics, invariants, quality assessment canon, public boundary, and
@@ -130,8 +129,8 @@ the operator accepts this map. That future order should:
 - move details to verified owners through links and short summaries;
 - avoid changing high-authority rule text without explicit authority-chain
   review;
-- include a separate side task or work order for the stale Quick Orientation
-  skill count.
+- treat the Quick Orientation skill-count freshness issue as closed by the
+  same-batch side repair; broader count-drift hardening remains separate.
 
 ## Corpus Completeness And Report Integrity
 
@@ -193,8 +192,9 @@ the operator accepts this map. That future order should:
   No runtime/source or public-sync claim is made.
 - Retrieval boundary: this is not a retrieval index, chatbot answer surface,
   production knowledge graph, or runtime memory integration.
-- Adversarial verification: stale/suspect paths and stale Quick Orientation
-  count were separated from accepted owner mappings.
+- Adversarial verification: stale/suspect paths were separated from accepted
+  owner mappings; the stale Quick Orientation count was repaired in the same
+  batch.
 - Knowledge-map verdict: RECONCILED_WITH_DECLARED_GAPS
 
 ## Finding-To-Governance Learning Disposition
@@ -203,7 +203,7 @@ the operator accepts this map. That future order should:
 | --- | --- | --- | --- | --- |
 | GAP1 needs overlap mapping before rewrite | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | Use source-verified work order before pointer-ification. |
 | Audit prose named false root owner paths | RULE_GAP | DOCUMENTATION_ONLY_LEARNING | RULE_EXISTS | Source Verification Block corrected the paths before dispatch. |
-| Quick Orientation has stale skill count | MACHINE_GATE_GAP | DOCUMENTATION_ONLY_LEARNING | MACHINE_CHECK_CANDIDATE | Open separate freshness repair or broaden existing count-drift guard. |
+| Quick Orientation had stale skill count | MACHINE_GATE_GAP | DOCUMENTATION_ONLY_LEARNING | MACHINE_CHECK_CANDIDATE | Same-batch side repair closed both Quick Orientation occurrences; broader count-drift guard remains a candidate. |
 | High-authority Core KB sections need owner decision | OPERATOR_SCOPE_CLARITY_GAP | GOVERNANCE_CONTROL_PLANE | DESIGN_REVIEW_REQUIRED | Future pointer-ification order must split low-risk and high-authority edits. |
 
 Runtime/provider/cost learning lane: N/A_WITH_REASON - this audit makes no

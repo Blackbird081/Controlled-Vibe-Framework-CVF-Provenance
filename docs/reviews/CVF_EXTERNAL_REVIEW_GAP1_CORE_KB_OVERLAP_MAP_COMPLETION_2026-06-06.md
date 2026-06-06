@@ -68,6 +68,7 @@ order with owner split and authority-chain review.
 | Corrected owner path for module inventory | `docs/reference/CVF_MODULE_INVENTORY.md` | ACCEPTED |
 | Corrected owner path for architecture diagrams | `docs/reference/CVF_ARCHITECTURE_DIAGRAMS.md` | ACCEPTED |
 | Rejected stale root path | `MODULE_INVENTORY.md`; `ARCHITECTURE_DIAGRAMS.md` | REJECTED_WITH_CORRECTION |
+| Quick Orientation skill-count side repair | `docs/guides/CVF_QUICK_ORIENTATION.md` lines 65 and 109 | CLOSED_IN_SAME_BATCH |
 | Core KB rewrite | N/A with reason: forbidden by this work order | NOT_PERFORMED |
 | Runtime/source proof | N/A with reason: documentation-only overlap map | NOT_REQUIRED |
 | Live/provider proof | N/A with reason: no governance behavior claim | NOT_REQUIRED |
@@ -79,7 +80,7 @@ order with owner split and authority-chain review.
 | --- | --- | --- |
 | Core KB has semantic overlap with architecture, governance, module, navigation, and extension docs | CLOSED_BOUNDED | Open pointer-ification work order if accepted. |
 | Root `MODULE_INVENTORY.md` and `ARCHITECTURE_DIAGRAMS.md` are invalid owner paths | CLOSED | Use corrected `docs/reference` paths. |
-| Quick Orientation still has stale "131 active skills" wording | DEFERRED | Open separate freshness repair or extend count-drift check. |
+| Quick Orientation had stale "131 active skills" wording | CLOSED_IN_SAME_BATCH | Replaced both Quick Orientation occurrences with source-backed `62 active skills`; broader count-drift guard remains separate. |
 | High-authority sections need owner review before rewrite | DEFERRED | Split into a high-authority pointer-ification tranche. |
 
 ## Machine Closure Package

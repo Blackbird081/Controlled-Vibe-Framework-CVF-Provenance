@@ -34,15 +34,15 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`external_review_gap1_core_kb_overlap_map_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=stop for review or open a separate source-verified Core KB pointer-ification work order using the GAP1 overlap map; parked checkpoint=none.
+Startup acknowledged: current mode=`external_review_quick_orientation_skill_count_freshness_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=stop for review or open a separate source-verified Core KB pointer-ification work order using the GAP1 overlap map; parked checkpoint=none.
 
 ## Current Mode
 
-`external_review_gap1_core_kb_overlap_map_closed_pass_bounded`
+`external_review_quick_orientation_skill_count_freshness_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `d9ded170`
-(External Review GAP1 Core KB overlap-map material commit; this dedicated
-handoff sync records continuity for the latest closure state).
+Current HEAD recorded for this handoff: `918d2c3d`
+(External Review GAP1 Core KB overlap-map session sync; the current batch
+records the Quick Orientation skill-count side repair on top of that state).
 
 ## Active Boundary
 
@@ -82,6 +82,9 @@ Only V16 should be treated as the active root handoff.
   guard compatibility.
 - Updated next allowed move to review or a separate source-verified Core KB
   pointer-ification work order.
+- Repaired the Quick Orientation side finding in the same batch: stale `131
+  active skills` wording was replaced with source-backed `62 active skills` at
+  lines 65 and 109.
 
 ## Latest Continuity Note
 
@@ -109,8 +112,9 @@ Verification summary:
 - Root `MODULE_INVENTORY.md` and `ARCHITECTURE_DIAGRAMS.md` owner path claims
   were rejected and corrected to `docs/reference/CVF_MODULE_INVENTORY.md` and
   `docs/reference/CVF_ARCHITECTURE_DIAGRAMS.md`.
-- Quick Orientation stale `131 active skills` wording is recorded as a
-  deferred side candidate.
+- Quick Orientation stale `131 active skills` wording was repaired in the
+  same-batch side freshness fix; both Quick Orientation occurrences now use
+  `62 active skills`.
 - Public Export Disposition: `DEFERRED_PRIVATE_ONLY`.
 
 Boundary:
@@ -215,8 +219,8 @@ Diagnostic boundary:
 Stop for review or open a separate source-verified Core KB pointer-ification
 work order using
 `docs/audits/CVF_EXTERNAL_REVIEW_GAP1_CORE_KB_OVERLAP_MAP_2026-06-06.md`.
-Side candidate: separate Quick Orientation skill-count freshness repair for
-stale `131 active skills` wording.
+Quick Orientation skill-count freshness is no longer a parked side candidate;
+broader count-drift guard hardening remains a separate optional lane.
 
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`; this MLW8-PEL1 tranche does not alter

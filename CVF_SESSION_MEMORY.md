@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-06
 
-Current mode marker: `external_review_gap1_core_kb_overlap_map_closed_pass_bounded`
+Current mode marker: `external_review_quick_orientation_skill_count_freshness_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `external_review_gap1_core_kb_overlap_map_closed_pass_bounded`.
+Current mode: `external_review_quick_orientation_skill_count_freshness_closed_pass_bounded`.
 
 Active handoff:
 
@@ -69,13 +69,15 @@ Evidence:
   `docs/reference/CVF_ARCHITECTURE_DIAGRAMS.md`.
 - GC-051 registry now covers the two extension README owner surfaces used by
   the map.
-- Quick Orientation stale `131 active skills` wording is deferred to a separate
-  freshness repair candidate.
+- Quick Orientation stale `131 active skills` wording was repaired in the
+  same-batch side freshness fix: both Quick Orientation occurrences now use
+  `62 active skills`.
 - Public Export Disposition: `DEFERRED_PRIVATE_ONLY`.
 
 Next allowed move: stop for review or open a separate source-verified Core KB
-pointer-ification work order using the GAP1 overlap map. Side candidate:
-separate Quick Orientation skill-count freshness repair.
+pointer-ification work order using the GAP1 overlap map. The Quick Orientation
+skill-count side repair is complete; broader count-drift hardening remains a
+separate optional governance-improvement lane.
 Blocked without separate authorization and passing phase gates: runtime/source
 code changes, dependency changes, public-sync or public push, live/provider
 proof, durable persistence work, governance-rule removal, public/hosted/
