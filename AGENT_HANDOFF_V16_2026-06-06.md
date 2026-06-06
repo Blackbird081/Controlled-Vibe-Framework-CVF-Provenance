@@ -42,9 +42,9 @@ Startup acknowledged: current mode=`external_review_gap4_gap5_runtime_durability
 
 `gap6_provider_risk_cap_env_override_closed_pass_bounded`
 
-Current HEAD recorded for this handoff sync parent: `7c6b4578`
-(GAP 6 provider risk cap ENV override + GAP 7/8 closure batch commit; this
-dedicated session-sync-only commit records continuity for the closure batch).
+Current HEAD recorded for this handoff sync parent: `92d446a8`
+(GAP 6 provider risk cap ENV externalization material commit; all 8 external
+review GAPs are now either CLOSED_PASS_BOUNDED or DEFERRED).
 
 ## Active Boundary
 
@@ -96,6 +96,32 @@ Only V16 should be treated as the active root handoff.
   local SQLite storage adapters behind `CVF_STORAGE_ADAPTER_TYPE=sqlite`.
 
 ## Latest Continuity Note
+
+External Review GAP6 provider risk cap ENV override is
+`CLOSED_PASS_BOUNDED`.
+
+Private artifacts:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_GAP6_PROVIDER_RISK_CAP_ENV_OVERRIDE_2026-06-06.md`
+- Audit record:
+  `docs/audits/CVF_EXTERNAL_REVIEW_GAP_ANALYSIS_AND_PROPOSED_SOLUTIONS_2026-06-05.md`
+  (GAP 6 section updated; all 8 GAPs either CLOSED_PASS_BOUNDED or DEFERRED)
+
+Verification summary:
+
+- Material closure commit: `92d446a8`.
+- Execution base: `7c6b4578`.
+- Implementation: `buildProviderDefinitions()` + `resolveProviderRiskCap()` + `resolveRiskCeiling()`.
+- ENV vars: `CVF_PROVIDER_RISK_CAP_<PROVIDER_UPPERCASE>`, `CVF_PROVIDER_RISK_CEILING`.
+- Tests: 6/6 pass (4 new ENV override tests); full cvf-web suite green; tsc clean.
+- Public Export Disposition: `DEFERRED_PRIVATE_ONLY`.
+
+Boundary: no CVF_CONTROL_PLANE_FOUNDATION change, no provider key management,
+no auth, session, memory, public-sync, hosted readiness, production readiness,
+or public readiness claim was authorized or made.
+
+Previous continuity:
 
 External Review GAP4/GAP5 runtime durability tranche is
 `CLOSED_PASS_BOUNDED`.

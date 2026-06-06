@@ -53,8 +53,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "external_review_gap4_gap5_runtime_durability_closed_pass_bounded",
-  "previousMode": "external_review_gap1_core_kb_pointer_ification_closed_pass_bounded",
+  "currentMode": "gap6_provider_risk_cap_env_override_closed_pass_bounded",
+  "previousMode": "external_review_gap4_gap5_runtime_durability_closed_pass_bounded",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
