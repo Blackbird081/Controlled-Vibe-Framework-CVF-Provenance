@@ -130,6 +130,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
             ["python", "governance/compat/check_erh_public_surface_drift_workflow.py", "--enforce"],
         ),
         (
+            "public doc drift phrase compatibility",
+            ["python", "governance/compat/check_public_doc_drift_phrases.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
             "ERH dependency risk workflow chain",
             ["python", "governance/compat/check_erh_dependency_risk_workflow.py", "--enforce"],
         ),
@@ -254,6 +258,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         (
             "ERH public-surface drift workflow chain",
             ["python", "governance/compat/check_erh_public_surface_drift_workflow.py", "--enforce"],
+        ),
+        (
+            "public doc drift phrase compatibility",
+            ["python", "governance/compat/check_public_doc_drift_phrases.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
             "cpf public surface maintainability",

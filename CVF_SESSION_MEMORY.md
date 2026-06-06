@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-06
 
-Current mode marker: `p1_p5_small_debt_remediation_ready_for_external_review`
+Current mode marker: `public_doc_drift_external_review_guide_hardening_ready_for_review`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `p1_p5_small_debt_remediation_ready_for_external_review`.
+Current mode: `public_doc_drift_external_review_guide_hardening_ready_for_review`.
 
 Active handoff:
 
@@ -49,6 +49,31 @@ Active review queue:
 `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
 
 Latest continuity note:
+
+Public-doc drift and external-agent review-guide hardening is ready for
+external review:
+
+Delivered:
+
+- New `governance/compat/check_public_doc_drift_phrases.py` checker with
+  focused tests and local hook-chain wiring.
+- Same-class stale public-doc repair in `docs/reference/CVF_POSITIONING.md`.
+- Public-sync `docs/guides/external-agent-review-guide.md`, linked from
+  public README, GET_STARTED, and the public evaluation claim boundary.
+
+Verification:
+
+- `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 5fdb794f --head HEAD`: PASS.
+- `python governance/compat/check_public_doc_drift_phrases.py --enforce`: PASS in private and public-sync.
+- `python -m pytest governance/compat/test_check_public_doc_drift_phrases.py -q`: PASS in private and public-sync.
+- Public-sync `python governance/compat/run_local_governance_hook_chain.py --hook pre-commit`: PASS.
+
+Boundary: public-doc and guard hardening only; no runtime/source behavior,
+dependency migration, live/provider proof, hosted readiness, production
+readiness, provider parity, memory reinjection, high-risk promotion
+implementation, Learning Orchestrator runtime behavior, or autonomous mutation.
+
+Prior continuity note:
 
 P1-P5 small debt remediation is ready for external review:
 

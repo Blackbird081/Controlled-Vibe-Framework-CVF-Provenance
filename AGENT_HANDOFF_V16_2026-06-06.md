@@ -36,11 +36,11 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`p1_p5_small_debt_remediation_ready_for_external_review`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=commit/push P1-P5 remediation branches, then stop for external review; parked checkpoint=none.
+Startup acknowledged: current mode=`public_doc_drift_external_review_guide_hardening_ready_for_review`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=commit/push public-doc drift guard and external-agent guide hardening to existing P1-P5 branches, then stop for external review; parked checkpoint=none.
 
 ## Current Mode
 
-`p1_p5_small_debt_remediation_ready_for_external_review`
+`public_doc_drift_external_review_guide_hardening_ready_for_review`
 
 Current HEAD recorded for this handoff sync parent: `eb058300`
 (P1-P5 small-debt remediation material commit; this sync commit updates
@@ -73,6 +73,11 @@ Only V16 should be treated as the active root handoff.
 - Repaired public-facing small docs debt in private/public-sync scope:
   `SECURITY.md`, stale skill counts, stale GET_STARTED version, and root
   handoff-link wording.
+- Added public-doc drift phrase checker and local hook wiring to catch repeat
+  stale version, stale skill-count, placeholder security-contact, and public
+  handoff-label defects.
+- Added public-sync external-agent review guide and linked it from public
+  README/GET_STARTED/claim-boundary surfaces.
 - Verification before commit: pre-implementation autorun PASS; live
   `python scripts/run_cvf_release_gate_bundle.py --e2e-live --json` PASS.
 - Opened V16 compact handoff.
@@ -307,7 +312,8 @@ Diagnostic boundary:
 
 ## Next Allowed Move
 
-Commit/push the P1-P5 remediation branches, then stop for external review.
+Commit/push the public-doc drift guard and external-agent guide hardening to
+the existing P1-P5 remediation branches, then stop for external review.
 
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`; this MLW8-PEL1 tranche does not alter
@@ -344,9 +350,10 @@ Blocked without separate authorization and passing phase gates:
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: update active session continuity after
-External Review GAP4/GAP5 runtime durability closure and keep prior GAP1
-continuity reachable from the active front door.
+Authorized guard-maintenance scope: add public-doc drift phrase hardening after
+external-review stale public-doc findings, wire the new checker into the local
+hook chain, and update active session continuity for the existing P1-P5
+remediation branches.
 
 Protected paths:
 
@@ -354,13 +361,18 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V16_2026-06-06.md`
+- `governance/compat/check_public_doc_drift_phrases.py`
+- `governance/compat/test_check_public_doc_drift_phrases.py`
+- `governance/compat/run_local_governance_hook_chain.py`
 
-Operator authorization: 2026-06-06 operator authorized Codex to continue
-execution without further questions; session continuity and marker sync are
-required guard remediation inside the GAP4/GAP5 closure scope.
+Operator authorization: 2026-06-06 operator approved hardening for repeated
+external-agent findings and approved continuing with the old rule set without
+additional questions; this guard update is the bounded machine-control
+promotion for the same defect class.
 
-Rollback boundary: if this sync is wrong, restore only active-session pointers,
-and V16 continuity text. Do not revert unrelated operator or workspace changes.
+Rollback boundary: if this hardening is wrong, revert only the public-doc drift
+checker, its tests, local hook-chain wiring, and matching active-session
+continuity text. Do not revert unrelated operator or workspace changes.
 
 ## Claim Boundary
 
