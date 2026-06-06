@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-06
 
-Current mode marker: `ea_review_finding_triage_recorded_pending_remediation`
+Current mode marker: `live_evidence_manifest_integrated_pending_closure`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `ea_review_finding_triage_recorded_pending_remediation`.
+Current mode: `live_evidence_manifest_integrated_pending_closure`.
 
 Active handoff:
 
@@ -49,6 +49,36 @@ Active review queue:
 `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
 
 Latest continuity note:
+
+Live evidence manifest release-gate wiring is in progress pending closure:
+
+Audit:
+
+`docs/audits/CVF_LIVE_EVIDENCE_MANIFEST_WIRING_LEGACY_SCAN_2026-06-06.md`
+
+Delivered in working tree:
+
+- `scripts/run_cvf_release_gate_bundle.py` now supports `--output` and
+  `--manifest-output` so a release-gate run can produce result JSON plus a
+  secret-safe manifest in one canonical command.
+- `.github/workflows/cvf-scheduled-live-governance-smoke.yml` uses the
+  integrated release-gate manifest command.
+- `docs/reference/CVF_LIVE_EVIDENCE_MANIFEST_AND_RERUN_STANDARD_2026-06-06.md`
+  documents the integrated release-gate command.
+- Targeted legacy scan accepted receipt/replay evidence principles and deferred
+  runtime telemetry schema expansion to a separate GC-018/work order.
+
+Boundary: evidence packaging only; no governance behavior change, new runtime
+receipt fields, provider routing change, public-sync push, hosted readiness,
+production readiness, public readiness, cost/performance/provider-quality
+claim, memory reinjection, high-risk promotion implementation, Learning
+Orchestrator runtime behavior, or autonomous mutation.
+
+Next allowed move: complete verification and closure for this bounded wiring
+batch; after closure, open a separate GC-018/work order for runtime telemetry
+receipt expansion or the parked DEP2/ERH-RL1/QBS backlog.
+
+Prior continuity note:
 
 EA external review finding triage is recorded:
 

@@ -11,6 +11,7 @@ Usage:
   python scripts/run_cvf_release_gate_bundle.py --mock
   python scripts/run_cvf_release_gate_bundle.py --dry-run
   python scripts/run_cvf_release_gate_bundle.py --json
+  python scripts/run_cvf_release_gate_bundle.py --json --output cvf-release-gate-result.json --manifest-output cvf-release-gate-manifest.json
   python scripts/run_cvf_release_gate_bundle.py --e2e
   python scripts/run_cvf_release_gate_bundle.py --e2e-live
 
@@ -18,6 +19,8 @@ Flags:
   --mock      Use saved receipts for provider readiness; live governance E2E remains mandatory in the default gate
   --dry-run   Print what would run without executing anything
   --json      Machine-readable output
+  --output    Write the machine-readable gate result to a JSON file
+  --manifest-output  Write a live evidence manifest for the output JSON file
   --e2e       Targeted run: UI-only mock Playwright specs
   --e2e-live  Targeted run: live governance Playwright specs; requires a DashScope-compatible live key
 
@@ -34,7 +37,9 @@ import subprocess
 import sys
 from dataclasses import dataclass, field
 from pathlib import Path
+from types import SimpleNamespace
 
+from build_cvf_live_evidence_manifest import build_manifest as build_live_evidence_manifest
 from _local_env import bootstrap_repo_env
 
 REPO_ROOT = Path(__file__).parent.parent
@@ -315,9 +320,9 @@ def print_results(results: list[CheckResult], date: str) -> int:
     return 1 if fails else 0
 
 
-def json_output(results: list[CheckResult], date: str) -> int:
+def result_payload(results: list[CheckResult], date: str) -> dict:
     fails = sum(1 for r in results if r.status == "FAIL")
-    out = {
+    return {
         "date": date,
         "gate_result": "FAIL" if fails else "PASS",
         "checks": [
@@ -325,7 +330,49 @@ def json_output(results: list[CheckResult], date: str) -> int:
             for r in results
         ],
     }
-    print(json.dumps(out, indent=2))
+
+
+def write_json_payload(payload: dict, output_path: Path) -> None:
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+
+
+def build_secret_safe_rerun_command(args: argparse.Namespace) -> str:
+    parts = ["python", "scripts/run_cvf_release_gate_bundle.py"]
+    if args.mock:
+        parts.append("--mock")
+    if args.dry_run:
+        parts.append("--dry-run")
+    if args.e2e:
+        parts.append("--e2e")
+    if args.e2e_live:
+        parts.append("--e2e-live")
+    parts.append("--json")
+    return " ".join(parts)
+
+
+def write_live_evidence_manifest(
+    evidence_path: Path,
+    manifest_path: Path,
+    rerun_command: str,
+    anchor_id: str,
+    anchor_url: str,
+) -> None:
+    manifest = build_live_evidence_manifest(
+        SimpleNamespace(
+            evidence=[str(evidence_path)],
+            command=rerun_command,
+            anchor_id=anchor_id,
+            anchor_url=anchor_url,
+        )
+    )
+    manifest_path.parent.mkdir(parents=True, exist_ok=True)
+    manifest_path.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+
+def json_output(payload: dict) -> int:
+    fails = 1 if payload["gate_result"] == "FAIL" else 0
+    print(json.dumps(payload, indent=2))
     return 1 if fails else 0
 
 
@@ -342,6 +389,14 @@ def main() -> None:
     )
     parser.add_argument("--dry-run", action="store_true", dest="dry_run", help="Print what would run without executing")
     parser.add_argument("--json", action="store_true", dest="json_out", help="Machine-readable JSON output")
+    parser.add_argument("--output", type=Path, help="Write the machine-readable gate result to a JSON file")
+    parser.add_argument(
+        "--manifest-output",
+        type=Path,
+        help="Write a live evidence manifest for the JSON output file",
+    )
+    parser.add_argument("--manifest-anchor-id", default="", help="Optional external immutable anchor identifier")
+    parser.add_argument("--manifest-anchor-url", default="", help="Optional external immutable anchor URL")
     parser.add_argument("--e2e", action="store_true", dest="e2e", help="Targeted run: UI-only mock Playwright specs")
     parser.add_argument(
         "--e2e-live",
@@ -350,6 +405,8 @@ def main() -> None:
         help="Targeted run: live governance Playwright specs (requires a DashScope-compatible live key)",
     )
     args = parser.parse_args()
+    if args.manifest_output and not args.output:
+        parser.error("--manifest-output requires --output so the manifest has a concrete evidence artifact")
 
     from datetime import date
     today = date.today().isoformat()
@@ -374,8 +431,20 @@ def main() -> None:
         results.append(check_e2e(args.dry_run, live=False))
         results.append(check_e2e(args.dry_run, live=True))
 
+    payload = result_payload(results, today)
+    if args.output:
+        write_json_payload(payload, args.output)
+    if args.manifest_output:
+        write_live_evidence_manifest(
+            args.output,
+            args.manifest_output,
+            build_secret_safe_rerun_command(args),
+            args.manifest_anchor_id,
+            args.manifest_anchor_url,
+        )
+
     if args.json_out:
-        sys.exit(json_output(results, today))
+        sys.exit(json_output(payload))
     else:
         sys.exit(print_results(results, today))
 

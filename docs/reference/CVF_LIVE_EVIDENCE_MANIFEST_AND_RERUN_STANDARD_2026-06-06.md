@@ -25,6 +25,12 @@ Use:
 python scripts/build_cvf_live_evidence_manifest.py --evidence <artifact.json> --command "<secret-safe rerun command>" --output <manifest.json>
 ```
 
+For release-gate evidence, prefer the canonical integrated command:
+
+```powershell
+python scripts/run_cvf_release_gate_bundle.py --json --output <artifact.json> --manifest-output <manifest.json>
+```
+
 The manifest must record:
 
 - `schema`;
@@ -62,14 +68,14 @@ The scheduled smoke workflow is:
 It runs:
 
 ```powershell
-python scripts/run_cvf_release_gate_bundle.py --e2e-live --json
+python scripts/run_cvf_release_gate_bundle.py --e2e-live --json --output cvf-scheduled-live-governance-smoke-result.json --manifest-output cvf-scheduled-live-governance-smoke-manifest.json
 ```
 
 This is a minimal live-governance behavioral check. It does not replace the
 protected release-quality command:
 
 ```powershell
-python scripts/run_cvf_release_gate_bundle.py --json
+python scripts/run_cvf_release_gate_bundle.py --json --output cvf-release-gate-result.json --manifest-output cvf-release-gate-manifest.json
 ```
 
 ## Failure Handling

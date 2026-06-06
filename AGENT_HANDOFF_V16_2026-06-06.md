@@ -36,15 +36,15 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`ea_review_finding_triage_recorded_pending_remediation`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=open or execute EA-P0 Public Surface Hygiene work order for public `Memory class` metadata and root public-doc completeness guard; parked checkpoint=none.
+Startup acknowledged: current mode=`live_evidence_manifest_integrated_pending_closure`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=complete verification and closure for integrated release-gate live evidence manifest wiring; parked checkpoint=none.
 
 ## Current Mode
 
-`ea_review_finding_triage_recorded_pending_remediation`
+`live_evidence_manifest_integrated_pending_closure`
 
-Current HEAD recorded for this handoff: `556ff46c`
-(EA review finding triage register material commit; next sync commit updates
-continuity only).
+Current HEAD recorded for this handoff: `3c44f5a5`
+(pre-closure base for live evidence manifest release-gate wiring; material
+commit will be recorded by the follow-up session-sync commit).
 
 ## Active Boundary
 
@@ -64,6 +64,16 @@ Only V16 should be treated as the active root handoff.
 
 ## Latest Work / Changes
 
+- Wired `scripts/run_cvf_release_gate_bundle.py` with `--output` plus
+  `--manifest-output` so release-gate JSON and a secret-safe manifest can be
+  produced by one canonical command.
+- Updated `.github/workflows/cvf-scheduled-live-governance-smoke.yml` to use
+  the integrated release-gate manifest command.
+- Updated
+  `docs/reference/CVF_LIVE_EVIDENCE_MANIFEST_AND_RERUN_STANDARD_2026-06-06.md`
+  to document the canonical integrated command.
+- Added targeted legacy scan audit:
+  `docs/audits/CVF_LIVE_EVIDENCE_MANIFEST_WIRING_LEGACY_SCAN_2026-06-06.md`.
 - Prepared P1-P5 small debt remediation audit:
   `docs/audits/CVF_P1_P5_SMALL_DEBT_REMEDIATION_AUDIT_2026-06-06.md`.
 - Added scheduled live-governance smoke workflow and secret-safe live evidence
@@ -117,6 +127,37 @@ Only V16 should be treated as the active root handoff.
   local SQLite storage adapters behind `CVF_STORAGE_ADAPTER_TYPE=sqlite`.
 
 ## Latest Continuity Note
+
+Live evidence manifest release-gate wiring is in progress pending closure.
+
+Private artifacts:
+
+- Audit:
+  `docs/audits/CVF_LIVE_EVIDENCE_MANIFEST_WIRING_LEGACY_SCAN_2026-06-06.md`
+- Standard:
+  `docs/reference/CVF_LIVE_EVIDENCE_MANIFEST_AND_RERUN_STANDARD_2026-06-06.md`
+
+Working-tree changes:
+
+- `scripts/run_cvf_release_gate_bundle.py` accepts `--output` and
+  `--manifest-output`, requires `--output` when a manifest is requested, writes
+  result JSON before manifest generation, and keeps `--json` stdout parseable.
+- Scheduled live governance smoke now calls the integrated release-gate command
+  directly.
+- Targeted legacy scan accepted receipt/replay evidence principles and deferred
+  runtime telemetry receipt expansion.
+
+Boundary: evidence packaging only; no governance behavior change, new runtime
+receipt fields, provider routing change, public-sync push, hosted readiness,
+production readiness, public readiness, cost/performance/provider-quality
+claim, memory reinjection, high-risk promotion implementation, Learning
+Orchestrator runtime behavior, or autonomous mutation.
+
+Next allowed move: complete verification and closure for this bounded wiring
+batch; after closure, open a separate GC-018/work order for runtime telemetry
+receipt expansion or the parked DEP2/ERH-RL1/QBS backlog.
+
+Previous continuity:
 
 External Review GAP 2B Web UI jargon reduction is `CLOSED_PASS_BOUNDED`.
 
