@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-06
 
-Current mode marker: `erh_rl1a_rate_limit_store_boundary_closed_pass_bounded`
+Current mode marker: `erh_rl1b_distributed_rate_limit_backend_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `erh_rl1a_rate_limit_store_boundary_closed_pass_bounded`.
+Current mode: `erh_rl1b_distributed_rate_limit_backend_closed_pass_bounded`.
 
 Active handoff:
 
@@ -50,47 +50,57 @@ Active review queue:
 
 Latest continuity note:
 
-ERH-RL1A rate limit store boundary is `CLOSED_PASS_BOUNDED`:
+ERH-RL1B distributed rate-limit backend adapter is `CLOSED_PASS_BOUNDED`:
 
 Work order:
 
-`docs/work_orders/CVF_WO_ERH_RL1A_RATE_LIMIT_STORE_BOUNDARY_2026-06-06.md`
+`docs/work_orders/CVF_WO_ERH_RL1B_DISTRIBUTED_RATE_LIMIT_BACKEND_2026-06-06.md`
 
 Completion:
 
-`docs/reviews/CVF_ERH_RL1A_RATE_LIMIT_STORE_BOUNDARY_COMPLETION_2026-06-06.md`
+`docs/reviews/CVF_ERH_RL1B_DISTRIBUTED_RATE_LIMIT_BACKEND_COMPLETION_2026-06-06.md`
 
-Material commit: `3978554c`
+Material commit: `d243b349`
 
 Delivered:
 
-- `src/lib/rate-limit.ts` now owns an explicit `RateLimitStore` contract and
-  `MemoryRateLimitStore`.
-- `getRateLimitBackendStatus()` reports process-local memory with
-  `distributed=false` by default.
-- `CVF_RATE_LIMIT_STORE=redis` fails closed with
-  `BLOCKED_REDIS_ADAPTER_NOT_INSTALLED` until a real adapter exists.
-- Unsupported backend names fail closed with `BLOCKED_UNSUPPORTED_STORE`.
+- `@upstash/redis` is installed for the cvf-web route limiter.
+- `src/lib/rate-limit.ts` now has async `RateLimitStore` consumption,
+  `RateLimitRedisClient`, and `UpstashRedisRateLimitStore`.
+- `CVF_RATE_LIMIT_STORE=redis` activates only with complete valid
+  `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN`.
+- Missing, incomplete, or malformed Redis env fails closed.
+- `/api/execute` awaits `limiter.consume` while preserving the 429 response
+  contract.
 
-Boundary: no distributed rate limiting, Redis dependency, remote rate-limit
-service, multi-instance proof, public-sync, hosted readiness, production
-readiness, public readiness, provider-quality claim, cost/performance claim,
-Learning Orchestrator runtime behavior, or autonomous mutation.
+Boundary: adapter-contract and fake-client Redis command-semantics proof only;
+no hosted Redis service proof, multi-instance enforcement claim, public-sync,
+hosted readiness, production readiness, public readiness, provider-quality
+claim, cost/performance claim, Learning Orchestrator runtime behavior, or
+autonomous mutation.
 
 Verification:
 
 - Pre-dispatch and pre-implementation autorun gates: PASS.
-- Focused rate-limit tests: PASS, 13 tests.
+- Focused rate-limit tests: PASS, 17 tests.
 - `npm run check`: PASS.
 - Material-range pre-closure gates passed except session-sync state before this
   continuity update.
 
-Next allowed move: open a separate source-verified ERH-RL1B/GC-018 for real
-distributed rate-limit backend package, topology, and deployment proof, or
-continue parked DEP2 next-auth stable migration, QBS method reliability, or
-real external receipt-anchor provider/service selection.
+Next allowed move: separate live Redis service proof if CVF needs hosted
+multi-instance enforcement evidence, or continue parked DEP2 next-auth stable
+migration, QBS method reliability, or real external receipt-anchor
+provider/service selection.
 
 Prior continuity note:
+
+ERH-RL1A rate limit store boundary is `CLOSED_PASS_BOUNDED`.
+
+Material commit: `3978554c`.
+
+Next allowed move: superseded by ERH-RL1B continuity above.
+
+Earlier continuity note:
 
 RTA1 receipt trace anchor is `CLOSED_PASS_BOUNDED`:
 
@@ -717,17 +727,17 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-ERH-RL1A rate limit store boundary material commit is `3978554c`.
+ERH-RL1B distributed rate-limit backend material commit is `d243b349`.
 
-Next allowed move: open a separate source-verified ERH-RL1B/GC-018 for real
-distributed rate-limit backend package, topology, and deployment proof, or
-continue parked DEP2 next-auth stable migration, QBS method reliability, or
-real external receipt-anchor provider/service selection.
+Next allowed move: separate live Redis service proof if CVF needs hosted
+multi-instance enforcement evidence, or continue parked DEP2 next-auth stable
+migration, QBS method reliability, or real external receipt-anchor
+provider/service selection.
 
 LHW24 remains the latest closed numbered LHW wave in the state registry.
 
 Blocked without separate authorization and passing phase gates: stable Auth.js
-migration, Redis implementation, PostgreSQL/SSO implementation, real external
+migration, hosted Redis provisioning, PostgreSQL/SSO implementation, real external
 anchor provider integration, third-party immutability claim, benchmark live
 rerun or quality parity claim, governance-rule removal,
 public/hosted/production readiness claims, cost/performance/provider-quality

@@ -4,7 +4,7 @@ Memory class: COMPLETION_REVIEW
 
 docType: completion_review
 
-Status: PRE_CLOSURE_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-06
 
@@ -56,7 +56,7 @@ any hosted-readiness, public, or production distributed-rate-limit claim.
 
 ## Final Disposition
 
-`PRE_CLOSURE_READY`
+`CLOSED_PASS_BOUNDED`
 
 ERH-RL1B added an env-gated Upstash Redis REST adapter path and focused tests
 for Redis command semantics. It does not claim hosted Redis service proof,
@@ -107,7 +107,7 @@ A docs/reviews/CVF_ERH_RL1B_DISTRIBUTED_RATE_LIMIT_BACKEND_COMPLETION_2026-06-06
 | `npm install @upstash/redis@1.38.0` | PASS; added 2 packages; audit still reports 3 pre-existing moderate vulnerabilities |
 | `npm run test:run -- src/lib/rate-limit.test.ts` | PASS; 1 file, 17 tests |
 | `npm run check` | PASS |
-| `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base d30accb6 --head HEAD` | Required after material commit |
+| `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base d30accb6 --head HEAD` | PASS through all material gates; session-sync state was the only failing gate before this continuity update |
 
 ## Implementation Evidence Refresh
 
@@ -144,3 +144,16 @@ claim hosted multi-instance enforcement.
 | Live Redis proof | N/A with reason: ERH-RL1B is adapter-contract proof only |
 | Public sync | N/A with reason: no public distributed claim in this tranche |
 | Session continuity | N/A with reason: session sync follows closed material commit |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_WO_ERH_RL1B_DISTRIBUTED_RATE_LIMIT_BACKEND_2026-06-06.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ERH_RL1B_DISTRIBUTED_RATE_LIMIT_BACKEND_COMPLETION_2026-06-06.md` | `Status: CLOSED_PASS_BOUNDED` and Public Export Disposition present | PASS |
+| Roadmap state | N/A with reason | ERH-RL1B is GC-018 continuity-derived; no roadmap artifact owns this tranche | N/A with reason |
+| Registry JSON | BLOCKED with reason | corpus/search registry ownership is outside this runtime limiter tranche | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason | corpus/search registry Markdown ownership is outside this runtime limiter tranche | BLOCKED with reason |
+| External evidence digest | N/A with reason | no hosted Redis service evidence required for adapter-contract tranche | N/A with reason |
+| System loop interlock | N/A with reason | no new route or system-loop chain is added | N/A with reason |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION_MEMORY.md`, `AGENT_HANDOFF_V16_2026-06-06.md` | active state references material commit `d243b349` | PASS |

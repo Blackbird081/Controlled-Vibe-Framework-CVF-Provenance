@@ -4,7 +4,7 @@ Memory class: WORK_ORDER
 
 docType: work_order
 
-Status: PRE_CLOSURE_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-06
 
@@ -285,7 +285,7 @@ multi-instance enforcement claim.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | `docs/work_orders/CVF_WO_ERH_RL1B_DISTRIBUTED_RATE_LIMIT_BACKEND_2026-06-06.md` | `Status: PRE_CLOSURE_READY` before committed pre-closure gate | PASS |
+| Work order status | `docs/work_orders/CVF_WO_ERH_RL1B_DISTRIBUTED_RATE_LIMIT_BACKEND_2026-06-06.md` | `Status: CLOSED_PASS_BOUNDED` after committed pre-closure gate and session-sync patch | PASS |
 | Completion or reviewer artifact | `docs/reviews/CVF_ERH_RL1B_DISTRIBUTED_RATE_LIMIT_BACKEND_COMPLETION_2026-06-06.md` | completion review path reserved for closure | PASS |
 | Roadmap state | N/A with reason | ERH-RL1B is GC-018 continuity-derived; no roadmap artifact owns this tranche | N/A with reason |
 | Registry JSON | BLOCKED with reason | corpus/search registry ownership is outside this runtime limiter tranche | BLOCKED with reason |

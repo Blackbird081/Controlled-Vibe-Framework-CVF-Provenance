@@ -36,14 +36,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`erh_rl1a_rate_limit_store_boundary_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=open a separate source-verified ERH-RL1B/GC-018 for real distributed rate-limit backend package, topology, and deployment proof, or continue parked DEP2 next-auth stable migration, QBS method reliability, or real external receipt-anchor provider/service work; parked checkpoint=none.
+Startup acknowledged: current mode=`erh_rl1b_distributed_rate_limit_backend_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=separate live Redis service proof if CVF needs hosted multi-instance enforcement evidence, or continue parked DEP2 next-auth stable migration, QBS method reliability, or real external receipt-anchor provider/service work; parked checkpoint=none.
 
 ## Current Mode
 
-`erh_rl1a_rate_limit_store_boundary_closed_pass_bounded`
+`erh_rl1b_distributed_rate_limit_backend_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `3978554c`
-(material commit for ERH-RL1A rate limit store boundary; the next
+Current HEAD recorded for this handoff: `d243b349`
+(material commit for ERH-RL1B distributed rate-limit backend; the next
 session-sync commit records the parent material SHA per GC-020).
 
 ## Active Boundary
@@ -141,50 +141,66 @@ Only V16 should be treated as the active root handoff.
   fail-closed handling for unsupported `CVF_RATE_LIMIT_STORE` values. Focused
   rate-limit tests and TypeScript check passed. Boundary: no distributed rate
   limiting, Redis dependency, remote backend, or multi-instance proof.
+- Closed ERH-RL1B distributed rate-limit backend at material commit `d243b349`:
+  cvf-web now has `@upstash/redis`, async limiter consumption,
+  `RateLimitRedisClient`, `UpstashRedisRateLimitStore`, complete valid Upstash
+  REST env gating, fail-closed missing/incomplete/malformed Redis env, and
+  `/api/execute` await wiring. Focused rate-limit tests and TypeScript check
+  passed. Boundary: adapter-contract and fake-client Redis command-semantics
+  proof only; no hosted Redis service proof, multi-instance enforcement claim,
+  or production/public readiness.
 
 ## Latest Continuity Note
 
-ERH-RL1A rate limit store boundary is `CLOSED_PASS_BOUNDED`.
+ERH-RL1B distributed rate-limit backend adapter is `CLOSED_PASS_BOUNDED`.
 
 Private artifacts:
 
 - Work order:
-  `docs/work_orders/CVF_WO_ERH_RL1A_RATE_LIMIT_STORE_BOUNDARY_2026-06-06.md`
+  `docs/work_orders/CVF_WO_ERH_RL1B_DISTRIBUTED_RATE_LIMIT_BACKEND_2026-06-06.md`
 - Completion:
-  `docs/reviews/CVF_ERH_RL1A_RATE_LIMIT_STORE_BOUNDARY_COMPLETION_2026-06-06.md`
+  `docs/reviews/CVF_ERH_RL1B_DISTRIBUTED_RATE_LIMIT_BACKEND_COMPLETION_2026-06-06.md`
 
 Working-tree changes:
 
-- `src/lib/rate-limit.ts` now exposes `RateLimitStore`,
-  `MemoryRateLimitStore`, `RateLimitBackendStatus`, and
-  `getRateLimitBackendStatus`.
-- Default backend status is process-local memory with `distributed=false`.
-- `CVF_RATE_LIMIT_STORE=redis` fails closed with
-  `BLOCKED_REDIS_ADAPTER_NOT_INSTALLED` until a real adapter exists.
-- Unsupported backend names fail closed with `BLOCKED_UNSUPPORTED_STORE`.
-- Focused tests reset the singleton stores between cases.
+- cvf-web package manifest and lockfile now include `@upstash/redis`.
+- `src/lib/rate-limit.ts` exposes async `RateLimitStore`,
+  `RateLimitRedisClient`, and `UpstashRedisRateLimitStore`.
+- `CVF_RATE_LIMIT_STORE=redis` activates only with complete valid
+  `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN`.
+- Missing, incomplete, or malformed Redis env fails closed.
+- `/api/execute` awaits `limiter.consume` and preserves the 429 response
+  contract.
 
 Verification summary:
 
-- Material commit: `3978554c`.
+- Material commit: `d243b349`.
 - Pre-dispatch and pre-implementation autorun gates: PASS.
-- Focused rate-limit tests: PASS, 13 tests.
+- Focused rate-limit tests: PASS, 17 tests.
 - `npm run check`: PASS.
 - Material-range pre-closure gates passed except session-sync state before this
   continuity update.
 
-Boundary: no distributed rate limiting, Redis package/dependency, remote
-rate-limit service, multi-instance proof, public-sync, hosted readiness,
-production readiness, public readiness, provider-quality claim,
-cost/performance claim, Learning Orchestrator runtime behavior, or autonomous
-mutation.
+Boundary: adapter-contract and fake-client Redis command-semantics proof only;
+no hosted Redis service proof, multi-instance enforcement claim, public-sync,
+hosted readiness, production readiness, public readiness, provider-quality
+claim, cost/performance claim, Learning Orchestrator runtime behavior, or
+autonomous mutation.
 
-Next allowed move: open a separate source-verified ERH-RL1B/GC-018 for real
-distributed rate-limit backend package, topology, and deployment proof, or
-continue parked DEP2 next-auth stable migration, QBS method reliability, or
-real external receipt-anchor provider/service selection.
+Next allowed move: separate live Redis service proof if CVF needs hosted
+multi-instance enforcement evidence, or continue parked DEP2 next-auth stable
+migration, QBS method reliability, or real external receipt-anchor
+provider/service selection.
 
 Previous continuity:
+
+ERH-RL1A rate limit store boundary is `CLOSED_PASS_BOUNDED`.
+
+Material commit: `3978554c`.
+
+Next allowed move: superseded by ERH-RL1B continuity above.
+
+Earlier continuity:
 
 RTA1 receipt trace anchor is `CLOSED_PASS_BOUNDED`.
 

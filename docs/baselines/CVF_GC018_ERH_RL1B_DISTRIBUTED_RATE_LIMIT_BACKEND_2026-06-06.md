@@ -4,7 +4,7 @@ Memory class: BASELINE
 
 docType: gc018_baseline
 
-Status: PRE_CLOSURE_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-06
 
