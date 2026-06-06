@@ -40,9 +40,9 @@ Startup acknowledged: current mode=`external_review_gap1_core_kb_pointer_ificati
 
 `external_review_gap1_core_kb_pointer_ification_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `bdc8fecc`
+Current HEAD recorded for this handoff: `a52d128e`
 (External Review GAP1 Core KB pointer-ification pre-push marker remediation
-parent; this dedicated handoff sync records continuity after remediation).
+parent; a dedicated handoff sync records continuity after this remediation).
 
 ## Active Boundary
 
@@ -86,7 +86,7 @@ Only V16 should be treated as the active root handoff.
   active skills` wording was replaced with source-backed `62 active skills` at
   lines 65 and 109.
 - Closed External Review GAP1 Core KB pointer-ification at material commit
-  `fb9e81c5`; Core KB is now a 398-line pointer document with protected
+  `fb9e81c5`; Core KB is now a 399-line pointer document with protected
   sections XI/XII preserved and Rule 4 routed to Module Inventory ownership.
 
 ## Latest Continuity Note
@@ -107,7 +107,7 @@ Verification summary:
   structural repair.
 - Pre-implementation autorun gate: PASS on `d6bc3553..HEAD`.
 - Commit hook local governance chain: PASS.
-- Core KB reduced from 769 lines to 398 lines.
+- Core KB reduced from 769 lines to 399 lines.
 - Stale `131 active skills` references were removed from Core KB.
 - Section XI and Section XII were verified unchanged from base.
 - Rule 4 now points version/folder/status updates to Section II plus

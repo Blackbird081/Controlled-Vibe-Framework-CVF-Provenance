@@ -85,7 +85,7 @@ the previous self-contained Core KB body.
 
 | Source requirement | Work-order requirement | Completion evidence | Disposition |
 |---|---|---|---|
-| GAP1 Core KB maintainability | Pointer-ify duplicated sections III-X, XIII, XV-XIX | Core KB reduced to 398 lines | CLOSED_PASS_BOUNDED |
+| GAP1 Core KB maintainability | Pointer-ify duplicated sections III-X, XIII, XV-XIX | Core KB reduced to 399 lines | CLOSED_PASS_BOUNDED |
 | Skill count freshness | Replace stale `131 active skills` | `rg -n "131 active skills"` returned no matches | CLOSED_PASS_BOUNDED |
 | Protected architecture guard | Preserve sections XI and XII verbatim | Section compare: XI match=True, XII match=True | CLOSED_PASS_BOUNDED |
 | Extension rule update | Rule 4 references module inventory instead of duplicated Section III table | Rule 4 now names Section II and `docs/reference/CVF_MODULE_INVENTORY.md` | CLOSED_PASS_BOUNDED |
@@ -96,7 +96,7 @@ the previous self-contained Core KB body.
 | Gate | Evidence | Result |
 |---|---|---|
 | Allowed file scope | `git status --short` limited to Core KB, GAP1 work order, and this review before closure commits | PASS |
-| Line-count target | `(Get-Content docs/CVF_CORE_KNOWLEDGE_BASE.md | Measure-Object -Line).Lines` -> `398` | PASS |
+| Line-count target | `(Get-Content docs/CVF_CORE_KNOWLEDGE_BASE.md | Measure-Object -Line).Lines` -> `399` | PASS |
 | Stale count removal | `rg -n "131 active skills" docs/CVF_CORE_KNOWLEDGE_BASE.md` -> no output | PASS |
 | Structural completeness | `python governance/compat/check_markdown_structural_completeness.py --base d6bc3553 --head HEAD --enforce` | PASS |
 | Governed file size | `python governance/compat/check_governed_file_size.py --enforce` | PASS |
