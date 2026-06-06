@@ -87,6 +87,12 @@ describe('/api/execute governanceTrace receipt enrichment', () => {
             output: validOutput,
             provider: 'openai',
             model: 'gpt-4o-mini',
+            executionTime: 123,
+            usage: {
+                inputTokens: 10,
+                outputTokens: 20,
+                totalTokens: 30,
+            },
         });
     });
 
@@ -148,5 +154,21 @@ describe('/api/execute governanceTrace receipt enrichment', () => {
         expect(serialized).not.toContain('BASE_SYSTEM_PROMPT');
         expect(serialized).not.toContain('Create Product Brief for TaskFlow');
         expect(serialized).not.toContain('This response provides a structured recommendation');
+        expect(data.governanceEvidenceReceipt?.runtimeTelemetry).toMatchObject({
+            schemaVersion: 'cvf.runtimeTelemetry.v1',
+            providerLatencyMs: 123,
+            tokenUsage: {
+                inputTokens: 10,
+                outputTokens: 20,
+                totalTokens: 30,
+            },
+            costEstimateSource: 'cvf_model_pricing_table_or_fallback',
+            governanceTraceEntryCount: data.governanceEvidenceReceipt.governanceTrace.length,
+            redactionApplied: true,
+            claimBoundary: 'summary_only_no_raw_prompt_output_key_or_provider_payload',
+        });
+        expect(data.governanceEvidenceReceipt.runtimeTelemetry.routeElapsedMs).toBeGreaterThanOrEqual(0);
+        expect(data.governanceEvidenceReceipt.runtimeTelemetry.estimatedCostUSD).toBeGreaterThan(0);
+        expect(JSON.stringify(data.governanceEvidenceReceipt.runtimeTelemetry)).not.toContain('test-key');
     });
 });

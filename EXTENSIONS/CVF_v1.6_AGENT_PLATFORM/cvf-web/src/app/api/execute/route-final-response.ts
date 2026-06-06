@@ -18,6 +18,7 @@ import { buildVerticalIntegrationReadout } from '@/lib/vertical-integration-read
 import { buildEvidenceReceipt } from '@/lib/web-governance-envelope';
 import { buildWorkflowExecutionProjection } from '@/lib/workflows/workflow-resolver';
 import { withSessionAuditPayload } from '@/lib/middleware-auth';
+import { calculateTokenCost } from '@/lib/model-pricing';
 import { buildExecuteResponseReadouts } from './route-response-readouts';
 import type { AIProvider, ExecutionRequest, ExecutionResponse } from '@/lib/ai';
 import type { GuardPipelineResult } from '@/lib/guard-runtime-adapter';
@@ -129,6 +130,19 @@ export async function buildExecuteFinalResponse(params: BuildExecuteFinalRespons
     const durableMemoryWriteReceipt = aiResult.success && aiResult.output
         ? evaluateDurableMemoryWrite({ request, actorId, actorRole: resolveDurableMemoryActorRole(resolvedExecutionRole.role), output: aiResult.output })
         : undefined;
+    const routeElapsedMs = Math.max(0, Date.now() - routeStartedAtMs);
+    const runtimeTelemetry = usage
+        ? {
+            schemaVersion: 'cvf.runtimeTelemetry.v1' as const,
+            providerLatencyMs: aiResult.executionTime,
+            routeElapsedMs,
+            tokenUsage: usage,
+            estimatedCostUSD: calculateTokenCost(model, usage.inputTokens, usage.outputTokens),
+            costEstimateSource: 'cvf_model_pricing_table_or_fallback' as const,
+            redactionApplied: true as const,
+            claimBoundary: 'summary_only_no_raw_prompt_output_key_or_provider_payload' as const,
+        }
+        : undefined;
 
     const governanceEvidenceReceipt = buildEvidenceReceipt({
         envelope: govEnvelope,
@@ -146,6 +160,7 @@ export async function buildExecuteFinalResponse(params: BuildExecuteFinalRespons
         aifMemoryReinjection: aifMemoryReinjection.receipt,
         durableMemoryRead: durableMemoryRoute.receipt,
         durableMemoryWriteReceipt,
+        runtimeTelemetry,
     });
 
     if (isVisionExecution) governanceEvidenceReceipt.vision = true;

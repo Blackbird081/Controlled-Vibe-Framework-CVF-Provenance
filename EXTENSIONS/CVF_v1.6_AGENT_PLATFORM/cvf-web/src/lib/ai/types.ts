@@ -96,6 +96,22 @@ export interface GovernanceTraceEntry {
     constraintsApplied: string[];
 }
 
+export interface RuntimeTelemetryReceipt {
+    schemaVersion: 'cvf.runtimeTelemetry.v1';
+    providerLatencyMs?: number;
+    routeElapsedMs: number;
+    tokenUsage?: {
+        inputTokens: number;
+        outputTokens: number;
+        totalTokens: number;
+    };
+    estimatedCostUSD?: number;
+    costEstimateSource?: 'cvf_model_pricing_table_or_fallback';
+    governanceTraceEntryCount: number;
+    redactionApplied: true;
+    claimBoundary: 'summary_only_no_raw_prompt_output_key_or_provider_payload';
+}
+
 export interface GovernanceEvidenceReceipt {
     receiptId: string;
     evidenceMode: 'live' | 'mock' | 'static';
@@ -119,6 +135,7 @@ export interface GovernanceEvidenceReceipt {
     durableMemoryWriteReceipt?: DurableMemoryReceipt;
     workflowComposition?: WorkflowCompositionSummary;
     governanceTrace?: GovernanceTraceEntry[];
+    runtimeTelemetry?: RuntimeTelemetryReceipt;
     generatedAt: string;
 }
 

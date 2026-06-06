@@ -280,5 +280,51 @@ describe('web-governance-envelope', () => {
                 constraintsApplied: ['summary-only receipt trace'],
             }]);
         });
+
+        it('adds bounded runtime telemetry with sanitized trace count', () => {
+            const env = buildGovernanceEnvelope({
+                routeId: '/api/execute',
+                surfaceClass: 'governance-execution',
+                evidenceMode: 'live',
+            });
+
+            const receipt = buildEvidenceReceipt({
+                envelope: env,
+                decision: 'ALLOW',
+                provider: 'alibaba',
+                model: 'qwen-turbo',
+                runtimeTelemetry: {
+                    schemaVersion: 'cvf.runtimeTelemetry.v1',
+                    providerLatencyMs: 321,
+                    routeElapsedMs: 456,
+                    tokenUsage: {
+                        inputTokens: 12,
+                        outputTokens: 34,
+                        totalTokens: 46,
+                    },
+                    estimatedCostUSD: 0.000148,
+                    costEstimateSource: 'cvf_model_pricing_table_or_fallback',
+                    redactionApplied: true,
+                    claimBoundary: 'summary_only_no_raw_prompt_output_key_or_provider_payload',
+                },
+            });
+
+            expect(receipt.runtimeTelemetry).toEqual({
+                schemaVersion: 'cvf.runtimeTelemetry.v1',
+                providerLatencyMs: 321,
+                routeElapsedMs: 456,
+                tokenUsage: {
+                    inputTokens: 12,
+                    outputTokens: 34,
+                    totalTokens: 46,
+                },
+                estimatedCostUSD: 0.000148,
+                costEstimateSource: 'cvf_model_pricing_table_or_fallback',
+                governanceTraceEntryCount: 2,
+                redactionApplied: true,
+                claimBoundary: 'summary_only_no_raw_prompt_output_key_or_provider_payload',
+            });
+            expect(JSON.stringify(receipt.runtimeTelemetry)).not.toMatch(/sk-|BASE_SYSTEM_PROMPT|private memory/i);
+        });
     });
 });
