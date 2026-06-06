@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-06
 
-Current mode marker: `rta1_receipt_trace_anchor_closed_pass_bounded`
+Current mode marker: `erh_rl1a_rate_limit_store_boundary_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `rta1_receipt_trace_anchor_closed_pass_bounded`.
+Current mode: `erh_rl1a_rate_limit_store_boundary_closed_pass_bounded`.
 
 Active handoff:
 
@@ -49,6 +49,48 @@ Active review queue:
 `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
 
 Latest continuity note:
+
+ERH-RL1A rate limit store boundary is `CLOSED_PASS_BOUNDED`:
+
+Work order:
+
+`docs/work_orders/CVF_WO_ERH_RL1A_RATE_LIMIT_STORE_BOUNDARY_2026-06-06.md`
+
+Completion:
+
+`docs/reviews/CVF_ERH_RL1A_RATE_LIMIT_STORE_BOUNDARY_COMPLETION_2026-06-06.md`
+
+Material commit: `3978554c`
+
+Delivered:
+
+- `src/lib/rate-limit.ts` now owns an explicit `RateLimitStore` contract and
+  `MemoryRateLimitStore`.
+- `getRateLimitBackendStatus()` reports process-local memory with
+  `distributed=false` by default.
+- `CVF_RATE_LIMIT_STORE=redis` fails closed with
+  `BLOCKED_REDIS_ADAPTER_NOT_INSTALLED` until a real adapter exists.
+- Unsupported backend names fail closed with `BLOCKED_UNSUPPORTED_STORE`.
+
+Boundary: no distributed rate limiting, Redis dependency, remote rate-limit
+service, multi-instance proof, public-sync, hosted readiness, production
+readiness, public readiness, provider-quality claim, cost/performance claim,
+Learning Orchestrator runtime behavior, or autonomous mutation.
+
+Verification:
+
+- Pre-dispatch and pre-implementation autorun gates: PASS.
+- Focused rate-limit tests: PASS, 13 tests.
+- `npm run check`: PASS.
+- Material-range pre-closure gates passed except session-sync state before this
+  continuity update.
+
+Next allowed move: open a separate source-verified ERH-RL1B/GC-018 for real
+distributed rate-limit backend package, topology, and deployment proof, or
+continue parked DEP2 next-auth stable migration, QBS method reliability, or
+real external receipt-anchor provider/service selection.
+
+Prior continuity note:
 
 RTA1 receipt trace anchor is `CLOSED_PASS_BOUNDED`:
 
@@ -89,10 +131,7 @@ Verification:
 - `npm run check`: PASS.
 - Focused Alibaba live proof: PASS.
 
-Next allowed move: open a separate source-verified GC-018 for real external
-anchor provider/service selection and integration, continue parked DEP2
-next-auth stable migration, ERH-RL1 distributed rate limiter, or QBS method
-reliability work.
+Next allowed move: superseded by ERH-RL1A continuity above.
 
 Prior continuity note:
 
@@ -678,13 +717,12 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-P1-P5 small debt remediation material commit is `eb058300`. Public-sync changes
-still need commit/push from this working batch.
+ERH-RL1A rate limit store boundary material commit is `3978554c`.
 
-Next allowed move: open a separate source-verified GC-018 for real external
-anchor provider/service selection and integration, continue parked DEP2
-next-auth stable migration, ERH-RL1 distributed rate limiter, or QBS method
-reliability work.
+Next allowed move: open a separate source-verified ERH-RL1B/GC-018 for real
+distributed rate-limit backend package, topology, and deployment proof, or
+continue parked DEP2 next-auth stable migration, QBS method reliability, or
+real external receipt-anchor provider/service selection.
 
 LHW24 remains the latest closed numbered LHW wave in the state registry.
 

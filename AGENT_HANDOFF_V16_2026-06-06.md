@@ -36,14 +36,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rta1_receipt_trace_anchor_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=open a separate source-verified GC-018 for real external anchor provider/service selection and integration, continue parked DEP2 next-auth stable migration, ERH-RL1 distributed rate limiter, or QBS method reliability work; parked checkpoint=none.
+Startup acknowledged: current mode=`erh_rl1a_rate_limit_store_boundary_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=open a separate source-verified ERH-RL1B/GC-018 for real distributed rate-limit backend package, topology, and deployment proof, or continue parked DEP2 next-auth stable migration, QBS method reliability, or real external receipt-anchor provider/service work; parked checkpoint=none.
 
 ## Current Mode
 
-`rta1_receipt_trace_anchor_closed_pass_bounded`
+`erh_rl1a_rate_limit_store_boundary_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `8630b168`
-(material commit for RTA1 receipt trace anchor; the next
+Current HEAD recorded for this handoff: `3978554c`
+(material commit for ERH-RL1A rate limit store boundary; the next
 session-sync commit records the parent material SHA per GC-020).
 
 ## Active Boundary
@@ -135,8 +135,56 @@ Only V16 should be treated as the active root handoff.
   stable canonical hash, optional HMAC signature metadata, explicit external
   anchor status, redaction marker, and claim boundary. Focused deterministic
   tests, TypeScript check, and Alibaba live proof passed.
+- Closed ERH-RL1A rate limit store boundary at material commit `3978554c`:
+  `/api/execute` rate-limit admission now has an explicit `RateLimitStore`
+  contract, process-local `MemoryRateLimitStore`, backend status readout, and
+  fail-closed handling for unsupported `CVF_RATE_LIMIT_STORE` values. Focused
+  rate-limit tests and TypeScript check passed. Boundary: no distributed rate
+  limiting, Redis dependency, remote backend, or multi-instance proof.
 
 ## Latest Continuity Note
+
+ERH-RL1A rate limit store boundary is `CLOSED_PASS_BOUNDED`.
+
+Private artifacts:
+
+- Work order:
+  `docs/work_orders/CVF_WO_ERH_RL1A_RATE_LIMIT_STORE_BOUNDARY_2026-06-06.md`
+- Completion:
+  `docs/reviews/CVF_ERH_RL1A_RATE_LIMIT_STORE_BOUNDARY_COMPLETION_2026-06-06.md`
+
+Working-tree changes:
+
+- `src/lib/rate-limit.ts` now exposes `RateLimitStore`,
+  `MemoryRateLimitStore`, `RateLimitBackendStatus`, and
+  `getRateLimitBackendStatus`.
+- Default backend status is process-local memory with `distributed=false`.
+- `CVF_RATE_LIMIT_STORE=redis` fails closed with
+  `BLOCKED_REDIS_ADAPTER_NOT_INSTALLED` until a real adapter exists.
+- Unsupported backend names fail closed with `BLOCKED_UNSUPPORTED_STORE`.
+- Focused tests reset the singleton stores between cases.
+
+Verification summary:
+
+- Material commit: `3978554c`.
+- Pre-dispatch and pre-implementation autorun gates: PASS.
+- Focused rate-limit tests: PASS, 13 tests.
+- `npm run check`: PASS.
+- Material-range pre-closure gates passed except session-sync state before this
+  continuity update.
+
+Boundary: no distributed rate limiting, Redis package/dependency, remote
+rate-limit service, multi-instance proof, public-sync, hosted readiness,
+production readiness, public readiness, provider-quality claim,
+cost/performance claim, Learning Orchestrator runtime behavior, or autonomous
+mutation.
+
+Next allowed move: open a separate source-verified ERH-RL1B/GC-018 for real
+distributed rate-limit backend package, topology, and deployment proof, or
+continue parked DEP2 next-auth stable migration, QBS method reliability, or
+real external receipt-anchor provider/service selection.
+
+Previous continuity:
 
 RTA1 receipt trace anchor is `CLOSED_PASS_BOUNDED`.
 
@@ -173,10 +221,7 @@ external anchor provider, public-sync, hosted readiness, production readiness,
 public readiness, provider-quality claim, cost/performance claim, Learning
 Orchestrator runtime behavior, or autonomous mutation.
 
-Next allowed move: open a separate source-verified GC-018 for real external
-anchor provider/service selection and integration, continue parked DEP2
-next-auth stable migration, ERH-RL1 distributed rate limiter, or QBS method
-reliability work.
+Next allowed move: superseded by ERH-RL1A continuity above.
 
 Previous continuity:
 
