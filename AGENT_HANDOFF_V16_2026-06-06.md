@@ -36,15 +36,15 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`public_doc_drift_external_review_guide_hardening_ready_for_review`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=commit/push public-doc drift guard and external-agent guide hardening to existing P1-P5 branches, then stop for external review; parked checkpoint=none.
+Startup acknowledged: current mode=`ea_review_finding_triage_recorded_pending_remediation`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=open or execute EA-P0 Public Surface Hygiene work order for public `Memory class` metadata and root public-doc completeness guard; parked checkpoint=none.
 
 ## Current Mode
 
-`public_doc_drift_external_review_guide_hardening_ready_for_review`
+`ea_review_finding_triage_recorded_pending_remediation`
 
-Current HEAD recorded for this handoff: `85e814c5`
-(handoff HEAD sync parent after public-doc drift guard and external-agent review
-guide hardening; next sync commit updates continuity only).
+Current HEAD recorded for this handoff: `556ff46c`
+(EA review finding triage register material commit; next sync commit updates
+continuity only).
 
 ## Active Boundary
 
@@ -78,6 +78,11 @@ Only V16 should be treated as the active root handoff.
   handoff-label defects.
 - Added public-sync external-agent review guide and linked it from public
   README/GET_STARTED/claim-boundary surfaces.
+- Recorded EA external review finding triage register:
+  `docs/audits/CVF_EA_REVIEW_FINDING_TRIAGE_AND_REMEDIATION_REGISTER_2026-06-06.md`.
+- Accepted next remediation lanes: EA-P0 Public Surface Hygiene, EA-P1 Public
+  Evidence Discoverability, and EA-P2 Product And Refactor Debt as separate
+  work-order lanes.
 - Verification before commit: pre-implementation autorun PASS; live
   `python scripts/run_cvf_release_gate_bundle.py --e2e-live --json` PASS.
 - Opened V16 compact handoff.

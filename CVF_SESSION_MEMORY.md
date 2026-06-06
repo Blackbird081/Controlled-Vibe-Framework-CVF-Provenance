@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-06
 
-Current mode marker: `public_doc_drift_external_review_guide_hardening_ready_for_review`
+Current mode marker: `ea_review_finding_triage_recorded_pending_remediation`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `public_doc_drift_external_review_guide_hardening_ready_for_review`.
+Current mode: `ea_review_finding_triage_recorded_pending_remediation`.
 
 Active handoff:
 
@@ -49,6 +49,35 @@ Active review queue:
 `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
 
 Latest continuity note:
+
+EA external review finding triage is recorded:
+
+Audit:
+
+`docs/audits/CVF_EA_REVIEW_FINDING_TRIAGE_AND_REMEDIATION_REGISTER_2026-06-06.md`
+
+Accepted near-term remediation lanes:
+
+- `EA-P0 Public Surface Hygiene`: hide/remove raw public `Memory class`
+  metadata and add a root public-doc completeness check.
+- `EA-P1 Public Evidence Discoverability`: improve coverage/current-pointer
+  and provider-dependency visibility.
+- `EA-P2 Product And Refactor Debt`: CPF source grouping, large barrel review,
+  package naming, and five-minute demo remain separate roadmap work.
+
+Verification:
+
+- `python governance/compat/check_finding_to_governance_learning.py --base e4705aa1 --head HEAD --enforce`: PASS.
+- `python governance/compat/check_corpus_completeness_report_integrity.py --base e4705aa1 --head HEAD --enforce`: PASS.
+- `python governance/compat/check_markdown_structural_completeness.py --base e4705aa1 --head HEAD --enforce`: PASS.
+- `python governance/compat/check_corpus_scan_registry.py --base e4705aa1 --head HEAD --enforce`: PASS.
+
+Boundary: triage/register only; no runtime/source behavior, public-sync
+implementation, dependency migration, live/provider proof, hosted readiness,
+production readiness, coverage claim, package refactor, or public-readiness
+expansion.
+
+Prior continuity note:
 
 Public-doc drift and external-agent review-guide hardening is ready for
 external review:
