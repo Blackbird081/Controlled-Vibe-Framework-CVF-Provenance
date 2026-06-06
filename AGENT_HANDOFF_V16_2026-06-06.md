@@ -42,9 +42,9 @@ Startup acknowledged: current mode=`external_review_gap4_gap5_runtime_durability
 
 `gap6_provider_risk_cap_env_override_closed_pass_bounded`
 
-Current HEAD recorded for this handoff sync parent: `92d446a8`
-(GAP 6 provider risk cap ENV externalization material commit; all 8 external
-review GAPs are now either CLOSED_PASS_BOUNDED or DEFERRED).
+Current HEAD recorded for this handoff sync parent: `31df9194`
+(GAP 2B Web UI jargon reduction material commit; all 9 external review GAPs
+are now CLOSED_PASS_BOUNDED — none remain DEFERRED).
 
 ## Active Boundary
 
@@ -96,6 +96,34 @@ Only V16 should be treated as the active root handoff.
   local SQLite storage adapters behind `CVF_STORAGE_ADAPTER_TYPE=sqlite`.
 
 ## Latest Continuity Note
+
+External Review GAP 2B Web UI jargon reduction is `CLOSED_PASS_BOUNDED`.
+
+Private artifacts:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_GAP2B_WEB_UI_JARGON_REDUCTION_2026-06-06.md`
+- Audit record:
+  `docs/audits/CVF_EXTERNAL_REVIEW_GAP_ANALYSIS_AND_PROPOSED_SOLUTIONS_2026-06-05.md`
+
+Verification summary:
+
+- Material closure commit: `31df9194`.
+- Execution base: `29a85511`.
+- Scope: 8 wizard components + home/landing descriptive text.
+- Change: plain-language outcome labels as primary headings; CVF terms demoted
+  to muted `<p>` subtitles.
+- Tests: all green; tsc clean.
+- Public Export Disposition: `DEFERRED_PRIVATE_ONLY`.
+
+All 9 external review GAPs (1, 2A, 2B, 3, 4, 5A, 5B, 6, 7, 8) are now
+`CLOSED_PASS_BOUNDED`. External review remediation series complete.
+
+Boundary: no internal governance docs, API routes, auth, session, memory,
+public-sync, provider routing, test logic, or role-based access control was
+changed. UI label text only.
+
+Previous continuity:
 
 External Review GAP6 provider risk cap ENV override is
 `CLOSED_PASS_BOUNDED`.

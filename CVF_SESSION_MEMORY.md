@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-06
 
-Current mode marker: `gap6_provider_risk_cap_env_override_closed_pass_bounded`
+Current mode marker: `gap2b_web_ui_jargon_reduction_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `gap6_provider_risk_cap_env_override_closed_pass_bounded`.
+Current mode: `gap2b_web_ui_jargon_reduction_closed_pass_bounded`.
 
 Active handoff:
 
@@ -50,34 +50,42 @@ Active review queue:
 
 Latest continuity note:
 
-External Review GAP6 provider risk cap ENV override is
-`CLOSED_PASS_BOUNDED`:
+External Review GAP 2B Web UI jargon reduction is `CLOSED_PASS_BOUNDED`:
+
+GC-018:
+
+`docs/baselines/CVF_GC018_GAP2B_WEB_UI_JARGON_REDUCTION_2026-06-06.md`
+
+Evidence:
+
+- Material closure commit: `31df9194`.
+- 8 wizard components + home/landing descriptive text updated.
+- Plain-language outcome labels are now primary headings; CVF terms are muted subtitles.
+- All 9 external review GAPs (1, 2A, 2B, 3, 4, 5A, 5B, 6, 7, 8) are now `CLOSED_PASS_BOUNDED`.
+- Tests: all green; tsc clean.
+- Public Export Disposition: `DEFERRED_PRIVATE_ONLY`.
+
+Next allowed move: stop for review. External review remediation series is complete.
+Blocked without separate authorization: governance-rule retirement, dependency expansion,
+public-sync or public push, live/provider proof, public/hosted/production readiness
+claims, memory reinjection, high-risk promotion implementation, and autonomous mutation.
+
+Prior external-review continuity note:
+
+External Review GAP6 provider risk cap ENV override is `CLOSED_PASS_BOUNDED`:
 
 GC-018:
 
 `docs/baselines/CVF_GC018_GAP6_PROVIDER_RISK_CAP_ENV_OVERRIDE_2026-06-06.md`
-
-Audit:
-
-`docs/audits/CVF_EXTERNAL_REVIEW_GAP_ANALYSIS_AND_PROPOSED_SOLUTIONS_2026-06-05.md`
 
 Evidence:
 
 - Material closure commit: `92d446a8`.
 - ENV vars: `CVF_PROVIDER_RISK_CAP_<PROVIDER_UPPERCASE>`, `CVF_PROVIDER_RISK_CEILING`.
 - 6/6 tests pass; full cvf-web suite green; tsc clean.
-- All 8 external review GAPs are now CLOSED_PASS_BOUNDED or DEFERRED.
 - Public Export Disposition: `DEFERRED_PRIVATE_ONLY`.
 
-Next allowed move: stop for review or open the next separate source-verified
-work order. External review remediation is complete.
-Blocked without separate authorization and passing phase gates: governance-rule
-retirement, dependency expansion, public-sync or public push, live/provider
-proof, public/hosted/production readiness claims, cost/performance/provider-quality
-claims, memory reinjection, high-risk promotion implementation, Learning Orchestrator
-runtime behavior, and autonomous mutation.
-
-Prior external-review continuity note:
+Earlier external-review continuity note:
 
 External Review GAP4/GAP5 runtime durability tranche is
 `CLOSED_PASS_BOUNDED`:
@@ -504,9 +512,9 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-External Review GAP6 provider risk cap ENV override is `CLOSED_PASS_BOUNDED` at material commit `92d446a8`. All 8 external review GAPs are now CLOSED_PASS_BOUNDED or DEFERRED.
+External Review GAP 2B Web UI jargon reduction is `CLOSED_PASS_BOUNDED` at material commit `31df9194`. All 9 external review GAPs are now `CLOSED_PASS_BOUNDED`. External review remediation series is complete.
 
-Next allowed move: stop for review or open the next separate source-verified work order. External review remediation is complete.
+Next allowed move: stop for review.
 
 LHW24 remains the latest closed numbered LHW wave in the state registry.
 
