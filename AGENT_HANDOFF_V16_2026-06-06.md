@@ -40,8 +40,8 @@ Startup acknowledged: current mode=`external_review_gap1_core_kb_pointer_ificati
 
 `external_review_gap1_core_kb_pointer_ification_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `fb9e81c5`
-(External Review GAP1 Core KB pointer-ification material commit; this
+Current HEAD recorded for this handoff: `3258be7a`
+(External Review GAP1 Core KB pointer-ification continuity sync parent; this
 dedicated handoff sync records continuity for the latest closure state).
 
 ## Active Boundary
