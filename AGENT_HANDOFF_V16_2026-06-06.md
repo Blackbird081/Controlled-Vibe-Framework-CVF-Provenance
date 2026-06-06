@@ -36,14 +36,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`live_evidence_manifest_integrated_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=open separate GC-018/work order for runtime telemetry receipt expansion or continue parked DEP2/ERH-RL1/QBS backlog; parked checkpoint=none.
+Startup acknowledged: current mode=`rte1_runtime_telemetry_receipt_expansion_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=continue parked DEP2 next-auth stable migration, ERH-RL1 distributed rate limiter, QBS method reliability work, or open a separate GC-018 for external immutable anchoring/runtime trace service; parked checkpoint=none.
 
 ## Current Mode
 
-`live_evidence_manifest_integrated_closed_pass_bounded`
+`rte1_runtime_telemetry_receipt_expansion_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `81cc6844`
-(material commit for live evidence manifest release-gate wiring; this
+Current HEAD recorded for this handoff: `78cb38a8`
+(material commit for RTE1 runtime telemetry receipt expansion; the next
 session-sync commit records the parent material SHA per GC-020).
 
 ## Active Boundary
@@ -125,43 +125,47 @@ Only V16 should be treated as the active root handoff.
   proof-of-value audit keeps rules with consolidation candidates only, GAP5A
   wires only `runtime_receipt_count` as `liveEmissionWired=true`, and GAP5B adds
   local SQLite storage adapters behind `CVF_STORAGE_ADAPTER_TYPE=sqlite`.
+- Closed RTE1 runtime telemetry receipt expansion at material commit
+  `78cb38a8`: `GovernanceEvidenceReceipt.runtimeTelemetry` is additive and
+  summary-only, with latency, route elapsed time, token usage, estimated cost,
+  cost source, trace count, redaction marker, and claim boundary. Focused
+  deterministic tests, TypeScript check, and Alibaba live proof passed.
 
 ## Latest Continuity Note
 
-Live evidence manifest release-gate wiring is `CLOSED_PASS_BOUNDED`.
+RTE1 runtime telemetry receipt expansion is `CLOSED_PASS_BOUNDED`.
 
 Private artifacts:
 
-- Audit:
-  `docs/audits/CVF_LIVE_EVIDENCE_MANIFEST_WIRING_LEGACY_SCAN_2026-06-06.md`
-- Standard:
-  `docs/reference/CVF_LIVE_EVIDENCE_MANIFEST_AND_RERUN_STANDARD_2026-06-06.md`
+- Work order:
+  `docs/work_orders/CVF_WO_RTE1_RUNTIME_TELEMETRY_RECEIPT_EXPANSION_2026-06-06.md`
+- Completion:
+  `docs/reviews/CVF_RTE1_RUNTIME_TELEMETRY_RECEIPT_EXPANSION_COMPLETION_2026-06-06.md`
 
 Working-tree changes:
 
-- `scripts/run_cvf_release_gate_bundle.py` accepts `--output` and
-  `--manifest-output`, requires `--output` when a manifest is requested, writes
-  result JSON before manifest generation, and keeps `--json` stdout parseable.
-- Scheduled live governance smoke now calls the integrated release-gate command
-  directly.
-- Targeted legacy scan accepted receipt/replay evidence principles and deferred
-  runtime telemetry receipt expansion.
+- cvf-web AI receipt type now includes optional `RuntimeTelemetryReceipt`.
+- Web governance envelope builder accepts runtime telemetry and adds sanitized
+  `governanceTraceEntryCount`.
+- Execute final response assembly builds telemetry from existing runtime values.
+- Focused Alibaba live proof produced receipt `rcpt-env-mq2i7h03-ztjxy4`.
 
 Verification summary:
 
-- Material commit: `81cc6844`.
-- `python -m py_compile scripts/run_cvf_release_gate_bundle.py scripts/build_cvf_live_evidence_manifest.py`: PASS.
-- Release-gate dry-run with `--output` plus `--manifest-output`: PASS.
-- Material commit hook governance chain: PASS.
+- Material commit: `78cb38a8`.
+- Pre-dispatch and pre-implementation autorun gates: PASS.
+- Focused deterministic tests: PASS, 20 tests.
+- `npm run check`: PASS.
+- Focused Alibaba live proof: PASS.
 
-Boundary: evidence packaging only; no governance behavior change, new runtime
-receipt fields, provider routing change, public-sync push, hosted readiness,
-production readiness, public readiness, cost/performance/provider-quality
-claim, memory reinjection, high-risk promotion implementation, Learning
-Orchestrator runtime behavior, or autonomous mutation.
+Boundary: additive receipt evidence only; no provider routing, prompt, policy,
+DLP, memory, public-sync, hosted readiness, production readiness, public
+readiness, cost optimization, provider-quality claim, external tracing service,
+external anchor, Learning Orchestrator runtime behavior, or autonomous mutation.
 
-Next allowed move: open a separate GC-018/work order for runtime telemetry
-receipt expansion, or continue the parked DEP2/ERH-RL1/QBS backlog.
+Next allowed move: continue parked DEP2 next-auth stable migration, ERH-RL1
+distributed rate limiter, QBS method reliability work, or open a separate
+GC-018 for external immutable anchoring/runtime trace service.
 
 Previous continuity:
 
