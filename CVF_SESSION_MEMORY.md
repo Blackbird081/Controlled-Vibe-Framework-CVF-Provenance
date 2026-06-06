@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-06
 
-Current mode marker: `rte1_runtime_telemetry_receipt_expansion_closed_pass_bounded`
+Current mode marker: `rta1_receipt_trace_anchor_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `rte1_runtime_telemetry_receipt_expansion_closed_pass_bounded`.
+Current mode: `rta1_receipt_trace_anchor_closed_pass_bounded`.
 
 Active handoff:
 
@@ -49,6 +49,52 @@ Active review queue:
 `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
 
 Latest continuity note:
+
+RTA1 receipt trace anchor is `CLOSED_PASS_BOUNDED`:
+
+Work order:
+
+`docs/work_orders/CVF_WO_RTA1_RECEIPT_TRACE_ANCHOR_2026-06-06.md`
+
+Completion:
+
+`docs/reviews/CVF_RTA1_RECEIPT_TRACE_ANCHOR_COMPLETION_2026-06-06.md`
+
+Diagnostic:
+
+`docs/evidence/CVF_RTA1_LIVE_PROOF_DIAGNOSTIC_2026-06-06.json`
+
+Material commit: `8630b168`
+
+Delivered:
+
+- `GovernanceEvidenceReceipt.receiptIntegrity` is now an optional additive
+  receipt field.
+- cvf-web receipt builder adds local canonical receipt hash and optional HMAC
+  signature metadata.
+- `/api/execute` final response passes receipt signer and optional anchor
+  environment metadata to the receipt builder without serializing signer input.
+- Focused Alibaba live proof returned receipt `rcpt-env-mq2iyeyu-cak2p5` with
+  `signatureStatus=SIGNED` and `externalAnchorStatus=NOT_PROVIDED`.
+
+Boundary: local receipt integrity evidence only; no third-party immutability,
+external anchor provider, public-sync, hosted readiness, production readiness,
+public readiness, provider-quality claim, cost/performance claim, Learning
+Orchestrator runtime behavior, or autonomous mutation.
+
+Verification:
+
+- Pre-dispatch and pre-implementation autorun gates: PASS.
+- Focused deterministic tests: PASS, 24 tests.
+- `npm run check`: PASS.
+- Focused Alibaba live proof: PASS.
+
+Next allowed move: open a separate source-verified GC-018 for real external
+anchor provider/service selection and integration, continue parked DEP2
+next-auth stable migration, ERH-RL1 distributed rate limiter, or QBS method
+reliability work.
+
+Prior continuity note:
 
 RTE1 runtime telemetry receipt expansion is `CLOSED_PASS_BOUNDED`:
 
@@ -84,9 +130,7 @@ Verification:
 - `npm run check`: PASS.
 - Focused Alibaba live proof: PASS.
 
-Next allowed move: continue parked DEP2 next-auth stable migration, ERH-RL1
-distributed rate limiter, QBS method reliability work, or open a separate
-GC-018 for external immutable anchoring/runtime trace service.
+Next allowed move: superseded by RTA1 continuity above.
 
 Prior continuity note:
 
@@ -637,18 +681,20 @@ opening separate live-proof roadmaps.
 P1-P5 small debt remediation material commit is `eb058300`. Public-sync changes
 still need commit/push from this working batch.
 
-Next allowed move: commit/push the public-sync remediation branch and push the
-private provenance branch, then stop for external review.
+Next allowed move: open a separate source-verified GC-018 for real external
+anchor provider/service selection and integration, continue parked DEP2
+next-auth stable migration, ERH-RL1 distributed rate limiter, or QBS method
+reliability work.
 
 LHW24 remains the latest closed numbered LHW wave in the state registry.
 
-Blocked after this authorized push without separate authorization and passing
-phase gates: stable Auth.js migration, Redis implementation, PostgreSQL/SSO
-implementation, independent anchor claim, benchmark live rerun or quality
-parity claim, governance-rule removal, public/hosted/production readiness
-claims, cost/performance/provider-quality claims, memory reinjection,
-high-risk promotion implementation, Learning Orchestrator runtime behavior, and
-autonomous mutation.
+Blocked without separate authorization and passing phase gates: stable Auth.js
+migration, Redis implementation, PostgreSQL/SSO implementation, real external
+anchor provider integration, third-party immutability claim, benchmark live
+rerun or quality parity claim, governance-rule removal,
+public/hosted/production readiness claims, cost/performance/provider-quality
+claims, memory reinjection, high-risk promotion implementation, Learning
+Orchestrator runtime behavior, and autonomous mutation.
 
 ## Enforcement
 

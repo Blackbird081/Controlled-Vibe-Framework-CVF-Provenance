@@ -36,14 +36,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rte1_runtime_telemetry_receipt_expansion_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=continue parked DEP2 next-auth stable migration, ERH-RL1 distributed rate limiter, QBS method reliability work, or open a separate GC-018 for external immutable anchoring/runtime trace service; parked checkpoint=none.
+Startup acknowledged: current mode=`rta1_receipt_trace_anchor_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=open a separate source-verified GC-018 for real external anchor provider/service selection and integration, continue parked DEP2 next-auth stable migration, ERH-RL1 distributed rate limiter, or QBS method reliability work; parked checkpoint=none.
 
 ## Current Mode
 
-`rte1_runtime_telemetry_receipt_expansion_closed_pass_bounded`
+`rta1_receipt_trace_anchor_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `78cb38a8`
-(material commit for RTE1 runtime telemetry receipt expansion; the next
+Current HEAD recorded for this handoff: `8630b168`
+(material commit for RTA1 receipt trace anchor; the next
 session-sync commit records the parent material SHA per GC-020).
 
 ## Active Boundary
@@ -130,42 +130,58 @@ Only V16 should be treated as the active root handoff.
   summary-only, with latency, route elapsed time, token usage, estimated cost,
   cost source, trace count, redaction marker, and claim boundary. Focused
   deterministic tests, TypeScript check, and Alibaba live proof passed.
+- Closed RTA1 receipt trace anchor at material commit `8630b168`:
+  `GovernanceEvidenceReceipt.receiptIntegrity` is additive and local-only, with
+  stable canonical hash, optional HMAC signature metadata, explicit external
+  anchor status, redaction marker, and claim boundary. Focused deterministic
+  tests, TypeScript check, and Alibaba live proof passed.
 
 ## Latest Continuity Note
 
-RTE1 runtime telemetry receipt expansion is `CLOSED_PASS_BOUNDED`.
+RTA1 receipt trace anchor is `CLOSED_PASS_BOUNDED`.
 
 Private artifacts:
 
 - Work order:
-  `docs/work_orders/CVF_WO_RTE1_RUNTIME_TELEMETRY_RECEIPT_EXPANSION_2026-06-06.md`
+  `docs/work_orders/CVF_WO_RTA1_RECEIPT_TRACE_ANCHOR_2026-06-06.md`
 - Completion:
-  `docs/reviews/CVF_RTE1_RUNTIME_TELEMETRY_RECEIPT_EXPANSION_COMPLETION_2026-06-06.md`
+  `docs/reviews/CVF_RTA1_RECEIPT_TRACE_ANCHOR_COMPLETION_2026-06-06.md`
+- Diagnostic:
+  `docs/evidence/CVF_RTA1_LIVE_PROOF_DIAGNOSTIC_2026-06-06.json`
 
 Working-tree changes:
 
-- cvf-web AI receipt type now includes optional `RuntimeTelemetryReceipt`.
-- Web governance envelope builder accepts runtime telemetry and adds sanitized
-  `governanceTraceEntryCount`.
-- Execute final response assembly builds telemetry from existing runtime values.
-- Focused Alibaba live proof produced receipt `rcpt-env-mq2i7h03-ztjxy4`.
+- cvf-web AI receipt type now includes optional `ReceiptIntegrityAnchor`.
+- Receipt integrity helper canonicalizes receipt metadata, computes `sha256`,
+  and optionally computes `hmac-sha256`.
+- Web governance envelope builder attaches integrity metadata after base receipt
+  construction.
+- Execute final response assembly passes signer and optional anchor environment
+  metadata to the receipt builder.
+- Focused Alibaba live proof produced receipt `rcpt-env-mq2iyeyu-cak2p5`.
 
 Verification summary:
 
-- Material commit: `78cb38a8`.
+- Material commit: `8630b168`.
 - Pre-dispatch and pre-implementation autorun gates: PASS.
-- Focused deterministic tests: PASS, 20 tests.
+- Focused deterministic tests: PASS, 24 tests.
 - `npm run check`: PASS.
 - Focused Alibaba live proof: PASS.
 
-Boundary: additive receipt evidence only; no provider routing, prompt, policy,
-DLP, memory, public-sync, hosted readiness, production readiness, public
-readiness, cost optimization, provider-quality claim, external tracing service,
-external anchor, Learning Orchestrator runtime behavior, or autonomous mutation.
+Boundary: local receipt integrity evidence only; no third-party immutability,
+external anchor provider, public-sync, hosted readiness, production readiness,
+public readiness, provider-quality claim, cost/performance claim, Learning
+Orchestrator runtime behavior, or autonomous mutation.
 
-Next allowed move: continue parked DEP2 next-auth stable migration, ERH-RL1
-distributed rate limiter, QBS method reliability work, or open a separate
-GC-018 for external immutable anchoring/runtime trace service.
+Next allowed move: open a separate source-verified GC-018 for real external
+anchor provider/service selection and integration, continue parked DEP2
+next-auth stable migration, ERH-RL1 distributed rate limiter, or QBS method
+reliability work.
+
+Previous continuity:
+
+RTE1 runtime telemetry receipt expansion is `CLOSED_PASS_BOUNDED` at material
+commit `78cb38a8`.
 
 Previous continuity:
 
@@ -368,8 +384,10 @@ Diagnostic boundary:
 
 ## Next Allowed Move
 
-Commit/push the public-doc drift guard and external-agent guide hardening to
-the existing P1-P5 remediation branches, then stop for external review.
+Open a separate source-verified GC-018 for real external anchor
+provider/service selection and integration, continue parked DEP2 next-auth
+stable migration, ERH-RL1 distributed rate limiter, or QBS method reliability
+work.
 
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`; this MLW8-PEL1 tranche does not alter
@@ -384,8 +402,8 @@ Blocked without separate authorization and passing phase gates:
 - dependency changes;
 - distributed or production durability claim;
 - Redis implementation;
-- additional public-sync or public push beyond this authorized batch;
-- live/provider proof;
+- public-sync or public push;
+- live/provider proof outside the selected next work order;
 - prompt/context mutation;
 - policy relaxation or evidence reduction;
 - provider routing change;
