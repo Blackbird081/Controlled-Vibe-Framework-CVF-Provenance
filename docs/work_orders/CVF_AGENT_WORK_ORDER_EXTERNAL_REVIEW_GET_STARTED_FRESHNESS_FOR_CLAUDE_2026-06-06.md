@@ -81,6 +81,10 @@ Allowed scope:
   sync/claim work.
 - Produce a completion review under `docs/reviews/` with changed files,
   source evidence, gates run, and public export disposition.
+- Session continuity sync after reviewer closure may update only
+  `CVF_SESSION_MEMORY.md`, `CVF_SESSION/ACTIVE_SESSION_STATE.json`, and
+  `AGENT_HANDOFF_V16_2026-06-06.md` to record the closed mode and next allowed
+  move.
 
 Forbidden scope:
 
