@@ -2,7 +2,7 @@
  * @vitest-environment jsdom
  */
 import { describe, it, expect, beforeEach } from 'vitest';
-import { getRateLimiter } from './rate-limit';
+import { getRateLimitBackendStatus, getRateLimiter, resetRateLimitStoresForTest } from './rate-limit';
 import { NextRequest } from 'next/server';
 
 function makeRequest(ip = '1.2.3.4', headers: Record<string, string> = {}): NextRequest {
@@ -18,6 +18,8 @@ describe('rate-limit', () => {
 
     beforeEach(() => {
         process.env = { ...originalEnv };
+        delete process.env.CVF_RATE_LIMIT_STORE;
+        resetRateLimitStoresForTest();
     });
 
     it('allows requests within limit', () => {
@@ -123,5 +125,54 @@ describe('rate-limit', () => {
         expect(res.allowed).toBe(false);
         expect(res.retryAfterSeconds).toBeGreaterThanOrEqual(1);
         expect(res.retryAfterSeconds).toBeLessThanOrEqual(60);
+    });
+
+    it('reports process-local memory backend by default', () => {
+        const status = getRateLimitBackendStatus();
+
+        expect(status).toMatchObject({
+            schemaVersion: 'cvf.rateLimitBackend.v1',
+            configuredStore: 'memory',
+            activeStore: 'memory',
+            distributed: false,
+            configurationStatus: 'ACTIVE_MEMORY_PROCESS_LOCAL',
+            claimBoundary: 'process_local_memory_only_no_distributed_rate_limit_claim',
+        });
+    });
+
+    it('fails closed when redis backend is requested before adapter installation', () => {
+        process.env.CVF_RATE_LIMIT_STORE = 'redis';
+        process.env.CVF_RATE_LIMIT = '100';
+        const limiter = getRateLimiter();
+        const req = makeRequest('10.0.0.200');
+
+        const res = limiter.consume(req);
+
+        expect(res.allowed).toBe(false);
+        expect(res.retryAfterSeconds).toBe(60);
+        expect(res.backendStatus).toMatchObject({
+            configuredStore: 'redis',
+            activeStore: 'none',
+            distributed: false,
+            configurationStatus: 'BLOCKED_REDIS_ADAPTER_NOT_INSTALLED',
+            claimBoundary: 'redis_requested_but_no_adapter_installed_no_distributed_rate_limit_claim',
+        });
+    });
+
+    it('fails closed when an unsupported backend is configured', () => {
+        process.env.CVF_RATE_LIMIT_STORE = 'database';
+        const limiter = getRateLimiter();
+        const req = makeRequest('10.0.0.201');
+
+        const res = limiter.consume(req);
+
+        expect(res.allowed).toBe(false);
+        expect(res.backendStatus).toMatchObject({
+            configuredStore: 'database',
+            activeStore: 'none',
+            distributed: false,
+            configurationStatus: 'BLOCKED_UNSUPPORTED_STORE',
+            claimBoundary: 'unsupported_rate_limit_store_no_distributed_rate_limit_claim',
+        });
     });
 });
