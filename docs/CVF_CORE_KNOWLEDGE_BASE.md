@@ -481,9 +481,11 @@ reviews/      = review archives by module or scope
 Canonical owner:
 
 - `docs/reference/CVF_QUALITY_ASSESSMENT_STANDARD.md`
+- `governance/toolkit/05_OPERATION/CVF_GOVERNED_ARTIFACT_AUTHORING_GUARD.md`
 
 Quality claims must use the canonical rubric and governed evidence, not
-agent-private scoring notes.
+agent-private scoring notes. Trước mọi fresh `GC-018`, phải đọc active quality
+assessment; trước mọi fresh `GC-018`, phải đọc active quality assessment.
 
 ---
 

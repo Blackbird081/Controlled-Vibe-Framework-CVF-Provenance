@@ -34,15 +34,15 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`external_review_quick_orientation_skill_count_freshness_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=stop for review or open a separate source-verified Core KB pointer-ification work order using the GAP1 overlap map; parked checkpoint=none.
+Startup acknowledged: current mode=`external_review_gap1_core_kb_pointer_ification_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=stop for review or open the next separate source-verified external-review gap work order; parked checkpoint=none.
 
 ## Current Mode
 
-`external_review_quick_orientation_skill_count_freshness_closed_pass_bounded`
+`external_review_gap1_core_kb_pointer_ification_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `e42f2e1b`
-(External Review Quick Orientation skill-count side repair material commit;
-this dedicated handoff sync records continuity for the latest closure state).
+Current HEAD recorded for this handoff: `fb9e81c5`
+(External Review GAP1 Core KB pointer-ification material commit; this
+dedicated handoff sync records continuity for the latest closure state).
 
 ## Active Boundary
 
@@ -85,44 +85,43 @@ Only V16 should be treated as the active root handoff.
 - Repaired the Quick Orientation side finding in the same batch: stale `131
   active skills` wording was replaced with source-backed `62 active skills` at
   lines 65 and 109.
+- Closed External Review GAP1 Core KB pointer-ification at material commit
+  `fb9e81c5`; Core KB is now a 395-line pointer document with protected
+  sections XI/XII preserved and Rule 4 routed to Module Inventory ownership.
 
 ## Latest Continuity Note
 
-External Review GAP1 Core KB overlap map is `CLOSED_PASS_BOUNDED`.
+External Review GAP1 Core KB pointer-ification is `CLOSED_PASS_BOUNDED`.
 
 Private artifacts:
 
 - Work order:
-  `docs/work_orders/CVF_WO_EXTERNAL_REVIEW_GAP1_CORE_KB_OVERLAP_MAP_2026-06-06.md`
-- Audit:
-  `docs/audits/CVF_EXTERNAL_REVIEW_GAP1_CORE_KB_OVERLAP_MAP_2026-06-06.md`
+  `docs/work_orders/CVF_WO_GAP1_CORE_KB_POINTER_IFICATION_2026-06-06.md`
 - Completion:
-  `docs/reviews/CVF_EXTERNAL_REVIEW_GAP1_CORE_KB_OVERLAP_MAP_COMPLETION_2026-06-06.md`
-- Registry:
-  `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
-  and `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`
+  `docs/reviews/CVF_GAP1_CORE_KB_POINTER_IFICATION_COMPLETION_2026-06-06.md`
 
 Verification summary:
 
-- Material closure commit: `d9ded170`.
-- Pre-dispatch autorun gate: PASS on `ae6b64b6..HEAD`.
-- Pre-implementation autorun gate: PASS on `ae6b64b6..HEAD`.
+- Material closure commit: `fb9e81c5`.
+- Pre-dispatch autorun gate: PASS on `d6bc3553..HEAD` after in-scope work-order
+  structural repair.
+- Pre-implementation autorun gate: PASS on `d6bc3553..HEAD`.
 - Commit hook local governance chain: PASS.
-- Core KB overlap was mapped source-first; the Core KB was not rewritten.
-- Root `MODULE_INVENTORY.md` and `ARCHITECTURE_DIAGRAMS.md` owner path claims
-  were rejected and corrected to `docs/reference/CVF_MODULE_INVENTORY.md` and
-  `docs/reference/CVF_ARCHITECTURE_DIAGRAMS.md`.
-- Quick Orientation stale `131 active skills` wording was repaired in the
-  same-batch side freshness fix; both Quick Orientation occurrences now use
-  `62 active skills`.
+- Core KB reduced from 769 lines to 395 lines.
+- Stale `131 active skills` references were removed from Core KB.
+- Section XI and Section XII were verified unchanged from base.
+- Rule 4 now points version/folder/status updates to Section II plus
+  `docs/reference/CVF_MODULE_INVENTORY.md`.
 - Public Export Disposition: `DEFERRED_PRIVATE_ONLY`.
 
 Boundary:
 
-- Documentation-only overlap map and registry coverage. No Core KB rewrite,
-  runtime/source code, dependencies, public-sync/public push, live/provider
-  proof, hosted readiness, production readiness, public readiness, or
-  autonomous mutation was authorized or claimed.
+- Documentation-only Core KB maintainability update. No runtime/source code,
+  dependencies, public-sync/public push, live/provider proof, hosted readiness,
+  production readiness, public readiness, cost/performance/provider-quality
+  claim, memory reinjection, high-risk promotion implementation, Learning
+  Orchestrator runtime behavior, or autonomous mutation was authorized or
+  claimed.
 
 Previous continuity:
 
@@ -216,11 +215,9 @@ Diagnostic boundary:
 
 ## Next Allowed Move
 
-Stop for review or open a separate source-verified Core KB pointer-ification
-work order using
-`docs/audits/CVF_EXTERNAL_REVIEW_GAP1_CORE_KB_OVERLAP_MAP_2026-06-06.md`.
-Quick Orientation skill-count freshness is no longer a parked side candidate;
-broader count-drift guard hardening remains a separate optional lane.
+Stop for review or open the next separate source-verified external-review gap
+work order. Broader count-drift guard hardening remains a separate optional
+lane.
 
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`; this MLW8-PEL1 tranche does not alter
@@ -254,9 +251,9 @@ Blocked without separate authorization and passing phase gates:
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: rotate active handoff from V15 to V16 after
-V15 exceeded the governed hard line-count threshold during MLW8-PEL1 closure
-sync.
+Authorized guard-maintenance scope: update active session continuity after GAP1
+Core KB pointer-ification closure and restore Core KB governance marker pointers
+required by the hook chain.
 
 Protected paths:
 
@@ -265,13 +262,15 @@ Protected paths:
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V16_2026-06-06.md`
 - `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V15_2026-05-29.md`
+- `docs/CVF_CORE_KNOWLEDGE_BASE.md`
 
-Operator authorization: 2026-06-06 operator authorized Codex to complete the
-MLW8 proof/export/live tranche without further questions. Handoff rotation is
-required guard remediation inside the tranche closure scope.
+Operator authorization: 2026-06-06 operator authorized Codex to continue
+execution without further questions; session continuity and marker sync are
+required guard remediation inside the GAP1 pointer-ification closure scope.
 
-Rollback boundary: if this sync is wrong, restore only active-handoff pointers
-and V16/V15 placement. Do not revert unrelated operator or workspace changes.
+Rollback boundary: if this sync is wrong, restore only active-session pointers,
+V16 continuity text, and the minimal Core KB marker lines added by this sync.
+Do not revert unrelated operator or workspace changes.
 
 ## Claim Boundary
 
