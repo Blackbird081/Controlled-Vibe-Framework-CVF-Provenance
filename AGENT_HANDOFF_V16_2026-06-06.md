@@ -40,9 +40,9 @@ Startup acknowledged: current mode=`external_review_gap1_core_kb_pointer_ificati
 
 `external_review_gap1_core_kb_pointer_ification_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `a52d128e`
-(External Review GAP1 Core KB pointer-ification pre-push marker remediation
-parent; a dedicated handoff sync records continuity after this remediation).
+Current HEAD recorded for this handoff: `5477e572`
+(External Review GAP1 Core KB pointer-ification pre-push template-skill marker
+remediation parent; this dedicated handoff sync records continuity).
 
 ## Active Boundary
 
