@@ -355,6 +355,7 @@ or IDE integration claims.
 | [`docs/reference/CVF_MODULE_INVENTORY.md`](reference/CVF_MODULE_INVENTORY.md) | Version, module, folder, and owner inventory |
 | [`docs/CVF_ARCHITECTURE_DECISIONS.md`](CVF_ARCHITECTURE_DECISIONS.md) | ADR history |
 | [`EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/README.md`](../EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/README.md) | MCP Server usage guide |
+| [`governance/toolkit/05_OPERATION/CVF_KNOWLEDGE_ABSORPTION_PRIORITY_GUARD.md`](../governance/toolkit/05_OPERATION/CVF_KNOWLEDGE_ABSORPTION_PRIORITY_GUARD.md) | Doctrine-first / governance-first absorption |
 
 ---
 
