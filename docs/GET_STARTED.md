@@ -69,6 +69,28 @@ Mốc W113 đã chứng minh luồng project downstream thật đầu tiên vớ
 
 ---
 
+## 📖 10 Thuật Ngữ Cần Biết
+
+CVF dùng một số từ chuyên biệt trong tài liệu nội bộ và governance. Dưới đây là bản dịch nhanh dành cho người mới:
+
+| Thuật ngữ | Nghĩa đơn giản |
+| --- | --- |
+| **Guard** | Kiểm soát tự động — một rule được máy enforce, không phải người nhắc nhở |
+| **Tranche** | Đợt triển khai nhỏ, có phạm vi rõ ràng — tương đương "sprint" hoặc "PR" trong dự án thường |
+| **Wave** | Nhóm nhiều tranche liên quan, cùng mục tiêu lớn (ví dụ: Wave memory, Wave provider) |
+| **Closure** | Trạng thái "đã đóng và xác nhận" — một tranche có đủ bằng chứng, không cần làm lại |
+| **Receipt** | Bằng chứng thực thi — file ghi lại AI đã làm gì, kết quả gì, ai phê duyệt |
+| **GC-xxx** | Governance Control số xxx — một rule cụ thể trong hệ thống kiểm soát CVF (ví dụ: GC-023 giới hạn kích thước file) |
+| **Packet** | Bộ tài liệu gắn kết nhau: baseline + work order + completion review |
+| **Lane** | Nhánh công việc song song — ví dụ Lane D (provider), Lane F (UX noncoder) |
+| **Handoff** | File bàn giao giữa các phiên làm việc của agent — giống như "context brief" |
+| **Phase gate** | Điểm kiểm tra bắt buộc trước khi chuyển sang giai đoạn tiếp theo |
+
+> Các thuật ngữ này được dùng chính xác và nhất quán trong tài liệu nội bộ CVF.
+> Đây chỉ là bản dịch tham khảo nhanh — không dùng trong governance artifacts.
+
+---
+
 ## 🚦 Bạn Là Ai?
 
 Chọn đường đi phù hợp với bạn:
@@ -241,7 +263,7 @@ npm run dev
 3. **Tools:**
    - Web UI: Templates & Skills
    - Governance Toolkit: Phase gates, risk control
-   - Skill Library: **141** reusable skills (12 domains)
+   - Skill Library: **62** active skills across 12 domains (see [README](../EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS/README.md) for current count)
 
 ### Step 3: First Team Project (5 phút)
 
@@ -392,7 +414,7 @@ git push origin feature/your-feature-name
 ### Path 3: Deep Dives (ongoing)
 
 - [Governance Toolkit](../governance/toolkit/) - Comprehensive
-- [Skill Library](../EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS/) - 124 skills
+- [Skill Library](../EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS/) - 62 active skills
 - [Version History](concepts/version-evolution.md) - Evolution
 - [Architecture](reference/CVF_ARCHITECTURE_DIAGRAMS.md) - Technical specs
 
@@ -476,4 +498,4 @@ After getting started, here are recommended next steps:
 
 ---
 
-*Last updated: March 20, 2026 · Version: 1.6.0 + canonical runtime alignment active*
+*Last updated: June 2026 · Version: 4.0.0 GA — see [CHANGELOG](../CHANGELOG.md) for full release history*

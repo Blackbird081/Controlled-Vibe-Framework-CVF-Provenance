@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: READY_FOR_CLAUDE_HANDOFF
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -10,7 +10,9 @@ Date: 2026-06-06
 
 dispatchBaseHead: `c55697ac`
 
-closureBaseHead: `c55697ac`
+closureBaseHead: `c8a13184`
+
+executionBaseHead: `c8a13184`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -244,6 +246,19 @@ Return to reviewer if any of the following occurs:
 | Required gates run | command output or explicit reviewer rerun evidence |
 | Worktree/commit boundary clear | Claude returns without committing; reviewer records final commit if accepted |
 | Session sync disposition recorded | reviewer decides whether active session state/handoff sync is required |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_EXTERNAL_REVIEW_GET_STARTED_FRESHNESS_FOR_CLAUDE_2026-06-06.md` | `Status: CLOSED_PASS_BOUNDED`; `executionBaseHead: c8a13184`; reviewer-owned closure commit required | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_EXTERNAL_REVIEW_GET_STARTED_FRESHNESS_COMPLETION_2026-06-06.md` | completion review records changed files, source evidence, gate evidence, public export disposition, and claim boundary | PASS |
+| Roadmap state | `N/A with reason` | Audit-derived GAP 3 work order; no roadmap row was opened or changed | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no corpus scan, classification, readiness, or search/filter registry state changed in this documentation-only packet | BLOCKED with reason: out of scope for this documentation freshness repair |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no corpus scan, classification, readiness, or search/filter registry state changed in this documentation-only packet | BLOCKED with reason: out of scope for this documentation freshness repair |
+| External evidence digest | `docs/audits/CVF_EXTERNAL_REVIEW_GAP_ANALYSIS_AND_PROPOSED_SOLUTIONS_2026-06-05.md` | repo-local audit packet is tracked; no external/local filesystem evidence is used as canonical source | PASS |
+| System loop interlock | `N/A with reason` | Documentation freshness repair only; no runtime route, loop, learning, or mutation interlock changed | N/A with reason |
+| Session continuity | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `AGENT_HANDOFF_V16_2026-06-06.md` | reviewer-owned session sync required after material closure commit if next allowed move changes | PASS |
 
 ## Return-To-Orchestrator Conditions
 
