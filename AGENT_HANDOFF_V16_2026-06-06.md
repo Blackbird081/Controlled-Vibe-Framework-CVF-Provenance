@@ -42,9 +42,9 @@ Startup acknowledged: current mode=`public_doc_drift_external_review_guide_harde
 
 `public_doc_drift_external_review_guide_hardening_ready_for_review`
 
-Current HEAD recorded for this handoff sync parent: `eb058300`
-(P1-P5 small-debt remediation material commit; this sync commit updates
-continuity only).
+Current HEAD recorded for this handoff: `9113f2a0`
+(public-doc drift guard and external-agent review guide hardening material
+commit; next sync commit updates continuity only).
 
 ## Active Boundary
 
