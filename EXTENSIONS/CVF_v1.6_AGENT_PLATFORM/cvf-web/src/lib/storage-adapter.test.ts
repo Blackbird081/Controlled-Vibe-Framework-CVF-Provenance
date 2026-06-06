@@ -16,6 +16,8 @@ import { mkdir, rm, writeFile } from 'node:fs/promises';
 import {
   FileEventListAdapter,
   FileKeyValueAdapter,
+  SQLiteEventListAdapter,
+  SQLiteKeyValueAdapter,
   RedisEventListAdapter,
   RedisKeyValueAdapter,
   buildEventListAdapter,
@@ -163,6 +165,72 @@ describe('FileKeyValueAdapter', () => {
   });
 });
 
+// ─── SQLiteEventListAdapter ───────────────────────────────────────────────────
+
+describe('SQLiteEventListAdapter', () => {
+  let tmpDir: string;
+  let storeKey: string;
+  let adapter: SQLiteEventListAdapter<{ id: string; val: number }>;
+
+  beforeEach(async () => {
+    tmpDir = await makeTmpDir();
+    storeKey = path.join(tmpDir, 'events.sqlite');
+    adapter = new SQLiteEventListAdapter();
+  });
+
+  afterEach(async () => {
+    await rm(tmpDir, { recursive: true, force: true });
+  });
+
+  it('has adapterType "sqlite"', () => {
+    expect(adapter.adapterType).toBe('sqlite');
+  });
+
+  it('writeAll persists ordered items and readAll retrieves them', async () => {
+    const items = [{ id: 'a', val: 1 }, { id: 'b', val: 2 }];
+    await adapter.writeAll(storeKey, items);
+    await adapter.writeAll(storeKey, [...items, { id: 'c', val: 3 }]);
+    const result = await adapter.readAll(storeKey);
+    expect(result).toEqual([...items, { id: 'c', val: 3 }]);
+  });
+
+  it('writeRaw accepts a JSON array for compatibility callers', async () => {
+    await adapter.writeRaw(storeKey, JSON.stringify([{ id: 'raw', val: 4 }]));
+    const result = await adapter.readAll(storeKey);
+    expect(result).toEqual([{ id: 'raw', val: 4 }]);
+  });
+});
+
+// ─── SQLiteKeyValueAdapter ────────────────────────────────────────────────────
+
+describe('SQLiteKeyValueAdapter', () => {
+  let tmpDir: string;
+  let adapter: SQLiteKeyValueAdapter<{ id: string; label: string }>;
+
+  beforeEach(async () => {
+    tmpDir = await makeTmpDir();
+    adapter = new SQLiteKeyValueAdapter();
+  });
+
+  afterEach(async () => {
+    await rm(tmpDir, { recursive: true, force: true });
+  });
+
+  it('has adapterType "sqlite"', () => {
+    expect(adapter.adapterType).toBe('sqlite');
+  });
+
+  it('write and read round-trip by ID', async () => {
+    await adapter.write(tmpDir, 'snap-001', { id: 'snap-001', label: 'sqlite' });
+    const result = await adapter.read(tmpDir, 'snap-001');
+    expect(result).toEqual({ id: 'snap-001', label: 'sqlite' });
+  });
+
+  it('read returns null for non-existent ID', async () => {
+    expect(await adapter.read(tmpDir, 'missing')).toBeNull();
+  });
+});
+
 // ─── RedisEventListAdapter stub ───────────────────────────────────────────────
 
 describe('RedisEventListAdapter stub', () => {
@@ -253,10 +321,16 @@ describe('buildEventListAdapter factory', () => {
     expect(adapter).toBeInstanceOf(RedisEventListAdapter);
   });
 
+  it('returns SQLiteEventListAdapter for type "sqlite"', () => {
+    const adapter = buildEventListAdapter('sqlite');
+    expect(adapter.adapterType).toBe('sqlite');
+    expect(adapter).toBeInstanceOf(SQLiteEventListAdapter);
+  });
+
   it('reads CVF_STORAGE_ADAPTER_TYPE env to select adapter', () => {
-    process.env.CVF_STORAGE_ADAPTER_TYPE = 'redis';
+    process.env.CVF_STORAGE_ADAPTER_TYPE = 'sqlite';
     const adapter = buildEventListAdapter();
-    expect(adapter.adapterType).toBe('redis');
+    expect(adapter.adapterType).toBe('sqlite');
   });
 
   it('throws CVF_CONFIGURATION_ERROR for unknown type', () => {
@@ -303,6 +377,12 @@ describe('buildKeyValueAdapter factory', () => {
     const adapter = buildKeyValueAdapter('redis');
     expect(adapter.adapterType).toBe('redis');
     expect(adapter).toBeInstanceOf(RedisKeyValueAdapter);
+  });
+
+  it('returns SQLiteKeyValueAdapter for type "sqlite"', () => {
+    const adapter = buildKeyValueAdapter('sqlite');
+    expect(adapter.adapterType).toBe('sqlite');
+    expect(adapter).toBeInstanceOf(SQLiteKeyValueAdapter);
   });
 
   it('reads CVF_STORAGE_ADAPTER_TYPE env to select adapter', () => {

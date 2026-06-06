@@ -34,6 +34,8 @@ backend pluggable:
 - `KeyValueAdapter<T>` — interface for key-value stores (snapshot registry).
 - `FileEventListAdapter` / `FileKeyValueAdapter` — wrap DUR1 file I/O with
   zero behavior change; default when `CVF_STORAGE_ADAPTER_TYPE` is unset.
+- `SQLiteEventListAdapter` / `SQLiteKeyValueAdapter` — local SQLite backend
+  selected only by `CVF_STORAGE_ADAPTER_TYPE=sqlite`.
 - `RedisEventListAdapter` / `RedisKeyValueAdapter` — stub classes that throw
   `CVF_NOT_IMPLEMENTED`; reserved for a future DUR3 Redis backend.
 - `buildEventListAdapter()` / `buildKeyValueAdapter()` — factory functions
@@ -44,19 +46,20 @@ backend pluggable:
 `ERH_DUR2_DECISION: DUR3_NOT_NEEDED_NOW`
 
 DUR3 (multi-instance consensus, live Redis, distributed audit stream) is
-deferred. The Redis stubs are present to confirm the interface is extensible,
-but no live Redis connection, connection pooling, migration script, or
+deferred. The Redis stubs are present to confirm the interface is extensible.
+The SQLite backend added on 2026-06-06 is a local durable backend only; no live
+Redis connection, connection pooling, migration script, external service, or
 distributed durability is provided or claimed.
 
 ## Components
 
 | Component | Role |
 |-----------|------|
-| `storage-adapter.ts` | Interface definitions, File/Redis implementations, factories |
+| `storage-adapter.ts` | Interface definitions, File/SQLite/Redis implementations, factories |
 | `control-plane-events.ts` | Uses `buildEventListAdapter<ControlPlaneEvent>()` |
 | `policy-snapshot-registry.ts` | Uses `buildKeyValueAdapter<PolicySnapshotRecord>()` |
-| `storage-adapter.test.ts` | 35 focused Vitest tests covering all adapter classes and factories |
-| `check_erh_external_storage_adapter.py` | 18-point machine checker |
+| `storage-adapter.test.ts` | focused Vitest tests covering all adapter classes and factories |
+| `check_erh_external_storage_adapter.py` | machine checker including SQLite selector coverage |
 | `test_check_erh_external_storage_adapter.py` | Unit tests for checker |
 
 ## Markers
@@ -70,14 +73,14 @@ distributed durability is provided or claimed.
 
 | Variable | Default | Purpose |
 |----------|---------|---------|
-| `CVF_STORAGE_ADAPTER_TYPE` | `file` | Selects adapter backend: `file` or `redis` (stub) |
+| `CVF_STORAGE_ADAPTER_TYPE` | `file` | Selects adapter backend: `file`, `sqlite`, or `redis` (stub) |
 
 ## Verification
 
 | Check | Result |
 |-------|--------|
 | TypeScript check (`npm run check`) | PASS |
-| `storage-adapter.test.ts` (35 tests) | PASS |
+| `storage-adapter.test.ts` (SQLite addendum tests) | PASS after 2026-06-06 rerun |
 | DUR1 regression tests (37 tests) | PASS |
 | `check_erh_external_storage_adapter.py --enforce` | COMPLIANT |
 | `test_check_erh_external_storage_adapter.py` | PASS |
@@ -93,6 +96,8 @@ Registry: `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json`
 This workflow chain proves:
 - Pluggable storage adapter interface is defined and wired into `control-plane-events.ts` and `policy-snapshot-registry.ts`.
 - `FileEventListAdapter` and `FileKeyValueAdapter` preserve DUR1 file-backed behavior with zero behavioral change.
+- `SQLiteEventListAdapter` and `SQLiteKeyValueAdapter` provide a local durable
+  backend when `CVF_STORAGE_ADAPTER_TYPE=sqlite`.
 - `RedisEventListAdapter` and `RedisKeyValueAdapter` stubs throw `CVF_NOT_IMPLEMENTED`.
 - `buildEventListAdapter()` and `buildKeyValueAdapter()` factories route correctly based on `CVF_STORAGE_ADAPTER_TYPE`.
 - Machine checker (`check_erh_external_storage_adapter.py`) enforces 18 structural checks.

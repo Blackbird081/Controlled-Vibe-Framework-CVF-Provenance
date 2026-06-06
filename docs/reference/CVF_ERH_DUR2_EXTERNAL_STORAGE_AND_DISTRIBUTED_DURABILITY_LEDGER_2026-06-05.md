@@ -33,6 +33,23 @@ and claim boundary.
 Records evidence of DUR2 implementation steps, file sizes, test results, and
 gate outcomes for audit reconstructability.
 
+## 2026-06-06 SQLite Addendum
+
+Operator authorized GAP 5A/B follow-up work on 2026-06-06. The bounded GAP5B
+change keeps the DUR2 adapter contract and default `file` behavior intact while
+adding:
+
+- `SQLiteEventListAdapter`
+- `SQLiteKeyValueAdapter`
+- `CVF_STORAGE_ADAPTER_TYPE=sqlite` selector
+- focused SQLite round-trip tests
+- machine-check coverage for SQLite classes and selector
+
+Claim boundary: local SQLite backend only. This addendum does not claim
+production database readiness, external storage service, distributed durability,
+multi-instance consensus, tamper-proof audit, hosted readiness, or public
+readiness.
+
 ## Implementation Steps
 
 | Step | Artifact | Action | Notes |

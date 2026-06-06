@@ -326,7 +326,7 @@
       "downstreamPlane": "GOVERNANCE_CONTROL_PLANE",
       "inputArtifact": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/storage-adapter.ts",
       "outputArtifact": "docs/reference/CVF_ERH_DUR2_EXTERNAL_STORAGE_AND_DISTRIBUTED_DURABILITY_WORKFLOW_CHAIN_2026-06-05.md",
-      "outputSignal": "DUR2 pluggable StorageAdapter interface active; FileEventListAdapter and FileKeyValueAdapter wrap DUR1 file I/O; RedisEventListAdapter and RedisKeyValueAdapter stubs throw CVF_NOT_IMPLEMENTED; buildEventListAdapter and buildKeyValueAdapter factories route via CVF_STORAGE_ADAPTER_TYPE.",
+      "outputSignal": "DUR2 pluggable StorageAdapter interface active; FileEventListAdapter and FileKeyValueAdapter wrap DUR1 file I/O; SQLiteEventListAdapter and SQLiteKeyValueAdapter provide local SQLite backend via CVF_STORAGE_ADAPTER_TYPE=sqlite; RedisEventListAdapter and RedisKeyValueAdapter stubs throw CVF_NOT_IMPLEMENTED; buildEventListAdapter and buildKeyValueAdapter factories route via CVF_STORAGE_ADAPTER_TYPE.",
       "signalContract": "docs/reference/CVF_ERH_DUR2_EXTERNAL_STORAGE_AND_DISTRIBUTED_DURABILITY_WORKFLOW_CHAIN_2026-06-05.md",
       "routingRule": "DUR2 must verify ERH_DUR2_MARKER in storage-adapter.ts, control-plane-events.ts, and policy-snapshot-registry.ts, and both files must import from storage-adapter before any downstream DUR3 or distributed consensus work is dispatched.",
       "evidenceRefs": [

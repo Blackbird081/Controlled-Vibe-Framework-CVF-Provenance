@@ -9,18 +9,21 @@ Verifies that the DUR2 pluggable storage adapter workflow chain is correctly wir
   4. storage-adapter.ts exports KeyValueAdapter interface.
   5. storage-adapter.ts contains FileEventListAdapter class.
   6. storage-adapter.ts contains FileKeyValueAdapter class.
-  7. storage-adapter.ts contains RedisEventListAdapter stub with CVF_NOT_IMPLEMENTED.
-  8. storage-adapter.ts contains RedisKeyValueAdapter stub with CVF_NOT_IMPLEMENTED.
-  9. storage-adapter.ts exports buildEventListAdapter factory.
-  10. storage-adapter.ts exports buildKeyValueAdapter factory.
-  11. storage-adapter.ts references CVF_STORAGE_ADAPTER_TYPE env variable.
-  12. control-plane-events.ts imports from storage-adapter.
-  13. control-plane-events.ts retains ERH_DUR2_MARKER.
-  14. policy-snapshot-registry.ts imports from storage-adapter.
-  15. policy-snapshot-registry.ts retains ERH_DUR2_MARKER.
-  16. storage-adapter.test.ts exists with ERH_DUR2_MARKER.
-  17. DUR2 workflow-chain reference doc exists with ERH_DUR2_DECISION marker.
-  18. DUR2 ledger doc exists with ERH_DUR2_LEDGER_VERSION marker.
+  7. storage-adapter.ts contains SQLiteEventListAdapter class.
+  8. storage-adapter.ts contains SQLiteKeyValueAdapter class.
+  9. storage-adapter.ts contains RedisEventListAdapter stub with CVF_NOT_IMPLEMENTED.
+  10. storage-adapter.ts contains RedisKeyValueAdapter stub with CVF_NOT_IMPLEMENTED.
+  11. storage-adapter.ts exports buildEventListAdapter factory.
+  12. storage-adapter.ts exports buildKeyValueAdapter factory.
+  13. storage-adapter.ts references CVF_STORAGE_ADAPTER_TYPE env variable.
+  14. storage-adapter.ts supports the sqlite selector.
+  15. control-plane-events.ts imports from storage-adapter.
+  16. control-plane-events.ts retains ERH_DUR2_MARKER.
+  17. policy-snapshot-registry.ts imports from storage-adapter.
+  18. policy-snapshot-registry.ts retains ERH_DUR2_MARKER.
+  19. storage-adapter.test.ts exists with ERH_DUR2_MARKER.
+  20. DUR2 workflow-chain reference doc exists with ERH_DUR2_DECISION marker.
+  21. DUR2 ledger doc exists with ERH_DUR2_LEDGER_VERSION marker.
 
 ERH_DUR2_CHECKER_VERSION: 2026-06-05
 """
@@ -47,12 +50,15 @@ EVENT_LIST_ADAPTER_IFACE = re.compile(r"export\s+interface\s+EventListAdapter\b"
 KEY_VALUE_ADAPTER_IFACE = re.compile(r"export\s+interface\s+KeyValueAdapter\b", re.MULTILINE)
 FILE_EVENT_LIST_CLASS = re.compile(r"class\s+FileEventListAdapter\b", re.MULTILINE)
 FILE_KEY_VALUE_CLASS = re.compile(r"class\s+FileKeyValueAdapter\b", re.MULTILINE)
+SQLITE_EVENT_LIST_CLASS = re.compile(r"class\s+SQLiteEventListAdapter\b", re.MULTILINE)
+SQLITE_KEY_VALUE_CLASS = re.compile(r"class\s+SQLiteKeyValueAdapter\b", re.MULTILINE)
 REDIS_EVENT_LIST_CLASS = re.compile(r"class\s+RedisEventListAdapter\b", re.MULTILINE)
 REDIS_KEY_VALUE_CLASS = re.compile(r"class\s+RedisKeyValueAdapter\b", re.MULTILINE)
 CVF_NOT_IMPLEMENTED_REF = re.compile(r"CVF_NOT_IMPLEMENTED", re.MULTILINE)
 BUILD_EVENT_LIST_ADAPTER = re.compile(r"export\s+function\s+buildEventListAdapter\s*[<(]", re.MULTILINE)
 BUILD_KEY_VALUE_ADAPTER = re.compile(r"export\s+function\s+buildKeyValueAdapter\s*[<(]", re.MULTILINE)
 STORAGE_ADAPTER_TYPE_ENV = re.compile(r"CVF_STORAGE_ADAPTER_TYPE", re.MULTILINE)
+SQLITE_SELECTOR = re.compile(r"resolved\s*===\s*['\"]sqlite['\"]", re.MULTILINE)
 IMPORT_STORAGE_ADAPTER = re.compile(r"from\s+['\"]@/lib/storage-adapter['\"]", re.MULTILINE)
 DUR2_WORKFLOW_DECISION = re.compile(r"ERH_DUR2_DECISION\s*:", re.IGNORECASE)
 DUR2_LEDGER_VERSION = re.compile(r"ERH_DUR2_LEDGER_VERSION\s*:", re.IGNORECASE)
@@ -97,6 +103,16 @@ def _check_storage_adapter(violations: list[str]) -> None:
             f"storage-adapter.ts missing FileKeyValueAdapter class: {STORAGE_ADAPTER_TS.relative_to(REPO_ROOT)}"
         )
 
+    if not SQLITE_EVENT_LIST_CLASS.search(sa_text):
+        violations.append(
+            f"storage-adapter.ts missing SQLiteEventListAdapter class: {STORAGE_ADAPTER_TS.relative_to(REPO_ROOT)}"
+        )
+
+    if not SQLITE_KEY_VALUE_CLASS.search(sa_text):
+        violations.append(
+            f"storage-adapter.ts missing SQLiteKeyValueAdapter class: {STORAGE_ADAPTER_TS.relative_to(REPO_ROOT)}"
+        )
+
     if not REDIS_EVENT_LIST_CLASS.search(sa_text):
         violations.append(
             f"storage-adapter.ts missing RedisEventListAdapter stub: {STORAGE_ADAPTER_TS.relative_to(REPO_ROOT)}"
@@ -125,6 +141,11 @@ def _check_storage_adapter(violations: list[str]) -> None:
     if not STORAGE_ADAPTER_TYPE_ENV.search(sa_text):
         violations.append(
             f"storage-adapter.ts missing CVF_STORAGE_ADAPTER_TYPE env reference: {STORAGE_ADAPTER_TS.relative_to(REPO_ROOT)}"
+        )
+
+    if not SQLITE_SELECTOR.search(sa_text):
+        violations.append(
+            f"storage-adapter.ts missing sqlite CVF_STORAGE_ADAPTER_TYPE selector: {STORAGE_ADAPTER_TS.relative_to(REPO_ROOT)}"
         )
 
 

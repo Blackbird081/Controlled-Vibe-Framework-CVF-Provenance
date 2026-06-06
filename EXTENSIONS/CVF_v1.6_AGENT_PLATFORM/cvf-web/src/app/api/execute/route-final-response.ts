@@ -234,6 +234,34 @@ export async function buildExecuteFinalResponse(params: BuildExecuteFinalRespons
         responseSuccess: aiResult.success,
     });
 
+    await appendAuditEvent({
+        eventType: 'OPERATIONAL_BENCHMARK_METRIC_EMITTED',
+        actorId,
+        actorRole,
+        targetResource: request.templateName || request.templateId || 'unknown-template',
+        action: 'EMIT_RUNTIME_RECEIPT_COUNT',
+        riskLevel: request.cvfRiskLevel ?? enforcement.riskGate?.riskLevel ?? 'R1',
+        phase: request.cvfPhase ?? 'REVIEW',
+        outcome: aiResult.success ? 'COMPLETED' : 'FAILED',
+        payload: withSessionAuditPayload(session, {
+            metricId: 'runtime_receipt_count',
+            kind: 'receipt_count',
+            emittedAtPoint: 'review',
+            value: 1,
+            numerator: 1,
+            denominator: 1,
+            receiptLinked: true,
+            liveEmissionWired: true,
+            governanceReceiptId: governanceEvidenceReceipt.receiptId,
+            envelopeId: governanceEvidenceReceipt.envelopeId,
+            policySnapshotId: governanceEvidenceReceipt.policySnapshotId,
+            routeId: governanceEvidenceReceipt.routeId,
+            provider: routedProvider,
+            model,
+            claimBoundary: 'single_metric_live_emission_only_no_full_operational_benchmark_claim',
+        }),
+    });
+
     const { auditMemoryReceipt, auditEventPayload } = buildRouteAuditMemoryCapture({
         governanceReceiptId: governanceEvidenceReceipt.receiptId,
         actorId,

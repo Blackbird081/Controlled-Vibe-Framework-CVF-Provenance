@@ -19,6 +19,8 @@ Target:
 
 - active startup routing;
 - latest mode and next allowed move;
+- external review GAP4 governance-rule audit and GAP5 runtime durability
+  closure;
 - external review GAP1 Core KB overlap-map closure;
 - external review GET_STARTED freshness closure;
 - bounded closure state for LE1 after MLW8-PEL1;
@@ -34,15 +36,15 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`external_review_gap1_core_kb_pointer_ification_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=stop for review or open the next separate source-verified external-review gap work order; parked checkpoint=none.
+Startup acknowledged: current mode=`external_review_gap4_gap5_runtime_durability_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=stop for review or open the next separate source-verified external-review gap/public-sync work order; parked checkpoint=none.
 
 ## Current Mode
 
-`external_review_gap1_core_kb_pointer_ification_closed_pass_bounded`
+`external_review_gap4_gap5_runtime_durability_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `e0521415`
-(External Review GAP1 Core KB pointer-ification pre-push guard-registry marker
-remediation parent; this dedicated handoff sync records continuity).
+Current HEAD recorded for this handoff sync parent: `7edaafd6`
+(External Review GAP4/GAP5 runtime durability execution base; this handoff sync
+records continuity for the closure batch).
 
 ## Active Boundary
 
@@ -88,8 +90,49 @@ Only V16 should be treated as the active root handoff.
 - Closed External Review GAP1 Core KB pointer-ification at material commit
   `fb9e81c5`; Core KB is now a 400-line pointer document with protected
   sections XI/XII preserved and Rule 4 routed to Module Inventory ownership.
+- Closed External Review GAP4/GAP5 runtime durability tranche: governance-rule
+  proof-of-value audit keeps rules with consolidation candidates only, GAP5A
+  wires only `runtime_receipt_count` as `liveEmissionWired=true`, and GAP5B adds
+  local SQLite storage adapters behind `CVF_STORAGE_ADAPTER_TYPE=sqlite`.
 
 ## Latest Continuity Note
+
+External Review GAP4/GAP5 runtime durability tranche is
+`CLOSED_PASS_BOUNDED`.
+
+Private artifacts:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_EXTERNAL_REVIEW_GAP4_GAP5_RUNTIME_DURABILITY_2026-06-06.md`
+- Audit:
+  `docs/audits/CVF_GOVERNANCE_RULE_PROOF_OF_VALUE_AUDIT_2026-06-06.md`
+- Completion:
+  `docs/reviews/CVF_EXTERNAL_REVIEW_GAP4_GAP5_RUNTIME_DURABILITY_COMPLETION_2026-06-06.md`
+
+Verification summary:
+
+- Execution base: `7edaafd6`.
+- Pre-implementation autorun gate: PASS on `7edaafd6..HEAD`.
+- Focused web tests: PASS, 77 tests.
+- Guard-contract focused test: PASS, 7 tests.
+- Web TypeScript check: PASS.
+- Guard-contract TypeScript check: PASS.
+- DUR2 checker: PASS.
+- DUR2 checker tests: PASS, 19 tests.
+- Pre-closure dry run before commit: all content gates PASS; only expected
+  uncommitted range/worktree finality blockers remained.
+- Public Export Disposition: `DEFERRED_PRIVATE_ONLY`.
+
+Boundary:
+
+- No governance-rule retirement, full operational benchmark telemetry claim,
+  distributed or production durability claim, Redis implementation, public-sync,
+  live/provider proof claim, hosted readiness, production readiness, public
+  readiness, cost/performance/provider-quality claim, memory reinjection,
+  high-risk promotion implementation, Learning Orchestrator runtime behavior, or
+  autonomous mutation was authorized or claimed.
+
+Previous continuity:
 
 External Review GAP1 Core KB pointer-ification is `CLOSED_PASS_BOUNDED`.
 
@@ -103,25 +146,8 @@ Private artifacts:
 Verification summary:
 
 - Material closure commit: `fb9e81c5`.
-- Pre-dispatch autorun gate: PASS on `d6bc3553..HEAD` after in-scope work-order
-  structural repair.
-- Pre-implementation autorun gate: PASS on `d6bc3553..HEAD`.
-- Commit hook local governance chain: PASS.
 - Core KB reduced from 769 lines to 400 lines.
-- Stale `131 active skills` references were removed from Core KB.
-- Section XI and Section XII were verified unchanged from base.
-- Rule 4 now points version/folder/status updates to Section II plus
-  `docs/reference/CVF_MODULE_INVENTORY.md`.
 - Public Export Disposition: `DEFERRED_PRIVATE_ONLY`.
-
-Boundary:
-
-- Documentation-only Core KB maintainability update. No runtime/source code,
-  dependencies, public-sync/public push, live/provider proof, hosted readiness,
-  production readiness, public readiness, cost/performance/provider-quality
-  claim, memory reinjection, high-risk promotion implementation, Learning
-  Orchestrator runtime behavior, or autonomous mutation was authorized or
-  claimed.
 
 Previous continuity:
 
@@ -216,8 +242,7 @@ Diagnostic boundary:
 ## Next Allowed Move
 
 Stop for review or open the next separate source-verified external-review gap
-work order. Broader count-drift guard hardening remains a separate optional
-lane.
+or public-sync work order.
 
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`; this MLW8-PEL1 tranche does not alter
@@ -226,9 +251,12 @@ the LHW sequence.
 Blocked without separate authorization and passing phase gates:
 
 - automatic optimization;
-- runtime/source code changes;
+- governance-rule retirement;
+- full operational benchmark telemetry claim;
+- runtime/source code changes beyond a fresh authorized work order;
 - dependency changes;
-- durable persistence work;
+- distributed or production durability claim;
+- Redis implementation;
 - public-sync or public push;
 - live/provider proof;
 - prompt/context mutation;
@@ -251,9 +279,9 @@ Blocked without separate authorization and passing phase gates:
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: update active session continuity after GAP1
-Core KB pointer-ification closure and restore Core KB governance marker pointers
-required by the hook chain.
+Authorized guard-maintenance scope: update active session continuity after
+External Review GAP4/GAP5 runtime durability closure and keep prior GAP1
+continuity reachable from the active front door.
 
 Protected paths:
 
@@ -261,16 +289,13 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V16_2026-06-06.md`
-- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V15_2026-05-29.md`
-- `docs/CVF_CORE_KNOWLEDGE_BASE.md`
 
 Operator authorization: 2026-06-06 operator authorized Codex to continue
 execution without further questions; session continuity and marker sync are
-required guard remediation inside the GAP1 pointer-ification closure scope.
+required guard remediation inside the GAP4/GAP5 closure scope.
 
 Rollback boundary: if this sync is wrong, restore only active-session pointers,
-V16 continuity text, and the minimal Core KB marker lines added by this sync.
-Do not revert unrelated operator or workspace changes.
+and V16 continuity text. Do not revert unrelated operator or workspace changes.
 
 ## Claim Boundary
 

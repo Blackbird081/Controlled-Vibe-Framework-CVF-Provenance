@@ -4,7 +4,7 @@
   "guard": "governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md",
   "checker": "governance/compat/check_corpus_scan_registry.py",
   "lastUpdated": "2026-06-06",
-  "updatedBy": "External Review GAP1 Core KB overlap map",
+  "updatedBy": "External Review GAP4 GAP5 runtime durability closure",
   "allowedCorpusTypes": [
     "LEGACY_FOLDER",
     "PROJECT_SOURCE",
@@ -1385,6 +1385,52 @@
         "public extension readiness claim (not made)"
       ],
       "nextScanRecommendation": "No deep extension scan required for GAP1; reopen only if pointer-ification needs module-level semantic validation."
+    },
+    {
+      "id": "external-review-gap5-guard-contract-runtime-workflow",
+      "corpusType": "PROJECT_SOURCE",
+      "displayName": "External Review GAP5 Guard Contract runtime workflow source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/runtime-workflow.contract.ts",
+        "EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/contracts.phaseD-runtime-workflow.test.ts"
+      ],
+      "fileCount": 2,
+      "status": "SCANNED",
+      "scanWave": "ER-GAP5",
+      "scanDate": "2026-06-06",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/baselines/CVF_GC018_EXTERNAL_REVIEW_GAP4_GAP5_RUNTIME_DURABILITY_2026-06-06.md",
+      "completionReviewPath": "docs/reviews/CVF_EXTERNAL_REVIEW_GAP4_GAP5_RUNTIME_DURABILITY_COMPLETION_2026-06-06.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_EXTERNAL_REVIEW_GAP4_GAP5_RUNTIME_DURABILITY_2026-06-06.md",
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "RECONCILED_WITH_DECLARED_GAPS",
+        "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+      },
+      "semanticRegions": [
+        "RUNTIME_WORKFLOW_CONTRACT",
+        "OPERATIONAL_BENCHMARK_EXTENSION",
+        "LIVE_EMISSION_BOUNDARY"
+      ],
+      "priorAbsorption": "GAP5 uses these Guard Contract files only to source-verify the liveEmissionWired field and bounded runtime_receipt_count metric wiring.",
+      "findings": [
+        {
+          "id": "ER-GAP5-F1-live-emission-boundary",
+          "summary": "runtime_receipt_count is the only metric promoted to liveEmissionWired=true; this is not a full operational benchmark telemetry claim.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Open a separate source-verified work order before wiring additional metrics.",
+          "defectClass": "RUNTIME_SIGNAL_GAP",
+          "learningLane": "RUNTIME_BEHAVIOR_LEARNING",
+          "f2gRef": "docs/reviews/CVF_EXTERNAL_REVIEW_GAP4_GAP5_RUNTIME_DURABILITY_COMPLETION_2026-06-06.md#finding-to-governance-learning-disposition"
+        }
+      ],
+      "negativeSearchTerms": [
+        "full operational benchmark telemetry claim (not made)",
+        "additional metric live emission (not authorized)",
+        "production benchmark readiness claim (not made)"
+      ],
+      "nextScanRecommendation": "Register additional Guard Contract source files only when a future GAP/E2 work order cites them as source corpus."
     }
   ]
 }

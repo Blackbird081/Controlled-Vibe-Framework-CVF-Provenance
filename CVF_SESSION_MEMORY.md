@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-06
 
-Current mode marker: `external_review_gap1_core_kb_pointer_ification_closed_pass_bounded`
+Current mode marker: `external_review_gap4_gap5_runtime_durability_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `external_review_gap1_core_kb_pointer_ification_closed_pass_bounded`.
+Current mode: `external_review_gap4_gap5_runtime_durability_closed_pass_bounded`.
 
 Active handoff:
 
@@ -49,6 +49,43 @@ Active review queue:
 `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
 
 Latest continuity note:
+
+External Review GAP4/GAP5 runtime durability tranche is
+`CLOSED_PASS_BOUNDED`:
+
+GC-018:
+
+`docs/baselines/CVF_GC018_EXTERNAL_REVIEW_GAP4_GAP5_RUNTIME_DURABILITY_2026-06-06.md`
+
+Audit:
+
+`docs/audits/CVF_GOVERNANCE_RULE_PROOF_OF_VALUE_AUDIT_2026-06-06.md`
+
+Completion:
+
+`docs/reviews/CVF_EXTERNAL_REVIEW_GAP4_GAP5_RUNTIME_DURABILITY_COMPLETION_2026-06-06.md`
+
+Evidence:
+
+- GAP4 audit keeps governance rules with consolidation candidates only; no rule
+  retirement was authorized.
+- GAP5A sets only `runtime_receipt_count` to `liveEmissionWired=true` and emits
+  metadata-only `OPERATIONAL_BENCHMARK_METRIC_EMITTED` audit events.
+- GAP5B adds local SQLite storage adapters behind
+  `CVF_STORAGE_ADAPTER_TYPE=sqlite`; Redis remains stubbed.
+- Public Export Disposition: `DEFERRED_PRIVATE_ONLY`.
+
+Next allowed move: stop for review or open the next separate source-verified
+external-review gap/public-sync work order.
+Blocked without separate authorization and passing phase gates: governance-rule
+retirement, full operational benchmark telemetry claims, distributed or
+production durability claims, Redis implementation, dependency expansion,
+public-sync or public push, live/provider proof, public/hosted/production
+readiness claims, cost/performance/provider-quality claims, memory reinjection,
+high-risk promotion implementation, Learning Orchestrator runtime behavior, and
+autonomous mutation.
+
+Prior external-review continuity note:
 
 External Review GAP1 Core KB pointer-ification is `CLOSED_PASS_BOUNDED`:
 
@@ -68,17 +105,7 @@ Evidence:
   `docs/reference/CVF_MODULE_INVENTORY.md`.
 - Public Export Disposition: `DEFERRED_PRIVATE_ONLY`.
 
-Next allowed move: stop for review or open the next separate source-verified
-external-review gap work order. Broader count-drift hardening remains a
-separate optional governance-improvement lane.
-Blocked without separate authorization and passing phase gates: runtime/source
-code changes, dependency changes, public-sync or public push, live/provider
-proof, durable persistence work, governance-rule removal, public/hosted/
-production readiness claims, cost/performance/provider-quality claims, memory
-reinjection, high-risk promotion implementation, Learning Orchestrator runtime
-behavior, and autonomous mutation.
-
-Prior external-review continuity note:
+Earlier external-review continuity note:
 
 External review gap-analysis intake was repaired and made trackable:
 

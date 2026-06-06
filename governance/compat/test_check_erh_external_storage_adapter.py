@@ -36,10 +36,13 @@ def _make_stub(tmp_path: Path) -> types.SimpleNamespace:
         "export interface KeyValueAdapter<T> {}\n"
         "class FileEventListAdapter<T> implements EventListAdapter<T> {}\n"
         "class FileKeyValueAdapter<T> implements KeyValueAdapter<T> {}\n"
+        "class SQLiteEventListAdapter<T> implements EventListAdapter<T> {}\n"
+        "class SQLiteKeyValueAdapter<T> implements KeyValueAdapter<T> {}\n"
         "class RedisEventListAdapter<T> implements EventListAdapter<T> { CVF_NOT_IMPLEMENTED = 1; }\n"
         "class RedisKeyValueAdapter<T> implements KeyValueAdapter<T> { CVF_NOT_IMPLEMENTED = 1; }\n"
         "export function buildEventListAdapter<T>(type?: string) {}\n"
         "export function buildKeyValueAdapter<T>(type?: string) {}\n"
+        "if (resolved === 'sqlite') return new SQLiteEventListAdapter<T>();\n"
         "process.env.CVF_STORAGE_ADAPTER_TYPE\n",
         encoding="utf-8",
     )
@@ -130,6 +133,20 @@ class TestStorageAdapterTs:
         stub.sa_ts.write_text(content.replace("CVF_NOT_IMPLEMENTED", "OTHER_ERROR"), encoding="utf-8")
         violations = _run(tmp_path)
         assert any("CVF_NOT_IMPLEMENTED" in v for v in violations)
+
+    def test_missing_sqlite_event_list_adapter_is_violation(self, tmp_path: Path) -> None:
+        stub = _make_stub(tmp_path)
+        content = stub.sa_ts.read_text()
+        stub.sa_ts.write_text(content.replace("class SQLiteEventListAdapter<T> implements EventListAdapter<T> {}\n", ""), encoding="utf-8")
+        violations = _run(tmp_path)
+        assert any("SQLiteEventListAdapter" in v for v in violations)
+
+    def test_missing_sqlite_selector_is_violation(self, tmp_path: Path) -> None:
+        stub = _make_stub(tmp_path)
+        content = stub.sa_ts.read_text()
+        stub.sa_ts.write_text(content.replace("if (resolved === 'sqlite') return new SQLiteEventListAdapter<T>();\n", ""), encoding="utf-8")
+        violations = _run(tmp_path)
+        assert any("sqlite CVF_STORAGE_ADAPTER_TYPE selector" in v for v in violations)
 
     def test_missing_build_event_list_adapter_is_violation(self, tmp_path: Path) -> None:
         stub = _make_stub(tmp_path)
