@@ -67,6 +67,7 @@ Completion:
 
 Evidence:
 
+- Material closure commit: `f37df607`.
 - GAP4 audit keeps governance rules with consolidation candidates only; no rule
   retirement was authorized.
 - GAP5A sets only `runtime_receipt_count` to `liveEmissionWired=true` and emits

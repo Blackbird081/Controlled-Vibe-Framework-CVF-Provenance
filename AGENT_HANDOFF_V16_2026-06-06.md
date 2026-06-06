@@ -42,9 +42,9 @@ Startup acknowledged: current mode=`external_review_gap4_gap5_runtime_durability
 
 `external_review_gap4_gap5_runtime_durability_closed_pass_bounded`
 
-Current HEAD recorded for this handoff sync parent: `7edaafd6`
-(External Review GAP4/GAP5 runtime durability execution base; this handoff sync
-records continuity for the closure batch).
+Current HEAD recorded for this handoff sync parent: `f37df607`
+(External Review GAP4/GAP5 runtime durability material closure commit; this
+dedicated session-sync-only commit records continuity for the closure batch).
 
 ## Active Boundary
 
@@ -112,6 +112,7 @@ Private artifacts:
 Verification summary:
 
 - Execution base: `7edaafd6`.
+- Material closure commit: `f37df607`.
 - Pre-implementation autorun gate: PASS on `7edaafd6..HEAD`.
 - Focused web tests: PASS, 77 tests.
 - Guard-contract focused test: PASS, 7 tests.
