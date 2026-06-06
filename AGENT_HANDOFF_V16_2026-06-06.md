@@ -36,15 +36,15 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`live_evidence_manifest_integrated_pending_closure`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=complete verification and closure for integrated release-gate live evidence manifest wiring; parked checkpoint=none.
+Startup acknowledged: current mode=`live_evidence_manifest_integrated_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=open separate GC-018/work order for runtime telemetry receipt expansion or continue parked DEP2/ERH-RL1/QBS backlog; parked checkpoint=none.
 
 ## Current Mode
 
-`live_evidence_manifest_integrated_pending_closure`
+`live_evidence_manifest_integrated_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `3c44f5a5`
-(pre-closure base for live evidence manifest release-gate wiring; material
-commit will be recorded by the follow-up session-sync commit).
+Current HEAD recorded for this handoff: `81cc6844`
+(material commit for live evidence manifest release-gate wiring; this
+session-sync commit records the parent material SHA per GC-020).
 
 ## Active Boundary
 
@@ -128,7 +128,7 @@ Only V16 should be treated as the active root handoff.
 
 ## Latest Continuity Note
 
-Live evidence manifest release-gate wiring is in progress pending closure.
+Live evidence manifest release-gate wiring is `CLOSED_PASS_BOUNDED`.
 
 Private artifacts:
 
@@ -147,15 +147,21 @@ Working-tree changes:
 - Targeted legacy scan accepted receipt/replay evidence principles and deferred
   runtime telemetry receipt expansion.
 
+Verification summary:
+
+- Material commit: `81cc6844`.
+- `python -m py_compile scripts/run_cvf_release_gate_bundle.py scripts/build_cvf_live_evidence_manifest.py`: PASS.
+- Release-gate dry-run with `--output` plus `--manifest-output`: PASS.
+- Material commit hook governance chain: PASS.
+
 Boundary: evidence packaging only; no governance behavior change, new runtime
 receipt fields, provider routing change, public-sync push, hosted readiness,
 production readiness, public readiness, cost/performance/provider-quality
 claim, memory reinjection, high-risk promotion implementation, Learning
 Orchestrator runtime behavior, or autonomous mutation.
 
-Next allowed move: complete verification and closure for this bounded wiring
-batch; after closure, open a separate GC-018/work order for runtime telemetry
-receipt expansion or the parked DEP2/ERH-RL1/QBS backlog.
+Next allowed move: open a separate GC-018/work order for runtime telemetry
+receipt expansion, or continue the parked DEP2/ERH-RL1/QBS backlog.
 
 Previous continuity:
 

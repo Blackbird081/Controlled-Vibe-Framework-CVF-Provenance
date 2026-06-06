@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-06
 
-Current mode marker: `live_evidence_manifest_integrated_pending_closure`
+Current mode marker: `live_evidence_manifest_integrated_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `live_evidence_manifest_integrated_pending_closure`.
+Current mode: `live_evidence_manifest_integrated_closed_pass_bounded`.
 
 Active handoff:
 
@@ -50,13 +50,15 @@ Active review queue:
 
 Latest continuity note:
 
-Live evidence manifest release-gate wiring is in progress pending closure:
+Live evidence manifest release-gate wiring is `CLOSED_PASS_BOUNDED`:
 
 Audit:
 
 `docs/audits/CVF_LIVE_EVIDENCE_MANIFEST_WIRING_LEGACY_SCAN_2026-06-06.md`
 
-Delivered in working tree:
+Material commit: `81cc6844`
+
+Delivered:
 
 - `scripts/run_cvf_release_gate_bundle.py` now supports `--output` and
   `--manifest-output` so a release-gate run can produce result JSON plus a
@@ -74,9 +76,14 @@ production readiness, public readiness, cost/performance/provider-quality
 claim, memory reinjection, high-risk promotion implementation, Learning
 Orchestrator runtime behavior, or autonomous mutation.
 
-Next allowed move: complete verification and closure for this bounded wiring
-batch; after closure, open a separate GC-018/work order for runtime telemetry
-receipt expansion or the parked DEP2/ERH-RL1/QBS backlog.
+Verification:
+
+- `python -m py_compile scripts/run_cvf_release_gate_bundle.py scripts/build_cvf_live_evidence_manifest.py`: PASS.
+- Release-gate dry-run with `--output` plus `--manifest-output`: PASS.
+- Material commit hook governance chain: PASS.
+
+Next allowed move: open a separate GC-018/work order for runtime telemetry
+receipt expansion, or continue the parked DEP2/ERH-RL1/QBS backlog.
 
 Prior continuity note:
 
