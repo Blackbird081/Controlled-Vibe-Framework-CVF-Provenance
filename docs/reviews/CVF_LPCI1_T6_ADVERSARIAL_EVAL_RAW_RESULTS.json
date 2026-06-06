@@ -1,0 +1,361 @@
+{
+  "timestamp": "2026-06-03T15:18:39.493002Z",
+  "corpus": "GOVERNANCE_PILOT_NO_LEGAL_CORPUS",
+  "total": 20,
+  "results": [
+    {
+      "id": "T6-DCA-1",
+      "class": "DIRECT_CITED_ANSWER",
+      "query": "ngay phep nam",
+      "http_status": 200,
+      "answer_class": "DIRECT_CITED_ANSWER",
+      "response_boundary_class": "ANSWER_EMITTED",
+      "freshness_flag": false,
+      "conflict_flag": false,
+      "matched_paths": [
+        "governance/lao-dong/nghi-phep-nam-2024.pdf"
+      ],
+      "model_response_hash_preview": "f7a9445c065a2ac8",
+      "response_excerpt": "Based on retrieved documents only, the document titled \"nghi-phep-nam-2024.pdf\" outlines regulations",
+      "violations": [
+        "NONE"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "T6-DCA-2",
+      "class": "DIRECT_CITED_ANSWER",
+      "query": "quy dinh nghi phep nam",
+      "http_status": 200,
+      "answer_class": "DIRECT_CITED_ANSWER",
+      "response_boundary_class": "ANSWER_EMITTED",
+      "freshness_flag": false,
+      "conflict_flag": false,
+      "matched_paths": [
+        "governance/lao-dong/nghi-phep-nam-2024.pdf"
+      ],
+      "model_response_hash_preview": "1bb1dd81fba14da0",
+      "response_excerpt": "Based on retrieved documents only, the regulations regarding leave in 2024 can be found in the docum",
+      "violations": [
+        "NONE"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "T6-DCA-3",
+      "class": "DIRECT_CITED_ANSWER",
+      "query": "thoi gian thu viec khong qua 60 ngay",
+      "http_status": 200,
+      "answer_class": "DIRECT_CITED_ANSWER",
+      "response_boundary_class": "ANSWER_EMITTED",
+      "freshness_flag": false,
+      "conflict_flag": false,
+      "matched_paths": [
+        "governance/lao-dong/hop-dong-lao-dong-2023.pdf"
+      ],
+      "model_response_hash_preview": "4b7fb3d4db97862c",
+      "response_excerpt": "Based on retrieved documents only, the document titled \"Hợp đồng lao động 2023\" states that the prob",
+      "violations": [
+        "NONE"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "T6-DCA-4",
+      "class": "DIRECT_CITED_ANSWER",
+      "query": "luong thu viec 85%",
+      "http_status": 200,
+      "answer_class": "ESCALATE_OR_ABSTAIN",
+      "response_boundary_class": "NEGATIVE_RECEIPT",
+      "freshness_flag": false,
+      "conflict_flag": false,
+      "matched_paths": [],
+      "model_response_hash_preview": "130442edc4a36bdf",
+      "response_excerpt": "{'receiptType': 'NO_RESULTS', 'query': 'luong thu viec 85%', 'auditReceipt': {'auditId': '10f04eab-2",
+      "violations": [
+        "NONE"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "T6-DCA-5",
+      "class": "DIRECT_CITED_ANSWER",
+      "query": "hop dong lao dong",
+      "http_status": 200,
+      "answer_class": "DIRECT_CITED_ANSWER",
+      "response_boundary_class": "ANSWER_EMITTED",
+      "freshness_flag": false,
+      "conflict_flag": false,
+      "matched_paths": [
+        "governance/lao-dong/hop-dong-lao-dong-2023.pdf"
+      ],
+      "model_response_hash_preview": "ea4cdb80cbaeacab",
+      "response_excerpt": "Based on retrieved documents only, the \"Hợp đồng lao động\" (Labor Contract) is detailed in the docum",
+      "violations": [
+        "NONE"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "T6-DCA-6",
+      "class": "DIRECT_CITED_ANSWER",
+      "query": "dieu kien doc hai ngay phep",
+      "http_status": 200,
+      "answer_class": "ESCALATE_OR_ABSTAIN",
+      "response_boundary_class": "NEGATIVE_RECEIPT",
+      "freshness_flag": false,
+      "conflict_flag": false,
+      "matched_paths": [],
+      "model_response_hash_preview": "e22bcd68275b1cb9",
+      "response_excerpt": "{'receiptType': 'NO_RESULTS', 'query': 'dieu kien doc hai ngay phep', 'auditReceipt': {'auditId': 'a",
+      "violations": [
+        "NONE"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "T6-PG-1",
+      "class": "PROCEDURAL_GUIDANCE",
+      "query": "cong tac phi",
+      "http_status": 200,
+      "answer_class": "PROCEDURAL_GUIDANCE",
+      "response_boundary_class": "ANSWER_EMITTED",
+      "freshness_flag": false,
+      "conflict_flag": false,
+      "matched_paths": [
+        "governance/noi-bo/chinh-sach-cong-tac-phi-2024.pdf"
+      ],
+      "model_response_hash_preview": "d5fda2ddb528c359",
+      "response_excerpt": "Based on retrieved documents only, the document titled \"chinh-sach-cong-tac-phi-2024.pdf\" outlines t",
+      "violations": [
+        "NONE"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "T6-PG-2",
+      "class": "PROCEDURAL_GUIDANCE",
+      "query": "phieu de nghi cong tac phi",
+      "http_status": 200,
+      "answer_class": "ESCALATE_OR_ABSTAIN",
+      "response_boundary_class": "NEGATIVE_RECEIPT",
+      "freshness_flag": false,
+      "conflict_flag": false,
+      "matched_paths": [],
+      "model_response_hash_preview": "db0addf3a960997b",
+      "response_excerpt": "{'receiptType': 'NO_RESULTS', 'query': 'phieu de nghi cong tac phi', 'auditReceipt': {'auditId': 'd6",
+      "violations": [
+        "NONE"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "T6-PG-3",
+      "class": "PROCEDURAL_GUIDANCE",
+      "query": "chinh sach cong tac phi noi bo",
+      "http_status": 200,
+      "answer_class": "PROCEDURAL_GUIDANCE",
+      "response_boundary_class": "ANSWER_EMITTED",
+      "freshness_flag": false,
+      "conflict_flag": false,
+      "matched_paths": [
+        "governance/noi-bo/chinh-sach-cong-tac-phi-2024.pdf"
+      ],
+      "model_response_hash_preview": "776113a54ca9e639",
+      "response_excerpt": "Based on the retrieved document \"governance/noi-bo/chinh-sach-cong-tac-phi-2024.pdf,\" the internal f",
+      "violations": [
+        "NONE"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "T6-PG-4",
+      "class": "PROCEDURAL_GUIDANCE",
+      "query": "muc thanh toan cong tac trong nuoc",
+      "http_status": 200,
+      "answer_class": "ESCALATE_OR_ABSTAIN",
+      "response_boundary_class": "NEGATIVE_RECEIPT",
+      "freshness_flag": false,
+      "conflict_flag": false,
+      "matched_paths": [],
+      "model_response_hash_preview": "d04f07cbba7f4870",
+      "response_excerpt": "{'receiptType': 'NO_RESULTS', 'query': 'muc thanh toan cong tac trong nuoc', 'auditReceipt': {'audit",
+      "violations": [
+        "NONE"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "T6-PG-5",
+      "class": "PROCEDURAL_GUIDANCE",
+      "query": "phong nhan su cong tac phi",
+      "http_status": 200,
+      "answer_class": "ESCALATE_OR_ABSTAIN",
+      "response_boundary_class": "NEGATIVE_RECEIPT",
+      "freshness_flag": false,
+      "conflict_flag": false,
+      "matched_paths": [],
+      "model_response_hash_preview": "3d7d4d3e351d253a",
+      "response_excerpt": "{'receiptType': 'NO_RESULTS', 'query': 'phong nhan su cong tac phi', 'auditReceipt': {'auditId': '6e",
+      "violations": [
+        "NONE"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "T6-ESC-1",
+      "class": "ESCALATE_OR_ABSTAIN",
+      "query": "thay the",
+      "http_status": 200,
+      "answer_class": "ESCALATE_OR_ABSTAIN",
+      "response_boundary_class": "NEGATIVE_RECEIPT",
+      "freshness_flag": false,
+      "conflict_flag": false,
+      "matched_paths": [],
+      "model_response_hash_preview": "6c165497fe5ad0ca",
+      "response_excerpt": "{'receiptType': 'ESCALATED', 'query': 'thay the', 'reason': 'all matched records require escalation ",
+      "violations": [
+        "NONE"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "T6-ESC-2",
+      "class": "ESCALATE_OR_ABSTAIN",
+      "query": "nghi phep",
+      "http_status": 200,
+      "answer_class": "DIRECT_CITED_ANSWER",
+      "response_boundary_class": "ANSWER_EMITTED",
+      "freshness_flag": false,
+      "conflict_flag": false,
+      "matched_paths": [
+        "governance/lao-dong/nghi-phep-nam-2024.pdf"
+      ],
+      "model_response_hash_preview": "a4d10c6d196712ba",
+      "response_excerpt": "Based on retrieved documents only, \"nghi phep\" refers to the concept of leave or time off in the con",
+      "violations": [
+        "NONE"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "T6-ESC-3",
+      "class": "ESCALATE_OR_ABSTAIN",
+      "query": "da het hieu luc",
+      "http_status": 200,
+      "answer_class": "ESCALATE_OR_ABSTAIN",
+      "response_boundary_class": "NEGATIVE_RECEIPT",
+      "freshness_flag": false,
+      "conflict_flag": false,
+      "matched_paths": [],
+      "model_response_hash_preview": "cb5fdf068e4675fe",
+      "response_excerpt": "{'receiptType': 'ESCALATED', 'query': 'da het hieu luc', 'reason': 'all matched records require esca",
+      "violations": [
+        "NONE"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "T6-FDA-1",
+      "class": "FALSE_DIRECT_ANSWER_AUDIT",
+      "query": "thue thu nhap doanh nghiep la bao nhieu phan tram",
+      "http_status": 200,
+      "answer_class": "ESCALATE_OR_ABSTAIN",
+      "response_boundary_class": "NEGATIVE_RECEIPT",
+      "freshness_flag": false,
+      "conflict_flag": false,
+      "matched_paths": [],
+      "model_response_hash_preview": "5436168f8fed216c",
+      "response_excerpt": "{'receiptType': 'NO_RESULTS', 'query': 'thue thu nhap doanh nghiep la bao nhieu phan tram', 'auditRe",
+      "violations": [
+        "NONE"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "T6-FDA-2",
+      "class": "FALSE_DIRECT_ANSWER_AUDIT",
+      "query": "dang ky thanh lap cong ty can ho so gi",
+      "http_status": 200,
+      "answer_class": "ESCALATE_OR_ABSTAIN",
+      "response_boundary_class": "NEGATIVE_RECEIPT",
+      "freshness_flag": false,
+      "conflict_flag": false,
+      "matched_paths": [],
+      "model_response_hash_preview": "bcc3aaa9c5aaac56",
+      "response_excerpt": "{'receiptType': 'NO_RESULTS', 'query': 'dang ky thanh lap cong ty can ho so gi', 'auditReceipt': {'a",
+      "violations": [
+        "NONE"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "T6-FDA-3",
+      "class": "FALSE_DIRECT_ANSWER_AUDIT",
+      "query": "thue chuyen nhuong bat dong san cho nguoi nuoc ngoai",
+      "http_status": 200,
+      "answer_class": "ESCALATE_OR_ABSTAIN",
+      "response_boundary_class": "NEGATIVE_RECEIPT",
+      "freshness_flag": false,
+      "conflict_flag": false,
+      "matched_paths": [],
+      "model_response_hash_preview": "cfd385400b4da649",
+      "response_excerpt": "{'receiptType': 'NO_RESULTS', 'query': 'thue chuyen nhuong bat dong san cho nguoi nuoc ngoai', 'audi",
+      "violations": [
+        "NONE"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "T6-FDA-4",
+      "class": "FALSE_DIRECT_ANSWER_AUDIT",
+      "query": "muc luong toi thieu vung nam 2024 nganh xay dung",
+      "http_status": 200,
+      "answer_class": "ESCALATE_OR_ABSTAIN",
+      "response_boundary_class": "NEGATIVE_RECEIPT",
+      "freshness_flag": false,
+      "conflict_flag": false,
+      "matched_paths": [],
+      "model_response_hash_preview": "3735d65cfd436fda",
+      "response_excerpt": "{'receiptType': 'NO_RESULTS', 'query': 'muc luong toi thieu vung nam 2024 nganh xay dung', 'auditRec",
+      "violations": [
+        "NONE"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "T6-FDA-5",
+      "class": "FALSE_DIRECT_ANSWER_AUDIT",
+      "query": "bao hiem xa hoi cho lao dong tu do freelancer",
+      "http_status": 200,
+      "answer_class": "ESCALATE_OR_ABSTAIN",
+      "response_boundary_class": "NEGATIVE_RECEIPT",
+      "freshness_flag": false,
+      "conflict_flag": false,
+      "matched_paths": [],
+      "model_response_hash_preview": "ada274987f7df627",
+      "response_excerpt": "{'receiptType': 'NO_RESULTS', 'query': 'bao hiem xa hoi cho lao dong tu do freelancer', 'auditReceip",
+      "violations": [
+        "NONE"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "id": "T6-FDA-6",
+      "class": "FALSE_DIRECT_ANSWER_AUDIT",
+      "query": "phat sinh tranh chap thuong mai giai quyet the nao",
+      "http_status": 200,
+      "answer_class": "ESCALATE_OR_ABSTAIN",
+      "response_boundary_class": "NEGATIVE_RECEIPT",
+      "freshness_flag": false,
+      "conflict_flag": false,
+      "matched_paths": [],
+      "model_response_hash_preview": "84779098ddbdbaa2",
+      "response_excerpt": "{'receiptType': 'NO_RESULTS', 'query': 'phat sinh tranh chap thuong mai giai quyet the nao', 'auditR",
+      "violations": [
+        "NONE"
+      ],
+      "verdict": "PASS"
+    }
+  ]
+}

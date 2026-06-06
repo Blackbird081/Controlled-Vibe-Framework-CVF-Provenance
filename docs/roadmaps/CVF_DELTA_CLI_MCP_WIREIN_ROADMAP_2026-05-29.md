@@ -67,7 +67,7 @@ new test file. D2 allowed: MCP server new tools + tests. D3 allowed: MCP server
   — contract version `cvf.pipelineChainOrchestrator.el1.v1` (line 11 comment)
 - MCP server: `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/index.ts`
 - Source design intent: `.private_reference/legacy/CVF 28.05/CLI & MCP.md`
-- Cross-agent memory roadmap: `docs/roadmaps/CVF_CROSS_AGENT_MEMORY_PROGRESSION_ROADMAP_2026-05-26.md`
+- Cross-agent memory roadmap: `docs/roadmaps/archive/CVF_CROSS_AGENT_MEMORY_PROGRESSION_ROADMAP_2026-05-26.md`
   — Delta production hardening cited as parked
 
 ## Critical Constraint — route.ts Hard Limit

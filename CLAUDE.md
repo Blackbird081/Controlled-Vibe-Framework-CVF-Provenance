@@ -76,7 +76,7 @@ provider, benchmark, context, or non-coder outcome surfaces.
 Before implementation, the agent must produce a Blind-Spot Control Block per
 the binding standard:
 
-`docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`
+`docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-06-01.md`
 
 The control block must be included in the GC-018 packet or work order, with
 all seven gates executed and a verdict of `CLEAR`, `PARTIAL`, or `BLOCKED`.
@@ -86,6 +86,48 @@ exception, which must be recorded in the GC-018 packet itself.
 Do not bypass this standard by claiming "the folder was already audited," "the
 summary is enough," "another agent already reviewed it," or any of the other
 rationalizations in the standard's Do-Not-Bypass List.
+
+## Mandatory Corpus Completeness And Report Integrity
+
+For any task that reads an existing folder, subfolder tree, archive, file list,
+or project source set to produce an inventory, report, comparison, extraction,
+audit, migration, roadmap, work order, or knowledge-absorption decision, follow:
+
+`docs/reference/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_STANDARD_2026-06-01.md`
+
+Machine guard:
+
+`governance/compat/check_corpus_completeness_report_integrity.py`
+
+Before claiming a complete scan, complete inventory, all files read, or
+equivalent result, include the `Corpus Completeness And Report Integrity`
+block with manifest, processing ledger, reconciliation, exclusions,
+unreadable/unsupported files, aggregation check, drift check, traceability,
+adversarial verification, and one allowed corpus verdict. Self-reported counts
+are not evidence. `COMPLETE_VERIFIED` requires zero unresolved files.
+
+## Mandatory Corpus-To-Knowledge-Map Reconciliation
+
+For corpus-derived knowledge maps, semantic-region ledgers, architecture
+reconciliations, Memory syntheses, graphification plans, or retrieval-readiness
+claims, follow:
+
+- `docs/reference/CVF_KNOWLEDGE_SYSTEM_METHOD_STANDARD_2026-06-01.md`
+- `docs/reference/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_STANDARD_2026-06-01.md`
+
+Machine guard:
+
+`governance/compat/check_corpus_to_knowledge_map_reconciliation.py`
+
+Include `## Knowledge System Reconciliation`. Distinguish authority assets
+from rebuildable derived views, reconcile mapped/deferred/unmapped totals,
+check drift, and bound retrieval claims. Bare `rg --files` is not completeness
+evidence; ripgrep inventory must use `rg --files --hidden --no-ignore`.
+`RECONCILED_VERIFIED` requires zero deferred and zero unmapped assets.
+
+Local hook-chain note: hook checks that run with `--base HEAD --head HEAD` are
+worktree/index validation only. Closure evidence must come from autorun gates
+using `--base <baseHead> --head HEAD` over a real changed range.
 
 For LHW connector waves, do not use bare `rejected: requires live route`
 wording when a family is excluded only because the current wave is doc-only.
@@ -260,6 +302,8 @@ These files use inline React styles — when porting to the Next.js app, transla
 ---
 
 ## Governance Controls to Know
+
+**Corpus Scan Registry (GC-051):** Before scanning ANY corpus (legacy folders, project source trees, policy docs, company docs, external sources), read `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` first. Inherit prior scan state and findings instead of re-scanning. Update the registry after every scan. Human companion: `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`. Finding packets: `docs/corpus-intelligence/findings/`. Standard: `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md`. Checker: `governance/compat/check_corpus_scan_registry.py`.
 
 **Fast Lane (GC-021):** Low-risk work can bypass full governance with a Fast Lane audit. Check `docs/reference/CVF_FAST_LANE_AUDIT_TEMPLATE.md`.
 

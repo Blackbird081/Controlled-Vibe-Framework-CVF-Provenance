@@ -1,0 +1,1482 @@
+{
+  "schemaVersion": "1.0.0",
+  "standard": "docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md",
+  "guard": "governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md",
+  "checker": "governance/compat/check_corpus_scan_registry.py",
+  "lastUpdated": "2026-06-06",
+  "updatedBy": "P1-P5 small debt remediation audit",
+  "allowedCorpusTypes": [
+    "LEGACY_FOLDER",
+    "PROJECT_SOURCE",
+    "POLICY_DOCUMENT",
+    "COMPANY_DOCS",
+    "EXTERNAL_SOURCE",
+    "CVF_EXTENSION",
+    "TEST_CORPUS"
+  ],
+  "allowedStatuses": [
+    "NOT_STARTED",
+    "PARTIALLY_SCANNED",
+    "SCANNED",
+    "SCANNED_WITH_FINDINGS",
+    "DEEP_CLASSIFIED",
+    "DEFERRED",
+    "OUT_OF_SCOPE"
+  ],
+  "allowedFindingDispositions": [
+    "ACCEPT",
+    "ACCEPT_NO_ACTION",
+    "ACCEPT_WITH_BOUNDARY",
+    "DEFER_WITH_ROADMAP",
+    "DEFER_PHASED",
+    "DEFER_DEMAND_GATED",
+    "REJECT",
+    "BLOCKED_PENDING_DECISION"
+  ],
+  "corpora": [
+    {
+      "id": "legacy-cvf-important-graphify",
+      "corpusType": "LEGACY_FOLDER",
+      "displayName": "CVF_Important / Knowledge Base_Graphify",
+      "scopePaths": [
+        ".private_reference/legacy/CVF_Important/Knowledge Base_Graphify/"
+      ],
+      "fileCount": 5,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "CI1-T2",
+      "scanDate": "2026-06-02",
+      "manifestHash": "a88e3412a2cfca13dc5ff08da16abbc28a08462fd6112ea03cd7992a802c4e43",
+      "manifestPath": "docs/audits/CVF_LHW_RESCAN_A_CVF_IMPORTANT_CORPUS_MANIFEST_2026-06-01.json",
+      "packetPath": "docs/audits/CVF_CI1_T2_GRAPHIFY_READINESS_PACKET_2026-06-02.md",
+      "completionReviewPath": "docs/reviews/CVF_CI1_T2_GRAPHIFY_LEGACY_RESCAN_PILOT_COMPLETION_2026-06-02.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_CI1_T2_GRAPHIFY_LEGACY_RESCAN_PILOT_2026-06-02.md",
+      "verdicts": {
+        "gc047": "COMPLETE_VERIFIED",
+        "gc048": "RECONCILED_VERIFIED",
+        "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+      },
+      "semanticRegions": [
+        "GRAPH_CLI_INTERFACE",
+        "GRAPH_DATA_MODEL",
+        "GRAPH_GOVERNANCE",
+        "GRAPH_LAYER_ARCHITECTURE",
+        "GRAPH_OPERATOR_ANALYSIS"
+      ],
+      "priorAbsorption": "KGR1 — knowledge-graph-builder.ts + knowledge-graph-store.ts (partial absorption of data model and builder patterns)",
+      "findings": [
+        {
+          "id": "F1-kgr1-partial",
+          "summary": "KGR1 partial absorption confirmed — data model and builder patterns absorbed; full spec not implemented",
+          "disposition": "ACCEPT_NO_ACTION",
+          "nextAction": "None — KGR1 delivery is correct bounded scope",
+          "defectClass": "N/A",
+          "learningLane": "N/A"
+        },
+        {
+          "id": "F2-guard-spec-absent",
+          "summary": "Guard spec G-GM-01 through G-GM-08 defined in CVF_GRAPH_MEMORY_GUARD_SPEC.md but absent from CVF TypeScript source",
+          "disposition": "DEFER_WITH_ROADMAP",
+          "nextAction": "Use the post-CI1 graph guard enforcement parking roadmap before opening any implementation GC/work order",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_CI1_T2_GRAPHIFY_LEGACY_RESCAN_PILOT_COMPLETION_2026-06-02.md#finding-to-governance-learning-disposition",
+          "roadmapRef": "docs/roadmaps/CVF_GRAPHIFY_GUARD_ENFORCEMENT_ROADMAP_2026-06-02.md"
+        },
+        {
+          "id": "F3-cli-commands-absent",
+          "summary": "CLI commands cvf graph build/query/visualize/export/validate/status/purge absent from command.registry.ts",
+          "disposition": "DEFER_PHASED",
+          "nextAction": "Use the post-CI1 Graph CLI phased backlog before opening any cvf graph query work order",
+          "defectClass": "MACHINE_GATE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_CI1_T2_GRAPHIFY_LEGACY_RESCAN_PILOT_COMPLETION_2026-06-02.md#finding-to-governance-learning-disposition",
+          "workOrderRef": "docs/roadmaps/CVF_GRAPH_CLI_PHASED_BACKLOG_ROADMAP_2026-06-02.md#phase-1-cvf-graph-query"
+        },
+        {
+          "id": "F4-performance-claim-unverified",
+          "summary": "71.5x token reduction claim is author-reported by external Graphify project; not verified by CVF",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Do not repeat in CVF documentation without live proof",
+          "defectClass": "UNVERIFIED_CLAIM",
+          "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+        }
+      ],
+      "negativeSearchTerms": [
+        "cvf graph (CLI command — absent from command.registry.ts)",
+        "G-GM-0 (guard IDs — absent from *.ts source)",
+        "GraphMemoryRecord (record type — absent from CVF TS)",
+        "PreToolUse hook (not a CVF-owned hook)",
+        "GRAPH_REPORT.md (output artifact — not produced by CVF)",
+        "NetworkX / leiden (Python graph libs — not in CVF)"
+      ],
+      "nextScanRecommendation": "CVF ADD/code-review-graph/ — 7 files, directly related to graph governance (Finding F2)",
+      "hashAlgorithm": "sha256",
+      "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
+    },
+    {
+      "id": "legacy-cvf-add-code-review-graph",
+      "corpusType": "LEGACY_FOLDER",
+      "displayName": "CVF ADD / code-review-graph",
+      "scopePaths": [
+        ".private_reference/legacy/CVF ADD/code-review-graph/"
+      ],
+      "fileCount": 7,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "CI1-T3",
+      "scanDate": "2026-06-02",
+      "manifestHash": "d921f708e3b321343fae43060a7fb447a166a7eba6584f23de151422e663f51a",
+      "manifestPath": null,
+      "packetPath": "docs/audits/CVF_CI1_T3_GRAPH_GOVERNANCE_CORPUS_READINESS_PACKET_2026-06-02.md",
+      "completionReviewPath": "docs/reviews/CVF_CI1_T3_GRAPH_GOVERNANCE_CORPUS_DEEP_SCAN_COMPLETION_2026-06-02.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_CI1_T3_GRAPH_GOVERNANCE_CORPUS_DEEP_SCAN_2026-06-02.md",
+      "verdicts": {
+        "gc047": "COMPLETE_VERIFIED",
+        "gc048": "RECONCILED_VERIFIED",
+        "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+      },
+      "semanticRegions": [
+        "GRAPH_KNOWLEDGE_MODEL",
+        "GRAPH_CONTEXT_RESOLUTION",
+        "GRAPH_GOVERNANCE_SIGNALS",
+        "GRAPH_INTEGRATION_SURFACE",
+        "GRAPH_IMPLEMENTATION_PLAN",
+        "GRAPH_PACK_BOUNDARY",
+        "GRAPH_OPERATOR_ANALYSIS"
+      ],
+      "priorAbsorption": "CI1-T2 Graphify scan confirmed KGR1 partial graph foundation and deferred graph guard/CLI follow-ups; CI1-T3 adds code-review-graph context/governance surface detail",
+      "findings": [
+        {
+          "id": "F1-code-graph-value-confirmed",
+          "summary": "code-review-graph confirms graph-backed static code intelligence belongs in CVF Knowledge Layer and Context Builder as evidence, not runtime authority",
+          "disposition": "ACCEPT_NO_ACTION",
+          "nextAction": "Treat as baseline context for future graph roadmaps; no immediate action",
+          "defectClass": "N/A",
+          "learningLane": "N/A"
+        },
+        {
+          "id": "F2-governance-signal-enforcement-deferred",
+          "summary": "graph-derived impact, criticality, confidence, and context-inflation signals are valuable but not yet enforced as graph guard runtime behavior",
+          "disposition": "DEFER_WITH_ROADMAP",
+          "nextAction": "Use the graph guard enforcement roadmap before any implementation tranche",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_CI1_T3_GRAPH_GOVERNANCE_CORPUS_DEEP_SCAN_COMPLETION_2026-06-02.md#finding-to-governance-learning-disposition",
+          "roadmapRef": "docs/roadmaps/CVF_GRAPHIFY_GUARD_ENFORCEMENT_ROADMAP_2026-06-02.md"
+        },
+        {
+          "id": "F3-command-mcp-surface-deferred",
+          "summary": "legacy graph integration surface proposes command, CLI, MCP, audit, learning, and repo-registry adapters, but current implementation remains deferred",
+          "disposition": "DEFER_PHASED",
+          "nextAction": "Use the graph CLI phased backlog before opening cvf graph or MCP-mediated graph command work",
+          "defectClass": "MACHINE_GATE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_CI1_T3_GRAPH_GOVERNANCE_CORPUS_DEEP_SCAN_COMPLETION_2026-06-02.md#finding-to-governance-learning-disposition",
+          "workOrderRef": "docs/roadmaps/CVF_GRAPH_CLI_PHASED_BACKLOG_ROADMAP_2026-06-02.md#phase-1-cvf-graph-query"
+        },
+        {
+          "id": "F4-performance-claim-boundary",
+          "summary": "operator/external token-reduction and context-narrowing claims are useful rationale but not CVF-verified benchmark proof",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Do not repeat as CVF performance proof without a separate benchmark tranche",
+          "defectClass": "UNVERIFIED_CLAIM",
+          "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+        }
+      ],
+      "negativeSearchTerms": [
+        "cvf graph query (current runtime implementation — not claimed by CI1-T3; prior CI1-T2 source search found absent)",
+        "G-GM-01 (current runtime guard implementation — not claimed by CI1-T3; prior CI1-T2 source search found absent)",
+        "direct external MCP access (forbidden pattern in legacy integration surface)",
+        "graph service directly invoking LLMs (forbidden pattern in legacy integration surface)",
+        "full CVF ADD sibling scan (out of CI1-T3 scope)"
+      ],
+      "nextScanRecommendation": "After CI1-T3 review, proceed to CI1-T4 Cross-Corpus Index Model using CI1-T2 Graphify and CI1-T3 code-review-graph as the first two real packets",
+      "hashAlgorithm": "sha256",
+      "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
+    },
+    {
+      "id": "legacy-cvf-important-broad",
+      "corpusType": "LEGACY_FOLDER",
+      "displayName": "CVF_Important (full 24-folder inventory)",
+      "scopePaths": [
+        ".private_reference/legacy/CVF_Important/"
+      ],
+      "fileCount": 230,
+      "status": "PARTIALLY_SCANNED",
+      "scanWave": "LHW-RESCAN-A",
+      "scanDate": "2026-06-01",
+      "manifestHash": "815c9144e51dd0e72e8543410d976ef165bba505f08e5d92d0e632fb43115e8f",
+      "manifestPath": "docs/audits/CVF_LHW_RESCAN_A_CVF_IMPORTANT_CORPUS_MANIFEST_2026-06-01.json",
+      "packetPath": "docs/audits/CVF_LHW_RESCAN_A_CVF_IMPORTANT_CORPUS_RECONCILIATION_2026-06-01.md",
+      "completionReviewPath": "docs/reviews/CVF_LHW_RESCAN_A_CVF_IMPORTANT_CORPUS_RECONCILIATION_COMPLETION_2026-06-01.md",
+      "latestTriagePacketPath": "docs/audits/CVF_CI1_T9_LEGACY_PARTIAL_SCAN_TRIAGE_PACKET_2026-06-05.md",
+      "gcBaselineRef": null,
+      "verdicts": {
+        "gc047": "COMPLETE_VERIFIED",
+        "gc048": "PARTIAL",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "24 top-level folders inventoried — broad routing only"
+      ],
+      "priorAbsorption": "LHW17 + LHW20 T1/T2/T3 — trust isolation, model gateway, adaptation policy, security hardening, execution strategy, UCO",
+      "findings": [
+        {
+          "id": "RESCAN-A-scope",
+          "summary": "230 visible files, 229 authority assets READ at broad level — semantic detail deferred to per-family CI1 scans",
+          "disposition": "ACCEPT_NO_ACTION",
+          "nextAction": "Each subfamily requires its own CI1 tranche for deep classification",
+          "defectClass": "DOCUMENTATION_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE"
+        },
+        {
+          "id": "CI1-T9-learning-plane-priority",
+          "summary": "CI1-T9 triage confirmed ADDING_LEARNING PLANE, Knowledge Base_Palace, Knowledge Base_LLM-Powered, RAG Architecture, and memory-loop folders remain high-value memory/learning candidates",
+          "disposition": "DEFER_WITH_ROADMAP",
+          "nextAction": "Queue ADDING_LEARNING PLANE as the next CVF_Important deep scan after CI1-T10 cortex-hub unless CI1-T10 proves the same value is already absorbed",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/audits/CVF_CI1_T9_LEGACY_PARTIAL_SCAN_TRIAGE_PACKET_2026-06-05.md#finding-to-governance-learning-disposition",
+          "packetRef": "docs/audits/CVF_CI1_T9_LEGACY_PARTIAL_SCAN_TRIAGE_PACKET_2026-06-05.md"
+        }
+      ],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "CI1-T9 refresh: after CI1-T10 cortex-hub, deep scan CVF_Important/ADDING_LEARNING PLANE/ as the highest-value CVF_Important memory/learning tranche; then consider Knowledge Base_Palace and Knowledge Base_LLM-Powered",
+      "hashAlgorithm": "sha256",
+      "hashInput": "manifest-internal-hash-from-script-output"
+    },
+    {
+      "id": "legacy-cvf-add-cortex-hub",
+      "corpusType": "LEGACY_FOLDER",
+      "displayName": "CVF ADD / cortex-hub",
+      "scopePaths": [
+        ".private_reference/legacy/CVF ADD/cortex-hub/"
+      ],
+      "fileCount": 11,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "CI1-T10",
+      "scanDate": "2026-06-05",
+      "manifestHash": "4283027364513ba3b82c83ce32ac1b09db02ba0c8fd5500108e56b3b8555e908",
+      "manifestPath": null,
+      "packetPath": "docs/audits/CVF_CI1_T10_CORTEX_HUB_MEMORY_LEARNING_DEEP_SCAN_PACKET_2026-06-05.md",
+      "completionReviewPath": null,
+      "findingPacketPath": "docs/corpus-intelligence/findings/legacy-cvf-add-cortex-hub.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_CI1_T10_CORTEX_HUB_MEMORY_LEARNING_DEEP_SCAN_2026-06-05.md",
+      "verdicts": {
+        "gc047": "COMPLETE_VERIFIED",
+        "gc048": "RECONCILED_VERIFIED",
+        "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+      },
+      "semanticRegions": [
+        "CORTEX_INTEGRATION_BOUNDARY",
+        "MEMORY_KNOWLEDGE_ADAPTER",
+        "CODE_INTELLIGENCE_CONTEXT",
+        "SHARED_KNOWLEDGE_LEARNING",
+        "MCP_BRIDGE_BOUNDARY",
+        "CORTEX_GUARD_POLICY",
+        "TRACE_AUDIT_MODEL",
+        "RECORD_CHAIN_BINDING"
+      ],
+      "priorAbsorption": "CI1-T9 selected cortex-hub as the highest-value memory/learning deep scan candidate; current-source negative search found no direct cortex-hub absorption in active owner surfaces",
+      "findings": [
+        {
+          "id": "T10-F1-cortex-provider-contract-value",
+          "summary": "cortex-hub is accepted as a CVF-first capability-provider contract seed for memory, shared knowledge, code intelligence, MCP bridge, guard/policy, trace/audit, and record-chain planning",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Use as source-backed reference; do not claim runtime integration",
+          "defectClass": "N/A",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "packetRef": "docs/audits/CVF_CI1_T10_CORTEX_HUB_MEMORY_LEARNING_DEEP_SCAN_PACKET_2026-06-05.md",
+          "findingPacketRef": "docs/corpus-intelligence/findings/legacy-cvf-add-cortex-hub.md"
+        },
+        {
+          "id": "T10-F2-memory-shared-knowledge-workflow-chain-deferred",
+          "summary": "memory and shared-knowledge adapter/sync policy value is strong but not current runtime; implementation requires separate workflow-chain design and source verification",
+          "disposition": "DEFER_WITH_ROADMAP",
+          "nextAction": "Open future fresh GC-018/work order for memory-governance workflow chain if authorized",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/audits/CVF_CI1_T10_CORTEX_HUB_MEMORY_LEARNING_DEEP_SCAN_PACKET_2026-06-05.md#finding-to-governance-learning-disposition",
+          "findingPacketRef": "docs/corpus-intelligence/findings/legacy-cvf-add-cortex-hub.md#t10-f2---memory-and-shared-knowledge-workflow-chain-absent"
+        },
+        {
+          "id": "T10-F3-code-intelligence-mcp-runtime-deferred",
+          "summary": "code intelligence and MCP bridge contracts are useful but runtime-touching and require separate source-verified implementation",
+          "disposition": "DEFER_PHASED",
+          "nextAction": "Consider after memory-governance workflow-chain design; no MCP/runtime edit is authorized by CI1-T10",
+          "defectClass": "OPERATOR_SCOPE_CLARITY_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/audits/CVF_CI1_T10_CORTEX_HUB_MEMORY_LEARNING_DEEP_SCAN_PACKET_2026-06-05.md#finding-to-governance-learning-disposition",
+          "findingPacketRef": "docs/corpus-intelligence/findings/legacy-cvf-add-cortex-hub.md#t10-f3---code-intelligence-and-mcp-runtime-value-deferred"
+        },
+        {
+          "id": "T10-F4-trace-record-binding-current-symbol-reconciliation",
+          "summary": "trace/W7 record-chain binding is valuable for preventing fake-learning paths, but legacy W7 symbol names require current-source reconciliation before implementation",
+          "disposition": "DEFER_WITH_ROADMAP",
+          "nextAction": "Future implementation packet must source-verify current record schemas and field names",
+          "defectClass": "RUNTIME_SIGNAL_GAP",
+          "learningLane": "RUNTIME_BEHAVIOR_LEARNING",
+          "f2gRef": "docs/audits/CVF_CI1_T10_CORTEX_HUB_MEMORY_LEARNING_DEEP_SCAN_PACKET_2026-06-05.md#finding-to-governance-learning-disposition",
+          "findingPacketRef": "docs/corpus-intelligence/findings/legacy-cvf-add-cortex-hub.md#t10-f4---tracew7-binding-needs-current-symbol-reconciliation"
+        },
+        {
+          "id": "T10-F5-parallel-authority-rejected",
+          "summary": "conductor, runtime ownership, governance ownership, truth authority, and autonomous-learning authority are rejected for cortex-hub integration",
+          "disposition": "REJECT",
+          "nextAction": "Carry no-parallel-authority boundary into future work orders",
+          "defectClass": "N/A",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "findingPacketRef": "docs/corpus-intelligence/findings/legacy-cvf-add-cortex-hub.md#t10-f5---parallel-authority-rejected"
+        },
+        {
+          "id": "T10-F6-ci1-t11-still-needed",
+          "summary": "cortex-hub is integration/provider focused and does not replace the need to deep-scan CVF_Important/ADDING_LEARNING PLANE/",
+          "disposition": "DEFER_PHASED",
+          "nextAction": "Queue CI1-T11 for CVF_Important/ADDING_LEARNING PLANE/ unless operator redirects",
+          "defectClass": "ORCHESTRATOR_PACKET_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/audits/CVF_CI1_T10_CORTEX_HUB_MEMORY_LEARNING_DEEP_SCAN_PACKET_2026-06-05.md#finding-to-governance-learning-disposition",
+          "findingPacketRef": "docs/corpus-intelligence/findings/legacy-cvf-add-cortex-hub.md#t10-f6---ci1-t11-still-needed"
+        }
+      ],
+      "negativeSearchTerms": [
+        "cortex-hub",
+        "W7MemoryRecord",
+        "W7TraceRecord"
+      ],
+      "nextScanRecommendation": "CI1-T11 candidate: CVF_Important/ADDING_LEARNING PLANE/ remains the direct Learning Plane corpus; cortex-hub does not replace that deep scan",
+      "hashAlgorithm": "sha256",
+      "hashInput": "manifest-internal-hash-from-script-output"
+    },
+    {
+      "id": "legacy-memory-learning-related-ci1-t11",
+      "corpusType": "LEGACY_FOLDER",
+      "displayName": "Memory/Learning related legacy scan wave (CI1-T11)",
+      "scopePaths": [
+        ".private_reference/legacy/CVF_Important/ADDING_LEARNING PLANE/",
+        ".private_reference/legacy/CVF 16.5/agentmemory/",
+        ".private_reference/legacy/CVF 16.5/tolaria/",
+        ".private_reference/legacy/CVF_Important/Knowledge Base_Palace/",
+        ".private_reference/legacy/CVF_Important/Knowledge Base_LLM-Powered/",
+        ".private_reference/legacy/CVF_Important/ADDING_RAG ARCHITECTURE/",
+        ".private_reference/legacy/CVF_Important/ADDING_CONTEXT ENGINE/",
+        ".private_reference/legacy/CVF_Important/ADDING_CONTEXT CONTROL/",
+        ".private_reference/legacy/CVF ADD/Workflow GoClaw/",
+        ".private_reference/legacy/CVF ADD/Agent Harnesses/",
+        ".private_reference/legacy/CVF_Important/ADDING_Multi_Agent/",
+        ".private_reference/legacy/CVF_Important/ADDING_AGENT DEFINITION/",
+        ".private_reference/legacy/CVF_Important/ADDING_AUDIT AGENT LAYER/",
+        ".private_reference/legacy/CVF ADD/Hermes Agent/",
+        ".private_reference/legacy/CVF ADD/deepagents/",
+        ".private_reference/legacy/CVF ADD/Human System Harness/",
+        ".private_reference/legacy/CVF ADD/Hugging Face/",
+        ".private_reference/legacy/CVF ADD/caveman/",
+        ".private_reference/legacy/CVF ADD/AGENT ENGINEER/",
+        ".private_reference/legacy/CVF ADD/AI-first vs Human-first/"
+      ],
+      "fileCount": 191,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "CI1-T11",
+      "scanDate": "2026-06-05",
+      "manifestHash": "98e0ba8bd575297832e35055aba638a2045973c4bcb92b102c2382619ee5ef10",
+      "manifestPath": "docs/audits/CVF_CI1_T11_MEMORY_LEARNING_RELATED_SCAN_WAVE_PACKET_2026-06-05.md",
+      "packetPath": "docs/audits/CVF_CI1_T11_MEMORY_LEARNING_RELATED_SCAN_WAVE_PACKET_2026-06-05.md",
+      "completionReviewPath": null,
+      "roadmapPath": "docs/roadmaps/CVF_CI1_T11_MEMORY_LEARNING_ABSORPTION_CONSOLIDATED_ROADMAP_2026-06-05.md",
+      "lanePackets": [
+        "docs/audits/CVF_CI1_T11A_LEARNING_PLANE_DEEP_SCAN_PACKET_2026-06-05.md",
+        "docs/audits/CVF_CI1_T11B_MEMORY_KNOWLEDGE_STORE_DEEP_SCAN_PACKET_2026-06-05.md",
+        "docs/audits/CVF_CI1_T11C_RAG_CONTEXT_CONTROL_DEEP_SCAN_PACKET_2026-06-05.md",
+        "docs/audits/CVF_CI1_T11D_EXECUTION_AUDIT_LEARNING_DEEP_SCAN_PACKET_2026-06-05.md",
+        "docs/audits/CVF_CI1_T11E_SECONDARY_RELATED_STRUCTURAL_SCAN_PACKET_2026-06-05.md"
+      ],
+      "gcBaselineRef": null,
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "RECONCILED_VERIFIED",
+        "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+      },
+      "semanticRegions": [
+        "LEARNING_TRUTH_EVALUATION_ADAPTATION",
+        "GOVERNED_MEMORY_GATEWAY",
+        "KNOWLEDGE_VAULT_REINJECTION",
+        "ROUTER_FUSION_RAG_GUARDRAIL",
+        "DETERMINISTIC_CONTEXT_PACKAGER",
+        "SESSION_CONTINUITY_HANDOFF_CHECKPOINT",
+        "PLANNER_TRACE_ARTIFACT_CAPABILITY_LOOP",
+        "AUDIT_COUNCIL_GATE_TRUST_MEMORY_LOOP",
+        "SECONDARY_EXTERNAL_SKILL_PROVIDER_ASYNC_EFFICIENCY"
+      ],
+      "priorAbsorption": "CI1-T11 absorbs CI1-T10 cortex-hub plus T11A-D primary memory/learning-related legacy scans and T11E secondary structural scan into one consolidated roadmap. CI1-T2 Graphify, CI1-T3 code-review-graph, and CI1-T8 CVF Edit are prior synthesis inputs.",
+      "findings": [
+        {
+          "id": "T11-F1-consolidated-workflow-chain-needed",
+          "summary": "Memory/learning value spans Learning Plane, governed memory, context routing/fusion, execution continuity, and audit feedback; folder-level work orders would miss cross-plane dependencies.",
+          "disposition": "DEFER_WITH_ROADMAP",
+          "nextAction": "Use MLW0 current source verification before runtime implementation.",
+          "defectClass": "ORCHESTRATOR_PACKET_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "roadmapRef": "docs/roadmaps/CVF_CI1_T11_MEMORY_LEARNING_ABSORPTION_CONSOLIDATED_ROADMAP_2026-06-05.md#tranche-plan"
+        },
+        {
+          "id": "T11-F2-no-autonomous-memory-learning-authority",
+          "summary": "Legacy sources repeatedly reject raw memory, direct reinjection, direct policy mutation, parallel runtime, and autonomous learning authority.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Carry no-direct-memory and no-autonomous-mutation boundaries into all MLW work orders.",
+          "defectClass": "N/A",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "roadmapRef": "docs/roadmaps/CVF_CI1_T11_MEMORY_LEARNING_ABSORPTION_CONSOLIDATED_ROADMAP_2026-06-05.md#tranche-plan"
+        },
+        {
+          "id": "T11-F3-current-symbol-verification-required",
+          "summary": "Legacy W7 record names and runtime symbols require current-source reconciliation before implementation.",
+          "disposition": "DEFER_WITH_ROADMAP",
+          "nextAction": "Open MLW0 source verification map first.",
+          "defectClass": "RUNTIME_SIGNAL_GAP",
+          "learningLane": "RUNTIME_BEHAVIOR_LEARNING",
+          "roadmapRef": "docs/roadmaps/CVF_CI1_T11_MEMORY_LEARNING_ABSORPTION_CONSOLIDATED_ROADMAP_2026-06-05.md#recommended-first-work-order"
+        },
+        {
+          "id": "T11-F4-secondary-related-scope-bounded",
+          "summary": "Hermes, Hugging Face, deepagents, caveman, Human System Harness, Agent Engineer, and AI-first/Human-first contain useful adjacent signals but should remain optional after the core chain.",
+          "disposition": "DEFER_PHASED",
+          "nextAction": "Keep MLW7 and MLW8 optional until core MLW1-MLW6 stabilize or operator explicitly pulls them forward.",
+          "defectClass": "OPERATOR_SCOPE_CLARITY_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "roadmapRef": "docs/roadmaps/CVF_CI1_T11_MEMORY_LEARNING_ABSORPTION_CONSOLIDATED_ROADMAP_2026-06-05.md#tranche-plan"
+        }
+      ],
+      "negativeSearchTerms": [
+        "public readiness from CI1-T11 private scans",
+        "runtime implementation from legacy scan packets alone",
+        "direct memory reinjection",
+        "agent-owned memory authority",
+        "parallel external runtime import",
+        "autonomous policy mutation"
+      ],
+      "nextScanRecommendation": "No additional memory/learning-related legacy scan is required before opening MLW0. Start with source verification map, then derive runtime/doc/checker work orders from the consolidated roadmap.",
+      "hashAlgorithm": "sha256",
+      "hashInput": "manifest-internal-hash-from-script-output"
+    },
+    {
+      "id": "legacy-cvf-add",
+      "corpusType": "LEGACY_FOLDER",
+      "displayName": "CVF ADD (partial root — LHW-RESCAN-C)",
+      "scopePaths": [
+        ".private_reference/legacy/CVF ADD/"
+      ],
+      "fileCount": 167,
+      "status": "PARTIALLY_SCANNED",
+      "scanWave": "LHW-RESCAN-C",
+      "scanDate": "2026-06-01",
+      "manifestHash": "ae7fe05e016b7079a81002de60de1e1209112de59c8bee793e15e11557cae0ff",
+      "manifestPath": "docs/audits/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_MANIFEST_2026-06-01.json",
+      "packetPath": "docs/audits/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_RECONCILIATION_2026-06-01.md",
+      "completionReviewPath": "docs/reviews/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_RECONCILIATION_COMPLETION_2026-06-01.md",
+      "latestTriagePacketPath": "docs/audits/CVF_CI1_T9_LEGACY_PARTIAL_SCAN_TRIAGE_PACKET_2026-06-05.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_LHW_RESCAN_C_CROSS_CORPUS_DEEP_REVIEW_2026-06-01.md",
+      "verdicts": {
+        "gc047": "COMPLETE_VERIFIED",
+        "gc048": "PARTIAL",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "31 source families across CVF ADD + CVF 16.5 + CVF_Restructure — broad routing"
+      ],
+      "priorAbsorption": "LHW13-16 connector specs — various workflow, memory, graph, context families",
+      "findings": [
+        {
+          "id": "RESCAN-C-code-review-graph",
+          "summary": "CVF ADD/code-review-graph/ contains 7 files not yet deep-classified",
+          "disposition": "DEFER_WITH_ROADMAP",
+          "nextAction": "CI1-T3 candidate — directly relevant to Graphify F2 guard spec gap",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "roadmapRef": "docs/roadmaps/CVF_CI1_CORPUS_INTELLIGENCE_OPERATIONALIZATION_ROADMAP_2026-06-02.md#ci1-t3"
+        },
+        {
+          "id": "CI1-T9-stale-code-review-graph-next-scan",
+          "summary": "CI1-T9 triage found the prior CVF ADD next-scan recommendation still pointed to code-review-graph even though CI1-T3 already deep-scanned that family",
+          "disposition": "ACCEPT",
+          "nextAction": "Replace next recommendation with CVF ADD/cortex-hub/ memory-learning deep scan",
+          "defectClass": "ORCHESTRATOR_PACKET_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "packetRef": "docs/audits/CVF_CI1_T9_LEGACY_PARTIAL_SCAN_TRIAGE_PACKET_2026-06-05.md"
+        },
+        {
+          "id": "CI1-T9-cortex-hub-selected",
+          "summary": "CI1-T9 triage selected CVF ADD/cortex-hub/ as the highest-value immediate deep scan candidate because it bridges persistent memory, shared knowledge, MCP, code graph, context packaging, and Learning Plane boundaries",
+          "disposition": "DEFER_WITH_ROADMAP",
+          "nextAction": "Open CI1-T10 with fresh GC-018, full file-level corpus ledger, delta ledger, routing matrix, and adversarial sampling",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/audits/CVF_CI1_T9_LEGACY_PARTIAL_SCAN_TRIAGE_PACKET_2026-06-05.md#finding-to-governance-learning-disposition",
+          "packetRef": "docs/audits/CVF_CI1_T9_LEGACY_PARTIAL_SCAN_TRIAGE_PACKET_2026-06-05.md"
+        },
+        {
+          "id": "CI1-T10-cortex-hub-deep-scan-complete",
+          "summary": "CI1-T10 deep-scanned the 11-file CVF ADD/cortex-hub/ corpus and accepted it as a bounded capability-provider contract seed with runtime implementation deferred",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Use legacy-cvf-add-cortex-hub entry and finding packet for future cortex-hub work; next root scan should move to CVF_Important/ADDING_LEARNING PLANE/",
+          "defectClass": "N/A",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "packetRef": "docs/audits/CVF_CI1_T10_CORTEX_HUB_MEMORY_LEARNING_DEEP_SCAN_PACKET_2026-06-05.md",
+          "findingPacketRef": "docs/corpus-intelligence/findings/legacy-cvf-add-cortex-hub.md"
+        }
+      ],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "CI1-T10 complete: CVF ADD/cortex-hub/ is now deep-scanned; next memory/learning scan should move to CVF_Important/ADDING_LEARNING PLANE/ unless operator redirects",
+      "hashAlgorithm": "sha256",
+      "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
+    },
+    {
+      "id": "legacy-cvf-16-5",
+      "corpusType": "LEGACY_FOLDER",
+      "displayName": "CVF 16.5 (partial root — LHW-RESCAN-C)",
+      "scopePaths": [
+        ".private_reference/legacy/CVF 16.5/"
+      ],
+      "fileCount": 100,
+      "status": "PARTIALLY_SCANNED",
+      "scanWave": "LHW-RESCAN-C",
+      "scanDate": "2026-06-01",
+      "manifestHash": "ae7fe05e016b7079a81002de60de1e1209112de59c8bee793e15e11557cae0ff",
+      "manifestPath": "docs/audits/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_MANIFEST_2026-06-01.json",
+      "packetPath": "docs/audits/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_RECONCILIATION_2026-06-01.md",
+      "completionReviewPath": "docs/reviews/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_RECONCILIATION_COMPLETION_2026-06-01.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_LHW_RESCAN_C_CROSS_CORPUS_DEEP_REVIEW_2026-06-01.md",
+      "verdicts": {
+        "gc047": "COMPLETE_VERIFIED",
+        "gc048": "PARTIAL",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "broad routing — deep classification deferred"
+      ],
+      "priorAbsorption": "LHW13-16 connector specs",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "Defer until CI1 legacy scan wave reaches this folder",
+      "hashAlgorithm": "sha256",
+      "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
+    },
+    {
+      "id": "legacy-cvf-restructure",
+      "corpusType": "LEGACY_FOLDER",
+      "displayName": "CVF_Restructure (partial root — LHW-RESCAN-C)",
+      "scopePaths": [
+        ".private_reference/legacy/CVF_Restructure/"
+      ],
+      "fileCount": 74,
+      "status": "PARTIALLY_SCANNED",
+      "scanWave": "LHW-RESCAN-C",
+      "scanDate": "2026-06-01",
+      "manifestHash": "ae7fe05e016b7079a81002de60de1e1209112de59c8bee793e15e11557cae0ff",
+      "manifestPath": "docs/audits/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_MANIFEST_2026-06-01.json",
+      "packetPath": "docs/audits/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_RECONCILIATION_2026-06-01.md",
+      "completionReviewPath": "docs/reviews/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_RECONCILIATION_COMPLETION_2026-06-01.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_LHW_RESCAN_C_CROSS_CORPUS_DEEP_REVIEW_2026-06-01.md",
+      "verdicts": {
+        "gc047": "COMPLETE_VERIFIED",
+        "gc048": "PARTIAL",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "broad routing — deep classification deferred"
+      ],
+      "priorAbsorption": "LHW19 T1/T2/T3 — integration architecture, event model, strategic compass",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "Defer until CI1 legacy scan wave reaches this folder; Independent Review subfolder also deferred",
+      "hashAlgorithm": "sha256",
+      "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
+    },
+    {
+      "id": "legacy-small-roots",
+      "corpusType": "LEGACY_FOLDER",
+      "displayName": "CVF 17.05 + CVF 25.05 + CVF 28.05 (small roots — LHW-RESCAN-B)",
+      "scopePaths": [
+        ".private_reference/legacy/CVF 17.05/",
+        ".private_reference/legacy/CVF 25.05/",
+        ".private_reference/legacy/CVF 28.05/"
+      ],
+      "fileCount": 38,
+      "status": "SCANNED",
+      "scanWave": "LHW-RESCAN-B",
+      "scanDate": "2026-06-01",
+      "manifestHash": "093a0d7b67b8526b9dbed8c74ca2313f567f40b8bdfd4d864cf198852f34a851",
+      "manifestPath": "docs/audits/CVF_LHW_RESCAN_B_LEGACY_SMALL_ROOTS_CORPUS_MANIFEST_2026-06-01.json",
+      "packetPath": "docs/audits/CVF_LHW_RESCAN_B_LEGACY_SMALL_ROOTS_CORPUS_RECONCILIATION_2026-06-01.md",
+      "completionReviewPath": "docs/reviews/CVF_LHW_RESCAN_B_LEGACY_SMALL_ROOTS_CORPUS_RECONCILIATION_COMPLETION_2026-06-01.md",
+      "gcBaselineRef": null,
+      "verdicts": {
+        "gc047": "COMPLETE_VERIFIED",
+        "gc048": "PARTIAL",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "broad routing across 3 roots"
+      ],
+      "priorAbsorption": "CVF 17.05 stop decision, kernel freeze recommendation, agent handoff gap audit",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "Low priority for CI1 deep scan — small roots, primarily governance decision artifacts",
+      "hashAlgorithm": "sha256",
+      "hashInput": "manifest-internal-hash-from-script-output"
+    },
+    {
+      "id": "legacy-cvf-edit",
+      "corpusType": "LEGACY_FOLDER",
+      "displayName": "CVF Edit",
+      "scopePaths": [
+        ".private_reference/legacy/CVF Edit/"
+      ],
+      "fileCount": 10,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "CI1-T8",
+      "scanDate": "2026-06-05",
+      "manifestHash": "48b3639af259da5dbf303ffd500eeaf2765ae33d0c06a194a7123af2a7a30c88",
+      "manifestPath": "docs/audits/CVF_CI1_T8_CVF_EDIT_FULL_RECONCILIATION_PACKET_2026-06-05.md",
+      "packetPath": "docs/audits/CVF_CI1_T8_CVF_EDIT_FULL_RECONCILIATION_PACKET_2026-06-05.md",
+      "completionReviewPath": null,
+      "gcBaselineRef": "docs/baselines/CVF_GC018_LHW18_CVF_EDIT_ABSORPTION_WAVE_2026-05-30.md",
+      "verdicts": {
+        "gc047": "COMPLETE_VERIFIED",
+        "gc048": "RECONCILED_VERIFIED",
+        "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+      },
+      "semanticRegions": [
+        "EXECUTION_TRACE_AUDIT",
+        "ARCHITECTURE_GAP_MAP",
+        "IMPROVEMENT_PROPOSAL_SET",
+        "FAILURE_SIMULATION",
+        "ARCHITECTURE_MATURITY_REVIEW",
+        "POSITIONING_AND_INTEGRATION",
+        "RUNTIME_ENFORCEABILITY_AUDIT",
+        "LAYER_AUDIT_FRAMEWORK",
+        "CODE_LEVEL_RUNTIME_AUDIT",
+        "SYSTEM_ARCHITECTURE_REVIEW"
+      ],
+      "priorAbsorption": "LHW18 T1/T2/T3 doc-only absorption; W1 workflow state-machine enforcement; W4 operational benchmark scorecard; W6 non-coder artifact export hardening; CBG-1 context budget guard. CI1-T8 adds full 10/10 file reconciliation and keeps runtime claims demand-gated.",
+      "findings": [
+        {
+          "id": "CI1-T8-F1-full-scan-gap-closed",
+          "summary": "CVF Edit had partial absorption but no current GC-047/048/050 full scan packet.",
+          "disposition": "ACCEPT_NO_ACTION",
+          "nextAction": "Closed by docs/audits/CVF_CI1_T8_CVF_EDIT_FULL_RECONCILIATION_PACKET_2026-06-05.md.",
+          "defectClass": "ORCHESTRATOR_PACKET_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/audits/CVF_CI1_T8_CVF_EDIT_FULL_RECONCILIATION_PACKET_2026-06-05.md#finding-to-governance-learning-disposition"
+        },
+        {
+          "id": "CI1-T8-F2-runtime-enforcement-claim-boundary",
+          "summary": "Runtime-enforcement language from CVF Edit must not become a hard governance claim without owner-file trace and live/runtime proof.",
+          "disposition": "DEFER_WITH_ROADMAP",
+          "nextAction": "Open fresh GC-018 only when a specific route/tool/phase enforcement surface is selected.",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/audits/CVF_CI1_T8_CVF_EDIT_FULL_RECONCILIATION_PACKET_2026-06-05.md#finding-to-governance-learning-disposition"
+        },
+        {
+          "id": "CI1-T8-F3-failure-simulation-harness-demand-gated",
+          "summary": "Failure simulation scenarios are mapped by LHW18 T1 but no runtime harness is claimed.",
+          "disposition": "DEFER_DEMAND_GATED",
+          "nextAction": "Use LHW18 T1 and LHW7 T3 before opening a failure-simulation implementation tranche.",
+          "defectClass": "RUNTIME_SIGNAL_GAP",
+          "learningLane": "RUNTIME_BEHAVIOR_LEARNING",
+          "f2gRef": "docs/audits/CVF_CI1_T8_CVF_EDIT_FULL_RECONCILIATION_PACKET_2026-06-05.md#finding-to-governance-learning-disposition"
+        },
+        {
+          "id": "CI1-T8-F4-integration-sdk-demand-gated",
+          "summary": "Integration SDK adapters from CVF Edit remain concept-only; MCP is the current framework-neutral boundary.",
+          "disposition": "DEFER_DEMAND_GATED",
+          "nextAction": "Open adapter roadmap only for a named framework and fresh operator decision.",
+          "defectClass": "OPERATOR_SCOPE_CLARITY_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/audits/CVF_CI1_T8_CVF_EDIT_FULL_RECONCILIATION_PACKET_2026-06-05.md#finding-to-governance-learning-disposition"
+        },
+        {
+          "id": "CI1-T8-F5-context-budget-resolved",
+          "summary": "Context budget proposal from CVF Edit is no longer open as pure advisory after CBG-1.",
+          "disposition": "ACCEPT_NO_ACTION",
+          "nextAction": "No further action from CVF Edit; use CBG-1 boundary for future work.",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "resolvedBy": "CBG-1"
+        }
+      ],
+      "negativeSearchTerms": [
+        "default claim that CVF Edit proves hard runtime governance enforcement",
+        "live failure-simulation harness from LHW18 T1",
+        "framework-specific adapter SDK implementation from LHW18 T2",
+        "advanced project-scale stability proof from context management advisory",
+        "Agent OS positioning as public claim"
+      ],
+      "nextScanRecommendation": "No additional CVF Edit corpus visibility scan needed. Future work should be a fresh GC-018 runtime proof only if the operator selects a specific route/tool/phase enforcement, failure-simulation, or framework-adapter surface.",
+      "hashAlgorithm": "sha256",
+      "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
+    },
+    {
+      "id": "legacy-cvf-app-onboarding",
+      "corpusType": "LEGACY_FOLDER",
+      "displayName": "App onboarding (UI design reference)",
+      "scopePaths": [
+        ".private_reference/legacy/App onboarding/"
+      ],
+      "fileCount": null,
+      "status": "NOT_STARTED",
+      "scanWave": null,
+      "scanDate": null,
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": null,
+      "completionReviewPath": null,
+      "gcBaselineRef": null,
+      "verdicts": {
+        "gc047": "NOT_RUN",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [],
+      "priorAbsorption": "None — UI design mockups, referenced in CLAUDE.md App onboarding/ section",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "Low priority — UI design reference, not knowledge absorption target"
+    },
+    {
+      "id": "GOVERNANCE_PILOT_NO_LEGAL_CORPUS",
+      "corpusType": "TEST_CORPUS",
+      "displayName": "Governance Pilot Corpus (CI2-T4 schema proof)",
+      "scopePaths": [
+        "docs/corpus-intelligence/CVF_CI2_T4_PRODUCT_READINESS_PILOT_CORPUS_PACK.json"
+      ],
+      "fileCount": 4,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "CI2-T4",
+      "scanDate": "2026-06-02",
+      "notes": "Schema-proof pilot corpus for LPCI1-T5 prototype testing. Not a production legal corpus.",
+      "nextScanRecommendation": "N/A — schema-proof pilot corpus; not a live corpus requiring re-scan",
+      "findings": [
+        {
+          "id": "PILOT-F1",
+          "summary": "Schema proof only — 4 synthetic records for LPCI1-T5 prototype live testing; not a production legal corpus",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "defectClass": "OPERATOR_SCOPE_CLARITY_GAP",
+          "learningLane": "DOCUMENTATION_ONLY_LEARNING",
+          "nextAction": "No action required; prototype scope explicitly bounded in LPCI1-T5 completion review"
+        }
+      ],
+      "negativeSearchTerms": [
+        "production legal corpus (not present — this is a synthetic schema-proof pilot)",
+        "real jurisdiction documents (not present — synthetic records only)",
+        "vector embeddings (not produced — keyword search prototype only)"
+      ]
+    },
+    {
+      "id": "policylocal-production-corpus-dropzone",
+      "corpusType": "POLICY_DOCUMENT",
+      "displayName": "PolicyLocal Production Corpus Drop-Zone",
+      "scopePaths": [
+        "D:/UNG DUNG AI/TOOL AI 2026/CVF-Workspace/Policy_Local/data_input/"
+      ],
+      "fileCount": 2,
+      "status": "DEEP_CLASSIFIED",
+      "scanWave": "LPCI2-T8",
+      "scanDate": "2026-06-04",
+      "manifestHash": "b7878246e29ab104df404d4d5c558de66a256d6be80073524cc7bafd3dde8d71",
+      "manifestPath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-Workspace/Policy_Local/data/generated/policylocal-data-input-manifest.json",
+      "corpusRecordsPath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-Workspace/Policy_Local/data/generated/policylocal-corpus-records.json",
+      "corpusRecordsSchemaVersion": "policylocal.corpusRecords.t8.v1",
+      "corpusRecordsHash": "sha256:768a84fa26d656cb2e91ffe55dafe656c4d47501c24c1abb283a3d68a12f7eff",
+      "facetSchemaPath": "docs/reference/CVF_LPCI_FACETED_RETRIEVAL_SCHEMA_2026-06-04.md",
+      "boundaryContractPath": "docs/reference/CVF_LPCI_RESPONSE_BOUNDARY_ENFORCEMENT_CONTRACT_2026-06-04.md",
+      "queryReceiptModelPath": "docs/reference/CVF_LPCI_QUERY_RECEIPT_MODEL_2026-06-04.md",
+      "retrievalTraceDesignPath": "docs/reference/CVF_LPCI_RETRIEVAL_TRACE_DESIGN_2026-06-04.md",
+      "processingLedgerPath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-Workspace/Policy_Local/data/generated/policylocal-t7-processing-ledger.json",
+      "processingLedgerHash": "sha256:df81248738fbdafb540f4bf1dd62d818584598350a758b221c8a71f63e0b923b",
+      "packetPath": "docs/reviews/CVF_LPCI2_T4S_POLICYLOCAL_DATA_INPUT_SMOKE_TEST_COMPLETION_2026-06-04.md",
+      "t4CompletionReviewPath": "docs/reviews/CVF_LPCI2_T4_CORPUS_INTELLIGENCE_IMPORT_CLASSIFICATION_EVIDENCE_COMPLETION_2026-06-04.md",
+      "completionReviewPath": "docs/reviews/CVF_LPCI2_T5_POLICYLOCAL_DEEP_CLASSIFICATION_COMPLETION_2026-06-04.md",
+      "t7CompletionReviewPath": "docs/reviews/CVF_LPCI2_T7_CORPUS_FACET_SCHEMA_AUTHORING_COMPLETION_2026-06-04.md",
+      "t8CompletionReviewPath": "docs/reviews/CVF_LPCI2_T8_SEARCH_LAYER_SCAFFOLDING_COMPLETION_2026-06-04.md",
+      "gcBaselineRef": null,
+      "productionUse": true,
+      "language": "vi",
+      "jurisdiction": "VN_NATIONAL",
+      "verdicts": {
+        "gc047": "COMPLETE_VERIFIED",
+        "gc048": "RECONCILED_VERIFIED",
+        "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+      },
+      "semanticRegions": [
+        "LEGAL_POLICY_CORPUS",
+        "POLICYLOCAL_RUNTIME_INPUT",
+        "VN_NATIONAL_ASSEMBLY_LAWS"
+      ],
+      "classificationSummary": {
+        "extractionScope": "READ_DEEP",
+        "classificationScope": "FULL_BODY_DEEP_SCAN",
+        "hashDriftCount": 0,
+        "recordsExtracted": 2,
+        "recordsClassified": 2,
+        "dominantDocumentType": "law",
+        "dominantJurisdiction": "VN_NATIONAL",
+        "dominantIssuingBody": "Quoc Hoi (National Assembly of Vietnam)",
+        "statusDetected": "amended",
+        "answerClassAssigned": "SUMMARY_WITH_SOURCE",
+        "answerClassBasis": "T2 decision matrix: law + amended + VN_NATIONAL + READ_DEEP; effectiveDate=2026-07-01 confirmed P1_effective_clause",
+        "effectiveDateStatus": "2026-07-01 — confirmed from document body via P1_effective_clause (Article 44 file-116; Article 47 file-148); not yet in force as of 2026-06-04",
+        "fullDeepClassificationRequired": false,
+        "knowledgeMapVerdict": "RECONCILED_VERIFIED",
+        "adversarialSamplingResult": "4/4 query classes PASS (S1-S4)",
+        "scriptVersion": "lpci2.t5.deep_scan.v1",
+        "executionBaseHead": "408cbfcf",
+        "schemaUpgradeVersion": "lpci2.t8.search_scaffolding.v1",
+        "facetSchemaVersion": "policylocal.facetSchema.t7.v1",
+        "boundaryContractVersion": "policylocal.boundaryContract.t7.v1",
+        "queryReceiptModelVersion": "policylocal.queryReceipt.t8.v1",
+        "retrievalTraceDesignVersion": "policylocal.retrievalTrace.t8.v1",
+        "freshnessStatus": "not_yet_in_force",
+        "freshnessCheckedAt": "2026-06-04",
+        "sourceFamily": "VN_NATIONAL_ASSEMBLY_2025",
+        "familyId": "vn-national-assembly-2025",
+        "revisedReadinessVerdict": "READY",
+        "finalReadinessVerdict": "READY",
+        "negativeSearchEvidenceEntries": 6,
+        "remainingT8Gaps": []
+      },
+      "priorAbsorption": "LPCI2-T4S hash-only smoke test: two DOCX files hashed and normalized. LPCI2-T4: text extracted (READ_SHALLOW), VN_NATIONAL law corpus confirmed, issuingBody=Quoc Hoi, status=amended, answerClass=SUMMARY_WITH_SOURCE. LPCI2-T5: full-body deep scan, effectiveDate=2026-07-01 confirmed P1_effective_clause (both files), GC-048 RECONCILED_VERIFIED, adversarial sampling 4/4 PASS, corpus records upgraded to READ_DEEP. LPCI2-T7: faceted retrieval schema and boundary enforcement contract authored; corpus records upgraded to t7.v1 with topicTags, freshnessStatus, sourceFamily, and processing ledger. LPCI2-T8: query receipt model and retrieval trace design authored; corpus records upgraded to t8.v1 with negativeSearchEvidence, queryReceiptModelRef, and retrievalTraceDesignRef; final readiness verdict READY.",
+      "findings": [
+        {
+          "id": "T4S-F1-docx-text-extraction-deferred",
+          "summary": "PolicyLocal data_input smoke test hashed two DOCX files, but text extraction and legal/policy domain classification were deferred.",
+          "disposition": "ACCEPT_NO_ACTION",
+          "nextAction": "Resolved by LPCI2-T4 extraction and classification.",
+          "defectClass": "RUNTIME_SIGNAL_GAP",
+          "learningLane": "RUNTIME_BEHAVIOR_LEARNING",
+          "f2gRef": "docs/reviews/CVF_LPCI2_T4S_POLICYLOCAL_DATA_INPUT_SMOKE_TEST_COMPLETION_2026-06-04.md#finding-to-governance-learning-disposition",
+          "resolvedBy": "LPCI2-T4"
+        },
+        {
+          "id": "T4-F1-effectivedate-unknown",
+          "summary": "effectiveDate could not be extracted from document header in T4 READ_SHALLOW scope for either DOCX file.",
+          "disposition": "ACCEPT_NO_ACTION",
+          "nextAction": "RESOLVED by LPCI2-T5: effectiveDate=2026-07-01 confirmed via P1_effective_clause (Article 44 file-116 charPos=84776; Article 47 file-148 charPos=54874).",
+          "defectClass": "DOCUMENTATION_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_LPCI2_T5_POLICYLOCAL_DEEP_CLASSIFICATION_COMPLETION_2026-06-04.md#finding-to-governance-learning-disposition",
+          "resolvedBy": "LPCI2-T5"
+        },
+        {
+          "id": "T4-F2-search-chat-blocked",
+          "summary": "SUMMARY_WITH_SOURCE with READ_SHALLOW classification is not sufficient for search/chat runtime.",
+          "disposition": "DEFER_PHASED",
+          "nextAction": "Open a bounded search/chat readiness work order after T5 operator commit. Do not open search/chat runtime until that readiness gate closes.",
+          "defectClass": "RUNTIME_SIGNAL_GAP",
+          "learningLane": "RUNTIME_BEHAVIOR_LEARNING",
+          "f2gRef": "docs/reviews/CVF_LPCI2_T5_POLICYLOCAL_DEEP_CLASSIFICATION_COMPLETION_2026-06-04.md#finding-to-governance-learning-disposition"
+        }
+      ],
+      "negativeSearchTerms": [
+        "DIRECT_CITED_ANSWER from 116_2025_QH15_666020.docx or 148_2025_QH15_675262.docx (blocked; amended laws use SUMMARY_WITH_SOURCE; citation depth insufficient)",
+        "effectiveDate unknown (T5 resolved: 2026-07-01 confirmed P1_effective_clause for both files)",
+        "search/chat runtime readiness (governance scaffold READY after T8; implementation still blocked until fresh operator-authorized work order)",
+        "live query negative evidence (not produced; T8 negativeSearchEvidence is structural and implementation tests must produce live receipts)",
+        "provider call in T5 deep scan (none; local python-docx only; no model inference)",
+        "both laws currently in force (effectiveDate=2026-07-01; not yet in force as of 2026-06-04)"
+      ],
+      "nextScanRecommendation": "T8 governance scaffold complete. PolicyLocal is READY for a fresh operator-authorized search implementation work order; do not begin runtime work from this registry entry alone. EC-02 rescan required on or after 2026-07-01 before any production runtime opens.",
+      "hashAlgorithm": "sha256",
+      "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
+    },
+    {
+      "id": "mlw0-current-source-verification-map",
+      "corpusType": "PROJECT_SOURCE",
+      "displayName": "MLW0 Current Source Verification Map",
+      "scopePaths": [
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/memory/",
+        "docs/audits/CVF_CI1_T11A_LEARNING_PLANE_DEEP_SCAN_PACKET_2026-06-05.md",
+        "docs/audits/CVF_CI1_T11B_MEMORY_KNOWLEDGE_STORE_DEEP_SCAN_PACKET_2026-06-05.md",
+        "docs/audits/CVF_CI1_T11C_RAG_CONTEXT_CONTROL_DEEP_SCAN_PACKET_2026-06-05.md",
+        "docs/audits/CVF_CI1_T11D_EXECUTION_AUDIT_LEARNING_DEEP_SCAN_PACKET_2026-06-05.md"
+      ],
+      "fileCount": null,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "MLW0",
+      "scanDate": "2026-06-05",
+      "manifestHash": "89cacbf76705a729468ea01a103f05fb8da7f42b1716b072533e41f29b8f1a94",
+      "manifestPath": null,
+      "packetPath": "docs/reference/CVF_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_2026-06-05.md",
+      "completionReviewPath": "docs/reviews/CVF_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_COMPLETION_2026-06-05.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_2026-06-05.md",
+      "verdicts": {
+        "gc047": "COMPLETE_VERIFIED",
+        "gc048": "PARTIAL",
+        "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+      },
+      "semanticRegions": [
+        "MEMORY_LEARNING_SOURCE_VERIFICATION",
+        "LEGACY_TO_CURRENT_SYMBOL_MAP",
+        "MLW_TRANCHE_DEPENDENCY_AUTHORITY"
+      ],
+      "priorAbsorption": "CI1-T11 consolidated roadmap required MLW0 before MLW1-MLW8 implementation. MLW0 maps legacy memory, learning, RAG/context, execution continuity, and audit feedback vocabulary to current LPF/cvf-web source authority.",
+      "findings": [
+        {
+          "id": "MLW0-F1-legacy-runtime-vocabulary",
+          "summary": "Legacy W7 runtime record names are not current runtime source symbols and must not be reused as source facts.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Future MLW work orders must cite the MLW0 map and use current names or author new schemas.",
+          "defectClass": "RUNTIME_SIGNAL_GAP",
+          "learningLane": "RUNTIME_BEHAVIOR_LEARNING",
+          "f2gRef": "docs/reviews/CVF_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_COMPLETION_2026-06-05.md#finding-to-governance-learning-disposition"
+        },
+        {
+          "id": "MLW0-F2-context-workflow-gap",
+          "summary": "Current source has context budget, memory packager, and knowledge retrieval pieces but not a named RAGRouter, ContextFusionPipeline, ContextBundleSchema, CachePolicy, or WorkflowContextWindow.",
+          "disposition": "DEFER_WITH_ROADMAP",
+          "nextAction": "Use MLW2 to author a deterministic context bundle/router/fusion contract before runtime implementation.",
+          "defectClass": "MACHINE_GATE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_COMPLETION_2026-06-05.md#finding-to-governance-learning-disposition"
+        },
+        {
+          "id": "MLW0-F3-audit-trust-feedback-gap",
+          "summary": "Audit and trust feedback exists as audit-memory receipt and finding-to-learning bridge pieces, not as legacy AuditCouncilFeedback or TrustCalibrationRecord types.",
+          "disposition": "DEFER_WITH_ROADMAP",
+          "nextAction": "Use MLW5 to gate audit feedback as proposal-only learning with no direct policy mutation.",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_COMPLETION_2026-06-05.md#finding-to-governance-learning-disposition"
+        }
+      ],
+      "negativeSearchTerms": [
+        "W7ArtifactRecord runtime source symbol (not present in current TS source)",
+        "W7TraceRecord runtime source symbol (not present in current TS source)",
+        "W7PlannerRecord runtime source symbol (not present in current TS source)",
+        "W7DecisionRecord runtime source symbol (not present in current TS source)",
+        "W7MemoryRecord runtime source symbol (not present in current TS source)",
+        "RAGRouter current source symbol (not present)",
+        "ContextFusionPipeline current source symbol (not present)",
+        "ContextBundleSchema current source symbol (not present)",
+        "AuditCouncilFeedback current source symbol (not present)",
+        "TrustCalibrationRecord current source symbol (not present)"
+      ],
+      "nextScanRecommendation": "No additional MLW0 scan needed. Operator should review blocked and renamed rows, then authorize a fresh GC-018/work order for MLW1 or MLW2.",
+      "hashAlgorithm": "sha256",
+      "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
+    },
+    {
+      "id": "mlw1-mlw6-core-workflow-chain",
+      "corpusType": "PROJECT_SOURCE",
+      "displayName": "MLW1-MLW6 Memory Learning Core Workflow Chain",
+      "scopePaths": [
+        "docs/reference/CVF_MLW0_CURRENT_SOURCE_VERIFICATION_MAP_2026-06-05.md",
+        "docs/reference/CVF_MLW1_GOVERNED_MEMORY_OPERATION_RECEIPT_MODEL_2026-06-05.md",
+        "docs/reference/CVF_MLW2_DETERMINISTIC_CONTEXT_BUNDLE_WORKFLOW_2026-06-05.md",
+        "docs/reference/CVF_MLW3_EVIDENCE_TO_TRUTH_LEARNING_SIGNAL_PIPELINE_2026-06-05.md",
+        "docs/reference/CVF_MLW4_EXECUTION_CONTINUITY_HANDOFF_GATE_2026-06-05.md",
+        "docs/reference/CVF_MLW5_AUDIT_FEEDBACK_VALIDATION_LANE_2026-06-05.md",
+        "docs/reference/CVF_MLW6_SIMULATION_FAILURE_GATE_2026-06-05.md"
+      ],
+      "fileCount": 7,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "MLW1-MLW6",
+      "scanDate": "2026-06-05",
+      "manifestHash": "5305c7a18f61607d211b02c324c31f1140051e320073f12e5ef701977d125b4a",
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MLW1_MLW6_MEMORY_LEARNING_CORE_WORKFLOW_CHAIN_COMPLETION_2026-06-05.md",
+      "completionReviewPath": "docs/reviews/CVF_MLW1_MLW6_MEMORY_LEARNING_CORE_WORKFLOW_CHAIN_COMPLETION_2026-06-05.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_MLW1_MLW6_MEMORY_LEARNING_CORE_WORKFLOW_CHAIN_2026-06-05.md",
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "RECONCILED_WITH_DECLARED_DEFERRED_SCOPE",
+        "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+      },
+      "semanticRegions": [
+        "MEMORY_OPERATION_RECEIPT",
+        "CONTEXT_BUNDLE_WORKFLOW",
+        "LEARNING_SIGNAL_PIPELINE",
+        "CONTINUITY_HANDOFF_GATE",
+        "AUDIT_FEEDBACK_VALIDATION",
+        "SIMULATION_FAILURE_GATE"
+      ],
+      "priorAbsorption": "MLW0 closed the source-verification prerequisite. MLW1-MLW6 convert the CI1-T11 memory/learning roadmap into bounded contract artifacts without runtime implementation.",
+      "findings": [
+        {
+          "id": "MLW1-6-F1-doc-only-fields-separated",
+          "summary": "Several legacy concepts are not current runtime symbols, so MLW1-MLW6 define new doc-only contract fields instead of presenting them as source facts.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Future runtime work orders must source-verify any field before implementation.",
+          "defectClass": "RUNTIME_SIGNAL_GAP",
+          "learningLane": "RUNTIME_BEHAVIOR_LEARNING",
+          "f2gRef": "docs/reviews/CVF_MLW1_MLW6_MEMORY_LEARNING_CORE_WORKFLOW_CHAIN_COMPLETION_2026-06-05.md#finding-to-governance-learning-disposition"
+        },
+        {
+          "id": "MLW1-6-F2-proposal-only-learning",
+          "summary": "Learning, trust, audit feedback, and simulation outputs remain proposal-only and do not authorize autonomous mutation.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Future runtime implementation should add machine checks for mutation denial and simulation-before-promotion.",
+          "defectClass": "MACHINE_GATE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_MLW1_MLW6_MEMORY_LEARNING_CORE_WORKFLOW_CHAIN_COMPLETION_2026-06-05.md#finding-to-governance-learning-disposition"
+        },
+        {
+          "id": "MLW1-6-F3-runtime-backend-deferred",
+          "summary": "Durable backend selection and runtime implementation remain deferred outside the contract wave.",
+          "disposition": "DEFER_WITH_ROADMAP",
+          "nextAction": "Open a fresh operator-authorized runtime/backend work order if durable runtime implementation is needed.",
+          "defectClass": "OPERATOR_SCOPE_CLARITY_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_MLW1_MLW6_MEMORY_LEARNING_CORE_WORKFLOW_CHAIN_COMPLETION_2026-06-05.md#finding-to-governance-learning-disposition"
+        }
+      ],
+      "negativeSearchTerms": [
+        "runtime implementation claim for MLW1-MLW6 (not made)",
+        "public memory/learning shipped feature claim (not made)",
+        "autonomous mutation authorization (not made)",
+        "durable backend implementation (not made)"
+      ],
+      "nextScanRecommendation": "No additional MLW1-MLW6 contract scan is required. Next work requires a fresh operator-authorized runtime/backend, public-sync, or MLW7/MLW8 work order.",
+      "hashAlgorithm": "sha256",
+      "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
+    },
+    {
+      "id": "mlw-rt1-durable-memory-runtime-proof",
+      "corpusType": "PROJECT_SOURCE",
+      "displayName": "MLW-RT1 Durable Memory Runtime Proof",
+      "scopePaths": [
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/durable-memory-store.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route-final-response.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.durable-memory.test.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.mlw-rt1-durable-memory.alibaba.live.test.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/alibaba-env.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/durable-memory-route.ts",
+        "docs/baselines/CVF_GC018_MLW_RT1_DURABLE_MEMORY_RUNTIME_PROOF_2026-06-05.md",
+        "docs/reviews/CVF_MLW_RT1_DURABLE_MEMORY_RUNTIME_PROOF_COMPLETION_2026-06-05.md",
+        "docs/work_orders/CVF_WO_MLW_RT1_DURABLE_MEMORY_RUNTIME_PROOF_2026-06-05.md"
+      ],
+      "fileCount": 9,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "MLW-RT1",
+      "scanDate": "2026-06-05",
+      "manifestHash": "1dcfdfc6dc7b2b74779c528d56bc830bc4e9a8bd193db0e93044734a52b9c3aa",
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MLW_RT1_DURABLE_MEMORY_RUNTIME_PROOF_COMPLETION_2026-06-05.md",
+      "completionReviewPath": "docs/reviews/CVF_MLW_RT1_DURABLE_MEMORY_RUNTIME_PROOF_COMPLETION_2026-06-05.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_MLW_RT1_DURABLE_MEMORY_RUNTIME_PROOF_2026-06-05.md",
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "RECONCILED_WITH_DECLARED_GAPS",
+        "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+      },
+      "semanticRegions": [
+        "DURABLE_MEMORY_RUNTIME",
+        "EXECUTE_ROUTE_GOVERNANCE",
+        "LIVE_PROVIDER_PROOF"
+      ],
+      "priorAbsorption": "MLW1-MLW6 contract closure defined memory/context boundaries; MLW-RT1 proves the existing file-backed durable memory execute-route chain with deterministic regression and Alibaba live proof.",
+      "findings": [
+        {
+          "id": "MLW-RT1-F1-write-read-continuity-proof-added",
+          "summary": "Existing route tests covered durable write and read separately; MLW-RT1 adds a write-then-read continuity regression.",
+          "disposition": "ACCEPT",
+          "nextAction": "Retain focused regression for future execute-route memory changes.",
+          "defectClass": "RUNTIME_SIGNAL_GAP",
+          "learningLane": "RUNTIME_BEHAVIOR_LEARNING",
+          "f2gRef": "docs/reviews/CVF_MLW_RT1_DURABLE_MEMORY_RUNTIME_PROOF_COMPLETION_2026-06-05.md#finding-to-governance-learning-disposition"
+        },
+        {
+          "id": "MLW-RT1-F2-live-write-guard-authority-clarified",
+          "summary": "Live write proof must satisfy real guard authority with BUILD phase and aiCommit metadata.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Use the same authority pattern for future modifying live proofs.",
+          "defectClass": "PHASE_GATE_PLACEMENT_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_MLW_RT1_DURABLE_MEMORY_RUNTIME_PROOF_COMPLETION_2026-06-05.md#finding-to-governance-learning-disposition"
+        }
+      ],
+      "negativeSearchTerms": [
+        "production-grade durable memory claim (not made)",
+        "distributed storage claim (not made)",
+        "autonomous learning mutation claim (not made)",
+        "public memory feature claim (not made)"
+      ],
+      "nextScanRecommendation": "A backend migration, public-safe summary, MLW7, or MLW8 requires a separate fresh GC-018/work order.",
+      "hashAlgorithm": "sha256",
+      "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
+    },
+    {
+      "id": "mlw2-rt1-context-bundle-runtime-proof",
+      "corpusType": "PROJECT_SOURCE",
+      "displayName": "MLW2-RT1 Context Bundle Runtime Proof",
+      "scopePaths": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/context-bundle-readout.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/context-bundle-readout.test.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route-final-response.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.mlw2-context-bundle.test.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.mlw2-context-bundle.alibaba.live.test.ts",
+        "docs/baselines/CVF_GC018_MLW2_RT1_CONTEXT_BUNDLE_RUNTIME_PROOF_2026-06-05.md",
+        "docs/reviews/CVF_MLW2_RT1_CONTEXT_BUNDLE_RUNTIME_PROOF_COMPLETION_2026-06-05.md",
+        "docs/work_orders/CVF_WO_MLW2_RT1_CONTEXT_BUNDLE_RUNTIME_PROOF_2026-06-05.md"
+      ],
+      "fileCount": 8,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "MLW2-RT1",
+      "scanDate": "2026-06-05",
+      "manifestHash": "e5343cb04202fd89fbd3449a66f99f5c9a31a216a9d55a09b03870e1ec9a8cbd",
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MLW2_RT1_CONTEXT_BUNDLE_RUNTIME_PROOF_COMPLETION_2026-06-05.md",
+      "completionReviewPath": "docs/reviews/CVF_MLW2_RT1_CONTEXT_BUNDLE_RUNTIME_PROOF_COMPLETION_2026-06-05.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_MLW2_RT1_CONTEXT_BUNDLE_RUNTIME_PROOF_2026-06-05.md",
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "RECONCILED_WITH_DECLARED_GAPS",
+        "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+      },
+      "semanticRegions": [
+        "CONTEXT_RUNTIME",
+        "KNOWLEDGE_RETRIEVAL_EVIDENCE",
+        "EXECUTE_ROUTE_GOVERNANCE",
+        "LIVE_PROVIDER_PROOF"
+      ],
+      "priorAbsorption": "MLW2 contract defined deterministic context bundle/source-boundary workflow; MLW2-RT1 proves route-visible metadata-only contextBundleReadout with deterministic and Alibaba live tests.",
+      "findings": [
+        {
+          "id": "MLW2-RT1-F1-context-runtime-proof-added",
+          "summary": "MLW2 advanced from contract-only context workflow to route-visible metadata runtime evidence.",
+          "disposition": "ACCEPT",
+          "nextAction": "Retain focused context bundle regression before MLW3 runtime signal work.",
+          "defectClass": "RUNTIME_SIGNAL_GAP",
+          "learningLane": "RUNTIME_BEHAVIOR_LEARNING",
+          "f2gRef": "docs/reviews/CVF_MLW2_RT1_CONTEXT_BUNDLE_RUNTIME_PROOF_COMPLETION_2026-06-05.md#finding-to-governance-learning-disposition"
+        },
+        {
+          "id": "MLW2-RT1-F2-context-bundle-machine-check-candidate",
+          "summary": "Context source-map/hash metadata is now available as a future machine-check candidate for retrieval-backed route execution.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Evaluate a checker after MLW3 runtime layer is closed.",
+          "defectClass": "MACHINE_GATE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_MLW2_RT1_CONTEXT_BUNDLE_RUNTIME_PROOF_COMPLETION_2026-06-05.md#finding-to-governance-learning-disposition"
+        }
+      ],
+      "negativeSearchTerms": [
+        "full RAG router claim (not made)",
+        "retrieval quality claim (not made)",
+        "vector search claim (not made)",
+        "autonomous context mutation claim (not made)",
+        "public context feature claim (not made)"
+      ],
+      "nextScanRecommendation": "MLW3-RT1 can consume contextBundleReadout as source-boundary evidence; full RAG/fusion requires separate fresh GC-018.",
+      "hashAlgorithm": "sha256",
+      "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
+    },
+    {
+      "id": "mlw3-rt1-evidence-to-learning-runtime-proof",
+      "corpusType": "PROJECT_SOURCE",
+      "displayName": "MLW3-RT1 Evidence-To-Learning Runtime Proof",
+      "scopePaths": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/evidence-to-learning-readout.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/evidence-to-learning-readout.test.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route-final-response.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.mlw3-evidence-to-learning.test.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.mlw3-evidence-to-learning.alibaba.live.test.ts",
+        "docs/baselines/CVF_GC018_MLW3_RT1_EVIDENCE_TO_LEARNING_RUNTIME_PROOF_2026-06-05.md",
+        "docs/reviews/CVF_MLW3_RT1_EVIDENCE_TO_LEARNING_RUNTIME_PROOF_COMPLETION_2026-06-05.md",
+        "docs/work_orders/CVF_WO_MLW3_RT1_EVIDENCE_TO_LEARNING_RUNTIME_PROOF_2026-06-05.md"
+      ],
+      "fileCount": 8,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "MLW3-RT1",
+      "scanDate": "2026-06-05",
+      "manifestHash": "33edad370843cdf9ae1774151198e0b641e5490eddfb7ee3b732d1536c592aad",
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MLW3_RT1_EVIDENCE_TO_LEARNING_RUNTIME_PROOF_COMPLETION_2026-06-05.md",
+      "completionReviewPath": "docs/reviews/CVF_MLW3_RT1_EVIDENCE_TO_LEARNING_RUNTIME_PROOF_COMPLETION_2026-06-05.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_MLW3_RT1_EVIDENCE_TO_LEARNING_RUNTIME_PROOF_2026-06-05.md",
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "RECONCILED_WITH_DECLARED_GAPS",
+        "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+      },
+      "semanticRegions": [
+        "LEARNING_SIGNAL_RUNTIME",
+        "CONTEXT_RUNTIME",
+        "EXECUTE_ROUTE_GOVERNANCE",
+        "LIVE_PROVIDER_PROOF"
+      ],
+      "priorAbsorption": "MLW3 contract defined evidence-to-truth/evaluation/reputation proposal pipeline; MLW3-RT1 proves route-visible metadata-only evidenceToLearningReadout with deterministic and Alibaba live tests.",
+      "findings": [
+        {
+          "id": "MLW3-RT1-F1-learning-signal-runtime-proof-added",
+          "summary": "MLW3 advanced from contract-only evidence pipeline to route-visible metadata runtime evidence.",
+          "disposition": "ACCEPT",
+          "nextAction": "Retain focused evidence-to-learning regression before MLW5/MLW6 promotion work.",
+          "defectClass": "RUNTIME_SIGNAL_GAP",
+          "learningLane": "RUNTIME_BEHAVIOR_LEARNING",
+          "f2gRef": "docs/reviews/CVF_MLW3_RT1_EVIDENCE_TO_LEARNING_RUNTIME_PROOF_COMPLETION_2026-06-05.md#finding-to-governance-learning-disposition"
+        },
+        {
+          "id": "MLW3-RT1-F2-live-output-bypass-guard-retained",
+          "summary": "First live attempt was blocked by the existing output bypass guard; prompt boundary was corrected and guard was not weakened.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Use neutral live-proof prompts for route evidence tests.",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_MLW3_RT1_EVIDENCE_TO_LEARNING_RUNTIME_PROOF_COMPLETION_2026-06-05.md#finding-to-governance-learning-disposition"
+        }
+      ],
+      "negativeSearchTerms": [
+        "truth model mutation claim (not made)",
+        "Learning Orchestrator implementation claim (not made)",
+        "model tuning claim (not made)",
+        "autonomous learning mutation claim (not made)",
+        "public learning feature claim (not made)"
+      ],
+      "nextScanRecommendation": "MLW5/MLW6 can consume evidenceToLearningReadout as proposal evidence; promotion/orchestration requires separate fresh GC-018.",
+      "hashAlgorithm": "sha256",
+      "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
+    },
+    {
+      "id": "mlw4-mlw6-rt1-continuity-audit-simulation-runtime-chain",
+      "corpusType": "PROJECT_SOURCE",
+      "displayName": "MLW4-MLW6 RT1 Continuity Audit Simulation Runtime Chain",
+      "scopePaths": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw-runtime-chain-readouts.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw-runtime-chain-readouts.test.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route-final-response.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.mlw4-mlw6-runtime-chain.test.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.mlw4-mlw6-runtime-chain.alibaba.live.test.ts",
+        "docs/baselines/CVF_GC018_MLW4_MLW6_RT1_CONTINUITY_AUDIT_SIMULATION_RUNTIME_CHAIN_2026-06-05.md",
+        "docs/reviews/CVF_MLW4_MLW6_RT1_CONTINUITY_AUDIT_SIMULATION_RUNTIME_CHAIN_COMPLETION_2026-06-05.md",
+        "docs/work_orders/CVF_WO_MLW4_MLW6_RT1_CONTINUITY_AUDIT_SIMULATION_RUNTIME_CHAIN_2026-06-05.md"
+      ],
+      "fileCount": 8,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "MLW4-MLW6-RT1",
+      "scanDate": "2026-06-05",
+      "manifestHash": "d692347aa517f8e25cbffd6b506208792d7509c782d614592dc59cbd8242ee06",
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MLW4_MLW6_RT1_CONTINUITY_AUDIT_SIMULATION_RUNTIME_CHAIN_COMPLETION_2026-06-05.md",
+      "completionReviewPath": "docs/reviews/CVF_MLW4_MLW6_RT1_CONTINUITY_AUDIT_SIMULATION_RUNTIME_CHAIN_COMPLETION_2026-06-05.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_MLW4_MLW6_RT1_CONTINUITY_AUDIT_SIMULATION_RUNTIME_CHAIN_2026-06-05.md",
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "RECONCILED_WITH_DECLARED_GAPS",
+        "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+      },
+      "semanticRegions": [
+        "EXECUTION_CONTINUITY_RUNTIME",
+        "AUDIT_FEEDBACK_RUNTIME",
+        "SIMULATION_FAILURE_GATE",
+        "EXECUTE_ROUTE_GOVERNANCE",
+        "LIVE_PROVIDER_PROOF"
+      ],
+      "priorAbsorption": "MLW4-MLW6 contracts defined continuity, audit-feedback, and simulation/failure gates; MLW4-MLW6 RT1 proves route-visible metadata-only readouts with deterministic and Alibaba live tests.",
+      "findings": [
+        {
+          "id": "MLW4-MLW6-RT1-F1-runtime-chain-proof-added",
+          "summary": "MLW4-MLW6 advanced from contract-only gates to route-visible metadata runtime evidence.",
+          "disposition": "ACCEPT",
+          "nextAction": "Retain focused runtime-chain regression before any Learning Orchestrator or high-risk promotion work.",
+          "defectClass": "RUNTIME_SIGNAL_GAP",
+          "learningLane": "RUNTIME_BEHAVIOR_LEARNING",
+          "f2gRef": "docs/reviews/CVF_MLW4_MLW6_RT1_CONTINUITY_AUDIT_SIMULATION_RUNTIME_CHAIN_COMPLETION_2026-06-05.md#finding-to-governance-learning-disposition"
+        },
+        {
+          "id": "MLW4-MLW6-RT1-F2-mutation-promotion-boundary",
+          "summary": "Audit feedback and simulation gates are bounded as proposal/review metadata and do not authorize mutation or promotion.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Open a fresh GC-018 before Learning Orchestrator, truth update, trust mutation, policy mutation, or high-risk promotion work.",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_MLW4_MLW6_RT1_CONTINUITY_AUDIT_SIMULATION_RUNTIME_CHAIN_COMPLETION_2026-06-05.md#finding-to-governance-learning-disposition"
+        }
+      ],
+      "negativeSearchTerms": [
+        "Learning Orchestrator implementation claim (not made)",
+        "truth model mutation claim (not made)",
+        "policy mutation claim (not made)",
+        "trust score mutation claim (not made)",
+        "automatic promotion claim (not made)",
+        "public learning feature claim (not made)"
+      ],
+      "nextScanRecommendation": "Next MLW work should choose MLW7/MLW8 or a fresh Learning Orchestrator/high-risk promotion roadmap; do not treat MLW6 RT1 as auto-promotion.",
+      "hashAlgorithm": "sha256",
+      "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
+    },
+    {
+      "id": "cvf-web-dependency-manifest-erh-dep1",
+      "corpusType": "PROJECT_SOURCE",
+      "displayName": "CVF web dependency manifest and lockfile for ERH-DEP1",
+      "scopePaths": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package-lock.json"
+      ],
+      "fileCount": 2,
+      "status": "SCANNED",
+      "scanWave": "ERH-DEP1",
+      "scanDate": "2026-06-04",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reference/CVF_ERH_DEP1_DEPENDENCY_RISK_LEDGER_2026-06-04.md",
+      "completionReviewPath": "docs/reviews/CVF_ERH_DEP1_DEPENDENCY_RISK_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_ERH_DEP1_DEPENDENCY_RISK_WORKFLOW_CHAIN_2026-06-04.md",
+      "verdicts": {
+        "gc047": "PARTIAL",
+        "gc048": "N/A",
+        "gc050": "N/A"
+      },
+      "semanticRegions": [
+        "DEPENDENCY_MANIFEST",
+        "AUTH_DEPENDENCY_RISK"
+      ],
+      "priorAbsorption": "ERH-DEP1 uses package manifest and lockfile only to classify next-auth beta posture; no dependency migration or auth runtime change authorized.",
+      "findings": [],
+      "negativeSearchTerms": [
+        "next-auth CVE in npm audit snapshot (not present in ERH-DEP1 ledger)",
+        "stable v5 migration target (not available in npm metadata snapshot)"
+      ],
+      "nextScanRecommendation": "Open a separate dependency/toolchain upgrade work order before treating broader cvf-web dependency audit as fully scanned."
+    },
+    {
+      "id": "external-review-gap1-extension-readme-owners",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "External Review GAP1 extension README owner surfaces",
+      "scopePaths": [
+        "EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS/README.md",
+        "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/README.md"
+      ],
+      "fileCount": 2,
+      "status": "SCANNED",
+      "scanWave": "ER-GAP1",
+      "scanDate": "2026-06-06",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/audits/CVF_EXTERNAL_REVIEW_GAP1_CORE_KB_OVERLAP_MAP_2026-06-06.md",
+      "completionReviewPath": "docs/reviews/CVF_EXTERNAL_REVIEW_GAP1_CORE_KB_OVERLAP_MAP_COMPLETION_2026-06-06.md",
+      "gcBaselineRef": "docs/work_orders/CVF_WO_EXTERNAL_REVIEW_GAP1_CORE_KB_OVERLAP_MAP_2026-06-06.md",
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "RECONCILED_WITH_DECLARED_GAPS",
+        "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+      },
+      "semanticRegions": [
+        "SKILL_LIBRARY_DOCUMENTATION",
+        "MCP_SERVER_DOCUMENTATION",
+        "CORE_KB_OVERLAP_OWNER_SURFACE"
+      ],
+      "priorAbsorption": "GAP1 overlap map uses these extension README files only as documentation owner surfaces for Core KB pointer candidates.",
+      "findings": [
+        {
+          "id": "ER-GAP1-F1-extension-owner-surface",
+          "summary": "Skill Library and MCP Server README files are valid owner surfaces for Core KB overlap mapping; no runtime or public readiness claim is made.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Use only in a future source-verified Core KB pointer-ification order.",
+          "defectClass": "RULE_GAP",
+          "learningLane": "DOCUMENTATION_ONLY_LEARNING",
+          "f2gRef": "docs/audits/CVF_EXTERNAL_REVIEW_GAP1_CORE_KB_OVERLAP_MAP_2026-06-06.md#finding-to-governance-learning-disposition"
+        }
+      ],
+      "negativeSearchTerms": [
+        "runtime skill library behavior claim (not made)",
+        "MCP runtime proof claim (not made)",
+        "public extension readiness claim (not made)"
+      ],
+      "nextScanRecommendation": "No deep extension scan required for GAP1; reopen only if pointer-ification needs module-level semantic validation."
+    },
+    {
+      "id": "external-review-gap5-guard-contract-runtime-workflow",
+      "corpusType": "PROJECT_SOURCE",
+      "displayName": "External Review GAP5 Guard Contract runtime workflow source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/runtime-workflow.contract.ts",
+        "EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/contracts.phaseD-runtime-workflow.test.ts"
+      ],
+      "fileCount": 2,
+      "status": "SCANNED",
+      "scanWave": "ER-GAP5",
+      "scanDate": "2026-06-06",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/baselines/CVF_GC018_EXTERNAL_REVIEW_GAP4_GAP5_RUNTIME_DURABILITY_2026-06-06.md",
+      "completionReviewPath": "docs/reviews/CVF_EXTERNAL_REVIEW_GAP4_GAP5_RUNTIME_DURABILITY_COMPLETION_2026-06-06.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_EXTERNAL_REVIEW_GAP4_GAP5_RUNTIME_DURABILITY_2026-06-06.md",
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "RECONCILED_WITH_DECLARED_GAPS",
+        "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+      },
+      "semanticRegions": [
+        "RUNTIME_WORKFLOW_CONTRACT",
+        "OPERATIONAL_BENCHMARK_EXTENSION",
+        "LIVE_EMISSION_BOUNDARY"
+      ],
+      "priorAbsorption": "GAP5 uses these Guard Contract files only to source-verify the liveEmissionWired field and bounded runtime_receipt_count metric wiring.",
+      "findings": [
+        {
+          "id": "ER-GAP5-F1-live-emission-boundary",
+          "summary": "runtime_receipt_count is the only metric promoted to liveEmissionWired=true; this is not a full operational benchmark telemetry claim.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Open a separate source-verified work order before wiring additional metrics.",
+          "defectClass": "RUNTIME_SIGNAL_GAP",
+          "learningLane": "RUNTIME_BEHAVIOR_LEARNING",
+          "f2gRef": "docs/reviews/CVF_EXTERNAL_REVIEW_GAP4_GAP5_RUNTIME_DURABILITY_COMPLETION_2026-06-06.md#finding-to-governance-learning-disposition"
+        }
+      ],
+      "negativeSearchTerms": [
+        "full operational benchmark telemetry claim (not made)",
+        "additional metric live emission (not authorized)",
+        "production benchmark readiness claim (not made)"
+      ],
+      "nextScanRecommendation": "Register additional Guard Contract source files only when a future GAP/E2 work order cites them as source corpus."
+    },
+    {
+      "id": "p1-p5-auth-runtime-source-verification",
+      "corpusType": "PROJECT_SOURCE",
+      "displayName": "P1-P5 auth runtime source verification subset",
+      "scopePaths": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/auth.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/auth/[...nextauth]/route.ts"
+      ],
+      "fileCount": 2,
+      "status": "SCANNED",
+      "scanWave": "P1-P5",
+      "scanDate": "2026-06-06",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/audits/CVF_P1_P5_SMALL_DEBT_REMEDIATION_AUDIT_2026-06-06.md",
+      "completionReviewPath": null,
+      "gcBaselineRef": "docs/work_orders/CVF_WO_DEP2_NEXT_AUTH_STABLE_MIGRATION_DECISION_2026-06-06.md",
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "RECONCILED_WITH_DECLARED_GAPS",
+        "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+      },
+      "semanticRegions": [
+        "AUTH_RUNTIME",
+        "AUTH_ROUTE_HANDLER",
+        "DEPENDENCY_MIGRATION_BOUNDARY"
+      ],
+      "priorAbsorption": "P1-P5 audit reads only the auth runtime and NextAuth route handler needed to classify next-auth beta migration risk; no auth runtime change is authorized.",
+      "findings": [
+        {
+          "id": "P1-P5-F1-next-auth-stable-target-absent",
+          "summary": "Auth runtime uses v5-style handlers while npm metadata shows no stable v5 target on 2026-06-06.",
+          "disposition": "DEFER_WITH_ROADMAP",
+          "nextAction": "Use DEP2 backlog work order before any auth migration.",
+          "defectClass": "ORCHESTRATOR_PACKET_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/audits/CVF_P1_P5_SMALL_DEBT_REMEDIATION_AUDIT_2026-06-06.md#finding-to-governance-learning-disposition"
+        }
+      ],
+      "negativeSearchTerms": [
+        "stable Auth.js v5 migration claim (not made)",
+        "production auth readiness claim (not made)",
+        "auth provider replacement claim (not made)"
+      ],
+      "nextScanRecommendation": "Open DEP2 before scanning broader auth runtime or package migration surfaces."
+    }
+  ]
+}

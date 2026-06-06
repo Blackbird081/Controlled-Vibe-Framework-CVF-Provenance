@@ -49,6 +49,14 @@ def _range_command(name: str, script: str, base: str, head: str) -> GateCommand:
 
 def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
     return (
+        GateCommand(
+            "closure packaging preflight",
+            ("python", "governance/compat/check_closure_packaging_preflight.py", "--base", base, "--head", head, "--enforce"),
+        ),
+        GateCommand(
+            "core guard self-protection",
+            ("python", "governance/compat/check_core_guard_self_protection.py", "--base", base, "--head", head, "--enforce"),
+        ),
         _range_command(
             "docs governance compatibility",
             "governance/compat/check_docs_governance_compat.py",
@@ -64,6 +72,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
         _range_command(
             "work-order dispatch quality",
             "governance/compat/check_work_order_dispatch_quality.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "machine closure package",
+            "governance/compat/check_machine_closure_package.py",
             base,
             head,
         ),
@@ -85,14 +99,100 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             base,
             head,
         ),
-    GateCommand(
-        "active session state compatibility",
-        ("python", "governance/compat/check_active_session_state.py", "--enforce"),
-    ),
-    GateCommand(
-        "governed file size compatibility",
-        ("python", "governance/compat/check_governed_file_size.py", "--enforce"),
-    ),
+        _range_command(
+            "corpus completeness and report integrity",
+            "governance/compat/check_corpus_completeness_report_integrity.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "rescan intelligence hardening",
+            "governance/compat/check_rescan_intelligence_hardening.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "corpus-to-knowledge-map reconciliation",
+            "governance/compat/check_corpus_to_knowledge_map_reconciliation.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "corpus intelligence classification",
+            "governance/compat/check_corpus_intelligence_classification.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "corpus packet source hash (NR-04)",
+            "governance/compat/check_corpus_packet_source_hash.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "corpus packet normalized path (NR-05)",
+            "governance/compat/check_corpus_packet_normalized_path.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "corpus packet disposition canonical (NR-11)",
+            "governance/compat/check_corpus_packet_disposition_canonical.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "corpus scan registry",
+            "governance/compat/check_corpus_scan_registry.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "system loop interlock",
+            "governance/compat/check_system_loop_interlock.py",
+            base,
+            head,
+        ),
+        GateCommand(
+            "ERH CI public-evaluation workflow chain",
+            ("python", "governance/compat/check_erh_ci_public_evaluation_workflow.py", "--enforce"),
+        ),
+        GateCommand(
+            "ERH public-surface drift workflow chain",
+            ("python", "governance/compat/check_erh_public_surface_drift_workflow.py", "--enforce"),
+        ),
+        GateCommand(
+            "ERH dependency risk workflow chain",
+            ("python", "governance/compat/check_erh_dependency_risk_workflow.py", "--enforce"),
+        ),
+        GateCommand(
+            "ERH cvf-web dependency audit workflow chain",
+            ("python", "governance/compat/check_erh_cvf_web_dependency_audit_workflow.py", "--enforce"),
+        ),
+        GateCommand(
+            "ERH SAF1 safety workflow chain",
+            ("python", "governance/compat/check_erh_safety_workflow_chain.py", "--enforce"),
+        ),
+        GateCommand(
+            "ERH SAF2 output safety workflow chain",
+            ("python", "governance/compat/check_erh_output_safety_workflow_chain.py", "--enforce"),
+        ),
+        GateCommand(
+            "ERH DUR1 durable evidence policy snapshot workflow chain",
+            ("python", "governance/compat/check_erh_durable_evidence_policy_snapshot.py", "--enforce"),
+        ),
+        GateCommand(
+            "ERH DUR2 external storage adapter workflow chain",
+            ("python", "governance/compat/check_erh_external_storage_adapter.py", "--enforce"),
+        ),
+        GateCommand(
+            "active session state compatibility",
+            ("python", "governance/compat/check_active_session_state.py", "--enforce"),
+        ),
+        GateCommand(
+            "governed file size compatibility",
+            ("python", "governance/compat/check_governed_file_size.py", "--enforce"),
+        ),
     )
 
 PRE_PUSH_COMMANDS: tuple[GateCommand, ...] = (
@@ -186,6 +286,17 @@ def _run_phase(phase: str, base: str | None, head: str) -> int:
     commands: list[GateCommand] = list(_common_commands(resolved_base, head))
     if phase == "pre-push":
         commands.extend(PRE_PUSH_COMMANDS)
+
+    # Fix (B): at pre-implementation, check that no forbidden-path files
+    # already exist on disk before a worker begins. This catches the pattern
+    # where a prior tranche left untracked files in paths the current work
+    # order explicitly forbids.
+    if phase == "pre-implementation":
+        commands.insert(0, GateCommand(
+            "forbidden filesystem state",
+            ("python", "governance/compat/check_forbidden_filesystem_state.py",
+             "--base", resolved_base, "--head", head, "--enforce"),
+        ))
 
     if phase in {"pre-closure", "pre-push"} and base_sha == head_sha:
         print(

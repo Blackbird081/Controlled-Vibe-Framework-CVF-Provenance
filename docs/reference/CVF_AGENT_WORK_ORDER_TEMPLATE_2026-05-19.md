@@ -61,7 +61,7 @@ Protocol:
 
 - cite the authority chain before instructions;
 - file required GC-018 baselines before implementation;
-- inherit GC-020, GC-023, GC-024, GC-046, public/provenance, and live-proof
+- inherit GC-020, GC-023, GC-024, GC-046, GC-047, GC-048, public/provenance, and live-proof
   rules from the repository;
 - make reviewer gate and waiver rules explicit.
 
@@ -95,8 +95,25 @@ Verification requirements:
   explicit ownership or a separate work order.
 - connector wave roadmap closure must use a full-wave changed range, not only
   the final tranche range.
+- ready or dispatched work orders must include a Worker Autonomy / No-Question
+  Rule so routine allowed-scope remediation is not escalated to the operator.
 - allowed-scope machine-gate failures must be repaired and rerun by the assigned
   agent; they must not be escalated to the operator as preference questions.
+- self-reported gate evidence must be current before handoff; non-blocked
+  artifacts must not record failed required gates and leave rerun/disposition
+  to the reviewer or operator.
+- delegated runtime/source work must include a Work-Order Fulfillment Manifest
+  with required artifacts, forbidden paths, and required proof literals.
+- bounded corpus tasks must include GC-047 manifest, terminal processing
+  ledger, reconciliation evidence, exclusions/unreadable accounting, and an
+  honest machine-checked completeness verdict.
+- corpus-derived knowledge maps must include GC-048 source-authority,
+  semantic-region, mapped/deferred/unmapped, drift, rebuildability, and
+  retrieval-boundary evidence with an honest machine-checked verdict.
+- GC-048 machine check:
+  `governance/compat/check_corpus_to_knowledge_map_reconciliation.py`.
+- governed tranches must follow the commit choreography standard:
+  `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md`.
 
 The work order is invalid for execution if it does not name stop conditions.
 
@@ -254,16 +271,31 @@ The worker must not continue past a failed autorun phase gate.
 
 Mandatory Gate-Failure Remediation Protocol:
 
-- If the failure is inside Allowed scope, repair it and rerun the failed gate.
-- Do not ask the operator whether to fix missing `N/A with reason`, stale
-  closure residue, source-verification corrections, allowed continuity sync, or
-  other routine guard failures.
-- Ask the operator only if remediation would exceed Allowed scope, change the
-  claim boundary, release a `HOLD_*` prerequisite, change risk level, open
-  public-sync, run live/provider proof, consume secrets/quota, touch forbidden
-  paths, or perform destructive/irreversible actions.
-- Treat any attempted "do you want me to fix this gate failure?" handoff as a
-  governance/control-plane learning signal.
+- Allowed-scope failures are mandatory remediation. Complete the remediation
+  and execute the failed gate again.
+- Missing `N/A with reason`, stale closure residue, source-verification
+  corrections, allowed continuity sync, and routine guard failures are not
+  operator-preference questions.
+- Escalation is reserved for remediation that would exceed Allowed scope,
+  change the claim boundary, release a `HOLD_*` prerequisite, change risk
+  level, open public-sync, run live/provider proof, consume secrets/quota,
+  touch forbidden paths, or perform destructive/irreversible actions.
+- Any attempted handoff that turns an allowed-scope gate failure into an
+  operator preference is a governance/control-plane learning signal.
+
+Staging and checker-source rule:
+
+- Before running `run_local_governance_hook_chain.py`, simulating pre-commit,
+  or committing, stage the intended file set with `git add <paths>` so
+  staged-index checkers read the current artifact.
+- Before staging, working-tree-aware component gates may be used for pending
+  worker artifacts; record that status as pending, not clean closure.
+- If a checker appears to reject a file that is correct on disk, first verify
+  whether the corrected file was staged. Some helpers read the working tree,
+  while hook-chain checks may read the staged index.
+- Hook-chain failures are cascade layers. Fix the first failing gate, rerun
+  that gate directly, then rerun the full applicable autorun or hook chain
+  before recording PASS.
 
 ## 6A. Source-Fidelity Pass
 
@@ -339,6 +371,12 @@ Rules:
   verified. Do not put value assignments or type annotations in that cell; use
   `rawMemoryReleased`, not `rawMemoryReleased: false`, and `canReinject`, not
   `canReinject: boolean`.
+- Ready/dispatch Authority Chain, Dependency Gate, and Source Verification
+  rows must use final checker-accepted dispositions such as `ACCEPT`, `REJECT`,
+  or `BLOCKED_SOURCE_NOT_FOUND`. Do not use `REQUIRED` as a disposition in a
+  ready/dispatch packet; `REQUIRED` is allowed only in draft/HOLD dependency
+  prose or in artifact/proof manifest columns where it is a boolean
+  requirement.
 - For code sources, an `ACCEPT` row must cite a symbol that exists in the cited
   file. Dotted symbols must exist under the cited owner/interface/class; if the
   owner does not contain that field or method, correct the symbol or use
@@ -372,7 +410,7 @@ this separate table:
 | <field name> | <why it exists> | Yes | Yes | <doc/schema/checklist validation only> |
 
 MA1 section references are locked to the canonical standard at
-`docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`.
+`docs/reference/archive/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`.
 Do not invent or rename MA1 sections. Use only:
 
 - `## 0. Surface Fidelity Gate`
@@ -407,6 +445,361 @@ Rules:
   New Doc-Only Fields table;
 - `PASS` is allowed only after the final artifact exists and has been checked;
 - missing rows block dispatch or closure.
+
+## 6C. Worker Autonomy / No-Question Rule
+
+The worker proceeds without operator confirmation for non-destructive actions
+inside this work order's Allowed scope.
+
+Proceed autonomously with:
+
+- reading files named by this work order;
+- running `git status`, `git diff`, `git rev-parse`, manifest/hash checks, and
+  listed governance gates;
+- documentation format remediation inside Allowed scope;
+- required evidence block completion inside Allowed scope;
+- repeated guard or autorun execution after allowed-scope remediation.
+
+Escalation is reserved for actions that would exceed Allowed scope, edit legacy
+source, edit runtime/source code outside ownership, run live/provider proof, use
+secrets/quota, public-sync, push/publish, change risk or claim boundary, release
+a `HOLD_*` prerequisite, touch forbidden paths, or perform destructive or
+irreversible action.
+
+If a machine gate fails inside Allowed scope, complete the remediation and
+execute the gate again. Routine gate remediation is not an operator-preference
+checkpoint.
+
+Orchestrator wording hygiene:
+
+- keep any `Operator Checkpoint` section factual and separate from
+  gate-remediation instructions;
+- do not place operator-preference terms near allowed-scope remediation text;
+- prefer `Escalation is reserved for...` over `Ask the operator if...`.
+
+## 6C.1 System Loop Interlock Routing
+
+Include this section when the work order scans, classifies, absorbs, or maps a
+corpus, or when it records findings, "not found" claims, negative search
+evidence, search/filter readiness, or downstream roadmap candidates.
+
+Required content:
+
+- upstream loop and output artifact;
+- downstream loop and input artifact;
+- machine-readable registry, finding packet, or intake path;
+- routing rule for deferred or blocked findings;
+- claim boundary that blocks autonomous mutation.
+
+Minimum scan-routing rule:
+
+- findings must be recorded in the corpus scan registry and a finding packet;
+- deferred or blocked findings must include `defectClass`, `learningLane`,
+  `nextAction`, and `f2gRef`, `roadmapRef`, or `workOrderRef`;
+- a scan report with findings only in prose is not final.
+
+## 6D. Pending Artifact Evidence Finality
+
+If the worker leaves a changed, staged, or untracked governed artifact for
+review, the artifact must not claim `git status --short` is clean. It must
+record the actual pending status or state that clean-status evidence is
+post-commit and command-backed.
+
+Pending artifacts must not cite `--base HEAD~1 --head HEAD` or another
+committed-only range as proof for the pending artifact itself. Use
+working-tree-aware validation for pending artifacts, or commit first and rerun
+the real changed range.
+
+### Commit Mode And Base-Anchor Lifecycle
+
+Do not freeze one base hash into every phase as if dispatch, implementation,
+pending review, and committed closure were the same transition.
+
+Record these anchors separately:
+
+| Anchor | Captured by | When | Used for |
+|---|---|---|---|
+| `dispatchBaseHead` | Orchestrator | immediately before dispatch | audit history and dispatch packet provenance |
+| `executionBaseHead` | Worker | immediately before material implementation | working-tree-aware pending-artifact validation |
+| `closureBaseHead` | Reviewer / committer | before the closure commit or from the approved tranche base | non-empty committed-range `pre-closure` validation |
+
+Rules:
+
+- the worker must capture `executionBaseHead` with
+  `git rev-parse --short HEAD` before edits;
+- a stale `dispatchBaseHead` remains useful audit evidence but must not be
+  copied into worker gate commands when later commits changed HEAD;
+- pending-artifact checks use `executionBaseHead` and working-tree-aware
+  component gates;
+- committed closure checks use `closureBaseHead..HEAD` after commit and must
+  include the reviewed artifact changes;
+- `--base HEAD --head HEAD` is never valid closure evidence.
+
+### Dependency Release And Next-Work-Order Refresh
+
+Canonical standard:
+
+`docs/reference/CVF_WORK_ORDER_DEPENDENCY_RELEASE_EVIDENCE_STANDARD_2026-06-03.md`
+
+If a later work order is drafted before its prerequisite tranche closes, keep it
+in `HOLD_*` status until the prerequisite closure evidence exists.
+
+Before changing that later work order to `READY`, `DISPATCH_READY`, or
+`DISPATCHED`, the orchestrator/reviewer must refresh the packet in the same
+release batch:
+
+- replace placeholder prerequisite rows such as `after closure` or
+  `Disposition: REQUIRED` with source-backed `ACCEPT` rows;
+- cite the closed artifact path and closure commit, not only the tranche name;
+- set `dispatchBaseHead` to the actual prerequisite closure commit or current
+  dispatch anchor;
+- set `executionBaseHead` to `WORKER_MUST_CAPTURE_AT_START` unless the worker
+  already captured a fresh execution anchor;
+- keep `closureBaseHead` as `NOT_EXECUTED_YET` until reviewer closure;
+- rerun `check_work_order_dispatch_quality.py` and pre-dispatch autorun gate on
+  the release range.
+
+A ready/dispatch work order with unresolved prerequisite language is invalid.
+The worker must not be asked to infer which prior artifact satisfied the HOLD.
+
+### Two-Stage Handoff Finality
+
+Choose one explicit commit mode before dispatch:
+
+| Commit mode | Worker boundary | Reviewer / committer boundary |
+|---|---|---|
+| `WORKER_MAY_COMMIT` | worker may commit only after owned diff, tests, and gates are clean | reviewer verifies committed range |
+| `WORKER_MUST_NOT_COMMIT` | worker returns pending artifacts after working-tree-aware component gates | reviewer / committer approves disposition, commits, then runs committed-range `pre-closure` |
+
+For `WORKER_MUST_NOT_COMMIT` work orders:
+
+- the worker handoff status must remain `COMPLETE_PENDING_REVIEW`,
+  `IMPLEMENTATION_COMPLETE_PENDING_REVIEW`, `DRAFT`, or `HOLD_*`;
+- the worker must not claim `pre-closure` PASS;
+- the worker may record `PRE_CLOSURE_NOT_RUN_PENDING_COMMIT` or
+  `FAIL_EXPECTED_PENDING_FINALITY` only with the explicit statement that
+  committed closure remains reviewer / committer work;
+- component gates must still be run and repaired inside Allowed scope;
+- the worker must return a handoff/evaluation artifact that lists actual
+  pending files from `git status --short`;
+- the completion review is reviewer / committer owned unless the work order
+  explicitly changes role and commit mode before dispatch;
+- the reviewer / committer must run `pre-closure` after the commit with a
+  non-empty committed range before any closed-equivalent claim.
+
+## 6E. Self-Reported Gate Evidence Consistency
+
+If the artifact records governance gate results, those results must match the
+current handoff state.
+
+Rules:
+
+- if a required gate fails inside Allowed scope, repair and rerun before
+  handoff;
+- if the failure cannot be repaired inside Allowed scope, set status to
+  `BLOCKED` or `HOLD_*` and name the return action;
+- do not leave a non-blocked artifact saying a required gate failed while asking
+  the reviewer/operator to rerun, decide, or pick it up;
+- do not record autorun `PASS` when a required section for that phase is still
+  missing, such as `## Finding-To-Governance Learning Disposition` on a
+  finding-bearing review;
+- if recording `git status --short` for a pending artifact, include the pending
+  status line for the artifact itself;
+- after rerunning a gate, update the recorded Governance Gates Run result before
+  returning the artifact.
+- do not treat `FAIL_EXPECTED_PENDING_FINALITY` as a closed-equivalent PASS;
+  it is valid only for `WORKER_MUST_NOT_COMMIT` pending review handoff;
+
+## 6E.1 Machine Closure Package
+
+Any work order that scans, classifies, imports, maps, routes, closes, or
+hands off governed work must define the machine-readable outputs that turn the
+worker result into the next loop's input.
+
+Machine check:
+
+```powershell
+python governance/compat/check_machine_closure_package.py --base <baseHead> --head HEAD --enforce
+```
+
+Required closure package table:
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/<work-order>.md` | closed-equivalent status, no stale `DISPATCH_READY`, no unchecked required checklist residue, closure anchor policy recorded | `<PASS/BLOCKED/N/A with reason>` |
+| Completion or reviewer artifact | `docs/reviews/<completion>.md` or `N/A with reason` | final disposition, changed-file evidence, claim boundary, gate evidence, reviewer-owned closure when `WORKER_MUST_NOT_COMMIT` | `<PASS/BLOCKED/N/A with reason>` |
+| Roadmap state | `docs/roadmaps/<roadmap>.md` or `N/A with reason` | tranche row final status, next tranche dependency release state, no stale `READY_WITH_CONDITIONS` residue | `<PASS/BLOCKED/N/A with reason>` |
+| Corpus scan registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` or `N/A with reason` | entry id, normalized paths, hashes, verdicts, gap ids, next action | `<PASS/BLOCKED/N/A with reason>` |
+| Corpus scan registry MD | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` or `N/A with reason` | human quick lookup, negative-search note, next recommendation | `<PASS/BLOCKED/N/A with reason>` |
+| External evidence digest | repo-local completion section or digest artifact | external path, schema/version, record count, hash, generated time, privacy boundary | `<PASS/BLOCKED/N/A with reason>` |
+| System loop interlock | `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_*.json` or `N/A with reason` | upstream output, downstream input, learning/finding route, mutation boundary | `<PASS/BLOCKED/N/A with reason>` |
+| Session continuity | `CVF_SESSION_MEMORY.md`, `CVF_SESSION/ACTIVE_SESSION_STATE.json`, active handoff | mode, next allowed move, handoff HEAD or accepted parent marker | `<PASS/BLOCKED/N/A with reason>` |
+
+Rules:
+
+- External workspace paths are evidence inputs, not source-authority rows. Do
+  not put `D:\...`, local upload paths, or other non-repo paths in Source
+  Verification as if they were canonical source files. Record them in the
+  External Evidence Digest with a hash, schema/version, record count, and
+  privacy boundary, then cite the repo-local digest or completion section in
+  Source Verification if a later work order needs it.
+- Corpus work that changes scan, classification, readiness, or gap state must
+  update both GC-051 registry surfaces when applicable: the JSON is the
+  machine input and the Markdown file is the operator/reviewer lookup. A
+  report-only closure is not enough when the registry is the downstream input.
+- Closed-equivalent artifacts must not retain stale `DISPATCH_READY`,
+  `READY_WITH_CONDITIONS`, `NOT_EXECUTED_YET`, `PRE_CLOSURE_NOT_RUN`, or
+  placeholder dependency language unless the artifact is explicitly still a
+  pending-review worker handoff.
+- If findings are recorded, use checker-accepted Finding-To-Governance defect
+  classes only. `EVIDENCE_GAP` is not a defect class; use `RULE_GAP`,
+  `MACHINE_GATE_GAP`, `ORCHESTRATOR_PACKET_GAP`, or
+  `PHASE_GATE_PLACEMENT_GAP` as appropriate. `N/A_WITH_REASON` is a
+  disposition, not a defect class.
+- The closure package must be updated after final gate reruns, not copied from
+  pre-implementation or pending-worker evidence.
+
+## 6F. Commit Choreography
+
+Governed work orders must follow:
+
+`docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md`
+
+Machine-token quick reference:
+
+| Surface | Required exact tokens / values |
+|---|---|
+| Core guard-maintenance authorization | `Authorized guard-maintenance scope`, `Protected paths`, `Operator authorization`, `Rollback boundary` |
+| Scope firewall authorization | `Allowed paths`, `Forbidden paths`, `Operator authorization`, `Rollback boundary` |
+| Commit prompt rule | `Diff scope: PASS`, `Tests: PASS`, `Gates: PASS`, `Untracked unrelated: NONE`, `Forbidden touched paths: NONE` |
+| Finding-To-Governance defect classes | `WORKER_EXECUTION_ERROR`, `ORCHESTRATOR_PACKET_GAP`, `RULE_GAP`, `MACHINE_GATE_GAP`, `PHASE_GATE_PLACEMENT_GAP`, `OPERATOR_SCOPE_CLARITY_GAP`, `RUNTIME_SIGNAL_GAP` |
+| Finding-To-Governance lanes | `GOVERNANCE_CONTROL_PLANE`, `RUNTIME_BEHAVIOR_LEARNING`, `PROVIDER_OUTPUT_LEARNING`, `COST_ECONOMICS_LEARNING`, `DOCUMENTATION_ONLY_LEARNING` |
+| Finding-To-Governance dispositions | `RULE_EXISTS`, `RULE_ADDED`, `MACHINE_CHECK_ADDED`, `MACHINE_CHECK_CANDIDATE`, `PHASE_GATE_PLACEMENT_GAP`, `DESIGN_REVIEW_REQUIRED`, `RUNTIME_LEARNING_CANDIDATE`, `N/A_WITH_REASON`, `TEMPLATE_UPDATED`, `STANDARD_UPDATED`, `STANDARD_ADDED` |
+| Source Verification dispositions | `ACCEPT`, `REJECT`, `BLOCKED_SOURCE_NOT_FOUND` |
+
+Notes:
+
+- `N/A_WITH_REASON` is a disposition, not a defect class.
+- New governed markdown should use plain checker-matched headings such as
+  `## Purpose`; avoid numbered variants like `## 1. Purpose` unless the
+  artifact type is already known to allow them.
+
+Required rules:
+
+- check archive hygiene before material tranche edits;
+- keep archive cleanup, artifact implementation, closure transition, session
+  state sync, and handoff sync in separate commits unless the work order
+  explicitly owns the combined scope;
+- stage large-scope authorization in the same commit as the large-scope diff;
+- capture `executionBaseHead` immediately before worker edits;
+- capture `closureBaseHead` immediately before reviewer closure commit;
+- expect a dedicated handoff-sync-only commit after material/session commits;
+- never use a stale dispatch base as closure proof after intervening commits.
+- record component-gate PASS separately from committed-range `pre-closure`
+  PASS so a reviewer can see exactly which transition remains.
+- for mode/next-move changes, update `CVF_SESSION/ACTIVE_SESSION_STATE.json`,
+  `CVF_SESSION_MEMORY.md`, and active handoff context together, then expect a
+  dedicated handoff-sync commit for the final HEAD.
+
+### 6F.1 Session / Handoff Commit Protocol
+
+Use this protocol when a closure touches session continuity or active handoff
+state:
+
+1. Put `Core Guard Self-Protection Authorization` in the changed governed
+   authorization artifact under one of the checker-recognized prefixes:
+   `docs/baselines/`, `docs/roadmaps/`, `docs/reviews/`, or
+   `docs/work_orders/`.
+2. For a protected session/front-door sync commit, the changed root active
+   handoff matching `AGENT_HANDOFF*.md` may carry the same authorization block
+   if it lists every protected path in the changed range. Archived handoffs do
+   not count.
+3. Preferred two-commit closure:
+   - material/session commit: close the artifact, update session state/front
+     door if needed, and include the same-range authorization doc;
+   - handoff-only sync commit: update only the active handoff with the material
+     commit SHA so `check_active_session_state.py` can accept the parent SHA as
+     `parent-present-for-sync-commit`.
+4. If the front door or state registry must record the material commit SHA
+   itself, use a protected session-sync commit whose changed active handoff or
+   docs-prefixed artifact carries same-range authorization.
+5. Run committed-range `pre-closure` only after the material/session commit and
+   required handoff sync are complete.
+
+## 6F. Near-Threshold Owner Maintainability Plan
+
+If Allowed scope adds or modifies source inside a registered owner domain whose
+active entrypoint is within the GC-023 near-hard margin, include this section
+before dispatch.
+
+Required content:
+
+- active owner entrypoint path;
+- current line count and hard threshold;
+- split, extract, rotate, or archive action;
+- new helper/barrel/archive path;
+- `Minimum shrink target: 50 lines`;
+- command-backed post-change line count;
+- explicit statement that the owner entrypoint is in Allowed scope and Write
+  Ownership.
+
+Do not classify the near-threshold owner entrypoint as forbidden-touch while
+adding adjacent source. That is a maintainability bypass, not a split.
+
+## 6G. Work-Order Fulfillment Manifest
+
+For runtime/source implementation work, include these machine-readable tables
+before dispatch.
+
+## Required Artifact Manifest
+
+| Path | Required at handoff | Purpose |
+|---|---|---|
+| <source/test/review path> | Yes | <why this file must exist> |
+
+## Forbidden Path Manifest
+
+| Path | Reason |
+|---|---|
+| <forbidden path or glob> | <why this path is out of scope> |
+
+## Forbidden Filesystem State At Dispatch
+
+Record the filesystem state of every forbidden path at the moment this work
+order is dispatched. The orchestrator must verify each path before dispatch.
+A path that exists on disk at dispatch must be explained or cleaned up; the
+worker must not be sent into an environment where forbidden files already exist.
+
+This block is verified by `check_forbidden_filesystem_state.py` at the
+`pre-implementation` autorun gate phase.
+
+| Forbidden path | Expected state | Actual state at dispatch | Action if PRESENT |
+|---|---|---|---|
+| <forbidden path> | ABSENT | ABSENT ✓ | N/A |
+
+Rules:
+
+- `ABSENT` — path does not exist on disk (file or directory). Dispatch is safe.
+- `PRESENT` — path already exists. Dispatch is blocked until the orchestrator
+  either removes the files, opens a governance packet for them, or records an
+  explicit operator exemption with reason.
+- `PRESENT_EXEMPTED` — path exists; orchestrator has explicitly authorized
+  worker to ignore it; worker must not edit, stage, or claim the path.
+
+## Pre-Existing Dirty Path Exemptions
+
+Use only when the repository is already dirty before dispatch and the worker
+must ignore, not edit, the path.
+
+| Path | Status at dispatch | Exemption boundary |
+|---|---|---|
+| <pre-existing dirty path> | <M/A/?? from git status> | <do not edit/stage/claim> |
+
+## Required Proof Manifest
+
+| Proof | Path | Required literal | Required at handoff |
+|---|---|---|---|
+| <sentinel/invariant/test proof> | <test or source path> | <literal token> | Yes |
 
 ## 7. Write Ownership
 
@@ -458,6 +851,15 @@ Evidence Trace Block requirements:
 - Key path:
 - Verdict:
 
+Base-anchor evidence:
+
+- `dispatchBaseHead`:
+- `executionBaseHead`:
+- `closureBaseHead`: `<post-review commit stage or N/A - pending review>`
+- Commit mode: `<WORKER_MAY_COMMIT | WORKER_MUST_NOT_COMMIT>`
+- Pending-artifact component gates:
+- Committed-range `pre-closure`: `<PASS after commit | N/A - pending review>`
+
 ## 10. Acceptance Criteria
 
 - [ ] <criterion 1>
@@ -487,6 +889,11 @@ Closure may proceed only after:
 - <reviewer no-blocking objection | operator waiver | gate result>
 - `pre-closure` autorun gate passed and result recorded
 
+For `WORKER_MUST_NOT_COMMIT` mode, worker handoff is not closure. The reviewer
+or committer must approve disposition, commit the reviewed owned diff, and run
+the committed-range `pre-closure` gate before changing status to a
+closed-equivalent value.
+
 Mandatory remediation rule:
 
 - A gate failure inside this work order's Allowed scope is authorization to
@@ -504,6 +911,12 @@ waiver for this work order.
 - [ ] Required tests or evidence commands run
 - [ ] Autorun `pre-closure` gate passed:
   `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base <baseHead> --head HEAD`
+- [ ] Commit mode recorded as `WORKER_MAY_COMMIT` or `WORKER_MUST_NOT_COMMIT`
+- [ ] `dispatchBaseHead`, `executionBaseHead`, and closure-stage base evidence
+  recorded without treating a stale dispatch anchor as current worker proof
+- [ ] For `WORKER_MUST_NOT_COMMIT`, pending handoff used a non-closed status,
+  recorded actual `git status --short`, and left committed-range
+  `pre-closure` to reviewer / committer
 - [ ] Closure gate used a non-empty committed diff range; no `--base HEAD --head HEAD`
 - [ ] Changed-file set from `git diff --name-status` is inside this work
   order's Allowed scope, or every extra path has explicit operator/work-order

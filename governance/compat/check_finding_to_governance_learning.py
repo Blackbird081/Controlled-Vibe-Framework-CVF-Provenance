@@ -55,6 +55,47 @@ DISPOSITIONS = (
     "DESIGN_REVIEW_REQUIRED",
     "RUNTIME_LEARNING_CANDIDATE",
     "N/A_WITH_REASON",
+    "TEMPLATE_UPDATED",
+    "STANDARD_UPDATED",
+    "STANDARD_ADDED",
+)
+
+GENERALIZABLE_FINDING_MARKERS = (
+    "repeated",
+    "repeat",
+    "recurring",
+    "generalizable",
+    "reusable",
+    "future agent",
+    "future agents",
+    "future orchestrator",
+    "future worker",
+    "systemic",
+    "control-plane",
+    "control plane",
+    "template gap",
+    "rules/template",
+    "rule/template",
+    "rule gap",
+    "guard gap",
+    "machine gate gap",
+    "phase gate",
+    "standardize",
+    "standardization",
+    "canonical standard",
+)
+
+GENERALIZABLE_PROMOTION_DISPOSITIONS = (
+    "RULE_EXISTS",
+    "RULE_ADDED",
+    "MACHINE_CHECK_ADDED",
+    "MACHINE_CHECK_CANDIDATE",
+    "TEMPLATE_UPDATED",
+    "STANDARD_UPDATED",
+    "STANDARD_ADDED",
+    "PHASE_GATE_PLACEMENT_GAP",
+    "DESIGN_REVIEW_REQUIRED",
+    "N/A_WITH_REASON",
 )
 
 
@@ -63,6 +104,8 @@ def _run_git(args: list[str]) -> tuple[int, str, str]:
         ["git", *args],
         cwd=REPO_ROOT,
         text=True,
+        encoding="utf-8",
+        errors="replace",
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
     )
@@ -214,6 +257,19 @@ def _validate_finding_doc(path: str, text: str) -> list[dict[str, str]]:
         _add(violations, path, "learning_disposition_missing", "learning disposition must include an allowed disposition")
     if "next action" not in text.lower() and "next control action" not in text.lower():
         _add(violations, path, "next_action_missing", "learning disposition must include next action")
+
+    disposition_section = text.split(REQUIRED_SECTION, 1)[1]
+    lowered_disposition = disposition_section.lower()
+    if any(marker in lowered_disposition for marker in GENERALIZABLE_FINDING_MARKERS):
+        if not _has_any(disposition_section, GENERALIZABLE_PROMOTION_DISPOSITIONS):
+            _add(
+                violations,
+                path,
+                "generalizable_finding_promotion_missing",
+                "generalizable/repeated rule, template, guard, or phase-gate findings must be promoted "
+                "to a reusable CVF control (`RULE_ADDED`, `TEMPLATE_UPDATED`, `STANDARD_ADDED`, "
+                "`MACHINE_CHECK_ADDED`, candidate, or explicit `N/A_WITH_REASON`)",
+            )
 
     lowered = text.lower()
     runtime_terms = ("runtime", "provider", "cost", "token", "latency")

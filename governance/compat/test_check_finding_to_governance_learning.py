@@ -64,6 +64,30 @@ Runtime modification is explicitly out of scope.
     assert MODULE._validate_finding_doc("docs/reviews/CVF_TEST.md", valid) == []
 
 
+def test_generalizable_finding_requires_promotion_disposition() -> None:
+    invalid = """
+# Review
+
+## Findings
+
+Future agents keep repeating this template gap.
+
+## Finding-To-Governance Learning Disposition
+
+| Finding | Defect class | Learning lane | Disposition | Next action |
+|---|---|---|---|---|
+| Future agents repeat template gap | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | DOCUMENTATION_ONLY_LEARNING | Mention in note |
+"""
+    issues = MODULE._validate_finding_doc("docs/reviews/CVF_TEST.md", invalid)
+    assert any("generalizable/repeated" in message for message in _messages(issues))
+
+
+def test_generalizable_finding_allows_standard_added() -> None:
+    valid = VALID_DOC.replace("MACHINE_CHECK_CANDIDATE", "STANDARD_ADDED")
+    valid = valid.replace("Missing guard", "Future agents repeat template gap")
+    assert MODULE._validate_finding_doc("docs/reviews/CVF_TEST.md", valid) == []
+
+
 def test_binding_check_requires_autorun_reference() -> None:
     issues = MODULE._validate_binding(MODULE.AUTORUN_PATH, "no guard here")
     assert any(MODULE.THIS_SCRIPT_PATH in message for message in _messages(issues))

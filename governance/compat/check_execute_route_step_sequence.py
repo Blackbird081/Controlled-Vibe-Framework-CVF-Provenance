@@ -101,8 +101,15 @@ def run_check(
     entries = registry_entries if registry_entries is not None else _load_registry(registry)
     registry_issues = _registry_violations(entries)
     ordered_entries = sorted(entries, key=lambda item: item.get("order") if isinstance(item.get("order"), int) else 999999)
-    text = route_text if route_text is not None else _read_text(route)
-    lines = text.splitlines()
+    base_text = route_text if route_text is not None else _read_text(route)
+    supplementary_texts: list[str] = []
+    if route_text is None and route.suffix == ".ts" and route.name == "route.ts":
+        helper_path = route.with_name("route-final-response.ts")
+        if helper_path.exists():
+            supplementary_texts.append(_read_text(helper_path))
+
+    combined_text = "\n".join([base_text, *supplementary_texts])
+    lines = combined_text.splitlines()
 
     violations: list[dict[str, Any]] = [*registry_issues]
     steps: list[dict[str, Any]] = []

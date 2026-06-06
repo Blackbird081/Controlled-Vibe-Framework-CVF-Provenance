@@ -1,0 +1,20 @@
+{
+  "artifact": "CVF_LE1_RELEASE_GATE_DIAGNOSTIC_2026-06-06",
+  "date": "2026-06-06",
+  "secretSafe": true,
+  "diagnostics": [
+    {
+      "stage": "focused_live_playwright_before_release_gate",
+      "class": "nextauth_session_loading_test_flow",
+      "retryability": "RETRYABLE_AFTER_ALLOWED_SCOPE_TEST_HELPER_REPAIR",
+      "userAction": "NONE",
+      "provider": "alibaba",
+      "model": "qwen-turbo",
+      "providerCallAttempted": false,
+      "httpStatus": null,
+      "latencyMs": 93577,
+      "receiptOrTrace": "docs/evidence/CVF_LE1_LIVE_E2E_SELECTOR_FLOW_DIAGNOSTIC_RESULT_2026-06-06.json",
+      "safeMessage": "Focused release-gate live Playwright suite no longer failed on locator.click actionability after the first helper repair, but login remained on the CVF login page with NextAuth session status loading and the stale post-login heading assertion timed out. No raw secrets were printed, and no Alibaba provider call was reached in the failing tests."
+    }
+  ]
+}

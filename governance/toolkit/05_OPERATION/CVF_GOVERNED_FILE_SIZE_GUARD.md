@@ -35,6 +35,10 @@ Default operating rule:
 - if a governed file is touched while it is within 25 lines of its hard
   threshold, the same batch must rotate/split into a new file in the same
   maintainability domain or shrink the touched file by at least 50 lines
+- if source is added or modified inside a registered owner domain while its
+  active owner entrypoint is within 25 lines of the hard threshold, the same
+  batch must also split/rotate or meaningfully shrink that owner entrypoint;
+  leaving the owner untouched is not a valid bypass
 - active front doors and handoffs should open a new pointer/archive/successor
   file instead of compressing prose to pass the line-count guard
 
@@ -131,6 +135,16 @@ If a file is near the hard threshold and is touched in a new batch:
 Shortening wording just enough to stay under the hard threshold is not an
 acceptable primary remediation for near-threshold active files.
 
+If adjacent source changes enter a registered owner domain while its active
+entrypoint is near the hard threshold:
+
+1. include the owner entrypoint in the same batch;
+2. split, rotate, archive, or shrink the owner by at least 50 lines;
+3. do not mark the owner as forbidden-touch to avoid cleanup;
+4. record the owner surface under `proactiveOwnerSurfaces` in
+   `governance/compat/CVF_GOVERNED_FILE_SIZE_EXCEPTION_REGISTRY.json`;
+5. run `python governance/compat/check_governed_file_size.py --enforce`.
+
 ### Exception Model
 
 Approved exceptions are allowed only for:
@@ -171,6 +185,8 @@ Violations include:
 - growing an oversized file without maintaining the exception trail
 - touching a near-hard-threshold governed file without a same-domain
   rotation/split artifact or meaningful size reduction
+- adding or modifying adjacent source in a registered near-hard owner domain
+  while leaving the owner entrypoint untouched
 
 ## Related Artifacts
 

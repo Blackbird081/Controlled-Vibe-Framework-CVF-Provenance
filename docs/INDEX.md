@@ -42,6 +42,16 @@ Trạng thái: Chỉ mục lưu trữ chính thức cho `docs/`.
 - `logs/` — archive cho các append-only log chain đã rollover khỏi active window
   Default memory role: `SUMMARY_RECORD`
 
+### Corpus Intelligence (GC-051)
+
+- `corpus-intelligence/` — Corpus Scan Registry: machine-readable index of all
+  scanned corpora (legacy folders, project source trees, policy docs, company
+  docs, external sources). Contains `CVF_CORPUS_SCAN_REGISTRY.json`,
+  `CVF_CORPUS_SCAN_REGISTRY.md`, `findings/`, and `manifests/` subfolders.
+  **Any agent must read `CVF_CORPUS_SCAN_REGISTRY.json` before opening a corpus
+  scan.** Standard: `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md`
+  Default memory role: `FULL_RECORD`
+
 ## Placement Rule For New Files
 
 Từ nay về sau:
@@ -118,6 +128,9 @@ Nếu cần xác định baseline/release line/module status hiện hành:
 - `reference/CVF_GOVERNED_ARTIFACT_AUTHORING_STANDARD.md`
 - `reference/CVF_MAINTAINABILITY_STANDARD.md`
 - `reference/CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md`
+- `reference/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_STANDARD_2026-06-01.md`
+- `reference/CVF_KNOWLEDGE_SYSTEM_METHOD_STANDARD_2026-06-01.md`
+- `reference/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_STANDARD_2026-06-01.md`
 - `reference/CVF_REPOSITORY_LIFECYCLE_CLASSIFICATION.md`
 - `reference/CVF_REPOSITORY_EXPOSURE_CLASSIFICATION.md`
 - `reference/CVF_PREPUBLIC_PUBLICATION_DECISION_MEMO_2026-04-02.md`

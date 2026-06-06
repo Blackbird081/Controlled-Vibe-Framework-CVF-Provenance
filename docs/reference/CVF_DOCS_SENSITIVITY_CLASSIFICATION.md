@@ -63,6 +63,7 @@ Files that must remain in private core and never be publicly exposed.
 | `CVF_LITE.md` | PUBLIC_READY | Quick start guide |
 | `CHANGELOG.md` | PUBLIC_READY | Version history, public-facing |
 | `LICENSE` | PUBLIC_READY | License file |
+| `SECURITY.md` | PUBLIC_READY | Security reporting and secret-handling guidance |
 | `AGENT_HANDOFF.md` | PRIVATE_ONLY | Internal agent continuation state |
 | `CLAUDE.md` | NEEDS_REVIEW | Contains governance references, needs cleanup |
 

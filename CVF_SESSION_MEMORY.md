@@ -4,9 +4,9 @@ Memory class: POINTER_RECORD
 
 Status: ACTIVE SESSION FRONT DOOR
 
-Last updated: 2026-05-31
+Last updated: 2026-06-06
 
-Current mode marker: `cpg3_governance_trace_closed_pass_bounded`
+Current mode marker: `public_doc_drift_external_review_guide_hardening_ready_for_review`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -29,16 +29,16 @@ Previous long front-door snapshot:
 3. Resolve review queue:
    `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
 4. Resolve active handoff from the state registry:
-   `AGENT_HANDOFF_V15_2026-05-29.md`
+   `AGENT_HANDOFF_V16_2026-06-06.md`
 5. Read mandatory startup guards listed in the state registry.
 
 ## Current State
 
-Current mode: `cpg3_governance_trace_closed_pass_bounded`.
+Current mode: `public_doc_drift_external_review_guide_hardening_ready_for_review`.
 
 Active handoff:
 
-`AGENT_HANDOFF_V15_2026-05-29.md`
+`AGENT_HANDOFF_V16_2026-06-06.md`
 
 Active state registry:
 
@@ -48,9 +48,321 @@ Active review queue:
 
 `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
 
+Latest continuity note:
+
+Public-doc drift and external-agent review-guide hardening is ready for
+external review:
+
+Delivered:
+
+- New `governance/compat/check_public_doc_drift_phrases.py` checker with
+  focused tests and local hook-chain wiring.
+- Same-class stale public-doc repair in `docs/reference/CVF_POSITIONING.md`.
+- Public-sync `docs/guides/external-agent-review-guide.md`, linked from
+  public README, GET_STARTED, and the public evaluation claim boundary.
+
+Verification:
+
+- `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 5fdb794f --head HEAD`: PASS.
+- `python governance/compat/check_public_doc_drift_phrases.py --enforce`: PASS in private and public-sync.
+- `python -m pytest governance/compat/test_check_public_doc_drift_phrases.py -q`: PASS in private and public-sync.
+- Public-sync `python governance/compat/run_local_governance_hook_chain.py --hook pre-commit`: PASS.
+
+Boundary: public-doc and guard hardening only; no runtime/source behavior,
+dependency migration, live/provider proof, hosted readiness, production
+readiness, provider parity, memory reinjection, high-risk promotion
+implementation, Learning Orchestrator runtime behavior, or autonomous mutation.
+
+Prior continuity note:
+
+P1-P5 small debt remediation is ready for external review:
+
+Audit:
+
+`docs/audits/CVF_P1_P5_SMALL_DEBT_REMEDIATION_AUDIT_2026-06-06.md`
+
+Delivered:
+
+- `SECURITY.md` concrete public-safe disclosure path.
+- Stale skill-count/version/handoff-link cleanup in private and public-sync docs.
+- Scheduled live-governance smoke workflow.
+- Secret-safe live evidence manifest script and standard.
+- Source-verified backlog work orders for DEP2 `next-auth` migration, ERH-RL1
+  distributed rate limiter, and QBS method reliability.
+
+Verification:
+
+- `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 2b39dc47 --head HEAD`: PASS.
+- `python scripts/run_cvf_release_gate_bundle.py --e2e-live --json`: PASS.
+
+Boundary: no stable Auth.js migration, Redis implementation, PostgreSQL/SSO
+readiness, independent immutable anchor, benchmark quality parity, family-level
+benchmark power, public/hosted/production readiness, cost/performance/provider
+quality claim, memory reinjection, high-risk promotion implementation,
+Learning Orchestrator runtime behavior, or autonomous mutation.
+
+Prior continuity note:
+
+External Review GAP 2B Web UI jargon reduction is `CLOSED_PASS_BOUNDED`:
+
+GC-018:
+
+`docs/baselines/CVF_GC018_GAP2B_WEB_UI_JARGON_REDUCTION_2026-06-06.md`
+
+Evidence:
+
+- Material closure commit: `31df9194`.
+- 8 wizard components + home/landing descriptive text updated.
+- Plain-language outcome labels are now primary headings; CVF terms are muted subtitles.
+- All 9 external review GAPs (1, 2A, 2B, 3, 4, 5A, 5B, 6, 7, 8) are now `CLOSED_PASS_BOUNDED`.
+- Tests: all green; tsc clean.
+- Public Export Disposition: `DEFERRED_PRIVATE_ONLY`.
+
+Next allowed move: stop for review. External review remediation series is complete.
+Blocked without separate authorization: governance-rule retirement, dependency expansion,
+public-sync or public push, live/provider proof, public/hosted/production readiness
+claims, memory reinjection, high-risk promotion implementation, and autonomous mutation.
+
+Prior external-review continuity note:
+
+External Review GAP6 provider risk cap ENV override is `CLOSED_PASS_BOUNDED`:
+
+GC-018:
+
+`docs/baselines/CVF_GC018_GAP6_PROVIDER_RISK_CAP_ENV_OVERRIDE_2026-06-06.md`
+
+Evidence:
+
+- Material closure commit: `92d446a8`.
+- ENV vars: `CVF_PROVIDER_RISK_CAP_<PROVIDER_UPPERCASE>`, `CVF_PROVIDER_RISK_CEILING`.
+- 6/6 tests pass; full cvf-web suite green; tsc clean.
+- Public Export Disposition: `DEFERRED_PRIVATE_ONLY`.
+
+Earlier external-review continuity note:
+
+External Review GAP4/GAP5 runtime durability tranche is
+`CLOSED_PASS_BOUNDED`:
+
+GC-018:
+
+`docs/baselines/CVF_GC018_EXTERNAL_REVIEW_GAP4_GAP5_RUNTIME_DURABILITY_2026-06-06.md`
+
+Audit:
+
+`docs/audits/CVF_GOVERNANCE_RULE_PROOF_OF_VALUE_AUDIT_2026-06-06.md`
+
+Completion:
+
+`docs/reviews/CVF_EXTERNAL_REVIEW_GAP4_GAP5_RUNTIME_DURABILITY_COMPLETION_2026-06-06.md`
+
+Evidence:
+
+- Material closure commit: `f37df607`.
+- GAP4 audit keeps governance rules with consolidation candidates only; no rule
+  retirement was authorized.
+- GAP5A sets only `runtime_receipt_count` to `liveEmissionWired=true` and emits
+  metadata-only `OPERATIONAL_BENCHMARK_METRIC_EMITTED` audit events.
+- GAP5B adds local SQLite storage adapters behind
+  `CVF_STORAGE_ADAPTER_TYPE=sqlite`; Redis remains stubbed.
+- Public Export Disposition: `DEFERRED_PRIVATE_ONLY`.
+
+Earlier external-review continuity note:
+
+External Review GAP1 Core KB pointer-ification is `CLOSED_PASS_BOUNDED`:
+
+`docs/work_orders/CVF_WO_GAP1_CORE_KB_POINTER_IFICATION_2026-06-06.md`
+
+Completion:
+
+`docs/reviews/CVF_GAP1_CORE_KB_POINTER_IFICATION_COMPLETION_2026-06-06.md`
+
+Evidence:
+
+- Material closure commit: `fb9e81c5`.
+- `docs/CVF_CORE_KNOWLEDGE_BASE.md` was reduced from 769 lines to 400 lines.
+- Stale `131 active skills` references were removed from Core KB.
+- Section XI and Section XII were verified unchanged from base.
+- Rule 4 now points version/folder/status ownership to Section II plus
+  `docs/reference/CVF_MODULE_INVENTORY.md`.
+- Public Export Disposition: `DEFERRED_PRIVATE_ONLY`.
+
+Earlier external-review continuity note:
+
+External review gap-analysis intake was repaired and made trackable:
+
+`docs/audits/CVF_EXTERNAL_REVIEW_GAP_ANALYSIS_AND_PROPOSED_SOLUTIONS_2026-06-05.md`
+
+Earlier closure continuity note:
+
+LE1 Live E2E Selector Flow Diagnostic is `CLOSED_PASS_BOUNDED`:
+
+`docs/work_orders/CVF_WO_LE1_LIVE_E2E_SELECTOR_FLOW_DIAGNOSTIC_2026-06-06.md`
+
+Completion review:
+
+`docs/reviews/CVF_LE1_LIVE_E2E_SELECTOR_FLOW_DIAGNOSTIC_COMPLETION_2026-06-06.md`
+
+Evidence:
+
+- Material commit: `8a6cb056`.
+- Helper:
+  `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts`
+- Focused live Playwright result:
+  `docs/evidence/CVF_LE1_LIVE_E2E_SELECTOR_FLOW_DIAGNOSTIC_RESULT_2026-06-06.json`
+- Release gate result:
+  `docs/evidence/CVF_LE1_RELEASE_GATE_RESULT_2026-06-06.json`
+- Diagnostic:
+  `docs/evidence/CVF_LE1_RELEASE_GATE_DIAGNOSTIC_2026-06-06.json`
+
+Previous continuity note:
+
+MLW7 Runtime Adapter Boundary GC-018 is
+`GC018_AUTHORIZED_HOLD_FOR_WORK_ORDER`:
+
+`docs/baselines/CVF_GC018_MLW7_RUNTIME_ADAPTER_BOUNDARY_2026-06-05.md`
+
+Material commit: `7d7d6eda`.
+
+The baseline selects `MLW7-RTAD1` as the next source-verified work-order
+candidate: runtime adapter boundary/admission authoring only. It does not
+authorize runtime adapter implementation, package install, external execution,
+external repo ingestion, delegation approval, registry authority, marketplace
+publication, public-sync, live/provider proof, hosted readiness, production
+readiness, public readiness, memory reinjection, automatic promotion,
+high-risk promotion implementation, Learning Orchestrator runtime behavior, or
+autonomous mutation.
+
+Next allowed move: author the source-verified `MLW7-RTAD1` runtime adapter
+boundary/admission work order, or stop for review. Any actual runtime adapter
+implementation, install/execute path, delegation/registry authority,
+marketplace/public claim, public-sync, live proof, hosted readiness,
+production readiness, public readiness, memory reinjection, automatic
+promotion, high-risk promotion implementation, or autonomous mutation requires
+separate explicit authorization.
+
+Previous continuity note:
+
+MLW-NRD1 Next Runtime Decision Readout is `CLOSED_PASS_BOUNDED`:
+
+`docs/work_orders/CVF_WO_MLW_NRD1_NEXT_RUNTIME_DECISION_READOUT_2026-06-05.md`
+
+Completion review:
+
+`docs/reviews/CVF_MLW_NRD1_NEXT_RUNTIME_DECISION_READOUT_COMPLETION_2026-06-05.md`
+
+Material commit: `efd4dc85`.
+
+Next allowed move: choose a separate operator-authorized lane: MLW7 external
+execution/runtime adapter GC-018, MLW8 optimization/benchmark/cost proof
+GC-018, LO2 high-risk promotion implementation GC-018, public-sync/export
+order, live/provider proof order, or stop for review. Hosted readiness,
+production readiness, public readiness, memory reinjection, automatic
+promotion, and autonomous mutation remain blocked without separate
+authorization.
+
+Previous continuity note:
+
+MLW Next Runtime Decision GC-018 is `GC018_AUTHORIZED_HOLD_FOR_WORK_ORDER`:
+
+`docs/baselines/CVF_GC018_MLW_NEXT_RUNTIME_DECISION_2026-06-05.md`
+
+The baseline selects `MLW-NRD1` as the next source-verified work-order
+candidate: a route-visible advisory decision/readout surface that classifies
+which MLW runtime lane is eligible next. It does not authorize route wiring,
+external capability execution, runtime adapter authority, automatic
+optimization, benchmark/cost proof, high-risk promotion implementation,
+public-sync, live proof, hosted readiness, production readiness, public
+readiness, memory reinjection, automatic promotion, or autonomous mutation.
+
+Superseded next-move note: MLW-NRD1 work-order authoring is complete at
+material commit `7352799f`.
+
+Earlier continuity note:
+
+Public-Safe Memory/Learning Summary packet is `CLOSED_PASS_BOUNDED`:
+
+GC-018:
+`docs/baselines/CVF_GC018_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md`
+
+Work order:
+`docs/work_orders/CVF_WO_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md`
+
+Summary:
+`docs/reference/CVF_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md`
+
+Review:
+`docs/reviews/CVF_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_REVIEW_2026-06-05.md`
+
+Material commit: `c42bc8d4`.
+
+The packet closes only a private, public-safe synthesis of LO1, LO2, MLW7,
+MLW8, and closure-packaging preflight evidence. Public Export Disposition is
+`DEFERRED_PRIVATE_ONLY`. It does not authorize public-sync, public push,
+runtime implementation, live/provider proof, hosted readiness, production
+readiness, public readiness, automatic promotion, memory reinjection, or
+autonomous mutation.
+
+LO2 High-Risk Promotion Decision Boundary is `CLOSED_PASS_BOUNDED`:
+
+`docs/work_orders/CVF_WO_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_2026-06-05.md`
+
+Baseline:
+`docs/baselines/CVF_GC018_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_2026-06-05.md`
+
+Reference:
+`docs/reference/CVF_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_2026-06-05.md`
+
+Completion:
+`docs/reviews/CVF_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_COMPLETION_2026-06-05.md`
+
+LO2 closes the high-risk promotion lane as a review-only decision boundary:
+MLW5 audit validation, MLW6 simulation/failure evidence, and adaptation policy
+evidence are prerequisites; `automaticPromotionAuthorized=false` and
+`autonomousMutationAuthorized=false` remain binding.
+
+MLW7 Optional External Capability Ingestion is `CLOSED_PASS_BOUNDED`:
+
+`docs/work_orders/CVF_WO_MLW7_OPTIONAL_EXTERNAL_CAPABILITY_INGESTION_2026-06-05.md`
+
+Completion:
+`docs/reviews/CVF_MLW7_OPTIONAL_EXTERNAL_CAPABILITY_INGESTION_COMPLETION_2026-06-05.md`
+
+Runtime helper:
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw7-external-capability-ingestion.ts`
+
+MLW8 Efficiency And Overconstraint Feedback is `CLOSED_PASS_BOUNDED`:
+
+`docs/work_orders/CVF_WO_MLW8_EFFICIENCY_OVERCONSTRAINT_FEEDBACK_2026-06-05.md`
+
+Completion:
+`docs/reviews/CVF_MLW8_EFFICIENCY_OVERCONSTRAINT_FEEDBACK_COMPLETION_2026-06-05.md`
+
+Runtime helper:
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw8-efficiency-overconstraint-feedback.ts`
+
+Closure Packaging Preflight Hardening is `CLOSED_PASS_BOUNDED`:
+
+`docs/work_orders/CVF_WO_CLOSURE_PACKAGING_PREFLIGHT_HARDENING_2026-06-05.md`
+
+Completion:
+`docs/reviews/CVF_CLOSURE_PACKAGING_PREFLIGHT_HARDENING_COMPLETION_2026-06-05.md`
+
+Checker:
+`governance/compat/check_closure_packaging_preflight.py`
+
+It adds an early structural preflight to catch stale closed-artifact wording,
+git-derived or bare `rg --files` corpus enumeration, closure diff path
+overclaims, and missing checker-recognized core-guard authorization before the
+full pre-closure bundle emits a longer finding list.
+
+Superseded next-move note: public-safe memory/learning summary execution is
+complete. The MLW-NRD1 source-verified work order authorized by
+`docs/baselines/CVF_GC018_MLW_NEXT_RUNTIME_DECISION_2026-06-05.md` is now
+ready for operator review.
+
 Pain-point closure direction:
 
-`docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
+`docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Owner Surface
 
@@ -65,9 +377,73 @@ startup guards before material governed work.
 
 ## Active Rule Additions
 
+Blind-Spot Prevention Standard upgraded to v2 (2026-06-01). Two new
+machine-verifiable rules added based on the LHW20 regression (24 subfolders /
+230 files vs claimed 13 / 97):
+
+- **Gate 1 — FILESYSTEM_LISTING_REQUIRED:** Agent MUST run
+  `Get-ChildItem -Directory` (or equivalent) on the root folder and include
+  raw shell output in Gate 1. Self-reported subfolder counts without shell
+  output are not valid evidence; verdict is BLOCKED.
+- **Gate 7 — COMPLETENESS_CROSS_CHECK:** Before claiming `CLEAR`, agent MUST
+  produce a cross-check table: Gate 1 subfolder list MINUS Gate 3 subfolder
+  list = UNREAD set. Each unread subfolder must have an explicit disposition.
+  CLEAR without this table is a governance defect.
+
+Active standard: `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-06-01.md`
+
+Fast Lane authorization: `docs/baselines/CVF_GC021_BLINDSPOT_STANDARD_UPGRADE_2026-06-01.md`
+
+All future LHW absorption scans must reference the 2026-06-01 version.
+
+Corpus Completeness And Report Integrity is now the general control for any
+folder/file-based inventory, report, extraction, comparison, audit, migration,
+or knowledge-absorption task:
+
+- Standard:
+  `docs/reference/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_STANDARD_2026-06-01.md`
+- Guard:
+  `governance/toolkit/05_OPERATION/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_GUARD.md`
+- Checker:
+  `governance/compat/check_corpus_completeness_report_integrity.py`
+
+Before claiming completeness, agents must provide filesystem-backed manifest,
+file-level processing ledger, reconciliation, explicit exclusions and
+unreadable formats, aggregation check, drift check, traceability, adversarial
+verification, and an allowed corpus verdict. `COMPLETE_VERIFIED` requires zero
+unresolved files. The guard proves evidence discipline, not perfect semantic
+understanding.
+
+Corpus-To-Knowledge-Map Reconciliation is now the follow-on control for
+corpus-derived knowledge maps, semantic-region ledgers, architecture
+reconciliations, Memory syntheses, graphification plans, and
+retrieval-readiness claims:
+
+- Method:
+  `docs/reference/CVF_KNOWLEDGE_SYSTEM_METHOD_STANDARD_2026-06-01.md`
+- Standard:
+  `docs/reference/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_STANDARD_2026-06-01.md`
+- Guard:
+  `governance/toolkit/05_OPERATION/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_GUARD.md`
+- Checker:
+  `governance/compat/check_corpus_to_knowledge_map_reconciliation.py`
+
+GC-048 distinguishes source authority from rebuildable graph, semantic-region,
+Palace, summary, cache, snapshot, and retrieval views. It requires
+mapped/deferred/unmapped reconciliation, drift and rebuildability checks,
+retrieval boundaries, and adversarial verification.
+
 Work-order dispatch quality is machine-enforced by:
 
 `governance/compat/check_work_order_dispatch_quality.py`
+
+Worker autonomy dispatch prompting is now standardized:
+
+`docs/reference/CVF_WORKER_AUTONOMY_DISPATCH_PROMPT_STANDARD_2026-06-01.md`
+
+READY/DISPATCHED work orders must include a Worker Autonomy / No-Question Rule
+so routine allowed-scope remediation is not escalated to the operator as a
+preference question.
 
 Governed file-size maintainability now requires proactive rotation/splitting
 instead of last-minute text compression when active governed files approach
@@ -189,45 +565,21 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LHW24 is the latest closed LHW wave. LHW22-LHW24 agent-intelligence absorption
-is CLOSED_PASS_BOUNDED at the documentation-only advisory boundary:
+P1-P5 small debt remediation material commit is `eb058300`. Public-sync changes
+still need commit/push from this working batch.
 
-`docs/roadmaps/CVF_LHW22_LHW23_LHW24_AGENT_INTELLIGENCE_ROADMAP_2026-05-31.md`
+Next allowed move: commit/push the public-sync remediation branch and push the
+private provenance branch, then stop for external review.
 
-Next allowed move: CPG-1, CPG-2, and CPG-3 are CLOSED_PASS_BOUNDED. Prepare a
-fresh explicitly authorized roadmap or public-safe subset sync from the
-public-sync clone after remote verification. CPG-2 is CLOSED_PASS_BOUNDED with
-release-quality proof:
+LHW24 remains the latest closed numbered LHW wave in the state registry.
 
-`docs/roadmaps/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_ROADMAP_2026-05-31.md`
-
-`docs/work_orders/CVF_WO_CPG2_CP2_HARD_GATE_ENFORCEMENT_2026-05-31.md`
-
-`docs/reviews/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_COMPLETION_2026-05-31.md`
-
-CPG-3 is CLOSED_PASS_BOUNDED with bounded receipt trace proof:
-
-`docs/baselines/CVF_GC018_CPG3_GOVERNANCE_TRACE_RECEIPT_ENRICHMENT_2026-05-31.md`
-
-`docs/roadmaps/CVF_CPG3_GOVERNANCE_TRACE_RECEIPT_ENRICHMENT_ROADMAP_2026-05-31.md`
-
-`docs/work_orders/CVF_WO_CPG3_GOVERNANCE_TRACE_RECEIPT_ENRICHMENT_2026-05-31.md`
-
-Boundary: do not edit `/api/execute/route.ts`; do not add public-sync,
-provider-routing, raw prompt/output, secret, or framework-private memory
-capture.
-
-Completion:
-
-`docs/reviews/CVF_CPG3_GOVERNANCE_TRACE_RECEIPT_ENRICHMENT_COMPLETION_2026-05-31.md`
-
-Public-safe subset sync remains available only from the public-sync clone after
-remote verification.
-
-Parked checkpoints:
-
-- VI5-T4/T5 hosted Netlify freshness and operator external-agent retest
-- Delta production hardening for MCP/client memory direction
+Blocked after this authorized push without separate authorization and passing
+phase gates: stable Auth.js migration, Redis implementation, PostgreSQL/SSO
+implementation, independent anchor claim, benchmark live rerun or quality
+parity claim, governance-rule removal, public/hosted/production readiness
+claims, cost/performance/provider-quality claims, memory reinjection,
+high-risk promotion implementation, Learning Orchestrator runtime behavior, and
+autonomous mutation.
 
 ## Enforcement
 
@@ -238,7 +590,7 @@ gates, and governed file-size checks enforce this front-door contract.
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
-- `AGENT_HANDOFF_V15_2026-05-29.md`
+- `AGENT_HANDOFF_V16_2026-06-06.md`
 - `governance/compat/check_active_session_state.py`
 - `governance/compat/run_agent_autorun_workflow_gate.py`
 

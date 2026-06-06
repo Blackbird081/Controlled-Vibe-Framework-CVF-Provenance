@@ -43,6 +43,19 @@ Any applicable artifact that contains a finding section must include:
 - next control action;
 - whether the finding was handled in this batch or deferred.
 
+Generalizable finding promotion:
+
+- if a finding describes a repeated, future-agent, reusable, systemic,
+  rule/template, guard, phase-gate, orchestration, or machine-check failure, it
+  must be promoted into a reusable CVF control;
+- acceptable promotions are `RULE_EXISTS`, `RULE_ADDED`, `TEMPLATE_UPDATED`,
+  `STANDARD_UPDATED`, `STANDARD_ADDED`, `MACHINE_CHECK_ADDED`,
+  `MACHINE_CHECK_CANDIDATE`, `PHASE_GATE_PLACEMENT_GAP`, or
+  `DESIGN_REVIEW_REQUIRED`;
+- `N/A_WITH_REASON` is allowed only when the artifact explains why the finding
+  is not generalizable or why promotion would be unsafe/out of scope;
+- do not leave a reusable finding as documentation-only worker commentary.
+
 Minimum learning lanes:
 
 - `GOVERNANCE_CONTROL_PLANE`
@@ -57,6 +70,9 @@ Minimum disposition values:
 - `RULE_ADDED`
 - `MACHINE_CHECK_ADDED`
 - `MACHINE_CHECK_CANDIDATE`
+- `TEMPLATE_UPDATED`
+- `STANDARD_UPDATED`
+- `STANDARD_ADDED`
 - `PHASE_GATE_PLACEMENT_GAP`
 - `DESIGN_REVIEW_REQUIRED`
 - `RUNTIME_LEARNING_CANDIDATE`
@@ -108,6 +124,9 @@ Closure is blocked when:
   output, or cost evidence;
 - a finding closes as worker blame without saying whether CVF rule/gate/phase
   placement also failed.
+- a repeated, future-agent, reusable, systemic, rule/template, guard,
+  phase-gate, orchestration, or machine-check finding is not promoted to a
+  reusable CVF control or explicitly closed with `N/A_WITH_REASON`.
 
 ## Related Artifacts
 

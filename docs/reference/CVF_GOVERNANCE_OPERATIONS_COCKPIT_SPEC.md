@@ -132,7 +132,7 @@ indicator
 intervention.
 
 **Source:** MA1 transfer packet `## 7. Dissent And Review Ledger` + V3 diagnostic
-- Source path: `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` — Section 7
+- Source path: `docs/reference/archive/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` — Section 7
 
 **Refresh cadence:** Per failure event
 
@@ -159,7 +159,7 @@ intervention.
 **What:** Count of evidence receipts awaiting export or with pending audit.
 
 **Source:** Receipt store + LHW5-T2 `artifactExportBoundaryAdvisory`
-- Source path: `docs/reference/CVF_LHW5_ARTIFACT_EXPORT_BOUNDARY_ADVISORY_CONNECTOR_SPEC_2026-05-27.md` — S2 advisory types
+- Source path: `docs/reference/archive/CVF_LHW5_ARTIFACT_EXPORT_BOUNDARY_ADVISORY_CONNECTOR_SPEC_2026-05-27.md` — S2 advisory types
 
 **Refresh cadence:** Per export event
 

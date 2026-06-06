@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import importlib.util
+import json
 import sys
 import tempfile
 import unittest
@@ -41,6 +42,13 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
                     "Negative And Fail-Condition Scan",
                     "Current Runtime Freshness Verification",
                     "ACCEPT_AS_OWNER_MAP coverage",
+                    "Mandatory Gate-Failure Remediation Protocol",
+                    "Worker Autonomy / No-Question Rule",
+                    "Pending Artifact Evidence Finality",
+                    "Commit Mode And Base-Anchor Lifecycle",
+                    "Self-Reported Gate Evidence Consistency",
+                    "Near-Threshold Owner Maintainability Plan",
+                    "Work-Order Fulfillment Manifest",
                     MODULE.THIS_SCRIPT_PATH,
                 ]
             ),
@@ -53,6 +61,24 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
                     "Roadmap-To-Work-Order Trace Matrix",
                     "Current Runtime Freshness Verification",
                     "ACCEPT_AS_OWNER_MAP coverage",
+                    "Mandatory Gate-Failure Remediation Protocol",
+                    "Worker Autonomy / No-Question Rule",
+                    "Pending Artifact Evidence Finality",
+                    "Commit Mode And Base-Anchor Lifecycle",
+                    "Self-Reported Gate Evidence Consistency",
+                    "Near-Threshold Owner Maintainability Plan",
+                    "Work-Order Fulfillment Manifest",
+                    MODULE.THIS_SCRIPT_PATH,
+                ]
+            ),
+        )
+        self._write(
+            MODULE.WORKER_AUTONOMY_STANDARD_PATH,
+            "\n".join(
+                [
+                    "Worker Autonomy Prompt",
+                    "Worker Autonomy / No-Question Rule",
+                    "Commit Mode And Base-Anchor Requirement",
                     MODULE.THIS_SCRIPT_PATH,
                 ]
             ),
@@ -104,6 +130,88 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
         self.assertFalse(report["compliant"])
         issues = report["violations"][0]["issues"]
         self.assertIn("FAST_LANE_READY audit has unmet/conditional CLOSED_PASS prerequisite; use HOLD_* until satisfied", issues)
+
+    def test_worker_must_not_commit_completion_review_owned_by_worker_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_TEST_WORKER_BOUNDARY_2026-06-03.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCH_READY",
+                    "Commit mode: WORKER_MUST_NOT_COMMIT",
+                    "dispatchBaseHead: abc123",
+                    "executionBaseHead: WORKER_MUST_CAPTURE_AT_START",
+                    "closureBaseHead: NOT_EXECUTED_YET",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Allowed-scope remediation is mandatory.",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| Template | `docs/reference/source.md` | Scope | `source.md` | doc | ACCEPT |",
+                    "## Agent Roles",
+                    "| Role | Responsibility | Boundary |",
+                    "|---|---|---|",
+                    "| Worker | produce packet and completion review | no commit |",
+                ]
+            ),
+        )
+        self._write("docs/reference/source.md", "## Scope\nsource\n")
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        issues = report["violations"][0]["issues"]
+        self.assertIn(
+            "WORKER_MUST_NOT_COMMIT dispatch assigns completion review to Worker; "
+            "use a worker handoff/evaluation artifact and reviewer-owned completion review, "
+            "or explicitly change role/commit mode before dispatch",
+            issues,
+        )
+
+    def test_worker_must_not_commit_reviewer_completion_review_allowed(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_TEST_REVIEWER_BOUNDARY_2026-06-03.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCH_READY",
+                    "Commit mode: WORKER_MUST_NOT_COMMIT",
+                    "dispatchBaseHead: abc123",
+                    "executionBaseHead: WORKER_MUST_CAPTURE_AT_START",
+                    "closureBaseHead: NOT_EXECUTED_YET",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Allowed-scope remediation is mandatory.",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| Template | `docs/reference/source.md` | Scope | `source.md` | doc | ACCEPT |",
+                    "## Agent Roles",
+                    "| Role | Responsibility | Boundary |",
+                    "|---|---|---|",
+                    "| Worker | produce packet and handoff artifact | no commit |",
+                    "| Reviewer | create completion review | owns closure |",
+                    "## Required Artifacts",
+                    "| Artifact | Path | Owner |",
+                    "|---|---|---|",
+                    "| Completion review | `docs/reviews/CVF_TEST_COMPLETION_2026-06-03.md` | Reviewer |",
+                ]
+            ),
+        )
+        self._write("docs/reference/source.md", "## Scope\nsource\n")
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        issues = report["violations"][0]["issues"] if report["violations"] else []
+        self.assertNotIn(
+            "WORKER_MUST_NOT_COMMIT dispatch assigns completion review to Worker; "
+            "use a worker handoff/evaluation artifact and reviewer-owned completion review, "
+            "or explicitly change role/commit mode before dispatch",
+            issues,
+        )
 
     def test_accept_row_with_missing_source_file_fails(self) -> None:
         work_order = "docs/work_orders/CVF_WO_LHW6_T2_TEST_2026-05-28.md"
@@ -189,6 +297,578 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
             "dispatch/ready work order contains blocking Source Verification disposition; "
             "use HOLD/DRAFT until source facts are resolved",
             report["violations"][0]["issues"],
+        )
+
+    def test_ready_work_order_with_required_dependency_placeholder_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_CI2_T5_TEST_2026-06-03.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCH_READY",
+                    "dispatchBaseHead: abc1234",
+                    "executionBaseHead: WORKER_MUST_CAPTURE_AT_START",
+                    "closureBaseHead: NOT_EXECUTED_YET",
+                    "Commit mode: WORKER_MUST_NOT_COMMIT",
+                    "## Authority Chain",
+                    "| Authority | Path / basis | Disposition |",
+                    "| --- | --- | --- |",
+                    "| Prior tranche | T4 pilot pack after closure | REQUIRED |",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| Existing use-case roadmap | `docs/roadmaps/CVF_LPCI_TEST.md` | title | `LPCI` | use-case roadmap | ACCEPT |",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Proceed inside allowed scope.",
+                ]
+            ),
+        )
+        self._write("docs/roadmaps/CVF_LPCI_TEST.md", "# LPCI\n")
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        issues = report["violations"][0]["issues"]
+        self.assertIn(
+            "dispatch/ready work order contains unresolved prerequisite disposition `REQUIRED`; "
+            "release HOLD only after replacing it with source-backed ACCEPT evidence per "
+            "docs/reference/CVF_WORK_ORDER_DEPENDENCY_RELEASE_EVIDENCE_STANDARD_2026-06-03.md",
+            issues,
+        )
+
+    def test_ready_work_order_dependency_artifact_commit_must_contain_path(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_DEPENDENCY_COMMIT_TEST_2026-06-03.md"
+        prerequisite = "docs/reviews/CVF_PRIOR_COMPLETION_2026-06-03.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCH_READY",
+                    "dispatchBaseHead: abc1234",
+                    "executionBaseHead: WORKER_MUST_CAPTURE_AT_START",
+                    "closureBaseHead: NOT_EXECUTED_YET",
+                    "Commit mode: WORKER_MUST_NOT_COMMIT",
+                    "## Authority Chain",
+                    "| Authority | Path / basis | Disposition |",
+                    "| --- | --- | --- |",
+                    f"| Prior tranche | `{prerequisite}` at commit `deadbee` | ACCEPT |",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| Existing use-case roadmap | `docs/roadmaps/CVF_LPCI_TEST.md` | title | `LPCI` | use-case roadmap | ACCEPT |",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Proceed inside allowed scope.",
+                ]
+            ),
+        )
+        self._write("docs/roadmaps/CVF_LPCI_TEST.md", "# LPCI\n")
+
+        def fake_run_git(args: list[str]) -> tuple[int, str, str]:
+            if args[:2] == ["cat-file", "-e"]:
+                return 1, "", "missing"
+            return 0, "", ""
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root), patch.object(MODULE, "_run_git", fake_run_git):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "dispatch/ready work order cites dependency artifact "
+            f"`{prerequisite}` at commit `deadbee`, but that commit does not contain the path; "
+            "cite the closure commit that contains the prerequisite artifact per "
+            "docs/reference/CVF_WORK_ORDER_DEPENDENCY_RELEASE_EVIDENCE_STANDARD_2026-06-03.md",
+            report["violations"][0]["issues"],
+        )
+
+    def test_ready_work_order_without_worker_autonomy_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_AUTONOMY_TEST_2026-06-01.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: READY_FOR_IMPLEMENTATION",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| Symbol | `governance/contracts/example.ts` | line 1 | `ExampleMode` | ExampleMode | ACCEPT |",
+                ]
+            ),
+        )
+        self._write("governance/contracts/example.ts", "export type ExampleMode = 'one';\n")
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "dispatch/ready work order lacks Worker Autonomy / No-Question Rule",
+            report["violations"][0]["issues"],
+        )
+
+    def test_ready_work_order_without_commit_mode_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_COMMIT_MODE_TEST_2026-06-02.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: READY_FOR_IMPLEMENTATION",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Proceed inside allowed scope.",
+                    "dispatchBaseHead: abc1234",
+                    "executionBaseHead: capture before edits",
+                    "closureBaseHead: reviewer stage",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "dispatch/ready work order lacks explicit `Commit mode: "
+            "WORKER_MAY_COMMIT | WORKER_MUST_NOT_COMMIT`",
+            report["violations"][0]["issues"],
+        )
+
+    def test_ready_work_order_without_anchor_lifecycle_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_ANCHOR_LIFECYCLE_TEST_2026-06-02.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCHED_TO_WORKER",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Proceed inside allowed scope.",
+                    "Commit mode: WORKER_MUST_NOT_COMMIT",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "dispatch/ready work order lacks base-anchor lifecycle marker(s): "
+            "dispatchBaseHead, executionBaseHead, closureBaseHead",
+            report["violations"][0]["issues"],
+        )
+
+    def test_ready_work_order_with_invalid_commit_mode_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_INVALID_COMMIT_MODE_TEST_2026-06-02.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCHED_TO_WORKER",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Proceed inside allowed scope.",
+                    "Commit mode: ASK_OPERATOR_LATER",
+                    "dispatchBaseHead: abc1234",
+                    "executionBaseHead: capture before edits",
+                    "closureBaseHead: reviewer stage",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "dispatch/ready work order has invalid commit mode "
+            "`ASK_OPERATOR_LATER`; use WORKER_MAY_COMMIT or WORKER_MUST_NOT_COMMIT",
+            report["violations"][0]["issues"],
+        )
+
+    def test_ready_no_commit_work_order_with_anchor_lifecycle_passes(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_VALID_NO_COMMIT_TEST_2026-06-02.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCHED_TO_WORKER",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Proceed inside allowed scope.",
+                    "Commit mode: WORKER_MUST_NOT_COMMIT",
+                    "dispatchBaseHead: abc1234",
+                    "executionBaseHead: capture before edits",
+                    "closureBaseHead: reviewer stage",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertTrue(report["compliant"])
+
+    def test_ready_work_order_cannot_forbid_near_threshold_owner_surface(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_OWNER_ROTATION_TEST_2026-06-01.md"
+        owner_path = "EXTENSIONS/CVF_WEB/src/app/api/execute/route.ts"
+        adjacent_path = "EXTENSIONS/CVF_WEB/src/app/api/memory/readout/route.ts"
+        self._write(owner_path, "\n".join(f"line {index}" for index in range(118)) + "\n")
+        self._write(
+            MODULE.FILE_SIZE_REGISTRY_PATH,
+            json.dumps(
+                {
+                    "thresholds": {
+                        "general_source": {
+                            "softThresholdLines": 90,
+                            "hardThresholdLines": 120,
+                        }
+                    },
+                    "nearHardRotationMarginLines": 5,
+                    "nearHardMinShrinkLines": 10,
+                    "proactiveOwnerSurfaces": [
+                        {
+                            "path": owner_path,
+                            "status": "ACTIVE",
+                            "domainPrefixes": ["EXTENSIONS/CVF_WEB/src/app/api/"],
+                        }
+                    ],
+                }
+            ),
+        )
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCHED_TO_WORKER",
+                    "Allowed scope:",
+                    f"- add `{adjacent_path}`",
+                    "Forbidden scope:",
+                    f"- `{owner_path}`",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Proceed inside scope.",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "dispatch/ready work order enters registered near-threshold owner domain for "
+            f"`{owner_path}` (118/120 lines) without `## Near-Threshold Owner Maintainability Plan`",
+            report["violations"][0]["issues"],
+        )
+
+    def test_pending_review_claiming_clean_git_status_fails(self) -> None:
+        review = "docs/reviews/CVF_PENDING_REVIEW_2026-06-01.md"
+        self._write(
+            review,
+            "\n".join(
+                [
+                    "# Pending Review",
+                    "Status: IN_PROGRESS_DISPATCHED",
+                    "## Governance Gates Run",
+                    "- `git status --short` -> clean",
+                ]
+            ),
+        )
+
+        with (
+            patch.object(MODULE, "REPO_ROOT", self.repo_root),
+            patch.object(MODULE, "_get_changed", return_value={review: {"A"}}),
+        ):
+            report = MODULE._classify([review], base_ref="HEAD")
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "pending changed artifact records `git status --short` as clean even though the artifact "
+            "itself is not committed; record the actual pending status or commit first",
+            report["violations"][0]["issues"],
+        )
+
+    def test_pending_review_with_head_prev_range_evidence_fails(self) -> None:
+        review = "docs/reviews/CVF_PENDING_RANGE_REVIEW_2026-06-01.md"
+        self._write(
+            review,
+            "\n".join(
+                [
+                    "# Pending Range Review",
+                    "Status: IN_PROGRESS_DISPATCHED",
+                    "## Governance Gates Run",
+                    "- `python governance/compat/check_work_order_dispatch_quality.py --base HEAD~1 --head HEAD --enforce` -> PASS",
+                    "- `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base HEAD~1 --head HEAD` -> PASS",
+                ]
+            ),
+        )
+
+        with (
+            patch.object(MODULE, "REPO_ROOT", self.repo_root),
+            patch.object(MODULE, "_get_changed", return_value={review: {"A"}}),
+        ):
+            report = MODULE._classify([review], base_ref="HEAD")
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "pending changed artifact cites `--base HEAD~1 --head HEAD` gate evidence that does not "
+            "prove the pending artifact; use a working-tree-aware validation or commit the artifact "
+            "and rerun the real changed range",
+            report["violations"][0]["issues"],
+        )
+
+    def test_pending_review_status_output_must_include_self_path(self) -> None:
+        review = "docs/reviews/CVF_PENDING_STATUS_REVIEW_2026-06-01.md"
+        self._write(
+            review,
+            "\n".join(
+                [
+                    "# Pending Status Review",
+                    "Status: IN_PROGRESS_DISPATCHED",
+                    "## Governance Gates Run",
+                    "- `git status --short` ->",
+                    "  - `?? docs/reviews/OTHER_REVIEW_2026-06-01.md`",
+                ]
+            ),
+        )
+
+        with (
+            patch.object(MODULE, "REPO_ROOT", self.repo_root),
+            patch.object(MODULE, "_get_changed", return_value={review: {"A"}}),
+        ):
+            report = MODULE._classify([review], base_ref="HEAD")
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "pending changed artifact records `git status --short` but omits its own pending path; "
+            "record the actual pending status line for this artifact",
+            report["violations"][0]["issues"],
+        )
+
+    def test_nonblocked_artifact_with_self_reported_gate_fail_fails(self) -> None:
+        review = "docs/reviews/CVF_PENDING_GATE_FAIL_REVIEW_2026-06-01.md"
+        self._write(
+            review,
+            "\n".join(
+                [
+                    "# Pending Gate Fail Review",
+                    "Status: IN_PROGRESS_DISPATCHED",
+                    "## Governance Gates Run",
+                    "- `python governance/compat/check_work_order_dispatch_quality.py --base abc1234 --head HEAD --enforce` -> FAIL",
+                ]
+            ),
+        )
+
+        with (
+            patch.object(MODULE, "REPO_ROOT", self.repo_root),
+            patch.object(MODULE, "_get_changed", return_value={review: {"A"}}),
+        ):
+            report = MODULE._classify([review], base_ref="HEAD")
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "artifact records a failed self-reported governance gate while status is not BLOCKED/HOLD; "
+            "repair allowed-scope failures and rerun, or mark the artifact BLOCKED with return action",
+            report["violations"][0]["issues"],
+        )
+
+    def test_finding_bearing_artifact_with_autorun_pass_missing_learning_disposition_fails(self) -> None:
+        review = "docs/reviews/CVF_PENDING_STALE_PASS_REVIEW_2026-06-01.md"
+        self._write(
+            review,
+            "\n".join(
+                [
+                    "# Pending Stale Pass Review",
+                    "Status: IN_PROGRESS_DISPATCHED",
+                    "## Findings / Position",
+                    "- Finding: gate evidence is current.",
+                    "## Governance Gates Run",
+                    "- `git status --short` ->",
+                    f"  - `?? {review}`",
+                    "- `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base abc1234 --head HEAD` -> PASS",
+                ]
+            ),
+        )
+
+        with (
+            patch.object(MODULE, "REPO_ROOT", self.repo_root),
+            patch.object(MODULE, "_get_changed", return_value={review: {"A"}}),
+        ):
+            report = MODULE._classify([review], base_ref="HEAD")
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "artifact records autorun gate PASS but is finding-bearing without "
+            "`## Finding-To-Governance Learning Disposition`; rerun after adding the required section",
+            report["violations"][0]["issues"],
+        )
+
+    def test_blocked_artifact_may_record_gate_fail_with_return_action(self) -> None:
+        review = "docs/reviews/CVF_BLOCKED_GATE_FAIL_REVIEW_2026-06-01.md"
+        self._write(
+            review,
+            "\n".join(
+                [
+                    "# Blocked Gate Fail Review",
+                    "Status: BLOCKED",
+                    "Return action: orchestrator must expand scope.",
+                    "## Governance Gates Run",
+                    "- `python governance/compat/check_work_order_dispatch_quality.py --base abc1234 --head HEAD --enforce` -> FAIL",
+                ]
+            ),
+        )
+
+        with (
+            patch.object(MODULE, "REPO_ROOT", self.repo_root),
+            patch.object(MODULE, "_get_changed", return_value={review: {"A"}}),
+        ):
+            report = MODULE._classify([review], base_ref="HEAD")
+
+        self.assertTrue(report["compliant"])
+
+    def test_closed_review_may_cite_future_hold_work_order_output(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_NEXT_2026-06-01.md"
+        self._write(work_order, "# Next\n\nStatus: HOLD\n")
+        review_text = "\n".join(
+            [
+                "# Completion",
+                "Status: CLOSED_PASS_BOUNDED",
+                "## Evidence Trace Block",
+                f"| Future work order output | `{work_order}` authored as HOLD pending dependency-release refresh |",
+            ]
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            issues = MODULE._validate_referenced_work_order_closure(review_text, "completion/spec artifact")
+
+        self.assertEqual(issues, [])
+
+    def test_closed_review_still_fails_open_work_order_dependency(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_OPEN_2026-06-01.md"
+        self._write(work_order, "# Open\n\nStatus: DISPATCH_READY\n")
+        review_text = "\n".join(
+            [
+                "# Completion",
+                "Status: CLOSED_PASS_BOUNDED",
+                "## Authority Chain",
+                f"| Required work order | `{work_order}` |",
+            ]
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            issues = MODULE._validate_referenced_work_order_closure(review_text, "completion/spec artifact")
+
+        self.assertIn(
+            f"closed completion/spec artifact cites work order `{work_order}` whose status is not CLOSED",
+            issues,
+        )
+
+    def test_runtime_work_order_fulfillment_manifest_catches_missing_artifacts_and_forbidden_paths(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_MKG6_TEST_2026-06-01.md"
+        changed_forbidden = "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/index.ts"
+        changed_runtime = "EXTENSIONS/CVF_WEB/src/app/api/execute/route.ts"
+        proof_path = "EXTENSIONS/CVF_WEB/src/app/api/memory/readout/route.test.ts"
+        self._write(changed_forbidden, "export const touched = true;\n")
+        self._write(changed_runtime, "export const route = true;\n")
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCHED_TO_WORKER",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Proceed inside scope.",
+                    "## Work-Order Fulfillment Manifest",
+                    "Manifest applies.",
+                    "## Required Artifact Manifest",
+                    "| Path | Required at handoff | Purpose |",
+                    "|---|---|---|",
+                    "| `EXTENSIONS/CVF_WEB/src/app/api/memory/readout/route.ts` | Yes | route |",
+                    "| `docs/reviews/CVF_MKG6_COMPLETION.md` | Yes | completion |",
+                    "## Forbidden Path Manifest",
+                    "| Path | Reason |",
+                    "|---|---|",
+                    f"| `{changed_forbidden}` | forbidden by work order |",
+                    "## Required Proof Manifest",
+                    "| Proof | Path | Required literal | Required at handoff |",
+                    "|---|---|---|---|",
+                    f"| raw leak sentinel | `{proof_path}` | `RAW_MEMORY_CONTENT_MUST_NOT_LEAK` | Yes |",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order, changed_runtime, changed_forbidden])
+
+        self.assertFalse(report["compliant"])
+        issues = [
+            issue
+            for violation in report["violations"]
+            if violation["path"] == work_order
+            for issue in violation["issues"]
+        ]
+        self.assertIn(
+            "required handoff artifact is missing: `EXTENSIONS/CVF_WEB/src/app/api/memory/readout/route.ts`",
+            issues,
+        )
+        self.assertIn(
+            "required handoff artifact is missing: `docs/reviews/CVF_MKG6_COMPLETION.md`",
+            issues,
+        )
+        self.assertIn(
+            f"changed file violates forbidden path manifest: `{changed_forbidden}` matches `{changed_forbidden}`",
+            issues,
+        )
+        self.assertIn(
+            f"required proof file is missing: `{proof_path}`",
+            issues,
+        )
+
+    def test_required_proof_literal_must_exist_in_named_file(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_SENTINEL_TEST_2026-06-01.md"
+        route_path = "EXTENSIONS/CVF_WEB/src/app/api/memory/readout/route.ts"
+        proof_path = "EXTENSIONS/CVF_WEB/src/app/api/memory/readout/route.test.ts"
+        self._write(route_path, "export const route = true;\n")
+        self._write(proof_path, "it('checks response', () => {});\n")
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCHED_TO_WORKER",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Proceed inside scope.",
+                    "## Work-Order Fulfillment Manifest",
+                    "Manifest applies.",
+                    "## Required Artifact Manifest",
+                    "| Path | Required at handoff | Purpose |",
+                    "|---|---|---|",
+                    f"| `{route_path}` | Yes | route |",
+                    "## Required Proof Manifest",
+                    "| Proof | Path | Required literal | Required at handoff |",
+                    "|---|---|---|---|",
+                    f"| raw leak sentinel | `{proof_path}` | `RAW_MEMORY_CONTENT_MUST_NOT_LEAK` | Yes |",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order, route_path, proof_path])
+
+        self.assertFalse(report["compliant"])
+        issues = [
+            issue
+            for violation in report["violations"]
+            if violation["path"] == work_order
+            for issue in violation["issues"]
+        ]
+        self.assertIn(
+            f"required proof literal `RAW_MEMORY_CONTENT_MUST_NOT_LEAK` is missing from `{proof_path}`",
+            issues,
         )
 
     def test_new_doc_only_field_in_source_verification_fails(self) -> None:
@@ -630,6 +1310,54 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
         self.assertTrue(
             any("outside its Allowed scope" in issue and archive in issue for issue in scope_issues)
         )
+
+    def test_closed_work_order_allows_explicit_root_governance_path(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_ROOT_GOVERNANCE_TEST_2026-06-01.md"
+        root_governance_path = "AGENTS.md"
+        self._write(root_governance_path, "# Agent instructions\n")
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: CLOSED_PASS_BOUNDED",
+                    "## Scope",
+                    "Allowed scope:",
+                    f"- Update `{root_governance_path}`.",
+                    "Forbidden scope:",
+                    "- Other root files.",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order, root_governance_path])
+
+        self.assertTrue(report["compliant"])
+
+    def test_closed_work_order_allows_explicit_gitignore_path(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_ROOT_GITIGNORE_TEST_2026-06-05.md"
+        root_path = ".gitignore"
+        self._write(root_path, ".cvf/runtime/\n")
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: CLOSED_PASS_BOUNDED",
+                    "## Scope",
+                    "Allowed scope:",
+                    f"- Update `{root_path}`.",
+                    "Forbidden scope:",
+                    "- Other root files.",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order, root_path])
+
+        self.assertTrue(report["compliant"])
 
     def test_closed_lhw_roadmap_requires_full_wave_range_fails(self) -> None:
         roadmap = "docs/roadmaps/CVF_LHW12_TEST_ROADMAP_2026-05-29.md"

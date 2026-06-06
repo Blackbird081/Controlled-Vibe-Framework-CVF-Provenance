@@ -104,9 +104,12 @@ this block before implementation:
 
 ```text
 Knowledge Absorption Blind-Spot Control Block
-- Standard read: docs/reference/archive/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md
+- Standard read: docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-06-01.md
 - Source inventory:
-  - <root/family + file count>
+  - <root/family + file count - from shell output, not self-reported>
+  - Shell command run: <command>
+  - Shell output (subfolder list): <raw output>
+  - Total file count (from shell): <N>
 - Prior absorption evidence resolved:
   - <registry/review/baseline/roadmap paths>
 - Detailed source files used:
@@ -126,7 +129,115 @@ Knowledge Absorption Blind-Spot Control Block
   - Safety/Boundary Owner: <finding or N/A>
 - Thin proof target:
   - <bounded proof>
+- Gate 7 completeness cross-check:
+  | Subfolder | In Gate 3? | Disposition if absent | Reason |
+  | ... | ... | ... | ... |
 - Blind-spot verdict: CLEAR | PARTIAL | BLOCKED
+```
+
+For any task that reads an existing folder, subfolder tree, archive, file
+list, or project source set to produce an inventory, report, comparison,
+extraction, audit, migration, roadmap, work order, or knowledge-absorption
+decision, add this block before claiming corpus completeness:
+
+```text
+## Corpus Completeness And Report Integrity
+
+- Corpus task class: INVENTORY | REPORT | EXTRACTION | COMPARISON | AUDIT |
+  MIGRATION | KNOWLEDGE_ABSORPTION | OTHER
+- Corpus root: <path or explicit bounded list>
+- Snapshot time: <timestamp>
+- Enumeration command: <exact command>
+- Manifest artifact or inline manifest: <path or inline table>
+- Manifest hash: <hash or N/A with reason>
+- Processing ledger artifact or inline ledger: <path or inline table>
+- Allowed terminal statuses: READ | SKIPPED_WITH_REASON | DEFERRED |
+  BLOCKED_UNREADABLE
+- Reconciliation: manifest=<N>; ledger_terminal=<N>; exclusions=<N>;
+  unresolved=<N>
+- Unresolved files: <0 or explicit paths>
+- Declared exclusions: <none or paths + reasons>
+- Unreadable or unsupported files: <none or paths + reasons>
+- Aggregation check: <PASS or bounded reason>
+- Drift check: <PASS, STALE_SNAPSHOT, or N/A with reason>
+- Output traceability: <source locator evidence>
+- Adversarial verification: <sample/recompute evidence>
+- Corpus verdict: COMPLETE_VERIFIED | COMPLETE_WITH_DECLARED_EXCLUSIONS |
+  PARTIAL | BLOCKED | STALE_SNAPSHOT
+```
+
+For any corpus-derived knowledge map, semantic-region ledger, architecture
+reconciliation, Memory synthesis, graphification plan, or retrieval-readiness
+claim, add:
+
+Machine check:
+`governance/compat/check_corpus_to_knowledge_map_reconciliation.py`
+
+For any GC-018 packet derived from an external review, legacy/intake scan,
+corpus-finding replay, or rescan, add:
+
+Machine check:
+`governance/compat/check_rescan_intelligence_hardening.py`
+
+```text
+## Rescan Intelligence Hardening
+
+- Original source artifact: <path or N/A with reason>
+- Predecessor intake artifact: <path or N/A with reason>
+- Delta ledger status: present | N/A with reason
+- Routing matrix status: present | N/A with reason
+- Semantic sampling status: present | N/A with reason
+- Rescan intelligence verdict: COMPLETE_WITH_DELTA_ROUTING_SAMPLE |
+  COMPLETE_WITH_DECLARED_LIMITS | PARTIAL | BLOCKED |
+  NOT_APPLICABLE_WITH_REASON
+
+### Original-Intake Delta Ledger
+
+| Category | Item | Disposition | Reason |
+| --- | --- | --- | --- |
+| UNCHANGED_FROM_INTAKE | <item> | <disposition> | <reason> |
+| CHANGED_DISPOSITION | <item> | <disposition> | <reason> |
+| NEW_FINDING | <item> | <disposition> | <reason> |
+| REMOVED_OR_REJECTED | <item> | <disposition> | <reason> |
+
+### Follow-Up Routing Matrix
+
+| Routing lane | Item | Routed action |
+| --- | --- | --- |
+| DO_NOW | <item> | <action> |
+| SEPARATE_RUNTIME_TRANCHE | <item> | <action> |
+| STRATEGIC_OPERATOR_DECISION | <item> | <action> |
+| OUT_OF_SCOPE | <item> | <action> |
+| RESOLVED_BY_DESIGN | <item> | <action> |
+
+### Semantic Sampling / Adversarial Review
+
+| sampleId | source section | source claim | disposition checked | adversarial challenge | verdict |
+| --- | --- | --- | --- | --- | --- |
+| <sample-id> | <section> | <claim> | <disposition> | <challenge> | <PASS/FAIL/N/A with reason> |
+```
+
+```text
+## Knowledge System Reconciliation
+
+- Knowledge task class: ARCHITECTURE_MAP | SEMANTIC_REGION_MAP | MEMORY_SYNTHESIS |
+  GRAPHIFICATION | RETRIEVAL_READINESS | CORPUS_ABSORPTION | OTHER
+- Source manifest: <path or inline manifest>
+- Source manifest hash: <hash or N/A with reason>
+- Enumeration safety: <filesystem-backed command or structured complete API evidence>
+- Intake registry or ledger: <path or inline ledger>
+- Authority assets: <source-backed assets or ledger evidence>
+- Derived views: <graph, regions, Palace, summary, cache, snapshot, or N/A with reason>
+- Semantic region ledger: <path or inline ledger>
+- Region reconciliation: assets=<N>; mapped=<N>; deferred=<N>; unmapped=<N>
+- Orphan or unmapped assets: <none or explicit paths>
+- Cross-region links: <evidence or N/A with reason>
+- Drift check: <PASS, STALE_MAP, or N/A with reason>
+- Rebuildability check: <PASS or bounded reason>
+- Retrieval boundary: <bounded capability and deeper-review lane>
+- Adversarial verification: <recomputed totals and challenged risks>
+- Knowledge-map verdict: RECONCILED_VERIFIED | RECONCILED_WITH_DECLARED_GAPS |
+  PARTIAL | BLOCKED | STALE_MAP
 ```
 
 ```text
@@ -172,6 +283,34 @@ Authorization Boundary
 - If NO, reopen trigger: <fresh reassessment or new candidate condition>
 ```
 
+## Guard-Clean Authoring Addendum
+
+Before marking a GC-018, dispatch packet, session-sync review, or closure packet
+ready, verify these authoring constraints:
+
+- Corpus/intake/rescan-derived `docs/baselines/` artifacts include the
+  `Corpus Completeness And Report Integrity` block with exact GC-047 fields
+  and filesystem-backed enumeration evidence, even when a fresh corpus scan is
+  out of scope.
+- Corpus/intake/rescan-derived artifacts include `## Rescan Intelligence
+  Hardening` with delta ledger, follow-up routing matrix, and semantic
+  sampling/adversarial review.
+- Changes to `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION_MEMORY.md`,
+  `AGENTS.md`, `CLAUDE.md`, or guard/control files are backed by a changed
+  artifact containing `## Core Guard Self-Protection Authorization` and exact
+  protected-path rows.
+- New `docs/reviews/` authorization or sync reviews include these structural
+  sections: `## Scope / Target / Owner Boundary`, `## Target / Source`,
+  `## Scope / Methodology`, `## Findings / Position`, and
+  `## Risk / Corrective Action`.
+- Finding-bearing artifacts use canonical learning vocabulary from GC-049 for
+  defect class, learning lane, escalation state, and next control action.
+- Active session updates keep `nextAllowedMove` aligned with the latest closed
+  LHW wave and record the current handoff HEAD after each commit that affects
+  governed continuity.
+- Autorun gates use real ranges. Do not use `--base HEAD --head HEAD` as
+  dispatch, closure, or push evidence for changed governed artifacts.
+
 ## Tranche Closure Checklist (mandatory before filing closure packet)
 
 Every tranche closure packet must include this checklist. Each item must
@@ -190,6 +329,17 @@ Tranche Closure Checklist
 - [ ] Legacy Spec Scan Block present OR explicitly N/A: <reason>
 - [ ] Knowledge Absorption Blind-Spot Control Block present OR explicitly N/A:
       <reason>
+- [ ] Corpus Completeness And Report Integrity block present OR explicitly N/A:
+      <reason>
+- [ ] Rescan Intelligence Hardening block present OR explicitly N/A:
+      <reason>
+- [ ] Knowledge System Reconciliation block present OR explicitly N/A:
+      <reason>
+- [ ] Protected file changes, if any, have Core Guard Self-Protection Authorization
+- [ ] New review/sync review artifacts include required structural review sections
+- [ ] Finding-bearing artifacts include canonical Finding-To-Governance Learning Disposition
+- [ ] Active session nextAllowedMove and latest closed LHW continuity remain aligned
+- [ ] Pre-push autorun gate run on a committed non-empty range
 ```
 
 Omitting the catalog item without an explicit N/A is a closure defect.
@@ -210,9 +360,13 @@ but the checklist is the authoritative closure gate.
   and any relevant `.private_reference/legacy/` source folders before the
   candidate can be treated as complete
 - knowledge-absorption packets must follow
-  `docs/reference/archive/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`
+  `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-06-01.md`
   and must include the Knowledge Absorption Blind-Spot Control Block before any
   implementation begins
+- bounded-corpus tasks must follow
+  `docs/reference/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_STANDARD_2026-06-01.md`
+  and must reconcile manifest files against processing-ledger terminal statuses
+  before claiming completeness
 
 ## Preferred Placement
 
@@ -230,6 +384,8 @@ The same packet may be summarized in multiple places, but there should be one ob
 - `governance/toolkit/05_OPERATION/CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD.md` (GC-046: Evidence Trace Block requirement for absorption review chains)
 - `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md#GC-018`
 - `docs/reference/archive/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
-- `docs/reference/archive/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`
+- `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-06-01.md`
+- `docs/reference/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_STANDARD_2026-06-01.md`
+- `governance/compat/check_corpus_completeness_report_integrity.py`
 - `governance/compat/check_depth_audit_continuation_compat.py`
 - `docs/roadmaps/CVF_SYSTEM_UNIFICATION_REMEDIATION_ROADMAP_2026-03-19.md`

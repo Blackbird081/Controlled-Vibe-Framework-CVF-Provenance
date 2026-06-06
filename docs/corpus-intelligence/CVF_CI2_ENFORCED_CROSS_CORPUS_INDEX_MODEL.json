@@ -1,0 +1,329 @@
+{
+  "schemaVersion": "2.0.0",
+  "modelId": "cvf-ci2-enforced-cross-corpus-index-model",
+  "generatedAt": "2026-06-03",
+  "generatedBy": "CI2-T3 Enforced Cross-Corpus Index Model",
+  "baselineRef": "docs/baselines/CVF_GC018_CI2_CORPUS_INTELLIGENCE_ENFORCEMENT_PRODUCT_READINESS_2026-06-02.md",
+  "authority": {
+    "ci2Baseline": "docs/baselines/CVF_GC018_CI2_CORPUS_INTELLIGENCE_ENFORCEMENT_PRODUCT_READINESS_2026-06-02.md",
+    "ci2Roadmap": "docs/roadmaps/CVF_CI2_CORPUS_INTELLIGENCE_ENFORCEMENT_PRODUCT_READINESS_ROADMAP_2026-06-02.md",
+    "ci2T2Closure": "docs/reviews/CVF_CI2_T2_PACKET_NORMALIZATION_CHECKERS_COMPLETION_2026-06-02.md",
+    "ci1T7IntakeBridge": "docs/reference/CVF_CI1_T7_LPCI_INTAKE_BRIDGE_2026-06-02.md"
+  },
+  "parentModel": {
+    "modelId": "cvf-cross-corpus-index-model-ci1-t4",
+    "modelPath": "docs/corpus-intelligence/CVF_CROSS_CORPUS_INDEX_MODEL.json",
+    "compatibilityNote": "CI2-T3 extends CI1-T4 without modifying it in place. The CI1-T4 historical model remains authoritative at its versioned path. CI2-T3 adds enforcement bindings, explicit field classification, and NR-11 alias vocabulary. It does not overwrite CI1-T4 facet definitions or normalization rules NR-01 through NR-10."
+  },
+  "enforcedFields": [
+    {
+      "field": "sourcePath",
+      "fieldClass": "structural-required",
+      "description": "Original source file or canonical imported path. Required in every classification ledger row.",
+      "canonicalStandard": "docs/reference/CVF_CORPUS_INTELLIGENCE_READINESS_PACKET_TEMPLATE_2026-06-02.md",
+      "checker": "governance/compat/check_corpus_intelligence_classification.py",
+      "checkerId": null,
+      "enforcedBy": "GC-050 classification structure checker (presence check)",
+      "ci1T4NormalizationRule": null,
+      "gaps": null
+    },
+    {
+      "field": "normalizedPath",
+      "fieldClass": "structural-required",
+      "description": "Path normalized per CVF Corpus Path Normalization Algorithm. Root-relative, forward-slash separator, lowercase, no leading/trailing separator, no ./ or ../ segments, no Windows drive letters.",
+      "canonicalStandard": "docs/reference/CVF_CORPUS_PATH_NORMALIZATION_ALGORITHM_STANDARD_2026-06-02.md",
+      "checker": "governance/compat/check_corpus_packet_normalized_path.py",
+      "checkerId": "NR-05",
+      "enforcedBy": "CI2-T2 NR-05 checker — structural canonical-form validation; does not validate path semantic meaning or resolve actual filesystem path",
+      "ci1T4NormalizationRule": "NR-05 (DEFER_CI1-T6 → STANDARD_REQUIRED_FIRST → standard authored by CSA1 → checker implemented by CI2-T2)",
+      "gaps": null
+    },
+    {
+      "field": "sourceHash",
+      "fieldClass": "structural-required",
+      "description": "SHA-256 of raw source file byte content, hex-encoded, lowercase. Proves per-file drift resistance. Packet-level exception: manifestHashProxy: true with non-empty manifestProxyException string of at least 20 characters is accepted in place of per-row sourceHash.",
+      "canonicalStandard": "docs/reference/CVF_CORPUS_SOURCE_HASH_STANDARD_2026-06-02.md",
+      "checker": "governance/compat/check_corpus_packet_source_hash.py",
+      "checkerId": "NR-04",
+      "enforcedBy": "CI2-T2 NR-04 checker — structural presence and format gate; does not validate hash value accuracy or prove file content integrity",
+      "ci1T4NormalizationRule": "NR-04 (DEFER_CI1-T6 → STRUCTURAL_CHECK_REQUIRED → checker implemented by CI2-T2)",
+      "gaps": null
+    },
+    {
+      "field": "sourceHashAlgorithm",
+      "fieldClass": "optional",
+      "description": "Algorithm identifier for sourceHash. Default: sha256. Required only when a non-default algorithm is used. When omitted, reviewers assume SHA-256.",
+      "canonicalStandard": "docs/reference/CVF_CORPUS_SOURCE_HASH_STANDARD_2026-06-02.md",
+      "checker": null,
+      "checkerId": "NR-04",
+      "enforcedBy": "documentation convention; no dedicated machine check",
+      "ci1T4NormalizationRule": "NR-04 companion field",
+      "gaps": null
+    },
+    {
+      "field": "disposition",
+      "fieldClass": "structural-required",
+      "description": "Primary per-row disposition. Allowed values: ACCEPT, ACCEPT_SUMMARY_ONLY, DEFER, REJECT, BLOCKED_SOURCE_NOT_FOUND, BLOCKED_UNREADABLE.",
+      "canonicalStandard": "docs/reference/CVF_CORPUS_INTELLIGENCE_CLASSIFICATION_STANDARD_2026-06-01.md",
+      "checker": "governance/compat/check_corpus_intelligence_classification.py",
+      "checkerId": null,
+      "enforcedBy": "GC-050 classification structure checker",
+      "ci1T4NormalizationRule": null,
+      "gaps": null
+    },
+    {
+      "field": "rawDisposition",
+      "fieldClass": "structural-required-when-alias",
+      "description": "Original per-row disposition before canonical alias merge. Required whenever dispositionAlias is present. Preserves the author-assigned DEFER or ACCEPT_SUMMARY_ONLY value for traceability.",
+      "canonicalStandard": "docs/reference/CVF_CORPUS_INTELLIGENCE_CLASSIFICATION_STANDARD_2026-06-01.md",
+      "checker": "governance/compat/check_corpus_packet_disposition_canonical.py",
+      "checkerId": "NR-11",
+      "enforcedBy": "CI2-T2 NR-11 checker — structural alias discipline gate; does not validate semantic correctness of disposition assignments",
+      "ci1T4NormalizationRule": "NR-11 (new field added in CI2-T3; not present in CI1-T4 model)",
+      "gaps": null
+    },
+    {
+      "field": "dispositionAlias",
+      "fieldClass": "structural-required-when-deferred",
+      "description": "Canonical alias for cross-packet queries. Rows with DEFER or ACCEPT_SUMMARY_ONLY disposition MUST carry dispositionAlias: ACCEPT_DEFERRED. Enables cross-packet disposition queries without raw enum scatter.",
+      "canonicalStandard": "docs/reference/CVF_CORPUS_INTELLIGENCE_CLASSIFICATION_STANDARD_2026-06-01.md",
+      "checker": "governance/compat/check_corpus_packet_disposition_canonical.py",
+      "checkerId": "NR-11",
+      "enforcedBy": "CI2-T2 NR-11 checker — structural alias discipline gate",
+      "ci1T4NormalizationRule": "NR-11 (new field added in CI2-T3; not present in CI1-T4 model)",
+      "gaps": null
+    },
+    {
+      "field": "answerClass",
+      "fieldClass": "structural-required",
+      "description": "How an agent may use this row to answer queries. Allowed values: DIRECT_CITED_ANSWER, SUMMARY_WITH_SOURCE, PROCEDURAL_GUIDANCE, ESCALATE_OR_ABSTAIN.",
+      "canonicalStandard": "docs/reference/CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md",
+      "checker": "governance/compat/check_corpus_intelligence_classification.py",
+      "checkerId": null,
+      "enforcedBy": "GC-050 classification structure checker",
+      "ci1T4NormalizationRule": null,
+      "gaps": null
+    },
+    {
+      "field": "evidencePointer",
+      "fieldClass": "structural-required",
+      "description": "Section, line, paragraph, article, hash, or receipt reference that proves the classification claim for this row.",
+      "canonicalStandard": "docs/reference/CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md",
+      "checker": "governance/compat/check_corpus_intelligence_classification.py",
+      "checkerId": null,
+      "enforcedBy": "GC-050 classification structure checker",
+      "ci1T4NormalizationRule": null,
+      "gaps": null
+    },
+    {
+      "field": "processingStatus",
+      "fieldClass": "structural-required",
+      "description": "File processing status. Allowed values: READ_DEEP, READ_SHALLOW, SKIPPED_WITH_REASON, DEFERRED, BLOCKED_UNREADABLE.",
+      "canonicalStandard": "docs/reference/CVF_CORPUS_INTELLIGENCE_READINESS_PACKET_TEMPLATE_2026-06-02.md",
+      "checker": "governance/compat/check_corpus_intelligence_classification.py",
+      "checkerId": null,
+      "enforcedBy": "GC-050 classification structure checker",
+      "ci1T4NormalizationRule": null,
+      "gaps": null
+    },
+    {
+      "field": "knowledgeRegion",
+      "fieldClass": "structural-required",
+      "description": "GC-050 or project-specific knowledge region label for routing and retrieval scoping.",
+      "canonicalStandard": "docs/reference/CVF_CORPUS_INTELLIGENCE_CLASSIFICATION_STANDARD_2026-06-01.md",
+      "checker": "governance/compat/check_corpus_intelligence_classification.py",
+      "checkerId": null,
+      "enforcedBy": "GC-050 classification structure checker",
+      "ci1T4NormalizationRule": null,
+      "gaps": null
+    },
+    {
+      "field": "ownerSurface",
+      "fieldClass": "structural-required",
+      "description": "Owner surface or consuming CVF plane. Prefer NR-03 enum vocabulary over runtime file references (e.g., PRIVATE_PROVENANCE, CONTROL_PLANE_CONTEXT_BUILDER, GOVERNANCE_LAYER, LEARNING_PLANE, ROADMAP_BACKLOG, CONTROL_PLANE_ADAPTERS).",
+      "canonicalStandard": "docs/reference/CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md",
+      "checker": null,
+      "checkerId": "NR-03",
+      "enforcedBy": "NR-03 vocabulary convention; alias to runtime file reference accepted per CI1-T4; no dedicated checker",
+      "ci1T4NormalizationRule": "NR-03",
+      "gaps": "Vocabulary conformance not machine-checked; alias remains accepted by NR-03 normalization note from CI1-T4"
+    },
+    {
+      "field": "sourceRoot",
+      "fieldClass": "structural-required",
+      "description": "Corpus root or import root. Should match a GC-051 registered corpus root for registered scan packets.",
+      "canonicalStandard": "docs/reference/CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md",
+      "checker": "governance/compat/check_corpus_scan_registry.py",
+      "checkerId": null,
+      "enforcedBy": "GC-051 corpus scan registry checker (for registered packets)",
+      "ci1T4NormalizationRule": null,
+      "gaps": null
+    },
+    {
+      "field": "sourceFamily",
+      "fieldClass": "structural-required",
+      "description": "Folder family, import batch, document collection, or project module. Use explicit kebab-case label matching GC-051 corpusId where applicable.",
+      "canonicalStandard": "docs/reference/CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md",
+      "checker": null,
+      "checkerId": "NR-10",
+      "enforcedBy": "NR-10 editorial convention; not currently machine-checked",
+      "ci1T4NormalizationRule": "NR-10",
+      "gaps": "Explicit kebab-case label not enforced by checker"
+    },
+    {
+      "field": "documentType",
+      "fieldClass": "structural-required",
+      "description": "Document type. Allowed values: doc, source, policy, notice, roadmap, review, spec, SOP, contract, other. Alias 'Document type' accepted per NR-01.",
+      "canonicalStandard": "docs/reference/CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md",
+      "checker": null,
+      "checkerId": "NR-01",
+      "enforcedBy": "NR-01 alias normalization; presence checked by GC-050; no dedicated value-vocabulary checker",
+      "ci1T4NormalizationRule": "NR-01",
+      "gaps": null
+    },
+    {
+      "field": "topicTags",
+      "fieldClass": "structural-required",
+      "description": "Controlled or reviewer-approved topic tags. Alias 'Domain' accepted per NR-02.",
+      "canonicalStandard": "docs/reference/CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md",
+      "checker": null,
+      "checkerId": "NR-02",
+      "enforcedBy": "NR-02 alias normalization; no dedicated checker",
+      "ci1T4NormalizationRule": "NR-02",
+      "gaps": null
+    },
+    {
+      "field": "sensitivity",
+      "fieldClass": "structural-required",
+      "description": "Per-file sensitivity. Allowed values: public, internal, confidential, restricted, unknown. Must be stated per-file, not corpus-level only.",
+      "canonicalStandard": "docs/reference/CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md",
+      "checker": null,
+      "checkerId": "NR-06",
+      "enforcedBy": "NR-06 documentation guidance only per CI1-T6 DOCUMENTATION_ONLY verdict; no dedicated checker authorized",
+      "ci1T4NormalizationRule": "NR-06",
+      "gaps": "Per-file declaration not machine-checked; documentation guidance only"
+    },
+    {
+      "field": "freshnessStatus",
+      "fieldClass": "structural-required",
+      "description": "Freshness enum. Allowed values from CI1-T4: current, stale, superseded, obsolete, unknown, legacy-current-for-absorption.",
+      "canonicalStandard": "docs/reference/CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md",
+      "checker": null,
+      "checkerId": null,
+      "enforcedBy": "editorial convention; no dedicated checker",
+      "ci1T4NormalizationRule": null,
+      "gaps": null
+    },
+    {
+      "field": "freshnessCheckedAt",
+      "fieldClass": "optional",
+      "description": "ISO date of freshness check. Recommended when freshnessStatus is explicitly checked during the scan.",
+      "canonicalStandard": "docs/reference/CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md",
+      "checker": null,
+      "checkerId": null,
+      "enforcedBy": "editorial convention; no dedicated checker",
+      "ci1T4NormalizationRule": null,
+      "gaps": null
+    }
+  ],
+  "domainExtensionGroups": {
+    "legalPolicy": {
+      "groupLabel": "Legal / Policy Corpus Extensions (LPCI Vocabulary)",
+      "fields": ["jurisdiction", "authorityLevel", "issuingBody", "effectiveDate", "amendmentStatus", "sourceAuthority"],
+      "fieldClass": "domain-extension",
+      "populationStatus": "NOT_POPULATED_CI2_T3",
+      "inheritedFrom": "docs/corpus-intelligence/CVF_CROSS_CORPUS_INDEX_MODEL.json",
+      "note": "Vocabulary declared for LPCI-T1 intake. CI2-T3 does not populate legal/policy fields. Population requires a separate LPCI product roadmap after CI1-T7 intake bridge obligations are satisfied."
+    },
+    "internalCompany": {
+      "groupLabel": "Internal Company Corpus Extensions",
+      "fields": ["businessUnit", "policyOwner", "approvalBody", "effectiveAudience", "confidentialityLevel"],
+      "fieldClass": "domain-extension",
+      "populationStatus": "NOT_POPULATED_CI2_T3",
+      "inheritedFrom": "docs/corpus-intelligence/CVF_CROSS_CORPUS_INDEX_MODEL.json",
+      "note": "Vocabulary inherited from CI1-T4. Not populated in CI2-T3. Future company-docs corpus wave only."
+    },
+    "technicalProject": {
+      "groupLabel": "Technical / Project Corpus Extensions",
+      "fields": ["module", "runtimeSurface", "interfaceName", "symbol", "testCoverage", "migrationStatus"],
+      "fieldClass": "domain-extension",
+      "populationStatus": "VOCABULARY_ONLY",
+      "inheritedFrom": "docs/corpus-intelligence/CVF_CROSS_CORPUS_INDEX_MODEL.json",
+      "note": "Inherited from CI1-T4. Populated in CI1-T3 scan packet. Not enforced by CI2-T2 checkers."
+    },
+    "legacyAbsorption": {
+      "groupLabel": "Legacy Absorption Corpus Extensions",
+      "fields": ["legacyFamily", "absorbedBy", "absorptionStatus", "remainingValue", "blindSpotRisk"],
+      "fieldClass": "domain-extension",
+      "populationStatus": "VOCABULARY_ONLY",
+      "inheritedFrom": "docs/corpus-intelligence/CVF_CROSS_CORPUS_INDEX_MODEL.json",
+      "note": "Inherited from CI1-T4. Populated in CI1-T3 scan packet. Not enforced by CI2-T2 checkers."
+    }
+  },
+  "ci2CheckerBindings": [
+    {
+      "checkerId": "NR-04",
+      "checkerPath": "governance/compat/check_corpus_packet_source_hash.py",
+      "enforcedFields": ["sourceHash"],
+      "standardPath": "docs/reference/CVF_CORPUS_SOURCE_HASH_STANDARD_2026-06-02.md",
+      "ci2T2ClosurePath": "docs/reviews/CVF_CI2_T2_PACKET_NORMALIZATION_CHECKERS_COMPLETION_2026-06-02.md",
+      "claimBoundary": "Structural presence and format gate only. Does not validate hash value accuracy, prove file content integrity, or guarantee drift resistance in production.",
+      "applicabilityRule": "Applies to markdown files under docs/audits/ and docs/reviews/ with docType: audit header or READINESS_PACKET in filename. Explicitly skips docType: review artifacts.",
+      "autorunPhases": ["pre-commit", "pre-push", "pre-implementation", "pre-closure"]
+    },
+    {
+      "checkerId": "NR-05",
+      "checkerPath": "governance/compat/check_corpus_packet_normalized_path.py",
+      "enforcedFields": ["normalizedPath"],
+      "standardPath": "docs/reference/CVF_CORPUS_PATH_NORMALIZATION_ALGORITHM_STANDARD_2026-06-02.md",
+      "ci2T2ClosurePath": "docs/reviews/CVF_CI2_T2_PACKET_NORMALIZATION_CHECKERS_COMPLETION_2026-06-02.md",
+      "claimBoundary": "Structural canonical-form gate only. Does not validate path semantic meaning, resolve filesystem path correctness, or guarantee file existence.",
+      "applicabilityRule": "Applies to markdown files under docs/audits/ and docs/reviews/ with docType: audit header or READINESS_PACKET in filename. Explicitly skips docType: review artifacts.",
+      "autorunPhases": ["pre-commit", "pre-push", "pre-implementation", "pre-closure"]
+    },
+    {
+      "checkerId": "NR-11",
+      "checkerPath": "governance/compat/check_corpus_packet_disposition_canonical.py",
+      "enforcedFields": ["dispositionAlias", "rawDisposition"],
+      "standardPath": "docs/reference/CVF_CORPUS_INTELLIGENCE_CLASSIFICATION_STANDARD_2026-06-01.md",
+      "ci2T2ClosurePath": "docs/reviews/CVF_CI2_T2_PACKET_NORMALIZATION_CHECKERS_COMPLETION_2026-06-02.md",
+      "claimBoundary": "Structural alias discipline gate only. Does not validate semantic correctness of disposition assignments, legal classification, or reviewer judgment.",
+      "applicabilityRule": "Applies to markdown files under docs/audits/ and docs/reviews/ with docType: audit header or READINESS_PACKET in filename. Explicitly skips docType: review artifacts.",
+      "autorunPhases": ["pre-commit", "pre-push", "pre-implementation", "pre-closure"]
+    }
+  ],
+  "t4CompatibilityNote": {
+    "ci1T4ModelPath": "docs/corpus-intelligence/CVF_CROSS_CORPUS_INDEX_MODEL.json",
+    "ci1T4ModelId": "cvf-cross-corpus-index-model-ci1-t4",
+    "compatibilityStatement": "CI2-T3 supplements CI1-T4 additively. All NR-01 to NR-10 normalization rules from CI1-T4 remain authoritative and are not redefined here. CI2-T3 adds: (1) checker bindings for NR-04, NR-05, NR-11 via ci2CheckerBindings; (2) explicit fieldClass classification for every enforcedFields entry; (3) rawDisposition and dispositionAlias as new NR-11 fields not present in CI1-T4; (4) applicability rules for the three CI2-T2 checkers. The CI1-T4 JSON file is not modified.",
+    "fieldClassificationNote": "Fields classified as structural-required were already required by the CI1-T4 common facet schema but checker-enforcement was absent for most. CI2-T3 records which fields now have checker-backed enforcement versus convention-only or documentation-only discipline."
+  },
+  "lpciInputContract": {
+    "inheritedFrom": "docs/reference/CVF_CI1_T7_LPCI_INTAKE_BRIDGE_2026-06-02.md",
+    "requiredCI1Artifacts": [
+      "docs/corpus-intelligence/CVF_CROSS_CORPUS_INDEX_MODEL.json",
+      "docs/corpus-intelligence/CVF_CI1_T5_CLASSIFICATION_SAMPLING_RESULTS.json",
+      "docs/reference/CVF_CI1_T6_CHECKER_DECISION_2026-06-02.md"
+    ],
+    "ci2T3Contribution": "LPCI-T1 must additionally reference this CI2-T3 enforced model to consume: NR-04/NR-05/NR-11 checker binding contracts, explicit field classification table, rawDisposition and dispositionAlias NR-11 vocabulary, and checker applicability rules.",
+    "blockingNote": "LPCI implementation remains blocked until a separate governed LPCI product roadmap is opened after CI2-T5 closes."
+  },
+  "productReadinessBoundary": {
+    "statement": "CI2-T3 produces an enforced field-classification and checker-binding contract. It does NOT build or populate a runtime retrieval index, embedding pipeline, vector database, query execution surface, or LPCI chatbot. It does NOT claim semantic correctness of any classification row, hash value accuracy, or production/hosted readiness.",
+    "authorizedUse": [
+      "product readiness packet field definitions and authoring guidance",
+      "CI2-T4 pilot schema input",
+      "LPCI intake bridge supplement",
+      "future readiness packet validation reference"
+    ],
+    "blockedUse": [
+      "runtime index population",
+      "vector database loading",
+      "embedding computation",
+      "live provider query execution",
+      "LPCI chatbot implementation",
+      "public catalog claims"
+    ]
+  },
+  "claimBoundary": "CI2-T3 creates an enforced cross-corpus index model artifact that supplements CI1-T4 with checker bindings, explicit field classification, and NR-11 alias vocabulary. CI1-T4 is not overwritten. CI2-T3 does NOT claim: runtime retrieval index, vector database, embedding pipeline, LPCI chatbot, query behavior proof, semantic correctness of classifications, hash value accuracy, production readiness, hosted readiness, public readiness, or autonomous mutation authority."
+}

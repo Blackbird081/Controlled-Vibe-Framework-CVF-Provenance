@@ -13,13 +13,13 @@ current:
 
 The current active handoff in that registry is:
 
-`AGENT_HANDOFF_V15_2026-05-29.md`
+`AGENT_HANDOFF_V16_2026-06-06.md`
 
 Historical handoffs are archived under:
 
 `CVF_SESSION/handoffs/archive/`
 
-This includes `CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md`, V2-V14, and
+This includes `CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md`, V2-V15, and
 side-channel handoff files. Do not append new status to archived handoffs;
 update the active handoff named by `CVF_SESSION/ACTIVE_SESSION_STATE.json` or
 open a later versioned handoff when the active handoff approaches the limit.
@@ -299,6 +299,31 @@ Open checkbox residue, stale continuity state, memory-based file-change claims,
 and roadmap requirements lost between dispatch and final artifact are closure
 defects. Operator silence is not a waiver.
 
+## Mandatory Work Order Dependency Release Evidence - 2026-06-03
+
+Canonical standard:
+
+`docs/reference/CVF_WORK_ORDER_DEPENDENCY_RELEASE_EVIDENCE_STANDARD_2026-06-03.md`
+
+Any future work order, roadmap task, dispatch packet, or tranche sequence that
+is blocked by a prior tranche, closure review, registry update, artifact, live
+proof, or operator checkpoint must not move from `HOLD_*`, `DRAFT`,
+`PROPOSED`, or prerequisite-bound status into `READY`, `DISPATCH_READY`,
+`DISPATCHED`, or equivalent execution status until dependency-release evidence
+is refreshed.
+
+Before dispatch, replace placeholder dependency rows such as
+`Disposition: REQUIRED`, `after closure`, `after Tn closure`, or
+`pending prior tranche` with artifact path, closure commit, final disposition,
+and refreshed base anchors. Rerun dispatch-quality and pre-dispatch autorun
+gates on the release range. A worker agent must not be asked to infer which
+prior artifact satisfied a HOLD dependency from chat history or stale prose.
+
+`governance/compat/check_work_order_dispatch_quality.py` enforces this for
+ready/dispatch-equivalent work orders. If the dependency cannot be source-backed,
+keep the packet in `HOLD_*`, `DRAFT`, or `BLOCKED` and return it to the
+orchestrator.
+
 Hard enforcement:
 
 - `governance/compat/check_work_order_dispatch_quality.py` is mandatory in the
@@ -488,6 +513,15 @@ and documentation-only learning. A finding may close as `N/A with reason`, but
 it must not close as worker blame without saying whether CVF rule, guard, phase
 placement, runtime signal capture, or operator scope clarity also failed.
 
+Any repeated, future-agent, reusable, systemic, rule/template, guard,
+phase-gate, orchestration, or machine-check finding must be promoted into a
+reusable CVF control when feasible: `RULE_ADDED`, `TEMPLATE_UPDATED`,
+`STANDARD_ADDED`, `STANDARD_UPDATED`, `MACHINE_CHECK_ADDED`, or
+`MACHINE_CHECK_CANDIDATE`. This is the default CVF learning rule: fix once,
+reuse many times. Documentation-only closure is valid only with explicit
+`N/A_WITH_REASON` explaining why promotion is unsafe, impossible, or out of
+scope.
+
 Autorun and local hook chains must run this guard. A finding-bearing artifact
 without learning disposition blocks governed closure.
 
@@ -511,11 +545,11 @@ This is a bounded intake bridge only. It does not authorize autonomous rule
 mutation, runtime behavior mutation, provider prompt changes, memory
 reinjection, model tuning, public readiness, or production readiness.
 
-## Mandatory Knowledge Absorption Blind-Spot Prevention - 2026-05-24
+## Mandatory Knowledge Absorption Blind-Spot Prevention - 2026-06-01
 
 Canonical standard:
 
-`docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md`
+`docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-06-01.md`
 
 Any AI/agent that absorbs, reopens, scopes, or implements knowledge from
 `.private_reference/legacy/`, archived absorption packets, external capability
@@ -547,6 +581,200 @@ doc-only connector wave. Finish LHW absorption of remaining
 `PARTIALLY_ABSORBED` LH1 families first. Only after the Orchestrator confirms no
 additional connector value remains may CVF open a separate live-proof roadmap
 for `abtop`, `gridex`, or other route-execution families.
+
+## Mandatory Corpus Completeness And Report Integrity - 2026-06-01
+
+Canonical standard:
+
+`docs/reference/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_STANDARD_2026-06-01.md`
+
+Machine guard:
+
+`governance/compat/check_corpus_completeness_report_integrity.py`
+
+Any AI/agent that reads an existing folder, subfolder tree, archive, file list,
+or project source set to produce an inventory, report, comparison, extraction,
+audit, migration, roadmap, work order, or knowledge-absorption decision must
+prove the bounded source corpus before claiming completeness.
+
+The output must include a `Corpus Completeness And Report Integrity` block with
+filesystem-backed enumeration, a file-level processing ledger, reconciliation,
+explicit unresolved files, exclusions, unreadable/unsupported formats,
+aggregation check, drift check, output traceability, adversarial verification,
+and one allowed verdict:
+
+- `COMPLETE_VERIFIED`
+- `COMPLETE_WITH_DECLARED_EXCLUSIONS`
+- `PARTIAL`
+- `BLOCKED`
+- `STALE_SNAPSHOT`
+
+Self-reported counts, folder-level summaries, prior reports, and model claims
+are not corpus evidence. `COMPLETE_VERIFIED` requires zero unresolved files.
+Machine checks prove evidence discipline, not semantic understanding of every
+file; high-impact reports still require adversarial sampling or independent
+recomputation.
+
+## Mandatory Corpus-To-Knowledge-Map Reconciliation - 2026-06-01
+
+Canonical standards:
+
+- `docs/reference/CVF_KNOWLEDGE_SYSTEM_METHOD_STANDARD_2026-06-01.md`
+- `docs/reference/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_STANDARD_2026-06-01.md`
+
+Machine guard:
+
+`governance/compat/check_corpus_to_knowledge_map_reconciliation.py`
+
+Any AI/agent that creates, refreshes, or relies on a corpus-derived knowledge
+map, semantic-region ledger, architecture reconciliation, Memory synthesis,
+graphification plan, or retrieval-readiness claim must include a `Knowledge
+System Reconciliation` block.
+
+The block must distinguish source authority from rebuildable derived views,
+use filesystem-backed or structured-complete enumeration, account for all
+authority assets through mapped/deferred/unmapped totals, expose cross-region
+links, check drift and rebuildability, bound retrieval claims, and record
+adversarial verification.
+
+Bare `rg --files` is not completeness evidence. Ripgrep inventory must use
+`rg --files --hidden --no-ignore`. `RECONCILED_VERIFIED` requires zero deferred
+and zero unmapped assets plus `Drift check: PASS`.
+
+Graph, semantic-region, Palace, summary, cache, snapshot, and retrieval views
+are derived views. They may improve navigation but must remain rebuildable from
+governed source authority. Machine checks prove reconciliation discipline, not
+deep semantic correctness or runtime integration.
+
+## Mandatory Corpus Intelligence Classification - 2026-06-01
+
+Canonical standard:
+
+`docs/reference/CVF_CORPUS_INTELLIGENCE_CLASSIFICATION_STANDARD_2026-06-01.md`
+
+Machine guard:
+
+`governance/compat/check_corpus_intelligence_classification.py`
+
+Any AI/agent that classifies corpus-derived intelligence for chatbot,
+retrieval, legal/policy, internal-decision, or answer surfaces must include a
+`Corpus Intelligence Classification` block before claiming response readiness.
+
+The block must include a classification ledger with `sourcePath`,
+`processingStatus`, `knowledgeRegion`, `ownerSurface`, `disposition`, and
+`evidencePointer`, plus response-boundary classes:
+
+- `DIRECT_CITED_ANSWER`
+- `SUMMARY_WITH_SOURCE`
+- `PROCEDURAL_GUIDANCE`
+- `ESCALATE_OR_ABSTAIN`
+
+Accepted dispositions require evidence pointers. `READ_SHALLOW` cannot support
+direct cited answers. Legal/policy corpus classification must include domain
+fields such as jurisdiction, authority level, effective date, source authority,
+and answer boundary.
+
+GC-050 is a structural guard. It proves classification discipline, not semantic
+correctness, legal advice quality, runtime integration, or chatbot answer
+truth. Semantic correctness remains review and adversarial sampling work.
+
+## Mandatory Corpus Search And Filter Readiness - 2026-06-02
+
+Canonical standard:
+
+`docs/reference/CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md`
+
+Any AI/agent that scans a corpus for retrieval, chatbot use, knowledge
+absorption, migration, project intelligence, owner-surface routing, or "not
+found" claims must preserve search/filter evidence before claiming readiness.
+
+The required discipline is broader than legal/policy chatbot work and applies
+to legacy folders, user project folders, public docs, internal company corpora,
+source-code documentation, SOPs, policies, and knowledge bases.
+
+Required evidence includes corpus discovery index, facet schema, processing
+ledger, negative search evidence, derived-view trace, query receipt model, and
+adversarial sampling plan. Search/filter readiness proves traceability and
+reviewability; it does not prove semantic correctness, answer truth, legal
+correctness, or runtime behavior.
+
+## Mandatory Corpus Scan Registry Consultation - 2026-06-02
+
+Canonical standard:
+
+`docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md`
+
+Registry front door:
+
+`docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
+
+Guard (GC-051):
+
+`governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md`
+
+Any AI/agent that intends to scan, classify, or absorb knowledge from any
+corpus — legacy folders, project source trees, policy documents, company
+documentation, or external sources — must first read
+`docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`.
+
+If the target corpus path is already registered:
+
+- `SCANNED` / `DEEP_CLASSIFIED` → inherit prior state; do NOT re-scan without
+  explicit operator authorization.
+- `PARTIALLY_SCANNED` → continue from where the prior scan left off.
+- `SCANNED_WITH_FINDINGS` → read all `findings[]` entries for that corpus
+  before starting related implementation work.
+- `NOT_STARTED` / absent → proceed with new scan; add a registry entry first.
+
+After completing a scan, the agent MUST update the registry entry
+(status, scanDate, manifestHash, findings, negativeSearchTerms,
+nextScanRecommendation) and commit the update in the same governed batch as
+the scan evidence.
+
+Manifest hash standard: SHA-256 of sorted filesystem paths joined with `\n`
+(newline-separated, with trailing newline). Record `hashAlgorithm: sha256`
+and `hashInput: sorted-paths-newline-joined-with-trailing-newline` in the
+registry entry.
+
+Finding discovery: before implementing a feature in a domain that has been
+scanned, search `findings[]` in the registry. Cite any matching prior finding
+in the work order — do not rediscover it as a new gap.
+
+Checker: `governance/compat/check_corpus_scan_registry.py` — wired into
+autorun gate and pre-commit hook chain.
+
+## Mandatory System Loop Interlock - 2026-06-02
+
+Canonical standard:
+
+`docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_STANDARD_2026-06-02.md`
+
+Canonical registry:
+
+`docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json`
+
+Machine guard:
+
+`governance/compat/check_system_loop_interlock.py`
+
+CVF planes and loops must not close as system-connected merely because their
+artifacts exist. A governed loop output must become a declared downstream loop
+input through the interlock registry.
+
+Any future work that claims one loop feeds another loop, one plane consumes
+another plane's output, or a scan/finding/runtime/public-sync signal has been
+routed into another CVF surface must ensure the registry contains a connection
+with upstream loop, output artifact, signal contract, downstream loop, input
+artifact, routing rule, evidence refs, automation level, and claim boundary.
+
+The first active interlock is `scan-loop-to-learning-loop`: GC-051 scan findings
+feed Finding-To-Governance / Learning Signal Intake through F2G-compatible
+`defectClass`, `learningLane`, and real action evidence. This proves
+traceability, not semantic correctness, autonomous roadmap creation, runtime
+mutation, or production readiness.
+
+Autorun and local hook chains must run the interlock checker. A missing or
+broken active interlock blocks system-connected closure claims.
 
 ## Latest Closed Continuation Roadmap
 

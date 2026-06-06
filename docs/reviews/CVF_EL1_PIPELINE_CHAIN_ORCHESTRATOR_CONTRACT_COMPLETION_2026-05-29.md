@@ -55,7 +55,7 @@ EL-1 work order and roadmap requirements.
 | --- | --- | --- |
 | LHW12-T1 `modelTierAdvisoryType` | `docs/reference/CVF_LHW12_T1_POSTURE_TO_MODEL_TIER_ADVISORY_CONNECTOR_SPEC_2026-05-29.md` S2 | VERIFIED — 7-row mapping with `modelTierAdvisoryType` values |
 | LHW12-T3 `workerLifecycleAdvisoryType` | `docs/reference/CVF_LHW12_T3_ASYNC_WORKER_LIFECYCLE_BOUNDARY_CONNECTOR_SPEC_2026-05-29.md` | VERIFIED — S3 field list |
-| MA1 role lanes | `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` lines 96–98 | VERIFIED — Orchestrator/Implementer/Reviewer/Auditor |
+| MA1 role lanes | `docs/reference/archive/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md` lines 96–98 | VERIFIED — Orchestrator/Implementer/Reviewer/Auditor |
 | V3 `ExecutionDiagnosticClass` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execution-diagnostics.ts` lines 16–38 | VERIFIED — 22 diagnostic classes available |
 | CVF 28.05 pipeline structure | `.private_reference/legacy/CVF 28.05/cvf_cli.py` lines 56–166 | VERIFIED — 5-stage run_workflow method |
 

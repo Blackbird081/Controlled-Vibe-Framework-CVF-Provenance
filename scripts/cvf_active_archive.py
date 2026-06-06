@@ -2,7 +2,7 @@
 """
 CVF Active-Archive File Management Script
 =========================================
-Separates recent files (<=3 days) from historical files (>3 days)
+Separates recent files (<=10 days) from historical files (>10 days)
 across managed CVF documentation roots.
 
 Safety upgrade:
@@ -49,7 +49,7 @@ MANAGED_ROOTS = [
 ARCHIVE_FOLDER = "archive"
 ARCHIVE_INDEX_FILENAME = "CVF_ARCHIVE_INDEX.md"
 LEGACY_ARCHIVE_INDEX_FILENAME = "ARCHIVE_INDEX.md"
-AGE_THRESHOLD_DAYS = 5
+AGE_THRESHOLD_DAYS = 10
 MANAGED_EXTENSIONS = {".md", ".json"}
 ACTIVE_WINDOW_REGISTRY_PATH = PROJECT_ROOT / "governance" / "compat" / "CVF_ACTIVE_WINDOW_REGISTRY.json"
 AUDIT_RETENTION_REGISTRY_PATH = PROJECT_ROOT / "governance" / "compat" / "CVF_AUDIT_RETENTION_REGISTRY.json"

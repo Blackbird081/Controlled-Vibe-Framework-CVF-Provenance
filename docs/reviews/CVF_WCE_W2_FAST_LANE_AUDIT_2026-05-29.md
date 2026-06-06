@@ -20,7 +20,7 @@ phase gates, invariants, and evidence requirements before CLOSED_PASS_BOUNDED cl
 - Work order: `docs/work_orders/CVF_WO_WCE_W2_MA1_CLI_SERIALIZATION_2026-05-29.md`
 - WCE roadmap: `docs/roadmaps/CVF_WCE_WORKFLOW_CHAIN_EXECUTION_ROADMAP_2026-05-29.md`
 - WCE GC-018: `docs/baselines/CVF_GC018_WCE_WORKFLOW_CHAIN_EXECUTION_2026-05-29.md`
-- MA1 standard: `docs/reference/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
+- MA1 standard: `docs/reference/archive/CVF_INTERNAL_MULTI_AGENT_WORK_TRANSFER_PACKET_STANDARD_2026-05-26.md`
 - baseHead: `311353bb` (WCE W1+W3 closure commit)
 
 ## Fast Lane Classification

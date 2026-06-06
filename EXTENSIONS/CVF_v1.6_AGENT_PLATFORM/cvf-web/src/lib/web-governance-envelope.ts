@@ -1,4 +1,5 @@
 import type { GovernanceEvidenceReceipt, GovernanceTraceEntry, GovernanceTraceStage } from '@/lib/ai';
+import { generatePolicySnapshotId } from '@/lib/policy-snapshot-registry';
 import type { AifMemoryReinjectionReceipt } from '@/lib/aif-memory-reinjection';
 import type { DurableMemoryReceipt } from 'cvf-learning-plane-foundation';
 
@@ -36,19 +37,7 @@ export interface WebGovernanceEnvelope {
     trancheRef: 'W112-T1';
 }
 
-let _policyCounter = 0;
-
-/**
- * Generate a deterministic-ish policy snapshot id.
- * In production this would reference a real persisted policy version.
- * For now it captures date + a monotonic counter so each request
- * records a unique policy snapshot id that is replayable within a process lifetime.
- */
-export function generatePolicySnapshotId(): string {
-    _policyCounter++;
-    const date = new Date().toISOString().slice(0, 10).replace(/-/g, '');
-    return `pol-${date}-${_policyCounter.toString().padStart(4, '0')}`;
-}
+export { generatePolicySnapshotId } from '@/lib/policy-snapshot-registry';
 
 export interface BuildEnvelopeInput {
     routeId: string;
