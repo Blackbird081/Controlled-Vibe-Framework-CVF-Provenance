@@ -18,6 +18,9 @@ file resolves to a readable path and that SHA-256 hashes match the T11A
 manifest values. It also validates that Unicode filename normalization does not
 cause path resolution failures.
 
+T11B implements a four-gate scan-layer standard:
+path fidelity | hash match | size match | role/lineage reconciliation.
+
 T11B does not extract document body content, ingest corpus records, run runtime
 queries, call providers, or make current-law or production readiness claims.
 
@@ -98,15 +101,25 @@ Codex review risk table.
 
 1. Read required startup front doors and this GC-018.
 2. Capture `git rev-parse --short HEAD` and `git status --short`.
-3. For each of the 7 target files above:
-   a. Verify the exact path resolves (`Test-Path -LiteralPath`) — mandatory;
+3. For each of the 7 target files, run all four gates:
+   a. **Gate 1 — Path fidelity:** `Test-Path -LiteralPath` — mandatory;
       use `-LiteralPath` on every Windows filesystem call to avoid glob
-      expansion on Unicode characters.
-   b. Compute SHA-256 hash of the file binary content.
-   c. Compare computed hash against T11A manifest value.
-   d. Record result as `HASH_MATCH`, `HASH_MISMATCH`, `PATH_NOT_FOUND`, or
-      `READ_ERROR`.
-4. Produce verification report markdown with one row per file.
+      expansion on Unicode characters. If False, attempt one fallback
+      using exact path from manifest JSON `relativePath`; if still False
+      record `PATH_NOT_FOUND` and skip gates 2–4 for that file.
+   b. **Gate 2 — Hash match:** compute SHA-256 from binary stream
+      (65536-byte chunks). Compare against T11A manifest
+      `artifactHashSha256`. Record `HASH_MATCH` or `HASH_MISMATCH`.
+   c. **Gate 3 — Size match:** read `(Get-Item -LiteralPath).Length`.
+      Compare against T11A manifest `sizeBytes`. Record `sizeMatch` boolean.
+   d. **Gate 4 — Role/lineage reconciliation:** read `bundleArtifactRole`
+      and `lineageParentIds` from T11A bundle manifest for the matching
+      artifact. Confirm values match the T11B reference table. Record
+      `roleLineageMatch` boolean.
+   e. Set `verificationResult` = `HASH_MATCH` only when all four gates pass;
+      otherwise use the highest-severity failure token.
+4. Produce verification report markdown with one row per file, all four gate
+   columns.
 5. Produce verification result JSON with schema
    `policylocal.sourceVerification.t11b.v1`.
 6. Produce worker return packet with evidence, reconciliation, and claim
@@ -129,20 +142,26 @@ risk. The mandatory guard for T11B:
 
 ## Acceptance Criteria
 
-1. Verification report markdown exists and has one row per target file (7 rows).
+1. Verification report markdown exists and has one row per target file (7 rows)
+   with columns for all four gates.
 2. Verification result JSON exists, parses, uses schema
    `policylocal.sourceVerification.t11b.v1`, and has 7 file records.
 3. Every file record has `candidateId` (or `bundleArtifactId` for bundle-only),
    `absolutePath`, `testPathResult`, `computedHashSha256`,
-   `t11aManifestHashSha256`, and `verificationResult`.
+   `t11aManifestHashSha256`, `verificationResult`, `observedSizeBytes`,
+   `t11aManifestSizeBytes`, `sizeMatch`, and `roleLineageMatch`.
 4. All `testPathResult` values are `true` or `false`; `PASS` requires `true`.
 5. All `verificationResult` values are one of: `HASH_MATCH`, `HASH_MISMATCH`,
-   `PATH_NOT_FOUND`, `READ_ERROR`.
+   `SIZE_MISMATCH`, `ROLE_LINEAGE_MISMATCH`, `PATH_NOT_FOUND`, `READ_ERROR`.
 6. `verificationSummary` field in JSON records: total files, HASH_MATCH count,
-   any non-HASH_MATCH records.
-7. Worker return records commands, counts, hash comparison evidence, changed
-   files, and claim boundary.
-8. No forbidden scope action occurs.
+   per-gate failure lists (pathFailed, hashFailed, sizeFailed, roleFailed).
+7. Gate 3 evidence: `observedSizeBytes` from `Get-Item -LiteralPath .Length`
+   compared against `t11aManifestSizeBytes`; `sizeMatch` boolean present.
+8. Gate 4 evidence: `bundleArtifactRole` and `lineageParentIds` read from T11A
+   bundle manifest; `roleLineageMatch` boolean present; discrepancies listed.
+9. Worker return records commands, counts, all four gate comparison tables,
+   changed files, and claim boundary.
+10. No forbidden scope action occurs.
 
 ## Verification / Evidence
 

@@ -25,9 +25,14 @@ Reviewer / closer: Codex or operator-designated reviewer
 ## Purpose
 
 Verify that every inventoried T11B target file resolves to a readable path,
-that computed SHA-256 hashes match T11A manifest values, and that Unicode
-filename normalization does not cause path resolution failures. Return
-uncommitted evidence packet to Codex.
+that computed SHA-256 hashes match T11A manifest values, that observed file
+sizes match T11A manifest sizes, that bundle artifact roles and lineage edges
+reconcile with T11A manifest records, and that Unicode filename normalization
+does not cause path resolution failures. Return uncommitted evidence packet to
+Codex.
+
+This implements the full four-gate scan-layer standard:
+path fidelity | hash match | size match | role/lineage reconciliation.
 
 ## Scope / Target / Owner Boundary
 
@@ -45,8 +50,9 @@ T11A closed at `lpci2_t11a_candidate_and_bundle_inventory_closed_pass_bounded`.
 `nextAllowedMove` in `CVF_SESSION/ACTIVE_SESSION_STATE.json` explicitly
 authorizes T11B source verification.
 
-Operator instruction 2026-06-07: T11B scope = access/path/hash verification
-only. Unicode drift check mandatory (`-LiteralPath` on all filesystem calls).
+Operator instruction 2026-06-07 (amended): T11B scope = four-gate scan-layer
+verification: path fidelity, hash match, size match, role/lineage reconciliation.
+Unicode drift check mandatory (`-LiteralPath` on all filesystem calls).
 No body extraction, no ingestion.
 
 ## Authority Chain
@@ -118,35 +124,61 @@ below), return `BLOCKED_MASS_PATH_FAILURE` rather than continuing.
 
 | Field | Owner artifact | Purpose | Runtime status |
 |---|---|---|---|
-| `verificationResult` | T11B report and JSON | Per-file outcome: HASH_MATCH / HASH_MISMATCH / PATH_NOT_FOUND / READ_ERROR | DOC_ONLY_NEW |
+| `verificationResult` | T11B report and JSON | Per-file outcome: HASH_MATCH / HASH_MISMATCH / SIZE_MISMATCH / ROLE_LINEAGE_MISMATCH / PATH_NOT_FOUND / READ_ERROR | DOC_ONLY_NEW |
 | `testPathResult` | T11B JSON | Boolean result of `Test-Path -LiteralPath` | DOC_ONLY_NEW |
 | `computedHashSha256` | T11B JSON | SHA-256 hex computed at T11B execution time | DOC_ONLY_NEW |
 | `t11aManifestHashSha256` | T11B JSON | SHA-256 hex from T11A manifest (reference value) | DOC_ONLY_NEW |
-| `verificationSummary` | T11B JSON | Total files, HASH_MATCH count, non-HASH_MATCH records | DOC_ONLY_NEW |
+| `observedSizeBytes` | T11B JSON | File size observed via `Get-Item -LiteralPath | .Length` | DOC_ONLY_NEW |
+| `t11aManifestSizeBytes` | T11B JSON | File size from T11A manifest `sizeBytes` field (reference value) | DOC_ONLY_NEW |
+| `sizeMatch` | T11B JSON | Boolean: observed == manifest size | DOC_ONLY_NEW |
+| `roleLineageMatch` | T11B JSON | Boolean: bundle role and lineage parent IDs match T11A bundle manifest row | DOC_ONLY_NEW |
+| `verificationSummary` | T11B JSON | Total files, all-gates-PASS count, per-gate failure lists | DOC_ONLY_NEW |
 
 ## Target File List
 
-### Direct Input Candidates (7 in-scope files total: 6 direct + 1 bundle)
+### In-scope files (7 total: 6 direct candidates + 1 bundle agent_request)
 
-| ID | Candidate/Bundle ID | Exact absolute path | T11A manifest SHA-256 (full 64-char) |
-|---|---|---|---|
-| 1 | `T11A-CAND-001` / `BNDL-001` | `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data_input\3094.pdf` | `61fafa4b69e9b0423c9bd3533ba6b5be531b9b73c26c6cfb62933008bfecc4d5` |
-| 2 | `T11A-CAND-002` / `BNDL-002` | `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data_input\BC- Kết quả rà soát dự án chậm triển khai - Phú Xuyên 10.5.2026.pdf` | `2e7ed68a7814ff04e8246dbfb179f928d4d952b30169685f73115f2702459adc` |
-| 3 | `T11A-CAND-003` / `BNDL-003` | `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data_input\Kien nghi thành ủy hà nội (1).docx` | `265047c2ca26b13f2c6212313f550f3ce0f66f85bd7470ec9c3618d4c54cb4f6` |
-| 4 | `T11A-CAND-004` / `BNDL-004` | `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data_input\Phu luc danh sach du an.pdf` | `cf4fa584fc62ea1edc9c9d27e7396040c7036b2f313c8f5586df04d5529ee46e` |
-| 5 | `T11A-CAND-005` / `BNDL-005` | `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data_input\QD chấm dứt.pdf` | `47460fdfbdde10d69ae4838b711e086f4037cfd2609d6a4263caefbb1e9fabe7` |
-| 6 | `T11A-CAND-006` / `BNDL-007` | `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data_input\Thong bao thu hoi 24 du an.pdf` | `4522d37bf8da78fb41d01d97cdb2bff3f7133af2b02e146f3537132ce603bee6` |
-| 7 | `BNDL-006` (agent_request) | `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data_input\Law use case_Codex\Request for agent.docx` | `29281becea319d5985298cd34a6a66a6b1e2a051a4f157a254d18aebfa734806` |
+Reference values sourced from T11A manifests. Worker must verify all four gates per row.
+
+| ID | Candidate/Bundle ID | Role | T11A size (bytes) | T11A SHA-256 (full 64-char) |
+|---|---|---|---|---|
+| 1 | `T11A-CAND-001` / `BNDL-001` | `source_input` | 842159 | `61fafa4b69e9b0423c9bd3533ba6b5be531b9b73c26c6cfb62933008bfecc4d5` |
+| 2 | `T11A-CAND-002` / `BNDL-002` | `source_input` | 933326 | `2e7ed68a7814ff04e8246dbfb179f928d4d952b30169685f73115f2702459adc` |
+| 3 | `T11A-CAND-003` / `BNDL-003` | `source_input` | 45314 | `265047c2ca26b13f2c6212313f550f3ce0f66f85bd7470ec9c3618d4c54cb4f6` |
+| 4 | `T11A-CAND-004` / `BNDL-004` | `source_input` | 537770 | `cf4fa584fc62ea1edc9c9d27e7396040c7036b2f313c8f5586df04d5529ee46e` |
+| 5 | `T11A-CAND-005` / `BNDL-005` | `source_input` | 1292455 | `47460fdfbdde10d69ae4838b711e086f4037cfd2609d6a4263caefbb1e9fabe7` |
+| 6 | `T11A-CAND-006` / `BNDL-007` | `source_input` | 1076338 | `4522d37bf8da78fb41d01d97cdb2bff3f7133af2b02e146f3537132ce603bee6` |
+| 7 | `BNDL-006` | `agent_request` | 15248 | `29281becea319d5985298cd34a6a66a6b1e2a051a4f157a254d18aebfa734806` |
+
+Absolute paths (exact, for `-LiteralPath` use):
+
+- ID 1: `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data_input\3094.pdf`
+- ID 2: `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data_input\BC- Kết quả rà soát dự án chậm triển khai - Phú Xuyên 10.5.2026.pdf`
+- ID 3: `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data_input\Kien nghi thành ủy hà nội (1).docx`
+- ID 4: `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data_input\Phu luc danh sach du an.pdf`
+- ID 5: `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data_input\QD chấm dứt.pdf`
+- ID 6: `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data_input\Thong bao thu hoi 24 du an.pdf`
+- ID 7: `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data_input\Law use case_Codex\Request for agent.docx`
+
+Role/lineage reference (from T11A bundle manifest for IDs 1–7):
+
+- IDs 1–6 (`source_input`): `lineageParentIds=[]`; cross-referenced by `t11aCandidateRef` in bundle manifest.
+- ID 7 (`agent_request`): `lineageParentIds=[]`; references BNDL-001..005 + BNDL-007 semantically per bundle inventory lineage map.
 
 ## Allowed Scope
 
 Claude may:
 
 - call `Test-Path -LiteralPath` for each target file path;
+- read file size via `(Get-Item -LiteralPath <path>).Length` after path resolves;
 - compute SHA-256 hashes from raw binary file reads (65536-byte chunks), same
   method as T11A supplement;
-- compare computed hashes against T11A manifest values listed in the Target
-  File List above;
+- compare computed hashes against T11A manifest `artifactHashSha256` values;
+- compare observed sizes against T11A manifest `sizeBytes` values;
+- read `bundleArtifactRole` and `lineageParentIds` from the T11A bundle manifest
+  JSON and compare against T11A bundle inventory rows for bundle-scope files
+  (BNDL-001..007); for direct-input candidates, confirm matching `bundleArtifactId`
+  cross-reference via `t11aCandidateRef` field;
 - create `docs/reference/CVF_LPCI2_T11B_SOURCE_VERIFICATION_REPORT_2026-06-07.md`;
 - create
   `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-t11b-source-verification-result.json`;
@@ -195,8 +227,11 @@ All filesystem operations in T11B must follow this guard:
 
 | Roadmap / GC-018 requirement | Work-order instruction | Evidence target | Status |
 |---|---|---|---|
-| T11-B Source Verification | path/hash verify 7 target files | verification report and JSON | READY |
-| Unicode drift check mandatory | `-LiteralPath` on all filesystem calls | drift guard section | READY |
+| T11-B Source Verification — path fidelity | `Test-Path -LiteralPath` per file; fallback on failure | `testPathResult` per file | READY |
+| T11-B Source Verification — hash match | SHA-256 binary stream vs T11A manifest | `computedHashSha256` vs `t11aManifestHashSha256` | READY |
+| T11-B Source Verification — size match | `Get-Item -LiteralPath .Length` vs T11A manifest | `observedSizeBytes` vs `t11aManifestSizeBytes` | READY |
+| T11-B Source Verification — role/lineage reconciliation | compare `bundleArtifactRole` + `lineageParentIds` vs T11A bundle manifest | `roleLineageMatch` per file | READY |
+| Unicode drift check mandatory | `-LiteralPath` on all filesystem calls | Unicode Drift Guard section | READY |
 | No body extraction | Forbidden Scope | worker return packet | READY |
 | T11B cannot close until Codex reviews | return uncommitted packet | worker return packet | READY |
 
@@ -266,25 +301,40 @@ Forbidden paths:
 
 | Proof | Required evidence |
 |---|---|
-| Path resolution | `testPathResult` for each of the 7 target files |
-| Hash match | computed vs manifest hash comparison for each file |
-| Unicode drift check | evidence that `-LiteralPath` was used and any drift cases recorded |
-| Schema | `policylocal.sourceVerification.t11b.v1` validates |
+| Gate 1 — Path fidelity | `testPathResult` boolean for each of the 7 target files |
+| Gate 2 — Hash match | `computedHashSha256` vs `t11aManifestHashSha256` comparison table for all 7 files |
+| Gate 3 — Size match | `observedSizeBytes` vs `t11aManifestSizeBytes` comparison table for all 7 files |
+| Gate 4 — Role/lineage reconciliation | `roleLineageMatch` boolean per file; role and lineageParentIds compared against T11A bundle manifest |
+| Unicode drift check | evidence that `-LiteralPath` was used; any drift fallback cases recorded |
+| Schema | `policylocal.sourceVerification.t11b.v1` parses and validates |
 | No extraction | worker return states no body parsing, OCR, ingestion, runtime, provider action |
 
 ## Execution Plan
 
-1. Read required startup and inventory artifacts.
+1. Read required startup and inventory artifacts (including both T11A manifests).
 2. Capture `git rev-parse --short HEAD` and `git status --short`.
-3. For each of the 7 target files:
-   a. `Test-Path -LiteralPath <path>` — record boolean result.
-   b. If True: compute SHA-256 from binary stream. Compare to manifest value.
-      Record `HASH_MATCH` or `HASH_MISMATCH`.
-   c. If False: attempt fallback using exact path from manifest JSON
-      `relativePath`. Re-test. If still False, record `PATH_NOT_FOUND`.
-4. Produce markdown verification report (one row per file).
+3. For each of the 7 target files, run all four gates:
+   a. **Gate 1 — Path fidelity:** `Test-Path -LiteralPath <path>` — record boolean.
+      If False: attempt fallback using exact `relativePath` from bundle manifest JSON.
+      Re-test with `-LiteralPath`. If still False, record `PATH_NOT_FOUND`; skip
+      Gates 2–4 for that file.
+   b. **Gate 2 — Hash match:** compute SHA-256 from binary stream (65536-byte chunks).
+      Compare against `t11aManifestHashSha256`. Record `HASH_MATCH` or `HASH_MISMATCH`.
+   c. **Gate 3 — Size match:** read `(Get-Item -LiteralPath <path>).Length`.
+      Compare against `t11aManifestSizeBytes`. Record `sizeMatch=true/false`.
+      If false, flag `SIZE_MISMATCH` in `verificationResult`.
+   d. **Gate 4 — Role/lineage reconciliation:** read `bundleArtifactRole` and
+      `lineageParentIds` from T11A bundle manifest for the matching `bundleArtifactId`.
+      Confirm role matches the T11B target list reference value. Confirm
+      `lineageParentIds` matches manifest record. Record `roleLineageMatch=true/false`.
+      If false, flag `ROLE_LINEAGE_MISMATCH` in `verificationResult`.
+   e. Set `verificationResult` = `HASH_MATCH` only when all four gates pass.
+      If any gate fails, use the most severe failure token:
+      `PATH_NOT_FOUND` > `READ_ERROR` > `HASH_MISMATCH` > `SIZE_MISMATCH` > `ROLE_LINEAGE_MISMATCH`.
+4. Produce markdown verification report (one row per file, all four gate columns).
 5. Produce JSON verification result (schema `policylocal.sourceVerification.t11b.v1`).
-6. Reconcile: total=7, verify `verificationSummary` counts.
+6. Reconcile: total=7; verify `verificationSummary` all-gates-pass count and
+   per-gate failure lists.
 7. Produce worker return packet with all evidence.
 8. Run local JSON parse check and gate checks.
 
@@ -294,10 +344,11 @@ Claude must record:
 
 - startup acknowledgment;
 - pre-flight commands and results;
-- `Test-Path` output for all 7 target files;
-- SHA-256 computation method;
-- hash comparison table for all 7 files;
-- `verificationSummary` from JSON;
+- Gate 1: `Test-Path -LiteralPath` output and any fallback attempts for all 7 files;
+- Gate 2: SHA-256 computation method + hash comparison table (computed vs manifest) for all 7 files;
+- Gate 3: `observedSizeBytes` vs `t11aManifestSizeBytes` comparison table for all 7 files;
+- Gate 4: `bundleArtifactRole` and `lineageParentIds` comparison vs manifest for all 7 files;
+- `verificationSummary` from JSON (all-gates-pass count + per-gate failure lists);
 - JSON parse result;
 - changed files;
 - explicit no-extraction/no-ingestion/no-provider/no-public-sync boundary.
@@ -309,12 +360,13 @@ T11B closes, Codex may open the T11C Classification Pre-Check work order.
 
 ## Closure Checklist
 
-- [ ] Verification report created (7 rows).
+- [ ] Verification report created (7 rows, all four gate columns present).
 - [ ] Result JSON parses and reconciles.
-- [ ] All 7 files have `testPathResult`, `computedHashSha256`,
-      `t11aManifestHashSha256`, and `verificationResult`.
-- [ ] Unicode drift guard applied (`-LiteralPath` used).
-- [ ] `verificationSummary` includes counts.
+- [ ] All 7 files have `testPathResult`, `computedHashSha256`, `t11aManifestHashSha256`,
+      `observedSizeBytes`, `t11aManifestSizeBytes`, `sizeMatch`, `roleLineageMatch`,
+      and `verificationResult`.
+- [ ] Unicode drift guard applied (`-LiteralPath` used on every filesystem call).
+- [ ] `verificationSummary` includes all-gates-pass count and per-gate failure lists.
 - [ ] No forbidden scope action occurred.
 - [ ] Codex reviewed worker return.
 
@@ -337,26 +389,29 @@ corpus classification change, public-sync, provider call, or production claim.
 
 ## Acceptance Criteria
 
-1. Verification report markdown exists and has exactly 7 rows.
-2. Result JSON exists, parses, uses schema
-   `policylocal.sourceVerification.t11b.v1`, and has exactly 7 file records.
-3. Every file record has `candidateId` (or `bundleArtifactId`), `absolutePath`,
-   `testPathResult`, `computedHashSha256`, `t11aManifestHashSha256`, and
-   `verificationResult`.
-4. All `testPathResult` values are boolean; `PASS` requires `true`.
-5. All `verificationResult` values are one of `HASH_MATCH`, `HASH_MISMATCH`,
-   `PATH_NOT_FOUND`, `READ_ERROR`.
-6. `verificationSummary` field present in JSON with total, HASH_MATCH count,
-   and non-HASH_MATCH list.
-7. Worker return records commands, hash comparison, changed files, and claim
-   boundary.
+1. Verification report markdown exists, has exactly 7 rows, and includes columns
+   for all four gates (path, hash, size, role/lineage).
+2. Result JSON exists, parses, uses schema `policylocal.sourceVerification.t11b.v1`,
+   and has exactly 7 file records.
+3. Every file record has: `candidateId` (or `bundleArtifactId`), `absolutePath`,
+   `testPathResult`, `computedHashSha256`, `t11aManifestHashSha256`,
+   `observedSizeBytes`, `t11aManifestSizeBytes`, `sizeMatch`,
+   `roleLineageMatch`, and `verificationResult`.
+4. All `testPathResult` values are boolean; `PASS` requires `true` for all 7.
+5. All `verificationResult` values are one of: `HASH_MATCH`, `HASH_MISMATCH`,
+   `SIZE_MISMATCH`, `ROLE_LINEAGE_MISMATCH`, `PATH_NOT_FOUND`, `READ_ERROR`.
+6. `verificationSummary` field present in JSON with: `totalFiles`, `allGatesPass`
+   count, `gate1PathFailures`, `gate2HashFailures`, `gate3SizeFailures`,
+   `gate4RoleLineageFailures` lists.
+7. Worker return records pre-flight output, all four gate comparison tables,
+   `verificationSummary`, changed files, and claim boundary.
 8. No forbidden scope action occurs.
 
 ## Fail Conditions
 
 - missing `data_input` directory;
-- 3 or more `PATH_NOT_FOUND` after drift fallback;
-- missing hash fields;
+- 3 or more `PATH_NOT_FOUND` after drift fallback (`BLOCKED_MASS_PATH_FAILURE`);
+- missing hash, size, or role/lineage fields for any resolved file;
 - semantic/body extraction or legal-content evaluation;
 - runtime/provider/public-sync claim;
 - worker commit.
