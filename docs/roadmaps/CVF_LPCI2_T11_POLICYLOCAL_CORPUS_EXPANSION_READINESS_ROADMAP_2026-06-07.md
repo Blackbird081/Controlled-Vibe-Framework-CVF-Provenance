@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: PROPOSED
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -52,8 +52,8 @@ Applies to:
 - candidate documents proposed for addition to the PolicyLocal corpus;
 - mixed candidate material under `Policy_Local\data_input\`, including
   law-like documents and applied-policy case records;
-- governing repo artifacts under `docs/reference/`, `docs/reviews/`,
-  `docs/work_orders/`, `docs/baselines/`, and `docs/corpus-intelligence/`;
+- governing repo artifacts under T11-specific reference, review, work-order,
+  baseline, and corpus-intelligence paths;
 - `CVF-Workspace\Policy_Local\data\generated\` for generated candidate
   manifests and classification evidence.
 
@@ -287,8 +287,18 @@ readiness verdict gating T12.
 - aggregation and verdict only; no new corpus ingestion, runtime change,
   provider calls, or public-sync;
 - `READY` verdict is required before T12 work order authoring may begin;
-- `READY_WITH_CONDITIONS` requires the condition list to be attached to
-  the T12 work order.
+- `READY_WITH_CONDITIONS` requires the condition list to be carried into a
+  separate operator-authorized eligibility re-evaluation path. It does not
+  authorize T12 work order authoring.
+
+**Closure summary:** T11-D is `CLOSED_PASS_BOUNDED`. The readiness verdict is
+`READY_WITH_CONDITIONS`, with zero `t12Eligible=YES` candidates, six
+conditional corpus candidates, and three unresolved conditions: EC-02 freshness
+review no earlier than 2026-07-01, `currentStatus=unknown`, and
+`jurisdiction=unknown`. T12 work order authoring remains forbidden until a
+separate operator-authorized evidence path resolves all three conditions and a
+later eligibility re-evaluation produces at least one `t12Eligible=YES`
+candidate.
 
 **Acceptance criteria:**
 
@@ -348,7 +358,7 @@ Unicode filenames in
 |---|---|---|---|
 | Work order status | T11A/T11B/T11C work orders | T11A `CLOSED_PASS_BOUNDED`; T11B `CLOSED_PASS_BOUNDED`; T11C `CLOSED_PASS_BOUNDED` | PASS |
 | Completion or reviewer artifact | T11A/T11B/T11C completion packets | T11A, T11B, and T11C completion reviews exist | PASS |
-| Roadmap state | `docs/roadmaps/CVF_LPCI2_T11_POLICYLOCAL_CORPUS_EXPANSION_READINESS_ROADMAP_2026-06-07.md` | `Status: PROPOSED`; T11A/T11B/T11C closed, T11D open | PASS |
+| Roadmap state | `docs/roadmaps/CVF_LPCI2_T11_POLICYLOCAL_CORPUS_EXPANSION_READINESS_ROADMAP_2026-06-07.md` | `Status: CLOSED_PASS_BOUNDED`; T11A/T11B/T11C/T11D closed; T12 not authorized | PASS |
 | Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | session sync required after T11C closure commit | PASS |
 | Registry Markdown | `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V16_2026-06-06.md` | session sync required after T11C closure commit | PASS |
 | External evidence digest | T11A manifests, T11B result JSON, T11C manifest update | T11B result JSON `sha256:0d24870a43b0e33eecddae438d669983be508eff9ed4ca4e112ffb48870fd79d`; T11C candidate manifest `sha256:023f1276092756232949662e9be6e635d545ab22b2bd19284f11f82789c7fd1a` | PASS |
@@ -400,8 +410,8 @@ workspace paths, candidate hashes, and non-public source materials.
 | LPCI2-T11A | CLOSED_PASS_BOUNDED | Candidate and bundle inventory |
 | LPCI2-T11B | CLOSED_PASS_BOUNDED | Four-gate source verification, with Unicode path fallback finding |
 | LPCI2-T11C | CLOSED_PASS_BOUNDED | Classification pre-check - 6 conditional corpus candidates, BNDL-006 no; 0 `t12Eligible=YES` |
-| **LPCI2-T11** | **PROPOSED** | **Corpus expansion readiness - T11D remains open** |
-| LPCI2-T12 | NOT_YET_AUTHORIZED | Corpus ingestion — gated behind T11-D `READY` verdict |
+| **LPCI2-T11** | **CLOSED_PASS_BOUNDED** | **Corpus expansion readiness complete; T11D verdict `READY_WITH_CONDITIONS`; T12 remains not authorized** |
+| LPCI2-T12 | NOT_YET_AUTHORIZED | Corpus ingestion gated behind condition resolution, later eligibility re-evaluation, and at least one `t12Eligible=YES` candidate |
 
 ---
 
@@ -422,20 +432,17 @@ workspace paths, candidate hashes, and non-public source materials.
 
 ---
 
-## Next Allowed Move After T11C Closure
+## Next Allowed Move After T11D Closure
 
-Author a fresh GC-018 and a source-verified T11-D Readiness Gate work order.
-The work order must aggregate T11A inventory, T11B source verification, and
-T11C classification evidence. It must preserve that T11C currently has zero
-`t12Eligible=YES` candidates.
+T12 authoring remains forbidden. The next PolicyLocal move, if the operator
+keeps this lane active, is a separate operator-authorized condition-resolution
+and eligibility re-evaluation path after the EC-02 boundary. That path must
+prove all three requirements before any T12 work order exists:
 
-Operator input is not required for T11-D aggregation if it remains a
-readiness-gate review only. Operator input is required before any extraction,
-ingestion, runtime query, provider call, public-sync, current-law claim, legal
-advice quality claim, or any attempt to promote a conditional T11C candidate to
-`t12Eligible=YES`.
+1. EC-02 freshness review completed on or after 2026-07-01;
+2. `currentStatus` resolved from `unknown` for at least one candidate;
+3. `jurisdiction` resolved from `unknown` for the same candidate.
 
-T11D remains forbidden from body extraction, OCR, corpus ingestion, chunking,
-runtime query, provider calls, public-sync, current-law claims, legal advice
-quality claims, hosted readiness, production readiness, public readiness, and
-release readiness.
+Only after a later eligibility re-evaluation closes with at least one
+`t12Eligible=YES` candidate may the operator authorize T12 corpus ingestion
+for those candidate(s) only.
