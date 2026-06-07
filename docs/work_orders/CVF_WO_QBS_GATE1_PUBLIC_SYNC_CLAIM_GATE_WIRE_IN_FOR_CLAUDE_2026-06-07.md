@@ -4,7 +4,7 @@ Memory class: WORK_ORDER
 
 docType: work_order
 
-Status: READY_FOR_DISPATCH
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-06-07
 
@@ -15,6 +15,8 @@ executionBaseHead: `9676ae37`
 closureBaseHead: `9676ae37`
 
 publicSyncBaseHead: `7d33a5887`
+
+publicSyncClosureCommit: `993014398`
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
@@ -279,22 +281,47 @@ QBS quality score / L4 / L5 / parity.
 
 ## Closure Checklist
 
-- [ ] Public-sync remote verified.
-- [ ] Public-sync checker added.
-- [ ] Fixture false-negative tests passed.
-- [ ] Public-sync `docs/benchmark` scan passed with nonzero artifact count.
-- [ ] Local hook chain wired and verified.
-- [ ] Documentation CI wired and status aggregation updated.
-- [ ] No benchmark/historical result mutation.
-- [ ] Reviewer completion packet filed.
+- [x] Public-sync remote verified.
+- [x] Public-sync checker added.
+- [x] Fixture false-negative tests passed.
+- [x] Public-sync `docs/benchmark` scan passed with nonzero artifact count.
+- [x] Local hook chain wired and verified.
+- [x] Documentation CI wired and status aggregation updated.
+- [x] No benchmark/historical result mutation.
+- [x] Reviewer completion packet filed.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_WO_QBS_GATE1_PUBLIC_SYNC_CLAIM_GATE_WIRE_IN_FOR_CLAUDE_2026-06-07.md` | `CLOSED_PASS_BOUNDED`; closure checklist all checked | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_QBS_GATE1_PUBLIC_SYNC_CLAIM_GATE_WIRE_IN_COMPLETION_2026-06-07.md` | final disposition, gate results, public commit, claim boundary | PASS |
+| Roadmap state | `N/A with reason` | standalone QBS-GATE1 work order; no active roadmap tracks this tranche | N/A with reason |
+| Registry JSON | `N/A with reason` | no corpus scan registry, runtime registry, or system-loop registry state changed | BLOCKED with reason: not a corpus/search/classification registry closure |
+| Registry Markdown | `N/A with reason` | no corpus registry markdown changed | BLOCKED with reason: not a corpus/search/classification registry closure |
+| External evidence digest | `N/A with reason` | no external corpus digest or provider evidence consumed | N/A with reason |
+| System loop interlock | `N/A with reason` | public guard/CI wiring only; no runtime route interlock changed | N/A with reason |
+| Session continuity | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `AGENT_HANDOFF_V16_2026-06-06.md` | closure continuity updated in this batch | PASS |
 
 ## Public Export Disposition
 
-Expected final disposition: `EXPORTED` only if the public-sync commit is made
-and reviewer records public remote, commit, and changed artifact paths.
+`EXPORTED`
 
-If reviewer does not push public-sync, final disposition must be
-`BLOCKED_MISSING_PUBLIC_ARTIFACTS` or `DEFERRED_PRIVATE_ONLY` with next action.
+Public remote:
+
+`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+
+Public-sync commit:
+
+`993014398`
+
+Exported artifact paths:
+
+- `.github/workflows/documentation-testing.yml`
+- `docs/reviews/CVF_QBS_GATE1_PUBLIC_SYNC_CLAIM_GATE_WIRE_IN_COMPLETION_2026-06-07.md`
+- `governance/compat/check_qbs_claim_gate.py`
+- `governance/compat/run_local_governance_hook_chain.py`
+- `governance/compat/test_qbs_claim_gate.py`
 
 ## Claim Boundary
 

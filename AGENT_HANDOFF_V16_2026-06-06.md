@@ -36,15 +36,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`qbs_gate1_public_sync_claim_gate_wire_in_ready_for_dispatch`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=dispatch Claude on QBS-GATE1 public-sync claim gate wire-in work order; parked checkpoint=none.
+Startup acknowledged: current mode=`qbs_gate1_public_sync_claim_gate_wire_in_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=choose parked DEP2 next-auth stable migration, real external receipt-anchor provider/service selection, or separate live Redis service proof; parked checkpoint=none.
 
 ## Current Mode
 
-`qbs_gate1_public_sync_claim_gate_wire_in_ready_for_dispatch`
+`qbs_gate1_public_sync_claim_gate_wire_in_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `7a5bc2dd`
-(QBS-GATE1 work order authoring commit; parent `9676ae37` is the source/base
-commit for worker dispatch).
+Current HEAD recorded for this handoff: `9faf27c0`
+(QBS-GATE1 session-sync commit before private completion closure).
 
 ## Active Boundary
 
@@ -165,31 +164,42 @@ Only V16 should be treated as the active root handoff.
   `docs/work_orders/CVF_WO_QBS_GATE1_PUBLIC_SYNC_CLAIM_GATE_WIRE_IN_FOR_CLAUDE_2026-06-07.md`.
   Work order authoring commit is `7a5bc2dd`. Target public-sync base is
   `7d33a5887`; Claude worker must not commit or push.
+- Closed QBS-GATE1 at public-sync commit `993014398`: public checker,
+  fixture self-test, local hook-chain wiring, documentation CI job, and
+  public-safe completion evidence were added and pushed to
+  `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`.
+  Boundary: guard/CI wire-in only; no benchmark rerun, output-quality parity,
+  L4/L5 score, family-level power, hosted readiness, production readiness, or
+  public readiness claim.
 
 ## Latest Continuity Note
 
-QBS-GATE1 public-sync claim gate wire-in is `READY_FOR_DISPATCH`.
+QBS-GATE1 public-sync claim gate wire-in is `CLOSED_PASS_BOUNDED` and
+`EXPORTED`.
 
 Private artifact:
 
 - Work order:
   `docs/work_orders/CVF_WO_QBS_GATE1_PUBLIC_SYNC_CLAIM_GATE_WIRE_IN_FOR_CLAUDE_2026-06-07.md`
+- Completion:
+  `docs/reviews/CVF_QBS_GATE1_PUBLIC_SYNC_CLAIM_GATE_WIRE_IN_COMPLETION_2026-06-07.md`
 
 Source commit:
 
 - QBS checker false-negative hardening: `9676ae37`
 - Work order authoring: `7a5bc2dd`
+- Public-sync closure: `993014398`
 
 Target public-sync base:
 
 - `7d33a5887`
 
-Target:
+Verification:
 
-- wire accepted `check_qbs_claim_gate.py` behavior into public-sync local hooks
-  and documentation CI;
-- prove future missing-anchor and date-unknown QBS artifacts fail closed;
-- scan public-sync `docs/benchmark` with nonzero artifact coverage.
+- fixture self-test: PASS, 5/5;
+- public `docs/benchmark` scan: PASS, 147 artifacts / 0 violations;
+- public-sync pre-push hook: PASS;
+- public push: PASS, `ca32bbf3f..993014398 main -> main`.
 
 Boundary: no public-sync push, live/provider calls, QBS rerun, package
 installation, QBS methodology or historical benchmark mutation, public/hosted
@@ -486,10 +496,9 @@ Diagnostic boundary:
 
 ## Next Allowed Move
 
-Dispatch Claude on
-`docs/work_orders/CVF_WO_QBS_GATE1_PUBLIC_SYNC_CLAIM_GATE_WIRE_IN_FOR_CLAUDE_2026-06-07.md`
-to wire the accepted QBS claim gate into public-sync local hooks and
-documentation CI from public-sync base `7d33a5887`.
+Choose one parked product lane: DEP2 next-auth stable migration, real external
+receipt-anchor provider/service selection, or a separate live Redis service
+proof if hosted multi-instance enforcement evidence is needed.
 
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`; this MLW8-PEL1 tranche does not alter
@@ -504,7 +513,6 @@ Blocked without separate authorization and passing phase gates:
 - dependency changes;
 - distributed or production durability claim;
 - Redis implementation;
-- public-sync push;
 - live/provider proof;
 - QBS rerun;
 - QBS methodology or historical benchmark mutation;

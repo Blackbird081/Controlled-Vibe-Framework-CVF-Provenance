@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-06
 
-Current mode marker: `qbs_gate1_public_sync_claim_gate_wire_in_ready_for_dispatch`
+Current mode marker: `qbs_gate1_public_sync_claim_gate_wire_in_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `qbs_gate1_public_sync_claim_gate_wire_in_ready_for_dispatch`.
+Current mode: `qbs_gate1_public_sync_claim_gate_wire_in_closed_pass_bounded`.
 
 Active handoff:
 
@@ -50,11 +50,16 @@ Active review queue:
 
 Latest continuity note:
 
-QBS-GATE1 public-sync claim gate wire-in is `READY_FOR_DISPATCH`.
+QBS-GATE1 public-sync claim gate wire-in is `CLOSED_PASS_BOUNDED` and
+`EXPORTED`.
 
 Work order:
 
 `docs/work_orders/CVF_WO_QBS_GATE1_PUBLIC_SYNC_CLAIM_GATE_WIRE_IN_FOR_CLAUDE_2026-06-07.md`
+
+Completion:
+
+`docs/reviews/CVF_QBS_GATE1_PUBLIC_SYNC_CLAIM_GATE_WIRE_IN_COMPLETION_2026-06-07.md`
 
 Source commit: `9676ae37`
 
@@ -62,9 +67,15 @@ Work order authoring commit: `7a5bc2dd`
 
 Public-sync base: `7d33a5887`
 
-Target: wire the accepted QBS claim gate into public-sync local hooks and
+Public-sync closure commit: `993014398`
+
+Delivered: accepted QBS claim gate wired into public-sync local hooks and
 documentation CI so public QBS benchmark artifacts cannot bypass reviewer
 agreement, corpus-power, no-parity, or calibration-anchor boundaries.
+
+Verification: fixture self-test PASS 5/5; public `docs/benchmark` scan PASS
+147 artifacts / 0 violations; public-sync pre-push hook PASS; public push PASS
+to `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`.
 
 Boundary: no public-sync push, live/provider calls, QBS rerun, package
 installation, QBS methodology or historical benchmark mutation,
@@ -741,18 +752,19 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-QBS checker false-negative hardening commit is `9676ae37`.
+QBS-GATE1 public-sync claim gate wire-in is `CLOSED_PASS_BOUNDED` and exported
+at public-sync commit `993014398`.
 
-Next allowed move: dispatch Claude on
-`docs/work_orders/CVF_WO_QBS_GATE1_PUBLIC_SYNC_CLAIM_GATE_WIRE_IN_FOR_CLAUDE_2026-06-07.md`
-to wire the accepted QBS claim gate into public-sync local hooks and
-documentation CI.
+Next allowed move: choose one parked product lane: DEP2 next-auth stable
+migration, real external receipt-anchor provider/service selection, or a
+separate live Redis service proof if hosted multi-instance enforcement evidence
+is needed.
 
 LHW24 remains the latest closed numbered LHW wave in the state registry.
 
-Blocked without separate authorization and passing phase gates: public-sync
-push, live/provider calls, QBS rerun, package installation, QBS methodology or
-historical benchmark mutation, output-quality parity or L4/L5 quality claim,
+Blocked without separate authorization and passing phase gates: live/provider
+calls, QBS rerun, QBS methodology or historical benchmark mutation,
+output-quality parity or L4/L5 quality claim,
 public/hosted/production readiness claims, cost/performance/provider-quality
 claims, memory reinjection, high-risk promotion implementation, Learning
 Orchestrator runtime behavior, and autonomous mutation.
