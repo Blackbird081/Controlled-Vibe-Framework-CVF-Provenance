@@ -42,9 +42,9 @@ Startup acknowledged: current mode=`lpci2_t11d_readiness_gate_closed_pass_bounde
 
 `lpci2_t11d_readiness_gate_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `bd36e808`
-(T11D readiness gate material closure commit; this session-sync commit records
-that material commit as parent).
+Current HEAD recorded for this handoff: `0bfedda5`
+(governance closure fast-path and worker-return hardening material commit; the
+next session-sync commit records that material commit as parent).
 
 ## Active Boundary
 
@@ -233,6 +233,15 @@ violations=0. T12 work order authoring remains forbidden until a separate
 operator-authorized evidence path resolves EC-02 freshness review on or after
 2026-07-01, `currentStatus=unknown`, and `jurisdiction=unknown`, followed by
 eligibility re-evaluation producing at least one `t12Eligible=YES` candidate.
+
+Post-T11D governance hardening: material commit `0bfedda5` closed
+`docs/roadmaps/CVF_GOVERNANCE_CLOSURE_FAST_PATH_AND_WORKER_RETURN_HARDENING_ROADMAP_2026-06-07.md`
+and
+`docs/reviews/CVF_GOVERNANCE_CLOSURE_FAST_PATH_AND_WORKER_RETURN_HARDENING_COMPLETION_2026-06-07.md`.
+It adds no-commit Reviewer Closure Conversion requirements, dispatch-quality
+machine validation, and autorun pre-push parallel hook invocation. Boundary:
+private control-plane hardening only; no T11/T12 eligibility, runtime
+governance behavior, live-provider proof, public-sync, or readiness claim.
 
 Next allowed move: choose a new roadmap lane, or explicitly authorize the
 post-EC-02 condition-resolution/eligibility re-evaluation path. Do not author
