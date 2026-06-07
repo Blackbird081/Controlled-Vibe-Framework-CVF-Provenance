@@ -36,15 +36,15 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci2_t11b_source_verification_dispatched`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=execute T11B four-gate verification (path | hash | size | role/lineage) for 7 target files per amended work order and return uncommitted packet; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`lpci2_t11b_source_verification_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=author source-verified LPCI2-T11C Classification Pre-Check work order using T11B resolved-path evidence; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`lpci2_t11b_source_verification_dispatched`
+`lpci2_t11b_source_verification_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `08293726`
-(T11B four-gate front door and handoff authorization sync. Parent: `07e7ef53`
-T11B four-gate amendment session state sync.).
+Current HEAD recorded for this handoff: `acdbcd8b`
+(T11B source verification closure material commit. Parent: `08293726`
+T11B four-gate front door and handoff authorization sync.).
 
 ## Active Boundary
 
@@ -206,26 +206,35 @@ Only V16 should be treated as the active root handoff.
 
 ## Latest Continuity Note
 
-LPCI2-T11B Source Verification work order and GC-018 amended to
-four-gate scan-layer standard at commit `026c5c16`.
+LPCI2-T11B Source Verification is `CLOSED_PASS_BOUNDED` at material commit
+`acdbcd8b`.
 
-Four gates: path fidelity (`Test-Path -LiteralPath`) | hash match
-(SHA-256 binary vs T11A manifest) | size match (`Get-Item -LiteralPath
-.Length` vs T11A `sizeBytes`) | role/lineage reconciliation
-(`bundleArtifactRole` + `lineageParentIds` vs T11A bundle manifest).
+Completion:
+`docs/reviews/CVF_LPCI2_T11B_SOURCE_VERIFICATION_COMPLETION_2026-06-07.md`.
 
-`verificationResult` vocab: `HASH_MATCH` | `HASH_MISMATCH` |
-`SIZE_MISMATCH` | `ROLE_LINEAGE_MISMATCH` | `PATH_NOT_FOUND` |
-`READ_ERROR`. `HASH_MATCH` only when all four gates pass.
+Report:
+`docs/reference/CVF_LPCI2_T11B_SOURCE_VERIFICATION_REPORT_2026-06-07.md`.
 
-Next allowed move: Claude executes T11B four-gate verification for all 7
-target files per amended work order
-`docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T11B_POLICYLOCAL_SOURCE_VERIFICATION_FOR_CLAUDE_2026-06-07.md`
-and returns uncommitted packet. Mandatory: `-LiteralPath` on every
-filesystem call; `sys.stdout.reconfigure(encoding='utf-8')` if Python.
+External result JSON:
+`D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-t11b-source-verification-result.json`.
 
-Boundary: T11B verification only; no body extraction, corpus ingestion,
-provider calls, public-sync, or current-law claim.
+Result JSON SHA-256:
+`sha256:0d24870a43b0e33eecddae438d669983be508eff9ed4ca4e112ffb48870fd79d`.
+
+Result: 7/7 target records final `verificationResult=HASH_MATCH`; all path,
+hash, size, and role/lineage gates passed. Finding: `BNDL-002`, `BNDL-003`,
+and `BNDL-005` required Unicode path fallback from T11A candidate manifest
+paths to T11A bundle manifest paths before verification. Learning disposition:
+`MACHINE_CHECK_CANDIDATE`.
+
+Next allowed move: author a source-verified `LPCI2-T11C Classification
+Pre-Check` work order. T11C must consume T11B resolved-path evidence, carry
+forward the Unicode path-fidelity finding, preserve EC-02, and classify only
+the T11B-verified target records before T11D readiness aggregation.
+
+Boundary: no body extraction, corpus ingestion, runtime query, provider calls,
+public-sync, current-law claim, legal advice quality claim, production/public
+readiness, memory reinjection, high-risk promotion, or autonomous mutation.
 
 ## Core Guard Self-Protection Authorization - T11B Amendment Session Sync
 
@@ -640,46 +649,41 @@ Diagnostic boundary:
 
 ## Next Allowed Move
 
-LPCI2-T11A Candidate And Bundle Inventory is `CLOSED_PASS_BOUNDED`.
+LPCI2-T11B Source Verification is `CLOSED_PASS_BOUNDED`.
 
 Completion:
 
-`docs/reviews/CVF_LPCI2_T11A_CANDIDATE_AND_BUNDLE_INVENTORY_COMPLETION_2026-06-07.md`
+`docs/reviews/CVF_LPCI2_T11B_SOURCE_VERIFICATION_COMPLETION_2026-06-07.md`
 
-Supplement work order:
+Report:
 
-`docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T11A_SUPPLEMENT_REAL_USE_CASE_BUNDLE_INVENTORY_FOR_CLAUDE_2026-06-07.md`
+`docs/reference/CVF_LPCI2_T11B_SOURCE_VERIFICATION_REPORT_2026-06-07.md`
 
-Original direct-input worker return:
+Worker return:
 
-`docs/reviews/CVF_LPCI2_T11A_CANDIDATE_INVENTORY_WORKER_RETURN_2026-06-07.md`
-
-Codex review:
-
-`docs/reviews/CVF_LPCI2_T11A_CANDIDATE_INVENTORY_CODEX_REVIEW_2026-06-07.md`
+`docs/reviews/CVF_LPCI2_T11B_SOURCE_VERIFICATION_WORKER_RETURN_2026-06-07.md`
 
 Roadmap:
 
 `docs/roadmaps/CVF_LPCI2_T11_POLICYLOCAL_CORPUS_EXPANSION_READINESS_ROADMAP_2026-06-07.md`
 
-GC-018:
+Result JSON:
 
-`docs/baselines/CVF_GC018_LPCI2_T11A_POLICYLOCAL_CANDIDATE_INVENTORY_2026-06-07.md`
+`D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-t11b-source-verification-result.json`
 
-Bundle manifest:
+Result JSON hash:
+`sha256:0d24870a43b0e33eecddae438d669983be508eff9ed4ca4e112ffb48870fd79d`.
 
-`D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-t11-real-use-case-bundle-manifest.json`
+Finding: `BNDL-002`, `BNDL-003`, and `BNDL-005` required Unicode path
+fallback from T11A candidate manifest paths to T11A bundle manifest paths.
 
-Bundle manifest hash:
-`sha256:1ddceb3c8c063dca75c596c8f59f2c058265b6406207ecd5462afd407b2ea054`.
-
-Next allowed move: author a source-verified `LPCI2-T11B Source Verification`
-work order for the combined direct candidate inventory and
-`Law use case_Codex` bundle evidence. T11B may verify filesystem access, path
-resolution, and SHA-256 hashes only. Do not treat T9, T10, T11A, the direct
-worker return, or the supplement as production, hosted, public, legal-advice,
-current-law, provider, chat, vector, extraction, ingestion, or deployment
-readiness.
+Next allowed move: author a source-verified `LPCI2-T11C Classification
+Pre-Check` work order. T11C must consume T11B resolved-path evidence, carry
+forward the Unicode path-fidelity finding, preserve EC-02, and classify only
+the T11B-verified target records before T11D readiness aggregation. Do not
+treat T9, T10, T11A, T11B, the direct worker returns, or the supplement as
+production, hosted, public, legal-advice, current-law, provider, chat, vector,
+extraction, ingestion, or deployment readiness.
 
 The prior product lanes remain parked:
 

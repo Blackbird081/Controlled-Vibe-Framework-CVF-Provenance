@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-07
 
-Current mode marker: `lpci2_t11b_source_verification_dispatched`
+Current mode marker: `lpci2_t11b_source_verification_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lpci2_t11b_source_verification_dispatched`.
+Current mode: `lpci2_t11b_source_verification_closed_pass_bounded`.
 
 Active handoff:
 
@@ -50,25 +50,34 @@ Active review queue:
 
 Latest continuity note:
 
-LPCI2-T11B Source Verification work order and GC-018 amended to four-gate
-scan-layer standard at commit `026c5c16` (session sync `07e7ef53`).
+LPCI2-T11B Source Verification is `CLOSED_PASS_BOUNDED` at material commit
+`acdbcd8b`.
 
-Four gates: path fidelity (`Test-Path -LiteralPath`) | hash match (SHA-256
-binary vs T11A `artifactHashSha256`) | size match (`Get-Item -LiteralPath
-.Length` vs T11A `sizeBytes`) | role/lineage reconciliation
-(`bundleArtifactRole` + `lineageParentIds` vs T11A bundle manifest).
+Completion:
+`docs/reviews/CVF_LPCI2_T11B_SOURCE_VERIFICATION_COMPLETION_2026-06-07.md`.
 
-`verificationResult` vocab: `HASH_MATCH` | `HASH_MISMATCH` | `SIZE_MISMATCH` |
-`ROLE_LINEAGE_MISMATCH` | `PATH_NOT_FOUND` | `READ_ERROR`. `HASH_MATCH` only
-when all four gates pass.
+Report:
+`docs/reference/CVF_LPCI2_T11B_SOURCE_VERIFICATION_REPORT_2026-06-07.md`.
+
+External result JSON:
+`D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-t11b-source-verification-result.json`.
+
+Result JSON SHA-256:
+`sha256:0d24870a43b0e33eecddae438d669983be508eff9ed4ca4e112ffb48870fd79d`.
+
+Result: 7/7 target records final `verificationResult=HASH_MATCH`; all path,
+hash, size, and role/lineage gates passed. Finding: `BNDL-002`, `BNDL-003`,
+and `BNDL-005` required Unicode path fallback from T11A candidate manifest
+paths to T11A bundle manifest paths before verification. Learning disposition:
+`MACHINE_CHECK_CANDIDATE`.
 
 GC-018:
 `docs/baselines/CVF_GC018_LPCI2_T11B_POLICYLOCAL_SOURCE_VERIFICATION_2026-06-07.md`.
 Work order:
 `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T11B_POLICYLOCAL_SOURCE_VERIFICATION_FOR_CLAUDE_2026-06-07.md`.
-Status: `DISPATCHED_TO_WORKER`. WORKER_MUST_NOT_COMMIT.
-Mandatory: `-LiteralPath` on all filesystem calls;
-`sys.stdout.reconfigure(encoding='utf-8')` if Python.
+Status: `CLOSED_PASS_BOUNDED`.
+Next allowed move: author a source-verified `LPCI2-T11C Classification
+Pre-Check` work order.
 
 Prior continuity note:
 
@@ -840,24 +849,25 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LPCI2-T11A Candidate And Bundle Inventory is `CLOSED_PASS_BOUNDED`.
+LPCI2-T11B Source Verification is `CLOSED_PASS_BOUNDED`.
 
 Completion:
-`docs/reviews/CVF_LPCI2_T11A_CANDIDATE_AND_BUNDLE_INVENTORY_COMPLETION_2026-06-07.md`
+`docs/reviews/CVF_LPCI2_T11B_SOURCE_VERIFICATION_COMPLETION_2026-06-07.md`
 
 Current mode:
-`lpci2_t11a_candidate_and_bundle_inventory_closed_pass_bounded`.
+`lpci2_t11b_source_verification_closed_pass_bounded`.
 
-Next allowed move: author a source-verified `LPCI2-T11B Source Verification`
-work order for the combined direct candidate inventory and
-`Law use case_Codex` bundle evidence.
+Next allowed move: author a source-verified `LPCI2-T11C Classification
+Pre-Check` work order.
 
-T11B may verify filesystem access, path resolution, and SHA-256 hashes only.
-It must not perform body extraction, OCR, summarization, corpus ingestion,
-chunking, runtime query, provider calls, public-sync, current-law claims, legal
-advice quality claims, production/public readiness claims, memory reinjection,
-high-risk promotion, or autonomous mutation. EC-02 freshness review is required
-on or after 2026-07-01 before any current-law or production runtime claim.
+T11C must consume T11B resolved-path evidence, carry forward the Unicode
+path-fidelity finding, preserve EC-02, and classify only the T11B-verified
+target records before T11D readiness aggregation. T11C must not perform body
+extraction, OCR, corpus ingestion, chunking, runtime query, provider calls,
+public-sync, current-law claims, legal advice quality claims,
+production/public readiness claims, memory reinjection, high-risk promotion,
+or autonomous mutation. EC-02 freshness review is required on or after
+2026-07-01 before any current-law or production runtime claim.
 
 The prior product lanes remain parked: DEP2 next-auth stable migration is
 `HARD_BLOCKED`, external receipt-anchor provider/service selection is
