@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-07
 
-Current mode marker: `lpci2_t11c_classification_pre_check_dispatched`
+Current mode marker: `lpci2_t11c_classification_pre_check_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lpci2_t11c_classification_pre_check_dispatched`.
+Current mode: `lpci2_t11c_classification_pre_check_closed_pass_bounded`.
 
 Active handoff:
 
@@ -50,8 +50,9 @@ Active review queue:
 
 Latest continuity note:
 
-LPCI2-T11C Classification Pre-Check is `DISPATCHED_TO_WORKER` at dispatch
-commit `e18ec2f1`.
+LPCI2-T11C Classification Pre-Check is `CLOSED_PASS_BOUNDED` at
+closureBaseHead `2bfd7ea1`, pending material commit and follow-up session-sync
+commit.
 
 GC-018:
 `docs/baselines/CVF_GC018_LPCI2_T11C_POLICYLOCAL_CLASSIFICATION_PRE_CHECK_2026-06-07.md`.
@@ -63,10 +64,12 @@ Scope: classify the 6 T11B-verified corpus candidates (`T11A-CAND-001` through
 `BNDL-006` (`agent_request`) is a non-corpus request artifact
 (`t12Eligible=NO`). Consume T11B resolved paths (`CAND-002`/`003`/`005`
 resolve under `Law use case_Codex`); do not re-derive from T11A `readableAt`
-alone. EC-02 invariant: zero `BLOCKED_UNTIL_2026-07-01` records may be
-`t12Eligible=YES`; `answerClass` within the four T2 matrix values only.
-WORKER_MUST_NOT_COMMIT. Next: Claude executes, returns uncommitted packet;
-Codex reviews and closes; if clean, opens T11D Readiness Gate.
+alone. Result: 6/6 corpus candidates are `ESCALATE_OR_ABSTAIN`,
+`BLOCKED_UNTIL_2026-07-01`, and `t12Eligible=CONDITIONAL`;
+`BNDL-006` is non-corpus with `t12Eligible=NO`; EC-02 invariant violations=0.
+External candidate manifest hash:
+`sha256:023f1276092756232949662e9be6e635d545ab22b2bd19284f11f82789c7fd1a`.
+Next: author source-verified T11D Readiness Gate.
 
 Prior continuity note:
 
@@ -848,25 +851,27 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LPCI2-T11B Source Verification is `CLOSED_PASS_BOUNDED`.
+LPCI2-T11C Classification Pre-Check is `CLOSED_PASS_BOUNDED`.
 
 Completion:
-`docs/reviews/CVF_LPCI2_T11B_SOURCE_VERIFICATION_COMPLETION_2026-06-07.md`
+`docs/reviews/CVF_LPCI2_T11C_CLASSIFICATION_PRE_CHECK_COMPLETION_2026-06-07.md`
 
 Current mode:
-`lpci2_t11c_classification_pre_check_dispatched`.
+`lpci2_t11c_classification_pre_check_closed_pass_bounded`.
 
-Next allowed move: author a source-verified `LPCI2-T11C Classification
-Pre-Check` work order.
+Next allowed move: author a source-verified `LPCI2-T11D Readiness Gate` work
+order.
 
-T11C must consume T11B resolved-path evidence, carry forward the Unicode
-path-fidelity finding, preserve EC-02, and classify only the T11B-verified
-target records before T11D readiness aggregation. T11C must not perform body
-extraction, OCR, corpus ingestion, chunking, runtime query, provider calls,
-public-sync, current-law claims, legal advice quality claims,
-production/public readiness claims, memory reinjection, high-risk promotion,
-or autonomous mutation. EC-02 freshness review is required on or after
-2026-07-01 before any current-law or production runtime claim.
+T11D must aggregate T11A inventory, T11B source verification, and T11C
+classification evidence. It must preserve that T11C currently has zero
+`t12Eligible=YES` candidates and must not authorize T12 ingestion unless a
+later operator-approved evidence path satisfies EC-02 and status/jurisdiction
+metadata. T11D must not perform body extraction, OCR, corpus ingestion,
+chunking, runtime query, provider calls, public-sync, current-law claims,
+legal advice quality claims, production/public readiness claims, memory
+reinjection, high-risk promotion, or autonomous mutation. EC-02 freshness
+review is required on or after 2026-07-01 before any current-law or production
+runtime claim.
 
 The prior product lanes remain parked: DEP2 next-auth stable migration is
 `HARD_BLOCKED`, external receipt-anchor provider/service selection is

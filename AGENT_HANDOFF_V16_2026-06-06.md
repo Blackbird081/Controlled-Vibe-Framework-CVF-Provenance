@@ -36,15 +36,15 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci2_t11c_classification_pre_check_dispatched`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=Claude executes T11C classification pre-check for the 6 T11B-verified corpus candidates + BNDL-006 and returns uncommitted packet; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`lpci2_t11c_classification_pre_check_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=author source-verified T11D Readiness Gate work order; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`lpci2_t11c_classification_pre_check_dispatched`
+`lpci2_t11c_classification_pre_check_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `e18ec2f1`
-(T11B closure session-sync commit; dispatchBaseHead for the T11C packet.
-Parent: `acdbcd8b` T11B source verification closure material commit.).
+Current HEAD recorded for this handoff: `2bfd7ea1`
+(T11C dispatch session-sync commit and T11C closureBaseHead; follow-up
+session-sync commit required after material closure commit.).
 
 ## Active Boundary
 
@@ -206,8 +206,9 @@ Only V16 should be treated as the active root handoff.
 
 ## Latest Continuity Note
 
-LPCI2-T11C Classification Pre-Check is `DISPATCHED_TO_WORKER` at dispatch
-commit `e18ec2f1`.
+LPCI2-T11C Classification Pre-Check is `CLOSED_PASS_BOUNDED` at
+closureBaseHead `2bfd7ea1`, pending material commit and follow-up session-sync
+commit.
 
 GC-018:
 `docs/baselines/CVF_GC018_LPCI2_T11C_POLICYLOCAL_CLASSIFICATION_PRE_CHECK_2026-06-07.md`.
@@ -215,25 +216,20 @@ GC-018:
 Work order:
 `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T11C_POLICYLOCAL_CLASSIFICATION_PRE_CHECK_FOR_CLAUDE_2026-06-07.md`.
 
-Scope: classify the 6 T11B-verified corpus candidates (`T11A-CAND-001`
+Scope: classified the 6 T11B-verified corpus candidates (`T11A-CAND-001`
 through `T11A-CAND-006`) against the T2 domain matrix, the EC-02 freshness
 gate, and a t12-eligibility verdict; `BNDL-006` (`agent_request`) is a
-non-corpus request artifact with `t12Eligible=NO`. The worker consumes the
-T11B result JSON resolved paths (`CAND-002`/`003`/`005` resolve under
-`Law use case_Codex`) and must not re-derive paths from T11A candidate
-`readableAt` literals alone.
+non-corpus request artifact with `t12Eligible=NO`. Result: 6/6 corpus
+candidates are `ESCALATE_OR_ABSTAIN`, `BLOCKED_UNTIL_2026-07-01`, and
+`t12Eligible=CONDITIONAL`; BNDL-006 is non-corpus with `t12Eligible=NO`; EC-02
+invariant violations=0. Candidate manifest hash:
+`sha256:023f1276092756232949662e9be6e635d545ab22b2bd19284f11f82789c7fd1a`.
 
-EC-02 invariant: zero `ec02Gate=BLOCKED_UNTIL_2026-07-01` records may be
-`t12Eligible=YES`; `answerClass` within the four T2 matrix values only;
-records with `currentStatus=unknown` or `jurisdiction=unknown` are
-`ESCALATE_OR_ABSTAIN`. WORKER_MUST_NOT_COMMIT.
-
-Next allowed move: Claude executes T11C and returns an uncommitted packet
-(classification pre-check report
-`docs/reference/CVF_LPCI2_T11_CLASSIFICATION_PRE_CHECK_2026-06-07.md` plus
-additive `classificationPreCheck` fields in the candidate manifest). After
-Claude returns, Codex reviews and closes T11C; if clean, opens T11D Readiness
-Gate.
+Next allowed move: author a fresh GC-018 and source-verified T11D Readiness
+Gate work order. T11D must aggregate T11A inventory, T11B source verification,
+and T11C classification evidence, preserve zero `t12Eligible=YES` candidates,
+and avoid T12 ingestion authorization unless EC-02 and status/jurisdiction
+metadata are satisfied by a later operator-approved evidence path.
 
 Boundary: no body extraction, OCR, corpus ingestion, chunking, runtime query,
 provider calls, public-sync, current-law claim, legal advice quality claim,
@@ -664,41 +660,37 @@ Diagnostic boundary:
 
 ## Next Allowed Move
 
-LPCI2-T11B Source Verification is `CLOSED_PASS_BOUNDED`.
+LPCI2-T11C Classification Pre-Check is `CLOSED_PASS_BOUNDED`.
 
 Completion:
 
-`docs/reviews/CVF_LPCI2_T11B_SOURCE_VERIFICATION_COMPLETION_2026-06-07.md`
+`docs/reviews/CVF_LPCI2_T11C_CLASSIFICATION_PRE_CHECK_COMPLETION_2026-06-07.md`
 
 Report:
 
-`docs/reference/CVF_LPCI2_T11B_SOURCE_VERIFICATION_REPORT_2026-06-07.md`
+`docs/reference/CVF_LPCI2_T11_CLASSIFICATION_PRE_CHECK_2026-06-07.md`
 
 Worker return:
 
-`docs/reviews/CVF_LPCI2_T11B_SOURCE_VERIFICATION_WORKER_RETURN_2026-06-07.md`
+`docs/reviews/CVF_LPCI2_T11C_CLASSIFICATION_PRE_CHECK_WORKER_RETURN_2026-06-07.md`
 
 Roadmap:
 
 `docs/roadmaps/CVF_LPCI2_T11_POLICYLOCAL_CORPUS_EXPANSION_READINESS_ROADMAP_2026-06-07.md`
 
-Result JSON:
+Candidate manifest:
 
-`D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-t11b-source-verification-result.json`
+`D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-t11-candidate-manifest.json`
 
-Result JSON hash:
-`sha256:0d24870a43b0e33eecddae438d669983be508eff9ed4ca4e112ffb48870fd79d`.
+Candidate manifest hash:
+`sha256:023f1276092756232949662e9be6e635d545ab22b2bd19284f11f82789c7fd1a`.
 
-Finding: `BNDL-002`, `BNDL-003`, and `BNDL-005` required Unicode path
-fallback from T11A candidate manifest paths to T11A bundle manifest paths.
+Result: 6/6 corpus candidates remain conditional and blocked by EC-02 plus
+unknown `currentStatus` / `jurisdiction`; BNDL-006 is non-corpus.
 
-Next allowed move: author a source-verified `LPCI2-T11C Classification
-Pre-Check` work order. T11C must consume T11B resolved-path evidence, carry
-forward the Unicode path-fidelity finding, preserve EC-02, and classify only
-the T11B-verified target records before T11D readiness aggregation. Do not
-treat T9, T10, T11A, T11B, the direct worker returns, or the supplement as
-production, hosted, public, legal-advice, current-law, provider, chat, vector,
-extraction, ingestion, or deployment readiness.
+Next allowed move: author a source-verified `LPCI2-T11D Readiness Gate` work
+order. T11D must aggregate T11A/T11B/T11C and must not treat conditional
+candidates as T12 ingestion-ready.
 
 The prior product lanes remain parked:
 
@@ -853,6 +845,25 @@ mandatory) after T11A closed PASS_BOUNDED.
 Rollback boundary: revert only the T11B dispatch session-sync text and state
 registry entries if the dispatch routing is wrong. Do not revert T11A closure,
 T11 roadmap, T11B GC-018/work-order artifacts, or unrelated continuity history.
+
+## Core Guard Self-Protection Authorization - T11C Closure Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+closing T11C Classification Pre-Check as `CLOSED_PASS_BOUNDED`.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `AGENT_HANDOFF_V16_2026-06-06.md`
+
+Operator authorization: 2026-06-07 operator asked Codex to review the T11C
+worker return, close the work if clean, commit, and select the next roadmap.
+
+Rollback boundary: revert only the T11C closure session-sync text and state
+registry entries if the closure routing is wrong. Do not revert T11A/T11B
+closure, T11 roadmap, T11C worker artifacts, T11C completion review, or
+unrelated continuity history.
 
 ## Claim Boundary
 

@@ -225,6 +225,10 @@ freshness gate before T12 ingestion is authorized.
   `CONDITIONAL`);
 - updated `CVF-Workspace\Policy_Local\data\generated\policylocal-t11-candidate-manifest.json`
   with `classificationPreCheck` fields added per candidate.
+- worker return:
+  `docs/reviews/CVF_LPCI2_T11C_CLASSIFICATION_PRE_CHECK_WORKER_RETURN_2026-06-07.md`;
+- completion:
+  `docs/reviews/CVF_LPCI2_T11C_CLASSIFICATION_PRE_CHECK_COMPLETION_2026-06-07.md`.
 
 **Scope boundary:**
 
@@ -248,6 +252,13 @@ freshness gate before T12 ingestion is authorized.
    (`DIRECT_CITED_ANSWER`, `SUMMARY_WITH_SOURCE`, `PROCEDURAL_GUIDANCE`,
    `ESCALATE_OR_ABSTAIN`);
 5. manifest JSON updated without removing prior T11-A fields.
+
+**Closure summary:** T11-C is `CLOSED_PASS_BOUNDED`. Result: 6/6 corpus
+candidates are `ESCALATE_OR_ABSTAIN`, `BLOCKED_UNTIL_2026-07-01`, and
+`t12Eligible=CONDITIONAL`; BNDL-006 is non-corpus with `t12Eligible=NO`.
+There are 0 `t12Eligible=YES` candidates and 0 EC-02 invariant violations.
+External candidate manifest hash after additive update:
+`sha256:023f1276092756232949662e9be6e635d545ab22b2bd19284f11f82789c7fd1a`.
 
 ---
 
@@ -335,13 +346,13 @@ Unicode filenames in
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | T11A and T11B work orders | T11A `CLOSED_PASS_BOUNDED`; T11B `CLOSED_PASS_BOUNDED` | PASS |
-| Completion or reviewer artifact | T11A/T11B completion packets | T11A and T11B completion reviews exist | PASS |
-| Roadmap state | `docs/roadmaps/CVF_LPCI2_T11_POLICYLOCAL_CORPUS_EXPANSION_READINESS_ROADMAP_2026-06-07.md` | `Status: PROPOSED`; T11A/T11B closed, T11C/T11D open | PASS |
-| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | session sync required after T11B closure commit | PASS |
-| Registry Markdown | `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V16_2026-06-06.md` | session sync required after T11B closure commit | PASS |
-| External evidence digest | T11A manifests and T11B result JSON | T11B result JSON `sha256:0d24870a43b0e33eecddae438d669983be508eff9ed4ca4e112ffb48870fd79d` recorded in completion | PASS |
-| System loop interlock | T11A/T11B work orders and completions | inventory/source-verification only; no runtime loop mutation | PASS |
+| Work order status | T11A/T11B/T11C work orders | T11A `CLOSED_PASS_BOUNDED`; T11B `CLOSED_PASS_BOUNDED`; T11C `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | T11A/T11B/T11C completion packets | T11A, T11B, and T11C completion reviews exist | PASS |
+| Roadmap state | `docs/roadmaps/CVF_LPCI2_T11_POLICYLOCAL_CORPUS_EXPANSION_READINESS_ROADMAP_2026-06-07.md` | `Status: PROPOSED`; T11A/T11B/T11C closed, T11D open | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | session sync required after T11C closure commit | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V16_2026-06-06.md` | session sync required after T11C closure commit | PASS |
+| External evidence digest | T11A manifests, T11B result JSON, T11C manifest update | T11B result JSON `sha256:0d24870a43b0e33eecddae438d669983be508eff9ed4ca4e112ffb48870fd79d`; T11C candidate manifest `sha256:023f1276092756232949662e9be6e635d545ab22b2bd19284f11f82789c7fd1a` | PASS |
+| System loop interlock | T11A/T11B/T11C work orders and completions | inventory/source-verification/classification only; no runtime loop mutation | PASS |
 | Session continuity | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `AGENT_HANDOFF_V16_2026-06-06.md` | session sync required after closure commit | PASS |
 
 ---
@@ -350,8 +361,8 @@ Unicode filenames in
 
 | Assertion | Required value | Observed value | Status |
 |---|---|---|---|
-| Runtime receipt acceptance | No runtime, provider, query, search, ingestion, or receipt acceptance claim in T11A/T11B | T11A closed inventory only; T11B closed source verification only | PASS |
-| Candidate/source verification manifests | T11A manifests and T11B result JSON are required before T11C | T11A manifests and T11B result JSON are recorded in completion packets | PASS |
+| Runtime receipt acceptance | No runtime, provider, query, search, ingestion, or receipt acceptance claim in T11A/T11B/T11C | T11A closed inventory only; T11B closed source verification only; T11C closed classification pre-check only | PASS |
+| Candidate/source verification manifests | T11A manifests, T11B result JSON, and T11C classification manifest are required before T11D | T11A manifests, T11B result JSON, and T11C manifest hash are recorded in completion packets | PASS |
 
 ---
 
@@ -360,12 +371,12 @@ Unicode filenames in
 DEFERRED_PRIVATE_ONLY
 
 Reason: private Policy_Local corpus candidates and private workspace paths are
-in scope for T11A/T11B evidence.
+in scope for T11A/T11B/T11C evidence.
 
-This roadmap and the T11A/T11B evidence packets concern private Policy_Local
-corpus candidates and private workspace paths. No public-sync repository change,
-public remote push, public catalog update, public readiness claim, or public
-artifact export is authorized by this T11 batch.
+This roadmap and the T11A/T11B/T11C evidence packets concern private
+Policy_Local corpus candidates and private workspace paths. No public-sync
+repository change, public remote push, public catalog update, public readiness
+claim, or public artifact export is authorized by this T11 batch.
 
 Next public action: N/A with reason. Public export can be reconsidered only
 after a later roadmap creates a public-safe summary that excludes private
@@ -388,8 +399,8 @@ workspace paths, candidate hashes, and non-public source materials.
 | LPCI2-T10 | CLOSED_PASS_BOUNDED | Foundation readiness hash/schema/receipt verification |
 | LPCI2-T11A | CLOSED_PASS_BOUNDED | Candidate and bundle inventory |
 | LPCI2-T11B | CLOSED_PASS_BOUNDED | Four-gate source verification, with Unicode path fallback finding |
-| LPCI2-T11C | DISPATCHED_TO_WORKER | Classification pre-check - dispatched at `e18ec2f1`; T11D remains open |
-| **LPCI2-T11** | **PROPOSED** | **Corpus expansion readiness - T11C dispatched, T11D remains open** |
+| LPCI2-T11C | CLOSED_PASS_BOUNDED | Classification pre-check - 6 conditional corpus candidates, BNDL-006 no; 0 `t12Eligible=YES` |
+| **LPCI2-T11** | **PROPOSED** | **Corpus expansion readiness - T11D remains open** |
 | LPCI2-T12 | NOT_YET_AUTHORIZED | Corpus ingestion — gated behind T11-D `READY` verdict |
 
 ---
@@ -411,21 +422,20 @@ workspace paths, candidate hashes, and non-public source materials.
 
 ---
 
-## Next Allowed Move After T11B Closure
+## Next Allowed Move After T11C Closure
 
-Author a fresh GC-018 and a source-verified T11-C Classification Pre-Check
-work order. The work order must consume the T11B resolved-path evidence, carry
-the Unicode path-fidelity finding forward, preserve the EC-02 boundary, and
-classify only the T11B-verified target records before T11D readiness
-aggregation.
+Author a fresh GC-018 and a source-verified T11-D Readiness Gate work order.
+The work order must aggregate T11A inventory, T11B source verification, and
+T11C classification evidence. It must preserve that T11C currently has zero
+`t12Eligible=YES` candidates.
 
-Operator input required before T11-C dispatch:
+Operator input is not required for T11-D aggregation if it remains a
+readiness-gate review only. Operator input is required before any extraction,
+ingestion, runtime query, provider call, public-sync, current-law claim, legal
+advice quality claim, or any attempt to promote a conditional T11C candidate to
+`t12Eligible=YES`.
 
-- confirmation only if T11C would expand beyond classification pre-check into
-  extraction, ingestion, runtime query, provider calls, public-sync, current-law
-  claims, or legal advice quality claims.
-
-T11C remains forbidden from body extraction, OCR, corpus ingestion, chunking,
+T11D remains forbidden from body extraction, OCR, corpus ingestion, chunking,
 runtime query, provider calls, public-sync, current-law claims, legal advice
 quality claims, hosted readiness, production readiness, public readiness, and
 release readiness.

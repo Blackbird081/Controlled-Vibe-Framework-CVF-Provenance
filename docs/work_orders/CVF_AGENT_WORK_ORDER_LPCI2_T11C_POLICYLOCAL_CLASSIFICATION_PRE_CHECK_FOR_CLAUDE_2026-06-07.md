@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -10,9 +10,9 @@ Date: 2026-06-07
 
 dispatchBaseHead: `e18ec2f1`
 
-executionBaseHead: `PENDING`
+executionBaseHead: `2bfd7ea1`
 
-closureBaseHead: `PENDING`
+closureBaseHead: `2bfd7ea1`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -347,17 +347,17 @@ T11C closes, Codex may open the T11D Readiness Gate work order.
 
 ## Closure Checklist
 
-- [ ] Classification pre-check report created (7 rows).
-- [ ] Manifest updated with additive `classificationPreCheck` fields; prior
+- [x] Classification pre-check report created (7 rows).
+- [x] Manifest updated with additive `classificationPreCheck` fields; prior
       fields retained.
-- [ ] Every corpus candidate has non-empty `domainCategory`, `answerClass`,
+- [x] Every corpus candidate has non-empty `domainCategory`, `answerClass`,
       `ec02Gate`, and `t12Eligible`.
-- [ ] `BNDL-006` row marks it a non-corpus request artifact with
+- [x] `BNDL-006` row marks it a non-corpus request artifact with
       `t12Eligible=NO`.
-- [ ] Zero `BLOCKED_UNTIL_2026-07-01` records marked `t12Eligible=YES`.
-- [ ] All answerClass values within the four T2 matrix values.
-- [ ] No forbidden scope action occurred.
-- [ ] Codex reviewed worker return.
+- [x] Zero `BLOCKED_UNTIL_2026-07-01` records marked `t12Eligible=YES`.
+- [x] All answerClass values within the four T2 matrix values.
+- [x] No forbidden scope action occurred.
+- [x] Codex reviewed worker return.
 
 ## Return-To-Orchestrator Conditions
 
@@ -410,13 +410,13 @@ provider call, public-sync, current-law claim, or legal advice quality claim.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `Status: DISPATCHED_TO_WORKER`; `Commit mode: WORKER_MUST_NOT_COMMIT` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_LPCI2_T11C_CLASSIFICATION_PRE_CHECK_COMPLETION_2026-06-07.md` | N/A with reason: completion authored by reviewer at closure, not at dispatch | N/A with reason |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED`; `Commit mode: WORKER_MUST_NOT_COMMIT` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LPCI2_T11C_CLASSIFICATION_PRE_CHECK_COMPLETION_2026-06-07.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | GC-018 baseline | `docs/baselines/CVF_GC018_LPCI2_T11C_POLICYLOCAL_CLASSIFICATION_PRE_CHECK_2026-06-07.md` | `Status: ACTIVE`; `baseHead: e18ec2f1` | PASS |
-| Roadmap state | `docs/roadmaps/CVF_LPCI2_T11_POLICYLOCAL_CORPUS_EXPANSION_READINESS_ROADMAP_2026-06-07.md` | T11A/T11B closed; T11C dispatched; T11D open | PASS |
-| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | session sync recorded in the dispatch session-sync commit | PASS |
-| Registry Markdown | `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V16_2026-06-06.md` | session sync recorded in the dispatch session-sync commit | PASS |
-| External evidence digest | updated `policylocal-t11-candidate-manifest.json` | N/A with reason: manifest SHA-256 is recorded in the completion at closure, not at dispatch | N/A with reason |
+| Roadmap state | `docs/roadmaps/CVF_LPCI2_T11_POLICYLOCAL_CORPUS_EXPANSION_READINESS_ROADMAP_2026-06-07.md` | T11A/T11B/T11C closed; T11D open | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | session sync required after closure commit | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V16_2026-06-06.md` | session sync required after closure commit | PASS |
+| External evidence digest | updated `policylocal-t11-candidate-manifest.json` | `sha256:023f1276092756232949662e9be6e635d545ab22b2bd19284f11f82789c7fd1a` | PASS |
 | System loop interlock | this file | classification pre-check only; no runtime/system loop mutation authorized | PASS |
 | Session continuity | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `AGENT_HANDOFF_V16_2026-06-06.md` | session sync recorded in the dispatch session-sync commit | PASS |
 
