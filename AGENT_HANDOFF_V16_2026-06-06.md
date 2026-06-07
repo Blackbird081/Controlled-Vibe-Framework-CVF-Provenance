@@ -42,8 +42,9 @@ Startup acknowledged: current mode=`lpci2_t11b_source_verification_dispatched`; 
 
 `lpci2_t11b_source_verification_dispatched`
 
-Current HEAD recorded for this handoff: `026c5c16`
-(T11B four-gate amendment commit. Parent: `290c91b3` T11B dispatch, `486370fe` T11A closure sync.).
+Current HEAD recorded for this handoff: `08293726`
+(T11B four-gate front door and handoff authorization sync. Parent: `07e7ef53`
+T11B four-gate amendment session state sync.).
 
 ## Active Boundary
 

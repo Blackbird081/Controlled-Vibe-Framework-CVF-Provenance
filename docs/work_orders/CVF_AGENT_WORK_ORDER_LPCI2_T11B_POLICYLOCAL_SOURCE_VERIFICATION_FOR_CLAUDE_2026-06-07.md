@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -10,17 +10,21 @@ Date: 2026-06-07
 
 dispatchBaseHead: `486370fe`
 
-executionBaseHead: `486370fe`
+executionBaseHead: `08293726`
 
-closureBaseHead: `N/A - worker must return uncommitted packet for Codex review`
+closureBaseHead: `08293726`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
+Codex execution override: `OPERATOR_AUTHORIZED_CODEX_WORKER_REVIEWER_CLOSURE`
+
 Risk class: R1_LOCAL_VERIFICATION_ONLY
 
-Worker: Claude
+Worker: Claude, or Codex under explicit operator-authorized multi-role override
 
 Reviewer / closer: Codex or operator-designated reviewer
+
+completionReview: `docs/reviews/CVF_LPCI2_T11B_SOURCE_VERIFICATION_COMPLETION_2026-06-07.md`
 
 ## Purpose
 
@@ -39,8 +43,9 @@ path fidelity | hash match | size match | role/lineage reconciliation.
 Target files: 7 (6 direct input candidates + 1 bundle agent_request file).
 
 Owner boundary: Claude owns the verification report, result JSON, and worker
-return packet. Codex owns review, commits, session sync, and later T11C/T11D
-work orders.
+return packet when this packet is delegated to Claude. For the 2026-06-07
+operator-authorized Codex multi-role override, Codex owns worker execution,
+review, commits, session sync, and later T11C/T11D work orders.
 
 ## Authorization / Decision
 
@@ -76,7 +81,7 @@ No body extraction, no ingestion.
 | Role | Owner | Responsibility |
 |---|---|---|
 | Orchestrator / dispatcher | Codex | Review T11A and dispatch T11B |
-| Worker / implementer | Claude | Path verification, hash computation, artifacts, return packet |
+| Worker / implementer | Claude, or Codex under explicit operator override | Path verification, hash computation, artifacts, return packet |
 | Reviewer / closer | Codex or operator-designated reviewer | Review return and decide T11B closure |
 | Operator checkpoint | Operator | Required only for scope expansion beyond path/hash verification |
 
@@ -360,15 +365,15 @@ T11B closes, Codex may open the T11C Classification Pre-Check work order.
 
 ## Closure Checklist
 
-- [ ] Verification report created (7 rows, all four gate columns present).
-- [ ] Result JSON parses and reconciles.
-- [ ] All 7 files have `testPathResult`, `computedHashSha256`, `t11aManifestHashSha256`,
+- [x] Verification report created (7 rows, all four gate columns present).
+- [x] Result JSON parses and reconciles.
+- [x] All 7 files have `testPathResult`, `computedHashSha256`, `t11aManifestHashSha256`,
       `observedSizeBytes`, `t11aManifestSizeBytes`, `sizeMatch`, `roleLineageMatch`,
       and `verificationResult`.
-- [ ] Unicode drift guard applied (`-LiteralPath` used on every filesystem call).
-- [ ] `verificationSummary` includes all-gates-pass count and per-gate failure lists.
-- [ ] No forbidden scope action occurred.
-- [ ] Codex reviewed worker return.
+- [x] Unicode drift guard applied (`-LiteralPath` used on every filesystem call).
+- [x] `verificationSummary` includes all-gates-pass count and per-gate failure lists.
+- [x] No forbidden scope action occurred.
+- [x] Codex reviewed worker return.
 
 ## Return-To-Orchestrator Conditions
 
@@ -420,15 +425,15 @@ corpus classification change, public-sync, provider call, or production claim.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `Status: DISPATCHED_TO_WORKER`; `Commit mode: WORKER_MUST_NOT_COMMIT` | PASS |
-| Completion or reviewer artifact | N/A with reason | Worker has not yet returned T11B packet; reviewer artifact created after acceptance | N/A with reason |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED`; `Commit mode: WORKER_MUST_NOT_COMMIT`; Codex override recorded | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LPCI2_T11B_SOURCE_VERIFICATION_COMPLETION_2026-06-07.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | GC-018 baseline | `docs/baselines/CVF_GC018_LPCI2_T11B_POLICYLOCAL_SOURCE_VERIFICATION_2026-06-07.md` | `Status: ACTIVE`; `baseHead: 486370fe` | PASS |
-| Roadmap state | `docs/roadmaps/CVF_LPCI2_T11_POLICYLOCAL_CORPUS_EXPANSION_READINESS_ROADMAP_2026-06-07.md` | T11 in progress; T11B is next tranche | PASS |
-| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | `nextAllowedMove` routes T11B | PASS |
-| Registry Markdown | `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V16_2026-06-06.md` | Active front doors route T11B verification | PASS |
-| External evidence digest | N/A with reason | Verification result JSON and SHA-256 evidence required before reviewer closure | N/A with reason |
+| Roadmap state | `docs/roadmaps/CVF_LPCI2_T11_POLICYLOCAL_CORPUS_EXPANSION_READINESS_ROADMAP_2026-06-07.md` | T11A/T11B closed; T11C/T11D remain open | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | session sync required after closure commit | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V16_2026-06-06.md` | session sync required after closure commit | PASS |
+| External evidence digest | `policylocal-t11b-source-verification-result.json` | `sha256:0d24870a43b0e33eecddae438d669983be508eff9ed4ca4e112ffb48870fd79d` | PASS |
 | System loop interlock | this file | path/hash verification only; no runtime/system loop mutation authorized | PASS |
-| Session continuity | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `AGENT_HANDOFF_V16_2026-06-06.md` | Session sync required after dispatch commit | PASS |
+| Session continuity | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `AGENT_HANDOFF_V16_2026-06-06.md` | session sync required after closure commit | PASS |
 
 ## Public Export Disposition
 

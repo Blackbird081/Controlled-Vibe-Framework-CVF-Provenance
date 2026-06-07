@@ -89,7 +89,8 @@ reports, or other applied-policy domain documents — CVF requires:
 
 1. T11-A inventories named candidate files and produces a machine-readable
    manifest without reading document body text beyond filesystem metadata.
-2. T11-B source-verifies accessibility and hashes each candidate source file.
+2. T11-B source-verifies accessibility, hashes, sizes, and role/lineage for
+   each target source/request file.
 3. T11-C classifies accessible candidates against the T2 vocabulary and EC-02
    boundary before any ingestion is authorized.
 4. T11-D aggregates evidence into a readiness verdict and either gates T12 or
@@ -167,20 +168,23 @@ public-sync, or decide that mixed case records are legally authoritative.
 
 ### T11-B: Source Verification
 
-**Goal:** confirm each candidate in the T11-A inventory is accessible, has a
-readable source, and can be used as corpus input under existing standards.
+**Goal:** confirm each T11B target resolves to a local file whose hash, size,
+role, and lineage match T11A evidence before later T11C/T11D readiness
+decisions.
 
 **Deliverables:**
 
-- `docs/reference/CVF_LPCI2_T11_SOURCE_VERIFICATION_TABLE_2026-06-07.md` —
-  Source Verification Table per the work-order template standard
-  (`docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`) with required
-  columns: `Claimed item`, `Source file`, `Verified line/section`,
-  `Verified path or symbol`, `Owning interface/function/schema`,
-  `Disposition`;
-- one row per candidate from T11-A;
-- an access-verdict companion table with `accessVerdict` values:
-  `ACCESSIBLE` / `NOT_ACCESSIBLE` / `REQUIRES_OPERATOR_INPUT`.
+- `docs/reference/CVF_LPCI2_T11B_SOURCE_VERIFICATION_REPORT_2026-06-07.md`
+  — four-gate report with one row per T11B target;
+- `CVF-Workspace\Policy_Local\data\generated\policylocal-t11b-source-verification-result.json`
+  — machine-readable result with schema
+  `policylocal.sourceVerification.t11b.v1`;
+- `docs/reviews/CVF_LPCI2_T11B_SOURCE_VERIFICATION_WORKER_RETURN_2026-06-07.md`
+  — return packet for review/closure;
+- one record per T11B target file with `testPathResult`,
+  `computedHashSha256`, `t11aManifestHashSha256`, `observedSizeBytes`,
+  `t11aManifestSizeBytes`, `sizeMatch`, `bundleArtifactRole`,
+  `lineageParentIds`, `roleLineageMatch`, and `verificationResult`.
 
 **Scope boundary:**
 
@@ -193,12 +197,15 @@ readable source, and can be used as corpus input under existing standards.
 
 **Acceptance criteria:**
 
-1. source verification table is present and passes markdown structural check;
-2. every candidate from T11-A has a row with a non-empty `accessVerdict`;
-3. every `ACCESSIBLE` candidate includes a SHA-256 hash in the notes column
-   (or a cited manifest entry) per
-   `docs/reference/CVF_CORPUS_SOURCE_HASH_STANDARD_2026-06-02.md` (NR-04);
-4. no `ACCESSIBLE` candidate has an empty `verified path or symbol` cell.
+1. source verification report is present and passes markdown structural check;
+2. result JSON parses, uses schema
+   `policylocal.sourceVerification.t11b.v1`, and has exactly 7 file records;
+3. every record includes path, hash, size, role/lineage, and
+   `verificationResult` fields;
+4. `HASH_MATCH` is used only when path, hash, size, and role/lineage gates all
+   pass;
+5. Unicode path fallback evidence is recorded when a literal candidate path
+   does not resolve.
 
 ---
 
@@ -328,14 +335,14 @@ Unicode filenames in
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T11A_POLICYLOCAL_CANDIDATE_INVENTORY_FOR_CLAUDE_2026-06-07.md` | `Status: DISPATCHED_TO_WORKER`; `Commit mode: WORKER_MUST_NOT_COMMIT` | PASS for dispatch |
-| Completion or reviewer artifact | N/A with reason | T11A has not returned from worker execution; no completion or reviewer packet is claimed in this dispatch batch | N/A with reason |
-| Roadmap state | `docs/roadmaps/CVF_LPCI2_T11_POLICYLOCAL_CORPUS_EXPANSION_READINESS_ROADMAP_2026-06-07.md` | `Status: PROPOSED`; authorizes staged T11-A/B/C/D readiness work only | PASS for dispatch |
-| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | `currentMode=lpci2_t11a_candidate_inventory_dispatched`; next allowed move routes Claude to T11A | PASS for dispatch |
-| Registry Markdown | `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V16_2026-06-06.md` | Active session front doors record T11A dispatch route and worker-must-not-commit boundary | PASS for dispatch |
-| External evidence digest | N/A with reason | External candidate files are input authority for T11A; worker must produce the bounded manifest/digest before any T11A completion claim | N/A with reason |
-| System loop interlock | `docs/baselines/CVF_GC018_LPCI2_T11A_POLICYLOCAL_CANDIDATE_INVENTORY_2026-06-07.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T11A_POLICYLOCAL_CANDIDATE_INVENTORY_FOR_CLAUDE_2026-06-07.md` | GC-018 baseline plus work order keep implementation in inventory-only mode; T11B/T11C/T11D remain dependency-gated | PASS for dispatch |
-| Session continuity | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `AGENT_HANDOFF_V16_2026-06-06.md` | Current mode and next allowed move route Claude to T11A candidate inventory under worker-must-not-commit boundary | PASS for dispatch |
+| Work order status | T11A and T11B work orders | T11A `CLOSED_PASS_BOUNDED`; T11B `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | T11A/T11B completion packets | T11A and T11B completion reviews exist | PASS |
+| Roadmap state | `docs/roadmaps/CVF_LPCI2_T11_POLICYLOCAL_CORPUS_EXPANSION_READINESS_ROADMAP_2026-06-07.md` | `Status: PROPOSED`; T11A/T11B closed, T11C/T11D open | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | session sync required after T11B closure commit | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V16_2026-06-06.md` | session sync required after T11B closure commit | PASS |
+| External evidence digest | T11A manifests and T11B result JSON | T11B result JSON `sha256:0d24870a43b0e33eecddae438d669983be508eff9ed4ca4e112ffb48870fd79d` recorded in completion | PASS |
+| System loop interlock | T11A/T11B work orders and completions | inventory/source-verification only; no runtime loop mutation | PASS |
+| Session continuity | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `AGENT_HANDOFF_V16_2026-06-06.md` | session sync required after closure commit | PASS |
 
 ---
 
@@ -343,8 +350,8 @@ Unicode filenames in
 
 | Assertion | Required value | Observed value | Status |
 |---|---|---|---|
-| Runtime receipt acceptance | No runtime, provider, query, search, ingestion, or receipt acceptance claim in T11A dispatch | T11A dispatch authorizes inventory/manifest only; worker must not run provider, runtime query, ingestion, OCR, or extraction | PASS |
-| Candidate manifest receipt | Worker-generated manifest is required before T11A completion can be reviewed | No completion manifest is claimed by this roadmap dispatch batch | PASS |
+| Runtime receipt acceptance | No runtime, provider, query, search, ingestion, or receipt acceptance claim in T11A/T11B | T11A closed inventory only; T11B closed source verification only | PASS |
+| Candidate/source verification manifests | T11A manifests and T11B result JSON are required before T11C | T11A manifests and T11B result JSON are recorded in completion packets | PASS |
 
 ---
 
@@ -353,12 +360,12 @@ Unicode filenames in
 DEFERRED_PRIVATE_ONLY
 
 Reason: private Policy_Local corpus candidates and private workspace paths are
-in scope for T11A dispatch.
+in scope for T11A/T11B evidence.
 
-This roadmap and the T11A dispatch packet concern private Policy_Local corpus
-candidates and private workspace paths. No public-sync repository change,
+This roadmap and the T11A/T11B evidence packets concern private Policy_Local
+corpus candidates and private workspace paths. No public-sync repository change,
 public remote push, public catalog update, public readiness claim, or public
-artifact export is authorized by this T11A dispatch batch.
+artifact export is authorized by this T11 batch.
 
 Next public action: N/A with reason. Public export can be reconsidered only
 after a later roadmap creates a public-safe summary that excludes private
@@ -379,7 +386,9 @@ workspace paths, candidate hashes, and non-public source materials.
 | LPCI2-T8 | CLOSED_PASS_BOUNDED | Search layer scaffolding — `finalReadinessVerdict=READY` |
 | LPCI2-T9 | CLOSED_PASS_BOUNDED_CORRECTION_CLEAN | Local search runtime |
 | LPCI2-T10 | CLOSED_PASS_BOUNDED | Foundation readiness hash/schema/receipt verification |
-| **LPCI2-T11** | **PROPOSED** | **Corpus expansion readiness — this roadmap** |
+| LPCI2-T11A | CLOSED_PASS_BOUNDED | Candidate and bundle inventory |
+| LPCI2-T11B | CLOSED_PASS_BOUNDED | Four-gate source verification, with Unicode path fallback finding |
+| **LPCI2-T11** | **PROPOSED** | **Corpus expansion readiness - T11C/T11D remain open** |
 | LPCI2-T12 | NOT_YET_AUTHORIZED | Corpus ingestion — gated behind T11-D `READY` verdict |
 
 ---
@@ -401,18 +410,21 @@ workspace paths, candidate hashes, and non-public source materials.
 
 ---
 
-## Next Allowed Move After This Roadmap Is Committed
+## Next Allowed Move After T11B Closure
 
-Author a fresh GC-018 and a source-verified T11-A Candidate Inventory work
-order. The work order must name the candidate documents already present in
-`Policy_Local\data_input\`, cite the T11-A acceptance criteria above, and carry
-the EC-02 boundary statement.
+Author a fresh GC-018 and a source-verified T11-C Classification Pre-Check
+work order. The work order must consume the T11B resolved-path evidence, carry
+the Unicode path-fidelity finding forward, preserve the EC-02 boundary, and
+classify only the T11B-verified target records before T11D readiness
+aggregation.
 
-Operator input required before T11-A dispatch:
+Operator input required before T11-C dispatch:
 
-- confirmation that EC-02 boundary applies to all `not_yet_in_force`
-  candidates.
+- confirmation only if T11C would expand beyond classification pre-check into
+  extraction, ingestion, runtime query, provider calls, public-sync, current-law
+  claims, or legal advice quality claims.
 
-If the operator has no additional candidates at this time, T11 may be
-scoped to a zero-candidate inventory, producing a `NOT_READY` verdict and
-parking T12 until candidates are available.
+T11C remains forbidden from body extraction, OCR, corpus ingestion, chunking,
+runtime query, provider calls, public-sync, current-law claims, legal advice
+quality claims, hosted readiness, production readiness, public readiness, and
+release readiness.
