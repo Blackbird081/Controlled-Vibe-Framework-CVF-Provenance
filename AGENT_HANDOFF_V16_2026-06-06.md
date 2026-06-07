@@ -42,9 +42,9 @@ Startup acknowledged: current mode=`lpci2_t11d_readiness_gate_closed_pass_bounde
 
 `lpci2_t11d_readiness_gate_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `0bfedda5`
-(governance closure fast-path and worker-return hardening material commit; the
-next session-sync commit records that material commit as parent).
+Current HEAD recorded for this handoff: `62fa6943`
+(DSCP-T1 owner surface map material closure commit; the next session-sync
+commit records that material commit as parent).
 
 ## Active Boundary
 
@@ -242,6 +242,18 @@ It adds no-commit Reviewer Closure Conversion requirements, dispatch-quality
 machine validation, and autorun pre-push parallel hook invocation. Boundary:
 private control-plane hardening only; no T11/T12 eligibility, runtime
 governance behavior, live-provider proof, public-sync, or readiness claim.
+
+DSCP-T1 Owner Surface Map is `CLOSED_PASS_BOUNDED` at material commit
+`62fa6943`. Roadmap:
+`docs/roadmaps/CVF_DSCP_DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK_READINESS_ROADMAP_2026-06-07.md`.
+Completion:
+`docs/reviews/CVF_DSCP_T1_OWNER_SURFACE_MAP_COMPLETION_2026-06-07.md`.
+Result: accepted a source-verified doc-only owner surface map and schema
+proposal for domain-agnostic scan -> classify -> context pack -> retrieve
+interfaces. GC-051 registry now covers the three DSCP-T1 owner source surfaces.
+Boundary: doc-only; no DSCP-T2 authorization, TypeScript implementation,
+runtime pilot, corpus ingestion, provider call, public-sync, production
+readiness, or public readiness claim.
 
 Next allowed move: choose a new roadmap lane, or explicitly authorize the
 post-EC-02 condition-resolution/eligibility re-evaluation path. Do not author
