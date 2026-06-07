@@ -36,21 +36,16 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci2_t10_foundation_readiness_closed`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=author source-verified LPCI2-T11 PolicyLocal Corpus Expansion Readiness roadmap/work order; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`lpci2_t11a_candidate_inventory_dispatched`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=Claude may execute T11A Candidate Inventory under WORKER_MUST_NOT_COMMIT and return uncommitted inventory/manifest evidence; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`lpci2_t10_foundation_readiness_closed`
+`lpci2_t11a_candidate_inventory_dispatched`
 
-Current HEAD recorded for this handoff: `866f92cd`
-(LPCI2-T10 PolicyLocal foundation readiness closure. Work order:
-`docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_FOR_CLAUDE_2026-06-07.md`.
-Worker return:
-`docs/reviews/CVF_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_WORKER_RETURN_2026-06-07.md`.
-Completion:
-`docs/reviews/CVF_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_COMPLETION_2026-06-07.md`.
-Prior HEAD chain: `fcc9f50f` T9 correction scope clarification -> `1729683b`
-final T9 session sync -> `d98a4bc2` T10 dispatch -> `866f92cd` T10 closure.).
+Current HEAD recorded for this handoff: `93bf9909`
+(Parent for T11A dispatch. T10 closure material commit: `866f92cd`; T10
+session sync: `93bf9909`. T11A roadmap, GC-018, and Claude work order are
+prepared in the current dispatch batch.).
 
 ## Active Boundary
 
@@ -610,14 +605,22 @@ Diagnostic boundary:
 
 ## Next Allowed Move
 
-LPCI2-T10 PolicyLocal foundation readiness is `CLOSED_PASS_BOUNDED` at
-material commit `866f92cd`:
+LPCI2-T11A Candidate Inventory is `DISPATCHED_TO_WORKER` for Claude:
 
-`docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_FOR_CLAUDE_2026-06-07.md`
+`docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T11A_POLICYLOCAL_CANDIDATE_INVENTORY_FOR_CLAUDE_2026-06-07.md`
 
-Next allowed move: author a source-verified `LPCI2-T11 PolicyLocal Corpus
-Expansion Readiness` roadmap/work order. Do not treat T9 or T10 as production,
-hosted, public, legal-advice, current-law, provider, chat, vector, or
+Roadmap:
+
+`docs/roadmaps/CVF_LPCI2_T11_POLICYLOCAL_CORPUS_EXPANSION_READINESS_ROADMAP_2026-06-07.md`
+
+GC-018:
+
+`docs/baselines/CVF_GC018_LPCI2_T11A_POLICYLOCAL_CANDIDATE_INVENTORY_2026-06-07.md`
+
+Next allowed move: Claude may inventory the six newly added mixed PolicyLocal
+candidate files and return uncommitted inventory/manifest evidence for Codex
+review. Do not treat T9, T10, or T11A as production, hosted, public,
+legal-advice, current-law, provider, chat, vector, extraction, ingestion, or
 deployment readiness.
 
 The prior product lanes remain parked:
@@ -715,6 +718,25 @@ next roadmap.
 Rollback boundary: revert only the T10 closure session-sync text and state
 registry entries if the closure routing is wrong. Do not revert the T10
 material closure, T9 correction-clean closure, or unrelated continuity history.
+
+## Core Guard Self-Protection Authorization - T11A Dispatch Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+dispatching the T11A PolicyLocal Candidate Inventory work order for Claude.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `AGENT_HANDOFF_V16_2026-06-06.md`
+
+Operator authorization: 2026-06-07 operator instructed Codex to fix the T11
+roadmap and issue a Claude work order, then clarified that newly added files
+are mixed real-case PolicyLocal material rather than pure law.
+
+Rollback boundary: revert only the T11A dispatch session-sync text and state
+registry entries if the dispatch routing is wrong. Do not revert T10 closure,
+T11 roadmap, T11A GC-018/work-order artifacts, or unrelated continuity history.
 
 ## Claim Boundary
 

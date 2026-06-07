@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-07
 
-Current mode marker: `lpci2_t10_foundation_readiness_closed`
+Current mode marker: `lpci2_t11a_candidate_inventory_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lpci2_t10_foundation_readiness_closed`.
+Current mode: `lpci2_t11a_candidate_inventory_dispatched`.
 
 Active handoff:
 
@@ -49,6 +49,32 @@ Active review queue:
 `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
 
 Latest continuity note:
+
+LPCI2-T11 PolicyLocal Corpus Expansion Readiness roadmap is `PROPOSED` and
+T11A Candidate Inventory is `DISPATCHED_TO_WORKER` for Claude.
+
+Roadmap:
+
+`docs/roadmaps/CVF_LPCI2_T11_POLICYLOCAL_CORPUS_EXPANSION_READINESS_ROADMAP_2026-06-07.md`
+
+GC-018:
+
+`docs/baselines/CVF_GC018_LPCI2_T11A_POLICYLOCAL_CANDIDATE_INVENTORY_2026-06-07.md`
+
+Work order:
+
+`docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T11A_POLICYLOCAL_CANDIDATE_INVENTORY_FOR_CLAUDE_2026-06-07.md`
+
+Scope: inventory the six newly added mixed PolicyLocal candidate files under
+`CVF-Workspace/Policy_Local/data_input`, excluding the two existing pilot law
+DOCX files. Claude must return uncommitted inventory/manifest evidence.
+
+Boundary: no body extraction, OCR, corpus ingestion, chunking, runtime query,
+provider calls, public-sync, current-law claim, legal advice quality claim, or
+production/public readiness. EC-02 hard boundary remains: no current-law claim
+before 2026-07-01. T12 corpus ingestion remains gated behind T11-D `READY`.
+
+Prior continuity note:
 
 LPCI2-T10 PolicyLocal foundation readiness is `CLOSED_PASS_BOUNDED` at
 material commit `866f92cd`.
@@ -799,18 +825,17 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LPCI2-T10 PolicyLocal foundation readiness is `CLOSED_PASS_BOUNDED` at
-material commit `866f92cd`.
+LPCI2-T11A Candidate Inventory is `DISPATCHED_TO_WORKER` for Claude.
 
 Work order:
-`docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_FOR_CLAUDE_2026-06-07.md`
+`docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T11A_POLICYLOCAL_CANDIDATE_INVENTORY_FOR_CLAUDE_2026-06-07.md`
 
-Current mode: `lpci2_t10_foundation_readiness_closed`.
+Current mode: `lpci2_t11a_candidate_inventory_dispatched`.
 
-Next allowed move: author a source-verified `LPCI2-T11 PolicyLocal Corpus
-Expansion Readiness` roadmap/work order to inventory candidate corpus additions
-before any runtime expansion. EC-02 freshness review is required on or after
-2026-07-01 before any current-law or production runtime claim.
+Next allowed move: Claude may execute T11A under `WORKER_MUST_NOT_COMMIT` and
+return uncommitted inventory/manifest evidence for Codex review. EC-02
+freshness review is required on or after 2026-07-01 before any current-law or
+production runtime claim.
 
 The prior product lanes remain parked: DEP2 next-auth stable migration is
 `HARD_BLOCKED`, external receipt-anchor provider/service selection is
