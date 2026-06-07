@@ -42,9 +42,9 @@ Startup acknowledged: current mode=`qbs_gate1_public_sync_claim_gate_wire_in_clo
 
 `qbs_gate1_public_sync_claim_gate_wire_in_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `f9f8780d`
-(Graphify guard enforcement source verification closure commit — 4 files: work order, source map, completion packet, GC-051 registry update.
-Prior HEAD: `7e0bf7cf` QBS-GATE1 private completion closure commit.).
+Current HEAD recorded for this handoff: `b8bf84b9`
+(G-GM-08 + G-GM-06 named guard annotation work order committed.
+Prior HEAD chain: `f9f8780d` Graphify source verification closure → `b32feb73` session sync → `b8bf84b9` work order dispatch.).
 
 ## Active Boundary
 
