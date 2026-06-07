@@ -4,7 +4,7 @@ Memory class: FULL_RECORD
 
 docType: work_order
 
-Status: READY_FOR_DISPATCH
+Status: CLOSED
 
 Date: 2026-06-07
 
@@ -14,11 +14,11 @@ Dispatch base head: `b32feb73`
 
 Execution base head: `b32feb73`
 
-Closure base head: `b32feb73`
+Closure base head: `cdadedf7`
 
 dispatchBaseHead: b32feb73
 executionBaseHead: b32feb73
-closureBaseHead: b32feb73
+closureBaseHead: cdadedf7
 
 Commit mode: WORKER_MAY_COMMIT
 
@@ -92,6 +92,8 @@ Confirm no dirty paths intersect the target files. Expected base: `b32feb73`.
 |---|---|
 | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/memory-retrieval-policy.kgr.test.ts` | Claude may add tests |
 | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-retrieval-policy.ts` | Claude may add one-line comments only (optional) |
+| `docs/reviews/CVF_G_GM_08_G_GM_06_NAMED_GUARD_ANNOTATION_COMPLETION_2026-06-07.md` | Reviewer/closer may create closure packet |
+| `AGENT_HANDOFF_V16_2026-06-06.md` | Reviewer/closer may update current HEAD record in a session-sync step |
 | All other files | FORBIDDEN |
 
 ---
@@ -102,6 +104,9 @@ Confirm no dirty paths intersect the target files. Expected base: `b32feb73`.
 - Add `[G-GM-08 Compliance Guard]` named test to `memory-retrieval-policy.kgr.test.ts`
 - Add `[G-GM-06 Confidentiality Guard]` named test to `memory-retrieval-policy.kgr.test.ts`
 - Add up to 2 one-line comments in `memory-retrieval-policy.ts` referencing guard IDs (optional)
+- Create closure packet `docs/reviews/CVF_G_GM_08_G_GM_06_NAMED_GUARD_ANNOTATION_COMPLETION_2026-06-07.md`
+- Update active handoff `AGENT_HANDOFF_V16_2026-06-06.md` HEAD record during reviewer closure/session sync
+- Harden canonical work-order template `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md` for future guard claim-language discipline
 
 **Forbidden:**
 - New runtime logic, new functions, new exports, new branches
@@ -109,6 +114,27 @@ Confirm no dirty paths intersect the target files. Expected base: `b32feb73`.
 - Changes to `CVF_SESSION_MEMORY.md`, handoff, or session state
 - Public-sync, live proof, provider calls
 - CLI graph commands
+
+---
+
+## Guard Claim-Language Discipline
+
+Use `source-visible behavior connection` or `named guard test linkage` for this
+work. Do not claim `functionally enforced`, `directly enforced`, `already
+enforced`, or broad `runtime enforcement behavior`.
+
+Allowed claim wording:
+
+> `G-GM-08` and `G-GM-06` have named tests and comments linking guard IDs to
+> existing retrieval-policy behavior.
+
+Forbidden claim wording:
+
+> `G-GM-08` and `G-GM-06` prove full runtime Graphify guard enforcement.
+
+Metadata such as policy IDs, registry entries, or owner paths proves only
+registry/owner presence. The named tests prove a bounded source/test linkage to
+existing behavior, not full Graphify enforcement readiness.
 
 ---
 
@@ -205,7 +231,7 @@ Close only if: new tests exist with `[G-GM-08` and `[G-GM-06` in descriptions; a
 | All tests pass | VERIFIED |
 | No forbidden file edits | VERIFIED |
 | Line count bounds | VERIFIED |
-| Commit contains only allowed files | VERIFIED |
+| Implementation commit contains only allowed implementation files; closure packet and handoff sync are reviewer-owned | VERIFIED |
 
 ---
 
@@ -255,7 +281,7 @@ This work order claims only:
 
 > G-GM-08 compliance-tag exclusion and G-GM-06 secret-candidate exclusion are
 > explicitly named in test assertions in `memory-retrieval-policy.kgr.test.ts`,
-> creating a machine-verifiable link from guard spec ID to runtime enforcement
+> creating a machine-verifiable link from guard spec ID to existing retrieval
 > behavior.
 
 Does not claim:
@@ -264,3 +290,18 @@ Does not claim:
 - CLI graph command implementation
 - New runtime guard logic beyond existing behavior
 - Public readiness or production readiness
+
+---
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_G_GM_08_G_GM_06_NAMED_GUARD_ANNOTATION_FOR_CLAUDE_2026-06-07.md` | Status `CLOSED`, claim-language discipline recorded, no stale dispatch residue | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_G_GM_08_G_GM_06_NAMED_GUARD_ANNOTATION_COMPLETION_2026-06-07.md` | Final disposition, changed files, claim boundary, gate evidence | PASS |
+| Roadmap state | `N/A with reason` | Source-map follow-up candidate did not require roadmap state mutation in this bounded test/comment tranche | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | GC-051 registry state unchanged by this implementation tranche; `check_corpus_scan_registry.py` passes | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | Human registry surface unchanged by this implementation tranche; no new corpus intake registered | PASS |
+| External evidence digest | `N/A with reason` | No external evidence or provider/service output used | N/A with reason |
+| System loop interlock | `N/A with reason` | No system-loop interlock mutation or new runtime loop introduced | N/A with reason |
+| Session continuity | `AGENT_HANDOFF_V16_2026-06-06.md` | Active handoff HEAD record updated to implementation commit `cdadedf7` | PASS |

@@ -42,9 +42,9 @@ Startup acknowledged: current mode=`qbs_gate1_public_sync_claim_gate_wire_in_clo
 
 `qbs_gate1_public_sync_claim_gate_wire_in_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `b8bf84b9`
-(G-GM-08 + G-GM-06 named guard annotation work order committed.
-Prior HEAD chain: `f9f8780d` Graphify source verification closure → `b32feb73` session sync → `b8bf84b9` work order dispatch.).
+Current HEAD recorded for this handoff: `cdadedf7`
+(G-GM-08 + G-GM-06 named guard annotations + explicit tests committed. 5/5 tests pass.
+Prior HEAD chain: `f9f8780d` Graphify source verification → `b32feb73` session sync → `b8bf84b9` work order → `6ff6bd88` session sync → `cdadedf7` implementation.).
 
 ## Active Boundary
 

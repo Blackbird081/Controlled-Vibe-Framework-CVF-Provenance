@@ -134,6 +134,20 @@ Claim boundary:
 - `tested` means tests or local verification support the claim;
 - `live-proven` requires the repository's live governance proof standard.
 
+Guard/runtime claim-language discipline:
+
+- do not use `functionally enforced`, `directly enforced`, `already enforced`,
+  `runtime enforcement behavior`, or equivalent enforcement-language for a
+  guard/policy unless the cited source contains named guard wiring or an
+  explicit test assertion that names the guard/policy ID;
+- if source behavior exists but is not named as the guard/policy, call it
+  `source-visible behavior connection`, `behavior corresponding to guard
+  intent`, or `implementation candidate`;
+- metadata such as `cvfOwnerExists`, owner paths, registry entries, or policy
+  IDs proves owner/registry presence only, not enforcement;
+- completion packets must keep this distinction in Purpose, Findings,
+  Decision, Claim Boundary, and Finding-To-Governance Learning Disposition.
+
 Final boundary:
 
 - a work order is closed only when the completion packet or final report records
