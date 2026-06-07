@@ -857,7 +857,26 @@
         "searchRuntimeScript": "sha256:7b1ec0f74f8578a46dd4a7419fe1478cb5c490d38b60853d2e137728a5c11b78",
         "chunksFile": "sha256:fe3bf3c36df509b584958da06796795c791fba2d0faeab2a188cc0abd626819c",
         "acceptanceReceiptsFile": "sha256:a8273e358438579360f8fde64129475f7e97e8b9fd889bba074eac083d79223f",
-        "corpusRecordsFile": "sha256:768a84fa26d656cb2e91ffe55dafe656c4d47501c24c1abb283a3d68a12f7eff"
+        "corpusRecordsFile": "sha256:768a84fa26d656cb2e91ffe55dafe656c4d47501c24c1abb283a3d68a12f7eff",
+        "foundationReadinessScript": "sha256:b5f25ad12225f04a4efc94408779af599d6fdc8be1c9d930300cb3301131a4e1",
+        "foundationReadinessReport": "sha256:2db39d4450485f073c4ad8965c8f0a3ddaffb64337049cf53df0b68699a8baa6"
+      },
+      "foundationReadiness": {
+        "status": "CLOSED_PASS_BOUNDED",
+        "wave": "LPCI2-T10",
+        "schemaVersion": "policylocal.foundationReadiness.t10.v1",
+        "verdict": "PASS",
+        "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_FOR_CLAUDE_2026-06-07.md",
+        "workerReturnPath": "docs/reviews/CVF_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_WORKER_RETURN_2026-06-07.md",
+        "completionReviewPath": "docs/reviews/CVF_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_COMPLETION_2026-06-07.md",
+        "verifierPath": "CVF-Workspace/Policy_Local/scripts/policylocal-foundation-readiness.py",
+        "reportPath": "CVF-Workspace/Policy_Local/data/generated/policylocal-foundation-readiness-report.json",
+        "artifactHashesAllPass": true,
+        "schemaChecksAllPass": true,
+        "receiptAssertionsAllPass": true,
+        "boundaryChecksAllPass": true,
+        "freshnessReviewRequiredOnOrAfter": "2026-07-01",
+        "claimBoundary": "local deterministic foundation-readiness only; no provider, LLM, vector, corpus expansion, deployment, public-sync, current-law, legal advice quality, production, hosted, public, or release readiness claim"
       },
       "priorAbsorption": "LPCI2-T4S hash-only smoke test: two DOCX files hashed and normalized. LPCI2-T4: text extracted (READ_SHALLOW), VN_NATIONAL law corpus confirmed, issuingBody=Quoc Hoi, status=amended, answerClass=SUMMARY_WITH_SOURCE. LPCI2-T5: full-body deep scan, effectiveDate=2026-07-01 confirmed P1_effective_clause (both files), GC-048 RECONCILED_VERIFIED, adversarial sampling 4/4 PASS, corpus records upgraded to READ_DEEP. LPCI2-T7: faceted retrieval schema and boundary enforcement contract authored; corpus records upgraded to t7.v1 with topicTags, freshnessStatus, sourceFamily, and processing ledger. LPCI2-T8: query receipt model and retrieval trace design authored; corpus records upgraded to t8.v1 with negativeSearchEvidence, queryReceiptModelRef, and retrievalTraceDesignRef; final readiness verdict READY. LPCI2-T9: search runtime implemented; policylocal-chunk-generator.py (76 chunks, schema policylocal.chunk.t8.v1) and policylocal-search-runtime.py (filter-first/keyword-rank, EC-01--EC-04, receipt emission) created; 5/5 acceptance queries PASS; AQ-01 and AQ-05 required freshness disclosures observed true after correction; policylocal-chunks.json and policylocal-query-receipts-acceptance.json generated.",
       "findings": [
@@ -910,7 +929,7 @@
         "provider call in T5 deep scan (none; local python-docx only; no model inference)",
         "both laws currently in force (effectiveDate=2026-07-01; not yet in force as of 2026-06-04)"
       ],
-      "nextScanRecommendation": "T9 search runtime implemented and correction-cleaned; policylocal pilot corpus search is local-deterministic. EC-02 rescan required on or after 2026-07-01 before any production runtime opens (effectiveDate=2026-07-01). Next: PolicyLocal foundation, corpus expansion, or production deployment work order after operator authorization.",
+      "nextScanRecommendation": "T10 foundation readiness is CLOSED_PASS_BOUNDED with hash-bound verifier/report. Recommended next: LPCI2-T11 PolicyLocal Corpus Expansion Readiness to inventory and source-verify candidate corpus additions. EC-02 rescan remains required on or after 2026-07-01 before any current-law or production runtime claim.",
       "hashAlgorithm": "sha256",
       "hashInput": "sorted-paths-newline-joined-with-trailing-newline",
       "t9CompletionReviewPath": "docs/reviews/CVF_LPCI2_T9_SEARCH_RUNTIME_COMPLETION_2026-06-07.md"

@@ -2,23 +2,23 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
 Date: 2026-06-07
 
 dispatchBaseHead: 1729683b
-executionBaseHead: 1729683b
-closureBaseHead: N/A - worker must return uncommitted packet for Codex review
+executionBaseHead: d835d606
+closureBaseHead: d835d606
 
-Commit mode: WORKER_MUST_NOT_COMMIT
+Commit mode: OPERATOR_AUTHORIZED_CODEX_WORKER_REVIEWER_CLOSURE
 
 Risk class: R1_LOCAL_SCRIPT_AND_EVIDENCE_ONLY
 
-Worker: Claude
+Worker: Codex acting in worker role by operator direction
 
-Reviewer / closer: Codex or operator-designated reviewer
+Reviewer / closer: Codex
 
 ## Purpose
 
@@ -72,17 +72,17 @@ Authority boundary:
 | Role | Owner | Responsibility |
 |---|---|---|
 | Orchestrator / dispatcher | Codex | Source-verify and dispatch this work order |
-| Worker / implementer | Claude | Create verifier, readiness report, and worker return packet; do not commit |
-| Reviewer / closer | Codex or operator-designated reviewer | Review worker diff, run closure gates, commit if accepted |
+| Worker / implementer | Codex, operator-authorized multi-role execution | Create verifier, readiness report, and worker return packet |
+| Reviewer / closer | Codex | Review worker diff, run closure gates, commit accepted closure |
 | Operator checkpoint | Operator | Required only for scope expansion, live/provider proof, public-sync, corpus expansion, deployment, or claim-boundary change |
 
 ## Worker Autonomy / No-Question Rule
 
-Claude must proceed autonomously inside Allowed scope. In-scope schema
+Worker must proceed autonomously inside Allowed scope. In-scope schema
 assertion failures, hash mismatches, missing `N/A with reason`, stale evidence
-wording, and gate failures must be repaired and rerun by Claude before return.
+wording, and gate failures must be repaired and rerun before return.
 
-Claude must stop only when the required repair would exceed Allowed scope,
+Worker must stop only when the required repair would exceed Allowed scope,
 touch a forbidden path, consume secrets or live quota, run provider calls, open
 public-sync, change risk class, add dependencies, expand corpus input, or alter
 the claim boundary.
@@ -97,9 +97,15 @@ Allowed scope:
   `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-foundation-readiness-report.json`.
 - Create worker return packet:
   `docs/reviews/CVF_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_WORKER_RETURN_2026-06-07.md`.
+- Create reviewer completion packet:
+  `docs/reviews/CVF_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_COMPLETION_2026-06-07.md`.
 - Optionally update `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
   and `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` only if the
   readiness report records a new T10 finding or next-action state.
+- Update active session continuity files after closure:
+  `CVF_SESSION/ACTIVE_SESSION_STATE.json`,
+  `CVF_SESSION_MEMORY.md`, and
+  `AGENT_HANDOFF_V16_2026-06-06.md`.
 - Run local deterministic verification commands and governance gates.
 
 Forbidden scope:
@@ -257,13 +263,19 @@ New T10 artifact fields:
 
 ## Work-Order Fulfillment Manifest
 
-### Required Artifact Manifest
+## Required Artifact Manifest
 
 | Path | Output stage | Purpose |
 |---|---|---|
 | `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\scripts\policylocal-foundation-readiness.py` | worker return | deterministic verifier for T9 foundation artifacts |
 | `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-foundation-readiness-report.json` | worker return | machine-readable T10 readiness report |
 | `docs/reviews/CVF_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_WORKER_RETURN_2026-06-07.md` | worker return | worker packet for Codex review and possible closure |
+| `docs/reviews/CVF_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_COMPLETION_2026-06-07.md` | reviewer closure | completion review and final claim boundary |
+| `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | reviewer closure | GC-051 machine registry update for T10 foundation readiness |
+| `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | reviewer closure | operator-readable registry update for T10 foundation readiness |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | session sync | active mode and next allowed move after T10 closure |
+| `CVF_SESSION_MEMORY.md` | session sync | front-door continuity after T10 closure |
+| `AGENT_HANDOFF_V16_2026-06-06.md` | session sync | active handoff continuity after T10 closure |
 
 ### Forbidden Path Manifest
 
@@ -273,9 +285,7 @@ New T10 artifact fields:
 | `.github/*` | no CI or workflow change authorized |
 | `governance/compat/*` | no checker change authorized |
 | `scripts/*` | no repo root script change authorized |
-| `CVF_SESSION/*` | reviewer owns session sync |
-| `CVF_SESSION_MEMORY.md*` | reviewer owns front-door sync |
-| `AGENT_HANDOFF*.md*` | reviewer owns handoff sync |
+| `CVF_SESSION/handoffs/archive/*` | no archive handoff mutation authorized |
 | `docs/roadmaps/*` | no roadmap mutation in worker scope |
 | `package*.json` | no dependency or package change authorized |
 
@@ -286,7 +296,7 @@ New T10 artifact fields:
 | `EXTENSIONS/*` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | Worker must not edit, stage, or claim |
 | `.github/*` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | Worker must not edit, stage, or claim |
 | `governance/compat/*` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | Worker must not edit, stage, or claim |
-| `CVF_SESSION/*` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | Reviewer-only session sync |
+| `CVF_SESSION/*` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | Only active session state may be updated during session sync |
 | `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\scripts\policylocal-foundation-readiness.py` | ABSENT | ABSENT | N/A |
 | `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-foundation-readiness-report.json` | ABSENT | ABSENT | N/A |
 
@@ -313,8 +323,12 @@ Owned files or modules:
 - `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\scripts\policylocal-foundation-readiness.py`
 - `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-foundation-readiness-report.json`
 - `docs/reviews/CVF_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_WORKER_RETURN_2026-06-07.md`
-- Optional GC-051 registry JSON/MD only if T10 records a new finding or next
-  action state.
+- `docs/reviews/CVF_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_COMPLETION_2026-06-07.md`
+- `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
+- `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION_MEMORY.md`
+- `AGENT_HANDOFF_V16_2026-06-06.md`
 
 Forbidden paths:
 
@@ -322,9 +336,10 @@ Forbidden paths:
 
 Write mode:
 
-- create-only for the verifier, readiness report, and worker return packet;
-- modify-listed only for optional GC-051 registry updates;
-- no commit.
+- create-only for the verifier, readiness report, worker return packet, and
+  completion packet;
+- modify-listed only for GC-051 registry and active session continuity updates;
+- commit authorized by operator direction after gates pass.
 
 ## Execution Plan
 
@@ -345,10 +360,10 @@ Write mode:
    - output: `policylocal-foundation-readiness-report.json`;
    - validation: schema checks, count checks, hash checks, receipt assertion
      checks, boundary checks.
-4. Create worker return packet:
+4. Create worker return packet and reviewer completion:
    - input: verifier output, gate results, changed file list;
-   - output: worker return packet under `docs/reviews/`;
-   - validation: no closed-equivalent status, no completion-review claim.
+   - output: worker return packet and completion packet under `docs/reviews/`;
+   - validation: bounded claim and machine closure package evidence.
 5. Run gates:
    - input: uncommitted worker diff;
    - output: gate evidence in worker return packet;
@@ -437,15 +452,47 @@ This work order defines the expected closure package for the reviewer:
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `DISPATCHED_TO_WORKER` before worker; reviewer may close later | N/A with reason: dispatch packet only |
-| Worker return packet | `docs/reviews/CVF_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_WORKER_RETURN_2026-06-07.md` | worker evidence, changed files, claim boundary | BLOCKED until worker returns |
-| Completion review | reviewer-created completion artifact or N/A with reason | final disposition and committed-range gates | BLOCKED until reviewer closure |
-| Roadmap state | `docs/roadmaps/CVF_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_ROADMAP_2026-06-07.md` | predecessor roadmap status `CLOSED_PASS_BOUNDED`; T10 is follow-on foundation readiness | PASS for dispatch |
-| Corpus scan registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` or N/A with reason | T10 finding/next action if updated | BLOCKED until worker return |
-| Corpus scan registry MD | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` or N/A with reason | operator lookup if updated | BLOCKED until worker return |
-| External evidence digest | T10 readiness report and worker return packet | external path, schema, counts, hashes, generated time, privacy boundary | BLOCKED until worker return |
+| Work order status | this file | status `CLOSED_PASS_BOUNDED`; Codex operator-authorized worker/reviewer closure | PASS |
+| Worker return packet | `docs/reviews/CVF_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_WORKER_RETURN_2026-06-07.md` | worker evidence, changed files, claim boundary, verifier output | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_COMPLETION_2026-06-07.md` | final disposition, closure diff gate, external evidence digest, claim boundary | PASS |
+| Roadmap state | `docs/roadmaps/CVF_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_ROADMAP_2026-06-07.md` | predecessor roadmap is already `CLOSED_PASS_BOUNDED`; T10 follow-on foundation readiness is closed by this work order and completion packet | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | GC-051 PolicyLocal entry updated with `foundationReadiness` object and T10 report/script hashes | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | Quick Lookup, Negative Search Evidence Index, and Next Scan Recommendations updated for LPCI2-T10 | PASS |
+| External evidence digest | T10 readiness report and worker return packet | External Artifact Hash Manifest records `sha256:b5f25ad12225f04a4efc94408779af599d6fdc8be1c9d930300cb3301131a4e1` and `sha256:2db39d4450485f073c4ad8965c8f0a3ddaffb64337049cf53df0b68699a8baa6`; schema `policylocal.foundationReadiness.t10.v1`; counts 2/76/5; AQ assertion pass; private-only boundary | PASS |
 | System loop interlock | N/A with reason | local verifier/report only; no downstream runtime loop opened | N/A with reason |
-| Session continuity | reviewer-owned session sync | mode/next move/handoff HEAD recorded by reviewer if the T10 worker packet is accepted | BLOCKED until reviewer-owned closure |
+| Session continuity | reviewer-owned session sync in this closure batch | mode/next move/handoff HEAD will point at final closure sync; active-state gate required before final response | PASS |
+
+## External Artifact Hash Manifest
+
+| Artifact | sha256 | Status |
+|---|---|---|
+| `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\scripts\policylocal-foundation-readiness.py` | `sha256:b5f25ad12225f04a4efc94408779af599d6fdc8be1c9d930300cb3301131a4e1` | PASS |
+| `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-foundation-readiness-report.json` | `sha256:2db39d4450485f073c4ad8965c8f0a3ddaffb64337049cf53df0b68699a8baa6` | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+Receipt artifact:
+`D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-query-receipts-acceptance.json`
+
+T10 report:
+`D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-foundation-readiness-report.json`
+
+| Query ID | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|
+| AQ-01 | `receipts[0].receipt.answerClass` | `SUMMARY_WITH_SOURCE` | `SUMMARY_WITH_SOURCE` | PASS |
+| AQ-01 | `receipts[0].receipt.selectedCandidateIds` | non-empty | 1 item | PASS |
+| AQ-01 | `receipts[0].receipt.freshnessDisclosureApplied` | `true` | `true` | PASS |
+| AQ-02 | `receipts[1].receipt.answerClass` | `ESCALATE_OR_ABSTAIN` | `ESCALATE_OR_ABSTAIN` | PASS |
+| AQ-02 | `receipts[1].receipt.selectedCandidateIds` | `[]` | `[]` | PASS |
+| AQ-03 | `receipts[2].receipt.answerClass` | `ESCALATE_OR_ABSTAIN` | `ESCALATE_OR_ABSTAIN` | PASS |
+| AQ-03 | `receipts[2].receipt.selectedCandidateIds` | `[]` | `[]` | PASS |
+| AQ-04 | `receipts[3].receipt.answerClass` | `ESCALATE_OR_ABSTAIN` | `ESCALATE_OR_ABSTAIN` | PASS |
+| AQ-04 | `receipts[3].receipt.escalateConditionTriggered` | `EC-01` | `EC-01` | PASS |
+| AQ-04 | `receipts[3].receipt.selectedCandidateIds` | `[]` | `[]` | PASS |
+| AQ-05 | `receipts[4].receipt.answerClass` | `ESCALATE_OR_ABSTAIN` | `ESCALATE_OR_ABSTAIN` | PASS |
+| AQ-05 | `receipts[4].receipt.escalateConditionTriggered` | `EC-02` | `EC-02` | PASS |
+| AQ-05 | `receipts[4].receipt.freshnessDisclosureApplied` | `true` | `true` | PASS |
+| AQ-05 | `receipts[4].receipt.selectedCandidateIds` | `[]` | `[]` | PASS |
 
 ## Finding-To-Governance Learning Disposition
 
