@@ -36,14 +36,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci2_t11a_candidate_and_bundle_inventory_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=author a source-verified LPCI2-T11B Source Verification work order for combined T11A candidate and bundle evidence; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`lpci2_t11b_source_verification_dispatched`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=execute T11B path/hash verification for 7 target files per work order and return uncommitted packet; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`lpci2_t11a_candidate_and_bundle_inventory_closed_pass_bounded`
+`lpci2_t11b_source_verification_dispatched`
 
-Current HEAD recorded for this handoff: `2694e88a`
-(T11A candidate and bundle inventory closure material commit.).
+Current HEAD recorded for this handoff: `290c91b3`
+(T11B Source Verification dispatch commit. Parent: `486370fe` T11A closure sync.).
 
 ## Active Boundary
 
@@ -778,6 +778,25 @@ Rollback boundary: revert only the T11A closure session-sync text and state
 registry entries if the closure routing is wrong. Do not revert T9/T10 closure,
 T11 roadmap, T11A worker artifacts, T11A completion review, or unrelated
 continuity history.
+
+## Core Guard Self-Protection Authorization - T11B Dispatch Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+dispatching the T11B PolicyLocal Source Verification work order for Claude.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `AGENT_HANDOFF_V16_2026-06-06.md`
+
+Operator authorization: 2026-06-07 operator instructed Codex to author T11B
+source verification scope (access/path/hash verification, Unicode drift guard
+mandatory) after T11A closed PASS_BOUNDED.
+
+Rollback boundary: revert only the T11B dispatch session-sync text and state
+registry entries if the dispatch routing is wrong. Do not revert T11A closure,
+T11 roadmap, T11B GC-018/work-order artifacts, or unrelated continuity history.
 
 ## Claim Boundary
 
