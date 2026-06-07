@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `erh_rl1b_distributed_rate_limit_backend_closed_pass_bounded`.
+Current mode: `qbs_method_reliability_remediation_closed_pass_bounded`.
 
 Active handoff:
 
@@ -50,17 +50,17 @@ Active review queue:
 
 Latest continuity note:
 
-ERH-RL1B distributed rate-limit backend adapter is `CLOSED_PASS_BOUNDED`:
+QBS method reliability remediation is `CLOSED_PASS_BOUNDED`:
 
 Work order:
 
-`docs/work_orders/CVF_WO_ERH_RL1B_DISTRIBUTED_RATE_LIMIT_BACKEND_2026-06-06.md`
+`docs/work_orders/CVF_WO_QBS_METHOD_RELIABILITY_REMEDIATION_2026-06-06.md`
 
 Completion:
 
-`docs/reviews/CVF_ERH_RL1B_DISTRIBUTED_RATE_LIMIT_BACKEND_COMPLETION_2026-06-06.md`
+`docs/reviews/CVF_QBS_METHOD_RELIABILITY_REMEDIATION_COMPLETION_2026-06-07.md`
 
-Material commit: `d243b349`
+Material commit: `2db8805e`
 
 Delivered:
 
@@ -87,10 +87,25 @@ Verification:
 - Material-range pre-closure gates passed except session-sync state before this
   continuity update.
 
+Delivered:
+
+- `quality-benchmark-suite-methodology.md` §10 gate authority paragraph
+  (0.60 standing gate, 0.55 internal-planning-only), §10.1 calibration
+  anchor requirement, §13 no-parity / F-1 stop-rule boundary.
+- `quality-benchmark-suite-claim-ladder.md` Corpus Power Boundaries,
+  Reviewer Agreement Gate, F-1 Stop-Rule Boundary, expanded Non-Claims.
+- `claim-boundaries.md` F-1 closed-not-met, 48-task aggregate-only,
+  reviewer gate thresholds.
+- `reviewer-calibration-anchors-standard.md` pre-run anchor protocol.
+- `governance/compat/check_qbs_claim_gate.py` machine checker.
+
+Boundary: methodology/checker/calibration-standard only; no live run,
+no corpus expansion, no F-1 reopen, no runtime changes.
+
 Next allowed move: separate live Redis service proof if CVF needs hosted
 multi-instance enforcement evidence, or continue parked DEP2 next-auth stable
-migration, QBS method reliability, or real external receipt-anchor
-provider/service selection.
+migration, or real external receipt-anchor provider/service selection.
+Wire `check_qbs_claim_gate.py` into autorun hook chain requires fresh GC-018.
 
 Prior continuity note:
 

@@ -36,15 +36,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`erh_rl1b_distributed_rate_limit_backend_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=separate live Redis service proof if CVF needs hosted multi-instance enforcement evidence, or continue parked DEP2 next-auth stable migration, QBS method reliability, or real external receipt-anchor provider/service work; parked checkpoint=none.
+Startup acknowledged: current mode=`qbs_method_reliability_remediation_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=separate live Redis service proof if CVF needs hosted multi-instance enforcement evidence, or continue parked DEP2 next-auth stable migration, or real external receipt-anchor provider/service work; parked checkpoint=none.
 
 ## Current Mode
 
-`erh_rl1b_distributed_rate_limit_backend_closed_pass_bounded`
+`qbs_method_reliability_remediation_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `d823c098`
-(closure/session-sync commit for ERH-RL1B distributed rate-limit backend; the
-next dedicated session-sync-only commit records this parent SHA per GC-020).
+Current HEAD recorded for this handoff: `2db8805e`
+(closure commit for QBS method reliability remediation).
 
 ## Active Boundary
 
@@ -149,48 +148,51 @@ Only V16 should be treated as the active root handoff.
   passed. Boundary: adapter-contract and fake-client Redis command-semantics
   proof only; no hosted Redis service proof, multi-instance enforcement claim,
   or production/public readiness.
+- Closed QBS method reliability remediation at material commit `2db8805e`:
+  methodology §10 gate authority restored (0.60 standing gate), §10.1
+  calibration anchor requirement added, §13 no-parity/F-1 stop-rule boundary
+  added; claim ladder Corpus Power Boundaries/Reviewer Agreement Gate/F-1
+  Stop-Rule Boundary sections added; claim-boundaries.md updated; calibration
+  anchors standard and `check_qbs_claim_gate.py` machine checker added.
+  Boundary: methodology/checker/calibration-standard only; no live run, no
+  corpus expansion, no F-1 reopen.
 
 ## Latest Continuity Note
 
-ERH-RL1B distributed rate-limit backend adapter is `CLOSED_PASS_BOUNDED`.
+QBS method reliability remediation is `CLOSED_PASS_BOUNDED`.
 
 Private artifacts:
 
 - Work order:
-  `docs/work_orders/CVF_WO_ERH_RL1B_DISTRIBUTED_RATE_LIMIT_BACKEND_2026-06-06.md`
+  `docs/work_orders/CVF_WO_QBS_METHOD_RELIABILITY_REMEDIATION_2026-06-06.md`
 - Completion:
-  `docs/reviews/CVF_ERH_RL1B_DISTRIBUTED_RATE_LIMIT_BACKEND_COMPLETION_2026-06-06.md`
+  `docs/reviews/CVF_QBS_METHOD_RELIABILITY_REMEDIATION_COMPLETION_2026-06-07.md`
 
-Working-tree changes:
+Changed artifacts (public-sync):
 
-- cvf-web package manifest and lockfile now include `@upstash/redis`.
-- `src/lib/rate-limit.ts` exposes async `RateLimitStore`,
-  `RateLimitRedisClient`, and `UpstashRedisRateLimitStore`.
-- `CVF_RATE_LIMIT_STORE=redis` activates only with complete valid
-  `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN`.
-- Missing, incomplete, or malformed Redis env fails closed.
-- `/api/execute` awaits `limiter.consume` and preserves the 429 response
-  contract.
+- `docs/benchmark/quality-benchmark-suite-methodology.md`
+- `docs/benchmark/quality-benchmark-suite-claim-ladder.md`
+- `docs/evidence/claim-boundaries.md`
+- `docs/benchmark/qbs-1/reviewer-calibration-anchors-standard.md` (new)
+
+Changed artifacts (provenance):
+
+- `governance/compat/check_qbs_claim_gate.py` (new)
 
 Verification summary:
 
-- Material commit: `d243b349`.
-- Pre-dispatch and pre-implementation autorun gates: PASS.
-- Focused rate-limit tests: PASS, 17 tests.
-- `npm run check`: PASS.
-- Material-range pre-closure gates passed except session-sync state before this
-  continuity update.
+- Material commit: `2db8805e`.
+- Pre-implementation autorun gates: PASS.
+- QBS claim gate smoke tests (kappa 0.4464/0.7139/0.3716): ALL CORRECT.
+- QBS claim gate scan — 147 public-sync benchmark artifacts: 0 violations.
 
-Boundary: adapter-contract and fake-client Redis command-semantics proof only;
-no hosted Redis service proof, multi-instance enforcement claim, public-sync,
-hosted readiness, production readiness, public readiness, provider-quality
-claim, cost/performance claim, Learning Orchestrator runtime behavior, or
-autonomous mutation.
+Boundary: methodology/checker/calibration-standard only; no live run, no
+corpus expansion, no F-1 reopen, no runtime changes.
 
 Next allowed move: separate live Redis service proof if CVF needs hosted
 multi-instance enforcement evidence, or continue parked DEP2 next-auth stable
-migration, QBS method reliability, or real external receipt-anchor
-provider/service selection.
+migration, or real external receipt-anchor provider/service selection.
+Wire `check_qbs_claim_gate.py` into autorun hook chain requires fresh GC-018.
 
 Previous continuity:
 
