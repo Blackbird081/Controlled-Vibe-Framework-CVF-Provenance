@@ -4,9 +4,9 @@ Memory class: POINTER_RECORD
 
 Status: ACTIVE SESSION FRONT DOOR
 
-Last updated: 2026-06-06
+Last updated: 2026-06-07
 
-Current mode marker: `qbs_gate1_public_sync_claim_gate_wire_in_closed_pass_bounded`
+Current mode marker: `lpci2_t9_correction_clean_closed`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `qbs_gate1_public_sync_claim_gate_wire_in_closed_pass_bounded`.
+Current mode: `lpci2_t9_correction_clean_closed`.
 
 Active handoff:
 
@@ -50,40 +50,39 @@ Active review queue:
 
 Latest continuity note:
 
-QBS-GATE1 public-sync claim gate wire-in is `CLOSED_PASS_BOUNDED` and
-`EXPORTED`.
+LPCI2-T9 PolicyLocal search runtime is
+`CLOSED_PASS_BOUNDED_CORRECTION_CLEAN` at material commit `f7af185f`
+(original T9 closure `094d82d0`).
 
 Work order:
 
-`docs/work_orders/CVF_WO_QBS_GATE1_PUBLIC_SYNC_CLAIM_GATE_WIRE_IN_FOR_CLAUDE_2026-06-07.md`
+`docs/work_orders/CVF_WO_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_2026-06-07.md`
+
+Roadmap:
+
+`docs/roadmaps/CVF_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_ROADMAP_2026-06-07.md`
 
 Completion:
 
-`docs/reviews/CVF_QBS_GATE1_PUBLIC_SYNC_CLAIM_GATE_WIRE_IN_COMPLETION_2026-06-07.md`
+`docs/reviews/CVF_LPCI2_T9_SEARCH_RUNTIME_COMPLETION_2026-06-07.md`
 
-Source commit: `9676ae37`
+Delivered: corrected AQ-05 freshness disclosure receipt behavior/assertion,
+added Acceptance Receipt Assertion Matrix, added External Artifact Hash
+Manifest, closed the T9 roadmap, updated GC-051 registry evidence, and hardened
+the work-order template plus machine closure package checker.
 
-Work order authoring commit: `7a5bc2dd`
+Verification: corrected acceptance receipts PASS 5/5 with AQ-01 and AQ-05
+`freshnessDisclosureApplied=true`; receipt artifact hash
+`sha256:a8273e358438579360f8fde64129475f7e97e8b9fd889bba074eac083d79223f`;
+local hook chain PASS 61/61 before commit and pre-commit hook PASS 36/36;
+pre-closure material gates PASS except expected session-sync continuity before
+this update.
 
-Public-sync base: `7d33a5887`
-
-Private closure commit: `7e0bf7cf`
-
-Public-sync closure commit: `993014398`
-
-Delivered: accepted QBS claim gate wired into public-sync local hooks and
-documentation CI so public QBS benchmark artifacts cannot bypass reviewer
-agreement, corpus-power, no-parity, or calibration-anchor boundaries.
-
-Verification: fixture self-test PASS 5/5; public `docs/benchmark` scan PASS
-147 artifacts / 0 violations; public-sync pre-push hook PASS; public push PASS
-to `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`.
-
-Boundary: no public-sync push, live/provider calls, QBS rerun, package
-installation, QBS methodology or historical benchmark mutation,
-public/hosted/production readiness, output-quality parity, L4/L5 quality
-claim, cost/performance/provider-quality claim, Learning Orchestrator runtime
-behavior, or autonomous mutation.
+Boundary: local-deterministic pilot only; no provider calls, LLM, vector
+retrieval, legal advice quality, current-law claim, production deployment,
+public-sync, public/hosted/production readiness, provider-quality/cost/
+performance claim, Learning Orchestrator runtime behavior, memory reinjection,
+high-risk promotion, or autonomous mutation.
 
 Prior continuity note:
 
@@ -116,8 +115,9 @@ Delivered:
 Boundary: methodology/checker/calibration-standard only; no live run,
 no corpus expansion, no F-1 reopen, no runtime changes.
 
-Next allowed move: dispatch Claude on QBS-GATE1 public-sync claim gate wire-in
-work order above.
+Next allowed move: author a fresh source-verified PolicyLocal foundation,
+corpus expansion, or deployment work order. EC-02 freshness review is required
+on or after 2026-07-01 before any current-law or production runtime claim.
 
 Prior continuity note:
 
@@ -754,7 +754,8 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LPCI2-T9 PolicyLocal search runtime is `CLOSED_PASS_BOUNDED` at commit `094d82d0`.
+LPCI2-T9 PolicyLocal search runtime is
+`CLOSED_PASS_BOUNDED_CORRECTION_CLEAN` at commit `f7af185f`.
 
 Work order: `docs/work_orders/CVF_WO_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_2026-06-07.md`
 
@@ -762,9 +763,9 @@ Completion: `docs/reviews/CVF_LPCI2_T9_SEARCH_RUNTIME_COMPLETION_2026-06-07.md`
 
 Current mode: `lpci2_t9_complete`.
 
-Next allowed move: operator review of T9 completion. Corpus expansion or
-production deployment requires a fresh operator-authorized work order.
-EC-02 freshness review required on or after 2026-07-01.
+Next allowed move: author a fresh source-verified PolicyLocal foundation,
+corpus expansion, or deployment work order. EC-02 freshness review required on
+or after 2026-07-01.
 
 The prior product lanes remain parked: DEP2 next-auth stable migration is
 `HARD_BLOCKED`, external receipt-anchor provider/service selection is

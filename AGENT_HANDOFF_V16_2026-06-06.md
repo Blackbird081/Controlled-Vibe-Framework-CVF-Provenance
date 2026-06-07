@@ -36,17 +36,19 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci2_t9_complete`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=operator review of T9 completion then corpus expansion or production deployment work order; parked checkpoint=DEP2/Redis lanes remain parked.
+Startup acknowledged: current mode=`lpci2_t9_correction_clean_closed`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=author a fresh source-verified PolicyLocal foundation, corpus expansion, or deployment work order; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`lpci2_t9_complete`
+`lpci2_t9_correction_clean_closed`
 
-Current HEAD recorded for this handoff: `094d82d0`
-(LPCI2-T9 search runtime implementation CLOSED_PASS_BOUNDED. T9 scope: chunk
-generation, keyword/filter search, EC-01--EC-04 boundary enforcement, query
-receipt emission, 5/5 acceptance queries PASS. All 36 pre-commit hooks PASS.
-Prior HEAD chain: `cf13d4a7` T9 WO -> `f44a62ed` sync -> `094d82d0` T9 closure.).
+Current HEAD recorded for this handoff: `f7af185f`
+(LPCI2-T9 correction-clean closure. Original T9 closure `094d82d0`; correction
+fixed AQ-05 freshness disclosure receipt behavior/assertion, added Acceptance
+Receipt Assertion Matrix, added External Artifact Hash Manifest, closed the T9
+roadmap, updated GC-051, and hardened the work-order template plus machine
+closure package checker. Prior HEAD chain: `9e554154` T9 session sync ->
+`f7af185f` correction-clean material commit.).
 
 ## Active Boundary
 
@@ -117,12 +119,13 @@ Only V16 should be treated as the active root handoff.
   `685f3a6f`: default ASCII for agent-authored governed text, source comments,
   tests, work orders, completion packets, handoffs, registries, and public-sync
   summaries; Unicode requires an explicit exception and reason.
-- Closed LPCI2-T9 PolicyLocal search runtime at material commit `094d82d0`:
-  policylocal-chunk-generator.py (76 chunks, schema policylocal.chunk.t8.v1),
-  policylocal-search-runtime.py (filter-first/keyword-rank, EC-01--EC-04,
-  receipt emission), 5/5 acceptance queries PASS, GC-051 registry updated,
-  all 36 pre-commit governance hooks PASS. Local-deterministic only; no
-  provider calls, no LLM, no production deployment.
+- Closed LPCI2-T9 PolicyLocal search runtime at original material commit
+  `094d82d0`, then correction-cleaned at material commit `f7af185f`:
+  AQ-05 now emits and asserts `freshnessDisclosureApplied=true`, T9 has
+  Acceptance Receipt Assertion Matrix and External Artifact Hash Manifest
+  evidence, the T9 roadmap is `CLOSED_PASS_BOUNDED`, GC-051 is updated, and the
+  work-order template plus machine closure package checker are hardened.
+  Local-deterministic only; no provider calls, no LLM, no production deployment.
 - Proposed LPCI2-T9 PolicyLocal search runtime roadmap:
   `docs/roadmaps/CVF_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_ROADMAP_2026-06-07.md`.
   T9 is local deterministic search planning only: chunk generation,
@@ -195,8 +198,9 @@ Only V16 should be treated as the active root handoff.
 
 ## Latest Continuity Note
 
-LPCI2-T9 PolicyLocal search runtime is `CLOSED_PASS_BOUNDED` at material
-commit `094d82d0`.
+LPCI2-T9 PolicyLocal search runtime is
+`CLOSED_PASS_BOUNDED_CORRECTION_CLEAN` at material commit `f7af185f`
+(original T9 closure `094d82d0`).
 
 Private artifacts:
 
@@ -212,16 +216,22 @@ Private artifacts:
 Verification summary:
 
 - Chunk generation: 76 chunks, schema `policylocal.chunk.t8.v1`, all 14 fields verified.
-- Acceptance queries AQ-01--AQ-05: 5/5 PASS.
-- All 36 pre-commit governance hooks: PASS.
-- GC-051 corpus scan registry updated: T9 scan wave, T4-F2 resolved.
+- Acceptance queries AQ-01--AQ-05: 5/5 PASS; AQ-01 and AQ-05 have
+  `freshnessDisclosureApplied=true`.
+- Receipt artifact hash:
+  `sha256:a8273e358438579360f8fde64129475f7e97e8b9fd889bba074eac083d79223f`.
+- Local hook chain: PASS 61/61 before material commit; pre-commit hook:
+  PASS 36/36.
+- GC-051 corpus scan registry updated: T9 scan wave, T4-F2 resolved,
+  T9-F1 assertion gap resolved.
 
 Boundary: local-deterministic pilot only; no provider calls, no LLM, no vector
 retrieval, no production deployment, no public-sync, no legal advice claims.
 EC-02 corpus freshness review required on or after 2026-07-01.
 
-Next allowed move: operator review of T9 completion; then corpus expansion or
-production deployment requires fresh operator-authorized work order.
+Next allowed move: author a fresh source-verified PolicyLocal foundation,
+corpus expansion, or deployment work order. EC-02 freshness review is required
+on or after 2026-07-01 before any current-law or production runtime claim.
 
 Previous continuity:
 
@@ -548,13 +558,14 @@ Diagnostic boundary:
 
 ## Next Allowed Move
 
-LPCI2-T9 PolicyLocal search runtime roadmap is `PROPOSED`:
+LPCI2-T9 PolicyLocal search runtime is
+`CLOSED_PASS_BOUNDED_CORRECTION_CLEAN`:
 
 `docs/roadmaps/CVF_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_ROADMAP_2026-06-07.md`
 
-Next allowed move: review the roadmap or author a fresh source-verified T9 work
-order for local deterministic chunk generation, keyword/filter search,
-boundary enforcement, and query receipt emission.
+Next allowed move: author a fresh source-verified PolicyLocal foundation,
+corpus expansion, or deployment work order. Do not treat T9 as production,
+hosted, public, legal-advice, current-law, provider, chat, or vector readiness.
 
 The prior product lanes remain parked:
 
@@ -572,7 +583,8 @@ Blocked without separate authorization and passing phase gates:
 - automatic optimization;
 - governance-rule retirement;
 - full operational benchmark telemetry claim;
-- T9 implementation without a fresh authorized work order;
+- PolicyLocal foundation/corpus/deployment work without a fresh authorized work
+  order;
 - provider calls;
 - chat runtime;
 - vector/embedding retrieval;
