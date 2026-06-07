@@ -42,10 +42,10 @@ Startup acknowledged: current mode=`lpci2_t11a_candidate_inventory_dispatched`; 
 
 `lpci2_t11a_candidate_inventory_dispatched`
 
-Current HEAD recorded for this handoff: `93bf9909`
-(Parent for T11A dispatch. T10 closure material commit: `866f92cd`; T10
+Current HEAD recorded for this handoff: `1f386cc2`
+(T11A dispatch material commit. T10 closure material commit: `866f92cd`; T10
 session sync: `93bf9909`. T11A roadmap, GC-018, and Claude work order are
-prepared in the current dispatch batch.).
+committed at `1f386cc2`.).
 
 ## Active Boundary
 
