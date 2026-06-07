@@ -90,4 +90,43 @@ describe("KGR memory retrieval integration", () => {
       selected: [],
     });
   });
+
+  it("[G-GM-08 Compliance Guard] excludes non-compliant nodes as disputed", () => {
+    // disputed node has governanceTag: "PENDING_REVIEW" → lifecycleState: "disputed" → excluded
+    const result = evaluateRetrievalRequest(
+      {
+        method: "graph_search",
+        query: "providerRoutingDraft",
+        scope: "project",
+        actorAuthorized: true,
+        candidates: [],
+      },
+      { kgrStore: store },
+    );
+    expect(result.excluded).toContainEqual({ id: disputed.id, reason: "disputed" });
+    expect(result.selected.map((c) => c.id)).not.toContain(disputed.id);
+    expect(result.rawMemoryReleased).toBe(false);
+  });
+
+  it("[G-GM-06 Confidentiality Guard] excludes secret-bearing candidates from retrieval", () => {
+    const secretCandidate = {
+      id: "secret-node",
+      scope: "project",
+      summary: "secret summary",
+      createdAt: 0,
+      auditTrust: 0.8,
+      lifecycleState: "semantic" as const,
+      containsSecret: true,
+    };
+    const result = evaluateRetrievalRequest({
+      method: "keyword",
+      query: "",
+      scope: "project",
+      actorAuthorized: true,
+      candidates: [secretCandidate],
+    });
+    expect(result.excluded).toContainEqual({ id: "secret-node", reason: "privacy_filtered" });
+    expect(result.selected.map((c) => c.id)).not.toContain("secret-node");
+    expect(result.rawMemoryReleased).toBe(false);
+  });
 });
