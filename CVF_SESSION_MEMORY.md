@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-07
 
-Current mode marker: `governance_fast_reviewer_gate_and_front_door_rotation`
+Current mode marker: `governance_fast_reviewer_gate_and_front_door_rotation_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `governance_fast_reviewer_gate_and_front_door_rotation`.
+Current mode: `governance_fast_reviewer_gate_and_front_door_rotation_closed_pass_bounded`.
 
 Active handoff:
 
@@ -58,19 +58,19 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-Governance Fast Reviewer Gate and front-door rotation are in progress from
-base `82b53975`.
+Governance Fast Reviewer Gate and front-door rotation are
+`CLOSED_PASS_BOUNDED` at material commit `f4c08650`.
 
-Planned scope:
+Delivered scope:
 
-- add a `reviewer-fast` local governance hook mode for reviewer-return
+- added a `reviewer-fast` local governance hook mode for reviewer-return
   preflight before full commit;
 - run latency-sensitive local hook modes in parallel by default, with
   `--serial` available for debugging;
-- archive predecessor handoff
+- archived predecessor handoff
   `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V16_2026-06-06.md` and keep
   active V17 compact;
-- keep this front door compact.
+- kept this front door compact.
 
 Latest closed product/control-plane note:
 
@@ -89,12 +89,10 @@ readiness is authorized by this note.
 
 ## Next Allowed Move
 
-Close the Governance Fast Reviewer Gate and front-door rotation batch.
-
-After closure, recommended next roadmap is DSCP-T2 Standard Contract Authoring
-from the accepted DSCP-T1 schema proposal, bounded to TypeScript contracts and
-tests only. DSCP-T2 must not claim runtime pilot, corpus ingestion, provider
-calls, public-sync, production readiness, or public readiness without a fresh
+Recommended next roadmap: DSCP-T2 Standard Contract Authoring from the accepted
+DSCP-T1 schema proposal, bounded to TypeScript contracts and tests only.
+DSCP-T2 must not claim runtime pilot, corpus ingestion, provider calls,
+public-sync, production readiness, or public readiness without a fresh
 operator-authorized work order.
 
 LPCI2-T12 remains forbidden until a separate operator-authorized evidence path

@@ -32,14 +32,15 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`governance_fast_reviewer_gate_and_front_door_rotation`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=close the Governance Fast Reviewer Gate and front-door rotation batch, then choose DSCP-T2 or another operator-authorized roadmap lane; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`governance_fast_reviewer_gate_and_front_door_rotation_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=author DSCP-T2 Standard Contract work order or choose another operator-authorized roadmap lane; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`governance_fast_reviewer_gate_and_front_door_rotation`
+`governance_fast_reviewer_gate_and_front_door_rotation_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `82b53975`
-(DSCP-T1 session sync commit; this batch starts from that clean base).
+Current HEAD recorded for this handoff: `f4c08650`
+(Governance Fast Reviewer Gate material closure commit; this session-sync
+commit records that material commit as parent).
 
 ## Active Boundary
 
@@ -74,24 +75,25 @@ readiness, or public readiness claim.
 
 ## Current Batch
 
-Governance Fast Reviewer Gate and front-door rotation are operator-authorized.
+Governance Fast Reviewer Gate and front-door rotation are
+`CLOSED_PASS_BOUNDED` at material commit `f4c08650`.
 
-Planned scope:
+Delivered scope:
 
-- add a local `reviewer-fast` governance hook mode for reviewer-return
+- added a local `reviewer-fast` governance hook mode for reviewer-return
   preflight before full commit;
-- make latency-sensitive local hook modes run in parallel by default with a
+- made latency-sensitive local hook modes run in parallel by default with a
   `--serial` escape hatch;
-- rotate V16 into the handoff archive and keep V17 compact;
-- compact `CVF_SESSION_MEMORY.md` back to pointer-record size;
-- update `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `AGENTS.md`, and exposure
+- rotated V16 into the handoff archive and kept V17 compact;
+- compacted `CVF_SESSION_MEMORY.md` back to pointer-record size;
+- updated `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `AGENTS.md`, and exposure
   registry pointers to the active V17 handoff.
 
 ## Latest Work / Changes
 
-- Added planned `reviewer-fast` local governance hook mode for early
+- Added `reviewer-fast` local governance hook mode for early
   reviewer-return preflight.
-- Planned local hook latency reduction by making latency-sensitive hook modes
+- Reduced local hook latency by making latency-sensitive hook modes
   parallel by default while retaining `--serial`.
 - Opened V17 compact handoff and archived V16.
 - Compacted `CVF_SESSION_MEMORY.md` to a pointer record.
@@ -123,13 +125,11 @@ history.
 
 ## Next Allowed Move
 
-Close this governance fast reviewer gate and front-door rotation batch.
-
-After closure, recommended next roadmap is DSCP-T2 Standard Contract Authoring
-from the accepted DSCP-T1 schema proposal, bounded to TypeScript contracts and
-tests only. DSCP-T2 must not claim runtime pilot, corpus ingestion, provider
-calls, public-sync, production readiness, or public readiness without a fresh
-operator-authorized work order.
+Recommended next roadmap: DSCP-T2 Standard Contract Authoring from the accepted
+DSCP-T1 schema proposal, bounded to TypeScript contracts and tests only. DSCP-T2
+must not claim runtime pilot, corpus ingestion, provider calls, public-sync,
+production readiness, or public readiness without a fresh operator-authorized
+work order.
 
 LPCI2-T12 remains forbidden until a separate operator-authorized evidence path
 resolves EC-02 review on or after 2026-07-01, known `currentStatus`, known
