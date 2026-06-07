@@ -83,6 +83,7 @@ prior scan here before starting new work.
 | `CVF Edit/` | LEGACY | PARTIALLY_SCANNED | LHW18 | 10 | Integration SDK deferred; GC-047/050 not yet run |
 | `App onboarding/` | LEGACY | NOT_STARTED | — | ? | UI design reference; low priority |
 | `Policy_Local/data_input/` | POLICY_DOCUMENT | DEEP_CLASSIFIED | LPCI2-T10 | 2 | T10 foundation readiness closed; verifier/report hash-bound T9 scripts, corpus, chunks, and receipts; 76 chunks; 5/5 acceptance queries PASS; AQ-05 EC-02 freshness assertion preserved; EC-02 rescan required on or after 2026-07-01 |
+| `DSCP-T1 domain-agnostic owner source surfaces` | CVF_EXTENSION | SCANNED | DSCP-T1 | 3 | Context pack, RAG convergence, and RAG pipeline type surfaces mapped for doc-only domain-agnostic schema proposal; TypeScript contracts deferred to DSCP-T2 |
 | `MLW2-RT1 Context Bundle Runtime Proof` | PROJECT_SOURCE | SCANNED_WITH_FINDINGS | MLW2-RT1 | 8 | route-visible metadata-only contextBundleReadout; deterministic + Alibaba live proof; no full RAG/vector/public claim |
 | `MLW3-RT1 Evidence-To-Learning Runtime Proof` | PROJECT_SOURCE | SCANNED_WITH_FINDINGS | MLW3-RT1 | 8 | route-visible metadata-only evidenceToLearningReadout; deterministic + Alibaba live proof; no truth mutation/orchestrator/public claim |
 | `MLW4-MLW6 RT1 Continuity Audit Simulation Runtime Chain` | PROJECT_SOURCE | SCANNED_WITH_FINDINGS | MLW4-MLW6-RT1 | 8 | route-visible metadata-only continuity/audit/simulation readouts; deterministic + Alibaba live proof; no mutation/promotion/orchestrator/public claim |
@@ -132,6 +133,12 @@ Use this index to find prior findings by domain keyword.
 | MLW4-MLW6-RT1-F1-runtime-chain-proof-added | `MLW4-MLW6 RT1` | continuity, audit-feedback, and simulation/failure gates advanced from contract-only to route-visible metadata evidence | ACCEPT |
 | MLW4-MLW6-RT1-F2-mutation-promotion-boundary | `MLW4-MLW6 RT1` | audit and simulation readouts remain proposal/review only; no mutation or auto-promotion authorized | ACCEPT_WITH_BOUNDARY |
 | ER-GAP1-F1-extension-owner-surface | `External Review GAP1 extension README owner surfaces` | extension README files are owner surfaces for Core KB overlap mapping only; no runtime or public readiness claim | ACCEPT_WITH_BOUNDARY |
+
+### Domain-Agnostic Scan Context Pack
+
+| Finding ID | Corpus | Summary | Disposition |
+| --- | --- | --- | --- |
+| DSCP-T1-F1-governance-envelope-wrapper-needed | `DSCP-T1 domain-agnostic owner source surfaces` | ContextPackagerRequest and RAG pipeline types are reusable owner surfaces but need a governance envelope wrapper before cross-domain runtime use | DEFER_WITH_ROADMAP |
 
 ---
 
