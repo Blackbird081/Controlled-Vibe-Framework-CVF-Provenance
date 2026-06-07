@@ -50,9 +50,8 @@ Active review queue:
 
 Latest continuity note:
 
-LPCI2-T11C Classification Pre-Check is `CLOSED_PASS_BOUNDED` at
-closureBaseHead `2bfd7ea1`, pending material commit and follow-up session-sync
-commit.
+LPCI2-T11C Classification Pre-Check is `CLOSED_PASS_BOUNDED` at material
+commit `6a42a9a4`.
 
 GC-018:
 `docs/baselines/CVF_GC018_LPCI2_T11C_POLICYLOCAL_CLASSIFICATION_PRE_CHECK_2026-06-07.md`.

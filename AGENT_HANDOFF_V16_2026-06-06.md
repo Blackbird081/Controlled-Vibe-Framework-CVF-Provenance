@@ -42,9 +42,9 @@ Startup acknowledged: current mode=`lpci2_t11c_classification_pre_check_closed_p
 
 `lpci2_t11c_classification_pre_check_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `2bfd7ea1`
-(T11C dispatch session-sync commit and T11C closureBaseHead; follow-up
-session-sync commit required after material closure commit.).
+Current HEAD recorded for this handoff: `6a42a9a4`
+(T11C classification pre-check material closure commit; this session-sync
+commit records that material commit as parent.).
 
 ## Active Boundary
 
@@ -206,9 +206,8 @@ Only V16 should be treated as the active root handoff.
 
 ## Latest Continuity Note
 
-LPCI2-T11C Classification Pre-Check is `CLOSED_PASS_BOUNDED` at
-closureBaseHead `2bfd7ea1`, pending material commit and follow-up session-sync
-commit.
+LPCI2-T11C Classification Pre-Check is `CLOSED_PASS_BOUNDED` at material
+commit `6a42a9a4`.
 
 GC-018:
 `docs/baselines/CVF_GC018_LPCI2_T11C_POLICYLOCAL_CLASSIFICATION_PRE_CHECK_2026-06-07.md`.
