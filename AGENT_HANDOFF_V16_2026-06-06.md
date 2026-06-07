@@ -42,9 +42,9 @@ Startup acknowledged: current mode=`lpci2_t11c_classification_pre_check_closed_p
 
 `lpci2_t11c_classification_pre_check_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `6a42a9a4`
-(T11C classification pre-check material closure commit; this session-sync
-commit records that material commit as parent.).
+Current HEAD recorded for this handoff: `fce62cd3`
+(Worker Pending-Return Gate template hardening material closure commit; this
+session-sync commit records that material commit as parent.).
 
 ## Active Boundary
 
@@ -203,6 +203,15 @@ Only V16 should be treated as the active root handoff.
   artifacts, confirmed 2 corpus records, 76 chunks, 5 receipts, and asserted
   AQ-01 through AQ-05 including AQ-05 EC-02 plus
   `freshnessDisclosureApplied=true`. Boundary remains local deterministic only.
+- Closed Worker Pending-Return Gate template hardening at material commit
+  `fce62cd3`: the work-order template, worker autonomy dispatch standard, and
+  closure-quality standard now require no-commit workers to return
+  `executionBaseHead`, actual `git status --short`, applicable component-gate
+  results, and explicit failure dispositions before reviewer/committer
+  closure. Completion:
+  `docs/reviews/CVF_WORKER_PENDING_RETURN_GATE_TEMPLATE_HARDENING_COMPLETION_2026-06-07.md`.
+  Boundary: control-plane template/standard hardening only; no T11D execution,
+  runtime change, provider call, ingestion, public-sync, or readiness claim.
 
 ## Latest Continuity Note
 
