@@ -42,8 +42,9 @@ Startup acknowledged: current mode=`qbs_gate1_public_sync_claim_gate_wire_in_rea
 
 `qbs_gate1_public_sync_claim_gate_wire_in_ready_for_dispatch`
 
-Current HEAD recorded for this handoff: `9676ae37`
-(post-closure QBS checker false-negative hardening commit).
+Current HEAD recorded for this handoff: `7a5bc2dd`
+(QBS-GATE1 work order authoring commit; parent `9676ae37` is the source/base
+commit for worker dispatch).
 
 ## Active Boundary
 
@@ -162,7 +163,8 @@ Only V16 should be treated as the active root handoff.
   closed; filename-token legacy bypass is removed.
 - Authored QBS-GATE1 public-sync claim gate wire-in work order:
   `docs/work_orders/CVF_WO_QBS_GATE1_PUBLIC_SYNC_CLAIM_GATE_WIRE_IN_FOR_CLAUDE_2026-06-07.md`.
-  Target public-sync base is `7d33a5887`; Claude worker must not commit or push.
+  Work order authoring commit is `7a5bc2dd`. Target public-sync base is
+  `7d33a5887`; Claude worker must not commit or push.
 
 ## Latest Continuity Note
 
@@ -176,6 +178,7 @@ Private artifact:
 Source commit:
 
 - QBS checker false-negative hardening: `9676ae37`
+- Work order authoring: `7a5bc2dd`
 
 Target public-sync base:
 

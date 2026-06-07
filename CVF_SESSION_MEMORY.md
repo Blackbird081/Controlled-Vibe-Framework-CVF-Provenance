@@ -58,6 +58,8 @@ Work order:
 
 Source commit: `9676ae37`
 
+Work order authoring commit: `7a5bc2dd`
+
 Public-sync base: `7d33a5887`
 
 Target: wire the accepted QBS claim gate into public-sync local hooks and
