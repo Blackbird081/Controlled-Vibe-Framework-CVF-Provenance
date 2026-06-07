@@ -102,18 +102,24 @@ implementation.
 
 ---
 
-### DSCP-T2: Standard Contract Authoring (FUTURE - NOT YET AUTHORIZED)
+### DSCP-T2: Standard Contract Authoring (CLOSED_PASS_BOUNDED)
 
 **Goal:** Author TypeScript interface files for the proposed domain-agnostic
 schema. Wire them into the appropriate EXTENSIONS module (likely
 `CVF_CONTROL_PLANE_FOUNDATION`). Add contract-level tests.
 
-**Prerequisites:**
-- DSCP-T1 closes with operator-accepted schema proposal.
-- Operator explicitly authorizes DSCP-T2 runtime contract authoring.
+**Deliverables:**
+- Contract: `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.context.contract.ts`
+- Tests: `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.governed.context.contract.test.ts`
+- GC-018: `docs/baselines/CVF_GC018_DSCP_T2_STANDARD_CONTRACT_AUTHORING_2026-06-07.md`
+- Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T2_STANDARD_CONTRACT_AUTHORING_FOR_CLAUDE_2026-06-07.md`
+- Worker return: `docs/reviews/CVF_DSCP_T2_STANDARD_CONTRACT_AUTHORING_WORKER_RETURN_2026-06-07.md`
+- Completion review: `docs/reviews/CVF_DSCP_T2_STANDARD_CONTRACT_AUTHORING_COMPLETION_2026-06-07.md`
 
-**Not authorized until:** DSCP-T1 `CLOSED_PASS_BOUNDED` and explicit operator
-authorization.
+**Closure result:** 8 type exports authored as type-only contracts with
+literal governance locks and focused vitest coverage. No runtime pilot,
+provider call, corpus ingestion, public-sync, production readiness, or
+public readiness claim is made.
 
 ---
 
@@ -146,7 +152,7 @@ authorization.
 | Tranche | Goal | Status |
 |---|---|-|
 | DSCP-T1 | Owner surface map and domain-agnostic schema proposal (doc-only) | CLOSED_PASS_BOUNDED |
-| DSCP-T2 | Standard contract authoring (TypeScript interfaces) | NOT_YET_AUTHORIZED |
+| DSCP-T2 | Standard contract authoring (TypeScript interfaces) | CLOSED_PASS_BOUNDED |
 | DSCP-T3 | Runtime pilot (non-legal domain) | NOT_YET_AUTHORIZED |
 
 ## Acceptance Criteria
@@ -168,7 +174,7 @@ authorization.
 | T1 source verification | Section 6A table in DSCP-T1 work order |
 | T1 governance gates | Worker Pending-Return Gate table in worker return |
 | T1 no `.ts` new files | `git status --short` |
-| T2 TypeScript validity | `tsc --noEmit` in relevant EXTENSIONS module |
+| T2 TypeScript validity | `tsc --noEmit` in `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/` |
 | T3 deterministic proof | Deterministic test in DSCP-T3 worker return |
 
 ## T12 Gate Hard Invariant (Carried Forward from T11D)

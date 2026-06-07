@@ -32,15 +32,15 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`governance_fast_reviewer_gate_and_front_door_rotation_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=author DSCP-T2 Standard Contract work order or choose another operator-authorized roadmap lane; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`dscp_t2_standard_contract_authoring_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=consider DSCP-T3 Runtime Pilot only after operator selects a named domain/runtime pilot scope; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`governance_fast_reviewer_gate_and_front_door_rotation_closed_pass_bounded`
+`dscp_t2_standard_contract_authoring_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `f4c08650`
-(Governance Fast Reviewer Gate material closure commit; this session-sync
-commit records that material commit as parent).
+Current HEAD recorded for this handoff: `6535568d`
+(DSCP-T2 closure sequence is staged on top of this base; final closure commit
+hash is recorded by git after commit).
 
 ## Active Boundary
 
@@ -56,47 +56,45 @@ in archived handoffs and governed completion packets.
 
 ## Latest Continuity Note
 
-DSCP-T1 Owner Surface Map is `CLOSED_PASS_BOUNDED` at material commit
-`62fa6943`, with session sync at `82b53975`.
+DSCP-T2 Standard Contract Authoring is `CLOSED_PASS_BOUNDED` in the current
+closure sequence.
 
 Roadmap:
 `docs/roadmaps/CVF_DSCP_DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK_READINESS_ROADMAP_2026-06-07.md`.
 
 Completion:
-`docs/reviews/CVF_DSCP_T1_OWNER_SURFACE_MAP_COMPLETION_2026-06-07.md`.
+`docs/reviews/CVF_DSCP_T2_STANDARD_CONTRACT_AUTHORING_COMPLETION_2026-06-07.md`.
 
-Result: accepted a source-verified doc-only owner surface map and schema
-proposal for domain-agnostic scan -> classify -> context pack -> retrieve
-interfaces. GC-051 registry covers the three DSCP-T1 owner source surfaces.
+Result: added the type-only CPF governed context contract and focused test
+coverage for the accepted DSCP-T1 domain-agnostic scan -> classify -> context
+pack -> retrieve schema. GC-051 registry covers DSCP-T2 contract/test
+surfaces.
 
-Boundary: doc-only; no DSCP-T2 authorization, TypeScript implementation,
-runtime pilot, corpus ingestion, provider call, public-sync, production
-readiness, or public readiness claim.
+Boundary: type-contract authoring only; no runtime pilot, corpus ingestion,
+provider call, public-sync, hosted readiness, production readiness, public
+readiness, provider-quality/cost/performance claim, memory reinjection,
+high-risk promotion, Learning Orchestrator runtime behavior, or autonomous
+mutation.
 
 ## Current Batch
 
-Governance Fast Reviewer Gate and front-door rotation are
-`CLOSED_PASS_BOUNDED` at material commit `f4c08650`.
+DSCP-T2 Standard Contract Authoring is `CLOSED_PASS_BOUNDED` in the current
+closure sequence.
 
 Delivered scope:
 
-- added a local `reviewer-fast` governance hook mode for reviewer-return
-  preflight before full commit;
-- made latency-sensitive local hook modes run in parallel by default with a
-  `--serial` escape hatch;
-- rotated V16 into the handoff archive and kept V17 compact;
-- compacted `CVF_SESSION_MEMORY.md` back to pointer-record size;
-- updated `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `AGENTS.md`, and exposure
-  registry pointers to the active V17 handoff.
+- added `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.context.contract.ts`;
+- added `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.governed.context.contract.test.ts`;
+- verified CPF `npx tsc --noEmit` PASS;
+- verified focused vitest 30/30 PASS;
+- updated `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` for
+  DSCP-T2 contract/test coverage.
 
 ## Latest Work / Changes
 
-- Added `reviewer-fast` local governance hook mode for early
-  reviewer-return preflight.
-- Reduced local hook latency by making latency-sensitive hook modes
-  parallel by default while retaining `--serial`.
-- Opened V17 compact handoff and archived V16.
-- Compacted `CVF_SESSION_MEMORY.md` to a pointer record.
+- Closed DSCP-T2 Standard Contract Authoring as type-contract only.
+- Converted worker pending return artifacts to bounded closure artifacts.
+- Kept DSCP-T3 and LPCI2-T12 behind explicit operator authorization.
 
 ## Core Guard Self-Protection Authorization
 
@@ -125,11 +123,13 @@ history.
 
 ## Next Allowed Move
 
-Recommended next roadmap: DSCP-T2 Standard Contract Authoring from the accepted
-DSCP-T1 schema proposal, bounded to TypeScript contracts and tests only. DSCP-T2
-must not claim runtime pilot, corpus ingestion, provider calls, public-sync,
-production readiness, or public readiness without a fresh operator-authorized
-work order.
+LHW24 remains the latest closed numbered LHW wave in
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`.
+
+Recommended next roadmap: DSCP-T3 Runtime Pilot only after the operator selects
+a named domain/runtime pilot scope. DSCP-T3 must stay bounded to deterministic
+proof and must not claim provider quality, public readiness, production
+readiness, or corpus ingestion beyond the authorized pilot.
 
 LPCI2-T12 remains forbidden until a separate operator-authorized evidence path
 resolves EC-02 review on or after 2026-07-01, known `currentStatus`, known
