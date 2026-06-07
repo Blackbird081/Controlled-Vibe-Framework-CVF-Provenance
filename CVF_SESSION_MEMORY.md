@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-07
 
-Current mode marker: `lpci2_t10_foundation_readiness_dispatched`
+Current mode marker: `lpci2_t10_foundation_readiness_closed`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lpci2_t10_foundation_readiness_dispatched`.
+Current mode: `lpci2_t10_foundation_readiness_closed`.
 
 Active handoff:
 
@@ -50,32 +50,42 @@ Active review queue:
 
 Latest continuity note:
 
-LPCI2-T10 PolicyLocal foundation readiness is `DISPATCHED_TO_WORKER` at
-dispatch commit `d98a4bc2`.
+LPCI2-T10 PolicyLocal foundation readiness is `CLOSED_PASS_BOUNDED` at
+material commit `866f92cd`.
 
 Work order:
 
 `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_FOR_CLAUDE_2026-06-07.md`
 
-Worker: Claude.
+Worker/reviewer/closer: Codex, operator-authorized multi-role execution.
 
-Commit mode: `WORKER_MUST_NOT_COMMIT`.
+Commit mode: `OPERATOR_AUTHORIZED_CODEX_WORKER_REVIEWER_CLOSURE`.
 
-Expected worker return packet:
+Worker return packet:
 
 `docs/reviews/CVF_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_WORKER_RETURN_2026-06-07.md`
 
-Scope: create local deterministic
-`CVF-Workspace/Policy_Local/scripts/policylocal-foundation-readiness.py`,
-generate
-`CVF-Workspace/Policy_Local/data/generated/policylocal-foundation-readiness-report.json`,
-hash-bind the existing T9 external artifacts, assert AQ-01 through AQ-05
-receipt values, and preserve the EC-02 review boundary.
+Completion:
 
-Verification before dispatch: `git diff --check` PASS,
-`check_work_order_dispatch_quality.py --base 1729683b --head HEAD --enforce`
-PASS, `run_agent_autorun_workflow_gate.py --phase pre-dispatch --base
-1729683b --head HEAD` PASS, and pre-commit hook PASS 36/36 for dispatch commit.
+`docs/reviews/CVF_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_COMPLETION_2026-06-07.md`
+
+Result: created local deterministic
+`CVF-Workspace/Policy_Local/scripts/policylocal-foundation-readiness.py`,
+generated
+`CVF-Workspace/Policy_Local/data/generated/policylocal-foundation-readiness-report.json`,
+hash-bound the existing T9 external artifacts, asserted AQ-01 through AQ-05
+receipt values, preserved AQ-05 EC-02 plus `freshnessDisclosureApplied=true`,
+and preserved the EC-02 review boundary.
+
+External hashes: verifier
+`sha256:b5f25ad12225f04a4efc94408779af599d6fdc8be1c9d930300cb3301131a4e1`;
+report
+`sha256:2db39d4450485f073c4ad8965c8f0a3ddaffb64337049cf53df0b68699a8baa6`.
+
+Verification: T10 verifier PASS; work-order dispatch quality PASS; machine
+closure package PASS; markdown structural completeness PASS; finding-to-
+governance learning PASS; pre-commit hook PASS 36/36 for material commit
+`866f92cd`.
 
 Boundary: no provider calls, LLM/chat runtime, vector retrieval, corpus
 expansion, EC-02 current-law transition before 2026-07-01, deployment,
@@ -789,18 +799,18 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LPCI2-T10 PolicyLocal foundation readiness work order is
-`DISPATCHED_TO_WORKER` at commit `d98a4bc2`.
+LPCI2-T10 PolicyLocal foundation readiness is `CLOSED_PASS_BOUNDED` at
+material commit `866f92cd`.
 
 Work order:
 `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_FOR_CLAUDE_2026-06-07.md`
 
-Current mode: `lpci2_t10_foundation_readiness_dispatched`.
+Current mode: `lpci2_t10_foundation_readiness_closed`.
 
-Next allowed move: Claude may execute the T10 work order under
-`WORKER_MUST_NOT_COMMIT` and return the uncommitted verifier/report packet for
-Codex review. EC-02 freshness review is required on or after 2026-07-01 before
-any current-law or production runtime claim.
+Next allowed move: author a source-verified `LPCI2-T11 PolicyLocal Corpus
+Expansion Readiness` roadmap/work order to inventory candidate corpus additions
+before any runtime expansion. EC-02 freshness review is required on or after
+2026-07-01 before any current-law or production runtime claim.
 
 The prior product lanes remain parked: DEP2 next-auth stable migration is
 `HARD_BLOCKED`, external receipt-anchor provider/service selection is
