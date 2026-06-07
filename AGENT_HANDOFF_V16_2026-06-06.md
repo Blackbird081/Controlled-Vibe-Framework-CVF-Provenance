@@ -236,7 +236,8 @@ Protected paths changed in this session sync:
 
 Authorization: operator-directed four-gate amendment session sync only;
 no scope expansion beyond naming the amendment HEAD SHA and updating
-`nextAllowedMove` to name the four-gate standard.
+`nextAllowedMove` to name the four-gate standard. Front door sync:
+`CVF_SESSION_MEMORY.md` latest continuity note updated in same batch.
 
 ## Previous Continuity (T10)
 

@@ -50,16 +50,25 @@ Active review queue:
 
 Latest continuity note:
 
-LPCI2-T11B Source Verification is `DISPATCHED_TO_WORKER` at dispatch commit
-`290c91b3`. GC-018:
+LPCI2-T11B Source Verification work order and GC-018 amended to four-gate
+scan-layer standard at commit `026c5c16` (session sync `07e7ef53`).
+
+Four gates: path fidelity (`Test-Path -LiteralPath`) | hash match (SHA-256
+binary vs T11A `artifactHashSha256`) | size match (`Get-Item -LiteralPath
+.Length` vs T11A `sizeBytes`) | role/lineage reconciliation
+(`bundleArtifactRole` + `lineageParentIds` vs T11A bundle manifest).
+
+`verificationResult` vocab: `HASH_MATCH` | `HASH_MISMATCH` | `SIZE_MISMATCH` |
+`ROLE_LINEAGE_MISMATCH` | `PATH_NOT_FOUND` | `READ_ERROR`. `HASH_MATCH` only
+when all four gates pass.
+
+GC-018:
 `docs/baselines/CVF_GC018_LPCI2_T11B_POLICYLOCAL_SOURCE_VERIFICATION_2026-06-07.md`.
 Work order:
 `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T11B_POLICYLOCAL_SOURCE_VERIFICATION_FOR_CLAUDE_2026-06-07.md`.
-
-Scope: path/hash verification for 7 target files (6 direct candidates +
-BNDL-006 agent_request). Mandatory Unicode drift guard: `-LiteralPath` on all
-filesystem calls; `sys.stdout.reconfigure(encoding='utf-8')` if using Python.
-WORKER_MUST_NOT_COMMIT.
+Status: `DISPATCHED_TO_WORKER`. WORKER_MUST_NOT_COMMIT.
+Mandatory: `-LiteralPath` on all filesystem calls;
+`sys.stdout.reconfigure(encoding='utf-8')` if Python.
 
 Prior continuity note:
 
