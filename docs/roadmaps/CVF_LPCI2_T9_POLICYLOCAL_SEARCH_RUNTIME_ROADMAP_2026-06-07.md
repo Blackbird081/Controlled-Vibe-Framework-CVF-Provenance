@@ -1,8 +1,8 @@
 # CVF LPCI2-T9 PolicyLocal Search Runtime Roadmap
 
-Memory class: FULL_RECORD
+Memory class: SUMMARY_RECORD
 
-Status: PROPOSED
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -20,7 +20,8 @@ PolicyLocal pilot corpus. It turns the T8 governance scaffold into an
 implementation plan for chunk generation, keyword/filter retrieval, response
 boundary enforcement, and query receipt emission.
 
-This roadmap does not dispatch implementation by itself.
+This roadmap originally scoped implementation handoff only; implementation
+later proceeded through the separate T9 work order named below.
 
 ## Scope / Applies To
 
@@ -29,8 +30,8 @@ Applies to future LPCI2-T9 work over the local PolicyLocal workspace:
 - corpus records at
   `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-corpus-records.json`;
 - future generated chunk/index/query receipt files in the same local workspace;
-- governing repo artifacts under `docs/reference/`, `docs/reviews/`,
-  `docs/work_orders/`, and `docs/corpus-intelligence/`.
+- governing repo artifacts under `docs/reference/`, `docs/reviews/`, the
+  T9 work order path named in this file, and `docs/corpus-intelligence/`.
 
 Allowed future T9 implementation scope, only after a separate work order:
 
@@ -73,8 +74,18 @@ Authorization: operator requested a new roadmap after worktree cleanup on
 2026-06-07.
 
 Decision: create a proposed LPCI2-T9 roadmap for local deterministic
-PolicyLocal search runtime work-order authoring. Do not dispatch implementation
-from this roadmap alone.
+PolicyLocal search runtime work-order authoring. The implementation authority
+must come from the separate T9 work order.
+
+Closure addendum, 2026-06-07: T9 implementation was dispatched through
+`docs/work_orders/CVF_WO_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_2026-06-07.md`
+and closed through
+`docs/reviews/CVF_LPCI2_T9_SEARCH_RUNTIME_COMPLETION_2026-06-07.md`. Codex
+correction updated the AQ-05 freshness disclosure receipt, added assertion
+matrix/hash-manifest evidence, and hardened the work-order template plus
+machine closure package checker. This roadmap is now closed bounded as the T9
+planning owner; PolicyLocal foundation, corpus expansion, or deployment require
+a fresh operator-authorized work order.
 
 ## Roadmap Decision
 
@@ -94,9 +105,10 @@ Rationale:
 
 ## Non-Goals
 
-- Do not implement T9 in this roadmap.
-- Do not create search scripts, chunk files, index files, API routes, UI, or
-  provider adapters in this roadmap.
+- Historical roadmap-authoring phase only: implementation authority belongs to
+  the separate T9 work order.
+- Search scripts, chunk files, index files, API routes, UI, or provider
+  adapters require separate work-order authority.
 - Do not build chat runtime or LLM answer generation.
 - Do not add vector search or embeddings.
 - Do not claim legal advice quality or current-law status.
@@ -142,7 +154,7 @@ Rationale:
 
 | Tranche | Name | Objective | Exit criteria |
 | --- | --- | --- | --- |
-| T9A | Search Work Order And Source Map | Create source-verified work order with allowed paths, tests, and forbidden claims | work order DISPATCH_READY only after autorun gates pass |
+| T9A | Search Work Order And Source Map | Create source-verified work order with allowed paths, tests, and forbidden claims | work order eligible for worker handoff only after autorun gates pass |
 | T9B | Chunk Generator | Generate article-boundary chunks from existing t8 corpus records | `policylocal-chunks.json`; drift check; chunk hash check; tests |
 | T9C | Keyword/Filter Index | Build local deterministic index over chunk rows | exact/filter/topic/query cases pass; no vector or provider |
 | T9D | Boundary And Receipt Runtime | Apply EC-01 through EC-04, freshness disclosure, and receipt emission | accepted and escalate receipts conform to T8 model |
@@ -151,8 +163,8 @@ Rationale:
 
 ## Work Plan
 
-1. Author a T9 work order with source-verified allowed paths and no runtime
-   implementation before pre-dispatch gates pass.
+1. Author a T9 work order with source-verified allowed paths; runtime
+   implementation begins only after the required gates pass.
 2. Recheck local corpus drift before generating chunks.
 3. Generate chunk rows from existing t8 corpus records only.
 4. Build deterministic keyword/filter retrieval over chunk rows.
@@ -168,8 +180,8 @@ Recommended next work order:
 
 `docs/work_orders/CVF_WO_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_2026-06-07.md`
 
-Recommended status at authoring: `DRAFT` or `DISPATCH_READY` only after source
-verification and pre-dispatch autorun pass.
+Recommended status at authoring: `DRAFT` until source verification and
+pre-dispatch autorun pass, then worker-handoff eligible.
 
 Allowed future changed paths should be constrained to:
 
@@ -337,6 +349,63 @@ status, runtime answer truth, or production response readiness.
 | Structural negative search evidence is not runtime query evidence | RUNTIME_SIGNAL_GAP | RUNTIME_BEHAVIOR_LEARNING | MACHINE_CHECK_CANDIDATE | DEFERRED_TO_T9 | T9 work order must produce deterministic query receipts |
 | Legal corpus search can be overclaimed as legal advice | CLAIM_BOUNDARY_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | HANDLED_IN_BATCH | Claim boundary preserves SUMMARY_WITH_SOURCE and ESCALATE_OR_ABSTAIN limits |
 
+Correction learning disposition:
+
+| Finding | Defect class | Learning lane | Disposition | Next control action |
+| --- | --- | --- | --- | --- |
+| Roadmap remained PROPOSED after T9 closed | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | Machine closure checker now rejects no-roadmap/N/A closure rows when roadmap paths are cited |
+| Runtime receipt evidence needed required-vs-observed assertions | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | TEMPLATE_UPDATED | Work-order template now requires Acceptance Receipt Assertion Matrix for receipt-based PASS claims |
+
+## Acceptance Receipt Assertion Matrix
+
+Receipt artifact:
+`CVF-Workspace/Policy_Local/data/generated/policylocal-query-receipts-acceptance.json`
+verified after correction run at `2026-06-07T05:48:52.523037+00:00`.
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+| --- | --- | --- | --- | --- | --- |
+| AQ-01 | acceptance receipts | `receipts[0].receipt.answerClass` | `SUMMARY_WITH_SOURCE` | `SUMMARY_WITH_SOURCE` | PASS |
+| AQ-01 | acceptance receipts | `receipts[0].receipt.freshnessDisclosureApplied` | `true` | `true` | PASS |
+| AQ-02 | acceptance receipts | `receipts[1].receipt.selectedCandidateIds` | `[]` | `[]` | PASS |
+| AQ-03 | acceptance receipts | `receipts[2].receipt.selectedCandidateIds` | `[]` | `[]` | PASS |
+| AQ-04 | acceptance receipts | `receipts[3].receipt.escalateConditionTriggered` | `EC-01` | `EC-01` | PASS |
+| AQ-05 | acceptance receipts | `receipts[4].receipt.escalateConditionTriggered` | `EC-02` | `EC-02` | PASS |
+| AQ-05 | acceptance receipts | `receipts[4].receipt.freshnessDisclosureApplied` | `true` | `true` | PASS |
+| AQ-05 | acceptance receipts | `receipts[4].receipt.selectedCandidateIds` | `[]` | `[]` | PASS |
+
+## External Artifact Hash Manifest
+
+| Artifact | Evidence role | sha256 | Generated or verified at | Status |
+| --- | --- | --- | --- | --- |
+| `CVF-Workspace/Policy_Local/scripts/policylocal-chunk-generator.py` | chunk generator script | `sha256:77fd13ba3397b6fdaca32e4246a85598117891fa754f05f243884fd5a2699602` | `Get-FileHash`, 2026-06-07 | PASS |
+| `CVF-Workspace/Policy_Local/scripts/policylocal-search-runtime.py` | corrected search runtime and verifier | `sha256:7b1ec0f74f8578a46dd4a7419fe1478cb5c490d38b60853d2e137728a5c11b78` | `Get-FileHash`, 2026-06-07 | PASS |
+| `CVF-Workspace/Policy_Local/data/generated/policylocal-chunks.json` | generated chunk corpus | `sha256:fe3bf3c36df509b584958da06796795c791fba2d0faeab2a188cc0abd626819c` | `Get-FileHash`, 2026-06-07 | PASS |
+| `CVF-Workspace/Policy_Local/data/generated/policylocal-query-receipts-acceptance.json` | corrected acceptance receipts | `sha256:a8273e358438579360f8fde64129475f7e97e8b9fd889bba074eac083d79223f` | generated by `policylocal-search-runtime.py --acceptance`, 2026-06-07T05:48:52.523037+00:00 | PASS |
+| `CVF-Workspace/Policy_Local/data/generated/policylocal-corpus-records.json` | source corpus records | `sha256:768a84fa26d656cb2e91ffe55dafe656c4d47501c24c1abb283a3d68a12f7eff` | `Get-FileHash`, 2026-06-07 | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_WO_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_2026-06-07.md` | Status `CLOSED`; correction authorization and assertion evidence recorded | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LPCI2_T9_SEARCH_RUNTIME_COMPLETION_2026-06-07.md` | Status `CLOSED_PASS_BOUNDED`; corrected 5/5 acceptance query evidence; claim boundary recorded | PASS |
+| Roadmap state | `docs/roadmaps/CVF_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_ROADMAP_2026-06-07.md` | This file status `CLOSED_PASS_BOUNDED`; closure addendum recorded | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | LPCI2-T9 entry updated; chunkCount=76; acceptanceQueryAllPass=true; freshnessDisclosureAllRequiredPass=true | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | PolicyLocal quick lookup and negative evidence index updated for corrected T9 | PASS |
+| External evidence digest | External Artifact Hash Manifest in this file and completion review | CVF-Workspace scripts/data hashes recorded; receipt count=5; chunk count=76 | PASS |
+| System loop interlock | N/A with reason: T9 is local-deterministic pilot search only; no live provider, memory bus, or downstream system loop is opened | No system-loop registration required | N/A with reason: local-deterministic pilot search only |
+| Session continuity | `CVF_SESSION_MEMORY.md`, `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `AGENT_HANDOFF_V16_2026-06-06.md` | Session-sync commit records corrected T9 closure and next allowed move | PASS |
+
+## Closure Diff Gate
+
+| Requirement | Final artifact | Status |
+| --- | --- | --- |
+| Generate chunks before index | `policylocal-chunks.json`, 76 chunks | PASS |
+| Emit query receipts | corrected acceptance receipts, 5/5 PASS | PASS |
+| Preserve freshness disclosure | AQ-01 and AQ-05 observed `freshnessDisclosureApplied=true` | PASS |
+| Keep boundary limited | no provider, LLM, vector, production, public, or legal advice claim | PASS |
+| Update downstream registry | GC-051 JSON/MD updated for corrected T9 evidence | PASS |
+
 ## Public Export Disposition
 
 `DEFERRED_PRIVATE_ONLY`
@@ -350,8 +419,9 @@ artifact selection, remote verification, and public commit evidence.
 
 ## Claim Boundary
 
-This roadmap claims only that PolicyLocal LPCI2 has a source-backed T9 search
-runtime work-order candidate after T8 readiness. It does not implement search,
-chat, provider use, vector retrieval, legal advice, latest-law status, hosted
-readiness, production readiness, public readiness, public-sync, memory
-reinjection, autonomous mutation, or Learning Orchestrator runtime behavior.
+This roadmap claims only that PolicyLocal LPCI2 opened and closed a
+source-backed T9 local deterministic search-runtime tranche after T8 readiness.
+It does not claim chat, provider use, vector retrieval, legal advice,
+latest-law status, hosted readiness, production readiness, public readiness,
+public-sync, memory reinjection, autonomous mutation, or Learning Orchestrator
+runtime behavior.

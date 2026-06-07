@@ -64,6 +64,20 @@ EXTERNAL_PATH_RE = re.compile(
     r"(?i)(?:[A-Z]:\\|[A-Z]:/|\\\\|/Users/|/home/|/mnt/)"
 )
 INVALID_DEFECT_CLASS_RE = re.compile(r"\bEVIDENCE_GAP\b")
+ROADMAP_REF_RE = re.compile(r"`?(docs/roadmaps/[^`\s|)]+\.md)`?")
+ROADMAP_ABSENCE_RE = re.compile(
+    r"\b(no\s+dedicated|no\s+active|no\s+roadmap|standalone\s+work\s+order)\b",
+    re.IGNORECASE,
+)
+RECEIPT_ACCEPTANCE_RE = re.compile(
+    r"\b(receipt|query receipts?|acceptance quer(?:y|ies)|selectedCandidateIds|freshnessDisclosureApplied)\b",
+    re.IGNORECASE,
+)
+EXTERNAL_EVIDENCE_SIGNAL_RE = re.compile(
+    r"\b(CVF-Workspace|not git-tracked|external artifacts?|external evidence|external path)\b",
+    re.IGNORECASE,
+)
+SHA256_RE = re.compile(r"\b(?:sha256:)?[0-9a-f]{64}\b", re.IGNORECASE)
 
 
 def _run_git(args: list[str]) -> tuple[int, str, str]:
@@ -251,6 +265,10 @@ def _is_pass(value: str) -> bool:
     return _clean(value).upper().startswith("PASS")
 
 
+def _has_heading(text: str, heading_fragment: str) -> bool:
+    return bool(_extract_heading_section(text, heading_fragment))
+
+
 def _source_verification_has_external_path(text: str) -> bool:
     section = _extract_heading_section(text, "Source Verification")
     return bool(section and EXTERNAL_PATH_RE.search(section))
@@ -312,6 +330,34 @@ def validate_machine_closure_package(path: str, text: str) -> list[str]:
             if not (_is_pass(final_status) or final_status.upper().startswith("BLOCKED")):
                 issues.append(
                     f"corpus/search/classification closure row `{item}` must be PASS or BLOCKED with reason"
+                )
+
+    roadmap_refs = sorted(set(ROADMAP_REF_RE.findall(text)))
+    roadmap_row = rows.get("roadmap state")
+    if roadmap_refs and roadmap_row is not None:
+        roadmap_final_status = _clean(roadmap_row.get("Final status", ""))
+        roadmap_row_text = " ".join(roadmap_row.values())
+        if _is_na_with_reason(roadmap_final_status) or ROADMAP_ABSENCE_RE.search(roadmap_row_text):
+            issues.append(
+                "Machine Closure Package row `Roadmap state` cannot claim N/A/no roadmap "
+                f"when the artifact cites roadmap path(s): {', '.join(roadmap_refs)}"
+            )
+
+    if RECEIPT_ACCEPTANCE_RE.search(text) and not _has_heading(text, "Acceptance Receipt Assertion Matrix"):
+        issues.append(
+            "receipt/query acceptance closure must include an `Acceptance Receipt Assertion Matrix` "
+            "that records required value, observed value, and status"
+        )
+
+    external_row = rows.get("external evidence digest")
+    if external_row is not None and _is_pass(external_row.get("Final status", "")):
+        external_text = " ".join(external_row.values())
+        external_manifest = _extract_heading_section(text, "External Artifact Hash Manifest")
+        if EXTERNAL_EVIDENCE_SIGNAL_RE.search(external_text + "\n" + external_manifest):
+            if not SHA256_RE.search(external_text + "\n" + external_manifest):
+                issues.append(
+                    "Machine Closure Package row `External evidence digest` is PASS for external evidence "
+                    "but lacks a sha256 hash in the row or External Artifact Hash Manifest"
                 )
 
     return issues

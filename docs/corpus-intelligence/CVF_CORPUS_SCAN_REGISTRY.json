@@ -847,9 +847,19 @@
         "chunkSchemaVersion": "policylocal.chunk.t8.v1",
         "chunkCount": 76,
         "acceptanceQueryCount": 5,
-        "acceptanceQueryAllPass": true
+        "acceptanceQueryAllPass": true,
+        "freshnessDisclosureAllRequiredPass": true,
+        "aq05FreshnessDisclosureApplied": true,
+        "acceptanceReceiptGeneratedAt": "2026-06-07T05:48:52.523037+00:00"
       },
-      "priorAbsorption": "LPCI2-T4S hash-only smoke test: two DOCX files hashed and normalized. LPCI2-T4: text extracted (READ_SHALLOW), VN_NATIONAL law corpus confirmed, issuingBody=Quoc Hoi, status=amended, answerClass=SUMMARY_WITH_SOURCE. LPCI2-T5: full-body deep scan, effectiveDate=2026-07-01 confirmed P1_effective_clause (both files), GC-048 RECONCILED_VERIFIED, adversarial sampling 4/4 PASS, corpus records upgraded to READ_DEEP. LPCI2-T7: faceted retrieval schema and boundary enforcement contract authored; corpus records upgraded to t7.v1 with topicTags, freshnessStatus, sourceFamily, and processing ledger. LPCI2-T8: query receipt model and retrieval trace design authored; corpus records upgraded to t8.v1 with negativeSearchEvidence, queryReceiptModelRef, and retrievalTraceDesignRef; final readiness verdict READY. LPCI2-T9: search runtime implemented; policylocal-chunk-generator.py (76 chunks, schema policylocal.chunk.t8.v1) and policylocal-search-runtime.py (filter-first/keyword-rank, EC-01--EC-04, receipt emission) created; 5/5 acceptance queries PASS; policylocal-chunks.json and policylocal-query-receipts-acceptance.json generated.",
+      "externalEvidenceHashes": {
+        "chunkGeneratorScript": "sha256:77fd13ba3397b6fdaca32e4246a85598117891fa754f05f243884fd5a2699602",
+        "searchRuntimeScript": "sha256:7b1ec0f74f8578a46dd4a7419fe1478cb5c490d38b60853d2e137728a5c11b78",
+        "chunksFile": "sha256:fe3bf3c36df509b584958da06796795c791fba2d0faeab2a188cc0abd626819c",
+        "acceptanceReceiptsFile": "sha256:a8273e358438579360f8fde64129475f7e97e8b9fd889bba074eac083d79223f",
+        "corpusRecordsFile": "sha256:768a84fa26d656cb2e91ffe55dafe656c4d47501c24c1abb283a3d68a12f7eff"
+      },
+      "priorAbsorption": "LPCI2-T4S hash-only smoke test: two DOCX files hashed and normalized. LPCI2-T4: text extracted (READ_SHALLOW), VN_NATIONAL law corpus confirmed, issuingBody=Quoc Hoi, status=amended, answerClass=SUMMARY_WITH_SOURCE. LPCI2-T5: full-body deep scan, effectiveDate=2026-07-01 confirmed P1_effective_clause (both files), GC-048 RECONCILED_VERIFIED, adversarial sampling 4/4 PASS, corpus records upgraded to READ_DEEP. LPCI2-T7: faceted retrieval schema and boundary enforcement contract authored; corpus records upgraded to t7.v1 with topicTags, freshnessStatus, sourceFamily, and processing ledger. LPCI2-T8: query receipt model and retrieval trace design authored; corpus records upgraded to t8.v1 with negativeSearchEvidence, queryReceiptModelRef, and retrievalTraceDesignRef; final readiness verdict READY. LPCI2-T9: search runtime implemented; policylocal-chunk-generator.py (76 chunks, schema policylocal.chunk.t8.v1) and policylocal-search-runtime.py (filter-first/keyword-rank, EC-01--EC-04, receipt emission) created; 5/5 acceptance queries PASS; AQ-01 and AQ-05 required freshness disclosures observed true after correction; policylocal-chunks.json and policylocal-query-receipts-acceptance.json generated.",
       "findings": [
         {
           "id": "T4S-F1-docx-text-extraction-deferred",
@@ -880,6 +890,16 @@
           "learningLane": "RUNTIME_BEHAVIOR_LEARNING",
           "f2gRef": "docs/reviews/CVF_LPCI2_T5_POLICYLOCAL_DEEP_CLASSIFICATION_COMPLETION_2026-06-04.md#finding-to-governance-learning-disposition",
           "resolvedBy": "LPCI2-T9"
+        },
+        {
+          "id": "T9-F1-aq05-freshness-assertion-gap",
+          "summary": "Original T9 verifier marked AQ-05 PASS without asserting freshnessDisclosureApplied=true even though the work order required it for the EC-02 not_yet_in_force path.",
+          "disposition": "ACCEPT_NO_ACTION",
+          "nextAction": "RESOLVED by T9 correction: runtime/verifier updated; AQ-05 now emits freshnessDisclosureApplied=true; template and machine closure checker hardened.",
+          "defectClass": "MACHINE_GATE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_LPCI2_T9_SEARCH_RUNTIME_COMPLETION_2026-06-07.md#finding-to-governance-learning-disposition",
+          "resolvedBy": "LPCI2-T9-CORRECTION"
         }
       ],
       "negativeSearchTerms": [
@@ -890,7 +910,7 @@
         "provider call in T5 deep scan (none; local python-docx only; no model inference)",
         "both laws currently in force (effectiveDate=2026-07-01; not yet in force as of 2026-06-04)"
       ],
-      "nextScanRecommendation": "T9 search runtime implemented; policylocal pilot corpus search is local-deterministic. EC-02 rescan required on or after 2026-07-01 before any production runtime opens (effectiveDate=2026-07-01). Next: operator review T9 completion, then corpus expansion or production deployment work order.",
+      "nextScanRecommendation": "T9 search runtime implemented and correction-cleaned; policylocal pilot corpus search is local-deterministic. EC-02 rescan required on or after 2026-07-01 before any production runtime opens (effectiveDate=2026-07-01). Next: PolicyLocal foundation, corpus expansion, or production deployment work order after operator authorization.",
       "hashAlgorithm": "sha256",
       "hashInput": "sorted-paths-newline-joined-with-trailing-newline",
       "t9CompletionReviewPath": "docs/reviews/CVF_LPCI2_T9_SEARCH_RUNTIME_COMPLETION_2026-06-07.md"

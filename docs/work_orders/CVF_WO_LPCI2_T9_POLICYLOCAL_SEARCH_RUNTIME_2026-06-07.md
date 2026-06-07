@@ -133,6 +133,9 @@ before continuing.
 - Create `docs/reviews/CVF_LPCI2_T9_SEARCH_RUNTIME_COMPLETION_2026-06-07.md`
 - Update `AGENT_HANDOFF_V16_2026-06-06.md` HEAD record in session-sync step
 - Update `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` and `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` if T9 changes the PolicyLocal corpus status
+- Update `docs/roadmaps/CVF_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_ROADMAP_2026-06-07.md` for correction-clean closure state
+- Update `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md` for orchestrator work-order hardening
+- Update `governance/compat/check_machine_closure_package.py` for machine closure guard hardening
 
 **Forbidden:**
 - Provider calls of any kind
@@ -142,8 +145,67 @@ before continuing.
 - Changes to `EXTENSIONS/`, `.github/`, package files, lockfiles
 - Public-sync or public-facing artifact changes
 - Corpus expansion beyond the current two DOCX source files
-- Changes to governance checker scripts or CVF core docs
+- Changes to governance checker scripts or CVF core docs, except the
+  2026-06-07 correction authorization below
 - Production or hosted deployment configuration
+
+---
+
+## Correction Authorization - 2026-06-07
+
+Operator authorization: fix all T9 findings and raise the CVF work-order
+foundation so future orchestrator agents write stronger dispatch packets before
+worker implementation.
+
+Authorized guard-maintenance scope:
+- correct T9 acceptance/runtime evidence where work-order-required freshness
+  disclosure did not match the emitted AQ-05 receipt;
+- update the T9 roadmap, work order, completion review, and GC-051 registry
+  evidence to match the corrected receipt artifact;
+- harden `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`;
+- harden `governance/compat/check_machine_closure_package.py`.
+
+Protected paths:
+- `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
+- `governance/compat/check_machine_closure_package.py`
+- active T9 roadmap/work-order/completion/registry/session-continuity surfaces
+
+Rollback boundary: revert only the correction commit(s) and regenerated
+external T9 receipt/script artifacts. Do not revert the original T9 closure
+commits or unrelated user changes.
+
+### Core Guard Self-Protection Authorization
+
+Operator authorization: same operator instruction as the correction
+authorization above; the guard change is limited to catching T9 closure defects
+and improving future work-order closure checks.
+
+Authorized guard-maintenance scope:
+- add Roadmap state contradiction detection when a closed artifact cites a
+  roadmap path but claims no roadmap;
+- require an Acceptance Receipt Assertion Matrix for receipt/query acceptance
+  closure claims;
+- require sha256 evidence for external evidence digest PASS claims.
+
+Protected paths:
+- `governance/compat/check_machine_closure_package.py`
+
+Rollback boundary: revert the correction commit that modifies the protected
+guard file and the paired template/evidence updates. Do not revert unrelated
+history.
+
+Allowed correction paths:
+- `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\scripts\policylocal-search-runtime.py`
+- `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-query-receipts-acceptance.json`
+- `docs/roadmaps/CVF_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_ROADMAP_2026-06-07.md`
+- `docs/work_orders/CVF_WO_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_2026-06-07.md`
+- `docs/reviews/CVF_LPCI2_T9_SEARCH_RUNTIME_COMPLETION_2026-06-07.md`
+- `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
+- `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`
+- `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
+- `governance/compat/check_machine_closure_package.py`
+- `CVF_SESSION_MEMORY.md`, `CVF_SESSION/ACTIVE_SESSION_STATE.json`, and
+  `AGENT_HANDOFF_V16_2026-06-06.md` in the session-sync step
 
 ---
 
@@ -256,7 +318,7 @@ Worker must produce deterministic receipts for all five paths:
 | AQ-02 | `Luat so 999/2025/QH15` | `ESCALATE_OR_ABSTAIN` | `selectedCandidateIds=[]`; `candidateCountAfter=0`; zero-result |
 | AQ-03 | `Tai lieu mat` | `ESCALATE_OR_ABSTAIN` | out-of-corpus; `selectedCandidateIds=[]` |
 | AQ-04 | `Tu van phap ly ve viec ap dung luat` | `ESCALATE_OR_ABSTAIN` | EC-01 legal advice escalation; `escalateConditionTriggered=EC-01`; `selectedCandidateIds=[]` |
-| AQ-05 | `Luat 148/2025/QH15 co hieu luc chua` | `ESCALATE_OR_ABSTAIN` | EC-02 current-applicability before effective date; `freshnessStatus=not_yet_in_force`; `selectedCandidateIds=[]` |
+| AQ-05 | `Luat 148/2025/QH15 co hieu luc chua` | `ESCALATE_OR_ABSTAIN` | EC-02 current-applicability before effective date; `freshnessStatus=not_yet_in_force`; `freshnessDisclosureApplied=true`; `selectedCandidateIds=[]` |
 
 ---
 
@@ -363,7 +425,7 @@ Worker may proceed without separate operator approval.
 - AQ-01 receipt: `answerClass=SUMMARY_WITH_SOURCE`, `freshnessDisclosureApplied=true`, `selectedCandidateIds` non-empty
 - AQ-02, AQ-03 receipts: `answerClass=ESCALATE_OR_ABSTAIN`, `selectedCandidateIds=[]`
 - AQ-04 receipt: `answerClass=ESCALATE_OR_ABSTAIN`, `escalateConditionTriggered=EC-01`, `selectedCandidateIds=[]`
-- AQ-05 receipt: `answerClass=ESCALATE_OR_ABSTAIN`, `escalateConditionTriggered=EC-02`, `selectedCandidateIds=[]`
+- AQ-05 receipt: `answerClass=ESCALATE_OR_ABSTAIN`, `escalateConditionTriggered=EC-02`, `freshnessDisclosureApplied=true`, `selectedCandidateIds=[]`
 - No provider call, LLM call, or vector store call in any receipt or script
 - Pre-commit hook chain passes
 - Completion review filed with deterministic evidence
@@ -390,16 +452,49 @@ Does not claim:
 
 ---
 
+## Acceptance Receipt Assertion Matrix
+
+Receipt artifact:
+`CVF-Workspace/Policy_Local/data/generated/policylocal-query-receipts-acceptance.json`
+verified after correction run at `2026-06-07T05:48:52.523037+00:00`.
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| AQ-01 | acceptance receipts | `receipts[0].receipt.answerClass` | `SUMMARY_WITH_SOURCE` | `SUMMARY_WITH_SOURCE` | PASS |
+| AQ-01 | acceptance receipts | `receipts[0].receipt.selectedCandidateIds` | non-empty | 1 item | PASS |
+| AQ-01 | acceptance receipts | `receipts[0].receipt.freshnessDisclosureApplied` | `true` | `true` | PASS |
+| AQ-02 | acceptance receipts | `receipts[1].receipt.answerClass` | `ESCALATE_OR_ABSTAIN` | `ESCALATE_OR_ABSTAIN` | PASS |
+| AQ-02 | acceptance receipts | `receipts[1].receipt.selectedCandidateIds` | `[]` | `[]` | PASS |
+| AQ-03 | acceptance receipts | `receipts[2].receipt.answerClass` | `ESCALATE_OR_ABSTAIN` | `ESCALATE_OR_ABSTAIN` | PASS |
+| AQ-03 | acceptance receipts | `receipts[2].receipt.selectedCandidateIds` | `[]` | `[]` | PASS |
+| AQ-04 | acceptance receipts | `receipts[3].receipt.escalateConditionTriggered` | `EC-01` | `EC-01` | PASS |
+| AQ-04 | acceptance receipts | `receipts[3].receipt.selectedCandidateIds` | `[]` | `[]` | PASS |
+| AQ-05 | acceptance receipts | `receipts[4].receipt.escalateConditionTriggered` | `EC-02` | `EC-02` | PASS |
+| AQ-05 | acceptance receipts | `receipts[4].receipt.freshnessDisclosureApplied` | `true` | `true` | PASS |
+| AQ-05 | acceptance receipts | `receipts[4].receipt.selectedCandidateIds` | `[]` | `[]` | PASS |
+
+## External Artifact Hash Manifest
+
+| Artifact | Evidence role | sha256 | Generated or verified at | Status |
+|---|---|---|---|---|
+| `CVF-Workspace/Policy_Local/scripts/policylocal-chunk-generator.py` | chunk generator script | `sha256:77fd13ba3397b6fdaca32e4246a85598117891fa754f05f243884fd5a2699602` | `Get-FileHash`, 2026-06-07 | PASS |
+| `CVF-Workspace/Policy_Local/scripts/policylocal-search-runtime.py` | corrected search runtime and verifier | `sha256:7b1ec0f74f8578a46dd4a7419fe1478cb5c490d38b60853d2e137728a5c11b78` | `Get-FileHash`, 2026-06-07 | PASS |
+| `CVF-Workspace/Policy_Local/data/generated/policylocal-chunks.json` | generated chunk corpus | `sha256:fe3bf3c36df509b584958da06796795c791fba2d0faeab2a188cc0abd626819c` | `Get-FileHash`, 2026-06-07 | PASS |
+| `CVF-Workspace/Policy_Local/data/generated/policylocal-query-receipts-acceptance.json` | corrected acceptance receipts | `sha256:a8273e358438579360f8fde64129475f7e97e8b9fd889bba074eac083d79223f` | generated by `policylocal-search-runtime.py --acceptance`, 2026-06-07T05:48:52.523037+00:00 | PASS |
+| `CVF-Workspace/Policy_Local/data/generated/policylocal-corpus-records.json` | source corpus records | `sha256:768a84fa26d656cb2e91ffe55dafe656c4d47501c24c1abb283a3d68a12f7eff` | `Get-FileHash`, 2026-06-07 | PASS |
+
+---
+
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
 | Work order status | `docs/work_orders/CVF_WO_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_2026-06-07.md` | Status `CLOSED`; no stale residue; claim-language discipline recorded | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_LPCI2_T9_SEARCH_RUNTIME_COMPLETION_2026-06-07.md` | Final disposition; 5/5 acceptance queries PASS evidence; claim boundary; gate evidence | PASS |
-| Roadmap state | N/A with reason: T9 is a standalone work order; no dedicated LPCI2 search runtime roadmap file; next move is operator-reviewed deployment or corpus expansion work order | No tranche row to update | N/A with reason: no active LPCI2 roadmap file for this T9 scope |
-| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | T9 scan wave added; chunkCount=76; acceptanceQueryAllPass=true; T4-F2 finding resolved | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LPCI2_T9_SEARCH_RUNTIME_COMPLETION_2026-06-07.md` | Final disposition; corrected 5/5 acceptance queries PASS evidence; claim boundary; gate evidence | PASS |
+| Roadmap state | `docs/roadmaps/CVF_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_ROADMAP_2026-06-07.md` | Status `CLOSED_PASS_BOUNDED`; T9 work order and correction evidence recorded; next move is operator-reviewed PolicyLocal foundation/corpus expansion/deployment work order | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | T9 scan wave added; chunkCount=76; acceptanceQueryAllPass=true; freshnessDisclosureAllRequiredPass=true; T4-F2 finding resolved | PASS |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | Quick Lookup and Negative Search Evidence Index updated for LPCI2-T9 | PASS |
-| External evidence digest | CVF-Workspace external artifacts (not git-tracked) | path=CVF-Workspace/Policy_Local/scripts/ and data/generated/; chunk schema=policylocal.chunk.t8.v1; chunk count=76; receipt schema=policylocal.queryReceipt.t8.v1; receipt count=5; all 14 chunk fields verified; all 21 receipt fields verified | PASS |
+| External evidence digest | CVF-Workspace external artifacts (not git-tracked) | path=CVF-Workspace/Policy_Local/scripts/ and data/generated/; chunk schema=policylocal.chunk.t8.v1; chunk count=76; receipt schema=policylocal.queryReceipt.t8.v1; receipt count=5; all 14 chunk fields verified; all 21 receipt fields verified; sha256 hashes recorded in External Artifact Hash Manifest | PASS |
 | System loop interlock | N/A with reason: T9 is local-deterministic pilot only; no live provider, memory bus, or downstream system loop; no CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY entry required | No upstream/downstream loop registration required | N/A with reason: local-deterministic search only; no live system loop |
 | Session continuity | `CVF_SESSION_MEMORY.md`, `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `AGENT_HANDOFF_V16_2026-06-06.md` | Handoff HEAD record updated at session-sync commit; mode transitioned to T9 complete | PASS |
 

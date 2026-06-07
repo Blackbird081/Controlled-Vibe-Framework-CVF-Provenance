@@ -61,7 +61,12 @@ Methodology: deterministic local-script verification.
 
 ## Findings / Position
 
-No defects. All acceptance criteria met.
+Correction addendum, 2026-06-07: Codex review found a closure-evidence defect
+after the original T9 closure. The work order required AQ-05 to preserve
+`freshnessDisclosureApplied=true`, but the original acceptance receipt emitted
+`freshnessDisclosureApplied=false` while the verifier still marked AQ-05 PASS.
+The runtime and verifier were corrected, acceptance was rerun, and this review
+now records the corrected receipt evidence.
 
 Technical implementation notes:
 - Token minimum length set to > 4 chars for diacritic-normalized Vietnamese
@@ -70,12 +75,12 @@ Technical implementation notes:
   (AQ-02 path).
 - EC-01 through EC-04 evaluated before retrieval; escalation short-circuits
   the retrieval pipeline entirely.
-- `freshnessDisclosureApplied=true` correctly set for AQ-01 (not_yet_in_force
-  corpus).
+- `freshnessDisclosureApplied=true` correctly set for AQ-01 and AQ-05
+  (not_yet_in_force corpus).
 
 Position: T9 is `CLOSED_PASS_BOUNDED`. The local deterministic search
 mechanics, boundary enforcement, and query receipt emission are proven for the
-two-document pilot corpus.
+two-document pilot corpus after the correction addendum.
 
 ## Risk / Corrective Action
 
@@ -84,8 +89,10 @@ two-document pilot corpus.
 | Token min-length tuning may need adjustment for larger/broader VN corpus | LOW | Re-evaluate in corpus expansion work order |
 | Chunks not git-tracked (CVF-Workspace has no git repo) | LOW | Record in future integration work order if provenance tracking is required |
 | freshnessStatus=not_yet_in_force for all corpus records | ACKNOWLEDGED | Both source laws effective 2026-07-01; EC-02 boundary applies until effectiveDate transition |
+| Original AQ-05 PASS omitted freshness disclosure assertion | MEDIUM | Corrected runtime/verifier; added Acceptance Receipt Assertion Matrix, External Artifact Hash Manifest, template hardening, and machine closure guard checks |
 
-No P0 or P1 risks identified. No corrective action required before T9 closure.
+No P0 or P1 risks identified. The medium evidence defect is corrected in this
+addendum before T9 is used as the next PolicyLocal foundation input.
 
 ## Startup Acknowledgment
 
@@ -181,7 +188,9 @@ Approach:
   AQ-02 [PASS] answerClass='ESCALATE_OR_ABSTAIN' selectedCandidateIds=0 escalateCondition=None freshnessDisclosure=False
   AQ-03 [PASS] answerClass='ESCALATE_OR_ABSTAIN' selectedCandidateIds=0 escalateCondition=None freshnessDisclosure=False
   AQ-04 [PASS] answerClass='ESCALATE_OR_ABSTAIN' selectedCandidateIds=0 escalateCondition='EC-01' freshnessDisclosure=False
-  AQ-05 [PASS] answerClass='ESCALATE_OR_ABSTAIN' selectedCandidateIds=0 escalateCondition='EC-02' freshnessDisclosure=False
+  AQ-05 [PASS] answerClass='ESCALATE_OR_ABSTAIN' selectedCandidateIds=0 escalateCondition='EC-02' freshnessDisclosure=True
+
+[search-runtime] written: D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-query-receipts-acceptance.json
 [search-runtime] ALL ACCEPTANCE QUERIES PASS
 ```
 
@@ -193,7 +202,7 @@ Approach:
 | AQ-02 | `Luat so 999/2025/QH15` | `ESCALATE_OR_ABSTAIN` | [] | null | false | PASS |
 | AQ-03 | `Tai lieu mat` | `ESCALATE_OR_ABSTAIN` | [] | null | false | PASS |
 | AQ-04 | `Tu van phap ly ve viec ap dung luat` | `ESCALATE_OR_ABSTAIN` | [] | `EC-01` | false | PASS |
-| AQ-05 | `Luat 148/2025/QH15 co hieu luc chua` | `ESCALATE_OR_ABSTAIN` | [] | `EC-02` | false | PASS |
+| AQ-05 | `Luat 148/2025/QH15 co hieu luc chua` | `ESCALATE_OR_ABSTAIN` | [] | `EC-02` | true | PASS |
 
 All 21 required receipt fields present in every receipt. Confirmed by field
 completeness check against `policylocal.queryReceipt.t8.v1` schema.
@@ -209,6 +218,7 @@ completeness check against `policylocal.queryReceipt.t8.v1` schema.
 | AQ-02 through AQ-05: `ESCALATE_OR_ABSTAIN` with `selectedCandidateIds=[]` | YES | PASS |
 | AQ-04: `escalateConditionTriggered=EC-01` | YES | PASS |
 | AQ-05: `escalateConditionTriggered=EC-02` | YES | PASS |
+| AQ-05: `freshnessDisclosureApplied=true` | YES | PASS |
 | No provider call, LLM call, or vector store call | YES | PASS |
 | Corpus drift check before chunking | YES | PASS (hash=`768a84fa26d656cb`) |
 
@@ -224,7 +234,7 @@ completeness check against `policylocal.queryReceipt.t8.v1` schema.
 | Acceptance receipts | PRESENT -- `policylocal-query-receipts-acceptance.json`, 5 receipts | PASS |
 | AQ-01 SUMMARY_WITH_SOURCE | VERIFIED | PASS |
 | AQ-02 through AQ-05 ESCALATE | VERIFIED | PASS |
-| Freshness disclosure (AQ-01) | VERIFIED -- `freshnessDisclosureApplied=true` | PASS |
+| Freshness disclosure (AQ-01, AQ-05) | VERIFIED -- `freshnessDisclosureApplied=true` | PASS |
 | No provider calls | VERIFIED | PASS |
 
 ## Generated Artifacts
@@ -262,6 +272,14 @@ Runtime/provider/cost learning: `N/A_WITH_REASON`
 Reason: T9 is local-deterministic only; no provider calls, no LLM inference,
 no cost events, no latency measurements, no hosted runtime.
 
+Correction learning disposition:
+
+| Finding | Defect class | Learning lane | Disposition | Next control action |
+|---|---|---|---|---|
+| Work order required AQ-05 freshness disclosure but the original verifier did not assert the AQ-05 receipt value | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | `check_machine_closure_package.py` now requires receipt acceptance closures to include an Acceptance Receipt Assertion Matrix |
+| Closure package claimed no T9 roadmap even though the work order cited a T9 roadmap | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | `check_machine_closure_package.py` now blocks Roadmap state N/A/no-roadmap claims when a roadmap path is cited |
+| External evidence was summarized without a complete hash manifest | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | TEMPLATE_UPDATED | work-order template now requires an External Artifact Hash Manifest for external evidence |
+
 ## Rescan Intelligence Hardening
 
 - Original source artifact: `docs/reviews/CVF_LPCI2_T8_SEARCH_LAYER_SCAFFOLDING_COMPLETION_2026-06-04.md`.
@@ -298,16 +316,47 @@ no cost events, no latency measurements, no hosted runtime.
 | T9-S2 | AQ-02 receipt | unknown law number → `answerClass=ESCALATE_OR_ABSTAIN`; `selectedCandidateIds=[]` | accepted | search may return partial results for near-miss law numbers | PASS — corpus law-number index enforces exact-match zero-result |
 | T9-S3 | AQ-04 receipt | off-topic query triggers `EC-01`; `escalateConditionTriggered=EC-01` | accepted | EC-01 trigger may be bypassed by keyword overlap | PASS — boundary contract enforced before result emission |
 
+## Acceptance Receipt Assertion Matrix
+
+Receipt artifact:
+`CVF-Workspace/Policy_Local/data/generated/policylocal-query-receipts-acceptance.json`
+verified after correction run at `2026-06-07T05:48:52.523037+00:00`.
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| AQ-01 | acceptance receipts | `receipts[0].receipt.answerClass` | `SUMMARY_WITH_SOURCE` | `SUMMARY_WITH_SOURCE` | PASS |
+| AQ-01 | acceptance receipts | `receipts[0].receipt.selectedCandidateIds` | non-empty | 1 item | PASS |
+| AQ-01 | acceptance receipts | `receipts[0].receipt.freshnessDisclosureApplied` | `true` | `true` | PASS |
+| AQ-02 | acceptance receipts | `receipts[1].receipt.answerClass` | `ESCALATE_OR_ABSTAIN` | `ESCALATE_OR_ABSTAIN` | PASS |
+| AQ-02 | acceptance receipts | `receipts[1].receipt.selectedCandidateIds` | `[]` | `[]` | PASS |
+| AQ-03 | acceptance receipts | `receipts[2].receipt.answerClass` | `ESCALATE_OR_ABSTAIN` | `ESCALATE_OR_ABSTAIN` | PASS |
+| AQ-03 | acceptance receipts | `receipts[2].receipt.selectedCandidateIds` | `[]` | `[]` | PASS |
+| AQ-04 | acceptance receipts | `receipts[3].receipt.escalateConditionTriggered` | `EC-01` | `EC-01` | PASS |
+| AQ-04 | acceptance receipts | `receipts[3].receipt.selectedCandidateIds` | `[]` | `[]` | PASS |
+| AQ-05 | acceptance receipts | `receipts[4].receipt.escalateConditionTriggered` | `EC-02` | `EC-02` | PASS |
+| AQ-05 | acceptance receipts | `receipts[4].receipt.freshnessDisclosureApplied` | `true` | `true` | PASS |
+| AQ-05 | acceptance receipts | `receipts[4].receipt.selectedCandidateIds` | `[]` | `[]` | PASS |
+
+## External Artifact Hash Manifest
+
+| Artifact | Evidence role | sha256 | Generated or verified at | Status |
+|---|---|---|---|---|
+| `CVF-Workspace/Policy_Local/scripts/policylocal-chunk-generator.py` | chunk generator script | `sha256:77fd13ba3397b6fdaca32e4246a85598117891fa754f05f243884fd5a2699602` | `Get-FileHash`, 2026-06-07 | PASS |
+| `CVF-Workspace/Policy_Local/scripts/policylocal-search-runtime.py` | corrected search runtime and verifier | `sha256:7b1ec0f74f8578a46dd4a7419fe1478cb5c490d38b60853d2e137728a5c11b78` | `Get-FileHash`, 2026-06-07 | PASS |
+| `CVF-Workspace/Policy_Local/data/generated/policylocal-chunks.json` | generated chunk corpus | `sha256:fe3bf3c36df509b584958da06796795c791fba2d0faeab2a188cc0abd626819c` | `Get-FileHash`, 2026-06-07 | PASS |
+| `CVF-Workspace/Policy_Local/data/generated/policylocal-query-receipts-acceptance.json` | corrected acceptance receipts | `sha256:a8273e358438579360f8fde64129475f7e97e8b9fd889bba074eac083d79223f` | generated by `policylocal-search-runtime.py --acceptance`, 2026-06-07T05:48:52.523037+00:00 | PASS |
+| `CVF-Workspace/Policy_Local/data/generated/policylocal-corpus-records.json` | source corpus records | `sha256:768a84fa26d656cb2e91ffe55dafe656c4d47501c24c1abb283a3d68a12f7eff` | `Get-FileHash`, 2026-06-07 | PASS |
+
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
 | Work order status | `docs/work_orders/CVF_WO_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_2026-06-07.md` | Status `CLOSED`; no stale residue; claim-language discipline recorded | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_LPCI2_T9_SEARCH_RUNTIME_COMPLETION_2026-06-07.md` | This file; 5/5 acceptance queries PASS; all 21 receipt fields verified; claim boundary recorded | PASS |
-| Roadmap state | N/A with reason: T9 is a standalone work order; no dedicated LPCI2 search runtime roadmap file | No tranche row to update | N/A with reason: no active LPCI2 roadmap file for T9 scope |
-| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | T9 scan wave added; chunkCount=76; acceptanceQueryAllPass=true; T4-F2 finding resolved | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LPCI2_T9_SEARCH_RUNTIME_COMPLETION_2026-06-07.md` | This file; corrected 5/5 acceptance queries PASS; all 21 receipt fields verified; claim boundary recorded | PASS |
+| Roadmap state | `docs/roadmaps/CVF_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_ROADMAP_2026-06-07.md` | Status `CLOSED_PASS_BOUNDED`; T9 work order and correction evidence recorded; next move is PolicyLocal foundation/corpus expansion/deployment work order | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | T9 scan wave added; chunkCount=76; acceptanceQueryAllPass=true; freshnessDisclosureAllRequiredPass=true; T4-F2 finding resolved | PASS |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | Quick Lookup row and Negative Search Evidence Index updated for LPCI2-T9 | PASS |
-| External evidence digest | CVF-Workspace external artifacts (not git-tracked) | path=CVF-Workspace/Policy_Local/; chunk schema=policylocal.chunk.t8.v1; chunk count=76; receipt count=5; all 14 chunk fields verified; all 21 receipt fields verified; acceptanceQueryAllPass=true | PASS |
+| External evidence digest | CVF-Workspace external artifacts (not git-tracked) | path=CVF-Workspace/Policy_Local/; chunk schema=policylocal.chunk.t8.v1; chunk count=76; receipt count=5; all 14 chunk fields verified; all 21 receipt fields verified; acceptanceQueryAllPass=true; sha256 hashes recorded in External Artifact Hash Manifest | PASS |
 | System loop interlock | N/A with reason: T9 is local-deterministic pilot only; no live provider, memory bus, or downstream system loop required | No upstream/downstream loop registration required | N/A with reason: local-deterministic pilot search only |
 | Session continuity | `CVF_SESSION_MEMORY.md`, `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `AGENT_HANDOFF_V16_2026-06-06.md` | Handoff HEAD record updated at session-sync commit; mode transitioned to T9 complete | PASS |
 

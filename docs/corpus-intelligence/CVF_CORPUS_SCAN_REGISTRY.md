@@ -82,7 +82,7 @@ prior scan here before starting new work.
 | `CVF 17.05 + 25.05 + 28.05` | LEGACY | SCANNED | LHW-RESCAN-B | 38 | Governance decision artifacts; low priority |
 | `CVF Edit/` | LEGACY | PARTIALLY_SCANNED | LHW18 | 10 | Integration SDK deferred; GC-047/050 not yet run |
 | `App onboarding/` | LEGACY | NOT_STARTED | — | ? | UI design reference; low priority |
-| `Policy_Local/data_input/` | POLICY_DOCUMENT | DEEP_CLASSIFIED | LPCI2-T9 | 2 | T9 search runtime implemented; 76 chunks; 5/5 acceptance queries PASS; EC-01--EC-04 enforced; EC-02 rescan required on or after 2026-07-01 |
+| `Policy_Local/data_input/` | POLICY_DOCUMENT | DEEP_CLASSIFIED | LPCI2-T9 | 2 | T9 search runtime implemented and correction-cleaned; 76 chunks; 5/5 acceptance queries PASS; AQ-01/AQ-05 freshness disclosure observed true; EC-01--EC-04 enforced; EC-02 rescan required on or after 2026-07-01 |
 | `MLW2-RT1 Context Bundle Runtime Proof` | PROJECT_SOURCE | SCANNED_WITH_FINDINGS | MLW2-RT1 | 8 | route-visible metadata-only contextBundleReadout; deterministic + Alibaba live proof; no full RAG/vector/public claim |
 | `MLW3-RT1 Evidence-To-Learning Runtime Proof` | PROJECT_SOURCE | SCANNED_WITH_FINDINGS | MLW3-RT1 | 8 | route-visible metadata-only evidenceToLearningReadout; deterministic + Alibaba live proof; no truth mutation/orchestrator/public claim |
 | `MLW4-MLW6 RT1 Continuity Audit Simulation Runtime Chain` | PROJECT_SOURCE | SCANNED_WITH_FINDINGS | MLW4-MLW6-RT1 | 8 | route-visible metadata-only continuity/audit/simulation readouts; deterministic + Alibaba live proof; no mutation/promotion/orchestrator/public claim |
@@ -119,6 +119,12 @@ Use this index to find prior findings by domain keyword.
 | --- | --- | --- | --- |
 | LHW18-integration-sdk | `CVF Edit/` | Integration SDK adapters not absorbed; frameworks connect INTO CVF | DEFER_DEMAND_GATED |
 
+### PolicyLocal
+
+| Finding ID | Corpus | Summary | Disposition |
+| --- | --- | --- | --- |
+| T9-F1-aq05-freshness-assertion-gap | `Policy_Local/data_input/` | Original T9 verifier marked AQ-05 PASS without asserting required freshness disclosure | ACCEPT_NO_ACTION - resolved by T9 correction |
+
 ### Memory / Learning Runtime
 
 | Finding ID | Corpus | Summary | Disposition |
@@ -145,7 +151,7 @@ Searches that confirmed absence — prevents re-doing the same negative search.
 | `graph service directly invoking LLMs` | manual read of 7-file code-review-graph corpus | code-review-graph | FOUND as forbidden pattern, not allowed implementation |
 | full `CVF ADD/` sibling scan | CI1-T3 work-order boundary | code-review-graph | NOT SEARCHED — out of scope |
 | `PolicyLocal search/chat runtime readiness` | LPCI2-T6/T7/T8 readiness gates | PolicyLocal | T9 search runtime IMPLEMENTED; local-deterministic only; no production deployment; no provider calls |
-| `PolicyLocal live query negative evidence` | LPCI2-T8 completion review | PolicyLocal | PRODUCED at T9 — 5 acceptance query receipts generated; AQ-01 SUMMARY_WITH_SOURCE, AQ-02 through AQ-05 ESCALATE_OR_ABSTAIN |
+| `PolicyLocal live query negative evidence` | LPCI2-T8 completion review | PolicyLocal | PRODUCED at T9 and correction-cleaned; 5 acceptance query receipts generated; AQ-01 SUMMARY_WITH_SOURCE, AQ-02 through AQ-05 ESCALATE_OR_ABSTAIN; AQ-05 freshnessDisclosureApplied=true |
 
 ---
 
@@ -160,7 +166,7 @@ Searches that confirmed absence — prevents re-doing the same negative search.
 | MEDIUM | `CVF_Important/` remaining subfamilies | 230 files inventoried; deep classification pending per-family |
 | LOW | `CVF 16.5/` + `CVF_Restructure/` deep scan | Broad routing done; deep classification when operator prioritizes |
 | LOW | `App onboarding/` | UI design reference; not a knowledge absorption target |
-| COMPLETE_T9 | PolicyLocal search runtime T9 | T9 search runtime implemented; 76 chunks; 5/5 acceptance queries PASS; EC-02 rescan required on or after 2026-07-01 |
+| COMPLETE_T9 | PolicyLocal search runtime T9 | T9 search runtime implemented and correction-cleaned; 76 chunks; 5/5 acceptance queries PASS; AQ-01/AQ-05 freshness disclosure observed true; EC-02 rescan required on or after 2026-07-01 |
 | MEDIUM | PolicyLocal production deployment | T9 local-deterministic pilot complete; production deployment requires fresh operator-authorized work order |
 
 ---

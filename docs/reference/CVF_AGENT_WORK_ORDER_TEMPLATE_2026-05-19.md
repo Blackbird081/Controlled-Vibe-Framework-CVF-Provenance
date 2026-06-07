@@ -684,6 +684,36 @@ Rules:
   disposition, not a defect class.
 - The closure package must be updated after final gate reruns, not copied from
   pre-implementation or pending-worker evidence.
+- If any roadmap path is cited in Authority Chain, Source Verification,
+  Trace Matrix, or closure evidence, the Roadmap state row must name that
+  roadmap and its final state. Do not mark Roadmap state `N/A with reason` or
+  "no roadmap" when a roadmap path appears anywhere in the artifact.
+- Receipt-based PASS claims must include an Acceptance Receipt Assertion
+  Matrix. The matrix must compare each required receipt value against the
+  observed value from the generated receipt artifact. A query cannot pass if a
+  required value and observed value differ, even when the broader answer class
+  is correct.
+- External evidence from a sibling workspace, local data folder, provider
+  receipt, browser artifact, or generated file must include an External
+  Artifact Hash Manifest with sha256 for every external artifact used as
+  closure evidence. Counts and schemas are not enough by themselves.
+- When material closure and session-sync closure use different commits, record
+  both ranges. The material range must cover implementation evidence; the
+  session-sync range must cover state, memory, and handoff updates. Do not use
+  a combined range that includes files outside the work order Allowed scope
+  unless the Allowed scope explicitly authorizes those continuity files.
+
+Acceptance Receipt Assertion Matrix template:
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| <AQ-id> | <path or digest section> | <receipt JSON path> | <required> | <observed> | <PASS/BLOCKED> |
+
+External Artifact Hash Manifest template:
+
+| Artifact | Evidence role | sha256 | Generated or verified at | Status |
+|---|---|---|---|---|
+| <path or redacted path> | <script/receipt/data/etc.> | `sha256:<hex>` | <timestamp/command> | <PASS/BLOCKED> |
 
 ## 6F. Commit Choreography
 
