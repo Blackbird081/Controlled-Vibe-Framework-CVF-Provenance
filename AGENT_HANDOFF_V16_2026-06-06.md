@@ -36,18 +36,17 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci2_t9_policylocal_search_runtime_roadmap_proposed`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=review LPCI2-T9 roadmap or author a fresh source-verified T9 work order for local deterministic PolicyLocal search runtime; parked checkpoint=prior DEP2/receipt-anchor/Redis lanes remain parked.
+Startup acknowledged: current mode=`lpci2_t9_work_order_dispatch_ready`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=execute T9 work order (chunk generator, search runtime, acceptance receipts, closure review); parked checkpoint=DEP2/receipt-anchor/Redis lanes remain parked.
 
 ## Current Mode
 
-`lpci2_t9_policylocal_search_runtime_roadmap_proposed`
+`lpci2_t9_work_order_dispatch_ready`
 
-Current HEAD recorded for this handoff: `09c7ce3f`
-(G-GM-08 + G-GM-06 work order closed. Completion review filed CLOSED_PASS_BOUNDED. Template hardened.
-Text encoding and symbol discipline front-door standard added. Prior HEAD chain:
-`cdadedf7` implementation -> `b98bd803` closure -> `35d6a079` session sync
--> `685f3a6f` text encoding standard -> `4ce03931` handoff sync -> `09c7ce3f`
-LPCI2-T9 roadmap proposed.).
+Current HEAD recorded for this handoff: `cf13d4a7`
+(LPCI2-T9 work order DISPATCH_READY committed. T9 scope: chunk generation,
+keyword/filter retrieval, boundary EC-01 through EC-04, query receipt emission,
+5-path acceptance evidence. Pre-dispatch gate: PASS.
+Prior HEAD chain: `09c7ce3f` T9 roadmap -> `29aa3ffc` sync -> `cf13d4a7` T9 WO.).
 
 ## Active Boundary
 
