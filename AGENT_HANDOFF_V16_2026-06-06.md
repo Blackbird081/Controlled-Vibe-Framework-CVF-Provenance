@@ -36,17 +36,17 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci2_t9_work_order_dispatch_ready`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=execute T9 work order (chunk generator, search runtime, acceptance receipts, closure review); parked checkpoint=DEP2/receipt-anchor/Redis lanes remain parked.
+Startup acknowledged: current mode=`lpci2_t9_complete`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=operator review of T9 completion then corpus expansion or production deployment work order; parked checkpoint=DEP2/Redis lanes remain parked.
 
 ## Current Mode
 
-`lpci2_t9_work_order_dispatch_ready`
+`lpci2_t9_complete`
 
-Current HEAD recorded for this handoff: `cf13d4a7`
-(LPCI2-T9 work order DISPATCH_READY committed. T9 scope: chunk generation,
-keyword/filter retrieval, boundary EC-01 through EC-04, query receipt emission,
-5-path acceptance evidence. Pre-dispatch gate: PASS.
-Prior HEAD chain: `09c7ce3f` T9 roadmap -> `29aa3ffc` sync -> `cf13d4a7` T9 WO.).
+Current HEAD recorded for this handoff: `094d82d0`
+(LPCI2-T9 search runtime implementation CLOSED_PASS_BOUNDED. T9 scope: chunk
+generation, keyword/filter search, EC-01--EC-04 boundary enforcement, query
+receipt emission, 5/5 acceptance queries PASS. All 36 pre-commit hooks PASS.
+Prior HEAD chain: `cf13d4a7` T9 WO -> `f44a62ed` sync -> `094d82d0` T9 closure.).
 
 ## Active Boundary
 
@@ -117,6 +117,12 @@ Only V16 should be treated as the active root handoff.
   `685f3a6f`: default ASCII for agent-authored governed text, source comments,
   tests, work orders, completion packets, handoffs, registries, and public-sync
   summaries; Unicode requires an explicit exception and reason.
+- Closed LPCI2-T9 PolicyLocal search runtime at material commit `094d82d0`:
+  policylocal-chunk-generator.py (76 chunks, schema policylocal.chunk.t8.v1),
+  policylocal-search-runtime.py (filter-first/keyword-rank, EC-01--EC-04,
+  receipt emission), 5/5 acceptance queries PASS, GC-051 registry updated,
+  all 36 pre-commit governance hooks PASS. Local-deterministic only; no
+  provider calls, no LLM, no production deployment.
 - Proposed LPCI2-T9 PolicyLocal search runtime roadmap:
   `docs/roadmaps/CVF_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_ROADMAP_2026-06-07.md`.
   T9 is local deterministic search planning only: chunk generation,
@@ -188,6 +194,36 @@ Only V16 should be treated as the active root handoff.
   public readiness claim.
 
 ## Latest Continuity Note
+
+LPCI2-T9 PolicyLocal search runtime is `CLOSED_PASS_BOUNDED` at material
+commit `094d82d0`.
+
+Private artifacts:
+
+- Work order:
+  `docs/work_orders/CVF_WO_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_2026-06-07.md`
+- Completion:
+  `docs/reviews/CVF_LPCI2_T9_SEARCH_RUNTIME_COMPLETION_2026-06-07.md`
+- Chunk generator: `CVF-Workspace/Policy_Local/scripts/policylocal-chunk-generator.py`
+- Search runtime: `CVF-Workspace/Policy_Local/scripts/policylocal-search-runtime.py`
+- Generated chunks: `CVF-Workspace/Policy_Local/data/generated/policylocal-chunks.json` (76 chunks)
+- Acceptance receipts: `CVF-Workspace/Policy_Local/data/generated/policylocal-query-receipts-acceptance.json` (5 receipts)
+
+Verification summary:
+
+- Chunk generation: 76 chunks, schema `policylocal.chunk.t8.v1`, all 14 fields verified.
+- Acceptance queries AQ-01--AQ-05: 5/5 PASS.
+- All 36 pre-commit governance hooks: PASS.
+- GC-051 corpus scan registry updated: T9 scan wave, T4-F2 resolved.
+
+Boundary: local-deterministic pilot only; no provider calls, no LLM, no vector
+retrieval, no production deployment, no public-sync, no legal advice claims.
+EC-02 corpus freshness review required on or after 2026-07-01.
+
+Next allowed move: operator review of T9 completion; then corpus expansion or
+production deployment requires fresh operator-authorized work order.
+
+Previous continuity:
 
 QBS-GATE1 public-sync claim gate wire-in is `CLOSED_PASS_BOUNDED` and
 `EXPORTED`.

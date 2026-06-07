@@ -754,15 +754,17 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LPCI2-T9 PolicyLocal search runtime roadmap is `PROPOSED`:
+LPCI2-T9 PolicyLocal search runtime is `CLOSED_PASS_BOUNDED` at commit `094d82d0`.
 
-`docs/roadmaps/CVF_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_ROADMAP_2026-06-07.md`
+Work order: `docs/work_orders/CVF_WO_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_2026-06-07.md`
 
-Current mode: `lpci2_t9_policylocal_search_runtime_roadmap_proposed`.
+Completion: `docs/reviews/CVF_LPCI2_T9_SEARCH_RUNTIME_COMPLETION_2026-06-07.md`
 
-Next allowed move: review the roadmap or author a fresh source-verified T9 work
-order for local deterministic chunk generation, keyword/filter search,
-boundary enforcement, and query receipt emission.
+Current mode: `lpci2_t9_complete`.
+
+Next allowed move: operator review of T9 completion. Corpus expansion or
+production deployment requires a fresh operator-authorized work order.
+EC-02 freshness review required on or after 2026-07-01.
 
 The prior product lanes remain parked: DEP2 next-auth stable migration is
 `HARD_BLOCKED`, external receipt-anchor provider/service selection is
