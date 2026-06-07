@@ -36,21 +36,17 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci2_t9_correction_clean_closed`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=author a fresh source-verified PolicyLocal foundation, corpus expansion, or deployment work order; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`lpci2_t10_foundation_readiness_dispatched`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=Claude may execute the T10 PolicyLocal foundation readiness work order and return uncommitted verifier/report artifacts for Codex review; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`lpci2_t9_correction_clean_closed`
+`lpci2_t10_foundation_readiness_dispatched`
 
-Current HEAD recorded for this handoff: `fcc9f50f`
-(LPCI2-T9 correction-clean closure. Original T9 closure `094d82d0`; correction
-fixed AQ-05 freshness disclosure receipt behavior/assertion, added Acceptance
-Receipt Assertion Matrix, added External Artifact Hash Manifest, closed the T9
-roadmap, updated GC-051, and hardened the work-order template plus machine
-closure package checker; scope clarification added session continuity files to
-the parser-visible Allowed scope. Prior HEAD chain: `9e554154` T9 session sync
--> `f7af185f` correction-clean material commit -> `15b72c1a` session sync ->
-`fcc9f50f` scope clarification.).
+Current HEAD recorded for this handoff: `d98a4bc2`
+(LPCI2-T10 PolicyLocal foundation readiness work order dispatch. Work order:
+`docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_FOR_CLAUDE_2026-06-07.md`.
+Claude worker must not commit. Prior HEAD chain: `fcc9f50f` T9 correction scope
+clarification -> `1729683b` final T9 session sync -> `d98a4bc2` T10 dispatch.).
 
 ## Active Boundary
 
@@ -198,8 +194,47 @@ Only V16 should be treated as the active root handoff.
   Boundary: guard/CI wire-in only; no benchmark rerun, output-quality parity,
   L4/L5 score, family-level power, hosted readiness, production readiness, or
   public readiness claim.
+- Dispatched LPCI2-T10 PolicyLocal foundation readiness work order at
+  `d98a4bc2` for Claude execution:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_FOR_CLAUDE_2026-06-07.md`.
+  Scope is a local deterministic verifier/report over existing T9 artifacts.
+  Commit mode is `WORKER_MUST_NOT_COMMIT`; Claude must return uncommitted
+  verifier/report artifacts and a worker return packet for Codex review.
 
 ## Latest Continuity Note
+
+LPCI2-T10 PolicyLocal foundation readiness is `DISPATCHED_TO_WORKER` at
+dispatch commit `d98a4bc2`.
+
+Private artifacts:
+
+- Work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_FOR_CLAUDE_2026-06-07.md`
+- Expected verifier:
+  `CVF-Workspace/Policy_Local/scripts/policylocal-foundation-readiness.py`
+- Expected readiness report:
+  `CVF-Workspace/Policy_Local/data/generated/policylocal-foundation-readiness-report.json`
+- Expected worker return packet:
+  `docs/reviews/CVF_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_WORKER_RETURN_2026-06-07.md`
+
+Verification summary:
+
+- Work-order dispatch quality: PASS on `1729683b..HEAD`.
+- Pre-dispatch autorun gate: PASS on `1729683b..HEAD`.
+- Pre-commit hook: PASS 36/36 for dispatch commit `d98a4bc2`.
+- T9 prerequisite: `CLOSED_PASS_BOUNDED_CORRECTION_CLEAN` at `fcc9f50f`;
+  final T9 sync at `1729683b`.
+
+Boundary: T10 verifier/report only; no provider calls, no LLM/chat runtime, no
+vector retrieval, no corpus expansion, no EC-02 current-law transition before
+2026-07-01, no deployment, no public-sync, no public/hosted/production
+readiness, no legal advice quality claim.
+
+Next allowed move: LHW24 remains the latest closed numbered LHW wave. Claude
+may execute the T10 work order and return uncommitted verifier/report artifacts
+for Codex review.
+
+Previous continuity:
 
 LPCI2-T9 PolicyLocal search runtime is
 `CLOSED_PASS_BOUNDED_CORRECTION_CLEAN` at material commit `fcc9f50f`
@@ -223,18 +258,12 @@ Verification summary:
   `freshnessDisclosureApplied=true`.
 - Receipt artifact hash:
   `sha256:a8273e358438579360f8fde64129475f7e97e8b9fd889bba074eac083d79223f`.
-- Local hook chain: PASS 61/61 before correction material commit; pre-commit
-  hooks: PASS 36/36 for both correction material commits.
 - GC-051 corpus scan registry updated: T9 scan wave, T4-F2 resolved,
   T9-F1 assertion gap resolved.
 
 Boundary: local-deterministic pilot only; no provider calls, no LLM, no vector
 retrieval, no production deployment, no public-sync, no legal advice claims.
 EC-02 corpus freshness review required on or after 2026-07-01.
-
-Next allowed move: author a fresh source-verified PolicyLocal foundation,
-corpus expansion, or deployment work order. EC-02 freshness review is required
-on or after 2026-07-01 before any current-law or production runtime claim.
 
 Previous continuity:
 
@@ -561,14 +590,15 @@ Diagnostic boundary:
 
 ## Next Allowed Move
 
-LPCI2-T9 PolicyLocal search runtime is
-`CLOSED_PASS_BOUNDED_CORRECTION_CLEAN`:
+LPCI2-T10 PolicyLocal foundation readiness work order is
+`DISPATCHED_TO_WORKER`:
 
-`docs/roadmaps/CVF_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_ROADMAP_2026-06-07.md`
+`docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_FOR_CLAUDE_2026-06-07.md`
 
-Next allowed move: author a fresh source-verified PolicyLocal foundation,
-corpus expansion, or deployment work order. Do not treat T9 as production,
-hosted, public, legal-advice, current-law, provider, chat, or vector readiness.
+Next allowed move: Claude may execute the T10 work order under
+`WORKER_MUST_NOT_COMMIT` and return uncommitted verifier/report artifacts for
+Codex review. Do not treat T9 or T10 as production, hosted, public,
+legal-advice, current-law, provider, chat, vector, or deployment readiness.
 
 The prior product lanes remain parked:
 
@@ -586,8 +616,8 @@ Blocked without separate authorization and passing phase gates:
 - automatic optimization;
 - governance-rule retirement;
 - full operational benchmark telemetry claim;
-- PolicyLocal foundation/corpus/deployment work without a fresh authorized work
-  order;
+- PolicyLocal corpus expansion or deployment work without a fresh authorized
+  work order;
 - provider calls;
 - chat runtime;
 - vector/embedding retrieval;
@@ -645,6 +675,25 @@ promotion for the same defect class.
 Rollback boundary: if this hardening is wrong, revert only the public-doc drift
 checker, its tests, local hook-chain wiring, and matching active-session
 continuity text. Do not revert unrelated operator or workspace changes.
+
+## Core Guard Self-Protection Authorization - T10 Dispatch Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+dispatching the T10 PolicyLocal foundation readiness work order for Claude at
+commit `d98a4bc2`.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `AGENT_HANDOFF_V16_2026-06-06.md`
+
+Operator authorization: 2026-06-07 operator instructed Codex to proceed with
+PolicyLocal foundation work and prepare Claude for implementation.
+
+Rollback boundary: revert only the T10 dispatch session-sync text and state
+registry entries if the dispatch routing is wrong. Do not revert the T9
+correction-clean closure or unrelated continuity history.
 
 ## Claim Boundary
 

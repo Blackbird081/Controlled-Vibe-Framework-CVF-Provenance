@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-07
 
-Current mode marker: `lpci2_t9_correction_clean_closed`
+Current mode marker: `lpci2_t10_foundation_readiness_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lpci2_t9_correction_clean_closed`.
+Current mode: `lpci2_t10_foundation_readiness_dispatched`.
 
 Active handoff:
 
@@ -49,6 +49,41 @@ Active review queue:
 `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
 
 Latest continuity note:
+
+LPCI2-T10 PolicyLocal foundation readiness is `DISPATCHED_TO_WORKER` at
+dispatch commit `d98a4bc2`.
+
+Work order:
+
+`docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_FOR_CLAUDE_2026-06-07.md`
+
+Worker: Claude.
+
+Commit mode: `WORKER_MUST_NOT_COMMIT`.
+
+Expected worker return packet:
+
+`docs/reviews/CVF_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_WORKER_RETURN_2026-06-07.md`
+
+Scope: create local deterministic
+`CVF-Workspace/Policy_Local/scripts/policylocal-foundation-readiness.py`,
+generate
+`CVF-Workspace/Policy_Local/data/generated/policylocal-foundation-readiness-report.json`,
+hash-bind the existing T9 external artifacts, assert AQ-01 through AQ-05
+receipt values, and preserve the EC-02 review boundary.
+
+Verification before dispatch: `git diff --check` PASS,
+`check_work_order_dispatch_quality.py --base 1729683b --head HEAD --enforce`
+PASS, `run_agent_autorun_workflow_gate.py --phase pre-dispatch --base
+1729683b --head HEAD` PASS, and pre-commit hook PASS 36/36 for dispatch commit.
+
+Boundary: no provider calls, LLM/chat runtime, vector retrieval, corpus
+expansion, EC-02 current-law transition before 2026-07-01, deployment,
+public-sync, public/hosted/production readiness, legal advice quality,
+provider-quality/cost/performance claim, Learning Orchestrator runtime
+behavior, memory reinjection, high-risk promotion, or autonomous mutation.
+
+Prior continuity note:
 
 LPCI2-T9 PolicyLocal search runtime is
 `CLOSED_PASS_BOUNDED_CORRECTION_CLEAN` at material commit `fcc9f50f`
@@ -75,8 +110,7 @@ session continuity files in the work-order Allowed scope.
 Verification: corrected acceptance receipts PASS 5/5 with AQ-01 and AQ-05
 `freshnessDisclosureApplied=true`; receipt artifact hash
 `sha256:a8273e358438579360f8fde64129475f7e97e8b9fd889bba074eac083d79223f`;
-local hook chain PASS 61/61 before correction material commit and pre-commit
-hook PASS 36/36 for both correction material commits.
+combined pre-closure gates PASS at final T9 sync.
 
 Boundary: local-deterministic pilot only; no provider calls, LLM, vector
 retrieval, legal advice quality, current-law claim, production deployment,
@@ -115,8 +149,9 @@ Delivered:
 Boundary: methodology/checker/calibration-standard only; no live run,
 no corpus expansion, no F-1 reopen, no runtime changes.
 
-Next allowed move: author a fresh source-verified PolicyLocal foundation,
-corpus expansion, or deployment work order. EC-02 freshness review is required
+Next allowed move: LHW24 remains the latest closed numbered LHW wave. Claude may
+execute the T10 foundation readiness work order and return uncommitted
+verifier/report artifacts for Codex review. EC-02 freshness review is required
 on or after 2026-07-01 before any current-law or production runtime claim.
 
 Prior continuity note:
@@ -754,18 +789,18 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LPCI2-T9 PolicyLocal search runtime is
-`CLOSED_PASS_BOUNDED_CORRECTION_CLEAN` at commit `fcc9f50f`.
+LPCI2-T10 PolicyLocal foundation readiness work order is
+`DISPATCHED_TO_WORKER` at commit `d98a4bc2`.
 
-Work order: `docs/work_orders/CVF_WO_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_2026-06-07.md`
+Work order:
+`docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T10_POLICYLOCAL_FOUNDATION_READINESS_FOR_CLAUDE_2026-06-07.md`
 
-Completion: `docs/reviews/CVF_LPCI2_T9_SEARCH_RUNTIME_COMPLETION_2026-06-07.md`
+Current mode: `lpci2_t10_foundation_readiness_dispatched`.
 
-Current mode: `lpci2_t9_complete`.
-
-Next allowed move: author a fresh source-verified PolicyLocal foundation,
-corpus expansion, or deployment work order. EC-02 freshness review required on
-or after 2026-07-01.
+Next allowed move: Claude may execute the T10 work order under
+`WORKER_MUST_NOT_COMMIT` and return the uncommitted verifier/report packet for
+Codex review. EC-02 freshness review is required on or after 2026-07-01 before
+any current-law or production runtime claim.
 
 The prior product lanes remain parked: DEP2 next-auth stable migration is
 `HARD_BLOCKED`, external receipt-anchor provider/service selection is
