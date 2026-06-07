@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-06
 
-Current mode marker: `erh_rl1b_distributed_rate_limit_backend_closed_pass_bounded`
+Current mode marker: `qbs_gate1_public_sync_claim_gate_wire_in_ready_for_dispatch`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `qbs_method_reliability_remediation_closed_pass_bounded`.
+Current mode: `qbs_gate1_public_sync_claim_gate_wire_in_ready_for_dispatch`.
 
 Active handoff:
 
@@ -50,6 +50,28 @@ Active review queue:
 
 Latest continuity note:
 
+QBS-GATE1 public-sync claim gate wire-in is `READY_FOR_DISPATCH`.
+
+Work order:
+
+`docs/work_orders/CVF_WO_QBS_GATE1_PUBLIC_SYNC_CLAIM_GATE_WIRE_IN_FOR_CLAUDE_2026-06-07.md`
+
+Source commit: `9676ae37`
+
+Public-sync base: `7d33a5887`
+
+Target: wire the accepted QBS claim gate into public-sync local hooks and
+documentation CI so public QBS benchmark artifacts cannot bypass reviewer
+agreement, corpus-power, no-parity, or calibration-anchor boundaries.
+
+Boundary: no public-sync push, live/provider calls, QBS rerun, package
+installation, QBS methodology or historical benchmark mutation,
+public/hosted/production readiness, output-quality parity, L4/L5 quality
+claim, cost/performance/provider-quality claim, Learning Orchestrator runtime
+behavior, or autonomous mutation.
+
+Prior continuity note:
+
 QBS method reliability remediation is `CLOSED_PASS_BOUNDED`:
 
 Work order:
@@ -62,30 +84,7 @@ Completion:
 
 Material commit: `2db8805e`
 
-Delivered:
-
-- `@upstash/redis` is installed for the cvf-web route limiter.
-- `src/lib/rate-limit.ts` now has async `RateLimitStore` consumption,
-  `RateLimitRedisClient`, and `UpstashRedisRateLimitStore`.
-- `CVF_RATE_LIMIT_STORE=redis` activates only with complete valid
-  `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN`.
-- Missing, incomplete, or malformed Redis env fails closed.
-- `/api/execute` awaits `limiter.consume` while preserving the 429 response
-  contract.
-
-Boundary: adapter-contract and fake-client Redis command-semantics proof only;
-no hosted Redis service proof, multi-instance enforcement claim, public-sync,
-hosted readiness, production readiness, public readiness, provider-quality
-claim, cost/performance claim, Learning Orchestrator runtime behavior, or
-autonomous mutation.
-
-Verification:
-
-- Pre-dispatch and pre-implementation autorun gates: PASS.
-- Focused rate-limit tests: PASS, 17 tests.
-- `npm run check`: PASS.
-- Material-range pre-closure gates passed except session-sync state before this
-  continuity update.
+Post-closure checker hardening commit: `9676ae37`
 
 Delivered:
 
@@ -102,10 +101,8 @@ Delivered:
 Boundary: methodology/checker/calibration-standard only; no live run,
 no corpus expansion, no F-1 reopen, no runtime changes.
 
-Next allowed move: separate live Redis service proof if CVF needs hosted
-multi-instance enforcement evidence, or continue parked DEP2 next-auth stable
-migration, or real external receipt-anchor provider/service selection.
-Wire `check_qbs_claim_gate.py` into autorun hook chain requires fresh GC-018.
+Next allowed move: dispatch Claude on QBS-GATE1 public-sync claim gate wire-in
+work order above.
 
 Prior continuity note:
 
@@ -742,19 +739,18 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-ERH-RL1B distributed rate-limit backend material commit is `d243b349`.
+QBS checker false-negative hardening commit is `9676ae37`.
 
-Next allowed move: separate live Redis service proof if CVF needs hosted
-multi-instance enforcement evidence, or continue parked DEP2 next-auth stable
-migration, QBS method reliability, or real external receipt-anchor
-provider/service selection.
+Next allowed move: dispatch Claude on
+`docs/work_orders/CVF_WO_QBS_GATE1_PUBLIC_SYNC_CLAIM_GATE_WIRE_IN_FOR_CLAUDE_2026-06-07.md`
+to wire the accepted QBS claim gate into public-sync local hooks and
+documentation CI.
 
 LHW24 remains the latest closed numbered LHW wave in the state registry.
 
-Blocked without separate authorization and passing phase gates: stable Auth.js
-migration, hosted Redis provisioning, PostgreSQL/SSO implementation, real external
-anchor provider integration, third-party immutability claim, benchmark live
-rerun or quality parity claim, governance-rule removal,
+Blocked without separate authorization and passing phase gates: public-sync
+push, live/provider calls, QBS rerun, package installation, QBS methodology or
+historical benchmark mutation, output-quality parity or L4/L5 quality claim,
 public/hosted/production readiness claims, cost/performance/provider-quality
 claims, memory reinjection, high-risk promotion implementation, Learning
 Orchestrator runtime behavior, and autonomous mutation.

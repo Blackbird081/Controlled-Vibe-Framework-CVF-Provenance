@@ -36,14 +36,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`qbs_method_reliability_remediation_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=separate live Redis service proof if CVF needs hosted multi-instance enforcement evidence, or continue parked DEP2 next-auth stable migration, or real external receipt-anchor provider/service work; parked checkpoint=none.
+Startup acknowledged: current mode=`qbs_gate1_public_sync_claim_gate_wire_in_ready_for_dispatch`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=dispatch Claude on QBS-GATE1 public-sync claim gate wire-in work order; parked checkpoint=none.
 
 ## Current Mode
 
-`qbs_method_reliability_remediation_closed_pass_bounded`
+`qbs_gate1_public_sync_claim_gate_wire_in_ready_for_dispatch`
 
-Current HEAD recorded for this handoff: `2db8805e`
-(closure commit for QBS method reliability remediation).
+Current HEAD recorded for this handoff: `9676ae37`
+(post-closure QBS checker false-negative hardening commit).
 
 ## Active Boundary
 
@@ -156,8 +156,45 @@ Only V16 should be treated as the active root handoff.
   anchors standard and `check_qbs_claim_gate.py` machine checker added.
   Boundary: methodology/checker/calibration-standard only; no live run, no
   corpus expansion, no F-1 reopen.
+- Committed QBS checker false-negative hardening at `9676ae37`: `_extract_run_date`
+  now recognizes `started_at`, `completed_at`, and date tokens in `run_id` /
+  `scored_run_id`; missing future or date-unknown calibration anchors fail
+  closed; filename-token legacy bypass is removed.
+- Authored QBS-GATE1 public-sync claim gate wire-in work order:
+  `docs/work_orders/CVF_WO_QBS_GATE1_PUBLIC_SYNC_CLAIM_GATE_WIRE_IN_FOR_CLAUDE_2026-06-07.md`.
+  Target public-sync base is `7d33a5887`; Claude worker must not commit or push.
 
 ## Latest Continuity Note
+
+QBS-GATE1 public-sync claim gate wire-in is `READY_FOR_DISPATCH`.
+
+Private artifact:
+
+- Work order:
+  `docs/work_orders/CVF_WO_QBS_GATE1_PUBLIC_SYNC_CLAIM_GATE_WIRE_IN_FOR_CLAUDE_2026-06-07.md`
+
+Source commit:
+
+- QBS checker false-negative hardening: `9676ae37`
+
+Target public-sync base:
+
+- `7d33a5887`
+
+Target:
+
+- wire accepted `check_qbs_claim_gate.py` behavior into public-sync local hooks
+  and documentation CI;
+- prove future missing-anchor and date-unknown QBS artifacts fail closed;
+- scan public-sync `docs/benchmark` with nonzero artifact coverage.
+
+Boundary: no public-sync push, live/provider calls, QBS rerun, package
+installation, QBS methodology or historical benchmark mutation, public/hosted
+readiness, production readiness, output-quality parity, L4/L5 quality claim,
+cost/performance/provider-quality claim, Learning Orchestrator runtime
+behavior, or autonomous mutation.
+
+Previous continuity:
 
 QBS method reliability remediation is `CLOSED_PASS_BOUNDED`.
 
@@ -182,6 +219,7 @@ Changed artifacts (provenance):
 Verification summary:
 
 - Material commit: `2db8805e`.
+- Post-closure checker hardening commit: `9676ae37`.
 - Pre-implementation autorun gates: PASS.
 - QBS claim gate smoke tests (kappa 0.4464/0.7139/0.3716): ALL CORRECT.
 - QBS claim gate scan — 147 public-sync benchmark artifacts: 0 violations.
@@ -189,10 +227,8 @@ Verification summary:
 Boundary: methodology/checker/calibration-standard only; no live run, no
 corpus expansion, no F-1 reopen, no runtime changes.
 
-Next allowed move: separate live Redis service proof if CVF needs hosted
-multi-instance enforcement evidence, or continue parked DEP2 next-auth stable
-migration, or real external receipt-anchor provider/service selection.
-Wire `check_qbs_claim_gate.py` into autorun hook chain requires fresh GC-018.
+Next allowed move: superseded by QBS-GATE1 public-sync claim gate wire-in
+dispatch above.
 
 Previous continuity:
 
@@ -447,10 +483,10 @@ Diagnostic boundary:
 
 ## Next Allowed Move
 
-Open a separate source-verified GC-018 for real external anchor
-provider/service selection and integration, continue parked DEP2 next-auth
-stable migration, ERH-RL1 distributed rate limiter, or QBS method reliability
-work.
+Dispatch Claude on
+`docs/work_orders/CVF_WO_QBS_GATE1_PUBLIC_SYNC_CLAIM_GATE_WIRE_IN_FOR_CLAUDE_2026-06-07.md`
+to wire the accepted QBS claim gate into public-sync local hooks and
+documentation CI from public-sync base `7d33a5887`.
 
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`; this MLW8-PEL1 tranche does not alter
@@ -465,12 +501,16 @@ Blocked without separate authorization and passing phase gates:
 - dependency changes;
 - distributed or production durability claim;
 - Redis implementation;
-- public-sync or public push;
-- live/provider proof outside the selected next work order;
+- public-sync push;
+- live/provider proof;
+- QBS rerun;
+- QBS methodology or historical benchmark mutation;
+- package installation;
 - prompt/context mutation;
 - policy relaxation or evidence reduction;
 - provider routing change;
 - public/hosted/production readiness claim;
+- output-quality parity or L4/L5 quality claim;
 - cost/performance/provider-quality claim;
 - memory reinjection;
 - high-risk promotion implementation;
