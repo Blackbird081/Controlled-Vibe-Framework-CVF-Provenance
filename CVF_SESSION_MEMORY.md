@@ -754,22 +754,30 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-QBS-GATE1 public-sync claim gate wire-in is `CLOSED_PASS_BOUNDED` and exported
-at public-sync commit `993014398`.
+LPCI2-T9 PolicyLocal search runtime roadmap is `PROPOSED`:
 
-Next allowed move: choose one parked product lane: DEP2 next-auth stable
-migration, real external receipt-anchor provider/service selection, or a
-separate live Redis service proof if hosted multi-instance enforcement evidence
-is needed.
+`docs/roadmaps/CVF_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_ROADMAP_2026-06-07.md`
+
+Current mode: `lpci2_t9_policylocal_search_runtime_roadmap_proposed`.
+
+Next allowed move: review the roadmap or author a fresh source-verified T9 work
+order for local deterministic chunk generation, keyword/filter search,
+boundary enforcement, and query receipt emission.
+
+The prior product lanes remain parked: DEP2 next-auth stable migration is
+`HARD_BLOCKED`, external receipt-anchor provider/service selection is
+`PARKED_PENDING_OPERATOR_DECISION`, and live Redis service proof is
+`PARKED_PENDING_CREDENTIALS`.
 
 LHW24 remains the latest closed numbered LHW wave in the state registry.
 
-Blocked without separate authorization and passing phase gates: live/provider
-calls, QBS rerun, QBS methodology or historical benchmark mutation,
-output-quality parity or L4/L5 quality claim,
-public/hosted/production readiness claims, cost/performance/provider-quality
-claims, memory reinjection, high-risk promotion implementation, Learning
-Orchestrator runtime behavior, and autonomous mutation.
+Blocked without separate authorization and passing phase gates: provider calls,
+chat runtime, vector/embedding retrieval, legal advice quality claim,
+latest-law claim, public-sync, public/hosted/production readiness claims, QBS
+rerun, output-quality parity or L4/L5 quality claim,
+cost/performance/provider-quality claims, memory reinjection, high-risk
+promotion implementation, Learning Orchestrator runtime behavior, and
+autonomous mutation.
 
 ## Enforcement
 

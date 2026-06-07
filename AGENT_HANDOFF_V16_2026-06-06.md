@@ -36,17 +36,17 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`qbs_gate1_public_sync_claim_gate_wire_in_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=choose parked DEP2 next-auth stable migration, real external receipt-anchor provider/service selection, or separate live Redis service proof; parked checkpoint=none.
+Startup acknowledged: current mode=`lpci2_t9_policylocal_search_runtime_roadmap_proposed`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=review LPCI2-T9 roadmap or author a fresh source-verified T9 work order for local deterministic PolicyLocal search runtime; parked checkpoint=prior DEP2/receipt-anchor/Redis lanes remain parked.
 
 ## Current Mode
 
-`qbs_gate1_public_sync_claim_gate_wire_in_closed_pass_bounded`
+`lpci2_t9_policylocal_search_runtime_roadmap_proposed`
 
-Current HEAD recorded for this handoff: `685f3a6f`
+Current HEAD recorded for this handoff: `4ce03931`
 (G-GM-08 + G-GM-06 work order closed. Completion review filed CLOSED_PASS_BOUNDED. Template hardened.
 Text encoding and symbol discipline front-door standard added. Prior HEAD chain:
 `cdadedf7` implementation -> `b98bd803` closure -> `35d6a079` session sync
--> `685f3a6f` text encoding standard.).
+-> `685f3a6f` text encoding standard -> `4ce03931` handoff sync.).
 
 ## Active Boundary
 
@@ -117,6 +117,13 @@ Only V16 should be treated as the active root handoff.
   `685f3a6f`: default ASCII for agent-authored governed text, source comments,
   tests, work orders, completion packets, handoffs, registries, and public-sync
   summaries; Unicode requires an explicit exception and reason.
+- Proposed LPCI2-T9 PolicyLocal search runtime roadmap:
+  `docs/roadmaps/CVF_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_ROADMAP_2026-06-07.md`.
+  T9 is local deterministic search planning only: chunk generation,
+  keyword/filter retrieval, boundary enforcement, and query receipt emission.
+  It does not authorize implementation, provider calls, chat runtime, vector
+  retrieval, legal advice claims, public-sync, hosted readiness, production
+  readiness, public readiness, or autonomous mutation.
 - Classified V16 as an `INTERNAL_ONLY` visible root file for P3/public exposure
   guard compatibility.
 - Updated next allowed move to review or a separate source-verified Core KB
@@ -505,34 +512,20 @@ Diagnostic boundary:
 
 ## Next Allowed Move
 
-All three candidate product lanes are parked pending external conditions
-(audited 2026-06-07). No implementation may start without the unblock
-condition below being satisfied first.
+LPCI2-T9 PolicyLocal search runtime roadmap is `PROPOSED`:
 
-**Lane 1 — Live Redis service proof** `PARKED_PENDING_CREDENTIALS`
+`docs/roadmaps/CVF_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_ROADMAP_2026-06-07.md`
 
-Unblock condition: operator provides `UPSTASH_REDIS_REST_URL` +
-`UPSTASH_REDIS_REST_TOKEN` (free Upstash account at upstash.com, < 2 min).
-Adapter contract and `UpstashRedisRateLimitStore` are already merged at
-`d243b349`. No new GC-018 needed — scope is direct continuation of ERH-RL1B.
-This is the best first move once credentials are available.
+Next allowed move: review the roadmap or author a fresh source-verified T9 work
+order for local deterministic chunk generation, keyword/filter search,
+boundary enforcement, and query receipt emission.
 
-**Lane 2 — DEP2 next-auth stable migration** `HARD_BLOCKED`
+The prior product lanes remain parked:
 
-Unblock condition (any one): npm registry shows stable v5 GA (`latest` tag
-points to v5.x); OR operator explicitly authorizes v4 downgrade with full
-Auth.js API review and migration plan. Verified 2026-06-07: `latest=4.24.14`,
-`beta=5.0.0-beta.31`. Work order
-`docs/work_orders/CVF_WO_DEP2_NEXT_AUTH_STABLE_MIGRATION_DECISION_2026-06-06.md`
-records `REJECT` disposition on stable target row. Do not attempt without
-satisfied unblock condition.
-
-**Lane 3 — External receipt-anchor provider/service selection**
-`PARKED_PENDING_OPERATOR_DECISION`
-
-Unblock condition: operator selects provider/service and authorizes a new
-GC-018. No backlog-ready work order exists. Partial design is possible but
-has low standalone value without the provider decision.
+- DEP2 next-auth stable migration: `HARD_BLOCKED`;
+- external receipt-anchor provider/service selection:
+  `PARKED_PENDING_OPERATOR_DECISION`;
+- live Redis service proof: `PARKED_PENDING_CREDENTIALS`.
 
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`; this MLW8-PEL1 tranche does not alter
@@ -543,6 +536,12 @@ Blocked without separate authorization and passing phase gates:
 - automatic optimization;
 - governance-rule retirement;
 - full operational benchmark telemetry claim;
+- T9 implementation without a fresh authorized work order;
+- provider calls;
+- chat runtime;
+- vector/embedding retrieval;
+- legal advice quality claim;
+- latest-law claim;
 - runtime/source code changes beyond a fresh authorized work order;
 - dependency changes;
 - distributed or production durability claim;
