@@ -42,8 +42,9 @@ Startup acknowledged: current mode=`qbs_gate1_public_sync_claim_gate_wire_in_clo
 
 `qbs_gate1_public_sync_claim_gate_wire_in_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `7e0bf7cf`
-(QBS-GATE1 private completion closure commit).
+Current HEAD recorded for this handoff: `f9f8780d`
+(Graphify guard enforcement source verification closure commit — 4 files: work order, source map, completion packet, GC-051 registry update.
+Prior HEAD: `7e0bf7cf` QBS-GATE1 private completion closure commit.).
 
 ## Active Boundary
 
@@ -498,9 +499,34 @@ Diagnostic boundary:
 
 ## Next Allowed Move
 
-Choose one parked product lane: DEP2 next-auth stable migration, real external
-receipt-anchor provider/service selection, or a separate live Redis service
-proof if hosted multi-instance enforcement evidence is needed.
+All three candidate product lanes are parked pending external conditions
+(audited 2026-06-07). No implementation may start without the unblock
+condition below being satisfied first.
+
+**Lane 1 — Live Redis service proof** `PARKED_PENDING_CREDENTIALS`
+
+Unblock condition: operator provides `UPSTASH_REDIS_REST_URL` +
+`UPSTASH_REDIS_REST_TOKEN` (free Upstash account at upstash.com, < 2 min).
+Adapter contract and `UpstashRedisRateLimitStore` are already merged at
+`d243b349`. No new GC-018 needed — scope is direct continuation of ERH-RL1B.
+This is the best first move once credentials are available.
+
+**Lane 2 — DEP2 next-auth stable migration** `HARD_BLOCKED`
+
+Unblock condition (any one): npm registry shows stable v5 GA (`latest` tag
+points to v5.x); OR operator explicitly authorizes v4 downgrade with full
+Auth.js API review and migration plan. Verified 2026-06-07: `latest=4.24.14`,
+`beta=5.0.0-beta.31`. Work order
+`docs/work_orders/CVF_WO_DEP2_NEXT_AUTH_STABLE_MIGRATION_DECISION_2026-06-06.md`
+records `REJECT` disposition on stable target row. Do not attempt without
+satisfied unblock condition.
+
+**Lane 3 — External receipt-anchor provider/service selection**
+`PARKED_PENDING_OPERATOR_DECISION`
+
+Unblock condition: operator selects provider/service and authorizes a new
+GC-018. No backlog-ready work order exists. Partial design is possible but
+has low standalone value without the provider decision.
 
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`; this MLW8-PEL1 tranche does not alter
