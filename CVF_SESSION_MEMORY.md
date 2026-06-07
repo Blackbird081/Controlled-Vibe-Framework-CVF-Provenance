@@ -67,6 +67,8 @@ Work order authoring commit: `7a5bc2dd`
 
 Public-sync base: `7d33a5887`
 
+Private closure commit: `7e0bf7cf`
+
 Public-sync closure commit: `993014398`
 
 Delivered: accepted QBS claim gate wired into public-sync local hooks and

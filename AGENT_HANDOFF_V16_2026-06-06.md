@@ -42,8 +42,8 @@ Startup acknowledged: current mode=`qbs_gate1_public_sync_claim_gate_wire_in_clo
 
 `qbs_gate1_public_sync_claim_gate_wire_in_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `9faf27c0`
-(QBS-GATE1 session-sync commit before private completion closure).
+Current HEAD recorded for this handoff: `7e0bf7cf`
+(QBS-GATE1 private completion closure commit).
 
 ## Active Boundary
 
@@ -168,6 +168,7 @@ Only V16 should be treated as the active root handoff.
   fixture self-test, local hook-chain wiring, documentation CI job, and
   public-safe completion evidence were added and pushed to
   `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`.
+  Private closure commit is `7e0bf7cf`.
   Boundary: guard/CI wire-in only; no benchmark rerun, output-quality parity,
   L4/L5 score, family-level power, hosted readiness, production readiness, or
   public readiness claim.
@@ -188,6 +189,7 @@ Source commit:
 
 - QBS checker false-negative hardening: `9676ae37`
 - Work order authoring: `7a5bc2dd`
+- Private closure: `7e0bf7cf`
 - Public-sync closure: `993014398`
 
 Target public-sync base:
