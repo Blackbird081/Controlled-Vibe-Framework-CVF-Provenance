@@ -42,9 +42,11 @@ Startup acknowledged: current mode=`qbs_gate1_public_sync_claim_gate_wire_in_clo
 
 `qbs_gate1_public_sync_claim_gate_wire_in_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `b98bd803`
+Current HEAD recorded for this handoff: `685f3a6f`
 (G-GM-08 + G-GM-06 work order closed. Completion review filed CLOSED_PASS_BOUNDED. Template hardened.
-Prior HEAD chain: `cdadedf7` implementation → `b98bd803` closure.).
+Text encoding and symbol discipline front-door standard added. Prior HEAD chain:
+`cdadedf7` implementation -> `b98bd803` closure -> `35d6a079` session sync
+-> `685f3a6f` text encoding standard.).
 
 ## Active Boundary
 
@@ -111,6 +113,10 @@ Only V16 should be treated as the active root handoff.
 - Closed External Review GAP1 Core KB overlap map at material commit
   `d9ded170`; GC-051 registry now covers the extension README owner surfaces
   used by the map.
+- Added canonical text encoding and symbol discipline standard at commit
+  `685f3a6f`: default ASCII for agent-authored governed text, source comments,
+  tests, work orders, completion packets, handoffs, registries, and public-sync
+  summaries; Unicode requires an explicit exception and reason.
 - Classified V16 as an `INTERNAL_ONLY` visible root file for P3/public exposure
   guard compatibility.
 - Updated next allowed move to review or a separate source-verified Core KB
