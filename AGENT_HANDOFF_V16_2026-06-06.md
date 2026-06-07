@@ -36,11 +36,11 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci2_t11a_candidate_inventory_dispatched`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=Claude may execute T11A Candidate Inventory under WORKER_MUST_NOT_COMMIT and return uncommitted inventory/manifest evidence; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`lpci2_t11a_supplement_bundle_inventory_dispatched`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=Claude may execute T11A supplement real use-case bundle inventory under WORKER_MUST_NOT_COMMIT and return uncommitted lineage/manifest evidence; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`lpci2_t11a_candidate_inventory_dispatched`
+`lpci2_t11a_supplement_bundle_inventory_dispatched`
 
 Current HEAD recorded for this handoff: `1f386cc2`
 (T11A dispatch material commit. T10 closure material commit: `866f92cd`; T10
@@ -605,9 +605,18 @@ Diagnostic boundary:
 
 ## Next Allowed Move
 
-LPCI2-T11A Candidate Inventory is `DISPATCHED_TO_WORKER` for Claude:
+LPCI2-T11A Supplement Real Use-Case Bundle Inventory is
+`DISPATCHED_TO_WORKER` for Claude:
 
-`docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T11A_POLICYLOCAL_CANDIDATE_INVENTORY_FOR_CLAUDE_2026-06-07.md`
+`docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T11A_SUPPLEMENT_REAL_USE_CASE_BUNDLE_INVENTORY_FOR_CLAUDE_2026-06-07.md`
+
+Original direct-input worker return:
+
+`docs/reviews/CVF_LPCI2_T11A_CANDIDATE_INVENTORY_WORKER_RETURN_2026-06-07.md`
+
+Codex review:
+
+`docs/reviews/CVF_LPCI2_T11A_CANDIDATE_INVENTORY_CODEX_REVIEW_2026-06-07.md`
 
 Roadmap:
 
@@ -617,11 +626,12 @@ GC-018:
 
 `docs/baselines/CVF_GC018_LPCI2_T11A_POLICYLOCAL_CANDIDATE_INVENTORY_2026-06-07.md`
 
-Next allowed move: Claude may inventory the six newly added mixed PolicyLocal
-candidate files and return uncommitted inventory/manifest evidence for Codex
-review. Do not treat T9, T10, or T11A as production, hosted, public,
-legal-advice, current-law, provider, chat, vector, extraction, ingestion, or
-deployment readiness.
+Next allowed move: Claude may inventory the full
+`Law use case_Codex` real use-case bundle and return uncommitted lineage and
+manifest evidence for Codex review. Do not treat T9, T10, T11A, the direct
+worker return, or the supplement as production, hosted, public, legal-advice,
+current-law, provider, chat, vector, extraction, ingestion, or deployment
+readiness.
 
 The prior product lanes remain parked:
 

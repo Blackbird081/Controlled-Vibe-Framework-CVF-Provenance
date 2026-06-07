@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-07
 
-Current mode marker: `lpci2_t11a_candidate_inventory_dispatched`
+Current mode marker: `lpci2_t11a_supplement_bundle_inventory_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lpci2_t11a_candidate_inventory_dispatched`.
+Current mode: `lpci2_t11a_supplement_bundle_inventory_dispatched`.
 
 Active handoff:
 
@@ -50,8 +50,10 @@ Active review queue:
 
 Latest continuity note:
 
-LPCI2-T11 PolicyLocal Corpus Expansion Readiness roadmap is `PROPOSED` and
-T11A Candidate Inventory is `DISPATCHED_TO_WORKER` for Claude.
+LPCI2-T11 PolicyLocal Corpus Expansion Readiness roadmap is `PROPOSED`.
+Original T11A Candidate Inventory returned `RETURNED_PASS_BOUNDED` for the
+direct six-file input scope, but Codex review found a supplement is required
+for the real `Law use case_Codex` bundle lineage.
 
 Roadmap:
 
@@ -65,14 +67,28 @@ Work order:
 
 `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T11A_POLICYLOCAL_CANDIDATE_INVENTORY_FOR_CLAUDE_2026-06-07.md`
 
-Scope: inventory the six newly added mixed PolicyLocal candidate files under
-`CVF-Workspace/Policy_Local/data_input`, excluding the two existing pilot law
-DOCX files. Claude must return uncommitted inventory/manifest evidence.
+Worker return:
 
-Boundary: no body extraction, OCR, corpus ingestion, chunking, runtime query,
-provider calls, public-sync, current-law claim, legal advice quality claim, or
-production/public readiness. EC-02 hard boundary remains: no current-law claim
-before 2026-07-01. T12 corpus ingestion remains gated behind T11-D `READY`.
+`docs/reviews/CVF_LPCI2_T11A_CANDIDATE_INVENTORY_WORKER_RETURN_2026-06-07.md`
+
+Codex review:
+
+`docs/reviews/CVF_LPCI2_T11A_CANDIDATE_INVENTORY_CODEX_REVIEW_2026-06-07.md`
+
+Supplement work order:
+
+`docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T11A_SUPPLEMENT_REAL_USE_CASE_BUNDLE_INVENTORY_FOR_CLAUDE_2026-06-07.md`
+
+Scope: Claude must inventory the full
+`CVF-Workspace/Policy_Local/data_input/Law use case_Codex` real use-case
+bundle, including source inputs, `Request for agent.docx`, `_extracted_text`,
+and `_rendered_don_kien_nghi`, as lineage/provenance evidence only.
+
+Boundary: no body extraction, OCR, content summarization, corpus ingestion,
+chunking, runtime query, provider calls, public-sync, current-law claim, legal
+advice quality claim, or production/public readiness. EC-02 hard boundary
+remains: no current-law claim before 2026-07-01. T12 corpus ingestion remains
+gated behind T11-D `READY`.
 
 Prior continuity note:
 
@@ -825,17 +841,19 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LPCI2-T11A Candidate Inventory is `DISPATCHED_TO_WORKER` for Claude.
+LPCI2-T11A Supplement Real Use-Case Bundle Inventory is
+`DISPATCHED_TO_WORKER` for Claude.
 
 Work order:
-`docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T11A_POLICYLOCAL_CANDIDATE_INVENTORY_FOR_CLAUDE_2026-06-07.md`
+`docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T11A_SUPPLEMENT_REAL_USE_CASE_BUNDLE_INVENTORY_FOR_CLAUDE_2026-06-07.md`
 
-Current mode: `lpci2_t11a_candidate_inventory_dispatched`.
+Current mode: `lpci2_t11a_supplement_bundle_inventory_dispatched`.
 
-Next allowed move: Claude may execute T11A under `WORKER_MUST_NOT_COMMIT` and
-return uncommitted inventory/manifest evidence for Codex review. EC-02
-freshness review is required on or after 2026-07-01 before any current-law or
-production runtime claim.
+Next allowed move: Claude may execute the T11A supplement under
+`WORKER_MUST_NOT_COMMIT` and return uncommitted real use-case bundle
+inventory/manifest evidence for Codex review. EC-02 freshness review is
+required on or after 2026-07-01 before any current-law or production runtime
+claim.
 
 The prior product lanes remain parked: DEP2 next-auth stable migration is
 `HARD_BLOCKED`, external receipt-anchor provider/service selection is
