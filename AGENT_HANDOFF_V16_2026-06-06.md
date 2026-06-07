@@ -42,10 +42,8 @@ Startup acknowledged: current mode=`lpci2_t11a_candidate_and_bundle_inventory_cl
 
 `lpci2_t11a_candidate_and_bundle_inventory_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `34f1c4ec`
-(T11A supplement dispatch sync parent. T11A closure material commit will update
-this record in the follow-up session-sync commit after the exact closure SHA is
-known.).
+Current HEAD recorded for this handoff: `2694e88a`
+(T11A candidate and bundle inventory closure material commit.).
 
 ## Active Boundary
 
