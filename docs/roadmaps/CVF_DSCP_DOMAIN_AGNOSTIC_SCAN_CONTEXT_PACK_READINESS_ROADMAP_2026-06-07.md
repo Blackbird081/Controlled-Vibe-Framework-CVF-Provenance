@@ -123,18 +123,29 @@ public readiness claim is made.
 
 ---
 
-### DSCP-T3: Runtime Pilot (FUTURE - NOT YET AUTHORIZED)
+### DSCP-T3: Runtime Pilot - CPF Internal (CLOSED_PASS_BOUNDED)
 
-**Goal:** Wire the domain-agnostic governed context pack into at least one
-live domain pilot (e.g., a non-legal corpus lane). Produce deterministic
-test proof.
+**Goal:** Wire T2 type contracts into a deterministic governed runtime
+function inside `CVF_CONTROL_PLANE_FOUNDATION`. `GovernedContextPackerContract`
+wraps `ContextPackagerContract.pack()` with governance gate enforcement.
 
-**Prerequisites:**
-- DSCP-T2 closes with contracts accepted.
-- Operator explicitly authorizes DSCP-T3 runtime pilot with named domain.
+**Domain:** CPF internal (operator-selected 2026-06-07).
 
-**Not authorized until:** DSCP-T2 `CLOSED_PASS_BOUNDED` and explicit operator
-authorization.
+**Deliverables:**
+- Runtime: `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.context.packer.ts`
+- Tests: `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.governed.context.packer.test.ts`
+- GC-018: `docs/baselines/CVF_GC018_DSCP_T3_RUNTIME_PILOT_CPF_INTERNAL_2026-06-07.md`
+- Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T3_RUNTIME_PILOT_CPF_INTERNAL_FOR_CLAUDE_2026-06-07.md`
+- Worker return: `docs/reviews/CVF_DSCP_T3_RUNTIME_PILOT_CPF_INTERNAL_WORKER_RETURN_2026-06-07.md`
+- Completion review: `docs/reviews/CVF_DSCP_T3_RUNTIME_PILOT_CPF_INTERNAL_COMPLETION_2026-06-07.md`
+
+**Closure result:** deterministic CPF internal governed runtime wrapper
+implemented with gate enforcement before inner pack call. TypeScript check and
+focused vitest pass. No provider call, corpus ingestion, retrieval receipt
+runtime, public-sync, production readiness, or public readiness claim is made.
+
+**Scope guards:** No provider call, no corpus ingestion, no public/production
+readiness, no existing file modified.
 
 ---
 
@@ -153,7 +164,7 @@ authorization.
 |---|---|-|
 | DSCP-T1 | Owner surface map and domain-agnostic schema proposal (doc-only) | CLOSED_PASS_BOUNDED |
 | DSCP-T2 | Standard contract authoring (TypeScript interfaces) | CLOSED_PASS_BOUNDED |
-| DSCP-T3 | Runtime pilot (non-legal domain) | NOT_YET_AUTHORIZED |
+| DSCP-T3 | Runtime pilot (CPF internal) | CLOSED_PASS_BOUNDED |
 
 ## Acceptance Criteria
 
