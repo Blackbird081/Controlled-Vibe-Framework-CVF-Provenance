@@ -51,7 +51,7 @@ Active review queue:
 Latest continuity note:
 
 LPCI2-T9 PolicyLocal search runtime is
-`CLOSED_PASS_BOUNDED_CORRECTION_CLEAN` at material commit `f7af185f`
+`CLOSED_PASS_BOUNDED_CORRECTION_CLEAN` at material commit `fcc9f50f`
 (original T9 closure `094d82d0`).
 
 Work order:
@@ -68,15 +68,15 @@ Completion:
 
 Delivered: corrected AQ-05 freshness disclosure receipt behavior/assertion,
 added Acceptance Receipt Assertion Matrix, added External Artifact Hash
-Manifest, closed the T9 roadmap, updated GC-051 registry evidence, and hardened
-the work-order template plus machine closure package checker.
+Manifest, closed the T9 roadmap, updated GC-051 registry evidence, hardened
+the work-order template plus machine closure package checker, and clarified
+session continuity files in the work-order Allowed scope.
 
 Verification: corrected acceptance receipts PASS 5/5 with AQ-01 and AQ-05
 `freshnessDisclosureApplied=true`; receipt artifact hash
 `sha256:a8273e358438579360f8fde64129475f7e97e8b9fd889bba074eac083d79223f`;
-local hook chain PASS 61/61 before commit and pre-commit hook PASS 36/36;
-pre-closure material gates PASS except expected session-sync continuity before
-this update.
+local hook chain PASS 61/61 before correction material commit and pre-commit
+hook PASS 36/36 for both correction material commits.
 
 Boundary: local-deterministic pilot only; no provider calls, LLM, vector
 retrieval, legal advice quality, current-law claim, production deployment,
@@ -755,7 +755,7 @@ opening separate live-proof roadmaps.
 ## Next Allowed Move
 
 LPCI2-T9 PolicyLocal search runtime is
-`CLOSED_PASS_BOUNDED_CORRECTION_CLEAN` at commit `f7af185f`.
+`CLOSED_PASS_BOUNDED_CORRECTION_CLEAN` at commit `fcc9f50f`.
 
 Work order: `docs/work_orders/CVF_WO_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_2026-06-07.md`
 

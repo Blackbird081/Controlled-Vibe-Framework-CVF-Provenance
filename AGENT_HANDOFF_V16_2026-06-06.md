@@ -42,13 +42,15 @@ Startup acknowledged: current mode=`lpci2_t9_correction_clean_closed`; active ha
 
 `lpci2_t9_correction_clean_closed`
 
-Current HEAD recorded for this handoff: `f7af185f`
+Current HEAD recorded for this handoff: `fcc9f50f`
 (LPCI2-T9 correction-clean closure. Original T9 closure `094d82d0`; correction
 fixed AQ-05 freshness disclosure receipt behavior/assertion, added Acceptance
 Receipt Assertion Matrix, added External Artifact Hash Manifest, closed the T9
 roadmap, updated GC-051, and hardened the work-order template plus machine
-closure package checker. Prior HEAD chain: `9e554154` T9 session sync ->
-`f7af185f` correction-clean material commit.).
+closure package checker; scope clarification added session continuity files to
+the parser-visible Allowed scope. Prior HEAD chain: `9e554154` T9 session sync
+-> `f7af185f` correction-clean material commit -> `15b72c1a` session sync ->
+`fcc9f50f` scope clarification.).
 
 ## Active Boundary
 
@@ -120,7 +122,8 @@ Only V16 should be treated as the active root handoff.
   tests, work orders, completion packets, handoffs, registries, and public-sync
   summaries; Unicode requires an explicit exception and reason.
 - Closed LPCI2-T9 PolicyLocal search runtime at original material commit
-  `094d82d0`, then correction-cleaned at material commit `f7af185f`:
+  `094d82d0`, then correction-cleaned at material commits `f7af185f` and
+  `fcc9f50f`:
   AQ-05 now emits and asserts `freshnessDisclosureApplied=true`, T9 has
   Acceptance Receipt Assertion Matrix and External Artifact Hash Manifest
   evidence, the T9 roadmap is `CLOSED_PASS_BOUNDED`, GC-051 is updated, and the
@@ -199,7 +202,7 @@ Only V16 should be treated as the active root handoff.
 ## Latest Continuity Note
 
 LPCI2-T9 PolicyLocal search runtime is
-`CLOSED_PASS_BOUNDED_CORRECTION_CLEAN` at material commit `f7af185f`
+`CLOSED_PASS_BOUNDED_CORRECTION_CLEAN` at material commit `fcc9f50f`
 (original T9 closure `094d82d0`).
 
 Private artifacts:
@@ -220,8 +223,8 @@ Verification summary:
   `freshnessDisclosureApplied=true`.
 - Receipt artifact hash:
   `sha256:a8273e358438579360f8fde64129475f7e97e8b9fd889bba074eac083d79223f`.
-- Local hook chain: PASS 61/61 before material commit; pre-commit hook:
-  PASS 36/36.
+- Local hook chain: PASS 61/61 before correction material commit; pre-commit
+  hooks: PASS 36/36 for both correction material commits.
 - GC-051 corpus scan registry updated: T9 scan wave, T4-F2 resolved,
   T9-F1 assertion gap resolved.
 
