@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-07
 
-Current mode marker: `lpci2_t11c_classification_pre_check_closed_pass_bounded`
+Current mode marker: `lpci2_t11d_readiness_gate_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lpci2_t11c_classification_pre_check_closed_pass_bounded`.
+Current mode: `lpci2_t11d_readiness_gate_closed_pass_bounded`.
 
 Active handoff:
 
@@ -50,6 +50,33 @@ Active review queue:
 
 Latest continuity note:
 
+LPCI2-T11D Readiness Gate is `CLOSED_PASS_BOUNDED` at material commit
+`bd36e808`.
+
+GC-018:
+`docs/baselines/CVF_GC018_LPCI2_T11D_POLICYLOCAL_READINESS_GATE_2026-06-07.md`.
+Work order:
+`docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T11D_POLICYLOCAL_READINESS_GATE_FOR_CLAUDE_2026-06-07.md`.
+Completion:
+`docs/reviews/CVF_LPCI2_T11D_READINESS_GATE_COMPLETION_2026-06-07.md`.
+Readiness review:
+`docs/reviews/CVF_LPCI2_T11_CORPUS_EXPANSION_READINESS_GATE_2026-06-07.md`.
+
+Result: `readinessVerdict=READY_WITH_CONDITIONS`; 0 `t12Eligible=YES`; 6
+`t12Eligible=CONDITIONAL`; 1 `t12Eligible=NO` (BNDL-006 non-corpus); 0 EC-02
+invariant violations.
+
+T12 gate hard invariant: T12 work order authoring remains forbidden until a
+separate operator-authorized evidence path resolves all three conditions:
+EC-02 freshness review on or after 2026-07-01, `currentStatus` resolved from
+`unknown`, and `jurisdiction` resolved from `unknown`, followed by eligibility
+re-evaluation producing at least one `t12Eligible=YES` candidate.
+
+External candidate manifest hash:
+`sha256:023f1276092756232949662e9be6e635d545ab22b2bd19284f11f82789c7fd1a`.
+
+Prior continuity note:
+
 LPCI2-T11C Classification Pre-Check is `CLOSED_PASS_BOUNDED` at material
 commit `6a42a9a4`.
 
@@ -58,17 +85,11 @@ GC-018:
 Work order:
 `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T11C_POLICYLOCAL_CLASSIFICATION_PRE_CHECK_FOR_CLAUDE_2026-06-07.md`.
 
-Scope: classify the 6 T11B-verified corpus candidates (`T11A-CAND-001` through
-`T11A-CAND-006`) against the T2 domain matrix, EC-02 gate, and t12-eligibility;
-`BNDL-006` (`agent_request`) is a non-corpus request artifact
-(`t12Eligible=NO`). Consume T11B resolved paths (`CAND-002`/`003`/`005`
-resolve under `Law use case_Codex`); do not re-derive from T11A `readableAt`
-alone. Result: 6/6 corpus candidates are `ESCALATE_OR_ABSTAIN`,
+Result: 6/6 corpus candidates are `ESCALATE_OR_ABSTAIN`,
 `BLOCKED_UNTIL_2026-07-01`, and `t12Eligible=CONDITIONAL`;
 `BNDL-006` is non-corpus with `t12Eligible=NO`; EC-02 invariant violations=0.
 External candidate manifest hash:
 `sha256:023f1276092756232949662e9be6e635d545ab22b2bd19284f11f82789c7fd1a`.
-Next: author source-verified T11D Readiness Gate.
 
 Prior continuity note:
 
@@ -850,27 +871,20 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LPCI2-T11C Classification Pre-Check is `CLOSED_PASS_BOUNDED`.
+LPCI2-T11D Readiness Gate is `CLOSED_PASS_BOUNDED` at material commit
+`bd36e808`.
 
 Completion:
-`docs/reviews/CVF_LPCI2_T11C_CLASSIFICATION_PRE_CHECK_COMPLETION_2026-06-07.md`
+`docs/reviews/CVF_LPCI2_T11D_READINESS_GATE_COMPLETION_2026-06-07.md`
 
 Current mode:
-`lpci2_t11c_classification_pre_check_closed_pass_bounded`.
+`lpci2_t11d_readiness_gate_closed_pass_bounded`.
 
-Next allowed move: author a source-verified `LPCI2-T11D Readiness Gate` work
-order.
-
-T11D must aggregate T11A inventory, T11B source verification, and T11C
-classification evidence. It must preserve that T11C currently has zero
-`t12Eligible=YES` candidates and must not authorize T12 ingestion unless a
-later operator-approved evidence path satisfies EC-02 and status/jurisdiction
-metadata. T11D must not perform body extraction, OCR, corpus ingestion,
-chunking, runtime query, provider calls, public-sync, current-law claims,
-legal advice quality claims, production/public readiness claims, memory
-reinjection, high-risk promotion, or autonomous mutation. EC-02 freshness
-review is required on or after 2026-07-01 before any current-law or production
-runtime claim.
+Next allowed move: choose a new roadmap lane, or explicitly authorize a
+separate post-EC-02 condition-resolution and eligibility re-evaluation path.
+Do not author T12 yet. T12 remains forbidden until EC-02 review on or after
+2026-07-01, known `currentStatus`, known `jurisdiction`, and a later
+eligibility re-evaluation produce at least one `t12Eligible=YES` candidate.
 
 The prior product lanes remain parked: DEP2 next-auth stable migration is
 `HARD_BLOCKED`, external receipt-anchor provider/service selection is

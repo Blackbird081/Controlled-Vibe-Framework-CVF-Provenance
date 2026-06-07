@@ -36,15 +36,15 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci2_t11c_classification_pre_check_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=author source-verified T11D Readiness Gate work order; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`lpci2_t11d_readiness_gate_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=choose a new roadmap lane or operator-authorize post-EC-02 condition-resolution/eligibility re-evaluation; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`lpci2_t11c_classification_pre_check_closed_pass_bounded`
+`lpci2_t11d_readiness_gate_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `fce62cd3`
-(Worker Pending-Return Gate template hardening material closure commit; this
-session-sync commit records that material commit as parent.).
+Current HEAD recorded for this handoff: `bd36e808`
+(T11D readiness gate material closure commit; this session-sync commit records
+that material commit as parent).
 
 ## Active Boundary
 
@@ -215,6 +215,31 @@ Only V16 should be treated as the active root handoff.
 
 ## Latest Continuity Note
 
+LPCI2-T11D Readiness Gate is `CLOSED_PASS_BOUNDED` at material commit
+`bd36e808`. GC-018:
+`docs/baselines/CVF_GC018_LPCI2_T11D_POLICYLOCAL_READINESS_GATE_2026-06-07.md`.
+Work order:
+`docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T11D_POLICYLOCAL_READINESS_GATE_FOR_CLAUDE_2026-06-07.md`.
+Completion:
+`docs/reviews/CVF_LPCI2_T11D_READINESS_GATE_COMPLETION_2026-06-07.md`.
+Readiness review:
+`docs/reviews/CVF_LPCI2_T11_CORPUS_EXPANSION_READINESS_GATE_2026-06-07.md`.
+Worker return:
+`docs/reviews/CVF_LPCI2_T11D_READINESS_GATE_WORKER_RETURN_2026-06-07.md`.
+
+Result: `readinessVerdict=READY_WITH_CONDITIONS`; 0 `t12Eligible=YES`; 6
+`t12Eligible=CONDITIONAL`; BNDL-006 `t12Eligible=NO`; EC-02 invariant
+violations=0. T12 work order authoring remains forbidden until a separate
+operator-authorized evidence path resolves EC-02 freshness review on or after
+2026-07-01, `currentStatus=unknown`, and `jurisdiction=unknown`, followed by
+eligibility re-evaluation producing at least one `t12Eligible=YES` candidate.
+
+Next allowed move: choose a new roadmap lane, or explicitly authorize the
+post-EC-02 condition-resolution/eligibility re-evaluation path. Do not author
+T12 yet.
+
+## Previous Continuity Note (T11C)
+
 LPCI2-T11C Classification Pre-Check is `CLOSED_PASS_BOUNDED` at material
 commit `6a42a9a4`.
 
@@ -233,11 +258,10 @@ candidates are `ESCALATE_OR_ABSTAIN`, `BLOCKED_UNTIL_2026-07-01`, and
 invariant violations=0. Candidate manifest hash:
 `sha256:023f1276092756232949662e9be6e635d545ab22b2bd19284f11f82789c7fd1a`.
 
-Next allowed move: author a fresh GC-018 and source-verified T11D Readiness
-Gate work order. T11D must aggregate T11A inventory, T11B source verification,
-and T11C classification evidence, preserve zero `t12Eligible=YES` candidates,
-and avoid T12 ingestion authorization unless EC-02 and status/jurisdiction
-metadata are satisfied by a later operator-approved evidence path.
+Historical next move satisfied by T11D closure at material commit `bd36e808`:
+fresh GC-018 and a source-verified T11D Readiness Gate work order were
+authored, executed, reviewed, and closed. Current next allowed move is the
+latest T11D closure note above.
 
 Boundary: no body extraction, OCR, corpus ingestion, chunking, runtime query,
 provider calls, public-sync, current-law claim, legal advice quality claim,
@@ -668,37 +692,41 @@ Diagnostic boundary:
 
 ## Next Allowed Move
 
-LPCI2-T11C Classification Pre-Check is `CLOSED_PASS_BOUNDED`.
+LPCI2-T11D Readiness Gate is `CLOSED_PASS_BOUNDED` at material commit
+`bd36e808`.
 
-Completion:
+GC-018:
 
-`docs/reviews/CVF_LPCI2_T11C_CLASSIFICATION_PRE_CHECK_COMPLETION_2026-06-07.md`
+`docs/baselines/CVF_GC018_LPCI2_T11D_POLICYLOCAL_READINESS_GATE_2026-06-07.md`
 
-Report:
+Work order:
 
-`docs/reference/CVF_LPCI2_T11_CLASSIFICATION_PRE_CHECK_2026-06-07.md`
-
-Worker return:
-
-`docs/reviews/CVF_LPCI2_T11C_CLASSIFICATION_PRE_CHECK_WORKER_RETURN_2026-06-07.md`
+`docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T11D_POLICYLOCAL_READINESS_GATE_FOR_CLAUDE_2026-06-07.md`
 
 Roadmap:
 
 `docs/roadmaps/CVF_LPCI2_T11_POLICYLOCAL_CORPUS_EXPANSION_READINESS_ROADMAP_2026-06-07.md`
 
-Candidate manifest:
+dispatchBaseHead: `fce62cd3`
 
-`D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-t11-candidate-manifest.json`
+Completion:
 
-Candidate manifest hash:
-`sha256:023f1276092756232949662e9be6e635d545ab22b2bd19284f11f82789c7fd1a`.
+`docs/reviews/CVF_LPCI2_T11D_READINESS_GATE_COMPLETION_2026-06-07.md`
 
-Result: 6/6 corpus candidates remain conditional and blocked by EC-02 plus
-unknown `currentStatus` / `jurisdiction`; BNDL-006 is non-corpus.
+Readiness verdict: `READY_WITH_CONDITIONS`. T11C result carried forward: 6/6
+corpus candidates `t12Eligible=CONDITIONAL`, bounded by EC-02 plus unknown
+`currentStatus` / `jurisdiction`; BNDL-006 is non-corpus with
+`t12Eligible=NO`; 0 `t12Eligible=YES`; EC-02 invariant violations=0.
 
-Next allowed move: author a source-verified `LPCI2-T11D Readiness Gate` work
-order. T11D must aggregate T11A/T11B/T11C and must not treat conditional
-candidates as T12 ingestion-ready.
+T12 gate hard invariant: T12 work order authoring remains forbidden until a
+separate operator-authorized evidence path resolves all three conditions:
+EC-02 freshness review on or after 2026-07-01, `currentStatus` resolved from
+`unknown`, and `jurisdiction` resolved from `unknown`, followed by eligibility
+re-evaluation producing at least one `t12Eligible=YES` candidate.
+
+Next allowed move: choose a new roadmap lane, or explicitly authorize the
+post-EC-02 condition-resolution/eligibility re-evaluation path. Do not author
+T12 yet.
 
 The prior product lanes remain parked:
 
