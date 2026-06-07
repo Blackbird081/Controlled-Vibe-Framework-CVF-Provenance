@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`dscp_t4_retrieval_receipt_runtime_boundary_d
 
 `dscp_t4_retrieval_receipt_runtime_boundary_dispatched`
 
-Current HEAD recorded for this handoff: `a368dae9`
-(DSCP-T3 material closure commit; DSCP-T4 dispatch parent).
+Current HEAD recorded for this handoff: `5f37b9bb`
+(DSCP-T4 dispatch material commit).
 
 ## Active Boundary
 
@@ -75,8 +75,8 @@ behavior, or autonomous mutation.
 
 ## Current Batch
 
-DSCP-T4 Retrieval Receipt Runtime Boundary is dispatched from parent
-`a368dae9`.
+DSCP-T4 Retrieval Receipt Runtime Boundary is dispatched at material commit
+`5f37b9bb`.
 
 Delivered scope:
 

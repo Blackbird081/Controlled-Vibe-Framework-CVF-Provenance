@@ -94,6 +94,8 @@ Next allowed move: Claude executes DSCP-T4 Retrieval Receipt Runtime Boundary
 under `WORKER_MUST_NOT_COMMIT` and returns staged/uncommitted worker artifacts
 for Codex review.
 
+Dispatch commit: `5f37b9bb`.
+
 Work order:
 `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T4_RETRIEVAL_RECEIPT_RUNTIME_BOUNDARY_FOR_CLAUDE_2026-06-07.md`.
 
