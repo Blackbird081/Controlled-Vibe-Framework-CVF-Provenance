@@ -138,6 +138,7 @@ If commit mode is WORKER_MUST_NOT_COMMIT:
 - repair allowed-scope defects and rerun those component gates;
 - record actual git status --short;
 - record the Worker Pending-Return Gate table;
+- include a Reviewer Closure Conversion Block in the work order before dispatch;
 - return COMPLETE_PENDING_REVIEW;
 - return a worker handoff/evaluation artifact, not a reviewer completion review;
 - do not claim autorun pre-closure PASS.
@@ -158,6 +159,25 @@ Anchor vocabulary:
 This prevents a no-commit worker from being trapped between two contradictory
 instructions: leave pending artifacts for review, but prove committed closure
 before handoff.
+
+Required no-commit reviewer conversion fields:
+
+```text
+## Reviewer Closure Conversion Block
+
+completionReviewPath: `docs/reviews/<CVF_*_COMPLETION_YYYY-MM-DD.md>`
+reviewerOwnedClosurePaths:
+- `<work order path>`
+- `<worker return or evaluation path>`
+- `<completionReviewPath>`
+- `<roadmap, registry, session, or handoff paths if reviewer closure may touch them>`
+pendingStatusTokensAllowedBeforeReview: COMPLETE_PENDING_REVIEW, IMPLEMENTATION_COMPLETE_PENDING_REVIEW, DRAFT, HOLD_*
+forbiddenClosedEquivalentResidue: COMPLETE_PENDING_REVIEW, NOT_EXECUTED_YET, WORKER_RETURNS_PENDING, PRE_CLOSURE_NOT_RUN, FAIL_EXPECTED_PENDING_FINALITY, DISPATCHED as current status
+predecessorClosureFactSource: stable completion/review artifact, not mutable ACTIVE_SESSION_STATE.json currentMode
+```
+
+The reviewer completion artifact is the closure artifact. A worker return is
+evidence input for reviewer closure, not a substitute for it.
 
 ## Worker Pending-Return Gate For No-Commit Workers
 

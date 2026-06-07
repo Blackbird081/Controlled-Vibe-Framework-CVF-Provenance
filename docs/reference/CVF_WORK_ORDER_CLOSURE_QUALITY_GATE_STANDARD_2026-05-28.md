@@ -111,6 +111,34 @@ return must include `executionBaseHead`, actual `git status --short`, relevant
 working-tree-aware component-gate results, and explicit disposition for every
 failure before reviewer / committer closure.
 
+### Reviewer Closure Conversion
+
+Every `WORKER_MUST_NOT_COMMIT` work order that reaches ready, dispatch, or
+closed-equivalent status must define reviewer-owned conversion from pending
+worker return to committed closure before dispatch.
+
+Required fields:
+
+- `completionReviewPath`;
+- `reviewerOwnedClosurePaths`;
+- allowed pending worker-return status tokens;
+- forbidden closed-equivalent residue tokens;
+- predecessor closure fact source.
+
+Rules:
+
+- worker returns may be `COMPLETE_PENDING_REVIEW`,
+  `IMPLEMENTATION_COMPLETE_PENDING_REVIEW`, `DRAFT`, or `HOLD_*`;
+- reviewer completion artifacts and closed work orders must not retain
+  `COMPLETE_PENDING_REVIEW`, `NOT_EXECUTED_YET`, `WORKER_RETURNS_PENDING`,
+  `PRE_CLOSURE_NOT_RUN`, `FAIL_EXPECTED_PENDING_FINALITY`, or `DISPATCHED` as
+  current final status;
+- the reviewer must create or update the conventional `_COMPLETION_` artifact
+  unless the work order records `N/A with reason`;
+- mutable `ACTIVE_SESSION_STATE.json` values are continuity evidence, not
+  stable predecessor-closure invariants. Use stable completion/review artifacts
+  for predecessor closure facts.
+
 ### Commit Mode And Base-Anchor Lifecycle
 
 Separate `dispatchBaseHead`, `executionBaseHead`, `closureBaseHead`, and
@@ -188,6 +216,9 @@ Rules:
   Pending-Return Gate evidence from the work-order template or an equivalent
   table. The reviewer / committer owns committed-range `pre-closure`, but the
   worker still owns repairable component-gate defects inside Allowed scope.
+- `WORKER_MUST_NOT_COMMIT` work orders must include Reviewer Closure
+  Conversion fields before dispatch so reviewer-owned closure paths and
+  `_COMPLETION_` artifacts are known before implementation begins.
 - Corpus scan, classification, readiness, or gap state changes must update
   both GC-051 registry surfaces when applicable. JSON is the machine input;
   Markdown is the reviewer/operator lookup.

@@ -153,6 +153,11 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
                     "| Role | Responsibility | Boundary |",
                     "|---|---|---|",
                     "| Worker | produce packet and completion review | no commit |",
+                    "## Reviewer Closure Conversion Block",
+                    "completionReviewPath: `docs/reviews/CVF_TEST_COMPLETION_2026-06-03.md`",
+                    "reviewerOwnedClosurePaths:",
+                    "- `docs/work_orders/CVF_WO_TEST_WORKER_BOUNDARY_2026-06-03.md`",
+                    "- `docs/reviews/CVF_TEST_COMPLETION_2026-06-03.md`",
                 ]
             ),
         )
@@ -193,6 +198,11 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
                     "|---|---|---|",
                     "| Worker | produce packet and handoff artifact | no commit |",
                     "| Reviewer | create completion review | owns closure |",
+                    "## Reviewer Closure Conversion Block",
+                    "completionReviewPath: `docs/reviews/CVF_TEST_COMPLETION_2026-06-03.md`",
+                    "reviewerOwnedClosurePaths:",
+                    "- `docs/work_orders/CVF_WO_TEST_REVIEWER_BOUNDARY_2026-06-03.md`",
+                    "- `docs/reviews/CVF_TEST_COMPLETION_2026-06-03.md`",
                     "## Required Artifacts",
                     "| Artifact | Path | Owner |",
                     "|---|---|---|",
@@ -503,6 +513,11 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
                     "dispatchBaseHead: abc1234",
                     "executionBaseHead: capture before edits",
                     "closureBaseHead: reviewer stage",
+                    "## Reviewer Closure Conversion Block",
+                    "completionReviewPath: `docs/reviews/CVF_VALID_NO_COMMIT_COMPLETION_2026-06-02.md`",
+                    "reviewerOwnedClosurePaths:",
+                    "- `docs/work_orders/CVF_WO_VALID_NO_COMMIT_TEST_2026-06-02.md`",
+                    "- `docs/reviews/CVF_VALID_NO_COMMIT_COMPLETION_2026-06-02.md`",
                 ]
             ),
         )
@@ -511,6 +526,39 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
             report = MODULE._classify([work_order])
 
         self.assertTrue(report["compliant"])
+
+    def test_ready_no_commit_work_order_without_reviewer_closure_contract_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_NO_REVIEWER_CONVERSION_TEST_2026-06-07.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCHED_TO_WORKER",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Proceed inside allowed scope.",
+                    "Commit mode: WORKER_MUST_NOT_COMMIT",
+                    "dispatchBaseHead: abc1234",
+                    "executionBaseHead: capture before edits",
+                    "closureBaseHead: reviewer stage",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        issues = report["violations"][0]["issues"]
+        self.assertIn("WORKER_MUST_NOT_COMMIT dispatch lacks Reviewer Closure Conversion block", issues)
+        self.assertIn(
+            "WORKER_MUST_NOT_COMMIT dispatch lacks `completionReviewPath` for reviewer-owned closure",
+            issues,
+        )
+        self.assertIn(
+            "WORKER_MUST_NOT_COMMIT dispatch lacks `reviewerOwnedClosurePaths` for closure scope",
+            issues,
+        )
 
     def test_ready_work_order_cannot_forbid_near_threshold_owner_surface(self) -> None:
         work_order = "docs/work_orders/CVF_WO_OWNER_ROTATION_TEST_2026-06-01.md"

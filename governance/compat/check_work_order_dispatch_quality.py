@@ -431,6 +431,39 @@ def _validate_worker_completion_review_boundary(text: str) -> list[str]:
     ]
 
 
+def _validate_no_commit_reviewer_closure_contract(text: str) -> list[str]:
+    if not _is_worker_must_not_commit(text):
+        return []
+
+    issues: list[str] = []
+    if re.search(r"Reviewer Closure Conversion", text, re.IGNORECASE) is None:
+        issues.append(
+            "WORKER_MUST_NOT_COMMIT dispatch lacks Reviewer Closure Conversion block"
+        )
+    if "completionReviewPath" not in text:
+        issues.append(
+            "WORKER_MUST_NOT_COMMIT dispatch lacks `completionReviewPath` for reviewer-owned closure"
+        )
+    if "reviewerOwnedClosurePaths" not in text:
+        issues.append(
+            "WORKER_MUST_NOT_COMMIT dispatch lacks `reviewerOwnedClosurePaths` for closure scope"
+        )
+    if "_COMPLETION_" not in text:
+        issues.append(
+            "WORKER_MUST_NOT_COMMIT dispatch lacks conventional `_COMPLETION_` reviewer artifact path"
+        )
+    if re.search(
+        r"ACTIVE_SESSION_STATE\.json[\s\S]{0,160}(?:closure invariant|final invariant|source invariant)",
+        text,
+        re.IGNORECASE,
+    ):
+        issues.append(
+            "WORKER_MUST_NOT_COMMIT dispatch treats mutable ACTIVE_SESSION_STATE.json as a closure invariant; "
+            "cite stable completion/review artifacts for predecessor closure facts"
+        )
+    return issues
+
+
 def _is_roadmap_derived(text: str) -> bool:
     return "docs/roadmaps/" in text or "roadmap-derived" in text.lower() or "Roadmap requirement" in text
 
@@ -1307,6 +1340,7 @@ def _validate_work_order(path: str, text: str) -> list[str]:
     if dispatching:
         issues.extend(_validate_commit_mode_and_anchor_lifecycle(text))
         issues.extend(_validate_worker_completion_review_boundary(text))
+        issues.extend(_validate_no_commit_reviewer_closure_contract(text))
 
     if dispatching and _is_connector_wave(path, text):
         wave_id = _extract_wave_id(path, text)

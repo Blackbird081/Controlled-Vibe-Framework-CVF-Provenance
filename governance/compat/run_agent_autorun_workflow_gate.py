@@ -199,7 +199,15 @@ PRE_PUSH_COMMANDS: tuple[GateCommand, ...] = (
     GateCommand("git remote verification", ("git", "remote", "-v")),
     GateCommand(
         "local pre-push governance hook chain",
-        ("python", "governance/compat/run_local_governance_hook_chain.py", "--hook", "pre-push"),
+        (
+            "python",
+            "governance/compat/run_local_governance_hook_chain.py",
+            "--hook",
+            "pre-push",
+            "--parallel",
+            "--max-workers",
+            "6",
+        ),
     ),
 )
 

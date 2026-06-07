@@ -640,6 +640,43 @@ The startup acknowledgment in a worker return must mirror the active session
 state and active handoff. `parked checkpoint=none` is valid only when those
 front doors record no parked checkpoint.
 
+### Reviewer Closure Conversion Block
+
+Every `WORKER_MUST_NOT_COMMIT` work order that is `READY`, `DISPATCH_READY`,
+`DISPATCHED`, or equivalent must include this block before dispatch. It defines
+the reviewer-owned path from pending worker return to committed closure.
+
+Required fields:
+
+```text
+## Reviewer Closure Conversion Block
+
+completionReviewPath: `docs/reviews/<CVF_*_COMPLETION_YYYY-MM-DD.md>`
+reviewerOwnedClosurePaths:
+- `<work order path>`
+- `<worker return or evaluation path>`
+- `<completionReviewPath>`
+- `<roadmap, registry, session, or handoff paths if reviewer closure may touch them>`
+pendingStatusTokensAllowedBeforeReview: COMPLETE_PENDING_REVIEW, IMPLEMENTATION_COMPLETE_PENDING_REVIEW, DRAFT, HOLD_*
+forbiddenClosedEquivalentResidue: COMPLETE_PENDING_REVIEW, NOT_EXECUTED_YET, WORKER_RETURNS_PENDING, PRE_CLOSURE_NOT_RUN, FAIL_EXPECTED_PENDING_FINALITY, DISPATCHED as current status
+predecessorClosureFactSource: stable completion/review artifact, not mutable ACTIVE_SESSION_STATE.json currentMode
+```
+
+Rules:
+
+- worker return artifacts may use pending status honestly, but the reviewer
+  completion artifact and final closed work order must not retain pending
+  tokens as current status or final gate results;
+- the reviewer must create or update the conventional `_COMPLETION_` artifact
+  unless the block records `N/A with reason`;
+- `ACTIVE_SESSION_STATE.json` may be startup context and continuity evidence,
+  but it must not be source-verified as the sole closure invariant for a prior
+  tranche; cite stable completion/review artifacts for predecessor closure
+  facts;
+- reviewer-owned closure paths are Allowed scope for the reviewer/committer
+  only. A worker must not edit those paths unless the work order changes commit
+  mode or explicitly assigns that path to the worker.
+
 ## 6E. Self-Reported Gate Evidence Consistency
 
 If the artifact records governance gate results, those results must match the
