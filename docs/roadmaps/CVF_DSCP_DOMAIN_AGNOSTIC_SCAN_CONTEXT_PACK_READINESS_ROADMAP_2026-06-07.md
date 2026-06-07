@@ -149,6 +149,27 @@ readiness, no existing file modified.
 
 ---
 
+### DSCP-T4: Retrieval Receipt Runtime Boundary (DISPATCHED)
+
+**Goal:** Add a deterministic CPF-local helper that builds a
+`GovernedRetrievalReceipt` from an existing `GovernedContextPackage` and
+caller-supplied retrieval metadata.
+
+**Deliverables:**
+- Roadmap: `docs/roadmaps/CVF_DSCP_T4_RETRIEVAL_RECEIPT_RUNTIME_BOUNDARY_ROADMAP_2026-06-07.md`
+- GC-018: `docs/baselines/CVF_GC018_DSCP_T4_RETRIEVAL_RECEIPT_RUNTIME_BOUNDARY_2026-06-07.md`
+- Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T4_RETRIEVAL_RECEIPT_RUNTIME_BOUNDARY_FOR_CLAUDE_2026-06-07.md`
+- Runtime target: `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.retrieval.receipt.ts`
+- Test target: `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.governed.retrieval.receipt.test.ts`
+
+**Dispatch boundary:** deterministic local receipt object construction only.
+No provider call, live retrieval query, response hashing implementation,
+corpus ingestion, public-sync, production readiness, or public readiness claim.
+
+**Commit mode:** `WORKER_MUST_NOT_COMMIT`
+
+---
+
 ## Non-Goals
 
 - Runtime TypeScript implementation of any proposed interface.
@@ -165,6 +186,7 @@ readiness, no existing file modified.
 | DSCP-T1 | Owner surface map and domain-agnostic schema proposal (doc-only) | CLOSED_PASS_BOUNDED |
 | DSCP-T2 | Standard contract authoring (TypeScript interfaces) | CLOSED_PASS_BOUNDED |
 | DSCP-T3 | Runtime pilot (CPF internal) | CLOSED_PASS_BOUNDED |
+| DSCP-T4 | Retrieval receipt runtime boundary | DISPATCHED |
 
 ## Acceptance Criteria
 
@@ -187,6 +209,7 @@ readiness, no existing file modified.
 | T1 no `.ts` new files | `git status --short` |
 | T2 TypeScript validity | `tsc --noEmit` in `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/` |
 | T3 deterministic proof | Deterministic test in DSCP-T3 worker return |
+| T4 receipt boundary proof | Deterministic test in DSCP-T4 worker return |
 
 ## T12 Gate Hard Invariant (Carried Forward from T11D)
 
