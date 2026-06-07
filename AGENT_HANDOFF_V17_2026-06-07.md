@@ -38,9 +38,8 @@ Startup acknowledged: current mode=`dscp_t2_standard_contract_authoring_closed_p
 
 `dscp_t2_standard_contract_authoring_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `6535568d`
-(DSCP-T2 closure sequence is staged on top of this base; final closure commit
-hash is recorded by git after commit).
+Current HEAD recorded for this handoff: `932a40aa`
+(DSCP-T2 material closure commit).
 
 ## Active Boundary
 
@@ -56,8 +55,8 @@ in archived handoffs and governed completion packets.
 
 ## Latest Continuity Note
 
-DSCP-T2 Standard Contract Authoring is `CLOSED_PASS_BOUNDED` in the current
-closure sequence.
+DSCP-T2 Standard Contract Authoring is `CLOSED_PASS_BOUNDED` at material
+commit `932a40aa`.
 
 Roadmap:
 `docs/roadmaps/CVF_DSCP_DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK_READINESS_ROADMAP_2026-06-07.md`.
@@ -78,8 +77,8 @@ mutation.
 
 ## Current Batch
 
-DSCP-T2 Standard Contract Authoring is `CLOSED_PASS_BOUNDED` in the current
-closure sequence.
+DSCP-T2 Standard Contract Authoring is `CLOSED_PASS_BOUNDED` at material
+commit `932a40aa`.
 
 Delivered scope:
 

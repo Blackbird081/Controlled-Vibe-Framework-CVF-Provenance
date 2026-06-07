@@ -58,8 +58,8 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-DSCP-T2 Standard Contract Authoring is `CLOSED_PASS_BOUNDED` in the
-current closure sequence.
+DSCP-T2 Standard Contract Authoring is `CLOSED_PASS_BOUNDED` at material
+commit `932a40aa`.
 
 Delivered scope:
 
