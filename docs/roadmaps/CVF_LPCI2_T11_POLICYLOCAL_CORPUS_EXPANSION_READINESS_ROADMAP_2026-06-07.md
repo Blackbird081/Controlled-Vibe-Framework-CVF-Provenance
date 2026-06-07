@@ -388,7 +388,8 @@ workspace paths, candidate hashes, and non-public source materials.
 | LPCI2-T10 | CLOSED_PASS_BOUNDED | Foundation readiness hash/schema/receipt verification |
 | LPCI2-T11A | CLOSED_PASS_BOUNDED | Candidate and bundle inventory |
 | LPCI2-T11B | CLOSED_PASS_BOUNDED | Four-gate source verification, with Unicode path fallback finding |
-| **LPCI2-T11** | **PROPOSED** | **Corpus expansion readiness - T11C/T11D remain open** |
+| LPCI2-T11C | DISPATCHED_TO_WORKER | Classification pre-check - dispatched at `e18ec2f1`; T11D remains open |
+| **LPCI2-T11** | **PROPOSED** | **Corpus expansion readiness - T11C dispatched, T11D remains open** |
 | LPCI2-T12 | NOT_YET_AUTHORIZED | Corpus ingestion — gated behind T11-D `READY` verdict |
 
 ---
