@@ -108,7 +108,7 @@ claim gate and the artifact still asks for public quality lift or parity.
 
 - [x] Backlog packet source facts verified.
 - [x] Methodology/claim ladder updated.
-- [x] Calibration evidence produced.
+- [x] Calibration standard produced; evidence N/A (no new scored run).
 - [x] Agreement checker/report updated.
 - [x] Autorun and benchmark-specific gates passed.
 

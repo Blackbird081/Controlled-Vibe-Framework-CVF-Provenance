@@ -57,14 +57,44 @@ BOUNDARY_DOC_NAME_TOKENS = (
     "reviewer-plan", "reviewer-rubric", "scoring-rubric",
 )
 
-# JSON filenames whose pre-standard age exempts them from calibration_anchor_ref.
-PRE_STANDARD_RESULT_NAME_TOKENS = ("aggregate-results", "run-manifest")
-PRE_STANDARD_CUTOFF_YEAR = 2026  # any run from before 2026-06-07 is pre-standard
+# ISO date on/after which every scored run and run-manifest must carry calibration_anchor_ref.
+# Pre-standard exemption is date-based only; there is no filename-token fallback.
+PRE_STANDARD_CUTOFF_DATE = "2026-06-07"
 
 REQUIRED_AGGREGATE_LABEL = "DIAGNOSTIC_ONLY"
 
 PARITY_RE = [re.compile(p, re.IGNORECASE) for p in PARITY_CLAIM_PATTERNS]
 FAMILY_RE = [re.compile(p, re.IGNORECASE) for p in FAMILY_CLAIM_PATTERNS]
+
+_DATE_PATTERN = re.compile(r"(\d{4})[-_]?(\d{2})[-_]?(\d{2})")
+
+
+def _extract_run_date(data: dict) -> str | None:
+    """Extract an ISO date (yyyy-mm-dd) from known QBS date and id fields.
+
+    Checks explicit date fields first (run_date, started_at, completed_at,
+    scored_at, produced_at — both snake_case and camelCase), then falls back
+    to date patterns embedded in run_id / scored_run_id values.
+
+    Returns None if no parseable date is found.  Callers must treat None as
+    an unknown date and fail closed — not silently exempt the artifact.
+    """
+    date_keys = (
+        "run_date", "runDate",
+        "started_at", "startedAt",
+        "completed_at", "completedAt",
+        "scored_at", "scoredAt",
+        "produced_at", "producedAt",
+    )
+    id_keys = ("run_id", "runId", "scored_run_id", "scoredRunId")
+
+    for key in (*date_keys, *id_keys):
+        val = data.get(key)
+        if val:
+            m = _DATE_PATTERN.search(str(val))
+            if m:
+                return f"{m.group(1)}-{m.group(2)}-{m.group(3)}"
+    return None
 
 
 def _check_result_file(path: Path) -> list[str]:
@@ -108,8 +138,10 @@ SCORED_RUN_RESULT_KEYS = frozenset({
 })
 
 # Files whose name contains these tokens are configuration/plan artifacts, not results.
+# NOTE: "manifest" is intentionally absent — it is too broad and would incorrectly
+# exclude run-manifest.json (a scored-run output that must carry calibration_anchor_ref).
 MANIFEST_NAME_TOKENS = (
-    "manifest", "preregistration", "provider-model", "config-prompt",
+    "preregistration", "provider-model", "config-prompt",
     "adjudicator", "anchor", "corpus", "rubric", "reviewer-plan",
     "calibration-reference", "calibration-anchors",
 )
@@ -186,12 +218,30 @@ def _check_json_result(path: Path) -> list[str]:
                     f"must be labeled DIAGNOSTIC_ONLY"
                 )
 
-    is_pre_standard = any(tok in path.name.lower() for tok in PRE_STANDARD_RESULT_NAME_TOKENS)
-    if is_result and not calibration_anchor_ref and not is_pre_standard:
-        violations.append(
-            f"CALIBRATION_ANCHOR_MISSING in {path.name}: no calibration_anchor_ref field — "
-            f"every scored run must reference a pre-run calibration anchor packet"
-        )
+    # Calibration anchor check: applies to scored-run results AND to run-manifest files
+    # (the standard requires run-manifest to carry calibration_anchor_ref).
+    # Three outcomes — fail closed when date is indeterminate; no filename-token fallback.
+    is_run_manifest = "run-manifest" in path.name.lower()
+    if is_result or is_run_manifest:
+        if calibration_anchor_ref:
+            pass  # anchor present — no violation
+        else:
+            run_date = _extract_run_date(data)
+            if run_date is None:
+                violations.append(
+                    f"CALIBRATION_ANCHOR_MISSING_OR_DATE_UNKNOWN in {path.name}: "
+                    f"no calibration_anchor_ref and no parseable run date "
+                    f"(checked run_date, started_at, completed_at, scored_at, "
+                    f"produced_at, run_id) — add calibration_anchor_ref or a "
+                    f"recognised date field"
+                )
+            elif run_date >= PRE_STANDARD_CUTOFF_DATE:
+                violations.append(
+                    f"CALIBRATION_ANCHOR_MISSING in {path.name}: no calibration_anchor_ref — "
+                    f"scored runs on/after {PRE_STANDARD_CUTOFF_DATE} must reference "
+                    f"a pre-run calibration anchor packet"
+                )
+            # else: run_date < PRE_STANDARD_CUTOFF_DATE — pre-standard legacy file, exempt
 
     return violations
 
