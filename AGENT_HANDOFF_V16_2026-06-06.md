@@ -42,11 +42,12 @@ Startup acknowledged: current mode=`lpci2_t9_policylocal_search_runtime_roadmap_
 
 `lpci2_t9_policylocal_search_runtime_roadmap_proposed`
 
-Current HEAD recorded for this handoff: `4ce03931`
+Current HEAD recorded for this handoff: `09c7ce3f`
 (G-GM-08 + G-GM-06 work order closed. Completion review filed CLOSED_PASS_BOUNDED. Template hardened.
 Text encoding and symbol discipline front-door standard added. Prior HEAD chain:
 `cdadedf7` implementation -> `b98bd803` closure -> `35d6a079` session sync
--> `685f3a6f` text encoding standard -> `4ce03931` handoff sync.).
+-> `685f3a6f` text encoding standard -> `4ce03931` handoff sync -> `09c7ce3f`
+LPCI2-T9 roadmap proposed.).
 
 ## Active Boundary
 
