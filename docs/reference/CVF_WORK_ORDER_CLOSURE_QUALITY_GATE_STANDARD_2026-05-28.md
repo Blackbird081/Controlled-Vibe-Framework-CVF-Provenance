@@ -104,6 +104,13 @@ Pending worker artifacts must state pending status honestly and must not claim
 clean worktree, committed-range proof, or final pre-closure evidence before
 reviewer/committer disposition.
 
+### Worker Pending-Return Gate
+
+For `WORKER_MUST_NOT_COMMIT`, pending review is not a gate waiver. The worker
+return must include `executionBaseHead`, actual `git status --short`, relevant
+working-tree-aware component-gate results, and explicit disposition for every
+failure before reviewer / committer closure.
+
 ### Commit Mode And Base-Anchor Lifecycle
 
 Separate `dispatchBaseHead`, `executionBaseHead`, `closureBaseHead`, and
@@ -177,6 +184,10 @@ Rules:
 - External/local workspace paths are evidence inputs, not canonical Source
   Verification source files. Record their digest in the repository before a
   later packet cites them as evidence.
+- `WORKER_MUST_NOT_COMMIT` worker returns must include the Worker
+  Pending-Return Gate evidence from the work-order template or an equivalent
+  table. The reviewer / committer owns committed-range `pre-closure`, but the
+  worker still owns repairable component-gate defects inside Allowed scope.
 - Corpus scan, classification, readiness, or gap state changes must update
   both GC-051 registry surfaces when applicable. JSON is the machine input;
   Markdown is the reviewer/operator lookup.

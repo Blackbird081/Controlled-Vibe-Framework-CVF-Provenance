@@ -613,6 +613,33 @@ For `WORKER_MUST_NOT_COMMIT` work orders:
 - the reviewer / committer must run `pre-closure` after the commit with a
   non-empty committed range before any closed-equivalent claim.
 
+### Worker Pending-Return Gate
+
+`WORKER_MUST_NOT_COMMIT` is a commit-boundary rule, not a quality-gate waiver.
+Before returning pending artifacts, the worker must run and record the
+working-tree-aware component gates that apply to the changed files. Repairable
+failures inside Allowed scope must be fixed before return.
+
+Minimum pending-return gate table:
+
+| Gate | Applies when | Command or evidence | Required pending-return result |
+|---|---|---|---|
+| Execution anchor | every worker run | `git rev-parse --short HEAD` before edits | `executionBaseHead=<hash>` |
+| Pending worktree | every `WORKER_MUST_NOT_COMMIT` return | `git status --short` | actual pending file list, not clean |
+| Markdown structural completeness | changed governed markdown, reference, roadmap, work order, review, handoff, or registry markdown | `python governance/compat/check_markdown_structural_completeness.py --base <executionBaseHead> --head HEAD --enforce` | `PASS`, or `BLOCKED` with out-of-scope reason |
+| Finding-To-Governance learning | any changed artifact records findings, defects, known issues, risks, or quality gaps | `python governance/compat/check_finding_to_governance_learning.py --base <executionBaseHead> --head HEAD --enforce` | `PASS`, or `BLOCKED` with out-of-scope reason |
+| Machine Closure Package | any changed artifact uses closed-equivalent, readiness, handoff-complete, or downstream-loop language | `python governance/compat/check_machine_closure_package.py --base <executionBaseHead> --head HEAD --enforce` | `PASS`, `N/A with reason`, or `BLOCKED` |
+| Dispatch quality | any changed work order, roadmap-derived packet, ready/dispatch packet, or closed-equivalent work-order packet | `python governance/compat/check_work_order_dispatch_quality.py --base <executionBaseHead> --head HEAD --enforce` | `PASS`, or `BLOCKED` with return action |
+| Domain gates | any domain-specific guard named by this work order | `<command>` | `PASS`, `N/A with reason`, or `BLOCKED` |
+
+If a component gate reports only expected pending-finality residue caused by
+uncommitted artifacts, record `FAIL_EXPECTED_PENDING_FINALITY` and the exact
+reason. Do not record that result as closure PASS.
+
+The startup acknowledgment in a worker return must mirror the active session
+state and active handoff. `parked checkpoint=none` is valid only when those
+front doors record no parked checkpoint.
+
 ## 6E. Self-Reported Gate Evidence Consistency
 
 If the artifact records governance gate results, those results must match the
@@ -914,6 +941,7 @@ Base-anchor evidence:
 - `closureBaseHead`: `<post-review commit stage or N/A - pending review>`
 - Commit mode: `<WORKER_MAY_COMMIT | WORKER_MUST_NOT_COMMIT>`
 - Pending-artifact component gates:
+- Worker Pending-Return Gate table:
 - Committed-range `pre-closure`: `<PASS after commit | N/A - pending review>`
 
 ## 10. Acceptance Criteria
@@ -973,6 +1001,10 @@ waiver for this work order.
 - [ ] For `WORKER_MUST_NOT_COMMIT`, pending handoff used a non-closed status,
   recorded actual `git status --short`, and left committed-range
   `pre-closure` to reviewer / committer
+- [ ] For `WORKER_MUST_NOT_COMMIT`, Worker Pending-Return Gate results are
+  recorded, required component-gate failures inside Allowed scope are repaired,
+  and remaining failures are explicitly `BLOCKED`, `N/A with reason`, or
+  `FAIL_EXPECTED_PENDING_FINALITY`
 - [ ] Closure gate used a non-empty committed diff range; no `--base HEAD --head HEAD`
 - [ ] Changed-file set from `git diff --name-status` is inside this work
   order's Allowed scope, or every extra path has explicit operator/work-order
