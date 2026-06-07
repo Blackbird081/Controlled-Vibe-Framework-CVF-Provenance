@@ -114,6 +114,9 @@ Verification requirements:
   `governance/compat/check_corpus_to_knowledge_map_reconciliation.py`.
 - governed tranches must follow the commit choreography standard:
   `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md`.
+- agent-authored text must follow the text encoding and symbol discipline
+  standard:
+  `docs/reference/CVF_TEXT_ENCODING_AND_SYMBOL_DISCIPLINE_STANDARD_2026-06-07.md`.
 
 The work order is invalid for execution if it does not name stop conditions.
 
@@ -147,6 +150,15 @@ Guard/runtime claim-language discipline:
   IDs proves owner/registry presence only, not enforcement;
 - completion packets must keep this distinction in Purpose, Findings,
   Decision, Claim Boundary, and Finding-To-Governance Learning Disposition.
+
+Text encoding and symbol discipline:
+
+- default to ASCII for agent-authored prose, comments, tests, and governed
+  markdown;
+- non-ASCII is allowed only under the exceptions in
+  `docs/reference/CVF_TEXT_ENCODING_AND_SYMBOL_DISCIPLINE_STANDARD_2026-06-07.md`;
+- if changed files retain agent-authored Unicode, the completion packet must
+  record the exception and reason.
 
 Final boundary:
 

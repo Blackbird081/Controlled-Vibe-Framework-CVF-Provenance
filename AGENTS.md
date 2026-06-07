@@ -395,6 +395,23 @@ The guard now hard-fails touched near-hard-threshold governed files without
 same-domain rotation/split evidence or meaningful shrink. Maintainability
 planning is part of the work, not cleanup left for testers.
 
+## Mandatory Text Encoding And Symbol Discipline - 2026-06-07
+
+Canonical standard:
+
+`docs/reference/CVF_TEXT_ENCODING_AND_SYMBOL_DISCIPLINE_STANDARD_2026-06-07.md`
+
+Agent-authored source comments, tests, governed markdown, work orders,
+completion packets, handoffs, registries, and public-sync summaries must
+default to ASCII. Non-ASCII is allowed only for explicit exceptions such as
+existing file convention, user-facing language requirements, protocol/data
+contracts, existing Unicode filenames, or evidence quotes.
+
+Do not introduce smart punctuation, decorative bullets, Unicode arrows,
+non-breaking spaces, zero-width characters, or invisible control characters
+unless the changed artifact records the exception and reason. Do not perform
+broad Unicode normalization outside the assigned scope.
+
 ## Mandatory Agent Autorun Workflow Control - 2026-05-28
 
 Canonical standard:
