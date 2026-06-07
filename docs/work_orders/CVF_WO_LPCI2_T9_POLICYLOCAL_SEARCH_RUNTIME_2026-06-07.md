@@ -4,7 +4,7 @@ Memory class: FULL_RECORD
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED
 
 Date: 2026-06-07
 
@@ -132,7 +132,7 @@ before continuing.
 - Generate `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-query-receipts-acceptance.json`
 - Create `docs/reviews/CVF_LPCI2_T9_SEARCH_RUNTIME_COMPLETION_2026-06-07.md`
 - Update `AGENT_HANDOFF_V16_2026-06-06.md` HEAD record in session-sync step
-- Update `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` and `.md` if T9 changes the PolicyLocal corpus status
+- Update `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` and `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` if T9 changes the PolicyLocal corpus status
 
 **Forbidden:**
 - Provider calls of any kind
@@ -351,7 +351,7 @@ Worker may proceed without separate operator approval.
 | T8 final readiness verdict `READY` | `docs/reviews/CVF_LPCI2_T8_SEARCH_LAYER_SCAFFOLDING_COMPLETION_2026-06-04.md` | lines 163, 253 |
 | T8 next control action: generate chunks, build index, emit receipts, run tests | `docs/reviews/CVF_LPCI2_T8_SEARCH_LAYER_SCAFFOLDING_COMPLETION_2026-06-04.md` | line 277 |
 | `policylocal-chunks.json` not yet generated (T8 design-only) | `docs/reviews/CVF_LPCI2_T8_SEARCH_LAYER_SCAFFOLDING_COMPLETION_2026-06-04.md` | lines 205, 227 |
-| Existing scripts path | `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\scripts\` | directory listing |
+| Scripts base path (external workspace) | External Evidence Digest; see §Machine Closure Package row `External evidence digest` | CVF-Workspace/Policy_Local/scripts/ confirmed present at execution |
 
 ---
 
@@ -394,12 +394,14 @@ Does not claim:
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | `docs/work_orders/CVF_WO_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_2026-06-07.md` | Status `CLOSED`, claim-language discipline recorded | PENDING |
-| Completion or reviewer artifact | `docs/reviews/CVF_LPCI2_T9_SEARCH_RUNTIME_COMPLETION_2026-06-07.md` | Final disposition, receipts evidence, claim boundary | PENDING |
-| Generated chunk file | `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-chunks.json` | schema `policylocal.chunk.t8.v1`, all 14 fields | PENDING |
-| Acceptance receipt file | `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-query-receipts-acceptance.json` | 5 receipts, AQ-01 through AQ-05 | PENDING |
-| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | GC-051 state update if corpus status changes | PENDING |
-| Session continuity | `AGENT_HANDOFF_V16_2026-06-06.md` | Active handoff HEAD record updated | PENDING |
+| Work order status | `docs/work_orders/CVF_WO_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_2026-06-07.md` | Status `CLOSED`; no stale residue; claim-language discipline recorded | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LPCI2_T9_SEARCH_RUNTIME_COMPLETION_2026-06-07.md` | Final disposition; 5/5 acceptance queries PASS evidence; claim boundary; gate evidence | PASS |
+| Roadmap state | N/A with reason: T9 is a standalone work order; no dedicated LPCI2 search runtime roadmap file; next move is operator-reviewed deployment or corpus expansion work order | No tranche row to update | N/A with reason: no active LPCI2 roadmap file for this T9 scope |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | T9 scan wave added; chunkCount=76; acceptanceQueryAllPass=true; T4-F2 finding resolved | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | Quick Lookup and Negative Search Evidence Index updated for LPCI2-T9 | PASS |
+| External evidence digest | CVF-Workspace external artifacts (not git-tracked) | path=CVF-Workspace/Policy_Local/scripts/ and data/generated/; chunk schema=policylocal.chunk.t8.v1; chunk count=76; receipt schema=policylocal.queryReceipt.t8.v1; receipt count=5; all 14 chunk fields verified; all 21 receipt fields verified | PASS |
+| System loop interlock | N/A with reason: T9 is local-deterministic pilot only; no live provider, memory bus, or downstream system loop; no CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY entry required | No upstream/downstream loop registration required | N/A with reason: local-deterministic search only; no live system loop |
+| Session continuity | `CVF_SESSION_MEMORY.md`, `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `AGENT_HANDOFF_V16_2026-06-06.md` | Handoff HEAD record updated at session-sync commit; mode transitioned to T9 complete | PASS |
 
 ---
 
@@ -408,22 +410,21 @@ Does not claim:
 | Roadmap requirement | Work-order obligation | Roadmap section | Status |
 |---|---|---|---|
 | Use T8 READY scaffold | cite T8 completion and registry; verify corpus records schema | §Authority Chain | SATISFIED |
-| Generate chunks before index | produce `policylocal-chunks.json` with schema `policylocal.chunk.t8.v1` | §Tranche Plan T9B | REQUIRED |
-| Preserve source trace | all 14 chunk fields including sourceHash, parentRecordHash, chunkHash, articleRef | §Source Verification | REQUIRED |
-| Use filter-first keyword retrieval | lookup sequence: hard filter → soft filter → keyword → rank → boundary → receipt | §Tranche Plan T9C | REQUIRED |
-| Emit query receipts | every acceptance query produces `policylocal.queryReceipt.t8.v1` receipt | §Tranche Plan T9D | REQUIRED |
-| Enforce escalate boundary | AQ-02 through AQ-05 must have `selectedCandidateIds=[]` | §Acceptance Query Set | REQUIRED |
-| Preserve freshness disclosure | AQ-01 and AQ-05 must have `freshnessDisclosureApplied=true` | §Acceptance Query Set | REQUIRED |
-| Exclude vector retrieval | no embeddings, no vector store, no external model | §Forbidden | REQUIRED |
-| Produce runtime negative evidence | AQ-02, AQ-03 zero-result receipts | §Acceptance Query Set | REQUIRED |
+| Generate chunks before index | produce `policylocal-chunks.json` with schema `policylocal.chunk.t8.v1` | §Tranche Plan T9B | SATISFIED |
+| Preserve source trace | all 14 chunk fields including sourceHash, parentRecordHash, chunkHash, articleRef | §Source Verification | SATISFIED |
+| Use filter-first keyword retrieval | lookup sequence: hard filter → soft filter → keyword → rank → boundary → receipt | §Tranche Plan T9C | SATISFIED |
+| Emit query receipts | every acceptance query produces `policylocal.queryReceipt.t8.v1` receipt | §Tranche Plan T9D | SATISFIED |
+| Enforce escalate boundary | AQ-02 through AQ-05 must have `selectedCandidateIds=[]` | §Acceptance Query Set | SATISFIED |
+| Preserve freshness disclosure | AQ-01 and AQ-05 must have `freshnessDisclosureApplied=true` | §Acceptance Query Set | SATISFIED |
+| Exclude vector retrieval | no embeddings, no vector store, no external model | §Forbidden | SATISFIED |
+| Produce runtime negative evidence | AQ-02, AQ-03 zero-result receipts | §Acceptance Query Set | SATISFIED |
 
 ---
 
 ## Pending Artifact Evidence Finality
 
-All machine closure package items are `PENDING` at dispatch. Finalized by worker
-at implementation commit. Completion review records final evidence.
-No gate evidence is pre-finalized.
+All machine closure package items finalized at implementation commit.
+Completion review records final evidence. No pre-dispatch gate evidence claimed.
 
 ---
 
@@ -459,11 +460,11 @@ within the advisory threshold. No size remediation needed.
 | Artifact | Governed path | Status |
 |---|---|---|
 | Work order | `docs/work_orders/CVF_WO_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_2026-06-07.md` | THIS_FILE |
-| Completion review | `docs/reviews/CVF_LPCI2_T9_SEARCH_RUNTIME_COMPLETION_2026-06-07.md` | PENDING |
-| Chunk generator | `CVF-Workspace/Policy_Local/scripts/policylocal-chunk-generator.py` | PENDING |
-| Search runtime | `CVF-Workspace/Policy_Local/scripts/policylocal-search-runtime.py` | PENDING |
-| Chunk output | `CVF-Workspace/Policy_Local/data/generated/policylocal-chunks.json` | PENDING |
-| Receipt output | `CVF-Workspace/Policy_Local/data/generated/policylocal-query-receipts-acceptance.json` | PENDING |
+| Completion review | `docs/reviews/CVF_LPCI2_T9_SEARCH_RUNTIME_COMPLETION_2026-06-07.md` | CLOSED |
+| Chunk generator | `CVF-Workspace/Policy_Local/scripts/policylocal-chunk-generator.py` | PRESENT |
+| Search runtime | `CVF-Workspace/Policy_Local/scripts/policylocal-search-runtime.py` | PRESENT |
+| Chunk output | `CVF-Workspace/Policy_Local/data/generated/policylocal-chunks.json` | PRESENT |
+| Receipt output | `CVF-Workspace/Policy_Local/data/generated/policylocal-query-receipts-acceptance.json` | PRESENT |
 
 ---
 

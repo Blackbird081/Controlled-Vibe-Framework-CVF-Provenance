@@ -3,8 +3,8 @@
   "standard": "docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md",
   "guard": "governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md",
   "checker": "governance/compat/check_corpus_scan_registry.py",
-  "lastUpdated": "2026-06-06",
-  "updatedBy": "P1-P5 small debt remediation audit",
+  "lastUpdated": "2026-06-07",
+  "updatedBy": "LPCI2-T9 worker",
   "allowedCorpusTypes": [
     "LEGACY_FOLDER",
     "PROJECT_SOURCE",
@@ -780,8 +780,8 @@
       ],
       "fileCount": 2,
       "status": "DEEP_CLASSIFIED",
-      "scanWave": "LPCI2-T8",
-      "scanDate": "2026-06-04",
+      "scanWave": "LPCI2-T9",
+      "scanDate": "2026-06-07",
       "manifestHash": "b7878246e29ab104df404d4d5c558de66a256d6be80073524cc7bafd3dde8d71",
       "manifestPath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-Workspace/Policy_Local/data/generated/policylocal-data-input-manifest.json",
       "corpusRecordsPath": "D:/UNG DUNG AI/TOOL AI 2026/CVF-Workspace/Policy_Local/data/generated/policylocal-corpus-records.json",
@@ -842,9 +842,14 @@
         "revisedReadinessVerdict": "READY",
         "finalReadinessVerdict": "READY",
         "negativeSearchEvidenceEntries": 6,
-        "remainingT8Gaps": []
+        "remainingT8Gaps": [],
+        "searchRuntimeVersion": "lpci2.t9.search_runtime.v1",
+        "chunkSchemaVersion": "policylocal.chunk.t8.v1",
+        "chunkCount": 76,
+        "acceptanceQueryCount": 5,
+        "acceptanceQueryAllPass": true
       },
-      "priorAbsorption": "LPCI2-T4S hash-only smoke test: two DOCX files hashed and normalized. LPCI2-T4: text extracted (READ_SHALLOW), VN_NATIONAL law corpus confirmed, issuingBody=Quoc Hoi, status=amended, answerClass=SUMMARY_WITH_SOURCE. LPCI2-T5: full-body deep scan, effectiveDate=2026-07-01 confirmed P1_effective_clause (both files), GC-048 RECONCILED_VERIFIED, adversarial sampling 4/4 PASS, corpus records upgraded to READ_DEEP. LPCI2-T7: faceted retrieval schema and boundary enforcement contract authored; corpus records upgraded to t7.v1 with topicTags, freshnessStatus, sourceFamily, and processing ledger. LPCI2-T8: query receipt model and retrieval trace design authored; corpus records upgraded to t8.v1 with negativeSearchEvidence, queryReceiptModelRef, and retrievalTraceDesignRef; final readiness verdict READY.",
+      "priorAbsorption": "LPCI2-T4S hash-only smoke test: two DOCX files hashed and normalized. LPCI2-T4: text extracted (READ_SHALLOW), VN_NATIONAL law corpus confirmed, issuingBody=Quoc Hoi, status=amended, answerClass=SUMMARY_WITH_SOURCE. LPCI2-T5: full-body deep scan, effectiveDate=2026-07-01 confirmed P1_effective_clause (both files), GC-048 RECONCILED_VERIFIED, adversarial sampling 4/4 PASS, corpus records upgraded to READ_DEEP. LPCI2-T7: faceted retrieval schema and boundary enforcement contract authored; corpus records upgraded to t7.v1 with topicTags, freshnessStatus, sourceFamily, and processing ledger. LPCI2-T8: query receipt model and retrieval trace design authored; corpus records upgraded to t8.v1 with negativeSearchEvidence, queryReceiptModelRef, and retrievalTraceDesignRef; final readiness verdict READY. LPCI2-T9: search runtime implemented; policylocal-chunk-generator.py (76 chunks, schema policylocal.chunk.t8.v1) and policylocal-search-runtime.py (filter-first/keyword-rank, EC-01--EC-04, receipt emission) created; 5/5 acceptance queries PASS; policylocal-chunks.json and policylocal-query-receipts-acceptance.json generated.",
       "findings": [
         {
           "id": "T4S-F1-docx-text-extraction-deferred",
@@ -869,24 +874,26 @@
         {
           "id": "T4-F2-search-chat-blocked",
           "summary": "SUMMARY_WITH_SOURCE with READ_SHALLOW classification is not sufficient for search/chat runtime.",
-          "disposition": "DEFER_PHASED",
-          "nextAction": "Open a bounded search/chat readiness work order after T5 operator commit. Do not open search/chat runtime until that readiness gate closes.",
+          "disposition": "ACCEPT_NO_ACTION",
+          "nextAction": "RESOLVED by LPCI2-T9: search runtime implemented; 5/5 acceptance queries PASS; chunks generated; receipts emitted.",
           "defectClass": "RUNTIME_SIGNAL_GAP",
           "learningLane": "RUNTIME_BEHAVIOR_LEARNING",
-          "f2gRef": "docs/reviews/CVF_LPCI2_T5_POLICYLOCAL_DEEP_CLASSIFICATION_COMPLETION_2026-06-04.md#finding-to-governance-learning-disposition"
+          "f2gRef": "docs/reviews/CVF_LPCI2_T5_POLICYLOCAL_DEEP_CLASSIFICATION_COMPLETION_2026-06-04.md#finding-to-governance-learning-disposition",
+          "resolvedBy": "LPCI2-T9"
         }
       ],
       "negativeSearchTerms": [
         "DIRECT_CITED_ANSWER from 116_2025_QH15_666020.docx or 148_2025_QH15_675262.docx (blocked; amended laws use SUMMARY_WITH_SOURCE; citation depth insufficient)",
         "effectiveDate unknown (T5 resolved: 2026-07-01 confirmed P1_effective_clause for both files)",
-        "search/chat runtime readiness (governance scaffold READY after T8; implementation still blocked until fresh operator-authorized work order)",
+        "search/chat runtime production deployment (search runtime IMPLEMENTED at T9 for pilot corpus; not production-deployed; no provider calls; no live hosted API)",
         "live query negative evidence (not produced; T8 negativeSearchEvidence is structural and implementation tests must produce live receipts)",
         "provider call in T5 deep scan (none; local python-docx only; no model inference)",
         "both laws currently in force (effectiveDate=2026-07-01; not yet in force as of 2026-06-04)"
       ],
-      "nextScanRecommendation": "T8 governance scaffold complete. PolicyLocal is READY for a fresh operator-authorized search implementation work order; do not begin runtime work from this registry entry alone. EC-02 rescan required on or after 2026-07-01 before any production runtime opens.",
+      "nextScanRecommendation": "T9 search runtime implemented; policylocal pilot corpus search is local-deterministic. EC-02 rescan required on or after 2026-07-01 before any production runtime opens (effectiveDate=2026-07-01). Next: operator review T9 completion, then corpus expansion or production deployment work order.",
       "hashAlgorithm": "sha256",
-      "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
+      "hashInput": "sorted-paths-newline-joined-with-trailing-newline",
+      "t9CompletionReviewPath": "docs/reviews/CVF_LPCI2_T9_SEARCH_RUNTIME_COMPLETION_2026-06-07.md"
     },
     {
       "id": "mlw0-current-source-verification-map",
