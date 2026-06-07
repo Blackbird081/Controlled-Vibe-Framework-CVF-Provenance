@@ -36,14 +36,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci2_t11b_source_verification_dispatched`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=execute T11B path/hash verification for 7 target files per work order and return uncommitted packet; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`lpci2_t11b_source_verification_dispatched`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=execute T11B four-gate verification (path | hash | size | role/lineage) for 7 target files per amended work order and return uncommitted packet; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
 `lpci2_t11b_source_verification_dispatched`
 
-Current HEAD recorded for this handoff: `290c91b3`
-(T11B Source Verification dispatch commit. Parent: `486370fe` T11A closure sync.).
+Current HEAD recorded for this handoff: `026c5c16`
+(T11B four-gate amendment commit. Parent: `290c91b3` T11B dispatch, `486370fe` T11A closure sync.).
 
 ## Active Boundary
 
@@ -204,6 +204,41 @@ Only V16 should be treated as the active root handoff.
   `freshnessDisclosureApplied=true`. Boundary remains local deterministic only.
 
 ## Latest Continuity Note
+
+LPCI2-T11B Source Verification work order and GC-018 amended to
+four-gate scan-layer standard at commit `026c5c16`.
+
+Four gates: path fidelity (`Test-Path -LiteralPath`) | hash match
+(SHA-256 binary vs T11A manifest) | size match (`Get-Item -LiteralPath
+.Length` vs T11A `sizeBytes`) | role/lineage reconciliation
+(`bundleArtifactRole` + `lineageParentIds` vs T11A bundle manifest).
+
+`verificationResult` vocab: `HASH_MATCH` | `HASH_MISMATCH` |
+`SIZE_MISMATCH` | `ROLE_LINEAGE_MISMATCH` | `PATH_NOT_FOUND` |
+`READ_ERROR`. `HASH_MATCH` only when all four gates pass.
+
+Next allowed move: Claude executes T11B four-gate verification for all 7
+target files per amended work order
+`docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T11B_POLICYLOCAL_SOURCE_VERIFICATION_FOR_CLAUDE_2026-06-07.md`
+and returns uncommitted packet. Mandatory: `-LiteralPath` on every
+filesystem call; `sys.stdout.reconfigure(encoding='utf-8')` if Python.
+
+Boundary: T11B verification only; no body extraction, corpus ingestion,
+provider calls, public-sync, or current-law claim.
+
+## Core Guard Self-Protection Authorization - T11B Amendment Session Sync
+
+Protected paths changed in this session sync:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `AGENT_HANDOFF_V16_2026-06-06.md`
+
+Authorization: operator-directed four-gate amendment session sync only;
+no scope expansion beyond naming the amendment HEAD SHA and updating
+`nextAllowedMove` to name the four-gate standard.
+
+## Previous Continuity (T10)
 
 LPCI2-T10 PolicyLocal foundation readiness is `CLOSED_PASS_BOUNDED` at
 material commit `866f92cd`.
