@@ -8,9 +8,10 @@ docType: reference
 
 Date: 2026-05-28
 
-Last updated: 2026-06-04
+Last updated: 2026-06-07
 
 Authority: restored active canonical path plus CI/LPCI closure-friction learning
+and reviewer-fast gate hardening
 
 Historical full packet:
 
@@ -175,6 +176,23 @@ recurring packaging defects while the fix is still small:
   the changed range;
 - protected guard/session files changed without a checker-recognized
   `Core Guard Self-Protection Authorization` artifact.
+
+### Reviewer Fast Gate
+
+When a no-commit worker returns staged or uncommitted governed artifacts, the
+reviewer / committer should run the focused reviewer gate before attempting a
+full commit:
+
+`python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast`
+
+This gate is an early defect filter only. It does not replace committed-range
+`pre-closure`, `pre-push`, or the full hook chain. It exists to catch common
+reviewer-return defects while the fix is still small: closure residue,
+source/registry coverage, public export disposition, machine closure package
+rows, finding-learning disposition, and active session continuity.
+
+`reviewer-fast`, `pre-commit`, and `pre-push` local hook modes run in parallel
+by default for latency control. Use `--serial` for order-dependent debugging.
 
 ### Current Runtime Freshness Verification
 

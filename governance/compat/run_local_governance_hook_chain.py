@@ -21,7 +21,54 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
+REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
+    (
+        "closure packaging preflight",
+        ["python", "governance/compat/check_closure_packaging_preflight.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
+        "core guard self-protection",
+        ["python", "governance/compat/check_core_guard_self_protection.py", "--enforce"],
+    ),
+    (
+        "docs governance compatibility",
+        ["python", "governance/compat/check_docs_governance_compat.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
+        "markdown structural completeness",
+        ["python", "governance/compat/check_markdown_structural_completeness.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
+        "work-order dispatch quality",
+        ["python", "governance/compat/check_work_order_dispatch_quality.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
+        "machine closure package",
+        ["python", "governance/compat/check_machine_closure_package.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
+        "finding-to-governance learning quality",
+        ["python", "governance/compat/check_finding_to_governance_learning.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
+        "public export disposition quality",
+        ["python", "governance/compat/check_public_export_disposition.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
+        "corpus scan registry",
+        ["python", "governance/compat/check_corpus_scan_registry.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
+        "active session state compatibility",
+        ["python", "governance/compat/check_active_session_state.py", "--enforce"],
+    ),
+]
+
+PARALLEL_BY_DEFAULT_HOOKS = {"pre-commit", "pre-push", "reviewer-fast"}
+
+
 HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
+    "reviewer-fast": REVIEWER_FAST_CHECKS,
     # Local hooks use HEAD..HEAD intentionally as worktree/index validation.
     # Closure evidence must still come from autorun gates with
     # --base <baseHead> --head HEAD over a real committed range.
@@ -552,6 +599,11 @@ def main() -> int:
         help="Run the selected hook chain in parallel for local preflight visibility.",
     )
     parser.add_argument(
+        "--serial",
+        action="store_true",
+        help="Force sequential execution even when the selected hook defaults to parallel.",
+    )
+    parser.add_argument(
         "--max-workers",
         type=int,
         default=6,
@@ -565,7 +617,8 @@ def main() -> int:
     args = parser.parse_args()
 
     chain = HOOK_CHAINS[args.hook]
-    if args.parallel:
+    use_parallel = (args.parallel or args.hook in PARALLEL_BY_DEFAULT_HOOKS) and not args.serial
+    if use_parallel:
         code = _run_parallel_chain(
             chain,
             max_workers=args.max_workers,

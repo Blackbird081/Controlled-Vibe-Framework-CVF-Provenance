@@ -13,7 +13,7 @@ current:
 
 The current active handoff in that registry is:
 
-`AGENT_HANDOFF_V16_2026-06-06.md`
+`AGENT_HANDOFF_V17_2026-06-07.md`
 
 Historical handoffs are archived under:
 
@@ -445,6 +445,21 @@ Required phase gates:
   `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base <baseHead> --head HEAD`
 - before push:
   `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-push --base <baseHead> --head HEAD`
+
+Reviewer fast preflight:
+
+- when a no-commit worker returns uncommitted or staged governed artifacts for
+  Codex/orchestrator review, run the focused reviewer gate before attempting a
+  full commit:
+  `python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast`
+- This gate is not closure evidence and does not replace pre-closure or
+  pre-push autorun gates. It is an early defect filter for reviewer-return
+  packets: closure residue, source/registry coverage, public export
+  disposition, machine closure rows, finding-learning disposition, and active
+  session continuity.
+- `reviewer-fast`, `pre-commit`, and `pre-push` local hook modes run in
+  parallel by default for latency control. Use `--serial` only for debugging
+  order-dependent output.
 
 If a phase gate fails, the agent must stop at that phase and mark the artifact
 `DRAFT`, `HOLD_*`, `BLOCKED`, or return it to Orchestrator. A worker may not
