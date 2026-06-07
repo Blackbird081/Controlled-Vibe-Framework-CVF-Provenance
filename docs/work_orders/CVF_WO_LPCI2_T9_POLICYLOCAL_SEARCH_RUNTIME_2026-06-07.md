@@ -132,6 +132,8 @@ before continuing.
 - Generate `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-query-receipts-acceptance.json`
 - Create `docs/reviews/CVF_LPCI2_T9_SEARCH_RUNTIME_COMPLETION_2026-06-07.md`
 - Update `AGENT_HANDOFF_V16_2026-06-06.md` HEAD record in session-sync step
+- Update `CVF_SESSION_MEMORY.md` in session-sync step
+- Update `CVF_SESSION/ACTIVE_SESSION_STATE.json` in session-sync step
 - Update `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` and `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` if T9 changes the PolicyLocal corpus status
 - Update `docs/roadmaps/CVF_LPCI2_T9_POLICYLOCAL_SEARCH_RUNTIME_ROADMAP_2026-06-07.md` for correction-clean closure state
 - Update `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md` for orchestrator work-order hardening
