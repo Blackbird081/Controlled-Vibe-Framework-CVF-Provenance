@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -12,7 +12,7 @@ dispatchBaseHead: `93bf9909`
 
 executionBaseHead: `93bf9909`
 
-closureBaseHead: `N/A - worker must return uncommitted packet for Codex review`
+closureBaseHead: `34f1c4ec`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -271,13 +271,13 @@ forbidden runtime/legal/public claim is made.
 
 ## Closure Checklist
 
-- [ ] Inventory markdown created.
-- [ ] Manifest JSON created and parse-checked.
-- [ ] Six candidate rows reconciled.
-- [ ] Two pilot law DOCX files recorded as exclusions.
-- [ ] EC-02 boundary recorded.
-- [ ] Worker return packet created.
-- [ ] No forbidden scope action occurred.
+- [x] Inventory markdown created.
+- [x] Manifest JSON created and parse-checked.
+- [x] Six candidate rows reconciled.
+- [x] Two pilot law DOCX files recorded as exclusions.
+- [x] EC-02 boundary recorded.
+- [x] Worker return packet created.
+- [x] No forbidden scope action occurred.
 
 ## Return-To-Orchestrator Conditions
 
@@ -322,13 +322,18 @@ runtime, provider, or current-law claim.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `DISPATCHED_TO_WORKER`; reviewer may close later | N/A with reason: dispatch packet only |
-| GC-018 baseline | `docs/baselines/CVF_GC018_LPCI2_T11A_POLICYLOCAL_CANDIDATE_INVENTORY_2026-06-07.md` | active authorization for T11A | PASS for dispatch |
-| Roadmap state | `docs/roadmaps/CVF_LPCI2_T11_POLICYLOCAL_CORPUS_EXPANSION_READINESS_ROADMAP_2026-06-07.md` | T11 roadmap `PROPOSED`; T11A authorized as first tranche | PASS for dispatch |
-| Worker return packet | `docs/reviews/CVF_LPCI2_T11A_CANDIDATE_INVENTORY_WORKER_RETURN_2026-06-07.md` | worker evidence and changed files | BLOCKED until worker returns |
-| Inventory markdown | `docs/reference/CVF_LPCI2_T11_CANDIDATE_INVENTORY_2026-06-07.md` | six candidate rows | BLOCKED until worker returns |
-| Manifest JSON | `CVF-Workspace/Policy_Local/data/generated/policylocal-t11-candidate-manifest.json` | schema/count reconciliation | BLOCKED until worker returns |
-| Session continuity | reviewer-owned session sync | mode/next move/handoff updated if T11A accepted | BLOCKED until reviewer-owned closure |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED`; `Commit mode: WORKER_MUST_NOT_COMMIT` preserved for worker execution | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LPCI2_T11A_CANDIDATE_AND_BUNDLE_INVENTORY_COMPLETION_2026-06-07.md` | Codex closure review after original and supplement returns | PASS |
+| GC-018 baseline | `docs/baselines/CVF_GC018_LPCI2_T11A_POLICYLOCAL_CANDIDATE_INVENTORY_2026-06-07.md` | active authorization for T11A | PASS |
+| Roadmap state | `docs/roadmaps/CVF_LPCI2_T11_POLICYLOCAL_CORPUS_EXPANSION_READINESS_ROADMAP_2026-06-07.md` | T11 roadmap remains `PROPOSED`; T11A sub-tranche closed only | PASS |
+| Worker return packet | `docs/reviews/CVF_LPCI2_T11A_CANDIDATE_INVENTORY_WORKER_RETURN_2026-06-07.md` | `RETURNED_PASS_BOUNDED` for original direct scope | PASS |
+| Inventory markdown | `docs/reference/CVF_LPCI2_T11_CANDIDATE_INVENTORY_2026-06-07.md` | six candidate rows and pilot exclusions | PASS |
+| Manifest JSON | `CVF-Workspace/Policy_Local/data/generated/policylocal-t11-candidate-manifest.json` | sha256:e06dc12c54c3a3ecab7d468c8de996feae9f1f79b9cce568642932e2ea0cf43e | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | T11A closed and T11B routed; GC-051 corpus registry not updated until T11D/T12 readiness | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V16_2026-06-06.md` | T11A closure and next allowed move recorded | PASS |
+| External evidence digest | candidate manifest | sha256:e06dc12c54c3a3ecab7d468c8de996feae9f1f79b9cce568642932e2ea0cf43e | PASS |
+| System loop interlock | N/A with reason | inventory-only work; no runtime/system loop mutation authorized | N/A with reason |
+| Session continuity | reviewer-owned session sync | mode/next move/handoff updated for T11A closure | PASS |
 
 ## Public Export Disposition
 

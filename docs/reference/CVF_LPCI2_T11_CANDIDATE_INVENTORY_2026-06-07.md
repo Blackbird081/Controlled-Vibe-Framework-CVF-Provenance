@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: WORKER_RETURN_PENDING_REVIEW
+Status: REVIEWED_PASS_BOUNDED
 
 docType: candidate_inventory
 

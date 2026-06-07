@@ -36,16 +36,16 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci2_t11a_supplement_bundle_inventory_dispatched`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=Claude may execute T11A supplement real use-case bundle inventory under WORKER_MUST_NOT_COMMIT and return uncommitted lineage/manifest evidence; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`lpci2_t11a_candidate_and_bundle_inventory_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V16_2026-06-06.md`; next allowed move=author a source-verified LPCI2-T11B Source Verification work order for combined T11A candidate and bundle evidence; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`lpci2_t11a_supplement_bundle_inventory_dispatched`
+`lpci2_t11a_candidate_and_bundle_inventory_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `12f4c23a`
-(T11A supplement dispatch material commit. T11A original dispatch commit:
-`1f386cc2`; T11A dispatch sync: `db43e449`. T11A supplement review and Claude
-work order are committed at `12f4c23a`.).
+Current HEAD recorded for this handoff: `34f1c4ec`
+(T11A supplement dispatch sync parent. T11A closure material commit will update
+this record in the follow-up session-sync commit after the exact closure SHA is
+known.).
 
 ## Active Boundary
 
@@ -605,8 +605,13 @@ Diagnostic boundary:
 
 ## Next Allowed Move
 
-LPCI2-T11A Supplement Real Use-Case Bundle Inventory is
-`DISPATCHED_TO_WORKER` for Claude:
+LPCI2-T11A Candidate And Bundle Inventory is `CLOSED_PASS_BOUNDED`.
+
+Completion:
+
+`docs/reviews/CVF_LPCI2_T11A_CANDIDATE_AND_BUNDLE_INVENTORY_COMPLETION_2026-06-07.md`
+
+Supplement work order:
 
 `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T11A_SUPPLEMENT_REAL_USE_CASE_BUNDLE_INVENTORY_FOR_CLAUDE_2026-06-07.md`
 
@@ -626,9 +631,17 @@ GC-018:
 
 `docs/baselines/CVF_GC018_LPCI2_T11A_POLICYLOCAL_CANDIDATE_INVENTORY_2026-06-07.md`
 
-Next allowed move: Claude may inventory the full
-`Law use case_Codex` real use-case bundle and return uncommitted lineage and
-manifest evidence for Codex review. Do not treat T9, T10, T11A, the direct
+Bundle manifest:
+
+`D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-t11-real-use-case-bundle-manifest.json`
+
+Bundle manifest hash:
+`sha256:1ddceb3c8c063dca75c596c8f59f2c058265b6406207ecd5462afd407b2ea054`.
+
+Next allowed move: author a source-verified `LPCI2-T11B Source Verification`
+work order for the combined direct candidate inventory and
+`Law use case_Codex` bundle evidence. T11B may verify filesystem access, path
+resolution, and SHA-256 hashes only. Do not treat T9, T10, T11A, the direct
 worker return, or the supplement as production, hosted, public, legal-advice,
 current-law, provider, chat, vector, extraction, ingestion, or deployment
 readiness.
@@ -747,6 +760,26 @@ are mixed real-case PolicyLocal material rather than pure law.
 Rollback boundary: revert only the T11A dispatch session-sync text and state
 registry entries if the dispatch routing is wrong. Do not revert T10 closure,
 T11 roadmap, T11A GC-018/work-order artifacts, or unrelated continuity history.
+
+## Core Guard Self-Protection Authorization - T11A Closure Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+closing T11A Candidate And Bundle Inventory as `CLOSED_PASS_BOUNDED`.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `AGENT_HANDOFF_V16_2026-06-06.md`
+
+Operator authorization: 2026-06-07 operator authorized Codex to review the
+T11A supplement worker return, clean findings, complete the roadmap step,
+commit, and recommend the next roadmap.
+
+Rollback boundary: revert only the T11A closure session-sync text and state
+registry entries if the closure routing is wrong. Do not revert T9/T10 closure,
+T11 roadmap, T11A worker artifacts, T11A completion review, or unrelated
+continuity history.
 
 ## Claim Boundary
 

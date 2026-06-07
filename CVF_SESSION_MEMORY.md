@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-07
 
-Current mode marker: `lpci2_t11a_supplement_bundle_inventory_dispatched`
+Current mode marker: `lpci2_t11a_candidate_and_bundle_inventory_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -34,7 +34,7 @@ Previous long front-door snapshot:
 
 ## Current State
 
-Current mode: `lpci2_t11a_supplement_bundle_inventory_dispatched`.
+Current mode: `lpci2_t11a_candidate_and_bundle_inventory_closed_pass_bounded`.
 
 Active handoff:
 
@@ -50,10 +50,11 @@ Active review queue:
 
 Latest continuity note:
 
-LPCI2-T11 PolicyLocal Corpus Expansion Readiness roadmap is `PROPOSED`.
-Original T11A Candidate Inventory returned `RETURNED_PASS_BOUNDED` for the
-direct six-file input scope, but Codex review found a supplement is required
-for the real `Law use case_Codex` bundle lineage.
+LPCI2-T11A Candidate And Bundle Inventory is `CLOSED_PASS_BOUNDED`.
+Original T11A Candidate Inventory passed the direct six-file input scope. Codex
+review required a supplement for the real `Law use case_Codex` bundle lineage;
+that supplement is now reviewed and accepted after path-normalization and
+structural-section remediation.
 
 Roadmap:
 
@@ -75,14 +76,24 @@ Codex review:
 
 `docs/reviews/CVF_LPCI2_T11A_CANDIDATE_INVENTORY_CODEX_REVIEW_2026-06-07.md`
 
+Completion:
+
+`docs/reviews/CVF_LPCI2_T11A_CANDIDATE_AND_BUNDLE_INVENTORY_COMPLETION_2026-06-07.md`
+
 Supplement work order:
 
 `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T11A_SUPPLEMENT_REAL_USE_CASE_BUNDLE_INVENTORY_FOR_CLAUDE_2026-06-07.md`
 
-Scope: Claude must inventory the full
-`CVF-Workspace/Policy_Local/data_input/Law use case_Codex` real use-case
-bundle, including source inputs, `Request for agent.docx`, `_extracted_text`,
-and `_rendered_don_kien_nghi`, as lineage/provenance evidence only.
+Bundle manifest:
+
+`D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-t11-real-use-case-bundle-manifest.json`
+
+Bundle manifest hash:
+`sha256:1ddceb3c8c063dca75c596c8f59f2c058265b6406207ecd5462afd407b2ea054`.
+
+Result: 16 bundle artifacts reconciled with 0 path/hash/size errors after
+Unicode path-normalization correction. Roles: 6 source inputs, 1 agent request,
+7 ungoverned extracted-text artifacts, and 2 rendered output variants.
 
 Boundary: no body extraction, OCR, content summarization, corpus ingestion,
 chunking, runtime query, provider calls, public-sync, current-law claim, legal
@@ -841,19 +852,24 @@ opening separate live-proof roadmaps.
 
 ## Next Allowed Move
 
-LPCI2-T11A Supplement Real Use-Case Bundle Inventory is
-`DISPATCHED_TO_WORKER` for Claude.
+LPCI2-T11A Candidate And Bundle Inventory is `CLOSED_PASS_BOUNDED`.
 
-Work order:
-`docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T11A_SUPPLEMENT_REAL_USE_CASE_BUNDLE_INVENTORY_FOR_CLAUDE_2026-06-07.md`
+Completion:
+`docs/reviews/CVF_LPCI2_T11A_CANDIDATE_AND_BUNDLE_INVENTORY_COMPLETION_2026-06-07.md`
 
-Current mode: `lpci2_t11a_supplement_bundle_inventory_dispatched`.
+Current mode:
+`lpci2_t11a_candidate_and_bundle_inventory_closed_pass_bounded`.
 
-Next allowed move: Claude may execute the T11A supplement under
-`WORKER_MUST_NOT_COMMIT` and return uncommitted real use-case bundle
-inventory/manifest evidence for Codex review. EC-02 freshness review is
-required on or after 2026-07-01 before any current-law or production runtime
-claim.
+Next allowed move: author a source-verified `LPCI2-T11B Source Verification`
+work order for the combined direct candidate inventory and
+`Law use case_Codex` bundle evidence.
+
+T11B may verify filesystem access, path resolution, and SHA-256 hashes only.
+It must not perform body extraction, OCR, summarization, corpus ingestion,
+chunking, runtime query, provider calls, public-sync, current-law claims, legal
+advice quality claims, production/public readiness claims, memory reinjection,
+high-risk promotion, or autonomous mutation. EC-02 freshness review is required
+on or after 2026-07-01 before any current-law or production runtime claim.
 
 The prior product lanes remain parked: DEP2 next-auth stable migration is
 `HARD_BLOCKED`, external receipt-anchor provider/service selection is

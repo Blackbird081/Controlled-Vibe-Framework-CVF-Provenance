@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -12,7 +12,7 @@ dispatchBaseHead: `db43e449`
 
 executionBaseHead: `db43e449`
 
-closureBaseHead: `N/A - worker must return uncommitted supplement packet for Codex review`
+closureBaseHead: `34f1c4ec`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -266,13 +266,13 @@ deciding T11A closure.
 
 ## Closure Checklist
 
-- [ ] Bundle inventory created.
-- [ ] Manifest parses and reconciles.
-- [ ] All file rows have artifact roles and SHA256 hashes.
-- [ ] Lineage edges are present.
-- [ ] Ungoverned Codex baseline artifacts are marked.
-- [ ] No forbidden scope action occurred.
-- [ ] Codex reviewed original T11A return plus supplement together.
+- [x] Bundle inventory created.
+- [x] Manifest parses and reconciles.
+- [x] All file rows have artifact roles and SHA256 hashes.
+- [x] Lineage edges are present.
+- [x] Ungoverned Codex baseline artifacts are marked.
+- [x] No forbidden scope action occurred.
+- [x] Codex reviewed original T11A return plus supplement together.
 
 ## Return-To-Orchestrator Conditions
 
@@ -321,14 +321,14 @@ claim.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `Status: DISPATCHED_TO_WORKER`; `Commit mode: WORKER_MUST_NOT_COMMIT` | PASS |
-| Completion or reviewer artifact | N/A with reason | Worker has not returned supplement yet | N/A with reason |
-| Roadmap state | `docs/roadmaps/CVF_LPCI2_T11_POLICYLOCAL_CORPUS_EXPANSION_READINESS_ROADMAP_2026-06-07.md` | T11 remains in progress; T11A requires supplement before closure | PASS |
-| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Next allowed move routes T11A supplement execution | PASS |
-| Registry Markdown | `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V16_2026-06-06.md` | Active front doors route T11A supplement execution | PASS |
-| External evidence digest | N/A with reason | Supplement manifest/hash evidence is required before reviewer closure | N/A with reason |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED`; `Commit mode: WORKER_MUST_NOT_COMMIT` preserved for worker execution | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LPCI2_T11A_CANDIDATE_AND_BUNDLE_INVENTORY_COMPLETION_2026-06-07.md` | Codex closure review after worker return | PASS |
+| Roadmap state | `docs/roadmaps/CVF_LPCI2_T11_POLICYLOCAL_CORPUS_EXPANSION_READINESS_ROADMAP_2026-06-07.md` | T11 remains in progress; T11A sub-tranche closed only | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | T11A closed and T11B routed | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V16_2026-06-06.md` | Active front doors record T11A closure and T11B next move | PASS |
+| External evidence digest | `policylocal-t11-real-use-case-bundle-manifest.json` | sha256:1ddceb3c8c063dca75c596c8f59f2c058265b6406207ecd5462afd407b2ea054 | PASS |
 | System loop interlock | this file | Inventory-only supplement; no runtime/system loop mutation authorized | PASS |
-| Session continuity | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `AGENT_HANDOFF_V16_2026-06-06.md` | Session sync required after dispatch commit | PASS |
+| Session continuity | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `AGENT_HANDOFF_V16_2026-06-06.md` | Session sync updated after closure | PASS |
 
 ## Public Export Disposition
 
