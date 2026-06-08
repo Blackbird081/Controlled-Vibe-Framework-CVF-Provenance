@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-07
 
-Current mode marker: `dscp_t4_retrieval_receipt_runtime_boundary_dispatched`
+Current mode marker: `dscp_t4_retrieval_receipt_runtime_boundary_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `dscp_t4_retrieval_receipt_runtime_boundary_dispatched`.
+Current mode: `dscp_t4_retrieval_receipt_runtime_boundary_closed_pass_bounded`.
 
 Active handoff:
 
@@ -58,18 +58,18 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-DSCP-T3 Runtime Pilot - CPF Internal is `CLOSED_PASS_BOUNDED` at material
-commit `a368dae9`.
+DSCP-T4 Retrieval Receipt Runtime Boundary is `CLOSED_PASS_BOUNDED` at material
+commit `a98396dd`.
 
 Delivered scope:
 
-- added deterministic CPF governed packer
-  `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.context.packer.ts`;
+- added deterministic CPF retrieval receipt helper
+  `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.retrieval.receipt.ts`;
 - added focused tests
-  `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.governed.context.packer.test.ts`;
+  `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.governed.retrieval.receipt.test.ts`;
 - verified `npx tsc --noEmit` PASS in CPF;
-- verified focused vitest PASS;
-- updated GC-051 registry coverage for DSCP-T3 packer/test surfaces.
+- verified focused vitest 24/24 PASS;
+- updated GC-051 registry coverage for DSCP-T4 receipt helper/test surfaces.
 
 Previous product/control-plane note:
 
@@ -82,26 +82,17 @@ Roadmap:
 Completion:
 `docs/reviews/CVF_DSCP_T1_OWNER_SURFACE_MAP_COMPLETION_2026-06-07.md`.
 
-Boundary: DSCP-T3 is deterministic local wrapper work only. No provider call,
-corpus ingestion, retrieval receipt runtime, public-sync, production readiness,
-public readiness, provider-quality/cost/performance claim, memory reinjection,
-high-risk promotion, Learning Orchestrator runtime behavior, or autonomous
-mutation is claimed by this note.
+Boundary: DSCP-T4 is deterministic local receipt builder work only. No
+provider call, live retrieval query, response hash computation, corpus
+ingestion, public-sync, production readiness, public readiness,
+provider-quality/cost/performance claim, memory reinjection, high-risk
+promotion, Learning Orchestrator runtime behavior, or autonomous mutation is
+claimed by this note.
 
 ## Next Allowed Move
 
-Next allowed move: Claude executes DSCP-T4 Retrieval Receipt Runtime Boundary
-under `WORKER_MUST_NOT_COMMIT` and returns staged/uncommitted worker artifacts
-for Codex review.
-
-Dispatch commit: `5f37b9bb`.
-
-Work order:
-`docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T4_RETRIEVAL_RECEIPT_RUNTIME_BOUNDARY_FOR_CLAUDE_2026-06-07.md`.
-
-DSCP-T4 must stay bounded to deterministic local receipt object construction.
-It must not claim provider behavior, retrieval answer quality, public
-readiness, production readiness, or corpus ingestion.
+Next allowed move: audit post-DSCP-T4 and choose the next bounded roadmap only
+with explicit operator authorization.
 
 LHW24 remains the latest closed numbered LHW wave in the state registry.
 
