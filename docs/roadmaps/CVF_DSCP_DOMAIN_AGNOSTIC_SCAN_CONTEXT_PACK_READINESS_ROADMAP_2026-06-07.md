@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: OPEN
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -256,7 +256,7 @@ no provider call, corpus ingestion, public-sync, production readiness, or T12.
 
 ---
 
-### DSCP-T8: MKE1 Cross-Lane Wire-In (HOLD_UNTIL_T7_PASS)
+### DSCP-T8: MKE1 Cross-Lane Wire-In (CLOSED_PASS_BOUNDED)
 
 **Goal:** Bridge LPF `MemoryContextBlock` into DSCP `GovernedContextPackage`,
 connecting MKE1-E1 memory enforcement output to DSCP governed packing.
@@ -301,7 +301,7 @@ readiness, or T12.
 | DSCP-T5 | Parent roadmap source-freshness consolidation | CLOSED_PASS_BOUNDED |
 | DSCP-T6 | Scan descriptor runtime (CPF internal) | CLOSED_PASS_BOUNDED |
 | DSCP-T7 | ECO multi-domain pilot | CLOSED_PASS_BOUNDED |
-| DSCP-T8 | MKE1 cross-lane wire-in (LPF adapter) | HOLD_UNTIL_T7_PASS |
+| DSCP-T8 | MKE1 cross-lane wire-in (LPF adapter) | CLOSED_PASS_BOUNDED |
 
 ## Acceptance Criteria
 
@@ -351,6 +351,9 @@ surfaces now exist in the EXTENSIONS source tree.
 | T3 (runtime) | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.context.packer.ts` | CLOSED_PASS_BOUNDED | `a368dae9` |
 | T4 (receipt) | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.retrieval.receipt.ts` | CLOSED_PASS_BOUNDED | `a98396dd` |
 | T5 (doc refresh) | parent roadmap + worker return | CLOSED_PASS_BOUNDED | worker return `41de7588`; closure `1f140042` |
+| T6 (scan descriptor) | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.artifact.descriptor.ts` | CLOSED_PASS_BOUNDED | `13cc1505` |
+| T7 (ECO adapter) | `EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/src/dscp.eco.adapter.ts` | CLOSED_PASS_BOUNDED | `958f8d2b` |
+| T8 (LPF adapter) | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.lpf.adapter.ts` | CLOSED_PASS_BOUNDED | current closure batch |
 
 Pre-existing CPF source surfaces (verified in owner surface map at `8e61f65d`):
 - `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/context.packager.contract.ts`
@@ -361,7 +364,8 @@ Pre-existing CPF source surfaces (verified in owner surface map at `8e61f65d`):
 
 ## Machine Closure Package
 
-This roadmap is open (parent-roadmap tracking T1-T5 current state).
+This parent roadmap is closed after DSCP-T1 through DSCP-T8 all reached
+`CLOSED_PASS_BOUNDED`.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
@@ -369,15 +373,19 @@ This roadmap is open (parent-roadmap tracking T1-T5 current state).
 | T2 work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T2_STANDARD_CONTRACT_AUTHORING_FOR_CLAUDE_2026-06-07.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | T3 work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T3_RUNTIME_PILOT_CPF_INTERNAL_FOR_CLAUDE_2026-06-07.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | T4 work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T4_RETRIEVAL_RECEIPT_RUNTIME_BOUNDARY_FOR_CLAUDE_2026-06-07.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_FOR_CLAUDE_2026-06-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_COMPLETION_2026-06-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Worker return artifact | `docs/reviews/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_WORKER_RETURN_2026-06-08.md` | worker return committed at `41de7588`; closure committed at `1f140042` | PASS |
-| Roadmap state | `docs/roadmaps/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_ROADMAP_2026-06-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | `currentMode` updated to `dscp_t5_closed_pass_bounded` | PASS |
+| T5 work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_FOR_CLAUDE_2026-06-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| T6 work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_FOR_CLAUDE_2026-06-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| T7 work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_FOR_CLAUDE_2026-06-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| T8 work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T8_MKE1_CROSS_LANE_WIREIN_FOR_CLAUDE_2026-06-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | T1-T8 work orders | all T1-T8 work orders `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_COMPLETION_2026-06-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return artifact | `docs/reviews/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_WORKER_RETURN_2026-06-08.md` | `Status: RETURNED_PASS_BOUNDED` | PASS |
+| Roadmap state | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | `currentMode` updated to `dscp_t8_closed_pass_bounded_parent_dscp_closed` | PASS |
 | Registry Markdown | `CVF_SESSION_MEMORY.md` and active handoff | session sync committed in closure batch | PASS |
-| External evidence digest | in-repo TypeScript compilation + vitest output | no external artifact in any T2-T4 tranche | N/A with reason: all evidence is in-repo |
-| System loop interlock | no system-loop mutation authorized | DSCP-T5 is documentation consolidation only | N/A with reason: documentation only |
-| Session continuity | active session front door and handoff | reviewer-owned sync | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
+| External evidence digest | in-repo TypeScript compilation + vitest output | no external artifact in any DSCP tranche | N/A with reason: all evidence is in-repo |
+| System loop interlock | no system-loop mutation authorized | DSCP-T6/T7/T8 add local helpers only | N/A with reason: no loop claim |
+| Session continuity | active session front door and handoff | reviewer-owned sync in closure batch | PASS |
 
 ## Current Runtime Freshness Verification
 
@@ -399,9 +407,9 @@ Implemented receipt builder (T4, `a98396dd`):
 `buildGovernedRetrievalReceipt()` deterministic local receipt helper in
 `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.retrieval.receipt.ts`.
 
-All three T2-T4 source files compile clean (`tsc --noEmit` PASS) and are
-covered by focused deterministic vitest suites. No live provider call,
-corpus ingestion, or public-sync was made in any T2-T4 tranche.
+All T2-T8 source files compile clean under their package-specific TypeScript
+commands and are covered by focused deterministic vitest suites. No live
+provider call, corpus ingestion, or public-sync was made in any DSCP tranche.
 
 ## Acceptance Receipt Assertion Matrix
 
@@ -412,26 +420,29 @@ retrieval query or provider call is made in any DSCP tranche.
 | Required value | Observed value | Status |
 |---|---|---|
 | T4 receipt object can be created locally | `buildGovernedRetrievalReceipt()` implemented; 23/23 vitest PASS at `a98396dd` | PASS |
-| No provider call | All DSCP tranches forbid provider/LLM/live call | N/A with reason: no live/provider route in any T2-T4 tranche |
+| T6 scan descriptor builder can be created locally | `buildGovernedArtifactDescriptor()` implemented; 12/12 vitest PASS | PASS |
+| T7 ECO adapter can map RAGResult to DSCP pack request | `buildECOGovernedPackRequest()` implemented; 6/6 vitest PASS | PASS |
+| T8 LPF adapter can propagate raw-content locks | `buildLPFGovernedPackage()` implemented; 9/9 vitest PASS | PASS |
+| No provider call | All DSCP tranches forbid provider/LLM/live call | N/A with reason: no live/provider route in any DSCP tranche |
 | No raw source release | `rawSourceReleased: false` in T4 receipt; `rawContentReleased: false` in T2 contract | PASS |
 | No T12 authorization | DSCP tranches do not authorize PolicyLocal T12 | N/A with reason: T12 requires separate operator authorization |
 | No public export | DEFERRED_PRIVATE_ONLY on all DSCP tranches | N/A with reason: private provenance only |
 
-## Post-T4 Next Roadmap Note
+## Post-T8 Next Roadmap Note
 
-After T5 closure, future DSCP-T6 or any domain-lane expansion (including
-multi-domain pilots, provider integration, live retrieval, or corpus
-ingestion) requires a fresh operator-authorized scope selection, GC-018
-baseline, and work order. No DSCP-T6 is pre-authorized by any T1-T5 tranche.
+After T8 closure, future DSCP expansion beyond deterministic local adapters
+requires a fresh operator-authorized scope selection, GC-018 baseline, and work
+order. Live retrieval, provider integration, corpus ingestion, public-sync, or
+production/public readiness remains outside this parent roadmap.
 LPCI2 PolicyLocal T12 remains separately forbidden pending EC-02 resolution.
 
 ## Claim Boundary
 
 This roadmap claims: tranche plan, scope, predecessor evidence citation,
-acceptance criteria, and source-state verification for DSCP-T1 through T5.
-It does not claim: runtime implementation beyond T2-T4 CPF internal scope,
-corpus ingestion, provider calls, live retrieval, public readiness, production
-readiness, or any domain-specific eligibility promotion.
+acceptance criteria, and source-state verification for DSCP-T1 through T8.
+It does not claim: corpus ingestion, provider calls, live retrieval, public
+readiness, production readiness, PolicyLocal T12 authorization, or any
+domain-specific eligibility promotion.
 
 ---
 

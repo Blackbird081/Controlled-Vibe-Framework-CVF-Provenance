@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-08
 
-Current mode marker: `dscp_t7_closed_pass_bounded`
+Current mode marker: `dscp_t8_closed_pass_bounded_parent_dscp_closed`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `dscp_t7_closed_pass_bounded`.
+Current mode: `dscp_t8_closed_pass_bounded_parent_dscp_closed`.
 
 Active handoff:
 
@@ -58,8 +58,8 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-DSCP-T7 ECO Multi-Domain Pilot is `CLOSED_PASS_BOUNDED` at closure commit
-`958f8d2b`.
+DSCP-T8 MKE1 Cross-Lane Wire-In is `CLOSED_PASS_BOUNDED` in the current
+closure batch. Parent DSCP roadmap T1-T8 is closed.
 
 Delivered scope:
 
@@ -71,12 +71,11 @@ Delivered scope:
   source verification;
 - T6 completion review:
   `docs/reviews/CVF_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_COMPLETION_2026-06-08.md`;
-- T7 deterministic `buildECOGovernedPackRequest()` adapter and focused tests;
-- T7 completion review:
-  `docs/reviews/CVF_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_COMPLETION_2026-06-08.md`;
-- T7 `KnowledgeItem` mapping corrected to current source fields;
-- T8 remains dependency-controlled until refreshed T7 release evidence is
-  applied.
+- T8 deterministic `buildLPFGovernedPackage()` adapter and focused tests;
+- T8 completion review:
+  `docs/reviews/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_COMPLETION_2026-06-08.md`;
+- parent DSCP roadmap closed after T1-T8 completion;
+- GC-051 coverage added for T8 source/test paths.
 
 Boundary: T6 deterministic local helper plus governance checker/docs cleanup
 only; no provider call, corpus ingestion, T7/T8 execution, T12 authorization,
@@ -84,8 +83,8 @@ public-sync, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: refresh DSCP-T7 dependency-release evidence and execute
-DSCP-T8 MKE1 Cross-Lane Wire-In.
+Next allowed move: audit next highest-value roadmap and author a bounded Claude
+work order.
 
 LHW24 remains the latest closed numbered LHW wave in the state registry.
 

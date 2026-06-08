@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: HOLD_UNTIL_T7_PASS
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -15,9 +15,9 @@ Date: 2026-06-08
 Authorized by operator instruction 2026-06-08: prepare `buildLPFGovernedPackage()`
 LPF-to-DSCP adapter inside `CVF_CONTROL_PLANE_FOUNDATION`.
 GC-018: `docs/baselines/CVF_GC018_DSCP_T8_MKE1_CROSS_LANE_WIREIN_2026-06-08.md`.
-Predecessor: DSCP-T7 PASS is required before T8 execution. This roadmap remains
-`HOLD_UNTIL_T7_PASS` until the reviewer commits DSCP-T7 and refreshes
-dependency-release evidence.
+Predecessor release evidence: DSCP-T7 is `CLOSED_PASS_BOUNDED` at closure
+commit `958f8d2b`; session sync commit `28329a61`. T8 execution is released
+and closed in this batch.
 
 ## Purpose
 
@@ -64,12 +64,12 @@ This creates an auditable cross-lane path: MKE1 enforcement -> LPF memory block
 
 | Step | Deliverable | Status |
 |---|---|---|
-| 1 | GC-018 baseline | HOLD_UNTIL_T7_PASS |
-| 2 | Work order | HOLD_UNTIL_T7_PASS |
-| 3 | Implement `dscp.lpf.adapter.ts` | PENDING |
-| 4 | Implement `dscp.lpf.adapter.test.ts` | PENDING |
-| 5 | tsc --noEmit + vitest + governance gates | PENDING |
-| 6 | Worker return | PENDING |
+| 1 | GC-018 baseline | CLOSED_PASS_BOUNDED |
+| 2 | Work order | CLOSED_PASS_BOUNDED |
+| 3 | Implement `dscp.lpf.adapter.ts` | CLOSED_PASS_BOUNDED |
+| 4 | Implement `dscp.lpf.adapter.test.ts` | CLOSED_PASS_BOUNDED |
+| 5 | tsc --noEmit + vitest + governance gates | CLOSED_PASS_BOUNDED |
+| 6 | Worker return | CLOSED_PASS_BOUNDED |
 
 ## Acceptance Criteria
 
@@ -100,8 +100,8 @@ DSCP-T8 produces no retrieval receipt. It builds an LPF-to-DSCP adapter only.
 
 | Required value | Observed value | Status |
 |---|---|---|
-| Adapter compiles | `tsc --noEmit` PASS | PENDING_WORKER_RETURN |
-| `rawContentReleased: false` propagated | vitest PASS | PENDING_WORKER_RETURN |
+| Adapter compiles | `npm run check` PASS | PASS |
+| `rawContentReleased: false` propagated | 9/9 vitest PASS | PASS |
 | No provider call | no live memory retrieval | N/A with reason: deterministic local only |
 | No corpus ingestion | adapter is type mapping only | N/A with reason: no corpus mutation |
 | No T12 authorization | T8 does not authorize T12 | N/A with reason: T12 requires separate authorization |
@@ -116,14 +116,14 @@ T12 remains NOT YET AUTHORIZED. This tranche does not authorize T12.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T8_MKE1_CROSS_LANE_WIREIN_FOR_CLAUDE_2026-06-08.md` | `Status: HOLD_UNTIL_T7_PASS` | BLOCKED with reason: dependency not released |
-| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_COMPLETION_2026-06-08.md` | reviewer-owned pending | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
-| Roadmap state | this file | `Status: HOLD_UNTIL_T7_PASS` until reviewer release | BLOCKED with reason: dependency not released |
-| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | reviewer-owned sync | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
-| Registry Markdown | `CVF_SESSION_MEMORY.md` and active handoff | reviewer-owned sync | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T8_MKE1_CROSS_LANE_WIREIN_FOR_CLAUDE_2026-06-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_COMPLETION_2026-06-08.md` | reviewer completion authored | PASS |
+| Roadmap state | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | reviewer session sync in closure batch | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md` and active handoff | reviewer session sync in closure batch | PASS |
 | External evidence digest | no external authorized | N/A | N/A with reason: local deterministic only |
 | System loop interlock | no system-loop mutation | new adapter function only | N/A with reason: helper function only |
-| Session continuity | active handoff | reviewer-owned sync | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
+| Session continuity | active handoff | reviewer-owned sync in closure batch | PASS |
 
 ## Claim Boundary
 

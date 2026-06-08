@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: HOLD_UNTIL_T7_PASS
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -16,9 +16,9 @@ Commit mode: WORKER_MUST_NOT_COMMIT
 
 dispatchBaseHead: `10b02a79`
 
-executionBaseHead: PENDING_WORKER_CAPTURE
+executionBaseHead: `28329a61`
 
-closureBaseHead: PENDING_REVIEWER_COMMIT
+closureBaseHead: `28329a61`
 
 ---
 
@@ -36,9 +36,9 @@ Operator instruction 2026-06-08 -> GC-018:
 `docs/baselines/CVF_GC018_DSCP_T8_MKE1_CROSS_LANE_WIREIN_2026-06-08.md`
 -> this work order.
 
-Prerequisites: DSCP-T6 PASS and DSCP-T7 PASS are required before T8 execution.
-Keep this work order in `HOLD_UNTIL_T7_PASS` until the reviewer commits DSCP-T7
-and refreshes dependency-release evidence.
+Prerequisite release evidence: DSCP-T6 is `CLOSED_PASS_BOUNDED` at `13cc1505`.
+DSCP-T7 is `CLOSED_PASS_BOUNDED` at closure commit `958f8d2b`; session sync
+commit `28329a61`. T8 execution is released in this batch.
 
 ## Agent Roles
 
@@ -54,6 +54,14 @@ and refreshes dependency-release evidence.
 - Create `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.lpf.adapter.ts`
 - Create `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.lpf.adapter.test.ts`
 - Create `docs/reviews/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_WORKER_RETURN_2026-06-08.md`
+- Reviewer correction to `docs/baselines/CVF_GC018_DSCP_T8_MKE1_CROSS_LANE_WIREIN_2026-06-08.md`
+- Reviewer closure update to `docs/reviews/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_COMPLETION_2026-06-08.md`
+- Reviewer closure update to `docs/roadmaps/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_ROADMAP_2026-06-08.md`
+- Reviewer closure update to `docs/roadmaps/CVF_DSCP_DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK_READINESS_ROADMAP_2026-06-07.md`
+- Reviewer closure update to `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
+- Reviewer closure sync to `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- Reviewer closure sync to `CVF_SESSION_MEMORY.md`
+- Reviewer closure sync to `AGENT_HANDOFF_V17_2026-06-07.md`
 
 **Forbidden scope:** see Forbidden Scope section below.
 
@@ -148,7 +156,10 @@ export function buildLPFGovernedPackage(
 
 **Governance note:** `rawContentReleased: false` and `canBypassGovernance: false` must be
 typed as literal `false`, not `boolean`, to satisfy the TypeScript interface contract.
-Worker must verify the exact `TypedContextPackage` shape before building the stub.
+`TypedContextPackage` shape is source-verified from
+`EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/context.packager.contract.ts`:
+`packageId`, `builtAt`, `contextId`, `query`, `segments`, `totalSegments`,
+`estimatedTokens`, `perTypeTokens`, and `packageHash`.
 
 ### New file: `dscp.lpf.adapter.test.ts`
 
@@ -170,6 +181,14 @@ Required test cases:
 | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.lpf.adapter.ts` | Worker-created |
 | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.lpf.adapter.test.ts` | Worker-created |
 | `docs/reviews/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_WORKER_RETURN_2026-06-08.md` | Worker-created |
+| `docs/baselines/CVF_GC018_DSCP_T8_MKE1_CROSS_LANE_WIREIN_2026-06-08.md` | Reviewer-updated |
+| `docs/reviews/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_COMPLETION_2026-06-08.md` | Reviewer-created |
+| `docs/roadmaps/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_ROADMAP_2026-06-08.md` | Reviewer-updated |
+| `docs/roadmaps/CVF_DSCP_DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK_READINESS_ROADMAP_2026-06-07.md` | Reviewer-updated |
+| `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | Reviewer-updated |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Reviewer-updated |
+| `CVF_SESSION_MEMORY.md` | Reviewer-updated |
+| `AGENT_HANDOFF_V17_2026-06-07.md` | Reviewer-updated |
 | All other existing files | FORBIDDEN |
 
 ## Execution Plan
@@ -247,13 +266,13 @@ Reviewer must confirm:
 
 ## Closure Checklist
 
-- [ ] Worker return reviewed and accepted
-- [ ] `tsc --noEmit` PASS confirmed
-- [ ] vitest all PASS confirmed
-- [ ] All 4 governance gates COMPLIANT
-- [ ] Reviewer commits material artifacts
-- [ ] Session sync updated to `dscp_t8_closed_pass_bounded`
-- [ ] Completion review packet authored by reviewer
+- [x] Worker return reviewed and accepted
+- [x] `tsc --noEmit` PASS confirmed
+- [x] vitest all PASS confirmed (9/9)
+- [x] Governance gates COMPLIANT
+- [x] Reviewer commits material artifacts
+- [x] Session sync updated to `dscp_t8_closed_pass_bounded`
+- [x] Completion review packet authored by reviewer
 
 ## Return-To-Orchestrator Conditions
 
@@ -270,8 +289,8 @@ DSCP-T8 produces no retrieval receipt.
 
 | Required value | Observed value | Status |
 |---|---|---|
-| Adapter compiles | `tsc --noEmit` PASS | PENDING_WORKER_RETURN |
-| `rawContentReleased: false` propagated | vitest PASS | PENDING_WORKER_RETURN |
+| Adapter compiles | `npm run check` PASS | PASS |
+| `rawContentReleased: false` propagated | 9/9 vitest PASS | PASS |
 | No provider call | no live memory retrieval | N/A with reason: deterministic local only |
 | No corpus ingestion | adapter is type mapping only | N/A with reason: no corpus mutation |
 | No T12 | T8 does not authorize T12 | N/A with reason: separately forbidden |
@@ -280,14 +299,14 @@ DSCP-T8 produces no retrieval receipt.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `Status: HOLD_UNTIL_T7_PASS`; reviewer releases after T7 closure evidence | BLOCKED with reason: dependency not released |
-| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_COMPLETION_2026-06-08.md` | reviewer-owned pending | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
-| Roadmap state | `docs/roadmaps/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_ROADMAP_2026-06-08.md` | `Status: HOLD_UNTIL_T7_PASS` | BLOCKED with reason: dependency not released |
-| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | reviewer-owned sync | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
-| Registry Markdown | `CVF_SESSION_MEMORY.md` and active handoff | reviewer-owned sync | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_COMPLETION_2026-06-08.md` | reviewer completion authored | PASS |
+| Roadmap state | `docs/roadmaps/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_ROADMAP_2026-06-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | reviewer session sync in closure batch | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md` and active handoff | reviewer session sync in closure batch | PASS |
 | External evidence digest | no external authorized | N/A | N/A with reason: local deterministic only |
 | System loop interlock | no system-loop mutation | new adapter function only | N/A with reason: helper function only |
-| Session continuity | active handoff | reviewer-owned sync | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
+| Session continuity | active handoff | reviewer-owned sync in closure batch | PASS |
 
 ## Operator Checkpoint
 
@@ -305,12 +324,10 @@ reviewerOwnedClosurePaths:
   - AGENT_HANDOFF_V17_2026-06-07.md
   - docs/roadmaps/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_ROADMAP_2026-06-08.md
   - docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T8_MKE1_CROSS_LANE_WIREIN_FOR_CLAUDE_2026-06-08.md
-pendingStatusTokensAllowedBeforeReview:
-  - HOLD_UNTIL_T7_PASS
-  - PENDING
-  - BLOCKED with reason: WORKER_MUST_NOT_COMMIT
-forbiddenClosedEquivalentResidue:
-  - CLOSED_PASS_BOUNDED before reviewer commit
+closedStatusTokens:
+  - CLOSED_PASS_BOUNDED
+reviewerClosureCompleted: true
+forbiddenClosedEquivalentResidue: []
 ```
 
 ## Claim Boundary

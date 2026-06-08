@@ -40,8 +40,9 @@ through the DSCP receipt layer.
 - LPF `MemoryContextBlock` interface with `rawMemoryReleased: false` lock:
   `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-context-packager.ts` lines 27-35
 - MKE1-E1: memory enforcement gate wire-in. `CLOSED_PASS_BOUNDED` at MKE1-E1 closure commit.
-- DSCP-T6: `buildGovernedArtifactDescriptor()`. Pending reviewer.
-- DSCP-T7: `buildECOGovernedPackRequest()`. Pending T7 implementation.
+- DSCP-T6: `buildGovernedArtifactDescriptor()`. Closed at `13cc1505`.
+- DSCP-T7: `buildECOGovernedPackRequest()`. Closed at `958f8d2b`;
+  session sync `28329a61`.
 
 ## Scope / Target / Owner Boundary
 
@@ -49,7 +50,7 @@ through the DSCP receipt layer.
 - New file: `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.lpf.adapter.ts`
 - New file: `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.lpf.adapter.test.ts`
 - Function: `buildLPFGovernedPackage(block: MemoryContextBlock, artifactId: string, envelope: GovernanceContextEnvelope): GovernedContextPackage`
-- Lock mapping: `block.rawMemoryReleased (false)` → `evidence.rawContentReleased (false)`
+- Lock mapping: `block.rawMemoryReleased (false)` -> `evidence.rawContentReleased (false)`
 
 **Out of scope:**
 - No modification of `memory-context-packager.ts` or any existing LPF/MKE1 file.
@@ -86,14 +87,14 @@ governance gates COMPLIANT on committed range.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T8_MKE1_CROSS_LANE_WIREIN_FOR_CLAUDE_2026-06-08.md` | `Status: DISPATCHED` | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
-| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_COMPLETION_2026-06-08.md` | reviewer-owned pending | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
-| Roadmap state | `docs/roadmaps/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_ROADMAP_2026-06-08.md` | `Status: DISPATCHED` | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
-| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | reviewer-owned sync | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
-| Registry Markdown | `CVF_SESSION_MEMORY.md` and active handoff | reviewer-owned sync | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T8_MKE1_CROSS_LANE_WIREIN_FOR_CLAUDE_2026-06-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_COMPLETION_2026-06-08.md` | reviewer completion authored | PASS |
+| Roadmap state | `docs/roadmaps/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_ROADMAP_2026-06-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | reviewer sync in closure batch | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md` and active handoff | reviewer sync in closure batch | PASS |
 | External evidence digest | no external artifact | no external authorized | N/A with reason: local deterministic only |
 | System loop interlock | no system-loop mutation | new adapter function only | N/A with reason: helper function only |
-| Session continuity | active handoff | reviewer-owned sync | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
+| Session continuity | active handoff | reviewer sync in closure batch | PASS |
 
 ## Claim Boundary
 

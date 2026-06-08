@@ -32,14 +32,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`dscp_t7_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=refresh DSCP-T7 dependency-release evidence and execute DSCP-T8; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`dscp_t8_closed_pass_bounded_parent_dscp_closed`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=audit next highest-value roadmap and author a bounded Claude work order; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`dscp_t7_closed_pass_bounded`
+`dscp_t8_closed_pass_bounded_parent_dscp_closed`
 
-Current HEAD recorded for this handoff: `958f8d2b`
-(DSCP-T7 closure commit).
+Current HEAD recorded for this handoff: `28329a61`
+(DSCP-T7 closure sync parent before T8 closure).
 
 ## Active Boundary
 
@@ -55,28 +55,26 @@ in archived handoffs and governed completion packets.
 
 ## Latest Continuity Note
 
-DSCP-T7 ECO Multi-Domain Pilot is `CLOSED_PASS_BOUNDED` at closure commit
-`958f8d2b`.
+DSCP-T8 MKE1 Cross-Lane Wire-In is `CLOSED_PASS_BOUNDED` in the current
+closure batch. Parent DSCP roadmap T1-T8 is closed.
 
 Result: T6 deterministic scan descriptor helper and tests are present from the
 worker return; GC-051 now covers the T6 source/test paths; dispatch-quality now
 blocks noncanonical Source Verification dispositions, deferred worker/future
 source verification, and dispatch/ready packets with pending CLOSED_PASS
-predecessor language. T7 implements deterministic ECO-to-DSCP mapping. T8 is
-eligible for refreshed dependency-release evidence and execution after T7
-closure.
+predecessor language. T8 implements deterministic LPF-to-DSCP governance-lock
+mapping. Parent DSCP roadmap is ready to close after this batch.
 
 Verification: reviewer-fast PASS, dispatch-quality PASS, GC-051 PASS, CPF
-`npm run check` PASS, focused T6 vitest 12/12 PASS, pre-commit 36/36 PASS.
+`npm run check` PASS, focused T8 vitest 9/9 PASS.
 
-Boundary: T6 deterministic local helper plus governance checker/docs cleanup
-only; no provider call, corpus ingestion, T7/T8 execution, T12 authorization,
-public-sync, hosted readiness, production readiness, public readiness, or live
-governance proof.
+Boundary: deterministic local DSCP adapters only; no provider call, live
+retrieval, corpus ingestion, T12 authorization, public-sync, hosted readiness,
+production readiness, public readiness, or live governance proof.
 
 ## Current Batch
 
-DSCP-T7 closure commit is `958f8d2b`.
+DSCP-T8 closure is in progress on base `28329a61`.
 
 Delivered scope:
 
@@ -87,13 +85,16 @@ Delivered scope:
 - T7 source: `EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/src/dscp.eco.adapter.ts`;
 - T7 tests: `EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/tests/dscp.eco.adapter.test.ts`;
 - T7 completion: `docs/reviews/CVF_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_COMPLETION_2026-06-08.md`;
+- T8 source: `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.lpf.adapter.ts`;
+- T8 tests: `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.lpf.adapter.test.ts`;
+- T8 completion: `docs/reviews/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_COMPLETION_2026-06-08.md`;
 - guard hardening: `governance/compat/check_work_order_dispatch_quality.py`;
 - guard tests: `governance/compat/test_check_work_order_dispatch_quality.py`;
 - T7/T8 prepared HOLD packets in `docs/roadmaps/` and `docs/work_orders/`.
 
 ## Latest Work / Changes
 
-- Closed DSCP-T7 multi-domain adapter review.
+- Closed DSCP-T8 cross-lane adapter review.
 - Hardened dispatch-quality guard for repeated orchestrator packet defects.
 - Downgraded T7/T8 from premature DISPATCHED to dependency-held packets.
 
@@ -134,9 +135,8 @@ history.
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
-Next allowed move: refresh DSCP-T7 dependency-release evidence and execute
-DSCP-T8 MKE1 Cross-Lane Wire-In. Parked lanes remain Live Redis, DEP2, and
-external receipt-anchor.
+Next allowed move: audit next highest-value roadmap and author a bounded Claude
+work order. Parked lanes remain Live Redis, DEP2, and external receipt-anchor.
 
 LPCI2-T12 remains forbidden until a separate operator-authorized evidence path
 resolves EC-02 review on or after 2026-07-01, known `currentStatus`, known
