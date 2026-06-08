@@ -58,8 +58,8 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-DSCP-T6 Scan Descriptor Runtime is `CLOSED_PASS_BOUNDED` in the current
-closure batch.
+DSCP-T6 Scan Descriptor Runtime is `CLOSED_PASS_BOUNDED` at closure commit
+`13cc1505`.
 
 Delivered scope:
 

@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`dscp_t6_closed_pass_bounded`; active handoff
 
 `dscp_t6_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `8a01da2b`
-(DSCP-T6 session-sync parent before reviewer closure).
+Current HEAD recorded for this handoff: `13cc1505`
+(DSCP-T6 closure commit).
 
 ## Active Boundary
 
@@ -55,8 +55,8 @@ in archived handoffs and governed completion packets.
 
 ## Latest Continuity Note
 
-DSCP-T6 Scan Descriptor Runtime is `CLOSED_PASS_BOUNDED` in the current
-closure batch.
+DSCP-T6 Scan Descriptor Runtime is `CLOSED_PASS_BOUNDED` at closure commit
+`13cc1505`.
 
 Result: T6 deterministic scan descriptor helper and tests are present from the
 worker return; GC-051 now covers the T6 source/test paths; dispatch-quality now
@@ -75,7 +75,7 @@ governance proof.
 
 ## Current Batch
 
-DSCP-T6 closure is in progress on base `8a01da2b`.
+DSCP-T6 closure commit is `13cc1505`.
 
 Delivered scope:
 
