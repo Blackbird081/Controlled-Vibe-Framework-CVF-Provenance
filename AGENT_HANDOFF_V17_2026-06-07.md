@@ -38,7 +38,7 @@ Startup acknowledged: current mode=`dscp_t5_parent_roadmap_source_freshness_cons
 
 `dscp_t5_parent_roadmap_source_freshness_consolidation_dispatched`
 
-Current HEAD recorded for this handoff: `2c1ad112`
+Current HEAD recorded for this handoff: `ca3f5f9c`
 (DSCP-T5 dispatch commit).
 
 ## Active Boundary
@@ -56,7 +56,7 @@ in archived handoffs and governed completion packets.
 ## Latest Continuity Note
 
 DSCP-T5 Parent Roadmap Source-Freshness Consolidation is `DISPATCHED` at commit
-`2c1ad112`.
+`ca3f5f9c`.
 
 Roadmap:
 `docs/roadmaps/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_ROADMAP_2026-06-08.md`.
@@ -77,7 +77,7 @@ promotion, Learning Orchestrator runtime behavior, or autonomous mutation.
 ## Current Batch
 
 DSCP-T5 Parent Roadmap Source-Freshness Consolidation is dispatched at commit
-`2c1ad112`.
+`ca3f5f9c`.
 
 Delivered scope:
 

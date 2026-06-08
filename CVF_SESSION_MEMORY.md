@@ -59,7 +59,7 @@ Pain-point closure direction:
 ## Latest Continuity Note
 
 DSCP-T5 Parent Roadmap Source-Freshness Consolidation is `DISPATCHED` at commit
-`2c1ad112`.
+`ca3f5f9c`.
 
 Delivered scope:
 
