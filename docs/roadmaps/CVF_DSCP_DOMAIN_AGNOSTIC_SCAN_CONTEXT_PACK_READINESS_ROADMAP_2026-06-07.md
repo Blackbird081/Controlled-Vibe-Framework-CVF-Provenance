@@ -35,7 +35,7 @@ expansion lane can follow it without reimplementing LPCI-specific schemas.
 
 ## Scope / Target / Owner Boundary
 
-**In scope:**
+**T1 scope (CLOSED_PASS_BOUNDED):**
 - Mapping all existing scan, classification, context-pack, and retrieval
   receipt surfaces currently in CVF.
 - Identifying which fields in those surfaces are domain-specific
@@ -44,15 +44,20 @@ expansion lane can follow it without reimplementing LPCI-specific schemas.
 - Proposing a domain-agnostic schema standard (`GovernedArtifactDescriptor`,
   `GovernanceGateSet`, `GovernedContextPackRequest`,
   `GovernedContextPackage`, `GovernedRetrievalReceipt`).
-- TypeScript interface definitions (doc-only contract proposals).
-- Authoring a standard context packet format that any domain lane can use.
+- TypeScript interface authoring and standard context packet format definition
+  (proposed as doc-only in T1; implemented as source-backed TypeScript in T2-T4).
 
-**Out of scope:**
-- Runtime TypeScript implementation of proposed interfaces.
+**T2-T4 scope (CLOSED_PASS_BOUNDED):**
+- `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.context.contract.ts` (T2)
+- `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.context.packer.ts` (T3)
+- `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.retrieval.receipt.ts` (T4)
+
+**Permanent non-goals (all tranches):**
 - Body extraction, OCR, ingestion, chunking, or any corpus mutation.
 - New provider calls, live proof, or LLM quality claims.
 - LPCI2 T12 or any domain-specific ingestion work.
 - Public-sync, production readiness, or deployment claims.
+- Replacing or modifying existing CVF EXTENSIONS TypeScript source files.
 
 ---
 
@@ -201,12 +206,12 @@ public-sync, production readiness, public readiness, or T12 authorization.
 
 ## Non-Goals
 
-- Runtime TypeScript implementation of any proposed interface.
 - Body extraction, OCR, ingestion, chunking, or any corpus mutation.
 - New provider calls, live proof, or LLM quality claims.
 - LPCI2 T12 or any domain-specific corpus ingestion work.
 - Public-sync, production readiness, or hosted/deployment claims.
-- Replacing or modifying any existing CVF EXTENSIONS TypeScript source.
+- Replacing or modifying existing CVF EXTENSIONS TypeScript source files.
+- Runtime TypeScript beyond what is operator-authorized per-tranche.
 
 ## Work Plan
 
@@ -227,8 +232,10 @@ public-sync, production readiness, public readiness, or T12 authorization.
 | T1: schema proposal defines 5 proposed interfaces | Schema proposal Sections 2-4 |
 | T1: no new `.ts` file created | `git status --short` at return |
 | T1: all component gates PASS | Worker Pending-Return Gate table |
-| T2 (future): proposed interfaces compile | TypeScript check in DSCP-T2 scope |
-| T3 (future): pilot produces deterministic test proof | Live test in DSCP-T3 scope |
+| T2: proposed interfaces compile | `tsc --noEmit` PASS; 30/30 vitest PASS at `932a40aa` |
+| T3: governed packer deterministic test proof | 21/21 vitest PASS at `a368dae9` |
+| T4: receipt boundary deterministic test proof | 23/23 vitest PASS at `a98396dd` |
+| T5: parent roadmap source freshness consolidated | source freshness negative search PASS |
 
 ## Verification
 
@@ -237,9 +244,10 @@ public-sync, production readiness, public readiness, or T12 authorization.
 | T1 source verification | Section 6A table in DSCP-T1 work order |
 | T1 governance gates | Worker Pending-Return Gate table in worker return |
 | T1 no `.ts` new files | `git status --short` |
-| T2 TypeScript validity | `tsc --noEmit` in `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/` |
-| T3 deterministic proof | Deterministic test in DSCP-T3 worker return |
-| T4 receipt boundary proof | Deterministic test in DSCP-T4 worker return |
+| T2 TypeScript validity | `tsc --noEmit` in `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/`; PASS at `932a40aa` |
+| T3 deterministic proof | 21/21 vitest PASS at `a368dae9` |
+| T4 receipt boundary proof | 23/23 vitest PASS at `a98396dd` |
+| T5 source freshness consolidation | `rg -n "doc-only proposals\|they do not exist"` returns no matches |
 
 ## T12 Gate Hard Invariant (Carried Forward from T11D)
 
@@ -251,55 +259,98 @@ candidate.
 
 ---
 
-## Machine Closure Package
+## Current DSCP Source State
 
-This roadmap is open. The Machine Closure Package below tracks T1 closure state.
+Verified at `executionBaseHead: b34e5e34` (2026-06-08). T2-T4 source-backed
+surfaces now exist in the EXTENSIONS source tree.
 
-| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| Tranche | Source file | Status | Closed at |
 |---|---|---|---|
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T1_OWNER_SURFACE_MAP_FOR_CLAUDE_2026-06-07.md` | `Status: CLOSED_PASS_BOUNDED` after reviewer commit | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
-| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T1_OWNER_SURFACE_MAP_WORKER_RETURN_2026-06-07.md` | worker return reviewed and committed by Codex | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
-| Roadmap state | this file `DSCP-T1` row | updated to `CLOSED_PASS_BOUNDED` after reviewer commit | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
-| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | session sync updated by reviewer on DSCP-T1 reviewer commit | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
-| Registry Markdown | `CVF_SESSION_MEMORY.md` and `AGENT_HANDOFF_V16_2026-06-06.md` | session markdown updated by reviewer on DSCP-T1 reviewer commit | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
-| External evidence digest | source surface citations in DSCP-T1 owner surface map | all source surfaces verified at `8e61f65d`; no external artifact produced | N/A with reason: doc-only tranche |
-| System loop interlock | no system-loop mutation authorized | DSCP T1 is doc-only; no runtime loop changed | N/A with reason: doc-only |
-| Session continuity | `CVF_SESSION_MEMORY.md` and `AGENT_HANDOFF_V16_2026-06-06.md` | session sync updated by reviewer on DSCP-T1 reviewer commit | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
+| T1 (doc-only) | `docs/reference/CVF_DSCP_T1_SCHEMA_PROPOSAL_2026-06-07.md` | CLOSED_PASS_BOUNDED | `62fa6943` |
+| T2 (contracts) | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.context.contract.ts` | CLOSED_PASS_BOUNDED | `932a40aa` |
+| T3 (runtime) | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.context.packer.ts` | CLOSED_PASS_BOUNDED | `a368dae9` |
+| T4 (receipt) | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.retrieval.receipt.ts` | CLOSED_PASS_BOUNDED | `a98396dd` |
+| T5 (doc refresh) | parent roadmap + worker return | DISPATCHED | `72178caf` |
 
-## Current Runtime Freshness Verification
-
-Verified at `executionBaseHead: 8e61f65d` (2026-06-07). The interfaces
-proposed in DSCP-T1 (`GovernedArtifactDescriptor`, `GovernanceGateSet`,
-`GovernedContextPackRequest`, `GovernedContextPackage`,
-`GovernedRetrievalReceipt`) are **doc-only proposals** - they do not exist
-as TypeScript implementations in the EXTENSIONS source tree as of this
-commit. This is intentional for DSCP-T1; implementation is gated on
-DSCP-T2 authorization. The absence is a deliberate tranche boundary, not
-a gap requiring remediation.
-
-Source surfaces that DO exist (verified in owner surface map at `8e61f65d`):
+Pre-existing CPF source surfaces (verified in owner surface map at `8e61f65d`):
 - `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/context.packager.contract.ts`
 - `EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/src/types.ts`
 - `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-context-packager.ts`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/lpci/types.ts`
 - `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/rag.context.engine.convergence.contract.ts`
 
+## Machine Closure Package
+
+This roadmap is open (parent-roadmap tracking T1-T5 current state).
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| T1 work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T1_OWNER_SURFACE_MAP_FOR_CLAUDE_2026-06-07.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| T2 work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T2_STANDARD_CONTRACT_AUTHORING_FOR_CLAUDE_2026-06-07.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| T3 work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T3_RUNTIME_PILOT_CPF_INTERNAL_FOR_CLAUDE_2026-06-07.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| T4 work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T4_RETRIEVAL_RECEIPT_RUNTIME_BOUNDARY_FOR_CLAUDE_2026-06-07.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_FOR_CLAUDE_2026-06-08.md` | `Status: DISPATCHED`; reviewer updates after worker return | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
+| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_WORKER_RETURN_2026-06-08.md` | worker-owned pending return packet | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
+| Roadmap state | `docs/roadmaps/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_ROADMAP_2026-06-08.md` | `Status: DISPATCHED` until reviewer closure | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | reviewer-owned session sync | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
+| Registry Markdown | `CVF_SESSION_MEMORY.md` and active handoff | reviewer-owned session sync | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
+| External evidence digest | in-repo TypeScript compilation + vitest output | no external artifact in any T2-T4 tranche | N/A with reason: all evidence is in-repo |
+| System loop interlock | no system-loop mutation authorized | DSCP-T5 is documentation consolidation only | N/A with reason: documentation only |
+| Session continuity | active session front door and handoff | reviewer-owned sync | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
+
+## Current Runtime Freshness Verification
+
+Verified at `executionBaseHead: b34e5e34` (2026-06-08). The interfaces
+proposed in DSCP-T1 are now implemented as source-backed TypeScript in
+the EXTENSIONS source tree via DSCP-T2, T3, and T4.
+
+Implemented interfaces (T2, `932a40aa`):
+`GovernanceGateSet`, `GovernedArtifactDescriptor`, `GovernanceContextEnvelope`,
+`GovernedContextPackRequest`, `GovernedContextPackageEvidence`,
+`GovernedContextPackage`, `ContentDeliveryClass`, `GovernedRetrievalReceipt`
+in `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.context.contract.ts`.
+
+Implemented runtime (T3, `a368dae9`):
+`GovernedContextPackerContract.pack()` with governance gate enforcement before
+inner pack call in `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.context.packer.ts`.
+
+Implemented receipt builder (T4, `a98396dd`):
+`buildGovernedRetrievalReceipt()` deterministic local receipt helper in
+`EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.retrieval.receipt.ts`.
+
+All three T2-T4 source files compile clean (`tsc --noEmit` PASS) and are
+covered by focused deterministic vitest suites. No live provider call,
+corpus ingestion, or public-sync was made in any T2-T4 tranche.
+
 ## Acceptance Receipt Assertion Matrix
 
-This roadmap references `GovernedRetrievalReceipt` as a doc-only proposed
-interface name. No runtime retrieval query or provider call was made.
+`GovernedRetrievalReceipt` is now implemented as a TypeScript interface (T2)
+and instantiated locally by `buildGovernedRetrievalReceipt()` (T4). No live
+retrieval query or provider call is made in any DSCP tranche.
 
 | Required value | Observed value | Status |
 |---|---|---|
-| No runtime query performed | Worker confirms: no provider call, no live retrieval, no LLM query; `GovernedRetrievalReceipt` is a doc-only proposal name | N/A with reason: doc-only roadmap; no runtime query executed |
-| No query receipt generated | `GovernedRetrievalReceipt` appears only as a proposed interface name; no instance created | N/A with reason: doc-only proposal |
+| T4 receipt object can be created locally | `buildGovernedRetrievalReceipt()` implemented; 23/23 vitest PASS at `a98396dd` | PASS |
+| No provider call | All DSCP tranches forbid provider/LLM/live call | N/A with reason: no live/provider route in any T2-T4 tranche |
+| No raw source release | `rawSourceReleased: false` in T4 receipt; `rawContentReleased: false` in T2 contract | PASS |
+| No T12 authorization | DSCP tranches do not authorize PolicyLocal T12 | N/A with reason: T12 requires separate operator authorization |
+| No public export | DEFERRED_PRIVATE_ONLY on all DSCP tranches | N/A with reason: private provenance only |
+
+## Post-T4 Next Roadmap Note
+
+After T5 closure, future DSCP-T6 or any domain-lane expansion (including
+multi-domain pilots, provider integration, live retrieval, or corpus
+ingestion) requires a fresh operator-authorized scope selection, GC-018
+baseline, and work order. No DSCP-T6 is pre-authorized by any T1-T5 tranche.
+LPCI2 PolicyLocal T12 remains separately forbidden pending EC-02 resolution.
 
 ## Claim Boundary
 
-This roadmap claims: tranche plan, scope, predecessor evidence citation, and
-acceptance criteria for DSCP-T1. It does not claim: runtime implementation,
-corpus ingestion, provider calls, public readiness, production readiness, or
-any domain-specific eligibility promotion.
+This roadmap claims: tranche plan, scope, predecessor evidence citation,
+acceptance criteria, and source-state verification for DSCP-T1 through T5.
+It does not claim: runtime implementation beyond T2-T4 CPF internal scope,
+corpus ingestion, provider calls, live retrieval, public readiness, production
+readiness, or any domain-specific eligibility promotion.
 
 ---
 
