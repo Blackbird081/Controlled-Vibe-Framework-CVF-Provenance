@@ -8,7 +8,7 @@ Template: `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
 
 dispatchBaseHead: `72178caf`
 executionBaseHead: `b34e5e34`
-closureBaseHead: `41de7588`
+closureBaseHead: `1f140042`
 
 Status token rule:
 - Worker must not change `Status` field.
@@ -366,8 +366,8 @@ claim-boundary expansion, or T12 authorization.
 
 | Evidence item | Path | Status |
 |---|---|---|
-| Parent roadmap refresh | `docs/roadmaps/CVF_DSCP_DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK_READINESS_ROADMAP_2026-06-07.md` | PASS at `41de7588` |
-| Worker return packet | `docs/reviews/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_WORKER_RETURN_2026-06-08.md` | PASS at `41de7588` |
+| Parent roadmap refresh | `docs/roadmaps/CVF_DSCP_DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK_READINESS_ROADMAP_2026-06-07.md` | worker return PASS at `41de7588`; closure PASS at `1f140042` |
+| Worker return packet | `docs/reviews/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_WORKER_RETURN_2026-06-08.md` | worker return PASS at `41de7588`; closure PASS at `1f140042` |
 | Source freshness negative search | 1 match — command cell only, no stale claim | PASS |
 | Changed-file scope | 2 files: M roadmap + A worker return; no TS/session/handoff files | PASS |
 | Committed-range gate results | 36/36 pre-commit governance checks | ALL PASS |
@@ -387,7 +387,7 @@ DSCP-T5 produces no runtime receipt. It refreshes roadmap evidence only.
 
 | Required value | Observed value | Status |
 |---|---|---|
-| Parent roadmap source-freshness refreshed | stale T1-era text removed; T2-T4 source state added; commit `41de7588` | PASS |
+| Parent roadmap source-freshness refreshed | stale T1-era text removed; T2-T4 source state added; closure commit `1f140042` | PASS |
 | No TypeScript source changed | `git diff --name-status HEAD~1 HEAD` shows only 2 governed markdown files | PASS |
 | No runtime retrieval query | work order forbids provider/LLM query | N/A with reason: documentation consolidation only |
 | No T12 authorization | work order forbids T12 authorization | N/A with reason: DSCP-T5 is not a corpus-ingestion tranche |
@@ -398,7 +398,7 @@ DSCP-T5 produces no runtime receipt. It refreshes roadmap evidence only.
 |---|---|---|---|
 | Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_COMPLETION_2026-06-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Worker return artifact | `docs/reviews/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_WORKER_RETURN_2026-06-08.md` | committed at `41de7588` | PASS |
+| Worker return artifact | `docs/reviews/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_WORKER_RETURN_2026-06-08.md` | worker return committed at `41de7588`; closure committed at `1f140042` | PASS |
 | Roadmap state | `docs/roadmaps/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_ROADMAP_2026-06-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | `currentMode` updated to `dscp_t5_closed_pass_bounded` | PASS |
 | Registry Markdown | `CVF_SESSION_MEMORY.md` and active handoff | session sync committed in closure batch | PASS |

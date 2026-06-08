@@ -38,7 +38,7 @@ Startup acknowledged: current mode=`dscp_t5_closed_pass_bounded`; active handoff
 
 `dscp_t5_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `41de7588`
+Current HEAD recorded for this handoff: `1f140042`
 (DSCP-T5 closure commit).
 
 ## Active Boundary
@@ -56,7 +56,7 @@ in archived handoffs and governed completion packets.
 ## Latest Continuity Note
 
 DSCP-T5 Parent Roadmap Source-Freshness Consolidation is `CLOSED_PASS_BOUNDED`
-at material commit `41de7588`.
+at closure commit `1f140042` (worker return commit `41de7588`).
 
 All DSCP-T1 through T5 tranches are `CLOSED_PASS_BOUNDED`.
 
@@ -85,7 +85,7 @@ hosted readiness, production readiness, or public readiness.
 ## Current Batch
 
 DSCP-T5 Parent Roadmap Source-Freshness Consolidation is closed at commit
-`41de7588`.
+`1f140042`.
 
 Delivered scope:
 

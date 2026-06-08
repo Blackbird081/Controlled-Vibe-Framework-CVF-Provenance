@@ -9,7 +9,8 @@ docType: completion_review
 Date: 2026-06-08
 
 dispatchBaseHead: `72178caf`
-materialCommit: `41de7588`
+workerReturnCommit: `41de7588`
+materialCommit: `1f140042`
 closureBaseHead: `41de7588`
 
 Reviewer: Claude (acting as Codex reviewer per operator instruction 2026-06-08)
@@ -20,7 +21,7 @@ Reviewer: Claude (acting as Codex reviewer per operator instruction 2026-06-08)
 
 Reviewer closure packet for DSCP-T5 Parent Roadmap Source-Freshness
 Consolidation. Records reviewer verification, gate evidence, and formal
-`CLOSED_PASS_BOUNDED` disposition after material commit `41de7588`.
+`CLOSED_PASS_BOUNDED` disposition after closure commit `1f140042`.
 
 ## Target / Source
 
@@ -82,7 +83,8 @@ Codex.
 
 | Gate | Command / Evidence | Result |
 |---|---|---|
-| Material commit | `git rev-parse --short HEAD` after commit | `41de7588` |
+| Worker return commit | `git rev-parse --short HEAD` after worker return commit | `41de7588` |
+| Closure commit | `git rev-parse --short HEAD` after closure commit | `1f140042` |
 | Pre-commit hook chain | 36/36 governance checks | ALL PASS |
 | Source freshness negative search | python inline regex scan | 1 match — command cell only, no stale claim |
 | Changed-file scope | `git diff --name-status HEAD~1 HEAD` | 2 files: M roadmap + A worker return |
@@ -119,7 +121,7 @@ the actual staged state (both files) was correct and confirmed by
 
 | Required value | Observed value | Status |
 |---|---|---|
-| Parent roadmap source-freshness refreshed | stale T1-era text removed; T2-T4 implemented state added; commit `41de7588` | PASS |
+| Parent roadmap source-freshness refreshed | stale T1-era text removed; T2-T4 implemented state added; closure commit `1f140042` | PASS |
 | No TypeScript source changed | `git diff --name-status HEAD~1 HEAD` shows only 2 governed markdown files | PASS |
 | No runtime retrieval query | work order forbids; confirmed no provider/LLM call | N/A with reason: documentation consolidation only |
 | No T12 authorization | work order forbids; confirmed | N/A with reason: DSCP-T5 is not a corpus-ingestion tranche |
@@ -132,9 +134,9 @@ the actual staged state (both files) was correct and confirmed by
 |---|---|---|---|
 | Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_FOR_CLAUDE_2026-06-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Completion or reviewer artifact | this file — `docs/reviews/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_COMPLETION_2026-06-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Worker return artifact | `docs/reviews/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_WORKER_RETURN_2026-06-08.md` | committed at `41de7588` | PASS |
+| Worker return artifact | `docs/reviews/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_WORKER_RETURN_2026-06-08.md` | worker return committed at `41de7588`; closure committed at `1f140042` | PASS |
 | Roadmap state | `docs/roadmaps/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_ROADMAP_2026-06-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Parent roadmap T5 row | `docs/roadmaps/CVF_DSCP_DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK_READINESS_ROADMAP_2026-06-07.md` | T5 row `CLOSED_PASS_BOUNDED` at `41de7588` | PASS |
+| Parent roadmap T5 row | `docs/roadmaps/CVF_DSCP_DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK_READINESS_ROADMAP_2026-06-07.md` | T5 row `CLOSED_PASS_BOUNDED` at closure commit `1f140042` | PASS |
 | Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | `currentMode`: `dscp_t5_closed_pass_bounded` | PASS |
 | Registry Markdown | `CVF_SESSION_MEMORY.md` and `AGENT_HANDOFF_V17_2026-06-07.md` | mode marker + continuity note updated | PASS |
 | External evidence digest | no external artifact | all evidence is in-repo | N/A with reason: repo-local documentation consolidation |
@@ -179,8 +181,8 @@ defect.
 
 ## Claim Boundary
 
-This completion review claims: DSCP-T5 is `CLOSED_PASS_BOUNDED` at material
-commit `41de7588`. The parent roadmap source-freshness consolidation was
+This completion review claims: DSCP-T5 is `CLOSED_PASS_BOUNDED` at closure
+commit `1f140042`. The parent roadmap source-freshness consolidation was
 delivered with zero governance gate failures. All five required roadmap changes
 were applied. No TypeScript, session, handoff, registry, or public-sync file
 was modified by the worker. The minor finding (sequencing artefact in worker
