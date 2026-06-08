@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -58,7 +58,7 @@ Owner boundary:
 | DSCP-T2 standard contracts | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.context.contract.ts` | CLOSED_PASS_BOUNDED at `932a40aa` |
 | DSCP-T3 governed packer | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.context.packer.ts` | CLOSED_PASS_BOUNDED at `a368dae9` |
 | Post-T3 audit | `docs/audits/CVF_DSCP_POST_T3_NEXT_ROADMAP_AUDIT_2026-06-07.md` | DISPATCHED |
-| DSCP chain roadmap | `docs/roadmaps/CVF_DSCP_DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK_READINESS_ROADMAP_2026-06-07.md` | OPEN |
+| DSCP chain roadmap | `docs/roadmaps/CVF_DSCP_DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK_READINESS_ROADMAP_2026-06-07.md` | ACTIVE_PARENT_ROADMAP |
 
 ## Non-Goals
 
@@ -76,8 +76,8 @@ Owner boundary:
 | 1 | Source-verify `GovernedRetrievalReceipt`, `ContentDeliveryClass`, `GovernedContextPackage`, and package evidence contracts | COMPLETE |
 | 2 | Author DSCP-T4 GC-018 baseline | COMPLETE |
 | 3 | Author DSCP-T4 work order for Claude | COMPLETE |
-| 4 | Claude implements two new CPF files under `WORKER_MUST_NOT_COMMIT` | DISPATCHED |
-| 5 | Codex reviews worker return, runs gates, commits closure if bounded PASS | PENDING_WORKER_RETURN |
+| 4 | Claude implements two new CPF files under `WORKER_MUST_NOT_COMMIT` | COMPLETE |
+| 5 | Codex reviews worker return, runs gates, commits closure if bounded PASS | COMPLETE |
 
 ## Acceptance Criteria
 
@@ -112,23 +112,23 @@ an LLM answer.
 
 | Required value | Observed value | Status |
 |---|---|---|
-| Runtime receipt object can be built | Worker must create receipt builder and focused tests | PENDING_WORKER_RETURN |
+| Runtime receipt object can be built | `buildGovernedRetrievalReceipt()` created and focused tests PASS | PASS |
 | No runtime query performed | Work order forbids provider/LLM query | N/A with reason: deterministic local receipt boundary only |
-| No raw source released | `rawSourceReleased` must be literal `false` | PENDING_WORKER_RETURN |
+| No raw source released | `rawSourceReleased` is literal `false` | PASS |
 | No provider response hash computed | `modelResponseHash` is caller-supplied | N/A with reason: no provider response in scope |
 
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T4_RETRIEVAL_RECEIPT_RUNTIME_BOUNDARY_FOR_CLAUDE_2026-06-07.md` | `Status: DISPATCHED`; reviewer updates when worker result is reviewed | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
-| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T4_RETRIEVAL_RECEIPT_RUNTIME_BOUNDARY_WORKER_RETURN_2026-06-07.md` | worker-owned pending return packet | BLOCKED with reason: pending worker return |
-| Roadmap state | this file | reviewer updates to closed only after committed-range PASS | BLOCKED with reason: pending worker return |
-| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | reviewer-owned session sync after dispatch commit | BLOCKED with reason: reviewer sync pending |
-| Registry Markdown | `CVF_SESSION_MEMORY.md` and active handoff | reviewer-owned session sync after dispatch commit | BLOCKED with reason: reviewer sync pending |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T4_RETRIEVAL_RECEIPT_RUNTIME_BOUNDARY_FOR_CLAUDE_2026-06-07.md` | `Status: CLOSED_PASS_BOUNDED`; reviewer closure conversion complete | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T4_RETRIEVAL_RECEIPT_RUNTIME_BOUNDARY_COMPLETION_2026-06-07.md` | reviewer completion artifact added | PASS |
+| Roadmap state | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | reviewer-owned session sync in closure sequence | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md` and active handoff | reviewer-owned session sync in closure sequence | PASS |
 | External evidence digest | external artifact path | no external artifact authorized | N/A with reason: deterministic local CPF work |
 | System loop interlock | no system-loop mutation authorized | no system loop is in scope | N/A with reason: receipt helper only |
-| Session continuity | active session front door and handoff | reviewer-owned session sync after dispatch commit | BLOCKED with reason: reviewer sync pending |
+| Session continuity | active session front door and handoff | reviewer-owned session sync in closure sequence | PASS |
 
 ## Claim Boundary
 

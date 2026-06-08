@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 Template: `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
 (post-`fce62cd3` version with Worker Pending-Return Gate section 6D)
@@ -10,8 +10,8 @@ Template: `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
 completionReviewPath: `docs/reviews/CVF_DSCP_T4_RETRIEVAL_RECEIPT_RUNTIME_BOUNDARY_COMPLETION_2026-06-07.md`
 
 dispatchBaseHead: `a368dae9`
-executionBaseHead: `PENDING_WORKER_CAPTURE`
-closureBaseHead: `PENDING_REVIEWER_CAPTURE`
+executionBaseHead: `2543c319`
+closureBaseHead: `2543c319`
 
 Status token rule:
 - Worker must not change `Status` field.
@@ -183,7 +183,7 @@ export function buildGovernedRetrievalReceipt(
       freshnessGate: evidence.freshnessGate,
     },
     modelResponseHash: input.modelResponseHash,
-    sourceArtifactIds: evidence.sourceArtifactIds,
+    sourceArtifactIds: [...evidence.sourceArtifactIds],
     rawSourceReleased: false,
   };
 }
@@ -254,8 +254,8 @@ reviewerOwnedClosurePaths:
 - CVF_SESSION/ACTIVE_SESSION_STATE.json
 - CVF_SESSION_MEMORY.md
 - AGENT_HANDOFF_V17_2026-06-07.md
-closureResidueCheck: PENDING_REVIEWER
-reviewerConversionStatus: pending worker return
+closureResidueCheck: PASS
+reviewerConversionStatus: worker return reviewed and closure converted by Codex
 ```
 
 ## Required First Reads
@@ -295,6 +295,8 @@ If any required source file in Section 6A is missing, stop and return
 `BLOCKED_SOURCE_NOT_FOUND`.
 
 ## 6C. Work-Order Fulfillment Manifest
+
+## Required Artifact Manifest
 
 | Path | Output stage | Purpose |
 |---|---|---|
@@ -372,12 +374,12 @@ claim-boundary expansion.
 
 | Evidence item | Path | Status |
 |---|---|---|
-| Receipt helper | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.retrieval.receipt.ts` | BLOCKED with reason: pending worker return |
-| Deterministic test | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.governed.retrieval.receipt.test.ts` | BLOCKED with reason: pending worker return |
-| Worker return packet | `docs/reviews/CVF_DSCP_T4_RETRIEVAL_RECEIPT_RUNTIME_BOUNDARY_WORKER_RETURN_2026-06-07.md` | BLOCKED with reason: pending worker return |
-| TypeScript compilation | `npx tsc --noEmit` result | BLOCKED with reason: pending worker return |
-| Focused vitest result | T4 vitest result | BLOCKED with reason: pending worker return |
-| Committed-range gate results | reviewer-owned closure gates | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
+| Receipt helper | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.retrieval.receipt.ts` | PASS |
+| Deterministic test | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.governed.retrieval.receipt.test.ts` | PASS |
+| Worker return packet | `docs/reviews/CVF_DSCP_T4_RETRIEVAL_RECEIPT_RUNTIME_BOUNDARY_WORKER_RETURN_2026-06-07.md` | PASS |
+| TypeScript compilation | `npx tsc --noEmit` result | PASS |
+| Focused vitest result | T4 vitest 24/24 PASS after reviewer correction | PASS |
+| Committed-range gate results | reviewer-owned closure gates | PASS |
 
 ## Claim Boundary
 
@@ -396,48 +398,48 @@ performed.
 
 | Required value | Observed value | Status |
 |---|---|---|
-| Runtime receipt object can be created | Worker must implement deterministic helper | BLOCKED with reason: pending worker return |
+| Runtime receipt object can be created | `buildGovernedRetrievalReceipt()` implemented and verified by focused tests | PASS |
 | No runtime retrieval query | Work order forbids provider/LLM retrieval call | N/A with reason: deterministic local receipt helper only |
-| No raw source release | `rawSourceReleased` must be false | BLOCKED with reason: pending worker return |
+| No raw source release | `rawSourceReleased` is false in implementation and focused tests | PASS |
 | No response hash computation | `modelResponseHash` caller-supplied | N/A with reason: no provider response in scope |
 
 ## 9. Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `Status: DISPATCHED`; reviewer updates only after committed-range gates pass | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
-| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T4_RETRIEVAL_RECEIPT_RUNTIME_BOUNDARY_COMPLETION_2026-06-07.md` | reviewer-owned closure artifact after worker result is reviewed | BLOCKED with reason: pending worker return |
-| Roadmap state | `docs/roadmaps/CVF_DSCP_T4_RETRIEVAL_RECEIPT_RUNTIME_BOUNDARY_ROADMAP_2026-06-07.md` | reviewer updates only after worker result is reviewed | BLOCKED with reason: pending worker return |
-| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | reviewer-owned session sync after dispatch commit | BLOCKED with reason: reviewer sync pending |
-| Registry Markdown | `CVF_SESSION_MEMORY.md` and active handoff | reviewer-owned session sync after dispatch commit | BLOCKED with reason: reviewer sync pending |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED`; reviewer closure conversion complete | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T4_RETRIEVAL_RECEIPT_RUNTIME_BOUNDARY_COMPLETION_2026-06-07.md` | reviewer-owned closure artifact added | PASS |
+| Roadmap state | `docs/roadmaps/CVF_DSCP_T4_RETRIEVAL_RECEIPT_RUNTIME_BOUNDARY_ROADMAP_2026-06-07.md` | reviewer updates to `CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | reviewer-owned session sync in closure sequence | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md` and active handoff | reviewer-owned session sync in closure sequence | PASS |
 | External evidence digest | external artifact path | no external artifact authorized | N/A with reason: deterministic local CPF work |
 | System loop interlock | no system-loop mutation authorized | no system loop is in scope | N/A with reason: receipt helper only |
-| Session continuity | active session front door and handoff | reviewer-owned session sync after dispatch commit | BLOCKED with reason: reviewer sync pending |
+| Session continuity | active session front door and handoff | reviewer-owned session sync in closure sequence | PASS |
 
 ## 10. Reviewer Checklist
 
-- [ ] Worker return reviewed.
-- [ ] T4 source spot-checked.
-- [ ] Package gate override behavior confirmed.
-- [ ] `rawSourceReleased === false` confirmed.
-- [ ] `modelResponseHash` caller-supplied behavior confirmed.
-- [ ] tsc PASS confirmed.
-- [ ] focused vitest PASS confirmed.
-- [ ] No existing `.ts` file modified confirmed.
-- [ ] Governance gates PASS confirmed.
-- [ ] Session sync completed by reviewer.
+- [x] Worker return reviewed.
+- [x] T4 source spot-checked.
+- [x] Package gate override behavior confirmed.
+- [x] `rawSourceReleased === false` confirmed.
+- [x] `modelResponseHash` caller-supplied behavior confirmed.
+- [x] tsc PASS confirmed.
+- [x] focused vitest PASS confirmed.
+- [x] No existing `.ts` file modified confirmed.
+- [x] Governance gates PASS confirmed.
+- [x] Session sync completed by reviewer.
 
 ## Closure Checklist
 
-- [ ] Receipt helper file created at specified path.
-- [ ] Deterministic test file created at specified path.
-- [ ] TypeScript compilation PASS recorded.
-- [ ] Focused vitest PASS recorded.
-- [ ] No existing `.ts` file modified.
-- [ ] Worker return packet present.
-- [ ] All component governance gates PASS or pending-return exception recorded.
-- [ ] No forbidden scope action occurred.
-- [ ] Codex reviewed worker return.
+- [x] Receipt helper file created at specified path.
+- [x] Deterministic test file created at specified path.
+- [x] TypeScript compilation PASS recorded.
+- [x] Focused vitest PASS recorded.
+- [x] No existing `.ts` file modified.
+- [x] Worker return packet present.
+- [x] All component governance gates PASS or pending-return exception recorded.
+- [x] No forbidden scope action occurred.
+- [x] Codex reviewed worker return.
 
 ## Return-To-Orchestrator Conditions
 

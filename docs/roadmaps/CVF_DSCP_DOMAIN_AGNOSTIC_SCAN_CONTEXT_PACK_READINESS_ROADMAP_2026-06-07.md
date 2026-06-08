@@ -149,7 +149,7 @@ readiness, no existing file modified.
 
 ---
 
-### DSCP-T4: Retrieval Receipt Runtime Boundary (DISPATCHED)
+### DSCP-T4: Retrieval Receipt Runtime Boundary (CLOSED_PASS_BOUNDED)
 
 **Goal:** Add a deterministic CPF-local helper that builds a
 `GovernedRetrievalReceipt` from an existing `GovernedContextPackage` and
@@ -167,6 +167,14 @@ No provider call, live retrieval query, response hashing implementation,
 corpus ingestion, public-sync, production readiness, or public readiness claim.
 
 **Commit mode:** `WORKER_MUST_NOT_COMMIT`
+
+**Closure result:** deterministic CPF local receipt builder implemented at
+`EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.retrieval.receipt.ts`
+with focused tests at
+`EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.governed.retrieval.receipt.test.ts`.
+TypeScript check PASS and focused vitest PASS 24/24 after reviewer correction.
+No provider call, live retrieval query, response hashing implementation,
+corpus ingestion, public-sync, production readiness, or public readiness claim.
 
 ---
 
@@ -186,7 +194,7 @@ corpus ingestion, public-sync, production readiness, or public readiness claim.
 | DSCP-T1 | Owner surface map and domain-agnostic schema proposal (doc-only) | CLOSED_PASS_BOUNDED |
 | DSCP-T2 | Standard contract authoring (TypeScript interfaces) | CLOSED_PASS_BOUNDED |
 | DSCP-T3 | Runtime pilot (CPF internal) | CLOSED_PASS_BOUNDED |
-| DSCP-T4 | Retrieval receipt runtime boundary | DISPATCHED |
+| DSCP-T4 | Retrieval receipt runtime boundary | CLOSED_PASS_BOUNDED |
 
 ## Acceptance Criteria
 
