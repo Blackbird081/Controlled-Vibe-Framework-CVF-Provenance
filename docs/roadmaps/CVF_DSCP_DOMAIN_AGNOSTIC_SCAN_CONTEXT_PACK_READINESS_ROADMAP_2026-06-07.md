@@ -221,7 +221,7 @@ public-sync, production readiness, public readiness, or T12 authorization.
 | DSCP-T2 | Standard contract authoring (TypeScript interfaces) | CLOSED_PASS_BOUNDED |
 | DSCP-T3 | Runtime pilot (CPF internal) | CLOSED_PASS_BOUNDED |
 | DSCP-T4 | Retrieval receipt runtime boundary | CLOSED_PASS_BOUNDED |
-| DSCP-T5 | Parent roadmap source-freshness consolidation | DISPATCHED |
+| DSCP-T5 | Parent roadmap source-freshness consolidation | CLOSED_PASS_BOUNDED |
 
 ## Acceptance Criteria
 
@@ -270,7 +270,7 @@ surfaces now exist in the EXTENSIONS source tree.
 | T2 (contracts) | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.context.contract.ts` | CLOSED_PASS_BOUNDED | `932a40aa` |
 | T3 (runtime) | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.context.packer.ts` | CLOSED_PASS_BOUNDED | `a368dae9` |
 | T4 (receipt) | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.retrieval.receipt.ts` | CLOSED_PASS_BOUNDED | `a98396dd` |
-| T5 (doc refresh) | parent roadmap + worker return | DISPATCHED | `72178caf` |
+| T5 (doc refresh) | parent roadmap + worker return | CLOSED_PASS_BOUNDED | `41de7588` |
 
 Pre-existing CPF source surfaces (verified in owner surface map at `8e61f65d`):
 - `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/context.packager.contract.ts`
@@ -289,11 +289,12 @@ This roadmap is open (parent-roadmap tracking T1-T5 current state).
 | T2 work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T2_STANDARD_CONTRACT_AUTHORING_FOR_CLAUDE_2026-06-07.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | T3 work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T3_RUNTIME_PILOT_CPF_INTERNAL_FOR_CLAUDE_2026-06-07.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | T4 work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T4_RETRIEVAL_RECEIPT_RUNTIME_BOUNDARY_FOR_CLAUDE_2026-06-07.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_FOR_CLAUDE_2026-06-08.md` | `Status: DISPATCHED`; reviewer updates after worker return | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
-| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_WORKER_RETURN_2026-06-08.md` | worker-owned pending return packet | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
-| Roadmap state | `docs/roadmaps/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_ROADMAP_2026-06-08.md` | `Status: DISPATCHED` until reviewer closure | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
-| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | reviewer-owned session sync | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
-| Registry Markdown | `CVF_SESSION_MEMORY.md` and active handoff | reviewer-owned session sync | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_FOR_CLAUDE_2026-06-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_COMPLETION_2026-06-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return artifact | `docs/reviews/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_WORKER_RETURN_2026-06-08.md` | committed at `41de7588` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_ROADMAP_2026-06-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | `currentMode` updated to `dscp_t5_closed_pass_bounded` | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md` and active handoff | session sync committed in closure batch | PASS |
 | External evidence digest | in-repo TypeScript compilation + vitest output | no external artifact in any T2-T4 tranche | N/A with reason: all evidence is in-repo |
 | System loop interlock | no system-loop mutation authorized | DSCP-T5 is documentation consolidation only | N/A with reason: documentation only |
 | Session continuity | active session front door and handoff | reviewer-owned sync | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |

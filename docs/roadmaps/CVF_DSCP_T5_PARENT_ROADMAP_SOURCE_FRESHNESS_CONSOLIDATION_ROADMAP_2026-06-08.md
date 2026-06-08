@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -84,8 +84,8 @@ Owner boundary:
 | 1 | Source-verify current parent roadmap stale sections and T2-T4 source surfaces | COMPLETE |
 | 2 | Author DSCP-T5 GC-018 baseline | COMPLETE |
 | 3 | Author DSCP-T5 work order for Claude | COMPLETE |
-| 4 | Claude refreshes parent roadmap under `WORKER_MUST_NOT_COMMIT` | DISPATCHED |
-| 5 | Codex reviews worker return, runs gates, commits closure if bounded PASS | PENDING_WORKER_RETURN |
+| 4 | Claude refreshes parent roadmap under `WORKER_MUST_NOT_COMMIT` | CLOSED_PASS_BOUNDED |
+| 5 | Codex reviews worker return, runs gates, commits closure if bounded PASS | CLOSED_PASS_BOUNDED |
 
 ## Acceptance Criteria
 
@@ -117,8 +117,8 @@ receipt is produced.
 
 | Required value | Observed value | Status |
 |---|---|---|
-| Parent roadmap source-freshness refreshed | Worker must update parent roadmap | PENDING_WORKER_RETURN |
-| No TypeScript source changed | worker return must prove by diff | PENDING_WORKER_RETURN |
+| Parent roadmap source-freshness refreshed | stale T1-era text removed; T2-T4 source state added; commit `41de7588` | PASS |
+| No TypeScript source changed | `git diff --name-status HEAD~1 HEAD` shows only 2 governed markdown files | PASS |
 | No runtime query performed | work order forbids provider/LLM query | N/A with reason: documentation consolidation only |
 | No public export | public export disposition remains private-only | N/A with reason: private provenance roadmap |
 
@@ -126,14 +126,15 @@ receipt is produced.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_FOR_CLAUDE_2026-06-08.md` | `Status: DISPATCHED`; reviewer updates after worker return | BLOCKED with reason: pending worker return |
-| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_WORKER_RETURN_2026-06-08.md` | worker-owned pending return packet | BLOCKED with reason: pending worker return |
-| Roadmap state | this file | `Status: DISPATCHED` until reviewer closure | BLOCKED with reason: pending worker return |
-| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | reviewer-owned session sync after dispatch commit | BLOCKED with reason: reviewer sync pending |
-| Registry Markdown | `CVF_SESSION_MEMORY.md` and active handoff | reviewer-owned session sync after dispatch commit | BLOCKED with reason: reviewer sync pending |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_FOR_CLAUDE_2026-06-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_COMPLETION_2026-06-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return artifact | `docs/reviews/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_WORKER_RETURN_2026-06-08.md` | committed at `41de7588` | PASS |
+| Roadmap state | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | `currentMode` updated to `dscp_t5_closed_pass_bounded` | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md` and active handoff | session sync committed in closure batch | PASS |
 | External evidence digest | external artifact path | no external artifact authorized | N/A with reason: repo-local documentation consolidation |
 | System loop interlock | runtime/system loop | no system-loop mutation authorized | N/A with reason: documentation consolidation only |
-| Session continuity | active session front door and handoff | reviewer-owned session sync | BLOCKED with reason: reviewer sync pending |
+| Session continuity | active session front door and handoff | reviewer-owned sync completed in closure commit | PASS |
 
 ## Claim Boundary
 

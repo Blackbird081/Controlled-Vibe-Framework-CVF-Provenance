@@ -2,13 +2,13 @@
 
 Memory class: POINTER_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 Template: `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
 
 dispatchBaseHead: `72178caf`
-executionBaseHead: `PENDING_WORKER_RETURN`
-closureBaseHead: `N/A - pending worker return and reviewer closure conversion`
+executionBaseHead: `b34e5e34`
+closureBaseHead: `41de7588`
 
 Status token rule:
 - Worker must not change `Status` field.
@@ -366,11 +366,11 @@ claim-boundary expansion, or T12 authorization.
 
 | Evidence item | Path | Status |
 |---|---|---|
-| Parent roadmap refresh | `docs/roadmaps/CVF_DSCP_DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK_READINESS_ROADMAP_2026-06-07.md` | PENDING_WORKER_RETURN |
-| Worker return packet | `docs/reviews/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_WORKER_RETURN_2026-06-08.md` | PENDING_WORKER_RETURN |
-| Source freshness negative search | worker command output | PENDING_WORKER_RETURN |
-| Changed-file scope | `git diff --name-status` | PENDING_WORKER_RETURN |
-| Committed-range gate results | reviewer-owned closure gates | PENDING_REVIEWER_COMMIT |
+| Parent roadmap refresh | `docs/roadmaps/CVF_DSCP_DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK_READINESS_ROADMAP_2026-06-07.md` | PASS at `41de7588` |
+| Worker return packet | `docs/reviews/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_WORKER_RETURN_2026-06-08.md` | PASS at `41de7588` |
+| Source freshness negative search | 1 match — command cell only, no stale claim | PASS |
+| Changed-file scope | 2 files: M roadmap + A worker return; no TS/session/handoff files | PASS |
+| Committed-range gate results | 36/36 pre-commit governance checks | ALL PASS |
 
 ## Claim Boundary
 
@@ -387,8 +387,8 @@ DSCP-T5 produces no runtime receipt. It refreshes roadmap evidence only.
 
 | Required value | Observed value | Status |
 |---|---|---|
-| Parent roadmap source-freshness refreshed | worker must update parent roadmap | PENDING_WORKER_RETURN |
-| No TypeScript source changed | worker must prove by diff | PENDING_WORKER_RETURN |
+| Parent roadmap source-freshness refreshed | stale T1-era text removed; T2-T4 source state added; commit `41de7588` | PASS |
+| No TypeScript source changed | `git diff --name-status HEAD~1 HEAD` shows only 2 governed markdown files | PASS |
 | No runtime retrieval query | work order forbids provider/LLM query | N/A with reason: documentation consolidation only |
 | No T12 authorization | work order forbids T12 authorization | N/A with reason: DSCP-T5 is not a corpus-ingestion tranche |
 
@@ -396,34 +396,35 @@ DSCP-T5 produces no runtime receipt. It refreshes roadmap evidence only.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `Status: DISPATCHED`; reviewer updates after worker return | BLOCKED with reason: pending worker return |
-| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_WORKER_RETURN_2026-06-08.md` | worker-owned pending return packet | BLOCKED with reason: pending worker return |
-| Roadmap state | `docs/roadmaps/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_ROADMAP_2026-06-08.md` | reviewer updates after worker return | BLOCKED with reason: pending worker return |
-| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | reviewer-owned session sync during reviewer closure conversion | BLOCKED with reason: pending reviewer closure |
-| Registry Markdown | `CVF_SESSION_MEMORY.md` and active handoff | reviewer-owned session sync during reviewer closure conversion | BLOCKED with reason: pending reviewer closure |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_COMPLETION_2026-06-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return artifact | `docs/reviews/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_WORKER_RETURN_2026-06-08.md` | committed at `41de7588` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_ROADMAP_2026-06-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | `currentMode` updated to `dscp_t5_closed_pass_bounded` | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md` and active handoff | session sync committed in closure batch | PASS |
 | External evidence digest | external artifact path | no external artifact authorized | N/A with reason: repo-local documentation consolidation |
 | System loop interlock | no system-loop mutation authorized | no runtime loop is in scope | N/A with reason: documentation consolidation only |
-| Session continuity | active session front door and handoff | reviewer-owned session sync during reviewer closure conversion | BLOCKED with reason: pending reviewer closure |
+| Session continuity | active session front door and handoff | reviewer-owned sync completed in closure commit | PASS |
 
 ## 10. Reviewer Checklist
 
-- [ ] Worker return reviewed.
-- [ ] Parent roadmap stale runtime freshness text removed or corrected.
-- [ ] T2-T4 source state checked against current files.
-- [ ] No TypeScript modification confirmed.
-- [ ] No forbidden scope action occurred.
-- [ ] Governance gates PASS confirmed.
-- [ ] Session sync completed by reviewer if closure proceeds.
+- [x] Worker return reviewed.
+- [x] Parent roadmap stale runtime freshness text removed or corrected.
+- [x] T2-T4 source state checked against current files.
+- [x] No TypeScript modification confirmed.
+- [x] No forbidden scope action occurred.
+- [x] Governance gates PASS confirmed (36/36 pre-commit).
+- [x] Session sync completed by reviewer.
 
 ## Closure Checklist
 
-- [ ] Parent roadmap updated at specified path.
-- [ ] Worker return packet present.
-- [ ] Source freshness negative search recorded.
-- [ ] Changed-file scope recorded.
-- [ ] All component governance gates PASS or pending-return exception recorded.
-- [ ] No forbidden scope action occurred.
-- [ ] Codex reviewed worker return.
+- [x] Parent roadmap updated at specified path.
+- [x] Worker return packet present.
+- [x] Source freshness negative search recorded.
+- [x] Changed-file scope recorded.
+- [x] All component governance gates PASS (36/36 pre-commit).
+- [x] No forbidden scope action occurred.
+- [x] Codex reviewed worker return.
 
 ## Return-To-Orchestrator Conditions
 
