@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`dscp_t9_closed_pass_bounded`; active handoff
 
 `dscp_t9_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `87fe7a69`
-(DSCP-T9 closure batch complete; Implementation-First Absorption Pattern governance doc pending commit).
+Current HEAD recorded for this handoff: `7339d5f0`
+(Implementation-First Absorption Pattern governance doc committed; rewrite as two-way decision framework pending).
 
 ## Active Boundary
 
