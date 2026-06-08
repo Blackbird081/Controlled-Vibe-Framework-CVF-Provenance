@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-08
 
-Current mode marker: `dscp_t5_closed_pass_bounded`
+Current mode marker: `dscp_t6_worker_return_pending_review_guard_hardened`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `dscp_t5_closed_pass_bounded`.
+Current mode: `dscp_t6_worker_return_pending_review_guard_hardened`.
 
 Active handoff:
 
@@ -58,27 +58,30 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-DSCP-T5 Parent Roadmap Source-Freshness Consolidation is `CLOSED_PASS_BOUNDED`
-at closure commit `1f140042` (worker return commit `41de7588`; continuity
-correction `95afbc7f`). All DSCP-T1 through T5 tranches are
-`CLOSED_PASS_BOUNDED`.
+DSCP-T6 worker-return and dispatch-quality hardening material commit
+`9db36c8c` is pending Codex reviewer closure.
 
 Delivered scope:
 
-- worker return: `docs/reviews/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_WORKER_RETURN_2026-06-08.md`;
-- completion: `docs/reviews/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_COMPLETION_2026-06-08.md`;
-- refreshed parent DSCP roadmap with T5 `CLOSED_PASS_BOUNDED` state and current T2-T4 source surfaces;
-- updated work order, T5 roadmap, session state, handoff to `CLOSED_PASS_BOUNDED`.
+- DSCP-T6 deterministic `buildGovernedArtifactDescriptor()` helper and focused
+  tests from worker return;
+- GC-051 registry coverage for the new T6 source/test paths;
+- dispatch-quality checker hardening for pending predecessor release language,
+  noncanonical Source Verification dispositions, and deferred worker/future
+  source verification;
+- T7/T8 packets downgraded to `HOLD_UNTIL_T6_PASS` and `HOLD_UNTIL_T7_PASS`;
+- T7 `KnowledgeItem` mapping corrected to current source fields.
 
-Boundary: documentation consolidation only; no TypeScript modification, runtime
-behavior, provider call, corpus ingestion, T12 authorization, public-sync,
-production readiness, or public readiness.
+Boundary: T6 deterministic local helper plus governance checker/docs cleanup
+only; no provider call, corpus ingestion, T7/T8 execution, T12 authorization,
+public-sync, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: operator selects next lane. All DSCP-T1 through T5 are
-`CLOSED_PASS_BOUNDED`. Options: DSCP-T6 or new domain-lane expansion (requires
-fresh operator authorization, GC-018, and work order); or unblock a parked lane.
+Next allowed move: Codex reviews/closes DSCP-T6 in a bounded closure batch.
+After DSCP-T6 closure, refresh dependency-release evidence before T7 can move
+from `HOLD_UNTIL_T6_PASS` to execution. DSCP-T8 remains
+`HOLD_UNTIL_T7_PASS`.
 
 LHW24 remains the latest closed numbered LHW wave in the state registry.
 

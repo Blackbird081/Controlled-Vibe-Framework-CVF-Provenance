@@ -32,14 +32,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`dscp_t5_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=operator selects next lane (DSCP-T6 or parked lane unblock); parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`dscp_t6_worker_return_pending_review_guard_hardened`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=Codex reviews/closes DSCP-T6 before any T7 execution; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`dscp_t5_closed_pass_bounded`
+`dscp_t6_worker_return_pending_review_guard_hardened`
 
-Current HEAD recorded for this handoff: `95afbc7f`
-(DSCP-T5 continuity correction commit).
+Current HEAD recorded for this handoff: `9db36c8c`
+(DSCP-T6 worker-return and dispatch-quality hardening material commit).
 
 ## Active Boundary
 
@@ -55,53 +55,43 @@ in archived handoffs and governed completion packets.
 
 ## Latest Continuity Note
 
-DSCP-T5 Parent Roadmap Source-Freshness Consolidation is `CLOSED_PASS_BOUNDED`
-at closure commit `1f140042` (worker return commit `41de7588`; continuity
-correction `95afbc7f`).
+DSCP-T6 worker-return and dispatch-quality hardening material commit
+`9db36c8c` is pending Codex reviewer closure.
 
-All DSCP-T1 through T5 tranches are `CLOSED_PASS_BOUNDED`.
+Result: T6 deterministic scan descriptor helper and tests are present from the
+worker return; GC-051 now covers the T6 source/test paths; dispatch-quality now
+blocks noncanonical Source Verification dispositions, deferred worker/future
+source verification, and dispatch/ready packets with pending CLOSED_PASS
+predecessor language. T7 and T8 packets are prepared but held:
+`HOLD_UNTIL_T6_PASS` and `HOLD_UNTIL_T7_PASS`.
 
-Roadmap:
-`docs/roadmaps/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_ROADMAP_2026-06-08.md`
-(`Status: CLOSED_PASS_BOUNDED`).
+Verification: reviewer-fast PASS, dispatch-quality PASS, GC-051 PASS, CPF
+`npm run check` PASS, focused T6 vitest 12/12 PASS, pre-commit 36/36 PASS.
 
-Work order:
-`docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_FOR_CLAUDE_2026-06-08.md`
-(`Status: CLOSED_PASS_BOUNDED`).
-
-Worker return:
-`docs/reviews/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_WORKER_RETURN_2026-06-08.md`.
-
-Completion:
-`docs/reviews/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_COMPLETION_2026-06-08.md`.
-
-Result: stale T1-era doc-only freshness text removed from parent roadmap;
-T2-T4 implemented source state added; Machine Closure Package updated T1-T5;
-36/36 pre-commit governance checks PASS.
-
-Boundary: documentation consolidation only; no TypeScript modification, runtime
-behavior, provider call, corpus ingestion, T12 authorization, public-sync,
-hosted readiness, production readiness, or public readiness.
+Boundary: T6 deterministic local helper plus governance checker/docs cleanup
+only; no provider call, corpus ingestion, T7/T8 execution, T12 authorization,
+public-sync, hosted readiness, production readiness, public readiness, or live
+governance proof.
 
 ## Current Batch
 
-DSCP-T5 Parent Roadmap Source-Freshness Consolidation is closed at commit
-`1f140042`; continuity/commit-reference correction is `95afbc7f`.
+DSCP-T6 worker-return and dispatch-quality hardening material commit is
+`9db36c8c`.
 
 Delivered scope:
 
-- audit: `docs/audits/CVF_DSCP_POST_T4_NEXT_ROADMAP_AUDIT_2026-06-08.md`;
-- GC-018: `docs/baselines/CVF_GC018_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_2026-06-08.md`;
-- roadmap: `docs/roadmaps/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_ROADMAP_2026-06-08.md` (`CLOSED_PASS_BOUNDED`);
-- work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_FOR_CLAUDE_2026-06-08.md` (`CLOSED_PASS_BOUNDED`);
-- worker return: `docs/reviews/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_WORKER_RETURN_2026-06-08.md`;
-- completion: `docs/reviews/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_COMPLETION_2026-06-08.md`.
+- T6 worker return: `docs/reviews/CVF_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_WORKER_RETURN_2026-06-08.md`;
+- T6 source: `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.artifact.descriptor.ts`;
+- T6 tests: `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.governed.artifact.descriptor.test.ts`;
+- guard hardening: `governance/compat/check_work_order_dispatch_quality.py`;
+- guard tests: `governance/compat/test_check_work_order_dispatch_quality.py`;
+- T7/T8 prepared HOLD packets in `docs/roadmaps/` and `docs/work_orders/`.
 
 ## Latest Work / Changes
 
-- Reviewed and closed DSCP-T4.
-- Audited post-T4 DSCP state.
-- Dispatched and closed DSCP-T5 parent-roadmap source-freshness consolidation.
+- Reviewed DSCP-T6 worker return quality.
+- Hardened dispatch-quality guard for repeated orchestrator packet defects.
+- Downgraded T7/T8 from premature DISPATCHED to dependency-held packets.
 
 ## Core Guard Self-Protection Authorization
 
@@ -140,10 +130,11 @@ history.
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
-Next allowed move: operator selects next lane. DSCP-T1 through T5 are all
-`CLOSED_PASS_BOUNDED`. Options: DSCP-T6 or new domain-lane expansion (requires
-fresh operator authorization, GC-018, and work order); or unblock a parked lane
-(Live Redis, DEP2, external receipt-anchor).
+Next allowed move: Codex reviews/closes DSCP-T6 in a bounded closure batch.
+After DSCP-T6 closure, refresh dependency-release evidence before T7 can move
+from `HOLD_UNTIL_T6_PASS` to execution. DSCP-T8 remains
+`HOLD_UNTIL_T7_PASS`. Parked lanes remain Live Redis, DEP2, and external
+receipt-anchor.
 
 LPCI2-T12 remains forbidden until a separate operator-authorized evidence path
 resolves EC-02 review on or after 2026-07-01, known `currentStatus`, known
