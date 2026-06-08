@@ -283,6 +283,18 @@ If any required source file in Section 6A is missing, stop and return
 | `AGENT_HANDOFF_V17_2026-06-07.md` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | Reviewer-owned continuity file; worker must not edit |
 | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync` | ABSENT_IN_THIS_REPO | ABSENT_IN_THIS_REPO | Public-sync is outside this provenance dispatch and not authorized |
 
+## Pre-Existing Dirty Path Exemptions
+
+These paths are forbidden to the worker but may appear in the reviewer-owned
+session-sync commit after dispatch. They are exempted only for Codex
+continuity sync across the combined dispatch range.
+
+| Path | Status at dispatch | Exemption boundary |
+|---|---|---|
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | reviewer-owned sync path | Codex may update for session continuity; worker must not edit, stage, or claim |
+| `CVF_SESSION_MEMORY.md` | reviewer-owned sync path | Codex may update for session continuity; worker must not edit, stage, or claim |
+| `AGENT_HANDOFF_V17_2026-06-07.md` | reviewer-owned sync path | Codex may update for session continuity; worker must not edit, stage, or claim |
+
 ## 6D. Worker Pending-Return Gate
 
 | Component | Scope trigger | Verification command | Expected result |
