@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -18,7 +18,7 @@ dispatchBaseHead: `f331c10d`
 
 executionBaseHead: `f331c10d`
 
-closureBaseHead: `PENDING_REVIEWER_CLOSURE`
+closureBaseHead: `5c90506a`
 
 ---
 
@@ -268,26 +268,27 @@ Claude must return uncommitted artifacts with:
 
 ## Acceptance Receipt Assertion Matrix
 
-| Required value | Required assertion | Status before worker |
+| Required value | Required assertion | Status |
 |---|---|---|
-| `rawContentReleased` remains false on governed package evidence | focused test | PENDING |
-| `canBypassGovernance` remains false on governed package evidence | focused test | PENDING |
-| `rawSourceReleased` remains false on receipt | focused test | PENDING |
-| `contextPackageId` equals package ID used by receipt | focused test | PENDING |
-| blocked gate returns `BLOCKED` package ID | focused test | PENDING |
-| blocked package does not expose source artifact IDs | focused test | PENDING |
+| `rawContentReleased` remains false on governed package evidence | focused test | PASS — vitest 3/3 PASS at `5c90506a` |
+| `canBypassGovernance` remains false on governed package evidence | focused test | PASS — vitest 3/3 PASS at `5c90506a` |
+| `rawSourceReleased` remains false on receipt | focused test | PASS — vitest 3/3 PASS at `5c90506a` |
+| `contextPackageId` equals package ID used by receipt | focused test | PASS — vitest 3/3 PASS at `5c90506a` |
+| blocked gate returns `BLOCKED` package ID | focused test | PASS — vitest 3/3 PASS at `5c90506a` |
+| blocked package does not expose source artifact IDs | focused test | PASS — vitest 3/3 PASS at `5c90506a` |
 
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `Status: DISPATCHED` before worker return | READY |
-| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T9_LOCAL_PIPELINE_HARNESS_COMPLETION_2026-06-08.md` | reviewer-authored during Codex review | PENDING |
-| Roadmap state | `docs/roadmaps/CVF_DSCP_T9_LOCAL_PIPELINE_HARNESS_ROADMAP_2026-06-08.md` | status conversion after review | PENDING |
-| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | new harness path covered | PENDING |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T9_LOCAL_PIPELINE_HARNESS_COMPLETION_2026-06-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_DSCP_T9_LOCAL_PIPELINE_HARNESS_ROADMAP_2026-06-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | entry `dscp-t9-local-pipeline-harness` SCANNED at `5c90506a` | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md` and `AGENT_HANDOFF_V17_2026-06-07.md` | mode marker `dscp_t9_closed_pass_bounded` updated in closure batch | PASS |
 | External evidence digest | no external artifact authorized | N/A | N/A with reason: local deterministic only |
 | System loop interlock | no system-loop mutation | test harness only | N/A with reason: no runtime connection |
-| Session continuity | active handoff and state registry | reviewer sync during Codex closure | PENDING |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION_MEMORY.md`, `AGENT_HANDOFF_V17_2026-06-07.md` | mode `dscp_t9_closed_pass_bounded` in all three | PASS |
 
 ## Review Gate
 
@@ -302,14 +303,14 @@ Reviewer must confirm:
 
 ## Closure Checklist
 
-- [ ] Worker return reviewed and accepted
-- [ ] CPF `npm run check` PASS confirmed
-- [ ] Focused harness vitest PASS confirmed
-- [ ] GC-051 registry PASS confirmed
-- [ ] Governance gates PASS confirmed
-- [ ] Reviewer commits material artifacts
-- [ ] Completion review authored by reviewer
-- [ ] Session continuity synced by reviewer
+- [x] Worker return reviewed and accepted
+- [x] CPF `npm run check` PASS confirmed
+- [x] Focused harness vitest PASS confirmed
+- [x] GC-051 registry PASS confirmed
+- [x] Governance gates PASS confirmed
+- [x] Reviewer commits material artifacts
+- [x] Completion review authored by reviewer
+- [x] Session continuity synced by reviewer
 
 ## Return-To-Orchestrator Conditions
 

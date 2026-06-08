@@ -32,14 +32,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`dscp_t9_local_pipeline_harness_dispatched`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=Claude executes DSCP-T9 local pipeline harness work order WORKER_MUST_NOT_COMMIT and returns uncommitted artifacts for Codex review; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`dscp_t9_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=operator selects next lane; DSCP-T1 through T9 all CLOSED_PASS_BOUNDED; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`dscp_t9_local_pipeline_harness_dispatched`
+`dscp_t9_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `7e6988ac`
-(DSCP-T9 dispatch commit).
+Current HEAD recorded for this handoff: `5c90506a`
+(DSCP-T9 material commit; closure batch pending).
 
 ## Active Boundary
 
@@ -55,52 +55,42 @@ in archived handoffs and governed completion packets.
 
 ## Latest Continuity Note
 
-DSCP-T9 Local Pipeline Harness is `DISPATCHED` for Claude at dispatch commit
-`7e6988ac` and dispatch base `f331c10d`. DSCP-T8 MKE1 Cross-Lane Wire-In is
-`CLOSED_PASS_BOUNDED` at closure commit `e96aacaf`. Parent DSCP roadmap T1-T8
-is closed.
+DSCP-T9 Local Pipeline Harness is `CLOSED_PASS_BOUNDED` at material commit
+`5c90506a`. All DSCP tranches T1 through T9 are `CLOSED_PASS_BOUNDED`.
 
-Result: T6 deterministic scan descriptor helper and tests are present from the
-worker return; GC-051 now covers the T6 source/test paths; dispatch-quality now
-blocks noncanonical Source Verification dispositions, deferred worker/future
-source verification, and dispatch/ready packets with pending CLOSED_PASS
-predecessor language. T8 implements deterministic LPF-to-DSCP governance-lock
-mapping. Parent DSCP roadmap is ready to close after this batch.
+Delivered scope for T9:
 
-Verification: reviewer-fast PASS, dispatch-quality PASS, GC-051 PASS, CPF
-`npm run check` PASS, focused T8 vitest 9/9 PASS.
+- New test harness:
+  `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.local.pipeline.harness.test.ts`
+  (216 lines; 3 describe blocks; 3/3 vitest PASS; 0 TypeScript errors);
+- GC-051 registry entry `dscp-t9-local-pipeline-harness` at `5c90506a`;
+- Worker return:
+  `docs/reviews/CVF_DSCP_T9_LOCAL_PIPELINE_HARNESS_WORKER_RETURN_2026-06-08.md`;
+- Completion review:
+  `docs/reviews/CVF_DSCP_T9_LOCAL_PIPELINE_HARNESS_COMPLETION_2026-06-08.md`.
 
-Boundary: deterministic local DSCP helpers, adapters, and dispatched T9 test
-harness only; no provider call, live retrieval, corpus ingestion, T12
-authorization, public-sync, hosted readiness, production readiness, public
+Boundary: deterministic local DSCP test harness only; no provider call, corpus
+ingestion, T12 authorization, public-sync, production readiness, public
 readiness, or live governance proof.
 
 ## Current Batch
 
-DSCP-T8 closure commit is `e96aacaf`.
+DSCP-T9 closure batch. Material commit `5c90506a`.
 
 Delivered scope:
 
-- T6 worker return: `docs/reviews/CVF_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_WORKER_RETURN_2026-06-08.md`;
-- T6 source: `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.artifact.descriptor.ts`;
-- T6 tests: `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.governed.artifact.descriptor.test.ts`;
-- T6 completion: `docs/reviews/CVF_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_COMPLETION_2026-06-08.md`;
-- T7 source: `EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/src/dscp.eco.adapter.ts`;
-- T7 tests: `EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/tests/dscp.eco.adapter.test.ts`;
-- T7 completion: `docs/reviews/CVF_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_COMPLETION_2026-06-08.md`;
-- T8 source: `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.lpf.adapter.ts`;
-- T8 tests: `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.lpf.adapter.test.ts`;
-- T8 completion: `docs/reviews/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_COMPLETION_2026-06-08.md`;
-- guard hardening: `governance/compat/check_work_order_dispatch_quality.py`;
-- guard tests: `governance/compat/test_check_work_order_dispatch_quality.py`;
-- post-DSCP-T8 audit:
-  `docs/audits/CVF_POST_DSCP_T8_NEXT_ROADMAP_AUDIT_2026-06-08.md`;
-- DSCP-T9 GC-018:
-  `docs/baselines/CVF_GC018_DSCP_T9_LOCAL_PIPELINE_HARNESS_2026-06-08.md`;
-- DSCP-T9 roadmap:
-  `docs/roadmaps/CVF_DSCP_T9_LOCAL_PIPELINE_HARNESS_ROADMAP_2026-06-08.md`;
-- DSCP-T9 work order for Claude:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T9_LOCAL_PIPELINE_HARNESS_FOR_CLAUDE_2026-06-08.md`.
+- T9 test harness:
+  `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.local.pipeline.harness.test.ts`;
+- GC-051 registry update:
+  `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` (entry `dscp-t9-local-pipeline-harness`);
+- T9 worker return:
+  `docs/reviews/CVF_DSCP_T9_LOCAL_PIPELINE_HARNESS_WORKER_RETURN_2026-06-08.md`;
+- T9 completion review:
+  `docs/reviews/CVF_DSCP_T9_LOCAL_PIPELINE_HARNESS_COMPLETION_2026-06-08.md`;
+- T9 work order closed:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T9_LOCAL_PIPELINE_HARNESS_FOR_CLAUDE_2026-06-08.md`;
+- T9 roadmap closed:
+  `docs/roadmaps/CVF_DSCP_T9_LOCAL_PIPELINE_HARNESS_ROADMAP_2026-06-08.md`.
 
 ## Latest Work / Changes
 
@@ -146,9 +136,9 @@ history.
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
-Next allowed move: Claude executes DSCP-T9 local pipeline harness work order
-under WORKER_MUST_NOT_COMMIT and returns uncommitted artifacts. Parked lanes
-remain Live Redis, DEP2, and external receipt-anchor.
+Next allowed move: operator selects next lane. DSCP-T1 through T9 are all
+`CLOSED_PASS_BOUNDED`. No pending dispatch. Parked lanes remain Live Redis,
+DEP2, and external receipt-anchor.
 
 LPCI2-T12 remains forbidden until a separate operator-authorized evidence path
 resolves EC-02 review on or after 2026-07-01, known `currentStatus`, known

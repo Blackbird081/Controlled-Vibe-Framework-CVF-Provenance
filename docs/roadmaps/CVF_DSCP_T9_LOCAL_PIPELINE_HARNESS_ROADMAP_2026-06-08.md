@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -72,11 +72,11 @@ Out of scope:
 |---|---|---|
 | 1 | GC-018 baseline | DISPATCHED |
 | 2 | Work order | DISPATCHED |
-| 3 | Implement focused local harness test | PENDING_WORKER |
-| 4 | Register new harness path in GC-051 | PENDING_WORKER |
-| 5 | Run focused vitest and package check | PENDING_WORKER |
-| 6 | Return worker packet, uncommitted | PENDING_WORKER |
-| 7 | Codex reviewer closure and session sync | PENDING_REVIEWER |
+| 3 | Implement focused local harness test | CLOSED_PASS_BOUNDED |
+| 4 | Register new harness path in GC-051 | CLOSED_PASS_BOUNDED |
+| 5 | Run focused vitest and package check | CLOSED_PASS_BOUNDED |
+| 6 | Return worker packet, uncommitted | CLOSED_PASS_BOUNDED |
+| 7 | Codex reviewer closure and session sync | CLOSED_PASS_BOUNDED |
 
 ## Acceptance Criteria
 
@@ -104,15 +104,31 @@ Out of scope:
 PolicyLocal T12 remains forbidden. This roadmap does not authorize T12,
 current-law claims, legal advice quality claims, or corpus ingestion.
 
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| `rawContentReleased` remains false | ECO PASS + LPF path: asserted in test, vitest 3/3 PASS at `5c90506a` | PASS |
+| `canBypassGovernance` remains false | ECO PASS + LPF path: asserted in test, vitest 3/3 PASS at `5c90506a` | PASS |
+| `rawSourceReleased` remains false | ECO PASS + LPF path: asserted in test, vitest 3/3 PASS at `5c90506a` | PASS |
+| `contextPackageId` equals package ID | ECO PASS + LPF path: asserted in test | PASS |
+| blocked gate returns `BLOCKED` package ID | ECO blocked path: `innerPackage.packageId === "BLOCKED"` | PASS |
+| blocked package does not expose source artifact IDs | ECO blocked path: `sourceArtifactIds.length === 0` | PASS |
+
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T9_LOCAL_PIPELINE_HARNESS_FOR_CLAUDE_2026-06-08.md` | worker-return then reviewer closure | PENDING |
-| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T9_LOCAL_PIPELINE_HARNESS_COMPLETION_2026-06-08.md` | reviewer-authored | PENDING |
-| Roadmap state | this file | status updated by reviewer | PENDING |
-| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | harness path covered | PENDING |
-| Session continuity | active handoff and state registry | reviewer sync | PENDING |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T9_LOCAL_PIPELINE_HARNESS_FOR_CLAUDE_2026-06-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T9_LOCAL_PIPELINE_HARNESS_COMPLETION_2026-06-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return artifact | `docs/reviews/CVF_DSCP_T9_LOCAL_PIPELINE_HARNESS_WORKER_RETURN_2026-06-08.md` | committed at `5c90506a` | PASS |
+| Roadmap state | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | entry `dscp-t9-local-pipeline-harness` SCANNED at `5c90506a` | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md` and `AGENT_HANDOFF_V17_2026-06-07.md` | mode marker `dscp_t9_closed_pass_bounded` updated in closure batch | PASS |
+| Session JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | `currentMode`: `dscp_t9_closed_pass_bounded` | PASS |
+| Session continuity | `CVF_SESSION_MEMORY.md` and `AGENT_HANDOFF_V17_2026-06-07.md` | mode + continuity updated in closure batch | PASS |
+| External evidence digest | no external artifact | all evidence is in-repo | N/A with reason: deterministic local only |
+| System loop interlock | no system-loop mutation | test harness only | N/A with reason: no runtime connection |
 
 ## Claim Boundary
 
