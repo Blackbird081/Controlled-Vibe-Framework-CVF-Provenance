@@ -1944,6 +1944,43 @@
         "public readiness claim (not made)"
       ],
       "nextScanRecommendation": "Re-scan only when DSCP LPF adapter behavior changes or future memory retrieval runtime integration is authorized."
+    },
+    {
+      "id": "dscp-t9-local-pipeline-harness",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "DSCP-T9 local pipeline harness test",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.local.pipeline.harness.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "scanWave": "DSCP-T9-LOCAL-PIPELINE-HARNESS-2026-06-08",
+      "scanDate": "2026-06-08",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_DSCP_T9_LOCAL_PIPELINE_HARNESS_WORKER_RETURN_2026-06-08.md",
+      "completionReviewPath": "docs/reviews/CVF_DSCP_T9_LOCAL_PIPELINE_HARNESS_COMPLETION_2026-06-08.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_DSCP_T9_LOCAL_PIPELINE_HARNESS_2026-06-08.md",
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK",
+        "LOCAL_PIPELINE_INTEGRATION_HARNESS",
+        "CONTRACT_TEST_COVERAGE"
+      ],
+      "priorAbsorption": "DSCP-T9 adds a deterministic local harness proving T6/T7/T8/T3/T4 surfaces compose without raw content release, raw source release, or governance bypass. No live provider call, corpus ingestion, T12 authorization, public-sync, or production/public readiness is claimed.",
+      "findings": [],
+      "negativeSearchTerms": [
+        "provider call (not made)",
+        "live retrieval (not made)",
+        "corpus ingestion (not made)",
+        "T12 authorization claim (not made)",
+        "public readiness claim (not made)"
+      ],
+      "nextScanRecommendation": "Re-scan only when DSCP pipeline surface behavior changes or a new integration tranche is authorized."
     }
   ]
 }
