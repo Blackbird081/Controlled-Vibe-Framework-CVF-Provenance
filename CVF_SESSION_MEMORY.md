@@ -59,7 +59,8 @@ Pain-point closure direction:
 ## Latest Continuity Note
 
 DSCP-T5 Parent Roadmap Source-Freshness Consolidation is `CLOSED_PASS_BOUNDED`
-at closure commit `1f140042` (worker return commit `41de7588`). All DSCP-T1 through T5 tranches are
+at closure commit `1f140042` (worker return commit `41de7588`; continuity
+correction `95afbc7f`). All DSCP-T1 through T5 tranches are
 `CLOSED_PASS_BOUNDED`.
 
 Delivered scope:
