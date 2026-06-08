@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-08
 
-Current mode marker: `dscp_t8_closed_pass_bounded_parent_dscp_closed`
+Current mode marker: `dscp_t9_local_pipeline_harness_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `dscp_t8_closed_pass_bounded_parent_dscp_closed`.
+Current mode: `dscp_t9_local_pipeline_harness_dispatched`.
 
 Active handoff:
 
@@ -58,8 +58,9 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-DSCP-T8 MKE1 Cross-Lane Wire-In is `CLOSED_PASS_BOUNDED` at closure commit
-`e96aacaf`. Parent DSCP roadmap T1-T8 is closed.
+DSCP-T9 Local Pipeline Harness is `DISPATCHED` for Claude at dispatch base
+`f331c10d`. DSCP-T8 MKE1 Cross-Lane Wire-In is `CLOSED_PASS_BOUNDED` at
+closure commit `e96aacaf`. Parent DSCP roadmap T1-T8 is closed.
 
 Delivered scope:
 
@@ -75,16 +76,21 @@ Delivered scope:
 - T8 completion review:
   `docs/reviews/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_COMPLETION_2026-06-08.md`;
 - parent DSCP roadmap closed after T1-T8 completion;
-- GC-051 coverage added for T8 source/test paths.
+- GC-051 coverage added for T8 source/test paths;
+- post-DSCP-T8 audit selected DSCP-T9 over parked Graphify/CLI and blocked
+  LPCI2-T12 lanes;
+- DSCP-T9 GC-018, roadmap, and work order are dispatched for a test-only
+  local deterministic pipeline harness.
 
-Boundary: T6 deterministic local helper plus governance checker/docs cleanup
-only; no provider call, corpus ingestion, T7/T8 execution, T12 authorization,
+Boundary: deterministic local DSCP helpers, adapters, and dispatched T9 test
+harness only; no provider call, corpus ingestion, T12 authorization,
 public-sync, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: audit next highest-value roadmap and author a bounded Claude
-work order.
+Next allowed move: Claude executes DSCP-T9 local pipeline harness work order
+`docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T9_LOCAL_PIPELINE_HARNESS_FOR_CLAUDE_2026-06-08.md`
+under WORKER_MUST_NOT_COMMIT and returns uncommitted artifacts for Codex review.
 
 LHW24 remains the latest closed numbered LHW wave in the state registry.
 
