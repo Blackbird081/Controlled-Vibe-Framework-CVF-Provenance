@@ -178,6 +178,27 @@ corpus ingestion, public-sync, production readiness, or public readiness claim.
 
 ---
 
+### DSCP-T5: Parent Roadmap Source-Freshness Consolidation (DISPATCHED)
+
+**Goal:** Refresh this parent roadmap so future agents see the current
+source-backed state after DSCP-T2, DSCP-T3, and DSCP-T4, rather than T1-era
+doc-only freshness text.
+
+**Deliverables:**
+- Roadmap: `docs/roadmaps/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_ROADMAP_2026-06-08.md`
+- GC-018: `docs/baselines/CVF_GC018_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_2026-06-08.md`
+- Audit: `docs/audits/CVF_DSCP_POST_T4_NEXT_ROADMAP_AUDIT_2026-06-08.md`
+- Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_FOR_CLAUDE_2026-06-08.md`
+- Worker return: `docs/reviews/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_WORKER_RETURN_2026-06-08.md`
+
+**Dispatch boundary:** documentation/source-freshness consolidation only. No
+TypeScript modification, provider call, live retrieval query, corpus ingestion,
+public-sync, production readiness, public readiness, or T12 authorization.
+
+**Commit mode:** `WORKER_MUST_NOT_COMMIT`
+
+---
+
 ## Non-Goals
 
 - Runtime TypeScript implementation of any proposed interface.
@@ -195,6 +216,7 @@ corpus ingestion, public-sync, production readiness, or public readiness claim.
 | DSCP-T2 | Standard contract authoring (TypeScript interfaces) | CLOSED_PASS_BOUNDED |
 | DSCP-T3 | Runtime pilot (CPF internal) | CLOSED_PASS_BOUNDED |
 | DSCP-T4 | Retrieval receipt runtime boundary | CLOSED_PASS_BOUNDED |
+| DSCP-T5 | Parent roadmap source-freshness consolidation | DISPATCHED |
 
 ## Acceptance Criteria
 
