@@ -233,7 +233,7 @@ production readiness, public readiness, or T12 authorization.
 
 ---
 
-### DSCP-T7: ECO Multi-Domain Pilot (HOLD_UNTIL_T6_PASS)
+### DSCP-T7: ECO Multi-Domain Pilot (CLOSED_PASS_BOUNDED)
 
 **Goal:** Prove domain-agnostic claim by bridging ECO RAG types into DSCP
 governed context pack. `buildECOGovernedPackRequest()` maps `RAGResult`
@@ -300,7 +300,7 @@ readiness, or T12.
 | DSCP-T4 | Retrieval receipt runtime boundary | CLOSED_PASS_BOUNDED |
 | DSCP-T5 | Parent roadmap source-freshness consolidation | CLOSED_PASS_BOUNDED |
 | DSCP-T6 | Scan descriptor runtime (CPF internal) | CLOSED_PASS_BOUNDED |
-| DSCP-T7 | ECO multi-domain pilot | HOLD_UNTIL_T6_PASS |
+| DSCP-T7 | ECO multi-domain pilot | CLOSED_PASS_BOUNDED |
 | DSCP-T8 | MKE1 cross-lane wire-in (LPF adapter) | HOLD_UNTIL_T7_PASS |
 
 ## Acceptance Criteria

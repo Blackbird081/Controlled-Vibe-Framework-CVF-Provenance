@@ -38,7 +38,8 @@ genuinely domain-agnostic by bridging the ECO RAG retrieval domain.
   `EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/src/types.ts` lines 23-38
 - ECO `Retriever` class (read-only reference for type awareness):
   `EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/src/retriever.ts`
-- DSCP-T6: `buildGovernedArtifactDescriptor()`. `CLOSED_PASS_BOUNDED` pending reviewer.
+- DSCP-T6: `buildGovernedArtifactDescriptor()`. `CLOSED_PASS_BOUNDED` at
+  closure commit `13cc1505`; session sync `c51a7045`.
 
 ## Scope / Target / Owner Boundary
 
@@ -46,7 +47,11 @@ genuinely domain-agnostic by bridging the ECO RAG retrieval domain.
 - New file: `EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/src/dscp.eco.adapter.ts`
 - New file: `EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/tests/dscp.eco.adapter.test.ts`
 - Function: `buildECOGovernedPackRequest(ragResult: RAGResult, envelope: GovernanceContextEnvelope): GovernedContextPackRequest`
-- Mapping: `RAGDocument.content` → `KnowledgeItem.content`; `RAGDocument.id` → `KnowledgeItem.id`; `RAGDocument.score` → metadata
+- Mapping: `RAGDocument.content` -> `KnowledgeItem.content`;
+  `RAGDocument.id` -> `KnowledgeItem.itemId`;
+  `RAGDocument.title` -> `KnowledgeItem.title`;
+  `RAGDocument.score` -> `KnowledgeItem.relevanceScore`;
+  `RAGDocument.domain ?? RAGDocument.documentType` -> `KnowledgeItem.source`.
 
 **Out of scope:**
 - No modification of `retriever.ts`, `types.ts`, `document.store.ts`, or any existing ECO file.
@@ -63,16 +68,18 @@ Predecessor source surfaces verified at `10b02a79`:
 | `RAGDocument` interface | `EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/src/types.ts` | 23-29 | VERIFIED |
 | `GovernedContextPackRequest` | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.context.contract.ts` | 78-84 | VERIFIED |
 | `GovernanceContextEnvelope` | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.context.contract.ts` | 58-73 | VERIFIED |
-| `ContextPackagerRequest.knowledgeItems` field | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/context.packager.contract.ts` | (to be verified by worker) | ACCEPT_PENDING_WORKER |
+| `ContextPackagerRequest.knowledgeItems` field | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/context.packager.contract.ts` | lines 29-38 | VERIFIED |
+| `KnowledgeItem` fields | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/knowledge.query.contract.ts` | lines 5-11 | VERIFIED |
 
-Acceptance verification: `tsc --noEmit` PASS + focused vitest all PASS + all 4
-governance gates COMPLIANT on committed range.
+Acceptance verification: cross-extension TypeScript check PASS with
+`npx tsc -p tsconfig.json --noEmit --rootDir ..`, focused vitest all PASS,
+and governance gates COMPLIANT on committed range.
 
 ## Acceptance Criteria
 
 | Criterion | Gate |
 |---|---|
-| `buildECOGovernedPackRequest()` compiles | `tsc --noEmit` PASS |
+| `buildECOGovernedPackRequest()` compiles | `npx tsc -p tsconfig.json --noEmit --rootDir ..` PASS |
 | Non-empty RAGResult maps to populated request | vitest PASS |
 | Empty RAGResult maps to empty knowledgeItems | vitest PASS |
 | RAGDocument fields preserved in KnowledgeItem | vitest PASS |

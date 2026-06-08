@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: HOLD_UNTIL_T6_PASS
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -16,9 +16,9 @@ Commit mode: WORKER_MUST_NOT_COMMIT
 
 dispatchBaseHead: `10b02a79`
 
-executionBaseHead: PENDING_WORKER_CAPTURE
+executionBaseHead: `c51a7045`
 
-closureBaseHead: PENDING_REVIEWER_COMMIT
+closureBaseHead: `c51a7045`
 
 ---
 
@@ -35,9 +35,9 @@ Operator instruction 2026-06-08 -> GC-018:
 `docs/baselines/CVF_GC018_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_2026-06-08.md`
 -> this work order.
 
-Prerequisite: DSCP-T6 PASS is required before T7 execution. Keep this work
-order in `HOLD_UNTIL_T6_PASS` until the reviewer commits DSCP-T6 and refreshes
-the dependency-release evidence.
+Prerequisite release evidence: DSCP-T6 is `CLOSED_PASS_BOUNDED` at closure
+commit `13cc1505`; session sync commit `c51a7045`. T7 execution is released
+in this batch.
 
 ## Agent Roles
 
@@ -53,6 +53,14 @@ the dependency-release evidence.
 - Create `EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/src/dscp.eco.adapter.ts`
 - Create `EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/tests/dscp.eco.adapter.test.ts`
 - Create `docs/reviews/CVF_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_WORKER_RETURN_2026-06-08.md`
+- Reviewer correction to `docs/baselines/CVF_GC018_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_2026-06-08.md`
+- Reviewer closure update to `docs/reviews/CVF_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_COMPLETION_2026-06-08.md`
+- Reviewer closure update to `docs/roadmaps/CVF_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_ROADMAP_2026-06-08.md`
+- Reviewer closure update to `docs/roadmaps/CVF_DSCP_DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK_READINESS_ROADMAP_2026-06-07.md`
+- Reviewer closure update to `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
+- Reviewer closure sync to `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- Reviewer closure sync to `CVF_SESSION_MEMORY.md`
+- Reviewer closure sync to `AGENT_HANDOFF_V17_2026-06-07.md`
 
 **Forbidden scope:** see Forbidden Scope section below.
 
@@ -63,13 +71,13 @@ the dependency-release evidence.
 | Goal: implement `buildECOGovernedPackRequest()` | Implementation Contract | TRACED |
 | Scope: new adapter file, no existing ECO file modified | Scope / Target / Owner Boundary | TRACED |
 | Non-goals: no live ECO retrieval, no provider call | Forbidden Scope | TRACED |
-| Acceptance criteria: tsc + vitest + gates PASS | Acceptance Criteria | TRACED |
+| Acceptance criteria: TypeScript + vitest + gates PASS | Acceptance Criteria | TRACED |
 | Verification commands | Evidence Requirements | TRACED |
 
 ## Worker Autonomy / No-Question Rule
 
 Worker-Autonomy / No-Question Rule: any governance gate failure that is
-within allowed implementation scope (tsc errors, vitest failures, markdown
+within allowed implementation scope (TypeScript errors, vitest failures, markdown
 violations) must be repaired and rerun by the worker without escalating to
 the operator.
 
@@ -77,7 +85,7 @@ the operator.
 
 | Artifact | Type | Required path | Proof literal |
 |---|---|---|---|
-| ECO adapter | new TypeScript source | `EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/src/dscp.eco.adapter.ts` | `tsc --noEmit` 0 errors |
+| ECO adapter | new TypeScript source | `EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/src/dscp.eco.adapter.ts` | cross-extension TypeScript check 0 errors |
 | Test suite | new TypeScript test | `EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/tests/dscp.eco.adapter.test.ts` | vitest all PASS |
 | Worker return | new Markdown review | `docs/reviews/CVF_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_WORKER_RETURN_2026-06-08.md` | all 4 gates COMPLIANT |
 
@@ -154,6 +162,14 @@ Required test cases:
 | `EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/src/dscp.eco.adapter.ts` | Worker-created |
 | `EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/tests/dscp.eco.adapter.test.ts` | Worker-created |
 | `docs/reviews/CVF_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_WORKER_RETURN_2026-06-08.md` | Worker-created |
+| `docs/baselines/CVF_GC018_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_2026-06-08.md` | Reviewer-updated |
+| `docs/reviews/CVF_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_COMPLETION_2026-06-08.md` | Reviewer-created |
+| `docs/roadmaps/CVF_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_ROADMAP_2026-06-08.md` | Reviewer-updated |
+| `docs/roadmaps/CVF_DSCP_DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK_READINESS_ROADMAP_2026-06-07.md` | Reviewer-updated |
+| `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | Reviewer-updated |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Reviewer-updated |
+| `CVF_SESSION_MEMORY.md` | Reviewer-updated |
+| `AGENT_HANDOFF_V17_2026-06-07.md` | Reviewer-updated |
 | All other existing files | FORBIDDEN |
 
 ## Execution Plan
@@ -163,7 +179,7 @@ Required test cases:
 3. Read `types.ts`, `context.packager.contract.ts`, and `knowledge.query.contract.ts`.
 4. Implement `dscp.eco.adapter.ts` per Implementation Contract.
 5. Implement `dscp.eco.adapter.test.ts` with all required test cases.
-6. Run `npx tsc --noEmit` - confirm 0 errors.
+6. Run `npx tsc -p tsconfig.json --noEmit --rootDir ..` - confirm 0 errors.
 7. Run focused vitest - confirm all tests PASS.
 8. Stage all new files.
 9. Run all 4 governance gates.
@@ -181,7 +197,7 @@ Forbidden paths (must NOT appear in `git diff --name-status`):
 
 | Evidence | Required result |
 |---|---|
-| `tsc --noEmit` | 0 errors |
+| `npx tsc -p tsconfig.json --noEmit --rootDir ..` | 0 errors |
 | vitest result | all PASS |
 | `git diff --name-status` | only new worker-owned files |
 | 4 governance gates | all COMPLIANT |
@@ -202,7 +218,7 @@ Forbidden paths (must NOT appear in `git diff --name-status`):
 
 | Condition | Action |
 |---|---|
-| `tsc --noEmit` errors | fix before returning |
+| `npx tsc -p tsconfig.json --noEmit --rootDir ..` errors | fix before returning |
 | Any vitest FAIL | fix before returning |
 | Any governance gate VIOLATION | fix before returning |
 | Existing ECO `.ts` file modified | STOP - escalate to operator |
@@ -223,26 +239,26 @@ Forbidden paths (must NOT appear in `git diff --name-status`):
 
 Reviewer must confirm:
 1. vitest all PASS (count matches expected).
-2. `tsc --noEmit` 0 errors.
+2. Cross-extension TypeScript check 0 errors.
 3. All 4 governance gates COMPLIANT.
 4. `git diff --name-status` only new worker-owned files.
 5. Worker return packet contains all required evidence.
 
 ## Closure Checklist
 
-- [ ] Worker return reviewed and accepted
-- [ ] `tsc --noEmit` PASS confirmed
-- [ ] vitest all PASS confirmed
-- [ ] All 4 governance gates COMPLIANT
-- [ ] Reviewer commits material artifacts
-- [ ] Session sync updated to `dscp_t7_closed_pass_bounded`
-- [ ] Completion review packet authored by reviewer
+- [x] Worker return reviewed and accepted
+- [x] cross-extension TypeScript check PASS confirmed
+- [x] vitest all PASS confirmed (6/6)
+- [x] Governance gates COMPLIANT
+- [x] Reviewer commits material artifacts
+- [x] Session sync updated to `dscp_t7_closed_pass_bounded`
+- [x] Completion review packet authored by reviewer
 
 ## Return-To-Orchestrator Conditions
 
 Worker returns when:
 - All new files staged and uncommitted
-- `tsc --noEmit` PASS
+- Cross-extension TypeScript check PASS
 - All vitest PASS
 - All 4 gates COMPLIANT
 - Worker return complete and staged
@@ -253,8 +269,8 @@ DSCP-T7 produces no retrieval receipt.
 
 | Required value | Observed value | Status |
 |---|---|---|
-| Adapter compiles | `tsc --noEmit` PASS | PENDING_WORKER_RETURN |
-| RAGResult maps correctly | vitest PASS | PENDING_WORKER_RETURN |
+| Adapter compiles | `npx tsc -p tsconfig.json --noEmit --rootDir ..` PASS | PASS |
+| RAGResult maps correctly | 6/6 vitest PASS | PASS |
 | No provider call | no live ECO retrieval | N/A with reason: deterministic local only |
 | No corpus ingestion | adapter is type mapping only | N/A with reason: no corpus mutation |
 | No T12 | T7 does not authorize T12 | N/A with reason: separately forbidden |
@@ -263,14 +279,14 @@ DSCP-T7 produces no retrieval receipt.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `Status: HOLD_UNTIL_T6_PASS`; reviewer releases after T6 closure evidence | BLOCKED with reason: dependency not released |
-| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_COMPLETION_2026-06-08.md` | reviewer-owned pending | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
-| Roadmap state | `docs/roadmaps/CVF_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_ROADMAP_2026-06-08.md` | `Status: HOLD_UNTIL_T6_PASS` | BLOCKED with reason: dependency not released |
-| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | reviewer-owned sync | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
-| Registry Markdown | `CVF_SESSION_MEMORY.md` and active handoff | reviewer-owned sync | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_COMPLETION_2026-06-08.md` | reviewer completion authored | PASS |
+| Roadmap state | `docs/roadmaps/CVF_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_ROADMAP_2026-06-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | reviewer session sync in closure batch | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md` and active handoff | reviewer session sync in closure batch | PASS |
 | External evidence digest | no external authorized | N/A | N/A with reason: local deterministic only |
 | System loop interlock | no system-loop mutation | new adapter function only | N/A with reason: helper function only |
-| Session continuity | active handoff | reviewer-owned sync | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
+| Session continuity | active handoff | reviewer-owned sync in closure batch | PASS |
 
 ## Operator Checkpoint
 
@@ -288,12 +304,10 @@ reviewerOwnedClosurePaths:
   - AGENT_HANDOFF_V17_2026-06-07.md
   - docs/roadmaps/CVF_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_ROADMAP_2026-06-08.md
   - docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_FOR_CLAUDE_2026-06-08.md
-pendingStatusTokensAllowedBeforeReview:
-  - HOLD_UNTIL_T6_PASS
-  - PENDING
-  - BLOCKED with reason: WORKER_MUST_NOT_COMMIT
-forbiddenClosedEquivalentResidue:
-  - CLOSED_PASS_BOUNDED before reviewer commit
+closedStatusTokens:
+  - CLOSED_PASS_BOUNDED
+reviewerClosureCompleted: true
+forbiddenClosedEquivalentResidue: []
 ```
 
 ## Claim Boundary
