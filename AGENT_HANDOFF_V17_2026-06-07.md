@@ -32,14 +32,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`dscp_t4_retrieval_receipt_runtime_boundary_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=audit post-DSCP-T4 and choose the next bounded roadmap only with explicit operator authorization; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`dscp_t5_parent_roadmap_source_freshness_consolidation_dispatched`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=Claude executes DSCP-T5 work order WORKER_MUST_NOT_COMMIT and returns staged/uncommitted artifacts; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`dscp_t4_retrieval_receipt_runtime_boundary_closed_pass_bounded`
+`dscp_t5_parent_roadmap_source_freshness_consolidation_dispatched`
 
-Current HEAD recorded for this handoff: `a98396dd`
-(DSCP-T4 material closure commit).
+Current HEAD recorded for this handoff: `2c1ad112`
+(DSCP-T5 dispatch commit).
 
 ## Active Boundary
 
@@ -55,42 +55,42 @@ in archived handoffs and governed completion packets.
 
 ## Latest Continuity Note
 
-DSCP-T4 Retrieval Receipt Runtime Boundary is `CLOSED_PASS_BOUNDED` at material
-commit `a98396dd`.
+DSCP-T5 Parent Roadmap Source-Freshness Consolidation is `DISPATCHED` at commit
+`2c1ad112`.
 
 Roadmap:
-`docs/roadmaps/CVF_DSCP_DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK_READINESS_ROADMAP_2026-06-07.md`.
+`docs/roadmaps/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_ROADMAP_2026-06-08.md`.
 
-Completion:
-`docs/reviews/CVF_DSCP_T4_RETRIEVAL_RECEIPT_RUNTIME_BOUNDARY_COMPLETION_2026-06-07.md`.
+Work order:
+`docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_FOR_CLAUDE_2026-06-08.md`.
 
-Result: added deterministic CPF `buildGovernedRetrievalReceipt()` helper and
-focused tests. Reviewer corrected `sourceArtifactIds` to snapshot copy.
-GC-051 registry covers DSCP-T4 receipt helper/test surfaces.
+Result: post-T4 audit, T5 GC-018 baseline, T5 roadmap, and Claude work order
+were authored. Parent DSCP roadmap now includes T5 as `DISPATCHED`.
 
-Boundary: deterministic local receipt builder only; no provider call, live
-retrieval query, response hash computation, corpus ingestion, public-sync,
-hosted readiness, production readiness, public readiness,
+Boundary: documentation/source-freshness dispatch only; no TypeScript
+modification, runtime behavior, provider call, live retrieval query, response
+hash computation, corpus ingestion, T12 authorization, public-sync, hosted
+readiness, production readiness, public readiness,
 provider-quality/cost/performance claim, memory reinjection, high-risk
 promotion, Learning Orchestrator runtime behavior, or autonomous mutation.
 
 ## Current Batch
 
-DSCP-T4 Retrieval Receipt Runtime Boundary is closed at material commit
-`a98396dd`.
+DSCP-T5 Parent Roadmap Source-Freshness Consolidation is dispatched at commit
+`2c1ad112`.
 
 Delivered scope:
 
-- helper: `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.retrieval.receipt.ts`;
-- tests: `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.governed.retrieval.receipt.test.ts`;
-- completion: `docs/reviews/CVF_DSCP_T4_RETRIEVAL_RECEIPT_RUNTIME_BOUNDARY_COMPLETION_2026-06-07.md`;
-- verification: CPF tsc PASS and focused vitest 24/24 PASS.
+- audit: `docs/audits/CVF_DSCP_POST_T4_NEXT_ROADMAP_AUDIT_2026-06-08.md`;
+- GC-018: `docs/baselines/CVF_GC018_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_2026-06-08.md`;
+- roadmap: `docs/roadmaps/CVF_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_ROADMAP_2026-06-08.md`;
+- work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_FOR_CLAUDE_2026-06-08.md`.
 
 ## Latest Work / Changes
 
-- Reviewed Claude DSCP-T4 return.
-- Applied bounded reviewer correction for `sourceArtifactIds` snapshot copy.
-- Closed DSCP-T4 as deterministic local receipt builder only.
+- Reviewed and closed DSCP-T4.
+- Audited post-T4 DSCP state.
+- Dispatched DSCP-T5 parent-roadmap source-freshness consolidation for Claude.
 
 ## Core Guard Self-Protection Authorization
 
@@ -122,10 +122,11 @@ history.
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
-Next allowed move: audit post-DSCP-T4 and choose the next bounded roadmap only
-with explicit operator authorization. Do not claim provider behavior,
-retrieval answer quality, public readiness, production readiness, or corpus
-ingestion from DSCP-T4.
+Next allowed move: Claude executes
+`docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T5_PARENT_ROADMAP_SOURCE_FRESHNESS_CONSOLIDATION_FOR_CLAUDE_2026-06-08.md`
+under `WORKER_MUST_NOT_COMMIT` and returns staged/uncommitted artifacts. Do not
+claim provider behavior, retrieval answer quality, public readiness, production
+readiness, corpus ingestion, or T12 authorization from DSCP-T5.
 
 LPCI2-T12 remains forbidden until a separate operator-authorized evidence path
 resolves EC-02 review on or after 2026-07-01, known `currentStatus`, known
