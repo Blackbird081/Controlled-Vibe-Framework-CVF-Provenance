@@ -183,7 +183,7 @@ corpus ingestion, public-sync, production readiness, or public readiness claim.
 
 ---
 
-### DSCP-T5: Parent Roadmap Source-Freshness Consolidation (DISPATCHED)
+### DSCP-T5: Parent Roadmap Source-Freshness Consolidation (CLOSED_PASS_BOUNDED)
 
 **Goal:** Refresh this parent roadmap so future agents see the current
 source-backed state after DSCP-T2, DSCP-T3, and DSCP-T4, rather than T1-era
@@ -199,6 +199,83 @@ doc-only freshness text.
 **Dispatch boundary:** documentation/source-freshness consolidation only. No
 TypeScript modification, provider call, live retrieval query, corpus ingestion,
 public-sync, production readiness, public readiness, or T12 authorization.
+
+**Commit mode:** `WORKER_MUST_NOT_COMMIT`
+
+**Closure result:** parent DSCP roadmap refreshed with T2-T4 source-backed
+state. Stale T1-era doc-only claims removed. Machine Closure Package updated
+to cover T1-T5. Post-T4 next roadmap note added. Worker return committed
+at `41de7588`; closure committed at `1f140042`.
+
+---
+
+### DSCP-T6: Scan Descriptor Runtime (DISPATCHED)
+
+**Goal:** Implement `buildGovernedArtifactDescriptor()`, the scan-side
+builder for the DSCP pipeline. Completes the full scan -> pack -> receipt
+cycle: scan descriptor (T6) -> governed pack (T3) -> governed receipt (T4).
+
+**Domain:** CPF internal (`CVF_CONTROL_PLANE_FOUNDATION`).
+
+**Deliverables:**
+- Roadmap: `docs/roadmaps/CVF_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_ROADMAP_2026-06-08.md`
+- GC-018: `docs/baselines/CVF_GC018_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_2026-06-08.md`
+- Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_FOR_CLAUDE_2026-06-08.md`
+- Runtime target: `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.artifact.descriptor.ts`
+- Test target: `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.governed.artifact.descriptor.test.ts`
+- Worker return: `docs/reviews/CVF_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_WORKER_RETURN_2026-06-08.md`
+
+**Dispatch boundary:** deterministic local scan descriptor construction only.
+No provider call, live retrieval query, corpus ingestion, public-sync,
+production readiness, public readiness, or T12 authorization.
+
+**Commit mode:** `WORKER_MUST_NOT_COMMIT`
+
+---
+
+### DSCP-T7: ECO Multi-Domain Pilot (HOLD_UNTIL_T6_PASS)
+
+**Goal:** Prove domain-agnostic claim by bridging ECO RAG types into DSCP
+governed context pack. `buildECOGovernedPackRequest()` maps `RAGResult`
+into `GovernedContextPackRequest` without modifying existing ECO files.
+
+**Domain:** `CVF_ECO_v1.4_RAG_PIPELINE`.
+
+**Deliverables:**
+- Roadmap: `docs/roadmaps/CVF_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_ROADMAP_2026-06-08.md`
+- GC-018: `docs/baselines/CVF_GC018_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_2026-06-08.md`
+- Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_FOR_CLAUDE_2026-06-08.md`
+- Runtime target: `EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/src/dscp.eco.adapter.ts`
+- Test target: `EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/tests/dscp.eco.adapter.test.ts`
+- Worker return: `docs/reviews/CVF_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_WORKER_RETURN_2026-06-08.md`
+
+**Dispatch boundary:** deterministic type adapter only. No live ECO retrieval,
+no provider call, corpus ingestion, public-sync, production readiness, or T12.
+
+**Commit mode:** `WORKER_MUST_NOT_COMMIT`
+
+---
+
+### DSCP-T8: MKE1 Cross-Lane Wire-In (HOLD_UNTIL_T7_PASS)
+
+**Goal:** Bridge LPF `MemoryContextBlock` into DSCP `GovernedContextPackage`,
+connecting MKE1-E1 memory enforcement output to DSCP governed packing.
+`buildLPFGovernedPackage()` maps `rawMemoryReleased: false` governance
+lock directly onto `rawContentReleased: false`.
+
+**Domain:** `CVF_LEARNING_PLANE_FOUNDATION` / MKE1.
+
+**Deliverables:**
+- Roadmap: `docs/roadmaps/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_ROADMAP_2026-06-08.md`
+- GC-018: `docs/baselines/CVF_GC018_DSCP_T8_MKE1_CROSS_LANE_WIREIN_2026-06-08.md`
+- Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T8_MKE1_CROSS_LANE_WIREIN_FOR_CLAUDE_2026-06-08.md`
+- Runtime target: `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.lpf.adapter.ts`
+- Test target: `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.lpf.adapter.test.ts`
+- Worker return: `docs/reviews/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_WORKER_RETURN_2026-06-08.md`
+
+**Dispatch boundary:** deterministic local type adapter only. No live memory
+retrieval, no provider call, corpus ingestion, public-sync, production
+readiness, or T12.
 
 **Commit mode:** `WORKER_MUST_NOT_COMMIT`
 
@@ -222,6 +299,9 @@ public-sync, production readiness, public readiness, or T12 authorization.
 | DSCP-T3 | Runtime pilot (CPF internal) | CLOSED_PASS_BOUNDED |
 | DSCP-T4 | Retrieval receipt runtime boundary | CLOSED_PASS_BOUNDED |
 | DSCP-T5 | Parent roadmap source-freshness consolidation | CLOSED_PASS_BOUNDED |
+| DSCP-T6 | Scan descriptor runtime (CPF internal) | DISPATCHED |
+| DSCP-T7 | ECO multi-domain pilot | HOLD_UNTIL_T6_PASS |
+| DSCP-T8 | MKE1 cross-lane wire-in (LPF adapter) | HOLD_UNTIL_T7_PASS |
 
 ## Acceptance Criteria
 

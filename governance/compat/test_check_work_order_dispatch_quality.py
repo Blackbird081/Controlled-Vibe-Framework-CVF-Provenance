@@ -1251,6 +1251,154 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
             report["violations"][0]["issues"],
         )
 
+    def test_dispatch_work_order_with_noncanonical_source_disposition_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_SOURCE_DISPOSITION_TEST_2026-06-08.md"
+        self._write("governance/contracts/source.ts", "export interface SourceThing { value: string; }\n")
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCHED",
+                    "Commit mode: WORKER_MAY_COMMIT",
+                    "dispatchBaseHead: abc123",
+                    "executionBaseHead: WORKER_MUST_CAPTURE_AT_START",
+                    "closureBaseHead: REVIEWER_CAPTURE",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Allowed-scope remediation is mandatory.",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| SourceThing | `governance/contracts/source.ts` | (worker to verify exact lines) | `SourceThing` | SourceThing | ACCEPT_PENDING_WORKER |",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        issues = report["violations"][0]["issues"]
+        self.assertIn(
+            "Source Verification disposition must be one of ACCEPT, REJECT, "
+            "or BLOCKED_SOURCE_NOT_FOUND; found `ACCEPT_PENDING_WORKER`",
+            issues,
+        )
+        self.assertIn(
+            "Source Verification row defers source facts to worker/future verification; "
+            "resolve before dispatch or set BLOCKED_SOURCE_NOT_FOUND",
+            issues,
+        )
+
+    def test_dispatch_work_order_with_pending_closed_pass_dependency_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_PENDING_DEPENDENCY_TEST_2026-06-08.md"
+        self._write("governance/contracts/source.ts", "export interface SourceThing { value: string; }\n")
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCHED",
+                    "Commit mode: WORKER_MAY_COMMIT",
+                    "dispatchBaseHead: abc123",
+                    "executionBaseHead: WORKER_MUST_CAPTURE_AT_START",
+                    "closureBaseHead: REVIEWER_CAPTURE",
+                    "Prerequisite: DSCP-T6 `CLOSED_PASS_BOUNDED` pending reviewer commit.",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Allowed-scope remediation is mandatory.",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| SourceThing | `governance/contracts/source.ts` | line 1 | `SourceThing` | SourceThing | ACCEPT |",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "dispatch/ready work order contains pending predecessor release language next to "
+            "`CLOSED_PASS` evidence; keep status HOLD/DRAFT until the prerequisite closure commit exists",
+            report["violations"][0]["issues"],
+        )
+
+    def test_dispatch_roadmap_with_pending_closed_pass_dependency_fails(self) -> None:
+        roadmap = "docs/roadmaps/CVF_PENDING_DEPENDENCY_ROADMAP_2026-06-08.md"
+        self._write(
+            roadmap,
+            "\n".join(
+                [
+                    "# Roadmap",
+                    "Status: DISPATCHED",
+                    "Predecessor: DSCP-T7 `CLOSED_PASS_BOUNDED` pending T7 implementation.",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([roadmap])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "dispatch/ready roadmap contains pending predecessor release language next to "
+            "`CLOSED_PASS` evidence; keep status HOLD/DRAFT until the prerequisite closure commit exists",
+            report["violations"][0]["issues"],
+        )
+
+    def test_hold_work_order_does_not_block_unrelated_runtime_change(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_HOLD_UNRELATED_RUNTIME_2026-06-08.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: HOLD_UNTIL_T1_PASS",
+                    "## Scope / Target / Owner Boundary",
+                    "- `EXTENSIONS/CVF_SAMPLE/src/owned.ts`",
+                ]
+            ),
+        )
+        self._write("EXTENSIONS/CVF_OTHER/src/unrelated.ts", "export const value = 1;\n")
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify(
+                [
+                    work_order,
+                    "EXTENSIONS/CVF_OTHER/src/unrelated.ts",
+                ]
+            )
+
+        self.assertTrue(report["compliant"])
+
+    def test_hold_work_order_blocks_owned_runtime_change(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_HOLD_OWNED_RUNTIME_2026-06-08.md"
+        owned_path = "EXTENSIONS/CVF_SAMPLE/src/owned.ts"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: HOLD_UNTIL_T1_PASS",
+                    "## Scope / Target / Owner Boundary",
+                    f"- `{owned_path}`",
+                ]
+            ),
+        )
+        self._write(owned_path, "export const value = 1;\n")
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order, owned_path])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "changed range includes runtime/source files while referenced work order "
+            f"`{work_order}` is still `HOLD_UNTIL_T1_PASS`; release/downgrade the work order "
+            f"before implementation. Runtime/source sample: {owned_path}. Referring artifact(s): {work_order}",
+            report["violations"][0]["issues"],
+        )
+
     def test_closed_work_order_with_open_rows_and_unchecked_boxes_fails(self) -> None:
         work_order = "docs/work_orders/CVF_WO_LHW10_T1_TEST_2026-05-28.md"
         self._write(

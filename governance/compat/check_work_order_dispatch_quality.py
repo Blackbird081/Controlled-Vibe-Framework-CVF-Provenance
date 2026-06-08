@@ -37,6 +37,33 @@ ALLOWED_COMMIT_MODES = {
     "WORKER_MAY_COMMIT",
     "WORKER_MUST_NOT_COMMIT",
 }
+ALLOWED_SOURCE_VERIFICATION_DISPOSITIONS = {
+    "ACCEPT",
+    "REJECT",
+    "BLOCKED_SOURCE_NOT_FOUND",
+}
+DEFERRED_SOURCE_VERIFICATION_RE = re.compile(
+    r"\b("
+    r"ACCEPT_PENDING_WORKER|PENDING_WORKER|UNVERIFIED|TBD|TODO|"
+    r"confirm later|confirm field name|verify during implementation|"
+    r"worker to verify|to be confirmed|inferred|stale-memory|placeholder|assume"
+    r")\b",
+    re.IGNORECASE,
+)
+PENDING_DEPENDENCY_LANGUAGE_RE = re.compile(
+    r"\bCLOSED_PASS(?:_BOUNDED)?\b[\s\S]{0,180}\b("
+    r"pending|required before|must be reviewer-committed before|"
+    r"reviewer commit required|before\s+(?:worker\s+)?execution|"
+    r"pending implementation|pending reviewer commit"
+    r")\b"
+    r"|"
+    r"\b("
+    r"pending|required before|must be reviewer-committed before|"
+    r"reviewer commit required|before\s+(?:worker\s+)?execution|"
+    r"pending implementation|pending reviewer commit"
+    r")\b[\s\S]{0,180}\bCLOSED_PASS(?:_BOUNDED)?\b",
+    re.IGNORECASE,
+)
 
 REQUIRED_SOURCE_COLUMNS = (
     "Claimed item",
@@ -483,6 +510,25 @@ def _parse_markdown_tables(text: str) -> list[dict[str, str]]:
             index += 1
         while index < len(lines) and "|" in lines[index]:
             raw_cells = [cell.strip() for cell in lines[index].strip().strip("|").split("|")]
+            is_source_verification_table = all(
+                column in headers
+                for column in (
+                    "Claimed item",
+                    "Source file",
+                    "Verified line/section",
+                    "Verified path or symbol",
+                    "Disposition",
+                )
+            )
+            if len(raw_cells) > len(headers) and is_source_verification_table and len(raw_cells) >= 6:
+                raw_cells = [
+                    raw_cells[0],
+                    raw_cells[1],
+                    raw_cells[2],
+                    " | ".join(raw_cells[3 : len(raw_cells) - 2]),
+                    raw_cells[-2],
+                    raw_cells[-1],
+                ]
             if len(raw_cells) >= len(headers):
                 rows.append(dict(zip(headers, raw_cells)))
             index += 1
@@ -856,8 +902,50 @@ def _validate_ready_source_blockers(text: str) -> list[str]:
     ]
 
 
+def _validate_source_verification_disposition_discipline(text: str) -> list[str]:
+    issues: list[str] = []
+    for row in _parse_markdown_tables(text):
+        raw_disposition = row.get("Disposition", "").strip().strip("`")
+        disposition = raw_disposition.upper()
+        if disposition and disposition not in ALLOWED_SOURCE_VERIFICATION_DISPOSITIONS:
+            issues.append(
+                "Source Verification disposition must be one of ACCEPT, REJECT, "
+                f"or BLOCKED_SOURCE_NOT_FOUND; found `{raw_disposition}`"
+            )
+        joined = " ".join(row.values())
+        if DEFERRED_SOURCE_VERIFICATION_RE.search(joined):
+            issues.append(
+                "Source Verification row defers source facts to worker/future verification; "
+                "resolve before dispatch or set BLOCKED_SOURCE_NOT_FOUND"
+            )
+    return sorted(set(issues))
+
+
+def _validate_dispatch_pending_dependency_language(text: str, artifact_label: str) -> list[str]:
+    text = re.split(r"(?im)^##\s+.*Reviewer Closure Conversion.*$", text, maxsplit=1)[0]
+    filtered_lines = [
+        line
+        for line in text.splitlines()
+        if "forbiddenClosedEquivalentResidue" not in line
+        and "pendingStatusTokensAllowedBeforeReview" not in line
+    ]
+    windows: list[str] = []
+    for index, line in enumerate(filtered_lines):
+        if not re.search(r"\b(?:Prerequisite|Prerequisites|Predecessor|Dependency|CLOSED_PASS)\b", line, re.IGNORECASE):
+            continue
+        next_line = filtered_lines[index + 1] if index + 1 < len(filtered_lines) else ""
+        windows.append(f"{line} {next_line}".strip())
+    if not any(PENDING_DEPENDENCY_LANGUAGE_RE.search(window) for window in windows):
+        return []
+    return [
+        f"dispatch/ready {artifact_label} contains pending predecessor release language next to "
+        "`CLOSED_PASS` evidence; keep status HOLD/DRAFT until the prerequisite closure commit exists"
+    ]
+
+
 def _validate_ready_dependency_release(text: str) -> list[str]:
     issues: list[str] = []
+    issues.extend(_validate_dispatch_pending_dependency_language(text, "work order"))
     for row in (row for table in _parse_any_markdown_tables(text) for row in table):
         disposition = _row_value(row, "Disposition").strip().strip("`").upper()
         joined = " ".join(row.values())
@@ -1341,6 +1429,7 @@ def _validate_work_order(path: str, text: str) -> list[str]:
         issues.extend(_validate_commit_mode_and_anchor_lifecycle(text))
         issues.extend(_validate_worker_completion_review_boundary(text))
         issues.extend(_validate_no_commit_reviewer_closure_contract(text))
+        issues.extend(_validate_source_verification_disposition_discipline(text))
 
     if dispatching and _is_connector_wave(path, text):
         wave_id = _extract_wave_id(path, text)
@@ -1394,6 +1483,9 @@ def _validate_roadmap(path: str, text: str) -> list[str]:
         wave_id = _extract_wave_id(path, text)
         if wave_id is not None and not _has_gc018_for_wave(wave_id):
             issues.append(f"LHW{wave_id} connector roadmap is dispatch/ready without fresh GC-018 baseline")
+    if _is_dispatch_status(status) and not _is_hold_status(status):
+        issues.extend(_validate_dispatch_pending_dependency_language(text, "roadmap"))
+        issues.extend(_validate_source_verification_disposition_discipline(text))
     issues.extend(_validate_accepted_source_rows(path, text))
     issues.extend(_validate_no_empty_range_commands(text))
     issues.extend(_validate_accept_owner_map_coverage(text))
@@ -1703,8 +1795,25 @@ def _validate_runtime_changes_against_referenced_work_orders(changed_files: list
         status = _extract_status(work_order_text)
         if not _is_hold_status(status):
             continue
-        sample_runtime = ", ".join(runtime_changed[:6])
-        suffix = "" if len(runtime_changed) <= 6 else f", ... (+{len(runtime_changed) - 6} more)"
+        ownership_text = "\n".join(
+            _extract_section(work_order_text, heading)
+            for heading in (
+                "Scope / Target / Owner Boundary",
+                "Required Artifact Manifest",
+                "Write Ownership",
+                "Work-Order Fulfillment Manifest",
+            )
+        )
+        owned_patterns = sorted(set(_extract_paths(ownership_text)))
+        matched_runtime = [
+            changed_path
+            for changed_path in runtime_changed
+            if any(_path_matches_pattern(changed_path, pattern) for pattern in owned_patterns)
+        ]
+        if not matched_runtime:
+            continue
+        sample_runtime = ", ".join(matched_runtime[:6])
+        suffix = "" if len(matched_runtime) <= 6 else f", ... (+{len(matched_runtime) - 6} more)"
         referrers = ", ".join(sorted(referring_artifacts.get(work_order_path, set()))[:4])
         violations.append(
             {

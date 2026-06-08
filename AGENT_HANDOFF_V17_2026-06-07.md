@@ -114,6 +114,8 @@ Protected paths:
 - `AGENTS.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `governance/compat/check_work_order_dispatch_quality.py`
+- `governance/compat/test_check_work_order_dispatch_quality.py`
 - `governance/compat/run_local_governance_hook_chain.py`
 - `governance/compat/test_run_local_governance_hook_chain.py`
 
@@ -121,6 +123,11 @@ Operator authorization: 2026-06-07 operator instructed Codex to proceed with
 the proposed Governance Fast Reviewer Gate / Commit Latency Reduction roadmap
 and to schedule/execute compact rotation for `AGENT_HANDOFF_V16_2026-06-06.md`
 and `CVF_SESSION_MEMORY.md`.
+
+Additional operator authorization: 2026-06-08 operator instructed Codex to
+tighten the CVF foundation after DSCP-T6/T7/T8 work-order findings, so future
+orchestrators cannot dispatch low-quality work orders with pending predecessor
+dependencies or deferred Source Verification.
 
 Rollback boundary: revert only the fast reviewer gate runner/test updates,
 V17 rotation pointers, session front-door compacting, and matching continuity
