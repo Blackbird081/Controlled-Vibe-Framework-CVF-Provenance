@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`dscp_t8_closed_pass_bounded_parent_dscp_clos
 
 `dscp_t8_closed_pass_bounded_parent_dscp_closed`
 
-Current HEAD recorded for this handoff: `28329a61`
-(DSCP-T7 closure sync parent before T8 closure).
+Current HEAD recorded for this handoff: `e96aacaf`
+(DSCP-T8 closure commit).
 
 ## Active Boundary
 
@@ -55,8 +55,8 @@ in archived handoffs and governed completion packets.
 
 ## Latest Continuity Note
 
-DSCP-T8 MKE1 Cross-Lane Wire-In is `CLOSED_PASS_BOUNDED` in the current
-closure batch. Parent DSCP roadmap T1-T8 is closed.
+DSCP-T8 MKE1 Cross-Lane Wire-In is `CLOSED_PASS_BOUNDED` at closure commit
+`e96aacaf`. Parent DSCP roadmap T1-T8 is closed.
 
 Result: T6 deterministic scan descriptor helper and tests are present from the
 worker return; GC-051 now covers the T6 source/test paths; dispatch-quality now
@@ -74,7 +74,7 @@ production readiness, public readiness, or live governance proof.
 
 ## Current Batch
 
-DSCP-T8 closure is in progress on base `28329a61`.
+DSCP-T8 closure commit is `e96aacaf`.
 
 Delivered scope:
 

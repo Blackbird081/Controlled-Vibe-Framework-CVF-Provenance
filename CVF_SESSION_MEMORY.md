@@ -58,8 +58,8 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-DSCP-T8 MKE1 Cross-Lane Wire-In is `CLOSED_PASS_BOUNDED` in the current
-closure batch. Parent DSCP roadmap T1-T8 is closed.
+DSCP-T8 MKE1 Cross-Lane Wire-In is `CLOSED_PASS_BOUNDED` at closure commit
+`e96aacaf`. Parent DSCP roadmap T1-T8 is closed.
 
 Delivered scope:
 
