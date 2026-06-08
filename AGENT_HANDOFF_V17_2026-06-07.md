@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`dscp_t9_closed_pass_bounded`; active handoff
 
 `dscp_t9_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `5c90506a`
-(DSCP-T9 material commit; closure batch pending).
+Current HEAD recorded for this handoff: `87fe7a69`
+(DSCP-T9 closure batch complete; Implementation-First Absorption Pattern governance doc pending commit).
 
 ## Active Boundary
 
@@ -75,7 +75,7 @@ readiness, or live governance proof.
 
 ## Current Batch
 
-DSCP-T9 closure batch. Material commit `5c90506a`.
+DSCP-T9 closure batch. Material commit `5c90506a`; HEAD now `87fe7a69`.
 
 Delivered scope:
 
