@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`dscp_t9_local_pipeline_harness_dispatched`; 
 
 `dscp_t9_local_pipeline_harness_dispatched`
 
-Current HEAD recorded for this handoff: `f331c10d`
-(DSCP-T8 session sync commit and DSCP-T9 dispatch base).
+Current HEAD recorded for this handoff: `7e6988ac`
+(DSCP-T9 dispatch commit).
 
 ## Active Boundary
 
@@ -55,9 +55,10 @@ in archived handoffs and governed completion packets.
 
 ## Latest Continuity Note
 
-DSCP-T9 Local Pipeline Harness is `DISPATCHED` for Claude at dispatch base
-`f331c10d`. DSCP-T8 MKE1 Cross-Lane Wire-In is `CLOSED_PASS_BOUNDED` at
-closure commit `e96aacaf`. Parent DSCP roadmap T1-T8 is closed.
+DSCP-T9 Local Pipeline Harness is `DISPATCHED` for Claude at dispatch commit
+`7e6988ac` and dispatch base `f331c10d`. DSCP-T8 MKE1 Cross-Lane Wire-In is
+`CLOSED_PASS_BOUNDED` at closure commit `e96aacaf`. Parent DSCP roadmap T1-T8
+is closed.
 
 Result: T6 deterministic scan descriptor helper and tests are present from the
 worker return; GC-051 now covers the T6 source/test paths; dispatch-quality now

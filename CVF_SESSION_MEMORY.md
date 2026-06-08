@@ -58,9 +58,10 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-DSCP-T9 Local Pipeline Harness is `DISPATCHED` for Claude at dispatch base
-`f331c10d`. DSCP-T8 MKE1 Cross-Lane Wire-In is `CLOSED_PASS_BOUNDED` at
-closure commit `e96aacaf`. Parent DSCP roadmap T1-T8 is closed.
+DSCP-T9 Local Pipeline Harness is `DISPATCHED` for Claude at dispatch commit
+`7e6988ac` and dispatch base `f331c10d`. DSCP-T8 MKE1 Cross-Lane Wire-In is
+`CLOSED_PASS_BOUNDED` at closure commit `e96aacaf`. Parent DSCP roadmap T1-T8
+is closed.
 
 Delivered scope:
 
