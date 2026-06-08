@@ -58,8 +58,8 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-DSCP-T7 ECO Multi-Domain Pilot is `CLOSED_PASS_BOUNDED` in the current closure
-batch.
+DSCP-T7 ECO Multi-Domain Pilot is `CLOSED_PASS_BOUNDED` at closure commit
+`958f8d2b`.
 
 Delivered scope:
 

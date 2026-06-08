@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`dscp_t7_closed_pass_bounded`; active handoff
 
 `dscp_t7_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `c51a7045`
-(DSCP-T6 closure sync parent before T7 closure).
+Current HEAD recorded for this handoff: `958f8d2b`
+(DSCP-T7 closure commit).
 
 ## Active Boundary
 
@@ -55,8 +55,8 @@ in archived handoffs and governed completion packets.
 
 ## Latest Continuity Note
 
-DSCP-T7 ECO Multi-Domain Pilot is `CLOSED_PASS_BOUNDED` in the current closure
-batch.
+DSCP-T7 ECO Multi-Domain Pilot is `CLOSED_PASS_BOUNDED` at closure commit
+`958f8d2b`.
 
 Result: T6 deterministic scan descriptor helper and tests are present from the
 worker return; GC-051 now covers the T6 source/test paths; dispatch-quality now
@@ -76,7 +76,7 @@ governance proof.
 
 ## Current Batch
 
-DSCP-T7 closure is in progress on base `c51a7045`.
+DSCP-T7 closure commit is `958f8d2b`.
 
 Delivered scope:
 
