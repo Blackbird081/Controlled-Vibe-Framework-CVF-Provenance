@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -25,16 +25,16 @@ T6 supplies `buildGovernedArtifactDescriptor()` with gate enforcement so the
 full governed pipeline can be exercised end-to-end:
 
 ```
-[scan descriptor]  ← T6 (this tranche)
-      ↓
+[scan descriptor]  <- T6 (this tranche)
+      |
 [GovernedContextPackRequest]
-      ↓
-GovernedContextPackerContract.pack()  ← T3
-      ↓
+      |
+GovernedContextPackerContract.pack()  <- T3
+      |
 [GovernedContextPackage]
-      ↓
-buildGovernedRetrievalReceipt()  ← T4
-      ↓
+      |
+buildGovernedRetrievalReceipt()  <- T4
+      |
 [GovernedRetrievalReceipt]
 ```
 
@@ -71,12 +71,12 @@ buildGovernedRetrievalReceipt()  ← T4
 
 | Step | Deliverable | Status |
 |---|---|---|
-| 1 | GC-018 baseline | DISPATCHED |
-| 2 | Work order | DISPATCHED |
-| 3 | Implement `dscp.governed.artifact.descriptor.ts` | PENDING |
-| 4 | Implement `dscp.governed.artifact.descriptor.test.ts` | PENDING |
-| 5 | tsc --noEmit + vitest + governance gates | PENDING |
-| 6 | Worker return | PENDING |
+| 1 | GC-018 baseline | CLOSED_PASS_BOUNDED |
+| 2 | Work order | CLOSED_PASS_BOUNDED |
+| 3 | Implement `dscp.governed.artifact.descriptor.ts` | CLOSED_PASS_BOUNDED |
+| 4 | Implement `dscp.governed.artifact.descriptor.test.ts` | CLOSED_PASS_BOUNDED |
+| 5 | tsc --noEmit + vitest + governance gates | CLOSED_PASS_BOUNDED |
+| 6 | Worker return | CLOSED_PASS_BOUNDED |
 
 ## Acceptance Criteria
 
@@ -127,14 +127,14 @@ T12 remains NOT YET AUTHORIZED. This tranche does not authorize T12.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_FOR_CLAUDE_2026-06-08.md` | `Status: DISPATCHED` | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
-| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_COMPLETION_2026-06-08.md` | reviewer-owned pending | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
-| Roadmap state | this file | `Status: DISPATCHED` until reviewer closure | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
-| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | reviewer-owned session sync | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
-| Registry Markdown | `CVF_SESSION_MEMORY.md` and active handoff | reviewer-owned session sync | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_FOR_CLAUDE_2026-06-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_COMPLETION_2026-06-08.md` | reviewer completion authored | PASS |
+| Roadmap state | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | reviewer session sync in closure batch | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md` and active handoff | reviewer session sync in closure batch | PASS |
 | External evidence digest | external artifact | no external artifact authorized | N/A with reason: local deterministic only |
 | System loop interlock | no system-loop mutation | new local function only | N/A with reason: helper function only |
-| Session continuity | active session front door and handoff | reviewer-owned sync | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
+| Session continuity | active session front door and handoff | reviewer-owned sync in closure batch | PASS |
 
 ## Claim Boundary
 

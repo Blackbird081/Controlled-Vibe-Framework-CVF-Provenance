@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -16,9 +16,9 @@ Commit mode: WORKER_MUST_NOT_COMMIT
 
 dispatchBaseHead: `10b02a79`
 
-executionBaseHead: PENDING_WORKER_CAPTURE
+executionBaseHead: `10b02a79`
 
-closureBaseHead: PENDING_REVIEWER_COMMIT
+closureBaseHead: `8a01da2b`
 
 ---
 
@@ -51,6 +51,12 @@ Predecessor: DSCP-T5 `CLOSED_PASS_BOUNDED` at `1f140042`.
 - Create `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.artifact.descriptor.ts`
 - Create `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.governed.artifact.descriptor.test.ts`
 - Create `docs/reviews/CVF_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_WORKER_RETURN_2026-06-08.md`
+- Reviewer closure update to `docs/reviews/CVF_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_COMPLETION_2026-06-08.md`
+- Reviewer closure update to `docs/roadmaps/CVF_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_ROADMAP_2026-06-08.md`
+- Reviewer closure update to `docs/roadmaps/CVF_DSCP_DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK_READINESS_ROADMAP_2026-06-07.md`
+- Reviewer closure sync to `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- Reviewer closure sync to `CVF_SESSION_MEMORY.md`
+- Reviewer closure sync to `AGENT_HANDOFF_V17_2026-06-07.md`
 
 **Forbidden scope:** see Source Verification and Forbidden Scope sections below.
 
@@ -200,6 +206,12 @@ Deterministic vitest test file. Required test cases:
 | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.artifact.descriptor.ts` | Worker-created | new file |
 | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.governed.artifact.descriptor.test.ts` | Worker-created | new file |
 | `docs/reviews/CVF_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_WORKER_RETURN_2026-06-08.md` | Worker-created | new file |
+| `docs/reviews/CVF_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_COMPLETION_2026-06-08.md` | Reviewer-created | closure review |
+| `docs/roadmaps/CVF_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_ROADMAP_2026-06-08.md` | Reviewer-updated | closure status |
+| `docs/roadmaps/CVF_DSCP_DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK_READINESS_ROADMAP_2026-06-07.md` | Reviewer-updated | parent status |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Reviewer-updated | session continuity |
+| `CVF_SESSION_MEMORY.md` | Reviewer-updated | session continuity |
+| `AGENT_HANDOFF_V17_2026-06-07.md` | Reviewer-updated | session continuity |
 | All other existing files | FORBIDDEN | no modification |
 
 ## Execution Plan
@@ -296,15 +308,15 @@ Reviewer must confirm before committing:
 
 ## Closure Checklist
 
-- [ ] Worker return packet reviewed and accepted
-- [ ] `tsc --noEmit` PASS confirmed
-- [ ] vitest all PASS confirmed (count recorded)
-- [ ] All 4 governance gates COMPLIANT confirmed
-- [ ] `git diff --name-status` scope confirmed
-- [ ] Reviewer commits material artifacts
-- [ ] Reviewer updates `CVF_SESSION/ACTIVE_SESSION_STATE.json` to `dscp_t6_closed_pass_bounded`
-- [ ] Reviewer updates `CVF_SESSION_MEMORY.md` and active handoff
-- [ ] Completion review packet authored by reviewer
+- [x] Worker return packet reviewed and accepted
+- [x] `tsc --noEmit` PASS confirmed
+- [x] vitest all PASS confirmed (12/12)
+- [x] All governance gates COMPLIANT confirmed
+- [x] `git diff --name-status` scope confirmed
+- [x] Reviewer commits material artifacts
+- [x] Reviewer updates `CVF_SESSION/ACTIVE_SESSION_STATE.json` to `dscp_t6_closed_pass_bounded`
+- [x] Reviewer updates `CVF_SESSION_MEMORY.md` and active handoff
+- [x] Completion review packet authored by reviewer
 
 ## Return-To-Orchestrator Conditions
 
@@ -332,20 +344,20 @@ evidence for the scan descriptor builder.
 | No provider call | no live/provider route in implementation | N/A with reason: deterministic local only |
 | No corpus ingestion | scan descriptor is metadata only | N/A with reason: no corpus mutation |
 | No T12 authorization | T6 does not authorize T12 | N/A with reason: T12 requires separate authorization |
-| No existing file modified | `git diff --name-status` | PENDING_REVIEWER_VERIFY |
+| No existing file modified outside reviewer closure scope | `git diff --name-status` | PASS |
 
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `Status: DISPATCHED`; reviewer updates to `CLOSED_PASS_BOUNDED` | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
-| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_COMPLETION_2026-06-08.md` | reviewer-owned pending | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
-| Roadmap state | `docs/roadmaps/CVF_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_ROADMAP_2026-06-08.md` | `Status: DISPATCHED` until reviewer closure | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
-| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | reviewer-owned session sync | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
-| Registry Markdown | `CVF_SESSION_MEMORY.md` and active handoff | reviewer-owned session sync | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_COMPLETION_2026-06-08.md` | reviewer completion authored | PASS |
+| Roadmap state | `docs/roadmaps/CVF_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_ROADMAP_2026-06-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | reviewer session sync in closure batch | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md` and active handoff | reviewer session sync in closure batch | PASS |
 | External evidence digest | external artifact | no external artifact authorized | N/A with reason: local deterministic only |
 | System loop interlock | no system-loop mutation | new local function only | N/A with reason: helper function only |
-| Session continuity | active session front door and handoff | reviewer-owned sync | BLOCKED with reason: WORKER_MUST_NOT_COMMIT |
+| Session continuity | active session front door and handoff | reviewer-owned sync in closure batch | PASS |
 
 ## Operator Checkpoint
 
@@ -363,12 +375,10 @@ reviewerOwnedClosurePaths:
   - AGENT_HANDOFF_V17_2026-06-07.md
   - docs/roadmaps/CVF_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_ROADMAP_2026-06-08.md
   - docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_FOR_CLAUDE_2026-06-08.md
-pendingStatusTokensAllowedBeforeReview:
-  - DISPATCHED
-  - PENDING
-  - BLOCKED with reason: WORKER_MUST_NOT_COMMIT
-forbiddenClosedEquivalentResidue:
-  - CLOSED_PASS_BOUNDED before reviewer commit
+closedStatusTokens:
+  - CLOSED_PASS_BOUNDED
+reviewerClosureCompleted: true
+forbiddenClosedEquivalentResidue: []
 ```
 
 ---

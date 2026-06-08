@@ -32,14 +32,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`dscp_t6_worker_return_pending_review_guard_hardened`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=Codex reviews/closes DSCP-T6 before any T7 execution; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`dscp_t6_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=refresh DSCP-T6 dependency-release evidence and execute DSCP-T7; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`dscp_t6_worker_return_pending_review_guard_hardened`
+`dscp_t6_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `9db36c8c`
-(DSCP-T6 worker-return and dispatch-quality hardening material commit).
+Current HEAD recorded for this handoff: `8a01da2b`
+(DSCP-T6 session-sync parent before reviewer closure).
 
 ## Active Boundary
 
@@ -55,15 +55,15 @@ in archived handoffs and governed completion packets.
 
 ## Latest Continuity Note
 
-DSCP-T6 worker-return and dispatch-quality hardening material commit
-`9db36c8c` is pending Codex reviewer closure.
+DSCP-T6 Scan Descriptor Runtime is `CLOSED_PASS_BOUNDED` in the current
+closure batch.
 
 Result: T6 deterministic scan descriptor helper and tests are present from the
 worker return; GC-051 now covers the T6 source/test paths; dispatch-quality now
 blocks noncanonical Source Verification dispositions, deferred worker/future
 source verification, and dispatch/ready packets with pending CLOSED_PASS
-predecessor language. T7 and T8 packets are prepared but held:
-`HOLD_UNTIL_T6_PASS` and `HOLD_UNTIL_T7_PASS`.
+predecessor language. T7 is eligible for refreshed dependency-release evidence
+and execution after this closure; T8 remains `HOLD_UNTIL_T7_PASS`.
 
 Verification: reviewer-fast PASS, dispatch-quality PASS, GC-051 PASS, CPF
 `npm run check` PASS, focused T6 vitest 12/12 PASS, pre-commit 36/36 PASS.
@@ -75,21 +75,21 @@ governance proof.
 
 ## Current Batch
 
-DSCP-T6 worker-return and dispatch-quality hardening material commit is
-`9db36c8c`.
+DSCP-T6 closure is in progress on base `8a01da2b`.
 
 Delivered scope:
 
 - T6 worker return: `docs/reviews/CVF_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_WORKER_RETURN_2026-06-08.md`;
 - T6 source: `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.artifact.descriptor.ts`;
 - T6 tests: `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.governed.artifact.descriptor.test.ts`;
+- T6 completion: `docs/reviews/CVF_DSCP_T6_SCAN_DESCRIPTOR_RUNTIME_COMPLETION_2026-06-08.md`;
 - guard hardening: `governance/compat/check_work_order_dispatch_quality.py`;
 - guard tests: `governance/compat/test_check_work_order_dispatch_quality.py`;
 - T7/T8 prepared HOLD packets in `docs/roadmaps/` and `docs/work_orders/`.
 
 ## Latest Work / Changes
 
-- Reviewed DSCP-T6 worker return quality.
+- Closed DSCP-T6 worker return quality review.
 - Hardened dispatch-quality guard for repeated orchestrator packet defects.
 - Downgraded T7/T8 from premature DISPATCHED to dependency-held packets.
 
@@ -130,11 +130,10 @@ history.
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
-Next allowed move: Codex reviews/closes DSCP-T6 in a bounded closure batch.
-After DSCP-T6 closure, refresh dependency-release evidence before T7 can move
-from `HOLD_UNTIL_T6_PASS` to execution. DSCP-T8 remains
-`HOLD_UNTIL_T7_PASS`. Parked lanes remain Live Redis, DEP2, and external
-receipt-anchor.
+Next allowed move: refresh DSCP-T6 dependency-release evidence and execute
+DSCP-T7 ECO Multi-Domain Pilot. DSCP-T8 remains `HOLD_UNTIL_T7_PASS` until
+DSCP-T7 closure evidence exists. Parked lanes remain Live Redis, DEP2, and
+external receipt-anchor.
 
 LPCI2-T12 remains forbidden until a separate operator-authorized evidence path
 resolves EC-02 review on or after 2026-07-01, known `currentStatus`, known

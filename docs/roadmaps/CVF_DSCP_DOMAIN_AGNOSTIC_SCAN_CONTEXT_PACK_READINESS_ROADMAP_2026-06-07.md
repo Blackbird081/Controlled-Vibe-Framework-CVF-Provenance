@@ -209,7 +209,7 @@ at `41de7588`; closure committed at `1f140042`.
 
 ---
 
-### DSCP-T6: Scan Descriptor Runtime (DISPATCHED)
+### DSCP-T6: Scan Descriptor Runtime (CLOSED_PASS_BOUNDED)
 
 **Goal:** Implement `buildGovernedArtifactDescriptor()`, the scan-side
 builder for the DSCP pipeline. Completes the full scan -> pack -> receipt
@@ -299,7 +299,7 @@ readiness, or T12.
 | DSCP-T3 | Runtime pilot (CPF internal) | CLOSED_PASS_BOUNDED |
 | DSCP-T4 | Retrieval receipt runtime boundary | CLOSED_PASS_BOUNDED |
 | DSCP-T5 | Parent roadmap source-freshness consolidation | CLOSED_PASS_BOUNDED |
-| DSCP-T6 | Scan descriptor runtime (CPF internal) | DISPATCHED |
+| DSCP-T6 | Scan descriptor runtime (CPF internal) | CLOSED_PASS_BOUNDED |
 | DSCP-T7 | ECO multi-domain pilot | HOLD_UNTIL_T6_PASS |
 | DSCP-T8 | MKE1 cross-lane wire-in (LPF adapter) | HOLD_UNTIL_T7_PASS |
 
