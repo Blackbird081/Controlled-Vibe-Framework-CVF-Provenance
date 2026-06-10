@@ -73,3 +73,12 @@ export type {
   ContextProfileEvidenceSensitivity,
   ContextProfileFreshnessTag,
 } from "./context.profile.contract";
+
+export { applyDomainProfileToDescriptorInput } from "./dscp.domain.profile.contract";
+export type {
+  DomainProfileId,
+  DscpDomainFamily,
+  DscpDomainProfile,
+  DomainProfileApplyOptions,
+  DomainProfileApplyResult,
+} from "./dscp.domain.profile.contract";

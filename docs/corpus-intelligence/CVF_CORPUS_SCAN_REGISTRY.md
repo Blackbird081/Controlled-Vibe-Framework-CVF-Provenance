@@ -88,6 +88,8 @@ prior scan here before starting new work.
 | `MLW3-RT1 Evidence-To-Learning Runtime Proof` | PROJECT_SOURCE | SCANNED_WITH_FINDINGS | MLW3-RT1 | 8 | route-visible metadata-only evidenceToLearningReadout; deterministic + Alibaba live proof; no truth mutation/orchestrator/public claim |
 | `MLW4-MLW6 RT1 Continuity Audit Simulation Runtime Chain` | PROJECT_SOURCE | SCANNED_WITH_FINDINGS | MLW4-MLW6-RT1 | 8 | route-visible metadata-only continuity/audit/simulation readouts; deterministic + Alibaba live proof; no mutation/promotion/orchestrator/public claim |
 | `External Review GAP1 extension README owner surfaces` | CVF_EXTENSION | SCANNED | ER-GAP1 | 2 | Skill Library and MCP README owner surfaces accepted only for Core KB overlap mapping; no runtime/public readiness claim |
+| `CVF CPF DSCP-T10 domain profile contract source/export` | CVF_EXTENSION | SCANNED | DSCP-T10 | 2 | New deterministic domain-profile contract plus CPF export barrel; no corpus content ingested; no findings |
+| `CVF CPF DSCP-T10 domain profile contract tests` | CVF_EXTENSION | SCANNED | DSCP-T10 | 1 | 17 vitest assertions covering legal_policy/company_docs/technical_project profiles; no corpus content ingested; no findings |
 
 ---
 

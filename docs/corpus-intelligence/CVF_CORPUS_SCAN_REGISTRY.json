@@ -4,7 +4,7 @@
   "guard": "governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md",
   "checker": "governance/compat/check_corpus_scan_registry.py",
   "lastUpdated": "2026-06-10",
-  "updatedBy": "claude-sonnet-4-6",
+  "updatedBy": "Claude (DSCP-T10 worker)",
   "allowedCorpusTypes": [
     "LEGACY_FOLDER",
     "PROJECT_SOURCE",
@@ -2059,6 +2059,45 @@
       "priorAbsorption": {},
       "hashAlgorithm": null,
       "hashInput": null
+    },
+    {
+      "id": "dscp-t10-domain-profile-contract-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF CPF DSCP-T10 domain profile contract source/export",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.domain.profile.contract.ts",
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/control.plane.context.barrel.ts"
+      ],
+      "fileCount": 2,
+      "status": "SCANNED",
+      "scanWave": "DSCP-T10",
+      "scanDate": "2026-06-10",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_DSCP_T10_DOMAIN_PROFILE_AND_SCAN_ADAPTER_CONTRACT_WORKER_RETURN_2026-06-10.md",
+      "notes": "DSCP-T10 new source contract plus CPF export barrel. Domain-profile helper; no corpus content ingested; no findings.",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED"
+    },
+    {
+      "id": "dscp-t10-domain-profile-contract-test",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF CPF DSCP-T10 domain profile contract tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.domain.profile.contract.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "scanWave": "DSCP-T10",
+      "scanDate": "2026-06-10",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_DSCP_T10_DOMAIN_PROFILE_AND_SCAN_ADAPTER_CONTRACT_WORKER_RETURN_2026-06-10.md",
+      "notes": "DSCP-T10 focused test file. 17 vitest assertions; no corpus content ingested; no findings.",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED"
     }
   ]
 }
