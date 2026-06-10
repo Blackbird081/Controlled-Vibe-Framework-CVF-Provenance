@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`dscp_t10_domain_profile_dispatched`; active 
 
 `dscp_t10_domain_profile_dispatched`
 
-Current HEAD recorded for this handoff: `27123c55`
-(parent of DSCP-T10 dispatch sync).
+Current HEAD recorded for this handoff: `c15214f3`
+(DSCP-T10 dispatch commit; parent of this handoff-sync commit).
 
 ## Active Boundary
 
