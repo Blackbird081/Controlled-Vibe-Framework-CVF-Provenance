@@ -59,7 +59,7 @@ Pain-point closure direction:
 ## Latest Continuity Note
 
 DSCP-T11 Profile-Aware Pipeline Harness is `CLOSED_PASS_BOUNDED` at material
-commit `4c39ce77`. All DSCP tranches T1 through T11 are
+commit `4c39ce77` and closure commit `6ac0a5f4`. All DSCP tranches T1 through T11 are
 `CLOSED_PASS_BOUNDED`.
 
 DSCP-T11 closure package:

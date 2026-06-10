@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`dscp_t11_profile_aware_pipeline_harness_clos
 
 `dscp_t11_profile_aware_pipeline_harness_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `4c39ce77`
-(DSCP-T11 material commit; closure commit will be followed by session sync).
+Current HEAD recorded for this handoff: `6ac0a5f4`
+(DSCP-T11 closure commit; parent of this handoff-sync commit).
 
 ## Active Boundary
 
@@ -58,7 +58,7 @@ in archived handoffs and governed completion packets.
 ## Latest Continuity Note
 
 DSCP-T11 Profile-Aware Pipeline Harness is `CLOSED_PASS_BOUNDED` at material
-commit `4c39ce77`. All DSCP tranches T1 through T11 are
+commit `4c39ce77` and closure commit `6ac0a5f4`. All DSCP tranches T1 through T11 are
 `CLOSED_PASS_BOUNDED`.
 
 DSCP-T11 closure package:
