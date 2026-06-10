@@ -38,8 +38,9 @@ Startup acknowledged: current mode=`dscp_t11_profile_aware_pipeline_harness_clos
 
 `dscp_t11_profile_aware_pipeline_harness_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `6ac0a5f4`
-(DSCP-T11 closure commit; parent of this handoff-sync commit).
+Current HEAD recorded for this handoff: `53a0e192`
+(agent packet authority and encoding guard hardening commit; parent of this
+handoff-sync commit).
 
 ## Active Boundary
 
@@ -134,6 +135,8 @@ Delivered scope:
 - Closed DSCP-T9 local deterministic pipeline harness.
 - Closed DSCP-T10 domain-profile and scan-adapter contract.
 - Closed DSCP-T11 profile-aware pipeline harness.
+- Hardened reviewer-fast/pre-commit/pre-push gates for review-packet authority
+  references and added-line text encoding discipline.
 - Promoted reusable PolicyLocal UI audit lessons into `DESIGN.md`.
 - Cleared active archive hygiene and retroactive governance checker debt.
 - Rewrote history to remove the corrupt large blob and synchronized the branch
