@@ -90,6 +90,7 @@ prior scan here before starting new work.
 | `External Review GAP1 extension README owner surfaces` | CVF_EXTENSION | SCANNED | ER-GAP1 | 2 | Skill Library and MCP README owner surfaces accepted only for Core KB overlap mapping; no runtime/public readiness claim |
 | `CVF CPF DSCP-T10 domain profile contract source/export` | CVF_EXTENSION | SCANNED | DSCP-T10 | 2 | New deterministic domain-profile contract plus CPF export barrel; no corpus content ingested; no findings |
 | `CVF CPF DSCP-T10 domain profile contract tests` | CVF_EXTENSION | SCANNED | DSCP-T10 | 1 | 17 vitest assertions covering legal_policy/company_docs/technical_project profiles; no corpus content ingested; no findings |
+| `CVF CPF DSCP-T11 profile-aware pipeline harness tests` | CVF_EXTENSION | SCANNED | DSCP-T11 | 1 | 4 vitest assertions proving profile metadata/gates flow descriptor to ECO/LPF package without content release or cross-profile gate bleed |
 
 ---
 
