@@ -1,8 +1,8 @@
 # CVF DSCP-T10 Domain Profile And Scan Adapter Contract Roadmap
 
-Memory class: FULL_RECORD
+Memory class: SUMMARY_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -69,13 +69,13 @@ generic CVF scan/memory foundation.
 
 | Step | Deliverable | Status |
 |---|---|---|
-| 1 | GC-018 baseline | DISPATCHED |
-| 2 | Work order for Claude | DISPATCHED |
-| 3 | DSCP domain-profile source contract | DISPATCHED |
-| 4 | Focused contract tests across three profile families | DISPATCHED |
-| 5 | GC-051 registry JSON and Markdown updates | DISPATCHED |
-| 6 | Worker return packet | DISPATCHED |
-| 7 | Codex reviewer closure and session sync | PENDING_WORKER_RETURN |
+| 1 | GC-018 baseline | CLOSED_PASS_BOUNDED |
+| 2 | Work order for Claude | CLOSED_PASS_BOUNDED |
+| 3 | DSCP domain-profile source contract | CLOSED_PASS_BOUNDED |
+| 4 | Focused contract tests across three profile families | CLOSED_PASS_BOUNDED |
+| 5 | GC-051 registry JSON and Markdown updates | CLOSED_PASS_BOUNDED |
+| 6 | Worker return packet | CLOSED_PASS_BOUNDED |
+| 7 | Codex reviewer closure and session sync | CLOSED_PASS_BOUNDED |
 
 ## Implementation Targets
 
@@ -128,7 +128,36 @@ Expected worker return:
 | CPF package check | `npm run check` in `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION` | PASS |
 | Focused DSCP-T10 test | `npm run test -- tests/dscp.domain.profile.contract.test.ts` in `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION` | PASS |
 | Reviewer fast gate | `python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast` | PASS |
-| Pre-closure autorun | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base <executionBaseHead> --head HEAD` | PASS after reviewer closure |
+| Pre-closure autorun | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base 6c6964e0 --head HEAD` | PASS before closure commit |
+
+## Closure Summary
+
+DSCP-T10 closed at material commit `0afa8737` with reviewer completion:
+
+`docs/reviews/CVF_DSCP_T10_DOMAIN_PROFILE_AND_SCAN_ADAPTER_CONTRACT_COMPLETION_2026-06-10.md`
+
+Result:
+
+- `DscpDomainProfile` contract added in CPF;
+- `applyDomainProfileToDescriptorInput` helper added;
+- CPF barrel export added;
+- focused test coverage PASS, 18/18;
+- GC-051 source/export/test coverage completed;
+- no external `Policy_Local` edit, provider call, corpus ingestion, T12, or
+  readiness claim.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T10_DOMAIN_PROFILE_AND_SCAN_ADAPTER_CONTRACT_FOR_CLAUDE_2026-06-10.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T10_DOMAIN_PROFILE_AND_SCAN_ADAPTER_CONTRACT_COMPLETION_2026-06-10.md` | reviewer completion authored | PASS |
+| Roadmap state | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | DSCP-T10 source/export/test coverage | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | DSCP-T10 quick lookup coverage | PASS |
+| External evidence digest | GC-018 external product evidence digest | sha256:c1699f4bcb36eb4523605fb0e2f2baacfb83a5838f910100f9f3ca53ddecbbb8; sha256:ab2d0045f2e6e271a9060a86c3895e08ee5ff9a1361533bff3814f0279383100; sha256:77fd13ba3397b6fdaca32e4246a85598117891fa754f05f243884fd5a2699602; sha256:7b1ec0f74f8578a46dd4a7419fe1478cb5c490d38b60853d2e137728a5c11b78 | PASS |
+| System loop interlock | no system-loop mutation | domain-profile helper only | N/A with reason: no runtime loop changed |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION_MEMORY.md`, `AGENT_HANDOFF_V17_2026-06-07.md` | mode and next allowed move updated | PASS |
 
 ## Claim Boundary
 

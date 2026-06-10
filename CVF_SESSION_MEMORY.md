@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-10
 
-Current mode marker: `dscp_t10_domain_profile_dispatched`
+Current mode marker: `dscp_t10_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `dscp_t10_domain_profile_dispatched`.
+Current mode: `dscp_t10_closed_pass_bounded`.
 
 Active handoff:
 
@@ -58,18 +58,22 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-DSCP-T9 Local Pipeline Harness is `CLOSED_PASS_BOUNDED` at closure commit
-`5c90506a`. All DSCP tranches T1 through T9 are `CLOSED_PASS_BOUNDED`.
+DSCP-T10 Domain Profile And Scan Adapter Contract is `CLOSED_PASS_BOUNDED` at
+material commit `0afa8737`. All DSCP tranches T1 through T10 are
+`CLOSED_PASS_BOUNDED`.
 
-DSCP-T10 Domain Profile And Scan Adapter Contract is `DISPATCHED` for Claude
-execution in `WORKER_MUST_NOT_COMMIT` mode. Dispatch package:
+DSCP-T10 closure package:
 
 - GC-018:
   `docs/baselines/CVF_GC018_DSCP_T10_DOMAIN_PROFILE_AND_SCAN_ADAPTER_CONTRACT_2026-06-10.md`;
 - roadmap:
   `docs/roadmaps/CVF_DSCP_T10_DOMAIN_PROFILE_AND_SCAN_ADAPTER_CONTRACT_ROADMAP_2026-06-10.md`;
 - work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T10_DOMAIN_PROFILE_AND_SCAN_ADAPTER_CONTRACT_FOR_CLAUDE_2026-06-10.md`.
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T10_DOMAIN_PROFILE_AND_SCAN_ADAPTER_CONTRACT_FOR_CLAUDE_2026-06-10.md`;
+- worker return:
+  `docs/reviews/CVF_DSCP_T10_DOMAIN_PROFILE_AND_SCAN_ADAPTER_CONTRACT_WORKER_RETURN_2026-06-10.md`;
+- completion:
+  `docs/reviews/CVF_DSCP_T10_DOMAIN_PROFILE_AND_SCAN_ADAPTER_CONTRACT_COMPLETION_2026-06-10.md`.
 
 Recent Claude/co-authored updates after T9:
 
@@ -97,7 +101,7 @@ Delivered scope for T9:
 - Roadmap closed:
   `docs/roadmaps/CVF_DSCP_T9_LOCAL_PIPELINE_HARNESS_ROADMAP_2026-06-08.md`.
 
-Boundary: DSCP-T10 dispatch authorizes local deterministic source contract and
+Boundary: DSCP-T10 closed a local deterministic source contract and focused
 tests only. No external Policy_Local edits, provider call, corpus ingestion,
 OCR, vector retrieval, T12 authorization, public-sync claim from this
 provenance repo, production readiness, public readiness, or live governance
@@ -105,10 +109,11 @@ proof.
 
 ## Next Allowed Move
 
-Next allowed move: Claude executes DSCP-T10 work order in `WORKER_MUST_NOT_COMMIT`
-mode and returns uncommitted artifacts for Codex review. DSCP-T1 through T9 are
-all `CLOSED_PASS_BOUNDED`. T12 remains forbidden until EC-02 resolves on or
-after 2026-07-01.
+Next allowed move: Codex audits post-T10 DSCP/PolicyLocal foundation options
+and either authors the next bounded roadmap/work order for Claude or returns
+to operator with the recommended lane. DSCP-T1 through T10 are all
+`CLOSED_PASS_BOUNDED`. T12 remains forbidden until EC-02 resolves on or after
+2026-07-01.
 
 LHW24 remains the latest closed numbered LHW wave in the state registry.
 

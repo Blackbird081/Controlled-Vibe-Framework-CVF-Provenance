@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -18,7 +18,7 @@ dispatchBaseHead: `27123c55`
 
 executionBaseHead: `<worker must capture before edits>`
 
-closureBaseHead: `<reviewer-owned post-return value>`
+closureBaseHead: `0afa8737`
 
 ---
 
@@ -70,6 +70,8 @@ Allowed scope:
 - Create `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.domain.profile.contract.test.ts`.
 - Update only the required CPF export barrel or `src/index.ts` so the new
   contract is importable.
+- Update `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/control.plane.context.barrel.ts`
+  if source inspection confirms it is the minimal CPF export owner.
 - Update `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` only for the
   new source/test path coverage.
 - Update `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` only for the
@@ -80,6 +82,7 @@ Allowed scope:
 Reviewer-owned closure scope:
 
 - `docs/reviews/CVF_DSCP_T10_DOMAIN_PROFILE_AND_SCAN_ADAPTER_CONTRACT_COMPLETION_2026-06-10.md`
+- `docs/reviews/CVF_GC019_DSCP_T10_DOMAIN_PROFILE_CONTRACT_STRUCTURAL_REVIEW_2026-06-10.md`
 - `docs/roadmaps/CVF_DSCP_T10_DOMAIN_PROFILE_AND_SCAN_ADAPTER_CONTRACT_ROADMAP_2026-06-10.md`
 - this work order status conversion;
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
@@ -191,6 +194,15 @@ is modified.
 | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/**` | No web/runtime/provider route edit authorized |
 | `EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/src/**` except existing read-only imports | No ECO runtime retrieval change authorized |
 | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/**` | No LPF memory runtime change authorized |
+
+## Forbidden Filesystem State At Dispatch
+
+| Forbidden path | Expected state | Actual state at dispatch | Action if PRESENT |
+|---|---|---|---|
+| `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\**` | EXTERNAL_WORKSPACE_NOT_MODIFIED | EXTERNAL_WORKSPACE_NOT_MODIFIED | Stop if modification is required; external product edits are forbidden |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/**` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | Existing web files are out of scope; worker must not edit, stage, or claim them |
+| `EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/src/**` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | Existing ECO source is read-only evidence; worker must not edit it |
+| `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/**` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | Existing LPF source is out of scope; worker must not edit it |
 
 ## Write Ownership
 
@@ -326,13 +338,14 @@ Claude must return uncommitted artifacts with:
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `Status: DISPATCHED` until reviewer conversion | PENDING_WORKER_RETURN |
-| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T10_DOMAIN_PROFILE_AND_SCAN_ADAPTER_CONTRACT_COMPLETION_2026-06-10.md` | reviewer-authored post-return | PENDING_WORKER_RETURN |
-| Roadmap state | `docs/roadmaps/CVF_DSCP_T10_DOMAIN_PROFILE_AND_SCAN_ADAPTER_CONTRACT_ROADMAP_2026-06-10.md` | `Status: DISPATCHED` until reviewer conversion | PENDING_WORKER_RETURN |
-| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | entry covers new DSCP-T10 source/test paths | PENDING_WORKER_RETURN |
-| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | quick lookup covers new DSCP-T10 source/test paths | PENDING_WORKER_RETURN |
-| External evidence digest | GC-018 baseline section | external product path hashes recorded; no external edits | PASS |
-| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION_MEMORY.md`, `AGENT_HANDOFF_V17_2026-06-07.md` | reviewer-owned final sync | PENDING_WORKER_RETURN |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T10_DOMAIN_PROFILE_AND_SCAN_ADAPTER_CONTRACT_COMPLETION_2026-06-10.md` | reviewer-authored post-return | PASS |
+| Roadmap state | `docs/roadmaps/CVF_DSCP_T10_DOMAIN_PROFILE_AND_SCAN_ADAPTER_CONTRACT_ROADMAP_2026-06-10.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | entry covers new DSCP-T10 source/export/test paths | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | quick lookup covers new DSCP-T10 source/export/test paths | PASS |
+| External evidence digest | GC-018 baseline section | sha256:c1699f4bcb36eb4523605fb0e2f2baacfb83a5838f910100f9f3ca53ddecbbb8; sha256:ab2d0045f2e6e271a9060a86c3895e08ee5ff9a1361533bff3814f0279383100; sha256:77fd13ba3397b6fdaca32e4246a85598117891fa754f05f243884fd5a2699602; sha256:7b1ec0f74f8578a46dd4a7419fe1478cb5c490d38b60853d2e137728a5c11b78 | PASS |
+| System loop interlock | no system-loop mutation | domain-profile helper only | N/A with reason: no runtime loop changed |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION_MEMORY.md`, `AGENT_HANDOFF_V17_2026-06-07.md` | reviewer-owned final sync | PASS |
 
 ## Review Gate
 
@@ -347,14 +360,14 @@ Reviewer must confirm:
 
 ## Closure Checklist
 
-- [ ] Worker return reviewed and accepted
-- [ ] CPF `npm run check` PASS confirmed
-- [ ] Focused DSCP-T10 vitest PASS confirmed
-- [ ] GC-051 registry PASS confirmed
-- [ ] Governance gates PASS confirmed
-- [ ] Reviewer commits material artifacts
-- [ ] Completion review authored by reviewer
-- [ ] Session continuity synced by reviewer
+- [x] Worker return reviewed and accepted
+- [x] CPF `npm run check` PASS confirmed
+- [x] Focused DSCP-T10 vitest PASS confirmed
+- [x] GC-051 registry PASS confirmed
+- [x] Governance gates PASS confirmed
+- [x] Reviewer commits material artifacts
+- [x] Completion review authored by reviewer
+- [x] Session continuity synced by reviewer
 
 ## Operator Checkpoint
 
@@ -386,7 +399,7 @@ reviewerOwnedClosurePaths:
   - docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T10_DOMAIN_PROFILE_AND_SCAN_ADAPTER_CONTRACT_FOR_CLAUDE_2026-06-10.md
 closedStatusTokens:
   - CLOSED_PASS_BOUNDED
-reviewerClosureCompleted: false
+reviewerClosureCompleted: true
 forbiddenClosedEquivalentResidue: []
 ```
 
