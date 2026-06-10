@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-10
 
-Current mode marker: `dscp_t11_profile_aware_pipeline_harness_closed_pass_bounded`
+Current mode marker: `dscp_t11f_profile_selection_adapter_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `dscp_t11_profile_aware_pipeline_harness_closed_pass_bounded`.
+Current mode: `dscp_t11f_profile_selection_adapter_dispatched`.
 
 Active handoff:
 
@@ -58,22 +58,33 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-DSCP-T11 Profile-Aware Pipeline Harness is `CLOSED_PASS_BOUNDED` at material
-commit `4c39ce77` and closure commit `6ac0a5f4`. All DSCP tranches T1 through T11 are
-`CLOSED_PASS_BOUNDED`.
+DSCP-T11E Domain Profile Registry is `CLOSED_PASS_BOUNDED` at material commit
+`8a7cd134`. DSCP-T11F Profile Selection Adapter is `DISPATCHED` for Claude.
+All DSCP tranches T1 through T11E are `CLOSED_PASS_BOUNDED`.
 
-DSCP-T11 closure package:
+DSCP-T11E closure package:
 
 - GC-018:
-  `docs/baselines/CVF_GC018_DSCP_T11_PROFILE_AWARE_PIPELINE_HARNESS_2026-06-10.md`;
+  `docs/baselines/CVF_GC018_DSCP_T11E_DOMAIN_PROFILE_REGISTRY_2026-06-10.md`;
 - roadmap:
-  `docs/roadmaps/CVF_DSCP_T11_PROFILE_AWARE_PIPELINE_HARNESS_ROADMAP_2026-06-10.md`;
+  `docs/roadmaps/CVF_DSCP_T11E_DOMAIN_PROFILE_REGISTRY_ROADMAP_2026-06-10.md`;
 - work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T11_PROFILE_AWARE_PIPELINE_HARNESS_FOR_CLAUDE_2026-06-10.md`;
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T11E_DOMAIN_PROFILE_REGISTRY_FOR_CLAUDE_2026-06-10.md`;
 - worker return:
-  `docs/reviews/CVF_DSCP_T11_PROFILE_AWARE_PIPELINE_HARNESS_WORKER_RETURN_2026-06-10.md`;
+  `docs/reviews/CVF_DSCP_T11E_DOMAIN_PROFILE_REGISTRY_WORKER_RETURN_2026-06-10.md`;
 - completion:
-  `docs/reviews/CVF_DSCP_T11_PROFILE_AWARE_PIPELINE_HARNESS_COMPLETION_2026-06-10.md`.
+  `docs/reviews/CVF_DSCP_T11E_DOMAIN_PROFILE_REGISTRY_COMPLETION_2026-06-10.md`.
+
+DSCP-T11F dispatch package:
+
+- audit:
+  `docs/audits/CVF_DSCP_POST_T11E_NEXT_ROADMAP_AUDIT_2026-06-10.md`;
+- GC-018:
+  `docs/baselines/CVF_GC018_DSCP_T11F_PROFILE_SELECTION_ADAPTER_2026-06-10.md`;
+- roadmap:
+  `docs/roadmaps/CVF_DSCP_T11F_PROFILE_SELECTION_ADAPTER_ROADMAP_2026-06-10.md`;
+- work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T11F_PROFILE_SELECTION_ADAPTER_FOR_CLAUDE_2026-06-10.md`.
 
 Recent Claude/co-authored updates after T9:
 
@@ -101,18 +112,19 @@ Delivered scope for T9:
 - Roadmap closed:
   `docs/roadmaps/CVF_DSCP_T9_LOCAL_PIPELINE_HARNESS_ROADMAP_2026-06-08.md`.
 
-Boundary: DSCP-T11 closed a local deterministic CPF test harness only. No
-external Policy_Local edits, provider call, corpus ingestion, OCR, vector
-retrieval, T12 authorization, public-sync claim from this provenance repo,
-production readiness, public readiness, or live governance proof.
+Boundary: DSCP-T11F dispatch authorizes only a local deterministic CPF profile
+selection adapter and focused tests. No external Policy_Local edits, provider
+call, corpus ingestion, OCR, vector retrieval, T12 authorization, public-sync
+claim from this provenance repo, production readiness, public readiness, or
+live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: Codex audits post-T11 DSCP/PolicyLocal foundation options
-and either authors the next bounded roadmap/work order for Claude or returns
-to operator with the recommended lane. DSCP-T1 through T11 are all
-`CLOSED_PASS_BOUNDED`. T12 remains forbidden until EC-02 resolves on or after
-2026-07-01.
+Next allowed move: Claude executes
+`docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T11F_PROFILE_SELECTION_ADAPTER_FOR_CLAUDE_2026-06-10.md`
+under `WORKER_MUST_NOT_COMMIT` and returns uncommitted artifacts. DSCP-T1
+through T11E are `CLOSED_PASS_BOUNDED`. T12 remains forbidden until EC-02
+resolves on or after 2026-07-01.
 
 LHW24 remains the latest closed numbered LHW wave in the state registry.
 

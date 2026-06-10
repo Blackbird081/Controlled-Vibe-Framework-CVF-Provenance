@@ -32,15 +32,15 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`dscp_t11_profile_aware_pipeline_harness_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=Codex audits post-T11 DSCP/PolicyLocal foundation options and recommends or authors the next bounded lane; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`dscp_t11f_profile_selection_adapter_dispatched`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=Claude executes DSCP-T11F work order under WORKER_MUST_NOT_COMMIT and returns uncommitted artifacts; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`dscp_t11_profile_aware_pipeline_harness_closed_pass_bounded`
+`dscp_t11f_profile_selection_adapter_dispatched`
 
-Current HEAD recorded for this handoff: `53a0e192`
-(agent packet authority and encoding guard hardening commit; parent of this
-handoff-sync commit).
+Current HEAD recorded for this handoff: `8a7cd134`
+(DSCP-T11E material closure commit; parent of this T11F dispatch/session-sync
+commit).
 
 ## Active Boundary
 
@@ -58,17 +58,24 @@ in archived handoffs and governed completion packets.
 
 ## Latest Continuity Note
 
-DSCP-T11 Profile-Aware Pipeline Harness is `CLOSED_PASS_BOUNDED` at material
-commit `4c39ce77` and closure commit `6ac0a5f4`. All DSCP tranches T1 through T11 are
-`CLOSED_PASS_BOUNDED`.
+DSCP-T11E Domain Profile Registry is `CLOSED_PASS_BOUNDED` at material commit
+`8a7cd134`. DSCP-T11F Profile Selection Adapter is `DISPATCHED` for Claude.
+All DSCP tranches T1 through T11E are `CLOSED_PASS_BOUNDED`.
 
-DSCP-T11 closure package:
+DSCP-T11E closure package:
 
-- `docs/baselines/CVF_GC018_DSCP_T11_PROFILE_AWARE_PIPELINE_HARNESS_2026-06-10.md`
-- `docs/roadmaps/CVF_DSCP_T11_PROFILE_AWARE_PIPELINE_HARNESS_ROADMAP_2026-06-10.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T11_PROFILE_AWARE_PIPELINE_HARNESS_FOR_CLAUDE_2026-06-10.md`
-- `docs/reviews/CVF_DSCP_T11_PROFILE_AWARE_PIPELINE_HARNESS_WORKER_RETURN_2026-06-10.md`
-- `docs/reviews/CVF_DSCP_T11_PROFILE_AWARE_PIPELINE_HARNESS_COMPLETION_2026-06-10.md`
+- `docs/baselines/CVF_GC018_DSCP_T11E_DOMAIN_PROFILE_REGISTRY_2026-06-10.md`
+- `docs/roadmaps/CVF_DSCP_T11E_DOMAIN_PROFILE_REGISTRY_ROADMAP_2026-06-10.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T11E_DOMAIN_PROFILE_REGISTRY_FOR_CLAUDE_2026-06-10.md`
+- `docs/reviews/CVF_DSCP_T11E_DOMAIN_PROFILE_REGISTRY_WORKER_RETURN_2026-06-10.md`
+- `docs/reviews/CVF_DSCP_T11E_DOMAIN_PROFILE_REGISTRY_COMPLETION_2026-06-10.md`
+
+DSCP-T11F dispatch package:
+
+- `docs/audits/CVF_DSCP_POST_T11E_NEXT_ROADMAP_AUDIT_2026-06-10.md`
+- `docs/baselines/CVF_GC018_DSCP_T11F_PROFILE_SELECTION_ADAPTER_2026-06-10.md`
+- `docs/roadmaps/CVF_DSCP_T11F_PROFILE_SELECTION_ADAPTER_ROADMAP_2026-06-10.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T11F_PROFILE_SELECTION_ADAPTER_FOR_CLAUDE_2026-06-10.md`
 
 Recent Claude/co-authored updates after T9:
 
@@ -94,15 +101,16 @@ Delivered scope for T9:
 - Completion review:
   `docs/reviews/CVF_DSCP_T9_LOCAL_PIPELINE_HARNESS_COMPLETION_2026-06-08.md`.
 
-Boundary: DSCP-T11 closed a local deterministic CPF test harness only. No
-external Policy_Local edits, provider call, corpus ingestion, OCR, vector
-retrieval, T12 authorization, public-sync claim from this provenance repo,
-production readiness, public readiness, or live governance proof.
+Boundary: DSCP-T11F dispatch authorizes only a local deterministic CPF profile
+selection adapter and focused tests. No external Policy_Local edits, provider
+call, corpus ingestion, OCR, vector retrieval, T12 authorization, public-sync
+claim from this provenance repo, production readiness, public readiness, or
+live governance proof.
 
 ## Current Batch
 
-DSCP-T10 closure batch. T10 material commit `0afa8737`; dispatch base HEAD is
-`27123c55`; execution base HEAD is `6c6964e0`.
+DSCP-T11F dispatch batch. T11E material commit `8a7cd134`; dispatch base HEAD
+for T11F is `8a7cd134`.
 
 Delivered scope:
 
@@ -129,12 +137,17 @@ Delivered scope:
   completion review.
 - DSCP-T11 profile-aware pipeline harness, registry, worker return, and
   completion review.
+- DSCP-T11E domain-profile registry source, tests, registry, worker return, and
+  completion review.
+- DSCP-T11F profile selection adapter audit, baseline, roadmap, and work order.
 
 ## Latest Work / Changes
 
 - Closed DSCP-T9 local deterministic pipeline harness.
 - Closed DSCP-T10 domain-profile and scan-adapter contract.
 - Closed DSCP-T11 profile-aware pipeline harness.
+- Closed DSCP-T11E domain-profile registry.
+- Dispatched DSCP-T11F profile selection adapter work order.
 - Hardened reviewer-fast/pre-commit/pre-push gates for review-packet authority
   references and added-line text encoding discipline.
 - Promoted reusable PolicyLocal UI audit lessons into `DESIGN.md`.
@@ -185,11 +198,11 @@ history.
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
-Next allowed move: Codex audits post-T11 DSCP/PolicyLocal foundation options
-and either authors the next bounded roadmap/work order for Claude or returns
-to operator with the recommended lane. DSCP-T1 through T11 are all
-`CLOSED_PASS_BOUNDED`. Parked lanes remain Live Redis, DEP2, and external
-receipt-anchor.
+Next allowed move: Claude executes
+`docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T11F_PROFILE_SELECTION_ADAPTER_FOR_CLAUDE_2026-06-10.md`
+under `WORKER_MUST_NOT_COMMIT` and returns uncommitted artifacts. DSCP-T1
+through T11E are `CLOSED_PASS_BOUNDED`. Parked lanes remain Live Redis, DEP2,
+and external receipt-anchor.
 
 LPCI2-T12 remains forbidden until a separate operator-authorized evidence path
 resolves EC-02 review on or after 2026-07-01, known `currentStatus`, known
