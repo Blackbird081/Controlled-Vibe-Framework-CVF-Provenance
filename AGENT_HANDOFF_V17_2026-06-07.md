@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`dscp_t9_closed_pass_bounded`; active handoff
 
 `dscp_t9_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `7339d5f0`
-(Implementation-First Absorption Pattern governance doc committed; rewrite as two-way decision framework pending).
+Current HEAD recorded for this handoff: `a119f6bc`
+(DESIGN.md section 14 + section 10 enrichment from the PolicyLocal UI audit committed; promotion routed through existing CVF standards, no duplicate skill).
 
 ## Active Boundary
 
@@ -49,6 +49,8 @@ Archived predecessor:
 `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V16_2026-06-06.md`.
 
 Remote tracking branch: origin/codex/p1-p5-small-debt-remediation.
+Exact remote SHA must be derived live from git when needed.
+External agent memory files: non-canonical convenience only.
 
 This handoff is a pointer record only. Detailed historical continuity remains
 in archived handoffs and governed completion packets.
