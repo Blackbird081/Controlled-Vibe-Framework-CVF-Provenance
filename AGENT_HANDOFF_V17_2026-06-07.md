@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`dscp_t10_closed_pass_bounded`; active handof
 
 `dscp_t10_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `0afa8737`
-(DSCP-T10 material commit; parent of this closure-sync commit).
+Current HEAD recorded for this handoff: `6c571773`
+(DSCP-T10 closure commit; parent of this handoff-sync commit).
 
 ## Active Boundary
 
