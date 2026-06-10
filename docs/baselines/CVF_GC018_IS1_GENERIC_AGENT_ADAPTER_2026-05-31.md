@@ -36,8 +36,8 @@ Boundary:
 
 ## Source / Predecessor Evidence
 
-- LHW19 T1 spec: `docs/reference/CVF_LHW19_T1_INTEGRATION_ARCHITECTURE_CONTROL_POINTS_ADVISORY_CONNECTOR_SPEC_2026-05-30.md`
-- LHW18 T2 positioning: `docs/reference/CVF_LHW18_T2_CVF_POSITIONING_GOVERNANCE_LAYER_ADVISORY_CONNECTOR_SPEC_2026-05-30.md`
+- LHW19 T1 spec: `docs/reference/archive/CVF_LHW19_T1_INTEGRATION_ARCHITECTURE_CONTROL_POINTS_ADVISORY_CONNECTOR_SPEC_2026-05-30.md`
+- LHW18 T2 positioning: `docs/reference/archive/CVF_LHW18_T2_CVF_POSITIONING_GOVERNANCE_LAYER_ADVISORY_CONNECTOR_SPEC_2026-05-30.md`
 - INT-1: `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/index.ts` (MCP tools as integration point)
 - Delta D3: `cvf_invoke_cli_stage` whitelist (CP3 Tool Gateway existing owner)
 

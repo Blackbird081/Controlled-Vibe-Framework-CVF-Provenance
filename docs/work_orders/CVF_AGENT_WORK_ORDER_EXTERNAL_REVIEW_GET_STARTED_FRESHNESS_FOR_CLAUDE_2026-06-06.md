@@ -38,7 +38,7 @@ performance claims, or autonomous mutation.
 | Active handoff | `AGENT_HANDOFF_V16_2026-06-06.md` | ACCEPT |
 | External-review gap analysis | `docs/audits/CVF_EXTERNAL_REVIEW_GAP_ANALYSIS_AND_PROPOSED_SOLUTIONS_2026-06-05.md` | ACCEPT |
 | Work-order template | `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md` | ACCEPT |
-| Finding-to-governance learning standard | `docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD_2026-05-29.md` | ACCEPT |
+| Finding-to-governance learning standard | `docs/reference/archive/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD_2026-05-29.md` | ACCEPT |
 
 ## Worker Autonomy / No-Question Rule
 
@@ -110,7 +110,7 @@ Risk ceiling: R1 documentation freshness/readability only.
 | `CHANGELOG.md` | current GA version source | SOURCE_VERIFIED |
 | `EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS/README.md` | current skill library count/domain source | SOURCE_VERIFIED |
 | `docs/reference/CVF_RELEASE_READINESS_STATUS_2026-03-20.md` | release-readiness checkpoint target | SOURCE_VERIFIED |
-| `docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | public-export disposition required for completion | READ |
+| `docs/reference/archive/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | public-export disposition required for completion | READ |
 | `docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md` | completion-quality expectations | READ |
 
 ## Pre-Flight Checks
@@ -260,9 +260,27 @@ Return to reviewer if any of the following occurs:
 | Roadmap state | `N/A with reason` | Audit-derived GAP 3 work order; no roadmap row was opened or changed | N/A with reason |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no corpus scan, classification, readiness, or search/filter registry state changed in this documentation-only packet | BLOCKED with reason: out of scope for this documentation freshness repair |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no corpus scan, classification, readiness, or search/filter registry state changed in this documentation-only packet | BLOCKED with reason: out of scope for this documentation freshness repair |
-| External evidence digest | `docs/audits/CVF_EXTERNAL_REVIEW_GAP_ANALYSIS_AND_PROPOSED_SOLUTIONS_2026-06-05.md` | repo-local audit packet is tracked; no external/local filesystem evidence is used as canonical source | PASS |
+| External evidence digest | `docs/audits/CVF_EXTERNAL_REVIEW_GAP_ANALYSIS_AND_PROPOSED_SOLUTIONS_2026-06-05.md` | repo-local audit packet; sha256: see External Artifact Hash Manifest below | PASS |
 | System loop interlock | `N/A with reason` | Documentation freshness repair only; no runtime route, loop, learning, or mutation interlock changed | N/A with reason |
 | Session continuity | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `AGENT_HANDOFF_V16_2026-06-06.md` | reviewer-owned session sync required after material closure commit if next allowed move changes | PASS |
+
+## External Artifact Hash Manifest
+
+| Artifact path | sha256 |
+| --- | --- |
+| docs/audits/CVF_EXTERNAL_REVIEW_GAP_ANALYSIS_AND_PROPOSED_SOLUTIONS_2026-06-05.md | 466fd8cfd477adbd24f7fe648eb5f89b1942a797c16a04ebca0cd63fa12d64be |
+
+## Acceptance Receipt Assertion Matrix
+
+No receipt-acceptance query applies to this work order. The word "receipt" in this
+file appears in a glossary list of onboarding terms (line 153) — not a
+receipt/query acceptance outcome. No selectedCandidateIds or freshnessDisclosureApplied
+fields were evaluated in this documentation-only freshness repair packet.
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| N/A — no receipt/query acceptance closure | N/A | N/A with reason: no receipt-acceptance query; "receipt" is a glossary term only |
+
 
 ## Return-To-Orchestrator Conditions
 

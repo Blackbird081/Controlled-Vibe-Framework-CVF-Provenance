@@ -59,7 +59,7 @@ Out of scope:
 | Archived ERH intake | source-verified findings ledger | predecessor evidence, not live roadmap |
 | Codex planning response | seven planning decisions | tranche split and B1/B2 disposition |
 | F-1 closure | `docs/reviews/CVF_F1_OUTPUT_QUALITY_PARITY_CLOSURE_NOT_MET_2026-05-15.md` | prevents output-quality parity overclaim |
-| Public export standard | `docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | public-sync boundary |
+| Public export standard | `docs/reference/archive/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | public-sync boundary |
 
 ## Decision / Baseline / Proposed Tranche
 
@@ -93,7 +93,7 @@ Baseline:
 | ERH planning review exists | EXISTS | `docs/assessments/CVF_ERH_PLANNING_REVIEW_FOR_CODEX_2026-06-04.md` | file source | `CVF_ERH_PLANNING_REVIEW_FOR_CODEX_2026-06-04.md` | ERH planning review | ACCEPT |
 | Codex response exists | EXISTS | `docs/reviews/CVF_ERH_PLANNING_REVIEW_CODEX_RESPONSE_2026-06-04.md` | file source | `CVF_ERH_PLANNING_REVIEW_CODEX_RESPONSE_2026-06-04.md` | ERH review response | ACCEPT |
 | Archived intake exists | EXISTS | `docs/assessments/archive/CVF_EXTERNAL_PUBLIC_REPO_REVIEW_INTAKE_2026-06-03.md` | file source | `CVF_EXTERNAL_PUBLIC_REPO_REVIEW_INTAKE_2026-06-03.md` | ERH archived intake | ACCEPT |
-| Public-sync boundary standard exists | EXISTS | `docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | file source | `Public Export Disposition` | public export standard | ACCEPT |
+| Public-sync boundary standard exists | EXISTS | `docs/reference/archive/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | file source | `Public Export Disposition` | public export standard | ACCEPT |
 
 ## Evidence / Verification
 

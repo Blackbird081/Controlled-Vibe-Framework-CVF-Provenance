@@ -42,7 +42,7 @@ Owner boundary:
 - Existing MLW8 runtime owner:
   `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw8-efficiency-overconstraint-feedback.ts`.
 - Public boundary authority:
-  `docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md`
+  `docs/reference/archive/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md`
   and `AGENTS.md`.
 - Live proof authority: `scripts/run_cvf_release_gate_bundle.py`.
 
@@ -74,8 +74,8 @@ Predecessor evidence:
 | RUNTIME_BEHAVIOR - release gate includes live Playwright governance E2E | `scripts/run_cvf_release_gate_bundle.py` | Lines 230-271 | `check_e2e` | Release gate bundle | ACCEPT |
 | RUNTIME_BEHAVIOR - release gate JSON output exists | `scripts/run_cvf_release_gate_bundle.py` | Lines 318-328 | `json_output` | Release gate bundle | ACCEPT |
 | EXISTS - Alibaba key aliases exist | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/alibaba-env.ts` | Lines 1-18 | `resolveAlibabaApiKey` | Alibaba env resolver | ACCEPT |
-| EXISTS - public export dispositions are canonical | `docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | Lines 29-36 | `Public Export Disposition` | Public export standard | ACCEPT |
-| RUNTIME_BEHAVIOR - exported public work requires remote, commit, path evidence | `docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | Lines 53-63 | `EXPORTED` | Public export standard | ACCEPT |
+| EXISTS - public export dispositions are canonical | `docs/reference/archive/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | Lines 29-36 | `Public Export Disposition` | Public export standard | ACCEPT |
+| RUNTIME_BEHAVIOR - exported public work requires remote, commit, path evidence | `docs/reference/archive/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | Lines 53-63 | `EXPORTED` | Public export standard | ACCEPT |
 | EXISTS - public-facing changes must use public-sync clone | `AGENTS.md` | Lines 127-150 | `Controlled-Vibe-Framework-CVF-public-sync` | Repository boundary instructions | ACCEPT |
 | EXISTS - public-safe MLW8 summary blocks cost/performance/live readiness claims | `docs/reference/CVF_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md` | Lines 34-39, 92-122 | `Blocked public wording` | Public-safe summary | ACCEPT |
 

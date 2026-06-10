@@ -27,7 +27,7 @@ Boundary: additive only; no existing behavior changed; no route.ts logic altered
 
 ## Source / Predecessor Evidence
 
-- LHW18 T3 advisory: `docs/reference/CVF_LHW18_T3_CONTEXT_MANAGEMENT_STRATEGY_ADVISORY_CONNECTOR_SPEC_2026-05-30.md`
+- LHW18 T3 advisory: `docs/reference/archive/CVF_LHW18_T3_CONTEXT_MANAGEMENT_STRATEGY_ADVISORY_CONNECTOR_SPEC_2026-05-30.md`
 - Existing: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-context-packager.ts` — `tokenBudget` param already accepted; `tokenBudgetExceeded` already tracked
 - Existing: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/aif-operational-context-preview.ts` — passes `input.tokenBudget` to packager; no default policy
 - Pattern reference: EL-2 `worker-timeout-handler.ts` + EL-3 `reviewer-deadlock-handler.ts`

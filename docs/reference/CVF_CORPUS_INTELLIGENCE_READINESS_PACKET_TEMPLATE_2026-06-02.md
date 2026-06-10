@@ -612,7 +612,7 @@ deferred items, blocked items, or downstream roadmap candidates exist.
 - Finding packet: `<docs/corpus-intelligence/findings/<corpus-id>.md>`
 - Downstream loop: `LEARNING_LOOP_F2G`
 - Input artifact:
-  `docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD_2026-05-29.md`
+  `docs/reference/archive/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD_2026-05-29.md`
 - Routing rule: findings must carry `defectClass`, `learningLane`,
   `nextAction`, and action evidence through `f2gRef`, `roadmapRef`, or
   `workOrderRef` when deferred or blocked

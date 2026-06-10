@@ -3,8 +3,8 @@
   "standard": "docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md",
   "guard": "governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md",
   "checker": "governance/compat/check_corpus_scan_registry.py",
-  "lastUpdated": "2026-06-08",
-  "updatedBy": "Codex DSCP-T8 reviewer",
+  "lastUpdated": "2026-06-10",
+  "updatedBy": "claude-sonnet-4-6",
   "allowedCorpusTypes": [
     "LEGACY_FOLDER",
     "PROJECT_SOURCE",
@@ -638,7 +638,7 @@
       "manifestPath": "docs/audits/CVF_CI1_T8_CVF_EDIT_FULL_RECONCILIATION_PACKET_2026-06-05.md",
       "packetPath": "docs/audits/CVF_CI1_T8_CVF_EDIT_FULL_RECONCILIATION_PACKET_2026-06-05.md",
       "completionReviewPath": null,
-      "gcBaselineRef": "docs/baselines/CVF_GC018_LHW18_CVF_EDIT_ABSORPTION_WAVE_2026-05-30.md",
+      "gcBaselineRef": "docs/baselines/archive/CVF_GC018_LHW18_CVF_EDIT_ABSORPTION_WAVE_2026-05-30.md",
       "verdicts": {
         "gc047": "COMPLETE_VERIFIED",
         "gc048": "RECONCILED_VERIFIED",
@@ -1981,6 +1981,84 @@
         "public readiness claim (not made)"
       ],
       "nextScanRecommendation": "Re-scan only when DSCP pipeline surface behavior changes or a new integration tranche is authorized."
+    },
+    {
+      "id": "mcp-server-v2.5-generic-agent-adapter",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF ECO v2.5 MCP Server / generic-agent-adapter source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/"
+      ],
+      "fileCount": null,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "LHW21-IS1",
+      "scanDate": "2026-05-31",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_IS1_GENERIC_AGENT_ADAPTER_FAST_LANE_2026-05-31.md",
+      "notes": "Retroactively registered 2026-06-10. Source files reviewed during IS1 and LHW21 intake (2026-05-31). Registry entry added to satisfy GC-051 coverage requirement.",
+      "findings": [
+        {
+          "id": "F1-is1-lhw21-intake",
+          "summary": "MCP Server generic-agent-adapter.ts and index.ts reviewed during IS1 Fast Lane and LHW21 integration point intake (2026-05-31). Adapter pattern confirmed compatible with CVF IS1 integration contract.",
+          "disposition": "ACCEPT_NO_ACTION",
+          "nextAction": "None — IS1 integration is closed.",
+          "defectClass": "N/A",
+          "learningLane": "N/A"
+        }
+      ],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "N/A — IS1 closed; re-scan on next MCP server major version.",
+      "completionReviewPath": null,
+      "gcBaselineRef": null,
+      "verdicts": {
+        "gc047": "PARTIAL",
+        "gc048": "NOT_APPLICABLE",
+        "gc050": "NOT_APPLICABLE"
+      },
+      "semanticRegions": {},
+      "priorAbsorption": {},
+      "hashAlgorithm": null,
+      "hashInput": null
+    },
+    {
+      "id": "private-reference-legacy-all",
+      "corpusType": "LEGACY_FOLDER",
+      "displayName": ".private_reference/legacy (full tree)",
+      "scopePaths": [
+        ".private_reference/legacy/"
+      ],
+      "fileCount": null,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "LHW-RESCAN-C-MKG1",
+      "scanDate": "2026-06-01",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MKG1_MEMORY_KNOWLEDGE_GRAPH_OWNER_SURFACE_REVIEW_COMPLETION_2026-06-01.md",
+      "notes": "Retroactively registered 2026-06-10. Legacy folder was scanned during MKG1 owner surface review (2026-06-01). Registry entry added to satisfy GC-051 coverage requirement.",
+      "findings": [
+        {
+          "id": "F1-mkg1-legacy-owner-surface",
+          "summary": ".private_reference/legacy/** scanned during MKG1 Memory/Knowledge/Graph owner surface review (2026-06-01). 47 Memory/Knowledge/Graph assets identified and triaged.",
+          "disposition": "ACCEPT_NO_ACTION",
+          "nextAction": "None — MKG1 closed; legacy absorption complete for this corpus.",
+          "defectClass": "N/A",
+          "learningLane": "N/A"
+        }
+      ],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "N/A — legacy absorption closed for this corpus.",
+      "completionReviewPath": null,
+      "gcBaselineRef": null,
+      "verdicts": {
+        "gc047": "PARTIAL",
+        "gc048": "NOT_APPLICABLE",
+        "gc050": "NOT_APPLICABLE"
+      },
+      "semanticRegions": {},
+      "priorAbsorption": {},
+      "hashAlgorithm": null,
+      "hashInput": null
     }
   ]
 }

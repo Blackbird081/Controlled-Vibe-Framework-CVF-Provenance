@@ -108,6 +108,18 @@ Agents must use the active standards named in `AGENTS.md` and the machine
 guards named in `CVF_SESSION/ACTIVE_SESSION_STATE.json`. This pointer record
 does not duplicate those long rules.
 
+Active blocked work classes: no broad external knowledge absorption, no legacy
+folder scan, no corpus expansion, no T12 claim, no public-sync outside
+authorized batches, and no production/hosted/readiness claim until the
+relevant EC gate resolves. These blocked work classes are resolved only by
+the operator selecting a specific unblocking tranche. Consult
+`CVF_SESSION/ACTIVE_SESSION_STATE.json` for the machine-readable list.
+
+Broad external knowledge absorption (legacy folders, external API families,
+third-party tool families) requires a Knowledge Absorption Priority Guard
+check and a GC-018 authorization before dispatch. Unauthorized absorption is
+blocked at the pre-push gate.
+
 ## Enforcement
 
 Startup acknowledgment, active-session state compatibility, autorun workflow

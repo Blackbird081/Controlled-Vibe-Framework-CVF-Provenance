@@ -28,9 +28,9 @@ advisory posture established in LHW19 T1.
 
 ## Source / Predecessor Evidence
 
-- LHW19 T1: `docs/reference/CVF_LHW19_T1_INTEGRATION_ARCHITECTURE_CONTROL_POINTS_ADVISORY_CONNECTOR_SPEC_2026-05-30.md`
+- LHW19 T1: `docs/reference/archive/CVF_LHW19_T1_INTEGRATION_ARCHITECTURE_CONTROL_POINTS_ADVISORY_CONNECTOR_SPEC_2026-05-30.md`
   — CP2 Plan Validator coverage: PARTIAL
-- LHW18 T2: `docs/reference/CVF_LHW18_T2_CVF_POSITIONING_GOVERNANCE_LAYER_ADVISORY_CONNECTOR_SPEC_2026-05-30.md`
+- LHW18 T2: `docs/reference/archive/CVF_LHW18_T2_CVF_POSITIONING_GOVERNANCE_LAYER_ADVISORY_CONNECTOR_SPEC_2026-05-30.md`
   — Integration SDK concept absorbed
 - Existing: `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/index.ts` — 781 lines (hard limit 1000); 10 tools present
 

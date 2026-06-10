@@ -67,7 +67,7 @@ be resolved. These are outside ERH scope but must be cleared first.
 
 ### Blocker B1 — Structural violation
 
-File: `docs/reviews/CVF_REAL_NONCODER_USAGE_TEST_OPERATOR_SAMPLE_2026-05-25.md`
+File: `docs/reviews/archive/CVF_REAL_NONCODER_USAGE_TEST_OPERATOR_SAMPLE_2026-05-25.md`
 
 Current issue: file contains unchecked `- [ ]` checklist items (lines 67-70) and
 `Status: READY_FOR_OPERATOR_REVIEW` with no reviewer pass/hold/blocked answer.

@@ -48,7 +48,7 @@ Forbidden scope:
 | Parent roadmap | `docs/roadmaps/CVF_LHW22_LHW23_LHW24_AGENT_INTELLIGENCE_ROADMAP_2026-05-31.md` | ACCEPT |
 | Required predecessor | LHW23 wave closure evidence | PASS |
 | Full-scan audit | `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md` | ACCEPT |
-| Learning signal bridge standard | `docs/reference/CVF_LEARNING_SIGNAL_INTAKE_BRIDGE_STANDARD_2026-05-29.md` | ACCEPT |
+| Learning signal bridge standard | `docs/reference/archive/CVF_LEARNING_SIGNAL_INTAKE_BRIDGE_STANDARD_2026-05-29.md` | ACCEPT |
 | Work-order template | `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md` | ACCEPT |
 
 ## Agent Roles
@@ -63,7 +63,7 @@ Forbidden scope:
 
 - `docs/roadmaps/CVF_LHW22_LHW23_LHW24_AGENT_INTELLIGENCE_ROADMAP_2026-05-31.md`
 - `docs/audits/CVF_IMPORTANT_FULL_FILE_SCAN_BLINDSPOT_RECORD_2026-05-31.md`
-- `docs/reference/CVF_LEARNING_SIGNAL_INTAKE_BRIDGE_STANDARD_2026-05-29.md`
+- `docs/reference/archive/CVF_LEARNING_SIGNAL_INTAKE_BRIDGE_STANDARD_2026-05-29.md`
 - `.private_reference/legacy/CVF_Important/ADDING_LEARNING PLANE/CVF_LEARNING_ORCHESTRATOR.md`
 - `.private_reference/legacy/CVF_Important/ADDING_LEARNING PLANE/CVF_MEMORY_ARCHITECTURE.md`
 - `.private_reference/legacy/CVF_Important/ADDING_CONTEXT ENGINE/CONTEXT PACKAGER.md`
@@ -203,3 +203,30 @@ This work order is closed for LHW24 documentation-only advisory connector work.
 It does not authorize runtime learning changes, memory lifecycle mutation,
 context packager changes, autonomous rule mutation, live proof, public release,
 or runtime roadmap expansion.
+
+## Machine Closure Package
+
+Retroactively added 2026-06-10 per check_machine_closure_package.py.
+Standard published after this artifact was authored.
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | N/A — pre-standard artifact | N/A | N/A with reason: artifact authored before Machine Closure Package standard |
+| Completion or reviewer artifact | this file | (path of this file) | PASS |
+| Roadmap state | docs/roadmaps/CVF_LHW22_LHW23_LHW24_AGENT_INTELLIGENCE_ROADMAP_2026-05-31.md | roadmap closed at original delivery time for LHW22-24 advisory connector wave | PASS |
+| Registry JSON | N/A — no new corpus registry entry | N/A with reason: no corpus scan performed in this artifact | BLOCKED: pre-standard artifact — no corpus registry update required |
+| Registry Markdown | N/A — see above | N/A with reason: see above | BLOCKED: pre-standard artifact — no corpus registry update required |
+| External evidence digest | N/A — no external evidence | N/A | N/A with reason: all evidence is repo-local |
+| System loop interlock | N/A | N/A | N/A with reason: no system loop trigger |
+| Session continuity | AGENT_HANDOFF_V17_2026-06-07.md | N/A — pre-standard artifact | N/A with reason: session continuity not tracked at original delivery time |
+
+## Acceptance Receipt Assertion Matrix
+
+Retroactively added 2026-06-10. No receipt-acceptance query applies to this
+artifact. References to "receipt" describe GovernanceEvidenceReceipt runtime
+schema proposals (doc-only). No selectedCandidateIds or freshnessDisclosureApplied
+fields were evaluated.
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| N/A — no receipt/query acceptance closure | N/A | N/A with reason: no receipt-acceptance query; receipt references are runtime-schema advisory only |

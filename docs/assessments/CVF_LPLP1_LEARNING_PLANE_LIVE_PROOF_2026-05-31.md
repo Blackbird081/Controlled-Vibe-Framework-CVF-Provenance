@@ -17,7 +17,7 @@ Boundary: no code change; live call on existing Alibaba R1 certified lane; secre
 
 ## Source / Predecessor Evidence
 
-- LHW17 T3 prerequisite: `docs/reference/CVF_LHW17_T3_LEARNING_PLANE_TRUTH_REPUTATION_ADVISORY_CONNECTOR_SPEC_2026-05-30.md`
+- LHW17 T3 prerequisite: `docs/reference/archive/CVF_LHW17_T3_LEARNING_PLANE_TRUTH_REPUTATION_ADVISORY_CONNECTOR_SPEC_2026-05-30.md`
 - TM1: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/truth-model-calibration.ts`
 - CLI: `EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/dist/src/bin/cvf.js`
 

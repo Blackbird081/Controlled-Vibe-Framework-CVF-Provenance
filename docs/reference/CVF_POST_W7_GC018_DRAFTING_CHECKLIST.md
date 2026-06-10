@@ -134,7 +134,7 @@ Before submitting the GC-018 packet for authorization:
 - `docs/reference/CVF_GC018_CONTINUATION_CANDIDATE_TEMPLATE.md` — base template
 - `docs/reference/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_STANDARD_2026-06-01.md` — GC-047 corpus/report completeness
 - `docs/reference/CVF_RESCAN_INTELLIGENCE_HARDENING_STANDARD_2026-06-05.md` — rescan delta/routing/sampling discipline
-- `docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD_2026-05-29.md` — GC-049 finding-to-learning routing
+- `docs/reference/archive/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD_2026-05-29.md` — GC-049 finding-to-learning routing
 - `governance/toolkit/05_OPERATION/CVF_CORE_GUARD_SELF_PROTECTION_GUARD.md` — protected guard/session/front-door path authorization
 - `docs/reference/CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28.md` — real-range autorun gates
 - `docs/roadmaps/CVF_POST_W7_OPEN_TARGETS_UPGRADE_ROADMAP_2026-03-28.md` — gates G1–G8

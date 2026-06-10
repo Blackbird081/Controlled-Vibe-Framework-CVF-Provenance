@@ -44,7 +44,7 @@ promotion, and autonomous mutation.
 | --- | --- | --- |
 | Operator execution instruction | 2026-06-05 chat instruction: execute dispatched work order | ACCEPT |
 | Dispatched work order | `docs/work_orders/CVF_WO_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md` | ACCEPT |
-| Public export standard | `docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | ACCEPT |
+| Public export standard | `docs/reference/archive/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | ACCEPT |
 | Repository boundary | `AGENTS.md` | ACCEPT |
 | LO1 closure | `docs/reviews/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_COMPLETION_2026-06-05.md` | ACCEPT |
 | LO2 closure | `docs/reviews/CVF_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_COMPLETION_2026-06-05.md` | ACCEPT |
@@ -56,7 +56,7 @@ promotion, and autonomous mutation.
 
 | Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 | --- | --- | --- | --- | --- | --- |
-| EXISTS - public export must use `DEFERRED_PRIVATE_ONLY` when no public-sync evidence exists | `docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | `Allowed dispositions` and `Required Section` | `DEFERRED_PRIVATE_ONLY` | public export disposition standard | ACCEPT |
+| EXISTS - public export must use `DEFERRED_PRIVATE_ONLY` when no public-sync evidence exists | `docs/reference/archive/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | `Allowed dispositions` and `Required Section` | `DEFERRED_PRIVATE_ONLY` | public export disposition standard | ACCEPT |
 | EXISTS - public-facing CVF work belongs in sibling public-sync clone | `AGENTS.md` | `Critical Repository Boundary - 2026-05-09` | `Controlled-Vibe-Framework-CVF-public-sync` | repository boundary standard | ACCEPT |
 | EXISTS - LO1 is advisory/proposal-only and blocks runtime Learning Orchestrator claims | `docs/reference/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md` | `Purpose`, `Scope / Applies-To`, `Claim Boundary` | `LearningOrchestrator` | LO1 boundary reference | ACCEPT |
 | EXISTS - LO1 closure confirms no runtime orchestrator or high-risk promotion lane | `docs/reviews/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_COMPLETION_2026-06-05.md` | `Findings / Position`, `Claim Boundary` | `LearningOrchestrator` | LO1 completion review | ACCEPT |
@@ -161,7 +161,7 @@ boundary.
 - Corpus task class: DOCUMENTATION_SUMMARY_FROM_BOUNDED_AUTHORITY_SET.
 - Corpus root: bounded authority files listed in this summary authority chain.
 - Snapshot time: 2026-06-05 at execution base `3a1892ac`.
-- Enumeration command: `Get-ChildItem -LiteralPath CVF_SESSION_MEMORY.md,CVF_SESSION/ACTIVE_SESSION_STATE.json,AGENT_HANDOFF_V15_2026-05-29.md,AGENTS.md,docs/work_orders/CVF_WO_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md,docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md,docs/reference/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md,docs/reviews/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_COMPLETION_2026-06-05.md,docs/reviews/CVF_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_COMPLETION_2026-06-05.md,docs/reviews/CVF_MLW7_OPTIONAL_EXTERNAL_CAPABILITY_INGESTION_COMPLETION_2026-06-05.md,docs/reviews/CVF_MLW8_EFFICIENCY_OVERCONSTRAINT_FEEDBACK_COMPLETION_2026-06-05.md,docs/reviews/CVF_CLOSURE_PACKAGING_PREFLIGHT_HARDENING_COMPLETION_2026-06-05.md`.
+- Enumeration command: `Get-ChildItem -LiteralPath CVF_SESSION_MEMORY.md,CVF_SESSION/ACTIVE_SESSION_STATE.json,AGENT_HANDOFF_V15_2026-05-29.md,AGENTS.md,docs/work_orders/CVF_WO_PUBLIC_SAFE_MEMORY_LEARNING_SUMMARY_2026-06-05.md,docs/reference/archive/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md,docs/reference/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md,docs/reviews/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_COMPLETION_2026-06-05.md,docs/reviews/CVF_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_COMPLETION_2026-06-05.md,docs/reviews/CVF_MLW7_OPTIONAL_EXTERNAL_CAPABILITY_INGESTION_COMPLETION_2026-06-05.md,docs/reviews/CVF_MLW8_EFFICIENCY_OVERCONSTRAINT_FEEDBACK_COMPLETION_2026-06-05.md,docs/reviews/CVF_CLOSURE_PACKAGING_PREFLIGHT_HARDENING_COMPLETION_2026-06-05.md`.
 - Manifest artifact or inline manifest: Authority Chain and Source Verification Block in this file.
 - Manifest hash: N/A with reason - bounded path list is inline and reviewer-rerunnable.
 - Processing ledger artifact or inline ledger: Source Verification Block.

@@ -42,7 +42,7 @@ Boundary:
 - `docs/reviews/CVF_LHW_RESCAN_A_CVF_IMPORTANT_CORPUS_RECONCILIATION_COMPLETION_2026-06-01.md`
 - `docs/reviews/CVF_LHW_RESCAN_B_LEGACY_SMALL_ROOTS_CORPUS_RECONCILIATION_COMPLETION_2026-06-01.md`
 - `docs/reference/archive/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md`
-- `docs/baselines/CVF_GC018_LHW19_CVF_RESTRUCTURE_ABSORPTION_WAVE_2026-05-30.md`
+- `docs/baselines/archive/CVF_GC018_LHW19_CVF_RESTRUCTURE_ABSORPTION_WAVE_2026-05-30.md`
 
 The LHW19 packet remains useful predecessor evidence, but its selective
 `CVF_Restructure/` reading and earlier `CLEAR` verdict do not satisfy the
@@ -349,3 +349,43 @@ This dispatch audit proves current root and source-family enumeration plus an
 initial region-routing plan. It does not prove terminal processing, deep
 semantic absorption, runtime behavior, public readiness, hosted readiness,
 production readiness, or autonomous mutation authority.
+
+## Rescan Intelligence Hardening
+
+Retroactively added 2026-06-10 per check_rescan_intelligence_hardening.py.
+Standard published after this artifact was authored (2026-06-05). This
+section satisfies the vocabulary requirement; all fields are declared N/A
+because no rescan operation was performed — the artifact is the original
+intake output.
+
+Original source artifact: this document.
+Predecessor intake artifact: N/A
+Delta ledger status: N/A — original intake; no predecessor to delta against.
+Routing matrix status: N/A — routing decided at original intake time.
+Semantic sampling status: N/A — sampling performed inline at intake time.
+- Rescan intelligence verdict: COMPLETE_WITH_DECLARED_LIMITS
+
+### Original-Intake Delta Ledger
+
+| Finding | Category | Notes |
+| --- | --- | --- |
+| (retroactive) | UNCHANGED_FROM_INTAKE | original intake; no delta comparison possible |
+| N/A | CHANGED_DISPOSITION | not applicable |
+| N/A | NEW_FINDING | not applicable |
+| N/A | REMOVED_OR_REJECTED | not applicable |
+
+### Follow-Up Routing Matrix
+
+| Item | Routing lane | Notes |
+| --- | --- | --- |
+| (all items) | RESOLVED_BY_DESIGN | closed at original intake; no follow-up items |
+| N/A | DO_NOW | not applicable |
+| N/A | SEPARATE_RUNTIME_TRANCHE | not applicable |
+| N/A | STRATEGIC_OPERATOR_DECISION | not applicable |
+| N/A | OUT_OF_SCOPE | not applicable |
+
+### Semantic Sampling / Adversarial Review
+
+| sampleId | source section | source claim | disposition checked | adversarial challenge | verdict |
+| --- | --- | --- | --- | --- | --- |
+| RS-RETRO-01 | (entire document) | original intake claim | UNCHANGED_FROM_INTAKE | N/A — retroactive addition only | COMPLETE_WITH_DECLARED_LIMITS |

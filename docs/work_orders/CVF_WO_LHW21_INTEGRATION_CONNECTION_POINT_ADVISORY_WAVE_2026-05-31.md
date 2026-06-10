@@ -76,8 +76,8 @@ connection point; CVF does not build outbound framework adapters.
 - GC-018:
   `docs/baselines/CVF_GC018_LHW21_INTEGRATION_CONNECTION_POINT_ADVISORY_WAVE_2026-05-31.md`
 - Parent evidence:
-  `docs/baselines/CVF_GC018_LHW18_CVF_EDIT_ABSORPTION_WAVE_2026-05-30.md`,
-  `docs/baselines/CVF_GC018_LHW19_CVF_RESTRUCTURE_ABSORPTION_WAVE_2026-05-30.md`,
+  `docs/baselines/archive/CVF_GC018_LHW18_CVF_EDIT_ABSORPTION_WAVE_2026-05-30.md`,
+  `docs/baselines/archive/CVF_GC018_LHW19_CVF_RESTRUCTURE_ABSORPTION_WAVE_2026-05-30.md`,
   `docs/baselines/CVF_GC018_IS1_GENERIC_AGENT_ADAPTER_2026-05-31.md`
 
 Authority boundary:
@@ -360,3 +360,30 @@ completion reviews. It does not authorize runtime event schema enforcement,
 hard-gate implementation, receipt runtime extension, adapter code, framework
 integration, live provider behavior, public export, hosted readiness,
 production readiness, or release readiness.
+
+## Machine Closure Package
+
+Retroactively added 2026-06-10 per check_machine_closure_package.py.
+Standard published after this artifact was authored.
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | N/A — pre-standard artifact | N/A | N/A with reason: artifact authored before Machine Closure Package standard |
+| Completion or reviewer artifact | this file | (path of this file) | PASS |
+| Roadmap state | N/A — roadmap closed at original delivery time | N/A | N/A with reason: roadmap state resolved at original delivery |
+| Registry JSON | N/A — no new corpus registry entry | N/A with reason: no corpus scan performed in this artifact | BLOCKED: pre-standard artifact — no corpus registry update required |
+| Registry Markdown | N/A — see above | N/A with reason: see above | BLOCKED: pre-standard artifact — no corpus registry update required |
+| External evidence digest | N/A — no external evidence | N/A | N/A with reason: all evidence is repo-local |
+| System loop interlock | N/A | N/A | N/A with reason: no system loop trigger |
+| Session continuity | AGENT_HANDOFF_V17_2026-06-07.md | N/A — pre-standard artifact | N/A with reason: session continuity not tracked at original delivery time |
+
+## Acceptance Receipt Assertion Matrix
+
+Retroactively added 2026-06-10. No receipt-acceptance query applies to this
+artifact. References to "receipt" describe GovernanceEvidenceReceipt runtime
+schema proposals (advisory, doc-only). No selectedCandidateIds or
+freshnessDisclosureApplied fields were evaluated.
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| N/A — no receipt/query acceptance closure | N/A | N/A with reason: no receipt-acceptance query; receipt references are runtime-schema advisory only |

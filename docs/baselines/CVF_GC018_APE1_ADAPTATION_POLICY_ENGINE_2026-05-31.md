@@ -36,7 +36,7 @@ Boundary:
 ## Source / Predecessor Evidence
 
 - LHW20 T3 spec: `docs/reference/CVF_LHW20_T3_ADAPTATION_POLICY_ENGINE_ADVISORY_CONNECTOR_SPEC_2026-05-31.md`
-- LHW17 T3 spec: `docs/reference/CVF_LHW17_T3_LEARNING_PLANE_TRUTH_REPUTATION_ADVISORY_CONNECTOR_SPEC_2026-05-30.md`
+- LHW17 T3 spec: `docs/reference/archive/CVF_LHW17_T3_LEARNING_PLANE_TRUTH_REPUTATION_ADVISORY_CONNECTOR_SPEC_2026-05-30.md`
 - OFB-1 signal: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/orchestrator-feedback-bus.ts`
 
 ---

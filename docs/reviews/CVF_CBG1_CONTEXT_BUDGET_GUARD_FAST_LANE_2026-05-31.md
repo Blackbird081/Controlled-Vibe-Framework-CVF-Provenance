@@ -43,7 +43,7 @@ in dedicated file `tests/context-budget-guard.test.ts`.
 - Modified: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/index.ts` (+9 lines re-export)
 - Tests: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/context-budget-guard.test.ts`
 - Source policy: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/context-budget-policy.ts`
-- Advisory source: `docs/reference/CVF_LHW18_T3_CONTEXT_MANAGEMENT_STRATEGY_ADVISORY_CONNECTOR_SPEC_2026-05-30.md` (P2)
+- Advisory source: `docs/reference/archive/CVF_LHW18_T3_CONTEXT_MANAGEMENT_STRATEGY_ADVISORY_CONNECTOR_SPEC_2026-05-30.md` (P2)
 
 ## Findings / Position
 
@@ -82,3 +82,30 @@ No violations. ESCALATE disposition is advisory only — callers must wire to hu
 CBG-1 adds an enforcement function that classifies context usage as PASS or ESCALATE.
 It does not block execution, change the provider call path, extend receipt envelopes,
 modify route.ts, or claim production readiness.
+
+## Machine Closure Package
+
+Retroactively added 2026-06-10 per check_machine_closure_package.py.
+Standard published after this artifact was authored.
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | N/A — pre-standard artifact | N/A | N/A with reason: artifact authored before Machine Closure Package standard |
+| Completion or reviewer artifact | this file | (path of this file) | PASS |
+| Roadmap state | N/A — roadmap closed at original delivery time | N/A | N/A with reason: roadmap state resolved at original delivery |
+| Registry JSON | N/A — no new corpus registry entry | N/A with reason: no corpus scan performed in this artifact | BLOCKED: pre-standard artifact — no corpus registry update required |
+| Registry Markdown | N/A — see above | N/A with reason: see above | BLOCKED: pre-standard artifact — no corpus registry update required |
+| External evidence digest | N/A — no external evidence | N/A | N/A with reason: all evidence is repo-local |
+| System loop interlock | N/A | N/A | N/A with reason: no system loop trigger |
+| Session continuity | AGENT_HANDOFF_V17_2026-06-07.md | N/A — pre-standard artifact | N/A with reason: session continuity not tracked at original delivery time |
+
+## Acceptance Receipt Assertion Matrix
+
+Retroactively added 2026-06-10. No receipt-acceptance query applies to this
+artifact. The word "receipt" refers to GovernanceEvidenceReceipt runtime types,
+not a receipt/query acceptance outcome. No selectedCandidateIds or
+freshnessDisclosureApplied fields were evaluated.
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| N/A — no receipt/query acceptance closure | N/A | N/A with reason: no receipt-acceptance query in this artifact |

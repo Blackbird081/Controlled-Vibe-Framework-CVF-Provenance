@@ -113,7 +113,7 @@ Before execution, worker must read:
 | memory-lifecycle-policy exists | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-lifecycle-policy.ts` | MKG7 completion review | `memory-lifecycle-policy.ts` | LPF lifecycle policy | ACCEPT |
 | durable-memory-store exists | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/durable-memory-store.ts` | MKG7 completion review | `durable-memory-store.ts` | LPF durable store | ACCEPT |
 | knowledge-graph-builder exists | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge-graph-builder.ts` | KGR1 completion review | `knowledge-graph-builder.ts` | KGR1 graph builder | ACCEPT |
-| LearningSignalIntakeRecord exists | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/learning-signal-intake-bridge.ts` | `docs/reference/CVF_LEARNING_SIGNAL_INTAKE_BRIDGE_STANDARD_2026-05-29.md` | `LearningSignalIntakeRecord` | LPF intake bridge | ACCEPT |
+| LearningSignalIntakeRecord exists | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/learning-signal-intake-bridge.ts` | `docs/reference/archive/CVF_LEARNING_SIGNAL_INTAKE_BRIDGE_STANDARD_2026-05-29.md` | `LearningSignalIntakeRecord` | LPF intake bridge | ACCEPT |
 | POST /api/memory/readout exists | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/memory/readout/route.ts` | MKG6 completion review (205L) | `readout/route.ts` | memory readout route | ACCEPT |
 | POST /api/memory/write exists | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/memory/write/route.ts` | MKG7 completion review | `write/route.ts` | memory write route | ACCEPT |
 | W7MemoryRecord | T11A-D packets `docs/audits/CVF_CI1_T11B_MEMORY_KNOWLEDGE_STORE_DEEP_SCAN_PACKET_2026-06-05.md` | T11-F3 no-current-source finding | NOT_IN_CURRENT_SOURCE | legacy vocabulary only | BLOCKED_UNTIL_MAP |

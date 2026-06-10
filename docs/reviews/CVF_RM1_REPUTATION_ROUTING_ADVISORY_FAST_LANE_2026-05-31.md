@@ -26,7 +26,7 @@ DEFER is not a hard gate. R2 review recommended on PROVISIONAL/UNTRUSTED per LHW
 - New: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/reputation-routing-advisory.ts`
 - Modified: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/index.ts` (+9 lines re-export)
 - Tests: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/reputation-routing-advisory.test.ts`
-- Source advisory: `docs/reference/CVF_LHW17_T3_LEARNING_PLANE_TRUTH_REPUTATION_ADVISORY_CONNECTOR_SPEC_2026-05-30.md`
+- Source advisory: `docs/reference/archive/CVF_LHW17_T3_LEARNING_PLANE_TRUTH_REPUTATION_ADVISORY_CONNECTOR_SPEC_2026-05-30.md`
 
 ## Scope / Methodology
 
@@ -74,3 +74,29 @@ tranche when calibration is proven stable (per LHW17 T3).
 RM1 implements a governed routing advisory function. It does not activate Reputation
 runtime routing in the CLI, change `resolveProviderForRole()`, or claim production readiness.
 Step 8 (Simulation Environment) requires a separate tranche.
+
+## Machine Closure Package
+
+Retroactively added 2026-06-10 per check_machine_closure_package.py.
+Standard published after this artifact was authored.
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | N/A — pre-standard artifact | N/A | N/A with reason: artifact authored before Machine Closure Package standard |
+| Completion or reviewer artifact | this file | (path of this file) | PASS |
+| Roadmap state | N/A — roadmap closed at original delivery time | N/A | N/A with reason: roadmap state resolved at original delivery |
+| Registry JSON | N/A — no new corpus registry entry | N/A with reason: no corpus scan performed in this artifact | BLOCKED: pre-standard artifact — no corpus registry update required |
+| Registry Markdown | N/A — see above | N/A with reason: see above | BLOCKED: pre-standard artifact — no corpus registry update required |
+| External evidence digest | N/A — no external evidence | N/A | N/A with reason: all evidence is repo-local |
+| System loop interlock | N/A | N/A | N/A with reason: no system loop trigger |
+| Session continuity | AGENT_HANDOFF_V17_2026-06-07.md | N/A — pre-standard artifact | N/A with reason: session continuity not tracked at original delivery time |
+
+## Acceptance Receipt Assertion Matrix
+
+Retroactively added 2026-06-10. No receipt-acceptance query applies to this
+artifact. References to "receipt" refer to receipt-envelope runtime types —
+not receipt/query acceptance outcomes. No acceptance queries were issued.
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| N/A — no receipt/query acceptance closure | N/A | N/A with reason: no receipt-acceptance query in this artifact |

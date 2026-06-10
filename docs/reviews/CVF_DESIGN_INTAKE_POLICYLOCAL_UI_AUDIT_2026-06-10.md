@@ -150,7 +150,19 @@ or `COST_ECONOMICS_LEARNING` candidate is raised.
 ## Claim Boundary
 
 This is an absorption + promotion record, not a runtime or product claim. Verified:
-`check_finding_to_governance_learning.py --base HEAD --head HEAD` → COMPLIANT;
+`check_finding_to_governance_learning.py` (worktree/index validation at time of authoring) → COMPLIANT;
 `DESIGN.md` and the canonical skill updated and under GC-023 thresholds. It does
 not claim PolicyLocal runtime behavior changed, nor that any new machine guard
 was added. PolicyLocal code fixes are tracked in that project's own repository.
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | N/A -- design intake note; no separate work order | N/A | N/A with reason: design intake note; no governed work order required |
+| Completion or reviewer artifact | this file | (path of this file) | PASS |
+| Roadmap state | N/A | N/A | N/A with reason: no roadmap associated with design intake |
+| Registry JSON | docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json | No registry JSON update required for design intake | BLOCKED: design intake -- no corpus scan performed; Registry JSON not applicable |
+| Registry Markdown | docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md | No registry markdown update required for design intake | BLOCKED: design intake -- no corpus scan performed; Registry Markdown not applicable |
+| External evidence digest | N/A -- all evidence is repo-local | N/A | N/A with reason: no external evidence in this artifact |
+| System loop interlock | N/A | N/A | N/A with reason: no system loop trigger |
+| Session continuity | AGENT_HANDOFF_V17_2026-06-07.md | active handoff updated | PASS |

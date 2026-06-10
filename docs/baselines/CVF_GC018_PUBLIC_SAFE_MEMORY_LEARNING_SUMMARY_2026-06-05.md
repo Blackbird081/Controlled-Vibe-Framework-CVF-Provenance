@@ -35,7 +35,7 @@ public readiness claim.
 | Operator instruction | 2026-06-05 chat instruction: "lam di" after audit selected this lane | current conversation | ACCEPT |
 | Active session front door | `CVF_SESSION_MEMORY.md` | Next allowed move includes public-safe memory/learning summary/public-sync | ACCEPT |
 | Active state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | current mode and closed MLW/LO state records | ACCEPT |
-| Public export boundary | `docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | allowed dispositions and public-sync evidence requirement | ACCEPT |
+| Public export boundary | `docs/reference/archive/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | allowed dispositions and public-sync evidence requirement | ACCEPT |
 | Repository boundary | `AGENTS.md` | Critical Repository Boundary | ACCEPT |
 
 ## GC-018 Continuation Candidate
@@ -131,7 +131,7 @@ Not authorized:
 | Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 | --- | --- | --- | --- | --- | --- |
 | EXISTS - active front door allows public-safe summary as a next move | `CVF_SESSION_MEMORY.md` | lines 106-114 | `Next allowed move` | active session front door | ACCEPT |
-| EXISTS - public export disposition requires one of three exact outcomes | `docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | lines 31-36 | `DEFERRED_PRIVATE_ONLY` | public export disposition standard | ACCEPT |
+| EXISTS - public export disposition requires one of three exact outcomes | `docs/reference/archive/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | lines 31-36 | `DEFERRED_PRIVATE_ONLY` | public export disposition standard | ACCEPT |
 | EXISTS - public work must use the sibling public-sync clone | `AGENTS.md` | lines 127-150 | `Controlled-Vibe-Framework-CVF-public-sync` | repository boundary standard | ACCEPT |
 | EXISTS - LO1 closes as advisory/proposal-only and blocks runtime authority | `docs/reference/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md` | lines 13-24, 180-186 | `LearningOrchestrator` | LO1 advisory boundary | ACCEPT |
 | EXISTS - LO2 closes as review-only high-risk promotion boundary | `docs/reviews/CVF_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_COMPLETION_2026-06-05.md` | lines 17-24, 168-173 | `promotionVerdict` | LO2 completion review | ACCEPT |
@@ -144,7 +144,7 @@ Not authorized:
 | Evidence | Command or path | Result |
 | --- | --- | --- |
 | Base head captured | `git rev-parse --short HEAD` | `a3f8bc85` |
-| Authority paths enumerated | `rg --files --hidden --no-ignore CVF_SESSION_MEMORY.md CVF_SESSION/ACTIVE_SESSION_STATE.json AGENT_HANDOFF_V15_2026-05-29.md AGENTS.md docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md docs/reference/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md docs/reviews/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_COMPLETION_2026-06-05.md docs/reviews/CVF_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_COMPLETION_2026-06-05.md docs/reviews/CVF_MLW7_OPTIONAL_EXTERNAL_CAPABILITY_INGESTION_COMPLETION_2026-06-05.md docs/reviews/CVF_MLW8_EFFICIENCY_OVERCONSTRAINT_FEEDBACK_COMPLETION_2026-06-05.md docs/reviews/CVF_CLOSURE_PACKAGING_PREFLIGHT_HARDENING_COMPLETION_2026-06-05.md` | 11 paths |
+| Authority paths enumerated | `rg --files --hidden --no-ignore CVF_SESSION_MEMORY.md CVF_SESSION/ACTIVE_SESSION_STATE.json AGENT_HANDOFF_V15_2026-05-29.md AGENTS.md docs/reference/archive/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md docs/reference/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md docs/reviews/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_COMPLETION_2026-06-05.md docs/reviews/CVF_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_COMPLETION_2026-06-05.md docs/reviews/CVF_MLW7_OPTIONAL_EXTERNAL_CAPABILITY_INGESTION_COMPLETION_2026-06-05.md docs/reviews/CVF_MLW8_EFFICIENCY_OVERCONSTRAINT_FEEDBACK_COMPLETION_2026-06-05.md docs/reviews/CVF_CLOSURE_PACKAGING_PREFLIGHT_HARDENING_COMPLETION_2026-06-05.md` | 11 paths |
 | Dispatch-quality gate | `python governance/compat/check_work_order_dispatch_quality.py --base a3f8bc85 --head HEAD --enforce` | PASS |
 | Closure-packaging preflight | `python governance/compat/check_closure_packaging_preflight.py --base a3f8bc85 --head HEAD --enforce` | PASS |
 
@@ -171,7 +171,7 @@ Not authorized:
   `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-06-01.md`.
 - Source inventory:
   - bounded current closed-artifact set, 11 files.
-  - Shell command run: `rg --files --hidden --no-ignore CVF_SESSION_MEMORY.md CVF_SESSION/ACTIVE_SESSION_STATE.json AGENT_HANDOFF_V15_2026-05-29.md AGENTS.md docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md docs/reference/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md docs/reviews/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_COMPLETION_2026-06-05.md docs/reviews/CVF_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_COMPLETION_2026-06-05.md docs/reviews/CVF_MLW7_OPTIONAL_EXTERNAL_CAPABILITY_INGESTION_COMPLETION_2026-06-05.md docs/reviews/CVF_MLW8_EFFICIENCY_OVERCONSTRAINT_FEEDBACK_COMPLETION_2026-06-05.md docs/reviews/CVF_CLOSURE_PACKAGING_PREFLIGHT_HARDENING_COMPLETION_2026-06-05.md`.
+  - Shell command run: `rg --files --hidden --no-ignore CVF_SESSION_MEMORY.md CVF_SESSION/ACTIVE_SESSION_STATE.json AGENT_HANDOFF_V15_2026-05-29.md AGENTS.md docs/reference/archive/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md docs/reference/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md docs/reviews/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_COMPLETION_2026-06-05.md docs/reviews/CVF_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_COMPLETION_2026-06-05.md docs/reviews/CVF_MLW7_OPTIONAL_EXTERNAL_CAPABILITY_INGESTION_COMPLETION_2026-06-05.md docs/reviews/CVF_MLW8_EFFICIENCY_OVERCONSTRAINT_FEEDBACK_COMPLETION_2026-06-05.md docs/reviews/CVF_CLOSURE_PACKAGING_PREFLIGHT_HARDENING_COMPLETION_2026-06-05.md`.
   - Shell output: all 11 authority paths printed.
   - Total file count from shell: 11.
 - Prior absorption evidence resolved:
@@ -204,7 +204,7 @@ Not authorized:
 - Corpus task class: WORK_ORDER_AUTHORING.
 - Corpus root: bounded current closed-artifact source list.
 - Snapshot time: 2026-06-05 at base `a3f8bc85`.
-- Enumeration command: `rg --files --hidden --no-ignore CVF_SESSION_MEMORY.md CVF_SESSION/ACTIVE_SESSION_STATE.json AGENT_HANDOFF_V15_2026-05-29.md AGENTS.md docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md docs/reference/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md docs/reviews/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_COMPLETION_2026-06-05.md docs/reviews/CVF_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_COMPLETION_2026-06-05.md docs/reviews/CVF_MLW7_OPTIONAL_EXTERNAL_CAPABILITY_INGESTION_COMPLETION_2026-06-05.md docs/reviews/CVF_MLW8_EFFICIENCY_OVERCONSTRAINT_FEEDBACK_COMPLETION_2026-06-05.md docs/reviews/CVF_CLOSURE_PACKAGING_PREFLIGHT_HARDENING_COMPLETION_2026-06-05.md`.
+- Enumeration command: `rg --files --hidden --no-ignore CVF_SESSION_MEMORY.md CVF_SESSION/ACTIVE_SESSION_STATE.json AGENT_HANDOFF_V15_2026-05-29.md AGENTS.md docs/reference/archive/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md docs/reference/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md docs/reviews/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_COMPLETION_2026-06-05.md docs/reviews/CVF_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_COMPLETION_2026-06-05.md docs/reviews/CVF_MLW7_OPTIONAL_EXTERNAL_CAPABILITY_INGESTION_COMPLETION_2026-06-05.md docs/reviews/CVF_MLW8_EFFICIENCY_OVERCONSTRAINT_FEEDBACK_COMPLETION_2026-06-05.md docs/reviews/CVF_CLOSURE_PACKAGING_PREFLIGHT_HARDENING_COMPLETION_2026-06-05.md`.
 - Manifest artifact or inline manifest: inline table in this section.
 - Manifest hash: N/A with reason - bounded file list is inline and not a
   corpus scan artifact.
@@ -230,7 +230,7 @@ Not authorized:
 | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | READ | ACCEPT | current mode and closed state records |
 | `AGENT_HANDOFF_V15_2026-05-29.md` | READ | ACCEPT | active handoff |
 | `AGENTS.md` | READ | ACCEPT | public/provenance boundary |
-| `docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | READ | ACCEPT | public export disposition |
+| `docs/reference/archive/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | READ | ACCEPT | public export disposition |
 | `docs/reference/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_2026-06-05.md` | READ | ACCEPT | LO1 boundary |
 | `docs/reviews/CVF_LO1_LEARNING_ORCHESTRATOR_ADVISORY_PROPOSAL_BOUNDARY_COMPLETION_2026-06-05.md` | READ | ACCEPT | LO1 completion |
 | `docs/reviews/CVF_LO2_HIGH_RISK_PROMOTION_DECISION_BOUNDARY_COMPLETION_2026-06-05.md` | READ | ACCEPT | LO2 completion |

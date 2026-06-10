@@ -187,7 +187,7 @@ LHW9-T1, LHW8-T2 advisory inputs
 **What:** Current memory continuity level advisory (L0–L3).
 
 **Source:** LHW13-T2 `memoryContinuityLevelAdvisoryType`
-- Source path: `docs/reference/CVF_LHW13_T2_MEMORY_CONTINUITY_LEVEL_ADVISORY_CONNECTOR_SPEC_2026-05-29.md` — S3 field list
+- Source path: `docs/reference/archive/CVF_LHW13_T2_MEMORY_CONTINUITY_LEVEL_ADVISORY_CONNECTOR_SPEC_2026-05-29.md` — S3 field list
 
 **Refresh cadence:** Per memory snapshot or context change event
 
