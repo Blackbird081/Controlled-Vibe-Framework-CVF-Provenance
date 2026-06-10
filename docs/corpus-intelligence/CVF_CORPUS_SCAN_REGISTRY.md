@@ -91,6 +91,8 @@ prior scan here before starting new work.
 | `CVF CPF DSCP-T10 domain profile contract source/export` | CVF_EXTENSION | SCANNED | DSCP-T10 | 2 | New deterministic domain-profile contract plus CPF export barrel; no corpus content ingested; no findings |
 | `CVF CPF DSCP-T10 domain profile contract tests` | CVF_EXTENSION | SCANNED | DSCP-T10 | 1 | 17 vitest assertions covering legal_policy/company_docs/technical_project profiles; no corpus content ingested; no findings |
 | `CVF CPF DSCP-T11 profile-aware pipeline harness tests` | CVF_EXTENSION | SCANNED | DSCP-T11 | 1 | 4 vitest assertions proving profile metadata/gates flow descriptor to ECO/LPF package without content release or cross-profile gate bleed |
+| `CVF CPF DSCP-T11E domain profile registry source` | CVF_EXTENSION | SCANNED | DSCP-T11E | 1 | DscpDomainProfileRegistry class + factory; in-memory deterministic selection by domainFamily/languageCode/facetKey; no corpus content ingested |
+| `CVF CPF DSCP-T11E domain profile registry tests` | CVF_EXTENSION | SCANNED | DSCP-T11E | 1 | 18 vitest assertions covering registration/selection/ambiguity/no-match/requiredFacetKey/select-then-apply pipeline integration |
 
 ---
 

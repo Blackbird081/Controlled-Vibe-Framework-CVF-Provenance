@@ -82,3 +82,10 @@ export type {
   DomainProfileApplyOptions,
   DomainProfileApplyResult,
 } from "./dscp.domain.profile.contract";
+
+export { DscpDomainProfileRegistry, createDscpDomainProfileRegistry } from "./dscp.domain.profile.registry";
+export type {
+  DomainProfileSelectionCriteria,
+  DomainProfileSelectionResult,
+  DomainProfileRegistrationResult,
+} from "./dscp.domain.profile.registry";

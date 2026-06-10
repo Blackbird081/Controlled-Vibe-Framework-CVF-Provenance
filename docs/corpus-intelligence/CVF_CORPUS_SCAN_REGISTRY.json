@@ -4,7 +4,7 @@
   "guard": "governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md",
   "checker": "governance/compat/check_corpus_scan_registry.py",
   "lastUpdated": "2026-06-10",
-  "updatedBy": "Claude (DSCP-T11 worker)",
+  "updatedBy": "Claude (DSCP-T11E worker)",
   "allowedCorpusTypes": [
     "LEGACY_FOLDER",
     "PROJECT_SOURCE",
@@ -2117,6 +2117,44 @@
       "manifestPath": null,
       "packetPath": "docs/reviews/CVF_DSCP_T11_PROFILE_AWARE_PIPELINE_HARNESS_WORKER_RETURN_2026-06-10.md",
       "notes": "DSCP-T11 profile-aware pipeline harness. 4 vitest assertions proving profile metadata and gate keys flow through descriptor to ECO/LPF package without content release and without cross-profile bleed."
+    },
+    {
+      "id": "dscp-t11e-domain-profile-registry-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF CPF DSCP-T11E domain profile registry source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.domain.profile.registry.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "DSCP-T11E",
+      "scanDate": "2026-06-10",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_DSCP_T11E_DOMAIN_PROFILE_REGISTRY_WORKER_RETURN_2026-06-10.md",
+      "notes": "DSCP-T11E new registry contract. DscpDomainProfileRegistry class + createDscpDomainProfileRegistry factory; no corpus content ingested; no findings."
+    },
+    {
+      "id": "dscp-t11e-domain-profile-registry-test",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF CPF DSCP-T11E domain profile registry tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.domain.profile.registry.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "DSCP-T11E",
+      "scanDate": "2026-06-10",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_DSCP_T11E_DOMAIN_PROFILE_REGISTRY_WORKER_RETURN_2026-06-10.md",
+      "notes": "DSCP-T11E focused test file. 18 vitest assertions covering registration, selection, ambiguity, no-match, requiredFacetKey, and select-then-apply pipeline integration."
     }
   ]
 }
