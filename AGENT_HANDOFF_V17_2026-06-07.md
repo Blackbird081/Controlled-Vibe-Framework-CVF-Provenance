@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`dscp_t9_closed_pass_bounded`; active handoff
 
 `dscp_t9_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `d030c6d0`
-(History rewritten to remove 527MB corrupt blob; branch ready to push to origin).
+Current HEAD recorded for this handoff: `92b57430`
+(post-filter-branch push-ready sync; branch matches origin).
 
 ## Active Boundary
 
@@ -60,6 +60,19 @@ in archived handoffs and governed completion packets.
 DSCP-T9 Local Pipeline Harness is `CLOSED_PASS_BOUNDED` at material commit
 `5c90506a`. All DSCP tranches T1 through T9 are `CLOSED_PASS_BOUNDED`.
 
+Recent Claude/co-authored updates after T9:
+
+- `7339d5f0` added the Implementation-First Absorption Pattern.
+- `14ff629c` rewrote the capability delivery direction doc as a two-way
+  decision framework.
+- `a119f6bc` promoted PolicyLocal UI audit lessons into `DESIGN.md` Section 14
+  and the canonical web UX skill pointer.
+- `315e9827` cleared worktree debt: archive hygiene, retroactive governance
+  sections, GC-051 entries, and hook serial fallback for large batches.
+- `53fc08b2` repaired the PolicyLocal UI audit intake note after corruption.
+- `d030c6d0` and `92b57430` are final push-ready handoff sync commits after
+  history rewrite removed the corrupt 527MB blob.
+
 Delivered scope for T9:
 
 - New test harness:
@@ -71,13 +84,15 @@ Delivered scope for T9:
 - Completion review:
   `docs/reviews/CVF_DSCP_T9_LOCAL_PIPELINE_HARNESS_COMPLETION_2026-06-08.md`.
 
-Boundary: deterministic local DSCP test harness only; no provider call, corpus
-ingestion, T12 authorization, public-sync, production readiness, public
-readiness, or live governance proof.
+Boundary: recent updates are pointer/design/governance-maintenance only plus
+deterministic local DSCP test harness. No provider call, corpus ingestion, T12
+authorization, public-sync claim from this provenance repo, production
+readiness, public readiness, or live governance proof.
 
 ## Current Batch
 
-DSCP-T9 closure batch. Material commit `5c90506a`; HEAD now `87fe7a69`.
+Post-T9 continuity and governance-maintenance batch. T9 material commit
+`5c90506a`; current branch HEAD before this pointer update is `92b57430`.
 
 Delivered scope:
 
@@ -93,13 +108,21 @@ Delivered scope:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T9_LOCAL_PIPELINE_HARNESS_FOR_CLAUDE_2026-06-08.md`;
 - T9 roadmap closed:
   `docs/roadmaps/CVF_DSCP_T9_LOCAL_PIPELINE_HARNESS_ROADMAP_2026-06-08.md`.
+- implementation-first absorption pattern:
+  `docs/reference/CVF_IMPLEMENTATION_FIRST_ABSORPTION_PATTERN_2026-06-08.md`;
+- PolicyLocal UI audit design intake:
+  `docs/reviews/CVF_DESIGN_INTAKE_POLICYLOCAL_UI_AUDIT_2026-06-10.md`;
+- DESIGN.md Section 14 theming/elevation/token discipline;
+- archive hygiene and retroactive governance section repairs;
+- history rewrite cleanup and push-ready handoff sync.
 
 ## Latest Work / Changes
 
-- Closed DSCP-T8 cross-lane adapter review and parent DSCP T1-T8 roadmap.
-- Audited next candidates and selected DSCP-T9 local deterministic pipeline
-  harness over blocked T12 and parked Graphify/CLI lanes.
-- Dispatched DSCP-T9 for Claude under WORKER_MUST_NOT_COMMIT.
+- Closed DSCP-T9 local deterministic pipeline harness.
+- Promoted reusable PolicyLocal UI audit lessons into `DESIGN.md`.
+- Cleared active archive hygiene and retroactive governance checker debt.
+- Rewrote history to remove the corrupt large blob and synchronized the branch
+  with origin.
 
 ## Core Guard Self-Protection Authorization
 

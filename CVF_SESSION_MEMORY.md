@@ -4,7 +4,7 @@ Memory class: POINTER_RECORD
 
 Status: ACTIVE SESSION FRONT DOOR
 
-Last updated: 2026-06-08
+Last updated: 2026-06-10
 
 Current mode marker: `dscp_t9_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
@@ -61,6 +61,17 @@ Pain-point closure direction:
 DSCP-T9 Local Pipeline Harness is `CLOSED_PASS_BOUNDED` at closure commit
 `5c90506a`. All DSCP tranches T1 through T9 are `CLOSED_PASS_BOUNDED`.
 
+Recent Claude/co-authored updates after T9:
+
+- implementation-first absorption pattern added:
+  `docs/reference/CVF_IMPLEMENTATION_FIRST_ABSORPTION_PATTERN_2026-06-08.md`;
+- PolicyLocal UI audit lessons promoted into `DESIGN.md` Section 14 and the
+  canonical web UX skill pointer;
+- large worktree debt cleanup closed archive hygiene and retroactive governance
+  section gaps, with active-archive stale count reduced to zero;
+- history was rewritten to remove a corrupt 527MB blob and the branch was
+  synchronized with origin.
+
 Delivered scope for T9:
 
 - New test harness:
@@ -76,9 +87,10 @@ Delivered scope for T9:
 - Roadmap closed:
   `docs/roadmaps/CVF_DSCP_T9_LOCAL_PIPELINE_HARNESS_ROADMAP_2026-06-08.md`.
 
-Boundary: deterministic local DSCP test harness only; no provider call, corpus
-ingestion, T12 authorization, public-sync, production readiness, public
-readiness, or live governance proof.
+Boundary: recent updates are pointer/design/governance-maintenance only plus
+deterministic local DSCP test harness. No provider call, corpus ingestion, T12
+authorization, public-sync claim from this provenance repo, production
+readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
