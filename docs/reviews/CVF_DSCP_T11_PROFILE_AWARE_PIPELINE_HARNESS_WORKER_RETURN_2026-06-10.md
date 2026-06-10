@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: WORKER_RETURN_PENDING_REVIEW
+Status: REVIEWED_ACCEPTED_FOR_CLOSURE
 
 docType: worker_return
 

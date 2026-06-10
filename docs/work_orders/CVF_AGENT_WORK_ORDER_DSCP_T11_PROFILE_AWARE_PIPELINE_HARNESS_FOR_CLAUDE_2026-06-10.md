@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -16,9 +16,9 @@ Commit mode: WORKER_MUST_NOT_COMMIT
 
 dispatchBaseHead: `0f75ff6f`
 
-executionBaseHead: `<worker captured: 0f75ff6f>`
+executionBaseHead: `0f75ff6f`
 
-closureBaseHead: `<reviewer-owned after material commit>`
+closureBaseHead: `4c39ce77`
 
 ---
 
@@ -56,6 +56,8 @@ Active handoff:
 
 Allowed scope:
 
+- Create `docs/baselines/CVF_GC018_DSCP_T11_PROFILE_AWARE_PIPELINE_HARNESS_2026-06-10.md`
+  as the DSCP-T11 authorization baseline.
 - Create `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.profile.aware.pipeline.harness.test.ts`.
 - Update `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` only for the
   new test path coverage.
@@ -91,12 +93,12 @@ R1 local deterministic test harness only.
 
 | Roadmap section | Work order section | Output artifact or field | Verification command or check | Status |
 |---|---|---|---|---|
-| Acceptance: legal-policy metadata/gates flow through ECO path | Implementation Contract | legal-policy test | focused vitest | DISPATCHED |
-| Acceptance: technical-project metadata/gates flow through LPF path | Implementation Contract | technical-project test | focused vitest | DISPATCHED |
-| Acceptance: raw release remains false | Implementation Contract | package and receipt assertions | focused vitest | DISPATCHED |
-| Acceptance: no cross-profile bleed | Implementation Contract | isolation test | focused vitest | DISPATCHED |
-| Acceptance: blocked boundary short-circuits | Implementation Contract | blocked profile test | focused vitest | DISPATCHED |
-| Registry coverage | Required Artifact Manifest | GC-051 JSON and Markdown | registry checker | DISPATCHED |
+| Acceptance: legal-policy metadata/gates flow through ECO path | Implementation Contract | legal-policy test | focused vitest | PASS |
+| Acceptance: technical-project metadata/gates flow through LPF path | Implementation Contract | technical-project test | focused vitest | PASS |
+| Acceptance: raw release remains false | Implementation Contract | package and receipt assertions | focused vitest | PASS |
+| Acceptance: no cross-profile bleed | Implementation Contract | isolation test | focused vitest | PASS |
+| Acceptance: blocked boundary short-circuits | Implementation Contract | blocked profile test | focused vitest | PASS |
+| Registry coverage | Required Artifact Manifest | GC-051 JSON and Markdown | registry checker | PASS |
 
 ## Worker Autonomy / No-Question Rule
 
@@ -279,13 +281,23 @@ Claude must return uncommitted artifacts with:
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `Status: DISPATCHED` | READY |
-| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T11_PROFILE_AWARE_PIPELINE_HARNESS_COMPLETION_2026-06-10.md` | reviewer-authored post-return | PENDING |
-| Roadmap state | `docs/roadmaps/CVF_DSCP_T11_PROFILE_AWARE_PIPELINE_HARNESS_ROADMAP_2026-06-10.md` | `Status: DISPATCHED` | READY |
-| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | entry covers DSCP-T11 test path | PENDING |
-| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | quick lookup covers DSCP-T11 test path | PENDING |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T11_PROFILE_AWARE_PIPELINE_HARNESS_COMPLETION_2026-06-10.md` | reviewer-authored post-return | PASS |
+| Roadmap state | `docs/roadmaps/CVF_DSCP_T11_PROFILE_AWARE_PIPELINE_HARNESS_ROADMAP_2026-06-10.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | entry covers DSCP-T11 test path | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | quick lookup covers DSCP-T11 test path | PASS |
+| External evidence digest | N/A | N/A with reason: no external product, corpus, provider, or public-sync artifact consumed or produced | N/A with reason: no external evidence digest exists |
 | System loop interlock | no system-loop mutation | test harness only | N/A with reason: no runtime loop changed |
-| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION_MEMORY.md`, `AGENT_HANDOFF_V17_2026-06-07.md` | reviewer-owned final sync | PENDING |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION_MEMORY.md`, `AGENT_HANDOFF_V17_2026-06-07.md` | reviewer-owned final sync | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Legal-policy gate propagation | `ec02Gate=PASS` through descriptor and receipt | `ec02Gate=PASS` in descriptor `customGates` and receipt `governanceGateResults` | PASS |
+| Technical-project gate propagation | `stabilityGate=PASS` through descriptor and receipt | `stabilityGate=PASS` in descriptor `customGates` and receipt `governanceGateResults` | PASS |
+| Raw release boundary | no raw source/content/memory release | `rawContentReleased=false`, `rawSourceReleased=false`, `rawMemoryReleased=false` where applicable | PASS |
+| Boundary short-circuit | `BLOCKED_UNTIL_*` stops before descriptor/package/receipt | blocked profile returns `blocked=true` and `enrichedInput=null` | PASS |
 
 ## Review Gate
 
@@ -300,14 +312,14 @@ Reviewer must confirm:
 
 ## Closure Checklist
 
-- [ ] Worker return reviewed and accepted
-- [ ] CPF `npm run check` PASS confirmed
-- [ ] Focused DSCP-T11 vitest PASS confirmed
-- [ ] GC-051 registry PASS confirmed
-- [ ] Governance gates PASS confirmed
-- [ ] Reviewer commits material artifacts
-- [ ] Completion review authored by reviewer
-- [ ] Session continuity synced by reviewer
+- [x] Worker return reviewed and accepted
+- [x] CPF `npm run check` PASS confirmed
+- [x] Focused DSCP-T11 vitest PASS confirmed
+- [x] GC-051 registry PASS confirmed
+- [x] Governance gates PASS confirmed
+- [x] Reviewer commits material artifacts
+- [x] Completion review authored by reviewer
+- [x] Session continuity synced by reviewer
 
 ## Operator Checkpoint
 
@@ -337,7 +349,7 @@ reviewerOwnedClosurePaths:
   - docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T11_PROFILE_AWARE_PIPELINE_HARNESS_FOR_CLAUDE_2026-06-10.md
 closedStatusTokens:
   - CLOSED_PASS_BOUNDED
-reviewerClosureCompleted: false
+reviewerClosureCompleted: true
 forbiddenClosedEquivalentResidue: []
 ```
 

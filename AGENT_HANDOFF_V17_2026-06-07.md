@@ -32,14 +32,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`dscp_t10_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=Codex audits post-T10 DSCP/PolicyLocal foundation options and recommends or authors the next bounded lane; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`dscp_t11_profile_aware_pipeline_harness_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=Codex audits post-T11 DSCP/PolicyLocal foundation options and recommends or authors the next bounded lane; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`dscp_t10_closed_pass_bounded`
+`dscp_t11_profile_aware_pipeline_harness_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `6c571773`
-(DSCP-T10 closure commit; parent of this handoff-sync commit).
+Current HEAD recorded for this handoff: `4c39ce77`
+(DSCP-T11 material commit; closure commit will be followed by session sync).
 
 ## Active Boundary
 
@@ -57,17 +57,17 @@ in archived handoffs and governed completion packets.
 
 ## Latest Continuity Note
 
-DSCP-T10 Domain Profile And Scan Adapter Contract is `CLOSED_PASS_BOUNDED` at
-material commit `0afa8737`. All DSCP tranches T1 through T10 are
+DSCP-T11 Profile-Aware Pipeline Harness is `CLOSED_PASS_BOUNDED` at material
+commit `4c39ce77`. All DSCP tranches T1 through T11 are
 `CLOSED_PASS_BOUNDED`.
 
-DSCP-T10 closure package:
+DSCP-T11 closure package:
 
-- `docs/baselines/CVF_GC018_DSCP_T10_DOMAIN_PROFILE_AND_SCAN_ADAPTER_CONTRACT_2026-06-10.md`
-- `docs/roadmaps/CVF_DSCP_T10_DOMAIN_PROFILE_AND_SCAN_ADAPTER_CONTRACT_ROADMAP_2026-06-10.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T10_DOMAIN_PROFILE_AND_SCAN_ADAPTER_CONTRACT_FOR_CLAUDE_2026-06-10.md`
-- `docs/reviews/CVF_DSCP_T10_DOMAIN_PROFILE_AND_SCAN_ADAPTER_CONTRACT_WORKER_RETURN_2026-06-10.md`
-- `docs/reviews/CVF_DSCP_T10_DOMAIN_PROFILE_AND_SCAN_ADAPTER_CONTRACT_COMPLETION_2026-06-10.md`
+- `docs/baselines/CVF_GC018_DSCP_T11_PROFILE_AWARE_PIPELINE_HARNESS_2026-06-10.md`
+- `docs/roadmaps/CVF_DSCP_T11_PROFILE_AWARE_PIPELINE_HARNESS_ROADMAP_2026-06-10.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T11_PROFILE_AWARE_PIPELINE_HARNESS_FOR_CLAUDE_2026-06-10.md`
+- `docs/reviews/CVF_DSCP_T11_PROFILE_AWARE_PIPELINE_HARNESS_WORKER_RETURN_2026-06-10.md`
+- `docs/reviews/CVF_DSCP_T11_PROFILE_AWARE_PIPELINE_HARNESS_COMPLETION_2026-06-10.md`
 
 Recent Claude/co-authored updates after T9:
 
@@ -93,11 +93,10 @@ Delivered scope for T9:
 - Completion review:
   `docs/reviews/CVF_DSCP_T9_LOCAL_PIPELINE_HARNESS_COMPLETION_2026-06-08.md`.
 
-Boundary: DSCP-T10 closed a local deterministic source contract and focused
-tests only. No external Policy_Local edits, provider call, corpus ingestion,
-OCR, vector retrieval, T12 authorization, public-sync claim from this
-provenance repo, production readiness, public readiness, or live governance
-proof.
+Boundary: DSCP-T11 closed a local deterministic CPF test harness only. No
+external Policy_Local edits, provider call, corpus ingestion, OCR, vector
+retrieval, T12 authorization, public-sync claim from this provenance repo,
+production readiness, public readiness, or live governance proof.
 
 ## Current Batch
 
@@ -127,11 +126,14 @@ Delivered scope:
 - history rewrite cleanup and push-ready handoff sync.
 - DSCP-T10 domain-profile contract source, tests, registry, worker return, and
   completion review.
+- DSCP-T11 profile-aware pipeline harness, registry, worker return, and
+  completion review.
 
 ## Latest Work / Changes
 
 - Closed DSCP-T9 local deterministic pipeline harness.
 - Closed DSCP-T10 domain-profile and scan-adapter contract.
+- Closed DSCP-T11 profile-aware pipeline harness.
 - Promoted reusable PolicyLocal UI audit lessons into `DESIGN.md`.
 - Cleared active archive hygiene and retroactive governance checker debt.
 - Rewrote history to remove the corrupt large blob and synchronized the branch
@@ -174,9 +176,9 @@ history.
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
-Next allowed move: Codex audits post-T10 DSCP/PolicyLocal foundation options
+Next allowed move: Codex audits post-T11 DSCP/PolicyLocal foundation options
 and either authors the next bounded roadmap/work order for Claude or returns
-to operator with the recommended lane. DSCP-T1 through T10 are all
+to operator with the recommended lane. DSCP-T1 through T11 are all
 `CLOSED_PASS_BOUNDED`. Parked lanes remain Live Redis, DEP2, and external
 receipt-anchor.
 

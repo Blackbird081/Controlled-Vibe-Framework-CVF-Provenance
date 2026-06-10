@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -45,12 +45,12 @@ Out of scope:
 
 | Step | Deliverable | Status |
 |---|---|---|
-| 1 | GC-018 baseline | DISPATCHED |
-| 2 | Work order for Claude | DISPATCHED |
-| 3 | Focused profile-aware pipeline harness test | DISPATCHED |
-| 4 | GC-051 registry JSON and Markdown updates | DISPATCHED |
-| 5 | Worker return packet | DISPATCHED |
-| 6 | Codex reviewer closure and session sync | PENDING |
+| 1 | GC-018 baseline | CLOSED_PASS_BOUNDED |
+| 2 | Work order for Claude | CLOSED_PASS_BOUNDED |
+| 3 | Focused profile-aware pipeline harness test | CLOSED_PASS_BOUNDED |
+| 4 | GC-051 registry JSON and Markdown updates | CLOSED_PASS_BOUNDED |
+| 5 | Worker return packet | CLOSED_PASS_BOUNDED |
+| 6 | Codex reviewer closure and session sync | CLOSED_PASS_BOUNDED |
 
 ## Implementation Targets
 
@@ -101,12 +101,42 @@ Expected worker return:
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T11_PROFILE_AWARE_PIPELINE_HARNESS_FOR_CLAUDE_2026-06-10.md` | `Status: DISPATCHED` | READY |
-| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T11_PROFILE_AWARE_PIPELINE_HARNESS_COMPLETION_2026-06-10.md` | reviewer-authored after material commit | PENDING |
-| Roadmap state | this file | `Status: DISPATCHED` | READY |
-| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | DSCP-T11 test coverage | PENDING |
-| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | DSCP-T11 quick lookup row | PENDING |
-| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION_MEMORY.md`, `AGENT_HANDOFF_V17_2026-06-07.md` | updated after closure | PENDING |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T11_PROFILE_AWARE_PIPELINE_HARNESS_FOR_CLAUDE_2026-06-10.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DSCP_T11_PROFILE_AWARE_PIPELINE_HARNESS_COMPLETION_2026-06-10.md` | reviewer-authored after material commit | PASS |
+| Roadmap state | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | DSCP-T11 test coverage | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | DSCP-T11 quick lookup row | PASS |
+| External evidence digest | N/A | N/A with reason: no external product, corpus, provider, or public-sync artifact consumed or produced | N/A with reason: no external evidence digest exists |
+| System loop interlock | no system-loop mutation | test harness only | N/A with reason: no runtime loop changed |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION_MEMORY.md`, `AGENT_HANDOFF_V17_2026-06-07.md` | updated in follow-up session sync commit | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Legal-policy gate propagation | `ec02Gate=PASS` through descriptor and receipt | `ec02Gate=PASS` in descriptor `customGates` and receipt `governanceGateResults` | PASS |
+| Technical-project gate propagation | `stabilityGate=PASS` through descriptor and receipt | `stabilityGate=PASS` in descriptor `customGates` and receipt `governanceGateResults` | PASS |
+| Raw release boundary | no raw source/content/memory release | `rawContentReleased=false`, `rawSourceReleased=false`, `rawMemoryReleased=false` where applicable | PASS |
+| Boundary short-circuit | `BLOCKED_UNTIL_*` stops before descriptor/package/receipt | blocked profile returns `blocked=true` and `enrichedInput=null` | PASS |
+
+## Closure Summary
+
+DSCP-T11 closed at material commit `4c39ce77` with reviewer completion:
+
+`docs/reviews/CVF_DSCP_T11_PROFILE_AWARE_PIPELINE_HARNESS_COMPLETION_2026-06-10.md`
+
+Result:
+
+- focused CPF profile-aware pipeline harness added;
+- legal-policy profile metadata and `ec02Gate` flow through descriptor, ECO
+  pack, and receipt;
+- technical-project profile metadata and `stabilityGate` flow through
+  descriptor, LPF package, and receipt;
+- raw release fields remain false;
+- cross-profile gate and metadata bleed is blocked;
+- `BLOCKED_UNTIL_*` stops at profile application;
+- CPF TypeScript PASS, focused vitest 4/4 PASS, reviewer-fast PASS, pre-commit
+  36/36 PASS.
 
 ## Claim Boundary
 
