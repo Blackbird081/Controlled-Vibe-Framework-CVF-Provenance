@@ -267,8 +267,11 @@ CVF skill library rule:
   checklist over many overlapping design skills.
 
 Promotion rule:
-- A reference pattern may update `DESIGN.md` when it improves reusable design
-  judgment across CVF products.
+
+- A reusable design lesson — whether from an external reference **or from an
+  internal upgrade, audit, or fix** — may update `DESIGN.md` when it improves
+  reusable design judgment across CVF products. Continuous enrichment after each
+  upgrade is expected; the gate is that it goes through this rule, not around it.
 - A reference pattern may update `product_ux/cvf_web_ux_redesign_system` when it
   changes how agents should produce web design DNA or implementation guardrails.
 - A reference pattern may update `product_ux/claude_design_handoff` when it
@@ -276,6 +279,18 @@ Promotion rule:
 - A new UI/UX skill is allowed only when the capability is recurring,
   non-overlapping, and cannot be expressed as a rule in the canonical system
   skill or QA checklist.
+
+Destination + evidence (do not reinvent — CVF already standardizes this):
+- Where a lesson goes is decided by `SKILL_PORTFOLIO_CANONICALIZATION_POLICY`
+  §7 Promotion Decision (whole-domain judgment → `DESIGN.md` or canonical skill;
+  intake → handoff skill; quality check → QA skill; one-off → project handoff;
+  duplicate → reject). Merge-first (§5); a new skill is the last option.
+- Any audit/review/fix artifact that records design findings must carry a
+  `## Finding-To-Governance Learning Disposition` section per
+  `docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD_2026-05-29.md`
+  (machine-enforced) and a §13 intake note when a reference was absorbed.
+- This keeps the design enrichment loop a special case of the CVF-wide
+  finding-to-learning loop, not a parallel standard.
 
 ## 11. Canonical UI/UX Skill Portfolio
 
@@ -422,3 +437,86 @@ For each accepted source, write a short intake note with:
 `awesome-design-md` is treated as a design-reference corpus: absorb useful
 design-contract patterns, vocabulary, and agent-facing acceptance criteria; do
 not import it as a competing skill library.
+
+## 14. Theming, Elevation & Token Discipline
+
+Promoted from the PolicyLocal UI audit (2026-06-10). These are reusable design
+judgments that apply to every CVF web surface, not one project. They sharpen
+§2, §6, and §8 with concrete, enforceable rules.
+
+### 14.1 Token-first is non-negotiable
+
+A raw color hex or `rgba()` literal inside a component is a defect, not a style
+choice. The two failure modes it causes have both happened in CVF products:
+
+- **Light mode silently breaks.** A page hard-coded to dark hex (e.g. a landing
+  page at `#080910`) ignores `[data-theme="light"]` and stays dark while the
+  rest of the app flips. Every color must come from a token that is defined in
+  **both** the `:root` (dark) and `[data-theme="light"]` blocks.
+- **The accent becomes a dead feature.** A primary button glowing with a literal
+  `rgba(91,92,246,…)` will not follow a user accent change.
+
+Only allowed literals: brand gradient stops, and pure-white inset-shadow
+hairlines used identically in both themes.
+
+### 14.2 No pure black, no flat single-tone surface
+
+Base backgrounds are deep blue-charcoal (`#0d0f1a` shell, `#0b0d16` for
+public/landing base), never `#000`. Pure black plus one uniform fill reads as
+low-effort and is fatiguing.
+
+Long pages and landing surfaces must use **tonal banding**: alternate a base
+band and a slightly raised band so the eye gets rhythm. The boundary is a soft
+inset hairline plus a faint accent glow line, never a hard 1px divider. The
+final CTA band may carry a radial accent glow at top-center as the visual
+climax. Banding tokens must flip with `[data-theme]` like everything else.
+
+### 14.3 Layered elevation scale
+
+§6 says "restrained shadows" — this is the concrete scale. Each level is an
+ambient (soft, wide) + key (tight) shadow + a hairline ring, and is re-tuned
+lighter and blue-tinted for light mode. Never a single hard black blob.
+
+| Level | Use |
+| --- | --- |
+| `xs` | hairline separation |
+| `sm` | resting card |
+| `md` | hover / raised card |
+| `lg` | list-row hover, popover, drawer |
+| `xl` | modal / dialog |
+
+Primary-button hover and focus pops use an accent-tinted glow shadow derived
+from the active accent, so depth recolors with the accent.
+
+### 14.4 Accent as an app-wide variable
+
+One primary accent per surface (§2), but the accent is a **swappable token set**,
+not a fixed color. Implement it so the full set (`accent`, hover, soft, border,
+on-tint text, glow, gradient) is redefined under `[data-accent="<name>"]` on the
+theme root. Every component built on `var(--accent*)` then recolors for free.
+
+Adding an accent is exactly three edits — a `[data-accent]` block (plus a
+light-mode text tweak for readability), one entry in the accent type/union, and
+one swatch in the settings UI. If a multi-accent capability is declared in code
+but has no CSS blocks and no picker UI, it is a dead feature; wire all three or
+remove the declaration.
+
+### 14.5 Implementation pitfalls (recurring)
+
+- **Inline border that toggles on a boolean:** build the full `border` shorthand
+  in one expression — `border: '1px solid ' + (on ? a : b)`. Mixing the `border`
+  shorthand and a separate `borderColor` in the same inline object triggers
+  React's "Updating a style property during rerender" console error.
+- **Orphan routes:** every reachable surface needs a real path to it. A public
+  or landing page with no link from the app shell (e.g. the logo not linking
+  home/landing) is a navigation defect, not just a polish gap.
+- **IDE "inline styles" warnings** are expected where a codebase styles via
+  inline objects; the real gate is the project linter at zero warnings, not the
+  IDE hint.
+
+### 14.6 Pre-ship verification (adds to §8)
+
+Before claiming a UI change done, verify in **all three** of: dark theme, light
+theme, and a non-default accent (e.g. teal). A change that only looks right in
+dark+indigo is unverified. Screenshots must be inspected, not assumed —
+an invisible surface or vanished text in one combination is a failure.
