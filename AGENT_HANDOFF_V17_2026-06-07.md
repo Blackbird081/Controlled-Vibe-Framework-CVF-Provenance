@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`dscp_t9_closed_pass_bounded`; active handoff
 
 `dscp_t9_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `a119f6bc`
-(DESIGN.md section 14 + section 10 enrichment from the PolicyLocal UI audit committed; promotion routed through existing CVF standards, no duplicate skill).
+Current HEAD recorded for this handoff: `5c6525c8`
+(Worktree debt clearance: archive hygiene batch + governance retroactive sections committed; 36/36 pre-commit COMPLIANT).
 
 ## Active Boundary
 
