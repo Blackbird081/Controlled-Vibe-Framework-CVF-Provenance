@@ -32,14 +32,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`dscp_t9_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=operator selects next lane; DSCP-T1 through T9 all CLOSED_PASS_BOUNDED; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`dscp_t10_domain_profile_dispatched`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=Claude executes DSCP-T10 work order WORKER_MUST_NOT_COMMIT and returns uncommitted artifacts; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`dscp_t9_closed_pass_bounded`
+`dscp_t10_domain_profile_dispatched`
 
-Current HEAD recorded for this handoff: `92b57430`
-(post-filter-branch push-ready sync; branch matches origin).
+Current HEAD recorded for this handoff: `27123c55`
+(parent of DSCP-T10 dispatch sync).
 
 ## Active Boundary
 
@@ -59,6 +59,13 @@ in archived handoffs and governed completion packets.
 
 DSCP-T9 Local Pipeline Harness is `CLOSED_PASS_BOUNDED` at material commit
 `5c90506a`. All DSCP tranches T1 through T9 are `CLOSED_PASS_BOUNDED`.
+
+DSCP-T10 Domain Profile And Scan Adapter Contract is `DISPATCHED` for Claude
+execution in `WORKER_MUST_NOT_COMMIT` mode. Dispatch package:
+
+- `docs/baselines/CVF_GC018_DSCP_T10_DOMAIN_PROFILE_AND_SCAN_ADAPTER_CONTRACT_2026-06-10.md`
+- `docs/roadmaps/CVF_DSCP_T10_DOMAIN_PROFILE_AND_SCAN_ADAPTER_CONTRACT_ROADMAP_2026-06-10.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T10_DOMAIN_PROFILE_AND_SCAN_ADAPTER_CONTRACT_FOR_CLAUDE_2026-06-10.md`
 
 Recent Claude/co-authored updates after T9:
 
@@ -84,15 +91,16 @@ Delivered scope for T9:
 - Completion review:
   `docs/reviews/CVF_DSCP_T9_LOCAL_PIPELINE_HARNESS_COMPLETION_2026-06-08.md`.
 
-Boundary: recent updates are pointer/design/governance-maintenance only plus
-deterministic local DSCP test harness. No provider call, corpus ingestion, T12
-authorization, public-sync claim from this provenance repo, production
-readiness, public readiness, or live governance proof.
+Boundary: DSCP-T10 dispatch authorizes local deterministic source contract and
+tests only. No external Policy_Local edits, provider call, corpus ingestion,
+OCR, vector retrieval, T12 authorization, public-sync claim from this
+provenance repo, production readiness, public readiness, or live governance
+proof.
 
 ## Current Batch
 
-Post-T9 continuity and governance-maintenance batch. T9 material commit
-`5c90506a`; current branch HEAD before this pointer update is `92b57430`.
+DSCP-T10 dispatch batch. T9 material commit `5c90506a`; dispatch base HEAD is
+`27123c55`.
 
 Delivered scope:
 
@@ -115,10 +123,13 @@ Delivered scope:
 - DESIGN.md Section 14 theming/elevation/token discipline;
 - archive hygiene and retroactive governance section repairs;
 - history rewrite cleanup and push-ready handoff sync.
+- DSCP-T10 domain-profile contract dispatch package for Claude.
 
 ## Latest Work / Changes
 
 - Closed DSCP-T9 local deterministic pipeline harness.
+- Dispatched DSCP-T10 domain-profile and scan-adapter contract work order for
+  Claude.
 - Promoted reusable PolicyLocal UI audit lessons into `DESIGN.md`.
 - Cleared active archive hygiene and retroactive governance checker debt.
 - Rewrote history to remove the corrupt large blob and synchronized the branch
@@ -161,9 +172,10 @@ history.
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
-Next allowed move: operator selects next lane. DSCP-T1 through T9 are all
-`CLOSED_PASS_BOUNDED`. No pending dispatch. Parked lanes remain Live Redis,
-DEP2, and external receipt-anchor.
+Next allowed move: Claude executes DSCP-T10 work order in
+`WORKER_MUST_NOT_COMMIT` mode and returns uncommitted artifacts for Codex
+review. DSCP-T1 through T9 are all `CLOSED_PASS_BOUNDED`. Parked lanes remain
+Live Redis, DEP2, and external receipt-anchor.
 
 LPCI2-T12 remains forbidden until a separate operator-authorized evidence path
 resolves EC-02 review on or after 2026-07-01, known `currentStatus`, known
