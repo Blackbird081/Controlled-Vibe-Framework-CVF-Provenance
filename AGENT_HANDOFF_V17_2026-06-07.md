@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`dscp_t9_closed_pass_bounded`; active handoff
 
 `dscp_t9_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `feda7b6a`
-(Corrupted file fix; branch ready to push to origin).
+Current HEAD recorded for this handoff: `d030c6d0`
+(History rewritten to remove 527MB corrupt blob; branch ready to push to origin).
 
 ## Active Boundary
 
