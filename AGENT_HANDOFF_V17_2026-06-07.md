@@ -38,9 +38,8 @@ Startup acknowledged: current mode=`dscp_t11f_profile_selection_adapter_dispatch
 
 `dscp_t11f_profile_selection_adapter_dispatched`
 
-Current HEAD recorded for this handoff: `8a7cd134`
-(DSCP-T11E material closure commit; parent of this T11F dispatch/session-sync
-commit).
+Current HEAD recorded for this handoff: `a1630ce6`
+(DSCP-T11F dispatch commit; parent of this handoff-sync-only commit).
 
 ## Active Boundary
 
