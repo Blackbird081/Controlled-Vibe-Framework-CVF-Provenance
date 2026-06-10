@@ -150,6 +150,8 @@ Protected paths:
 - `AGENTS.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `governance/compat/check_agent_packet_authority_and_encoding.py`
+- `governance/compat/test_check_agent_packet_authority_and_encoding.py`
 - `governance/compat/check_work_order_dispatch_quality.py`
 - `governance/compat/test_check_work_order_dispatch_quality.py`
 - `governance/compat/run_local_governance_hook_chain.py`
@@ -164,6 +166,10 @@ Additional operator authorization: 2026-06-08 operator instructed Codex to
 tighten the CVF foundation after DSCP-T6/T7/T8 work-order findings, so future
 orchestrators cannot dispatch low-quality work orders with pending predecessor
 dependencies or deferred Source Verification.
+
+Additional operator authorization: 2026-06-10 operator instructed Codex to
+tighten guards after DSCP-T11 review found missing initial authority shell
+coverage and avoidable non-ASCII text in agent-authored artifacts.
 
 Rollback boundary: revert only the fast reviewer gate runner/test updates,
 V17 rotation pointers, session front-door compacting, and matching continuity

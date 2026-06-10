@@ -19,6 +19,7 @@ class LocalGovernanceHookChainTests(unittest.TestCase):
         labels = [label for label, _ in MODULE.HOOK_CHAINS["reviewer-fast"]]
 
         self.assertIn("closure packaging preflight", labels)
+        self.assertIn("agent packet authority and encoding", labels)
         self.assertIn("machine closure package", labels)
         self.assertIn("public export disposition quality", labels)
         self.assertIn("corpus scan registry", labels)

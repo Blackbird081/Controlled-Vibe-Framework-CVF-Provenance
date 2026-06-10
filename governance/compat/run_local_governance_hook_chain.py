@@ -27,6 +27,10 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
         ["python", "governance/compat/check_closure_packaging_preflight.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
     (
+        "agent packet authority and encoding",
+        ["python", "governance/compat/check_agent_packet_authority_and_encoding.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
         "core guard self-protection",
         ["python", "governance/compat/check_core_guard_self_protection.py", "--enforce"],
     ),
@@ -76,6 +80,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         (
             "closure packaging preflight",
             ["python", "governance/compat/check_closure_packaging_preflight.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "agent packet authority and encoding",
+            ["python", "governance/compat/check_agent_packet_authority_and_encoding.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
             "core guard self-protection",
@@ -229,6 +237,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         (
             "closure packaging preflight",
             ["python", "governance/compat/check_closure_packaging_preflight.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "agent packet authority and encoding",
+            ["python", "governance/compat/check_agent_packet_authority_and_encoding.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
             "core guard self-protection",
