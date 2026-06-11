@@ -117,6 +117,11 @@ Verification requirements:
 - agent-authored text must follow the text encoding and symbol discipline
   standard:
   `docs/reference/CVF_TEXT_ENCODING_AND_SYMBOL_DISCIPLINE_STANDARD_2026-06-07.md`.
+- roadmap-derived work must carry forward the roadmap design-control gate:
+  scope boundary, non-goals, lane split, dependency/source-verification plan,
+  claim boundary, acceptance criteria, verification evidence, and dispatch
+  readiness. If the roadmap lacks these controls, the next work order must be
+  source-verification, design-audit, or spec work, not implementation.
 
 The work order is invalid for execution if it does not name stop conditions.
 
@@ -235,6 +240,8 @@ Status token rule:
 - Active session state: <path>
 - Decision pack / review authority: <path>
 - Roadmap: <path>
+- Roadmap design-control gate: <section/path OR N/A with reason>
+- Spec / contract / machine-readable semantics: <path OR N/A with reason>
 - GC-018 requirement: <already filed path OR must be filed before implementation>
 - Active handoff: <path>
 
@@ -954,6 +961,26 @@ Each step must state:
 - output artifact;
 - validation command or evidence;
 - stop condition.
+
+## 8A. Design Control Carry-Forward
+
+Roadmap-derived work orders must preserve the roadmap design-control gate.
+
+| Design control | Roadmap source | Work-order handling | Verdict |
+|---|---|---|---|
+| Scope boundary | <section/path> | <how this work order preserves it> | <PASS/BLOCKED/N/A> |
+| Non-goals | <section/path> | <how forbidden claims/actions are blocked> | <PASS/BLOCKED/N/A> |
+| Lane split | <section/path> | <which lane this work order executes> | <PASS/BLOCKED/N/A> |
+| Dependency/source-verification plan | <section/path> | <source checks required before build> | <PASS/BLOCKED/N/A> |
+| Claim boundary | <section/path> | <claim boundary inherited here> | <PASS/BLOCKED/N/A> |
+| Acceptance criteria | <section/path> | <observable acceptance rows below> | <PASS/BLOCKED/N/A> |
+| Verification/evidence | <section/path> | <commands/artifacts required> | <PASS/BLOCKED/N/A> |
+| Dispatch-readiness decision | <section/path> | <why this work order may dispatch> | <PASS/BLOCKED/N/A> |
+
+If any required design control is `BLOCKED`, this work order must remain
+`DRAFT`, `HOLD_*`, or return to Orchestrator. Do not ask a worker to resolve
+roadmap ambiguity during implementation unless this work order is explicitly a
+source-verification, design-audit, or spec task.
 
 ## 9. Evidence Requirements
 

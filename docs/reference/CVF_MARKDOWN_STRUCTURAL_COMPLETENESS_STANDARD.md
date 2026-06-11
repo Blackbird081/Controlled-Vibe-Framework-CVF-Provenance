@@ -132,10 +132,23 @@ Required sections:
 - Why This Tranche / Purpose
 - Scope
 - Non-Goals
+- Design Control Gate, Dispatch Boundary, or Governed Work Lifecycle
 - Work Plan
 - Acceptance Criteria
 - Verification or Evidence
 - Claim Boundary
+
+Roadmaps are design artifacts. A roadmap that can lead to implementation must
+record the controls that prevent an agent from jumping directly from broad
+intent into build. At minimum, the design-control section must identify scope,
+non-goals, lane split when applicable, dependency/source-verification plan,
+claim boundary, acceptance criteria, verification evidence, and
+dispatch-readiness decision. Parent roadmaps with more than one lane should use
+`Dispatch Boundary` to state which child GC-018/work order may proceed first
+and which cross-lane claims remain forbidden.
+
+Lifecycle/design-control details are governed by
+`docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md`.
 
 ### Work Order
 

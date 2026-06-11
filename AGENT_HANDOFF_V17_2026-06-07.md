@@ -222,6 +222,16 @@ preventing unchanged global archive backlog from blocking unrelated commits.
 Changed stale files remain a hard gate unless explicitly classified or allowed
 by a dedicated maintenance path.
 
+Additional operator authorization: 2026-06-11 operator instructed Codex to
+tighten the CVF foundation after the public README control-map discussion, so
+future orchestrators must preserve detailed intake/design/spec/work-order/build
+controls before worker execution.
+
+Additional protected paths for this design-control hardening:
+
+- `governance/compat/check_markdown_structural_completeness.py`
+- `governance/compat/test_check_markdown_structural_completeness.py`
+
 Rollback boundary: revert only the fast reviewer gate runner/test updates,
 V17 rotation pointers, session front-door compacting, and matching continuity
 docs if this control-plane hardening is wrong. Do not revert DSCP-T1,
