@@ -1,5 +1,5 @@
 """
-CVF Extraction Foundation - EX-T3 through EX-T5 local pipeline.
+CVF Extraction Foundation - EX-T3 through EX-T7 local pipeline.
 
 Claim boundary: deterministic local extraction pipeline contracts only. This
 module does not install OCR dependencies, download OCR models, mutate corpus
@@ -21,6 +21,7 @@ DEFAULT_CHUNK_MAX_CHARS: int = 512
 
 OcrEngineName = Literal["easyocr", "tesseract"]
 ExtractionTier = Literal["TIER1_DIGITAL", "TIER2_OCR"]
+ChunkingStrategy = Literal["fixed-window-chars", "sentence-boundary-chars"]
 ExtractionStatus = Literal[
     "PASS",
     "NEEDS_TIER2_OCR",
@@ -125,6 +126,8 @@ class ExtractionChunk:
     quality_flags: list[ExtractionStatus]
     language_codes: list[str]
     extraction_status: ExtractionStatus
+    char_start: int | None = None
+    char_end: int | None = None
     provenance: dict[str, str] = field(default_factory=dict)
 
 
@@ -252,6 +255,96 @@ def evaluate_extraction_quality(
     )
 
 
+def _fixed_window_spans(text: str, max_chars: int, start: int = 0) -> list[tuple[int, int]]:
+    """Return deterministic character windows for one page-local text span."""
+
+    return [
+        (offset, min(offset + max_chars, start + len(text)))
+        for offset in range(start, start + len(text), max_chars)
+    ]
+
+
+def _trim_span(text: str, start: int, end: int) -> tuple[int, int] | None:
+    while start < end and text[start].isspace():
+        start += 1
+    while end > start and text[end - 1].isspace():
+        end -= 1
+    if start >= end:
+        return None
+    return (start, end)
+
+
+def _sentence_spans(text: str) -> list[tuple[int, int]]:
+    spans: list[tuple[int, int]] = []
+    span_start = 0
+    for index, char in enumerate(text):
+        if char in ".!?;:\n":
+            trimmed = _trim_span(text, span_start, index + 1)
+            if trimmed is not None:
+                spans.append(trimmed)
+            span_start = index + 1
+
+    trimmed_tail = _trim_span(text, span_start, len(text))
+    if trimmed_tail is not None:
+        spans.append(trimmed_tail)
+    return spans
+
+
+def _sentence_boundary_spans(text: str, max_chars: int) -> list[tuple[int, int]]:
+    """Return sentence-preferred spans with fixed-window fallback for long spans."""
+
+    sentence_spans = _sentence_spans(text)
+    if not sentence_spans:
+        return _fixed_window_spans(text, max_chars)
+
+    chunks: list[tuple[int, int]] = []
+    current_start: int | None = None
+    current_end: int | None = None
+
+    for sentence_start, sentence_end in sentence_spans:
+        if sentence_end - sentence_start > max_chars:
+            if current_start is not None and current_end is not None:
+                chunks.append((current_start, current_end))
+                current_start = None
+                current_end = None
+            sentence_text = text[sentence_start:sentence_end]
+            chunks.extend(_fixed_window_spans(sentence_text, max_chars, sentence_start))
+            continue
+
+        if current_start is None or current_end is None:
+            current_start = sentence_start
+            current_end = sentence_end
+            continue
+
+        candidate_len = sentence_end - current_start
+        if candidate_len <= max_chars:
+            current_end = sentence_end
+            continue
+
+        chunks.append((current_start, current_end))
+        current_start = sentence_start
+        current_end = sentence_end
+
+    if current_start is not None and current_end is not None:
+        chunks.append((current_start, current_end))
+
+    return chunks
+
+
+def _page_chunk_spans(
+    text: str,
+    max_chars: int,
+    strategy: ChunkingStrategy,
+) -> list[tuple[int, int]]:
+    if max_chars <= 0:
+        raise ValueError("max_chars must be positive")
+    if strategy == "fixed-window-chars":
+        return _fixed_window_spans(text, max_chars)
+    if strategy == "sentence-boundary-chars":
+        return _sentence_boundary_spans(text, max_chars)
+    raise ValueError(f"Unsupported chunking strategy: {strategy}")
+
+
 def chunk_extracted_pages(
     *,
     source_artifact_id: str,
@@ -261,17 +354,21 @@ def chunk_extracted_pages(
     language_codes: list[str],
     quality_report: ExtractionQualityReport,
     max_chars: int = DEFAULT_CHUNK_MAX_CHARS,
+    strategy: ChunkingStrategy = "fixed-window-chars",
 ) -> list[ExtractionChunk]:
-    """Create fixed-window governed chunks without language inference."""
+    """Create governed chunks without language inference."""
 
     chunks: list[ExtractionChunk] = []
     for page in pages:
         text = page.text
         if not text:
             continue
-        for offset in range(0, len(text), max_chars):
-            chunk_text = text[offset : offset + max_chars]
-            seed = f"{source_artifact_id}:{page.page_num}:{offset}:{sha256(chunk_text.encode('utf-8')).hexdigest()}"
+        for start, end in _page_chunk_spans(text, max_chars, strategy):
+            chunk_text = text[start:end]
+            seed = (
+                f"{source_artifact_id}:{page.page_num}:{strategy}:"
+                f"{start}:{end}:{sha256(chunk_text.encode('utf-8')).hexdigest()}"
+            )
             chunk_id = f"chunk-{sha256(seed.encode('utf-8')).hexdigest()[:16]}"
             chunks.append(
                 ExtractionChunk(
@@ -287,9 +384,13 @@ def chunk_extracted_pages(
                     quality_flags=list(quality_report.quality_flags),
                     language_codes=list(language_codes),
                     extraction_status=quality_report.status,
+                    char_start=start,
+                    char_end=end,
                     provenance={
-                        "chunkingStrategy": "fixed-window-chars",
+                        "chunkingStrategy": strategy,
                         "maxChars": str(max_chars),
+                        "charStart": str(start),
+                        "charEnd": str(end),
                     },
                 )
             )
@@ -311,6 +412,22 @@ def build_extraction_dscp_descriptor_inputs(
 
     descriptors: list[ExtractionDscpDescriptorInput] = []
     for chunk in chunks:
+        metadata = {
+            "sourceArtifactId": chunk.source_artifact_id,
+            "domainFamily": domain_family,
+            "domainProfileId": domain_profile_id,
+            "languageCodes": ",".join(chunk.language_codes),
+            "extractionTier": chunk.extraction_tier,
+            "extractionMethod": chunk.extraction_method,
+            "qualityFlags": ",".join(chunk.quality_flags),
+            "pageStart": str(chunk.page_start),
+            "pageEnd": str(chunk.page_end),
+            "rawContentReleased": "false",
+        }
+        if chunk.char_start is not None and chunk.char_end is not None:
+            metadata["charStart"] = str(chunk.char_start)
+            metadata["charEnd"] = str(chunk.char_end)
+
         descriptors.append(
             ExtractionDscpDescriptorInput(
                 artifact_id=chunk.chunk_id,
@@ -327,18 +444,7 @@ def build_extraction_dscp_descriptor_inputs(
                         "extractionStatus": chunk.extraction_status,
                     },
                 },
-                metadata={
-                    "sourceArtifactId": chunk.source_artifact_id,
-                    "domainFamily": domain_family,
-                    "domainProfileId": domain_profile_id,
-                    "languageCodes": ",".join(chunk.language_codes),
-                    "extractionTier": chunk.extraction_tier,
-                    "extractionMethod": chunk.extraction_method,
-                    "qualityFlags": ",".join(chunk.quality_flags),
-                    "pageStart": str(chunk.page_start),
-                    "pageEnd": str(chunk.page_end),
-                    "rawContentReleased": "false",
-                },
+                metadata=metadata,
             )
         )
     return descriptors

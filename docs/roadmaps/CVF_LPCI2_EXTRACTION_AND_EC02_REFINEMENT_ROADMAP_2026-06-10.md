@@ -498,6 +498,7 @@ via the domain profile, not inferred from text.
 | EX-T4 | Tier 3 quality gate and chunk schema | Deterministic extraction quality report and fixed-window chunk schema | CLOSED_PASS_BOUNDED |
 | EX-T5 | DSCP descriptor input handoff | Chunks become descriptor-shaped inputs with `rawContentReleased=false`; no profile apply/runtime receipt claim | CLOSED_PASS_BOUNDED |
 | EX-T6 | GC-051 coverage | Extraction pipeline source/test corpus records added to GC-051 registry | CLOSED_PASS_BOUNDED |
+| EX-T7 | Sentence-boundary chunking upgrade | Optional `sentence-boundary-chars` strategy with fixed-window fallback and offset trace metadata; fixed-window default preserved | CLOSED_PASS_BOUNDED |
 
 ### Open Questions for Codex Rebuttal
 
@@ -507,11 +508,11 @@ via the domain profile, not inferred from text.
    should confirm model download size is acceptable in
    the CI and offline deployment environments.
 
-2. **Chunking strategy**: Fixed-size windows (512 tokens) vs sentence-boundary
-   chunking. Fixed windows are language-agnostic and simple; sentence-boundary
-   chunking requires a sentence splitter that works across languages
-   (e.g. multilingual sentence splitter). Recommendation: fixed windows for EX-T4,
-   sentence-boundary as an EX-T7 upgrade once base pipeline is stable.
+2. **Chunking strategy**: Fixed-size windows (512 chars) vs sentence-boundary
+   chunking. EX-T4 closed with fixed-window chunks. EX-T7 closed a bounded
+   deterministic sentence-boundary upgrade that uses punctuation/newline
+   boundaries with fixed-window fallback for long spans. Multilingual ML
+   sentence splitting remains out of scope unless separately authorized.
 
 3. **Raw OCR storage**: Store raw OCR output separately alongside governed
    chunks (audit trail) or only store post-gate governed chunks (simpler)?
@@ -691,6 +692,7 @@ Phase 3 (after Phase 2):
 Phase 4 (after Phase 3, parallel):
   EX-T5  DSCP descriptor handoff CLOSED_PASS_BOUNDED
   EX-T6  GC-051 coverage CLOSED_PASS_BOUNDED
+  EX-T7  sentence-boundary chunking upgrade CLOSED_PASS_BOUNDED
   EC-T5  DSCP gate value update CLOSED_BLOCKED_BOUNDED
   EC-T6  retrieval disclosure wire-in BLOCKED_BY_EC_T4_METADATA_AND_EC_T5
 
@@ -721,7 +723,7 @@ of EC approval and can begin at Phase 1 in parallel.
 ## What This Roadmap Does NOT Decide
 
 - Canonical OCR library (EasyOCR vs Tesseract) - deferred to EX-T1 audit
-- Sentence-boundary vs fixed-window chunking - fixed windows for EX-T4; upgrade path deferred
+- ML/multilingual sentence splitter selection - EX-T7 closed deterministic punctuation/newline chunking only
 - Actual `promulgationDate`/`effectiveDate` values for specific records - operator input required at EC-T4
 - Whether `documentStatus` is `IN_FORCE` by default for non-regulatory domains - deferred to EC-T1
 - GC-018 authorization for each individual tranche - required before execution release
@@ -730,7 +732,7 @@ of EC approval and can begin at Phase 1 in parallel.
 
 ## Status
 
-EX_T6_CLOSED_PASS_BOUNDED_EC_BLOCKED.
+EX_T7_CLOSED_PASS_BOUNDED_EC_BLOCKED.
 
 EX-T1 is closed as a dependency/source audit and local feasibility probe under:
 
@@ -749,6 +751,12 @@ EX-T3 through EX-T6 are closed pass bounded only under:
 - `docs/baselines/CVF_GC018_LPCI2_EX_T3_T6_EXTRACTION_PIPELINE_COMPLETION_2026-06-11.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T3_T6_EXTRACTION_PIPELINE_FOR_CODEX_2026-06-11.md`
 - `docs/reviews/CVF_LPCI2_EX_T3_T6_EXTRACTION_PIPELINE_COMPLETION_2026-06-11.md`
+
+EX-T7 is closed pass bounded only under:
+
+- `docs/baselines/CVF_GC018_LPCI2_EX_T7_SENTENCE_BOUNDARY_CHUNKING_2026-06-12.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T7_SENTENCE_BOUNDARY_CHUNKING_FOR_CODEX_2026-06-12.md`
+- `docs/reviews/CVF_LPCI2_EX_T7_SENTENCE_BOUNDARY_CHUNKING_COMPLETION_2026-06-12.md`
 
 No dependency addition to repo manifests, OCR model download, corpus
 ingestion, EC-T5 DSCP profile value update, EC-T6 retrieval disclosure
@@ -771,9 +779,9 @@ live/provider proof is authorized by this status change.
 | --- | --- | --- | --- |
 | Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T3_T6_EXTRACTION_PIPELINE_FOR_CODEX_2026-06-11.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Completion or reviewer artifact | `docs/reviews/CVF_LPCI2_EX_T3_T6_EXTRACTION_PIPELINE_COMPLETION_2026-06-11.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Roadmap state | this file | `Status: ACTIVE_PARTIAL_EX_T6_CLOSED_EC_BLOCKED` | PASS |
-| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | entries `ex-t3-t6-extraction-pipeline-source` and `ex-t3-t6-extraction-pipeline-tests` | PASS |
-| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | quick lookup rows for EX-T3-EX-T6 source/tests | PASS |
+| Roadmap state | this file | `Status: ACTIVE_PARTIAL_EX_T7_CLOSED_EC_BLOCKED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | entries `ex-t3-t6-extraction-pipeline-source`, `ex-t3-t6-extraction-pipeline-tests`, `ex-t7-sentence-boundary-chunking-source`, and `ex-t7-sentence-boundary-chunking-tests` | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | quick lookup rows for EX-T3-EX-T7 source/tests | PASS |
 | External evidence digest | EX-T1 audit and EX-T2 completion repo-local artifacts | sha256:46caff533ab8e4d8bc0cfa68070abdf69b7eb205e420c66d9b5db2729109492c; sha256:6e6ee6e640275a85541bcd32a4f9290585fb6d30debc5780df10ef2ea6491e9d; sha256:5e118d33e888176d0f7dc9657602ec041197a46699767d3aa11fe0a48b01a2c9 | PASS |
 | System loop interlock | no system-loop mutation | local extraction foundation only | N/A with reason: no runtime loop changed |
 | Session continuity | `CVF_SESSION_MEMORY.md`, `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `AGENT_HANDOFF_V17_2026-06-07.md` | reviewer-owned final sync | PASS |

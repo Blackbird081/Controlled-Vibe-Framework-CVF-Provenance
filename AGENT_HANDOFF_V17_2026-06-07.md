@@ -32,14 +32,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci2_ex_t3_t6_extraction_pipeline_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=operator may supply EC-T4 metadata or authorize successor EC-T5/EC-T6 activation with runtime/query routing scope; parked checkpoint=EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`lpci2_ex_t7_sentence_boundary_chunking_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=operator may supply EC-T4 metadata or authorize successor EC-T5/EC-T6 activation with runtime/query routing scope; parked checkpoint=EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`lpci2_ex_t3_t6_extraction_pipeline_closed_pass_bounded`
+`lpci2_ex_t7_sentence_boundary_chunking_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `bbfb14f4`
-(EX-T3 through EX-T6 extraction pipeline foundation material closure commit).
+Current HEAD recorded for this handoff: `39079125`
+(pre-EX-T7 base; material closure commit pending in this batch).
 
 ## Active Boundary
 
@@ -57,10 +57,9 @@ in archived handoffs and governed completion packets.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: EX-T3 through EX-T6 extraction pipeline
-foundation closure plus session continuity sync so the active handoff and state
-registry record EX closure while preserving EC activation and retrieval as
-blocked.
+Authorized guard-maintenance scope: EX-T7 sentence-boundary chunking closure
+plus session continuity sync so the active handoff and state registry record EX
+closure while preserving EC activation and retrieval as blocked.
 
 Protected paths:
 
@@ -70,34 +69,34 @@ Operator authorization: 2026-06-11 operator instructed Codex to close multiple
 roles and complete all related roadmap work still allowed by the current
 boundaries.
 
-Rollback boundary: revert only this EC-T4 dispatch/session update to
+Rollback boundary: revert only this EX-T7 closure/session update to
 `AGENT_HANDOFF_V17_2026-06-07.md` and
 `CVF_SESSION/ACTIVE_SESSION_STATE.json` if the continuity record is incorrect.
-Do not revert EC-T3 material commit `a895dc03`, EC-T3 closure commit
-`54bfff3f`, Source Verification hardening commit `838512da`, or unrelated
-governance/session history.
+Do not revert EX-T3 through EX-T6 material commit `bbfb14f4`, EC-T5 bounded
+block commit `9a894207`, Source Verification hardening commit `838512da`, or
+unrelated governance/session history.
 
 ## Latest Continuity Note
 
-LPCI2 EX-T3 through EX-T6 extraction pipeline foundation is
-`CLOSED_PASS_BOUNDED` at material commit `bbfb14f4`.
+LPCI2 EX-T7 sentence-boundary chunking is `CLOSED_PASS_BOUNDED` in the current
+material closure batch after base `39079125`.
 
 Artifacts:
 
-- `docs/baselines/CVF_GC018_LPCI2_EX_T3_T6_EXTRACTION_PIPELINE_COMPLETION_2026-06-11.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T3_T6_EXTRACTION_PIPELINE_FOR_CODEX_2026-06-11.md`
-- `docs/reviews/CVF_LPCI2_EX_T3_T6_EXTRACTION_PIPELINE_COMPLETION_2026-06-11.md`
+- `docs/baselines/CVF_GC018_LPCI2_EX_T7_SENTENCE_BOUNDARY_CHUNKING_2026-06-12.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T7_SENTENCE_BOUNDARY_CHUNKING_FOR_CODEX_2026-06-12.md`
+- `docs/reviews/CVF_LPCI2_EX_T7_SENTENCE_BOUNDARY_CHUNKING_COMPLETION_2026-06-12.md`
 - `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/extraction_pipeline.py`
 - `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_extraction_pipeline.py`
 
-Result: local deterministic CVF extraction foundation now covers OCR adapter
-boundary, OCR language-code mapping, OCR confidence capture, extraction quality
-reports, fixed-window extraction chunks, DSCP descriptor input handoff records,
-and GC-051 registry coverage. Boundary: no OCR dependency install, OCR model
-download, corpus ingestion, provider/API-key use, external Policy_Local
-mutation, DSCP profile value update, runtime retrieval behavior, current-law or
-legal-quality claim, public-sync, production/public readiness, T12 unlock,
-memory reinjection, high-risk promotion, or autonomous mutation.
+Result: local deterministic CVF extraction foundation now adds optional
+`sentence-boundary-chars` chunking with fixed-window fallback and page-local
+`charStart`/`charEnd` trace metadata while preserving the fixed-window default.
+Boundary: no OCR dependency install, OCR model download, corpus ingestion,
+provider/API-key use, external Policy_Local mutation, DSCP profile value
+update, runtime retrieval behavior, current-law or legal-quality claim,
+public-sync, production/public readiness, T12 unlock, memory reinjection,
+high-risk promotion, or autonomous mutation.
 
 LPCI2 EC-T5 DSCP gate value update is `CLOSED_BLOCKED_BOUNDED`.
 
@@ -717,7 +716,7 @@ Next allowed move: operator may either supply/confirm EC-T4 missing
 signed-date/document-number metadata for CAND-002, CAND-004, CAND-005, and
 CAND-006, or authorize a successor EC-T5/EC-T6 activation roadmap/work order
 that source-verifies runtime/query-class routing for `QUERY_CLASS_GATED` before
-retrieval disclosure wiring. EX-T3 through EX-T6 local extraction foundation is
+retrieval disclosure wiring. EX-T3 through EX-T7 local extraction foundation is
 closed bounded; integration convergence remains blocked.
 Dependency addition, OCR model download, corpus ingestion, runtime/source
 change beyond a fresh authorized successor packet, external Policy_Local

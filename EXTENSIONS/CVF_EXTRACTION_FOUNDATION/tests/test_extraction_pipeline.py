@@ -1,5 +1,5 @@
 """
-Focused tests for EX-T3 through EX-T5 extraction foundation contracts.
+Focused tests for EX-T3 through EX-T7 extraction foundation contracts.
 
 No OCR package install, model download, provider call, external corpus read, or
 legal/current-status claim is performed.
@@ -141,6 +141,100 @@ def test_chunking_uses_fixed_windows_and_preserves_language_codes() -> None:
     assert chunks[1].char_count == 10
     assert chunks[0].language_codes == ["vi", "en"]
     assert chunks[0].provenance["chunkingStrategy"] == "fixed-window-chars"
+    assert chunks[0].char_start == 0
+    assert chunks[0].char_end == DEFAULT_CHUNK_MAX_CHARS
+
+
+def test_sentence_boundary_chunking_preserves_sentence_edges() -> None:
+    text = "First sentence. Second sentence. Third sentence."
+    pages = [
+        Tier1PageResult(
+            page_num=1,
+            text=text,
+            char_count=len(text),
+            extraction_method="pdfplumber",
+        )
+    ]
+    quality = evaluate_extraction_quality(pages)
+    chunks = chunk_extracted_pages(
+        source_artifact_id="artifact-sentence",
+        source_hash="sha256:sentence",
+        pages=pages,
+        extraction_tier="TIER1_DIGITAL",
+        language_codes=["en"],
+        quality_report=quality,
+        max_chars=34,
+        strategy="sentence-boundary-chars",
+    )
+    assert [chunk.text for chunk in chunks] == [
+        "First sentence. Second sentence.",
+        "Third sentence.",
+    ]
+    assert all(chunk.char_count <= 34 for chunk in chunks)
+    assert chunks[0].char_start == 0
+    assert chunks[0].char_end == len("First sentence. Second sentence.")
+    assert chunks[0].provenance["chunkingStrategy"] == "sentence-boundary-chars"
+
+
+def test_sentence_boundary_chunking_falls_back_for_long_sentence() -> None:
+    text = "A" * 70 + "."
+    pages = [
+        Tier1PageResult(
+            page_num=2,
+            text=text,
+            char_count=len(text),
+            extraction_method="pdfplumber",
+        )
+    ]
+    quality = evaluate_extraction_quality(pages)
+    chunks = chunk_extracted_pages(
+        source_artifact_id="artifact-long",
+        source_hash="sha256:long",
+        pages=pages,
+        extraction_tier="TIER1_DIGITAL",
+        language_codes=["en"],
+        quality_report=quality,
+        max_chars=25,
+        strategy="sentence-boundary-chars",
+    )
+    assert [chunk.char_count for chunk in chunks] == [25, 25, 21]
+    assert chunks[-1].text.endswith(".")
+    assert chunks[0].char_start == 0
+    assert chunks[-1].char_end == len(text)
+
+
+def test_sentence_boundary_chunking_is_deterministic() -> None:
+    pages = [
+        Tier1PageResult(
+            page_num=5,
+            text="Alpha. Beta. Gamma.",
+            char_count=20,
+            extraction_method="pdfplumber",
+        )
+    ]
+    quality = evaluate_extraction_quality(pages)
+    first = chunk_extracted_pages(
+        source_artifact_id="artifact-deterministic",
+        source_hash="sha256:deterministic",
+        pages=pages,
+        extraction_tier="TIER1_DIGITAL",
+        language_codes=["en"],
+        quality_report=quality,
+        max_chars=12,
+        strategy="sentence-boundary-chars",
+    )
+    second = chunk_extracted_pages(
+        source_artifact_id="artifact-deterministic",
+        source_hash="sha256:deterministic",
+        pages=pages,
+        extraction_tier="TIER1_DIGITAL",
+        language_codes=["en"],
+        quality_report=quality,
+        max_chars=12,
+        strategy="sentence-boundary-chars",
+    )
+    assert [chunk.chunk_id for chunk in first] == [chunk.chunk_id for chunk in second]
+    assert [chunk.text for chunk in first] == [chunk.text for chunk in second]
 
 
 def test_dscp_descriptor_handoff_does_not_release_raw_content() -> None:
@@ -172,3 +266,5 @@ def test_dscp_descriptor_handoff_does_not_release_raw_content() -> None:
     assert descriptor.governance_gates["customGates"] == {"extractionStatus": "PASS"}
     assert descriptor.metadata["rawContentReleased"] == "false"
     assert descriptor.metadata["domainFamily"] == "legal_policy"
+    assert descriptor.metadata["charStart"] == "0"
+    assert descriptor.metadata["charEnd"] == str(MIN_CHARS_PER_PAGE)

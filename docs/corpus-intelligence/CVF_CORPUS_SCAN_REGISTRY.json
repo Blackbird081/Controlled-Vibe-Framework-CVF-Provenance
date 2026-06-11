@@ -2290,6 +2290,44 @@
       "manifestPath": null,
       "packetPath": "docs/reviews/CVF_LPCI2_EX_T3_T6_EXTRACTION_PIPELINE_COMPLETION_2026-06-11.md",
       "notes": "Focused pytest coverage for OCR language mapping, explicit OCR adapter boundary, confidence capture, quality flags, fixed-window chunking, and DSCP descriptor handoff without raw-content release."
+    },
+    {
+      "id": "ex-t7-sentence-boundary-chunking-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation EX-T7 sentence-boundary chunking source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/extraction_pipeline.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "EX-T7",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_LPCI2_EX_T7_SENTENCE_BOUNDARY_CHUNKING_COMPLETION_2026-06-12.md",
+      "notes": "Optional deterministic sentence-boundary chunking strategy with fixed-window fallback, page-local charStart/charEnd trace metadata, and fixed-window default preserved. No OCR dependency install, model download, corpus ingestion, provider call, retrieval behavior, or legal/current-status claim."
+    },
+    {
+      "id": "ex-t7-sentence-boundary-chunking-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation EX-T7 sentence-boundary chunking tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_extraction_pipeline.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "EX-T7",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_LPCI2_EX_T7_SENTENCE_BOUNDARY_CHUNKING_COMPLETION_2026-06-12.md",
+      "notes": "Focused pytest coverage for sentence boundary grouping, long-span fixed-window fallback, deterministic chunk IDs, offset metadata, and raw-content-release boundary."
     }
   ]
 }

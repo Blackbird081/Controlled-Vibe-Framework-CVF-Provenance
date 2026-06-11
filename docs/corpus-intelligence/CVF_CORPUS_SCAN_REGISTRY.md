@@ -100,6 +100,8 @@ prior scan here before starting new work.
 | `CVF Extraction Foundation EX-T2 package stubs` | CVF_EXTENSION | SCANNED | EX-T2 | 3 | Package marker stubs for EX-T2 source, src, and tests directories; no runtime behavior |
 | `CVF Extraction Foundation EX-T3 through EX-T6 pipeline source` | CVF_EXTENSION | SCANNED | EX-T3-EX-T6 | 1 | Deterministic OCR adapter boundary, OCR language mapping, quality gate, chunk schema, and DSCP descriptor handoff; no OCR model download or corpus ingestion |
 | `CVF Extraction Foundation EX-T3 through EX-T6 pipeline tests` | CVF_EXTENSION | SCANNED | EX-T3-EX-T6 | 1 | 10 pytest assertions covering language mapping, explicit OCR adapter requirement, confidence capture, quality flags, fixed-window chunking, and raw-content-release boundary |
+| `CVF Extraction Foundation EX-T7 sentence-boundary chunking source` | CVF_EXTENSION | SCANNED | EX-T7 | 1 | Optional deterministic sentence-boundary strategy with fixed-window fallback and charStart/charEnd metadata; fixed-window default preserved |
+| `CVF Extraction Foundation EX-T7 sentence-boundary chunking tests` | CVF_EXTENSION | SCANNED | EX-T7 | 1 | Focused pytest coverage for sentence grouping, long-span fallback, deterministic IDs, offset metadata, and raw-content-release boundary |
 
 ---
 
