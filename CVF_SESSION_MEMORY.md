@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-11
 
-Current mode marker: `lpci2_ex_t2_tier1_digital_native_extractor_dispatched`
+Current mode marker: `lpci2_ex_t2_dispatch_authoring_guard_hardened_pending_worker_return`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `lpci2_ex_t2_tier1_digital_native_extractor_dispatched`.
+Current mode: `lpci2_ex_t2_dispatch_authoring_guard_hardened_pending_worker_return`.
 
 Active handoff:
 
@@ -57,6 +57,30 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+LPCI2 EX-T2 dispatch packet authoring guard hardening is
+`CLOSED_PASS_BOUNDED` at material commit `0b42468e`.
+
+Changed control surfaces:
+
+- authorization/review record:
+  `docs/reviews/CVF_EX_T2_DISPATCH_PACKET_AUTHORING_GUARD_HARDENING_2026-06-11.md`;
+- authoring addendum:
+  `docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md`;
+- closure-quality standard:
+  `docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md`;
+- dispatch-quality checker and focused tests:
+  `governance/compat/check_work_order_dispatch_quality.py`,
+  `governance/compat/test_check_work_order_dispatch_quality.py`.
+
+Result: finding remediation was promoted into reusable CVF foundation. The
+dispatch-quality guard now rejects dispatch-ready work orders that retain a
+placeholder or non-commit `dispatchBaseHead`. Verification: focused
+dispatch-quality tests PASS 53/53, reviewer-fast PASS, governed file-size PASS,
+and pre-commit governance chain PASS. Boundary: control-plane
+authoring/checker hardening only; no extractor implementation, OCR fallback,
+DSCP wire-in, dependency addition, provider/API key use, public-sync,
+production readiness, or public readiness.
 
 LPCI2 EX-T2 Tier 1 digital-native extractor is `DISPATCHED` at material commit
 `3c96b229`.
@@ -256,9 +280,10 @@ repo, production readiness, public readiness, or live governance proof.
 Next allowed move: Claude executes
 `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T2_TIER1_DIGITAL_NATIVE_EXTRACTOR_FOR_CLAUDE_2026-06-11.md`
 under `WORKER_MUST_NOT_COMMIT` and returns uncommitted artifacts for Codex
-review. EC-T1 remains pending separate operator decision. EX-T3 OCR remains
-pending separate operator decision. T12 remains forbidden until EC-02 resolves
-on or after 2026-07-01.
+review. Dispatch packet authoring guard hardening is complete at `0b42468e`.
+EC-T1 remains pending separate operator decision. EX-T3 OCR remains pending
+separate operator decision. T12 remains forbidden until EC-02 resolves on or
+after 2026-07-01.
 
 LHW24 remains the latest closed numbered LHW wave in the state registry.
 

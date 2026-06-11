@@ -32,15 +32,15 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci2_ex_t2_tier1_digital_native_extractor_dispatched`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=Claude executes the EX-T2 Tier 1 digital-native extractor work order under WORKER_MUST_NOT_COMMIT and returns uncommitted artifacts for Codex review; parked checkpoint=EC-T1/EX-T3 plus DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`lpci2_ex_t2_dispatch_authoring_guard_hardened_pending_worker_return`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=Claude executes the EX-T2 Tier 1 digital-native extractor work order under WORKER_MUST_NOT_COMMIT and returns uncommitted artifacts for Codex review; parked checkpoint=EC-T1/EX-T3 plus DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`lpci2_ex_t2_tier1_digital_native_extractor_dispatched`
+`lpci2_ex_t2_dispatch_authoring_guard_hardened_pending_worker_return`
 
-Current HEAD recorded for this handoff: `3c96b229`
-(private provenance material commit dispatching LPCI2 EX-T2 Tier 1
-digital-native extractor).
+Current HEAD recorded for this handoff: `0b42468e`
+(private provenance material commit closing LPCI2 EX-T2 dispatch packet
+authoring guard hardening).
 
 ## Active Boundary
 
@@ -57,6 +57,27 @@ This handoff is a pointer record only. Detailed historical continuity remains
 in archived handoffs and governed completion packets.
 
 ## Latest Continuity Note
+
+LPCI2 EX-T2 dispatch packet authoring guard hardening is
+`CLOSED_PASS_BOUNDED` at material commit `0b42468e`.
+
+Changed control surfaces:
+
+- `docs/reviews/CVF_EX_T2_DISPATCH_PACKET_AUTHORING_GUARD_HARDENING_2026-06-11.md`
+- `docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md`
+- `docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md`
+- `governance/compat/check_work_order_dispatch_quality.py`
+- `governance/compat/test_check_work_order_dispatch_quality.py`
+
+Result: finding remediation was promoted into reusable CVF foundation. The
+dispatch-quality guard now rejects dispatch-ready work orders that retain a
+placeholder or non-commit `dispatchBaseHead`. Verification: focused
+dispatch-quality tests PASS 53/53, reviewer-fast PASS, governed file-size PASS,
+and pre-commit governance chain PASS.
+
+Boundary: control-plane authoring/checker hardening only; no extractor
+implementation, OCR fallback, DSCP wire-in, dependency addition, provider/API
+key use, public-sync, production readiness, or public readiness.
 
 LPCI2 EX-T2 Tier 1 digital-native extractor is `DISPATCHED` at material commit
 `3c96b229`.
@@ -368,9 +389,10 @@ LHW24 remains the latest closed numbered LHW wave in
 Next allowed move: Claude executes
 `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T2_TIER1_DIGITAL_NATIVE_EXTRACTOR_FOR_CLAUDE_2026-06-11.md`
 under `WORKER_MUST_NOT_COMMIT` and returns uncommitted artifacts for Codex
-review. EC-T1 remains pending separate operator decision. EX-T3 OCR remains
-pending separate operator decision. Parked lanes remain Live Redis, DEP2, and
-external receipt-anchor.
+review. Dispatch packet authoring guard hardening is complete at `0b42468e`.
+EC-T1 remains pending separate operator decision. EX-T3 OCR remains pending
+separate operator decision. Parked lanes remain Live Redis, DEP2, and external
+receipt-anchor.
 
 LPCI2-T12 remains forbidden until a separate operator-authorized evidence path
 resolves EC-02 review on or after 2026-07-01, known `currentStatus`, known
