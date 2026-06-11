@@ -32,16 +32,15 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci2_ec_t2_contract_amendment_closed_pass_bounded_pending_next_roadmap`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=author/review fresh EC-T3 GC-018 and work order for corpus record schema update only, or choose separate EX-T3 OCR fallback roadmap; parked checkpoint=EC-T4/EC-T5 plus DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`lpci2_ec_t3_schema_update_dispatched`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=Claude may execute the committed EC-T3 schema update work order under WORKER_MUST_NOT_COMMIT and return staged/uncommitted artifacts; parked checkpoint=EC-T4/EC-T5 plus DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`lpci2_ec_t2_contract_amendment_closed_pass_bounded_pending_next_roadmap`
+`lpci2_ec_t3_schema_update_dispatched`
 
-Current HEAD recorded for this handoff: `4ca9b861`
-(session-sync commit recording LPCI2 EC-T2 closure state; parent material
-closure commit `cb026168` closes the contract amendment and machine
-semantics).
+Current HEAD recorded for this handoff: `43b2b652`
+(private provenance material commit dispatching LPCI2 EC-T3 corpus record
+schema update work order).
 
 ## Active Boundary
 
@@ -58,6 +57,30 @@ This handoff is a pointer record only. Detailed historical continuity remains
 in archived handoffs and governed completion packets.
 
 ## Latest Continuity Note
+
+LPCI2 EC-T3 corpus record schema update dispatch is `DISPATCHED` at material
+commit `43b2b652`.
+
+Dispatch artifacts:
+
+- `docs/baselines/CVF_GC018_LPCI2_EC_T3_CORPUS_RECORD_SCHEMA_UPDATE_2026-06-11.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EC_T3_CORPUS_RECORD_SCHEMA_UPDATE_FOR_CLAUDE_2026-06-11.md`
+
+Result: Claude may execute EC-T3 under `WORKER_MUST_NOT_COMMIT` to add
+TypeScript schema fields and focused tests only. Codex review corrected the
+packet from `PROPOSED` to `DISPATCHED`, added explicit commit mode and
+reviewer-owned closure paths, completed the Intake Role Routing Decision, and
+bounded the migration invariant as documentation/test evidence only until
+EC-T5 runtime enforcement.
+
+Verification: reviewer-fast PASS, pre-dispatch autorun PASS, and full
+pre-commit governance chain PASS.
+
+Boundary: dispatch package only; no EC-T3 source implementation yet, corpus
+JSON migration, runtime gate logic, DSCP profile JSON value change,
+public-sync, provider/API key use, current-law/legal-quality claim,
+production/public readiness, memory reinjection, high-risk promotion, or
+autonomous mutation.
 
 LPCI2 EC-T2 contract amendment and machine semantics are
 `CLOSED_PASS_BOUNDED` at material commit `cb026168`; session continuity was
@@ -536,13 +559,14 @@ history.
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
-Next allowed move: author/review a fresh EC-T3 GC-018 and work order for
-corpus record schema update only, or choose a separate EX-T3 OCR fallback
-roadmap. EC-T4, EC-T5, EX-T3, EX-T4, EX-T5, dependency addition, OCR model
-download, corpus ingestion, runtime/source change beyond an authorized work
-order, public-sync, provider/API key use, production readiness, or public
-readiness remain unauthorized without fresh authorization. Parked lanes remain
-Live Redis, DEP2, and external receipt-anchor.
+Next allowed move: Claude may execute the committed EC-T3 corpus record schema
+update work order under `WORKER_MUST_NOT_COMMIT` and return staged/uncommitted
+artifacts for Codex review. EC-T4, EC-T5, EX-T3, EX-T4, EX-T5, dependency
+addition, OCR model download, corpus ingestion, runtime/source change beyond
+the EC-T3 owned TypeScript schema/test files, public-sync, provider/API key
+use, production readiness, or public readiness remain unauthorized without
+fresh authorization. Parked lanes remain Live Redis, DEP2, and external
+receipt-anchor.
 
 LPCI2-T12 remains forbidden until a separate operator-authorized evidence path
 resolves EC-02 review on or after 2026-07-01, known `currentStatus`, known
