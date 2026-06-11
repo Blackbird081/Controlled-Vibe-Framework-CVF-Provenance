@@ -59,7 +59,8 @@ Pain-point closure direction:
 ## Latest Continuity Note
 
 LPCI2 EC-T2 contract amendment and machine semantics are
-`CLOSED_PASS_BOUNDED` at material commit `cb026168`.
+`CLOSED_PASS_BOUNDED` at material commit `cb026168`; session continuity was
+synced at `4ca9b861`.
 
 Closure artifacts:
 

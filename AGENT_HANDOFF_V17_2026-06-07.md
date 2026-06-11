@@ -38,9 +38,10 @@ Startup acknowledged: current mode=`lpci2_ec_t2_contract_amendment_closed_pass_b
 
 `lpci2_ec_t2_contract_amendment_closed_pass_bounded_pending_next_roadmap`
 
-Current HEAD recorded for this handoff: `cb026168`
-(private provenance material commit closing LPCI2 EC-T2 contract amendment
-and machine semantics).
+Current HEAD recorded for this handoff: `4ca9b861`
+(session-sync commit recording LPCI2 EC-T2 closure state; parent material
+closure commit `cb026168` closes the contract amendment and machine
+semantics).
 
 ## Active Boundary
 
@@ -59,7 +60,8 @@ in archived handoffs and governed completion packets.
 ## Latest Continuity Note
 
 LPCI2 EC-T2 contract amendment and machine semantics are
-`CLOSED_PASS_BOUNDED` at material commit `cb026168`.
+`CLOSED_PASS_BOUNDED` at material commit `cb026168`; session continuity was
+synced at `4ca9b861`.
 
 Closure artifacts:
 
