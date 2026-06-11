@@ -58,8 +58,8 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-LPCI2 EX-T1 dependency/source audit is `CLOSED_PASS_BOUNDED` in the reviewer
-closure batch based on closureBaseHead `76cdf464`.
+LPCI2 EX-T1 dependency/source audit is `CLOSED_PASS_BOUNDED` at material commit
+`7e10609e`.
 
 Closure artifacts:
 

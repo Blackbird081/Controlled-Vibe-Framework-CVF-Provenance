@@ -38,9 +38,9 @@ Startup acknowledged: current mode=`lpci2_ex_t1_dependency_source_audit_closed_p
 
 `lpci2_ex_t1_dependency_source_audit_closed_pending_next_operator_decision`
 
-Current HEAD recorded for this handoff: `76cdf464`
-(private provenance closure base before LPCI2 EX-T1 dependency/source audit
-reviewer closure commit).
+Current HEAD recorded for this handoff: `7e10609e`
+(private provenance material commit closing LPCI2 EX-T1 dependency/source
+audit).
 
 ## Active Boundary
 
@@ -58,8 +58,8 @@ in archived handoffs and governed completion packets.
 
 ## Latest Continuity Note
 
-LPCI2 EX-T1 dependency/source audit is `CLOSED_PASS_BOUNDED` in the reviewer
-closure batch based on closureBaseHead `76cdf464`.
+LPCI2 EX-T1 dependency/source audit is `CLOSED_PASS_BOUNDED` at material commit
+`7e10609e`.
 
 Closure artifacts:
 
