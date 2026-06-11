@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: EX_T1_PASS_BOUNDED_EC_T1_PENDING_OPERATOR_DECISION
+Status: EX_T2_DISPATCHED_EC_T1_PENDING_OPERATOR_DECISION
 
 docType: roadmap
 
@@ -14,23 +14,24 @@ Author: Claude (operator-directed proposal for Codex review and explicit operato
 
 ## Authorization And Decision
 
-Decision state: EX_T1_CHILD_LANE_PASS_BOUNDED.
+Decision state: EX_T2_CHILD_LANE_DISPATCHED.
 
 Operator instruction on 2026-06-11 authorized Codex to author the next work
 order under the hardened design-control foundation. EX-T1 is now completed as a
 dependency/source audit child lane.
 
-EX-T1 review accepted the recommendation `COMPOSED_STACK_PREFERRED` for a
-future EX-T2 Tier 1 digital-native extraction lane only. LiteParse remains
+EX-T1 review accepted the recommendation `COMPOSED_STACK_PREFERRED` for the
+EX-T2 Tier 1 digital-native extraction lane only. LiteParse remains
 `LITEPARSE_ELIGIBLE_FOR_EX_T3_REEVALUATION` for a later OCR/spatial tradeoff
-decision. EX-T2 still requires fresh GC-018 authorization and a source-verified
-work order before dispatch.
+decision. EX-T2 is now dispatched through fresh GC-018 authorization and a
+source-verified work order.
 
-This does not authorize extraction implementation, repo dependency addition,
-OCR model download, corpus ingestion, retrieval behavior change, EC-02 semantic
-change, public-sync, or live/provider proof. EC-T1 remains pending a separate
-operator decision. Any later child lane must receive fresh GC-018 authorization
-and a source-verified work order before dispatch.
+This authorizes only the bounded EX-T2 Tier 1 digital-native extractor
+implementation. It does not authorize repo dependency addition, OCR model
+download, corpus ingestion, retrieval behavior change, EC-02 semantic change,
+public-sync, or live/provider proof. EC-T1 remains pending a separate operator
+decision. Any later child lane must receive fresh GC-018 authorization and a
+source-verified work order before dispatch.
 
 ---
 
@@ -469,7 +470,7 @@ via the domain profile, not inferred from text.
 | Tranche | Goal | Key output | Depends on |
 |---|---|---|---|
 | EX-T1 | Dependency and source audit | Option evidence, local install probes, CI feasibility note, OCR language-code mapping table | PASS_BOUNDED |
-| EX-T2 | Tier 1 digital-native extractor | extractor owner module for `.docx` and PDF text-layer path | EX-T1 closure plus fresh GC-018/work order |
+| EX-T2 | Tier 1 digital-native extractor | extractor owner module for `.docx` and PDF text-layer path | DISPATCHED through fresh GC-018/work order |
 | EX-T3 | Tier 2 OCR fallback | OCR fallback path using mapped OCR language codes and confidence capture | EX-T2 |
 | EX-T4 | Tier 3 quality gate and chunk schema | extraction quality gate, chunk schema, extraction provenance fields | EX-T3 |
 | EX-T5 | DSCP pipeline wire-in | chunks enter domain profile, descriptor, gate, and receipt flow | EX-T4, DSCP-T11F |
@@ -701,17 +702,22 @@ of EC approval and can begin at Phase 1 in parallel.
 
 ## Status
 
-EX_T1_PASS_BOUNDED_EC_T1_PENDING_OPERATOR_DECISION.
+EX_T2_DISPATCHED_EC_T1_PENDING_OPERATOR_DECISION.
 
-EX-T1 is authorized only as a dependency/source audit and local feasibility
-probe under:
+EX-T1 is closed as a dependency/source audit and local feasibility probe under:
 
 - `docs/baselines/CVF_GC018_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_2026-06-11.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_FOR_CLAUDE_2026-06-11.md`
 
-No EX-T2 extraction implementation, dependency addition to repo manifests, OCR
-model download, corpus ingestion, EC-T1 semantic change, T12 authoring, or
-public-sync is authorized by this status change.
+EX-T2 is dispatched only under:
+
+- `docs/baselines/CVF_GC018_LPCI2_EX_T2_TIER1_DIGITAL_NATIVE_EXTRACTOR_2026-06-11.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T2_TIER1_DIGITAL_NATIVE_EXTRACTOR_FOR_CLAUDE_2026-06-11.md`
+
+No EX-T3 OCR fallback, EX-T4 quality gate, EX-T5 DSCP wire-in, dependency
+addition to repo manifests, OCR model download, corpus ingestion, EC-T1
+semantic change, T12 authoring, or public-sync is authorized by this status
+change.
 
 ---
 
