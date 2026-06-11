@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-11
 
-Current mode marker: `prior_verification_reuse_unicode_evidence_hardening_closed_pass_bounded`
+Current mode marker: `lpci2_ec_t5_gate_value_update_closed_blocked_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `prior_verification_reuse_unicode_evidence_hardening_closed_pass_bounded`.
+Current mode: `lpci2_ec_t5_gate_value_update_closed_blocked_bounded`.
 
 Active handoff:
 
@@ -58,8 +58,27 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-Prior verification reuse and Unicode evidence handling hardening is
-`CLOSED_PASS_BOUNDED`.
+LPCI2 EC-T5 DSCP gate value update is `CLOSED_BLOCKED_BOUNDED`.
+
+Artifacts:
+
+- `docs/baselines/CVF_GC018_LPCI2_EC_T5_DSCP_GATE_VALUE_UPDATE_BLOCK_DECISION_2026-06-11.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EC_T5_DSCP_GATE_VALUE_UPDATE_BLOCK_DECISION_FOR_CODEX_2026-06-11.md`
+- `docs/reference/CVF_LPCI2_EC_T5_GATE_VALUE_UPDATE_BLOCK_DECISION_2026-06-11.json`
+- `docs/reviews/CVF_LPCI2_EC_T5_DSCP_GATE_VALUE_UPDATE_BLOCK_DECISION_COMPLETION_2026-06-11.md`
+- `docs/roadmaps/CVF_LPCI2_EXTRACTION_AND_EC02_REFINEMENT_ROADMAP_2026-06-10.md`
+
+Result: `QUERY_CLASS_GATED` was not applied to DSCP domain profiles. EC-T5
+closed as a bounded block decision because EC-T4 remains parked pending
+operator metadata and the current CPF profile apply contract blocks only
+`BLOCKED*`/`PROHIBITED` values. Boundary: no runtime/source edit, external
+Policy_Local edit, DSCP profile value update, corpus mutation, retrieval
+behavior, provider/API-key use, public-sync, current-law/legal-quality claim,
+production/public readiness, EC-T6 unlock, T12 unlock, memory reinjection,
+high-risk promotion, or autonomous mutation.
+
+Prior verification reuse and Unicode evidence handling checker hardening is
+`CLOSED_PASS_BOUNDED` at commit `b815fcf9`.
 
 Artifacts:
 
@@ -496,12 +515,14 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: operator must supply or confirm signed-date/document-number
-metadata for EC-T4 CAND-002, CAND-004, CAND-005, and CAND-006 before EC-T5 can
-proceed. EC-T5, EX-T3, EX-T4, EX-T5, dependency addition, OCR model download,
-corpus ingestion, runtime/source change beyond the parked EC-T4 evidence
-packet, public-sync, provider/API key use, production readiness, or public
-readiness remain unauthorized without fresh authorization.
+Next allowed move: operator may either supply/confirm EC-T4 missing
+signed-date/document-number metadata for CAND-002, CAND-004, CAND-005, and
+CAND-006, or authorize a successor EC-T5 activation roadmap/work order that
+also source-verifies runtime/query-class routing for `QUERY_CLASS_GATED`.
+EC-T6, EX-T3, EX-T4, EX-T5, dependency addition, OCR model download, corpus
+ingestion, runtime/source change beyond a fresh authorized successor packet,
+public-sync, provider/API key use, production readiness, or public readiness
+remain unauthorized without fresh authorization.
 T12 remains forbidden until EC-02 resolves on or after 2026-07-01 and
 eligibility is re-evaluated.
 

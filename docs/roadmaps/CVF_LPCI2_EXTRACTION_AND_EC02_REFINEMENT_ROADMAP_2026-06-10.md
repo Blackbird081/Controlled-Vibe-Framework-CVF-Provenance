@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_PARTIAL_EC_T4_PARKED_METADATA_GAPS
+Status: ACTIVE_PARTIAL_EC_T5_CLOSED_BLOCKED_BOUNDED
 
 docType: roadmap
 
@@ -14,7 +14,7 @@ Author: Claude (operator-directed proposal for Codex review and explicit operato
 
 ## Authorization And Decision
 
-Decision state: EC_T4_PARKED_PENDING_OPERATOR_METADATA.
+Decision state: EC_T5_CLOSED_BLOCKED_BOUNDED.
 
 Operator instruction on 2026-06-11 authorized Codex to author the next work
 order under the hardened design-control foundation. EX-T1 is now completed as a
@@ -29,7 +29,8 @@ a source-verified work order, focused tests, and Codex completion review.
 This records closure of the bounded EX-T2 Tier 1 digital-native extractor
 implementation, EC-T1 regulatory date/status decision baseline, EC-T2 contract
 amendment plus machine-readable EC-02 semantics JSON, EC-T3 TypeScript corpus
-schema fields, and EC-T4 parked evidence/backfill proposal.
+schema fields, EC-T4 parked evidence/backfill proposal, and EC-T5 bounded
+block decision.
 It does not authorize repo dependency addition, OCR model download, corpus
 ingestion, runtime retrieval behavior change, DSCP profile value update,
 public-sync, or live/provider proof. Any later child lane must receive fresh
@@ -39,6 +40,11 @@ EC-T4 reviewer disposition on 2026-06-11: `RETURNED_BLOCKED_METADATA_GAPS`.
 Two records are source-evidenced pending operator type/status confirmation;
 four records require operator-confirmed signed dates/document numbers before
 metadata backfill or EC-T5 can proceed.
+
+EC-T5 reviewer disposition on 2026-06-11: `CLOSED_BLOCKED_BOUNDED`.
+`QUERY_CLASS_GATED` was not applied to DSCP domain profiles because EC-T4
+remains parked and the current CPF profile apply contract would treat the token
+as a non-blocking custom gate before runtime/query-class routing is wired.
 
 ---
 
@@ -626,8 +632,8 @@ that the runtime token, contract table, and machine semantics agree.
 | EC-T2 | Contract and machine semantics | COMPLETE_BOUNDED: response boundary contract update plus machine-readable EC-02 gate semantics JSON | EC-T1 |
 | EC-T3 | Corpus record schema update | CLOSED_PASS_BOUNDED at `a895dc03`: `documentStatus`, `promulgationDate`, and `effectiveDate` schema support in TypeScript; no corpus JSON migration | EC-T2 |
 | EC-T4 | Per-project metadata backfill | PARKED_PENDING_OPERATOR_METADATA: evidence ledger and proposed JSON exist; CAND-002, CAND-004, CAND-005, and CAND-006 require operator-confirmed signed dates/document numbers; no external workspace edit, no `IN_FORCE`, no `ec02Gate` change | EC-T3, operator dates |
-| EC-T5 | DSCP gate value update | `ec02Gate: "QUERY_CLASS_GATED"` in domain profiles; checker enforces new token | EC-T4 |
-| EC-T6 | Retrieval disclosure wire-in | Retrieval layer appends i18n disclosure when `documentStatus=PROMULGATED` | EC-T5 |
+| EC-T5 | DSCP gate value update | CLOSED_BLOCKED_BOUNDED: `QUERY_CLASS_GATED` not applied; EC-T4 remains metadata-gapped and current CPF apply logic blocks only `BLOCKED*`/`PROHIBITED`, so token activation is deferred to a successor with operator metadata and runtime/query routing scope | EC-T4 |
+| EC-T6 | Retrieval disclosure wire-in | BLOCKED_BY_EC_T5: retrieval disclosure wire-in remains unauthorized until a successor gate-value activation tranche closes with source-verified runtime/query routing behavior | EC-T5 successor |
 
 ### Open Questions for Codex Rebuttal
 

@@ -32,15 +32,15 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`prior_verification_reuse_unicode_evidence_hardening_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=operator must supply or confirm EC-T4 missing signed-date/document-number metadata before EC-T5; parked checkpoint=EC-T5/EX-T3-EX-T5 and DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`lpci2_ec_t5_gate_value_update_closed_blocked_bounded`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=operator may supply EC-T4 metadata or authorize successor EC-T5 activation with runtime/query routing scope; parked checkpoint=EC-T6/EX-T3-EX-T5 and DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`prior_verification_reuse_unicode_evidence_hardening_closed_pass_bounded`
+`lpci2_ec_t5_gate_value_update_closed_blocked_bounded`
 
-Current HEAD recorded for this handoff: `e9d0a5f6`
-(prior-verification-reuse hardening material commit; next sync-only commit may
-record this parent).
+Current HEAD recorded for this handoff: `b815fcf9`
+(prior-verification-reuse checker hardening commit; EC-T5 closure commit will
+be recorded by a follow-up session sync).
 
 ## Active Boundary
 
@@ -58,18 +58,17 @@ in archived handoffs and governed completion packets.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: session continuity sync for EC-T4 parked
-metadata gaps and prior-verification-reuse hardening so the active handoff and
-state registry preserve EC-T5 as blocked while recording the new authoring
-standard.
+Authorized guard-maintenance scope: session continuity sync for EC-T5 bounded
+block decision and prior-verification-reuse checker hardening so the active
+handoff and state registry preserve EC-T6 as blocked while recording the new
+checker.
 
 Protected paths:
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 
-Operator authorization: 2026-06-11 operator instructed Codex to switch roles
-and prepare the EC-T4 operator-date evidence path for Claude; later instructed
-Codex to promote the EC-T4 worker finding into CVF foundation hardening.
+Operator authorization: 2026-06-11 operator instructed Codex to raise the
+checker and complete EC-T5 in multi-role mode.
 
 Rollback boundary: revert only this EC-T4 dispatch/session update to
 `AGENT_HANDOFF_V17_2026-06-07.md` and
@@ -80,8 +79,27 @@ governance/session history.
 
 ## Latest Continuity Note
 
+LPCI2 EC-T5 DSCP gate value update is `CLOSED_BLOCKED_BOUNDED`.
+
+Artifacts:
+
+- `docs/baselines/CVF_GC018_LPCI2_EC_T5_DSCP_GATE_VALUE_UPDATE_BLOCK_DECISION_2026-06-11.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EC_T5_DSCP_GATE_VALUE_UPDATE_BLOCK_DECISION_FOR_CODEX_2026-06-11.md`
+- `docs/reference/CVF_LPCI2_EC_T5_GATE_VALUE_UPDATE_BLOCK_DECISION_2026-06-11.json`
+- `docs/reviews/CVF_LPCI2_EC_T5_DSCP_GATE_VALUE_UPDATE_BLOCK_DECISION_COMPLETION_2026-06-11.md`
+- `docs/roadmaps/CVF_LPCI2_EXTRACTION_AND_EC02_REFINEMENT_ROADMAP_2026-06-10.md`
+
+Result: `QUERY_CLASS_GATED` was not applied to DSCP domain profiles. EC-T5
+closed as a bounded block decision because EC-T4 remains parked pending
+operator metadata and the current CPF profile apply contract blocks only
+`BLOCKED*`/`PROHIBITED` values. Boundary: no runtime/source edit, external
+Policy_Local edit, DSCP profile value update, corpus mutation, retrieval
+behavior, provider/API-key use, public-sync, current-law/legal-quality claim,
+production/public readiness, EC-T6 unlock, T12 unlock, memory reinjection,
+high-risk promotion, or autonomous mutation.
+
 Prior verification reuse and Unicode evidence handling hardening is
-`CLOSED_PASS_BOUNDED`.
+`CLOSED_PASS_BOUNDED` at commit `b815fcf9`.
 
 Artifacts:
 
@@ -675,14 +693,15 @@ history.
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
-Next allowed move: operator must supply or confirm signed-date/document-number
-metadata for EC-T4 CAND-002, CAND-004, CAND-005, and CAND-006 before EC-T5 can
-proceed. EC-T5, EX-T3, EX-T4, EX-T5, dependency addition, OCR model download,
-corpus ingestion, runtime/source change beyond the parked EC-T4 evidence
-packet, external Policy_Local mutation, public-sync, provider/API key use,
-production readiness, or public readiness remain unauthorized without fresh
-authorization. Parked lanes remain Live Redis, DEP2, and external
-receipt-anchor.
+Next allowed move: operator may either supply/confirm EC-T4 missing
+signed-date/document-number metadata for CAND-002, CAND-004, CAND-005, and
+CAND-006, or authorize a successor EC-T5 activation roadmap/work order that
+also source-verifies runtime/query-class routing for `QUERY_CLASS_GATED`.
+EC-T6, EX-T3, EX-T4, EX-T5, dependency addition, OCR model download, corpus
+ingestion, runtime/source change beyond a fresh authorized successor packet,
+external Policy_Local mutation, public-sync, provider/API key use, production
+readiness, or public readiness remain unauthorized without fresh authorization.
+Parked lanes remain Live Redis, DEP2, and external receipt-anchor.
 
 LPCI2-T12 remains forbidden until a separate operator-authorized evidence path
 resolves EC-02 review on or after 2026-07-01, known `currentStatus`, known
