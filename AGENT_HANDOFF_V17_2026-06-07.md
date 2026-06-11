@@ -38,9 +38,9 @@ Startup acknowledged: current mode=`prior_verification_reuse_unicode_evidence_ha
 
 `prior_verification_reuse_unicode_evidence_hardening_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `4ee9da5d`
-(GC-020 handoff sync parent for the prior-verification-reuse hardening commit;
-EC-T4 parked packet at `34b27ad8`).
+Current HEAD recorded for this handoff: `e9d0a5f6`
+(prior-verification-reuse hardening material commit; next sync-only commit may
+record this parent).
 
 ## Active Boundary
 
