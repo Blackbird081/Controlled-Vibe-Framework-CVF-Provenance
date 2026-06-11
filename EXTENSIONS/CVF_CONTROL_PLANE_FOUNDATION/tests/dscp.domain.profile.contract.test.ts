@@ -336,3 +336,28 @@ describe("DSCP-T10: DscpDomainProfile - unknown gate key diagnostics", () => {
     expect(result.diagnostics.some((d) => d.includes("missingGate"))).toBe(true);
   });
 });
+
+describe("EC-T3: DscpDomainProfile supportsDocumentStatus flag", () => {
+  it("accepts supportsDocumentStatus true for legal-policy profiles", () => {
+    const profile: DscpDomainProfile = {
+      ...legalPolicyProfile,
+      supportsDocumentStatus: true,
+    };
+    expect(profile.supportsDocumentStatus).toBe(true);
+  });
+
+  it("accepts supportsDocumentStatus false for non-regulatory profiles", () => {
+    const profile: DscpDomainProfile = {
+      ...companyDocsProfile,
+      supportsDocumentStatus: false,
+    };
+    expect(profile.supportsDocumentStatus).toBe(false);
+  });
+
+  it("accepts omitted supportsDocumentStatus as undefined default false posture", () => {
+    const profile: DscpDomainProfile = {
+      ...technicalProjectProfile,
+    };
+    expect(profile.supportsDocumentStatus).toBeUndefined();
+  });
+});

@@ -15,6 +15,10 @@ export type RecordStatus =
   | 'obsolete'
   | 'unknown';
 
+// EC-02 lifecycle status for regulatory/policy documents (EC-T3).
+// Distinct from RecordStatus -- this tracks promulgation/force state, not workflow state.
+export type DocumentStatus = 'PROMULGATED' | 'IN_FORCE' | 'STATUS_UNKNOWN';
+
 export type RawDisposition = 'ACCEPT' | 'DEFER' | 'ACCEPT_SUMMARY_ONLY';
 export type DispositionAlias = 'ACCEPT' | 'ACCEPT_DEFERRED';
 
@@ -34,6 +38,8 @@ export interface LpciIndexRecord {
   authorityLevel?: string;
   issuingBody?: string;
   effectiveDate?: string;
+  promulgationDate?: string;
+  documentStatus?: DocumentStatus;
   status: RecordStatus;
   answerClass: AnswerClass;
   rawDisposition: RawDisposition;
@@ -111,6 +117,8 @@ export interface ManifestEntry {
   authorityLevel?: string;
   issuingBody?: string;
   effectiveDate?: string;
+  promulgationDate?: string;
+  documentStatus?: DocumentStatus;
   status?: RecordStatus;
 }
 

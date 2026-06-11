@@ -47,6 +47,10 @@ export interface DscpDomainProfile {
 
   // Default metadata merged into descriptors (lower priority than caller metadata).
   defaultMetadata: Record<string, string>;
+
+  // Whether this domain profile supports the EC-02 documentStatus lifecycle field.
+  // Non-regulatory domains omit this field (undefined = false posture, per EC-T1 D-03).
+  supportsDocumentStatus?: boolean;
 }
 
 // Option bag for applyDomainProfileToDescriptorInput().
