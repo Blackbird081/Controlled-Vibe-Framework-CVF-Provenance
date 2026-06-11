@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`lpci2_ex_t7_sentence_boundary_chunking_close
 
 `lpci2_ex_t7_sentence_boundary_chunking_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `39079125`
-(pre-EX-T7 base; material closure commit pending in this batch).
+Current HEAD recorded for this handoff: `16c4fde0`
+(EX-T7 sentence-boundary chunking material closure commit).
 
 ## Active Boundary
 
@@ -78,8 +78,8 @@ unrelated governance/session history.
 
 ## Latest Continuity Note
 
-LPCI2 EX-T7 sentence-boundary chunking is `CLOSED_PASS_BOUNDED` in the current
-material closure batch after base `39079125`.
+LPCI2 EX-T7 sentence-boundary chunking is `CLOSED_PASS_BOUNDED` at material
+commit `16c4fde0`.
 
 Artifacts:
 
