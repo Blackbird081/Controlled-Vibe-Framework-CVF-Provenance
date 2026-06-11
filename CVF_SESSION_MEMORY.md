@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-11
 
-Current mode marker: `lpci2_ec_t4_operator_date_evidence_dispatched`
+Current mode marker: `lpci2_ec_t4_parked_metadata_gaps`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `lpci2_ec_t4_operator_date_evidence_dispatched`.
+Current mode: `lpci2_ec_t4_parked_metadata_gaps`.
 
 Active handoff:
 
@@ -58,8 +58,8 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-LPCI2 EC-T4 operator-date evidence backfill is `DISPATCHED` at dispatch base
-`5296825c`.
+LPCI2 EC-T4 operator-date evidence backfill is
+`PARKED_PENDING_OPERATOR_METADATA`.
 
 Dispatch artifacts:
 
@@ -67,13 +67,17 @@ Dispatch artifacts:
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EC_T4_OPERATOR_DATE_EVIDENCE_BACKFILL_FOR_CLAUDE_2026-06-11.md`
 - `docs/roadmaps/CVF_LPCI2_EXTRACTION_AND_EC02_REFINEMENT_ROADMAP_2026-06-10.md`
 
-Result: Claude may execute EC-T4 under `WORKER_MUST_NOT_COMMIT` to create only
-the EC-T4 date evidence ledger, proposed metadata backfill JSON, and worker
-return packet. Boundary: no external Policy_Local edits, runtime/source edits,
-DSCP `ec02Gate` value change, `documentStatus=IN_FORCE`, corpus ingestion,
-provider/API-key use, public-sync, current-law/legal-quality claim,
-production/public readiness, memory reinjection, high-risk promotion, or
-autonomous mutation.
+Result: Claude returned `RETURNED_BLOCKED_METADATA_GAPS`. Codex reviewer
+accepted the packet as parked evidence only, repaired the proposed JSON shape
+to match the work order, and recomputed SHA-256/size for all six T11B
+candidate source paths. Two records are source-evidenced pending operator
+type/status confirmation. Four records (CAND-002, CAND-004, CAND-005,
+CAND-006) require operator-confirmed signed dates/document numbers before
+metadata backfill or EC-T5 can proceed. Boundary: no external Policy_Local
+edits, runtime/source edits, DSCP `ec02Gate` value change,
+`documentStatus=IN_FORCE`, corpus ingestion, provider/API-key use,
+public-sync, current-law/legal-quality claim, production/public readiness,
+memory reinjection, high-risk promotion, or autonomous mutation.
 
 LPCI2 EC-T3 corpus record schema update is `CLOSED_PASS_BOUNDED` at material
 commit `a895dc03` and closure commit `54bfff3f`.
@@ -474,12 +478,12 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: EC-T4 may proceed only through a fresh operator-date
-evidence path and source-verified work order. EC-T4 implementation, EC-T5,
-EX-T3, EX-T4, EX-T5, dependency addition, OCR model download, corpus
-ingestion, runtime/source change beyond an authorized EC-T4 packet,
-public-sync, provider/API key use, production readiness, or public readiness
-remain unauthorized without fresh authorization.
+Next allowed move: operator must supply or confirm signed-date/document-number
+metadata for EC-T4 CAND-002, CAND-004, CAND-005, and CAND-006 before EC-T5 can
+proceed. EC-T5, EX-T3, EX-T4, EX-T5, dependency addition, OCR model download,
+corpus ingestion, runtime/source change beyond the parked EC-T4 evidence
+packet, public-sync, provider/API key use, production readiness, or public
+readiness remain unauthorized without fresh authorization.
 T12 remains forbidden until EC-02 resolves on or after 2026-07-01 and
 eligibility is re-evaluated.
 

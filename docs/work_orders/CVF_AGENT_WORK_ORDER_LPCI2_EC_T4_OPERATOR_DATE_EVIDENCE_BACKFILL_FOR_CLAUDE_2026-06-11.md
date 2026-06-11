@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: PARKED_PENDING_OPERATOR_METADATA
 
 docType: work_order
 
@@ -18,7 +18,7 @@ dispatchBaseHead: `5296825c`
 
 executionBaseHead: worker must capture before edits
 
-closureBaseHead: REVIEWER_MUST_CAPTURE_AT_CLOSURE
+closureBaseHead: N/A - parked pending operator metadata
 
 completionReviewPath:
 
@@ -36,6 +36,11 @@ data, runtime source, DSCP profiles, or session files.
 
 EC-T4 is not EC-T5. `ec02Gate` stays `BLOCKED_UNTIL_2026-07-01` through this
 tranche.
+
+Reviewer disposition on 2026-06-11: EC-T4 returned
+`RETURNED_BLOCKED_METADATA_GAPS` and is parked pending operator confirmation
+of missing signed dates/document numbers for CAND-002, CAND-004, CAND-005,
+and CAND-006. EC-T5 remains unauthorized.
 
 ## Authority Chain
 

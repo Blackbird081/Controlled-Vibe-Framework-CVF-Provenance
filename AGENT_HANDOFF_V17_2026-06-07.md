@@ -32,11 +32,11 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci2_ec_t4_operator_date_evidence_dispatched`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=Claude may execute EC-T4 operator-date evidence backfill under WORKER_MUST_NOT_COMMIT; parked checkpoint=EC-T5/EX-T3-EX-T5 and DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`lpci2_ec_t4_parked_metadata_gaps`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=operator must supply or confirm EC-T4 missing signed-date/document-number metadata before EC-T5; parked checkpoint=EC-T5/EX-T3-EX-T5 and DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`lpci2_ec_t4_operator_date_evidence_dispatched`
+`lpci2_ec_t4_parked_metadata_gaps`
 
 Current HEAD recorded for this handoff: `88de578b`
 (GC-020 handoff-only sync commit; EC-T4 dispatch package at `9ff72b33`).
@@ -57,9 +57,9 @@ in archived handoffs and governed completion packets.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: session continuity sync for EC-T4 dispatch
-so the active handoff and state registry name the EC-T4 worker-return move and
-preserve EC-T5 as blocked until EC-T4 review closes.
+Authorized guard-maintenance scope: session continuity sync for EC-T4 parked
+metadata gaps so the active handoff and state registry name the operator
+checkpoint and preserve EC-T5 as blocked.
 
 Protected paths:
 
@@ -77,8 +77,8 @@ governance/session history.
 
 ## Latest Continuity Note
 
-LPCI2 EC-T4 operator-date evidence backfill is `DISPATCHED` at dispatch base
-`5296825c`.
+LPCI2 EC-T4 operator-date evidence backfill is
+`PARKED_PENDING_OPERATOR_METADATA`.
 
 Dispatch artifacts:
 
@@ -86,11 +86,15 @@ Dispatch artifacts:
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EC_T4_OPERATOR_DATE_EVIDENCE_BACKFILL_FOR_CLAUDE_2026-06-11.md`
 - `docs/roadmaps/CVF_LPCI2_EXTRACTION_AND_EC02_REFINEMENT_ROADMAP_2026-06-10.md`
 
-Result: Claude may execute EC-T4 under `WORKER_MUST_NOT_COMMIT` to create only
-the EC-T4 date evidence ledger, proposed metadata backfill JSON, and worker
-return packet. Boundary: no external Policy_Local edits, runtime/source edits,
-DSCP `ec02Gate` value change, `documentStatus=IN_FORCE`, corpus ingestion,
-provider/API-key use, public-sync, current-law/legal-quality claim,
+Result: Claude returned `RETURNED_BLOCKED_METADATA_GAPS`. Codex reviewer
+accepted the packet as parked evidence only, repaired the proposed JSON shape,
+and recomputed SHA-256/size for all six T11B candidate source paths. Two
+records are source-evidenced pending operator type/status confirmation. Four
+records (CAND-002, CAND-004, CAND-005, CAND-006) require
+operator-confirmed signed dates/document numbers before metadata backfill or
+EC-T5 can proceed. Boundary: no external Policy_Local edits, runtime/source
+edits, DSCP `ec02Gate` value change, `documentStatus=IN_FORCE`, corpus
+ingestion, provider/API-key use, public-sync, current-law/legal-quality claim,
 production/public readiness, memory reinjection, high-risk promotion, or
 autonomous mutation.
 
@@ -650,13 +654,13 @@ history.
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
-Next allowed move: Claude may execute the committed EC-T4 operator-date
-evidence backfill work order under `WORKER_MUST_NOT_COMMIT` and return staged
-artifacts for Codex review. EC-T5, EX-T3, EX-T4, EX-T5, dependency addition,
-OCR model download, corpus ingestion, runtime/source change beyond the EC-T4
-evidence artifacts, external Policy_Local mutation, public-sync, provider/API
-key use, production readiness, or public readiness remain unauthorized without
-fresh authorization. Parked lanes remain Live Redis, DEP2, and external
+Next allowed move: operator must supply or confirm signed-date/document-number
+metadata for EC-T4 CAND-002, CAND-004, CAND-005, and CAND-006 before EC-T5 can
+proceed. EC-T5, EX-T3, EX-T4, EX-T5, dependency addition, OCR model download,
+corpus ingestion, runtime/source change beyond the parked EC-T4 evidence
+packet, external Policy_Local mutation, public-sync, provider/API key use,
+production readiness, or public readiness remain unauthorized without fresh
+authorization. Parked lanes remain Live Redis, DEP2, and external
 receipt-anchor.
 
 LPCI2-T12 remains forbidden until a separate operator-authorized evidence path

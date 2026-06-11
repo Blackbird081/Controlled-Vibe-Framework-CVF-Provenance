@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: PARKED_PENDING_OPERATOR_METADATA
 
 docType: baseline
 
@@ -22,6 +22,10 @@ ledger plus a proposed metadata backfill JSON for Codex review.
 This tranche does not change runtime behavior, DSCP profile gate values,
 external Policy_Local data, corpus ingestion state, retrieval behavior, or
 public-facing documentation.
+
+Reviewer disposition on 2026-06-11: EC-T4 produced a bounded evidence packet
+but returned `RETURNED_BLOCKED_METADATA_GAPS`. Four candidate records still
+need operator-confirmed signed dates/document numbers. EC-T5 remains blocked.
 
 ## Authorization
 
