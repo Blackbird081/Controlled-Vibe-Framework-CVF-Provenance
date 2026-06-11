@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-11
 
-Current mode marker: `intake_role_routing_decision_hardened_pending_ec_t2_work_order`
+Current mode marker: `lpci2_ec_t2_contract_amendment_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `intake_role_routing_decision_hardened_pending_ec_t2_work_order`.
+Current mode: `lpci2_ec_t2_contract_amendment_dispatched`.
 
 Active handoff:
 
@@ -57,6 +57,27 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+LPCI2 EC-T2 contract amendment and machine semantics dispatch package is
+`DISPATCHED` at material commit `c0606ae2`.
+
+Dispatch artifacts:
+
+- `docs/baselines/CVF_GC018_LPCI2_EC_T2_CONTRACT_AMENDMENT_AND_MACHINE_SEMANTICS_2026-06-11.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EC_T2_CONTRACT_AMENDMENT_FOR_CLAUDE_2026-06-11.md`
+
+Result: Claude may execute EC-T2 under `WORKER_MUST_NOT_COMMIT` to create the
+two required uncommitted artifacts:
+
+- `docs/reference/CVF_LPCI_RESPONSE_BOUNDARY_ENFORCEMENT_CONTRACT_2026-06-11.md`
+- `docs/reference/CVF_EC02_GATE_SEMANTICS_2026-06-11.json`
+
+Verification: dispatch-quality PASS, reviewer-fast PASS, governed file-size
+PASS, and full pre-commit governance chain PASS. Boundary: dispatch package
+only; no EC-T2 output artifact yet, runtime/source change, corpus record
+change, DSCP profile update, checker/test change, public-sync, provider/API key
+use, current-law/legal-quality claim, production/public readiness, memory
+reinjection, high-risk promotion, or autonomous mutation.
 
 Intake role routing decision gate hardening is `CLOSED_PASS_BOUNDED` at
 material commit `52756f53`.
@@ -409,12 +430,11 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: Codex may author or review a fresh EC-T2 contract-amendment
-GC-018/work order for the response-boundary contract update plus
-machine-readable EC-02 semantics JSON. Claude must not execute EC-T2 until that
-dispatch package is source-verified, gated, and committed. EC-T3, EC-T4,
-EC-T5, EX-T3, EX-T4, EX-T5, dependency addition, OCR model download, corpus
-ingestion, public-sync, provider/API key use, production readiness, or public
+Next allowed move: Claude may execute the committed EC-T2 contract-amendment
+work order under `WORKER_MUST_NOT_COMMIT` and return uncommitted/staged
+artifacts for Codex review. EC-T3, EC-T4, EC-T5, EX-T3, EX-T4, EX-T5,
+dependency addition, OCR model download, corpus ingestion, runtime/source
+change, public-sync, provider/API key use, production readiness, or public
 readiness remain unauthorized without fresh authorization.
 T12 remains forbidden until EC-02 resolves on or after 2026-07-01 and
 eligibility is re-evaluated.
