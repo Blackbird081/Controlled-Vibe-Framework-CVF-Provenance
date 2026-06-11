@@ -32,15 +32,15 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci2_ec_t2_contract_amendment_dispatched`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=Claude may execute the committed EC-T2 work order under WORKER_MUST_NOT_COMMIT and return uncommitted artifacts; parked checkpoint=EC-T3/EC-T4/EC-T5/EX-T3 plus DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`lpci2_ec_t2_contract_amendment_closed_pass_bounded_pending_next_roadmap`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=author/review fresh EC-T3 GC-018 and work order for corpus record schema update only, or choose separate EX-T3 OCR fallback roadmap; parked checkpoint=EC-T4/EC-T5 plus DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`lpci2_ec_t2_contract_amendment_dispatched`
+`lpci2_ec_t2_contract_amendment_closed_pass_bounded_pending_next_roadmap`
 
-Current HEAD recorded for this handoff: `c0606ae2`
-(private provenance material commit dispatching LPCI2 EC-T2 contract amendment
-and machine semantics work order).
+Current HEAD recorded for this handoff: `cb026168`
+(private provenance material commit closing LPCI2 EC-T2 contract amendment
+and machine semantics).
 
 ## Active Boundary
 
@@ -58,24 +58,28 @@ in archived handoffs and governed completion packets.
 
 ## Latest Continuity Note
 
-LPCI2 EC-T2 contract amendment and machine semantics dispatch package is
-`DISPATCHED` at material commit `c0606ae2`.
+LPCI2 EC-T2 contract amendment and machine semantics are
+`CLOSED_PASS_BOUNDED` at material commit `cb026168`.
 
-Dispatch artifacts:
+Closure artifacts:
 
 - `docs/baselines/CVF_GC018_LPCI2_EC_T2_CONTRACT_AMENDMENT_AND_MACHINE_SEMANTICS_2026-06-11.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EC_T2_CONTRACT_AMENDMENT_FOR_CLAUDE_2026-06-11.md`
-
-Result: Claude may execute EC-T2 under `WORKER_MUST_NOT_COMMIT` to create the
-two required uncommitted artifacts:
-
 - `docs/reference/CVF_LPCI_RESPONSE_BOUNDARY_ENFORCEMENT_CONTRACT_2026-06-11.md`
 - `docs/reference/CVF_EC02_GATE_SEMANTICS_2026-06-11.json`
+- `docs/reviews/CVF_LPCI2_EC_T2_CONTRACT_AMENDMENT_COMPLETION_2026-06-11.md`
 
-Verification: dispatch-quality PASS, reviewer-fast PASS, governed file-size
-PASS, and full pre-commit governance chain PASS.
+Result: document-only response-boundary contract update plus machine-readable
+EC-02 gate semantics JSON are closed. Reviewer corrected the worker EC-01
+paraphrase to match T7 v1 verbatim text, fixed the work-order heading level,
+and kept the parent extraction/EC-02 roadmap `ACTIVE_PARTIAL` because EC-T3
+through EC-T6 remain future.
 
-Boundary: dispatch package only; no EC-T2 output artifact yet,
+Verification: JSON parse PASS; EC-02 matrix alignment PASS 5/5; T7 v1
+contract unmodified; no `EXTENSIONS/` touched; reviewer-fast PASS; full
+pre-commit governance chain PASS.
+
+Boundary: document-only contract amendment and machine semantics only; no
 runtime/source change, corpus record change, DSCP profile update,
 checker/test change, public-sync, provider/API key use,
 current-law/legal-quality claim, production/public readiness, memory
@@ -530,11 +534,11 @@ history.
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
-Next allowed move: Claude may execute the committed EC-T2 contract-amendment
-work order under `WORKER_MUST_NOT_COMMIT` and return uncommitted/staged
-artifacts for Codex review. EC-T3, EC-T4, EC-T5, EX-T3, EX-T4, EX-T5,
-dependency addition, OCR model download, corpus ingestion, runtime/source
-change, public-sync, provider/API key use, production readiness, or public
+Next allowed move: author/review a fresh EC-T3 GC-018 and work order for
+corpus record schema update only, or choose a separate EX-T3 OCR fallback
+roadmap. EC-T4, EC-T5, EX-T3, EX-T4, EX-T5, dependency addition, OCR model
+download, corpus ingestion, runtime/source change beyond an authorized work
+order, public-sync, provider/API key use, production readiness, or public
 readiness remain unauthorized without fresh authorization. Parked lanes remain
 Live Redis, DEP2, and external receipt-anchor.
 

@@ -195,3 +195,9 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: internal governance contract and completion evidence only; no
 public-sync artifact was authorized in EC-T2.
+
+## Public Catalog Update Disposition
+
+N/A with reason: EC-T2 is private document-only governance semantics. It adds
+no public catalog capability, no public-facing README claim, and no public-sync
+artifact was authorized.
