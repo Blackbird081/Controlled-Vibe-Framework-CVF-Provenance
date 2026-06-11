@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-11
 
-Current mode marker: `lpci2_ec_t1_decision_baseline_closed_pending_ec_t2_work_order`
+Current mode marker: `negative_search_collision_checker_hardened_pending_ec_t2_work_order`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `lpci2_ec_t1_decision_baseline_closed_pending_ec_t2_work_order`.
+Current mode: `negative_search_collision_checker_hardened_pending_ec_t2_work_order`.
 
 Active handoff:
 
@@ -57,6 +57,34 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+Negative-search and same-token collision checker hardening is
+`CLOSED_PASS_BOUNDED` at material commit `8e105f6b`.
+
+Closure/control artifacts:
+
+- standard:
+  `docs/reference/CVF_NEGATIVE_SEARCH_AND_COLLISION_DISCIPLINE_STANDARD_2026-06-11.md`;
+- authorization:
+  `docs/reviews/CVF_NEGATIVE_SEARCH_COLLISION_CHECKER_HARDENING_AUTH_2026-06-11.md`;
+- checker/tests:
+  `governance/compat/check_work_order_dispatch_quality.py`,
+  `governance/compat/test_check_work_order_dispatch_quality.py`;
+- template/closure standard markers:
+  `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`,
+  `docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md`.
+
+Result: dispatch-quality validation now requires `## Negative Search And
+Collision Discipline` evidence for `NOT FOUND` and `BLOCKED_SOURCE_NOT_FOUND`
+claims, including search roots, command/query, coverage, collision result, and
+disposition. The checker also detects same-token repo collisions that are not
+recorded as collision or non-authoritative occurrences. Verification: focused
+dispatch-quality tests PASS 56/56, reviewer-fast PASS, governed file-size PASS,
+and full pre-commit governance chain PASS. Boundary: control-plane
+documentation/template/checker hardening only; no EC-T2 dispatch, runtime
+source semantics, provider/API-key use, public-sync, current-law/legal-quality
+claim, production/public readiness, memory reinjection, high-risk promotion, or
+autonomous mutation.
 
 LPCI2 EC-T1 regulatory date/status decision baseline is
 `CLOSED_PASS_BOUNDED` at material commit `5e184d00`.

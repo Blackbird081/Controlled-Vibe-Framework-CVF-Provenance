@@ -32,15 +32,15 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci2_ec_t1_decision_baseline_closed_pending_ec_t2_work_order`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=Codex may author or review a fresh EC-T2 contract-amendment GC-018/work order; parked checkpoint=EC-T3/EX-T3 plus DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`negative_search_collision_checker_hardened_pending_ec_t2_work_order`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=Codex may author or review a fresh EC-T2 contract-amendment GC-018/work order; parked checkpoint=EC-T3/EX-T3 plus DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`lpci2_ec_t1_decision_baseline_closed_pending_ec_t2_work_order`
+`negative_search_collision_checker_hardened_pending_ec_t2_work_order`
 
-Current HEAD recorded for this handoff: `5e184d00`
-(private provenance material commit closing the LPCI2 EC-T1 regulatory
-date/status decision baseline).
+Current HEAD recorded for this handoff: `8e105f6b`
+(private provenance material commit closing negative-search collision checker
+hardening).
 
 ## Active Boundary
 
@@ -57,6 +57,32 @@ This handoff is a pointer record only. Detailed historical continuity remains
 in archived handoffs and governed completion packets.
 
 ## Latest Continuity Note
+
+Negative-search and same-token collision checker hardening is
+`CLOSED_PASS_BOUNDED` at material commit `8e105f6b`.
+
+Closure/control artifacts:
+
+- `docs/reference/CVF_NEGATIVE_SEARCH_AND_COLLISION_DISCIPLINE_STANDARD_2026-06-11.md`
+- `docs/reviews/CVF_NEGATIVE_SEARCH_COLLISION_CHECKER_HARDENING_AUTH_2026-06-11.md`
+- `governance/compat/check_work_order_dispatch_quality.py`
+- `governance/compat/test_check_work_order_dispatch_quality.py`
+- `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
+- `docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md`
+
+Result: dispatch-quality validation now requires `## Negative Search And
+Collision Discipline` evidence for `NOT FOUND` and `BLOCKED_SOURCE_NOT_FOUND`
+claims, including search roots, command/query, coverage, collision result, and
+disposition. The checker also detects same-token repo collisions that are not
+recorded as collision or non-authoritative occurrences.
+
+Verification: focused dispatch-quality tests PASS 56/56, reviewer-fast PASS,
+governed file-size PASS, and full pre-commit governance chain PASS.
+
+Boundary: control-plane documentation/template/checker hardening only; no
+EC-T2 dispatch, runtime source semantics, provider/API-key use, public-sync,
+current-law/legal-quality claim, production/public readiness, memory
+reinjection, high-risk promotion, or autonomous mutation.
 
 LPCI2 EC-T1 regulatory date/status decision baseline is
 `CLOSED_PASS_BOUNDED` at material commit `5e184d00`.
