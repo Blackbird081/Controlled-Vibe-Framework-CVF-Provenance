@@ -38,8 +38,9 @@ Startup acknowledged: current mode=`lpci2_ec_t4_parked_metadata_gaps`; active ha
 
 `lpci2_ec_t4_parked_metadata_gaps`
 
-Current HEAD recorded for this handoff: `88de578b`
-(GC-020 handoff-only sync commit; EC-T4 dispatch package at `9ff72b33`).
+Current HEAD recorded for this handoff: `34b27ad8`
+(GC-020 handoff sync parent for next sync-only commit; EC-T4 parked packet at
+`34b27ad8`).
 
 ## Active Boundary
 
