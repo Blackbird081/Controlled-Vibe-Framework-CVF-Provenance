@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`lpci2_ex_t7_sentence_boundary_chunking_close
 
 `lpci2_ex_t7_sentence_boundary_chunking_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `c5ada372`
-(EX-T7 session sync commit before roadmap header correction).
+Current HEAD recorded for this handoff: `3abe0087`
+(EX-T7 roadmap header correction commit).
 
 ## Active Boundary
 
@@ -79,7 +79,7 @@ unrelated governance/session history.
 ## Latest Continuity Note
 
 LPCI2 EX-T7 sentence-boundary chunking is `CLOSED_PASS_BOUNDED` at material
-commit `16c4fde0`.
+commit `16c4fde0`; roadmap header correction commit `3abe0087`.
 
 Artifacts:
 

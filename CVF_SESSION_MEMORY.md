@@ -59,7 +59,7 @@ Pain-point closure direction:
 ## Latest Continuity Note
 
 LPCI2 EX-T7 sentence-boundary chunking is `CLOSED_PASS_BOUNDED` at material
-commit `16c4fde0`.
+commit `16c4fde0`; roadmap header correction commit `3abe0087`.
 
 Artifacts:
 
