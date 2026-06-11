@@ -38,8 +38,9 @@ Startup acknowledged: current mode=`lpci2_ec_t3_schema_update_closed_pass_bounde
 
 `lpci2_ec_t3_schema_update_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `54bfff3f`
-(private provenance closure commit for LPCI2 EC-T3 corpus schema update).
+Current HEAD recorded for this handoff: `716d30be`
+(private provenance EC-T3 closure session-sync parent commit; final
+handoff-only sync follows this record under GC-020).
 
 ## Active Boundary
 
