@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`lpci2_extraction_ec02_roadmap_hardened_pendi
 
 `lpci2_extraction_ec02_roadmap_hardened_pending_child_authorization`
 
-Current HEAD recorded for this handoff: `dfcffcd4`
-(LPCI2 Extraction and EC-02 Refinement roadmap hardening commit).
+Current HEAD recorded for this handoff: `82d3ed57`
+(private provenance sync commit recording the public README control-map export).
 
 ## Active Boundary
 
