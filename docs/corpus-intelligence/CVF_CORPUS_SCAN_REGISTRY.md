@@ -93,6 +93,8 @@ prior scan here before starting new work.
 | `CVF CPF DSCP-T11 profile-aware pipeline harness tests` | CVF_EXTENSION | SCANNED | DSCP-T11 | 1 | 4 vitest assertions proving profile metadata/gates flow descriptor to ECO/LPF package without content release or cross-profile gate bleed |
 | `CVF CPF DSCP-T11E domain profile registry source` | CVF_EXTENSION | SCANNED | DSCP-T11E | 1 | DscpDomainProfileRegistry class + factory; in-memory deterministic selection by domainFamily/languageCode/facetKey; no corpus content ingested |
 | `CVF CPF DSCP-T11E domain profile registry tests` | CVF_EXTENSION | SCANNED | DSCP-T11E | 1 | 18 vitest assertions covering registration/selection/ambiguity/no-match/requiredFacetKey/select-then-apply pipeline integration |
+| `CVF CPF DSCP-T11F profile selection adapter source` | CVF_EXTENSION | SCANNED | DSCP-T11F | 1 | selectAndApplyDscpDomainProfile combining registry selection + profile application in one deterministic pipeline; no corpus content ingested |
+| `CVF CPF DSCP-T11F profile selection adapter tests` | CVF_EXTENSION | SCANNED | DSCP-T11F | 1 | 14 vitest assertions covering unique selection, no-match stop, ambiguous stop, blocked application stop, and profile isolation/no gate bleed |
 
 ---
 

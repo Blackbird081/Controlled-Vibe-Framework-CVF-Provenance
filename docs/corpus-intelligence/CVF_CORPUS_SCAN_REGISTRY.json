@@ -4,7 +4,7 @@
   "guard": "governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md",
   "checker": "governance/compat/check_corpus_scan_registry.py",
   "lastUpdated": "2026-06-10",
-  "updatedBy": "Claude (DSCP-T11E worker)",
+  "updatedBy": "Claude (DSCP-T11F worker)",
   "allowedCorpusTypes": [
     "LEGACY_FOLDER",
     "PROJECT_SOURCE",
@@ -2155,6 +2155,44 @@
       "manifestPath": null,
       "packetPath": "docs/reviews/CVF_DSCP_T11E_DOMAIN_PROFILE_REGISTRY_WORKER_RETURN_2026-06-10.md",
       "notes": "DSCP-T11E focused test file. 18 vitest assertions covering registration, selection, ambiguity, no-match, requiredFacetKey, and select-then-apply pipeline integration."
+    },
+    {
+      "id": "dscp-t11f-profile-selection-adapter-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF CPF DSCP-T11F profile selection adapter source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.profile.selection.adapter.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "DSCP-T11F",
+      "scanDate": "2026-06-10",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_DSCP_T11F_PROFILE_SELECTION_ADAPTER_WORKER_RETURN_2026-06-10.md",
+      "notes": "DSCP-T11F profile selection adapter. selectAndApplyDscpDomainProfile combines DscpDomainProfileRegistry.select() + applyDomainProfileToDescriptorInput() in a single pipeline; no corpus content ingested; no findings."
+    },
+    {
+      "id": "dscp-t11f-profile-selection-adapter-test",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF CPF DSCP-T11F profile selection adapter tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.profile.selection.adapter.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "DSCP-T11F",
+      "scanDate": "2026-06-10",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_DSCP_T11F_PROFILE_SELECTION_ADAPTER_WORKER_RETURN_2026-06-10.md",
+      "notes": "DSCP-T11F focused test file. 14 vitest assertions covering unique selection, no-match stop, ambiguous stop, blocked application stop, and profile isolation with no gate bleed."
     }
   ]
 }

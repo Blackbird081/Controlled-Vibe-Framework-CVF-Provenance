@@ -89,3 +89,10 @@ export type {
   DomainProfileSelectionResult,
   DomainProfileRegistrationResult,
 } from "./dscp.domain.profile.registry";
+
+export { selectAndApplyDscpDomainProfile } from "./dscp.profile.selection.adapter";
+export type {
+  DscpProfileSelectionStopReason,
+  DscpProfileSelectionAdapterInput,
+  DscpProfileSelectionAdapterResult,
+} from "./dscp.profile.selection.adapter";
