@@ -229,6 +229,14 @@ collision or non-authoritative occurrence and explain why it is not binding.
 Do not close a bare `NOT FOUND` claim when the repo contains a same-token
 occurrence.
 
+### Single-Agent Multi-Role Control Block
+
+Single-agent multi-role execution is allowed only as bounded evidence
+discipline, not as independent review. Ready or dispatched work orders that
+assign the same actor to implementation and review/closure roles must include
+the control block defined in
+`docs/reference/CVF_SINGLE_AGENT_MULTI_ROLE_CONTROL_STANDARD_2026-06-11.md`.
+
 ### ACCEPT_AS_OWNER_MAP coverage
 
 Accepted concepts from a source audit must be represented as completed,

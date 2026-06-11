@@ -35,6 +35,7 @@ FULFILLMENT_MANIFEST_MARKER = "Work-Order Fulfillment Manifest"
 COMMIT_MODE_ANCHOR_MARKER = "Commit Mode And Base-Anchor Lifecycle"
 DISPATCH_PACKET_LEARNING_MARKER = "Dispatch Packet Authoring Learning Promotion"
 NEGATIVE_SEARCH_COLLISION_MARKER = "Negative Search And Collision Discipline"
+SINGLE_AGENT_MULTI_ROLE_MARKER = "Single-Agent Multi-Role Control Block"
 ALLOWED_COMMIT_MODES = {
     "WORKER_MAY_COMMIT",
     "WORKER_MUST_NOT_COMMIT",
@@ -93,6 +94,9 @@ NEGATIVE_SEARCH_TOKEN_STOPWORDS = {
     "TEST",
     "TESTS",
 }
+IMPLEMENTATION_ROLE_TOKENS = {"worker", "implementer", "executor", "builder", "coder"}
+REVIEW_ROLE_TOKENS = {"reviewer", "committer", "closer", "auditor"}
+ORCHESTRATION_ROLE_TOKENS = {"orchestrator", "planner", "dispatcher"}
 
 REQUIRED_SOURCE_COLUMNS = (
     "Claimed item",
@@ -1075,6 +1079,85 @@ def _validate_negative_search_collision_discipline(
     return sorted(set(issues))
 
 
+def _normalize_role_cell(value: str) -> str:
+    cleaned = re.sub(r"`([^`]+)`", r"\1", value)
+    cleaned = re.sub(r"[^A-Za-z0-9_./ -]+", " ", cleaned)
+    return re.sub(r"\s+", " ", cleaned).strip().lower()
+
+
+def _role_bucket(role_cell: str) -> set[str]:
+    normalized = _normalize_role_cell(role_cell)
+    buckets: set[str] = set()
+    if any(token in normalized for token in IMPLEMENTATION_ROLE_TOKENS):
+        buckets.add("implementation")
+    if any(token in normalized for token in REVIEW_ROLE_TOKENS):
+        buckets.add("review")
+    if any(token in normalized for token in ORCHESTRATION_ROLE_TOKENS):
+        buckets.add("orchestration")
+    return buckets
+
+
+def _single_agent_multi_role_phrase_present(text: str) -> bool:
+    return re.search(
+        r"\b(single[- ]agent\s+multi[- ]role|one\s+agent\s+multiple\s+roles|"
+        r"same\s+agent\s+(?:owns|performs|executes)[\s\S]{0,80}(?:worker|implementer|reviewer|committer)|"
+        r"Codex\s+multi[- ]role|Claude\s+multi[- ]role|self[- ]review)\b",
+        text,
+        re.IGNORECASE,
+    ) is not None
+
+
+def _role_tables_imply_single_agent_multi_role(text: str) -> bool:
+    for table in _parse_any_markdown_tables(text):
+        owner_roles: dict[str, set[str]] = {}
+        for row in table:
+            role = _row_value(row, "Role", "Lane")
+            owner = _row_value(row, "Owner", "Agent", "Actor", "Assignee")
+            if not role or not owner:
+                continue
+            normalized_owner = _normalize_role_cell(owner)
+            if not normalized_owner or normalized_owner in {"n/a", "na", "none", "operator"}:
+                continue
+            owner_roles.setdefault(normalized_owner, set()).update(_role_bucket(role))
+        for buckets in owner_roles.values():
+            if "implementation" in buckets and "review" in buckets:
+                return True
+            if {"orchestration", "implementation", "review"}.issubset(buckets):
+                return True
+    return False
+
+
+def _needs_single_agent_multi_role_control(text: str) -> bool:
+    return _single_agent_multi_role_phrase_present(text) or _role_tables_imply_single_agent_multi_role(text)
+
+
+def _validate_single_agent_multi_role_control(text: str, artifact_label: str) -> list[str]:
+    if not _needs_single_agent_multi_role_control(text):
+        return []
+
+    section = _extract_section(text, SINGLE_AGENT_MULTI_ROLE_MARKER)
+    if not section:
+        return [
+            f"{artifact_label} uses single-agent multi-role execution but lacks "
+            f"`## {SINGLE_AGENT_MULTI_ROLE_MARKER}`"
+        ]
+
+    required_patterns = {
+        "role separation ledger": r"role separation|role ledger|role-by-role",
+        "evidence basis independent of memory": r"evidence basis|diff|source|gate|test",
+        "self-review boundary": r"self-review|not independent|independent review not claimed|no independent review",
+        "escalation conditions": r"escalation|operator|external reviewer|stop condition",
+        "gate sequence": r"gate sequence|reviewer-fast|pre-dispatch|pre-implementation|pre-closure|pre-push",
+    }
+    issues: list[str] = []
+    for label, pattern in required_patterns.items():
+        if not re.search(pattern, section, re.IGNORECASE):
+            issues.append(
+                f"{artifact_label} single-agent multi-role control block is missing {label}"
+            )
+    return sorted(set(issues))
+
+
 def _validate_dispatch_pending_dependency_language(text: str, artifact_label: str) -> list[str]:
     text = re.split(r"(?im)^##\s+.*Reviewer Closure Conversion.*$", text, maxsplit=1)[0]
     filtered_lines = [
@@ -1593,6 +1676,7 @@ def _validate_work_order(path: str, text: str) -> list[str]:
         issues.extend(_validate_worker_completion_review_boundary(text))
         issues.extend(_validate_no_commit_reviewer_closure_contract(text))
         issues.extend(_validate_source_verification_disposition_discipline(text))
+        issues.extend(_validate_single_agent_multi_role_control(text, "work order"))
 
     if dispatching and _is_connector_wave(path, text):
         wave_id = _extract_wave_id(path, text)
@@ -2147,6 +2231,7 @@ def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str
             FULFILLMENT_MANIFEST_MARKER,
             "Current Runtime Freshness Verification",
             NEGATIVE_SEARCH_COLLISION_MARKER,
+            SINGLE_AGENT_MULTI_ROLE_MARKER,
             DISPATCH_PACKET_LEARNING_MARKER,
             "ACCEPT_AS_OWNER_MAP coverage",
             THIS_SCRIPT_PATH,
@@ -2163,6 +2248,7 @@ def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str
             FULFILLMENT_MANIFEST_MARKER,
             "Current Runtime Freshness Verification",
             NEGATIVE_SEARCH_COLLISION_MARKER,
+            SINGLE_AGENT_MULTI_ROLE_MARKER,
             "ACCEPT_AS_OWNER_MAP coverage",
             THIS_SCRIPT_PATH,
         ),

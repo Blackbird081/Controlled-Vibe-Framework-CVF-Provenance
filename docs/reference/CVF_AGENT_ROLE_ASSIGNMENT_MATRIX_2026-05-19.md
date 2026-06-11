@@ -103,6 +103,8 @@ closure.
 Allowed:
 
 - assign multiple roles to one human/agent only when duties do not conflict;
+- for single-agent multi-role work, use the control block defined in
+  `docs/reference/CVF_SINGLE_AGENT_MULTI_ROLE_CONTROL_STANDARD_2026-06-11.md`;
 - assign a specialist worker for a bounded, testable side task;
 - use operator waiver when reviewer availability blocks low-risk docs-only
   work;

@@ -50,6 +50,7 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
                     "Near-Threshold Owner Maintainability Plan",
                     "Work-Order Fulfillment Manifest",
                     MODULE.NEGATIVE_SEARCH_COLLISION_MARKER,
+                    MODULE.SINGLE_AGENT_MULTI_ROLE_MARKER,
                     MODULE.DISPATCH_PACKET_LEARNING_MARKER,
                     MODULE.THIS_SCRIPT_PATH,
                 ]
@@ -71,6 +72,7 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
                     "Near-Threshold Owner Maintainability Plan",
                     "Work-Order Fulfillment Manifest",
                     MODULE.NEGATIVE_SEARCH_COLLISION_MARKER,
+                    MODULE.SINGLE_AGENT_MULTI_ROLE_MARKER,
                     MODULE.THIS_SCRIPT_PATH,
                 ]
             ),
@@ -225,6 +227,89 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
             "or explicitly change role/commit mode before dispatch",
             issues,
         )
+
+    def test_single_agent_multi_role_without_control_block_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_SINGLE_AGENT_MULTI_ROLE_TEST_2026-06-11.md"
+        self._write("docs/reference/source.md", "## Scope\nsource\n")
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCH_READY",
+                    "Commit mode: WORKER_MAY_COMMIT",
+                    "dispatchBaseHead: abc123",
+                    "executionBaseHead: WORKER_MUST_CAPTURE_AT_START",
+                    "closureBaseHead: REVIEWER_CAPTURE",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Allowed-scope remediation is mandatory.",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| Template | `docs/reference/source.md` | Scope | `source.md` | doc | ACCEPT |",
+                    "## Role Assignment",
+                    "| Role | Owner | Evidence boundary |",
+                    "|---|---|---|",
+                    "| Worker | Codex | patch and tests |",
+                    "| Reviewer | Codex | review and commit |",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "work order uses single-agent multi-role execution but lacks "
+            "`## Single-Agent Multi-Role Control Block`",
+            report["violations"][0]["issues"],
+        )
+
+    def test_single_agent_multi_role_with_control_block_passes(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_SINGLE_AGENT_MULTI_ROLE_PASS_2026-06-11.md"
+        self._write("docs/reference/source.md", "## Scope\nsource\n")
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCH_READY",
+                    "Commit mode: WORKER_MAY_COMMIT",
+                    "dispatchBaseHead: abc123",
+                    "executionBaseHead: WORKER_MUST_CAPTURE_AT_START",
+                    "closureBaseHead: REVIEWER_CAPTURE",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Allowed-scope remediation is mandatory.",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| Template | `docs/reference/source.md` | Scope | `source.md` | doc | ACCEPT |",
+                    "## Role Assignment",
+                    "| Role | Owner | Evidence boundary |",
+                    "|---|---|---|",
+                    "| Worker | Codex | patch and tests |",
+                    "| Reviewer | Codex | review and commit |",
+                    "## Single-Agent Multi-Role Control Block",
+                    "- Role separation ledger: Orchestrator, Worker, Reviewer, and Committer duties are recorded separately.",
+                    "- Evidence basis: review uses git diff, source paths, focused test output, and gate results, not memory-only claims.",
+                    "- Self-review boundary: independent review not claimed; no independent review is represented by this block.",
+                    "- Escalation conditions: stop and ask operator or external reviewer if scope/risk/public/provider/live proof changes.",
+                    "- Gate sequence: reviewer-fast before commit and pre-closure on a real range before closure claim.",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        single_agent_issues = [
+            issue
+            for violation in report["violations"]
+            for issue in violation["issues"]
+            if "single-agent multi-role" in issue
+        ]
+        self.assertEqual([], single_agent_issues)
 
     def test_accept_row_with_missing_source_file_fails(self) -> None:
         work_order = "docs/work_orders/CVF_WO_LHW6_T2_TEST_2026-05-28.md"
