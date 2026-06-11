@@ -59,7 +59,7 @@ Pain-point closure direction:
 ## Latest Continuity Note
 
 LPCI2 EC-T3 corpus record schema update is `CLOSED_PASS_BOUNDED` at material
-commit `a895dc03`; closure documentation follows in the closure batch.
+commit `a895dc03` and closure commit `54bfff3f`.
 
 Closure artifacts:
 
@@ -73,11 +73,12 @@ Result: EC-T3 added `DocumentStatus`, optional `documentStatus` and
 reviewer repaired missing `supportsDocumentStatus` true/false/undefined tests.
 Verification: control-plane check PASS; control-plane full tests PASS 142 files
 / 3700 tests; cvf-web check PASS; focused `types.ec02.test.ts` PASS 10/10;
-reviewer-fast PASS; material pre-commit PASS. Boundary: schema/type closure
-only; no corpus JSON migration, runtime EC-02 gate enforcement, DSCP profile
-JSON value change, retrieval behavior, provider/API-key proof, public-sync,
-current-law/legal-quality claim, production/public readiness, memory
-reinjection, high-risk promotion, or autonomous mutation.
+reviewer-fast PASS; material pre-commit PASS; closure pre-commit PASS.
+Boundary: schema/type closure only; no corpus JSON migration, runtime EC-02
+gate enforcement, DSCP profile JSON value change, retrieval behavior,
+provider/API-key proof, public-sync, current-law/legal-quality claim,
+production/public readiness, memory reinjection, high-risk promotion, or
+autonomous mutation.
 
 LPCI2 EC-T2 contract amendment and machine semantics are
 `CLOSED_PASS_BOUNDED` at material commit `cb026168`; session continuity was

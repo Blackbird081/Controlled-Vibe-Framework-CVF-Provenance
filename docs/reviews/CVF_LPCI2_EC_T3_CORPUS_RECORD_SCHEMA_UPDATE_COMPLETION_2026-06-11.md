@@ -171,3 +171,6 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance schema closure only; no public-facing artifact or
 public-sync batch was authorized.
+
+Public catalog update: N/A with reason - EC-T3 is a private provenance schema
+closure and does not add a public-facing CVF product claim in this batch.

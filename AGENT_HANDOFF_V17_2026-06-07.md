@@ -38,9 +38,8 @@ Startup acknowledged: current mode=`lpci2_ec_t3_schema_update_closed_pass_bounde
 
 `lpci2_ec_t3_schema_update_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `a895dc03`
-(private provenance material commit implementing LPCI2 EC-T3 corpus schema
-fields before closure documentation and session sync).
+Current HEAD recorded for this handoff: `54bfff3f`
+(private provenance closure commit for LPCI2 EC-T3 corpus schema update).
 
 ## Active Boundary
 
@@ -59,7 +58,7 @@ in archived handoffs and governed completion packets.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: session continuity sync after EC-T3
-material commit `a895dc03` so the active handoff and state registry name EC-T3
+closure commit `54bfff3f` so the active handoff and state registry name EC-T3
 closure state and preserve the next blocked/conditional EC-T4 move.
 
 Protected paths:
@@ -78,7 +77,7 @@ commit `838512da`, or unrelated governance/session history.
 ## Latest Continuity Note
 
 LPCI2 EC-T3 corpus record schema update is `CLOSED_PASS_BOUNDED` at material
-commit `a895dc03`; closure documentation follows in this batch.
+commit `a895dc03` and closure commit `54bfff3f`.
 
 Closure artifacts:
 
@@ -95,9 +94,9 @@ tests before commit.
 
 Verification: control-plane check PASS; control-plane full tests PASS 142
 files / 3700 tests; cvf-web check PASS; focused `types.ec02.test.ts` PASS
-10/10; reviewer-fast PASS; material pre-commit PASS. Full `cvf-web` suite has
-3 route/live/memory failures classified as out-of-scope for EC-T3 and recorded
-in the completion review.
+10/10; reviewer-fast PASS; material pre-commit PASS; closure pre-commit PASS.
+Full `cvf-web` suite has 3 route/live/memory failures classified as
+out-of-scope for EC-T3 and recorded in the completion review.
 
 Boundary: schema/type closure only; no corpus JSON migration, runtime EC-02
 gate enforcement, DSCP profile JSON value change, retrieval behavior,
@@ -633,14 +632,13 @@ history.
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
-Next allowed move: Claude may execute the committed EC-T3 corpus record schema
-update work order under `WORKER_MUST_NOT_COMMIT` and return staged/uncommitted
-artifacts for Codex review. EC-T4, EC-T5, EX-T3, EX-T4, EX-T5, dependency
-addition, OCR model download, corpus ingestion, runtime/source change beyond
-the EC-T3 owned TypeScript schema/test files, public-sync, provider/API key
-use, production readiness, or public readiness remain unauthorized without
-fresh authorization. Parked lanes remain Live Redis, DEP2, and external
-receipt-anchor.
+Next allowed move: EC-T4 may proceed only through a fresh operator-date
+evidence path and a source-verified work order. EC-T4 implementation, EC-T5,
+EX-T3, EX-T4, EX-T5, dependency addition, OCR model download, corpus
+ingestion, runtime/source change beyond an authorized EC-T4 packet,
+public-sync, provider/API key use, production readiness, or public readiness
+remain unauthorized without fresh authorization. Parked lanes remain Live
+Redis, DEP2, and external receipt-anchor.
 
 LPCI2-T12 remains forbidden until a separate operator-authorized evidence path
 resolves EC-02 review on or after 2026-07-01, known `currentStatus`, known
