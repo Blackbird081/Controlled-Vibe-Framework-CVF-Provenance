@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-12
 
-Current mode marker: `lpci2_ex_t7_sentence_boundary_chunking_closed_pass_bounded`
+Current mode marker: `lpci2_ex_t8_extraction_authority_storage_boundary_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `lpci2_ex_t7_sentence_boundary_chunking_closed_pass_bounded`.
+Current mode: `lpci2_ex_t8_extraction_authority_storage_boundary_dispatched`.
 
 Active handoff:
 
@@ -57,6 +57,21 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+LPCI2 EX-T8 extraction authority and storage boundary is `DISPATCHED`.
+
+Artifacts:
+
+- `docs/baselines/CVF_GC018_LPCI2_EX_T8_EXTRACTION_AUTHORITY_AND_STORAGE_BOUNDARY_2026-06-12.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T8_EXTRACTION_AUTHORITY_AND_STORAGE_BOUNDARY_FOR_CLAUDE_2026-06-12.md`
+
+Next execution: Claude may execute EX-T8 as WORKER_MUST_NOT_COMMIT and return
+staged artifacts to Codex. Boundary: extraction authority/storage contract only;
+no OCR dependency install, OCR model download, corpus ingestion, operator
+correction report generation, EC-T5/domain activation, retrieval behavior,
+provider/API-key use, external Policy_Local mutation, public-sync,
+production/public readiness, T12 unlock, memory reinjection, high-risk
+promotion, or autonomous mutation.
 
 LPCI2 EX-T7 sentence-boundary chunking is `CLOSED_PASS_BOUNDED` at material
 commit `16c4fde0`; roadmap header correction commit `3abe0087`.
@@ -536,16 +551,15 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: operator may either supply/confirm EC-T4 missing
-signed-date/document-number metadata for CAND-002, CAND-004, CAND-005, and
-CAND-006, or authorize a successor EC-T5/EC-T6 activation roadmap/work order
-that source-verifies runtime/query-class routing for `QUERY_CLASS_GATED` before
-retrieval disclosure wiring. EX-T3 through EX-T7 local extraction foundation is
-closed bounded; integration convergence remains blocked.
-Dependency addition, OCR model download, corpus ingestion, runtime/source
-change beyond a fresh authorized successor packet, external Policy_Local
-mutation, public-sync, provider/API key use, production readiness, or public
-readiness remain unauthorized without fresh authorization.
+Next allowed move: Claude may execute EX-T8 extraction authority and storage
+boundary as WORKER_MUST_NOT_COMMIT and return staged artifacts to Codex.
+EC-T4 metadata confirmation, EC-T5/EC-T6 activation, and retrieval disclosure
+remain parked until the EX tranche is closed or the operator explicitly
+redirects. EX-T3 through EX-T7 local extraction foundation is closed bounded.
+Dependency addition, OCR model download, corpus ingestion, operator correction
+report generation, runtime/source change beyond the dispatched EX-T8 packet,
+external Policy_Local mutation, public-sync, provider/API key use, production
+readiness, or public readiness remain unauthorized without fresh authorization.
 T12 remains forbidden until EC-02 resolves on or after 2026-07-01 and
 eligibility is re-evaluated.
 
