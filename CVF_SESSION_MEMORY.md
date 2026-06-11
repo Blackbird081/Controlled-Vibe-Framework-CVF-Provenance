@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-11
 
-Current mode marker: `lpci2_ex_t2_dispatch_authoring_guard_hardened_pending_worker_return`
+Current mode marker: `lpci2_ex_t2_tier1_extractor_closed_pending_next_roadmap`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `lpci2_ex_t2_dispatch_authoring_guard_hardened_pending_worker_return`.
+Current mode: `lpci2_ex_t2_tier1_extractor_closed_pending_next_roadmap`.
 
 Active handoff:
 
@@ -57,6 +57,35 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+LPCI2 EX-T2 Tier 1 digital-native extractor is `CLOSED_PASS_BOUNDED` at
+material commit `f21025a8`.
+
+Closure artifacts:
+
+- source:
+  `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/tier1_extractor.py`;
+- focused tests:
+  `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_tier1_extractor.py`;
+- worker return:
+  `docs/reviews/CVF_LPCI2_EX_T2_TIER1_EXTRACTOR_WORKER_RETURN_2026-06-11.md`;
+- completion:
+  `docs/reviews/CVF_LPCI2_EX_T2_TIER1_EXTRACTOR_COMPLETION_2026-06-11.md`;
+- work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T2_TIER1_DIGITAL_NATIVE_EXTRACTOR_FOR_CLAUDE_2026-06-11.md`;
+- parent roadmap:
+  `docs/roadmaps/CVF_LPCI2_EXTRACTION_AND_EC02_REFINEMENT_ROADMAP_2026-06-10.md`.
+
+Result: local deterministic Tier 1 extraction exists for `.docx` via
+python-docx and digital PDF text layers via pdfplumber. Codex normalized the
+module filename to `tier1_extractor.py`, added GC-051 coverage for package
+stubs, and strengthened the PDF test to assert actual extracted text.
+Verification: focused pytest PASS 21/21, reviewer-fast PASS, pre-commit
+governance chain PASS, and committed-range pre-closure subgates PASS before
+this session-sync commit. Boundary: no OCR fallback, Tier 2/3 fitness, DSCP
+wire-in, dependency addition, corpus ingestion, retrieval behavior, EC-02
+semantic change, T12 authorization, provider/API key use, public-sync, hosted
+readiness, production readiness, or public readiness.
 
 LPCI2 EX-T2 dispatch packet authoring guard hardening is
 `CLOSED_PASS_BOUNDED` at material commit `0b42468e`.
@@ -277,13 +306,14 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: Claude executes
-`docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T2_TIER1_DIGITAL_NATIVE_EXTRACTOR_FOR_CLAUDE_2026-06-11.md`
-under `WORKER_MUST_NOT_COMMIT` and returns uncommitted artifacts for Codex
-review. Dispatch packet authoring guard hardening is complete at `0b42468e`.
-EC-T1 remains pending separate operator decision. EX-T3 OCR remains pending
-separate operator decision. T12 remains forbidden until EC-02 resolves on or
-after 2026-07-01.
+Next allowed move: Codex audits/selects the next bounded roadmap and, if the
+operator authorizes it, prepares a fresh GC-018 plus source-verified work order.
+Recommended candidates are EX-T3 OCR fallback source/feasibility gate or EC-T1
+regulatory date/status governance decision record. Claude must not proceed on
+EX-T3, EX-T4, EX-T5, EC-T1, dependency addition, OCR model download, corpus
+ingestion, public-sync, provider/API key use, production readiness, or public
+readiness without fresh authorization. T12 remains forbidden until EC-02
+resolves on or after 2026-07-01 and eligibility is re-evaluated.
 
 LHW24 remains the latest closed numbered LHW wave in the state registry.
 

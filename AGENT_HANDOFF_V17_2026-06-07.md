@@ -32,15 +32,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci2_ex_t2_dispatch_authoring_guard_hardened_pending_worker_return`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=Claude executes the EX-T2 Tier 1 digital-native extractor work order under WORKER_MUST_NOT_COMMIT and returns uncommitted artifacts for Codex review; parked checkpoint=EC-T1/EX-T3 plus DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`lpci2_ex_t2_tier1_extractor_closed_pending_next_roadmap`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=Codex audits/selects the next bounded roadmap and, if operator authorizes, prepares fresh GC-018 plus source-verified work order; parked checkpoint=EC-T1/EX-T3 plus DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`lpci2_ex_t2_dispatch_authoring_guard_hardened_pending_worker_return`
+`lpci2_ex_t2_tier1_extractor_closed_pending_next_roadmap`
 
-Current HEAD recorded for this handoff: `0b42468e`
-(private provenance material commit closing LPCI2 EX-T2 dispatch packet
-authoring guard hardening).
+Current HEAD recorded for this handoff: `f21025a8`
+(private provenance material commit closing LPCI2 EX-T2 Tier 1 extractor).
 
 ## Active Boundary
 
@@ -57,6 +56,31 @@ This handoff is a pointer record only. Detailed historical continuity remains
 in archived handoffs and governed completion packets.
 
 ## Latest Continuity Note
+
+LPCI2 EX-T2 Tier 1 digital-native extractor is `CLOSED_PASS_BOUNDED` at
+material commit `f21025a8`.
+
+Closure artifacts:
+
+- `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/tier1_extractor.py`
+- `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_tier1_extractor.py`
+- `docs/reviews/CVF_LPCI2_EX_T2_TIER1_EXTRACTOR_WORKER_RETURN_2026-06-11.md`
+- `docs/reviews/CVF_LPCI2_EX_T2_TIER1_EXTRACTOR_COMPLETION_2026-06-11.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T2_TIER1_DIGITAL_NATIVE_EXTRACTOR_FOR_CLAUDE_2026-06-11.md`
+- `docs/roadmaps/CVF_LPCI2_EXTRACTION_AND_EC02_REFINEMENT_ROADMAP_2026-06-10.md`
+
+Result: local deterministic Tier 1 extraction exists for `.docx` via
+python-docx and digital PDF text layers via pdfplumber. Codex normalized the
+module filename to `tier1_extractor.py`, added GC-051 coverage for package
+stubs, and strengthened the PDF test to assert actual extracted text.
+Verification: focused pytest PASS 21/21, reviewer-fast PASS, pre-commit
+governance chain PASS, and committed-range pre-closure subgates PASS before
+this session-sync commit.
+
+Boundary: no OCR fallback, Tier 2/3 fitness, DSCP wire-in, dependency addition,
+corpus ingestion, retrieval behavior, EC-02 semantic change, T12 authorization,
+provider/API key use, public-sync, hosted readiness, production readiness, or
+public readiness.
 
 LPCI2 EX-T2 dispatch packet authoring guard hardening is
 `CLOSED_PASS_BOUNDED` at material commit `0b42468e`.
@@ -386,13 +410,14 @@ history.
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
-Next allowed move: Claude executes
-`docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T2_TIER1_DIGITAL_NATIVE_EXTRACTOR_FOR_CLAUDE_2026-06-11.md`
-under `WORKER_MUST_NOT_COMMIT` and returns uncommitted artifacts for Codex
-review. Dispatch packet authoring guard hardening is complete at `0b42468e`.
-EC-T1 remains pending separate operator decision. EX-T3 OCR remains pending
-separate operator decision. Parked lanes remain Live Redis, DEP2, and external
-receipt-anchor.
+Next allowed move: Codex audits/selects the next bounded roadmap and, if the
+operator authorizes it, prepares a fresh GC-018 plus source-verified work order.
+Recommended candidates are EX-T3 OCR fallback source/feasibility gate or EC-T1
+regulatory date/status governance decision record. Claude must not proceed on
+EX-T3, EX-T4, EX-T5, EC-T1, dependency addition, OCR model download, corpus
+ingestion, public-sync, provider/API key use, production readiness, or public
+readiness without fresh authorization. Parked lanes remain Live Redis, DEP2,
+and external receipt-anchor.
 
 LPCI2-T12 remains forbidden until a separate operator-authorized evidence path
 resolves EC-02 review on or after 2026-07-01, known `currentStatus`, known
