@@ -169,6 +169,8 @@ Protected paths:
 - `governance/compat/test_check_agent_packet_authority_and_encoding.py`
 - `governance/compat/check_work_order_dispatch_quality.py`
 - `governance/compat/test_check_work_order_dispatch_quality.py`
+- `governance/compat/check_active_archive_hygiene.py`
+- `governance/compat/test_check_active_archive_hygiene.py`
 - `governance/compat/run_local_governance_hook_chain.py`
 - `governance/compat/test_run_local_governance_hook_chain.py`
 
@@ -185,6 +187,12 @@ dependencies or deferred Source Verification.
 Additional operator authorization: 2026-06-10 operator instructed Codex to
 tighten guards after DSCP-T11 review found missing initial authority shell
 coverage and avoidable non-ASCII text in agent-authored artifacts.
+
+Additional operator authorization: 2026-06-11 operator challenged date-only
+active archive blocking and instructed Codex to preserve classification while
+preventing unchanged global archive backlog from blocking unrelated commits.
+Changed stale files remain a hard gate unless explicitly classified or allowed
+by a dedicated maintenance path.
 
 Rollback boundary: revert only the fast reviewer gate runner/test updates,
 V17 rotation pointers, session front-door compacting, and matching continuity

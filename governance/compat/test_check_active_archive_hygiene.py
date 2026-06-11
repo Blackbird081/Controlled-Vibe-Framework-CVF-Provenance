@@ -98,7 +98,7 @@ class ActiveArchiveHygieneTests(unittest.TestCase):
         self.assertEqual(report["staleRetainedCount"], 2)
         self.assertTrue(report["compliant"])
 
-    def test_fails_when_stale_backlog_exceeds_threshold(self) -> None:
+    def test_stale_backlog_threshold_is_advisory_by_default(self) -> None:
         with patch.object(MODULE, "REPO_ROOT", self.repo_root), patch.object(
             MODULE, "ACTIVE_WINDOW_REGISTRY_PATH", self.repo_root / "governance" / "compat" / "CVF_ACTIVE_WINDOW_REGISTRY.json"
         ), patch.object(
@@ -109,6 +109,22 @@ class ActiveArchiveHygieneTests(unittest.TestCase):
             MODULE, "ACTIVE_ARCHIVE_BASELINE_PATH", self.repo_root / "governance" / "compat" / "CVF_ACTIVE_ARCHIVE_BASELINE.json"
         ), patch.object(MODULE, "_changed_paths", return_value=set()):
             report = MODULE.build_report(max_stale=0)
+
+        self.assertTrue(report["backlogExceedsThreshold"])
+        self.assertTrue(report["compliant"])
+        self.assertEqual(report["violations"], [])
+
+    def test_can_fail_when_stale_backlog_enforcement_is_explicit(self) -> None:
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root), patch.object(
+            MODULE, "ACTIVE_WINDOW_REGISTRY_PATH", self.repo_root / "governance" / "compat" / "CVF_ACTIVE_WINDOW_REGISTRY.json"
+        ), patch.object(
+            MODULE, "AUDIT_RETENTION_REGISTRY_PATH", self.repo_root / "governance" / "compat" / "CVF_AUDIT_RETENTION_REGISTRY.json"
+        ), patch.object(
+            MODULE, "REVIEW_RETENTION_REGISTRY_PATH", self.repo_root / "governance" / "compat" / "CVF_REVIEW_RETENTION_REGISTRY.json"
+        ), patch.object(
+            MODULE, "ACTIVE_ARCHIVE_BASELINE_PATH", self.repo_root / "governance" / "compat" / "CVF_ACTIVE_ARCHIVE_BASELINE.json"
+        ), patch.object(MODULE, "_changed_paths", return_value=set()):
+            report = MODULE.build_report(max_stale=0, fail_on_backlog=True)
 
         self.assertFalse(report["compliant"])
         self.assertEqual(report["violations"][0]["type"], "active_archive_backlog_exceeds_threshold")
