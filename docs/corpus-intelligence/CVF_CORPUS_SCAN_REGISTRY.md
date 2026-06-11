@@ -95,6 +95,9 @@ prior scan here before starting new work.
 | `CVF CPF DSCP-T11E domain profile registry tests` | CVF_EXTENSION | SCANNED | DSCP-T11E | 1 | 18 vitest assertions covering registration/selection/ambiguity/no-match/requiredFacetKey/select-then-apply pipeline integration |
 | `CVF CPF DSCP-T11F profile selection adapter source` | CVF_EXTENSION | SCANNED | DSCP-T11F | 1 | selectAndApplyDscpDomainProfile combining registry selection + profile application in one deterministic pipeline; no corpus content ingested |
 | `CVF CPF DSCP-T11F profile selection adapter tests` | CVF_EXTENSION | SCANNED | DSCP-T11F | 1 | 14 vitest assertions covering unique selection, no-match stop, ambiguous stop, blocked application stop, and profile isolation/no gate bleed |
+| `CVF Extraction Foundation EX-T2 Tier 1 extractor source` | CVF_EXTENSION | SCANNED | EX-T2 | 1 | extract_docx + extract_pdf_text_layer + extract_tier1 dispatcher; MIN_CHARS_PER_PAGE=100; language-transparent; no OCR in this module |
+| `CVF Extraction Foundation EX-T2 Tier 1 extractor tests` | CVF_EXTENSION | SCANNED | EX-T2 | 1 | 21 pytest assertions covering docx extraction, PDF text-layer extraction, dispatcher routing, UnsupportedFileTypeError, MIN_CHARS boundary, language_codes passthrough, and no-OCR source guard |
+| `CVF Extraction Foundation EX-T2 package stubs` | CVF_EXTENSION | SCANNED | EX-T2 | 3 | Package marker stubs for EX-T2 source, src, and tests directories; no runtime behavior |
 
 ---
 

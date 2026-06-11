@@ -2193,6 +2193,65 @@
       "manifestPath": null,
       "packetPath": "docs/reviews/CVF_DSCP_T11F_PROFILE_SELECTION_ADAPTER_WORKER_RETURN_2026-06-10.md",
       "notes": "DSCP-T11F focused test file. 14 vitest assertions covering unique selection, no-match stop, ambiguous stop, blocked application stop, and profile isolation with no gate bleed."
+    },
+    {
+      "id": "ex-t2-tier1-extractor-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation EX-T2 Tier 1 extractor source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/tier1_extractor.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "EX-T2",
+      "scanDate": "2026-06-11",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_LPCI2_EX_T2_TIER1_EXTRACTOR_WORKER_RETURN_2026-06-11.md",
+      "notes": "CVF Extraction Foundation Tier 1 digital-native extractor. extract_docx (python-docx) + extract_pdf_text_layer (pdfplumber) + extract_tier1 dispatcher. MIN_CHARS_PER_PAGE=100. Language-transparent: language_codes copied from DscpDomainProfile, never inferred from content. No OCR in this module."
+    },
+    {
+      "id": "ex-t2-tier1-extractor-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation EX-T2 Tier 1 extractor tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_tier1_extractor.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "EX-T2",
+      "scanDate": "2026-06-11",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_LPCI2_EX_T2_TIER1_EXTRACTOR_WORKER_RETURN_2026-06-11.md",
+      "notes": "EX-T2 focused test file. 21 pytest assertions covering extract_docx, extract_pdf_text_layer, extract_tier1 dispatcher (routing + UnsupportedFileTypeError), MIN_CHARS_PER_PAGE boundary, language_codes passthrough, and no-OCR source guard."
+    },
+    {
+      "id": "ex-t2-extraction-foundation-package-stubs",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation EX-T2 package stubs",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/__init__.py",
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/__init__.py",
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/__init__.py"
+      ],
+      "fileCount": 3,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "EX-T2",
+      "scanDate": "2026-06-11",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_LPCI2_EX_T2_TIER1_EXTRACTOR_WORKER_RETURN_2026-06-11.md",
+      "notes": "Package marker stubs for the EX-T2 CVF Extraction Foundation source, src, and tests directories. No runtime behavior."
     }
   ]
 }

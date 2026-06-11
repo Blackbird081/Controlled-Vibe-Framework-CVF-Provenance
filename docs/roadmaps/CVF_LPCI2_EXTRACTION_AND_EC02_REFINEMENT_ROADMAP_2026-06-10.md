@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: EX_T2_DISPATCHED_EC_T1_PENDING_OPERATOR_DECISION
+Status: EX_T2_PASS_BOUNDED_EC_T1_PENDING_OPERATOR_DECISION
 
 docType: roadmap
 
@@ -23,8 +23,8 @@ dependency/source audit child lane.
 EX-T1 review accepted the recommendation `COMPOSED_STACK_PREFERRED` for the
 EX-T2 Tier 1 digital-native extraction lane only. LiteParse remains
 `LITEPARSE_ELIGIBLE_FOR_EX_T3_REEVALUATION` for a later OCR/spatial tradeoff
-decision. EX-T2 is now dispatched through fresh GC-018 authorization and a
-source-verified work order.
+decision. EX-T2 is now closed pass bounded through fresh GC-018 authorization,
+a source-verified work order, focused tests, and Codex completion review.
 
 This authorizes only the bounded EX-T2 Tier 1 digital-native extractor
 implementation. It does not authorize repo dependency addition, OCR model
@@ -702,17 +702,19 @@ of EC approval and can begin at Phase 1 in parallel.
 
 ## Status
 
-EX_T2_DISPATCHED_EC_T1_PENDING_OPERATOR_DECISION.
+EX_T2_PASS_BOUNDED_EC_T1_PENDING_OPERATOR_DECISION.
 
 EX-T1 is closed as a dependency/source audit and local feasibility probe under:
 
 - `docs/baselines/CVF_GC018_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_2026-06-11.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_FOR_CLAUDE_2026-06-11.md`
 
-EX-T2 is dispatched only under:
+EX-T2 is closed pass bounded only under:
 
 - `docs/baselines/CVF_GC018_LPCI2_EX_T2_TIER1_DIGITAL_NATIVE_EXTRACTOR_2026-06-11.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T2_TIER1_DIGITAL_NATIVE_EXTRACTOR_FOR_CLAUDE_2026-06-11.md`
+- `docs/reviews/CVF_LPCI2_EX_T2_TIER1_EXTRACTOR_WORKER_RETURN_2026-06-11.md`
+- `docs/reviews/CVF_LPCI2_EX_T2_TIER1_EXTRACTOR_COMPLETION_2026-06-11.md`
 
 No EX-T3 OCR fallback, EX-T4 quality gate, EX-T5 DSCP wire-in, dependency
 addition to repo manifests, OCR model download, corpus ingestion, EC-T1

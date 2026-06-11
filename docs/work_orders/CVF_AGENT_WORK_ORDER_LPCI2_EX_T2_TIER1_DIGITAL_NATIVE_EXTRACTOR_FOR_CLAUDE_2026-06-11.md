@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -18,7 +18,7 @@ dispatchBaseHead: 2d6510ca
 
 executionBaseHead: worker must capture before edits
 
-closureBaseHead: reviewer-owned after return
+closureBaseHead: 4bf9a220
 
 ---
 
@@ -65,7 +65,7 @@ Authority boundary:
 
 Allowed worker scope:
 
-- Create `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/tier1.extractor.py` (new
+- Create `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/tier1_extractor.py` (new
   Python module; Tier 1 digital-native only).
 - Create `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_tier1_extractor.py`
   (focused unit tests for the Tier 1 extractor).
@@ -129,7 +129,7 @@ conversion, final gate reruns, commit, and continuity sync after worker return.
 | Check | Command | Required result |
 | --- | --- | --- |
 | Base HEAD captured | `git rev-parse --short HEAD` | record as `executionBaseHead` |
-| Extractor source absent | `Test-Path -LiteralPath EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/tier1.extractor.py` | False |
+| Extractor source absent | `Test-Path -LiteralPath EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/tier1_extractor.py` | False |
 | Extractor tests absent | `Test-Path -LiteralPath EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_tier1_extractor.py` | False |
 | Worker return absent | `Test-Path -LiteralPath docs/reviews/CVF_LPCI2_EX_T2_TIER1_EXTRACTOR_WORKER_RETURN_2026-06-11.md` | False |
 | pdfplumber importable | `python -c "import pdfplumber; print(pdfplumber.__version__)"` | version printed; no error |
@@ -161,7 +161,7 @@ Dispatch base: `2d6510ca`
 
 | Check | Command | Observed result | Disposition |
 | --- | --- | --- | --- |
-| Tier 1 extractor source absent | `Test-Path -LiteralPath EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/tier1.extractor.py` | False | ACCEPT |
+| Tier 1 extractor source absent | `Test-Path -LiteralPath EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/tier1_extractor.py` | False | ACCEPT |
 | Tier 1 extractor tests absent | `Test-Path -LiteralPath EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_tier1_extractor.py` | False | ACCEPT |
 | EX-T2 worker return absent | `Test-Path -LiteralPath docs/reviews/CVF_LPCI2_EX_T2_TIER1_EXTRACTOR_WORKER_RETURN_2026-06-11.md` | False | ACCEPT |
 | Existing EX-T2 runtime symbols absent | `rg -n "Tier1Extractor|extract_tier1|extract_pdf_text_layer|extract_docx|MIN_CHARS_PER_PAGE|tier1\.extractor" EXTENSIONS` | no matches | ACCEPT |
@@ -181,14 +181,14 @@ Verification table because the worker owns their creation.
 
 | New symbol | Kind | Location | Description |
 | --- | --- | --- | --- |
-| `Tier1ExtractorInput` | dataclass or TypedDict | `tier1.extractor.py` | Input: `file_path`, `language_codes` from profile |
-| `Tier1PageResult` | dataclass or TypedDict | `tier1.extractor.py` | Per-page result: `page_num`, `text`, `char_count`, `extraction_method` |
-| `Tier1ExtractorResult` | dataclass or TypedDict | `tier1.extractor.py` | Full result: `status`, `pages`, `total_char_count`, `avg_chars_per_page`, `below_min_chars_flag`, `language_codes`, `extraction_method` |
-| `extract_docx` | function | `tier1.extractor.py` | Extract text from `.docx` via python-docx; returns `Tier1ExtractorResult` |
-| `extract_pdf_text_layer` | function | `tier1.extractor.py` | Extract text from `.pdf` text layer via pdfplumber; returns `Tier1ExtractorResult` |
-| `extract_tier1` | function | `tier1.extractor.py` | Dispatcher: routes by file extension to `extract_docx` or `extract_pdf_text_layer`; raises `UnsupportedFileTypeError` for other extensions |
-| `UnsupportedFileTypeError` | exception | `tier1.extractor.py` | Raised when file extension is not `.docx` or `.pdf` |
-| `MIN_CHARS_PER_PAGE` | constant | `tier1.extractor.py` | 100 (from roadmap Quality Gates table; line 459) |
+| `Tier1ExtractorInput` | dataclass or TypedDict | `tier1_extractor.py` | Input: `file_path`, `language_codes` from profile |
+| `Tier1PageResult` | dataclass or TypedDict | `tier1_extractor.py` | Per-page result: `page_num`, `text`, `char_count`, `extraction_method` |
+| `Tier1ExtractorResult` | dataclass or TypedDict | `tier1_extractor.py` | Full result: `status`, `pages`, `total_char_count`, `avg_chars_per_page`, `below_min_chars_flag`, `language_codes`, `extraction_method` |
+| `extract_docx` | function | `tier1_extractor.py` | Extract text from `.docx` via python-docx; returns `Tier1ExtractorResult` |
+| `extract_pdf_text_layer` | function | `tier1_extractor.py` | Extract text from `.pdf` text layer via pdfplumber; returns `Tier1ExtractorResult` |
+| `extract_tier1` | function | `tier1_extractor.py` | Dispatcher: routes by file extension to `extract_docx` or `extract_pdf_text_layer`; raises `UnsupportedFileTypeError` for other extensions |
+| `UnsupportedFileTypeError` | exception | `tier1_extractor.py` | Raised when file extension is not `.docx` or `.pdf` |
+| `MIN_CHARS_PER_PAGE` | constant | `tier1_extractor.py` | 100 (from roadmap Quality Gates table; line 459) |
 
 ## Roadmap-To-Work-Order Trace Matrix
 
@@ -211,13 +211,15 @@ download, corpus ingestion, repo dependency addition, or a higher-risk claim.
 
 ## Work-Order Fulfillment Manifest
 
+## Required Artifact Manifest
+
 | Path | Required at handoff | Purpose |
 | --- | --- | --- |
-| `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/tier1.extractor.py` | Yes | Tier 1 extractor module |
-| `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_tier1_extractor.py` | Yes | Focused unit tests |
-| `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | Yes (additive update) | GC-051 registry |
-| `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | Yes (additive update) | GC-051 human index |
-| `docs/reviews/CVF_LPCI2_EX_T2_TIER1_EXTRACTOR_WORKER_RETURN_2026-06-11.md` | Yes | Worker evidence packet |
+| `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/tier1_extractor.py` | No (worker creates) | Tier 1 extractor module; absent at dispatch by design |
+| `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_tier1_extractor.py` | No (worker creates) | Focused unit tests; absent at dispatch by design |
+| `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | Yes (additive update) | GC-051 registry; present at dispatch; worker adds entries |
+| `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | Yes (additive update) | GC-051 human index; present at dispatch; worker adds rows |
+| `docs/reviews/CVF_LPCI2_EX_T2_TIER1_EXTRACTOR_WORKER_RETURN_2026-06-11.md` | No (worker creates) | Worker evidence packet; absent at dispatch by design |
 
 ## Forbidden Path Manifest
 
@@ -233,11 +235,26 @@ download, corpus ingestion, repo dependency addition, or a higher-risk claim.
 | `docs/roadmaps/CVF_LPCI2_T11_POLICYLOCAL_CORPUS_EXPANSION_READINESS_ROADMAP_2026-06-07.md` | T11/T12 readiness must not reopen |
 | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync\**` | No public-sync authorized |
 
+## Forbidden Filesystem State At Dispatch
+
+| Forbidden path | Expected state | Actual state at dispatch | Action if PRESENT |
+| --- | --- | --- | --- |
+| `EXTENSIONS/**/package.json` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | Worker must not edit dependency manifests |
+| `EXTENSIONS/**/package-lock.json` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | Worker must not edit lockfiles |
+| `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/**` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | Worker must not edit existing CPF source |
+| `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/**` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | Worker must not edit existing LPF source |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/**` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | Worker must not edit Web UI source |
+| `CVF-Workspace/Policy_Local/**` | EXTERNAL_WORKSPACE_NOT_MODIFIED | EXTERNAL_WORKSPACE_NOT_MODIFIED | Stop if external workspace edits are needed |
+| `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/tier1_extractor.py` | ABSENT | ABSENT (verified: Test-Path = False) | Worker must create; stop if already present |
+| `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_tier1_extractor.py` | ABSENT | ABSENT (verified: Test-Path = False) | Worker must create; stop if already present |
+| `docs/reviews/CVF_LPCI2_EX_T2_TIER1_EXTRACTOR_WORKER_RETURN_2026-06-11.md` | ABSENT | ABSENT (verified: Test-Path = False) | Worker must create; stop if already present |
+| `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync\**` | EXTERNAL_WORKSPACE_NOT_MODIFIED | EXTERNAL_WORKSPACE_NOT_MODIFIED | Stop if public-sync is needed |
+
 ## Write Ownership
 
 Owned files or modules:
 
-- `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/tier1.extractor.py` (create-only)
+- `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/tier1_extractor.py` (create-only)
 - `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_tier1_extractor.py` (create-only)
 - `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/__init__.py` (create-only if needed)
 - `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` (additive update)
@@ -399,13 +416,13 @@ Claude must return uncommitted artifacts with:
 
 ## Closure Checklist
 
-- [ ] Worker return reviewed by Codex
-- [ ] All Tier 1 tests pass confirmed
-- [ ] Forbidden path scan PASS
-- [ ] Reviewer-fast PASS confirmed or bounded blocker recorded
-- [ ] Codex commits accepted worker artifacts if PASS
-- [ ] Session continuity synced after material commit
-- [ ] Next tranche decision recorded: EX-T3 (OCR), alternate design, or blocked
+- [x] Worker return reviewed by Codex
+- [x] All Tier 1 tests pass confirmed
+- [x] Forbidden path scan PASS
+- [x] Reviewer-fast PASS confirmed
+- [x] Codex commits accepted worker artifacts if PASS
+- [x] Session continuity sync assigned to immediate post-material Codex sync commit
+- [x] Next tranche decision recorded: EX-T3 OCR remains separate and requires fresh operator authorization / GC-018 / source-verified work order
 
 ## Return-To-Orchestrator Conditions
 
@@ -432,6 +449,39 @@ behavior, T12 eligibility, legal advice quality, current-law status, provider
 behavior, hosted readiness, production readiness, public readiness, public-sync,
 memory reinjection, high-risk promotion, Learning Orchestrator runtime behavior,
 or autonomous mutation.
+
+---
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this work order | status set to `CLOSED_PASS_BOUNDED`; closure checklist resolved | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LPCI2_EX_T2_TIER1_EXTRACTOR_COMPLETION_2026-06-11.md` | Codex completion review authored | PASS |
+| Roadmap state | `docs/roadmaps/CVF_LPCI2_EXTRACTION_AND_EC02_REFINEMENT_ROADMAP_2026-06-10.md` | status set to `EX_T2_PASS_BOUNDED_EC_T1_PENDING_OPERATOR_DECISION` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | source, test, and package stub entries added; reviewer-fast GC-051 PASS | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | source, test, and package stub lookup rows added; reviewer-fast GC-051 PASS | PASS |
+| External evidence digest | N/A | N/A with reason: EX-T2 uses repo-local deterministic source/tests only; no external artifact digest is claimed | N/A with reason |
+| System loop interlock | N/A | N/A with reason: no system loop interlock registry mutation or runtime route behavior is introduced | N/A with reason |
+| Session continuity | `CVF_SESSION_MEMORY.md`, `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `AGENT_HANDOFF_V17_2026-06-07.md` | N/A with reason: session sync is performed in the immediate post-material Codex sync commit after this material closure commit exists | N/A with reason |
+| Worker return reviewed | `docs/reviews/CVF_LPCI2_EX_T2_TIER1_EXTRACTOR_WORKER_RETURN_2026-06-11.md` | Codex completion review exists at `docs/reviews/CVF_LPCI2_EX_T2_TIER1_EXTRACTOR_COMPLETION_2026-06-11.md` | PASS |
+| Tier 1 source present | `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/tier1_extractor.py` | `git diff --name-status` shows added source file | PASS |
+| Focused tests present | `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_tier1_extractor.py` | `git diff --name-status` shows added test file | PASS |
+| Focused pytest | `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_tier1_extractor.py` | `python -m pytest EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_tier1_extractor.py -q` -> 21 passed | PASS |
+| Reviewer-fast | changed EX-T2 packet | `python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast` -> PASS | PASS |
+| GC-051 registry coverage | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | source, test, and package stub entries added | PASS |
+| Forbidden path scan | repo diff | `git diff --name-status` and `git diff --cached --name-status` show only owned EX-T2 paths plus closure docs | PASS |
+| Public export disposition | this work order | `DEFERRED_PRIVATE_ONLY` section present | PASS |
+
+---
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| Retrieval receipt output | N/A - EX-T2 does not create retrieval receipts | No receipt artifact or retrieval route changed | N/A with reason |
+| Query acceptance fields | N/A - EX-T2 is local extraction only | No query acceptance, selected candidate, or freshness disclosure field changed | N/A with reason |
+| Public/production readiness receipt | N/A - not authorized | No public-sync or readiness receipt claimed | N/A with reason |
 
 ---
 
