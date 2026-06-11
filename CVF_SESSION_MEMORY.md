@@ -4,9 +4,9 @@ Memory class: POINTER_RECORD
 
 Status: ACTIVE SESSION FRONT DOOR
 
-Last updated: 2026-06-10
+Last updated: 2026-06-11
 
-Current mode marker: `dscp_t11f_profile_selection_adapter_dispatched`
+Current mode marker: `dscp_t11f_profile_selection_adapter_material_committed_pending_closure`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `dscp_t11f_profile_selection_adapter_dispatched`.
+Current mode: `dscp_t11f_profile_selection_adapter_material_committed_pending_closure`.
 
 Active handoff:
 
@@ -59,8 +59,9 @@ Pain-point closure direction:
 ## Latest Continuity Note
 
 DSCP-T11E Domain Profile Registry is `CLOSED_PASS_BOUNDED` at material commit
-`8a7cd134`. DSCP-T11F Profile Selection Adapter is `DISPATCHED` for Claude.
-All DSCP tranches T1 through T11E are `CLOSED_PASS_BOUNDED`.
+`8a7cd134`. DSCP-T11F Profile Selection Adapter material implementation is
+committed at `be6a0a17` after Codex review. All DSCP tranches T1 through T11E
+are `CLOSED_PASS_BOUNDED`; T11F closure artifacts remain pending.
 
 DSCP-T11E closure package:
 
@@ -85,6 +86,17 @@ DSCP-T11F dispatch package:
   `docs/roadmaps/CVF_DSCP_T11F_PROFILE_SELECTION_ADAPTER_ROADMAP_2026-06-10.md`;
 - work order:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T11F_PROFILE_SELECTION_ADAPTER_FOR_CLAUDE_2026-06-10.md`.
+
+DSCP-T11F material packet:
+
+- source:
+  `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.profile.selection.adapter.ts`;
+- focused tests:
+  `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.profile.selection.adapter.test.ts`;
+- worker return:
+  `docs/reviews/CVF_DSCP_T11F_PROFILE_SELECTION_ADAPTER_WORKER_RETURN_2026-06-10.md`;
+- material commit:
+  `be6a0a17`.
 
 Recent Claude/co-authored updates after T9:
 
@@ -112,19 +124,19 @@ Delivered scope for T9:
 - Roadmap closed:
   `docs/roadmaps/CVF_DSCP_T9_LOCAL_PIPELINE_HARNESS_ROADMAP_2026-06-08.md`.
 
-Boundary: DSCP-T11F dispatch authorizes only a local deterministic CPF profile
-selection adapter and focused tests. No external Policy_Local edits, provider
-call, corpus ingestion, OCR, vector retrieval, T12 authorization, public-sync
-claim from this provenance repo, production readiness, public readiness, or
-live governance proof.
+Boundary: DSCP-T11F material commit covers only a local deterministic CPF
+profile selection adapter, focused tests, worker return, and GC-051 registry
+coverage. No external Policy_Local edits, provider call, corpus ingestion, OCR,
+vector retrieval, T12 authorization, public-sync claim from this provenance
+repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: Claude executes
-`docs/work_orders/CVF_AGENT_WORK_ORDER_DSCP_T11F_PROFILE_SELECTION_ADAPTER_FOR_CLAUDE_2026-06-10.md`
-under `WORKER_MUST_NOT_COMMIT` and returns uncommitted artifacts. DSCP-T1
-through T11E are `CLOSED_PASS_BOUNDED`. T12 remains forbidden until EC-02
-resolves on or after 2026-07-01.
+Next allowed move: Codex closes DSCP-T11F with bounded closure artifacts,
+updates the T11F work order and roadmap, then audits/selects the next DSCP or
+PolicyLocal foundation roadmap for Claude. DSCP-T1 through T11E are
+`CLOSED_PASS_BOUNDED`; T11F material commit is `be6a0a17`. T12 remains
+forbidden until EC-02 resolves on or after 2026-07-01.
 
 LHW24 remains the latest closed numbered LHW wave in the state registry.
 
