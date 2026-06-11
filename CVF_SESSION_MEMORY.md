@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-11
 
-Current mode marker: `lpci2_ex_t2_tier1_extractor_closed_pending_next_roadmap`
+Current mode marker: `lpci2_ec_t1_decision_baseline_closed_pending_ec_t2_work_order`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `lpci2_ec_t1_decision_baseline_proposed_pending_operator_decisions`.
+Current mode: `lpci2_ec_t1_decision_baseline_closed_pending_ec_t2_work_order`.
 
 Active handoff:
 
@@ -58,10 +58,22 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-LPCI2 EC-T1 regulatory date/status decision baseline is `PROPOSED` at
-material commit `f15bdac8`. It is not `CLOSED`, `AUTHORIZED`, or
-dispatch-ready because decision gates D-01 through D-04 remain pending in
-`docs/baselines/CVF_GC018_LPCI2_EC_T1_REGULATORY_DATE_MODEL_GOVERNANCE_DECISION_2026-06-11.md`.
+LPCI2 EC-T1 regulatory date/status decision baseline is
+`CLOSED_PASS_BOUNDED` at material commit `5e184d00`.
+
+Closure artifact:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_LPCI2_EC_T1_REGULATORY_DATE_MODEL_GOVERNANCE_DECISION_2026-06-11.md`.
+
+Result: D-01 accepts `documentStatus`, D-02 accepts `QUERY_CLASS_GATED`, D-03
+keeps EC-02 lifecycle fields out of non-regulatory records, and D-04 keeps
+`BLOCKED_UNTIL_2026-07-01` active through EC-T4. Codex closure found a
+source-verification false negative: `documentStatus` already exists once as a
+company-docs DSCP-T10 test fixture, so EC-T2/EC-T3 must treat it as a
+collision/isolation constraint, not as EC-02 lifecycle support. The work-order
+template and authoring addendum now require negative-search and collision
+discipline.
 
 LPCI2 EX-T2 Tier 1 digital-native extractor remains `CLOSED_PASS_BOUNDED` at
 material commit `f21025a8`.
@@ -311,12 +323,13 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: operator/Codex records EC-T1 decisions D-01 through D-04 in
-`docs/baselines/CVF_GC018_LPCI2_EC_T1_REGULATORY_DATE_MODEL_GOVERNANCE_DECISION_2026-06-11.md`,
-then reruns gates before any EC-T2 contract-amendment work order is authored or
-dispatched. Claude must not proceed on EC-T2, EX-T3, EX-T4, EX-T5, dependency
-addition, OCR model download, corpus ingestion, public-sync, provider/API key
-use, production readiness, or public readiness without fresh authorization.
+Next allowed move: Codex may author or review a fresh EC-T2 contract-amendment
+GC-018/work order for the response-boundary contract update plus
+machine-readable EC-02 semantics JSON. Claude must not execute EC-T2 until that
+dispatch package is source-verified, gated, and committed. EC-T3, EC-T4,
+EC-T5, EX-T3, EX-T4, EX-T5, dependency addition, OCR model download, corpus
+ingestion, public-sync, provider/API key use, production readiness, or public
+readiness remain unauthorized without fresh authorization.
 T12 remains forbidden until EC-02 resolves on or after 2026-07-01 and
 eligibility is re-evaluated.
 
