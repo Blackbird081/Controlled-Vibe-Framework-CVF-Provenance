@@ -32,14 +32,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`negative_search_collision_checker_hardened_pending_ec_t2_work_order`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=Codex may author or review a fresh EC-T2 contract-amendment GC-018/work order; parked checkpoint=EC-T3/EX-T3 plus DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`single_agent_multi_role_control_hardened_pending_ec_t2_work_order`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=Codex may author or review a fresh EC-T2 contract-amendment GC-018/work order; parked checkpoint=EC-T3/EX-T3 plus DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`negative_search_collision_checker_hardened_pending_ec_t2_work_order`
+`single_agent_multi_role_control_hardened_pending_ec_t2_work_order`
 
-Current HEAD recorded for this handoff: `8e105f6b`
-(private provenance material commit closing negative-search collision checker
+Current HEAD recorded for this handoff: `e5206e00`
+(private provenance material commit closing single-agent multi-role control
 hardening).
 
 ## Active Boundary
@@ -57,6 +57,33 @@ This handoff is a pointer record only. Detailed historical continuity remains
 in archived handoffs and governed completion packets.
 
 ## Latest Continuity Note
+
+Single-agent multi-role control hardening is `CLOSED_PASS_BOUNDED` at material
+commit `e5206e00`.
+
+Closure/control artifacts:
+
+- `docs/reference/CVF_SINGLE_AGENT_MULTI_ROLE_CONTROL_STANDARD_2026-06-11.md`
+- `docs/reviews/CVF_SINGLE_AGENT_MULTI_ROLE_CONTROL_CHECKER_HARDENING_AUTH_2026-06-11.md`
+- `governance/compat/check_work_order_dispatch_quality.py`
+- `governance/compat/test_check_work_order_dispatch_quality.py`
+- `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
+- `docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md`
+- `docs/reference/CVF_AGENT_ROLE_ASSIGNMENT_MATRIX_2026-05-19.md`
+
+Result: dispatch-quality validation now requires `## Single-Agent Multi-Role
+Control Block` when a ready/dispatched work order uses explicit single-agent
+multi-role language or a role table assigns the same actor to implementation
+plus review/closure roles. The required block records role separation,
+evidence basis, self-review boundary, escalation conditions, and gate sequence.
+
+Verification: focused dispatch-quality tests PASS 58/58, reviewer-fast PASS,
+governed file-size PASS, and full pre-commit governance chain PASS.
+
+Boundary: control-plane documentation/template/checker hardening only; no
+independent review proof, runtime role enforcement, provider/API-key use,
+public-sync, current-law/legal-quality claim, production/public readiness,
+memory reinjection, high-risk promotion, or autonomous mutation.
 
 Negative-search and same-token collision checker hardening is
 `CLOSED_PASS_BOUNDED` at material commit `8e105f6b`.
