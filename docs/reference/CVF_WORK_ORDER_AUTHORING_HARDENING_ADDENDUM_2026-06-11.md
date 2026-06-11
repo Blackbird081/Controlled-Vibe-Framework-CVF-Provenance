@@ -154,6 +154,32 @@ and must cite current owner paths for any partial implementation surface found.
 
 ---
 
+## Dispatch Packet Authoring Learning Promotion
+
+If Codex or another reviewer fixes a dispatch packet before committing it, the
+reviewer must classify whether the finding is a reusable CVF control-plane
+pattern.
+
+Reusable dispatch findings include:
+
+- missing authority shell sections such as `## Purpose`;
+- placeholder `dispatchBaseHead` instead of a real git commit hash;
+- Source Verification rows that mix symbols with value assignments or type
+  annotations;
+- missing `Current Runtime Freshness Verification` for runtime absence or
+  non-use claims;
+- missing `Work-Order Fulfillment Manifest` for delegated implementation
+  artifacts;
+- parent roadmap status residue that conflicts with a newly dispatched child
+  lane.
+
+If reusable, the same batch must update the template, addendum, standard, or a
+machine check. If not reusable, record `N/A with reason` in the reviewer
+artifact. This is the authoring-side application of CVF's learning rule: fix
+once, reuse many times.
+
+---
+
 ## Claim Boundary
 
 This addendum hardens authoring and closure discipline only. It does not prove

@@ -49,6 +49,7 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
                     "Self-Reported Gate Evidence Consistency",
                     "Near-Threshold Owner Maintainability Plan",
                     "Work-Order Fulfillment Manifest",
+                    MODULE.DISPATCH_PACKET_LEARNING_MARKER,
                     MODULE.THIS_SCRIPT_PATH,
                 ]
             ),
@@ -1381,6 +1382,39 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
         self.assertIn(
             "dispatch/ready work order contains pending predecessor release language next to "
             "`CLOSED_PASS` evidence; keep status HOLD/DRAFT until the prerequisite closure commit exists",
+            report["violations"][0]["issues"],
+        )
+
+    def test_dispatch_work_order_with_placeholder_dispatch_base_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_PLACEHOLDER_DISPATCH_BASE_2026-06-11.md"
+        self._write("governance/contracts/source.ts", "export interface SourceThing { value: string; }\n")
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCHED",
+                    "Commit mode: WORKER_MUST_NOT_COMMIT",
+                    "dispatchBaseHead: worker must capture at dispatch time",
+                    "executionBaseHead: WORKER_MUST_CAPTURE_AT_START",
+                    "closureBaseHead: REVIEWER_CAPTURE",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Allowed-scope remediation is mandatory.",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| SourceThing | `governance/contracts/source.ts` | line 1 | `SourceThing` | SourceThing | ACCEPT |",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "dispatch/ready work order has non-commit `dispatchBaseHead`; "
+            "the orchestrator must set a real git commit hash before dispatch",
             report["violations"][0]["issues"],
         )
 

@@ -33,6 +33,7 @@ FILE_SIZE_REGISTRY_PATH = "governance/compat/CVF_GOVERNED_FILE_SIZE_EXCEPTION_RE
 NEAR_THRESHOLD_PLAN_MARKER = "Near-Threshold Owner Maintainability Plan"
 FULFILLMENT_MANIFEST_MARKER = "Work-Order Fulfillment Manifest"
 COMMIT_MODE_ANCHOR_MARKER = "Commit Mode And Base-Anchor Lifecycle"
+DISPATCH_PACKET_LEARNING_MARKER = "Dispatch Packet Authoring Learning Promotion"
 ALLOWED_COMMIT_MODES = {
     "WORKER_MAY_COMMIT",
     "WORKER_MUST_NOT_COMMIT",
@@ -416,6 +417,17 @@ def _validate_commit_mode_and_anchor_lifecycle(text: str) -> list[str]:
             "dispatch/ready work order lacks base-anchor lifecycle marker(s): "
             + ", ".join(missing_anchors)
         )
+    dispatch_base_match = re.search(
+        r"(?im)^\s*(?:[-*]\s*)?dispatchBaseHead:\s*`?([^`\n]+?)`?\s*$",
+        text,
+    )
+    if dispatch_base_match:
+        dispatch_base = dispatch_base_match.group(1).strip()
+        if not re.fullmatch(r"[0-9a-f]{6,40}", dispatch_base, re.IGNORECASE):
+            issues.append(
+                "dispatch/ready work order has non-commit `dispatchBaseHead`; "
+                "the orchestrator must set a real git commit hash before dispatch"
+            )
     return issues
 
 
@@ -1987,6 +1999,7 @@ def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str
             NEAR_THRESHOLD_PLAN_MARKER,
             FULFILLMENT_MANIFEST_MARKER,
             "Current Runtime Freshness Verification",
+            DISPATCH_PACKET_LEARNING_MARKER,
             "ACCEPT_AS_OWNER_MAP coverage",
             THIS_SCRIPT_PATH,
         ),

@@ -146,6 +146,19 @@ Separate `dispatchBaseHead`, `executionBaseHead`, `closureBaseHead`, and
 handoff-sync parent evidence. `--base HEAD --head HEAD` is not closure proof
 for changed governed artifacts.
 
+Dispatch-ready work orders must set `dispatchBaseHead` to a real git commit
+hash before worker execution. Placeholder prose such as worker-owned capture,
+unknown, or later confirmation is a dispatch defect.
+
+### Dispatch Packet Authoring Learning Promotion
+
+Dispatch packet defects found during reviewer cleanup are reusable
+governance/control-plane learning signals when they affect source verification,
+base anchors, runtime freshness evidence, fulfillment manifests, or
+machine-readable status. The closure batch must promote the pattern to a
+template, standard, or machine check when feasible; otherwise record `N/A with
+reason`.
+
 ### Self-Reported Gate Evidence Consistency
 
 Recorded gate results must match the current artifact and handoff state. After
