@@ -32,15 +32,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`governed_work_design_control_hardening_committed`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=author source-verified EX-T1 dependency/source audit work order or EC-T1 governance decision evidence under the new design-control carry-forward rules; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`lpci2_ex_t1_dependency_source_audit_dispatched`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=Claude executes EX-T1 dependency/source audit work order in WORKER_MUST_NOT_COMMIT mode and returns uncommitted artifacts for Codex review; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`governed_work_design_control_hardening_committed`
+`lpci2_ex_t1_dependency_source_audit_dispatched`
 
-Current HEAD recorded for this handoff: `84217223`
-(private provenance material commit hardening governed work design-control
-gates).
+Current HEAD recorded for this handoff: `8b6bd04d`
+(session-sync parent commit before EX-T1 dispatch material commit).
 
 ## Active Boundary
 
@@ -57,6 +56,25 @@ This handoff is a pointer record only. Detailed historical continuity remains
 in archived handoffs and governed completion packets.
 
 ## Latest Continuity Note
+
+LPCI2 EX-T1 dependency/source audit dispatch package is prepared under the
+hardened design-control foundation.
+
+Dispatch artifacts:
+
+- `docs/baselines/CVF_GC018_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_2026-06-11.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_FOR_CLAUDE_2026-06-11.md`
+- `docs/roadmaps/CVF_LPCI2_EXTRACTION_AND_EC02_REFINEMENT_ROADMAP_2026-06-10.md`
+
+Result: EX-T1 may be executed by Claude as an audit-only
+`WORKER_MUST_NOT_COMMIT` lane. EX-T2 extraction implementation, repo dependency
+addition, OCR model download, corpus ingestion, retrieval changes, EC-02
+semantic changes, T12 authoring, provider/API key use, public-sync, production
+readiness, and public readiness remain forbidden.
+
+Boundary: dispatch package only; no runtime/source behavior, provider behavior,
+live proof, extraction runtime, corpus ingestion, retrieval behavior, legal
+quality, current-law status, public readiness, or production readiness claim.
 
 Governed work design-control hardening is committed at material commit
 `84217223`.
@@ -266,14 +284,12 @@ history.
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
-Next allowed move: either author a source-verified EX-T1 dependency/source
-audit work order for the reusable CVF scan/extraction foundation, or author
-EC-T1 governance decision evidence for EC-02 semantics. The next roadmap or
-work order must preserve Design Control Gate and Design Control Carry-Forward
-evidence from the new lifecycle standard. DSCP-T1 through T11E are
-`CLOSED_PASS_BOUNDED`; DSCP-T11F material commit remains `be6a0a17` with
-closure artifacts pending. Parked lanes remain Live Redis, DEP2, and external
-receipt-anchor.
+Next allowed move: Claude executes
+`docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_FOR_CLAUDE_2026-06-11.md`
+in `WORKER_MUST_NOT_COMMIT` mode and returns uncommitted artifacts for Codex
+review. EX-T2 remains forbidden until EX-T1 closes and a fresh child work order
+is authorized. EC-T1 remains pending separate operator decision. Parked lanes
+remain Live Redis, DEP2, and external receipt-anchor.
 
 LPCI2-T12 remains forbidden until a separate operator-authorized evidence path
 resolves EC-02 review on or after 2026-07-01, known `currentStatus`, known

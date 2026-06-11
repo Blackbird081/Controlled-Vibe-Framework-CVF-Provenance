@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-11
 
-Current mode marker: `governed_work_design_control_hardening_committed`
+Current mode marker: `lpci2_ex_t1_dependency_source_audit_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `governed_work_design_control_hardening_committed`.
+Current mode: `lpci2_ex_t1_dependency_source_audit_dispatched`.
 
 Active handoff:
 
@@ -57,6 +57,21 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+LPCI2 EX-T1 dependency/source audit dispatch package is prepared under the
+hardened design-control foundation. Dispatch artifacts:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_2026-06-11.md`;
+- work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_FOR_CLAUDE_2026-06-11.md`;
+- parent roadmap:
+  `docs/roadmaps/CVF_LPCI2_EXTRACTION_AND_EC02_REFINEMENT_ROADMAP_2026-06-10.md`.
+
+Boundary: EX-T1 is audit-only and `WORKER_MUST_NOT_COMMIT`. It does not
+authorize extractor implementation, repo dependency addition, OCR model
+download, corpus ingestion, retrieval changes, EC-02 semantic changes, T12,
+provider/API key use, public-sync, production readiness, or public readiness.
 
 Governed work design-control hardening was committed at material commit
 `84217223`. New canonical standard
@@ -156,12 +171,12 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: either author a source-verified EX-T1 dependency/source
-audit work order for the reusable CVF scan/extraction foundation, or author
-EC-T1 governance decision evidence for EC-02 semantics. DSCP-T1 through T11E
-are `CLOSED_PASS_BOUNDED`; DSCP-T11F material commit remains `be6a0a17` with
-closure artifacts pending. T12 remains forbidden until EC-02 resolves on or
-after 2026-07-01.
+Next allowed move: Claude executes
+`docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_FOR_CLAUDE_2026-06-11.md`
+in `WORKER_MUST_NOT_COMMIT` mode and returns uncommitted artifacts for Codex
+review. EX-T2 remains forbidden until EX-T1 closes and a fresh child work order
+is authorized. EC-T1 remains pending separate operator decision. T12 remains
+forbidden until EC-02 resolves on or after 2026-07-01.
 
 LHW24 remains the latest closed numbered LHW wave in the state registry.
 

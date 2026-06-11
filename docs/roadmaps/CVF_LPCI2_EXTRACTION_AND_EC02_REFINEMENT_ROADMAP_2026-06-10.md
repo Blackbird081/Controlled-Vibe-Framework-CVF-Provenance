@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: PROPOSED
+Status: EX_T1_DISPATCHED_EC_T1_PENDING_OPERATOR_DECISION
 
 docType: roadmap
 
@@ -14,13 +14,17 @@ Author: Claude (operator-directed proposal for Codex review and explicit operato
 
 ## Authorization And Decision
 
-Decision state: PROPOSED_FOR_REVIEW.
+Decision state: EX_T1_CHILD_LANE_DISPATCHED.
 
-This roadmap is authorized only as a proposal and rebuttal target. It does not
-authorize implementation, dependency installation, OCR model download, corpus
-ingestion, retrieval behavior change, EC-02 semantic change, public-sync, or
-live/provider proof. Any child lane must receive fresh GC-018 authorization and
-a source-verified work order before dispatch.
+Operator instruction on 2026-06-11 authorized Codex to author the next work
+order under the hardened design-control foundation. EX-T1 is now opened only
+as a dependency/source audit child lane.
+
+This does not authorize extraction implementation, repo dependency addition,
+OCR model download, corpus ingestion, retrieval behavior change, EC-02 semantic
+change, public-sync, or live/provider proof. EC-T1 remains pending a separate
+operator decision. Any later child lane must receive fresh GC-018 authorization
+and a source-verified work order before dispatch.
 
 ---
 
@@ -691,13 +695,17 @@ of EC approval and can begin at Phase 1 in parallel.
 
 ## Status
 
-PROPOSED - pending Codex rebuttal and operator approval.
+EX_T1_DISPATCHED_EC_T1_PENDING_OPERATOR_DECISION.
 
-No dispatch, no implementation, no commit authorized until:
+EX-T1 is authorized only as a dependency/source audit and local feasibility
+probe under:
 
-1. Codex files rebuttal or ACCEPT on all Open Questions.
-2. Operator approves EC-T1 governance decision.
-3. Fresh GC-018 is authored per dispatch tranche.
+- `docs/baselines/CVF_GC018_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_2026-06-11.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_FOR_CLAUDE_2026-06-11.md`
+
+No EX-T2 extraction implementation, dependency addition to repo manifests, OCR
+model download, corpus ingestion, EC-T1 semantic change, T12 authoring, or
+public-sync is authorized by this status change.
 
 ---
 
