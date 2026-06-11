@@ -58,6 +58,16 @@ in archived handoffs and governed completion packets.
 
 ## Latest Continuity Note
 
+Public README workflow map was synchronized in the public-sync repository at
+commit `49f65cdb0` and pushed to
+`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git` after
+remote verification. The README now states the governed workflow as
+`INTAKE -> DESIGN -> SPEC -> WORK ORDER -> BUILD -> REVIEW -> FREEZE`.
+
+Boundary: public documentation clarification only; no runtime/source behavior,
+provider behavior, live proof, production readiness, or public readiness
+expansion.
+
 LPCI2 EX-T1 dependency/source audit dispatch package is committed at material
 commit `37665acc` under the hardened design-control foundation.
 
