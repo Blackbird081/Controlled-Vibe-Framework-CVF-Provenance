@@ -32,15 +32,15 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci2_ec_t4_parked_metadata_gaps`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=operator must supply or confirm EC-T4 missing signed-date/document-number metadata before EC-T5; parked checkpoint=EC-T5/EX-T3-EX-T5 and DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`prior_verification_reuse_unicode_evidence_hardening_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=operator must supply or confirm EC-T4 missing signed-date/document-number metadata before EC-T5; parked checkpoint=EC-T5/EX-T3-EX-T5 and DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`lpci2_ec_t4_parked_metadata_gaps`
+`prior_verification_reuse_unicode_evidence_hardening_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `34b27ad8`
-(GC-020 handoff sync parent for next sync-only commit; EC-T4 parked packet at
-`34b27ad8`).
+Current HEAD recorded for this handoff: `4ee9da5d`
+(GC-020 handoff sync parent for the prior-verification-reuse hardening commit;
+EC-T4 parked packet at `34b27ad8`).
 
 ## Active Boundary
 
@@ -59,15 +59,17 @@ in archived handoffs and governed completion packets.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: session continuity sync for EC-T4 parked
-metadata gaps so the active handoff and state registry name the operator
-checkpoint and preserve EC-T5 as blocked.
+metadata gaps and prior-verification-reuse hardening so the active handoff and
+state registry preserve EC-T5 as blocked while recording the new authoring
+standard.
 
 Protected paths:
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 
 Operator authorization: 2026-06-11 operator instructed Codex to switch roles
-and prepare the EC-T4 operator-date evidence path for Claude.
+and prepare the EC-T4 operator-date evidence path for Claude; later instructed
+Codex to promote the EC-T4 worker finding into CVF foundation hardening.
 
 Rollback boundary: revert only this EC-T4 dispatch/session update to
 `AGENT_HANDOFF_V17_2026-06-07.md` and
@@ -77,6 +79,24 @@ Do not revert EC-T3 material commit `a895dc03`, EC-T3 closure commit
 governance/session history.
 
 ## Latest Continuity Note
+
+Prior verification reuse and Unicode evidence handling hardening is
+`CLOSED_PASS_BOUNDED`.
+
+Artifacts:
+
+- `docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md`
+- `docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md`
+- `docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md`
+- `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
+
+Result: future work orders that consume prior verification artifacts,
+T11B-style hash/size evidence, external evidence digests, source bundles, or
+Unicode-path extracted text must choose `REUSE_PRIOR_VERIFICATION`,
+`RECOMPUTE_REQUIRED`, or `REVIEWER_RECOMPUTE_ONLY` and record UTF-8-safe path
+handling when applicable. Boundary: governance authoring hardening only; no
+runtime/source behavior, provider, extraction-quality, Policy_Local mutation,
+public-sync, production/public readiness, or EC-T5 unlock claim.
 
 LPCI2 EC-T4 operator-date evidence backfill is
 `PARKED_PENDING_OPERATOR_METADATA`.

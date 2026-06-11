@@ -685,9 +685,9 @@ The startup acknowledgment in a worker return must mirror the active session
 state and active handoff. `parked checkpoint=none` is valid only when those
 front doors record no parked checkpoint.
 
-Worker returns must satisfy the minimum structural shell and pseudo-path
-discipline in
-`docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md`.
+Worker returns must satisfy the structural, pseudo-path, evidence-reuse, and
+encoding rules in the addendum plus
+`docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md`.
 
 ### Reviewer Closure Conversion Block
 

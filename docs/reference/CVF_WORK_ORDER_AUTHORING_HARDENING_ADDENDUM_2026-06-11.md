@@ -154,6 +154,34 @@ and must cite current owner paths for any partial implementation surface found.
 
 ---
 
+## Prior Verification Reuse And Unicode Evidence Handling
+
+Work orders that consume a prior manifest, source bundle, external evidence
+digest, T11B-style verification result, or Unicode-path extracted text must
+include an `Evidence Reuse And Encoding Plan`.
+
+Canonical standard:
+
+`docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md`
+
+The plan must choose exactly one verification mode:
+
+- `REUSE_PRIOR_VERIFICATION`
+- `RECOMPUTE_REQUIRED`
+- `REVIEWER_RECOMPUTE_ONLY`
+
+If prior verification already proves path existence, hash match, size match,
+and lineage/role match for the same source identity, the default mode is
+`REUSE_PRIOR_VERIFICATION`. A work order may require fresh recomputation only
+when it records the concrete gap or drift reason.
+
+When cited paths contain non-ASCII characters, the plan must require literal
+paths and UTF-8-safe readers. Do not rename, normalize, or copy evidence files
+merely to make a shell command easier unless a separate governed task
+authorizes that mutation.
+
+---
+
 ## Negative Search And Collision Discipline
 
 If a source-verification row, baseline, roadmap, work order, or completion

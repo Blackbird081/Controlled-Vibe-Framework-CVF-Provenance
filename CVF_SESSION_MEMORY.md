@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-11
 
-Current mode marker: `lpci2_ec_t4_parked_metadata_gaps`
+Current mode marker: `prior_verification_reuse_unicode_evidence_hardening_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `lpci2_ec_t4_parked_metadata_gaps`.
+Current mode: `prior_verification_reuse_unicode_evidence_hardening_closed_pass_bounded`.
 
 Active handoff:
 
@@ -57,6 +57,24 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+Prior verification reuse and Unicode evidence handling hardening is
+`CLOSED_PASS_BOUNDED`.
+
+Artifacts:
+
+- `docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md`
+- `docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md`
+- `docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md`
+- `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
+
+Result: future work orders that consume prior verification artifacts,
+T11B-style hash/size evidence, external evidence digests, source bundles, or
+Unicode-path extracted text must choose `REUSE_PRIOR_VERIFICATION`,
+`RECOMPUTE_REQUIRED`, or `REVIEWER_RECOMPUTE_ONLY` and record UTF-8-safe path
+handling when applicable. Boundary: governance authoring hardening only; no
+runtime/source behavior, provider, extraction-quality, Policy_Local mutation,
+public-sync, production/public readiness, or EC-T5 unlock claim.
 
 LPCI2 EC-T4 operator-date evidence backfill is
 `PARKED_PENDING_OPERATOR_METADATA`.
