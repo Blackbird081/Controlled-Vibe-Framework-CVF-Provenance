@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -16,9 +16,9 @@ Commit mode: WORKER_MUST_NOT_COMMIT
 
 dispatchBaseHead: `8b6bd04d`
 
-executionBaseHead: worker must capture
+executionBaseHead: `798eb17b`
 
-closureBaseHead: reviewer-owned after return
+closureBaseHead: `76cdf464`
 
 ---
 
@@ -312,6 +312,17 @@ Base-anchor evidence:
 | Any dependency claim lacks primary-source or command evidence | Mark candidate `PARTIAL` or `BLOCKED`; do not upgrade recommendation |
 | Any public/readiness/legal/current-law/runtime extraction claim appears | Remove claim or return blocked diagnostic |
 
+## Current Runtime Freshness Verification
+
+This work order forbids provider/API key use. That boundary is a scope
+exclusion, not a claim that provider registry surfaces are absent.
+
+| Runtime surface | Current source evidence | Verification result | Closure relevance |
+|---|---|---|---|
+| Provider registry owner | `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts` line 31 declares `ProviderRegistry` | EXISTS_AT_HEAD | EX-T1 did not read, modify, or invoke provider registry behavior |
+| Provider capability registry owner | `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-registry.ts` line 43 declares `PROVIDER_CAPABILITY_REGISTRY` | EXISTS_AT_HEAD | EX-T1 did not read, modify, or invoke provider capability behavior |
+| Provider/key execution | worker return and completion scope boundary | NOT_USED_IN_EX_T1 | EX-T1 remained dependency/source audit only |
+
 ## Review Gate
 
 Implementation may proceed only after:
@@ -329,6 +340,23 @@ Closure may proceed only after Codex confirms:
 - no runtime, public, provider, corpus, EC-02, T12, legal-quality, current-law,
   hosted, production, or public-readiness claim was introduced.
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Audit report | `docs/reference/CVF_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_REPORT_2026-06-11.md` | worker-created report present | PASS |
+| Machine summary | `docs/reference/CVF_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_SUMMARY_2026-06-11.json` | `python -m json.tool` PASS | PASS |
+| Worker return | `docs/reviews/CVF_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_WORKER_RETURN_2026-06-11.md` | worker packet present with reviewer structural remediation | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_COMPLETION_2026-06-11.md` | completion review present | PASS |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_LPCI2_EXTRACTION_AND_EC02_REFINEMENT_ROADMAP_2026-06-10.md` | `Status: EX_T1_PASS_BOUNDED_EC_T1_PENDING_OPERATOR_DECISION` | PASS |
+| Registry JSON | N/A with reason: EX-T1 did not add runtime/source corpus coverage | no GC-051 registry update authorized | PASS |
+| Registry Markdown | N/A with reason: EX-T1 did not add runtime/source corpus coverage | no registry markdown update authorized | PASS |
+| External evidence digest | `docs/reference/CVF_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_REPORT_2026-06-11.md` | report sha256:6e6ee6e640275a85541bcd32a4f9290585fb6d30debc5780df10ef2ea6491e9d | PASS |
+| System loop interlock | N/A with reason: EX-T1 is audit-only and does not wire runtime behavior | no system loop interlock update authorized | N/A with reason |
+| Forbidden path scan | git status and diff review | no runtime/source/package/corpus/public-sync files changed | PASS |
+| Session continuity | active handoff, session memory, and state registry | closure mode and next allowed move updated | PASS |
+
 ## Return Packet Requirements
 
 Claude must return uncommitted artifacts with:
@@ -345,13 +373,14 @@ Claude must return uncommitted artifacts with:
 
 ## Closure Checklist
 
-- [ ] Worker return reviewed by Codex
-- [ ] Report and JSON consistency checked
-- [ ] Forbidden path scan PASS
-- [ ] Reviewer-fast PASS confirmed or bounded blocker recorded
-- [ ] Codex commits accepted worker artifacts if PASS
-- [ ] Session continuity synced after material commit
-- [ ] Next roadmap decision recorded: EX-T2, alternate audit, or blocked
+- [x] Worker return reviewed by Codex
+- [x] Report and JSON consistency checked
+- [x] Forbidden path scan PASS
+- [x] Reviewer-fast PASS confirmed or bounded blocker recorded
+- [x] Codex commits accepted worker artifacts if PASS
+- [x] Session continuity synced in closure batch
+- [x] Next roadmap decision recorded: EX-T2 requires fresh child GC-018 and
+  work order; EC-T1 and EX-T3 remain operator-decision lanes
 
 ## Return-To-Orchestrator Conditions
 

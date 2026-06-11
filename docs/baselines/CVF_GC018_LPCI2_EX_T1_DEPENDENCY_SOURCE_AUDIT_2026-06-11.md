@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 
@@ -100,11 +100,11 @@ Out of scope:
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_FOR_CLAUDE_2026-06-11.md` | `Status: DISPATCHED` before worker execution | READY |
-| Audit report | `docs/reference/CVF_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_REPORT_2026-06-11.md` | worker-created report | NOT_STARTED_BY_DESIGN |
-| Machine summary | `docs/reference/CVF_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_SUMMARY_2026-06-11.json` | worker-created JSON | NOT_STARTED_BY_DESIGN |
-| Worker return | `docs/reviews/CVF_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_WORKER_RETURN_2026-06-11.md` | worker return packet | NOT_STARTED_BY_DESIGN |
-| Session continuity | active handoff and state registry | reviewer sync after Codex review | NOT_STARTED_BY_DESIGN |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_FOR_CLAUDE_2026-06-11.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Audit report | `docs/reference/CVF_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_REPORT_2026-06-11.md` | worker-created report | PASS |
+| Machine summary | `docs/reference/CVF_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_SUMMARY_2026-06-11.json` | worker-created JSON | PASS |
+| Worker return | `docs/reviews/CVF_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_WORKER_RETURN_2026-06-11.md` | worker return packet with reviewer remediation | PASS |
+| Session continuity | active handoff and state registry | reviewer sync in closure batch | PASS |
 
 ## Claim Boundary
 

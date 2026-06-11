@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-11
 
-Current mode marker: `lpci2_ex_t1_dependency_source_audit_dispatched`
+Current mode marker: `lpci2_ex_t1_dependency_source_audit_closed_pending_next_operator_decision`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `lpci2_ex_t1_dependency_source_audit_dispatched`.
+Current mode: `lpci2_ex_t1_dependency_source_audit_closed_pending_next_operator_decision`.
 
 Active handoff:
 
@@ -57,6 +57,32 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+LPCI2 EX-T1 dependency/source audit is `CLOSED_PASS_BOUNDED` in the reviewer
+closure batch based on closureBaseHead `76cdf464`.
+
+Closure artifacts:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_2026-06-11.md`;
+- work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_FOR_CLAUDE_2026-06-11.md`;
+- audit report:
+  `docs/reference/CVF_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_REPORT_2026-06-11.md`;
+- JSON summary:
+  `docs/reference/CVF_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_SUMMARY_2026-06-11.json`;
+- worker return:
+  `docs/reviews/CVF_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_WORKER_RETURN_2026-06-11.md`;
+- completion:
+  `docs/reviews/CVF_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_COMPLETION_2026-06-11.md`.
+
+Accepted recommendation: `COMPOSED_STACK_PREFERRED` for future EX-T2 Tier 1
+digital-native extraction only. LiteParse remains
+`LITEPARSE_ELIGIBLE_FOR_EX_T3_REEVALUATION` for later EX-T3 OCR/spatial
+tradeoff review. Boundary: audit-only; no extractor implementation, repo
+dependency addition, OCR model download, corpus ingestion, retrieval change,
+EC-02 semantic change, T12 authoring, provider/API key use, public-sync,
+production readiness, or public readiness.
 
 Public README workflow map was synchronized in the public-sync repository at
 commit `49f65cdb0` and pushed to
@@ -181,11 +207,11 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: Claude executes
-`docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_FOR_CLAUDE_2026-06-11.md`
-in `WORKER_MUST_NOT_COMMIT` mode and returns uncommitted artifacts for Codex
-review. EX-T2 remains forbidden until EX-T1 closes and a fresh child work order
-is authorized. EC-T1 remains pending separate operator decision. T12 remains
+Next allowed move: operator/Codex may authorize a fresh EX-T2 child GC-018 and
+source-verified work order for Tier 1 digital-native extraction using the
+accepted composed stack recommendation. EX-T2 implementation remains forbidden
+until that child authorization exists. EC-T1 remains pending separate operator
+decision. EX-T3 OCR remains pending separate operator decision. T12 remains
 forbidden until EC-02 resolves on or after 2026-07-01.
 
 LHW24 remains the latest closed numbered LHW wave in the state registry.
