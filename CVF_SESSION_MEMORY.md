@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-11
 
-Current mode marker: `single_agent_multi_role_control_hardened_pending_ec_t2_work_order`
+Current mode marker: `intake_role_routing_decision_hardened_pending_ec_t2_work_order`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `single_agent_multi_role_control_hardened_pending_ec_t2_work_order`.
+Current mode: `intake_role_routing_decision_hardened_pending_ec_t2_work_order`.
 
 Active handoff:
 
@@ -57,6 +57,35 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+Intake role routing decision gate hardening is `CLOSED_PASS_BOUNDED` at
+material commit `52756f53`.
+
+Closure/control artifacts:
+
+- standard:
+  `docs/reference/CVF_INTAKE_ROLE_ROUTING_DECISION_STANDARD_2026-06-11.md`;
+- authorization:
+  `docs/reviews/CVF_INTAKE_ROLE_ROUTING_DECISION_CHECKER_HARDENING_AUTH_2026-06-11.md`;
+- checker/tests:
+  `governance/compat/check_work_order_dispatch_quality.py`,
+  `governance/compat/test_check_work_order_dispatch_quality.py`;
+- template/closure standard:
+  `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`,
+  `docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md`.
+
+Result: dispatch-quality validation now requires `## Intake Role Routing
+Decision` before a work order can be ready or dispatched. The block must carry
+orchestrator-owned intake summary, scope classification, risk sensitivity,
+selected canonical route mode, role separation basis, and escalation condition.
+Pending/blocked role routes keep the artifact in `HOLD_*` or `DRAFT`.
+Verification: focused dispatch-quality tests PASS 60/60, reviewer-fast PASS,
+governed file-size PASS with the work-order template at the 1200-line hard
+threshold, and full pre-commit governance chain PASS. Boundary: control-plane
+documentation/template/checker hardening only; no runtime role enforcement,
+provider/API-key use, public-sync, current-law/legal-quality claim,
+production/public readiness, memory reinjection, high-risk promotion, or
+autonomous mutation.
 
 Single-agent multi-role control hardening is `CLOSED_PASS_BOUNDED` at material
 commit `e5206e00`.
