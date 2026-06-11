@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_PARTIAL_EX_T6_CLOSED_EC_BLOCKED
+Status: ACTIVE_PARTIAL_EX_T7_CLOSED_EC_BLOCKED
 
 docType: roadmap
 
@@ -14,7 +14,7 @@ Author: Claude (operator-directed proposal for Codex review and explicit operato
 
 ## Authorization And Decision
 
-Decision state: EX_T6_CLOSED_EC_BLOCKED.
+Decision state: EX_T7_CLOSED_EC_BLOCKED.
 
 Operator instruction on 2026-06-11 authorized Codex to author the next work
 order under the hardened design-control foundation. EX-T1 is now completed as a
