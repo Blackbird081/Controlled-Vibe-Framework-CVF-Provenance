@@ -1257,7 +1257,10 @@ def _has_absence_or_staleness_claim(text: str) -> bool:
     return re.search(
         r"\b(?:NOT in CVF|not implemented|completely absent|absent from CVF|"
         r"no registry|no learning orchestrator|hardcoded strings?|per-role only|"
-        r"no typed execution strategy|no relevance scoring)\b",
+        r"no typed execution strategy|no relevance scoring|"
+        r"no registry update|"
+        r"no provider/API key use|no provider calls?|must not call providers?|"
+        r"do not call providers?)\b",
         text,
         re.IGNORECASE,
     ) is not None
@@ -1277,7 +1280,13 @@ def _validate_runtime_freshness_claims(text: str) -> list[str]:
             "`EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/execute.client.ts`"
         )
 
-    if re.search(r"provider list is hardcoded|no registry|no model registry", text, re.IGNORECASE):
+    provider_registry_claim = re.search(
+        r"provider[\s\S]{0,120}(?:hardcoded|no registry|no model registry|no provider/API key use|no provider calls?)"
+        r"|(?:hardcoded|no registry|no model registry|no provider/API key use|no provider calls?)[\s\S]{0,120}provider",
+        text,
+        re.IGNORECASE,
+    )
+    if provider_registry_claim:
         if (
             "EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts" not in text
             and "PROVIDER_CAPABILITY_REGISTRY" not in text

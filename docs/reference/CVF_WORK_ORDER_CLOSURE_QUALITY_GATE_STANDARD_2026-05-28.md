@@ -196,8 +196,11 @@ by default for latency control. Use `--serial` for order-dependent debugging.
 
 ### Current Runtime Freshness Verification
 
-Absence, missing, stale, hardcoded, or per-role-only runtime/source claims must
-be backed by current source searches and owner-path evidence.
+Absence, missing, stale, hardcoded, per-role-only, or intentional non-use
+runtime/source claims must be backed by current source searches and owner-path
+evidence. This includes phrases such as "no provider/API key use", "no
+provider calls", "no runtime/source edits", and "no registry update" when a
+current owner surface exists.
 
 ### ACCEPT_AS_OWNER_MAP coverage
 
@@ -214,16 +217,16 @@ surfaces explicitly.
 
 Required package:
 
-| Closure item | Required artifact/path | Machine-readable evidence |
-| --- | --- | --- |
-| Work order status | `docs/work_orders/<work-order>.md` | final status, no stale ready/pending residue, closure anchor policy |
-| Completion or reviewer artifact | `docs/reviews/<completion>.md` or `N/A with reason` | final disposition, changed files, claim boundary, gate evidence |
-| Roadmap state | `docs/roadmaps/<roadmap>.md` or `N/A with reason` | tranche row final state and next dependency state |
-| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` or `N/A with reason` | scan/readiness/gap fields when corpus state changes |
-| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` or `N/A with reason` | operator/reviewer quick lookup when GC-051 state changes |
-| External evidence digest | repo-local digest section or artifact | external path, schema/version, record count, hash, generated time, privacy boundary |
-| System loop interlock | `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_*.json` or `N/A with reason` | upstream output, downstream input, learning/finding route, mutation boundary |
-| Session continuity | `CVF_SESSION_MEMORY.md`, `CVF_SESSION/ACTIVE_SESSION_STATE.json`, active handoff | current mode, next allowed move, handoff HEAD or accepted parent marker |
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/<work-order>.md` | final status, no stale ready/pending residue, closure anchor policy | `<PASS/BLOCKED/N/A with reason>` |
+| Completion or reviewer artifact | `docs/reviews/<completion>.md` or `N/A with reason` | final disposition, changed files, claim boundary, gate evidence | `<PASS/BLOCKED/N/A with reason>` |
+| Roadmap state | `docs/roadmaps/<roadmap>.md` or `N/A with reason` | tranche row final state and next dependency state | `<PASS/BLOCKED/N/A with reason>` |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` or `N/A with reason` | scan/readiness/gap fields when corpus state changes | `<PASS/BLOCKED/N/A with reason>` |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` or `N/A with reason` | operator/reviewer quick lookup when GC-051 state changes | `<PASS/BLOCKED/N/A with reason>` |
+| External evidence digest | repo-local digest section or artifact | external path, schema/version, record count, hash, generated time, privacy boundary | `<PASS/BLOCKED/N/A with reason>` |
+| System loop interlock | `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_*.json` or `N/A with reason` | upstream output, downstream input, learning/finding route, mutation boundary | `<PASS/BLOCKED/N/A with reason>` |
+| Session continuity | `CVF_SESSION_MEMORY.md`, `CVF_SESSION/ACTIVE_SESSION_STATE.json`, active handoff | current mode, next allowed move, handoff HEAD or accepted parent marker | `<PASS/BLOCKED/N/A with reason>` |
 
 Rules:
 
@@ -240,6 +243,20 @@ Rules:
 - Corpus scan, classification, readiness, or gap state changes must update
   both GC-051 registry surfaces when applicable. JSON is the machine input;
   Markdown is the reviewer/operator lookup.
+- Machine Closure Package row names are exact machine tokens. Use
+  `Registry JSON` and `Registry Markdown`; renamed variants are not accepted.
+- `Final status` values must be checker-accepted: `PASS`, `BLOCKED`, or
+  `N/A with reason`. Do not use `N/A_WITH_REASON` in the final status cell.
+- If corpus/search/classification/readiness text appears in a closed-equivalent
+  artifact, `Registry JSON` and `Registry Markdown` must be `PASS` or
+  `BLOCKED with reason`, not `N/A with reason`.
+- If `External evidence digest` is `PASS` and references external evidence,
+  the row or an External Artifact Hash Manifest must include a `sha256:<hex>`
+  digest.
+- Parent roadmaps that stay open for later child lanes should use child-lane
+  status tokens such as `EX_T1_PASS_BOUNDED`, not top-level `CLOSED` wording.
+  Reserve `CLOSED_PASS_BOUNDED` for fully closed roadmaps or child closure
+  artifacts.
 - Closed-equivalent artifacts must not retain stale `DISPATCH_READY`,
   `READY_WITH_CONDITIONS`, `NOT_EXECUTED_YET`, `PRE_CLOSURE_NOT_RUN`, unchecked
   required checklist items, or placeholder dependency rows except in explicit

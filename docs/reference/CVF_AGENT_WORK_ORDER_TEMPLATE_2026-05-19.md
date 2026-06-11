@@ -229,6 +229,11 @@ Status token rule:
 - `HOLD_*`, `DRAFT`, or `PROPOSED` statuses must not include the token
   `CLOSED`; use `PASS` or `SATISFIED` for prerequisite wording, for example
   `HOLD_UNTIL_T1_PASS`.
+- Parent roadmaps that remain open for later child lanes must not use
+  `CLOSED` in the top-level `Status` merely because one child lane passed.
+  Use child-lane wording such as `EX_T1_PASS_BOUNDED` in the parent roadmap,
+  and reserve `CLOSED_PASS_BOUNDED` for the child work order, completion
+  review, or fully closed roadmap.
 
 ## 1. Mission
 
@@ -369,11 +374,14 @@ Source priority:
 If a current runtime/source file exists, a completion review alone is not enough
 to verify a field, enum, diagnostic class, route state, tool name, or schema key.
 
-If the work order claims a runtime/source capability is absent, not implemented,
-hardcoded, per-role only, stale, or missing, include a
-Current Runtime Freshness Verification section before dispatch. That section must show the repo searches
-or source files that were checked and must cite current owner paths for any
-partial implementation surface found.
+If the work order claims a runtime/source capability is absent, not
+implemented, hardcoded, per-role only, stale, missing, or intentionally not
+used in the current lane, include a Current Runtime Freshness Verification
+section before dispatch. This includes non-use statements such as "no
+provider/API key use", "no provider calls", "no runtime/source edits", or "no
+registry update" when current runtime/source owners exist. That section must
+show the repo searches or source files that were checked and must cite current
+owner paths for any partial implementation surface found.
 
 If a roadmap-derived work order claims complete ACCEPT_AS_OWNER_MAP coverage
 from a source audit, include an ACCEPT_AS_OWNER_MAP coverage disposition that
@@ -647,6 +655,10 @@ The startup acknowledgment in a worker return must mirror the active session
 state and active handoff. `parked checkpoint=none` is valid only when those
 front doors record no parked checkpoint.
 
+Worker returns must satisfy the minimum structural shell and pseudo-path
+discipline in
+`docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md`.
+
 ### Reviewer Closure Conversion Block
 
 Every `WORKER_MUST_NOT_COMMIT` work order that is `READY`, `DISPATCH_READY`,
@@ -726,8 +738,8 @@ Required closure package table:
 | Work order status | `docs/work_orders/<work-order>.md` | closed-equivalent status, no stale `DISPATCH_READY`, no unchecked required checklist residue, closure anchor policy recorded | `<PASS/BLOCKED/N/A with reason>` |
 | Completion or reviewer artifact | `docs/reviews/<completion>.md` or `N/A with reason` | final disposition, changed-file evidence, claim boundary, gate evidence, reviewer-owned closure when `WORKER_MUST_NOT_COMMIT` | `<PASS/BLOCKED/N/A with reason>` |
 | Roadmap state | `docs/roadmaps/<roadmap>.md` or `N/A with reason` | tranche row final status, next tranche dependency release state, no stale `READY_WITH_CONDITIONS` residue | `<PASS/BLOCKED/N/A with reason>` |
-| Corpus scan registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` or `N/A with reason` | entry id, normalized paths, hashes, verdicts, gap ids, next action | `<PASS/BLOCKED/N/A with reason>` |
-| Corpus scan registry MD | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` or `N/A with reason` | human quick lookup, negative-search note, next recommendation | `<PASS/BLOCKED/N/A with reason>` |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` or `N/A with reason` | entry id, normalized paths, hashes, verdicts, gap ids, next action | `<PASS/BLOCKED/N/A with reason>` |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` or `N/A with reason` | human quick lookup, negative-search note, next recommendation | `<PASS/BLOCKED/N/A with reason>` |
 | External evidence digest | repo-local completion section or digest artifact | external path, schema/version, record count, hash, generated time, privacy boundary | `<PASS/BLOCKED/N/A with reason>` |
 | System loop interlock | `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_*.json` or `N/A with reason` | upstream output, downstream input, learning/finding route, mutation boundary | `<PASS/BLOCKED/N/A with reason>` |
 | Session continuity | `CVF_SESSION_MEMORY.md`, `CVF_SESSION/ACTIVE_SESSION_STATE.json`, active handoff | mode, next allowed move, handoff HEAD or accepted parent marker | `<PASS/BLOCKED/N/A with reason>` |
@@ -744,6 +756,8 @@ Rules:
   update both GC-051 registry surfaces when applicable: the JSON is the
   machine input and the Markdown file is the operator/reviewer lookup. A
   report-only closure is not enough when the registry is the downstream input.
+- Machine Closure Package row names and final status tokens must follow
+  `docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md`.
 - Closed-equivalent artifacts must not retain stale `DISPATCH_READY`,
   `READY_WITH_CONDITIONS`, `NOT_EXECUTED_YET`, `PRE_CLOSURE_NOT_RUN`, or
   placeholder dependency language unless the artifact is explicitly still a
@@ -768,6 +782,8 @@ Rules:
   receipt, browser artifact, or generated file must include an External
   Artifact Hash Manifest with sha256 for every external artifact used as
   closure evidence. Counts and schemas are not enough by themselves.
+- External evidence digest hash rules are defined in
+  `docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md`.
 - When material closure and session-sync closure use different commits, record
   both ranges. The material range must cover implementation evidence; the
   session-sync range must cover state, memory, and handoff updates. Do not use

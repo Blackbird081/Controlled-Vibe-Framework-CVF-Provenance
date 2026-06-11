@@ -1130,6 +1130,66 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
             issues,
         )
 
+    def test_provider_nonuse_claim_requires_runtime_freshness_section(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_PROVIDER_NONUSE_TEST_2026-06-11.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Work Order",
+                    "Status: DISPATCHED",
+                    "Forbidden scope: no provider/API key use and no provider calls.",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        issues = report["violations"][0]["issues"]
+        self.assertIn(
+            "artifact makes absent/not-implemented/hardcoded runtime claims without a "
+            "`Current Runtime Freshness Verification` section",
+            issues,
+        )
+        self.assertIn(
+            "provider registry absence/hardcoded claim must account for current "
+            "`EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts` and "
+            "`PROVIDER_CAPABILITY_REGISTRY` surfaces",
+            issues,
+        )
+
+    def test_registry_update_nonuse_claim_does_not_trigger_provider_registry_check(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_CORPUS_REGISTRY_NONUSE_TEST_2026-06-11.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Work Order",
+                    "Status: DISPATCHED",
+                    "Forbidden scope: no registry update for corpus metadata.",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        issues = report["violations"][0]["issues"]
+        self.assertIn(
+            "artifact makes absent/not-implemented/hardcoded runtime claims without a "
+            "`Current Runtime Freshness Verification` section",
+            issues,
+        )
+        self.assertNotIn(
+            "provider registry absence/hardcoded claim must account for current "
+            "`EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts` and "
+            "`PROVIDER_CAPABILITY_REGISTRY` surfaces",
+            issues,
+        )
+
     def test_resolve_provider_claim_requires_current_owner_path(self) -> None:
         work_order = "docs/work_orders/CVF_WO_LHW23_TEST_2026-05-31.md"
         self._write(
