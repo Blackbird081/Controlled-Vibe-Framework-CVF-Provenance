@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: PROPOSED
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 
@@ -148,7 +148,7 @@ Predecessor evidence:
 ## Operator Decision Gates (required before EC-T1 can close)
 
 Codex must record operator decisions on the following four open questions
-from the roadmap before this GC-018 transitions to `AUTHORIZED`.
+from the roadmap before this GC-018 transitions to `CLOSED_PASS_BOUNDED`.
 
 ### D-01 Field naming: `documentStatus` vs `legalStatus`
 
@@ -159,7 +159,19 @@ downstream corpus records are written.
 **Decision required:** accept `documentStatus` OR rename to `legalStatus`
 OR propose alternative name.
 
-Codex records decision here: _PENDING OPERATOR INPUT_
+Decision: ACCEPTED -- `documentStatus`.
+
+Rationale: CVF-layer concept applies to EU directives, ISO standards,
+corporate policies, and Vietnamese legislation equally. `legalStatus`
+would create incorrect coupling to law-domain-only semantics. Name is
+not yet breaking for EC-02 lifecycle corpus records because no downstream
+EC-02 corpus records have been written. A pre-existing DSCP-T10
+company-docs test fixture already uses `domainFacetFields.documentStatus:
+"approved"` as generic metadata; EC-T2 and EC-T3 must treat that as a
+collision to isolate, not as evidence that the EC-02 lifecycle enum already
+exists. All EC-T2 through EC-T6 artifacts must use `documentStatus` as the
+canonical EC-02 lifecycle field name, with lifecycle-specific gating.
+Recorded 2026-06-11 under operator delegation to Claude audit.
 
 ### D-02 `QUERY_CLASS_GATED` token: accept, rename, or reject
 
@@ -176,7 +188,16 @@ query-class matrix rather than blocking wholesale.
 **Decision required:** accept `QUERY_CLASS_GATED` as the canonical token
 name, OR propose alternative (e.g. `QUERY_CLASS_MATRIX`, `SELECTIVE_GATE`).
 
-Codex records decision here: _PENDING OPERATOR INPUT_
+Decision: ACCEPTED -- `QUERY_CLASS_GATED`.
+
+Rationale: Self-describing and consistent with the contract's own
+`query_class` / `escalateConditions` vocabulary. No alternative name
+communicates the query-class dimension more clearly. Runtime consequence
+confirmed: EC-T5 must extend `dscp.domain.profile.contract.ts` line 102
+gate logic to handle `QUERY_CLASS_GATED` as a routing signal (not a flat
+block) -- this is a required EC-T5 design constraint, not an EC-T1 or
+EC-T2 action. Recorded 2026-06-11 under operator delegation to
+Claude audit.
 
 ### D-03 `documentStatus` for non-regulatory domains
 
@@ -189,7 +210,22 @@ Technical project docs and company docs do not typically have
 
 **Decision required:** select A or B, or propose alternative.
 
-Codex records decision here: _PENDING OPERATOR INPUT_
+Decision: OPTION B -- non-regulatory records omit `documentStatus`,
+`promulgationDate`, and `effectiveDate` entirely. EC-02 gate does not
+fire for these records.
+
+Rationale: Adding `documentStatus=IN_FORCE` as a default to technical
+project docs and company docs creates schema noise with no governance
+value and risks future agents treating the field as a regulatory signal.
+Only domain families with a known promulgation/effective-date lifecycle
+(e.g. `VN_NATIONAL_ASSEMBLY`, EU directive families, ISO standard
+families) carry `documentStatus`. EC-T3 schema update must include a
+`supportsDocumentStatus: boolean` flag at domain profile level to gate
+field presence. Existing non-regulatory test-fixture usage of
+`domainFacetFields.documentStatus: "approved"` must not activate EC-02
+lifecycle behavior and must be renamed, removed, or explicitly isolated in
+EC-T3 if it would confuse the schema. Recorded 2026-06-11 under operator
+delegation to Claude audit.
 
 ### D-04 EC-02 2026-07-01 date boundary status
 
@@ -204,14 +240,23 @@ any intermediate EC tranche.
 **Decision required:** confirm EC-02 boundary remains unchanged through
 EC-T4 inclusive, OR record any exception. No exception is expected.
 
-Codex records decision here: _PENDING OPERATOR INPUT_
+Decision: CONFIRMED -- EC-02 boundary `BLOCKED_UNTIL_2026-07-01` remains
+active and unchanged through EC-T4 inclusive. No exception recorded.
+
+Consequence: `ec02Gate: "BLOCKED_UNTIL_2026-07-01"` in all 6 PolicyLocal
+T11 candidate records is untouched until EC-T5. EC-T3 adds
+`documentStatus=PROMULGATED` to these records alongside the existing
+`ec02Gate` value -- the two fields coexist until EC-T5 replaces
+`BLOCKED_UNTIL_2026-07-01` with `QUERY_CLASS_GATED`. No record may
+receive `documentStatus=IN_FORCE` before 2026-07-01. Recorded 2026-06-11
+under operator delegation to Claude audit.
 
 ---
 
 ## Evidence
 
 All source-verification evidence gathered before this GC-018 was authored.
-No assumed or provisional symbols -- every item below was grep-verified at
+No source item below is accepted without direct grep or file evidence at
 HEAD `557d4f73` before authoring.
 
 Key findings:
@@ -220,9 +265,15 @@ Key findings:
 - Runtime block check: `ruleValue.startsWith("BLOCKED")` at line 102. This
   means `QUERY_CLASS_GATED` would NOT block profile application under current
   runtime logic. EC-T5 must update the runtime gate to handle the new token.
-- `QUERY_CLASS_GATED`, `documentStatus`, `promulgationDate` are NOT present
-  in any EXTENSIONS source -- they are new fields proposed by this decision
+- `QUERY_CLASS_GATED` and `promulgationDate` are NOT present in any
+  EXTENSIONS TypeScript/JSON source -- they are proposed by this decision
   record only.
+- `documentStatus` is present once in
+  `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.domain.profile.contract.test.ts`
+  line 70 as `domainFacetFields.documentStatus: "approved"` in a
+  company-docs test fixture. This is not the EC-02 lifecycle enum proposed
+  here and must be treated as a collision/isolation requirement for EC-T2
+  and EC-T3, not as existing runtime support.
 - All 6 PolicyLocal T11 candidate records carry `"ec02Gate":
   "BLOCKED_UNTIL_2026-07-01"` in the manifest JSON.
 - EC-02 contract distinguishes `current_applicability_before_effective_date`
@@ -240,7 +291,8 @@ Key findings:
 | `ec02Gate: "BLOCKED_UNTIL_2026-07-01"` (6 records) | external operator workspace: `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\data\generated\policylocal-t11-candidate-manifest.json`; SHA256 `023F1276092756232949662E9BE6E635D545AB22B2BD19284F11F82789C7FD1A` | lines 30, 57, 85, 113, 140, 168 |
 | `EC-02` escalation condition | `docs/reference/CVF_LPCI_RESPONSE_BOUNDARY_ENFORCEMENT_CONTRACT_2026-06-04.md` | line 72-80 |
 | `QUERY_CLASS_GATED` token | grep across all EXTENSIONS/ TS + JSON | NOT FOUND (proposed only; exists in roadmap doc only) |
-| `documentStatus` field | grep across all EXTENSIONS/ TS + JSON | NOT FOUND (proposed only) |
+| `documentStatus` existing non-EC-02 fixture key | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.domain.profile.contract.test.ts` | line 70: `domainFacetFields.documentStatus: "approved"` |
+| EC-02 lifecycle `documentStatus` enum values | grep across all EXTENSIONS/ TS + JSON | NOT FOUND for `PROMULGATED`, `IN_FORCE`, `STATUS_UNKNOWN` enum usage |
 | `promulgationDate` field | grep across all EXTENSIONS/ TS + JSON | NOT FOUND (proposed only) |
 | `effectiveDate` field in contract | `docs/reference/CVF_LPCI_RESPONSE_BOUNDARY_ENFORCEMENT_CONTRACT_2026-06-04.md` | line 104, 130 |
 | Roadmap authority | `docs/roadmaps/CVF_LPCI2_EXTRACTION_AND_EC02_REFINEMENT_ROADMAP_2026-06-10.md` | Part B, Proposed Tranches section |
@@ -252,12 +304,15 @@ Key findings:
 
 ## EC-T2 Authorization Boundary (what the contract amendment must contain)
 
-When EC-T1 is closed and operator decisions D-01 through D-04 are recorded,
-EC-T2 is authorized to produce:
+When EC-T1 is closed (D-01 through D-04 recorded), EC-T2 is authorized
+to produce:
 
 1. Updated `docs/reference/CVF_LPCI_RESPONSE_BOUNDARY_ENFORCEMENT_CONTRACT_*`
    (new version, references prior contract version):
    - EC-02 trigger matrix split by `documentStatus` x query class.
+   - Collision note: pre-existing
+     `domainFacetFields.documentStatus: "approved"` in the company-docs
+     DSCP-T10 test fixture is not EC-02 lifecycle support.
    - `notYetInForceDisclosure` template mechanism (i18n-ready, locale from
      domain profile, no hardcoded language strings in pipeline code).
    - `documentStatus` listed as a required corpus record field checked at
@@ -282,6 +337,9 @@ EC-T3 (authorized after EC-T2 closes) adds to the corpus record schema:
 - `promulgationDate: string | null` -- ISO 8601 or null
 - `effectiveDate: string | null` -- ISO 8601 or null
 - `documentStatus: "PROMULGATED" | "IN_FORCE" | "STATUS_UNKNOWN"` -- computed
+- `supportsDocumentStatus: boolean` or equivalent domain-profile guard so
+  non-regulatory records do not inherit EC-02 lifecycle fields from generic
+  metadata keys.
 - Migration rule: all existing records with `BLOCKED_UNTIL_*` value receive
   `documentStatus=PROMULGATED` (not `IN_FORCE`). No record may transition
   from `BLOCKED_*` to `IN_FORCE` without an operator-supplied `effectiveDate`
@@ -315,13 +373,35 @@ This GC-018 may transition from `PROPOSED` to `CLOSED_PASS_BOUNDED` only when:
    as genuinely new (not missing from grep scope).
 3. EC-T2 authorization boundary is accepted as stated.
 4. Pre-closure autorun gate passes:
-   `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base 557d4f73 --head HEAD`
+   `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base f15bdac8 --head HEAD`
 5. Reviewer-fast passes:
    `python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast --serial`
 
 There is no worker dispatch step for EC-T1. Codex fills in operator decisions,
 reviews the source verification table, runs gates, updates status to
 `CLOSED_PASS_BOUNDED`, and commits.
+
+---
+
+## Finding-To-Governance Learning Disposition
+
+Defect class: `SOURCE_VERIFICATION_NEGATIVE_SEARCH_SCOPE_GAP`
+
+Learning lane: `governance/control-plane learning`
+
+Finding: the initial EC-T1 baseline claimed `documentStatus` was NOT FOUND in
+EXTENSIONS TypeScript/JSON. Codex closure review found one existing
+`domainFacetFields.documentStatus: "approved"` fixture in
+`EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.domain.profile.contract.test.ts`
+line 70.
+
+Disposition: `MACHINE_CHECK_CANDIDATE`
+
+Next control action: future source-verification work orders and GC-018 packets
+that claim a token is NOT FOUND must record the search roots and must classify
+same-token collisions separately from the proposed runtime/schema meaning.
+EC-T2 must carry forward the company-docs fixture collision as a contract
+constraint.
 
 ---
 

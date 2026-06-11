@@ -154,6 +154,31 @@ and must cite current owner paths for any partial implementation surface found.
 
 ---
 
+## Negative Search And Collision Discipline
+
+If a source-verification row, baseline, roadmap, work order, or completion
+packet claims a token, field, enum, schema key, failure token, or config key is
+`NOT FOUND`, the artifact must include:
+
+- exact search roots;
+- exact search command or structured query;
+- whether the search covered source, tests, docs, JSON, and external evidence;
+- same-token collision results, if any;
+- a disposition that separates "same token exists with different meaning" from
+  "token absent".
+
+Do not write `NOT FOUND` when a same-token occurrence exists in a test fixture,
+generic metadata surface, archived contract, or docs proposal. Record it as a
+collision or non-authoritative occurrence, then state why it is or is not
+binding for the current work.
+
+This rule is promoted from the EC-T1 closure finding where
+`documentStatus` existed in a DSCP-T10 company-docs test fixture but was first
+claimed as absent from EXTENSIONS. Future EC-T2 work must carry forward that
+collision instead of rediscovering it during implementation.
+
+---
+
 ## Dispatch Packet Authoring Learning Promotion
 
 If Codex or another reviewer fixes a dispatch packet before committing it, the

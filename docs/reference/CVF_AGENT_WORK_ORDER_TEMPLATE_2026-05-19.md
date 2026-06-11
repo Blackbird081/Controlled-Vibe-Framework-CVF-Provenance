@@ -358,6 +358,7 @@ Required source-fidelity notes:
 - Runtime/source facts verified from current source or canonical contract:
 - Completion review facts used only when no runtime/source contract exists:
 - Draft-only tokens that appear nowhere else in repo:
+- Same-token collisions with different meaning:
 - Any missing or ambiguous source fact:
 
 If a source fact cannot be verified, either correct the work order or return to
@@ -433,6 +434,9 @@ Rules:
 - If a claimed token appears only in this draft work order, mark it
   `BLOCKED_SOURCE_NOT_FOUND` unless it is explicitly listed as a new doc-only
   field in the table below.
+- If a claimed token appears elsewhere with a different meaning, do not mark
+  it `NOT FOUND`; record the collision, cite the occurrence, and explain why
+  it is or is not binding for this work.
 - Newly proposed documentation/connector fields must not be placed in the
   Source Verification Table as if they already exist.
 - Do not dispatch implementation with guessed fields, inferred names,
