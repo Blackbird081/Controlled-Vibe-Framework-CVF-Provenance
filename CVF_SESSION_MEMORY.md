@@ -58,7 +58,8 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-LPCI2 EC-T5 DSCP gate value update is `CLOSED_BLOCKED_BOUNDED`.
+LPCI2 EC-T5 DSCP gate value update is `CLOSED_BLOCKED_BOUNDED` at material
+commit `9a894207`.
 
 Artifacts:
 

@@ -38,9 +38,8 @@ Startup acknowledged: current mode=`lpci2_ec_t5_gate_value_update_closed_blocked
 
 `lpci2_ec_t5_gate_value_update_closed_blocked_bounded`
 
-Current HEAD recorded for this handoff: `b815fcf9`
-(prior-verification-reuse checker hardening commit; EC-T5 closure commit will
-be recorded by a follow-up session sync).
+Current HEAD recorded for this handoff: `9a894207`
+(EC-T5 bounded block-decision closure commit).
 
 ## Active Boundary
 
@@ -98,7 +97,7 @@ behavior, provider/API-key use, public-sync, current-law/legal-quality claim,
 production/public readiness, EC-T6 unlock, T12 unlock, memory reinjection,
 high-risk promotion, or autonomous mutation.
 
-Prior verification reuse and Unicode evidence handling hardening is
+Prior verification reuse and Unicode evidence handling checker hardening is
 `CLOSED_PASS_BOUNDED` at commit `b815fcf9`.
 
 Artifacts:
