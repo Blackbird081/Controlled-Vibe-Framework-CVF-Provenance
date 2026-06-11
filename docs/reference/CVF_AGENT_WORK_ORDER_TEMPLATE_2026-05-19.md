@@ -403,12 +403,17 @@ from a source audit, include an ACCEPT_AS_OWNER_MAP coverage disposition that
 names each accepted concept from the cited audit and marks it as in-scope,
 already completed, deferred, rejected, or out-of-scope with reason.
 
+### Intake Role Routing Decision
+
+Ready or dispatched work orders must include `## Intake Role Routing Decision`
+before worker execution. The orchestrator owns this block and must include the
+fields required by
+`docs/reference/CVF_INTAKE_ROLE_ROUTING_DECISION_STANDARD_2026-06-11.md`;
+unresolved routing keeps the work order in `HOLD_*` or `DRAFT`.
+
 ### Single-Agent Multi-Role Control Block
 
-If one agent owns implementation plus review/closure roles, include the control
-block required by
-`docs/reference/CVF_SINGLE_AGENT_MULTI_ROLE_CONTROL_STANDARD_2026-06-11.md`.
-Do not claim independent review from a single-agent multi-role pass.
+If one agent owns implementation plus review/closure roles, include the block required by `docs/reference/CVF_SINGLE_AGENT_MULTI_ROLE_CONTROL_STANDARD_2026-06-11.md`.
 
 If the work order names, maps, modifies, consumes, or instructs an agent to use
 any runtime field, interface, function, type, schema key, receipt field,

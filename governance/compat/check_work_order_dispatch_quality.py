@@ -36,6 +36,7 @@ COMMIT_MODE_ANCHOR_MARKER = "Commit Mode And Base-Anchor Lifecycle"
 DISPATCH_PACKET_LEARNING_MARKER = "Dispatch Packet Authoring Learning Promotion"
 NEGATIVE_SEARCH_COLLISION_MARKER = "Negative Search And Collision Discipline"
 SINGLE_AGENT_MULTI_ROLE_MARKER = "Single-Agent Multi-Role Control Block"
+INTAKE_ROLE_ROUTING_MARKER = "Intake Role Routing Decision"
 ALLOWED_COMMIT_MODES = {
     "WORKER_MAY_COMMIT",
     "WORKER_MUST_NOT_COMMIT",
@@ -97,6 +98,17 @@ NEGATIVE_SEARCH_TOKEN_STOPWORDS = {
 IMPLEMENTATION_ROLE_TOKENS = {"worker", "implementer", "executor", "builder", "coder"}
 REVIEW_ROLE_TOKENS = {"reviewer", "committer", "closer", "auditor"}
 ORCHESTRATION_ROLE_TOKENS = {"orchestrator", "planner", "dispatcher"}
+ROLE_ROUTING_MODES = {
+    "SINGLE_AGENT_SINGLE_ROLE",
+    "SINGLE_AGENT_MULTI_ROLE",
+    "MULTI_AGENT_MULTI_ROLE",
+    "MULTI_AGENT_SINGLE_ROLE",
+}
+PENDING_ROLE_ROUTING_MODES = {
+    "HOLD_PENDING_OPERATOR_DECISION",
+    "BLOCKED_PENDING_OPERATOR_DECISION",
+    "PARKED_PENDING_OPERATOR_DECISION",
+}
 
 REQUIRED_SOURCE_COLUMNS = (
     "Claimed item",
@@ -1099,7 +1111,7 @@ def _role_bucket(role_cell: str) -> set[str]:
 
 def _single_agent_multi_role_phrase_present(text: str) -> bool:
     return re.search(
-        r"\b(single[- ]agent\s+multi[- ]role|one\s+agent\s+multiple\s+roles|"
+        r"\b(single[-_ ]agent[-_ ]multi[-_ ]role|SINGLE_AGENT_MULTI_ROLE|one\s+agent\s+multiple\s+roles|"
         r"same\s+agent\s+(?:owns|performs|executes)[\s\S]{0,80}(?:worker|implementer|reviewer|committer)|"
         r"Codex\s+multi[- ]role|Claude\s+multi[- ]role|self[- ]review)\b",
         text,
@@ -1155,6 +1167,64 @@ def _validate_single_agent_multi_role_control(text: str, artifact_label: str) ->
             issues.append(
                 f"{artifact_label} single-agent multi-role control block is missing {label}"
             )
+    return sorted(set(issues))
+
+
+def _extract_role_routing_modes(section: str) -> set[str]:
+    upper_section = section.upper()
+    return {
+        mode
+        for mode in ROLE_ROUTING_MODES | PENDING_ROLE_ROUTING_MODES
+        if mode in upper_section
+    }
+
+
+def _validate_intake_role_routing_decision(text: str, artifact_label: str) -> list[str]:
+    section = _extract_section(text, INTAKE_ROLE_ROUTING_MARKER)
+    if not section:
+        return [
+            f"dispatch/ready {artifact_label} lacks `## {INTAKE_ROLE_ROUTING_MARKER}`"
+        ]
+
+    issues: list[str] = []
+    modes = _extract_role_routing_modes(section)
+    allowed_modes = modes & ROLE_ROUTING_MODES
+    pending_modes = modes & PENDING_ROLE_ROUTING_MODES
+    if not allowed_modes and not pending_modes:
+        issues.append(
+            f"{artifact_label} intake role routing decision lacks a canonical route mode"
+        )
+    if pending_modes:
+        issues.append(
+            f"dispatch/ready {artifact_label} records pending role routing mode "
+            f"`{sorted(pending_modes)[0]}`; keep status HOLD/DRAFT until routing is resolved"
+        )
+    if len(allowed_modes) > 1:
+        issues.append(
+            f"{artifact_label} intake role routing decision records multiple route modes: "
+            f"{', '.join(sorted(allowed_modes))}"
+        )
+
+    required_patterns = {
+        "intake summary": r"intake|user request|operator request|raw request|non-coder",
+        "scope classification": r"scope|bounded|blast radius|changed paths|allowed scope",
+        "risk sensitivity": r"risk|public-sync|provider|live|secret|legal|production|readiness",
+        "selected role route": r"role route|routing mode|execution model|selected route|routeMode|route mode",
+        "role separation basis": r"worker|reviewer|orchestrator|single-agent|multi-agent|single_agent|multi_agent",
+        "escalation condition": r"escalation|operator checkpoint|external reviewer|hold|blocked|stop",
+    }
+    for label, pattern in required_patterns.items():
+        if not re.search(pattern, section, re.IGNORECASE):
+            issues.append(
+                f"{artifact_label} intake role routing decision is missing {label}"
+            )
+
+    if "SINGLE_AGENT_MULTI_ROLE" in allowed_modes and SINGLE_AGENT_MULTI_ROLE_MARKER not in text:
+        issues.append(
+            f"{artifact_label} selects `SINGLE_AGENT_MULTI_ROLE` but lacks "
+            f"`## {SINGLE_AGENT_MULTI_ROLE_MARKER}`"
+        )
+
     return sorted(set(issues))
 
 
@@ -1676,6 +1746,7 @@ def _validate_work_order(path: str, text: str) -> list[str]:
         issues.extend(_validate_worker_completion_review_boundary(text))
         issues.extend(_validate_no_commit_reviewer_closure_contract(text))
         issues.extend(_validate_source_verification_disposition_discipline(text))
+        issues.extend(_validate_intake_role_routing_decision(text, "work order"))
         issues.extend(_validate_single_agent_multi_role_control(text, "work order"))
 
     if dispatching and _is_connector_wave(path, text):
@@ -2232,6 +2303,7 @@ def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str
             "Current Runtime Freshness Verification",
             NEGATIVE_SEARCH_COLLISION_MARKER,
             SINGLE_AGENT_MULTI_ROLE_MARKER,
+            INTAKE_ROLE_ROUTING_MARKER,
             DISPATCH_PACKET_LEARNING_MARKER,
             "ACCEPT_AS_OWNER_MAP coverage",
             THIS_SCRIPT_PATH,
@@ -2249,6 +2321,7 @@ def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str
             "Current Runtime Freshness Verification",
             NEGATIVE_SEARCH_COLLISION_MARKER,
             SINGLE_AGENT_MULTI_ROLE_MARKER,
+            INTAKE_ROLE_ROUTING_MARKER,
             "ACCEPT_AS_OWNER_MAP coverage",
             THIS_SCRIPT_PATH,
         ),

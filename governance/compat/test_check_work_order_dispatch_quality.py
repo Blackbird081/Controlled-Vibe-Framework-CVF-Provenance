@@ -51,6 +51,7 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
                     "Work-Order Fulfillment Manifest",
                     MODULE.NEGATIVE_SEARCH_COLLISION_MARKER,
                     MODULE.SINGLE_AGENT_MULTI_ROLE_MARKER,
+                    MODULE.INTAKE_ROLE_ROUTING_MARKER,
                     MODULE.DISPATCH_PACKET_LEARNING_MARKER,
                     MODULE.THIS_SCRIPT_PATH,
                 ]
@@ -73,6 +74,7 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
                     "Work-Order Fulfillment Manifest",
                     MODULE.NEGATIVE_SEARCH_COLLISION_MARKER,
                     MODULE.SINGLE_AGENT_MULTI_ROLE_MARKER,
+                    MODULE.INTAKE_ROLE_ROUTING_MARKER,
                     MODULE.THIS_SCRIPT_PATH,
                 ]
             ),
@@ -310,6 +312,79 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
             if "single-agent multi-role" in issue
         ]
         self.assertEqual([], single_agent_issues)
+
+    def test_dispatch_ready_without_intake_role_routing_decision_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_INTAKE_ROUTING_MISSING_2026-06-11.md"
+        self._write("docs/reference/source.md", "## Scope\nsource\n")
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCH_READY",
+                    "Commit mode: WORKER_MAY_COMMIT",
+                    "dispatchBaseHead: abc123",
+                    "executionBaseHead: WORKER_MUST_CAPTURE_AT_START",
+                    "closureBaseHead: REVIEWER_CAPTURE",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Allowed-scope remediation is mandatory.",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| Template | `docs/reference/source.md` | Scope | `source.md` | doc | ACCEPT |",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "dispatch/ready work order lacks `## Intake Role Routing Decision`",
+            report["violations"][0]["issues"],
+        )
+
+    def test_dispatch_ready_with_intake_role_routing_decision_passes(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_INTAKE_ROUTING_PASS_2026-06-11.md"
+        self._write("docs/reference/source.md", "## Scope\nsource\n")
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCH_READY",
+                    "Commit mode: WORKER_MAY_COMMIT",
+                    "dispatchBaseHead: abc123",
+                    "executionBaseHead: WORKER_MUST_CAPTURE_AT_START",
+                    "closureBaseHead: REVIEWER_CAPTURE",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Allowed-scope remediation is mandatory.",
+                    "## Intake Role Routing Decision",
+                    "- Intake summary: operator request is non-coder control-plane work.",
+                    "- Scope classification: bounded allowed scope with low blast radius.",
+                    "- Risk sensitivity: no public-sync, provider, live, secret, legal, production, or readiness claim.",
+                    "- Selected role route: routeMode=SINGLE_AGENT_SINGLE_ROLE.",
+                    "- Role separation basis: orchestrator and worker duties remain local; reviewer is not claimed independent.",
+                    "- Escalation condition: stop for operator checkpoint or external reviewer if scope/risk changes.",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| Template | `docs/reference/source.md` | Scope | `source.md` | doc | ACCEPT |",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        routing_issues = [
+            issue
+            for violation in report["violations"]
+            for issue in violation["issues"]
+            if "intake role routing" in issue or "Intake Role Routing" in issue
+        ]
+        self.assertEqual([], routing_issues)
 
     def test_accept_row_with_missing_source_file_fails(self) -> None:
         work_order = "docs/work_orders/CVF_WO_LHW6_T2_TEST_2026-05-28.md"
@@ -601,6 +676,13 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
                     "dispatchBaseHead: abc1234",
                     "executionBaseHead: capture before edits",
                     "closureBaseHead: reviewer stage",
+                    "## Intake Role Routing Decision",
+                    "- Intake summary: operator request is bounded no-commit worker execution.",
+                    "- Scope classification: bounded work order with low blast radius.",
+                    "- Risk sensitivity: no public-sync, provider, live, secret, legal, production, or readiness claim.",
+                    "- Selected role route: routeMode=MULTI_AGENT_MULTI_ROLE.",
+                    "- Role separation basis: worker produces packet; reviewer owns completion and closure.",
+                    "- Escalation condition: stop for operator checkpoint if scope/risk changes.",
                     "## Reviewer Closure Conversion Block",
                     "completionReviewPath: `docs/reviews/CVF_VALID_NO_COMMIT_COMPLETION_2026-06-02.md`",
                     "reviewerOwnedClosurePaths:",

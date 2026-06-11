@@ -229,6 +229,20 @@ collision or non-authoritative occurrence and explain why it is not binding.
 Do not close a bare `NOT FOUND` claim when the repo contains a same-token
 occurrence.
 
+### Intake Role Routing Decision
+
+Ready or dispatched work orders must include `## Intake Role Routing Decision`
+before implementation. The orchestrator must convert raw non-coder intake into
+a role-routing decision with intake summary, scope classification, risk
+sensitivity, selected route mode, role separation basis, and escalation
+condition.
+
+Allowed route modes are `SINGLE_AGENT_SINGLE_ROLE`,
+`SINGLE_AGENT_MULTI_ROLE`, `MULTI_AGENT_MULTI_ROLE`, and
+`MULTI_AGENT_SINGLE_ROLE`. If routing is unresolved, the work order must stay
+`HOLD_*` or `DRAFT`; a dispatch-ready artifact must not carry a pending or
+blocked role route as its final decision.
+
 ### Single-Agent Multi-Role Control Block
 
 Single-agent multi-role execution is allowed only as bounded evidence
