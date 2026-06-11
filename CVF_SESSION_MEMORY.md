@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-11
 
-Current mode marker: `lpci2_ex_t1_governance_template_hardening_closed_pending_ex_t2_authorization`
+Current mode marker: `lpci2_ex_t2_tier1_digital_native_extractor_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `lpci2_ex_t1_governance_template_hardening_closed_pending_ex_t2_authorization`.
+Current mode: `lpci2_ex_t2_tier1_digital_native_extractor_dispatched`.
 
 Active handoff:
 
@@ -57,6 +57,25 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+LPCI2 EX-T2 Tier 1 digital-native extractor is `DISPATCHED` at material commit
+`3c96b229`.
+
+Dispatch artifacts:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_LPCI2_EX_T2_TIER1_DIGITAL_NATIVE_EXTRACTOR_2026-06-11.md`;
+- work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T2_TIER1_DIGITAL_NATIVE_EXTRACTOR_FOR_CLAUDE_2026-06-11.md`;
+- parent roadmap:
+  `docs/roadmaps/CVF_LPCI2_EXTRACTION_AND_EC02_REFINEMENT_ROADMAP_2026-06-10.md`.
+
+Result: Claude may execute the EX-T2 work order under `WORKER_MUST_NOT_COMMIT`
+and return uncommitted artifacts for Codex review. Boundary: dispatch package
+only; no extractor implementation yet, OCR fallback, Tier 3 quality gate, DSCP
+wire-in, dependency addition, OCR model download, corpus ingestion, EC-02
+semantic change, T12 authoring, provider/API key use, public-sync, production
+readiness, or public readiness.
 
 LPCI2 EX-T1 governance template hardening is `CLOSED_PASS_BOUNDED` at material
 commit `f88360df`.
@@ -234,12 +253,12 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: operator/Codex may authorize a fresh EX-T2 child GC-018 and
-source-verified work order for Tier 1 digital-native extraction using the
-accepted composed stack recommendation. EX-T2 implementation remains forbidden
-until that child authorization exists. EC-T1 remains pending separate operator
-decision. EX-T3 OCR remains pending separate operator decision. T12 remains
-forbidden until EC-02 resolves on or after 2026-07-01.
+Next allowed move: Claude executes
+`docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T2_TIER1_DIGITAL_NATIVE_EXTRACTOR_FOR_CLAUDE_2026-06-11.md`
+under `WORKER_MUST_NOT_COMMIT` and returns uncommitted artifacts for Codex
+review. EC-T1 remains pending separate operator decision. EX-T3 OCR remains
+pending separate operator decision. T12 remains forbidden until EC-02 resolves
+on or after 2026-07-01.
 
 LHW24 remains the latest closed numbered LHW wave in the state registry.
 

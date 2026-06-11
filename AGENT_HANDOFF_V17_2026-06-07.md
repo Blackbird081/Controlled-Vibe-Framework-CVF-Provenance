@@ -32,15 +32,15 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci2_ex_t1_governance_template_hardening_closed_pending_ex_t2_authorization`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=operator/Codex may authorize a fresh EX-T2 child GC-018 and source-verified work order using the hardened authoring addendum, while EC-T1 and EX-T3 remain pending separate operator decisions; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`lpci2_ex_t2_tier1_digital_native_extractor_dispatched`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=Claude executes the EX-T2 Tier 1 digital-native extractor work order under WORKER_MUST_NOT_COMMIT and returns uncommitted artifacts for Codex review; parked checkpoint=EC-T1/EX-T3 plus DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`lpci2_ex_t1_governance_template_hardening_closed_pending_ex_t2_authorization`
+`lpci2_ex_t2_tier1_digital_native_extractor_dispatched`
 
-Current HEAD recorded for this handoff: `f88360df`
-(private provenance material commit closing LPCI2 EX-T1 governance template
-hardening).
+Current HEAD recorded for this handoff: `3c96b229`
+(private provenance material commit dispatching LPCI2 EX-T2 Tier 1
+digital-native extractor).
 
 ## Active Boundary
 
@@ -57,6 +57,25 @@ This handoff is a pointer record only. Detailed historical continuity remains
 in archived handoffs and governed completion packets.
 
 ## Latest Continuity Note
+
+LPCI2 EX-T2 Tier 1 digital-native extractor is `DISPATCHED` at material commit
+`3c96b229`.
+
+Dispatch artifacts:
+
+- `docs/baselines/CVF_GC018_LPCI2_EX_T2_TIER1_DIGITAL_NATIVE_EXTRACTOR_2026-06-11.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T2_TIER1_DIGITAL_NATIVE_EXTRACTOR_FOR_CLAUDE_2026-06-11.md`
+- `docs/roadmaps/CVF_LPCI2_EXTRACTION_AND_EC02_REFINEMENT_ROADMAP_2026-06-10.md`
+
+Result: Claude may execute the EX-T2 work order under `WORKER_MUST_NOT_COMMIT`
+and return uncommitted artifacts for Codex review. Reviewer-fast and
+pre-dispatch autorun passed on base `2d6510ca` before dispatch commit;
+pre-commit governance chain passed.
+
+Boundary: dispatch package only; no extractor implementation yet, OCR fallback,
+Tier 3 quality gate, DSCP wire-in, dependency addition, OCR model download,
+corpus ingestion, EC-02 semantic change, T12 authoring, provider/API key use,
+public-sync, production readiness, or public readiness.
 
 LPCI2 EX-T1 governance template hardening is `CLOSED_PASS_BOUNDED` at material
 commit `f88360df`.
@@ -346,13 +365,12 @@ history.
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
-Next allowed move: operator/Codex may authorize a fresh EX-T2 child GC-018 and
-source-verified work order for Tier 1 digital-native extraction using the
-accepted composed stack recommendation and the hardened authoring addendum.
-EX-T2 implementation remains forbidden until that child authorization exists.
-EC-T1 remains pending separate operator decision. EX-T3 OCR remains pending
-separate operator decision. Parked lanes remain Live Redis, DEP2, and external
-receipt-anchor.
+Next allowed move: Claude executes
+`docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T2_TIER1_DIGITAL_NATIVE_EXTRACTOR_FOR_CLAUDE_2026-06-11.md`
+under `WORKER_MUST_NOT_COMMIT` and returns uncommitted artifacts for Codex
+review. EC-T1 remains pending separate operator decision. EX-T3 OCR remains
+pending separate operator decision. Parked lanes remain Live Redis, DEP2, and
+external receipt-anchor.
 
 LPCI2-T12 remains forbidden until a separate operator-authorized evidence path
 resolves EC-02 review on or after 2026-07-01, known `currentStatus`, known
