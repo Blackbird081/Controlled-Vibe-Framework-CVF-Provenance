@@ -38,8 +38,9 @@ Startup acknowledged: current mode=`lpci2_ex_t1_dependency_source_audit_dispatch
 
 `lpci2_ex_t1_dependency_source_audit_dispatched`
 
-Current HEAD recorded for this handoff: `8b6bd04d`
-(session-sync parent commit before EX-T1 dispatch material commit).
+Current HEAD recorded for this handoff: `37665acc`
+(private provenance material commit dispatching LPCI2 EX-T1 dependency/source
+audit).
 
 ## Active Boundary
 
@@ -57,8 +58,8 @@ in archived handoffs and governed completion packets.
 
 ## Latest Continuity Note
 
-LPCI2 EX-T1 dependency/source audit dispatch package is prepared under the
-hardened design-control foundation.
+LPCI2 EX-T1 dependency/source audit dispatch package is committed at material
+commit `37665acc` under the hardened design-control foundation.
 
 Dispatch artifacts:
 

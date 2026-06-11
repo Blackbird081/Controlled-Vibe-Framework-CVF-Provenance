@@ -58,8 +58,9 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-LPCI2 EX-T1 dependency/source audit dispatch package is prepared under the
-hardened design-control foundation. Dispatch artifacts:
+LPCI2 EX-T1 dependency/source audit dispatch package is committed at material
+commit `37665acc` under the hardened design-control foundation. Dispatch
+artifacts:
 
 - GC-018:
   `docs/baselines/CVF_GC018_LPCI2_EX_T1_DEPENDENCY_SOURCE_AUDIT_2026-06-11.md`;
