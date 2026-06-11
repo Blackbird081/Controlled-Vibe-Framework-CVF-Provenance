@@ -32,15 +32,15 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci2_ex_t1_dependency_source_audit_closed_pending_next_operator_decision`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=operator/Codex may authorize a fresh EX-T2 child GC-018 and source-verified work order, while EC-T1 and EX-T3 remain pending separate operator decisions; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`lpci2_ex_t1_governance_template_hardening_closed_pending_ex_t2_authorization`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=operator/Codex may authorize a fresh EX-T2 child GC-018 and source-verified work order using the hardened authoring addendum, while EC-T1 and EX-T3 remain pending separate operator decisions; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`lpci2_ex_t1_dependency_source_audit_closed_pending_next_operator_decision`
+`lpci2_ex_t1_governance_template_hardening_closed_pending_ex_t2_authorization`
 
-Current HEAD recorded for this handoff: `7e10609e`
-(private provenance material commit closing LPCI2 EX-T1 dependency/source
-audit).
+Current HEAD recorded for this handoff: `f88360df`
+(private provenance material commit closing LPCI2 EX-T1 governance template
+hardening).
 
 ## Active Boundary
 
@@ -57,6 +57,34 @@ This handoff is a pointer record only. Detailed historical continuity remains
 in archived handoffs and governed completion packets.
 
 ## Latest Continuity Note
+
+LPCI2 EX-T1 governance template hardening is `CLOSED_PASS_BOUNDED` at material
+commit `f88360df`.
+
+Artifacts:
+
+- `docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md`
+- `docs/reviews/CVF_EX_T1_GOVERNANCE_TEMPLATE_HARDENING_COMPLETION_2026-06-11.md`
+
+Changed control surfaces:
+
+- `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
+- `docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md`
+- `governance/compat/check_work_order_dispatch_quality.py`
+- `governance/compat/test_check_work_order_dispatch_quality.py`
+
+Result: future orchestrators have a compact authoring addendum for worker
+return structure, pseudo-path discipline, machine closure package row/status
+tokens, parent-roadmap versus child-closure wording, and runtime freshness
+non-use claims. The dispatch-quality checker now catches provider/API-key
+non-use freshness claims while avoiding provider-registry false positives for
+generic non-provider registry-update wording.
+
+Boundary: control-plane authoring/template/checker hardening only; no extractor
+implementation, dependency addition, OCR model download, provider/API key use,
+public-sync, hosted deployment, production claim, public claim expansion,
+Learning Orchestrator behavior, memory reinjection, high-risk promotion, or
+autonomous mutation.
 
 LPCI2 EX-T1 dependency/source audit is `CLOSED_PASS_BOUNDED` at material commit
 `7e10609e`.
@@ -320,10 +348,11 @@ LHW24 remains the latest closed numbered LHW wave in
 
 Next allowed move: operator/Codex may authorize a fresh EX-T2 child GC-018 and
 source-verified work order for Tier 1 digital-native extraction using the
-accepted composed stack recommendation. EX-T2 implementation remains forbidden
-until that child authorization exists. EC-T1 remains pending separate operator
-decision. EX-T3 OCR remains pending separate operator decision. Parked lanes
-remain Live Redis, DEP2, and external receipt-anchor.
+accepted composed stack recommendation and the hardened authoring addendum.
+EX-T2 implementation remains forbidden until that child authorization exists.
+EC-T1 remains pending separate operator decision. EX-T3 OCR remains pending
+separate operator decision. Parked lanes remain Live Redis, DEP2, and external
+receipt-anchor.
 
 LPCI2-T12 remains forbidden until a separate operator-authorized evidence path
 resolves EC-02 review on or after 2026-07-01, known `currentStatus`, known

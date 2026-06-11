@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-11
 
-Current mode marker: `lpci2_ex_t1_dependency_source_audit_closed_pending_next_operator_decision`
+Current mode marker: `lpci2_ex_t1_governance_template_hardening_closed_pending_ex_t2_authorization`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `lpci2_ex_t1_dependency_source_audit_closed_pending_next_operator_decision`.
+Current mode: `lpci2_ex_t1_governance_template_hardening_closed_pending_ex_t2_authorization`.
 
 Active handoff:
 
@@ -57,6 +57,33 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+LPCI2 EX-T1 governance template hardening is `CLOSED_PASS_BOUNDED` at material
+commit `f88360df`.
+
+Closure artifacts:
+
+- addendum:
+  `docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md`;
+- completion:
+  `docs/reviews/CVF_EX_T1_GOVERNANCE_TEMPLATE_HARDENING_COMPLETION_2026-06-11.md`.
+
+Changed control surfaces: `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`,
+`docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md`,
+`governance/compat/check_work_order_dispatch_quality.py`, and
+`governance/compat/test_check_work_order_dispatch_quality.py`.
+
+Result: work-order authors now have a compact addendum for worker return
+structure, pseudo-path discipline, machine closure package row/status tokens,
+parent-roadmap versus child-closure wording, and runtime freshness non-use
+claims. The dispatch-quality checker now catches provider/API-key non-use
+freshness claims while avoiding provider-registry false positives for generic
+non-provider registry-update wording. Boundary: control-plane
+authoring/template/checker hardening only; no extractor implementation,
+dependency addition, OCR model download, provider/API key use, public-sync,
+hosted deployment, production claim, public claim expansion, Learning
+Orchestrator behavior, memory reinjection, high-risk promotion, or autonomous
+mutation.
 
 LPCI2 EX-T1 dependency/source audit is `CLOSED_PASS_BOUNDED` at material commit
 `7e10609e`.
