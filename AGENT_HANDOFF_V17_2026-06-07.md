@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`dscp_t11f_profile_selection_adapter_dispatch
 
 `dscp_t11f_profile_selection_adapter_dispatched`
 
-Current HEAD recorded for this handoff: `a1630ce6`
-(DSCP-T11F dispatch commit; parent of this handoff-sync-only commit).
+Current HEAD recorded for this handoff: `7ce1ade4`
+(Active archive backlog gate semantics fix; T11F remains pending review).
 
 ## Active Boundary
 
