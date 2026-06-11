@@ -38,9 +38,9 @@ Startup acknowledged: current mode=`lpci2_ec_t3_schema_update_dispatched`; activ
 
 `lpci2_ec_t3_schema_update_dispatched`
 
-Current HEAD recorded for this handoff: `43b2b652`
-(private provenance material commit dispatching LPCI2 EC-T3 corpus record
-schema update work order).
+Current HEAD recorded for this handoff: `838512da`
+(private provenance material commit hardening Source Verification table-shape
+dispatch controls while EC-T3 worker execution remains pending).
 
 ## Active Boundary
 
@@ -56,7 +56,54 @@ External agent memory files: non-canonical convenience only.
 This handoff is a pointer record only. Detailed historical continuity remains
 in archived handoffs and governed completion packets.
 
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: session continuity sync after material
+commit `838512da` so the active handoff and state registry name the latest
+control-plane hardening commit while preserving the EC-T3 next allowed move.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+
+Operator authorization: 2026-06-11 operator instructed Codex to keep tightening
+CVF foundation controls while Claude continues EC-T3 under a separate worker
+boundary.
+
+Rollback boundary: revert only this session-sync update to
+`AGENT_HANDOFF_V17_2026-06-07.md` and
+`CVF_SESSION/ACTIVE_SESSION_STATE.json` if the continuity record is incorrect.
+Do not revert the material hardening commit `838512da`, EC-T3 worker files, or
+unrelated governance/session history.
+
 ## Latest Continuity Note
+
+Source Verification table-shape checker hardening is `CLOSED_PASS_BOUNDED` at
+material commit `838512da`.
+
+Control artifacts:
+
+- `docs/reference/CVF_SOURCE_VERIFICATION_TABLE_SHAPE_STANDARD_2026-06-11.md`
+- `docs/reviews/CVF_SOURCE_VERIFICATION_TABLE_SHAPE_CHECKER_HARDENING_AUTH_2026-06-11.md`
+- `governance/compat/check_work_order_dispatch_quality.py`
+- `governance/compat/test_check_work_order_dispatch_quality.py`
+- `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
+
+Result: dispatch-quality now rejects Source Verification Block/Table sections
+that contain source-verification-like tables without the canonical six columns:
+`Claimed item`, `Source file`, `Verified line/section`,
+`Verified path or symbol`, `Owning interface/function/schema`, and
+`Disposition`. The work-order template also no longer instructs authors to
+leave `closureBaseHead` as the later-forbidden `NOT_EXECUTED_YET` token.
+
+Verification: focused dispatch-quality tests PASS 61/61; reviewer-fast PASS;
+governed file-size PASS with same-domain reference split evidence; full
+pre-commit governance chain PASS at commit `838512da`.
+
+Boundary: control-plane checker/template hardening only; no EC-T3 worker
+implementation review, runtime/source semantics claim, provider/API key use,
+public-sync, current-law/legal-quality claim, production/public readiness,
+memory reinjection, high-risk promotion, or autonomous mutation.
 
 LPCI2 EC-T3 corpus record schema update dispatch is `DISPATCHED` at material
 commit `43b2b652`.
