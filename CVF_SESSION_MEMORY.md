@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-11
 
-Current mode marker: `lpci2_ec_t3_schema_update_closed_pass_bounded`
+Current mode marker: `lpci2_ec_t4_operator_date_evidence_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `lpci2_ec_t3_schema_update_closed_pass_bounded`.
+Current mode: `lpci2_ec_t4_operator_date_evidence_dispatched`.
 
 Active handoff:
 
@@ -57,6 +57,23 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+LPCI2 EC-T4 operator-date evidence backfill is `DISPATCHED` at dispatch base
+`5296825c`.
+
+Dispatch artifacts:
+
+- `docs/baselines/CVF_GC018_LPCI2_EC_T4_OPERATOR_DATE_EVIDENCE_BACKFILL_2026-06-11.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EC_T4_OPERATOR_DATE_EVIDENCE_BACKFILL_FOR_CLAUDE_2026-06-11.md`
+- `docs/roadmaps/CVF_LPCI2_EXTRACTION_AND_EC02_REFINEMENT_ROADMAP_2026-06-10.md`
+
+Result: Claude may execute EC-T4 under `WORKER_MUST_NOT_COMMIT` to create only
+the EC-T4 date evidence ledger, proposed metadata backfill JSON, and worker
+return packet. Boundary: no external Policy_Local edits, runtime/source edits,
+DSCP `ec02Gate` value change, `documentStatus=IN_FORCE`, corpus ingestion,
+provider/API-key use, public-sync, current-law/legal-quality claim,
+production/public readiness, memory reinjection, high-risk promotion, or
+autonomous mutation.
 
 LPCI2 EC-T3 corpus record schema update is `CLOSED_PASS_BOUNDED` at material
 commit `a895dc03` and closure commit `54bfff3f`.

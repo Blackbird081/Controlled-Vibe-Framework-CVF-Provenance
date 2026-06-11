@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_PARTIAL_AFTER_EX_T2_EC_T2_EC_T3_COMPLETE
+Status: ACTIVE_PARTIAL_AFTER_EX_T2_EC_T2_EC_T3_DISPATCHED
 
 docType: roadmap
 
@@ -14,7 +14,7 @@ Author: Claude (operator-directed proposal for Codex review and explicit operato
 
 ## Authorization And Decision
 
-Decision state: EX_T2_CHILD_LANE_COMPLETE_EC_T2_COMPLETE.
+Decision state: EX_T2_CHILD_LANE_COMPLETE_EC_T4_DISPATCHED.
 
 Operator instruction on 2026-06-11 authorized Codex to author the next work
 order under the hardened design-control foundation. EX-T1 is now completed as a
@@ -28,12 +28,12 @@ a source-verified work order, focused tests, and Codex completion review.
 
 This records closure of the bounded EX-T2 Tier 1 digital-native extractor
 implementation, EC-T1 regulatory date/status decision baseline, EC-T2 contract
-amendment plus machine-readable EC-02 semantics JSON, and EC-T3 TypeScript
-corpus schema fields. It does not authorize repo dependency addition, OCR model
-download, corpus ingestion, runtime retrieval behavior change, DSCP profile
-value update, public-sync, or live/provider proof. Any later child lane must
-receive fresh GC-018 authorization and a source-verified work order before
-dispatch.
+amendment plus machine-readable EC-02 semantics JSON, EC-T3 TypeScript corpus
+schema fields, and EC-T4 dispatch for operator-date evidence/backfill proposal.
+It does not authorize repo dependency addition, OCR model download, corpus
+ingestion, runtime retrieval behavior change, DSCP profile value update,
+public-sync, or live/provider proof. Any later child lane must receive fresh
+GC-018 authorization and a source-verified work order before dispatch.
 
 ---
 
@@ -620,7 +620,7 @@ that the runtime token, contract table, and machine semantics agree.
 | EC-T1 | Governance decision record | `CVF_GC018_REGULATORY_DATE_MODEL_*.md` - explicitly authorized scope; establishes `documentStatus` as CVF-layer concept | Explicit authorization |
 | EC-T2 | Contract and machine semantics | COMPLETE_BOUNDED: response boundary contract update plus machine-readable EC-02 gate semantics JSON | EC-T1 |
 | EC-T3 | Corpus record schema update | CLOSED_PASS_BOUNDED at `a895dc03`: `documentStatus`, `promulgationDate`, and `effectiveDate` schema support in TypeScript; no corpus JSON migration | EC-T2 |
-| EC-T4 | Per-project metadata backfill | Operator supplies actual dates for existing records; automated `documentStatus` computation and any record migration | EC-T3, operator dates |
+| EC-T4 | Per-project metadata backfill | DISPATCHED at `5296825c`: Claude may create operator-date evidence ledger and proposed metadata backfill only; no external workspace edit, no `IN_FORCE`, no `ec02Gate` change | EC-T3, operator dates |
 | EC-T5 | DSCP gate value update | `ec02Gate: "QUERY_CLASS_GATED"` in domain profiles; checker enforces new token | EC-T4 |
 | EC-T6 | Retrieval disclosure wire-in | Retrieval layer appends i18n disclosure when `documentStatus=PROMULGATED` | EC-T5 |
 
