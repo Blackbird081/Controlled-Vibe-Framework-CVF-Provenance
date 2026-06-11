@@ -463,8 +463,8 @@ Rules:
 - If a claimed token appears elsewhere with a different meaning, do not mark
   it `NOT FOUND`; record the collision, cite the occurrence, and explain why
   it is or is not binding for this work.
-- Newly proposed documentation/connector fields must not be placed in the
-  Source Verification Table as if they already exist.
+- Source Verification Table columns are canonical per `docs/reference/CVF_SOURCE_VERIFICATION_TABLE_SHAPE_STANDARD_2026-06-11.md`;
+  do not dispatch abbreviated source tables or doc-only fields as verified source facts.
 - Do not dispatch implementation with guessed fields, inferred names,
   placeholder paths, stale memory-only vocabulary, or "confirm later" language.
 - Forbidden closeout vocabulary for source facts includes `UNVERIFIED`, `TBD`,
@@ -626,7 +626,7 @@ release batch:
   dispatch anchor;
 - set `executionBaseHead` to `WORKER_MUST_CAPTURE_AT_START` unless the worker
   already captured a fresh execution anchor;
-- keep `closureBaseHead` as `NOT_EXECUTED_YET` until reviewer closure;
+- keep `closureBaseHead` as `REVIEWER_MUST_CAPTURE_AT_CLOSURE` until reviewer closure;
 - rerun `check_work_order_dispatch_quality.py` and pre-dispatch autorun gate on
   the release range.
 

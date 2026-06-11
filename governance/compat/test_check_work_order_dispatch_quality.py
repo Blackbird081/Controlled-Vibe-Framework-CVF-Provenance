@@ -1520,6 +1520,40 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
             issues,
         )
 
+    def test_dispatch_work_order_with_noncanonical_source_table_shape_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_SOURCE_TABLE_SHAPE_TEST_2026-06-11.md"
+        self._write("governance/contracts/source.ts", "export interface SourceThing { value: string; }\n")
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCHED",
+                    "Commit mode: WORKER_MAY_COMMIT",
+                    "dispatchBaseHead: abc123",
+                    "executionBaseHead: WORKER_MUST_CAPTURE_AT_START",
+                    "closureBaseHead: REVIEWER_CAPTURE",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Allowed-scope remediation is mandatory.",
+                    "## Source Verification Block",
+                    "| Symbol / path | File | Verified line | Disposition |",
+                    "|---|---|---|---|",
+                    "| `SourceThing` | `governance/contracts/source.ts` | line 1 | ACCEPT |",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "Source Verification table uses noncanonical columns; required columns are: "
+            "Claimed item | Source file | Verified line/section | Verified path or symbol | "
+            "Owning interface/function/schema | Disposition",
+            report["violations"][0]["issues"],
+        )
+
     def test_not_found_claim_without_negative_search_block_fails(self) -> None:
         work_order = "docs/work_orders/CVF_WO_NEGATIVE_SEARCH_TEST_2026-06-11.md"
         self._write("governance/contracts/source.ts", "export interface SourceThing { value: string; }\n")

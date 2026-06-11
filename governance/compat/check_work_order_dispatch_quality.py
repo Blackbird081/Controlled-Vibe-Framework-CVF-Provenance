@@ -663,6 +663,44 @@ def _source_table_has_required_columns(text: str) -> bool:
     return all(column in tables[0] for column in REQUIRED_SOURCE_COLUMNS)
 
 
+def _validate_source_verification_table_shape(text: str) -> list[str]:
+    sections = [
+        section
+        for heading in ("Source Verification Block", "Source Verification Table")
+        if (section := _extract_section(text, heading))
+    ]
+    issues: list[str] = []
+    source_like_headers = {
+        "claimeditem",
+        "sourcefile",
+        "verifiedlinesection",
+        "verifiedpathorsymbol",
+        "owninginterfacefunctionschema",
+        "disposition",
+        "symbolpath",
+        "symbol",
+        "path",
+        "file",
+        "verifiedline",
+        "verifiedsection",
+        "owner",
+        "schema",
+    }
+    required_display = " | ".join(REQUIRED_SOURCE_COLUMNS)
+    for section in sections:
+        for table in _parse_any_markdown_tables(section):
+            headers = set(table[0].keys()) if table else set()
+            normalized_headers = {_normalize_table_key(header) for header in headers}
+            if all(column in headers for column in REQUIRED_SOURCE_COLUMNS):
+                continue
+            if source_like_headers.intersection(normalized_headers):
+                issues.append(
+                    "Source Verification table uses noncanonical columns; "
+                    f"required columns are: {required_display}"
+                )
+    return sorted(set(issues))
+
+
 def _extract_declared_string_values(source_text: str, symbol: str) -> set[str]:
     symbol_name = re.sub(r"[^A-Za-z0-9_].*$", "", symbol.strip().strip("`"))
     if not symbol_name:
@@ -1745,6 +1783,7 @@ def _validate_work_order(path: str, text: str) -> list[str]:
         issues.extend(_validate_commit_mode_and_anchor_lifecycle(text))
         issues.extend(_validate_worker_completion_review_boundary(text))
         issues.extend(_validate_no_commit_reviewer_closure_contract(text))
+        issues.extend(_validate_source_verification_table_shape(text))
         issues.extend(_validate_source_verification_disposition_discipline(text))
         issues.extend(_validate_intake_role_routing_decision(text, "work order"))
         issues.extend(_validate_single_agent_multi_role_control(text, "work order"))
