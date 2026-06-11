@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-11
 
-Current mode marker: `dscp_t11f_profile_selection_adapter_material_committed_pending_closure`
+Current mode marker: `lpci2_extraction_ec02_roadmap_hardened_pending_child_authorization`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `dscp_t11f_profile_selection_adapter_material_committed_pending_closure`.
+Current mode: `lpci2_extraction_ec02_roadmap_hardened_pending_child_authorization`.
 
 Active handoff:
 
@@ -98,6 +98,11 @@ DSCP-T11F material packet:
 - material commit:
   `be6a0a17`.
 
+LPCI2 Extraction and EC-02 Refinement roadmap was hardened and committed at
+`dfcffcd4`. The roadmap is `PROPOSED`, splits EX scan/extraction foundation
+from EC-02 retrieval-governance semantics, requires child GC-018/work orders
+before dispatch, and keeps Public Export Disposition `DEFERRED_PRIVATE_ONLY`.
+
 Recent Claude/co-authored updates after T9:
 
 - implementation-first absorption pattern added:
@@ -132,11 +137,12 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: Codex closes DSCP-T11F with bounded closure artifacts,
-updates the T11F work order and roadmap, then audits/selects the next DSCP or
-PolicyLocal foundation roadmap for Claude. DSCP-T1 through T11E are
-`CLOSED_PASS_BOUNDED`; T11F material commit is `be6a0a17`. T12 remains
-forbidden until EC-02 resolves on or after 2026-07-01.
+Next allowed move: either author a source-verified EX-T1 dependency/source
+audit work order for the reusable CVF scan/extraction foundation, or author
+EC-T1 governance decision evidence for EC-02 semantics. DSCP-T1 through T11E
+are `CLOSED_PASS_BOUNDED`; DSCP-T11F material commit remains `be6a0a17` with
+closure artifacts pending. T12 remains forbidden until EC-02 resolves on or
+after 2026-07-01.
 
 LHW24 remains the latest closed numbered LHW wave in the state registry.
 

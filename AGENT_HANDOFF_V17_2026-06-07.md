@@ -32,14 +32,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`dscp_t11f_profile_selection_adapter_material_committed_pending_closure`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=Codex closes DSCP-T11F with bounded closure artifacts, then audits/selects next roadmap; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`lpci2_extraction_ec02_roadmap_hardened_pending_child_authorization`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=author EX-T1 dependency/source audit work order or EC-T1 governance decision evidence before implementation; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`dscp_t11f_profile_selection_adapter_material_committed_pending_closure`
+`lpci2_extraction_ec02_roadmap_hardened_pending_child_authorization`
 
-Current HEAD recorded for this handoff: `be6a0a17`
-(DSCP-T11F material implementation commit; closure artifacts remain pending).
+Current HEAD recorded for this handoff: `dfcffcd4`
+(LPCI2 Extraction and EC-02 Refinement roadmap hardening commit).
 
 ## Active Boundary
 
@@ -83,6 +83,15 @@ DSCP-T11F material packet:
 - `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.profile.selection.adapter.test.ts`
 - `docs/reviews/CVF_DSCP_T11F_PROFILE_SELECTION_ADAPTER_WORKER_RETURN_2026-06-10.md`
 - material commit `be6a0a17`
+
+LPCI2 Extraction and EC-02 Refinement roadmap:
+
+- `docs/roadmaps/CVF_LPCI2_EXTRACTION_AND_EC02_REFINEMENT_ROADMAP_2026-06-10.md`
+- hardened at material commit `dfcffcd4`
+- status remains `PROPOSED`
+- split boundary: EX scan/extraction foundation and EC-02 retrieval-governance
+  semantics must use separate child GC-018/work orders before dispatch
+- Public Export Disposition: `DEFERRED_PRIVATE_ONLY`
 
 Recent Claude/co-authored updates after T9:
 
@@ -155,6 +164,7 @@ Delivered scope:
 - Closed DSCP-T11 profile-aware pipeline harness.
 - Closed DSCP-T11E domain-profile registry.
 - Committed DSCP-T11F profile selection adapter material packet at `be6a0a17`.
+- Hardened LPCI2 Extraction and EC-02 Refinement roadmap at `dfcffcd4`.
 - Hardened reviewer-fast/pre-commit/pre-push gates for review-packet authority
   references and added-line text encoding discipline.
 - Promoted reusable PolicyLocal UI audit lessons into `DESIGN.md`.
@@ -213,11 +223,12 @@ history.
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
-Next allowed move: Codex closes DSCP-T11F with bounded closure artifacts,
-updates the T11F work order and roadmap, then audits/selects the next DSCP or
-PolicyLocal foundation roadmap for Claude. DSCP-T1 through T11E are
-`CLOSED_PASS_BOUNDED`; T11F material commit is `be6a0a17`. Parked lanes remain
-Live Redis, DEP2, and external receipt-anchor.
+Next allowed move: either author a source-verified EX-T1 dependency/source
+audit work order for the reusable CVF scan/extraction foundation, or author
+EC-T1 governance decision evidence for EC-02 semantics. DSCP-T1 through T11E
+are `CLOSED_PASS_BOUNDED`; DSCP-T11F material commit remains `be6a0a17` with
+closure artifacts pending. Parked lanes remain Live Redis, DEP2, and external
+receipt-anchor.
 
 LPCI2-T12 remains forbidden until a separate operator-authorized evidence path
 resolves EC-02 review on or after 2026-07-01, known `currentStatus`, known
