@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: EX_T2_PASS_BOUNDED_EC_T1_PENDING_OPERATOR_DECISION
+Status: ACTIVE_PARTIAL_AFTER_EX_T2_EC_T2_COMPLETE
 
 docType: roadmap
 
@@ -14,7 +14,7 @@ Author: Claude (operator-directed proposal for Codex review and explicit operato
 
 ## Authorization And Decision
 
-Decision state: EX_T2_CHILD_LANE_DISPATCHED.
+Decision state: EX_T2_CHILD_LANE_COMPLETE_EC_T2_COMPLETE.
 
 Operator instruction on 2026-06-11 authorized Codex to author the next work
 order under the hardened design-control foundation. EX-T1 is now completed as a
@@ -26,12 +26,13 @@ EX-T2 Tier 1 digital-native extraction lane only. LiteParse remains
 decision. EX-T2 is now closed pass bounded through fresh GC-018 authorization,
 a source-verified work order, focused tests, and Codex completion review.
 
-This authorizes only the bounded EX-T2 Tier 1 digital-native extractor
-implementation. It does not authorize repo dependency addition, OCR model
-download, corpus ingestion, retrieval behavior change, EC-02 semantic change,
-public-sync, or live/provider proof. EC-T1 remains pending a separate operator
-decision. Any later child lane must receive fresh GC-018 authorization and a
-source-verified work order before dispatch.
+This records closure of the bounded EX-T2 Tier 1 digital-native extractor
+implementation, EC-T1 regulatory date/status decision baseline, and EC-T2
+contract amendment plus machine-readable EC-02 semantics JSON. It does not
+authorize repo dependency addition, OCR model download, corpus ingestion,
+runtime retrieval behavior change, DSCP profile update, public-sync, or
+live/provider proof. Any later child lane must receive fresh GC-018
+authorization and a source-verified work order before dispatch.
 
 ---
 
@@ -616,7 +617,7 @@ that the runtime token, contract table, and machine semantics agree.
 | Tranche | Goal | Key output | Depends on |
 |---|---|---|---|
 | EC-T1 | Governance decision record | `CVF_GC018_REGULATORY_DATE_MODEL_*.md` - explicitly authorized scope; establishes `documentStatus` as CVF-layer concept | Explicit authorization |
-| EC-T2 | Contract and machine semantics | response boundary contract update plus machine-readable EC-02 gate semantics JSON | EC-T1 |
+| EC-T2 | Contract and machine semantics | COMPLETE_BOUNDED: response boundary contract update plus machine-readable EC-02 gate semantics JSON | EC-T1 |
 | EC-T3 | Corpus record schema update | `documentStatus`, `promulgationDate`, `effectiveDate` added to corpus record schema; all BLOCKED records migrated | EC-T2 |
 | EC-T4 | Per-project metadata backfill | Operator supplies actual dates for existing records; automated `documentStatus` computation | EC-T3, operator dates |
 | EC-T5 | DSCP gate value update | `ec02Gate: "QUERY_CLASS_GATED"` in domain profiles; checker enforces new token | EC-T4 |
@@ -657,7 +658,7 @@ Phase 1 (parallel - no cross-dependency):
 Phase 2 (after Phase 1):
   EX-T2  Tier 1 extractor (digital-native)
   EX-T3  Tier 2 OCR fallback
-  EC-T2  contract amendment
+  EC-T2  contract amendment COMPLETE_BOUNDED
 
 Phase 3 (after Phase 2):
   EX-T4  quality gate + chunk schema

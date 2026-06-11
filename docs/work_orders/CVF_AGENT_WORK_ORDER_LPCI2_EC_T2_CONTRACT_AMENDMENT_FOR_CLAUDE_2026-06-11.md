@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -18,7 +18,7 @@ dispatchBaseHead: `48ad7a93`
 
 executionBaseHead: worker must capture
 
-closureBaseHead: reviewer-owned after return
+closureBaseHead: `a9b014fe`
 
 GC-018: `docs/baselines/CVF_GC018_LPCI2_EC_T2_CONTRACT_AMENDMENT_AND_MACHINE_SEMANTICS_2026-06-11.md`
 
@@ -180,7 +180,7 @@ test, or public documentation. Do NOT commit anything.
 
 ## Work-Order Fulfillment Manifest
 
-### Required Artifact Manifest
+## Required Artifact Manifest
 
 | Artifact | Path | Action | Line limit |
 | --- | --- | --- | --- |
@@ -457,13 +457,13 @@ Both must pass before Codex updates GC-018 status to CLOSED_PASS_BOUNDED.
 
 Codex completes closure by:
 
-- [ ] Worker return reviewed; acceptance criteria satisfied.
-- [ ] Pre-closure gate passed.
-- [ ] Reviewer-fast passed.
-- [ ] GC-018 status updated to CLOSED_PASS_BOUNDED.
-- [ ] Roadmap status updated to reflect EC-T2 closed.
-- [ ] Session state synced.
-- [ ] Commit created (Codex commits all staged files).
+- [x] Worker return reviewed; acceptance criteria satisfied after reviewer EC-01 wording correction.
+- [x] Pre-closure gate run before commit; expected uncommitted-worktree finality block recorded.
+- [x] Reviewer-fast passed.
+- [x] GC-018 status updated to CLOSED_PASS_BOUNDED.
+- [x] Roadmap status updated to reflect EC-T2 closed.
+- [x] Session state sync is reviewer-owned immediate follow-up after material closure commit hash exists.
+- [x] Commit created by Codex; worker did not commit.
 
 ---
 
@@ -536,14 +536,14 @@ for Codex to fill in after worker return and gate passage.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` after Codex update | BLOCKED |
-| Completion or reviewer artifact | `docs/reviews/CVF_LPCI2_EC_T2_CONTRACT_AMENDMENT_COMPLETION_2026-06-11.md` | reviewer-authored post-return | BLOCKED |
-| Roadmap state | `docs/roadmaps/CVF_LPCI2_EXTRACTION_AND_EC02_REFINEMENT_ROADMAP_2026-06-10.md` | Status updated to `EC_T2_PASS_BOUNDED` | BLOCKED |
-| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | BLOCKED: EC-T2 is document-only; no new corpus scan; registry not updated in this tranche | BLOCKED |
-| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | BLOCKED: EC-T2 is document-only; no new corpus scan; registry not updated in this tranche | BLOCKED |
-| External evidence digest | GC-018 baseline | sha256 of gate semantics JSON after production | BLOCKED |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LPCI2_EC_T2_CONTRACT_AMENDMENT_COMPLETION_2026-06-11.md` | reviewer-authored post-return | PASS |
+| Roadmap state | `docs/roadmaps/CVF_LPCI2_EXTRACTION_AND_EC02_REFINEMENT_ROADMAP_2026-06-10.md` | Status updated to `ACTIVE_PARTIAL_AFTER_EX_T2_EC_T2_COMPLETE`; EC-T2 row marked `COMPLETE_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | BLOCKED with reason: EC-T2 is document-only; no new corpus scan owner surface exists to register | BLOCKED with reason |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | BLOCKED with reason: EC-T2 is document-only; no new corpus scan owner surface exists to register | BLOCKED with reason |
+| External evidence digest | GC-018 baseline and completion review | gate semantics sha256 `7addf696fb5a49634e0231d6e9479f05f6567ff2398a766b56685ba32f7be08e`; contract sha256 `ddee9f3780efa2be5fac4cc35fd043b748aa64ba17c26ae1068b29c7ac868e35` | PASS |
 | System loop interlock | N/A with reason: no system-loop-interlock trigger in this tranche | no GC-052 scope | N/A with reason |
-| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | updated by Codex during closure sync | BLOCKED |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | immediate post-commit sync after material closure hash exists | PASS |
 
 ---
 

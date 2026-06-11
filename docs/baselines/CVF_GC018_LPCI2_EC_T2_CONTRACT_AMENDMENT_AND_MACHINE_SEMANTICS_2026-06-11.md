@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 
@@ -392,6 +392,21 @@ retrieval quality, EC-02 enforcement efficacy, production readiness, public
 readiness, or any claim beyond the authorization record itself.
 
 EC-02 hard boundary 2026-07-01 remains in force.
+
+Closure evidence:
+
+- Contract artifact:
+  `docs/reference/CVF_LPCI_RESPONSE_BOUNDARY_ENFORCEMENT_CONTRACT_2026-06-11.md`
+- Gate semantics artifact:
+  `docs/reference/CVF_EC02_GATE_SEMANTICS_2026-06-11.json`
+- Completion review:
+  `docs/reviews/CVF_LPCI2_EC_T2_CONTRACT_AMENDMENT_COMPLETION_2026-06-11.md`
+- Reviewer correction: EC-01 description restored to exact T7 v1 wording.
+- Artifact hashes:
+  - contract sha256:
+    `ddee9f3780efa2be5fac4cc35fd043b748aa64ba17c26ae1068b29c7ac868e35`
+  - gate semantics sha256:
+    `7addf696fb5a49634e0231d6e9479f05f6567ff2398a766b56685ba32f7be08e`
 
 ---
 
