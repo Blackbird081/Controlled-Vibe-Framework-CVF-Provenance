@@ -38,8 +38,9 @@ Startup acknowledged: current mode=`lpci2_ec_t4_operator_date_evidence_dispatche
 
 `lpci2_ec_t4_operator_date_evidence_dispatched`
 
-Current HEAD recorded for this handoff: `5296825c`
-(private provenance parent before EC-T4 dispatch package commit).
+Current HEAD recorded for this handoff: `9ff72b33`
+(private provenance EC-T4 dispatch package parent commit; final handoff-only
+sync follows this record under GC-020).
 
 ## Active Boundary
 
