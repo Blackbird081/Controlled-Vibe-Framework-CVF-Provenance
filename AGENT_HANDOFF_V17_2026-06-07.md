@@ -32,14 +32,15 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci2_extraction_ec02_roadmap_hardened_pending_child_authorization`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=author EX-T1 dependency/source audit work order or EC-T1 governance decision evidence before implementation; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`governed_work_design_control_hardening_committed`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=author source-verified EX-T1 dependency/source audit work order or EC-T1 governance decision evidence under the new design-control carry-forward rules; parked checkpoint=DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`lpci2_extraction_ec02_roadmap_hardened_pending_child_authorization`
+`governed_work_design_control_hardening_committed`
 
-Current HEAD recorded for this handoff: `82d3ed57`
-(private provenance sync commit recording the public README control-map export).
+Current HEAD recorded for this handoff: `84217223`
+(private provenance material commit hardening governed work design-control
+gates).
 
 ## Active Boundary
 
@@ -56,6 +57,28 @@ This handoff is a pointer record only. Detailed historical continuity remains
 in archived handoffs and governed completion packets.
 
 ## Latest Continuity Note
+
+Governed work design-control hardening is committed at material commit
+`84217223`.
+
+Material artifacts:
+
+- `docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md`
+- `docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md`
+- `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
+- `docs/reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md`
+- `governance/compat/check_markdown_structural_completeness.py`
+- `governance/compat/test_check_markdown_structural_completeness.py`
+
+Result: CVF now treats roadmap/design as a governed control stage before
+work-order dispatch. Future roadmap-derived work must carry explicit design
+control into the work order, and implementation work involving fields, schema,
+enums, failure tokens, or machine-readable semantics must identify the
+spec/contract authority before build.
+
+Boundary: control-plane documentation/template/checker hardening only; no
+runtime behavior, provider behavior, live proof, public-sync, production
+readiness, public readiness, or governance-behavior claim expansion.
 
 DSCP-T11E Domain Profile Registry is `CLOSED_PASS_BOUNDED` at material commit
 `8a7cd134`. DSCP-T11F Profile Selection Adapter material implementation is
@@ -245,8 +268,10 @@ LHW24 remains the latest closed numbered LHW wave in
 
 Next allowed move: either author a source-verified EX-T1 dependency/source
 audit work order for the reusable CVF scan/extraction foundation, or author
-EC-T1 governance decision evidence for EC-02 semantics. DSCP-T1 through T11E
-are `CLOSED_PASS_BOUNDED`; DSCP-T11F material commit remains `be6a0a17` with
+EC-T1 governance decision evidence for EC-02 semantics. The next roadmap or
+work order must preserve Design Control Gate and Design Control Carry-Forward
+evidence from the new lifecycle standard. DSCP-T1 through T11E are
+`CLOSED_PASS_BOUNDED`; DSCP-T11F material commit remains `be6a0a17` with
 closure artifacts pending. Parked lanes remain Live Redis, DEP2, and external
 receipt-anchor.
 

@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-11
 
-Current mode marker: `lpci2_extraction_ec02_roadmap_hardened_pending_child_authorization`
+Current mode marker: `governed_work_design_control_hardening_committed`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `lpci2_extraction_ec02_roadmap_hardened_pending_child_authorization`.
+Current mode: `governed_work_design_control_hardening_committed`.
 
 Active handoff:
 
@@ -57,6 +57,19 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+Governed work design-control hardening was committed at material commit
+`84217223`. New canonical standard
+`docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md`
+defines the detailed INTAKE, DESIGN, SPEC, WORK ORDER, BUILD, REVIEW, and
+FREEZE lifecycle. The work-order template now requires Design Control
+Carry-Forward, the execution SOP now requires spec/contract authority before
+implementation when machine-readable semantics are involved, and the markdown
+structural completeness checker now requires roadmaps to include a Design
+Control Gate, Dispatch Boundary, or Governed Work Lifecycle section. Boundary:
+control-plane documentation/template/checker hardening only; no runtime,
+provider, live-proof, public-sync, production-readiness, public-readiness, or
+governance-behavior claim expansion.
 
 DSCP-T11E Domain Profile Registry is `CLOSED_PASS_BOUNDED` at material commit
 `8a7cd134`. DSCP-T11F Profile Selection Adapter material implementation is
