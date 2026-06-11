@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-11
 
-Current mode marker: `lpci2_ec_t5_gate_value_update_closed_blocked_bounded`
+Current mode marker: `lpci2_ex_t3_t6_extraction_pipeline_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `lpci2_ec_t5_gate_value_update_closed_blocked_bounded`.
+Current mode: `lpci2_ex_t3_t6_extraction_pipeline_closed_pass_bounded`.
 
 Active handoff:
 
@@ -57,6 +57,27 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+LPCI2 EX-T3 through EX-T6 extraction pipeline foundation is
+`CLOSED_PASS_BOUNDED` in the current material closure batch after base
+`041cb307`.
+
+Artifacts:
+
+- `docs/baselines/CVF_GC018_LPCI2_EX_T3_T6_EXTRACTION_PIPELINE_COMPLETION_2026-06-11.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T3_T6_EXTRACTION_PIPELINE_FOR_CODEX_2026-06-11.md`
+- `docs/reviews/CVF_LPCI2_EX_T3_T6_EXTRACTION_PIPELINE_COMPLETION_2026-06-11.md`
+- `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/extraction_pipeline.py`
+- `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_extraction_pipeline.py`
+
+Result: local deterministic CVF extraction foundation now covers OCR adapter
+boundary, OCR language-code mapping, OCR confidence capture, extraction quality
+reports, fixed-window extraction chunks, DSCP descriptor input handoff records,
+and GC-051 registry coverage. Boundary: no OCR dependency install, OCR model
+download, corpus ingestion, provider/API-key use, external Policy_Local
+mutation, DSCP profile value update, runtime retrieval behavior, current-law or
+legal-quality claim, public-sync, production/public readiness, T12 unlock,
+memory reinjection, high-risk promotion, or autonomous mutation.
 
 LPCI2 EC-T5 DSCP gate value update is `CLOSED_BLOCKED_BOUNDED` at material
 commit `9a894207`.
@@ -518,12 +539,14 @@ repo, production readiness, public readiness, or live governance proof.
 
 Next allowed move: operator may either supply/confirm EC-T4 missing
 signed-date/document-number metadata for CAND-002, CAND-004, CAND-005, and
-CAND-006, or authorize a successor EC-T5 activation roadmap/work order that
-also source-verifies runtime/query-class routing for `QUERY_CLASS_GATED`.
-EC-T6, EX-T3, EX-T4, EX-T5, dependency addition, OCR model download, corpus
-ingestion, runtime/source change beyond a fresh authorized successor packet,
-public-sync, provider/API key use, production readiness, or public readiness
-remain unauthorized without fresh authorization.
+CAND-006, or authorize a successor EC-T5/EC-T6 activation roadmap/work order
+that source-verifies runtime/query-class routing for `QUERY_CLASS_GATED` before
+retrieval disclosure wiring. EX-T3 through EX-T6 local extraction foundation is
+closed bounded; integration convergence remains blocked.
+Dependency addition, OCR model download, corpus ingestion, runtime/source
+change beyond a fresh authorized successor packet, external Policy_Local
+mutation, public-sync, provider/API key use, production readiness, or public
+readiness remain unauthorized without fresh authorization.
 T12 remains forbidden until EC-02 resolves on or after 2026-07-01 and
 eligibility is re-evaluated.
 

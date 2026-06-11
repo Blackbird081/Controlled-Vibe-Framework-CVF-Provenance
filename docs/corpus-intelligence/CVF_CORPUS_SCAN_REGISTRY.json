@@ -3,8 +3,8 @@
   "standard": "docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md",
   "guard": "governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md",
   "checker": "governance/compat/check_corpus_scan_registry.py",
-  "lastUpdated": "2026-06-10",
-  "updatedBy": "Claude (DSCP-T11F worker)",
+  "lastUpdated": "2026-06-11",
+  "updatedBy": "Codex (LPCI2 EX-T3 through EX-T6 closure)",
   "allowedCorpusTypes": [
     "LEGACY_FOLDER",
     "PROJECT_SOURCE",
@@ -2252,6 +2252,44 @@
       "manifestPath": null,
       "packetPath": "docs/reviews/CVF_LPCI2_EX_T2_TIER1_EXTRACTOR_WORKER_RETURN_2026-06-11.md",
       "notes": "Package marker stubs for the EX-T2 CVF Extraction Foundation source, src, and tests directories. No runtime behavior."
+    },
+    {
+      "id": "ex-t3-t6-extraction-pipeline-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation EX-T3 through EX-T6 pipeline source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/extraction_pipeline.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "EX-T3-EX-T6",
+      "scanDate": "2026-06-11",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_LPCI2_EX_T3_T6_EXTRACTION_PIPELINE_COMPLETION_2026-06-11.md",
+      "notes": "Deterministic local extraction pipeline contracts for Tier 2 OCR adapter boundary, OCR language mapping, Tier 3 quality gate, fixed-window chunk schema, and DSCP descriptor handoff. No OCR dependency install, model download, corpus ingestion, provider call, or legal/current-status claim."
+    },
+    {
+      "id": "ex-t3-t6-extraction-pipeline-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation EX-T3 through EX-T6 pipeline tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_extraction_pipeline.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "EX-T3-EX-T6",
+      "scanDate": "2026-06-11",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_LPCI2_EX_T3_T6_EXTRACTION_PIPELINE_COMPLETION_2026-06-11.md",
+      "notes": "Focused pytest coverage for OCR language mapping, explicit OCR adapter boundary, confidence capture, quality flags, fixed-window chunking, and DSCP descriptor handoff without raw-content release."
     }
   ]
 }

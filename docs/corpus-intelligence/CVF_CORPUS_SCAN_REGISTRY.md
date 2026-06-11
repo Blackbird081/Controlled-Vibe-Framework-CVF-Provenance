@@ -8,7 +8,7 @@ docType: reference
 
 Date: 2026-06-02
 
-Last updated: 2026-06-07
+Last updated: 2026-06-11
 
 Standard: `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md`
 
@@ -98,6 +98,8 @@ prior scan here before starting new work.
 | `CVF Extraction Foundation EX-T2 Tier 1 extractor source` | CVF_EXTENSION | SCANNED | EX-T2 | 1 | extract_docx + extract_pdf_text_layer + extract_tier1 dispatcher; MIN_CHARS_PER_PAGE=100; language-transparent; no OCR in this module |
 | `CVF Extraction Foundation EX-T2 Tier 1 extractor tests` | CVF_EXTENSION | SCANNED | EX-T2 | 1 | 21 pytest assertions covering docx extraction, PDF text-layer extraction, dispatcher routing, UnsupportedFileTypeError, MIN_CHARS boundary, language_codes passthrough, and no-OCR source guard |
 | `CVF Extraction Foundation EX-T2 package stubs` | CVF_EXTENSION | SCANNED | EX-T2 | 3 | Package marker stubs for EX-T2 source, src, and tests directories; no runtime behavior |
+| `CVF Extraction Foundation EX-T3 through EX-T6 pipeline source` | CVF_EXTENSION | SCANNED | EX-T3-EX-T6 | 1 | Deterministic OCR adapter boundary, OCR language mapping, quality gate, chunk schema, and DSCP descriptor handoff; no OCR model download or corpus ingestion |
+| `CVF Extraction Foundation EX-T3 through EX-T6 pipeline tests` | CVF_EXTENSION | SCANNED | EX-T3-EX-T6 | 1 | 10 pytest assertions covering language mapping, explicit OCR adapter requirement, confidence capture, quality flags, fixed-window chunking, and raw-content-release boundary |
 
 ---
 

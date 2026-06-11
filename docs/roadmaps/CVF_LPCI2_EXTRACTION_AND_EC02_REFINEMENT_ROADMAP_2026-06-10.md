@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_PARTIAL_EC_T5_CLOSED_BLOCKED_BOUNDED
+Status: ACTIVE_PARTIAL_EX_T6_CLOSED_EC_BLOCKED
 
 docType: roadmap
 
@@ -14,7 +14,7 @@ Author: Claude (operator-directed proposal for Codex review and explicit operato
 
 ## Authorization And Decision
 
-Decision state: EC_T5_CLOSED_BLOCKED_BOUNDED.
+Decision state: EX_T6_CLOSED_EC_BLOCKED.
 
 Operator instruction on 2026-06-11 authorized Codex to author the next work
 order under the hardened design-control foundation. EX-T1 is now completed as a
@@ -27,14 +27,14 @@ decision. EX-T2 is now closed pass bounded through fresh GC-018 authorization,
 a source-verified work order, focused tests, and Codex completion review.
 
 This records closure of the bounded EX-T2 Tier 1 digital-native extractor
-implementation, EC-T1 regulatory date/status decision baseline, EC-T2 contract
-amendment plus machine-readable EC-02 semantics JSON, EC-T3 TypeScript corpus
-schema fields, EC-T4 parked evidence/backfill proposal, and EC-T5 bounded
-block decision.
+implementation, EX-T3 through EX-T6 local extraction pipeline foundation,
+EC-T1 regulatory date/status decision baseline, EC-T2 contract amendment plus
+machine-readable EC-02 semantics JSON, EC-T3 TypeScript corpus schema fields,
+EC-T4 parked evidence/backfill proposal, and EC-T5 bounded block decision.
 It does not authorize repo dependency addition, OCR model download, corpus
 ingestion, runtime retrieval behavior change, DSCP profile value update,
 public-sync, or live/provider proof. Any later child lane must receive fresh
-GC-018 authorization and a source-verified work order before dispatch.
+GC-018 authorization and a source-verified work order before execution release.
 
 EC-T4 reviewer disposition on 2026-06-11: `RETURNED_BLOCKED_METADATA_GAPS`.
 Two records are source-evidenced pending operator type/status confirmation;
@@ -45,6 +45,14 @@ EC-T5 reviewer disposition on 2026-06-11: `CLOSED_BLOCKED_BOUNDED`.
 `QUERY_CLASS_GATED` was not applied to DSCP domain profiles because EC-T4
 remains parked and the current CPF profile apply contract would treat the token
 as a non-blocking custom gate before runtime/query-class routing is wired.
+
+EX-T3 through EX-T6 reviewer disposition on 2026-06-11:
+`CLOSED_PASS_BOUNDED`. CVF now has a local deterministic extraction pipeline
+foundation for OCR adapter boundaries, OCR language-code mapping, confidence
+capture, extraction quality reports, fixed-window chunks, DSCP descriptor input
+handoff records, and GC-051 registry coverage. This closure does not install
+OCR dependencies, download OCR models, ingest corpus files, call providers,
+mutate external Policy_Local, or claim legal/current-status quality.
 
 ---
 
@@ -117,7 +125,7 @@ project from reaching retrieval:
    applicability claims.
 
 This roadmap proposes a phased solution. It is a PROPOSAL for Codex rebuttal
-and explicit operator authorization before any dispatch.
+and explicit operator authorization before execution release.
 
 ---
 
@@ -136,7 +144,7 @@ In scope for this parent roadmap:
 
 Out of scope for this parent roadmap:
 
-- dispatching a worker;
+- releasing a worker packet;
 - selecting a final OCR/parser dependency;
 - changing runtime retrieval behavior;
 - changing public-facing docs or public-sync;
@@ -165,7 +173,7 @@ All extraction output must flow through the DSCP pipeline
 
 | Authority | Path | Disposition |
 |---|---|---|
-| Operator instruction | 2026-06-10 - two foundation gaps identified; roadmap as CVF-layer capability | PROPOSED |
+| Operator instruction | 2026-06-10 - two foundation gaps identified; roadmap as CVF-layer capability | SUPERSEDED_BY_CHILD_CLOSURES |
 | LPCI2 productization roadmap | `docs/roadmaps/CVF_LPCI2_POLICYLOCAL_PRODUCTIZATION_ROADMAP_2026-06-03.md` | DOWNSTREAM_CONSUMER |
 | T11 corpus expansion readiness | `docs/roadmaps/CVF_LPCI2_T11_POLICYLOCAL_CORPUS_EXPANSION_READINESS_ROADMAP_2026-06-07.md` | DOWNSTREAM_CONSUMER |
 | LPCI response boundary contract | `docs/reference/CVF_LPCI_RESPONSE_BOUNDARY_ENFORCEMENT_CONTRACT_2026-06-04.md` | TARGET_OF_EC02_CHANGE |
@@ -177,17 +185,18 @@ All extraction output must flow through the DSCP pipeline
 ## Claim Boundary
 
 This roadmap is a planning artifact only. It records a CVF foundation direction
-and dispatch prerequisites. It does not prove an extraction runtime, dependency
+and release prerequisites. It does not prove an extraction runtime, dependency
 fitness, OCR quality, legal status accuracy, retrieval quality, EC-02 runtime
 behavior, T12 eligibility, public readiness, production readiness, or release
 readiness.
 
 ---
 
-## Dispatch Boundary
+## Historical Release Boundary
 
-This parent roadmap is not itself a worker implementation order. It must split
-into two separately governed child lanes before any dispatch:
+This parent roadmap is a planning and closure coordination record, not a
+standalone worker implementation order. It split into two separately governed
+child lanes before worker execution:
 
 - EX lane: CVF scan/extraction foundation for document-to-chunk processing.
 - EC lane: EC-02 regulatory date model and retrieval-gate semantics.
@@ -195,8 +204,9 @@ into two separately governed child lanes before any dispatch:
 The EX lane improves the CVF scan layer by turning file-level corpus assets
 into governed text chunks with extraction provenance, quality flags, and DSCP
 receipts. The EC lane improves response eligibility and disclosure semantics
-after chunks exist. The two lanes may be planned together, but they must not be
-implemented or closed as a single batch.
+after chunks exist. The two lanes may be planned together, but implementation
+and closure evidence must stay separately attributable unless a later explicit
+integration tranche joins them.
 
 ---
 
@@ -204,8 +214,8 @@ implemented or closed as a single batch.
 
 The work plan is intentionally split into two lanes:
 
-- EX lane first dispatch target: EX-T1 dependency and source audit only.
-- EC lane first dispatch target: EC-T1 governance decision record only.
+- EX lane first release target: EX-T1 dependency and source audit only.
+- EC lane first release target: EC-T1 governance decision record only.
 
 No implementation tranche may start until its preceding audit/decision tranche
 is closed and a fresh work order cites the closure evidence. EX and EC closure
@@ -215,7 +225,7 @@ evidence must remain separate until an explicit integration tranche joins them.
 
 ## Acceptance Criteria
 
-This roadmap can move from PROPOSED to child-lane dispatch only when:
+Historical release criteria for child-lane execution:
 
 - EX-T1 work order includes source verification for dependency install,
   supported input formats, OCR language-code mapping, local and CI feasibility,
@@ -228,7 +238,7 @@ This roadmap can move from PROPOSED to child-lane dispatch only when:
 - Any machine-gate failure inside the assigned work order's allowed scope is
   repaired and rerun by the assigned agent before return.
 - Any dependency, OCR model, parser, runtime field, or schema key named in a
-  child work order is source-verified before dispatch.
+  child work order is source-verified before execution release.
 - Public Export Disposition remains `DEFERRED_PRIVATE_ONLY` unless public-sync
   remote, commit, and artifact-path evidence exists.
 
@@ -236,7 +246,7 @@ This roadmap can move from PROPOSED to child-lane dispatch only when:
 
 ## Verification And Evidence
 
-Before any child work order dispatch, the orchestrator must capture a real
+Before any child work order execution release, the orchestrator must capture a real
 `baseHead` and run:
 
 ```bash
@@ -261,17 +271,17 @@ Minimum EC-T1 evidence:
 
 ---
 
-## Source Verification And External Dependency Evidence Needed
+## Source Verification And Dependency Evidence Needed
 
-This proposal references external tools and new runtime fields. Before any
-work order is dispatched, the child work order must include a source
+This proposal references dependency tools and new runtime fields. Before any
+work order is released for execution, the child work order must include a source
 verification table with current evidence for every tool, package, runtime
 field, and schema key it uses.
 
-External dependency claims in this roadmap are provisional until EX-T1 verifies
-them from primary sources and local installation probes. The current LiteParse
-source candidate is the official `run-llama/liteparse` repository and README
-observed on 2026-06-11: `https://github.com/run-llama/liteparse`.
+Dependency claims in this roadmap are governed by the repo-local EX-T1 audit
+artifacts and their External Evidence Digest. LiteParse remains a deferred
+candidate recorded in the EX-T1 audit, not an accepted dependency for this
+EX-T3 through EX-T6 closure.
 
 Minimum EX-T1 source checks:
 
@@ -350,7 +360,7 @@ Tier 3 (quality gate):   custom quality_gate.py
 #### Option 2 - LiteParse (run-llama/liteparse)
 
 Single unified library: Rust core, Python bindings, Apache 2.0 license.
-Source: `https://github.com/run-llama/liteparse`
+Source: EX-T1 dependency/source audit External Evidence Digest.
 
 ```text
 Tier 1+2 (unified): LiteParse
@@ -436,7 +446,7 @@ INPUT: file path  +  DscpDomainProfile
 **OCR language is a runtime parameter after deterministic mapping.**
 `DscpDomainProfile.languageCodes` are CVF profile values, not necessarily
 extractor-native OCR values. EX-T1 must source-verify and implement a mapping
-table before any OCR dispatch. Example shape:
+table before any OCR execution release. Example shape:
 
 | CVF profile code | EasyOCR candidate | Tesseract/LiteParse candidate | Status |
 |---|---|---|---|
@@ -483,11 +493,11 @@ via the domain profile, not inferred from text.
 | Tranche | Goal | Key output | Depends on |
 |---|---|---|---|
 | EX-T1 | Dependency and source audit | Option evidence, local install probes, CI feasibility note, OCR language-code mapping table | PASS_BOUNDED |
-| EX-T2 | Tier 1 digital-native extractor | extractor owner module for `.docx` and PDF text-layer path | DISPATCHED through fresh GC-018/work order |
-| EX-T3 | Tier 2 OCR fallback | OCR fallback path using mapped OCR language codes and confidence capture | EX-T2 |
-| EX-T4 | Tier 3 quality gate and chunk schema | extraction quality gate, chunk schema, extraction provenance fields | EX-T3 |
-| EX-T5 | DSCP pipeline wire-in | chunks enter domain profile, descriptor, gate, and receipt flow | EX-T4, DSCP-T11F |
-| EX-T6 | GC-051 coverage | corpus records: `extractionStatus` field populated; registry updated | EX-T5 |
+| EX-T2 | Tier 1 digital-native extractor | extractor owner module for `.docx` and PDF text-layer path | CLOSED_PASS_BOUNDED |
+| EX-T3 | Tier 2 OCR fallback boundary | Local OCR adapter boundary, language-code mapping, and confidence capture | CLOSED_PASS_BOUNDED |
+| EX-T4 | Tier 3 quality gate and chunk schema | Deterministic extraction quality report and fixed-window chunk schema | CLOSED_PASS_BOUNDED |
+| EX-T5 | DSCP descriptor input handoff | Chunks become descriptor-shaped inputs with `rawContentReleased=false`; no profile apply/runtime receipt claim | CLOSED_PASS_BOUNDED |
+| EX-T6 | GC-051 coverage | Extraction pipeline source/test corpus records added to GC-051 registry | CLOSED_PASS_BOUNDED |
 
 ### Open Questions for Codex Rebuttal
 
@@ -652,7 +662,7 @@ that the runtime token, contract table, and machine semantics agree.
 3. **`ec02Gate: "QUERY_CLASS_GATED"` semantics**: The retrieval layer must know
    what `"QUERY_CLASS_GATED"` means. Codex position: machine-readable
    gate-semantics JSON is required before EC-T5. Contract prose alone is not
-   dispatch-ready evidence for runtime behavior.
+   release-ready evidence for runtime behavior.
 
 4. **Non-regulatory domains**: Technical project docs and company docs do not
    typically have `promulgationDate`/`effectiveDate`. Should `documentStatus`
@@ -669,21 +679,25 @@ Phase 1 (parallel - no cross-dependency):
   EC-T1  governance decision + explicit authorization
 
 Phase 2 (after Phase 1):
-  EX-T2  Tier 1 extractor (digital-native)
+  EX-T2  Tier 1 extractor (digital-native) CLOSED_PASS_BOUNDED
   EX-T3  Tier 2 OCR fallback
   EC-T2  contract amendment COMPLETE_BOUNDED
 
 Phase 3 (after Phase 2):
-  EX-T4  quality gate + chunk schema
+  EX-T4  quality gate + chunk schema CLOSED_PASS_BOUNDED
   EC-T3  corpus record schema update
   EC-T4  per-project metadata backfill (needs operator-supplied dates)
 
 Phase 4 (after Phase 3, parallel):
-  EX-T5  DSCP wire-in          EC-T5  DSCP gate value update
-  EX-T6  GC-051 coverage       EC-T6  retrieval disclosure wire-in
+  EX-T5  DSCP descriptor handoff CLOSED_PASS_BOUNDED
+  EX-T6  GC-051 coverage CLOSED_PASS_BOUNDED
+  EC-T5  DSCP gate value update CLOSED_BLOCKED_BOUNDED
+  EC-T6  retrieval disclosure wire-in BLOCKED_BY_EC_T4_METADATA_AND_EC_T5
 
 Phase 5 (integration convergence):
   EX-T5 + EC-T6 -> any project's corpus expansion readiness gate (LPCI2-T12 first)
+  NOT_OPEN until EC-T4 metadata and EC-T5 runtime/query-class gate value are
+  resolved through a fresh evidence path.
 ```
 
 EC-T1 explicit authorization is the critical gate. EX tranches are independent
@@ -710,13 +724,13 @@ of EC approval and can begin at Phase 1 in parallel.
 - Sentence-boundary vs fixed-window chunking - fixed windows for EX-T4; upgrade path deferred
 - Actual `promulgationDate`/`effectiveDate` values for specific records - operator input required at EC-T4
 - Whether `documentStatus` is `IN_FORCE` by default for non-regulatory domains - deferred to EC-T1
-- GC-018 authorization for each individual tranche - required before any dispatch
+- GC-018 authorization for each individual tranche - required before execution release
 
 ---
 
 ## Status
 
-EX_T2_PASS_BOUNDED_EC_T1_PENDING_OPERATOR_DECISION.
+EX_T6_CLOSED_PASS_BOUNDED_EC_BLOCKED.
 
 EX-T1 is closed as a dependency/source audit and local feasibility probe under:
 
@@ -730,10 +744,39 @@ EX-T2 is closed pass bounded only under:
 - `docs/reviews/CVF_LPCI2_EX_T2_TIER1_EXTRACTOR_WORKER_RETURN_2026-06-11.md`
 - `docs/reviews/CVF_LPCI2_EX_T2_TIER1_EXTRACTOR_COMPLETION_2026-06-11.md`
 
-No EX-T3 OCR fallback, EX-T4 quality gate, EX-T5 DSCP wire-in, dependency
-addition to repo manifests, OCR model download, corpus ingestion, EC-T1
-semantic change, T12 authoring, or public-sync is authorized by this status
-change.
+EX-T3 through EX-T6 are closed pass bounded only under:
+
+- `docs/baselines/CVF_GC018_LPCI2_EX_T3_T6_EXTRACTION_PIPELINE_COMPLETION_2026-06-11.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T3_T6_EXTRACTION_PIPELINE_FOR_CODEX_2026-06-11.md`
+- `docs/reviews/CVF_LPCI2_EX_T3_T6_EXTRACTION_PIPELINE_COMPLETION_2026-06-11.md`
+
+No dependency addition to repo manifests, OCR model download, corpus
+ingestion, EC-T5 DSCP profile value update, EC-T6 retrieval disclosure
+wire-in, T12 authoring, external Policy_Local mutation, public-sync, or
+live/provider proof is authorized by this status change.
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| Retrieval receipt acceptance claim | N/A with reason: roadmap records EX descriptor handoff only; retrieval receipt remains EC-T6/successor scope | PASS |
+| Query acceptance claim | N/A with reason: EC query-class routing remains blocked | PASS |
+| Public/export receipt claim | N/A with reason: `DEFERRED_PRIVATE_ONLY` | PASS |
+
+---
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T3_T6_EXTRACTION_PIPELINE_FOR_CODEX_2026-06-11.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LPCI2_EX_T3_T6_EXTRACTION_PIPELINE_COMPLETION_2026-06-11.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this file | `Status: ACTIVE_PARTIAL_EX_T6_CLOSED_EC_BLOCKED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | entries `ex-t3-t6-extraction-pipeline-source` and `ex-t3-t6-extraction-pipeline-tests` | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | quick lookup rows for EX-T3-EX-T6 source/tests | PASS |
+| External evidence digest | EX-T1 audit and EX-T2 completion repo-local artifacts | sha256:46caff533ab8e4d8bc0cfa68070abdf69b7eb205e420c66d9b5db2729109492c; sha256:6e6ee6e640275a85541bcd32a4f9290585fb6d30debc5780df10ef2ea6491e9d; sha256:5e118d33e888176d0f7dc9657602ec041197a46699767d3aa11fe0a48b01a2c9 | PASS |
+| System loop interlock | no system-loop mutation | local extraction foundation only | N/A with reason: no runtime loop changed |
+| Session continuity | `CVF_SESSION_MEMORY.md`, `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `AGENT_HANDOFF_V17_2026-06-07.md` | reviewer-owned final sync | PASS |
 
 ---
 
@@ -741,5 +784,6 @@ change.
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: internal governance roadmap proposal; not public-synced until EC-T1
-is operator-approved and Codex closes the rebuttal phase.
+Reason: internal governance roadmap and closure record; not public-synced.
+The EX foundation is private provenance evidence, while EC runtime/query-class
+activation remains blocked by EC-T4 metadata gaps and the EC-T5 gate boundary.
