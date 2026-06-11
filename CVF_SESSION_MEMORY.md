@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `lpci2_ex_t2_tier1_extractor_closed_pending_next_roadmap`.
+Current mode: `lpci2_ec_t1_decision_baseline_proposed_pending_operator_decisions`.
 
 Active handoff:
 
@@ -58,7 +58,12 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-LPCI2 EX-T2 Tier 1 digital-native extractor is `CLOSED_PASS_BOUNDED` at
+LPCI2 EC-T1 regulatory date/status decision baseline is `PROPOSED` at
+material commit `f15bdac8`. It is not `CLOSED`, `AUTHORIZED`, or
+dispatch-ready because decision gates D-01 through D-04 remain pending in
+`docs/baselines/CVF_GC018_LPCI2_EC_T1_REGULATORY_DATE_MODEL_GOVERNANCE_DECISION_2026-06-11.md`.
+
+LPCI2 EX-T2 Tier 1 digital-native extractor remains `CLOSED_PASS_BOUNDED` at
 material commit `f21025a8`.
 
 Closure artifacts:
@@ -306,14 +311,14 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: Codex audits/selects the next bounded roadmap and, if the
-operator authorizes it, prepares a fresh GC-018 plus source-verified work order.
-Recommended candidates are EX-T3 OCR fallback source/feasibility gate or EC-T1
-regulatory date/status governance decision record. Claude must not proceed on
-EX-T3, EX-T4, EX-T5, EC-T1, dependency addition, OCR model download, corpus
-ingestion, public-sync, provider/API key use, production readiness, or public
-readiness without fresh authorization. T12 remains forbidden until EC-02
-resolves on or after 2026-07-01 and eligibility is re-evaluated.
+Next allowed move: operator/Codex records EC-T1 decisions D-01 through D-04 in
+`docs/baselines/CVF_GC018_LPCI2_EC_T1_REGULATORY_DATE_MODEL_GOVERNANCE_DECISION_2026-06-11.md`,
+then reruns gates before any EC-T2 contract-amendment work order is authored or
+dispatched. Claude must not proceed on EC-T2, EX-T3, EX-T4, EX-T5, dependency
+addition, OCR model download, corpus ingestion, public-sync, provider/API key
+use, production readiness, or public readiness without fresh authorization.
+T12 remains forbidden until EC-02 resolves on or after 2026-07-01 and
+eligibility is re-evaluated.
 
 LHW24 remains the latest closed numbered LHW wave in the state registry.
 
