@@ -59,8 +59,7 @@ Pain-point closure direction:
 ## Latest Continuity Note
 
 LPCI2 EX-T3 through EX-T6 extraction pipeline foundation is
-`CLOSED_PASS_BOUNDED` in the current material closure batch after base
-`041cb307`.
+`CLOSED_PASS_BOUNDED` at material commit `bbfb14f4`.
 
 Artifacts:
 

@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`lpci2_ex_t3_t6_extraction_pipeline_closed_pa
 
 `lpci2_ex_t3_t6_extraction_pipeline_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `041cb307`
-(session-sync parent before EX-T3 through EX-T6 material closure).
+Current HEAD recorded for this handoff: `bbfb14f4`
+(EX-T3 through EX-T6 extraction pipeline foundation material closure commit).
 
 ## Active Boundary
 
@@ -80,8 +80,7 @@ governance/session history.
 ## Latest Continuity Note
 
 LPCI2 EX-T3 through EX-T6 extraction pipeline foundation is
-`CLOSED_PASS_BOUNDED` in the current material closure batch after base
-`041cb307`.
+`CLOSED_PASS_BOUNDED` at material commit `bbfb14f4`.
 
 Artifacts:
 
