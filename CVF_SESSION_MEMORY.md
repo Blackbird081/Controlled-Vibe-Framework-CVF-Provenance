@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-11
 
-Current mode marker: `lpci2_ec_t3_schema_update_dispatched`
+Current mode marker: `lpci2_ec_t3_schema_update_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `lpci2_ec_t3_schema_update_dispatched`.
+Current mode: `lpci2_ec_t3_schema_update_closed_pass_bounded`.
 
 Active handoff:
 
@@ -58,24 +58,25 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-LPCI2 EC-T3 corpus record schema update dispatch is `DISPATCHED` at material
-commit `43b2b652`.
+LPCI2 EC-T3 corpus record schema update is `CLOSED_PASS_BOUNDED` at material
+commit `a895dc03`; closure documentation follows in the closure batch.
 
-Dispatch artifacts:
+Closure artifacts:
 
 - `docs/baselines/CVF_GC018_LPCI2_EC_T3_CORPUS_RECORD_SCHEMA_UPDATE_2026-06-11.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EC_T3_CORPUS_RECORD_SCHEMA_UPDATE_FOR_CLAUDE_2026-06-11.md`
+- `docs/reviews/CVF_LPCI2_EC_T3_CORPUS_RECORD_SCHEMA_UPDATE_COMPLETION_2026-06-11.md`
 
-Result: Claude may execute EC-T3 under `WORKER_MUST_NOT_COMMIT` to add
-TypeScript schema fields and focused tests only. Codex review corrected the
-packet from `PROPOSED` to `DISPATCHED`, added explicit commit mode and
-reviewer-owned closure paths, completed the Intake Role Routing Decision, and
-bounded the migration invariant as documentation/test evidence only until
-EC-T5 runtime enforcement. Verification: reviewer-fast PASS, pre-dispatch
-autorun PASS, and full pre-commit governance chain PASS. Boundary: dispatch
-package only; no EC-T3 source implementation yet, corpus JSON migration,
-runtime gate logic, DSCP profile JSON value change, public-sync, provider/API
-key use, current-law/legal-quality claim, production/public readiness, memory
+Result: EC-T3 added `DocumentStatus`, optional `documentStatus` and
+`promulgationDate` fields to LPCI corpus types, optional
+`supportsDocumentStatus` to `DscpDomainProfile`, and focused tests. Codex
+reviewer repaired missing `supportsDocumentStatus` true/false/undefined tests.
+Verification: control-plane check PASS; control-plane full tests PASS 142 files
+/ 3700 tests; cvf-web check PASS; focused `types.ec02.test.ts` PASS 10/10;
+reviewer-fast PASS; material pre-commit PASS. Boundary: schema/type closure
+only; no corpus JSON migration, runtime EC-02 gate enforcement, DSCP profile
+JSON value change, retrieval behavior, provider/API-key proof, public-sync,
+current-law/legal-quality claim, production/public readiness, memory
 reinjection, high-risk promotion, or autonomous mutation.
 
 LPCI2 EC-T2 contract amendment and machine semantics are
@@ -455,13 +456,12 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: Claude may execute the committed EC-T3 corpus record schema
-update work order under `WORKER_MUST_NOT_COMMIT` and return staged/uncommitted
-artifacts for Codex review. EC-T4, EC-T5, EX-T3, EX-T4, EX-T5, dependency
-addition, OCR model download, corpus ingestion, runtime/source change beyond
-the EC-T3 owned TypeScript schema/test files, public-sync, provider/API key
-use, production readiness, or public readiness remain unauthorized without
-fresh authorization.
+Next allowed move: EC-T4 may proceed only through a fresh operator-date
+evidence path and source-verified work order. EC-T4 implementation, EC-T5,
+EX-T3, EX-T4, EX-T5, dependency addition, OCR model download, corpus
+ingestion, runtime/source change beyond an authorized EC-T4 packet,
+public-sync, provider/API key use, production readiness, or public readiness
+remain unauthorized without fresh authorization.
 T12 remains forbidden until EC-02 resolves on or after 2026-07-01 and
 eligibility is re-evaluated.
 

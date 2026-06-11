@@ -32,15 +32,15 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci2_ec_t3_schema_update_dispatched`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=Claude may execute the committed EC-T3 schema update work order under WORKER_MUST_NOT_COMMIT and return staged/uncommitted artifacts; parked checkpoint=EC-T4/EC-T5 plus DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`lpci2_ec_t3_schema_update_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=EC-T4 may proceed only through a fresh operator-date evidence path and source-verified work order; parked checkpoint=EC-T4 operator dates plus EC-T5/EX-T3-EX-T5 and DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`lpci2_ec_t3_schema_update_dispatched`
+`lpci2_ec_t3_schema_update_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `838512da`
-(private provenance material commit hardening Source Verification table-shape
-dispatch controls while EC-T3 worker execution remains pending).
+Current HEAD recorded for this handoff: `a895dc03`
+(private provenance material commit implementing LPCI2 EC-T3 corpus schema
+fields before closure documentation and session sync).
 
 ## Active Boundary
 
@@ -58,25 +58,52 @@ in archived handoffs and governed completion packets.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: session continuity sync after material
-commit `838512da` so the active handoff and state registry name the latest
-control-plane hardening commit while preserving the EC-T3 next allowed move.
+Authorized guard-maintenance scope: session continuity sync after EC-T3
+material commit `a895dc03` so the active handoff and state registry name EC-T3
+closure state and preserve the next blocked/conditional EC-T4 move.
 
 Protected paths:
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 
-Operator authorization: 2026-06-11 operator instructed Codex to keep tightening
-CVF foundation controls while Claude continues EC-T3 under a separate worker
-boundary.
+Operator authorization: 2026-06-11 operator returned the EC-T3 worker packet
+for Codex review and closure.
 
-Rollback boundary: revert only this session-sync update to
+Rollback boundary: revert only this EC-T3 closure/session update to
 `AGENT_HANDOFF_V17_2026-06-07.md` and
 `CVF_SESSION/ACTIVE_SESSION_STATE.json` if the continuity record is incorrect.
-Do not revert the material hardening commit `838512da`, EC-T3 worker files, or
-unrelated governance/session history.
+Do not revert EC-T3 material commit `a895dc03`, Source Verification hardening
+commit `838512da`, or unrelated governance/session history.
 
 ## Latest Continuity Note
+
+LPCI2 EC-T3 corpus record schema update is `CLOSED_PASS_BOUNDED` at material
+commit `a895dc03`; closure documentation follows in this batch.
+
+Closure artifacts:
+
+- `docs/baselines/CVF_GC018_LPCI2_EC_T3_CORPUS_RECORD_SCHEMA_UPDATE_2026-06-11.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EC_T3_CORPUS_RECORD_SCHEMA_UPDATE_FOR_CLAUDE_2026-06-11.md`
+- `docs/reviews/CVF_LPCI2_EC_T3_CORPUS_RECORD_SCHEMA_UPDATE_COMPLETION_2026-06-11.md`
+- `docs/roadmaps/CVF_LPCI2_EXTRACTION_AND_EC02_REFINEMENT_ROADMAP_2026-06-10.md`
+
+Result: EC-T3 added `DocumentStatus`, optional `documentStatus` and
+`promulgationDate` fields to LPCI corpus types, optional
+`supportsDocumentStatus` to `DscpDomainProfile`, and focused tests. Codex
+reviewer repaired the missing `supportsDocumentStatus` true/false/undefined
+tests before commit.
+
+Verification: control-plane check PASS; control-plane full tests PASS 142
+files / 3700 tests; cvf-web check PASS; focused `types.ec02.test.ts` PASS
+10/10; reviewer-fast PASS; material pre-commit PASS. Full `cvf-web` suite has
+3 route/live/memory failures classified as out-of-scope for EC-T3 and recorded
+in the completion review.
+
+Boundary: schema/type closure only; no corpus JSON migration, runtime EC-02
+gate enforcement, DSCP profile JSON value change, retrieval behavior,
+provider/API-key proof, public-sync, current-law/legal-quality claim,
+production/public readiness, memory reinjection, high-risk promotion, or
+autonomous mutation.
 
 Source Verification table-shape checker hardening is `CLOSED_PASS_BOUNDED` at
 material commit `838512da`.

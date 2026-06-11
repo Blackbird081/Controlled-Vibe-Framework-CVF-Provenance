@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 
@@ -260,8 +260,37 @@ The following must not appear in EC-T3 artifacts:
    `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base b357b519 --head HEAD`
 9. Reviewer-fast passes:
    `python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast --serial`
-10. CI passes: `npm run test:run` in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/`
-    and type check in `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/`.
+10. Focused EC-T3 tests and type checks pass. Full `cvf-web` suite failures,
+    if present, must be classified for EC-T3 scope before closure.
+
+---
+
+## Closure Evidence
+
+Closure status: CLOSED_PASS_BOUNDED
+
+Material commit: `a895dc03`
+
+Completion review:
+`docs/reviews/CVF_LPCI2_EC_T3_CORPUS_RECORD_SCHEMA_UPDATE_COMPLETION_2026-06-11.md`
+
+Verification:
+
+- `npm run check` in `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION`: PASS
+- `npm run test` in `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION`: PASS 142 files / 3700 tests
+- `npm run check` in `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web`: PASS
+- `npm run test:run -- src/lib/lpci/types.ec02.test.ts`: PASS 10/10
+- reviewer-fast: PASS
+- material pre-commit chain: PASS 37/37
+
+Full `cvf-web` suite note: `npm run test:run` was run and produced 3
+out-of-scope route/live/memory failures unrelated to the EC-T3 schema files.
+The completion review records the failing files and learning disposition.
+
+Boundary: schema/type closure only. No corpus JSON data migration, DSCP profile
+JSON value change, runtime gate logic, retrieval behavior, provider/API-key
+proof, public-sync, current-law/legal-quality claim, production readiness, or
+public readiness.
 
 ---
 

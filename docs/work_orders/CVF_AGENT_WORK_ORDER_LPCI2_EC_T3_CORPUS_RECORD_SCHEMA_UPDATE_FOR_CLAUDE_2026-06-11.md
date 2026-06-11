@@ -4,13 +4,13 @@ docType: work_order
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 dispatchBaseHead: `b357b519`
 
-executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
+executionBaseHead: `9b3bc72c`
 
-closureBaseHead: `REVIEWER_MUST_CAPTURE_AT_CLOSURE`
+closureBaseHead: `a895dc03`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -46,7 +46,7 @@ data files, or any public-facing contract. WORKER_MUST_NOT_COMMIT.
 ## Authority Chain
 
 - GC-018: `docs/baselines/CVF_GC018_LPCI2_EC_T3_CORPUS_RECORD_SCHEMA_UPDATE_2026-06-11.md`
-  Status: DISPATCHED
+  Status: CLOSED_PASS_BOUNDED
 - EC-T2 closure: `docs/baselines/CVF_GC018_LPCI2_EC_T2_CONTRACT_AMENDMENT_AND_MACHINE_SEMANTICS_2026-06-11.md`
   Status: CLOSED_PASS_BOUNDED commit `cb026168`
 - EC-T1 GC-018 decisions D-01 through D-04:
@@ -284,17 +284,17 @@ Codex reviewer must:
 
 ## Closure Checklist
 
-- [ ] `DocumentStatus` type alias exported from `types.ts`
-- [ ] `documentStatus?` and `promulgationDate?` added to `LpciIndexRecord`
-- [ ] `documentStatus?` and `promulgationDate?` added to `ManifestEntry`
-- [ ] `supportsDocumentStatus?` added to `DscpDomainProfile`
-- [ ] New unit tests added and passing
-- [ ] `RecordStatus` and `status` field unchanged
-- [ ] No corpus data or DSCP profile JSON changes
-- [ ] Reviewer-fast PASS
-- [ ] Pre-closure autorun gate PASS
-- [ ] GC-018 Status updated to CLOSED_PASS_BOUNDED
-- [ ] Roadmap EC-T3 row updated to CLOSED_PASS_BOUNDED
+- [x] `DocumentStatus` type alias exported from `types.ts`
+- [x] `documentStatus?` and `promulgationDate?` added to `LpciIndexRecord`
+- [x] `documentStatus?` and `promulgationDate?` added to `ManifestEntry`
+- [x] `supportsDocumentStatus?` added to `DscpDomainProfile`
+- [x] New unit tests added and passing
+- [x] `RecordStatus` and `status` field unchanged
+- [x] No corpus data or DSCP profile JSON changes
+- [x] Reviewer-fast PASS
+- [x] Pre-closure autorun gate PASS except expected active-session sync after material commit
+- [x] GC-018 Status updated to CLOSED_PASS_BOUNDED
+- [x] Roadmap EC-T3 row updated to CLOSED_PASS_BOUNDED
 
 ---
 
@@ -340,20 +340,19 @@ may carry `documentStatus: 'IN_FORCE'` before 2026-07-01.
 
 ## Machine Closure Package
 
-This work order is NOT YET CLOSED. All BLOCKED rows below will be resolved
-by Codex at closure. Registry JSON and Registry Markdown are structurally
-blocked (EC-T3 scope is TypeScript type additions only).
+This work order is closed as `CLOSED_PASS_BOUNDED`. Registry JSON and Registry
+Markdown remain unchanged because EC-T3 scope is TypeScript type additions only.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EC_T3_CORPUS_RECORD_SCHEMA_UPDATE_FOR_CLAUDE_2026-06-11.md` | Status field set to CLOSED_PASS_BOUNDED by Codex at closure | BLOCKED -- awaiting Codex closure |
-| Completion or reviewer artifact | `docs/reviews/CVF_LPCI2_EC_T3_CORPUS_RECORD_SCHEMA_UPDATE_COMPLETION_2026-06-11.md` | File existence + PASS disposition line | BLOCKED -- awaiting worker execution and Codex review |
-| Roadmap state | `docs/roadmaps/CVF_LPCI2_EXTRACTION_AND_EC02_REFINEMENT_ROADMAP_2026-06-10.md` | Part B EC-T3 row updated to CLOSED_PASS_BOUNDED | BLOCKED -- awaiting closure |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EC_T3_CORPUS_RECORD_SCHEMA_UPDATE_FOR_CLAUDE_2026-06-11.md` | Status field set to CLOSED_PASS_BOUNDED by Codex at closure | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LPCI2_EC_T3_CORPUS_RECORD_SCHEMA_UPDATE_COMPLETION_2026-06-11.md` | File existence + PASS disposition line | PASS |
+| Roadmap state | `docs/roadmaps/CVF_LPCI2_EXTRACTION_AND_EC02_REFINEMENT_ROADMAP_2026-06-10.md` | Part B EC-T3 row updated to CLOSED_PASS_BOUNDED | PASS |
 | Registry JSON | `docs/reference/CVF_EC02_GATE_SEMANTICS_2026-06-11.json` | Schema version field present; file at commit `cb026168` | PASS |
 | Registry Markdown | `docs/reference/CVF_LPCI_RESPONSE_BOUNDARY_ENFORCEMENT_CONTRACT_2026-06-11.md` | contractVersion field; file at commit `cb026168` | PASS |
 | External evidence digest | N/A with reason -- EC-T3 is TypeScript type additions only; no external corpus, provider, or non-git artifact is consumed | No external path artifacts in scope | N/A with reason |
 | System loop interlock | GC-052 system loop interlock: no looping worker pattern in this work order; Claude executes once and returns | Single-pass execution pattern; no loop | N/A with reason |
-| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | nextAllowedMove updated to EC-T4 after EC-T3 closes; handoff reflects new HEAD | BLOCKED -- awaiting Codex session sync at closure |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | nextAllowedMove updated after EC-T3 closure; handoff sync follows closure commit | PASS |
 
 ---
 

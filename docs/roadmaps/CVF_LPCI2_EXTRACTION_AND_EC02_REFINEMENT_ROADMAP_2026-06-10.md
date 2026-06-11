@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_PARTIAL_AFTER_EX_T2_EC_T2_COMPLETE
+Status: ACTIVE_PARTIAL_AFTER_EX_T2_EC_T2_EC_T3_COMPLETE
 
 docType: roadmap
 
@@ -27,12 +27,13 @@ decision. EX-T2 is now closed pass bounded through fresh GC-018 authorization,
 a source-verified work order, focused tests, and Codex completion review.
 
 This records closure of the bounded EX-T2 Tier 1 digital-native extractor
-implementation, EC-T1 regulatory date/status decision baseline, and EC-T2
-contract amendment plus machine-readable EC-02 semantics JSON. It does not
-authorize repo dependency addition, OCR model download, corpus ingestion,
-runtime retrieval behavior change, DSCP profile update, public-sync, or
-live/provider proof. Any later child lane must receive fresh GC-018
-authorization and a source-verified work order before dispatch.
+implementation, EC-T1 regulatory date/status decision baseline, EC-T2 contract
+amendment plus machine-readable EC-02 semantics JSON, and EC-T3 TypeScript
+corpus schema fields. It does not authorize repo dependency addition, OCR model
+download, corpus ingestion, runtime retrieval behavior change, DSCP profile
+value update, public-sync, or live/provider proof. Any later child lane must
+receive fresh GC-018 authorization and a source-verified work order before
+dispatch.
 
 ---
 
@@ -618,8 +619,8 @@ that the runtime token, contract table, and machine semantics agree.
 |---|---|---|---|
 | EC-T1 | Governance decision record | `CVF_GC018_REGULATORY_DATE_MODEL_*.md` - explicitly authorized scope; establishes `documentStatus` as CVF-layer concept | Explicit authorization |
 | EC-T2 | Contract and machine semantics | COMPLETE_BOUNDED: response boundary contract update plus machine-readable EC-02 gate semantics JSON | EC-T1 |
-| EC-T3 | Corpus record schema update | `documentStatus`, `promulgationDate`, `effectiveDate` added to corpus record schema; all BLOCKED records migrated | EC-T2 |
-| EC-T4 | Per-project metadata backfill | Operator supplies actual dates for existing records; automated `documentStatus` computation | EC-T3, operator dates |
+| EC-T3 | Corpus record schema update | CLOSED_PASS_BOUNDED at `a895dc03`: `documentStatus`, `promulgationDate`, and `effectiveDate` schema support in TypeScript; no corpus JSON migration | EC-T2 |
+| EC-T4 | Per-project metadata backfill | Operator supplies actual dates for existing records; automated `documentStatus` computation and any record migration | EC-T3, operator dates |
 | EC-T5 | DSCP gate value update | `ec02Gate: "QUERY_CLASS_GATED"` in domain profiles; checker enforces new token | EC-T4 |
 | EC-T6 | Retrieval disclosure wire-in | Retrieval layer appends i18n disclosure when `documentStatus=PROMULGATED` | EC-T5 |
 
@@ -631,10 +632,11 @@ that the runtime token, contract table, and machine semantics agree.
    schema commit - name change is breaking once downstream records are written.
 
 2. **Migration guard**: All 6 current T11 records carry `BLOCKED_UNTIL_2026-07-01`.
-   EC-T3 must migrate these to `documentStatus=PROMULGATED` without silently
-   dropping the applicability block. Codex should propose a checker assertion
-   that zero records transition from `BLOCKED_*` to `IN_FORCE` without an
-   operator-supplied `effectiveDate` that has actually passed.
+   EC-T3 closed as schema-only; EC-T4 must migrate or backfill these records to
+   `documentStatus=PROMULGATED` without silently dropping the applicability
+   block. Codex should propose a checker assertion that zero records transition
+   from `BLOCKED_*` to `IN_FORCE` without an operator-supplied `effectiveDate`
+   that has actually passed.
 
 3. **`ec02Gate: "QUERY_CLASS_GATED"` semantics**: The retrieval layer must know
    what `"QUERY_CLASS_GATED"` means. Codex position: machine-readable
