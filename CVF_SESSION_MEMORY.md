@@ -58,7 +58,8 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-LPCI2 EX-T8 extraction authority and storage boundary is `DISPATCHED`.
+LPCI2 EX-T8 extraction authority and storage boundary is `DISPATCHED` at
+commit `f6d1cd15`.
 
 Artifacts:
 

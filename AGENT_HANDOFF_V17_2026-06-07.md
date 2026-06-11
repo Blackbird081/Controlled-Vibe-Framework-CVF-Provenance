@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`lpci2_ex_t8_extraction_authority_storage_bou
 
 `lpci2_ex_t8_extraction_authority_storage_boundary_dispatched`
 
-Current HEAD recorded for this handoff: `PENDING_EX_T8_DISPATCH_COMMIT`
-(EX-T8 dispatch package staged before commit).
+Current HEAD recorded for this handoff: `f6d1cd15`
+(EX-T8 dispatch package commit).
 
 ## Active Boundary
 
@@ -78,7 +78,8 @@ unrelated governance/session history.
 
 ## Latest Continuity Note
 
-LPCI2 EX-T8 extraction authority and storage boundary is `DISPATCHED`.
+LPCI2 EX-T8 extraction authority and storage boundary is `DISPATCHED` at
+commit `f6d1cd15`.
 
 Artifacts:
 
