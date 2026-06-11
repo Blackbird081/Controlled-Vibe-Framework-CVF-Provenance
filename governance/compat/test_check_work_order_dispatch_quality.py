@@ -52,6 +52,7 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
                     MODULE.NEGATIVE_SEARCH_COLLISION_MARKER,
                     MODULE.SINGLE_AGENT_MULTI_ROLE_MARKER,
                     MODULE.INTAKE_ROLE_ROUTING_MARKER,
+                    MODULE.EVIDENCE_REUSE_ENCODING_PLAN_MARKER,
                     MODULE.DISPATCH_PACKET_LEARNING_MARKER,
                     MODULE.THIS_SCRIPT_PATH,
                 ]
@@ -75,7 +76,21 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
                     MODULE.NEGATIVE_SEARCH_COLLISION_MARKER,
                     MODULE.SINGLE_AGENT_MULTI_ROLE_MARKER,
                     MODULE.INTAKE_ROLE_ROUTING_MARKER,
+                    MODULE.EVIDENCE_REUSE_ENCODING_PLAN_MARKER,
+                    MODULE.EVIDENCE_REUSE_ENCODING_STANDARD_PATH,
                     MODULE.THIS_SCRIPT_PATH,
+                ]
+            ),
+        )
+        self._write(
+            MODULE.EVIDENCE_REUSE_ENCODING_STANDARD_PATH,
+            "\n".join(
+                [
+                    MODULE.EVIDENCE_REUSE_ENCODING_PLAN_MARKER,
+                    "REUSE_PRIOR_VERIFICATION",
+                    "RECOMPUTE_REQUIRED",
+                    "REVIEWER_RECOMPUTE_ONLY",
+                    "unicodePathHandling",
                 ]
             ),
         )
@@ -91,6 +106,30 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
             ),
         )
         self._write(MODULE.HOOK_CHAIN_PATH, MODULE.THIS_SCRIPT_PATH)
+
+    def _ready_work_order_lines(self, extra_lines: list[str]) -> list[str]:
+        return [
+            "# Test",
+            "Status: DISPATCH_READY",
+            "Commit mode: WORKER_MAY_COMMIT",
+            "dispatchBaseHead: abc123",
+            "executionBaseHead: WORKER_MUST_CAPTURE_AT_START",
+            "closureBaseHead: REVIEWER_CAPTURE",
+            "## Worker Autonomy / No-Question Rule",
+            "Allowed-scope remediation is mandatory.",
+            "## Intake Role Routing Decision",
+            "- Intake summary: operator request is bounded control-plane work.",
+            "- Scope classification: bounded allowed scope with low blast radius.",
+            "- Risk sensitivity: no public-sync, provider, live, secret, legal, production, or readiness claim.",
+            "- Selected role route: routeMode=SINGLE_AGENT_SINGLE_ROLE.",
+            "- Role separation basis: orchestrator and worker duties remain local; reviewer is not claimed independent.",
+            "- Escalation condition: stop for operator checkpoint or external reviewer if scope/risk changes.",
+            "## Source Verification Block",
+            "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+            "|---|---|---|---|---|---|",
+            "| Template | `docs/reference/source.md` | Scope | `source.md` | doc | ACCEPT |",
+            *extra_lines,
+        ]
 
     def test_lhw6_dispatch_without_gc018_and_trace_matrix_fails(self) -> None:
         work_order = "docs/work_orders/CVF_WO_LHW6_T1_TEST_2026-05-28.md"
@@ -385,6 +424,101 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
             if "intake role routing" in issue or "Intake Role Routing" in issue
         ]
         self.assertEqual([], routing_issues)
+
+    def test_dispatch_ready_t11b_reference_without_evidence_reuse_plan_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_T11B_REUSE_PLAN_MISSING_2026-06-11.md"
+        self._write("docs/reference/source.md", "## Scope\nsource\n")
+        self._write(
+            work_order,
+            "\n".join(
+                self._ready_work_order_lines(
+                    [
+                        "## Execution Instructions",
+                        "Consume the T11B verification result and Unicode-path extracted text.",
+                    ]
+                )
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "dispatch/ready work order cites prior verification, external evidence, "
+            "source bundle, T11B, extracted text, or Unicode-path evidence but lacks "
+            "`## Evidence Reuse And Encoding Plan`",
+            report["violations"][0]["issues"],
+        )
+
+    def test_dispatch_ready_t11b_reference_with_reuse_plan_passes(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_T11B_REUSE_PLAN_PASS_2026-06-11.md"
+        self._write("docs/reference/source.md", "## Scope\nsource\n")
+        self._write(
+            work_order,
+            "\n".join(
+                self._ready_work_order_lines(
+                    [
+                        "## Evidence Reuse And Encoding Plan",
+                        "verificationMode: REUSE_PRIOR_VERIFICATION",
+                        "priorVerificationArtifact: `docs/reviews/CVF_LPCI2_T11B_SOURCE_VERIFICATION_COMPLETION_2026-06-07.md`",
+                        "priorVerificationAnchor: `t11b-closure`",
+                        "freshRecomputeRequired: NO",
+                        "recomputeReason: N/A with reason",
+                        "unicodePathHandling: use literal paths and UTF-8-safe readers",
+                        "extractedTextAuthority: AUXILIARY_ONLY",
+                        "## Execution Instructions",
+                        "Consume the T11B verification result and Unicode-path extracted text.",
+                    ]
+                )
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        evidence_plan_issues = [
+            issue
+            for violation in report["violations"]
+            for issue in violation["issues"]
+            if "Evidence Reuse And Encoding Plan" in issue
+            or "REUSE_PRIOR_VERIFICATION" in issue
+            or "unicodePathHandling" in issue
+            or "extractedTextAuthority" in issue
+        ]
+        self.assertEqual([], evidence_plan_issues)
+
+    def test_dispatch_ready_recompute_mode_without_reason_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_T11B_RECOMPUTE_REASON_MISSING_2026-06-11.md"
+        self._write("docs/reference/source.md", "## Scope\nsource\n")
+        self._write(
+            work_order,
+            "\n".join(
+                self._ready_work_order_lines(
+                    [
+                        "## Evidence Reuse And Encoding Plan",
+                        "verificationMode: RECOMPUTE_REQUIRED",
+                        "priorVerificationArtifact: `docs/reviews/CVF_LPCI2_T11B_SOURCE_VERIFICATION_COMPLETION_2026-06-07.md`",
+                        "priorVerificationAnchor: `t11b-closure`",
+                        "freshRecomputeRequired: YES",
+                        "recomputeReason: N/A with reason",
+                        "unicodePathHandling: use literal paths and UTF-8-safe readers",
+                        "extractedTextAuthority: AUXILIARY_ONLY",
+                        "## Execution Instructions",
+                        "Consume the T11B verification result and Unicode-path extracted text.",
+                    ]
+                )
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "`RECOMPUTE_REQUIRED` requires a concrete `recomputeReason`",
+            report["violations"][0]["issues"],
+        )
 
     def test_accept_row_with_missing_source_file_fails(self) -> None:
         work_order = "docs/work_orders/CVF_WO_LHW6_T2_TEST_2026-05-28.md"

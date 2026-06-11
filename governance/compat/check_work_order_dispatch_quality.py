@@ -37,6 +37,10 @@ DISPATCH_PACKET_LEARNING_MARKER = "Dispatch Packet Authoring Learning Promotion"
 NEGATIVE_SEARCH_COLLISION_MARKER = "Negative Search And Collision Discipline"
 SINGLE_AGENT_MULTI_ROLE_MARKER = "Single-Agent Multi-Role Control Block"
 INTAKE_ROLE_ROUTING_MARKER = "Intake Role Routing Decision"
+EVIDENCE_REUSE_ENCODING_PLAN_MARKER = "Evidence Reuse And Encoding Plan"
+EVIDENCE_REUSE_ENCODING_STANDARD_PATH = (
+    "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md"
+)
 ALLOWED_COMMIT_MODES = {
     "WORKER_MAY_COMMIT",
     "WORKER_MUST_NOT_COMMIT",
@@ -103,6 +107,11 @@ ROLE_ROUTING_MODES = {
     "SINGLE_AGENT_MULTI_ROLE",
     "MULTI_AGENT_MULTI_ROLE",
     "MULTI_AGENT_SINGLE_ROLE",
+}
+EVIDENCE_REUSE_VERIFICATION_MODES = {
+    "REUSE_PRIOR_VERIFICATION",
+    "RECOMPUTE_REQUIRED",
+    "REVIEWER_RECOMPUTE_ONLY",
 }
 PENDING_ROLE_ROUTING_MODES = {
     "HOLD_PENDING_OPERATOR_DECISION",
@@ -1208,6 +1217,110 @@ def _validate_single_agent_multi_role_control(text: str, artifact_label: str) ->
     return sorted(set(issues))
 
 
+def _requires_evidence_reuse_and_encoding_plan(text: str) -> bool:
+    lowered = text.lower()
+    direct_markers = (
+        "prior verification",
+        "prior manifest",
+        "t11b",
+        "source bundle",
+        "extracted text",
+        "extracted-text",
+        "unicode path",
+        "unicode-path",
+    )
+    if any(marker in lowered for marker in direct_markers):
+        return True
+    return re.search(
+        r"(?:consume|consumes|cite|cites|use|uses|read|reads|load|loads|relies\s+on|relies\s+upon)"
+        r"[\s\S]{0,140}external evidence digest"
+        r"|external evidence digest[\s\S]{0,140}"
+        r"(?:consume|consumes|cite|cites|use|uses|read|reads|load|loads|input|source)",
+        text,
+        re.IGNORECASE,
+    ) is not None
+
+
+def _field_value_from_block(block: str, field_name: str) -> str:
+    match = re.search(
+        rf"(?im)^\s*(?:[-*]\s*)?{re.escape(field_name)}\s*:\s*`?([^`\n]+?)`?\s*$",
+        block,
+    )
+    return match.group(1).strip() if match else ""
+
+
+def _is_missing_or_na(value: str) -> bool:
+    normalized = value.strip().strip("`").lower()
+    return not normalized or normalized in {"n/a", "na", "n/a with reason", "none", "tbd", "todo"}
+
+
+def _validate_evidence_reuse_and_encoding_plan(text: str) -> list[str]:
+    if not _requires_evidence_reuse_and_encoding_plan(text):
+        return []
+    block = _extract_section(text, EVIDENCE_REUSE_ENCODING_PLAN_MARKER)
+    if not block:
+        return [
+            "dispatch/ready work order cites prior verification, external evidence, "
+            "source bundle, T11B, extracted text, or Unicode-path evidence but lacks "
+            f"`## {EVIDENCE_REUSE_ENCODING_PLAN_MARKER}`"
+        ]
+
+    issues: list[str] = []
+    mode_value = _field_value_from_block(block, "verificationMode").strip().strip("`")
+    modes_in_block = {
+        mode
+        for mode in EVIDENCE_REUSE_VERIFICATION_MODES
+        if re.search(rf"\b{re.escape(mode)}\b", block)
+    }
+    if not mode_value:
+        issues.append(f"`## {EVIDENCE_REUSE_ENCODING_PLAN_MARKER}` lacks `verificationMode`")
+    elif mode_value not in EVIDENCE_REUSE_VERIFICATION_MODES:
+        issues.append(
+            f"`verificationMode` must be one of {sorted(EVIDENCE_REUSE_VERIFICATION_MODES)}; "
+            f"found `{mode_value}`"
+        )
+    if len(modes_in_block) > 1:
+        issues.append(
+            f"`## {EVIDENCE_REUSE_ENCODING_PLAN_MARKER}` records multiple verification modes: "
+            + ", ".join(sorted(modes_in_block))
+        )
+
+    prior_artifact = _field_value_from_block(block, "priorVerificationArtifact")
+    prior_anchor = _field_value_from_block(block, "priorVerificationAnchor")
+    recompute_reason = _field_value_from_block(block, "recomputeReason")
+    unicode_handling = _field_value_from_block(block, "unicodePathHandling")
+    extracted_authority = _field_value_from_block(block, "extractedTextAuthority")
+    fresh_recompute = _field_value_from_block(block, "freshRecomputeRequired")
+
+    if mode_value == "REUSE_PRIOR_VERIFICATION":
+        if _is_missing_or_na(prior_artifact):
+            issues.append("`REUSE_PRIOR_VERIFICATION` requires `priorVerificationArtifact`")
+        if _is_missing_or_na(prior_anchor):
+            issues.append("`REUSE_PRIOR_VERIFICATION` requires `priorVerificationAnchor`")
+        if fresh_recompute.strip().strip("`").upper() not in {"NO", "FALSE"}:
+            issues.append("`REUSE_PRIOR_VERIFICATION` requires `freshRecomputeRequired: NO`")
+    elif mode_value == "RECOMPUTE_REQUIRED":
+        if _is_missing_or_na(recompute_reason):
+            issues.append("`RECOMPUTE_REQUIRED` requires a concrete `recomputeReason`")
+    elif mode_value == "REVIEWER_RECOMPUTE_ONLY":
+        if _is_missing_or_na(prior_artifact):
+            issues.append("`REVIEWER_RECOMPUTE_ONLY` requires `priorVerificationArtifact`")
+
+    if re.search(r"unicode|extracted[- ]text", text, re.IGNORECASE):
+        if _is_missing_or_na(unicode_handling):
+            issues.append("Unicode or extracted-text evidence requires `unicodePathHandling`")
+        elif not re.search(r"literal|utf-?8|utf8", unicode_handling, re.IGNORECASE):
+            issues.append("`unicodePathHandling` must require literal paths or UTF-8-safe readers")
+    if re.search(r"extracted[- ]text", text, re.IGNORECASE):
+        normalized_authority = extracted_authority.strip().strip("`")
+        if normalized_authority not in {"SOURCE_AUTHORITY", "AUXILIARY_ONLY", "N/A with reason"}:
+            issues.append(
+                "`extractedTextAuthority` must be SOURCE_AUTHORITY, AUXILIARY_ONLY, or N/A with reason"
+            )
+
+    return issues
+
+
 def _extract_role_routing_modes(section: str) -> set[str]:
     upper_section = section.upper()
     return {
@@ -1787,6 +1900,7 @@ def _validate_work_order(path: str, text: str) -> list[str]:
         issues.extend(_validate_source_verification_disposition_discipline(text))
         issues.extend(_validate_intake_role_routing_decision(text, "work order"))
         issues.extend(_validate_single_agent_multi_role_control(text, "work order"))
+        issues.extend(_validate_evidence_reuse_and_encoding_plan(text))
 
     if dispatching and _is_connector_wave(path, text):
         wave_id = _extract_wave_id(path, text)
@@ -2343,6 +2457,7 @@ def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str
             NEGATIVE_SEARCH_COLLISION_MARKER,
             SINGLE_AGENT_MULTI_ROLE_MARKER,
             INTAKE_ROLE_ROUTING_MARKER,
+            EVIDENCE_REUSE_ENCODING_PLAN_MARKER,
             DISPATCH_PACKET_LEARNING_MARKER,
             "ACCEPT_AS_OWNER_MAP coverage",
             THIS_SCRIPT_PATH,
@@ -2363,6 +2478,13 @@ def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str
             INTAKE_ROLE_ROUTING_MARKER,
             "ACCEPT_AS_OWNER_MAP coverage",
             THIS_SCRIPT_PATH,
+        ),
+        EVIDENCE_REUSE_ENCODING_STANDARD_PATH: (
+            EVIDENCE_REUSE_ENCODING_PLAN_MARKER,
+            "REUSE_PRIOR_VERIFICATION",
+            "RECOMPUTE_REQUIRED",
+            "REVIEWER_RECOMPUTE_ONLY",
+            "unicodePathHandling",
         ),
         WORKER_AUTONOMY_STANDARD_PATH: (
             "Worker Autonomy Prompt",

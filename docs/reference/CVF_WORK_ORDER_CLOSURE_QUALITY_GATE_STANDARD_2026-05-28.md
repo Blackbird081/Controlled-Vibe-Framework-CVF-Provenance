@@ -154,10 +154,10 @@ unknown, or later confirmation is a dispatch defect.
 
 Dispatch packet defects found during reviewer cleanup are reusable
 governance/control-plane learning signals when they affect source verification,
-base anchors, runtime freshness evidence, fulfillment manifests, or
-machine-readable status. The closure batch must promote the pattern to a
-template, standard, or machine check when feasible; otherwise record `N/A with
-reason`.
+base anchors, runtime freshness evidence, `Evidence Reuse And Encoding Plan`,
+fulfillment manifests, or machine-readable status. The closure batch must
+promote the pattern to a template, standard, or machine check when feasible;
+otherwise record `N/A with reason`.
 
 ### Self-Reported Gate Evidence Consistency
 
