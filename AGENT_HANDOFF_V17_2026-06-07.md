@@ -93,6 +93,15 @@ LPCI2 Extraction and EC-02 Refinement roadmap:
   semantics must use separate child GC-018/work orders before dispatch
 - Public Export Disposition: `DEFERRED_PRIVATE_ONLY`
 
+Public README control-map update:
+
+- public-sync repo: `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync`
+- remote verified before push:
+  `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+- public commit: `eb2ea138d`
+- scope: README `What CVF Is` now expands the macro lifecycle into detailed
+  intake, design, spec, work order, build, review, and freeze control gates
+
 Recent Claude/co-authored updates after T9:
 
 - `7339d5f0` added the Implementation-First Absorption Pattern.
@@ -165,6 +174,7 @@ Delivered scope:
 - Closed DSCP-T11E domain-profile registry.
 - Committed DSCP-T11F profile selection adapter material packet at `be6a0a17`.
 - Hardened LPCI2 Extraction and EC-02 Refinement roadmap at `dfcffcd4`.
+- Pushed public README control-map clarification at public commit `eb2ea138d`.
 - Hardened reviewer-fast/pre-commit/pre-push gates for review-packet authority
   references and added-line text encoding discipline.
 - Promoted reusable PolicyLocal UI audit lessons into `DESIGN.md`.

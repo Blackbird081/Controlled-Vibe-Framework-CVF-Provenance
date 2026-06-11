@@ -103,6 +103,12 @@ LPCI2 Extraction and EC-02 Refinement roadmap was hardened and committed at
 from EC-02 retrieval-governance semantics, requires child GC-018/work orders
 before dispatch, and keeps Public Export Disposition `DEFERRED_PRIVATE_ONLY`.
 
+Public README was updated in the public-sync repository at commit `eb2ea138d`
+and pushed to `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`.
+The update expands the public `What CVF Is` section from the macro lifecycle
+into the detailed governed work control map: intake, design, spec, work order,
+build, review, and freeze.
+
 Recent Claude/co-authored updates after T9:
 
 - implementation-first absorption pattern added:
