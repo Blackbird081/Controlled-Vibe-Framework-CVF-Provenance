@@ -34,6 +34,7 @@ NEAR_THRESHOLD_PLAN_MARKER = "Near-Threshold Owner Maintainability Plan"
 FULFILLMENT_MANIFEST_MARKER = "Work-Order Fulfillment Manifest"
 COMMIT_MODE_ANCHOR_MARKER = "Commit Mode And Base-Anchor Lifecycle"
 DISPATCH_PACKET_LEARNING_MARKER = "Dispatch Packet Authoring Learning Promotion"
+NEGATIVE_SEARCH_COLLISION_MARKER = "Negative Search And Collision Discipline"
 ALLOWED_COMMIT_MODES = {
     "WORKER_MAY_COMMIT",
     "WORKER_MUST_NOT_COMMIT",
@@ -65,6 +66,33 @@ PENDING_DEPENDENCY_LANGUAGE_RE = re.compile(
     r")\b[\s\S]{0,180}\bCLOSED_PASS(?:_BOUNDED)?\b",
     re.IGNORECASE,
 )
+NEGATIVE_SEARCH_CLAIM_RE = re.compile(
+    r"\bNOT\s+FOUND\b|\bBLOCKED_SOURCE_NOT_FOUND\b",
+    re.IGNORECASE,
+)
+NEGATIVE_SEARCH_TOKEN_STOPWORDS = {
+    "ACCEPT",
+    "BLOCKED_SOURCE_NOT_FOUND",
+    "CLOSED_PASS",
+    "CLOSED_PASS_BOUNDED",
+    "DISPATCHED",
+    "DISPATCH_READY",
+    "DOCS",
+    "DOCUMENTATION",
+    "EXTENSIONS",
+    "EXTERNAL",
+    "FOUND",
+    "GOVERNANCE",
+    "HOLD",
+    "JSON",
+    "NOT",
+    "READY",
+    "REJECT",
+    "SOURCE",
+    "SOURCES",
+    "TEST",
+    "TESTS",
+}
 
 REQUIRED_SOURCE_COLUMNS = (
     "Claimed item",
@@ -933,6 +961,120 @@ def _validate_source_verification_disposition_discipline(text: str) -> list[str]
     return sorted(set(issues))
 
 
+def _negative_search_evidence_section(text: str) -> str:
+    for heading_fragment in (
+        NEGATIVE_SEARCH_COLLISION_MARKER,
+        "Negative Search Evidence",
+        "Negative Search",
+    ):
+        section = _extract_section(text, heading_fragment)
+        if section:
+            return section
+    return ""
+
+
+def _extract_negative_search_tokens(text: str) -> set[str]:
+    tokens: set[str] = set()
+    for match in NEGATIVE_SEARCH_CLAIM_RE.finditer(text):
+        window = text[max(0, match.start() - 220) : min(len(text), match.end() + 220)]
+        tokens.update(re.findall(r"`([A-Za-z_][A-Za-z0-9_.:-]{2,})`", window))
+        tokens.update(re.findall(r"\b[A-Za-z_][A-Za-z0-9_]*[A-Z][A-Za-z0-9_]*\b", window))
+        tokens.update(re.findall(r"\b[A-Z][A-Z0-9_]{3,}\b", window))
+    cleaned: set[str] = set()
+    for token in tokens:
+        stripped = token.strip().strip("`")
+        if stripped.upper() in NEGATIVE_SEARCH_TOKEN_STOPWORDS:
+            continue
+        if "/" in stripped or "\\" in stripped:
+            continue
+        if re.match(r"^[0-9a-f]{6,40}$", stripped, re.IGNORECASE):
+            continue
+        cleaned.add(stripped)
+    return cleaned
+
+
+def _token_occurs_elsewhere(token: str, current_path: str) -> bool:
+    code, out, _ = _run_git(["grep", "-Il", "--", token])
+    if code == 0 and out:
+        return any(line.strip().replace("\\", "/") != current_path for line in out.splitlines())
+    if code in {1, 0}:
+        return False
+
+    skip_dirs = {".git", ".hg", ".svn", "node_modules", ".next", "__pycache__", ".venv", "venv"}
+    for path in REPO_ROOT.rglob("*"):
+        if not path.is_file():
+            continue
+        rel = path.relative_to(REPO_ROOT).as_posix()
+        if rel == current_path:
+            continue
+        if any(part in skip_dirs for part in path.parts):
+            continue
+        try:
+            if token in path.read_text(encoding="utf-8", errors="ignore"):
+                return True
+        except OSError:
+            continue
+    return False
+
+
+def _collision_disposition_records_token(section: str, token: str) -> bool:
+    for line in section.splitlines():
+        if token not in line:
+            continue
+        if not re.search(
+            r"collision|same-token|non-authoritative|different meaning|occurrence",
+            line,
+            re.IGNORECASE,
+        ):
+            continue
+        if re.search(r"\b(?:none|no|zero|0)\b", line, re.IGNORECASE):
+            return False
+        return True
+    return False
+
+
+def _validate_negative_search_collision_discipline(
+    path: str,
+    text: str,
+    artifact_label: str,
+) -> list[str]:
+    if not NEGATIVE_SEARCH_CLAIM_RE.search(text):
+        return []
+
+    issues: list[str] = []
+    section = _negative_search_evidence_section(text)
+    if not section:
+        return [
+            f"{artifact_label} contains `NOT FOUND` or `BLOCKED_SOURCE_NOT_FOUND` "
+            f"but lacks `## {NEGATIVE_SEARCH_COLLISION_MARKER}` evidence"
+        ]
+
+    required_patterns = {
+        "exact search roots": r"search roots?|roots?",
+        "exact search command or query": r"search command|structured query|query",
+        "coverage across source/tests/docs/JSON/external evidence": r"coverage|source|tests|docs|json|external",
+        "same-token collision result": r"collision|same-token|non-authoritative|different meaning|occurrence",
+        "absent-versus-collision disposition": r"disposition|absent|not binding|binding",
+    }
+    for label, pattern in required_patterns.items():
+        if not re.search(pattern, section, re.IGNORECASE):
+            issues.append(
+                f"{artifact_label} negative-search evidence is missing {label}"
+            )
+
+    for token in sorted(_extract_negative_search_tokens(text)):
+        if not _token_occurs_elsewhere(token, path):
+            continue
+        if _collision_disposition_records_token(section, token):
+            continue
+        issues.append(
+            f"{artifact_label} claims `{token}` as not found while the same token "
+            "appears elsewhere in the repo; record the collision/non-authoritative "
+            "occurrence instead of a bare `NOT FOUND` claim"
+        )
+    return sorted(set(issues))
+
+
 def _validate_dispatch_pending_dependency_language(text: str, artifact_label: str) -> list[str]:
     text = re.split(r"(?im)^##\s+.*Reviewer Closure Conversion.*$", text, maxsplit=1)[0]
     filtered_lines = [
@@ -1482,6 +1624,7 @@ def _validate_work_order(path: str, text: str) -> list[str]:
         issues.extend(_validate_ready_live_method_proof_path(text))
 
     issues.extend(_validate_accepted_source_rows(path, text))
+    issues.extend(_validate_negative_search_collision_discipline(path, text, "work order"))
     issues.extend(_validate_no_empty_range_commands(text))
     issues.extend(_validate_accept_owner_map_coverage(text))
     issues.extend(_validate_runtime_freshness_claims(text))
@@ -1508,6 +1651,7 @@ def _validate_roadmap(path: str, text: str) -> list[str]:
         issues.extend(_validate_dispatch_pending_dependency_language(text, "roadmap"))
         issues.extend(_validate_source_verification_disposition_discipline(text))
     issues.extend(_validate_accepted_source_rows(path, text))
+    issues.extend(_validate_negative_search_collision_discipline(path, text, "roadmap"))
     issues.extend(_validate_no_empty_range_commands(text))
     issues.extend(_validate_accept_owner_map_coverage(text))
     issues.extend(_validate_runtime_freshness_claims(text))
@@ -1521,6 +1665,7 @@ def _validate_baseline(path: str, text: str) -> list[str]:
     issues.extend(_validate_mandatory_remediation_escalation(text, "baseline"))
     issues.extend(_validate_referenced_work_order_closure(text, "baseline"))
     issues.extend(_validate_accepted_source_rows(path, text))
+    issues.extend(_validate_negative_search_collision_discipline(path, text, "baseline"))
     issues.extend(_validate_no_empty_range_commands(text))
     issues.extend(_validate_accept_owner_map_coverage(text))
     issues.extend(_validate_runtime_freshness_claims(text))
@@ -1545,6 +1690,7 @@ def _validate_fast_lane_audit(path: str, text: str) -> list[str]:
         if wave_id is not None and not _has_gc018_for_wave(wave_id):
             issues.append(f"LHW{wave_id} fast-lane audit is ready without fresh GC-018 baseline")
     issues.extend(_validate_accepted_source_rows(path, text))
+    issues.extend(_validate_negative_search_collision_discipline(path, text, "fast-lane audit"))
     issues.extend(_validate_no_empty_range_commands(text))
     return issues
 
@@ -1556,6 +1702,7 @@ def _validate_completion_or_spec(path: str, text: str) -> list[str]:
     issues.extend(_validate_mandatory_remediation_escalation(text, "completion/spec artifact"))
     issues.extend(_validate_referenced_work_order_closure(text, "completion/spec artifact"))
     issues.extend(_validate_accepted_source_rows(path, text))
+    issues.extend(_validate_negative_search_collision_discipline(path, text, "completion/spec artifact"))
     issues.extend(_validate_no_empty_range_commands(text))
     issues.extend(_validate_connector_spec_line_count_claim(path, text))
     return issues
@@ -1999,6 +2146,7 @@ def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str
             NEAR_THRESHOLD_PLAN_MARKER,
             FULFILLMENT_MANIFEST_MARKER,
             "Current Runtime Freshness Verification",
+            NEGATIVE_SEARCH_COLLISION_MARKER,
             DISPATCH_PACKET_LEARNING_MARKER,
             "ACCEPT_AS_OWNER_MAP coverage",
             THIS_SCRIPT_PATH,
@@ -2014,6 +2162,7 @@ def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str
             NEAR_THRESHOLD_PLAN_MARKER,
             FULFILLMENT_MANIFEST_MARKER,
             "Current Runtime Freshness Verification",
+            NEGATIVE_SEARCH_COLLISION_MARKER,
             "ACCEPT_AS_OWNER_MAP coverage",
             THIS_SCRIPT_PATH,
         ),

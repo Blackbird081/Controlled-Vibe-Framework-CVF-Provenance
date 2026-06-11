@@ -215,6 +215,20 @@ evidence. This includes phrases such as "no provider/API key use", "no
 provider calls", "no runtime/source edits", and "no registry update" when a
 current owner surface exists.
 
+### Negative Search And Collision Discipline
+
+Any artifact that claims a token, field, enum, schema key, failure token, or
+config key is `NOT FOUND`, or uses `BLOCKED_SOURCE_NOT_FOUND`, must include
+negative-search evidence before dispatch or closure. The evidence must record
+exact search roots, exact command or structured query, coverage across source,
+tests, docs, JSON, and external evidence when applicable, same-token collision
+results, and the absent-versus-collision disposition.
+
+If the same token appears elsewhere with a different meaning, record the
+collision or non-authoritative occurrence and explain why it is not binding.
+Do not close a bare `NOT FOUND` claim when the repo contains a same-token
+occurrence.
+
 ### ACCEPT_AS_OWNER_MAP coverage
 
 Accepted concepts from a source audit must be represented as completed,

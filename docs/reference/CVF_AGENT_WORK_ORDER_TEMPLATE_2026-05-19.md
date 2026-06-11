@@ -384,6 +384,20 @@ registry update" when current runtime/source owners exist. That section must
 show the repo searches or source files that were checked and must cite current
 owner paths for any partial implementation surface found.
 
+### Negative Search And Collision Discipline
+
+If the work order claims a token, field, enum, schema key, failure token, or
+config key is `NOT FOUND`, or uses `BLOCKED_SOURCE_NOT_FOUND`, include a
+Negative Search And Collision Discipline section before dispatch. The section
+must record exact search roots, exact search command or structured query,
+coverage across source, tests, docs, JSON, and external evidence when
+applicable, same-token collision results, and the absent-versus-collision
+disposition.
+
+If the same token appears elsewhere with a different meaning, do not mark it
+`NOT FOUND`. Record the collision or non-authoritative occurrence, cite it,
+and explain why it is or is not binding for this work.
+
 If a roadmap-derived work order claims complete ACCEPT_AS_OWNER_MAP coverage
 from a source audit, include an ACCEPT_AS_OWNER_MAP coverage disposition that
 names each accepted concept from the cited audit and marks it as in-scope,

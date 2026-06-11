@@ -49,6 +49,7 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
                     "Self-Reported Gate Evidence Consistency",
                     "Near-Threshold Owner Maintainability Plan",
                     "Work-Order Fulfillment Manifest",
+                    MODULE.NEGATIVE_SEARCH_COLLISION_MARKER,
                     MODULE.DISPATCH_PACKET_LEARNING_MARKER,
                     MODULE.THIS_SCRIPT_PATH,
                 ]
@@ -69,6 +70,7 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
                     "Self-Reported Gate Evidence Consistency",
                     "Near-Threshold Owner Maintainability Plan",
                     "Work-Order Fulfillment Manifest",
+                    MODULE.NEGATIVE_SEARCH_COLLISION_MARKER,
                     MODULE.THIS_SCRIPT_PATH,
                 ]
             ),
@@ -1350,6 +1352,134 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
             "resolve before dispatch or set BLOCKED_SOURCE_NOT_FOUND",
             issues,
         )
+
+    def test_not_found_claim_without_negative_search_block_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_NEGATIVE_SEARCH_TEST_2026-06-11.md"
+        self._write("governance/contracts/source.ts", "export interface SourceThing { value: string; }\n")
+        self._write(
+            "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/profile.test.ts",
+            "const fixture = { documentStatus: 'approved' };\n",
+        )
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCHED",
+                    "Commit mode: WORKER_MAY_COMMIT",
+                    "dispatchBaseHead: abc123",
+                    "executionBaseHead: WORKER_MUST_CAPTURE_AT_START",
+                    "closureBaseHead: REVIEWER_CAPTURE",
+                    "Runtime token `documentStatus` is NOT FOUND in EXTENSIONS.",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Allowed-scope remediation is mandatory.",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| SourceThing | `governance/contracts/source.ts` | line 1 | `SourceThing` | SourceThing | ACCEPT |",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "work order contains `NOT FOUND` or `BLOCKED_SOURCE_NOT_FOUND` "
+            "but lacks `## Negative Search And Collision Discipline` evidence",
+            report["violations"][0]["issues"],
+        )
+
+    def test_not_found_claim_with_unrecorded_repo_collision_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_NEGATIVE_SEARCH_COLLISION_TEST_2026-06-11.md"
+        self._write("governance/contracts/source.ts", "export interface SourceThing { value: string; }\n")
+        self._write(
+            "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/profile.test.ts",
+            "const fixture = { documentStatus: 'approved' };\n",
+        )
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCHED",
+                    "Commit mode: WORKER_MAY_COMMIT",
+                    "dispatchBaseHead: abc123",
+                    "executionBaseHead: WORKER_MUST_CAPTURE_AT_START",
+                    "closureBaseHead: REVIEWER_CAPTURE",
+                    "Runtime token `documentStatus` is NOT FOUND in runtime owners.",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Allowed-scope remediation is mandatory.",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| SourceThing | `governance/contracts/source.ts` | line 1 | `SourceThing` | SourceThing | ACCEPT |",
+                    "## Negative Search And Collision Discipline",
+                    "- Search roots: `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION`.",
+                    "- Search command: `rg \"documentStatus\" EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION`.",
+                    "- Coverage: source, tests, docs, JSON, external evidence.",
+                    "- Same-token collision results: none for `documentStatus`.",
+                    "- Disposition: token absent from runtime owner.",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "work order claims `documentStatus` as not found while the same token "
+            "appears elsewhere in the repo; record the collision/non-authoritative "
+            "occurrence instead of a bare `NOT FOUND` claim",
+            report["violations"][0]["issues"],
+        )
+
+    def test_not_found_claim_with_collision_disposition_passes(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_NEGATIVE_SEARCH_COLLISION_PASS_2026-06-11.md"
+        self._write("governance/contracts/source.ts", "export interface SourceThing { value: string; }\n")
+        self._write(
+            "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/profile.test.ts",
+            "const fixture = { documentStatus: 'approved' };\n",
+        )
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCHED",
+                    "Commit mode: WORKER_MAY_COMMIT",
+                    "dispatchBaseHead: abc123",
+                    "executionBaseHead: WORKER_MUST_CAPTURE_AT_START",
+                    "closureBaseHead: REVIEWER_CAPTURE",
+                    "Runtime token `documentStatus` is NOT FOUND in the EC-02 runtime owner.",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Allowed-scope remediation is mandatory.",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| SourceThing | `governance/contracts/source.ts` | line 1 | `SourceThing` | SourceThing | ACCEPT |",
+                    "## Negative Search And Collision Discipline",
+                    "- Search roots: `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src`, `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests`.",
+                    "- Search command: `rg \"documentStatus\" EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION`.",
+                    "- Coverage: source, tests, docs, JSON, external evidence.",
+                    "- Same-token collision results: `documentStatus` occurs in a non-authoritative test fixture with different meaning.",
+                    "- Disposition: collision is not binding for EC-02 lifecycle support; token absent from the EC-02 runtime owner.",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        negative_search_issues = [
+            issue
+            for violation in report["violations"]
+            for issue in violation["issues"]
+            if "negative-search" in issue or "same token" in issue or "NOT FOUND" in issue
+        ]
+        self.assertEqual([], negative_search_issues)
 
     def test_dispatch_work_order_with_pending_closed_pass_dependency_fails(self) -> None:
         work_order = "docs/work_orders/CVF_WO_PENDING_DEPENDENCY_TEST_2026-06-08.md"
