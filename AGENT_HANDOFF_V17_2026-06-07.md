@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`lpci2_ex_t9_operator_visible_scan_outcome_re
 
 `lpci2_ex_t9_operator_visible_scan_outcome_report_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `d5345518`
-(EX-T9 material closure commit; this session-sync commit follows it).
+Current HEAD recorded for this handoff: `2a2fdf56`
+(EX-T9 continuity cleanup commit; this session-sync-only commit follows it).
 
 ## Active Boundary
 
