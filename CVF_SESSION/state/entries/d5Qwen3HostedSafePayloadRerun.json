@@ -1,0 +1,5 @@
+{
+  "stateOrder": 243,
+  "stateKey": "d5Qwen3HostedSafePayloadRerun",
+  "value": "RETURNED_BLOCKED_QWEN3_235B_MODEL_ACCESS at docs/reviews/CVF_D5_QWEN3_HOSTED_SAFE_PAYLOAD_RERUN_BLOCKER_REVIEW_2026-05-23.md; GC-018 docs/baselines/CVF_GC018_D5_QWEN3_HOSTED_SAFE_PAYLOAD_RERUN_2026-05-23.md; work order docs/work_orders/CVF_WO_D5_QWEN3_HOSTED_SAFE_PAYLOAD_RERUN_2026-05-23.md. Safety preflight PASS for both model payloads; focused provider tests PASS 42/42; cvf-web check PASS; private provenance push 6f0fbcd2 succeeded. Hosted qwen3-32b PASS HTTP 200 success=true ALLOW live evidence receipt rcpt-env-mpidzqv4-ysriei trace env-mpidzqv4-ysriei rawSecretPrinted=false. Hosted qwen3-235b-a22b-thinking returned HTTP 200 success=false ALLOW live evidence receipt rcpt-env-mpie0q8c-zn6jku trace env-mpie0q8c-zn6jku error model does not exist or account lacks access rawSecretPrinted=false. Boundary: no full P3/D5 pass claim, no retry loop, no safety/route/auth/receipt/provider registry/capability/vision/reasoning/public-sync change, no broad Qwen3 stability, hosted readiness, production readiness, or freeze release."
+}

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 143,
+  "stateKey": "el2El3ExecutionLayerEnforcement",
+  "value": "EL-2 + EL-3 CLOSED_PASS_BOUNDED. EL-2 cvf.workerTimeoutEnforcement.el2.v1 \u2014 live receipt rcpt-env-mps9ui6z-xzlm2q. EL-3 cvf.reviewerDeadlockEscalation.el3.v1 \u2014 reviewer-deadlock-handler.ts + buildReviewerDeadlockReadout(); additive reviewerDeadlockReadout in /api/execute; route.ts 998 lines; 9/9 unit tests + live receipt rcpt-env-mpsb8yzz-h6xwrf (alibaba/qwen-turbo, triggered=false, runtimeExecutionAuthorized=false). EL wave complete."
+}

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 298,
+  "stateKey": "eaReviewFindingTriage20260606",
+  "value": "TRIAGE_RECORDED_PENDING_REMEDIATION at docs/audits/CVF_EA_REVIEW_FINDING_TRIAGE_AND_REMEDIATION_REGISTER_2026-06-06.md and material commit 556ff46c. Accepted EA-P0 Public Surface Hygiene: raw public Memory class metadata leak and root public-doc completeness check. Accepted EA-P1 Public Evidence Discoverability: coverage visibility, current-pointer clarity, and provider-dependency boundary. Accepted EA-P2 Product And Refactor Debt: CPF source grouping, large barrel review, package naming, and five-minute public demo as separate roadmap work. Boundary: triage/register only; no runtime/source behavior, public-sync implementation, dependency migration, live/provider proof, hosted readiness, production readiness, coverage claim, package refactor, or public-readiness expansion."
+}

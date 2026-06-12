@@ -1,0 +1,5 @@
+{
+  "stateOrder": 70,
+  "stateKey": "connectionPointGuardEnforcementRoadmap",
+  "value": "CPG1_CPG2_CPG3_CLOSED_PASS_BOUNDED. Roadmap docs/roadmaps/CVF_CONNECTION_POINT_GUARD_ENFORCEMENT_ROADMAP_2026-05-31.md. CPG-1 inbound event-contract guard extraction is closed by docs/reviews/CVF_CPG1_INBOUND_EVENT_CONTRACT_GUARD_COMPLETION_2026-05-31.md. CPG-2 bounded CP2 connectionPointMode advisory/enforce rollout is closed by docs/reviews/CVF_CPG2_CP2_HARD_GATE_ENFORCEMENT_COMPLETION_2026-05-31.md with focused MCP verification and release-quality governance bundle PASS 7/7. CPG-3 bounded governanceTrace receipt enrichment is implemented in 55dc22c9 and closed by docs/reviews/CVF_CPG3_GOVERNANCE_TRACE_RECEIPT_ENRICHMENT_COMPLETION_2026-05-31.md with focused web tests 19/19, typecheck/build PASS, route.ts unchanged at 999 lines, and release-quality governance bundle PASS 7/7."
+}

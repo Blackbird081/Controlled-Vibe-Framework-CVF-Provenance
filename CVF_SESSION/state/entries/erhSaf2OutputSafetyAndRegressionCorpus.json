@@ -1,0 +1,5 @@
+{
+  "stateOrder": 118,
+  "stateKey": "erhSaf2OutputSafetyAndRegressionCorpus",
+  "value": "CLOSED_PASS_BOUNDED. Commit cf88f9cb. Claude implemented SAF2 under WORKER_MUST_NOT_COMMIT; Codex reviewed, remediated first-detection audit coverage to include retry-loop output, and committed closure. Artifacts: docs/reviews/CVF_ERH_SAF2_OUTPUT_SAFETY_AND_REGRESSION_CORPUS_COMPLETION_2026-06-05.md, docs/reference/CVF_ERH_SAF2_OUTPUT_SAFETY_AND_REGRESSION_CORPUS_2026-06-05.md, docs/reference/CVF_ERH_SAF2_OUTPUT_SAFETY_AND_REGRESSION_CORPUS_LEDGER_2026-06-05.md, governance/compat/check_erh_output_safety_workflow_chain.py. SAF2 adds bounded regex-only governance output patterns, OUTPUT_SAFETY_TRIGGERED first-detection audit wiring before retry exhaustion, SAF1 adversarial regression corpus, hook/autorun checker wiring, and GC-052 interlock. SAF3 decision: SAF3_NOT_NEEDED. Boundary: no ML DLP, comprehensive output safety claim, provider behavior change, package/lockfile edit, auth/rate-limit/durable-audit edits, public-sync, hosted readiness, production security readiness, public readiness, or live/release-quality governance behavior claim."
+}

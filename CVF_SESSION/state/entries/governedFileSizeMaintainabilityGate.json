@@ -1,0 +1,5 @@
+{
+  "stateOrder": 161,
+  "stateKey": "governedFileSizeMaintainabilityGate",
+  "value": "ENFORCED. CVF_SESSION_MEMORY.md was rotated to compact pointer form; previous long front door archived at CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_PRE_ROTATION_ARCHIVE_2026-05-28.md. check_governed_file_size.py now hard-fails touched near-hard-threshold governed files unless the batch includes a same-domain rotation/split artifact or meaningful shrink. This makes maintainability/refactor planning mandatory instead of allowing last-minute line compression."
+}

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 71,
+  "stateKey": "lhw22AgentIntelligenceFoundationsWave",
+  "value": "CLOSED_PASS_BOUNDED. T1 cvf.ucoCapabilityConstraintAdvisory.lhw22.t1.v1, T2 cvf.agentSelfReportProtocolAdvisory.lhw22.t2.v1, T3 cvf.capabilityRegistryAdvisory.lhw22.t3.v1. All doc-only; runtimeExecutionAuthorized=false. Specs at docs/reference/CVF_LHW22_T* and reviews at docs/reviews/CVF_LHW22_T*."
+}

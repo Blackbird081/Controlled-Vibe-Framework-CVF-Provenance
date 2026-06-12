@@ -1,0 +1,5 @@
+{
+  "stateOrder": 144,
+  "stateKey": "pmProviderMethodLiveProof",
+  "value": "PM WAVE COMPLETE. PM-1 cvf.providerMethodLiveProof.pm1.streaming.v1 rcpt-env-mps9z6r8-14omcf (alibaba stream). PM-2 cvf.providerMethodLiveProof.pm2.json_mode.v1 rcpt-env-mpsbluio-aaa7mc (deepseek json_mode). PM-3 cvf.providerMethodLiveProof.pm3.vision.v1 rcpt-env-mpsbnm4m-g4l2ss (alibaba qwen-vl-plus vision=true). All three CLOSED_PASS_BOUNDED."
+}

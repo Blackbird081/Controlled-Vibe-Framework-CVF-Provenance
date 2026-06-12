@@ -1,0 +1,5 @@
+{
+  "stateOrder": 228,
+  "stateKey": "bcProductOutcomeRuntimeCliDistribution",
+  "value": "CLOSED_BC_PRODUCT_OUTCOME_RUNTIME_AND_CLI_DISTRIBUTION at docs/reviews/CVF_BC_PRODUCT_OUTCOME_RUNTIME_AND_CLI_DISTRIBUTION_COMPLETION_2026-05-22.md; GC-018 docs/baselines/CVF_GC018_BC_PRODUCT_OUTCOME_RUNTIME_AND_CLI_DISTRIBUTION_2026-05-22.md. Delivered product-outcome runtime plans for all seven certified packs, cvf skill list --certified, cvf skill plan <pack-or-outcome>, cvf run <certified-pack> resolution to existing execute templates, package bin entries for cvf/cvf-guard, JSON output at binary boundary, build script, and bin smoke proof. Targeted B/C tests PASS 16/16; full Governance CLI tests PASS 110/110; TypeScript check PASS; bin smoke PASS; release gate bundle PASS including live governance E2E after removing ignored clean-room runtime residue. Boundary: no route/provider adapter/receipt-envelope/durable state/public-sync/hosted readiness/public npm release/freeze-release claim."
+}

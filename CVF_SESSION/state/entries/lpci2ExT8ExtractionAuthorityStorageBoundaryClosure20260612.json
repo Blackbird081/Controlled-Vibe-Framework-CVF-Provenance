@@ -1,0 +1,5 @@
+{
+  "stateOrder": 334,
+  "stateKey": "lpci2ExT8ExtractionAuthorityStorageBoundaryClosure20260612",
+  "value": "CLOSED_PASS_BOUNDED at material commit 43eb9624. Added ExtractionAuthorityLevel, RebuildClass, raw_ocr_retained, ExtractionStorageBoundary, build_extraction_storage_boundary(), descriptor metadata authorityLevel/rebuildClass propagation, focused pytest coverage, GC-051 source/test registry rows, roadmap closure, and completion review. Verification: py_compile PASS; pytest EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests -q PASS 37/37; GC-051 PASS; pre-commit governance chain PASS 37/37. Boundary: local deterministic extraction foundation only; no OCR dependency install, OCR model download, corpus ingestion, operator correction report generation, EC-T5/domain activation, retrieval behavior, provider/API-key use, external Policy_Local mutation, public-sync, production/public readiness, T12 unlock, memory reinjection, high-risk promotion, or autonomous mutation."
+}

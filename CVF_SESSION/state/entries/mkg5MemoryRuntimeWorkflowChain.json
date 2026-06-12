@@ -1,0 +1,5 @@
+{
+  "stateOrder": 85,
+  "stateKey": "mkg5MemoryRuntimeWorkflowChain",
+  "value": "IMPLEMENTATION_REVIEW_READY. GC-018 docs/baselines/CVF_GC018_MKG5_MEMORY_RUNTIME_WORKFLOW_CHAIN_2026-06-01.md, roadmap docs/roadmaps/CVF_MKG5_MEMORY_RUNTIME_WORKFLOW_CHAIN_ROADMAP_2026-06-01.md, work order docs/work_orders/CVF_WO_MKG5_MEMORY_RUNTIME_WORKFLOW_CHAIN_2026-06-01.md, implementation review docs/reviews/CVF_MKG5_MEMORY_RUNTIME_WORKFLOW_CHAIN_IMPLEMENTATION_REVIEW_2026-06-01.md. Runtime source EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-runtime-workflow-chain.ts plus focused test EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/memory-runtime-workflow-chain.test.ts. GC-023 remediation extracted EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/learning-activation.barrel.ts and reduced LPF src/index.ts from 975 to 885 lines. Scope: deterministic Memory workflow chain event hook -> gateway -> retrieval -> summary-only context package -> context event. Boundary: no route/live/provider/prompt reinjection/public-sync."
+}

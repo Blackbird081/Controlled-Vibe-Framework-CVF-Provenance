@@ -1,0 +1,5 @@
+{
+  "stateOrder": 219,
+  "stateKey": "reviewCvfPainPointDeliveryGapRoadmap",
+  "value": "SUPERSEDED_BY_V2 on 2026-05-22; original V1 at docs/roadmaps/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_2026-05-22.md marked SUPERSEDED_BY_V2. Codex blocking review at docs/reviews/CVF_REVIEW_CVF_PAIN_POINT_DELIVERY_GAP_ROADMAP_CODEX_REVIEW_2026-05-22.md (commit 35228ce7) identified six findings (4 BLOCKING, 2 MAJOR). V2 resolves all six."
+}

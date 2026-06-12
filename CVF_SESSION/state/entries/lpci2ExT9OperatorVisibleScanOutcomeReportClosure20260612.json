@@ -1,0 +1,5 @@
+{
+  "stateOrder": 336,
+  "stateKey": "lpci2ExT9OperatorVisibleScanOutcomeReportClosure20260612",
+  "value": "CLOSED_PASS_BOUNDED at material commit d5345518 from execution base a672f416. Added EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/scan_outcome_report.py and focused tests, stable actions for all current extraction quality signals, deterministic JSON/Markdown, UTF-8 caller-selected file output, raw-content non-release assertions, GC-051 registry coverage, roadmap/work-order closure, and completion review. Verification: py_compile PASS; focused pytest 9/9 PASS; full extraction-foundation pytest 46/46 PASS; reviewer-fast 11/11 PASS; pre-commit governance chain 37/37 PASS. Boundary: deterministic local EX reporting only; no EC activation, metadata correction, external Policy_Local write, OCR execution, provider/API-key use, retrieval, public-sync, production/public readiness, T12 unlock, memory reinjection, high-risk promotion, or autonomous mutation."
+}

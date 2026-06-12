@@ -1,0 +1,5 @@
+{
+  "stateOrder": 68,
+  "stateKey": "lpActivationRoadmap",
+  "value": "CLOSED_PASS_BOUNDED (RT1+RT2+RT3+RW1). Roadmap docs/roadmaps/CVF_LP_ACTIVATION_ROADMAP_2026-05-31.md plus RW1 route wire-in continuation. LP advisory surface: learningPlaneReadout (RT1, /api/execute) + buildFindingToLearningRecord (RT2, standalone) + /api/learning-plane/readout (RT3, HTTP surface) + findingToLearningReadout (RW1, /api/execute ALLOW response). Finding-to-Learning fully wired at advisory level. autonomousMutationAuthorized=false across all surfaces."
+}

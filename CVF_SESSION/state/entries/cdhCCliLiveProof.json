@@ -1,0 +1,5 @@
+{
+  "stateOrder": 207,
+  "stateKey": "cdhCCliLiveProof",
+  "value": "CLOSED_CLI_LIVE_PROOF at docs/reviews/CVF_CDH_C_CLI_LIVE_PROOF_COMPLETION_2026-05-21.md; GC-018 docs/baselines/CVF_GC018_CDH_C_CLI_LIVE_PROOF_2026-05-21.md; existing cvf execute async CLI path returned cliSuccess=true, decision ALLOW, evidenceMode=live, provider alibaba, model qwen-turbo, receipt rcpt-env-mpf9zb9y-luu9gq, trace/envelope env-mpf9zb9y-luu9gq; JSONL metadata persisted at docs/evidence/cdh-c-cli-live-proof-2026-05-21.jsonl; missing-service-token diagnostic returned 401; no new command, flag, provider/runtime semantics, SSE streaming, multi-agent orchestration, or public-sync update."
+}

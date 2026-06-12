@@ -1,0 +1,5 @@
+{
+  "stateOrder": 154,
+  "stateKey": "lhwScopeRejectionAndLiveProofSequencingRule",
+  "value": "ENFORCED_AS_SESSION_RULE. In doc-only LHW connector waves, a family excluded because it requires live route execution must be labeled 'rejected from this LHW wave (doc-only scope) - requires live route; eligible for separate live-proof roadmap post-LHW' rather than globally rejected. abtop and gridex may be live-testable when API/key paths exist, but they belong in a separate live-proof roadmap only after the Orchestrator confirms no additional connector value remains in LH1 PARTIALLY_ABSORBED families. Do not blame a worker for not executing live proof when CVF scoped the wave as documentation-only."
+}

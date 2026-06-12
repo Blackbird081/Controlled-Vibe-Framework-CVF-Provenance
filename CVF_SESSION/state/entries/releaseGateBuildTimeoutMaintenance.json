@@ -1,0 +1,5 @@
+{
+  "stateOrder": 217,
+  "stateKey": "releaseGateBuildTimeoutMaintenance",
+  "value": "CLOSED_TIMEOUT_MAINTENANCE at docs/reviews/CVF_RELEASE_GATE_BUILD_TIMEOUT_MAINTENANCE_COMPLETION_2026-05-21.md; scripts/run_cvf_release_gate_bundle.py Web build timeout changed 300s -> 900s; full release gate PASS 7/7."
+}

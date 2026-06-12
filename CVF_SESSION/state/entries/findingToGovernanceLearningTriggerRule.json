@@ -1,0 +1,5 @@
+{
+  "stateOrder": 165,
+  "stateKey": "findingToGovernanceLearningTriggerRule",
+  "value": "MACHINE_ENFORCED. Standard docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD_2026-05-29.md and guard governance/compat/check_finding_to_governance_learning.py require changed finding-bearing logs, reviews, assessments, and audits to include Finding-To-Governance Learning Disposition with defect class, learning lane, disposition, and next control action. This closes the human-reminder dependency where findings required operator prompting before becoming rules/guards. Lanes include GOVERNANCE_CONTROL_PLANE, RUNTIME_BEHAVIOR_LEARNING, PROVIDER_OUTPUT_LEARNING, COST_ECONOMICS_LEARNING, and DOCUMENTATION_ONLY_LEARNING. The guard is wired into autorun and local hook chains."
+}

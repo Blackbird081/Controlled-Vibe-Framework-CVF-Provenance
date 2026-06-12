@@ -22,6 +22,13 @@ import sys
 from pathlib import Path
 from typing import Any
 
+try:
+    from governance.compat.generate_active_session_state import (
+        validate_aggregate_matches_sources,
+    )
+except ModuleNotFoundError:  # direct script execution from governance/compat
+    from generate_active_session_state import validate_aggregate_matches_sources
+
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
@@ -270,6 +277,7 @@ def _classify() -> dict[str, Any]:
     if state_error:
         state_violations.append(state_error)
     elif state is not None:
+        state_violations.extend(validate_aggregate_matches_sources())
         if state.get("activeSessionFrontDoor") != FRONT_DOOR_PATH:
             state_violations.append("activeSessionFrontDoor must point to CVF_SESSION_MEMORY.md")
         if state.get("activeStateRegistry") != STATE_PATH:

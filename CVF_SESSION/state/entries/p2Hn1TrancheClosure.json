@@ -1,0 +1,5 @@
+{
+  "stateOrder": 237,
+  "stateKey": "p2Hn1TrancheClosure",
+  "value": "CLOSED_P2_HN1_P3_HELD at docs/reviews/CVF_P2_HN1_TRANCHE_CLOSURE_REVIEW_2026-05-23.md; commit 38d64a21. P2 live soak command used CVF_POST_PHASE2B_PROVIDERS=alibaba,deepseek and CVF_POST_PHASE2B_REPEATS=6; result PASS 12/12, rawSecretPrinted=false. HN1 targeted tests PASS 22/22. Release gate bundle PASS 7/7 including live governance E2E. Public catalog update N/A because no new capability was added."
+}

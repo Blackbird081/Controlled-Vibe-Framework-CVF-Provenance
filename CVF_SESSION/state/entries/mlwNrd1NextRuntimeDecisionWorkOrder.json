@@ -1,0 +1,5 @@
+{
+  "stateOrder": 286,
+  "stateKey": "mlwNrd1NextRuntimeDecisionWorkOrder",
+  "value": "CLOSED_PASS_BOUNDED at material commit efd4dc85. Work order docs/work_orders/CVF_WO_MLW_NRD1_NEXT_RUNTIME_DECISION_READOUT_2026-06-05.md and completion docs/reviews/CVF_MLW_NRD1_NEXT_RUNTIME_DECISION_READOUT_COMPLETION_2026-06-05.md close a bounded route-visible advisory next-runtime decision readout at EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw-next-runtime-decision-readout.ts, wired through EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route-response-readouts.ts with focused tests. Boundary: no external capability execution, runtime adapter authority, automatic optimization, benchmark/cost proof, high-risk promotion implementation, public-sync, live/provider proof, hosted readiness, production readiness, public readiness, memory reinjection, automatic promotion, or autonomous mutation."
+}

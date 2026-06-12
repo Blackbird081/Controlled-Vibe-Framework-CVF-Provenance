@@ -1,0 +1,5 @@
+{
+  "stateOrder": 167,
+  "stateKey": "learningSignalIntakeBridgeRule",
+  "value": "BOUNDED_TYPED_INTAKE. Standard docs/reference/CVF_LEARNING_SIGNAL_INTAKE_BRIDGE_STANDARD_2026-05-29.md and owner implementation EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/learning-signal-intake-bridge.ts normalize governance, runtime-behavior, provider-output, cost/economics, and documentation-only learning signals into LearningSignalIntakeRecord plus LearningFeedbackInput. Runtime/provider/cost candidates, phase-gate placement gaps, design-review candidates, and machine-check candidates must use this intake route before a follow-up roadmap claims Learning Plane routing. autonomousMutationAuthorized remains false unless a separate governed roadmap authorizes mutation."
+}

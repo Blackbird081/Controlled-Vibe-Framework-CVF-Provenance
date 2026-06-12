@@ -1,0 +1,5 @@
+{
+  "stateOrder": 92,
+  "stateKey": "kgr1KnowledgeGraphRetrievalWave1",
+  "value": "CLOSED_PASS_BOUNDED. Roadmap docs/roadmaps/CVF_KGR1_KNOWLEDGE_GRAPH_RETRIEVAL_ROADMAP_2026-06-01.md. LPF knowledge-graph-builder.ts + knowledge-graph-store.ts + memory-retrieval-policy.ts KGR extension. Local tests PASS + T5 live provider proof (alibaba/qwen-turbo, graph-assisted retrieval) PASS. Reviews: docs/reviews/CVF_KGR1_KNOWLEDGE_GRAPH_RETRIEVAL_LOCAL_REVIEW_2026-06-02.md + docs/reviews/CVF_KGR1_T5_LIVE_PROVIDER_PROOF_COMPLETION_2026-06-02.md. GC-018: docs/baselines/CVF_GC018_KGR1_KNOWLEDGE_GRAPH_RETRIEVAL_WAVE1_2026-06-01.md. Committed in a732b74d."
+}

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 227,
+  "stateKey": "canonicalCliRuntimeGateway",
+  "value": "CLOSED_CANONICAL_CLI_RUNTIME_GATEWAY at docs/reviews/CVF_CANONICAL_CLI_RUNTIME_GATEWAY_COMPLETION_2026-05-22.md; GC-018 docs/baselines/CVF_GC018_CANONICAL_CLI_RUNTIME_GATEWAY_2026-05-22.md. Delivered CVFCanonicalGateway, canonical cvf runtime command surface run/audit/execute/skill/receipt/trace/provider, legacy cvf-guard prefix compatibility, package main export, and audit JSONL input count/filter support. Targeted gateway tests PASS 6/6; full Governance CLI tests PASS 104/104; TypeScript check PASS. Boundary: package-level gateway only; no route, provider adapter, receipt-envelope, durable state, public-sync, npm/global distribution, live-provider, hosted-readiness, or freeze-release claim."
+}

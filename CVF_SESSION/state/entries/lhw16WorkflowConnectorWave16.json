@@ -1,0 +1,5 @@
+{
+  "stateOrder": 141,
+  "stateKey": "lhw16WorkflowConnectorWave16",
+  "value": "CLOSED_PASS_BOUNDED. T1 cvf.databaseActionProofAdvisory.lhw16.t1.v1 \u2014 closes gridex LH1/157; T2 cvf.mcpApprovalProofAdvisory.lhw16.t2.v1 \u2014 closes pancake-pos-mcp LH1/141; T3 cvf.codeIntelligenceAdapterBoundary.lhw16.t3.v1 \u2014 closes cortex-hub LH1/155. All doc-only; runtimeExecutionAuthorized=false. Specs at docs/reference/CVF_LHW16_T*_*_CONNECTOR_SPEC_2026-05-30.md. GC-018 docs/baselines/CVF_GC018_LHW16_WORKFLOW_CONNECTOR_WAVE16_2026-05-30.md."
+}

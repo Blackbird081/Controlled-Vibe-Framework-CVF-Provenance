@@ -1,0 +1,5 @@
+{
+  "stateOrder": 276,
+  "stateKey": "ci1T10CortexHubDeepScan",
+  "value": "CLOSED_PASS_BOUNDED. Commit cef48698. Deep scan accepted cortex-hub as external memory/MCP/provider bridge boundary evidence with runtime deferred. Boundary: private source-analysis only; no runtime implementation, public-sync, live proof, hosted readiness, production readiness, or public readiness claim."
+}

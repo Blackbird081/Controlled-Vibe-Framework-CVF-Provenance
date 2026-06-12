@@ -1,0 +1,5 @@
+{
+  "stateOrder": 323,
+  "stateKey": "lpci2ExT2DispatchPacketAuthoringGuardHardening20260611",
+  "value": "CLOSED_PASS_BOUNDED at material commit 0b42468e. Added docs/reviews/CVF_EX_T2_DISPATCH_PACKET_AUTHORING_GUARD_HARDENING_2026-06-11.md, updated docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md and docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md, and hardened governance/compat/check_work_order_dispatch_quality.py plus focused tests so dispatch-ready work orders reject placeholder or non-commit dispatchBaseHead values. Verification: focused dispatch-quality tests PASS 53/53; reviewer-fast PASS; governed file-size PASS; pre-commit governance chain PASS. Boundary: control-plane authoring/checker hardening only; no extractor implementation, OCR fallback, DSCP wire-in, dependency addition, provider/API key use, public-sync, production readiness, or public readiness."
+}

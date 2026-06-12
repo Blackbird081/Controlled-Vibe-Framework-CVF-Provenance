@@ -1,0 +1,5 @@
+{
+  "stateOrder": 187,
+  "stateKey": "es1ExternalSkillIntakeScreeningPacket",
+  "value": "CLOSED_PASS_BOUNDED. Created docs/reference/CVF_EXTERNAL_SKILL_INTAKE_SCREENING_PACKET_2026-05-25.md as a docs-only pre-import filter for Candidate 7. Packet requires concrete source/use case, value screen, duplicate/dilution screen against ten certified packs, risk screen, normalization minimum, owner-surface routing, dispatch dispositions, stop conditions, and required screening record. Completion review: docs/reviews/CVF_ES1_EXTERNAL_SKILL_INTAKE_SCREENING_PACKET_COMPLETION_2026-05-25.md. Boundary: no external skill import, pack creation/modification, external tool/MCP/CLI/script/model/provider execution, live external repo fetch, registry publication, marketplace/public-sync claim, /api/execute change, receipt envelope, auth/RBAC, hosted readiness, production readiness, or freeze release."
+}

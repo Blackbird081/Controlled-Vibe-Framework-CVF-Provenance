@@ -1,0 +1,5 @@
+{
+  "stateOrder": 55,
+  "stateKey": "se1SimulationEnvironment",
+  "value": "CLOSED_PASS_BOUNDED. cvf.simulationEnvironment.se1.v1 \u2014 runSimulation() APE-1->TM1->RM1 dry-run pipeline. Verdict VALIDATED/DEGRADED/BLOCKED. LHW17 T3 Step 8 FINAL. 69 LPF files, 1665/1665 PASS. TypeScript PASS. GC-018 docs/baselines/CVF_GC018_SE1_SIMULATION_ENVIRONMENT_2026-05-31.md."
+}

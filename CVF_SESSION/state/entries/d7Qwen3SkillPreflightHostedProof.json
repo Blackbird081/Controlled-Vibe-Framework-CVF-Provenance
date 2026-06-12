@@ -1,0 +1,5 @@
+{
+  "stateOrder": 245,
+  "stateKey": "d7Qwen3SkillPreflightHostedProof",
+  "value": "RETURNED_BLOCKED_HOSTED_AI_COMMIT_GUARD at docs/reviews/CVF_D7_QWEN3_SKILL_PREFLIGHT_HOSTED_PROOF_BLOCKER_REVIEW_2026-05-23.md; GC-018 docs/baselines/CVF_GC018_D7_QWEN3_SKILL_PREFLIGHT_HOSTED_PROOF_2026-05-23.md; work order docs/work_orders/CVF_WO_D7_QWEN3_SKILL_PREFLIGHT_HOSTED_PROOF_2026-05-23.md. Local safety/enforcement preflight PASS with Skill Preflight declared. Hosted returned HTTP 400 success=false decision BLOCK enforcementStatus ALLOW skillPreflightDeclared=true provider alibaba response model guard-blocked error generic guard adjustment rawSecretPrinted=false. Local guard simulation identified missing aiCommit metadata as blocker."
+}

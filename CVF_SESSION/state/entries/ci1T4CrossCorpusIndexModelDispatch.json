@@ -1,0 +1,5 @@
+{
+  "stateOrder": 95,
+  "stateKey": "ci1T4CrossCorpusIndexModelDispatch",
+  "value": "CLOSED_PASS_BOUNDED. Artifact commit 3725f962 plus handoff-sync ae0bf9ae. Completion docs/reviews/CVF_CI1_T4_CROSS_CORPUS_INDEX_MODEL_COMPLETION_2026-06-02.md. The typed model docs/corpus-intelligence/CVF_CROSS_CORPUS_INDEX_MODEL.json normalizes CI1-T2 Graphify and CI1-T3 code-review-graph packets, preserves four domain extension groups, routes normalization gaps into T5/T6, and adds GC-052 scan-packets-to-cross-corpus-index. Boundary: private rebuildable contract only; no new legacy scan, runtime index, LPCI runtime, provider proof, public-sync, or autonomous mutation."
+}

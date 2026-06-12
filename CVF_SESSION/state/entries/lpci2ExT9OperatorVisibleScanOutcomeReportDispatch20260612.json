@@ -1,0 +1,5 @@
+{
+  "stateOrder": 335,
+  "stateKey": "lpci2ExT9OperatorVisibleScanOutcomeReportDispatch20260612",
+  "value": "DISPATCHED at commit 37a5cc72. Roadmap docs/roadmaps/CVF_LPCI2_EX_T9_OPERATOR_VISIBLE_SCAN_OUTCOME_REPORT_ROADMAP_2026-06-12.md; GC-018 docs/baselines/CVF_GC018_LPCI2_EX_T9_OPERATOR_VISIBLE_SCAN_OUTCOME_REPORT_2026-06-12.md; work order docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T9_OPERATOR_VISIBLE_SCAN_OUTCOME_REPORT_FOR_CODEX_2026-06-12.md. Next: Codex implements deterministic domain-agnostic JSON/Markdown scan outcome reporting with UTF-8 path support and no raw content release. Boundary: no EC activation, external Policy_Local write, OCR execution, provider/API-key use, retrieval, public-sync, or readiness claim."
+}

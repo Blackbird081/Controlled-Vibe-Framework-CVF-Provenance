@@ -1,0 +1,5 @@
+{
+  "stateOrder": 158,
+  "stateKey": "workOrderClosureQualityGateRule",
+  "value": "ADDED_AND_MACHINE_ENFORCED. Canonical standard docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md. Binding surfaces updated: AGENTS.md, docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md, docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md, docs/reference/CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_STANDARD.md, docs/reference/CVF_QUALITY_ASSESSMENT_STANDARD.md, docs/CVF_ARCHITECTURE_DECISIONS.md ADR-051, CVF_SESSION_MEMORY.md, ACTIVE_SESSION_STATE, active handoff, local hook chain, CI documentation workflow, and governance/compat/check_work_order_dispatch_quality.py. Requires roadmap-to-work-order trace matrix, closure diff gate, command/path/receipt-backed claim integrity, explicit fail-condition scan, checklist finalization, continuity sync, and passing dispatch-quality gate before any ready/dispatch or CLOSED_PASS equivalent transition."
+}

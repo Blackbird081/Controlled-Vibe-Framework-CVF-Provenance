@@ -1,0 +1,5 @@
+{
+  "stateOrder": 190,
+  "stateKey": "cb1ContextBudgetRequestShapingReadout",
+  "value": "CLOSED_PASS_BOUNDED. Governance CLI cvf skill select now includes deterministic cvf.productSkillPackRequestContext.v1 with budget tier, readiness, approx tokens, word count, signal density, detected/missing signals, contamination flags, noise flags, preservation priority, next action, and boundaries. Absorbed caveman context budgeting/relevance/compaction, Human System Harness brief normalization/reverse brief, and Workflow GoClaw context profile/packaging/guardrail concepts. Verification: npm test -- tests/commands/cvf-skill.test.ts PASS 14/14; npm run check PASS. Completion review: docs/reviews/CVF_CB1_CONTEXT_BUDGET_REQUEST_SHAPING_READOUT_COMPLETION_2026-05-25.md. Boundary: no LLM scoring, runtime context packager, provider/API call, /api/execute change, receipt envelope, memory injection, MCP/tool/database execution, public-sync, hosted readiness, production readiness, or freeze release."
+}

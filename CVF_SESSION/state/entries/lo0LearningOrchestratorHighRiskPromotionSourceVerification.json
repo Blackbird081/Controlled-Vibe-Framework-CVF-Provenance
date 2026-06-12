@@ -1,0 +1,5 @@
+{
+  "stateOrder": 278,
+  "stateKey": "lo0LearningOrchestratorHighRiskPromotionSourceVerification",
+  "value": "GC018_AUTHORIZED_HOLD_FOR_WORK_ORDER. Commit 1f5a02c1 created docs/baselines/CVF_GC018_LO0_LEARNING_ORCHESTRATOR_HIGH_RISK_PROMOTION_SOURCE_VERIFICATION_2026-06-05.md. Source verdict: LearningOrchestrator has no exact current runtime/source symbol; existing advisory/proposal owner pieces are LearningSignalIntakeBridge, finding-to-learning bridge, orchestratorFeedback, MLW5 auditFeedbackValidationReadout, MLW6 simulationFailureGateReadout, adaptation policy Tier 0 evidence gate, and simulation dry-run surface. Boundary: source-verification baseline only; no Learning Orchestrator implementation, high-risk promotion implementation, autonomous mutation, automatic promotion, runtime route change, memory reinjection, live proof, public-sync, hosted readiness, production readiness, or public readiness."
+}

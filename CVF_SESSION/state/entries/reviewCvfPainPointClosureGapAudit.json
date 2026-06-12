@@ -1,0 +1,5 @@
+{
+  "stateOrder": 221,
+  "stateKey": "reviewCvfPainPointClosureGapAudit",
+  "value": "AUDIT_FILED at docs/audits/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_GAP_AUDIT_2026-05-22.md; amended 2026-05-22 for Codex blocking review Finding 5 (verification timeline made explicit: verified before filing at HEAD 754f1248, committed at 5279db51). Substantive findings unchanged. Audit documents that all 8 pain points (A-H) marked CLOSED via 2026-05-20 closure reviews collectively miss original Review CVF.md deliverables; 3 closure patterns (rejection/redefinition/contract-only) and 6 systemic causes identified."
+}

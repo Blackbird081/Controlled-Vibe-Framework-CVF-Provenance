@@ -1,0 +1,5 @@
+{
+  "stateOrder": 330,
+  "stateKey": "lpci2EcT5DscpGateValueUpdateBlockDecision20260611",
+  "value": "CLOSED_BLOCKED_BOUNDED at material commit 9a894207 after checker hardening commit b815fcf9. GC-018 docs/baselines/CVF_GC018_LPCI2_EC_T5_DSCP_GATE_VALUE_UPDATE_BLOCK_DECISION_2026-06-11.md; work order docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EC_T5_DSCP_GATE_VALUE_UPDATE_BLOCK_DECISION_FOR_CODEX_2026-06-11.md; decision JSON docs/reference/CVF_LPCI2_EC_T5_GATE_VALUE_UPDATE_BLOCK_DECISION_2026-06-11.json; completion docs/reviews/CVF_LPCI2_EC_T5_DSCP_GATE_VALUE_UPDATE_BLOCK_DECISION_COMPLETION_2026-06-11.md. Result: QUERY_CLASS_GATED was not applied to DSCP profiles. EC-T5 closed as a bounded block decision because EC-T4 remains parked pending operator metadata and current CPF profile apply logic blocks only BLOCKED*/PROHIBITED values. Boundary: no runtime/source edit, external Policy_Local edit, DSCP profile value update, corpus mutation, retrieval behavior, provider/API-key use, public-sync, current-law/legal-quality claim, production/public readiness, EC-T6 unlock, T12 unlock, memory reinjection, high-risk promotion, or autonomous mutation."
+}

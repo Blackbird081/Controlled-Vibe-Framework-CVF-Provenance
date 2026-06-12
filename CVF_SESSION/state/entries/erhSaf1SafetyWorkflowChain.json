@@ -1,0 +1,5 @@
+{
+  "stateOrder": 117,
+  "stateKey": "erhSaf1SafetyWorkflowChain",
+  "value": "CLOSED_PASS_BOUNDED. Commit baba6522. Claude implemented SAF1 under WORKER_MUST_NOT_COMMIT; Codex reviewed, remediated checker/evidence residues, and committed closure. Artifacts: docs/reviews/CVF_ERH_SAF1_SAFETY_WORKFLOW_CHAIN_COMPLETION_2026-06-04.md, docs/reference/CVF_ERH_SAF1_SAFETY_WORKFLOW_CHAIN_2026-06-04.md, docs/reference/CVF_ERH_SAF1_SAFETY_WORKFLOW_LEDGER_2026-06-04.md, governance/compat/check_erh_safety_workflow_chain.py. SAF1 adds deterministic severity-classified safety screening in cvf-web /api/execute after DLP and before legacy safety/provider execution; checker enforces DLP -> SAF1 -> legacy safety -> provider order. Decision ACCEPT_WITH_CAVEAT_LIVE_ROUTE_PROOF_RESIDUAL; SAF2 decision SAF2_READY. Boundary: no ML DLP, comprehensive jailbreak-protection claim, provider behavior change, package/lockfile edit, public-sync, hosted readiness, production security readiness, public readiness, or release-quality/live-proven governance behavior."
+}

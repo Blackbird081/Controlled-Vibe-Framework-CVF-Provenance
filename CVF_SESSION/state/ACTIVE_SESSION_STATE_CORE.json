@@ -1,0 +1,144 @@
+{
+  "schemaVersion": "0.1.0",
+  "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
+  "sessionMemoryFrontDoorArchive": "CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_PRE_ROTATION_ARCHIVE_2026-05-28.md",
+  "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+  "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
+  "painPointClosureDirection": "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
+  "postPainPointHardeningRoadmap": "docs/roadmaps/archive/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md",
+  "legacySpecAbsorptionBlindspotAudit": "docs/audits/CVF_LEGACY_SPEC_ABSORPTION_BLINDSPOT_AUDIT_2026-05-23.md",
+  "legacySpecAbsorptionCodexReview": "docs/reviews/CVF_LEGACY_SPEC_ABSORPTION_BLINDSPOT_CODEX_REVIEW_2026-05-23.md",
+  "legacySpecAbsorptionRegistry": "docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md",
+  "knowledgeAbsorptionBlindspotPreventionStandard": "docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-06-01.md",
+  "knowledgeAbsorptionBlindspotPreventionStandardArchive": "docs/reference/archive/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-05-24.md",
+  "corpusCompletenessReportIntegrityStandard": "docs/reference/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_STANDARD_2026-06-01.md",
+  "corpusCompletenessReportIntegrityGuard": "governance/toolkit/05_OPERATION/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_GUARD.md",
+  "corpusCompletenessReportIntegrityChecker": "governance/compat/check_corpus_completeness_report_integrity.py",
+  "memoryMethodLegacyRescanAudit": "docs/audits/CVF_MEMORY_METHOD_LEGACY_RESCAN_AUDIT_2026-06-01.md",
+  "knowledgeSystemMethodStandard": "docs/reference/CVF_KNOWLEDGE_SYSTEM_METHOD_STANDARD_2026-06-01.md",
+  "corpusToKnowledgeMapReconciliationStandard": "docs/reference/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_STANDARD_2026-06-01.md",
+  "corpusToKnowledgeMapReconciliationGuard": "governance/toolkit/05_OPERATION/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_GUARD.md",
+  "corpusToKnowledgeMapReconciliationChecker": "governance/compat/check_corpus_to_knowledge_map_reconciliation.py",
+  "corpusSearchFilterReadinessStandard": "docs/reference/CVF_CORPUS_SEARCH_FILTER_READINESS_STANDARD_2026-06-02.md",
+  "corpusScanRegistryStandard": "docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md",
+  "corpusScanRegistry": "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json",
+  "corpusScanRegistryGuard": "governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md",
+  "corpusScanRegistryChecker": "governance/compat/check_corpus_scan_registry.py",
+  "jsonGeneratedAggregateDisciplineStandard": "docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md",
+  "activeSessionStateGenerator": "governance/compat/generate_active_session_state.py",
+  "systemLoopInterlockStandard": "docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_STANDARD_2026-06-02.md",
+  "systemLoopInterlockRegistry": "docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json",
+  "systemLoopInterlockChecker": "governance/compat/check_system_loop_interlock.py",
+  "agentErrorToGovernanceLearningPhilosophy": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
+  "agentIntelligenceFoundationsRoadmap": "docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md",
+  "operationalReferenceIndex": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
+  "activeHandoff": "AGENT_HANDOFF_V18_2026-06-12.md",
+  "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
+  "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
+  "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
+  "supersededHandoffs": [
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V2_2026-05-09.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V3_2026-05-10.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V4_2026-05-12.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V5_2026-05-15.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V6_2026-05-16.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V7_2026-05-16.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V8_2026-05-17.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V9_2026-05-18.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V10_2026-05-19.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V12_2026-05-23.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V13_2026-05-25.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V14_2026-05-27.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V15_2026-05-29.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V16_2026-06-06.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V17_2026-06-07.md"
+  ],
+  "relatedHandoffs": [
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_INTEGRATIONS_2026-05-17.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
+  ],
+  "currentMode": "gc051_registry_authoring_hardening_closed_pass_bounded",
+  "previousMode": "exa_t2_scan_signal_route_decision_contracts_closed_pass_bounded",
+  "freezePosture": "governance_kernel_freeze_recommended",
+  "operatorLaneSelectionDate": "2026-05-19",
+  "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
+  "selectedLanes": [
+    "Lane-D",
+    "Lane-E",
+    "Lane-F",
+    "Lane-G"
+  ],
+  "laneExecutionOrder": [
+    "Lane-D",
+    "Lane-E",
+    "Lane-F",
+    "Lane-G"
+  ],
+  "laneStopLifts": {
+    "Lane-D": {
+      "lifted": true,
+      "scope": "provider-method-parity-stream-contract-and-cli-flag-only",
+      "gatingCondition": "operator selected remaining D/E/F/G lanes after B/C/H closure; Lane D begins with fresh GC-018",
+      "blockedExpansion": "live SSE route implementation, reasoning, vision, embedding, new providers"
+    },
+    "Lane-E": {
+      "lifted": true,
+      "scope": "offline-governance-reliability-metrics-and-baseline",
+      "gatingCondition": "Lane D closed with review disposition; Lane E begins with fresh GC-018",
+      "blockedExpansion": "live provider benchmark, hallucination recovery metric, QBS rebuild"
+    },
+    "Lane-F": {
+      "lifted": true,
+      "scope": "noncoder-home-outcome-quick-actions-for-existing-governed-packs",
+      "gatingCondition": "Lane E closed with review disposition; Lane F begins with fresh GC-018",
+      "blockedExpansion": "new template categories, new routes, auth or RBAC changes, marketing-copy pack without separate authorization"
+    },
+    "Lane-G": {
+      "lifted": true,
+      "scope": "runtime-actor-gate-through-existing-CVFRole-values-and-governed-pack-policy",
+      "gatingCondition": "Lane F closed with review disposition; Lane G begins with fresh GC-018",
+      "blockedExpansion": "new role taxonomy, planner/worker/auditor job queues, auth model changes, enforcement beyond allowedActorRoles"
+    }
+  },
+  "requiredFirstReads": [
+    "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
+    ".private_reference/legacy/CVF 17.05/REVIEW FOLDER/CVF_17_05_SYSTEM_RECONVERGENCE_STOP_DECISION_2026-05-17.md",
+    ".private_reference/legacy/CVF 17.05/REVIEW FOLDER/CVF_17_05_GOVERNANCE_KERNEL_FREEZE_CODEX_RECOMMENDATION_2026-05-17.md",
+    ".private_reference/legacy/CVF 17.05/REVIEW FOLDER/CVF_17_05_AGENT_HANDOFF_AND_MEMORY_GAP_CODEX_AUDIT_2026-05-17.md",
+    ".private_reference/legacy/CVF 17.05/REVIEW FOLDER/CVF_17_05_SINGLE_SESSION_MEMORY_FRONT_DOOR_PROPOSAL_2026-05-17.md",
+    ".private_reference/legacy/CVF 17.05/REVIEW FOLDER/CVF_17_05_AGENT_ORCHESTRATOR_ROLE_ABSORPTION_GAP_CODEX_AUDIT_2026-05-17.md"
+  ],
+  "requiredStartupGuards": [
+    "CVF_SESSION/REQUIRED_STARTUP_GUARDS.md",
+    "docs/reference/CVF_SESSION_GOVERNANCE_BOOTSTRAP.md",
+    "governance/toolkit/05_OPERATION/CVF_SESSION_GOVERNANCE_BOOTSTRAP_GUARD.md",
+    "governance/toolkit/05_OPERATION/CVF_AGENT_HANDOFF_TRANSITION_GUARD.md",
+    "governance/toolkit/05_OPERATION/CVF_AGENT_HANDOFF_GUARD.md",
+    "governance/toolkit/05_OPERATION/CVF_MEMORY_GOVERNANCE_GUARD.md",
+    "governance/toolkit/05_OPERATION/CVF_GOVERNED_ARTIFACT_AUTHORING_GUARD.md",
+    "governance/toolkit/05_OPERATION/CVF_CORPUS_COMPLETENESS_AND_REPORT_INTEGRITY_GUARD.md",
+    "governance/toolkit/05_OPERATION/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_GUARD.md"
+  ],
+  "blockedWorkClasses": [
+    "broad_external_knowledge_absorption",
+    "new_governance_semantics",
+    "new_role_taxonomies",
+    "new_policy_risk_guard_engines",
+    "new_receipt_envelopes",
+    "new_memory_tiers_beyond_lane_h_scope",
+    "new_provider_execution_semantics",
+    "public_claims_of_coherent_governed_capability_runtime"
+  ],
+  "startupAcknowledgmentRequired": [
+    "active_session_mode",
+    "active_handoff_path",
+    "active_review_queue",
+    "pain_point_closure_direction",
+    "post_pain_point_hardening_roadmap",
+    "required_first_reads",
+    "blocked_work_classes",
+    "next_allowed_move"
+  ]
+}

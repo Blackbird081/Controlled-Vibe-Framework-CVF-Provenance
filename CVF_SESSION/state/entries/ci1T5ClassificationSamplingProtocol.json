@@ -1,0 +1,5 @@
+{
+  "stateOrder": 96,
+  "stateKey": "ci1T5ClassificationSamplingProtocol",
+  "value": "CLOSED_PASS_BOUNDED. Commit 16e612bf. Completion docs/reviews/CVF_CI1_T5_CLASSIFICATION_SAMPLING_PROTOCOL_COMPLETION_2026-06-02.md. Sampling results docs/corpus-intelligence/CVF_CI1_T5_CLASSIFICATION_SAMPLING_RESULTS.json contain 15 samples, 13 PASS, 2 PASS_WITH_GAP, 0 FAIL, with 4 structural-check candidates, 2 documentation-only gaps, and 5 non-candidates routed into CI1-T6. GC-052 cross-corpus-index-to-classification-sampling route added. Boundary: bounded read-only sampling over two registered pilot corpora only; no broad scan, runtime index, LPCI runtime, provider proof, public-sync, or autonomous mutation."
+}

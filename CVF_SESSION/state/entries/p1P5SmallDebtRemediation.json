@@ -1,0 +1,5 @@
+{
+  "stateOrder": 296,
+  "stateKey": "p1P5SmallDebtRemediation",
+  "value": "MATERIAL_COMMIT_READY_FOR_EXTERNAL_REVIEW at private commit eb058300. Audit docs/audits/CVF_P1_P5_SMALL_DEBT_REMEDIATION_AUDIT_2026-06-06.md closes small source-confirmed P1-P5 debt: concrete SECURITY.md disclosure, stale public-doc skill/version/link cleanup, scheduled live-governance smoke workflow, live evidence manifest script/standard, and source-verified backlog work orders for DEP2 next-auth stable migration, ERH-RL1 distributed rate limiter, and QBS method reliability. Verification: pre-implementation autorun PASS; live `python scripts/run_cvf_release_gate_bundle.py --e2e-live --json` PASS with build/type/provider-readiness/secrets/docs/live Playwright governance all PASS. Boundary: no stable Auth.js migration, Redis implementation, PostgreSQL/SSO readiness, independent immutable anchor, benchmark quality parity, family-level benchmark power, public/hosted/production readiness, cost/performance/provider-quality claim, memory reinjection, high-risk promotion implementation, Learning Orchestrator runtime behavior, or autonomous mutation."
+}

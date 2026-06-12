@@ -1,0 +1,5 @@
+{
+  "stateOrder": 66,
+  "stateKey": "rw1RouteFindingToLearningWireIn",
+  "value": "CLOSED_PASS_BOUNDED. cvf.routeFindingToLearningWireIn.rw1.v1 \u2014 /api/execute ALLOW response now returns findingToLearningReadout from buildFindingToLearningRecord(). route.ts preserved under hard guard at 999 physical lines. Live proof route.rw1-finding-to-learning.alibaba.live.test.ts PASS receipt rcpt-env-mptfzz68-ywcuvn (alibaba/qwen-turbo/ALLOW), autonomousMutationAuthorized=false, requiresGovernanceWorkOrder=false. Non-live full cvf-web suite PASS: npx vitest run --exclude \"**/*.live.test.ts\" => 233 files, 2890 passed, 2 skipped. Full broad live suite had unrelated DLP/RT1 variance recorded as diagnostics, not RW1 closure evidence. GC-018 docs/baselines/CVF_GC018_RW1_ROUTE_FINDINGTOLEARNING_WIREIN_2026-05-31.md. Completion docs/reviews/CVF_RW1_ROUTE_FINDINGTOLEARNING_WIREIN_COMPLETION_2026-05-31.md. Implementation commit 0256d266."
+}

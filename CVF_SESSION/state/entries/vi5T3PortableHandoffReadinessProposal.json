@@ -1,0 +1,5 @@
+{
+  "stateOrder": 174,
+  "stateKey": "vi5T3PortableHandoffReadinessProposal",
+  "value": "HOLD_WRONG_TARGET_FOR_CURRENT_OPERATOR_BLOCKER. Prior proposal docs/reviews/CVF_VI5_T3_CODEX_REBUTTAL_AND_SOLUTION_TO_CLAUDE_2026-05-25.md may remain useful for Surface 2/server-side handoff, but must not be dispatched as the fix for the Real Non-Coder Usage Test HOLD because the HOLD artifact is Surface 1 web export markdown. Requires explicit operator decision before any continuation."
+}

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 104,
+  "stateKey": "lpci1T4RetrievalBoundaryWorkOrder",
+  "value": "CLOSED_PASS_BOUNDED at commit 5143267f. Work order docs/work_orders/CVF_WO_LPCI1_T4_RETRIEVAL_BOUNDARY_2026-06-03.md closed; created docs/reference/CVF_LPCI1_T4_RETRIEVAL_BOUNDARY_SPEC_2026-06-03.md and docs/reviews/CVF_LPCI1_T4_RETRIEVAL_BOUNDARY_COMPLETION_2026-06-03.md. Reviewer correction before closure commit clarified AuditReceipt timing for Phase 1 negative receipts, model_response_hash hashing boundary, RetrievalReceipt field count, and Stage 4 post-filter wording. Boundary: retrieval boundary specification only; no runtime code, real corpus retrieval, vector search, embeddings, UI, API route, provider proof, legal advice quality claim, production readiness, public-sync, or autonomous mutation."
+}

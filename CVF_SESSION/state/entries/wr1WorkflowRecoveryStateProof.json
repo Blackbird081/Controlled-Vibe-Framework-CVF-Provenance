@@ -1,0 +1,5 @@
+{
+  "stateOrder": 189,
+  "stateKey": "wr1WorkflowRecoveryStateProof",
+  "value": "CLOSED_PASS_BOUNDED. Added deterministic cvf.workflowRecoveryReadout.wr1.v1 to the Product Brief workflow projection with lastRestorableCheckpoint, blockedStepIds, validationGate, requested-transition disposition, recoveryAction, recommendedNextAction, and explicit boundaries. Direct freeze/receipt jump from review_pending is invalid and maps to escalate_to_governance; configured reviewer gate maps to hold_for_reviewer_gate. Verification: npm run test:run -- src/lib/workflows/workflow-resolver.test.ts PASS 5/5; cvf-web npm run check PASS. Completion review: docs/reviews/CVF_WR1_WORKFLOW_RECOVERY_STATE_PROOF_COMPLETION_2026-05-25.md. Boundary: no route-level invalid-transition BLOCK, broad workflow engine, provider/API call, /api/execute behavior change beyond existing projection data flow, receipt envelope, memory, MCP/tool/database execution, public-sync, hosted readiness, production readiness, or freeze release."
+}

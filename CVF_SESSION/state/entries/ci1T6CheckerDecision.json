@@ -1,0 +1,5 @@
+{
+  "stateOrder": 97,
+  "stateKey": "ci1T6CheckerDecision",
+  "value": "CLOSED_PASS_BOUNDED. Commit 2e5aebb5. Completion docs/reviews/CVF_CI1_T6_CHECKER_DECISION_COMPLETION_2026-06-02.md. Decision artifact docs/reference/CVF_CI1_T6_CHECKER_DECISION_2026-06-02.md decides six T5 normalization gaps: NR-04 STRUCTURAL_CHECK_REQUIRED, NR-05 STANDARD_REQUIRED_FIRST, NR-11 STANDARD_REQUIRED_FIRST, NR-03-vocab VOCABULARY_EXTENSION_REQUIRED, NR-06 DOCUMENTATION_ONLY, NR-07 DOCUMENTATION_ONLY. No BLOCKED verdicts; CI1-T7 gate returns T7_READY. GC-052 classification-sampling-to-checker-decision route added. Boundary: documentation-only decision and T4 model vocabulary extension only; no checker code, runtime source, LPCI runtime, provider proof, public-sync, or autonomous mutation."
+}

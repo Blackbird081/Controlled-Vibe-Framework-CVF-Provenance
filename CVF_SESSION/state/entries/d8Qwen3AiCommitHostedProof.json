@@ -1,0 +1,5 @@
+{
+  "stateOrder": 246,
+  "stateKey": "d8Qwen3AiCommitHostedProof",
+  "value": "RETURNED_BLOCKED_QWEN3_THINKING_ENABLE_THINKING_PARAMETER at docs/reviews/CVF_D8_QWEN3_AI_COMMIT_HOSTED_PROOF_BLOCKER_REVIEW_2026-05-23.md; GC-018 docs/baselines/CVF_GC018_D8_QWEN3_AI_COMMIT_HOSTED_PROOF_2026-05-23.md; work order docs/work_orders/CVF_WO_D8_QWEN3_AI_COMMIT_HOSTED_PROOF_2026-05-23.md. Local safety/enforcement/guard preflight PASS with Skill Preflight and aiCommit. Hosted reached Alibaba and returned HTTP 200 success=false decision/routing/enforcement ALLOW evidenceMode live provider alibaba model qwen3-235b-a22b-thinking-2507 receipt rcpt-env-mpigd0wj-a8su8o trace env-mpigd0wj-a8su8o error enable_thinking restricted to True rawSecretPrinted=false."
+}

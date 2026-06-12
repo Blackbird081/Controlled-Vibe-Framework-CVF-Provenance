@@ -1,0 +1,5 @@
+{
+  "stateOrder": 56,
+  "stateKey": "is1GenericAgentAdapter",
+  "value": "CLOSED_PASS_BOUNDED. cvf.genericAgentAdapter.is1.v1 \u2014 mapAgentEventToCvf() INTENT->CP1/PLAN->CP2/TOOL_CALL->CP3/EXECUTION->CP4/RESULT->CP5. runtimeAdapterAuthorized=false. 22 MCP files, 554/554 PASS. TypeScript PASS. GC-018 docs/baselines/CVF_GC018_IS1_GENERIC_AGENT_ADAPTER_2026-05-31.md."
+}

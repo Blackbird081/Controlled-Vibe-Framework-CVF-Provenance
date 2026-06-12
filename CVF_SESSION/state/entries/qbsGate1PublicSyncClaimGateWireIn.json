@@ -1,0 +1,5 @@
+{
+  "stateOrder": 138,
+  "stateKey": "qbsGate1PublicSyncClaimGateWireIn",
+  "value": "CLOSED_PASS_BOUNDED and EXPORTED. Work order docs/work_orders/CVF_WO_QBS_GATE1_PUBLIC_SYNC_CLAIM_GATE_WIRE_IN_FOR_CLAUDE_2026-06-07.md and completion docs/reviews/CVF_QBS_GATE1_PUBLIC_SYNC_CLAIM_GATE_WIRE_IN_COMPLETION_2026-06-07.md close the public-sync guard wire-in at private closure commit 7e0bf7cf. Public-sync commit 993014398 pushed to https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git. Added governance/compat/check_qbs_claim_gate.py, governance/compat/test_qbs_claim_gate.py, local hook chain wiring, documentation CI qbs-claim-gate job, and public-safe completion evidence. Verification: fixture self-test PASS 5/5; public docs/benchmark scan PASS 147 artifacts / 0 violations; public-sync pre-push hook PASS. Boundary: guard/CI wiring only; no live/provider calls, QBS rerun, package install, methodology changes, historical result mutation, public/hosted/production readiness, output-quality parity, L4/L5 quality claim, or autonomous mutation."
+}

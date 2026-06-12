@@ -1,0 +1,5 @@
+{
+  "stateOrder": 163,
+  "stateKey": "agentErrorToGovernanceLearningRule",
+  "value": "CANONICAL. Repeated agent mistakes are governance training samples, not merely worker blame. When a pattern recurs, promote the finding to a written rule; if the rule remains interpretable, promote it to a machine check; if the machine check only catches the issue at closure, move it into the earliest applicable autorun phase gate. Mixed-agent operation is expected, so CVF trust belongs to the governance control chain rather than to Claude, Codex, Gemini, or any single worker model."
+}

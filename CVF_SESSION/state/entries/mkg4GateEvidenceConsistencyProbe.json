@@ -1,0 +1,5 @@
+{
+  "stateOrder": 84,
+  "stateKey": "mkg4GateEvidenceConsistencyProbe",
+  "value": "REVIEW_READY_UNCOMMITTED. GC-018 docs/baselines/CVF_GC018_MKG4_GATE_EVIDENCE_CONSISTENCY_PROBE_2026-06-01.md, roadmap docs/roadmaps/CVF_MKG4_GATE_EVIDENCE_CONSISTENCY_PROBE_ROADMAP_2026-06-01.md, work order docs/work_orders/CVF_WO_MKG4_GATE_EVIDENCE_CONSISTENCY_PROBE_2026-06-01.md, review docs/reviews/CVF_MKG4_GATE_EVIDENCE_CONSISTENCY_PROBE_REVIEW_2026-06-01.md. Scope: audit MKG3 pending review for current self-reported gate evidence. Boundary: no implementation, live proof, graph retrieval, reinjection, skill mutation, public-sync, push, provider use, or local commit by worker."
+}

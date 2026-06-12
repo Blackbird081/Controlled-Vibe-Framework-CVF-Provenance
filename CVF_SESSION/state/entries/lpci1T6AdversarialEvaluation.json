@@ -1,0 +1,5 @@
+{
+  "stateOrder": 106,
+  "stateKey": "lpci1T6AdversarialEvaluation",
+  "value": "CLOSED_PASS_BOUNDED at commit 8f332a35 with evidence reconciliation at commit 9d0deaf4. Evaluation: 20/20 checks PASS across 4 corpus classes. DIRECT_CITED_ANSWER: 6/6 PASS (4 ANSWER_EMITTED, 2 NO_RESULTS). PROCEDURAL_GUIDANCE: 5/5 PASS (2 ANSWER_EMITTED, 3 NO_RESULTS). ESCALATE_OR_ABSTAIN/superseded: 3/3 PASS (2 ESCALATED, 1 ANSWER_EMITTED from effective). False-direct-answer audit: 6/6 PASS, 0 hallucinations. C1-C9: 7/7 verified (C4/C5 N/A for pilot corpus). Receipt: lpci1-t6-adv-eval-2026-06-03-20checks. LLM: OpenAI gpt-4o-mini. Evaluation report: docs/reviews/CVF_LPCI1_T6_ADVERSARIAL_EVALUATION_2026-06-03.md. Completion review: docs/reviews/CVF_LPCI1_T6_ADVERSARIAL_EVALUATION_COMPLETION_2026-06-03.md. T7 Template Packaging is closed."
+}

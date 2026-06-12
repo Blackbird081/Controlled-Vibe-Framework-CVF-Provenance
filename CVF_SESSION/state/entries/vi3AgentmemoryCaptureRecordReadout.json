@@ -1,0 +1,5 @@
+{
+  "stateOrder": 182,
+  "stateKey": "vi3AgentmemoryCaptureRecordReadout",
+  "value": "CLOSED_PASS_BOUNDED. Added cvf.agentMemoryCaptureRecord.vi3.v1 to auditMemoryReceipt.captureRecord and referenced capture records from the VI memory surface. Verification: focused audit-memory/VI/route tests PASS 42/42; cvf-web check PASS; live Alibaba-compatible 2-turn proof PASS with receipts turn1=rcpt-env-mpkjrcho-bped1p turn2=rcpt-env-mpkjrojq-o9wc3n; route.ts unchanged and remains 999 lines. Completion: docs/reviews/CVF_VI3_AGENTMEMORY_CAPTURE_RECORD_READOUT_COMPLETION_2026-05-25.md. Boundary: no route.ts edit, memory reinjection, external adapter, provider routing change, receipt envelope change, automatic promotion, public-sync, hosted readiness, production readiness, or freeze release."
+}

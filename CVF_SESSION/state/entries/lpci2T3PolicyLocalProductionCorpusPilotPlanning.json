@@ -1,0 +1,5 @@
+{
+  "stateOrder": 272,
+  "stateKey": "lpci2T3PolicyLocalProductionCorpusPilotPlanning",
+  "value": "CLOSED_PASS_BOUNDED. Codex registered the Policy_Local data_input drop-zone as GC-051 corpus policylocal-production-corpus-dropzone with status NOT_STARTED and productionUse=true, then created docs/reference/CVF_LPCI2_T3_POLICYLOCAL_PRODUCTION_CORPUS_PILOT_PLAN_2026-06-03.md plus completion docs/reviews/CVF_LPCI2_T3_POLICYLOCAL_PRODUCTION_CORPUS_PILOT_PLANNING_COMPLETION_2026-06-03.md. The folder was empty at T3 planning time and later renamed/used in T4S. Boundary: planning/registry only; no corpus import, sourceHash proof, index, provider call, chat runtime, legal advice quality, latest-law status, hosted readiness, production readiness, or public export."
+}

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 94,
+  "stateKey": "gc053WorkOrderCommitModeAnchorLifecycleHardening",
+  "value": "CLOSED_PASS_BOUNDED. Commit 7c068eeb plus handoff-sync b0d0249c. Review docs/reviews/CVF_GC053_WORK_ORDER_COMMIT_MODE_ANCHOR_LIFECYCLE_HARDENING_2026-06-02.md. READY/DISPATCH work orders now require WORKER_MAY_COMMIT or WORKER_MUST_NOT_COMMIT plus dispatchBaseHead, executionBaseHead, and closureBaseHead. Integration suite PASS 37/37; committed-range pre-closure PASS."
+}

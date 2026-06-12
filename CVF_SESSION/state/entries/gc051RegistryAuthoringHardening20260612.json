@@ -1,0 +1,5 @@
+{
+  "stateOrder": 344,
+  "stateKey": "gc051RegistryAuthoringHardening20260612",
+  "value": "CLOSED_PASS_BOUNDED at material commit c1854b17 from execution base ec555c25. Added governance/compat/generate_corpus_scan_registry.py, governance/compat/test_generate_corpus_scan_registry.py, per-entry source registry files under docs/corpus-intelligence/registry/, drift enforcement in governance/compat/check_corpus_scan_registry.py, GC-051 standard/guard/docs updates, GC-018 baseline, work order, and completion review. Result: the GC-051 aggregate registry is generated from reviewable header plus per-entry source JSON files; future agents must edit source entries and run the generator, and the checker fails aggregate drift. Verification: generator check PASS; GC-051 checker PASS; focused unittest PASS 4/4; reviewer-fast PASS 12/12; full pre-commit governance chain PASS 37/37. Boundary: no registry semantic reclassification, Policy_Local mutation, EC activation, retrieval, OCR/provider/API use, corpus ingestion, public-sync, readiness claim, memory reinjection, high-risk promotion, or autonomous mutation."
+}

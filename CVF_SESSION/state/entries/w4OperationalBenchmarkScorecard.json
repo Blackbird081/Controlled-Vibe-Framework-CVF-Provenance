@@ -1,0 +1,5 @@
+{
+  "stateOrder": 197,
+  "stateKey": "w4OperationalBenchmarkScorecard",
+  "value": "CLOSED_PASS_BOUNDED at docs/reviews/CVF_W4_OPERATIONAL_BENCHMARK_SCORECARD_COMPLETION_2026-05-24.md. Extended Governance CLI cvf.operationalBenchmark.v1 with scorecard fields for call-level pass rate, event-model denominator, diagnostic class/user-action counts, and advisory friction/overconstraint signals. Existing S3 evidence CLI parse now reports callLevel 5/5 pass=1.000. Verification: focused operational benchmark tests PASS 7/7; operational + governance reliability tests PASS 32/32; full Governance CLI tests PASS 119/119; TypeScript check PASS; build PASS. Boundary: local offline/evidence-ingest reporting only; no new live provider benchmark, provider adapter/router behavior, /api/execute, receipt envelope, output-quality scoring, runtime observability dashboard, public-sync, hosted readiness, production readiness, or freeze release."
+}

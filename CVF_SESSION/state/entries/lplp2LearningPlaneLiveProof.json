@@ -1,0 +1,5 @@
+{
+  "stateOrder": 53,
+  "stateKey": "lplp2LearningPlaneLiveProof",
+  "value": "CLOSED_PASS_BOUNDED. cvf.learningPlaneLiveProof.lplp2.v1 \u2014 6 sessions S2-S7 (all ALLOW alibaba/qwen-turbo/R1). 7 total insights, confidence=0.7, TruthScore 86/100 STRONG (PROVISIONAL). Weighting doctrine DEFERRED. GC-018 parent: CVF_GC018_LPLP1."
+}

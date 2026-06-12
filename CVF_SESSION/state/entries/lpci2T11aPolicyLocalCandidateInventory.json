@@ -1,0 +1,5 @@
+{
+  "stateOrder": 307,
+  "stateKey": "lpci2T11aPolicyLocalCandidateInventory",
+  "value": "CLOSED_PASS_BOUNDED. Original Claude return docs/reviews/CVF_LPCI2_T11A_CANDIDATE_INVENTORY_WORKER_RETURN_2026-06-07.md passed the direct six-file scope. Codex review docs/reviews/CVF_LPCI2_T11A_CANDIDATE_INVENTORY_CODEX_REVIEW_2026-06-07.md required supplement for the real Law use case_Codex bundle. Completion docs/reviews/CVF_LPCI2_T11A_CANDIDATE_AND_BUNDLE_INVENTORY_COMPLETION_2026-06-07.md closes T11A after supplement review. Boundary: inventory/hash/role/lineage only; no extraction, ingestion, runtime, provider, public, legal-quality, current-law, production, or release-readiness claim."
+}

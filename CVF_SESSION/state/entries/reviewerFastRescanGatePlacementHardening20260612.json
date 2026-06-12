@@ -1,0 +1,5 @@
+{
+  "stateOrder": 343,
+  "stateKey": "reviewerFastRescanGatePlacementHardening20260612",
+  "value": "CLOSED_PASS_BOUNDED at material commit aeb39903. Completion docs/reviews/CVF_REVIEWER_FAST_RESCAN_GATE_PLACEMENT_HARDENING_COMPLETION_2026-06-12.md. Changed governance/compat/run_local_governance_hook_chain.py so reviewer-fast now includes the existing rescan intelligence hardening checker, and added focused unit coverage in governance/compat/test_run_local_governance_hook_chain.py. Verification: python -m unittest governance.compat.test_run_local_governance_hook_chain PASS; reviewer-fast PASS 12/12; full pre-commit governance chain PASS 37/37. Boundary: hook-placement hardening only; no scan runtime behavior, extraction semantics, OCR/provider execution, Policy_Local mutation, EC activation, retrieval, public-sync, readiness claim, memory reinjection, high-risk promotion, or autonomous mutation."
+}

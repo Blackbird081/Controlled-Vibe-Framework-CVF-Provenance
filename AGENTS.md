@@ -412,6 +412,30 @@ non-breaking spaces, zero-width characters, or invisible control characters
 unless the changed artifact records the exception and reason. Do not perform
 broad Unicode normalization outside the assigned scope.
 
+## Mandatory JSON Generated Aggregate Discipline - 2026-06-12
+
+Canonical standard:
+
+`docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md`
+
+Large governed JSON aggregates that are repeatedly edited by agents should not
+remain hand-edited monoliths. Once a generated source layout exists, agents must
+edit the compact source files and run the matching generator instead of editing
+only the aggregate.
+
+Current generated JSON aggregates:
+
+- `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
+  - source: `docs/corpus-intelligence/registry/`
+  - generator: `governance/compat/generate_corpus_scan_registry.py`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+  - source: `CVF_SESSION/state/`
+  - generator: `governance/compat/generate_active_session_state.py`
+
+Changed generated aggregates must pass their drift check before dispatch,
+closure, or commit. A future large governed JSON aggregate must record whether
+it added, reused, or explicitly did not need a generated source layout.
+
 ## Mandatory Agent Autorun Workflow Control - 2026-05-28
 
 Canonical standard:

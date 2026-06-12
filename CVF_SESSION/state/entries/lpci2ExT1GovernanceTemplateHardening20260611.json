@@ -1,0 +1,5 @@
+{
+  "stateOrder": 321,
+  "stateKey": "lpci2ExT1GovernanceTemplateHardening20260611",
+  "value": "CLOSED_PASS_BOUNDED at material commit f88360df. Added docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md, hardened docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md and docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md, and updated governance/compat/check_work_order_dispatch_quality.py plus focused tests so provider/API-key non-use requires runtime freshness evidence while generic non-provider registry-update wording does not trigger provider-registry false positives. Boundary: control-plane authoring/template/checker hardening only; no extractor implementation, dependency addition, OCR model download, provider/API key use, public-sync, hosted deployment, production claim, public claim expansion, Learning Orchestrator behavior, memory reinjection, high-risk promotion, or autonomous mutation."
+}

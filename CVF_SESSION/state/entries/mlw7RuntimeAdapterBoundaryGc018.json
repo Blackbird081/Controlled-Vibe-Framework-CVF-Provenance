@@ -1,0 +1,5 @@
+{
+  "stateOrder": 287,
+  "stateKey": "mlw7RuntimeAdapterBoundaryGc018",
+  "value": "GC018_AUTHORIZED_HOLD_FOR_WORK_ORDER at material commit 7d7d6eda. Baseline docs/baselines/CVF_GC018_MLW7_RUNTIME_ADAPTER_BOUNDARY_2026-06-05.md selects MLW7-RTAD1 work-order authoring as the next bounded MLW7 runtime adapter boundary/admission step. Boundary: no runtime adapter implementation, package install, external execution, external repo ingestion, delegation approval, registry authority, marketplace/public claim, public-sync, live/provider proof, hosted readiness, production readiness, public readiness, memory reinjection, automatic promotion, high-risk promotion implementation, Learning Orchestrator runtime behavior, or autonomous mutation."
+}

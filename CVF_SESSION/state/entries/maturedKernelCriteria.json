@@ -1,0 +1,5 @@
+{
+  "stateOrder": 206,
+  "stateKey": "maturedKernelCriteria",
+  "value": "CLOSED_MATURED_KERNEL_CRITERIA_FILED at docs/reviews/CVF_MATURED_KERNEL_CRITERIA_COMPLETION_2026-05-21.md; criteria reference filed at docs/reference/CVF_MATURED_KERNEL_CRITERIA_2026-05-21.md. This defines review vocabulary and per-surface maturity criteria only. freezePosture remains governance_kernel_freeze_recommended; all 12 HN2.b surfaces remain frozen_recommended; HN2.c one-surface release remains mandatory for any future surface release; global freeze lift remains prohibited."
+}

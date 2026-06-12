@@ -1,0 +1,5 @@
+{
+  "stateOrder": 152,
+  "stateKey": "lhw13WorkflowConnectorWave13",
+  "value": "CLOSED_PASS_BOUNDED. T1 Agent Reading Protocol Governance Connector spec docs/reference/CVF_LHW13_T1_AGENT_READING_PROTOCOL_GOVERNANCE_CONNECTOR_SPEC_2026-05-29.md; T2 Memory Continuity Level Advisory Connector spec docs/reference/CVF_LHW13_T2_MEMORY_CONTINUITY_LEVEL_ADVISORY_CONNECTOR_SPEC_2026-05-29.md; T3 Graph Context Resolver Boundary Connector spec docs/reference/CVF_LHW13_T3_GRAPH_CONTEXT_RESOLVER_BOUNDARY_CONNECTOR_SPEC_2026-05-29.md. Advisory types: agentReadingAdvisoryType + claimValidationAdvisory (T1); memoryContinuityLevelAdvisoryType + continuityLevelBoundaryNote (T2); graphContextResolverBoundaryAdvisoryType + activeResolutionMode + phaseToNextMode (T3). CVF 25.05 Gaps 1/4/9 closed. LH1 tolaria trigger closed for doc-only scope. No code file. No runtime enforcement. No memory reinjection. No graph retrieval execution. Boundary: documentation-only connector specs; no hosted readiness, production readiness, or public release readiness."
+}

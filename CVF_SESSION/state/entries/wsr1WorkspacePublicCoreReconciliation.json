@@ -1,0 +1,5 @@
+{
+  "stateOrder": 87,
+  "stateKey": "wsr1WorkspacePublicCoreReconciliation",
+  "value": "PUBLICATION_READY_PENDING_OPERATOR_COMMIT. GC-018 docs/baselines/CVF_GC018_WSR1_WORKSPACE_PUBLIC_CORE_RECONCILIATION_2026-06-01.md, roadmap docs/roadmaps/CVF_WSR1_WORKSPACE_PUBLIC_CORE_RECONCILIATION_ROADMAP_2026-06-01.md, work order docs/work_orders/CVF_WO_WSR1_WORKSPACE_PUBLIC_CORE_RECONCILIATION_2026-06-01.md, completion docs/reviews/CVF_WSR1_WORKSPACE_PUBLIC_CORE_RECONCILIATION_COMPLETION_2026-06-01.md. Local CVF-Workspace hidden core migrated from unrelated dc841d33 history to public eb87479 with backup preserved, qt-saigon-works manifest repinned, local rules regenerated, and doctor PASS WITH NOTE 16 passed / 1 pending-overlay warning. Public-sync static CI gate PASS after README workspace onboarding, concise guard registry links, and public-surface cleanup. Public-sync delta remains pending uncommitted/unpushed at operator publication checkpoint."
+}

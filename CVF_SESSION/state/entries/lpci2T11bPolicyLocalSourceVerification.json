@@ -1,0 +1,5 @@
+{
+  "stateOrder": 309,
+  "stateKey": "lpci2T11bPolicyLocalSourceVerification",
+  "value": "CLOSED_PASS_BOUNDED at material commit acdbcd8b. Work order docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_T11B_POLICYLOCAL_SOURCE_VERIFICATION_FOR_CLAUDE_2026-06-07.md; report docs/reference/CVF_LPCI2_T11B_SOURCE_VERIFICATION_REPORT_2026-06-07.md; worker return docs/reviews/CVF_LPCI2_T11B_SOURCE_VERIFICATION_WORKER_RETURN_2026-06-07.md; completion docs/reviews/CVF_LPCI2_T11B_SOURCE_VERIFICATION_COMPLETION_2026-06-07.md. External result JSON sha256:0d24870a43b0e33eecddae438d669983be508eff9ed4ca4e112ffb48870fd79d. Result: 7/7 target records final HASH_MATCH; all path, hash, size, and role/lineage gates passed. Finding: BNDL-002, BNDL-003, and BNDL-005 required Unicode path fallback from T11A candidate manifest paths to T11A bundle manifest paths. Boundary: source verification only; no body extraction, OCR, summarization, corpus ingestion, chunking, runtime query, provider calls, public-sync, current-law claim, legal advice quality, production/public readiness, memory reinjection, high-risk promotion, or autonomous mutation."
+}

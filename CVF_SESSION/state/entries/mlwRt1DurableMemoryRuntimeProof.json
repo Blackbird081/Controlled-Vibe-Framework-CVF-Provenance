@@ -1,0 +1,5 @@
+{
+  "stateOrder": 123,
+  "stateKey": "mlwRt1DurableMemoryRuntimeProof",
+  "value": "CLOSED_PASS_BOUNDED. executionBaseHead=acaf9124. GC-018: docs/baselines/CVF_GC018_MLW_RT1_DURABLE_MEMORY_RUNTIME_PROOF_2026-06-05.md. Work order: docs/work_orders/CVF_WO_MLW_RT1_DURABLE_MEMORY_RUNTIME_PROOF_2026-06-05.md. Completion: docs/reviews/CVF_MLW_RT1_DURABLE_MEMORY_RUNTIME_PROOF_COMPLETION_2026-06-05.md. Deterministic regression: EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.durable-memory.test.ts. Live proof: EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.mlw-rt1-durable-memory.alibaba.live.test.ts. Proof: governed /api/execute write request persisted summary-only durable memory, later governed /api/execute read request retrieved the same memory ID with summaryOnly=true, canReinject=false, rawMemoryReleased=false; Alibaba live proof PASS. Boundary: existing file-backed store only; no backend migration, production-grade durability, public-sync, hosted readiness, production readiness, public readiness, MLW7/MLW8, or autonomous mutation."
+}

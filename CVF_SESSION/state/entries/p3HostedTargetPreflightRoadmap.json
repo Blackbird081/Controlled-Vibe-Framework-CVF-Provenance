@@ -1,0 +1,5 @@
+{
+  "stateOrder": 238,
+  "stateKey": "p3HostedTargetPreflightRoadmap",
+  "value": "SELECTED_P3_PREFLIGHT_DECISION_ROADMAP at docs/roadmaps/CVF_P3_HOSTED_TARGET_PREFLIGHT_DECISION_ROADMAP_2026-05-23.md, selected by audit docs/reviews/CVF_P3_NEXT_ROADMAP_SELECTION_AUDIT_2026-05-23.md; commit f1ea6e05. Rationale: P3 is highest-value next surface after P2/HN1, but direct proof is not executable until hosted target/workflow/auth/secret/pass-fail details exist. Exit states: P3_DIRECT_PROOF_READY with fresh GC-018/work order, or NO_HOSTED_TARGET_AVAILABLE. Boundary: roadmap-selection/preflight only; no hosted proof, deployment, public-sync, runtime/provider semantics, hosted readiness claim, or freeze release."
+}

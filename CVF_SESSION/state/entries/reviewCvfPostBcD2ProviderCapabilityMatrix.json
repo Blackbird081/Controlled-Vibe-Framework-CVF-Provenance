@@ -1,0 +1,5 @@
+{
+  "stateOrder": 231,
+  "stateKey": "reviewCvfPostBcD2ProviderCapabilityMatrix",
+  "value": "CLOSED_D2_PROVIDER_CAPABILITY_MATRIX at docs/reviews/CVF_D2_PROVIDER_CAPABILITY_MATRIX_COMPLETION_2026-05-22.md; commit e918c690; GC-018 docs/baselines/CVF_GC018_D2_PROVIDER_CAPABILITY_MATRIX_2026-05-22.md. Delivered Model Gateway provider capability registry cvf.providerCapability.v1, Review-CVF method axis complete/stream/tool_call/reasoning/json_mode/vision/embedding/receipt, legacy chat alias to complete, owner refs for retry/cost/risk, registry lookup/list/assert helpers, and deterministic UnsupportedMethodError negative gate. Focused tests PASS 11/11; Model Gateway full tests PASS 80/80; check PASS. Boundary: no new live provider behavior, route change, receipt-envelope change, all-provider parity, public-sync, hosted readiness, Maika proof, or freeze release."
+}

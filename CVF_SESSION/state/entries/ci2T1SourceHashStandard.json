@@ -1,0 +1,5 @@
+{
+  "stateOrder": 268,
+  "stateKey": "ci2T1SourceHashStandard",
+  "value": "CLOSED_PASS_BOUNDED at commit 0fb6adc0. NR-04 canonical SHA-256 per-file sourceHash standard authored (docs/reference/CVF_CORPUS_SOURCE_HASH_STANDARD_2026-06-02.md). Readiness template updated (sections 4.4 NR-04, 4.5 NR-06, two NR-07 language rows). CI2-T1 completion review: docs/reviews/CVF_CI2_T1_SOURCE_HASH_STANDARD_COMPLETION_2026-06-02.md. STANDARD_REQUIRED_FIRST satisfied for check_corpus_packet_source_hash stub."
+}

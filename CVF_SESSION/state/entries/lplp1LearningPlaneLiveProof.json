@@ -1,0 +1,5 @@
+{
+  "stateOrder": 54,
+  "stateKey": "lplp1LearningPlaneLiveProof",
+  "value": "CLOSED_PASS_BOUNDED. cvf.learningPlaneLiveProof.lplp1.v1 \u2014 rcpt-env-mpt1w4ya-r45xzf (alibaba/qwen-turbo/ALLOW/R1). PatternInsight(ACCEPT,HEALTHY)->TruthScore~55/100(ADEQUATE,PROVISIONAL)->RoutingAdvisory(PROCEED). liveProofProven=true. LHW17 T3 live-proof prerequisite SATISFIED. GC-018 docs/baselines/CVF_GC018_LPLP1_LEARNING_PLANE_LIVE_PROOF_2026-05-31.md."
+}

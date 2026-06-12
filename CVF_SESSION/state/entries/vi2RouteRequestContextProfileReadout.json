@@ -1,0 +1,5 @@
+{
+  "stateOrder": 183,
+  "stateKey": "vi2RouteRequestContextProfileReadout",
+  "value": "CLOSED_PASS_BOUNDED. Added cvf.routeRequestContextProfile.vi2.v1 at EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-request-context-readout.ts, response-level requestContextReadout, and request_context_profile surface in verticalIntegrationReadout. Selected source: caveman context budgeting/relevance + Workflow GoClaw context profile/guardrails, with CB1 as prior CLI proof. Verification: focused readout/VI/route tests PASS 37/37; cvf-web check PASS; live Alibaba-compatible 2-turn proof PASS with receipts turn1=rcpt-env-mpkjdbnb-8jl53i turn2=rcpt-env-mpkjdnuv-e7os02. Completion: docs/reviews/CVF_VI2_ROUTE_REQUEST_CONTEXT_PROFILE_READOUT_COMPLETION_2026-05-25.md. Boundary: no runtime context injection, prompt mutation, route blocking, receipt envelope change, provider routing change, LLM scoring, memory reinjection, external execution, public-sync, hosted readiness, production readiness, or freeze release."
+}

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 285,
+  "stateKey": "mlwNextRuntimeDecisionGc018",
+  "value": "GC018_AUTHORIZED_HOLD_FOR_WORK_ORDER. Baseline docs/baselines/CVF_GC018_MLW_NEXT_RUNTIME_DECISION_2026-06-05.md selects MLW-NRD1 work-order authoring as the next bounded MLW runtime decision step: route-visible advisory decision/readout only. Boundary: no runtime route wiring, external capability execution, runtime adapter authority, automatic optimization, benchmark/cost proof, high-risk promotion implementation, public-sync, live proof, hosted readiness, production readiness, public readiness, memory reinjection, automatic promotion, or autonomous mutation."
+}

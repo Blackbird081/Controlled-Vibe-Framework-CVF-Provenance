@@ -1,0 +1,5 @@
+{
+  "stateOrder": 89,
+  "stateKey": "mkgMemorySystemTrancheCompletion",
+  "value": "CLOSED_COMMITTED. Completion docs/reviews/CVF_MKG_MEMORY_SYSTEM_TRANCHE_COMPLETION_2026-06-01.md aggregates MKG1-MKG6, committed at 2ebc0b92 + 6f825820. Memory now has manifest-backed corpus/owner reconciliation, blocked-owner evidence for deferred cortex/skill/graph groups, worker guard probes, deterministic LPF Memory runtime workflow-chain, and authenticated POST /api/memory/readout sanitized summary-only route. Boundary: local bounded only; no public, hosted, production, live-provider, persistence/graph mutation, prompt injection, or reinjection proof."
+}

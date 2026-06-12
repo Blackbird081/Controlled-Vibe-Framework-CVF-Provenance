@@ -1,0 +1,5 @@
+{
+  "stateOrder": 273,
+  "stateKey": "lpci2T4sPolicyLocalDataInputSmokeTest",
+  "value": "CLOSED_PASS_BOUNDED. Operator supplied two DOCX files and Codex renamed D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-Workspace\\Policy_Local\\uploads to data_input for local-first privacy wording. Added scripts/policylocal-import-smoke.mjs, generated data/generated/policylocal-data-input-manifest.json, and hashed data_input/116_2025_QH15_666020.docx with sha256:df714c0b29b2fa74483961d133c7334cb19c2d0f5c8b4e829d6a209a1a5ac5a7 plus data_input/148_2025_QH15_675262.docx with sha256:4ffafd1533348d80debe3e9565f6be06ebfa709381b7b354daee5cbc8ddc9eb5. ProcessingStatus=HASHED_ONLY, extractionStatus=DEFERRED_DOCX_TEXT_EXTRACTION, answerClass=ESCALATE_OR_ABSTAIN. Boundary: no DOCX text extraction, domain classification, search, retrieval, provider call, chat runtime, legal advice quality, latest-law status, hosted readiness, production readiness, or public export."
+}
