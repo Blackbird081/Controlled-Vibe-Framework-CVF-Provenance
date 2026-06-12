@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-12
 
-Current mode marker: `meor_t3_closed_t4_spec_pending`
+Current mode marker: `meor_t4_cross_domain_conformance_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `meor_t3_closed_t4_spec_pending`.
+Current mode: `meor_t4_cross_domain_conformance_dispatched`.
 
 Active handoff:
 
@@ -86,11 +86,11 @@ MEOR-T3 material implementation commit: `0c4997a5`.
 
 MEOR-T3 closure commit: `5f328d11`.
 
-The roadmap prioritizes a domain-agnostic CVF foundation before any
-Policy_Local correction or activation. MEOR-T1 is specification-only and must
-lock metadata requirement, evidence basis, operator resolution, and downstream
-disposition semantics before implementation. Regulated-domain mapping and
-Policy_Local real-use-case work remain held behind foundation closure and
+MEOR-T4 dispatch base: `7b2204dc`.
+
+MEOR-T4 now owns a shared synthetic legal-policy and technical-project fixture
+plus focused TypeScript and Python conformance tests. Regulated-domain mapping
+and Policy_Local real-use-case work remain held behind foundation closure and
 fresh authorization.
 
 LPCI2 EC-T4 metadata quality assessment is `CLOSED_BLOCKED_BOUNDED` at
@@ -626,8 +626,8 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: author a fresh MEOR-T4 GC-018 baseline and source-verified
-cross-domain conformance work order. MEOR-T5 remains dependency-held. The
+Next allowed move: implement and review the dispatched MEOR-T4 shared fixture
+and cross-language conformance tests. MEOR-T5 remains dependency-held. The
 regulated-domain adapter, Policy_Local candidate
 correction, EC-T5/EC-T6 activation, retrieval disclosure, OCR installation,
 corpus ingestion, and external Policy_Local integration remain blocked.

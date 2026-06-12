@@ -32,14 +32,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`meor_t3_closed_t4_spec_pending`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=author a fresh MEOR-T4 GC-018 and source-verified cross-domain conformance work order; parked checkpoint=MEOR-T5, regulated-domain adapter, Policy_Local integration, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`meor_t4_cross_domain_conformance_dispatched`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=implement the shared synthetic T4 fixture and cross-language non-bleed conformance tests; parked checkpoint=MEOR-T5, regulated-domain adapter, Policy_Local integration, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`meor_t3_closed_t4_spec_pending`
+`meor_t4_cross_domain_conformance_dispatched`
 
-Current HEAD recorded for this handoff: `5f328d11`
-(MEOR-T3 closure commit; this dedicated session sync follows).
+Current HEAD recorded for this handoff: `7b2204dc`
+(MEOR-T3 closure session sync; T4 dispatch commit follows).
 
 ## Active Boundary
 
@@ -779,8 +779,8 @@ history.
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
-Next allowed move: author a fresh MEOR-T4 GC-018 baseline and source-verified
-cross-domain conformance work order. MEOR-T5 remains dependency-held.
+Next allowed move: implement and review the dispatched MEOR-T4 shared fixture
+and cross-language conformance tests. MEOR-T5 remains dependency-held.
 The regulated-domain adapter, EC-T5/EC-T6 activation, retrieval disclosure,
 OCR installation, corpus ingestion, and external Policy_Local integration
 remain blocked. Public-sync, provider/API key use, production readiness, and
