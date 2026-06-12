@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -18,7 +18,7 @@ dispatchBaseHead: `c454921a`
 
 executionBaseHead: `c454921a`
 
-closureBaseHead: `WORKER_MUST_NOT_SET`
+closureBaseHead: `cb0b1b3c`
 
 sourceAuthority:
 `docs/baselines/CVF_GC018_MEMCON_T3_CONSOLIDATED_MEMORY_LEDGER_OPERATOR_PACKET_2026-06-13.md`
@@ -439,17 +439,45 @@ Worker-return evidence must be machine-checkable:
 - explicit `N/A with reason` for runtime, live proof, public-sync, JSON
   aggregate, and provider/API evidence.
 
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 | `docs/baselines/CVF_GC018_MEMCON_T3_CONSOLIDATED_MEMORY_LEDGER_OPERATOR_PACKET_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MEMCON_T3_CONSOLIDATED_MEMORY_LEDGER_OPERATOR_PACKET_COMPLETION_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_MEMCON_T3_CONSOLIDATED_MEMORY_LEDGER_OPERATOR_PACKET_WORKER_RETURN_2026-06-13.md` | `WORKER_MUST_NOT_COMMIT observed` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_ROADMAP_2026-06-12.md` | `Status: MEMCON_T3_CLOSED_PASS_BOUNDED` | PASS |
+| Contract artifact | `docs/reference/CVF_MEMORY_CONSOLIDATION_LEDGER_OPERATOR_PACKET_CONTRACT_2026-06-13.md` | file exists | PASS |
+| Sample packet artifact | `docs/reviews/CVF_MEMCON_T3_OPERATOR_MEMORY_REVIEW_PACKET_SAMPLE_2026-06-13.md` | file exists | PASS |
+| Registry JSON | BLOCKED with reason | no GC-051 registry update authorized for MEMCON-T3 closure | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason | no GC-051 registry update authorized for MEMCON-T3 closure | BLOCKED with reason |
+| External evidence digest | N/A with reason | no external corpus/provider evidence used | N/A with reason |
+| System loop interlock | N/A with reason | no runtime loop mutation authorized | N/A with reason |
+| Runtime evidence | N/A with reason | documentation-first tranche; no runtime behavior implemented | N/A with reason |
+| Live proof | N/A with reason | no provider/API call authorized or needed | N/A with reason |
+| Public-sync | N/A with reason | private provenance work; public-sync not authorized | N/A with reason |
+| Session continuity | active state/front door/handoff | separate session-sync commit follows material closure when required | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| Worker commit mode | `WORKER_MUST_NOT_COMMIT` | `WORKER_MUST_NOT_COMMIT observed` in worker return | PASS |
+| Raw memory release boundary | `rawMemoryReleased=false` | contract, sample packet, worker return, and completion carry `rawMemoryReleased=false` | PASS |
+| Runtime behavior | no runtime memory/storage/retrieval mutation | no `EXTENSIONS/` or runtime owner files changed | PASS |
+| Public-sync | not authorized | no public-sync path touched and Public Export Disposition is `DEFERRED_PRIVATE_ONLY` | PASS |
+| JSON aggregate | no hand-edited aggregate | no JSON ledger created; generated-aggregate boundary recorded | PASS |
+
 ## Closure Checklist
 
 | Closure item | Owner | Required disposition |
 | --- | --- | --- |
-| Worker-return packet complete | Claude | PASS or BLOCKED |
-| MEMCON checker evidence present | Claude | PASS or BLOCKED |
-| Reviewer-fast evidence present | Claude | PASS or BLOCKED |
-| Pre-commit evidence present | Claude | PASS or BLOCKED |
-| Completion review authored | Codex | reviewer-owned |
-| Session state/front door/handoff synced | Codex | reviewer-owned |
-| Final commit created | Codex | reviewer-owned |
+| Worker-return packet complete | Claude | PASS |
+| MEMCON checker evidence present | Claude/Codex | PASS |
+| Reviewer-fast evidence present | Claude/Codex | PASS |
+| Pre-commit evidence present | Claude/Codex | PASS |
+| Completion review authored | Codex | PASS |
+| Session state/front door/handoff synced | Codex | N/A with reason - separate session-sync commit follows material closure |
+| Final commit created | Codex | N/A with reason - material closure commit follows this conversion |
 
 ## Return-To-Orchestrator Conditions
 

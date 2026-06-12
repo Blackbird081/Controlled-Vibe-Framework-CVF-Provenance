@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: MEMCON_T3_DISPATCHED
+Status: MEMCON_T3_CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -374,8 +374,8 @@ Allowed outcomes:
 | MEMCON-T1a | Memory consolidation standard, vocabulary, and existing-owner reconciliation map | Operator approval after Claude rebuttal | CLOSED_PASS_BOUNDED |
 | MEMCON-T1b | Memory consolidation schema appendix and field tables | MEMCON-T1a closure | CLOSED_PASS_BOUNDED |
 | MEMCON-T2 | Temporal ambiguity and source-authority checker | MEMCON-T1b closure | CLOSED_PASS_BOUNDED |
-| MEMCON-T3 | Consolidated memory ledger and Markdown-first operator-visible review packet | MEMCON-T2 closure | DISPATCHED |
-| MEMCON-T4 | Retrieval-pack integration boundary and conformance tests | MEMCON-T3 closure | HOLD_PENDING_T3 |
+| MEMCON-T3 | Consolidated memory ledger and Markdown-first operator-visible review packet | MEMCON-T2 closure | CLOSED_PASS_BOUNDED |
+| MEMCON-T4 | Retrieval-pack integration boundary and conformance tests | MEMCON-T3 closure | READY_FOR_FRESH_AUTHORIZATION |
 | MEMCON-T5 | Cross-agent memory consistency contract | MEMCON-T4 closure | HOLD_PENDING_T4 |
 | PL-S1 | Policy_Local evidence-resolution pilot using Memory Plane outputs | MEMCON foundation decision plus fresh authorization | HOLD_PENDING_MEMCON_DECISION |
 
@@ -518,6 +518,17 @@ Dispatch artifacts:
   `docs/baselines/CVF_GC018_MEMCON_T3_CONSOLIDATED_MEMORY_LEDGER_OPERATOR_PACKET_2026-06-13.md`;
 - work order:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T3_CONSOLIDATED_MEMORY_LEDGER_OPERATOR_PACKET_FOR_CLAUDE_2026-06-13.md`.
+
+Closure artifacts:
+
+- contract:
+  `docs/reference/CVF_MEMORY_CONSOLIDATION_LEDGER_OPERATOR_PACKET_CONTRACT_2026-06-13.md`;
+- sample packet:
+  `docs/reviews/CVF_MEMCON_T3_OPERATOR_MEMORY_REVIEW_PACKET_SAMPLE_2026-06-13.md`;
+- worker return:
+  `docs/reviews/CVF_MEMCON_T3_CONSOLIDATED_MEMORY_LEDGER_OPERATOR_PACKET_WORKER_RETURN_2026-06-13.md`;
+- completion:
+  `docs/reviews/CVF_MEMCON_T3_CONSOLIDATED_MEMORY_LEDGER_OPERATOR_PACKET_COMPLETION_2026-06-13.md`.
 
 Expected outputs:
 
@@ -670,14 +681,14 @@ rg -n "memoryRuntimeWorkflowChain|runMemoryRuntimeWorkflowChain|MemoryRuntimeWor
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T2_TEMPORAL_SOURCE_AUTHORITY_CHECKER_FOR_CLAUDE_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_MEMCON_T2_TEMPORAL_SOURCE_AUTHORITY_CHECKER_COMPLETION_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Worker return artifact | `docs/reviews/CVF_MEMCON_T2_TEMPORAL_SOURCE_AUTHORITY_CHECKER_WORKER_RETURN_2026-06-13.md` | `WORKER_MUST_NOT_COMMIT observed` | PASS |
-| Roadmap state | this file | `Status: MEMCON_T2_CLOSED_PASS_BOUNDED` | PASS |
-| Registry JSON | BLOCKED with reason | no GC-051 registry update authorized for MEMCON-T2 checker closure | BLOCKED with reason |
-| Registry Markdown | BLOCKED with reason | no GC-051 registry update authorized for MEMCON-T2 checker closure | BLOCKED with reason |
-| Checker source | `governance/compat/check_memory_consolidation_artifact_quality.py` | deterministic MEMCON artifact quality gate | PASS |
-| Focused tests | `governance/compat/test_check_memory_consolidation_artifact_quality.py` | unittest PASS | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T3_CONSOLIDATED_MEMORY_LEDGER_OPERATOR_PACKET_FOR_CLAUDE_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MEMCON_T3_CONSOLIDATED_MEMORY_LEDGER_OPERATOR_PACKET_COMPLETION_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return artifact | `docs/reviews/CVF_MEMCON_T3_CONSOLIDATED_MEMORY_LEDGER_OPERATOR_PACKET_WORKER_RETURN_2026-06-13.md` | `WORKER_MUST_NOT_COMMIT observed` | PASS |
+| Roadmap state | this file | `Status: MEMCON_T3_CLOSED_PASS_BOUNDED` | PASS |
+| Contract artifact | `docs/reference/CVF_MEMORY_CONSOLIDATION_LEDGER_OPERATOR_PACKET_CONTRACT_2026-06-13.md` | file exists | PASS |
+| Sample packet artifact | `docs/reviews/CVF_MEMCON_T3_OPERATOR_MEMORY_REVIEW_PACKET_SAMPLE_2026-06-13.md` | file exists | PASS |
+| Registry JSON | BLOCKED with reason | no GC-051 registry update authorized for MEMCON-T3 closure | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason | no GC-051 registry update authorized for MEMCON-T3 closure | BLOCKED with reason |
 | External evidence digest | N/A with reason | no external corpus/provider evidence used | N/A with reason |
 | System loop interlock | N/A with reason | no runtime loop mutation authorized | N/A with reason |
 | Session continuity | active state and handoff | Codex-owned session-sync commit follows material closure | N/A with reason - separate sync commit follows |

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 
@@ -27,6 +27,9 @@ workOrder:
 parentRoadmap:
 `docs/roadmaps/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_ROADMAP_2026-06-12.md`
 
+completionReview:
+`docs/reviews/CVF_MEMCON_T3_CONSOLIDATED_MEMORY_LEDGER_OPERATOR_PACKET_COMPLETION_2026-06-13.md`
+
 ## Purpose
 
 Authorize MEMCON-T3 as a documentation-first worker tranche for a consolidated
@@ -40,7 +43,8 @@ memory release.
 
 ## Decision / Baseline / Proposed Tranche
 
-Decision: dispatch MEMCON-T3 to Claude under `WORKER_MUST_NOT_COMMIT`.
+Decision: close MEMCON-T3 as `CLOSED_PASS_BOUNDED` after Claude returned
+uncommitted artifacts and Codex reviewer gates passed.
 
 Baseline:
 
@@ -49,7 +53,7 @@ Baseline:
 - MEMCON-T2 is `CLOSED_PASS_BOUNDED` and adds the MEMCON artifact quality
   checker.
 
-Proposed tranche:
+Closed tranche:
 
 - create a Markdown-first ledger and operator packet contract;
 - create a bounded sample operator packet with distinct category fixtures;
