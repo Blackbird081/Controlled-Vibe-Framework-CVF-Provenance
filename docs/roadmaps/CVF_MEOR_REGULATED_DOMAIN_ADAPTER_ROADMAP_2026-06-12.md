@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_RDA_T3_CLOSED_RDA_T4_AUTHORIZATION_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -145,8 +145,8 @@ Rejected design:
 | RDA-T1 | Regulated-date adapter contract and machine semantics | MEOR-T5 closure `6c2ad2b3` | CLOSED_PASS_BOUNDED |
 | RDA-T2 | Local deterministic adapter implementation for regulated profile requirement generation | RDA-T1 closure `6a6b343f` and sync `6a9a5703` | CLOSED_PASS_BOUNDED |
 | RDA-T3 | Cross-domain conformance proving non-regulatory profiles do not inherit regulated fields | RDA-T2 closure `1c47d125` and sync `ae3f3386` | CLOSED_PASS_BOUNDED |
-| RDA-T4 | Foundation closure and Policy_Local successor readiness decision | RDA-T3 closure | READY_FOR_FRESH_AUTHORIZATION |
-| Policy_Local successor | Real candidate metadata resolution and integration | RDA-T4 closure plus operator/source evidence | NOT_OPEN |
+| RDA-T4 | Foundation closure and Policy_Local successor readiness decision | RDA-T3 closure | CLOSED_PASS_BOUNDED |
+| Policy_Local successor | Real candidate metadata resolution and integration | RDA-T4 closure plus operator/source evidence | PROPOSED_READY_FOR_FRESH_AUTHORIZATION |
 
 ## RDA-T1 Dispatch Target
 
@@ -234,13 +234,31 @@ deterministic control-plane contract work only.
 - REVIEW: cross-domain conformance proves non-bleed.
 - FREEZE: RDA-T4 releases only the next bounded use-case lane.
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_MEOR_RDA_T4_FOUNDATION_CLOSURE_AND_POLICYLOCAL_SUCCESSOR_FOR_CODEX_2026-06-12.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MEOR_RDA_T4_FOUNDATION_CLOSURE_AND_POLICYLOCAL_SUCCESSOR_COMPLETION_2026-06-12.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| RDA-T1 closure | `docs/reviews/CVF_MEOR_RDA_T1_REGULATED_DATE_ADAPTER_CONTRACT_COMPLETION_2026-06-12.md` | closed bounded | PASS |
+| RDA-T2 closure | `docs/reviews/CVF_MEOR_RDA_T2_DETERMINISTIC_ADAPTER_IMPLEMENTATION_COMPLETION_2026-06-12.md` | closed bounded | PASS |
+| RDA-T3 closure | `docs/reviews/CVF_MEOR_RDA_T3_CROSS_DOMAIN_CONFORMANCE_COMPLETION_2026-06-12.md` | closed bounded | PASS |
+| RDA-T4 closure | `docs/reviews/CVF_MEOR_RDA_T4_FOUNDATION_CLOSURE_AND_POLICYLOCAL_SUCCESSOR_COMPLETION_2026-06-12.md` | closed bounded | PASS |
+| Successor boundary | `docs/roadmaps/CVF_POLICYLOCAL_SUCCESSOR_PILOT_ROADMAP_2026-06-12.md` | proposed only | PASS |
+| Registry JSON | BLOCKED with reason: no source/test corpus added by T4 closure | GC-051 update outside T4 scope | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: no source/test corpus added by T4 closure | GC-051 update outside T4 scope | BLOCKED with reason |
+| External evidence digest | N/A with reason: prior governed artifacts only | no external files consumed | N/A with reason |
+| System loop interlock | N/A with reason: no loop mutation | no interlock update required | N/A with reason |
+| Session continuity | active state/memory/handoff | sync commit records next move | PASS |
+
 ## Claim Boundary
 
-This roadmap proves only a design direction and dispatch plan for a
-regulated-domain adapter. It does not prove legal/current status, metadata
-truth, source authenticity, OCR quality, retrieval quality, Policy_Local
-readiness, EC activation, T12 readiness, provider behavior, production
-readiness, public readiness, or autonomous correction.
+This roadmap proves only a closed bounded regulated-domain adapter foundation
+and a proposed Policy_Local successor lane. It does not prove legal/current
+status, metadata truth, source authenticity, OCR quality, retrieval quality,
+Policy_Local readiness, EC activation, T12 readiness, provider behavior,
+production readiness, public readiness, or autonomous correction.
 
 ## Public Export Disposition
 
