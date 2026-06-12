@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: MEMCON_T1A_CLOSED_PASS_BOUNDED
+Status: MEMCON_T1B_CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -366,8 +366,8 @@ Allowed outcomes:
 | Tranche | Deliverable | Dependency | Status |
 | --- | --- | --- | --- |
 | MEMCON-T1a | Memory consolidation standard, vocabulary, and existing-owner reconciliation map | Operator approval after Claude rebuttal | CLOSED_PASS_BOUNDED |
-| MEMCON-T1b | Memory consolidation schema appendix and field tables | MEMCON-T1a closure | READY_FOR_FRESH_AUTHORIZATION |
-| MEMCON-T2 | Temporal ambiguity and source-authority checker | MEMCON-T1b closure | HOLD_PENDING_T1B |
+| MEMCON-T1b | Memory consolidation schema appendix and field tables | MEMCON-T1a closure | CLOSED_PASS_BOUNDED |
+| MEMCON-T2 | Temporal ambiguity and source-authority checker | MEMCON-T1b closure | READY_FOR_FRESH_AUTHORIZATION |
 | MEMCON-T3 | Consolidated memory ledger and Markdown-first operator-visible review packet | MEMCON-T2 closure | HOLD_PENDING_T2 |
 | MEMCON-T4 | Retrieval-pack integration boundary and conformance tests | MEMCON-T3 closure | HOLD_PENDING_T3 |
 | MEMCON-T5 | Cross-agent memory consistency contract | MEMCON-T4 closure | HOLD_PENDING_T4 |
@@ -435,6 +435,17 @@ T1a must not:
 
 Goal: author the schema appendix and field tables after the standard and
 owner-reconciliation map close.
+
+Closure artifacts:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_MEMCON_T1B_MEMORY_CONSOLIDATION_SCHEMA_APPENDIX_2026-06-13.md`;
+- work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T1B_MEMORY_CONSOLIDATION_SCHEMA_APPENDIX_FOR_CODEX_2026-06-13.md`;
+- schema appendix:
+  `docs/reference/CVF_MEMORY_CONSOLIDATION_SCHEMA_APPENDIX_2026-06-13.md`;
+- completion:
+  `docs/reviews/CVF_MEMCON_T1B_MEMORY_CONSOLIDATION_SCHEMA_APPENDIX_COMPLETION_2026-06-13.md`.
 
 Expected artifacts:
 
@@ -639,11 +650,11 @@ rg -n "memoryRuntimeWorkflowChain|runMemoryRuntimeWorkflowChain|MemoryRuntimeWor
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T1A_MEMORY_CONSOLIDATION_STANDARD_OWNER_RECONCILIATION_FOR_CLAUDE_2026-06-12.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_MEMCON_T1A_MEMORY_CONSOLIDATION_STANDARD_OWNER_RECONCILIATION_COMPLETION_2026-06-12.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Roadmap state | this file | `Status: MEMCON_T1A_CLOSED_PASS_BOUNDED` | PASS |
-| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | reviewer-fast GC-051 check PASS; no registry mutation required for these doc-only reference artifacts | PASS |
-| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | reviewer-fast GC-051 check PASS; no registry mutation required for these doc-only reference artifacts | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T1B_MEMORY_CONSOLIDATION_SCHEMA_APPENDIX_FOR_CODEX_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MEMCON_T1B_MEMORY_CONSOLIDATION_SCHEMA_APPENDIX_COMPLETION_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this file | `Status: MEMCON_T1B_CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | GC-051 generator/checker PASS with MEMCON-T1b registry source entry | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | GC-051 generator/checker PASS with MEMCON-T1b registry source entry | PASS |
 | External evidence digest | N/A with reason | no external corpus/provider evidence used | N/A with reason |
 | System loop interlock | N/A with reason | no runtime loop mutation authorized | N/A with reason |
 | Session continuity | active state and handoff | Codex-owned session-sync commit follows material closure | N/A with reason - separate sync commit follows |

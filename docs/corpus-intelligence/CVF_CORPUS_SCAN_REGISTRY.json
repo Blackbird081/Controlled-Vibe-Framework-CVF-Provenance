@@ -2700,6 +2700,44 @@
       ],
       "priorAbsorption": "Bounded source coverage for the memory consolidation roadmap rebuttal only. No runtime change, provider proof, Policy_Local mutation, or autonomous memory mutation is authorized by this registry entry.",
       "notes": "Covers Control Plane owner surfaces referenced by the MEMCON roadmap rebuttal as partial existing memory and knowledge lifecycle primitives."
+    },
+    {
+      "id": "memory-consolidation-schema-appendix",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "Memory consolidation schema appendix",
+      "scopePaths": [
+        "docs/reference/CVF_MEMORY_CONSOLIDATION_SCHEMA_APPENDIX_2026-06-13.md",
+        "docs/reference/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_STANDARD_2026-06-12.md",
+        "docs/reference/CVF_MEMORY_CONSOLIDATION_EXISTING_OWNER_RECONCILIATION_MAP_2026-06-12.md"
+      ],
+      "fileCount": 3,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "MemorySignal runtime type owner not found",
+        "MemoryCandidate runtime type owner not found",
+        "ConsolidatedMemoryRecord runtime type owner not found"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MEMCON-T1B-2026-06-13",
+      "scanDate": "2026-06-13",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MEMCON_T1B_MEMORY_CONSOLIDATION_SCHEMA_APPENDIX_COMPLETION_2026-06-13.md",
+      "completionReviewPath": "docs/reviews/CVF_MEMCON_T1B_MEMORY_CONSOLIDATION_SCHEMA_APPENDIX_COMPLETION_2026-06-13.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_MEMCON_T1B_MEMORY_CONSOLIDATION_SCHEMA_APPENDIX_2026-06-13.md",
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "MEMORY_CONSOLIDATION_SCHEMA",
+        "MEMORY_PLANE_OWNER_SURFACE",
+        "DOC_ONLY_SCHEMA_APPENDIX"
+      ],
+      "priorAbsorption": "MEMCON-T1a closed the standard and owner reconciliation. T1b adds doc-only field tables and runtime collision evidence, with no runtime source mutation.",
+      "notes": "Covers the Memory Consolidation schema appendix and its direct T1a owner references. The proposed symbols remain doc-only until a later authorized runtime implementation tranche."
     }
   ]
 }
