@@ -219,6 +219,21 @@ def _matches_domain_prefix(rel_path: str, prefixes: list[str]) -> bool:
     return any(normalized.startswith(prefix.replace("\\", "/")) for prefix in prefixes)
 
 
+def _is_owner_domain_change(rel_path: str, owner: dict[str, Any], prefixes: list[str]) -> bool:
+    if not _matches_domain_prefix(rel_path, prefixes):
+        return False
+
+    allowed_classes = [
+        str(file_class).strip()
+        for file_class in owner.get("domainFileClasses", [])
+        if str(file_class).strip()
+    ]
+    if allowed_classes:
+        return _classify(rel_path) in set(allowed_classes)
+
+    return _is_code_path(rel_path)
+
+
 def build_report(registry_path: Path) -> dict[str, Any]:
     if not registry_path.exists():
         return {
@@ -432,7 +447,7 @@ def build_report(registry_path: Path) -> dict[str, Any]:
         adjacent_changes = sorted(
             path
             for path in changed_files
-            if path != owner_path and _is_code_path(path) and _matches_domain_prefix(path, prefixes)
+            if path != owner_path and _is_owner_domain_change(path, owner, prefixes)
         )
         if adjacent_changes and owner_path not in changed_files:
             sample = ", ".join(adjacent_changes[:5])

@@ -26,13 +26,22 @@ DEFAULT_BASE_CANDIDATES = ("origin/main", "origin/master", "main", "master")
 
 STANDARD_PATH = "docs/reference/CVF_WORK_ORDER_CLOSURE_QUALITY_GATE_STANDARD_2026-05-28.md"
 WORK_ORDER_TEMPLATE_PATH = "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md"
+WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_PATH = (
+    "docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md"
+)
+WORK_ORDER_FINALITY_ADDENDUM_PATH = (
+    "docs/reference/CVF_AGENT_WORK_ORDER_FINALITY_AND_REVIEW_CONVERSION_ADDENDUM_2026-06-12.md"
+)
 WORKER_AUTONOMY_STANDARD_PATH = "docs/reference/CVF_WORKER_AUTONOMY_DISPATCH_PROMPT_STANDARD_2026-06-01.md"
 HOOK_CHAIN_PATH = "governance/compat/run_local_governance_hook_chain.py"
 THIS_SCRIPT_PATH = "governance/compat/check_work_order_dispatch_quality.py"
 FILE_SIZE_REGISTRY_PATH = "governance/compat/CVF_GOVERNED_FILE_SIZE_EXCEPTION_REGISTRY.json"
 NEAR_THRESHOLD_PLAN_MARKER = "Near-Threshold Owner Maintainability Plan"
+NEAR_THRESHOLD_TEMPLATE_OWNER_MARKER = "Near-Threshold Template Owner Discipline"
 FULFILLMENT_MANIFEST_MARKER = "Work-Order Fulfillment Manifest"
 COMMIT_MODE_ANCHOR_MARKER = "Commit Mode And Base-Anchor Lifecycle"
+EXPORT_SURFACE_DECISION_MARKER = "Export Surface Decision"
+NEXT_TRANCHE_AUDIT_MINI_PACKAGE_MARKER = "Next-Tranche Audit Mini-Package"
 DISPATCH_PACKET_LEARNING_MARKER = "Dispatch Packet Authoring Learning Promotion"
 NEGATIVE_SEARCH_COLLISION_MARKER = "Negative Search And Collision Discipline"
 SINGLE_AGENT_MULTI_ROLE_MARKER = "Single-Agent Multi-Role Control Block"
@@ -2478,6 +2487,19 @@ def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str
             INTAKE_ROLE_ROUTING_MARKER,
             "ACCEPT_AS_OWNER_MAP coverage",
             THIS_SCRIPT_PATH,
+        ),
+        WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_PATH: (
+            EXPORT_SURFACE_DECISION_MARKER,
+            NEXT_TRANCHE_AUDIT_MINI_PACKAGE_MARKER,
+            NEAR_THRESHOLD_TEMPLATE_OWNER_MARKER,
+            DISPATCH_PACKET_LEARNING_MARKER,
+        ),
+        WORK_ORDER_FINALITY_ADDENDUM_PATH: (
+            COMMIT_MODE_ANCHOR_MARKER,
+            "Dependency Release And Next-Work-Order Refresh",
+            "Two-Stage Handoff Finality",
+            "Worker Pending-Return Gate",
+            "Reviewer Closure Conversion Block",
         ),
         EVIDENCE_REUSE_ENCODING_STANDARD_PATH: (
             EVIDENCE_REUSE_ENCODING_PLAN_MARKER,

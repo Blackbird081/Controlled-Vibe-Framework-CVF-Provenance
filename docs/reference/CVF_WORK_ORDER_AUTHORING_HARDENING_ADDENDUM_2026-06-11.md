@@ -207,6 +207,75 @@ collision instead of rediscovering it during implementation.
 
 ---
 
+## Export Surface Decision
+
+Work orders and completion packets that create, modify, or rely on foundation
+helpers, adapters, contracts, barrels, registries, or reusable source surfaces
+for later tranche consumption must include an `Export Surface Decision`.
+
+Allowed decisions:
+
+- `Export Surface Decision: EXPORTED`
+- `Export Surface Decision: INTERNAL_ONLY with reason`
+- `Export Surface Decision: BLOCKED`
+
+`EXPORTED` requires:
+
+- owner barrel, index, or documented import path;
+- focused test or import proof when runtime/source is in scope;
+- explicit downstream consumer boundary.
+
+`INTERNAL_ONLY with reason` requires:
+
+- reason the helper is intentionally not exported;
+- statement that downstream work orders must not import or rely on it.
+
+`BLOCKED` stops dispatch or closure until the export decision is resolved. Do
+not leave export intent implicit for a later worker to infer.
+
+---
+
+## Next-Tranche Audit Mini-Package
+
+Audits that select the next tranche, next roadmap, or next work order must carry
+enough structure for a later orchestrator or worker to trust the decision.
+
+Minimum sections:
+
+- `## Owner / Source`
+- `## Protocol / Contract / Requirements`
+- `## Enforcement / Verification`
+- `## Machine Closure Package`
+- `## Related Artifacts`
+
+If the audit mentions corpus, search, classification, readiness, registry, or
+runtime/source absence, the Machine Closure Package must use `PASS` or
+`BLOCKED with reason` for the affected registry/source rows. Do not use `N/A
+with reason` when an owner surface exists and the audit intentionally deferred
+or excluded it.
+
+---
+
+## Near-Threshold Template Owner Discipline
+
+Do not move new template obligations into an adjacent addendum merely to avoid
+touching a near-threshold canonical template or front-door file.
+
+When a canonical template, handoff, front door, or owner entrypoint is within
+the GC-023 near-hard margin and a new adjacent rule belongs to that owner
+family, the same batch must:
+
+- include the owner entrypoint in Allowed scope;
+- split, rotate, archive, or materially shrink the owner;
+- update `proactiveOwnerSurfaces` when future adjacent changes should be
+  machine-guarded;
+- run `python governance/compat/check_governed_file_size.py --enforce`.
+
+Using an addendum is valid only as part of owner extraction, not as an avoidance
+pattern.
+
+---
+
 ## Dispatch Packet Authoring Learning Promotion
 
 If Codex or another reviewer fixes a dispatch packet before committing it, the
@@ -225,6 +294,10 @@ Reusable dispatch findings include:
   artifacts;
 - parent roadmap status residue that conflicts with a newly dispatched child
   lane.
+- missing `Export Surface Decision` for reusable helper/foundation surfaces;
+- missing `Next-Tranche Audit Mini-Package` for audits that select later work;
+- moving template obligations into adjacent addenda while leaving a
+  near-threshold canonical template untouched.
 
 If reusable, the same batch must update the template, addendum, standard, or a
 machine check. If not reusable, record `N/A with reason` in the reviewer
