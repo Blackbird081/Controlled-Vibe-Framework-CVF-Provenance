@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-12
 
-Current mode marker: `meor_rda_t3_cross_domain_conformance_dispatched`
+Current mode marker: `meor_rda_t3_cross_domain_conformance_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `meor_rda_t3_cross_domain_conformance_dispatched`.
+Current mode: `meor_rda_t3_cross_domain_conformance_closed_pass_bounded`.
 
 Active handoff:
 
@@ -120,8 +120,9 @@ deterministic CPF adapter source, context-barrel export, focused tests PASS
 16/16, TypeScript check PASS, reviewer-fast PASS 11/11, and GC-051 registry
 coverage.
 
-MEOR-RDA-T3 cross-domain conformance is dispatched at commit `2ab97703` from
-base `ae3f3386`. Dispatch artifacts:
+MEOR-RDA-T3 cross-domain conformance is `CLOSED_PASS_BOUNDED` at material
+commit `e65e0f1d` from execution base `81db3560` after operator override for
+Codex self-execution. Closure artifacts:
 
 - audit:
   `docs/audits/CVF_MEOR_RDA_POST_T2_NEXT_TRANCHE_AUDIT_2026-06-12.md`;
@@ -129,20 +130,15 @@ base `ae3f3386`. Dispatch artifacts:
   `docs/baselines/CVF_GC018_MEOR_RDA_T3_CROSS_DOMAIN_CONFORMANCE_2026-06-12.md`;
 - work order:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_MEOR_RDA_T3_CROSS_DOMAIN_CONFORMANCE_FOR_CLAUDE_2026-06-12.md`.
+- completion:
+  `docs/reviews/CVF_MEOR_RDA_T3_CROSS_DOMAIN_CONFORMANCE_COMPLETION_2026-06-12.md`.
 
-RDA-T3 is conformance-test only and `WORKER_MUST_NOT_COMMIT`. Policy_Local, EC
-activation, retrieval, OCR, corpus ingestion, provider/API-key use,
-public-sync, and readiness claims remain blocked.
-
-Before Claude executes RDA-T3, CVF work-order template owner maintainability
-hardening is `CLOSED_PASS_BOUNDED` at material commit `66f3d6da`. The canonical
-work-order template was reduced to 829 lines by extracting finality/reviewer
-conversion rules to
-`docs/reference/CVF_AGENT_WORK_ORDER_FINALITY_AND_REVIEW_CONVERSION_ADDENDUM_2026-06-12.md`.
-GC-023 now supports registered markdown owner domains via `domainFileClasses`;
-the work-order template is registered as the owner surface for adjacent
-`CVF_AGENT_WORK_ORDER_*` markdown references. Next allowed move remains Claude
-RDA-T3 execution under `WORKER_MUST_NOT_COMMIT`.
+Result: focused CPF conformance tests PASS 8/8; CPF TypeScript check PASS;
+GC-051 registry coverage added. RDA-T3 remains conformance-test only.
+Policy_Local, EC activation, retrieval, OCR, corpus ingestion,
+provider/API-key use, public-sync, and readiness claims remain blocked. Next
+allowed move is fresh RDA-T4 authorization for foundation closure and
+Policy_Local successor readiness decision if operator authorizes.
 
 LPCI2 EC-T4 metadata quality assessment is `CLOSED_BLOCKED_BOUNDED` at
 material commit `ff6343e3`.
@@ -677,11 +673,10 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: Claude executes MEOR-RDA-T3 work order
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MEOR_RDA_T3_CROSS_DOMAIN_CONFORMANCE_FOR_CLAUDE_2026-06-12.md`
-as WORKER_MUST_NOT_COMMIT and returns uncommitted. Do not mutate Policy_Local,
-activate EC-T5/EC-T6, change retrieval, install OCR, ingest corpus records, use
-provider/API keys, public-sync, or make readiness claims.
+Next allowed move: open fresh RDA-T4 authorization for foundation closure and
+Policy_Local successor readiness decision if operator authorizes. Do not mutate
+Policy_Local, activate EC-T5/EC-T6, change retrieval, install OCR, ingest
+corpus records, use provider/API keys, public-sync, or make readiness claims.
 Public-sync, provider/API key use, production readiness, and public readiness
 remain unauthorized.
 T12 remains forbidden until EC-02 resolves on or after 2026-07-01 and
