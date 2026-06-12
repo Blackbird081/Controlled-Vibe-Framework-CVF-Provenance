@@ -276,6 +276,32 @@ pattern.
 
 ---
 
+## Required Proof Manifest Atomic Literal Discipline
+
+Required Proof Manifest rows must be review-fast, machine-readable, and
+unambiguous.
+
+Rules:
+
+- Put exactly one required literal in each `Required literal` cell.
+- Do not write compound cells such as `` `A` and `B` `` or `` `A`, `B` ``.
+- If one proof file must contain several sentinels, write one row per sentinel.
+- If a proof is intentionally not literal-based, use `N/A with reason` instead
+  of a fake placeholder literal.
+- When prior verification evidence already proves a binary/hash invariant,
+  prefer the existing verification receipt and cite that receipt instead of
+  forcing redundant recomputation.
+
+Machine enforcement:
+
+- `governance/compat/check_work_order_dispatch_quality.py` rejects
+  dispatch/ready work orders with compound Required Proof Manifest literal
+  cells.
+- This is a pre-dispatch authoring control. It prevents reviewers and workers
+  from discovering malformed proof requirements only after a long hook chain.
+
+---
+
 ## Dispatch Packet Authoring Learning Promotion
 
 If Codex or another reviewer fixes a dispatch packet before committing it, the

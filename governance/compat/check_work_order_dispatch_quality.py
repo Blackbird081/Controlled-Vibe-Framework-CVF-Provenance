@@ -47,6 +47,7 @@ NEGATIVE_SEARCH_COLLISION_MARKER = "Negative Search And Collision Discipline"
 SINGLE_AGENT_MULTI_ROLE_MARKER = "Single-Agent Multi-Role Control Block"
 INTAKE_ROLE_ROUTING_MARKER = "Intake Role Routing Decision"
 EVIDENCE_REUSE_ENCODING_PLAN_MARKER = "Evidence Reuse And Encoding Plan"
+REQUIRED_PROOF_ATOMIC_LITERAL_MARKER = "Required Proof Manifest Atomic Literal Discipline"
 EVIDENCE_REUSE_ENCODING_STANDARD_PATH = (
     "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md"
 )
@@ -662,6 +663,46 @@ def _truthy_cell(value: str) -> bool:
 
 def _clean_manifest_path(value: str) -> str:
     return value.strip().strip("`").replace("\\", "/").rstrip(".,;:")
+
+
+def _required_proof_literal_issue(raw_literal: str) -> str | None:
+    raw = raw_literal.strip()
+    if not raw:
+        return None
+    spans = re.findall(r"`([^`]+)`", raw)
+    if len(spans) > 1:
+        return (
+            "Required Proof Manifest row has multiple required literals in one "
+            "cell; split the proof into one row per literal"
+        )
+    stripped = raw.strip("`").strip()
+    if re.search(r"`\s*(?:and|or|,|;)\s*`", raw, re.IGNORECASE):
+        return (
+            "Required Proof Manifest row has compound literal syntax; split the "
+            "proof into one row per literal"
+        )
+    if re.search(r"\s+(?:and|or)\s+", stripped, re.IGNORECASE) and re.search(
+        r"`|[A-Z0-9_]{4,}", stripped
+    ):
+        return (
+            "Required Proof Manifest literal appears compound; use an atomic "
+            "literal row or record an explicit N/A with reason"
+        )
+    return None
+
+
+def _validate_required_proof_manifest_atomic_literals(text: str) -> list[str]:
+    issues: list[str] = []
+    for table in _section_tables(text, "Required Proof Manifest"):
+        for row in table:
+            required = _truthy_cell(_row_value(row, "Required at handoff", "Required", "Must exist"))
+            if not required:
+                continue
+            raw_literal = _row_value(row, "Required literal", "Literal", "Required token")
+            issue = _required_proof_literal_issue(raw_literal)
+            if issue and issue not in issues:
+                issues.append(issue)
+    return issues
 
 
 def _path_matches_pattern(path: str, pattern: str) -> bool:
@@ -1920,6 +1961,7 @@ def _validate_work_order(path: str, text: str) -> list[str]:
 
     if dispatching:
         issues.extend(_validate_required_first_reads(text))
+        issues.extend(_validate_required_proof_manifest_atomic_literals(text))
         issues.extend(_validate_near_threshold_owner_maintainability_plan(text))
         if (
             ("Required Artifact Manifest" in text or "Required Proof Manifest" in text)
@@ -2493,6 +2535,7 @@ def _classify(changed_files: list[str], base_ref: str | None = None) -> dict[str
             NEXT_TRANCHE_AUDIT_MINI_PACKAGE_MARKER,
             NEAR_THRESHOLD_TEMPLATE_OWNER_MARKER,
             DISPATCH_PACKET_LEARNING_MARKER,
+            REQUIRED_PROOF_ATOMIC_LITERAL_MARKER,
         ),
         WORK_ORDER_FINALITY_ADDENDUM_PATH: (
             COMMIT_MODE_ANCHOR_MARKER,

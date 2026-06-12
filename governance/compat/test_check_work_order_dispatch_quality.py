@@ -1223,6 +1223,132 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
             issues,
         )
 
+    def test_required_proof_manifest_rejects_compound_literal_cells(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_COMPOUND_PROOF_LITERAL_2026-06-13.md"
+        route_path = "EXTENSIONS/CVF_WEB/src/app/api/memory/readout/route.ts"
+        proof_path = "EXTENSIONS/CVF_WEB/src/app/api/memory/readout/route.test.ts"
+        self._write(route_path, "export const route = true;\n")
+        self._write(
+            proof_path,
+            "RAW_MEMORY_CONTENT_MUST_NOT_LEAK\nMEMORY_RECEIPT_MUST_EXIST\n",
+        )
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCHED_TO_WORKER",
+                    "Commit mode: WORKER_MAY_COMMIT",
+                    "dispatchBaseHead: abc123",
+                    "executionBaseHead: WORKER_MUST_CAPTURE_AT_START",
+                    "closureBaseHead: REVIEWER_CAPTURE",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Proceed inside scope.",
+                    "## Intake Role Routing Decision",
+                    "- Intake summary: bounded checker hardening.",
+                    "- Scope classification: control-plane only.",
+                    "- Risk sensitivity: no public/provider/live claim.",
+                    "- Selected role route: routeMode=SINGLE_AGENT_SINGLE_ROLE.",
+                    "- Role separation basis: local artifact separation.",
+                    "- Escalation condition: stop if scope changes.",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| Template | `docs/reference/source.md` | Scope | `source.md` | doc | ACCEPT |",
+                    "## Work-Order Fulfillment Manifest",
+                    "Manifest applies.",
+                    "## Required Artifact Manifest",
+                    "| Path | Required at handoff | Purpose |",
+                    "|---|---|---|",
+                    f"| `{route_path}` | Yes | route |",
+                    "## Required Proof Manifest",
+                    "| Proof | Path | Required literal | Required at handoff |",
+                    "|---|---|---|---|",
+                    f"| sentinels | `{proof_path}` | `RAW_MEMORY_CONTENT_MUST_NOT_LEAK` and `MEMORY_RECEIPT_MUST_EXIST` | Yes |",
+                ]
+            ),
+        )
+        self._write("docs/reference/source.md", "## Scope\nsource\n")
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order, route_path, proof_path])
+
+        self.assertFalse(report["compliant"])
+        issues = [
+            issue
+            for violation in report["violations"]
+            if violation["path"] == work_order
+            for issue in violation["issues"]
+        ]
+        self.assertIn(
+            "Required Proof Manifest row has multiple required literals in one "
+            "cell; split the proof into one row per literal",
+            issues,
+        )
+
+    def test_required_proof_manifest_allows_one_atomic_literal_per_row(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_ATOMIC_PROOF_LITERAL_2026-06-13.md"
+        route_path = "EXTENSIONS/CVF_WEB/src/app/api/memory/readout/route.ts"
+        proof_path = "EXTENSIONS/CVF_WEB/src/app/api/memory/readout/route.test.ts"
+        self._write(route_path, "export const route = true;\n")
+        self._write(
+            proof_path,
+            "RAW_MEMORY_CONTENT_MUST_NOT_LEAK\nMEMORY_RECEIPT_MUST_EXIST\n",
+        )
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCHED_TO_WORKER",
+                    "Commit mode: WORKER_MAY_COMMIT",
+                    "dispatchBaseHead: abc123",
+                    "executionBaseHead: WORKER_MUST_CAPTURE_AT_START",
+                    "closureBaseHead: REVIEWER_CAPTURE",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Proceed inside scope.",
+                    "## Intake Role Routing Decision",
+                    "- Intake summary: bounded checker hardening.",
+                    "- Scope classification: control-plane only.",
+                    "- Risk sensitivity: no public/provider/live claim.",
+                    "- Selected role route: routeMode=SINGLE_AGENT_SINGLE_ROLE.",
+                    "- Role separation basis: local artifact separation.",
+                    "- Escalation condition: stop if scope changes.",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    "| Template | `docs/reference/source.md` | Scope | `source.md` | doc | ACCEPT |",
+                    "## Work-Order Fulfillment Manifest",
+                    "Manifest applies.",
+                    "## Required Artifact Manifest",
+                    "| Path | Required at handoff | Purpose |",
+                    "|---|---|---|",
+                    f"| `{route_path}` | Yes | route |",
+                    "## Required Proof Manifest",
+                    "| Proof | Path | Required literal | Required at handoff |",
+                    "|---|---|---|---|",
+                    f"| raw leak sentinel | `{proof_path}` | `RAW_MEMORY_CONTENT_MUST_NOT_LEAK` | Yes |",
+                    f"| receipt sentinel | `{proof_path}` | `MEMORY_RECEIPT_MUST_EXIST` | Yes |",
+                ]
+            ),
+        )
+        self._write("docs/reference/source.md", "## Scope\nsource\n")
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order, route_path, proof_path])
+
+        issues = [
+            issue
+            for violation in report["violations"]
+            if violation["path"] == work_order
+            for issue in violation["issues"]
+        ]
+        self.assertNotIn(
+            "Required Proof Manifest row has multiple required literals in one "
+            "cell; split the proof into one row per literal",
+            issues,
+        )
+
     def test_new_doc_only_field_in_source_verification_fails(self) -> None:
         work_order = "docs/work_orders/CVF_WO_LHW12_T1_TEST_2026-05-29.md"
         self._write(
