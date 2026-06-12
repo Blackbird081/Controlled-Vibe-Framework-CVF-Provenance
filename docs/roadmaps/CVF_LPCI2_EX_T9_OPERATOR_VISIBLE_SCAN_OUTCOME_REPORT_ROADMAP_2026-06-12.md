@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -14,7 +14,7 @@ Owner: Codex
 
 ## Authorization / Decision
 
-Decision: `EX_T9_DISPATCHED`.
+Decision: `EX_T9_CLOSED_PASS_BOUNDED`.
 
 Operator authorization and EX-T8 closure permit this final bounded EX
 foundation tranche. EC remains parked.
@@ -117,7 +117,7 @@ Forbidden:
 
 | Tranche | Deliverable | Status |
 | --- | --- | --- |
-| EX-T9 | Domain-agnostic `ScanOutcomeReport`, quality-flag normalization, deterministic JSON/Markdown rendering, UTF-8 file writer, focused tests | DISPATCHED |
+| EX-T9 | Domain-agnostic `ScanOutcomeReport`, quality-flag normalization, deterministic JSON/Markdown rendering, UTF-8 file writer, focused tests | CLOSED_PASS_BOUNDED |
 
 ## Work Plan
 
@@ -167,6 +167,19 @@ Forbidden:
 EX-T9 proves only deterministic report generation from supplied scan signals.
 It does not prove extraction accuracy, OCR quality, metadata correctness,
 domain eligibility, legal/current status, retrieval quality, or readiness.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T9_OPERATOR_VISIBLE_SCAN_OUTCOME_REPORT_FOR_CODEX_2026-06-12.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LPCI2_EX_T9_OPERATOR_VISIBLE_SCAN_OUTCOME_REPORT_COMPLETION_2026-06-12.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this file | EX-T9 row and header closed | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | EX-T9 source/test entries | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | EX-T9 quick lookup rows | PASS |
+| External evidence digest | N/A with reason: no external artifact consumed | repo-local synthetic evidence | N/A with reason |
+| System loop interlock | no system-loop mutation | local report generator only | N/A with reason |
+| Session continuity | active memory/state/handoff | EX-T9 closure and next move | PASS |
 
 ## Public Export Disposition
 

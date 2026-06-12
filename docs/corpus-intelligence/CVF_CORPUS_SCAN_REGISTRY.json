@@ -4,7 +4,7 @@
   "guard": "governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md",
   "checker": "governance/compat/check_corpus_scan_registry.py",
   "lastUpdated": "2026-06-12",
-  "updatedBy": "Codex (LPCI2 EX-T8 closure)",
+  "updatedBy": "Codex (LPCI2 EX-T9 closure)",
   "allowedCorpusTypes": [
     "LEGACY_FOLDER",
     "PROJECT_SOURCE",
@@ -2366,6 +2366,44 @@
       "manifestPath": null,
       "packetPath": "docs/reviews/CVF_LPCI2_EX_T8_EXTRACTION_AUTHORITY_AND_STORAGE_BOUNDARY_COMPLETION_2026-06-12.md",
       "notes": "Focused pytest coverage for extracted-text authority, Tier 1 char-offset rebuild, Tier 2 page-reOCR rebuild, raw OCR retention default, descriptor metadata propagation, and storage-boundary hash determinism."
+    },
+    {
+      "id": "ex-t9-scan-outcome-report-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation EX-T9 scan outcome report source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/scan_outcome_report.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "EX-T9",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_LPCI2_EX_T9_OPERATOR_VISIBLE_SCAN_OUTCOME_REPORT_COMPLETION_2026-06-12.md",
+      "notes": "Domain-agnostic immutable scan outcome records, stable quality-signal actions, deterministic JSON/Markdown rendering, and caller-selected UTF-8 output paths. No descriptor list, raw chunk text, raw OCR text, domain decision, provider call, or retrieval behavior."
+    },
+    {
+      "id": "ex-t9-scan-outcome-report-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation EX-T9 scan outcome report tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_scan_outcome_report.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "EX-T9",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_LPCI2_EX_T9_OPERATOR_VISIBLE_SCAN_OUTCOME_REPORT_COMPLETION_2026-06-12.md",
+      "notes": "Focused pytest coverage for PASS, all current extraction quality signals, generic blocking findings, deterministic JSON, Markdown evidence, raw-content non-release, and Unicode filename writes."
     }
   ]
 }

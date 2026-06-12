@@ -32,14 +32,15 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci2_ex_t9_operator_visible_scan_outcome_report_dispatched`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=implement and close EX-T9 before returning to EC; parked checkpoint=EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`lpci2_ex_t9_operator_visible_scan_outcome_report_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=review the parked EC metadata-gap pattern with the operator before EC activation or retrieval; parked checkpoint=EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`lpci2_ex_t9_operator_visible_scan_outcome_report_dispatched`
+`lpci2_ex_t9_operator_visible_scan_outcome_report_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `37a5cc72`
-(EX-T9 dispatch commit; this session sync follows it).
+Current HEAD recorded for this handoff: `a672f416`
+(EX-T9 implementation base; the immediate session-sync commit records the
+exact material closure commit).
 
 ## Active Boundary
 
@@ -57,9 +58,10 @@ in archived handoffs and governed completion packets.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: EX-T8 extraction authority/storage boundary
-closure plus session continuity sync so the active handoff and state registry
-record EX closure while preserving EC activation and retrieval as blocked.
+Authorized scope: EX-T9 operator-visible scan outcome reporting plus session
+continuity sync so the active handoff and state registry record all EX
+foundation tranches closed while preserving EC activation and retrieval as
+blocked.
 
 Protected paths:
 
@@ -69,27 +71,35 @@ Operator authorization: 2026-06-11 operator instructed Codex to close multiple
 roles and complete all related roadmap work still allowed by the current
 boundaries.
 
-Rollback boundary: revert only this EX-T8 closure/session update to
+Rollback boundary: revert only this EX-T9 closure/session update to
 `AGENT_HANDOFF_V17_2026-06-07.md` and
 `CVF_SESSION/ACTIVE_SESSION_STATE.json` if the continuity record is incorrect.
-Do not revert EX-T8 material commit `43eb9624`, EX-T3 through EX-T6 material
+Do not revert EX-T9 implementation, EX-T8 material commit `43eb9624`,
+EX-T3 through EX-T6 material
 commit `bbfb14f4`, EC-T5 bounded block commit `9a894207`, Source Verification
 hardening commit `838512da`, or unrelated governance/session history.
 
 ## Latest Continuity Note
 
-LPCI2 EX-T9 operator-visible scan outcome report is `DISPATCHED` at commit
-`37a5cc72`.
+LPCI2 EX-T9 operator-visible scan outcome report is
+`CLOSED_PASS_BOUNDED` from execution base `a672f416`. The immediate
+session-sync commit records the exact material closure commit.
 
 Artifacts:
 
 - `docs/roadmaps/CVF_LPCI2_EX_T9_OPERATOR_VISIBLE_SCAN_OUTCOME_REPORT_ROADMAP_2026-06-12.md`
 - `docs/baselines/CVF_GC018_LPCI2_EX_T9_OPERATOR_VISIBLE_SCAN_OUTCOME_REPORT_2026-06-12.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T9_OPERATOR_VISIBLE_SCAN_OUTCOME_REPORT_FOR_CODEX_2026-06-12.md`
+- `docs/reviews/CVF_LPCI2_EX_T9_OPERATOR_VISIBLE_SCAN_OUTCOME_REPORT_COMPLETION_2026-06-12.md`
+- `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/scan_outcome_report.py`
+- `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_scan_outcome_report.py`
 
-Next allowed move: Codex implements the domain-agnostic JSON/Markdown scan
-outcome report, runs focused/full tests and gates, and closes EX-T9. EC remains
-parked.
+Result: deterministic domain-agnostic JSON/Markdown scan outcome reporting,
+stable operator actions, UTF-8 output-path support, focused tests, and
+raw-content non-release. EX-T1 through EX-T9 are closed bounded.
+
+Next allowed move: review the parked EC metadata-gap pattern with the operator
+before any EC activation or retrieval work.
 
 LPCI2 EX-T8 extraction authority and storage boundary is
 `CLOSED_PASS_BOUNDED` at material commit `43eb9624`.
@@ -742,16 +752,15 @@ history.
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
-Next allowed move: audit/select the next EX successor for operator-visible scan
-outcome reporting before returning to EC, or resume EC only after explicit
-operator direction. EC-T4 metadata confirmation, EC-T5/EC-T6 activation, and
-retrieval disclosure remain parked. EX-T1 through EX-T8 local extraction
-foundation is closed bounded; integration convergence remains blocked.
-Dependency addition, OCR model download, corpus ingestion, operator correction
-report generation, runtime/source change beyond a fresh authorized successor
-packet, external Policy_Local mutation, public-sync, provider/API key use,
-production readiness, or public readiness remain unauthorized without fresh
-authorization.
+Next allowed move: review the parked EC metadata-gap pattern with the operator
+before any EC activation or retrieval work. EC-T4 metadata confirmation,
+EC-T5/EC-T6 activation, and retrieval disclosure remain parked. EX-T1 through
+EX-T9 local extraction foundation is closed bounded; integration convergence
+remains blocked. Dependency addition, OCR model download, corpus ingestion,
+domain-specific metadata correction, runtime/source change beyond a fresh
+authorized successor packet, external Policy_Local mutation, public-sync,
+provider/API key use, production readiness, or public readiness remain
+unauthorized without fresh authorization.
 Parked lanes remain Live Redis, DEP2, and external receipt-anchor.
 
 LPCI2-T12 remains forbidden until a separate operator-authorized evidence path

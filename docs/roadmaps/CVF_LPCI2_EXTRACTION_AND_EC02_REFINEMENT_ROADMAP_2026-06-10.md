@@ -27,7 +27,7 @@ decision. EX-T2 is now closed pass bounded through fresh GC-018 authorization,
 a source-verified work order, focused tests, and Codex completion review.
 
 This records closure of the bounded EX-T2 Tier 1 digital-native extractor
-implementation, EX-T3 through EX-T8 local extraction pipeline foundation,
+implementation, EX-T3 through EX-T9 local extraction pipeline foundation,
 EC-T1 regulatory date/status decision baseline, EC-T2 contract amendment plus
 machine-readable EC-02 semantics JSON, EC-T3 TypeScript corpus schema fields,
 EC-T4 parked evidence/backfill proposal, and EC-T5 bounded block decision.
@@ -46,7 +46,7 @@ EC-T5 reviewer disposition on 2026-06-11: `CLOSED_BLOCKED_BOUNDED`.
 remains parked and the current CPF profile apply contract would treat the token
 as a non-blocking custom gate before runtime/query-class routing is wired.
 
-EX-T3 through EX-T8 reviewer disposition through 2026-06-12:
+EX-T3 through EX-T9 reviewer disposition through 2026-06-12:
 `CLOSED_PASS_BOUNDED`. CVF now has a local deterministic extraction pipeline
 foundation for OCR adapter boundaries, OCR language-code mapping, confidence
 capture, extraction quality reports, fixed-window and sentence-boundary chunks,
@@ -501,6 +501,7 @@ via the domain profile, not inferred from text.
 | EX-T6 | GC-051 coverage | Extraction pipeline source/test corpus records added to GC-051 registry | CLOSED_PASS_BOUNDED |
 | EX-T7 | Sentence-boundary chunking upgrade | Optional `sentence-boundary-chars` strategy with fixed-window fallback and offset trace metadata; fixed-window default preserved | CLOSED_PASS_BOUNDED |
 | EX-T8 | Extraction authority and storage boundary | `ExtractionAuthorityLevel`, `RebuildClass`, `raw_ocr_retained`, `ExtractionStorageBoundary`, boundary hash, and descriptor metadata propagation; operator correction report remains successor EX scope | CLOSED_PASS_BOUNDED |
+| EX-T9 | Operator-visible scan outcome report | Domain-agnostic stable findings/actions, deterministic JSON/Markdown, UTF-8 caller-selected writer, and raw-content non-release | CLOSED_PASS_BOUNDED |
 
 ### Open Questions for Codex Rebuttal
 
@@ -697,6 +698,7 @@ Phase 4 (after Phase 3, parallel):
   EX-T6  GC-051 coverage CLOSED_PASS_BOUNDED
   EX-T7  sentence-boundary chunking upgrade CLOSED_PASS_BOUNDED
   EX-T8  extraction authority/storage boundary CLOSED_PASS_BOUNDED
+  EX-T9  operator-visible scan outcome report CLOSED_PASS_BOUNDED
   EC-T5  DSCP gate value update CLOSED_BLOCKED_BOUNDED
   EC-T6  retrieval disclosure wire-in BLOCKED_BY_EC_T4_METADATA_AND_EC_T5
 
@@ -728,8 +730,8 @@ of EC approval and can begin at Phase 1 in parallel.
 
 - Canonical OCR library (EasyOCR vs Tesseract) - deferred to EX-T1 audit
 - ML/multilingual sentence splitter selection - EX-T7 closed deterministic punctuation/newline chunking only
-- Operator-visible scan outcome report generation - EX-T8 records this as
-  successor EX scope; not implemented in EX-T8
+- Domain-specific metadata correction workflows - EX-T9 emits generic findings
+  and actions only; EC/operator evidence remains separate
 - Actual `promulgationDate`/`effectiveDate` values for specific records - operator input required at EC-T4
 - Whether `documentStatus` is `IN_FORCE` by default for non-regulatory domains - deferred to EC-T1
 - GC-018 authorization for each individual tranche - required before execution release
@@ -738,7 +740,7 @@ of EC approval and can begin at Phase 1 in parallel.
 
 ## Status
 
-EX_T8_CLOSED_PASS_BOUNDED_EC_BLOCKED.
+EX_T9_CLOSED_PASS_BOUNDED_EC_BLOCKED.
 
 EX-T1 is closed as a dependency/source audit and local feasibility probe under:
 
@@ -770,6 +772,12 @@ EX-T8 is closed pass bounded only under:
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T8_EXTRACTION_AUTHORITY_AND_STORAGE_BOUNDARY_FOR_CLAUDE_2026-06-12.md`
 - `docs/reviews/CVF_LPCI2_EX_T8_EXTRACTION_AUTHORITY_AND_STORAGE_BOUNDARY_COMPLETION_2026-06-12.md`
 
+EX-T9 is closed pass bounded only under:
+
+- `docs/baselines/CVF_GC018_LPCI2_EX_T9_OPERATOR_VISIBLE_SCAN_OUTCOME_REPORT_2026-06-12.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T9_OPERATOR_VISIBLE_SCAN_OUTCOME_REPORT_FOR_CODEX_2026-06-12.md`
+- `docs/reviews/CVF_LPCI2_EX_T9_OPERATOR_VISIBLE_SCAN_OUTCOME_REPORT_COMPLETION_2026-06-12.md`
+
 No dependency addition to repo manifests, OCR model download, corpus
 ingestion, EC-T5 DSCP profile value update, EC-T6 retrieval disclosure
 wire-in, T12 authoring, external Policy_Local mutation, public-sync, or
@@ -779,16 +787,16 @@ live/provider proof is authorized by this status change.
 
 Runtime freshness command:
 
-`rg -n "ExtractionAuthorityLevel|RebuildClass|ExtractionStorageBoundary|build_extraction_storage_boundary|authorityLevel|rebuildClass|raw_ocr_retained" EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/extraction_pipeline.py EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_extraction_pipeline.py`
+`rg -n "ScanOutcomeReport|build_scan_outcome_report|render_scan_outcome_report_json|write_scan_outcome_report_files" EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/scan_outcome_report.py EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_scan_outcome_report.py`
 
-Observed result: current runtime source and focused tests contain the EX-T8
-authority metadata, rebuild metadata, raw OCR retention flag, storage-boundary
-builder, and descriptor metadata propagation.
+Observed result: current runtime source and focused tests contain the EX-T9
+operator report records, stable quality-signal mappings, deterministic
+serializers, UTF-8 writer, and raw-content non-release assertions.
 
 Freshness disposition: SOURCE_VERIFIED_LOCAL_DETERMINISTIC. The roadmap's
 negative claims remain bounded to no dependency addition, no OCR model
 download, no provider call, no external Policy_Local mutation, no public-sync,
-and no EC retrieval/query activation in this EX-T8 closure.
+and no EC retrieval/query activation in this EX-T9 closure.
 
 ## Acceptance Receipt Assertion Matrix
 
@@ -807,8 +815,8 @@ and no EC retrieval/query activation in this EX-T8 closure.
 | Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T3_T6_EXTRACTION_PIPELINE_FOR_CODEX_2026-06-11.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Completion or reviewer artifact | `docs/reviews/CVF_LPCI2_EX_T3_T6_EXTRACTION_PIPELINE_COMPLETION_2026-06-11.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Roadmap state | this file | `Status: ACTIVE_PARTIAL_EX_T8_CLOSED_EC_BLOCKED` | PASS |
-| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | entries through `ex-t8-extraction-authority-storage-boundary-source` and `ex-t8-extraction-authority-storage-boundary-tests` | PASS |
-| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | quick lookup rows for EX-T3-EX-T8 source/tests | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | entries through `ex-t9-scan-outcome-report-source` and `ex-t9-scan-outcome-report-tests` | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | quick lookup rows for EX-T3-EX-T9 source/tests | PASS |
 | External evidence digest | EX-T1 audit and EX-T2 completion repo-local artifacts | sha256:46caff533ab8e4d8bc0cfa68070abdf69b7eb205e420c66d9b5db2729109492c; sha256:6e6ee6e640275a85541bcd32a4f9290585fb6d30debc5780df10ef2ea6491e9d; sha256:5e118d33e888176d0f7dc9657602ec041197a46699767d3aa11fe0a48b01a2c9 | PASS |
 | System loop interlock | no system-loop mutation | local extraction foundation only | N/A with reason: no runtime loop changed |
 | Session continuity | `CVF_SESSION_MEMORY.md`, `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `AGENT_HANDOFF_V17_2026-06-07.md` | reviewer-owned final sync | PASS |

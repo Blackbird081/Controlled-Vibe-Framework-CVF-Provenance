@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-12
 
-Current mode marker: `lpci2_ex_t8_extraction_authority_storage_boundary_closed_pass_bounded`
+Current mode marker: `lpci2_ex_t9_operator_visible_scan_outcome_report_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `lpci2_ex_t9_operator_visible_scan_outcome_report_dispatched`.
+Current mode: `lpci2_ex_t9_operator_visible_scan_outcome_report_closed_pass_bounded`.
 
 Active handoff:
 
@@ -58,16 +58,25 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-LPCI2 EX-T9 operator-visible scan outcome report is `DISPATCHED` at commit
-`37a5cc72`.
+LPCI2 EX-T9 operator-visible scan outcome report is
+`CLOSED_PASS_BOUNDED` from execution base `a672f416`. The immediate
+session-sync commit records the exact material closure commit.
 
 Artifacts:
 
 - `docs/roadmaps/CVF_LPCI2_EX_T9_OPERATOR_VISIBLE_SCAN_OUTCOME_REPORT_ROADMAP_2026-06-12.md`
 - `docs/baselines/CVF_GC018_LPCI2_EX_T9_OPERATOR_VISIBLE_SCAN_OUTCOME_REPORT_2026-06-12.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T9_OPERATOR_VISIBLE_SCAN_OUTCOME_REPORT_FOR_CODEX_2026-06-12.md`
+- `docs/reviews/CVF_LPCI2_EX_T9_OPERATOR_VISIBLE_SCAN_OUTCOME_REPORT_COMPLETION_2026-06-12.md`
+- `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/scan_outcome_report.py`
+- `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_scan_outcome_report.py`
 
-Next allowed move: implement and close EX-T9 before returning to EC.
+Result: EX-T1 through EX-T9 are closed bounded. The extraction foundation now
+emits deterministic domain-agnostic JSON/Markdown scan outcome reports with
+stable operator actions, UTF-8 path support, and no raw content release.
+
+Next allowed move: review the parked EC metadata-gap pattern with the operator
+before authorizing any EC activation or retrieval work.
 
 LPCI2 EX-T8 extraction authority and storage boundary is
 `CLOSED_PASS_BOUNDED` at material commit `43eb9624`.

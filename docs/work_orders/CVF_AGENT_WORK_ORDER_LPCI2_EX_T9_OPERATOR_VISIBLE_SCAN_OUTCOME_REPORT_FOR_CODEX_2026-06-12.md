@@ -4,13 +4,13 @@ docType: work_order
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 dispatchBaseHead: `6b8e75a9`
 
-executionBaseHead: `6b8e75a9`
+executionBaseHead: `a672f416`
 
-closureBaseHead: `REVIEWER_MUST_CAPTURE_AT_CLOSURE`
+closureBaseHead: `a672f416`
 
 Commit mode: `WORKER_MAY_COMMIT`
 
@@ -71,7 +71,16 @@ Allowed:
 - create `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/scan_outcome_report.py`;
 - create `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_scan_outcome_report.py`;
 - create deterministic JSON/Markdown serializers and UTF-8 file writer;
-- update EX-T9 governance, GC-051, roadmap, and continuity artifacts.
+- update `docs/baselines/CVF_GC018_LPCI2_EX_T9_OPERATOR_VISIBLE_SCAN_OUTCOME_REPORT_2026-06-12.md`;
+- update `docs/roadmaps/CVF_LPCI2_EX_T9_OPERATOR_VISIBLE_SCAN_OUTCOME_REPORT_ROADMAP_2026-06-12.md`;
+- update `docs/roadmaps/CVF_LPCI2_EXTRACTION_AND_EC02_REFINEMENT_ROADMAP_2026-06-10.md`;
+- update `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T9_OPERATOR_VISIBLE_SCAN_OUTCOME_REPORT_FOR_CODEX_2026-06-12.md`;
+- create `docs/reviews/CVF_LPCI2_EX_T9_OPERATOR_VISIBLE_SCAN_OUTCOME_REPORT_COMPLETION_2026-06-12.md`;
+- update `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`;
+- update `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`;
+- update `CVF_SESSION_MEMORY.md`;
+- update `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- update `AGENT_HANDOFF_V17_2026-06-07.md`.
 
 Forbidden:
 
@@ -158,15 +167,15 @@ No provider/API-key path is used by the extraction foundation.
 
 ## Acceptance Criteria
 
-- [ ] PASS quality produces no operator checkpoint.
-- [ ] Every current extraction quality flag maps to a stable operator action.
-- [ ] Additional generic findings force operator review when severity is blocking.
-- [ ] JSON is deterministic and parses.
-- [ ] Markdown is readable and bounded.
-- [ ] Unicode path output passes.
-- [ ] No raw content is serialized.
-- [ ] Focused and full extraction tests pass.
-- [ ] Reviewer-fast and pre-commit gates pass.
+- [x] PASS quality produces no operator checkpoint.
+- [x] Every current extraction quality flag maps to a stable operator action.
+- [x] Additional generic findings force operator review when severity is blocking.
+- [x] JSON is deterministic and parses.
+- [x] Markdown is readable and bounded.
+- [x] Unicode path output passes.
+- [x] No raw content is serialized.
+- [x] Focused and full extraction tests pass.
+- [x] Reviewer-fast and pre-commit gates pass.
 
 ## Verification And Evidence
 
@@ -197,16 +206,16 @@ range, and verify the changed path list before closure.
 
 ## Closure Checklist
 
-- [ ] Source verification remains current.
-- [ ] New source/test modules are within size limits.
-- [ ] PASS and all four quality-flag mappings are tested.
-- [ ] Additional generic findings are tested.
-- [ ] JSON determinism and parse are tested.
-- [ ] Markdown content is tested.
-- [ ] Unicode path output is tested.
-- [ ] Raw content non-release is tested.
-- [ ] GC-051 registry is updated.
-- [ ] Completion review and session continuity are finalized.
+- [x] Source verification remains current.
+- [x] New source/test modules are within size limits.
+- [x] PASS and all four quality-flag mappings are tested.
+- [x] Additional generic findings are tested.
+- [x] JSON determinism and parse are tested.
+- [x] Markdown content is tested.
+- [x] Unicode path output is tested.
+- [x] Raw content non-release is tested.
+- [x] GC-051 registry is updated.
+- [x] Completion review and session continuity are finalized.
 
 ## Return-To-Orchestrator Conditions
 
@@ -317,19 +326,20 @@ provider/secrets, public-sync, destructive action, or an EC/domain decision.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | this file | reviewer sets closed-equivalent status | REVIEWER_MUST_COMPLETE |
-| Completion artifact | completionReviewPath | file and verdict | REVIEWER_MUST_COMPLETE |
-| Roadmap state | EX-T9 roadmap | closed row/status | REVIEWER_MUST_COMPLETE |
-| Registry JSON/Markdown | GC-051 registry files | EX-T9 source/test entries | REVIEWER_MUST_COMPLETE |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | completionReviewPath | file and `CLOSED_PASS_BOUNDED` verdict | PASS |
+| Roadmap state | EX-T9 roadmap | closed row/status | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | EX-T9 source/test entries | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | EX-T9 quick lookup rows | PASS |
 | External evidence digest | N/A with reason: no external artifact | repo-local synthetic evidence | N/A with reason |
 | System loop interlock | no system-loop mutation | local report generator only | N/A with reason |
-| Session continuity | active memory/state/handoff | EX-T9 closure and next move | REVIEWER_MUST_COMPLETE |
+| Session continuity | active memory/state/handoff | EX-T9 closure and next move | PASS |
 
 ## Reviewer Closure Conversion Block
 
-Reviewer must replace all `REVIEWER_MUST_COMPLETE` rows, resolve every
-acceptance checkbox, capture the material closure base, and update continuity
-before claiming `CLOSED_PASS_BOUNDED`.
+Reviewer replaced all provisional rows, resolved every acceptance checkbox,
+captured the implementation base, and prepared continuity for the material
+closure commit.
 
 ## Claim Boundary
 
