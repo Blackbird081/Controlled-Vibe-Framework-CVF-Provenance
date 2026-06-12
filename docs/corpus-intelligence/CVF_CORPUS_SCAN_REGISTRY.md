@@ -111,6 +111,8 @@ prior scan here before starting new work.
 | `CVF MEOR-T2 metadata evidence normalization tests` | CVF_EXTENSION | SCANNED | MEOR-T2 | 1 | 30 focused pytest cases covering 21 allowed pairs, invalid records, provenance distinction, hint blocking, and report integration |
 | `CVF MEOR-T3 DSCP profile requirement bridge source` | CVF_EXTENSION | SCANNED | MEOR-T3 | 3 | Optional profile-scoped declarations, evidence-basis literals, owner-map normalization, fail-closed validation, and no descriptor/gate mutation |
 | `CVF MEOR-T3 DSCP profile requirement bridge tests` | CVF_EXTENSION | SCANNED | MEOR-T3 | 1 | 12 focused tests covering empty profiles, invalid declarations, owner mismatch, duplicates, evidence values, deterministic order, and non-mutation |
+| `CVF MEOR-T4 cross-domain conformance fixture` | PROJECT_SOURCE | SCANNED | MEOR-T4 | 1 | Shared synthetic legal-policy and technical-project requirements plus four T1 resolution paths; no real use-case data |
+| `CVF MEOR-T4 cross-domain conformance tests` | CVF_EXTENSION | SCANNED | MEOR-T4 | 2 | TypeScript and Python proof for exact sets, non-bleed, owner rejection, shared semantics, and bounded fixture content |
 
 ---
 
