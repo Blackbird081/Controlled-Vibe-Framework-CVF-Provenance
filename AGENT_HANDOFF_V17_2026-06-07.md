@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`meor_rda_t2_deterministic_adapter_implementa
 
 `meor_rda_t2_deterministic_adapter_implementation_dispatched`
 
-Current HEAD recorded for this handoff: `6a9a5703`
-(MEOR-RDA-T1 closure session sync commit; this RDA-T2 dispatch follows).
+Current HEAD recorded for this handoff: `6414be2c`
+(MEOR-RDA-T2 dispatch commit; this dedicated session sync follows).
 
 ## Active Boundary
 
@@ -103,8 +103,8 @@ source-verified work order before implementation. Policy_Local
 correction/integration and EC activation remain blocked behind later
 adapter/conformance closure and operator/source evidence.
 
-MEOR-RDA-T2 deterministic adapter implementation is dispatched from base
-`6a9a5703`. Worker must return uncommitted; Codex reviews and commits. Scope is
+MEOR-RDA-T2 deterministic adapter implementation is dispatched at commit
+`6414be2c` from base `6a9a5703`. Worker must return uncommitted; Codex reviews and commits. Scope is
 local deterministic CPF adapter source/tests plus GC-051 registry coverage.
 Policy_Local, EC activation, retrieval, OCR, corpus ingestion, provider/API-key
 use, public-sync, and readiness claims remain blocked.
