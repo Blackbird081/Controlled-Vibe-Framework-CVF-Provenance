@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`meor_rda_t1_closed_rda_t2_authorization_read
 
 `meor_rda_t1_closed_rda_t2_authorization_ready`
 
-Current HEAD recorded for this handoff: `2e3e7357`
-(MEOR-RDA-T1 dispatch commit; this dedicated session sync follows).
+Current HEAD recorded for this handoff: `6a6b343f`
+(MEOR-RDA-T1 material closure commit; this dedicated session sync follows).
 
 ## Active Boundary
 
@@ -96,8 +96,8 @@ adapter contract and JSON semantics before any runtime/source implementation.
 Policy_Local, EC activation, retrieval, OCR, corpus ingestion, public-sync,
 production readiness, and public readiness remain blocked.
 
-MEOR-RDA-T1 regulated-date adapter contract is `CLOSED_PASS_BOUNDED` in the
-current closure batch from execution base `43f83c9f`. The closure creates only
+MEOR-RDA-T1 regulated-date adapter contract is `CLOSED_PASS_BOUNDED` at
+material commit `6a6b343f` from execution base `43f83c9f`. The closure creates only
 the adapter contract and JSON semantics. RDA-T2 requires a fresh GC-018 and
 source-verified work order before implementation. Policy_Local
 correction/integration and EC activation remain blocked behind later

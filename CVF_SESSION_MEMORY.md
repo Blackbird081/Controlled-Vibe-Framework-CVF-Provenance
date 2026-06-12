@@ -106,8 +106,8 @@ adapter contract plus JSON semantics. Runtime/source implementation,
 Policy_Local mutation, EC activation, retrieval, OCR, corpus ingestion,
 public-sync, and readiness claims remain blocked.
 
-MEOR-RDA-T1 regulated-date adapter contract is `CLOSED_PASS_BOUNDED` in the
-current closure batch from execution base `43f83c9f`. It creates the adapter
+MEOR-RDA-T1 regulated-date adapter contract is `CLOSED_PASS_BOUNDED` at
+material commit `6a6b343f` from execution base `43f83c9f`. It creates the adapter
 contract and JSON semantics only. RDA-T2 is not implemented; the next allowed
 move is a fresh RDA-T2 GC-018/source-verified work order for deterministic
 adapter implementation. Policy_Local correction/integration and EC activation
