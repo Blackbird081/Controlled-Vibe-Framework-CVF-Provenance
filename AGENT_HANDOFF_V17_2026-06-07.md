@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`meor_t5_foundation_closure_dispatched`; acti
 
 `meor_t5_foundation_closure_dispatched`
 
-Current HEAD recorded for this handoff: `390f5426`
-(MEOR-T4 closure session sync; T5 dispatch commit follows).
+Current HEAD recorded for this handoff: `4b103c44`
+(MEOR-T5 dispatch commit; this dedicated session sync follows).
 
 ## Active Boundary
 
