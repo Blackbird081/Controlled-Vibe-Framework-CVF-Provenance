@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: MEMCON_T1A_DISPATCHED
+Status: MEMCON_T1A_CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -114,7 +114,7 @@ This roadmap does not:
 | JSON aggregate discipline | `docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md` | ACCEPT_AS_AUTHORING_CONTROL |
 | Policy_Local successor roadmap | `docs/roadmaps/CVF_POLICYLOCAL_SUCCESSOR_PILOT_ROADMAP_2026-06-12.md` | ACCEPT_AS_DOWNSTREAM_USE_CASE |
 
-## Current Surface Verification
+## Current Runtime Freshness Verification
 
 Verified at planning time from current workspace source.
 
@@ -365,8 +365,8 @@ Allowed outcomes:
 
 | Tranche | Deliverable | Dependency | Status |
 | --- | --- | --- | --- |
-| MEMCON-T1a | Memory consolidation standard, vocabulary, and existing-owner reconciliation map | Operator approval after Claude rebuttal | DISPATCHED |
-| MEMCON-T1b | Memory consolidation schema appendix and field tables | MEMCON-T1a closure | HOLD_PENDING_T1A |
+| MEMCON-T1a | Memory consolidation standard, vocabulary, and existing-owner reconciliation map | Operator approval after Claude rebuttal | CLOSED_PASS_BOUNDED |
+| MEMCON-T1b | Memory consolidation schema appendix and field tables | MEMCON-T1a closure | READY_FOR_FRESH_AUTHORIZATION |
 | MEMCON-T2 | Temporal ambiguity and source-authority checker | MEMCON-T1b closure | HOLD_PENDING_T1B |
 | MEMCON-T3 | Consolidated memory ledger and Markdown-first operator-visible review packet | MEMCON-T2 closure | HOLD_PENDING_T2 |
 | MEMCON-T4 | Retrieval-pack integration boundary and conformance tests | MEMCON-T3 closure | HOLD_PENDING_T3 |
@@ -634,6 +634,19 @@ rg -n "memoryRuntimeWorkflowChain|runMemoryRuntimeWorkflowChain|MemoryRuntimeWor
 - BUILD: no build is authorized by this roadmap alone.
 - REVIEW: Claude rebuttal is requested before dispatch.
 - FREEZE: only closed foundation artifacts may feed Policy_Local PL-S1.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T1A_MEMORY_CONSOLIDATION_STANDARD_OWNER_RECONCILIATION_FOR_CLAUDE_2026-06-12.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MEMCON_T1A_MEMORY_CONSOLIDATION_STANDARD_OWNER_RECONCILIATION_COMPLETION_2026-06-12.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this file | `Status: MEMCON_T1A_CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | reviewer-fast GC-051 check PASS; no registry mutation required for these doc-only reference artifacts | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | reviewer-fast GC-051 check PASS; no registry mutation required for these doc-only reference artifacts | PASS |
+| External evidence digest | N/A with reason | no external corpus/provider evidence used | N/A with reason |
+| System loop interlock | N/A with reason | no runtime loop mutation authorized | N/A with reason |
+| Session continuity | active state and handoff | Codex-owned session-sync commit follows material closure | N/A with reason - separate sync commit follows |
 
 ## Claim Boundary
 

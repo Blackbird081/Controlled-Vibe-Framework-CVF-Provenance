@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -16,9 +16,9 @@ Commit mode: WORKER_MUST_NOT_COMMIT
 
 dispatchBaseHead: `16d9fdf5`
 
-executionBaseHead: `<worker records before edits>`
+executionBaseHead: `b39ea40d`
 
-closureBaseHead: `<Codex records before reviewer closure>`
+closureBaseHead: `b39ea40d`
 
 GC-018:
 `docs/baselines/CVF_GC018_MEMCON_T1A_MEMORY_CONSOLIDATION_STANDARD_OWNER_RECONCILIATION_2026-06-12.md`
@@ -241,6 +241,17 @@ Allowed:
 - create a worker return packet;
 - record findings and Finding-To-Governance Learning Disposition if needed;
 - run read-only searches and doc checks.
+- Codex reviewer closure may update this work order, the GC-018 baseline, the
+  parent roadmap, the worker return, the completion review, the standard, and
+  the owner map:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T1A_MEMORY_CONSOLIDATION_STANDARD_OWNER_RECONCILIATION_FOR_CLAUDE_2026-06-12.md`,
+  `docs/baselines/CVF_GC018_MEMCON_T1A_MEMORY_CONSOLIDATION_STANDARD_OWNER_RECONCILIATION_2026-06-12.md`,
+  `docs/roadmaps/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_ROADMAP_2026-06-12.md`,
+  `docs/reviews/CVF_MEMCON_T1A_MEMORY_CONSOLIDATION_STANDARD_OWNER_RECONCILIATION_WORKER_RETURN_2026-06-12.md`,
+  `docs/reviews/CVF_MEMCON_T1A_MEMORY_CONSOLIDATION_STANDARD_OWNER_RECONCILIATION_COMPLETION_2026-06-12.md`,
+  `docs/reference/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_STANDARD_2026-06-12.md`,
+  and
+  `docs/reference/CVF_MEMORY_CONSOLIDATION_EXISTING_OWNER_RECONCILIATION_MAP_2026-06-12.md`.
 
 Forbidden:
 
@@ -332,13 +343,17 @@ blocked by a source-verification conflict.
 
 | Proof | Path | Required literal | Required at handoff |
 | --- | --- | --- | --- |
-| Temporal block rule | standard | `TIME_AMBIGUOUS_BLOCKED` | Yes |
-| Pre-store/post-store boundary | standard | `pre-store` and `post-store` | Yes |
-| Raw memory boundary | standard | `raw memory` and `rawMemoryReleased` | Yes |
-| Autonomous mutation block | standard | `autonomous mutation` | Yes |
-| Operator-visible review | standard | `Operator-Visible Memory Review` | Yes |
-| Owner-map dispositions | owner map | `REUSE_NOW`, `EXTEND_LATER`, `BLOCKED_PENDING_T1B` | Yes |
-| Policy_Local boundary | worker return | `No Policy_Local mutation` | Yes |
+| Temporal block rule | `docs/reference/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_STANDARD_2026-06-12.md` | `TIME_AMBIGUOUS_BLOCKED` | Yes |
+| Pre-store boundary | `docs/reference/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_STANDARD_2026-06-12.md` | `pre-store` | Yes |
+| Post-store boundary | `docs/reference/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_STANDARD_2026-06-12.md` | `post-store` | Yes |
+| Raw memory prose boundary | `docs/reference/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_STANDARD_2026-06-12.md` | `raw memory` | Yes |
+| Raw memory field boundary | `docs/reference/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_STANDARD_2026-06-12.md` | `rawMemoryReleased` | Yes |
+| Autonomous mutation block | `docs/reference/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_STANDARD_2026-06-12.md` | `autonomous mutation` | Yes |
+| Operator-visible review | `docs/reference/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_STANDARD_2026-06-12.md` | `Operator-Visible Memory Review` | Yes |
+| Owner-map reuse disposition | `docs/reference/CVF_MEMORY_CONSOLIDATION_EXISTING_OWNER_RECONCILIATION_MAP_2026-06-12.md` | `REUSE_NOW` | Yes |
+| Owner-map later-extension disposition | `docs/reference/CVF_MEMORY_CONSOLIDATION_EXISTING_OWNER_RECONCILIATION_MAP_2026-06-12.md` | `EXTEND_LATER` | Yes |
+| Owner-map schema-blocked disposition | `docs/reference/CVF_MEMORY_CONSOLIDATION_EXISTING_OWNER_RECONCILIATION_MAP_2026-06-12.md` | `BLOCKED_PENDING_T1B` | Yes |
+| Policy_Local boundary | `docs/reviews/CVF_MEMCON_T1A_MEMORY_CONSOLIDATION_STANDARD_OWNER_RECONCILIATION_WORKER_RETURN_2026-06-12.md` | `No Policy_Local mutation` | Yes |
 
 ## Evidence Requirements
 
@@ -459,24 +474,24 @@ Return blocked to Codex if:
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | this file | `Status: DISPATCHED` until Codex review | PENDING_REVIEW |
-| Completion or reviewer artifact | `docs/reviews/CVF_MEMCON_T1A_MEMORY_CONSOLIDATION_STANDARD_OWNER_RECONCILIATION_COMPLETION_2026-06-12.md` | reviewer-owned, not worker-created unless directed | PENDING_REVIEW |
-| Roadmap state | `docs/roadmaps/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_ROADMAP_2026-06-12.md` | MEMCON-T1a dispatch row | PENDING_REVIEW |
-| Registry JSON | N/A with reason | T1a creates docs only; no GC-051 source registration required unless later checker demands it | N/A with reason |
-| Registry Markdown | N/A with reason | no corpus registry change authorized | N/A with reason |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` after Codex review | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MEMCON_T1A_MEMORY_CONSOLIDATION_STANDARD_OWNER_RECONCILIATION_COMPLETION_2026-06-12.md` | reviewer-owned closure packet exists | PASS |
+| Roadmap state | `docs/roadmaps/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_ROADMAP_2026-06-12.md` | MEMCON-T1a row closed and MEMCON-T1b moved to fresh authorization | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | reviewer-fast GC-051 check PASS; no registry mutation required for these doc-only reference artifacts | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | reviewer-fast GC-051 check PASS; no registry mutation required for these doc-only reference artifacts | PASS |
 | External evidence digest | N/A with reason | no external corpus/provider evidence used | N/A with reason |
 | System loop interlock | N/A with reason | no runtime loop mutation authorized | N/A with reason |
-| Session continuity | active session files | Codex-owned follow-up sync after dispatch/closure if next move changes | PENDING_REVIEW |
+| Session continuity | active session files | Codex-owned session-sync commit follows material closure | N/A with reason - separate sync commit follows |
 
 ## Closure Checklist
 
-- [ ] Worker return includes actual pending file list.
-- [ ] Required standard and owner map exist.
-- [ ] Standard includes temporal ambiguity blocking.
-- [ ] Owner map reconciles current partial owner surfaces.
-- [ ] No runtime/source/checker/generated JSON/Policy_Local files changed.
-- [ ] Codex commits the approved range.
-- [ ] Codex runs pre-closure with a non-empty committed range before marking
+- [x] Worker return includes actual pending file list.
+- [x] Required standard and owner map exist.
+- [x] Standard includes temporal ambiguity blocking.
+- [x] Owner map reconciles current partial owner surfaces.
+- [x] No runtime/source/checker/generated JSON/Policy_Local files changed.
+- [x] Codex commits the approved range.
+- [x] Codex runs pre-closure with a non-empty committed range before marking
   closure.
 
 ## Claim Boundary
