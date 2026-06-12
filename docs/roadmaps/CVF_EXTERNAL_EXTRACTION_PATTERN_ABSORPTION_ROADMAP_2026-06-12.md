@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: EXA_T1_CLOSED_PASS_BOUNDED
+Status: EXA_T2_DISPATCHED
 
 docType: roadmap
 
@@ -109,7 +109,7 @@ Rejected design:
 | Tranche | Deliverable | Dependency | Status |
 | --- | --- | --- | --- |
 | EXA-T1 | External extraction pattern source map and absorption decision | RDA-T4 closure `dba15ca7` | CLOSED_PASS_BOUNDED at `6db11aed` |
-| EXA-T2 | CVF scan strategy decision contract | EXA-T1 closure `6db11aed` plus fresh GC-018/work order | READY_FOR_FRESH_AUTHORIZATION |
+| EXA-T2 | CVF scan strategy decision contract | EXA-T1 closure `6db11aed` plus fresh GC-018/work order | DISPATCHED from base `8376a31a` |
 | PL-S1 | Policy_Local evidence-resolution pilot | EXA-T2 closure plus fresh authorization | HOLD_PENDING_EXA_T2 |
 
 ## EXA-T1 Closure Result
@@ -151,6 +151,26 @@ EXA runtime defect.
 
 EXA-T2 remains subject to fresh GC-018 authorization and a source-verified work
 order. Policy_Local remains downstream of EXA-T2 closure.
+
+## EXA-T2 Dispatch Package
+
+EXA-T2 is dispatched from base `8376a31a`.
+
+Artifacts:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_2026-06-12.md`
+- work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_FOR_CLAUDE_2026-06-12.md`
+
+Worker boundary: `WORKER_MUST_NOT_COMMIT`.
+
+EXA-T2 may implement deterministic `DocumentScanSignals` and
+`ScanRouteDecision` contracts under the extraction foundation. It must reuse
+current extraction quality, OCR language mapping, storage-boundary, and
+operator scan-report owner surfaces. It must not import external code, install
+dependencies, execute OCR, call providers, mutate Policy_Local, activate EC,
+change retrieval behavior, ingest corpus data, or claim readiness.
 
 ## Machine Closure Package
 
