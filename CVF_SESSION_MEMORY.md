@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `lpci2_ex_t8_extraction_authority_storage_boundary_closed_pass_bounded`.
+Current mode: `lpci2_ex_t9_operator_visible_scan_outcome_report_dispatched`.
 
 Active handoff:
 
@@ -57,6 +57,17 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+LPCI2 EX-T9 operator-visible scan outcome report is `DISPATCHED` at commit
+`37a5cc72`.
+
+Artifacts:
+
+- `docs/roadmaps/CVF_LPCI2_EX_T9_OPERATOR_VISIBLE_SCAN_OUTCOME_REPORT_ROADMAP_2026-06-12.md`
+- `docs/baselines/CVF_GC018_LPCI2_EX_T9_OPERATOR_VISIBLE_SCAN_OUTCOME_REPORT_2026-06-12.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T9_OPERATOR_VISIBLE_SCAN_OUTCOME_REPORT_FOR_CODEX_2026-06-12.md`
+
+Next allowed move: implement and close EX-T9 before returning to EC.
 
 LPCI2 EX-T8 extraction authority and storage boundary is
 `CLOSED_PASS_BOUNDED` at material commit `43eb9624`.

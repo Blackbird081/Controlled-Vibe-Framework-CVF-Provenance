@@ -32,14 +32,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci2_ex_t8_extraction_authority_storage_boundary_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=audit/select next EX successor for operator-visible scan outcome reporting before returning to EC; parked checkpoint=EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`lpci2_ex_t9_operator_visible_scan_outcome_report_dispatched`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=implement and close EX-T9 before returning to EC; parked checkpoint=EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`lpci2_ex_t8_extraction_authority_storage_boundary_closed_pass_bounded`
+`lpci2_ex_t9_operator_visible_scan_outcome_report_dispatched`
 
-Current HEAD recorded for this handoff: `43eb9624`
-(EX-T8 material closure commit; this session sync follows it).
+Current HEAD recorded for this handoff: `37a5cc72`
+(EX-T9 dispatch commit; this session sync follows it).
 
 ## Active Boundary
 
@@ -77,6 +77,19 @@ commit `bbfb14f4`, EC-T5 bounded block commit `9a894207`, Source Verification
 hardening commit `838512da`, or unrelated governance/session history.
 
 ## Latest Continuity Note
+
+LPCI2 EX-T9 operator-visible scan outcome report is `DISPATCHED` at commit
+`37a5cc72`.
+
+Artifacts:
+
+- `docs/roadmaps/CVF_LPCI2_EX_T9_OPERATOR_VISIBLE_SCAN_OUTCOME_REPORT_ROADMAP_2026-06-12.md`
+- `docs/baselines/CVF_GC018_LPCI2_EX_T9_OPERATOR_VISIBLE_SCAN_OUTCOME_REPORT_2026-06-12.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T9_OPERATOR_VISIBLE_SCAN_OUTCOME_REPORT_FOR_CODEX_2026-06-12.md`
+
+Next allowed move: Codex implements the domain-agnostic JSON/Markdown scan
+outcome report, runs focused/full tests and gates, and closes EX-T9. EC remains
+parked.
 
 LPCI2 EX-T8 extraction authority and storage boundary is
 `CLOSED_PASS_BOUNDED` at material commit `43eb9624`.
