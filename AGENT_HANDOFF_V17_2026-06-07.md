@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`meor_rda_t3_cross_domain_conformance_dispatc
 
 `meor_rda_t3_cross_domain_conformance_dispatched`
 
-Current HEAD recorded for this handoff: `66f3d6da`
-(CVF work-order template owner maintainability hardening commit; this dedicated
+Current HEAD recorded for this handoff: `8d8278d8`
+(work-order template hardening session-sync commit; this dedicated
 session sync follows).
 
 ## Active Boundary
@@ -59,14 +59,19 @@ in archived handoffs and governed completion packets.
 ## Core Guard Self-Protection Authorization
 
 Authorized scope: author the CVF Metadata Evidence And Operator Resolution
-Foundation roadmap and synchronize continuity. The first active tranche is
-specification-only; Policy_Local correction, EC activation, retrieval, OCR,
-and corpus ingestion remain blocked.
+Foundation roadmap, close the work-order template owner maintainability
+hardening, and synchronize continuity. The first active tranche is
+specification-only; Policy_Local correction, EC activation, retrieval, OCR, and
+corpus ingestion remain blocked.
 
 Protected paths:
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION_MEMORY.md`
+- `governance/compat/check_governed_file_size.py`
+- `governance/compat/check_work_order_dispatch_quality.py`
+- `governance/compat/test_check_governed_file_size.py`
+- `governance/toolkit/05_OPERATION/CVF_GOVERNED_FILE_SIZE_GUARD.md`
 
 Operator authorization: 2026-06-12 operator instructed Codex to prioritize
 CVF foundation work and keep Policy_Local as a downstream real use case.
