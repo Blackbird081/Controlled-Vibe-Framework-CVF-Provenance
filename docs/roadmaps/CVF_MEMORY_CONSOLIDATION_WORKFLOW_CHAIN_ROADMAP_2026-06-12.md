@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: MEMCON_T2_CLOSED_PASS_BOUNDED
+Status: MEMCON_T3_DISPATCHED
 
 docType: roadmap
 
@@ -12,6 +12,7 @@ Owner: Codex
 
 sourceAuthority:
 `docs/reviews/CVF_MEMCON_T2_TEMPORAL_SOURCE_AUTHORITY_CHECKER_COMPLETION_2026-06-13.md`
+`docs/baselines/CVF_GC018_MEMCON_T3_CONSOLIDATED_MEMORY_LEDGER_OPERATOR_PACKET_2026-06-13.md`
 
 rawMemoryReleased=false
 
@@ -373,7 +374,7 @@ Allowed outcomes:
 | MEMCON-T1a | Memory consolidation standard, vocabulary, and existing-owner reconciliation map | Operator approval after Claude rebuttal | CLOSED_PASS_BOUNDED |
 | MEMCON-T1b | Memory consolidation schema appendix and field tables | MEMCON-T1a closure | CLOSED_PASS_BOUNDED |
 | MEMCON-T2 | Temporal ambiguity and source-authority checker | MEMCON-T1b closure | CLOSED_PASS_BOUNDED |
-| MEMCON-T3 | Consolidated memory ledger and Markdown-first operator-visible review packet | MEMCON-T2 closure | READY_FOR_FRESH_AUTHORIZATION |
+| MEMCON-T3 | Consolidated memory ledger and Markdown-first operator-visible review packet | MEMCON-T2 closure | DISPATCHED |
 | MEMCON-T4 | Retrieval-pack integration boundary and conformance tests | MEMCON-T3 closure | HOLD_PENDING_T3 |
 | MEMCON-T5 | Cross-agent memory consistency contract | MEMCON-T4 closure | HOLD_PENDING_T4 |
 | PL-S1 | Policy_Local evidence-resolution pilot using Memory Plane outputs | MEMCON foundation decision plus fresh authorization | HOLD_PENDING_MEMCON_DECISION |
@@ -510,6 +511,13 @@ that the phrase is a quote and not the durable normalized memory value.
 ## MEMCON-T3 Detail
 
 Goal: create a ledger and Markdown-first operator-visible packet.
+
+Dispatch artifacts:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_MEMCON_T3_CONSOLIDATED_MEMORY_LEDGER_OPERATOR_PACKET_2026-06-13.md`;
+- work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T3_CONSOLIDATED_MEMORY_LEDGER_OPERATOR_PACKET_FOR_CLAUDE_2026-06-13.md`.
 
 Expected outputs:
 
