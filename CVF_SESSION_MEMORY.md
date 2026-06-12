@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-12
 
-Current mode marker: `memory_consolidation_workflow_chain_roadmap_revised_ready_for_memcon_t1a_authorization`
+Current mode marker: `memcon_t1a_memory_consolidation_standard_owner_reconciliation_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `memory_consolidation_workflow_chain_roadmap_revised_ready_for_memcon_t1a_authorization`.
+Current mode: `memcon_t1a_memory_consolidation_standard_owner_reconciliation_dispatched`.
 
 Active handoff:
 
@@ -57,6 +57,23 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+MEMCON-T1a Memory Consolidation standard and owner reconciliation is
+`DISPATCHED` for Claude under `WORKER_MUST_NOT_COMMIT`.
+
+Dispatch commit: `f1d4c357`.
+
+Dispatch artifacts:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_MEMCON_T1A_MEMORY_CONSOLIDATION_STANDARD_OWNER_RECONCILIATION_2026-06-12.md`;
+- work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T1A_MEMORY_CONSOLIDATION_STANDARD_OWNER_RECONCILIATION_FOR_CLAUDE_2026-06-12.md`;
+- parent roadmap:
+  `docs/roadmaps/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_ROADMAP_2026-06-12.md`.
+
+Claude may create only the T1a standard, existing-owner reconciliation map, and
+worker return packet, then return uncommitted artifacts to Codex.
 
 Memory Consolidation Workflow Chain roadmap is revised and ready for
 MEMCON-T1a authorization.
@@ -828,10 +845,11 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: LHW24 remains the latest closed numbered LHW wave.
-MEMCON-T1a may begin only through fresh authorization for the Memory
-Consolidation standard and existing-owner reconciliation map. Policy_Local
-PL-S1 is held behind the MEMCON foundation decision.
+Next allowed move: LHW24 remains the latest closed numbered LHW wave. Claude
+may execute MEMCON-T1a work order `WORKER_MUST_NOT_COMMIT` and return
+uncommitted artifacts for Codex review: the Memory Consolidation standard,
+existing-owner reconciliation map, and worker return packet. Policy_Local PL-S1
+is held behind the MEMCON foundation decision.
 
 Do not mutate external Policy_Local, activate EC, change retrieval, run OCR or
 provider/API proof, ingest corpus records, use public-sync, unlock T12, or make

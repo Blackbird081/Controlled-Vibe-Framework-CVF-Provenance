@@ -24,15 +24,14 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`memory_consolidation_workflow_chain_roadmap_revised_ready_for_memcon_t1a_authorization`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=MEMCON-T1a fresh authorization may begin for the Memory Consolidation standard and existing-owner reconciliation map; parked checkpoint=Policy_Local PL-S1 is held behind the MEMCON foundation decision, and EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`memcon_t1a_memory_consolidation_standard_owner_reconciliation_dispatched`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=Claude executes MEMCON-T1a work order WORKER_MUST_NOT_COMMIT and returns uncommitted artifacts for Codex review; parked checkpoint=Policy_Local PL-S1 is held behind the MEMCON foundation decision, and EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`memory_consolidation_workflow_chain_roadmap_revised_ready_for_memcon_t1a_authorization`
+`memcon_t1a_memory_consolidation_standard_owner_reconciliation_dispatched`
 
-Current HEAD recorded for this handoff: `4cb775b3`
-(Memory Consolidation roadmap rebuttal incorporation material commit; this
-dedicated handoff sync follows).
+Current HEAD recorded for this handoff: `f1d4c357`
+(MEMCON-T1a dispatch package commit; this dedicated handoff sync follows).
 
 ## Active Boundary
 
@@ -46,6 +45,31 @@ Public-facing work remains restricted to the sibling public-sync clone and
 requires separate authorization.
 
 ## Latest Continuity Note
+
+MEMCON-T1a Memory Consolidation standard and owner reconciliation is
+`DISPATCHED` for Claude under `WORKER_MUST_NOT_COMMIT`.
+
+Dispatch commit: `f1d4c357`.
+
+Dispatch artifacts:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_MEMCON_T1A_MEMORY_CONSOLIDATION_STANDARD_OWNER_RECONCILIATION_2026-06-12.md`;
+- work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T1A_MEMORY_CONSOLIDATION_STANDARD_OWNER_RECONCILIATION_FOR_CLAUDE_2026-06-12.md`;
+- parent roadmap:
+  `docs/roadmaps/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_ROADMAP_2026-06-12.md`.
+
+Verification: reviewer-fast PASS 12/12; pre-dispatch autorun PASS; full
+pre-commit governance chain PASS 37/37.
+
+Boundary: Claude may create only the T1a standard, existing-owner
+reconciliation map, and worker return packet, then return uncommitted artifacts
+to Codex. No runtime implementation, schema appendix closure, checker
+implementation, generated aggregate JSON edit, Policy_Local mutation, EC
+activation, retrieval change, OCR/provider/API use, corpus ingestion,
+public-sync, T12 unlock, readiness claim, memory reinjection, or autonomous
+mutation.
 
 Memory Consolidation Workflow Chain roadmap is revised after Claude rebuttal
 and ready for MEMCON-T1a authorization.
@@ -238,6 +262,7 @@ generated active-state source files are accepted.
   focused tests, and the JSON generated aggregate discipline standard.
 - Hardened the active-session checker at commit `771c4460` so future generated
   state-source session syncs do not require an extra handoff-only loop.
+- Dispatched MEMCON-T1a at commit `f1d4c357` for Claude no-commit execution.
 
 ## Core Guard Self-Protection Authorization
 
@@ -249,6 +274,7 @@ Protected paths:
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/memconT1aDispatch20260612.json`
 - `CVF_SESSION/state/entries/memoryConsolidationWorkflowRoadmap20260612.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
@@ -261,12 +287,13 @@ next tranche.
 
 Rollback boundary: revert only this Memory Consolidation session-sync batch if
 the continuity markers are incorrect. Do not revert the material roadmap
-commit `4cb775b3` or unrelated history.
+commit `4cb775b3`, dispatch commit `f1d4c357`, or unrelated history.
 
 ## Next Allowed Move
 
-MEMCON-T1a may begin only through fresh authorization for the Memory
-Consolidation standard and existing-owner reconciliation map.
+Claude may execute the MEMCON-T1a work order under `WORKER_MUST_NOT_COMMIT`
+and return uncommitted artifacts for Codex review: the Memory Consolidation
+standard, existing-owner reconciliation map, and worker return packet.
 
 Do not mutate external Policy_Local, activate EC, change retrieval, invoke OCR
 or providers, import external code, install dependencies, ingest corpus records,
