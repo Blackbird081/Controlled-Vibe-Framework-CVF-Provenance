@@ -79,9 +79,17 @@ export type {
   DomainProfileId,
   DscpDomainFamily,
   DscpDomainProfile,
+  DscpMetadataRequirement,
+  MetadataEvidenceBasis,
   DomainProfileApplyOptions,
   DomainProfileApplyResult,
 } from "./dscp.domain.profile.contract";
+
+export { buildDscpMetadataRequirementBridge } from "./dscp.metadata.requirement.bridge";
+export type {
+  DscpMetadataRequirementBridgeResult,
+  DscpMetadataRequirementFailureToken,
+} from "./dscp.metadata.requirement.bridge";
 
 export { DscpDomainProfileRegistry, createDscpDomainProfileRegistry } from "./dscp.domain.profile.registry";
 export type {

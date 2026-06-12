@@ -7,6 +7,20 @@ import type { GovernedArtifactDescriptorInput } from "./dscp.governed.artifact.d
 // Stable identifier for a registered domain profile.
 export type DomainProfileId = string;
 
+export type MetadataEvidenceBasis =
+  | "SOURCE_EMBEDDED"
+  | "OPERATOR_SUPPLIED"
+  | "DERIVED_HINT"
+  | "NONE";
+
+export interface DscpMetadataRequirement {
+  requirementId: string;
+  ownerProfileId: DomainProfileId;
+  metadataKey: string;
+  required: boolean;
+  acceptableEvidenceBases: readonly MetadataEvidenceBasis[];
+}
+
 // Union of recognized DSCP domain families.
 // Extend with new string literals only via a governed tranche.
 export type DscpDomainFamily =
@@ -51,6 +65,10 @@ export interface DscpDomainProfile {
   // Whether this domain profile supports the EC-02 documentStatus lifecycle field.
   // Non-regulatory domains omit this field (undefined = false posture, per EC-T1 D-03).
   supportsDocumentStatus?: boolean;
+
+  // Profile-scoped metadata requirements. Omitted means this profile declares
+  // no MEOR requirements; no global defaults are inferred.
+  metadataRequirements?: readonly DscpMetadataRequirement[];
 }
 
 // Option bag for applyDomainProfileToDescriptorInput().
