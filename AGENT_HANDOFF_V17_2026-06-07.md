@@ -32,14 +32,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`meor_rda_t2_deterministic_adapter_implementation_dispatched`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=Claude executes MEOR-RDA-T2 work order WORKER_MUST_NOT_COMMIT and returns uncommitted; parked checkpoint=Policy_Local integration, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`meor_rda_t2_closed_rda_t3_authorization_ready`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=author fresh MEOR-RDA-T3 GC-018/source-verified work order for cross-domain conformance; parked checkpoint=Policy_Local integration, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`meor_rda_t2_deterministic_adapter_implementation_dispatched`
+`meor_rda_t2_closed_rda_t3_authorization_ready`
 
-Current HEAD recorded for this handoff: `6414be2c`
-(MEOR-RDA-T2 dispatch commit; this dedicated session sync follows).
+Current HEAD recorded for this handoff: `1c47d125`
+(MEOR-RDA-T2 material closure commit; this dedicated session sync follows).
 
 ## Active Boundary
 
@@ -103,11 +103,13 @@ source-verified work order before implementation. Policy_Local
 correction/integration and EC activation remain blocked behind later
 adapter/conformance closure and operator/source evidence.
 
-MEOR-RDA-T2 deterministic adapter implementation is dispatched at commit
-`6414be2c` from base `6a9a5703`. Worker must return uncommitted; Codex reviews and commits. Scope is
-local deterministic CPF adapter source/tests plus GC-051 registry coverage.
-Policy_Local, EC activation, retrieval, OCR, corpus ingestion, provider/API-key
-use, public-sync, and readiness claims remain blocked.
+MEOR-RDA-T2 deterministic adapter implementation is `CLOSED_PASS_BOUNDED` at
+material commit `1c47d125` from execution base `6a9a5703`. It adds local
+deterministic CPF adapter source, context-barrel export, focused tests PASS
+16/16, TypeScript check PASS, reviewer-fast PASS 11/11, and GC-051 registry
+coverage. RDA-T3 is released only for fresh authorization of cross-domain
+conformance. Policy_Local, EC activation, retrieval, OCR, corpus ingestion,
+provider/API-key use, public-sync, and readiness claims remain blocked.
 
 LPCI2 EC-T4 metadata quality assessment is `CLOSED_BLOCKED_BOUNDED` at
 material commit `ff6343e3`.
@@ -796,13 +798,12 @@ history.
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
-Next allowed move: Claude executes MEOR-RDA-T2 work order
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MEOR_RDA_T2_DETERMINISTIC_ADAPTER_IMPLEMENTATION_FOR_CLAUDE_2026-06-12.md`
-as WORKER_MUST_NOT_COMMIT and returns uncommitted.
-EC-T5/EC-T6 activation, retrieval disclosure, OCR installation, corpus
-ingestion, and external Policy_Local integration remain blocked. Public-sync,
-provider/API key use, production readiness, and public readiness remain
-unauthorized.
+Next allowed move: author fresh MEOR-RDA-T3 GC-018/source-verified work order
+for cross-domain conformance proving non-regulatory profiles do not inherit
+regulated lifecycle fields. EC-T5/EC-T6 activation, retrieval disclosure, OCR
+installation, corpus ingestion, and external Policy_Local integration remain
+blocked. Public-sync, provider/API key use, production readiness, and public
+readiness remain unauthorized.
 Parked lanes remain Live Redis, DEP2, and external receipt-anchor.
 
 LPCI2-T12 remains forbidden until a separate operator-authorized evidence path

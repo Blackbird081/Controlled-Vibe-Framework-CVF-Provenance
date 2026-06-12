@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-12
 
-Current mode marker: `meor_rda_t2_deterministic_adapter_implementation_dispatched`
+Current mode marker: `meor_rda_t2_closed_rda_t3_authorization_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `meor_rda_t2_deterministic_adapter_implementation_dispatched`.
+Current mode: `meor_rda_t2_closed_rda_t3_authorization_ready`.
 
 Active handoff:
 
@@ -114,11 +114,13 @@ adapter implementation. Policy_Local correction/integration and EC activation
 remain blocked behind later adapter/conformance closure and operator/source
 evidence.
 
-MEOR-RDA-T2 deterministic adapter implementation is dispatched at commit
-`6414be2c` from base `6a9a5703`. Worker must return uncommitted; Codex reviews and commits. Scope is
-local deterministic CPF adapter source/tests plus GC-051 registry coverage.
-Policy_Local, EC activation, retrieval, OCR, corpus ingestion, provider/API-key
-use, public-sync, and readiness claims remain blocked.
+MEOR-RDA-T2 deterministic adapter implementation is `CLOSED_PASS_BOUNDED` at
+material commit `1c47d125` from execution base `6a9a5703`. It adds local
+deterministic CPF adapter source, context-barrel export, focused tests PASS
+16/16, TypeScript check PASS, reviewer-fast PASS 11/11, and GC-051 registry
+coverage. RDA-T3 is released only for fresh authorization of cross-domain
+conformance. Policy_Local, EC activation, retrieval, OCR, corpus ingestion,
+provider/API-key use, public-sync, and readiness claims remain blocked.
 
 LPCI2 EC-T4 metadata quality assessment is `CLOSED_BLOCKED_BOUNDED` at
 material commit `ff6343e3`.
@@ -653,11 +655,11 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: Claude executes MEOR-RDA-T2 work order
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MEOR_RDA_T2_DETERMINISTIC_ADAPTER_IMPLEMENTATION_FOR_CLAUDE_2026-06-12.md`
-as WORKER_MUST_NOT_COMMIT and returns uncommitted. Do not mutate Policy_Local,
-activate EC-T5/EC-T6, change retrieval, install OCR, ingest corpus records, use
-provider/API keys, public-sync, or make readiness claims.
+Next allowed move: author fresh MEOR-RDA-T3 GC-018/source-verified work order
+for cross-domain conformance proving non-regulatory profiles do not inherit
+regulated lifecycle fields. Do not mutate Policy_Local, activate EC-T5/EC-T6,
+change retrieval, install OCR, ingest corpus records, use provider/API keys,
+public-sync, or make readiness claims.
 Public-sync, provider/API key use, production readiness, and public readiness
 remain unauthorized.
 T12 remains forbidden until EC-02 resolves on or after 2026-07-01 and
