@@ -24,14 +24,14 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`reviewer_fast_rescan_gate_placement_hardening_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=open fresh EXA-T2 authorization for deterministic scan signals and route decisions; parked checkpoint=Policy_Local integration, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`exa_t2_scan_signal_route_decision_contracts_dispatched`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=Claude executes EXA-T2 under WORKER_MUST_NOT_COMMIT and returns uncommitted artifacts for Codex review; parked checkpoint=Policy_Local integration, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`reviewer_fast_rescan_gate_placement_hardening_closed_pass_bounded`
+`exa_t2_scan_signal_route_decision_contracts_dispatched`
 
-Current HEAD recorded for this handoff: `aeb39903`
-(reviewer-fast rescan gate placement hardening material commit; this
+Current HEAD recorded for this handoff: `5ad40259`
+(EXA-T2 scan signal and route decision contracts dispatch commit; this
 dedicated session sync follows).
 
 ## Active Boundary
@@ -98,6 +98,26 @@ Governance learning:
 - the missing rescan section appeared only at pre-commit;
 - this is a phase-gate placement gap scheduled before EXA-T2 dispatch.
 
+EXA-T2 scan signal and route decision contracts are `DISPATCHED` at commit
+`5ad40259` from base `8376a31a`.
+
+Artifacts:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_2026-06-12.md`;
+- work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_FOR_CLAUDE_2026-06-12.md`.
+
+Verification: reviewer-fast PASS 12/12; pre-dispatch autorun PASS; full
+pre-commit governance chain PASS 37/37.
+
+Worker boundary: Claude `WORKER_MUST_NOT_COMMIT`.
+
+Result: EXA-T2 is authorized for deterministic `DocumentScanSignals` and
+`ScanRouteDecision` contracts inside the CVF extraction foundation only. It
+must reuse the current extraction quality, OCR language mapping,
+storage-boundary, and scan-outcome-report owners.
+
 ## Latest Work / Changes
 
 - Reviewed and corrected the EXA-T1 external corpus/source map.
@@ -105,6 +125,8 @@ Governance learning:
 - Reconciled accepted candidates against existing CVF extraction owners.
 - Rotated V17 into the handoff archive because it reached 900 lines.
 - Kept Policy_Local, OCR/provider execution, and readiness claims parked.
+- Dispatched EXA-T2 at commit `5ad40259` with source-verified GC-018 and work
+  order.
 
 ## Core Guard Self-Protection Authorization
 
@@ -129,15 +151,18 @@ material review commit `6db11aed` or unrelated history.
 
 ## Next Allowed Move
 
-1. Open fresh EXA-T2 GC-018 and a source-verified work
-   order for deterministic `DocumentScanSignals` and `ScanRouteDecision`
-   contracts.
-2. Keep Policy_Local as the downstream real use case after EXA-T2 foundation
+1. Claude executes EXA-T2 under `WORKER_MUST_NOT_COMMIT` from dispatch commit
+   `5ad40259`.
+2. Claude returns uncommitted source/test/registry artifacts and worker return
+   packet for Codex review.
+3. Keep Policy_Local as the downstream real use case after EXA-T2 foundation
    closure.
 
 EXA-T2 must reuse the existing extraction quality, OCR language mapping,
 storage-boundary, and scan-outcome-report owner surfaces. It must not create a
-parallel quality/reporting system or invoke OCR/providers.
+parallel quality/reporting system, invoke OCR/providers, import external code,
+install dependencies, mutate Policy_Local, activate EC, change retrieval, or
+claim readiness.
 
 LHW24 remains the latest closed numbered LHW wave in the state registry.
 

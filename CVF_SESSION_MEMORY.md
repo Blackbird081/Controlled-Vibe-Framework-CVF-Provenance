@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-12
 
-Current mode marker: `reviewer_fast_rescan_gate_placement_hardening_closed_pass_bounded`
+Current mode marker: `exa_t2_scan_signal_route_decision_contracts_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `reviewer_fast_rescan_gate_placement_hardening_closed_pass_bounded`.
+Current mode: `exa_t2_scan_signal_route_decision_contracts_dispatched`.
 
 Active handoff:
 
@@ -177,6 +177,27 @@ candidate value. `DocumentScanSignals` and `ScanRouteDecision` are accepted
 only as deterministic EXA-T2 contract candidates. No code import, dependency
 installation, OCR/provider execution, Policy_Local mutation, or readiness
 claim was authorized.
+
+EXA-T2 scan signal and route decision contracts are `DISPATCHED` at commit
+`5ad40259` from base `8376a31a`.
+
+Artifacts:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_2026-06-12.md`
+- work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_FOR_CLAUDE_2026-06-12.md`
+
+Worker boundary: Claude `WORKER_MUST_NOT_COMMIT`.
+
+Next worker action: implement deterministic `DocumentScanSignals` and
+`ScanRouteDecision` contracts inside the CVF extraction foundation only, reuse
+the current extraction quality, OCR language mapping, storage-boundary, and
+scan-outcome-report owners, and return uncommitted artifacts for Codex review.
+No external code import, dependency install, OCR/provider/API execution,
+Policy_Local mutation, EC activation, retrieval change, corpus ingestion,
+public-sync, readiness claim, memory reinjection, high-risk promotion, or
+autonomous mutation is authorized.
 
 LPCI2 EC-T4 metadata quality assessment is `CLOSED_BLOCKED_BOUNDED` at
 material commit `ff6343e3`.
@@ -711,14 +732,17 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: open fresh EXA-T2 GC-018 and a source-verified work order
-for deterministic `DocumentScanSignals` and `ScanRouteDecision` contracts.
+Next allowed move: LHW24 remains the latest closed numbered LHW wave. Claude
+may execute EXA-T2 under `WORKER_MUST_NOT_COMMIT` from dispatch commit
+`5ad40259` and return uncommitted artifacts for Codex review.
 
-EXA-T2 must reuse existing extraction quality, OCR language mapping,
-storage-boundary, and scan-outcome-report owner surfaces. Policy_Local remains
-downstream. Do not import external code, install dependencies, run
-OCR/provider/API proof, activate EC, change retrieval, ingest corpus records,
-use public-sync, or make readiness claims.
+EXA-T2 may implement deterministic `DocumentScanSignals` and
+`ScanRouteDecision` contracts inside the CVF extraction foundation only. It
+must reuse existing extraction quality, OCR language mapping, storage-boundary,
+and scan-outcome-report owner surfaces. Policy_Local remains downstream. Do not
+import external code, install dependencies, run OCR/provider/API proof,
+activate EC, change retrieval, ingest corpus records, use public-sync, or make
+readiness claims.
 T12 remains forbidden until EC-02 resolves on or after 2026-07-01 and
 eligibility is re-evaluated.
 
