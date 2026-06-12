@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-12
 
-Current mode marker: `meor_t1_closed_t2_spec_pending`
+Current mode marker: `meor_t2_extraction_metadata_normalization_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `meor_t1_closed_t2_spec_pending`.
+Current mode: `meor_t2_extraction_metadata_normalization_dispatched`.
 
 Active handoff:
 
@@ -69,6 +69,8 @@ MEOR-T1 dispatch commit: `55bd57fb`.
 MEOR-T1 material contract commit: `f3c7ff11`.
 
 MEOR-T1 closure commit: `22818605`.
+
+MEOR-T2 dispatch commit: `427532c8`.
 
 The roadmap prioritizes a domain-agnostic CVF foundation before any
 Policy_Local correction or activation. MEOR-T1 is specification-only and must

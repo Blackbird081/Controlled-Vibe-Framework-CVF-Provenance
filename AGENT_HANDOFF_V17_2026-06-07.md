@@ -32,14 +32,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`meor_t1_closed_t2_spec_pending`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=author a fresh MEOR-T2 GC-018 and source-verified implementation work order from the closed T1 contract; parked checkpoint=MEOR-T3 through T5, regulated-domain adapter, Policy_Local integration, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`meor_t2_extraction_metadata_normalization_dispatched`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=implement the bounded MEOR-T2 Python evaluator, tests, and EX-T9 finding adapter; parked checkpoint=MEOR-T3 through T5, regulated-domain adapter, Policy_Local integration, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`meor_t1_closed_t2_spec_pending`
+`meor_t2_extraction_metadata_normalization_dispatched`
 
-Current HEAD recorded for this handoff: `22818605`
-(MEOR-T1 closure commit; this dedicated session-sync commit follows it).
+Current HEAD recorded for this handoff: `427532c8`
+(MEOR-T2 dispatch commit).
 
 ## Active Boundary
 

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: DISPATCHED
 
 docType: work_order
 
@@ -16,7 +16,7 @@ Commit mode: WORKER_MAY_COMMIT
 
 dispatchBaseHead: `662e3c76`
 
-executionBaseHead: WORKER_MUST_CAPTURE_AT_START
+executionBaseHead: `427532c8`
 
 closureBaseHead: REVIEWER_CAPTURE
 
