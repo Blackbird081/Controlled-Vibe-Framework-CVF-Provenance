@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: REVISED_READY_FOR_MEMCON_T1A_AUTHORIZATION
+Status: MEMCON_T1A_DISPATCHED
 
 docType: roadmap
 
@@ -365,7 +365,7 @@ Allowed outcomes:
 
 | Tranche | Deliverable | Dependency | Status |
 | --- | --- | --- | --- |
-| MEMCON-T1a | Memory consolidation standard, vocabulary, and existing-owner reconciliation map | Operator approval after Claude rebuttal | PROPOSED |
+| MEMCON-T1a | Memory consolidation standard, vocabulary, and existing-owner reconciliation map | Operator approval after Claude rebuttal | DISPATCHED |
 | MEMCON-T1b | Memory consolidation schema appendix and field tables | MEMCON-T1a closure | HOLD_PENDING_T1A |
 | MEMCON-T2 | Temporal ambiguity and source-authority checker | MEMCON-T1b closure | HOLD_PENDING_T1B |
 | MEMCON-T3 | Consolidated memory ledger and Markdown-first operator-visible review packet | MEMCON-T2 closure | HOLD_PENDING_T2 |
@@ -387,6 +387,13 @@ Allowed outcomes:
    MEMCON foundation outputs.
 
 ## MEMCON-T1a Detail
+
+Dispatch artifacts:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_MEMCON_T1A_MEMORY_CONSOLIDATION_STANDARD_OWNER_RECONCILIATION_2026-06-12.md`;
+- work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T1A_MEMORY_CONSOLIDATION_STANDARD_OWNER_RECONCILIATION_FOR_CLAUDE_2026-06-12.md`.
 
 Goal: define the canonical standard, vocabulary, and existing-owner
 reconciliation map before implementation.
