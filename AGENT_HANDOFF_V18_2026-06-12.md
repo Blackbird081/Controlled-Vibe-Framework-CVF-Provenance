@@ -30,9 +30,9 @@ Startup acknowledged: current mode=`active_session_state_json_authoring_hardenin
 
 `active_session_state_json_authoring_hardening_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `e9c96ba3`
-(Active session state JSON authoring hardening material closure commit; this dedicated
-session sync follows).
+Current HEAD recorded for this handoff: `945a58ba`
+(Active session state JSON authoring hardening session-sync commit; checker
+whitelist follow-up is in progress).
 
 ## Active Boundary
 
@@ -210,7 +210,8 @@ session-state JSON directly.
 
 Authorized guard-maintenance scope: perform the mandatory active session state
 JSON authoring hardening continuity sync without changing governance
-semantics.
+semantics, and allow generated active-state source files to count as
+session-sync paths.
 
 Protected paths:
 
@@ -218,12 +219,16 @@ Protected paths:
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/activeSessionStateJsonAuthoringHardening20260612.json`
 - `CVF_SESSION_MEMORY.md`
+- `governance/compat/check_active_session_state.py`
+- `governance/compat/test_check_active_session_state.py`
 
 Operator authorization: the operator requested hardening
 `CVF_SESSION/ACTIVE_SESSION_STATE.json` and standardizing JSON aggregate usage
 before moving to the Policy_Local use case. The mandatory closure-quality and
 session-continuity rules require synchronized front doors and active state
-sources.
+sources. The follow-up checker whitelist prevents generated active-state
+source files from forcing an extra handoff-only sync commit after every future
+session update.
 
 Rollback boundary: revert only this active-session JSON hardening session-sync
 batch if the continuity markers are incorrect. Do not revert the material

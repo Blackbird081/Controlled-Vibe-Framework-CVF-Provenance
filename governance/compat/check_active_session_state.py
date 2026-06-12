@@ -196,6 +196,7 @@ def _is_session_sync_path(path: str) -> bool:
         normalized == "CVF_SESSION_MEMORY.md"
         or normalized == "CVF_SESSION/ACTIVE_SESSION_STATE.json"
         or normalized == "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json"
+        or normalized.startswith("CVF_SESSION/state/")
         or normalized.startswith("AGENT_HANDOFF")
         or normalized.startswith("CVF_SESSION/handoffs/")
     )
