@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`meor_t2_closed_t3_spec_pending`; active hand
 
 `meor_t2_closed_t3_spec_pending`
 
-Current HEAD recorded for this handoff: `d18a3e47`
-(MEOR-T2 material implementation commit; closure sync follows).
+Current HEAD recorded for this handoff: `69ec7574`
+(MEOR-T2 closure commit; this dedicated session sync follows).
 
 ## Active Boundary
 
@@ -779,9 +779,11 @@ history.
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
-Next allowed move: author a fresh MEOR-T1 GC-018 baseline and source-verified
-work order for specification-only contract authoring. No Python or TypeScript
-implementation is authorized in T1. MEOR-T2 through T5 remain dependency-held.
+Next allowed move: author a fresh MEOR-T3 GC-018 baseline and source-verified
+work order for the DSCP profile requirement bridge. MEOR-T2 is closed at
+`69ec7574`; no T3 implementation may begin before dependency release,
+pre-dispatch, and pre-implementation gates pass. MEOR-T4 and T5 remain
+dependency-held.
 The regulated-domain adapter, EC-T5/EC-T6 activation, retrieval disclosure,
 OCR installation, corpus ingestion, and external Policy_Local integration
 remain blocked. Public-sync, provider/API key use, production readiness, and

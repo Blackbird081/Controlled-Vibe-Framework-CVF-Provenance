@@ -74,6 +74,8 @@ MEOR-T2 dispatch commit: `427532c8`.
 
 MEOR-T2 material implementation commit: `d18a3e47`.
 
+MEOR-T2 closure commit: `69ec7574`.
+
 The roadmap prioritizes a domain-agnostic CVF foundation before any
 Policy_Local correction or activation. MEOR-T1 is specification-only and must
 lock metadata requirement, evidence basis, operator resolution, and downstream
@@ -614,9 +616,10 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: author a fresh MEOR-T1 GC-018 baseline and source-verified
-work order for specification-only contract and machine-semantics authoring.
-No runtime implementation is authorized in T1. MEOR-T2 through MEOR-T5 remain
+Next allowed move: author a fresh MEOR-T3 GC-018 baseline and source-verified
+work order for the DSCP profile requirement bridge. MEOR-T2 is closed at
+`69ec7574`; no T3 implementation may begin before dependency release,
+pre-dispatch, and pre-implementation gates pass. MEOR-T4 and MEOR-T5 remain
 dependency-held. The regulated-domain adapter, Policy_Local candidate
 correction, EC-T5/EC-T6 activation, retrieval disclosure, OCR installation,
 corpus ingestion, and external Policy_Local integration remain blocked.
