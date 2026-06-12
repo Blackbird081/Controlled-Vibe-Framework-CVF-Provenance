@@ -30,8 +30,8 @@ Startup acknowledged: current mode=`memcon_t1a_memory_consolidation_standard_own
 
 `memcon_t1a_memory_consolidation_standard_owner_reconciliation_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `84a46b62`
-(MEMCON-T1a material closure commit; this dedicated session sync follows).
+Current HEAD recorded for this handoff: `768628f7`
+(MEMCON-T1a closure session-sync commit; this dedicated handoff-only sync follows).
 
 ## Active Boundary
 
@@ -266,7 +266,8 @@ generated active-state source files are accepted.
   focused tests, and the JSON generated aggregate discipline standard.
 - Hardened the active-session checker at commit `771c4460` so future generated
   state-source session syncs do not require an extra handoff-only loop.
-- Closed MEMCON-T1a at material commit `84a46b62`; next MEMCON move is T1b
+- Closed MEMCON-T1a at material commit `84a46b62`; session sync commit
+  `768628f7`; next MEMCON move is T1b
   only through fresh authorization.
 
 ## Core Guard Self-Protection Authorization
@@ -290,9 +291,10 @@ asked Codex to review, commit, and close. The mandatory closure-quality and
 session-continuity rules require synchronized front doors and active state
 sources before moving to the next tranche.
 
-Rollback boundary: revert only this MEMCON-T1a session-sync batch if the
-continuity markers are incorrect. Do not revert material closure commit
-`84a46b62`, dispatch commit `f1d4c357`, or unrelated history.
+Rollback boundary: revert only this MEMCON-T1a handoff-only sync if the
+continuity markers are incorrect. Do not revert session sync commit
+`768628f7`, material closure commit `84a46b62`, dispatch commit `f1d4c357`, or
+unrelated history.
 
 ## Next Allowed Move
 
