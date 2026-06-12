@@ -65,6 +65,7 @@ blocked.
 Protected paths:
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION_MEMORY.md`
 
 Operator authorization: 2026-06-11 operator instructed Codex to close multiple
 roles and complete all related roadmap work still allowed by the current

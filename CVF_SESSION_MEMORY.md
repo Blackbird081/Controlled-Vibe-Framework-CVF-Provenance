@@ -573,15 +573,14 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: audit/select the next EX successor for operator-visible scan
-outcome reporting before returning to EC, or resume EC only after explicit
-operator direction. EC-T4 metadata confirmation, EC-T5/EC-T6 activation, and
-retrieval disclosure remain parked. EX-T1 through EX-T8 local extraction
-foundation is closed bounded. Dependency addition, OCR model download, corpus
-ingestion, operator correction report generation, runtime/source change beyond
-a fresh authorized successor packet, external Policy_Local mutation,
-public-sync, provider/API key use, production readiness, or public readiness
-remain unauthorized without fresh authorization.
+Next allowed move: review the parked EC metadata-gap pattern with the operator
+before any EC activation or retrieval work. EC-T4 metadata confirmation,
+EC-T5/EC-T6 activation, and retrieval disclosure remain parked. EX-T1 through
+EX-T9 local extraction foundation is closed bounded. Dependency addition, OCR
+model download, corpus ingestion, domain-specific metadata correction,
+runtime/source change beyond a fresh authorized successor packet, external
+Policy_Local mutation, public-sync, provider/API key use, production readiness,
+or public readiness remain unauthorized without fresh authorization.
 T12 remains forbidden until EC-02 resolves on or after 2026-07-01 and
 eligibility is re-evaluated.
 
