@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-12
 
-Current mode marker: `memcon_t1a_memory_consolidation_standard_owner_reconciliation_dispatched`
+Current mode marker: `memcon_t1a_memory_consolidation_standard_owner_reconciliation_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `memcon_t1a_memory_consolidation_standard_owner_reconciliation_dispatched`.
+Current mode: `memcon_t1a_memory_consolidation_standard_owner_reconciliation_closed_pass_bounded`.
 
 Active handoff:
 
@@ -59,21 +59,27 @@ Pain-point closure direction:
 ## Latest Continuity Note
 
 MEMCON-T1a Memory Consolidation standard and owner reconciliation is
-`DISPATCHED` for Claude under `WORKER_MUST_NOT_COMMIT`.
+`CLOSED_PASS_BOUNDED`.
 
-Dispatch commit: `f1d4c357`.
+Material closure commit: `84a46b62`.
 
-Dispatch artifacts:
+Closure artifacts:
 
 - GC-018:
   `docs/baselines/CVF_GC018_MEMCON_T1A_MEMORY_CONSOLIDATION_STANDARD_OWNER_RECONCILIATION_2026-06-12.md`;
 - work order:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T1A_MEMORY_CONSOLIDATION_STANDARD_OWNER_RECONCILIATION_FOR_CLAUDE_2026-06-12.md`;
 - parent roadmap:
-  `docs/roadmaps/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_ROADMAP_2026-06-12.md`.
+  `docs/roadmaps/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_ROADMAP_2026-06-12.md`;
+- standard:
+  `docs/reference/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_STANDARD_2026-06-12.md`;
+- owner map:
+  `docs/reference/CVF_MEMORY_CONSOLIDATION_EXISTING_OWNER_RECONCILIATION_MAP_2026-06-12.md`;
+- completion:
+  `docs/reviews/CVF_MEMCON_T1A_MEMORY_CONSOLIDATION_STANDARD_OWNER_RECONCILIATION_COMPLETION_2026-06-12.md`.
 
-Claude may create only the T1a standard, existing-owner reconciliation map, and
-worker return packet, then return uncommitted artifacts to Codex.
+MEMCON-T1b is the next MEMCON step only if the operator authorizes a fresh
+GC-018 and source-verified work order for schema appendix and field tables.
 
 Memory Consolidation Workflow Chain roadmap is revised and ready for
 MEMCON-T1a authorization.
@@ -845,11 +851,12 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: LHW24 remains the latest closed numbered LHW wave. Claude
-may execute MEMCON-T1a work order `WORKER_MUST_NOT_COMMIT` and return
-uncommitted artifacts for Codex review: the Memory Consolidation standard,
-existing-owner reconciliation map, and worker return packet. Policy_Local PL-S1
-is held behind the MEMCON foundation decision.
+Next allowed move: MEMCON-T1a is `CLOSED_PASS_BOUNDED` at material commit
+`84a46b62`. Operator may authorize MEMCON-T1b through fresh GC-018 and a
+source-verified work order for schema appendix and field tables only, or hold
+MEMCON and return to a separately authorized downstream lane. Policy_Local
+PL-S1 remains held until the operator explicitly decides the MEMCON foundation
+is sufficient for downstream use-case work.
 
 Do not mutate external Policy_Local, activate EC, change retrieval, run OCR or
 provider/API proof, ingest corpus records, use public-sync, unlock T12, or make

@@ -11,27 +11,27 @@ Supersedes:
 
 ## Purpose
 
-This compact handoff records EXA-T1 closure, the next foundation move, and
+This compact handoff records MEMCON-T1a closure, the next foundation move, and
 parked operator checkpoints. Detailed history remains in governed completion
 artifacts and archived handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: route the next bounded CVF foundation work after EXA-T1.
+Target: route the next bounded CVF foundation work after MEMCON-T1a.
 
 Owner boundary: this file is a pointer record. Runtime, tests, source maps,
 reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`memcon_t1a_memory_consolidation_standard_owner_reconciliation_dispatched`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=Claude executes MEMCON-T1a work order WORKER_MUST_NOT_COMMIT and returns uncommitted artifacts for Codex review; parked checkpoint=Policy_Local PL-S1 is held behind the MEMCON foundation decision, and EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`memcon_t1a_memory_consolidation_standard_owner_reconciliation_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=operator may authorize MEMCON-T1b through fresh GC-018 and source-verified work order, or hold MEMCON and return to a separately authorized downstream lane; parked checkpoint=Policy_Local PL-S1 is held until the operator explicitly decides the MEMCON foundation is sufficient for downstream use-case work, and EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`memcon_t1a_memory_consolidation_standard_owner_reconciliation_dispatched`
+`memcon_t1a_memory_consolidation_standard_owner_reconciliation_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `f1d4c357`
-(MEMCON-T1a dispatch package commit; this dedicated handoff sync follows).
+Current HEAD recorded for this handoff: `84a46b62`
+(MEMCON-T1a material closure commit; this dedicated session sync follows).
 
 ## Active Boundary
 
@@ -47,29 +47,33 @@ requires separate authorization.
 ## Latest Continuity Note
 
 MEMCON-T1a Memory Consolidation standard and owner reconciliation is
-`DISPATCHED` for Claude under `WORKER_MUST_NOT_COMMIT`.
+`CLOSED_PASS_BOUNDED`.
 
-Dispatch commit: `f1d4c357`.
+Material closure commit: `84a46b62`.
 
-Dispatch artifacts:
+Closure artifacts:
 
 - GC-018:
   `docs/baselines/CVF_GC018_MEMCON_T1A_MEMORY_CONSOLIDATION_STANDARD_OWNER_RECONCILIATION_2026-06-12.md`;
 - work order:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T1A_MEMORY_CONSOLIDATION_STANDARD_OWNER_RECONCILIATION_FOR_CLAUDE_2026-06-12.md`;
 - parent roadmap:
-  `docs/roadmaps/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_ROADMAP_2026-06-12.md`.
+  `docs/roadmaps/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_ROADMAP_2026-06-12.md`;
+- standard:
+  `docs/reference/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_STANDARD_2026-06-12.md`;
+- owner map:
+  `docs/reference/CVF_MEMORY_CONSOLIDATION_EXISTING_OWNER_RECONCILIATION_MAP_2026-06-12.md`;
+- completion:
+  `docs/reviews/CVF_MEMCON_T1A_MEMORY_CONSOLIDATION_STANDARD_OWNER_RECONCILIATION_COMPLETION_2026-06-12.md`.
 
-Verification: reviewer-fast PASS 12/12; pre-dispatch autorun PASS; full
-pre-commit governance chain PASS 37/37.
+Verification: reviewer-fast PASS 12/12 before closure; material pre-commit
+governance chain PASS 37/37.
 
-Boundary: Claude may create only the T1a standard, existing-owner
-reconciliation map, and worker return packet, then return uncommitted artifacts
-to Codex. No runtime implementation, schema appendix closure, checker
-implementation, generated aggregate JSON edit, Policy_Local mutation, EC
-activation, retrieval change, OCR/provider/API use, corpus ingestion,
-public-sync, T12 unlock, readiness claim, memory reinjection, or autonomous
-mutation.
+Boundary: T1a is doc-only foundation closure. No runtime implementation, schema
+appendix closure, checker implementation, generated aggregate JSON edit,
+Policy_Local mutation, EC activation, retrieval change, OCR/provider/API use,
+corpus ingestion, public-sync, T12 unlock, readiness claim, memory
+reinjection, high-risk promotion, or autonomous mutation.
 
 Memory Consolidation Workflow Chain roadmap is revised after Claude rebuttal
 and ready for MEMCON-T1a authorization.
@@ -262,38 +266,39 @@ generated active-state source files are accepted.
   focused tests, and the JSON generated aggregate discipline standard.
 - Hardened the active-session checker at commit `771c4460` so future generated
   state-source session syncs do not require an extra handoff-only loop.
-- Dispatched MEMCON-T1a at commit `f1d4c357` for Claude no-commit execution.
+- Closed MEMCON-T1a at material commit `84a46b62`; next MEMCON move is T1b
+  only through fresh authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: perform the mandatory Memory Consolidation
-roadmap continuity sync without changing governance semantics, and keep the
-generated active-session aggregate aligned with its per-entry source files.
+Authorized guard-maintenance scope: perform the mandatory MEMCON-T1a closure
+session sync without changing governance semantics, and keep the generated
+active-session aggregate aligned with its per-entry source files.
 
 Protected paths:
 
+- `AGENT_HANDOFF_V18_2026-06-12.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION/state/entries/memconT1aDispatch20260612.json`
-- `CVF_SESSION/state/entries/memoryConsolidationWorkflowRoadmap20260612.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: the operator requested a detailed Memory Plane
-workflow-chain roadmap after the memory-consolidation article and Claude
-rebuttal review. The mandatory closure-quality and session-continuity rules
-require synchronized front doors and active state sources before moving to the
-next tranche.
+Operator authorization: the operator reported the MEMCON-T1a worker return and
+asked Codex to review, commit, and close. The mandatory closure-quality and
+session-continuity rules require synchronized front doors and active state
+sources before moving to the next tranche.
 
-Rollback boundary: revert only this Memory Consolidation session-sync batch if
-the continuity markers are incorrect. Do not revert the material roadmap
-commit `4cb775b3`, dispatch commit `f1d4c357`, or unrelated history.
+Rollback boundary: revert only this MEMCON-T1a session-sync batch if the
+continuity markers are incorrect. Do not revert material closure commit
+`84a46b62`, dispatch commit `f1d4c357`, or unrelated history.
 
 ## Next Allowed Move
 
-Claude may execute the MEMCON-T1a work order under `WORKER_MUST_NOT_COMMIT`
-and return uncommitted artifacts for Codex review: the Memory Consolidation
-standard, existing-owner reconciliation map, and worker return packet.
+Operator may authorize MEMCON-T1b through fresh GC-018 and a source-verified
+work order for schema appendix and field tables only, or hold MEMCON and return
+to a separately authorized downstream lane.
 
 Do not mutate external Policy_Local, activate EC, change retrieval, invoke OCR
 or providers, import external code, install dependencies, ingest corpus records,
@@ -304,9 +309,10 @@ LHW24 remains the latest closed numbered LHW wave in the state registry.
 
 ## Parked Checkpoints
 
-- Policy_Local integration: PL-S1 is held behind the MEMCON foundation
-  decision; external Policy_Local mutation remains blocked until a later PL-S
-  work order permits it.
+- Policy_Local integration: PL-S1 remains held until the operator explicitly
+  decides the MEMCON foundation is sufficient for downstream use-case work;
+  external Policy_Local mutation remains blocked until a later PL-S work order
+  permits it.
 - EC activation/retrieval: parked under existing metadata/operator evidence
   conditions.
 - LPCI2-T12: forbidden until the separate EC-02 evidence path resolves on or

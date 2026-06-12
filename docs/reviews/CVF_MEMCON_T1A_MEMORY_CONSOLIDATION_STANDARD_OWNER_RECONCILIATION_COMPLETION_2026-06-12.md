@@ -156,3 +156,9 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: private Memory Plane foundation tranche. Public-sync is not
 authorized.
+
+## Public Technical Catalog Disposition
+
+N/A with reason: MEMCON-T1a is a private Memory Plane foundation standard and
+owner reconciliation map. It does not add a public-facing proven capability or
+authorize public-sync catalog export.
