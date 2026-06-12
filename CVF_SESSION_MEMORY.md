@@ -84,6 +84,8 @@ MEOR-T3 dispatch commit: `b36d4494`.
 
 MEOR-T3 material implementation commit: `0c4997a5`.
 
+MEOR-T3 closure commit: `5f328d11`.
+
 The roadmap prioritizes a domain-agnostic CVF foundation before any
 Policy_Local correction or activation. MEOR-T1 is specification-only and must
 lock metadata requirement, evidence basis, operator resolution, and downstream
