@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`meor_t3_dscp_profile_requirement_bridge_disp
 
 `meor_t3_dscp_profile_requirement_bridge_dispatched`
 
-Current HEAD recorded for this handoff: `b36d4494`
-(MEOR-T3 dispatch commit; implementation follows after the phase gate).
+Current HEAD recorded for this handoff: `e97bba23`
+(MEOR-T3 execution-base anchor; this dedicated handoff sync follows).
 
 ## Active Boundary
 
