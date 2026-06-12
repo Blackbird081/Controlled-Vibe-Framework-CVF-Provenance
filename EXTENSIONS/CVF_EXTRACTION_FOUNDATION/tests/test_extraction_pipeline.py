@@ -21,8 +21,10 @@ from extraction_pipeline import (  # noqa: E402
     OcrDependencyUnavailableError,
     Tier2OcrExtractorInput,
     Tier2OcrPageInput,
+    Tier2OcrPageResult,
     UnsupportedOcrLanguageError,
     build_extraction_dscp_descriptor_inputs,
+    build_extraction_storage_boundary,
     chunk_extracted_pages,
     evaluate_extraction_quality,
     extract_tier2_ocr,
@@ -91,6 +93,7 @@ def test_quality_gate_passes_sufficient_text() -> None:
     assert report.quality_flags == []
     assert report.thresholds["OCR_CONFIDENCE"] == OCR_CONFIDENCE_THRESHOLD
     assert report.thresholds["PAGE_COVERAGE"] == PAGE_COVERAGE_THRESHOLD
+    assert report.raw_ocr_retained is False
 
 
 def test_quality_gate_flags_short_and_partial_output() -> None:
@@ -265,6 +268,92 @@ def test_dscp_descriptor_handoff_does_not_release_raw_content() -> None:
     assert descriptor.content_class == "extracted_chunk"
     assert descriptor.governance_gates["customGates"] == {"extractionStatus": "PASS"}
     assert descriptor.metadata["rawContentReleased"] == "false"
+    assert descriptor.metadata["authorityLevel"] == "EXTRACTED_TEXT"
+    assert descriptor.metadata["rebuildClass"] == "TIER1_CHAR_OFFSET"
     assert descriptor.metadata["domainFamily"] == "legal_policy"
     assert descriptor.metadata["charStart"] == "0"
     assert descriptor.metadata["charEnd"] == str(MIN_CHARS_PER_PAGE)
+
+
+def test_tier1_chunks_carry_extracted_text_authority_and_char_offset_rebuild() -> None:
+    pages = [
+        Tier1PageResult(
+            page_num=1,
+            text="E" * MIN_CHARS_PER_PAGE,
+            char_count=MIN_CHARS_PER_PAGE,
+            extraction_method="pdfplumber",
+        )
+    ]
+    quality = evaluate_extraction_quality(pages)
+    chunks = chunk_extracted_pages(
+        source_artifact_id="artifact-tier1",
+        source_hash="sha256:tier1",
+        pages=pages,
+        extraction_tier="TIER1_DIGITAL",
+        language_codes=["en"],
+        quality_report=quality,
+    )
+    assert chunks[0].authority_level == "EXTRACTED_TEXT"
+    assert chunks[0].rebuild_class == "TIER1_CHAR_OFFSET"
+
+
+def test_tier2_chunks_use_page_reocr_rebuild_class() -> None:
+    pages = [
+        Tier2OcrPageResult(
+            page_num=1,
+            text="F" * MIN_CHARS_PER_PAGE,
+            char_count=MIN_CHARS_PER_PAGE,
+            confidence=0.91,
+            extraction_method="easyocr-adapter",
+        )
+    ]
+    quality = evaluate_extraction_quality(pages, mean_ocr_confidence=0.91)
+    chunks = chunk_extracted_pages(
+        source_artifact_id="artifact-tier2",
+        source_hash="sha256:tier2",
+        pages=pages,
+        extraction_tier="TIER2_OCR",
+        language_codes=["vi"],
+        quality_report=quality,
+    )
+    descriptors = build_extraction_dscp_descriptor_inputs(
+        chunks,
+        domain_family="legal_policy",
+        domain_profile_id="policylocal.vi.v1",
+    )
+    assert chunks[0].authority_level == "EXTRACTED_TEXT"
+    assert chunks[0].rebuild_class == "TIER2_PAGE_REOCR"
+    assert descriptors[0].metadata["authorityLevel"] == "EXTRACTED_TEXT"
+    assert descriptors[0].metadata["rebuildClass"] == "TIER2_PAGE_REOCR"
+
+
+def test_extraction_storage_boundary_is_deterministic_and_counts_chunks() -> None:
+    pages = [
+        Tier1PageResult(
+            page_num=1,
+            text="G" * MIN_CHARS_PER_PAGE,
+            char_count=MIN_CHARS_PER_PAGE,
+            extraction_method="python-docx",
+        )
+    ]
+    quality = evaluate_extraction_quality(pages)
+    chunks = chunk_extracted_pages(
+        source_artifact_id="artifact-boundary",
+        source_hash="sha256:boundary",
+        pages=pages,
+        extraction_tier="TIER1_DIGITAL",
+        language_codes=["en"],
+        quality_report=quality,
+    )
+    descriptors = build_extraction_dscp_descriptor_inputs(
+        chunks,
+        domain_family="technical_project",
+        domain_profile_id="technical.local.v1",
+    )
+    first = build_extraction_storage_boundary(descriptors, quality)
+    second = build_extraction_storage_boundary(descriptors, quality)
+    assert first.boundary_sha256 == second.boundary_sha256
+    assert first.chunk_count == len(descriptors)
+    assert first.raw_ocr_retained is False
+    assert first.quality_report is quality
+    assert first.descriptor_inputs == descriptors

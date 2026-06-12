@@ -4,15 +4,15 @@ docType: work_order
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 dispatchBaseHead: `7c92b20b`
 
-executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
+executionBaseHead: `fcf0f545`
 
-closureBaseHead: `REVIEWER_MUST_CAPTURE_AT_CLOSURE`
+closureBaseHead: `fcf0f545`
 
-Commit mode: `WORKER_MUST_NOT_COMMIT`
+Commit mode: `CODEX_MULTI_ROLE_REVIEW_AND_COMMIT_AFTER_GATES`
 
 completionReviewPath: `docs/reviews/CVF_LPCI2_EX_T8_EXTRACTION_AUTHORITY_AND_STORAGE_BOUNDARY_COMPLETION_2026-06-12.md`
 
@@ -27,7 +27,7 @@ reviewerOwnedClosurePaths:
 
 Date: 2026-06-12
 
-Assigned to: Claude (WORKER_MUST_NOT_COMMIT)
+Assigned to: Codex (operator-directed multi-role execution)
 
 ---
 
@@ -44,7 +44,9 @@ correction report generation is required before EC-T5 or any domain-specific
 gate relies on scan-layer metadata gaps, but that report generator is not
 implemented in EX-T8.
 
-WORKER_MUST_NOT_COMMIT. Worker stages artifacts and returns packet to Codex.
+Operator redirected execution on 2026-06-12: Codex completes the EX tranche in
+multi-role mode, then commits only after reviewer-fast, pre-closure, and
+pre-commit governance gates pass.
 
 ---
 
@@ -64,8 +66,8 @@ WORKER_MUST_NOT_COMMIT. Worker stages artifacts and returns packet to Codex.
 
 | Role | Agent | Constraint |
 | --- | --- | --- |
-| Worker | Claude | WORKER_MUST_NOT_COMMIT; creates and stages artifacts only |
-| Reviewer | Codex | Reviews staged artifacts; runs pre-closure gate; commits if PASS |
+| Worker | Codex | Operator-authorized multi-role implementation of EX-T8 only |
+| Reviewer | Codex | Reviews artifacts; runs pre-closure gate; commits if PASS |
 | Closer | Codex | Updates GC-018, work order, roadmap, GC-051 to CLOSED_PASS_BOUNDED |
 
 ---
@@ -376,22 +378,22 @@ Codex reviewer must:
 
 ## Closure Checklist
 
-- [ ] `ExtractionAuthorityLevel` and `RebuildClass` type aliases added
-- [ ] `authority_level` and `rebuild_class` on `ExtractionChunk`
-- [ ] `rebuild_class` set correctly for Tier 2 OCR chunks in chunk-building code
-- [ ] `raw_ocr_retained: bool = False` on `ExtractionQualityReport`
-- [ ] `ExtractionStorageBoundary` dataclass added
-- [ ] `build_extraction_storage_boundary` function added
-- [ ] `authorityLevel` and `rebuildClass` in DSCP descriptor metadata
-- [ ] All existing tests pass
-- [ ] New tests added and passing
-- [ ] GC-023 limits respected
-- [ ] Reviewer-fast PASS
-- [ ] Pre-closure autorun gate PASS
-- [ ] GC-018 Status CLOSED_PASS_BOUNDED
-- [ ] Roadmap EX-T8 row CLOSED_PASS_BOUNDED
-- [ ] GC-051 registry updated
-- [ ] Successor EX operator-scan-outcome dependency recorded without EC-T5 activation
+- [x] `ExtractionAuthorityLevel` and `RebuildClass` type aliases added
+- [x] `authority_level` and `rebuild_class` on `ExtractionChunk`
+- [x] `rebuild_class` set correctly for Tier 2 OCR chunks in chunk-building code
+- [x] `raw_ocr_retained: bool = False` on `ExtractionQualityReport`
+- [x] `ExtractionStorageBoundary` dataclass added
+- [x] `build_extraction_storage_boundary` function added
+- [x] `authorityLevel` and `rebuildClass` in DSCP descriptor metadata
+- [x] All existing tests pass
+- [x] New tests added and passing
+- [x] GC-023 limits respected
+- [x] Reviewer-fast PASS
+- [x] Pre-closure autorun gate PASS
+- [x] GC-018 Status CLOSED_PASS_BOUNDED
+- [x] Roadmap EX-T8 row CLOSED_PASS_BOUNDED
+- [x] GC-051 registry updated
+- [x] Successor EX operator-scan-outcome dependency recorded without EC-T5 activation
 
 ---
 
@@ -436,14 +438,14 @@ EC-02 hard boundary 2026-07-01 remains in force after EX-T8 closes.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | this file | Status field set to CLOSED_PASS_BOUNDED | BLOCKED -- awaiting Codex closure |
-| Completion or reviewer artifact | `docs/reviews/CVF_LPCI2_EX_T8_EXTRACTION_AUTHORITY_AND_STORAGE_BOUNDARY_COMPLETION_2026-06-12.md` | File existence + PASS disposition | BLOCKED -- awaiting execution and review |
-| Roadmap state | `docs/roadmaps/CVF_LPCI2_EXTRACTION_AND_EC02_REFINEMENT_ROADMAP_2026-06-10.md` | EX-T8 row updated to CLOSED_PASS_BOUNDED | BLOCKED -- awaiting closure |
-| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | EX-T8 source and test entries present | BLOCKED -- Codex reviewer scope at closure |
-| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | EX-T8 quick lookup rows present | BLOCKED -- Codex reviewer scope at closure |
+| Work order status | this file | Status field set to CLOSED_PASS_BOUNDED | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LPCI2_EX_T8_EXTRACTION_AUTHORITY_AND_STORAGE_BOUNDARY_COMPLETION_2026-06-12.md` | File existence + PASS disposition | PASS |
+| Roadmap state | `docs/roadmaps/CVF_LPCI2_EXTRACTION_AND_EC02_REFINEMENT_ROADMAP_2026-06-10.md` | EX-T8 row updated to CLOSED_PASS_BOUNDED | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | EX-T8 source and test entries present | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | EX-T8 quick lookup rows present | PASS |
 | External evidence digest | N/A with reason -- EX-T8 is Python type/schema additions only; no external corpus, provider, or non-git artifact consumed | No external path artifact in scope | N/A with reason |
 | System loop interlock | GC-052: no looping worker pattern; Claude executes once and returns | Single-pass execution, no loop | N/A with reason |
-| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | nextAllowedMove updated during Codex closure; handoff reflects closure HEAD | BLOCKED -- awaiting Codex session sync at closure |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | nextAllowedMove updated during Codex closure; handoff reflects closure HEAD | PASS |
 
 ---
 
@@ -467,9 +469,35 @@ EC-02 hard boundary 2026-07-01 remains in force after EX-T8 closes.
 | Intake summary | Operator instructed Codex to finish the EX foundation before returning to EC; EX-T8 formalizes extraction authority, rebuild, raw-OCR retention, and storage-boundary contracts using the closed EX-T7 evidence at commit `7c92b20b`. |
 | Scope classification | Bounded Python contract/schema tranche with focused tests; no corpus ingestion, retrieval behavior, external workspace mutation, public-sync, or provider/live proof. |
 | Risk sensitivity | R2 because extraction authority and storage-boundary wording could be misread as retrieval, current-law, or Policy_Local activation if overclaimed. |
-| Selected canonical route mode | MULTI_AGENT_MULTI_ROLE: Codex dispatches/reviews/closes; Claude executes worker-return only. |
-| Role separation basis | Worker implements source/test changes and stages artifacts; Codex validates scope, gates, GC-051 closure, roadmap state, and commit. |
+| Selected canonical route mode | SINGLE_AGENT_MULTI_ROLE. |
+| Role separation basis | Operator explicitly redirected Codex to complete all EX work before EC; role separation is enforced through source verification, focused tests, reviewer-fast, pre-closure, pre-commit gates, completion review, and machine closure package. |
 | Escalation condition | Stop and return to Codex if implementation requires EC files, corpus JSON, DSCP profile values, external Policy_Local writes, OCR dependency/model installation, provider/API-key use, or operator correction report generation. |
+
+## Single-Agent Multi-Role Control Block
+
+roleMode: `SINGLE_AGENT_MULTI_ROLE`
+
+allowedBecause: operator explicitly instructed Codex to finish the bounded EX
+tranche before EC; scope is local deterministic Python source/test plus
+governance closure only.
+
+roleSeparationMechanism:
+
+- Source Verification Table and negative-search discipline;
+- focused pytest and py_compile evidence;
+- GC-051 registry coverage;
+- reviewer-fast, pre-closure, and pre-commit gates;
+- completion review with claim boundary.
+
+forbiddenSelfApprovalClaims:
+
+- no OCR quality claim;
+- no corpus ingestion claim;
+- no operator correction report generation claim;
+- no EC-T5/domain activation claim;
+- no retrieval behavior claim;
+- no current-law/legal-quality claim;
+- no production/public readiness claim.
 
 ## Evidence Reuse And Encoding Plan
 
@@ -492,14 +520,14 @@ extractedTextAuthority: `N/A with reason`
 
 ## Reviewer Closure Conversion Block
 
-When Codex confirms PASS:
+Codex closure conversion completed:
 
-1. Edit GC-018 `Status: PROPOSED` -> `Status: CLOSED_PASS_BOUNDED`
-2. Edit this work order `Status: PROPOSED` -> `Status: CLOSED_PASS_BOUNDED`
-3. Add EX-T8 row to roadmap Part A tranche table.
-4. Add EX-T8 source and test rows to GC-051 registry JSON and Markdown.
-5. Author completion review at `completionReviewPath`.
-6. Commit all together.
+1. GC-018 status set to `CLOSED_PASS_BOUNDED`.
+2. This work order status set to `CLOSED_PASS_BOUNDED`.
+3. EX-T8 row added to roadmap Part A tranche table.
+4. EX-T8 source and test rows added to GC-051 registry JSON and Markdown.
+5. Completion review authored at `completionReviewPath`.
+6. EX-T8 closure committed as a bounded private provenance batch.
 
 ---
 

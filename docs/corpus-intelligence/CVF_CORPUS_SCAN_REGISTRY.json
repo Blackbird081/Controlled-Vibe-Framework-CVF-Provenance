@@ -3,8 +3,8 @@
   "standard": "docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md",
   "guard": "governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md",
   "checker": "governance/compat/check_corpus_scan_registry.py",
-  "lastUpdated": "2026-06-11",
-  "updatedBy": "Codex (LPCI2 EX-T3 through EX-T6 closure)",
+  "lastUpdated": "2026-06-12",
+  "updatedBy": "Codex (LPCI2 EX-T8 closure)",
   "allowedCorpusTypes": [
     "LEGACY_FOLDER",
     "PROJECT_SOURCE",
@@ -2328,6 +2328,44 @@
       "manifestPath": null,
       "packetPath": "docs/reviews/CVF_LPCI2_EX_T7_SENTENCE_BOUNDARY_CHUNKING_COMPLETION_2026-06-12.md",
       "notes": "Focused pytest coverage for sentence boundary grouping, long-span fixed-window fallback, deterministic chunk IDs, offset metadata, and raw-content-release boundary."
+    },
+    {
+      "id": "ex-t8-extraction-authority-storage-boundary-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation EX-T8 authority/storage boundary source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/extraction_pipeline.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "EX-T8",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_LPCI2_EX_T8_EXTRACTION_AUTHORITY_AND_STORAGE_BOUNDARY_COMPLETION_2026-06-12.md",
+      "notes": "ExtractionAuthorityLevel, RebuildClass, raw OCR retention flag, ExtractionStorageBoundary, deterministic boundary hash, and descriptor metadata propagation. No raw OCR persistence, corpus ingestion, retrieval behavior, provider call, or legal/current-status claim."
+    },
+    {
+      "id": "ex-t8-extraction-authority-storage-boundary-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation EX-T8 authority/storage boundary tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_extraction_pipeline.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "EX-T8",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_LPCI2_EX_T8_EXTRACTION_AUTHORITY_AND_STORAGE_BOUNDARY_COMPLETION_2026-06-12.md",
+      "notes": "Focused pytest coverage for extracted-text authority, Tier 1 char-offset rebuild, Tier 2 page-reOCR rebuild, raw OCR retention default, descriptor metadata propagation, and storage-boundary hash determinism."
     }
   ]
 }

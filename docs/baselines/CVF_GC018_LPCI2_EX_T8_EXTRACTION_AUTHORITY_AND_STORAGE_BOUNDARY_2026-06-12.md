@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 
@@ -219,7 +219,7 @@ Key findings:
 - `extraction_pipeline.py` current line count: 450L.
   EX-T8 additions are estimated ~60-80L. Worker must verify before staging that
   the file does not exceed the GC-023 hard limit for Python source files
-  (`docs/reference/CVF_GOVERNED_FILE_SIZE_GUARD.md`). If the limit would be
+  (`governance/toolkit/05_OPERATION/CVF_GOVERNED_FILE_SIZE_GUARD.md`). If the limit would be
   exceeded, worker must split the boundary module into a new
   `extraction_storage_boundary.py` file.
 - `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_extraction_pipeline.py`:

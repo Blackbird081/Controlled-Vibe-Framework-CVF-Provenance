@@ -32,14 +32,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci2_ex_t8_extraction_authority_storage_boundary_dispatched`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=Claude executes EX-T8 as WORKER_MUST_NOT_COMMIT and returns staged artifacts to Codex; parked checkpoint=EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`lpci2_ex_t8_extraction_authority_storage_boundary_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=audit/select next EX successor for operator-visible scan outcome reporting before returning to EC; parked checkpoint=EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`lpci2_ex_t8_extraction_authority_storage_boundary_dispatched`
+`lpci2_ex_t8_extraction_authority_storage_boundary_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `f6d1cd15`
-(EX-T8 dispatch package commit).
+Current HEAD recorded for this handoff: `fcf0f545`
+(parent before EX-T8 closure commit; follow-up sync may update exact closure SHA).
 
 ## Active Boundary
 
@@ -78,21 +78,22 @@ unrelated governance/session history.
 
 ## Latest Continuity Note
 
-LPCI2 EX-T8 extraction authority and storage boundary is `DISPATCHED` at
-commit `f6d1cd15`.
+LPCI2 EX-T8 extraction authority and storage boundary is
+`CLOSED_PASS_BOUNDED` at pending closure commit.
 
 Artifacts:
 
 - `docs/baselines/CVF_GC018_LPCI2_EX_T8_EXTRACTION_AUTHORITY_AND_STORAGE_BOUNDARY_2026-06-12.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T8_EXTRACTION_AUTHORITY_AND_STORAGE_BOUNDARY_FOR_CLAUDE_2026-06-12.md`
 
-Next execution: Claude may execute EX-T8 as WORKER_MUST_NOT_COMMIT and return
-staged artifacts to Codex. Boundary: extraction authority/storage contract only;
-no OCR dependency install, OCR model download, corpus ingestion, operator
-correction report generation, EC-T5/domain activation, retrieval behavior,
-provider/API-key use, external Policy_Local mutation, public-sync,
-production/public readiness, T12 unlock, memory reinjection, high-risk
-promotion, or autonomous mutation.
+Result: local deterministic CVF extraction foundation now carries extracted-text
+authority, Tier 1/Tier 2 rebuild class, raw OCR retention flag, a storage
+boundary wrapper, deterministic boundary hash, and descriptor metadata
+propagation. Boundary: no OCR dependency install, OCR model download, corpus
+ingestion, operator correction report generation, EC-T5/domain activation,
+retrieval behavior, provider/API-key use, external Policy_Local mutation,
+public-sync, production/public readiness, T12 unlock, memory reinjection,
+high-risk promotion, or autonomous mutation.
 
 LPCI2 EX-T7 sentence-boundary chunking is `CLOSED_PASS_BOUNDED` at material
 commit `16c4fde0`; roadmap header correction commit `3abe0087`.
@@ -728,16 +729,16 @@ history.
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
-Next allowed move: Claude may execute EX-T8 extraction authority and storage
-boundary as WORKER_MUST_NOT_COMMIT and return staged artifacts to Codex.
-EC-T4 metadata confirmation, EC-T5/EC-T6 activation, and retrieval disclosure
-remain parked until EX-T8 closes or the operator explicitly redirects.
-EX-T3 through EX-T7 local extraction foundation is closed bounded; integration
-convergence remains blocked.
+Next allowed move: audit/select the next EX successor for operator-visible scan
+outcome reporting before returning to EC, or resume EC only after explicit
+operator direction. EC-T4 metadata confirmation, EC-T5/EC-T6 activation, and
+retrieval disclosure remain parked. EX-T1 through EX-T8 local extraction
+foundation is closed bounded; integration convergence remains blocked.
 Dependency addition, OCR model download, corpus ingestion, operator correction
-report generation, runtime/source change beyond the dispatched EX-T8 packet,
-external Policy_Local mutation, public-sync, provider/API key use, production
-readiness, or public readiness remain unauthorized without fresh authorization.
+report generation, runtime/source change beyond a fresh authorized successor
+packet, external Policy_Local mutation, public-sync, provider/API key use,
+production readiness, or public readiness remain unauthorized without fresh
+authorization.
 Parked lanes remain Live Redis, DEP2, and external receipt-anchor.
 
 LPCI2-T12 remains forbidden until a separate operator-authorized evidence path

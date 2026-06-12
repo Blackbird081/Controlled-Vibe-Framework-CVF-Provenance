@@ -8,7 +8,7 @@ docType: reference
 
 Date: 2026-06-02
 
-Last updated: 2026-06-11
+Last updated: 2026-06-12
 
 Standard: `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md`
 
@@ -102,6 +102,8 @@ prior scan here before starting new work.
 | `CVF Extraction Foundation EX-T3 through EX-T6 pipeline tests` | CVF_EXTENSION | SCANNED | EX-T3-EX-T6 | 1 | 10 pytest assertions covering language mapping, explicit OCR adapter requirement, confidence capture, quality flags, fixed-window chunking, and raw-content-release boundary |
 | `CVF Extraction Foundation EX-T7 sentence-boundary chunking source` | CVF_EXTENSION | SCANNED | EX-T7 | 1 | Optional deterministic sentence-boundary strategy with fixed-window fallback and charStart/charEnd metadata; fixed-window default preserved |
 | `CVF Extraction Foundation EX-T7 sentence-boundary chunking tests` | CVF_EXTENSION | SCANNED | EX-T7 | 1 | Focused pytest coverage for sentence grouping, long-span fallback, deterministic IDs, offset metadata, and raw-content-release boundary |
+| `CVF Extraction Foundation EX-T8 authority/storage boundary source` | CVF_EXTENSION | SCANNED | EX-T8 | 1 | Extraction authority, rebuild class, raw OCR retention flag, storage boundary, boundary hash, and descriptor metadata propagation |
+| `CVF Extraction Foundation EX-T8 authority/storage boundary tests` | CVF_EXTENSION | SCANNED | EX-T8 | 1 | Focused pytest coverage for authority, Tier 1/Tier 2 rebuild class, raw OCR retention default, descriptor metadata, and boundary hash determinism |
 
 ---
 

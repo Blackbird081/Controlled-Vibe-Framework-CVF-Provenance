@@ -21,6 +21,8 @@ DEFAULT_CHUNK_MAX_CHARS: int = 512
 
 OcrEngineName = Literal["easyocr", "tesseract"]
 ExtractionTier = Literal["TIER1_DIGITAL", "TIER2_OCR"]
+ExtractionAuthorityLevel = Literal["EXTRACTED_TEXT"]
+RebuildClass = Literal["TIER1_CHAR_OFFSET", "TIER2_PAGE_REOCR"]
 ChunkingStrategy = Literal["fixed-window-chars", "sentence-boundary-chars"]
 ExtractionStatus = Literal[
     "PASS",
@@ -108,6 +110,7 @@ class ExtractionQualityReport:
     avg_chars_per_page: float
     mean_ocr_confidence: float | None
     thresholds: dict[str, float]
+    raw_ocr_retained: bool = False
 
 
 @dataclass(frozen=True)
@@ -126,6 +129,8 @@ class ExtractionChunk:
     quality_flags: list[ExtractionStatus]
     language_codes: list[str]
     extraction_status: ExtractionStatus
+    authority_level: ExtractionAuthorityLevel = "EXTRACTED_TEXT"
+    rebuild_class: RebuildClass = "TIER1_CHAR_OFFSET"
     char_start: int | None = None
     char_end: int | None = None
     provenance: dict[str, str] = field(default_factory=dict)
@@ -141,6 +146,17 @@ class ExtractionDscpDescriptorInput:
     content_class: str
     governance_gates: dict[str, object]
     metadata: dict[str, str]
+
+
+@dataclass(frozen=True)
+class ExtractionStorageBoundary:
+    """Canonical output surface of the CVF extraction pipeline."""
+
+    descriptor_inputs: list[ExtractionDscpDescriptorInput]
+    quality_report: ExtractionQualityReport
+    chunk_count: int
+    raw_ocr_retained: bool
+    boundary_sha256: str
 
 
 def map_ocr_language_codes(
@@ -345,6 +361,12 @@ def _page_chunk_spans(
     raise ValueError(f"Unsupported chunking strategy: {strategy}")
 
 
+def _rebuild_class_for_tier(extraction_tier: ExtractionTier) -> RebuildClass:
+    if extraction_tier == "TIER1_DIGITAL":
+        return "TIER1_CHAR_OFFSET"
+    return "TIER2_PAGE_REOCR"
+
+
 def chunk_extracted_pages(
     *,
     source_artifact_id: str,
@@ -359,6 +381,7 @@ def chunk_extracted_pages(
     """Create governed chunks without language inference."""
 
     chunks: list[ExtractionChunk] = []
+    rebuild_class = _rebuild_class_for_tier(extraction_tier)
     for page in pages:
         text = page.text
         if not text:
@@ -384,6 +407,7 @@ def chunk_extracted_pages(
                     quality_flags=list(quality_report.quality_flags),
                     language_codes=list(language_codes),
                     extraction_status=quality_report.status,
+                    rebuild_class=rebuild_class,
                     char_start=start,
                     char_end=end,
                     provenance={
@@ -395,6 +419,25 @@ def chunk_extracted_pages(
                 )
             )
     return chunks
+
+
+def build_extraction_storage_boundary(
+    descriptor_inputs: list[ExtractionDscpDescriptorInput],
+    quality_report: ExtractionQualityReport,
+) -> ExtractionStorageBoundary:
+    """Wrap descriptor inputs into the canonical extraction output boundary."""
+
+    digest_input = "".join(
+        f"{descriptor.artifact_id}:{descriptor.source_hash}"
+        for descriptor in descriptor_inputs
+    )
+    return ExtractionStorageBoundary(
+        descriptor_inputs=descriptor_inputs,
+        quality_report=quality_report,
+        chunk_count=len(descriptor_inputs),
+        raw_ocr_retained=quality_report.raw_ocr_retained,
+        boundary_sha256=sha256(digest_input.encode("utf-8")).hexdigest(),
+    )
 
 
 def build_extraction_dscp_descriptor_inputs(
@@ -423,6 +466,8 @@ def build_extraction_dscp_descriptor_inputs(
             "pageStart": str(chunk.page_start),
             "pageEnd": str(chunk.page_end),
             "rawContentReleased": "false",
+            "authorityLevel": chunk.authority_level,
+            "rebuildClass": chunk.rebuild_class,
         }
         if chunk.char_start is not None and chunk.char_end is not None:
             metadata["charStart"] = str(chunk.char_start)
