@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`lpci2_ec_t4_metadata_gap_assessment_closed_b
 
 `lpci2_ec_t4_metadata_gap_assessment_closed_blocked_bounded`
 
-Current HEAD recorded for this handoff: `ff6343e3`
-(EC-T4 material closure commit; this session-sync-only commit follows it).
+Current HEAD recorded for this handoff: `c3786739`
+(EC-T4 reviewer-ownership correction commit; this session-sync-only commit follows it).
 
 ## Active Boundary
 
@@ -73,7 +73,8 @@ EX foundation expansion and complete EC-T4 before deeper use-case work.
 Rollback boundary: revert only this EC-T4 closure/session update to
 `AGENT_HANDOFF_V17_2026-06-07.md` and
 `CVF_SESSION/ACTIVE_SESSION_STATE.json` if the continuity record is incorrect.
-Do not revert EC-T4 material commit `ff6343e3`, EX-T9 implementation,
+Do not revert EC-T4 material commit `ff6343e3`, reviewer-ownership correction
+commit `c3786739`, EX-T9 implementation,
 EX-T8 material commit `43eb9624`,
 EX-T3 through EX-T6 material
 commit `bbfb14f4`, EC-T5 bounded block commit `9a894207`, Source Verification
