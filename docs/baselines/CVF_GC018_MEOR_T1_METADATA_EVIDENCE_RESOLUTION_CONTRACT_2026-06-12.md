@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 
@@ -79,6 +79,15 @@ examples before implementation begins.
 - regulated and non-regulated examples PASS;
 - no runtime/source paths changed;
 - reviewer-fast and pre-closure gates PASS.
+
+## Closure Evidence
+
+- material commit: `f3c7ff11`;
+- contract version: `cvf.metadataEvidenceResolution.meor.t1.v1`;
+- deterministic matrix: 6 rules covering 21 allowed state/basis pairs;
+- JSON parse and independent semantic recomputation: PASS;
+- legal-policy and technical-project non-bleed review: PASS;
+- changed runtime/source paths: none.
 
 ## Stop Conditions
 

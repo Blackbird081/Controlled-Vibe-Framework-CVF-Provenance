@@ -4,7 +4,7 @@
   "guard": "governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md",
   "checker": "governance/compat/check_corpus_scan_registry.py",
   "lastUpdated": "2026-06-12",
-  "updatedBy": "Codex (LPCI2 EX-T9 closure)",
+  "updatedBy": "Codex (MEOR-T1 closure)",
   "allowedCorpusTypes": [
     "LEGACY_FOLDER",
     "PROJECT_SOURCE",
@@ -2404,6 +2404,26 @@
       "manifestPath": null,
       "packetPath": "docs/reviews/CVF_LPCI2_EX_T9_OPERATOR_VISIBLE_SCAN_OUTCOME_REPORT_COMPLETION_2026-06-12.md",
       "notes": "Focused pytest coverage for PASS, all current extraction quality signals, generic blocking findings, deterministic JSON, Markdown evidence, raw-content non-release, and Unicode filename writes."
+    },
+    {
+      "id": "meor-t1-metadata-evidence-resolution-contract",
+      "corpusType": "PROJECT_SOURCE",
+      "displayName": "CVF MEOR-T1 metadata evidence resolution contract",
+      "scopePaths": [
+        "docs/reference/CVF_METADATA_EVIDENCE_AND_OPERATOR_RESOLUTION_CONTRACT_2026-06-12.md",
+        "docs/reference/CVF_METADATA_EVIDENCE_AND_OPERATOR_RESOLUTION_SEMANTICS_2026-06-12.json"
+      ],
+      "fileCount": 2,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "Re-scan when the contract version changes or a new profile-scoped requirement class is added.",
+      "scanWave": "MEOR-T1",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MEOR_T1_METADATA_EVIDENCE_RESOLUTION_CONTRACT_COMPLETION_2026-06-12.md",
+      "notes": "Domain-agnostic metadata requirement, evidence basis, operator resolution, downstream re-evaluation, failure-token, and cross-domain isolation semantics. Specification only; no runtime, source-authenticity, domain-truth, gate-activation, or readiness claim."
     }
   ]
 }

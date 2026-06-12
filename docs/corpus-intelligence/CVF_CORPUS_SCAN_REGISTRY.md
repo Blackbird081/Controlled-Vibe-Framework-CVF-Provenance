@@ -106,6 +106,7 @@ prior scan here before starting new work.
 | `CVF Extraction Foundation EX-T8 authority/storage boundary tests` | CVF_EXTENSION | SCANNED | EX-T8 | 1 | Focused pytest coverage for authority, Tier 1/Tier 2 rebuild class, raw OCR retention default, descriptor metadata, and boundary hash determinism |
 | `CVF Extraction Foundation EX-T9 scan outcome report source` | CVF_EXTENSION | SCANNED | EX-T9 | 1 | Domain-agnostic operator findings, stable actions, deterministic JSON/Markdown, and UTF-8 caller-selected output paths without raw content release |
 | `CVF Extraction Foundation EX-T9 scan outcome report tests` | CVF_EXTENSION | SCANNED | EX-T9 | 1 | Focused pytest coverage for PASS, all current quality signals, generic blocking findings, deterministic rendering, raw-content non-release, and Unicode filenames |
+| `CVF MEOR-T1 metadata evidence resolution contract` | PROJECT_SOURCE | SCANNED | MEOR-T1 | 2 | Domain-agnostic requirement, evidence, resolution, re-evaluation, failure-token, and cross-domain isolation semantics; specification only |
 
 ---
 

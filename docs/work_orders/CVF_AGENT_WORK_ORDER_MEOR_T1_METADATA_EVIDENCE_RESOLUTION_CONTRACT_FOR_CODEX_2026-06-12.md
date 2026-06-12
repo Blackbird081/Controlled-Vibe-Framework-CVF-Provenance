@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -18,7 +18,7 @@ dispatchBaseHead: `eb4ad235`
 
 executionBaseHead: `55bd57fb`
 
-closureBaseHead: REVIEWER_CAPTURE
+closureBaseHead: `f3c7ff11`
 
 GC-018: `docs/baselines/CVF_GC018_MEOR_T1_METADATA_EVIDENCE_RESOLUTION_CONTRACT_2026-06-12.md`
 
@@ -32,8 +32,8 @@ semantics before any runtime implementation.
 | Authority | Path | Status |
 | --- | --- | --- |
 | Operator direction | 2026-06-12 foundation-first execution | ACCEPT |
-| Roadmap | `docs/roadmaps/CVF_METADATA_EVIDENCE_AND_OPERATOR_RESOLUTION_FOUNDATION_ROADMAP_2026-06-12.md` | MEOR-T1 `SPEC_PENDING` |
-| GC-018 | `docs/baselines/CVF_GC018_MEOR_T1_METADATA_EVIDENCE_RESOLUTION_CONTRACT_2026-06-12.md` | DISPATCH_READY |
+| Roadmap | `docs/roadmaps/CVF_METADATA_EVIDENCE_AND_OPERATOR_RESOLUTION_FOUNDATION_ROADMAP_2026-06-12.md` | MEOR-T1 `CLOSED_PASS_BOUNDED` |
+| GC-018 | `docs/baselines/CVF_GC018_MEOR_T1_METADATA_EVIDENCE_RESOLUTION_CONTRACT_2026-06-12.md` | CLOSED_PASS_BOUNDED |
 
 ## Roadmap-To-Work-Order Trace Matrix
 
@@ -123,6 +123,7 @@ this work order. Escalate only for a Return-To-Orchestrator condition.
 
 - the two T1 reference artifacts;
 - this GC-018/work order, roadmap status, completion review, and continuity;
+- GC-051 JSON and Markdown registry rows for the T1 contract corpus;
 - local JSON/semantic verification scripts executed without new dependencies.
 
 ## Forbidden Scope
@@ -139,6 +140,8 @@ this work order. Escalate only for a Return-To-Orchestrator condition.
 | `docs/reference/CVF_METADATA_EVIDENCE_AND_OPERATOR_RESOLUTION_CONTRACT_2026-06-12.md` | CREATE |
 | `docs/reference/CVF_METADATA_EVIDENCE_AND_OPERATOR_RESOLUTION_SEMANTICS_2026-06-12.json` | CREATE |
 | T1 baseline/work order/completion and parent roadmap | REVIEWER CLOSURE |
+| `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | REVIEWER CLOSURE |
+| `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | REVIEWER CLOSURE |
 | `EXTENSIONS/**` | FORBIDDEN |
 
 ## Forbidden Filesystem State At Dispatch
@@ -192,13 +195,13 @@ activation or autonomous correction language.
 
 ## Closure Checklist
 
-- [ ] Contract exists and is structurally complete.
-- [ ] JSON parses and matches contract values.
-- [ ] Examples show no cross-domain bleed.
-- [ ] No runtime/source path changed.
-- [ ] Reviewer-fast passes.
-- [ ] Completion review and roadmap status are updated.
-- [ ] Session continuity is synchronized after material commit.
+- [x] Contract exists and is structurally complete.
+- [x] JSON parses and matches contract values.
+- [x] Examples show no cross-domain bleed.
+- [x] No runtime/source path changed.
+- [x] Reviewer-fast passes.
+- [x] Completion review and roadmap status are updated.
+- [x] Session continuity is synchronized after material commit.
 
 ## Return-To-Orchestrator Conditions
 
@@ -215,12 +218,16 @@ roadmap. No additional checkpoint is required inside T1 allowed scope.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | this file | closed-equivalent status after review | OPEN |
-| Completion review | `docs/reviews/CVF_MEOR_T1_METADATA_EVIDENCE_RESOLUTION_CONTRACT_COMPLETION_2026-06-12.md` | final disposition | OPEN |
-| Roadmap state | foundation roadmap | MEOR-T1 row | OPEN |
-| Contract | T1 Markdown reference | contract version | OPEN |
-| Semantics | T1 JSON reference | schema version and JSON parse | OPEN |
-| Session continuity | active state/memory/handoff | MEOR-T2 release requires the T1 completion artifact and its closure commit | OPEN |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MEOR_T1_METADATA_EVIDENCE_RESOLUTION_CONTRACT_COMPLETION_2026-06-12.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | foundation roadmap | MEOR-T1 closed; MEOR-T2 spec pending | PASS |
+| Contract | T1 Markdown reference | `cvf.metadataEvidenceResolution.meor.t1.v1` | PASS |
+| Semantics | T1 JSON reference | JSON parse and 21-pair recomputation | PASS |
+| Registry JSON | GC-051 machine registry | MEOR-T1 contract corpus entry | PASS |
+| Registry Markdown | GC-051 quick lookup | MEOR-T1 contract corpus row | PASS |
+| External evidence digest | N/A with reason: only repo-local source and synthetic examples used | no external evidence consumed | N/A with reason |
+| System loop interlock | N/A with reason: no runtime loop changed | specification-only tranche | N/A with reason |
+| Session continuity | active state/memory/handoff | MEOR-T2 authoring only after T1 closure | PASS |
 
 ## Claim Boundary
 
