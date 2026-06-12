@@ -59,7 +59,7 @@ Pain-point closure direction:
 ## Latest Continuity Note
 
 LPCI2 EX-T8 extraction authority and storage boundary is
-`CLOSED_PASS_BOUNDED` at pending closure commit.
+`CLOSED_PASS_BOUNDED` at material commit `43eb9624`.
 
 Artifacts:
 

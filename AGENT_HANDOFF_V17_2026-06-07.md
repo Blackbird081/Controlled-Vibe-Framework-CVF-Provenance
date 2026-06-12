@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`lpci2_ex_t8_extraction_authority_storage_bou
 
 `lpci2_ex_t8_extraction_authority_storage_boundary_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `fcf0f545`
-(parent before EX-T8 closure commit; follow-up sync may update exact closure SHA).
+Current HEAD recorded for this handoff: `43eb9624`
+(EX-T8 material closure commit; this session sync follows it).
 
 ## Active Boundary
 
@@ -57,9 +57,9 @@ in archived handoffs and governed completion packets.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: EX-T7 sentence-boundary chunking closure
-plus session continuity sync so the active handoff and state registry record EX
-closure while preserving EC activation and retrieval as blocked.
+Authorized guard-maintenance scope: EX-T8 extraction authority/storage boundary
+closure plus session continuity sync so the active handoff and state registry
+record EX closure while preserving EC activation and retrieval as blocked.
 
 Protected paths:
 
@@ -69,17 +69,17 @@ Operator authorization: 2026-06-11 operator instructed Codex to close multiple
 roles and complete all related roadmap work still allowed by the current
 boundaries.
 
-Rollback boundary: revert only this EX-T7 closure/session update to
+Rollback boundary: revert only this EX-T8 closure/session update to
 `AGENT_HANDOFF_V17_2026-06-07.md` and
 `CVF_SESSION/ACTIVE_SESSION_STATE.json` if the continuity record is incorrect.
-Do not revert EX-T3 through EX-T6 material commit `bbfb14f4`, EC-T5 bounded
-block commit `9a894207`, Source Verification hardening commit `838512da`, or
-unrelated governance/session history.
+Do not revert EX-T8 material commit `43eb9624`, EX-T3 through EX-T6 material
+commit `bbfb14f4`, EC-T5 bounded block commit `9a894207`, Source Verification
+hardening commit `838512da`, or unrelated governance/session history.
 
 ## Latest Continuity Note
 
 LPCI2 EX-T8 extraction authority and storage boundary is
-`CLOSED_PASS_BOUNDED` at pending closure commit.
+`CLOSED_PASS_BOUNDED` at material commit `43eb9624`.
 
 Artifacts:
 
