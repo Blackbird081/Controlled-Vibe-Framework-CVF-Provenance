@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: AUTHORIZED
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 
@@ -73,7 +73,7 @@ Source evidence:
 
 ## Decision / Baseline / Proposed Tranche
 
-Decision: authorize RDA-T2 as a bounded implementation tranche.
+Decision: authorize and close RDA-T2 as a bounded implementation tranche.
 
 Baseline:
 
@@ -88,6 +88,18 @@ Proposed tranche output:
 - focused tests;
 - GC-051 registry coverage;
 - completion packet and continuity update.
+
+Closure output:
+
+- `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.regulated.domain.adapter.ts`
+  implements local deterministic regulated requirement generation.
+- `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/control.plane.context.barrel.ts`
+  exports the adapter surface for later CPF consumers.
+- `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.regulated.domain.adapter.test.ts`
+  covers regulated, non-regulatory, ownership, bridge, and no-gate-activation
+  behavior.
+- GC-051 registry JSON/Markdown cover the new source/export and test surfaces.
+- Completion packet records bounded closure.
 
 ## Design Control Gate
 
@@ -139,6 +151,14 @@ Required verification:
 - GC-051 registry check after adding source/test files;
 - reviewer-fast before Codex closure review;
 - pre-closure autorun gate before final closed claim.
+
+Observed verification:
+
+- `npm run check` in `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION`: PASS.
+- `npm run test -- tests/dscp.regulated.domain.adapter.test.ts`: PASS
+  16/16.
+- `python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast`:
+  PASS 11/11.
 
 ## Claim Boundary
 

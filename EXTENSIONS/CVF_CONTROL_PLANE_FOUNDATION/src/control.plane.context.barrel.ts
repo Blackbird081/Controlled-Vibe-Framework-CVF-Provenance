@@ -91,6 +91,15 @@ export type {
   DscpMetadataRequirementFailureToken,
 } from "./dscp.metadata.requirement.bridge";
 
+export {
+  REGULATED_DOMAIN_REQUIREMENT_MAPPINGS,
+  buildRegulatedDomainMetadataRequirements,
+} from "./dscp.regulated.domain.adapter";
+export type {
+  RegulatedDomainAdapterFailureToken,
+  RegulatedDomainAdapterResult,
+} from "./dscp.regulated.domain.adapter";
+
 export { DscpDomainProfileRegistry, createDscpDomainProfileRegistry } from "./dscp.domain.profile.registry";
 export type {
   DomainProfileSelectionCriteria,

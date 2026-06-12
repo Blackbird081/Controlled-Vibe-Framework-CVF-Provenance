@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -40,7 +40,7 @@ regulated document lifecycle metadata.
 | Authority | Path | Status |
 | --- | --- | --- |
 | Operator direction | 2026-06-12 continue following MEOR/RDA foundation closure | ACCEPT |
-| Parent roadmap | `docs/roadmaps/CVF_MEOR_REGULATED_DOMAIN_ADAPTER_ROADMAP_2026-06-12.md` | ACTIVE_RDA_T2_DISPATCHED |
+| Parent roadmap | `docs/roadmaps/CVF_MEOR_REGULATED_DOMAIN_ADAPTER_ROADMAP_2026-06-12.md` | ACTIVE_RDA_T2_CLOSED_RDA_T3_AUTHORIZATION_READY |
 | RDA-T1 completion | `docs/reviews/CVF_MEOR_RDA_T1_REGULATED_DATE_ADAPTER_CONTRACT_COMPLETION_2026-06-12.md` | CLOSED_PASS_BOUNDED |
 | RDA-T2 GC-018 | `docs/baselines/CVF_GC018_MEOR_RDA_T2_DETERMINISTIC_ADAPTER_IMPLEMENTATION_2026-06-12.md` | AUTHORIZED |
 
@@ -180,23 +180,23 @@ Encoding rule: all agent-authored artifacts and code comments default to ASCII.
 
 | Artifact | Required action | Notes |
 | --- | --- | --- |
-| CPF adapter source | CREATE | local deterministic helper |
-| focused CPF tests | CREATE | regulated/non-regulatory/failure cases |
-| GC-051 registry JSON/Markdown | UPDATE | cover new source/test files |
-| completion review | CREATE | close or block bounded |
-| parent roadmap | UPDATE | RDA-T2 closure state |
-| active continuity | UPDATE | next allowed move |
+| CPF adapter source | CREATED | local deterministic helper |
+| focused CPF tests | CREATED | regulated/non-regulatory/failure cases |
+| GC-051 registry JSON/Markdown | UPDATED | cover new source/test files and export surface |
+| completion review | CREATED | close bounded |
+| parent roadmap | UPDATED | RDA-T2 closure state |
+| active continuity | CODEX_SYNC_PENDING | updated after closure commit |
 
 ## Work-Order Fulfillment Manifest
 
 | Required artifact | Fulfillment rule | Closure status before execution |
 | --- | --- | --- |
-| CPF adapter source | must be created or explicitly blocked | BLOCKED |
-| Focused CPF tests | must be created and passing or explicitly blocked | BLOCKED |
-| GC-051 registry JSON/Markdown | must cover new source/test files or closure is blocked | BLOCKED |
-| Completion review | Codex-owned after worker return | BLOCKED |
-| Parent roadmap update | must close or block RDA-T2 | BLOCKED |
-| Continuity update | Codex-owned after commit | BLOCKED |
+| CPF adapter source | must be created or explicitly blocked | PASS |
+| Focused CPF tests | must be created and passing or explicitly blocked | PASS |
+| GC-051 registry JSON/Markdown | must cover new source/test files or closure is blocked | PASS |
+| Completion review | Codex-owned after worker return | PASS |
+| Parent roadmap update | must close or block RDA-T2 | PASS |
+| Continuity update | Codex-owned after commit | CODEX_SYNC_PENDING |
 
 ## Pre-Flight Checks
 
@@ -257,12 +257,12 @@ production readiness, or public readiness.
 
 ## Closure Checklist
 
-- [ ] Source helper implemented.
-- [ ] Focused tests implemented and passing.
-- [ ] GC-051 registry updated for new source/test files.
-- [ ] No external Policy_Local or EC activation changes.
-- [ ] Reviewer-fast and pre-closure pass.
-- [ ] Continuity sync completed after Codex commit.
+- [x] Source helper implemented.
+- [x] Focused tests implemented and passing.
+- [x] GC-051 registry updated for new source/test files and export surface.
+- [x] No external Policy_Local or EC activation changes.
+- [x] Reviewer-fast passed; pre-closure runs after material commit.
+- [x] Continuity sync is reviewer-owned after Codex commit.
 
 ## Return-To-Orchestrator Conditions
 
@@ -281,14 +281,14 @@ Return-To-Orchestrator Conditions requires a fresh operator checkpoint.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | this file | `Status: DISPATCHED` | PASS |
-| Completion or reviewer artifact | RDA-T2 completion review | absent before execution | BLOCKED |
-| Roadmap state | parent roadmap | RDA-T2 dispatched | PASS |
-| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | update required if new source/test files are created | BLOCKED with reason |
-| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | update required if new source/test files are created | BLOCKED with reason |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | RDA-T2 completion review | `docs/reviews/CVF_MEOR_RDA_T2_DETERMINISTIC_ADAPTER_IMPLEMENTATION_COMPLETION_2026-06-12.md` | PASS |
+| Roadmap state | parent roadmap | RDA-T2 closed; RDA-T3 authorization ready | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | source/export and test entries updated | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | source/export and test rows updated | PASS |
 | External evidence digest | N/A with reason: repo-local implementation | no external evidence expected | N/A with reason |
 | System loop interlock | N/A with reason: no loop mutation | no system-loop registry update expected | N/A with reason |
-| Session continuity | active state/memory/handoff | RDA-T2 execution next | PASS |
+| Session continuity | active state/memory/handoff | N/A with reason: sync requires the material commit hash and is performed in a separate continuity commit | N/A with reason |
 
 ## Claim Boundary
 

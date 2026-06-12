@@ -2547,6 +2547,51 @@
       "manifestPath": null,
       "packetPath": "docs/reviews/CVF_MEOR_T4_CROSS_DOMAIN_CONFORMANCE_COMPLETION_2026-06-12.md",
       "notes": "TypeScript and Python suites consume the same fixture and prove exact requirement sets, cross-profile rejection, four deterministic outcomes, and absence of real use-case coupling."
+    },
+    {
+      "id": "meor-rda-t2-regulated-domain-adapter-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF MEOR-RDA-T2 regulated-domain adapter source and export surface",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/control.plane.context.barrel.ts",
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.regulated.domain.adapter.ts"
+      ],
+      "fileCount": 2,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "policy_local",
+        "QUERY_CLASS_GATED",
+        "ec_activation",
+        "ocr:",
+        "raw:"
+      ],
+      "nextScanRecommendation": "Re-scan if regulated concept mappings or RDA-T1 semantics change.",
+      "scanWave": "MEOR-RDA-T2",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MEOR_RDA_T2_DETERMINISTIC_ADAPTER_IMPLEMENTATION_COMPLETION_2026-06-12.md",
+      "notes": "Local deterministic helper and CPF context-barrel export converting DscpDomainProfile into four profile-owned regulated MEOR requirements when supportsDocumentStatus=true; non-regulatory profiles receive eligible=false with no requirements generated."
+    },
+    {
+      "id": "meor-rda-t2-regulated-domain-adapter-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF MEOR-RDA-T2 regulated-domain adapter tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.regulated.domain.adapter.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MEOR-RDA-T2",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MEOR_RDA_T2_DETERMINISTIC_ADAPTER_IMPLEMENTATION_COMPLETION_2026-06-12.md",
+      "notes": "16 focused TypeScript tests covering: non-regulatory profile rejection, false flag rejection, empty-ID failure, regulated profile eligible=true, owner-profile scoping, evidence-basis values, all four concept keys, requirement IDs, required=true, two-profile isolation, non-bleed proof, bridge-pass with correct owner, bridge OWNER_PROFILE_MISMATCH with foreign profile, frozen mapping table, frozen result, and no QUERY_CLASS_GATED write. All 16 pass."
     }
   ]
 }
