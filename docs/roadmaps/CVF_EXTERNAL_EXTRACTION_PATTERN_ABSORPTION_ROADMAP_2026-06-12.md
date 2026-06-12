@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: EXA_T2_DISPATCHED
+Status: EXA_T2_CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -109,8 +109,8 @@ Rejected design:
 | Tranche | Deliverable | Dependency | Status |
 | --- | --- | --- | --- |
 | EXA-T1 | External extraction pattern source map and absorption decision | RDA-T4 closure `dba15ca7` | CLOSED_PASS_BOUNDED at `6db11aed` |
-| EXA-T2 | CVF scan strategy decision contract | EXA-T1 closure `6db11aed` plus fresh GC-018/work order | DISPATCHED from base `8376a31a` |
-| PL-S1 | Policy_Local evidence-resolution pilot | EXA-T2 closure plus fresh authorization | HOLD_PENDING_EXA_T2 |
+| EXA-T2 | CVF scan strategy decision contract | EXA-T1 closure `6db11aed` plus fresh GC-018/work order | CLOSED_PASS_BOUNDED |
+| PL-S1 | Policy_Local evidence-resolution pilot | EXA-T2 closure plus fresh authorization | READY_FOR_FRESH_AUTHORIZATION |
 
 ## EXA-T1 Closure Result
 
@@ -172,15 +172,42 @@ operator scan-report owner surfaces. It must not import external code, install
 dependencies, execute OCR, call providers, mutate Policy_Local, activate EC,
 change retrieval behavior, ingest corpus data, or claim readiness.
 
+## EXA-T2 Closure Result
+
+EXA-T2 is `CLOSED_PASS_BOUNDED`.
+
+Artifacts:
+
+- source:
+  `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/scan_route_decision.py`
+- focused tests:
+  `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_scan_route_decision.py`
+- worker return:
+  `docs/reviews/CVF_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_WORKER_RETURN_2026-06-12.md`
+- completion review:
+  `docs/reviews/CVF_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_COMPLETION_2026-06-12.md`
+
+Result: CVF extraction foundation now has deterministic
+`DocumentScanSignals`, `ScanRouteDecision`, and `decide_scan_route()` contracts
+for local scan routing. The route decision maps current extraction quality
+statuses to stable local/OCR-eligible/escalate/block dispositions and
+fail-closes invalid or contradictory scan signals. This is a scan-layer
+foundation contract only.
+
+Next allowed move: fresh PL-S1 authorization for the downstream Policy_Local
+evidence-resolution pilot. PL-S1 remains separate from EXA-T2 closure and must
+not mutate external Policy_Local files until its own GC-018/work order permits
+that action.
+
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_EXA_T1_DICH_TAI_LIEU_EXTRACTION_PATTERN_ABSORPTION_FOR_CLAUDE_2026-06-12.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_EXA_T1_DICH_TAI_LIEU_SCAN_LAYER_PATTERN_ABSORPTION_COMPLETION_2026-06-12.md` | `Status: CLOSED_PASS_BOUNDED`; material review commit `6db11aed` | PASS |
-| Roadmap state | this file | `Status: EXA_T1_CLOSED_PASS_BOUNDED` | PASS |
-| Registry JSON | BLOCKED with reason: no CVF source/test corpus was added | no GC-051 mutation authorized | BLOCKED with reason |
-| Registry Markdown | BLOCKED with reason: no CVF source/test corpus was added | no GC-051 mutation authorized | BLOCKED with reason |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_FOR_CLAUDE_2026-06-12.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_COMPLETION_2026-06-12.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this file | `Status: EXA_T2_CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | EXA-T2 source/test rows | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | EXA-T2 source/test rows | PASS |
 | External evidence digest | `docs/reference/CVF_EXA_T1_DICH_TAI_LIEU_SCAN_LAYER_PATTERN_SOURCE_MAP_2026-06-12.md` | SHA-256 `e1bdc496a12c5d313098e7ee45166f0706a84162065bf71c24ca25b9decec603` | PASS |
 | System loop interlock | N/A with reason: no loop mutation | no interlock update required | N/A with reason |
 | Session continuity | active state/memory/handoff | reviewer-owned closure sync | PASS |

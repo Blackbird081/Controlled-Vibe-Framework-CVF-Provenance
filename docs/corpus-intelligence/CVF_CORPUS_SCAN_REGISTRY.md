@@ -8,7 +8,7 @@ docType: reference
 
 Date: 2026-06-02
 
-Last updated: 2026-06-12 (MEOR-RDA-T3 cross-domain conformance tests)
+Last updated: 2026-06-12 (EXA-T2 scan route decision contracts closure)
 
 Standard: `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md`
 
@@ -117,6 +117,8 @@ prior scan here before starting new work.
 | `CVF MEOR-RDA-T2 regulated-domain adapter tests` | CVF_EXTENSION | SCANNED | MEOR-RDA-T2 | 1 | 16 focused TypeScript tests covering non-regulatory rejection, empty-ID failure, regulated eligible=true, owner scoping, evidence bases, concept keys, bridge-pass, bridge-mismatch, frozen result, and no gate activation |
 | `CVF MEOR-RDA-T3 regulated-domain cross-domain conformance tests` | CVF_EXTENSION | SCANNED | MEOR-RDA-T3 | 1 | Focused TypeScript conformance tests proving explicit legal-policy support, non-regulatory default non-bleed, support-flag rejection, owner mismatch fail-closed behavior, and two-profile ownership isolation |
 
+| `CVF Extraction Foundation EXA-T2 scan route decision source` | CVF_EXTENSION | SCANNED | EXA-T2 | 1 | Deterministic DocumentScanSignals + ScanRouteDecision + decide_scan_route(); maps PASS/NEEDS_TIER2_OCR/OCR_LOW_CONFIDENCE/PARTIAL/EMPTY to four stable dispositions; unsupported source type or language -> BLOCKED_UNSUPPORTED; no OCR, provider, or raw content |
+| `CVF Extraction Foundation EXA-T2 scan route decision tests` | CVF_EXTENSION | SCANNED | EXA-T2 | 1 | Focused pytest coverage for PASS/local route, OCR-eligible route, OCR_LOW_CONFIDENCE/partial/empty escalation, unsupported language blocking, unsupported source-type blocking, docx support, deterministic repeatability, version+claim-boundary presence, and no raw-content fields |
 ---
 
 ## Finding Index

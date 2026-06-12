@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -16,9 +16,9 @@ Commit mode: WORKER_MUST_NOT_COMMIT
 
 dispatchBaseHead: `8376a31a`
 
-executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
+executionBaseHead: `5a3d1262`
 
-closureBaseHead: `REVIEWER_MUST_CAPTURE_AT_CLOSURE`
+closureBaseHead: `5a3d1262`
 
 completionReviewPath:
 `docs/reviews/CVF_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_COMPLETION_2026-06-12.md`
@@ -47,6 +47,28 @@ Success means the worker returns uncommitted source, tests, registry updates if
 needed, and evidence proving that route decisions are deterministic,
 domain-agnostic, and do not execute OCR, providers, Policy_Local mutation, or
 retrieval.
+
+## Closure Result
+
+Codex reviewed the Claude no-commit return, repaired two allowed-scope issues,
+and accepted EXA-T2 as `CLOSED_PASS_BOUNDED`.
+
+Accepted implementation:
+
+- `DocumentScanSignals` frozen dataclass;
+- `ScanRouteDecision` frozen dataclass;
+- four stable route dispositions;
+- deterministic `decide_scan_route()` mapping for current extraction quality
+  statuses;
+- fail-closed escalation for invalid or contradictory scan signals;
+- GC-051 source/test registry coverage.
+
+Verification:
+
+- `python -m py_compile EXTENSIONS\CVF_EXTRACTION_FOUNDATION\src\scan_route_decision.py` PASS;
+- focused pytest PASS 23/23;
+- extraction-foundation pytest PASS 105/105;
+- reviewer-fast PASS 12/12.
 
 ## Authority Chain
 
@@ -247,6 +269,19 @@ Required artifacts:
 | GC-051 JSON/Markdown | updated if new files are created |
 | worker return review | created under `docs/reviews/` |
 
+## Required Artifact Manifest
+
+| Path | Purpose | Required at handoff | Status |
+| --- | --- | --- | --- |
+| `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/scan_route_decision.py` | EXA-T2 source contract | YES | PASS |
+| `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_scan_route_decision.py` | focused EXA-T2 tests | YES | PASS |
+| `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | GC-051 machine registry rows | YES | PASS |
+| `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | GC-051 human registry rows | YES | PASS |
+| `docs/reviews/CVF_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_WORKER_RETURN_2026-06-12.md` | worker return packet | YES | PASS |
+| `docs/reviews/CVF_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_COMPLETION_2026-06-12.md` | Codex completion review | YES | PASS |
+| `docs/roadmaps/CVF_EXTERNAL_EXTRACTION_PATTERN_ABSORPTION_ROADMAP_2026-06-12.md` | parent roadmap closure state | YES | PASS |
+| `docs/work_orders/CVF_AGENT_WORK_ORDER_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_FOR_CLAUDE_2026-06-12.md` | work order closure state | YES | PASS |
+
 Forbidden proof literals in changed source/tests:
 
 - `provider fallback`
@@ -387,9 +422,19 @@ public-sync, EC/T12 release, destructive action, or a claim-boundary change.
 Allowed:
 
 - create the scan route decision source/test files;
+- `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/scan_route_decision.py`;
+- `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_scan_route_decision.py`;
 - use existing extraction foundation imports and dataclasses;
 - update GC-051 for new source/test files;
+- `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`;
+- `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`;
 - create the worker return packet;
+- `docs/reviews/CVF_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_WORKER_RETURN_2026-06-12.md`;
+- create the Codex completion review;
+- `docs/reviews/CVF_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_COMPLETION_2026-06-12.md`;
+- close this work order and parent roadmap state;
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_FOR_CLAUDE_2026-06-12.md`;
+- `docs/roadmaps/CVF_EXTERNAL_EXTRACTION_PATTERN_ABSORPTION_ROADMAP_2026-06-12.md`;
 - record bounded findings and learning disposition if defects are found.
 
 Forbidden:
@@ -417,27 +462,27 @@ Return blocked to Codex if:
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | this file | worker leaves DISPATCHED or Codex later closes | N/A with reason |
-| Completion or reviewer artifact | `docs/reviews/CVF_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_COMPLETION_2026-06-12.md` | reviewer-owned after commit | N/A with reason |
-| Roadmap state | `docs/roadmaps/CVF_EXTERNAL_EXTRACTION_PATTERN_ABSORPTION_ROADMAP_2026-06-12.md` | EXA-T2 dispatched before worker execution | PASS |
-| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | required if new source/test files are added | BLOCKED with reason |
-| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | required if new source/test files are added | BLOCKED with reason |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_COMPLETION_2026-06-12.md` | reviewer-owned completion created | PASS |
+| Roadmap state | `docs/roadmaps/CVF_EXTERNAL_EXTRACTION_PATTERN_ABSORPTION_ROADMAP_2026-06-12.md` | EXA-T2 closed bounded | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | EXA-T2 source/test rows added | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | EXA-T2 source/test quick-lookup rows added | PASS |
 | External evidence digest | EXA-T1 source map | `sha256:e1bdc496a12c5d313098e7ee45166f0706a84162065bf71c24ca25b9decec603`; prior verification reused, no new external source read required | PASS |
 | System loop interlock | N/A with reason: no loop mutation authorized | no interlock update required | N/A with reason |
-| Session continuity | active session files | Codex-owned after dispatch or closure | N/A with reason |
+| Session continuity | active session files | Codex-owned follow-up sync after material closure commit | N/A with reason |
 
 ## Closure Checklist
 
-- [ ] Worker return includes actual pending file list.
-- [ ] Focused tests pass.
-- [ ] Existing extraction-foundation tests pass or have a command-backed
+- [x] Worker return includes actual pending file list.
+- [x] Focused tests pass.
+- [x] Existing extraction-foundation tests pass or have a command-backed
   out-of-scope blocker.
-- [ ] Changed Python source compiles.
-- [ ] GC-051 coverage is updated if new source/test files are created.
-- [ ] No OCR/provider/API-key, Policy_Local, EC, retrieval, corpus ingestion,
+- [x] Changed Python source compiles.
+- [x] GC-051 coverage is updated if new source/test files are created.
+- [x] No OCR/provider/API-key, Policy_Local, EC, retrieval, corpus ingestion,
   public-sync, or readiness claim is introduced.
-- [ ] Codex commits the approved range.
-- [ ] Codex runs pre-closure with a non-empty committed range before marking
+- [x] Codex commits the approved range.
+- [x] Codex runs pre-closure with a non-empty committed range before marking
   closure.
 
 ## Claim Boundary

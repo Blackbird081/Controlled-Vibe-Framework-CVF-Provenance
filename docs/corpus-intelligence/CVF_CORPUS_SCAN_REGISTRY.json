@@ -4,7 +4,7 @@
   "guard": "governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md",
   "checker": "governance/compat/check_corpus_scan_registry.py",
   "lastUpdated": "2026-06-12",
-  "updatedBy": "Codex (MEOR-T4 conformance)",
+  "updatedBy": "Codex (EXA-T2 scan route decision contracts closure)",
   "allowedCorpusTypes": [
     "LEGACY_FOLDER",
     "PROJECT_SOURCE",
@@ -2617,6 +2617,51 @@
       "manifestPath": null,
       "packetPath": "docs/reviews/CVF_MEOR_RDA_T3_CROSS_DOMAIN_CONFORMANCE_COMPLETION_2026-06-12.md",
       "notes": "Focused TypeScript conformance tests proving explicit legal-policy support generates exactly four regulated requirements, company_docs/technical_project/governance_docs/mixed_corpus profiles receive no lifecycle requirements by default, legal-policy without the support flag is rejected, cross-profile attachment fails with OWNER_PROFILE_MISMATCH, and two regulated profiles keep requirement ownership isolated."
+    },
+    {
+      "id": "exa-t2-scan-route-decision-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation EXA-T2 scan route decision source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/scan_route_decision.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "DocumentScanSignals (absent before EXA-T2 - confirmed by pre-flight search)",
+        "ScanRouteDecision (absent before EXA-T2 - confirmed by pre-flight search)",
+        "ExtractionStrategy (not imported - confirmed by pre-flight search)",
+        "EQSReport (not imported - confirmed by pre-flight search)",
+        "provider fallback (not present)",
+        "Policy_Local (not present)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "EXA-T2",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_WORKER_RETURN_2026-06-12.md",
+      "notes": "Deterministic DocumentScanSignals dataclass and ScanRouteDecision contract. decide_scan_route() maps PASS/NEEDS_TIER2_OCR/OCR_LOW_CONFIDENCE/PARTIAL_EXTRACTION/EMPTY to four stable route dispositions, and treats unsupported source types and language codes as BLOCKED_UNSUPPORTED via the governed OCR language mapping table. No OCR execution, no provider call, no Policy_Local mutation, no raw content release."
+    },
+    {
+      "id": "exa-t2-scan-route-decision-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation EXA-T2 scan route decision tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_scan_route_decision.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "EXA-T2",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_WORKER_RETURN_2026-06-12.md",
+      "notes": "Focused pytest coverage for PASS/local route, NEEDS_TIER2_OCR/OCR-eligible route, OCR_LOW_CONFIDENCE/partial/empty escalation, unsupported language blocking, unsupported source type blocking, source-type priority over language check, docx support, empty language codes, deterministic repeatability, version+claim-boundary presence, no raw-content fields, and parametrized status-to-route mapping."
     }
   ]
 }
