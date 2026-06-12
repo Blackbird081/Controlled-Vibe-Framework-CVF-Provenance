@@ -220,7 +220,7 @@ evidence exists.
 
 | Tranche | Deliverable | Dependency | Status |
 | --- | --- | --- | --- |
-| MEOR-T1 | Canonical contract plus machine-readable semantics for metadata evidence, operator resolution, and downstream disposition | this roadmap | SPEC_PENDING |
+| MEOR-T1 | Canonical contract plus machine-readable semantics for metadata evidence, operator resolution, and downstream disposition | this roadmap | DISPATCH_READY |
 | MEOR-T2 | Extraction-foundation implementation that normalizes metadata findings and feeds the existing EX-T9 report surface | MEOR-T1 closed | HOLD_UNTIL_T1_PASS |
 | MEOR-T3 | DSCP profile requirement bridge with profile-scoped declarations and no cross-domain default injection | MEOR-T2 closed | HOLD_UNTIL_T2_PASS |
 | MEOR-T4 | Cross-domain conformance suite using legal-policy and technical-project synthetic fixtures | MEOR-T3 closed | HOLD_UNTIL_T3_PASS |
