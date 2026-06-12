@@ -70,6 +70,10 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
         "active session state compatibility",
         ["python", "governance/compat/check_active_session_state.py", "--enforce"],
     ),
+    (
+        "memory consolidation artifact quality",
+        ["python", "governance/compat/check_memory_consolidation_artifact_quality.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
 ]
 
 PARALLEL_BY_DEFAULT_HOOKS = {"pre-commit", "pre-push", "reviewer-fast"}
@@ -151,6 +155,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         (
             "rescan intelligence hardening",
             ["python", "governance/compat/check_rescan_intelligence_hardening.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "memory consolidation artifact quality",
+            ["python", "governance/compat/check_memory_consolidation_artifact_quality.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
             "corpus-to-knowledge-map reconciliation",

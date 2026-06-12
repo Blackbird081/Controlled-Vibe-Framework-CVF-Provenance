@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: gc018_baseline
 
@@ -11,6 +11,11 @@ Date: 2026-06-13
 Owner: Codex
 
 Worker: Claude
+
+sourceAuthority:
+`docs/reviews/CVF_MEMCON_T2_TEMPORAL_SOURCE_AUTHORITY_CHECKER_COMPLETION_2026-06-13.md`
+
+rawMemoryReleased=false
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 

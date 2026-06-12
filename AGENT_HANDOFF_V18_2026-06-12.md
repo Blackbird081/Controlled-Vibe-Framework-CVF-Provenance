@@ -30,8 +30,9 @@ Startup acknowledged: current mode=`memcon_t2_temporal_source_authority_checker_
 
 `memcon_t2_temporal_source_authority_checker_dispatched`
 
-Current HEAD recorded for this handoff: `b76794f9`
-(MEMCON-T2 dispatch commit; this dedicated session-sync follows).
+Current HEAD recorded for this handoff: `f3da4134`
+(foundation planes workflow-chain roadmap record; MEMCON-T2 worker return
+review follows).
 
 ## Active Boundary
 
