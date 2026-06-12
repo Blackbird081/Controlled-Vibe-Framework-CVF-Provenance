@@ -24,15 +24,15 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`active_session_state_json_authoring_hardening_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=PL-S1 fresh authorization may begin for the downstream Policy_Local evidence-resolution pilot; parked checkpoint=EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked, and external Policy_Local mutation remains blocked until a later PL-S work order permits it.
+Startup acknowledged: current mode=`memory_consolidation_workflow_chain_roadmap_revised_ready_for_memcon_t1a_authorization`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=MEMCON-T1a fresh authorization may begin for the Memory Consolidation standard and existing-owner reconciliation map; parked checkpoint=Policy_Local PL-S1 is held behind the MEMCON foundation decision, and EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`active_session_state_json_authoring_hardening_closed_pass_bounded`
+`memory_consolidation_workflow_chain_roadmap_revised_ready_for_memcon_t1a_authorization`
 
-Current HEAD recorded for this handoff: `771c4460`
-(Active session state JSON authoring hardening checker-whitelist follow-up
-commit; this dedicated handoff sync follows).
+Current HEAD recorded for this handoff: `4cb775b3`
+(Memory Consolidation roadmap rebuttal incorporation material commit; this
+dedicated handoff sync follows).
 
 ## Active Boundary
 
@@ -46,6 +46,31 @@ Public-facing work remains restricted to the sibling public-sync clone and
 requires separate authorization.
 
 ## Latest Continuity Note
+
+Memory Consolidation Workflow Chain roadmap is revised after Claude rebuttal
+and ready for MEMCON-T1a authorization.
+
+Material commit: `4cb775b3`.
+
+Artifacts:
+
+- roadmap:
+  `docs/roadmaps/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_ROADMAP_2026-06-12.md`;
+- Claude rebuttal / Codex-incorporated review:
+  `docs/reviews/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_CLAUDE_REBUTTAL_2026-06-12.md`;
+- GC-051 owner-surface registry source:
+  `docs/corpus-intelligence/registry/entries/memory-consolidation-control-plane-owner-surfaces.json`.
+
+Result:
+
+- MEMCON is scoped as a pre-store consolidation workflow chain, not a claim
+  that CVF has no memory owner surfaces today;
+- existing owner surfaces were reconciled as partial primitives;
+- the existing retrieval-time memory runtime workflow chain remains an owner
+  surface that MEMCON will feed, not replace;
+- T1 is split into T1a existing-owner reconciliation and T1b schema appendix;
+- retrieval-pack integration precedes cross-agent consistency;
+- Policy_Local PL-S1 remains held behind the MEMCON foundation decision.
 
 EXA-T1 external extraction pattern absorption is
 `CLOSED_PASS_BOUNDED`.
@@ -216,50 +241,45 @@ generated active-state source files are accepted.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: perform the mandatory active session state
-JSON authoring hardening continuity sync without changing governance
-semantics, and allow generated active-state source files to count as
-session-sync paths.
+Authorized guard-maintenance scope: perform the mandatory Memory Consolidation
+roadmap continuity sync without changing governance semantics, and keep the
+generated active-session aggregate aligned with its per-entry source files.
 
 Protected paths:
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/activeSessionStateJsonAuthoringHardening20260612.json`
+- `CVF_SESSION/state/entries/memoryConsolidationWorkflowRoadmap20260612.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
-- `governance/compat/check_active_session_state.py`
-- `governance/compat/test_check_active_session_state.py`
 
-Operator authorization: the operator requested hardening
-`CVF_SESSION/ACTIVE_SESSION_STATE.json` and standardizing JSON aggregate usage
-before moving to the Policy_Local use case. The mandatory closure-quality and
-session-continuity rules require synchronized front doors and active state
-sources. The follow-up checker whitelist prevents generated active-state
-source files from forcing an extra handoff-only sync commit after every future
-session update.
+Operator authorization: the operator requested a detailed Memory Plane
+workflow-chain roadmap after the memory-consolidation article and Claude
+rebuttal review. The mandatory closure-quality and session-continuity rules
+require synchronized front doors and active state sources before moving to the
+next tranche.
 
-Rollback boundary: revert only this active-session JSON hardening session-sync
-batch if the continuity markers are incorrect. Do not revert the material
-closure commit `e9c96ba3` or unrelated history.
+Rollback boundary: revert only this Memory Consolidation session-sync batch if
+the continuity markers are incorrect. Do not revert the material roadmap
+commit `4cb775b3` or unrelated history.
 
 ## Next Allowed Move
 
-PL-S1 may begin only through fresh authorization for the downstream Policy_Local
-evidence-resolution pilot: source-map governed evidence and define an operator
-evidence-resolution plan.
+MEMCON-T1a may begin only through fresh authorization for the Memory
+Consolidation standard and existing-owner reconciliation map.
 
 Do not mutate external Policy_Local, activate EC, change retrieval, invoke OCR
 or providers, import external code, install dependencies, ingest corpus records,
-use public-sync, unlock T12, or claim readiness until a later authorized PL-S
-work order permits it.
+use public-sync, unlock T12, or claim readiness until a later authorized work
+order permits it.
 
 LHW24 remains the latest closed numbered LHW wave in the state registry.
 
 ## Parked Checkpoints
 
-- Policy_Local integration: PL-S1 fresh authorization is now the next allowed
-  move; external Policy_Local mutation remains blocked until a later PL-S work
-  order permits it.
+- Policy_Local integration: PL-S1 is held behind the MEMCON foundation
+  decision; external Policy_Local mutation remains blocked until a later PL-S
+  work order permits it.
 - EC activation/retrieval: parked under existing metadata/operator evidence
   conditions.
 - LPCI2-T12: forbidden until the separate EC-02 evidence path resolves on or

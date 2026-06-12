@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-12
 
-Current mode marker: `active_session_state_json_authoring_hardening_closed_pass_bounded`
+Current mode marker: `memory_consolidation_workflow_chain_roadmap_revised_ready_for_memcon_t1a_authorization`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `active_session_state_json_authoring_hardening_closed_pass_bounded`.
+Current mode: `memory_consolidation_workflow_chain_roadmap_revised_ready_for_memcon_t1a_authorization`.
 
 Active handoff:
 
@@ -57,6 +57,25 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+Memory Consolidation Workflow Chain roadmap is revised and ready for
+MEMCON-T1a authorization.
+
+Material commit: `4cb775b3`.
+
+Artifacts:
+
+- roadmap:
+  `docs/roadmaps/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_ROADMAP_2026-06-12.md`;
+- Claude rebuttal / Codex-incorporated review:
+  `docs/reviews/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_CLAUDE_REBUTTAL_2026-06-12.md`;
+- GC-051 owner-surface registry source:
+  `docs/corpus-intelligence/registry/entries/memory-consolidation-control-plane-owner-surfaces.json`.
+
+Result: MEMCON is scoped as a pre-store memory consolidation workflow feeding
+the existing retrieval-time memory runtime workflow chain. T1 is split into
+T1a existing-owner reconciliation and T1b schema appendix. Policy_Local PL-S1
+is held behind the MEMCON foundation decision.
 
 CVF Metadata Evidence And Operator Resolution Foundation roadmap is active:
 
@@ -809,14 +828,14 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: LHW24 remains the latest closed numbered LHW wave. PL-S1 may
-begin only through fresh authorization for the downstream Policy_Local
-evidence-resolution pilot: source-map governed evidence and define an operator
-evidence-resolution plan.
+Next allowed move: LHW24 remains the latest closed numbered LHW wave.
+MEMCON-T1a may begin only through fresh authorization for the Memory
+Consolidation standard and existing-owner reconciliation map. Policy_Local
+PL-S1 is held behind the MEMCON foundation decision.
 
 Do not mutate external Policy_Local, activate EC, change retrieval, run OCR or
 provider/API proof, ingest corpus records, use public-sync, unlock T12, or make
-readiness claims until a later authorized PL-S work order permits it.
+readiness claims until a later authorized work order permits it.
 T12 remains forbidden until EC-02 resolves on or after 2026-07-01 and
 eligibility is re-evaluated.
 
