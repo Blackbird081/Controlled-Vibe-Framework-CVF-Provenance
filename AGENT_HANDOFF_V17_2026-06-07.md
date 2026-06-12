@@ -32,14 +32,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`meor_t4_closed_t5_spec_pending`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=author MEOR-T5 foundation closure and downstream readiness decision; parked checkpoint=regulated-domain adapter, Policy_Local integration, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`meor_t5_foundation_closure_dispatched`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=execute MEOR-T5 foundation closure and downstream readiness decision; parked checkpoint=regulated-domain adapter, Policy_Local integration, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`meor_t4_closed_t5_spec_pending`
+`meor_t5_foundation_closure_dispatched`
 
-Current HEAD recorded for this handoff: `0098de68`
-(MEOR-T4 closure commit; this dedicated session sync follows).
+Current HEAD recorded for this handoff: `390f5426`
+(MEOR-T4 closure session sync; T5 dispatch commit follows).
 
 ## Active Boundary
 
@@ -779,7 +779,7 @@ history.
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
-Next allowed move: author MEOR-T5 foundation closure and downstream readiness
+Next allowed move: execute MEOR-T5 foundation closure and downstream readiness
 decision.
 The regulated-domain adapter, EC-T5/EC-T6 activation, retrieval disclosure,
 OCR installation, corpus ingestion, and external Policy_Local integration

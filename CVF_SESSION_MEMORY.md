@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-12
 
-Current mode marker: `meor_t4_closed_t5_spec_pending`
+Current mode marker: `meor_t5_foundation_closure_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `meor_t4_closed_t5_spec_pending`.
+Current mode: `meor_t5_foundation_closure_dispatched`.
 
 Active handoff:
 
@@ -90,10 +90,14 @@ MEOR-T4 dispatch base: `7b2204dc`.
 
 MEOR-T4 material conformance commit: `bfd38775`.
 
-MEOR-T4 closes the shared synthetic legal-policy and technical-project fixture
-plus focused TypeScript and Python conformance tests. Regulated-domain mapping
-and Policy_Local real-use-case work remain held behind foundation closure and
-fresh authorization.
+MEOR-T4 closure commit: `0098de68`.
+
+MEOR-T4 closure sync commit: `390f5426`.
+
+MEOR-T5 foundation closure is dispatched. It may close the foundation and
+record downstream readiness only. Regulated-domain mapping and Policy_Local
+real-use-case work remain held behind foundation closure and fresh
+authorization.
 
 LPCI2 EC-T4 metadata quality assessment is `CLOSED_BLOCKED_BOUNDED` at
 material commit `ff6343e3`.
@@ -628,7 +632,7 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: author MEOR-T5 foundation closure and downstream readiness
+Next allowed move: execute MEOR-T5 foundation closure and downstream readiness
 decision. The
 regulated-domain adapter, Policy_Local candidate
 correction, EC-T5/EC-T6 activation, retrieval disclosure, OCR installation,
