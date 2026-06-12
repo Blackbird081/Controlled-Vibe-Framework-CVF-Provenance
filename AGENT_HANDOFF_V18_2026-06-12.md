@@ -30,9 +30,9 @@ Startup acknowledged: current mode=`active_session_state_json_authoring_hardenin
 
 `active_session_state_json_authoring_hardening_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `945a58ba`
-(Active session state JSON authoring hardening session-sync commit; checker
-whitelist follow-up is in progress).
+Current HEAD recorded for this handoff: `771c4460`
+(Active session state JSON authoring hardening checker-whitelist follow-up
+commit; this dedicated handoff sync follows).
 
 ## Active Boundary
 
@@ -189,6 +189,12 @@ Result: `ACTIVE_SESSION_STATE.json` now uses source JSON files plus a
 generator and drift checker. Future agents must not hand-edit the aggregate
 session-state JSON directly.
 
+Active-session sync whitelist follow-up commit `771c4460` updates
+`governance/compat/check_active_session_state.py` so
+`CVF_SESSION/state/` source files count as session-sync paths. Focused
+`governance.compat.test_check_active_session_state` coverage now verifies that
+generated active-state source files are accepted.
+
 ## Latest Work / Changes
 
 - Reviewed and corrected the EXA-T1 external corpus/source map.
@@ -205,6 +211,8 @@ session-state JSON directly.
 - Closed active session state JSON authoring hardening at material commit
   `e9c96ba3` with source state files, generator, active-state drift checker,
   focused tests, and the JSON generated aggregate discipline standard.
+- Hardened the active-session checker at commit `771c4460` so future generated
+  state-source session syncs do not require an extra handoff-only loop.
 
 ## Core Guard Self-Protection Authorization
 
