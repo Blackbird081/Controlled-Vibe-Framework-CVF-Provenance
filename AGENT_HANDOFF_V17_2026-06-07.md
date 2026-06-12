@@ -32,14 +32,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`meor_t5_foundation_closure_dispatched`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=execute MEOR-T5 foundation closure and downstream readiness decision; parked checkpoint=regulated-domain adapter, Policy_Local integration, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`meor_foundation_closed_regulated_adapter_roadmap_ready`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=author a fresh regulated-domain adapter roadmap/GC-018/work order; parked checkpoint=Policy_Local integration, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`meor_t5_foundation_closure_dispatched`
+`meor_foundation_closed_regulated_adapter_roadmap_ready`
 
-Current HEAD recorded for this handoff: `4b103c44`
-(MEOR-T5 dispatch commit; this dedicated session sync follows).
+Current HEAD recorded for this handoff: `af419b5f`
+(MEOR-T5 dispatch sync commit; closure commit follows this batch).
 
 ## Active Boundary
 
@@ -86,11 +86,9 @@ CVF Metadata Evidence And Operator Resolution Foundation roadmap is active:
 
 Material commit: `80761d50`.
 
-MEOR-T1 is the only next active tranche and is specification-only. It must
-define a domain-agnostic metadata requirement/evidence/resolution contract and
-machine semantics before runtime implementation. MEOR-T2 through T5 remain
-dependency-held. The regulated-domain adapter and Policy_Local validation are
-separate downstream successors and remain `NOT_OPEN`.
+MEOR-T1 through MEOR-T5 are closed bounded. The foundation now releases only a
+fresh regulated-domain adapter roadmap/GC-018/work order. Policy_Local
+validation remains a separate downstream successor and is still `NOT_OPEN`.
 
 LPCI2 EC-T4 metadata quality assessment is `CLOSED_BLOCKED_BOUNDED` at
 material commit `ff6343e3`.
@@ -779,12 +777,13 @@ history.
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
-Next allowed move: execute MEOR-T5 foundation closure and downstream readiness
-decision.
-The regulated-domain adapter, EC-T5/EC-T6 activation, retrieval disclosure,
-OCR installation, corpus ingestion, and external Policy_Local integration
-remain blocked. Public-sync, provider/API key use, production readiness, and
-public readiness remain unauthorized.
+Next allowed move: author a fresh regulated-domain adapter roadmap, GC-018
+baseline, and source-verified work order that maps regulated-date concepts
+into the generic MEOR contract.
+EC-T5/EC-T6 activation, retrieval disclosure, OCR installation, corpus
+ingestion, and external Policy_Local integration remain blocked. Public-sync,
+provider/API key use, production readiness, and public readiness remain
+unauthorized.
 Parked lanes remain Live Redis, DEP2, and external receipt-anchor.
 
 LPCI2-T12 remains forbidden until a separate operator-authorized evidence path

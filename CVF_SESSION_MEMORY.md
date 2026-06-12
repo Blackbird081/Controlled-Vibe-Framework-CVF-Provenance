@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-12
 
-Current mode marker: `meor_t5_foundation_closure_dispatched`
+Current mode marker: `meor_foundation_closed_regulated_adapter_roadmap_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `meor_t5_foundation_closure_dispatched`.
+Current mode: `meor_foundation_closed_regulated_adapter_roadmap_ready`.
 
 Active handoff:
 
@@ -94,10 +94,10 @@ MEOR-T4 closure commit: `0098de68`.
 
 MEOR-T4 closure sync commit: `390f5426`.
 
-MEOR-T5 foundation closure is dispatched. It may close the foundation and
-record downstream readiness only. Regulated-domain mapping and Policy_Local
-real-use-case work remain held behind foundation closure and fresh
-authorization.
+MEOR-T5 foundation closure is `CLOSED_PASS_BOUNDED`. The foundation now
+releases only a fresh regulated-domain adapter roadmap, GC-018 baseline, and
+source-verified work order. Policy_Local real-use-case work remains held
+behind adapter closure and operator/source metadata evidence.
 
 LPCI2 EC-T4 metadata quality assessment is `CLOSED_BLOCKED_BOUNDED` at
 material commit `ff6343e3`.
@@ -632,11 +632,11 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: execute MEOR-T5 foundation closure and downstream readiness
-decision. The
-regulated-domain adapter, Policy_Local candidate
-correction, EC-T5/EC-T6 activation, retrieval disclosure, OCR installation,
-corpus ingestion, and external Policy_Local integration remain blocked.
+Next allowed move: author a fresh regulated-domain adapter roadmap, GC-018
+baseline, and source-verified work order that maps regulated-date concepts
+into the generic MEOR contract. Policy_Local candidate correction, EC-T5/EC-T6
+activation, retrieval disclosure, OCR installation, corpus ingestion, and
+external Policy_Local integration remain blocked.
 Public-sync, provider/API key use, production readiness, and public readiness
 remain unauthorized.
 T12 remains forbidden until EC-02 resolves on or after 2026-07-01 and

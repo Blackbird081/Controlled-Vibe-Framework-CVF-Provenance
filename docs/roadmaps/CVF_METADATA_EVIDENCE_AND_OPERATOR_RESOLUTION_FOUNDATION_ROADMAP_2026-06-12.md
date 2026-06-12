@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_FOUNDATION_FIRST_T5_DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -224,8 +224,8 @@ evidence exists.
 | MEOR-T2 | Extraction-foundation implementation that normalizes metadata findings and feeds the existing EX-T9 report surface | MEOR-T1 completion at `22818605` plus sync `662e3c76` | CLOSED_PASS_BOUNDED at `d18a3e47` |
 | MEOR-T3 | DSCP profile requirement bridge with profile-scoped declarations and no cross-domain default injection | MEOR-T2 completion `69ec7574` and sync `472c474d` | CLOSED_PASS_BOUNDED at `0c4997a5` |
 | MEOR-T4 | Cross-domain conformance suite using legal-policy and technical-project synthetic fixtures | MEOR-T3 material `0c4997a5`, closure `5f328d11`, and sync `7b2204dc` | CLOSED_PASS_BOUNDED at `bfd38775` |
-| MEOR-T5 | Foundation closure, registry/continuity sync, and downstream readiness decision | MEOR-T4 material `bfd38775`, closure `0098de68`, and sync `390f5426` | DISPATCHED |
-| EC-ADAPTER successor | Map regulated-date metadata into the generic contract | MEOR-T5 closed plus fresh authorization | NOT_OPEN |
+| MEOR-T5 | Foundation closure, registry/continuity sync, and downstream readiness decision | MEOR-T4 material `bfd38775`, closure `0098de68`, and sync `390f5426` | CLOSED_PASS_BOUNDED |
+| EC-ADAPTER successor | Map regulated-date metadata into the generic contract | MEOR-T5 closed plus fresh authorization | READY_FOR_FRESH_AUTHORIZATION |
 | Policy_Local validation successor | Resolve real candidate evidence and test integration | MEOR-T5 closed plus operator evidence and separate roadmap | NOT_OPEN |
 
 ## Work Plan
@@ -356,6 +356,27 @@ resolution governance. It does not prove metadata correctness, source
 authenticity, semantic understanding, legal/current status, OCR quality,
 retrieval quality, Policy_Local readiness, production readiness, public
 readiness, or autonomous correction.
+
+## Closure Decision
+
+MEOR foundation is closed bounded at T5. The released next move is a fresh
+regulated-domain adapter roadmap, GC-018 baseline, and source-verified work
+order. Policy_Local remains downstream and must not be updated until the
+adapter and operator/source metadata evidence path are separately authorized.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Roadmap state | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MEOR_T5_FOUNDATION_CLOSURE_AND_DOWNSTREAM_READINESS_COMPLETION_2026-06-12.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_MEOR_T5_FOUNDATION_CLOSURE_FOR_CODEX_2026-06-12.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Baseline status | `docs/baselines/CVF_GC018_MEOR_T5_FOUNDATION_CLOSURE_AND_DOWNSTREAM_READINESS_2026-06-12.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | N/A with reason: no new runtime/source corpus | no registry change because T5 creates no corpus/search/classification source | BLOCKED with reason |
+| Registry Markdown | N/A with reason: no new runtime/source corpus | no registry change because T5 creates no corpus/search/classification source | BLOCKED with reason |
+| External evidence digest | N/A with reason: private repo-local foundation closure | no external evidence | N/A with reason |
+| System loop interlock | N/A with reason: no loop mutation | docs-only closure | N/A with reason |
+| Session continuity | active state, memory, and handoff | adapter roadmap next | PASS |
 
 ## Foundation / Use-Case Boundary
 
