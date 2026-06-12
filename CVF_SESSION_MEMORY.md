@@ -134,6 +134,16 @@ RDA-T3 is conformance-test only and `WORKER_MUST_NOT_COMMIT`. Policy_Local, EC
 activation, retrieval, OCR, corpus ingestion, provider/API-key use,
 public-sync, and readiness claims remain blocked.
 
+Before Claude executes RDA-T3, CVF work-order template owner maintainability
+hardening is `CLOSED_PASS_BOUNDED` at material commit `66f3d6da`. The canonical
+work-order template was reduced to 829 lines by extracting finality/reviewer
+conversion rules to
+`docs/reference/CVF_AGENT_WORK_ORDER_FINALITY_AND_REVIEW_CONVERSION_ADDENDUM_2026-06-12.md`.
+GC-023 now supports registered markdown owner domains via `domainFileClasses`;
+the work-order template is registered as the owner surface for adjacent
+`CVF_AGENT_WORK_ORDER_*` markdown references. Next allowed move remains Claude
+RDA-T3 execution under `WORKER_MUST_NOT_COMMIT`.
+
 LPCI2 EC-T4 metadata quality assessment is `CLOSED_BLOCKED_BOUNDED` at
 material commit `ff6343e3`.
 
