@@ -59,8 +59,8 @@ Pain-point closure direction:
 ## Latest Continuity Note
 
 LPCI2 EX-T9 operator-visible scan outcome report is
-`CLOSED_PASS_BOUNDED` from execution base `a672f416`. The immediate
-session-sync commit records the exact material closure commit.
+`CLOSED_PASS_BOUNDED` at material commit `d5345518`, from execution base
+`a672f416`.
 
 Artifacts:
 

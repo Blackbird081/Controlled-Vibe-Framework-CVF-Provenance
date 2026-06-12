@@ -38,9 +38,8 @@ Startup acknowledged: current mode=`lpci2_ex_t9_operator_visible_scan_outcome_re
 
 `lpci2_ex_t9_operator_visible_scan_outcome_report_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `a672f416`
-(EX-T9 implementation base; the immediate session-sync commit records the
-exact material closure commit).
+Current HEAD recorded for this handoff: `d5345518`
+(EX-T9 material closure commit; this session-sync commit follows it).
 
 ## Active Boundary
 
@@ -82,8 +81,8 @@ hardening commit `838512da`, or unrelated governance/session history.
 ## Latest Continuity Note
 
 LPCI2 EX-T9 operator-visible scan outcome report is
-`CLOSED_PASS_BOUNDED` from execution base `a672f416`. The immediate
-session-sync commit records the exact material closure commit.
+`CLOSED_PASS_BOUNDED` at material commit `d5345518`, from execution base
+`a672f416`.
 
 Artifacts:
 
