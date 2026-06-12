@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-12
 
-Current mode marker: `exa_t2_scan_signal_route_decision_contracts_closed_pass_bounded`
+Current mode marker: `gc051_registry_authoring_hardening_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `exa_t2_scan_signal_route_decision_contracts_closed_pass_bounded`.
+Current mode: `gc051_registry_authoring_hardening_closed_pass_bounded`.
 
 Active handoff:
 
@@ -207,6 +207,42 @@ PASS; full extraction-foundation pytest 105/105 PASS; reviewer-fast PASS
 import, dependency install, OCR/provider/API execution, Policy_Local mutation,
 EC activation, retrieval change, corpus ingestion, public-sync, readiness
 claim, memory reinjection, high-risk promotion, or autonomous mutation.
+
+GC-051 registry authoring hardening is `CLOSED_PASS_BOUNDED` at material
+commit `c1854b17` from execution base `ec555c25`.
+
+Artifacts:
+
+- generator:
+  `governance/compat/generate_corpus_scan_registry.py`
+- focused tests:
+  `governance/compat/test_generate_corpus_scan_registry.py`
+- checker:
+  `governance/compat/check_corpus_scan_registry.py`
+- generated aggregate:
+  `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
+- source registry header and entries:
+  `docs/corpus-intelligence/registry/CVF_CORPUS_SCAN_REGISTRY_HEADER.json`
+  and `docs/corpus-intelligence/registry/entries/`
+- documentation and guard:
+  `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`,
+  `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md`,
+  and `governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md`
+- governance packet:
+  `docs/baselines/CVF_GC018_GC051_REGISTRY_AUTHORING_HARDENING_2026-06-12.md`,
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_GC051_REGISTRY_AUTHORING_HARDENING_FOR_CODEX_2026-06-12.md`,
+  and
+  `docs/reviews/CVF_GC051_REGISTRY_AUTHORING_HARDENING_COMPLETION_2026-06-12.md`
+
+Result: the GC-051 aggregate registry is now generated from a reviewable
+header plus per-entry source JSON files. Future agents must edit source entries
+and run the generator; the checker fails aggregate drift. Verification:
+generator check PASS; GC-051 checker PASS; focused unittest PASS 4/4;
+reviewer-fast PASS 12/12; full pre-commit governance chain PASS 37/37.
+Boundary: no registry semantic reclassification, Policy_Local mutation, EC
+activation, retrieval, OCR/provider/API use, corpus ingestion, public-sync,
+readiness claim, memory reinjection, high-risk promotion, or autonomous
+mutation.
 
 LPCI2 EC-T4 metadata quality assessment is `CLOSED_BLOCKED_BOUNDED` at
 material commit `ff6343e3`.

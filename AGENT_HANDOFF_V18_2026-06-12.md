@@ -24,15 +24,15 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`exa_t2_scan_signal_route_decision_contracts_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=PL-S1 fresh authorization may begin for the downstream Policy_Local evidence-resolution pilot; parked checkpoint=EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked, and external Policy_Local mutation remains blocked until a later PL-S work order permits it.
+Startup acknowledged: current mode=`gc051_registry_authoring_hardening_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=PL-S1 fresh authorization may begin for the downstream Policy_Local evidence-resolution pilot; parked checkpoint=EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked, and external Policy_Local mutation remains blocked until a later PL-S work order permits it.
 
 ## Current Mode
 
-`exa_t2_scan_signal_route_decision_contracts_closed_pass_bounded`
+`gc051_registry_authoring_hardening_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `949d4bff`
-(EXA-T2 scan signal and route decision contracts material closure commit; this
-dedicated session sync follows).
+Current HEAD recorded for this handoff: `c1854b17`
+(GC-051 registry authoring hardening material closure commit; this dedicated
+session sync follows).
 
 ## Active Boundary
 
@@ -127,6 +127,38 @@ support, quality flags, and storage-boundary signals to bounded scan route
 dispositions. Invalid or contradictory scan signals fail closed to
 `ESCALATE_OR_ABSTAIN`.
 
+GC-051 registry authoring hardening is `CLOSED_PASS_BOUNDED` at material
+commit `c1854b17` from execution base `ec555c25`.
+
+Artifacts:
+
+- generator:
+  `governance/compat/generate_corpus_scan_registry.py`;
+- focused tests:
+  `governance/compat/test_generate_corpus_scan_registry.py`;
+- checker:
+  `governance/compat/check_corpus_scan_registry.py`;
+- generated aggregate:
+  `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`;
+- source registry header and entries:
+  `docs/corpus-intelligence/registry/CVF_CORPUS_SCAN_REGISTRY_HEADER.json`
+  and `docs/corpus-intelligence/registry/entries/`;
+- docs and guard:
+  `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`,
+  `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md`,
+  and `governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md`;
+- governance packet:
+  `docs/baselines/CVF_GC018_GC051_REGISTRY_AUTHORING_HARDENING_2026-06-12.md`,
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_GC051_REGISTRY_AUTHORING_HARDENING_FOR_CODEX_2026-06-12.md`,
+  and
+  `docs/reviews/CVF_GC051_REGISTRY_AUTHORING_HARDENING_COMPLETION_2026-06-12.md`.
+
+Verification: generator check PASS; GC-051 checker PASS; focused unittest PASS
+4/4; reviewer-fast PASS 12/12; full pre-commit governance chain PASS 37/37.
+
+Result: GC-051 now uses per-entry source JSON plus a generator and drift
+checker. Future agents must not hand-edit the aggregate registry directly.
+
 ## Latest Work / Changes
 
 - Reviewed and corrected the EXA-T1 external corpus/source map.
@@ -137,6 +169,9 @@ dispositions. Invalid or contradictory scan signals fail closed to
 - Closed EXA-T2 at material commit `949d4bff` with deterministic scan route
   source, focused tests, registry coverage, work-order closure, and completion
   review.
+- Closed GC-051 registry authoring hardening at material commit `c1854b17` with
+  per-entry source registry files, generator, drift checker, focused tests, and
+  authoring documentation.
 
 ## Core Guard Self-Protection Authorization
 
