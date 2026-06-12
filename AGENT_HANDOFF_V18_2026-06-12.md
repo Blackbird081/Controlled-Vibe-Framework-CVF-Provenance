@@ -30,8 +30,8 @@ Startup acknowledged: current mode=`exa_t1_external_extraction_pattern_absorptio
 
 `exa_t1_external_extraction_pattern_absorption_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `6db11aed`
-(EXA-T1 material review commit; closure/session synchronization follows).
+Current HEAD recorded for this handoff: `1509aa81`
+(EXA-T1 closure and V18 rotation commit; this dedicated session sync follows).
 
 ## Active Boundary
 
@@ -50,6 +50,8 @@ EXA-T1 external extraction pattern absorption is
 `CLOSED_PASS_BOUNDED`.
 
 Material review commit: `6db11aed`.
+
+Closure commit: `1509aa81`.
 
 Artifacts:
 

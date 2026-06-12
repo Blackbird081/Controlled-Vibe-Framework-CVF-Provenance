@@ -156,6 +156,8 @@ blocked.
 EXA-T1 external extraction pattern absorption is `CLOSED_PASS_BOUNDED` at
 material review commit `6db11aed` from execution base `e010c9d2`.
 
+Closure commit: `1509aa81`.
+
 Artifacts:
 
 - roadmap:
