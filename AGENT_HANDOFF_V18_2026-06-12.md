@@ -24,14 +24,15 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`exa_t1_external_extraction_pattern_absorption_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=close the reviewer-fast rescan phase-placement gap, then open fresh EXA-T2 authorization for deterministic scan signals and route decisions; parked checkpoint=Policy_Local integration, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`reviewer_fast_rescan_gate_placement_hardening_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=open fresh EXA-T2 authorization for deterministic scan signals and route decisions; parked checkpoint=Policy_Local integration, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`exa_t1_external_extraction_pattern_absorption_closed_pass_bounded`
+`reviewer_fast_rescan_gate_placement_hardening_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `1509aa81`
-(EXA-T1 closure and V18 rotation commit; this dedicated session sync follows).
+Current HEAD recorded for this handoff: `aeb39903`
+(reviewer-fast rescan gate placement hardening material commit; this
+dedicated session sync follows).
 
 ## Active Boundary
 
@@ -52,6 +53,22 @@ EXA-T1 external extraction pattern absorption is
 Material review commit: `6db11aed`.
 
 Closure commit: `1509aa81`.
+
+Reviewer-fast rescan gate placement hardening is `CLOSED_PASS_BOUNDED` at
+material commit `aeb39903`.
+
+Artifacts:
+
+- completion:
+  `docs/reviews/CVF_REVIEWER_FAST_RESCAN_GATE_PLACEMENT_HARDENING_COMPLETION_2026-06-12.md`;
+- hook runner:
+  `governance/compat/run_local_governance_hook_chain.py`;
+- focused test:
+  `governance/compat/test_run_local_governance_hook_chain.py`.
+
+Result: `reviewer-fast` now runs 12 checks and includes
+`rescan intelligence hardening`. Focused unittest passed. Reviewer-fast passed.
+Full pre-commit governance chain passed.
 
 Artifacts:
 
@@ -112,12 +129,10 @@ material review commit `6db11aed` or unrelated history.
 
 ## Next Allowed Move
 
-1. Close a small governance-control batch that adds the rescan intelligence
-   checker to `reviewer-fast` with focused runner tests.
-2. After that batch passes, open fresh EXA-T2 GC-018 and a source-verified work
+1. Open fresh EXA-T2 GC-018 and a source-verified work
    order for deterministic `DocumentScanSignals` and `ScanRouteDecision`
    contracts.
-3. Keep Policy_Local as the downstream real use case after EXA-T2 foundation
+2. Keep Policy_Local as the downstream real use case after EXA-T2 foundation
    closure.
 
 EXA-T2 must reuse the existing extraction quality, OCR language mapping,

@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-12
 
-Current mode marker: `exa_t1_external_extraction_pattern_absorption_closed_pass_bounded`
+Current mode marker: `reviewer_fast_rescan_gate_placement_hardening_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `exa_t1_external_extraction_pattern_absorption_closed_pass_bounded`.
+Current mode: `reviewer_fast_rescan_gate_placement_hardening_closed_pass_bounded`.
 
 Active handoff:
 
@@ -157,6 +157,10 @@ EXA-T1 external extraction pattern absorption is `CLOSED_PASS_BOUNDED` at
 material review commit `6db11aed` from execution base `e010c9d2`.
 
 Closure commit: `1509aa81`.
+
+Reviewer-fast rescan gate placement hardening is `CLOSED_PASS_BOUNDED` at
+material commit `aeb39903`. `reviewer-fast` now includes the existing rescan
+intelligence hardening checker, backed by focused unit test coverage.
 
 Artifacts:
 
@@ -707,10 +711,8 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: close a bounded governance-control batch that adds the
-rescan intelligence checker to `reviewer-fast`, then open fresh EXA-T2 GC-018
-and a source-verified work order for deterministic `DocumentScanSignals` and
-`ScanRouteDecision` contracts.
+Next allowed move: open fresh EXA-T2 GC-018 and a source-verified work order
+for deterministic `DocumentScanSignals` and `ScanRouteDecision` contracts.
 
 EXA-T2 must reuse existing extraction quality, OCR language mapping,
 storage-boundary, and scan-outcome-report owner surfaces. Policy_Local remains
