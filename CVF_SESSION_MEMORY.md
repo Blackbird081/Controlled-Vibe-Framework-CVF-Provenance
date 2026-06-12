@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-12
 
-Current mode marker: `meor_rda_t3_cross_domain_conformance_closed_pass_bounded`
+Current mode marker: `meor_rda_t4_foundation_closure_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `meor_rda_t3_cross_domain_conformance_closed_pass_bounded`.
+Current mode: `meor_rda_t4_foundation_closure_closed_pass_bounded`.
 
 Active handoff:
 
@@ -139,6 +139,19 @@ Policy_Local, EC activation, retrieval, OCR, corpus ingestion,
 provider/API-key use, public-sync, and readiness claims remain blocked. Next
 allowed move is fresh RDA-T4 authorization for foundation closure and
 Policy_Local successor readiness decision if operator authorizes.
+
+MEOR-RDA-T4 foundation closure is `CLOSED_PASS_BOUNDED` at material commit
+`dba15ca7` from execution base `2fd34992`. It closes the regulated-domain
+adapter foundation and creates only a proposed Policy_Local successor pilot
+roadmap:
+
+`docs/roadmaps/CVF_POLICYLOCAL_SUCCESSOR_PILOT_ROADMAP_2026-06-12.md`
+
+Next allowed move is PL-S1 fresh authorization only: source-map governed
+evidence and define an operator evidence-resolution plan. External
+Policy_Local mutation, EC activation, retrieval, OCR, corpus ingestion,
+provider/API-key use, public-sync, T12 unlock, and readiness claims remain
+blocked.
 
 LPCI2 EC-T4 metadata quality assessment is `CLOSED_BLOCKED_BOUNDED` at
 material commit `ff6343e3`.
@@ -673,10 +686,12 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: open fresh RDA-T4 authorization for foundation closure and
-Policy_Local successor readiness decision if operator authorizes. Do not mutate
-Policy_Local, activate EC-T5/EC-T6, change retrieval, install OCR, ingest
-corpus records, use provider/API keys, public-sync, or make readiness claims.
+Next allowed move: open PL-S1 Policy_Local evidence-resolution pilot only
+through fresh GC-018 and a source-verified work order. PL-S1 may source-map
+governed evidence and define an operator evidence-resolution plan. Do not
+mutate external Policy_Local, activate EC-T5/EC-T6, change retrieval, install
+OCR, ingest corpus records, use provider/API keys, public-sync, or make
+readiness claims.
 Public-sync, provider/API key use, production readiness, and public readiness
 remain unauthorized.
 T12 remains forbidden until EC-02 resolves on or after 2026-07-01 and

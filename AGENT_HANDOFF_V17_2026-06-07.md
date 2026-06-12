@@ -32,14 +32,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`meor_rda_t3_cross_domain_conformance_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=open fresh RDA-T4 authorization for foundation closure and Policy_Local successor readiness decision if operator authorizes; parked checkpoint=Policy_Local integration, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`meor_rda_t4_foundation_closure_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=open PL-S1 Policy_Local evidence-resolution pilot only through fresh GC-018 and source-verified work order; parked checkpoint=Policy_Local integration, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`meor_rda_t3_cross_domain_conformance_closed_pass_bounded`
+`meor_rda_t4_foundation_closure_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `e65e0f1d`
-(MEOR-RDA-T3 material closure commit; this dedicated session sync follows).
+Current HEAD recorded for this handoff: `dba15ca7`
+(MEOR-RDA-T4 material closure commit; this dedicated session sync follows).
 
 ## Active Boundary
 
@@ -133,6 +133,19 @@ Policy_Local, EC activation, retrieval, OCR, corpus ingestion,
 provider/API-key use, public-sync, and readiness claims remain blocked. Next
 allowed move is fresh RDA-T4 authorization for foundation closure and
 Policy_Local successor readiness decision if operator authorizes.
+
+MEOR-RDA-T4 foundation closure is `CLOSED_PASS_BOUNDED` at material commit
+`dba15ca7` from execution base `2fd34992`. It closes the regulated-domain
+adapter foundation and creates only a proposed Policy_Local successor pilot
+roadmap:
+
+`docs/roadmaps/CVF_POLICYLOCAL_SUCCESSOR_PILOT_ROADMAP_2026-06-12.md`
+
+Next allowed move is PL-S1 fresh authorization only: source-map governed
+evidence and define an operator evidence-resolution plan. External
+Policy_Local mutation, EC activation, retrieval, OCR, corpus ingestion,
+provider/API-key use, public-sync, T12 unlock, and readiness claims remain
+blocked.
 
 LPCI2 EC-T4 metadata quality assessment is `CLOSED_BLOCKED_BOUNDED` at
 material commit `ff6343e3`.
@@ -821,11 +834,12 @@ history.
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
-Next allowed move: open fresh RDA-T4 authorization for foundation closure and
-Policy_Local successor readiness decision if operator authorizes. EC-T5/EC-T6
+Next allowed move: open PL-S1 Policy_Local evidence-resolution pilot only
+through fresh GC-018 and a source-verified work order. PL-S1 may source-map
+governed evidence and define an operator evidence-resolution plan. EC-T5/EC-T6
 activation, retrieval disclosure, OCR installation, corpus ingestion, and
-external Policy_Local integration remain blocked. Public-sync, provider/API
-key use, production readiness, and public readiness remain unauthorized.
+external Policy_Local integration remain blocked. Public-sync, provider/API key
+use, production readiness, and public readiness remain unauthorized.
 Parked lanes remain Live Redis, DEP2, and external receipt-anchor.
 
 LPCI2-T12 remains forbidden until a separate operator-authorized evidence path
