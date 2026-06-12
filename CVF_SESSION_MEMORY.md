@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-12
 
-Current mode marker: `lpci2_ex_t9_operator_visible_scan_outcome_report_closed_pass_bounded`
+Current mode marker: `lpci2_ec_t4_metadata_gap_assessment_closed_blocked_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `lpci2_ex_t9_operator_visible_scan_outcome_report_closed_pass_bounded`.
+Current mode: `lpci2_ec_t4_metadata_gap_assessment_closed_blocked_bounded`.
 
 Active handoff:
 
@@ -58,6 +58,24 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
+LPCI2 EC-T4 metadata quality assessment is `CLOSED_BLOCKED_BOUNDED` at
+material commit `ff6343e3`.
+
+Artifacts:
+
+- `docs/baselines/CVF_GC018_LPCI2_EC_T4_OPERATOR_DATE_EVIDENCE_BACKFILL_2026-06-11.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EC_T4_OPERATOR_DATE_EVIDENCE_BACKFILL_FOR_CLAUDE_2026-06-11.md`
+- `docs/reference/CVF_LPCI2_EC_T4_OPERATOR_DATE_EVIDENCE_LEDGER_2026-06-11.md`
+- `docs/reference/CVF_LPCI2_EC_T4_PROPOSED_METADATA_BACKFILL_2026-06-11.json`
+- `docs/reference/CVF_LPCI2_EC_T4_OPERATOR_METADATA_GAP_REPORT_2026-06-12.md`
+- `docs/reference/CVF_LPCI2_EC_T4_OPERATOR_METADATA_GAP_REPORT_2026-06-12.json`
+- `docs/reviews/CVF_LPCI2_EC_T4_OPERATOR_DATE_EVIDENCE_BACKFILL_COMPLETION_2026-06-11.md`
+
+Result: scan/evidence processing is complete. Two candidates are
+source-evidenced pending operator type/status confirmation; four candidates
+require new signed or operator-supplied evidence. The reports expose the
+quality gap without guessing metadata. EC-T5/EC-T6 remain blocked.
+
 LPCI2 EX-T9 operator-visible scan outcome report is
 `CLOSED_PASS_BOUNDED` at material commit `d5345518`, from execution base
 `a672f416`.
@@ -75,8 +93,8 @@ Result: EX-T1 through EX-T9 are closed bounded. The extraction foundation now
 emits deterministic domain-agnostic JSON/Markdown scan outcome reports with
 stable operator actions, UTF-8 path support, and no raw content release.
 
-Next allowed move: review the parked EC metadata-gap pattern with the operator
-before authorizing any EC activation or retrieval work.
+EX foundation work stops at EX-T9. OCR installation, corpus ingestion, and
+Policy_Local integration belong to a later real-use-case roadmap.
 
 LPCI2 EX-T8 extraction authority and storage boundary is
 `CLOSED_PASS_BOUNDED` at material commit `43eb9624`.
@@ -154,7 +172,7 @@ runtime/source behavior, provider, extraction-quality, Policy_Local mutation,
 public-sync, production/public readiness, or EC-T5 unlock claim.
 
 LPCI2 EC-T4 operator-date evidence backfill is
-`PARKED_PENDING_OPERATOR_METADATA`.
+`CLOSED_BLOCKED_BOUNDED` at material commit `ff6343e3`.
 
 Dispatch artifacts:
 
@@ -162,14 +180,14 @@ Dispatch artifacts:
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EC_T4_OPERATOR_DATE_EVIDENCE_BACKFILL_FOR_CLAUDE_2026-06-11.md`
 - `docs/roadmaps/CVF_LPCI2_EXTRACTION_AND_EC02_REFINEMENT_ROADMAP_2026-06-10.md`
 
-Result: Claude returned `RETURNED_BLOCKED_METADATA_GAPS`. Codex reviewer
-accepted the packet as parked evidence only, repaired the proposed JSON shape
-to match the work order, and recomputed SHA-256/size for all six T11B
-candidate source paths. Two records are source-evidenced pending operator
-type/status confirmation. Four records (CAND-002, CAND-004, CAND-005,
-CAND-006) require operator-confirmed signed dates/document numbers before
-metadata backfill or EC-T5 can proceed. Boundary: no external Policy_Local
-edits, runtime/source edits, DSCP `ec02Gate` value change,
+Result: Claude returned `RETURNED_BLOCKED_METADATA_GAPS`. Codex closed the
+tranche as a bounded input-quality result, repaired the proposed JSON shape,
+recomputed SHA-256/size for all six T11B candidate source paths, and added
+operator-readable plus machine-readable gap reports. Two records are
+source-evidenced pending operator type/status confirmation. Four records
+(CAND-002, CAND-004, CAND-005, CAND-006) require new signed or
+operator-supplied evidence before a successor may resolve metadata. Boundary:
+no external Policy_Local edits, runtime/source edits, DSCP `ec02Gate` value change,
 `documentStatus=IN_FORCE`, corpus ingestion, provider/API-key use,
 public-sync, current-law/legal-quality claim, production/public readiness,
 memory reinjection, high-risk promotion, or autonomous mutation.
@@ -573,14 +591,15 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: review the parked EC metadata-gap pattern with the operator
-before any EC activation or retrieval work. EC-T4 metadata confirmation,
-EC-T5/EC-T6 activation, and retrieval disclosure remain parked. EX-T1 through
-EX-T9 local extraction foundation is closed bounded. Dependency addition, OCR
-model download, corpus ingestion, domain-specific metadata correction,
-runtime/source change beyond a fresh authorized successor packet, external
-Policy_Local mutation, public-sync, provider/API key use, production readiness,
-or public readiness remain unauthorized without fresh authorization.
+Next allowed move: operator reviews
+`docs/reference/CVF_LPCI2_EC_T4_OPERATOR_METADATA_GAP_REPORT_2026-06-12.md`.
+A fresh EC-T4 evidence-resolution successor may open only when new signed or
+operator-supplied evidence exists. EC-T5/EC-T6 activation and retrieval
+disclosure remain blocked. EX-T1 through EX-T9 local extraction foundation is
+closed bounded and no additional EX tranche is authorized. OCR model
+installation, corpus ingestion, and external Policy_Local integration belong
+to a later real-use-case roadmap. Public-sync, provider/API key use,
+production readiness, and public readiness remain unauthorized.
 T12 remains forbidden until EC-02 resolves on or after 2026-07-01 and
 eligibility is re-evaluated.
 
