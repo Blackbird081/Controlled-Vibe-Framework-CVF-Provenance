@@ -32,15 +32,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`metadata_evidence_operator_resolution_foundation_t1_spec_pending`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=author the specification-only MEOR-T1 GC-018 and source-verified work order; parked checkpoint=regulated-domain adapter, Policy_Local integration, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`meor_t1_metadata_evidence_resolution_contract_dispatched`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=execute the specification-only MEOR-T1 contract work order; parked checkpoint=MEOR-T2 through T5, regulated-domain adapter, Policy_Local integration, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`metadata_evidence_operator_resolution_foundation_t1_spec_pending`
+`meor_t1_metadata_evidence_resolution_contract_dispatched`
 
-Current HEAD recorded for this handoff: `80761d50`
-(metadata evidence and operator resolution foundation roadmap material commit;
-this session-sync-only commit follows it).
+Current HEAD recorded for this handoff: `55bd57fb`
+(MEOR-T1 specification dispatch commit).
 
 ## Active Boundary
 

@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-12
 
-Current mode marker: `metadata_evidence_operator_resolution_foundation_t1_spec_pending`
+Current mode marker: `meor_t1_metadata_evidence_resolution_contract_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `metadata_evidence_operator_resolution_foundation_t1_spec_pending`.
+Current mode: `meor_t1_metadata_evidence_resolution_contract_dispatched`.
 
 Active handoff:
 
@@ -63,6 +63,8 @@ CVF Metadata Evidence And Operator Resolution Foundation roadmap is active:
 `docs/roadmaps/CVF_METADATA_EVIDENCE_AND_OPERATOR_RESOLUTION_FOUNDATION_ROADMAP_2026-06-12.md`
 
 Material commit: `80761d50`.
+
+MEOR-T1 dispatch commit: `55bd57fb`.
 
 The roadmap prioritizes a domain-agnostic CVF foundation before any
 Policy_Local correction or activation. MEOR-T1 is specification-only and must
