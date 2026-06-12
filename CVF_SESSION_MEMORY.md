@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-13
 
-Current mode marker: `governance_packet_review_acceleration_closed_pass_bounded`
+Current mode marker: `memcon_t1b_memory_consolidation_schema_appendix_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `governance_packet_review_acceleration_closed_pass_bounded`.
+Current mode: `memcon_t1b_memory_consolidation_schema_appendix_closed_pass_bounded`.
 
 Active handoff:
 
@@ -58,26 +58,28 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-Governance packet review acceleration is `CLOSED_PASS_BOUNDED`.
+MEMCON-T1b Memory Consolidation schema appendix is `CLOSED_PASS_BOUNDED`.
 
-Material closure commit: `bd15e0ae`.
+Material closure commit: `f94d2fbd`.
 
 Closure artifacts:
 
 - GC-018:
-  `docs/baselines/CVF_GC018_GOVERNANCE_PACKET_REVIEW_ACCELERATION_2026-06-13.md`;
+  `docs/baselines/CVF_GC018_MEMCON_T1B_MEMORY_CONSOLIDATION_SCHEMA_APPENDIX_2026-06-13.md`;
 - work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_GOVERNANCE_PACKET_REVIEW_ACCELERATION_FOR_CODEX_2026-06-13.md`;
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T1B_MEMORY_CONSOLIDATION_SCHEMA_APPENDIX_FOR_CODEX_2026-06-13.md`;
+- schema appendix:
+  `docs/reference/CVF_MEMORY_CONSOLIDATION_SCHEMA_APPENDIX_2026-06-13.md`;
 - completion:
-  `docs/reviews/CVF_GOVERNANCE_PACKET_REVIEW_ACCELERATION_COMPLETION_2026-06-13.md`;
-- authoring addendum:
-  `docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md`;
-- checker:
-  `governance/compat/check_work_order_dispatch_quality.py`.
+  `docs/reviews/CVF_MEMCON_T1B_MEMORY_CONSOLIDATION_SCHEMA_APPENDIX_COMPLETION_2026-06-13.md`;
+- GC-051 registry entry:
+  `docs/corpus-intelligence/registry/entries/memory-consolidation-schema-appendix.json`.
 
-Result: Required Proof Manifest cells must use one required literal per row;
-compound proof literal cells are rejected by dispatch-quality before worker or
-reviewer time is spent on malformed proof requirements.
+Result: MEMCON now has a doc-only schema appendix and field tables for
+`MemorySignal`, `MemoryCandidate`, `ConsolidatedMemoryRecord`,
+`MemoryRetrievalPackInput`, and `OperatorMemoryReviewPacket`, with owner-surface
+mapping and runtime collision evidence. MEMCON-T2 is the next eligible fresh
+authorization lane for temporal ambiguity and source-authority checker work.
 
 MEMCON-T1a Memory Consolidation standard and owner reconciliation is
 `CLOSED_PASS_BOUNDED`.
