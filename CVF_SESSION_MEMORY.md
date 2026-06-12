@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-13
 
-Current mode marker: `memcon_t2_temporal_source_authority_checker_dispatched`
+Current mode marker: `memcon_t2_temporal_source_authority_checker_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `memcon_t2_temporal_source_authority_checker_dispatched`.
+Current mode: `memcon_t2_temporal_source_authority_checker_closed_pass_bounded`.
 
 Active handoff:
 
@@ -58,21 +58,41 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-MEMCON-T2 Temporal ambiguity and source-authority checker is `DISPATCHED`.
+MEMCON-T2 Temporal ambiguity and source-authority checker is
+`CLOSED_PASS_BOUNDED`.
 
-Material dispatch commit: `b76794f9`.
+Material closure commit: `f83aa7d8`.
 
-Dispatch artifacts:
+Closure artifacts:
 
 - GC-018:
   `docs/baselines/CVF_GC018_MEMCON_T2_TEMPORAL_SOURCE_AUTHORITY_CHECKER_2026-06-13.md`;
 - work order:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T2_TEMPORAL_SOURCE_AUTHORITY_CHECKER_FOR_CLAUDE_2026-06-13.md`;
 - roadmap:
-  `docs/roadmaps/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_ROADMAP_2026-06-12.md`.
+  `docs/roadmaps/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_ROADMAP_2026-06-12.md`;
+- checker:
+  `governance/compat/check_memory_consolidation_artifact_quality.py`;
+- focused tests:
+  `governance/compat/test_check_memory_consolidation_artifact_quality.py`;
+- worker return:
+  `docs/reviews/CVF_MEMCON_T2_TEMPORAL_SOURCE_AUTHORITY_CHECKER_WORKER_RETURN_2026-06-13.md`;
+- completion:
+  `docs/reviews/CVF_MEMCON_T2_TEMPORAL_SOURCE_AUTHORITY_CHECKER_COMPLETION_2026-06-13.md`.
 
-Next allowed move: Claude executes the MEMCON-T2 work order under
-`WORKER_MUST_NOT_COMMIT` and returns uncommitted artifacts for Codex review.
+Result: MEMCON now has a deterministic artifact quality checker in
+reviewer-fast and pre-commit. The checker validates changed active MEMCON
+artifacts for source authority, temporal ambiguity, raw-memory release
+boundary, retrieval-boundary markers, operator-visible review packet sections,
+and public export disposition.
+
+Verification: focused unittest PASS 37/37; MEMCON checker PASS on
+`f3da4134..HEAD`; reviewer-fast PASS 13/13; pre-commit governance chain PASS
+38/38.
+
+Next allowed move: MEMCON-T3 may be opened only through a fresh GC-018 and
+source-verified work order for consolidated memory ledger and Markdown-first
+operator-visible review packet work.
 
 Boundary: T2 authorizes only deterministic MEMCON checker implementation,
 focused tests, hook placement in reviewer-fast/pre-commit, and worker-return
@@ -896,12 +916,11 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: MEMCON-T2 is `DISPATCHED` at material commit `b76794f9`.
-Claude may execute
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T2_TEMPORAL_SOURCE_AUTHORITY_CHECKER_FOR_CLAUDE_2026-06-13.md`
-under `WORKER_MUST_NOT_COMMIT` and return uncommitted artifacts for Codex
-review. Policy_Local PL-S1 remains held until the operator explicitly decides
-the MEMCON foundation is sufficient for downstream use-case work.
+Next allowed move: MEMCON-T3 may be opened only through a fresh GC-018 and
+source-verified work order for consolidated memory ledger and Markdown-first
+operator-visible review packet work. Policy_Local PL-S1 remains held until the
+operator explicitly decides the MEMCON foundation is sufficient for downstream
+use-case work.
 
 Do not mutate external Policy_Local, activate EC, change retrieval, run OCR or
 provider/API proof, ingest corpus records, use public-sync, unlock T12, or make

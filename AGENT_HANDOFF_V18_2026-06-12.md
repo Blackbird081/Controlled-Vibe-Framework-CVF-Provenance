@@ -11,9 +11,9 @@ Supersedes:
 
 ## Purpose
 
-This compact handoff records MEMCON-T2 dispatch, the next worker move, and parked operator
-checkpoints. Detailed history remains in governed completion artifacts and
-archived handoffs.
+This compact handoff records MEMCON-T2 closure, the next allowed move, and
+parked operator checkpoints. Detailed history remains in governed completion
+artifacts and archived handoffs.
 
 ## Scope / Target / Owner Boundary
 
@@ -24,15 +24,14 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`memcon_t2_temporal_source_authority_checker_dispatched`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=Claude executes MEMCON-T2 work order under WORKER_MUST_NOT_COMMIT and returns uncommitted artifacts for Codex review; parked checkpoint=Policy_Local PL-S1 is held until the operator explicitly decides the MEMCON foundation is sufficient for downstream use-case work, and EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`memcon_t2_temporal_source_authority_checker_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=MEMCON-T3 may be opened only through fresh GC-018 and source-verified work order; parked checkpoint=Policy_Local PL-S1 is held until the operator explicitly decides the MEMCON foundation is sufficient for downstream use-case work, and EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`memcon_t2_temporal_source_authority_checker_dispatched`
+`memcon_t2_temporal_source_authority_checker_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `f3da4134`
-(foundation planes workflow-chain roadmap record; MEMCON-T2 worker return
-review follows).
+Current HEAD recorded for this handoff: `f83aa7d8`
+(MEMCON-T2 material closure commit; this dedicated session-sync follows).
 
 ## Active Boundary
 
@@ -47,26 +46,37 @@ requires separate authorization.
 
 ## Latest Continuity Note
 
-MEMCON-T2 Temporal ambiguity and source-authority checker is `DISPATCHED`.
+MEMCON-T2 Temporal ambiguity and source-authority checker is
+`CLOSED_PASS_BOUNDED`.
 
-Material dispatch commit: `b76794f9`.
+Material closure commit: `f83aa7d8`.
 
-Dispatch artifacts:
+Closure artifacts:
 
 - GC-018:
   `docs/baselines/CVF_GC018_MEMCON_T2_TEMPORAL_SOURCE_AUTHORITY_CHECKER_2026-06-13.md`;
 - work order:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T2_TEMPORAL_SOURCE_AUTHORITY_CHECKER_FOR_CLAUDE_2026-06-13.md`;
 - roadmap:
-  `docs/roadmaps/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_ROADMAP_2026-06-12.md`.
+  `docs/roadmaps/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_ROADMAP_2026-06-12.md`;
+- checker:
+  `governance/compat/check_memory_consolidation_artifact_quality.py`;
+- focused tests:
+  `governance/compat/test_check_memory_consolidation_artifact_quality.py`;
+- worker return:
+  `docs/reviews/CVF_MEMCON_T2_TEMPORAL_SOURCE_AUTHORITY_CHECKER_WORKER_RETURN_2026-06-13.md`;
+- completion:
+  `docs/reviews/CVF_MEMCON_T2_TEMPORAL_SOURCE_AUTHORITY_CHECKER_COMPLETION_2026-06-13.md`.
 
-Verification before dispatch: reviewer-fast PASS 12/12; pre-dispatch autorun
-PASS on range `3f4ddda6..HEAD`; material pre-commit governance chain PASS
-37/37.
+Verification: focused unittest PASS 37/37; MEMCON checker PASS on
+`f3da4134..HEAD`; reviewer-fast PASS 13/13; material pre-commit governance
+chain PASS 38/38.
 
-Result: Claude is authorized to implement a deterministic MEMCON temporal
-ambiguity and source-authority checker, focused tests, reviewer-fast/pre-commit
-hook placement, and worker-return packet under `WORKER_MUST_NOT_COMMIT`.
+Result: MEMCON now has a deterministic artifact quality checker in
+reviewer-fast and pre-commit. The checker validates changed active MEMCON
+artifacts for source authority, temporal ambiguity, raw-memory release
+boundary, retrieval-boundary markers, operator-visible review packet sections,
+and public export disposition.
 
 Boundary: no runtime memory implementation, storage, retrieval behavior,
 provider/API proof, OCR, Policy_Local mutation, EC activation, corpus
@@ -318,16 +328,16 @@ generated active-state source files are accepted.
   state-source session syncs do not require an extra handoff-only loop.
 - Closed MEMCON-T1a at material commit `84a46b62`; session sync commit
   `768628f7`; next MEMCON move is T1b only through fresh authorization.
-- Dispatched MEMCON-T2 at material commit `b76794f9`; Claude is authorized to
-  execute the checker work order under `WORKER_MUST_NOT_COMMIT` and return
-  uncommitted artifacts.
+- Closed MEMCON-T2 at material commit `f83aa7d8` with deterministic artifact
+  quality checker, focused tests, reviewer-fast/pre-commit hook placement,
+  worker return, and Codex completion review.
 - Closed governance packet review acceleration at material commit `bd15e0ae`
   with atomic Required Proof Manifest literal discipline and focused
   dispatch-quality checker coverage.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: perform the mandatory MEMCON-T2 dispatch
+Authorized guard-maintenance scope: perform the mandatory MEMCON-T2 closure
 session sync without changing governance semantics, and keep the generated
 active-session aggregate aligned with its per-entry source files.
 
@@ -336,28 +346,29 @@ Protected paths:
 - `AGENT_HANDOFF_V18_2026-06-12.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/memconT2TemporalSourceAuthorityCheckerClosure20260613.json`
 - `CVF_SESSION/state/entries/memconT2TemporalSourceAuthorityCheckerDispatch20260613.json`
 - `CVF_SESSION/state/entries/memconT1bSchemaAppendix20260613.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: the operator asked Codex to create the MEMCON-T2 work
-order for Claude. The mandatory dispatch-quality and session-continuity rules require
-synchronized front doors and active state sources before moving to the next
-tranche.
+Operator authorization: the operator returned the MEMCON-T2 worker artifacts
+under `WORKER_MUST_NOT_COMMIT` and asked Codex to review and commit. The
+mandatory closure and session-continuity rules require synchronized front doors
+and active state sources before moving to the next tranche.
 
-Rollback boundary: revert only this MEMCON-T2 session sync if the continuity
-markers are incorrect. Do not revert material dispatch commit `b76794f9`,
+Rollback boundary: revert only this MEMCON-T2 closure session sync if the
+continuity markers are incorrect. Do not revert material closure commit
+`f83aa7d8`, material dispatch commit `b76794f9`,
 MEMCON-T1b material closure commit `f94d2fbd`, governance packet review
 acceleration material commit `bd15e0ae`, MEMCON-T1a material closure commit
 `84a46b62`, or unrelated history.
 
 ## Next Allowed Move
 
-Claude executes
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T2_TEMPORAL_SOURCE_AUTHORITY_CHECKER_FOR_CLAUDE_2026-06-13.md`
-under `WORKER_MUST_NOT_COMMIT` and returns uncommitted artifacts for Codex
-review.
+MEMCON-T3 may be opened only through a fresh GC-018 and source-verified work
+order for consolidated memory ledger and Markdown-first operator-visible
+review packet work.
 
 Do not mutate external Policy_Local, activate EC, change retrieval, invoke OCR
 or providers, import external code, install dependencies, ingest corpus records,
