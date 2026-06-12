@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-12
 
-Current mode marker: `meor_rda_t4_foundation_closure_closed_pass_bounded`
+Current mode marker: `exa_t1_external_extraction_pattern_absorption_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `meor_rda_t4_foundation_closure_closed_pass_bounded`.
+Current mode: `exa_t1_external_extraction_pattern_absorption_dispatched`.
 
 Active handoff:
 
@@ -152,6 +152,23 @@ evidence and define an operator evidence-resolution plan. External
 Policy_Local mutation, EC activation, retrieval, OCR, corpus ingestion,
 provider/API-key use, public-sync, T12 unlock, and readiness claims remain
 blocked.
+
+EXA-T1 external extraction pattern absorption is `DISPATCHED` at material
+commit `ebd70c72` from base `d1167f69`.
+
+Artifacts:
+
+- roadmap:
+  `docs/roadmaps/CVF_EXTERNAL_EXTRACTION_PATTERN_ABSORPTION_ROADMAP_2026-06-12.md`;
+- GC-018:
+  `docs/baselines/CVF_GC018_EXA_T1_DICH_TAI_LIEU_EXTRACTION_PATTERN_ABSORPTION_2026-06-12.md`;
+- work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_EXA_T1_DICH_TAI_LIEU_EXTRACTION_PATTERN_ABSORPTION_FOR_CLAUDE_2026-06-12.md`.
+
+Claude may inspect `nclamvn/dich-tai-lieu` at external commit
+`92c5aeb3b4886b6d5a14ea4682dc5e4e1bc1a336` and return an uncommitted source
+map plus worker return only. This absorbs scan-layer patterns before
+Policy_Local use-case work resumes.
 
 LPCI2 EC-T4 metadata quality assessment is `CLOSED_BLOCKED_BOUNDED` at
 material commit `ff6343e3`.
@@ -686,12 +703,18 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: open PL-S1 Policy_Local evidence-resolution pilot only
-through fresh GC-018 and a source-verified work order. PL-S1 may source-map
-governed evidence and define an operator evidence-resolution plan. Do not
-mutate external Policy_Local, activate EC-T5/EC-T6, change retrieval, install
-OCR, ingest corpus records, use provider/API keys, public-sync, or make
-readiness claims.
+Next allowed move: Claude executes EXA-T1 external extraction pattern
+absorption work order under `WORKER_MUST_NOT_COMMIT` and returns uncommitted
+source map plus worker return.
+
+Required worker artifacts:
+
+- `docs/reference/CVF_EXA_T1_DICH_TAI_LIEU_SCAN_LAYER_PATTERN_SOURCE_MAP_2026-06-12.md`;
+- `docs/reviews/CVF_EXA_T1_DICH_TAI_LIEU_SCAN_LAYER_PATTERN_ABSORPTION_WORKER_RETURN_2026-06-12.md`.
+
+Do not copy external code, install dependencies, run OCR/provider/API proof,
+mutate external Policy_Local, activate EC-T5/EC-T6, change retrieval, ingest
+corpus records, use public-sync, or make readiness claims.
 Public-sync, provider/API key use, production readiness, and public readiness
 remain unauthorized.
 T12 remains forbidden until EC-02 resolves on or after 2026-07-01 and

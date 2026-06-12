@@ -32,14 +32,15 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`meor_rda_t4_foundation_closure_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=open PL-S1 Policy_Local evidence-resolution pilot only through fresh GC-018 and source-verified work order; parked checkpoint=Policy_Local integration, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`exa_t1_external_extraction_pattern_absorption_dispatched`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=Claude executes EXA-T1 external extraction pattern absorption work order under WORKER_MUST_NOT_COMMIT and returns uncommitted source map plus worker return; parked checkpoint=Policy_Local integration, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`meor_rda_t4_foundation_closure_closed_pass_bounded`
+`exa_t1_external_extraction_pattern_absorption_dispatched`
 
-Current HEAD recorded for this handoff: `dba15ca7`
-(MEOR-RDA-T4 material closure commit; this dedicated session sync follows).
+Current HEAD recorded for this handoff: `ebd70c72`
+(EXA-T1 external extraction pattern absorption dispatch commit; this dedicated
+session sync follows).
 
 ## Active Boundary
 
@@ -59,9 +60,10 @@ in archived handoffs and governed completion packets.
 
 Authorized scope: author the CVF Metadata Evidence And Operator Resolution
 Foundation roadmap, close the work-order template owner maintainability
-hardening, and synchronize continuity. The first active tranche is
-specification-only; Policy_Local correction, EC activation, retrieval, OCR, and
-corpus ingestion remain blocked.
+hardening, dispatch EXA-T1 external extraction pattern absorption, and
+synchronize continuity. EXA-T1 is knowledge absorption/source mapping only;
+Policy_Local correction, EC activation, retrieval, OCR, and corpus ingestion
+remain blocked.
 
 Protected paths:
 
@@ -146,6 +148,23 @@ evidence and define an operator evidence-resolution plan. External
 Policy_Local mutation, EC activation, retrieval, OCR, corpus ingestion,
 provider/API-key use, public-sync, T12 unlock, and readiness claims remain
 blocked.
+
+EXA-T1 external extraction pattern absorption is `DISPATCHED` at material
+commit `ebd70c72` from base `d1167f69`.
+
+Artifacts:
+
+- roadmap:
+  `docs/roadmaps/CVF_EXTERNAL_EXTRACTION_PATTERN_ABSORPTION_ROADMAP_2026-06-12.md`;
+- GC-018:
+  `docs/baselines/CVF_GC018_EXA_T1_DICH_TAI_LIEU_EXTRACTION_PATTERN_ABSORPTION_2026-06-12.md`;
+- work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_EXA_T1_DICH_TAI_LIEU_EXTRACTION_PATTERN_ABSORPTION_FOR_CLAUDE_2026-06-12.md`.
+
+Claude may inspect `nclamvn/dich-tai-lieu` at external commit
+`92c5aeb3b4886b6d5a14ea4682dc5e4e1bc1a336` and return an uncommitted source
+map plus worker return only. This absorbs scan-layer patterns before
+Policy_Local use-case work resumes.
 
 LPCI2 EC-T4 metadata quality assessment is `CLOSED_BLOCKED_BOUNDED` at
 material commit `ff6343e3`.
@@ -834,12 +853,20 @@ history.
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
-Next allowed move: open PL-S1 Policy_Local evidence-resolution pilot only
-through fresh GC-018 and a source-verified work order. PL-S1 may source-map
-governed evidence and define an operator evidence-resolution plan. EC-T5/EC-T6
-activation, retrieval disclosure, OCR installation, corpus ingestion, and
-external Policy_Local integration remain blocked. Public-sync, provider/API key
-use, production readiness, and public readiness remain unauthorized.
+Next allowed move: Claude executes EXA-T1 external extraction pattern
+absorption work order under `WORKER_MUST_NOT_COMMIT` and returns uncommitted
+source map plus worker return.
+
+Required worker artifacts:
+
+- `docs/reference/CVF_EXA_T1_DICH_TAI_LIEU_SCAN_LAYER_PATTERN_SOURCE_MAP_2026-06-12.md`;
+- `docs/reviews/CVF_EXA_T1_DICH_TAI_LIEU_SCAN_LAYER_PATTERN_ABSORPTION_WORKER_RETURN_2026-06-12.md`.
+
+Do not copy external code, install dependencies, run OCR/provider/API proof,
+mutate external Policy_Local, activate EC-T5/EC-T6, change retrieval, ingest
+corpus records, use public-sync, or make readiness claims. Public-sync,
+provider/API key use, production readiness, and public readiness remain
+unauthorized.
 Parked lanes remain Live Redis, DEP2, and external receipt-anchor.
 
 LPCI2-T12 remains forbidden until a separate operator-authorized evidence path
