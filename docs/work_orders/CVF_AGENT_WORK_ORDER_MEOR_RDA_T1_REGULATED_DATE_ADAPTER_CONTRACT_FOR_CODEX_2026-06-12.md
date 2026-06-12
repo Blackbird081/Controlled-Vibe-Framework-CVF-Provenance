@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -18,7 +18,7 @@ dispatchBaseHead: `d1140459`
 
 executionBaseHead: `d1140459`
 
-closureBaseHead: `d1140459`
+closureBaseHead: `43f83c9f`
 
 GC-018:
 `docs/baselines/CVF_GC018_MEOR_RDA_T1_REGULATED_DATE_ADAPTER_CONTRACT_2026-06-12.md`
@@ -38,8 +38,8 @@ requirements.
 | --- | --- | --- |
 | Operator direction | 2026-06-12 continue after MEOR foundation closure | ACCEPT |
 | MEOR-T5 completion | `docs/reviews/CVF_MEOR_T5_FOUNDATION_CLOSURE_AND_DOWNSTREAM_READINESS_COMPLETION_2026-06-12.md` | CLOSED_PASS_BOUNDED |
-| Parent roadmap | `docs/roadmaps/CVF_MEOR_REGULATED_DOMAIN_ADAPTER_ROADMAP_2026-06-12.md` | ACTIVE_RDA_T1_DISPATCHED |
-| RDA-T1 GC-018 | `docs/baselines/CVF_GC018_MEOR_RDA_T1_REGULATED_DATE_ADAPTER_CONTRACT_2026-06-12.md` | AUTHORIZED |
+| Parent roadmap | `docs/roadmaps/CVF_MEOR_REGULATED_DOMAIN_ADAPTER_ROADMAP_2026-06-12.md` | ACTIVE_RDA_T1_CLOSED_RDA_T2_AUTHORIZATION_READY |
+| RDA-T1 GC-018 | `docs/baselines/CVF_GC018_MEOR_RDA_T1_REGULATED_DATE_ADAPTER_CONTRACT_2026-06-12.md` | CLOSED_PASS_BOUNDED |
 
 ## Roadmap-To-Work-Order Trace Matrix
 
@@ -204,11 +204,11 @@ reason.
 
 | Required artifact | Fulfillment rule | Closure status before execution |
 | --- | --- | --- |
-| Adapter contract | must be created before RDA-T1 closure | BLOCKED |
-| Adapter semantics JSON | must parse and align with contract | BLOCKED |
-| Completion review | must record bounded closure and gates | BLOCKED |
-| Parent roadmap update | must move RDA-T1 to closed or blocked | BLOCKED |
-| Continuity update | must name next allowed move | BLOCKED |
+| Adapter contract | must be created before RDA-T1 closure | PASS |
+| Adapter semantics JSON | must parse and align with contract | PASS |
+| Completion review | must record bounded closure and gates | PASS |
+| Parent roadmap update | must move RDA-T1 to closed or blocked | PASS |
+| Continuity update | must name next allowed move | PASS |
 
 ## Write Ownership
 
@@ -260,12 +260,12 @@ readiness, or production readiness.
 
 ## Closure Checklist
 
-- [ ] Contract authored.
-- [ ] JSON semantics authored and parsed.
-- [ ] Regulated and non-regulatory examples included.
-- [ ] No runtime or external use-case changes.
-- [ ] Reviewer-fast and pre-closure pass.
-- [ ] Continuity sync completed.
+- [x] Contract authored.
+- [x] JSON semantics authored and parsed.
+- [x] Regulated and non-regulatory examples included.
+- [x] No runtime or external use-case changes.
+- [x] Reviewer-fast and pre-closure pass.
+- [x] Continuity sync completed.
 
 ## Return-To-Orchestrator Conditions
 
@@ -282,11 +282,11 @@ additional checkpoint is required inside this specification-only scope.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | this file | `Status: DISPATCHED` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_MEOR_RDA_T1_REGULATED_DATE_ADAPTER_CONTRACT_COMPLETION_2026-06-12.md` | absent before execution | BLOCKED |
-| Roadmap state | parent roadmap | RDA-T1 dispatched | PASS |
-| Registry JSON | N/A with reason: T1 creates docs-only contract artifacts | no registry change because T1 creates no corpus/search/classification source | BLOCKED with reason |
-| Registry Markdown | N/A with reason: T1 creates docs-only contract artifacts | no registry change because T1 creates no corpus/search/classification source | BLOCKED with reason |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MEOR_RDA_T1_REGULATED_DATE_ADAPTER_CONTRACT_COMPLETION_2026-06-12.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | parent roadmap | RDA-T1 closed; RDA-T2 ready only for fresh authorization | PASS |
+| Registry JSON | N/A with reason: T1 creates docs-only contract artifacts | no registry change because T1 creates no corpus/search/classification source | BLOCKED with reason: not applicable to spec-only RDA-T1 |
+| Registry Markdown | N/A with reason: T1 creates docs-only contract artifacts | no registry change because T1 creates no corpus/search/classification source | BLOCKED with reason: not applicable to spec-only RDA-T1 |
 | External evidence digest | N/A with reason: repo-local contract work | no external evidence | N/A with reason |
 | System loop interlock | N/A with reason: no loop mutation | docs-only contract | N/A with reason |
 | Session continuity | active state/memory/handoff | RDA-T1 execution next | PASS |

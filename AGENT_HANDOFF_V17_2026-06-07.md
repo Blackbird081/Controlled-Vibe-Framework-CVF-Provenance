@@ -32,11 +32,11 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`meor_rda_t1_regulated_date_adapter_contract_dispatched`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=execute MEOR-RDA-T1 specification-only adapter contract and JSON semantics; parked checkpoint=Policy_Local integration, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`meor_rda_t1_closed_rda_t2_authorization_ready`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=author fresh MEOR-RDA-T2 GC-018/source-verified work order for deterministic regulated-domain adapter implementation; parked checkpoint=Policy_Local integration, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`meor_rda_t1_regulated_date_adapter_contract_dispatched`
+`meor_rda_t1_closed_rda_t2_authorization_ready`
 
 Current HEAD recorded for this handoff: `2e3e7357`
 (MEOR-RDA-T1 dispatch commit; this dedicated session sync follows).
@@ -95,6 +95,13 @@ base `d1140459`. RDA-T1 is specification-only: author the regulated-date
 adapter contract and JSON semantics before any runtime/source implementation.
 Policy_Local, EC activation, retrieval, OCR, corpus ingestion, public-sync,
 production readiness, and public readiness remain blocked.
+
+MEOR-RDA-T1 regulated-date adapter contract is `CLOSED_PASS_BOUNDED` in the
+current closure batch from execution base `43f83c9f`. The closure creates only
+the adapter contract and JSON semantics. RDA-T2 requires a fresh GC-018 and
+source-verified work order before implementation. Policy_Local
+correction/integration and EC activation remain blocked behind later
+adapter/conformance closure and operator/source evidence.
 
 LPCI2 EC-T4 metadata quality assessment is `CLOSED_BLOCKED_BOUNDED` at
 material commit `ff6343e3`.
@@ -783,8 +790,8 @@ history.
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
-Next allowed move: execute MEOR-RDA-T1 specification-only adapter contract and
-JSON semantics.
+Next allowed move: author fresh MEOR-RDA-T2 GC-018 baseline and source-verified
+work order for deterministic regulated-domain adapter implementation.
 EC-T5/EC-T6 activation, retrieval disclosure, OCR installation, corpus
 ingestion, and external Policy_Local integration remain blocked. Public-sync,
 provider/API key use, production readiness, and public readiness remain

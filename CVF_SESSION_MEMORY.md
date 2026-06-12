@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-12
 
-Current mode marker: `meor_rda_t1_regulated_date_adapter_contract_dispatched`
+Current mode marker: `meor_rda_t1_closed_rda_t2_authorization_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `meor_rda_t1_regulated_date_adapter_contract_dispatched`.
+Current mode: `meor_rda_t1_closed_rda_t2_authorization_ready`.
 
 Active handoff:
 
@@ -105,6 +105,14 @@ base `d1140459`. RDA-T1 is specification-only and may author the regulated-date
 adapter contract plus JSON semantics. Runtime/source implementation,
 Policy_Local mutation, EC activation, retrieval, OCR, corpus ingestion,
 public-sync, and readiness claims remain blocked.
+
+MEOR-RDA-T1 regulated-date adapter contract is `CLOSED_PASS_BOUNDED` in the
+current closure batch from execution base `43f83c9f`. It creates the adapter
+contract and JSON semantics only. RDA-T2 is not implemented; the next allowed
+move is a fresh RDA-T2 GC-018/source-verified work order for deterministic
+adapter implementation. Policy_Local correction/integration and EC activation
+remain blocked behind later adapter/conformance closure and operator/source
+evidence.
 
 LPCI2 EC-T4 metadata quality assessment is `CLOSED_BLOCKED_BOUNDED` at
 material commit `ff6343e3`.
@@ -639,10 +647,11 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: execute MEOR-RDA-T1 specification-only adapter contract and
-JSON semantics. Policy_Local candidate correction, EC-T5/EC-T6 activation,
-retrieval disclosure, OCR installation, corpus ingestion, and external
-Policy_Local integration remain blocked.
+Next allowed move: author fresh MEOR-RDA-T2 GC-018 baseline and source-verified
+work order for deterministic regulated-domain adapter implementation. Do not
+implement RDA-T2, mutate Policy_Local, activate EC-T5/EC-T6, change retrieval,
+install OCR, ingest corpus records, use provider/API keys, public-sync, or make
+readiness claims without fresh authorization.
 Public-sync, provider/API key use, production readiness, and public readiness
 remain unauthorized.
 T12 remains forbidden until EC-02 resolves on or after 2026-07-01 and

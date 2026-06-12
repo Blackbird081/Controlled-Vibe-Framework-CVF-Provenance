@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: AUTHORIZED
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 
