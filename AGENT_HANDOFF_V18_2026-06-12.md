@@ -11,9 +11,10 @@ Supersedes:
 
 ## Purpose
 
-This compact handoff records MEMCON-T1a closure, the next foundation move, and
-parked operator checkpoints. Detailed history remains in governed completion
-artifacts and archived handoffs.
+This compact handoff records MEMCON-T1a closure, the governance packet review
+acceleration hardening, the next foundation move, and parked operator
+checkpoints. Detailed history remains in governed completion artifacts and
+archived handoffs.
 
 ## Scope / Target / Owner Boundary
 
@@ -24,14 +25,14 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`memcon_t1a_memory_consolidation_standard_owner_reconciliation_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=operator may authorize MEMCON-T1b through fresh GC-018 and source-verified work order, or hold MEMCON and return to a separately authorized downstream lane; parked checkpoint=Policy_Local PL-S1 is held until the operator explicitly decides the MEMCON foundation is sufficient for downstream use-case work, and EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`governance_packet_review_acceleration_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=operator may authorize MEMCON-T1b through fresh GC-018 and source-verified work order, or hold MEMCON and return to a separately authorized downstream lane; parked checkpoint=Policy_Local PL-S1 is held until the operator explicitly decides the MEMCON foundation is sufficient for downstream use-case work, and EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`memcon_t1a_memory_consolidation_standard_owner_reconciliation_closed_pass_bounded`
+`governance_packet_review_acceleration_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `768628f7`
-(MEMCON-T1a closure session-sync commit; this dedicated handoff-only sync follows).
+Current HEAD recorded for this handoff: `bd15e0ae`
+(governance packet review acceleration material commit; this dedicated session-sync follows).
 
 ## Active Boundary
 
@@ -45,6 +46,27 @@ Public-facing work remains restricted to the sibling public-sync clone and
 requires separate authorization.
 
 ## Latest Continuity Note
+
+Governance packet review acceleration is `CLOSED_PASS_BOUNDED`.
+
+Material closure commit: `bd15e0ae`.
+
+Closure artifacts:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_GOVERNANCE_PACKET_REVIEW_ACCELERATION_2026-06-13.md`;
+- work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_GOVERNANCE_PACKET_REVIEW_ACCELERATION_FOR_CODEX_2026-06-13.md`;
+- completion:
+  `docs/reviews/CVF_GOVERNANCE_PACKET_REVIEW_ACCELERATION_COMPLETION_2026-06-13.md`;
+- authoring addendum:
+  `docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md`;
+- checker:
+  `governance/compat/check_work_order_dispatch_quality.py`.
+
+Result: Required Proof Manifest cells must use one required literal per row;
+compound proof literal cells are rejected by dispatch-quality before worker or
+reviewer time is spent on malformed proof requirements.
 
 MEMCON-T1a Memory Consolidation standard and owner reconciliation is
 `CLOSED_PASS_BOUNDED`.
@@ -267,14 +289,17 @@ generated active-state source files are accepted.
 - Hardened the active-session checker at commit `771c4460` so future generated
   state-source session syncs do not require an extra handoff-only loop.
 - Closed MEMCON-T1a at material commit `84a46b62`; session sync commit
-  `768628f7`; next MEMCON move is T1b
-  only through fresh authorization.
+  `768628f7`; next MEMCON move is T1b only through fresh authorization.
+- Closed governance packet review acceleration at material commit `bd15e0ae`
+  with atomic Required Proof Manifest literal discipline and focused
+  dispatch-quality checker coverage.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: perform the mandatory MEMCON-T1a closure
-session sync without changing governance semantics, and keep the generated
-active-session aggregate aligned with its per-entry source files.
+Authorized guard-maintenance scope: perform the mandatory governance packet
+review acceleration session sync without changing governance semantics, and
+keep the generated active-session aggregate aligned with its per-entry source
+files.
 
 Protected paths:
 
@@ -282,18 +307,19 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
+- `CVF_SESSION/state/entries/governancePacketReviewAcceleration20260613.json`
 - `CVF_SESSION/state/entries/memconT1aDispatch20260612.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: the operator reported the MEMCON-T1a worker return and
-asked Codex to review, commit, and close. The mandatory closure-quality and
-session-continuity rules require synchronized front doors and active state
-sources before moving to the next tranche.
+Operator authorization: the operator asked Codex to upgrade CVF before
+MEMCON-T1b. The mandatory closure-quality and session-continuity rules require
+synchronized front doors and active state sources before moving to the next
+tranche.
 
-Rollback boundary: revert only this MEMCON-T1a handoff-only sync if the
-continuity markers are incorrect. Do not revert session sync commit
-`768628f7`, material closure commit `84a46b62`, dispatch commit `f1d4c357`, or
+Rollback boundary: revert only this governance packet review acceleration
+session sync if the continuity markers are incorrect. Do not revert material
+closure commit `bd15e0ae`, MEMCON-T1a material closure commit `84a46b62`, or
 unrelated history.
 
 ## Next Allowed Move

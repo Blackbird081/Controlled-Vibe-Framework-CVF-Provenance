@@ -4,9 +4,9 @@ Memory class: POINTER_RECORD
 
 Status: ACTIVE SESSION FRONT DOOR
 
-Last updated: 2026-06-12
+Last updated: 2026-06-13
 
-Current mode marker: `memcon_t1a_memory_consolidation_standard_owner_reconciliation_closed_pass_bounded`
+Current mode marker: `governance_packet_review_acceleration_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `memcon_t1a_memory_consolidation_standard_owner_reconciliation_closed_pass_bounded`.
+Current mode: `governance_packet_review_acceleration_closed_pass_bounded`.
 
 Active handoff:
 
@@ -57,6 +57,27 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+Governance packet review acceleration is `CLOSED_PASS_BOUNDED`.
+
+Material closure commit: `bd15e0ae`.
+
+Closure artifacts:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_GOVERNANCE_PACKET_REVIEW_ACCELERATION_2026-06-13.md`;
+- work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_GOVERNANCE_PACKET_REVIEW_ACCELERATION_FOR_CODEX_2026-06-13.md`;
+- completion:
+  `docs/reviews/CVF_GOVERNANCE_PACKET_REVIEW_ACCELERATION_COMPLETION_2026-06-13.md`;
+- authoring addendum:
+  `docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md`;
+- checker:
+  `governance/compat/check_work_order_dispatch_quality.py`.
+
+Result: Required Proof Manifest cells must use one required literal per row;
+compound proof literal cells are rejected by dispatch-quality before worker or
+reviewer time is spent on malformed proof requirements.
 
 MEMCON-T1a Memory Consolidation standard and owner reconciliation is
 `CLOSED_PASS_BOUNDED`.
