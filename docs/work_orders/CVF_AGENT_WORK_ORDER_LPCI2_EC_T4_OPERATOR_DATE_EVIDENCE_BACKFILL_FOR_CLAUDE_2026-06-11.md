@@ -500,8 +500,6 @@ Operator confirmation remains required before:
 | `docs/reference/CVF_EC02_GATE_SEMANTICS_2026-06-11.json` | EC-T2 semantics are not edited by EC-T4 |
 | `docs/reference/CVF_LPCI_RESPONSE_BOUNDARY_ENFORCEMENT_CONTRACT_2026-06-11.md` | Contract already closed at EC-T2 |
 | `docs/corpus-intelligence/**` | No corpus registry change in EC-T4 |
-| `CVF_SESSION/**` | Reviewer-owned session continuity only |
-| `AGENT_HANDOFF_V17_2026-06-07.md` | Reviewer-owned handoff only |
 | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync\**` | No public-sync authorized |
 
 ## Forbidden Filesystem State At Dispatch
@@ -516,8 +514,6 @@ and exempted as read-only; worker-created outputs were absent at dispatch.
 | `docs/reference/CVF_EC02_GATE_SEMANTICS_2026-06-11.json` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | Read-only EC-T2 authority |
 | `docs/reference/CVF_LPCI_RESPONSE_BOUNDARY_ENFORCEMENT_CONTRACT_2026-06-11.md` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | Read-only contract |
 | `docs/corpus-intelligence/**` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | No registry mutation |
-| `CVF_SESSION/**` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | Reviewer-owned only |
-| `AGENT_HANDOFF_V17_2026-06-07.md` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | Reviewer-owned only |
 | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync\**` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | No public-sync |
 
 ## Acceptance Criteria
