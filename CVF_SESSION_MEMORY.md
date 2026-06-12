@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-12
 
-Current mode marker: `lpci2_ec_t4_metadata_gap_assessment_closed_blocked_bounded`
+Current mode marker: `metadata_evidence_operator_resolution_foundation_t1_spec_pending`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `lpci2_ec_t4_metadata_gap_assessment_closed_blocked_bounded`.
+Current mode: `metadata_evidence_operator_resolution_foundation_t1_spec_pending`.
 
 Active handoff:
 
@@ -57,6 +57,17 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+CVF Metadata Evidence And Operator Resolution Foundation roadmap is active:
+
+`docs/roadmaps/CVF_METADATA_EVIDENCE_AND_OPERATOR_RESOLUTION_FOUNDATION_ROADMAP_2026-06-12.md`
+
+The roadmap prioritizes a domain-agnostic CVF foundation before any
+Policy_Local correction or activation. MEOR-T1 is specification-only and must
+lock metadata requirement, evidence basis, operator resolution, and downstream
+disposition semantics before implementation. Regulated-domain mapping and
+Policy_Local real-use-case work remain held behind foundation closure and
+fresh authorization.
 
 LPCI2 EC-T4 metadata quality assessment is `CLOSED_BLOCKED_BOUNDED` at
 material commit `ff6343e3`.
@@ -591,15 +602,14 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: operator reviews
-`docs/reference/CVF_LPCI2_EC_T4_OPERATOR_METADATA_GAP_REPORT_2026-06-12.md`.
-A fresh EC-T4 evidence-resolution successor may open only when new signed or
-operator-supplied evidence exists. EC-T5/EC-T6 activation and retrieval
-disclosure remain blocked. EX-T1 through EX-T9 local extraction foundation is
-closed bounded and no additional EX tranche is authorized. OCR model
-installation, corpus ingestion, and external Policy_Local integration belong
-to a later real-use-case roadmap. Public-sync, provider/API key use,
-production readiness, and public readiness remain unauthorized.
+Next allowed move: author a fresh MEOR-T1 GC-018 baseline and source-verified
+work order for specification-only contract and machine-semantics authoring.
+No runtime implementation is authorized in T1. MEOR-T2 through MEOR-T5 remain
+dependency-held. The regulated-domain adapter, Policy_Local candidate
+correction, EC-T5/EC-T6 activation, retrieval disclosure, OCR installation,
+corpus ingestion, and external Policy_Local integration remain blocked.
+Public-sync, provider/API key use, production readiness, and public readiness
+remain unauthorized.
 T12 remains forbidden until EC-02 resolves on or after 2026-07-01 and
 eligibility is re-evaluated.
 

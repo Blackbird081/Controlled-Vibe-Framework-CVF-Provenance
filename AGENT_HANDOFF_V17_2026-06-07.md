@@ -32,14 +32,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci2_ec_t4_metadata_gap_assessment_closed_blocked_bounded`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=operator reviews the EC-T4 gap report and may authorize a fresh evidence-resolution successor only when new evidence exists; parked checkpoint=EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`metadata_evidence_operator_resolution_foundation_t1_spec_pending`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=author the specification-only MEOR-T1 GC-018 and source-verified work order; parked checkpoint=regulated-domain adapter, Policy_Local integration, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`lpci2_ec_t4_metadata_gap_assessment_closed_blocked_bounded`
+`metadata_evidence_operator_resolution_foundation_t1_spec_pending`
 
-Current HEAD recorded for this handoff: `c3786739`
-(EC-T4 reviewer-ownership correction commit; this session-sync-only commit follows it).
+Current HEAD recorded for this handoff: `618cee29`
+(EC-T4 ownership/session correction closure; this roadmap/session update follows it).
 
 ## Active Boundary
 
@@ -57,30 +57,38 @@ in archived handoffs and governed completion packets.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized scope: EC-T4 metadata-gap assessment closure plus session
-continuity sync so the active handoff and state registry record EC-T4 as a
-complete bounded quality result while preserving EC activation and retrieval
-as blocked.
+Authorized scope: author the CVF Metadata Evidence And Operator Resolution
+Foundation roadmap and synchronize continuity. The first active tranche is
+specification-only; Policy_Local correction, EC activation, retrieval, OCR,
+and corpus ingestion remain blocked.
 
 Protected paths:
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: 2026-06-12 operator instructed Codex to stop further
-EX foundation expansion and complete EC-T4 before deeper use-case work.
+Operator authorization: 2026-06-12 operator instructed Codex to prioritize
+CVF foundation work and keep Policy_Local as a downstream real use case.
 
-Rollback boundary: revert only this EC-T4 closure/session update to
-`AGENT_HANDOFF_V17_2026-06-07.md` and
-`CVF_SESSION/ACTIVE_SESSION_STATE.json` if the continuity record is incorrect.
-Do not revert EC-T4 material commit `ff6343e3`, reviewer-ownership correction
-commit `c3786739`, EX-T9 implementation,
+Rollback boundary: revert only the foundation roadmap and matching continuity
+updates if the design direction is incorrect. Do not revert EC-T4 material
+commit `ff6343e3`, reviewer-ownership correction commit `c3786739`, EX-T9 implementation,
 EX-T8 material commit `43eb9624`,
 EX-T3 through EX-T6 material
 commit `bbfb14f4`, EC-T5 bounded block commit `9a894207`, Source Verification
 hardening commit `838512da`, or unrelated governance/session history.
 
 ## Latest Continuity Note
+
+CVF Metadata Evidence And Operator Resolution Foundation roadmap is active:
+
+`docs/roadmaps/CVF_METADATA_EVIDENCE_AND_OPERATOR_RESOLUTION_FOUNDATION_ROADMAP_2026-06-12.md`
+
+MEOR-T1 is the only next active tranche and is specification-only. It must
+define a domain-agnostic metadata requirement/evidence/resolution contract and
+machine semantics before runtime implementation. MEOR-T2 through T5 remain
+dependency-held. The regulated-domain adapter and Policy_Local validation are
+separate downstream successors and remain `NOT_OPEN`.
 
 LPCI2 EC-T4 metadata quality assessment is `CLOSED_BLOCKED_BOUNDED` at
 material commit `ff6343e3`.
@@ -769,15 +777,13 @@ history.
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
-Next allowed move: operator reviews
-`docs/reference/CVF_LPCI2_EC_T4_OPERATOR_METADATA_GAP_REPORT_2026-06-12.md`.
-A fresh EC-T4 evidence-resolution successor may open only when new signed or
-operator-supplied evidence exists. EC-T5/EC-T6 activation and retrieval
-disclosure remain blocked. EX-T1 through EX-T9 local extraction foundation is
-closed bounded and no additional EX tranche is authorized. OCR installation,
-corpus ingestion, and external Policy_Local integration belong to a later
-real-use-case roadmap. Public-sync, provider/API key use, production
-readiness, and public readiness remain unauthorized.
+Next allowed move: author a fresh MEOR-T1 GC-018 baseline and source-verified
+work order for specification-only contract authoring. No Python or TypeScript
+implementation is authorized in T1. MEOR-T2 through T5 remain dependency-held.
+The regulated-domain adapter, EC-T5/EC-T6 activation, retrieval disclosure,
+OCR installation, corpus ingestion, and external Policy_Local integration
+remain blocked. Public-sync, provider/API key use, production readiness, and
+public readiness remain unauthorized.
 Parked lanes remain Live Redis, DEP2, and external receipt-anchor.
 
 LPCI2-T12 remains forbidden until a separate operator-authorized evidence path
