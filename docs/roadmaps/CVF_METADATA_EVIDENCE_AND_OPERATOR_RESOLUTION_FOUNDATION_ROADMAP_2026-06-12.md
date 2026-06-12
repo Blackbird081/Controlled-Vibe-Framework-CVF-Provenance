@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_FOUNDATION_FIRST_T3_SPEC_PENDING
+Status: ACTIVE_FOUNDATION_FIRST_T3_DISPATCHED
 
 docType: roadmap
 
@@ -222,7 +222,7 @@ evidence exists.
 | --- | --- | --- | --- |
 | MEOR-T1 | Canonical contract plus machine-readable semantics for metadata evidence, operator resolution, and downstream disposition | this roadmap | CLOSED_PASS_BOUNDED at `f3c7ff11` |
 | MEOR-T2 | Extraction-foundation implementation that normalizes metadata findings and feeds the existing EX-T9 report surface | MEOR-T1 completion at `22818605` plus sync `662e3c76` | CLOSED_PASS_BOUNDED at `d18a3e47` |
-| MEOR-T3 | DSCP profile requirement bridge with profile-scoped declarations and no cross-domain default injection | MEOR-T2 completion and closure commit | SPEC_PENDING |
+| MEOR-T3 | DSCP profile requirement bridge with profile-scoped declarations and no cross-domain default injection | MEOR-T2 completion `69ec7574` and sync `472c474d` | DISPATCHED |
 | MEOR-T4 | Cross-domain conformance suite using legal-policy and technical-project synthetic fixtures | MEOR-T3 closed | HOLD_UNTIL_T3_PASS |
 | MEOR-T5 | Foundation closure, registry/continuity sync, and downstream readiness decision | MEOR-T4 closed | HOLD_UNTIL_T4_PASS |
 | EC-ADAPTER successor | Map regulated-date metadata into the generic contract | MEOR-T5 closed plus fresh authorization | NOT_OPEN |
