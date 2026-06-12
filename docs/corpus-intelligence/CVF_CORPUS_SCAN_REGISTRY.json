@@ -2662,6 +2662,44 @@
       "manifestPath": null,
       "packetPath": "docs/reviews/CVF_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_WORKER_RETURN_2026-06-12.md",
       "notes": "Focused pytest coverage for PASS/local route, NEEDS_TIER2_OCR/OCR-eligible route, OCR_LOW_CONFIDENCE/partial/empty escalation, unsupported language blocking, unsupported source type blocking, source-type priority over language check, docx support, empty language codes, deterministic repeatability, version+claim-boundary presence, no raw-content fields, and parametrized status-to-route mapping."
+    },
+    {
+      "id": "memory-consolidation-control-plane-owner-surfaces",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "Memory consolidation control-plane owner surfaces",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/knowledge.refactor.contract.ts",
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/knowledge.maintenance.contract.ts",
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/w7.memory.record.contract.ts"
+      ],
+      "fileCount": 3,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "runtime memory mutation (not authorized)",
+        "Policy_Local mutation (not authorized)",
+        "provider call (not made)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MEMCON-ROADMAP-REBUTTAL-2026-06-12",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_CLAUDE_REBUTTAL_2026-06-12.md",
+      "completionReviewPath": null,
+      "gcBaselineRef": null,
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "MEMORY_PLANE_OWNER_SURFACE",
+        "KNOWLEDGE_MAINTENANCE_CONTRACT",
+        "W7_MEMORY_RECORD_CONTRACT"
+      ],
+      "priorAbsorption": "Bounded source coverage for the memory consolidation roadmap rebuttal only. No runtime change, provider proof, Policy_Local mutation, or autonomous memory mutation is authorized by this registry entry.",
+      "notes": "Covers Control Plane owner surfaces referenced by the MEMCON roadmap rebuttal as partial existing memory and knowledge lifecycle primitives."
     }
   ]
 }
