@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: MEMCON_T1B_CLOSED_PASS_BOUNDED
+Status: MEMCON_T2_DISPATCHED
 
 docType: roadmap
 
@@ -367,7 +367,7 @@ Allowed outcomes:
 | --- | --- | --- | --- |
 | MEMCON-T1a | Memory consolidation standard, vocabulary, and existing-owner reconciliation map | Operator approval after Claude rebuttal | CLOSED_PASS_BOUNDED |
 | MEMCON-T1b | Memory consolidation schema appendix and field tables | MEMCON-T1a closure | CLOSED_PASS_BOUNDED |
-| MEMCON-T2 | Temporal ambiguity and source-authority checker | MEMCON-T1b closure | READY_FOR_FRESH_AUTHORIZATION |
+| MEMCON-T2 | Temporal ambiguity and source-authority checker | MEMCON-T1b closure | DISPATCHED |
 | MEMCON-T3 | Consolidated memory ledger and Markdown-first operator-visible review packet | MEMCON-T2 closure | HOLD_PENDING_T2 |
 | MEMCON-T4 | Retrieval-pack integration boundary and conformance tests | MEMCON-T3 closure | HOLD_PENDING_T3 |
 | MEMCON-T5 | Cross-agent memory consistency contract | MEMCON-T4 closure | HOLD_PENDING_T4 |
@@ -470,6 +470,13 @@ T1b must not:
 
 Goal: add early machine checks for memory artifacts after the temporal rule and
 schema fields exist.
+
+Dispatch artifacts:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_MEMCON_T2_TEMPORAL_SOURCE_AUTHORITY_CHECKER_2026-06-13.md`;
+- work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T2_TEMPORAL_SOURCE_AUTHORITY_CHECKER_FOR_CLAUDE_2026-06-13.md`.
 
 Checker candidates:
 
@@ -646,13 +653,13 @@ rg -n "memoryRuntimeWorkflowChain|runMemoryRuntimeWorkflowChain|MemoryRuntimeWor
 - REVIEW: Claude rebuttal is requested before dispatch.
 - FREEZE: only closed foundation artifacts may feed Policy_Local PL-S1.
 
-## Machine Closure Package
+## Latest Closed Tranche Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
 | Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T1B_MEMORY_CONSOLIDATION_SCHEMA_APPENDIX_FOR_CODEX_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Completion or reviewer artifact | `docs/reviews/CVF_MEMCON_T1B_MEMORY_CONSOLIDATION_SCHEMA_APPENDIX_COMPLETION_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Roadmap state | this file | `Status: MEMCON_T1B_CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state at T1b closure | this file | `Status: MEMCON_T1B_CLOSED_PASS_BOUNDED` at closure commit `f94d2fbd` | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | GC-051 generator/checker PASS with MEMCON-T1b registry source entry | PASS |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | GC-051 generator/checker PASS with MEMCON-T1b registry source entry | PASS |
 | External evidence digest | N/A with reason | no external corpus/provider evidence used | N/A with reason |
