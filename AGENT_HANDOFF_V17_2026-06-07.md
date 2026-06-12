@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`meor_t1_closed_t2_spec_pending`; active hand
 
 `meor_t1_closed_t2_spec_pending`
 
-Current HEAD recorded for this handoff: `f3c7ff11`
-(MEOR-T1 material contract commit; closure sync follows).
+Current HEAD recorded for this handoff: `22818605`
+(MEOR-T1 closure commit; this dedicated session-sync commit follows it).
 
 ## Active Boundary
 
