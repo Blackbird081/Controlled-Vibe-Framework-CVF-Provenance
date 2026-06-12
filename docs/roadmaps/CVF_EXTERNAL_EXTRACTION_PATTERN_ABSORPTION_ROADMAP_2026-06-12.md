@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: EXA_T1_DISPATCHED
+Status: EXA_T1_CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -108,9 +108,62 @@ Rejected design:
 
 | Tranche | Deliverable | Dependency | Status |
 | --- | --- | --- | --- |
-| EXA-T1 | External extraction pattern source map and absorption decision | RDA-T4 closure `dba15ca7` | DISPATCHED |
-| EXA-T2 | CVF scan strategy decision contract, if EXA-T1 accepts patterns | EXA-T1 closure | HOLD_PENDING_EXA_T1 |
-| PL-S1 | Policy_Local evidence-resolution pilot | EXA-T1 closure plus fresh authorization | HOLD_PENDING_EXA_T1 |
+| EXA-T1 | External extraction pattern source map and absorption decision | RDA-T4 closure `dba15ca7` | CLOSED_PASS_BOUNDED at `6db11aed` |
+| EXA-T2 | CVF scan strategy decision contract | EXA-T1 closure `6db11aed` plus fresh GC-018/work order | READY_FOR_FRESH_AUTHORIZATION |
+| PL-S1 | Policy_Local evidence-resolution pilot | EXA-T2 closure plus fresh authorization | HOLD_PENDING_EXA_T2 |
+
+## EXA-T1 Closure Result
+
+EXA-T1 closed as a bounded knowledge-absorption tranche. The external
+repository was pinned to commit
+`92c5aeb3b4886b6d5a14ea4682dc5e4e1bc1a336`; 1140 tracked files were
+reconciled; 15 focused text files were read; and reusable patterns were mapped
+against current CVF extraction-foundation owner surfaces.
+
+The review accepted two high-value implementation candidates:
+
+- a deterministic `DocumentScanSignals` contract adjacent to the existing
+  extraction pipeline;
+- a deterministic `ScanRouteDecision` contract that recommends local
+  extraction, OCR eligibility, escalation, or abstention without invoking OCR
+  or a provider.
+
+The review did not authorize external code import, automatic retry,
+translation-memory or glossary behavior, provider fallback, OCR dependencies,
+or Policy_Local changes.
+
+## Next-Tranche Audit
+
+Recommended next foundation tranche: `EXA-T2`.
+
+EXA-T2 should implement only the deterministic scan-signal and route-decision
+contracts with focused tests and GC-051 coverage. It must reuse the existing
+`ExtractionQualityReport`, `evaluate_extraction_quality()`,
+`map_ocr_language_codes()`, `ExtractionStorageBoundary`, and
+`ScanOutcomeReport` owners instead of creating parallel quality or reporting
+systems.
+
+Before EXA-T2 dispatch, a small governance-control batch should add the rescan
+intelligence checker to `reviewer-fast`. EXA-T1 exposed that this checker ran
+only at pre-commit, so the reviewer gate reported PASS before a predictable
+structural defect was surfaced. That is a phase-gate placement gap, not an
+EXA runtime defect.
+
+EXA-T2 remains subject to fresh GC-018 authorization and a source-verified work
+order. Policy_Local remains downstream of EXA-T2 closure.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_EXA_T1_DICH_TAI_LIEU_EXTRACTION_PATTERN_ABSORPTION_FOR_CLAUDE_2026-06-12.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_EXA_T1_DICH_TAI_LIEU_SCAN_LAYER_PATTERN_ABSORPTION_COMPLETION_2026-06-12.md` | `Status: CLOSED_PASS_BOUNDED`; material review commit `6db11aed` | PASS |
+| Roadmap state | this file | `Status: EXA_T1_CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | BLOCKED with reason: no CVF source/test corpus was added | no GC-051 mutation authorized | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: no CVF source/test corpus was added | no GC-051 mutation authorized | BLOCKED with reason |
+| External evidence digest | `docs/reference/CVF_EXA_T1_DICH_TAI_LIEU_SCAN_LAYER_PATTERN_SOURCE_MAP_2026-06-12.md` | SHA-256 `e1bdc496a12c5d313098e7ee45166f0706a84162065bf71c24ca25b9decec603` | PASS |
+| System loop interlock | N/A with reason: no loop mutation | no interlock update required | N/A with reason |
+| Session continuity | active state/memory/handoff | reviewer-owned closure sync | PASS |
 
 ## Dispatch Boundary
 

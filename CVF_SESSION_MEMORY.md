@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-12
 
-Current mode marker: `exa_t1_external_extraction_pattern_absorption_dispatched`
+Current mode marker: `exa_t1_external_extraction_pattern_absorption_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -33,16 +33,16 @@ Active handoff predecessor archived in this batch:
 3. Resolve review queue:
    `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
 4. Resolve active handoff from the state registry:
-   `AGENT_HANDOFF_V17_2026-06-07.md`
+   `AGENT_HANDOFF_V18_2026-06-12.md`
 5. Read mandatory startup guards listed in the state registry.
 
 ## Current State
 
-Current mode: `exa_t1_external_extraction_pattern_absorption_dispatched`.
+Current mode: `exa_t1_external_extraction_pattern_absorption_closed_pass_bounded`.
 
 Active handoff:
 
-`AGENT_HANDOFF_V17_2026-06-07.md`
+`AGENT_HANDOFF_V18_2026-06-12.md`
 
 Active state registry:
 
@@ -153,8 +153,8 @@ Policy_Local mutation, EC activation, retrieval, OCR, corpus ingestion,
 provider/API-key use, public-sync, T12 unlock, and readiness claims remain
 blocked.
 
-EXA-T1 external extraction pattern absorption is `DISPATCHED` at material
-commit `ebd70c72` from base `d1167f69`.
+EXA-T1 external extraction pattern absorption is `CLOSED_PASS_BOUNDED` at
+material review commit `6db11aed` from execution base `e010c9d2`.
 
 Artifacts:
 
@@ -165,10 +165,12 @@ Artifacts:
 - work order:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_EXA_T1_DICH_TAI_LIEU_EXTRACTION_PATTERN_ABSORPTION_FOR_CLAUDE_2026-06-12.md`.
 
-Claude may inspect `nclamvn/dich-tai-lieu` at external commit
-`92c5aeb3b4886b6d5a14ea4682dc5e4e1bc1a336` and return an uncommitted source
-map plus worker return only. This absorbs scan-layer patterns before
-Policy_Local use-case work resumes.
+The pinned external commit was verified and 1140 tracked files were
+reconciled. Current CVF extraction owner surfaces were distinguished from new
+candidate value. `DocumentScanSignals` and `ScanRouteDecision` are accepted
+only as deterministic EXA-T2 contract candidates. No code import, dependency
+installation, OCR/provider execution, Policy_Local mutation, or readiness
+claim was authorized.
 
 LPCI2 EC-T4 metadata quality assessment is `CLOSED_BLOCKED_BOUNDED` at
 material commit `ff6343e3`.
@@ -703,20 +705,16 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: Claude executes EXA-T1 external extraction pattern
-absorption work order under `WORKER_MUST_NOT_COMMIT` and returns uncommitted
-source map plus worker return.
+Next allowed move: close a bounded governance-control batch that adds the
+rescan intelligence checker to `reviewer-fast`, then open fresh EXA-T2 GC-018
+and a source-verified work order for deterministic `DocumentScanSignals` and
+`ScanRouteDecision` contracts.
 
-Required worker artifacts:
-
-- `docs/reference/CVF_EXA_T1_DICH_TAI_LIEU_SCAN_LAYER_PATTERN_SOURCE_MAP_2026-06-12.md`;
-- `docs/reviews/CVF_EXA_T1_DICH_TAI_LIEU_SCAN_LAYER_PATTERN_ABSORPTION_WORKER_RETURN_2026-06-12.md`.
-
-Do not copy external code, install dependencies, run OCR/provider/API proof,
-mutate external Policy_Local, activate EC-T5/EC-T6, change retrieval, ingest
-corpus records, use public-sync, or make readiness claims.
-Public-sync, provider/API key use, production readiness, and public readiness
-remain unauthorized.
+EXA-T2 must reuse existing extraction quality, OCR language mapping,
+storage-boundary, and scan-outcome-report owner surfaces. Policy_Local remains
+downstream. Do not import external code, install dependencies, run
+OCR/provider/API proof, activate EC, change retrieval, ingest corpus records,
+use public-sync, or make readiness claims.
 T12 remains forbidden until EC-02 resolves on or after 2026-07-01 and
 eligibility is re-evaluated.
 
@@ -763,7 +761,7 @@ gates, and governed file-size checks enforce this front-door contract.
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json`
-- `AGENT_HANDOFF_V17_2026-06-07.md`
+- `AGENT_HANDOFF_V18_2026-06-12.md`
 - `governance/compat/check_active_session_state.py`
 - `governance/compat/run_agent_autorun_workflow_gate.py`
 - `governance/compat/run_local_governance_hook_chain.py`

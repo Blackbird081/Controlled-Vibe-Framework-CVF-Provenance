@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -16,16 +16,16 @@ Commit mode: WORKER_MUST_NOT_COMMIT
 
 dispatchBaseHead: `d1167f69`
 
-executionBaseHead: `d1167f69`
+executionBaseHead: `e010c9d2`
 
-closureBaseHead: `d1167f69`
+closureBaseHead: `6db11aed`
 
 completionReviewPath:
-`docs/reviews/CVF_EXA_T1_DICH_TAI_LIEU_SCAN_LAYER_PATTERN_ABSORPTION_WORKER_RETURN_2026-06-12.md`
+`docs/reviews/CVF_EXA_T1_DICH_TAI_LIEU_SCAN_LAYER_PATTERN_ABSORPTION_COMPLETION_2026-06-12.md`
 
 reviewerOwnedClosurePaths:
 `docs/reference/CVF_EXA_T1_DICH_TAI_LIEU_SCAN_LAYER_PATTERN_SOURCE_MAP_2026-06-12.md`;
-`docs/reviews/CVF_EXA_T1_DICH_TAI_LIEU_SCAN_LAYER_PATTERN_ABSORPTION_WORKER_RETURN_2026-06-12.md`
+`docs/reviews/CVF_EXA_T1_DICH_TAI_LIEU_SCAN_LAYER_PATTERN_ABSORPTION_COMPLETION_2026-06-12.md`
 
 GC-018:
 `docs/baselines/CVF_GC018_EXA_T1_DICH_TAI_LIEU_EXTRACTION_PATTERN_ABSORPTION_2026-06-12.md`
@@ -92,7 +92,7 @@ If the external commit does not match, stop and return
 Claude may create only:
 
 - `docs/reference/CVF_EXA_T1_DICH_TAI_LIEU_SCAN_LAYER_PATTERN_SOURCE_MAP_2026-06-12.md`
-- `docs/reviews/CVF_EXA_T1_DICH_TAI_LIEU_SCAN_LAYER_PATTERN_ABSORPTION_WORKER_RETURN_2026-06-12.md`
+- `docs/reviews/CVF_EXA_T1_DICH_TAI_LIEU_SCAN_LAYER_PATTERN_ABSORPTION_COMPLETION_2026-06-12.md`
 
 Claude must not edit runtime/source files, registries, session state, handoff,
 public-sync, or external Policy_Local files.
@@ -238,6 +238,18 @@ Required negative-search checks:
 
 If a search contradicts this packet, return to Codex with corrected evidence.
 
+## Current Runtime Freshness Verification
+
+| Runtime surface | Freshness check | Disposition |
+| --- | --- | --- |
+| Extraction quality owner | `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/extraction_pipeline.py` owns `ExtractionQualityReport` and `evaluate_extraction_quality()` | PASS |
+| OCR language mapping owner | `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/extraction_pipeline.py` owns `map_ocr_language_codes()` | PASS |
+| Storage-boundary owner | `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/extraction_pipeline.py` owns `ExtractionStorageBoundary` | PASS |
+| Operator scan report owner | `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/scan_outcome_report.py` owns `ScanOutcomeReport` and `build_scan_outcome_report()` | PASS |
+| Domain profile language authority | `EXTENSIONS/CVF_POLICY_FIREWALL/src/domain-profile/dscp.domain.profile.contract.ts` owns profile `languageCodes` | PASS |
+| Exact external symbol absence | scoped current-source searches found no CVF-owned `ExtractionStrategy` or `EQSReport`; the closure does not infer absence of overlapping capability | PASS |
+| Proposed EXA-T2 names | `DocumentScanSignals` and `ScanRouteDecision` remain new candidate names, not current runtime facts | DOC_ONLY_NEW |
+
 ## Evidence Reuse And Encoding Plan
 
 verificationMode: `RECOMPUTE_REQUIRED`
@@ -333,26 +345,39 @@ pre-closure gates, and decide whether EXA-T2 is warranted.
 
 ## Closure Checklist
 
-| Item | Worker expectation |
+| Item | Final evidence |
 | --- | --- |
-| Source map authored | required before return |
-| Worker return authored | required before return |
-| External commit evidence recorded | required before return |
-| Pattern matrix complete | required before return |
-| Forbidden actions avoided | required before return |
+| Source map authored | PASS at `docs/reference/CVF_EXA_T1_DICH_TAI_LIEU_SCAN_LAYER_PATTERN_SOURCE_MAP_2026-06-12.md` |
+| Worker return authored | PASS at `docs/reviews/CVF_EXA_T1_DICH_TAI_LIEU_SCAN_LAYER_PATTERN_ABSORPTION_COMPLETION_2026-06-12.md` |
+| External commit evidence recorded | PASS for `92c5aeb3b4886b6d5a14ea4682dc5e4e1bc1a336` |
+| Pattern matrix complete | PASS after Codex source and owner-surface reconciliation |
+| Forbidden actions avoided | PASS; committed range contains governed analysis artifacts only |
+
+## Closure Diff Gate
+
+| Comparison | Result |
+| --- | --- |
+| Roadmap requirements versus work-order instructions | PASS |
+| Work-order instructions versus final artifacts | PASS after corpus-count, source-line, license-boundary, and CVF-owner corrections |
+| Final artifacts versus completion claims | PASS_BOUNDED |
+| Changed paths versus Allowed Scope | PASS for worker material commit `6db11aed` |
+| Runtime, provider, public-sync, and Policy_Local claims | N/A with reason: no such work or claim was authorized |
+
+Closure result: the pinned external source was mapped and its reusable
+patterns were classified. This result authorizes no runtime implementation.
 
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | this file | `Status: DISPATCHED` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_EXA_T1_DICH_TAI_LIEU_SCAN_LAYER_PATTERN_ABSORPTION_WORKER_RETURN_2026-06-12.md` | worker return expected | N/A with reason: worker has not returned yet |
-| Roadmap state | `docs/roadmaps/CVF_EXTERNAL_EXTRACTION_PATTERN_ABSORPTION_ROADMAP_2026-06-12.md` | `Status: EXA_T1_DISPATCHED` | PASS |
-| Registry JSON | BLOCKED with reason: no source/test corpus added by dispatch | GC-051 update outside dispatch scope | BLOCKED with reason |
-| Registry Markdown | BLOCKED with reason: no source/test corpus added by dispatch | GC-051 update outside dispatch scope | BLOCKED with reason |
-| External evidence digest | N/A with reason: worker will produce bounded external source map | expected in worker return | N/A with reason |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_EXA_T1_DICH_TAI_LIEU_SCAN_LAYER_PATTERN_ABSORPTION_COMPLETION_2026-06-12.md` | `Status: CLOSED_PASS_BOUNDED`; material commit `6db11aed` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_EXTERNAL_EXTRACTION_PATTERN_ABSORPTION_ROADMAP_2026-06-12.md` | `Status: EXA_T1_CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | BLOCKED with reason: EXA-T1 added no CVF source/test corpus eligible for GC-051 registration | no registry mutation authorized in this analysis-only tranche | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: EXA-T1 added no CVF source/test corpus eligible for GC-051 registration | no registry mutation authorized in this analysis-only tranche | BLOCKED with reason |
+| External evidence digest | `docs/reference/CVF_EXA_T1_DICH_TAI_LIEU_SCAN_LAYER_PATTERN_SOURCE_MAP_2026-06-12.md` | SHA-256 `e1bdc496a12c5d313098e7ee45166f0706a84162065bf71c24ca25b9decec603`; pinned commit and 1140-file reconciliation | PASS |
 | System loop interlock | N/A with reason: no loop mutation | no interlock update required | N/A with reason |
-| Session continuity | active state/memory/handoff | Codex session sync after dispatch commit | PASS |
+| Session continuity | active state/memory/handoff | Codex session sync follows closure commit | N/A with reason: reviewer-owned post-closure sync |
 
 ## Return-To-Orchestrator Conditions
 

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: REVIEWED_READY_FOR_CLOSURE
+Status: CLOSED_PASS_BOUNDED
 
 docType: worker_return
 
@@ -382,10 +382,12 @@ execution shows only two new untracked files:
 
 ```
 ?? docs/reference/CVF_EXA_T1_DICH_TAI_LIEU_SCAN_LAYER_PATTERN_SOURCE_MAP_2026-06-12.md
-?? docs/reviews/CVF_EXA_T1_DICH_TAI_LIEU_SCAN_LAYER_PATTERN_ABSORPTION_WORKER_RETURN_2026-06-12.md
+?? docs/reviews/<worker-return-artifact>
 ```
 
-No modifications to existing CVF files. No new dependencies. No new imports.
+This was the worker-return snapshot before Codex review and canonical
+completion-file conversion. No runtime/source modification, dependency, or
+import was introduced.
 
 ---
 
@@ -536,6 +538,19 @@ contracts only. Quality-profile refinement, automatic retry, OCR runtime,
 provider fallback, translation memory, and Policy_Local integration remain
 separate decisions.
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_EXA_T1_DICH_TAI_LIEU_EXTRACTION_PATTERN_ABSORPTION_FOR_CLAUDE_2026-06-12.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | this file | `Status: CLOSED_PASS_BOUNDED`; material review commit `6db11aed` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_EXTERNAL_EXTRACTION_PATTERN_ABSORPTION_ROADMAP_2026-06-12.md` | `Status: EXA_T1_CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | BLOCKED with reason: no CVF source/test corpus was added | no GC-051 mutation authorized | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason: no CVF source/test corpus was added | no GC-051 mutation authorized | BLOCKED with reason |
+| External evidence digest | `docs/reference/CVF_EXA_T1_DICH_TAI_LIEU_SCAN_LAYER_PATTERN_SOURCE_MAP_2026-06-12.md` | SHA-256 `e1bdc496a12c5d313098e7ee45166f0706a84162065bf71c24ca25b9decec603` | PASS |
+| System loop interlock | N/A with reason: no loop mutation | no interlock update required | N/A with reason |
+| Session continuity | active state/memory/handoff | reviewer-owned closure sync | PASS |
+
 ---
 
 ## Claim Boundary
@@ -575,6 +590,10 @@ Implementation requires separate GC-018 per candidate.
 
 ## Reviewer Verification
 
+Material review commit: `6db11aed`.
+
+Reviewer disposition: `CLOSED_PASS_BOUNDED`.
+
 Codex independently verified:
 
 - CVF execution HEAD `e010c9d2`;
@@ -592,7 +611,7 @@ Codex independently verified:
 
 ## Return-To-Orchestrator Signal
 
-**REVIEWED_READY_FOR_BOUNDED_CLOSURE**
+**CLOSED_PASS_BOUNDED**
 
 Worker evidence required corrections, but no remaining blocking condition
 requires operator input or scope expansion.
@@ -604,5 +623,12 @@ Conditions that would have blocked (none triggered):
 - Useful absorption requires code import or provider calls: NOT triggered;
   accepted value is limited to deterministic contracts or existing-owner
   refinements
+
+## Public Export Disposition
+
+DEFERRED_PRIVATE_ONLY
+
+Reason: private provenance knowledge-absorption closure; no public-sync batch
+or public claim was authorized.
 
 

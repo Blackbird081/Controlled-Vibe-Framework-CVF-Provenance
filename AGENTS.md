@@ -13,7 +13,7 @@ current:
 
 The current active handoff in that registry is:
 
-`AGENT_HANDOFF_V17_2026-06-07.md`
+`AGENT_HANDOFF_V18_2026-06-12.md`
 
 Historical handoffs are archived under:
 
