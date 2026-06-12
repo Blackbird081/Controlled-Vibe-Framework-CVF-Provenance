@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`meor_t4_cross_domain_conformance_dispatched`
 
 `meor_t4_cross_domain_conformance_dispatched`
 
-Current HEAD recorded for this handoff: `7b2204dc`
-(MEOR-T3 closure session sync; T4 dispatch commit follows).
+Current HEAD recorded for this handoff: `86125e15`
+(MEOR-T4 dispatch commit; this dedicated session sync follows).
 
 ## Active Boundary
 
