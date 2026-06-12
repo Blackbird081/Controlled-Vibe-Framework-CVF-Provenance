@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: PARKED_PENDING_OPERATOR_METADATA
+Status: CLOSED_BLOCKED_BOUNDED
 
 docType: baseline
 
@@ -23,14 +23,21 @@ This tranche does not change runtime behavior, DSCP profile gate values,
 external Policy_Local data, corpus ingestion state, retrieval behavior, or
 public-facing documentation.
 
-Reviewer disposition on 2026-06-11: EC-T4 produced a bounded evidence packet
-but returned `RETURNED_BLOCKED_METADATA_GAPS`. Four candidate records still
-need operator-confirmed signed dates/document numbers. EC-T5 remains blocked.
+Reviewer disposition on 2026-06-12: EC-T4 is complete as a bounded metadata
+quality assessment. The scan/evidence path correctly returned
+`RETURNED_BLOCKED_METADATA_GAPS`; four candidate records still need
+operator-confirmed signed dates/document numbers. The unresolved metadata is
+an input-quality result, not unfinished EC-T4 execution. EC-T5 remains blocked.
 
 ## Authorization
 
 Operator instruction on 2026-06-11 authorized Codex to prepare the next
 allowed EC-T4 path for Claude after EC-T3 closure.
+
+Operator instruction on 2026-06-12 authorized Codex to stop further EX
+foundation expansion, complete EC-T4 as the next quality-test tranche, and
+preserve OCR installation, corpus ingestion, and Policy_Local integration for
+a later real-use-case roadmap.
 
 Active state:
 
@@ -51,6 +58,11 @@ EC-T4 is allowed to propose `promulgationDate`, `effectiveDate`,
 value is tied to a file-hash-verified source and a specific evidence pointer.
 When evidence is missing or ambiguous, the worker must output an explicit
 `UNKNOWN_OR_AMBIGUOUS` disposition rather than guessing.
+
+Final decision: close EC-T4 as `CLOSED_BLOCKED_BOUNDED`. The tranche is
+complete because all six candidates were verified, classified, and surfaced
+through human-readable and machine-readable operator reports. The downstream
+metadata-resolution dependency remains blocked for four candidates.
 
 ## Predecessor Evidence
 
@@ -73,6 +85,8 @@ In scope:
 - Create a Markdown evidence ledger for each candidate.
 - Create a proposed metadata backfill JSON for each candidate.
 - Create a worker return packet.
+- Reviewer creates an operator-visible metadata-gap report and a
+  machine-readable companion JSON.
 
 Out of scope:
 
@@ -114,6 +128,20 @@ Out of scope:
 | Proposed backfill JSON | JSON parse PASS and exactly six records |
 | Boundary scan | no `documentStatus=IN_FORCE` value before 2026-07-01 unless explicitly marked `FORBIDDEN_VALUE_DETECTED` and returned blocked |
 | Forbidden path scan | no external Policy_Local edit, runtime source edit, public-sync edit, or DSCP gate value update |
+
+## Final Disposition
+
+EC-T4 execution is complete with disposition `CLOSED_BLOCKED_BOUNDED`.
+
+Final operator outputs:
+
+- `docs/reference/CVF_LPCI2_EC_T4_OPERATOR_METADATA_GAP_REPORT_2026-06-12.md`
+- `docs/reference/CVF_LPCI2_EC_T4_OPERATOR_METADATA_GAP_REPORT_2026-06-12.json`
+
+The reports distinguish successful scan/evidence processing from unresolved
+input metadata. A later evidence-resolution successor may consume new signed
+documents or explicit operator-supplied metadata, but it must not rewrite this
+historical result or silently infer missing values.
 
 ## Claim Boundary
 

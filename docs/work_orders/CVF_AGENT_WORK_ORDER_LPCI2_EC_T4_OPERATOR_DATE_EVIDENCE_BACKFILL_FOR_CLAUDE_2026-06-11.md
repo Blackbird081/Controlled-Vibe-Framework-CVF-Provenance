@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: PARKED_PENDING_OPERATOR_METADATA
+Status: CLOSED_BLOCKED_BOUNDED
 
 docType: work_order
 
@@ -18,7 +18,7 @@ dispatchBaseHead: `5296825c`
 
 executionBaseHead: worker must capture before edits
 
-closureBaseHead: N/A - parked pending operator metadata
+closureBaseHead: `265c64dd`
 
 completionReviewPath:
 
@@ -37,16 +37,19 @@ data, runtime source, DSCP profiles, or session files.
 EC-T4 is not EC-T5. `ec02Gate` stays `BLOCKED_UNTIL_2026-07-01` through this
 tranche.
 
-Reviewer disposition on 2026-06-11: EC-T4 returned
-`RETURNED_BLOCKED_METADATA_GAPS` and is parked pending operator confirmation
-of missing signed dates/document numbers for CAND-002, CAND-004, CAND-005,
-and CAND-006. EC-T5 remains unauthorized.
+Reviewer disposition on 2026-06-12: EC-T4 returned
+`RETURNED_BLOCKED_METADATA_GAPS` and is complete as a bounded input-quality
+assessment. Missing signed dates/document numbers for CAND-002, CAND-004,
+CAND-005, and CAND-006 remain an operator evidence dependency. EC-T5 remains
+unauthorized.
 
 ## Authority Chain
 
 - Operator instruction: 2026-06-11, prepare EC-T4 path using EC-T3 completion
   evidence at `docs/reviews/CVF_LPCI2_EC_T3_CORPUS_RECORD_SCHEMA_UPDATE_COMPLETION_2026-06-11.md`
   and closure commit `54bfff3f`.
+- Operator instruction: 2026-06-12, stop EX foundation expansion and complete
+  EC-T4 as a bounded quality-test result before deeper Policy_Local work.
 - Active session state: `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - Active handoff: `AGENT_HANDOFF_V17_2026-06-07.md`
 - Roadmap:
@@ -134,6 +137,8 @@ status judgment rather than metadata transcription.
 Reviewer-owned closure paths:
 
 - `docs/reviews/CVF_LPCI2_EC_T4_OPERATOR_DATE_EVIDENCE_BACKFILL_COMPLETION_2026-06-11.md`
+- `docs/reference/CVF_LPCI2_EC_T4_OPERATOR_METADATA_GAP_REPORT_2026-06-12.md`
+- `docs/reference/CVF_LPCI2_EC_T4_OPERATOR_METADATA_GAP_REPORT_2026-06-12.json`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EC_T4_OPERATOR_DATE_EVIDENCE_BACKFILL_FOR_CLAUDE_2026-06-11.md`
 - `docs/baselines/CVF_GC018_LPCI2_EC_T4_OPERATOR_DATE_EVIDENCE_BACKFILL_2026-06-11.md`
 - `docs/roadmaps/CVF_LPCI2_EXTRACTION_AND_EC02_REFINEMENT_ROADMAP_2026-06-10.md`
@@ -146,6 +151,8 @@ completionReviewPath: `docs/reviews/CVF_LPCI2_EC_T4_OPERATOR_DATE_EVIDENCE_BACKF
 reviewerOwnedClosurePaths:
 
 - `docs/reviews/CVF_LPCI2_EC_T4_OPERATOR_DATE_EVIDENCE_BACKFILL_COMPLETION_2026-06-11.md`
+- `docs/reference/CVF_LPCI2_EC_T4_OPERATOR_METADATA_GAP_REPORT_2026-06-12.md`
+- `docs/reference/CVF_LPCI2_EC_T4_OPERATOR_METADATA_GAP_REPORT_2026-06-12.json`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EC_T4_OPERATOR_DATE_EVIDENCE_BACKFILL_FOR_CLAUDE_2026-06-11.md`
 - `docs/reviews/CVF_LPCI2_EC_T4_OPERATOR_DATE_EVIDENCE_WORKER_RETURN_2026-06-11.md`
 - `docs/baselines/CVF_GC018_LPCI2_EC_T4_OPERATOR_DATE_EVIDENCE_BACKFILL_2026-06-11.md`
@@ -158,9 +165,8 @@ pendingStatusTokensAllowedBeforeReview: `COMPLETE_PENDING_REVIEW`,
 `RETURNED_PASS_BOUNDED`, `RETURNED_BLOCKED_METADATA_GAPS`,
 `RETURNED_BLOCKED_GUARD_FAILURE`
 
-forbiddenClosedEquivalentResidue: `COMPLETE_PENDING_REVIEW`,
-`NOT_EXECUTED_YET`, `WORKER_RETURNS_PENDING`, `PRE_CLOSURE_NOT_RUN`,
-`FAIL_EXPECTED_PENDING_FINALITY`, `DISPATCHED` as current status
+forbiddenClosedEquivalentResidue: resolved; no pending execution,
+worker-return, or pre-closure markers remain as current state.
 
 predecessorClosureFactSource: EC-T3 completion
 `docs/reviews/CVF_LPCI2_EC_T3_CORPUS_RECORD_SCHEMA_UPDATE_COMPLETION_2026-06-11.md`
@@ -223,6 +229,24 @@ existing runtime fields.
 | Token | Dispatch disposition |
 | --- | --- |
 | `QUERY_CLASS_GATED` | Existing EC-T2 semantics token only; forbidden in DSCP profile values during EC-T4 |
+
+## Current Runtime Freshness Verification
+
+Verified at reviewer closure base `265c64dd`.
+
+Commands:
+
+```powershell
+rg -n "export type DocumentStatus|documentStatus\?|promulgationDate\?|effectiveDate\?" EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/lpci/types.ts
+rg -n --fixed-strings "QUERY_CLASS_GATED" EXTENSIONS
+```
+
+Observed result:
+
+- EC-T3 lifecycle fields remain present in the current TypeScript owner.
+- `QUERY_CLASS_GATED` remains absent from `EXTENSIONS/**`.
+- EC-T4 remains documentation/data-evidence work only; no runtime
+  implementation or hardcoded runtime behavior is claimed.
 | `documentStatus=IN_FORCE` | Forbidden before 2026-07-01; worker must return blocked if detected as a proposed value |
 | External extracted text | Auxiliary evidence only; not source authenticity proof |
 
@@ -424,15 +448,15 @@ record the failure as reviewer-owned finality and return the packet.
 
 ## Closure Checklist
 
-- [ ] Three worker-owned files created and staged.
-- [ ] JSON parses successfully.
-- [ ] Exactly six candidate records are present.
-- [ ] All six records retain `BLOCKED_UNTIL_2026-07-01`.
-- [ ] No record proposes `IN_FORCE`.
-- [ ] Hash/path revalidation is recorded for each candidate.
-- [ ] Missing or ambiguous evidence is explicitly marked.
-- [ ] No forbidden paths were modified.
-- [ ] Worker return includes claim boundary and learning disposition.
+- [x] Three worker-owned files were created and reviewed.
+- [x] Proposed metadata and operator-gap JSON artifacts parse successfully.
+- [x] Exactly six candidate records are present.
+- [x] All six records retain `BLOCKED_UNTIL_2026-07-01`.
+- [x] No record proposes `IN_FORCE`.
+- [x] Hash/path revalidation is recorded for each candidate.
+- [x] Missing or ambiguous evidence is explicitly marked.
+- [x] No forbidden paths were modified.
+- [x] Worker return includes claim boundary and learning disposition.
 
 ## Return-To-Orchestrator Conditions
 
@@ -464,6 +488,8 @@ Operator confirmation remains required before:
 | `docs/reference/CVF_LPCI2_EC_T4_OPERATOR_DATE_EVIDENCE_LEDGER_2026-06-11.md` | No (worker creates) | Human-readable date/status/jurisdiction evidence ledger |
 | `docs/reference/CVF_LPCI2_EC_T4_PROPOSED_METADATA_BACKFILL_2026-06-11.json` | No (worker creates) | Machine-readable proposed backfill artifact |
 | `docs/reviews/CVF_LPCI2_EC_T4_OPERATOR_DATE_EVIDENCE_WORKER_RETURN_2026-06-11.md` | No (worker creates) | Worker return packet |
+| `docs/reference/CVF_LPCI2_EC_T4_OPERATOR_METADATA_GAP_REPORT_2026-06-12.md` | Reviewer creates at closure | Operator-readable correction checklist |
+| `docs/reference/CVF_LPCI2_EC_T4_OPERATOR_METADATA_GAP_REPORT_2026-06-12.json` | Reviewer creates at closure | Machine-readable operator checkpoint |
 
 ## Forbidden Path Manifest
 
@@ -477,6 +503,22 @@ Operator confirmation remains required before:
 | `CVF_SESSION/**` | Reviewer-owned session continuity only |
 | `AGENT_HANDOFF_V17_2026-06-07.md` | Reviewer-owned handoff only |
 | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync\**` | No public-sync authorized |
+
+## Forbidden Filesystem State At Dispatch
+
+This is the preserved dispatch boundary. Existing owner surfaces were present
+and exempted as read-only; worker-created outputs were absent at dispatch.
+
+| Forbidden path | Expected state | Actual state at dispatch | Action if PRESENT |
+| --- | --- | --- | --- |
+| `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Policy_Local\**` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | Read evidence only; do not edit, stage, or claim |
+| `EXTENSIONS/**` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | Do not edit runtime/source |
+| `docs/reference/CVF_EC02_GATE_SEMANTICS_2026-06-11.json` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | Read-only EC-T2 authority |
+| `docs/reference/CVF_LPCI_RESPONSE_BOUNDARY_ENFORCEMENT_CONTRACT_2026-06-11.md` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | Read-only contract |
+| `docs/corpus-intelligence/**` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | No registry mutation |
+| `CVF_SESSION/**` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | Reviewer-owned only |
+| `AGENT_HANDOFF_V17_2026-06-07.md` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | Reviewer-owned only |
+| `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync\**` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | No public-sync |
 
 ## Acceptance Criteria
 
@@ -520,6 +562,24 @@ prepared for Codex/operator review. It must not claim current-law correctness,
 legal advice quality, source authenticity, retrieval readiness, T12 readiness,
 EC-T5 gate behavior, public readiness, production readiness, or release
 readiness.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this file | `Status: CLOSED_BLOCKED_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LPCI2_EC_T4_OPERATOR_DATE_EVIDENCE_BACKFILL_COMPLETION_2026-06-11.md` | matching closed-bounded status | PASS |
+| Roadmap state | `docs/roadmaps/CVF_LPCI2_EXTRACTION_AND_EC02_REFINEMENT_ROADMAP_2026-06-10.md` | EC-T4 row closed blocked bounded | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no corpus registry mutation authorized for metadata reporting | BLOCKED with reason: no corpus/source registration changed |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no corpus registry mutation authorized for metadata reporting | BLOCKED with reason: no corpus/source registration changed |
+| Proposed metadata JSON | `docs/reference/CVF_LPCI2_EC_T4_PROPOSED_METADATA_BACKFILL_2026-06-11.json` | six records; retained EC-02 gate | PASS |
+| Operator gap JSON | `docs/reference/CVF_LPCI2_EC_T4_OPERATOR_METADATA_GAP_REPORT_2026-06-12.json` | parseable six-record checkpoint | PASS |
+| External evidence digest | proposed metadata JSON and operator gap JSON | sha256:cd4fd3d2896fee19bd46ef9da5147a05f806f7fc4e29965554371c6fd4da903b; sha256:e9615e977ad77428de4a8006223746c7a1ba425491736b7e0e8a9f7e68839e04 | PASS |
+| System loop interlock | no system-loop mutation | N/A with reason: evidence/report closure only | PASS |
+| Runtime/source registry | runtime source tree | N/A with reason: EC-T4 does not change runtime/source | PASS |
+| External Policy_Local | external operator workspace | N/A with reason: read-only evidence source; no mutation authorized | PASS |
+| Public-sync | public-sync clone | N/A with reason: no public export authorized | PASS |
+| Session continuity | state, memory, and active handoff | reviewer-owned final sync | PASS |
 
 ---
 

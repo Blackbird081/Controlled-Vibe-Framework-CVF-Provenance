@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_PARTIAL_EX_T8_CLOSED_EC_BLOCKED
+Status: ACTIVE_PARTIAL_EX_T9_CLOSED_EC_BLOCKED
 
 docType: roadmap
 
@@ -14,7 +14,7 @@ Author: Claude (operator-directed proposal for Codex review and explicit operato
 
 ## Authorization And Decision
 
-Decision state: EX_T8_CLOSED_EC_BLOCKED.
+Decision state: EX_T9_CLOSED_EC_T4_CLOSED_BLOCKED.
 
 Operator instruction on 2026-06-11 authorized Codex to author the next work
 order under the hardened design-control foundation. EX-T1 is now completed as a
@@ -30,16 +30,18 @@ This records closure of the bounded EX-T2 Tier 1 digital-native extractor
 implementation, EX-T3 through EX-T9 local extraction pipeline foundation,
 EC-T1 regulatory date/status decision baseline, EC-T2 contract amendment plus
 machine-readable EC-02 semantics JSON, EC-T3 TypeScript corpus schema fields,
-EC-T4 parked evidence/backfill proposal, and EC-T5 bounded block decision.
+EC-T4 bounded metadata-gap quality result, and EC-T5 bounded block decision.
 It does not authorize repo dependency addition, OCR model download, corpus
 ingestion, runtime retrieval behavior change, DSCP profile value update,
 public-sync, or live/provider proof. Any later child lane must receive fresh
 GC-018 authorization and a source-verified work order before execution release.
 
-EC-T4 reviewer disposition on 2026-06-11: `RETURNED_BLOCKED_METADATA_GAPS`.
+EC-T4 reviewer disposition on 2026-06-12: `CLOSED_BLOCKED_BOUNDED`.
 Two records are source-evidenced pending operator type/status confirmation;
 four records require operator-confirmed signed dates/document numbers before
-metadata backfill or EC-T5 can proceed.
+metadata resolution or any EC activation can proceed. EC-T4 itself is complete
+because the quality gap was detected, classified, and exported to
+operator-readable and machine-readable reports.
 
 EC-T5 reviewer disposition on 2026-06-11: `CLOSED_BLOCKED_BOUNDED`.
 `QUERY_CLASS_GATED` was not applied to DSCP domain profiles because EC-T4
@@ -646,7 +648,7 @@ that the runtime token, contract table, and machine semantics agree.
 | EC-T1 | Governance decision record | `CVF_GC018_REGULATORY_DATE_MODEL_*.md` - explicitly authorized scope; establishes `documentStatus` as CVF-layer concept | Explicit authorization |
 | EC-T2 | Contract and machine semantics | COMPLETE_BOUNDED: response boundary contract update plus machine-readable EC-02 gate semantics JSON | EC-T1 |
 | EC-T3 | Corpus record schema update | CLOSED_PASS_BOUNDED at `a895dc03`: `documentStatus`, `promulgationDate`, and `effectiveDate` schema support in TypeScript; no corpus JSON migration | EC-T2 |
-| EC-T4 | Per-project metadata backfill | PARKED_PENDING_OPERATOR_METADATA: evidence ledger and proposed JSON exist; CAND-002, CAND-004, CAND-005, and CAND-006 require operator-confirmed signed dates/document numbers; no external workspace edit, no `IN_FORCE`, no `ec02Gate` change | EC-T3, operator dates |
+| EC-T4 | Per-project metadata quality assessment | CLOSED_BLOCKED_BOUNDED: evidence ledger, proposed JSON, and operator Markdown/JSON gap reports account for all six candidates; four require new signed/operator evidence; no external workspace edit, no `IN_FORCE`, no `ec02Gate` change | EC-T3 |
 | EC-T5 | DSCP gate value update | CLOSED_BLOCKED_BOUNDED: `QUERY_CLASS_GATED` not applied; EC-T4 remains metadata-gapped and current CPF apply logic blocks only `BLOCKED*`/`PROHIBITED`, so token activation is deferred to a successor with operator metadata and runtime/query routing scope | EC-T4 |
 | EC-T6 | Retrieval disclosure wire-in | BLOCKED_BY_EC_T5: retrieval disclosure wire-in remains unauthorized until a successor gate-value activation tranche closes with source-verified runtime/query routing behavior | EC-T5 successor |
 
@@ -691,7 +693,7 @@ Phase 2 (after Phase 1):
 Phase 3 (after Phase 2):
   EX-T4  quality gate + chunk schema CLOSED_PASS_BOUNDED
   EC-T3  corpus record schema update
-  EC-T4  per-project metadata backfill (needs operator-supplied dates)
+  EC-T4  metadata quality assessment CLOSED_BLOCKED_BOUNDED
 
 Phase 4 (after Phase 3, parallel):
   EX-T5  DSCP descriptor handoff CLOSED_PASS_BOUNDED
@@ -704,7 +706,8 @@ Phase 4 (after Phase 3, parallel):
 
 Phase 5 (integration convergence):
   EX-T5 + EC-T6 -> any project's corpus expansion readiness gate (LPCI2-T12 first)
-  NOT_OPEN until EC-T4 metadata and EC-T5 runtime/query-class gate value are
+  NOT_OPEN until an EC-T4 evidence-resolution successor and EC-T5
+  runtime/query-class gate value are
   resolved through a fresh evidence path.
 ```
 
@@ -719,7 +722,7 @@ of EC approval and can begin at Phase 1 in parallel.
 |---|---|---|
 | OCR low confidence on poor-quality scans | HIGH | Quality flags in chunk; retrieval discloses; human review mandatory before any regulated use |
 | EC-02 content unlock too broad | HIGH | Query-class gate enforced at retrieval layer AND at corpus record level; dual enforcement; EC-01/03/04 unchanged |
-| Operator-supplied dates absent or incorrect | MEDIUM | No auto-inference of regulated dates; operator must supply; EC-T4 blocked until supplied |
+| Operator-supplied dates absent or incorrect | MEDIUM | No auto-inference of regulated dates; EC-T4 closes as a bounded finding and any successor remains blocked until evidence is supplied |
 | EasyOCR model size breaks CI environment | MEDIUM | EX-T1 audits CI constraints; OCR tier may be offline-only tool if CI cannot support |
 | Non-ASCII filenames cause extraction path errors | LOW | T11B Unicode fallback pattern already exists; apply same fix to extraction pipeline intake |
 | `documentStatus` name conflicts with existing schema fields | LOW | EC-T1 must grep all corpus JSON schemas before committing field name |
@@ -814,7 +817,7 @@ and no EC retrieval/query activation in this EX-T9 closure.
 | --- | --- | --- | --- |
 | Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI2_EX_T3_T6_EXTRACTION_PIPELINE_FOR_CODEX_2026-06-11.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Completion or reviewer artifact | `docs/reviews/CVF_LPCI2_EX_T3_T6_EXTRACTION_PIPELINE_COMPLETION_2026-06-11.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Roadmap state | this file | `Status: ACTIVE_PARTIAL_EX_T8_CLOSED_EC_BLOCKED` | PASS |
+| Roadmap state | this file | `Status: ACTIVE_PARTIAL_EX_T9_CLOSED_EC_BLOCKED` | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | entries through `ex-t9-scan-outcome-report-source` and `ex-t9-scan-outcome-report-tests` | PASS |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | quick lookup rows for EX-T3-EX-T9 source/tests | PASS |
 | External evidence digest | EX-T1 audit and EX-T2 completion repo-local artifacts | sha256:46caff533ab8e4d8bc0cfa68070abdf69b7eb205e420c66d9b5db2729109492c; sha256:6e6ee6e640275a85541bcd32a4f9290585fb6d30debc5780df10ef2ea6491e9d; sha256:5e118d33e888176d0f7dc9657602ec041197a46699767d3aa11fe0a48b01a2c9 | PASS |
@@ -829,4 +832,5 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: internal governance roadmap and closure record; not public-synced.
 The EX foundation is private provenance evidence, while EC runtime/query-class
-activation remains blocked by EC-T4 metadata gaps and the EC-T5 gate boundary.
+activation remains blocked by unresolved EC-T4 metadata gaps and the EC-T5
+gate boundary.
