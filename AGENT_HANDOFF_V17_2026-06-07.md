@@ -38,8 +38,9 @@ Startup acknowledged: current mode=`metadata_evidence_operator_resolution_founda
 
 `metadata_evidence_operator_resolution_foundation_t1_spec_pending`
 
-Current HEAD recorded for this handoff: `618cee29`
-(EC-T4 ownership/session correction closure; this roadmap/session update follows it).
+Current HEAD recorded for this handoff: `80761d50`
+(metadata evidence and operator resolution foundation roadmap material commit;
+this session-sync-only commit follows it).
 
 ## Active Boundary
 
@@ -83,6 +84,8 @@ hardening commit `838512da`, or unrelated governance/session history.
 CVF Metadata Evidence And Operator Resolution Foundation roadmap is active:
 
 `docs/roadmaps/CVF_METADATA_EVIDENCE_AND_OPERATOR_RESOLUTION_FOUNDATION_ROADMAP_2026-06-12.md`
+
+Material commit: `80761d50`.
 
 MEOR-T1 is the only next active tranche and is specification-only. It must
 define a domain-agnostic metadata requirement/evidence/resolution contract and

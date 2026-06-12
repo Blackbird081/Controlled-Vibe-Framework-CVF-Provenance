@@ -62,6 +62,8 @@ CVF Metadata Evidence And Operator Resolution Foundation roadmap is active:
 
 `docs/roadmaps/CVF_METADATA_EVIDENCE_AND_OPERATOR_RESOLUTION_FOUNDATION_ROADMAP_2026-06-12.md`
 
+Material commit: `80761d50`.
+
 The roadmap prioritizes a domain-agnostic CVF foundation before any
 Policy_Local correction or activation. MEOR-T1 is specification-only and must
 lock metadata requirement, evidence basis, operator resolution, and downstream
