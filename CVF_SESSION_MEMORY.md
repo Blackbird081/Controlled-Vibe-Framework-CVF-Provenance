@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-12
 
-Current mode marker: `meor_rda_t1_closed_rda_t2_authorization_ready`
+Current mode marker: `meor_rda_t2_deterministic_adapter_implementation_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `meor_rda_t1_closed_rda_t2_authorization_ready`.
+Current mode: `meor_rda_t2_deterministic_adapter_implementation_dispatched`.
 
 Active handoff:
 
@@ -113,6 +113,12 @@ move is a fresh RDA-T2 GC-018/source-verified work order for deterministic
 adapter implementation. Policy_Local correction/integration and EC activation
 remain blocked behind later adapter/conformance closure and operator/source
 evidence.
+
+MEOR-RDA-T2 deterministic adapter implementation is dispatched from base
+`6a9a5703`. Worker must return uncommitted; Codex reviews and commits. Scope is
+local deterministic CPF adapter source/tests plus GC-051 registry coverage.
+Policy_Local, EC activation, retrieval, OCR, corpus ingestion, provider/API-key
+use, public-sync, and readiness claims remain blocked.
 
 LPCI2 EC-T4 metadata quality assessment is `CLOSED_BLOCKED_BOUNDED` at
 material commit `ff6343e3`.
@@ -647,11 +653,11 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: author fresh MEOR-RDA-T2 GC-018 baseline and source-verified
-work order for deterministic regulated-domain adapter implementation. Do not
-implement RDA-T2, mutate Policy_Local, activate EC-T5/EC-T6, change retrieval,
-install OCR, ingest corpus records, use provider/API keys, public-sync, or make
-readiness claims without fresh authorization.
+Next allowed move: Claude executes MEOR-RDA-T2 work order
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MEOR_RDA_T2_DETERMINISTIC_ADAPTER_IMPLEMENTATION_FOR_CLAUDE_2026-06-12.md`
+as WORKER_MUST_NOT_COMMIT and returns uncommitted. Do not mutate Policy_Local,
+activate EC-T5/EC-T6, change retrieval, install OCR, ingest corpus records, use
+provider/API keys, public-sync, or make readiness claims.
 Public-sync, provider/API key use, production readiness, and public readiness
 remain unauthorized.
 T12 remains forbidden until EC-02 resolves on or after 2026-07-01 and

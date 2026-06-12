@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_RDA_T1_CLOSED_RDA_T2_AUTHORIZATION_READY
+Status: ACTIVE_RDA_T2_DISPATCHED
 
 docType: roadmap
 
@@ -143,7 +143,7 @@ Rejected design:
 | Tranche | Deliverable | Dependency | Status |
 | --- | --- | --- | --- |
 | RDA-T1 | Regulated-date adapter contract and machine semantics | MEOR-T5 closure `6c2ad2b3` | CLOSED_PASS_BOUNDED |
-| RDA-T2 | Local deterministic adapter implementation for regulated profile requirement generation | RDA-T1 closure | READY_FOR_FRESH_AUTHORIZATION |
+| RDA-T2 | Local deterministic adapter implementation for regulated profile requirement generation | RDA-T1 closure `6a6b343f` and sync `6a9a5703` | DISPATCHED |
 | RDA-T3 | Cross-domain conformance proving non-regulatory profiles do not inherit regulated fields | RDA-T2 closure | HOLD_UNTIL_T2_PASS |
 | RDA-T4 | Foundation closure and Policy_Local successor readiness decision | RDA-T3 closure | HOLD_UNTIL_T3_PASS |
 | Policy_Local successor | Real candidate metadata resolution and integration | RDA-T4 closure plus operator/source evidence | NOT_OPEN |
