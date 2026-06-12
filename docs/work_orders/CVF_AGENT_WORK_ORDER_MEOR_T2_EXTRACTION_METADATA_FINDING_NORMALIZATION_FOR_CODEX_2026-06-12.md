@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -18,7 +18,7 @@ dispatchBaseHead: `662e3c76`
 
 executionBaseHead: `427532c8`
 
-closureBaseHead: REVIEWER_CAPTURE
+closureBaseHead: `d18a3e47`
 
 GC-018:
 `docs/baselines/CVF_GC018_MEOR_T2_EXTRACTION_METADATA_FINDING_NORMALIZATION_2026-06-12.md`
@@ -35,7 +35,7 @@ normalized operator findings through the existing EX-T9 report surface.
 | Operator direction | 2026-06-12 execute foundation roadmap | ACCEPT |
 | Roadmap | `docs/roadmaps/CVF_METADATA_EVIDENCE_AND_OPERATOR_RESOLUTION_FOUNDATION_ROADMAP_2026-06-12.md` | MEOR-T2 `SPEC_PENDING` |
 | T1 completion | `docs/reviews/CVF_MEOR_T1_METADATA_EVIDENCE_RESOLUTION_CONTRACT_COMPLETION_2026-06-12.md` | PASS at `22818605` |
-| GC-018 | T2 baseline | DISPATCH_READY |
+| GC-018 | T2 baseline | PASS |
 
 ## Roadmap-To-Work-Order Trace Matrix
 
@@ -195,13 +195,13 @@ activation, raw-content field, or domain-specific default.
 
 ## Closure Checklist
 
-- [ ] Source and tests exist.
-- [ ] Exact rule matrix and failure tokens pass.
-- [ ] EX-T9 integration passes without renderer changes.
-- [ ] Focused and full tests pass.
-- [ ] GC-051 JSON and Markdown are updated.
-- [ ] Reviewer-fast and pre-closure pass.
-- [ ] Roadmap and continuity release only MEOR-T3 specification.
+- [x] Source and tests exist.
+- [x] Exact rule matrix and failure tokens pass.
+- [x] EX-T9 integration passes without renderer changes.
+- [x] Focused and full tests pass.
+- [x] GC-051 JSON and Markdown are updated.
+- [x] Reviewer-fast and pre-closure pass.
+- [x] Roadmap and continuity release only MEOR-T3 specification.
 
 ## Return-To-Orchestrator Conditions
 
@@ -218,14 +218,14 @@ full foundation roadmap. No additional checkpoint is required inside scope.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | this file | execution and review required | BLOCKED pending execution |
-| Completion or reviewer artifact | T2 completion review | not created before execution | BLOCKED pending execution |
-| Roadmap state | foundation roadmap | T2 dispatch only | BLOCKED pending execution |
-| Registry JSON | GC-051 JSON | source/test entries required at closure | BLOCKED pending execution |
-| Registry Markdown | GC-051 Markdown | quick lookup rows required at closure | BLOCKED pending execution |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | T2 completion review | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | foundation roadmap | T2 closed; T3 spec pending | PASS |
+| Registry JSON | GC-051 JSON | T2 source/test entries | PASS |
+| Registry Markdown | GC-051 Markdown | T2 quick lookup rows | PASS |
 | External evidence digest | N/A with reason: repo-local implementation only | no external evidence | N/A with reason |
 | System loop interlock | N/A with reason: no loop mutation planned | local adapter only | N/A with reason |
-| Session continuity | active state/memory/handoff | T3 held until T2 pass | BLOCKED pending execution |
+| Session continuity | active state/memory/handoff | T3 spec-only next move | PASS |
 
 ## Claim Boundary
 

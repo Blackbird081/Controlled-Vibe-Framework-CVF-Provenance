@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 
@@ -70,6 +70,14 @@ document content.
 - full extraction-foundation pytest PASS;
 - Python compile PASS;
 - reviewer-fast and closure gates PASS.
+
+## Closure Evidence
+
+- material commit: `d18a3e47`;
+- focused pytest: 30/30 PASS;
+- full extraction-foundation pytest: 76/76 PASS;
+- Python compile: PASS;
+- EX-T9 renderer changes: none.
 
 ## Claim Boundary
 

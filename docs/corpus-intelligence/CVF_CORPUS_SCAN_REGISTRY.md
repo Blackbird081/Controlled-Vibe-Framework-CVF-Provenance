@@ -107,6 +107,8 @@ prior scan here before starting new work.
 | `CVF Extraction Foundation EX-T9 scan outcome report source` | CVF_EXTENSION | SCANNED | EX-T9 | 1 | Domain-agnostic operator findings, stable actions, deterministic JSON/Markdown, and UTF-8 caller-selected output paths without raw content release |
 | `CVF Extraction Foundation EX-T9 scan outcome report tests` | CVF_EXTENSION | SCANNED | EX-T9 | 1 | Focused pytest coverage for PASS, all current quality signals, generic blocking findings, deterministic rendering, raw-content non-release, and Unicode filenames |
 | `CVF MEOR-T1 metadata evidence resolution contract` | PROJECT_SOURCE | SCANNED | MEOR-T1 | 2 | Domain-agnostic requirement, evidence, resolution, re-evaluation, failure-token, and cross-domain isolation semantics; specification only |
+| `CVF MEOR-T2 metadata evidence normalization source` | CVF_EXTENSION | SCANNED | MEOR-T2 | 1 | Deterministic T1 matrix evaluation, failure tokens, profile ownership validation, bounded pointers, and EX-T9 finding adapter |
+| `CVF MEOR-T2 metadata evidence normalization tests` | CVF_EXTENSION | SCANNED | MEOR-T2 | 1 | 30 focused pytest cases covering 21 allowed pairs, invalid records, provenance distinction, hint blocking, and report integration |
 
 ---
 
