@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-12
 
-Current mode marker: `exa_t2_scan_signal_route_decision_contracts_dispatched`
+Current mode marker: `exa_t2_scan_signal_route_decision_contracts_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `exa_t2_scan_signal_route_decision_contracts_dispatched`.
+Current mode: `exa_t2_scan_signal_route_decision_contracts_closed_pass_bounded`.
 
 Active handoff:
 
@@ -178,26 +178,35 @@ only as deterministic EXA-T2 contract candidates. No code import, dependency
 installation, OCR/provider execution, Policy_Local mutation, or readiness
 claim was authorized.
 
-EXA-T2 scan signal and route decision contracts are `DISPATCHED` at commit
-`5ad40259` from base `8376a31a`.
+EXA-T2 scan signal and route decision contracts are `CLOSED_PASS_BOUNDED` at
+material commit `949d4bff` from execution base `5a3d1262`.
 
 Artifacts:
 
-- GC-018:
-  `docs/baselines/CVF_GC018_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_2026-06-12.md`
+- source:
+  `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/scan_route_decision.py`
+- tests:
+  `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_scan_route_decision.py`
 - work order:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_FOR_CLAUDE_2026-06-12.md`
+- completion:
+  `docs/reviews/CVF_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_COMPLETION_2026-06-12.md`
+- worker return:
+  `docs/reviews/CVF_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_WORKER_RETURN_2026-06-12.md`
+- registry:
+  `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
+  and `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`
 
-Worker boundary: Claude `WORKER_MUST_NOT_COMMIT`.
-
-Next worker action: implement deterministic `DocumentScanSignals` and
-`ScanRouteDecision` contracts inside the CVF extraction foundation only, reuse
-the current extraction quality, OCR language mapping, storage-boundary, and
-scan-outcome-report owners, and return uncommitted artifacts for Codex review.
-No external code import, dependency install, OCR/provider/API execution,
-Policy_Local mutation, EC activation, retrieval change, corpus ingestion,
-public-sync, readiness claim, memory reinjection, high-risk promotion, or
-autonomous mutation is authorized.
+Result: deterministic `DocumentScanSignals`, `ScanRouteDecision`, and
+`decide_scan_route()` contracts now map current extraction status, OCR language
+support, quality flags, and storage-boundary signals to bounded scan route
+dispositions. Invalid or contradictory scan signals fail closed to
+`ESCALATE_OR_ABSTAIN`. Verification: py_compile PASS; focused pytest 23/23
+PASS; full extraction-foundation pytest 105/105 PASS; reviewer-fast PASS
+12/12; pre-commit governance chain PASS 37/37. Boundary: no external code
+import, dependency install, OCR/provider/API execution, Policy_Local mutation,
+EC activation, retrieval change, corpus ingestion, public-sync, readiness
+claim, memory reinjection, high-risk promotion, or autonomous mutation.
 
 LPCI2 EC-T4 metadata quality assessment is `CLOSED_BLOCKED_BOUNDED` at
 material commit `ff6343e3`.
@@ -732,17 +741,14 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: LHW24 remains the latest closed numbered LHW wave. Claude
-may execute EXA-T2 under `WORKER_MUST_NOT_COMMIT` from dispatch commit
-`5ad40259` and return uncommitted artifacts for Codex review.
+Next allowed move: LHW24 remains the latest closed numbered LHW wave. PL-S1 may
+begin only through fresh authorization for the downstream Policy_Local
+evidence-resolution pilot: source-map governed evidence and define an operator
+evidence-resolution plan.
 
-EXA-T2 may implement deterministic `DocumentScanSignals` and
-`ScanRouteDecision` contracts inside the CVF extraction foundation only. It
-must reuse existing extraction quality, OCR language mapping, storage-boundary,
-and scan-outcome-report owner surfaces. Policy_Local remains downstream. Do not
-import external code, install dependencies, run OCR/provider/API proof,
-activate EC, change retrieval, ingest corpus records, use public-sync, or make
-readiness claims.
+Do not mutate external Policy_Local, activate EC, change retrieval, run OCR or
+provider/API proof, ingest corpus records, use public-sync, unlock T12, or make
+readiness claims until a later authorized PL-S work order permits it.
 T12 remains forbidden until EC-02 resolves on or after 2026-07-01 and
 eligibility is re-evaluated.
 

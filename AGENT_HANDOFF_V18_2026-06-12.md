@@ -24,14 +24,14 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`exa_t2_scan_signal_route_decision_contracts_dispatched`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=Claude executes EXA-T2 under WORKER_MUST_NOT_COMMIT and returns uncommitted artifacts for Codex review; parked checkpoint=Policy_Local integration, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`exa_t2_scan_signal_route_decision_contracts_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=PL-S1 fresh authorization may begin for the downstream Policy_Local evidence-resolution pilot; parked checkpoint=EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked, and external Policy_Local mutation remains blocked until a later PL-S work order permits it.
 
 ## Current Mode
 
-`exa_t2_scan_signal_route_decision_contracts_dispatched`
+`exa_t2_scan_signal_route_decision_contracts_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `5ad40259`
-(EXA-T2 scan signal and route decision contracts dispatch commit; this
+Current HEAD recorded for this handoff: `949d4bff`
+(EXA-T2 scan signal and route decision contracts material closure commit; this
 dedicated session sync follows).
 
 ## Active Boundary
@@ -98,25 +98,34 @@ Governance learning:
 - the missing rescan section appeared only at pre-commit;
 - this is a phase-gate placement gap scheduled before EXA-T2 dispatch.
 
-EXA-T2 scan signal and route decision contracts are `DISPATCHED` at commit
-`5ad40259` from base `8376a31a`.
+EXA-T2 scan signal and route decision contracts are `CLOSED_PASS_BOUNDED` at
+material commit `949d4bff` from execution base `5a3d1262`.
 
 Artifacts:
 
-- GC-018:
-  `docs/baselines/CVF_GC018_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_2026-06-12.md`;
+- source:
+  `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/scan_route_decision.py`;
+- tests:
+  `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_scan_route_decision.py`;
 - work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_FOR_CLAUDE_2026-06-12.md`.
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_FOR_CLAUDE_2026-06-12.md`;
+- completion:
+  `docs/reviews/CVF_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_COMPLETION_2026-06-12.md`;
+- worker return:
+  `docs/reviews/CVF_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_WORKER_RETURN_2026-06-12.md`;
+- registry:
+  `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` and
+  `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`.
 
-Verification: reviewer-fast PASS 12/12; pre-dispatch autorun PASS; full
+Verification: py_compile PASS; focused pytest 23/23 PASS; full
+extraction-foundation pytest 105/105 PASS; reviewer-fast PASS 12/12; full
 pre-commit governance chain PASS 37/37.
 
-Worker boundary: Claude `WORKER_MUST_NOT_COMMIT`.
-
-Result: EXA-T2 is authorized for deterministic `DocumentScanSignals` and
-`ScanRouteDecision` contracts inside the CVF extraction foundation only. It
-must reuse the current extraction quality, OCR language mapping,
-storage-boundary, and scan-outcome-report owners.
+Result: deterministic `DocumentScanSignals`, `ScanRouteDecision`, and
+`decide_scan_route()` contracts now map current extraction status, OCR language
+support, quality flags, and storage-boundary signals to bounded scan route
+dispositions. Invalid or contradictory scan signals fail closed to
+`ESCALATE_OR_ABSTAIN`.
 
 ## Latest Work / Changes
 
@@ -125,8 +134,9 @@ storage-boundary, and scan-outcome-report owners.
 - Reconciled accepted candidates against existing CVF extraction owners.
 - Rotated V17 into the handoff archive because it reached 900 lines.
 - Kept Policy_Local, OCR/provider execution, and readiness claims parked.
-- Dispatched EXA-T2 at commit `5ad40259` with source-verified GC-018 and work
-  order.
+- Closed EXA-T2 at material commit `949d4bff` with deterministic scan route
+  source, focused tests, registry coverage, work-order closure, and completion
+  review.
 
 ## Core Guard Self-Protection Authorization
 
@@ -151,25 +161,22 @@ material review commit `6db11aed` or unrelated history.
 
 ## Next Allowed Move
 
-1. Claude executes EXA-T2 under `WORKER_MUST_NOT_COMMIT` from dispatch commit
-   `5ad40259`.
-2. Claude returns uncommitted source/test/registry artifacts and worker return
-   packet for Codex review.
-3. Keep Policy_Local as the downstream real use case after EXA-T2 foundation
-   closure.
+PL-S1 may begin only through fresh authorization for the downstream Policy_Local
+evidence-resolution pilot: source-map governed evidence and define an operator
+evidence-resolution plan.
 
-EXA-T2 must reuse the existing extraction quality, OCR language mapping,
-storage-boundary, and scan-outcome-report owner surfaces. It must not create a
-parallel quality/reporting system, invoke OCR/providers, import external code,
-install dependencies, mutate Policy_Local, activate EC, change retrieval, or
-claim readiness.
+Do not mutate external Policy_Local, activate EC, change retrieval, invoke OCR
+or providers, import external code, install dependencies, ingest corpus records,
+use public-sync, unlock T12, or claim readiness until a later authorized PL-S
+work order permits it.
 
 LHW24 remains the latest closed numbered LHW wave in the state registry.
 
 ## Parked Checkpoints
 
-- Policy_Local integration: parked pending EXA-T2 foundation closure and fresh
-  authorization.
+- Policy_Local integration: PL-S1 fresh authorization is now the next allowed
+  move; external Policy_Local mutation remains blocked until a later PL-S work
+  order permits it.
 - EC activation/retrieval: parked under existing metadata/operator evidence
   conditions.
 - LPCI2-T12: forbidden until the separate EC-02 evidence path resolves on or
