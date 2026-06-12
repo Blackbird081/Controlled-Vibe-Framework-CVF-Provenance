@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: AUTHORIZED
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 
@@ -72,6 +72,15 @@ and unsupported evidence values. It must not read or mutate descriptor data.
 - proof that input profile/declaration objects are not mutated;
 - TypeScript check, focused vitest, full control-plane tests, reviewer-fast,
   and closure gates.
+
+## Closure Evidence
+
+- material commit: `0c4997a5`;
+- focused vitest: 12/12 PASS;
+- full control-plane suite: 143 files / 3712 tests PASS;
+- TypeScript check: PASS;
+- source and test sizes: 155 and 153 lines;
+- descriptor/profile application behavior changes: none.
 
 ## Claim Boundary
 

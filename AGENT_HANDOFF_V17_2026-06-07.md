@@ -32,14 +32,14 @@ Owner boundary:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`meor_t3_dscp_profile_requirement_bridge_dispatched`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=execute the dispatched MEOR-T3 DSCP profile requirement bridge after pre-implementation gate; parked checkpoint=MEOR-T4/T5, regulated-domain adapter, Policy_Local integration, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`meor_t3_closed_t4_spec_pending`; active handoff=`AGENT_HANDOFF_V17_2026-06-07.md`; next allowed move=author a fresh MEOR-T4 GC-018 and source-verified cross-domain conformance work order; parked checkpoint=MEOR-T5, regulated-domain adapter, Policy_Local integration, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`meor_t3_dscp_profile_requirement_bridge_dispatched`
+`meor_t3_closed_t4_spec_pending`
 
-Current HEAD recorded for this handoff: `e97bba23`
-(MEOR-T3 execution-base anchor; this dedicated handoff sync follows).
+Current HEAD recorded for this handoff: `0c4997a5`
+(MEOR-T3 material implementation commit; closure sync follows).
 
 ## Active Boundary
 
@@ -779,9 +779,8 @@ history.
 LHW24 remains the latest closed numbered LHW wave in
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
 
-Next allowed move: execute the dispatched MEOR-T3 DSCP profile requirement
-bridge after the dispatch commit and pre-implementation gate. MEOR-T4 and T5
-remain dependency-held.
+Next allowed move: author a fresh MEOR-T4 GC-018 baseline and source-verified
+cross-domain conformance work order. MEOR-T5 remains dependency-held.
 The regulated-domain adapter, EC-T5/EC-T6 activation, retrieval disclosure,
 OCR installation, corpus ingestion, and external Policy_Local integration
 remain blocked. Public-sync, provider/API key use, production readiness, and

@@ -4,7 +4,7 @@
   "guard": "governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md",
   "checker": "governance/compat/check_corpus_scan_registry.py",
   "lastUpdated": "2026-06-12",
-  "updatedBy": "Codex (MEOR-T2 closure)",
+  "updatedBy": "Codex (MEOR-T3 closure)",
   "allowedCorpusTypes": [
     "LEGACY_FOLDER",
     "PROJECT_SOURCE",
@@ -2462,6 +2462,46 @@
       "manifestPath": null,
       "packetPath": "docs/reviews/CVF_MEOR_T2_EXTRACTION_METADATA_FINDING_NORMALIZATION_COMPLETION_2026-06-12.md",
       "notes": "30 focused pytest cases covering all 21 allowed pairs, canonical failures, provenance distinction, derived-hint blocking, and EX-T9 report integration."
+    },
+    {
+      "id": "meor-t3-dscp-profile-requirement-bridge-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF MEOR-T3 DSCP profile requirement bridge source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.domain.profile.contract.ts",
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.metadata.requirement.bridge.ts",
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/control.plane.context.barrel.ts"
+      ],
+      "fileCount": 3,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "Re-scan when requirement declaration semantics or profile ownership validation changes.",
+      "scanWave": "MEOR-T3",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MEOR_T3_DSCP_PROFILE_REQUIREMENT_BRIDGE_COMPLETION_2026-06-12.md",
+      "notes": "Optional profile-scoped declarations, canonical evidence-basis literals, deterministic owner map, fail-closed validation, and no descriptor or gate mutation."
+    },
+    {
+      "id": "meor-t3-dscp-profile-requirement-bridge-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF MEOR-T3 DSCP profile requirement bridge tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.metadata.requirement.bridge.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MEOR-T3",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MEOR_T3_DSCP_PROFILE_REQUIREMENT_BRIDGE_COMPLETION_2026-06-12.md",
+      "notes": "12 focused tests for omitted requirements, normalization, non-mutation, invalid identifiers, owner mismatch, duplicates, invalid evidence, and invalid required flags."
     }
   ]
 }

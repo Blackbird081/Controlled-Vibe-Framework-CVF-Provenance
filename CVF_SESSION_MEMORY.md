@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-12
 
-Current mode marker: `meor_t3_dscp_profile_requirement_bridge_dispatched`
+Current mode marker: `meor_t3_closed_t4_spec_pending`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `meor_t3_dscp_profile_requirement_bridge_dispatched`.
+Current mode: `meor_t3_closed_t4_spec_pending`.
 
 Active handoff:
 
@@ -79,6 +79,10 @@ MEOR-T2 closure commit: `69ec7574`.
 MEOR-T2 session sync commit: `472c474d`.
 
 MEOR-T3 dispatch package is staged from base `472c474d`.
+
+MEOR-T3 dispatch commit: `b36d4494`.
+
+MEOR-T3 material implementation commit: `0c4997a5`.
 
 The roadmap prioritizes a domain-agnostic CVF foundation before any
 Policy_Local correction or activation. MEOR-T1 is specification-only and must
@@ -620,9 +624,9 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: execute the dispatched MEOR-T3 DSCP profile requirement
-bridge after the dispatch commit and pre-implementation gate. MEOR-T4 and
-MEOR-T5 remain dependency-held. The regulated-domain adapter, Policy_Local candidate
+Next allowed move: author a fresh MEOR-T4 GC-018 baseline and source-verified
+cross-domain conformance work order. MEOR-T5 remains dependency-held. The
+regulated-domain adapter, Policy_Local candidate
 correction, EC-T5/EC-T6 activation, retrieval disclosure, OCR installation,
 corpus ingestion, and external Policy_Local integration remain blocked.
 Public-sync, provider/API key use, production readiness, and public readiness

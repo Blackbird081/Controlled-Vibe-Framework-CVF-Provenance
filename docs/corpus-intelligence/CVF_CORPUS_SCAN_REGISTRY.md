@@ -109,6 +109,8 @@ prior scan here before starting new work.
 | `CVF MEOR-T1 metadata evidence resolution contract` | PROJECT_SOURCE | SCANNED | MEOR-T1 | 2 | Domain-agnostic requirement, evidence, resolution, re-evaluation, failure-token, and cross-domain isolation semantics; specification only |
 | `CVF MEOR-T2 metadata evidence normalization source` | CVF_EXTENSION | SCANNED | MEOR-T2 | 1 | Deterministic T1 matrix evaluation, failure tokens, profile ownership validation, bounded pointers, and EX-T9 finding adapter |
 | `CVF MEOR-T2 metadata evidence normalization tests` | CVF_EXTENSION | SCANNED | MEOR-T2 | 1 | 30 focused pytest cases covering 21 allowed pairs, invalid records, provenance distinction, hint blocking, and report integration |
+| `CVF MEOR-T3 DSCP profile requirement bridge source` | CVF_EXTENSION | SCANNED | MEOR-T3 | 3 | Optional profile-scoped declarations, evidence-basis literals, owner-map normalization, fail-closed validation, and no descriptor/gate mutation |
+| `CVF MEOR-T3 DSCP profile requirement bridge tests` | CVF_EXTENSION | SCANNED | MEOR-T3 | 1 | 12 focused tests covering empty profiles, invalid declarations, owner mismatch, duplicates, evidence values, deterministic order, and non-mutation |
 
 ---
 
