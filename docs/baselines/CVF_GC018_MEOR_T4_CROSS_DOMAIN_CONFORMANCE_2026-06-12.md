@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: AUTHORIZED
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 
@@ -78,6 +78,16 @@ raw content and no real use-case records.
 - exact resolution and downstream disposition for all four cases;
 - JSON parse, focused tests, full package tests, TypeScript check,
   reviewer-fast, and closure gates.
+
+## Closure Evidence
+
+- material commit: `bfd38775`;
+- focused TypeScript conformance: 4/4 PASS;
+- focused Python conformance: 6/6 PASS;
+- full control-plane suite: 144 files / 3716 tests PASS;
+- full extraction-foundation suite: 82/82 tests PASS;
+- TypeScript check: PASS;
+- runtime source edits: none.
 
 ## Claim Boundary
 

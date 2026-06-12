@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-12
 
-Current mode marker: `meor_t4_cross_domain_conformance_dispatched`
+Current mode marker: `meor_t4_closed_t5_spec_pending`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `meor_t4_cross_domain_conformance_dispatched`.
+Current mode: `meor_t4_closed_t5_spec_pending`.
 
 Active handoff:
 
@@ -88,7 +88,9 @@ MEOR-T3 closure commit: `5f328d11`.
 
 MEOR-T4 dispatch base: `7b2204dc`.
 
-MEOR-T4 now owns a shared synthetic legal-policy and technical-project fixture
+MEOR-T4 material conformance commit: `bfd38775`.
+
+MEOR-T4 closes the shared synthetic legal-policy and technical-project fixture
 plus focused TypeScript and Python conformance tests. Regulated-domain mapping
 and Policy_Local real-use-case work remain held behind foundation closure and
 fresh authorization.
@@ -626,8 +628,8 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: implement and review the dispatched MEOR-T4 shared fixture
-and cross-language conformance tests. MEOR-T5 remains dependency-held. The
+Next allowed move: author MEOR-T5 foundation closure and downstream readiness
+decision. The
 regulated-domain adapter, Policy_Local candidate
 correction, EC-T5/EC-T6 activation, retrieval disclosure, OCR installation,
 corpus ingestion, and external Policy_Local integration remain blocked.
