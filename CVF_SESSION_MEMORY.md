@@ -94,10 +94,11 @@ MEOR-T4 closure commit: `0098de68`.
 
 MEOR-T4 closure sync commit: `390f5426`.
 
-MEOR-T5 foundation closure is `CLOSED_PASS_BOUNDED`. The foundation now
-releases only a fresh regulated-domain adapter roadmap, GC-018 baseline, and
-source-verified work order. Policy_Local real-use-case work remains held
-behind adapter closure and operator/source metadata evidence.
+MEOR-T5 foundation closure is `CLOSED_PASS_BOUNDED` at commit `6c2ad2b3`.
+The foundation now releases only a fresh regulated-domain adapter roadmap,
+GC-018 baseline, and source-verified work order. Policy_Local real-use-case
+work remains held behind adapter closure and operator/source metadata
+evidence.
 
 LPCI2 EC-T4 metadata quality assessment is `CLOSED_BLOCKED_BOUNDED` at
 material commit `ff6343e3`.
