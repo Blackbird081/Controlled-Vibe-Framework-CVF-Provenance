@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-13
 
-Current mode marker: `memcon_t1b_memory_consolidation_schema_appendix_closed_pass_bounded`
+Current mode marker: `memcon_t2_temporal_source_authority_checker_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `memcon_t1b_memory_consolidation_schema_appendix_closed_pass_bounded`.
+Current mode: `memcon_t2_temporal_source_authority_checker_dispatched`.
 
 Active handoff:
 
@@ -57,6 +57,29 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+MEMCON-T2 Temporal ambiguity and source-authority checker is `DISPATCHED`.
+
+Material dispatch commit: `b76794f9`.
+
+Dispatch artifacts:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_MEMCON_T2_TEMPORAL_SOURCE_AUTHORITY_CHECKER_2026-06-13.md`;
+- work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T2_TEMPORAL_SOURCE_AUTHORITY_CHECKER_FOR_CLAUDE_2026-06-13.md`;
+- roadmap:
+  `docs/roadmaps/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_ROADMAP_2026-06-12.md`.
+
+Next allowed move: Claude executes the MEMCON-T2 work order under
+`WORKER_MUST_NOT_COMMIT` and returns uncommitted artifacts for Codex review.
+
+Boundary: T2 authorizes only deterministic MEMCON checker implementation,
+focused tests, hook placement in reviewer-fast/pre-commit, and worker-return
+evidence. No runtime memory implementation, storage, retrieval behavior,
+provider/API proof, OCR, Policy_Local mutation, EC activation, corpus
+ingestion, public-sync, T12 unlock, readiness claim, memory reinjection,
+high-risk promotion, or autonomous mutation is authorized.
 
 MEMCON-T1b Memory Consolidation schema appendix is `CLOSED_PASS_BOUNDED`.
 
@@ -101,8 +124,7 @@ Closure artifacts:
 - completion:
   `docs/reviews/CVF_MEMCON_T1A_MEMORY_CONSOLIDATION_STANDARD_OWNER_RECONCILIATION_COMPLETION_2026-06-12.md`.
 
-MEMCON-T1b is the next MEMCON step only if the operator authorizes a fresh
-GC-018 and source-verified work order for schema appendix and field tables.
+MEMCON-T2 is now dispatched after fresh GC-018 and source-verified work order.
 
 Memory Consolidation Workflow Chain roadmap is revised and ready for
 MEMCON-T1a authorization.
@@ -874,12 +896,12 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: MEMCON-T1a is `CLOSED_PASS_BOUNDED` at material commit
-`84a46b62`. Operator may authorize MEMCON-T1b through fresh GC-018 and a
-source-verified work order for schema appendix and field tables only, or hold
-MEMCON and return to a separately authorized downstream lane. Policy_Local
-PL-S1 remains held until the operator explicitly decides the MEMCON foundation
-is sufficient for downstream use-case work.
+Next allowed move: MEMCON-T2 is `DISPATCHED` at material commit `b76794f9`.
+Claude may execute
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T2_TEMPORAL_SOURCE_AUTHORITY_CHECKER_FOR_CLAUDE_2026-06-13.md`
+under `WORKER_MUST_NOT_COMMIT` and return uncommitted artifacts for Codex
+review. Policy_Local PL-S1 remains held until the operator explicitly decides
+the MEMCON foundation is sufficient for downstream use-case work.
 
 Do not mutate external Policy_Local, activate EC, change retrieval, run OCR or
 provider/API proof, ingest corpus records, use public-sync, unlock T12, or make
