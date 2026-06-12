@@ -59,6 +59,10 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
         ["python", "governance/compat/check_public_export_disposition.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
     (
+        "rescan intelligence hardening",
+        ["python", "governance/compat/check_rescan_intelligence_hardening.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
         "corpus scan registry",
         ["python", "governance/compat/check_corpus_scan_registry.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),

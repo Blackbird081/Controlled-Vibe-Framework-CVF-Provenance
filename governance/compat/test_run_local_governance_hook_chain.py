@@ -22,6 +22,7 @@ class LocalGovernanceHookChainTests(unittest.TestCase):
         self.assertIn("agent packet authority and encoding", labels)
         self.assertIn("machine closure package", labels)
         self.assertIn("public export disposition quality", labels)
+        self.assertIn("rescan intelligence hardening", labels)
         self.assertIn("corpus scan registry", labels)
         self.assertIn("active session state compatibility", labels)
 
