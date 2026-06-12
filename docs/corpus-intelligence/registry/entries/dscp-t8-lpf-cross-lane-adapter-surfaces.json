@@ -1,0 +1,49 @@
+{
+  "registryOrder": 32,
+  "id": "dscp-t8-lpf-cross-lane-adapter-surfaces",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "DSCP-T8 LPF cross-lane adapter and tests",
+  "scopePaths": [
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.lpf.adapter.ts",
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.lpf.adapter.test.ts"
+  ],
+  "fileCount": 2,
+  "status": "SCANNED",
+  "scanWave": "DSCP-T8-LPF-CROSS-LANE-ADAPTER-2026-06-08",
+  "scanDate": "2026-06-08",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_WORKER_RETURN_2026-06-08.md",
+  "completionReviewPath": "docs/reviews/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_COMPLETION_2026-06-08.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_DSCP_T8_MKE1_CROSS_LANE_WIREIN_2026-06-08.md",
+  "verdicts": {
+    "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+    "gc048": "NOT_RUN",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [
+    "DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK",
+    "LPF_MEMORY_CONTEXT_ADAPTER",
+    "CONTRACT_TEST_COVERAGE"
+  ],
+  "priorAbsorption": "DSCP-T8 adds a deterministic local LPF-to-DSCP adapter and focused tests. No live memory retrieval, provider call, corpus ingestion, T12 authorization, public-sync, or production/public readiness is claimed.",
+  "findings": [
+    {
+      "id": "DSCP-T8-F1-deferred-source-verification-wording",
+      "summary": "Reviewer replaced worker-later verification wording for TypedContextPackage shape with source-verified fields before closure.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Continue using dispatch-quality guard to block deferred source-verification wording before execution.",
+      "defectClass": "ORCHESTRATOR_PACKET_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE",
+      "f2gRef": "docs/reviews/CVF_DSCP_T8_MKE1_CROSS_LANE_WIREIN_COMPLETION_2026-06-08.md#finding-to-governance-learning-disposition"
+    }
+  ],
+  "negativeSearchTerms": [
+    "provider call (not made)",
+    "live memory retrieval (not made)",
+    "corpus ingestion (not made)",
+    "T12 authorization claim (not made)",
+    "public readiness claim (not made)"
+  ],
+  "nextScanRecommendation": "Re-scan only when DSCP LPF adapter behavior changes or future memory retrieval runtime integration is authorized."
+}

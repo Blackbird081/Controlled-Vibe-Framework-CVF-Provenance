@@ -1,0 +1,47 @@
+{
+  "registryOrder": 29,
+  "id": "dscp-t4-retrieval-receipt-runtime-boundary-surfaces",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "DSCP-T4 retrieval receipt runtime helper and tests",
+  "scopePaths": [
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.governed.retrieval.receipt.ts",
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.governed.retrieval.receipt.test.ts"
+  ],
+  "fileCount": 2,
+  "status": "SCANNED",
+  "scanWave": "DSCP-T4-RETRIEVAL-RECEIPT-RUNTIME-BOUNDARY-2026-06-07",
+  "scanDate": "2026-06-07",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_DSCP_T4_RETRIEVAL_RECEIPT_RUNTIME_BOUNDARY_COMPLETION_2026-06-07.md",
+  "completionReviewPath": "docs/reviews/CVF_DSCP_T4_RETRIEVAL_RECEIPT_RUNTIME_BOUNDARY_COMPLETION_2026-06-07.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_DSCP_T4_RETRIEVAL_RECEIPT_RUNTIME_BOUNDARY_2026-06-07.md",
+  "verdicts": {
+    "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+    "gc048": "NOT_RUN",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [
+    "DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK",
+    "GOVERNED_RETRIEVAL_RECEIPT_RUNTIME",
+    "CONTRACT_TEST_COVERAGE"
+  ],
+  "priorAbsorption": "DSCP-T4 wires DSCP-T2 receipt contracts to DSCP-T3 governed package output through a deterministic local receipt builder. No provider call, live retrieval query, response hash computation, or corpus ingestion is authorized.",
+  "findings": [
+    {
+      "id": "DSCP-T4-F1-source-artifact-id-snapshot-copy",
+      "summary": "Reviewer corrected sourceArtifactIds from direct package evidence array reference to snapshot copy and added focused coverage.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "No further action required for DSCP-T4; future runtime receipt helpers should avoid retaining mutable evidence-array references.",
+      "defectClass": "RUNTIME_SIGNAL_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE",
+      "f2gRef": "docs/reviews/CVF_DSCP_T4_RETRIEVAL_RECEIPT_RUNTIME_BOUNDARY_COMPLETION_2026-06-07.md#finding-to-governance-learning-disposition"
+    }
+  ],
+  "negativeSearchTerms": [
+    "provider call (not made)",
+    "live retrieval query (not made)",
+    "public readiness claim (not made)"
+  ],
+  "nextScanRecommendation": "Use separate operator-authorized roadmap before any live/provider retrieval, response-hash computation, public-sync, or domain-specific corpus ingestion work."
+}

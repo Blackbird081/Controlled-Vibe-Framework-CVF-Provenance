@@ -1,0 +1,20 @@
+{
+  "registryOrder": 55,
+  "id": "meor-t2-metadata-evidence-normalization-source",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF MEOR-T2 metadata evidence normalization source",
+  "scopePaths": [
+    "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/metadata_evidence.py"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "MEOR-T2",
+  "scanDate": "2026-06-12",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_MEOR_T2_EXTRACTION_METADATA_FINDING_NORMALIZATION_COMPLETION_2026-06-12.md",
+  "notes": "Deterministic T1 rule evaluation, canonical failure tokens, profile ownership validation, bounded evidence pointers, and adapter to existing EX-T9 ScanOutcomeFinding."
+}

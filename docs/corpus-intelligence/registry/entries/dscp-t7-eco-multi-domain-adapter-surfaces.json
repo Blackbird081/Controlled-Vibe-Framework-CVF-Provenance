@@ -1,0 +1,49 @@
+{
+  "registryOrder": 31,
+  "id": "dscp-t7-eco-multi-domain-adapter-surfaces",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "DSCP-T7 ECO multi-domain adapter and tests",
+  "scopePaths": [
+    "EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/src/dscp.eco.adapter.ts",
+    "EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/tests/dscp.eco.adapter.test.ts"
+  ],
+  "fileCount": 2,
+  "status": "SCANNED",
+  "scanWave": "DSCP-T7-ECO-MULTI-DOMAIN-ADAPTER-2026-06-08",
+  "scanDate": "2026-06-08",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_WORKER_RETURN_2026-06-08.md",
+  "completionReviewPath": "docs/reviews/CVF_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_COMPLETION_2026-06-08.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_2026-06-08.md",
+  "verdicts": {
+    "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+    "gc048": "NOT_RUN",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [
+    "DOMAIN_AGNOSTIC_SCAN_CONTEXT_PACK",
+    "ECO_RAG_PIPELINE_ADAPTER",
+    "CONTRACT_TEST_COVERAGE"
+  ],
+  "priorAbsorption": "DSCP-T7 adds a deterministic local ECO-to-DSCP adapter and focused tests. No live ECO retrieval, provider call, corpus ingestion, T12 authorization, public-sync, or production/public readiness is claimed.",
+  "findings": [
+    {
+      "id": "DSCP-T7-F1-cross-extension-tsc-command",
+      "summary": "Reviewer used a widened rootDir TypeScript command because ECO rootDir is package-local while T7 intentionally imports sibling CPF types.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Future cross-extension work orders should record the package-specific TypeScript command before dispatch.",
+      "defectClass": "ORCHESTRATOR_PACKET_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE",
+      "f2gRef": "docs/reviews/CVF_DSCP_T7_ECO_MULTI_DOMAIN_PILOT_COMPLETION_2026-06-08.md#finding-to-governance-learning-disposition"
+    }
+  ],
+  "negativeSearchTerms": [
+    "provider call (not made)",
+    "live ECO retrieval (not made)",
+    "corpus ingestion (not made)",
+    "T12 authorization claim (not made)",
+    "public readiness claim (not made)"
+  ],
+  "nextScanRecommendation": "Re-scan only when DSCP ECO adapter behavior changes or future ECO retrieval runtime integration is authorized."
+}

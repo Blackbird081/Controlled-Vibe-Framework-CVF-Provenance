@@ -1,0 +1,20 @@
+{
+  "registryOrder": 37,
+  "id": "dscp-t10-domain-profile-contract-test",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF CPF DSCP-T10 domain profile contract tests",
+  "scopePaths": [
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.domain.profile.contract.test.ts"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "scanWave": "DSCP-T10",
+  "scanDate": "2026-06-10",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_DSCP_T10_DOMAIN_PROFILE_AND_SCAN_ADAPTER_CONTRACT_WORKER_RETURN_2026-06-10.md",
+  "notes": "DSCP-T10 focused test file. 17 vitest assertions; no corpus content ingested; no findings.",
+  "findings": [],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "NONE_REQUIRED"
+}

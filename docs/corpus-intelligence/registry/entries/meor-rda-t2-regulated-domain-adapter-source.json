@@ -1,0 +1,27 @@
+{
+  "registryOrder": 61,
+  "id": "meor-rda-t2-regulated-domain-adapter-source",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF MEOR-RDA-T2 regulated-domain adapter source and export surface",
+  "scopePaths": [
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/control.plane.context.barrel.ts",
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/dscp.regulated.domain.adapter.ts"
+  ],
+  "fileCount": 2,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [
+    "policy_local",
+    "QUERY_CLASS_GATED",
+    "ec_activation",
+    "ocr:",
+    "raw:"
+  ],
+  "nextScanRecommendation": "Re-scan if regulated concept mappings or RDA-T1 semantics change.",
+  "scanWave": "MEOR-RDA-T2",
+  "scanDate": "2026-06-12",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_MEOR_RDA_T2_DETERMINISTIC_ADAPTER_IMPLEMENTATION_COMPLETION_2026-06-12.md",
+  "notes": "Local deterministic helper and CPF context-barrel export converting DscpDomainProfile into four profile-owned regulated MEOR requirements when supportsDocumentStatus=true; non-regulatory profiles receive eligible=false with no requirements generated."
+}

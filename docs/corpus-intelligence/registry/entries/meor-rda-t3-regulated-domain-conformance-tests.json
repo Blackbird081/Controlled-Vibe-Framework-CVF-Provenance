@@ -1,0 +1,26 @@
+{
+  "registryOrder": 63,
+  "id": "meor-rda-t3-regulated-domain-conformance-tests",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF MEOR-RDA-T3 regulated-domain cross-domain conformance tests",
+  "scopePaths": [
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.regulated.domain.adapter.conformance.test.ts"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [
+    "Policy_Local",
+    "QUERY_CLASS_GATED",
+    "ec_activation",
+    "ocr:",
+    "raw:"
+  ],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "MEOR-RDA-T3",
+  "scanDate": "2026-06-12",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_MEOR_RDA_T3_CROSS_DOMAIN_CONFORMANCE_COMPLETION_2026-06-12.md",
+  "notes": "Focused TypeScript conformance tests proving explicit legal-policy support generates exactly four regulated requirements, company_docs/technical_project/governance_docs/mixed_corpus profiles receive no lifecycle requirements by default, legal-policy without the support flag is rejected, cross-profile attachment fails with OWNER_PROFILE_MISMATCH, and two regulated profiles keep requirement ownership isolated."
+}

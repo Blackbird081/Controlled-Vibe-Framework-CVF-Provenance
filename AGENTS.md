@@ -736,9 +736,13 @@ Canonical standard:
 
 `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md`
 
-Registry front door:
+Generated registry front door:
 
 `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
+
+Registry authoring sources:
+
+`docs/corpus-intelligence/registry/`
 
 Guard (GC-051):
 
@@ -758,10 +762,12 @@ If the target corpus path is already registered:
   before starting related implementation work.
 - `NOT_STARTED` / absent → proceed with new scan; add a registry entry first.
 
-After completing a scan, the agent MUST update the registry entry
-(status, scanDate, manifestHash, findings, negativeSearchTerms,
-nextScanRecommendation) and commit the update in the same governed batch as
-the scan evidence.
+After completing a scan, the agent MUST update the per-entry source under
+`docs/corpus-intelligence/registry/entries/`, run
+`python governance/compat/generate_corpus_scan_registry.py --generate`, and
+commit the source entry plus generated aggregate in the same governed batch as
+the scan evidence. Do not hand-edit the generated aggregate for ordinary entry
+updates.
 
 Manifest hash standard: SHA-256 of sorted filesystem paths joined with `\n`
 (newline-separated, with trailing newline). Record `hashAlgorithm: sha256`

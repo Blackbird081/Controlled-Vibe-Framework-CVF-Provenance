@@ -1,0 +1,27 @@
+{
+  "registryOrder": 64,
+  "id": "exa-t2-scan-route-decision-source",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF Extraction Foundation EXA-T2 scan route decision source",
+  "scopePaths": [
+    "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/scan_route_decision.py"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [
+    "DocumentScanSignals (absent before EXA-T2 - confirmed by pre-flight search)",
+    "ScanRouteDecision (absent before EXA-T2 - confirmed by pre-flight search)",
+    "ExtractionStrategy (not imported - confirmed by pre-flight search)",
+    "EQSReport (not imported - confirmed by pre-flight search)",
+    "provider fallback (not present)",
+    "Policy_Local (not present)"
+  ],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "EXA-T2",
+  "scanDate": "2026-06-12",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_WORKER_RETURN_2026-06-12.md",
+  "notes": "Deterministic DocumentScanSignals dataclass and ScanRouteDecision contract. decide_scan_route() maps PASS/NEEDS_TIER2_OCR/OCR_LOW_CONFIDENCE/PARTIAL_EXTRACTION/EMPTY to four stable route dispositions, and treats unsupported source types and language codes as BLOCKED_UNSUPPORTED via the governed OCR language mapping table. No OCR execution, no provider call, no Policy_Local mutation, no raw content release."
+}

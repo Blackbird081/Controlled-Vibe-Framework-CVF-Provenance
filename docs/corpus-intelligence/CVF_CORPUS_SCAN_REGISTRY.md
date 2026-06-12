@@ -16,6 +16,10 @@ Guard: `governance/toolkit/05_OPERATION/CVF_GC051_CORPUS_SCAN_REGISTRY_GUARD.md`
 
 Machine registry: `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
 
+Registry authoring sources: `docs/corpus-intelligence/registry/`
+
+Generator: `governance/compat/generate_corpus_scan_registry.py`
+
 ---
 
 ## Scope / Target / Owner Boundary
@@ -212,9 +216,24 @@ Searches that confirmed absence — prevents re-doing the same negative search.
 
 ## How to Add a New Entry
 
-1. Add to `CVF_CORPUS_SCAN_REGISTRY.json` (machine truth).
-2. Add a row to the Quick Lookup table above.
-3. Add any findings to the Finding Index.
-4. Add any negative searches to the Negative Search Evidence Index.
-5. Add a next scan recommendation row if applicable.
-6. Commit both files together in the same governed batch.
+1. Add or update one per-entry source file under
+   `docs/corpus-intelligence/registry/entries/`.
+2. Run:
+
+   ```text
+   python governance/compat/generate_corpus_scan_registry.py --generate
+   ```
+
+3. Confirm:
+
+   ```text
+   python governance/compat/check_corpus_scan_registry.py --enforce
+   ```
+
+4. Update this human companion only when the quick lookup, finding index,
+   negative search index, or next-scan recommendation needs operator-facing
+   text.
+5. Commit the entry source and generated aggregate in the same governed batch.
+
+Do not hand-edit `CVF_CORPUS_SCAN_REGISTRY.json` for ordinary entry updates.
+The checker fails when the aggregate drifts from the per-entry sources.

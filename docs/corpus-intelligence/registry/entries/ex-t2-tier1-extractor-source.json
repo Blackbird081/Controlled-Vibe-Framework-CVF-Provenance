@@ -1,0 +1,20 @@
+{
+  "registryOrder": 43,
+  "id": "ex-t2-tier1-extractor-source",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF Extraction Foundation EX-T2 Tier 1 extractor source",
+  "scopePaths": [
+    "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/tier1_extractor.py"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "EX-T2",
+  "scanDate": "2026-06-11",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_LPCI2_EX_T2_TIER1_EXTRACTOR_WORKER_RETURN_2026-06-11.md",
+  "notes": "CVF Extraction Foundation Tier 1 digital-native extractor. extract_docx (python-docx) + extract_pdf_text_layer (pdfplumber) + extract_tier1 dispatcher. MIN_CHARS_PER_PAGE=100. Language-transparent: language_codes copied from DscpDomainProfile, never inferred from content. No OCR in this module."
+}

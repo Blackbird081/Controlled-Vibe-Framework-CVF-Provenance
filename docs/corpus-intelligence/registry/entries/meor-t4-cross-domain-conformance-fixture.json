@@ -1,0 +1,26 @@
+{
+  "registryOrder": 59,
+  "id": "meor-t4-cross-domain-conformance-fixture",
+  "corpusType": "PROJECT_SOURCE",
+  "displayName": "CVF MEOR-T4 cross-domain conformance fixture",
+  "scopePaths": [
+    "docs/reference/CVF_MEOR_T4_CROSS_DOMAIN_CONFORMANCE_FIXTURES_2026-06-12.json"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [
+    "policy_local",
+    "cand-",
+    "raw:",
+    "ocr:",
+    "content:"
+  ],
+  "nextScanRecommendation": "Re-scan when MEOR machine semantics or supported profile families change.",
+  "scanWave": "MEOR-T4",
+  "scanDate": "2026-06-12",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_MEOR_T4_CROSS_DOMAIN_CONFORMANCE_COMPLETION_2026-06-12.md",
+  "notes": "One shared synthetic JSON authority for legal-policy and technical-project requirement ownership plus resolved, unresolved, conflict, and not-applicable cases."
+}

@@ -1,0 +1,22 @@
+{
+  "registryOrder": 45,
+  "id": "ex-t2-extraction-foundation-package-stubs",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF Extraction Foundation EX-T2 package stubs",
+  "scopePaths": [
+    "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/__init__.py",
+    "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/__init__.py",
+    "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/__init__.py"
+  ],
+  "fileCount": 3,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "EX-T2",
+  "scanDate": "2026-06-11",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_LPCI2_EX_T2_TIER1_EXTRACTOR_WORKER_RETURN_2026-06-11.md",
+  "notes": "Package marker stubs for the EX-T2 CVF Extraction Foundation source, src, and tests directories. No runtime behavior."
+}

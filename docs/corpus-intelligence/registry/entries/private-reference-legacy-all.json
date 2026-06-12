@@ -1,0 +1,40 @@
+{
+  "registryOrder": 35,
+  "id": "private-reference-legacy-all",
+  "corpusType": "LEGACY_FOLDER",
+  "displayName": ".private_reference/legacy (full tree)",
+  "scopePaths": [
+    ".private_reference/legacy/"
+  ],
+  "fileCount": null,
+  "status": "SCANNED_WITH_FINDINGS",
+  "scanWave": "LHW-RESCAN-C-MKG1",
+  "scanDate": "2026-06-01",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_MKG1_MEMORY_KNOWLEDGE_GRAPH_OWNER_SURFACE_REVIEW_COMPLETION_2026-06-01.md",
+  "notes": "Retroactively registered 2026-06-10. Legacy folder was scanned during MKG1 owner surface review (2026-06-01). Registry entry added to satisfy GC-051 coverage requirement.",
+  "findings": [
+    {
+      "id": "F1-mkg1-legacy-owner-surface",
+      "summary": ".private_reference/legacy/** scanned during MKG1 Memory/Knowledge/Graph owner surface review (2026-06-01). 47 Memory/Knowledge/Graph assets identified and triaged.",
+      "disposition": "ACCEPT_NO_ACTION",
+      "nextAction": "None \u2014 MKG1 closed; legacy absorption complete for this corpus.",
+      "defectClass": "N/A",
+      "learningLane": "N/A"
+    }
+  ],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "N/A \u2014 legacy absorption closed for this corpus.",
+  "completionReviewPath": null,
+  "gcBaselineRef": null,
+  "verdicts": {
+    "gc047": "PARTIAL",
+    "gc048": "NOT_APPLICABLE",
+    "gc050": "NOT_APPLICABLE"
+  },
+  "semanticRegions": {},
+  "priorAbsorption": {},
+  "hashAlgorithm": null,
+  "hashInput": null
+}

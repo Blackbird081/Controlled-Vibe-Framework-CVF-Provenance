@@ -1,0 +1,45 @@
+{
+  "registryOrder": 25,
+  "id": "graphify-guard-source-verification-cli-src",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "Graphify Guard Source Verification \u2014 CLI source drift check",
+  "scopePaths": [
+    "EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/command.registry.ts",
+    "EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "scanWave": "GRAPHIFY-SOURCE-VERIFICATION-2026-06-07",
+  "scanDate": "2026-06-07",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reference/CVF_GRAPHIFY_GUARD_ENFORCEMENT_SOURCE_MAP_2026-06-07.md",
+  "completionReviewPath": "docs/reviews/CVF_GRAPHIFY_GUARD_ENFORCEMENT_SOURCE_VERIFICATION_COMPLETION_2026-06-07.md",
+  "gcBaselineRef": "docs/work_orders/CVF_AGENT_WORK_ORDER_GRAPHIFY_GUARD_ENFORCEMENT_SOURCE_VERIFICATION_FOR_CLAUDE_2026-06-07.md",
+  "verdicts": {
+    "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+    "gc048": "NOT_RUN",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [
+    "CLI_COMMAND_REGISTRY",
+    "GRAPH_CLI_ABSENCE_CONFIRMED"
+  ],
+  "priorAbsorption": "CLI command registry read during Graphify guard enforcement source verification to confirm 'cvf graph' commands are still absent. CI1-T2 F3 CLI-absence finding confirmed current.",
+  "findings": [
+    {
+      "id": "GRAPHIFY-SV-F2-cli-graph-still-absent",
+      "summary": "rg 'cvf graph' in CLI src confirms no graph commands in command.registry.ts at HEAD 74ba8033. CI1-T2 F3 finding is still current.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "CLI graph commands remain parked in CVF_GRAPH_CLI_PHASED_BACKLOG_ROADMAP_2026-06-02.md. No action required from this verification.",
+      "defectClass": "N/A",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE",
+      "f2gRef": "docs/reference/CVF_GRAPHIFY_GUARD_ENFORCEMENT_SOURCE_MAP_2026-06-07.md#cli-boundary"
+    }
+  ],
+  "negativeSearchTerms": [
+    "cvf graph command in command.registry.ts (absent \u2014 F3 finding current)",
+    "CLI graph enforcement claim (not made)"
+  ],
+  "nextScanRecommendation": "Re-scan only when a CLI graph work order is authorized. Parked roadmap: docs/roadmaps/CVF_GRAPH_CLI_PHASED_BACKLOG_ROADMAP_2026-06-02.md."
+}

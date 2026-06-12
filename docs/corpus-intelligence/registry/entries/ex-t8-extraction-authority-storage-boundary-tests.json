@@ -1,0 +1,20 @@
+{
+  "registryOrder": 51,
+  "id": "ex-t8-extraction-authority-storage-boundary-tests",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF Extraction Foundation EX-T8 authority/storage boundary tests",
+  "scopePaths": [
+    "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_extraction_pipeline.py"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "EX-T8",
+  "scanDate": "2026-06-12",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_LPCI2_EX_T8_EXTRACTION_AUTHORITY_AND_STORAGE_BOUNDARY_COMPLETION_2026-06-12.md",
+  "notes": "Focused pytest coverage for extracted-text authority, Tier 1 char-offset rebuild, Tier 2 page-reOCR rebuild, raw OCR retention default, descriptor metadata propagation, and storage-boundary hash determinism."
+}

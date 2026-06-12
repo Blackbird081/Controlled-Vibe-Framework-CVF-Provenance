@@ -1,0 +1,72 @@
+{
+  "registryOrder": 6,
+  "id": "legacy-cvf-add",
+  "corpusType": "LEGACY_FOLDER",
+  "displayName": "CVF ADD (partial root \u2014 LHW-RESCAN-C)",
+  "scopePaths": [
+    ".private_reference/legacy/CVF ADD/"
+  ],
+  "fileCount": 167,
+  "status": "PARTIALLY_SCANNED",
+  "scanWave": "LHW-RESCAN-C",
+  "scanDate": "2026-06-01",
+  "manifestHash": "ae7fe05e016b7079a81002de60de1e1209112de59c8bee793e15e11557cae0ff",
+  "manifestPath": "docs/audits/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_MANIFEST_2026-06-01.json",
+  "packetPath": "docs/audits/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_RECONCILIATION_2026-06-01.md",
+  "completionReviewPath": "docs/reviews/CVF_LHW_RESCAN_C_LEGACY_PARTIAL_ROOTS_CORPUS_RECONCILIATION_COMPLETION_2026-06-01.md",
+  "latestTriagePacketPath": "docs/audits/CVF_CI1_T9_LEGACY_PARTIAL_SCAN_TRIAGE_PACKET_2026-06-05.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_LHW_RESCAN_C_CROSS_CORPUS_DEEP_REVIEW_2026-06-01.md",
+  "verdicts": {
+    "gc047": "COMPLETE_VERIFIED",
+    "gc048": "PARTIAL",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [
+    "31 source families across CVF ADD + CVF 16.5 + CVF_Restructure \u2014 broad routing"
+  ],
+  "priorAbsorption": "LHW13-16 connector specs \u2014 various workflow, memory, graph, context families",
+  "findings": [
+    {
+      "id": "RESCAN-C-code-review-graph",
+      "summary": "CVF ADD/code-review-graph/ contains 7 files not yet deep-classified",
+      "disposition": "DEFER_WITH_ROADMAP",
+      "nextAction": "CI1-T3 candidate \u2014 directly relevant to Graphify F2 guard spec gap",
+      "defectClass": "RULE_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE",
+      "roadmapRef": "docs/roadmaps/CVF_CI1_CORPUS_INTELLIGENCE_OPERATIONALIZATION_ROADMAP_2026-06-02.md#ci1-t3"
+    },
+    {
+      "id": "CI1-T9-stale-code-review-graph-next-scan",
+      "summary": "CI1-T9 triage found the prior CVF ADD next-scan recommendation still pointed to code-review-graph even though CI1-T3 already deep-scanned that family",
+      "disposition": "ACCEPT",
+      "nextAction": "Replace next recommendation with CVF ADD/cortex-hub/ memory-learning deep scan",
+      "defectClass": "ORCHESTRATOR_PACKET_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE",
+      "packetRef": "docs/audits/CVF_CI1_T9_LEGACY_PARTIAL_SCAN_TRIAGE_PACKET_2026-06-05.md"
+    },
+    {
+      "id": "CI1-T9-cortex-hub-selected",
+      "summary": "CI1-T9 triage selected CVF ADD/cortex-hub/ as the highest-value immediate deep scan candidate because it bridges persistent memory, shared knowledge, MCP, code graph, context packaging, and Learning Plane boundaries",
+      "disposition": "DEFER_WITH_ROADMAP",
+      "nextAction": "Open CI1-T10 with fresh GC-018, full file-level corpus ledger, delta ledger, routing matrix, and adversarial sampling",
+      "defectClass": "RULE_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE",
+      "f2gRef": "docs/audits/CVF_CI1_T9_LEGACY_PARTIAL_SCAN_TRIAGE_PACKET_2026-06-05.md#finding-to-governance-learning-disposition",
+      "packetRef": "docs/audits/CVF_CI1_T9_LEGACY_PARTIAL_SCAN_TRIAGE_PACKET_2026-06-05.md"
+    },
+    {
+      "id": "CI1-T10-cortex-hub-deep-scan-complete",
+      "summary": "CI1-T10 deep-scanned the 11-file CVF ADD/cortex-hub/ corpus and accepted it as a bounded capability-provider contract seed with runtime implementation deferred",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Use legacy-cvf-add-cortex-hub entry and finding packet for future cortex-hub work; next root scan should move to CVF_Important/ADDING_LEARNING PLANE/",
+      "defectClass": "N/A",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE",
+      "packetRef": "docs/audits/CVF_CI1_T10_CORTEX_HUB_MEMORY_LEARNING_DEEP_SCAN_PACKET_2026-06-05.md",
+      "findingPacketRef": "docs/corpus-intelligence/findings/legacy-cvf-add-cortex-hub.md"
+    }
+  ],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "CI1-T10 complete: CVF ADD/cortex-hub/ is now deep-scanned; next memory/learning scan should move to CVF_Important/ADDING_LEARNING PLANE/ unless operator redirects",
+  "hashAlgorithm": "sha256",
+  "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
+}

@@ -1,0 +1,20 @@
+{
+  "registryOrder": 46,
+  "id": "ex-t3-t6-extraction-pipeline-source",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF Extraction Foundation EX-T3 through EX-T6 pipeline source",
+  "scopePaths": [
+    "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/extraction_pipeline.py"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "EX-T3-EX-T6",
+  "scanDate": "2026-06-11",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_LPCI2_EX_T3_T6_EXTRACTION_PIPELINE_COMPLETION_2026-06-11.md",
+  "notes": "Deterministic local extraction pipeline contracts for Tier 2 OCR adapter boundary, OCR language mapping, Tier 3 quality gate, fixed-window chunk schema, and DSCP descriptor handoff. No OCR dependency install, model download, corpus ingestion, provider call, or legal/current-status claim."
+}

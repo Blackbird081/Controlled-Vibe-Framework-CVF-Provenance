@@ -1,0 +1,21 @@
+{
+  "registryOrder": 54,
+  "id": "meor-t1-metadata-evidence-resolution-contract",
+  "corpusType": "PROJECT_SOURCE",
+  "displayName": "CVF MEOR-T1 metadata evidence resolution contract",
+  "scopePaths": [
+    "docs/reference/CVF_METADATA_EVIDENCE_AND_OPERATOR_RESOLUTION_CONTRACT_2026-06-12.md",
+    "docs/reference/CVF_METADATA_EVIDENCE_AND_OPERATOR_RESOLUTION_SEMANTICS_2026-06-12.json"
+  ],
+  "fileCount": 2,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "Re-scan when the contract version changes or a new profile-scoped requirement class is added.",
+  "scanWave": "MEOR-T1",
+  "scanDate": "2026-06-12",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_MEOR_T1_METADATA_EVIDENCE_RESOLUTION_CONTRACT_COMPLETION_2026-06-12.md",
+  "notes": "Domain-agnostic metadata requirement, evidence basis, operator resolution, downstream re-evaluation, failure-token, and cross-domain isolation semantics. Specification only; no runtime, source-authenticity, domain-truth, gate-activation, or readiness claim."
+}

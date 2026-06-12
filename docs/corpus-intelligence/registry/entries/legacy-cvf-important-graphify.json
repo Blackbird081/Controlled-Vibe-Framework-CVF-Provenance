@@ -1,0 +1,80 @@
+{
+  "registryOrder": 1,
+  "id": "legacy-cvf-important-graphify",
+  "corpusType": "LEGACY_FOLDER",
+  "displayName": "CVF_Important / Knowledge Base_Graphify",
+  "scopePaths": [
+    ".private_reference/legacy/CVF_Important/Knowledge Base_Graphify/"
+  ],
+  "fileCount": 5,
+  "status": "SCANNED_WITH_FINDINGS",
+  "scanWave": "CI1-T2",
+  "scanDate": "2026-06-02",
+  "manifestHash": "a88e3412a2cfca13dc5ff08da16abbc28a08462fd6112ea03cd7992a802c4e43",
+  "manifestPath": "docs/audits/CVF_LHW_RESCAN_A_CVF_IMPORTANT_CORPUS_MANIFEST_2026-06-01.json",
+  "packetPath": "docs/audits/CVF_CI1_T2_GRAPHIFY_READINESS_PACKET_2026-06-02.md",
+  "completionReviewPath": "docs/reviews/CVF_CI1_T2_GRAPHIFY_LEGACY_RESCAN_PILOT_COMPLETION_2026-06-02.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_CI1_T2_GRAPHIFY_LEGACY_RESCAN_PILOT_2026-06-02.md",
+  "verdicts": {
+    "gc047": "COMPLETE_VERIFIED",
+    "gc048": "RECONCILED_VERIFIED",
+    "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+  },
+  "semanticRegions": [
+    "GRAPH_CLI_INTERFACE",
+    "GRAPH_DATA_MODEL",
+    "GRAPH_GOVERNANCE",
+    "GRAPH_LAYER_ARCHITECTURE",
+    "GRAPH_OPERATOR_ANALYSIS"
+  ],
+  "priorAbsorption": "KGR1 \u2014 knowledge-graph-builder.ts + knowledge-graph-store.ts (partial absorption of data model and builder patterns)",
+  "findings": [
+    {
+      "id": "F1-kgr1-partial",
+      "summary": "KGR1 partial absorption confirmed \u2014 data model and builder patterns absorbed; full spec not implemented",
+      "disposition": "ACCEPT_NO_ACTION",
+      "nextAction": "None \u2014 KGR1 delivery is correct bounded scope",
+      "defectClass": "N/A",
+      "learningLane": "N/A"
+    },
+    {
+      "id": "F2-guard-spec-absent",
+      "summary": "Guard spec G-GM-01 through G-GM-08 defined in CVF_GRAPH_MEMORY_GUARD_SPEC.md but absent from CVF TypeScript source",
+      "disposition": "DEFER_WITH_ROADMAP",
+      "nextAction": "Use the post-CI1 graph guard enforcement parking roadmap before opening any implementation GC/work order",
+      "defectClass": "RULE_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE",
+      "f2gRef": "docs/reviews/CVF_CI1_T2_GRAPHIFY_LEGACY_RESCAN_PILOT_COMPLETION_2026-06-02.md#finding-to-governance-learning-disposition",
+      "roadmapRef": "docs/roadmaps/CVF_GRAPHIFY_GUARD_ENFORCEMENT_ROADMAP_2026-06-02.md"
+    },
+    {
+      "id": "F3-cli-commands-absent",
+      "summary": "CLI commands cvf graph build/query/visualize/export/validate/status/purge absent from command.registry.ts",
+      "disposition": "DEFER_PHASED",
+      "nextAction": "Use the post-CI1 Graph CLI phased backlog before opening any cvf graph query work order",
+      "defectClass": "MACHINE_GATE_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE",
+      "f2gRef": "docs/reviews/CVF_CI1_T2_GRAPHIFY_LEGACY_RESCAN_PILOT_COMPLETION_2026-06-02.md#finding-to-governance-learning-disposition",
+      "workOrderRef": "docs/roadmaps/CVF_GRAPH_CLI_PHASED_BACKLOG_ROADMAP_2026-06-02.md#phase-1-cvf-graph-query"
+    },
+    {
+      "id": "F4-performance-claim-unverified",
+      "summary": "71.5x token reduction claim is author-reported by external Graphify project; not verified by CVF",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Do not repeat in CVF documentation without live proof",
+      "defectClass": "UNVERIFIED_CLAIM",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+    }
+  ],
+  "negativeSearchTerms": [
+    "cvf graph (CLI command \u2014 absent from command.registry.ts)",
+    "G-GM-0 (guard IDs \u2014 absent from *.ts source)",
+    "GraphMemoryRecord (record type \u2014 absent from CVF TS)",
+    "PreToolUse hook (not a CVF-owned hook)",
+    "GRAPH_REPORT.md (output artifact \u2014 not produced by CVF)",
+    "NetworkX / leiden (Python graph libs \u2014 not in CVF)"
+  ],
+  "nextScanRecommendation": "CVF ADD/code-review-graph/ \u2014 7 files, directly related to graph governance (Finding F2)",
+  "hashAlgorithm": "sha256",
+  "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
+}

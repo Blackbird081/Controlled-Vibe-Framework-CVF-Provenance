@@ -1,0 +1,93 @@
+{
+  "registryOrder": 10,
+  "id": "legacy-cvf-edit",
+  "corpusType": "LEGACY_FOLDER",
+  "displayName": "CVF Edit",
+  "scopePaths": [
+    ".private_reference/legacy/CVF Edit/"
+  ],
+  "fileCount": 10,
+  "status": "SCANNED_WITH_FINDINGS",
+  "scanWave": "CI1-T8",
+  "scanDate": "2026-06-05",
+  "manifestHash": "48b3639af259da5dbf303ffd500eeaf2765ae33d0c06a194a7123af2a7a30c88",
+  "manifestPath": "docs/audits/CVF_CI1_T8_CVF_EDIT_FULL_RECONCILIATION_PACKET_2026-06-05.md",
+  "packetPath": "docs/audits/CVF_CI1_T8_CVF_EDIT_FULL_RECONCILIATION_PACKET_2026-06-05.md",
+  "completionReviewPath": null,
+  "gcBaselineRef": "docs/baselines/archive/CVF_GC018_LHW18_CVF_EDIT_ABSORPTION_WAVE_2026-05-30.md",
+  "verdicts": {
+    "gc047": "COMPLETE_VERIFIED",
+    "gc048": "RECONCILED_VERIFIED",
+    "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+  },
+  "semanticRegions": [
+    "EXECUTION_TRACE_AUDIT",
+    "ARCHITECTURE_GAP_MAP",
+    "IMPROVEMENT_PROPOSAL_SET",
+    "FAILURE_SIMULATION",
+    "ARCHITECTURE_MATURITY_REVIEW",
+    "POSITIONING_AND_INTEGRATION",
+    "RUNTIME_ENFORCEABILITY_AUDIT",
+    "LAYER_AUDIT_FRAMEWORK",
+    "CODE_LEVEL_RUNTIME_AUDIT",
+    "SYSTEM_ARCHITECTURE_REVIEW"
+  ],
+  "priorAbsorption": "LHW18 T1/T2/T3 doc-only absorption; W1 workflow state-machine enforcement; W4 operational benchmark scorecard; W6 non-coder artifact export hardening; CBG-1 context budget guard. CI1-T8 adds full 10/10 file reconciliation and keeps runtime claims demand-gated.",
+  "findings": [
+    {
+      "id": "CI1-T8-F1-full-scan-gap-closed",
+      "summary": "CVF Edit had partial absorption but no current GC-047/048/050 full scan packet.",
+      "disposition": "ACCEPT_NO_ACTION",
+      "nextAction": "Closed by docs/audits/CVF_CI1_T8_CVF_EDIT_FULL_RECONCILIATION_PACKET_2026-06-05.md.",
+      "defectClass": "ORCHESTRATOR_PACKET_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE",
+      "f2gRef": "docs/audits/CVF_CI1_T8_CVF_EDIT_FULL_RECONCILIATION_PACKET_2026-06-05.md#finding-to-governance-learning-disposition"
+    },
+    {
+      "id": "CI1-T8-F2-runtime-enforcement-claim-boundary",
+      "summary": "Runtime-enforcement language from CVF Edit must not become a hard governance claim without owner-file trace and live/runtime proof.",
+      "disposition": "DEFER_WITH_ROADMAP",
+      "nextAction": "Open fresh GC-018 only when a specific route/tool/phase enforcement surface is selected.",
+      "defectClass": "RULE_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE",
+      "f2gRef": "docs/audits/CVF_CI1_T8_CVF_EDIT_FULL_RECONCILIATION_PACKET_2026-06-05.md#finding-to-governance-learning-disposition"
+    },
+    {
+      "id": "CI1-T8-F3-failure-simulation-harness-demand-gated",
+      "summary": "Failure simulation scenarios are mapped by LHW18 T1 but no runtime harness is claimed.",
+      "disposition": "DEFER_DEMAND_GATED",
+      "nextAction": "Use LHW18 T1 and LHW7 T3 before opening a failure-simulation implementation tranche.",
+      "defectClass": "RUNTIME_SIGNAL_GAP",
+      "learningLane": "RUNTIME_BEHAVIOR_LEARNING",
+      "f2gRef": "docs/audits/CVF_CI1_T8_CVF_EDIT_FULL_RECONCILIATION_PACKET_2026-06-05.md#finding-to-governance-learning-disposition"
+    },
+    {
+      "id": "CI1-T8-F4-integration-sdk-demand-gated",
+      "summary": "Integration SDK adapters from CVF Edit remain concept-only; MCP is the current framework-neutral boundary.",
+      "disposition": "DEFER_DEMAND_GATED",
+      "nextAction": "Open adapter roadmap only for a named framework and fresh operator decision.",
+      "defectClass": "OPERATOR_SCOPE_CLARITY_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE",
+      "f2gRef": "docs/audits/CVF_CI1_T8_CVF_EDIT_FULL_RECONCILIATION_PACKET_2026-06-05.md#finding-to-governance-learning-disposition"
+    },
+    {
+      "id": "CI1-T8-F5-context-budget-resolved",
+      "summary": "Context budget proposal from CVF Edit is no longer open as pure advisory after CBG-1.",
+      "disposition": "ACCEPT_NO_ACTION",
+      "nextAction": "No further action from CVF Edit; use CBG-1 boundary for future work.",
+      "defectClass": "RULE_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE",
+      "resolvedBy": "CBG-1"
+    }
+  ],
+  "negativeSearchTerms": [
+    "default claim that CVF Edit proves hard runtime governance enforcement",
+    "live failure-simulation harness from LHW18 T1",
+    "framework-specific adapter SDK implementation from LHW18 T2",
+    "advanced project-scale stability proof from context management advisory",
+    "Agent OS positioning as public claim"
+  ],
+  "nextScanRecommendation": "No additional CVF Edit corpus visibility scan needed. Future work should be a fresh GC-018 runtime proof only if the operator selects a specific route/tool/phase enforcement, failure-simulation, or framework-adapter surface.",
+  "hashAlgorithm": "sha256",
+  "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
+}
