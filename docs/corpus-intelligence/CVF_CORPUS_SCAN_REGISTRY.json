@@ -2592,6 +2592,31 @@
       "manifestPath": null,
       "packetPath": "docs/reviews/CVF_MEOR_RDA_T2_DETERMINISTIC_ADAPTER_IMPLEMENTATION_COMPLETION_2026-06-12.md",
       "notes": "16 focused TypeScript tests covering: non-regulatory profile rejection, false flag rejection, empty-ID failure, regulated profile eligible=true, owner-profile scoping, evidence-basis values, all four concept keys, requirement IDs, required=true, two-profile isolation, non-bleed proof, bridge-pass with correct owner, bridge OWNER_PROFILE_MISMATCH with foreign profile, frozen mapping table, frozen result, and no QUERY_CLASS_GATED write. All 16 pass."
+    },
+    {
+      "id": "meor-rda-t3-regulated-domain-conformance-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF MEOR-RDA-T3 regulated-domain cross-domain conformance tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/dscp.regulated.domain.adapter.conformance.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "Policy_Local",
+        "QUERY_CLASS_GATED",
+        "ec_activation",
+        "ocr:",
+        "raw:"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MEOR-RDA-T3",
+      "scanDate": "2026-06-12",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MEOR_RDA_T3_CROSS_DOMAIN_CONFORMANCE_COMPLETION_2026-06-12.md",
+      "notes": "Focused TypeScript conformance tests proving explicit legal-policy support generates exactly four regulated requirements, company_docs/technical_project/governance_docs/mixed_corpus profiles receive no lifecycle requirements by default, legal-policy without the support flag is rejected, cross-profile attachment fails with OWNER_PROFILE_MISMATCH, and two regulated profiles keep requirement ownership isolated."
     }
   ]
 }

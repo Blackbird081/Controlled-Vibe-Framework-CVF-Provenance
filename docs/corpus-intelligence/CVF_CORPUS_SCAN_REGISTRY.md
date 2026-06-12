@@ -8,7 +8,7 @@ docType: reference
 
 Date: 2026-06-02
 
-Last updated: 2026-06-12 (MEOR-RDA-T2 adapter source/tests)
+Last updated: 2026-06-12 (MEOR-RDA-T3 cross-domain conformance tests)
 
 Standard: `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md`
 
@@ -115,6 +115,7 @@ prior scan here before starting new work.
 | `CVF MEOR-T4 cross-domain conformance tests` | CVF_EXTENSION | SCANNED | MEOR-T4 | 2 | TypeScript and Python proof for exact sets, non-bleed, owner rejection, shared semantics, and bounded fixture content |
 | `CVF MEOR-RDA-T2 regulated-domain adapter source and export surface` | CVF_EXTENSION | SCANNED | MEOR-RDA-T2 | 2 | Local deterministic helper and CPF context-barrel export generating four profile-owned regulated MEOR requirements for supportsDocumentStatus=true profiles; non-regulatory profiles receive eligible=false |
 | `CVF MEOR-RDA-T2 regulated-domain adapter tests` | CVF_EXTENSION | SCANNED | MEOR-RDA-T2 | 1 | 16 focused TypeScript tests covering non-regulatory rejection, empty-ID failure, regulated eligible=true, owner scoping, evidence bases, concept keys, bridge-pass, bridge-mismatch, frozen result, and no gate activation |
+| `CVF MEOR-RDA-T3 regulated-domain cross-domain conformance tests` | CVF_EXTENSION | SCANNED | MEOR-RDA-T3 | 1 | Focused TypeScript conformance tests proving explicit legal-policy support, non-regulatory default non-bleed, support-flag rejection, owner mismatch fail-closed behavior, and two-profile ownership isolation |
 
 ---
 

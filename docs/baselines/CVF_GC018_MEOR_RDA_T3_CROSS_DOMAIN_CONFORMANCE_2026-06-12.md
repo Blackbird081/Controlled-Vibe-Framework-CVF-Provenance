@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: AUTHORIZED
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 
@@ -11,6 +11,8 @@ Date: 2026-06-12
 Owner: Codex
 
 baseHead: `ae3f3386`
+
+executionBaseHead: `81db3560`
 
 ## Purpose
 
@@ -63,6 +65,12 @@ Dependency release evidence:
 ## Decision / Baseline / Proposed Tranche
 
 Decision: authorize RDA-T3 as a bounded conformance tranche.
+
+Closure decision: RDA-T3 closed bounded after Codex self-execution by operator
+override. The closure added focused CPF conformance tests only, updated GC-051
+registry coverage, and did not mutate runtime adapter source, Policy_Local,
+EC activation, retrieval, OCR, provider/API-key paths, public-sync, or
+readiness claims.
 
 Baseline:
 
