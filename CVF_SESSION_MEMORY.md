@@ -100,11 +100,11 @@ GC-018 baseline, and source-verified work order. Policy_Local real-use-case
 work remains held behind adapter closure and operator/source metadata
 evidence.
 
-MEOR Regulated-Domain Adapter roadmap is dispatched from base `d1140459`.
-RDA-T1 is specification-only and may author the regulated-date adapter
-contract plus JSON semantics. Runtime/source implementation, Policy_Local
-mutation, EC activation, retrieval, OCR, corpus ingestion, public-sync, and
-readiness claims remain blocked.
+MEOR Regulated-Domain Adapter roadmap is dispatched at commit `2e3e7357` from
+base `d1140459`. RDA-T1 is specification-only and may author the regulated-date
+adapter contract plus JSON semantics. Runtime/source implementation,
+Policy_Local mutation, EC activation, retrieval, OCR, corpus ingestion,
+public-sync, and readiness claims remain blocked.
 
 LPCI2 EC-T4 metadata quality assessment is `CLOSED_BLOCKED_BOUNDED` at
 material commit `ff6343e3`.

@@ -38,8 +38,8 @@ Startup acknowledged: current mode=`meor_rda_t1_regulated_date_adapter_contract_
 
 `meor_rda_t1_regulated_date_adapter_contract_dispatched`
 
-Current HEAD recorded for this handoff: `d1140459`
-(MEOR-T5 closure session sync commit; RDA-T1 dispatch commit follows this batch).
+Current HEAD recorded for this handoff: `2e3e7357`
+(MEOR-RDA-T1 dispatch commit; this dedicated session sync follows).
 
 ## Active Boundary
 
@@ -90,11 +90,11 @@ MEOR-T1 through MEOR-T5 are closed bounded. The foundation now releases only a
 fresh regulated-domain adapter roadmap/GC-018/work order. Policy_Local
 validation remains a separate downstream successor and is still `NOT_OPEN`.
 
-MEOR Regulated-Domain Adapter roadmap is dispatched from base `d1140459`.
-RDA-T1 is specification-only: author the regulated-date adapter contract and
-JSON semantics before any runtime/source implementation. Policy_Local,
-EC activation, retrieval, OCR, corpus ingestion, public-sync, production
-readiness, and public readiness remain blocked.
+MEOR Regulated-Domain Adapter roadmap is dispatched at commit `2e3e7357` from
+base `d1140459`. RDA-T1 is specification-only: author the regulated-date
+adapter contract and JSON semantics before any runtime/source implementation.
+Policy_Local, EC activation, retrieval, OCR, corpus ingestion, public-sync,
+production readiness, and public readiness remain blocked.
 
 LPCI2 EC-T4 metadata quality assessment is `CLOSED_BLOCKED_BOUNDED` at
 material commit `ff6343e3`.
