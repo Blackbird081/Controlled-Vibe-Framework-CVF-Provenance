@@ -24,14 +24,14 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc051_registry_authoring_hardening_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=PL-S1 fresh authorization may begin for the downstream Policy_Local evidence-resolution pilot; parked checkpoint=EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked, and external Policy_Local mutation remains blocked until a later PL-S work order permits it.
+Startup acknowledged: current mode=`active_session_state_json_authoring_hardening_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=PL-S1 fresh authorization may begin for the downstream Policy_Local evidence-resolution pilot; parked checkpoint=EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked, and external Policy_Local mutation remains blocked until a later PL-S work order permits it.
 
 ## Current Mode
 
-`gc051_registry_authoring_hardening_closed_pass_bounded`
+`active_session_state_json_authoring_hardening_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `c1854b17`
-(GC-051 registry authoring hardening material closure commit; this dedicated
+Current HEAD recorded for this handoff: `e9c96ba3`
+(Active session state JSON authoring hardening material closure commit; this dedicated
 session sync follows).
 
 ## Active Boundary
@@ -159,6 +159,36 @@ Verification: generator check PASS; GC-051 checker PASS; focused unittest PASS
 Result: GC-051 now uses per-entry source JSON plus a generator and drift
 checker. Future agents must not hand-edit the aggregate registry directly.
 
+Active session state JSON authoring hardening is `CLOSED_PASS_BOUNDED` at
+material commit `e9c96ba3` from execution base `005b5944`.
+
+Artifacts:
+
+- generator:
+  `governance/compat/generate_active_session_state.py`;
+- focused tests:
+  `governance/compat/test_generate_active_session_state.py`;
+- generated aggregate:
+  `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- source state core and entries:
+  `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+  and `CVF_SESSION/state/entries/`;
+- standard:
+  `docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md`;
+- governance packet:
+  `docs/baselines/CVF_GC018_ACTIVE_SESSION_STATE_JSON_AUTHORING_HARDENING_2026-06-12.md`,
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_ACTIVE_SESSION_STATE_JSON_AUTHORING_HARDENING_FOR_CODEX_2026-06-12.md`,
+  and
+  `docs/reviews/CVF_ACTIVE_SESSION_STATE_JSON_AUTHORING_HARDENING_COMPLETION_2026-06-12.md`.
+
+Verification: generator check PASS; active-session checker PASS; focused
+unittest PASS 4/4; reviewer-fast PASS 12/12; full pre-commit governance chain
+PASS 37/37.
+
+Result: `ACTIVE_SESSION_STATE.json` now uses source JSON files plus a
+generator and drift checker. Future agents must not hand-edit the aggregate
+session-state JSON directly.
+
 ## Latest Work / Changes
 
 - Reviewed and corrected the EXA-T1 external corpus/source map.
@@ -172,27 +202,32 @@ checker. Future agents must not hand-edit the aggregate registry directly.
 - Closed GC-051 registry authoring hardening at material commit `c1854b17` with
   per-entry source registry files, generator, drift checker, focused tests, and
   authoring documentation.
+- Closed active session state JSON authoring hardening at material commit
+  `e9c96ba3` with source state files, generator, active-state drift checker,
+  focused tests, and the JSON generated aggregate discipline standard.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: perform the mandatory EXA-T1 closure
-continuity sync and rotate the active handoff without changing governance
+Authorized guard-maintenance scope: perform the mandatory active session state
+JSON authoring hardening continuity sync without changing governance
 semantics.
 
 Protected paths:
 
-- `AGENTS.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/activeSessionStateJsonAuthoringHardening20260612.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: the operator requested external scan-layer knowledge
-absorption before Policy_Local and returned the EXA-T1 worker packet for Codex
-review. The mandatory closure-quality and governed-file maintainability rules
-require synchronized front doors and handoff rotation.
+Operator authorization: the operator requested hardening
+`CVF_SESSION/ACTIVE_SESSION_STATE.json` and standardizing JSON aggregate usage
+before moving to the Policy_Local use case. The mandatory closure-quality and
+session-continuity rules require synchronized front doors and active state
+sources.
 
-Rollback boundary: revert only the V17-to-V18 routing changes and matching
-EXA-T1 continuity markers if the rotation is incorrect. Do not revert the
-material review commit `6db11aed` or unrelated history.
+Rollback boundary: revert only this active-session JSON hardening session-sync
+batch if the continuity markers are incorrect. Do not revert the material
+closure commit `e9c96ba3` or unrelated history.
 
 ## Next Allowed Move
 

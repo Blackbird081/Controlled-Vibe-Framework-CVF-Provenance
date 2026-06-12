@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-12
 
-Current mode marker: `gc051_registry_authoring_hardening_closed_pass_bounded`
+Current mode marker: `active_session_state_json_authoring_hardening_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `gc051_registry_authoring_hardening_closed_pass_bounded`.
+Current mode: `active_session_state_json_authoring_hardening_closed_pass_bounded`.
 
 Active handoff:
 
@@ -243,6 +243,38 @@ Boundary: no registry semantic reclassification, Policy_Local mutation, EC
 activation, retrieval, OCR/provider/API use, corpus ingestion, public-sync,
 readiness claim, memory reinjection, high-risk promotion, or autonomous
 mutation.
+
+Active session state JSON authoring hardening is `CLOSED_PASS_BOUNDED` at
+material commit `e9c96ba3` from execution base `005b5944`.
+
+Artifacts:
+
+- generator:
+  `governance/compat/generate_active_session_state.py`
+- focused tests:
+  `governance/compat/test_generate_active_session_state.py`
+- generated aggregate:
+  `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- source state core and entries:
+  `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+  and `CVF_SESSION/state/entries/`
+- standard:
+  `docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md`
+- governance packet:
+  `docs/baselines/CVF_GC018_ACTIVE_SESSION_STATE_JSON_AUTHORING_HARDENING_2026-06-12.md`,
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_ACTIVE_SESSION_STATE_JSON_AUTHORING_HARDENING_FOR_CODEX_2026-06-12.md`,
+  and
+  `docs/reviews/CVF_ACTIVE_SESSION_STATE_JSON_AUTHORING_HARDENING_COMPLETION_2026-06-12.md`
+
+Result: `ACTIVE_SESSION_STATE.json` is now generated from source JSON files,
+and the active-session checker fails aggregate/source drift. The stale
+`nextAllowedMove` entry was corrected to the PL-S1 boundary. Verification:
+generator check PASS; active-session checker PASS; focused unittest PASS 4/4;
+reviewer-fast PASS 12/12; full pre-commit governance chain PASS 37/37.
+Boundary: no Policy_Local mutation, external `dich-tai-lieu` edit, EC
+activation, retrieval, OCR/provider/API use, corpus ingestion, public-sync,
+T12 unlock, readiness claim, memory reinjection, high-risk promotion, or
+autonomous mutation.
 
 LPCI2 EC-T4 metadata quality assessment is `CLOSED_BLOCKED_BOUNDED` at
 material commit `ff6343e3`.
