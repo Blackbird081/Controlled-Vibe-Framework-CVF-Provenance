@@ -30,8 +30,8 @@ Startup acknowledged: current mode=`worker_return_fast_gate_latency_hardening_cl
 
 `worker_return_fast_gate_latency_hardening_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `5e605862`
-(worker-return fast gate material closure commit; this dedicated session-sync follows).
+Current HEAD recorded for this handoff: `f62a8bff`
+(FPC foundation roadmap finalization commit; this dedicated session-sync follows).
 
 ## Active Boundary
 
@@ -45,6 +45,11 @@ Public-facing work remains restricted to the sibling public-sync clone and
 requires separate authorization.
 
 ## Latest Continuity Note
+
+FPC foundation planes workflow-chain system completion roadmap was finalized at
+material commit `f62a8bff` after Claude rebuttal remediation. Next execution
+must begin with a fresh FPC-T1 GC-018 and source-verified work order. FPC-T2 and
+FPC-T3 remain dependent on FPC-T1 matrix evidence.
 
 Worker-return fast gate latency hardening is `CLOSED_PASS_BOUNDED` at material
 commit `5e605862` from closure base `9ee5bd00`.
