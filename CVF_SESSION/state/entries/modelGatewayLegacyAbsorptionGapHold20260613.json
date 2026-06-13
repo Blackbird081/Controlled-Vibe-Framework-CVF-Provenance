@@ -1,0 +1,25 @@
+{
+  "stateOrder": 386,
+  "stateKey": "modelGatewayLegacyAbsorptionGapHold20260613",
+  "value": {
+    "status": "HOLD_PENDING_LEGACY_ABSORPTION",
+    "materialCommit": "919afd4e",
+    "priorDispatchCommit": "cce311ba",
+    "correctionBaseHead": "091bdce7",
+    "gc018": "docs/baselines/CVF_GC018_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_2026-06-13.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_FOR_CLAUDE_2026-06-13.md",
+    "correctionReview": "docs/reviews/CVF_MODEL_GATEWAY_LEGACY_ABSORPTION_GAP_DISPATCH_CORRECTION_2026-06-13.md",
+    "heldBoundaryPlan": "docs/reference/CVF_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLAN_2026-06-13.md",
+    "heldWorkerReturn": "docs/reviews/CVF_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_WORKER_RETURN_2026-06-13.md",
+    "worker": "Claude",
+    "reviewer": "Codex",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "verification": [
+      "python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast PASS before material correction commit",
+      "git diff --check PASS before material correction commit",
+      "pre-commit hook PASS 40/40 during material correction commit"
+    ],
+    "nextAllowedMove": "Fresh GC-018 for bounded Model Gateway legacy absorption with Knowledge Absorption Blind-Spot Control Block. C-02 boundary planning remains held until that absorption closes or explicitly releases the hold.",
+    "boundary": "No C-02 boundary plan, worker-return deliverable, legacy content absorption, implementation, runtime/source/test mutation, provider/API use, live governance proof, provider/model addition, registry mutation, public-sync, external app mutation, raw memory release, high-risk promotion, autonomous mutation, or co-work product development is authorized."
+  }
+}

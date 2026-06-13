@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-13
 
-Current mode marker: `model_gateway_epf_provider_routing_boundary_planning_dispatched`
+Current mode marker: `model_gateway_epf_provider_routing_boundary_planning_hold_pending_legacy_absorption`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `model_gateway_epf_provider_routing_boundary_planning_dispatched`.
+Current mode: `model_gateway_epf_provider_routing_boundary_planning_hold_pending_legacy_absorption`.
 
 Active handoff:
 
@@ -59,29 +59,31 @@ Pain-point closure direction:
 ## Latest Continuity Note
 
 Model Gateway EPF provider-routing boundary planning is
-`DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT` at dispatch commit `cce311ba` from
-dispatch base `45b27691`.
+`HOLD_PENDING_LEGACY_ABSORPTION` at correction commit `919afd4e`. The prior
+dispatch commit `cce311ba` is held because gateway-related legacy families
+under `.private_reference/legacy/CVF_Important/` were not inventoried or
+dispositioned before planning.
 
-Dispatch artifacts:
+Held artifacts:
 
 - GC-018:
   `docs/baselines/CVF_GC018_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_2026-06-13.md`;
 - Work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_FOR_CLAUDE_2026-06-13.md`.
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_FOR_CLAUDE_2026-06-13.md`;
+- Correction review:
+  `docs/reviews/CVF_MODEL_GATEWAY_LEGACY_ABSORPTION_GAP_DISPATCH_CORRECTION_2026-06-13.md`.
 
-Claude may return only these uncommitted deliverables:
-
-- `docs/reference/CVF_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLAN_2026-06-13.md`;
-- `docs/reviews/CVF_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_WORKER_RETURN_2026-06-13.md`.
-
-Codex owns review, allowed repairs, final commit, completion review,
-committed-range pre-closure, and session sync. FPC-T4 remains
+Claude must not continue to normal `COMPLETE_PENDING_REVIEW` for C-02. If
+already executing, return `BLOCKED_LEGACY_ABSORPTION_REQUIRED` with no
+additional legacy content absorption. FPC-T4 remains
 `CLOSED_PASS_BOUNDED` at material closure commit `5e0bc39f`.
 
-No implementation, runtime/source/test mutation, provider/API use, live
-governance proof, provider/model addition, registry mutation, public-sync,
-external app mutation, raw memory release, co-work product development, or
-autonomous mutation is authorized.
+Next allowed move is fresh GC-018 for bounded Model Gateway legacy absorption
+with Knowledge Absorption Blind-Spot Control Block. No C-02 boundary plan,
+worker-return deliverable, implementation, runtime/source/test mutation,
+provider/API use, live governance proof, provider/model addition, registry
+mutation, public-sync, external app mutation, raw memory release, co-work
+product development, or autonomous mutation is authorized.
 
 ---
 
@@ -956,22 +958,19 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: Claude worker return only for Model Gateway EPF
-provider-routing boundary planning.
+Next allowed move: fresh GC-018 for bounded Model Gateway legacy absorption
+with Knowledge Absorption Blind-Spot Control Block.
 
-Allowed uncommitted deliverables:
+Current C-02 boundary planning is held. Claude must not create the C-02
+boundary plan or worker-return deliverable under the held packet. If already
+executing, return `BLOCKED_LEGACY_ABSORPTION_REQUIRED` with no additional
+legacy content absorption.
 
-- `docs/reference/CVF_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLAN_2026-06-13.md`;
-- `docs/reviews/CVF_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_WORKER_RETURN_2026-06-13.md`.
-
-Codex owns review, allowed repairs, final commit, completion review,
-committed-range pre-closure, and session sync.
-
-No implementation, runtime/source/test mutation, provider/API use, live
-governance proof, provider/model addition, registry mutation, public-sync,
-external Document_Translator inspection or mutation, Policy_Local mutation, OS
-audit, endpoint monitoring, T12, raw memory release, co-work product
-development, or autonomous mutation is authorized.
+No C-02 boundary plan, implementation, runtime/source/test mutation,
+provider/API use, live governance proof, provider/model addition, registry
+mutation, public-sync, external Document_Translator inspection or mutation,
+Policy_Local mutation, OS audit, endpoint monitoring, T12, raw memory release,
+co-work product development, or autonomous mutation is authorized.
 
 DIR-T2 Document Intelligence Router foundation pilot remains
 `CLOSED_PASS_BOUNDED` at material closure commit `e3395acc`. Closure artifacts:
