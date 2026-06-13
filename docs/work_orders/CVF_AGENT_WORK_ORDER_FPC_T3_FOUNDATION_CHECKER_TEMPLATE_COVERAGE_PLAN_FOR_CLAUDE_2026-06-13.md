@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -18,7 +18,7 @@ dispatchBaseHead: `6047e18f`
 
 executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
 
-closureBaseHead: `NOT_EXECUTED_YET`
+closureBaseHead: `77098b23`
 
 sourceAuthority:
 `docs/baselines/CVF_GC018_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_PLAN_2026-06-13.md`
@@ -192,10 +192,10 @@ reviewerOwnedClosurePaths:
 pendingStatusTokensAllowedBeforeReview:
 COMPLETE_PENDING_REVIEW, IMPLEMENTATION_COMPLETE_PENDING_REVIEW, DRAFT, HOLD_*
 
-forbiddenClosedEquivalentResidue:
-COMPLETE_PENDING_REVIEW, NOT_EXECUTED_YET, WORKER_RETURNS_PENDING,
-PRE_CLOSURE_NOT_RUN, FAIL_EXPECTED_PENDING_FINALITY, DISPATCHED as current
-status
+closedEquivalentResidueDisposition:
+Reviewer conversion completed by Codex. Pending worker-return status remains
+historical worker evidence only; this work order current status is
+`CLOSED_PASS_BOUNDED`.
 
 predecessorClosureFactSource:
 `docs/reviews/CVF_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_COMPLETION_2026-06-13.md`
@@ -504,6 +504,23 @@ FPC-T3 worker return is acceptable only if:
 - [x] Worker Pending-Return Gate is defined.
 - [x] Forbidden Scope excludes implementation and OS-control actions.
 - [x] Public Export Disposition is present.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED`; closure checklist checked | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_COMPLETION_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_COMPLETION_ROADMAP_2026-06-13.md` | `Status: FPC_T3_CLOSED_PASS_BOUNDED` | PASS |
+| Coverage plan | `docs/reference/CVF_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_PLAN_2026-06-13.md` | C01-C07 ranked; C04+C01 recommendation; C07 design-only boundary | PASS |
+| Worker return | `docs/reviews/CVF_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_WORKER_RETURN_2026-06-13.md` | worker return gate evidence and Negative Search And Collision Discipline | PASS |
+| Registry JSON | BLOCKED with reason | FPC-T3 did not authorize GC-051 registry mutation | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason | FPC-T3 did not authorize registry Markdown mutation | BLOCKED with reason |
+| System loop interlock | N/A with reason | FPC-T3 did not authorize interlock registry mutation | N/A with reason |
+| Corpus registry | BLOCKED with reason | FPC-T3 added no runtime/source/test owner surface requiring GC-051 coverage | BLOCKED with reason |
+| External evidence digest | N/A with reason | no external source tree, OCR/provider/API/live proof, OS audit, or retained external artifact was used | N/A with reason |
+| Session continuity | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `AGENT_HANDOFF_V18_2026-06-12.md` | reviewer-owned follow-up after material closure commit | PASS |
+| Public export | this file | `DEFERRED_PRIVATE_ONLY` | PASS |
 
 ## Claim Boundary
 

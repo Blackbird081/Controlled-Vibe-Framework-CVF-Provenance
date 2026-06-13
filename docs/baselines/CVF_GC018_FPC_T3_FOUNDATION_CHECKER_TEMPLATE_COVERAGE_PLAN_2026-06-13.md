@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 
@@ -229,6 +229,22 @@ Closure verification:
 - `git diff --check` PASS;
 - committed-range pre-closure autorun gate PASS after Codex commit;
 - session continuity updated only by Codex after material closure.
+
+Closure result:
+
+- FPC-T3 coverage plan accepted by Codex without reviewer repair.
+- All seven candidates C01 through C07 were evaluated.
+- Recommended first implementation tranche is FPC-T3-C04 plus FPC-T3-C01, but
+  implementation remains unauthorized until a later fresh GC-018/source-verified
+  work order.
+- C07 is accepted as `CONTROL_DESIGN_ONLY`; repo-local implementation and
+  OS-level attribution remain separate later decisions.
+
+Closure artifacts:
+
+- `docs/reference/CVF_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_PLAN_2026-06-13.md`;
+- `docs/reviews/CVF_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_WORKER_RETURN_2026-06-13.md`;
+- `docs/reviews/CVF_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_COMPLETION_2026-06-13.md`.
 
 ## Claim Boundary
 

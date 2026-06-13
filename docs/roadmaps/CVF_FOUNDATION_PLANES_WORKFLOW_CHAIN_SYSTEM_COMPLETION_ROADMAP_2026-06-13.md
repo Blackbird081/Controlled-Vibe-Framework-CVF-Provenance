@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: FPC_T3_DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT
+Status: FPC_T3_CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -272,8 +272,8 @@ start by adding runtime behavior or downstream app features.
 | FPC-T0 | Parked priority capture and later roadmap expansion | operator direction | CLOSED_BY_ROADMAP_UPDATE |
 | FPC-T1 | Foundation planes to workflow-chain system audit plus epistemic process coverage matrix | Claude rebuttal, fresh GC-018, source-verified work order | CLOSED_PASS_BOUNDED |
 | FPC-T2 | System-loop interlock expansion decision, including evidence-to-claim-update interlock candidates | FPC-T1 closure plus fresh GC-018/work order | CLOSED_PASS_BOUNDED |
-| FPC-T3 | Foundation checker/template/standard coverage plan for missing machine checks and early-gate placement | FPC-T2 closure plus fresh GC-018/work order | DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT |
-| FPC-T4 | Deferred capability reopen decision for Model Gateway, Sandbox Runtime, or other strategic gaps | FPC-T3 closure plus operator decision | HOLD_PENDING_FPC_T3 |
+| FPC-T3 | Foundation checker/template/standard coverage plan for missing machine checks and early-gate placement | FPC-T2 closure plus fresh GC-018/work order | CLOSED_PASS_BOUNDED |
+| FPC-T4 | Deferred capability reopen decision for Model Gateway, Sandbox Runtime, or other strategic gaps | FPC-T3 closure plus operator decision | HOLD_PENDING_OPERATOR_DECISION |
 
 ## FPC-T1 - Foundation Planes To Workflow-Chain System Audit
 
@@ -482,6 +482,21 @@ visibility incident and operator traceability concern. C07 is design-only in
 FPC-T3; it does not authorize Windows audit installation, Sysmon, file watcher
 services, destructive brokers, agent computer-control permission changes, or
 runtime/source/test mutation.
+
+Closure update: FPC-T3 is closed bounded by
+`docs/reviews/CVF_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_COMPLETION_2026-06-13.md`.
+Accepted result:
+
+- FPC-T3-C01 is the highest-priority prerequisite checker candidate;
+- FPC-T3-C04 should pair with or precede C01 as the template anchor;
+- FPC-T3-C06, C02, C03, and C05 remain valid later candidates;
+- FPC-T3-C07 is accepted as `CONTROL_DESIGN_ONLY`; repo-local checker work
+  requires a later Codex work order and OS-level attribution requires a separate
+  operator decision.
+
+Recommended next implementation, if authorized later: FPC-T3-C04 plus
+FPC-T3-C01 as a fresh GC-018/source-verified implementation work order.
+FPC-T4 remains held behind explicit operator decision.
 
 ## Acceptance Criteria
 
