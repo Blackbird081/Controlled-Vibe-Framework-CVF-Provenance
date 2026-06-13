@@ -2,15 +2,15 @@
 
 Memory class: POINTER_RECORD
 
-Status: DISPATCH_READY_FOR_CLAUDE
+Status: CLOSED_PASS_BOUNDED
 Worker: Claude
 Orchestrator / reviewer: Codex
 Worker commit policy: WORKER_MUST_NOT_COMMIT
 Commit mode: WORKER_MUST_NOT_COMMIT
 Base head: 7fd250ad
 dispatchBaseHead: `7fd250ad`
-executionBaseHead: `WORKER_MUST_CAPTURE_BEFORE_EDITS`
-closureBaseHead: `WORKER_MUST_NOT_SET`
+executionBaseHead: `2360fcf8`
+closureBaseHead: `2360fcf8`
 
 completionReviewPath:
 `docs/reviews/CVF_FPC_T4_STRATEGIC_DEFERRED_CAPABILITY_REOPEN_DECISION_COMPLETION_2026-06-13.md`
@@ -220,6 +220,7 @@ reviewerOwnedClosurePaths:
 | `rg -n "Model Gateway|Sandbox Runtime|trust-sandbox|ProviderRegistry|PROVIDER_CAPABILITY_REGISTRY|executeInSandbox|FPC-T4|FPC-T2-C05" docs EXTENSIONS` | `docs`, `EXTENSIONS` | Same-token collisions found in roadmap, reference plans, runtime source, and tests | COLLISION_RECORDED_AS_SOURCE_INPUT |
 | `rg -n "Policy_Local|Document Translator|DT-CVF|public-sync|DASHSCOPE_API_KEY|DEEPSEEK_API_KEY|ALIBABA_API_KEY|Sysmon|endpoint|T12|rawMemoryReleased" docs/reference docs/roadmaps docs/work_orders docs/reviews` | `docs/reference`, `docs/roadmaps`, `docs/work_orders`, `docs/reviews` | Same-token collisions expected because forbidden boundaries and governance standards mention these tokens | COLLISION_RECORDED_AS_FORBIDDEN_SCOPE_CONTEXT |
 | `rg -n "COMPLETE_PENDING_REVIEW|BLOCKED_SCOPE_EXPANSION|DOC_ONLY_NEW" docs/reference docs/work_orders docs/reviews` | governed docs | Same-token collisions found in prior work orders and reviews; this work order uses the terms as return statuses and doc-only classifications, not absent-source claims | COLLISION_RECORDED_AS_STATUS_VOCABULARY |
+| `rg -n "\bPASS\b" docs/reference docs/work_orders docs/reviews` | governed docs | Same-token collisions found throughout governance artifacts; this work order uses `PASS` only as gate/closure status vocabulary | COLLISION_RECORDED_AS_GATE_STATUS_VOCABULARY |
 | `rg -n "KEEP_DEFERRED|REOPEN_AS_PLANNING_TRANCHE|REOPEN_AS_IMPLEMENTATION_CANDIDATE_LATER" docs/baselines docs/reference docs/work_orders docs/reviews` | governed docs | Same-token collisions found in this dispatch packet only at authoring time; values are new doc-only disposition vocabulary, not runtime/source claims | COLLISION_RECORDED_AS_DOC_ONLY_DISPOSITION_VOCABULARY |
 | `rg -n "\bHEAD\b" docs/reference docs/work_orders docs/reviews` | governed docs | Same-token collisions found in existing work orders and reviews; this work order uses `HEAD` only as git-anchor vocabulary | COLLISION_RECORDED_AS_GIT_ANCHOR_VOCABULARY |
 | `git status --short` | repo root | Two new dispatch files only at authoring time | MANIFEST_BOUNDARY_RECORDED |
@@ -382,18 +383,18 @@ Claude may return `COMPLETE_PENDING_REVIEW` only when every row is PASS:
 
 | Gate | Required evidence | Status |
 | --- | --- | --- |
-| Exact deliverables only | `git status --short` shows only the two allowed deliverables | PENDING |
-| No implementation | `git diff --name-status` shows no runtime/source/test/session/public-sync mutation | PENDING |
-| Source verification complete | Source Verification Block has no `BLOCKED_SOURCE_NOT_FOUND` for accepted claims | PENDING |
-| Decision/implementation separation | Candidate matrix does not authorize implementation | PENDING |
-| Anti-overconstraint present | Latency discipline section exists and ranks high-latency controls lower or phase-places them | PENDING |
-| Co-work supervision boundary present | CVF supervises through traces; CVF does not build cowork products | PENDING |
-| Agent Operation Trace Block complete | Expected and actual manifests match | PENDING |
-| Public Export Disposition present | `DEFERRED_PRIVATE_ONLY` | PENDING |
-| Worker did not commit | HEAD unchanged from worker start | PENDING |
-| `git diff --check` | PASS | PENDING |
-| `python governance/compat/run_worker_return_fast_gate.py` | PASS | PENDING |
-| `python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast` | PASS | PENDING |
+| Exact deliverables only | `git status --short` showed only the two allowed worker deliverables at return | PASS |
+| No implementation | `git diff --name-status` showed no runtime/source/test/session/public-sync mutation at return | PASS |
+| Source verification complete | Source Verification Block has no `BLOCKED_SOURCE_NOT_FOUND` for accepted claims | PASS |
+| Decision/implementation separation | Candidate matrix does not authorize implementation | PASS |
+| Anti-overconstraint present | Latency discipline section exists and ranks high-latency controls lower or phase-places them | PASS |
+| Co-work supervision boundary present | CVF supervises through traces; CVF does not build cowork products | PASS |
+| Agent Operation Trace Block complete | Expected and actual manifests match | PASS |
+| Public Export Disposition present | `DEFERRED_PRIVATE_ONLY` | PASS |
+| Worker did not commit | HEAD unchanged from worker start | PASS |
+| `git diff --check` | PASS | PASS |
+| `python governance/compat/run_worker_return_fast_gate.py` | PASS rerun by Codex reviewer | PASS |
+| `python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast` | PASS rerun by Codex reviewer | PASS |
 
 ## Worker Autonomy / No-Question Rule
 
@@ -473,6 +474,25 @@ Return `BLOCKED_OVERCONSTRAINT_RISK` if the only viable recommendation would
 impose broad high-latency controls on ordinary CVF operation.
 
 ## 16. Public Export Disposition
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 baseline status | `docs/baselines/CVF_GC018_FPC_T4_STRATEGIC_DEFERRED_CAPABILITY_REOPEN_DECISION_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_FPC_T4_STRATEGIC_DEFERRED_CAPABILITY_REOPEN_DECISION_COMPLETION_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED`; `docType: completion_review` | PASS |
+| Decision matrix | `docs/reference/CVF_FPC_T4_STRATEGIC_DEFERRED_CAPABILITY_REOPEN_DECISION_MATRIX_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_FPC_T4_STRATEGIC_DEFERRED_CAPABILITY_REOPEN_DECISION_WORKER_RETURN_2026-06-13.md` | `Status: WORKER_RETURN_SUBMITTED_UNCOMMITTED`; reviewed by Codex | PASS |
+| Roadmap state | `docs/roadmaps/CVF_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_COMPLETION_ROADMAP_2026-06-13.md` | Parent roadmap defines FPC-T4 as the deferred capability reopen decision lane; delegated FPC-T4 packet closure is recorded in the GC-018, work order, matrix, and completion review | PASS |
+| Registry JSON | N/A | N/A with reason: no registry JSON mutation authorized or performed | PASS |
+| Registry Markdown | N/A | N/A with reason: no registry Markdown mutation authorized or performed | PASS |
+| External evidence digest | N/A | N/A with reason: no external evidence digest authorized or produced | N/A with reason |
+| System loop interlock | N/A | N/A with reason: no system-loop registry entry authorized or performed | PASS |
+| Session continuity | reviewer-owned post-material sync | Material closure records session-sync as Codex follow-up after commit | PASS |
+| Public export | this file and completion review | `DEFERRED_PRIVATE_ONLY` | PASS |
+| Runtime/provider/live proof | N/A | N/A with reason: decision-only packet; no runtime/provider behavior changed | N/A with reason |
+| Public-sync | N/A | N/A with reason: private provenance decision packet only | N/A with reason |
 
 DEFERRED_PRIVATE_ONLY
 

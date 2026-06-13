@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: DISPATCH_READY_FOR_CLAUDE
+Status: CLOSED_PASS_BOUNDED
 Owner: Codex Orchestrator
 Worker target: Claude
 Base head: 7fd250ad
