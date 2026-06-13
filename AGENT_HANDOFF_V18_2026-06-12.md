@@ -30,8 +30,8 @@ Startup acknowledged: current mode=`aot_t2_expected_manifest_trace_coverage_plan
 
 `aot_t2_expected_manifest_trace_coverage_plan_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `688bd97e`
-(AOT-T2 material closure commit; this dedicated session-sync follows).
+Current HEAD recorded for this handoff: `7891408c`
+(AOT-T2 closure/session-sync commit; this dedicated handoff sync follows).
 
 ## Active Boundary
 
