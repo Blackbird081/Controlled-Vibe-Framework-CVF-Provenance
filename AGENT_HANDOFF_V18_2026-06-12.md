@@ -30,9 +30,9 @@ Startup acknowledged: current mode=`model_gateway_c02_rewrite_work_order_dispatc
 
 `model_gateway_c02_rewrite_work_order_dispatched`
 
-Current HEAD recorded for this handoff: `2d77e67a`
-(Model Gateway C-02 rewrite work order dispatch commit; this dedicated
-handoff/state sync follows).
+Current HEAD recorded for this handoff: `f7b0c2d5`
+(Model Gateway C-02 rewrite work order dispatch trace-alignment commit; this
+dedicated handoff sync follows).
 
 ## Active Boundary
 
@@ -70,7 +70,9 @@ Rollback boundary: if session-sync gates fail, revert only this continuity sync
 batch and regenerate `CVF_SESSION/ACTIVE_SESSION_STATE.json` from the previous
 state source files. Do not revert trace-alignment commit `da725c1a`, material
 guard commit `3423d82e`, Model Gateway recheck closure commit `5be35102`,
-material correction commit `919afd4e`, or material dispatch commit `a4cfb246`.
+material correction commit `919afd4e`, material dispatch commit `a4cfb246`,
+C-02 dispatch commit `2d77e67a`, session-sync commit `045d38b3`, or C-02
+trace-alignment commit `f7b0c2d5`.
 
 ## Latest Continuity Note
 
