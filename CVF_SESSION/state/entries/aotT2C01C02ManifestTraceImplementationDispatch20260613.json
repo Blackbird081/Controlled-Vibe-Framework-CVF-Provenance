@@ -1,0 +1,30 @@
+{
+  "stateOrder": 380,
+  "stateKey": "aotT2C01C02ManifestTraceImplementationDispatch20260613",
+  "value": {
+    "status": "DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT",
+    "materialCommit": "5ba9e071",
+    "dispatchBaseHead": "6ca6a748",
+    "gc018": "docs/baselines/CVF_GC018_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_2026-06-13.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_FOR_CLAUDE_2026-06-13.md",
+    "plannedWorkerReturn": "docs/reviews/CVF_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_WORKER_RETURN_2026-06-13.md",
+    "plannedCompletionReview": "docs/reviews/CVF_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_COMPLETION_2026-06-13.md",
+    "allowedWorkerPaths": [
+      "docs/reference/CVF_AGENT_OPERATION_TRACE_AND_WORKSPACE_INTEGRITY_STANDARD_2026-06-13.md",
+      "governance/compat/check_agent_operation_trace.py",
+      "governance/compat/test_check_agent_operation_trace.py",
+      "docs/reviews/CVF_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_WORKER_RETURN_2026-06-13.md"
+    ],
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "worker": "Claude",
+    "reviewer": "Codex",
+    "verification": [
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base 6ca6a748 --head HEAD PASS before material commit",
+      "python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast PASS 15/15 before material commit",
+      "git diff --check PASS",
+      "pre-commit hook PASS 40/40 during material dispatch commit"
+    ],
+    "nextAllowedMove": "Claude worker return only. Codex owns review, allowed repairs, final commit, completion review, committed-range pre-closure, and session sync.",
+    "boundary": "AOT-T2-C01+C02 dispatch only. Claude may implement only expected-manifest trace fields, manifest-delta enforcement, agent-type / invocation-ID trace fields, and narrow worker-authored docs/reference trace eligibility in the authorized checker/test/standard surfaces. No commit, public-sync, runtime/provider/live-proof work, OS audit, endpoint monitoring, external app mutation, session-state mutation by Claude, raw memory release, high-risk promotion, or autonomous mutation is authorized."
+  }
+}

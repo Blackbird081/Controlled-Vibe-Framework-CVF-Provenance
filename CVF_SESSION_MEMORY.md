@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-13
 
-Current mode marker: `aot_t2_expected_manifest_trace_coverage_plan_closed_pass_bounded`
+Current mode marker: `aot_t2_c01_c02_manifest_trace_implementation_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `aot_t2_expected_manifest_trace_coverage_plan_closed_pass_bounded`.
+Current mode: `aot_t2_c01_c02_manifest_trace_implementation_dispatched`.
 
 Active handoff:
 
@@ -58,34 +58,34 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-AOT-T2 Expected Manifest Trace Coverage Plan is `CLOSED_PASS_BOUNDED` at
-material closure commit `688bd97e` from closure base `9581a2e3`.
+AOT-T2-C01+C02 Manifest Trace Implementation is
+`DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT` at material dispatch commit
+`5ba9e071` from dispatch base `6ca6a748`.
 
-Closure artifacts:
+Dispatch artifacts:
 
 - GC-018:
-  `docs/baselines/CVF_GC018_AOT_T2_EXPECTED_MANIFEST_TRACE_COVERAGE_PLAN_2026-06-13.md`;
+  `docs/baselines/CVF_GC018_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_2026-06-13.md`;
 - Work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_AOT_T2_EXPECTED_MANIFEST_TRACE_COVERAGE_PLAN_FOR_CLAUDE_2026-06-13.md`;
-- Coverage plan:
-  `docs/reference/CVF_AOT_T2_EXPECTED_MANIFEST_TRACE_COVERAGE_PLAN_2026-06-13.md`;
-- Worker return:
-  `docs/reviews/CVF_AOT_T2_EXPECTED_MANIFEST_TRACE_WORKER_RETURN_2026-06-13.md`;
-- Completion review:
-  `docs/reviews/CVF_AOT_T2_EXPECTED_MANIFEST_TRACE_COVERAGE_PLAN_COMPLETION_2026-06-13.md`.
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_FOR_CLAUDE_2026-06-13.md`;
+- Planned worker return:
+  `docs/reviews/CVF_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_WORKER_RETURN_2026-06-13.md`;
+- Planned completion review:
+  `docs/reviews/CVF_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_COMPLETION_2026-06-13.md`.
 
-Codex accepted the Claude worker return after reviewer repairs: added the
-coverage-plan Agent Operation Trace Block and corrected worker-return status
-evidence rows. The accepted highest-value next tranche is AOT-T2-C01+C02:
-expected-manifest trace fields, manifest-delta enforcement, and agent-type /
-invocation-ID fields.
+Claude is authorized to implement only the AOT standard/checker/test update
+and worker-return packet named in the work order, under
+`WORKER_MUST_NOT_COMMIT`. This tranche includes the guard tightening requested
+by the operator: worker-authored `docs/reference/` deliverables with
+worker/execution triggers must be trace-eligible, while ordinary reference
+standards must not be forced to carry trace blocks.
 
-Fresh authorization is required before implementation. No checker
-implementation, test implementation, hook/autorun modification, runtime/source
-mutation, OS audit installation, Sysmon installation, endpoint monitoring, file
-watcher service, destructive broker, agent computer-control permission change,
-runtime/provider/live-proof work, public-sync, downstream app
-inspection/mutation, raw memory release, or autonomous mutation is authorized.
+Codex owns review, allowed reviewer repairs, final commit, completion review,
+committed-range pre-closure, and session sync. No hook-chain wiring change
+unless the existing checker invocation cannot cover the behavior; no
+runtime/provider/live-proof work, OS audit, endpoint monitoring, public-sync,
+external app mutation, raw memory release, or autonomous mutation is
+authorized.
 
 ---
 
@@ -960,21 +960,17 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: AOT-T2 Expected Manifest Trace Coverage Plan is
-`CLOSED_PASS_BOUNDED` at material closure commit `688bd97e`.
+Next allowed move: Claude worker return only for
+`docs/reviews/CVF_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_WORKER_RETURN_2026-06-13.md`
+under
+`docs/work_orders/CVF_AGENT_WORK_ORDER_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_FOR_CLAUDE_2026-06-13.md`.
 
-Fresh authorization only:
-
-- open a source-verified AOT-T2-C01+C02 implementation work order for
-  expected-manifest trace fields, manifest-delta enforcement, and agent-type /
-  invocation-ID trace fields; or
-- resume FPC implementation/registry work only through a separate operator
-  decision and fresh work order.
-
-No checker implementation, test implementation, hook/autorun modification,
-runtime/source/test mutation, OS audit, endpoint monitoring, public-sync,
-external Document_Translator inspection or mutation, or Policy_Local mutation
-is authorized without that later work order.
+Codex owns review, allowed repairs, final commit, completion review,
+committed-range pre-closure, and session sync. Claude must not commit and must
+not mutate `CVF_SESSION/**`, front doors, handoffs, runtime/product source
+outside allowed checker/test/standard surfaces, public-sync, external
+Document_Translator, Policy_Local, provider/live proof, OS audit, endpoint
+monitoring, or autonomous mutation surfaces.
 
 DIR-T2 Document Intelligence Router foundation pilot remains
 `CLOSED_PASS_BOUNDED` at material closure commit `e3395acc`. Closure artifacts:
