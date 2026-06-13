@@ -30,9 +30,9 @@ Startup acknowledged: current mode=`dir_t2_document_intelligence_router_foundati
 
 `dir_t2_document_intelligence_router_foundation_pilot_dispatched`
 
-Current HEAD recorded for this handoff: `30e6d174`
-(work-order-template protected-path authorization handoff sync commit; the
-DIR-T2 dispatch material commit follows).
+Current HEAD recorded for this handoff: `1591cb05`
+(DIR-T2 foundation pilot dispatch material commit; this dedicated session-sync
+follows).
 
 ## Active Boundary
 
@@ -55,8 +55,9 @@ MACHINE_CHECK_ADDED.
 Material closure commit: `30e7e888`.
 
 DIR-T2 Document Intelligence Router foundation pilot is
-`DISPATCHED_AWAITING_WORKER_RETURN` from dispatch base `30e6d174`. This is a
-CVF foundation pilot, not a Document Translator adaptation tranche.
+`DISPATCHED_AWAITING_WORKER_RETURN` at material commit `1591cb05` from
+dispatch base `30e6d174`. This is a CVF foundation pilot, not a Document
+Translator adaptation tranche.
 
 DIR-T2 dispatch artifacts:
 
