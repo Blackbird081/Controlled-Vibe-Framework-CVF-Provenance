@@ -24,14 +24,15 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`memcon_t5_cross_agent_memory_consistency_contract_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=MEMCON-T1a through MEMCON-T5 foundation is closed bounded; Policy_Local PL-S1 remains held until the operator explicitly decides the MEMCON foundation is sufficient for downstream use-case work and authorizes a fresh work order; parked checkpoint=EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`document_translator_control_adaptation_roadmap_proposed`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=DT-CVF-T0 fresh GC-018/source-verified work order only for Document Translator source custody and control-baseline audit; parked checkpoint=Policy_Local PL-S1, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`memcon_t5_cross_agent_memory_consistency_contract_closed_pass_bounded`
+`document_translator_control_adaptation_roadmap_proposed`
 
-Current HEAD recorded for this handoff: `caf263f6`
-(MEMCON-T5 material closure commit; this dedicated session-sync follows).
+Current HEAD recorded for this handoff: `db59d570`
+(Document Translator control adaptation roadmap material commit; this
+dedicated session-sync follows).
 
 ## Active Boundary
 
@@ -45,6 +46,27 @@ Public-facing work remains restricted to the sibling public-sync clone and
 requires separate authorization.
 
 ## Latest Continuity Note
+
+Document Translator CVF control adaptation roadmap is
+`PROPOSED_READY_FOR_FRESH_AUTHORIZATION`.
+
+Material commit: `db59d570`.
+
+Roadmap:
+
+`docs/roadmaps/CVF_DOCUMENT_TRANSLATOR_CONTROL_ADAPTATION_ROADMAP_2026-06-13.md`
+
+Result: Document Translator is now a separate downstream CVF-controlled
+use-case lane, similar to Policy_Local, while CVF foundation quality remains
+priority one. The only next eligible move is DT-CVF-T0 through fresh GC-018 and
+a source-verified work order for source custody, repo inventory, secret-safety,
+and control-baseline audit of
+`D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Document_Translator`.
+
+Boundary: no external repo edit, code import, dependency install, OCR/provider
+execution, Document Translator data mutation, Policy_Local mutation, EC
+activation, retrieval, corpus ingestion, public-sync, T12 unlock, readiness,
+cost, or quality claim is authorized.
 
 MEMCON-T5 Cross-agent memory consistency contract is `CLOSED_PASS_BOUNDED`.
 
@@ -351,18 +373,22 @@ generated active-state source files are accepted.
 - Closed governance packet review acceleration at material commit `bd15e0ae`
   with atomic Required Proof Manifest literal discipline and focused
   dispatch-quality checker coverage.
+- Planned Document Translator CVF control adaptation at material commit
+  `db59d570`; DT-CVF-T0 is eligible only through fresh GC-018 and a
+  source-verified work order.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: perform the mandatory MEMCON-T5 closure
-session sync without changing governance semantics, and keep the generated
-active-session aggregate aligned with its per-entry source files.
+Authorized guard-maintenance scope: perform the mandatory Document Translator
+roadmap session sync without changing governance semantics, and keep the
+generated active-session aggregate aligned with its per-entry source files.
 
 Protected paths:
 
 - `AGENT_HANDOFF_V18_2026-06-12.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/documentTranslatorControlAdaptationRoadmap20260613.json`
 - `CVF_SESSION/state/entries/memconT5CrossAgentMemoryConsistencyContractClosure20260613.json`
 - `CVF_SESSION/state/entries/memconT5CrossAgentMemoryConsistencyContractDispatch20260613.json`
 - `CVF_SESSION/state/entries/memconT4RetrievalPackBoundaryConformanceClosure20260613.json`
@@ -375,14 +401,15 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: the operator returned MEMCON-T5 worker artifacts under
-`WORKER_MUST_NOT_COMMIT` and asked Codex to review and commit. The mandatory
-closure and session-continuity rules require synchronized front doors and
-active state sources before moving to any downstream tranche.
+Operator authorization: the operator stated that CVF foundation quality remains
+priority one and selected Document Translator as a separate downstream
+CVF-controlled use-case repo. The mandatory session-continuity rules require
+synchronized front doors and active state sources before moving to DT-CVF-T0.
 
-Rollback boundary: revert only this MEMCON-T5 closure session sync if the
-continuity markers are incorrect. Do not revert MEMCON-T5 material closure
-commit `caf263f6`, MEMCON-T5 material dispatch commit `f88d56b8`,
+Rollback boundary: revert only this Document Translator roadmap session sync if
+the continuity markers are incorrect. Do not revert Document Translator
+roadmap material commit `db59d570`, MEMCON-T5 material closure commit
+`caf263f6`, MEMCON-T5 material dispatch commit `f88d56b8`,
 MEMCON-T4 material closure commit `f771bff8`,
 material MEMCON-T4 dispatch commit `892e03ad`,
 MEMCON-T3 material closure commit `2800e83c`,
@@ -394,13 +421,15 @@ acceleration material commit `bd15e0ae`, MEMCON-T1a material closure commit
 
 ## Next Allowed Move
 
-MEMCON-T1a through MEMCON-T5 foundation is closed bounded. Policy_Local PL-S1
-remains held until the operator explicitly decides the MEMCON foundation is
-sufficient for downstream use-case work and authorizes a fresh work order.
+DT-CVF-T0 may be opened only through fresh GC-018 and a source-verified work
+order for Document Translator source custody, repo inventory, secret-safety,
+and control-baseline audit. Policy_Local PL-S1 remains separately held until
+the operator explicitly authorizes it.
 
-Do not mutate external Policy_Local, activate EC, wire retrieval routes, invoke
-OCR or providers, import external code, install dependencies, ingest corpus
-records, use public-sync, unlock T12, or claim readiness until a later
+Do not edit the external Document Translator repo, mutate external
+Policy_Local, activate EC, wire retrieval routes, invoke OCR or providers,
+import external code, install dependencies, ingest corpus records, use
+public-sync, unlock T12, or claim readiness/cost/quality until a later
 authorized work order permits it.
 
 LHW24 remains the latest closed numbered LHW wave in the state registry.

@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-13
 
-Current mode marker: `memcon_t5_cross_agent_memory_consistency_contract_closed_pass_bounded`
+Current mode marker: `document_translator_control_adaptation_roadmap_proposed`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `memcon_t5_cross_agent_memory_consistency_contract_closed_pass_bounded`.
+Current mode: `document_translator_control_adaptation_roadmap_proposed`.
 
 Active handoff:
 
@@ -57,6 +57,27 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+Document Translator CVF control adaptation roadmap is
+`PROPOSED_READY_FOR_FRESH_AUTHORIZATION`.
+
+Material commit: `db59d570`.
+
+Roadmap:
+
+`docs/roadmaps/CVF_DOCUMENT_TRANSLATOR_CONTROL_ADAPTATION_ROADMAP_2026-06-13.md`
+
+Result: Document Translator is now a separate downstream CVF-controlled
+use-case lane, similar to Policy_Local, while CVF foundation quality remains
+priority one. The only next eligible move is DT-CVF-T0 through fresh GC-018 and
+a source-verified work order for source custody, repo inventory, secret-safety,
+and control-baseline audit of
+`D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Document_Translator`.
+
+Boundary: no external repo edit, code import, dependency install, OCR/provider
+execution, Document Translator data mutation, Policy_Local mutation, EC
+activation, retrieval, corpus ingestion, public-sync, T12 unlock, readiness,
+cost, or quality claim is authorized.
 
 MEMCON-T5 Cross-agent memory consistency contract is `CLOSED_PASS_BOUNDED`.
 
@@ -924,16 +945,15 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: MEMCON-T1a through MEMCON-T5 foundation is closed bounded.
-Policy_Local PL-S1 remains held until the operator explicitly decides the
-MEMCON foundation is sufficient for downstream use-case work and authorizes a
-fresh work order.
-Policy_Local PL-S1 remains held until the operator explicitly decides the
-MEMCON foundation is sufficient for downstream use-case work.
+Next allowed move: DT-CVF-T0 may be opened only through fresh GC-018 and a
+source-verified work order for Document Translator source custody, repo
+inventory, secret-safety, and control-baseline audit. Policy_Local PL-S1
+remains separately held until the operator explicitly authorizes it.
 
-Do not mutate external Policy_Local, activate EC, wire retrieval routes, run
-OCR or provider/API proof, ingest corpus records, use public-sync, unlock T12,
-or make readiness claims until a later authorized work order permits it.
+Do not edit the external Document Translator repo, mutate external
+Policy_Local, activate EC, wire retrieval routes, run OCR or provider/API
+proof, ingest corpus records, use public-sync, unlock T12, or make readiness,
+cost, or quality claims until a later authorized work order permits it.
 T12 remains forbidden until EC-02 resolves on or after 2026-07-01 and
 eligibility is re-evaluated.
 
