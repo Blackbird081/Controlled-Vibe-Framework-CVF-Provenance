@@ -30,9 +30,9 @@ Startup acknowledged: current mode=`agent_operation_trace_foundation_closed_pass
 
 `agent_operation_trace_foundation_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `41977f58`
-(Agent Operation Trace foundation material closure commit; this dedicated
-session-sync follows).
+Current HEAD recorded for this handoff: `f4aebdb8`
+(Agent Operation Trace foundation session-sync commit; this protected-path
+authorization repair follows).
 
 ## Active Boundary
 
@@ -677,6 +677,10 @@ Protected paths:
 - `CVF_SESSION_MEMORY.md`
 - `AGENTS.md`
 - `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
+- `governance/compat/check_agent_operation_trace.py`
+- `governance/compat/test_check_agent_operation_trace.py`
+- `governance/compat/run_agent_autorun_workflow_gate.py`
+- `governance/compat/run_local_governance_hook_chain.py`
 - `governance/compat/check_active_session_state.py`
 - `governance/compat/test_check_active_session_state.py`
 - `governance/compat/check_agent_packet_authority_and_encoding.py`
