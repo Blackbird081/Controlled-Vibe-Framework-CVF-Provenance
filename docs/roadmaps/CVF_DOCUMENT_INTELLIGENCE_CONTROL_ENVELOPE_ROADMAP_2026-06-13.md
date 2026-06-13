@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DICE_T0_PASS_BOUNDED
+Status: DICE_T1_DISPATCHED
 
 docType: roadmap
 
@@ -32,12 +32,13 @@ translation kept as a separate use case.
 
 ## Authorization
 
-Authorized move: DICE-T0 dispatch through fresh GC-018 and a source-verified
+Authorized move: DICE-T1 dispatch through fresh GC-018 and a source-verified
 Claude work order.
 
-Not authorized: DICE-T1 source implementation, DICE-T2 operator packet sample,
-DICE-T3 provider/OCR authorization design, DT-CVF-T0, Policy_Local PL-S1,
-public-sync, live proof, external repo access, or runtime work.
+Not authorized: DICE-T2 operator packet sample, DICE-T3 provider/OCR
+authorization design, DT-CVF-T0, Policy_Local PL-S1, public-sync, live proof,
+external repo access, OCR/provider execution, retrieval route wiring, corpus
+ingestion, or readiness/cost/quality claims.
 
 ## Decision
 
@@ -84,8 +85,8 @@ DICE must not:
 
 ## Non-Goals
 
-- Implement DICE runtime source.
-- Add tests, checkers, generated aggregates, or route/API wiring.
+- Implement DICE-T2/T3 runtime/provider/OCR authorization design.
+- Add route/API wiring, generated aggregates, or public-sync surfaces.
 - Inspect or modify the external Document Translator clone.
 - Inspect or modify Policy_Local.
 - Execute OCR, providers, retrieval, or live governance proof.
@@ -106,7 +107,7 @@ DICE must not:
 | Tranche | Goal | Prerequisite | Status |
 | --- | --- | --- | --- |
 | DICE-T0 | Doc-only control-envelope contract matrix and owner-source map | this roadmap plus fresh GC-018/work order | CLOSED_PASS_BOUNDED |
-| DICE-T1 | Deterministic local envelope contract/test harness, if T0 proves source owner | DICE-T0 closure plus fresh GC-018 | HOLD_PENDING_T0_PASS |
+| DICE-T1 | Deterministic local envelope contract/test harness, if T0 proves source owner | DICE-T0 closure plus fresh GC-018 | DISPATCHED_TO_CLAUDE |
 | DICE-T2 | Operator-visible document control packet sample, if T1 proves stable contract | DICE-T1 closure plus fresh GC-018 | HOLD_PENDING_T1_PASS |
 | DICE-T3 | Runtime/provider/OCR authorization design, if still needed | DICE-T2 closure plus explicit live-proof/key/quota authorization | HOLD_PENDING_RUNTIME_AUTH |
 
@@ -136,14 +137,32 @@ Allowed artifacts for DICE-T0:
 | Does DICE become Document Translator implementation work? | It must keep Document Translator as a downstream adapter lane only. |
 | Does DICE claim runtime readiness? | It must not claim runtime, production, public, cost, or quality readiness. |
 
+## DICE-T1 Detail
+
+DICE-T1 is a bounded local deterministic implementation tranche. Claude must
+create a source module and focused tests that compose existing EXA-T2 scan,
+scan outcome report, and DIR route decision surfaces into a document-control
+envelope without changing OCR/provider/retrieval behavior or downstream
+adapter semantics.
+
+Allowed artifacts for DICE-T1:
+
+- `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/document_intelligence_control_envelope.py`;
+- `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_document_intelligence_control_envelope.py`;
+- `docs/reviews/CVF_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_WORKER_RETURN_2026-06-13.md`.
+
+DICE-T1 must carry forward DICE-MC-01 through DICE-MC-10 and must specifically
+handle DICE-MC-08 without rejecting the current DIR passthrough invariant for
+`LOCAL_DETERMINISTIC_ALLOWED`.
+
 ## Acceptance Criteria
 
-DICE-T0 dispatch is acceptable only if:
+DICE-T1 dispatch is acceptable only if:
 
 - a fresh GC-018 baseline exists;
 - a source-verified Claude work order exists;
 - dispatch-quality and pre-dispatch autorun gates pass on a real changed range;
-- the worker scope remains doc-only;
+- the worker scope remains local deterministic source and tests only;
 - external Document Translator, Policy_Local, OCR/provider, retrieval,
   public-sync, and readiness/cost/quality claims remain blocked.
 
@@ -151,8 +170,8 @@ DICE-T0 dispatch is acceptable only if:
 
 Dispatch verification must include:
 
-- `python governance/compat/check_work_order_dispatch_quality.py --base bea8e1f1 --head HEAD --enforce`;
-- `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base bea8e1f1 --head HEAD`;
+- `python governance/compat/check_work_order_dispatch_quality.py --base 579962d7 --head HEAD --enforce`;
+- `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base 579962d7 --head HEAD`;
 - local pre-commit governance chain before Codex commits.
 
 ## Evidence
