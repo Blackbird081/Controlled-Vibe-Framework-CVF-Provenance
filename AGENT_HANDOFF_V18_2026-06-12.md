@@ -11,7 +11,7 @@ Supersedes:
 
 ## Purpose
 
-This compact handoff records DIR-T0 dispatch, the next allowed move, and
+This compact handoff records DIR-T0 closure, the next allowed move, and
 parked operator checkpoints. Detailed history remains in governed completion
 artifacts and archived handoffs.
 
@@ -24,14 +24,14 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`dir_t0_document_intelligence_router_contract_matrix_dispatched`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=Claude executes allowed-scope DIR-T0 contract matrix and worker-return artifacts under WORKER_MUST_NOT_COMMIT; parked checkpoint=DIR-T1, DIR-T2, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`dir_t0_document_intelligence_router_contract_matrix_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=DIR-T1 only through fresh GC-018 and source-verified work order for deterministic local source implementation and focused tests; parked checkpoint=DIR-T2, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`dir_t0_document_intelligence_router_contract_matrix_dispatched`
+`dir_t0_document_intelligence_router_contract_matrix_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `e19d725d`
-(DIR-T0 Document Intelligence Router contract matrix dispatch material commit;
+Current HEAD recorded for this handoff: `082b02ff`
+(DIR-T0 Document Intelligence Router contract matrix material closure commit;
 this dedicated session-sync follows).
 
 ## Active Boundary
@@ -48,24 +48,30 @@ requires separate authorization.
 ## Latest Continuity Note
 
 DIR-T0 Document Intelligence Router contract matrix is
-`DISPATCHED_AWAITING_WORKER_RETURN`.
+`CLOSED_PASS_BOUNDED`.
 
-Material commit: `e19d725d`.
+Material closure commit: `082b02ff`.
 
-Dispatch artifacts:
+Closure artifacts:
 
 - GC-018:
   `docs/baselines/CVF_GC018_DIR_T0_DOCUMENT_INTELLIGENCE_ROUTER_CONTRACT_MATRIX_2026-06-13.md`;
 - work order:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_DIR_T0_DOCUMENT_INTELLIGENCE_ROUTER_CONTRACT_MATRIX_FOR_CLAUDE_2026-06-13.md`;
+- contract matrix:
+  `docs/reference/CVF_DOCUMENT_INTELLIGENCE_ROUTER_CONTRACT_MATRIX_2026-06-13.md`;
+- worker return:
+  `docs/reviews/CVF_DIR_T0_DOCUMENT_INTELLIGENCE_ROUTER_CONTRACT_MATRIX_WORKER_RETURN_2026-06-13.md`;
+- completion:
+  `docs/reviews/CVF_DIR_T0_DOCUMENT_INTELLIGENCE_ROUTER_CONTRACT_MATRIX_COMPLETION_2026-06-13.md`;
 - roadmap:
   `docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_ROADMAP_2026-06-13.md`.
 
-Result: DIR-T0 is dispatched to Claude under `WORKER_MUST_NOT_COMMIT` for a
-doc-only contract matrix and worker-return packet. The work order preserves
-EXA-T2 scan-route ownership, requires three contract tables and an adapter
-matrix, blocks use-case names from foundation capability enums, and forbids
-external Document Translator or Policy_Local tree operations.
+Result: DIR-T0 creates a doc-only Document Intelligence Router foundation
+contract matrix for input signals, route decisions, routing outcome groups,
+and use-case adapter mapping. It preserves EXA-T2 scan-route ownership, blocks
+use-case names from foundation capability enums, and keeps Document Translator
+and Policy_Local as downstream adapter lanes.
 
 Boundary: no runtime implementation, external repo edit, code import,
 dependency install, OCR/provider/API execution, retrieval behavior change,
@@ -419,10 +425,13 @@ generated active-state source files are accepted.
 - Dispatched DIR-T0 Document Intelligence Router contract matrix at material
   commit `e19d725d` with fresh GC-018 and a source-verified Claude work order
   under `WORKER_MUST_NOT_COMMIT`.
+- Closed DIR-T0 Document Intelligence Router contract matrix at material
+  commit `082b02ff` with contract matrix, worker return, Codex completion
+  review, and roadmap/work-order status updates.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: perform the mandatory DIR-T0 dispatch
+Authorized guard-maintenance scope: perform the mandatory DIR-T0 closure
 session sync without changing governance semantics, and keep the generated
 active-session aggregate aligned with its per-entry source files.
 
@@ -431,6 +440,7 @@ Protected paths:
 - `AGENT_HANDOFF_V18_2026-06-12.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/dirT0DocumentIntelligenceRouterContractMatrixClosure20260613.json`
 - `CVF_SESSION/state/entries/dirT0DocumentIntelligenceRouterContractMatrixDispatch20260613.json`
 - `CVF_SESSION/state/entries/documentIntelligenceRouterFoundationRoadmapDraft20260613.json`
 - `CVF_SESSION/state/entries/documentIntelligenceRouterFoundationRoadmapFinal20260613.json`
@@ -452,14 +462,16 @@ Protected paths:
 Operator authorization: the operator stated that CVF foundation quality remains
 priority one and selected Document Translator as a separate downstream
 CVF-controlled use-case repo, requested a detailed Document Intelligence
-Router roadmap for Claude rebuttal before finalization, then asked Codex to
-create the Claude work order. Codex dispatched DIR-T0 after final roadmap
-acceptance. The mandatory session-continuity rules require synchronized front
-doors and active state sources before worker execution.
+Router roadmap for Claude rebuttal before finalization, asked Codex to create
+the Claude work order, then reported the DIR-T0 worker return for Codex review
+and commit. Codex closed DIR-T0 after reviewing the returned artifacts. The
+mandatory session-continuity rules require synchronized front doors and active
+state sources after closure.
 
-Rollback boundary: revert only this DIR-T0 dispatch session sync if the
-continuity markers are incorrect. Do not revert DIR-T0 dispatch material
-commit `e19d725d`, DIR final roadmap material commit `075679f3`, DIR roadmap
+Rollback boundary: revert only this DIR-T0 closure session sync if the
+continuity markers are incorrect. Do not revert DIR-T0 material closure commit
+`082b02ff`, DIR-T0 dispatch material commit `e19d725d`, DIR final roadmap
+material commit `075679f3`, DIR roadmap
 draft material commit `05cb953e`, Claude rebuttal commit `fc79fcdf`, Document
 Translator roadmap material commit `db59d570`,
 MEMCON-T5 material closure commit
@@ -475,12 +487,12 @@ acceleration material commit `bd15e0ae`, MEMCON-T1a material closure commit
 
 ## Next Allowed Move
 
-Claude executes allowed-scope DIR-T0 contract matrix and worker-return
-artifacts under `WORKER_MUST_NOT_COMMIT`, then returns uncommitted artifacts
-for Codex review and commit. DIR-T1 and DIR-T2 remain held until DIR-T0 closes
-and fresh authorization is issued. DT-CVF-T0 may be opened only through later
-fresh GC-018 and a source-verified work order for Document Translator source
-custody, repo inventory, secret-safety, and control-baseline audit.
+DIR-T1 may be opened only through fresh GC-018 and a source-verified work
+order for deterministic local source implementation and focused tests. DIR-T2
+remains held until later explicit authorization. DT-CVF-T0 may be opened only
+through later fresh GC-018 and a source-verified work order for Document
+Translator source custody, repo inventory, secret-safety, and control-baseline
+audit.
 Policy_Local PL-S1 remains separately held until the operator explicitly
 authorizes it.
 

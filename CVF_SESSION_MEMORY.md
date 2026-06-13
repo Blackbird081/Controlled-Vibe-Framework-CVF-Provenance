@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-13
 
-Current mode marker: `dir_t0_document_intelligence_router_contract_matrix_dispatched`
+Current mode marker: `dir_t0_document_intelligence_router_contract_matrix_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `dir_t0_document_intelligence_router_contract_matrix_dispatched`.
+Current mode: `dir_t0_document_intelligence_router_contract_matrix_closed_pass_bounded`.
 
 Active handoff:
 
@@ -59,24 +59,30 @@ Pain-point closure direction:
 ## Latest Continuity Note
 
 DIR-T0 Document Intelligence Router contract matrix is
-`DISPATCHED_AWAITING_WORKER_RETURN`.
+`CLOSED_PASS_BOUNDED`.
 
-Material commit: `e19d725d`.
+Material closure commit: `082b02ff`.
 
-Dispatch artifacts:
+Closure artifacts:
 
 - GC-018:
   `docs/baselines/CVF_GC018_DIR_T0_DOCUMENT_INTELLIGENCE_ROUTER_CONTRACT_MATRIX_2026-06-13.md`;
 - work order:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_DIR_T0_DOCUMENT_INTELLIGENCE_ROUTER_CONTRACT_MATRIX_FOR_CLAUDE_2026-06-13.md`;
+- contract matrix:
+  `docs/reference/CVF_DOCUMENT_INTELLIGENCE_ROUTER_CONTRACT_MATRIX_2026-06-13.md`;
+- worker return:
+  `docs/reviews/CVF_DIR_T0_DOCUMENT_INTELLIGENCE_ROUTER_CONTRACT_MATRIX_WORKER_RETURN_2026-06-13.md`;
+- completion:
+  `docs/reviews/CVF_DIR_T0_DOCUMENT_INTELLIGENCE_ROUTER_CONTRACT_MATRIX_COMPLETION_2026-06-13.md`;
 - roadmap:
   `docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_ROADMAP_2026-06-13.md`.
 
-Result: DIR-T0 is dispatched to Claude under `WORKER_MUST_NOT_COMMIT` for a
-doc-only contract matrix and worker-return packet. The work order preserves
-EXA-T2 scan-route ownership, requires three contract tables and an adapter
-matrix, blocks use-case names from foundation capability enums, and forbids
-external Document Translator or Policy_Local tree operations.
+Result: DIR-T0 creates a doc-only Document Intelligence Router foundation
+contract matrix for input signals, route decisions, routing outcome groups,
+and use-case adapter mapping. It preserves EXA-T2 scan-route ownership, blocks
+use-case names from foundation capability enums, and keeps Document Translator
+and Policy_Local as downstream adapter lanes.
 
 Boundary: no runtime implementation, external repo edit, code import,
 dependency install, OCR/provider/API execution, retrieval behavior change,
@@ -969,11 +975,10 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: Claude executes allowed-scope DIR-T0 contract matrix and
-worker-return artifacts under `WORKER_MUST_NOT_COMMIT`, then returns
-uncommitted artifacts for Codex review and commit. DIR-T1, DIR-T2, DT-CVF-T0,
-and Policy_Local PL-S1 remain separately held until the operator explicitly
-authorizes them.
+Next allowed move: DIR-T1 only through fresh GC-018 and a source-verified work
+order for deterministic local source implementation and focused tests. DIR-T2,
+DT-CVF-T0, and Policy_Local PL-S1 remain separately held until the operator
+explicitly authorizes them.
 
 Do not edit the external Document Translator repo, mutate external
 Policy_Local, activate EC, wire retrieval routes, run OCR or provider/API
