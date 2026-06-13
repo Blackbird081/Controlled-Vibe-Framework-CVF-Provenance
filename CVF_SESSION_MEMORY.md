@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-13
 
-Current mode marker: `dice_t1_document_intelligence_control_envelope_runtime_dispatched`
+Current mode marker: `dice_t1_document_intelligence_control_envelope_runtime_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `dice_t1_document_intelligence_control_envelope_runtime_dispatched`.
+Current mode: `dice_t1_document_intelligence_control_envelope_runtime_closed_pass_bounded`.
 
 Active handoff:
 
@@ -59,33 +59,42 @@ Pain-point closure direction:
 ## Latest Continuity Note
 
 DICE-T1 Document Intelligence Control Envelope runtime work order is
-`DISPATCHED_TO_CLAUDE`.
+`CLOSED_PASS_BOUNDED`.
 
-Material dispatch commit: `129d3ebb`.
+Material closure commit: `d46023d1`.
 
-Dispatch artifacts:
+Closure artifacts:
 
 - Roadmap:
   `docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_ROADMAP_2026-06-13.md`;
 - GC-018:
   `docs/baselines/CVF_GC018_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_2026-06-13.md`;
 - Work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_FOR_CLAUDE_2026-06-13.md`.
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_FOR_CLAUDE_2026-06-13.md`;
+- Worker return:
+  `docs/reviews/CVF_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_WORKER_RETURN_2026-06-13.md`;
+- Completion review:
+  `docs/reviews/CVF_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_COMPLETION_2026-06-13.md`;
+- Runtime source:
+  `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/document_intelligence_control_envelope.py`;
+- Focused tests:
+  `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_document_intelligence_control_envelope.py`.
 
-Result: DICE-T1 is authorized as a local deterministic runtime source/tests
-tranche under `WORKER_MUST_NOT_COMMIT`. Claude may create only the envelope
-source, focused tests, and worker-return packet named in the work order.
+Result: Codex accepted the no-commit worker return after allowed-scope repairs,
+added completion evidence, registered the new source/test corpus entries, and
+committed the bounded DICE-T1 closure.
 
-DICE-MC-08 DIR eligibility passthrough invariant must be proven in DICE-T1.
+DICE-MC-08 DIR eligibility passthrough invariant is covered by deterministic
+tests in the DICE-T1 runtime test harness.
 
-Next allowed move: Claude executes DICE-T1 and returns uncommitted artifacts
-for Codex review and commit.
+Next allowed move: DIR-T2 foundation follow-up may open DICE-T2 only through a
+fresh GC-018 and source-verified work order for an operator-visible document
+control packet sample or another CVF foundation lane.
 
-Boundary: dispatch package only; no external Document_Translator inspection or
+Boundary: DICE-T1 closure only; no external Document_Translator inspection or
 mutation, Policy_Local mutation, OCR/provider API/live proof, retrieval route
-wiring, corpus ingestion, public-sync, T12 unlock, readiness/cost/quality
-claim, memory reinjection, high-risk promotion, or autonomous mutation is
-authorized.
+wiring, public-sync, T12 unlock, readiness/cost/quality claim, memory
+reinjection, high-risk promotion, or autonomous mutation is authorized.
 
 ---
 
@@ -1007,12 +1016,12 @@ repo, production readiness, public readiness, or live governance proof.
 ## Next Allowed Move
 
 Next allowed move: DIR-T2 foundation follow-up. DICE-T1 Document Intelligence
-Control Envelope runtime work order is `DISPATCHED_TO_CLAUDE` at material
-dispatch commit `129d3ebb`. Claude may implement only the authorized local
-deterministic DICE-T1 source, focused tests, and worker-return packet under
-`WORKER_MUST_NOT_COMMIT`, then return uncommitted artifacts for Codex review
-and commit. DICE-MC-08 DIR eligibility passthrough invariant must be proven in
-DICE-T1. Dispatch artifacts:
+Control Envelope runtime work order is `CLOSED_PASS_BOUNDED` at material
+closure commit `d46023d1`. DIR-T2 foundation follow-up may open DICE-T2 only
+through a fresh GC-018 and source-verified work order for an operator-visible
+document control packet sample or another CVF foundation lane.
+DICE-T3/provider/OCR/live-proof work is not authorized by DICE-T1 closure.
+Closure artifacts:
 
 - Roadmap:
   `docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_ROADMAP_2026-06-13.md`;
@@ -1020,6 +1029,12 @@ DICE-T1. Dispatch artifacts:
   `docs/baselines/CVF_GC018_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_2026-06-13.md`;
 - Work order:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_FOR_CLAUDE_2026-06-13.md`.
+- Completion review:
+  `docs/reviews/CVF_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_COMPLETION_2026-06-13.md`;
+- Runtime source:
+  `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/document_intelligence_control_envelope.py`;
+- Focused tests:
+  `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_document_intelligence_control_envelope.py`.
 
 DIR-T2 Document Intelligence Router foundation pilot remains
 `CLOSED_PASS_BOUNDED` at material closure commit `e3395acc`. Closure artifacts:

@@ -24,14 +24,14 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`dice_t1_document_intelligence_control_envelope_runtime_dispatched`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=Claude executes DICE-T1 under `WORKER_MUST_NOT_COMMIT` and returns uncommitted allowed-scope artifacts for Codex review; parked checkpoint=DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`dice_t1_document_intelligence_control_envelope_runtime_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=DIR-T2 foundation follow-up may open DICE-T2 only through a fresh GC-018 and source-verified work order for operator-visible document control packet sample or another CVF foundation lane; parked checkpoint=DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`dice_t1_document_intelligence_control_envelope_runtime_dispatched`
+`dice_t1_document_intelligence_control_envelope_runtime_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `129d3ebb`
-(DICE-T1 dispatch material commit; this dedicated session-sync follows).
+Current HEAD recorded for this handoff: `d46023d1`
+(DICE-T1 material closure commit; this dedicated session-sync follows).
 
 ## Active Boundary
 
@@ -47,32 +47,44 @@ requires separate authorization.
 ## Latest Continuity Note
 
 DICE-T1 Document Intelligence Control Envelope runtime work order is
-`DISPATCHED_TO_CLAUDE` at material dispatch commit `129d3ebb` from dispatch
-base `579962d7`.
+`CLOSED_PASS_BOUNDED` at material closure commit `d46023d1` from closure base
+`0fd52604`.
 
-DICE-T1 dispatch artifacts:
+DICE-T1 closure artifacts:
 
 - Roadmap:
   `docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_ROADMAP_2026-06-13.md`;
 - GC-018:
   `docs/baselines/CVF_GC018_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_2026-06-13.md`;
 - Work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_FOR_CLAUDE_2026-06-13.md`.
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_FOR_CLAUDE_2026-06-13.md`;
+- Worker return:
+  `docs/reviews/CVF_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_WORKER_RETURN_2026-06-13.md`;
+- Completion review:
+  `docs/reviews/CVF_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_COMPLETION_2026-06-13.md`;
+- Runtime source:
+  `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/document_intelligence_control_envelope.py`;
+- Focused tests:
+  `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_document_intelligence_control_envelope.py`;
+- Registry source entries:
+  `docs/corpus-intelligence/registry/entries/dice-t1-document-intelligence-control-envelope-source.json` and
+  `docs/corpus-intelligence/registry/entries/dice-t1-document-intelligence-control-envelope-tests.json`.
 
-Result: Claude may implement only the local deterministic DICE-T1 envelope
-source, focused tests, and worker-return packet named in the work order under
-`WORKER_MUST_NOT_COMMIT`.
+Result: Codex accepted the no-commit worker return after allowed-scope repairs,
+added completion evidence, registered the new source/test corpus entries, and
+committed the bounded DICE-T1 closure.
 
-DICE-MC-08 DIR eligibility passthrough invariant must be proven in DICE-T1.
+DICE-MC-08 DIR eligibility passthrough invariant is covered by deterministic
+tests in the DICE-T1 runtime test harness.
 
-Next allowed move: Claude executes DICE-T1 and returns uncommitted artifacts
-for Codex review and commit.
+Next allowed move: DIR-T2 foundation follow-up may open DICE-T2 only through a
+fresh GC-018 and source-verified work order for an operator-visible document
+control packet sample or another CVF foundation lane.
 
-Boundary: dispatch package only; no external Document_Translator inspection or
+Boundary: DICE-T1 closure only; no external Document_Translator inspection or
 mutation, Policy_Local mutation, OCR/provider API/live proof, retrieval route
-wiring, corpus ingestion, public-sync, T12 unlock, readiness/cost/quality
-claim, memory reinjection, high-risk promotion, or autonomous mutation is
-authorized.
+wiring, public-sync, T12 unlock, readiness/cost/quality claim, memory
+reinjection, high-risk promotion, or autonomous mutation is authorized.
 
 ---
 
@@ -547,8 +559,9 @@ the DIR-T2 closure session-sync, this DICE-T0 dispatch session-sync, and this
 DICE-T0 closure session-sync, plus the operator-requested DICE-T0 finding
 promotion hardening for source-verification line anchors and forbidden
 filesystem-state regression coverage, plus this DICE-T1 dispatch session-sync
-after the operator asked Codex to continue and create a Claude work order,
-without
+after the operator asked Codex to continue and create a Claude work order, plus
+this DICE-T1 closure session-sync after the operator returned DICE-T1 worker
+artifacts for Codex review and commit, without
 changing governance semantics, and keep the generated active-session aggregate
 aligned with its per-entry source files.
 This scope also covers the dispatch-quality checker change to
@@ -569,6 +582,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/diceT0DocumentIntelligenceControlEnvelopeDispatch20260613.json`
 - `CVF_SESSION/state/entries/diceT0DocumentIntelligenceControlEnvelopeClosure20260613.json`
 - `CVF_SESSION/state/entries/diceT1DocumentIntelligenceControlEnvelopeRuntimeDispatch20260613.json`
+- `CVF_SESSION/state/entries/diceT1DocumentIntelligenceControlEnvelopeRuntimeClosure20260613.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
@@ -592,6 +606,7 @@ commit, then asked Codex to promote the resulting orchestrator findings into
 CVF foundation hardening so future orchestrators handle the same cases
 consistently, then asked Codex to continue and create the next Claude work
 order.
+The operator then returned DICE-T1 worker artifacts for Codex review and commit.
 The hardening-batch GC-018 explicitly authorized the
 `governance/compat/check_work_order_dispatch_quality.py` validator addition and
 carries its own Core Guard Self-Protection Authorization. The mandatory
@@ -605,9 +620,11 @@ DICE-T0 closure session-sync, or this DICE-T0 finding-promotion hardening if
 the source-verification line-anchor check, forbidden-filesystem-state
 regression coverage, template guidance, continuity markers, semantic
 next-allowed-move alignment guard, regression coverage, closure pointers, or
-this DICE-T1 dispatch session-sync are incorrect. Do not revert
+this DICE-T1 dispatch session-sync, or this DICE-T1 closure session-sync are
+incorrect. Do not revert
 hardening material closure
-commit `30e7e888`, DICE-T1 dispatch material commit `129d3ebb`,
+commit `30e7e888`, DICE-T1 material closure commit `d46023d1`,
+DICE-T1 dispatch material commit `129d3ebb`,
 DIR-T1 session-sync `4c803586`, DIR-T1 material closure
 commit `4bf991f3`, DIR-T0 material closure commit
 `082b02ff`, DIR-T0 dispatch material commit `e19d725d`, DIR final roadmap
@@ -628,12 +645,11 @@ acceleration material commit `bd15e0ae`, MEMCON-T1a material closure commit
 ## Next Allowed Move
 
 DIR-T2 foundation follow-up: DICE-T1 Document Intelligence Control Envelope
-runtime work order is `DISPATCHED_TO_CLAUDE` at material dispatch commit
-`129d3ebb`. Claude may implement only the authorized local deterministic
-DICE-T1 source, focused tests, and worker-return packet under
-`WORKER_MUST_NOT_COMMIT`, then return uncommitted artifacts for Codex review
-and commit. DICE-MC-08 DIR eligibility passthrough invariant must be proven in
-DICE-T1.
+runtime work order is `CLOSED_PASS_BOUNDED` at material closure commit
+`d46023d1`. DIR-T2 foundation follow-up may open DICE-T2 only through a fresh
+GC-018 and source-verified work order for an operator-visible document control
+packet sample or another CVF foundation lane. DICE-T3/provider/OCR/live-proof
+work is not authorized by DICE-T1 closure.
 
 DT-CVF-T0 may be opened only through later fresh GC-018 and a source-verified
 work order for Document Translator source custody, repo inventory,
