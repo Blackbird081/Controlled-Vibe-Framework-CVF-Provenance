@@ -972,6 +972,9 @@ Base-anchor evidence:
 - Commit mode: `<WORKER_MAY_COMMIT | WORKER_MUST_NOT_COMMIT>`
 - Pending-artifact component gates:
 - Worker Pending-Return Gate table:
+- Worker-return fast gate:
+  `python governance/compat/run_worker_return_fast_gate.py`
+  plus `--pytest-target <path>` for focused tests when applicable
 - Committed-range `pre-closure`: `<PASS after commit | N/A - pending review>`
 
 ## 10. Acceptance Criteria
@@ -1008,6 +1011,18 @@ or committer must approve disposition, commit the reviewed owned diff, and run
 the committed-range `pre-closure` gate before changing status to a
 closed-equivalent value.
 
+No-commit worker returns should run the worker-return fast gate before handoff:
+
+```powershell
+python governance/compat/run_worker_return_fast_gate.py
+```
+
+When the work order names focused tests, add one `--pytest-target <path>` per
+test path. This fast gate reuses `reviewer-fast`, generated registry drift
+checking, changed source/test registry coverage, and diff hygiene. It is not a
+replacement for full `pre-commit`, committed-range `pre-closure`, or reviewer
+judgment.
+
 Mandatory remediation rule:
 
 - A gate failure inside this work order's Allowed scope is authorization to
@@ -1035,6 +1050,8 @@ waiver for this work order.
   recorded, required component-gate failures inside Allowed scope are repaired,
   and remaining failures are explicitly `BLOCKED`, `N/A with reason`, or
   `FAIL_EXPECTED_PENDING_FINALITY`
+- [ ] For `WORKER_MUST_NOT_COMMIT`, worker-return fast gate result is recorded
+  with focused pytest targets when applicable
 - [ ] Closure gate used a non-empty committed diff range; no `--base HEAD --head HEAD`
 - [ ] Changed-file set from `git diff --name-status` is inside this work
   order's Allowed scope, or every extra path has explicit operator/work-order

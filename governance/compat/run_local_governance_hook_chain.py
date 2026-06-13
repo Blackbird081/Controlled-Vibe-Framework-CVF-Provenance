@@ -67,6 +67,10 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
         ["python", "governance/compat/check_corpus_scan_registry.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
     (
+        "changed corpus registry coverage",
+        ["python", "governance/compat/check_changed_corpus_registry_coverage.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
         "active session state compatibility",
         ["python", "governance/compat/check_active_session_state.py", "--enforce"],
     ),
@@ -183,6 +187,10 @@ HOOK_CHAINS: dict[str, list[tuple[str, list[str]]]] = {
         (
             "corpus scan registry",
             ["python", "governance/compat/check_corpus_scan_registry.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "changed corpus registry coverage",
+            ["python", "governance/compat/check_changed_corpus_registry_coverage.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
             "system loop interlock",

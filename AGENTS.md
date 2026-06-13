@@ -476,6 +476,10 @@ Reviewer fast preflight:
   Codex/orchestrator review, run the focused reviewer gate before attempting a
   full commit:
   `python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast`
+- for lower total operator wait time, workers/reviewers may run the one-command
+  fast bundle first:
+  `python governance/compat/run_worker_return_fast_gate.py`
+  and add `--pytest-target <path>` for focused tests named by the work order.
 - This gate is not closure evidence and does not replace pre-closure or
   pre-push autorun gates. It is an early defect filter for reviewer-return
   packets: closure residue, source/registry coverage, public export
