@@ -30,8 +30,8 @@ Startup acknowledged: current mode=`dice_t0_document_intelligence_control_envelo
 
 `dice_t0_document_intelligence_control_envelope_contract_matrix_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `a355cd7a`
-(DICE-T0 control-envelope material closure commit; this dedicated
+Current HEAD recorded for this handoff: `dbe3ddca`
+(DICE-T0 finding-promotion hardening material commit; this dedicated
 session-sync follows).
 
 ## Active Boundary
