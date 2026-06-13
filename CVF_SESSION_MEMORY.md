@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-13
 
-Current mode marker: `aot_t2_c01_c02_manifest_trace_implementation_dispatched`
+Current mode marker: `aot_t2_c01_c02_manifest_trace_implementation_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `aot_t2_c01_c02_manifest_trace_implementation_dispatched`.
+Current mode: `aot_t2_c01_c02_manifest_trace_implementation_closed_pass_bounded`.
 
 Active handoff:
 
@@ -58,34 +58,30 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-AOT-T2-C01+C02 Manifest Trace Implementation is
-`DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT` at material dispatch commit
-`5ba9e071` from dispatch base `6ca6a748`.
+AOT-T2-C01+C02 Manifest Trace Implementation is `CLOSED_PASS_BOUNDED`
+at material closure commit `7206852b` from closure base `6b5504f7`.
 
-Dispatch artifacts:
+Closure artifacts:
 
 - GC-018:
   `docs/baselines/CVF_GC018_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_2026-06-13.md`;
 - Work order:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_FOR_CLAUDE_2026-06-13.md`;
-- Planned worker return:
+- Worker return:
   `docs/reviews/CVF_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_WORKER_RETURN_2026-06-13.md`;
-- Planned completion review:
+- Completion review:
   `docs/reviews/CVF_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_COMPLETION_2026-06-13.md`.
 
-Claude is authorized to implement only the AOT standard/checker/test update
-and worker-return packet named in the work order, under
-`WORKER_MUST_NOT_COMMIT`. This tranche includes the guard tightening requested
-by the operator: worker-authored `docs/reference/` deliverables with
-worker/execution triggers must be trace-eligible, while ordinary reference
-standards must not be forced to carry trace blocks.
+Codex accepted the Claude worker return after reviewer repair. Final focused
+tests pass 17/17. The closure adds repo-local AOT trace fields for agent type,
+invocation ID, expected manifest, actual changed set, and manifest delta; it
+also keeps worker-authored `docs/reference/` trace eligibility trigger-based,
+not mandatory for every reference standard.
 
-Codex owns review, allowed reviewer repairs, final commit, completion review,
-committed-range pre-closure, and session sync. No hook-chain wiring change
-unless the existing checker invocation cannot cover the behavior; no
-runtime/provider/live-proof work, OS audit, endpoint monitoring, public-sync,
-external app mutation, raw memory release, or autonomous mutation is
-authorized.
+Fresh authorization is required before any next implementation. No additional
+checker/test/hook implementation, runtime/provider/live-proof work, OS audit,
+endpoint monitoring, public-sync, external app mutation, raw memory release, or
+autonomous mutation is authorized.
 
 ---
 
@@ -960,17 +956,18 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: Claude worker return only for
-`docs/reviews/CVF_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_WORKER_RETURN_2026-06-13.md`
-under
-`docs/work_orders/CVF_AGENT_WORK_ORDER_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_FOR_CLAUDE_2026-06-13.md`.
+Next allowed move: fresh authorization only.
 
-Codex owns review, allowed repairs, final commit, completion review,
-committed-range pre-closure, and session sync. Claude must not commit and must
-not mutate `CVF_SESSION/**`, front doors, handoffs, runtime/product source
-outside allowed checker/test/standard surfaces, public-sync, external
-Document_Translator, Policy_Local, provider/live proof, OS audit, endpoint
-monitoring, or autonomous mutation surfaces.
+Candidate next moves are:
+
+- select the next bounded AOT/foundation hardening tranche; or
+- resume FPC implementation/registry work through a separate source-verified
+  work order.
+
+No additional checker/test/hook implementation, runtime/provider/live-proof
+work, public-sync, external Document_Translator inspection or mutation,
+Policy_Local mutation, OS audit, endpoint monitoring, T12, raw memory release,
+or autonomous mutation is authorized without a later work order.
 
 DIR-T2 Document Intelligence Router foundation pilot remains
 `CLOSED_PASS_BOUNDED` at material closure commit `e3395acc`. Closure artifacts:
