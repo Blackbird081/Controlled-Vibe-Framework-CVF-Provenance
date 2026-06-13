@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-13
 
-Current mode marker: `worker_return_fast_gate_latency_hardening_closed_pass_bounded`
+Current mode marker: `fpc_t1_foundation_planes_workflow_chain_system_audit_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `worker_return_fast_gate_latency_hardening_closed_pass_bounded`.
+Current mode: `fpc_t1_foundation_planes_workflow_chain_system_audit_dispatched`.
 
 Active handoff:
 
@@ -57,6 +57,23 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+FPC-T1 foundation planes workflow-chain system audit is `DISPATCHED` at material
+commit `6ae97055`.
+
+Dispatch artifacts:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_2026-06-13.md`;
+- Work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_FOR_CLAUDE_2026-06-13.md`.
+
+Next allowed move is MEMCON-T5 follow-up: Claude execution of FPC-T1 under
+`WORKER_MUST_NOT_COMMIT`.
+FPC-T2 and FPC-T3 remain parked until FPC-T1 worker return and Codex review
+produce matrix evidence.
+
+---
 
 Worker-return fast gate latency hardening is `CLOSED_PASS_BOUNDED`.
 
@@ -1046,13 +1063,12 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: DIR-T2 foundation follow-up. Worker-return fast gate
-latency hardening is `CLOSED_PASS_BOUNDED` at material commit `5e605862` after
-DICE-T1 closure `d46023d1`. DIR-T2 foundation follow-up may open DICE-T2 only
-through a fresh GC-018 and source-verified work order for an operator-visible
-document control packet sample or another CVF foundation lane.
-DICE-T3/provider/OCR/live-proof work is not authorized by DICE-T1 closure or
-the latency hardening batch.
+Next allowed move: MEMCON-T5 follow-up - Claude executes FPC-T1 foundation
+planes workflow-chain system audit under `WORKER_MUST_NOT_COMMIT` using the
+dispatched GC-018 and work order from material commit `6ae97055`. FPC-T2 and
+FPC-T3 remain parked until FPC-T1 worker return and Codex review produce matrix
+evidence.
+DICE-T3/provider/OCR/live-proof work is not authorized.
 Closure artifacts:
 
 - Roadmap:

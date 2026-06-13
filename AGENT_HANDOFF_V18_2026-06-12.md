@@ -24,14 +24,14 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`worker_return_fast_gate_latency_hardening_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=DIR-T2 foundation follow-up may open DICE-T2 only through a fresh GC-018 and source-verified work order for operator-visible document control packet sample or another CVF foundation lane; parked checkpoint=DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`fpc_t1_foundation_planes_workflow_chain_system_audit_dispatched`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=Claude executes FPC-T1 foundation planes workflow-chain system audit under `WORKER_MUST_NOT_COMMIT` and returns uncommitted artifacts for Codex review; parked checkpoint=FPC-T2/FPC-T3 execution, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`worker_return_fast_gate_latency_hardening_closed_pass_bounded`
+`fpc_t1_foundation_planes_workflow_chain_system_audit_dispatched`
 
-Current HEAD recorded for this handoff: `f62a8bff`
-(FPC foundation roadmap finalization commit; this dedicated session-sync follows).
+Current HEAD recorded for this handoff: `6ae97055`
+(FPC-T1 foundation audit dispatch material commit; this dedicated session-sync follows).
 
 ## Active Boundary
 
@@ -45,6 +45,23 @@ Public-facing work remains restricted to the sibling public-sync clone and
 requires separate authorization.
 
 ## Latest Continuity Note
+
+FPC-T1 foundation planes workflow-chain system audit is `DISPATCHED` at material
+commit `6ae97055` from dispatch base `148a59ff`. Claude may execute only the
+source-backed FPC-T1 audit matrix and worker-return packet under
+`WORKER_MUST_NOT_COMMIT`.
+
+Dispatch artifacts:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_2026-06-13.md`;
+- Work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_FOR_CLAUDE_2026-06-13.md`.
+
+FPC-T2 and FPC-T3 remain parked until FPC-T1 worker return and Codex review
+produce matrix evidence.
+
+---
 
 FPC foundation planes workflow-chain system completion roadmap was finalized at
 material commit `f62a8bff` after Claude rebuttal remediation. Next execution
@@ -71,9 +88,10 @@ runs focused pytest targets when supplied, registry aggregate drift check,
 hygiene. `reviewer-fast` and `pre-commit` now include the changed registry
 coverage checker.
 
-Next allowed move: DIR-T2 foundation follow-up may open DICE-T2 only through a
-fresh GC-018 and source-verified work order for an operator-visible document
-control packet sample or another CVF foundation lane.
+Next allowed move: MEMCON-T5 follow-up - Claude executes FPC-T1 foundation
+planes workflow-chain system audit under `WORKER_MUST_NOT_COMMIT` and returns
+uncommitted artifacts for Codex review. FPC-T2 and FPC-T3 remain parked until
+FPC-T1 matrix evidence exists and Codex closes the worker return.
 
 Boundary: governance-control latency hardening only; no runtime behavior,
 provider routing, OCR behavior, Document Translator source, Policy_Local
@@ -686,12 +704,11 @@ acceleration material commit `bd15e0ae`, MEMCON-T1a material closure commit
 
 ## Next Allowed Move
 
-DIR-T2 foundation follow-up: worker-return fast gate latency hardening is
-`CLOSED_PASS_BOUNDED` at material commit `5e605862` after DICE-T1 closure
-`d46023d1`. DIR-T2 foundation follow-up may open DICE-T2 only through a fresh
-GC-018 and source-verified work order for an operator-visible document control
-packet sample or another CVF foundation lane. DICE-T3/provider/OCR/live-proof
-work is not authorized by DICE-T1 closure or the latency hardening batch.
+Next allowed move: MEMCON-T5 follow-up - Claude executes FPC-T1 foundation
+planes workflow-chain system audit under `WORKER_MUST_NOT_COMMIT` using the
+dispatched GC-018 and work order from material commit `6ae97055`. FPC-T2 and
+FPC-T3 remain parked until FPC-T1 worker return and Codex review produce matrix
+evidence. DICE-T3/provider/OCR/live-proof work is not authorized.
 
 DT-CVF-T0 may be opened only through later fresh GC-018 and a source-verified
 work order for Document Translator source custody, repo inventory,
