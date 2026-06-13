@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-13
 
-Current mode marker: `dir_t2_document_intelligence_router_foundation_pilot_closed_pass_bounded`
+Current mode marker: `dice_t0_document_intelligence_control_envelope_contract_matrix_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `dir_t2_document_intelligence_router_foundation_pilot_closed_pass_bounded`.
+Current mode: `dice_t0_document_intelligence_control_envelope_contract_matrix_dispatched`.
 
 Active handoff:
 
@@ -57,6 +57,31 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+DICE-T0 Document Intelligence Control Envelope contract matrix is
+`DISPATCHED`.
+
+Material dispatch commit: `4ee9bcff`.
+
+Dispatch artifacts:
+
+- Roadmap:
+  `docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_ROADMAP_2026-06-13.md`;
+- GC-018:
+  `docs/baselines/CVF_GC018_DICE_T0_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_2026-06-13.md`;
+- Work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_DICE_T0_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_FOR_CLAUDE_2026-06-13.md`.
+
+Next allowed move: Claude executes DICE-T0 under `WORKER_MUST_NOT_COMMIT` and
+returns uncommitted allowed-scope artifacts for Codex review.
+
+Boundary: doc-only foundation contract matrix only; no external
+Document_Translator inspection or mutation, Policy_Local mutation, OCR/provider
+API/live proof, retrieval route wiring, corpus ingestion, public-sync, T12
+unlock, readiness/cost/quality claim, memory reinjection, high-risk promotion,
+or autonomous mutation is authorized.
+
+---
 
 DIR-T0 Document Intelligence Router contract matrix is
 `CLOSED_PASS_BOUNDED`.
@@ -99,8 +124,8 @@ Roadmap:
 
 Result: Document Translator is now a separate downstream CVF-controlled
 use-case lane, similar to Policy_Local, while CVF foundation quality remains
-priority one. The only next eligible move is DT-CVF-T0 through fresh GC-018 and
-a source-verified work order for source custody, repo inventory, secret-safety,
+priority one. DT-CVF-T0 remains eligible only through later fresh GC-018 and a
+source-verified work order for source custody, repo inventory, secret-safety,
 and control-baseline audit of
 `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Document_Translator`.
 
@@ -975,11 +1000,20 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: DT-CVF-T0 may be opened only through fresh GC-018 and a
-source-verified work order for Document Translator custody/control-baseline
-audit, or the operator may select another governed foundation lane. DIR-T2
-Document Intelligence Router foundation pilot is `CLOSED_PASS_BOUNDED` at
-material closure commit `e3395acc`. Closure artifacts:
+Next allowed move: DIR-T2 foundation follow-up DICE-T0. Claude executes
+DICE-T0 under `WORKER_MUST_NOT_COMMIT` and
+returns uncommitted allowed-scope artifacts for Codex review. DICE-T0 is
+`DISPATCHED` at material dispatch commit `4ee9bcff`. Dispatch artifacts:
+
+- Roadmap:
+  `docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_ROADMAP_2026-06-13.md`;
+- GC-018:
+  `docs/baselines/CVF_GC018_DICE_T0_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_2026-06-13.md`;
+- Work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_DICE_T0_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_FOR_CLAUDE_2026-06-13.md`.
+
+DIR-T2 Document Intelligence Router foundation pilot remains
+`CLOSED_PASS_BOUNDED` at material closure commit `e3395acc`. Closure artifacts:
 
 - GC-018:
   `docs/baselines/CVF_GC018_DIR_T2_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_PILOT_2026-06-13.md`;
@@ -992,7 +1026,7 @@ material closure commit `e3395acc`. Closure artifacts:
 
 DIR-T2 was a CVF foundation pilot using synthetic metadata-only fixtures and
 deterministic local Python tests; it is not external Document Translator
-adaptation. DT-CVF-T0 is eligible only through fresh GC-018 and a
+adaptation. DT-CVF-T0 is eligible only through later fresh GC-018 and a
 source-verified work order for Document Translator custody/control-baseline
 audit. Policy_Local PL-S1 remains separately held until the operator
 explicitly authorizes it.

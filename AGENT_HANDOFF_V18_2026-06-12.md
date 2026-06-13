@@ -24,15 +24,15 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`dir_t2_document_intelligence_router_foundation_pilot_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=DT-CVF-T0 may be opened only through fresh GC-018 and source-verified work order, or operator selects another governed foundation lane; parked checkpoint=Policy_Local PL-S1, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`dice_t0_document_intelligence_control_envelope_contract_matrix_dispatched`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=Claude executes DICE-T0 under WORKER_MUST_NOT_COMMIT and returns uncommitted allowed-scope artifacts for Codex review; parked checkpoint=DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`dir_t2_document_intelligence_router_foundation_pilot_closed_pass_bounded`
+`dice_t0_document_intelligence_control_envelope_contract_matrix_dispatched`
 
-Current HEAD recorded for this handoff: `e3395acc`
-(DIR-T2 foundation pilot material closure commit; this dedicated session-sync
-follows).
+Current HEAD recorded for this handoff: `4ee9bcff`
+(DICE-T0 control-envelope material dispatch commit; this dedicated
+session-sync follows).
 
 ## Active Boundary
 
@@ -46,6 +46,30 @@ Public-facing work remains restricted to the sibling public-sync clone and
 requires separate authorization.
 
 ## Latest Continuity Note
+
+DICE-T0 Document Intelligence Control Envelope contract matrix is
+`DISPATCHED` at material dispatch commit `4ee9bcff` from dispatch base
+`bea8e1f1`.
+
+DICE-T0 dispatch artifacts:
+
+- Roadmap:
+  `docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_ROADMAP_2026-06-13.md`;
+- GC-018:
+  `docs/baselines/CVF_GC018_DICE_T0_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_2026-06-13.md`;
+- Work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_DICE_T0_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_FOR_CLAUDE_2026-06-13.md`.
+
+Next allowed move: Claude executes DICE-T0 under `WORKER_MUST_NOT_COMMIT` and
+returns uncommitted contract matrix plus worker-return packet for Codex review.
+
+Boundary: doc-only foundation contract matrix only; no external
+Document_Translator inspection or mutation, Policy_Local mutation, OCR/provider
+API/live proof, retrieval route wiring, corpus ingestion, public-sync, T12
+unlock, readiness/cost/quality claim, memory reinjection, high-risk promotion,
+or autonomous mutation is authorized.
+
+---
 
 Work-order template protected-path authorization hardening batch is
 `CLOSED_PASS_BOUNDED`. Single-actor governance batch under operator
@@ -514,8 +538,9 @@ Authorized guard-maintenance scope: perform the mandatory work-order-template
 protected-path authorization hardening closure session sync, the
 operator-requested post-review continuity/test hardening fix, the
 next-allowed-move semantic alignment guard, the DIR-T2 dispatch session-sync,
-and the DIR-T2 closure session-sync without changing governance semantics, and keep the generated
-active-session aggregate aligned with its per-entry source files.
+the DIR-T2 closure session-sync, and this DICE-T0 dispatch session-sync without
+changing governance semantics, and keep the generated active-session aggregate
+aligned with its per-entry source files.
 This scope also covers the dispatch-quality checker change to
 `check_work_order_dispatch_quality.py` that was authorized by the
 hardening-batch GC-018 and landed in the hardening material closure commit
@@ -531,6 +556,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/dirT1DocumentIntelligenceRouterSourceAndTestsClosure20260613.json`
 - `CVF_SESSION/state/entries/dirT2DocumentIntelligenceRouterFoundationPilotDispatch20260613.json`
 - `CVF_SESSION/state/entries/dirT2DocumentIntelligenceRouterFoundationPilotClosure20260613.json`
+- `CVF_SESSION/state/entries/diceT0DocumentIntelligenceControlEnvelopeDispatch20260613.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `governance/compat/check_active_session_state.py`
@@ -546,7 +572,9 @@ post-Claude review, then prioritized immediate CVF foundation hardening so the
 stale next-allowed-move defect is caught by a machine check before future
 roadmap movement, then approved the DIR-T2 direction as CVF foundation
 hardening and asked Codex to audit, process, and issue the Claude work order,
-then returned the DIR-T2 worker artifacts for Codex review and commit.
+then returned the DIR-T2 worker artifacts for Codex review and commit, then
+asked Codex to continue opening a CVF foundation roadmap and create a Claude
+work order.
 The hardening-batch GC-018 explicitly authorized the
 `governance/compat/check_work_order_dispatch_quality.py` validator addition and
 carries its own Core Guard Self-Protection Authorization. The mandatory
@@ -554,8 +582,8 @@ session-continuity rules require synchronized front doors and active state
 sources after closure.
 
 Rollback boundary: revert only this hardening closure session sync, the
-post-review continuity/test hardening fix, the DIR-T2 dispatch session-sync, or
-the DIR-T2 closure session-sync if the continuity markers, semantic
+post-review continuity/test hardening fix, the DIR-T2 dispatch session-sync,
+the DIR-T2 closure session-sync, or this DICE-T0 dispatch session-sync if the continuity markers, semantic
 next-allowed-move alignment guard, regression coverage, or closure pointers
 are incorrect. Do not revert
 hardening material closure
@@ -578,12 +606,14 @@ acceleration material commit `bd15e0ae`, MEMCON-T1a material closure commit
 
 ## Next Allowed Move
 
+DIR-T2 foundation follow-up DICE-T0: Claude executes DICE-T0 under
+`WORKER_MUST_NOT_COMMIT` and returns uncommitted allowed-scope artifacts for
+Codex review. DICE-T0 is dispatched at material commit `4ee9bcff`.
+
 DT-CVF-T0 may be opened only through later fresh GC-018 and a source-verified
 work order for Document Translator source custody, repo inventory,
-secret-safety, and control-baseline audit, or the operator may select another
-governed foundation lane. DIR-T2 is closed.
-Policy_Local PL-S1 remains separately held until the operator explicitly
-authorizes it.
+secret-safety, and control-baseline audit. Policy_Local PL-S1 remains
+separately held until the operator explicitly authorizes it.
 
 Do not edit or inspect the external Document Translator repo, mutate external
 Policy_Local, activate EC, wire retrieval routes, invoke OCR or providers,
