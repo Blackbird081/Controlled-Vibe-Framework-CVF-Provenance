@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DICE_T1_DISPATCHED
+Status: DICE_T1_PASS_BOUNDED
 
 docType: roadmap
 
@@ -32,8 +32,8 @@ translation kept as a separate use case.
 
 ## Authorization
 
-Authorized move: DICE-T1 dispatch through fresh GC-018 and a source-verified
-Claude work order.
+Authorized move: DICE-T1 closure as bounded local deterministic foundation
+source and tests after Codex review of Claude's uncommitted worker return.
 
 Not authorized: DICE-T2 operator packet sample, DICE-T3 provider/OCR
 authorization design, DT-CVF-T0, Policy_Local PL-S1, public-sync, live proof,
@@ -107,8 +107,8 @@ DICE must not:
 | Tranche | Goal | Prerequisite | Status |
 | --- | --- | --- | --- |
 | DICE-T0 | Doc-only control-envelope contract matrix and owner-source map | this roadmap plus fresh GC-018/work order | CLOSED_PASS_BOUNDED |
-| DICE-T1 | Deterministic local envelope contract/test harness, if T0 proves source owner | DICE-T0 closure plus fresh GC-018 | DISPATCHED_TO_CLAUDE |
-| DICE-T2 | Operator-visible document control packet sample, if T1 proves stable contract | DICE-T1 closure plus fresh GC-018 | HOLD_PENDING_T1_PASS |
+| DICE-T1 | Deterministic local envelope contract/test harness, if T0 proves source owner | DICE-T0 closure plus fresh GC-018 | CLOSED_PASS_BOUNDED |
+| DICE-T2 | Operator-visible document control packet sample, if T1 proves stable contract | DICE-T1 closure plus fresh GC-018 | ELIGIBLE_FOR_FRESH_GC018 |
 | DICE-T3 | Runtime/provider/OCR authorization design, if still needed | DICE-T2 closure plus explicit live-proof/key/quota authorization | HOLD_PENDING_RUNTIME_AUTH |
 
 ## DICE-T0 Detail
@@ -157,22 +157,31 @@ handle DICE-MC-08 without rejecting the current DIR passthrough invariant for
 
 ## Acceptance Criteria
 
-DICE-T1 dispatch is acceptable only if:
+DICE-T1 closure is acceptable only if:
 
 - a fresh GC-018 baseline exists;
-- a source-verified Claude work order exists;
-- dispatch-quality and pre-dispatch autorun gates pass on a real changed range;
+- a source-verified Claude work order exists and is closed bounded;
+- focused DICE-T1 tests and combined DIR/scan-outcome/DICE tests pass;
+- reviewer-fast and closure gates pass on a real changed range;
 - the worker scope remains local deterministic source and tests only;
 - external Document Translator, Policy_Local, OCR/provider, retrieval,
   public-sync, and readiness/cost/quality claims remain blocked.
 
 ## Verification
 
-Dispatch verification must include:
+Dispatch verification included:
 
 - `python governance/compat/check_work_order_dispatch_quality.py --base 579962d7 --head HEAD --enforce`;
 - `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base 579962d7 --head HEAD`;
-- local pre-commit governance chain before Codex commits.
+- local pre-commit governance chain before Codex dispatch commit.
+
+Closure verification must include:
+
+- `python -m pytest EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_document_intelligence_control_envelope.py -v`;
+- `python -m pytest EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_document_intelligence_router.py EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_scan_outcome_report.py EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_document_intelligence_control_envelope.py -v`;
+- `python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast`;
+- `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base 0fd52604 --head HEAD`;
+- local pre-commit governance chain before Codex material closure commit.
 
 ## Evidence
 
@@ -259,10 +268,11 @@ used.
 
 ## Claim Boundary
 
-This roadmap authorizes only DICE-T0 dispatch through a fresh GC-018 and
-source-verified work order. It does not prove document intelligence runtime
-behavior, document content correctness, extraction accuracy, OCR quality,
-provider behavior, retrieval quality, Document Translator readiness,
+This roadmap has closed DICE-T1 as a bounded local deterministic foundation
+source and test tranche. It does not prove document intelligence runtime
+behavior against real documents, document content correctness, extraction
+accuracy, OCR quality, provider behavior, retrieval quality, Document
+Translator readiness,
 Policy_Local readiness, production readiness, public readiness, release
 readiness, cost savings, quality improvement, memory reinjection, high-risk
 promotion, or autonomous mutation.

@@ -2813,6 +2813,56 @@
       "manifestPath": null,
       "packetPath": "docs/reviews/CVF_DIR_T2_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_PILOT_COMPLETION_2026-06-13.md",
       "notes": "Focused pytest coverage for synthetic metadata-only sample fixtures across all four EXA-T2 scan dispositions, DIR authorization gate derivation, operator action, downstream eligibility, scan-route passthrough, digest presence, claim-boundary invariants, and use-case leakage prevention."
+    },
+    {
+      "id": "dice-t1-document-intelligence-control-envelope-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation DICE-T1 document intelligence control envelope source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/document_intelligence_control_envelope.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "raw_text (not present - confirmed by no-raw-content test)",
+        "ocr_output (not present - confirmed by no-raw-content test)",
+        "provider_response (not present - confirmed by no-raw-content test)",
+        "Document_Translator external tree (not accessed)",
+        "Policy_Local (not mutated)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "DICE-T1",
+      "scanDate": "2026-06-13",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_COMPLETION_2026-06-13.md",
+      "notes": "Local deterministic Document Intelligence Control Envelope composer that consumes existing DIR, EXA-T2 scan-route, and scan outcome report owner surfaces. No OCR/provider execution, retrieval change, corpus ingestion, public-sync, external use-case tree access, or readiness/cost/quality claim."
+    },
+    {
+      "id": "dice-t1-document-intelligence-control-envelope-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation DICE-T1 document intelligence control envelope tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_document_intelligence_control_envelope.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "raw document text (not asserted or stored)",
+        "OCR execution (not invoked)",
+        "provider call (not invoked)",
+        "Document_Translator external tree (not accessed)",
+        "Policy_Local (not mutated)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "DICE-T1",
+      "scanDate": "2026-06-13",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_COMPLETION_2026-06-13.md",
+      "notes": "Focused pytest coverage for DICE-MC-01 through DICE-MC-10, including owner literal non-redefinition, blocked handoff behavior, operator-review preservation, scan digest and decision version preservation, DIR downstream eligibility passthrough, no new OCR confidence threshold, and scan finding preservation."
     }
   ]
 }

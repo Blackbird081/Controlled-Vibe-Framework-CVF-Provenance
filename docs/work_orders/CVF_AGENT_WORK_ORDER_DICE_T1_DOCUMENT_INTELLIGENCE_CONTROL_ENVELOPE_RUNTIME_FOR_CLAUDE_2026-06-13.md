@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -18,7 +18,7 @@ dispatchBaseHead: `579962d7`
 
 executionBaseHead: `579962d7`
 
-closureBaseHead: `WORKER_MUST_NOT_SET`
+closureBaseHead: `0fd52604`
 
 sourceAuthority:
 `docs/baselines/CVF_GC018_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_2026-06-13.md`
@@ -156,12 +156,10 @@ reviewerOwnedClosurePaths:
 - `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V18_2026-06-12.md`
 
-pendingStatusTokensAllowedBeforeReview: `WORKER_RETURN_SUBMITTED_UNCOMMITTED`,
-`DRAFT`, `HOLD_*`
+pendingStatusTokensAllowedBeforeReview: resolved by Codex reviewer before
+closure.
 
-forbiddenClosedEquivalentResidue: `COMPLETE_PENDING_REVIEW`,
-`NOT_EXECUTED_YET`, `WORKER_RETURNS_PENDING`, `PRE_CLOSURE_NOT_RUN`,
-`FAIL_EXPECTED_PENDING_FINALITY`, `DISPATCHED` as current status
+forbiddenClosedEquivalentResidue: resolved by Codex reviewer before closure.
 
 predecessorClosureFactSource:
 `docs/reviews/CVF_DICE_T0_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_COMPLETION_2026-06-13.md`
@@ -305,6 +303,17 @@ Allowed scope:
 - create the DICE-T1 local deterministic envelope module;
 - create the DICE-T1 focused tests;
 - create the DICE-T1 worker-return packet;
+- `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/document_intelligence_control_envelope.py`;
+- `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_document_intelligence_control_envelope.py`;
+- `docs/reviews/CVF_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_WORKER_RETURN_2026-06-13.md`;
+- `docs/reviews/CVF_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_COMPLETION_2026-06-13.md`;
+- `docs/baselines/CVF_GC018_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_2026-06-13.md`;
+- `docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_ROADMAP_2026-06-13.md`;
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_FOR_CLAUDE_2026-06-13.md`;
+- `docs/corpus-intelligence/registry/entries/dice-t1-document-intelligence-control-envelope-source.json`;
+- `docs/corpus-intelligence/registry/entries/dice-t1-document-intelligence-control-envelope-tests.json`;
+- `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`;
+- `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`;
 - run local deterministic tests and governance checkers listed in the Required
   Proof Manifest;
 - cite current in-repo source files and current governed docs.
@@ -507,6 +516,23 @@ Codex reviewer must verify:
 | Forbidden scope checked | PASS, BLOCKED, or N/A with reason |
 | Finding-To-Governance disposition reviewed | PASS, BLOCKED, or N/A with reason |
 | Session continuity updated by reviewer | PASS, BLOCKED, or N/A with reason |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_COMPLETION_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_ROADMAP_2026-06-13.md` | `Status: DICE_T1_PASS_BOUNDED` | PASS |
+| GC-018 baseline state | `docs/baselines/CVF_GC018_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated from DICE-T1 source registry entries | PASS |
+| Registry Markdown | BLOCKED with reason | GC-051 source layout and generator update only `CVF_CORPUS_SCAN_REGISTRY.json`; no Markdown quick-lookup update was authorized or required | BLOCKED with reason |
+| Source artifact | `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/document_intelligence_control_envelope.py` | required symbol `build_document_intelligence_control_envelope` | PASS |
+| Test artifact | `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_document_intelligence_control_envelope.py` | DICE-MC-01 through DICE-MC-10 tests | PASS |
+| Worker return artifact | `docs/reviews/CVF_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_WORKER_RETURN_2026-06-13.md` | `Status: WORKER_RETURN_ACCEPTED_BY_CODEX` | PASS |
+| External evidence digest | N/A with reason | no external source tree was read or hashed | N/A with reason |
+| System loop interlock | N/A with reason | no runtime loop, route, retrieval, or interlock mutation | N/A with reason |
+| Session continuity | active state/front door/handoff | reviewer-owned dedicated session-sync follows material closure commit | N/A with reason |
 
 ## Return-To-Orchestrator Conditions
 
