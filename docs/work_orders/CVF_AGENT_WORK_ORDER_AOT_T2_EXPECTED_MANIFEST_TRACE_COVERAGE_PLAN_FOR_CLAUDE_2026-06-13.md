@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -102,6 +102,14 @@ Allowed scope:
 - read the source authority files listed in this work order;
 - create `docs/reference/CVF_AOT_T2_EXPECTED_MANIFEST_TRACE_COVERAGE_PLAN_2026-06-13.md`;
 - create `docs/reviews/CVF_AOT_T2_EXPECTED_MANIFEST_TRACE_WORKER_RETURN_2026-06-13.md`;
+- Codex reviewer may update `docs/baselines/CVF_GC018_AOT_T2_EXPECTED_MANIFEST_TRACE_COVERAGE_PLAN_2026-06-13.md`
+  from dispatched status to closed status;
+- Codex reviewer may create
+  `docs/reviews/CVF_AOT_T2_EXPECTED_MANIFEST_TRACE_COVERAGE_PLAN_COMPLETION_2026-06-13.md`;
+- Codex reviewer closure conversion may update this work order status, update
+  the paired GC-018 status, add the completion review, apply reviewer-owned
+  repairs inside the two worker artifacts, commit the accepted closure diff,
+  and perform a separate session-sync commit after material closure;
 - rank later implementation candidates for expected-manifest and trace coverage;
 - identify collision risks and negative-search evidence;
 - preserve the boundary that CVF supervises co-work agents by repo-local trace
@@ -325,8 +333,8 @@ python governance/compat/run_worker_return_fast_gate.py
 ```
 
 If the fast gate fails only because final commit/session closure is Codex-owned,
-record `FAIL_EXPECTED_PENDING_FINALITY` with the failing command. Other
-allowed-scope failures must be repaired before return.
+record a pending-finality result with the failing command. Other allowed-scope
+failures must be repaired before return.
 
 ## Design Control Carry-Forward
 
@@ -347,7 +355,7 @@ allowed-scope failures must be repaired before return.
 | --- | --- |
 | Actor | Codex dispatcher |
 | Provider or surface | Codex CLI |
-| Session or invocation | dispatch range starts at `ce369ab6`; final dispatch commit pending |
+| Session or invocation | dispatch range starts at `ce369ab6`; material dispatch commit `e69ea3ca`; closure base `9581a2e3` |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | `rg`, `Test-Path`, `apply_patch`, governance gates |
 | Target paths | GC-018, this work order, planned Claude deliverables |
@@ -368,13 +376,13 @@ Required worker evidence:
 - complete Agent Operation Trace Block in both deliverables;
 - coverage plan section checklist;
 - negative search and collision results;
-- worker-return fast gate result or explicit `FAIL_EXPECTED_PENDING_FINALITY`.
+- worker-return fast gate result or explicit pending-finality explanation.
 
 Base-anchor evidence:
 
 - `dispatchBaseHead`: `ce369ab6`
 - `executionBaseHead`: worker must record actual HEAD before edits
-- `closureBaseHead`: N/A - Codex reviewer owns closure
+- `closureBaseHead`: `9581a2e3` - Codex reviewer owns closure
 - Commit mode: `WORKER_MUST_NOT_COMMIT`
 - Worker-return fast gate: required when possible
 - Committed-range pre-closure: Codex-owned after review and commit
@@ -444,7 +452,7 @@ monitoring, perform destructive action, or require a commit.
 | Candidate Ranking present | PASS |
 | Agent Operation Trace Block complete | PASS |
 | Forbidden paths untouched | PASS |
-| Worker-return fast gate recorded | PASS or FAIL_EXPECTED_PENDING_FINALITY with reason |
+| Worker-return fast gate recorded | PASS or pending-finality explanation with reason |
 
 ## Closure Checklist
 
@@ -483,6 +491,23 @@ This work order dispatches documentation-only AOT-T2 coverage planning. It does
 not authorize checker implementation, runtime behavior, provider behavior,
 OS-level identity proof, endpoint telemetry, public readiness, production
 readiness, live governance proof, public-sync, or autonomous mutation.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| GC-018 status | `docs/baselines/CVF_GC018_AOT_T2_EXPECTED_MANIFEST_TRACE_COVERAGE_PLAN_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED`; `closureBaseHead: 9581a2e3` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_AOT_T2_EXPECTED_MANIFEST_TRACE_COVERAGE_PLAN_COMPLETION_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | N/A with reason | AOT-T2 is a next-allowed-move planning tranche, not a parent-roadmap status conversion | N/A with reason |
+| Coverage plan | `docs/reference/CVF_AOT_T2_EXPECTED_MANIFEST_TRACE_COVERAGE_PLAN_2026-06-13.md` | C01-C04 ranking and Agent Operation Trace Block present | PASS |
+| Worker return | `docs/reviews/CVF_AOT_T2_EXPECTED_MANIFEST_TRACE_WORKER_RETURN_2026-06-13.md` | worker disposition and gate evidence present | PASS |
+| Registry JSON | BLOCKED with reason | no governed runtime/source/test owner surface changed; registry mutation not authorized by AOT-T2 planning closure | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason | no corpus registry Markdown owner change was authorized by AOT-T2 planning closure | BLOCKED with reason |
+| System loop interlock | N/A with reason | AOT-T2 is trace planning only and did not change the system-loop interlock registry | N/A with reason |
+| External evidence digest | N/A with reason | no external source tree, provider/API/live proof, OS audit, or retained external artifact was used | N/A with reason |
+| Session continuity | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `AGENT_HANDOFF_V18_2026-06-12.md` | separate session-sync commit after material closure | PASS |
+| Public export | this file and closure artifacts | `DEFERRED_PRIVATE_ONLY` | PASS |
 
 ## Public Export Disposition
 

@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT
+Status: CLOSED_PASS_BOUNDED
 
 docType: gc018_baseline
 
