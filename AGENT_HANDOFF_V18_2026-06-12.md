@@ -30,8 +30,8 @@ Startup acknowledged: current mode=`fpc_t1_foundation_planes_workflow_chain_syst
 
 `fpc_t1_foundation_planes_workflow_chain_system_audit_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `91e8f10f`
-(FPC-T1 foundation audit material closure commit; this dedicated session-sync follows).
+Current HEAD recorded for this handoff: `d6c31c6d`
+(provider-specific source authority boundary cleanup commit; this dedicated session-sync follows).
 
 ## Active Boundary
 
