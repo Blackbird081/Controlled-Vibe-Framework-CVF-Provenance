@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-13
 
-Current mode marker: `fpc_t2_system_loop_interlock_expansion_decision_closed_pass_bounded`
+Current mode marker: `fpc_t3_foundation_checker_template_coverage_plan_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `fpc_t2_system_loop_interlock_expansion_decision_closed_pass_bounded`.
+Current mode: `fpc_t3_foundation_checker_template_coverage_plan_dispatched`.
 
 Active handoff:
 
@@ -58,157 +58,41 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-FPC-T2 system-loop interlock expansion decision is `CLOSED_PASS_BOUNDED` at
-material closure commit `c12c65b1` from closure base `1831606b`.
+FPC-T3 foundation checker/template/standard coverage plan is
+`DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT` at material dispatch commit
+`b6a06e70` from dispatch base `6047e18f`.
 
-Closure artifacts:
+Dispatch artifacts:
 
 - GC-018:
-  `docs/baselines/CVF_GC018_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_2026-06-13.md`;
+  `docs/baselines/CVF_GC018_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_PLAN_2026-06-13.md`;
 - Work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_FOR_CLAUDE_2026-06-13.md`;
-- Decision matrix:
-  `docs/reference/CVF_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_MATRIX_2026-06-13.md`;
-- Worker return:
-  `docs/reviews/CVF_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_WORKER_RETURN_2026-06-13.md`;
-- Completion review:
-  `docs/reviews/CVF_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_COMPLETION_2026-06-13.md`;
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_PLAN_FOR_CLAUDE_2026-06-13.md`;
 - Roadmap:
   `docs/roadmaps/CVF_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_COMPLETION_ROADMAP_2026-06-13.md`.
 
-Decision result: FPC-T2-C01 through FPC-T2-C04 are proposal-only
-`ADD_INTERLOCK_ENTRY` decisions requiring a later fresh GC-018/source-verified
-registry-edit work order. FPC-T2-C05 is `MACHINE_CHECK_FIRST` and requires
-FPC-T3-C01 before any registry entry.
+Next allowed move: Claude worker return only. Claude may create only
+`docs/reference/CVF_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_PLAN_2026-06-13.md`
+and
+`docs/reviews/CVF_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_WORKER_RETURN_2026-06-13.md`
+under `WORKER_MUST_NOT_COMMIT`.
 
-Next allowed move: fresh authorization only - either a registry-edit work order
-for C01-C04 proposal-only interlocks, or FPC-T3 through a fresh
-GC-018/source-verified work order to plan checker/template/standard coverage.
-No registry edit or FPC-T3 implementation is authorized by this closure.
+Claude must evaluate FPC-T3-C01 through FPC-T3-C07. C07 is design-only for
+workspace-integrity and agent-operation-audit controls. Codex owns review,
+allowed reviewer repairs, final gates, commit, and session sync.
 
----
-
-Worker-return fast gate latency hardening is `CLOSED_PASS_BOUNDED`.
-
-Material closure commit: `5e605862`.
-
-Closure artifacts:
-
-- Completion review:
-  `docs/reviews/CVF_WORKER_RETURN_FAST_GATE_LATENCY_HARDENING_COMPLETION_2026-06-13.md`;
-- Worker-return fast gate runner:
-  `governance/compat/run_worker_return_fast_gate.py`;
-- Changed source/test registry coverage checker:
-  `governance/compat/check_changed_corpus_registry_coverage.py`;
-- Hook chain:
-  `governance/compat/run_local_governance_hook_chain.py`.
-
-Result: no-commit workers and reviewers now have a one-command early gate that
-runs focused pytest targets when supplied, registry aggregate drift check,
-`reviewer-fast`, changed governed source/test registry coverage, and diff
-hygiene. `reviewer-fast` and `pre-commit` now include the changed registry
-coverage checker.
-
-Next allowed move: DIR-T2 foundation follow-up may open DICE-T2 only through a
-fresh GC-018 and source-verified work order for an operator-visible document
-control packet sample or another CVF foundation lane.
-
-Boundary: governance-control latency hardening only; no runtime behavior,
-provider routing, OCR behavior, Document Translator source, Policy_Local
-source, public-sync, production readiness, or live governance proof changed.
+No checker implementation, template mutation, registry edit, runtime/source/test
+change, OS audit installation, Sysmon installation, file watcher service,
+destructive broker, agent computer-control permission change, live proof,
+public-sync, downstream app inspection/mutation, raw memory release, or
+autonomous mutation is authorized.
 
 ---
 
-DICE-T1 Document Intelligence Control Envelope runtime work order is
-`CLOSED_PASS_BOUNDED`.
-
-Material closure commit: `d46023d1`.
-
-Closure artifacts:
-
-- Roadmap:
-  `docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_ROADMAP_2026-06-13.md`;
-- GC-018:
-  `docs/baselines/CVF_GC018_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_2026-06-13.md`;
-- Work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_FOR_CLAUDE_2026-06-13.md`;
-- Worker return:
-  `docs/reviews/CVF_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_WORKER_RETURN_2026-06-13.md`;
-- Completion review:
-  `docs/reviews/CVF_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_COMPLETION_2026-06-13.md`;
-- Runtime source:
-  `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/document_intelligence_control_envelope.py`;
-- Focused tests:
-  `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_document_intelligence_control_envelope.py`.
-
-Result: Codex accepted the no-commit worker return after allowed-scope repairs,
-added completion evidence, registered the new source/test corpus entries, and
-committed the bounded DICE-T1 closure.
-
-DICE-MC-08 DIR eligibility passthrough invariant is covered by deterministic
-tests in the DICE-T1 runtime test harness.
-
-Next allowed move: DIR-T2 foundation follow-up may open DICE-T2 only through a
-fresh GC-018 and source-verified work order for an operator-visible document
-control packet sample or another CVF foundation lane.
-
-Boundary: DICE-T1 closure only; no external Document_Translator inspection or
-mutation, Policy_Local mutation, OCR/provider API/live proof, retrieval route
-wiring, public-sync, T12 unlock, readiness/cost/quality claim, memory
-reinjection, high-risk promotion, or autonomous mutation is authorized.
-
----
-
-DIR-T0 Document Intelligence Router contract matrix is
-`CLOSED_PASS_BOUNDED`.
-
-Material closure commit: `082b02ff`.
-
-Closure artifacts:
-
-- GC-018:
-  `docs/baselines/CVF_GC018_DIR_T0_DOCUMENT_INTELLIGENCE_ROUTER_CONTRACT_MATRIX_2026-06-13.md`;
-- work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_DIR_T0_DOCUMENT_INTELLIGENCE_ROUTER_CONTRACT_MATRIX_FOR_CLAUDE_2026-06-13.md`;
-- contract matrix:
-  `docs/reference/CVF_DOCUMENT_INTELLIGENCE_ROUTER_CONTRACT_MATRIX_2026-06-13.md`;
-- worker return:
-  `docs/reviews/CVF_DIR_T0_DOCUMENT_INTELLIGENCE_ROUTER_CONTRACT_MATRIX_WORKER_RETURN_2026-06-13.md`;
-- completion:
-  `docs/reviews/CVF_DIR_T0_DOCUMENT_INTELLIGENCE_ROUTER_CONTRACT_MATRIX_COMPLETION_2026-06-13.md`;
-- roadmap:
-  `docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_ROADMAP_2026-06-13.md`.
-
-Result: DIR-T0 creates a doc-only Document Intelligence Router foundation
-contract matrix for input signals, route decisions, routing outcome groups,
-and use-case adapter mapping. It preserves EXA-T2 scan-route ownership, blocks
-use-case names from foundation capability enums, and keeps Document Translator
-and Policy_Local as downstream adapter lanes.
-
-Boundary: no runtime implementation, external repo edit, code import,
-dependency install, OCR/provider/API execution, retrieval behavior change,
-corpus ingestion, public-sync, readiness, cost, or quality claim is authorized.
-
-Document Translator CVF control adaptation roadmap is
-`PROPOSED_READY_FOR_FRESH_AUTHORIZATION`.
-
-Material commit: `db59d570`.
-
-Roadmap:
-
-`docs/roadmaps/CVF_DOCUMENT_TRANSLATOR_CONTROL_ADAPTATION_ROADMAP_2026-06-13.md`
-
-Result: Document Translator is now a separate downstream CVF-controlled
-use-case lane, similar to Policy_Local, while CVF foundation quality remains
-priority one. DT-CVF-T0 remains eligible only through later fresh GC-018 and a
-source-verified work order for source custody, repo inventory, secret-safety,
-and control-baseline audit of
-`D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Document_Translator`.
-
-Boundary: no external repo edit, code import, dependency install, OCR/provider
-execution, Document Translator data mutation, Policy_Local mutation, EC
-activation, retrieval, corpus ingestion, public-sync, T12 unlock, readiness,
-cost, or quality claim is authorized.
+Prior detailed continuity for worker-return fast gate, DICE/DIR, Document
+Translator roadmap, MEMCON, DSCP, and LPCI2 lanes is preserved in the active
+state registry and governed completion artifacts. This front door is kept as a
+compact pointer record; do not re-expand old tranche history here.
 
 MEMCON-T5 Cross-agent memory consistency contract is `CLOSED_PASS_BOUNDED`.
 
@@ -1076,18 +960,24 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: FPC-T2 is `CLOSED_PASS_BOUNDED` at material closure commit
-`c12c65b1`. Fresh authorization only:
+Next allowed move: FPC-T3 is
+`DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT` at material dispatch commit
+`b6a06e70`. Claude worker return only:
 
-- open a source-verified registry-edit work order for FPC-T2-C01 through
-  FPC-T2-C04 proposal-only interlock entries; or
-- open FPC-T3 only through a fresh GC-018/source-verified work order to plan
-  checker/template/standard coverage, with FPC-T3-C01 required before any
-  FPC-T2-C05 registry entry.
+- create
+  `docs/reference/CVF_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_PLAN_2026-06-13.md`;
+- create
+  `docs/reviews/CVF_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_WORKER_RETURN_2026-06-13.md`;
+- evaluate FPC-T3-C01 through FPC-T3-C07;
+- keep FPC-T3-C07 design-only for workspace-integrity and
+  agent-operation-audit controls.
 
-Registry edits, FPC-T3 implementation, runtime/source/test changes,
-DICE-T3/provider/OCR/live-proof work, public-sync, external Document_Translator
-inspection or mutation, and Policy_Local mutation are not authorized.
+Codex owns review, allowed reviewer repairs, final gates, commit, and session
+sync. Registry edits, FPC-T3 implementation, runtime/source/test changes,
+OS audit installation, Sysmon installation, file watcher services, destructive
+brokers, agent computer-control permission changes, DICE-T3/provider/OCR/live
+proof work, public-sync, external Document_Translator inspection or mutation,
+and Policy_Local mutation are not authorized.
 
 DIR-T2 Document Intelligence Router foundation pilot remains
 `CLOSED_PASS_BOUNDED` at material closure commit `e3395acc`. Closure artifacts:
