@@ -24,14 +24,14 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`legacy_coverage_index_dispatch_guard_closed_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=fresh rewritten C-02 planning packet or work order only, citing the Model Gateway legacy recheck plan and completion review and satisfying the legacy coverage-index dispatch guard; parked checkpoint=implementation, runtime/provider/live-proof, Model Gateway implementation, Sandbox Runtime implementation, AI Gateway environment-signal absorption, registry mutation outside required coverage-index disposition evidence, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
+Startup acknowledged: current mode=`model_gateway_c02_rewrite_work_order_dispatched`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=await Claude `COMPLETE_PENDING_REVIEW` for the dispatched Model Gateway C-02 rewrite work order and exactly two worker deliverables; parked checkpoint=implementation, runtime/provider/live-proof, Model Gateway implementation, Sandbox Runtime implementation, AI Gateway environment-signal absorption, registry mutation, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
 
 ## Current Mode
 
-`legacy_coverage_index_dispatch_guard_closed_bounded`
+`model_gateway_c02_rewrite_work_order_dispatched`
 
-Current HEAD recorded for this handoff: `da725c1a`
-(Legacy coverage-index dispatch guard trace-alignment commit; this dedicated
+Current HEAD recorded for this handoff: `2d77e67a`
+(Model Gateway C-02 rewrite work order dispatch commit; this dedicated
 handoff/state sync follows).
 
 ## Active Boundary
@@ -58,6 +58,7 @@ Protected paths:
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/legacyCoverageIndexDispatchGuardHardening20260614.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
+- `CVF_SESSION/state/entries/modelGatewayC02ProviderRoutingBoundaryRewriteDispatch20260614.json`
 - `CVF_SESSION/state/entries/modelGatewayEpfProviderRoutingBoundaryPlanningDispatch20260613.json`
 - `CVF_SESSION/state/entries/modelGatewayLegacyAbsorptionGapHold20260613.json`
 - `CVF_SESSION/state/entries/modelGatewayLegacyCoverageIndexDispatch20260613.json`
@@ -72,6 +73,22 @@ guard commit `3423d82e`, Model Gateway recheck closure commit `5be35102`,
 material correction commit `919afd4e`, or material dispatch commit `a4cfb246`.
 
 ## Latest Continuity Note
+
+Model Gateway C-02 Provider Routing Boundary Rewrite work order is
+`DISPATCHED_PENDING_WORKER_RETURN` at dispatch commit `2d77e67a`.
+
+Work order:
+
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_PROVIDER_ROUTING_BOUNDARY_REWRITE_FOR_CLAUDE_2026-06-14.md`
+
+Worker deliverables expected from Claude:
+
+- `docs/reference/CVF_MODEL_GATEWAY_C02_PROVIDER_ROUTING_BOUNDARY_REWRITE_PLAN_2026-06-14.md`;
+- `docs/reviews/CVF_MODEL_GATEWAY_C02_PROVIDER_ROUTING_BOUNDARY_REWRITE_WORKER_RETURN_2026-06-14.md`.
+
+Codex owns review, completion review, closure gates, commits, and session sync
+after worker return. The old C-02 Model Gateway EPF provider-routing boundary
+planning packet must not resume as-is.
 
 Legacy coverage-index dispatch guard hardening is `CLOSED_PASS_BOUNDED` at
 material commit `3423d82e`. The dispatch-quality checker now requires
@@ -724,20 +741,21 @@ acceleration material commit `bd15e0ae`, MEMCON-T1a material closure commit
 
 ## Next Allowed Move
 
-Next allowed move: C-02 Model Gateway planning may resume only through a fresh
-rewritten planning packet or work order citing the Model Gateway legacy recheck
-plan, completion review at material closure commit `5be35102`, and satisfying
-the legacy coverage-index dispatch guard closed at material commit `3423d82e`.
+Next allowed move: await Claude `COMPLETE_PENDING_REVIEW` for the Model Gateway
+C-02 rewrite work order dispatched at commit `2d77e67a`. Expected worker
+deliverables are exactly:
 
-The old C-02 Model Gateway EPF provider-routing boundary planning packet must
-not resume as-is.
+- `docs/reference/CVF_MODEL_GATEWAY_C02_PROVIDER_ROUTING_BOUNDARY_REWRITE_PLAN_2026-06-14.md`;
+- `docs/reviews/CVF_MODEL_GATEWAY_C02_PROVIDER_ROUTING_BOUNDARY_REWRITE_WORKER_RETURN_2026-06-14.md`.
+
+Codex owns review, completion review, closure gates, commits, and session sync
+after worker return.
 
 No old C-02 packet reuse, implementation, runtime/source/test mutation,
 provider/API use, live governance proof, provider/model addition, registry
-mutation outside required coverage-index disposition evidence, public-sync,
-external Document_Translator inspection or mutation, Policy_Local mutation, OS
-audit, endpoint monitoring, T12, raw memory release, co-work product
-development, or autonomous mutation is authorized.
+mutation, public-sync, external Document_Translator inspection or mutation,
+Policy_Local mutation, OS audit, endpoint monitoring, T12, raw memory release,
+co-work product development, or autonomous mutation is authorized.
 
 DT-CVF-T0 may be opened only through later fresh GC-018 and a source-verified
 work order for Document Translator source custody, repo inventory,

@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-14
 
-Current mode marker: `legacy_coverage_index_dispatch_guard_closed_bounded`
+Current mode marker: `model_gateway_c02_rewrite_work_order_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `legacy_coverage_index_dispatch_guard_closed_bounded`.
+Current mode: `model_gateway_c02_rewrite_work_order_dispatched`.
 
 Active handoff:
 
@@ -57,6 +57,22 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+Model Gateway C-02 Provider Routing Boundary Rewrite work order is
+`DISPATCHED_PENDING_WORKER_RETURN` at dispatch commit `2d77e67a`.
+
+Work order:
+
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_PROVIDER_ROUTING_BOUNDARY_REWRITE_FOR_CLAUDE_2026-06-14.md`
+
+Worker deliverables expected from Claude:
+
+- `docs/reference/CVF_MODEL_GATEWAY_C02_PROVIDER_ROUTING_BOUNDARY_REWRITE_PLAN_2026-06-14.md`;
+- `docs/reviews/CVF_MODEL_GATEWAY_C02_PROVIDER_ROUTING_BOUNDARY_REWRITE_WORKER_RETURN_2026-06-14.md`.
+
+Codex owns review, completion review, closure gates, commits, and session sync
+after worker return. The old C-02 Model Gateway EPF provider-routing boundary
+planning packet must not resume as-is.
 
 Legacy coverage-index dispatch guard hardening is `CLOSED_PASS_BOUNDED` at
 material commit `3423d82e`. Ready/dispatch work orders that are both
@@ -980,20 +996,21 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: C-02 Model Gateway planning may resume only through a fresh
-rewritten planning packet or work order citing the Model Gateway legacy recheck
-plan, completion review at material closure commit `5be35102`, and satisfying
-the legacy coverage-index dispatch guard closed at material commit `3423d82e`.
+Next allowed move: await Claude `COMPLETE_PENDING_REVIEW` for the Model Gateway
+C-02 rewrite work order dispatched at commit `2d77e67a`. Expected worker
+deliverables are exactly:
 
-The old C-02 Model Gateway EPF provider-routing boundary planning packet must
-not resume as-is.
+- `docs/reference/CVF_MODEL_GATEWAY_C02_PROVIDER_ROUTING_BOUNDARY_REWRITE_PLAN_2026-06-14.md`;
+- `docs/reviews/CVF_MODEL_GATEWAY_C02_PROVIDER_ROUTING_BOUNDARY_REWRITE_WORKER_RETURN_2026-06-14.md`.
 
-No old C-02 boundary plan reuse, implementation, runtime/source/test mutation,
+Codex owns review, completion review, closure gates, commits, and session sync
+after worker return.
+
+No old C-02 packet reuse, implementation, runtime/source/test mutation,
 provider/API use, live governance proof, provider/model addition, registry
-mutation outside the required coverage-index disposition evidence, public-sync,
-external Document_Translator inspection or mutation, Policy_Local mutation, OS
-audit, endpoint monitoring, T12, raw memory release, co-work product
-development, or autonomous mutation is authorized.
+mutation, public-sync, external Document_Translator inspection or mutation,
+Policy_Local mutation, OS audit, endpoint monitoring, T12, raw memory release,
+co-work product development, or autonomous mutation is authorized.
 
 DIR-T2 Document Intelligence Router foundation pilot remains
 `CLOSED_PASS_BOUNDED` at material closure commit `e3395acc`. Closure artifacts:
