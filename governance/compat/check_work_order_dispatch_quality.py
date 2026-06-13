@@ -109,6 +109,7 @@ NEGATIVE_SEARCH_TOKEN_STOPWORDS = {
     "TEST",
     "TESTS",
 }
+VERIFIED_LINE_RE = re.compile(r"\bline\s+(\d+)\b", re.IGNORECASE)
 IMPLEMENTATION_ROLE_TOKENS = {"worker", "implementer", "executor", "builder", "coder"}
 REVIEW_ROLE_TOKENS = {"reviewer", "committer", "closer", "auditor"}
 ORCHESTRATION_ROLE_TOKENS = {"orchestrator", "planner", "dispatcher"}
@@ -960,6 +961,55 @@ def _source_has_verified_symbol(source_text: str, symbol: str) -> bool:
     return re.search(rf"\b{re.escape(parts[0])}\b", source_text) is not None
 
 
+def _extract_verified_line_number(value: str) -> int | None:
+    match = VERIFIED_LINE_RE.search(value)
+    if not match:
+        return None
+    try:
+        return int(match.group(1))
+    except ValueError:
+        return None
+
+
+def _symbol_definition_line(source_path: str, source_text: str, symbol: str) -> int | None:
+    parts = _symbol_identifier_parts(symbol)
+    if not parts:
+        return None
+    name = parts[-1]
+    suffix = Path(source_path).suffix.lower()
+    if suffix == ".py":
+        pattern = re.compile(
+            rf"^\s*(?:async\s+def|def|class)\s+{re.escape(name)}\b",
+            re.MULTILINE,
+        )
+    elif suffix in {".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs"}:
+        pattern = re.compile(
+            rf"^\s*(?:export\s+)?(?:default\s+)?(?:(?:async\s+)?function|class|interface|type|const|let|var)\s+{re.escape(name)}\b",
+            re.MULTILINE,
+        )
+    else:
+        return None
+    match = pattern.search(source_text)
+    if not match:
+        return None
+    return source_text.count("\n", 0, match.start()) + 1
+
+
+def _validate_verified_line_anchor(source_path: str, source_text: str, row: dict[str, str]) -> str | None:
+    cited_line = _extract_verified_line_number(row.get("Verified line/section", ""))
+    if cited_line is None:
+        return None
+    symbol = row.get("Verified path or symbol", "").strip().strip("`")
+    definition_line = _symbol_definition_line(source_path, source_text, symbol)
+    if definition_line is None or cited_line == definition_line:
+        return None
+    return (
+        "Source Verification ACCEPT row cites "
+        f"`{symbol}` at line {cited_line}, but `{source_path}` defines it at line {definition_line}; "
+        "cite the symbol definition line, not a continuation or interior signature line"
+    )
+
+
 def _validate_false_invariant_against_source(
     source_path: str,
     source_text: str,
@@ -1658,6 +1708,9 @@ def _validate_accepted_source_rows(path: str, text: str) -> list[str]:
                     f"`{verified_symbol.strip().strip('`')}` but `{source_path}` does not contain that symbol "
                     "under the verified owner/path"
                 )
+            line_issue = _validate_verified_line_anchor(source_path, source_text, row)
+            if line_issue:
+                issues.append(line_issue)
             false_issue = _validate_false_invariant_against_source(source_path, source_text, row)
             if false_issue:
                 issues.append(false_issue)

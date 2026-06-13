@@ -549,7 +549,9 @@ protected-path authorization hardening closure session sync, the
 operator-requested post-review continuity/test hardening fix, the
 next-allowed-move semantic alignment guard, the DIR-T2 dispatch session-sync,
 the DIR-T2 closure session-sync, this DICE-T0 dispatch session-sync, and this
-DICE-T0 closure session-sync without
+DICE-T0 closure session-sync, plus the operator-requested DICE-T0 finding
+promotion hardening for source-verification line anchors and forbidden
+filesystem-state regression coverage without
 changing governance semantics, and keep the generated active-session aggregate
 aligned with its per-entry source files.
 This scope also covers the dispatch-quality checker change to
@@ -571,6 +573,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/diceT0DocumentIntelligenceControlEnvelopeClosure20260613.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
+- `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
 - `governance/compat/check_active_session_state.py`
 - `governance/compat/test_check_active_session_state.py`
 - `governance/compat/check_work_order_dispatch_quality.py`
@@ -587,7 +590,9 @@ hardening and asked Codex to audit, process, and issue the Claude work order,
 then returned the DIR-T2 worker artifacts for Codex review and commit, then
 asked Codex to continue opening a CVF foundation roadmap and create a Claude
 work order, then returned the DICE-T0 worker artifacts for Codex review and
-commit.
+commit, then asked Codex to promote the resulting orchestrator findings into
+CVF foundation hardening so future orchestrators handle the same cases
+consistently.
 The hardening-batch GC-018 explicitly authorized the
 `governance/compat/check_work_order_dispatch_quality.py` validator addition and
 carries its own Core Guard Self-Protection Authorization. The mandatory
@@ -597,9 +602,11 @@ sources after closure.
 Rollback boundary: revert only this hardening closure session sync, the
 post-review continuity/test hardening fix, the DIR-T2 dispatch session-sync,
 the DIR-T2 closure session-sync, this DICE-T0 dispatch session-sync, or this
-DICE-T0 closure session-sync if the continuity markers, semantic
-next-allowed-move alignment guard, regression coverage, or closure pointers
-are incorrect. Do not revert
+DICE-T0 closure session-sync, or this DICE-T0 finding-promotion hardening if
+the source-verification line-anchor check, forbidden-filesystem-state
+regression coverage, template guidance, continuity markers, semantic
+next-allowed-move alignment guard, regression coverage, or closure pointers are
+incorrect. Do not revert
 hardening material closure
 commit `30e7e888`, DIR-T1 session-sync `4c803586`, DIR-T1 material closure
 commit `4bf991f3`, DIR-T0 material closure commit

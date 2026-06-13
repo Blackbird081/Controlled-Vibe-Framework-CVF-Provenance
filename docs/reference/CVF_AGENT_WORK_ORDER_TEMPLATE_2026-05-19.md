@@ -449,6 +449,9 @@ Rules:
   file. Dotted symbols must exist under the cited owner/interface/class; if the
   owner does not contain that field or method, correct the symbol or use
   `REJECT` / `BLOCKED_SOURCE_NOT_FOUND`.
+- For code symbols, `Verified line/section` must cite the symbol definition
+  line, not a continuation line inside a multiline function signature,
+  parameter list, type body, or implementation block.
 - `LITERAL_INVARIANT` requires the cited source to declare or assign the value
   literally, for example `field: false` or `field = false`.
 - If the source type is `boolean`, the worker must not claim "`field=false`

@@ -1199,6 +1199,10 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
                     "| Path | Reason |",
                     "|---|---|",
                     f"| `{changed_forbidden}` | forbidden by work order |",
+                    "## Forbidden Filesystem State At Dispatch",
+                    "| Forbidden path | Expected state | Actual state at dispatch | Action if PRESENT |",
+                    "|---|---|---|---|",
+                    f"| `{changed_forbidden}` | ABSENT | ABSENT | N/A |",
                     "## Required Proof Manifest",
                     "| Proof | Path | Required literal | Required at handoff |",
                     "|---|---|---|---|",
@@ -1231,6 +1235,45 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
         )
         self.assertIn(
             f"required proof file is missing: `{proof_path}`",
+            issues,
+        )
+
+    def test_forbidden_path_manifest_requires_dispatch_filesystem_state(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_FORBIDDEN_STATE_TEST_2026-06-13.md"
+        forbidden_path = "EXTENSIONS/CVF_WEB/src/forbidden.ts"
+        self._write(forbidden_path, "export const forbidden = true;\n")
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DISPATCHED_TO_WORKER",
+                    "## Worker Autonomy / No-Question Rule",
+                    "Proceed inside scope.",
+                    "## Work-Order Fulfillment Manifest",
+                    "Manifest applies.",
+                    "## Forbidden Path Manifest",
+                    "| Path | Reason |",
+                    "|---|---|",
+                    f"| `{forbidden_path}` | out of scope |",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order, forbidden_path])
+
+        self.assertFalse(report["compliant"])
+        issues = [
+            issue
+            for violation in report["violations"]
+            if violation["path"] == work_order
+            for issue in violation["issues"]
+        ]
+        self.assertIn(
+            "work order has a Forbidden Path Manifest but is missing "
+            "`## Forbidden Filesystem State At Dispatch` block; "
+            "orchestrator must record disk state of forbidden paths before dispatch",
             issues,
         )
 
@@ -1519,6 +1562,90 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
             "use BLOCKED_SOURCE_NOT_FOUND until the source exists",
             issues,
         )
+
+    def test_source_verification_function_line_anchor_must_cite_definition_line(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_SOURCE_LINE_ANCHOR_TEST_2026-06-13.md"
+        source_path = "governance/compat/example_scan_report.py"
+        self._write(
+            source_path,
+            "\n".join(
+                [
+                    "# Example",
+                    "def build_scan_outcome_report(",
+                    "    raw_scan,",
+                    "    options,",
+                    "):",
+                    "    return raw_scan",
+                    "",
+                ]
+            ),
+        )
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: HOLD_PENDING_GC018",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    f"| Scan outcome builder exists | `{source_path}` | line 4 | `build_scan_outcome_report` | function | ACCEPT |",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        issues = [
+            issue
+            for violation in report["violations"]
+            if violation["path"] == work_order
+            for issue in violation["issues"]
+        ]
+        self.assertIn(
+            "Source Verification ACCEPT row cites `build_scan_outcome_report` at line 4, "
+            f"but `{source_path}` defines it at line 2; cite the symbol definition line, "
+            "not a continuation or interior signature line",
+            issues,
+        )
+
+    def test_source_verification_function_definition_line_passes(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_SOURCE_LINE_ANCHOR_PASS_2026-06-13.md"
+        source_path = "governance/compat/example_scan_report.py"
+        self._write(
+            source_path,
+            "\n".join(
+                [
+                    "# Example",
+                    "def build_scan_outcome_report(",
+                    "    raw_scan,",
+                    "    options,",
+                    "):",
+                    "    return raw_scan",
+                    "",
+                ]
+            ),
+        )
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: HOLD_PENDING_GC018",
+                    "## Source Verification Block",
+                    "| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |",
+                    "|---|---|---|---|---|---|",
+                    f"| Scan outcome builder exists | `{source_path}` | line 2 | `build_scan_outcome_report` | function | ACCEPT |",
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertTrue(report["compliant"])
 
     def test_compliant_hold_packet_passes(self) -> None:
         work_order = "docs/work_orders/CVF_WO_LHW6_T1_TEST_2026-05-28.md"
