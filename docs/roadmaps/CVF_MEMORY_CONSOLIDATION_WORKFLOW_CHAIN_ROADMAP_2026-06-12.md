@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: MEMCON_T4_CLOSED_PASS_BOUNDED
+Status: MEMCON_T5_DISPATCHED
 
 docType: roadmap
 
@@ -376,7 +376,7 @@ Allowed outcomes:
 | MEMCON-T2 | Temporal ambiguity and source-authority checker | MEMCON-T1b closure | CLOSED_PASS_BOUNDED |
 | MEMCON-T3 | Consolidated memory ledger and Markdown-first operator-visible review packet | MEMCON-T2 closure | CLOSED_PASS_BOUNDED |
 | MEMCON-T4 | Retrieval-pack integration boundary and conformance tests | MEMCON-T3 closure | CLOSED_PASS_BOUNDED |
-| MEMCON-T5 | Cross-agent memory consistency contract | MEMCON-T4 closure | READY_FOR_FRESH_AUTHORIZATION |
+| MEMCON-T5 | Cross-agent memory consistency contract | MEMCON-T4 closure | DISPATCHED |
 | PL-S1 | Policy_Local evidence-resolution pilot using Memory Plane outputs | MEMCON foundation decision plus fresh authorization | HOLD_PENDING_MEMCON_DECISION |
 
 ## Work Plan
@@ -577,6 +577,13 @@ Required conformance:
 - source path and confidence included in selected context.
 
 ## MEMCON-T5 Detail
+
+Dispatch artifacts:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_MEMCON_T5_CROSS_AGENT_MEMORY_CONSISTENCY_CONTRACT_2026-06-13.md`;
+- work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T5_CROSS_AGENT_MEMORY_CONSISTENCY_CONTRACT_FOR_CLAUDE_2026-06-13.md`.
 
 Goal: cross-agent consistency.
 
