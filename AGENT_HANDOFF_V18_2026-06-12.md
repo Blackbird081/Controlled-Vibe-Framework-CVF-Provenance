@@ -11,27 +11,27 @@ Supersedes:
 
 ## Purpose
 
-This compact handoff records MEMCON-T5 closure, the next allowed move, and
+This compact handoff records the DIR roadmap draft, the next allowed move, and
 parked operator checkpoints. Detailed history remains in governed completion
 artifacts and archived handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: route the next bounded CVF foundation move after MEMCON-T5 closure.
+Target: route the next bounded CVF foundation move after the DIR roadmap draft.
 
 Owner boundary: this file is a pointer record. Runtime, tests, source maps,
 reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`document_translator_control_adaptation_roadmap_proposed`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=DT-CVF-T0 fresh GC-018/source-verified work order only for Document Translator source custody and control-baseline audit; parked checkpoint=Policy_Local PL-S1, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`document_intelligence_router_foundation_roadmap_draft_for_claude_rebuttal`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=Claude rebuttal of DIR roadmap before Codex finalization; parked checkpoint=DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`document_translator_control_adaptation_roadmap_proposed`
+`document_intelligence_router_foundation_roadmap_draft_for_claude_rebuttal`
 
-Current HEAD recorded for this handoff: `db59d570`
-(Document Translator control adaptation roadmap material commit; this
+Current HEAD recorded for this handoff: `05cb953e`
+(Document Intelligence Router roadmap draft material commit; this
 dedicated session-sync follows).
 
 ## Active Boundary
@@ -46,6 +46,25 @@ Public-facing work remains restricted to the sibling public-sync clone and
 requires separate authorization.
 
 ## Latest Continuity Note
+
+Document Intelligence Router foundation roadmap draft is
+`DRAFT_FOR_CLAUDE_REBUTTAL`.
+
+Material commit: `05cb953e`.
+
+Roadmap:
+
+`docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_ROADMAP_2026-06-13.md`
+
+Result: DIR is proposed as a CVF-owned foundation layer above the existing
+EXA-T2 scan-route contracts. It composes `DocumentScanSignals`,
+`ScanRouteDecision`, `decide_scan_route()`, extraction quality, and scan
+outcome reporting instead of replacing them. The next allowed move is Claude
+rebuttal before Codex finalizes the roadmap.
+
+Boundary: no runtime implementation, external repo edit, code import,
+dependency install, OCR/provider/API execution, retrieval behavior change,
+corpus ingestion, public-sync, readiness, cost, or quality claim is authorized.
 
 Document Translator CVF control adaptation roadmap is
 `PROPOSED_READY_FOR_FRESH_AUTHORIZATION`.
@@ -376,11 +395,13 @@ generated active-state source files are accepted.
 - Planned Document Translator CVF control adaptation at material commit
   `db59d570`; DT-CVF-T0 is eligible only through fresh GC-018 and a
   source-verified work order.
+- Drafted Document Intelligence Router foundation roadmap at material commit
+  `05cb953e`; next move is Claude rebuttal before Codex finalization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: perform the mandatory Document Translator
-roadmap session sync without changing governance semantics, and keep the
+Authorized guard-maintenance scope: perform the mandatory Document Intelligence
+Router roadmap draft session sync without changing governance semantics, and keep the
 generated active-session aggregate aligned with its per-entry source files.
 
 Protected paths:
@@ -388,6 +409,7 @@ Protected paths:
 - `AGENT_HANDOFF_V18_2026-06-12.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/documentIntelligenceRouterFoundationRoadmapDraft20260613.json`
 - `CVF_SESSION/state/entries/documentTranslatorControlAdaptationRoadmap20260613.json`
 - `CVF_SESSION/state/entries/memconT5CrossAgentMemoryConsistencyContractClosure20260613.json`
 - `CVF_SESSION/state/entries/memconT5CrossAgentMemoryConsistencyContractDispatch20260613.json`
@@ -403,12 +425,15 @@ Protected paths:
 
 Operator authorization: the operator stated that CVF foundation quality remains
 priority one and selected Document Translator as a separate downstream
-CVF-controlled use-case repo. The mandatory session-continuity rules require
-synchronized front doors and active state sources before moving to DT-CVF-T0.
+CVF-controlled use-case repo, then requested a detailed Document Intelligence
+Router roadmap for Claude rebuttal before finalization. The mandatory
+session-continuity rules require synchronized front doors and active state
+sources before moving to rebuttal/finalization.
 
-Rollback boundary: revert only this Document Translator roadmap session sync if
-the continuity markers are incorrect. Do not revert Document Translator
-roadmap material commit `db59d570`, MEMCON-T5 material closure commit
+Rollback boundary: revert only this DIR roadmap draft session sync if the
+continuity markers are incorrect. Do not revert DIR roadmap draft material
+commit `05cb953e`, Document Translator roadmap material commit `db59d570`,
+MEMCON-T5 material closure commit
 `caf263f6`, MEMCON-T5 material dispatch commit `f88d56b8`,
 MEMCON-T4 material closure commit `f771bff8`,
 material MEMCON-T4 dispatch commit `892e03ad`,
@@ -421,10 +446,13 @@ acceleration material commit `bd15e0ae`, MEMCON-T1a material closure commit
 
 ## Next Allowed Move
 
-DT-CVF-T0 may be opened only through fresh GC-018 and a source-verified work
-order for Document Translator source custody, repo inventory, secret-safety,
-and control-baseline audit. Policy_Local PL-S1 remains separately held until
-the operator explicitly authorizes it.
+Claude rebuttal of
+`docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_ROADMAP_2026-06-13.md`
+is the next allowed move before Codex finalizes the roadmap. DT-CVF-T0 may be
+opened only through later fresh GC-018 and a source-verified work order for
+Document Translator source custody, repo inventory, secret-safety, and
+control-baseline audit. Policy_Local PL-S1 remains separately held until the
+operator explicitly authorizes it.
 
 Do not edit the external Document Translator repo, mutate external
 Policy_Local, activate EC, wire retrieval routes, invoke OCR or providers,

@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-13
 
-Current mode marker: `document_translator_control_adaptation_roadmap_proposed`
+Current mode marker: `document_intelligence_router_foundation_roadmap_draft_for_claude_rebuttal`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `document_translator_control_adaptation_roadmap_proposed`.
+Current mode: `document_intelligence_router_foundation_roadmap_draft_for_claude_rebuttal`.
 
 Active handoff:
 
@@ -57,6 +57,25 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+Document Intelligence Router foundation roadmap draft is
+`DRAFT_FOR_CLAUDE_REBUTTAL`.
+
+Material commit: `05cb953e`.
+
+Roadmap:
+
+`docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_ROADMAP_2026-06-13.md`
+
+Result: DIR is proposed as a CVF-owned foundation layer above the existing
+EXA-T2 scan-route contracts. It composes `DocumentScanSignals`,
+`ScanRouteDecision`, `decide_scan_route()`, extraction quality, and scan
+outcome reporting instead of replacing them. The next allowed move is Claude
+rebuttal before Codex finalizes the roadmap.
+
+Boundary: no runtime implementation, external repo edit, code import,
+dependency install, OCR/provider/API execution, retrieval behavior change,
+corpus ingestion, public-sync, readiness, cost, or quality claim is authorized.
 
 Document Translator CVF control adaptation roadmap is
 `PROPOSED_READY_FOR_FRESH_AUTHORIZATION`.
@@ -945,10 +964,11 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: DT-CVF-T0 may be opened only through fresh GC-018 and a
-source-verified work order for Document Translator source custody, repo
-inventory, secret-safety, and control-baseline audit. Policy_Local PL-S1
-remains separately held until the operator explicitly authorizes it.
+Next allowed move: send
+`docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_ROADMAP_2026-06-13.md`
+to Claude for rebuttal and return critique before Codex finalizes the roadmap.
+DT-CVF-T0 and Policy_Local PL-S1 remain separately held until the operator
+explicitly authorizes them.
 
 Do not edit the external Document Translator repo, mutate external
 Policy_Local, activate EC, wire retrieval routes, run OCR or provider/API
