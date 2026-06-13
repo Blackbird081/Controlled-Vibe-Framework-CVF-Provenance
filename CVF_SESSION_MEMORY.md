@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-13
 
-Current mode marker: `memcon_t3_consolidated_memory_ledger_operator_packet_closed_pass_bounded`
+Current mode marker: `memcon_t4_retrieval_pack_boundary_conformance_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `memcon_t3_consolidated_memory_ledger_operator_packet_closed_pass_bounded`.
+Current mode: `memcon_t4_retrieval_pack_boundary_conformance_dispatched`.
 
 Active handoff:
 
@@ -58,44 +58,34 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-MEMCON-T3 Consolidated memory ledger and operator packet is
-`CLOSED_PASS_BOUNDED`.
+MEMCON-T4 Retrieval-pack boundary conformance is `DISPATCHED`.
 
-Material closure commit: `2800e83c`.
+Material dispatch commit: `892e03ad`.
 
-Closure artifacts:
+Dispatch artifacts:
 
 - GC-018:
-  `docs/baselines/CVF_GC018_MEMCON_T3_CONSOLIDATED_MEMORY_LEDGER_OPERATOR_PACKET_2026-06-13.md`;
+  `docs/baselines/CVF_GC018_MEMCON_T4_RETRIEVAL_PACK_BOUNDARY_CONFORMANCE_2026-06-13.md`;
 - work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T3_CONSOLIDATED_MEMORY_LEDGER_OPERATOR_PACKET_FOR_CLAUDE_2026-06-13.md`;
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T4_RETRIEVAL_PACK_BOUNDARY_CONFORMANCE_FOR_CLAUDE_2026-06-13.md`;
 - roadmap:
-  `docs/roadmaps/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_ROADMAP_2026-06-12.md`;
-- contract:
-  `docs/reference/CVF_MEMORY_CONSOLIDATION_LEDGER_OPERATOR_PACKET_CONTRACT_2026-06-13.md`;
-- sample packet:
-  `docs/reviews/CVF_MEMCON_T3_OPERATOR_MEMORY_REVIEW_PACKET_SAMPLE_2026-06-13.md`;
-- worker return:
-  `docs/reviews/CVF_MEMCON_T3_CONSOLIDATED_MEMORY_LEDGER_OPERATOR_PACKET_WORKER_RETURN_2026-06-13.md`;
-- completion:
-  `docs/reviews/CVF_MEMCON_T3_CONSOLIDATED_MEMORY_LEDGER_OPERATOR_PACKET_COMPLETION_2026-06-13.md`.
+  `docs/roadmaps/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_ROADMAP_2026-06-12.md`.
 
-Result: MEMCON now has a Markdown-first operator-visible memory review packet
-contract and bounded sample fixture distinguishing active, new candidate,
-conflict, stale/outdated, pruned/rejected, and temporal ambiguity categories
-while preserving `rawMemoryReleased=false`.
+Assignment: Claude must implement the allowed-scope T4 helper, focused tests,
+and worker-return packet under `WORKER_MUST_NOT_COMMIT`, then return
+uncommitted artifacts for Codex review and commit.
 
-Verification: MEMCON checker PASS on `cb0b1b3c..HEAD`; machine closure package
-PASS; reviewer-fast PASS 13/13; pre-commit governance chain PASS 38/38;
-pre-closure substantive gates PASS, with session-sync required for handoff
-HEAD continuity.
+Verification before dispatch commit: MEMCON checker PASS; work-order dispatch
+quality PASS; pre-dispatch autorun PASS; reviewer-fast PASS 13/13;
+pre-commit governance chain PASS 38/38.
 
-Next allowed move: MEMCON-T4 may be opened only through a fresh GC-018 and
-source-verified work order for retrieval-pack boundary and conformance tests.
+Next allowed move: Claude executes MEMCON-T4 under `WORKER_MUST_NOT_COMMIT`
+and returns uncommitted allowed-scope artifacts for Codex review.
 
-Boundary: T3 closes documentation and fixture design only. No runtime memory
-implementation, storage, retrieval behavior change, provider/API proof, OCR,
-Policy_Local mutation, EC activation outside later T4 authority, corpus
+Boundary: T4 dispatch authorizes only a bounded Learning Plane helper and
+focused conformance tests. No existing retrieval policy/runtime workflow
+mutation, route/API wiring, durable storage, provider/API proof, OCR,
+Policy_Local mutation, EC activation beyond T4 helper boundary, corpus
 ingestion, public-sync, T12 unlock, readiness claim, memory reinjection,
 high-risk promotion, generated JSON aggregate hand-editing, or autonomous
 mutation is authorized.
@@ -922,8 +912,9 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: MEMCON-T4 may be opened only through a fresh GC-018 and
-source-verified work order for retrieval-pack boundary and conformance tests.
+Next allowed move: Claude executes MEMCON-T4 under `WORKER_MUST_NOT_COMMIT`
+and returns uncommitted allowed-scope helper, focused tests, and worker-return
+artifacts for Codex review.
 Policy_Local PL-S1 remains held until the operator explicitly decides the
 MEMCON foundation is sufficient for downstream use-case work.
 
