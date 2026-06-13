@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-13
 
-Current mode marker: `fpc_t3_foundation_checker_template_coverage_plan_dispatched`
+Current mode marker: `fpc_t3_foundation_checker_template_coverage_plan_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `fpc_t3_foundation_checker_template_coverage_plan_dispatched`.
+Current mode: `fpc_t3_foundation_checker_template_coverage_plan_closed_pass_bounded`.
 
 Active handoff:
 
@@ -59,27 +59,28 @@ Pain-point closure direction:
 ## Latest Continuity Note
 
 FPC-T3 foundation checker/template/standard coverage plan is
-`DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT` at material dispatch commit
-`b6a06e70` from dispatch base `6047e18f`.
+`CLOSED_PASS_BOUNDED` at material closure commit `c1fd85d3` from closure base
+`77098b23`.
 
-Dispatch artifacts:
+Closure artifacts:
 
 - GC-018:
   `docs/baselines/CVF_GC018_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_PLAN_2026-06-13.md`;
 - Work order:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_PLAN_FOR_CLAUDE_2026-06-13.md`;
+- Coverage plan:
+  `docs/reference/CVF_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_PLAN_2026-06-13.md`;
+- Worker return:
+  `docs/reviews/CVF_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_WORKER_RETURN_2026-06-13.md`;
+- Completion review:
+  `docs/reviews/CVF_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_COMPLETION_2026-06-13.md`;
 - Roadmap:
   `docs/roadmaps/CVF_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_COMPLETION_ROADMAP_2026-06-13.md`.
 
-Next allowed move: Claude worker return only. Claude may create only
-`docs/reference/CVF_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_PLAN_2026-06-13.md`
-and
-`docs/reviews/CVF_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_WORKER_RETURN_2026-06-13.md`
-under `WORKER_MUST_NOT_COMMIT`.
-
-Claude must evaluate FPC-T3-C01 through FPC-T3-C07. C07 is design-only for
-workspace-integrity and agent-operation-audit controls. Codex owns review,
-allowed reviewer repairs, final gates, commit, and session sync.
+Recommended first implementation tranche is FPC-T3-C04 plus FPC-T3-C01, but
+only through a fresh GC-018/source-verified work order and explicit operator
+authorization. Alternative fresh authorization paths are an FPC-T2 C01-C04
+registry-edit work order or FPC-T4 after explicit operator decision.
 
 No checker implementation, template mutation, registry edit, runtime/source/test
 change, OS audit installation, Sysmon installation, file watcher service,
@@ -960,24 +961,18 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: FPC-T3 is
-`DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT` at material dispatch commit
-`b6a06e70`. Claude worker return only:
+Next allowed move: FPC-T3 is `CLOSED_PASS_BOUNDED` at material closure commit
+`c1fd85d3`. Fresh authorization only:
 
-- create
-  `docs/reference/CVF_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_PLAN_2026-06-13.md`;
-- create
-  `docs/reviews/CVF_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_WORKER_RETURN_2026-06-13.md`;
-- evaluate FPC-T3-C01 through FPC-T3-C07;
-- keep FPC-T3-C07 design-only for workspace-integrity and
-  agent-operation-audit controls.
+- open FPC-T3-C04 plus FPC-T3-C01 implementation work order;
+- open FPC-T2 C01-C04 registry-edit work order; or
+- move to FPC-T4 after explicit operator decision.
 
-Codex owns review, allowed reviewer repairs, final gates, commit, and session
-sync. Registry edits, FPC-T3 implementation, runtime/source/test changes,
-OS audit installation, Sysmon installation, file watcher services, destructive
-brokers, agent computer-control permission changes, DICE-T3/provider/OCR/live
-proof work, public-sync, external Document_Translator inspection or mutation,
-and Policy_Local mutation are not authorized.
+Registry edits, FPC-T3 implementation, runtime/source/test changes, OS audit
+installation, Sysmon installation, file watcher services, destructive brokers,
+agent computer-control permission changes, DICE-T3/provider/OCR/live proof work,
+public-sync, external Document_Translator inspection or mutation, and
+Policy_Local mutation are not authorized without that later work order.
 
 DIR-T2 Document Intelligence Router foundation pilot remains
 `CLOSED_PASS_BOUNDED` at material closure commit `e3395acc`. Closure artifacts:

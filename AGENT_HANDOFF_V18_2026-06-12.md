@@ -24,14 +24,14 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`fpc_t3_foundation_checker_template_coverage_plan_dispatched`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=Claude worker return only for FPC-T3 coverage plan under WORKER_MUST_NOT_COMMIT; parked checkpoint=registry mutation, FPC-T3 implementation, OS audit/control setup, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`fpc_t3_foundation_checker_template_coverage_plan_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=fresh authorization only for FPC-T3-C04 plus FPC-T3-C01 implementation work order, FPC-T2 C01-C04 registry-edit work order, or FPC-T4 after explicit operator decision; parked checkpoint=registry mutation, FPC-T3 implementation, OS audit/control setup, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`fpc_t3_foundation_checker_template_coverage_plan_dispatched`
+`fpc_t3_foundation_checker_template_coverage_plan_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `b6a06e70`
-(FPC-T3 dispatch material commit; this dedicated session-sync follows).
+Current HEAD recorded for this handoff: `c1fd85d3`
+(FPC-T3 material closure commit; this dedicated session-sync follows).
 
 ## Active Boundary
 
@@ -47,27 +47,28 @@ requires separate authorization.
 ## Latest Continuity Note
 
 FPC-T3 foundation checker/template/standard coverage plan is
-`DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT` at material dispatch commit
-`b6a06e70` from dispatch base `6047e18f`.
+`CLOSED_PASS_BOUNDED` at material closure commit `c1fd85d3` from closure base
+`77098b23`.
 
-Dispatch artifacts:
+Closure artifacts:
 
 - GC-018:
   `docs/baselines/CVF_GC018_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_PLAN_2026-06-13.md`;
 - Work order:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_PLAN_FOR_CLAUDE_2026-06-13.md`;
+- Coverage plan:
+  `docs/reference/CVF_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_PLAN_2026-06-13.md`;
+- Worker return:
+  `docs/reviews/CVF_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_WORKER_RETURN_2026-06-13.md`;
+- Completion review:
+  `docs/reviews/CVF_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_COMPLETION_2026-06-13.md`;
 - Roadmap:
   `docs/roadmaps/CVF_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_COMPLETION_ROADMAP_2026-06-13.md`.
 
-Next allowed move: Claude worker return only. Claude may create only
-`docs/reference/CVF_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_PLAN_2026-06-13.md`
-and
-`docs/reviews/CVF_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_WORKER_RETURN_2026-06-13.md`
-under `WORKER_MUST_NOT_COMMIT`.
-
-Claude must evaluate FPC-T3-C01 through FPC-T3-C07. C07 is design-only for
-workspace-integrity and agent-operation-audit controls. Codex owns review,
-allowed reviewer repairs, final gates, commit, and session sync.
+Recommended first implementation tranche is FPC-T3-C04 plus FPC-T3-C01, but
+only through a fresh GC-018/source-verified work order and explicit operator
+authorization. Alternative fresh authorization paths are an FPC-T2 C01-C04
+registry-edit work order or FPC-T4 after explicit operator decision.
 
 No checker implementation, template mutation, registry edit, runtime/source/test
 change, OS audit installation, Sysmon installation, file watcher service,
@@ -634,8 +635,10 @@ latency hardening, plus the operator-requested provider-specific agent memory
 boundary cleanup after FPC-T1 review, plus this FPC-T2 dispatch session-sync
 after the operator asked Codex to continue with the FPC-T2 work order, without
 changing governance semantics, plus this FPC-T3 dispatch session-sync after the
-operator approved the FPC-T3 Claude work order under Codex control, and keep the
-generated active-session aggregate aligned with its per-entry source files.
+operator approved the FPC-T3 Claude work order under Codex control, plus this
+FPC-T3 closure session-sync after the operator returned FPC-T3 worker artifacts
+for Codex review and commit, and keep the generated active-session aggregate
+aligned with its per-entry source files.
 This scope also covers the dispatch-quality checker change to
 `check_work_order_dispatch_quality.py` that was authorized by the
 hardening-batch GC-018 and landed in the hardening material closure commit
@@ -662,6 +665,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/fpcT2SystemLoopInterlockExpansionDecisionDispatch20260613.json`
 - `CVF_SESSION/state/entries/fpcT2SystemLoopInterlockExpansionDecisionClosure20260613.json`
 - `CVF_SESSION/state/entries/fpcT3FoundationCheckerTemplateCoveragePlanDispatch20260613.json`
+- `CVF_SESSION/state/entries/fpcT3FoundationCheckerTemplateCoveragePlanClosure20260613.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENTS.md`
@@ -700,6 +704,10 @@ The operator then returned FPC-T2 worker artifacts for Codex review and commit.
 This session-sync updates the active front door, generated session-state source,
 generated aggregate, and active handoff after the material FPC-T2 closure
 commit `c12c65b1`.
+The operator then returned FPC-T3 worker artifacts for Codex review and commit.
+This session-sync updates the active front door, generated session-state source,
+generated aggregate, and active handoff after the material FPC-T3 closure
+commit `c1fd85d3`.
 The hardening-batch GC-018 explicitly authorized the
 `governance/compat/check_work_order_dispatch_quality.py` validator addition and
 carries its own Core Guard Self-Protection Authorization. The mandatory
@@ -717,10 +725,12 @@ next-allowed-move alignment guard, regression coverage, closure pointers, or
 this DICE-T1 dispatch session-sync, or this DICE-T1 closure session-sync are
 incorrect, or this worker-return fast gate latency hardening session-sync, or
 this FPC-T1 closure session-sync is incorrect, this FPC-T2 dispatch
-session-sync is incorrect, or this FPC-T2 closure session-sync is incorrect.
+session-sync is incorrect, this FPC-T2 closure session-sync is incorrect, or
+this FPC-T3 closure session-sync is incorrect.
 Do not revert
 hardening material closure
-commit `30e7e888`, FPC-T2 material closure commit `c12c65b1`,
+commit `30e7e888`, FPC-T3 material closure commit `c1fd85d3`,
+FPC-T2 material closure commit `c12c65b1`,
 FPC-T2 material dispatch commit `4193fcd6`,
 FPC-T1 material closure commit `91e8f10f`,
 worker-return fast gate material commit `5e605862`,
@@ -745,24 +755,18 @@ acceleration material commit `bd15e0ae`, MEMCON-T1a material closure commit
 
 ## Next Allowed Move
 
-Next allowed move: FPC-T3 is
-`DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT` at material dispatch commit
-`b6a06e70`. Claude worker return only:
+Next allowed move: FPC-T3 is `CLOSED_PASS_BOUNDED` at material closure commit
+`c1fd85d3`. Fresh authorization only:
 
-- create
-  `docs/reference/CVF_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_PLAN_2026-06-13.md`;
-- create
-  `docs/reviews/CVF_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_WORKER_RETURN_2026-06-13.md`;
-- evaluate FPC-T3-C01 through FPC-T3-C07;
-- keep FPC-T3-C07 design-only for workspace-integrity and
-  agent-operation-audit controls.
+- open FPC-T3-C04 plus FPC-T3-C01 implementation work order;
+- open FPC-T2 C01-C04 registry-edit work order; or
+- move to FPC-T4 after explicit operator decision.
 
-Codex owns review, allowed reviewer repairs, final gates, commit, and session
-sync. Registry edits, FPC-T3 implementation, runtime/source/test changes,
-OS audit installation, Sysmon installation, file watcher services, destructive
-brokers, agent computer-control permission changes, DICE-T3/provider/OCR/live
-proof work, public-sync, external Document_Translator inspection or mutation,
-and Policy_Local mutation are not authorized.
+Registry edits, FPC-T3 implementation, runtime/source/test changes, OS audit
+installation, Sysmon installation, file watcher services, destructive brokers,
+agent computer-control permission changes, DICE-T3/provider/OCR/live proof work,
+public-sync, external Document_Translator inspection or mutation, and
+Policy_Local mutation are not authorized without that later work order.
 
 DT-CVF-T0 may be opened only through later fresh GC-018 and a source-verified
 work order for Document Translator source custody, repo inventory,
