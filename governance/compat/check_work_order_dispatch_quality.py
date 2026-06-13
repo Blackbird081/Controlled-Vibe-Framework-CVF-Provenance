@@ -32,6 +32,7 @@ WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_PATH = (
 WORK_ORDER_FINALITY_ADDENDUM_PATH = (
     "docs/reference/CVF_AGENT_WORK_ORDER_FINALITY_AND_REVIEW_CONVERSION_ADDENDUM_2026-06-12.md"
 )
+LEGACY_COVERAGE_INDEX_PATH = "docs/reference/CVF_LEGACY_ABSORPTION_COVERAGE_INDEX_2026-06-13.md"
 WORKER_AUTONOMY_STANDARD_PATH = "docs/reference/CVF_WORKER_AUTONOMY_DISPATCH_PROMPT_STANDARD_2026-06-01.md"
 HOOK_CHAIN_PATH = "governance/compat/run_local_governance_hook_chain.py"
 THIS_SCRIPT_PATH = "governance/compat/check_work_order_dispatch_quality.py"
@@ -48,6 +49,7 @@ SINGLE_AGENT_MULTI_ROLE_MARKER = "Single-Agent Multi-Role Control Block"
 INTAKE_ROLE_ROUTING_MARKER = "Intake Role Routing Decision"
 EVIDENCE_REUSE_ENCODING_PLAN_MARKER = "Evidence Reuse And Encoding Plan"
 REQUIRED_PROOF_ATOMIC_LITERAL_MARKER = "Required Proof Manifest Atomic Literal Discipline"
+LEGACY_COVERAGE_DISPOSITION_MARKER = "Legacy Absorption Coverage Index Disposition"
 EVIDENCE_REUSE_ENCODING_STANDARD_PATH = (
     "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md"
 )
@@ -84,6 +86,32 @@ PENDING_DEPENDENCY_LANGUAGE_RE = re.compile(
 )
 NEGATIVE_SEARCH_CLAIM_RE = re.compile(
     r"\bNOT\s+FOUND\b|\bBLOCKED_SOURCE_NOT_FOUND\b",
+    re.IGNORECASE,
+)
+LEGACY_COVERAGE_SCOPE_RE = re.compile(
+    r"\b("
+    r"foundation[- ]plane|foundation[- ]roadmap|foundation[- ]system|"
+    r"plane[- ]upgrade|workflow[- ]chain|workflow[- ]system|"
+    r"control[- ]plane|execution[- ]plane|learning[- ]plane|memory|"
+    r"knowledge|scan|corpus|document[- ]intelligence|model[- ]gateway|"
+    r"provider[- ]routing|trust[- ]sandbox|agent[- ]operation[- ]trace|"
+    r"co[- ]work|cowork"
+    r")\b",
+    re.IGNORECASE,
+)
+LEGACY_ADJACENT_RE = re.compile(
+    r"\b("
+    r"legacy|legacy[- ]adjacent|legacy[- ]absorption|legacy[- ]coverage|"
+    r"prior[- ]absorption|CVF_Important|Knowledge Absorption Blind[- ]Spot"
+    r")\b|\.private_reference/legacy|CVF_LEGACY_ABSORPTION_COVERAGE_INDEX_2026-06-13\.md",
+    re.IGNORECASE,
+)
+LEGACY_COVERAGE_NOT_APPLICABLE_RE = re.compile(
+    r"\bNOT_APPLICABLE_WITH_REASON\b|\bN/A with reason\b",
+    re.IGNORECASE,
+)
+LEGACY_COVERAGE_ROW_RE = re.compile(
+    r"\b(?:MGW|MEM|SCAN|FPC|AOT|SLI|DIR-DICE|ERH|LHW|GC)-\d{3}\b",
     re.IGNORECASE,
 )
 NEGATIVE_SEARCH_TOKEN_STOPWORDS = {
@@ -444,6 +472,39 @@ def _extract_section(text: str, heading_fragment: str) -> str:
     )
     match = pattern.search(text)
     return match.group(1) if match else ""
+
+
+def _requires_legacy_coverage_index_disposition(text: str) -> bool:
+    return bool(LEGACY_COVERAGE_SCOPE_RE.search(text) and LEGACY_ADJACENT_RE.search(text))
+
+
+def _validate_legacy_coverage_index_disposition(text: str) -> list[str]:
+    if not _requires_legacy_coverage_index_disposition(text):
+        return []
+
+    section = _extract_section(text, LEGACY_COVERAGE_DISPOSITION_MARKER)
+    if not section:
+        return [
+            "legacy-adjacent foundation/workflow-chain work order lacks "
+            f"`## {LEGACY_COVERAGE_DISPOSITION_MARKER}` with coverage-index row evidence "
+            "or `NOT_APPLICABLE_WITH_REASON`"
+        ]
+
+    if LEGACY_COVERAGE_NOT_APPLICABLE_RE.search(section):
+        return []
+
+    issues: list[str] = []
+    if LEGACY_COVERAGE_INDEX_PATH not in section:
+        issues.append(
+            f"`## {LEGACY_COVERAGE_DISPOSITION_MARKER}` must cite "
+            f"`{LEGACY_COVERAGE_INDEX_PATH}` or record `NOT_APPLICABLE_WITH_REASON`"
+        )
+    if LEGACY_COVERAGE_INDEX_PATH in section and not LEGACY_COVERAGE_ROW_RE.search(section):
+        issues.append(
+            f"`## {LEGACY_COVERAGE_DISPOSITION_MARKER}` cites the legacy coverage index "
+            "but does not name a stable row id"
+        )
+    return issues
 
 
 def _is_protected_authorization_path(path: str) -> bool:
@@ -2100,6 +2161,7 @@ def _validate_work_order(path: str, text: str) -> list[str]:
         issues.extend(_validate_single_agent_multi_role_control(text, "work order"))
         issues.extend(_validate_evidence_reuse_and_encoding_plan(text))
         issues.extend(_validate_protected_path_authorization_carrier(text))
+        issues.extend(_validate_legacy_coverage_index_disposition(text))
 
     if dispatching and _is_connector_wave(path, text):
         wave_id = _extract_wave_id(path, text)

@@ -131,6 +131,81 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
             *extra_lines,
         ]
 
+    def test_legacy_adjacent_foundation_work_order_without_coverage_disposition_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_LEGACY_COVERAGE_TEST_2026-06-14.md"
+        self._write(
+            work_order,
+            "\n".join(
+                self._ready_work_order_lines(
+                    [
+                        "## Scope",
+                        "This foundation plane workflow-chain work order touches legacy absorption for Model Gateway.",
+                        "Legacy source family: `.private_reference/legacy/CVF_Important/ADDING_MODEL GATEWAY/`.",
+                    ]
+                )
+            ),
+        )
+        self._write("docs/reference/source.md", "Scope\n")
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        issues = report["violations"][0]["issues"]
+        self.assertTrue(
+            any(MODULE.LEGACY_COVERAGE_DISPOSITION_MARKER in issue for issue in issues),
+            issues,
+        )
+
+    def test_legacy_adjacent_foundation_work_order_with_coverage_row_passes(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_LEGACY_COVERAGE_TEST_2026-06-14.md"
+        self._write(
+            work_order,
+            "\n".join(
+                self._ready_work_order_lines(
+                    [
+                        "## Scope",
+                        "This foundation plane workflow-chain work order touches legacy absorption for Model Gateway.",
+                        "Legacy source family: `.private_reference/legacy/CVF_Important/ADDING_MODEL GATEWAY/`.",
+                        f"## {MODULE.LEGACY_COVERAGE_DISPOSITION_MARKER}",
+                        f"- Coverage index: `{MODULE.LEGACY_COVERAGE_INDEX_PATH}`.",
+                        "- Stable row id: `MGW-001`.",
+                    ]
+                )
+            ),
+        )
+        self._write("docs/reference/source.md", "Scope\n")
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertTrue(report["compliant"], report.get("violations"))
+
+    def test_legacy_adjacent_foundation_work_order_with_not_applicable_reason_passes(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_LEGACY_COVERAGE_TEST_2026-06-14.md"
+        self._write(
+            work_order,
+            "\n".join(
+                self._ready_work_order_lines(
+                    [
+                        "## Scope",
+                        "This foundation plane workflow-chain work order mentions legacy only to record exclusion.",
+                        f"## {MODULE.LEGACY_COVERAGE_DISPOSITION_MARKER}",
+                        (
+                            "NOT_APPLICABLE_WITH_REASON: guard-only packet does not upgrade, "
+                            "reopen, or plan a legacy-adjacent CVF capability."
+                        ),
+                    ]
+                )
+            ),
+        )
+        self._write("docs/reference/source.md", "Scope\n")
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertTrue(report["compliant"], report.get("violations"))
+
     def test_lhw6_dispatch_without_gc018_and_trace_matrix_fails(self) -> None:
         work_order = "docs/work_orders/CVF_WO_LHW6_T1_TEST_2026-05-28.md"
         self._write(
