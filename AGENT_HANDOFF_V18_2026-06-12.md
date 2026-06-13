@@ -30,8 +30,8 @@ Startup acknowledged: current mode=`legacy_coverage_index_dispatch_guard_closed_
 
 `legacy_coverage_index_dispatch_guard_closed_bounded`
 
-Current HEAD recorded for this handoff: `3423d82e`
-(Legacy coverage-index dispatch guard material commit; this dedicated
+Current HEAD recorded for this handoff: `da725c1a`
+(Legacy coverage-index dispatch guard trace-alignment commit; this dedicated
 handoff/state sync follows).
 
 ## Active Boundary
@@ -48,7 +48,7 @@ requires separate authorization.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: Codex may update session continuity files
-after material closure commit `3423d82e` so the active front door, generated
+after trace-alignment commit `da725c1a` so the active front door, generated
 state aggregate, state source files, and active handoff point to the latest
 legacy coverage-index dispatch guard closure state.
 
@@ -67,9 +67,9 @@ Protected paths:
 
 Rollback boundary: if session-sync gates fail, revert only this continuity sync
 batch and regenerate `CVF_SESSION/ACTIVE_SESSION_STATE.json` from the previous
-state source files. Do not revert material guard commit `3423d82e`, Model
-Gateway recheck closure commit `5be35102`, material correction commit
-`919afd4e`, or material dispatch commit `a4cfb246`.
+state source files. Do not revert trace-alignment commit `da725c1a`, material
+guard commit `3423d82e`, Model Gateway recheck closure commit `5be35102`,
+material correction commit `919afd4e`, or material dispatch commit `a4cfb246`.
 
 ## Latest Continuity Note
 

@@ -4,6 +4,7 @@
   "value": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialCommit": "3423d82e",
+    "traceAlignmentCommit": "da725c1a",
     "closureBaseHead": "825f7340",
     "completionReview": "docs/reviews/CVF_LEGACY_COVERAGE_INDEX_DISPATCH_GUARD_HARDENING_COMPLETION_2026-06-14.md",
     "guard": "governance/compat/check_work_order_dispatch_quality.py",
