@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: FINAL_ROADMAP_AWAITING_DIR_T0_AUTHORIZATION
+Status: DIR_T0_DISPATCHED_AWAITING_WORKER_RETURN
 
 docType: roadmap
 
@@ -286,7 +286,7 @@ Machine-check candidate for DIR-T1:
 
 | Tranche | Deliverable | Dependency | Status |
 | --- | --- | --- | --- |
-| DIR-T0 | Doc-only owner reconciliation, 3 contract tables, adapter matrix, and machine-check candidate spec | Final roadmap plus fresh GC-018/work order | AWAITING_FRESH_AUTHORIZATION |
+| DIR-T0 | Doc-only owner reconciliation, 3 contract tables, adapter matrix, and machine-check candidate spec | Final roadmap plus fresh GC-018/work order | DISPATCHED |
 | DIR-T1 | Deterministic local source implementation and focused tests | DIR-T0 closure plus fresh GC-018/work order | HOLD_PENDING_T0 |
 | DIR-T2 | Bounded pilot over operator-approved samples, if any | DIR-T1 closure plus sample corpus and runtime/live-proof authorization when applicable | HOLD_PENDING_T1_AND_RUNTIME_AUTH |
 
@@ -458,6 +458,21 @@ Required before opening DIR-T0:
 - source-verified work order;
 - pre-dispatch autorun gate over the real changed range;
 - no untracked external use-case edit included in the dispatch commit.
+
+Status: `SATISFIED_BY_DIR_T0_DISPATCH`.
+
+Dispatch package:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_DIR_T0_DOCUMENT_INTELLIGENCE_ROUTER_CONTRACT_MATRIX_2026-06-13.md`
+- Work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_DIR_T0_DOCUMENT_INTELLIGENCE_ROUTER_CONTRACT_MATRIX_FOR_CLAUDE_2026-06-13.md`
+- dispatchBaseHead: `51cd1ded`
+- worker commit mode: `WORKER_MUST_NOT_COMMIT`
+- worker boundary: contract-matrix documentation and worker-return packet only;
+  no runtime/source, external Document Translator or Policy_Local tree
+  operation, OCR/provider, retrieval, corpus, public-sync, readiness, cost, or
+  quality claim is authorized.
 
 ## Governed Work Lifecycle
 
