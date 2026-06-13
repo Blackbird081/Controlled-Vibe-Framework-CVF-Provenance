@@ -75,7 +75,7 @@ Future workers must use these keys before opening a new scan:
 
 | ID | Plane or workflow-chain system | Relevant legacy families or corpus entries | Prior absorption evidence | Current owner surfaces | Coverage status | Next action |
 | --- | --- | --- | --- | --- | --- | --- |
-| `MGW-001` | Model Gateway / Execution Plane provider routing | `.private_reference/legacy/CVF_Important/ADDING_MODEL GATEWAY/`; `.private_reference/legacy/CVF_Important/ADDING_MODEL_ROUTER/`; `.private_reference/legacy/CVF_Important/ADDING_MINI_MODEL GATEWAY/`; `.private_reference/legacy/CVF_Important/ADDING_AI GATEWAY/` | LHW17 T2 Model Gateway advisory; C-02 legacy-gap correction | `EXTENSIONS/CVF_MODEL_GATEWAY/src/`; `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/` | `HOLD_PENDING_LEGACY_ABSORPTION` | Run bounded Model Gateway legacy absorption recheck before C-02 resumes. |
+| `MGW-001` | Model Gateway / Execution Plane provider routing | `.private_reference/legacy/CVF_Important/ADDING_MODEL GATEWAY/` (12 files); `.private_reference/legacy/CVF_Important/ADDING_MODEL_ROUTER/` (6 files); `.private_reference/legacy/CVF_Important/ADDING_MINI_MODEL GATEWAY/` (7 files); `.private_reference/legacy/CVF_Important/ADDING_AI GATEWAY/` (12 files) | LHW17 T2 (`cvf.modelGatewayUnificationAdvisory.lhw17.t2.v1`) absorbed 4 source files; bounded recheck completed 2026-06-14 per `CVF_GC018_MODEL_GATEWAY_LEGACY_ABSORPTION_COVERAGE_INDEX_2026-06-13.md`; Codex reviewer remediation corrected manifest naming and added one missed mini-gateway interface row; 12 accepted value keys recorded; AI Gateway family remains deferred | `EXTENSIONS/CVF_MODEL_GATEWAY/src/` (21 governed files: provider-capability-registry.ts, routing-policy.ts, fallback-policy.ts, gateway-policy.ts, gateway-receipt.ts, provider-health.ts, provider-registry.ts, etc.); `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/` (dispatch, pipeline, feedback, streaming contracts) | `PARTIAL_RECHECK_REQUIRED` | C-02 Resume Decision: `RESUME_WITH_REWRITE`; recheck plan at `docs/reference/CVF_MODEL_GATEWAY_LEGACY_ABSORPTION_RECHECK_PLAN_2026-06-13.md`; C-02 must incorporate strategy-layer gap, routing-policy-engine gap, integration-flow boundary, and gateway-interface boundary before dispatch. AI Gateway family value (environment signal capture) remains deferred pending separate privacy/GDPR operator authorization per LHW17 T2 explicit deferral. |
 | `MEM-001` | Memory / Knowledge / MEMCON workflow-chain | `legacy-memory-learning-related-ci1-t11`; `mlw0-current-source-verification-map`; `memory-consolidation-control-plane-owner-surfaces`; memory method legacy rescan audit | CI1-T11, MLW0, MLW1-MLW6, MEMCON-T1a through MEMCON-T5, memory method audit | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/`; `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/`; MEMCON reference contracts | `PARTIAL_RECHECK_REQUIRED` | Before new memory/scan foundation work, reconcile the row against the corpus registry and MEMCON closure packets. |
 | `SCAN-001` | Corpus / Scan / Extraction foundation | `private-reference-legacy-all`; EX/EXA registry entries; DSCP scan descriptor entries | Corpus scan registry, EX-T2 through EX-T9, EXA-T2, DSCP-T1/T6/T9/T10/T11 entries | `docs/corpus-intelligence/`; `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/`; CPF/DSCP surfaces | `PARTIAL_RECHECK_REQUIRED` | Add per-plane coverage rows for scan/extraction before claiming scan-layer completeness. |
 | `FPC-001` | Foundation Planes Workflow-Chain System Completion | FPC roadmap; FPC-T1/T2/T3/T4 packets; legacy absorption standard | FPC-T1 through FPC-T4 packets; Model Gateway correction | FPC matrices, work-order template, system-loop interlock registry | `RETROACTIVE_COVERAGE_AUDIT_REQUIRED` | Add a mandatory legacy coverage row to future FPC-derived planning packets. |
@@ -84,18 +84,26 @@ Future workers must use these keys before opening a new scan:
 | `DIR-DICE-001` | Document Intelligence Router and Control Envelope | Current DIR/DICE packets; no legacy document-intelligence family verified in this index | DIR-T0/T1/T2, DICE-T0/T1 | `EXTENSIONS/CVF_DOCUMENT_INTELLIGENCE/`; DIR/DICE roadmaps and completions | `RETROACTIVE_COVERAGE_AUDIT_REQUIRED` | Keep downstream use-case adapters out; add legacy coverage only if a matching foundation family is source-found. |
 | `ERH-001` | External Review Hardening workflow-chain | ERH workflow-chain packets and public-surface drift ledgers | ERH-CI1, ERH-PD1, ERH-DEP1, ERH-SAF1/SAF2, ERH-DUR1/DUR2 | ERH reference chains and guards | `RETROACTIVE_COVERAGE_AUDIT_REQUIRED` | Do not reopen ERH now; require this index in future ERH expansion packets. |
 
-## Model Gateway Immediate Hold
+## Model Gateway Recheck Status
 
-`MGW-001` is the active blocking row. The current Model Gateway C-02 planning
-packet is held because it did not reconcile:
+`MGW-001` hold resolved to `PARTIAL_RECHECK_REQUIRED` after bounded recheck
+completed 2026-06-14. The recheck found:
 
-- prior LHW17 T2 Model Gateway advisory evidence;
-- current extra gateway-family path inventory;
-- the newly surfaced `CVF_ARCHITECTURE.md` concern from the operator;
-- current `EXTENSIONS/CVF_MODEL_GATEWAY/src/` owner surfaces.
+- LHW17 T2 covered 4 source files (Routing Layer + Strategy Layer advisory).
+- 12 accepted value keys were recorded beyond the narrow LHW17 T2 absorption:
+  architecture boundary, execution strategy taxonomy, execution planner,
+  execution engine lifecycle, feedback loop scoring, observability layering,
+  integration-flow responsibility boundary, full routing context, routing policy
+  pipeline, dynamic model registry, mini-gateway component architecture, and
+  gateway execution/streaming/embedding/health interface boundary.
+- 16 files deferred (AI Gateway family: environment signal capture, privacy/GDPR
+  risk; remaining repetitive files already covered by accepted set).
+- C-02 Resume Decision: `RESUME_WITH_REWRITE`; C-02 must incorporate strategy-layer
+  gap (Execution Planner, Feedback Loop, Strategy Registry) and routing-policy-engine
+  gap (PolicyDecision pipeline, escalation logic, A/B routing) not previously
+  addressed by LHW17 T2 or current source.
 
-The next governed move is a fresh GC-018 worker packet that updates `MGW-001`
-and decides whether C-02 can resume, must be rewritten, or must remain held.
+Detail at: `docs/reference/CVF_MODEL_GATEWAY_LEGACY_ABSORPTION_RECHECK_PLAN_2026-06-13.md`
 
 ## Memory / Scan Layer Recheck Boundary
 

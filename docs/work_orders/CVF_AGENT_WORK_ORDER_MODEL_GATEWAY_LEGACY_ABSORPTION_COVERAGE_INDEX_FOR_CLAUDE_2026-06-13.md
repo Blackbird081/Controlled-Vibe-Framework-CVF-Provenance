@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Owner: Codex Orchestrator
 
@@ -382,6 +382,25 @@ Closure requires:
 - Pre-closure autorun gate passes on the committed range.
 - Session state is synced if next allowed move changes.
 - Worktree is clean after commit.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_LEGACY_ABSORPTION_COVERAGE_INDEX_FOR_CLAUDE_2026-06-13.md` | Status is `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MODEL_GATEWAY_LEGACY_ABSORPTION_COVERAGE_INDEX_COMPLETION_2026-06-13.md` | Codex reviewer-owned completion review | PASS |
+| Roadmap state | N/A with reason: no roadmap mutation authorized by this work order | No roadmap file changed | N/A with reason: no roadmap mutation authorized |
+| Registry JSON | N/A with reason: no corpus registry JSON mutation authorized | `python governance/compat/generate_corpus_scan_registry.py --check` PASS | PASS |
+| Registry Markdown | N/A with reason: no corpus registry Markdown mutation authorized | No corpus registry Markdown changed | PASS |
+| External evidence digest | N/A with reason: private legacy evidence only; no external evidence digest authorized | No external evidence artifact changed | N/A with reason: not applicable to private legacy recheck |
+| System loop interlock | N/A with reason: no system-loop interlock registry mutation authorized | No GC-052 registry path changed | N/A with reason: no interlock mutation authorized |
+| Session continuity | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `AGENT_HANDOFF_V18_2026-06-12.md` | Dedicated session-sync batch required after material closure commit | N/A with reason: sync occurs in separate follow-up batch |
+| Coverage index updated | `docs/reference/CVF_LEGACY_ABSORPTION_COVERAGE_INDEX_2026-06-13.md` | `git diff --name-status` | PASS |
+| Recheck plan created | `docs/reference/CVF_MODEL_GATEWAY_LEGACY_ABSORPTION_RECHECK_PLAN_2026-06-13.md` | `git status --short` before closure commit | PASS |
+| Worker return created | `docs/reviews/CVF_MODEL_GATEWAY_LEGACY_ABSORPTION_COVERAGE_INDEX_WORKER_RETURN_2026-06-13.md` | `git status --short` before closure commit | PASS |
+| Completion review created | `docs/reviews/CVF_MODEL_GATEWAY_LEGACY_ABSORPTION_COVERAGE_INDEX_COMPLETION_2026-06-13.md` | Codex reviewer-owned closure artifact | PASS |
+| Worker commit boundary | `WORKER_MUST_NOT_COMMIT` | HEAD remained unchanged during worker return | PASS |
+| Runtime/provider/public boundary | N/A with reason: documentation-only closure | No runtime/source/test/provider/public-sync paths changed | PASS |
 
 ## Return-To-Orchestrator Conditions
 
