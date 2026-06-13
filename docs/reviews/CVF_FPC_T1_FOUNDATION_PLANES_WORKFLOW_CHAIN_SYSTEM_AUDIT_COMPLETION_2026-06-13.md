@@ -25,9 +25,10 @@ Claude's no-commit worker return.
 
 FPC-T1 produced the Plane-to-Chain audit matrix needed before FPC-T2 interlock
 decisions and FPC-T3 checker/template planning. It does not authorize FPC-T2,
-FPC-T3, runtime mutation, interlock registry mutation, checker implementation,
-external app source work, provider/OCR/live proof, public-sync, readiness,
-cost, or quality claims.
+FPC-T3, runtime mutation, interlock registry mutation, external app source work,
+provider/OCR/live proof, public-sync, readiness, cost, or quality claims. Codex
+also applied one reviewer-owned governance hygiene repair: provider-specific
+agent files are no longer accepted as CVF Source Authority evidence.
 
 ## Scope / Target / Owner Boundary
 
@@ -39,12 +40,15 @@ Closed scope:
   `docs/reviews/CVF_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_WORKER_RETURN_2026-06-13.md`;
 - GC-018 and work order status conversion;
 - parent roadmap status conversion.
+- provider-specific source-authority hygiene repair:
+  `AGENTS.md`, `governance/compat/check_agent_packet_authority_and_encoding.py`,
+  `governance/compat/test_check_agent_packet_authority_and_encoding.py`.
 
 Out of scope:
 
 - FPC-T2 interlock registry edits;
 - FPC-T3 checker/template implementation;
-- runtime/source/test mutation;
+- runtime/product-source/test mutation;
 - generated aggregate mutation;
 - session-state sync before the material closure commit;
 - external Document Translator or Policy_Local inspection/mutation;
@@ -77,7 +81,7 @@ not treated as worker blame; it becomes routing evidence for FPC-T2 and FPC-T3.
 | --- | --- | --- | --- |
 | FPC-T1 artifacts stayed inside allowed worker scope | INFO | ACCEPT | `git status --short` showed only the matrix and worker-return artifacts before reviewer closure edits |
 | Worker repaired ASCII em-dash issue before return | INFO | ACCEPT | worker-return packet records 33 U+2014 occurrences repaired; reviewer-fast PASS confirmed |
-| Matrix cited `CLAUDE.md` without listing it in Source Authority or manifest | MEDIUM | REPAIRED_BY_CODEX | Codex added `CLAUDE.md` to Source Authority and inline manifest |
+| Matrix used provider-specific `CLAUDE.md` citations as source evidence | MEDIUM | REPAIRED_BY_CODEX | Codex replaced them with CVF-governed sources and marked provider-specific agent files as NOT_CVF_SOURCE for authority claims |
 | Matrix counted interlock registry as 14 connections while the JSON has 15 | MEDIUM | REPAIRED_BY_CODEX | Codex verified `connections = 15` directly from `CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json` and corrected affected cells |
 | `run_worker_return_fast_gate.py --base 148a59ff --head HEAD` is not supported by the current script CLI | LOW | LEARNING_CANDIDATE | Work order wording treated it as optional; future work orders should not advertise unsupported flags unless the runner supports them |
 | Document Intelligence lane lacks a registered DIR/DICE interlock | FOUNDATION_GAP | ROUTE_TO_FPC_T2 | Carry as FPC-T2-C04 candidate only |
@@ -100,8 +104,8 @@ not treated as worker blame; it becomes routing evidence for FPC-T2 and FPC-T3.
 
 | Check | Evidence | Disposition |
 | --- | --- | --- |
-| Changed files remain governed closure scope | matrix, worker return, completion review, GC-018, work order, parent roadmap | PASS |
-| Runtime/source/test mutation | no runtime, source, or test paths changed in this range | PASS |
+| Changed files remain governed closure scope | matrix, worker return, completion review, GC-018, work order, parent roadmap, `AGENTS.md`, provider-specific authority guard, and focused regression tests | PASS |
+| Runtime/product-source/test mutation | no runtime, product source, or test paths changed in this range; governance guard source changed only for provider-specific authority hygiene | PASS |
 | Registry mutation | no interlock registry or corpus registry changed | PASS |
 | Session-state mutation | deferred to post-material session-sync commit if active-state guard requires it | PASS |
 | Public-sync mutation | none | PASS |
@@ -113,7 +117,7 @@ not treated as worker blame; it becomes routing evidence for FPC-T2 and FPC-T3.
 
 | Risk | Corrective action | Disposition |
 | --- | --- | --- |
-| Source traceability drift in matrix cells | Added `CLAUDE.md` to Source Authority and manifest | REPAIRED |
+| Source traceability drift in matrix cells | Replaced provider-specific source citations with CVF-governed paths and added a provider-specific authority guard | REPAIRED |
 | Stale interlock registry count | Verified JSON directly and corrected count to 15 | REPAIRED |
 | Unsupported optional worker-return fast gate flags | Recorded as tool-contract learning candidate; did not use as closure proof | ROUTE_TO_FUTURE_GOVERNANCE_BATCH |
 | Candidate lists could be mistaken for authorization | Roadmap, work order, and completion state FPC-T2/FPC-T3 require fresh GC-018 | CONTROLLED |
@@ -125,6 +129,7 @@ Commands run by Codex:
 ```powershell
 python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast
 git diff --check
+python -m pytest governance/compat/test_check_agent_packet_authority_and_encoding.py
 python governance/compat/run_worker_return_fast_gate.py --base 148a59ff --head HEAD
 ```
 
@@ -135,6 +140,7 @@ Observed results:
 | `reviewer-fast` before Codex repair | PASS 14/14 |
 | `reviewer-fast` after Codex repair | PASS 14/14 |
 | `git diff --check` before closure conversion | PASS |
+| `pytest test_check_agent_packet_authority_and_encoding.py` | PASS after provider-specific authority regression tests |
 | `run_worker_return_fast_gate.py --base 148a59ff --head HEAD` | CLI rejected unsupported `--base/--head`; not closure evidence |
 
 Required final gates are rerun after this completion review and before commit.
@@ -143,7 +149,7 @@ Required final gates are rerun after this completion review and before commit.
 
 | Finding | Defect class | Learning lane | Escalation state | Next control action |
 | --- | --- | --- | --- | --- |
-| Matrix omitted a cited source from Source Authority/manifest | RULE_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | Existing Corpus Completeness discipline applies; repaired in artifact |
+| Matrix used provider-specific agent guidance as source authority | RULE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | Added `check_agent_packet_authority_and_encoding.py` coverage to block provider-specific files in authority/evidence contexts for changed governed markdown |
 | Interlock registry count was stale in the matrix | WORKER_EXECUTION_ERROR | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | Existing source-verification discipline applies; repaired in artifact |
 | Optional worker-return fast gate command advertised unsupported flags | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_CANDIDATE | FPC-T3 or a small governance batch may align work-order wording with runner CLI |
 | DIR/DICE and Memory interlock gaps | RULE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_CANDIDATE | FPC-T2 fresh GC-018 should decide FPC-T2-C02/C03/C04 |

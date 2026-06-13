@@ -46,6 +46,29 @@ EXCEPTION_MARKERS = (
     "Unicode exception",
     "Non-ASCII exception",
 )
+PROVIDER_SPECIFIC_AUTHORITY_FILES = (
+    "CLAUDE.md",
+    "MEMORY.md",
+    ".codex/memories",
+    ".claude",
+)
+PROVIDER_SPECIFIC_AUTHORITY_CONTEXTS = (
+    "Source Authority",
+    "Source Verification",
+    "source evidence",
+    "Primary source evidence",
+    "Source File Manifest",
+    "Terminal status",
+    "Evidence / repair",
+    "Machine-readable evidence",
+)
+PROVIDER_SPECIFIC_AUTHORITY_ALLOW_MARKERS = (
+    "NOT_CVF_SOURCE",
+    "NOT_SOURCE_AUTHORITY",
+    "provider-specific",
+    "not CVF source",
+    "not source of truth",
+)
 
 
 @dataclass(frozen=True)
@@ -151,6 +174,45 @@ def find_authority_reference_violations(path: str, text: str) -> list[str]:
     ]
 
 
+def find_provider_specific_authority_violations(path: str, text: str) -> list[str]:
+    normalized = path.replace("\\", "/")
+    if not normalized.endswith(".md"):
+        return []
+    issues: list[str] = []
+    active_context = False
+    for line_number, raw in enumerate(text.splitlines(), start=1):
+        stripped = raw.strip()
+        if stripped.startswith("#"):
+            active_context = any(
+                marker.lower() in stripped.lower()
+                for marker in PROVIDER_SPECIFIC_AUTHORITY_CONTEXTS
+            )
+            continue
+        line_lower = raw.lower()
+        has_provider_file = False
+        for provider_file in PROVIDER_SPECIFIC_AUTHORITY_FILES:
+            pattern = re.escape(provider_file.lower())
+            if provider_file in {"CLAUDE.md", "MEMORY.md"}:
+                pattern = rf"(?<![A-Za-z0-9_./-]){pattern}(?![A-Za-z0-9_./-])"
+            if re.search(pattern, line_lower):
+                has_provider_file = True
+                break
+        if not has_provider_file:
+            continue
+        if any(marker.lower() in line_lower for marker in PROVIDER_SPECIFIC_AUTHORITY_ALLOW_MARKERS):
+            continue
+        line_context = active_context or any(
+            marker.lower() in line_lower
+            for marker in PROVIDER_SPECIFIC_AUTHORITY_CONTEXTS
+        )
+        if line_context or "|" in raw:
+            issues.append(
+                f"line {line_number}: provider-specific agent memory/guidance "
+                "file is cited as authority; use CVF-governed source or mark NOT_CVF_SOURCE"
+            )
+    return issues
+
+
 def _has_encoding_exception(text: str) -> bool:
     return any(marker in text for marker in EXCEPTION_MARKERS)
 
@@ -244,6 +306,7 @@ def _run_check(base: str | None, head: str | None) -> dict[str, Any]:
         path_issues: list[str] = []
         if text:
             path_issues.extend(find_authority_reference_violations(path, text))
+            path_issues.extend(find_provider_specific_authority_violations(path, text))
             path_issues.extend(
                 find_non_ascii_line_violations(
                     path,

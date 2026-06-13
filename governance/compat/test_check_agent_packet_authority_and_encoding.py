@@ -65,3 +65,44 @@ def test_added_non_ascii_line_allows_recorded_exception_marker() -> None:
     )
     assert issues == []
 
+
+def test_provider_specific_agent_file_rejected_as_source_authority() -> None:
+    text = (
+        "## Source Authority\n\n"
+        "| Source | Path | Role |\n"
+        "| --- | --- | --- |\n"
+        "| Repository agent guidance | `CLAUDE.md` | canonical routing evidence |\n"
+    )
+    issues = MODULE.find_provider_specific_authority_violations(
+        "docs/reference/CVF_EXAMPLE_MATRIX_2026-06-13.md",
+        text,
+    )
+    assert any("provider-specific" in issue for issue in issues)
+
+
+def test_provider_specific_agent_file_allowed_when_marked_not_cvf_source() -> None:
+    text = (
+        "## Finding-To-Governance Learning Disposition\n\n"
+        "| Finding | Disposition |\n"
+        "| --- | --- |\n"
+        "| Provider-specific `CLAUDE.md` guidance cited by worker | NOT_CVF_SOURCE |\n"
+    )
+    issues = MODULE.find_provider_specific_authority_violations(
+        "docs/reviews/CVF_EXAMPLE_COMPLETION_2026-06-13.md",
+        text,
+    )
+    assert issues == []
+
+
+def test_cvf_session_memory_front_door_not_confused_with_provider_memory() -> None:
+    text = (
+        "## Source Authority\n\n"
+        "| Source | Path | Role |\n"
+        "| --- | --- | --- |\n"
+        "| Active front door | `CVF_SESSION_MEMORY.md` | session continuity |\n"
+    )
+    issues = MODULE.find_provider_specific_authority_violations(
+        "docs/reviews/CVF_EXAMPLE_COMPLETION_2026-06-13.md",
+        text,
+    )
+    assert issues == []

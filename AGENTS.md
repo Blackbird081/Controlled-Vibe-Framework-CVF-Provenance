@@ -51,6 +51,34 @@ Trivial direct answers may keep the confirmation internal, but any roadmap,
 implementation, review, live run, commit, handoff, or public-sync work must
 satisfy this acknowledgment first.
 
+## Mandatory Provider-Specific Agent Memory Boundary - 2026-06-13
+
+Provider-specific files and memory stores are execution aids for the agent or
+provider that owns them. They are not CVF source of truth and must not be cited
+as canonical CVF authority in Source Authority tables, Source Verification
+ACCEPT rows, corpus manifests, closure proof, or roadmap/work-order evidence.
+
+Examples include `CLAUDE.md`, Codex memory files, Claude memory files, IDE
+side-channel summaries, provider-local memories, and other agent-private
+continuity mechanisms.
+
+Canonical CVF continuity and authority must come from CVF-governed surfaces:
+
+- `AGENTS.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- the active handoff named by the state registry;
+- canonical standards under `docs/reference/`;
+- governed roadmaps, baselines, work orders, reviews, registries, checkers, and
+  runtime source.
+
+Provider-specific files may be read as local operating guidance for that agent
+only. Any source fact learned from them must be re-verified against a
+CVF-governed surface before it is used as evidence or dispatched to another
+agent. If no CVF-governed source exists, mark the claim
+`BLOCKED_SOURCE_NOT_FOUND`, `DOCUMENTATION_ONLY_WITH_REASON`, or
+`NOT_CVF_SOURCE` instead of promoting the provider-specific file to authority.
+
 ## Mandatory F-1 Diminishing Returns Stop Rule - 2026-05-15
 
 This rule is agent-enforced. Future agents must obey it without waiting for a

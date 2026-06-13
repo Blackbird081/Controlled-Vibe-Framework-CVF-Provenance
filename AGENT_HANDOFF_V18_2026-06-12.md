@@ -64,9 +64,13 @@ Closure artifacts:
   `docs/reviews/CVF_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_COMPLETION_2026-06-13.md`.
 
 Codex accepted the worker return after reviewer-owned traceability repairs:
-`CLAUDE.md` was added to the matrix source manifest, the interlock registry
-count was corrected to 15, and a worker-return glob that created a false GC-051
-path claim was removed.
+provider-specific `CLAUDE.md` source citations were replaced with CVF-governed
+source paths and marked NOT_CVF_SOURCE for authority claims, the interlock
+registry count was corrected to 15, and a worker-return glob that created a
+false GC-051 path claim was removed. `AGENTS.md` and
+`check_agent_packet_authority_and_encoding.py` now carry the provider-specific
+agent memory/source boundary so future agents do not promote provider-local
+memory or guidance files into CVF source of truth.
 
 Next allowed move: FPC-T2 may open only through fresh GC-018 and a
 source-verified work order for system-loop interlock expansion decisions using
@@ -628,14 +632,17 @@ after the operator asked Codex to continue and create a Claude work order, plus
 this DICE-T1 closure session-sync after the operator returned DICE-T1 worker
 artifacts for Codex review and commit, plus this worker-return fast gate
 latency hardening session-sync after the operator approved CVF foundation
-latency hardening, without
+latency hardening, plus the operator-requested provider-specific agent memory
+boundary cleanup after FPC-T1 review, without
 changing governance semantics, and keep the generated active-session aggregate
 aligned with its per-entry source files.
 This scope also covers the dispatch-quality checker change to
 `check_work_order_dispatch_quality.py` that was authorized by the
 hardening-batch GC-018 and landed in the hardening material closure commit
 `30e7e888`, plus focused regression coverage for that validator and the
-active-session continuity validator.
+active-session continuity validator. It also covers the focused
+provider-specific authority check added to
+`check_agent_packet_authority_and_encoding.py`.
 
 Protected paths:
 
@@ -654,9 +661,12 @@ Protected paths:
 - `CVF_SESSION/state/entries/fpcT1FoundationPlanesWorkflowChainSystemAuditClosure20260613.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
+- `AGENTS.md`
 - `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
 - `governance/compat/check_active_session_state.py`
 - `governance/compat/test_check_active_session_state.py`
+- `governance/compat/check_agent_packet_authority_and_encoding.py`
+- `governance/compat/test_check_agent_packet_authority_and_encoding.py`
 - `governance/compat/check_work_order_dispatch_quality.py`
 - `governance/compat/test_check_work_order_dispatch_quality.py`
 
@@ -679,6 +689,9 @@ The operator then returned DICE-T1 worker artifacts for Codex review and commit.
 The operator then approved CVF foundation latency hardening to reduce total
 user time while preserving guard compliance.
 The operator then returned FPC-T1 worker artifacts for Codex review and commit.
+The operator then clarified that provider-specific files such as `CLAUDE.md`
+and Codex/Claude memory files are agent-local support only, not CVF source of
+truth, and asked Codex to clean findings that do not belong in FPC-T2/T3.
 This session-sync updates the active front door, generated session-state source,
 generated aggregate, and active handoff after the material FPC-T1 closure commit
 `91e8f10f`.
@@ -688,7 +701,8 @@ carries its own Core Guard Self-Protection Authorization. The mandatory
 session-continuity rules require synchronized front doors and active state
 sources after closure.
 
-Rollback boundary: revert only this hardening closure session sync, the
+Rollback boundary: revert only this hardening closure session sync, this
+provider-specific authority cleanup, the
 post-review continuity/test hardening fix, the DIR-T2 dispatch session-sync,
 the DIR-T2 closure session-sync, this DICE-T0 dispatch session-sync, or this
 DICE-T0 closure session-sync, or this DICE-T0 finding-promotion hardening if

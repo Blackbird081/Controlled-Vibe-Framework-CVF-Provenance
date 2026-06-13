@@ -551,7 +551,8 @@
     "workerReturn": "docs/reviews/CVF_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_WORKER_RETURN_2026-06-13.md",
     "completionReview": "docs/reviews/CVF_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_COMPLETION_2026-06-13.md",
     "reviewerRepairs": [
-      "Added CLAUDE.md to matrix Source Authority and inline manifest because matrix cells cited it.",
+      "Replaced provider-specific CLAUDE.md citations with CVF-governed source paths and marked provider-specific agent files as NOT_CVF_SOURCE for authority claims.",
+      "Added provider-specific authority coverage to check_agent_packet_authority_and_encoding.py.",
       "Corrected system-loop interlock registry count from 14 to 15 after direct JSON verification.",
       "Removed a worker-return EXTENSIONS glob that created a false GC-051 path claim.",
       "Recorded unsupported worker-return fast gate --base/--head flags as a tool-contract learning candidate."

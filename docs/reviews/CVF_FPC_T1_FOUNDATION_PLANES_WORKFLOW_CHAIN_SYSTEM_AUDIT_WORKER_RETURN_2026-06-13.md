@@ -88,18 +88,23 @@ Claude:
 
 ## Codex Reviewer-Owned Traceability Repair
 
-Codex reviewer repaired two audit traceability issues before acceptance:
+Codex reviewer repaired three audit traceability issues before acceptance:
 
-1. Added `CLAUDE.md` to the matrix Source Authority and inline source manifest
-   because several matrix cells cite repository guidance from that file.
+1. Replaced provider-specific `CLAUDE.md` citations with CVF-governed source
+   paths and recorded that provider-specific agent files are NOT_CVF_SOURCE for
+   matrix Source Authority, corpus manifests, and closure proof.
 2. Corrected the system-loop interlock registry count from 14 to 15 after
    verifying `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json`
    directly.
+3. Added an agent-packet guard check that blocks provider-specific
+   memory/guidance files when they are used as authority in changed governed
+   markdown.
 
-These repairs stayed inside the two allowed worker-return artifacts. They did
-not change the candidate dispositions, did not authorize FPC-T2 or FPC-T3, and
-did not touch runtime, source, checker, registry, session, generated aggregate,
-external repository, provider, live-proof, or public-sync paths.
+These repairs did not change the candidate dispositions and did not authorize
+FPC-T2 or FPC-T3. The provider-specific authority checker update is a
+reviewer-owned governance hygiene repair outside FPC-T2/T3 content. No runtime,
+registry, external repository, provider, live-proof, or public-sync path was
+touched.
 
 ### Command 1: reviewer-fast hook chain
 
@@ -160,7 +165,7 @@ Result:
 | FPC-T2 candidates are source-backed and do not pre-authorize registry edits | PASS - 5 candidates with source evidence; explicit "No registry edit authorized" constraint |
 | FPC-T3 candidates are source-backed and do not pre-authorize checker edits | PASS - 6 candidates with source evidence; explicit "No implementation authorized" constraint |
 | Document Translator and Policy_Local remain downstream and not inspected | PASS - Row 10 is OUT_OF_SCOPE_WITH_REASON; no external source tree accessed |
-| No runtime/source/checker/registry/session/public-sync files edited | PASS - git status confirms 2 untracked files only |
+| No runtime/source/registry/session/public-sync files edited | PASS - worker return had 2 untracked files only; Codex reviewer later updated checker/source-authority hygiene before closure |
 | Worker-return packet records worker gates and git status | PASS - this file |
 | Worker returns uncommitted artifacts for Codex review | PASS - WORKER_MUST_NOT_COMMIT observed |
 
@@ -211,7 +216,9 @@ This is a source-backed gap finding, not a defect in this worker return.
 - Interlock registry mutation: NOT performed.
 - Session-state mutation: NONE.
 - Checker scripts created or modified: NONE.
-- Runtime source/test files created or modified: NONE.
+- Runtime/product-source/test files created or modified by worker: NONE.
+  Codex reviewer later updated governance guard source and focused guard tests
+  for provider-specific source-authority hygiene.
 - Public-sync: NOT performed.
 - Readiness claims: NONE.
 - Memory reinjection: NONE. rawMemoryReleased=false.
@@ -234,7 +241,7 @@ This is a source-backed gap finding, not a defect in this worker return.
 | Em-dash ASCII discipline violation | Repaired in allowed scope; all 33 occurrences replaced before gate rerun |
 | Matrix cell inference risk | Per-cell source evidence rule enforced; all cells cite path/section or use explicit non-claim disposition |
 | Plane coverage gap | All 10 FPC roadmap target planes covered; DSCP sub-roadmaps skipped with reasons (T11 family summary sufficient) |
-| Reviewer traceability repair | Codex added the missing `CLAUDE.md` source-manifest row and corrected interlock registry count to 15 connections before acceptance |
+| Reviewer traceability repair | Codex replaced provider-specific `CLAUDE.md` citations with CVF-governed sources, added the provider-specific authority guard, and corrected interlock registry count to 15 connections before acceptance |
 
 ## Claim Boundary
 
