@@ -2738,6 +2738,56 @@
       ],
       "priorAbsorption": "MEMCON-T1a closed the standard and owner reconciliation. T1b adds doc-only field tables and runtime collision evidence, with no runtime source mutation.",
       "notes": "Covers the Memory Consolidation schema appendix and its direct T1a owner references. The proposed symbols remain doc-only until a later authorized runtime implementation tranche."
+    },
+    {
+      "id": "dir-t1-document-intelligence-router-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation DIR-T1 document intelligence router source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/document_intelligence_router.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "raw_text (not present - confirmed by no-raw-content test)",
+        "ocr_output (not present - confirmed by no-raw-content test)",
+        "provider_response (not present - confirmed by no-raw-content test)",
+        "TRANSLATION_PREP (rejected use-case name - not a capability value)",
+        "POLICY_EVIDENCE_REVIEW (rejected use-case name - not a capability value)",
+        "Policy_Local (not present)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "DIR-T1",
+      "scanDate": "2026-06-13",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_DIR_T1_DOCUMENT_INTELLIGENCE_ROUTER_SOURCE_AND_TESTS_COMPLETION_2026-06-13.md",
+      "notes": "Deterministic local Document Intelligence Router that composes EXA-T2 scan-route contracts by import, derives a disjoint AuthorizationGate via a total map over scan dispositions, and stores no raw content, OCR output, or provider response. No OCR/provider execution, retrieval change, corpus ingestion, or external use-case tree read."
+    },
+    {
+      "id": "dir-t1-document-intelligence-router-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation DIR-T1 document intelligence router tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_document_intelligence_router.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "raw document text (not asserted or stored)",
+        "OCR execution (not invoked)",
+        "provider call (not invoked)",
+        "Policy_Local (not present)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "DIR-T1",
+      "scanDate": "2026-06-13",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_DIR_T1_DOCUMENT_INTELLIGENCE_ROUTER_SOURCE_AND_TESTS_COMPLETION_2026-06-13.md",
+      "notes": "Focused pytest coverage for gate/scan-disposition disjointness, total derivation map over four scan dispositions, scan-route passthrough, operator-review and blocked-source preservation, no-raw-content dataclass fields, capability composition, digest presence, and use-case-name leakage prevention."
     }
   ]
 }

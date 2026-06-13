@@ -1,0 +1,27 @@
+{
+  "registryOrder": 68,
+  "id": "dir-t1-document-intelligence-router-source",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF Extraction Foundation DIR-T1 document intelligence router source",
+  "scopePaths": [
+    "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/document_intelligence_router.py"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [
+    "raw_text (not present - confirmed by no-raw-content test)",
+    "ocr_output (not present - confirmed by no-raw-content test)",
+    "provider_response (not present - confirmed by no-raw-content test)",
+    "TRANSLATION_PREP (rejected use-case name - not a capability value)",
+    "POLICY_EVIDENCE_REVIEW (rejected use-case name - not a capability value)",
+    "Policy_Local (not present)"
+  ],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "DIR-T1",
+  "scanDate": "2026-06-13",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_DIR_T1_DOCUMENT_INTELLIGENCE_ROUTER_SOURCE_AND_TESTS_COMPLETION_2026-06-13.md",
+  "notes": "Deterministic local Document Intelligence Router that composes EXA-T2 scan-route contracts by import, derives a disjoint AuthorizationGate via a total map over scan dispositions, and stores no raw content, OCR output, or provider response. No OCR/provider execution, retrieval change, corpus ingestion, or external use-case tree read."
+}

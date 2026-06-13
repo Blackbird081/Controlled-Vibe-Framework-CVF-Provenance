@@ -287,7 +287,7 @@ Machine-check candidate for DIR-T1:
 | Tranche | Deliverable | Dependency | Status |
 | --- | --- | --- | --- |
 | DIR-T0 | Doc-only owner reconciliation, 3 contract tables, adapter matrix, and machine-check candidate spec | Final roadmap plus fresh GC-018/work order | CLOSED_PASS_BOUNDED |
-| DIR-T1 | Deterministic local source implementation and focused tests | DIR-T0 closure plus fresh GC-018/work order | AWAITING_FRESH_AUTHORIZATION |
+| DIR-T1 | Deterministic local source implementation and focused tests | DIR-T0 closure plus fresh GC-018/work order | CLOSED_PASS_BOUNDED |
 | DIR-T2 | Bounded pilot over operator-approved samples, if any | DIR-T1 closure plus sample corpus and runtime/live-proof authorization when applicable | HOLD_PENDING_T1_AND_RUNTIME_AUTH |
 
 ## Tranche Detail
