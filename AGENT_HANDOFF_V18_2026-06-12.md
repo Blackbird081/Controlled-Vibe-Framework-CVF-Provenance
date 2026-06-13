@@ -30,8 +30,8 @@ Startup acknowledged: current mode=`work_order_template_protected_path_authoriza
 
 `work_order_template_protected_path_authorization_hardening_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `30e7e888`
-(work-order template protected-path authorization hardening material closure
+Current HEAD recorded for this handoff: `34ff7312`
+(DIR continuity and protected-path carrier regression-test fix material closure
 commit; this dedicated session-sync follows).
 
 ## Active Boundary
