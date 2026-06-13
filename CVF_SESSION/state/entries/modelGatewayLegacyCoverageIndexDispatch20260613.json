@@ -2,20 +2,24 @@
   "stateOrder": 387,
   "stateKey": "modelGatewayLegacyCoverageIndexDispatch20260613",
   "value": {
-    "status": "DISPATCHED",
-    "materialCommit": "a4cfb246",
+    "status": "CLOSED_PASS_BOUNDED",
+    "dispatchCommit": "a4cfb246",
+    "materialCommit": "5be35102",
     "priorHoldCorrectionCommit": "919afd4e",
     "dispatchBaseHead": "86d9e46d",
+    "reviewerRemediation": "Codex corrected manifest naming, actual fast-gate evidence, accepted-value count consistency, and the missed MODEL_GATEWAY_INTERFACE.md disposition.",
     "gc018": "docs/baselines/CVF_GC018_MODEL_GATEWAY_LEGACY_ABSORPTION_COVERAGE_INDEX_2026-06-13.md",
     "coverageIndex": "docs/reference/CVF_LEGACY_ABSORPTION_COVERAGE_INDEX_2026-06-13.md",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_LEGACY_ABSORPTION_COVERAGE_INDEX_FOR_CLAUDE_2026-06-13.md",
-    "allowedWorkerDeliverables": [
+    "workerDeliverables": [
       "docs/reference/CVF_LEGACY_ABSORPTION_COVERAGE_INDEX_2026-06-13.md",
       "docs/reference/CVF_MODEL_GATEWAY_LEGACY_ABSORPTION_RECHECK_PLAN_2026-06-13.md",
       "docs/reviews/CVF_MODEL_GATEWAY_LEGACY_ABSORPTION_COVERAGE_INDEX_WORKER_RETURN_2026-06-13.md"
     ],
+    "completionReview": "docs/reviews/CVF_MODEL_GATEWAY_LEGACY_ABSORPTION_COVERAGE_INDEX_COMPLETION_2026-06-13.md",
     "blockedPriorDispatch": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_FOR_CLAUDE_2026-06-13.md",
-    "nextAllowedMove": "Claude worker return only for Model Gateway legacy absorption coverage index dispatch; C-02 planning remains held until MGW-001 recheck releases it.",
-    "claimBoundary": "Documentation and coverage-index dispatch only; no runtime/source/test mutation, provider/API use, live proof, public-sync, readiness, cost, quality, or broad legacy absorption outside the named scope."
+    "c02ResumeDecision": "RESUME_WITH_REWRITE",
+    "nextAllowedMove": "C-02 Model Gateway planning may resume only through a fresh rewritten planning packet or work order that cites the recheck plan and completion review. No implementation, runtime/source/test mutation, provider/API call, live proof, public-sync, AI Gateway environment-signal absorption, cost/quality/readiness claim, raw memory release, or autonomous mutation is authorized.",
+    "claimBoundary": "Documentation-only legacy coverage recheck closure; no runtime/source/test mutation, provider/API use, live proof, public-sync, readiness, cost, quality, broad legacy absorption outside the named gateway scope, or co-work product development."
   }
 }
