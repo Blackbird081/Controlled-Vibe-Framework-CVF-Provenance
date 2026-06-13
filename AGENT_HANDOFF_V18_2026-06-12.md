@@ -24,14 +24,15 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`fpc_t3_foundation_checker_template_coverage_plan_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=fresh authorization only for FPC-T3-C04 plus FPC-T3-C01 implementation work order, FPC-T2 C01-C04 registry-edit work order, or FPC-T4 after explicit operator decision; parked checkpoint=registry mutation, FPC-T3 implementation, OS audit/control setup, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`agent_operation_trace_foundation_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=fresh authorization only for FPC-T3-C04 plus FPC-T3-C01 implementation work order, FPC-T2 C01-C04 registry-edit work order, AOT-T2 deeper expected-manifest/trace hardening, or FPC-T4 after explicit operator decision; parked checkpoint=registry mutation, FPC-T3 implementation, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`fpc_t3_foundation_checker_template_coverage_plan_closed_pass_bounded`
+`agent_operation_trace_foundation_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `c1fd85d3`
-(FPC-T3 material closure commit; this dedicated session-sync follows).
+Current HEAD recorded for this handoff: `41977f58`
+(Agent Operation Trace foundation material closure commit; this dedicated
+session-sync follows).
 
 ## Active Boundary
 
@@ -46,35 +47,37 @@ requires separate authorization.
 
 ## Latest Continuity Note
 
-FPC-T3 foundation checker/template/standard coverage plan is
-`CLOSED_PASS_BOUNDED` at material closure commit `c1fd85d3` from closure base
-`77098b23`.
+Agent Operation Trace foundation is `CLOSED_PASS_BOUNDED` at material commit
+`41977f58` from execution base `f789498d`.
 
 Closure artifacts:
 
 - GC-018:
-  `docs/baselines/CVF_GC018_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_PLAN_2026-06-13.md`;
+  `docs/baselines/CVF_GC018_AGENT_OPERATION_TRACE_FOUNDATION_2026-06-13.md`;
 - Work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_PLAN_FOR_CLAUDE_2026-06-13.md`;
-- Coverage plan:
-  `docs/reference/CVF_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_PLAN_2026-06-13.md`;
-- Worker return:
-  `docs/reviews/CVF_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_WORKER_RETURN_2026-06-13.md`;
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_AGENT_OPERATION_TRACE_FOUNDATION_FOR_CODEX_2026-06-13.md`;
+- Standard:
+  `docs/reference/CVF_AGENT_OPERATION_TRACE_AND_WORKSPACE_INTEGRITY_STANDARD_2026-06-13.md`;
+- Checker:
+  `governance/compat/check_agent_operation_trace.py`;
+- Tests:
+  `governance/compat/test_check_agent_operation_trace.py`;
 - Completion review:
-  `docs/reviews/CVF_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_COMPLETION_2026-06-13.md`;
-- Roadmap:
-  `docs/roadmaps/CVF_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_COMPLETION_ROADMAP_2026-06-13.md`.
+  `docs/reviews/CVF_AGENT_OPERATION_TRACE_FOUNDATION_COMPLETION_2026-06-13.md`.
 
-Recommended first implementation tranche is FPC-T3-C04 plus FPC-T3-C01, but
-only through a fresh GC-018/source-verified work order and explicit operator
-authorization. Alternative fresh authorization paths are an FPC-T2 C01-C04
-registry-edit work order or FPC-T4 after explicit operator decision.
+CVF does not develop `codex_cowork` or `claude_cowork` platforms. CVF supervises
+agent/provider execution by requiring agents to leave repo-local traces and by
+blocking protected-path delete/rename closure without disposition evidence.
 
-No checker implementation, template mutation, registry edit, runtime/source/test
-change, OS audit installation, Sysmon installation, file watcher service,
-destructive broker, agent computer-control permission change, live proof,
-public-sync, downstream app inspection/mutation, raw memory release, or
-autonomous mutation is authorized.
+Fresh authorization options remain bounded: FPC-T3-C04 plus FPC-T3-C01
+implementation work order, FPC-T2 C01-C04 registry-edit work order, AOT-T2
+deeper expected-manifest/trace hardening, or FPC-T4 after explicit operator
+decision.
+
+No OS audit installation, Sysmon installation, endpoint monitoring, file
+watcher service, destructive broker, agent computer-control permission change,
+live proof, public-sync, downstream app inspection/mutation, raw memory release,
+or autonomous mutation is authorized.
 
 ---
 
@@ -637,8 +640,11 @@ after the operator asked Codex to continue with the FPC-T2 work order, without
 changing governance semantics, plus this FPC-T3 dispatch session-sync after the
 operator approved the FPC-T3 Claude work order under Codex control, plus this
 FPC-T3 closure session-sync after the operator returned FPC-T3 worker artifacts
-for Codex review and commit, and keep the generated active-session aggregate
-aligned with its per-entry source files.
+for Codex review and commit, plus this agent-operation trace foundation closure
+session-sync after the operator clarified that CVF must supervise co-work
+agents by requiring repo-local traces while not developing the co-work
+platforms, and keep the generated active-session aggregate aligned with its
+per-entry source files.
 This scope also covers the dispatch-quality checker change to
 `check_work_order_dispatch_quality.py` that was authorized by the
 hardening-batch GC-018 and landed in the hardening material closure commit
@@ -666,6 +672,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/fpcT2SystemLoopInterlockExpansionDecisionClosure20260613.json`
 - `CVF_SESSION/state/entries/fpcT3FoundationCheckerTemplateCoveragePlanDispatch20260613.json`
 - `CVF_SESSION/state/entries/fpcT3FoundationCheckerTemplateCoveragePlanClosure20260613.json`
+- `CVF_SESSION/state/entries/agentOperationTraceFoundationClosure20260613.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENTS.md`
@@ -708,6 +715,12 @@ The operator then returned FPC-T3 worker artifacts for Codex review and commit.
 This session-sync updates the active front door, generated session-state source,
 generated aggregate, and active handoff after the material FPC-T3 closure
 commit `c1fd85d3`.
+The operator then clarified that CVF must not develop `codex_cowork` or
+`claude_cowork` platforms because OpenAI and Anthropic own those surfaces; CVF
+core controls agents/providers by requiring agents to leave traces. The operator
+then confirmed "Chinh xac, tien hanh di". This session-sync updates the active
+front door, generated session-state source, generated aggregate, and active
+handoff after the agent-operation trace foundation material commit `41977f58`.
 The hardening-batch GC-018 explicitly authorized the
 `governance/compat/check_work_order_dispatch_quality.py` validator addition and
 carries its own Core Guard Self-Protection Authorization. The mandatory
@@ -726,10 +739,12 @@ this DICE-T1 dispatch session-sync, or this DICE-T1 closure session-sync are
 incorrect, or this worker-return fast gate latency hardening session-sync, or
 this FPC-T1 closure session-sync is incorrect, this FPC-T2 dispatch
 session-sync is incorrect, this FPC-T2 closure session-sync is incorrect, or
-this FPC-T3 closure session-sync is incorrect.
+this FPC-T3 closure session-sync is incorrect, or this agent-operation trace
+foundation closure session-sync is incorrect.
 Do not revert
 hardening material closure
-commit `30e7e888`, FPC-T3 material closure commit `c1fd85d3`,
+commit `30e7e888`, agent-operation trace foundation material closure commit
+`41977f58`, FPC-T3 material closure commit `c1fd85d3`,
 FPC-T2 material closure commit `c12c65b1`,
 FPC-T2 material dispatch commit `4193fcd6`,
 FPC-T1 material closure commit `91e8f10f`,
@@ -755,18 +770,20 @@ acceleration material commit `bd15e0ae`, MEMCON-T1a material closure commit
 
 ## Next Allowed Move
 
-Next allowed move: FPC-T3 is `CLOSED_PASS_BOUNDED` at material closure commit
-`c1fd85d3`. Fresh authorization only:
+Next allowed move: Agent Operation Trace foundation is `CLOSED_PASS_BOUNDED` at
+material commit `41977f58`. Fresh authorization only:
 
 - open FPC-T3-C04 plus FPC-T3-C01 implementation work order;
-- open FPC-T2 C01-C04 registry-edit work order; or
+- open FPC-T2 C01-C04 registry-edit work order;
+- open AOT-T2 deeper expected-manifest/trace hardening; or
 - move to FPC-T4 after explicit operator decision.
 
 Registry edits, FPC-T3 implementation, runtime/source/test changes, OS audit
-installation, Sysmon installation, file watcher services, destructive brokers,
-agent computer-control permission changes, DICE-T3/provider/OCR/live proof work,
-public-sync, external Document_Translator inspection or mutation, and
-Policy_Local mutation are not authorized without that later work order.
+installation, Sysmon installation, endpoint monitoring, file watcher services,
+destructive brokers, agent computer-control permission changes,
+DICE-T3/provider/OCR/live proof work, public-sync, external Document_Translator
+inspection or mutation, and Policy_Local mutation are not authorized without
+that later work order.
 
 DT-CVF-T0 may be opened only through later fresh GC-018 and a source-verified
 work order for Document Translator source custody, repo inventory,
