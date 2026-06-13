@@ -1,0 +1,26 @@
+{
+  "stateOrder": 373,
+  "stateKey": "fpcT2SystemLoopInterlockExpansionDecisionDispatch20260613",
+  "value": {
+    "status": "DISPATCHED_AWAITING_WORKER_RETURN",
+    "materialCommit": "4193fcd6",
+    "dispatchBaseHead": "3f57bf18",
+    "roadmap": "docs/roadmaps/CVF_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_COMPLETION_ROADMAP_2026-06-13.md",
+    "gc018": "docs/baselines/CVF_GC018_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_2026-06-13.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_FOR_CLAUDE_2026-06-13.md",
+    "assignment": "Claude evaluates system-loop interlock expansion candidates under WORKER_MUST_NOT_COMMIT and returns a decision matrix plus worker-return packet.",
+    "expectedWorkerArtifacts": [
+      "docs/reference/CVF_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_MATRIX_2026-06-13.md",
+      "docs/reviews/CVF_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_WORKER_RETURN_2026-06-13.md"
+    ],
+    "requiredCandidates": [
+      "FPC-T2-C01 Control Plane hook-chain-to-learning-intake",
+      "FPC-T2-C02 Memory-to-Learning signal interlock",
+      "FPC-T2-C03 Memory-to-Retrieval signal interlock",
+      "FPC-T2-C04 DIR/DICE-to-downstream-adapter eligibility interlock",
+      "FPC-T2-C05 Evidence-to-claim-update workflow-chain interlock"
+    ],
+    "nextAllowedMove": "Claude worker return only. Codex owns review, allowed reviewer repairs, final gates, and commit. FPC-T3 remains parked until FPC-T2 closes or the operator separately authorizes it.",
+    "boundary": "Decision-only governance foundation work. No registry edit, no runtime/source/test change, no FPC-T3 implementation, no external Document_Translator or Policy_Local inspection or mutation, no OCR/provider/API/live proof, no public-sync, no corpus ingestion beyond authorized registry coverage, no readiness/cost/quality claim, no memory reinjection, and no autonomous mutation."
+  }
+}

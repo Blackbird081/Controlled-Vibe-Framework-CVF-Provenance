@@ -24,14 +24,14 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`fpc_t1_foundation_planes_workflow_chain_system_audit_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=FPC-T2 may open only through fresh GC-018 and source-verified work order for system-loop interlock expansion decisions using FPC-T1 matrix evidence; parked checkpoint=FPC-T3 execution, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`fpc_t2_system_loop_interlock_expansion_decision_dispatched`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=Claude worker return for FPC-T2 decision matrix and worker-return packet under `WORKER_MUST_NOT_COMMIT`; parked checkpoint=FPC-T3 execution, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`fpc_t1_foundation_planes_workflow_chain_system_audit_closed_pass_bounded`
+`fpc_t2_system_loop_interlock_expansion_decision_dispatched`
 
-Current HEAD recorded for this handoff: `d6c31c6d`
-(provider-specific source authority boundary cleanup commit; this dedicated session-sync follows).
+Current HEAD recorded for this handoff: `4193fcd6`
+(FPC-T2 dispatch material commit; this dedicated session-sync follows).
 
 ## Active Boundary
 
@@ -46,36 +46,24 @@ requires separate authorization.
 
 ## Latest Continuity Note
 
-FPC-T1 foundation planes workflow-chain system audit is
-`CLOSED_PASS_BOUNDED` at material commit `91e8f10f` from closure base
-`17f45c94`.
+FPC-T2 system-loop interlock expansion decision package is `DISPATCHED` at
+material commit `4193fcd6` from dispatch base `3f57bf18` under
+`WORKER_MUST_NOT_COMMIT`.
 
-Closure artifacts:
+Dispatch artifacts:
 
 - GC-018:
-  `docs/baselines/CVF_GC018_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_2026-06-13.md`;
+  `docs/baselines/CVF_GC018_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_2026-06-13.md`;
 - Work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_FOR_CLAUDE_2026-06-13.md`;
-- Matrix:
-  `docs/reference/CVF_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_MATRIX_2026-06-13.md`;
-- Worker return:
-  `docs/reviews/CVF_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_WORKER_RETURN_2026-06-13.md`;
-- Completion review:
-  `docs/reviews/CVF_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_COMPLETION_2026-06-13.md`.
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_FOR_CLAUDE_2026-06-13.md`;
+- Roadmap:
+  `docs/roadmaps/CVF_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_COMPLETION_ROADMAP_2026-06-13.md`.
 
-Codex accepted the worker return after reviewer-owned traceability repairs:
-provider-specific `CLAUDE.md` source citations were replaced with CVF-governed
-source paths and marked NOT_CVF_SOURCE for authority claims, the interlock
-registry count was corrected to 15, and a worker-return glob that created a
-false GC-051 path claim was removed. `AGENTS.md` and
-`check_agent_packet_authority_and_encoding.py` now carry the provider-specific
-agent memory/source boundary so future agents do not promote provider-local
-memory or guidance files into CVF source of truth.
-
-Next allowed move: FPC-T2 may open only through fresh GC-018 and a
-source-verified work order for system-loop interlock expansion decisions using
-FPC-T1 matrix evidence. FPC-T3 remains parked until FPC-T2 closes or the
-operator separately authorizes a small governance batch.
+Next allowed move: Claude worker return only. Claude may produce the FPC-T2
+decision matrix and worker-return packet named in the work order. Codex owns
+review, allowed reviewer repairs, final gates, and commit. FPC-T3 remains
+parked until FPC-T2 closes or the operator separately authorizes a small
+governance batch.
 
 ---
 
@@ -633,7 +621,8 @@ this DICE-T1 closure session-sync after the operator returned DICE-T1 worker
 artifacts for Codex review and commit, plus this worker-return fast gate
 latency hardening session-sync after the operator approved CVF foundation
 latency hardening, plus the operator-requested provider-specific agent memory
-boundary cleanup after FPC-T1 review, without
+boundary cleanup after FPC-T1 review, plus this FPC-T2 dispatch session-sync
+after the operator asked Codex to continue with the FPC-T2 work order, without
 changing governance semantics, and keep the generated active-session aggregate
 aligned with its per-entry source files.
 This scope also covers the dispatch-quality checker change to
@@ -659,6 +648,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/diceT1DocumentIntelligenceControlEnvelopeRuntimeClosure20260613.json`
 - `CVF_SESSION/state/entries/workerReturnFastGateLatencyHardening20260613.json`
 - `CVF_SESSION/state/entries/fpcT1FoundationPlanesWorkflowChainSystemAuditClosure20260613.json`
+- `CVF_SESSION/state/entries/fpcT2SystemLoopInterlockExpansionDecisionDispatch20260613.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENTS.md`
@@ -692,9 +682,10 @@ The operator then returned FPC-T1 worker artifacts for Codex review and commit.
 The operator then clarified that provider-specific files such as `CLAUDE.md`
 and Codex/Claude memory files are agent-local support only, not CVF source of
 truth, and asked Codex to clean findings that do not belong in FPC-T2/T3.
+The operator then asked Codex to continue with the FPC-T2 work order.
 This session-sync updates the active front door, generated session-state source,
-generated aggregate, and active handoff after the material FPC-T1 closure commit
-`91e8f10f`.
+generated aggregate, and active handoff after the material FPC-T2 dispatch
+commit `4193fcd6`.
 The hardening-batch GC-018 explicitly authorized the
 `governance/compat/check_work_order_dispatch_quality.py` validator addition and
 carries its own Core Guard Self-Protection Authorization. The mandatory
@@ -711,9 +702,11 @@ regression coverage, template guidance, continuity markers, semantic
 next-allowed-move alignment guard, regression coverage, closure pointers, or
 this DICE-T1 dispatch session-sync, or this DICE-T1 closure session-sync are
 incorrect, or this worker-return fast gate latency hardening session-sync, or
-this FPC-T1 closure session-sync is incorrect. Do not revert
+this FPC-T1 closure session-sync is incorrect, or this FPC-T2 dispatch
+session-sync is incorrect. Do not revert
 hardening material closure
-commit `30e7e888`, FPC-T1 material closure commit `91e8f10f`,
+commit `30e7e888`, FPC-T2 material dispatch commit `4193fcd6`,
+FPC-T1 material closure commit `91e8f10f`,
 worker-return fast gate material commit `5e605862`,
 DICE-T1 material closure commit `d46023d1`,
 DICE-T1 dispatch material commit `129d3ebb`,
@@ -736,14 +729,15 @@ acceleration material commit `bd15e0ae`, MEMCON-T1a material closure commit
 
 ## Next Allowed Move
 
-Next allowed move: MEMCON-T5 follow-up - FPC-T2 may open only through fresh
-GC-018 and a source-verified work order for system-loop interlock expansion
-decisions using the FPC-T1 matrix evidence from material commit `91e8f10f`.
-FPC-T2 must evaluate, not pre-accept, FPC-T2-C01 through FPC-T2-C05 and must
-reconcile the evidence-to-claim-update candidate against MLW3 before any
-`ADD_INTERLOCK_ENTRY` disposition. FPC-T3 remains parked until FPC-T2 closes or
-the operator separately authorizes a small governance batch.
-DICE-T3/provider/OCR/live-proof work is not authorized.
+Next allowed move: MEMCON-T5 follow-up - FPC-T2 system-loop interlock expansion
+decision package is dispatched at material commit `4193fcd6` from dispatch base
+`3f57bf18` under `WORKER_MUST_NOT_COMMIT`. Claude may return only the decision
+matrix and worker-return packet named in the work order. Codex owns review,
+allowed reviewer repairs, final gates, and commit. FPC-T3 remains parked until
+FPC-T2 closes or the operator separately authorizes a small governance batch.
+Registry edits, runtime/source/test changes, DICE-T3/provider/OCR/live-proof
+work, public-sync, external Document_Translator inspection or mutation, and
+Policy_Local mutation are not authorized.
 
 DT-CVF-T0 may be opened only through later fresh GC-018 and a source-verified
 work order for Document Translator source custody, repo inventory,

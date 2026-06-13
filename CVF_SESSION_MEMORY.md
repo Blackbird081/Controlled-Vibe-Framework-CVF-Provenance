@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-13
 
-Current mode marker: `fpc_t1_foundation_planes_workflow_chain_system_audit_closed_pass_bounded`
+Current mode marker: `fpc_t2_system_loop_interlock_expansion_decision_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `fpc_t1_foundation_planes_workflow_chain_system_audit_closed_pass_bounded`.
+Current mode: `fpc_t2_system_loop_interlock_expansion_decision_dispatched`.
 
 Active handoff:
 
@@ -58,26 +58,23 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-FPC-T1 foundation planes workflow-chain system audit is
-`CLOSED_PASS_BOUNDED` at material commit `91e8f10f`.
+FPC-T2 system-loop interlock expansion decision package is `DISPATCHED` at
+material commit `4193fcd6` from dispatch base `3f57bf18` under
+`WORKER_MUST_NOT_COMMIT`.
 
-Closure artifacts:
+Dispatch artifacts:
 
 - GC-018:
-  `docs/baselines/CVF_GC018_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_2026-06-13.md`;
+  `docs/baselines/CVF_GC018_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_2026-06-13.md`;
 - Work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_FOR_CLAUDE_2026-06-13.md`;
-- Matrix:
-  `docs/reference/CVF_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_MATRIX_2026-06-13.md`;
-- Worker return:
-  `docs/reviews/CVF_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_WORKER_RETURN_2026-06-13.md`;
-- Completion review:
-  `docs/reviews/CVF_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_COMPLETION_2026-06-13.md`.
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_FOR_CLAUDE_2026-06-13.md`;
+- Roadmap:
+  `docs/roadmaps/CVF_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_COMPLETION_ROADMAP_2026-06-13.md`.
 
-Next allowed move is MEMCON-T5 follow-up: FPC-T2 may open only through a fresh
-GC-018 and source-verified work order for system-loop interlock expansion
-decisions using FPC-T1 matrix evidence. FPC-T3 remains parked until FPC-T2
-closes or the operator separately authorizes a small governance batch.
+Next allowed move is Claude worker return only: produce the FPC-T2 decision
+matrix and worker-return packet, then return to Codex for review, final gates,
+and commit. FPC-T3 remains parked until FPC-T2 closes or the operator
+separately authorizes a small governance batch.
 
 ---
 
@@ -1069,14 +1066,15 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: MEMCON-T5 follow-up - FPC-T2 may open only through a fresh
-GC-018 and source-verified work order for system-loop interlock expansion
-decisions using the FPC-T1 matrix evidence from material commit `91e8f10f`.
-FPC-T2 must evaluate, not pre-accept, FPC-T2-C01 through FPC-T2-C05 and must
-reconcile the evidence-to-claim-update candidate against MLW3 before any
-`ADD_INTERLOCK_ENTRY` disposition. FPC-T3 remains parked until FPC-T2 closes or
-the operator separately authorizes a small governance batch.
-DICE-T3/provider/OCR/live-proof work is not authorized.
+Next allowed move: MEMCON-T5 follow-up - FPC-T2 system-loop interlock expansion
+decision package is dispatched at material commit `4193fcd6` from dispatch base
+`3f57bf18` under `WORKER_MUST_NOT_COMMIT`. Claude may return only the decision
+matrix and worker-return packet named in the work order. Codex owns review,
+allowed reviewer repairs, final gates, and commit. FPC-T3 remains parked until
+FPC-T2 closes or the operator separately authorizes a small governance batch.
+Registry edits, runtime/source/test changes, DICE-T3/provider/OCR/live-proof
+work, public-sync, external Document_Translator inspection or mutation, and
+Policy_Local mutation are not authorized.
 Closure artifacts:
 
 - Roadmap:
