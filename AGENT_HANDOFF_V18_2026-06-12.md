@@ -24,14 +24,14 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`dice_t0_document_intelligence_control_envelope_contract_matrix_dispatched`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=Claude executes DICE-T0 under WORKER_MUST_NOT_COMMIT and returns uncommitted allowed-scope artifacts for Codex review; parked checkpoint=DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`dice_t0_document_intelligence_control_envelope_contract_matrix_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=operator may open DICE-T1 only through fresh GC-018 and source-verified work order, or choose another CVF foundation lane; parked checkpoint=DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`dice_t0_document_intelligence_control_envelope_contract_matrix_dispatched`
+`dice_t0_document_intelligence_control_envelope_contract_matrix_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `4ee9bcff`
-(DICE-T0 control-envelope material dispatch commit; this dedicated
+Current HEAD recorded for this handoff: `a355cd7a`
+(DICE-T0 control-envelope material closure commit; this dedicated
 session-sync follows).
 
 ## Active Boundary
@@ -48,20 +48,30 @@ requires separate authorization.
 ## Latest Continuity Note
 
 DICE-T0 Document Intelligence Control Envelope contract matrix is
-`DISPATCHED` at material dispatch commit `4ee9bcff` from dispatch base
-`bea8e1f1`.
+`CLOSED_PASS_BOUNDED` at material closure commit `a355cd7a` from closure base
+`9fe5fc89`.
 
-DICE-T0 dispatch artifacts:
+DICE-T0 closure artifacts:
 
 - Roadmap:
   `docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_ROADMAP_2026-06-13.md`;
 - GC-018:
   `docs/baselines/CVF_GC018_DICE_T0_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_2026-06-13.md`;
 - Work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_DICE_T0_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_FOR_CLAUDE_2026-06-13.md`.
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_DICE_T0_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_FOR_CLAUDE_2026-06-13.md`;
+- Contract matrix:
+  `docs/reference/CVF_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_2026-06-13.md`;
+- Worker return:
+  `docs/reviews/CVF_DICE_T0_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_WORKER_RETURN_2026-06-13.md`;
+- Codex completion:
+  `docs/reviews/CVF_DICE_T0_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_COMPLETION_2026-06-13.md`.
 
-Next allowed move: Claude executes DICE-T0 under `WORKER_MUST_NOT_COMMIT` and
-returns uncommitted contract matrix plus worker-return packet for Codex review.
+Result: DICE-T0 accepts the doc-only Document Intelligence Control Envelope
+contract matrix and records DICE-MC-08 passthrough invariant follow-up for
+DICE-T1.
+
+Next allowed move: operator may open DICE-T1 only through fresh GC-018 and a
+source-verified work order, or choose another CVF foundation lane.
 
 Boundary: doc-only foundation contract matrix only; no external
 Document_Translator inspection or mutation, Policy_Local mutation, OCR/provider
@@ -538,7 +548,8 @@ Authorized guard-maintenance scope: perform the mandatory work-order-template
 protected-path authorization hardening closure session sync, the
 operator-requested post-review continuity/test hardening fix, the
 next-allowed-move semantic alignment guard, the DIR-T2 dispatch session-sync,
-the DIR-T2 closure session-sync, and this DICE-T0 dispatch session-sync without
+the DIR-T2 closure session-sync, this DICE-T0 dispatch session-sync, and this
+DICE-T0 closure session-sync without
 changing governance semantics, and keep the generated active-session aggregate
 aligned with its per-entry source files.
 This scope also covers the dispatch-quality checker change to
@@ -557,6 +568,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/dirT2DocumentIntelligenceRouterFoundationPilotDispatch20260613.json`
 - `CVF_SESSION/state/entries/dirT2DocumentIntelligenceRouterFoundationPilotClosure20260613.json`
 - `CVF_SESSION/state/entries/diceT0DocumentIntelligenceControlEnvelopeDispatch20260613.json`
+- `CVF_SESSION/state/entries/diceT0DocumentIntelligenceControlEnvelopeClosure20260613.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `governance/compat/check_active_session_state.py`
@@ -574,7 +586,8 @@ roadmap movement, then approved the DIR-T2 direction as CVF foundation
 hardening and asked Codex to audit, process, and issue the Claude work order,
 then returned the DIR-T2 worker artifacts for Codex review and commit, then
 asked Codex to continue opening a CVF foundation roadmap and create a Claude
-work order.
+work order, then returned the DICE-T0 worker artifacts for Codex review and
+commit.
 The hardening-batch GC-018 explicitly authorized the
 `governance/compat/check_work_order_dispatch_quality.py` validator addition and
 carries its own Core Guard Self-Protection Authorization. The mandatory
@@ -583,7 +596,8 @@ sources after closure.
 
 Rollback boundary: revert only this hardening closure session sync, the
 post-review continuity/test hardening fix, the DIR-T2 dispatch session-sync,
-the DIR-T2 closure session-sync, or this DICE-T0 dispatch session-sync if the continuity markers, semantic
+the DIR-T2 closure session-sync, this DICE-T0 dispatch session-sync, or this
+DICE-T0 closure session-sync if the continuity markers, semantic
 next-allowed-move alignment guard, regression coverage, or closure pointers
 are incorrect. Do not revert
 hardening material closure
@@ -606,9 +620,10 @@ acceleration material commit `bd15e0ae`, MEMCON-T1a material closure commit
 
 ## Next Allowed Move
 
-DIR-T2 foundation follow-up DICE-T0: Claude executes DICE-T0 under
-`WORKER_MUST_NOT_COMMIT` and returns uncommitted allowed-scope artifacts for
-Codex review. DICE-T0 is dispatched at material commit `4ee9bcff`.
+DIR-T2 foundation follow-up: DICE-T0 is `CLOSED_PASS_BOUNDED` at material
+closure commit `a355cd7a`. Operator may open DICE-T1 only through fresh
+GC-018 and a source-verified work order that carries the DICE-MC-08
+passthrough invariant follow-up, or choose another CVF foundation lane.
 
 DT-CVF-T0 may be opened only through later fresh GC-018 and a source-verified
 work order for Document Translator source custody, repo inventory,

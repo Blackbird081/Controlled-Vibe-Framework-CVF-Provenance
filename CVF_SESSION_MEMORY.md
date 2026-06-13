@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-13
 
-Current mode marker: `dice_t0_document_intelligence_control_envelope_contract_matrix_dispatched`
+Current mode marker: `dice_t0_document_intelligence_control_envelope_contract_matrix_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `dice_t0_document_intelligence_control_envelope_contract_matrix_dispatched`.
+Current mode: `dice_t0_document_intelligence_control_envelope_contract_matrix_closed_pass_bounded`.
 
 Active handoff:
 
@@ -59,21 +59,31 @@ Pain-point closure direction:
 ## Latest Continuity Note
 
 DICE-T0 Document Intelligence Control Envelope contract matrix is
-`DISPATCHED`.
+`CLOSED_PASS_BOUNDED`.
 
-Material dispatch commit: `4ee9bcff`.
+Material closure commit: `a355cd7a`.
 
-Dispatch artifacts:
+Closure artifacts:
 
 - Roadmap:
   `docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_ROADMAP_2026-06-13.md`;
 - GC-018:
   `docs/baselines/CVF_GC018_DICE_T0_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_2026-06-13.md`;
 - Work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_DICE_T0_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_FOR_CLAUDE_2026-06-13.md`.
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_DICE_T0_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_FOR_CLAUDE_2026-06-13.md`;
+- Contract matrix:
+  `docs/reference/CVF_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_2026-06-13.md`;
+- Worker return:
+  `docs/reviews/CVF_DICE_T0_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_WORKER_RETURN_2026-06-13.md`;
+- Codex completion:
+  `docs/reviews/CVF_DICE_T0_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_COMPLETION_2026-06-13.md`.
 
-Next allowed move: Claude executes DICE-T0 under `WORKER_MUST_NOT_COMMIT` and
-returns uncommitted allowed-scope artifacts for Codex review.
+Result: DICE-T0 accepts the doc-only Document Intelligence Control Envelope
+contract matrix and records DICE-MC-08 passthrough invariant follow-up for
+DICE-T1.
+
+Next allowed move: operator may open DICE-T1 only through fresh GC-018 and a
+source-verified work order, or choose another CVF foundation lane.
 
 Boundary: doc-only foundation contract matrix only; no external
 Document_Translator inspection or mutation, Policy_Local mutation, OCR/provider
@@ -1000,17 +1010,24 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: DIR-T2 foundation follow-up DICE-T0. Claude executes
-DICE-T0 under `WORKER_MUST_NOT_COMMIT` and
-returns uncommitted allowed-scope artifacts for Codex review. DICE-T0 is
-`DISPATCHED` at material dispatch commit `4ee9bcff`. Dispatch artifacts:
+Next allowed move: DIR-T2 foundation follow-up. DICE-T0 is
+`CLOSED_PASS_BOUNDED` at material closure commit `a355cd7a`. Operator may
+open DICE-T1 only through fresh GC-018 and a source-verified work order that
+carries the DICE-MC-08 passthrough invariant follow-up, or choose another CVF
+foundation lane. Closure artifacts:
 
 - Roadmap:
   `docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_ROADMAP_2026-06-13.md`;
 - GC-018:
   `docs/baselines/CVF_GC018_DICE_T0_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_2026-06-13.md`;
 - Work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_DICE_T0_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_FOR_CLAUDE_2026-06-13.md`.
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_DICE_T0_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_FOR_CLAUDE_2026-06-13.md`;
+- Contract matrix:
+  `docs/reference/CVF_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_2026-06-13.md`;
+- Worker return:
+  `docs/reviews/CVF_DICE_T0_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_WORKER_RETURN_2026-06-13.md`;
+- Codex completion:
+  `docs/reviews/CVF_DICE_T0_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_COMPLETION_2026-06-13.md`.
 
 DIR-T2 Document Intelligence Router foundation pilot remains
 `CLOSED_PASS_BOUNDED` at material closure commit `e3395acc`. Closure artifacts:
