@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DICE_T0_DISPATCH_READY
+Status: DICE_T0_PASS_BOUNDED
 
 docType: roadmap
 
@@ -105,7 +105,7 @@ DICE must not:
 
 | Tranche | Goal | Prerequisite | Status |
 | --- | --- | --- | --- |
-| DICE-T0 | Doc-only control-envelope contract matrix and owner-source map | this roadmap plus fresh GC-018/work order | DISPATCH_READY |
+| DICE-T0 | Doc-only control-envelope contract matrix and owner-source map | this roadmap plus fresh GC-018/work order | CLOSED_PASS_BOUNDED |
 | DICE-T1 | Deterministic local envelope contract/test harness, if T0 proves source owner | DICE-T0 closure plus fresh GC-018 | HOLD_PENDING_T0_PASS |
 | DICE-T2 | Operator-visible document control packet sample, if T1 proves stable contract | DICE-T1 closure plus fresh GC-018 | HOLD_PENDING_T1_PASS |
 | DICE-T3 | Runtime/provider/OCR authorization design, if still needed | DICE-T2 closure plus explicit live-proof/key/quota authorization | HOLD_PENDING_RUNTIME_AUTH |
@@ -253,6 +253,9 @@ rawMemoryReleased=false
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
+
+Reason: private provenance foundation roadmap; no public-sync batch or public
+catalog claim is authorized.
 
 This is a private provenance roadmap. No public-sync batch or public catalog
 claim is authorized.

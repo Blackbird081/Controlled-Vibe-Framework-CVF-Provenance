@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -170,6 +170,20 @@ Claude must not commit. Claude must record worker-return base/head and
 | EXISTS: DIR-T2 closed | `docs/reviews/CVF_DIR_T2_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_PILOT_COMPLETION_2026-06-13.md` | Status line | `CLOSED_PASS_BOUNDED` | DIR-T2 completion review | ACCEPT |
 | EXISTS: DT-CVF remains separate use-case lane | `docs/roadmaps/CVF_DOCUMENT_TRANSLATOR_CONTROL_ADAPTATION_ROADMAP_2026-06-13.md` | lines 267-290 | downstream-use-case boundary | DT-CVF roadmap | ACCEPT |
 
+## Current Runtime Freshness Verification
+
+Claude and Codex verified current source line anchors before accepting the
+doc-only matrix. Runtime implementation is not authorized by this work order;
+the freshness check is source-contract verification only.
+
+| Source fact | Verification command or evidence | Disposition |
+| --- | --- | --- |
+| DIR route symbols | `rg -n "AuthorizationGate|DownstreamCapability|DocumentProfile|DocumentStructureSignals|DocumentIntelligenceRouteDecision|decide_document_intelligence_route" EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/document_intelligence_router.py` | ACCEPT |
+| EXA-T2 scan symbols | `rg -n "ScanRouteDisposition|DocumentScanSignals|ScanRouteDecision|decide_scan_route" EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/scan_route_decision.py` | ACCEPT |
+| Extraction quality symbols | `rg -n "ExtractionQualityReport|mean_ocr_confidence|raw_ocr_retained|ExtractionStorageBoundary|evaluate_extraction_quality" EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/extraction_pipeline.py` | ACCEPT |
+| Scan outcome symbols | `rg -n "ScanOutcomeReport|build_scan_outcome_report|render_scan_outcome_report_markdown" EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/scan_outcome_report.py` | ACCEPT |
+| Runtime implementation | N/A_WITH_REASON - DICE-T0 is doc-only and creates no runtime symbol | ACCEPT |
+
 ## New Doc-Only Fields
 
 The following labels may be introduced in the DICE-T0 matrix as doc-only
@@ -261,6 +275,16 @@ Allowed scope:
 - run local documentation/governance checkers listed in the Required Proof
   Manifest;
 - cite current in-repo source files and current governed docs.
+- reviewer-owned closure may update this work order, the paired GC-018,
+  `docs/baselines/CVF_GC018_DICE_T0_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_2026-06-13.md`,
+  the parent roadmap,
+  `docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_ROADMAP_2026-06-13.md`,
+  the DICE-T0 contract matrix,
+  `docs/reference/CVF_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_2026-06-13.md`,
+  the worker return,
+  `docs/reviews/CVF_DICE_T0_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_WORKER_RETURN_2026-06-13.md`,
+  and the Codex completion review,
+  `docs/reviews/CVF_DICE_T0_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_COMPLETION_2026-06-13.md`.
 
 Forbidden scope:
 
@@ -287,6 +311,20 @@ Forbidden scope:
 | `AGENT_HANDOFF*.md` | worker handoff mutation not authorized |
 | public-sync repository | not authorized |
 | provider key files and environment files | not authorized |
+
+## Forbidden Filesystem State At Dispatch
+
+| Forbidden path | Expected state | Evidence owner |
+| --- | --- | --- |
+| `D:/UNG DUNG AI/TOOL AI 2026/CVF-Workspace/Document_Translator` | NOT_AUTHORIZED_FOR_WORKER_INSPECTION | Claude worker return must not cite file listings, hashes, or any content from this tree |
+| external Policy_Local tree | NOT_AUTHORIZED_FOR_WORKER_INSPECTION | Claude worker return must not cite Policy_Local file listings or source mutations |
+| `EXTENSIONS/**` | NOT_AUTHORIZED_FOR_WORKER_CREATION_OR_MODIFICATION | Claude must not create or modify any runtime source or test files under EXTENSIONS |
+| `governance/compat/**` | NOT_AUTHORIZED_FOR_WORKER_CREATION_OR_MODIFICATION | Claude must not create or modify any checker files |
+| `CVF_SESSION/**` | NOT_AUTHORIZED_FOR_WORKER_MUTATION | Codex reviewer owns any session state sync |
+| `CVF_SESSION_MEMORY.md` | NOT_AUTHORIZED_FOR_WORKER_MUTATION | Codex reviewer owns front-door mutation |
+| `AGENT_HANDOFF*.md` | NOT_AUTHORIZED_FOR_WORKER_MUTATION | Codex reviewer owns handoff mutation |
+| public-sync repository | NOT_AUTHORIZED_FOR_WORKER_ACCESS | no public-sync action is authorized |
+| provider key files and environment files | NOT_AUTHORIZED_FOR_WORKER_ACCESS | no secret or key file access is authorized |
 
 ## Deliverables
 
@@ -420,6 +458,21 @@ Codex reviewer must verify:
 | Forbidden scope checked | PASS, BLOCKED, or N/A with reason |
 | Finding-To-Governance disposition reviewed | PASS, BLOCKED, or N/A with reason |
 | Session continuity updated by reviewer | PASS, BLOCKED, or N/A with reason |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DICE_T0_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_COMPLETION_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_ROADMAP_2026-06-13.md` | `Status: DICE_T0_PASS_BOUNDED` | PASS |
+| GC-018 baseline state | `docs/baselines/CVF_GC018_DICE_T0_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | BLOCKED with reason | no corpus registry update was authorized or required for this doc-only contract matrix | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason | no registry Markdown quick-lookup row was authorized or required for this doc-only contract matrix | BLOCKED with reason |
+| External evidence digest | N/A with reason | no external source tree was read or hashed | N/A with reason |
+| System loop interlock | N/A with reason | no runtime loop, route, retrieval, or interlock mutation | N/A with reason |
+| Worker return artifact | `docs/reviews/CVF_DICE_T0_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_CONTRACT_MATRIX_WORKER_RETURN_2026-06-13.md` | `Status: WORKER_RETURN_ACCEPTED_BY_CODEX` | PASS |
+| Session continuity | active state/front door/handoff | reviewer-owned dedicated session-sync follows material closure commit | N/A with reason |
 
 ## Return-To-Orchestrator Conditions
 
