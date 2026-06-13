@@ -24,14 +24,14 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`fpc_t1_foundation_planes_workflow_chain_system_audit_dispatched`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=Claude executes FPC-T1 foundation planes workflow-chain system audit under `WORKER_MUST_NOT_COMMIT` and returns uncommitted artifacts for Codex review; parked checkpoint=FPC-T2/FPC-T3 execution, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`fpc_t1_foundation_planes_workflow_chain_system_audit_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=FPC-T2 may open only through fresh GC-018 and source-verified work order for system-loop interlock expansion decisions using FPC-T1 matrix evidence; parked checkpoint=FPC-T3 execution, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`fpc_t1_foundation_planes_workflow_chain_system_audit_dispatched`
+`fpc_t1_foundation_planes_workflow_chain_system_audit_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `6ae97055`
-(FPC-T1 foundation audit dispatch material commit; this dedicated session-sync follows).
+Current HEAD recorded for this handoff: `91e8f10f`
+(FPC-T1 foundation audit material closure commit; this dedicated session-sync follows).
 
 ## Active Boundary
 
@@ -46,20 +46,32 @@ requires separate authorization.
 
 ## Latest Continuity Note
 
-FPC-T1 foundation planes workflow-chain system audit is `DISPATCHED` at material
-commit `6ae97055` from dispatch base `148a59ff`. Claude may execute only the
-source-backed FPC-T1 audit matrix and worker-return packet under
-`WORKER_MUST_NOT_COMMIT`.
+FPC-T1 foundation planes workflow-chain system audit is
+`CLOSED_PASS_BOUNDED` at material commit `91e8f10f` from closure base
+`17f45c94`.
 
-Dispatch artifacts:
+Closure artifacts:
 
 - GC-018:
   `docs/baselines/CVF_GC018_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_2026-06-13.md`;
 - Work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_FOR_CLAUDE_2026-06-13.md`.
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_FOR_CLAUDE_2026-06-13.md`;
+- Matrix:
+  `docs/reference/CVF_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_MATRIX_2026-06-13.md`;
+- Worker return:
+  `docs/reviews/CVF_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_WORKER_RETURN_2026-06-13.md`;
+- Completion review:
+  `docs/reviews/CVF_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_COMPLETION_2026-06-13.md`.
 
-FPC-T2 and FPC-T3 remain parked until FPC-T1 worker return and Codex review
-produce matrix evidence.
+Codex accepted the worker return after reviewer-owned traceability repairs:
+`CLAUDE.md` was added to the matrix source manifest, the interlock registry
+count was corrected to 15, and a worker-return glob that created a false GC-051
+path claim was removed.
+
+Next allowed move: FPC-T2 may open only through fresh GC-018 and a
+source-verified work order for system-loop interlock expansion decisions using
+FPC-T1 matrix evidence. FPC-T3 remains parked until FPC-T2 closes or the
+operator separately authorizes a small governance batch.
 
 ---
 
@@ -88,10 +100,10 @@ runs focused pytest targets when supplied, registry aggregate drift check,
 hygiene. `reviewer-fast` and `pre-commit` now include the changed registry
 coverage checker.
 
-Next allowed move: MEMCON-T5 follow-up - Claude executes FPC-T1 foundation
-planes workflow-chain system audit under `WORKER_MUST_NOT_COMMIT` and returns
-uncommitted artifacts for Codex review. FPC-T2 and FPC-T3 remain parked until
-FPC-T1 matrix evidence exists and Codex closes the worker return.
+Next allowed move: MEMCON-T5 follow-up - FPC-T2 may open only through fresh
+GC-018 and a source-verified work order for system-loop interlock expansion
+decisions using FPC-T1 matrix evidence. FPC-T3 remains parked until FPC-T2
+closes or the operator separately authorizes a small governance batch.
 
 Boundary: governance-control latency hardening only; no runtime behavior,
 provider routing, OCR behavior, Document Translator source, Policy_Local
@@ -639,6 +651,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/diceT1DocumentIntelligenceControlEnvelopeRuntimeDispatch20260613.json`
 - `CVF_SESSION/state/entries/diceT1DocumentIntelligenceControlEnvelopeRuntimeClosure20260613.json`
 - `CVF_SESSION/state/entries/workerReturnFastGateLatencyHardening20260613.json`
+- `CVF_SESSION/state/entries/fpcT1FoundationPlanesWorkflowChainSystemAuditClosure20260613.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
@@ -665,6 +678,10 @@ order.
 The operator then returned DICE-T1 worker artifacts for Codex review and commit.
 The operator then approved CVF foundation latency hardening to reduce total
 user time while preserving guard compliance.
+The operator then returned FPC-T1 worker artifacts for Codex review and commit.
+This session-sync updates the active front door, generated session-state source,
+generated aggregate, and active handoff after the material FPC-T1 closure commit
+`91e8f10f`.
 The hardening-batch GC-018 explicitly authorized the
 `governance/compat/check_work_order_dispatch_quality.py` validator addition and
 carries its own Core Guard Self-Protection Authorization. The mandatory
@@ -679,10 +696,11 @@ the source-verification line-anchor check, forbidden-filesystem-state
 regression coverage, template guidance, continuity markers, semantic
 next-allowed-move alignment guard, regression coverage, closure pointers, or
 this DICE-T1 dispatch session-sync, or this DICE-T1 closure session-sync are
-incorrect, or this worker-return fast gate latency hardening session-sync is
-incorrect. Do not revert
+incorrect, or this worker-return fast gate latency hardening session-sync, or
+this FPC-T1 closure session-sync is incorrect. Do not revert
 hardening material closure
-commit `30e7e888`, worker-return fast gate material commit `5e605862`,
+commit `30e7e888`, FPC-T1 material closure commit `91e8f10f`,
+worker-return fast gate material commit `5e605862`,
 DICE-T1 material closure commit `d46023d1`,
 DICE-T1 dispatch material commit `129d3ebb`,
 DIR-T1 session-sync `4c803586`, DIR-T1 material closure
@@ -704,11 +722,14 @@ acceleration material commit `bd15e0ae`, MEMCON-T1a material closure commit
 
 ## Next Allowed Move
 
-Next allowed move: MEMCON-T5 follow-up - Claude executes FPC-T1 foundation
-planes workflow-chain system audit under `WORKER_MUST_NOT_COMMIT` using the
-dispatched GC-018 and work order from material commit `6ae97055`. FPC-T2 and
-FPC-T3 remain parked until FPC-T1 worker return and Codex review produce matrix
-evidence. DICE-T3/provider/OCR/live-proof work is not authorized.
+Next allowed move: MEMCON-T5 follow-up - FPC-T2 may open only through fresh
+GC-018 and a source-verified work order for system-loop interlock expansion
+decisions using the FPC-T1 matrix evidence from material commit `91e8f10f`.
+FPC-T2 must evaluate, not pre-accept, FPC-T2-C01 through FPC-T2-C05 and must
+reconcile the evidence-to-claim-update candidate against MLW3 before any
+`ADD_INTERLOCK_ENTRY` disposition. FPC-T3 remains parked until FPC-T2 closes or
+the operator separately authorizes a small governance batch.
+DICE-T3/provider/OCR/live-proof work is not authorized.
 
 DT-CVF-T0 may be opened only through later fresh GC-018 and a source-verified
 work order for Document Translator source custody, repo inventory,
