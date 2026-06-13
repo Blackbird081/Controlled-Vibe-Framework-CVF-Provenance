@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-13
 
-Current mode marker: `dir_t2_document_intelligence_router_foundation_pilot_dispatched`
+Current mode marker: `dir_t2_document_intelligence_router_foundation_pilot_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `dir_t2_document_intelligence_router_foundation_pilot_dispatched`.
+Current mode: `dir_t2_document_intelligence_router_foundation_pilot_closed_pass_bounded`.
 
 Active handoff:
 
@@ -975,19 +975,27 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: Claude executes DIR-T2 Document Intelligence Router
-foundation pilot under `WORKER_MUST_NOT_COMMIT` and returns uncommitted
-artifacts for Codex review. The dispatch package is:
+Next allowed move: DT-CVF-T0 may be opened only through fresh GC-018 and a
+source-verified work order for Document Translator custody/control-baseline
+audit, or the operator may select another governed foundation lane. DIR-T2
+Document Intelligence Router foundation pilot is `CLOSED_PASS_BOUNDED` at
+material closure commit `e3395acc`. Closure artifacts:
 
 - GC-018:
   `docs/baselines/CVF_GC018_DIR_T2_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_PILOT_2026-06-13.md`;
 - Work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_DIR_T2_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_PILOT_FOR_CLAUDE_2026-06-13.md`.
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_DIR_T2_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_PILOT_FOR_CLAUDE_2026-06-13.md`;
+- Completion review:
+  `docs/reviews/CVF_DIR_T2_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_PILOT_COMPLETION_2026-06-13.md`;
+- Test harness:
+  `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_document_intelligence_router_foundation_pilot.py`.
 
-DIR-T2 is a CVF foundation pilot using synthetic metadata-only fixtures and
+DIR-T2 was a CVF foundation pilot using synthetic metadata-only fixtures and
 deterministic local Python tests; it is not external Document Translator
-adaptation. DT-CVF-T0 and Policy_Local PL-S1 remain separately held until the
-operator explicitly authorizes them.
+adaptation. DT-CVF-T0 is eligible only through fresh GC-018 and a
+source-verified work order for Document Translator custody/control-baseline
+audit. Policy_Local PL-S1 remains separately held until the operator
+explicitly authorizes it.
 
 Do not edit the external Document Translator repo, mutate external
 Policy_Local, activate EC, wire retrieval routes, run OCR or provider/API/live

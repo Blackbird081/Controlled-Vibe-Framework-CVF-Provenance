@@ -24,14 +24,14 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`dir_t2_document_intelligence_router_foundation_pilot_dispatched`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=Claude executes DIR-T2 under WORKER_MUST_NOT_COMMIT and returns uncommitted artifacts for Codex review; parked checkpoint=DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`dir_t2_document_intelligence_router_foundation_pilot_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=DT-CVF-T0 may be opened only through fresh GC-018 and source-verified work order, or operator selects another governed foundation lane; parked checkpoint=Policy_Local PL-S1, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`dir_t2_document_intelligence_router_foundation_pilot_dispatched`
+`dir_t2_document_intelligence_router_foundation_pilot_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `1591cb05`
-(DIR-T2 foundation pilot dispatch material commit; this dedicated session-sync
+Current HEAD recorded for this handoff: `e3395acc`
+(DIR-T2 foundation pilot material closure commit; this dedicated session-sync
 follows).
 
 ## Active Boundary
@@ -55,16 +55,22 @@ MACHINE_CHECK_ADDED.
 Material closure commit: `30e7e888`.
 
 DIR-T2 Document Intelligence Router foundation pilot is
-`DISPATCHED_AWAITING_WORKER_RETURN` at material commit `1591cb05` from
-dispatch base `30e6d174`. This is a CVF foundation pilot, not a Document
-Translator adaptation tranche.
+`CLOSED_PASS_BOUNDED` at material closure commit `e3395acc` from closure base
+`639405b1`. This is a CVF foundation pilot, not a Document Translator
+adaptation tranche.
 
-DIR-T2 dispatch artifacts:
+DIR-T2 closure artifacts:
 
 - GC-018:
   `docs/baselines/CVF_GC018_DIR_T2_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_PILOT_2026-06-13.md`;
 - Work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_DIR_T2_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_PILOT_FOR_CLAUDE_2026-06-13.md`.
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_DIR_T2_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_PILOT_FOR_CLAUDE_2026-06-13.md`;
+- Worker return:
+  `docs/reviews/CVF_DIR_T2_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_PILOT_WORKER_RETURN_2026-06-13.md`;
+- Completion review:
+  `docs/reviews/CVF_DIR_T2_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_PILOT_COMPLETION_2026-06-13.md`;
+- Test harness:
+  `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_document_intelligence_router_foundation_pilot.py`.
 
 Hardening batch artifacts:
 
@@ -507,8 +513,8 @@ generated active-state source files are accepted.
 Authorized guard-maintenance scope: perform the mandatory work-order-template
 protected-path authorization hardening closure session sync, the
 operator-requested post-review continuity/test hardening fix, the
-next-allowed-move semantic alignment guard, and the DIR-T2 dispatch
-session-sync without changing governance semantics, and keep the generated
+next-allowed-move semantic alignment guard, the DIR-T2 dispatch session-sync,
+and the DIR-T2 closure session-sync without changing governance semantics, and keep the generated
 active-session aggregate aligned with its per-entry source files.
 This scope also covers the dispatch-quality checker change to
 `check_work_order_dispatch_quality.py` that was authorized by the
@@ -524,6 +530,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/workOrderTemplateProtectedPathAuthorizationHardening20260613.json`
 - `CVF_SESSION/state/entries/dirT1DocumentIntelligenceRouterSourceAndTestsClosure20260613.json`
 - `CVF_SESSION/state/entries/dirT2DocumentIntelligenceRouterFoundationPilotDispatch20260613.json`
+- `CVF_SESSION/state/entries/dirT2DocumentIntelligenceRouterFoundationPilotClosure20260613.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `governance/compat/check_active_session_state.py`
@@ -538,7 +545,8 @@ then asked Codex to fix the stale continuity text and test debt found during
 post-Claude review, then prioritized immediate CVF foundation hardening so the
 stale next-allowed-move defect is caught by a machine check before future
 roadmap movement, then approved the DIR-T2 direction as CVF foundation
-hardening and asked Codex to audit, process, and issue the Claude work order.
+hardening and asked Codex to audit, process, and issue the Claude work order,
+then returned the DIR-T2 worker artifacts for Codex review and commit.
 The hardening-batch GC-018 explicitly authorized the
 `governance/compat/check_work_order_dispatch_quality.py` validator addition and
 carries its own Core Guard Self-Protection Authorization. The mandatory
@@ -546,9 +554,10 @@ session-continuity rules require synchronized front doors and active state
 sources after closure.
 
 Rollback boundary: revert only this hardening closure session sync, the
-post-review continuity/test hardening fix, or the DIR-T2 dispatch session-sync
-if the continuity markers, semantic next-allowed-move alignment guard,
-regression coverage, or dispatch pointers are incorrect. Do not revert
+post-review continuity/test hardening fix, the DIR-T2 dispatch session-sync, or
+the DIR-T2 closure session-sync if the continuity markers, semantic
+next-allowed-move alignment guard, regression coverage, or closure pointers
+are incorrect. Do not revert
 hardening material closure
 commit `30e7e888`, DIR-T1 session-sync `4c803586`, DIR-T1 material closure
 commit `4bf991f3`, DIR-T0 material closure commit
@@ -569,13 +578,10 @@ acceleration material commit `bd15e0ae`, MEMCON-T1a material closure commit
 
 ## Next Allowed Move
 
-Claude may execute DIR-T2 under `WORKER_MUST_NOT_COMMIT` and return
-uncommitted artifacts for Codex review. DIR-T2 is limited to the CVF foundation
-pilot in
-`docs/work_orders/CVF_AGENT_WORK_ORDER_DIR_T2_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_PILOT_FOR_CLAUDE_2026-06-13.md`.
 DT-CVF-T0 may be opened only through later fresh GC-018 and a source-verified
 work order for Document Translator source custody, repo inventory,
-secret-safety, and control-baseline audit.
+secret-safety, and control-baseline audit, or the operator may select another
+governed foundation lane. DIR-T2 is closed.
 Policy_Local PL-S1 remains separately held until the operator explicitly
 authorizes it.
 
