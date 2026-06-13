@@ -24,14 +24,14 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`aot_t2_expected_manifest_trace_coverage_plan_dispatched`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=Claude worker return only for AOT-T2 expected-manifest trace coverage plan under WORKER_MUST_NOT_COMMIT; parked checkpoint=registry mutation, FPC-T3 implementation, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`aot_t2_expected_manifest_trace_coverage_plan_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=fresh authorization only for AOT-T2-C01+C02 implementation work order or separate operator-authorized FPC work order; parked checkpoint=registry mutation, FPC implementation, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`aot_t2_expected_manifest_trace_coverage_plan_dispatched`
+`aot_t2_expected_manifest_trace_coverage_plan_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `e69ea3ca`
-(AOT-T2 material dispatch commit; this dedicated session-sync follows).
+Current HEAD recorded for this handoff: `688bd97e`
+(AOT-T2 material closure commit; this dedicated session-sync follows).
 
 ## Active Boundary
 
@@ -46,33 +46,34 @@ requires separate authorization.
 
 ## Latest Continuity Note
 
-AOT-T2 Expected Manifest Trace Coverage Plan is
-`DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT` at material dispatch commit
-`e69ea3ca` from dispatch base `ce369ab6`.
+AOT-T2 Expected Manifest Trace Coverage Plan is `CLOSED_PASS_BOUNDED` at
+material closure commit `688bd97e` from closure base `9581a2e3`.
 
-Dispatch artifacts:
+Closure artifacts:
 
 - GC-018:
   `docs/baselines/CVF_GC018_AOT_T2_EXPECTED_MANIFEST_TRACE_COVERAGE_PLAN_2026-06-13.md`;
 - Work order:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_AOT_T2_EXPECTED_MANIFEST_TRACE_COVERAGE_PLAN_FOR_CLAUDE_2026-06-13.md`;
-- Planned coverage plan:
+- Coverage plan:
   `docs/reference/CVF_AOT_T2_EXPECTED_MANIFEST_TRACE_COVERAGE_PLAN_2026-06-13.md`;
-- Planned worker return:
+- Worker return:
   `docs/reviews/CVF_AOT_T2_EXPECTED_MANIFEST_TRACE_WORKER_RETURN_2026-06-13.md`;
-- Planned completion review:
+- Completion review:
   `docs/reviews/CVF_AOT_T2_EXPECTED_MANIFEST_TRACE_COVERAGE_PLAN_COMPLETION_2026-06-13.md`.
 
-Claude worker return only. Codex owns review, allowed repairs, final commit,
-completion review, committed-range pre-closure, and session sync. Claude must
-not commit.
+Codex accepted the Claude worker return after reviewer repairs: added the
+coverage-plan Agent Operation Trace Block and corrected worker-return status
+evidence rows. The accepted highest-value next tranche is AOT-T2-C01+C02:
+expected-manifest trace fields, manifest-delta enforcement, and agent-type /
+invocation-ID fields.
 
-No checker implementation, test implementation, hook/autorun modification,
-session-state or handoff mutation by Claude, OS audit installation, Sysmon
-installation, endpoint monitoring, file watcher service, destructive broker,
-agent computer-control permission change, live proof, public-sync, downstream
-app inspection/mutation, raw memory release, or autonomous mutation is
-authorized.
+Fresh authorization is required before implementation. No checker
+implementation, test implementation, hook/autorun modification, runtime/source
+mutation, OS audit installation, Sysmon installation, endpoint monitoring, file
+watcher service, destructive broker, agent computer-control permission change,
+live proof, public-sync, downstream app inspection/mutation, raw memory
+release, or autonomous mutation is authorized.
 
 ---
 
@@ -640,8 +641,9 @@ session-sync after the operator clarified that CVF must supervise co-work
 agents by requiring repo-local traces while not developing the co-work
 platforms, plus this AOT-T2 expected-manifest trace coverage dispatch
 session-sync after the operator asked for the next roadmap and a Claude work
-order, and keep the generated active-session aggregate aligned with its
-per-entry source files.
+order, plus this AOT-T2 closure session-sync after the operator returned
+AOT-T2 worker artifacts for Codex review and commit, and keep the generated
+active-session aggregate aligned with its per-entry source files.
 This scope also covers the dispatch-quality checker change to
 `check_work_order_dispatch_quality.py` that was authorized by the
 hardening-batch GC-018 and landed in the hardening material closure commit
@@ -671,6 +673,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/fpcT3FoundationCheckerTemplateCoveragePlanClosure20260613.json`
 - `CVF_SESSION/state/entries/agentOperationTraceFoundationClosure20260613.json`
 - `CVF_SESSION/state/entries/aotT2ExpectedManifestTraceCoveragePlanDispatch20260613.json`
+- `CVF_SESSION/state/entries/aotT2ExpectedManifestTraceCoveragePlanClosure20260613.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENTS.md`
@@ -729,6 +732,11 @@ supervision while keeping FPC implementation and OS-level monitoring outside
 the current scope. This session-sync updates the active front door, generated
 session-state source, generated aggregate, and active handoff after the AOT-T2
 material dispatch commit `e69ea3ca`.
+The operator then returned AOT-T2 worker artifacts for Codex review and commit.
+Codex accepted the planning return after reviewer repairs and closed AOT-T2 at
+material commit `688bd97e`. This session-sync updates the active front door,
+generated session-state source, generated aggregate, active handoff, and the
+completion review public-catalog N/A note after that material closure.
 The hardening-batch GC-018 explicitly authorized the
 `governance/compat/check_work_order_dispatch_quality.py` validator addition and
 carries its own Core Guard Self-Protection Authorization. The mandatory
@@ -749,10 +757,11 @@ this FPC-T1 closure session-sync is incorrect, this FPC-T2 dispatch
 session-sync is incorrect, this FPC-T2 closure session-sync is incorrect, or
 this FPC-T3 closure session-sync is incorrect, or this agent-operation trace
 foundation closure session-sync is incorrect, or this AOT-T2 dispatch
-session-sync is incorrect.
+session-sync is incorrect, or this AOT-T2 closure session-sync is incorrect.
 Do not revert
 hardening material closure
-commit `30e7e888`, AOT-T2 material dispatch commit `e69ea3ca`,
+commit `30e7e888`, AOT-T2 material closure commit `688bd97e`,
+AOT-T2 material dispatch commit `e69ea3ca`,
 agent-operation trace session repair commit `ce369ab6`,
 agent-operation trace foundation session-sync commit `f4aebdb8`,
 agent-operation trace foundation material closure commit `41977f58`,
@@ -783,16 +792,15 @@ acceleration material commit `bd15e0ae`, MEMCON-T1a material closure commit
 ## Next Allowed Move
 
 Next allowed move: AOT-T2 Expected Manifest Trace Coverage Plan is
-`DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT` at material dispatch commit
-`e69ea3ca` from dispatch base `ce369ab6`.
+`CLOSED_PASS_BOUNDED` at material closure commit `688bd97e`.
 
-Claude worker return only. Required deliverables:
+Fresh authorization only:
 
-- `docs/reference/CVF_AOT_T2_EXPECTED_MANIFEST_TRACE_COVERAGE_PLAN_2026-06-13.md`;
-- `docs/reviews/CVF_AOT_T2_EXPECTED_MANIFEST_TRACE_WORKER_RETURN_2026-06-13.md`.
-
-Codex owns review, allowed repairs, final commit, completion review,
-committed-range pre-closure, and session sync. Claude must not commit.
+- open a source-verified AOT-T2-C01+C02 implementation work order for
+  expected-manifest trace fields, manifest-delta enforcement, and agent-type /
+  invocation-ID trace fields; or
+- resume FPC implementation/registry work only through a separate operator
+  decision and fresh work order.
 
 No checker implementation, test implementation, hook/autorun modification,
 session-state or handoff mutation by Claude, OS audit installation, Sysmon

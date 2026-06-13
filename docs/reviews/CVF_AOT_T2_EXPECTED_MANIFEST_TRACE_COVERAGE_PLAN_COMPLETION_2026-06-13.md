@@ -262,4 +262,10 @@ DEFERRED_PRIVATE_ONLY
 Reason: private provenance AOT-T2 planning closure. Public-sync is not
 authorized.
 
+## Public Catalog Disposition
+
+N/A with reason: AOT-T2 is a private provenance planning closure and adds no
+new public product capability. Public-sync and public catalog update are not
+authorized by this closure.
+
 rawMemoryReleased=false
