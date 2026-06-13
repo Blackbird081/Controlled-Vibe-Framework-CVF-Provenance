@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-13
 
-Current mode marker: `dir_t1_document_intelligence_router_source_and_tests_closed_pass_bounded`
+Current mode marker: `work_order_template_protected_path_authorization_hardening_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `dir_t1_document_intelligence_router_source_and_tests_closed_pass_bounded`.
+Current mode: `work_order_template_protected_path_authorization_hardening_closed_pass_bounded`.
 
 Active handoff:
 
