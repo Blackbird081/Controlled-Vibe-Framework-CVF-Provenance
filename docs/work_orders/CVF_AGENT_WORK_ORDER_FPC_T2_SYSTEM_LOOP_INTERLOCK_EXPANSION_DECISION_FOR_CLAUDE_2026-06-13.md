@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -18,7 +18,7 @@ dispatchBaseHead: `3f57bf18`
 
 executionBaseHead: `3f57bf18`
 
-closureBaseHead: Codex reviewer-owned closure anchor
+closureBaseHead: `1831606b`
 
 sourceAuthority:
 `docs/baselines/CVF_GC018_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_2026-06-13.md`
@@ -26,7 +26,7 @@ sourceAuthority:
 rawMemoryReleased=false
 
 completionReviewPath:
-Codex reviewer-owned closure artifact
+`docs/reviews/CVF_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_COMPLETION_2026-06-13.md`
 
 GC-018:
 `docs/baselines/CVF_GC018_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_2026-06-13.md`
@@ -164,7 +164,7 @@ action, or a new operator decision.
 | --- | --- | --- | --- |
 | dispatchBaseHead | `3f57bf18` | Codex | ACCEPT |
 | executionBaseHead | `3f57bf18` | Claude | ACCEPT |
-| closureBaseHead | reviewer-owned closure anchor | Codex reviewer | ACCEPT |
+| closureBaseHead | `1831606b` | Codex reviewer | ACCEPT |
 | Commit mode | `WORKER_MUST_NOT_COMMIT` | Codex | ACCEPT |
 
 Claude must not commit. Claude must record worker-return base/head and
@@ -363,9 +363,25 @@ provider/OCR/live proof, public-sync, or readiness/cost/quality claim.
 - [x] Forbidden Path Manifest is present.
 - [x] Current Runtime Freshness Verification is present.
 - [x] Provider-specific source authority boundary is carried forward.
-- [ ] Worker return submitted.
-- [ ] Codex reviewer accepted decision matrix.
-- [ ] Final gates passed on real changed range.
+- [x] Worker return submitted.
+- [x] Codex reviewer accepted decision matrix after allowed-scope packet repair.
+- [x] Final gates passed on real changed range.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED`; closure checklist checked | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_COMPLETION_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_COMPLETION_ROADMAP_2026-06-13.md` | `Status: FPC_T2_CLOSED_PASS_BOUNDED` | PASS |
+| Decision matrix | `docs/reference/CVF_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_MATRIX_2026-06-13.md` | five candidates evaluated; C05 MLW3 reconciliation present | PASS |
+| Worker return | `docs/reviews/CVF_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_WORKER_RETURN_2026-06-13.md` | worker return submitted uncommitted and accepted after reviewer repair | PASS |
+| Registry JSON | BLOCKED with reason | FPC-T2 did not authorize GC-051 registry mutation | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason | FPC-T2 did not authorize registry Markdown mutation | BLOCKED with reason |
+| System loop interlock | N/A with reason | current interlock registry consumed only; later registry-edit work order required | N/A with reason |
+| External evidence digest | N/A with reason | no external evidence digest, external source tree, OCR/provider/API/live proof, or retained external artifact was used | N/A with reason |
+| Session continuity | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `AGENT_HANDOFF_V18_2026-06-12.md` | session sync is reviewer-owned follow-up after material closure commit | PASS |
+| Public export | this file and closed artifacts | `DEFERRED_PRIVATE_ONLY` | PASS |
 
 ## Candidate Disposition Rules
 

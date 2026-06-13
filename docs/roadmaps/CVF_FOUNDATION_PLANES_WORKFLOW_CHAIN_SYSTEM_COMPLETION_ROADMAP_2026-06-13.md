@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: FPC_T2_DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT
+Status: FPC_T2_CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -271,8 +271,8 @@ start by adding runtime behavior or downstream app features.
 | --- | --- | --- | --- |
 | FPC-T0 | Parked priority capture and later roadmap expansion | operator direction | CLOSED_BY_ROADMAP_UPDATE |
 | FPC-T1 | Foundation planes to workflow-chain system audit plus epistemic process coverage matrix | Claude rebuttal, fresh GC-018, source-verified work order | CLOSED_PASS_BOUNDED |
-| FPC-T2 | System-loop interlock expansion decision, including evidence-to-claim-update interlock candidates | FPC-T1 closure plus fresh GC-018/work order | DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT |
-| FPC-T3 | Foundation checker/template/standard coverage plan for missing machine checks and early-gate placement | FPC-T2 closure plus fresh GC-018/work order | HOLD_PENDING_FPC_T2 |
+| FPC-T2 | System-loop interlock expansion decision, including evidence-to-claim-update interlock candidates | FPC-T1 closure plus fresh GC-018/work order | CLOSED_PASS_BOUNDED |
+| FPC-T3 | Foundation checker/template/standard coverage plan for missing machine checks and early-gate placement | FPC-T2 closure plus fresh GC-018/work order | ELIGIBLE_FOR_FRESH_GC018 |
 | FPC-T4 | Deferred capability reopen decision for Model Gateway, Sandbox Runtime, or other strategic gaps | FPC-T3 closure plus operator decision | HOLD_PENDING_FPC_T3 |
 
 ## FPC-T1 - Foundation Planes To Workflow-Chain System Audit
@@ -417,6 +417,25 @@ new interlock owner.
 
 FPC-T2 must not edit the registry unless the FPC-T2 work order explicitly
 authorizes registry edits and includes protected-path authorization if needed.
+
+FPC-T2 closure evidence:
+
+- decision matrix:
+  `docs/reference/CVF_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_MATRIX_2026-06-13.md`;
+- worker return:
+  `docs/reviews/CVF_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_WORKER_RETURN_2026-06-13.md`;
+- completion review:
+  `docs/reviews/CVF_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_COMPLETION_2026-06-13.md`.
+
+Accepted decision result:
+
+- FPC-T2-C01, C02, C03, and C04 are `ADD_INTERLOCK_ENTRY` proposal-only
+  decisions. Registry mutation requires a later fresh GC-018 and source-verified
+  work order.
+- FPC-T2-C05 is `MACHINE_CHECK_FIRST`; FPC-T3-C01 must define the epistemic
+  process packet enforcement surface before a registry entry can be proposed.
+- FPC-T3 is eligible only through a fresh GC-018/source-verified work order and
+  remains unimplemented in this closure.
 
 ## FPC-T3 - Foundation Checker Coverage Plan
 

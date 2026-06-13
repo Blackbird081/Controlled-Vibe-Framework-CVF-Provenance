@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 
@@ -210,6 +210,19 @@ Closure verification:
 - reviewer-fast PASS;
 - `git diff --check` PASS;
 - FPC-T2 remains decision-only and does not mutate the registry.
+
+Closure artifacts:
+
+- decision matrix:
+  `docs/reference/CVF_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_MATRIX_2026-06-13.md`;
+- worker return:
+  `docs/reviews/CVF_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_WORKER_RETURN_2026-06-13.md`;
+- completion review:
+  `docs/reviews/CVF_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_COMPLETION_2026-06-13.md`.
+
+Closure result: FPC-T2-C01 through FPC-T2-C04 are accepted as proposal-only
+`ADD_INTERLOCK_ENTRY` decisions requiring a later registry-edit work order.
+FPC-T2-C05 is accepted as `MACHINE_CHECK_FIRST` pending FPC-T3-C01.
 
 ## Claim Boundary
 
