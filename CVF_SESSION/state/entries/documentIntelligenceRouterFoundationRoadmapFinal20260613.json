@@ -1,0 +1,5 @@
+{
+  "stateOrder": 360,
+  "stateKey": "documentIntelligenceRouterFoundationRoadmapFinal20260613",
+  "value": "FINAL_ROADMAP_AWAITING_DIR_T0_AUTHORIZATION at material commit 075679f3. Roadmap: docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_ROADMAP_2026-06-13.md. Claude rebuttal: docs/reviews/CVF_DIR_FOUNDATION_ROADMAP_CLAUDE_REBUTTAL_2026-06-13.md at commit fc79fcdf. Codex finalization review: docs/reviews/CVF_DIR_FOUNDATION_ROADMAP_CODEX_FINALIZATION_REVIEW_2026-06-13.md. Result: Codex accepted B1-B4/I1-I4, collapsed the roadmap to DIR-T0/T1/T2, replaced flat router disposition with scan-route passthrough plus authorization gate, moved use-case semantics to the adapter matrix, and blocked external tree reads for DIR-T0. Next eligible move is DIR-T0 only through fresh GC-018 and source-verified work order. Boundary: no runtime implementation, external repo edit, code import, dependency install, OCR/provider/API execution, retrieval behavior change, corpus ingestion, public-sync, production/public/readiness/cost/quality claim, memory reinjection, high-risk promotion, or autonomous mutation."
+}

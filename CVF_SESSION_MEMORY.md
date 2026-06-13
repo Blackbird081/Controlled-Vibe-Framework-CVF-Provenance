@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-13
 
-Current mode marker: `document_intelligence_router_foundation_roadmap_draft_for_claude_rebuttal`
+Current mode marker: `document_intelligence_router_foundation_roadmap_final_awaiting_dir_t0_authorization`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `document_intelligence_router_foundation_roadmap_draft_for_claude_rebuttal`.
+Current mode: `document_intelligence_router_foundation_roadmap_final_awaiting_dir_t0_authorization`.
 
 Active handoff:
 
@@ -58,20 +58,20 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-Document Intelligence Router foundation roadmap draft is
-`DRAFT_FOR_CLAUDE_REBUTTAL`.
+Document Intelligence Router foundation roadmap is
+`FINAL_ROADMAP_AWAITING_DIR_T0_AUTHORIZATION`.
 
-Material commit: `05cb953e`.
+Material commit: `075679f3`.
 
 Roadmap:
 
 `docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_ROADMAP_2026-06-13.md`
 
-Result: DIR is proposed as a CVF-owned foundation layer above the existing
-EXA-T2 scan-route contracts. It composes `DocumentScanSignals`,
-`ScanRouteDecision`, `decide_scan_route()`, extraction quality, and scan
-outcome reporting instead of replacing them. The next allowed move is Claude
-rebuttal before Codex finalizes the roadmap.
+Result: Claude rebuttal commit `fc79fcdf` was incorporated. DIR is now a
+finalized foundation roadmap awaiting only DIR-T0 authorization. The roadmap
+collapses to DIR-T0/T1/T2, preserves EXA-T2 scan-route ownership, replaces a
+flat router disposition with scan-route passthrough plus authorization gate,
+and keeps use-case semantics in the adapter matrix.
 
 Boundary: no runtime implementation, external repo edit, code import,
 dependency install, OCR/provider/API execution, retrieval behavior change,
@@ -964,11 +964,11 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: send
-`docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_ROADMAP_2026-06-13.md`
-to Claude for rebuttal and return critique before Codex finalizes the roadmap.
-DT-CVF-T0 and Policy_Local PL-S1 remain separately held until the operator
-explicitly authorizes them.
+Next allowed move: DIR-T0 may be opened only through fresh GC-018 and a
+source-verified work order for doc-only owner reconciliation, three contract
+tables, adapter matrix, and machine-check candidate spec. DT-CVF-T0 and
+Policy_Local PL-S1 remain separately held until the operator explicitly
+authorizes them.
 
 Do not edit the external Document Translator repo, mutate external
 Policy_Local, activate EC, wire retrieval routes, run OCR or provider/API

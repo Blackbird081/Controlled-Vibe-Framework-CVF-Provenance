@@ -11,27 +11,27 @@ Supersedes:
 
 ## Purpose
 
-This compact handoff records the DIR roadmap draft, the next allowed move, and
+This compact handoff records the finalized DIR roadmap, the next allowed move, and
 parked operator checkpoints. Detailed history remains in governed completion
 artifacts and archived handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: route the next bounded CVF foundation move after the DIR roadmap draft.
+Target: route the next bounded CVF foundation move after DIR roadmap finalization.
 
 Owner boundary: this file is a pointer record. Runtime, tests, source maps,
 reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`document_intelligence_router_foundation_roadmap_draft_for_claude_rebuttal`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=Claude rebuttal of DIR roadmap before Codex finalization; parked checkpoint=DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`document_intelligence_router_foundation_roadmap_final_awaiting_dir_t0_authorization`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=DIR-T0 fresh GC-018/source-verified work order only; parked checkpoint=DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`document_intelligence_router_foundation_roadmap_draft_for_claude_rebuttal`
+`document_intelligence_router_foundation_roadmap_final_awaiting_dir_t0_authorization`
 
-Current HEAD recorded for this handoff: `fc79fcdf`
-(Claude DIR roadmap rebuttal commit; Codex finalization is in progress and a
+Current HEAD recorded for this handoff: `075679f3`
+(Document Intelligence Router final roadmap material commit; this
 dedicated session-sync follows).
 
 ## Active Boundary
@@ -47,20 +47,20 @@ requires separate authorization.
 
 ## Latest Continuity Note
 
-Document Intelligence Router foundation roadmap draft is
-`DRAFT_FOR_CLAUDE_REBUTTAL`.
+Document Intelligence Router foundation roadmap is
+`FINAL_ROADMAP_AWAITING_DIR_T0_AUTHORIZATION`.
 
-Material commit: `05cb953e`.
+Material commit: `075679f3`.
 
 Roadmap:
 
 `docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_ROADMAP_2026-06-13.md`
 
-Result: DIR is proposed as a CVF-owned foundation layer above the existing
-EXA-T2 scan-route contracts. It composes `DocumentScanSignals`,
-`ScanRouteDecision`, `decide_scan_route()`, extraction quality, and scan
-outcome reporting instead of replacing them. The next allowed move is Claude
-rebuttal before Codex finalizes the roadmap.
+Result: Claude rebuttal commit `fc79fcdf` was incorporated. DIR is now a
+finalized foundation roadmap awaiting only DIR-T0 authorization. The roadmap
+collapses to DIR-T0/T1/T2, preserves EXA-T2 scan-route ownership, replaces a
+flat router disposition with scan-route passthrough plus authorization gate,
+and keeps use-case semantics in the adapter matrix.
 
 Boundary: no runtime implementation, external repo edit, code import,
 dependency install, OCR/provider/API execution, retrieval behavior change,
@@ -72,8 +72,8 @@ Rebuttal artifact:
 
 `docs/reviews/CVF_DIR_FOUNDATION_ROADMAP_CLAUDE_REBUTTAL_2026-06-13.md`
 
-Result: Claude accepted the draft with four blockers. Codex finalization is in
-progress and must resolve B1-B4 before DIR-T0 can open.
+Result: Claude accepted the draft with four blockers. Codex accepted B1-B4 and
+I1-I4 in the final roadmap.
 
 Document Translator CVF control adaptation roadmap is
 `PROPOSED_READY_FOR_FRESH_AUTHORIZATION`.
@@ -407,13 +407,17 @@ generated active-state source files are accepted.
 - Drafted Document Intelligence Router foundation roadmap at material commit
   `05cb953e`; next move is Claude rebuttal before Codex finalization.
 - Recorded Claude rebuttal for the DIR foundation roadmap at commit
-  `fc79fcdf`; Codex finalization is in progress.
+  `fc79fcdf`.
+- Finalized Document Intelligence Router foundation roadmap at material commit
+  `075679f3`; DIR-T0 is eligible only through fresh GC-018 and a
+  source-verified work order.
 
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: perform the mandatory Document Intelligence
-Router roadmap draft session sync without changing governance semantics, and keep the
-generated active-session aggregate aligned with its per-entry source files.
+Router roadmap finalization session sync without changing governance semantics,
+and keep the generated active-session aggregate aligned with its per-entry
+source files.
 
 Protected paths:
 
@@ -421,6 +425,7 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/documentIntelligenceRouterFoundationRoadmapDraft20260613.json`
+- `CVF_SESSION/state/entries/documentIntelligenceRouterFoundationRoadmapFinal20260613.json`
 - `CVF_SESSION/state/entries/documentTranslatorControlAdaptationRoadmap20260613.json`
 - `CVF_SESSION/state/entries/memconT5CrossAgentMemoryConsistencyContractClosure20260613.json`
 - `CVF_SESSION/state/entries/memconT5CrossAgentMemoryConsistencyContractDispatch20260613.json`
@@ -439,13 +444,15 @@ Protected paths:
 Operator authorization: the operator stated that CVF foundation quality remains
 priority one and selected Document Translator as a separate downstream
 CVF-controlled use-case repo, then requested a detailed Document Intelligence
-Router roadmap for Claude rebuttal before finalization. The mandatory
+Router roadmap for Claude rebuttal before finalization. Codex finalized that
+roadmap after rebuttal. The mandatory
 session-continuity rules require synchronized front doors and active state
-sources before moving to rebuttal/finalization.
+sources before moving to DIR-T0 authorization.
 
-Rollback boundary: revert only this DIR roadmap draft session sync if the
-continuity markers are incorrect. Do not revert DIR roadmap draft material
-commit `05cb953e`, Document Translator roadmap material commit `db59d570`,
+Rollback boundary: revert only this DIR roadmap finalization session sync if
+the continuity markers are incorrect. Do not revert DIR final roadmap material
+commit `075679f3`, DIR roadmap draft material commit `05cb953e`, Claude rebuttal
+commit `fc79fcdf`, Document Translator roadmap material commit `db59d570`,
 MEMCON-T5 material closure commit
 `caf263f6`, MEMCON-T5 material dispatch commit `f88d56b8`,
 MEMCON-T4 material closure commit `f771bff8`,
@@ -459,13 +466,12 @@ acceleration material commit `bd15e0ae`, MEMCON-T1a material closure commit
 
 ## Next Allowed Move
 
-Claude rebuttal of
-`docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_ROADMAP_2026-06-13.md`
-is the next allowed move before Codex finalizes the roadmap. DT-CVF-T0 may be
-opened only through later fresh GC-018 and a source-verified work order for
-Document Translator source custody, repo inventory, secret-safety, and
-control-baseline audit. Policy_Local PL-S1 remains separately held until the
-operator explicitly authorizes it.
+DIR-T0 may be opened only through fresh GC-018 and a source-verified work order
+for doc-only owner reconciliation, three contract tables, adapter matrix, and
+machine-check candidate spec. DT-CVF-T0 may be opened only through later fresh
+GC-018 and a source-verified work order for Document Translator source custody,
+repo inventory, secret-safety, and control-baseline audit. Policy_Local PL-S1
+remains separately held until the operator explicitly authorizes it.
 
 Do not edit the external Document Translator repo, mutate external
 Policy_Local, activate EC, wire retrieval routes, invoke OCR or providers,
