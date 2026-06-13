@@ -30,8 +30,8 @@ Startup acknowledged: current mode=`document_intelligence_router_foundation_road
 
 `document_intelligence_router_foundation_roadmap_draft_for_claude_rebuttal`
 
-Current HEAD recorded for this handoff: `05cb953e`
-(Document Intelligence Router roadmap draft material commit; this
+Current HEAD recorded for this handoff: `fc79fcdf`
+(Claude DIR roadmap rebuttal commit; Codex finalization is in progress and a
 dedicated session-sync follows).
 
 ## Active Boundary
@@ -65,6 +65,15 @@ rebuttal before Codex finalizes the roadmap.
 Boundary: no runtime implementation, external repo edit, code import,
 dependency install, OCR/provider/API execution, retrieval behavior change,
 corpus ingestion, public-sync, readiness, cost, or quality claim is authorized.
+
+Claude rebuttal for the DIR roadmap draft is recorded at commit `fc79fcdf`.
+
+Rebuttal artifact:
+
+`docs/reviews/CVF_DIR_FOUNDATION_ROADMAP_CLAUDE_REBUTTAL_2026-06-13.md`
+
+Result: Claude accepted the draft with four blockers. Codex finalization is in
+progress and must resolve B1-B4 before DIR-T0 can open.
 
 Document Translator CVF control adaptation roadmap is
 `PROPOSED_READY_FOR_FRESH_AUTHORIZATION`.
@@ -397,6 +406,8 @@ generated active-state source files are accepted.
   source-verified work order.
 - Drafted Document Intelligence Router foundation roadmap at material commit
   `05cb953e`; next move is Claude rebuttal before Codex finalization.
+- Recorded Claude rebuttal for the DIR foundation roadmap at commit
+  `fc79fcdf`; Codex finalization is in progress.
 
 ## Core Guard Self-Protection Authorization
 
@@ -422,6 +433,8 @@ Protected paths:
 - `CVF_SESSION/state/entries/memconT1bSchemaAppendix20260613.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
+- `docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_ROADMAP_2026-06-13.md`
+- `docs/reviews/CVF_DIR_FOUNDATION_ROADMAP_CODEX_FINALIZATION_REVIEW_2026-06-13.md`
 
 Operator authorization: the operator stated that CVF foundation quality remains
 priority one and selected Document Translator as a separate downstream

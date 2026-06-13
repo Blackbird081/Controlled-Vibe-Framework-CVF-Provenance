@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DRAFT_FOR_CLAUDE_REBUTTAL
+Status: FINAL_ROADMAP_AWAITING_DIR_T0_AUTHORIZATION
 
 docType: roadmap
 
@@ -20,12 +20,14 @@ Operator direction:
 2. Document Translator is a downstream CVF use case, similar to Policy_Local.
 3. The next foundation step should be a Document Intelligence Router roadmap
    that reuses the EXA-T2 scan-route contracts and supports the scan layer.
-4. Claude should rebut this draft before the final roadmap is closed.
+4. Claude rebutted the draft at commit `fc79fcdf`; Codex accepted the four
+   blocker fixes and incorporated them into this final roadmap.
 
-This draft authorizes planning and critique only. It does not authorize
-runtime implementation, external repository edits, dependency installation,
-OCR execution, provider/API-key use, document ingestion, public-sync,
-production readiness, public readiness, or cost/quality claims.
+This final roadmap authorizes only the next planning move: DIR-T0 may be
+opened later through fresh GC-018 and a source-verified work order. It does not
+authorize runtime implementation, external repository edits, dependency
+installation, OCR execution, provider/API-key use, document ingestion,
+public-sync, production readiness, public readiness, or cost/quality claims.
 
 ## Purpose
 
@@ -100,12 +102,13 @@ This roadmap does not:
 
 ## Source Authority
 
-Source authority for this draft is limited to:
+Source authority for this roadmap is limited to:
 
 - operator instruction in this session;
 - `docs/roadmaps/CVF_DOCUMENT_TRANSLATOR_CONTROL_ADAPTATION_ROADMAP_2026-06-13.md`;
 - `docs/roadmaps/CVF_EXTERNAL_EXTRACTION_PATTERN_ABSORPTION_ROADMAP_2026-06-12.md`;
 - `docs/reviews/CVF_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_COMPLETION_2026-06-12.md`;
+- `docs/reviews/CVF_DIR_FOUNDATION_ROADMAP_CLAUDE_REBUTTAL_2026-06-13.md`;
 - current CVF extraction foundation source files named in the Source
   Verification table.
 
@@ -121,6 +124,7 @@ or cost/quality evidence.
 | Document Translator control adaptation roadmap | `docs/roadmaps/CVF_DOCUMENT_TRANSLATOR_CONTROL_ADAPTATION_ROADMAP_2026-06-13.md` | ACCEPT_AS_DOWNSTREAM_USE_CASE_CONTEXT |
 | EXA parent roadmap | `docs/roadmaps/CVF_EXTERNAL_EXTRACTION_PATTERN_ABSORPTION_ROADMAP_2026-06-12.md` | ACCEPT_AS_SCAN_LAYER_PARENT_CONTEXT |
 | EXA-T2 completion | `docs/reviews/CVF_EXA_T2_SCAN_SIGNAL_ROUTE_DECISION_CONTRACTS_COMPLETION_2026-06-12.md` | ACCEPT_AS_CURRENT_SCAN_ROUTE_FOUNDATION |
+| Claude rebuttal | `docs/reviews/CVF_DIR_FOUNDATION_ROADMAP_CLAUDE_REBUTTAL_2026-06-13.md` at commit `fc79fcdf` | ACCEPT_WITH_BLOCKER_FIXES |
 | Extraction source | `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/` | ACCEPT_AS_CURRENT_OWNER_SURFACE |
 
 ## Source Verification
@@ -138,6 +142,18 @@ or cost/quality evidence.
 | EXISTS: extraction quality evaluator | `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/extraction_pipeline.py` | line 235 | `evaluate_extraction_quality` | extraction pipeline | ACCEPT |
 | EXISTS: scan outcome report | `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/scan_outcome_report.py` | line 43 | `ScanOutcomeReport` | EX-T9 scan outcome report module | ACCEPT |
 | EXISTS: scan outcome report builder | `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/scan_outcome_report.py` | line 131 | `build_scan_outcome_report` | EX-T9 scan outcome report module | ACCEPT |
+
+## Current Runtime Freshness Verification
+
+This roadmap makes no current runtime freshness claim.
+
+| Runtime surface | Freshness claim | Verification state | Disposition |
+| --- | --- | --- | --- |
+| DIR source implementation | not implemented | N/A with reason: no source file is authorized by this roadmap | PASS |
+| OCR/provider execution | not authorized | N/A with reason: no OCR/provider runtime was run or claimed | PASS |
+| External Document Translator repo | not read for finalization | N/A with reason: adapter matrix must use published contract names only | PASS |
+| External Policy_Local tree | not read for finalization | N/A with reason: PL-S remains separately held | PASS |
+| Retrieval behavior | not changed | N/A with reason: DIR routes to later owners and does not wire retrieval | PASS |
 
 ## Foundation Relationship To EXA-T2
 
@@ -161,12 +177,16 @@ Selected design:
 1. Keep EXA-T2 as the local scan-route primitive.
 2. Add a higher-level document router only after source-verifying existing
    owners.
-3. Separate document profile and intent from raw document content.
+3. Collapse intent into a capability-shaped field on `DocumentProfile`; do not
+   create a standalone foundation `DocumentIntent` enum with use-case names.
 4. Make review/operator actions first-class outputs.
 5. Treat Policy_Local and Document Translator as adapter consumers, not router
    owners.
-6. Make provider/OCR/cost routes advisory or blocked until separately
-   authorized live-proof work orders exist.
+6. Make provider/OCR/cost routes blocked until separately authorized
+   live-proof work orders exist; do not make them permanent advisory claims.
+7. Keep `DocumentStructureSignals` separate for now because the current scan
+   layer has extraction quality/coverage fields but no intrinsic document-shape
+   fields.
 
 Rejected design:
 
@@ -175,211 +195,177 @@ Rejected design:
 - provider/OCR execution inside the router;
 - replacing `ScanOutcomeReport` with a second operator-report surface;
 - allowing use-case apps to define foundation document semantics;
+- use-case-named foundation intent values such as translation or legal-policy
+  review;
+- a flat router disposition enum that re-encodes EXA-T2 scan dispositions;
 - mixing Policy_Local legal/current-status constraints into a generic router;
 - claiming cost/quality/readiness from external README or CLAUDE docs.
 
+## Claude Rebuttal Incorporation Ledger
+
+| Rebuttal item | Codex disposition | Roadmap correction |
+| --- | --- | --- |
+| B1 - router disposition enum re-encodes scan layer | ACCEPT | replace flat router disposition with 3-axis composition: scan route passthrough, authorization gate, downstream capability eligibility |
+| B2 - use-case names in foundation intent enum | ACCEPT | remove standalone use-case `DocumentIntent`; use `DownstreamCapability` and adapter matrix rows |
+| B3 - 8-tranche / 5-contract speculative stack | ACCEPT | collapse roadmap to DIR-T0 doc-only contracts/matrix, DIR-T1 source/test, DIR-T2 pilot |
+| B4 - external-tree read boundary under-stated | ACCEPT | state that adapter matrix must not read, list, hash, or modify Document Translator or Policy_Local source trees |
+| I1 - semantic chunking | ACCEPT | keep semantic chunking out of DIR; DIR routes to later chunk/context owners |
+| I2 - cost/provider routing | ACCEPT | provider/OCR routing is blocked until live-proof authorization, not advisory forever |
+| I3 - machine-checkability | ACCEPT_AS_CANDIDATE | DIR-T1 should include an overlap check proving router authority gates do not duplicate scan dispositions |
+| I4 - package owner | ACCEPT | future source implementation should live in `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/` unless DIR-T0 source map proves otherwise |
+
 ## Proposed Router Concepts
 
-The future router should distinguish these contract families.
+The future router should distinguish only the minimum contract families needed
+to compose the scan layer.
 
 | Contract family | Proposed purpose | Raw content allowed? | Initial status |
 | --- | --- | --- | --- |
-| `DocumentProfile` | source type, language hints, page count, artifact role, domain hints, declared downstream use | no | PROPOSED |
-| `DocumentIntent` | translation, policy evidence review, corpus scan, summarization, citation extraction, operator review | no | PROPOSED |
-| `DocumentStructureSignals` | table density, image/formula presence, section/heading signals, page continuity, layout-risk flags | no | PROPOSED |
-| `DocumentIntelligenceRouteDecision` | allowed next path, blocked path, required review, downstream adapter eligibility | no | PROPOSED |
-| `DocumentIntelligenceReviewPacket` | operator-visible reasons, evidence metrics, unresolved risks, next action | no raw text by default | PROPOSED |
+| `DocumentProfile` | source type, source artifact ID, source hash, language hints, page count, artifact role, domain hint, requested capability | no | PROPOSED |
+| `DocumentStructureSignals` | intrinsic document-shape signals such as tables, images, formulas, layout risk, section/heading presence | no | PROPOSED |
+| `DocumentIntelligenceRouteDecision` | scan route passthrough, authorization gate, downstream eligibility, operator action, scan decision digest | no | PROPOSED |
+
+Supporting proposed type:
+
+`DownstreamCapability = STRUCTURED_TEXT_HANDOFF | EVIDENCE_CITATION_HANDOFF |
+CORPUS_SCAN_HANDOFF | OPERATOR_REVIEW_ONLY | ABSTAIN_OR_BLOCK`
+
+Use-case mapping lives in the adapter matrix, not in a foundation intent enum:
+
+| Use-case lane | Required capability | Defined where |
+| --- | --- | --- |
+| Document Translator DT-CVF | `STRUCTURED_TEXT_HANDOFF` | adapter matrix |
+| Policy_Local PL-S | `EVIDENCE_CITATION_HANDOFF` | adapter matrix |
+| Corpus intelligence | `CORPUS_SCAN_HANDOFF` | adapter matrix |
+| Operator review only | `OPERATOR_REVIEW_ONLY` | adapter matrix |
 
 All names above are proposed doc-only fields until a later source-verified work
 order accepts or revises them. They must not be cited as existing runtime fields
 before implementation.
 
+## Router Composition Model
+
+The router must not define a flat disposition enum that overlaps scan route
+values. It composes three independent axes:
+
+1. `scan_route`: passthrough from EXA-T2 `ScanRouteDisposition`;
+2. `authorization_gate`: the router-owned authority axis;
+3. `downstream_eligibility`: capability names that may receive a handoff.
+
+Proposed authorization gate values:
+
+- `LOCAL_DETERMINISTIC_ALLOWED`;
+- `OCR_REQUIRES_SEPARATE_AUTH`;
+- `PROVIDER_REQUIRES_SEPARATE_AUTH`;
+- `OPERATOR_REVIEW_REQUIRED`;
+- `BLOCKED`.
+
+Deterministic mapping from scan route to authorization gate:
+
+| Source `scan_route` | Derived `authorization_gate` |
+| --- | --- |
+| `LOCAL_TEXT_EXTRACTION_RECOMMENDED` | `LOCAL_DETERMINISTIC_ALLOWED` |
+| `OCR_ELIGIBLE_OPERATOR_REVIEW_REQUIRED` | `OCR_REQUIRES_SEPARATE_AUTH` |
+| `ESCALATE_OR_ABSTAIN` | `OPERATOR_REVIEW_REQUIRED` |
+| `BLOCKED_UNSUPPORTED` | `BLOCKED` |
+
+The router may add `PROVIDER_REQUIRES_SEPARATE_AUTH` only when a later
+source-verified work order defines a provider-need signal and the corresponding
+live-proof boundary. This roadmap does not authorize that signal.
+
+Machine-check candidate for DIR-T1:
+
+- fail if any router `AuthorizationGate` value duplicates a
+  `ScanRouteDisposition` value;
+- fail if a foundation `DownstreamCapability` enum contains use-case names
+  such as Document Translator, Policy_Local, translation, or legal policy;
+- fail if route decisions include raw text, OCR output, provider response, or
+  downstream app state.
+
 ## Proposed Tranche Plan
 
 | Tranche | Deliverable | Dependency | Status |
 | --- | --- | --- | --- |
-| DIR-T0 | Foundation owner reconciliation and source-authority map | Claude rebuttal incorporated, fresh GC-018/work order | HOLD_PENDING_REBUTTAL_AND_AUTH |
-| DIR-T1 | Document profile and intent taxonomy contract | DIR-T0 closure | HOLD_PENDING_T0 |
-| DIR-T2 | Document structure signal contract and scan-layer mapping | DIR-T1 closure | HOLD_PENDING_T1 |
-| DIR-T3 | Router decision contract that composes EXA-T2 `ScanRouteDecision` | DIR-T2 closure | HOLD_PENDING_T2 |
-| DIR-T4 | Operator-visible document-intelligence review packet | DIR-T3 closure | HOLD_PENDING_T3 |
-| DIR-T5 | Downstream adapter readiness matrix for Policy_Local and Document Translator | DIR-T4 closure | HOLD_PENDING_T4 |
-| DIR-T6 | Later deterministic local source implementation and focused tests | DIR-T5 closure plus explicit implementation authorization | HOLD_PENDING_IMPLEMENTATION_AUTH |
-| DIR-T7 | Later runtime pilot, if any, over bounded samples | DIR-T6 closure plus operator sample corpus and live-proof authorization | HOLD_PENDING_RUNTIME_AUTH |
+| DIR-T0 | Doc-only owner reconciliation, 3 contract tables, adapter matrix, and machine-check candidate spec | Final roadmap plus fresh GC-018/work order | AWAITING_FRESH_AUTHORIZATION |
+| DIR-T1 | Deterministic local source implementation and focused tests | DIR-T0 closure plus fresh GC-018/work order | HOLD_PENDING_T0 |
+| DIR-T2 | Bounded pilot over operator-approved samples, if any | DIR-T1 closure plus sample corpus and runtime/live-proof authorization when applicable | HOLD_PENDING_T1_AND_RUNTIME_AUTH |
 
 ## Tranche Detail
 
-### DIR-T0 - Owner Reconciliation And Source Authority
+### DIR-T0 - Doc-Only Contract And Adapter Matrix
 
-Purpose: prevent duplicate abstractions before adding a router.
+Purpose: prevent duplicate abstractions before adding source code.
 
 Deliverables:
 
 - source map of current extraction foundation owners;
-- accepted/rejected owner boundaries for profile, intent, structure, route,
-  report, review, and downstream adapter concepts;
+- accepted/rejected owner boundaries for profile, structure, route, review, and
+  downstream adapter concepts;
 - explicit collision check against EXA-T2 and EX-T9;
-- decision on whether router contracts belong in
-  `EXTENSIONS/CVF_EXTRACTION_FOUNDATION` or a new foundation package.
+- final doc-only tables for `DocumentProfile`, `DocumentStructureSignals`, and
+  `DocumentIntelligenceRouteDecision`;
+- adapter eligibility matrix that maps use-case lanes to
+  `DownstreamCapability`;
+- machine-check candidate for scan-disposition overlap and use-case name leaks;
+- source-owner decision for a later module under
+  `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/`, unless source evidence blocks
+  that placement.
 
 Allowed scope:
 
 - docs/reference and docs/reviews artifacts only;
-- no source implementation unless the work order explicitly authorizes it.
+- no source implementation;
+- no runtime, OCR, provider, retrieval, external use-case repo, or corpus
+  operation.
 
 Exit criteria:
 
 - every proposed field or symbol is labeled as existing, proposed doc-only, or
   rejected;
-- Claude rebuttal findings are accepted/deferred/rejected with reasons;
+- the adapter matrix uses capability names, not use-case names inside a
+  foundation enum;
+- the matrix does not read, list, hash, or modify any file under
+  `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\Document_Translator` or any
+  external Policy_Local source tree;
+- missing published adapter contracts are recorded as
+  `ADAPTER_CONTRACT_NOT_YET_PUBLISHED`, not inferred from source;
 - no runtime/OCR/provider/app edit is performed.
 
-### DIR-T1 - Document Profile And Intent Taxonomy
+### DIR-T1 - Deterministic Source Contract And Tests
 
-Purpose: define the minimal metadata needed before route decisions.
+Purpose: implement the minimal deterministic router only after DIR-T0 closes.
 
-Candidate profile signals:
+Candidate source:
 
-- source type and source artifact ID;
-- language hints;
-- page count;
-- source hash;
-- declared artifact role;
-- downstream intent;
-- domain hint such as generic, legal-policy, translation, corpus-intelligence,
-  or operator-review.
+- a small `document_intelligence_router.py` module adjacent to EXA-T2, if
+  DIR-T0 confirms `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/` ownership;
+- focused tests in `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/`;
+- a governance checker or focused test proving router authority gates do not
+  overlap scan dispositions.
 
-Candidate intent values:
+Required behavior:
 
-- `TRANSLATION_PREP`;
-- `POLICY_EVIDENCE_REVIEW`;
-- `CORPUS_INTELLIGENCE_SCAN`;
-- `CITATION_OR_METADATA_EXTRACTION`;
-- `OPERATOR_READABILITY_REVIEW`;
-- `ABSTAIN_OR_BLOCK`.
+- import or otherwise source-verify EXA-T2 scan route values instead of
+  retyping them;
+- preserve `BLOCKED_UNSUPPORTED` and `ESCALATE_OR_ABSTAIN` semantics;
+- never downgrade operator-review requirements;
+- keep provider/OCR actions blocked unless a separate work order authorizes
+  them;
+- keep `DocumentStructureSignals` separate at implementation start, with a
+  documented `KEEP_SEPARATE_BUT_COLLAPSIBLE_AT_T1` decision if tests prove the
+  structure contract has no independent variation.
 
 Acceptance boundary:
 
 - no raw document text;
-- no provider choice;
+- no provider call or OCR execution;
 - no domain-specific legal finding;
 - no production/readiness claim.
 
-### DIR-T2 - Document Structure Signal Contract
+This tranche must be separately authorized by fresh GC-018 and a
+source-verified work order. It is not authorized by this roadmap.
 
-Purpose: give downstream controllers a stable way to reason about structure
-without storing raw content.
-
-Candidate structure signals:
-
-- heading/section presence;
-- table density;
-- image density;
-- formula or symbol density;
-- page continuity risk;
-- scanned-page ratio when supplied by scan layer;
-- layout-preservation risk;
-- citation/evidence-marker presence as a boolean or count;
-- missing-page or low-coverage flags from extraction quality.
-
-Required relationship to scan layer:
-
-- reuse `ExtractionQualityReport` and `DocumentScanSignals` where possible;
-- avoid duplicate coverage/confidence thresholds;
-- keep layout-risk advisory separate from OCR/provider execution.
-
-### DIR-T3 - Router Decision Contract
-
-Purpose: produce a bounded, deterministic decision about the next allowed
-document-intelligence path.
-
-Candidate outputs:
-
-- decision version;
-- route disposition;
-- allowed next path;
-- blocked path reason;
-- required operator action;
-- downstream adapter eligibility;
-- scan route decision digest;
-- claim boundary.
-
-Candidate dispositions:
-
-- `PROCEED_LOCAL_DOCUMENT_INTELLIGENCE`;
-- `PROCEED_AFTER_OPERATOR_REVIEW`;
-- `OCR_ELIGIBLE_BUT_NOT_AUTHORIZED`;
-- `PROVIDER_ELIGIBLE_BUT_NOT_AUTHORIZED`;
-- `BLOCKED_UNSUPPORTED_SOURCE`;
-- `ABSTAIN_INSUFFICIENT_EVIDENCE`.
-
-Required composition:
-
-- consume EXA-T2 `ScanRouteDecision`;
-- preserve EXA-T2 `BLOCKED_UNSUPPORTED` and `ESCALATE_OR_ABSTAIN` semantics;
-- do not downgrade operator-review requirements;
-- do not execute any downstream adapter.
-
-### DIR-T4 - Operator-Visible Review Packet
-
-Purpose: make the router decision inspectable by a non-coder operator.
-
-Candidate packet sections:
-
-- source artifact summary;
-- profile summary;
-- structure signal summary;
-- scan route digest;
-- router decision;
-- required operator action;
-- blocked or deferred capabilities;
-- downstream adapter eligibility;
-- claim boundary and public export disposition.
-
-Required relationship:
-
-- reuse `ScanOutcomeReport` findings where scan/extraction quality caused the
-  route;
-- add document-intelligence findings only when they are not scan-quality
-  duplicates;
-- preserve raw-content release prohibition by default.
-
-### DIR-T5 - Downstream Adapter Readiness Matrix
-
-Purpose: make use-case readiness explicit without unlocking the use cases.
-
-Rows should cover at least:
-
-- Policy_Local PL-S lane;
-- Document Translator DT-CVF lane;
-- corpus intelligence scan layer;
-- memory/retrieval pack handoff;
-- operator review only.
-
-Each row must state:
-
-- required router inputs;
-- allowed outputs;
-- forbidden outputs;
-- required operator checkpoint;
-- live-proof requirement if provider/OCR/runtime behavior is claimed;
-- current readiness state.
-
-### DIR-T6 - Later Deterministic Source Implementation
-
-Purpose: implement only after the contracts survive rebuttal and T0-T5 closure.
-
-Candidate source:
-
-- a small Python module adjacent to EXA-T2, if source ownership confirms that
-  extraction foundation is the right package;
-- focused tests for invalid signals, blocked source types, operator-review
-  propagation, no-raw-content fields, and downstream adapter boundaries.
-
-This tranche must be separately authorized by fresh GC-018 and source-verified
-work order. It is not authorized by this draft.
-
-### DIR-T7 - Later Runtime Pilot
+### DIR-T2 - Later Bounded Pilot
 
 Purpose: run a bounded live/local pilot only after contracts and source are
 closed.
@@ -394,20 +380,19 @@ This is held until:
 
 ## Work Plan
 
-1. Send this draft to Claude for adversarial rebuttal.
-2. Require Claude to classify each critique as blocker, improvement, or
-   non-blocking disagreement.
-3. Codex incorporates or rejects rebuttal points in a final roadmap revision.
-4. Only after final roadmap acceptance may DIR-T0 be opened with fresh GC-018
+1. Preserve Claude rebuttal at
+   `docs/reviews/CVF_DIR_FOUNDATION_ROADMAP_CLAUDE_REBUTTAL_2026-06-13.md`.
+2. Record Codex incorporation decision in a review artifact.
+3. Only after this final roadmap acceptance may DIR-T0 be opened with fresh GC-018
    and a source-verified work order.
-5. Keep Document Translator DT-CVF-T0 and Policy_Local PL-S1 separate unless a
+4. Keep Document Translator DT-CVF-T0 and Policy_Local PL-S1 separate unless a
    later operator decision explicitly sequences them after DIR.
 
 ## Dispatch Boundary
 
-This draft is not a dispatch packet.
+This roadmap is not a dispatch packet.
 
-No worker may implement the router from this draft alone. A future work order
+No worker may implement the router from this roadmap alone. A future work order
 must include:
 
 - Source Verification Block;
@@ -420,42 +405,21 @@ must include:
 
 ## Claude Rebuttal Gate
 
-Claude should rebut this roadmap before finalization.
+Status: `SATISFIED`.
 
-Required rebuttal questions:
+Claude rebuttal artifact:
 
-1. Does the proposed router duplicate EXA-T2 scan routing instead of composing
-   it?
-2. Are `DocumentProfile`, `DocumentIntent`, and `DocumentStructureSignals`
-   scoped too broadly for a foundation tranche?
-3. Which tranche should remain doc-only, and which should become source/test
-   implementation?
-4. Does any language accidentally authorize OCR, provider, retrieval, external
-   repo edits, or Policy_Local mutation?
-5. Are Policy_Local and Document Translator sufficiently isolated as downstream
-   adapters?
-6. Are any current CVF owner surfaces missing from the Source Verification
-   table?
-7. Should semantic chunking/context handoff be earlier, later, or out of DIR
-   scope?
-8. Should cost/provider routing be advisory-only forever, or just blocked until
-   live-proof authorization?
-9. Are the acceptance criteria machine-checkable enough?
-10. What is the smallest useful DIR-T0 that reduces risk without creating a
-    speculative abstraction stack?
+`docs/reviews/CVF_DIR_FOUNDATION_ROADMAP_CLAUDE_REBUTTAL_2026-06-13.md`
 
-Claude's output should include:
+Commit: `fc79fcdf`.
 
-- `ACCEPT`, `DEFER`, or `REJECT` disposition for the roadmap structure;
-- blocker list, if any;
-- proposed tranche changes;
-- missing source-owner checks;
-- claim-boundary risks;
-- recommended final-roadmap edits.
+Result: Claude accepted the draft architecture with four blockers. Codex
+accepted B1-B4 and I1-I4 into this roadmap. DIR-T0 remains blocked until a
+fresh GC-018 and source-verified work order are opened.
 
 ## Acceptance Criteria
 
-This draft is acceptable for Claude rebuttal only if:
+This roadmap is acceptable for DIR-T0 authorization only if:
 
 1. It keeps EXA-T2 as the scan-route owner.
 2. It separates scan-layer decisions from document-intelligence routing.
@@ -464,12 +428,16 @@ This draft is acceptable for Claude rebuttal only if:
 4. It forbids runtime/OCR/provider/external repo edits until later authorized
    work orders.
 5. It records proposed doc-only fields as proposed, not existing runtime facts.
-6. It includes a Claude rebuttal gate before finalization.
+6. It records Claude rebuttal incorporation before finalization.
 7. It includes public export disposition and claim boundary.
+8. It collapses speculative tranches to DIR-T0/T1/T2.
+9. It avoids use-case names in foundation capability enums.
+10. It requires scan-disposition overlap protection before source
+    implementation.
 
 ## Verification / Evidence
 
-Drafting evidence:
+Finalization evidence:
 
 - `docs/roadmaps/CVF_DOCUMENT_TRANSLATOR_CONTROL_ADAPTATION_ROADMAP_2026-06-13.md`
   was read for the downstream use-case boundary.
@@ -481,13 +449,15 @@ Drafting evidence:
   `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/extraction_pipeline.py`, and
   `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/scan_outcome_report.py` were read
   for owner-surface verification.
+- `docs/reviews/CVF_DIR_FOUNDATION_ROADMAP_CLAUDE_REBUTTAL_2026-06-13.md`
+  was read and incorporated.
 
-Required before finalizing this roadmap:
+Required before opening DIR-T0:
 
-- Claude rebuttal artifact under `docs/reviews/`;
-- Codex final incorporation decision;
-- reviewer-fast or applicable governance hook pass;
-- no untracked external use-case edit included in the roadmap commit.
+- fresh GC-018 baseline;
+- source-verified work order;
+- pre-dispatch autorun gate over the real changed range;
+- no untracked external use-case edit included in the dispatch commit.
 
 ## Governed Work Lifecycle
 
@@ -498,8 +468,8 @@ Required before finalizing this roadmap:
 - DRAFT: this artifact proposes the route architecture and questions.
 - REBUTTAL: Claude challenges duplication, scope, owner boundaries, and claim
   safety.
-- FINAL_ROADMAP: Codex incorporates accepted critique.
-- GC-018: DIR-T0 receives a fresh baseline only after finalization.
+- FINAL_ROADMAP: this revision incorporates accepted critique.
+- GC-018: DIR-T0 may receive a fresh baseline only after this finalization.
 - WORK_ORDER: implementation or doc closure requires source verification.
 - BUILD: no build is authorized yet.
 - REVIEW: Codex reviews worker returns before commit.
@@ -507,16 +477,16 @@ Required before finalizing this roadmap:
 
 ## Claim Boundary
 
-This draft proposes a foundation roadmap for critique. It does not prove
-document intelligence behavior, extraction accuracy, OCR quality, provider
-behavior, routing correctness, retrieval quality, Policy_Local readiness,
-Document Translator readiness, public readiness, production readiness, release
-readiness, cost savings, memory reinjection, high-risk promotion, or
-autonomous mutation.
+This final roadmap authorizes only later DIR-T0 planning through fresh GC-018
+and source-verified work order. It does not prove document intelligence
+behavior, extraction accuracy, OCR quality, provider behavior, routing
+correctness, retrieval quality, Policy_Local readiness, Document Translator
+readiness, public readiness, production readiness, release readiness, cost
+savings, memory reinjection, high-risk promotion, or autonomous mutation.
 
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: private provenance draft for Claude rebuttal; no public-sync batch is
+Reason: private provenance foundation roadmap; no public-sync batch is
 authorized.
