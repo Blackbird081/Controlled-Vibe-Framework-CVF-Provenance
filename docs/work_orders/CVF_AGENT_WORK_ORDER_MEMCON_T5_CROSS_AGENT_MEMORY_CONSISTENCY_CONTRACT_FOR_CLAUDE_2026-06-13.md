@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -18,7 +18,7 @@ dispatchBaseHead: `76f001a6`
 
 executionBaseHead: `76f001a6`
 
-closureBaseHead: `WORKER_MUST_NOT_SET`
+closureBaseHead: `e39b8262`
 
 sourceAuthority:
 `docs/baselines/CVF_GC018_MEMCON_T5_CROSS_AGENT_MEMORY_CONSISTENCY_CONTRACT_2026-06-13.md`
@@ -420,6 +420,34 @@ Worker-return evidence must be machine-checkable:
 - explicit `N/A with reason` for runtime, live proof, public-sync, generated
   JSON aggregate, provider/API, OCR, Policy_Local, durable storage, route
   wiring, and session continuity evidence.
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 | `docs/baselines/CVF_GC018_MEMCON_T5_CROSS_AGENT_MEMORY_CONSISTENCY_CONTRACT_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MEMCON_T5_CROSS_AGENT_MEMORY_CONSISTENCY_CONTRACT_COMPLETION_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_MEMCON_T5_CROSS_AGENT_MEMORY_CONSISTENCY_WORKER_RETURN_2026-06-13.md` | `WORKER_MUST_NOT_COMMIT` observed | PASS |
+| Roadmap state | `docs/roadmaps/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_ROADMAP_2026-06-12.md` | `Status: MEMCON_T5_CLOSED_PASS_BOUNDED` | PASS |
+| Contract artifact | `docs/reference/CVF_MEMORY_CONSOLIDATION_CROSS_AGENT_CONSISTENCY_CONTRACT_2026-06-13.md` | file exists | PASS |
+| Sample packet artifact | `docs/reviews/CVF_MEMCON_T5_CROSS_AGENT_MEMORY_CONSISTENCY_SAMPLE_PACKET_2026-06-13.md` | file exists | PASS |
+| Registry JSON | BLOCKED with reason | no GC-051 registry update authorized for MEMCON-T5 closure | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason | no GC-051 registry update authorized for MEMCON-T5 closure | BLOCKED with reason |
+| External evidence digest | N/A with reason | no external corpus/provider evidence used | N/A with reason |
+| System loop interlock | N/A with reason | no runtime loop mutation authorized | N/A with reason |
+| Runtime evidence | N/A with reason | contract is doc-only and no runtime behavior changed | N/A with reason |
+| Live proof | N/A with reason | no provider/API call authorized or needed | N/A with reason |
+| Public-sync | N/A with reason | private provenance work; public-sync not authorized | N/A with reason |
+| Session continuity | active state/front door/handoff | separate session-sync commit follows material closure when required | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| Runtime receipt emitted | N/A - MEMCON-T5 is a documentation contract and fixture closure | No runtime receipt emitted or claimed | N/A with reason |
+| Query acceptance receipt | N/A - no query route, retrieval route, or provider path was executed | No query acceptance receipt exists | N/A with reason |
+| raw memory release | `rawMemoryReleased=false` | `rawMemoryReleased=false` in contract, sample packet, worker return, and completion review | PASS |
+| Public export receipt | N/A - private provenance closure, public-sync not authorized | `DEFERRED_PRIVATE_ONLY` | N/A with reason |
+| Provider/live proof receipt | N/A - no provider/API proof authorized or needed | No provider/API proof exists | N/A with reason |
 
 ## Closure Checklist
 

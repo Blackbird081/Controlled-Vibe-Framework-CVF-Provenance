@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 
@@ -50,7 +50,8 @@ return them uncommitted for Codex review.
 
 ## Decision / Baseline / Proposed Tranche
 
-Decision: dispatch MEMCON-T5 to Claude under `WORKER_MUST_NOT_COMMIT`.
+Decision: close MEMCON-T5 as `CLOSED_PASS_BOUNDED` after Claude returned
+uncommitted worker artifacts and Codex completed review.
 
 Baseline:
 

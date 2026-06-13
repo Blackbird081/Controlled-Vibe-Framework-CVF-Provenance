@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: MEMCON_T5_DISPATCHED
+Status: MEMCON_T5_CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -376,7 +376,7 @@ Allowed outcomes:
 | MEMCON-T2 | Temporal ambiguity and source-authority checker | MEMCON-T1b closure | CLOSED_PASS_BOUNDED |
 | MEMCON-T3 | Consolidated memory ledger and Markdown-first operator-visible review packet | MEMCON-T2 closure | CLOSED_PASS_BOUNDED |
 | MEMCON-T4 | Retrieval-pack integration boundary and conformance tests | MEMCON-T3 closure | CLOSED_PASS_BOUNDED |
-| MEMCON-T5 | Cross-agent memory consistency contract | MEMCON-T4 closure | DISPATCHED |
+| MEMCON-T5 | Cross-agent memory consistency contract | MEMCON-T4 closure | CLOSED_PASS_BOUNDED |
 | PL-S1 | Policy_Local evidence-resolution pilot using Memory Plane outputs | MEMCON foundation decision plus fresh authorization | HOLD_PENDING_MEMCON_DECISION |
 
 ## Work Plan
@@ -583,7 +583,15 @@ Dispatch artifacts:
 - GC-018:
   `docs/baselines/CVF_GC018_MEMCON_T5_CROSS_AGENT_MEMORY_CONSISTENCY_CONTRACT_2026-06-13.md`;
 - work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T5_CROSS_AGENT_MEMORY_CONSISTENCY_CONTRACT_FOR_CLAUDE_2026-06-13.md`.
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T5_CROSS_AGENT_MEMORY_CONSISTENCY_CONTRACT_FOR_CLAUDE_2026-06-13.md`;
+- contract:
+  `docs/reference/CVF_MEMORY_CONSOLIDATION_CROSS_AGENT_CONSISTENCY_CONTRACT_2026-06-13.md`;
+- sample packet:
+  `docs/reviews/CVF_MEMCON_T5_CROSS_AGENT_MEMORY_CONSISTENCY_SAMPLE_PACKET_2026-06-13.md`;
+- worker return:
+  `docs/reviews/CVF_MEMCON_T5_CROSS_AGENT_MEMORY_CONSISTENCY_WORKER_RETURN_2026-06-13.md`;
+- completion:
+  `docs/reviews/CVF_MEMCON_T5_CROSS_AGENT_MEMORY_CONSISTENCY_CONTRACT_COMPLETION_2026-06-13.md`.
 
 Goal: cross-agent consistency.
 
