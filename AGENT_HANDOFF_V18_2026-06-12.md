@@ -24,14 +24,15 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`fpc_t4_strategic_deferred_capability_reopen_decision_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=fresh authorization only for Model Gateway EPF provider-routing boundary planning as the highest-value CVF foundation move identified by FPC-T4; parked checkpoint=implementation, runtime/provider/live-proof, Model Gateway implementation, Sandbox Runtime implementation, registry mutation, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
+Startup acknowledged: current mode=`model_gateway_epf_provider_routing_boundary_planning_dispatched`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=Claude worker return only for the Model Gateway EPF provider-routing boundary plan and worker-return packet; parked checkpoint=implementation, runtime/provider/live-proof, Model Gateway implementation, Sandbox Runtime implementation, registry mutation, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
 
 ## Current Mode
 
-`fpc_t4_strategic_deferred_capability_reopen_decision_closed_pass_bounded`
+`model_gateway_epf_provider_routing_boundary_planning_dispatched`
 
-Current HEAD recorded for this handoff: `5e0bc39f`
-(FPC-T4 material closure commit; this dedicated handoff sync follows).
+Current HEAD recorded for this handoff: `cce311ba`
+(Model Gateway EPF boundary planning dispatch commit; this dedicated handoff
+sync follows).
 
 ## Active Boundary
 
@@ -47,54 +48,49 @@ requires separate authorization.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: Codex may update session continuity files
-after material closure commit `5e0bc39f` so the active front door, generated
+after material dispatch commit `cce311ba` so the active front door, generated
 state aggregate, state source files, and active handoff point to the latest
-`CLOSED_PASS_BOUNDED` FPC-T4 decision state.
+Model Gateway EPF provider-routing boundary planning dispatch state.
 
 Protected paths:
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/fpcT4StrategicDeferredCapabilityReopenDecisionDispatch20260613.json`
-- `CVF_SESSION/state/entries/fpcT4StrategicDeferredCapabilityReopenDecisionClosure20260613.json`
+- `CVF_SESSION/state/entries/modelGatewayEpfProviderRoutingBoundaryPlanningDispatch20260613.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
+- `AGENT_HANDOFF_V18_2026-06-12.md`
 
 Rollback boundary: if session-sync gates fail, revert only this continuity sync
 batch and regenerate `CVF_SESSION/ACTIVE_SESSION_STATE.json` from the previous
-state source files. Do not revert material closure commit `5e0bc39f`.
+state source files. Do not revert material dispatch commit `cce311ba`.
 
 ## Latest Continuity Note
 
-FPC-T4 Strategic Deferred Capability Reopen Decision is
-`CLOSED_PASS_BOUNDED` at material closure commit `5e0bc39f` from closure base
-`2360fcf8`.
+Model Gateway EPF provider-routing boundary planning is
+`DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT` at dispatch commit `cce311ba` from
+dispatch base `45b27691`.
 
-Closure artifacts:
+Dispatch artifacts:
 
 - GC-018:
-  `docs/baselines/CVF_GC018_FPC_T4_STRATEGIC_DEFERRED_CAPABILITY_REOPEN_DECISION_2026-06-13.md`;
+  `docs/baselines/CVF_GC018_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_2026-06-13.md`;
 - Work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_T4_STRATEGIC_DEFERRED_CAPABILITY_REOPEN_DECISION_FOR_CLAUDE_2026-06-13.md`;
-- decision matrix:
-  `docs/reference/CVF_FPC_T4_STRATEGIC_DEFERRED_CAPABILITY_REOPEN_DECISION_MATRIX_2026-06-13.md`;
-- worker return:
-  `docs/reviews/CVF_FPC_T4_STRATEGIC_DEFERRED_CAPABILITY_REOPEN_DECISION_WORKER_RETURN_2026-06-13.md`;
-- completion:
-  `docs/reviews/CVF_FPC_T4_STRATEGIC_DEFERRED_CAPABILITY_REOPEN_DECISION_COMPLETION_2026-06-13.md`.
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_FOR_CLAUDE_2026-06-13.md`.
 
-Result: FPC-T4 selected Model Gateway EPF provider-routing boundary planning as
-the highest-value next CVF foundation roadmap candidate. AOT/co-work trace
-supervision breadth planning ranks second; Sandbox Runtime physical-isolation
-boundary planning ranks third. FPC-T2-C05 registry-entry work is unblocked but
-remains a later small follow-up, not the next foundation move.
+Claude may return only these uncommitted deliverables:
 
-Next allowed move requires fresh authorization: open GC-018 for Model Gateway
-EPF provider-routing boundary planning. No implementation,
-runtime/provider/live-proof work, Model Gateway implementation, Sandbox Runtime
-implementation, registry mutation, use-case work, OS audit, endpoint
-monitoring, public-sync, external app mutation, raw memory release, co-work
-product development, or autonomous mutation is authorized.
+- `docs/reference/CVF_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLAN_2026-06-13.md`;
+- `docs/reviews/CVF_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_WORKER_RETURN_2026-06-13.md`.
+
+Codex owns review, allowed repairs, final commit, completion review,
+committed-range pre-closure, and session sync. FPC-T4 remains
+`CLOSED_PASS_BOUNDED` at material closure commit `5e0bc39f`.
+
+No implementation, runtime/source/test mutation, provider/API use, live
+governance proof, provider/model addition, registry mutation, public-sync,
+external app mutation, raw memory release, co-work product development, or
+autonomous mutation is authorized.
 
 ---
 
@@ -698,20 +694,22 @@ acceleration material commit `bd15e0ae`, MEMCON-T1a material closure commit
 
 ## Next Allowed Move
 
-Next allowed move: fresh authorization only for Model Gateway EPF
-provider-routing boundary planning as the highest-value CVF foundation move
-identified by FPC-T4.
+Next allowed move: Claude worker return only for Model Gateway EPF
+provider-routing boundary planning.
 
-Alternative strategic choices from FPC-T4: AOT/co-work trace supervision
-breadth planning second; Sandbox Runtime physical-isolation boundary planning
-third. FPC-T2-C05 registry-entry work is unblocked but remains a later small
-follow-up.
+Allowed uncommitted deliverables:
 
-No implementation, runtime/provider/live-proof work, Model Gateway
-implementation, Sandbox Runtime implementation, registry mutation,
-public-sync, external Document_Translator inspection or mutation,
-Policy_Local mutation, OS audit, endpoint monitoring, T12, raw memory release,
-co-work product development, or autonomous mutation is authorized.
+- `docs/reference/CVF_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLAN_2026-06-13.md`;
+- `docs/reviews/CVF_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_WORKER_RETURN_2026-06-13.md`.
+
+Codex owns review, allowed repairs, final commit, completion review,
+committed-range pre-closure, and session sync.
+
+No implementation, runtime/source/test mutation, provider/API use, live
+governance proof, provider/model addition, registry mutation, public-sync,
+external Document_Translator inspection or mutation, Policy_Local mutation, OS
+audit, endpoint monitoring, T12, raw memory release, co-work product
+development, or autonomous mutation is authorized.
 
 DT-CVF-T0 may be opened only through later fresh GC-018 and a source-verified
 work order for Document Translator source custody, repo inventory,
