@@ -159,6 +159,24 @@ fulfillment manifests, or machine-readable status. The closure batch must
 promote the pattern to a template, standard, or machine check when feasible;
 otherwise record `N/A with reason`.
 
+### Protected-Path Authorization Carrier
+
+A dispatch/ready work order that authorizes the worker to create or modify a
+protected path -- a `governance/compat/*.py` checker, any `CVF_SESSION/**` JSON
+state file, `CVF_SESSION_MEMORY.md`, or an `AGENT_HANDOFF*.md` handoff -- must
+carry a complete `Core Guard Self-Protection Authorization` block. The block
+must use the same vocabulary the core-guard self-protection gate enforces:
+the `Core Guard Self-Protection Authorization` heading plus
+`Authorized guard-maintenance scope`, `Protected paths` (naming every
+authorized protected path), `Operator authorization`, and `Rollback boundary`.
+
+Authorizing the protected path in scope without the carrier is the
+ORCHESTRATOR_PACKET_GAP that forces the worker to synthesize the authorization
+mid-task. This is enforced at dispatch by
+`check_work_order_dispatch_quality.py`; the carrier vocabulary is the single
+source of truth owned by `check_core_guard_self_protection.py`, so dispatch and
+closure share one authorization language. See work-order template section 7A.
+
 ### Self-Reported Gate Evidence Consistency
 
 Recorded gate results must match the current artifact and handoff state. After

@@ -445,6 +445,101 @@ def _extract_section(text: str, heading_fragment: str) -> str:
     return match.group(1) if match else ""
 
 
+def _is_protected_authorization_path(path: str) -> bool:
+    """Mirror check_core_guard_self_protection._is_protected.
+
+    Protected = governance/compat/*.py checkers, CVF_SESSION/** JSON state,
+    CVF_SESSION_MEMORY.md, and AGENT_HANDOFF*.md handoffs. Kept in sync with the
+    core-guard self-protection gate so dispatch and closure agree on what
+    requires a Core Guard Self-Protection Authorization carrier.
+    """
+    normalized = path.replace("\\", "/").strip()
+    if normalized in {"CVF_SESSION_MEMORY.md"}:
+        return True
+    if re.match(r"^AGENT_HANDOFF[^/]*\.md$", normalized):
+        return True
+    if normalized.startswith("governance/compat/") and normalized.endswith(".py"):
+        return True
+    if normalized.startswith("CVF_SESSION/") and normalized.endswith(".json"):
+        return True
+    return False
+
+
+def _validate_protected_path_authorization_carrier(text: str) -> list[str]:
+    """Require a Core Guard Self-Protection Authorization carrier when a work
+    order authorizes the worker to create or modify a protected path.
+
+    Closes the DIR-T1 ORCHESTRATOR_PACKET_GAP learning: authorizing a
+    governance/compat checker or CVF_SESSION/handoff file in scope without the
+    authorization carrier forces the worker to synthesize one mid-task. The
+    required tokens match check_core_guard_self_protection so dispatch and the
+    closure-time core-guard gate share one vocabulary.
+    """
+    issues: list[str] = []
+    scope_text = "\n".join(
+        [
+            _extract_allowed_scope_text(text),
+            _extract_section(text, "Allowed Implementation Scope"),
+            _extract_section(text, "New Files To Create"),
+            _extract_section(text, "New Source And Test"),
+            _extract_section(text, "Write Ownership"),
+            _extract_section(text, "Authorized Artifact Set"),
+        ]
+    )
+    forbidden_text = "\n".join(
+        [
+            _extract_forbidden_scope_text(text),
+            _extract_section(text, "Forbidden Path Manifest"),
+        ]
+    )
+    forbidden_paths = set(_extract_paths(forbidden_text))
+
+    authorized_protected = sorted(
+        {
+            p
+            for p in _extract_paths(scope_text)
+            if _is_protected_authorization_path(p) and p not in forbidden_paths
+        }
+    )
+    if not authorized_protected:
+        return issues
+
+    if "Core Guard Self-Protection Authorization" not in text:
+        sample = ", ".join(authorized_protected[:5])
+        issues.append(
+            "work order authorizes protected path(s) "
+            f"({sample}) without a `Core Guard Self-Protection Authorization` "
+            "block; add the carrier per template section 7A"
+        )
+        return issues
+
+    required_tokens = (
+        "Authorized guard-maintenance scope",
+        "Protected paths",
+        "Operator authorization",
+        "Rollback boundary",
+    )
+    missing = [token for token in required_tokens if token not in text]
+    if missing:
+        issues.append(
+            "Core Guard Self-Protection Authorization block is missing required "
+            f"field(s): {', '.join(missing)}"
+        )
+
+    carrier_section = _extract_section(text, "Core Guard Self-Protection Authorization")
+    # Each authorized protected path must be named in the carrier's Protected
+    # paths list.
+    carrier_paths = set(_extract_paths(carrier_section))
+    unlisted = [p for p in authorized_protected if p not in carrier_paths]
+    if unlisted and "Protected paths" not in missing:
+        sample = ", ".join(unlisted[:5])
+        issues.append(
+            "Core Guard Self-Protection Authorization `Protected paths` list does "
+            f"not name every authorized protected path; missing: {sample}"
+        )
+    return issues
+
+
 def _has_trace_matrix(text: str) -> bool:
     return re.search(r"Roadmap[- ]To[- ]Work[- ]Order Trace Matrix", text, re.IGNORECASE) is not None
 
@@ -1951,6 +2046,7 @@ def _validate_work_order(path: str, text: str) -> list[str]:
         issues.extend(_validate_intake_role_routing_decision(text, "work order"))
         issues.extend(_validate_single_agent_multi_role_control(text, "work order"))
         issues.extend(_validate_evidence_reuse_and_encoding_plan(text))
+        issues.extend(_validate_protected_path_authorization_carrier(text))
 
     if dispatching and _is_connector_wave(path, text):
         wave_id = _extract_wave_id(path, text)

@@ -862,6 +862,54 @@ If the closure diff shows files outside Allowed scope or ownership, the worker
 must stop, split the cleanup into a separate governed batch, or return to the
 Orchestrator.
 
+## 7A. Protected-Path Authorization Carrier
+
+If this work order authorizes the worker to create or modify any protected
+path -- a `governance/compat/*.py` checker, any `CVF_SESSION/**` state/handoff
+file, `CVF_SESSION_MEMORY.md`, or an `AGENT_HANDOFF*.md` file -- the work order
+itself must carry a `Core Guard Self-Protection Authorization` block. Authoring
+the checker/state file alone is not enough: the core-guard self-protection gate
+also requires the authorization carrier, and omitting it forces the worker to
+synthesize one mid-task (the ORCHESTRATOR_PACKET_GAP closed by the DIR-T1
+learning).
+
+The block must use the same vocabulary the core-guard checker and active
+handoff already use, so dispatch and closure share one authorization language.
+Required fields:
+
+- `## Core Guard Self-Protection Authorization` heading;
+- `Authorized guard-maintenance scope` -- what guard/state change is permitted
+  and what is explicitly out of scope;
+- `Protected paths` -- a list naming every protected path the work order
+  authorizes, each as an exact repo-relative path;
+- `Operator authorization` -- the operator instruction or governance authority
+  that permits the protected change;
+- `Rollback boundary` -- which commits/artifacts may be reverted if the change
+  is rejected, and which must not.
+
+Example skeleton:
+
+```text
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: <permitted guard/state change; out-of-scope note>.
+
+Protected paths:
+
+- governance/compat/check_<name>.py
+- CVF_SESSION/ACTIVE_SESSION_STATE.json
+
+Operator authorization: <instruction or governance authority>.
+
+Rollback boundary: revert only <this change> if rejected; do not revert <prior closures>.
+```
+
+If the work order authorizes no protected path, this section may be omitted.
+This rule is enforced at dispatch by
+`governance/compat/check_work_order_dispatch_quality.py`; a dispatch/ready work
+order that authorizes a protected path without a complete carrier is a
+dispatch-quality violation.
+
 ## 8. Execution Plan
 
 Steps must be sequential unless explicitly marked parallel-safe.
