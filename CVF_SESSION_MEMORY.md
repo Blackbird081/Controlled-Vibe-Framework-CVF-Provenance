@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-13
 
-Current mode marker: `memcon_t4_retrieval_pack_boundary_conformance_closed_pass_bounded`
+Current mode marker: `memcon_t5_cross_agent_memory_consistency_contract_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `memcon_t4_retrieval_pack_boundary_conformance_closed_pass_bounded`.
+Current mode: `memcon_t5_cross_agent_memory_consistency_contract_dispatched`.
 
 Active handoff:
 
@@ -58,48 +58,41 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-MEMCON-T4 Retrieval-pack boundary conformance is `CLOSED_PASS_BOUNDED`.
+MEMCON-T5 Cross-agent memory consistency contract is `DISPATCHED`.
 
-Material closure commit: `f771bff8`.
+Material dispatch commit: `f88d56b8`.
 
-Closure artifacts:
+Dispatch artifacts:
 
 - GC-018:
-  `docs/baselines/CVF_GC018_MEMCON_T4_RETRIEVAL_PACK_BOUNDARY_CONFORMANCE_2026-06-13.md`;
+  `docs/baselines/CVF_GC018_MEMCON_T5_CROSS_AGENT_MEMORY_CONSISTENCY_CONTRACT_2026-06-13.md`;
 - work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T4_RETRIEVAL_PACK_BOUNDARY_CONFORMANCE_FOR_CLAUDE_2026-06-13.md`;
-- helper:
-  `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-consolidation-retrieval-pack-boundary.ts`;
-- focused tests:
-  `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/memory-consolidation-retrieval-pack-boundary.test.ts`;
-- worker return:
-  `docs/reviews/CVF_MEMCON_T4_RETRIEVAL_PACK_BOUNDARY_CONFORMANCE_WORKER_RETURN_2026-06-13.md`;
-- completion:
-  `docs/reviews/CVF_MEMCON_T4_RETRIEVAL_PACK_BOUNDARY_CONFORMANCE_COMPLETION_2026-06-13.md`;
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T5_CROSS_AGENT_MEMORY_CONSISTENCY_CONTRACT_FOR_CLAUDE_2026-06-13.md`;
 - roadmap:
   `docs/roadmaps/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_ROADMAP_2026-06-12.md`.
 
-Result: MEMCON now has a deterministic local retrieval-pack boundary helper
-and focused conformance tests. The helper excludes expired, disputed,
-sensitive, time-ambiguous, stale-blocked, conflicted, source-missing,
-confidence-missing, and ineligible records before summary-only retrieval-pack
-handoff; selected entries include source authority and confidence while
-preserving `summaryOnly=true` and `rawMemoryReleased=false`.
+Assignment: Claude creates a bounded Markdown-first cross-agent memory
+consistency contract, sample packet, and worker-return packet under
+`WORKER_MUST_NOT_COMMIT`.
 
-Verification: focused T4 test PASS 36/36; Learning Plane type check PASS;
-MEMCON checker PASS on `7916685d..HEAD`; reviewer-fast PASS 13/13;
-pre-commit governance chain PASS 38/38; pre-closure substantive gates PASS,
-with session-sync required for handoff HEAD continuity.
+Verification: MEMCON checker PASS; work-order dispatch quality PASS; markdown
+structural completeness PASS; rescan intelligence hardening PASS;
+pre-dispatch autorun PASS; reviewer-fast PASS 13/13; pre-commit governance
+chain PASS 38/38.
 
-Next allowed move: MEMCON-T5 may be opened only through a fresh GC-018 and
-source-verified work order for cross-agent memory consistency.
+Next allowed move: Claude executes MEMCON-T5 under `WORKER_MUST_NOT_COMMIT`,
+creates the allowed cross-agent memory consistency contract, sample packet,
+and worker-return packet, and returns all artifacts uncommitted for Codex
+review.
 
-Boundary: T4 closes only a bounded local helper and focused conformance tests.
-No existing retrieval policy/runtime workflow mutation, route/API wiring,
-durable storage, provider/API proof, OCR, Policy_Local mutation, EC activation,
-corpus ingestion, public-sync, T12 unlock, readiness claim, memory
-reinjection, high-risk promotion, generated JSON aggregate hand-editing, or
-autonomous mutation is authorized.
+Boundary: no runtime memory storage, existing memory-record mutation,
+route/API wiring, durable storage, provider/API proof, OCR, Policy_Local
+mutation, EC activation, corpus ingestion, public-sync, T12 unlock, readiness
+claim, memory reinjection, high-risk promotion, generated JSON aggregate
+hand-editing, or autonomous mutation is authorized.
+
+Prior MEMCON-T4 Retrieval-pack boundary conformance is
+`CLOSED_PASS_BOUNDED` at material commit `f771bff8`.
 
 MEMCON-T2 Temporal ambiguity and source-authority checker is
 `CLOSED_PASS_BOUNDED`.
@@ -923,8 +916,10 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: MEMCON-T5 may be opened only through a fresh GC-018 and
-source-verified work order for cross-agent memory consistency.
+Next allowed move: Claude executes MEMCON-T5 under `WORKER_MUST_NOT_COMMIT`,
+creates the allowed cross-agent memory consistency contract, sample packet,
+and worker-return packet, and returns all artifacts uncommitted for Codex
+review.
 Policy_Local PL-S1 remains held until the operator explicitly decides the
 MEMCON foundation is sufficient for downstream use-case work.
 
