@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: FPC_T1_CLOSED_PASS_BOUNDED_READY_FOR_FPC_T2_GC018
+Status: FPC_T2_DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT
 
 docType: roadmap
 
@@ -271,7 +271,7 @@ start by adding runtime behavior or downstream app features.
 | --- | --- | --- | --- |
 | FPC-T0 | Parked priority capture and later roadmap expansion | operator direction | CLOSED_BY_ROADMAP_UPDATE |
 | FPC-T1 | Foundation planes to workflow-chain system audit plus epistemic process coverage matrix | Claude rebuttal, fresh GC-018, source-verified work order | CLOSED_PASS_BOUNDED |
-| FPC-T2 | System-loop interlock expansion decision, including evidence-to-claim-update interlock candidates | FPC-T1 closure plus fresh GC-018/work order | ELIGIBLE_FOR_FRESH_GC018 |
+| FPC-T2 | System-loop interlock expansion decision, including evidence-to-claim-update interlock candidates | FPC-T1 closure plus fresh GC-018/work order | DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT |
 | FPC-T3 | Foundation checker/template/standard coverage plan for missing machine checks and early-gate placement | FPC-T2 closure plus fresh GC-018/work order | HOLD_PENDING_FPC_T2 |
 | FPC-T4 | Deferred capability reopen decision for Model Gateway, Sandbox Runtime, or other strategic gaps | FPC-T3 closure plus operator decision | HOLD_PENDING_FPC_T3 |
 
