@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -18,7 +18,7 @@ dispatchBaseHead: `30e6d174`
 
 executionBaseHead: `30e6d174`
 
-closureBaseHead: `WORKER_MUST_NOT_SET`
+closureBaseHead: `639405b1`
 
 sourceAuthority:
 `docs/baselines/CVF_GC018_DIR_T2_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_PILOT_2026-06-13.md`
@@ -238,6 +238,16 @@ Allowed scope:
 - create the DIR-T2 worker-return packet;
 - run local deterministic Python tests and governance checkers listed in the
   Required Proof Manifest.
+- reviewer-owned closure may update this work order, the paired GC-018,
+  `docs/baselines/CVF_GC018_DIR_T2_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_PILOT_2026-06-13.md`,
+  `docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_ROADMAP_2026-06-13.md`,
+  `docs/reviews/CVF_DIR_T2_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_PILOT_COMPLETION_2026-06-13.md`,
+  `docs/reviews/CVF_DIR_T2_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_PILOT_WORKER_RETURN_2026-06-13.md`,
+  `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_document_intelligence_router_foundation_pilot.py`,
+  `docs/corpus-intelligence/registry/entries/dir-t2-document-intelligence-router-foundation-pilot-tests.json`,
+  and `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`;
+- reviewer gates may observe pre-existing operator-owned `Thong_tin.md` as an
+  untouched untracked file; it is not a work artifact and must not be committed.
 
 Forbidden scope:
 
@@ -384,6 +394,21 @@ Codex reviewer must verify:
 | Forbidden scope checked | PASS, BLOCKED, or N/A with reason |
 | Finding-To-Governance disposition reviewed | PASS, BLOCKED, or N/A with reason |
 | Session continuity updated by reviewer | PASS, BLOCKED, or N/A with reason |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DIR_T2_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_PILOT_COMPLETION_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_ROADMAP_2026-06-13.md` | `Status: DIR_T2_CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 baseline state | `docs/baselines/CVF_GC018_DIR_T2_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_PILOT_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | GC-051 entry added for the DIR-T2 pilot test harness; checker PASS | PASS |
+| Registry Markdown | BLOCKED with reason | no Markdown quick-lookup row is required for this generated registry-source update | BLOCKED with reason |
+| External evidence digest | N/A with reason | no external source tree was read or hashed | N/A with reason |
+| System loop interlock | N/A with reason | no runtime loop, route, retrieval, or interlock mutation | N/A with reason |
+| Worker return artifact | `docs/reviews/CVF_DIR_T2_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_PILOT_WORKER_RETURN_2026-06-13.md` | `Status: WORKER_RETURN_SUBMITTED_UNCOMMITTED` then accepted | PASS |
+| Session continuity | active state/front door/handoff | reviewer-owned dedicated session-sync follows material closure commit | N/A with reason |
 
 ## Operator Checkpoint
 

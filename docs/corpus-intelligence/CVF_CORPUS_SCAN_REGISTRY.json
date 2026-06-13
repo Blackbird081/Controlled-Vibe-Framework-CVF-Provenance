@@ -2788,6 +2788,31 @@
       "manifestPath": null,
       "packetPath": "docs/reviews/CVF_DIR_T1_DOCUMENT_INTELLIGENCE_ROUTER_SOURCE_AND_TESTS_COMPLETION_2026-06-13.md",
       "notes": "Focused pytest coverage for gate/scan-disposition disjointness, total derivation map over four scan dispositions, scan-route passthrough, operator-review and blocked-source preservation, no-raw-content dataclass fields, capability composition, digest presence, and use-case-name leakage prevention."
+    },
+    {
+      "id": "dir-t2-document-intelligence-router-foundation-pilot-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation DIR-T2 document intelligence router foundation pilot tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_document_intelligence_router_foundation_pilot.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "raw document text (not asserted or stored)",
+        "OCR execution (not invoked)",
+        "provider call (not invoked)",
+        "Document_Translator external tree (not accessed)",
+        "Policy_Local (not mutated)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "DIR-T2",
+      "scanDate": "2026-06-13",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_DIR_T2_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_PILOT_COMPLETION_2026-06-13.md",
+      "notes": "Focused pytest coverage for synthetic metadata-only sample fixtures across all four EXA-T2 scan dispositions, DIR authorization gate derivation, operator action, downstream eligibility, scan-route passthrough, digest presence, claim-boundary invariants, and use-case leakage prevention."
     }
   ]
 }

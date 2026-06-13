@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DIR_T0_CLOSED_PASS_BOUNDED
+Status: DIR_T2_CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -288,7 +288,7 @@ Machine-check candidate for DIR-T1:
 | --- | --- | --- | --- |
 | DIR-T0 | Doc-only owner reconciliation, 3 contract tables, adapter matrix, and machine-check candidate spec | Final roadmap plus fresh GC-018/work order | CLOSED_PASS_BOUNDED |
 | DIR-T1 | Deterministic local source implementation and focused tests | DIR-T0 closure plus fresh GC-018/work order | CLOSED_PASS_BOUNDED |
-| DIR-T2 | Bounded pilot over operator-approved samples, if any | DIR-T1 closure plus sample corpus and runtime/live-proof authorization when applicable | HOLD_PENDING_T1_AND_RUNTIME_AUTH |
+| DIR-T2 | Bounded pilot over operator-approved samples, if any | DIR-T1 closure plus sample corpus and runtime/live-proof authorization when applicable | CLOSED_PASS_BOUNDED |
 
 ## Tranche Detail
 
@@ -377,6 +377,19 @@ This is held until:
 - diagnostics and receipts are defined;
 - release-quality governance proof rules are satisfied when governance behavior
   is claimed.
+
+Closure disposition: `CLOSED_PASS_BOUNDED` at material closure review
+`docs/reviews/CVF_DIR_T2_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_PILOT_COMPLETION_2026-06-13.md`.
+
+Bounded closure evidence:
+
+- synthetic metadata-only pilot corpus covered all four EXA-T2
+  `ScanRouteDisposition` values;
+- focused DIR-T2 pilot tests passed: 38/38;
+- existing DIR-T1 router regression tests passed: 16/16;
+- DIR overlap checker remained COMPLIANT with overlap count 0;
+- no external Document Translator, Policy_Local, OCR/provider/API, retrieval,
+  corpus ingestion, public-sync, readiness, cost, or quality claim was used.
 
 ## Work Plan
 
@@ -487,11 +500,11 @@ DIR-T0 closure package:
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DIR_T0_DOCUMENT_INTELLIGENCE_ROUTER_CONTRACT_MATRIX_FOR_CLAUDE_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_DIR_T0_DOCUMENT_INTELLIGENCE_ROUTER_CONTRACT_MATRIX_COMPLETION_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Roadmap state | this file | `Status: DIR_T0_CLOSED_PASS_BOUNDED` | PASS |
-| Registry JSON | BLOCKED with reason | no GC-051 registry update authorized for DIR-T0 closure | BLOCKED with reason |
-| Registry Markdown | BLOCKED with reason | no GC-051 registry update authorized for DIR-T0 closure | BLOCKED with reason |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DIR_T2_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_PILOT_FOR_CLAUDE_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DIR_T2_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_PILOT_COMPLETION_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this file | `Status: DIR_T2_CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | GC-051 entry added for DIR-T2 pilot test harness; checker PASS | PASS |
+| Registry Markdown | BLOCKED with reason | no Markdown quick-lookup row is required for this generated registry-source update | BLOCKED with reason |
 | External evidence digest | N/A with reason | no external corpus/provider evidence used | N/A with reason |
 | System loop interlock | N/A with reason | no runtime loop mutation authorized | N/A with reason |
 | Session continuity | active state/front door/handoff | separate session-sync commit follows material closure when required | N/A with reason |
