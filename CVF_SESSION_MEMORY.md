@@ -4,9 +4,9 @@ Memory class: POINTER_RECORD
 
 Status: ACTIVE SESSION FRONT DOOR
 
-Last updated: 2026-06-13
+Last updated: 2026-06-14
 
-Current mode marker: `model_gateway_legacy_coverage_recheck_closed_bounded`
+Current mode marker: `legacy_coverage_index_dispatch_guard_closed_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `model_gateway_legacy_coverage_recheck_closed_bounded`.
+Current mode: `legacy_coverage_index_dispatch_guard_closed_bounded`.
 
 Active handoff:
 
@@ -57,6 +57,21 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+Legacy coverage-index dispatch guard hardening is `CLOSED_PASS_BOUNDED` at
+material commit `3423d82e`. Ready/dispatch work orders that are both
+foundation/workflow-chain scoped and legacy-adjacent must now include
+`Legacy Absorption Coverage Index Disposition` with coverage-index row evidence
+or `NOT_APPLICABLE_WITH_REASON`.
+
+Guard artifacts:
+
+- Completion review:
+  `docs/reviews/CVF_LEGACY_COVERAGE_INDEX_DISPATCH_GUARD_HARDENING_COMPLETION_2026-06-14.md`;
+- Guard:
+  `governance/compat/check_work_order_dispatch_quality.py`;
+- Tests:
+  `governance/compat/test_check_work_order_dispatch_quality.py`.
 
 Model Gateway legacy absorption coverage index recheck is
 `CLOSED_PASS_BOUNDED` at material closure commit `5be35102`. Codex reviewed the
@@ -82,9 +97,10 @@ Closure artifacts:
 C-02 Resume Decision: `RESUME_WITH_REWRITE`. The old C-02 Model Gateway EPF
 provider-routing boundary planning packet must not resume as-is. A fresh
 rewritten C-02 planning packet or work order must cite the recheck plan and
-completion review, and must explicitly disposition strategy-layer depth,
-routing-policy-engine pipeline, dynamic model registry, integration-flow
-boundary, gateway-interface boundary, and AI Gateway deferral.
+completion review, satisfy the legacy coverage-index dispatch guard, and must
+explicitly disposition strategy-layer depth, routing-policy-engine pipeline,
+dynamic model registry, integration-flow boundary, gateway-interface boundary,
+and AI Gateway deferral.
 
 No implementation, runtime/source/test mutation, provider/API use, live
 governance proof, provider/model addition, public-sync, external app mutation,
@@ -966,16 +982,18 @@ repo, production readiness, public readiness, or live governance proof.
 
 Next allowed move: C-02 Model Gateway planning may resume only through a fresh
 rewritten planning packet or work order citing the Model Gateway legacy recheck
-plan and completion review at material closure commit `5be35102`.
+plan, completion review at material closure commit `5be35102`, and satisfying
+the legacy coverage-index dispatch guard closed at material commit `3423d82e`.
 
 The old C-02 Model Gateway EPF provider-routing boundary planning packet must
 not resume as-is.
 
-No C-02 boundary plan, implementation, runtime/source/test mutation,
+No old C-02 boundary plan reuse, implementation, runtime/source/test mutation,
 provider/API use, live governance proof, provider/model addition, registry
-mutation, public-sync, external Document_Translator inspection or mutation,
-Policy_Local mutation, OS audit, endpoint monitoring, T12, raw memory release,
-co-work product development, or autonomous mutation is authorized.
+mutation outside the required coverage-index disposition evidence, public-sync,
+external Document_Translator inspection or mutation, Policy_Local mutation, OS
+audit, endpoint monitoring, T12, raw memory release, co-work product
+development, or autonomous mutation is authorized.
 
 DIR-T2 Document Intelligence Router foundation pilot remains
 `CLOSED_PASS_BOUNDED` at material closure commit `e3395acc`. Closure artifacts:

@@ -24,15 +24,15 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`model_gateway_legacy_coverage_recheck_closed_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=fresh rewritten C-02 planning packet or work order only, citing the Model Gateway legacy recheck plan and completion review; parked checkpoint=implementation, runtime/provider/live-proof, Model Gateway implementation, Sandbox Runtime implementation, AI Gateway environment-signal absorption, registry mutation outside the coverage index, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
+Startup acknowledged: current mode=`legacy_coverage_index_dispatch_guard_closed_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=fresh rewritten C-02 planning packet or work order only, citing the Model Gateway legacy recheck plan and completion review and satisfying the legacy coverage-index dispatch guard; parked checkpoint=implementation, runtime/provider/live-proof, Model Gateway implementation, Sandbox Runtime implementation, AI Gateway environment-signal absorption, registry mutation outside required coverage-index disposition evidence, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
 
 ## Current Mode
 
-`model_gateway_legacy_coverage_recheck_closed_bounded`
+`legacy_coverage_index_dispatch_guard_closed_bounded`
 
-Current HEAD recorded for this handoff: `5be35102`
-(Model Gateway legacy absorption coverage recheck closure material commit; this
-dedicated handoff/state sync follows).
+Current HEAD recorded for this handoff: `3423d82e`
+(Legacy coverage-index dispatch guard material commit; this dedicated
+handoff/state sync follows).
 
 ## Active Boundary
 
@@ -48,14 +48,15 @@ requires separate authorization.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: Codex may update session continuity files
-after material closure commit `5be35102` so the active front door, generated
+after material closure commit `3423d82e` so the active front door, generated
 state aggregate, state source files, and active handoff point to the latest
-Model Gateway legacy absorption coverage recheck closure state.
+legacy coverage-index dispatch guard closure state.
 
 Protected paths:
 
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/legacyCoverageIndexDispatchGuardHardening20260614.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION/state/entries/modelGatewayEpfProviderRoutingBoundaryPlanningDispatch20260613.json`
 - `CVF_SESSION/state/entries/modelGatewayLegacyAbsorptionGapHold20260613.json`
@@ -66,10 +67,26 @@ Protected paths:
 
 Rollback boundary: if session-sync gates fail, revert only this continuity sync
 batch and regenerate `CVF_SESSION/ACTIVE_SESSION_STATE.json` from the previous
-state source files. Do not revert material correction commit `919afd4e` or
-material dispatch commit `a4cfb246`.
+state source files. Do not revert material guard commit `3423d82e`, Model
+Gateway recheck closure commit `5be35102`, material correction commit
+`919afd4e`, or material dispatch commit `a4cfb246`.
 
 ## Latest Continuity Note
+
+Legacy coverage-index dispatch guard hardening is `CLOSED_PASS_BOUNDED` at
+material commit `3423d82e`. The dispatch-quality checker now requires
+ready/dispatch work orders that are both foundation/workflow-chain scoped and
+legacy-adjacent to include `Legacy Absorption Coverage Index Disposition` with
+coverage-index row evidence or `NOT_APPLICABLE_WITH_REASON`.
+
+Guard artifacts:
+
+- Completion review:
+  `docs/reviews/CVF_LEGACY_COVERAGE_INDEX_DISPATCH_GUARD_HARDENING_COMPLETION_2026-06-14.md`;
+- Guard:
+  `governance/compat/check_work_order_dispatch_quality.py`;
+- Tests:
+  `governance/compat/test_check_work_order_dispatch_quality.py`.
 
 Model Gateway legacy absorption coverage index recheck is
 `CLOSED_PASS_BOUNDED` at material closure commit `5be35102`. Codex reviewed the
@@ -95,9 +112,10 @@ Closure artifacts:
 C-02 Resume Decision: `RESUME_WITH_REWRITE`. The old C-02 Model Gateway EPF
 provider-routing boundary planning packet must not resume as-is. A fresh
 rewritten C-02 planning packet or work order must cite the recheck plan and
-completion review, and must explicitly disposition strategy-layer depth,
-routing-policy-engine pipeline, dynamic model registry, integration-flow
-boundary, gateway-interface boundary, and AI Gateway deferral.
+completion review, satisfy the legacy coverage-index dispatch guard, and must
+explicitly disposition strategy-layer depth, routing-policy-engine pipeline,
+dynamic model registry, integration-flow boundary, gateway-interface boundary,
+and AI Gateway deferral.
 
 No implementation, runtime/source/test mutation, provider/API use, live
 governance proof, provider/model addition, public-sync, external app mutation,
@@ -708,13 +726,15 @@ acceleration material commit `bd15e0ae`, MEMCON-T1a material closure commit
 
 Next allowed move: C-02 Model Gateway planning may resume only through a fresh
 rewritten planning packet or work order citing the Model Gateway legacy recheck
-plan and completion review at material closure commit `5be35102`.
+plan, completion review at material closure commit `5be35102`, and satisfying
+the legacy coverage-index dispatch guard closed at material commit `3423d82e`.
 
 The old C-02 Model Gateway EPF provider-routing boundary planning packet must
 not resume as-is.
 
-No implementation, runtime/source/test mutation, provider/API use, live
-governance proof, provider/model addition, registry mutation, public-sync,
+No old C-02 packet reuse, implementation, runtime/source/test mutation,
+provider/API use, live governance proof, provider/model addition, registry
+mutation outside required coverage-index disposition evidence, public-sync,
 external Document_Translator inspection or mutation, Policy_Local mutation, OS
 audit, endpoint monitoring, T12, raw memory release, co-work product
 development, or autonomous mutation is authorized.
