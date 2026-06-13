@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: FPC_T2_CLOSED_PASS_BOUNDED
+Status: FPC_T3_DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT
 
 docType: roadmap
 
@@ -272,7 +272,7 @@ start by adding runtime behavior or downstream app features.
 | FPC-T0 | Parked priority capture and later roadmap expansion | operator direction | CLOSED_BY_ROADMAP_UPDATE |
 | FPC-T1 | Foundation planes to workflow-chain system audit plus epistemic process coverage matrix | Claude rebuttal, fresh GC-018, source-verified work order | CLOSED_PASS_BOUNDED |
 | FPC-T2 | System-loop interlock expansion decision, including evidence-to-claim-update interlock candidates | FPC-T1 closure plus fresh GC-018/work order | CLOSED_PASS_BOUNDED |
-| FPC-T3 | Foundation checker/template/standard coverage plan for missing machine checks and early-gate placement | FPC-T2 closure plus fresh GC-018/work order | ELIGIBLE_FOR_FRESH_GC018 |
+| FPC-T3 | Foundation checker/template/standard coverage plan for missing machine checks and early-gate placement | FPC-T2 closure plus fresh GC-018/work order | DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT |
 | FPC-T4 | Deferred capability reopen decision for Model Gateway, Sandbox Runtime, or other strategic gaps | FPC-T3 closure plus operator decision | HOLD_PENDING_FPC_T3 |
 
 ## FPC-T1 - Foundation Planes To Workflow-Chain System Audit
@@ -451,6 +451,7 @@ Checker/template candidates:
 | interlock registry coverage checker extension | detect closed workflow chains that produce downstream signals but lack interlock disposition | pre-closure |
 | worker-return fast gate fixture | let no-commit workers run the epistemic packet check before return | worker-return fast gate |
 | closure-quality gate update | require process evidence where outcome-only proof is insufficient | pre-closure |
+| workspace-integrity and agent-operation-audit control | detect protected-folder disappearance and require future operation-log / lease / rollback evidence before agents receive broader machine-control authority | separate control-design tranche |
 
 Claim boundary: the `check_epistemic_process_packet.py` candidate verifies the
 presence and disposition completeness of required epistemic-process sections. It
@@ -470,6 +471,17 @@ FPC-T3 must rank candidates by:
 FPC-T3 deliverable should be a plan and, only if separately authorized, one
 small checker/template implementation tranche. The default FPC-T3 scope is plan
 first, implementation second.
+
+Dispatch update: FPC-T3 is opened under fresh GC-018
+`docs/baselines/CVF_GC018_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_PLAN_2026-06-13.md`
+and source-verified work order
+`docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_T3_FOUNDATION_CHECKER_TEMPLATE_COVERAGE_PLAN_FOR_CLAUDE_2026-06-13.md`.
+The dispatch adds a bounded C07 planning candidate for workspace-integrity and
+agent-operation-audit controls after the current-session protected-directory
+visibility incident and operator traceability concern. C07 is design-only in
+FPC-T3; it does not authorize Windows audit installation, Sysmon, file watcher
+services, destructive brokers, agent computer-control permission changes, or
+runtime/source/test mutation.
 
 ## Acceptance Criteria
 
