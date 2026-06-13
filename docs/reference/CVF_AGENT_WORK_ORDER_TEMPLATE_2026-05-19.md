@@ -948,6 +948,37 @@ If any required design control is `BLOCKED`, this work order must remain
 roadmap ambiguity during implementation unless this work order is explicitly a
 source-verification, design-audit, or spec task.
 
+## 8B. Agent Operation Trace Block
+
+Every ready/dispatched work order and every worker-return or completion packet
+derived from it must preserve repo-local agent-operation trace evidence.
+
+Canonical standard:
+
+`docs/reference/CVF_AGENT_OPERATION_TRACE_AND_WORKSPACE_INTEGRITY_STANDARD_2026-06-13.md`
+
+Required block:
+
+| Field | Evidence |
+| --- | --- |
+| Actor | <agent/operator/provider role> |
+| Provider or surface | <Codex, Claude, CLI, IDE tab, MCP, browser, etc.> |
+| Session or invocation | <session id, commit range, or N/A with reason> |
+| Working directory | <cwd or repo root> |
+| Command or tool surface | <commands/tools used; safe summaries allowed> |
+| Target paths | <changed or intended paths> |
+| Allowed scope source | <operator instruction, roadmap, GC-018, work order> |
+| Before status evidence | <git status --short, base HEAD, or N/A with reason> |
+| After status evidence | <git status --short or closure status evidence> |
+| Diff evidence | <git diff --name-status / committed range> |
+| Approval boundary | <what was authorized and by whom/source> |
+| Claim boundary | <repo-local trace only; no OS/user attribution unless separately proven> |
+| Deletion or rename disposition | <required only when protected paths are deleted/renamed; otherwise N/A with reason> |
+
+The block is repo-local evidence. It does not prove OS-level user attribution,
+endpoint telemetry, physical-machine identity, provider-internal logs, or
+absence of external filesystem events.
+
 ## 9. Evidence Requirements
 
 Required evidence:
@@ -955,6 +986,8 @@ Required evidence:
 - <command/result/path>
 - <test result>
 - <catalog path verification, if applicable>
+- complete Agent Operation Trace Block for work orders, worker returns, and
+  completion reviews
 
 Evidence Trace Block requirements:
 
@@ -1052,6 +1085,8 @@ waiver for this work order.
   `FAIL_EXPECTED_PENDING_FINALITY`
 - [ ] For `WORKER_MUST_NOT_COMMIT`, worker-return fast gate result is recorded
   with focused pytest targets when applicable
+- [ ] Agent Operation Trace Block is present and complete for this work order,
+  worker return, or completion review
 - [ ] Closure gate used a non-empty committed diff range; no `--base HEAD --head HEAD`
 - [ ] Changed-file set from `git diff --name-status` is inside this work
   order's Allowed scope, or every extra path has explicit operator/work-order
@@ -1132,6 +1167,7 @@ A work order is not ready for execution unless it answers:
 - `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/agent.handoff.contract.ts`
 - `docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md`
 - `docs/reference/CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28.md`
+- `docs/reference/CVF_AGENT_OPERATION_TRACE_AND_WORKSPACE_INTEGRITY_STANDARD_2026-06-13.md`
 - `docs/reference/CVF_AGENT_WORK_ORDER_FINALITY_AND_REVIEW_CONVERSION_ADDENDUM_2026-06-12.md`
 - `docs/reference/CVF_GC018_CONTINUATION_CANDIDATE_TEMPLATE.md`
 - `governance/toolkit/05_OPERATION/CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD.md`
