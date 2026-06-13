@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-13
 
-Current mode marker: `memcon_t3_consolidated_memory_ledger_operator_packet_dispatched`
+Current mode marker: `memcon_t3_consolidated_memory_ledger_operator_packet_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `memcon_t3_consolidated_memory_ledger_operator_packet_dispatched`.
+Current mode: `memcon_t3_consolidated_memory_ledger_operator_packet_closed_pass_bounded`.
 
 Active handoff:
 
@@ -58,34 +58,47 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-MEMCON-T3 Consolidated memory ledger and operator packet is `DISPATCHED`.
+MEMCON-T3 Consolidated memory ledger and operator packet is
+`CLOSED_PASS_BOUNDED`.
 
-Material dispatch commit: `cb5a43f2`.
+Material closure commit: `2800e83c`.
 
-Dispatch artifacts:
+Closure artifacts:
 
 - GC-018:
   `docs/baselines/CVF_GC018_MEMCON_T3_CONSOLIDATED_MEMORY_LEDGER_OPERATOR_PACKET_2026-06-13.md`;
 - work order:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T3_CONSOLIDATED_MEMORY_LEDGER_OPERATOR_PACKET_FOR_CLAUDE_2026-06-13.md`;
 - roadmap:
-  `docs/roadmaps/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_ROADMAP_2026-06-12.md`.
+  `docs/roadmaps/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_ROADMAP_2026-06-12.md`;
+- contract:
+  `docs/reference/CVF_MEMORY_CONSOLIDATION_LEDGER_OPERATOR_PACKET_CONTRACT_2026-06-13.md`;
+- sample packet:
+  `docs/reviews/CVF_MEMCON_T3_OPERATOR_MEMORY_REVIEW_PACKET_SAMPLE_2026-06-13.md`;
+- worker return:
+  `docs/reviews/CVF_MEMCON_T3_CONSOLIDATED_MEMORY_LEDGER_OPERATOR_PACKET_WORKER_RETURN_2026-06-13.md`;
+- completion:
+  `docs/reviews/CVF_MEMCON_T3_CONSOLIDATED_MEMORY_LEDGER_OPERATOR_PACKET_COMPLETION_2026-06-13.md`.
 
-Result: Claude has a source-verified `WORKER_MUST_NOT_COMMIT` work order for a
-Markdown-first consolidated memory ledger/operator packet contract, a bounded
-operator-visible sample packet, and a worker-return packet.
+Result: MEMCON now has a Markdown-first operator-visible memory review packet
+contract and bounded sample fixture distinguishing active, new candidate,
+conflict, stale/outdated, pruned/rejected, and temporal ambiguity categories
+while preserving `rawMemoryReleased=false`.
 
-Verification before dispatch commit: MEMCON checker PASS; pre-dispatch autorun
-PASS; reviewer-fast PASS 13/13; pre-commit governance chain PASS 38/38.
+Verification: MEMCON checker PASS on `cb0b1b3c..HEAD`; machine closure package
+PASS; reviewer-fast PASS 13/13; pre-commit governance chain PASS 38/38;
+pre-closure substantive gates PASS, with session-sync required for handoff
+HEAD continuity.
 
-Next allowed move: Claude executes MEMCON-T3 under `WORKER_MUST_NOT_COMMIT`
-and returns uncommitted allowed-scope artifacts for Codex review.
+Next allowed move: MEMCON-T4 may be opened only through a fresh GC-018 and
+source-verified work order for retrieval-pack boundary and conformance tests.
 
-Boundary: T3 authorizes documentation and fixture design only. No runtime
-memory implementation, storage, retrieval behavior, provider/API proof, OCR,
-Policy_Local mutation, EC activation, corpus ingestion, public-sync, T12
-unlock, readiness claim, memory reinjection, high-risk promotion, generated
-JSON aggregate hand-editing, or autonomous mutation is authorized.
+Boundary: T3 closes documentation and fixture design only. No runtime memory
+implementation, storage, retrieval behavior change, provider/API proof, OCR,
+Policy_Local mutation, EC activation outside later T4 authority, corpus
+ingestion, public-sync, T12 unlock, readiness claim, memory reinjection,
+high-risk promotion, generated JSON aggregate hand-editing, or autonomous
+mutation is authorized.
 
 MEMCON-T2 Temporal ambiguity and source-authority checker is
 `CLOSED_PASS_BOUNDED`.
@@ -136,7 +149,7 @@ Closure artifacts:
 - completion:
   `docs/reviews/CVF_MEMCON_T1A_MEMORY_CONSOLIDATION_STANDARD_OWNER_RECONCILIATION_COMPLETION_2026-06-12.md`.
 
-MEMCON-T2 later closed and MEMCON-T3 is now dispatched after fresh GC-018 and
+MEMCON-T2 later closed, and MEMCON-T3 later closed after fresh GC-018 and
 source-verified work order.
 
 Memory Consolidation Workflow Chain roadmap is revised and ready for
@@ -909,10 +922,10 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: Claude executes MEMCON-T3 under `WORKER_MUST_NOT_COMMIT`
-and returns uncommitted allowed-scope artifacts for Codex review. Policy_Local
-PL-S1 remains held until the operator explicitly decides the MEMCON foundation
-is sufficient for downstream use-case work.
+Next allowed move: MEMCON-T4 may be opened only through a fresh GC-018 and
+source-verified work order for retrieval-pack boundary and conformance tests.
+Policy_Local PL-S1 remains held until the operator explicitly decides the
+MEMCON foundation is sufficient for downstream use-case work.
 
 Do not mutate external Policy_Local, activate EC, change retrieval, run OCR or
 provider/API proof, ingest corpus records, use public-sync, unlock T12, or make
