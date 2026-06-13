@@ -975,10 +975,10 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: DIR-T1 only through fresh GC-018 and a source-verified work
-order for deterministic local source implementation and focused tests. DIR-T2,
-DT-CVF-T0, and Policy_Local PL-S1 remain separately held until the operator
-explicitly authorizes them.
+Next allowed move: DIR-T2 only through fresh GC-018, operator-approved sample
+corpus, and explicit runtime/live-proof authorization. DT-CVF-T0 and
+Policy_Local PL-S1 remain separately held until the operator explicitly
+authorizes them.
 
 Do not edit the external Document Translator repo, mutate external
 Policy_Local, activate EC, wire retrieval routes, run OCR or provider/API

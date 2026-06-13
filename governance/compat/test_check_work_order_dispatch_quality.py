@@ -157,6 +157,60 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
         self.assertIn("roadmap-derived work order is dispatch/ready without Roadmap-To-Work-Order Trace Matrix", issues)
         self.assertIn("LHW6 connector work order is dispatch/ready without fresh GC-018 baseline", issues)
 
+    def test_dispatch_protected_path_without_core_guard_carrier_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_PROTECTED_PATH_TEST_2026-06-13.md"
+        self._write(
+            work_order,
+            "\n".join(
+                self._ready_work_order_lines(
+                    [
+                        "## Allowed Implementation Scope",
+                        "- `governance/compat/check_new_guard.py`",
+                    ]
+                )
+            ),
+        )
+        self._write("docs/reference/source.md", "## Scope\nsource\n")
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        issues = report["violations"][0]["issues"]
+        self.assertTrue(
+            any(
+                "without a `Core Guard Self-Protection Authorization` block"
+                in issue
+                for issue in issues
+            )
+        )
+
+    def test_dispatch_protected_path_with_complete_core_guard_carrier_passes(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_PROTECTED_PATH_TEST_2026-06-13.md"
+        self._write(
+            work_order,
+            "\n".join(
+                self._ready_work_order_lines(
+                    [
+                        "## Allowed Implementation Scope",
+                        "- `governance/compat/check_new_guard.py`",
+                        "## Core Guard Self-Protection Authorization",
+                        "Authorized guard-maintenance scope: create one focused checker.",
+                        "Protected paths:",
+                        "- `governance/compat/check_new_guard.py`",
+                        "Operator authorization: operator authorized this protected-path batch.",
+                        "Rollback boundary: revert only this checker if rejected.",
+                    ]
+                )
+            ),
+        )
+        self._write("docs/reference/source.md", "## Scope\nsource\n")
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertTrue(report["compliant"])
+
     def test_fast_lane_ready_with_closed_pass_precondition_fails(self) -> None:
         audit = "docs/reviews/CVF_LHW6_T2_FAST_LANE_AUDIT_2026-05-28.md"
         self._write(

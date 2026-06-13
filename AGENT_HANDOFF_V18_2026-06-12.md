@@ -493,12 +493,13 @@ generated active-state source files are accepted.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: perform the mandatory work-order-template
-protected-path authorization hardening closure session sync without changing
+protected-path authorization hardening closure session sync and the
+operator-requested post-review continuity/test hardening fix without changing
 governance semantics, and keep the generated active-session aggregate aligned
 with its per-entry source files. This scope also covers the dispatch-quality
 checker change to `check_work_order_dispatch_quality.py` that was authorized by
 the hardening-batch GC-018 and landed in the hardening material closure commit
-`30e7e888` within this session range.
+`30e7e888`, plus focused regression coverage for that validator.
 
 Protected paths:
 
@@ -510,18 +511,21 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `governance/compat/check_work_order_dispatch_quality.py`
+- `governance/compat/test_check_work_order_dispatch_quality.py`
 
 Operator authorization: the operator selected the work-order-template hardening
-batch as the next allowed move after DIR-T1 closure and directed Claude to
-audit and follow CVF's own rules for enforcement strength and carrier
-vocabulary. The hardening-batch GC-018 explicitly authorized the
+batch as the next allowed move after DIR-T1 closure, directed Claude to audit
+and follow CVF's own rules for enforcement strength and carrier vocabulary,
+then asked Codex to fix the stale continuity text and test debt found during
+post-Claude review. The hardening-batch GC-018 explicitly authorized the
 `governance/compat/check_work_order_dispatch_quality.py` validator addition and
 carries its own Core Guard Self-Protection Authorization. The mandatory
 session-continuity rules require synchronized front doors and active state
 sources after closure.
 
-Rollback boundary: revert only this hardening closure session sync if the
-continuity markers are incorrect. Do not revert hardening material closure
+Rollback boundary: revert only this hardening closure session sync or the
+post-review continuity/test hardening fix if the continuity markers or
+regression coverage are incorrect. Do not revert hardening material closure
 commit `30e7e888`, DIR-T1 session-sync `4c803586`, DIR-T1 material closure
 commit `4bf991f3`, DIR-T0 material closure commit
 `082b02ff`, DIR-T0 dispatch material commit `e19d725d`, DIR final roadmap
@@ -541,10 +545,9 @@ acceleration material commit `bd15e0ae`, MEMCON-T1a material closure commit
 
 ## Next Allowed Move
 
-DIR-T1 may be opened only through fresh GC-018 and a source-verified work
-order for deterministic local source implementation and focused tests. DIR-T2
-remains held until later explicit authorization. DT-CVF-T0 may be opened only
-through later fresh GC-018 and a source-verified work order for Document
+DIR-T2 may be opened only through fresh GC-018, operator-approved sample
+corpus, and explicit runtime/live-proof authorization. DT-CVF-T0 may be opened
+only through later fresh GC-018 and a source-verified work order for Document
 Translator source custody, repo inventory, secret-safety, and control-baseline
 audit.
 Policy_Local PL-S1 remains separately held until the operator explicitly
