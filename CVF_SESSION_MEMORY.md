@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-13
 
-Current mode marker: `aot_t2_c01_c02_manifest_trace_implementation_closed_pass_bounded`
+Current mode marker: `fpc_t3_c04_c01_epistemic_work_order_and_process_packet_guard_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `aot_t2_c01_c02_manifest_trace_implementation_closed_pass_bounded`.
+Current mode: `fpc_t3_c04_c01_epistemic_work_order_and_process_packet_guard_closed_pass_bounded`.
 
 Active handoff:
 
@@ -58,25 +58,29 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-AOT-T2-C01+C02 Manifest Trace Implementation is `CLOSED_PASS_BOUNDED`
-at material closure commit `7206852b` from closure base `6b5504f7`.
+FPC-T3-C04+C01 Epistemic Work-Order And Process Packet Guard is
+`CLOSED_PASS_BOUNDED` at material closure commit `2de5153d` from closure base
+`0101eddf`.
 
 Closure artifacts:
 
 - GC-018:
-  `docs/baselines/CVF_GC018_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_2026-06-13.md`;
+  `docs/baselines/CVF_GC018_FPC_T3_C04_C01_EPISTEMIC_WORK_ORDER_AND_PROCESS_PACKET_GUARD_2026-06-13.md`;
 - Work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_FOR_CLAUDE_2026-06-13.md`;
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_T3_C04_C01_EPISTEMIC_WORK_ORDER_AND_PROCESS_PACKET_GUARD_FOR_CLAUDE_2026-06-13.md`;
 - Worker return:
-  `docs/reviews/CVF_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_WORKER_RETURN_2026-06-13.md`;
+  `docs/reviews/CVF_FPC_T3_C04_C01_EPISTEMIC_WORK_ORDER_AND_PROCESS_PACKET_GUARD_WORKER_RETURN_2026-06-13.md`;
 - Completion review:
-  `docs/reviews/CVF_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_COMPLETION_2026-06-13.md`.
+  `docs/reviews/CVF_FPC_T3_C04_C01_EPISTEMIC_WORK_ORDER_AND_PROCESS_PACKET_GUARD_COMPLETION_2026-06-13.md`.
 
 Codex accepted the Claude worker return after reviewer repair. Final focused
-tests pass 17/17. The closure adds repo-local AOT trace fields for agent type,
-invocation ID, expected manifest, actual changed set, and manifest delta; it
-also keeps worker-authored `docs/reference/` trace eligibility trigger-based,
-not mandatory for every reference standard.
+tests pass 19/19 for the epistemic checker path and 17/17 for AOT trace
+regression. The closure adds `check_epistemic_process_packet.py`, reviewer-fast
+wiring, a compact template 8C pointer, and a same-domain reference addendum.
+Codex repaired the NA escape so prose-only token mentions cannot bypass the
+intended Epistemic Process Applicability field. The only AOT change accepted is
+narrow false-positive remediation for canonical template self-triggering and
+review-packet manifest selection; no deeper AOT hardening is authorized.
 
 Fresh authorization is required before any next implementation. No additional
 checker/test/hook implementation, runtime/provider/live-proof work, OS audit,

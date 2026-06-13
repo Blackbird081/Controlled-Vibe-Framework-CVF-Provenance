@@ -24,14 +24,14 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`aot_t2_c01_c02_manifest_trace_implementation_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=fresh authorization only for next bounded AOT/foundation hardening tranche or separate source-verified FPC work order; parked checkpoint=registry mutation beyond authorized work orders, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`fpc_t3_c04_c01_epistemic_work_order_and_process_packet_guard_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=fresh authorization only for FPC-T2-C05 registry-entry work order, FPC-T2 C01-C04 registry-edit work order, another bounded AOT/foundation hardening tranche, or FPC-T4 only after explicit operator decision; parked checkpoint=registry mutation beyond authorized work orders, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`aot_t2_c01_c02_manifest_trace_implementation_closed_pass_bounded`
+`fpc_t3_c04_c01_epistemic_work_order_and_process_packet_guard_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `7206852b`
-(AOT-T2-C01+C02 material closure commit; this dedicated handoff sync follows).
+Current HEAD recorded for this handoff: `2de5153d`
+(FPC-T3-C04+C01 material closure commit; this dedicated handoff sync follows).
 
 ## Active Boundary
 
@@ -44,31 +44,57 @@ This private provenance repository is not the public CVF front door.
 Public-facing work remains restricted to the sibling public-sync clone and
 requires separate authorization.
 
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: Codex may update session continuity files
+after material closure commit `2de5153d` so the active front door, generated
+state aggregate, state source files, and active handoff point to the latest
+`CLOSED_PASS_BOUNDED` FPC-T3-C04+C01 state.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/fpcT3C04C01EpistemicWorkOrderAndProcessPacketGuardClosure20260613.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Rollback boundary: if session-sync gates fail, revert only this continuity sync
+batch and regenerate `CVF_SESSION/ACTIVE_SESSION_STATE.json` from the previous
+state source files. Do not revert material closure commit `2de5153d`.
+
 ## Latest Continuity Note
 
-AOT-T2-C01+C02 Manifest Trace Implementation is `CLOSED_PASS_BOUNDED`
-at material closure commit `7206852b` from closure base `6b5504f7`.
+FPC-T3-C04+C01 Epistemic Work-Order And Process Packet Guard is
+`CLOSED_PASS_BOUNDED` at material closure commit `2de5153d` from closure base
+`0101eddf`.
 
 Closure artifacts:
 
 - GC-018:
-  `docs/baselines/CVF_GC018_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_2026-06-13.md`;
+  `docs/baselines/CVF_GC018_FPC_T3_C04_C01_EPISTEMIC_WORK_ORDER_AND_PROCESS_PACKET_GUARD_2026-06-13.md`;
 - Work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_FOR_CLAUDE_2026-06-13.md`;
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_T3_C04_C01_EPISTEMIC_WORK_ORDER_AND_PROCESS_PACKET_GUARD_FOR_CLAUDE_2026-06-13.md`;
 - Worker return:
-  `docs/reviews/CVF_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_WORKER_RETURN_2026-06-13.md`;
+  `docs/reviews/CVF_FPC_T3_C04_C01_EPISTEMIC_WORK_ORDER_AND_PROCESS_PACKET_GUARD_WORKER_RETURN_2026-06-13.md`;
 - Completion review:
-  `docs/reviews/CVF_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_COMPLETION_2026-06-13.md`.
+  `docs/reviews/CVF_FPC_T3_C04_C01_EPISTEMIC_WORK_ORDER_AND_PROCESS_PACKET_GUARD_COMPLETION_2026-06-13.md`.
 
 Codex accepted the Claude worker return after reviewer repair. Final focused
-tests pass 17/17. The closure adds repo-local AOT trace fields for agent type,
-invocation ID, expected manifest, actual changed set, and manifest delta; it
-also keeps worker-authored `docs/reference/` trace eligibility trigger-based,
-not mandatory for every reference standard.
+tests pass 19/19 for the epistemic checker path and 17/17 for AOT trace
+regression. The closure adds `check_epistemic_process_packet.py`, reviewer-fast
+wiring, a compact template 8C pointer, and a same-domain reference addendum.
+Codex repaired the NA escape so prose-only token mentions cannot bypass the
+intended Epistemic Process Applicability field. The only AOT change accepted is
+narrow false-positive remediation for canonical template self-triggering and
+review-packet manifest selection; no deeper AOT hardening is authorized.
 
-Fresh authorization is required before any next implementation. No additional
-checker/test/hook implementation, runtime/provider/live-proof work, OS audit,
-endpoint monitoring, public-sync, external app mutation, raw memory release, or
+Fresh authorization is required before any next implementation. Candidate next
+moves are FPC-T2-C05 registry-entry work order, FPC-T2 C01-C04 registry-edit
+work order, another bounded AOT/foundation hardening tranche, or FPC-T4 only
+after explicit operator decision. No additional checker/test/hook
+implementation, runtime/provider/live-proof work, OS audit, endpoint
+monitoring, public-sync, external app mutation, raw memory release, or
 autonomous mutation is authorized.
 
 ---
