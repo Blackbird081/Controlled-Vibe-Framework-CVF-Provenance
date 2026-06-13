@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-13
 
-Current mode marker: `dice_t1_document_intelligence_control_envelope_runtime_closed_pass_bounded`
+Current mode marker: `worker_return_fast_gate_latency_hardening_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `dice_t1_document_intelligence_control_envelope_runtime_closed_pass_bounded`.
+Current mode: `worker_return_fast_gate_latency_hardening_closed_pass_bounded`.
 
 Active handoff:
 
@@ -57,6 +57,37 @@ Pain-point closure direction:
 `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md`
 
 ## Latest Continuity Note
+
+Worker-return fast gate latency hardening is `CLOSED_PASS_BOUNDED`.
+
+Material closure commit: `5e605862`.
+
+Closure artifacts:
+
+- Completion review:
+  `docs/reviews/CVF_WORKER_RETURN_FAST_GATE_LATENCY_HARDENING_COMPLETION_2026-06-13.md`;
+- Worker-return fast gate runner:
+  `governance/compat/run_worker_return_fast_gate.py`;
+- Changed source/test registry coverage checker:
+  `governance/compat/check_changed_corpus_registry_coverage.py`;
+- Hook chain:
+  `governance/compat/run_local_governance_hook_chain.py`.
+
+Result: no-commit workers and reviewers now have a one-command early gate that
+runs focused pytest targets when supplied, registry aggregate drift check,
+`reviewer-fast`, changed governed source/test registry coverage, and diff
+hygiene. `reviewer-fast` and `pre-commit` now include the changed registry
+coverage checker.
+
+Next allowed move: DIR-T2 foundation follow-up may open DICE-T2 only through a
+fresh GC-018 and source-verified work order for an operator-visible document
+control packet sample or another CVF foundation lane.
+
+Boundary: governance-control latency hardening only; no runtime behavior,
+provider routing, OCR behavior, Document Translator source, Policy_Local
+source, public-sync, production readiness, or live governance proof changed.
+
+---
 
 DICE-T1 Document Intelligence Control Envelope runtime work order is
 `CLOSED_PASS_BOUNDED`.
@@ -1015,12 +1046,13 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: DIR-T2 foundation follow-up. DICE-T1 Document Intelligence
-Control Envelope runtime work order is `CLOSED_PASS_BOUNDED` at material
-closure commit `d46023d1`. DIR-T2 foundation follow-up may open DICE-T2 only
+Next allowed move: DIR-T2 foundation follow-up. Worker-return fast gate
+latency hardening is `CLOSED_PASS_BOUNDED` at material commit `5e605862` after
+DICE-T1 closure `d46023d1`. DIR-T2 foundation follow-up may open DICE-T2 only
 through a fresh GC-018 and source-verified work order for an operator-visible
 document control packet sample or another CVF foundation lane.
-DICE-T3/provider/OCR/live-proof work is not authorized by DICE-T1 closure.
+DICE-T3/provider/OCR/live-proof work is not authorized by DICE-T1 closure or
+the latency hardening batch.
 Closure artifacts:
 
 - Roadmap:

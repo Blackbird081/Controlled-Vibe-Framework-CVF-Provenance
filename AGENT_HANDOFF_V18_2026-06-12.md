@@ -24,14 +24,14 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`dice_t1_document_intelligence_control_envelope_runtime_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=DIR-T2 foundation follow-up may open DICE-T2 only through a fresh GC-018 and source-verified work order for operator-visible document control packet sample or another CVF foundation lane; parked checkpoint=DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`worker_return_fast_gate_latency_hardening_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=DIR-T2 foundation follow-up may open DICE-T2 only through a fresh GC-018 and source-verified work order for operator-visible document control packet sample or another CVF foundation lane; parked checkpoint=DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`dice_t1_document_intelligence_control_envelope_runtime_closed_pass_bounded`
+`worker_return_fast_gate_latency_hardening_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `d46023d1`
-(DICE-T1 material closure commit; this dedicated session-sync follows).
+Current HEAD recorded for this handoff: `5e605862`
+(worker-return fast gate material closure commit; this dedicated session-sync follows).
 
 ## Active Boundary
 
@@ -45,6 +45,36 @@ Public-facing work remains restricted to the sibling public-sync clone and
 requires separate authorization.
 
 ## Latest Continuity Note
+
+Worker-return fast gate latency hardening is `CLOSED_PASS_BOUNDED` at material
+commit `5e605862` from closure base `9ee5bd00`.
+
+Hardening artifacts:
+
+- Completion review:
+  `docs/reviews/CVF_WORKER_RETURN_FAST_GATE_LATENCY_HARDENING_COMPLETION_2026-06-13.md`;
+- Worker-return fast gate runner:
+  `governance/compat/run_worker_return_fast_gate.py`;
+- Changed source/test registry coverage checker:
+  `governance/compat/check_changed_corpus_registry_coverage.py`;
+- Hook chain:
+  `governance/compat/run_local_governance_hook_chain.py`.
+
+Result: no-commit workers and reviewers now have a one-command early gate that
+runs focused pytest targets when supplied, registry aggregate drift check,
+`reviewer-fast`, changed governed source/test registry coverage, and diff
+hygiene. `reviewer-fast` and `pre-commit` now include the changed registry
+coverage checker.
+
+Next allowed move: DIR-T2 foundation follow-up may open DICE-T2 only through a
+fresh GC-018 and source-verified work order for an operator-visible document
+control packet sample or another CVF foundation lane.
+
+Boundary: governance-control latency hardening only; no runtime behavior,
+provider routing, OCR behavior, Document Translator source, Policy_Local
+source, public-sync, production readiness, or live governance proof changed.
+
+---
 
 DICE-T1 Document Intelligence Control Envelope runtime work order is
 `CLOSED_PASS_BOUNDED` at material closure commit `d46023d1` from closure base
@@ -561,7 +591,9 @@ promotion hardening for source-verification line anchors and forbidden
 filesystem-state regression coverage, plus this DICE-T1 dispatch session-sync
 after the operator asked Codex to continue and create a Claude work order, plus
 this DICE-T1 closure session-sync after the operator returned DICE-T1 worker
-artifacts for Codex review and commit, without
+artifacts for Codex review and commit, plus this worker-return fast gate
+latency hardening session-sync after the operator approved CVF foundation
+latency hardening, without
 changing governance semantics, and keep the generated active-session aggregate
 aligned with its per-entry source files.
 This scope also covers the dispatch-quality checker change to
@@ -583,6 +615,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/diceT0DocumentIntelligenceControlEnvelopeClosure20260613.json`
 - `CVF_SESSION/state/entries/diceT1DocumentIntelligenceControlEnvelopeRuntimeDispatch20260613.json`
 - `CVF_SESSION/state/entries/diceT1DocumentIntelligenceControlEnvelopeRuntimeClosure20260613.json`
+- `CVF_SESSION/state/entries/workerReturnFastGateLatencyHardening20260613.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`
@@ -607,6 +640,8 @@ CVF foundation hardening so future orchestrators handle the same cases
 consistently, then asked Codex to continue and create the next Claude work
 order.
 The operator then returned DICE-T1 worker artifacts for Codex review and commit.
+The operator then approved CVF foundation latency hardening to reduce total
+user time while preserving guard compliance.
 The hardening-batch GC-018 explicitly authorized the
 `governance/compat/check_work_order_dispatch_quality.py` validator addition and
 carries its own Core Guard Self-Protection Authorization. The mandatory
@@ -621,9 +656,11 @@ the source-verification line-anchor check, forbidden-filesystem-state
 regression coverage, template guidance, continuity markers, semantic
 next-allowed-move alignment guard, regression coverage, closure pointers, or
 this DICE-T1 dispatch session-sync, or this DICE-T1 closure session-sync are
+incorrect, or this worker-return fast gate latency hardening session-sync is
 incorrect. Do not revert
 hardening material closure
-commit `30e7e888`, DICE-T1 material closure commit `d46023d1`,
+commit `30e7e888`, worker-return fast gate material commit `5e605862`,
+DICE-T1 material closure commit `d46023d1`,
 DICE-T1 dispatch material commit `129d3ebb`,
 DIR-T1 session-sync `4c803586`, DIR-T1 material closure
 commit `4bf991f3`, DIR-T0 material closure commit
@@ -644,12 +681,12 @@ acceleration material commit `bd15e0ae`, MEMCON-T1a material closure commit
 
 ## Next Allowed Move
 
-DIR-T2 foundation follow-up: DICE-T1 Document Intelligence Control Envelope
-runtime work order is `CLOSED_PASS_BOUNDED` at material closure commit
+DIR-T2 foundation follow-up: worker-return fast gate latency hardening is
+`CLOSED_PASS_BOUNDED` at material commit `5e605862` after DICE-T1 closure
 `d46023d1`. DIR-T2 foundation follow-up may open DICE-T2 only through a fresh
 GC-018 and source-verified work order for an operator-visible document control
 packet sample or another CVF foundation lane. DICE-T3/provider/OCR/live-proof
-work is not authorized by DICE-T1 closure.
+work is not authorized by DICE-T1 closure or the latency hardening batch.
 
 DT-CVF-T0 may be opened only through later fresh GC-018 and a source-verified
 work order for Document Translator source custody, repo inventory,
