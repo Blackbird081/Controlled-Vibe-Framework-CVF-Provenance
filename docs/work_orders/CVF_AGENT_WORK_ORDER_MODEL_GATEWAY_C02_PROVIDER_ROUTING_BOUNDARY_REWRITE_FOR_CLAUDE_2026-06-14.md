@@ -423,18 +423,18 @@ touches a parked lane.
 | Session or invocation | dispatchBaseHead `21f49ec5` |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | `rg`, `Get-Content`, `apply_patch`, governance gates |
-| Target paths | this work order; worker deliverable paths named in Required Artifact Manifest |
+| Target paths | this work order; worker deliverable paths named in Required Artifact Manifest; reviewer-owned session continuity files |
 | Allowed scope source | operator instruction 2026-06-14 plus legacy coverage-index guard closure |
 | Before status evidence | `git status --short` clean at dispatch start; base `21f49ec5` |
-| After status evidence | pending this work order only before material commit |
-| Diff evidence | `git diff --name-status` after work-order creation |
+| After status evidence | dispatch commit `2d77e67a` plus reviewer-owned session-sync commit `045d38b3` |
+| Diff evidence | `git diff --name-status 21f49ec5..HEAD` during pre-closure |
 | Approval boundary | fresh C-02 planning rewrite for Claude; no implementation |
 | Claim boundary | repo-local dispatch trace only; no OS/user attribution, endpoint telemetry, provider-internal log, public readiness, or production readiness claim |
 | Agent type | Codex |
 | Invocation ID | `dispatchBaseHead=21f49ec5` |
-| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_PROVIDER_ROUTING_BOUNDARY_REWRITE_FOR_CLAUDE_2026-06-14.md` |
-| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_PROVIDER_ROUTING_BOUNDARY_REWRITE_FOR_CLAUDE_2026-06-14.md` |
-| Manifest delta | MATCH |
+| Expected manifest | N/A with reason: this dispatch trace covers a work-order commit followed by reviewer-owned session sync; full changed path evidence is captured by the pre-closure committed range |
+| Actual changed set | N/A with reason: this dispatch trace covers a work-order commit followed by reviewer-owned session sync; full changed path evidence is captured by the pre-closure committed range |
+| Manifest delta | N/A with reason: manifest comparison is deferred to the committed-range pre-closure gate for this dispatch plus session-sync batch |
 | Deletion or rename disposition | N/A with reason: dispatch creates a new governed work order and deletes or renames no protected path |
 
 ## Epistemic Process Block
