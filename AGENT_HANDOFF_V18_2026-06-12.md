@@ -24,14 +24,14 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`dir_t0_document_intelligence_router_contract_matrix_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=DIR-T1 only through fresh GC-018 and source-verified work order for deterministic local source implementation and focused tests; parked checkpoint=DIR-T2, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`dir_t1_document_intelligence_router_source_and_tests_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=DIR-T2 only through fresh GC-018, operator sample corpus, and runtime/live-proof authorization, OR a small governed batch to harden the work-order template for protected-path authorization carriers (ORCHESTRATOR_PACKET_GAP follow-up); parked checkpoint=DIR-T2, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`dir_t0_document_intelligence_router_contract_matrix_closed_pass_bounded`
+`dir_t1_document_intelligence_router_source_and_tests_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `082b02ff`
-(DIR-T0 Document Intelligence Router contract matrix material closure commit;
+Current HEAD recorded for this handoff: `4bf991f3`
+(DIR-T1 Document Intelligence Router source and tests material closure commit;
 this dedicated session-sync follows).
 
 ## Active Boundary
@@ -46,6 +46,38 @@ Public-facing work remains restricted to the sibling public-sync clone and
 requires separate authorization.
 
 ## Latest Continuity Note
+
+DIR-T1 Document Intelligence Router deterministic source and tests are
+`CLOSED_PASS_BOUNDED`. Roles were inverted for DIR-T1: Claude orchestrated and
+reviewed; Codex implemented under `WORKER_MUST_NOT_COMMIT`.
+
+Material closure commit: `4bf991f3`.
+
+DIR-T1 closure artifacts:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_DIR_T1_DOCUMENT_INTELLIGENCE_ROUTER_SOURCE_AND_TESTS_2026-06-13.md`;
+- work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_DIR_T1_DOCUMENT_INTELLIGENCE_ROUTER_SOURCE_AND_TESTS_FOR_CODEX_2026-06-13.md`;
+- router source:
+  `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/document_intelligence_router.py`;
+- focused tests (16 pass):
+  `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_document_intelligence_router.py`;
+- overlap checker (COMPLIANT):
+  `governance/compat/check_dir_disposition_no_scan_overlap.py`;
+- worker return:
+  `docs/reviews/CVF_DIR_T1_DOCUMENT_INTELLIGENCE_ROUTER_SOURCE_AND_TESTS_WORKER_RETURN_2026-06-13.md`;
+- completion review:
+  `docs/reviews/CVF_DIR_T1_DOCUMENT_INTELLIGENCE_ROUTER_SOURCE_AND_TESTS_COMPLETION_2026-06-13.md`.
+
+Governance learning recorded: ORCHESTRATOR_PACKET_GAP -> TEMPLATE_UPDATED.
+Open a small governed batch to require protected-path authorization carriers
+(`Core Guard Self-Protection Authorization`, `Protected paths`, `Authorized
+guard-maintenance scope`, `Operator authorization`, `Rollback boundary`) in any
+work order authorizing `governance/compat/*.py`, `CVF_SESSION/**`, or
+`AGENT_HANDOFF*.md`.
+
+---
 
 DIR-T0 Document Intelligence Router contract matrix is
 `CLOSED_PASS_BOUNDED`.
@@ -431,45 +463,38 @@ generated active-state source files are accepted.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: perform the mandatory DIR-T0 closure
+Authorized guard-maintenance scope: perform the mandatory DIR-T1 closure
 session sync without changing governance semantics, and keep the generated
-active-session aggregate aligned with its per-entry source files.
+active-session aggregate aligned with its per-entry source files. This scope
+also covers the DIR-T1 overlap checker `check_dir_disposition_no_scan_overlap.py`
+that was authorized by the DIR-T1 GC-018/work order and landed in the DIR-T1
+material closure commit `4bf991f3` within this session range.
 
 Protected paths:
 
 - `AGENT_HANDOFF_V18_2026-06-12.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/dirT1DocumentIntelligenceRouterSourceAndTestsClosure20260613.json`
 - `CVF_SESSION/state/entries/dirT0DocumentIntelligenceRouterContractMatrixClosure20260613.json`
 - `CVF_SESSION/state/entries/dirT0DocumentIntelligenceRouterContractMatrixDispatch20260613.json`
-- `CVF_SESSION/state/entries/documentIntelligenceRouterFoundationRoadmapDraft20260613.json`
-- `CVF_SESSION/state/entries/documentIntelligenceRouterFoundationRoadmapFinal20260613.json`
-- `CVF_SESSION/state/entries/documentTranslatorControlAdaptationRoadmap20260613.json`
-- `CVF_SESSION/state/entries/memconT5CrossAgentMemoryConsistencyContractClosure20260613.json`
-- `CVF_SESSION/state/entries/memconT5CrossAgentMemoryConsistencyContractDispatch20260613.json`
-- `CVF_SESSION/state/entries/memconT4RetrievalPackBoundaryConformanceClosure20260613.json`
-- `CVF_SESSION/state/entries/memconT4RetrievalPackBoundaryConformanceDispatch20260613.json`
-- `CVF_SESSION/state/entries/memconT3ConsolidatedMemoryLedgerOperatorPacketClosure20260613.json`
-- `CVF_SESSION/state/entries/memconT3ConsolidatedMemoryLedgerOperatorPacketDispatch20260613.json`
-- `CVF_SESSION/state/entries/memconT2TemporalSourceAuthorityCheckerClosure20260613.json`
-- `CVF_SESSION/state/entries/memconT2TemporalSourceAuthorityCheckerDispatch20260613.json`
-- `CVF_SESSION/state/entries/memconT1bSchemaAppendix20260613.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
+- `governance/compat/check_dir_disposition_no_scan_overlap.py`
 - `docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_ROADMAP_2026-06-13.md`
-- `docs/reviews/CVF_DIR_FOUNDATION_ROADMAP_CODEX_FINALIZATION_REVIEW_2026-06-13.md`
 
-Operator authorization: the operator stated that CVF foundation quality remains
-priority one and selected Document Translator as a separate downstream
-CVF-controlled use-case repo, requested a detailed Document Intelligence
-Router roadmap for Claude rebuttal before finalization, asked Codex to create
-the Claude work order, then reported the DIR-T0 worker return for Codex review
-and commit. Codex closed DIR-T0 after reviewing the returned artifacts. The
-mandatory session-continuity rules require synchronized front doors and active
-state sources after closure.
+Operator authorization: the operator authorized inverting DIR-T1 roles (Claude
+orchestrates/reviews, Codex implements), reported the DIR-T1 worker return for
+Claude review and commit, and directed Claude to perform reviewer-owned closure
+conversion plus session-state/front-door/handoff sync as a separate commit. The
+DIR-T1 GC-018 and source-verified work order explicitly authorized the
+`governance/compat/check_dir_disposition_no_scan_overlap.py` overlap checker as
+the MC-1 scan-disposition guard. The mandatory session-continuity rules require
+synchronized front doors and active state sources after closure.
 
-Rollback boundary: revert only this DIR-T0 closure session sync if the
-continuity markers are incorrect. Do not revert DIR-T0 material closure commit
+Rollback boundary: revert only this DIR-T1 closure session sync if the
+continuity markers are incorrect. Do not revert DIR-T1 material closure commit
+`4bf991f3`, DIR-T0 material closure commit
 `082b02ff`, DIR-T0 dispatch material commit `e19d725d`, DIR final roadmap
 material commit `075679f3`, DIR roadmap
 draft material commit `05cb953e`, Claude rebuttal commit `fc79fcdf`, Document
