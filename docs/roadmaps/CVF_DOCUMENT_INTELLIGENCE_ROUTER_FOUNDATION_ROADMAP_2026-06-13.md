@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DIR_T0_DISPATCHED_AWAITING_WORKER_RETURN
+Status: DIR_T0_CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -286,8 +286,8 @@ Machine-check candidate for DIR-T1:
 
 | Tranche | Deliverable | Dependency | Status |
 | --- | --- | --- | --- |
-| DIR-T0 | Doc-only owner reconciliation, 3 contract tables, adapter matrix, and machine-check candidate spec | Final roadmap plus fresh GC-018/work order | DISPATCHED |
-| DIR-T1 | Deterministic local source implementation and focused tests | DIR-T0 closure plus fresh GC-018/work order | HOLD_PENDING_T0 |
+| DIR-T0 | Doc-only owner reconciliation, 3 contract tables, adapter matrix, and machine-check candidate spec | Final roadmap plus fresh GC-018/work order | CLOSED_PASS_BOUNDED |
+| DIR-T1 | Deterministic local source implementation and focused tests | DIR-T0 closure plus fresh GC-018/work order | AWAITING_FRESH_AUTHORIZATION |
 | DIR-T2 | Bounded pilot over operator-approved samples, if any | DIR-T1 closure plus sample corpus and runtime/live-proof authorization when applicable | HOLD_PENDING_T1_AND_RUNTIME_AUTH |
 
 ## Tranche Detail
@@ -473,6 +473,28 @@ Dispatch package:
   no runtime/source, external Document Translator or Policy_Local tree
   operation, OCR/provider, retrieval, corpus, public-sync, readiness, cost, or
   quality claim is authorized.
+
+DIR-T0 closure package:
+
+- completion:
+  `docs/reviews/CVF_DIR_T0_DOCUMENT_INTELLIGENCE_ROUTER_CONTRACT_MATRIX_COMPLETION_2026-06-13.md`
+- contract matrix:
+  `docs/reference/CVF_DOCUMENT_INTELLIGENCE_ROUTER_CONTRACT_MATRIX_2026-06-13.md`
+- worker return:
+  `docs/reviews/CVF_DIR_T0_DOCUMENT_INTELLIGENCE_ROUTER_CONTRACT_MATRIX_WORKER_RETURN_2026-06-13.md`
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DIR_T0_DOCUMENT_INTELLIGENCE_ROUTER_CONTRACT_MATRIX_FOR_CLAUDE_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DIR_T0_DOCUMENT_INTELLIGENCE_ROUTER_CONTRACT_MATRIX_COMPLETION_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this file | `Status: DIR_T0_CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | BLOCKED with reason | no GC-051 registry update authorized for DIR-T0 closure | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason | no GC-051 registry update authorized for DIR-T0 closure | BLOCKED with reason |
+| External evidence digest | N/A with reason | no external corpus/provider evidence used | N/A with reason |
+| System loop interlock | N/A with reason | no runtime loop mutation authorized | N/A with reason |
+| Session continuity | active state/front door/handoff | separate session-sync commit follows material closure when required | N/A with reason |
 
 ## Governed Work Lifecycle
 

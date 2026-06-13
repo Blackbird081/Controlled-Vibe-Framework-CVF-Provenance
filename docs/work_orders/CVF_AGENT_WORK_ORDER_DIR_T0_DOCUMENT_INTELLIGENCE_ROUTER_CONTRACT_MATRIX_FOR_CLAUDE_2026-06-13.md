@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -18,7 +18,7 @@ dispatchBaseHead: `51cd1ded`
 
 executionBaseHead: `51cd1ded`
 
-closureBaseHead: `WORKER_MUST_NOT_SET`
+closureBaseHead: `57799f67`
 
 sourceAuthority:
 `docs/baselines/CVF_GC018_DIR_T0_DOCUMENT_INTELLIGENCE_ROUTER_CONTRACT_MATRIX_2026-06-13.md`
@@ -370,16 +370,16 @@ one row per requirement in this work order and dispositions of `PASS`,
 Claude must leave each checklist item checked, marked `N/A_WITH_REASON`, or
 marked `BLOCKED` with a return-to-Codex action:
 
-- [ ] Startup acknowledgment recorded.
-- [ ] Required First Reads completed.
-- [ ] Current Runtime Freshness Verification commands summarized.
-- [ ] Pre-Flight Checks run.
-- [ ] Contract matrix artifact created.
-- [ ] Worker-return packet created.
-- [ ] Required Proof Manifest completed.
-- [ ] Changed files remain inside Allowed Implementation Scope.
-- [ ] Claim Boundary and Public Export Disposition included.
-- [ ] `WORKER_MUST_NOT_COMMIT observed` recorded.
+- [x] Startup acknowledgment recorded.
+- [x] Required First Reads completed.
+- [x] Current Runtime Freshness Verification commands summarized.
+- [x] Pre-Flight Checks run.
+- [x] Contract matrix artifact created.
+- [x] Worker-return packet created.
+- [x] Required Proof Manifest completed.
+- [x] Changed files remain inside Allowed Implementation Scope.
+- [x] Claim Boundary and Public Export Disposition included.
+- [x] `WORKER_MUST_NOT_COMMIT observed` recorded.
 
 ## Return-To-Orchestrator Conditions
 
@@ -434,6 +434,19 @@ Codex must not commit the worker return until:
 - the worker return states `WORKER_MUST_NOT_COMMIT observed`;
 - no runtime, external repo, provider/OCR, retrieval, public-sync, session
   state, or generated aggregate file was changed by Claude.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DIR_T0_DOCUMENT_INTELLIGENCE_ROUTER_CONTRACT_MATRIX_COMPLETION_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_ROADMAP_2026-06-13.md` | `Status: DIR_T0_CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | BLOCKED with reason | no GC-051 registry update authorized for DIR-T0 closure | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason | no GC-051 registry update authorized for DIR-T0 closure | BLOCKED with reason |
+| External evidence digest | N/A with reason | no external corpus/provider evidence used | N/A with reason |
+| System loop interlock | N/A with reason | no runtime loop mutation authorized | N/A with reason |
+| Session continuity | active state/front door/handoff | separate session-sync commit follows material closure when required | N/A with reason |
 
 ## Reviewer Closure Conversion
 
