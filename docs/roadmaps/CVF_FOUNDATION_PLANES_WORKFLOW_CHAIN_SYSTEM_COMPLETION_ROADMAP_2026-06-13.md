@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: FPC_T1_T3_ROADMAP_REBUTTAL_REMEDIATED_READY_FOR_FPC_T1_GC018
+Status: FPC_T1_CLOSED_PASS_BOUNDED_READY_FOR_FPC_T2_GC018
 
 docType: roadmap
 
@@ -270,8 +270,8 @@ start by adding runtime behavior or downstream app features.
 | Tranche | Goal | Prerequisite | Status |
 | --- | --- | --- | --- |
 | FPC-T0 | Parked priority capture and later roadmap expansion | operator direction | CLOSED_BY_ROADMAP_UPDATE |
-| FPC-T1 | Foundation planes to workflow-chain system audit plus epistemic process coverage matrix | Claude rebuttal, fresh GC-018, source-verified work order | PROPOSED_AFTER_REBUTTAL |
-| FPC-T2 | System-loop interlock expansion decision, including evidence-to-claim-update interlock candidates | FPC-T1 closure plus fresh GC-018/work order | HOLD_PENDING_FPC_T1 |
+| FPC-T1 | Foundation planes to workflow-chain system audit plus epistemic process coverage matrix | Claude rebuttal, fresh GC-018, source-verified work order | CLOSED_PASS_BOUNDED |
+| FPC-T2 | System-loop interlock expansion decision, including evidence-to-claim-update interlock candidates | FPC-T1 closure plus fresh GC-018/work order | ELIGIBLE_FOR_FRESH_GC018 |
 | FPC-T3 | Foundation checker/template/standard coverage plan for missing machine checks and early-gate placement | FPC-T2 closure plus fresh GC-018/work order | HOLD_PENDING_FPC_T2 |
 | FPC-T4 | Deferred capability reopen decision for Model Gateway, Sandbox Runtime, or other strategic gaps | FPC-T3 closure plus operator decision | HOLD_PENDING_FPC_T3 |
 
@@ -346,6 +346,19 @@ FPC-T1 exit criteria:
 - every epistemic-process claim cites evidence or is marked absent/N/A;
 - downstream use cases remain downstream;
 - FPC-T2 candidate list is explicit and source-backed.
+
+FPC-T1 closure evidence:
+
+- audit matrix:
+  `docs/reference/CVF_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_MATRIX_2026-06-13.md`;
+- worker return:
+  `docs/reviews/CVF_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_WORKER_RETURN_2026-06-13.md`;
+- completion review:
+  `docs/reviews/CVF_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_COMPLETION_2026-06-13.md`.
+
+Accepted next-route result: FPC-T2 may now be opened only through a fresh
+GC-018 and source-verified work order to decide system-loop interlock expansion
+candidates. This roadmap does not itself authorize interlock registry edits.
 
 ## FPC-T2 - System-Loop Interlock Expansion Decision
 
@@ -561,14 +574,14 @@ verification, not runtime execution proof.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | N/A with reason: this artifact finalizes the FPC roadmap after Claude rebuttal; no FPC-T1 work order exists yet | future FPC-T1 requires fresh GC-018 and source-verified work order | N/A with reason |
-| Completion or reviewer artifact | `docs/reviews/CVF_FPC_T1_T3_FOUNDATION_PLANES_ROADMAP_CLAUDE_REBUTTAL_2026-06-13.md`; `docs/reviews/CVF_FPC_T1_T3_FOUNDATION_PLANES_ROADMAP_CLAUDE_REMEDIATION_PROPOSALS_2026-06-13.md` | `Status: REBUTTAL_SUBMITTED_FOR_CODEX_FINALIZATION`; `Status: REMEDIATION_PROPOSALS_SUBMITTED_FOR_CODEX` | PASS |
-| Roadmap state | this file | `Status: FPC_T1_T3_ROADMAP_REBUTTAL_REMEDIATED_READY_FOR_FPC_T1_GC018`; F1/F2/F3/F4/F5/F6/F8 incorporated; F7 no edit required | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_FOR_CLAUDE_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_COMPLETION_2026-06-13.md`; worker return and matrix artifacts | FPC-T1 accepted after Codex review | PASS |
+| Roadmap state | this file | `Status: FPC_T1_CLOSED_PASS_BOUNDED_READY_FOR_FPC_T2_GC018`; FPC-T2 is fresh-GC-018 eligible only | PASS |
 | Registry JSON | BLOCKED with reason: roadmap finalization adds no source/test/runtime surface and therefore no GC-051 JSON registry entry is authorized | no `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`, `CVF_SESSION/ACTIVE_SESSION_STATE.json`, or interlock registry mutation authorized | BLOCKED with reason |
 | Registry Markdown | BLOCKED with reason: roadmap finalization adds no corpus registry Markdown owner change | no registry Markdown owner changed | BLOCKED with reason |
 | External evidence digest | N/A with reason: external paper summary is motivation only and not retained as governed evidence | F2 remediation labels specific figures as unverified external claims for CVF-governed evidence purposes | N/A with reason |
 | System loop interlock | N/A with reason: FPC-T2 will decide interlock changes later | this roadmap adds MLW3 reconciliation and does not edit `CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json` | N/A with reason |
-| Session continuity | active state and handoff read | no next-allowed-move registry transition; FPC-T1 still requires a future fresh GC-018/work order | PASS |
+| Session continuity | active state and handoff read | next allowed move must shift to FPC-T2 fresh GC-018 after FPC-T1 material closure and session sync | PASS |
 | Public export | this file | `DEFERRED_PRIVATE_ONLY` | PASS |
 
 ## Acceptance Receipt Assertion Matrix

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -18,7 +18,7 @@ dispatchBaseHead: `148a59ff`
 
 executionBaseHead: `148a59ff`
 
-closureBaseHead: `WORKER_MUST_NOT_SET`
+closureBaseHead: `17f45c94`
 
 sourceAuthority:
 `docs/baselines/CVF_GC018_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_2026-06-13.md`
@@ -153,7 +153,7 @@ decision.
 | --- | --- | --- | --- |
 | dispatchBaseHead | `148a59ff` | Codex | ACCEPT |
 | executionBaseHead | `148a59ff` | Claude | ACCEPT |
-| closureBaseHead | `WORKER_MUST_NOT_SET` | Codex reviewer | ACCEPT |
+| closureBaseHead | `17f45c94` | Codex reviewer | ACCEPT |
 | Commit mode | `WORKER_MUST_NOT_COMMIT` | Codex | ACCEPT |
 
 Claude must not commit. Claude must record worker-return base/head and
@@ -498,16 +498,34 @@ Codex reviewer must not accept the worker return unless:
 
 ## Closure Checklist
 
-- [ ] Allowed artifact set only.
-- [ ] Corpus Completeness And Report Integrity block present.
-- [ ] Plane-to-Chain matrix spine present.
-- [ ] Source manifest and processing ledger reconciled.
-- [ ] FPC-T2 candidates recorded without registry authorization.
-- [ ] FPC-T3 candidates recorded without checker/template authorization.
-- [ ] Finding-To-Governance Learning Disposition present if findings exist.
-- [ ] Public Export Disposition present.
-- [ ] `WORKER_MUST_NOT_COMMIT` honored.
-- [ ] Codex reviewer converts checklist before any closed-equivalent claim.
+- [x] Allowed artifact set only.
+- [x] Corpus Completeness And Report Integrity block present.
+- [x] Plane-to-Chain matrix spine present.
+- [x] Source manifest and processing ledger reconciled.
+- [x] FPC-T2 candidates recorded without registry authorization.
+- [x] FPC-T3 candidates recorded without checker/template authorization.
+- [x] Finding-To-Governance Learning Disposition present if findings exist.
+- [x] Public Export Disposition present.
+- [x] `WORKER_MUST_NOT_COMMIT` honored.
+- [x] Codex reviewer converts checklist before any closed-equivalent claim.
+
+Closure note: Codex accepted the worker return after reviewer-owned
+traceability repairs recorded in the worker-return packet and completion review.
+FPC-T1 is closed bounded as audit output only. FPC-T2 and FPC-T3 remain separate
+future tranches requiring fresh GC-018 and source-verified work orders.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED`; checklist converted | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_COMPLETION_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_COMPLETION_ROADMAP_2026-06-13.md` | `Status: FPC_T1_CLOSED_PASS_BOUNDED_READY_FOR_FPC_T2_GC018` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | FPC-T1 did not authorize GC-051 registry mutation; no source/test/runtime owner added | BLOCKED with reason |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | FPC-T1 did not authorize corpus registry Markdown mutation | BLOCKED with reason |
+| External evidence digest | N/A with reason | no external evidence digest, external source tree, OCR/provider/API/live proof, or retained external artifact was used | N/A with reason |
+| System loop interlock | `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json` | consumed only; FPC-T2 must decide registry changes later | N/A with reason |
+| Session continuity | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `AGENT_HANDOFF_V18_2026-06-12.md` | session sync is reviewer-owned follow-up after material closure commit | PASS |
 
 ## Return-To-Orchestrator Conditions
 
