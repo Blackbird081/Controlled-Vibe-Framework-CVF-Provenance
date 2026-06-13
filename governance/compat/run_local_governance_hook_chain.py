@@ -82,6 +82,10 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
         "memory consolidation artifact quality",
         ["python", "governance/compat/check_memory_consolidation_artifact_quality.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
+    (
+        "epistemic process packet",
+        ["python", "governance/compat/check_epistemic_process_packet.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
 ]
 
 PARALLEL_BY_DEFAULT_HOOKS = {"pre-commit", "pre-push", "reviewer-fast"}

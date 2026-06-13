@@ -979,6 +979,32 @@ The block is repo-local evidence. It does not prove OS-level user attribution,
 endpoint telemetry, physical-machine identity, provider-internal logs, or
 absence of external filesystem events.
 
+## 8C. Epistemic Process Block (FPC-T3-C04)
+
+High-evidence work orders (findings, claim updates, corpus analysis, source
+verification, benchmarks, or risk-model changes) must include this process
+block. It checks evidence structure only, not semantic truth or provider
+correctness.
+
+```text
+## Epistemic Process Block
+
+Epistemic Process Applicability: <HIGH_EVIDENCE | EVIDENCE_LIGHT | MECHANICAL | EPISTEMIC_PROCESS_NA_WITH_REASON: <reason>>
+
+Expected Result / Prediction: <expected finding before execution>
+
+Evidence Comparison Requirement: worker return compares actual evidence against the prediction.
+
+Contradiction Handling Requirement: contradictory evidence requires a Contradiction Or Gap Disposition and claim-boundary update.
+
+Claim Update Requirement: worker return records whether the claim was confirmed, revised, narrowed, or invalidated.
+```
+
+For evidence-light or mechanical work, use
+`EPISTEMIC_PROCESS_NA_WITH_REASON: <reason>`. The structural checker is
+`governance/compat/check_epistemic_process_packet.py`; detailed contract:
+`docs/reference/CVF_AGENT_WORK_ORDER_EPISTEMIC_PROCESS_BLOCK_ADDENDUM_2026-06-13.md`.
+
 ## 9. Evidence Requirements
 
 Required evidence:

@@ -26,6 +26,7 @@ class LocalGovernanceHookChainTests(unittest.TestCase):
         self.assertIn("corpus scan registry", labels)
         self.assertIn("changed corpus registry coverage", labels)
         self.assertIn("active session state compatibility", labels)
+        self.assertIn("epistemic process packet", labels)
 
     def test_latency_sensitive_hooks_default_to_parallel(self) -> None:
         self.assertIn("reviewer-fast", MODULE.PARALLEL_BY_DEFAULT_HOOKS)

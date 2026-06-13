@@ -164,6 +164,12 @@ def is_trace_artifact(path: str, text: str) -> bool:
     # Narrow eligibility for worker-authored docs/reference/ deliverables:
     # only require trace when worker/execution trigger vocabulary is present.
     if normalized.startswith("docs/reference/"):
+        # Canonical template files (name contains _TEMPLATE_) list worker-instruction
+        # vocabulary as part of their template body; they are not worker-authored
+        # deliverables and must not self-trigger.
+        filename = normalized.rsplit("/", 1)[-1]
+        if "_TEMPLATE_" in filename.upper():
+            return False
         # Only count triggers that appear as standalone values (not inside backtick
         # inline code or bullet enumeration lines that merely list the trigger names).
         import re
@@ -346,7 +352,7 @@ def find_trace_violations(
 ) -> list[str]:
     violations: list[str] = []
     changed_trace_blocks: list[str] = []
-    manifest_checked = False
+    complete_trace_artifacts: list[str] = []
 
     for path, statuses in sorted(changed.items()):
         if not any(status.startswith(("A", "M", "R")) for status in statuses):
@@ -362,11 +368,23 @@ def find_trace_violations(
                 f"{path}: missing or incomplete {TRACE_MARKER}; missing labels: "
                 + ", ".join(missing)
             )
-        elif not manifest_checked:
-            # Only run manifest delta check on the first complete trace artifact
-            # to avoid false positives from multi-artifact batches.
-            manifest_checked = True
-            violations.extend(_check_manifest_delta(path, text, changed))
+        else:
+            complete_trace_artifacts.append(path)
+
+    # Run manifest delta on the best available complete trace artifact.
+    # Prefer docs/reviews/ (worker-return packets own the deliverable manifest);
+    # fall back to docs/work_orders/ only if no review artifact is present.
+    manifest_candidate: str | None = None
+    for path in complete_trace_artifacts:
+        normalized = _normalize(path)
+        if normalized.startswith("docs/reviews/"):
+            manifest_candidate = path
+            break
+    if manifest_candidate is None and complete_trace_artifacts:
+        manifest_candidate = complete_trace_artifacts[0]
+    if manifest_candidate is not None:
+        text = file_texts.get(manifest_candidate, "")
+        violations.extend(_check_manifest_delta(manifest_candidate, text, changed))
 
     protected_changes = protected_delete_or_rename_paths(changed)
     if protected_changes:

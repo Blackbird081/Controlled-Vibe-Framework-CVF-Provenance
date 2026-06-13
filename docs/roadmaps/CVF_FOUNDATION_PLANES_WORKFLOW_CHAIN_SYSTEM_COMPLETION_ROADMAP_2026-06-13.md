@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: FPC_T3_CLOSED_PASS_BOUNDED
+Status: FPC_T3_C04_C01_CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -494,9 +494,49 @@ Accepted result:
   requires a later Codex work order and OS-level attribution requires a separate
   operator decision.
 
-Recommended next implementation, if authorized later: FPC-T3-C04 plus
-FPC-T3-C01 as a fresh GC-018/source-verified implementation work order.
-FPC-T4 remains held behind explicit operator decision.
+FPC-T3-C04 plus FPC-T3-C01 has now been executed as a fresh
+GC-018/source-verified implementation work order. FPC-T4 remains held behind
+explicit operator decision.
+
+## FPC-T3-C04+C01 Implementation Closure - 2026-06-13
+
+Status: `CLOSED_PASS_BOUNDED`.
+
+Closure artifacts:
+
+- GC-018: `docs/baselines/CVF_GC018_FPC_T3_C04_C01_EPISTEMIC_WORK_ORDER_AND_PROCESS_PACKET_GUARD_2026-06-13.md`;
+- work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_T3_C04_C01_EPISTEMIC_WORK_ORDER_AND_PROCESS_PACKET_GUARD_FOR_CLAUDE_2026-06-13.md`;
+- worker return: `docs/reviews/CVF_FPC_T3_C04_C01_EPISTEMIC_WORK_ORDER_AND_PROCESS_PACKET_GUARD_WORKER_RETURN_2026-06-13.md`;
+- completion review: `docs/reviews/CVF_FPC_T3_C04_C01_EPISTEMIC_WORK_ORDER_AND_PROCESS_PACKET_GUARD_COMPLETION_2026-06-13.md`.
+
+Result:
+
+- C04 added a bounded Epistemic Process Block to the canonical work-order
+  template;
+- C01 added `governance/compat/check_epistemic_process_packet.py` and focused
+  tests;
+- reviewer-fast now includes the epistemic process packet gate;
+- Codex reviewer repaired the NA escape so prose-only token mentions cannot
+  bypass the required sections;
+- Codex reviewer accepted a narrow AOT false-positive repair for template
+  self-triggering and worker-return manifest-delta candidate selection.
+
+Boundary: governance/checker/template/hook hardening only. No registry edit,
+FPC-T2-C05 entry, runtime/provider/live proof, public-sync, OS audit, endpoint
+monitoring, external Document Translator or Policy_Local work, cost/quality
+claim, or readiness claim is made by this closure.
+
+Provider boundary accounts for the current
+`EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts` and
+`PROVIDER_CAPABILITY_REGISTRY` surfaces: this tranche does not inspect, modify,
+replace, or make absence/hardcoded claims about provider registry behavior.
+
+Next allowed move requires fresh authorization and source verification. Viable
+next candidates are:
+
+- open an FPC-T2-C05 registry-entry work order now that C01 exists;
+- open an FPC-T2 C01-C04 registry-edit work order;
+- move to FPC-T4 only after explicit operator decision.
 
 ## Acceptance Criteria
 
