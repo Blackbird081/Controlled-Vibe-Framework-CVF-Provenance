@@ -72,6 +72,18 @@ LHW_FILENAME_PATTERN = re.compile(r"LHW(?P<wave>\d+)", re.IGNORECASE)
 HANDOFF_FILENAME_PATTERN = re.compile(
     r"AGENT_HANDOFF(?:_V\d+_\d{4}-\d{2}-\d{2})?\.md"
 )
+NEXT_ALLOWED_MOVE_TOKEN_PATTERN = re.compile(
+    r"\b("
+    r"DIR-T\d+[A-Za-z0-9-]*|"
+    r"MEMCON-T\d+[A-Za-z0-9-]*|"
+    r"LPCI2-[A-Za-z0-9-]*|"
+    r"DT-CVF-T\d+[A-Za-z0-9-]*|"
+    r"PL-S\d+[A-Za-z0-9-]*|"
+    r"Policy_Local|"
+    r"EC(?:-\d+)?|"
+    r"DEP\d+[A-Za-z0-9-]*"
+    r")\b"
+)
 
 
 def _extract_markdown_section(text: str, heading: str) -> str:
@@ -88,6 +100,61 @@ def _extract_markdown_section(text: str, heading: str) -> str:
         if capture:
             section.append(line)
     return "\n".join(section)
+
+
+def _next_allowed_move_signature(text: str) -> str | None:
+    if not text:
+        return None
+    match = re.search(r"(?is)next allowed move:\s*(.+)", text)
+    candidate = match.group(1) if match else text
+    token_match = NEXT_ALLOWED_MOVE_TOKEN_PATTERN.search(candidate)
+    if not token_match:
+        return None
+    return token_match.group(1).lower()
+
+
+def _check_next_allowed_move_alignment(
+    state: dict[str, Any] | None,
+    front_door_text: str,
+    active_handoff: str | None,
+) -> list[str]:
+    if not state:
+        return []
+    state_next_allowed = state.get("nextAllowedMove")
+    if not isinstance(state_next_allowed, str):
+        return []
+
+    state_signature = _next_allowed_move_signature(state_next_allowed)
+    if not state_signature:
+        return []
+
+    violations: list[str] = []
+    front_section = _extract_markdown_section(front_door_text, "## Next Allowed Move")
+    front_signature = _next_allowed_move_signature(front_section)
+    if not front_signature:
+        violations.append(
+            f"{FRONT_DOOR_PATH} Next Allowed Move is missing a parser-visible primary next-move token"
+        )
+    elif front_signature != state_signature:
+        violations.append(
+            f"{FRONT_DOOR_PATH} Next Allowed Move primary token `{front_signature}` "
+            f"does not match state nextAllowedMove primary token `{state_signature}`"
+        )
+
+    if active_handoff:
+        handoff_section = _extract_markdown_section(_read_text(active_handoff), "## Next Allowed Move")
+        handoff_signature = _next_allowed_move_signature(handoff_section)
+        if not handoff_signature:
+            violations.append(
+                f"active handoff Next Allowed Move is missing a parser-visible primary next-move token"
+            )
+        elif handoff_signature != state_signature:
+            violations.append(
+                f"active handoff Next Allowed Move primary token `{handoff_signature}` "
+                f"does not match state nextAllowedMove primary token `{state_signature}`"
+            )
+
+    return violations
 
 
 def _latest_closed_lhw_wave(state: dict[str, Any] | None) -> int | None:
@@ -514,6 +581,10 @@ def _classify() -> dict[str, Any]:
                 continuity_violations.append(
                     f"active handoff must reference latest closed LHW wave {latest_marker}"
                 )
+
+    continuity_violations.extend(
+        _check_next_allowed_move_alignment(state, front_door_text, active_handoff)
+    )
 
     compliant = (
         not missing_files
