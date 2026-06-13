@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -18,7 +18,7 @@ dispatchBaseHead: `a6902ef2`
 
 executionBaseHead: `a6902ef2`
 
-closureBaseHead: `WORKER_MUST_NOT_SET`
+closureBaseHead: `7916685d`
 
 sourceAuthority:
 `docs/baselines/CVF_GC018_MEMCON_T4_RETRIEVAL_PACK_BOUNDARY_CONFORMANCE_2026-06-13.md`
@@ -441,6 +441,34 @@ Worker-return evidence must be machine-checkable:
 - explicit `N/A with reason` for live proof, public-sync, provider/API, OCR,
   Policy_Local, durable storage, route wiring, generated JSON aggregate, and
   session continuity evidence.
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| GC-018 | `docs/baselines/CVF_GC018_MEMCON_T4_RETRIEVAL_PACK_BOUNDARY_CONFORMANCE_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MEMCON_T4_RETRIEVAL_PACK_BOUNDARY_CONFORMANCE_COMPLETION_2026-06-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_MEMCON_T4_RETRIEVAL_PACK_BOUNDARY_CONFORMANCE_WORKER_RETURN_2026-06-13.md` | `WORKER_MUST_NOT_COMMIT` observed | PASS |
+| Roadmap state | `docs/roadmaps/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_ROADMAP_2026-06-12.md` | `Status: MEMCON_T4_CLOSED_PASS_BOUNDED` | PASS |
+| Helper artifact | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-consolidation-retrieval-pack-boundary.ts` | file exists | PASS |
+| Focused test artifact | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/memory-consolidation-retrieval-pack-boundary.test.ts` | file exists | PASS |
+| Registry JSON | BLOCKED with reason | no GC-051 registry update authorized for MEMCON-T4 closure | BLOCKED with reason |
+| Registry Markdown | BLOCKED with reason | no GC-051 registry update authorized for MEMCON-T4 closure | BLOCKED with reason |
+| External evidence digest | N/A with reason | no external corpus/provider evidence used | N/A with reason |
+| System loop interlock | N/A with reason | no runtime loop mutation authorized | N/A with reason |
+| Runtime evidence | N/A with reason | helper is unwired and no runtime retrieval behavior changed | N/A with reason |
+| Live proof | N/A with reason | no provider/API call authorized or needed | N/A with reason |
+| Public-sync | N/A with reason | private provenance work; public-sync not authorized | N/A with reason |
+| Session continuity | active state/front door/handoff | separate session-sync commit follows material closure when required | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| Worker commit mode | `WORKER_MUST_NOT_COMMIT` | `WORKER_MUST_NOT_COMMIT` observed in worker return | PASS |
+| Raw memory release boundary | `rawMemoryReleased=false` | helper, tests, worker return, and completion carry `rawMemoryReleased=false` | PASS |
+| Summary-only boundary | `summaryOnly=true` | helper result type and tests preserve `summaryOnly=true` | PASS |
+| Runtime behavior | no retrieval route/runtime mutation | no existing retrieval policy, runtime workflow, route, or storage file changed | PASS |
+| Public-sync | not authorized | no public-sync path touched and Public Export Disposition is `DEFERRED_PRIVATE_ONLY` | PASS |
 
 ## Closure Checklist
 

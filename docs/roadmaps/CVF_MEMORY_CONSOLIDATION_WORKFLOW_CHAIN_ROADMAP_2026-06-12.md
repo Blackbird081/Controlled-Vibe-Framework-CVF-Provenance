@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: MEMCON_T4_DISPATCHED
+Status: MEMCON_T4_CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -375,8 +375,8 @@ Allowed outcomes:
 | MEMCON-T1b | Memory consolidation schema appendix and field tables | MEMCON-T1a closure | CLOSED_PASS_BOUNDED |
 | MEMCON-T2 | Temporal ambiguity and source-authority checker | MEMCON-T1b closure | CLOSED_PASS_BOUNDED |
 | MEMCON-T3 | Consolidated memory ledger and Markdown-first operator-visible review packet | MEMCON-T2 closure | CLOSED_PASS_BOUNDED |
-| MEMCON-T4 | Retrieval-pack integration boundary and conformance tests | MEMCON-T3 closure | DISPATCHED |
-| MEMCON-T5 | Cross-agent memory consistency contract | MEMCON-T4 closure | HOLD_PENDING_T4 |
+| MEMCON-T4 | Retrieval-pack integration boundary and conformance tests | MEMCON-T3 closure | CLOSED_PASS_BOUNDED |
+| MEMCON-T5 | Cross-agent memory consistency contract | MEMCON-T4 closure | READY_FOR_FRESH_AUTHORIZATION |
 | PL-S1 | Policy_Local evidence-resolution pilot using Memory Plane outputs | MEMCON foundation decision plus fresh authorization | HOLD_PENDING_MEMCON_DECISION |
 
 ## Work Plan
@@ -549,6 +549,17 @@ Dispatch artifacts:
   `docs/baselines/CVF_GC018_MEMCON_T4_RETRIEVAL_PACK_BOUNDARY_CONFORMANCE_2026-06-13.md`;
 - work order:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T4_RETRIEVAL_PACK_BOUNDARY_CONFORMANCE_FOR_CLAUDE_2026-06-13.md`.
+
+Closure artifacts:
+
+- helper:
+  `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-consolidation-retrieval-pack-boundary.ts`;
+- focused tests:
+  `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/memory-consolidation-retrieval-pack-boundary.test.ts`;
+- worker return:
+  `docs/reviews/CVF_MEMCON_T4_RETRIEVAL_PACK_BOUNDARY_CONFORMANCE_WORKER_RETURN_2026-06-13.md`;
+- completion:
+  `docs/reviews/CVF_MEMCON_T4_RETRIEVAL_PACK_BOUNDARY_CONFORMANCE_COMPLETION_2026-06-13.md`.
 
 Goal: retrieval-pack boundary.
 

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 
@@ -41,7 +41,8 @@ mutation.
 
 ## Decision / Baseline / Proposed Tranche
 
-Decision: dispatch MEMCON-T4 to Claude under `WORKER_MUST_NOT_COMMIT`.
+Decision: close MEMCON-T4 as `CLOSED_PASS_BOUNDED` after Claude returned
+uncommitted helper, focused test, and worker-return artifacts for Codex review.
 
 Baseline:
 
