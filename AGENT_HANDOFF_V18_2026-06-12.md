@@ -24,14 +24,14 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`fpc_t2_system_loop_interlock_expansion_decision_dispatched`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=Claude worker return for FPC-T2 decision matrix and worker-return packet under `WORKER_MUST_NOT_COMMIT`; parked checkpoint=FPC-T3 execution, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`fpc_t2_system_loop_interlock_expansion_decision_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=fresh authorization only for FPC-T2 C01-C04 registry-edit work order or FPC-T3 planning work order; parked checkpoint=registry mutation, FPC-T3 implementation, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`fpc_t2_system_loop_interlock_expansion_decision_dispatched`
+`fpc_t2_system_loop_interlock_expansion_decision_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `4193fcd6`
-(FPC-T2 dispatch material commit; this dedicated session-sync follows).
+Current HEAD recorded for this handoff: `c12c65b1`
+(FPC-T2 closure material commit; this dedicated session-sync follows).
 
 ## Active Boundary
 
@@ -46,24 +46,33 @@ requires separate authorization.
 
 ## Latest Continuity Note
 
-FPC-T2 system-loop interlock expansion decision package is `DISPATCHED` at
-material commit `4193fcd6` from dispatch base `3f57bf18` under
-`WORKER_MUST_NOT_COMMIT`.
+FPC-T2 system-loop interlock expansion decision is `CLOSED_PASS_BOUNDED` at
+material closure commit `c12c65b1` from closure base `1831606b`.
 
-Dispatch artifacts:
+Closure artifacts:
 
 - GC-018:
   `docs/baselines/CVF_GC018_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_2026-06-13.md`;
 - Work order:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_FOR_CLAUDE_2026-06-13.md`;
+- Decision matrix:
+  `docs/reference/CVF_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_MATRIX_2026-06-13.md`;
+- Worker return:
+  `docs/reviews/CVF_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_WORKER_RETURN_2026-06-13.md`;
+- Completion review:
+  `docs/reviews/CVF_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_COMPLETION_2026-06-13.md`;
 - Roadmap:
   `docs/roadmaps/CVF_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_COMPLETION_ROADMAP_2026-06-13.md`.
 
-Next allowed move: Claude worker return only. Claude may produce the FPC-T2
-decision matrix and worker-return packet named in the work order. Codex owns
-review, allowed reviewer repairs, final gates, and commit. FPC-T3 remains
-parked until FPC-T2 closes or the operator separately authorizes a small
-governance batch.
+Decision result: FPC-T2-C01 through FPC-T2-C04 are proposal-only
+`ADD_INTERLOCK_ENTRY` decisions requiring a later fresh GC-018/source-verified
+registry-edit work order. FPC-T2-C05 is `MACHINE_CHECK_FIRST` and requires
+FPC-T3-C01 before any registry entry.
+
+Next allowed move: fresh authorization only - either a registry-edit work order
+for C01-C04 proposal-only interlocks, or FPC-T3 through a fresh
+GC-018/source-verified work order to plan checker/template/standard coverage.
+No registry edit or FPC-T3 implementation is authorized by this closure.
 
 ---
 
@@ -649,6 +658,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/workerReturnFastGateLatencyHardening20260613.json`
 - `CVF_SESSION/state/entries/fpcT1FoundationPlanesWorkflowChainSystemAuditClosure20260613.json`
 - `CVF_SESSION/state/entries/fpcT2SystemLoopInterlockExpansionDecisionDispatch20260613.json`
+- `CVF_SESSION/state/entries/fpcT2SystemLoopInterlockExpansionDecisionClosure20260613.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `AGENTS.md`
@@ -683,9 +693,10 @@ The operator then clarified that provider-specific files such as `CLAUDE.md`
 and Codex/Claude memory files are agent-local support only, not CVF source of
 truth, and asked Codex to clean findings that do not belong in FPC-T2/T3.
 The operator then asked Codex to continue with the FPC-T2 work order.
+The operator then returned FPC-T2 worker artifacts for Codex review and commit.
 This session-sync updates the active front door, generated session-state source,
-generated aggregate, and active handoff after the material FPC-T2 dispatch
-commit `4193fcd6`.
+generated aggregate, and active handoff after the material FPC-T2 closure
+commit `c12c65b1`.
 The hardening-batch GC-018 explicitly authorized the
 `governance/compat/check_work_order_dispatch_quality.py` validator addition and
 carries its own Core Guard Self-Protection Authorization. The mandatory
@@ -702,10 +713,12 @@ regression coverage, template guidance, continuity markers, semantic
 next-allowed-move alignment guard, regression coverage, closure pointers, or
 this DICE-T1 dispatch session-sync, or this DICE-T1 closure session-sync are
 incorrect, or this worker-return fast gate latency hardening session-sync, or
-this FPC-T1 closure session-sync is incorrect, or this FPC-T2 dispatch
-session-sync is incorrect. Do not revert
+this FPC-T1 closure session-sync is incorrect, this FPC-T2 dispatch
+session-sync is incorrect, or this FPC-T2 closure session-sync is incorrect.
+Do not revert
 hardening material closure
-commit `30e7e888`, FPC-T2 material dispatch commit `4193fcd6`,
+commit `30e7e888`, FPC-T2 material closure commit `c12c65b1`,
+FPC-T2 material dispatch commit `4193fcd6`,
 FPC-T1 material closure commit `91e8f10f`,
 worker-return fast gate material commit `5e605862`,
 DICE-T1 material closure commit `d46023d1`,
@@ -729,15 +742,18 @@ acceleration material commit `bd15e0ae`, MEMCON-T1a material closure commit
 
 ## Next Allowed Move
 
-Next allowed move: MEMCON-T5 follow-up - FPC-T2 system-loop interlock expansion
-decision package is dispatched at material commit `4193fcd6` from dispatch base
-`3f57bf18` under `WORKER_MUST_NOT_COMMIT`. Claude may return only the decision
-matrix and worker-return packet named in the work order. Codex owns review,
-allowed reviewer repairs, final gates, and commit. FPC-T3 remains parked until
-FPC-T2 closes or the operator separately authorizes a small governance batch.
-Registry edits, runtime/source/test changes, DICE-T3/provider/OCR/live-proof
-work, public-sync, external Document_Translator inspection or mutation, and
-Policy_Local mutation are not authorized.
+Next allowed move: FPC-T2 is `CLOSED_PASS_BOUNDED` at material closure commit
+`c12c65b1`. Fresh authorization only:
+
+- open a source-verified registry-edit work order for FPC-T2-C01 through
+  FPC-T2-C04 proposal-only interlock entries; or
+- open FPC-T3 only through a fresh GC-018/source-verified work order to plan
+  checker/template/standard coverage, with FPC-T3-C01 required before any
+  FPC-T2-C05 registry entry.
+
+Registry edits, FPC-T3 implementation, runtime/source/test changes,
+DICE-T3/provider/OCR/live-proof work, public-sync, external Document_Translator
+inspection or mutation, and Policy_Local mutation are not authorized.
 
 DT-CVF-T0 may be opened only through later fresh GC-018 and a source-verified
 work order for Document Translator source custody, repo inventory,

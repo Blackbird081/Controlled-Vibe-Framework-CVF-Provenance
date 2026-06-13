@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-13
 
-Current mode marker: `fpc_t2_system_loop_interlock_expansion_decision_dispatched`
+Current mode marker: `fpc_t2_system_loop_interlock_expansion_decision_closed_pass_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `fpc_t2_system_loop_interlock_expansion_decision_dispatched`.
+Current mode: `fpc_t2_system_loop_interlock_expansion_decision_closed_pass_bounded`.
 
 Active handoff:
 
@@ -58,23 +58,33 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-FPC-T2 system-loop interlock expansion decision package is `DISPATCHED` at
-material commit `4193fcd6` from dispatch base `3f57bf18` under
-`WORKER_MUST_NOT_COMMIT`.
+FPC-T2 system-loop interlock expansion decision is `CLOSED_PASS_BOUNDED` at
+material closure commit `c12c65b1` from closure base `1831606b`.
 
-Dispatch artifacts:
+Closure artifacts:
 
 - GC-018:
   `docs/baselines/CVF_GC018_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_2026-06-13.md`;
 - Work order:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_FOR_CLAUDE_2026-06-13.md`;
+- Decision matrix:
+  `docs/reference/CVF_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_MATRIX_2026-06-13.md`;
+- Worker return:
+  `docs/reviews/CVF_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_WORKER_RETURN_2026-06-13.md`;
+- Completion review:
+  `docs/reviews/CVF_FPC_T2_SYSTEM_LOOP_INTERLOCK_EXPANSION_DECISION_COMPLETION_2026-06-13.md`;
 - Roadmap:
   `docs/roadmaps/CVF_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_COMPLETION_ROADMAP_2026-06-13.md`.
 
-Next allowed move is Claude worker return only: produce the FPC-T2 decision
-matrix and worker-return packet, then return to Codex for review, final gates,
-and commit. FPC-T3 remains parked until FPC-T2 closes or the operator
-separately authorizes a small governance batch.
+Decision result: FPC-T2-C01 through FPC-T2-C04 are proposal-only
+`ADD_INTERLOCK_ENTRY` decisions requiring a later fresh GC-018/source-verified
+registry-edit work order. FPC-T2-C05 is `MACHINE_CHECK_FIRST` and requires
+FPC-T3-C01 before any registry entry.
+
+Next allowed move: fresh authorization only - either a registry-edit work order
+for C01-C04 proposal-only interlocks, or FPC-T3 through a fresh
+GC-018/source-verified work order to plan checker/template/standard coverage.
+No registry edit or FPC-T3 implementation is authorized by this closure.
 
 ---
 
@@ -1066,29 +1076,18 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: MEMCON-T5 follow-up - FPC-T2 system-loop interlock expansion
-decision package is dispatched at material commit `4193fcd6` from dispatch base
-`3f57bf18` under `WORKER_MUST_NOT_COMMIT`. Claude may return only the decision
-matrix and worker-return packet named in the work order. Codex owns review,
-allowed reviewer repairs, final gates, and commit. FPC-T3 remains parked until
-FPC-T2 closes or the operator separately authorizes a small governance batch.
-Registry edits, runtime/source/test changes, DICE-T3/provider/OCR/live-proof
-work, public-sync, external Document_Translator inspection or mutation, and
-Policy_Local mutation are not authorized.
-Closure artifacts:
+Next allowed move: FPC-T2 is `CLOSED_PASS_BOUNDED` at material closure commit
+`c12c65b1`. Fresh authorization only:
 
-- Roadmap:
-  `docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_ROADMAP_2026-06-13.md`;
-- GC-018:
-  `docs/baselines/CVF_GC018_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_2026-06-13.md`;
-- Work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_FOR_CLAUDE_2026-06-13.md`.
-- Completion review:
-  `docs/reviews/CVF_DICE_T1_DOCUMENT_INTELLIGENCE_CONTROL_ENVELOPE_RUNTIME_COMPLETION_2026-06-13.md`;
-- Runtime source:
-  `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/document_intelligence_control_envelope.py`;
-- Focused tests:
-  `EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_document_intelligence_control_envelope.py`.
+- open a source-verified registry-edit work order for FPC-T2-C01 through
+  FPC-T2-C04 proposal-only interlock entries; or
+- open FPC-T3 only through a fresh GC-018/source-verified work order to plan
+  checker/template/standard coverage, with FPC-T3-C01 required before any
+  FPC-T2-C05 registry entry.
+
+Registry edits, FPC-T3 implementation, runtime/source/test changes,
+DICE-T3/provider/OCR/live-proof work, public-sync, external Document_Translator
+inspection or mutation, and Policy_Local mutation are not authorized.
 
 DIR-T2 Document Intelligence Router foundation pilot remains
 `CLOSED_PASS_BOUNDED` at material closure commit `e3395acc`. Closure artifacts:
