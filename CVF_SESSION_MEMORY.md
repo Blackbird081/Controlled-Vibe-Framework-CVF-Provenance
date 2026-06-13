@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-13
 
-Current mode marker: `document_intelligence_router_foundation_roadmap_final_awaiting_dir_t0_authorization`
+Current mode marker: `dir_t0_document_intelligence_router_contract_matrix_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `document_intelligence_router_foundation_roadmap_final_awaiting_dir_t0_authorization`.
+Current mode: `dir_t0_document_intelligence_router_contract_matrix_dispatched`.
 
 Active handoff:
 
@@ -58,20 +58,25 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-Document Intelligence Router foundation roadmap is
-`FINAL_ROADMAP_AWAITING_DIR_T0_AUTHORIZATION`.
+DIR-T0 Document Intelligence Router contract matrix is
+`DISPATCHED_AWAITING_WORKER_RETURN`.
 
-Material commit: `075679f3`.
+Material commit: `e19d725d`.
 
-Roadmap:
+Dispatch artifacts:
 
-`docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_ROADMAP_2026-06-13.md`
+- GC-018:
+  `docs/baselines/CVF_GC018_DIR_T0_DOCUMENT_INTELLIGENCE_ROUTER_CONTRACT_MATRIX_2026-06-13.md`;
+- work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_DIR_T0_DOCUMENT_INTELLIGENCE_ROUTER_CONTRACT_MATRIX_FOR_CLAUDE_2026-06-13.md`;
+- roadmap:
+  `docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_ROADMAP_2026-06-13.md`.
 
-Result: Claude rebuttal commit `fc79fcdf` was incorporated. DIR is now a
-finalized foundation roadmap awaiting only DIR-T0 authorization. The roadmap
-collapses to DIR-T0/T1/T2, preserves EXA-T2 scan-route ownership, replaces a
-flat router disposition with scan-route passthrough plus authorization gate,
-and keeps use-case semantics in the adapter matrix.
+Result: DIR-T0 is dispatched to Claude under `WORKER_MUST_NOT_COMMIT` for a
+doc-only contract matrix and worker-return packet. The work order preserves
+EXA-T2 scan-route ownership, requires three contract tables and an adapter
+matrix, blocks use-case names from foundation capability enums, and forbids
+external Document Translator or Policy_Local tree operations.
 
 Boundary: no runtime implementation, external repo edit, code import,
 dependency install, OCR/provider/API execution, retrieval behavior change,
@@ -964,10 +969,10 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: DIR-T0 may be opened only through fresh GC-018 and a
-source-verified work order for doc-only owner reconciliation, three contract
-tables, adapter matrix, and machine-check candidate spec. DT-CVF-T0 and
-Policy_Local PL-S1 remain separately held until the operator explicitly
+Next allowed move: Claude executes allowed-scope DIR-T0 contract matrix and
+worker-return artifacts under `WORKER_MUST_NOT_COMMIT`, then returns
+uncommitted artifacts for Codex review and commit. DIR-T1, DIR-T2, DT-CVF-T0,
+and Policy_Local PL-S1 remain separately held until the operator explicitly
 authorizes them.
 
 Do not edit the external Document Translator repo, mutate external

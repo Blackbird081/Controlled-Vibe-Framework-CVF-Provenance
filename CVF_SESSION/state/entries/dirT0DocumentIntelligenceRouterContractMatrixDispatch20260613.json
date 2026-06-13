@@ -1,0 +1,5 @@
+{
+  "stateOrder": 361,
+  "stateKey": "dirT0DocumentIntelligenceRouterContractMatrixDispatch20260613",
+  "value": "DISPATCHED_AWAITING_WORKER_RETURN at material commit e19d725d. GC-018: docs/baselines/CVF_GC018_DIR_T0_DOCUMENT_INTELLIGENCE_ROUTER_CONTRACT_MATRIX_2026-06-13.md. Work order: docs/work_orders/CVF_AGENT_WORK_ORDER_DIR_T0_DOCUMENT_INTELLIGENCE_ROUTER_CONTRACT_MATRIX_FOR_CLAUDE_2026-06-13.md. Parent roadmap: docs/roadmaps/CVF_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_ROADMAP_2026-06-13.md. Scope: Claude may create the DIR contract matrix and DIR-T0 worker-return packet under WORKER_MUST_NOT_COMMIT only. Boundary: no runtime/source implementation, external Document Translator or Policy_Local tree read/list/hash/modify/import, OCR/provider/API proof, retrieval change, corpus ingestion, public-sync, readiness, cost, quality, memory reinjection, high-risk promotion, or autonomous mutation."
+}
