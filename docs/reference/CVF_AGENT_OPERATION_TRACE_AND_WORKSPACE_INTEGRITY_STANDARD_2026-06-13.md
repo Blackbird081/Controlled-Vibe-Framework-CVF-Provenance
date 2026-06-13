@@ -80,8 +80,76 @@ agent-operation trace gate.
 | Diff evidence | <git diff --name-status / committed range> |
 | Approval boundary | <what was authorized and by whom/source> |
 | Claim boundary | <repo-local trace only; no OS/user attribution unless separately proven> |
+| Agent type | <Codex | Claude | operator | OTHER: description> |
+| Invocation ID | <session id, commit range, provider invocation label, or N/A with reason> |
+| Expected manifest | <semicolon-separated list of planned paths, or N/A with reason> |
+| Actual changed set | <semicolon-separated list of actual changed/untracked paths, or N/A with reason> |
+| Manifest delta | <MATCH | MISSING_DELIVERABLE: path | UNAUTHORIZED_ADDITION: path | N/A with reason> |
 | Deletion or rename disposition | <required only when protected paths are deleted/renamed; otherwise N/A with reason> |
 ```
+
+## AOT-T2 Fields: Agent Attribution And Manifest Reconciliation
+
+### Agent Type And Invocation ID (AOT-T2-C02)
+
+`Agent type` must identify the executing agent or operator:
+
+- `Codex` - Codex agent executing governed work;
+- `Claude` - Claude agent executing governed work;
+- `operator` - human operator executing governed work;
+- `OTHER: <description>` - any other surface.
+
+`Invocation ID` may be a session identifier, commit range, provider invocation
+label, or `N/A with reason`. This is repo-local attribution only. It does not
+claim OS-level user identity, endpoint telemetry, or provider-internal logs.
+
+### Expected Manifest And Manifest Delta (AOT-T2-C01)
+
+`Expected manifest` records the paths the worker is authorized to create or
+modify per the work order or GC-018.
+
+`Actual changed set` records the paths observed in `git status --short` or
+`git diff --name-status` after implementation.
+
+`Manifest delta` must be:
+
+- `MATCH` when the expected manifest equals the actual changed set;
+- `MISSING_DELIVERABLE: <path>` when an expected path is absent from the
+  actual changed set;
+- `UNAUTHORIZED_ADDITION: <path>` when an actual changed path is not in the
+  expected manifest;
+- `N/A with reason` only when the trace artifact is not a worker-return or
+  work-order governed execution packet, and all manifest fields record the
+  same N/A reason.
+
+The checker enforces manifest delta when the expected manifest field contains
+at least one parsed path. The trace artifact file itself is excluded from
+the comparison only when the expected manifest does not name it. `Actual
+changed set` must match the repo-local changed paths observed by the checker
+for the selected range.
+
+### Worker-Authored Reference Deliverable Trace Eligibility
+
+Changed files under `docs/reference/` require a trace block only when
+worker or execution trigger vocabulary is present in the file:
+
+- `WORKER_RETURN`, `WORKER_MUST_NOT_COMMIT`, `WORKER_MAY_COMMIT`;
+- `WORKER_RETURN_SUBMITTED_UNCOMMITTED`, `COMPLETE_PENDING_REVIEW`;
+- `Worker:`, `completion_review`, `Owner / reviewer`;
+- `Machine Closure Package`, `Closure Diff Gate`.
+
+A standard or reference document without these triggers is not required to
+carry a trace block.
+
+### Non-Goals
+
+These fields and the manifest checker do not prove:
+
+- OS-level user attribution;
+- endpoint telemetry or provider-internal logging;
+- physical machine identity;
+- that no external process modified the filesystem outside repo-visible evidence;
+- production or public readiness.
 
 ## Protected Repo-Local Integrity Surface
 

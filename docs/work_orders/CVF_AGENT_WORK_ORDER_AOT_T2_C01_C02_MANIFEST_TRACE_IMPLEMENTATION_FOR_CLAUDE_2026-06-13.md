@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -123,6 +123,7 @@ Allowed scope:
 - update `governance/compat/check_agent_operation_trace.py`;
 - update `governance/compat/test_check_agent_operation_trace.py`;
 - create `docs/reviews/CVF_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_WORKER_RETURN_2026-06-13.md`;
+- create `docs/reviews/CVF_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_COMPLETION_2026-06-13.md` by Codex during reviewer closure;
 - implement AOT-T2-C01 expected-manifest trace labels and manifest-delta
   enforcement;
 - implement AOT-T2-C02 `Agent type` and `Invocation ID` labels;
@@ -527,6 +528,19 @@ monitoring, perform destructive action, or require a commit.
 | Session state/front door/handoff sync | Codex | Required if mode or next allowed move changes |
 | Public catalog disposition | Codex | N/A unless public-sync is separately authorized |
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_FOR_CLAUDE_2026-06-13.md` | Status `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_AOT_T2_C01_C02_MANIFEST_TRACE_IMPLEMENTATION_COMPLETION_2026-06-13.md` | Completion review created by Codex | PASS |
+| Roadmap state | N/A with reason: implementation tranche was dispatched from GC-018/work order, not a standalone roadmap | N/A with reason: no roadmap status changed | N/A with reason |
+| Registry JSON | N/A with reason: no corpus/system-loop registry mutation in material implementation | N/A with reason: registry check not applicable to this checker tranche | PASS |
+| Registry Markdown | N/A with reason: no markdown registry mutation in material implementation | N/A with reason: markdown registry check not applicable to this checker tranche | PASS |
+| External evidence digest | N/A with reason: repo-local checker/test/standard only; no external evidence used | N/A with reason: no external evidence used | N/A with reason |
+| System loop interlock | N/A with reason: no system-loop registry connection changed | N/A with reason: system-loop interlock not touched | N/A with reason |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V18_2026-06-12.md` | Material closure records session-sync as Codex follow-up after commit | PASS |
+
 ## Operator Checkpoint
 
 Operator checkpoint is required only if Claude or Codex needs to expand beyond
@@ -561,6 +575,11 @@ Return to Codex without continuing if:
 | Diff evidence | `git diff --name-status` before commit; committed range after Codex commit |
 | Approval boundary | Operator asked to include the guard tightening now and create Claude work order |
 | Claim boundary | Repo-local trace enforcement only; no OS/user attribution, endpoint telemetry, provider-internal logs, physical-machine identity, public readiness, or production readiness |
+| Agent type | Codex |
+| Invocation ID | N/A with reason: dispatch artifact later closed by Codex completion review |
+| Expected manifest | N/A with reason: dispatch artifact closure status update only |
+| Actual changed set | N/A with reason: dispatch artifact closure status update only |
+| Manifest delta | N/A with reason: dispatch artifact closure status update only |
 | Deletion or rename disposition | N/A with reason: no deletion or rename authorized by dispatch |
 
 ## Claim Boundary

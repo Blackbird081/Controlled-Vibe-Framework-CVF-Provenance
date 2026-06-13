@@ -37,11 +37,31 @@ TRACE_REQUIRED_LABELS = (
     "Diff evidence",
     "Approval boundary",
     "Claim boundary",
+    "Agent type",
+    "Invocation ID",
+    "Expected manifest",
+    "Actual changed set",
+    "Manifest delta",
 )
 
 TRACE_ARTIFACT_PREFIXES = (
     "docs/work_orders/",
     "docs/reviews/",
+)
+
+# Worker-trigger vocabulary used to determine if a docs/reference/ file
+# must carry a trace block (narrow eligibility; not every reference file).
+REFERENCE_WORKER_TRIGGERS = (
+    "WORKER_RETURN",
+    "WORKER_MUST_NOT_COMMIT",
+    "WORKER_MAY_COMMIT",
+    "WORKER_RETURN_SUBMITTED_UNCOMMITTED",
+    "COMPLETE_PENDING_REVIEW",
+    "Worker:",
+    "completion_review",
+    "Owner / reviewer",
+    "Machine Closure Package",
+    "Closure Diff Gate",
 )
 
 TRACE_REVIEW_TRIGGERS = (
@@ -137,18 +157,169 @@ def is_trace_artifact(path: str, text: str) -> bool:
     normalized = _normalize(path)
     if "/archive/" in normalized or not normalized.endswith(".md"):
         return False
-    if not normalized.startswith(TRACE_ARTIFACT_PREFIXES):
-        return False
     if normalized.startswith("docs/work_orders/"):
         return True
-    return any(trigger in text for trigger in TRACE_REVIEW_TRIGGERS)
+    if normalized.startswith("docs/reviews/"):
+        return any(trigger in text for trigger in TRACE_REVIEW_TRIGGERS)
+    # Narrow eligibility for worker-authored docs/reference/ deliverables:
+    # only require trace when worker/execution trigger vocabulary is present.
+    if normalized.startswith("docs/reference/"):
+        # Only count triggers that appear as standalone values (not inside backtick
+        # inline code or bullet enumeration lines that merely list the trigger names).
+        import re
+        for trigger in REFERENCE_WORKER_TRIGGERS:
+            for line in text.splitlines():
+                stripped = line.strip()
+                # Skip lines that are purely listing/enumerating trigger names
+                # (e.g. "- `WORKER_RETURN`, `WORKER_MUST_NOT_COMMIT`" or similar)
+                if stripped.startswith(("-", "*")) and stripped.count("`") >= 2:
+                    continue
+                # Skip lines whose only non-whitespace content is a backtick-wrapped token
+                if re.fullmatch(r"`[^`]+`[,;.\s]*", stripped):
+                    continue
+                if trigger in line:
+                    return True
+        return False
+    return False
 
 
 def missing_trace_labels(text: str) -> list[str]:
-    if TRACE_MARKER not in text:
+    trace_block = _extract_trace_block(text)
+    if not trace_block:
         return list(TRACE_REQUIRED_LABELS)
-    lower_text = text.lower()
+    lower_text = trace_block.lower()
     return [label for label in TRACE_REQUIRED_LABELS if label.lower() not in lower_text]
+
+
+def _extract_trace_block(text: str) -> str:
+    """Return the Agent Operation Trace Block body, excluding later sections."""
+    if TRACE_MARKER not in text:
+        return ""
+    after_marker = text.split(TRACE_MARKER, 1)[1]
+    lines: list[str] = []
+    for line in after_marker.splitlines():
+        if line.startswith("## ") and lines:
+            break
+        lines.append(line)
+    return "\n".join(lines)
+
+
+def _extract_trace_field(text: str, label: str) -> str:
+    """Return the cell value for a given trace table label, or empty string."""
+    trace_block = _extract_trace_block(text)
+    if not trace_block:
+        return ""
+    lower_label = label.lower()
+    for line in trace_block.splitlines():
+        if "|" not in line:
+            continue
+        parts = [p.strip() for p in line.strip().strip("|").split("|")]
+        if len(parts) >= 2 and parts[0].lower() == lower_label:
+            return parts[1].strip()
+    return ""
+
+
+def _parse_path_list(value: str) -> set[str]:
+    """Parse a semicolon/comma/newline separated list of repo paths from a trace field value.
+
+    Only tokens that look like repo-local file paths (containing '/' and an extension,
+    or ending with a known repo prefix) are included. Free-text descriptions are ignored.
+    """
+    if not value:
+        return set()
+    import re
+    raw = value.replace("`", "")
+    tokens = re.split(r"[;,\n|]+", raw)
+    result: set[str] = set()
+    for tok in tokens:
+        tok = tok.strip()
+        # A valid repo path must contain a '/' and look like a file (has an extension
+        # or is a known directory path). Reject pure prose tokens.
+        if tok and "/" in tok and re.search(r"\.\w{1,6}$|/$", tok):
+            result.add(_normalize(tok))
+    return result
+
+
+_NA_PATTERN = None
+
+
+def _is_na_with_reason(value: str) -> bool:
+    import re
+    return bool(re.match(r"n/a\s+with\s+reason", value.lower().strip()))
+
+
+def _check_manifest_delta(
+    path: str,
+    text: str,
+    changed: dict[str, set[str]],
+) -> list[str]:
+    """Validate the Expected manifest vs Actual changed set and Manifest delta field."""
+    violations: list[str] = []
+
+    expected_raw = _extract_trace_field(text, "Expected manifest")
+    actual_raw = _extract_trace_field(text, "Actual changed set")
+    delta_raw = _extract_trace_field(text, "Manifest delta")
+
+    # If all manifest fields are N/A with reason, skip comparison
+    if _is_na_with_reason(expected_raw) and _is_na_with_reason(actual_raw) and _is_na_with_reason(delta_raw):
+        return []
+
+    expected_paths = _parse_path_list(expected_raw)
+    actual_paths = _parse_path_list(actual_raw)
+
+    # If we cannot parse any paths from the expected manifest, skip delta check
+    if not expected_paths:
+        return []
+
+    # Compare expected vs observed changed set (only A/M/R additions count).
+    # A trace artifact may or may not be part of the expected deliverables:
+    # include it only when the manifest explicitly names it.
+    trace_path_normalized = _normalize(path)
+    observed_paths = {
+        p for p, statuses in changed.items()
+        if any(s.startswith(("A", "M", "R")) for s in statuses)
+    }
+    if trace_path_normalized not in expected_paths:
+        observed_paths.discard(trace_path_normalized)
+
+    if not actual_paths:
+        violations.append(f"{path}: Actual changed set has no parsed repo-local paths")
+    elif actual_paths != observed_paths:
+        missing_actual = observed_paths - actual_paths
+        extra_actual = actual_paths - observed_paths
+        if missing_actual:
+            violations.append(
+                f"{path}: Actual changed set omits observed changed path(s): "
+                + ", ".join(sorted(missing_actual))
+            )
+        if extra_actual:
+            violations.append(
+                f"{path}: Actual changed set lists unobserved path(s): "
+                + ", ".join(sorted(extra_actual))
+            )
+
+    missing = expected_paths - observed_paths
+    unexpected = observed_paths - expected_paths
+
+    if not missing and not unexpected:
+        # Delta should be MATCH
+        if delta_raw and "MATCH" not in delta_raw.upper() and not _is_na_with_reason(delta_raw):
+            violations.append(
+                f"{path}: Manifest delta says '{delta_raw}' but expected/actual paths match"
+            )
+    else:
+        if missing:
+            for mp in sorted(missing):
+                violations.append(
+                    f"{path}: MISSING_DELIVERABLE - expected '{mp}' in manifest but not found in changed set"
+                )
+        if unexpected:
+            for up in sorted(unexpected):
+                violations.append(
+                    f"{path}: UNAUTHORIZED_ADDITION - '{up}' in actual changed set but not in expected manifest"
+                )
+
+    return violations
 
 
 def _is_protected_path(path: str) -> bool:
@@ -175,6 +346,7 @@ def find_trace_violations(
 ) -> list[str]:
     violations: list[str] = []
     changed_trace_blocks: list[str] = []
+    manifest_checked = False
 
     for path, statuses in sorted(changed.items()):
         if not any(status.startswith(("A", "M", "R")) for status in statuses):
@@ -190,6 +362,11 @@ def find_trace_violations(
                 f"{path}: missing or incomplete {TRACE_MARKER}; missing labels: "
                 + ", ".join(missing)
             )
+        elif not manifest_checked:
+            # Only run manifest delta check on the first complete trace artifact
+            # to avoid false positives from multi-artifact batches.
+            manifest_checked = True
+            violations.extend(_check_manifest_delta(path, text, changed))
 
     protected_changes = protected_delete_or_rename_paths(changed)
     if protected_changes:
