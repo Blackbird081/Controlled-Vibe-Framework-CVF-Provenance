@@ -11,27 +11,27 @@ Supersedes:
 
 ## Purpose
 
-This compact handoff records MEMCON-T5 dispatch, the next allowed move, and
+This compact handoff records MEMCON-T5 closure, the next allowed move, and
 parked operator checkpoints. Detailed history remains in governed completion
 artifacts and archived handoffs.
 
 ## Scope / Target / Owner Boundary
 
-Target: route Claude execution for MEMCON-T5 after fresh dispatch.
+Target: route the next bounded CVF foundation move after MEMCON-T5 closure.
 
 Owner boundary: this file is a pointer record. Runtime, tests, source maps,
 reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`memcon_t5_cross_agent_memory_consistency_contract_dispatched`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=Claude executes MEMCON-T5 under WORKER_MUST_NOT_COMMIT and returns uncommitted contract, sample packet, and worker-return artifacts for Codex review; parked checkpoint=Policy_Local PL-S1 is held until the operator explicitly decides the MEMCON foundation is sufficient for downstream use-case work, and EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
+Startup acknowledged: current mode=`memcon_t5_cross_agent_memory_consistency_contract_closed_pass_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=MEMCON-T1a through MEMCON-T5 foundation is closed bounded; Policy_Local PL-S1 remains held until the operator explicitly decides the MEMCON foundation is sufficient for downstream use-case work and authorizes a fresh work order; parked checkpoint=EC activation/retrieval, T12, DEP2/Redis/receipt-anchor lanes remain parked.
 
 ## Current Mode
 
-`memcon_t5_cross_agent_memory_consistency_contract_dispatched`
+`memcon_t5_cross_agent_memory_consistency_contract_closed_pass_bounded`
 
-Current HEAD recorded for this handoff: `f88d56b8`
-(MEMCON-T5 material dispatch commit; this dedicated session-sync follows).
+Current HEAD recorded for this handoff: `caf263f6`
+(MEMCON-T5 material closure commit; this dedicated session-sync follows).
 
 ## Active Boundary
 
@@ -46,27 +46,35 @@ requires separate authorization.
 
 ## Latest Continuity Note
 
-MEMCON-T5 Cross-agent memory consistency contract is `DISPATCHED`.
+MEMCON-T5 Cross-agent memory consistency contract is `CLOSED_PASS_BOUNDED`.
 
-Material dispatch commit: `f88d56b8`.
+Material closure commit: `caf263f6`.
 
-Dispatch artifacts:
+Closure artifacts:
 
 - GC-018:
   `docs/baselines/CVF_GC018_MEMCON_T5_CROSS_AGENT_MEMORY_CONSISTENCY_CONTRACT_2026-06-13.md`;
 - work order:
   `docs/work_orders/CVF_AGENT_WORK_ORDER_MEMCON_T5_CROSS_AGENT_MEMORY_CONSISTENCY_CONTRACT_FOR_CLAUDE_2026-06-13.md`;
+- contract:
+  `docs/reference/CVF_MEMORY_CONSOLIDATION_CROSS_AGENT_CONSISTENCY_CONTRACT_2026-06-13.md`;
+- sample packet:
+  `docs/reviews/CVF_MEMCON_T5_CROSS_AGENT_MEMORY_CONSISTENCY_SAMPLE_PACKET_2026-06-13.md`;
+- worker return:
+  `docs/reviews/CVF_MEMCON_T5_CROSS_AGENT_MEMORY_CONSISTENCY_WORKER_RETURN_2026-06-13.md`;
+- completion:
+  `docs/reviews/CVF_MEMCON_T5_CROSS_AGENT_MEMORY_CONSISTENCY_CONTRACT_COMPLETION_2026-06-13.md`;
 - roadmap:
   `docs/roadmaps/CVF_MEMORY_CONSOLIDATION_WORKFLOW_CHAIN_ROADMAP_2026-06-12.md`.
 
-Verification: MEMCON checker PASS; work-order dispatch quality PASS; markdown
-structural completeness PASS; rescan intelligence hardening PASS;
-pre-dispatch autorun PASS; reviewer-fast PASS 13/13; material pre-commit
-governance chain PASS 38/38.
+Verification: MEMCON checker PASS; machine closure package PASS;
+reviewer-fast PASS 13/13; material pre-commit governance chain PASS 38/38.
 
-Assignment: Claude creates a bounded Markdown-first cross-agent memory
-consistency contract, sample packet, and worker-return packet under
-`WORKER_MUST_NOT_COMMIT`.
+Result: MEMCON now has a Markdown-first cross-agent memory consistency
+contract and bounded sample fixture for shared ledger authority,
+source-backed reconciliation, conflict handling, resolution ownership,
+operator confirmation boundary, autonomous mutation prohibition, and
+`rawMemoryReleased=false` preservation.
 
 Boundary: no runtime memory storage, existing memory-record mutation,
 route/API wiring, durable storage, provider/API proof, OCR, Policy_Local
@@ -337,13 +345,16 @@ generated active-state source files are accepted.
   completion review.
 - Dispatched MEMCON-T5 at material commit `f88d56b8` with fresh GC-018 and a
   source-verified Claude work order under `WORKER_MUST_NOT_COMMIT`.
+- Closed MEMCON-T5 at material commit `caf263f6` with a Markdown-first
+  cross-agent memory consistency contract, bounded sample packet, worker
+  return, and Codex completion review.
 - Closed governance packet review acceleration at material commit `bd15e0ae`
   with atomic Required Proof Manifest literal discipline and focused
   dispatch-quality checker coverage.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: perform the mandatory MEMCON-T5 dispatch
+Authorized guard-maintenance scope: perform the mandatory MEMCON-T5 closure
 session sync without changing governance semantics, and keep the generated
 active-session aggregate aligned with its per-entry source files.
 
@@ -352,6 +363,7 @@ Protected paths:
 - `AGENT_HANDOFF_V18_2026-06-12.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/memconT5CrossAgentMemoryConsistencyContractClosure20260613.json`
 - `CVF_SESSION/state/entries/memconT5CrossAgentMemoryConsistencyContractDispatch20260613.json`
 - `CVF_SESSION/state/entries/memconT4RetrievalPackBoundaryConformanceClosure20260613.json`
 - `CVF_SESSION/state/entries/memconT4RetrievalPackBoundaryConformanceDispatch20260613.json`
@@ -363,14 +375,15 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: the operator asked Codex to create the next work order
-for Claude after MEMCON-T4 closure. The mandatory dispatch and
-session-continuity rules require synchronized front doors and active state
-sources before handing execution to Claude.
+Operator authorization: the operator returned MEMCON-T5 worker artifacts under
+`WORKER_MUST_NOT_COMMIT` and asked Codex to review and commit. The mandatory
+closure and session-continuity rules require synchronized front doors and
+active state sources before moving to any downstream tranche.
 
-Rollback boundary: revert only this MEMCON-T5 dispatch session sync if the
-continuity markers are incorrect. Do not revert MEMCON-T5 material dispatch
-commit `f88d56b8`, MEMCON-T4 material closure commit `f771bff8`,
+Rollback boundary: revert only this MEMCON-T5 closure session sync if the
+continuity markers are incorrect. Do not revert MEMCON-T5 material closure
+commit `caf263f6`, MEMCON-T5 material dispatch commit `f88d56b8`,
+MEMCON-T4 material closure commit `f771bff8`,
 material MEMCON-T4 dispatch commit `892e03ad`,
 MEMCON-T3 material closure commit `2800e83c`,
 MEMCON-T3 material dispatch commit `cb5a43f2`,
@@ -381,9 +394,9 @@ acceleration material commit `bd15e0ae`, MEMCON-T1a material closure commit
 
 ## Next Allowed Move
 
-Claude executes MEMCON-T5 under `WORKER_MUST_NOT_COMMIT`, creates the allowed
-cross-agent memory consistency contract, sample packet, and worker-return
-packet, and returns all artifacts uncommitted for Codex review.
+MEMCON-T1a through MEMCON-T5 foundation is closed bounded. Policy_Local PL-S1
+remains held until the operator explicitly decides the MEMCON foundation is
+sufficient for downstream use-case work and authorizes a fresh work order.
 
 Do not mutate external Policy_Local, activate EC, wire retrieval routes, invoke
 OCR or providers, import external code, install dependencies, ingest corpus
