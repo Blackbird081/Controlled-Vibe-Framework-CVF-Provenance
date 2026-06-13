@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-13
 
-Current mode marker: `model_gateway_epf_provider_routing_boundary_planning_hold_pending_legacy_absorption`
+Current mode marker: `model_gateway_legacy_absorption_coverage_index_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `model_gateway_epf_provider_routing_boundary_planning_hold_pending_legacy_absorption`.
+Current mode: `model_gateway_legacy_absorption_coverage_index_dispatched`.
 
 Active handoff:
 
@@ -58,32 +58,34 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-Model Gateway EPF provider-routing boundary planning is
-`HOLD_PENDING_LEGACY_ABSORPTION` at correction commit `919afd4e`. The prior
-dispatch commit `cce311ba` is held because gateway-related legacy families
-under `.private_reference/legacy/CVF_Important/` were not inventoried or
-dispositioned before planning.
+Model Gateway legacy absorption coverage index dispatch is active at material
+commit `a4cfb246`. This dispatch created the plane/workflow-chain legacy
+coverage index and sent Claude a bounded Model Gateway legacy absorption
+recheck work order.
 
-Held artifacts:
+Active dispatch artifacts:
 
 - GC-018:
-  `docs/baselines/CVF_GC018_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_2026-06-13.md`;
+  `docs/baselines/CVF_GC018_MODEL_GATEWAY_LEGACY_ABSORPTION_COVERAGE_INDEX_2026-06-13.md`;
+- Coverage index:
+  `docs/reference/CVF_LEGACY_ABSORPTION_COVERAGE_INDEX_2026-06-13.md`;
 - Work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_FOR_CLAUDE_2026-06-13.md`;
-- Correction review:
-  `docs/reviews/CVF_MODEL_GATEWAY_LEGACY_ABSORPTION_GAP_DISPATCH_CORRECTION_2026-06-13.md`.
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_LEGACY_ABSORPTION_COVERAGE_INDEX_FOR_CLAUDE_2026-06-13.md`.
 
-Claude must not continue to normal `COMPLETE_PENDING_REVIEW` for C-02. If
-already executing, return `BLOCKED_LEGACY_ABSORPTION_REQUIRED` with no
-additional legacy content absorption. FPC-T4 remains
-`CLOSED_PASS_BOUNDED` at material closure commit `5e0bc39f`.
+Allowed Claude worker deliverables:
 
-Next allowed move is fresh GC-018 for bounded Model Gateway legacy absorption
-with Knowledge Absorption Blind-Spot Control Block. No C-02 boundary plan,
-worker-return deliverable, implementation, runtime/source/test mutation,
-provider/API use, live governance proof, provider/model addition, registry
-mutation, public-sync, external app mutation, raw memory release, co-work
-product development, or autonomous mutation is authorized.
+- update `docs/reference/CVF_LEGACY_ABSORPTION_COVERAGE_INDEX_2026-06-13.md`;
+- create `docs/reference/CVF_MODEL_GATEWAY_LEGACY_ABSORPTION_RECHECK_PLAN_2026-06-13.md`;
+- create `docs/reviews/CVF_MODEL_GATEWAY_LEGACY_ABSORPTION_COVERAGE_INDEX_WORKER_RETURN_2026-06-13.md`.
+
+The prior C-02 Model Gateway EPF provider-routing boundary planning dispatch
+remains `HOLD_PENDING_LEGACY_ABSORPTION` at correction commit `919afd4e`.
+Claude must not continue the old C-02 packet to normal
+`COMPLETE_PENDING_REVIEW`. No C-02 boundary plan, implementation,
+runtime/source/test mutation, provider/API use, live governance proof,
+provider/model addition, registry mutation beyond the coverage index,
+public-sync, external app mutation, raw memory release, co-work product
+development, or autonomous mutation is authorized.
 
 ---
 
@@ -958,8 +960,18 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: fresh GC-018 for bounded Model Gateway legacy absorption
-with Knowledge Absorption Blind-Spot Control Block.
+Next allowed move: Claude worker return only for Model Gateway legacy
+absorption coverage index dispatch at material commit `a4cfb246`.
+
+Allowed worker deliverables:
+
+- `docs/reference/CVF_LEGACY_ABSORPTION_COVERAGE_INDEX_2026-06-13.md`;
+- `docs/reference/CVF_MODEL_GATEWAY_LEGACY_ABSORPTION_RECHECK_PLAN_2026-06-13.md`;
+- `docs/reviews/CVF_MODEL_GATEWAY_LEGACY_ABSORPTION_COVERAGE_INDEX_WORKER_RETURN_2026-06-13.md`.
+
+The prior C-02 Model Gateway EPF provider-routing boundary planning packet
+remains `HOLD_PENDING_LEGACY_ABSORPTION` until `MGW-001` is rechecked and
+released by reviewer-owned closure.
 
 Current C-02 boundary planning is held. Claude must not create the C-02
 boundary plan or worker-return deliverable under the held packet. If already

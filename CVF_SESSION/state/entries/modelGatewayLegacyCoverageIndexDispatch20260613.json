@@ -1,0 +1,21 @@
+{
+  "stateOrder": 387,
+  "stateKey": "modelGatewayLegacyCoverageIndexDispatch20260613",
+  "value": {
+    "status": "DISPATCHED",
+    "materialCommit": "a4cfb246",
+    "priorHoldCorrectionCommit": "919afd4e",
+    "dispatchBaseHead": "86d9e46d",
+    "gc018": "docs/baselines/CVF_GC018_MODEL_GATEWAY_LEGACY_ABSORPTION_COVERAGE_INDEX_2026-06-13.md",
+    "coverageIndex": "docs/reference/CVF_LEGACY_ABSORPTION_COVERAGE_INDEX_2026-06-13.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_LEGACY_ABSORPTION_COVERAGE_INDEX_FOR_CLAUDE_2026-06-13.md",
+    "allowedWorkerDeliverables": [
+      "docs/reference/CVF_LEGACY_ABSORPTION_COVERAGE_INDEX_2026-06-13.md",
+      "docs/reference/CVF_MODEL_GATEWAY_LEGACY_ABSORPTION_RECHECK_PLAN_2026-06-13.md",
+      "docs/reviews/CVF_MODEL_GATEWAY_LEGACY_ABSORPTION_COVERAGE_INDEX_WORKER_RETURN_2026-06-13.md"
+    ],
+    "blockedPriorDispatch": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_FOR_CLAUDE_2026-06-13.md",
+    "nextAllowedMove": "Claude worker return only for Model Gateway legacy absorption coverage index dispatch; C-02 planning remains held until MGW-001 recheck releases it.",
+    "claimBoundary": "Documentation and coverage-index dispatch only; no runtime/source/test mutation, provider/API use, live proof, public-sync, readiness, cost, quality, or broad legacy absorption outside the named scope."
+  }
+}
