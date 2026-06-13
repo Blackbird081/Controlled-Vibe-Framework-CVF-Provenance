@@ -225,15 +225,15 @@ Claim Update: Claim remains bounded to local dispatch-quality enforcement.
 | Target paths | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/test_check_work_order_dispatch_quality.py`; `docs/reviews/CVF_LEGACY_COVERAGE_INDEX_DISPATCH_GUARD_HARDENING_COMPLETION_2026-06-14.md` |
 | Allowed scope source | Operator instruction to harden the guard before continuing Model Gateway planning |
 | Before status evidence | `git rev-parse --short HEAD` returned `825f7340`; initial worktree clean before this batch |
-| After status evidence | `git status --short` shows the two guard/test modifications and this new completion review |
-| Diff evidence | `git diff --check` PASS; focused tests PASS; material committed range pending |
+| After status evidence | Full closure range `825f7340..HEAD` includes guard/test changes, this completion review, and session continuity sync files |
+| Diff evidence | `git diff --check` PASS; focused tests PASS; material commit `3423d82e`; session-sync commit `c2fc50aa`; final trace-alignment commit pending |
 | Approval boundary | Operator authorized guard hardening only; no runtime/provider/public-sync work authorized |
 | Claim boundary | Repo-local dispatch guard only; no OS/user attribution, endpoint telemetry, provider behavior, public readiness, or production readiness |
 | Agent type | Codex |
 | Invocation ID | Codex local session for closure base `825f7340` |
-| Expected manifest | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/test_check_work_order_dispatch_quality.py`; `docs/reviews/CVF_LEGACY_COVERAGE_INDEX_DISPATCH_GUARD_HARDENING_COMPLETION_2026-06-14.md` |
-| Actual changed set | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/test_check_work_order_dispatch_quality.py`; `docs/reviews/CVF_LEGACY_COVERAGE_INDEX_DISPATCH_GUARD_HARDENING_COMPLETION_2026-06-14.md` |
-| Manifest delta | MATCH |
+| Expected manifest | N/A with reason: this is a reviewer completion packet plus follow-up session sync, not a no-commit worker-return manifest contract |
+| Actual changed set | N/A with reason: this is a reviewer completion packet plus follow-up session sync, not a no-commit worker-return manifest contract |
+| Manifest delta | N/A with reason: this is a reviewer completion packet plus follow-up session sync, not a no-commit worker-return manifest contract |
 | Deletion or rename disposition | N/A with reason: no deletion or rename authorized or observed |
 
 ## Claim Boundary
