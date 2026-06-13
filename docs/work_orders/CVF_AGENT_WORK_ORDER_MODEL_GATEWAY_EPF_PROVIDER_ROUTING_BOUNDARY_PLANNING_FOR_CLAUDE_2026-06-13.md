@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT
+Status: HOLD_PENDING_LEGACY_ABSORPTION
 
 Worker: Claude
 
@@ -44,6 +44,43 @@ requirements, and future implementation prerequisites.
 The worker must not implement routing, mutate runtime/source/test files, call
 providers, add provider/model registry entries, or claim readiness.
 
+## Corrective Hold - 2026-06-13
+
+This work order is held by:
+
+`docs/reviews/CVF_MODEL_GATEWAY_LEGACY_ABSORPTION_GAP_DISPATCH_CORRECTION_2026-06-13.md`
+
+Hold reason: this C-02 planning dispatch omitted legacy gateway-family
+inventory and blind-spot disposition even though path-level evidence shows
+relevant Model Gateway, Model Router, Mini Model Gateway, and AI Gateway
+families under `.private_reference/legacy/CVF_Important/`.
+
+Disposition:
+
+`HOLD_PENDING_LEGACY_ABSORPTION`
+
+Claude must not continue to a normal `COMPLETE_PENDING_REVIEW` under this
+packet. If Claude has already started, return
+`BLOCKED_LEGACY_ABSORPTION_REQUIRED` with no additional legacy content
+absorption. A fresh GC-018 for bounded Model Gateway legacy absorption must
+close or explicitly release this hold before C-02 planning resumes.
+
+## Held Packet Override
+
+This override supersedes any later section that still describes creating a
+boundary plan, worker-return packet, source-verification plan, execution plan,
+acceptance checklist, closure checklist, or `COMPLETE_PENDING_REVIEW` return
+for this C-02 work order.
+
+Until a fresh legacy absorption GC-018 releases this hold:
+
+- Claude must not create, modify, delete, rename, format, stage, or commit any
+  file under this work order.
+- Claude must not read or absorb legacy file content under this work order.
+- Claude may only acknowledge the hold out of band or return
+  `BLOCKED_LEGACY_ABSORPTION_REQUIRED`.
+- Codex must not accept a normal C-02 worker return from this held packet.
+
 ## Authority Chain
 
 | Authority | Role |
@@ -52,7 +89,7 @@ providers, add provider/model registry entries, or claim readiness.
 | Active session state | Records FPC-T4 closure and Model Gateway boundary planning as next allowed move |
 | FPC-T4 decision matrix | Recommends Model Gateway EPF provider-routing boundary planning first |
 | GC-018 baseline | Defines dispatch boundary and source anchors |
-| This work order | Defines Claude's allowed deliverables, forbidden paths, and return gates |
+| This work order | Now defines a corrective hold; later deliverable and return gates are suspended |
 | Codex reviewer | Owns closure, commit, allowed repairs, and session sync |
 
 Authority boundary: if any authority artifact conflicts with this work order,
@@ -82,7 +119,7 @@ pre-closure, and session sync. Claude must not mark this work order closed.
 | Role | Owner | Authority |
 | --- | --- | --- |
 | Orchestrator / dispatcher | Codex | Files GC-018 and this work order |
-| Worker | Claude | Creates exactly the two allowed worker deliverables |
+| Worker | Claude | No filesystem writes while this packet is held |
 | Reviewer / committer | Codex | Reviews worker return, repairs allowed-scope issues, commits if accepted, and updates session continuity |
 | Operator | Human | Authorizes scope expansion only |
 
@@ -93,14 +130,11 @@ expansion.
 
 ## Scope
 
-Allowed scope:
+Allowed scope while held:
 
-- Read current governed source and reference artifacts named in Required First Reads.
-- Create the provider-routing boundary plan deliverable.
-- Create the worker-return packet.
-- Run local read-only searches and reviewer/worker gates.
-- Record source verification, negative-search collisions, Agent Operation Trace
-  evidence, and a recommended future tranche.
+- Read this corrective hold and the correction review.
+- Return `BLOCKED_LEGACY_ABSORPTION_REQUIRED` out of band if already executing.
+- Make no filesystem changes under this held packet.
 
 Forbidden scope:
 
@@ -147,6 +181,8 @@ Read before drafting:
 | `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/index.ts` | EPF source anchor for `modelGateway` and gateway wrapper surface |
 | `docs/reference/CVF_AGENT_OPERATION_TRACE_AND_WORKSPACE_INTEGRITY_STANDARD_2026-06-13.md` | Agent Operation Trace Block contract |
 | `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md` | work-order and worker-return structure |
+| `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-06-01.md` | corrective hold and future legacy absorption prerequisite |
+| `docs/reviews/CVF_MODEL_GATEWAY_LEGACY_ABSORPTION_GAP_DISPATCH_CORRECTION_2026-06-13.md` | dispatch correction and hold authority |
 
 Provider-specific memory files such as `CLAUDE.md`, Codex memory, Claude
 memory, and IDE summaries are not CVF source authority. If read as local
@@ -256,27 +292,77 @@ If a pre-flight check fails, stop and return the failed command and result.
 | `rg -n "Policy_Local|Document Translator|DT-CVF|public-sync|DASHSCOPE_API_KEY|DEEPSEEK_API_KEY|ALIBABA_API_KEY|T12|rawMemoryReleased|co-work product" docs/reference docs/roadmaps docs/work_orders docs/reviews` | governed docs only | Same-token collisions expected in forbidden-scope and governance artifacts | COLLISION_RECORDED_AS_FORBIDDEN_SCOPE_CONTEXT |
 | `rg -n "SOURCE_VISIBLE|PLANNING_GAP|IMPLEMENTATION_PREREQUISITE|Provider-Routing Boundary Plan" docs/baselines docs/reference docs/work_orders docs/reviews` | governed docs | Tokens are new doc-only planning vocabulary in this dispatch packet | COLLISION_RECORDED_AS_DOC_ONLY_NEW |
 | `rg -n "COMPLETE_PENDING_REVIEW|BLOCKED_SCOPE_EXPANSION|BLOCKED_SOURCE_NOT_FOUND|HEAD|PASS" docs/reference docs/work_orders docs/reviews` | governed docs | Same-token collisions found in existing work orders, reviews, and governance templates | COLLISION_RECORDED_AS_STATUS_AND_GIT_ANCHOR_VOCABULARY |
+| `rg -n "legacy|private_reference|Knowledge Absorption|Blind-Spot|CVF_Important|ADDING_MODEL|ADDING MODEL|LHW|absorption" docs/baselines/CVF_GC018_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_2026-06-13.md docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_FOR_CLAUDE_2026-06-13.md` | current C-02 dispatch packet | No matches before this correction | GAP_RECORDED_AS_HOLD_TRIGGER |
 | `git status --short` | repo root | Clean worktree before dispatch; pending dispatch files after authoring | MANIFEST_BOUNDARY_RECORDED |
 | `git diff --name-status` | repo root | Pending dispatch artifacts only after authoring | TOOL_BOUNDARY_RECORDED |
 
+## Knowledge Absorption Blind-Spot Control Block
+
+- Standard read:
+  `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-06-01.md`
+- Source inventory:
+  - `.private_reference/legacy/CVF_Important/ADDING_MODEL GATEWAY/` - 12 files
+  - `.private_reference/legacy/CVF_Important/ADDING_MODEL_ROUTER/` - 6 files
+  - `.private_reference/legacy/CVF_Important/ADDING_MINI_MODEL GATEWAY/` - 7 files
+  - `.private_reference/legacy/CVF_Important/ADDING_AI GATEWAY/` - 12 files
+  - Shell command run: `Get-ChildItem -LiteralPath <root> -File -Recurse -Force | Measure-Object`
+  - Total gateway-family file count: 37
+- Prior absorption evidence resolved:
+  current C-02 dispatch did not include legacy absorption evidence.
+- Detailed source files used:
+  none; path-level inventory only.
+- Source families skipped:
+  gateway-related legacy families skipped for content reading until fresh
+  legacy absorption GC-018.
+- File-level accepted value:
+  none in this correction.
+- Owner-surface normalization:
+  none in this correction.
+- Accept/defer/reject matrix:
+  gateway-related legacy families -> `DEFER_TO_FRESH_GC018_LEGACY_ABSORPTION`;
+  current C-02 planning continuation -> `HOLD_PENDING_LEGACY_ABSORPTION`.
+- Adversarial roles completed:
+  Implementer: planning should not proceed without legacy architecture
+  disposition. Skeptic/Auditor: current-source-only scoping is insufficient.
+  Product/Operator Advocate: hold prevents wrong-direction foundation work
+  without forcing legacy scans into unrelated small tasks. Safety/Boundary
+  Owner: no legacy content is absorbed in this correction.
+- Thin proof target:
+  path-level inventory plus dispatch-packet absence proof.
+- Gate 7 completeness cross-check:
+
+| Subfolder | In Gate 3? | Disposition if absent | Reason |
+| --- | --- | --- | --- |
+| `.private_reference/legacy/CVF_Important/ADDING_MODEL GATEWAY/` | NO | DEFER_TO_FRESH_GC018_LEGACY_ABSORPTION | Relevant by name to C-02 planning |
+| `.private_reference/legacy/CVF_Important/ADDING_MODEL_ROUTER/` | NO | DEFER_TO_FRESH_GC018_LEGACY_ABSORPTION | Relevant by name to provider routing boundary |
+| `.private_reference/legacy/CVF_Important/ADDING_MINI_MODEL GATEWAY/` | NO | DEFER_TO_FRESH_GC018_LEGACY_ABSORPTION | Relevant by name to gateway boundary |
+| `.private_reference/legacy/CVF_Important/ADDING_AI GATEWAY/` | NO | DEFER_TO_FRESH_GC018_LEGACY_ABSORPTION | Relevant by name to gateway architecture |
+
+- Blind-spot verdict: BLOCKED
+
 ## Allowed Deliverables
 
-Create exactly these uncommitted files:
+Current disposition: HOLD.
+
+No C-02 boundary-plan deliverable is authorized under this work order until a
+fresh legacy absorption GC-018 closes or explicitly releases this hold.
+
+Previously planned deliverables, now suspended:
 
 | Deliverable | Purpose |
 | --- | --- |
 | `docs/reference/CVF_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLAN_2026-06-13.md` | Boundary plan with source authority map, provider execution authority map, trace/evidence requirements, gap map, and recommended next tranche |
 | `docs/reviews/CVF_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_WORKER_RETURN_2026-06-13.md` | Worker return with source verification summary, gate evidence, Agent Operation Trace Block, and pending-return disposition |
 
-No other file may be created, modified, deleted, renamed, formatted, staged, or
-committed by Claude.
+No file may be created, modified, deleted, renamed, formatted, staged, or
+committed by Claude under this held packet.
 
 ## Write Ownership
 
 | Path | Owner | Allowed action |
 | --- | --- | --- |
-| `docs/reference/CVF_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLAN_2026-06-13.md` | Claude | Create only |
-| `docs/reviews/CVF_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_WORKER_RETURN_2026-06-13.md` | Claude | Create only |
+| `docs/reference/CVF_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLAN_2026-06-13.md` | Claude | SUSPENDED_BY_HOLD |
+| `docs/reviews/CVF_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_WORKER_RETURN_2026-06-13.md` | Claude | SUSPENDED_BY_HOLD |
 | Runtime/source/test paths | None | FORBIDDEN |
 | Session/handoff/front-door paths | Codex only | FORBIDDEN to Claude |
 | Git index and commits | Codex only | Claude must not stage or commit |
@@ -290,66 +376,26 @@ committed by Claude.
 
 ## Task Instructions
 
-1. Capture `executionBaseHead` with `git rev-parse --short HEAD`.
-2. Confirm `git status --short` before edits.
-3. Read all required first-read files.
-4. Source-verify the current Model Gateway and EPF surfaces named in this work order.
-5. Create the boundary plan with these required sections:
-   - Purpose
-   - Scope Boundary
-   - Source Authority Table
-   - Source Verification Block
-   - Current Provider-Routing Surface Map
-   - Provider Execution Authority Map
-   - EPF Wrapper Anchor And Integration Gap
-   - Trace And Evidence Requirements
-   - Boundary Disposition Matrix
-   - Anti-Overconstraint / Latency Impact
-   - Co-Work Supervision Value
-   - Recommended Next Tranche
-   - Negative Search And Collision Discipline
-   - Finding-To-Governance Learning Disposition
-   - Agent Operation Trace Block
-   - Public Export Disposition
-   - Claim Boundary
-6. Create the worker return with:
-   - Summary
-   - Changed Files
-   - Source Verification Summary
-   - Worker Pending-Return Gate
-   - Agent Operation Trace Block
-   - Negative Search And Collision Discipline
-   - Gate Results
-   - Public Export Disposition
-   - Claim Boundary
-7. Recommend only a future tranche boundary. Do not authorize implementation.
+Current disposition: HOLD.
+
+The original C-02 task instructions are suspended. Claude must not create the
+boundary plan or worker-return packet under this held work order.
+
+Allowed return if already executing:
+
+`BLOCKED_LEGACY_ABSORPTION_REQUIRED`
 
 ## Execution Plan
 
 | Step | Input | Action | Output | Stop condition |
 | --- | --- | --- | --- | --- |
-| 1 | Work order and GC-018 | Capture `executionBaseHead` and initial `git status --short` | Worker-return evidence row | Stop if unrelated dirty files would confuse manifest evidence |
-| 2 | Required First Reads | Read governed source and reference files | Source verification notes | Stop if any required file is missing |
-| 3 | Current source surfaces | Verify Model Gateway registry, method gate, routing policy, and EPF wrapper anchor | Source Verification Block in boundary plan | Stop on `BLOCKED_SOURCE_NOT_FOUND` |
-| 4 | Boundary planning scope | Draft boundary plan and gap map | Boundary plan deliverable | Stop if implementation becomes necessary |
-| 5 | Worker-return evidence | Draft worker return with trace and pending-return gate | Worker return deliverable | Stop if trace manifest cannot match |
-| 6 | Local gates | Run required gates and diff hygiene | Gate result rows | Stop on out-of-scope failure; otherwise update the allowed deliverables and rerun |
+| 1 | Corrective hold | Stop C-02 execution | `BLOCKED_LEGACY_ABSORPTION_REQUIRED` out-of-band return if needed | Stop until fresh legacy absorption GC-018 releases hold |
 
 ## Evidence Requirements
 
-Evidence must include:
-
-- source citations for every ACCEPT claim;
-- negative-search collision rows;
-- expected-vs-actual manifest reconciliation;
-- `git status --short` before and after edits;
-- `git diff --name-status`;
-- `git diff --check`;
-- `python governance/compat/run_worker_return_fast_gate.py`;
-- `python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast`;
-- explicit N/A-with-reason rows for runtime mutation, provider/live proof,
-  registry mutation, public-sync, provider/model addition, and implementation
-  readiness.
+Evidence requirements for the original C-02 plan are suspended. The only
+required evidence for this held packet is the corrective hold review and
+session state update maintained by Codex.
 
 Base-anchor evidence:
 
@@ -362,34 +408,25 @@ Base-anchor evidence:
 
 | Criterion | Required result |
 | --- | --- |
-| Exact files | Only the two allowed worker deliverables are changed |
-| Source authority | Boundary plan verifies Model Gateway and EPF surfaces against current source |
-| No implementation | No runtime/source/test/session/public-sync mutation |
-| Provider boundary | No provider/API call, provider/model addition, live proof, cost/quality claim, or readiness claim |
-| EPF boundary | Plan distinguishes EPF wrapper anchor from completed provider-routing implementation |
-| Anti-overconstraint | Plan phase-places future controls and avoids universal high-latency gates |
-| Co-work supervision | Plan frames supervision through trace/evidence requirements, not cowork product development |
-| Gates | Worker-return fast gate, reviewer-fast, and diff check pass or record a blocker |
+| Hold preserved | No C-02 boundary-plan or worker-return file is created under this held packet |
+| Legacy boundary preserved | No legacy content is read or absorbed under this held packet |
+| Next move | Fresh legacy absorption GC-018 is required before C-02 planning resumes |
 
 Fail conditions:
 
-- Accepted source claims cite missing paths, wrong symbols, or stale line evidence.
-- Boundary plan authorizes implementation or provider/live proof.
-- Worker changes any file outside the two allowed deliverables.
+- Worker creates the suspended C-02 boundary-plan deliverable.
+- Worker creates the suspended C-02 worker-return deliverable as normal
+  `COMPLETE_PENDING_REVIEW`.
+- Worker reads or absorbs legacy content under this held packet.
 - Worker stages or commits.
-- Worker inspects secrets or provider credentials.
-- Worker introduces public-sync or readiness claims.
-- Worker omits Agent Operation Trace Block, Negative Search And Collision
-  Discipline, or Public Export Disposition.
+- Worker introduces implementation, provider/live proof, public-sync, or
+  readiness claims.
 
 Closure is blocked if any fail condition is present.
 
 ## Review Gate
 
-Codex will reject or return the packet if any allowed deliverable is missing,
-any unauthorized file is changed, source verification contains unsupported
-ACCEPT claims, the plan claims implementation readiness, or latency discipline
-is absent.
+Codex will reject any normal C-02 worker return under this held packet.
 
 For `WORKER_MUST_NOT_COMMIT` mode, Claude handoff is not closure. Codex owns
 review, completion review, material commit, committed-range pre-closure, and
@@ -399,15 +436,10 @@ session sync.
 
 | Closure item | Owner | Required disposition |
 | --- | --- | --- |
-| Boundary plan created | Claude | Required before return |
-| Worker return created | Claude | Required before return |
-| Exact changed-set manifest | Claude | Required before return |
-| Worker-return fast gate | Claude | PASS or blocker recorded |
-| Reviewer-fast gate | Claude | PASS or blocker recorded |
-| Completion review filed | Codex | Required if material return is accepted |
-| Material commit | Codex | Required if accepted |
-| Committed-range pre-closure | Codex | Required after material commit |
-| Session sync | Codex | Required if mode or next allowed move changes |
+| C-02 normal execution | Claude | SUSPENDED_BY_HOLD |
+| Legacy absorption prerequisite | Codex/Orchestrator | Fresh GC-018 required |
+| Completion review for C-02 plan | Codex | BLOCKED until hold release |
+| Session sync | Codex | Required after this correction |
 
 ## Operator Checkpoint
 
@@ -419,7 +451,13 @@ claim boundary.
 
 ## Worker Pending-Return Gate
 
-Claude may return `COMPLETE_PENDING_REVIEW` only when every row is PASS:
+Claude may not return `COMPLETE_PENDING_REVIEW` under this held packet.
+
+Allowed blocked return only:
+
+`BLOCKED_LEGACY_ABSORPTION_REQUIRED`
+
+Suspended prior pending-return rows:
 
 | Gate | Required evidence | Status |
 | --- | --- | --- |
@@ -458,7 +496,7 @@ monitoring, perform destructive action, or require a commit.
 | Session or invocation | dispatchBaseHead `45b27691` |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | `rg`, `Get-Content`, `apply_patch`, governance gates |
-| Target paths | `docs/baselines/CVF_GC018_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_2026-06-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_FOR_CLAUDE_2026-06-13.md` |
+| Target paths | `docs/baselines/CVF_GC018_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_2026-06-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_FOR_CLAUDE_2026-06-13.md`; `docs/reviews/CVF_MODEL_GATEWAY_LEGACY_ABSORPTION_GAP_DISPATCH_CORRECTION_2026-06-13.md` |
 | Allowed scope source | operator instruction 2026-06-13 plus FPC-T4 closure state and decision matrix |
 | Before status evidence | `git status --short` clean before dispatch packet creation; base `45b27691` |
 | After status evidence | pending dispatch packet files only before material commit |
@@ -467,8 +505,8 @@ monitoring, perform destructive action, or require a commit.
 | Claim boundary | repo-local dispatch trace only; no OS/user attribution, endpoint telemetry, provider-internal log, public readiness, or production readiness claim |
 | Agent type | Codex |
 | Invocation ID | `dispatchBaseHead=45b27691` |
-| Expected manifest | `docs/baselines/CVF_GC018_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_2026-06-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_FOR_CLAUDE_2026-06-13.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_2026-06-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_FOR_CLAUDE_2026-06-13.md` |
+| Expected manifest | `docs/baselines/CVF_GC018_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_2026-06-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_FOR_CLAUDE_2026-06-13.md`; `docs/reviews/CVF_MODEL_GATEWAY_LEGACY_ABSORPTION_GAP_DISPATCH_CORRECTION_2026-06-13.md` |
+| Actual changed set | `docs/baselines/CVF_GC018_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_2026-06-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_FOR_CLAUDE_2026-06-13.md`; `docs/reviews/CVF_MODEL_GATEWAY_LEGACY_ABSORPTION_GAP_DISPATCH_CORRECTION_2026-06-13.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: dispatch creates new governed packet files and deletes or renames no protected path |
 
@@ -494,19 +532,10 @@ is confirmed, revised, narrowed, or invalidated.
 
 ## Return-To-Orchestrator Conditions
 
-Return `COMPLETE_PENDING_REVIEW` only when both deliverables are complete,
-trace blocks are complete, exact changed set matches the allowed manifest,
-gates pass, and HEAD remains unchanged.
+Return `BLOCKED_LEGACY_ABSORPTION_REQUIRED` because this packet is held.
 
-Return `BLOCKED_SOURCE_NOT_FOUND` if a named runtime/source claim cannot be
-verified against governed source.
-
-Return `BLOCKED_SCOPE_EXPANSION` if useful progress requires implementation,
-runtime/provider/live work, provider/model addition, public-sync,
-session-state mutation, secrets, registry mutation, or any forbidden scope.
-
-Return `BLOCKED_OVERCONSTRAINT_RISK` if the only viable recommendation would
-impose broad high-latency controls on ordinary CVF operation.
+Do not return `COMPLETE_PENDING_REVIEW` under this work order unless a later
+fresh legacy absorption GC-018 explicitly releases the hold.
 
 ## Public Export Disposition
 
@@ -517,8 +546,9 @@ authorized.
 
 ## Claim Boundary
 
-This work order authorizes source-backed boundary planning only. It does not
-prove provider/live readiness, completed Model Gateway, completed EPF provider
-routing, production readiness, public readiness, cost optimization, output
-quality, raw memory release, co-work product development, or autonomous
-mutation.
+This work order is currently held. It no longer authorizes source-backed
+boundary planning until a fresh legacy absorption GC-018 releases the hold. It
+does not absorb legacy content, prove provider/live readiness, prove completed
+Model Gateway, prove completed EPF provider routing, authorize production
+readiness, authorize public readiness, optimize cost, optimize output quality,
+release raw memory, develop co-work products, or authorize autonomous mutation.

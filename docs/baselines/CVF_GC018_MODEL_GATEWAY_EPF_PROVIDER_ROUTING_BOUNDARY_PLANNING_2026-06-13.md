@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT
+Status: HOLD_PENDING_LEGACY_ABSORPTION
 
 Owner: Codex Orchestrator
 
@@ -21,14 +21,35 @@ rawMemoryReleased=false
 Open the next high-value CVF foundation tranche selected by FPC-T4: Model
 Gateway EPF provider-routing boundary planning.
 
-This baseline authorizes Claude to produce a source-backed boundary plan that
-maps the current Model Gateway routing surfaces, the Execution Plane Foundation
-gateway wrapper anchor, provider-method authority, trace/evidence needs, and
-future implementation prerequisites.
+This baseline originally authorized Claude to produce a source-backed boundary
+plan. That authorization is now held pending legacy absorption because the
+dispatch omitted gateway-related legacy family inventory and blind-spot
+disposition.
 
 This baseline does not authorize runtime/source implementation, provider/API
 calls, live governance proof, registry mutation, public-sync, provider addition,
 model addition, cost/quality claims, production readiness, or public readiness.
+
+## Corrective Hold - 2026-06-13
+
+This dispatch is held by:
+
+`docs/reviews/CVF_MODEL_GATEWAY_LEGACY_ABSORPTION_GAP_DISPATCH_CORRECTION_2026-06-13.md`
+
+Hold reason: path-level inventory shows relevant legacy gateway-related
+families under `.private_reference/legacy/CVF_Important/`, while this dispatch
+and its FPC-T4 predecessor scoped from current governed `docs` and `EXTENSIONS`
+surfaces without a legacy absorption prerequisite.
+
+Disposition:
+
+`HOLD_PENDING_LEGACY_ABSORPTION`
+
+Claude must not continue this packet to a normal `COMPLETE_PENDING_REVIEW`.
+If already started, the correct return is
+`BLOCKED_LEGACY_ABSORPTION_REQUIRED` with no additional legacy content
+absorption. The next allowed governed move is a fresh GC-018 for bounded Model
+Gateway legacy absorption before C-02 planning resumes.
 
 ## Operator Authorization
 
@@ -119,6 +140,7 @@ tranche. The worker must not convert this plan into code changes.
 | `rg -n "ProviderRegistry|PROVIDER_CAPABILITY_REGISTRY|RoutingPolicyEngine|RoutingRequest|RoutingDecision|buildRoutingPolicyContractSnapshot" EXTENSIONS/CVF_MODEL_GATEWAY/src` | `EXTENSIONS/CVF_MODEL_GATEWAY/src` | Current source surfaces found | COLLISION_RECORDED_AS_SOURCE_INPUT |
 | `rg -n "CVF_MODEL_GATEWAY|Execution Plane|provider routing|Model Gateway" docs/reference docs/roadmaps EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION EXTENSIONS/CVF_MODEL_GATEWAY` | governed docs and source roots | Collisions found in FPC matrix, Model Gateway source, EPF source, archive roadmaps, and README files | COLLISION_RECORDED_AS_SOURCE_INPUT_AND_HISTORY_CONTEXT |
 | `rg -n "Policy_Local|Document Translator|DT-CVF|public-sync|DASHSCOPE_API_KEY|DEEPSEEK_API_KEY|ALIBABA_API_KEY|T12|rawMemoryReleased|co-work product" docs/reference docs/roadmaps docs/work_orders docs/reviews` | governed docs only | Same-token collisions expected in forbidden-scope and governance artifacts | COLLISION_RECORDED_AS_FORBIDDEN_SCOPE_CONTEXT |
+| `rg -n "legacy|private_reference|Knowledge Absorption|Blind-Spot|CVF_Important|ADDING_MODEL|ADDING MODEL|LHW|absorption" docs/baselines/CVF_GC018_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_2026-06-13.md docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_FOR_CLAUDE_2026-06-13.md` | current C-02 dispatch packet | No matches before this correction | GAP_RECORDED_AS_HOLD_TRIGGER |
 | `git status --short` | repo root | Clean worktree before dispatch packet creation | MANIFEST_BOUNDARY_RECORDED |
 | `git diff --name-status` | repo root | Pending dispatch artifacts only after authoring | TOOL_BOUNDARY_RECORDED |
 
@@ -133,17 +155,106 @@ Dispatch verification must pass before Codex commits this packet:
 | Reviewer-fast | `python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast` | PASS |
 | Diff hygiene | `git diff --check` | PASS |
 
+## Rescan Intelligence Hardening
+
+- Original source artifact: path-level inventory of gateway-related legacy
+  families under `.private_reference/legacy/CVF_Important/`.
+- Predecessor intake artifact:
+  `docs/reviews/CVF_MODEL_GATEWAY_LEGACY_ABSORPTION_GAP_DISPATCH_CORRECTION_2026-06-13.md`
+- Delta ledger status: NEW_FINDING recorded because C-02 dispatch omitted
+  legacy-family inventory.
+- Routing matrix status: STRATEGIC_OPERATOR_DECISION routed to fresh GC-018
+  legacy absorption before C-02 resumes.
+- Semantic sampling status: BLOCKED; no legacy content sampling is authorized
+  in this correction.
+- Rescan intelligence verdict: BLOCKED
+
+### Original-Intake Delta Ledger
+
+| Current finding | Predecessor finding | New disposition | Reason |
+| --- | --- | --- | --- |
+| C-02 dispatch omitted gateway-related legacy family inventory | None in C-02 packet | NEW_FINDING | Relevant legacy families exist by path-level inventory and require fresh absorption before planning resumes |
+| Prior current-source Model Gateway evidence remains true | FPC-T4 and C-02 source verification | UNCHANGED_FROM_INTAKE | Hold is caused by missing legacy context, not invalid current-source symbols |
+| C-02 execution status changed | C-02 dispatched under worker-return flow | CHANGED_DISPOSITION | Dispatch is now held pending legacy absorption |
+| None | N/A | REMOVED_OR_REJECTED | No prior finding is removed or rejected by this correction |
+
+### Follow-Up Routing Matrix
+
+| Item | Route | Reason |
+| --- | --- | --- |
+| Immediate C-02 boundary planning | DO_NOW | N/A with reason: not allowed while hold is active |
+| Model Gateway legacy absorption | STRATEGIC_OPERATOR_DECISION | Requires fresh GC-018 and Blind-Spot Control Block |
+| Runtime/provider execution | SEPARATE_RUNTIME_TRANCHE | N/A with reason: runtime/provider work is not authorized by this correction |
+| C-02 boundary planning | OUT_OF_SCOPE | Held until legacy absorption releases it |
+| Runtime/source implementation | OUT_OF_SCOPE | Not authorized by this correction |
+| Existing current-source symbol evidence | RESOLVED_BY_DESIGN | Current source symbols remain source-visible; the gap is legacy context |
+
+### Semantic Sampling / Adversarial Review
+
+| sampleId | source section | source claim | disposition checked | adversarial challenge | verdict |
+| --- | --- | --- | --- | --- | --- |
+| MG-LA-001 | path-level inventory | gateway-related legacy families exist | HOLD_PENDING_LEGACY_ABSORPTION | Does path existence alone authorize content absorption? | BLOCKED: content absorption requires fresh GC-018 |
+
+## Knowledge Absorption Blind-Spot Control Block
+
+- Standard read:
+  `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-06-01.md`
+- Source inventory:
+  - `.private_reference/legacy/CVF_Important/ADDING_MODEL GATEWAY/` - 12 files
+  - `.private_reference/legacy/CVF_Important/ADDING_MODEL_ROUTER/` - 6 files
+  - `.private_reference/legacy/CVF_Important/ADDING_MINI_MODEL GATEWAY/` - 7 files
+  - `.private_reference/legacy/CVF_Important/ADDING_AI GATEWAY/` - 12 files
+  - Shell command run: `Get-ChildItem -LiteralPath <root> -File -Recurse -Force | Measure-Object`
+  - Total gateway-family file count: 37
+- Prior absorption evidence resolved:
+  current C-02 dispatch did not include legacy absorption evidence.
+- Detailed source files used:
+  none; path-level inventory only.
+- Source families skipped:
+  gateway-related legacy families skipped for content reading until fresh
+  legacy absorption GC-018.
+- File-level accepted value:
+  none in this correction.
+- Owner-surface normalization:
+  none in this correction.
+- Accept/defer/reject matrix:
+  gateway-related legacy families -> `DEFER_TO_FRESH_GC018_LEGACY_ABSORPTION`;
+  current C-02 planning continuation -> `HOLD_PENDING_LEGACY_ABSORPTION`.
+- Adversarial roles completed:
+  Implementer: planning should not proceed without legacy architecture
+  disposition. Skeptic/Auditor: current-source-only scoping is insufficient.
+  Product/Operator Advocate: hold prevents wrong-direction foundation work
+  without forcing legacy scans into unrelated small tasks. Safety/Boundary
+  Owner: no legacy content is absorbed in this correction.
+- Thin proof target:
+  path-level inventory plus dispatch-packet absence proof.
+- Gate 7 completeness cross-check:
+
+| Subfolder | In Gate 3? | Disposition if absent | Reason |
+| --- | --- | --- | --- |
+| `.private_reference/legacy/CVF_Important/ADDING_MODEL GATEWAY/` | NO | DEFER_TO_FRESH_GC018_LEGACY_ABSORPTION | Relevant by name to C-02 planning |
+| `.private_reference/legacy/CVF_Important/ADDING_MODEL_ROUTER/` | NO | DEFER_TO_FRESH_GC018_LEGACY_ABSORPTION | Relevant by name to provider routing boundary |
+| `.private_reference/legacy/CVF_Important/ADDING_MINI_MODEL GATEWAY/` | NO | DEFER_TO_FRESH_GC018_LEGACY_ABSORPTION | Relevant by name to gateway boundary |
+| `.private_reference/legacy/CVF_Important/ADDING_AI GATEWAY/` | NO | DEFER_TO_FRESH_GC018_LEGACY_ABSORPTION | Relevant by name to gateway architecture |
+
+- Blind-spot verdict: BLOCKED
+
 ## Allowed Worker Deliverables
 
-Claude may create exactly these uncommitted files:
+Current disposition: HOLD.
+
+No worker deliverables are authorized under this packet until a fresh legacy
+absorption GC-018 closes or explicitly releases this hold.
+
+Previously planned deliverables, now suspended:
 
 | Deliverable | Purpose |
 | --- | --- |
 | `docs/reference/CVF_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLAN_2026-06-13.md` | Source-backed provider-routing boundary plan, authority map, gap map, implementation prerequisites, and recommended next tranche |
 | `docs/reviews/CVF_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_WORKER_RETURN_2026-06-13.md` | Worker return with evidence, gate results, trace block, and pending-return disposition |
 
-No other file may be created, modified, deleted, renamed, formatted, staged, or
-committed by Claude.
+No file may be created, modified, deleted, renamed, formatted, staged, or
+committed by Claude under this held packet.
 
 ## Agent Operation Trace Block
 
@@ -154,7 +265,7 @@ committed by Claude.
 | Session or invocation | dispatchBaseHead `45b27691` |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | `rg`, `Get-Content`, `apply_patch`, governance gates |
-| Target paths | `docs/baselines/CVF_GC018_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_2026-06-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_FOR_CLAUDE_2026-06-13.md` |
+| Target paths | `docs/baselines/CVF_GC018_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_2026-06-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_FOR_CLAUDE_2026-06-13.md`; `docs/reviews/CVF_MODEL_GATEWAY_LEGACY_ABSORPTION_GAP_DISPATCH_CORRECTION_2026-06-13.md` |
 | Allowed scope source | operator instruction 2026-06-13 plus FPC-T4 closure state and decision matrix |
 | Before status evidence | `git status --short` clean before dispatch packet creation; base `45b27691` |
 | After status evidence | pending dispatch packet files only before material commit |
@@ -163,8 +274,8 @@ committed by Claude.
 | Claim boundary | repo-local dispatch trace only; no OS/user attribution, endpoint telemetry, provider-internal log, public readiness, or production readiness claim |
 | Agent type | Codex |
 | Invocation ID | `dispatchBaseHead=45b27691` |
-| Expected manifest | `docs/baselines/CVF_GC018_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_2026-06-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_FOR_CLAUDE_2026-06-13.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_2026-06-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_FOR_CLAUDE_2026-06-13.md` |
+| Expected manifest | `docs/baselines/CVF_GC018_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_2026-06-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_FOR_CLAUDE_2026-06-13.md`; `docs/reviews/CVF_MODEL_GATEWAY_LEGACY_ABSORPTION_GAP_DISPATCH_CORRECTION_2026-06-13.md` |
+| Actual changed set | `docs/baselines/CVF_GC018_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_2026-06-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_EPF_PROVIDER_ROUTING_BOUNDARY_PLANNING_FOR_CLAUDE_2026-06-13.md`; `docs/reviews/CVF_MODEL_GATEWAY_LEGACY_ABSORPTION_GAP_DISPATCH_CORRECTION_2026-06-13.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: dispatch creates new governed packet files and deletes or renames no protected path |
 
