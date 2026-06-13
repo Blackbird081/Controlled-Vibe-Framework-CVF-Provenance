@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-13
 
-Current mode marker: `work_order_template_protected_path_authorization_hardening_closed_pass_bounded`
+Current mode marker: `dir_t2_document_intelligence_router_foundation_pilot_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `work_order_template_protected_path_authorization_hardening_closed_pass_bounded`.
+Current mode: `dir_t2_document_intelligence_router_foundation_pilot_dispatched`.
 
 Active handoff:
 
@@ -975,13 +975,22 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: DIR-T2 only through fresh GC-018, operator-approved sample
-corpus, and explicit runtime/live-proof authorization. DT-CVF-T0 and
-Policy_Local PL-S1 remain separately held until the operator explicitly
-authorizes them.
+Next allowed move: Claude executes DIR-T2 Document Intelligence Router
+foundation pilot under `WORKER_MUST_NOT_COMMIT` and returns uncommitted
+artifacts for Codex review. The dispatch package is:
+
+- GC-018:
+  `docs/baselines/CVF_GC018_DIR_T2_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_PILOT_2026-06-13.md`;
+- Work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_DIR_T2_DOCUMENT_INTELLIGENCE_ROUTER_FOUNDATION_PILOT_FOR_CLAUDE_2026-06-13.md`.
+
+DIR-T2 is a CVF foundation pilot using synthetic metadata-only fixtures and
+deterministic local Python tests; it is not external Document Translator
+adaptation. DT-CVF-T0 and Policy_Local PL-S1 remain separately held until the
+operator explicitly authorizes them.
 
 Do not edit the external Document Translator repo, mutate external
-Policy_Local, activate EC, wire retrieval routes, run OCR or provider/API
+Policy_Local, activate EC, wire retrieval routes, run OCR or provider/API/live
 proof, ingest corpus records, use public-sync, unlock T12, or make readiness,
 cost, or quality claims until a later authorized work order permits it.
 T12 remains forbidden until EC-02 resolves on or after 2026-07-01 and
