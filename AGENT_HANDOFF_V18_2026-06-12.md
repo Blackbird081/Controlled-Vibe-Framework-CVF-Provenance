@@ -30,9 +30,9 @@ Startup acknowledged: current mode=`model_gateway_c02_rewrite_planning_closed_bo
 
 `model_gateway_c02_rewrite_planning_closed_bounded`
 
-Current HEAD recorded for this handoff: `b2c7c802`
-(Model Gateway C-02 P1 draft work-order commit; this dedicated handoff sync
-follows).
+Current HEAD recorded for this handoff: `e9f46b61`
+(Model Gateway C-02 P1 routing pipeline dispatch commit; this dedicated handoff
+sync follows).
 
 ## Active Boundary
 
@@ -76,9 +76,23 @@ C-02 dispatch commit `2d77e67a`, session-sync commit `045d38b3`, or C-02
 trace-alignment commit `f7b0c2d5`, or C-02 rewrite planning material closure
 commit `657b2794`, or provider memory authority boundary guard hardening
 material closure commit `9cd4a97f`, or Model Gateway C-02 P1 draft work-order
-commit `b2c7c802`.
+commit `b2c7c802`, or Model Gateway C-02 P1 routing pipeline dispatch commit
+`e9f46b61`.
 
 ## Latest Continuity Note
+
+Model Gateway C-02 P1 Routing Pipeline Implementation is dispatched for
+bounded Codex multi-role execution at commit `e9f46b61`.
+
+Artifacts:
+
+- `docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_2026-06-14.md`;
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_IMPLEMENTATION_2026-06-14.md`.
+
+Scope remains P1 only: routing context fields, routing policy pipeline, exports,
+focused tests, worker return, reviewer completion, and session sync. P2 dynamic
+registry, P3 gateway interface, strategy layer, AI Gateway, provider/live proof,
+public-sync, registry mutation, and readiness claims remain parked.
 
 Model Gateway C-02 P1 Routing Pipeline Implementation draft work order is
 committed at `b2c7c802`.
