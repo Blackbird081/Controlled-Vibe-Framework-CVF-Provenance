@@ -2070,6 +2070,32 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
             report["violations"][0]["issues"],
         )
 
+    def test_work_order_misclassifies_agents_md_as_provider_specific_memory_fails(self) -> None:
+        work_order = "docs/work_orders/CVF_WO_PROVIDER_MEMORY_BOUNDARY_TEST_2026-06-14.md"
+        self._write(
+            work_order,
+            "\n".join(
+                [
+                    "# Test",
+                    "Status: DRAFT",
+                    (
+                        "Provider-specific memory files (`CLAUDE.md`, `AGENTS.md`, "
+                        "IDE summaries) are not CVF source authority."
+                    ),
+                ]
+            ),
+        )
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"])
+        self.assertIn(
+            "work order misclassifies `AGENTS.md` as provider-specific or non-authoritative; "
+            "`AGENTS.md` is canonical CVF authority",
+            report["violations"][0]["issues"],
+        )
+
     def test_not_found_claim_without_negative_search_block_fails(self) -> None:
         work_order = "docs/work_orders/CVF_WO_NEGATIVE_SEARCH_TEST_2026-06-11.md"
         self._write("governance/contracts/source.ts", "export interface SourceThing { value: string; }\n")

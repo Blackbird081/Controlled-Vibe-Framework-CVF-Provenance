@@ -90,6 +90,17 @@ such as "runtime source tree" when no concrete path is being cited.
 
 ---
 
+## Provider Memory Authority Boundary
+
+`AGENTS.md` is canonical CVF authority. Do not classify it as
+provider-specific memory, agent-private memory, `NOT_CVF_SOURCE`, or
+non-authoritative local guidance.
+
+Provider-specific memory examples include `CLAUDE.md`, Codex memory files,
+Claude memory files, and IDE side-channel summaries.
+
+---
+
 ## Machine Closure Package Authoring Rules
 
 Machine Closure Package row names are exact machine tokens. Use:
@@ -329,6 +340,31 @@ If reusable, the same batch must update the template, addendum, standard, or a
 machine check. If not reusable, record `N/A with reason` in the reviewer
 artifact. This is the authoring-side application of CVF's learning rule: fix
 once, reuse many times.
+
+---
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+| --- | --- |
+| Actor | Codex |
+| Provider or surface | Codex CLI / VSCode extension |
+| Session or invocation | base `5841ae43` |
+| Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
+| Command or tool surface | `apply_patch`, `python`, `git` |
+| Target paths | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/test_check_work_order_dispatch_quality.py`; `docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md`; `docs/reviews/CVF_PROVIDER_MEMORY_AUTHORITY_BOUNDARY_GUARD_HARDENING_COMPLETION_2026-06-14.md` |
+| Allowed scope source | Operator instruction to promote the provider-memory authority finding into reusable CVF governance |
+| Before status evidence | HEAD `5841ae43`; guard hardening not committed |
+| After status evidence | Addendum guidance added for provider memory authority boundary |
+| Diff evidence | Guard branch, regression test, addendum guidance, and completion review only |
+| Approval boundary | Governance authoring hardening only; no implementation authorization |
+| Claim boundary | Work-order authoring guidance only; no runtime/provider/live/public claim |
+| Agent type | Codex |
+| Invocation ID | `provider-memory-authority-boundary-2026-06-14` |
+| Expected manifest | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/test_check_work_order_dispatch_quality.py`; `docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md`; `docs/reviews/CVF_PROVIDER_MEMORY_AUTHORITY_BOUNDARY_GUARD_HARDENING_COMPLETION_2026-06-14.md` |
+| Actual changed set | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/test_check_work_order_dispatch_quality.py`; `docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md`; `docs/reviews/CVF_PROVIDER_MEMORY_AUTHORITY_BOUNDARY_GUARD_HARDENING_COMPLETION_2026-06-14.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no delete or rename |
 
 ---
 

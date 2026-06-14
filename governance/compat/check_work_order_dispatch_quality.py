@@ -50,6 +50,7 @@ INTAKE_ROLE_ROUTING_MARKER = "Intake Role Routing Decision"
 EVIDENCE_REUSE_ENCODING_PLAN_MARKER = "Evidence Reuse And Encoding Plan"
 REQUIRED_PROOF_ATOMIC_LITERAL_MARKER = "Required Proof Manifest Atomic Literal Discipline"
 LEGACY_COVERAGE_DISPOSITION_MARKER = "Legacy Absorption Coverage Index Disposition"
+PROVIDER_MEMORY_AUTHORITY_BOUNDARY_MARKER = "Provider Memory Authority Boundary"
 EVIDENCE_REUSE_ENCODING_STANDARD_PATH = (
     "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md"
 )
@@ -86,6 +87,13 @@ PENDING_DEPENDENCY_LANGUAGE_RE = re.compile(
 )
 NEGATIVE_SEARCH_CLAIM_RE = re.compile(
     r"\bNOT\s+FOUND\b|\bBLOCKED_SOURCE_NOT_FOUND\b",
+    re.IGNORECASE,
+)
+PROVIDER_SPECIFIC_MEMORY_CONTEXT_RE = re.compile(
+    r"\b("
+    r"provider[- ]specific|agent[- ]private|provider[- ]local|agent[- ]local|"
+    r"not\s+CVF\s+source\s+authority|NOT_CVF_SOURCE"
+    r")\b",
     re.IGNORECASE,
 )
 LEGACY_COVERAGE_SCOPE_RE = re.compile(
@@ -1245,6 +1253,20 @@ def _validate_referenced_work_order_closure(text: str, artifact_label: str) -> l
     return issues
 
 
+def _validate_provider_memory_authority_boundary(text: str, artifact_label: str) -> list[str]:
+    issues: list[str] = []
+    for raw_line in text.splitlines():
+        line = raw_line.strip()
+        if "AGENTS.md" not in line:
+            continue
+        if PROVIDER_SPECIFIC_MEMORY_CONTEXT_RE.search(line):
+            issues.append(
+                f"{artifact_label} misclassifies `AGENTS.md` as provider-specific or non-authoritative; "
+                "`AGENTS.md` is canonical CVF authority"
+            )
+    return sorted(set(issues))
+
+
 def _row_has_blocking_disposition(row: dict[str, str]) -> bool:
     disposition = row.get("Disposition", "").upper()
     return "BLOCKED_SOURCE_NOT_FOUND" in disposition or disposition == "BLOCKED"
@@ -2144,6 +2166,7 @@ def _validate_work_order(path: str, text: str) -> list[str]:
     issues.extend(_validate_status_token_hygiene(text, "work order"))
     issues.extend(_validate_closed_artifact_finality(text, "work order"))
     issues.extend(_validate_mandatory_remediation_escalation(text, "work order"))
+    issues.extend(_validate_provider_memory_authority_boundary(text, "work order"))
 
     if dispatching and _is_roadmap_derived(text) and not _has_trace_matrix(text):
         issues.append("roadmap-derived work order is dispatch/ready without Roadmap-To-Work-Order Trace Matrix")
