@@ -30,9 +30,9 @@ Startup acknowledged: current mode=`model_gateway_c02_rewrite_planning_closed_bo
 
 `model_gateway_c02_rewrite_planning_closed_bounded`
 
-Current HEAD recorded for this handoff: `657b2794`
-(Model Gateway C-02 rewrite planning material closure commit; this dedicated
-handoff/session sync follows).
+Current HEAD recorded for this handoff: `9cd4a97f`
+(Provider memory authority boundary guard hardening material closure commit;
+this dedicated handoff sync follows).
 
 ## Active Boundary
 
@@ -74,9 +74,28 @@ guard commit `3423d82e`, Model Gateway recheck closure commit `5be35102`,
 material correction commit `919afd4e`, material dispatch commit `a4cfb246`,
 C-02 dispatch commit `2d77e67a`, session-sync commit `045d38b3`, or C-02
 trace-alignment commit `f7b0c2d5`, or C-02 rewrite planning material closure
-commit `657b2794`.
+commit `657b2794`, or provider memory authority boundary guard hardening
+material closure commit `9cd4a97f`.
 
 ## Latest Continuity Note
+
+Provider memory authority boundary guard hardening is `CLOSED_PASS_BOUNDED` at
+material closure commit `9cd4a97f`.
+
+Artifacts:
+
+- Guard:
+  `governance/compat/check_work_order_dispatch_quality.py`;
+- Test:
+  `governance/compat/test_check_work_order_dispatch_quality.py`;
+- Authoring guidance:
+  `docs/reference/CVF_WORK_ORDER_AUTHORING_HARDENING_ADDENDUM_2026-06-11.md`;
+- Completion review:
+  `docs/reviews/CVF_PROVIDER_MEMORY_AUTHORITY_BOUNDARY_GUARD_HARDENING_COMPLETION_2026-06-14.md`.
+
+The dispatch-quality gate now flags work orders that misclassify `AGENTS.md` as
+provider-specific, agent-private, `NOT_CVF_SOURCE`, or otherwise
+non-authoritative. `AGENTS.md` remains canonical CVF authority.
 
 Model Gateway C-02 Provider Routing Boundary Rewrite planning is
 `CLOSED_PASS_BOUNDED` at material closure commit `657b2794`.
