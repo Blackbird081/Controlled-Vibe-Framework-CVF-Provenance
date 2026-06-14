@@ -30,9 +30,9 @@ Startup acknowledged: current mode=`model_gateway_c02_rewrite_planning_closed_bo
 
 `model_gateway_c02_rewrite_planning_closed_bounded`
 
-Current HEAD recorded for this handoff: `9cd4a97f`
-(Provider memory authority boundary guard hardening material closure commit;
-this dedicated handoff sync follows).
+Current HEAD recorded for this handoff: `b2c7c802`
+(Model Gateway C-02 P1 draft work-order commit; this dedicated handoff sync
+follows).
 
 ## Active Boundary
 
@@ -75,9 +75,21 @@ material correction commit `919afd4e`, material dispatch commit `a4cfb246`,
 C-02 dispatch commit `2d77e67a`, session-sync commit `045d38b3`, or C-02
 trace-alignment commit `f7b0c2d5`, or C-02 rewrite planning material closure
 commit `657b2794`, or provider memory authority boundary guard hardening
-material closure commit `9cd4a97f`.
+material closure commit `9cd4a97f`, or Model Gateway C-02 P1 draft work-order
+commit `b2c7c802`.
 
 ## Latest Continuity Note
+
+Model Gateway C-02 P1 Routing Pipeline Implementation draft work order is
+committed at `b2c7c802`.
+
+Artifact:
+
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_IMPLEMENTATION_2026-06-14.md`.
+
+Status remains `DRAFT_PENDING_GC018_AND_OPERATOR_AUTHORIZATION`. It is not
+dispatched; implementation still requires fresh GC-018 and operator
+authorization.
 
 Provider memory authority boundary guard hardening is `CLOSED_PASS_BOUNDED` at
 material closure commit `9cd4a97f`.
