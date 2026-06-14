@@ -2,19 +2,26 @@
 
 Memory class: FULL_RECORD
 
-Status: DRAFT_PENDING_GC018_AND_OPERATOR_AUTHORIZATION
+Status: DISPATCHED_SELF_ORCHESTRATED
 
-Worker: UNASSIGNED (neutral worker agent)
+Worker: Codex worker role
 
-Orchestrator / reviewer: UNASSIGNED (reviewer agent)
+Orchestrator / reviewer: Codex orchestrator and reviewer roles
 
 Worker commit policy: WORKER_MUST_NOT_COMMIT
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
-dispatchBaseHead: `5841ae43`
+completionReviewPath:
+`docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_COMPLETION_2026-06-14.md`
 
-executionBaseHead: WORKER_MUST_CAPTURE_AT_START
+reviewerOwnedClosurePaths:
+- `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_COMPLETION_2026-06-14.md`
+- `AGENT_HANDOFF_V18_2026-06-12.md`
+
+dispatchBaseHead: `89128582`
+
+executionBaseHead: WORKER_MUST_CAPTURE_AFTER_DISPATCH
 
 closureBaseHead: REVIEWER_CAPTURE_AFTER_WORKER_RETURN
 
@@ -26,12 +33,18 @@ riskCeiling: R2 (runtime/source/test mutation in one extension; no provider/live
 
 This work order is an implementation tranche. It MUST NOT be dispatched until both:
 
-1. A fresh GC-018 baseline authorizes Model Gateway C-02 P1 implementation, citing
+1. A fresh GC-018 baseline authorizes Model Gateway C-02 P1 implementation,
+   citing
    `docs/reference/CVF_MODEL_GATEWAY_C02_PROVIDER_ROUTING_BOUNDARY_REWRITE_PLAN_2026-06-14.md`.
-   Suggested path: `docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_2026-06-14.md`.
+   Satisfied by
+   `docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_2026-06-14.md`.
 2. Operator authorizes the implementation scope and worker/reviewer assignment.
+   Satisfied by the 2026-06-14 operator instruction assigning Codex to assume
+   multiple roles and execute this work order.
 
-Until both exist, this packet stays `DRAFT_PENDING_GC018_AND_OPERATOR_AUTHORIZATION`.
+This packet is dispatched for the bounded self-orchestrated Codex execution
+described above. The worker role still honors `WORKER_MUST_NOT_COMMIT`;
+reviewer role owns acceptance, commit, and session sync.
 
 ## Public Export Disposition
 
@@ -85,8 +98,8 @@ layer, AI Gateway, EPF, facades, or provider adapters.
 
 | Authority | Role |
 | --- | --- |
-| Future fresh GC-018 (BLOCKING precondition) | Implementation authorization for C-02 P1 |
-| Operator instruction (BLOCKING precondition) | Approves implementation scope and agent assignment |
+| `docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_2026-06-14.md` | Implementation authorization for C-02 P1 |
+| Operator instruction on 2026-06-14 | Approves implementation scope and Codex multi-role assignment |
 | `docs/reference/CVF_MODEL_GATEWAY_C02_PROVIDER_ROUTING_BOUNDARY_REWRITE_PLAN_2026-06-14.md` | Closed C-02 plan; P1 scope and boundary recommendations (sections 7, 12) |
 | `docs/reviews/CVF_MODEL_GATEWAY_C02_PROVIDER_ROUTING_BOUNDARY_REWRITE_COMPLETION_2026-06-14.md` | C-02 closure; `CLOSED_PASS_BOUNDED` |
 | `docs/reference/CVF_LEGACY_ABSORPTION_COVERAGE_INDEX_2026-06-13.md` row `MGW-001` | Legacy coverage status `PARTIAL_RECHECK_REQUIRED` |
@@ -109,7 +122,7 @@ token against governed runtime source before completion.
 | Release basis | C-02 planning closed `RESUME_WITH_REWRITE`; P1 is the routing-pipeline subset of the rewrite plan |
 | Required disposition in worker return | Confirm P1 implements only `routingContextFullInterface` and `routingPolicyEnginePluggablePipeline`; all other accepted value keys remain deferred |
 | Forbidden shortcut | Do not implement P2 dynamic registry, P3 gateway interface, or strategy-layer keys under this P1 work order |
-| Coverage update after closure | Reviewer notes that `MGW-001` stays `PARTIAL_RECHECK_REQUIRED` until P2/P3 also close; P1 closure alone does not upgrade the row to `COVERED_SOURCE_BACKED` |
+| P1 closure coverage note | Reviewer notes at P1 closure that `MGW-001` stays `PARTIAL_RECHECK_REQUIRED` until P2/P3 also close; P1 closure alone does not upgrade the row to `COVERED_SOURCE_BACKED` |
 
 ## Freeze Posture Disposition
 
@@ -124,9 +137,51 @@ token against governed runtime source before completion.
 
 | Role | Owner | Boundary |
 | --- | --- | --- |
-| Orchestrator / reviewer / committer | Reviewer agent | Review returned source/tests, run gates, author completion review, commit accepted artifacts, sync session continuity |
+| Orchestrator / reviewer / committer | Reviewer agent | Review returned source/tests, run gates, author closure artifact, commit accepted artifacts, sync session continuity |
 | Worker | Worker agent | Implement P1 source + tests only, run worker gates, return `COMPLETE_PENDING_REVIEW` without committing |
 | Operator | Human operator | Authorizes implementation and assignment; approves any scope change |
+
+## Intake Role Routing Decision
+
+| Field | Decision |
+| --- | --- |
+| Intake summary | Operator asked Codex to assume multiple roles and execute the prepared Model Gateway C-02 P1 routing pipeline work order |
+| Scope classification | bounded R2 single-extension Model Gateway source/test implementation plus governed worker-return evidence |
+| Risk sensitivity | No public-sync, no provider/live proof, no secrets, no legal/current-law, no production/readiness claim; source/test mutation is limited to `EXTENSIONS/CVF_MODEL_GATEWAY/` |
+| Selected route mode | SINGLE_AGENT_MULTI_ROLE |
+| Selected role route | Codex orchestrator dispatches, Codex worker implements without committing, Codex reviewer closes, Codex committer commits accepted artifacts |
+| routeMode | SINGLE_AGENT_MULTI_ROLE |
+| Role separation basis | Phase gates, separate base heads, worker no-commit boundary, reviewer closure conversion, and committed-range closure checks |
+| Escalation condition | Stop for scope expansion beyond P1, provider/live proof, public-sync, secrets, package install, registry mutation, governance-kernel mutation, destructive action, or P2/P3/strategy-layer work |
+| Disposition | DISPATCHED_SELF_ORCHESTRATED |
+
+## Single-Agent Multi-Role Control Block
+
+| Field | Decision |
+| --- | --- |
+| Single agent owns implementation and review | YES, bounded by this block and operator authorization |
+| Role separation ledger | Orchestrator owns GC-018 and dispatch update; worker owns source/tests and worker return; reviewer owns closure artifact and acceptance; committer owns commits and session sync |
+| Evidence basis independent of memory-only claims | GC-018, work order, source verification, focused tests, diff evidence, and governance gates |
+| Self-review boundary | Independent review is not claimed; Codex reviewer must inspect real diff and gate evidence before any commit |
+| Gate sequence | pre-dispatch by orchestrator, baseline tests by worker, focused implementation tests by worker, reviewer-fast and pre-closure by reviewer, pre-push only if a later push is authorized |
+| Escalation conditions | Stop for forbidden paths, P2/P3/strategy scope, provider/live proof, public-sync, secrets, package install, registry mutation, governance-kernel mutation, destructive action, or readiness/public claims |
+| Worker | Codex worker role |
+| Reviewer / committer | Codex reviewer and committer roles |
+| Human escalation checkpoint | Scope expansion only |
+| Collusion boundary | Single-agent result is bounded governance evidence, not independent review |
+
+## Reviewer Closure Conversion Block
+
+completionReviewPath:
+`docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_COMPLETION_2026-06-14.md`
+
+reviewerOwnedClosurePaths:
+- `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_COMPLETION_2026-06-14.md`
+- `AGENT_HANDOFF_V18_2026-06-12.md`
+
+Reviewer role must convert a successful handoff packet into a completion review,
+run closure gates on the committed range, commit accepted artifacts, and then
+sync session continuity in a separate handoff commit if required.
 
 ## Pre-Flight Checks
 
@@ -453,7 +508,7 @@ reviewer-owned closure defects are repaired only within reviewer-owned scope.
 | --- | --- | --- |
 | Source + tests implemented | Worker | PENDING |
 | Worker gates recorded | Worker | PENDING |
-| Reviewer completion review created | Reviewer | N/A before worker return |
+| Reviewer closure artifact created | Reviewer | N/A before return |
 | Accepted artifacts committed | Reviewer | N/A before worker return |
 | Session continuity synced | Reviewer | N/A before worker return |
 | `MGW-001` row note (stays PARTIAL until P2/P3) | Reviewer | N/A before worker return |
@@ -480,7 +535,19 @@ lane.
 | `EXTENSIONS/CVF_MODEL_GATEWAY/src/index.ts` (edit) | Worker | YES | New routing type exports |
 | `EXTENSIONS/CVF_MODEL_GATEWAY/tests/routing-policy.test.ts` (edit) or new test file | Worker | YES | New routing pipeline test coverage |
 | Worker return (suggested `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_WORKER_RETURN_2026-06-14.md`) | Worker | YES | Gate evidence and trace |
-| Completion review (reviewer-owned) | Reviewer | NO | Closure after worker return |
+| Reviewer closure artifact | Reviewer | NO | Closure conversion |
+
+## Work-Order Fulfillment Manifest
+
+| Requirement | Required artifact or proof | Closure owner |
+| --- | --- | --- |
+| Fresh GC-018 authorization | `docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_2026-06-14.md` | Orchestrator |
+| P1 source implementation | `EXTENSIONS/CVF_MODEL_GATEWAY/src/routing-policy.ts` and optional `routing-policy-pipeline.ts` | Worker |
+| P1 exports | `EXTENSIONS/CVF_MODEL_GATEWAY/src/index.ts` | Worker |
+| P1 tests | `EXTENSIONS/CVF_MODEL_GATEWAY/tests/` | Worker |
+| Worker return | `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_WORKER_RETURN_2026-06-14.md` | Worker |
+| Completion review | `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_COMPLETION_2026-06-14.md` | Reviewer |
+| Session sync if needed | `AGENT_HANDOFF_V18_2026-06-12.md` | Committer |
 
 ## Agent Operation Trace Block
 
@@ -491,7 +558,7 @@ lane.
 | Session or invocation | dispatchBaseHead `5841ae43` |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | Read, Grep, Bash (git, rg, wc, find), Write (this work order) |
-| Target paths | this work order; worker artifact paths named in Required Artifact Manifest |
+| Target paths | this work order; `docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_2026-06-14.md`; worker artifact paths named in Required Artifact Manifest |
 | Allowed scope source | Operator instruction 2026-06-14 to audit and author a detailed C-02 P1 implementation work order |
 | Before status evidence | HEAD `5841ae43`; clean worktree at authoring start |
 | After status evidence | one new untracked work order file created |
@@ -500,9 +567,9 @@ lane.
 | Claim boundary | Work order authoring; no implementation, runtime, provider, or public claim |
 | Agent type | Claude |
 | Invocation ID | `dispatchBaseHead=5841ae43` |
-| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_IMPLEMENTATION_2026-06-14.md` |
-| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_IMPLEMENTATION_2026-06-14.md` |
-| Manifest delta | MATCH -- one work order authored |
+| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_IMPLEMENTATION_2026-06-14.md`; `docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_2026-06-14.md` |
+| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_IMPLEMENTATION_2026-06-14.md`; `docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_2026-06-14.md` |
+| Manifest delta | MATCH -- work order dispatched and GC-018 baseline authored |
 | Deletion or rename disposition | N/A with reason: no protected path deleted or renamed; one new file created |
 
 ## Epistemic Process Block
