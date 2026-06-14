@@ -24,15 +24,15 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`model_gateway_c02_rewrite_planning_closed_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=Model Gateway C-02 implementation or runtime/provider follow-up only through fresh operator authorization, fresh GC-018, and source-verified work order; parked checkpoint=implementation, runtime/provider/live-proof, Model Gateway implementation, Sandbox Runtime implementation, AI Gateway environment-signal absorption, registry mutation, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
+Startup acknowledged: current mode=`model_gateway_c02_p1_routing_pipeline_closed_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=Model Gateway C-02 P2/P3 or other foundation follow-up only through fresh operator authorization, fresh GC-018, and source-verified work order; parked checkpoint=provider/live-proof, Model Gateway P2/P3, Sandbox Runtime implementation, AI Gateway environment-signal absorption, legacy/model registry mutation, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
 
 ## Current Mode
 
-`model_gateway_c02_rewrite_planning_closed_bounded`
+`model_gateway_c02_p1_routing_pipeline_closed_bounded`
 
-Current HEAD recorded for this handoff: `e9f46b61`
-(Model Gateway C-02 P1 routing pipeline dispatch commit; this dedicated handoff
-sync follows).
+Current HEAD recorded for this handoff: `24a3c30a`
+(Model Gateway C-02 P1 routing pipeline material closure commit; this dedicated
+handoff sync follows).
 
 ## Active Boundary
 
@@ -47,30 +47,18 @@ requires separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: Codex may update session continuity files
-after trace-alignment commit `da725c1a` so the active front door, generated
-state aggregate, state source files, and active handoff point to the latest
-legacy coverage-index dispatch guard closure state.
+Authorized guard-maintenance scope: Codex may update this active handoff after
+Model Gateway C-02 P1 routing pipeline material closure commit `24a3c30a` so
+the active handoff points to the latest material closure state.
 
 Protected paths:
 
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/legacyCoverageIndexDispatchGuardHardening20260614.json`
-- `CVF_SESSION/state/entries/lastUpdated.json`
-- `CVF_SESSION/state/entries/modelGatewayC02ProviderRoutingBoundaryRewriteClosure20260614.json`
-- `CVF_SESSION/state/entries/modelGatewayC02ProviderRoutingBoundaryRewriteDispatch20260614.json`
-- `CVF_SESSION/state/entries/modelGatewayEpfProviderRoutingBoundaryPlanningDispatch20260613.json`
-- `CVF_SESSION/state/entries/modelGatewayLegacyAbsorptionGapHold20260613.json`
-- `CVF_SESSION/state/entries/modelGatewayLegacyCoverageIndexDispatch20260613.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION_MEMORY.md`
 - `AGENT_HANDOFF_V18_2026-06-12.md`
 
 Rollback boundary: if session-sync gates fail, revert only this continuity sync
-batch and regenerate `CVF_SESSION/ACTIVE_SESSION_STATE.json` from the previous
-state source files. Do not revert trace-alignment commit `da725c1a`, material
-guard commit `3423d82e`, Model Gateway recheck closure commit `5be35102`,
+batch. Do not revert Model Gateway C-02 P1 material closure commit `24a3c30a`,
+Model Gateway C-02 P1 dispatch commit `e9f46b61`, trace-alignment commit
+`da725c1a`, material guard commit `3423d82e`, Model Gateway recheck closure commit `5be35102`,
 material correction commit `919afd4e`, material dispatch commit `a4cfb246`,
 C-02 dispatch commit `2d77e67a`, session-sync commit `045d38b3`, or C-02
 trace-alignment commit `f7b0c2d5`, or C-02 rewrite planning material closure
@@ -81,18 +69,23 @@ commit `b2c7c802`, or Model Gateway C-02 P1 routing pipeline dispatch commit
 
 ## Latest Continuity Note
 
-Model Gateway C-02 P1 Routing Pipeline Implementation is dispatched for
-bounded Codex multi-role execution at commit `e9f46b61`.
+Model Gateway C-02 P1 Routing Pipeline Implementation is `CLOSED_PASS_BOUNDED`
+at material closure commit `24a3c30a`.
 
 Artifacts:
 
 - `docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_2026-06-14.md`;
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_IMPLEMENTATION_2026-06-14.md`.
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_IMPLEMENTATION_2026-06-14.md`;
+- `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_WORKER_RETURN_2026-06-14.md`;
+- `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_COMPLETION_2026-06-14.md`;
+- `docs/corpus-intelligence/registry/entries/model-gateway-c02-p1-routing-policy-pipeline-source.json`;
+- `docs/corpus-intelligence/registry/entries/model-gateway-c02-p1-existing-routing-touchpoints.json`.
 
-Scope remains P1 only: routing context fields, routing policy pipeline, exports,
-focused tests, worker return, reviewer completion, and session sync. P2 dynamic
-registry, P3 gateway interface, strategy layer, AI Gateway, provider/live proof,
-public-sync, registry mutation, and readiness claims remain parked.
+Scope closed P1 only: routing context fields, routing policy pipeline, exports,
+focused tests, worker return, reviewer completion, and GC-051 coverage for the
+new/cited source paths. P2 dynamic registry, P3 gateway interface, strategy
+layer, AI Gateway, provider/live proof, public-sync, legacy/model registry
+mutation, and readiness claims remain parked.
 
 Model Gateway C-02 P1 Routing Pipeline Implementation draft work order is
 committed at `b2c7c802`.
@@ -731,6 +724,10 @@ generated active-state source files are accepted.
 - Closed DIR-T0 Document Intelligence Router contract matrix at material
   commit `082b02ff` with contract matrix, worker return, Codex completion
   review, and roadmap/work-order status updates.
+- Closed Model Gateway C-02 P1 routing pipeline at material commit `24a3c30a`
+  with additive routing context fields, routing-scoped policy pipeline,
+  focused tests, Guard Contract phase2b proof, worker return, Codex completion
+  review, and GC-051 source registry coverage.
 
 ## Core Guard Self-Protection Authorization
 
@@ -793,20 +790,21 @@ acceleration material commit `bd15e0ae`, MEMCON-T1a material closure commit
 
 ## Next Allowed Move
 
-Next allowed move: Model Gateway C-02 Provider Routing Boundary Rewrite
-planning is `CLOSED_PASS_BOUNDED` at material closure commit `657b2794`.
-Closure artifacts are:
+Next allowed move: Model Gateway C-02 P1 Routing Pipeline is
+`CLOSED_PASS_BOUNDED` at material closure commit `24a3c30a`. Closure artifacts
+are:
 
-- `docs/reference/CVF_MODEL_GATEWAY_C02_PROVIDER_ROUTING_BOUNDARY_REWRITE_PLAN_2026-06-14.md`;
-- `docs/reviews/CVF_MODEL_GATEWAY_C02_PROVIDER_ROUTING_BOUNDARY_REWRITE_WORKER_RETURN_2026-06-14.md`;
-- `docs/reviews/CVF_MODEL_GATEWAY_C02_PROVIDER_ROUTING_BOUNDARY_REWRITE_COMPLETION_2026-06-14.md`.
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_IMPLEMENTATION_2026-06-14.md`;
+- `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_WORKER_RETURN_2026-06-14.md`;
+- `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_COMPLETION_2026-06-14.md`.
 
-No old C-02 packet reuse, implementation, runtime/source/test mutation,
-provider/API use, live governance proof, provider/model addition, registry
-mutation, public-sync, external Document_Translator inspection or mutation,
-Policy_Local mutation, OS audit, endpoint monitoring, T12, raw memory release,
-co-work product development, or autonomous mutation is authorized without fresh
-operator authorization, fresh GC-018, and a source-verified work order.
+No Model Gateway P2 dynamic registry, P3 unified gateway interface, strategy
+layer, AI Gateway absorption, provider/API use, live governance proof,
+provider/model addition, legacy/model registry mutation, public-sync, external
+Document_Translator inspection or mutation, Policy_Local mutation, OS audit,
+endpoint monitoring, T12, raw memory release, co-work product development, or
+autonomous mutation is authorized without fresh operator authorization, fresh
+GC-018, and a source-verified work order.
 
 DT-CVF-T0 may be opened only through later fresh GC-018 and a source-verified
 work order for Document Translator source custody, repo inventory,
