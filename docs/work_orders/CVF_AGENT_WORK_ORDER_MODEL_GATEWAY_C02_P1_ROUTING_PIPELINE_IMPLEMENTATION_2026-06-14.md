@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCHED_SELF_ORCHESTRATED
+Status: CLOSED_PASS_BOUNDED
 
 Worker: Codex worker role
 
@@ -16,14 +16,17 @@ completionReviewPath:
 `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_COMPLETION_2026-06-14.md`
 
 reviewerOwnedClosurePaths:
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_IMPLEMENTATION_2026-06-14.md`
 - `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_COMPLETION_2026-06-14.md`
+- `docs/corpus-intelligence/registry/entries/model-gateway-c02-p1-routing-policy-pipeline-source.json`
+- `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
 - `AGENT_HANDOFF_V18_2026-06-12.md`
 
 dispatchBaseHead: `89128582`
 
-executionBaseHead: WORKER_MUST_CAPTURE_AFTER_DISPATCH
+executionBaseHead: `df018d50`
 
-closureBaseHead: REVIEWER_CAPTURE_AFTER_WORKER_RETURN
+closureBaseHead: `df018d50`
 
 rawMemoryReleased=false
 
@@ -153,7 +156,7 @@ token against governed runtime source before completion.
 | routeMode | SINGLE_AGENT_MULTI_ROLE |
 | Role separation basis | Phase gates, separate base heads, worker no-commit boundary, reviewer closure conversion, and committed-range closure checks |
 | Escalation condition | Stop for scope expansion beyond P1, provider/live proof, public-sync, secrets, package install, registry mutation, governance-kernel mutation, destructive action, or P2/P3/strategy-layer work |
-| Disposition | DISPATCHED_SELF_ORCHESTRATED |
+| Disposition | CLOSED_PASS_BOUNDED |
 
 ## Single-Agent Multi-Role Control Block
 
@@ -208,6 +211,23 @@ Worker may write only:
 Reviewer owns completion review, commits, session sync, and the `MGW-001`
 coverage note. Worker must not write to any other extension, any session/handoff/
 registry file, or any governance-kernel surface.
+
+Allowed scope:
+
+- `EXTENSIONS/CVF_MODEL_GATEWAY/src/routing-policy.ts`
+- `EXTENSIONS/CVF_MODEL_GATEWAY/src/routing-policy-pipeline.ts`
+- `EXTENSIONS/CVF_MODEL_GATEWAY/src/index.ts`
+- `EXTENSIONS/CVF_MODEL_GATEWAY/tests/routing-policy.test.ts`
+- `docs/corpus-intelligence/registry/entries/model-gateway-c02-p1-routing-policy-pipeline-source.json`
+- `docs/corpus-intelligence/registry/entries/model-gateway-c02-p1-existing-routing-touchpoints.json`
+- `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_IMPLEMENTATION_2026-06-14.md`
+- `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_WORKER_RETURN_2026-06-14.md`
+- `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_COMPLETION_2026-06-14.md`
+
+The two `docs/corpus-intelligence/` paths are reviewer-owned GC-051 closure
+coverage for the new governed source file, not Model Gateway runtime registry
+or legacy coverage index mutation.
 
 ## Required First Reads
 
@@ -452,22 +472,22 @@ Risk ceiling: R2 single-extension implementation.
 
 | Gate | Required evidence | Status |
 | --- | --- | --- |
-| Authorizations present | GC-018 baseline + operator authorization cited | PENDING |
-| Scope-limited mutation | `git diff --name-status` / `git status --short` show source/test changes only under `EXTENSIONS/CVF_MODEL_GATEWAY/`, and the only documentation change is the worker return under `docs/reviews/` | PENDING |
-| Backward compatibility | Existing `routing-policy.test.ts` assertions unchanged and passing | PENDING |
-| External consumer intact | `CVF_GUARD_CONTRACT` phase2b coherence test passes unedited | PENDING |
-| Contract version stable | `ROUTING_POLICY_CONTRACT_VERSION` unchanged; existing snapshot fields unchanged | PENDING |
-| New tests present | Capability, risk/cost, escalation, no-op, backward-compat cases added | PENDING |
-| Type check | Model Gateway / Guard Contract `npm run check` (or tsc) PASS | PENDING |
-| Test run | `npm test` (Vitest) PASS for affected packages; results recorded | PENDING |
-| GC-023 | No `.ts` file exceeds 1000 lines; near-advisory files split if applicable | PENDING |
-| No provider/live | No provider/API/live proof, model addition, package install, or secret read | PENDING |
-| Name collision avoided | New routing decision type does not collide with re-exported `PolicyDecision` | PENDING |
-| Agent Operation Trace Block | Expected and actual changed set recorded | PENDING |
-| Public Export Disposition | `DEFERRED_PRIVATE_ONLY` in worker return | PENDING |
-| Worker did not commit | HEAD unchanged from executionBaseHead | PENDING |
-| Diff hygiene | `git diff --check` PASS | PENDING |
-| Reviewer-fast | `python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast` PASS, or failure recorded with allowed-scope repair | PENDING |
+| Authorizations present | GC-018 baseline + operator authorization cited | PASS |
+| Scope-limited mutation | Source/test changes stayed under `EXTENSIONS/CVF_MODEL_GATEWAY/`; reviewer-owned docs and required GC-051 registry coverage were added for closure | PASS_AFTER_REVIEWER_REPAIR |
+| Backward compatibility | Existing routing behavior covered by exact minimal decision test and Guard Contract phase2b PASS | PASS |
+| External consumer intact | `CVF_GUARD_CONTRACT` phase2b coherence test passed unedited | PASS |
+| Contract version stable | `ROUTING_POLICY_CONTRACT_VERSION` unchanged; existing snapshot fields unchanged | PASS |
+| New tests present | Capability, risk/cost, fallbackChain, no-op/backward-compat cases added | PASS |
+| Type check | Model Gateway and Guard Contract `npm run check` PASS | PASS |
+| Test run | Model Gateway `npm test` PASS 21 files / 95 tests | PASS |
+| GC-023 | No touched `.ts` file exceeds 1000 lines | PASS |
+| No provider/live | No provider/API/live proof, model addition, package install, or secret read | PASS |
+| Name collision avoided | New routing decision type is `RoutingStageDecision`; no new `PolicyDecision` | PASS |
+| Agent Operation Trace Block | Expected and actual changed set recorded | PASS |
+| Public Export Disposition | `DEFERRED_PRIVATE_ONLY` in worker return and completion | PASS |
+| Worker did not commit | HEAD stayed `df018d50` through worker return | PASS |
+| Diff hygiene | `git diff --check` PASS | PASS |
+| Reviewer-fast | `python governance/compat/run_worker_return_fast_gate.py` PASS, including reviewer-fast 16/16 | PASS |
 
 ## Worker Autonomy / No-Question Rule
 
@@ -490,7 +510,7 @@ governance-kernel change, or a commit; or exceed P1 into P2/P3/strategy scope.
 | Backward compatible | Existing routing tests and guard-contract phase2b test pass unedited |
 | Pipeline implemented | Pluggable policy pipeline orchestrates existing fallback/quota/health primitives; no primitive reimplemented |
 | Version stable | `ROUTING_POLICY_CONTRACT_VERSION` and existing snapshot fields unchanged |
-| Single-extension boundary | Source/test changes only under `EXTENSIONS/CVF_MODEL_GATEWAY/`; the only documentation change is the worker return under `docs/reviews/` |
+| Single-extension boundary | Runtime/test changes only under `EXTENSIONS/CVF_MODEL_GATEWAY/`; reviewer-owned documentation and required GC-051 coverage may accompany closure |
 | Test coverage | New tests cover capability, risk/cost, escalation, no-op, and backward-compat |
 | GC-023 | No file exceeds hard threshold |
 | Public boundary | `DEFERRED_PRIVATE_ONLY` present |
@@ -506,12 +526,12 @@ reviewer-owned closure defects are repaired only within reviewer-owned scope.
 
 | Item | Closure owner | Status before worker return |
 | --- | --- | --- |
-| Source + tests implemented | Worker | PENDING |
-| Worker gates recorded | Worker | PENDING |
-| Reviewer closure artifact created | Reviewer | N/A before return |
-| Accepted artifacts committed | Reviewer | N/A before worker return |
-| Session continuity synced | Reviewer | N/A before worker return |
-| `MGW-001` row note (stays PARTIAL until P2/P3) | Reviewer | N/A before worker return |
+| Source + tests implemented | Worker | PASS |
+| Worker gates recorded | Worker | PASS |
+| Reviewer closure artifact created | Reviewer | PASS |
+| Accepted artifacts committed | Reviewer | PASS_AFTER_MATERIAL_COMMIT |
+| Session continuity synced | Reviewer | PASS_AFTER_SESSION_SYNC |
+| `MGW-001` row note (stays PARTIAL until P2/P3) | Reviewer | N/A with reason: no MGW registry row was in scope for P1 closure |
 
 ## Return-To-Orchestrator Conditions
 
@@ -530,12 +550,15 @@ lane.
 
 | Path | Owner | Required at handoff | Purpose |
 | --- | --- | --- | --- |
-| `EXTENSIONS/CVF_MODEL_GATEWAY/src/routing-policy.ts` (edit) | Worker | YES | Extended request/decision/snapshot + engine pipeline entry |
-| `EXTENSIONS/CVF_MODEL_GATEWAY/src/routing-policy-pipeline.ts` (new, recommended) | Worker | CONDITIONAL | Pluggable policy pipeline if extracted for GC-023/readability |
-| `EXTENSIONS/CVF_MODEL_GATEWAY/src/index.ts` (edit) | Worker | YES | New routing type exports |
-| `EXTENSIONS/CVF_MODEL_GATEWAY/tests/routing-policy.test.ts` (edit) or new test file | Worker | YES | New routing pipeline test coverage |
-| Worker return (suggested `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_WORKER_RETURN_2026-06-14.md`) | Worker | YES | Gate evidence and trace |
-| Reviewer closure artifact | Reviewer | NO | Closure conversion |
+| `EXTENSIONS/CVF_MODEL_GATEWAY/src/routing-policy.ts` | Worker | YES | Extended request/decision/snapshot + engine pipeline entry |
+| `EXTENSIONS/CVF_MODEL_GATEWAY/src/routing-policy-pipeline.ts` | Worker | YES | Pluggable policy pipeline extracted for GC-023/readability |
+| `EXTENSIONS/CVF_MODEL_GATEWAY/src/index.ts` | Worker | YES | New routing type exports |
+| `EXTENSIONS/CVF_MODEL_GATEWAY/tests/routing-policy.test.ts` | Worker | YES | New routing pipeline test coverage |
+| `docs/corpus-intelligence/registry/entries/model-gateway-c02-p1-routing-policy-pipeline-source.json` | Reviewer | YES | GC-051 coverage for new governed source file |
+| `docs/corpus-intelligence/registry/entries/model-gateway-c02-p1-existing-routing-touchpoints.json` | Reviewer | YES | GC-051 coverage for existing source/test paths cited by closure packets |
+| `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | Reviewer | YES | Regenerated GC-051 aggregate |
+| `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_WORKER_RETURN_2026-06-14.md` | Worker | YES | Gate evidence and trace |
+| `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_COMPLETION_2026-06-14.md` | Reviewer | YES | Closure conversion |
 
 ## Work-Order Fulfillment Manifest
 
@@ -553,23 +576,23 @@ lane.
 
 | Field | Evidence |
 | --- | --- |
-| Actor | Work order author (Claude, planning/authoring role) |
-| Provider or surface | Claude Code CLI / VSCode extension |
-| Session or invocation | dispatchBaseHead `5841ae43` |
+| Actor | Claude work-order author; Codex reviewer closure update |
+| Provider or surface | Claude Code CLI / VSCode extension; Codex CLI |
+| Session or invocation | dispatchBaseHead `89128582`; executionBaseHead `df018d50`; closureBaseHead `df018d50` |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | Read, Grep, Bash (git, rg, wc, find), Write (this work order) |
-| Target paths | this work order; `docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_2026-06-14.md`; worker artifact paths named in Required Artifact Manifest |
+| Command or tool surface | Read, Grep, Bash/PowerShell, `rg`, `git`, `npm`, `npx vitest`, governance gates, `apply_patch` |
+| Target paths | this work order; Model Gateway P1 source/tests; worker return; completion review; required GC-051 registry coverage |
 | Allowed scope source | Operator instruction 2026-06-14 to audit and author a detailed C-02 P1 implementation work order |
-| Before status evidence | HEAD `5841ae43`; clean worktree at authoring start |
-| After status evidence | one new untracked work order file created |
-| Diff evidence | documentation-only authoring; no `EXTENSIONS/` mutation by this authoring step |
-| Approval boundary | Authoring only; implementation requires fresh GC-018 + operator authorization before dispatch |
-| Claim boundary | Work order authoring; no implementation, runtime, provider, or public claim |
-| Agent type | Claude |
-| Invocation ID | `dispatchBaseHead=5841ae43` |
-| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_IMPLEMENTATION_2026-06-14.md`; `docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_2026-06-14.md` |
-| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_IMPLEMENTATION_2026-06-14.md`; `docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_2026-06-14.md` |
-| Manifest delta | MATCH -- work order dispatched and GC-018 baseline authored |
+| Before status evidence | dispatched work order committed; worker execution base `df018d50` |
+| After status evidence | P1 implementation and closure packet ready for material commit |
+| Diff evidence | `git status --short`; `git diff --check`; reviewer-fast; AOT gate |
+| Approval boundary | P1 implementation plus reviewer-owned closure and required GC-051 coverage repair |
+| Claim boundary | Work order authoring and bounded P1 closure; no provider/live/public/production claim |
+| Agent type | Claude and Codex |
+| Invocation ID | `closureBaseHead=df018d50` |
+| Expected manifest | `EXTENSIONS/CVF_MODEL_GATEWAY/src/routing-policy.ts`; `EXTENSIONS/CVF_MODEL_GATEWAY/src/routing-policy-pipeline.ts`; `EXTENSIONS/CVF_MODEL_GATEWAY/src/index.ts`; `EXTENSIONS/CVF_MODEL_GATEWAY/tests/routing-policy.test.ts`; `docs/corpus-intelligence/registry/entries/model-gateway-c02-p1-routing-policy-pipeline-source.json`; `docs/corpus-intelligence/registry/entries/model-gateway-c02-p1-existing-routing-touchpoints.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_IMPLEMENTATION_2026-06-14.md`; `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_WORKER_RETURN_2026-06-14.md`; `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_COMPLETION_2026-06-14.md` |
+| Actual changed set | `EXTENSIONS/CVF_MODEL_GATEWAY/src/routing-policy.ts`; `EXTENSIONS/CVF_MODEL_GATEWAY/src/routing-policy-pipeline.ts`; `EXTENSIONS/CVF_MODEL_GATEWAY/src/index.ts`; `EXTENSIONS/CVF_MODEL_GATEWAY/tests/routing-policy.test.ts`; `docs/corpus-intelligence/registry/entries/model-gateway-c02-p1-routing-policy-pipeline-source.json`; `docs/corpus-intelligence/registry/entries/model-gateway-c02-p1-existing-routing-touchpoints.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_IMPLEMENTATION_2026-06-14.md`; `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_WORKER_RETURN_2026-06-14.md`; `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_COMPLETION_2026-06-14.md` |
+| Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no protected path deleted or renamed; one new file created |
 
 ## Epistemic Process Block
@@ -599,6 +622,24 @@ Negative Search And Collision Discipline section.
 Claim Update: P1 is implementation-ready as a bounded, backward-compatible,
 single-extension tranche, contingent on a fresh GC-018 and operator
 authorization. P2/P3 and strategy-layer remain deferred.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_COMPLETION_2026-06-14.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | N/A with reason: P1 implementation was authorized by fresh GC-018 and this work order, not a parent roadmap closure | N/A with reason: no roadmap file changed | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | GC-051 aggregate drift check PASS | PASS |
+| Registry Markdown | N/A with reason: no markdown registry owner exists for this GC-051 source entry | BLOCKED with reason: JSON aggregate and per-entry source are the required registry surfaces | BLOCKED with reason |
+| External evidence digest | N/A with reason: repo-local source, tests, and governance gates only | N/A with reason: no external evidence used | N/A with reason |
+| System loop interlock | N/A with reason: no system-loop registry or interlock surface changed | N/A with reason: Model Gateway P1 routing did not change interlock registry | N/A with reason |
+| Session continuity | `AGENT_HANDOFF_V18_2026-06-12.md` | Dedicated handoff sync follows material commit if active-state gate requires it | PASS |
+| Worker return reviewed | `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_WORKER_RETURN_2026-06-14.md` | Worker return status `COMPLETE_PENDING_REVIEW`; reviewer completion accepted | PASS |
+| Source implementation | Model Gateway P1 source/tests named in Required Artifact Manifest | Model Gateway check/test evidence recorded in completion review | PASS |
+| Public export disposition recorded | this file | `DEFERRED_PRIVATE_ONLY` | PASS |
+| Runtime/provider/live proof | N/A with reason: no provider/API/live behavior claim authorized or made | N/A_WITH_REASON | N/A with reason |
+| Public-sync | N/A with reason: private provenance implementation only | N/A_WITH_REASON | N/A with reason |
 
 ## Finding-To-Governance Learning Disposition
 

@@ -251,12 +251,24 @@ export type {
   RoutingDecision,
   RoutingPolicyContractSnapshot,
   RoutingRequest,
+  RoutingStageDecision,
 } from "./routing-policy";
 export {
   buildRoutingPolicyContractSnapshot,
   ROUTING_POLICY_CONTRACT_VERSION,
   RoutingPolicyEngine,
 } from "./routing-policy";
+export type {
+  RoutingCandidate,
+  RoutingPolicyPipelineRequest,
+  RoutingPolicyPipelineResult,
+} from "./routing-policy-pipeline";
+export {
+  collectAppliedRoutingPolicies,
+  modelSupportsRequiredCapabilities,
+  runRoutingPolicyPipeline,
+  selectCandidateModel,
+} from "./routing-policy-pipeline";
 
 export const MODEL_GATEWAY_WRAPPER = {
   executionClass: "wrapper/re-export merge",
