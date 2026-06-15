@@ -75,7 +75,11 @@ Authorized guard-maintenance scope: this file is the active handoff. Codex may
 update this handoff and session front-door state after Session-Sync Pack
 Builder And Authorization Manifest material commit `a5e91d4b` to record
 `CLOSED_PASS_BOUNDED`, preserve the prior bounded closures, and route the next
-allowed move to foundation-roadmap selection.
+allowed move to foundation-roadmap selection. This scope also covers a
+follow-up session-state drift fix bringing `currentMode` and `previousMode` in
+`ACTIVE_SESSION_STATE_CORE.json` into agreement with the front-door and handoff
+mode markers (`session_sync_pack_builder_closed_next_roadmap`), regenerating the
+`ACTIVE_SESSION_STATE.json` aggregate.
 
 Protected paths:
 
