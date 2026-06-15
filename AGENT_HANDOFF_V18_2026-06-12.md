@@ -28,11 +28,11 @@ Startup acknowledged: current mode=`model_gateway_c02_p1_routing_pipeline_closed
 
 ## Current Mode
 
-`model_gateway_c02_p1_routing_pipeline_closed_bounded`
+`model_gateway_c02_p2_roadmap_ready`
 
-Current HEAD recorded for this handoff: `00b96357`
-(Model Gateway C-02 P1 routing pipeline handoff-sync commit; this dedicated
-front-door/state sync follows).
+Current HEAD recorded for this handoff: `aa9e0550`
+(Model Gateway C-02 P2 Dynamic Model Registry Boundary roadmap commit;
+prior sync commit `6e520351`, prior material commit `00b96357`).
 
 ## Active Boundary
 

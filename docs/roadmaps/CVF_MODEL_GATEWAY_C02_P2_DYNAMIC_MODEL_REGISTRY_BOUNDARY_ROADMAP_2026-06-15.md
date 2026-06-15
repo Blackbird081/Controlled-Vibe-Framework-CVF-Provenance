@@ -345,14 +345,35 @@ Additive-only surfaces:
 
 ## Verification
 
-Pre-closure autorun gate: `python governance/compat/run_local_governance_hook_chain.py
---hook pre-commit` must pass on the closure commit range.
+Two distinct gate runs are required:
+
+**Pre-closure autorun gate (closure evidence):**
+
+```sh
+python governance/compat/run_agent_autorun_workflow_gate.py \
+  --phase pre-closure --base <dispatchBaseHead> --head HEAD
+```
+
+Must PASS on the material closure commit range before the completion review
+can declare ACCEPT. This is the governed closure gate, not the commit hook.
+
+**Pre-commit hook (commit gate):**
+
+```sh
+python governance/compat/run_local_governance_hook_chain.py --hook pre-commit
+```
+
+Runs automatically at every `git commit`. Passes are necessary but not
+sufficient for closure -- the pre-closure autorun gate is the authoritative
+closure evidence.
 
 Evidence artifacts:
 
 - Worker return at D7 confirms AC1-AC7 with source line evidence.
-- Completion review at D8 verifies worker return evidence and closes the tranche.
+- Completion review at D8 verifies worker return, records pre-closure autorun
+  gate result, and closes the tranche.
 - Reviewer runs `npm test` in `EXTENSIONS/CVF_MODEL_GATEWAY/` and records pass/fail.
 
 Closure is `CLOSED_PASS_BOUNDED` when completion review disposition is ACCEPT
-or ACCEPT_AFTER_REVIEWER_REPAIR and all autorun gates pass.
+or ACCEPT_AFTER_REVIEWER_REPAIR, pre-closure autorun gate PASS on the material
+range, and pre-commit hook PASS on the closure commit.
