@@ -1,0 +1,5 @@
+{
+  "stateOrder": 395,
+  "stateKey": "agentDispatchPromptEnvelopeStandardizationDispatch20260615",
+  "value": "DISPATCHED_TO_CLAUDE at dispatch commit c0c72317. Codex authored roadmap docs/roadmaps/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARDIZATION_ROADMAP_2026-06-15.md, GC-018 baseline docs/baselines/CVF_GC018_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARDIZATION_2026-06-15.md, and work order docs/work_orders/CVF_AGENT_WORK_ORDER_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARDIZATION_FOR_CLAUDE_2026-06-15.md. Scope is authoring-time governance foundation only: create the dispatch prompt envelope standard, update the work-order template, add a machine checker with tests, wire dispatch-author fast gate, and author completion review. Worker must not commit; reviewer/closer is Codex. Worker should capture current HEAD at execution start as actual executionBaseHead while preserving dispatchBaseHead 4895bca3 as packet authoring base."
+}

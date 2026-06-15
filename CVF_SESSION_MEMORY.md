@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-15
 
-Current mode marker: `model_gateway_c02_p4b_b_t2_closed_dispatch_prompt_envelope_next`
+Current mode marker: `agent_dispatch_prompt_envelope_standardization_dispatched_to_claude`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `model_gateway_c02_p4b_b_t2_closed_dispatch_prompt_envelope_next`.
+Current mode: `agent_dispatch_prompt_envelope_standardization_dispatched_to_claude`.
 
 Active handoff:
 
@@ -62,23 +62,30 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-Model Gateway C-02 P4B-B Live Proof T2 is `CLOSED_PASS_BOUNDED`.
+Agent Dispatch Prompt Envelope Standardization is `DISPATCHED_TO_CLAUDE`.
 
-Material commit: `d15f973e` (executionBaseHead `d46ccd83`).
+Dispatch commit: `c0c72317` (dispatchBaseHead `4895bca3`).
 
 Artifacts:
 
+- Roadmap:
+  `docs/roadmaps/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARDIZATION_ROADMAP_2026-06-15.md`
+- GC-018:
+  `docs/baselines/CVF_GC018_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARDIZATION_2026-06-15.md`
 - Work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P4B_B_LIVE_PROOF_T2_FOR_CLAUDE_2026-06-15.md`
-- Completion review:
-  `docs/reviews/CVF_MODEL_GATEWAY_C02_P4B_B_LIVE_PROOF_T2_COMPLETION_2026-06-15.md`
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARDIZATION_FOR_CLAUDE_2026-06-15.md`
 
-Result: One selected live provider path completed through the governed bridge.
-DeepSeek `deepseek-chat` returned receipt `gw_20260615155616612_f0mwl515`
-with `admissionStatus=admitted`; Alibaba `qwen-turbo` reached provider but
-returned HTTP 401 and remains a parked credential follow-up. Model Gateway tests
-PASS 29 files / 214 tests. Reviewer-fast PASS. No provider preference,
-production readiness, or public readiness is claimed.
+Result: Codex authored and committed the foundation roadmap, GC-018, and Claude
+work order. Claude is assigned as worker under `WORKER_MUST_NOT_COMMIT`.
+The work is authoring-time governance only: dispatch prompt envelope standard,
+template update, checker and tests, fast-gate wiring, and completion review.
+Claude should record the actual executionBaseHead as the current HEAD at worker
+start; `4895bca3` remains the dispatch packet authoring base.
+
+Previous closure: Model Gateway C-02 P4B-B Live Proof T2 is
+`CLOSED_PASS_BOUNDED` at material commit `d15f973e` with DeepSeek
+`deepseek-chat` receipt `gw_20260615155616612_f0mwl515`; Alibaba `qwen-turbo`
+is parked as a credential follow-up after HTTP 401.
 Long historical continuity remains in the compaction archive.
 
 Prior closed tranche (pointer):
@@ -133,18 +140,18 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `model_gateway_c02_p4b_b_t2_closed_dispatch_prompt_envelope_next`.
+Mode: `agent_dispatch_prompt_envelope_standardization_dispatched_to_claude`.
 
-Next move: author a CVF foundation roadmap and Claude work order for Agent
-Dispatch Prompt Envelope standardization so multi-agent and single-agent
-multi-role handoffs carry a short runtime cover note without replacing the
-canonical work order.
+Next move: Claude executes
+`docs/work_orders/CVF_AGENT_WORK_ORDER_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARDIZATION_FOR_CLAUDE_2026-06-15.md`
+under `WORKER_MUST_NOT_COMMIT`. Codex reviews and commits only after worker
+return.
 
-No provider/API call, credential/network use, provider/model addition, EPF
-wiring, Strategy Layer implementation, AI Gateway absorption, public-sync,
-external app mutation, raw memory release, co-work product development,
-production readiness, or public readiness is authorized without fresh operator
-authorization.
+No provider/API call, credential/network use, provider/model addition, runtime
+behavior mutation, EPF wiring, Strategy Layer implementation, AI Gateway
+absorption, public-sync, external app mutation, raw memory release, co-work
+product development, production readiness, or public readiness is authorized
+without fresh operator authorization.
 
 LHW24 remains the latest closed numbered LHW wave.
 

@@ -24,14 +24,15 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`model_gateway_c02_p4b_b_t2_closed_dispatch_prompt_envelope_next`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=author CVF foundation roadmap and Claude work order for Agent Dispatch Prompt Envelope standardization; parked checkpoint=Alibaba second-provider parity pending valid DashScope credential, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
+Startup acknowledged: current mode=`agent_dispatch_prompt_envelope_standardization_dispatched_to_claude`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=Claude executes the Agent Dispatch Prompt Envelope Standardization work order under `WORKER_MUST_NOT_COMMIT`; parked checkpoint=Alibaba second-provider parity pending valid DashScope credential, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
 
 ## Current Mode
 
-`model_gateway_c02_p4b_b_t2_closed_dispatch_prompt_envelope_next`
+`agent_dispatch_prompt_envelope_standardization_dispatched_to_claude`
 
-Current HEAD recorded for this handoff: `d15f973e`
-(Model Gateway C-02 P4B-B Live Proof T2 material commit; Dispatch packet
+Current HEAD recorded for this handoff: `c0c72317`
+(Agent Dispatch Prompt Envelope Standardization dispatch commit; Model Gateway
+C-02 P4B-B Live Proof T2 material commit `d15f973e`; Dispatch packet
 authoring guard hardening material commit `bf3f3419`; P4B-B live proof
 packet recorded as draft negative sample at `de515c11`; prior Model Gateway
 C-02 P4B-B concrete provider live proof roadmap commit `9c02da8c`;
@@ -67,10 +68,10 @@ requires separate authorization.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: this file is the active handoff. Codex may
-update this handoff and session front-door state after Model Gateway C-02 P4B-B
-T2 material commit `d15f973e` to record bounded live-proof closure, park Alibaba
-second-provider parity as a credential follow-up, and route the next foundation
-move to Agent Dispatch Prompt Envelope standardization.
+update this handoff and session front-door state after Agent Dispatch Prompt
+Envelope Standardization dispatch commit `c0c72317` to record dispatch-to-Claude
+status, preserve the P4B-B T2 bounded live-proof closure, and route the next
+foundation move to Claude execution under `WORKER_MUST_NOT_COMMIT`.
 
 Protected paths:
 
@@ -87,14 +88,17 @@ Protected paths:
 - `CVF_SESSION/state/entries/modelGatewayC02P5AdapterAdmissionClosure20260615.json`
 - `CVF_SESSION/state/entries/modelGatewayC02P5CBridgeAdmissionBoundaryClosure20260615.json`
 - `CVF_SESSION/state/entries/modelGatewayC02P4BBLiveProofT2Closure20260615.json`
+- `CVF_SESSION/state/entries/agentDispatchPromptEnvelopeStandardizationDispatch20260615.json`
 - `AGENT_HANDOFF_V19_2026-06-15.md`
 
 Operator authorization: operator authorized P4B-B live proof using existing
 available API keys, then asked Codex to process the worker return, audit next
-roadmap, and issue the next Claude work order.
+roadmap, issue the next Claude work order, and continue after the dispatch
+packet was authored.
 
 Rollback boundary: if session-sync gates fail, revert only this session-sync
-batch. Do not revert P4B-B T2 material commit `d15f973e`, P5-C session-sync
+batch. Do not revert Agent Dispatch Prompt Envelope dispatch commit `c0c72317`,
+P4B-B T2 material commit `d15f973e`, P5-C session-sync
 commit `5d1c8273`, P5-C material commit `b7a88782`, P5 material closure commit
 `a4907f2c`, P5 dispatch commit
 `f26afe68`, P5 roadmap commit
@@ -168,12 +172,19 @@ defect. Model Gateway tests PASS 29 files / 214 tests. Reviewer-fast PASS.
 No provider preference, ranking, broad adapter support, production readiness,
 or public readiness is claimed.
 
-Next move: author a CVF foundation roadmap and Claude work order for Agent
-Dispatch Prompt Envelope standardization so multi-agent and single-agent
-multi-role handoffs carry a short runtime cover note without replacing the
-canonical work order.
+Agent Dispatch Prompt Envelope Standardization is `DISPATCHED_TO_CLAUDE` at
+dispatch commit `c0c72317` (dispatchBaseHead `4895bca3`). Codex authored:
 
-Current mode: `model_gateway_c02_p4b_b_t2_closed_dispatch_prompt_envelope_next`.
+- `docs/roadmaps/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARDIZATION_ROADMAP_2026-06-15.md`
+- `docs/baselines/CVF_GC018_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARDIZATION_2026-06-15.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARDIZATION_FOR_CLAUDE_2026-06-15.md`
+
+Next move: Claude executes the work order under `WORKER_MUST_NOT_COMMIT`.
+Claude should record the actual executionBaseHead as the current HEAD at worker
+start; `4895bca3` remains the dispatch packet authoring base. Codex reviews and
+commits after worker return.
+
+Current mode: `agent_dispatch_prompt_envelope_standardization_dispatched_to_claude`.
 
 ## Latest Closed LHW Wave
 
