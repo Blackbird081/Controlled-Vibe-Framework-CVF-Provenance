@@ -24,16 +24,17 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`session_continuity_rotation_guard_hardening_dispatched`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=Claude executes `docs/work_orders/CVF_AGENT_WORK_ORDER_SESSION_CONTINUITY_ROTATION_GUARD_HARDENING_FOR_CLAUDE_2026-06-15.md` under WORKER_MUST_NOT_COMMIT; parked checkpoint=P4B provider/live-proof, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond closed P3/P4A scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
+Startup acknowledged: current mode=`model_gateway_c02_p4b_a_dispatched`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=Claude executes `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P4B_A_PROVIDER_EXECUTION_BRIDGE_FOR_CLAUDE_2026-06-15.md` under WORKER_MUST_NOT_COMMIT; parked checkpoint=P4B-B concrete provider wiring/live proof, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
 
 ## Current Mode
 
-`session_continuity_rotation_guard_hardening_dispatched`
+`model_gateway_c02_p4b_a_dispatched`
 
-Current HEAD recorded for this handoff: `f74a1ec8`
-(Session Continuity Rotation Guard Hardening implementation and reviewer
-completion material commit; prior dispatch/continuity sync commit `5500d429`;
-prior Model Gateway C-02 P3/P4A material implementation commit `5d46bc62`.)
+Current HEAD recorded for this handoff: `2181b072`
+(Model Gateway C-02 P4B-A dispatch material commit; prior Session Continuity
+Rotation Guard Hardening implementation and reviewer completion material
+commit `f74a1ec8`; prior Model Gateway C-02 P3/P4A material implementation
+commit `5d46bc62`.)
 
 ## Active Boundary
 
@@ -52,10 +53,10 @@ requires separate authorization.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: this file is the active handoff. Codex
-(reviewer) may update session continuity files after Session Front Door Rotation
-And Continuity Compaction closure so the active front door, generated state
-aggregate, state source files, and active handoff point to the latest compaction
-state.
+(orchestrator/reviewer) may update session continuity files after the P4B-A
+dispatch commit so the active front door, generated state aggregate, state
+source files, and active handoff point to the authorized deterministic worker
+move while preserving the P4B-B live-proof hold.
 
 Protected paths:
 
@@ -66,10 +67,14 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `AGENT_HANDOFF_V19_2026-06-15.md`
 
-Rollback boundary: if session-sync gates fail, revert only this compaction
-batch. Do not revert Model Gateway C-02 P3/P4A material closure commit
-`5d46bc62`, commit steward hardening commit `a31f32a9`, or latency hardening
-commits `83fbb6a4`/`c7d3d955`.
+Operator authorization: operator instructed Codex on 2026-06-15 to repair the
+roadmap and prepare the Claude execution packet; this session-sync records the
+resulting bounded P4B-A dispatch without releasing P4B-B live proof.
+
+Rollback boundary: if session-sync gates fail, revert only this session-sync
+batch. Do not revert P4B-A dispatch commit `2181b072`, Model Gateway C-02
+P3/P4A material closure commit `5d46bc62`, or Session Continuity Rotation
+Guard Hardening commit `f74a1ec8`.
 
 ## Latest Continuity Note
 
@@ -102,16 +107,22 @@ Artifacts (pointer only -- full list in V18 archive):
 - P3 completion: `docs/reviews/CVF_MODEL_GATEWAY_C02_P3_UNIFIED_GATEWAY_INTERFACE_COMPLETION_2026-06-15.md`
 - P4A completion: `docs/reviews/CVF_MODEL_GATEWAY_C02_P4A_UNIFIED_GATEWAY_RUNTIME_SKELETON_COMPLETION_2026-06-15.md`
 
-Next move: Claude executes
-`docs/work_orders/CVF_AGENT_WORK_ORDER_SESSION_CONTINUITY_ROTATION_GUARD_HARDENING_FOR_CLAUDE_2026-06-15.md`
-under WORKER_MUST_NOT_COMMIT, then returns `COMPLETE_PENDING_REVIEW` for Codex
-review. P4B live-provider wiring remains parked until fresh authorization,
-fresh GC-018, source-verified work order, live-run diagnostic discipline, and
-explicit credential boundary. P4A does not authorize provider/API use,
-provider/model addition, EPF wiring, strategy-layer implementation, AI Gateway
-absorption, public-sync, production readiness, or public readiness.
+Session Continuity Rotation Guard Hardening is `CLOSED_PASS_BOUNDED`.
 
-Current mode: `session_continuity_rotation_guard_hardening_dispatched`.
+Next move: Claude executes
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P4B_A_PROVIDER_EXECUTION_BRIDGE_FOR_CLAUDE_2026-06-15.md`
+under WORKER_MUST_NOT_COMMIT, then returns `COMPLETE_PENDING_REVIEW` for Codex
+review. Dispatch commit: `2181b072`.
+
+P4B-A authorizes only the provider-neutral injected adapter bridge,
+deterministic tests, additive export, GC-051 coverage, and worker-return
+evidence named by the work order. P4B-B concrete provider wiring and live proof
+remain `HOLD_PENDING_EXPLICIT_LIVE_CREDENTIAL_AUTHORIZATION`. No provider/API
+call, credential/network use, provider/model addition, EPF wiring,
+strategy-layer implementation, AI Gateway absorption, public-sync, production
+readiness, or public readiness is authorized.
+
+Current mode: `model_gateway_c02_p4b_a_dispatched`.
 
 ## Latest Closed LHW Wave
 
@@ -133,6 +144,10 @@ Session Continuity Rotation Guard Hardening -- DISPATCHED_UNDER_WORKER_MUST_NOT_
 Roadmap, GC-018, and Claude work order authored to make stale non-active root
 handoffs a machine-check failure.
 
+Model Gateway C-02 P4B-A Provider Execution Bridge --
+DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT at commit `2181b072`. P4B-B concrete
+provider wiring and live proof remain on explicit hold.
+
 ## Parked Lanes
 
 All parked lanes from V18 remain unchanged. Pointer:
@@ -147,7 +162,8 @@ Summary (not expanded here):
 3. External receipt-anchor provider -- PARKED_PENDING_OPERATOR_DECISION
 4. AI Gateway family absorption -- PARKED_PENDING_PRIVACY_OPERATOR_AUTHORIZATION
 5. Strategy Layer implementation -- DEFERRED_REQUIRES_SEPARATE_GC018
-6. Model Gateway C-02 P4B live-provider wiring -- PARKED_PENDING_P4B_AUTHORIZATION
+6. Model Gateway C-02 P4B-B live proof --
+   HOLD_PENDING_EXPLICIT_LIVE_CREDENTIAL_AUTHORIZATION
 7. DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR, T12 -- parked
 
 ## Claim Boundary

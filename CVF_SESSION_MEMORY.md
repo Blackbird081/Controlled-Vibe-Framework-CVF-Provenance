@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-15
 
-Current mode marker: `session_continuity_rotation_guard_hardening_dispatched`
+Current mode marker: `model_gateway_c02_p4b_a_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `session_continuity_rotation_guard_hardening_dispatched`.
+Current mode: `model_gateway_c02_p4b_a_dispatched`.
 
 Active handoff:
 
@@ -92,13 +92,15 @@ Completion reviews:
 - `docs/reviews/CVF_MODEL_GATEWAY_C02_P3_UNIFIED_GATEWAY_INTERFACE_COMPLETION_2026-06-15.md`
 - `docs/reviews/CVF_MODEL_GATEWAY_C02_P4A_UNIFIED_GATEWAY_RUNTIME_SKELETON_COMPLETION_2026-06-15.md`
 
+Session Continuity Rotation Guard Hardening is `CLOSED_PASS_BOUNDED`.
+
 Next move: Claude executes
-`docs/work_orders/CVF_AGENT_WORK_ORDER_SESSION_CONTINUITY_ROTATION_GUARD_HARDENING_FOR_CLAUDE_2026-06-15.md`
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P4B_A_PROVIDER_EXECUTION_BRIDGE_FOR_CLAUDE_2026-06-15.md`
 under WORKER_MUST_NOT_COMMIT, then returns `COMPLETE_PENDING_REVIEW` for Codex
-review. This guard-hardening batch is limited to active-session machine guard
-logic and tests. Model Gateway C-02 P4B live-provider wiring remains parked
-until fresh operator authorization, fresh GC-018, source-verified work order,
-live-run diagnostic discipline, and explicit credential boundary.
+review. Dispatch commit: `2181b072`.
+
+P4B-A is deterministic and provider-neutral. P4B-B concrete provider wiring
+and live proof remain `HOLD_PENDING_EXPLICIT_LIVE_CREDENTIAL_AUTHORIZATION`.
 
 Earlier closed tranches (pointer only):
 
@@ -116,10 +118,10 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `session_continuity_rotation_guard_hardening_dispatched`.
+Mode: `model_gateway_c02_p4b_a_dispatched`.
 
 Next move: Claude executes
-`docs/work_orders/CVF_AGENT_WORK_ORDER_SESSION_CONTINUITY_ROTATION_GUARD_HARDENING_FOR_CLAUDE_2026-06-15.md`
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P4B_A_PROVIDER_EXECUTION_BRIDGE_FOR_CLAUDE_2026-06-15.md`
 under WORKER_MUST_NOT_COMMIT, then returns `COMPLETE_PENDING_REVIEW` for Codex
 review.
 
@@ -132,7 +134,8 @@ Parked lanes:
 3. External receipt-anchor provider: `PARKED_PENDING_OPERATOR_DECISION`
 4. AI Gateway family absorption: `PARKED_PENDING_PRIVACY_OPERATOR_AUTHORIZATION`
 5. Strategy Layer implementation: `DEFERRED_REQUIRES_SEPARATE_GC018`
-6. Model Gateway C-02 P4B: `PARKED_PENDING_P4B_AUTHORIZATION`
+6. Model Gateway C-02 P4B-B live proof:
+   `HOLD_PENDING_EXPLICIT_LIVE_CREDENTIAL_AUTHORIZATION`
 7. DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, T12: `PARKED`
 
 ## Active Rule Additions
