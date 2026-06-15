@@ -6,7 +6,7 @@ rawMemoryReleased: false
 
 Date: 2026-06-15
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Worker: Claude
 
@@ -20,7 +20,7 @@ dispatchBaseHead: 1baba8c9
 
 executionBaseHead: WORKER_MUST_CAPTURE_AFTER_DISPATCH
 
-closureBaseHead: REVIEWER_CAPTURE_AFTER_WORKER_RETURN
+closureBaseHead: 8d8f0871
 
 riskCeiling: R1_BOUNDED_NO_NETWORK
 
@@ -414,15 +414,28 @@ Reviewer conversion steps:
 
 ## Closure Checklist
 
-- [ ] Claude captured execution base head
-- [ ] Source verification refreshed against execution head
-- [ ] Allowed scope respected
-- [ ] Forbidden scope avoided
-- [ ] AC1-AC10 satisfied
-- [ ] GC-051 entries and aggregate align
-- [ ] Negative searches recorded
-- [ ] Worker return includes required proof literals
-- [ ] Worker leaves all artifacts uncommitted
+- [x] Claude captured execution base head
+- [x] Source verification refreshed against execution head
+- [x] Allowed scope respected
+- [x] Forbidden scope avoided
+- [x] AC1-AC10 satisfied
+- [x] GC-051 entries and aggregate align
+- [x] Negative searches recorded
+- [x] Worker return includes required proof literals
+- [x] Worker leaves all artifacts uncommitted
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MODEL_GATEWAY_C02_P4C_PROVIDER_ADAPTER_CONTRACT_CONFORMANCE_COMPLETION_2026-06-15.md` | independent reviewer closure | PASS |
+| Roadmap state | `docs/roadmaps/CVF_MODEL_GATEWAY_C02_P4C_PROVIDER_ADAPTER_CONTRACT_CONFORMANCE_ROADMAP_2026-06-15.md` | P4C closed; P4B-B not released without separate operator authorization | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated GC-051 aggregate includes P4C source and tests | PASS |
+| Registry Markdown | no matching governed Markdown registry surface | JSON is canonical for this registration; Markdown addition was outside allowed scope | BLOCKED with reason |
+| External evidence digest | no external evidence consumed | repo-local source, tests, and governance evidence only | N/A with reason |
+| System loop interlock | no system-loop mutation authorized | deterministic Model Gateway conformance only | N/A with reason |
+| Session continuity | dedicated session-sync commit after material closure | excluded from exact-manifest closure commit by commit steward protocol | N/A with reason |
 
 ## Operator Checkpoint
 
@@ -437,20 +450,20 @@ risk/claim boundary.
 |---|---|
 | Actor | Codex orchestrator |
 | Provider or surface | Codex local workspace |
-| Session or invocation | 2026-06-15 P4C dispatch |
+| Session or invocation | 2026-06-15 P4C closure |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | source inspection, apply_patch, governance gates |
-| Target paths | P4C roadmap, GC-018, and Claude work order |
+| Target paths | P4C work order and completion review |
 | Allowed scope source | operator instruction 2026-06-15 |
-| Before status evidence | HEAD `1baba8c9`; P4B-A closed; P4B-B held |
-| After status evidence | P4C dispatch packet ready |
-| Diff evidence | pre-dispatch range `1baba8c9..HEAD` |
+| Before status evidence | material commit `8d8f0871`; P4B-A closed; P4B-B held |
+| After status evidence | P4C work order and completion review closed |
+| Diff evidence | material range `b692273c..8d8f0871` and closure-doc diff |
 | Approval boundary | provider-agnostic deterministic conformance only |
 | Claim boundary | no live provider, credential use, quota spend, provider preference, or public claim |
 | Agent type | Codex orchestrator |
-| Invocation ID | `p4c-provider-adapter-conformance-dispatch-2026-06-15` |
-| Expected manifest | `docs/roadmaps/CVF_MODEL_GATEWAY_C02_P4C_PROVIDER_ADAPTER_CONTRACT_CONFORMANCE_ROADMAP_2026-06-15.md`; `docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P4C_PROVIDER_ADAPTER_CONTRACT_CONFORMANCE_2026-06-15.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P4C_PROVIDER_ADAPTER_CONTRACT_CONFORMANCE_FOR_CLAUDE_2026-06-15.md` |
-| Actual changed set | `docs/roadmaps/CVF_MODEL_GATEWAY_C02_P4C_PROVIDER_ADAPTER_CONTRACT_CONFORMANCE_ROADMAP_2026-06-15.md`; `docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P4C_PROVIDER_ADAPTER_CONTRACT_CONFORMANCE_2026-06-15.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P4C_PROVIDER_ADAPTER_CONTRACT_CONFORMANCE_FOR_CLAUDE_2026-06-15.md` |
+| Invocation ID | `p4c-provider-adapter-conformance-closure-2026-06-15` |
+| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P4C_PROVIDER_ADAPTER_CONTRACT_CONFORMANCE_FOR_CLAUDE_2026-06-15.md`; `docs/reviews/CVF_MODEL_GATEWAY_C02_P4C_PROVIDER_ADAPTER_CONTRACT_CONFORMANCE_COMPLETION_2026-06-15.md` |
+| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P4C_PROVIDER_ADAPTER_CONTRACT_CONFORMANCE_FOR_CLAUDE_2026-06-15.md`; `docs/reviews/CVF_MODEL_GATEWAY_C02_P4C_PROVIDER_ADAPTER_CONTRACT_CONFORMANCE_COMPLETION_2026-06-15.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
