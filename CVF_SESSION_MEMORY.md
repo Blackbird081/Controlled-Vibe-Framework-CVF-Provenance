@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-15
 
-Current mode marker: `model_gateway_c02_p4b_a_closed_p4b_b_hold`
+Current mode marker: `model_gateway_c02_p4c_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `model_gateway_c02_p4b_a_closed_p4b_b_hold`.
+Current mode: `model_gateway_c02_p4c_dispatched`.
 
 Active handoff:
 
@@ -98,7 +98,12 @@ Model Gateway C-02 P4B-A is `CLOSED_PASS_BOUNDED` at material commit
 `3c5b1d3d` after Codex reviewer repair. The bridge is deterministic and
 provider-neutral; Model Gateway tests pass 25 files / 154 tests.
 
-Next move: audit and select the next high-foundation-value roadmap. P4B-B
+Model Gateway C-02 P4C Provider Adapter Contract Conformance is dispatched at
+commit `10b9626b` for Claude execution under `WORKER_MUST_NOT_COMMIT`.
+P4C is provider-agnostic: Alibaba and DeepSeek are sample/current live-run
+providers only, not canonical product scope.
+
+Next move: await Claude `COMPLETE_PENDING_REVIEW` worker return for P4C. P4B-B
 concrete provider wiring and live proof remain
 `HOLD_PENDING_EXPLICIT_LIVE_CREDENTIAL_AUTHORIZATION`.
 
@@ -118,10 +123,11 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `model_gateway_c02_p4b_a_closed_p4b_b_hold`.
+Mode: `model_gateway_c02_p4c_dispatched`.
 
-Next move: audit and select the next high-foundation-value roadmap without
-entering a narrow use case.
+Next move: Claude worker return for Model Gateway C-02 P4C provider-agnostic
+adapter contract conformance only. Codex owns review, allowed repairs,
+completion evidence, committed-range gates, final commit, and session sync.
 
 LHW24 remains the latest closed numbered LHW wave.
 

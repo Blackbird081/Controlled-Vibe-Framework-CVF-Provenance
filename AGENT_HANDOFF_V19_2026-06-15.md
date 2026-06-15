@@ -24,16 +24,17 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`model_gateway_c02_p4b_a_closed_p4b_b_hold`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=audit and select the next high-foundation-value roadmap; parked checkpoint=P4B-B concrete provider wiring/live proof, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
+Startup acknowledged: current mode=`model_gateway_c02_p4c_dispatched`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=Claude worker return for Model Gateway C-02 P4C provider-agnostic adapter contract conformance; parked checkpoint=P4B-B concrete provider wiring/live proof, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
 
 ## Current Mode
 
-`model_gateway_c02_p4b_a_closed_p4b_b_hold`
+`model_gateway_c02_p4c_dispatched`
 
-Current HEAD recorded for this handoff: `a21f3e65`
-(Model Gateway C-02 P4B-A closure-doc commit; session-sync commit `ddc28dc8`;
-material implementation commit `3c5b1d3d`; dispatch commit `2181b072`; prior
-Model Gateway C-02 P3/P4A material implementation commit `5d46bc62`.)
+Current HEAD recorded for this handoff: `10b9626b`
+(Model Gateway C-02 P4C dispatch commit; P4B-A closure-doc commit `a21f3e65`;
+session-sync commit `ddc28dc8`; material implementation commit `3c5b1d3d`;
+P4B-A dispatch commit `2181b072`; prior Model Gateway C-02 P3/P4A material
+implementation commit `5d46bc62`.)
 
 ## Active Boundary
 
@@ -52,9 +53,8 @@ requires separate authorization.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: this file is the active handoff. Codex may
-update this handoff after P4B-A closure-doc commit `a21f3e65` so GC-020 records
-the accepted parent-marker handoff-sync boundary while preserving the P4B-B
-live-proof hold.
+update this handoff after P4C dispatch commit `10b9626b` so GC-020 records the
+accepted dispatch boundary while preserving the P4B-B live-proof hold.
 
 Protected paths:
 
@@ -64,6 +64,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/modelGatewayC02P4BAProviderExecutionBridgeClosure20260615.json`
+- `CVF_SESSION/state/entries/modelGatewayC02P4CProviderAdapterConformanceDispatch20260615.json`
 - `AGENT_HANDOFF_V19_2026-06-15.md`
 
 Operator authorization: operator authorized Codex repair and Claude execution
@@ -71,9 +72,10 @@ on 2026-06-15; this reviewer closure sync records the completed bounded P4B-A
 work without releasing P4B-B live proof.
 
 Rollback boundary: if handoff-sync gates fail, revert only this handoff-sync
-batch. Do not revert P4B-A closure-doc commit `a21f3e65`, session-sync commit
-`ddc28dc8`, material commit `3c5b1d3d`, dispatch commit `2181b072`, or Model
-Gateway C-02 P3/P4A material closure commit `5d46bc62`.
+batch. Do not revert P4C dispatch commit `10b9626b`, P4B-A closure-doc commit
+`a21f3e65`, session-sync commit `ddc28dc8`, material commit `3c5b1d3d`,
+dispatch commit `2181b072`, or Model Gateway C-02 P3/P4A material closure
+commit `5d46bc62`.
 
 ## Latest Continuity Note
 
@@ -113,14 +115,19 @@ Model Gateway C-02 P4B-A is `CLOSED_PASS_BOUNDED` at closure-doc commit
 Codex added adapter identity enforcement, corrected worker evidence, and
 verified 25 files / 154 tests.
 
-Next move: audit and select the next high-foundation-value roadmap. P4B-B
+Model Gateway C-02 P4C Provider Adapter Contract Conformance is dispatched at
+commit `10b9626b` for Claude execution under `WORKER_MUST_NOT_COMMIT`.
+P4C is provider-agnostic: Alibaba and DeepSeek are sample/current live-run
+providers only, not canonical product scope.
+
+Next move: await Claude `COMPLETE_PENDING_REVIEW` worker return for P4C. P4B-B
 concrete provider wiring and live proof remain
 `HOLD_PENDING_EXPLICIT_LIVE_CREDENTIAL_AUTHORIZATION`. No provider/API call,
 credential/network use, provider/model addition, EPF wiring, Strategy Layer
 implementation, AI Gateway absorption, public-sync, production readiness, or
 public readiness is authorized.
 
-Current mode: `model_gateway_c02_p4b_a_closed_p4b_b_hold`.
+Current mode: `model_gateway_c02_p4c_dispatched`.
 
 ## Latest Closed LHW Wave
 
@@ -146,6 +153,12 @@ Model Gateway C-02 P4B-A Provider Execution Bridge --
 CLOSED_PASS_BOUNDED at closure-doc commit `a21f3e65`, session-sync commit
 `ddc28dc8`, and material commit `3c5b1d3d` after reviewer repair.
 P4B-B concrete provider wiring and live proof remain on explicit hold.
+
+Model Gateway C-02 P4C Provider Adapter Contract Conformance --
+DISPATCHED at commit `10b9626b`. Claude may implement only the
+provider-agnostic deterministic adapter conformance evaluator, focused tests,
+GC-051 entries, regenerated corpus registry, and worker return named in the
+work order. Claude must not commit.
 
 ## Parked Lanes
 
