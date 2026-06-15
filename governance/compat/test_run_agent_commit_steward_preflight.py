@@ -47,6 +47,46 @@ def test_path_plan_collision_risk(monkeypatch) -> None:
     assert plan.exact_manifest_collision_risk
     assert plan.material_paths == ("docs/work_orders/example.md",)
     assert plan.protected_session_paths == ("AGENT_HANDOFF_V18_2026-06-12.md",)
+    assert steward._recommended_mode(plan) == "split: material first, session-sync/handoff-sync second"
+
+
+def test_handoff_sync_only_lane(monkeypatch) -> None:
+    monkeypatch.setattr(
+        steward,
+        "_range_paths",
+        lambda base, head: ("AGENT_HANDOFF_V18_2026-06-12.md",),
+    )
+    monkeypatch.setattr(steward, "_status_paths", lambda: ())
+    monkeypatch.setattr(steward, "_has_agent_operation_trace", lambda path: False)
+
+    plan = steward.build_path_plan("base", "head")
+
+    assert plan.handoff_sync_only
+    assert plan.material_paths == ()
+    assert plan.protected_session_paths == ("AGENT_HANDOFF_V18_2026-06-12.md",)
+    assert steward._recommended_mode(plan) == "handoff-sync"
+    assert steward._validate_mode_shape("handoff-sync", "base", "head", plan, True) == 0
+
+
+def test_handoff_sync_rejects_session_state_mix(monkeypatch) -> None:
+    monkeypatch.setattr(steward, "_short_ref", lambda ref: ref)
+    plan = steward.PathPlan(
+        changed_paths=(
+            "AGENT_HANDOFF_V18_2026-06-12.md",
+            "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+        ),
+        material_paths=(),
+        protected_session_paths=(
+            "AGENT_HANDOFF_V18_2026-06-12.md",
+            "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+        ),
+        trace_artifact_paths=(),
+        mixed_material_and_session=False,
+        exact_manifest_collision_risk=False,
+        handoff_sync_only=False,
+    )
+
+    assert steward._validate_mode_shape("handoff-sync", "base", "head", plan, True) == 1
 
 
 def test_status_paths_handles_trimmed_git_status(monkeypatch) -> None:

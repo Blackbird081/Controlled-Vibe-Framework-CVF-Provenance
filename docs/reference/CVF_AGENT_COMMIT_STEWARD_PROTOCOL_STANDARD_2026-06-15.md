@@ -64,6 +64,7 @@ Allowed modes:
 | `closure` | Reviewer/committer validates committed closure range | autorun `pre-closure` |
 | `push` | Preparing public or remote push | autorun `pre-push` |
 | `session-sync` | Updating only session front-door/state/handoff continuity | active session and generated-state checks |
+| `handoff-sync` | Updating only the root active handoff after a material/session commit | active session compatibility only |
 
 `--enforce` fails high-risk commit-shape conflicts. Without `--enforce`, the
 script reports the same diagnostics but exits successfully unless a commanded
@@ -80,6 +81,9 @@ Default sequence:
 2. Session-sync commit: `CVF_SESSION_MEMORY.md`,
    `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION/state/**`, active
    handoff, and related continuity pointers.
+3. Handoff-sync commit: active handoff only, used when the prior commit already
+   updated session state/front-door surfaces and the final HEAD marker needs the
+   accepted parent-marker pattern.
 
 Do not mix material artifacts with active handoff/session sync when an Agent
 Operation Trace Block requires an exact `Actual changed set`, unless the
@@ -122,6 +126,9 @@ Run only the gate set that matches the phase:
   --head HEAD`;
 - session sync: steward `session-sync` instead of the full phase gate when no
   material artifact is changing.
+- handoff sync: steward `handoff-sync` for a dedicated active-handoff-only
+  commit. Do not rerun generated-state checks when no generated state source or
+  aggregate changed.
 
 The git hook remains the final local confirmation layer. The steward preflight
 exists to reduce repeated failed commits, not to replace hooks.
@@ -150,6 +157,7 @@ The steward preflight must block or return to orchestrator when:
 - generated active session state is edited without source JSON alignment;
 - protected session files are changed without an authorized session-sync
   boundary;
+- `handoff-sync` mode includes any file other than the root active handoff;
 - a worker in `WORKER_MUST_NOT_COMMIT` tries to commit or claim committed-range
   closure.
 
@@ -160,6 +168,53 @@ The steward preflight must block or return to orchestrator when:
 - `docs/reference/CVF_SINGLE_AGENT_MULTI_ROLE_CONTROL_STANDARD_2026-06-11.md`
 - `docs/reference/CVF_AGENT_OPERATION_TRACE_AND_WORKSPACE_INTEGRITY_STANDARD_2026-06-13.md`
 - `governance/compat/run_agent_commit_steward_preflight.py`
+
+## Latency Control Addendum - 2026-06-15
+
+Repeated closure friction showed that the final active-handoff marker commit is
+a different lane from full session-state synchronization. When the only changed
+path is the root active handoff, agents should run:
+
+```powershell
+python governance/compat/run_agent_commit_steward_preflight.py --mode handoff-sync --base HEAD~1 --head HEAD --enforce
+```
+
+This lane is deliberately narrower than `session-sync`: it runs active-session
+compatibility and diff hygiene, and it rejects any material path or generated
+state path. Use `session-sync` when `CVF_SESSION_MEMORY.md`,
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`, or `CVF_SESSION/state/**` changes.
+Use `handoff-sync` only after those surfaces are already aligned and the active
+handoff needs the accepted parent-marker continuity record.
+
+## Epistemic Process Block
+
+## Expected Result / Prediction
+
+Prediction: a dedicated handoff-only steward lane should reduce repeated
+closure friction by letting agents run active-session compatibility and diff
+hygiene for final handoff marker commits, while rejecting any mixed material or
+generated-session changed set.
+
+## Evidence Comparison
+
+Evidence comparison: the steward now classifies changed paths, prints a
+recommended lane, accepts root `AGENT_HANDOFF*.md`-only changes as
+`handoff-sync`, and keeps `session-sync` for generated/front-door session
+updates. Focused tests cover both handoff-only acceptance and mixed
+session-state rejection.
+
+## Contradiction Or Gap Disposition
+
+Contradiction or gap disposition: this does not replace committed-range
+`pre-closure`, pre-push, git hooks, generated-state validation when state files
+change, or active-session compatibility. The remaining latency gap is the full
+material closure gate itself, which remains intentionally authoritative.
+
+## Claim Update
+
+Claim update: prediction CONFIRMED_BOUNDED. CVF can reduce final sync latency
+for handoff-only commits without weakening guard coverage, but this standard
+does not claim semantic review automation or runtime/provider behavior.
 
 ## Core Guard Self-Protection Authorization
 
@@ -172,6 +227,7 @@ Protected paths authorized in this batch:
 - `AGENTS.md`
 - `governance/compat/run_agent_commit_steward_preflight.py`
 - `governance/compat/test_run_agent_commit_steward_preflight.py`
+- `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`
 
 Allowed changes:
 
@@ -179,6 +235,8 @@ Allowed changes:
 - add the steward preflight wrapper;
 - add focused tests for path classification and high-risk commit-shape
   detection.
+- add the handoff-sync fast lane and focused tests for dedicated handoff-only
+  commits.
 
 Forbidden changes:
 

@@ -474,6 +474,11 @@ Agent-neutral commit steward standard:
 
 `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`
 
+For latency control, agents must use the narrowest steward lane that matches
+the changed set. Use `session-sync` for generated/front-door session updates,
+and use `handoff-sync` only for a dedicated root active-handoff-only continuity
+commit after the material/session commit is already aligned.
+
 Agent-error learning philosophy:
 
 `docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md`

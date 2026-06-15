@@ -42,6 +42,7 @@ class PathPlan:
     trace_artifact_paths: tuple[str, ...]
     mixed_material_and_session: bool
     exact_manifest_collision_risk: bool
+    handoff_sync_only: bool
 
 
 def _configure_stdout() -> None:
@@ -109,6 +110,10 @@ def _is_protected_session_path(path: str) -> bool:
     return path.startswith(SESSION_PREFIXES) or path.startswith(HANDOFF_PREFIXES)
 
 
+def _is_active_handoff_path(path: str) -> bool:
+    return path.startswith("AGENT_HANDOFF") and path.endswith(".md")
+
+
 def _has_agent_operation_trace(path: str) -> bool:
     full = REPO_ROOT / path
     if not full.exists() or full.is_dir() or not path.endswith(".md"):
@@ -126,6 +131,9 @@ def build_path_plan(base: str, head: str) -> PathPlan:
     trace_artifacts = tuple(path for path in changed_paths if _has_agent_operation_trace(path))
     mixed = bool(protected and material)
     exact_manifest_collision_risk = mixed and bool(trace_artifacts)
+    handoff_sync_only = bool(changed_paths) and all(
+        _is_active_handoff_path(path) for path in changed_paths
+    )
     return PathPlan(
         changed_paths=changed_paths,
         material_paths=material,
@@ -133,7 +141,20 @@ def build_path_plan(base: str, head: str) -> PathPlan:
         trace_artifact_paths=trace_artifacts,
         mixed_material_and_session=mixed,
         exact_manifest_collision_risk=exact_manifest_collision_risk,
+        handoff_sync_only=handoff_sync_only,
     )
+
+
+def _recommended_mode(plan: PathPlan) -> str:
+    if plan.handoff_sync_only:
+        return "handoff-sync"
+    if plan.protected_session_paths and not plan.material_paths:
+        return "session-sync"
+    if plan.mixed_material_and_session:
+        return "split: material first, session-sync/handoff-sync second"
+    if plan.material_paths:
+        return "phase-specific material mode"
+    return "no changed paths detected"
 
 
 def _print_path_plan(plan: PathPlan) -> None:
@@ -154,6 +175,7 @@ def _print_path_plan(plan: PathPlan) -> None:
         print("Split recommendation: material commit first, session/handoff sync commit second.")
     else:
         print("Split recommendation: N/A with reason: changed paths are not mixed material/session.")
+    print(f"Recommended steward lane: {_recommended_mode(plan)}")
 
 
 def _mode_commands(mode: str, base: str, head: str) -> tuple[Command, ...]:
@@ -200,6 +222,14 @@ def _mode_commands(mode: str, base: str, head: str) -> tuple[Command, ...]:
             ),
             Command("diff hygiene", ("git", "diff", "--check")),
         )
+    if mode == "handoff-sync":
+        return (
+            Command(
+                "active session state compatibility",
+                ("python", "governance/compat/check_active_session_state.py", "--enforce"),
+            ),
+            Command("diff hygiene", ("git", "diff", "--check")),
+        )
     raise ValueError(f"unsupported mode: {mode}")
 
 
@@ -219,6 +249,13 @@ def _validate_mode_shape(mode: str, base: str, head: str, plan: PathPlan, enforc
             "then session-sync."
         )
         failures += 1
+    if mode == "handoff-sync":
+        if not plan.handoff_sync_only:
+            print(
+                "VIOLATION: handoff-sync mode must change only root active handoff "
+                "files such as AGENT_HANDOFF_V18_2026-06-12.md."
+            )
+            failures += 1
     if plan.exact_manifest_collision_risk:
         message = (
             "HIGH-RISK SHAPE: Agent Operation Trace exact-manifest artifact is "
@@ -237,7 +274,15 @@ def main() -> int:
     )
     parser.add_argument(
         "--mode",
-        choices=("dispatch", "implementation", "reviewer-return", "closure", "push", "session-sync"),
+        choices=(
+            "dispatch",
+            "implementation",
+            "reviewer-return",
+            "closure",
+            "push",
+            "session-sync",
+            "handoff-sync",
+        ),
         required=True,
     )
     parser.add_argument("--base", default="HEAD", help="Base ref for range-aware checks.")
