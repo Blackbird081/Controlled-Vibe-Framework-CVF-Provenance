@@ -1,0 +1,5 @@
+{
+  "stateOrder": 401,
+  "stateKey": "sessionModeConsistencyCheckerClosure20260616",
+  "value": "CLOSED_PASS_BOUNDED at material commit e022c872 (T1 dispatch packet 401858eb, handoff-sync 0b4c0a7b). Codex added governance/compat/check_session_mode_consistency.py, a read-only checker that fails when the session mode marker disagrees across its five canonical occurrences: front door Current mode marker: and Current mode:, active handoff startup current mode= and ## Current Mode, and ACTIVE_SESSION_STATE_CORE.json currentMode. It resolves the active handoff from activeHandoff and normalizes trailing periods/backticks. Wired additively into reviewer-fast (now 17 checks) and the steward session-sync lane. Focused tests in governance/compat/test_check_session_mode_consistency.py pass 10/10. This closes the gate gap that let mode drift 7df9679d pass every check. Boundary: read-only governance tooling; no behavior change to existing checkers, no session mutation in the material commit, no runtime/provider/live/public claim. T1 of the session continuity foundation roadmap; T2 session-sync authoring helper is the next move."
+}

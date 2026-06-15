@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-16
 
-Current mode marker: `session_sync_pack_builder_closed_next_roadmap`
+Current mode marker: `session_mode_consistency_checker_closed_t2_ready`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `session_sync_pack_builder_closed_next_roadmap`.
+Current mode: `session_mode_consistency_checker_closed_t2_ready`.
 
 Active handoff:
 
@@ -156,10 +156,11 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `agent_dispatch_prompt_envelope_standardization_closed_next_roadmap`.
+Mode: `session_mode_consistency_checker_closed_t2_ready`.
 
-Next move: Codex may audit/select the next high-value CVF foundation roadmap
-and, if operator-authorized, author a source-verified GC-018/work order.
+Next move: dispatch T2 Session-Sync Authoring Helper (read-only generator,
+additive to `build_session_sync_pack.py`) per the session continuity foundation
+roadmap; author the T2 GC-018 and work order.
 
 No provider/API call, credential/network use, provider/model addition, runtime
 behavior mutation, EPF wiring, Strategy Layer implementation, AI Gateway
