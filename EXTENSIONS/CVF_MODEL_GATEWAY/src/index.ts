@@ -270,6 +270,14 @@ export {
   selectCandidateModel,
 } from "./routing-policy-pipeline";
 
+export type {
+  DynamicModelRecord,
+  DynamicModelRegistryContract,
+  FindOptimalQuery,
+  ModelTier,
+} from "./dynamic-model-registry-contract";
+export { DYNAMIC_MODEL_REGISTRY_CONTRACT_VERSION } from "./dynamic-model-registry-contract";
+
 export const MODEL_GATEWAY_WRAPPER = {
   executionClass: "wrapper/re-export merge",
   runtimeOwnership: "implementation-owner upgrade",
