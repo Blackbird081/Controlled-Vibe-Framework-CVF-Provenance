@@ -82,6 +82,12 @@ dispatch prompt envelope standard, compact work-order template pointer, checker
 and tests, dispatch-author fast-gate wiring, closed work order, and completion
 review. The work is authoring-time governance only.
 
+Commit Steward Session-Sync Preflight Hardening is `CLOSED_PASS_BOUNDED` at
+material commit `d709071c`. `session-sync` steward preflight now runs closure
+packaging preflight before generated-state and active-session checks, catching
+missing protected-path authorization before `git commit`. `handoff-sync`
+remains lightweight.
+
 Previous closure: Model Gateway C-02 P4B-B Live Proof T2 is
 `CLOSED_PASS_BOUNDED` at material commit `d15f973e` with DeepSeek
 `deepseek-chat` receipt `gw_20260615155616612_f0mwl515`; Alibaba `qwen-turbo`

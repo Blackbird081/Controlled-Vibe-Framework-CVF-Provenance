@@ -30,8 +30,9 @@ Startup acknowledged: current mode=`agent_dispatch_prompt_envelope_standardizati
 
 `agent_dispatch_prompt_envelope_standardization_closed_next_roadmap`
 
-Current HEAD recorded for this handoff: `b2654e2e`
-(Agent Dispatch Prompt Envelope Standardization material closure commit; prior
+Current HEAD recorded for this handoff: `d709071c`
+(Commit Steward Session-Sync Preflight Hardening material commit; Agent
+Dispatch Prompt Envelope Standardization material closure commit `b2654e2e`; prior
 Agent Dispatch Prompt Envelope Standardization dispatch commit `c0c72317`; Model Gateway
 C-02 P4B-B Live Proof T2 material commit `d15f973e`; Dispatch packet
 authoring guard hardening material commit `bf3f3419`; P4B-B live proof
@@ -69,10 +70,10 @@ requires separate authorization.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: this file is the active handoff. Codex may
-update this handoff and session front-door state after Agent Dispatch Prompt
-Envelope Standardization material closure commit `b2654e2e` to record
-`CLOSED_PASS_BOUNDED`, preserve the P4B-B T2 bounded live-proof closure, and
-route the next allowed move to foundation-roadmap selection.
+update this handoff and session front-door state after Commit Steward
+Session-Sync Preflight Hardening material commit `d709071c` to record
+`CLOSED_PASS_BOUNDED`, preserve the prior bounded closures, and route the next
+allowed move to foundation-roadmap selection.
 
 Protected paths:
 
@@ -91,6 +92,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/modelGatewayC02P4BBLiveProofT2Closure20260615.json`
 - `CVF_SESSION/state/entries/agentDispatchPromptEnvelopeStandardizationDispatch20260615.json`
 - `CVF_SESSION/state/entries/agentDispatchPromptEnvelopeStandardizationClosure20260616.json`
+- `CVF_SESSION/state/entries/commitStewardSessionSyncPreflightHardeningClosure20260616.json`
 - `AGENT_HANDOFF_V19_2026-06-15.md`
 
 Operator authorization: operator authorized P4B-B live proof using existing
@@ -99,7 +101,8 @@ roadmap, issue the next Claude work order, and continue after the dispatch
 packet was authored.
 
 Rollback boundary: if session-sync gates fail, revert only this session-sync
-batch. Do not revert Agent Dispatch Prompt Envelope dispatch commit `c0c72317`,
+batch. Do not revert Commit Steward Session-Sync Preflight Hardening material
+commit `d709071c`, Agent Dispatch Prompt Envelope dispatch commit `c0c72317`,
 P4B-B T2 material commit `d15f973e`, P5-C session-sync
 commit `5d1c8273`, P5-C material commit `b7a88782`, P5 material closure commit
 `a4907f2c`, P5 dispatch commit
@@ -264,6 +267,12 @@ CLOSED_PASS_BOUNDED at material commit `b2654e2e`. The batch added the dispatch
 prompt envelope standard, checker, tests, and dispatch-author fast-gate wiring;
 Codex kept the work-order template at 1200 lines by using a compact pointer
 instead of expanding the near-threshold template body.
+
+Commit Steward Session-Sync Preflight Hardening --
+CLOSED_PASS_BOUNDED at material commit `d709071c`. The `session-sync` steward
+lane now runs closure packaging preflight before generated-state and
+active-session checks, so missing protected-path authorization is caught before
+`git commit`. Dedicated `handoff-sync` remains lightweight.
 
 ## Parked Lanes
 

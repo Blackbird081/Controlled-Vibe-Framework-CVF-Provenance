@@ -1,0 +1,5 @@
+{
+  "stateOrder": 397,
+  "stateKey": "commitStewardSessionSyncPreflightHardeningClosure20260616",
+  "value": "CLOSED_PASS_BOUNDED at material commit d709071c. Codex updated governance/compat/run_agent_commit_steward_preflight.py so session-sync mode runs check_closure_packaging_preflight.py before generated active-session-state and active-session compatibility checks. Focused tests in governance/compat/test_run_agent_commit_steward_preflight.py pass 8/8. Boundary: governance commit-steward latency/control improvement only; handoff-sync remains lightweight; no runtime/provider/live/public behavior claim."
+}
