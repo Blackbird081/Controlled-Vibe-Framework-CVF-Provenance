@@ -2426,9 +2426,11 @@
       "signature": "21729:1780660953591116800"
     },
     "docs/roadmaps/CVF_CI2_CORPUS_INTELLIGENCE_ENFORCEMENT_PRODUCT_READINESS_ROADMAP_2026-06-02.md": {
-      "bucket": "active_dated",
+      "bucket": "archive_candidate",
       "date": "2026-06-02",
-      "signature": "7560:1780471113078721400"
+      "signature": "7560:1780471113078721400",
+      "blocked": true,
+      "reason": "rsf_t1_roadmap_state_reconciliation_active_reference"
     },
     "docs/roadmaps/CVF_CONNECTION_POINT_GUARD_ENFORCEMENT_ROADMAP_2026-05-31.md": {
       "bucket": "active_dated",

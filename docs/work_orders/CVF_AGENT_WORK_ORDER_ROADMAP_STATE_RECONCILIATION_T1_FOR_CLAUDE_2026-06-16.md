@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -18,9 +18,9 @@ Commit mode: WORKER_MUST_NOT_COMMIT
 
 dispatchBaseHead: 696e2447
 
-executionBaseHead: WORKER_MUST_CAPTURE_AT_START
+executionBaseHead: bb3d7b5f
 
-closureBaseHead: NOT_EXECUTED_YET
+closureBaseHead: bb3d7b5f
 
 riskCeiling: R0_GOVERNANCE_DOCUMENTATION_ONLY
 
@@ -35,6 +35,7 @@ workerReturnPath:
 reviewerOwnedClosurePaths:
 
 - `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T1_CI2_COMPLETION_2026-06-16.md`
+- `governance/compat/CVF_ACTIVE_ARCHIVE_BASELINE.json`
 
 ## Purpose
 
@@ -182,11 +183,11 @@ Text encoding: all authored prose must use ASCII only.
 
 | Roadmap requirement | Work-order section | Output artifact | Verification | Status |
 |---|---|---|---|---|
-| Reconcile CI2 roadmap status | Section 5 | CI2 roadmap | diff inspection | OPEN |
-| Cite T3/T4/T5 closure evidence | Sections 4 and Source Verification | CI2 roadmap and worker-return packet | source-backed rows | OPEN |
-| Record learning disposition | Sections 9 and 12 | worker-return packet; reviewer completion | reviewer-fast guard | OPEN |
-| Avoid duplicate CI2 implementation | Sections 1 and 6 | no runtime/source changes | git diff name-status | OPEN |
-| Prepare RSF-T2 as machine-check candidate only | Section 12 | worker-return packet; reviewer completion | claim-boundary review | OPEN |
+| Reconcile CI2 roadmap status | Section 5 | CI2 roadmap | diff inspection | PASS |
+| Cite T3/T4/T5 closure evidence | Sections 4 and Source Verification | CI2 roadmap and worker-return packet | source-backed rows | PASS |
+| Record learning disposition | Sections 9 and 12 | worker-return packet; reviewer completion | reviewer-fast guard | PASS |
+| Avoid duplicate CI2 implementation | Sections 1 and 6 | no runtime/source changes | git diff name-status | PASS |
+| Prepare RSF-T2 as machine-check candidate only | Section 12 | worker-return packet; reviewer completion | claim-boundary review | PASS |
 
 ## 6C. Worker Autonomy / No-Question Rule
 
@@ -214,6 +215,7 @@ session-continuity files.
 | CI2 roadmap reconciliation | Claude worker |
 | Worker-return packet | Claude worker |
 | Final completion review | Codex reviewer |
+| Active archive hygiene refresh | Codex reviewer |
 | Commit and session sync | Codex reviewer |
 
 ## 7. Implementation Instructions
@@ -358,27 +360,31 @@ legacy scan, or Model Gateway files.
 | Command or tool surface | `apply_patch`, git diff, governance gates |
 | Target paths | roadmap, GC-018, work order dispatch packet |
 | Allowed scope source | operator approval 2026-06-16 and GC-018 |
-| Before status evidence | HEAD `696e2447`; CI2 roadmap stale rows observed |
-| After status evidence | dispatch packet authored for Claude worker |
-| Diff evidence | dispatch range `696e2447..HEAD` |
+| Before status evidence | worker execution head `bb3d7b5f`; CI2 roadmap stale rows observed |
+| After status evidence | CI2 roadmap reconciled; worker return and reviewer completion authored |
+| Diff evidence | closure batch from `bb3d7b5f..HEAD` |
 | Approval boundary | documentation-only reconciliation; no runtime/live/provider/public-sync |
 | Claim boundary | stale CI2 roadmap defect identified; no guard implementation claimed |
 | Agent type | Codex orchestrator; Claude worker target |
 | Invocation ID | `rsf-t1-roadmap-state-reconciliation-dispatch-2026-06-16` |
-| Expected manifest | `docs/roadmaps/CVF_ROADMAP_STATE_RECONCILIATION_AND_NEXT_MOVE_FRESHNESS_ROADMAP_2026-06-16.md`; `docs/baselines/CVF_GC018_ROADMAP_STATE_RECONCILIATION_T1_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T1_FOR_CLAUDE_2026-06-16.md` |
-| Actual changed set | `docs/roadmaps/CVF_ROADMAP_STATE_RECONCILIATION_AND_NEXT_MOVE_FRESHNESS_ROADMAP_2026-06-16.md`; `docs/baselines/CVF_GC018_ROADMAP_STATE_RECONCILIATION_T1_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T1_FOR_CLAUDE_2026-06-16.md` |
+| Expected manifest | `docs/roadmaps/CVF_CI2_CORPUS_INTELLIGENCE_ENFORCEMENT_PRODUCT_READINESS_ROADMAP_2026-06-02.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T1_FOR_CLAUDE_2026-06-16.md`; `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T1_CI2_WORKER_RETURN_2026-06-16.md`; `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T1_CI2_COMPLETION_2026-06-16.md`; `governance/compat/CVF_ACTIVE_ARCHIVE_BASELINE.json` |
+| Actual changed set | `docs/roadmaps/CVF_CI2_CORPUS_INTELLIGENCE_ENFORCEMENT_PRODUCT_READINESS_ROADMAP_2026-06-02.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T1_FOR_CLAUDE_2026-06-16.md`; `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T1_CI2_WORKER_RETURN_2026-06-16.md`; `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T1_CI2_COMPLETION_2026-06-16.md`; `governance/compat/CVF_ACTIVE_ARCHIVE_BASELINE.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 | Trace boundary | Dispatch packet authoring only; worker execution will update this work order and create the worker-return packet |
 
 ## 14. Machine Closure Package
 
-| Surface | Required closure state | Worker disposition |
-|---|---|---|
-| Work order | `COMPLETE_PENDING_REVIEW`, no unchecked required action except reviewer-owned closure | OPEN |
-| CI2 roadmap | stale T3/T4/T5 state reconciled | OPEN |
-| Completion review | created with learning disposition | OPEN |
-| Runtime/public/live proof | `N/A with reason` | OPEN |
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ROADMAP_STATE_RECONCILIATION_T1_CI2_COMPLETION_2026-06-16.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_CI2_CORPUS_INTELLIGENCE_ENFORCEMENT_PRODUCT_READINESS_ROADMAP_2026-06-02.md` | `Status: ALL_TRANCHES_CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | unchanged by RSF-T1; registry update not required for roadmap state reconciliation | PASS |
+| Registry Markdown | `docs/corpus-intelligence/registry/` | unchanged by RSF-T1; registry entry update not required for roadmap state reconciliation | PASS |
+| External evidence digest | N/A | no external evidence used | N/A with reason |
+| System loop interlock | N/A | no system-loop interlock mutation required | N/A with reason |
+| Session continuity | N/A | session sync deferred to reviewer after material commit | N/A with reason |
 
 ## Public Export Disposition
 
