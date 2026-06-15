@@ -24,15 +24,16 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`session_mode_consistency_checker_closed_t2_ready`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=Codex may audit/select the next high-value CVF foundation roadmap and, if operator-authorized, author a source-verified GC-018/work order; parked checkpoint=Alibaba second-provider parity pending valid DashScope credential, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
+Startup acknowledged: current mode=`session_sync_authoring_helper_closed_next_roadmap`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=Codex may audit/select the next high-value CVF foundation roadmap and, if operator-authorized, author a source-verified GC-018/work order; parked checkpoint=Alibaba second-provider parity pending valid DashScope credential, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
 
 ## Current Mode
 
-`session_mode_consistency_checker_closed_t2_ready`
+`session_sync_authoring_helper_closed_next_roadmap`
 
-Current HEAD recorded for this handoff: `e022c872`
-(Session mode-consistency checker T1 material commit `e022c872` and this
-session-sync; T1 handoff-sync `0b4c0a7b`; T1 dispatch packet commit `401858eb`;
+Current HEAD recorded for this handoff: `5cb9d472`
+(Session-Sync Authoring Helper T2 material commit `5cb9d472` and this
+session-sync; Session mode-consistency checker T1 material commit `e022c872`;
+T1 handoff-sync `0b4c0a7b`; T1 dispatch packet commit `401858eb`;
 session continuity authoring and mode-consistency foundation
 roadmap commit `2a65298b`; session-state mode drift fix material commit
 `7df9679d`; Session-Sync Pack Builder And Authorization Manifest material commit
@@ -76,14 +77,13 @@ requires separate authorization.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: this file is the active handoff. Codex may
-update this handoff and session front-door state after Session Mode-Consistency
-Checker T1 material commit `e022c872` to record `CLOSED_PASS_BOUNDED`, advance
-the mode marker to `session_mode_consistency_checker_closed_t2_ready` across all
-surfaces, preserve the prior bounded closures, and route the next allowed move
-to T2 dispatch. This scope also covers the prior follow-up session-state drift
-fix bringing `currentMode`/`previousMode` in
-`ACTIVE_SESSION_STATE_CORE.json` into agreement with the front-door and handoff
-mode markers, regenerating the `ACTIVE_SESSION_STATE.json` aggregate.
+update this handoff and session front-door state after Session-Sync Authoring
+Helper T2 material commit `5cb9d472` to record `CLOSED_PASS_BOUNDED`, advance
+the mode marker to `session_sync_authoring_helper_closed_next_roadmap` across
+all surfaces, preserve the prior bounded closures, and route the next allowed
+move to audit/select the next high-value CVF foundation roadmap. This scope
+also covers regenerating the `ACTIVE_SESSION_STATE.json` aggregate from source
+entries.
 
 Protected paths:
 
@@ -94,6 +94,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/sessionSyncPackBuilderClosure20260616.json`
 - `CVF_SESSION/state/entries/sessionModeConsistencyCheckerClosure20260616.json`
+- `CVF_SESSION/state/entries/sessionSyncAuthoringHelperClosure20260616.json`
 - `CVF_SESSION/state/entries/modelGatewayC02P4BAProviderExecutionBridgeClosure20260615.json`
 - `CVF_SESSION/state/entries/modelGatewayC02P4CProviderAdapterConformanceDispatch20260615.json`
 - `CVF_SESSION/state/entries/modelGatewayC02P4CProviderAdapterConformanceClosure20260615.json`
@@ -129,16 +130,23 @@ commit `5d46bc62`.
 
 ## Latest Continuity Note
 
-Session Mode-Consistency Checker (T1 of the session continuity foundation
-roadmap) is `CLOSED_PASS_BOUNDED` at material commit `e022c872`.
+Session-Sync Authoring Helper T2 is `CLOSED_PASS_BOUNDED` at material commit
+`5cb9d472`. `governance/compat/build_session_sync_pack.py --author-entry`
+emits a read-only state-entry skeleton, `nextAllowedMove` template, and all
+five session mode marker occurrences enforced by T1. Focused tests pass 16/16;
+reviewer-fast passes 17/17. Next move: audit/select the next high-value CVF
+foundation roadmap.
+
+Prior closure pointer: Session Mode-Consistency Checker (T1 of the session
+continuity foundation roadmap) is `CLOSED_PASS_BOUNDED` at material commit
+`e022c872`.
 `governance/compat/check_session_mode_consistency.py` fails when the session
 mode marker disagrees across its five canonical occurrences (front door
 `Current mode marker:`/`Current mode:`, handoff startup `current mode=`/
 `## Current Mode`, core `currentMode`), resolving the active handoff from
 `activeHandoff`. Wired additively into reviewer-fast (now 17 checks) and the
 steward session-sync lane; 10 focused tests pass. This closes the gate gap that
-let mode drift `7df9679d` pass every check. Next move: dispatch T2
-Session-Sync Authoring Helper.
+let mode drift `7df9679d` pass every check.
 
 Artifacts: GC-018/work order/completion under the
 `CVF_*SESSION_MODE_CONSISTENCY_CHECKER*_2026-06-16` family; roadmap

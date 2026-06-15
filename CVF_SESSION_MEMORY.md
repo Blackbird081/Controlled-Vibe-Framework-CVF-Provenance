@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-16
 
-Current mode marker: `session_mode_consistency_checker_closed_t2_ready`
+Current mode marker: `session_sync_authoring_helper_closed_next_roadmap`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `session_mode_consistency_checker_closed_t2_ready`.
+Current mode: `session_sync_authoring_helper_closed_next_roadmap`.
 
 Active handoff:
 
@@ -62,14 +62,17 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-Session-Sync Pack Builder And Authorization Manifest is `CLOSED_PASS_BOUNDED`
-at material commit `a5e91d4b`. New read-only tool
-`governance/compat/build_session_sync_pack.py` generates the protected-path
-authorization manifest and reports `ACTIVE_SESSION_STATE.json` drift before a
-session-sync commit (`--suggest`, `--enforce`, `--plan-only`; 12 tests pass; no
-hook wiring; imports `build_path_plan` and `validate_aggregate_matches_sources`).
-Artifacts: roadmap/GC-018/work order/completion under the
-`CVF_SESSION_SYNC_PACK_BUILDER_AND_AUTHORIZATION_MANIFEST_*_2026-06-16` family.
+Session-Sync Authoring Helper T2 is `CLOSED_PASS_BOUNDED` at material commit
+`5cb9d472`. `governance/compat/build_session_sync_pack.py --author-entry`
+now emits a read-only state-entry skeleton, `nextAllowedMove` template, and the
+five canonical session mode marker occurrences. Focused tests passed 16/16 and
+reviewer-fast passed 17/17.
+
+Prior closure pointer: Session-Sync Pack Builder And Authorization Manifest is
+`CLOSED_PASS_BOUNDED` at material commit `a5e91d4b`. The same read-only tool
+generates the protected-path authorization manifest and reports
+`ACTIVE_SESSION_STATE.json` drift before a session-sync commit (`--suggest`,
+`--enforce`, `--plan-only`; 12 original tests plus 4 authoring-helper tests).
 
 Prior closure pointer: Agent Dispatch Prompt Envelope Standardization is
 `CLOSED_PASS_BOUNDED`.
@@ -156,11 +159,10 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `session_mode_consistency_checker_closed_t2_ready`.
+Mode: `session_sync_authoring_helper_closed_next_roadmap`.
 
-Next move: dispatch T2 Session-Sync Authoring Helper (read-only generator,
-additive to `build_session_sync_pack.py`) per the session continuity foundation
-roadmap; author the T2 GC-018 and work order.
+Next move: audit and select the next high-value CVF foundation roadmap, then
+author a source-verified GC-018/work order only after operator authorization.
 
 No provider/API call, credential/network use, provider/model addition, runtime
 behavior mutation, EPF wiring, Strategy Layer implementation, AI Gateway
