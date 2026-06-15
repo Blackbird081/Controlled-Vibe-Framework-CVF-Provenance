@@ -2,11 +2,11 @@
 
 Memory class: FULL_RECORD
 
-Status: DRAFT_PENDING_GC018_AND_OPERATOR_AUTHORIZATION
+Status: DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT
 
-Worker: assigned implementing agent (single-extension, contract-first)
+Worker: Claude
 
-Orchestrator / reviewer: reviewer agent
+Orchestrator / reviewer: Codex
 
 Worker commit policy: WORKER_MUST_NOT_COMMIT
 
@@ -22,11 +22,11 @@ reviewerOwnedClosurePaths:
 - `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
 - `AGENT_HANDOFF_V18_2026-06-12.md`
 
-dispatchBaseHead: TO_BE_CAPTURED_AT_DISPATCH
+dispatchBaseHead: 1ec2f2b4
 
-executionBaseHead: TO_BE_CAPTURED_BY_WORKER
+executionBaseHead: WORKER_MUST_CAPTURE_AFTER_DISPATCH
 
-closureBaseHead: TO_BE_CAPTURED_BY_REVIEWER
+closureBaseHead: REVIEWER_CAPTURE_AFTER_WORKER_RETURN
 
 rawMemoryReleased=false
 
@@ -34,16 +34,18 @@ riskCeiling: R1 (additive contract/types/doc/tests in one extension; no runtime 
 
 ## Authorization Preconditions (BLOCKING)
 
-This work order is a contract-first planning tranche. It MUST NOT be dispatched until both:
+This work order is a contract-first planning tranche. Dispatch authorization is
+released because both prerequisites are now satisfied:
 
 1. A fresh GC-018 baseline authorizes Model Gateway C-02 P2 dynamic model
    registry boundary, citing
    `docs/roadmaps/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_ROADMAP_2026-06-15.md`.
    Expected baseline path:
    `docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md`.
-2. Operator authorizes the P2 scope and worker/reviewer assignment.
+2. Operator authorized the P2 scope and Claude/Codex worker-reviewer assignment
+   in the 2026-06-15 session instruction: "commit de Claude thi cong".
 
-Until both exist, status stays `DRAFT_PENDING_GC018_AND_OPERATOR_AUTHORIZATION`.
+Dispatch status is `DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT`.
 
 ## Public Export Disposition
 
@@ -160,7 +162,7 @@ token against governed runtime source before completion.
 | routeMode | SINGLE_AGENT_MULTI_ROLE |
 | Role separation basis | Phase gates, separate base heads, worker no-commit boundary, reviewer closure conversion, committed-range closure checks |
 | Escalation condition | Stop for scope expansion beyond the P2 contract boundary, runtime implementation, provider/live proof, public-sync, secrets, package install, registry mutation, governance-kernel mutation, destructive action, or P3/strategy-layer work |
-| Disposition | DISPATCH_READY_PENDING_GC018 |
+| Disposition | DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT |
 
 ## Single-Agent Multi-Role Control Block
 
@@ -282,9 +284,9 @@ symbol was verified to exist at the cited definition line on 2026-06-15.
 | EXISTS: RoutingRequest | `EXTENSIONS/CVF_MODEL_GATEWAY/src/routing-policy.ts` | line 13 | `RoutingRequest` | routing policy | COMPAT_REFERENCE | ACCEPT |
 | EXISTS: model gateway barrel exports | `EXTENSIONS/CVF_MODEL_GATEWAY/src/index.ts` | export blocks lines 60-73 | provider/health type re-exports | model gateway barrel | EXTEND_EXPORTS | ACCEPT |
 
-Note: `provider-capability-registry.ts` is 98 lines and `provider-registry.ts`
-is 113 lines as of 2026-06-15 (verified by `wc -l`). The worker must re-confirm
-these at dispatch time.
+Note: `provider-capability-registry.ts` is 94 lines and `provider-registry.ts`
+is 99 lines as of 2026-06-15 (verified by `Measure-Object -Line`). The worker
+must re-confirm these at execution time.
 
 ## Negative Search And Collision Discipline
 
@@ -637,28 +639,28 @@ Rule without operator escalation.
 
 ## Agent Operation Trace Block
 
-This block records the authoring of THIS work order (orchestrator role), not the
-worker's future execution. The worker authors its own trace block in the worker
-return.
+This block records the dispatch packaging of THIS work order (orchestrator
+role), not the worker's future execution. The worker authors its own trace block
+in the worker return.
 
 | Field | Evidence |
 | --- | --- |
-| Actor | Claude (orchestrator) |
-| Provider or surface | Claude Code CLI / VSCode extension |
-| Session or invocation | Session from prior HEAD `ca29e988` (handoff-HEAD sync commit) |
+| Actor | Codex (orchestrator/reviewer) |
+| Provider or surface | Codex CLI |
+| Session or invocation | Dispatch session from prior HEAD `1ec2f2b4` |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | Read (template, P1 work order, source files), Write (1 new work order), Edit (work order revisions, handoff continuity note), Codex reviewer repair (Agent Operation Trace root-path parser), Bash (source verification, dispatch-quality gate, line-count checks), Grep (symbol definition lines) |
-| Target paths | `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md` (CREATED); `AGENT_HANDOFF_V18_2026-06-12.md` (session continuity/authorization); `governance/compat/check_agent_operation_trace.py` (root-level path parser repair); `governance/compat/test_check_agent_operation_trace.py` (regression test) |
-| Allowed scope source | Operator instruction 2026-06-15; P2 roadmap; active session state nextAllowedMove |
-| Before status evidence | `git status --short` clean before work; HEAD `ca29e988` |
-| After status evidence | `git status --short` shows staged work order, handoff update, and Agent Operation Trace guard/test repair |
-| Diff evidence | `git diff --check` PASS expected before commit; changed set is exactly the paths listed in this trace block |
-| Approval boundary | Operator authorized the P2 work order authoring; this draft remains `DRAFT_PENDING_GC018_AND_OPERATOR_AUTHORIZATION` and dispatch is blocked until a fresh GC-018 and operator authorization exist |
+| Command or tool surface | Read (work order, roadmap, source files, P1 GC-018), Edit (work order dispatch release), Create (fresh P2 GC-018 baseline), Bash/PowerShell (source verification, line-count checks, dispatch-quality gates) |
+| Target paths | `docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md` (CREATED); `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md` (UPDATED) |
+| Allowed scope source | Operator instruction 2026-06-15 to check the work order, commit it, and dispatch Claude; P2 roadmap; active session state nextAllowedMove |
+| Before status evidence | `git status --short` clean before dispatch; HEAD `1ec2f2b4` |
+| After status evidence | `git status --short` shows one new GC-018 baseline and one modified work order before commit |
+| Diff evidence | `git diff --check` expected PASS before commit; changed set is exactly the paths listed in this trace block |
+| Approval boundary | Operator authorized dispatch; fresh GC-018 exists in this batch; work order status is `DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT` |
 | Claim boundary | Repo-local trace only; no OS-level user attribution, endpoint telemetry, provider-internal logs, physical-machine identity, public readiness, or production readiness claim |
-| Agent type | Claude authoring with Codex reviewer repair |
-| Invocation ID | Session from prior HEAD `ca29e988`; Codex repair from HEAD `2d1dd769` |
-| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md`; `AGENT_HANDOFF_V18_2026-06-12.md`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/test_check_agent_operation_trace.py` |
-| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md`; `AGENT_HANDOFF_V18_2026-06-12.md`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/test_check_agent_operation_trace.py` |
+| Agent type | Codex orchestrator/reviewer |
+| Invocation ID | Dispatch from HEAD `1ec2f2b4` |
+| Expected manifest | `docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md` |
+| Actual changed set | `docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no protected path was deleted or renamed during this authoring session |
 
