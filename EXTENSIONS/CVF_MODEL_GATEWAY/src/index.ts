@@ -337,6 +337,15 @@ export {
   PROVIDER_CAPABILITY_NEGOTIATION_VERSION,
 } from "./provider-capability-negotiation";
 
+export type {
+  BridgeAdmissionGuardResult,
+  BridgeAdmissionVerdict,
+} from "./provider-bridge-admission-guard";
+export {
+  checkBridgeAdmission,
+  BRIDGE_ADMISSION_BOUNDARY_VERSION,
+} from "./provider-bridge-admission-guard";
+
 export const MODEL_GATEWAY_WRAPPER = {
   executionClass: "wrapper/re-export merge",
   runtimeOwnership: "implementation-owner upgrade",

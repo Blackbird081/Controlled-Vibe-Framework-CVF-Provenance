@@ -12,7 +12,8 @@ export type GatewayErrorClass =
   | "provider_unavailable"
   | "invalid_request"
   | "credential_shielded"
-  | "internal_error";
+  | "internal_error"
+  | "admission_blocked";
 
 export interface GatewayErrorEnvelope {
   errorClass: GatewayErrorClass;

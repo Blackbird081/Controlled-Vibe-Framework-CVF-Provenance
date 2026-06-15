@@ -14,6 +14,8 @@ import type {
   GatewayErrorEnvelope,
   GatewayErrorClass,
 } from "./unified-gateway-interface-contract";
+import type { AdapterAdmissionRecord } from "./provider-adapter-admission";
+import { checkBridgeAdmission } from "./provider-bridge-admission-guard";
 import type { RoutingRequest, RoutingDecision } from "./routing-policy";
 import type { CredentialReference, CredentialMetadata } from "./credential-boundary";
 import type { GatewayReceipt, GatewayReceiptInput } from "./gateway-receipt";
@@ -46,6 +48,7 @@ export interface ProviderExecutionBridgeOptions {
   receipt: GatewayReceiptBuilder;
   credentialRefs: Map<string, CredentialReference>;
   adapters: Map<string, ProviderExecutionAdapter>;
+  admissionRecords?: Map<string, AdapterAdmissionRecord>;
 }
 export interface ProviderExecutionBridgeResult {
   response?: GatewayExecuteResponse;
@@ -61,6 +64,7 @@ export class ProviderExecutionBridge {
   private readonly receipt: GatewayReceiptBuilder;
   private readonly credentialRefs: Map<string, CredentialReference>;
   private readonly adapters: Map<string, ProviderExecutionAdapter>;
+  private readonly admissionRecords?: Map<string, AdapterAdmissionRecord>;
   constructor(options: ProviderExecutionBridgeOptions) {
     this.routing = options.routing;
     this.credential = options.credential;
@@ -69,6 +73,7 @@ export class ProviderExecutionBridge {
     this.receipt = options.receipt;
     this.credentialRefs = options.credentialRefs;
     this.adapters = options.adapters;
+    this.admissionRecords = options.admissionRecords;
   }
   async execute(request: GatewayExecuteRequest): Promise<ProviderExecutionBridgeResult> {
     const traceId = request.traceId;
@@ -147,6 +152,22 @@ export class ProviderExecutionBridge {
         modelId,
         true,
       );
+    }
+    if (this.admissionRecords) {
+      const admissionRecord = this.admissionRecords.get(providerId);
+      if (admissionRecord) {
+        const guardResult = checkBridgeAdmission(admissionRecord);
+        if (guardResult.verdict === "block") {
+          return this.buildShieldedErrorResult(
+            traceId,
+            "admission_blocked",
+            "Adapter admission blocked by bridge admission guard",
+            providerId,
+            modelId,
+            false,
+          );
+        }
+      }
     }
     try {
       const adapterResult = await adapter.execute({

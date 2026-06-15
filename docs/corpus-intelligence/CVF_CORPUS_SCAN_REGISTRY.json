@@ -3296,6 +3296,72 @@
       "notes": "Provider-agnostic capability negotiation helper over existing provider-method gate helpers. Exports CapabilityNegotiationStatus, CapabilityNegotiationResult, negotiateProviderCapability, and PROVIDER_CAPABILITY_NEGOTIATION_VERSION. No provider-specific branching or concrete adapter import."
     },
     {
+      "id": "model-gateway-c02-p5c-bridge-admission-guard",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway C-02 P5-C bridge admission guard source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-bridge-admission-guard.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "fetch (not in guard - no network call)",
+        "http request (not in guard)",
+        "resolveSecretForRuntime (forbidden - no credential access)",
+        "providers/alibaba (no concrete adapter import)",
+        "providers/deepseek (no concrete adapter import)",
+        "createAlibaba (no concrete adapter factory)",
+        "createDeepSeek (no concrete adapter factory)",
+        ".env.local (no credential file access)",
+        "DASHSCOPE_API_KEY (no API key reference)",
+        "DEEPSEEK_API_KEY (no API key reference)",
+        "ALIBABA_API_KEY (no API key reference)",
+        "adapter.execute (guard does not call adapter)",
+        "assertAllowed (guard does not call registry)",
+        "PROVIDER_CAPABILITY_REGISTRY (guard does not re-evaluate capability)",
+        "findProviderCapability (guard does not re-evaluate capability)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P5C",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P5C_BRIDGE_ADMISSION_BOUNDARY_COMPLETION_2026-06-15.md",
+      "notes": "Provider-agnostic bridge admission guard for P5-C. Consumes AdapterAdmissionRecord from P5-A and returns BridgeAdmissionGuardResult with verdict pass/block. Never calls adapter.execute(), ProviderRegistry.assertAllowed(), findProviderCapability(), any network, or any secret helper. Exports BRIDGE_ADMISSION_BOUNDARY_VERSION, BridgeAdmissionVerdict, BridgeAdmissionGuardResult, and checkBridgeAdmission."
+    },
+    {
+      "id": "model-gateway-c02-p5c-bridge-admission-guard-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway C-02 P5-C bridge admission guard tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/tests/provider-bridge-admission-guard.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "fetch (not in tests - no network call)",
+        "http request (not in tests)",
+        "resolveSecretForRuntime (forbidden - no credential access)",
+        "providers/alibaba (no concrete adapter import)",
+        "providers/deepseek (no concrete adapter import)",
+        "createAlibaba (no concrete adapter factory)",
+        "createDeepSeek (no concrete adapter factory)",
+        ".env.local (no credential file access)",
+        "DASHSCOPE_API_KEY (no API key reference)",
+        "DEEPSEEK_API_KEY (no API key reference)",
+        "ALIBABA_API_KEY (no API key reference)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P5C",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P5C_BRIDGE_ADMISSION_BOUNDARY_COMPLETION_2026-06-15.md",
+      "notes": "Deterministic tests T1-T12 for P5-C bridge admission guard. Covers admitted pass, blocked block, needs_operator_authorization block, guard never calls adapter.execute, guard never calls network, backward-compatible bridge (no admissionRecords), admitted proceeds to execute, blocked returns admission_blocked, needs_operator_authorization returns admission_blocked, retryable=false, no hardcoded provider ID, and negative-search module-load check."
+    },
+    {
       "id": "model-gateway-provider-method-contract",
       "corpusType": "CVF_EXTENSION",
       "displayName": "CVF Model Gateway provider method contract source",
