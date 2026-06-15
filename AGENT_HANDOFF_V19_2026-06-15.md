@@ -24,14 +24,15 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`model_gateway_c02_p5c_closed_p4b_b_hold`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=P4B-B concrete live proof requires fresh explicit operator authorization, fresh GC-018, source-verified work order, and live-run diagnostic discipline; parked checkpoint=P4B-B concrete provider wiring/live proof, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
+Startup acknowledged: current mode=`model_gateway_c02_p4b_b_t2_closed_dispatch_prompt_envelope_next`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=author CVF foundation roadmap and Claude work order for Agent Dispatch Prompt Envelope standardization; parked checkpoint=Alibaba second-provider parity pending valid DashScope credential, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
 
 ## Current Mode
 
-`model_gateway_c02_p5c_closed_p4b_b_hold`
+`model_gateway_c02_p4b_b_t2_closed_dispatch_prompt_envelope_next`
 
-Current HEAD recorded for this handoff: `bf3f3419`
-(Dispatch packet authoring guard hardening material commit; P4B-B live proof
+Current HEAD recorded for this handoff: `d15f973e`
+(Model Gateway C-02 P4B-B Live Proof T2 material commit; Dispatch packet
+authoring guard hardening material commit `bf3f3419`; P4B-B live proof
 packet recorded as draft negative sample at `de515c11`; prior Model Gateway
 C-02 P4B-B concrete provider live proof roadmap commit `9c02da8c`;
 prior session-memory sync commit `d3fcb7d0`; Model Gateway C-02 P5-C
@@ -66,9 +67,10 @@ requires separate authorization.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: this file is the active handoff. Codex may
-update this handoff and session front-door state after Model Gateway C-02 P5-C
-session-sync commit `5d1c8273` to remove stale P5-A/P5-B next-move prose from
-the front door while preserving the P4B-B live-proof hold.
+update this handoff and session front-door state after Model Gateway C-02 P4B-B
+T2 material commit `d15f973e` to record bounded live-proof closure, park Alibaba
+second-provider parity as a credential follow-up, and route the next foundation
+move to Agent Dispatch Prompt Envelope standardization.
 
 Protected paths:
 
@@ -84,15 +86,17 @@ Protected paths:
 - `CVF_SESSION/state/entries/modelGatewayC02P5Dispatch20260615.json`
 - `CVF_SESSION/state/entries/modelGatewayC02P5AdapterAdmissionClosure20260615.json`
 - `CVF_SESSION/state/entries/modelGatewayC02P5CBridgeAdmissionBoundaryClosure20260615.json`
+- `CVF_SESSION/state/entries/modelGatewayC02P4BBLiveProofT2Closure20260615.json`
 - `AGENT_HANDOFF_V19_2026-06-15.md`
 
-Operator authorization: operator reported P5-C complete on 2026-06-15 and asked
-Codex to evaluate/continue; this session-sync cleanup aligns the front door
-with the already recorded P5-C closure without releasing P4B-B live proof.
+Operator authorization: operator authorized P4B-B live proof using existing
+available API keys, then asked Codex to process the worker return, audit next
+roadmap, and issue the next Claude work order.
 
 Rollback boundary: if session-sync gates fail, revert only this session-sync
-batch. Do not revert P5-C session-sync commit `5d1c8273`, P5-C material commit
-`b7a88782`, P5 material closure commit `a4907f2c`, P5 dispatch commit
+batch. Do not revert P4B-B T2 material commit `d15f973e`, P5-C session-sync
+commit `5d1c8273`, P5-C material commit `b7a88782`, P5 material closure commit
+`a4907f2c`, P5 dispatch commit
 `f26afe68`, P5 roadmap commit
 `4c888aa0`, P4C closure-doc commit
 `64a80684`, P4C material commit
@@ -152,17 +156,24 @@ at material commit `b7a88782` (executionBaseHead `5fd4dbd2`). Cascade implemente
 a pure deterministic bridge admission guard, wired it additively into
 `ProviderExecutionBridge`, added `admission_blocked` error class, added T1-T12
 tests, GC-051 coverage. 28 files / 207 tests PASS. Reviewer-fast 16/16 PASS.
-P4B-B live proof remains `HOLD_PENDING_EXPLICIT_LIVE_CREDENTIAL_AUTHORIZATION`.
+P4B-B live proof is now closed in the later T2 note below.
 
-Next move: P4B-B concrete provider wiring and live proof remain
-`HOLD_PENDING_EXPLICIT_LIVE_CREDENTIAL_AUTHORIZATION` and require fresh explicit
-operator authorization, fresh GC-018 with live credential boundary, source-verified
-work order, and live-run diagnostic discipline. No provider/API call,
-credential/network use, provider/model addition, EPF wiring, Strategy Layer
-implementation, AI Gateway absorption, public-sync, production readiness, or
-public readiness is authorized without fresh operator authorization.
+Model Gateway C-02 P4B-B Live Proof T2 is `CLOSED_PASS_BOUNDED` at material
+commit `d15f973e` (executionBaseHead `d46ccd83`). DeepSeek `deepseek-chat`
+proved one selected live provider path through `ProviderExecutionBridge.execute`
+with admitted adapter evidence, receipt `gw_20260615155616612_f0mwl515`, output
+`pong`, and no raw-key leakage. Alibaba `qwen-turbo` reached provider but
+returned HTTP 401 and remains parked as a credential follow-up, not a CVF chain
+defect. Model Gateway tests PASS 29 files / 214 tests. Reviewer-fast PASS.
+No provider preference, ranking, broad adapter support, production readiness,
+or public readiness is claimed.
 
-Current mode: `model_gateway_c02_p5c_closed_p4b_b_hold`.
+Next move: author a CVF foundation roadmap and Claude work order for Agent
+Dispatch Prompt Envelope standardization so multi-agent and single-agent
+multi-role handoffs carry a short runtime cover note without replacing the
+canonical work order.
+
+Current mode: `model_gateway_c02_p4b_b_t2_closed_dispatch_prompt_envelope_next`.
 
 ## Latest Closed LHW Wave
 
@@ -187,13 +198,13 @@ handoffs a machine-check failure.
 Model Gateway C-02 P4B-A Provider Execution Bridge --
 CLOSED_PASS_BOUNDED at closure-doc commit `a21f3e65`, session-sync commit
 `ddc28dc8`, and material commit `3c5b1d3d` after reviewer repair.
-P4B-B concrete provider wiring and live proof remain on explicit hold.
+P4B-B T2 live proof is now closed at later material commit `d15f973e`.
 
 Model Gateway C-02 P4C Provider Adapter Contract Conformance --
 CLOSED_PASS_BOUNDED at material commit `8d8f0871` and closure-doc commit
 `64a80684` after Codex reviewer repair. The implementation is deterministic
-and provider-agnostic. P4B-B concrete provider wiring and live proof remain on
-explicit hold.
+and provider-agnostic. P4B-B T2 live proof is now closed at later material
+commit `d15f973e`.
 
 Autorun Exact-Manifest Range Shape Guard Hardening --
 CLOSED_PASS_BOUNDED at commit `5dcde230`. The autorun `pre-closure` and
@@ -222,7 +233,13 @@ CLOSED_PASS_BOUNDED at material commit `b7a88782`. Cascade implemented
 pure deterministic bridge admission guard, additive bridge wiring, admission_blocked
 error class, T1-T12 tests, GC-051 coverage. Repaired dispatch packet encoding
 and dispatch-quality violations authored by prior Claude session. 28 files /
-207 tests PASS. Reviewer-fast 16/16 PASS. P4B-B live proof remains on explicit hold.
+207 tests PASS. Reviewer-fast 16/16 PASS.
+
+Model Gateway C-02 P4B-B Live Proof T2 --
+CLOSED_PASS_BOUNDED at material commit `d15f973e`. One selected live provider
+path proved through the governed bridge with DeepSeek `deepseek-chat` receipt
+`gw_20260615155616612_f0mwl515`; Alibaba parity is parked pending credential
+refresh.
 
 ## Parked Lanes
 
@@ -238,8 +255,8 @@ Summary (not expanded here):
 3. External receipt-anchor provider -- PARKED_PENDING_OPERATOR_DECISION
 4. AI Gateway family absorption -- PARKED_PENDING_PRIVACY_OPERATOR_AUTHORIZATION
 5. Strategy Layer implementation -- DEFERRED_REQUIRES_SEPARATE_GC018
-6. Model Gateway C-02 P4B-B live proof --
-   HOLD_PENDING_EXPLICIT_LIVE_CREDENTIAL_AUTHORIZATION
+6. Model Gateway C-02 P4B-B Alibaba second-provider parity --
+   PARKED_PENDING_VALID_DASHSCOPE_CREDENTIAL
 7. DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR, T12 -- parked
 
 ## Claim Boundary
