@@ -3139,6 +3139,68 @@
       "manifestPath": null,
       "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P4B_A_PROVIDER_EXECUTION_BRIDGE_WORKER_RETURN_2026-06-15.md",
       "notes": "Deterministic test suite for ProviderExecutionBridge. 21 tests covering denied/approval/no-candidate routing, missing or provider-mismatched adapter, missing/unavailable credential metadata, unusable health (routing-layer and bridge-layer), over-quota (routing-layer and bridge-layer), successful adapter invocation, health/quota recording, provider/model response, adapter error shielding, serialized secret non-leakage, ordered execution spy verification, and negative source assertions. No concrete adapter import, network call, credential secret, or live proof."
+    },
+    {
+      "id": "model-gateway-c02-p4c-provider-adapter-conformance",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway C-02 P4C provider adapter contract conformance source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-adapter-conformance.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "fetch (not in conformance - no network call)",
+        "http request (not in conformance)",
+        "resolveSecretForRuntime (forbidden - metadata only)",
+        "providers/alibaba (no concrete adapter import)",
+        "providers/deepseek (no concrete adapter import)",
+        "createAlibaba (no concrete adapter factory)",
+        "createDeepSeek (no concrete adapter factory)",
+        ".env.local (no credential file access)",
+        "DASHSCOPE_API_KEY (no API key reference)",
+        "DEEPSEEK_API_KEY (no API key reference)",
+        "ALIBABA_API_KEY (no API key reference)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P4C",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P4C_PROVIDER_ADAPTER_CONTRACT_CONFORMANCE_WORKER_RETURN_2026-06-15.md",
+      "notes": "Provider-agnostic adapter conformance evaluator. Pure local, deterministic, no-network. Exports ProviderAdapterConformanceStatus, ProviderAdapterConformanceInput, ProviderAdapterConformanceReport, evaluateProviderAdapterConformance, and PROVIDER_ADAPTER_CONFORMANCE_VERSION. Uses existing method-gate helpers (findProviderCapability, listRegistrySupportedMethods, normalizeProviderMethodName) and ProviderExecutionAdapter from bridge. liveExecutionAuthorized is always false. adapter.execute() is never called."
+    },
+    {
+      "id": "model-gateway-c02-p4c-provider-adapter-conformance-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway C-02 P4C provider adapter contract conformance tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/tests/provider-adapter-conformance.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "fetch (not in tests - no network call)",
+        "http request (not in tests)",
+        "resolveSecretForRuntime (forbidden - metadata only)",
+        "providers/alibaba (no concrete adapter import)",
+        "providers/deepseek (no concrete adapter import)",
+        "createAlibaba (no concrete adapter factory)",
+        "createDeepSeek (no concrete adapter factory)",
+        ".env.local (no credential file access)",
+        "DASHSCOPE_API_KEY (no API key reference)",
+        "DEEPSEEK_API_KEY (no API key reference)",
+        "ALIBABA_API_KEY (no API key reference)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P4C",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P4C_PROVIDER_ADAPTER_CONTRACT_CONFORMANCE_WORKER_RETURN_2026-06-15.md",
+      "notes": "Deterministic test suite for evaluateProviderAdapterConformance. 23 tests covering conformant path, provider mismatch, missing provider capability, missing model capability, unsupported method, alias normalization, optional credential metadata block, liveExecutionAuthorized always-false invariant, no adapter.execute() call, provider agnosticism with arbitrary IDs, serialized secret non-leakage, negative source assertions, and report shape completeness. No concrete adapter import, network call, credential secret, or hardcoded required provider ID."
     }
   ]
 }

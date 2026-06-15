@@ -307,6 +307,16 @@ export {
   PROVIDER_EXECUTION_BRIDGE_VERSION,
 } from "./provider-execution-bridge";
 
+export type {
+  ProviderAdapterConformanceStatus,
+  ProviderAdapterConformanceInput,
+  ProviderAdapterConformanceReport,
+} from "./provider-adapter-conformance";
+export {
+  evaluateProviderAdapterConformance,
+  PROVIDER_ADAPTER_CONFORMANCE_VERSION,
+} from "./provider-adapter-conformance";
+
 export const MODEL_GATEWAY_WRAPPER = {
   executionClass: "wrapper/re-export merge",
   runtimeOwnership: "implementation-owner upgrade",
