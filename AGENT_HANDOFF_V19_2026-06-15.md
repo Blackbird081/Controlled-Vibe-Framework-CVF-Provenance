@@ -30,8 +30,9 @@ Startup acknowledged: current mode=`model_gateway_c02_p5c_closed_p4b_b_hold`; ac
 
 `model_gateway_c02_p5c_closed_p4b_b_hold`
 
-Current HEAD recorded for this handoff: `de515c11`
-(P4B-B live proof packet recorded as draft negative sample; prior Model Gateway
+Current HEAD recorded for this handoff: `bf3f3419`
+(Dispatch packet authoring guard hardening material commit; P4B-B live proof
+packet recorded as draft negative sample at `de515c11`; prior Model Gateway
 C-02 P4B-B concrete provider live proof roadmap commit `9c02da8c`;
 prior session-memory sync commit `d3fcb7d0`; Model Gateway C-02 P5-C
 session-sync commit `5d1c8273`; P5-C material closure commit `b7a88782`;
