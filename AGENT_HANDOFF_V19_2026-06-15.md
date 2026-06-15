@@ -30,11 +30,12 @@ Startup acknowledged: current mode=`model_gateway_c02_p4c_dispatched`; active ha
 
 `model_gateway_c02_p4c_dispatched`
 
-Current HEAD recorded for this handoff: `10b9626b`
-(Model Gateway C-02 P4C dispatch commit; P4B-A closure-doc commit `a21f3e65`;
-session-sync commit `ddc28dc8`; material implementation commit `3c5b1d3d`;
-P4B-A dispatch commit `2181b072`; prior Model Gateway C-02 P3/P4A material
-implementation commit `5d46bc62`.)
+Current HEAD recorded for this handoff: `8d8f0871`
+(Model Gateway C-02 P4C material implementation commit; P4C dispatch commit
+`10b9626b`; P4B-A closure-doc commit `a21f3e65`; session-sync commit
+`ddc28dc8`; material implementation commit `3c5b1d3d`; P4B-A dispatch commit
+`2181b072`; prior Model Gateway C-02 P3/P4A material implementation commit
+`5d46bc62`.)
 
 ## Active Boundary
 
@@ -159,6 +160,11 @@ DISPATCHED at commit `10b9626b`. Claude may implement only the
 provider-agnostic deterministic adapter conformance evaluator, focused tests,
 GC-051 entries, regenerated corpus registry, and worker return named in the
 work order. Claude must not commit.
+
+Model Gateway C-02 P4C material implementation committed at `8d8f0871`.
+Codex accepted the runtime implementation after reviewer repair to evidence
+and negative-search assertions. Closure-doc conversion remains the next local
+step; P4B-B stays held.
 
 ## Parked Lanes
 
