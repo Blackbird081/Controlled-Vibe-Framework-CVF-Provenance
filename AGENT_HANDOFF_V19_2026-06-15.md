@@ -30,8 +30,10 @@ Startup acknowledged: current mode=`session_sync_pack_builder_closed_next_roadma
 
 `session_sync_pack_builder_closed_next_roadmap`
 
-Current HEAD recorded for this handoff: `a5e91d4b`
-(Session-Sync Pack Builder And Authorization Manifest material commit
+Current HEAD recorded for this handoff: `7df9679d`
+(Session continuity authoring and mode-consistency foundation roadmap and
+handoff-sync; session-state mode drift fix material commit `7df9679d`;
+Session-Sync Pack Builder And Authorization Manifest material commit
 `a5e91d4b`; Commit Steward Session-Sync Preflight Hardening material commit
 `d709071c`; Agent
 Dispatch Prompt Envelope Standardization material closure commit `b2654e2e`; prior
