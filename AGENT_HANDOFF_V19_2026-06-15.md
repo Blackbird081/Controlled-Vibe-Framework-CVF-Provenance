@@ -30,8 +30,9 @@ Startup acknowledged: current mode=`model_gateway_c02_p5c_closed_p4b_b_hold`; ac
 
 `model_gateway_c02_p5c_closed_p4b_b_hold`
 
-Current HEAD recorded for this handoff: `b7a88782`
-(Model Gateway C-02 P5-C material closure commit; P5-C executionBaseHead `5fd4dbd2`;
+Current HEAD recorded for this handoff: `5d1c8273`
+(Model Gateway C-02 P5-C session-sync commit; P5-C material closure commit
+`b7a88782`; P5-C executionBaseHead `5fd4dbd2`;
 P5 session-sync commit `5fd4dbd2`; P5 material commit `a4907f2c`; P5 dispatch commit `f26afe68`;
 P5 dispatch session-sync commit `fbbec2e4`; Model Gateway C-02 P5 roadmap commit
 `4c888aa0`; Autorun exact-manifest range-shape
@@ -61,9 +62,9 @@ requires separate authorization.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: this file is the active handoff. Codex may
-update this handoff and session front-door state after Model Gateway C-02 P5
-material closure commit `a4907f2c` so GC-020 records the P5 closure boundary
-while preserving the P4B-B live-proof hold.
+update this handoff and session front-door state after Model Gateway C-02 P5-C
+session-sync commit `5d1c8273` to remove stale P5-A/P5-B next-move prose from
+the front door while preserving the P4B-B live-proof hold.
 
 Protected paths:
 
@@ -81,13 +82,13 @@ Protected paths:
 - `CVF_SESSION/state/entries/modelGatewayC02P5CBridgeAdmissionBoundaryClosure20260615.json`
 - `AGENT_HANDOFF_V19_2026-06-15.md`
 
-Operator authorization: operator authorized Codex to inspect the Claude-created
-work order, fix dispatch findings, execute P5, commit, and audit next roadmap
-on 2026-06-15; this session sync records both P5 and P5-C closure boundaries
-without releasing P4B-B live proof.
+Operator authorization: operator reported P5-C complete on 2026-06-15 and asked
+Codex to evaluate/continue; this session-sync cleanup aligns the front door
+with the already recorded P5-C closure without releasing P4B-B live proof.
 
 Rollback boundary: if session-sync gates fail, revert only this session-sync
-batch. Do not revert P5 material closure commit `a4907f2c`, P5 dispatch commit
+batch. Do not revert P5-C session-sync commit `5d1c8273`, P5-C material commit
+`b7a88782`, P5 material closure commit `a4907f2c`, P5 dispatch commit
 `f26afe68`, P5 roadmap commit
 `4c888aa0`, P4C closure-doc commit
 `64a80684`, P4C material commit

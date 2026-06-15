@@ -133,12 +133,17 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `model_gateway_c02_p5_dispatched_to_codex_p4b_b_hold`.
+Mode: `model_gateway_c02_p5c_closed_p4b_b_hold`.
 
-Next move: Codex implements Model Gateway C-02 P5-A/P5-B provider adapter
-admission and capability negotiation, then authors completion review, commits
-material artifacts, runs material-range pre-closure, and syncs session
-separately if closure changes next move.
+Next move: P4B-B concrete live proof requires fresh explicit operator
+authorization, fresh GC-018 with live credential boundary, source-verified work
+order, and live-run diagnostic discipline.
+
+No provider/API call, credential/network use, provider/model addition, EPF
+wiring, Strategy Layer implementation, AI Gateway absorption, public-sync,
+external app mutation, raw memory release, co-work product development,
+production readiness, or public readiness is authorized without fresh operator
+authorization.
 
 LHW24 remains the latest closed numbered LHW wave.
 
