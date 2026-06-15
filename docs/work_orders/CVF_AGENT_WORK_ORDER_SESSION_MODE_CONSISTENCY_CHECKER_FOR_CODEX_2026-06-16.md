@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -192,14 +192,14 @@ Text encoding: all authored prose uses ASCII only.
 
 | Roadmap requirement | Work-order section | Output artifact | Verification | Status |
 |---|---|---|---|---|
-| Checker fails on cross-surface marker disagreement | Section 5; mission | `check_session_mode_consistency.py` | focused test asserting non-zero exit on drift | OPEN |
-| Checker passes when surfaces agree | Section 5 | checker | focused test on clean tree | OPEN |
-| Resolve handoff path from activeHandoff, not hardcode | Section 6 forbidden; source verification | checker | code review in completion | OPEN |
-| Wire into reviewer-fast | Section 5 | `run_local_governance_hook_chain.py` | reviewer-fast lists the checker | OPEN |
-| Wire into session-sync steward lane | Section 5 | `run_agent_commit_steward_preflight.py` | session-sync steward runs the checker | OPEN |
-| Read-only: no write/stage | Section 6 forbidden | checker | completion claim boundary | OPEN |
-| Focused tests | Section 5 | `test_check_session_mode_consistency.py` | test run output | OPEN |
-| Completion review with trace block | Section 5 | completion review | `Manifest delta: MATCH` | OPEN |
+| Checker fails on cross-surface marker disagreement | Section 5; mission | `check_session_mode_consistency.py` | focused test asserting non-zero exit on drift | PASS |
+| Checker passes when surfaces agree | Section 5 | checker | focused test on clean tree | PASS |
+| Resolve handoff path from activeHandoff, not hardcode | Section 6 forbidden; source verification | checker | code review in completion | PASS |
+| Wire into reviewer-fast | Section 5 | `run_local_governance_hook_chain.py` | reviewer-fast lists the checker | PASS |
+| Wire into session-sync steward lane | Section 5 | `run_agent_commit_steward_preflight.py` | session-sync steward runs the checker | PASS |
+| Read-only: no write/stage | Section 6 forbidden | checker | completion claim boundary | PASS |
+| Focused tests | Section 5 | `test_check_session_mode_consistency.py` | test run output | PASS |
+| Completion review with trace block | Section 5 | completion review | `Manifest delta: MATCH` | PASS |
 
 ## 6C. Worker Autonomy / No-Question Rule
 
@@ -296,23 +296,23 @@ PASS after material commit, and a completion review with `Manifest delta: MATCH`
 
 | Criterion | Status |
 |---|---|
-| Checker fails when mode marker disagrees across surfaces | OPEN |
-| Checker passes when surfaces agree | OPEN |
-| Handoff path resolved from `activeHandoff`, not hardcoded | OPEN |
-| Wired into reviewer-fast | OPEN |
-| Wired into steward session-sync lane | OPEN |
-| No file writes or git stage as side effect | OPEN |
-| Focused tests pass | OPEN |
-| Completion review with Agent Operation Trace Block present | OPEN |
-| `Manifest delta: MATCH` in completion review | OPEN |
+| Checker fails when mode marker disagrees across surfaces | PASS |
+| Checker passes when surfaces agree | PASS |
+| Handoff path resolved from `activeHandoff`, not hardcoded | PASS |
+| Wired into reviewer-fast | PASS |
+| Wired into steward session-sync lane | PASS |
+| No file writes or git stage as side effect | PASS |
+| Focused tests pass | PASS |
+| Completion review with Agent Operation Trace Block present | PASS |
+| `Manifest delta: MATCH` in completion review | PASS |
 
 ## 6E.1 Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | OPEN |
-| Completion or reviewer artifact | `docs/reviews/CVF_SESSION_MODE_CONSISTENCY_CHECKER_COMPLETION_2026-06-16.md` | file exists with trace block and `Manifest delta: MATCH` | OPEN |
-| Roadmap state | `docs/roadmaps/CVF_SESSION_CONTINUITY_AUTHORING_AND_MODE_CONSISTENCY_FOUNDATION_ROADMAP_2026-06-16.md` | T1 delivered; T2 remains held; no stale dispatch residue | OPEN |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SESSION_MODE_CONSISTENCY_CHECKER_COMPLETION_2026-06-16.md` | file exists with trace block and `Manifest delta: MATCH` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_SESSION_CONTINUITY_AUTHORING_AND_MODE_CONSISTENCY_FOUNDATION_ROADMAP_2026-06-16.md` | T1 delivered; T2 remains held; no stale dispatch residue | PASS |
 | Registry JSON | BLOCKED with reason | no GC-051 source/test/runtime registry surface authorized in this tranche | BLOCKED with reason |
 | Registry Markdown | BLOCKED with reason | no corpus registry Markdown owner authorized | BLOCKED with reason |
 | External evidence digest | N/A with reason | no external source, provider, OCR, or live-proof artifact | N/A with reason |
@@ -324,12 +324,12 @@ PASS after material commit, and a completion review with `Manifest delta: MATCH`
 
 | Item | Status |
 |---|---|
-| Acceptance criteria satisfied | OPEN |
-| Focused tests run | OPEN |
-| Agent Operation Trace Block present | OPEN |
-| Changed-file scope matches authorized list | OPEN |
+| Acceptance criteria satisfied | PASS |
+| Focused tests run | PASS |
+| Agent Operation Trace Block present | PASS |
+| Changed-file scope matches authorized list | PASS |
 | Core Guard Self-Protection Authorization included | PASS |
-| No session-file mutation in material commit | OPEN |
+| No session-file mutation in material commit | PASS |
 | No public-sync authorized | PASS |
 
 ## Return-To-Orchestrator Conditions
@@ -399,8 +399,8 @@ Return contract: COMPLETE_PENDING_REVIEW
 | Claim boundary | no runtime/provider/public/production claim |
 | Agent type | Codex orchestrator |
 | Invocation ID | `work-order-session-mode-consistency-checker-2026-06-16` |
-| Expected manifest | `docs/baselines/CVF_GC018_SESSION_MODE_CONSISTENCY_CHECKER_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_SESSION_MODE_CONSISTENCY_CHECKER_FOR_CODEX_2026-06-16.md`; `AGENT_HANDOFF_V19_2026-06-15.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_SESSION_MODE_CONSISTENCY_CHECKER_2026-06-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_SESSION_MODE_CONSISTENCY_CHECKER_FOR_CODEX_2026-06-16.md`; `AGENT_HANDOFF_V19_2026-06-15.md` |
+| Expected manifest | `governance/compat/check_session_mode_consistency.py`; `governance/compat/test_check_session_mode_consistency.py`; `governance/compat/run_local_governance_hook_chain.py`; `governance/compat/run_agent_commit_steward_preflight.py`; `docs/work_orders/CVF_AGENT_WORK_ORDER_SESSION_MODE_CONSISTENCY_CHECKER_FOR_CODEX_2026-06-16.md`; `docs/reviews/CVF_SESSION_MODE_CONSISTENCY_CHECKER_COMPLETION_2026-06-16.md` |
+| Actual changed set | `governance/compat/check_session_mode_consistency.py`; `governance/compat/test_check_session_mode_consistency.py`; `governance/compat/run_local_governance_hook_chain.py`; `governance/compat/run_agent_commit_steward_preflight.py`; `docs/work_orders/CVF_AGENT_WORK_ORDER_SESSION_MODE_CONSISTENCY_CHECKER_FOR_CODEX_2026-06-16.md`; `docs/reviews/CVF_SESSION_MODE_CONSISTENCY_CHECKER_COMPLETION_2026-06-16.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 

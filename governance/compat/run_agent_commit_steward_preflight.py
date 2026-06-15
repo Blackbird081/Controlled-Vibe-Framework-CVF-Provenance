@@ -232,6 +232,10 @@ def _mode_commands(mode: str, base: str, head: str) -> tuple[Command, ...]:
                 "active session state compatibility",
                 ("python", "governance/compat/check_active_session_state.py", "--enforce"),
             ),
+            Command(
+                "session mode consistency",
+                ("python", "governance/compat/check_session_mode_consistency.py", "--enforce"),
+            ),
             Command("diff hygiene", ("git", "diff", "--check")),
         )
     if mode == "handoff-sync":

@@ -79,6 +79,10 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
         ["python", "governance/compat/check_active_session_state.py", "--enforce"],
     ),
     (
+        "session mode consistency",
+        ["python", "governance/compat/check_session_mode_consistency.py", "--enforce"],
+    ),
+    (
         "memory consolidation artifact quality",
         ["python", "governance/compat/check_memory_consolidation_artifact_quality.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
