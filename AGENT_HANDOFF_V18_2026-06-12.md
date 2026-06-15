@@ -30,9 +30,9 @@ Startup acknowledged: current mode=`model_gateway_c02_p1_routing_pipeline_closed
 
 `model_gateway_c02_p1_routing_pipeline_closed_bounded`
 
-Current HEAD recorded for this handoff: `24a3c30a`
-(Model Gateway C-02 P1 routing pipeline material closure commit; this dedicated
-handoff sync follows).
+Current HEAD recorded for this handoff: `00b96357`
+(Model Gateway C-02 P1 routing pipeline handoff-sync commit; this dedicated
+front-door/state sync follows).
 
 ## Active Boundary
 
@@ -47,17 +47,27 @@ requires separate authorization.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: Codex may update this active handoff after
-Model Gateway C-02 P1 routing pipeline material closure commit `24a3c30a` so
-the active handoff points to the latest material closure state.
+Authorized guard-maintenance scope: Codex may update session continuity files
+after Model Gateway C-02 P1 routing pipeline material closure commit `24a3c30a`
+and handoff-sync commit `00b96357` so the active front door, generated state
+aggregate, state source files, and active handoff point to the latest P1 closure
+state.
 
 Protected paths:
 
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/lastUpdated.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/modelGatewayC02P1RoutingPipelineClosure20260614.json`
 - `AGENT_HANDOFF_V18_2026-06-12.md`
 
 Rollback boundary: if session-sync gates fail, revert only this continuity sync
-batch. Do not revert Model Gateway C-02 P1 material closure commit `24a3c30a`,
-Model Gateway C-02 P1 dispatch commit `e9f46b61`, trace-alignment commit
+batch and regenerate `CVF_SESSION/ACTIVE_SESSION_STATE.json` from the previous
+state source files. Do not revert Model Gateway C-02 P1 handoff-sync commit
+`00b96357`, Model Gateway C-02 P1 material closure commit `24a3c30a`, Model
+Gateway C-02 P1 dispatch commit `e9f46b61`, trace-alignment commit
 `da725c1a`, material guard commit `3423d82e`, Model Gateway recheck closure commit `5be35102`,
 material correction commit `919afd4e`, material dispatch commit `a4cfb246`,
 C-02 dispatch commit `2d77e67a`, session-sync commit `045d38b3`, or C-02
@@ -86,6 +96,11 @@ focused tests, worker return, reviewer completion, and GC-051 coverage for the
 new/cited source paths. P2 dynamic registry, P3 gateway interface, strategy
 layer, AI Gateway, provider/live proof, public-sync, legacy/model registry
 mutation, and readiness claims remain parked.
+
+Session front-door/state sync on 2026-06-15 updates `CVF_SESSION_MEMORY.md`,
+`CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`,
+`CVF_SESSION/state/entries/nextAllowedMove.json`, `lastUpdated`, and generated
+`CVF_SESSION/ACTIVE_SESSION_STATE.json` so they match this P1 closure state.
 
 Model Gateway C-02 P1 Routing Pipeline Implementation draft work order is
 committed at `b2c7c802`.

@@ -4,9 +4,9 @@ Memory class: POINTER_RECORD
 
 Status: ACTIVE SESSION FRONT DOOR
 
-Last updated: 2026-06-14
+Last updated: 2026-06-15
 
-Current mode marker: `model_gateway_c02_rewrite_planning_closed_bounded`
+Current mode marker: `model_gateway_c02_p1_routing_pipeline_closed_bounded`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `model_gateway_c02_rewrite_planning_closed_bounded`.
+Current mode: `model_gateway_c02_p1_routing_pipeline_closed_bounded`.
 
 Active handoff:
 
@@ -58,24 +58,25 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-Model Gateway C-02 Provider Routing Boundary Rewrite planning is
-`CLOSED_PASS_BOUNDED` at material closure commit `657b2794`.
+Model Gateway C-02 P1 Routing Pipeline is `CLOSED_PASS_BOUNDED` at material
+closure commit `24a3c30a`; handoff sync commit `00b96357` is complete.
 
 Work order:
 
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_PROVIDER_ROUTING_BOUNDARY_REWRITE_FOR_CLAUDE_2026-06-14.md`
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_IMPLEMENTATION_2026-06-14.md`
 
 Closure artifacts:
 
-- `docs/reference/CVF_MODEL_GATEWAY_C02_PROVIDER_ROUTING_BOUNDARY_REWRITE_PLAN_2026-06-14.md`;
-- `docs/reviews/CVF_MODEL_GATEWAY_C02_PROVIDER_ROUTING_BOUNDARY_REWRITE_WORKER_RETURN_2026-06-14.md`;
-- `docs/reviews/CVF_MODEL_GATEWAY_C02_PROVIDER_ROUTING_BOUNDARY_REWRITE_COMPLETION_2026-06-14.md`.
+- `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_WORKER_RETURN_2026-06-14.md`;
+- `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_COMPLETION_2026-06-14.md`;
+- `docs/corpus-intelligence/registry/entries/model-gateway-c02-p1-routing-policy-pipeline-source.json`;
+- `docs/corpus-intelligence/registry/entries/model-gateway-c02-p1-existing-routing-touchpoints.json`.
 
-Codex reviewed Claude's no-commit worker return, repaired trace/source-wording
-evidence, created the completion review, and committed the planning closure.
-The old C-02 Model Gateway EPF provider-routing boundary planning packet must
-not resume as-is. Any implementation follow-up requires fresh operator
-authorization, fresh GC-018, and a source-verified work order.
+Codex executed the bounded multi-role P1 implementation, created the worker
+return and completion review, repaired required GC-051 source registry coverage,
+and committed the closure. Any Model Gateway C-02 P2/P3 or runtime/provider
+follow-up requires fresh operator authorization, fresh GC-018, and a
+source-verified work order.
 
 Legacy coverage-index dispatch guard hardening is `CLOSED_PASS_BOUNDED` at
 material commit `3423d82e`. Ready/dispatch work orders that are both
@@ -999,20 +1000,24 @@ repo, production readiness, public readiness, or live governance proof.
 
 ## Next Allowed Move
 
-Next allowed move: Model Gateway C-02 Provider Routing Boundary Rewrite
-planning is `CLOSED_PASS_BOUNDED` at material closure commit `657b2794`.
+Next allowed move: Model Gateway C-02 P1 Routing Pipeline is
+`CLOSED_PASS_BOUNDED` at material closure commit `24a3c30a`; handoff sync commit
+`00b96357` is complete.
 Closure artifacts are:
 
-- `docs/reference/CVF_MODEL_GATEWAY_C02_PROVIDER_ROUTING_BOUNDARY_REWRITE_PLAN_2026-06-14.md`;
-- `docs/reviews/CVF_MODEL_GATEWAY_C02_PROVIDER_ROUTING_BOUNDARY_REWRITE_WORKER_RETURN_2026-06-14.md`;
-- `docs/reviews/CVF_MODEL_GATEWAY_C02_PROVIDER_ROUTING_BOUNDARY_REWRITE_COMPLETION_2026-06-14.md`.
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_IMPLEMENTATION_2026-06-14.md`;
+- `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_WORKER_RETURN_2026-06-14.md`;
+- `docs/reviews/CVF_MODEL_GATEWAY_C02_P1_ROUTING_PIPELINE_COMPLETION_2026-06-14.md`.
 
-No old C-02 packet reuse, implementation, runtime/source/test mutation,
-provider/API use, live governance proof, provider/model addition, registry
-mutation, public-sync, external Document_Translator inspection or mutation,
-Policy_Local mutation, OS audit, endpoint monitoring, T12, raw memory release,
-co-work product development, or autonomous mutation is authorized without fresh
-operator authorization, fresh GC-018, and a source-verified work order.
+Model Gateway C-02 P2 dynamic model registry boundary, C-02 P3 unified gateway
+interface boundary, or another foundation follow-up may open only through fresh
+operator authorization, fresh GC-018, and a source-verified work order. No Model
+Gateway P2/P3 implementation, provider/API use, live governance proof,
+provider/model addition, strategy-layer implementation, AI Gateway absorption,
+legacy/model registry mutation, public-sync, external Document_Translator
+inspection or mutation, Policy_Local mutation, OS audit, endpoint monitoring,
+T12, raw memory release, co-work product development, or autonomous mutation is
+authorized without that fresh authorization chain.
 
 DIR-T2 Document Intelligence Router foundation pilot remains
 `CLOSED_PASS_BOUNDED` at material closure commit `e3395acc`. Closure artifacts:

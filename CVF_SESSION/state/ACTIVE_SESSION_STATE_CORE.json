@@ -59,8 +59,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "model_gateway_c02_rewrite_planning_closed_bounded",
-  "previousMode": "model_gateway_c02_rewrite_work_order_dispatched",
+  "currentMode": "model_gateway_c02_p1_routing_pipeline_closed_bounded",
+  "previousMode": "model_gateway_c02_rewrite_planning_closed_bounded",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
