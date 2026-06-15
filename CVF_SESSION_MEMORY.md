@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-16
 
-Current mode marker: `session_sync_authoring_helper_closed_next_roadmap`
+Current mode marker: `roadmap_state_reconciliation_t1_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `session_sync_authoring_helper_closed_next_roadmap`.
+Current mode: `roadmap_state_reconciliation_t1_dispatched`.
 
 Active handoff:
 
@@ -62,10 +62,17 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-Session-Sync Authoring Helper T2 is `CLOSED_PASS_BOUNDED` at material commit
-`5cb9d472`. `governance/compat/build_session_sync_pack.py --author-entry`
-now emits a read-only state-entry skeleton, `nextAllowedMove` template, and the
-five canonical session mode marker occurrences. Focused tests passed 16/16 and
+Roadmap State Reconciliation RSF-T1 dispatch packet is committed at
+`0977365e`. Next allowed move: Claude may execute
+`docs/work_orders/CVF_AGENT_WORK_ORDER_ROADMAP_STATE_RECONCILIATION_T1_FOR_CLAUDE_2026-06-16.md`
+under `WORKER_MUST_NOT_COMMIT`, reconciling the stale CI2 roadmap state and
+returning uncommitted worker artifacts for Codex review.
+
+Prior closure pointer: Session-Sync Authoring Helper T2 is
+`CLOSED_PASS_BOUNDED` at material commit `5cb9d472`.
+`governance/compat/build_session_sync_pack.py --author-entry` now emits a
+read-only state-entry skeleton, `nextAllowedMove` template, and the five
+canonical session mode marker occurrences. Focused tests passed 16/16 and
 reviewer-fast passed 17/17.
 
 Prior closure pointer: Session-Sync Pack Builder And Authorization Manifest is
