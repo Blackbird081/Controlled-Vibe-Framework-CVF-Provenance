@@ -30,9 +30,9 @@ Startup acknowledged: current mode=`model_gateway_c02_p1_routing_pipeline_closed
 
 `model_gateway_c02_p2_roadmap_ready`
 
-Current HEAD recorded for this handoff: `ca29e988`
-(Model Gateway C-02 P2 handoff-HEAD sync + roadmap verification repair commit;
-prior roadmap commit `aa9e0550`, prior sync commit `6e520351`).
+Current HEAD recorded for this handoff: `2d1dd769`
+(Model Gateway C-02 P2 work order handoff-sync commit;
+prior repair commit `ca29e988`, prior roadmap commit `aa9e0550`).
 
 ## Active Boundary
 
@@ -53,6 +53,13 @@ and handoff-sync commit `00b96357` so the active front door, generated state
 aggregate, state source files, and active handoff point to the latest P1 closure
 state.
 
+Additional authorized guard-maintenance scope: Codex may repair
+`check_agent_operation_trace.py` so Agent Operation Trace manifests can parse
+root-level governed files such as `AGENT_HANDOFF_V18_2026-06-12.md`. This
+unblocks the P2 work-order packaging conflict between GC-020 handoff sync and
+Agent Operation Trace manifest exactness without weakening observed-path
+comparison.
+
 Protected paths:
 
 - `CVF_SESSION_MEMORY.md`
@@ -62,6 +69,8 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/modelGatewayC02P1RoutingPipelineClosure20260614.json`
 - `AGENT_HANDOFF_V18_2026-06-12.md`
+- `governance/compat/check_agent_operation_trace.py`
+- `governance/compat/test_check_agent_operation_trace.py`
 
 Rollback boundary: if session-sync gates fail, revert only this continuity sync
 batch and regenerate `CVF_SESSION/ACTIVE_SESSION_STATE.json` from the previous

@@ -184,6 +184,28 @@ class AgentOperationTraceTests(unittest.TestCase):
 
         self.assertEqual(MODULE.find_trace_violations(changed, texts), [])
 
+    def test_root_level_handoff_path_in_manifest_passes(self) -> None:
+        path = "docs/work_orders/CVF_AGENT_WORK_ORDER_EXAMPLE.md"
+        handoff_path = "AGENT_HANDOFF_V18_2026-06-12.md"
+        trace = VALID_TRACE.replace(
+            "| Expected manifest | N/A with reason: unit test fixture not a worker return |",
+            f"| Expected manifest | docs/reference/plan.md; {handoff_path} |",
+        ).replace(
+            "| Actual changed set | N/A with reason: unit test fixture not a worker return |",
+            f"| Actual changed set | docs/reference/plan.md; {handoff_path} |",
+        ).replace(
+            "| Manifest delta | N/A with reason: unit test fixture not a worker return |",
+            "| Manifest delta | MATCH |",
+        )
+        changed = {
+            path: {"M"},
+            "docs/reference/plan.md": {"A"},
+            handoff_path: {"M"},
+        }
+        texts = {path: trace, "docs/reference/plan.md": "content", handoff_path: "content"}
+
+        self.assertEqual(MODULE.find_trace_violations(changed, texts), [])
+
     def test_trace_field_extraction_ignores_preceding_manifest_tables(self) -> None:
         path = "docs/reviews/CVF_WORKER_RETURN.md"
         content = (

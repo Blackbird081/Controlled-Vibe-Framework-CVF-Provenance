@@ -228,8 +228,9 @@ def _extract_trace_field(text: str, label: str) -> str:
 def _parse_path_list(value: str) -> set[str]:
     """Parse a semicolon/comma/newline separated list of repo paths from a trace field value.
 
-    Only tokens that look like repo-local file paths (containing '/' and an extension,
-    or ending with a known repo prefix) are included. Free-text descriptions are ignored.
+    Only tokens that look like repo-local file paths (containing '/' and an
+    extension, ending with a known repo prefix, or naming a root-level file with
+    an extension) are included. Free-text descriptions are ignored.
     """
     if not value:
         return set()
@@ -239,9 +240,9 @@ def _parse_path_list(value: str) -> set[str]:
     result: set[str] = set()
     for tok in tokens:
         tok = tok.strip()
-        # A valid repo path must contain a '/' and look like a file (has an extension
-        # or is a known directory path). Reject pure prose tokens.
-        if tok and "/" in tok and re.search(r"\.\w{1,6}$|/$", tok):
+        # A valid repo path must look like a file path or known directory path.
+        # Root-level governed files such as AGENT_HANDOFF_*.md are valid paths.
+        if tok and re.search(r"(?:^|/)[A-Za-z0-9_.-]+\.\w{1,8}$|/$", tok):
             result.add(_normalize(tok))
     return result
 
