@@ -1,0 +1,24 @@
+{
+  "stateOrder": 253,
+  "stateKey": "modelGatewayC02P2DynamicModelRegistryBoundaryDispatch20260615",
+  "value": {
+    "status": "DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT",
+    "dispatchBaseHead": "1ec2f2b4",
+    "materialDispatchCommit": "eea131ec",
+    "worker": "Claude",
+    "reviewer": "Codex",
+    "roadmap": "docs/roadmaps/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_ROADMAP_2026-06-15.md",
+    "gc018": "docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md",
+    "expectedWorkerDeliverables": [
+      "EXTENSIONS/CVF_MODEL_GATEWAY/src/dynamic-model-registry-contract.ts",
+      "EXTENSIONS/CVF_MODEL_GATEWAY/src/index.ts",
+      "EXTENSIONS/CVF_MODEL_GATEWAY/tests/dynamic-model-registry-contract.test.ts",
+      "docs/reference/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_DEFINITION_2026-06-15.md",
+      "docs/reviews/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_WORKER_RETURN_2026-06-15.md"
+    ],
+    "reviewerOwnedClosurePath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_COMPLETION_2026-06-15.md",
+    "nextAllowedMove": "Await Claude COMPLETE_PENDING_REVIEW, then Codex review and closure decision. Do not open P3/P4 or runtime/provider/live/public work before P2 review.",
+    "claimBoundary": "P2 dispatch only. No runtime registry implementation, provider/API use, live proof, provider/model addition, public-sync, external app mutation, raw memory release, co-work product development, AI Gateway absorption, production readiness, or public readiness."
+  }
+}

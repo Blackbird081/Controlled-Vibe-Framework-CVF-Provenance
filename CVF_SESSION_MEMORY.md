@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-15
 
-Current mode marker: `model_gateway_c02_p2_roadmap_ready`
+Current mode marker: `model_gateway_c02_p2_dynamic_model_registry_boundary_dispatched`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -38,7 +38,7 @@ Active handoff predecessor archived in this batch:
 
 ## Current State
 
-Current mode: `model_gateway_c02_p2_roadmap_ready`.
+Current mode: `model_gateway_c02_p2_dynamic_model_registry_boundary_dispatched`.
 
 Active handoff:
 
@@ -58,12 +58,23 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-Model Gateway C-02 P2 Dynamic Model Registry Boundary roadmap is
-`ROADMAP_READY` as of 2026-06-15. Operator authorized P2 per session
-instruction 2026-06-15. Next move: GC-018, work order, dispatch to worker.
+Model Gateway C-02 P2 Dynamic Model Registry Boundary is
+`DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT` as of 2026-06-15.
+
+Material dispatch commit: `eea131ec`.
+
+Next move: Claude executes the P2 work order under WORKER_MUST_NOT_COMMIT and
+returns `COMPLETE_PENDING_REVIEW`; Codex then reviews closure evidence and
+decides whether to close P2.
 
 Roadmap:
 `docs/roadmaps/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_ROADMAP_2026-06-15.md`
+
+GC-018:
+`docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md`
+
+Work order:
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md`
 
 Prior closed tranche (pointer):
 
@@ -116,10 +127,13 @@ explicitly disposition strategy-layer depth, routing-policy-engine pipeline,
 dynamic model registry, integration-flow boundary, gateway-interface boundary,
 and AI Gateway deferral.
 
-No implementation, runtime/source/test mutation, provider/API use, live
+Only the P2 work-order allowed scope is authorized for Claude: additive
+Model Gateway dynamic registry contract/types, boundary definition doc,
+focused type-level tests, and bounded exports/GC-051 coverage if required by
+the work order. Runtime registry implementation, provider/API use, live
 governance proof, provider/model addition, public-sync, external app mutation,
-raw memory release, co-work product development, autonomous mutation, or AI
-Gateway environment-signal absorption is authorized.
+raw memory release, co-work product development, autonomous mutation, AI
+Gateway environment-signal absorption, and P3/P4 work remain unauthorized.
 
 ---
 

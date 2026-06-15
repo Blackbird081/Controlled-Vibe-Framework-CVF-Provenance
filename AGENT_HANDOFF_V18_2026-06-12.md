@@ -24,16 +24,17 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`model_gateway_c02_p1_routing_pipeline_closed_bounded`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=Model Gateway C-02 P2/P3 or other foundation follow-up only through fresh operator authorization, fresh GC-018, and source-verified work order; parked checkpoint=provider/live-proof, Model Gateway P2/P3, Sandbox Runtime implementation, AI Gateway environment-signal absorption, legacy/model registry mutation, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
+Startup acknowledged: current mode=`model_gateway_c02_p2_dynamic_model_registry_boundary_dispatched`; active handoff=`AGENT_HANDOFF_V18_2026-06-12.md`; next allowed move=Claude executes Model Gateway C-02 P2 under WORKER_MUST_NOT_COMMIT and returns COMPLETE_PENDING_REVIEW for Codex review; parked checkpoint=provider/live-proof, Model Gateway P3/P4, Sandbox Runtime implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond P2 scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
 
 ## Current Mode
 
-`model_gateway_c02_p2_roadmap_ready`
+`model_gateway_c02_p2_dynamic_model_registry_boundary_dispatched`
 
-Current HEAD recorded for this handoff: `61984341`
-(Model Gateway C-02 P2 work order draft plus Agent Operation Trace
-root-level manifest parser repair; prior handoff-sync commit `2d1dd769`,
-prior roadmap repair commit `ca29e988`, prior roadmap commit `aa9e0550`).
+Current HEAD recorded for this handoff: `eea131ec`
+(Model Gateway C-02 P2 dispatch material commit; prior P2 work-order draft and
+Agent Operation Trace root-level manifest parser repair commit `61984341`,
+prior handoff-sync commit `2d1dd769`, prior roadmap repair commit `ca29e988`,
+prior roadmap commit `aa9e0550`).
 
 ## Active Boundary
 
@@ -68,6 +69,7 @@ Protected paths:
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/modelGatewayC02P2DynamicModelRegistryBoundaryDispatch20260615.json`
 - `CVF_SESSION/state/entries/modelGatewayC02P1RoutingPipelineClosure20260614.json`
 - `AGENT_HANDOFF_V18_2026-06-12.md`
 - `governance/compat/check_agent_operation_trace.py`
@@ -86,22 +88,31 @@ commit `657b2794`, or provider memory authority boundary guard hardening
 material closure commit `9cd4a97f`, or Model Gateway C-02 P1 draft work-order
 commit `b2c7c802`, or Model Gateway C-02 P1 routing pipeline dispatch commit
 `e9f46b61`, or Model Gateway C-02 P2 work-order draft and Agent Operation Trace
-parser repair commit `61984341`.
+parser repair commit `61984341`, or Model Gateway C-02 P2 dispatch commit
+`eea131ec`.
 
 ## Latest Continuity Note
 
-Model Gateway C-02 P2 Dynamic Model Registry Boundary work order is drafted at
-`DRAFT_PENDING_GC018_AND_OPERATOR_AUTHORIZATION` as of 2026-06-15. Dispatch is
-blocked until a fresh GC-018 baseline and operator authorization both exist.
+Model Gateway C-02 P2 Dynamic Model Registry Boundary is
+`DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT` as of 2026-06-15.
 
-Material draft/guard repair commit: `61984341`.
+Material dispatch commit: `eea131ec`.
+
+GC-018:
+`docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md`
 
 Work order:
 `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md`
 
-Dispatch-quality, source-verification, and negative-search gates PASS on the
-drafted work order. Worker authors a types-only contract file, boundary
-definition doc, and type-level tests (R1); existing registries stay unchanged.
+Dispatch-quality, Agent Operation Trace, Markdown structural completeness,
+docs governance, rescan intelligence hardening, pre-dispatch autorun,
+reviewer-fast, and `git diff --check` PASS before dispatch commit.
+
+Claude worker now executes under WORKER_MUST_NOT_COMMIT. Expected worker scope:
+types-only dynamic model registry contract, boundary definition doc, focused
+type-level tests, bounded exports/GC-051 coverage if required by the work
+order, and worker return. Existing provider registries and routing runtime stay
+unchanged unless explicitly allowed by the P2 work order.
 
 Model Gateway C-02 P2 roadmap is `ROADMAP_READY`. Operator authorized P2 tranche
 per session instruction 2026-06-15.
@@ -109,7 +120,7 @@ per session instruction 2026-06-15.
 Roadmap:
 `docs/roadmaps/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_ROADMAP_2026-06-15.md`
 
-Current mode: `model_gateway_c02_p2_roadmap_ready`.
+Current mode: `model_gateway_c02_p2_dynamic_model_registry_boundary_dispatched`.
 
 ---
 
