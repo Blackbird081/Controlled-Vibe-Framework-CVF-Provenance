@@ -295,6 +295,18 @@ export { UNIFIED_GATEWAY_INTERFACE_CONTRACT_VERSION } from "./unified-gateway-in
 export type { UnifiedGatewaySkeletonOptions } from "./unified-gateway-skeleton";
 export { UnifiedGatewaySkeletonImpl } from "./unified-gateway-skeleton";
 
+export type {
+  ProviderExecutionAdapter,
+  ProviderExecutionAdapterInput,
+  ProviderExecutionAdapterResult,
+  ProviderExecutionBridgeOptions,
+  ProviderExecutionBridgeResult,
+} from "./provider-execution-bridge";
+export {
+  ProviderExecutionBridge,
+  PROVIDER_EXECUTION_BRIDGE_VERSION,
+} from "./provider-execution-bridge";
+
 export const MODEL_GATEWAY_WRAPPER = {
   executionClass: "wrapper/re-export merge",
   runtimeOwnership: "implementation-owner upgrade",
