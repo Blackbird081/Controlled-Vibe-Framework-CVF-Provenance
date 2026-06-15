@@ -1,0 +1,23 @@
+{
+  "registryOrder": 81,
+  "id": "session-front-door-v19",
+  "corpusType": "POLICY_DOCUMENT",
+  "displayName": "CVF Session Front Door Handoff V19 compact pointer record",
+  "scopePaths": [
+    "AGENT_HANDOFF_V19_2026-06-15.md"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [
+    "fetch (not in handoff - no network call)",
+    "rawMemoryReleased: true (not in handoff - stays false)"
+  ],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "SESSION-FRONT-DOOR-ROTATION-2026-06-15",
+  "scanDate": "2026-06-15",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_SESSION_FRONT_DOOR_ROTATION_AND_CONTINUITY_COMPACTION_WORKER_RETURN_2026-06-15.md",
+  "notes": "Compact active handoff pointer record opened 2026-06-15. Supersedes V18 (archived at CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md). Contains current mode, next allowed move, parked lane pointers, and Core Guard Self-Protection Authorization. No runtime source. No live call. No provider data."
+}

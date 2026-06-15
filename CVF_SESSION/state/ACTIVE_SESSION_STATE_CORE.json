@@ -32,7 +32,7 @@
   "agentErrorToGovernanceLearningPhilosophy": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
   "agentIntelligenceFoundationsRoadmap": "docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md",
   "operationalReferenceIndex": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
-  "activeHandoff": "AGENT_HANDOFF_V18_2026-06-12.md",
+  "activeHandoff": "AGENT_HANDOFF_V19_2026-06-15.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
@@ -52,15 +52,16 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V14_2026-05-27.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V15_2026-05-29.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V16_2026-06-06.md",
-    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V17_2026-06-07.md"
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V17_2026-06-07.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md"
   ],
   "relatedHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_INTEGRATIONS_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "model_gateway_c02_p4a_unified_gateway_runtime_skeleton_closed",
-  "previousMode": "model_gateway_c02_p2_dynamic_model_registry_boundary_closed",
+  "currentMode": "session_continuity_rotation_guard_hardening_dispatched",
+  "previousMode": "session_front_door_rotation_compaction_complete",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

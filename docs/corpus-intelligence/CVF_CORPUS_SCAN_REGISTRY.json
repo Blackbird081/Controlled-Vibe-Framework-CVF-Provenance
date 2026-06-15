@@ -3059,6 +3059,28 @@
       "manifestPath": null,
       "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P4A_UNIFIED_GATEWAY_RUNTIME_SKELETON_WORKER_RETURN_2026-06-15.md",
       "notes": "Conformance test suite for UnifiedGatewaySkeletonImpl. 13 test cases covering: compile-time typecheck, execute allowed/denied/empty, stream allowed/denied, embedding allowed/denied, health basic/degraded, credential shielding (secret not in envelope), providerIdShielded on all deny paths. All tests use local deterministic helpers (makeRegistry, makeOptions, ALLOW_POLICY, DENY_POLICY) with no live network calls. All 13 tests pass as of 2026-06-15."
+    },
+    {
+      "id": "session-front-door-v19",
+      "corpusType": "POLICY_DOCUMENT",
+      "displayName": "CVF Session Front Door Handoff V19 compact pointer record",
+      "scopePaths": [
+        "AGENT_HANDOFF_V19_2026-06-15.md"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "fetch (not in handoff - no network call)",
+        "rawMemoryReleased: true (not in handoff - stays false)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "SESSION-FRONT-DOOR-ROTATION-2026-06-15",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_SESSION_FRONT_DOOR_ROTATION_AND_CONTINUITY_COMPACTION_WORKER_RETURN_2026-06-15.md",
+      "notes": "Compact active handoff pointer record opened 2026-06-15. Supersedes V18 (archived at CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md). Contains current mode, next allowed move, parked lane pointers, and Core Guard Self-Protection Authorization. No runtime source. No live call. No provider data."
     }
   ]
 }
