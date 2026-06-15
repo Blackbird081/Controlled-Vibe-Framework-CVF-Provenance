@@ -15,6 +15,7 @@ their logic.
 from __future__ import annotations
 
 import argparse
+import json
 import importlib.util
 import re
 import sys
@@ -47,6 +48,8 @@ _STATE = _load_module("generate_active_session_state")
 
 build_path_plan = _STEWARD.build_path_plan
 validate_aggregate_matches_sources = _STATE.validate_aggregate_matches_sources
+entry_filename = _STATE.entry_filename
+source_entry = _STATE.source_entry
 
 
 def _configure_stdout() -> None:
@@ -135,6 +138,74 @@ def _print_manifest(
     print()
 
 
+def _next_state_order() -> int:
+    """Return the next source-entry stateOrder without mutating session files."""
+    entries_dir = REPO_ROOT / "CVF_SESSION" / "state" / "entries"
+    if not entries_dir.exists():
+        return 1
+    highest = 0
+    for path in sorted(entries_dir.glob("*.json")):
+        try:
+            entry = _STATE.load_json(path)
+        except (OSError, ValueError, json.JSONDecodeError):
+            continue
+        if not isinstance(entry, dict):
+            continue
+        order = entry.get("stateOrder")
+        if isinstance(order, int) and order > highest:
+            highest = order
+    return highest + 1
+
+
+def _print_author_entry(state_key: str) -> None:
+    """Print paste-ready session-sync authoring snippets. Read-only."""
+    state_order = _next_state_order()
+    filename = entry_filename(state_key)
+    entry = source_entry(
+        state_key,
+        "<replace with concise session-state value>",
+        state_order,
+    )
+    handoff_path = _active_handoff_path() or "<active handoff path>"
+
+    print("=== Session-Sync Authoring Helper ===")
+    print("Read-only: generated content is printed only; no files are written.")
+    print()
+    print("=== State Entry Skeleton ===")
+    print(f"Path: CVF_SESSION/state/entries/{filename}")
+    print(json.dumps(entry, ensure_ascii=True, indent=2))
+    print()
+    print("=== nextAllowedMove Update Template ===")
+    print("Path: CVF_SESSION/state/entries/nextAllowedMove.json")
+    print(
+        json.dumps(
+            source_entry(
+                "nextAllowedMove",
+                "<replace with next allowed move after this closure>",
+                state_order + 1,
+            ),
+            ensure_ascii=True,
+            indent=2,
+        )
+    )
+    print()
+    print("=== Session Mode Marker Block ===")
+    print("Use one mode marker value consistently across all five occurrences:")
+    print("mode marker: <replace_with_current_mode_marker>")
+    print()
+    print("1. CVF_SESSION_MEMORY.md Current mode marker:")
+    print("   Current mode marker: `<replace_with_current_mode_marker>`")
+    print("2. CVF_SESSION_MEMORY.md Current mode:")
+    print("   Current mode: `<replace_with_current_mode_marker>`")
+    print(f"3. {handoff_path} startup acknowledgment:")
+    print("   current mode=`<replace_with_current_mode_marker>`")
+    print(f"4. {handoff_path} ## Current Mode:")
+    print("   `<replace_with_current_mode_marker>`")
+    print("5. CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json currentMode:")
+    print('   "currentMode": "<replace_with_current_mode_marker>"')
+    print()
+
+
 def main() -> int:
     _configure_stdout()
     parser = argparse.ArgumentParser(
@@ -161,7 +232,25 @@ def main() -> int:
         action="store_true",
         help="Print the manifest block only; skip drift analysis.",
     )
+    mode.add_argument(
+        "--author-entry",
+        action="store_true",
+        help=(
+            "Print a read-only session-sync state-entry skeleton, "
+            "nextAllowedMove template, and mode marker block."
+        ),
+    )
+    parser.add_argument(
+        "--state-key",
+        help="State key for --author-entry skeleton generation.",
+    )
     args = parser.parse_args()
+
+    if args.author_entry:
+        if not args.state_key:
+            parser.error("--author-entry requires --state-key")
+        _print_author_entry(args.state_key)
+        return 0
 
     # Default mode when none is given behaves like --suggest.
     enforce = args.enforce

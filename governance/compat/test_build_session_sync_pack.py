@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import importlib.util
 import io
+import json
 import sys
 import tempfile
 import unittest
@@ -168,6 +169,94 @@ class MainModeTests(unittest.TestCase):
         self.assertEqual(code, 0)
         self.assertIn("Protected paths:", text)
         self.assertIn("`CVF_SESSION_MEMORY.md`", text)
+
+
+class AuthorEntryModeTests(unittest.TestCase):
+    def _run_author_entry(self, root: Path, state_key: str):
+        out = io.StringIO()
+        with patch.object(MODULE, "REPO_ROOT", root), \
+            patch.object(MODULE, "_active_handoff_path", return_value="AGENT_HANDOFF.md"), \
+            patch.object(sys, "argv", [
+                "build_session_sync_pack.py",
+                "--author-entry",
+                "--state-key",
+                state_key,
+            ]), \
+            redirect_stdout(out):
+            code = MODULE.main()
+        return code, out.getvalue()
+
+    def test_author_entry_requires_state_key(self) -> None:
+        err = io.StringIO()
+        with patch.object(sys, "argv", ["build_session_sync_pack.py", "--author-entry"]), \
+            patch("sys.stderr", err):
+            with self.assertRaises(SystemExit) as raised:
+                MODULE.main()
+        self.assertEqual(raised.exception.code, 2)
+        self.assertIn("--author-entry requires --state-key", err.getvalue())
+
+    def test_next_state_order_uses_existing_entry_sources(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            entries = root / "CVF_SESSION" / "state" / "entries"
+            entries.mkdir(parents=True)
+            (entries / "alpha.json").write_text(
+                json.dumps(MODULE.source_entry("alpha", "a", 41)),
+                encoding="utf-8",
+            )
+            (entries / "beta.json").write_text(
+                json.dumps(MODULE.source_entry("beta", "b", 7)),
+                encoding="utf-8",
+            )
+            with patch.object(MODULE, "REPO_ROOT", root):
+                self.assertEqual(MODULE._next_state_order(), 42)
+
+    def test_author_entry_prints_schema_template_and_all_marker_surfaces(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            entries = root / "CVF_SESSION" / "state" / "entries"
+            entries.mkdir(parents=True)
+            (entries / "existing.json").write_text(
+                json.dumps(MODULE.source_entry("existing", "x", 12)),
+                encoding="utf-8",
+            )
+
+            code, text = self._run_author_entry(root, "exampleClosure20260616")
+
+        self.assertEqual(code, 0)
+        self.assertIn("Read-only", text)
+        self.assertIn("Path: CVF_SESSION/state/entries/exampleClosure20260616.json", text)
+        self.assertIn('"stateOrder": 13', text)
+        self.assertIn('"stateKey": "exampleClosure20260616"', text)
+        self.assertIn('"value": "<replace with concise session-state value>"', text)
+        self.assertIn("Path: CVF_SESSION/state/entries/nextAllowedMove.json", text)
+        self.assertIn("Current mode marker:", text)
+        self.assertIn("Current mode:", text)
+        self.assertIn("startup acknowledgment", text)
+        self.assertIn("## Current Mode", text)
+        self.assertIn('"currentMode": "<replace_with_current_mode_marker>"', text)
+
+    def test_author_entry_skips_manifest_and_drift_paths(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            out = io.StringIO()
+            with patch.object(MODULE, "REPO_ROOT", root), \
+                patch.object(MODULE, "build_path_plan", side_effect=AssertionError), \
+                patch.object(
+                    MODULE,
+                    "validate_aggregate_matches_sources",
+                    side_effect=AssertionError,
+                ), \
+                patch.object(sys, "argv", [
+                    "build_session_sync_pack.py",
+                    "--author-entry",
+                    "--state-key",
+                    "noManifest",
+                ]), \
+                redirect_stdout(out):
+                code = MODULE.main()
+        self.assertEqual(code, 0)
+        self.assertIn("State Entry Skeleton", out.getvalue())
 
 
 if __name__ == "__main__":
