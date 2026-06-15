@@ -63,7 +63,7 @@ Allowed modes:
 | `reviewer-return` | Reviewer inspects uncommitted worker artifacts | `reviewer-fast` |
 | `closure` | Reviewer/committer validates committed closure range | autorun `pre-closure` |
 | `push` | Preparing public or remote push | autorun `pre-push` |
-| `session-sync` | Updating only session front-door/state/handoff continuity | active session and generated-state checks |
+| `session-sync` | Updating only session front-door/state/handoff continuity | closure packaging, active session, and generated-state checks |
 | `handoff-sync` | Updating only the root active handoff after a material/session commit | active session compatibility only |
 
 `--enforce` fails high-risk commit-shape conflicts. Without `--enforce`, the
@@ -125,7 +125,9 @@ Run only the gate set that matches the phase:
 - closure: steward `closure` after material commit; do not use `--base HEAD
   --head HEAD`;
 - session sync: steward `session-sync` instead of the full phase gate when no
-  material artifact is changing.
+  material artifact is changing. It must run closure packaging preflight before
+  generated-state and active-session checks so missing protected-path
+  authorization is caught before `git commit`.
 - handoff sync: steward `handoff-sync` for a dedicated active-handoff-only
   commit. Do not rerun generated-state checks when no generated state source or
   aggregate changed.
@@ -181,7 +183,9 @@ python governance/compat/run_agent_commit_steward_preflight.py --mode handoff-sy
 
 This lane is deliberately narrower than `session-sync`: it runs active-session
 compatibility and diff hygiene, and it rejects any material path or generated
-state path. Use `session-sync` when `CVF_SESSION_MEMORY.md`,
+state path. `session-sync` also runs closure packaging preflight to catch
+missing Core Guard Self-Protection Authorization for protected state/front-door
+paths before the commit hook. Use `session-sync` when `CVF_SESSION_MEMORY.md`,
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`, or `CVF_SESSION/state/**` changes.
 Use `handoff-sync` only after those surfaces are already aligned and the active
 handoff needs the accepted parent-marker continuity record.
@@ -199,9 +203,10 @@ generated-session changed set.
 
 Evidence comparison: the steward now classifies changed paths, prints a
 recommended lane, accepts root `AGENT_HANDOFF*.md`-only changes as
-`handoff-sync`, and keeps `session-sync` for generated/front-door session
-updates. Focused tests cover both handoff-only acceptance and mixed
-session-state rejection.
+`handoff-sync`, keeps `session-sync` for generated/front-door session updates,
+and now runs closure packaging preflight in `session-sync` before commit.
+Focused tests cover handoff-only acceptance, mixed session-state rejection, and
+the session-sync command sequence.
 
 ## Contradiction Or Gap Disposition
 
@@ -224,19 +229,16 @@ latency while keeping guard coverage.
 
 Protected paths authorized in this batch:
 
-- `AGENTS.md`
 - `governance/compat/run_agent_commit_steward_preflight.py`
 - `governance/compat/test_run_agent_commit_steward_preflight.py`
 - `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`
 
 Allowed changes:
 
-- add the agent-neutral commit steward protocol to active agent instructions;
-- add the steward preflight wrapper;
-- add focused tests for path classification and high-risk commit-shape
-  detection.
-- add the handoff-sync fast lane and focused tests for dedicated handoff-only
-  commits.
+- add session-sync closure packaging preflight to catch protected-path
+  authorization gaps before commit;
+- add focused tests for the session-sync command sequence;
+- preserve the lightweight handoff-sync command sequence.
 
 Forbidden changes:
 
@@ -246,9 +248,9 @@ Forbidden changes:
 - changing provider/live/public behavior;
 - changing unrelated governance gates.
 
-Rollback boundary: revert this standard, the steward script/test, and the
-AGENTS.md pointer only. Do not revert Model Gateway C-02 P2 dispatch commit
-`eea131ec` or session sync commit `91b94856`.
+Rollback boundary: revert this standard and the steward script/test only. Do
+not revert Agent Dispatch Prompt Envelope Standardization material commit
+`b2654e2e` or session-sync commit `65496aec`.
 
 ## Agent Operation Trace Block
 
@@ -256,20 +258,20 @@ AGENTS.md pointer only. Do not revert Model Gateway C-02 P2 dispatch commit
 | --- | --- |
 | Actor | Codex |
 | Provider or surface | Codex CLI |
-| Session or invocation | Commit steward foundation hardening from HEAD `91b94856` |
+| Session or invocation | Commit steward session-sync preflight hardening from HEAD `65496aec` |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | Read current autorun/hook/commit choreography files; create GC-018 authorization baseline; create standard; create steward preflight script; create focused tests; update AGENTS.md pointer |
-| Target paths | `AGENTS.md`; `docs/baselines/CVF_GC018_AGENT_COMMIT_STEWARD_PROTOCOL_HARDENING_2026-06-15.md`; `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`; `governance/compat/run_agent_commit_steward_preflight.py`; `governance/compat/test_run_agent_commit_steward_preflight.py` |
-| Allowed scope source | Operator instruction 2026-06-15: "nang nen" for faster total governed commit time while keeping guards and supporting any agent or single-agent multi-role |
-| Before status evidence | HEAD `91b94856`; worktree clean before this hardening batch |
-| After status evidence | `git status --short` shows exactly the five target paths before material commit |
-| Diff evidence | `git diff --check` and steward preflight expected PASS before commit |
+| Command or tool surface | Inspect session-sync failure path; update steward preflight session-sync command sequence; add focused tests; update standard |
+| Target paths | `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`; `governance/compat/run_agent_commit_steward_preflight.py`; `governance/compat/test_run_agent_commit_steward_preflight.py`; `docs/reviews/CVF_COMMIT_STEWARD_SESSION_SYNC_PREFLIGHT_HARDENING_COMPLETION_2026-06-16.md` |
+| Allowed scope source | Operator instruction 2026-06-16: improve the CVF foundation after session-sync commit latency caused by missing protected-path authorization caught only by commit hook |
+| Before status evidence | HEAD `65496aec`; worktree clean before this hardening batch |
+| After status evidence | `git status --short` shows exactly the three target paths before material commit |
+| Diff evidence | `git diff --check`, focused steward tests, and steward preflight expected PASS before commit |
 | Approval boundary | Operator authorized foundation hardening; no runtime/provider/live/public behavior authorized |
 | Claim boundary | Repo-local trace only; no OS telemetry, provider-internal log, public readiness, production readiness, or runtime behavior claim |
 | Agent type | Single agent acting as orchestrator/implementer/reviewer for a governance-control batch |
-| Invocation ID | Commit steward hardening session from HEAD `91b94856` |
-| Expected manifest | `AGENTS.md`; `docs/baselines/CVF_GC018_AGENT_COMMIT_STEWARD_PROTOCOL_HARDENING_2026-06-15.md`; `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`; `governance/compat/run_agent_commit_steward_preflight.py`; `governance/compat/test_run_agent_commit_steward_preflight.py` |
-| Actual changed set | `AGENTS.md`; `docs/baselines/CVF_GC018_AGENT_COMMIT_STEWARD_PROTOCOL_HARDENING_2026-06-15.md`; `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`; `governance/compat/run_agent_commit_steward_preflight.py`; `governance/compat/test_run_agent_commit_steward_preflight.py` |
+| Invocation ID | Commit steward session-sync preflight hardening from HEAD `65496aec` |
+| Expected manifest | `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`; `governance/compat/run_agent_commit_steward_preflight.py`; `governance/compat/test_run_agent_commit_steward_preflight.py`; `docs/reviews/CVF_COMMIT_STEWARD_SESSION_SYNC_PREFLIGHT_HARDENING_COMPLETION_2026-06-16.md` |
+| Actual changed set | `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`; `governance/compat/run_agent_commit_steward_preflight.py`; `governance/compat/test_run_agent_commit_steward_preflight.py`; `docs/reviews/CVF_COMMIT_STEWARD_SESSION_SYNC_PREFLIGHT_HARDENING_COMPLETION_2026-06-16.md` |
 | Manifest delta | MATCH |
 
 ## Claim Boundary

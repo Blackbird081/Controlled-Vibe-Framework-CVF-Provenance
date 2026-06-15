@@ -213,6 +213,18 @@ def _mode_commands(mode: str, base: str, head: str) -> tuple[Command, ...]:
     if mode == "session-sync":
         return (
             Command(
+                "closure packaging preflight",
+                (
+                    "python",
+                    "governance/compat/check_closure_packaging_preflight.py",
+                    "--base",
+                    base,
+                    "--head",
+                    head,
+                    "--enforce",
+                ),
+            ),
+            Command(
                 "generated active session state check",
                 ("python", "governance/compat/generate_active_session_state.py", "--check"),
             ),

@@ -89,6 +89,30 @@ def test_handoff_sync_rejects_session_state_mix(monkeypatch) -> None:
     assert steward._validate_mode_shape("handoff-sync", "base", "head", plan, True) == 1
 
 
+def test_session_sync_commands_include_closure_packaging_preflight() -> None:
+    commands = steward._mode_commands("session-sync", "base", "head")
+
+    assert commands[0].name == "closure packaging preflight"
+    assert commands[0].args == (
+        "python",
+        "governance/compat/check_closure_packaging_preflight.py",
+        "--base",
+        "base",
+        "--head",
+        "head",
+        "--enforce",
+    )
+
+
+def test_handoff_sync_commands_stay_lightweight() -> None:
+    commands = steward._mode_commands("handoff-sync", "base", "head")
+
+    assert [command.name for command in commands] == [
+        "active session state compatibility",
+        "diff hygiene",
+    ]
+
+
 def test_status_paths_handles_trimmed_git_status(monkeypatch) -> None:
     monkeypatch.setattr(
         steward,
