@@ -30,8 +30,10 @@ Startup acknowledged: current mode=`model_gateway_c02_p4c_closed_p4b_b_hold`; ac
 
 `model_gateway_c02_p4c_closed_p4b_b_hold`
 
-Current HEAD recorded for this handoff: `64a80684`
-(Model Gateway C-02 P4C closure-doc commit; P4C handoff-sync commit
+Current HEAD recorded for this handoff: `5dcde230`
+(Autorun exact-manifest range-shape guard hardening commit; Model Gateway C-02
+P4C session-sync commit `6150fc0e`; Model Gateway C-02 P4C closure-doc commit
+`64a80684`; P4C handoff-sync commit
 `85c126df`; P4C material implementation commit `8d8f0871`; P4C dispatch
 commit `10b9626b`; P4B-A closure-doc commit `a21f3e65`; session-sync commit
 `ddc28dc8`; P4B-A material implementation commit `3c5b1d3d`; P4B-A dispatch
@@ -164,6 +166,13 @@ CLOSED_PASS_BOUNDED at material commit `8d8f0871` and closure-doc commit
 `64a80684` after Codex reviewer repair. The implementation is deterministic
 and provider-agnostic. P4B-B concrete provider wiring and live proof remain on
 explicit hold.
+
+Autorun Exact-Manifest Range Shape Guard Hardening --
+CLOSED_PASS_BOUNDED at commit `5dcde230`. The autorun `pre-closure` and
+`pre-push` wrapper now fail fast when a range mixes Agent Operation Trace
+exact-manifest artifacts with protected session/handoff paths. This promotes a
+repeated Codex reviewer/committer range-selection defect into an early machine
+check and preserves the split material/closure/session-sync protocol.
 
 ## Parked Lanes
 
