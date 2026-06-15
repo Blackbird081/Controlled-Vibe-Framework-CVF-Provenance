@@ -6,7 +6,7 @@ rawMemoryReleased: false
 
 Date: 2026-06-15
 
-Status: DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT
+Status: CLOSED_PASS_BOUNDED
 
 Worker: Claude
 
@@ -427,7 +427,7 @@ correctness is established by its own full module tests.
 | No concrete adapter/live call | Forbidden Scope and negative search | RELEASED |
 | GC-051 coverage | Allowed Scope and fulfillment manifest | RELEASED |
 | Worker no-commit return | Commit lifecycle and gate sequence | RELEASED |
-| P4B-B | Explicit hold | HOLD |
+| P4B-B | Separate operator authorization required | NOT_RELEASED_WITH_REASON |
 | MGW-001 | Legacy disposition | PARTIAL_RECHECK_REQUIRED |
 
 ## Export Surface Decision
@@ -476,15 +476,37 @@ PASS text is not independent review evidence.
 
 ## Closure Checklist
 
-- [ ] Execution base captured and unchanged
-- [ ] Source verification refreshed
-- [ ] Bridge source and tests remain within size targets
-- [ ] No existing source changed except additive barrel exports
-- [ ] AC1-AC9 pass
-- [ ] GC-051 entries and aggregate align
-- [ ] Negative live-surface search returns zero matches
-- [ ] Worker return contains all required proof literals
-- [ ] Worker leaves all artifacts uncommitted
+- [x] Execution base captured and unchanged
+- [x] Source verification refreshed
+- [x] Bridge source and tests remain within size targets
+- [x] No existing source changed except additive barrel exports
+- [x] AC1-AC9 pass
+- [x] GC-051 entries and aggregate align
+- [x] Negative live-surface source search returns zero matches
+- [x] Worker return contains all required proof literals
+- [x] Worker leaves all artifacts uncommitted
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MODEL_GATEWAY_C02_P4B_A_PROVIDER_EXECUTION_BRIDGE_COMPLETION_2026-06-15.md` | independent reviewer closure | PASS |
+| Roadmap state | `docs/roadmaps/CVF_MODEL_GATEWAY_C02_P4B_PROVIDER_EXECUTION_AND_LIVE_BINDING_ROADMAP_2026-06-15.md` | P4B-A closed; P4B-B not released without separate operator authorization | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated GC-051 aggregate includes P4B-A source and tests | PASS |
+| Registry Markdown | no matching governed Markdown registry surface | JSON is canonical for this registration; Markdown addition was outside allowed scope | BLOCKED with reason |
+| External evidence digest | no external evidence consumed | repo-local source, tests, and governance evidence only | N/A with reason |
+| System loop interlock | no system-loop mutation authorized | deterministic Model Gateway bridge only | N/A with reason |
+| Session continuity | dedicated session-sync commit after material closure | excluded from exact-manifest closure commit by commit steward protocol | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Criterion | Required value | Observed value | Status |
+|---|---|---|---|
+| Selected provider identity | adapter identity equals selected provider identity | enforced before adapter execution | PASS |
+| Attempt chronology | receipt attempt order follows executed attempts | covered by deterministic tests | PASS |
+| Terminal outcome | success or bounded failure is represented without live claims | covered by focused and module tests | PASS |
+| Raw provider response | not exposed through gateway receipt | excluded by bridge contract and tests | PASS |
 
 ## Operator Checkpoint
 
@@ -497,22 +519,22 @@ boundary.
 
 | Field | Evidence |
 |---|---|
-| Actor | Codex orchestrator |
+| Actor | Codex reviewer / closer |
 | Provider or surface | Codex local workspace |
-| Session or invocation | 2026-06-15 P4B-A dispatch repair |
+| Session or invocation | 2026-06-15 P4B-A closure |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | source inspection, apply_patch, governance gates |
-| Target paths | P4B roadmap, GC-018, P4B-A work order |
+| Target paths | P4B-A work order and completion review |
 | Allowed scope source | operator instruction 2026-06-15 |
-| Before status evidence | Claude draft present and uncommitted at HEAD `55e4a829` |
-| After status evidence | corrected P4B-A dispatch packet |
-| Diff evidence | material commit range and pre-dispatch gates |
+| Before status evidence | worker return committed at material commit `3c5b1d3d` |
+| After status evidence | work order and completion review closed |
+| Diff evidence | material range `86b1638d..3c5b1d3d` and closure gates |
 | Approval boundary | P4B-A deterministic implementation only |
 | Claim boundary | no live provider, credential use, quota spend, or public claim |
 | Agent type | Codex orchestrator |
-| Invocation ID | `p4b-a-dispatch-repair-2026-06-15` |
-| Expected manifest | `docs/roadmaps/CVF_MODEL_GATEWAY_C02_P4B_GOVERNED_PROVIDER_EXECUTION_AND_LIVE_PROOF_ROADMAP_2026-06-15.md`; `docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P4B_GOVERNED_PROVIDER_EXECUTION_AND_LIVE_PROOF_2026-06-15.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P4B_A_PROVIDER_EXECUTION_BRIDGE_FOR_CLAUDE_2026-06-15.md` |
-| Actual changed set | `docs/roadmaps/CVF_MODEL_GATEWAY_C02_P4B_GOVERNED_PROVIDER_EXECUTION_AND_LIVE_PROOF_ROADMAP_2026-06-15.md`; `docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P4B_GOVERNED_PROVIDER_EXECUTION_AND_LIVE_PROOF_2026-06-15.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P4B_A_PROVIDER_EXECUTION_BRIDGE_FOR_CLAUDE_2026-06-15.md` |
+| Invocation ID | `p4b-a-closure-3c5b1d3d` |
+| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P4B_A_PROVIDER_EXECUTION_BRIDGE_FOR_CLAUDE_2026-06-15.md`; `docs/reviews/CVF_MODEL_GATEWAY_C02_P4B_A_PROVIDER_EXECUTION_BRIDGE_COMPLETION_2026-06-15.md` |
+| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P4B_A_PROVIDER_EXECUTION_BRIDGE_FOR_CLAUDE_2026-06-15.md`; `docs/reviews/CVF_MODEL_GATEWAY_C02_P4B_A_PROVIDER_EXECUTION_BRIDGE_COMPLETION_2026-06-15.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
