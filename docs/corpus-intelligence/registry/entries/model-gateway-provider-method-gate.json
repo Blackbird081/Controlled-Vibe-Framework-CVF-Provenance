@@ -1,0 +1,27 @@
+{
+  "registryOrder": 90,
+  "id": "model-gateway-provider-method-gate",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF Model Gateway provider method gate source",
+  "scopePaths": [
+    "EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-method-gate.ts"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [
+    "fetch (not in method gate)",
+    "http request (not in method gate)",
+    "resolveSecretForRuntime (not in method gate)",
+    ".env.local (not in method gate)",
+    "DASHSCOPE_API_KEY (not in method gate)",
+    "DEEPSEEK_API_KEY (not in method gate)"
+  ],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "MODEL-GATEWAY-C02-P5",
+  "scanDate": "2026-06-15",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_COMPLETION_2026-06-15.md",
+  "notes": "Existing Model Gateway provider method helper source cited by P5 capability negotiation closure evidence. P5 reuses normalizeProviderMethodName, findProviderCapability, and listRegistrySupportedMethods instead of duplicating method-gate logic."
+}

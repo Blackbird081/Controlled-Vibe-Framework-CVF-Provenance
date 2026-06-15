@@ -317,6 +317,26 @@ export {
   PROVIDER_ADAPTER_CONFORMANCE_VERSION,
 } from "./provider-adapter-conformance";
 
+export type {
+  AdapterAdmissionOptions,
+  AdapterAdmissionReasonCode,
+  AdapterAdmissionRecord,
+  AdapterAdmissionStatus,
+} from "./provider-adapter-admission";
+export {
+  admitProviderAdapter,
+  PROVIDER_ADAPTER_ADMISSION_VERSION,
+} from "./provider-adapter-admission";
+
+export type {
+  CapabilityNegotiationResult,
+  CapabilityNegotiationStatus,
+} from "./provider-capability-negotiation";
+export {
+  negotiateProviderCapability,
+  PROVIDER_CAPABILITY_NEGOTIATION_VERSION,
+} from "./provider-capability-negotiation";
+
 export const MODEL_GATEWAY_WRAPPER = {
   executionClass: "wrapper/re-export merge",
   runtimeOwnership: "implementation-owner upgrade",

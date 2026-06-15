@@ -3201,6 +3201,151 @@
       "manifestPath": null,
       "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P4C_PROVIDER_ADAPTER_CONTRACT_CONFORMANCE_WORKER_RETURN_2026-06-15.md",
       "notes": "Deterministic test suite for evaluateProviderAdapterConformance. 23 tests covering conformant path, provider mismatch, missing provider capability, missing model capability, unsupported method, alias normalization, optional credential metadata block, liveExecutionAuthorized always-false invariant, no adapter.execute() call, provider agnosticism with arbitrary IDs, serialized secret non-leakage, negative source assertions, and report shape completeness. No concrete adapter import, network call, credential secret, or hardcoded required provider ID."
+    },
+    {
+      "id": "model-gateway-c02-p5-provider-adapter-admission",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway C-02 P5 provider adapter admission source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-adapter-admission.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "fetch (not in admission - no network call)",
+        "http request (not in admission)",
+        "resolveSecretForRuntime (forbidden - metadata only)",
+        "providers/alibaba (no concrete adapter import)",
+        "providers/deepseek (no concrete adapter import)",
+        "createAlibaba (no concrete adapter factory)",
+        "createDeepSeek (no concrete adapter factory)",
+        ".env.local (no credential file access)",
+        "DASHSCOPE_API_KEY (no API key reference)",
+        "DEEPSEEK_API_KEY (no API key reference)",
+        "ALIBABA_API_KEY (no API key reference)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P5",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_COMPLETION_2026-06-15.md",
+      "notes": "Provider-agnostic adapter admission evaluator above P4C conformance. Pure local, deterministic, no-network. Exports AdapterAdmissionStatus, AdapterAdmissionReasonCode, AdapterAdmissionRecord, admitProviderAdapter, and PROVIDER_ADAPTER_ADMISSION_VERSION. liveExecutionAuthorized is always false."
+    },
+    {
+      "id": "model-gateway-c02-p5-provider-adapter-admission-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway C-02 P5 provider adapter admission tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/tests/provider-adapter-admission.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "fetch (not in tests - no network call)",
+        "http request (not in tests)",
+        "resolveSecretForRuntime (forbidden - metadata only)",
+        "providers/alibaba (no concrete adapter import)",
+        "providers/deepseek (no concrete adapter import)",
+        "createAlibaba (no concrete adapter factory)",
+        "createDeepSeek (no concrete adapter factory)",
+        ".env.local (no credential file access)",
+        "DASHSCOPE_API_KEY (no API key reference)",
+        "DEEPSEEK_API_KEY (no API key reference)",
+        "ALIBABA_API_KEY (no API key reference)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P5",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_COMPLETION_2026-06-15.md",
+      "notes": "Deterministic tests for P5 adapter admission and capability negotiation. Covers admitted, blocked, needs_operator_authorization, method normalization, provider agnosticism, no secret leakage, negative source assertions, negotiated, fallback_available, and blocked negotiation paths."
+    },
+    {
+      "id": "model-gateway-c02-p5-provider-capability-negotiation",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway C-02 P5 provider capability negotiation source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-negotiation.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "fetch (not in negotiation - no network call)",
+        "http request (not in negotiation)",
+        "resolveSecretForRuntime (forbidden - metadata only)",
+        "providers/alibaba (no concrete adapter import)",
+        "providers/deepseek (no concrete adapter import)",
+        "createAlibaba (no concrete adapter factory)",
+        "createDeepSeek (no concrete adapter factory)",
+        ".env.local (no credential file access)",
+        "DASHSCOPE_API_KEY (no API key reference)",
+        "DEEPSEEK_API_KEY (no API key reference)",
+        "ALIBABA_API_KEY (no API key reference)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P5",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_COMPLETION_2026-06-15.md",
+      "notes": "Provider-agnostic capability negotiation helper over existing provider-method gate helpers. Exports CapabilityNegotiationStatus, CapabilityNegotiationResult, negotiateProviderCapability, and PROVIDER_CAPABILITY_NEGOTIATION_VERSION. No provider-specific branching or concrete adapter import."
+    },
+    {
+      "id": "model-gateway-provider-method-contract",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway provider method contract source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-method-contract.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "fetch (not in method contract)",
+        "http request (not in method contract)",
+        "resolveSecretForRuntime (not in method contract)",
+        ".env.local (not in method contract)",
+        "DASHSCOPE_API_KEY (not in method contract)",
+        "DEEPSEEK_API_KEY (not in method contract)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P5",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_COMPLETION_2026-06-15.md",
+      "notes": "Existing Model Gateway provider method capability contract cited by P5 capability negotiation closure evidence. Source declares provider capability registry structure consumed by P5 negotiation."
+    },
+    {
+      "id": "model-gateway-provider-method-gate",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Model Gateway provider method gate source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-method-gate.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "fetch (not in method gate)",
+        "http request (not in method gate)",
+        "resolveSecretForRuntime (not in method gate)",
+        ".env.local (not in method gate)",
+        "DASHSCOPE_API_KEY (not in method gate)",
+        "DEEPSEEK_API_KEY (not in method gate)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MODEL-GATEWAY-C02-P5",
+      "scanDate": "2026-06-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_COMPLETION_2026-06-15.md",
+      "notes": "Existing Model Gateway provider method helper source cited by P5 capability negotiation closure evidence. P5 reuses normalizeProviderMethodName, findProviderCapability, and listRegistrySupportedMethods instead of duplicating method-gate logic."
     }
   ]
 }

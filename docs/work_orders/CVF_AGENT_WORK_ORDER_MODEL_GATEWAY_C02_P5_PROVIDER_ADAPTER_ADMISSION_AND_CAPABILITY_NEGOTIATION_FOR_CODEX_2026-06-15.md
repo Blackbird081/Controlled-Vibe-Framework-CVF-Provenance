@@ -6,7 +6,7 @@ rawMemoryReleased: false
 
 Date: 2026-06-15
 
-Status: DISPATCHED_TO_WORKER
+Status: CLOSED_PASS_BOUNDED
 
 Worker / Implementer: Codex
 
@@ -18,9 +18,9 @@ Commit mode: WORKER_MAY_COMMIT
 
 dispatchBaseHead: 586aa56e
 
-executionBaseHead: WORKER_MUST_CAPTURE_AFTER_DISPATCH
+executionBaseHead: fbbec2e4
 
-closureBaseHead: MATERIAL_COMMIT_SHA_TO_BE_CAPTURED_BY_CODEX
+closureBaseHead: fbbec2e4
 
 riskCeiling: R1_BOUNDED_NO_NETWORK
 
@@ -34,9 +34,6 @@ record and P5-B capability negotiation. Codex implements, tests, commits, and
 closes this tranche autonomously under the same boundary constraints as the
 Claude work order - provider-agnostic, no-network, no-secret, no bridge
 mutation, no P5-C, no P4B-B release.
-
-This work order is the Codex-facing mirror of:
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_FOR_CLAUDE_2026-06-15.md`
 
 Codex may commit directly. No separate Claude worker phase is required.
 
@@ -481,17 +478,17 @@ it is backed by command output, committed diff evidence, or machine-gate output.
 
 ## Closure Checklist
 
-- [ ] Execution base head captured
-- [ ] Source verification refreshed against execution head
-- [ ] Allowed scope respected
-- [ ] Forbidden scope avoided
-- [ ] AC1-AC11 satisfied, or AC11 explicitly deferred with split reason
-- [ ] GC-051 entries and aggregate align
-- [ ] Negative searches recorded
-- [ ] Completion review authored
-- [ ] Material commit created
-- [ ] Material-range pre-closure gate passed
-- [ ] Session-sync commit separated from material exact manifest if continuity changes
+- [x] Execution base head captured
+- [x] Source verification refreshed against execution head
+- [x] Allowed scope respected
+- [x] Forbidden scope avoided
+- [x] AC1-AC11 satisfied, or AC11 explicitly deferred with split reason
+- [x] GC-051 entries and aggregate align
+- [x] Negative searches recorded
+- [x] Completion review authored
+- [x] Material commit created
+- [x] Material-range pre-closure gate passed
+- [x] Session-sync commit separated from material exact manifest if continuity changes
 
 ## Return-To-Orchestrator Conditions
 
@@ -505,11 +502,14 @@ any forbidden action.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PENDING |
-| Completion review | `docs/reviews/CVF_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_COMPLETION_2026-06-15.md` | independent reviewer closure | PENDING |
-| Roadmap state | `docs/roadmaps/CVF_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_ROADMAP_2026-06-15.md` | P5-A/P5-B closed; P4B-B not released; P5-C deferred | PENDING |
-| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | GC-051 aggregate includes P5 source and tests | PENDING |
-| Session continuity | dedicated session-sync lane once material SHA exists | split from exact-manifest material commit | PENDING |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_COMPLETION_2026-06-15.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion review | `docs/reviews/CVF_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_COMPLETION_2026-06-15.md` | independent reviewer closure | PASS |
+| Roadmap state | `docs/roadmaps/CVF_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_ROADMAP_2026-06-15.md` | P5-A/P5-B closed; P4B-B not released; P5-C deferred | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | GC-051 aggregate includes P5 source and tests | PASS |
+| Registry Markdown | `docs/corpus-intelligence/registry/entries/model-gateway-c02-p5-provider-adapter-admission.json`; `docs/corpus-intelligence/registry/entries/model-gateway-c02-p5-provider-adapter-admission-tests.json`; `docs/corpus-intelligence/registry/entries/model-gateway-c02-p5-provider-capability-negotiation.json`; `docs/corpus-intelligence/registry/entries/model-gateway-provider-method-contract.json`; `docs/corpus-intelligence/registry/entries/model-gateway-provider-method-gate.json` | GC-051 entry sources and generated aggregate updated | PASS |
+| External evidence digest | N/A | N/A with reason: no external evidence digest consumed or produced | N/A with reason |
+| Session continuity | dedicated session-sync lane once material SHA exists | split from exact-manifest material commit | N/A with reason |
 | System loop interlock | no interlock mutation authorized | deterministic Model Gateway admission only | N/A with reason |
 | Public export | this file | `DEFERRED_PRIVATE_ONLY` | PASS |
 
@@ -523,22 +523,22 @@ provider binding, package installation, public sync, or changed risk boundary.
 
 | Field | Evidence |
 |---|---|
-| Actor | Claude (work order author) |
-| Provider or surface | Claude Code local workspace |
-| Session or invocation | 2026-06-15 P5 Codex work order authoring |
+| Actor | Codex |
+| Provider or surface | Codex local workspace |
+| Session or invocation | 2026-06-15 P5 implementation and closure |
 | Working directory | `d:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | Read, Write, governance pattern inspection |
-| Target paths | this work order |
+| Command or tool surface | PowerShell, apply_patch, npm, governance scripts |
+| Target paths | P5 source, tests, registry entries, aggregate, completion review, and this work order |
 | Allowed scope source | operator instruction 2026-06-15 + P5 roadmap `4c888aa0` + P5 GC-018 |
-| Before status evidence | HEAD `586aa56e`; P4C closed; P4B-B held; P5 roadmap and GC-018 ready |
-| After status evidence | Codex work order authored; awaiting Codex execution |
-| Diff evidence | dispatch range `4c888aa0..HEAD` |
+| Before status evidence | executionBaseHead `fbbec2e4`; P5 dispatched to Codex; P4B-B held |
+| After status evidence | P5-A/P5-B implemented and closure packet authored |
+| Diff evidence | material range `fbbec2e4..HEAD` before commit |
 | Approval boundary | provider-agnostic deterministic P5-A/P5-B only |
 | Claim boundary | no live provider, credential use, quota spend, provider preference, P5-C, or public claim |
-| Agent type | Claude Code (work order author role) |
-| Invocation ID | `p5-provider-adapter-admission-codex-work-order-2026-06-15` |
-| Expected manifest | `docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_2026-06-15.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_FOR_CLAUDE_2026-06-15.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_FOR_CODEX_2026-06-15.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_2026-06-15.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_FOR_CLAUDE_2026-06-15.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_FOR_CODEX_2026-06-15.md` |
+| Agent type | Codex implementer/reviewer/closer |
+| Invocation ID | `p5-provider-adapter-admission-codex-implementation-2026-06-15` |
+| Expected manifest | `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-adapter-admission.ts`; `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-negotiation.ts`; `EXTENSIONS/CVF_MODEL_GATEWAY/tests/provider-adapter-admission.test.ts`; `EXTENSIONS/CVF_MODEL_GATEWAY/src/index.ts`; `docs/corpus-intelligence/registry/entries/model-gateway-c02-p5-provider-adapter-admission.json`; `docs/corpus-intelligence/registry/entries/model-gateway-c02-p5-provider-adapter-admission-tests.json`; `docs/corpus-intelligence/registry/entries/model-gateway-c02-p5-provider-capability-negotiation.json`; `docs/corpus-intelligence/registry/entries/model-gateway-provider-method-contract.json`; `docs/corpus-intelligence/registry/entries/model-gateway-provider-method-gate.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/reviews/CVF_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_COMPLETION_2026-06-15.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_FOR_CODEX_2026-06-15.md` |
+| Actual changed set | `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-adapter-admission.ts`; `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-negotiation.ts`; `EXTENSIONS/CVF_MODEL_GATEWAY/tests/provider-adapter-admission.test.ts`; `EXTENSIONS/CVF_MODEL_GATEWAY/src/index.ts`; `docs/corpus-intelligence/registry/entries/model-gateway-c02-p5-provider-adapter-admission.json`; `docs/corpus-intelligence/registry/entries/model-gateway-c02-p5-provider-adapter-admission-tests.json`; `docs/corpus-intelligence/registry/entries/model-gateway-c02-p5-provider-capability-negotiation.json`; `docs/corpus-intelligence/registry/entries/model-gateway-provider-method-contract.json`; `docs/corpus-intelligence/registry/entries/model-gateway-provider-method-gate.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/reviews/CVF_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_COMPLETION_2026-06-15.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_FOR_CODEX_2026-06-15.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
