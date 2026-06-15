@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-15
 
-Current mode marker: `model_gateway_c02_p5_dispatched_to_codex_p4b_b_hold`
+Current mode marker: `model_gateway_c02_p5_closed_p4b_b_hold`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `model_gateway_c02_p5_dispatched_to_codex_p4b_b_hold`.
+Current mode: `model_gateway_c02_p5_closed_p4b_b_hold`.
 
 Active handoff:
 
@@ -62,24 +62,23 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-Session Front Door Rotation And Continuity Compaction is `CLOSED_PASS_BOUNDED`.
+Model Gateway C-02 P5 Provider Adapter Admission And Capability Negotiation is
+`CLOSED_PASS_BOUNDED`.
 
-Material commit: reviewer (Codex) commits this batch.
+Material commit: `a4907f2c`.
 
 Artifacts:
 
-- Roadmap:
-  `docs/roadmaps/CVF_SESSION_FRONT_DOOR_ROTATION_AND_CONTINUITY_COMPACTION_ROADMAP_2026-06-15.md`
-- GC-018:
-  `docs/baselines/CVF_GC018_SESSION_FRONT_DOOR_ROTATION_AND_CONTINUITY_COMPACTION_2026-06-15.md`
 - Work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_SESSION_FRONT_DOOR_ROTATION_AND_CONTINUITY_COMPACTION_FOR_CLAUDE_2026-06-15.md`
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_FOR_CODEX_2026-06-15.md`
 - Completion review:
-  `docs/reviews/CVF_SESSION_FRONT_DOOR_ROTATION_AND_CONTINUITY_COMPACTION_COMPLETION_2026-06-15.md`
+  `docs/reviews/CVF_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_COMPLETION_2026-06-15.md`
 
-Result: V18 archived; active handoff is now V19. Prior closed-tranche prose
-(MEMCON, MEOR, EXA, LPCI2, DSCP, DIR, LHW history) moved to compaction archive.
-AGENTS.md updated to reference V19. GC-051 entry added (order 81).
+Result: P5-A/P5-B deterministic provider adapter admission and capability
+negotiation closed. P5-C bridge admission boundary is the next recommended
+high-foundation roadmap. P4B-B concrete provider wiring and live proof remain
+on explicit hold.
+Long historical continuity remains in the compaction archive.
 
 Prior closed tranche (pointer):
 
