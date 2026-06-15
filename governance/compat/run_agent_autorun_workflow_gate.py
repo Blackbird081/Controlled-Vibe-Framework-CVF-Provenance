@@ -15,6 +15,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+import run_agent_commit_steward_preflight as steward
+
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
@@ -274,6 +276,33 @@ def _git_diff_name_status(base: str, head: str) -> str:
     return proc.stdout.strip()
 
 
+def _range_shape_preflight(phase: str, base: str, head: str) -> int:
+    if phase not in {"pre-closure", "pre-push"}:
+        return 0
+
+    plan = steward.build_path_plan(base, head)
+    if not plan.exact_manifest_collision_risk:
+        return 0
+
+    print("\n=== committed range shape preflight ===")
+    print(
+        "FAIL: range mixes Agent Operation Trace exact-manifest artifacts with "
+        "protected session/handoff paths."
+    )
+    print("This range is not valid closure evidence for a single exact-manifest batch.")
+    print("Run split ranges instead: material range first, then closure/session range.")
+    print(f"Recommended steward lane: {steward._recommended_mode(plan)}")
+    if plan.trace_artifact_paths:
+        print("Trace artifacts:")
+        for path in plan.trace_artifact_paths:
+            print(f"  - {path}")
+    if plan.protected_session_paths:
+        print("Protected session/handoff paths:")
+        for path in plan.protected_session_paths:
+            print(f"  - {path}")
+    return 1
+
+
 def _default_base_for_phase(phase: str) -> str:
     if phase in {"pre-closure", "pre-push"}:
         return "HEAD~1"
@@ -326,6 +355,13 @@ def _run_phase(phase: str, base: str | None, head: str) -> int:
         if not changed:
             print("FAIL: closure/push range has no committed diff evidence.")
             failures += 1
+        range_shape_failures = _range_shape_preflight(phase, resolved_base, head)
+        if range_shape_failures:
+            print(
+                f"\nVIOLATION: {phase} blocked by committed range shape before "
+                "running the full guard bundle."
+            )
+            return 1
 
     for command in commands:
         failures += 1 if _run(command) != 0 else 0
