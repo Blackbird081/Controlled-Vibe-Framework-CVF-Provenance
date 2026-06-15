@@ -24,14 +24,15 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`model_gateway_c02_p5_closed_p4b_b_hold`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=audit and prepare Model Gateway C-02 P5-C Bridge Admission Boundary roadmap under provider-agnostic no-network boundary; parked checkpoint=P4B-B concrete provider wiring/live proof, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
+Startup acknowledged: current mode=`model_gateway_c02_p5c_closed_p4b_b_hold`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=P4B-B concrete live proof requires fresh explicit operator authorization, fresh GC-018, source-verified work order, and live-run diagnostic discipline; parked checkpoint=P4B-B concrete provider wiring/live proof, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
 
 ## Current Mode
 
-`model_gateway_c02_p5_closed_p4b_b_hold`
+`model_gateway_c02_p5c_closed_p4b_b_hold`
 
-Current HEAD recorded for this handoff: `a4907f2c`
-(Model Gateway C-02 P5 material closure commit; P5 dispatch commit `f26afe68`;
+Current HEAD recorded for this handoff: `b7a88782`
+(Model Gateway C-02 P5-C material closure commit; P5-C executionBaseHead `5fd4dbd2`;
+P5 session-sync commit `5fd4dbd2`; P5 material commit `a4907f2c`; P5 dispatch commit `f26afe68`;
 P5 dispatch session-sync commit `fbbec2e4`; Model Gateway C-02 P5 roadmap commit
 `4c888aa0`; Autorun exact-manifest range-shape
 guard hardening commit `5dcde230`; Model Gateway C-02
@@ -77,12 +78,13 @@ Protected paths:
 - `CVF_SESSION/state/entries/modelGatewayC02P5AdapterAdmissionRoadmap20260615.json`
 - `CVF_SESSION/state/entries/modelGatewayC02P5Dispatch20260615.json`
 - `CVF_SESSION/state/entries/modelGatewayC02P5AdapterAdmissionClosure20260615.json`
+- `CVF_SESSION/state/entries/modelGatewayC02P5CBridgeAdmissionBoundaryClosure20260615.json`
 - `AGENT_HANDOFF_V19_2026-06-15.md`
 
 Operator authorization: operator authorized Codex to inspect the Claude-created
 work order, fix dispatch findings, execute P5, commit, and audit next roadmap
-on 2026-06-15; this session sync records the P5 closure boundary without
-releasing P4B-B live proof.
+on 2026-06-15; this session sync records both P5 and P5-C closure boundaries
+without releasing P4B-B live proof.
 
 Rollback boundary: if session-sync gates fail, revert only this session-sync
 batch. Do not revert P5 material closure commit `a4907f2c`, P5 dispatch commit
@@ -140,15 +142,22 @@ live-run providers only, not canonical product scope.
 Model Gateway C-02 P5 Provider Adapter Admission And Capability Negotiation
 is `CLOSED_PASS_BOUNDED` at material commit `a4907f2c`.
 
-Next move: audit and prepare Model Gateway C-02 P5-C Bridge Admission Boundary
-roadmap so the bridge can consume P5 admission/negotiation records before any
-live-provider release. P4B-B concrete provider wiring and live proof remain
-`HOLD_PENDING_EXPLICIT_LIVE_CREDENTIAL_AUTHORIZATION`. No provider/API call,
+Model Gateway C-02 P5-C Bridge Admission Boundary is `CLOSED_PASS_BOUNDED`
+at material commit `b7a88782` (executionBaseHead `5fd4dbd2`). Cascade implemented
+a pure deterministic bridge admission guard, wired it additively into
+`ProviderExecutionBridge`, added `admission_blocked` error class, added T1-T12
+tests, GC-051 coverage. 28 files / 207 tests PASS. Reviewer-fast 16/16 PASS.
+P4B-B live proof remains `HOLD_PENDING_EXPLICIT_LIVE_CREDENTIAL_AUTHORIZATION`.
+
+Next move: P4B-B concrete provider wiring and live proof remain
+`HOLD_PENDING_EXPLICIT_LIVE_CREDENTIAL_AUTHORIZATION` and require fresh explicit
+operator authorization, fresh GC-018 with live credential boundary, source-verified
+work order, and live-run diagnostic discipline. No provider/API call,
 credential/network use, provider/model addition, EPF wiring, Strategy Layer
 implementation, AI Gateway absorption, public-sync, production readiness, or
-public readiness is authorized.
+public readiness is authorized without fresh operator authorization.
 
-Current mode: `model_gateway_c02_p5_closed_p4b_b_hold`.
+Current mode: `model_gateway_c02_p5c_closed_p4b_b_hold`.
 
 ## Latest Closed LHW Wave
 
@@ -202,6 +211,13 @@ CLOSED_PASS_BOUNDED at material commit `a4907f2c`. Codex implemented
 provider-agnostic adapter admission and capability negotiation, added focused
 tests and GC-051 coverage, repaired closure packet evidence, and kept P4B-B
 live proof plus P5-C bridge mutation unreleased.
+
+Model Gateway C-02 P5-C Bridge Admission Boundary --
+CLOSED_PASS_BOUNDED at material commit `b7a88782`. Cascade implemented
+pure deterministic bridge admission guard, additive bridge wiring, admission_blocked
+error class, T1-T12 tests, GC-051 coverage. Repaired dispatch packet encoding
+and dispatch-quality violations authored by prior Claude session. 28 files /
+207 tests PASS. Reviewer-fast 16/16 PASS. P4B-B live proof remains on explicit hold.
 
 ## Parked Lanes
 

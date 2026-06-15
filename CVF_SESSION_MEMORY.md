@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-15
 
-Current mode marker: `model_gateway_c02_p5_closed_p4b_b_hold`
+Current mode marker: `model_gateway_c02_p5c_closed_p4b_b_hold`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `model_gateway_c02_p5_closed_p4b_b_hold`.
+Current mode: `model_gateway_c02_p5c_closed_p4b_b_hold`.
 
 Active handoff:
 
@@ -62,25 +62,30 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-Model Gateway C-02 P5 Provider Adapter Admission And Capability Negotiation is
-`CLOSED_PASS_BOUNDED`.
+Model Gateway C-02 P5-C Bridge Admission Boundary is `CLOSED_PASS_BOUNDED`.
 
-Material commit: `a4907f2c`.
+Material commit: `b7a88782` (executionBaseHead `5fd4dbd2`).
 
 Artifacts:
 
 - Work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_FOR_CODEX_2026-06-15.md`
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P5C_BRIDGE_ADMISSION_BOUNDARY_FOR_CODEX_2026-06-15.md`
 - Completion review:
-  `docs/reviews/CVF_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_COMPLETION_2026-06-15.md`
+  `docs/reviews/CVF_MODEL_GATEWAY_C02_P5C_BRIDGE_ADMISSION_BOUNDARY_COMPLETION_2026-06-15.md`
 
-Result: P5-A/P5-B deterministic provider adapter admission and capability
-negotiation closed. P5-C bridge admission boundary is the next recommended
-high-foundation roadmap. P4B-B concrete provider wiring and live proof remain
-on explicit hold.
+Result: Deterministic provider-agnostic bridge admission guard implemented and
+wired additively into `ProviderExecutionBridge`. 28 files / 207 tests PASS.
+Reviewer-fast 16/16 PASS. P4B-B concrete provider wiring and live proof remain
+on explicit hold. Next move requires fresh operator authorization.
 Long historical continuity remains in the compaction archive.
 
 Prior closed tranche (pointer):
+
+Model Gateway C-02 P5 Provider Adapter Admission And Capability Negotiation is
+`CLOSED_PASS_BOUNDED` at material commit `a4907f2c`.
+Completion: `docs/reviews/CVF_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_COMPLETION_2026-06-15.md`
+
+Prior-prior closed tranche (pointer):
 
 Model Gateway C-02 P3 Unified Gateway Interface and P4A Unified Gateway
 Runtime Skeleton are `CLOSED_PASS_BOUNDED` at material implementation commit
