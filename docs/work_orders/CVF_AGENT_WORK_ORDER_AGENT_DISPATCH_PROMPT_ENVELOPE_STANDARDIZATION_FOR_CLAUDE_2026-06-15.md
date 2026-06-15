@@ -6,7 +6,7 @@ rawMemoryReleased: false
 
 Date: 2026-06-15
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Worker / Implementer: Claude
 
@@ -156,7 +156,8 @@ Commit mode: WORKER_MUST_NOT_COMMIT.
 Base: executionBaseHead 4895bca3.
 Current-time notes: implement authoring-time prompt-envelope standardization only; no runtime/provider/live/public work.
 Required first actions: read AGENTS.md, CVF_SESSION_MEMORY.md, ACTIVE_SESSION_STATE.json, AGENT_HANDOFF_V19_2026-06-15.md, roadmap, GC-018, and this work order.
-Return contract: COMPLETE_PENDING_REVIEW with exact changed paths, tests/gates run, and HEAD unchanged; or BLOCKED_WITH_REASON.
+Return contract: worker returned for Codex review with exact changed paths,
+tests/gates run, and HEAD unchanged; or BLOCKED_WITH_REASON.
 ```
 
 ## Pre-Flight Checks
@@ -206,7 +207,7 @@ Allowed Scope, or a broader claim boundary.
 ## Reviewer Closure Conversion
 
 Claude returns uncommitted artifacts only. Codex owns diff inspection,
-pre-closure on the committed range, commit, and any session-sync update.
+committed-range closure gate, commit, and any session-sync update.
 
 ## Evidence Requirements
 
@@ -246,15 +247,15 @@ Completion review must include:
 
 ## Closure Checklist
 
-- [ ] executionBaseHead captured
-- [ ] standard authored
-- [ ] template pointer/update authored
-- [ ] checker created
-- [ ] focused tests created and passing
-- [ ] dispatch author fast gate includes checker and passes
-- [ ] no runtime/provider/live/public scope touched
-- [ ] completion review authored
-- [ ] worker returns without commit
+- [x] executionBaseHead captured
+- [x] standard authored
+- [x] template pointer/update authored
+- [x] checker created
+- [x] focused tests created and passing
+- [x] dispatch author fast gate includes checker and passes
+- [x] no runtime/provider/live/public scope touched
+- [x] completion review authored
+- [x] worker returns without commit
 
 ## Roadmap-To-Work-Order Trace Matrix
 
@@ -265,6 +266,26 @@ Completion review must include:
 | Machine-check early | Allowed Scope; AC3-AC5 | RELEASED |
 | Avoid runtime/provider scope | Forbidden Scope | ENFORCED |
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARDIZATION_FOR_CLAUDE_2026-06-15.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARDIZATION_COMPLETION_2026-06-15.md` | completion review authored and reviewer-repaired | PASS |
+| Roadmap state | `docs/roadmaps/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARDIZATION_ROADMAP_2026-06-15.md` | roadmap requirement trace matrix satisfied | PASS |
+| Registry JSON | N/A | N/A with reason: no registry JSON mutation authorized for this authoring-time tranche | BLOCKED with reason: registry mutation not authorized or required |
+| Registry Markdown | N/A | N/A with reason: no registry Markdown mutation authorized for this authoring-time tranche | BLOCKED with reason: registry mutation not authorized or required |
+| External evidence digest | N/A | N/A with reason: no external evidence, provider call, or live proof used | N/A with reason: not applicable |
+| System loop interlock | N/A | N/A with reason: no runtime workflow-chain owner surface changed | N/A with reason: not applicable |
+| Session continuity | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `AGENT_HANDOFF_V19_2026-06-15.md` | session-sync owned by Codex after material commit if next allowed move changes | N/A with reason: separate session-sync batch |
+
+## Current Runtime Freshness Verification
+
+Runtime/source freshness verification: N/A with reason. This work order closes an
+authoring-time governance tranche only. No runtime source, provider adapter,
+provider call, live proof, public route, hosted surface, or production behavior
+was authorized or changed.
+
 ## Review Gate
 
 Codex verifies that the checker is bounded, tests cover pass/fail cases, the
@@ -272,7 +293,7 @@ fast gate invokes the checker, and no runtime/provider/public surfaces changed.
 
 ## Return-To-Orchestrator Conditions
 
-Return `COMPLETE_PENDING_REVIEW` if all acceptance criteria pass. Return
+Return for Codex review if all acceptance criteria pass. Return
 `BLOCKED_WITH_REASON` if the checker cannot be wired without broader hook or
 runtime changes.
 
