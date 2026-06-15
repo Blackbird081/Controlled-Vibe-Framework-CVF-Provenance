@@ -470,6 +470,10 @@ Canonical standard:
 
 `docs/reference/CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28.md`
 
+Agent-neutral commit steward standard:
+
+`docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`
+
 Agent-error learning philosophy:
 
 `docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md`
@@ -536,6 +540,20 @@ a governance/control-plane learning signal.
 Pre-closure must not accept untracked, modified, or unresolved worktree changes
 as a clean closure claim. Closure must be backed by committed diff evidence,
 `git status --short`, receipts, command output, or explicit `N/A with reason`.
+
+Before a governed commit or worker-return handoff, run the agent-neutral commit
+steward preflight for the matching mode:
+
+```bash
+python governance/compat/run_agent_commit_steward_preflight.py --mode <dispatch|implementation|reviewer-return|closure|push|session-sync> --base <baseHead> --head HEAD --enforce
+```
+
+The steward preflight does not replace autorun phase gates or git hooks. It
+reduces total elapsed time by running the correct phase gate early, printing the
+material/session split plan, and blocking high-risk commit shapes such as
+Agent Operation Trace exact-manifest artifacts mixed with active handoff/session
+sync. This rule is provider-neutral and applies when a single agent performs
+multiple roles.
 
 Latest-closure continuity is mandatory. If the state registry contains a
 higher closed `lhwN...CLOSED_PASS_BOUNDED` record, then `nextAllowedMove`,
