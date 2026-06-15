@@ -1,0 +1,24 @@
+{
+  "registryOrder": 80,
+  "id": "model-gateway-c02-p4a-unified-gateway-skeleton-tests",
+  "corpusType": "TEST_CORPUS",
+  "displayName": "CVF Model Gateway C-02 P4A unified gateway runtime skeleton conformance tests",
+  "scopePaths": [
+    "EXTENSIONS/CVF_MODEL_GATEWAY/tests/unified-gateway-skeleton.test.ts"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [
+    "fetch (not in tests - no network calls)",
+    "http request (not in tests)",
+    "process.env (not in tests - no env key injection)"
+  ],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "MODEL-GATEWAY-C02-P4A",
+  "scanDate": "2026-06-15",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P4A_UNIFIED_GATEWAY_RUNTIME_SKELETON_WORKER_RETURN_2026-06-15.md",
+  "notes": "Conformance test suite for UnifiedGatewaySkeletonImpl. 13 test cases covering: compile-time typecheck, execute allowed/denied/empty, stream allowed/denied, embedding allowed/denied, health basic/degraded, credential shielding (secret not in envelope), providerIdShielded on all deny paths. All tests use local deterministic helpers (makeRegistry, makeOptions, ALLOW_POLICY, DENY_POLICY) with no live network calls. All 13 tests pass as of 2026-06-15."
+}

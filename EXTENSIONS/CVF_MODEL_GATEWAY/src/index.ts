@@ -278,6 +278,23 @@ export type {
 } from "./dynamic-model-registry-contract";
 export { DYNAMIC_MODEL_REGISTRY_CONTRACT_VERSION } from "./dynamic-model-registry-contract";
 
+export type {
+  GatewayErrorClass,
+  GatewayErrorEnvelope,
+  GatewayExecuteRequest,
+  GatewayExecuteResponse,
+  GatewayStreamRequest,
+  GatewayStreamChunk,
+  GatewayEmbeddingRequest,
+  GatewayEmbeddingResponse,
+  GatewayHealthResponse,
+  UnifiedGatewayInterfaceContract,
+} from "./unified-gateway-interface-contract";
+export { UNIFIED_GATEWAY_INTERFACE_CONTRACT_VERSION } from "./unified-gateway-interface-contract";
+
+export type { UnifiedGatewaySkeletonOptions } from "./unified-gateway-skeleton";
+export { UnifiedGatewaySkeletonImpl } from "./unified-gateway-skeleton";
+
 export const MODEL_GATEWAY_WRAPPER = {
   executionClass: "wrapper/re-export merge",
   runtimeOwnership: "implementation-owner upgrade",

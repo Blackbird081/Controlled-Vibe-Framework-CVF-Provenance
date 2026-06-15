@@ -1,0 +1,26 @@
+{
+  "registryOrder": 77,
+  "id": "model-gateway-c02-p3-unified-gateway-interface-contract",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF Model Gateway C-02 P3 unified gateway interface contract source",
+  "scopePaths": [
+    "EXTENSIONS/CVF_MODEL_GATEWAY/src/unified-gateway-interface-contract.ts"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [
+    "UnifiedGatewayInterface class (not implemented in P3 - contract only)",
+    "runtime execute logic (not implemented - interface declaration only)",
+    "provider/API call (not in P3)",
+    "credential shielding runtime enforcement (not in P3 - declaration only)",
+    "EPF integration wiring (not in P3)"
+  ],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "MODEL-GATEWAY-C02-P3",
+  "scanDate": "2026-06-15",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P3_UNIFIED_GATEWAY_INTERFACE_WORKER_RETURN_2026-06-15.md",
+  "notes": "Types-only contract file for C-02 P3. Declares GatewayErrorClass, GatewayErrorEnvelope, GatewayExecuteRequest, GatewayExecuteResponse, GatewayStreamRequest, GatewayStreamChunk, GatewayEmbeddingRequest, GatewayEmbeddingResponse, GatewayHealthResponse, and UnifiedGatewayInterfaceContract. Reuses GatewayPolicyContext, RoutingRequest, DynamicModelRecord, and ProviderHealthState by import. No class body, no runtime logic. No mutation of any existing fragment contract."
+}
