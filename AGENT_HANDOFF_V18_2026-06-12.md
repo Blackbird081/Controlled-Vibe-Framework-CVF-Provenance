@@ -30,15 +30,15 @@ Startup acknowledged: current mode=`model_gateway_c02_p4a_unified_gateway_runtim
 
 `model_gateway_c02_p4a_unified_gateway_runtime_skeleton_closed`
 
-Current HEAD recorded for this handoff: `5d46bc62`
-(Model Gateway C-02 P3/P4A material implementation commit; prior P2 closure
-commit `14210d27`, prior P2 material implementation commit `24d455f8`, prior
-session sync commit `e01d298c`, prior Agent Commit Steward protocol material
-commit `a31f32a9`, prior Model Gateway C-02 P2 dispatch material commit
-`eea131ec`, prior P2 work-order draft and Agent Operation Trace root-level
-manifest parser repair commit `61984341`, prior handoff-sync commit
-`2d1dd769`, prior roadmap repair commit `ca29e988`, prior roadmap commit
-`aa9e0550`).
+Current HEAD recorded for this handoff: `21c8a9e2`
+(Model Gateway C-02 P3/P4A closure review and session sync commit; prior
+material implementation commit `5d46bc62`, prior P2 closure commit `14210d27`,
+prior P2 material implementation commit `24d455f8`, prior session sync commit
+`e01d298c`, prior Agent Commit Steward protocol material commit `a31f32a9`,
+prior Model Gateway C-02 P2 dispatch material commit `eea131ec`, prior P2
+work-order draft and Agent Operation Trace root-level manifest parser repair
+commit `61984341`, prior handoff-sync commit `2d1dd769`, prior roadmap repair
+commit `ca29e988`, prior roadmap commit `aa9e0550`).
 
 ## Active Boundary
 
