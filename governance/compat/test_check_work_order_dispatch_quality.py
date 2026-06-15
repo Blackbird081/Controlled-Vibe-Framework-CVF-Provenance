@@ -2579,6 +2579,134 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
             report["violations"][0]["issues"],
         )
 
+    # ---------------------------------------------------------------------------
+    # P4B-B authoring defect bundle regression (GC018-DISPATCH-PACKET-AUTHORING-
+    # GUARD-HARDENING-2026-06-15). All four finding classes must be detected
+    # together on a single defective work order that mirrors the real P4B-B packet.
+    # ---------------------------------------------------------------------------
+
+    def _p4b_b_defective_work_order_lines(self) -> list[str]:
+        """Construct a minimal P4B-B-like work order that carries all four
+        authoring defects reported in the hardening GC-018:
+          1. dispatchBaseHead is prose, not a commit SHA.
+          2. Missing Worker Autonomy / No-Question Rule section.
+          3. Source Verification uses noncanonical columns (adds BOUNDARY column).
+          4. Source Verification disposition contains boundary prose instead of
+             the canonical ACCEPT / REJECT / BLOCKED_SOURCE_NOT_FOUND vocabulary.
+        """
+        return [
+            "# CVF Agent Work Order: P4B-B Defect Bundle Regression Fixture",
+            "Status: DISPATCHED_TO_WORKER",
+            "Commit mode: WORKER_MAY_COMMIT",
+            # Defect 1: prose instead of a 6-40 hex SHA
+            "dispatchBaseHead: current HEAD at time of P5-C session sync",
+            "executionBaseHead: Codex captures with git rev-parse --short HEAD before first edit",
+            "closureBaseHead: Codex records material commit SHA in completion review",
+            "## Intake Role Routing Decision",
+            "- Intake summary: bounded R1 doc-only.",
+            "- Scope classification: bounded allowed scope.",
+            "- Risk sensitivity: no live call.",
+            "- Selected role route: routeMode=SINGLE_AGENT_MULTI_ROLE_CODEX.",
+            "- Role separation basis: Codex implements and reviews.",
+            "- Escalation condition: stop for network or credential.",
+            # Defect 2: No-Question Rule section is absent (intentionally omitted)
+            # Defect 3+4: noncanonical column header AND boundary prose in Disposition
+            "## Source Verification Block",
+            (
+                "| Claimed item | Source file | Verified line | Verified symbol"
+                " | Owning interface | Disposition |"
+            ),
+            "|---|---|---|---|---|---|",
+            (
+                "| CredentialBoundary.resolveSecretForRuntime (live-only, forbidden in T0)"
+                " | EXTENSIONS/CVF_MODEL_GATEWAY/src/credential-boundary.ts | line 33"
+                " | resolveSecretForRuntime | CredentialBoundary"
+                " | BOUNDARY: must not be called with real key in T0 |"
+            ),
+            (
+                "| Alibaba sample adapter (sample, not canonical)"
+                " | EXTENSIONS/CVF_MODEL_GATEWAY/src/providers/alibaba/stream-adapter.ts"
+                " | line 28 | createAlibabaQwenTurboStreamAdapter | alibaba stream adapter"
+                " | BOUNDARY: sample only; matrix documents env var names; T0 must not instantiate with real key |"
+            ),
+            "## Roadmap-To-Work-Order Trace Matrix",
+            "| Requirement | Work-order section | Disposition |",
+            "|---|---|---|",
+            "| T0 scope | Allowed Scope | RELEASED |",
+        ]
+
+    def test_p4b_b_authoring_defect_bundle_all_four_findings_detected(self) -> None:
+        """Regression: a P4B-B-like packet with all four authoring defects must
+        produce findings for each defect class. This test prevents future checker
+        edits from silently dropping any of the four controls."""
+        work_order = "docs/work_orders/CVF_WO_P4B_B_DEFECT_BUNDLE_REGRESSION_FIXTURE_2026-06-15.md"
+        self._write(work_order, "\n".join(self._p4b_b_defective_work_order_lines()))
+        self._write("docs/reference/source.md", "Scope\n")
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertFalse(report["compliant"], "defective packet must fail dispatch-quality")
+        violations = report.get("violations", [])
+        self.assertTrue(violations, "at least one violation entry expected")
+        issues: list[str] = []
+        for v in violations:
+            if v.get("path") == work_order:
+                issues.extend(v.get("issues", []))
+
+        # Finding 1: prose dispatchBaseHead
+        self.assertTrue(
+            any("non-commit" in issue and "dispatchBaseHead" in issue for issue in issues),
+            f"Finding 1 (non-commit dispatchBaseHead) not detected. Issues: {issues}",
+        )
+        # Finding 2: missing Worker Autonomy / No-Question Rule
+        self.assertTrue(
+            any("Worker Autonomy" in issue for issue in issues),
+            f"Finding 2 (missing Worker Autonomy) not detected. Issues: {issues}",
+        )
+        # Finding 3: noncanonical Source Verification column schema
+        self.assertTrue(
+            any("noncanonical columns" in issue for issue in issues),
+            f"Finding 3 (noncanonical Source Verification columns) not detected. Issues: {issues}",
+        )
+        # Finding 4: BOUNDARY prose in Disposition cell
+        self.assertTrue(
+            any("disposition" in issue.lower() and "ACCEPT" in issue for issue in issues),
+            f"Finding 4 (BOUNDARY prose in disposition) not detected. Issues: {issues}",
+        )
+
+    def test_p4b_b_defect_bundle_canonical_packet_passes(self) -> None:
+        """Inverse regression: a packet that fixes all four defects must pass the
+        checker, confirming the controls are not over-broad."""
+        work_order = "docs/work_orders/CVF_WO_P4B_B_CANONICAL_REGRESSION_FIXTURE_2026-06-15.md"
+        self._write(
+            work_order,
+            "\n".join(
+                self._ready_work_order_lines(
+                    [
+                        "## Roadmap-To-Work-Order Trace Matrix",
+                        "| Requirement | Work-order section | Disposition |",
+                        "|---|---|---|",
+                        "| T0 scope | Allowed Scope | RELEASED |",
+                        "## Evidence Requirements",
+                        "Evidence: gate output required.",
+                        "## Review Gate",
+                        "Reviewer inspects diff.",
+                        "## Closure Checklist",
+                        "- [ ] Gate PASS",
+                        "## Return-To-Orchestrator Conditions",
+                        "Stop for scope expansion.",
+                    ]
+                )
+            ),
+        )
+        self._write("docs/reference/source.md", "Scope\n")
+
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            report = MODULE._classify([work_order])
+
+        self.assertTrue(report["compliant"], report.get("violations"))
+
 
 if __name__ == "__main__":
     unittest.main()
