@@ -24,14 +24,16 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`agent_dispatch_prompt_envelope_standardization_closed_next_roadmap`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=Codex may audit/select the next high-value CVF foundation roadmap and, if operator-authorized, author a source-verified GC-018/work order; parked checkpoint=Alibaba second-provider parity pending valid DashScope credential, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
+Startup acknowledged: current mode=`session_sync_pack_builder_closed_next_roadmap`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=Codex may audit/select the next high-value CVF foundation roadmap and, if operator-authorized, author a source-verified GC-018/work order; parked checkpoint=Alibaba second-provider parity pending valid DashScope credential, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
 
 ## Current Mode
 
-`agent_dispatch_prompt_envelope_standardization_closed_next_roadmap`
+`session_sync_pack_builder_closed_next_roadmap`
 
-Current HEAD recorded for this handoff: `d709071c`
-(Commit Steward Session-Sync Preflight Hardening material commit; Agent
+Current HEAD recorded for this handoff: `a5e91d4b`
+(Session-Sync Pack Builder And Authorization Manifest material commit
+`a5e91d4b`; Commit Steward Session-Sync Preflight Hardening material commit
+`d709071c`; Agent
 Dispatch Prompt Envelope Standardization material closure commit `b2654e2e`; prior
 Agent Dispatch Prompt Envelope Standardization dispatch commit `c0c72317`; Model Gateway
 C-02 P4B-B Live Proof T2 material commit `d15f973e`; Dispatch packet
@@ -70,8 +72,8 @@ requires separate authorization.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: this file is the active handoff. Codex may
-update this handoff and session front-door state after Commit Steward
-Session-Sync Preflight Hardening material commit `d709071c` to record
+update this handoff and session front-door state after Session-Sync Pack
+Builder And Authorization Manifest material commit `a5e91d4b` to record
 `CLOSED_PASS_BOUNDED`, preserve the prior bounded closures, and route the next
 allowed move to foundation-roadmap selection.
 
@@ -82,6 +84,7 @@ Protected paths:
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sessionSyncPackBuilderClosure20260616.json`
 - `CVF_SESSION/state/entries/modelGatewayC02P4BAProviderExecutionBridgeClosure20260615.json`
 - `CVF_SESSION/state/entries/modelGatewayC02P4CProviderAdapterConformanceDispatch20260615.json`
 - `CVF_SESSION/state/entries/modelGatewayC02P4CProviderAdapterConformanceClosure20260615.json`
@@ -101,8 +104,9 @@ roadmap, issue the next Claude work order, and continue after the dispatch
 packet was authored.
 
 Rollback boundary: if session-sync gates fail, revert only this session-sync
-batch. Do not revert Commit Steward Session-Sync Preflight Hardening material
-commit `d709071c`, Agent Dispatch Prompt Envelope dispatch commit `c0c72317`,
+batch. Do not revert Session-Sync Pack Builder material commit `a5e91d4b`,
+Commit Steward Session-Sync Preflight Hardening material commit `d709071c`,
+Agent Dispatch Prompt Envelope dispatch commit `c0c72317`,
 P4B-B T2 material commit `d15f973e`, P5-C session-sync
 commit `5d1c8273`, P5-C material commit `b7a88782`, P5 material closure commit
 `a4907f2c`, P5 dispatch commit
@@ -115,6 +119,24 @@ dispatch commit `2181b072`, or Model Gateway C-02 P3/P4A material closure
 commit `5d46bc62`.
 
 ## Latest Continuity Note
+
+Session-Sync Pack Builder And Authorization Manifest is `CLOSED_PASS_BOUNDED`
+at material commit `a5e91d4b`. A new read-only tool
+`governance/compat/build_session_sync_pack.py` generates the protected-path
+authorization manifest and reports `ACTIVE_SESSION_STATE.json` drift before a
+session-sync commit. It imports `build_path_plan` and
+`validate_aggregate_matches_sources` rather than duplicating logic; 12 focused
+tests pass. Modes: `--suggest`, `--enforce`, `--plan-only`. No hook wiring and
+no session mutation were performed in the material commit.
+
+Artifacts:
+
+- Roadmap: `docs/roadmaps/CVF_SESSION_SYNC_PACK_BUILDER_AND_AUTHORIZATION_MANIFEST_ROADMAP_2026-06-16.md`
+- GC-018: `docs/baselines/CVF_GC018_SESSION_SYNC_PACK_BUILDER_AND_AUTHORIZATION_MANIFEST_2026-06-16.md`
+- Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_SESSION_SYNC_PACK_BUILDER_AND_AUTHORIZATION_MANIFEST_FOR_CODEX_2026-06-16.md`
+- Completion: `docs/reviews/CVF_SESSION_SYNC_PACK_BUILDER_AND_AUTHORIZATION_MANIFEST_COMPLETION_2026-06-16.md`
+
+Prior closure pointer:
 
 Session Front Door Rotation And Continuity Compaction is `CLOSED_PASS_BOUNDED`.
 

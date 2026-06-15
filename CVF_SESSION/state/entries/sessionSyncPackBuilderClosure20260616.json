@@ -1,0 +1,5 @@
+{
+  "stateOrder": 400,
+  "stateKey": "sessionSyncPackBuilderClosure20260616",
+  "value": "CLOSED_PASS_BOUNDED at material commit a5e91d4b. Codex added governance/compat/build_session_sync_pack.py, a read-only helper that generates the protected-path authorization manifest from the active handoff and reports ACTIVE_SESSION_STATE.json drift against CVF_SESSION/state sources before a session-sync commit. It imports build_path_plan from run_agent_commit_steward_preflight and validate_aggregate_matches_sources from generate_active_session_state rather than duplicating logic. Modes: --suggest (advisory), --enforce (non-zero exit on drift or missing protected-path authorization), --plan-only. Focused tests in governance/compat/test_build_session_sync_pack.py pass 12/12. Boundary: read-only governance tooling only; no session-file mutation in the material commit, no hook-chain wiring, no behavior change to existing checkers, no runtime/provider/live/public claim."
+}

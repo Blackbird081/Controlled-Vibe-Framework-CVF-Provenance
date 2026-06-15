@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-16
 
-Current mode marker: `agent_dispatch_prompt_envelope_standardization_closed_next_roadmap`
+Current mode marker: `session_sync_pack_builder_closed_next_roadmap`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `agent_dispatch_prompt_envelope_standardization_closed_next_roadmap`.
+Current mode: `session_sync_pack_builder_closed_next_roadmap`.
 
 Active handoff:
 
@@ -62,7 +62,17 @@ Pain-point closure direction:
 
 ## Latest Continuity Note
 
-Agent Dispatch Prompt Envelope Standardization is `CLOSED_PASS_BOUNDED`.
+Session-Sync Pack Builder And Authorization Manifest is `CLOSED_PASS_BOUNDED`
+at material commit `a5e91d4b`. New read-only tool
+`governance/compat/build_session_sync_pack.py` generates the protected-path
+authorization manifest and reports `ACTIVE_SESSION_STATE.json` drift before a
+session-sync commit (`--suggest`, `--enforce`, `--plan-only`; 12 tests pass; no
+hook wiring; imports `build_path_plan` and `validate_aggregate_matches_sources`).
+Artifacts: roadmap/GC-018/work order/completion under the
+`CVF_SESSION_SYNC_PACK_BUILDER_AND_AUTHORIZATION_MANIFEST_*_2026-06-16` family.
+
+Prior closure pointer: Agent Dispatch Prompt Envelope Standardization is
+`CLOSED_PASS_BOUNDED`.
 
 Material commit: `b2654e2e` (worker executionBaseHead `620dc039`;
 dispatch commit `c0c72317`; dispatchBaseHead `4895bca3`).
