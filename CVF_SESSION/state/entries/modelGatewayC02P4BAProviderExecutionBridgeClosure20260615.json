@@ -1,0 +1,33 @@
+{
+  "stateOrder": 391,
+  "stateKey": "modelGatewayC02P4BAProviderExecutionBridgeClosure20260615",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "dispatchCommit": "2181b072",
+    "executionBaseHead": "86b1638d",
+    "materialCommit": "3c5b1d3d",
+    "roadmap": "docs/roadmaps/CVF_MODEL_GATEWAY_C02_P4B_GOVERNED_PROVIDER_EXECUTION_AND_LIVE_PROOF_ROADMAP_2026-06-15.md",
+    "gc018": "docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P4B_GOVERNED_PROVIDER_EXECUTION_AND_LIVE_PROOF_2026-06-15.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P4B_A_PROVIDER_EXECUTION_BRIDGE_FOR_CLAUDE_2026-06-15.md",
+    "workerReturn": "docs/reviews/CVF_MODEL_GATEWAY_C02_P4B_A_PROVIDER_EXECUTION_BRIDGE_WORKER_RETURN_2026-06-15.md",
+    "completionReview": "docs/reviews/CVF_MODEL_GATEWAY_C02_P4B_A_PROVIDER_EXECUTION_BRIDGE_COMPLETION_2026-06-15.md",
+    "worker": "Claude",
+    "reviewer": "Codex",
+    "reviewDisposition": "ACCEPT_AFTER_REVIEWER_REPAIR",
+    "reviewerRepairs": [
+      "Added selected-provider versus injected-adapter providerId identity enforcement and regression coverage.",
+      "Corrected structural, epistemic, negative-search, and line-count evidence in the worker return.",
+      "Reduced source and test files to the work-order maintainability targets."
+    ],
+    "verification": [
+      "npm run check PASS in EXTENSIONS/CVF_MODEL_GATEWAY",
+      "npm test -- --run PASS 25 files / 154 tests",
+      "python governance/compat/generate_corpus_scan_registry.py --check PASS",
+      "python governance/compat/run_worker_return_fast_gate.py PASS reviewer-fast 16/16",
+      "pre-commit hooks PASS 40/40 on material commit 3c5b1d3d",
+      "pre-closure range 86b1638d..3c5b1d3d PASS for content gates; continuity completed by closure sync"
+    ],
+    "nextAllowedMove": "Select the next high-foundation-value roadmap through fresh audit and authorization. P4B-B concrete provider wiring and live proof remain HOLD_PENDING_EXPLICIT_LIVE_CREDENTIAL_AUTHORIZATION.",
+    "boundary": "Deterministic provider-neutral P4B-A bridge only. No concrete provider binding, live provider/API call, runtime secret use, network, EPF wiring, Strategy Layer implementation, AI Gateway absorption, public-sync, provider quality/cost claim, production readiness, public readiness, raw memory release, co-work product development, or autonomous mutation."
+  }
+}

@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-15
 
-Current mode marker: `model_gateway_c02_p4b_a_dispatched`
+Current mode marker: `model_gateway_c02_p4b_a_closed_p4b_b_hold`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `model_gateway_c02_p4b_a_dispatched`.
+Current mode: `model_gateway_c02_p4b_a_closed_p4b_b_hold`.
 
 Active handoff:
 
@@ -94,13 +94,13 @@ Completion reviews:
 
 Session Continuity Rotation Guard Hardening is `CLOSED_PASS_BOUNDED`.
 
-Next move: Claude executes
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P4B_A_PROVIDER_EXECUTION_BRIDGE_FOR_CLAUDE_2026-06-15.md`
-under WORKER_MUST_NOT_COMMIT, then returns `COMPLETE_PENDING_REVIEW` for Codex
-review. Dispatch commit: `2181b072`.
+Model Gateway C-02 P4B-A is `CLOSED_PASS_BOUNDED` at material commit
+`3c5b1d3d` after Codex reviewer repair. The bridge is deterministic and
+provider-neutral; Model Gateway tests pass 25 files / 154 tests.
 
-P4B-A is deterministic and provider-neutral. P4B-B concrete provider wiring
-and live proof remain `HOLD_PENDING_EXPLICIT_LIVE_CREDENTIAL_AUTHORIZATION`.
+Next move: audit and select the next high-foundation-value roadmap. P4B-B
+concrete provider wiring and live proof remain
+`HOLD_PENDING_EXPLICIT_LIVE_CREDENTIAL_AUTHORIZATION`.
 
 Earlier closed tranches (pointer only):
 
@@ -118,12 +118,10 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `model_gateway_c02_p4b_a_dispatched`.
+Mode: `model_gateway_c02_p4b_a_closed_p4b_b_hold`.
 
-Next move: Claude executes
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P4B_A_PROVIDER_EXECUTION_BRIDGE_FOR_CLAUDE_2026-06-15.md`
-under WORKER_MUST_NOT_COMMIT, then returns `COMPLETE_PENDING_REVIEW` for Codex
-review.
+Next move: audit and select the next high-foundation-value roadmap without
+entering a narrow use case.
 
 LHW24 remains the latest closed numbered LHW wave.
 
