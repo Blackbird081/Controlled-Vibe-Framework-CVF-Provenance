@@ -30,9 +30,9 @@ Startup acknowledged: current mode=`model_gateway_c02_p1_routing_pipeline_closed
 
 `model_gateway_c02_p2_roadmap_ready`
 
-Current HEAD recorded for this handoff: `aa9e0550`
-(Model Gateway C-02 P2 Dynamic Model Registry Boundary roadmap commit;
-prior sync commit `6e520351`, prior material commit `00b96357`).
+Current HEAD recorded for this handoff: `ca29e988`
+(Model Gateway C-02 P2 handoff-HEAD sync + roadmap verification repair commit;
+prior roadmap commit `aa9e0550`, prior sync commit `6e520351`).
 
 ## Active Boundary
 
@@ -79,14 +79,24 @@ commit `b2c7c802`, or Model Gateway C-02 P1 routing pipeline dispatch commit
 
 ## Latest Continuity Note
 
-Model Gateway C-02 P2 Dynamic Model Registry Boundary roadmap is
-`ROADMAP_READY` as of 2026-06-15. Operator authorized P2 tranche per session
-instruction. Next move: issue GC-018, author work order, dispatch to worker.
+Model Gateway C-02 P2 Dynamic Model Registry Boundary work order is drafted at
+`DRAFT_PENDING_GC018_AND_OPERATOR_AUTHORIZATION` as of 2026-06-15. Dispatch is
+blocked until a fresh GC-018 baseline and operator authorization both exist.
+
+Work order:
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_2026-06-15.md`
+
+Dispatch-quality, source-verification, and negative-search gates PASS on the
+drafted work order. Worker authors a types-only contract file, boundary
+definition doc, and type-level tests (R1); existing registries stay unchanged.
+
+Model Gateway C-02 P2 roadmap is `ROADMAP_READY`. Operator authorized P2 tranche
+per session instruction 2026-06-15.
 
 Roadmap:
 `docs/roadmaps/CVF_MODEL_GATEWAY_C02_P2_DYNAMIC_MODEL_REGISTRY_BOUNDARY_ROADMAP_2026-06-15.md`
 
-Current mode updated to `model_gateway_c02_p2_roadmap_ready`.
+Current mode: `model_gateway_c02_p2_roadmap_ready`.
 
 ---
 
