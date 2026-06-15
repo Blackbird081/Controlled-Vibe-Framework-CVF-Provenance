@@ -1,0 +1,17 @@
+{
+  "stateOrder": 397,
+  "stateKey": "modelGatewayC02P5Dispatch20260615",
+  "value": {
+    "status": "DISPATCHED_TO_CODEX",
+    "dispatchCommit": "f26afe68",
+    "roadmapCommit": "4c888aa0",
+    "sessionSyncBeforeDispatch": "586aa56e",
+    "gc018": "docs/baselines/CVF_GC018_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_2026-06-15.md",
+    "activeWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_FOR_CODEX_2026-06-15.md",
+    "supersededMirrorWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_FOR_CLAUDE_2026-06-15.md",
+    "worker": "Codex",
+    "commitPolicy": "WORKER_MAY_COMMIT",
+    "nextAllowedMove": "Codex implements P5-A/P5-B, authors completion review, commits material artifacts, runs material-range pre-closure, and syncs session separately if closure changes next move.",
+    "boundary": "Provider-agnostic adapter admission and capability negotiation only. No concrete provider binding, live provider/API call, runtime secret use, network, provider/model addition, EPF wiring, Strategy Layer implementation, AI Gateway absorption, public-sync, provider quality/cost claim, production readiness, public readiness, raw memory release, co-work product development, P5-C, P4B-B release, or autonomous mutation."
+  }
+}

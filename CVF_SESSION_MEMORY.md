@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-15
 
-Current mode marker: `model_gateway_c02_p5_roadmap_ready_p4b_b_hold`
+Current mode marker: `model_gateway_c02_p5_dispatched_to_codex_p4b_b_hold`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `model_gateway_c02_p5_roadmap_ready_p4b_b_hold`.
+Current mode: `model_gateway_c02_p5_dispatched_to_codex_p4b_b_hold`.
 
 Active handoff:
 
@@ -105,11 +105,12 @@ DeepSeek are sample/current live-run providers only, not canonical product
 scope.
 
 Model Gateway C-02 P5 Provider Adapter Admission And Capability Negotiation
-roadmap is `ROADMAP_READY_FOR_GC018` at commit `4c888aa0`.
+is `DISPATCHED_TO_CODEX` at commit `f26afe68`.
 
-Next move: author fresh GC-018 and a source-verified Claude work order for
-P5-A/P5-B, splitting to P5-A first if file-size or ownership risk requires it.
-P4B-B concrete provider wiring and live proof remain
+Next move: Codex implements P5-A/P5-B provider-agnostic adapter admission and
+capability negotiation, authors completion review, commits material artifacts,
+runs material-range pre-closure, and syncs session separately if closure changes
+next move. P4B-B concrete provider wiring and live proof remain
 `HOLD_PENDING_EXPLICIT_LIVE_CREDENTIAL_AUTHORIZATION`.
 
 Earlier closed tranches (pointer only):
@@ -128,11 +129,12 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `model_gateway_c02_p5_roadmap_ready_p4b_b_hold`.
+Mode: `model_gateway_c02_p5_dispatched_to_codex_p4b_b_hold`.
 
-Next move: author fresh GC-018 and a source-verified Claude work order for
-Model Gateway C-02 P5-A/P5-B provider adapter admission and capability
-negotiation. Split to P5-A first if file-size or ownership risk requires it.
+Next move: Codex implements Model Gateway C-02 P5-A/P5-B provider adapter
+admission and capability negotiation, then authors completion review, commits
+material artifacts, runs material-range pre-closure, and syncs session
+separately if closure changes next move.
 
 LHW24 remains the latest closed numbered LHW wave.
 
