@@ -30,9 +30,9 @@ Startup acknowledged: current mode=`session_sync_pack_builder_closed_next_roadma
 
 `session_sync_pack_builder_closed_next_roadmap`
 
-Current HEAD recorded for this handoff: `2a65298b`
-(Session mode-consistency checker GC-018 and Codex work order dispatch packet
-and handoff-sync; session continuity authoring and mode-consistency foundation
+Current HEAD recorded for this handoff: `401858eb`
+(Session mode-consistency checker T1 dispatch packet commit `401858eb` and this
+handoff-sync; session continuity authoring and mode-consistency foundation
 roadmap commit `2a65298b`; session-state mode drift fix material commit
 `7df9679d`; Session-Sync Pack Builder And Authorization Manifest material commit
 `a5e91d4b`; Commit Steward Session-Sync Preflight Hardening material commit
