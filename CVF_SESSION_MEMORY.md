@@ -6,7 +6,7 @@ Status: ACTIVE SESSION FRONT DOOR
 
 Last updated: 2026-06-15
 
-Current mode marker: `model_gateway_c02_p4c_closed_p4b_b_hold`
+Current mode marker: `model_gateway_c02_p5_roadmap_ready_p4b_b_hold`
 Enforcement posture: `agent_autorun_workflow_control_enforced`
 Freeze posture marker: `governance_kernel_freeze_recommended`
 
@@ -42,7 +42,7 @@ Compaction archive (prior closed-tranche prose from this file):
 
 ## Current State
 
-Current mode: `model_gateway_c02_p4c_closed_p4b_b_hold`.
+Current mode: `model_gateway_c02_p5_roadmap_ready_p4b_b_hold`.
 
 Active handoff:
 
@@ -104,8 +104,12 @@ Model Gateway C-02 P4C Provider Adapter Contract Conformance is
 DeepSeek are sample/current live-run providers only, not canonical product
 scope.
 
-Next move: audit and select the next high-foundation-value roadmap. P4B-B
-concrete provider wiring and live proof remain
+Model Gateway C-02 P5 Provider Adapter Admission And Capability Negotiation
+roadmap is `ROADMAP_READY_FOR_GC018` at commit `4c888aa0`.
+
+Next move: author fresh GC-018 and a source-verified Claude work order for
+P5-A/P5-B, splitting to P5-A first if file-size or ownership risk requires it.
+P4B-B concrete provider wiring and live proof remain
 `HOLD_PENDING_EXPLICIT_LIVE_CREDENTIAL_AUTHORIZATION`.
 
 Earlier closed tranches (pointer only):
@@ -124,10 +128,11 @@ and `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V18_2026-06-12.md`.
 
 ## Next Allowed Move
 
-Mode: `model_gateway_c02_p4c_closed_p4b_b_hold`.
+Mode: `model_gateway_c02_p5_roadmap_ready_p4b_b_hold`.
 
-Next move: audit and select the next high-foundation-value roadmap without
-entering a narrow use case.
+Next move: author fresh GC-018 and a source-verified Claude work order for
+Model Gateway C-02 P5-A/P5-B provider adapter admission and capability
+negotiation. Split to P5-A first if file-size or ownership risk requires it.
 
 LHW24 remains the latest closed numbered LHW wave.
 

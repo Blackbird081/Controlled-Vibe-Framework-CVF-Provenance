@@ -24,14 +24,15 @@ reviews, and roadmap evidence remain in their governed owner paths.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`model_gateway_c02_p4c_closed_p4b_b_hold`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=audit and select the next high-foundation-value roadmap; parked checkpoint=P4B-B concrete provider wiring/live proof, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
+Startup acknowledged: current mode=`model_gateway_c02_p5_roadmap_ready_p4b_b_hold`; active handoff=`AGENT_HANDOFF_V19_2026-06-15.md`; next allowed move=author fresh GC-018 and source-verified Claude work order for Model Gateway C-02 P5-A/P5-B provider adapter admission and capability negotiation; parked checkpoint=P4B-B concrete provider wiring/live proof, EPF wiring, strategy-layer implementation, AI Gateway environment-signal absorption, legacy/model registry mutation beyond authorized scope, OS audit/control setup, endpoint monitoring, DT-CVF-T0, Policy_Local PL-S1, EC activation/retrieval, OCR/provider/live-proof, T12, DEP2/Redis/receipt-anchor, public-sync, co-work product development remain parked.
 
 ## Current Mode
 
-`model_gateway_c02_p4c_closed_p4b_b_hold`
+`model_gateway_c02_p5_roadmap_ready_p4b_b_hold`
 
-Current HEAD recorded for this handoff: `5dcde230`
-(Autorun exact-manifest range-shape guard hardening commit; Model Gateway C-02
+Current HEAD recorded for this handoff: `4c888aa0`
+(Model Gateway C-02 P5 roadmap commit; Autorun exact-manifest range-shape
+guard hardening commit `5dcde230`; Model Gateway C-02
 P4C session-sync commit `6150fc0e`; Model Gateway C-02 P4C closure-doc commit
 `64a80684`; P4C handoff-sync commit
 `85c126df`; P4C material implementation commit `8d8f0871`; P4C dispatch
@@ -57,9 +58,9 @@ requires separate authorization.
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: this file is the active handoff. Codex may
-update this handoff and session front-door state after P4C closure-doc commit
-`64a80684` so GC-020 records the accepted closure boundary while preserving the
-P4B-B live-proof hold.
+update this handoff and session front-door state after Model Gateway C-02 P5
+roadmap commit `4c888aa0` so GC-020 records the accepted roadmap boundary while
+preserving the P4B-B live-proof hold.
 
 Protected paths:
 
@@ -71,14 +72,16 @@ Protected paths:
 - `CVF_SESSION/state/entries/modelGatewayC02P4BAProviderExecutionBridgeClosure20260615.json`
 - `CVF_SESSION/state/entries/modelGatewayC02P4CProviderAdapterConformanceDispatch20260615.json`
 - `CVF_SESSION/state/entries/modelGatewayC02P4CProviderAdapterConformanceClosure20260615.json`
+- `CVF_SESSION/state/entries/modelGatewayC02P5AdapterAdmissionRoadmap20260615.json`
 - `AGENT_HANDOFF_V19_2026-06-15.md`
 
-Operator authorization: operator authorized Codex repair and Claude execution
-on 2026-06-15; this reviewer closure sync records the completed bounded P4C
-work without releasing P4B-B live proof.
+Operator authorization: operator authorized Codex to create the next roadmap on
+2026-06-15; this session sync records the P5 roadmap-ready boundary without
+releasing P4B-B live proof.
 
 Rollback boundary: if session-sync gates fail, revert only this session-sync
-batch. Do not revert P4C closure-doc commit `64a80684`, P4C material commit
+batch. Do not revert P5 roadmap commit `4c888aa0`, P4C closure-doc commit
+`64a80684`, P4C material commit
 `8d8f0871`, P4C dispatch commit `10b9626b`, P4B-A closure-doc commit
 `a21f3e65`, session-sync commit `ddc28dc8`, material commit `3c5b1d3d`,
 dispatch commit `2181b072`, or Model Gateway C-02 P3/P4A material closure
@@ -122,19 +125,23 @@ Model Gateway C-02 P4B-A is `CLOSED_PASS_BOUNDED` at closure-doc commit
 Codex added adapter identity enforcement, corrected worker evidence, and
 verified 25 files / 154 tests.
 
-Model Gateway C-02 P4C Provider Adapter Contract Conformance is dispatched at
-commit `10b9626b` for Claude execution under `WORKER_MUST_NOT_COMMIT`.
-P4C is provider-agnostic: Alibaba and DeepSeek are sample/current live-run
-providers only, not canonical product scope.
+Model Gateway C-02 P4C Provider Adapter Contract Conformance is
+`CLOSED_PASS_BOUNDED` at material commit `8d8f0871` and closure-doc commit
+`64a80684`. P4C is provider-agnostic: Alibaba and DeepSeek are sample/current
+live-run providers only, not canonical product scope.
 
-Next move: await Claude `COMPLETE_PENDING_REVIEW` worker return for P4C. P4B-B
-concrete provider wiring and live proof remain
+Model Gateway C-02 P5 Provider Adapter Admission And Capability Negotiation
+roadmap is `ROADMAP_READY_FOR_GC018` at commit `4c888aa0`.
+
+Next move: author fresh GC-018 and a source-verified Claude work order for
+P5-A/P5-B, splitting to P5-A first if file-size or ownership risk requires it.
+P4B-B concrete provider wiring and live proof remain
 `HOLD_PENDING_EXPLICIT_LIVE_CREDENTIAL_AUTHORIZATION`. No provider/API call,
 credential/network use, provider/model addition, EPF wiring, Strategy Layer
 implementation, AI Gateway absorption, public-sync, production readiness, or
 public readiness is authorized.
 
-Current mode: `model_gateway_c02_p4c_dispatched`.
+Current mode: `model_gateway_c02_p5_roadmap_ready_p4b_b_hold`.
 
 ## Latest Closed LHW Wave
 
@@ -173,6 +180,11 @@ CLOSED_PASS_BOUNDED at commit `5dcde230`. The autorun `pre-closure` and
 exact-manifest artifacts with protected session/handoff paths. This promotes a
 repeated Codex reviewer/committer range-selection defect into an early machine
 check and preserves the split material/closure/session-sync protocol.
+
+Model Gateway C-02 P5 Provider Adapter Admission And Capability Negotiation --
+ROADMAP_READY_FOR_GC018 at commit `4c888aa0`. The roadmap keeps adapter
+admission provider-agnostic, uses P4C conformance as input, and does not release
+P4B-B concrete provider wiring or live proof.
 
 ## Parked Lanes
 

@@ -60,8 +60,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "model_gateway_c02_p4c_closed_p4b_b_hold",
-  "previousMode": "model_gateway_c02_p4c_dispatched",
+  "currentMode": "model_gateway_c02_p5_roadmap_ready_p4b_b_hold",
+  "previousMode": "model_gateway_c02_p4c_closed_p4b_b_hold",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -1160,7 +1160,7 @@
     "nextAllowedMove": "Select the next high-foundation-value roadmap through fresh audit and authorization. P4B-B concrete provider wiring and live proof remain HOLD_PENDING_EXPLICIT_LIVE_CREDENTIAL_AUTHORIZATION.",
     "boundary": "Deterministic provider-neutral P4B-A bridge only. No concrete provider binding, live provider/API call, runtime secret use, network, EPF wiring, Strategy Layer implementation, AI Gateway absorption, public-sync, provider quality/cost claim, production readiness, public readiness, raw memory release, co-work product development, or autonomous mutation."
   },
-  "nextAllowedMove": "Model Gateway C-02 P4C provider-agnostic adapter contract conformance is CLOSED_PASS_BOUNDED at material commit 8d8f0871 and closure commit 64a80684 after Codex reviewer repair. Next allowed move: audit and select the next high-foundation-value roadmap; do not enter a narrow use case. P4B-B concrete provider wiring and live proof remain HOLD_PENDING_EXPLICIT_LIVE_CREDENTIAL_AUTHORIZATION and require fresh operator authorization, fresh GC-018, a source-verified work order, live-run diagnostic discipline, and an explicit credential boundary. No provider/API call, credential/network use, provider/model addition, EPF wiring, Strategy Layer implementation, AI Gateway absorption, public-sync, external app mutation, raw memory release, co-work product development, production readiness, or public readiness is authorized. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "Model Gateway C-02 P5 Provider Adapter Admission And Capability Negotiation roadmap is ROADMAP_READY_FOR_GC018 at commit 4c888aa0. Next allowed move: author fresh GC-018 and a source-verified Claude work order for P5-A/P5-B, splitting to P5-A first if file-size or ownership risk requires it. P5 remains provider-agnostic and must not canonicalize Alibaba, DeepSeek, or any current live-run adapter as product scope. P4B-B concrete provider wiring and live proof remain HOLD_PENDING_EXPLICIT_LIVE_CREDENTIAL_AUTHORIZATION and require fresh operator authorization, fresh GC-018, a source-verified work order, live-run diagnostic discipline, and an explicit credential boundary. No provider/API call, credential/network use, provider/model addition, EPF wiring, Strategy Layer implementation, AI Gateway absorption, public-sync, external app mutation, raw memory release, co-work product development, production readiness, or public readiness is authorized. LHW24 remains the latest closed numbered LHW wave.",
   "lastUpdated": "2026-06-15",
   "modelGatewayC02P4CProviderAdapterConformanceDispatch20260615": {
     "status": "DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT",
@@ -1205,5 +1205,14 @@
     ],
     "nextAllowedMove": "Select the next high-foundation-value roadmap through fresh audit and authorization. P4B-B concrete provider wiring and live proof remain HOLD_PENDING_EXPLICIT_LIVE_CREDENTIAL_AUTHORIZATION.",
     "boundary": "Deterministic provider-agnostic adapter contract conformance only. No concrete provider binding, live provider/API call, runtime secret use, network, provider/model addition, EPF wiring, Strategy Layer implementation, AI Gateway absorption, public-sync, provider quality/cost claim, production readiness, public readiness, raw memory release, co-work product development, or autonomous mutation."
+  },
+  "modelGatewayC02P5AdapterAdmissionRoadmap20260615": {
+    "status": "ROADMAP_READY_FOR_GC018",
+    "roadmapCommit": "4c888aa0",
+    "roadmap": "docs/roadmaps/CVF_MODEL_GATEWAY_C02_P5_PROVIDER_ADAPTER_ADMISSION_AND_CAPABILITY_NEGOTIATION_ROADMAP_2026-06-15.md",
+    "priorClosure": "Model Gateway C-02 P4C provider adapter contract conformance CLOSED_PASS_BOUNDED at material commit 8d8f0871 and closure commit 64a80684",
+    "recommendedNextTranche": "P5-A Adapter Admission Record plus P5-B Capability Negotiation, split to P5-A first if file-size or ownership risk requires it",
+    "nextAllowedMove": "Author fresh GC-018 and a source-verified Claude work order for P5-A/P5-B. Keep P4B-B concrete provider wiring and live proof on HOLD_PENDING_EXPLICIT_LIVE_CREDENTIAL_AUTHORIZATION.",
+    "boundary": "Provider-agnostic adapter admission and capability negotiation planning only. No concrete provider binding, live provider/API call, runtime secret use, network, provider/model addition, EPF wiring, Strategy Layer implementation, AI Gateway absorption, public-sync, provider quality/cost claim, production readiness, public readiness, raw memory release, co-work product development, or autonomous mutation."
   }
 }
