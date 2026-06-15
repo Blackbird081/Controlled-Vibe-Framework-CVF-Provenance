@@ -30,11 +30,12 @@ Startup acknowledged: current mode=`model_gateway_c02_p2_dynamic_model_registry_
 
 `model_gateway_c02_p2_dynamic_model_registry_boundary_dispatched`
 
-Current HEAD recorded for this handoff: `eea131ec`
-(Model Gateway C-02 P2 dispatch material commit; prior P2 work-order draft and
-Agent Operation Trace root-level manifest parser repair commit `61984341`,
-prior handoff-sync commit `2d1dd769`, prior roadmap repair commit `ca29e988`,
-prior roadmap commit `aa9e0550`).
+Current HEAD recorded for this handoff: `a31f32a9`
+(Agent Commit Steward protocol material commit; prior Model Gateway C-02 P2
+dispatch material commit `eea131ec`, prior P2 work-order draft and Agent
+Operation Trace root-level manifest parser repair commit `61984341`, prior
+handoff-sync commit `2d1dd769`, prior roadmap repair commit `ca29e988`, prior
+roadmap commit `aa9e0550`).
 
 ## Active Boundary
 
@@ -92,6 +93,24 @@ parser repair commit `61984341`, or Model Gateway C-02 P2 dispatch commit
 `eea131ec`.
 
 ## Latest Continuity Note
+
+Agent Commit Steward Protocol hardening is committed at material commit
+`a31f32a9`.
+
+Artifacts:
+
+- `docs/baselines/CVF_GC018_AGENT_COMMIT_STEWARD_PROTOCOL_HARDENING_2026-06-15.md`;
+- `docs/reference/CVF_AGENT_COMMIT_STEWARD_PROTOCOL_STANDARD_2026-06-15.md`;
+- `governance/compat/run_agent_commit_steward_preflight.py`;
+- `governance/compat/test_run_agent_commit_steward_preflight.py`;
+- `AGENTS.md`.
+
+Result: all agents should use the steward preflight before governed commits or
+worker-return handoffs, choosing the phase-specific mode instead of manually
+duplicating fast/full gates. This reduces total elapsed time by catching
+commit-shape conflicts early while keeping existing hooks and autorun gates.
+
+---
 
 Model Gateway C-02 P2 Dynamic Model Registry Boundary is
 `DISPATCHED_UNDER_WORKER_MUST_NOT_COMMIT` as of 2026-06-15.
