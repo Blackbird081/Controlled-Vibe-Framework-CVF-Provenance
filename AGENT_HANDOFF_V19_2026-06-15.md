@@ -30,11 +30,10 @@ Startup acknowledged: current mode=`session_continuity_rotation_guard_hardening_
 
 `session_continuity_rotation_guard_hardening_dispatched`
 
-Current HEAD recorded for this handoff: `4e7eb3a2`
-(Session front-door rotation closure and Session Continuity Rotation Guard
-Hardening dispatch material commit; prior commit latency lane hardening
-`c7d3d955`; prior Model Gateway C-02 P3/P4A material implementation commit
-`5d46bc62`.)
+Current HEAD recorded for this handoff: `f74a1ec8`
+(Session Continuity Rotation Guard Hardening implementation and reviewer
+completion material commit; prior dispatch/continuity sync commit `5500d429`;
+prior Model Gateway C-02 P3/P4A material implementation commit `5d46bc62`.)
 
 ## Active Boundary
 
